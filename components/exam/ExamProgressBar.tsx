@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowRight, BookOpen } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 import { LS_KEYS } from "@/lib/storage/keys";
 import type { ExamCode } from "@/lib/questions/types";
 import type { HistoryEntry } from "@/lib/storage/history";
@@ -43,25 +43,10 @@ export function ExamProgressBar({ exam, totalQuestions }: Props) {
     });
   }, [exam]);
 
-  if (!progress) {
-    return (
-      <div className="h-24 animate-pulse rounded-2xl bg-zinc-100 dark:bg-zinc-900" />
-    );
-  }
+  if (!progress || progress.answered === 0) return null;
 
   const pct = totalQuestions > 0 ? Math.round((progress.answered / totalQuestions) * 100) : 0;
   const accuracyPct = Math.round(progress.accuracy * 100);
-
-  if (progress.answered === 0) {
-    return (
-      <div className="rounded-2xl border border-dashed border-border bg-muted/30 p-5 text-center">
-        <BookOpen className="mx-auto mb-2 h-6 w-6 text-muted-foreground" />
-        <p className="text-sm text-muted-foreground">
-          まだ学習履歴がありません。1 問解くと進捗が表示されます。
-        </p>
-      </div>
-    );
-  }
 
   return (
     <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">

@@ -1,5 +1,7 @@
 "use client";
 import Link from "next/link";
+import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
+import { filterReferralPapers } from "@/lib/analytics/referral-query";
 import { ArrowLeft, ArrowRight, Calendar, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -30,13 +32,15 @@ interface ExamCatalogBrowserProps {
   items: readonly ExamCatalogItem[];
   initialGroup: ExamGroupId;
   initialSubject: string | null;
+  initialYear?: string;
 }
 
-export function ExamCatalogBrowser({ groups, items, initialGroup, initialSubject }: ExamCatalogBrowserProps) {
+export function ExamCatalogBrowser({ groups, items, initialGroup, initialSubject, initialYear }: ExamCatalogBrowserProps) {
   const group = initialGroup;
   const subject = initialSubject;
   const activeItems = items.filter((item) => item.group === group);
-  const papers = activeItems.filter((item) => item.subject === subject).sort((a,b) => b.date.localeCompare(a.date));
+  const papers = filterReferralPapers(activeItems, subject ?? undefined, initialYear)
+    .filter(item => item.subject === subject).sort((a,b) => b.date.localeCompare(a.date));
   const latest = papers.find((item) => item.questionCount !== null);
   const sections: readonly {
     id: string;
@@ -44,6 +48,8 @@ export function ExamCatalogBrowser({ groups, items, initialGroup, initialSubject
     title: string;
     filter: (name: string) => boolean;
   }[] = [
+    { id: "pe-first", group: "pe-first", title: "技術士第一次試験", filter: () => true },
+    { id: "survey-assistant", group: "survey-assistant", title: "測量士補試験", filter: () => true },
     { id: "licenses", group: "lckohyo", title: "免許試験", filter: () => true },
     { id: "measurement", group: "emkohyo", title: "作業環境測定士", filter: () => true },
     { id: "safety-consultant", group: "cskohyo", title: "労働安全コンサルタント", filter: (name: string) => !isHealthConsultantSubject(name) },
@@ -52,7 +58,7 @@ export function ExamCatalogBrowser({ groups, items, initialGroup, initialSubject
   return <div className="space-y-6">
     {!subject ? <section aria-labelledby="safety-exam-select">
       <h2 id="safety-exam-select" className="mb-3 text-lg font-semibold">資格を選ぶ</h2>
-      <nav aria-label="安全の資格一覧" className="mb-6 flex flex-wrap gap-2">
+      <nav aria-label="資格一覧" className="mb-6 flex flex-wrap gap-2">
         {sections.map((section) => <Link key={section.id} href={`#${section.id}`} className="inline-flex min-h-11 items-center rounded-xl border border-border px-3 text-sm hover:bg-muted">{section.title}</Link>)}
       </nav>
       {sections.map((section) => {
@@ -75,6 +81,7 @@ export function ExamCatalogBrowser({ groups, items, initialGroup, initialSubject
         </section>;
       })}
     </section> : <section aria-labelledby="safety-subject-heading" className="space-y-5">
+      <TsuginoWelcome href={latest?.href ?? null} qualification={subject} />
       <Link href={examLibraryHref()} className="inline-flex min-h-11 items-center gap-2 text-sm text-muted-foreground hover:text-foreground"><ArrowLeft className="h-4 w-4" aria-hidden="true" />資格を選び直す</Link>
       <div className="rounded-2xl border border-border bg-card p-5">
         <h2 id="safety-subject-heading" className="text-2xl font-bold">{subject}の過去問</h2>

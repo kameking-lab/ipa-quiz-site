@@ -1,0 +1,29 @@
+[
+  {
+    "command": "pnpm validate:questions",
+    "exitCode": 0,
+    "log": "validate.log",
+    "result": "27044 questions; fail=0; warn=17255",
+    "logSha256": "5e5d0ab804ca8d0ea574825c0a283e30341f435c0617f88afcfa2f44906ef586"
+  },
+  {
+    "command": "NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck",
+    "exitCode": 0,
+    "log": "typecheck.log",
+    "logSha256": "0dc697c8d01e3a91a42cd2e956526811e66ef4fa69bbcdd5bdc3cf176986b67e"
+  },
+  {
+    "command": "npx vitest run __tests__/keiryoshi-staging.test.ts __tests__/seo",
+    "exitCode": 0,
+    "log": "vitest.log",
+    "testFiles": 111,
+    "tests": 599,
+    "logSha256": "183c58bbead3630a1b89b58e75e181fb912ee51ba9b2dd966e39c52bb785217f"
+  },
+  {
+    "command": "python3 scripts/verify-keiryoshi-source.py",
+    "exitCode": 0,
+    "log": "source-verifier.log",
+    "logSha256": "98198d369d9651bb6f6ecf12fe68157cca03b90832a68148cbb50eacf2740e53"
+  }
+]

@@ -1,0 +1,116 @@
+{
+  "status": "PASS",
+  "createdAt": "2026-11-04T06:45:35.992723+00:00",
+  "codeHead": "f8fb1871c4d55e81202e719d7ec49935a08e58ef",
+  "commands": {
+    "typecheck": {
+      "exitCode": 0,
+      "sourceLog": "C:\\Users\\kanet\\AppData\\Local\\Temp\\codex-work\\int1b-typecheck-final5.log",
+      "sourceSha256": "8e412398aabcb634813c80df86d2abfe4c69f4e6496ab1a2cfe1fe19d10aeed9"
+    },
+    "lint": {
+      "exitCode": 0,
+      "sourceLog": "C:\\Users\\kanet\\AppData\\Local\\Temp\\codex-work\\int1b-lint-final4.log",
+      "sourceSha256": "e2fdaba0112a47d9471fc177558d0b8916038af0f4a9617c56e73b5d44ab1a50"
+    },
+    "test": {
+      "exitCode": 0,
+      "sourceLog": "C:\\Users\\kanet\\AppData\\Local\\Temp\\codex-work\\int1b-test-final2.log",
+      "sourceSha256": "dabb188f7a3f9d277dd1259d2c9bed913805b54f4e7572da7a06672272d9768e"
+    },
+    "build": {
+      "exitCode": 0,
+      "sourceLog": "C:\\Users\\kanet\\AppData\\Local\\Temp\\codex-work\\int1b-build-final2.log",
+      "sourceSha256": "db5e9f061de92483f15602c3b4fe15dbdb76b4dc0e2e66b615be3b2f42d76667"
+    },
+    "validate:questions": {
+      "exitCode": 0,
+      "sourceLog": "C:\\Users\\kanet\\AppData\\Local\\Temp\\codex-work\\int1b-validate-questions-final4.log",
+      "sourceSha256": "3359ad3d7e279091f0739d38c632364371471631eb270da886d720bf43a019ce"
+    },
+    "browser": {
+      "exitCode": 0,
+      "sourceLog": "C:\\Users\\kanet\\AppData\\Local\\Temp\\codex-work\\int1b-browser-final.log",
+      "sourceSha256": "b0c39ccab2b3592baf45b92f6572daf8b93a628ec657c7e549da666b70d1ab85"
+    }
+  },
+  "tests": {
+    "files": 721,
+    "filesPassed": 721,
+    "total": 7592,
+    "passed": 7590,
+    "failed": 0,
+    "skipped": [
+      {
+        "file": "C:/Users/kanet/20260522/wt-batch1/__tests__/questions/kyusui-staging.test.ts",
+        "test": "kyusui private staging, latest two officially published editions matches independent Poppler extraction of the saved official answer PDFs"
+      },
+      {
+        "file": "C:/Users/kanet/20260522/wt-batch1/__tests__/questions/kyusui-staging.test.ts",
+        "test": "kyusui private staging, latest two officially published editions covers every body word in all four papers using independent Poppler coordinates"
+      }
+    ],
+    "sourceJsonSha256": "f1b11e736fe7ba2c67c7dbb6b314ddbf1a7058b076fe695afee0ef7b08849de3"
+  },
+  "build": {
+    "next": "16.4.5",
+    "staticPages": 17700,
+    "buildId": "xxrwh7v8tJdN5hRhJWVe2",
+    "warnings": [
+      "Edge Runtime and middleware deprecation",
+      "Existing SSR chart dimension warning"
+    ]
+  },
+  "lint": {
+    "errors": 0,
+    "warnings": 8
+  },
+  "questionValidation": {
+    "total": 34383,
+    "ok": 34383,
+    "fail": 0,
+    "warnings": 20263
+  },
+  "counts": {
+    "requiredRows": 71,
+    "optionalRows": 1,
+    "requiredExercises": 8055,
+    "optionalExercises": 837,
+    "mismatches": 0,
+    "globalRawQuestions": 34383,
+    "nativePapers": 36,
+    "nativeOriginals": 1260,
+    "nativeScorable": 1259
+  },
+  "browser": {
+    "qualifications": 21,
+    "readerFlows": 24,
+    "nativeFlows": 2,
+    "searchExamCounts": 125,
+    "hashedAssetResponses": 234,
+    "javascriptErrors": 0,
+    "viewportWidths": [
+      390,
+      1280
+    ],
+    "receipt": "browser/receipt.json"
+  },
+  "projectionReproduction": {
+    "generatorExit": 0,
+    "trackedDiffExit": 0
+  },
+  "httpSecurity": "http-security.json",
+  "excludedScope": "release-boundaries.json",
+  "independentReview": {
+    "status": "PASS",
+    "model": "gpt-6-astra",
+    "sandbox": "read-only",
+    "reviewedHead": "2d431b376",
+    "baseline": "00e49b94060cc2671e9d098df91d653a4ed3ffe2",
+    "artifact": "independent-review2.md",
+    "sha256": "9d81f087fabd0240dbbf1459bb178f151f8c981001bfcb393512d501ed70a901",
+    "command": "C:/Users/kanet/AppData/Roaming/npm/codex.cmd exec -m gpt-6-astra -s read-only",
+    "scope": "Read-only code, data and evidence inspection. No independent whole-suite/browser replay or production approval."
+  },
+  "finalizedAt": "2026-11-04T06:52:09.486219+00:00"
+}

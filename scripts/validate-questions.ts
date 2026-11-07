@@ -1,3 +1,10 @@
+import { SEKOU_1KENCHIKU_QUESTIONS } from "@/data/questions/sekou-1kenchiku";
+import { KENCHIKUSHI1_CANDIDATES } from "../data/qualification-staging/kenchikushi1";
+import { officialScoringIssue } from "@/lib/questions/official-scoring";
+import { validateBenrishiStaging } from "./lib/validate-benrishi-staging";
+import { PRACTICE_SESSIONS } from "@/lib/questions/practice-session";
+import { EXAM_CONFIGS } from "@/lib/exam-config";
+import { validateDokugekiChiba } from "./validate-dokugeki-chiba";
 import { NativeBDataSchema, nativeBQuestionIssue } from "../lib/questions/native-b";
 /**
  * data/questions/ 配下の問題データを検証・品質スコア算出。
@@ -6,6 +13,7 @@ import { NativeBDataSchema, nativeBQuestionIssue } from "../lib/questions/native
  *   pnpm validate:questions                  # 全試験
  *   pnpm validate:questions --exam=ap        # AP のみ
  *   pnpm validate:questions --exam=ap,fe     # AP + FE
+ *   pnpm validate:questions --staging=sokuryoshi # 非公開の測量士原本・解説
  *   pnpm validate:questions --report         # docs/QUESTION_QUALITY.md を生成
  *   pnpm validate:questions --fix            # 自動修正可能な問題のみ報告
  */
@@ -30,19 +38,27 @@ import { CIVIL1_QUESTIONS } from "@/data/questions/civil1";
 import type { Question } from "@/lib/questions/types";
 import { detectAnswerDispute } from "@/lib/questions/explanation-consistency";
 import { z } from "zod";
+import { validateDojoOsenStaging } from "@/data/qualification-staging/dojo-osen";
+import { validateKhkHanbaiStaging } from "./validate-khk-hanbai";
+import { KIKAI_HOZEN_STAGED_QUESTIONS } from "@/data/qualification-staging/kikai-hozen";
 import { RIYOSHI_CANDIDATES } from "@/data/questions/riyoshi";
+import { validateSokuryoshiStaging } from "./qualification-ingestion/validate-sokuryoshi";
+import { validateJokasoSetsubishiStaging } from "./lib/jokaso-setsubishi-staging";
+import { validateChiikiRyoko } from "./validate-chiiki-ryoko";
+import { validateKukakuSeiri } from "./validate-kukaku-seiri";
 
 // Publication-gated pilots still require the same schema and source validation
 // before their release gate can be lifted.
 const VALIDATION_QUESTIONS = [
   ...new Map(
-    [...ALL_QUESTIONS, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
+    [...ALL_QUESTIONS, ...SEKOU_1KENCHIKU_QUESTIONS, ...KENCHIKUSHI1_CANDIDATES, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
   ).values(),
 ];
 
 // ─── CLI ─────────────────────────────────────────────────────────────────────
 
 interface CliOptions {
+  staging?: string;
   exams: string[];
   report: boolean;
   fix: boolean;
@@ -53,22 +69,24 @@ function parseCliOptions(): CliOptions {
   let exams: string[] = [];
   let report = false;
   let fix = false;
+  let staging: string | undefined;
   for (const arg of argv) {
     if (arg === "--report") report = true;
     else if (arg === "--fix") fix = true;
+    else if (arg.startsWith("--staging=")) staging = arg.slice(10);
     else if (arg.startsWith("--exam=")) {
       exams = arg.slice(7).split(",").map((s) => s.trim());
     }
   }
-  return { exams, report, fix };
+  return { exams, report, fix, staging };
 }
 
 // ─── Schema ───────────────────────────────────────────────────────────────────
 
 const QuestionSchema = z.object({
   id: z.string().min(1),
-  exam: z.enum(["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp1", "fp2", "fp3", "denken3", "denken2", "denken1", "denko2", "denko1", "takken", "civil2", "civil1", "kankoji2", "zoen2", "zoen1", "tsushin2", "tsushin1", "kaigo", "shakai", "seishin", "tohan", "kanri", "eisei1", "eisei2", "soukan", "hoikushi", "mankan", "kashikin", "sharoushi", "kangoshi", "yakuzaishi", "ahaki-anma", "ahaki-hari-kyu", "hokenshi", "josanshi", "rigaku-ryohoshi", "sagyo-ryohoshi", "shino-kunrenshi", "rinsho-kensagishi", "shinryo-hoshasengishi", "rinsho-kogishi", "riyoshi", "chusho-kigyo-shindanshi", "chosashi", "shika-ishi", "judo-seifukushi", "riku-toku-kokunai", "kai-toku2", "kai-toku3", "koku-toku", "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kanteishi", "kaikeishi", "gas-kou", "gas-otsu", "gas-hei"]),
-  session: z.enum(["am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b", "gakka", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical", "riron", "denryoku", "kikai", "houki", "mondai-a", "mondai-b", "mondai-c", "mondai-d", "kyotsu", "senmon", "hoiku-genri", "kyoiku-genri", "shakaiteki-yougo", "kodomo-katei-fukushi", "shakai-fukushi", "hoiku-shinrigaku", "kodomo-hoken", "kodomo-shokueiyou", "hoiku-jisshu-riron", "keizai", "zaimu", "kigyo", "unei", "keiei-houmu", "keiei-joho", "chusho-seisaku", "kogaku", "kiso", "kogaku-a", "kogaku-b", "hoki", "tiri", "gyosei", "kanri", "kansa", "gas-law", "gas-basic", "gas-technology"]),
+  exam: z.enum(Object.keys(EXAM_CONFIGS) as [string, ...string[]]),
+  session: z.enum([...PRACTICE_SESSIONS] as [string, ...string[]]),
   year: z.number().int().min(2000).max(2100),
   season: z.enum(["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai", "february", "june", "august", "march", "round1", "round2"]),
   qNumber: z.number().int().min(1),
@@ -76,8 +94,9 @@ const QuestionSchema = z.object({
   type: z.enum(["multiple-choice", "ordering", "numeric", "descriptive", "essay", "native-b"]),
   nativeB: NativeBDataSchema.optional(),
   numericAnswer: z.discriminatedUnion("format", [
+    z.object({ format: z.literal("scientific"), precision: z.literal(2), unit: z.string().trim().min(1) }),
     z.object({ format: z.literal("integer"), unit: z.string().trim().min(1), fixedSign: z.literal("negative").optional() }),
-    z.object({ format: z.literal("decimal"), precision: z.literal(1), unit: z.string().trim().min(1), fixedSign: z.literal("negative").optional() }),
+    z.object({ format: z.literal("decimal"), precision: z.union([z.literal(1), z.literal(2)]), unit: z.string().trim().min(1), fixedSign: z.literal("negative").optional() }),
   ]).optional(),
   category: z.string().min(1),
   topicTags: z.array(z.string()),
@@ -100,9 +119,12 @@ const QuestionSchema = z.object({
       ス: z.string().optional(),
       セ: z.string().optional(),
       ソ: z.string().optional(),
+      タ: z.string().optional(),
     })
     .refine((choices) => Object.values(choices).filter(Boolean).length >= 2, "選択肢は2個以上必要です")
     .optional(),
+  officialScoring: z.object({ kind: z.literal("credit-for-all"), reason: z.string().trim().min(1) }).optional(),
+  publicAllowed: z.boolean().optional(),
   answer: z.union([z.string(), z.array(z.string().min(1))]),
   requiredSelections: z.number().int().min(1).max(4).optional(),
   explanation: z.string().min(1),
@@ -118,7 +140,7 @@ const QuestionSchema = z.object({
   sourceAttribution: z.string().min(1).optional(),
   lawReferenceDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
   officialReferenceUrls: z.array(z.string().url()).optional(),
-  license: z.enum(["IPA-public", "JAFP-reuse-with-attribution", "KINZAI-reuse-with-attribution", "ECEE-educational-reuse", "RETIO-reuse", "JCTC-authorized-reuse", "SSSC-reuse", "KANSAI-UNION-reuse", "KANRIKYO-educational-reuse", "EXAM-OR-JP-attributed", "IPEJ-attributed", "HOYOKYO-attributed", "MANKAN-attributed", "JFSA-attributed", "SHAROSI-attributed", "MHLW-attributed", "AHK-attributed", "JAAME-attributed", "RBC-attributed", "JF-CMCA-attributed", "JCTC-attributed", "MOJ-attributed", "ZAIJUSEI-attributed", "NICHIMU-educational-reuse", "NICHIMU-past-question-study-use", "MLIT-PDL-1.0", "CPAAOB-PDL-1.0", "JIA-attributed"]),
+  license: z.enum(["INT7-owner-decision","KHK-attributed", "JAEIC-owner-approved-staging", "CHINTAI-owner-authorized", "KYUSUI-owner-authorized", "JAHMEC-owner-authorized", "NUSTEC-owner-authorized", "ECCJ-owner-approved", "MLIT-PDL-1.0", "CPAAOB-PDL-1.0", "IPA-public", "JAFP-reuse-with-attribution", "KINZAI-reuse-with-attribution", "ECEE-educational-reuse", "RETIO-reuse", "JCTC-authorized-reuse", "SSSC-reuse", "KANSAI-UNION-reuse", "KANRIKYO-educational-reuse", "EXAM-OR-JP-attributed", "IPEJ-attributed", "HOYOKYO-attributed", "MANKAN-attributed", "JFSA-attributed", "SHAROSI-attributed", "MHLW-attributed", "AHK-attributed", "JAAME-attributed", "RBC-attributed", "JF-CMCA-attributed", "JCTC-attributed", "MOJ-attributed", "ZAIJUSEI-attributed", "NICHIMU-educational-reuse", "NICHIMU-past-question-study-use", "JIA-attributed", "JMBSC-permission-required", "JAEIC-permission-required", "IP-EDU-authorized-reuse", "JASPA-owner-authorized", "SHOUBO-owner-authorized", "JECES-owner-cleared", "FCIP-owner-confirmed", "JYOUBUN-owner-authorized", "KOKUSEN-owner-authorized", "CHORD-owner-authorized", "SGEC-owner-authorized", "JKEN-owner-cleared", "JCCPP-attributed", "KHK-owner-decision", "FCIP-owner-authorized", "YAMAGUCHI-attributed", "METI-attributed", "JCM-authorized-reuse", "GYOSEI-owner-cleared", "CAREER-SHIKEN-owner-authorized", "JATA-owner-authorized", "GSI-attributed", "PREF-published", "JIPM-owner-decision", "CUSTOMS-attributed"]),
   isCalculation: z.boolean().optional(),
 });
 
@@ -280,6 +302,8 @@ function validate(questions: Question[]): ValidationResult {
       }
     }
 
+    const scoringIssue = officialScoringIssue(q);
+    if (scoringIssue) { fail++; byExam[examKey].fail++; issues.push({ id: q.id, level: "error", message: scoringIssue }); continue; }
     const nativeIssue = nativeBQuestionIssue(q);
     if (nativeIssue || (q.type !== "native-b" && typeof q.answer === "string" && !q.answer.trim())) {
       fail++;
@@ -299,8 +323,8 @@ function validate(questions: Question[]): ValidationResult {
         continue;
       }
       const answers = Array.isArray(q.answer) ? q.answer : [q.answer];
-      const ans = answers.find(key => !["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ"].includes(key) || !q.choices?.[key as keyof typeof q.choices]);
-      if (ans !== undefined || answers.length === 0) {
+      const ans = answers.find(key => !["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ", "タ"].includes(key) || !q.choices?.[key as keyof typeof q.choices]);
+      if (!q.officialScoring && (ans !== undefined || answers.length === 0)) {
         fail++;
         byExam[examKey].fail++;
         issues.push({ id: q.id, level: "error", message: `answer 不正: "${ans}"` });
@@ -474,6 +498,49 @@ function reportFixes(questions: Question[]): void {
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 const opts = parseCliOptions();
+if (opts.exams.length === 0 || opts.exams.some(exam => ["khk-hanbai", "khk-hanbai2", "khk-setsubishi"].includes(exam))) {
+  const staging = validateKhkHanbaiStaging();
+  console.log(`[staging:khk-hanbai] ${staging.count} questions, ${staging.errors.length} errors; private`);
+  for (const error of staging.errors) console.error(`[FAIL] ${error}`);
+  if (staging.errors.length > 0) process.exit(1);
+}
+if (KIKAI_HOZEN_STAGED_QUESTIONS.length !== 100 || KIKAI_HOZEN_STAGED_QUESTIONS.some((q) => q.publicAllowed)) {
+  throw new Error("kikai-hozen staging must hold 100 private questions");
+}
+console.log(`[staging] kikai-hozen: ${KIKAI_HOZEN_STAGED_QUESTIONS.length} questions; publicAllowed=false`);
+if (!opts.exams.length || opts.exams.includes("benrishi")) {
+  console.log(`[private-staging] benrishi: validated ${validateBenrishiStaging()} unpublished questions (publicAllowed=false)`);
+}
+
+if (opts.staging !== undefined) {
+  if (opts.staging !== "sokuryoshi" || opts.exams.length || opts.fix || opts.report) {
+    console.error("Use --staging=sokuryoshi alone for private qualification validation.");
+    process.exit(1);
+  }
+  const result = validateSokuryoshiStaging();
+  for (const error of result.errors) console.error(`[FAIL] ${error}`);
+  console.log(`Validated ${result.count} private sokuryoshi originals. fail=${result.errors.length}`);
+  process.exit(result.errors.length ? 1 : 0);
+}
+// Private staging has its own schema and must not be registered as a live exam
+// just to participate in validation. Avoid a misleading zero-question success.
+if (opts.exams.includes("dokugeki-chiba")) {
+  validateDokugekiChiba();
+
+}
+if (opts.exams.length === 0 || opts.exams.includes("jokaso-setsubishi")) {
+  console.log(`[staging] jokaso-setsubishi: ${validateJokasoSetsubishiStaging()} questions; publicAllowed=false`);
+}
+validateChiikiRyoko(opts.exams);
+// CQ7 is a private, partial corpus and has no public ExamCode.
+const privateStagedCount = validateKukakuSeiri(opts.exams);
+// A private editorial corpus has its own image-required schema and is never
+// registered as a public ExamCode merely to make a validation filter find it.
+if (opts.exams.includes("dojo-osen")) {
+  const count = validateDojoOsenStaging();
+  console.log(`Validated ${count} dojo-osen staged questions. ok=${count} fail=0 publicAllowed=false`);
+
+}
 const questions = opts.exams.length > 0
   ? VALIDATION_QUESTIONS.filter((q) => opts.exams.includes(q.exam))
   : VALIDATION_QUESTIONS;
@@ -484,7 +551,7 @@ if (opts.exams.length > 0) {
 
 const result = validate(questions);
 
-console.log(`\nValidated ${questions.length} questions. ok=${result.ok} fail=${result.fail} warn=${result.warn}`);
+console.log(`\nValidated ${questions.length} public-schema questions + ${privateStagedCount} private staged questions. ok=${result.ok} fail=${result.fail} warn=${result.warn}`);
 
 if (opts.fix) reportFixes(questions);
 

@@ -1,0 +1,128 @@
+{
+  "status": "PASS_LOCAL_FULL_APPLICATION_TYPE_HTTP_CHROME_STOPPED",
+  "completedUtc": "2026-10-24T21:16:51.310206+00:00",
+  "baseCommit": "0a79ccec11f30e0e8cbcea3e7bc660649101fdce",
+  "acceptedContentUnchanged": 108,
+  "acceptedReasonsUnchanged": 432,
+  "newAcceptedQuestions": 0,
+  "newQuestions": 0,
+  "studyPool": 106,
+  "studyReasons": 424,
+  "partition": {
+    "first": 53,
+    "second": 53
+  },
+  "excludedIds": [
+    "biyoshi-2026-first-gakka-q6",
+    "biyoshi-2026-first-gakka-q48",
+    "biyoshi-2026-second-gakka-q50",
+    "biyoshi-2026-second-gakka-q55"
+  ],
+  "sourceMaterials": {
+    "files": 11851,
+    "recoveredBasePreimages": 34,
+    "excludedOtherQualificationAdditions": 74,
+    "unexpectedChangesOutsideBeautyAndRuntimeConfig": 0,
+    "originalRepositoryOrOtherOwnerWrites": 0
+  },
+  "types": {
+    "status": "PASS",
+    "entryFiles": 1878,
+    "sourceFiles": 4135,
+    "diagnostics": 0,
+    "strict": true,
+    "skipLibCheck": "Same as main tsconfig: true"
+  },
+  "http": {
+    "actualNextVersion": "16.2.6",
+    "originalObjectsHashMatched": 106,
+    "excluded404": 4,
+    "exactPngResponses": 2,
+    "sharedMainLayout": true
+  },
+  "browser": {
+    "status": "PASS_COMBINED_COMPLETED_SUBCHECKS",
+    "actualChromeVersion": "156.0.8078.47",
+    "representatives": [
+      "biyoshi-2026-first-gakka-q44",
+      "biyoshi-2026-second-gakka-q47"
+    ],
+    "gradedChoices": 8,
+    "reasonComparisons": 32,
+    "widths": [
+      1365,
+      390
+    ],
+    "imagesRendered": 2,
+    "numericLabels": true,
+    "roundLabels": true,
+    "historyIsolation": true,
+    "resume": true,
+    "randomSession80From106": true,
+    "unansweredSession80FromRemaining104": true,
+    "reviewSession": 2,
+    "pageErrors": 0
+  },
+  "serverStop": {
+    "status": "STOP_CONFIRMED_CONNECTION_REFUSED",
+    "code": "ECONNREFUSED",
+    "message": "fetch failed",
+    "atUtc": "2026-10-24T21:13:02.834Z",
+    "ownSessions": [
+      38638,
+      12232
+    ],
+    "method": "Ctrl+C via own exec sessions",
+    "unknownPidQueries": 0
+  },
+  "heavySlotA": "RELEASED",
+  "pendingProcesses": [],
+  "preservedLimits": [
+    "Q53Q6 and Q54Q55 needsReview-clearing denial remains; excluded from every study consumer",
+    "Q53Q48 content-evidence HOLD remains",
+    "Q54Q50 authentic-image HOLD, SVG denial and uncertain official URL operation remain",
+    "Original local Git permission denial not retried",
+    "Main-tree connector request ended Transport closed; operation outcome remains uncertain, no retry or alternate tree acquisition. Supplied existing source receipts and preimage hashes used independently.",
+    "No production activation or release verification; no offline/PWA verification"
+  ],
+  "executionOutcomes": [
+    {
+      "action": "GitHub tree read",
+      "target": "7fa64d707d1cbece4093742ce683436f78b6c67f",
+      "state": "FAILED_INVALID_ARGUMENT_422",
+      "reason": "The supplied tree is a local composed tree, not a remotely available main object"
+    },
+    {
+      "action": "GitHub tree read",
+      "target": "0a79ccec11f30e0e8cbcea3e7bc660649101fdce",
+      "state": "UNCERTAIN_TRANSPORT_CLOSED_NOT_RETRIED"
+    },
+    {
+      "action": "First complete-app typecheck",
+      "state": "TECHNICAL_INPUT_RESOLUTION_FAILURE_RESOLVED",
+      "reason": "Read-only dependency resolution and96 directly imported existing JSON fixtures corrected; final diagnostic0"
+    },
+    {
+      "action": "First actual Chrome question display",
+      "target": "127.0.0.1:3266",
+      "state": "TECHNICAL_MEMORY_RESTART_RESOLVED",
+      "reason": "Own Next heap4096 threshold restarted server; stopped and successfully restarted with6144 and parallelism1"
+    },
+    {
+      "action": "Random-session assertion",
+      "state": "TEST_EXPECTATION_CORRECTED",
+      "reason": "Existing shared cap80 preserved; actual106 parent pool and80-session behavior both verified"
+    }
+  ],
+  "currentAutoReviewDenials": [],
+  "gitOperations": 0,
+  "clone": 0,
+  "junction": 0,
+  "dependencyInstall": 0,
+  "push": 0,
+  "ci": 0,
+  "build": 0,
+  "deploy": 0,
+  "sheetWrite": 0,
+  "publication": 0
+}

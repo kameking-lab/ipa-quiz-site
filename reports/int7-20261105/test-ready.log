@@ -1,0 +1,19 @@
+
+> ipa-quiz-site@1.0.0 test C:\Users\kanet\20260522\wt-batch3
+> vitest run "--maxWorkers=2" "--reporter=default" "--reporter=json" "--outputFile=reports/int7-20261105/test-ready.json"
+
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mC:/Users/kanet/20260522/wt-batch3[39m
+
+ [32m✓[39m __tests__/data/blog-generators.test.ts [2m([22m[2m244 tests[22m[2m)[22m[32m 48[2mms[22m[39m
+ [32m✓[39m __tests__/civil2-2025-batch.test.ts [2m([22m[2m31 tests[22m[2m)[22m[32m 37[2mms[22m[39m
+ [32m✓[39m __tests__/questions/energy-kanri-staging.test.ts [2m([22m[2m17 tests[22m[2m)[22m[32m 156[2mms[22m[39m
+ [32m✓[39m __tests__/billing/monthly-refund-candidate.test.ts [2m([22m[2m39 tests[22m[2m)[22m[32m 88[2mms[22m[39m
+ [32m✓[39m __tests__/questions/khk-kagaku-staging.test.ts [2m([22m[2m14 tests[22m[2m)[22m[33m 325[2mms[22m[39m
+ [32m✓[39m __tests__/questions/kenchikushi1-staging.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 1104[2mms[22m[39m
+     [33m[2m✓[22m[39m publishes the approved projection and preserves staged originals [33m 1004[2mms[22m[39m
+ [32m✓[39m __tests__/admin/exam-usage-fetch.test.ts [2m([22m[2m21 tests[22m[2m)[22m[32m 49[2mms[22m[39m
+ [32m✓[39m __tests__/pwa/mobile-install.test.tsx [2m([22m[2m19 tests[22m[2m)[22m[33m 393[2mms[22m[39m
+ [32m✓[39m __tests__/questions/kenchikushi2-staging.test.ts [2m([22m[2m11 tests[22m[2m)[22m[33m 759[2mms[22m[39m
+     [33m[2m✓[22m[39m keeps source manuscripts private and publishes both INT7 qualification projections [33m 641[2mms[22m[39m
+ ELIFECYCLE  Test failed. See above for more details.

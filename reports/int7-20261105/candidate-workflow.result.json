@@ -1,0 +1,15 @@
+{
+  "sourceHead": "1ca14f4ce39be16b8b00660800bd05a225ff0ee2",
+  "startedAt": "2026-11-04T18:41:39.425044+00:00",
+  "endedAt": "2026-11-04T18:41:41.946919+00:00",
+  "command": [
+    "node",
+    "--test",
+    ".github/scripts/e2e-workflow.test.mjs"
+  ],
+  "exitCode": 0,
+  "seconds": 2.52,
+  "log": "reports/int7-20261105/candidate-workflow.log",
+  "sha256": "605c9104f947f73ecf7dbcc29d99f7301d713b28262a0432eaa1fca73a64ea06",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

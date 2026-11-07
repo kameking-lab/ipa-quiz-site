@@ -1,0 +1,39 @@
+{
+  "nativeQuestionValidation": {
+    "command": "corepack pnpm validate:questions",
+    "exitCode": 0,
+    "questions": 26444,
+    "ok": 26444,
+    "fail": 0,
+    "preexistingWarnings": 16808
+  },
+  "peImport": {
+    "command": "python -X utf8 scripts/import-lq3-manuscripts.py",
+    "exitCode": 0,
+    "officialAnswerMatches": 595,
+    "choiceReasons": 2975,
+    "scored": 594
+  },
+  "relatedTests": {
+    "command": "corepack pnpm exec vitest run <20 related test files> --maxWorkers=2",
+    "exitCode": 0,
+    "files": 20,
+    "tests": 146
+  },
+  "typecheck": {
+    "command": "corepack pnpm typecheck",
+    "exitCode": 0,
+    "note": "Prisma client generated locally after install --ignore-scripts; no dependency or lockfile changes."
+  },
+  "stoppedBroadTestRun": {
+    "note": "Initial pnpm test -- argument forwarding unexpectedly ran the full suite; interrupted it and reran only the related files. An unrelated API timing test timed out during that interrupted run; no full-suite pass is claimed."
+  },
+  "independentReview": {
+    "model": "gpt-6-astra",
+    "cli": "0.166.0",
+    "sandbox": "read-only",
+    "initialVerdict": "PASS",
+    "finalVerdict": "PASS",
+    "finalReceipt": "reports/LQ3-20261104/astra-review-final.md"
+  }
+}

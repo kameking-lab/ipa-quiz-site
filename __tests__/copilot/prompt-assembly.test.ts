@@ -5,10 +5,9 @@ import { COPILOT_SYSTEM_PROMPT } from "@/lib/ai/prompts";
 import type { Question, ExamCode, Season, Session } from "@/lib/questions/types";
 
 // assembleCopilotPrompt は AI コパイロット（B軸＝差別化中核）の system プロンプトと
-// user メッセージ列を組み立てる純関数。セクションの順序・条件付き挿入（キャラクター/
-// 応答長/RAG/プロフィール）・クイックアクションの先頭付与・入力非破壊は、崩れると
+// user メッセージ列を組み立てる純関数。セクションの順序・条件付き挿入（応答長/RAG/プロフィール）・クイックアクションの先頭付与・入力非破壊は、崩れると
 // モデルへ渡る文脈が静かにずれ（誤った口調・出典逸脱・プロフィール誤適用）るため、
-// 現挙動を回帰固定する。依存（prompts.ts / characters.ts）の文言ではなく組み立てロジックを検証。
+// 現挙動を回帰固定する。依存（prompts.ts）の文言ではなく組み立てロジックを検証。
 
 function q(partial: Partial<Question> & { id?: string } = {}): Question {
   return {
@@ -76,23 +75,19 @@ describe("assembleCopilotPrompt - minimal", () => {
 });
 
 describe("assembleCopilotPrompt - セクション順序", () => {
-  it("COPILOT → character → length → ragDirective → 問題コンテキスト の順で並ぶ", () => {
+  it("COPILOT → length → ragDirective → 問題コンテキスト の順で並ぶ", () => {
     const out = assembleCopilotPrompt(
       baseInput({
-        character: "haru",
-        characterEnabled: true,
         responseLength: "short",
         ragDirective: "<<RAG_DIRECTIVE_SENTINEL>>",
       }),
     );
     const iSystem = out.system.indexOf(COPILOT_SYSTEM_PROMPT);
-    const iChar = out.system.indexOf(CHARACTER_HARU_MARK);
     const iLen = out.system.indexOf(LENGTH_SHORT_MARK);
     const iRag = out.system.indexOf("<<RAG_DIRECTIVE_SENTINEL>>");
     const iQ = out.system.indexOf(QUESTION_CONTEXT_MARK);
     expect(iSystem).toBe(0);
-    expect(iSystem).toBeLessThan(iChar);
-    expect(iChar).toBeLessThan(iLen);
+    expect(iSystem).toBeLessThan(iLen);
     expect(iLen).toBeLessThan(iRag);
     expect(iRag).toBeLessThan(iQ);
   });
@@ -112,20 +107,11 @@ describe("assembleCopilotPrompt - セクション順序", () => {
   });
 });
 
-describe("assembleCopilotPrompt - キャラクター付与の門番", () => {
-  it("characterEnabled かつ有効 id のときのみ characterPrompt を入れる", () => {
-    const out = assembleCopilotPrompt(baseInput({ character: "haru", characterEnabled: true }));
-    expect(out.system).toContain(CHARACTER_HARU_MARK);
-  });
-
-  it("characterEnabled=false なら有効 id でも入れない", () => {
-    const out = assembleCopilotPrompt(baseInput({ character: "haru", characterEnabled: false }));
-    expect(out.system).not.toContain(CHARACTER_HARU_MARK);
-  });
-
-  it("不正な character id は無視される", () => {
-    const out = assembleCopilotPrompt(baseInput({ character: "unknown-x", characterEnabled: true }));
-    expect(out.system).not.toContain(CHARACTER_HARU_MARK);
+describe("retired character preferences", () => {
+  it.each(["momo", "haru", "zan"])("ignores a legacy %s payload without changing the standard prompt", (character) => {
+    const standard = baseInput();
+    const legacy = { ...standard, character, characterEnabled: true };
+    expect(assembleCopilotPrompt(legacy)).toEqual(assembleCopilotPrompt(standard));
   });
 });
 

@@ -1,3 +1,7 @@
+import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
+import int8RuntimePins from "./fixtures/int8-runtime-pins.json";
+import kperfRuntimePins from "./fixtures/kperf1-runtime-pins.json";
+import petdevRuntimePins from "./fixtures/petdev1-runtime-pins.json";
 import { integrationOracle, runtimeFingerprint, normalizedTextSha256, repositoryTextSha256, sourceFilesUnder } from './fixtures/native-integration-oracle';
 import { describe,expect,it } from 'vitest';
 import { existsSync, readFileSync } from 'node:fs';
@@ -27,7 +31,7 @@ const exam='aviation-comm';
 describe('aviation communication68 local registration candidate',()=>{
  it('registers exactly68 ready originals through eager/lazy/strict/home without changing the IPA-only list',async()=>{
   expect(questions).toHaveLength(68);expect(new Set(questions.map(q=>q.id)).size).toBe(68);
-  expect(getRegisteredExamCodes()).toHaveLength(84);expect(getRegisteredExamCodes()).toContain(exam);expect(ALL_EXAM_CODES).not.toContain(exam);
+  expect(new Set(getRegisteredExamCodes())).toEqual(new Set(ALL_QUIZ_EXAM_CODES));expect(getRegisteredExamCodes()).toContain(exam);expect(ALL_EXAM_CODES).not.toContain(exam);
   expect(await getQuestionsForExam(exam)).toEqual(questions);expect(QUESTIONS_BY_EXAM[exam]).toEqual(questions);expect(ALL_QUESTIONS.filter(q=>q.exam===exam)).toEqual(questions);expect(getQuestionsByExamStrict(exam)).toEqual(questions);expect(questions.every(isPracticeReadyQuestion)).toBe(true);
   const home=getHomeDirectory().flatMap(d=>[...d.featured,...d.compact]).find(q=>q.key===exam)!;expect(home.questionCount).toBe(68);expect(home.periodLabel).toBe('2期分');expect(home.href).toBe('/aviation-comm');
  });
@@ -70,9 +74,19 @@ describe('aviation communication68 local registration candidate',()=>{
   // IOS1 (666a49bca) added NativeQuestionGate; refresh only the reviewed UI pins.
   // Reviewed 2026-11-01 urgent release recipe: inline AI, original-answer rewards,
   // next-question focus/loading and explicit retirement of generated questions.
+  // PETDEV1 retries dropped result focus after paint; only the reviewed UI pin changes.
+  // KPERF1 defers only decorative animation chunks after KGROW1's continuity UI.
+  // PETDEV1 replaces only legacy pet submission and shares pre-write SRS
+  // evidence. The KPERF1 oracle stays historical; the reviewed new handler has
+  // its own pin and behavior/performance checks.
+  // The prior KGROW1/PRK fixtures stay intact as provenance;
+  // rewards, answers and every original-data/core pin below remain exact.
   // The historical pre-reward oracle remains unchanged as provenance.
-  expect(normalizedTextSha256(player)).toBe('2ff5e6f8fb8e3c449222f3e45232697af9d455699df5023874fdc3f075b4ef43');
+  expect(normalizedTextSha256(player)).toBe(int8RuntimePins['components/quiz/QuizPlayer.tsx']);
   expect(player).toContain('NativeQuestionGate');
+  expect(petdevRuntimePins.previousCommitAnswer).toBe(kperfRuntimePins.commitAnswer);
+  expect(normalizedTextSha256(player.slice(player.indexOf('  const commitAnswer ='), player.indexOf('  const onNativeBAnswer =')))).toBe(petdevRuntimePins.commitAnswer);
+  expect(player).not.toContain('ExamNoteGuide');
   expect(player).not.toContain('GenerateSimilar');
   expect(player).not.toContain('/api/generate-question');
   expect(player).toContain('recordStudyReward(');
@@ -88,8 +102,7 @@ describe('aviation communication68 local registration candidate',()=>{
   // Only these display components have separately accepted UI extensions.
   // Every original-data/core pin and the 338-record runtime fingerprint above remain exact.
   const reviewedDisplayPins: Readonly<Record<string,string>> = {
-    'components/quiz/stream/StreamQuizPlayer.tsx': 'bb8f4a70a3f02b18fb4a09b5200acf35aa8a9e7103688502085fa4637fc22abb',
-    'components/quiz/QuestionAnswerCard.tsx': 'a7b27821a5ddec47060353daee7cad3ffa8b455f7472d837b34a55c73c6ad3c4',
+    ...int8RuntimePins,
   };
   for(const pin of oracle.files)expect(repositoryTextSha256(pin.path),pin.path).toBe(reviewedDisplayPins[pin.path] ?? pin.sha256);
  });

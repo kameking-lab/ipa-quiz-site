@@ -59,7 +59,7 @@ const FEATURE_BUCKETS: Array<{ feature: string; match: (path: string) => boolean
   { feature: "論文添削", match: (p) => p.startsWith("/essay") || p.startsWith("/essays") },
   { feature: "模試", match: (p) => p.startsWith("/mock-exam") },
   { feature: "ブログ", match: (p) => p.startsWith("/blog") },
-  { feature: "ランキング", match: (p) => p.startsWith("/ranking") },
+  { feature: "模試記録", match: (p) => p.startsWith("/ranking") },
   { feature: "用語集", match: (p) => p.startsWith("/glossary") || p.startsWith("/keywords") },
 ];
 

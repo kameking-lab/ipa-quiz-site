@@ -1,0 +1,19 @@
+{
+  "label": "quiet-native-regression",
+  "command": [
+    "pnpm",
+    "exec",
+    "vitest",
+    "run",
+    "__tests__/billing/QuizClient.quiet.test.tsx",
+    "__tests__/billing/QuizClient.player.test.tsx",
+    "__tests__/components/QuizPlayer.completion.test.tsx",
+    "--maxWorkers=2"
+  ],
+  "sourceHead": "1856dce9967d969fd8ae28d0670bd321c93d2aae",
+  "startedAt": "2026-11-04T11:04:45.855Z",
+  "finishedAt": "2026-11-04T11:05:04.076Z",
+  "exitCode": 0,
+  "logSha256": "972f47a02fde824064c387d65e71ba790edddf8033c29adbeb3a37028ee05d48",
+  "environment": "CI=true; inherited service credentials and mobile/feedback rollout configuration removed; no secret env files loaded"
+}

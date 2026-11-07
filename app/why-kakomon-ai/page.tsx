@@ -111,7 +111,7 @@ const STRENGTH_CARDS = [
   },
   {
     title: "AI 午後採点（β）",
-    body: "応用情報・高度試験の午後記述・論文を AI が即時添削。配点根拠と改善点を提示し、添削サイクルを 30 秒に短縮。",
+    body: "ST・SA・PM・SM・AU向けの独自練習問題で論述を見直します。AI添削は学習用の参考評価で、提供状態と利用条件は各画面で確認できます。",
     href: "/features/essay-grading",
     label: "AI 採点を試す",
   },

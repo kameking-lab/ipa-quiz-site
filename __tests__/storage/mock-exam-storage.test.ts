@@ -28,6 +28,12 @@ beforeEach(() => {
 });
 
 describe("recordMockExam / getMockExamHistory", () => {
+  it("does not duplicate a submitted session", () => {
+    const result = makeResult({ id: "same-session" });
+    recordMockExam(result);
+    recordMockExam(result);
+    expect(getMockExamHistory()).toEqual([result]);
+  });
   it("returns empty history for a brand-new user", () => {
     expect(getMockExamHistory()).toEqual([]);
   });

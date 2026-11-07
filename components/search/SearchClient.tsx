@@ -1,4 +1,5 @@
 "use client";
+import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -37,10 +38,7 @@ import type {
 
 type SearchSort = "relevance" | "year_desc" | "category" | "random";
 
-const EXAM_OPTIONS: ExamCode[] = ["kanteishi", "kaikeishi",
-  "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kai-toku2",
-  "ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "fp1", "fp2", "fp3", "takken", "tohan", "kanri",
-];
+const EXAM_OPTIONS = ALL_QUIZ_EXAM_CODES;
 const SEASON_OPTIONS: Season[] = ["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai", "february", "june", "august", "march", "round1", "round2"];
 const DIFFICULTY_OPTIONS: Difficulty[] = [1, 2, 3, 4, 5];
 const SORT_OPTIONS: { value: SearchSort; label: string }[] = [
@@ -60,6 +58,8 @@ interface SearchHit {
   season: Season;
   session: Session;
   qNumber: number;
+  officialQuestionLabel?: string;
+  sourceEdition?: string;
   part?: QuestionPart;
   category: string;
   topicTags: string[];
@@ -1051,7 +1051,7 @@ function ResultItem({ hit, tokens }: { hit: SearchHit; tokens: string[] }) {
               {examLabel(hit.exam)}
             </Badge>
             <span className="text-[11px] font-medium text-muted-foreground">
-              {formatYearSeason(hit.year, hit.season)} 問{hit.qNumber}
+              {hit.sourceEdition ?? formatYearSeason(hit.year, hit.season)} {hit.officialQuestionLabel ?? `問${hit.qNumber}`}
             </span>
             <span className="text-[10px] text-muted-foreground">★{hit.difficulty}</span>
           </div>

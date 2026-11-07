@@ -9,6 +9,17 @@ function isMorningKnowledge(q: Question): boolean {
   return (q.type === "multiple-choice" || q.type === "numeric" || q.type === "ordering") && MORNING_KNOWLEDGE_SESSIONS.has(q.session);
 }
 
+/** Keep in-place practice in the same qualification, subject and answer format. */
+export function getPracticeRelatedQuestions(current: Question, pool: Question[], limit = 3): Question[] {
+  const tags = new Set(current.topicTags.filter(isSubjectTopicTag));
+  return pool.filter((q) => q.id !== current.id && q.exam === current.exam &&
+    q.session === current.session && q.category === current.category && q.type === current.type &&
+    isPracticeReadyQuestion(q))
+    .map((q) => ({ q, shared: q.topicTags.filter((tag) => tags.has(tag)).length }))
+    .sort((a, b) => b.shared - a.shared || b.q.year - a.q.year || a.q.qNumber - b.q.qNumber)
+    .slice(0, limit).map(({ q }) => q);
+}
+
 /**
  * クロスリンク先として安全な問題か（404/noindex 先を作らない）。
  * needsReview は /q ページで notFound()（404）、プレースホルダ解説は noindex。

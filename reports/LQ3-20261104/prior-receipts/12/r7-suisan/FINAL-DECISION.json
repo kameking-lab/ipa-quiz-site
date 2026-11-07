@@ -1,0 +1,62 @@
+{
+  "scope": "qual-new:12",
+  "atJst": "2026-11-01T19:19:56.828127+09:00",
+  "classification": "PRIVATE_ORIGINAL_CONTENT_ACCEPTED_READY_FOR_MAIN",
+  "originalQuestions": 35,
+  "choiceReasons": 175,
+  "officialYear": 2025,
+  "officialDepartment": 14,
+  "officialNumbers": "Ⅲ-1〜35",
+  "originalSourcePages": 22,
+  "inventedQuestionsAdopted": 0,
+  "rewrittenQuestionsAdopted": 0,
+  "sourceRepresentation": "公式原本PDF・ページ画像不変",
+  "privateContentComplete": true,
+  "independentContentAcceptanceComplete": true,
+  "mainContentAdoptionReady": true,
+  "sharedIntegrationComplete": false,
+  "publicRelease": false,
+  "reviewedCorpusSha256": "fe587d33ba37d3775b6373cc912c1b745105abb7401577e949d75396393ed451",
+  "acceptanceReceipts": [
+    {
+      "path": "review/q01-14-final.json",
+      "sha256": "52a2be7110c3720a117ee7a7f80dba3a3e0d88349a199b46c3cf90e89245138f"
+    },
+    {
+      "path": "review/q15-24-final.json",
+      "sha256": "985cc61e1d7ff91ef4302b5cbd003dded78f3f1adcfd111cd41b6467207077be"
+    },
+    {
+      "path": "review/q25-35-final.json",
+      "sha256": "084ce0e06f733ec2f52f307458f0db344eaaeb8074ee8354a10d9eabaeb36ec5"
+    }
+  ],
+  "allowedContentEntry": "originals-and-explanations.json",
+  "mainSchemaPayload": "main-image-questions.json",
+  "schemaContract": "schema-adapter-contract.json",
+  "exactSourcePolicy": "main-image-questionsのquestionは問題を識別する案内、choicesは回答番号だけ。原問全文はimageUrls内の公式画像。案内・番号を原文の転記と主張しない。",
+  "remainingPrivateContentOperations": [],
+  "remainingMainOnlyOperations": [
+    "ExamCodeと水産部門catalog・読み込み登録",
+    "asset-mapの22画像配置と35問データの結合",
+    "原問画像と指定問番号・番号入力の同時表示、公式順固定の局所確認"
+  ],
+  "outOfScope": [
+    "基礎・適性科目の新規制作",
+    "別年度の追加",
+    "旧note商品編集",
+    "公開・build・preview・deploy・merge・publicpush",
+    "実runtimeとの全同一性・全文テキストアクセシビリティの保証"
+  ],
+  "excludedCandidates": [
+    "questions.json",
+    "assets/q03-management.svg",
+    "excluded-adapted-draft/**"
+  ],
+  "sharedWrites": 0,
+  "externalMaxOpusSends": 0,
+  "paidApiCalls": 0,
+  "builds": 0,
+  "deployments": 0,
+  "denialBypasses": 0
+}

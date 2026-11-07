@@ -1,7 +1,6 @@
 import { describe, expect, it } from "vitest";
 
 import { getAllBlogPosts, getBlogPostBySlug } from "@/data/blog";
-import { AI_QUOTA_COPY_SHORT } from "@/lib/constants/ai-quota";
 
 // The free AI-copilot quota is owned by lib/constants/ai-quota.ts
 // (FREE_AI_DAILY_LIMIT = 10). The constant's own comment records that some
@@ -23,11 +22,17 @@ describe("blog copy: AI quota claims derive from the SSOT, never a stale literal
     expect(offenders).toEqual([]);
   });
 
-  it("the roadmap article reflects the current no-ten-question-gate copy", () => {
+  it("the roadmap distinguishes published content from generation and links to current terms", () => {
     const post = getBlogPostBySlug("kakomon-ai-roadmap-2026");
     expect(post).toBeDefined();
-    expect(post!.body).toContain(AI_QUOTA_COPY_SHORT);
+    expect(post!.body).toContain("(/billing)");
+    expect(post!.body).toContain("連続演習には無料枠と月額プランがあります");
+    expect(post!.body).toContain("利用停止中");
     expect(post!.body).not.toContain("初回 10 回");
     expect(post!.body).not.toContain("30 回");
+  });
+  it("no generated article promotes the retired 300-yen offer or unsupported morning-efficiency multiplier", () => {
+    const offenders = posts.filter(post => /月\s*300\s*円|全試験・全機能|学習効率は\s*2[〜～]3\s*倍|効率は\s*2[〜～]3\s*倍/.test(post.body));
+    expect(offenders.map(post => post.slug)).toEqual([]);
   });
 });

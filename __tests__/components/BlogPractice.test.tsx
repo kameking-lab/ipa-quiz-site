@@ -1,0 +1,27 @@
+import { afterEach, beforeEach, expect, it, vi } from "vitest";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { BlogPractice } from "@/components/blog/BlogPractice";
+import type { Question } from "@/lib/questions/types";
+import { LS_KEYS } from "@/lib/storage/keys";
+vi.mock("@/components/quiz/QuestionCard", () => ({ QuestionCard: () => <p>問題本文</p> }));
+vi.mock("@/lib/posthog", () => ({ posthogCapture: vi.fn() }));
+const question = { id: "ap-blog-test", exam: "ap", year: 2025, season: "spring", session: "am", qNumber: 1, type: "multiple-choice", category: "基礎理論", choices: { ア: "誤答", イ: "正答" }, answer: "イ", explanation: "根拠の説明です。", question: "問題本文", sourcePdfUrl: "https://www.ipa.go.jp/test.pdf" } as Question;
+beforeEach(() => localStorage.clear());
+afterEach(cleanup);
+it("grades once, shows explanation and continuation, and respects the history setting", () => {
+  render(<BlogPractice question={question} reason="学習を体験" continueHref="/quiz?exam=ap&session=am" slug="test" explanation={<p>根拠の説明です。</p>} />);
+  expect(screen.queryByText("根拠の説明です。")).not.toBeInTheDocument();
+  fireEvent.click(screen.getByRole("radio", { name: /誤答/ }));
+  expect(screen.getByRole("status")).toHaveTextContent("不正解です。正解はイです");
+  expect(screen.getByText("根拠の説明です。")).toBeVisible();
+  expect(screen.getByRole("link", { name: "同じ分野の演習を続ける" })).toHaveAttribute("href", "/quiz?exam=ap&session=am");
+  fireEvent.click(screen.getByRole("radio", { name: /正答/ }));
+  expect(JSON.parse(localStorage.getItem(LS_KEYS.history)!).entries).toHaveLength(1);
+  cleanup(); localStorage.clear();
+  localStorage.setItem(LS_KEYS.settings, JSON.stringify({ recordHistory: false }));
+  render(<BlogPractice question={question} reason="学習を体験" continueHref="/quiz?exam=ap" slug="test" explanation={<p>根拠の説明です。</p>} />);
+  fireEvent.click(screen.getByRole("radio", { name: /正答/ }));
+  expect(screen.getByRole("status")).toHaveTextContent("正解です");
+  expect(localStorage.getItem(LS_KEYS.history)).toBeNull();
+  expect(localStorage.getItem(LS_KEYS.spacedRepetition)).toBeNull();
+});

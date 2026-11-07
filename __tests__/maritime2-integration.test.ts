@@ -1,3 +1,4 @@
+import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import { MARITIME2_ALL_QUESTIONS as stored, MARITIME2_QUESTIONS as ready } from "@/data/questions/maritime2";
@@ -26,7 +27,7 @@ describe("maritime2 registered original-only candidate", () => {
     expect(await getQuestionsForExam(exam)).toEqual(stored);
     expect(getQuestionsByExamStrict(exam)).toEqual(ready);
     expect(new Set(await getPoolIds({exam,mode:"random"}))).toEqual(new Set(ready.map(q=>q.id)));
-    expect(getRegisteredExamCodes()).toHaveLength(84);expect(ALL_EXAM_CODES).not.toContain(exam);
+    expect(new Set(getRegisteredExamCodes())).toEqual(new Set(ALL_QUIZ_EXAM_CODES));expect(ALL_EXAM_CODES).not.toContain(exam);
     expect(getQuestionsByExamStrict("kai-toku2")).toHaveLength(48);
     expect(defaultPracticeSession(exam)).toBe("kiso");
     expect(EXAM_CONFIGS[exam].sessions.map(s=>s.expectedQuestions)).toEqual([25,25,25,20]);
@@ -74,7 +75,7 @@ describe("maritime2 registered original-only candidate", () => {
   });
   it("registers the canonical on actual year/topic/stream and search entrypoints", () => {
     for(const file of ["app/modes/year/page.tsx","app/modes/topic/page.tsx","app/quiz/stream/page.tsx","app/api/search/questions/route.ts","components/search/SearchClient.tsx"]){
-      expect(readFileSync(file,"utf8")).toContain('"maritime2"');
+      expect(readFileSync(file,"utf8")).toContain("ALL_QUIZ_EXAM_CODES");
     }
   });
 });

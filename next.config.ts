@@ -62,29 +62,41 @@ const longCacheImmutable = {
 
 const nextConfig: NextConfig = {
   webpack(config, { webpack }) {
-    if (process.env.MOBILE_IAP_ENABLED === "true") {
+    if (process.env.WEB_STRICT_CONTENT_GATE === "true") {
+      config.resolve.alias["@/lib/kisho-study$"] = resolve(process.cwd(), "mobile/shared/gated-kisho-study.ts");
+      config.plugins.push(new webpack.NormalModuleReplacementPlugin(
+        /(?:^|[\\/])kisho-study(?:\.ts)?$/,
+        resolve(process.cwd(), "mobile/shared/gated-kisho-study.ts"),
+      ));
+      config.resolve.alias["@/lib/exam-library/reference-aware-grading-index$"] = resolve(process.cwd(), "mobile/shared/granted-paper-grading.ts");
       config.resolve.alias["@/lib/exam-library/survey-assistant-grading-index$"] = resolve(process.cwd(), "mobile/shared/granted-paper-grading.ts");
       // Next's TS-path resolver can resolve the import before the exact alias.
       // Replace both the original request and its resolved absolute resource.
       config.plugins.push(new webpack.NormalModuleReplacementPlugin(
-        /(?:^|[\\/])survey-assistant-grading-index(?:\.ts)?$/,
+        /(?:^|[\\/])(?:survey-assistant-grading-index|reference-aware-grading-index)(?:\.ts)?$/,
         resolve(process.cwd(), "mobile/shared/granted-paper-grading.ts"),
       ));
     }
     return config;
   },
   turbopack: {
-    resolveAlias: process.env.MOBILE_IAP_ENABLED === "true" ? {
+    resolveAlias: process.env.WEB_STRICT_CONTENT_GATE === "true" ? {
+      "@/lib/kisho-study": "./mobile/shared/gated-kisho-study.ts",
+      "./kisho-study": "./mobile/shared/gated-kisho-study.ts",
       "@/lib/exam-library/survey-assistant-grading-index": "./mobile/shared/granted-paper-grading.ts",
+      "@/lib/exam-library/reference-aware-grading-index": "./mobile/shared/granted-paper-grading.ts",
     } : {},
   },
   outputFileTracingIncludes: {
+    "/e-learning/exams": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json", "./data/exam-library/pe-first/*.json"],
+    "/api/home/resume": ["./data/exam-library/pe-first/*.json"],
+    "/api/copilot/exam-library": ["./data/exam-library/pe-first/*.json"],
+    "/e-learning/search": ["./data/exam-library/pe-first/*.json"],
+    "/e-learning/exams/*": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json", "./data/exam-library/pe-first/*.json"],
     "/api/mobile/catalog": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json"],
     "/api/mobile/download": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json"],
     "/api/billing/question": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json"],
     "/api/mobile/paper-results": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json"],
-    "/e-learning/exams": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json"],
-    "/e-learning/exams/*": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json"],
   },
   async redirects() {
     return [
@@ -135,10 +147,17 @@ const nextConfig: NextConfig = {
       // unified contact form; redirect so any stale link/bookmark lands there
       // instead of a 404.
       { source: "/feedback", destination: "/contact?type=error", permanent: true },
-      // /testimonials (旧「合格体験記・口コミ / ユーザーの声」) was folded into the
-      // richer /success-stories (「IPA試験 合格体験記｜13区分の合格者ストーリー集」).
-      // 301 protects inbound links / crawl equity for the 合格体験記 intent.
-      { source: "/testimonials", destination: "/success-stories", permanent: true },
+      // PRK: retire previews and fictional content in one hop (keep search/bookmarks).
+      { source: "/demo/afternoon", destination: "/demo/essay-grading", statusCode: 301 },
+      { source: "/ranking", destination: "/account/dashboard#mock-scores", statusCode: 301 },
+      { source: "/referral", destination: "/contact#legacy-benefits", statusCode: 301 },
+      { source: "/student", destination: "/contact#legacy-benefits", statusCode: 301 },
+      { source: "/success-stories", destination: "/blog", statusCode: 301 },
+      { source: "/success-stories/:exam(ip|sg|fe|ap|st|sa|pm|nw|db|es|sc|sm|au)/:slug*", destination: "/:exam", statusCode: 301 },
+      { source: "/success-stories/:path*", destination: "/blog", statusCode: 301 },
+      { source: "/admin/moderation", destination: "/admin", statusCode: 301 },
+      { source: "/admin/competitors", destination: "/admin", statusCode: 301 },
+      { source: "/testimonials", destination: "/blog", statusCode: 301 },
       // /trust (旧「信頼性ポリシー — なぜ過去問AIが選ばれるのか」) は同インテントの
       // /why-kakomon-ai（「過去問AI を選ぶ理由」）に統合済。301 で誘導する。
       { source: "/trust", destination: "/why-kakomon-ai", permanent: true },

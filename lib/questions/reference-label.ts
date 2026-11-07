@@ -17,6 +17,7 @@ export function questionReferenceLabel(q: Pick<Question, "exam" | "sourcePdfUrl"
     if (/\/(?:001450012|001450013|001450014|001427203|001427204|001427205)\.pdf$/.test(value)) return "公式答案用紙";
   }
   if (q.exam === "shika-ishi" && /(?:a|b|c|d)_02\.pdf$/.test(value)) return "公式別冊図版";
+  if (q.exam === "khk-reito-1" && /R[67]ACGZK-W\.pdf$/.test(value)) return "公式解答用紙";
   if (new URL(value).hostname === "laws.e-gov.go.jp") return "法令原文（適用時点を確認）";
   return "参照資料（資料内の対象・年度を確認）";
 }

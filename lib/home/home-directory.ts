@@ -25,7 +25,7 @@ import { getQuestionsByExamStrict, groupByYearSeason } from "@/lib/seo/exam-meta
  *  - 安全衛生: 各資格ハブと同じ getExamPaperStats の合計
  */
 
-export type HomeDomainId = "it" | "safety" | "electrical" | "construction" | "money" | "welfare";
+export type HomeDomainId = "it" | "safety" | "electrical" | "construction" | "money" | "welfare" | "automotive";
 
 export interface HomeDirectoryItem {
   key: string;
@@ -116,10 +116,37 @@ interface OtherCardDef {
   code: ExamCode;
   name: string;
   sub: string;
-  domain: Exclude<HomeDomainId, "it">;
+  domain: HomeDomainId;
 }
 
 const OTHER_CARDS: readonly OtherCardDef[] = [
+  { code: "khk-kagaku", name: "高圧ガス化学", sub: "甲種・乙種・丙種（液石・特別）422原問", domain: "safety" },
+  { code: "sekou-1kenchiku", name: "1級建築施工管理", sub: "第一次検定（令和7・8年度144問）", domain: "construction" },
+  {"code": "benrishi", "name": "弁理士（短答式）", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "money"},
+  {"code": "sokuryoshi", "name": "測量士", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "construction"},
+  {"code": "dokugeki-chiba", "name": "毒物劇物取扱者", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "safety"},
+  {"code": "jokaso-setsubishi", "name": "浄化槽設備士（学科）", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "construction"},
+  {"code": "chiiki-ryoko", "name": "地域限定旅行業務取扱管理者", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "money"},
+  {"code": "junkango-kansai", "name": "准看護師", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "welfare"},
+  {"code": "kukaku-seiri", "name": "土地区画整理士（学科）", "sub": "2026年度のみ40問。2025年度は未収録。", "domain": "construction"},
+  {"code": "dojo-osen", "name": "土壌汚染調査技術管理者", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "construction"},
+  {"code": "kenchikushi2", "name": "二級建築士（学科）", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "construction"},
+  {"code": "mokuzo-kenchikushi", "name": "木造建築士（学科）", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "construction"},
+  { code: "kenchikushi1", name: "一級建築士（学科）", sub: "令和7・8年の学科5科目（全員加点1問を除く）", domain: "construction" },
+  { code: "kisho", name: "気象予報士", sub: "第65・66回 学科60問・実技18問（手動照合）", domain: "safety" },
+  { code: "jken-katsuyo3", name: "J検 情報活用3級", sub: "令和8年度前期・令和7年度後期", domain: "it" },
+  { code: "jken-katsuyo2", name: "J検 情報活用2級", sub: "令和8年度前期・令和7年度後期", domain: "it" },
+  { code: "jken-katsuyo1", name: "J検 情報活用1級", sub: "令和8年度前期・令和7年度後期", domain: "it" },
+  { code: "gyosei", name: "行政書士", sub: "令和7・6年度の公式公開問題", domain: "money" },
+  { code: "career-consultant", name: "キャリアコンサルタント（学科）", sub: "公式問題・正答・全肢の独自解説を収録", domain: "welfare" },
+  { code: "kanri-eiyoshi", name: "管理栄養士", sub: "公式問題・正答・独自解説と原本図表を収録", domain: "welfare" },
+  { code: "caremanager", name: "ケアマネジャー", sub: "介護支援専門員実務研修受講試験", domain: "welfare" },
+  { code: "sogo-ryoko", name: "総合旅行業務取扱管理者", sub: "旅行業法令・約款の公式問題・正答・独自解説", domain: "money" },
+  { code: "shiho-tanto", name: "司法試験（短答）", sub: "憲法・民法・刑法の短答式", domain: "money" },
+  { code: "yobi-tanto", name: "予備試験（短答）", sub: "法律基本科目7科目の短答式", domain: "money" },
+  { code: "sokuryoshiho", name: "測量士補", sub: "国土地理院の公式問題・正答・独自解説", domain: "construction" },
+  { code: "kikai-hozen", name: "機械保全技能士 2級", sub: "機械系保全作業 学科（真偽法・四肢択一）", domain: "safety" },
+  { code: "tsukanshi", name: "通関士", sub: "通関業法・関税法等・通関実務", domain: "money" },
   { code: "kanteishi", name: "不動産鑑定士", sub: "令和7・8年度 短答式160問・全肢解説", domain: "money" },
   { code: "kaikeishi", name: "公認会計士", sub: "令和8年試験 第I・II回 短答式186問・全肢解説", domain: "money" },
   { code: "maritime1", name: "第一級海上無線通信士", sub: "2026年3月・9月 日本語筆記4科目190問・全肢解説・原図209枚、B40問は各5枠", domain: "electrical" },
@@ -149,6 +176,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "denken2", name: "電験二種", sub: "一次試験（理論・電力・機械・法規）", domain: "electrical" },
   { code: "denken1", name: "電験一種", sub: "一次試験（理論・電力・機械・法規の各1問）", domain: "electrical" },
   { code: "denko2", name: "第二種電気工事士", sub: "学科試験", domain: "electrical" },
+  { code: "kenchiku-setsubishi", name: "建築設備士", sub: "第一次試験（令和7・8年、確認中1問を除く）", domain: "construction" },
   { code: "civil1", name: "1級土木施工管理", sub: "第一次検定（問題A・B）", domain: "construction" },
   { code: "denko1", name: "第一種電気工事士", sub: "学科試験", domain: "electrical" },
   { code: "civil2", name: "2級土木施工管理", sub: "第一次検定（土木）", domain: "construction" },
@@ -163,8 +191,10 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "takken", name: "宅建", sub: "宅地建物取引士資格試験", domain: "money" },
   { code: "kaigo", name: "介護福祉士", sub: "国家試験（総合問題を含む）", domain: "welfare" },
   { code: "shakai", name: "社会福祉士", sub: "国家試験（共通・専門科目）", domain: "welfare" },
+  { code: "shinrishi", name: "公認心理師", sub: "国家試験（午前・午後）", domain: "welfare" },
   { code: "seishin", name: "精神保健福祉士", sub: "国家試験（専門・共通科目）", domain: "welfare" },
-  { code: "tohan", name: "登録販売者", sub: "関西広域連合（前半・後半）", domain: "welfare" },
+  { code: "tohan", name: "登録販売者", sub: "令和6・7年度 各120問（前半・後半）", domain: "welfare" },
+  { code: "chizai2", name: "知的財産管理技能検定2級", sub: "第53・54回 学科・実技160原問と全肢解説", domain: "money" },
   { code: "kanri", name: "管理業務主任者", sub: "2024・2025年度の公式公開問題", domain: "money" },
   { code: "eisei1", name: "第一種衛生管理者", sub: "2025年10月・2026年4月公表（88問）", domain: "safety" },
   { code: "eisei2", name: "第二種衛生管理者", sub: "2025年10月・2026年4月公表（60問）", domain: "safety" },
@@ -174,6 +204,10 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "kashikin", name: "貸金業務取扱主任者", sub: "第20回・第19回公式問題（100問）", domain: "money" },
   { code: "sharoushi", name: "社会保険労務士", sub: "第58・57回 択一式・選択式を部分収録", domain: "welfare" },
   { code: "kangoshi", name: "看護師", sub: "第115・114回 午前・午後の確認済み原問を部分収録", domain: "welfare" },
+  { code: "biyoshi", name: "美容師", sub: "第53・54回の確認済み106問（4問保留）", domain: "welfare" },
+  { code: "kikenbutsu-otsu1", name: "危険物取扱者 乙種第1類", sub: "2026年6月公表版・性質/消火の実出題抜粋10問", domain: "safety" },
+  { code: "kikenbutsu-otsu2", name: "危険物取扱者 乙種第2類", sub: "2026年6月公表版・性質/消火の実出題抜粋10問", domain: "safety" },
+  { code: "kikenbutsu-otsu6", name: "危険物取扱者 乙種第6類", sub: "2026年6月公表版・性質/消火の実出題抜粋10問", domain: "safety" },
   { code: "riyoshi", name: "理容師", sub: "第54・53回の全110原問・全肢解説", domain: "welfare" },
   { code: "hokenshi", name: "保健師", sub: "国家試験の確認済み原問を部分収録", domain: "welfare" },
   { code: "josanshi", name: "助産師", sub: "国家試験の確認済み原問を部分収録", domain: "welfare" },
@@ -183,6 +217,9 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "rinsho-kogishi", name: "臨床工学技士", sub: "第39・38回の午前・午後から確認済み220問を部分収録", domain: "welfare" },
   { code: "gas-kou", name: "ガス主任技術者 甲種", sub: "令和8・7年度 法令・基礎・ガス技術", domain: "safety" },
   { code: "gas-otsu", name: "ガス主任技術者 乙種", sub: "令和8・7年度 法令・基礎・ガス技術", domain: "safety" },
+  { code: "khk-reito-1", name: "第一種冷凍機械", sub: "令和7・6年度", domain: "safety" },
+  { code: "khk-reito-2", name: "第二種冷凍機械", sub: "令和7・6年度", domain: "safety" },
+  { code: "khk-reito-3", name: "第三種冷凍機械", sub: "令和7・6年度", domain: "safety" },
   { code: "gas-hei", name: "ガス主任技術者 丙種", sub: "令和8・7年度 法令・基礎・ガス技術", domain: "safety" },
   { code: "shino-kunrenshi", name: "視能訓練士", sub: "第56・55回 午前・午後の確認済み220原問を部分収録", domain: "welfare" },
   { code: "rinsho-kensagishi", name: "臨床検査技師", sub: "\u7b2c72\u30fb71\u56de\uff082026\u30fb2025\u5e74\u5b9f\u65bd\uff09\u5348\u524d\u30fb\u5348\u5f8c\u306e\u78ba\u8a8d\u6e08\u307f\u539f\u554f\u3092\u90e8\u5206\u53ce\u9332", domain: "welfare" },
@@ -268,10 +305,26 @@ function domain(
 }
 
 export function getHomeDirectory(): HomeDirectoryDomain[] {
-  const others = OTHER_CARDS.filter((def) => isLiveExam(def.code)).map((def) => ({ def, item: otherItem(def) }));
+  const catalogDomains: Record<string, OtherCardDef["domain"]> = {
+    "information-technology": "it", finance: "money", "real-estate": "money", accounting: "money",
+    electrical: "electrical", construction: "construction", safety: "safety", legal: "money",
+    welfare: "welfare", pharmacy: "welfare", "personal-services": "welfare",
+  };
+  const additionalCards: OtherCardDef[] = QUALIFICATION_CATALOG.flatMap((entry) => {
+    if (entry.status !== "live" || !entry.examCode || entry.domain === "automotive" || OTHER_CARDS.some((card) => card.code === entry.examCode)) return [];
+    return [{ code: entry.examCode, name: entry.shortName, sub: entry.reuseSummary, domain: catalogDomains[entry.domain] ?? "safety" }];
+  });
+  const others = [...OTHER_CARDS, ...additionalCards].filter((def) => isLiveExam(def.code)).map((def) => ({ def, item: otherItem(def) }));
   const byDomain = (id: OtherCardDef["domain"]) => others.filter(({ def }) => def.domain === id).map(({ item }) => item);
 
   const domains = [
+    domain(
+      { id: "automotive", title: "自動車整備", lead: "自動車整備技能登録試験の学科。資格別に確認済みの原問を部分収録。", allHref: "/qualifications", allLabel: "資格ごとの収録範囲を見る" },
+      QUALIFICATION_CATALOG.filter((item) => item.domain === "automotive" && item.status === "live" && item.examCode).map((item) => {
+        const exam = item.examCode!;
+        return { ...otherItem({ code: exam, name: item.shortName, sub: item.reuseSummary, domain: "automotive" }), periodLabel: `${examPeriodCount(exam)}回分` };
+      }),
+    ),
     domain(
       {
         id: "it",
@@ -280,7 +333,7 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
         allHref: "/ipa",
         allLabel: "IPAの試験をすべて見る",
       },
-      IPA_FEATURED.map(ipaItem),
+      [...IPA_FEATURED.map(ipaItem), ...byDomain("it")],
       IPA_ADVANCED.map(ipaItem),
     ),
     domain(

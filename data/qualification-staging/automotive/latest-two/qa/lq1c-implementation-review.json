@@ -1,0 +1,39 @@
+{
+  "model": "gpt-6-astra",
+  "verdict": "PASS",
+  "scope": {
+    "baselineCommit": "c926248a5",
+    "reviewType": "Independent implementation and provenance review; domain content review excluded as requested.",
+    "filesReviewed": [
+      "scripts/automotive/accept-lq1c.py",
+      "scripts/automotive/prepare-lq1c.py",
+      "scripts/automotive/revise-lq1c.py",
+      "scripts/automotive/refresh-release-metadata.py",
+      "scripts/automotive/materialize-reviewed-release.py",
+      "__tests__/automotive-release.test.ts",
+      "data/qualification-staging/automotive/latest-two/qa/lq1b-recovery-ledger.json",
+      "data/qualification-staging/automotive/latest-two/qa/lq1c-progress.json",
+      "data/questions/automotive/README.md"
+    ],
+    "verified": [
+      "Exact frozen 85-ID scope matches candidate IDs and expectedIds.",
+      "All prior 525 released objects and ledger rows are unchanged from the baseline.",
+      "Current release contains 580 unique IDs, including exactly 55 LQ1C additions.",
+      "All 55 additions match current candidates and independent gpt-6-astra PASS receipts with answer, four-explanation, and source-page checks.",
+      "All 580 release hashes and copied evidence hashes match their ledger bindings.",
+      "All 85 progress decisions match copied evidence; PASS decisions exactly match the admitted continuation set.",
+      "All 29 remaining IDs and one reference ID are excluded from grading.",
+      "All 13 revised candidates remain excluded pending matching accepted PASS evidence.",
+      "Qualification counts, public assets, catalog, SEO, and README reproduce current outputs.",
+      "Documented next-run acceptance, materialization, and metadata refresh workflow inspected; dry execution with writes intercepted produced no output differences."
+    ],
+    "tests": {
+      "command": "pnpm exec vitest run __tests__/automotive-release.test.ts",
+      "passed": 4,
+      "failed": 0
+    },
+    "constraints": "No product or candidate edits, domain re-review, agents, secrets, commits, pushes, PRs, or deployment. Rights treated as owner verified."
+  },
+  "limitations": [],
+  "findings": []
+}

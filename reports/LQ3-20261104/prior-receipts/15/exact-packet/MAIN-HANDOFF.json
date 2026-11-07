@@ -1,0 +1,48 @@
+{
+  "scope": "qual-new:15",
+  "atUTC": "2026-11-01T19:08:10.261971+00:00",
+  "status": "PRIVATE_EXACT_ORIGINAL_PACKET_READY_FOR_MAIN",
+  "mainOwner": "01a18919-2bca-71a1-aee9-c0486fa7203b",
+  "content": "questions-2025-annual.json",
+  "contentSHA256": "df82fd04eb75edb17170a91ef90767467621eac687b0011c8b14a0ffc7f6e430",
+  "counts": {
+    "actualPastQuestions": 35,
+    "choiceReasons": 175,
+    "questionImages": 35,
+    "originalDiagrams": 0,
+    "inventedQuestions": 0
+  },
+  "adoptOnlyThisVersion": true,
+  "doNotAdopt": [
+    "outputs/packet/questions-2025-annual.json",
+    "outputs/qual-new15-r7-private-packet.zip"
+  ],
+  "dataDestination": "data/questions/gijutsushi1-oyo/2025-annual.json",
+  "assetDestination": "public/images/questions/gijutsushi1-oyo/2025/q01.png〜q35.png",
+  "presentationContract": [
+    "原問本文と①〜⑤はimageUrlsの公式画像を表示する。questionは原問番号への案内、choicesは番号参照であり、これを問題全文と誤認しない。",
+    "解説と175肢理由は画像の同じ公式番号へ対応。内部キーア〜オと公式①〜⑤の順序を変えない。",
+    "Q12のquestionNoticeは原問訂正ではなく解説上の留保として区別する。",
+    "画像を省略したテキストのみの出題、要約版への差戻しは禁止。"
+  ],
+  "acceptance": {
+    "originalAgreement": "ORIGINAL-ACCEPTANCE.json",
+    "assetBindingAndReuse": "STATIC-VALIDATION.json",
+    "oldExplanationsOnly": "REUSED-INDEPENDENT-REVIEW.json",
+    "reuseBoundary": "同一の35解説・175肢理由を継承。旧PASS_CONTENTは原文一致の証明に使わない。"
+  },
+  "mainOnlyRemaining": [
+    "新examCode gijutsushi1-oyoを共有型・資格登録に追加し、senmon/2025/annualを正規loaderへ接続",
+    "35 PNGを上記public pathへ接続。画像を含めた通常問題表示と①〜⑤選択→175肢解説の対応をmainの適用差分として受入",
+    "画面の縮小時可読性・拡大表示は実UIで未確認。必要な通常表示受入をmainが実施",
+    "本番公開は今回対象外。私有採用と公開を区別"
+  ],
+  "localWorkRemaining": [],
+  "sharedAdoption": 0,
+  "uiAcceptance": "NOT_RUN",
+  "published": false,
+  "accessibilityLimit": "画像本文の逐語テキスト代替は未提供。altは設問の識別説明のみ。原文の意味を改変する要約を代替テキストとして採用しない。",
+  "rights": "本人担当。権利再調査を新gateにしない。IPEJ-attributedは既存分類値で新規許諾取得の主張ではない。",
+  "apiCalls": 0,
+  "apiReason": "原問画像の機械的切出しと同一解説の再利用に追加生成の利点なし。独立原問検収を実施。"
+}

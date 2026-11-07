@@ -62,6 +62,17 @@ beforeEach(() => {
   createHistoryStore().reset();
 });
 
+it.each([true, false])("grades stream numeric answers and records the actual result (%s)", correct => {
+  const numeric: Question = { ...questions[0]!, id: "energy-numeric-stream", exam: "energy-kanri", type: "numeric", choices: undefined,
+    answer: "12.3", numericAnswer: { format: "decimal", precision: 1, unit: "kW" } };
+  render(<StreamQuizPlayer questions={[numeric]} />);
+  fireEvent.change(screen.getByRole("textbox"), { target: { value: correct ? "12.3" : "0.1" } });
+  fireEvent.click(screen.getByRole("button", { name: "採点する" }));
+  expect(screen.getByText("正解: 12.3 kW")).toBeInTheDocument();
+  expect(createHistoryStore().getAllEntries()).toMatchObject([{ id: numeric.id, selected: correct ? "12.3" : "0.1", correct }]);
+  expect(screen.getByRole("button", { name: "次の問題へ" })).toBeInTheDocument();
+});
+
 // The stream player's number-key handler must not hijack Ctrl/Cmd+1–4
 // (browser tab switching). Selections are recorded to history, so absence of a
 // recorded entry proves the choice was not selected.

@@ -20,11 +20,12 @@ test.describe("精神保健福祉士 第27回", () => {
     await expect(page.getByText("正解！").first()).toBeVisible();
   });
 
-  test("common questions are self-canonical and held questions are not published", async ({ request }) => {
+  test("common questions point to the identical shakai 第37回 page and held questions are not published", async ({ request }) => {
     const html = await (await request.get("/q/seishin/2024-annual/kyotsu/q1")).text();
-    expect(html).toMatch(/<link rel="canonical" href="[^"]*\/q\/seishin\/2024-annual\/kyotsu\/q1"/);
+    expect(html).toMatch(/<link rel="canonical" href="[^"]*\/q\/shakai\/2024-annual\/kyotsu\/q1"/);
     for (const n of [4, 69, 76]) {
       expect((await request.get(`/q/seishin/2024-annual/kyotsu/q${n}`)).status(), `q${n}`).toBe(404);
+      expect((await request.get(`/q/shakai/2024-annual/kyotsu/q${n}`)).status(), `shakai q${n}`).toBe(404);
     }
   });
 });

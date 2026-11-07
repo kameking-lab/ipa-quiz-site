@@ -1,0 +1,41 @@
+{
+  "checks": [
+    {
+      "command": "corepack pnpm validate:questions",
+      "exitCode": 0,
+      "passed": 26873,
+      "log": "reports/lq4e-20261104/questions.log",
+      "logSha256": "019f9e86c868ab68789f19ed151e179fa9ba88f20b64f58e815ceea3c8ddbdc1"
+    },
+    {
+      "command": "corepack pnpm typecheck",
+      "exitCode": 0,
+      "passed": null,
+      "log": "reports/lq4e-20261104/typecheck.log",
+      "logSha256": "f9bc9d9c75a8fbb0e4880e2424f28d7bae1ee9d2204fc3191d3b406605a9949b"
+    },
+    {
+      "command": "corepack pnpm exec vitest run qkensetsu chizai2 kisho ReviewClient practice-session questions-filter category-pool exam-config-integrity QuizModeTabs PracticeSessionTabs QuizClient.year get-questions questions-load exam-library-coverage question-jsonld question-meta --maxWorkers=2",
+      "exitCode": 0,
+      "passed": 282,
+      "log": "reports/lq4e-20261104/related.log",
+      "logSha256": "f9883e402fb1fb55c032ffdb2192f869526b25737aa98cd3d4ff71d4f6877409"
+    },
+    {
+      "command": "node --test scripts/validate-lq4e-staging.test.mjs scripts/validate-lq4-staging.test.mjs",
+      "exitCode": 0,
+      "passed": 41,
+      "log": "reports/lq4e-20261104/staging-tests-final.log",
+      "logSha256": "86c4320b9bdc0b16571fb4ba64f45c45dfd417a15930ed2aef563cbc5727bda7"
+    },
+    {
+      "command": "corepack pnpm exec eslint scripts/validate-lq4e-staging.mjs scripts/validate-lq4e-staging.test.mjs scripts/accept-lq4e-batch.mjs scripts/lq4e-numbering.mjs scripts/lq4e-review-evidence.mjs",
+      "exitCode": 0,
+      "log": "reports/lq4e-20261104/eslint.log",
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "questionsWarnings": 16854,
+  "stagingNotIncludedInCommonQuestionCount": true,
+  "note": "typecheck used NODE_OPTIONS=--max-old-space-size=12288; reviewers encountered spawn EPERM, parent actually ran all tests."
+}

@@ -1,0 +1,3504 @@
+{
+  "task": "QKISHOUF",
+  "date": "2026-11-03",
+  "status": "CURRENT_ACADEMIC_EDITION_DELTA_ADJUDICATED",
+  "method": [
+    "公式ZIP2件を再取得しレビュー記録のSHA-256と全14PDFを検証。",
+    "学科4冊43物理頁のうち表紙4頁を除く39頁を、同一受入の全ページ画像と同解像度で双方向インク残差比較。近傍2pxの描画位置差を許容し8px以上の残差群を全件目視。残差画像は一時領域に保存。",
+    "従前の全43頁グリフ比較と併用。大きい図表残差は全文ページを左右対で表示し、矢印・等値線・凡例・表全セルを裁定。ピクセル一致そのものを意味の証明としない。",
+    "意味・出題・肢順の変更なし。既受入60原問・300肢の内容を再利用。Q65専門問4の既受入湿度計overlayを継続。新規全文転記・新規全肢再査読は行っていない。",
+    "正答・実技・答案用紙10PDFは既受入PDFとバイト同一。旧全18実技問・237欄の受入と作図対応を再利用。"
+  ],
+  "archiveChecks": [
+    {
+      "round": 65,
+      "url": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_65_z1.zip",
+      "sha256": "c389b4eeb9dc08baad9ebf425d6590350715203f2a0e604c7f04cc9789849161",
+      "bytes": 21394970,
+      "pdfs": [
+        {
+          "member": "cwfe_65_z1/cwfe_65_a(gakka jitsugi_kaitourei).pdf",
+          "sha256": "3651beffc525c68ee31fb508d9182871399c20986f6d0039de3f29186436cab8",
+          "bytes": 2161582,
+          "sameAcceptedPdf": true,
+          "oldMatches": 1
+        },
+        {
+          "member": "cwfe_65_z1/gakka(ippan_mondai).pdf",
+          "sha256": "b6e45b19ff8e76c8f462cb7c505b04b6d40329165cebcbddb4ffaf5626288743",
+          "bytes": 1210088,
+          "sameAcceptedPdf": false,
+          "oldMatches": 1
+        },
+        {
+          "member": "cwfe_65_z1/gakka(senmon_mondai).pdf",
+          "sha256": "05a6546bd533d87aa0fba40f6e825cccbaf2cf10fbef91c4ae859235b1d9013d",
+          "bytes": 9941462,
+          "sameAcceptedPdf": false,
+          "oldMatches": 1
+        },
+        {
+          "member": "cwfe_65_z1/jitsugi1(kaitouyoushi).pdf",
+          "sha256": "5f06a544c0d8c1ce9fe091ceba900f6c3da5db8211a0c96fec342fbdcc286980",
+          "bytes": 975008,
+          "sameAcceptedPdf": true,
+          "oldMatches": 1
+        },
+        {
+          "member": "cwfe_65_z1/jitsugi1(mondai).pdf",
+          "sha256": "54bc58385f9ef6fe5754ee68a25007c1bba17a1f1d6ea4e7124ab03ac8c9656c",
+          "bytes": 3733396,
+          "sameAcceptedPdf": true,
+          "oldMatches": 1
+        },
+        {
+          "member": "cwfe_65_z1/jitsugi2(kaitouyoushi).pdf",
+          "sha256": "8304940af6b71c32a6d4f004b7702002d2740b892037fd0f124ad9cd7f034c81",
+          "bytes": 903092,
+          "sameAcceptedPdf": true,
+          "oldMatches": 1
+        },
+        {
+          "member": "cwfe_65_z1/jitsugi2(mondai).pdf",
+          "sha256": "c67f2c24c82abf157e660bc45d1800504c45b62471d0a1e1300d392a178ddbec",
+          "bytes": 2944320,
+          "sameAcceptedPdf": true,
+          "oldMatches": 1
+        }
+      ]
+    },
+    {
+      "round": 66,
+      "url": "https://www.jmbsc.or.jp/jp/examination/z/cwfe_66_z_correction1.zip",
+      "sha256": "52c4ea49289170a6719c4e6e3c74701113d69afaa3e822f80a00a6f31002b175",
+      "bytes": 15695181,
+      "pdfs": [
+        {
+          "member": "cwfe_66_z_correction1/cwfe_66_a(gakkajitsugi_kaitourei).pdf",
+          "sha256": "323b6437ac58e7cc3c81a632bedf2f52e39c7521a4ececfa95d687fa8ff58f96",
+          "bytes": 2363879,
+          "sameAcceptedPdf": true,
+          "oldMatches": 1
+        },
+        {
+          "member": "cwfe_66_z_correction1/gakka(ippan_mondai).pdf",
+          "sha256": "0e45b35642d6fe883f2b4e570914fba588a682b88b548dc8944573643755c97b",
+          "bytes": 921944,
+          "sameAcceptedPdf": false,
+          "oldMatches": 1
+        },
+        {
+          "member": "cwfe_66_z_correction1/gakka(senmon_mondai).pdf",
+          "sha256": "1516717c8c0ab0d8ee791135ae95df75f23f503e3c1055abd25524df9922e1f7",
+          "bytes": 1405196,
+          "sameAcceptedPdf": false,
+          "oldMatches": 1
+        },
+        {
+          "member": "cwfe_66_z_correction1/jitsugi1(kaitouyoushi).pdf",
+          "sha256": "35e3a06ab243e8e4cc15df1f12be353912ecc6f0948d1f48d39361cc4ba343d9",
+          "bytes": 1192280,
+          "sameAcceptedPdf": true,
+          "oldMatches": 1
+        },
+        {
+          "member": "cwfe_66_z_correction1/jitsugi1(mondai).pdf",
+          "sha256": "ce0023f5d528b8cfd7822bcee4ea04884eb19a00c439a971adced11208f2d17d",
+          "bytes": 4224840,
+          "sameAcceptedPdf": true,
+          "oldMatches": 1
+        },
+        {
+          "member": "cwfe_66_z_correction1/jitsugi2(kaitouyoushi).pdf",
+          "sha256": "b7141cf5bede92d8d11c03741be792db7f46d4a5194d11d3cf97c30246eb21c0",
+          "bytes": 854243,
+          "sameAcceptedPdf": true,
+          "oldMatches": 1
+        },
+        {
+          "member": "cwfe_66_z_correction1/jitsugi2(mondai).pdf",
+          "sha256": "09c006e5c0573909b553aaf6da36a1076cf8ab86666fb54403b18e755509fffa",
+          "bytes": 4895445,
+          "sameAcceptedPdf": true,
+          "oldMatches": 1
+        }
+      ]
+    }
+  ],
+  "coversExcluded": [
+    {
+      "round": 65,
+      "pdf": "gakka(ippan_mondai).pdf",
+      "physicalPage": 1,
+      "reason": "試験注意事項の表紙。出題・正答を含まない。"
+    },
+    {
+      "round": 65,
+      "pdf": "gakka(senmon_mondai).pdf",
+      "physicalPage": 1,
+      "reason": "試験注意事項の表紙。出題・正答を含まない。"
+    },
+    {
+      "round": 66,
+      "pdf": "gakka(ippan_mondai).pdf",
+      "physicalPage": 1,
+      "reason": "試験注意事項の表紙。出題・正答を含まない。"
+    },
+    {
+      "round": 66,
+      "pdf": "gakka(senmon_mondai).pdf",
+      "physicalPage": 1,
+      "reason": "試験注意事項の表紙。出題・正答を含まない。"
+    }
+  ],
+  "pages": [
+    {
+      "assetId": "r65/question/gakka(ippan_mondai)/p002.png",
+      "page": 2,
+      "acceptedImageSha256": "d8b36302916cbcf0342c722ecbc6c9c632ad5c28c6f138d5dba9854c1b7e17a7",
+      "boxes": [
+        [
+          482,
+          41,
+          20,
+          17,
+          12
+        ]
+      ],
+      "unmatchedInk": 94,
+      "pixels": 1284644,
+      "currentPdfSha256": "b6e45b19ff8e76c8f462cb7c505b04b6d40329165cebcbddb4ffaf5626288743",
+      "questions": [
+        "kisho-65-ippan-q01",
+        "kisho-65-ippan-q02"
+      ],
+      "adjudication": "文字のフォント位置・字形・罫線の描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r65/question/gakka(ippan_mondai)/p003.png",
+      "page": 3,
+      "acceptedImageSha256": "b3b608e2c8b2faa45d099d9ef546d1208fcbbfc1194a36f523a381f9ce9b76a5",
+      "boxes": [
+        [
+          482,
+          41,
+          20,
+          17,
+          12
+        ]
+      ],
+      "unmatchedInk": 113,
+      "pixels": 1284644,
+      "currentPdfSha256": "b6e45b19ff8e76c8f462cb7c505b04b6d40329165cebcbddb4ffaf5626288743",
+      "questions": [
+        "kisho-65-ippan-q03",
+        "kisho-65-ippan-q04"
+      ],
+      "adjudication": "文字のフォント位置・字形・罫線の描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r65/question/gakka(ippan_mondai)/p004.png",
+      "page": 4,
+      "acceptedImageSha256": "a3df4945fd2fd32a3a221da3f8796515e3e55b990b002f0a88c4ae016e41a2e6",
+      "boxes": [
+        [
+          482,
+          41,
+          20,
+          17,
+          12
+        ],
+        [
+          387,
+          231,
+          17,
+          19,
+          10
+        ],
+        [
+          146,
+          391,
+          517,
+          142,
+          1586
+        ],
+        [
+          254,
+          1235,
+          32,
+          14,
+          8
+        ]
+      ],
+      "unmatchedInk": 1806,
+      "pixels": 1284644,
+      "currentPdfSha256": "b6e45b19ff8e76c8f462cb7c505b04b6d40329165cebcbddb4ffaf5626288743",
+      "questions": [
+        "kisho-65-ippan-q05",
+        "kisho-65-ippan-q06"
+      ],
+      "adjudication": "文字のフォント位置・字形・罫線の描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r65/question/gakka(ippan_mondai)/p005.png",
+      "page": 5,
+      "acceptedImageSha256": "59cb54f7b2216c5239bc8afad78be866c033724320f167d9158fd207698c19af",
+      "boxes": [
+        [
+          353,
+          115,
+          20,
+          13,
+          8
+        ],
+        [
+          243,
+          259,
+          20,
+          13,
+          8
+        ]
+      ],
+      "unmatchedInk": 82,
+      "pixels": 1284644,
+      "currentPdfSha256": "b6e45b19ff8e76c8f462cb7c505b04b6d40329165cebcbddb4ffaf5626288743",
+      "questions": [
+        "kisho-65-ippan-q07"
+      ],
+      "adjudication": "文字のフォント位置・字形・罫線の描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r65/question/gakka(ippan_mondai)/p006.png",
+      "page": 6,
+      "acceptedImageSha256": "6e00ce8bdd45892448a14684e78795bb0c8d34c109a2ad6c555d62652028788a",
+      "boxes": [
+        [
+          256,
+          328,
+          21,
+          40,
+          10
+        ],
+        [
+          236,
+          493,
+          20,
+          32,
+          9
+        ],
+        [
+          695,
+          541,
+          40,
+          14,
+          12
+        ],
+        [
+          292,
+          544,
+          40,
+          14,
+          12
+        ],
+        [
+          286,
+          667,
+          33,
+          123,
+          42
+        ],
+        [
+          754,
+          684,
+          22,
+          38,
+          15
+        ],
+        [
+          738,
+          752,
+          27,
+          97,
+          31
+        ],
+        [
+          277,
+          815,
+          23,
+          58,
+          23
+        ],
+        [
+          292,
+          882,
+          40,
+          14,
+          12
+        ],
+        [
+          296,
+          997,
+          34,
+          54,
+          10
+        ],
+        [
+          351,
+          1090,
+          26,
+          33,
+          8
+        ],
+        [
+          387,
+          1145,
+          20,
+          47,
+          8
+        ],
+        [
+          292,
+          1222,
+          40,
+          14,
+          12
+        ]
+      ],
+      "unmatchedInk": 402,
+      "pixels": 1284644,
+      "currentPdfSha256": "b6e45b19ff8e76c8f462cb7c505b04b6d40329165cebcbddb4ffaf5626288743",
+      "questions": [
+        "kisho-65-ippan-q08"
+      ],
+      "adjudication": "気圧の谷・尾根、上昇流域、波線・矢印の位置と太さの描画差。ラベル・方向・選択図の内容は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r65/question/gakka(ippan_mondai)/p007.png",
+      "page": 7,
+      "acceptedImageSha256": "3994ec8987f53ae64b6e02a65868237ccf7bcf6b0ff6ef31dc69d5f43f57897a",
+      "boxes": [
+        [
+          266,
+          540,
+          21,
+          13,
+          9
+        ],
+        [
+          267,
+          572,
+          20,
+          13,
+          8
+        ],
+        [
+          313,
+          791,
+          13,
+          21,
+          9
+        ],
+        [
+          355,
+          790,
+          13,
+          21,
+          9
+        ],
+        [
+          623,
+          791,
+          13,
+          20,
+          8
+        ],
+        [
+          664,
+          791,
+          13,
+          21,
+          9
+        ]
+      ],
+      "unmatchedInk": 112,
+      "pixels": 1284644,
+      "currentPdfSha256": "b6e45b19ff8e76c8f462cb7c505b04b6d40329165cebcbddb4ffaf5626288743",
+      "questions": [
+        "kisho-65-ippan-q09"
+      ],
+      "adjudication": "高度・緯度軸の字形・括弧の描画差。数値・曲線は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r65/question/gakka(ippan_mondai)/p008.png",
+      "page": 8,
+      "acceptedImageSha256": "7046ecef59fec4593ee4163a906b1fb9f248394a981cf03c07fcd003c0cb1f6e",
+      "boxes": [
+        [
+          482,
+          41,
+          20,
+          17,
+          12
+        ]
+      ],
+      "unmatchedInk": 71,
+      "pixels": 1284644,
+      "currentPdfSha256": "b6e45b19ff8e76c8f462cb7c505b04b6d40329165cebcbddb4ffaf5626288743",
+      "questions": [
+        "kisho-65-ippan-q10",
+        "kisho-65-ippan-q11"
+      ],
+      "adjudication": "文字のフォント位置・字形・罫線の描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r65/question/gakka(ippan_mondai)/p009.png",
+      "page": 9,
+      "acceptedImageSha256": "43aaa161a6248e3fffde0e017d0971649c4b14165f6a432326c3bd7e89630d2f",
+      "boxes": [
+        [
+          482,
+          41,
+          20,
+          17,
+          12
+        ]
+      ],
+      "unmatchedInk": 81,
+      "pixels": 1284644,
+      "currentPdfSha256": "b6e45b19ff8e76c8f462cb7c505b04b6d40329165cebcbddb4ffaf5626288743",
+      "questions": [
+        "kisho-65-ippan-q12",
+        "kisho-65-ippan-q13"
+      ],
+      "adjudication": "文字のフォント位置・字形・罫線の描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r65/question/gakka(ippan_mondai)/p010.png",
+      "page": 10,
+      "acceptedImageSha256": "6deeeeec7a73d2816a1251daa9526f7299418647e75fcdb8fc65ad05f3030abd",
+      "boxes": [
+        [
+          474,
+          41,
+          20,
+          17,
+          12
+        ]
+      ],
+      "unmatchedInk": 141,
+      "pixels": 1284644,
+      "currentPdfSha256": "b6e45b19ff8e76c8f462cb7c505b04b6d40329165cebcbddb4ffaf5626288743",
+      "questions": [
+        "kisho-65-ippan-q14",
+        "kisho-65-ippan-q15"
+      ],
+      "adjudication": "文字のフォント位置・字形・罫線の描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r65/question/gakka(senmon_mondai)/p002.png",
+      "page": 2,
+      "acceptedImageSha256": "85acf36d5dcf5c50ea516e6ec6d476c51d57795c32ce32e45efc968a516f4f01",
+      "boxes": [
+        [
+          498,
+          41,
+          20,
+          17,
+          12
+        ],
+        [
+          359,
+          275,
+          19,
+          16,
+          9
+        ],
+        [
+          273,
+          303,
+          19,
+          16,
+          14
+        ]
+      ],
+      "unmatchedInk": 113,
+      "pixels": 1284644,
+      "currentPdfSha256": "05a6546bd533d87aa0fba40f6e825cccbaf2cf10fbef91c4ae859235b1d9013d",
+      "questions": [
+        "kisho-65-senmon-q01",
+        "kisho-65-senmon-q02"
+      ],
+      "adjudication": "フォント位置・字形・括弧／ヘッダの描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r65/question/gakka(senmon_mondai)/p003.png",
+      "page": 3,
+      "acceptedImageSha256": "f921a82ec73b0f4a7fc1227ff5e1289e266b58cdaf984cdf136f91b6d28333a3",
+      "boxes": [
+        [
+          672,
+          316,
+          15,
+          17,
+          8
+        ],
+        [
+          339,
+          368,
+          13,
+          25,
+          13
+        ],
+        [
+          717,
+          396,
+          16,
+          19,
+          9
+        ],
+        [
+          540,
+          587,
+          312,
+          214,
+          800
+        ],
+        [
+          238,
+          673,
+          84,
+          78,
+          661
+        ],
+        [
+          130,
+          689,
+          21,
+          18,
+          19
+        ],
+        [
+          128,
+          720,
+          28,
+          48,
+          143
+        ],
+        [
+          384,
+          723,
+          47,
+          50,
+          23
+        ]
+      ],
+      "unmatchedInk": 1786,
+      "pixels": 1284644,
+      "currentPdfSha256": "05a6546bd533d87aa0fba40f6e825cccbaf2cf10fbef91c4ae859235b1d9013d",
+      "questions": [
+        "kisho-65-senmon-q03"
+      ],
+      "adjudication": "天気図・衛星画像・グラフ・風矢羽の線幅／圧縮／字形の描画差。領域ラベル・日付・凡例・等値線・数値・風向と設問対応を目視し実質同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r65/question/gakka(senmon_mondai)/p004.png",
+      "page": 4,
+      "acceptedImageSha256": "019e6af7107edbfd7fb78fd468737f53d8c23a002f2870987b553190e81740a7",
+      "boxes": [
+        [
+          498,
+          41,
+          20,
+          17,
+          12
+        ],
+        [
+          220,
+          511,
+          19,
+          16,
+          9
+        ]
+      ],
+      "unmatchedInk": 67,
+      "pixels": 1284644,
+      "currentPdfSha256": "05a6546bd533d87aa0fba40f6e825cccbaf2cf10fbef91c4ae859235b1d9013d",
+      "questions": [
+        "kisho-65-senmon-q04"
+      ],
+      "adjudication": "フォント位置・字形・括弧／ヘッダの描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r65/question/gakka(senmon_mondai)/p005.png",
+      "page": 5,
+      "acceptedImageSha256": "8a23a9e40bf0818b5bacdc293867a64f473feaf740c31f67d66d661b6fc6ed5c",
+      "boxes": [
+        [
+          498,
+          41,
+          20,
+          17,
+          12
+        ]
+      ],
+      "unmatchedInk": 126,
+      "pixels": 1284644,
+      "currentPdfSha256": "05a6546bd533d87aa0fba40f6e825cccbaf2cf10fbef91c4ae859235b1d9013d",
+      "questions": [
+        "kisho-65-senmon-q05",
+        "kisho-65-senmon-q06"
+      ],
+      "adjudication": "フォント位置・字形・括弧／ヘッダの描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r65/question/gakka(senmon_mondai)/p006.png",
+      "page": 6,
+      "acceptedImageSha256": "8a788fc4d09ff1437cf61dfe715852e9c2543bea4cb59ad4b086aec60f06e70a",
+      "boxes": [
+        [
+          498,
+          41,
+          20,
+          17,
+          12
+        ],
+        [
+          609,
+          195,
+          13,
+          25,
+          13
+        ],
+        [
+          698,
+          194,
+          48,
+          28,
+          9
+        ]
+      ],
+      "unmatchedInk": 57,
+      "pixels": 1284644,
+      "currentPdfSha256": "05a6546bd533d87aa0fba40f6e825cccbaf2cf10fbef91c4ae859235b1d9013d",
+      "questions": [
+        "kisho-65-senmon-q07"
+      ],
+      "adjudication": "フォント位置・字形・括弧／ヘッダの描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r65/question/gakka(senmon_mondai)/p007.png",
+      "page": 7,
+      "acceptedImageSha256": "928840cdbbbc6c45fe92c303f2c085328e937dfbf4722cd99b7d67bf9fbfc060",
+      "boxes": [
+        [
+          363,
+          115,
+          20,
+          13,
+          8
+        ],
+        [
+          593,
+          454,
+          18,
+          18,
+          8
+        ],
+        [
+          202,
+          483,
+          18,
+          18,
+          8
+        ],
+        [
+          746,
+          574,
+          69,
+          56,
+          27
+        ],
+        [
+          693,
+          627,
+          35,
+          18,
+          16
+        ],
+        [
+          315,
+          631,
+          26,
+          20,
+          8
+        ],
+        [
+          569,
+          633,
+          39,
+          36,
+          32
+        ],
+        [
+          107,
+          679,
+          57,
+          28,
+          32
+        ],
+        [
+          81,
+          681,
+          24,
+          15,
+          10
+        ],
+        [
+          335,
+          764,
+          36,
+          30,
+          21
+        ],
+        [
+          296,
+          770,
+          32,
+          18,
+          22
+        ],
+        [
+          68,
+          773,
+          88,
+          50,
+          329
+        ],
+        [
+          448,
+          806,
+          38,
+          31,
+          8
+        ],
+        [
+          86,
+          829,
+          34,
+          34,
+          70
+        ],
+        [
+          68,
+          866,
+          22,
+          17,
+          19
+        ]
+      ],
+      "unmatchedInk": 822,
+      "pixels": 1284644,
+      "currentPdfSha256": "05a6546bd533d87aa0fba40f6e825cccbaf2cf10fbef91c4ae859235b1d9013d",
+      "questions": [
+        "kisho-65-senmon-q08"
+      ],
+      "adjudication": "天気図・衛星画像・グラフ・風矢羽の線幅／圧縮／字形の描画差。領域ラベル・日付・凡例・等値線・数値・風向と設問対応を目視し実質同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r65/question/gakka(senmon_mondai)/p008.png",
+      "page": 8,
+      "acceptedImageSha256": "3917cdb18dd69bdc3d30e405e58a07eb651cbc940d2d55551c7ed2adfab53b76",
+      "boxes": [
+        [
+          117,
+          220,
+          56,
+          51,
+          76
+        ],
+        [
+          491,
+          220,
+          55,
+          13,
+          43
+        ],
+        [
+          261,
+          222,
+          98,
+          36,
+          63
+        ],
+        [
+          384,
+          222,
+          43,
+          27,
+          40
+        ],
+        [
+          414,
+          261,
+          13,
+          28,
+          16
+        ],
+        [
+          197,
+          268,
+          29,
+          25,
+          10
+        ],
+        [
+          344,
+          274,
+          54,
+          80,
+          20
+        ],
+        [
+          200,
+          291,
+          32,
+          17,
+          8
+        ],
+        [
+          407,
+          296,
+          20,
+          164,
+          132
+        ],
+        [
+          206,
+          328,
+          13,
+          23,
+          11
+        ],
+        [
+          276,
+          341,
+          30,
+          13,
+          18
+        ],
+        [
+          231,
+          368,
+          18,
+          54,
+          19
+        ],
+        [
+          382,
+          375,
+          19,
+          38,
+          10
+        ],
+        [
+          289,
+          395,
+          37,
+          19,
+          8
+        ],
+        [
+          717,
+          586,
+          56,
+          37,
+          13
+        ],
+        [
+          612,
+          634,
+          46,
+          29,
+          13
+        ],
+        [
+          669,
+          634,
+          42,
+          21,
+          9
+        ],
+        [
+          568,
+          658,
+          31,
+          23,
+          9
+        ],
+        [
+          138,
+          665,
+          37,
+          21,
+          11
+        ],
+        [
+          702,
+          667,
+          48,
+          41,
+          12
+        ],
+        [
+          623,
+          671,
+          69,
+          35,
+          25
+        ],
+        [
+          522,
+          682,
+          79,
+          36,
+          25
+        ],
+        [
+          277,
+          698,
+          31,
+          15,
+          8
+        ],
+        [
+          559,
+          858,
+          40,
+          43,
+          9
+        ],
+        [
+          659,
+          862,
+          42,
+          47,
+          10
+        ],
+        [
+          316,
+          901,
+          108,
+          35,
+          35
+        ],
+        [
+          645,
+          915,
+          40,
+          24,
+          8
+        ],
+        [
+          569,
+          919,
+          45,
+          46,
+          16
+        ],
+        [
+          411,
+          931,
+          45,
+          41,
+          14
+        ],
+        [
+          229,
+          950,
+          57,
+          50,
+          20
+        ],
+        [
+          530,
+          950,
+          72,
+          60,
+          19
+        ],
+        [
+          659,
+          951,
+          95,
+          51,
+          32
+        ],
+        [
+          373,
+          953,
+          33,
+          37,
+          16
+        ],
+        [
+          391,
+          969,
+          23,
+          24,
+          8
+        ],
+        [
+          435,
+          1029,
+          16,
+          21,
+          14
+        ],
+        [
+          627,
+          1068,
+          25,
+          13,
+          13
+        ]
+      ],
+      "unmatchedInk": 1200,
+      "pixels": 1284644,
+      "currentPdfSha256": "05a6546bd533d87aa0fba40f6e825cccbaf2cf10fbef91c4ae859235b1d9013d",
+      "questions": [
+        "kisho-65-senmon-q09"
+      ],
+      "adjudication": "天気図・衛星画像・グラフ・風矢羽の線幅／圧縮／字形の描画差。領域ラベル・日付・凡例・等値線・数値・風向と設問対応を目視し実質同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r65/question/gakka(senmon_mondai)/p009.png",
+      "page": 9,
+      "acceptedImageSha256": "ea6a22681d38030dee31b27cc895010557fceac30646356cb9fa83c1ff29437e",
+      "boxes": [
+        [
+          498,
+          41,
+          20,
+          17,
+          12
+        ],
+        [
+          752,
+          971,
+          28,
+          17,
+          8
+        ]
+      ],
+      "unmatchedInk": 192,
+      "pixels": 1284644,
+      "currentPdfSha256": "05a6546bd533d87aa0fba40f6e825cccbaf2cf10fbef91c4ae859235b1d9013d",
+      "questions": [
+        "kisho-65-senmon-q10",
+        "kisho-65-senmon-q11"
+      ],
+      "adjudication": "フォント位置・字形・括弧／ヘッダの描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r65/question/gakka(senmon_mondai)/p010.png",
+      "page": 10,
+      "acceptedImageSha256": "ed553bc1cc11cdc9f538f699181867cb0d9829cc1d90e96f603b06f604dbe37d",
+      "boxes": [
+        [
+          493,
+          41,
+          18,
+          15,
+          11
+        ],
+        [
+          484,
+          475,
+          286,
+          188,
+          824
+        ],
+        [
+          161,
+          477,
+          286,
+          185,
+          830
+        ]
+      ],
+      "unmatchedInk": 1707,
+      "pixels": 1284644,
+      "currentPdfSha256": "05a6546bd533d87aa0fba40f6e825cccbaf2cf10fbef91c4ae859235b1d9013d",
+      "questions": [
+        "kisho-65-senmon-q12"
+      ],
+      "adjudication": "数値表のフォント・罫線差。表の全セル値・見出し・単位は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r65/question/gakka(senmon_mondai)/p011.png",
+      "page": 11,
+      "acceptedImageSha256": "836f16af0541cf3884f37ec64bf57e542f3dc51b7a44e8a9c5b0cd0f591b0ef4",
+      "boxes": [
+        [
+          493,
+          41,
+          18,
+          15,
+          11
+        ],
+        [
+          800,
+          934,
+          13,
+          24,
+          12
+        ]
+      ],
+      "unmatchedInk": 175,
+      "pixels": 1284644,
+      "currentPdfSha256": "05a6546bd533d87aa0fba40f6e825cccbaf2cf10fbef91c4ae859235b1d9013d",
+      "questions": [
+        "kisho-65-senmon-q13",
+        "kisho-65-senmon-q14"
+      ],
+      "adjudication": "フォント位置・字形・括弧／ヘッダの描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r65/question/gakka(senmon_mondai)/p012.png",
+      "page": 12,
+      "acceptedImageSha256": "e986d73ac0b44e169c5c480caea4bca09e1d7ad0278c3707fbcee0ca68b84299",
+      "boxes": [
+        [
+          399,
+          166,
+          19,
+          16,
+          9
+        ],
+        [
+          78,
+          335,
+          558,
+          416,
+          1314
+        ],
+        [
+          839,
+          345,
+          34,
+          45,
+          176
+        ],
+        [
+          43,
+          369,
+          21,
+          16,
+          36
+        ],
+        [
+          179,
+          402,
+          36,
+          30,
+          201
+        ],
+        [
+          471,
+          440,
+          27,
+          25,
+          9
+        ],
+        [
+          588,
+          444,
+          22,
+          20,
+          11
+        ],
+        [
+          102,
+          452,
+          15,
+          33,
+          11
+        ],
+        [
+          659,
+          454,
+          17,
+          30,
+          8
+        ],
+        [
+          375,
+          456,
+          26,
+          28,
+          8
+        ],
+        [
+          43,
+          499,
+          21,
+          16,
+          36
+        ],
+        [
+          835,
+          614,
+          20,
+          18,
+          9
+        ],
+        [
+          43,
+          629,
+          21,
+          16,
+          36
+        ],
+        [
+          850,
+          678,
+          34,
+          13,
+          22
+        ],
+        [
+          638,
+          738,
+          279,
+          13,
+          267
+        ],
+        [
+          281,
+          788,
+          30,
+          17,
+          13
+        ],
+        [
+          324,
+          788,
+          25,
+          13,
+          13
+        ],
+        [
+          619,
+          796,
+          29,
+          77,
+          51
+        ],
+        [
+          551,
+          860,
+          33,
+          26,
+          21
+        ],
+        [
+          812,
+          888,
+          46,
+          30,
+          9
+        ],
+        [
+          244,
+          900,
+          32,
+          40,
+          10
+        ]
+      ],
+      "unmatchedInk": 2299,
+      "pixels": 1284644,
+      "currentPdfSha256": "05a6546bd533d87aa0fba40f6e825cccbaf2cf10fbef91c4ae859235b1d9013d",
+      "questions": [
+        "kisho-65-senmon-q15"
+      ],
+      "adjudication": "天気図・衛星画像・グラフ・風矢羽の線幅／圧縮／字形の描画差。領域ラベル・日付・凡例・等値線・数値・風向と設問対応を目視し実質同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r66/question/gakka(ippan_mondai)/p002.png",
+      "page": 2,
+      "acceptedImageSha256": "d7ec835d980b3fc0d36d1ced6a4baa0a3251bc5b5756243193aa7ea17ae9d41c",
+      "boxes": [],
+      "unmatchedInk": 76,
+      "pixels": 1449184,
+      "currentPdfSha256": "0e45b35642d6fe883f2b4e570914fba588a682b88b548dc8944573643755c97b",
+      "questions": [
+        "kisho-66-ippan-q01",
+        "kisho-66-ippan-q02"
+      ],
+      "adjudication": "文字のフォント位置・字形・罫線の描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r66/question/gakka(ippan_mondai)/p003.png",
+      "page": 3,
+      "acceptedImageSha256": "93c5f89b3ead7227f52b2746a5bcde99a09b92300cc509c7978a5f896971f9b9",
+      "boxes": [
+        [
+          434,
+          84,
+          20,
+          13,
+          8
+        ]
+      ],
+      "unmatchedInk": 77,
+      "pixels": 1449184,
+      "currentPdfSha256": "0e45b35642d6fe883f2b4e570914fba588a682b88b548dc8944573643755c97b",
+      "questions": [
+        "kisho-66-ippan-q03"
+      ],
+      "adjudication": "文字のフォント位置・字形・罫線の描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r66/question/gakka(ippan_mondai)/p004.png",
+      "page": 4,
+      "acceptedImageSha256": "d33dd4a39947db8a70e1892acbc3f19a904057fe25c50a28cd77dfeeae038d11",
+      "boxes": [],
+      "unmatchedInk": 81,
+      "pixels": 1449184,
+      "currentPdfSha256": "0e45b35642d6fe883f2b4e570914fba588a682b88b548dc8944573643755c97b",
+      "questions": [
+        "kisho-66-ippan-q04",
+        "kisho-66-ippan-q05"
+      ],
+      "adjudication": "文字のフォント位置・字形・罫線の描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r66/question/gakka(ippan_mondai)/p005.png",
+      "page": 5,
+      "acceptedImageSha256": "d03d82c8d70900d3cb4a368aa5a416135cd77dce38efe5f74755d551debe80aa",
+      "boxes": [],
+      "unmatchedInk": 32,
+      "pixels": 1449184,
+      "currentPdfSha256": "0e45b35642d6fe883f2b4e570914fba588a682b88b548dc8944573643755c97b",
+      "questions": [
+        "kisho-66-ippan-q06"
+      ],
+      "adjudication": "文字のフォント位置・字形・罫線の描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r66/question/gakka(ippan_mondai)/p006.png",
+      "page": 6,
+      "acceptedImageSha256": "e2bca02290063963024d103aab0340a58e1812401f9daca20b64455cd15188fa",
+      "boxes": [
+        [
+          874,
+          383,
+          13,
+          33,
+          21
+        ],
+        [
+          813,
+          396,
+          13,
+          20,
+          8
+        ],
+        [
+          785,
+          422,
+          102,
+          33,
+          107
+        ],
+        [
+          148,
+          441,
+          19,
+          14,
+          14
+        ],
+        [
+          174,
+          441,
+          66,
+          14,
+          47
+        ],
+        [
+          246,
+          441,
+          25,
+          14,
+          26
+        ],
+        [
+          273,
+          441,
+          81,
+          14,
+          82
+        ],
+        [
+          359,
+          441,
+          97,
+          14,
+          73
+        ],
+        [
+          460,
+          441,
+          20,
+          14,
+          16
+        ],
+        [
+          576,
+          441,
+          20,
+          14,
+          16
+        ],
+        [
+          600,
+          441,
+          100,
+          14,
+          90
+        ],
+        [
+          702,
+          441,
+          81,
+          14,
+          78
+        ],
+        [
+          889,
+          441,
+          19,
+          14,
+          14
+        ],
+        [
+          874,
+          459,
+          13,
+          33,
+          21
+        ],
+        [
+          813,
+          472,
+          13,
+          20,
+          8
+        ],
+        [
+          600,
+          481,
+          71,
+          25,
+          34
+        ],
+        [
+          675,
+          481,
+          212,
+          47,
+          145
+        ],
+        [
+          152,
+          492,
+          37,
+          14,
+          28
+        ],
+        [
+          193,
+          492,
+          28,
+          14,
+          32
+        ],
+        [
+          225,
+          492,
+          103,
+          14,
+          84
+        ],
+        [
+          330,
+          492,
+          75,
+          14,
+          64
+        ],
+        [
+          407,
+          492,
+          27,
+          14,
+          30
+        ],
+        [
+          441,
+          492,
+          36,
+          14,
+          26
+        ],
+        [
+          576,
+          493,
+          20,
+          13,
+          8
+        ],
+        [
+          813,
+          508,
+          13,
+          20,
+          8
+        ],
+        [
+          658,
+          517,
+          13,
+          20,
+          8
+        ],
+        [
+          813,
+          532,
+          74,
+          33,
+          45
+        ],
+        [
+          148,
+          544,
+          332,
+          13,
+          182
+        ],
+        [
+          576,
+          544,
+          20,
+          13,
+          8
+        ],
+        [
+          602,
+          544,
+          181,
+          30,
+          105
+        ],
+        [
+          785,
+          544,
+          25,
+          13,
+          13
+        ],
+        [
+          702,
+          574,
+          185,
+          63,
+          149
+        ],
+        [
+          600,
+          590,
+          98,
+          18,
+          43
+        ],
+        [
+          148,
+          595,
+          332,
+          13,
+          182
+        ],
+        [
+          576,
+          595,
+          20,
+          13,
+          8
+        ],
+        [
+          813,
+          618,
+          13,
+          20,
+          8
+        ],
+        [
+          600,
+          626,
+          287,
+          50,
+          176
+        ],
+        [
+          152,
+          646,
+          37,
+          13,
+          14
+        ],
+        [
+          193,
+          646,
+          28,
+          13,
+          16
+        ],
+        [
+          224,
+          646,
+          104,
+          13,
+          45
+        ],
+        [
+          330,
+          646,
+          76,
+          13,
+          35
+        ],
+        [
+          407,
+          646,
+          27,
+          13,
+          15
+        ],
+        [
+          441,
+          646,
+          36,
+          13,
+          13
+        ],
+        [
+          576,
+          646,
+          20,
+          13,
+          8
+        ],
+        [
+          658,
+          664,
+          13,
+          20,
+          8
+        ],
+        [
+          788,
+          679,
+          99,
+          31,
+          58
+        ],
+        [
+          174,
+          697,
+          65,
+          13,
+          21
+        ],
+        [
+          246,
+          697,
+          25,
+          13,
+          13
+        ],
+        [
+          273,
+          697,
+          81,
+          13,
+          41
+        ],
+        [
+          359,
+          697,
+          66,
+          13,
+          24
+        ],
+        [
+          433,
+          697,
+          23,
+          13,
+          11
+        ],
+        [
+          460,
+          697,
+          20,
+          13,
+          8
+        ],
+        [
+          576,
+          697,
+          207,
+          24,
+          121
+        ],
+        [
+          874,
+          717,
+          13,
+          32,
+          20
+        ],
+        [
+          813,
+          730,
+          13,
+          20,
+          8
+        ],
+        [
+          658,
+          738,
+          13,
+          20,
+          8
+        ],
+        [
+          270,
+          894,
+          13,
+          111,
+          89
+        ],
+        [
+          319,
+          894,
+          13,
+          111,
+          88
+        ],
+        [
+          728,
+          894,
+          13,
+          111,
+          89
+        ]
+      ],
+      "unmatchedInk": 2790,
+      "pixels": 1449184,
+      "currentPdfSha256": "0e45b35642d6fe883f2b4e570914fba588a682b88b548dc8944573643755c97b",
+      "questions": [
+        "kisho-66-ippan-q07"
+      ],
+      "adjudication": "風ベクトルの軸・矢印の太さ／ラスター化、組合せ表の字形差。u=cx,v=-cy / u=0,v=cx、発散・渦度・強化の肢順は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r66/question/gakka(ippan_mondai)/p007.png",
+      "page": 7,
+      "acceptedImageSha256": "2135cc883778219c83600bb5acd37659c0d696f0098789964033e6236d4cf4e7",
+      "boxes": [],
+      "unmatchedInk": 77,
+      "pixels": 1449184,
+      "currentPdfSha256": "0e45b35642d6fe883f2b4e570914fba588a682b88b548dc8944573643755c97b",
+      "questions": [
+        "kisho-66-ippan-q08",
+        "kisho-66-ippan-q09"
+      ],
+      "adjudication": "文字のフォント位置・字形・罫線の描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r66/question/gakka(ippan_mondai)/p008.png",
+      "page": 8,
+      "acceptedImageSha256": "21a5b79ab4a91c76df2da959576bc3df0a861d624cdc58721e63955d10669014",
+      "boxes": [],
+      "unmatchedInk": 73,
+      "pixels": 1449184,
+      "currentPdfSha256": "0e45b35642d6fe883f2b4e570914fba588a682b88b548dc8944573643755c97b",
+      "questions": [
+        "kisho-66-ippan-q10",
+        "kisho-66-ippan-q11"
+      ],
+      "adjudication": "文字のフォント位置・字形・罫線の描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r66/question/gakka(ippan_mondai)/p009.png",
+      "page": 9,
+      "acceptedImageSha256": "08e1b6ec410093f0d7790129e5c75ae4e3df10f50bd73acd2be0c73cd12377e7",
+      "boxes": [
+        [
+          353,
+          82,
+          21,
+          13,
+          9
+        ],
+        [
+          228,
+          191,
+          21,
+          13,
+          9
+        ],
+        [
+          288,
+          299,
+          21,
+          13,
+          9
+        ],
+        [
+          229,
+          436,
+          20,
+          13,
+          8
+        ]
+      ],
+      "unmatchedInk": 217,
+      "pixels": 1449184,
+      "currentPdfSha256": "0e45b35642d6fe883f2b4e570914fba588a682b88b548dc8944573643755c97b",
+      "questions": [
+        "kisho-66-ippan-q12",
+        "kisho-66-ippan-q13"
+      ],
+      "adjudication": "文字のフォント位置・字形・罫線の描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r66/question/gakka(ippan_mondai)/p010.png",
+      "page": 10,
+      "acceptedImageSha256": "91028a56b7470e2f2e442a8073facd6a65f80fa4315bfd123ddb28d1b3fa6e08",
+      "boxes": [
+        [
+          205,
+          45,
+          15,
+          21,
+          8
+        ],
+        [
+          353,
+          84,
+          20,
+          13,
+          8
+        ],
+        [
+          672,
+          207,
+          21,
+          13,
+          9
+        ],
+        [
+          229,
+          299,
+          20,
+          13,
+          8
+        ]
+      ],
+      "unmatchedInk": 157,
+      "pixels": 1449184,
+      "currentPdfSha256": "0e45b35642d6fe883f2b4e570914fba588a682b88b548dc8944573643755c97b",
+      "questions": [
+        "kisho-66-ippan-q14",
+        "kisho-66-ippan-q15"
+      ],
+      "adjudication": "文字のフォント位置・字形・罫線の描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r66/question/gakka(senmon_mondai)/p002.png",
+      "page": 2,
+      "acceptedImageSha256": "01aaa0636995fc673cea06daaf9ee8bc9e98112e3c62c8745487e31f84bfd8c8",
+      "boxes": [
+        [
+          575,
+          814,
+          13,
+          26,
+          14
+        ]
+      ],
+      "unmatchedInk": 83,
+      "pixels": 1449184,
+      "currentPdfSha256": "1516717c8c0ab0d8ee791135ae95df75f23f503e3c1055abd25524df9922e1f7",
+      "questions": [
+        "kisho-66-senmon-q01",
+        "kisho-66-senmon-q02"
+      ],
+      "adjudication": "フォント位置・字形・括弧／ヘッダの描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r66/question/gakka(senmon_mondai)/p003.png",
+      "page": 3,
+      "acceptedImageSha256": "f57e323310b79c69bc2baf8cf2bdabb9c0618aa4e66749091438e5b07499b4ec",
+      "boxes": [],
+      "unmatchedInk": 69,
+      "pixels": 1449184,
+      "currentPdfSha256": "1516717c8c0ab0d8ee791135ae95df75f23f503e3c1055abd25524df9922e1f7",
+      "questions": [
+        "kisho-66-senmon-q03",
+        "kisho-66-senmon-q04"
+      ],
+      "adjudication": "フォント位置・字形・括弧／ヘッダの描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r66/question/gakka(senmon_mondai)/p004.png",
+      "page": 4,
+      "acceptedImageSha256": "4239a314e2449fec74d2852c5cc8638697f231ca5b43c42db8985ff9645eb3e4",
+      "boxes": [
+        [
+          514,
+          928,
+          21,
+          13,
+          9
+        ]
+      ],
+      "unmatchedInk": 143,
+      "pixels": 1449184,
+      "currentPdfSha256": "1516717c8c0ab0d8ee791135ae95df75f23f503e3c1055abd25524df9922e1f7",
+      "questions": [
+        "kisho-66-senmon-q05",
+        "kisho-66-senmon-q06"
+      ],
+      "adjudication": "フォント位置・字形・括弧／ヘッダの描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r66/question/gakka(senmon_mondai)/p005.png",
+      "page": 5,
+      "acceptedImageSha256": "e15a49e065a44193ac4f02bcbdca8e47296d5876a4957d179e1b4d7039e20b45",
+      "boxes": [
+        [
+          474,
+          707,
+          47,
+          32,
+          8
+        ],
+        [
+          134,
+          783,
+          35,
+          24,
+          9
+        ],
+        [
+          862,
+          929,
+          36,
+          19,
+          37
+        ],
+        [
+          632,
+          979,
+          25,
+          14,
+          16
+        ],
+        [
+          582,
+          985,
+          112,
+          69,
+          113
+        ],
+        [
+          534,
+          1037,
+          29,
+          21,
+          92
+        ],
+        [
+          575,
+          1036,
+          17,
+          15,
+          11
+        ],
+        [
+          927,
+          1073,
+          41,
+          61,
+          272
+        ],
+        [
+          721,
+          1088,
+          67,
+          36,
+          10
+        ],
+        [
+          706,
+          1125,
+          28,
+          19,
+          13
+        ],
+        [
+          531,
+          1139,
+          85,
+          32,
+          70
+        ],
+        [
+          716,
+          1220,
+          18,
+          19,
+          10
+        ]
+      ],
+      "unmatchedInk": 770,
+      "pixels": 1449184,
+      "currentPdfSha256": "1516717c8c0ab0d8ee791135ae95df75f23f503e3c1055abd25524df9922e1f7",
+      "questions": [
+        "kisho-66-senmon-q07"
+      ],
+      "adjudication": "天気図・衛星画像・グラフ・風矢羽の線幅／圧縮／字形の描画差。領域ラベル・日付・凡例・等値線・数値・風向と設問対応を目視し実質同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r66/question/gakka(senmon_mondai)/p006.png",
+      "page": 6,
+      "acceptedImageSha256": "4a2992589340ebe60dc1f5a59c16d53721fdea6dfe14561816749eb5a1beb36e",
+      "boxes": [
+        [
+          261,
+          279,
+          59,
+          35,
+          26
+        ],
+        [
+          747,
+          279,
+          52,
+          68,
+          20
+        ],
+        [
+          639,
+          281,
+          81,
+          102,
+          76
+        ],
+        [
+          884,
+          281,
+          51,
+          34,
+          16
+        ],
+        [
+          544,
+          282,
+          29,
+          46,
+          9
+        ],
+        [
+          480,
+          298,
+          48,
+          45,
+          15
+        ],
+        [
+          277,
+          313,
+          62,
+          38,
+          12
+        ],
+        [
+          436,
+          316,
+          131,
+          88,
+          68
+        ],
+        [
+          823,
+          324,
+          79,
+          38,
+          23
+        ],
+        [
+          112,
+          329,
+          117,
+          75,
+          85
+        ],
+        [
+          509,
+          340,
+          430,
+          200,
+          973
+        ],
+        [
+          52,
+          371,
+          49,
+          35,
+          10
+        ],
+        [
+          625,
+          372,
+          42,
+          92,
+          46
+        ],
+        [
+          897,
+          372,
+          39,
+          45,
+          11
+        ],
+        [
+          361,
+          375,
+          82,
+          85,
+          68
+        ],
+        [
+          188,
+          408,
+          81,
+          23,
+          15
+        ],
+        [
+          456,
+          426,
+          36,
+          32,
+          12
+        ],
+        [
+          755,
+          427,
+          33,
+          36,
+          8
+        ],
+        [
+          794,
+          429,
+          30,
+          40,
+          9
+        ],
+        [
+          475,
+          430,
+          73,
+          41,
+          28
+        ],
+        [
+          137,
+          442,
+          50,
+          33,
+          14
+        ],
+        [
+          54,
+          462,
+          43,
+          58,
+          14
+        ],
+        [
+          345,
+          476,
+          36,
+          29,
+          11
+        ],
+        [
+          380,
+          477,
+          57,
+          45,
+          14
+        ],
+        [
+          215,
+          495,
+          126,
+          45,
+          120
+        ],
+        [
+          558,
+          494,
+          77,
+          13,
+          59
+        ],
+        [
+          343,
+          524,
+          165,
+          16,
+          128
+        ],
+        [
+          44,
+          527,
+          163,
+          13,
+          139
+        ],
+        [
+          55,
+          579,
+          29,
+          15,
+          10
+        ],
+        [
+          47,
+          579,
+          297,
+          258,
+          672
+        ],
+        [
+          354,
+          579,
+          30,
+          15,
+          18
+        ],
+        [
+          393,
+          579,
+          53,
+          67,
+          26
+        ],
+        [
+          320,
+          579,
+          291,
+          258,
+          556
+        ],
+        [
+          605,
+          579,
+          35,
+          28,
+          28
+        ],
+        [
+          748,
+          579,
+          37,
+          28,
+          20
+        ],
+        [
+          786,
+          579,
+          27,
+          13,
+          10
+        ],
+        [
+          715,
+          579,
+          207,
+          96,
+          171
+        ],
+        [
+          677,
+          587,
+          16,
+          22,
+          14
+        ],
+        [
+          639,
+          603,
+          262,
+          233,
+          587
+        ],
+        [
+          573,
+          611,
+          64,
+          64,
+          31
+        ],
+        [
+          910,
+          624,
+          28,
+          38,
+          9
+        ],
+        [
+          808,
+          640,
+          35,
+          30,
+          8
+        ],
+        [
+          73,
+          649,
+          45,
+          39,
+          17
+        ],
+        [
+          868,
+          678,
+          64,
+          58,
+          27
+        ],
+        [
+          71,
+          692,
+          30,
+          35,
+          13
+        ],
+        [
+          249,
+          721,
+          81,
+          118,
+          98
+        ],
+        [
+          615,
+          733,
+          22,
+          43,
+          12
+        ],
+        [
+          843,
+          767,
+          86,
+          72,
+          50
+        ],
+        [
+          778,
+          783,
+          37,
+          26,
+          9
+        ],
+        [
+          503,
+          797,
+          44,
+          38,
+          17
+        ],
+        [
+          783,
+          799,
+          61,
+          40,
+          23
+        ],
+        [
+          118,
+          803,
+          45,
+          35,
+          13
+        ],
+        [
+          594,
+          809,
+          39,
+          30,
+          18
+        ]
+      ],
+      "unmatchedInk": 3926,
+      "pixels": 1449184,
+      "currentPdfSha256": "1516717c8c0ab0d8ee791135ae95df75f23f503e3c1055abd25524df9922e1f7",
+      "questions": [
+        "kisho-66-senmon-q08"
+      ],
+      "adjudication": "天気図・衛星画像・グラフ・風矢羽の線幅／圧縮／字形の描画差。領域ラベル・日付・凡例・等値線・数値・風向と設問対応を目視し実質同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r66/question/gakka(senmon_mondai)/p007.png",
+      "page": 7,
+      "acceptedImageSha256": "b37b4c5c5011dc4e04d97f1bff4f8daf7ef4ff45b89c8a84587c13294638297b",
+      "boxes": [],
+      "unmatchedInk": 65,
+      "pixels": 1449184,
+      "currentPdfSha256": "1516717c8c0ab0d8ee791135ae95df75f23f503e3c1055abd25524df9922e1f7",
+      "questions": [
+        "kisho-66-senmon-q09",
+        "kisho-66-senmon-q10"
+      ],
+      "adjudication": "フォント位置・字形・括弧／ヘッダの描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r66/question/gakka(senmon_mondai)/p008.png",
+      "page": 8,
+      "acceptedImageSha256": "3916c133f36b13052ecc039b1b48252d41d39cd8aa4235b57976807c1e104f6c",
+      "boxes": [
+        [
+          567,
+          544,
+          21,
+          13,
+          9
+        ]
+      ],
+      "unmatchedInk": 66,
+      "pixels": 1449184,
+      "currentPdfSha256": "1516717c8c0ab0d8ee791135ae95df75f23f503e3c1055abd25524df9922e1f7",
+      "questions": [
+        "kisho-66-senmon-q11"
+      ],
+      "adjudication": "フォント位置・字形・括弧／ヘッダの描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r66/question/gakka(senmon_mondai)/p009.png",
+      "page": 9,
+      "acceptedImageSha256": "f2d1275573bee1d7307d91794934a857dd99d93ba311543be133456f05363d60",
+      "boxes": [
+        [
+          178,
+          474,
+          724,
+          135,
+          1535
+        ]
+      ],
+      "unmatchedInk": 1610,
+      "pixels": 1449184,
+      "currentPdfSha256": "1516717c8c0ab0d8ee791135ae95df75f23f503e3c1055abd25524df9922e1f7",
+      "questions": [
+        "kisho-66-senmon-q12"
+      ],
+      "adjudication": "数値表のフォント・罫線差。表の全セル値・見出し・単位は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r66/question/gakka(senmon_mondai)/p010.png",
+      "page": 10,
+      "acceptedImageSha256": "f3c41cc6f4a12b30740852ef7c89378c94f907b439c640c421193dcf3910e78a",
+      "boxes": [
+        [
+          199,
+          45,
+          15,
+          21,
+          8
+        ]
+      ],
+      "unmatchedInk": 98,
+      "pixels": 1449184,
+      "currentPdfSha256": "1516717c8c0ab0d8ee791135ae95df75f23f503e3c1055abd25524df9922e1f7",
+      "questions": [
+        "kisho-66-senmon-q13",
+        "kisho-66-senmon-q14"
+      ],
+      "adjudication": "フォント位置・字形・括弧／ヘッダの描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    },
+    {
+      "assetId": "r66/question/gakka(senmon_mondai)/p011.png",
+      "page": 11,
+      "acceptedImageSha256": "4f068437ebddc49b266351fb2ef6a5373bc55fbe8fd43cfb41072cf9bd0b2fff",
+      "boxes": [],
+      "unmatchedInk": 87,
+      "pixels": 1449184,
+      "currentPdfSha256": "1516717c8c0ab0d8ee791135ae95df75f23f503e3c1055abd25524df9922e1f7",
+      "questions": [
+        "kisho-66-senmon-q15"
+      ],
+      "adjudication": "フォント位置・字形・括弧／ヘッダの描画差。原文・数値・肢順・意味は同一。",
+      "result": "PASS_EDITION_EQUIVALENT"
+    }
+  ],
+  "academicOriginals": 60,
+  "choiceExplanations": 300,
+  "unadjudicatedAcademicContentPages": 0,
+  "contentCorrectionsNewlyRequired": 0,
+  "publicImageChange": "現行14PDFから121ページ画像を144dpiで生成、同版既受入作図9画像を再利用。130画像の公開manifest・ハッシュを検証。",
+  "scripts": [
+    "scripts/prepare-kisho-current.py",
+    "scripts/compare-kisho-edition.py",
+    "scripts/prepare-kisho-study.ts"
+  ],
+  "historicalAcceptance": "FILES.json / QUESTION-RECEIPTS.json / reused/ は変更せず保存。現行版への対応は本票に追加。",
+  "rights": "本人取得済みというタスク前提。旧権利フラグを許諾済みに書換えず、公開用の独立projectionで接続。",
+  "publicDeploymentPerformed": false,
+  "deliveredQuestions": [
+    {
+      "id": "kisho-65-ippan-q01",
+      "sourceRound": 65,
+      "questionPages": [
+        2
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "225302869eb3baf2df32c548e3a3a0d7301c7aa7f138dbf1f7bdc247d82565c7"
+    },
+    {
+      "id": "kisho-65-ippan-q02",
+      "sourceRound": 65,
+      "questionPages": [
+        2
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "cc9c5082967cb138f088428c6629afec09a528d5b1309500b846b3af8724bc62"
+    },
+    {
+      "id": "kisho-65-ippan-q03",
+      "sourceRound": 65,
+      "questionPages": [
+        3
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "2e7c58e7818e5583d3acd878ac067e1b6c218380ca09335e632f93bb7a1d6ffa"
+    },
+    {
+      "id": "kisho-65-ippan-q04",
+      "sourceRound": 65,
+      "questionPages": [
+        3
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "fc97af02dc742fdd1284713eb89f9ba1e062f35a01c4549d856ce80e04ffa58e"
+    },
+    {
+      "id": "kisho-65-ippan-q05",
+      "sourceRound": 65,
+      "questionPages": [
+        4
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "9075889b81d083710f86777bf4baae5267b3fea4d045a5652165d31235cfdf3e"
+    },
+    {
+      "id": "kisho-65-ippan-q06",
+      "sourceRound": 65,
+      "questionPages": [
+        4
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "e0568ef6c5015ce4c2ebbc952c31ecff7b5a24dfb14ca4fdb0ad084690166fe5"
+    },
+    {
+      "id": "kisho-65-ippan-q07",
+      "sourceRound": 65,
+      "questionPages": [
+        5
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "848c104ce65775a4c2be1723192ae83696be7edc360c7144ab39a5654ca3558f"
+    },
+    {
+      "id": "kisho-65-ippan-q08",
+      "sourceRound": 65,
+      "questionPages": [
+        6
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "6cf54f75ee757fac6d042eed783e153d41bb92d2618b43ece199ec5259ece6dd"
+    },
+    {
+      "id": "kisho-65-ippan-q09",
+      "sourceRound": 65,
+      "questionPages": [
+        7
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "fbf75dc6269dae425ddfcb5e44725cd3999f2bbd7946f987f1b8fbbbb363bbe3"
+    },
+    {
+      "id": "kisho-65-ippan-q10",
+      "sourceRound": 65,
+      "questionPages": [
+        8
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "8f2f959eeed61c3dbf4fdd7165b22332ab99f5377859faed0bd32f62b64feab1"
+    },
+    {
+      "id": "kisho-65-ippan-q11",
+      "sourceRound": 65,
+      "questionPages": [
+        8
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "8ae412aeabc3b38479da7689a13fcfa69c15457e26fba0ca0481f24ec9ff4771"
+    },
+    {
+      "id": "kisho-65-ippan-q12",
+      "sourceRound": 65,
+      "questionPages": [
+        9
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "c00bbc190cdf1290ced3d9c248d3af47f6b830dba09206514a907b3c35264ccd"
+    },
+    {
+      "id": "kisho-65-ippan-q13",
+      "sourceRound": 65,
+      "questionPages": [
+        9
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "816ad4aa69fb1bd7e47f45e9dd2c7258ae36d24e4cd2ea82ee170119718f07ca"
+    },
+    {
+      "id": "kisho-65-ippan-q14",
+      "sourceRound": 65,
+      "questionPages": [
+        10
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "d2e26076af06cfec7b339385f0345bedd3b823ed13d25d9a9de65c5cb44d8abe"
+    },
+    {
+      "id": "kisho-65-ippan-q15",
+      "sourceRound": 65,
+      "questionPages": [
+        10
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "b25f787edccf5b840416dbf0fb1a68a9a4aa9b54b4eb0c8717b327ba67b093f2"
+    },
+    {
+      "id": "kisho-65-senmon-q01",
+      "sourceRound": 65,
+      "questionPages": [
+        2
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "68381a873fd353bca1c2c889353b0ea71301276e85b0c54f2e3005174d2c331f"
+    },
+    {
+      "id": "kisho-65-senmon-q02",
+      "sourceRound": 65,
+      "questionPages": [
+        2
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "d904eaf847cd1096bf46ac0a5a74e16888ca39fea4c44dcecdeb05c65a4841dc"
+    },
+    {
+      "id": "kisho-65-senmon-q03",
+      "sourceRound": 65,
+      "questionPages": [
+        3
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "92fdbb517693ff2f4689717188190907ca472569e11d4555028e81bf57ce44ee"
+    },
+    {
+      "id": "kisho-65-senmon-q04",
+      "sourceRound": 65,
+      "questionPages": [
+        4
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "16dcffaf1defb41127aa798fd18edd3d86684c6f3df4b349ec015a11d8f1fb48"
+    },
+    {
+      "id": "kisho-65-senmon-q05",
+      "sourceRound": 65,
+      "questionPages": [
+        5
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "37182e1d0a1dcdac54b7259677569728c740ad60d861ca2e06af847d853ca3b9"
+    },
+    {
+      "id": "kisho-65-senmon-q06",
+      "sourceRound": 65,
+      "questionPages": [
+        5
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "091438c5604f92b0ac282711397dfc9ad2caaa719ccdcab687391b0c97bedcc1"
+    },
+    {
+      "id": "kisho-65-senmon-q07",
+      "sourceRound": 65,
+      "questionPages": [
+        6
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "39e4868b60e09d188870736c994d0fe29328464877fe221a8965f27275dbe837"
+    },
+    {
+      "id": "kisho-65-senmon-q08",
+      "sourceRound": 65,
+      "questionPages": [
+        7
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "7f8af9e1a704626eba49c047cfd7b952b9db2aa39d676d61bb463a53d3e359da"
+    },
+    {
+      "id": "kisho-65-senmon-q09",
+      "sourceRound": 65,
+      "questionPages": [
+        8
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "fa1c56aa249d62b06138aa8c0637285d4325c1f675cdf068fc877ade2bfff1a5"
+    },
+    {
+      "id": "kisho-65-senmon-q10",
+      "sourceRound": 65,
+      "questionPages": [
+        9
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "17d59c262ab034d0aecbb417356b17d1adf0930e05d3bef9c8143584a2af29d9"
+    },
+    {
+      "id": "kisho-65-senmon-q11",
+      "sourceRound": 65,
+      "questionPages": [
+        9
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "66969a8dac22fd52a5a04f3e3ab425737ca58449ae48edc716862172045e48df"
+    },
+    {
+      "id": "kisho-65-senmon-q12",
+      "sourceRound": 65,
+      "questionPages": [
+        10
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "f26887747ea93a9cb38bcf01f86b857dd4567bf4fc5f80b4e5100694571b1d1c"
+    },
+    {
+      "id": "kisho-65-senmon-q13",
+      "sourceRound": 65,
+      "questionPages": [
+        11
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "1c29a7dd7a071165aaed18c73ddcc3057dcd3ebb1f347d6afe6f611c9304434f"
+    },
+    {
+      "id": "kisho-65-senmon-q14",
+      "sourceRound": 65,
+      "questionPages": [
+        11
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "492a37c38f67b545a72e689966af06858dfa9ac895566615560a057a1f902672"
+    },
+    {
+      "id": "kisho-65-senmon-q15",
+      "sourceRound": 65,
+      "questionPages": [
+        12
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "103bcd60b21adc6c9da0f42485dca2ada75d9361d8a80d6561ae8db551c861da"
+    },
+    {
+      "id": "kisho-66-ippan-q01",
+      "sourceRound": 66,
+      "questionPages": [
+        2
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "73787276da349be75125a338a1813cf45cf35c77858b79519c2749db1a8dd107"
+    },
+    {
+      "id": "kisho-66-ippan-q02",
+      "sourceRound": 66,
+      "questionPages": [
+        2
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "555bfdd355daaf6b54b21134b0db620a3222d92b4278e83aa7d2294b21aa748a"
+    },
+    {
+      "id": "kisho-66-ippan-q03",
+      "sourceRound": 66,
+      "questionPages": [
+        3
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "24707004404bcb0a04bc4f61130a05e8e06961d84d0cc126a5ec31d324aa06d7"
+    },
+    {
+      "id": "kisho-66-ippan-q04",
+      "sourceRound": 66,
+      "questionPages": [
+        4
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "a0362484d5884a084ff38f54647032c500785036b63e3db592bc74f2abf127c3"
+    },
+    {
+      "id": "kisho-66-ippan-q05",
+      "sourceRound": 66,
+      "questionPages": [
+        4
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "a9f05bc144a3c1f8140b8a9f4a8747daf1035fe024c2380953bea1edd8e846e0"
+    },
+    {
+      "id": "kisho-66-ippan-q06",
+      "sourceRound": 66,
+      "questionPages": [
+        5
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "0b0ea2132fa08d952d1ab13de19f719609feaecb6473b26b1050c109b55bab77"
+    },
+    {
+      "id": "kisho-66-ippan-q07",
+      "sourceRound": 66,
+      "questionPages": [
+        6
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "cc01db11a879622cb49d26edcb946beb03c5d1456732354e082fb3417f1f2de4"
+    },
+    {
+      "id": "kisho-66-ippan-q08",
+      "sourceRound": 66,
+      "questionPages": [
+        7
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "eabee318f16e0404d2d9ba13f4255f907612e48af08922afedbfa962210d7379"
+    },
+    {
+      "id": "kisho-66-ippan-q09",
+      "sourceRound": 66,
+      "questionPages": [
+        7
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "ab63b53deef2d90219608da61b42074c486fc557ec34598c74e5aa11a550933f"
+    },
+    {
+      "id": "kisho-66-ippan-q10",
+      "sourceRound": 66,
+      "questionPages": [
+        8
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "fddbc68497230d76592e73c66f8e22af3647427b4232c34461a37d93e4c405dc"
+    },
+    {
+      "id": "kisho-66-ippan-q11",
+      "sourceRound": 66,
+      "questionPages": [
+        8
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "c4e9fd2213cff023c99aa80ab7072d1897e80ae83299baee9fa9f91e9774f51c"
+    },
+    {
+      "id": "kisho-66-ippan-q12",
+      "sourceRound": 66,
+      "questionPages": [
+        9
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "91adc46b9b6925aa5e3ebd696fd538f1c359a4d70c962fceac65f7f08071dadf"
+    },
+    {
+      "id": "kisho-66-ippan-q13",
+      "sourceRound": 66,
+      "questionPages": [
+        9
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "743dd4655b314a7651491561516ea1688e5a62135250d02723b480f9b5e57883"
+    },
+    {
+      "id": "kisho-66-ippan-q14",
+      "sourceRound": 66,
+      "questionPages": [
+        10
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "053e54892af218f358d67f8de0245bb630967fbeb8c0dd4ea60d3d492ea2a6db"
+    },
+    {
+      "id": "kisho-66-ippan-q15",
+      "sourceRound": 66,
+      "questionPages": [
+        10
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "2a6c79386bcfc36e8d63018fbda2d01035d0e03c3053319e6da9ae4c78ca1307"
+    },
+    {
+      "id": "kisho-66-senmon-q01",
+      "sourceRound": 66,
+      "questionPages": [
+        2
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "d246aeffc818a1403786117e1641d24f98c8c1f545ebd072f50e40668cc0a7ff"
+    },
+    {
+      "id": "kisho-66-senmon-q02",
+      "sourceRound": 66,
+      "questionPages": [
+        2
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "aab27b1a20002be33590700da9f071229b4fa048afede9a585964473e0e26390"
+    },
+    {
+      "id": "kisho-66-senmon-q03",
+      "sourceRound": 66,
+      "questionPages": [
+        3
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "dae83830121702b108056e52bb8775d0b9185d27ae4db940ab06a186419ed01a"
+    },
+    {
+      "id": "kisho-66-senmon-q04",
+      "sourceRound": 66,
+      "questionPages": [
+        3
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "3968d0589997ba802a47a842005d80ae4276777ab9a4d711257b8c07a3d6aba4"
+    },
+    {
+      "id": "kisho-66-senmon-q05",
+      "sourceRound": 66,
+      "questionPages": [
+        4
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "ff88e60cc0cd311610a25cfb2b25a02e4c5318194034bd525976fd287a8ecaf1"
+    },
+    {
+      "id": "kisho-66-senmon-q06",
+      "sourceRound": 66,
+      "questionPages": [
+        4
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "a8ee2df70915dcd43b10e44ba90c2f1e657706ddf85d6442a6b2cfaa61a6f88a"
+    },
+    {
+      "id": "kisho-66-senmon-q07",
+      "sourceRound": 66,
+      "questionPages": [
+        5
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "e0ac94a96e211767510487e5a1a98a7d511b60dbfcf92041d4df427e08d16b18"
+    },
+    {
+      "id": "kisho-66-senmon-q08",
+      "sourceRound": 66,
+      "questionPages": [
+        6
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "93701cd8d2a2a1a138df04f4e5e9a520542595adf1335cb1d56cda4341d7841f"
+    },
+    {
+      "id": "kisho-66-senmon-q09",
+      "sourceRound": 66,
+      "questionPages": [
+        7
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "accab6b1efff75cafd967de9f2aab377a2d9d54e8377b48bd9554ed7b34b1624"
+    },
+    {
+      "id": "kisho-66-senmon-q10",
+      "sourceRound": 66,
+      "questionPages": [
+        7
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "bb6a06328d5d38373f6766d125b4b6a1183366143bb37c6c7d22468ba5b166c9"
+    },
+    {
+      "id": "kisho-66-senmon-q11",
+      "sourceRound": 66,
+      "questionPages": [
+        8
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "aaf1ca1d062b0bc661e7c41a39b40811023a18f728a42d1beae44beb363ae9fa"
+    },
+    {
+      "id": "kisho-66-senmon-q12",
+      "sourceRound": 66,
+      "questionPages": [
+        9
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "7c161aef714c35d92969bcda2fcb684bce794a747524815b22cb2afe9ceeaec9"
+    },
+    {
+      "id": "kisho-66-senmon-q13",
+      "sourceRound": 66,
+      "questionPages": [
+        10
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "c8f749f88e133cc5f4a5d2124d50ec029ba5a7bfbaf756d8a09e9645a2e88d88"
+    },
+    {
+      "id": "kisho-66-senmon-q14",
+      "sourceRound": 66,
+      "questionPages": [
+        10
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "f0efe6d681c4242c1d8bdac1183e4d651d760dd8ab4e9dd22d801b2fe4bd203e"
+    },
+    {
+      "id": "kisho-66-senmon-q15",
+      "sourceRound": 66,
+      "questionPages": [
+        11
+      ],
+      "officialAnswerPages": [
+        1
+      ],
+      "deliveredRawSha256": "5a4cac99b3d6428f9d297802bc02400c60021740400328055316997471c1e784"
+    },
+    {
+      "id": "kisho-65-pm1-q01",
+      "sourceRound": 65,
+      "questionPages": [
+        3,
+        4
+      ],
+      "officialAnswerPages": [
+        2,
+        3
+      ],
+      "deliveredRawSha256": "9a9dd1cb4a9afa6291e31bd008dfa1b973d25be47d002216c5df3a6811988bae"
+    },
+    {
+      "id": "kisho-65-pm1-q02",
+      "sourceRound": 65,
+      "questionPages": [
+        4
+      ],
+      "officialAnswerPages": [
+        3
+      ],
+      "deliveredRawSha256": "f1c1a3c529f69b04c98c05caf536d8bf626c703b0cd5454110a099d6d39a51ae"
+    },
+    {
+      "id": "kisho-65-pm1-q03",
+      "sourceRound": 65,
+      "questionPages": [
+        4,
+        5
+      ],
+      "officialAnswerPages": [
+        3,
+        4
+      ],
+      "deliveredRawSha256": "62ac9eff9e25cdee5b90d3304bae7f1d19ec4c9111574f819ca34ecd968832e6"
+    },
+    {
+      "id": "kisho-65-pm1-q04",
+      "sourceRound": 65,
+      "questionPages": [
+        5
+      ],
+      "officialAnswerPages": [
+        4
+      ],
+      "deliveredRawSha256": "4e39a54e44257da0464516571b6c78f98296364e36737de151d27fa895a61305"
+    },
+    {
+      "id": "kisho-65-pm1-q05",
+      "sourceRound": 65,
+      "questionPages": [
+        5,
+        6
+      ],
+      "officialAnswerPages": [
+        4,
+        5
+      ],
+      "deliveredRawSha256": "375dd3b57495cc03711d9af8a206ad296016c5a81b4f7089d096d199716990b4"
+    },
+    {
+      "id": "kisho-65-pm1-q06",
+      "sourceRound": 65,
+      "questionPages": [
+        6
+      ],
+      "officialAnswerPages": [
+        5
+      ],
+      "deliveredRawSha256": "dfad857825254e9f070fb1789ec09a65df5185805ae39be901b746260dada71b"
+    },
+    {
+      "id": "kisho-65-pm1-q07",
+      "sourceRound": 65,
+      "questionPages": [
+        6
+      ],
+      "officialAnswerPages": [
+        5
+      ],
+      "deliveredRawSha256": "17b8967c96594c9961f8cdab7a482976d834d704d1de38249d55a229e4a97f26"
+    },
+    {
+      "id": "kisho-65-pm2-q01",
+      "sourceRound": 65,
+      "questionPages": [
+        3,
+        4
+      ],
+      "officialAnswerPages": [
+        6
+      ],
+      "deliveredRawSha256": "b3b3476ad09118d27f8a2553026f9c467e89e2fd5a09de3132112eb20e492a3b"
+    },
+    {
+      "id": "kisho-65-pm2-q02",
+      "sourceRound": 65,
+      "questionPages": [
+        4
+      ],
+      "officialAnswerPages": [
+        7
+      ],
+      "deliveredRawSha256": "d2b4edad0dc7391728d53e48c61a4ca261d9c1af058dda3bba1524ce2736aecd"
+    },
+    {
+      "id": "kisho-65-pm2-q03",
+      "sourceRound": 65,
+      "questionPages": [
+        5,
+        6
+      ],
+      "officialAnswerPages": [
+        7,
+        8,
+        9
+      ],
+      "deliveredRawSha256": "966b6212b925702f1875b8fa76d2a00820e7bd03b69008611ac7c411d2c947b5"
+    },
+    {
+      "id": "kisho-66-pm1-q01",
+      "sourceRound": 66,
+      "questionPages": [
+        2,
+        3,
+        4
+      ],
+      "officialAnswerPages": [
+        2
+      ],
+      "deliveredRawSha256": "6b844570d34699b2ac6d84e91aa1a7bd99229a91f4fe63127963db7e2cd3f73f"
+    },
+    {
+      "id": "kisho-66-pm1-q02",
+      "sourceRound": 66,
+      "questionPages": [
+        2,
+        4,
+        5
+      ],
+      "officialAnswerPages": [
+        2,
+        3
+      ],
+      "deliveredRawSha256": "3e284c9d4eb4e178d8836c50f2353ea0ee6734c4ada008ca7edec60279d8085f"
+    },
+    {
+      "id": "kisho-66-pm1-q03",
+      "sourceRound": 66,
+      "questionPages": [
+        2,
+        5
+      ],
+      "officialAnswerPages": [
+        4
+      ],
+      "deliveredRawSha256": "fc2959a2e7daa60f33e0b0e374e78841bdbf26d50d552de1907edfff5a65d65b"
+    },
+    {
+      "id": "kisho-66-pm1-q04",
+      "sourceRound": 66,
+      "questionPages": [
+        2,
+        5,
+        6
+      ],
+      "officialAnswerPages": [
+        4,
+        5
+      ],
+      "deliveredRawSha256": "681879098fec8b16a9c12f687ca01d1104c5405f07fe9412086d7327a85d5642"
+    },
+    {
+      "id": "kisho-66-pm1-q05",
+      "sourceRound": 66,
+      "questionPages": [
+        2,
+        6
+      ],
+      "officialAnswerPages": [
+        5
+      ],
+      "deliveredRawSha256": "4e503e71050bf90c57f4e0516b42f150b5c4aa7ff710caca3a9031d60ab76287"
+    },
+    {
+      "id": "kisho-66-pm2-q01",
+      "sourceRound": 66,
+      "questionPages": [
+        2,
+        3,
+        4
+      ],
+      "officialAnswerPages": [
+        6
+      ],
+      "deliveredRawSha256": "f2b234e51de6f1747b7aaede1b88a238932d73283d2dedaa749ab39d13670805"
+    },
+    {
+      "id": "kisho-66-pm2-q02",
+      "sourceRound": 66,
+      "questionPages": [
+        2,
+        4,
+        5
+      ],
+      "officialAnswerPages": [
+        7,
+        8
+      ],
+      "deliveredRawSha256": "f593a539d4d692833d3ae63d34c4a5fd9cdb4c09593b2940dd89dbe9966f9a82"
+    },
+    {
+      "id": "kisho-66-pm2-q03",
+      "sourceRound": 66,
+      "questionPages": [
+        2,
+        5,
+        6
+      ],
+      "officialAnswerPages": [
+        8,
+        9
+      ],
+      "deliveredRawSha256": "89c2caf2944437f8e85baa4f949662b376a3a6acea7a9775f9f019f03ce3522e"
+    }
+  ],
+  "manuscriptNormalization": "既受入原稿の改行・肢記号の内部化・65一般問1(c)の「量」→「総量」等は維持。現行PDFの逐字転記との同一性ではなく、旧新版PDFの出題上の意味・肢・図・正答が同一という裁定。"
+}

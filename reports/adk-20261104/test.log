@@ -1,0 +1,64 @@
+
+> ipa-quiz-site@1.0.0 test C:\Users\kanet\20260522\wt-batch1
+> vitest run "--maxWorkers=2"
+
+
+ RUN  v4.1.12 C:/Users/kanet/20260522/wt-batch1
+
+corepack : Error: Not implemented: navigation (except hash changes)
+発生場所 行:2 文字:1
++ corepack pnpm test --maxWorkers=2 *> reports/adk-20261104/test.log; $ ...
++ ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (Error: Not impl...t hash changes):String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+    at module.exports (C:\Users\kanet\20260522\wt-batch1\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at navigateFetch (C:\Users\kanet\20260522\wt-batch1\node_modules\jsdom\lib\jsdom\living\window\navigation.js:77:3)
+    at exports.navigate (C:\Users\kanet\20260522\wt-batch1\node_modules\jsdom\lib\jsdom\living\window\navigation.js:55:
+3)
+    at Timeout._onTimeout (C:\Users\kanet\20260522\wt-batch1\node_modules\jsdom\lib\jsdom\living\nodes\HTMLHyperlinkEle
+mentUtils-impl.js:80:7)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7) undefined
+Error: Not implemented: navigation (except hash changes)
+    at module.exports (C:\Users\kanet\20260522\wt-batch1\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at navigateFetch (C:\Users\kanet\20260522\wt-batch1\node_modules\jsdom\lib\jsdom\living\window\navigation.js:77:3)
+    at exports.navigate (C:\Users\kanet\20260522\wt-batch1\node_modules\jsdom\lib\jsdom\living\window\navigation.js:55:
+3)
+    at Timeout._onTimeout (C:\Users\kanet\20260522\wt-batch1\node_modules\jsdom\lib\jsdom\living\nodes\HTMLHyperlinkEle
+mentUtils-impl.js:80:7)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7) undefined
+Error: Not implemented: navigation (except hash changes)
+    at module.exports (C:\Users\kanet\20260522\wt-batch1\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at navigateFetch (C:\Users\kanet\20260522\wt-batch1\node_modules\jsdom\lib\jsdom\living\window\navigation.js:77:3)
+    at exports.navigate (C:\Users\kanet\20260522\wt-batch1\node_modules\jsdom\lib\jsdom\living\window\navigation.js:55:
+3)
+    at Timeout._onTimeout (C:\Users\kanet\20260522\wt-batch1\node_modules\jsdom\lib\jsdom\living\nodes\HTMLHyperlinkEle
+mentUtils-impl.js:80:7)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7) undefined
+Error: Not implemented: navigation (except hash changes)
+    at module.exports (C:\Users\kanet\20260522\wt-batch1\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at navigateFetch (C:\Users\kanet\20260522\wt-batch1\node_modules\jsdom\lib\jsdom\living\window\navigation.js:77:3)
+    at exports.navigate (C:\Users\kanet\20260522\wt-batch1\node_modules\jsdom\lib\jsdom\living\window\navigation.js:55:
+3)
+    at Timeout._onTimeout (C:\Users\kanet\20260522\wt-batch1\node_modules\jsdom\lib\jsdom\living\nodes\HTMLHyperlinkEle
+mentUtils-impl.js:80:7)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7) undefined
+Error: Not implemented: navigation (except hash changes)
+    at module.exports (C:\Users\kanet\20260522\wt-batch1\node_modules\jsdom\lib\jsdom\browser\not-implemented.js:9:17)
+    at navigateFetch (C:\Users\kanet\20260522\wt-batch1\node_modules\jsdom\lib\jsdom\living\window\navigation.js:77:3)
+    at exports.navigate (C:\Users\kanet\20260522\wt-batch1\node_modules\jsdom\lib\jsdom\living\window\navigation.js:55:
+3)
+    at Timeout._onTimeout (C:\Users\kanet\20260522\wt-batch1\node_modules\jsdom\lib\jsdom\living\nodes\HTMLHyperlinkEle
+mentUtils-impl.js:80:7)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7) undefined
+
+ Test Files  722 passed (722)
+      Tests  7592 passed | 2 skipped (7594)
+   Start at  16:00:07
+   Duration  610.68s (transform 72.72s, setup 81.26s, import 508.87s, tests 154.66s, environment 374.65s)
+

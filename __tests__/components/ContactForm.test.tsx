@@ -21,7 +21,7 @@ describe("ContactForm — 送信成功の SR 通知", () => {
       "fetch",
       vi.fn().mockResolvedValue({
         ok: true,
-        json: async () => ({ ok: true }),
+        json: async () => ({ ok: true, delivery: "delivered", receiptId: "KG-test" }),
       }),
     );
 

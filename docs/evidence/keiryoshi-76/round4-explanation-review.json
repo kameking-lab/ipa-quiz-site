@@ -1,0 +1,4690 @@
+{
+  "scope": "8 subjects × 25 questions × 5 choices = 1000 explanations; all 200 overall explanations also read. Authoring-agent manual semantic review, not an independent external review or machine proof.",
+  "sourceEvidence": "full-text-audit.json (1200 official text regions); figure-crops.json / figure-pixel-audit.json; round4-calculations.json",
+  "additionalReference": {
+    "question": "計質4",
+    "url": "https://issoku.jp/product/pdf/g-001-b.pdf",
+    "corroboratingUrl": "https://issoku.jp/product/pdf/micrometer.pdf",
+    "finding": "メーカー資料の隙間→流量変化の原理と、流量式・背圧式の分類を照合。"
+  },
+  "summary": {
+    "questions": 200,
+    "choices": 1000,
+    "overallExplanations": 200
+  },
+  "questions": [
+    {
+      "subject": "法規",
+      "qNumber": 1,
+      "pdfPage": 2,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。法規は令和7年12月出題時点の条件として照合。",
+      "questionAndChoicesSha256": "baa141f4fffcd6583524a2fe9d951e36c7fefe0ea36e74e49a826d163381912e",
+      "explanationsSha256": "d5900cae57e48a2faf767342bceb02c6031b1e350d904517364b03d6842b3425",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 2,
+      "pdfPage": 3,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。法規は令和7年12月出題時点の条件として照合。",
+      "questionAndChoicesSha256": "768c6ae2f04f71b50c7d6f373cdd93e1391f606fd08100ddbde4f0c6e17a40f0",
+      "explanationsSha256": "f3da64c8ba7452afb9ff8a15459619461c60237d063955d7412e12a040a286e2",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 3,
+      "pdfPage": 4,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "SI単位そのものかでなく計量法別表第1の量と単位の組合せを問う。",
+      "questionAndChoicesSha256": "e0fa0bdb05634b0e55216364171db2279675bced92fc6c7d479331ffd1b448c7",
+      "explanationsSha256": "e97da0fd497b6f34abcbc074d8c61fec20a7149b5b61263f91499b7cf78475fb",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 4,
+      "pdfPage": 5,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。法規は令和7年12月出題時点の条件として照合。",
+      "questionAndChoicesSha256": "aeeaf4bdd05cc0ea0a02fc74a89ddb7fd9452d72d9529139200b0d5a35a1b934",
+      "explanationsSha256": "150512030327166aa67a1aa9821bf9fc46dfd7ad3fe20d697b38d2e6eada0aad",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 5,
+      "pdfPage": 6,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。法規は令和7年12月出題時点の条件として照合。",
+      "questionAndChoicesSha256": "0b18280dde62246dcf7d897c43d9adb20fb85400f7ec9f77ac1104085ae0a98f",
+      "explanationsSha256": "e4756a1aaf955907129a9d9348276868b2f1efabe3e0494535fe5ddf0b8774ae",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 6,
+      "pdfPage": 7,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。法規は令和7年12月出題時点の条件として照合。",
+      "questionAndChoicesSha256": "1367927a2e2306a4fcd8bb726487695c2e5c24ee66b09b50ebd1ea566032550a",
+      "explanationsSha256": "241e01d70e378dd9bac28c987c1692305e013866c7ee747ed66aa682ab7219c6",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 7,
+      "pdfPage": 8,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。法規は令和7年12月出題時点の条件として照合。",
+      "questionAndChoicesSha256": "0ca304e3595f00225b76a20dbb22f7761af82c914edca5cf2c96ef1786a548b2",
+      "explanationsSha256": "8cab2c9cb7ad2235d85f72206f0824e0274ca30df9952f1f8a4deb790b86222c",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 8,
+      "pdfPage": 9,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "定期検査は検定証印等・性能・使用公差。脚注の定義も照合。",
+      "questionAndChoicesSha256": "b95fbedacc0ad6220eb8182f0a926a6c38689a1dcc599ff706e50c87a2bf0538",
+      "explanationsSha256": "25871e755d49f9104aeec0ad0abbcc981e0cf4e8f4abeb86e5dda44c89b87483",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 9,
+      "pdfPage": 10,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。法規は令和7年12月出題時点の条件として照合。",
+      "questionAndChoicesSha256": "4294ce5ba0a496160d583f446b4599616f26a7899e3291e0a632d19b705bf327",
+      "explanationsSha256": "122e064a7b4510e3fc3b5256f8dc53c23c9318b2199fd6955e69d6f5802be68a",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 10,
+      "pdfPage": 11,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。法規は令和7年12月出題時点の条件として照合。",
+      "questionAndChoicesSha256": "64499688e414a4e8ad0eebc6b9157b282253777874b30dc1bc9540be44e981c6",
+      "explanationsSha256": "cc0610da2a6dd8f671074c8337f2f09eed32e7042d4f8a318a0279bf37f21252",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 11,
+      "pdfPage": 12,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。法規は令和7年12月出題時点の条件として照合。",
+      "questionAndChoicesSha256": "66e887d93967d0b28cf5469b1fc83a33b3a6f2aa904d5a59e6af6a915260d7a3",
+      "explanationsSha256": "efe0800b6d8119027fcd3d7a86e653a8a1a8a349d61a1156c40edd08802e6154",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 12,
+      "pdfPage": 13,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。法規は令和7年12月出題時点の条件として照合。",
+      "questionAndChoicesSha256": "dd3d627239207c69ba5a0902b403e02eda2b995953743682e0c16ccf89cde619",
+      "explanationsSha256": "4237195ddc1223dfe3c003c016d97a701634747b697ed1000e61e97440a0c04c",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 13,
+      "pdfPage": 14,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。法規は令和7年12月出題時点の条件として照合。",
+      "questionAndChoicesSha256": "858512cbc0e45187e76e5d8224be49bfad51a14652e4708aa7df788baea1c9d2",
+      "explanationsSha256": "a7087eab7ce95b0dff13637dd8781a5053a6694b3f8e2fae1a1eea7249ccf92a",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 14,
+      "pdfPage": 15,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。法規は令和7年12月出題時点の条件として照合。",
+      "questionAndChoicesSha256": "3b18bddd12410f89e7518abea27e43b915f93f0a69ed785fea39f98c820063a5",
+      "explanationsSha256": "1fe993462129b10753567dcae741a41046c11d47ebc69c6e40ee310cd642b216",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 15,
+      "pdfPage": 16,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。法規は令和7年12月出題時点の条件として照合。",
+      "questionAndChoicesSha256": "bd9c3c5039a992681a1b5b4d77bb29f2aee4a0e02f89d3e0848f16ed17927c14",
+      "explanationsSha256": "c13a1187f445cf49909605c7f041f83f0a597916662e5eec5f0afc8b506493f9",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 16,
+      "pdfPage": 17,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。法規は令和7年12月出題時点の条件として照合。",
+      "questionAndChoicesSha256": "9fa09ff612581662a9581696d7fb5b759f9c3187874ab158481885e458d9fa0f",
+      "explanationsSha256": "14abb3b6177b4dfa9f01fedfce99773a63b6095118e5d46cce57fe52083fc9d2",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 17,
+      "pdfPage": 18,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "受けるべき期間と受けることを要しない期間の列を区別。",
+      "questionAndChoicesSha256": "571d80068cbb28d8ca012b4ea95ca43a2fecf60d449fb8a5a2e3c2e0b608e877",
+      "explanationsSha256": "ddfbc4678fd7618857767dd393d60415a9fe4352b4cb938d6cf98d27b7014179",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 18,
+      "pdfPage": 19,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。法規は令和7年12月出題時点の条件として照合。",
+      "questionAndChoicesSha256": "ea16e0594307cbe221c2cedd8e2d125745f049d9b772826affe7723fe5b8cb49",
+      "explanationsSha256": "9626461a12342c99ec7861e6a79634d5f4870d4836439751757994b386d6c96b",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 19,
+      "pdfPage": 20,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。法規は令和7年12月出題時点の条件として照合。",
+      "questionAndChoicesSha256": "08bd604abd3bcd4b043905f685e570afabb490171eb34b263b1660c1f2250043",
+      "explanationsSha256": "8bb254cf70865df1885da7ef8666ece17052a95b391af2cc65f97cd36e537e2c",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 20,
+      "pdfPage": 21,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。法規は令和7年12月出題時点の条件として照合。",
+      "questionAndChoicesSha256": "fe670399be7446102671b811503dfe5740027cf4b4e61b4a701e2f3702ae64c4",
+      "explanationsSha256": "b711e1d31b2cc770be2e08d6bb75db2fe80b7842c1ebf7d937611e9d389ef47f",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 21,
+      "pdfPage": 22,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "訂正正答2を維持。教習経由には審議会の認定を要する。",
+      "questionAndChoicesSha256": "a60aefd085ec7d3e1b2a503d9f88bbf7282ad74b8570f6c363fb1095e2d2b1e4",
+      "explanationsSha256": "f983980acfea2be3b9b1b860069f9d4ef7c7de302d20a7f758879a8367484fcc",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 22,
+      "pdfPage": 23,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。法規は令和7年12月出題時点の条件として照合。",
+      "questionAndChoicesSha256": "16619f0680d0d2884461c39716f0984e0a2d1064881d6a801dd3acaf96b2b2b6",
+      "explanationsSha256": "c4ead1251703684e08b976679e6882755e3ce6d8dbcde4b94ddb1ec3242739e2",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 23,
+      "pdfPage": 24,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。法規は令和7年12月出題時点の条件として照合。",
+      "questionAndChoicesSha256": "2240d07a0ad68e039d5bd4ddae83e630f94ed1bc1f1df477341a37f13e65ac56",
+      "explanationsSha256": "3915082f6f18416de597a795821bb42b904fe1c758fab811282f78fd35d48207",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 24,
+      "pdfPage": 25,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。法規は令和7年12月出題時点の条件として照合。",
+      "questionAndChoicesSha256": "367ef81ee075715025d252c80104f4fb854c02419b49683fb7a00ee846708c6e",
+      "explanationsSha256": "d6048642d086ff8e7a0c2c0292ea1053614d73d421f71e87a621d75b1a015ba2",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 25,
+      "pdfPage": 26,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/5_R07houki.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "令和7年6月1日の拘禁刑への変更注記と、行政検査/犯罪捜査の違いを確認。",
+      "questionAndChoicesSha256": "82aca0b255acbbcd7c66957a5c6e47cededfa7abf7c072da77a6876745260923",
+      "explanationsSha256": "545be2afda9137f267ab798e78f0392679c30e4f5372761ff707af3cbc22487b",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 1,
+      "pdfPage": 2,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "ebf35a4bc20514814d2a3e58deb7dc130e04ad8d030d4863ac561c7c49347734",
+      "explanationsSha256": "8a277b4b257668d8140fdccc0b3bec3c23b706b658da60bf7beeb6ad7bd1b552",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 2,
+      "pdfPage": 3,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "156888c8825eb5469cbf6b8131648fd39ca0e1a87dedaa7ba02b47e2703e4636",
+      "explanationsSha256": "cc7291848f99b19ae5184b0656c0cb95ad92e550f8bdad06e8fd691378534e6c",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 3,
+      "pdfPage": 4,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "f1a04c85f4e0d2cadae87a4deaa8ffc34be30f7435e989f3faad05ebfa329aed",
+      "explanationsSha256": "ec04347b0afe7d894c4d3f2f3b69c017af41e9d063f5e2f2b716e1d2a1ba929c",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 4,
+      "pdfPage": 5,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "4bc6c9399642f099fdd38f302e720930cd130201377c5c9a15ef2398d0618177",
+      "explanationsSha256": "030759b04050e58513b4380d022c5210d695531e5a3309841ea7af83b0895a98",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 5,
+      "pdfPage": 6,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "6077f0f66e269afe40309f491975480ec1f978799be204568257e61d82161420",
+      "explanationsSha256": "51a1689d14a43287803a064989b02e1d66eb0fb37252f959acae9dd1646983e2",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 6,
+      "pdfPage": 7,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "辺長sでa=(−s,0), b=(s/√2,s/√2), AG=(s/√2,s+s/√2)。各候補の両成分を比較。",
+      "questionAndChoicesSha256": "302ec7481ac5c51011131985c2e075f43aee8a2149bd1d17de686a269f8c5227",
+      "explanationsSha256": "045d97b7ef3efc04acf387d4a3ae484f47eed079aa1edb749ca13bb55432e741",
+      "result": "reviewed-after-correction"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 7,
+      "pdfPage": 8,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "連鎖律：内側2と外側1/2が相殺。",
+      "questionAndChoicesSha256": "0751cd60d5ad30fbbf82f209633ac829db54ed8e905f0a0e6c9713702dcc5060",
+      "explanationsSha256": "6ce85ae5a9b393e994f95c662496686605183c10388a0620480bbb237b1ed2cc",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 8,
+      "pdfPage": 9,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "1427d66b9a3ce321776cb8ea9c02cecbe774fbf1c3a06fc2a96447a7be52327a",
+      "explanationsSha256": "e07118d5f32ecfafb15ee43750bd351de3fa79cd400d0af0c40843d79a9e8932",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 9,
+      "pdfPage": 10,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "各候補を二つの列ベクトル条件へ代入。",
+      "questionAndChoicesSha256": "2875db9515fd1273b75105ca16c502d70e835669d5dee22610bc1f94785276c3",
+      "explanationsSha256": "490c85808492a94db61363e9913cd101d14a0366012781f3e9ff13f7f534cab3",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 10,
+      "pdfPage": 11,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "e39d0b82f63563267a89a7aa99165fc1962e6fa15fc1644fe7b73e9075401e3c",
+      "explanationsSha256": "8ecb623d88a01f918def93aa89cc0124ed9fcb6f544e968c4211b1731f5c115e",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 11,
+      "pdfPage": 12,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "ec8096eac586a2cb3c10027a69cfa682ebbc91147066e641e090fa84473db277",
+      "explanationsSha256": "b6afeba43288dacb7a8e1a59ac030821c084e4c634b121aa014b1fd7c023d46c",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 12,
+      "pdfPage": 13,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "d60b8358f2735d457d7fb68cd3412a8257873f9f9854b2bc54d177aeecca0091",
+      "explanationsSha256": "98cbac4535308d75a05db5b2ff411b1937c88324878ba3f5f626191552fa9341",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 13,
+      "pdfPage": 14,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "B回りFL=Mg(L−x)。xはAからの距離。",
+      "questionAndChoicesSha256": "e75b0467d88f18c09e1128d84dcfbd0df99b4bdc08012394b0c2e58563498513",
+      "explanationsSha256": "c37c4750f9e76fd04445b440a1d8ef28fd277c09cab4496173e5112fff22fc78",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 14,
+      "pdfPage": 15,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "中心は自然長LでなくL+mg/k、ω=√(k/m)、E=kA²/2。",
+      "questionAndChoicesSha256": "47a97b6ab4c2ce3af8a4bddefcd4e2aba9018aa863ff1dd9393c725de3cd36d6",
+      "explanationsSha256": "fe2f83f6a983fb72556d0570d096227d68d5ad9e69078b4acc3218bd1250f870",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 15,
+      "pdfPage": 16,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "図の偏位とI L×Bの向きP→Qを照合、BIL/mg=tan30°。",
+      "questionAndChoicesSha256": "60b0747fabc95ea990b37922e10d5b48deb82fe02b0c44383003ac243c5b6adb",
+      "explanationsSha256": "92b2d5a3f8d7fc14c2ca0fb1d62b104d76a215a3286a4ac065cba0d607ac637d",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 16,
+      "pdfPage": 17,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "中央Rは直流定常時ゼロ電流。左右上端は電源負極に対しV/3と2V/3。",
+      "questionAndChoicesSha256": "25ee92172abd13a8625b016290485f217334b5e4a595a4c612f16e9ca0c5f370",
+      "explanationsSha256": "7220905e1070f8d7b54484e39a311e8cddc74afd1095330cc7c65eed9a1ce25b",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 17,
+      "pdfPage": 18,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "共通焦点の相似から出射/入射径=f₂/f₁。",
+      "questionAndChoicesSha256": "13551408e7431bb322b198e9c1db0f90edb508e0cf0ed5b6e84c8d5faac1faa1",
+      "explanationsSha256": "a1c010ab2284da850813be87d4aa549577b4f653f4dd6f6645b07b5a6cd80329",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 18,
+      "pdfPage": 19,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "境界で振動数不変、媒質内速度c/n・波長λ/n。",
+      "questionAndChoicesSha256": "bd81e4fd826c039100b9b197de4367a47203673c7668d8d346c2d2f1c62f1f44",
+      "explanationsSha256": "5063caa289adf078154adf8f1c7a96581c38f85c2ae018af3fca5459dcc6b142",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 19,
+      "pdfPage": 20,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "7268a367bc3d7a732e0789c563c9f8416d5d3a2c8a44d3b6a83daef54b2c2a1f",
+      "explanationsSha256": "e76514336fbabd93680efc7bcaaa9997fa6c6fe323435c22c4c9248aff7c68e4",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 20,
+      "pdfPage": 21,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "二つの反射で片方だけπ反転、2t=λ/2、r²≈2Rt。",
+      "questionAndChoicesSha256": "1ffb4c53604e0e42c89537fa982bf01f2b7129d64c9abd50a894c23c838e1a5c",
+      "explanationsSha256": "4b10223a38253f6c1c8c618614a85bc458e338c3ddbf3f276623a2a7a8af18f0",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 21,
+      "pdfPage": 22,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "4450d82319c6a25e7d5ce4a6ec18271533275fedc9ee0318482f586283e35f20",
+      "explanationsSha256": "2ce7073a76886e68f9faa5f6d8adbf138cfea5e28a4c48521fe9f190b603ab6f",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 22,
+      "pdfPage": 23,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "水の受熱Mc(T−T₀)と金属の放熱を等置。",
+      "questionAndChoicesSha256": "f58bd39e7fa9320c29230a018a1c44f5208e65d32241b19aeff00ef427fda9dc",
+      "explanationsSha256": "de1ad957b75e0a4d99a439c188c2e0be1cd19f97b762bec94df1855ff1cb1561",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 23,
+      "pdfPage": 24,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "エネルギーは力×長さ、L²MT⁻²。",
+      "questionAndChoicesSha256": "596d85c8e883691b491cd49ad21c88b8724660b693c3f5b1b0d6510dc45804ea",
+      "explanationsSha256": "8590ba5c63d554d9fb3c9bd4b84b8857a30c895648191a57e25b0601c86e5d2c",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 24,
+      "pdfPage": 25,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "5a43ec2f18c2461e553a96c4855dc542da93b44858084441339411f6aa46e1d7",
+      "explanationsSha256": "5a76eb4f935945f32c2ad6edc362058d4d6804561977d1c5c3d683cb32ea5acf",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 25,
+      "pdfPage": 26,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/7_R07ichiki.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "v=√(2gH)、密度によらずH最大を選択。",
+      "questionAndChoicesSha256": "fe08587d0764b61295d95063c6c1a3ec3e80651af4e0611524b2c2024ebed082",
+      "explanationsSha256": "c6e0567a106ccedc602038e5b3b2b074b821c327858d2667f27421cbb37dc962",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 1,
+      "pdfPage": 2,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "c6951bb467023e4736a31681608fb5626fe417d9051b57f6b8fb6cf70ec8b00f",
+      "explanationsSha256": "ae780e2d78d153cb12ec3047d342f86bd7a71efdd9357a9c0a0fbf43e2d47b8d",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 2,
+      "pdfPage": 3,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "9d4eac6461ffaceaed5a7763e0f89e6f1ba78a172f2a05c86953056232ac5431",
+      "explanationsSha256": "76bf2d8e305fa82e56170fe59587b13744acc23e7431a85c7df37377eeb9da52",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 3,
+      "pdfPage": 4,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "a32bfa2b6dc9ea62ec931b24be8c8e698b3a7b7fb7da52598423161a002b7796",
+      "explanationsSha256": "daf60c6c46f1933b3d456806d4f6a4e58d0995bcdd156528bd9421152f6e98eb",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 4,
+      "pdfPage": 5,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "b2e2f7eabede7228e48464a58cc5a7878088e705d0172bfc9e4569972248cc72",
+      "explanationsSha256": "fa4d74ea16ccc34db440a04ea85a9d034b909e06264d788a5f65feaea6b7bba1",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 5,
+      "pdfPage": 6,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "65507b405e79827af0b83b34cb8918c310ea9621417084a44b8e19fe97ffeea2",
+      "explanationsSha256": "f18139e22ac97586ec6035d253837490c3f0fc3a4727cf773db02dbcb343147d",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 6,
+      "pdfPage": 7,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "図のRは地表からの高さ。中心距離R+r、GM=gr²。",
+      "questionAndChoicesSha256": "dbcc65e4aa13434e8e0a77008556c98ce43147cdece4107a9e011c38bc82f35e",
+      "explanationsSha256": "c3ef049a1be3f4fa046b444b4de94929859c396b00860bd6a51eaca05585453a",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 7,
+      "pdfPage": 8,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "自然長から釣合いまでの減少位置エネルギーからばねの蓄積分を引く。",
+      "questionAndChoicesSha256": "cde70ea4b0e0ab81def58228b136813451cc1297cf9c49229676abe26737fae9",
+      "explanationsSha256": "6e72756bad255dab3c86add3a923f02e1b740a1fc92a3b3943bd2497e0d3f211",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 8,
+      "pdfPage": 9,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "bc5010fcd556d471e694f4a0554b74abbb28069fe044fbb1f98ef8824df8b26d",
+      "explanationsSha256": "fcf83766c359173394798b23854f52055594ce7a285a6f990e56ce5c18a51a39",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 9,
+      "pdfPage": 10,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "06279ecc2a3da20a54e744b4c4aa76f5eb681972d6afeac84640482e46184bbf",
+      "explanationsSha256": "c70862a8e489ff1cfd1f6b4f703d7da4096004922e8ba4c34a115d3fc99a7b16",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 10,
+      "pdfPage": 11,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "頂点張力≥0と高さ2lのエネルギーを同時に用いる。",
+      "questionAndChoicesSha256": "5c37f9766037884ac09468cbe5f58005f516f0c6330b8faf720b391af2f3de9a",
+      "explanationsSha256": "81ea325f0822c2734c83050de207c6d2570e698afdf5ebb226275cfeaedd0700",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 11,
+      "pdfPage": 12,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "破線への正方向の移動量は3m。左方向1mと取り違えない。",
+      "questionAndChoicesSha256": "d81fcdc5856fb47d79a8551a8ef1a211ca704ff07bac6eec237a0e0c1f915539",
+      "explanationsSha256": "4f2589f80c9ee6b11786aee34fda4c456a401f334bd35722bc72fce1d293f22d",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 12,
+      "pdfPage": 13,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "a61a53d16de1f07b36bc8bf6eaf2f9efefb856c88b6499237b03d724d463453c",
+      "explanationsSha256": "d59e1c5d561dc3f418d656f97bf934c5d8c13efc60cccea14e92c8537b488d68",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 13,
+      "pdfPage": 14,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "t=4の幾何は3:4:5、観測者離反16m/s・音源離反9m/s。伝搬時間を考慮しても提示選択肢の最近値は93Hz。",
+      "questionAndChoicesSha256": "262f3b90efcfba28eb1ac387157620aa61d658750f4864b1ebc428fcb800a169",
+      "explanationsSha256": "1182d746d387c0e5058940b88003c296a5ad9bb7512c6a2b44380d3f71c37797",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 14,
+      "pdfPage": 15,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "赤2次と青3次で一致、中央を含む。",
+      "questionAndChoicesSha256": "924e837e55c8c49efb0797702215d7bbfe2cc2266820d48f5addebe0ac71e32e",
+      "explanationsSha256": "644c11661b145f7fcff59cf44003b6e756635f49b220011c7520d6c0acc61398",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 15,
+      "pdfPage": 16,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "両境界とも低nから高nへの反射。両方π反転して差は0。",
+      "questionAndChoicesSha256": "f65b4c97c563a7e9a8dd5de03152f47d3a3d379676760f5f51cb1779c68d6e3f",
+      "explanationsSha256": "21a7f525f5ea0c645cb1260cc34b5a261a07555c3731d4d23ccd5c51d3501c84",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 16,
+      "pdfPage": 17,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "水平面への射影E=E₀cos(α−θ)、放射パワーへ逆算してcosで割る。",
+      "questionAndChoicesSha256": "9f090df83cec7bf18e122b4519a90a84537bcc5c25a3212c9bb14170a8747d1a",
+      "explanationsSha256": "d78c749ca8a88c04316e6697305db38e5822bd7eda40ac63efb4d243f83f7007",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 17,
+      "pdfPage": 18,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "8eafcf7bf5fc08aa42424b86e8974130a15ae581d1661a707a2cc57ea927261f",
+      "explanationsSha256": "07d5d529c588f536aea4312206945d20cc0a2022ddab107c4015e9644dde35bd",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 18,
+      "pdfPage": 19,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "設問がpV^γ一定を指定。絶対温度で圧力比の(γ−1)/γ乗。",
+      "questionAndChoicesSha256": "225bc43382110550a38fecd5dbc30483731bc136970b7630a4faf1f9004854c1",
+      "explanationsSha256": "f0a8093cafc0b41419fbab1e1eac78d6fb36b46a8dff03b0fdd041d6495bebe8",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 19,
+      "pdfPage": 20,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "f77c66e98851c67b3661bb16ac2f83b0677169d01edb5a8ba4c8622ed34a2b26",
+      "explanationsSha256": "bcadf5b3499e8c97fea7b2285f2efb171496b3673a5218f8062d879cd2ed303a",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 20,
+      "pdfPage": 21,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "純抵抗の周期変更は平均電力に影響せず、電圧振幅2倍で4倍。",
+      "questionAndChoicesSha256": "ca4e44e765b5ae42bd7227aadbfd1a6ec02b28e0f2c5d689b7cf8c29380419ff",
+      "explanationsSha256": "7bf4981368d9f7cb42f7c4c4bfbae0a51f0db41cba113f1114442b215a75e3e8",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 21,
+      "pdfPage": 22,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "スイッチ開放後の電荷保存、容量2倍で電圧半分。",
+      "questionAndChoicesSha256": "878b101d5baad892024e2b61d6fe4b6aa768d6b070958f8473b639917e5b98ef",
+      "explanationsSha256": "ead20bc230b0d658e45b4e410feccd0636de3d1145adb724443298972e7b938a",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 22,
+      "pdfPage": 23,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "図3は指数減衰する抵抗電圧、図4はキャパシタ電圧。RC=1μs。",
+      "questionAndChoicesSha256": "63cacd1dc94d8d349099c083be10481e1452d7825b9ea247e2062bc8b49d7c05",
+      "explanationsSha256": "5ffa5dc565ce833abda28051315e752f8a972a2322432ecf8ad26ecbc643ea7c",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 23,
+      "pdfPage": 24,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "電源の長線側が右、R₂矢印は右→左。電位差は右−左。",
+      "questionAndChoicesSha256": "0c23b22fb85caace5d0490f90ddbbca780ea969bcc9d26fd5294a718e4aa9465",
+      "explanationsSha256": "cc3ac157817400b7ff7b63eb9ba7dac59b716e58fefa9883cc657b11e917b51f",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 24,
+      "pdfPage": 25,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "陽子Z個、中性子A−Z個の質量欠損。",
+      "questionAndChoicesSha256": "eba74e14f0bb03c208d85e4cb54521df88bd0f1c8f30e4a6295cfd6e0ad0c77a",
+      "explanationsSha256": "9ff4771cd3a9ef6b6c5f9abcf45bb22750a3a4fa0570d57c69a47a7bc0ec6b9c",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 25,
+      "pdfPage": 26,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/2_R07kanbutsu.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "αは2e,4u、電場方向は正電極から負電極。",
+      "questionAndChoicesSha256": "12544f45e2609f82a8d2405b1068ded88e000c5af978ed3299dd4baa780733bb",
+      "explanationsSha256": "aa18901fed1a35c033c0d9f7360266f8f09b9738b9dd5dfd421cdb63100914b3",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 1,
+      "pdfPage": 2,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "47a8b13d8de9104c97a65cff8df2cf17ebaa36eb0c30e9a46135d7f29c316ae8",
+      "explanationsSha256": "29f9a110be7976ce156e00e46e2ab77824dd2eeee314c71de4a8f3fc90d73d75",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 2,
+      "pdfPage": 3,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "f729df9693af989bea8ae0aee0bda13a4b2eceb52e0443506ef709abce4cf29a",
+      "explanationsSha256": "43e9dffe1c950b5f5ee852be5ca11c66c2ba1364e6d73d7213045245cb899c91",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 3,
+      "pdfPage": 4,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "e8e90925aa3e0451f5efbafd767ff60b97eee7ca55a545dbd6564481a2743326",
+      "explanationsSha256": "b07ea1a0b3ae0b4ee1309174b31934366c1c6c611e5794c0924394daa58d36f5",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 4,
+      "pdfPage": 5,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "e4185e16ddcc92d8cd16ab78f16b7e278a07bc494cc2b0fe4865511b37b4e386",
+      "explanationsSha256": "782eb8d252de57df98f194a9a15a7b30ffff9483f362136ace76508ecb39fc5b",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 5,
+      "pdfPage": 6,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "2f2f6935990d504dd4684e77278d79fbfda0c70581fd2c99799323b759ed1a4f",
+      "explanationsSha256": "6d3d47d2d6ad12efc3a29d4c6336019fcd5a73e46f95b1b40049a01ab006ca1b",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 6,
+      "pdfPage": 7,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "a364185767130af58376ff9adddb4cc037e8fd844208790363b1a15a92df3b79",
+      "explanationsSha256": "c60936fc15c13cc8143e2d2af83641642ecb0b0d54d7ee48f69c710445e0fb6e",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 7,
+      "pdfPage": 8,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "8d61b5f74c1230c84ce8c5f67f8d89e7c9f939042065611f083a9a8ec66eb3e6",
+      "explanationsSha256": "dfa1a3e82fbf476cb62f82a5e9c65f6fc7a2ede9af70a9eb457aa206f73070ad",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 8,
+      "pdfPage": 9,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "361b8ae607b94fcfa42d07808030f0090ff2263d3294a8e1d96fb2ed2ded7552",
+      "explanationsSha256": "64fa146db75c58912be16491c06046e20cfc8af670c8031c847beec2deed54fd",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 9,
+      "pdfPage": 10,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "図は固体を分解して気体イオンを得る向き。Fの電子付加は2個分。",
+      "questionAndChoicesSha256": "415a56ca9f99687f6ffefa955a957d5ea60de27a9af14f600560682234ffd466",
+      "explanationsSha256": "24f61aaeefae1c8a27d7426733ad6796790979e9c8914bc1e7744c533336c838",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 10,
+      "pdfPage": 11,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "723bc2c90a9998b7274f2b7f4663df660494509f50096d707a7312b4070eae8b",
+      "explanationsSha256": "30a9c8fa6c1154e7da0ffcf21b876ca5015c32097c1a476de68adc0942814eb0",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 11,
+      "pdfPage": 12,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "図3は五員環、結合関係同一で片側の不斉中心のみ配置が異なる。図5は一不斉中心の鏡像。",
+      "questionAndChoicesSha256": "2ff71eb673e12e9fc7534d4027992c437d5b006f93c8c469fe4e63bdd154f403",
+      "explanationsSha256": "8ad7a5c29c0d52ada153bd21eda650052a847e8ee054218d2450fc731a1cd2ab",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 12,
+      "pdfPage": 13,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "c0b9b21d5d585a4aa194cda18012692166f5757fab4b2fefb79d9b7f190ee468",
+      "explanationsSha256": "3e28fe4d4432618ed9574946047719deebf780940dfc680e30c5931c425db4f8",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 13,
+      "pdfPage": 14,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "各図でメチル基が保持されるか、NO₂の環上位置がo/pかを全5肢で確認。",
+      "questionAndChoicesSha256": "d0a9f80a8b7f392391e657ca021b730f1cea87eb88b56222072b82b09b6b015f",
+      "explanationsSha256": "1d53026b4dfef7aa8cb8ab0953e7e7483b9116cdf609d407fbaced8aee6b62c1",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 14,
+      "pdfPage": 15,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "ef6051c69e6f00d6c5b130d60b98a6d0458494a40962d2b524802613c2bb6efa",
+      "explanationsSha256": "227a9df9165910c70c62ca3a00cea75eb146f2604a11e4fc290484dcdf9197e7",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 15,
+      "pdfPage": 16,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "75c8ba172bf8c39af2f61fbfbeb74fc432967a666a2d5fefd808c4cd219bdc37",
+      "explanationsSha256": "5204fbdd69b229d700cb3972c104a67dc23a24836d6595e81e478707b0d17cc0",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 16,
+      "pdfPage": 17,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "7e20248e76d64a60af71b2dfe9f269e939260388ec32ccd695945a91c21291f1",
+      "explanationsSha256": "88a38ed6b868ec26d86ec4b570a58956254c963487ed31c78828f0ce5845dbd8",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 17,
+      "pdfPage": 18,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "4df04195bcb2e5f8b3cb4042243352621face1e2ce703e54bb0f1b4f742b4890",
+      "explanationsSha256": "b4ebe086ae5797c8d9760af9dc2c0643f5db7719a3589c8df07aa5211e993490",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 18,
+      "pdfPage": 19,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "温度一定、直後はNO₂濃度2倍、その後分子数減少側への平衡移動。元の色より薄いとまでは断定しない。",
+      "questionAndChoicesSha256": "b148486e4e1484baf94cbfa91781cfcd87df42649298c79ebf7efe42765269d6",
+      "explanationsSha256": "83eedd1e19fb65fa8f8e103e4d17597daa5fd72fcb1826b23ce6a9be3e6ba009",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 19,
+      "pdfPage": 20,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "構造異性体4種のうち2-ブタノールのみ不斉炭素あり。",
+      "questionAndChoicesSha256": "a44833c0a2dc71bcb34c9bc631658287447f0a11c7bb470070678dd93c001b06",
+      "explanationsSha256": "88f212df2d66299f669c769185c7482234a864db50330af685e56eb66610a9f2",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 20,
+      "pdfPage": 21,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "c9b2c9626b193ad2ce537c04b218dade63610787795dc90e88bbb6caa8f56354",
+      "explanationsSha256": "e2853b8d00fcc7413663f1c030076d40c51812bad89f75d4b9e7ababf0e0c31d",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 21,
+      "pdfPage": 22,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "水生成量12,9,6,3 mol。",
+      "questionAndChoicesSha256": "8c3f3730b6a9a8e37b74ca153c75c08f31617c8ce7528f707274b891311ce4c5",
+      "explanationsSha256": "c0c26ce133dc1bf75743fcc327f14c4392e957be72ee09f0655beef5d5ef7aa4",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 22,
+      "pdfPage": 23,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "d8e491b4e593becc4e90031a3582b7cc21fcbbb59002e88e1b38bd5111fcb97f",
+      "explanationsSha256": "ccb560b30c68543761a8560a52ad27e46a839cbe62d75a4bc12896c92f50c6e8",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 23,
+      "pdfPage": 24,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "問うのは各文の正誤の組合せ。酸化と分子間脱水の温度条件を区別。",
+      "questionAndChoicesSha256": "c0a0a3bd084ea8c109a8c5164e67f651f12b66ba420935db396fc4907bef7343",
+      "explanationsSha256": "b9c8b9d6cb9a7df3c6b2482b75bcc9b1be82f286437307f736b703fe39f5131c",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 24,
+      "pdfPage": 25,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "0cb046895bd49f1085584c0ae92d4c2028e6b295318799451e3080cd869f6330",
+      "explanationsSha256": "5e19ee72ace619eaf0b422767c917d3f129fba6d0c2deabe8d7e036968f2aa5a",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 25,
+      "pdfPage": 26,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/1_R07kanka.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "9412176037cc2dcd809b855ed21355a63bc2786ef925f08d9c2eb5ae4f578324",
+      "explanationsSha256": "9e28188149e95c8df5feefbe6a823c8ed46d2ac63b8fa932074ec04fce366034",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 1,
+      "pdfPage": 2,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "2559a3dc5a007e6e10d58bf35e68185edf3d178601eb5be7cd427c98b40cfd19",
+      "explanationsSha256": "e18605992d20e52d991f18f57c076c3f6cb3c80dd90cf65641cfb2e88078d590",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 2,
+      "pdfPage": 3,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "291281ed7b8ff693a3f5514e800044e778f548fed3e65cd029ec0f8a60430b90",
+      "explanationsSha256": "eef50b3ec466730529166ee4ceafeb4b14d2d1afbb3ee775609c51386e61d06f",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 3,
+      "pdfPage": 4,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "全員正解",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "公式正答訂正により5肢全員正解。単一肢だけに正答を限定しない。",
+      "questionAndChoicesSha256": "7829819d4e2d560f668ee8c51d839687ca26dd1df9d5b767a64c5127f902b435",
+      "explanationsSha256": "1e9e6bc4dc105b448cb346f69d3b814c22b3ca20f6886828276978f63ac8a7ca",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 4,
+      "pdfPage": 5,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "590257bce8119fd619f0265a0896c39441d59c66f359b1205f0a9d5580ea089d",
+      "explanationsSha256": "2659d0326af4cfb894b98ed5dd9554caf42655b819fc518ddd3e3de8234bd046",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 5,
+      "pdfPage": 6,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "a1ed6ef65b460702f5dd0b901a88f1709bfc46872945a623f93b89480aa62bc1",
+      "explanationsSha256": "19ff2afbb18f43520eb81de61e2e079f2d09c52c62cd1115b73670b2d7acc3d1",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 6,
+      "pdfPage": 7,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "下線範囲3か所を照合、塩酸・加圧/減圧は正、メタノール溶出は誤。",
+      "questionAndChoicesSha256": "605eba38b3d9986b13d3097c782474aaf2b99efed880edf2cd20baed7f3c7810",
+      "explanationsSha256": "2d400680943bce645d8eee843bcaf10e81af9274a385a04ba1288e8bec4f08aa",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 7,
+      "pdfPage": 8,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "2af4bec1e565fe4ba155a206ae8d7e2076635b53cf472858ed97861a0dc31a61",
+      "explanationsSha256": "a3814742cd1c404514cdc8a7357f0d1f382face8646a4c3870734cef95380b25",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 8,
+      "pdfPage": 9,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "1c045c5ac3362e39cce7f7235998c01f5ff8ae8bd7bbf4bc05b5013da543f44d",
+      "explanationsSha256": "a07c9a7a814a88818bd87070b3dff3c4ad82717e2cd647ee0677b84f102d34d5",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 9,
+      "pdfPage": 10,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "8a0e2e50800a1ab8ddf1e7e3ddff280597ea8df8aaf1a434a23105183618afa1",
+      "explanationsSha256": "a46f697c308d309ddc07cae78c320722dd6082ae719ef382a12224dd0a2fd797",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 10,
+      "pdfPage": 11,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "46691888f0f09901542c468c283b2f3e9c05a24f3fd8836cc702e8d21b03a23b",
+      "explanationsSha256": "c89b213f4fc368124b27f866ebab957768efd2be0aabfb07316c59d474d470e5",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 11,
+      "pdfPage": 12,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "792a0ece14018b4f5cfc40fc54374b7fd485d45e89e6ef4c44c3de018a52581e",
+      "explanationsSha256": "44c3c72d08a25fb72c1635e66ced4e0537f1419ee4744db1fb2bb1e883525216",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 12,
+      "pdfPage": 13,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "公差を√3で割り、希釈後1mg/Lに相対合成不確かさを掛ける。",
+      "questionAndChoicesSha256": "9d24ef025b528ae74460d4fab88c4c972280c78f7b3bdf47b521119799026669",
+      "explanationsSha256": "5eff2fc4914e828c4ed1ebb8cd9cc581fc6db03e6ff3c4cc47af66cad71b24f6",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 13,
+      "pdfPage": 14,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "46a9453afd249065e8a5cfe8aebc8ba13edd17d7fb53143104c77b34d7bad72d",
+      "explanationsSha256": "d35db6aa9678ddbe6b7cb491bf00c25ec6081f0bbc77af01997cc811521cbaa8",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 14,
+      "pdfPage": 15,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "ff3492028473421109f5358cf913dffd5905b965f348bcd5afb33017bfabb74b",
+      "explanationsSha256": "dd3cbf9a0f6bff7ba3c6b59a2b94d4e64b84b2674e93193d4b41144677ceca9e",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 15,
+      "pdfPage": 16,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "6aef2b1c9377c26b0e485e03f37b158ee306b18f2fb1a82c9af0ce41ca5f6d1d",
+      "explanationsSha256": "c2820a16d184c93b642597ac5765d72ca1f7f570dc3ae573afac5cbc31e41b67",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 16,
+      "pdfPage": 17,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "下線3か所は全て正。図形下線は括弧代替と公式画像に保持。",
+      "questionAndChoicesSha256": "c10dc84e533614c32b9227f79b0f8ec7fd52178f1a6f21bf6da93e80ee55d1dc",
+      "explanationsSha256": "4f0ceafd38eb0f0fdbbca4b78aa868abb5496e7904b50a9f120e87b5c11aee81",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 17,
+      "pdfPage": 18,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "30ae2d829fae7786b1398aa13a1b688b5e15dfb104c2e4b6fe34929c0fe602a9",
+      "explanationsSha256": "3d5947943c8f331af51365d361ca9ce7650342fe5a971bd263ae1ff739368dfb",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 18,
+      "pdfPage": 19,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "460fd6a3c62757eb1444ec492afeba32cc544f293a227c37e4eee58b66b7a999",
+      "explanationsSha256": "20e90cbbfbb5a85e2033e859853d8b5f8279556c044b5c3542edbc65dc1cff46",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 19,
+      "pdfPage": 20,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "抽出減少と色素の酸化はいずれも負誤差。",
+      "questionAndChoicesSha256": "383c3c47c1e85f58b9e4f9d60a5cd75a58707382cb20a951ad1e86370b614e3c",
+      "explanationsSha256": "84678d8ca3c77299eacdeaeb872e743f18483b627b4c6f61a8f22362bfa480ed",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 20,
+      "pdfPage": 21,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "33b29e3236f9fe9c3636ea2e707a505637da346279ac75f0ed809354ab1dcf3d",
+      "explanationsSha256": "de8d1249ac3acd3ef8ee048aa55a93d7747fe308d95f9c835c0b5ae261edeab1",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 21,
+      "pdfPage": 22,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "背景導電率低下、測定イオンの対イオンは高導電率へ。",
+      "questionAndChoicesSha256": "feaee9fa87a44832ef422a2db40f822e3b8e6dcb27dabdd969c8ef8aae8af64a",
+      "explanationsSha256": "b10a5534cee2dd35086015792506a292cae8771d7e6b50e7529d0a9fff286316",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 22,
+      "pdfPage": 23,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "18f98e192390a7b2d7fce95a9d4dd001b241f44422ea6196d9092f35b2316aec",
+      "explanationsSha256": "82fa206f87c8fb63918083ed031a578072a33e353711a1059b2e720156b3940d",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 23,
+      "pdfPage": 24,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "a8fba70e29ba9c5c59ecdc2a6bb4e672a8dfdb4715ee70595b48deeba9dcf9f9",
+      "explanationsSha256": "74728f9394fdcf0616b4fc18853512f786ce55fd2ced77e7a9c0393b2afb024e",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 24,
+      "pdfPage": 25,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "5a79215b5671b37da84e8b4d8051fd4f6f7c8e50888926bd1a842d8f508d7c8a",
+      "explanationsSha256": "0a46b573ac209ac6e675b33fb6c5d058ca8f689ff4a3ab25d7e62ddea2ccbb5e",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 25,
+      "pdfPage": 26,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/3_R07kannou.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "9e97c97da8d245f2733656ff08ec29d20613962b364b47329f0b94f947a7034c",
+      "explanationsSha256": "d42cf469aae3700e13ad2aa9d6eca0c141f00b78a52cfdcd1f041c9a9d829650",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 1,
+      "pdfPage": 2,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "856e078033c6ca3be948de8cdedbbddef9164502af7044f560729f188ec53432",
+      "explanationsSha256": "61ea0c1bd5ee7538a34ff8aecb6e17f185b31d73d76e07956cd7d9e540ec2ffb",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 2,
+      "pdfPage": 3,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "c1fc49560156d84aff7016716884414a2131e5a74d4cb9e9541c9f4c64c76b3f",
+      "explanationsSha256": "6c2c3f8a92400b6f6b0687c4ea08f37911779d1198ca263abc5365ca216cee11",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 3,
+      "pdfPage": 4,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "9816b9345b1e5b66907ab782d021fb516c7079858a2a2ad327b28a6534cce1ba",
+      "explanationsSha256": "f1183dc3ec16b31319e864620777452a9f4055243f73dd61fce0705496ff9dfa",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 4,
+      "pdfPage": 5,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "3cc2f7fb2336abd3bb9dc6159883d9d409e9c1ed633124cd2c0c759b367321b0",
+      "explanationsSha256": "42116f21b55a9bdee5b5e93bd5f39522584849921e0f35b721b4e7c699450387",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 5,
+      "pdfPage": 6,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "図で点・線音源ともA→Bで距離2倍、非相関なので二乗音圧を加算。",
+      "questionAndChoicesSha256": "78942260c6199510dae472ac288bc7085c890ca6ba59e23d851af17624453829",
+      "explanationsSha256": "97ca084b05abe98b49fe2e6af06a6bd29b23e7556adfff088ab97008cfa87efd",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 6,
+      "pdfPage": 7,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "608f124591476a22fa0da6a832d14f20d5e765a55d93551a3fb0f45c5921c8b8",
+      "explanationsSha256": "ea7bd4efc1428d47d7f140bf09b87aa44f5732e285d22be8e22a5ae90db352bf",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 7,
+      "pdfPage": 8,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "A補正を帯域ごとに加え、dBの算術平均をせずエネルギー和。",
+      "questionAndChoicesSha256": "25287b1666fc3bd41ae5163bca7635922465ebd03df03de455f91e6041ddf1b1",
+      "explanationsSha256": "26cd905ed57b3ee8fe54e41e17a38dd0082559ed334a46b25ae9385071139a91",
+      "result": "reviewed-after-correction"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 8,
+      "pdfPage": 9,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "4b805faf8ec3d9e973bc84fa709af75118302a7ea0da368991ea5af68313f84d",
+      "explanationsSha256": "8afbc0141dcf3a194e8be58a27b202bfaece079148a780adb11b68823d022d10",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 9,
+      "pdfPage": 10,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "77be86595a706cf43ab100e1dc209bdc6341ecc69e23564fcd2d8fb7eff5ddcf",
+      "explanationsSha256": "41059fc560ada4ca07156e310615e8d64bef14610959d97d20e48d39158674e1",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 10,
+      "pdfPage": 11,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "4628e1d0bdd8e9ccfe02806283434f5f75dfa722e16693d51005212157a7e698",
+      "explanationsSha256": "d5bf82d9cd751d8c30fdb76630365840a9b894e46f0965f0a051e27cd70d1190",
+      "result": "reviewed-after-correction"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 11,
+      "pdfPage": 12,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "6827ba63d75f0a30880ffde5a4653351577ea9b57d97dff1d8831a755021b649",
+      "explanationsSha256": "498c0b876babead738cb929c96556f37fafe831f0b47098116faaa3ba3fefc53",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 12,
+      "pdfPage": 13,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "36fea5e869fdac613174ebf060c9a0cc85a89b1216d774734f1ecdc5291c4eb5",
+      "explanationsSha256": "384c32ee154a2778dbdf6046a5dd8ca559cf5f0c425d97a1758b63c02ac87b1e",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 13,
+      "pdfPage": 14,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "7cd9e20b6e6fa077d570f8bc356818c8f3ec4a9f0fd08eaf54572d475045f565",
+      "explanationsSha256": "750ac86dfd43e04cc1994695f3aa94d1d9add3fa0e26ed7f4d0f64a769094bd8",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 14,
+      "pdfPage": 15,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "縦軸は低い側からの累積百分率。超過5%点は累積95%。",
+      "questionAndChoicesSha256": "ccac0d4e718b9874b0eae104e2fa84c2b6a610176b0fd49ce2ded29e2d27961a",
+      "explanationsSha256": "5d867f9f74fcc1e09c03d50391d5aa1a0f33def1da108b2eecf61e7533ab15cf",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 15,
+      "pdfPage": 16,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "出題時点の条件で下線範囲を確認。特定工場のFAST/SLOWを区別。",
+      "questionAndChoicesSha256": "6a2d2a6bb5cf2f8686e1304d86b255fad8b9b9a16fdee9b3d1cafaa85d0c6fd4",
+      "explanationsSha256": "17b8e0396d985c71e35fb8bed4e3c6181bbb287cbf830c94400b730f2c2b1956",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 16,
+      "pdfPage": 17,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "和は搬送側周波数、差はうなり周期。大きさの最大2Aと速さを混同しない。",
+      "questionAndChoicesSha256": "b247f3d0d3e0305b75b53d5d552312ebde91a7c106abcc0bb17712bfceef8944",
+      "explanationsSha256": "25164808a2f196b564c51d7d6572cf9619627172703999d6928b3c6020f053ca",
+      "result": "reviewed-after-correction"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 17,
+      "pdfPage": 18,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "e8bbdb8f201c5080715939e08ac545e5ae589ff08a45881138c04e653c16f8fa",
+      "explanationsSha256": "e6ef45241e8b653aa46eb8d116273ab529c3c85348107752d07ce1fb66135ef4",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 18,
+      "pdfPage": 19,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "非減衰と減衰固有振動数を区別。無減衰のステップは収束しない。",
+      "questionAndChoicesSha256": "6efc2d2f8f8b2b7b89ff731f18cb436f4bdbb231503d61495a243b9cf73877bb",
+      "explanationsSha256": "b3e0e75b26ca3dbd9f1b806c41210c3207864ca9aa57a3b7b723b9ca7711ac6e",
+      "result": "reviewed-after-correction"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 19,
+      "pdfPage": 20,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "6c888cded6f0f0885da15c063614f29cb90a5ea822bd85655b96a28bfe5fa3fa",
+      "explanationsSha256": "888e56f413a7bbe705bc23a3f01a2b74388e05e9b175116a2a99244eea840a16",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 20,
+      "pdfPage": 21,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "5f55a2bc9eecdc2c7c530b5994463399046135b9554b6875caaf37c4afdf3886",
+      "explanationsSha256": "17b2fc2e078afe528979e0601e4218d574e649e4aded59785a0cb2e7466aec0a",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 21,
+      "pdfPage": 22,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "減衰を無視する設問の通常近似で伝達率=1/|1−r²|、正の解r²=3。",
+      "questionAndChoicesSha256": "f4544a3828fe7ebda5da9c142d270d7575c948e9464c557fd94598b6d11c2677",
+      "explanationsSha256": "906905e27de1efb31e97713302474dadadc0b12a0129257a35821155bb5a0984",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 22,
+      "pdfPage": 23,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "図でAB=4,BC=4,CD=8m。A寄与距離比1/4,C寄与1/2。音源でなく振動源。",
+      "questionAndChoicesSha256": "b2c263136fa4546741779ae2e01b25ef8b8548403c8002b31e7a1af768b7269d",
+      "explanationsSha256": "bf6d5624f6c61a5bd802edfe87f4ec19435aacf9f8c422e2505f7dae1ec37e51",
+      "result": "reviewed-after-correction"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 23,
+      "pdfPage": 24,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "43592ff61782df7ddd13f57383639ee0830682933381611d917a820054e0d823",
+      "explanationsSha256": "1250e70e9c604f40bdefe1b6c3eb7da9fc0a9dbd8da7e7ab6549d461d2a62265",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 24,
+      "pdfPage": 25,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "39cb3b672e61cadcda22d1f4eb9b7883f140db9d1b2e14a88d72e0b710f42a97",
+      "explanationsSha256": "533d132a617664b61daace72c735ac0c070a59171801fcdd1de915539a5d0517",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 25,
+      "pdfPage": 26,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "32bfbbd9f85ec676e1fe781dd75925aea65f3e98b7a0482bf5d2245cf936bd0e",
+      "explanationsSha256": "27cee36090fe08eae888db483b8a4655768316a9f90dc1ade00ddd83ef568b2a",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 1,
+      "pdfPage": 2,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "1ec07b63e996bc85a706371d5aa1578f7a1fa13bd0441b12c36f07699d6b5de9",
+      "explanationsSha256": "57aec60ae8fc406330c4355839e9114cb45887456e5dfb1b358d2cfc29715d58",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 2,
+      "pdfPage": 3,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "cfd055ff3733d3bd2546c927550998041447a3d84e962edfde155c406d3e5c81",
+      "explanationsSha256": "47112a4f677b7a8fb3d92f0d759d86b256b217946ba5286f9f33eb32caa4f57b",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 3,
+      "pdfPage": 4,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "a240a2b3cca32699e808cc7778062b99e8adf68186b28c2bcb3e04f5b28e91cf",
+      "explanationsSha256": "5c2135e01fd21dd82cbb16abd40a4ceec80f208e3b2c2323fc8185e964162f93",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 4,
+      "pdfPage": 5,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "336edfad1ffb86b0a1a4eb67ae4795fc2dc9a22133136d11976865bc7472f594",
+      "explanationsSha256": "ff6380b5bb6207479b2e688f7aa581f8f294ee54d793768abe3af7910b764d32",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 5,
+      "pdfPage": 6,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "f8b43662377e8386cba5d8db17f58c8466d491cb695d383a9e73cda79a5576dd",
+      "explanationsSha256": "a95485c11e30c14f92cc6831159dd8dfb55da268b0aca4a1e110d2d0d3377fad",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 6,
+      "pdfPage": 7,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "入力の単位は長さ、出力は体積。感度bc,ac,abを欠く選択肢を排除。",
+      "questionAndChoicesSha256": "aef71fb62f671125e86b4c897d08de3f09c60b4d28e3cb06f1c0454c5bbda15a",
+      "explanationsSha256": "cafb8e9f9c88c29f11daac51b399981fe2a5da331d0d3af6d902754a8610d9ab",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 7,
+      "pdfPage": 8,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "02f0621719630cea3ca7da6f35c46ede3bf643c29f826e64a8e23a0f752c7bda",
+      "explanationsSha256": "f1a3dde17c9fb20f4ad0ab320348c497f3d8d6108c77c4ab4b9e177b1a15bc63",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 8,
+      "pdfPage": 9,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "母集団が正規なら標本平均は正規、有限分散の一様/U字型は中心極限定理。2個のサイコロは離散分布。",
+      "questionAndChoicesSha256": "72987d0e6c5639117c17de99ef2182b6fa8412924af0167e6a7fcaf7bec675f0",
+      "explanationsSha256": "a3c1e3d9bbe32b792cdb5cd613dfc0dacf799754b52ba7bdac5396435b831a38",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 9,
+      "pdfPage": 10,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "45bcef8563d3298745f24ff33306e3b9768b68c8d4585ebf1666fcf44d1832df",
+      "explanationsSha256": "5568f2d82685491505fac6fec0f2e768e11e0f739b10908d242ceaf221917d17",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 10,
+      "pdfPage": 11,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "a群×n回。誤差自由度はa(n−1)、総自由度an−1。",
+      "questionAndChoicesSha256": "0340c83777d8067977f83e9f3f9a8f129d72bc521f54ed5317dfb8c3007f27bb",
+      "explanationsSha256": "43735a5c4962a6969b980d03afac1890fc1a473bde9b60c4c9934357347a47a4",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 11,
+      "pdfPage": 12,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "43493ad3375c8425d2a14d204e68b1dd04fb4dfd15ca77d2b240de45d54af7a2",
+      "explanationsSha256": "bd0dee19d8d92fd8e0c5f330983dc9c23814f78c670c7f8085582848c28bcd8c",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 12,
+      "pdfPage": 13,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "04659da0f0ab1130cb2c54b24c8765bc7fcb6787e3c48a3993968e7575bb1cb2",
+      "explanationsSha256": "e6980afe9dc1d1d99959ee7e13cc2ad9a23ad5ecdb17d15bb29e7c8c48eaf136",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 13,
+      "pdfPage": 14,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "校正二段階と調整を区別し、ウだけ誤とする組合せ。",
+      "questionAndChoicesSha256": "5f28d17f5a1a0b1954eedf162a51bff2d793c2c4b2e3ffb9a5a8a190c2b09fa8",
+      "explanationsSha256": "4e3fd1ca26f3f31c320016ad6f37180ef878785967b1852a1bb919f75685eba2",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 14,
+      "pdfPage": 15,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "校正式は指示値と対象量の関係の逆。標準点数変更は推定値へ影響し得る。",
+      "questionAndChoicesSha256": "a05f9d3ecdefab01ff7c6fcbe82b429c734ebd329e741e0fbde12f91aee0b9ad",
+      "explanationsSha256": "41bd020ace33dd86b0d6a7e336d217f575169ab9fe0aa9cf65b04f4ffe89181b",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 15,
+      "pdfPage": 16,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "測定SN比η=β²/σ²。単位は信号量の二乗の逆数。",
+      "questionAndChoicesSha256": "70b15eb74c1e25167a13c8b61c172721e38e8c545026c09f18da7b43e04a5a54",
+      "explanationsSha256": "0b7d7775fd48a2292f320f67e2919737155d06379c99c946a8a42edf8f1af08f",
+      "result": "reviewed-after-correction"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 16,
+      "pdfPage": 17,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "図の各因子最大値の水準を全て確認。現行との差2+0+1+3+0+2+2+0=10dB。",
+      "questionAndChoicesSha256": "f71c638b029d142eafc4d9b79a494c9e9ecf0705c8d7580fa64926f9c7ad7e10",
+      "explanationsSha256": "c32c83b6a86a781bcd02a0bb6064c9c57e76485c442861896c69b21036735e28",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 17,
+      "pdfPage": 18,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "306810dd6bde59ff2bd0cadb7dc1acfea19c90b336ab2c77119765e23e75fe2c",
+      "explanationsSha256": "697781d504b068ed1627fa6b5d05156bc9bb6ae207e77ee19f16b7d72b0c92d9",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 18,
+      "pdfPage": 19,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "5a09bab252e9050d36dae3e61d6d44375a13074ce1524cffbe03147d55af4591",
+      "explanationsSha256": "07f66d7982549d995b64d2757287e19c85c3ea6091897210a89503dc63ecea16",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 19,
+      "pdfPage": 20,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "4ビット内の加算、桁あふれを落として結果0010。Nc9か所を添字記法へ。",
+      "questionAndChoicesSha256": "84244c03f475609ae5ac011dfe6da64781bd30014132c5d711d70aae1dd429e7",
+      "explanationsSha256": "6fcc18be2afcdd93c94b3b5c0cd363b5fc4077e2a668c77c012f1f4110ed1d71",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 20,
+      "pdfPage": 21,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "図の実線Rは1→0、破線Fは0→1、R+F=1。",
+      "questionAndChoicesSha256": "12489e104b67b296d3c2e6866b51153f7d5a84bcb1e0a8356faf9110a19d1e7f",
+      "explanationsSha256": "c08293f3a517ea404dbbb2edf07fe79f54a720c053d86b3822177926f44fbc83",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 21,
+      "pdfPage": 22,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "b1d9e5f4c39f87b12b8b55478cb368c36e049871f8b2ad642e9c4207dda56e98",
+      "explanationsSha256": "41eb237d5f774f98bf637dc1d2b25d7e8b5de5d8bc1b4052ae27d74b9dbf3e19",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 22,
+      "pdfPage": 23,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "603ec080b18183e39ca10df1684fd219e888f67b0b20e3a62c1e99fa839be128",
+      "explanationsSha256": "9ad1a4866c097c27e38f4ed6057402efb3c7c0936aae32393534c1625a1d3bff",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 23,
+      "pdfPage": 24,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "最小化対象はL+C+M、不良率の単独最小化を保証しない。",
+      "questionAndChoicesSha256": "3b683a739698e1aa031895f675c3a61209235826f9b9ad857b7d7ae1f4e7ea38",
+      "explanationsSha256": "a193cdbd1551270e3e90e1f26f4f281657ff60504fe706f0506c1c1016848cf3",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 24,
+      "pdfPage": 25,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "Cₚは規格幅/(6s)、偏り考慮はC_pk。",
+      "questionAndChoicesSha256": "4802e26201262875e098cf81fcf95adf71f3b71ecd46d7ea23afbed138bb8975",
+      "explanationsSha256": "05eea1e4bba41b79bfbb3f3db05c361cf20c2499a87ed7fc0a80a9fb2c1e03c4",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 25,
+      "pdfPage": 26,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/6_R07kanri.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "1d64bef8d42a4ae86286475b8d4bed5ed876ffda2828c1cb36cbad11580d086b",
+      "explanationsSha256": "578da3523db2d83c0365f22bc1b774333a31aa952e77db623928c3ddba7a2620",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 1,
+      "pdfPage": 2,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "ae5ff22e61d720ed5dd0d18d28ab52051b98782ce3f5551c208fdad1b0374f60",
+      "explanationsSha256": "1167b80d8a070055201bd68872ac22236dd727a9150794a4ee07d5dd344f50df",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 2,
+      "pdfPage": 3,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "無相関・感度1・自由度無限大の条件から二乗和平方根。",
+      "questionAndChoicesSha256": "f07327aa7e233a68ecc8fa195c5bb660c164ff0167e4f9a4e6c749f83fc866cc",
+      "explanationsSha256": "6021476f244320b4856a84915e4ba1e6a409871c9efb3f853b11790ad30d35b2",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 3,
+      "pdfPage": 4,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "1d3410cbf562a3f7d4a4ac0c7bd66ff25485c5fa068d770f4708589fa27e7e45",
+      "explanationsSha256": "26600aa017b220d5550dc12c834fd21b0ffc2751ab577fb9f14d882355d4e8c9",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 4,
+      "pdfPage": 5,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "計量器を長さ測定の構成要素に使う向きで、隙間→流量/背圧→表示を説明。",
+      "questionAndChoicesSha256": "65333a663367d9e0b1adfdb90c2c1d6a5ff4975deafdd11f4b3c3a64e337327e",
+      "explanationsSha256": "f27cacf026660944959defbeeb268d444e3e0d01028247e5e2bff8ff034e767a",
+      "result": "reviewed-after-correction"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 5,
+      "pdfPage": 6,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "副尺0は本尺12mm超、一致は副尺13目盛。",
+      "questionAndChoicesSha256": "8e3b02a2986abc0bcebd7d94b37cd69536447cc8f04d627f17ece3cbce69fdac",
+      "explanationsSha256": "bb9f6f91bd475a926900bc5ffeb63e2aae22473ef46b4ba50ce0cff8fa903999",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 6,
+      "pdfPage": 7,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "J/kgは組立単位表示として正しくても、設問の基本単位だけの条件を満たさない。",
+      "questionAndChoicesSha256": "27cd448870943459b277f8701bf0b35d650371f2db4680bdc5763b51da1fd785",
+      "explanationsSha256": "f669e69c9eab2c390b16e65b7d9d42aebbbfc84e2c921e4ebdd4c97314cf146d",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 7,
+      "pdfPage": 8,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "公式の密度値1と13を保持。液面差同一なので管径によらない比13。",
+      "questionAndChoicesSha256": "c5efe7b791f4f890ed878c36fce77b78baea222edfb6ffabe046402a86968bc3",
+      "explanationsSha256": "68be6adcc7c0b8b6340b062bf2752872848c5433f089e386c532f6be15040f82",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 8,
+      "pdfPage": 9,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "d8c0458d06cb5adf34b236af61bee9c7f42516f0de1f2b6b867324f0bdde0ecc",
+      "explanationsSha256": "7f1e941acb0b215450f44564c1225fe3248551d5ab523b94dde52de3616f4efa",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 9,
+      "pdfPage": 10,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "ade305f8f08a397deae146afab1409d8e0e67478c6112ef9561d585385b42cef",
+      "explanationsSha256": "48dec52744a57c29f24c8d3ee60c80b1ec3a9879ae7b7b00d89b4c5e8cd9d1c9",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 10,
+      "pdfPage": 11,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "bab896c4e6c5f6b4d86ec573265a49353267b3697d90cc4c21be6d13c71f13c2",
+      "explanationsSha256": "81fb5a04c1594ee86a3038cbf7bf314eb42af650c8f687ca90a1a070865bc7b8",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 11,
+      "pdfPage": 12,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "d1a6c7c28b4c7dec8f60e24c834cf490fad322d518674b8dfe7eb8938e7705f6",
+      "explanationsSha256": "e3003226a0332e4f1f4941e7ac630e0fb81c124b7da851a65e1dd3a0e53086e4",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 12,
+      "pdfPage": 13,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "a02faf5c3bc5846539e7c5bce58161f63ef8a504ad6cdef3db3038933707d7ca",
+      "explanationsSha256": "bd03ead2edb94885c9365daf1f0db12cc5a5246b4c4fb52288267cf15bba15b1",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 13,
+      "pdfPage": 14,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "4281cadba23a7954d1c46cf8f3f736ff5421ee93cfa8ebeb522cff9695b8b8af",
+      "explanationsSha256": "8a9c217459c248bd31d6f28e3557619128a98c412699c199b1efefa88b5ef11e",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 14,
+      "pdfPage": 15,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "43221167a0fa9977a6cd1e0149a2e10efcad9d1bfc9bf58e9ecd1bb87e88ea7a",
+      "explanationsSha256": "2629df845e04689b4abe60d86e353097ce7f1d010f310ccfbf1857a4bf107eb1",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 15,
+      "pdfPage": 16,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "図の周期は約3.33グリッド、上下のピーク差は8グリッド。",
+      "questionAndChoicesSha256": "ffcb8a32e4d69a1b1c0ee5119cf17787a37f45609959f374ea8c32beb88f2dc5",
+      "explanationsSha256": "8e6c6c7cdc8efee2d21a5bca3c74d2d030fb54c3953045ff3a781ac5f128d3a0",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 16,
+      "pdfPage": 17,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "4",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "A市9.804→B市9.794、感度調整前は表示減少。日本地図の両ラベルを本文との重複抽出と扱わない。",
+      "questionAndChoicesSha256": "44b616ac3f30fbcdc3c3ccb3945916191b1fe9491685a41531a2439fff936e06",
+      "explanationsSha256": "ee00a26847c68818d385ab591ebd438c50cbcf7a71b929b490b638931628067e",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 17,
+      "pdfPage": 18,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "8f12568562d2796b0a35607579e723066583bac250f5f15635a02000cb278d63",
+      "explanationsSha256": "f6498e642af4a7715349185cf03b0e2a0d7be5498731518c9530a439cd890d1a",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 18,
+      "pdfPage": 19,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "5図とも接続点と交差を区別。1両側並列、2励起直列、3出力直列、4両側直列、5セル2のE/M取り違え。",
+      "questionAndChoicesSha256": "912d24a1f5e1e7ec5dcc7009614263b6fe0f0f8cf3bb241c1765a06f0a74318b",
+      "explanationsSha256": "13957fe98e222dc46c6aa21af386c499fd3a8769d331647e40fdccfc93a19b3e",
+      "result": "reviewed-after-correction"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 19,
+      "pdfPage": 20,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "1",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "浮力を含めた同じ見掛け重量の釣合いを立て、空気密度の一次近似。",
+      "questionAndChoicesSha256": "4bf8c2775098ff35f6786b72fdc6741447a4e1e1c7db31b066d799aca36e7ac0",
+      "explanationsSha256": "0bacf722486d904d65decee9af455a713e42440a77814733d0340d1caeb9017d",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 20,
+      "pdfPage": 21,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "使用公差と検定公差を区別。3級e=1gの境界500eと2000e。",
+      "questionAndChoicesSha256": "af0f51861d83c8c286fc810c2bea439eadce657015840dbded2a132f636abd0d",
+      "explanationsSha256": "ba74dc17f1702bd2c3148f15f69709c0a55bb009bd3f70ef8888f370a45b0ae0",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 21,
+      "pdfPage": 22,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "ABA係数1,−1/2,−1/2の二乗和3/2。",
+      "questionAndChoicesSha256": "f0431a17f01826e5cb733bfddd4a6602f25b530bb1926d39f7c56825bc8c7523",
+      "explanationsSha256": "85fed497aeb363d8e06d4d8f3d56724b0c518db5463259d7c813770ef80bae21",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 22,
+      "pdfPage": 23,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "293f31bfe901c9905b8fb0eabad18ee180267b1009bc263ce7276352d6f45291",
+      "explanationsSha256": "789b3c9f48a6a2d38c5558ffd84bddb6123666c80ab74747f9d255a4fd8e8d51",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 23,
+      "pdfPage": 24,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "5",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点",
+        "図の接続・極性・位置・目盛と説明の対応"
+      ],
+      "note": "b₂,b₃は支点から力点。作用点から力点の距離との差を誤って使わない。W/Pは各てこ比の積。",
+      "questionAndChoicesSha256": "814d5a200f19afef94dd539b256e51de9ab58aebfda6fc689cb71e4e3bffcc1c",
+      "explanationsSha256": "d7c8237bb90e7bd49d4112499efeb80e3e86c84b3735fbca8b3638723da8d146",
+      "result": "reviewed-after-correction"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 24,
+      "pdfPage": 25,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "3",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "タンク真値=表示−器差。最小流量の−0.4%も同時に判定。",
+      "questionAndChoicesSha256": "c80b0d63db877f62b51de2ac91a41d7ead6ef966b32bedbed6da85646cdb5814",
+      "explanationsSha256": "8b62bb357536ca87ea8617c0645f87015a69711597a4fdc1d0060c8f083db140",
+      "result": "reviewed-no-semantic-change"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 25,
+      "pdfPage": 26,
+      "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/8_R07keishitsu.pdf",
+      "officialAnswerNumber": "2",
+      "reviewType": "manual-semantic-review",
+      "checkedChoices": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "checkedRelationships": [
+        "設問の正誤指定と選択肢の関係",
+        "物理量・量の向き・式・次元・条件・時点"
+      ],
+      "note": "本文の条件と各肢の記述を読み、全5肢の解説の肯否・根拠を再確認。",
+      "questionAndChoicesSha256": "ea34695294c29a40dbc8e88e3fcf58c5db93f3c1ec5e51eb1610dbbd0ad4d9e2",
+      "explanationsSha256": "daf92e562bc94b78a984c95e00dbbe7538034d4db82ce4d6515b90ce24d3628a",
+      "result": "reviewed-no-semantic-change"
+    }
+  ]
+}

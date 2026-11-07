@@ -1,0 +1,412 @@
+{
+  "scope": "qual-new:13 / 令和7年度 技術士第一次試験 経営工学部門 専門科目Ⅲ−1〜35",
+  "reviewer": "/root/independent_acceptance",
+  "reviewType": "independent finite full content and image acceptance; one pass plus identified corrections only",
+  "completedAtJst": "2026-11-01T18:44:54.448115+09:00",
+  "verdict": "ACCEPTED_PRIVATE_CONTENT",
+  "questionsSha256": "b97e06d0cab2025f38d8586e1a6697dae5243550fc7968d16127d02478fe835b",
+  "sourceProblemSha256": "83648d5b93295eb645c456cebe8287721155a3d721911e50053fa4fce8cda01b",
+  "sourceAnswerSha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311",
+  "officialAnswerPage": 17,
+  "counts": {
+    "originalQuestions": 35,
+    "choiceReasons": 175,
+    "officialAnswerMatches": 35,
+    "imagesVisuallyChecked": 35,
+    "sourceCropPixelMatches": 35,
+    "inventedOriginalQuestions": 0,
+    "unresolvedFindings": 0
+  },
+  "method": [
+    "Read the full 35 question images and all 175 reasons; matched original stems/conditions/choices against the supplied official paper.",
+    "Read the rendered official answer table on page 17 and matched all 35 answers.",
+    "Inspected all 35 final cropped images for complete stems, conditions, figures/tables, and five choices.",
+    "Independently regenerated each specified crop in memory and compared exact pixel arrays with delivered assets. This is a source-binding check, not a second content audit.",
+    "Recomputed quantitative questions; for Q23 enumerated all 720 job orders to verify minimum makespan 100.",
+    "Checked N10 C035: each false alternative identifies its error and the corresponding correct concept or calculation."
+  ],
+  "resolvedFindings": [
+    {
+      "id": "R1",
+      "type": "image-boundary",
+      "questions": [
+        7,
+        8,
+        33,
+        34,
+        35
+      ],
+      "finding": "Initial crops omitted stems or included adjacent question text.",
+      "resolution": "Final corresponding assets contain the complete intended question and exclude neighboring stems/choices; visually confirmed."
+    },
+    {
+      "id": "R2",
+      "type": "content",
+      "questions": [
+        35
+      ],
+      "finding": "Initial explanation classified choice 5 as sustainable consumption.",
+      "resolution": "Corrected to consumer issues / fulfilment of basic needs, ISO 26000 clause 6.7.2.2. Correct answer 5 unchanged.",
+      "primarySource": "https://share.ansi.org/Shared%20Documents/News%20and%20Publications/Links%20Within%20Stories/ISO%2026000%20Guidance.pdf",
+      "sourceLocator": "PDF p63, clause 6.7.2.2"
+    },
+    {
+      "id": "R3",
+      "type": "evidence-wording",
+      "questions": [
+        25
+      ],
+      "finding": "Initial wording asserted the official examiner intended the M/M/1 model.",
+      "resolution": "Changed to say the stated model calculation is consistent with official answer 4. Original only states equilibrium; unstated-model limitation is preserved."
+    }
+  ],
+  "calculationChecks": {
+    "Q8": {
+      "efficiency": 0.9010416666666667,
+      "balanceLoss": 0.09895833333333333,
+      "allowance": 0.10982658959537571,
+      "modifiedEfficiency": 0.8906250000000001
+    },
+    "Q13_Cp": 1.3333333333333333,
+    "Q14_F": [
+      3.125,
+      6,
+      3.25
+    ],
+    "Q16_SD_mm": 10,
+    "Q17_A": 170,
+    "Q22_order": [
+      2,
+      3,
+      1,
+      5,
+      4
+    ],
+    "Q23_choiceMakespans": [
+      102,
+      113,
+      107,
+      103,
+      100
+    ],
+    "Q23_all720Minimum": 100,
+    "Q24_counterexample": [
+      0,
+      0,
+      3
+    ],
+    "Q24_counterexampleObjective": 15,
+    "Q25_serviceMinutes": 1.2,
+    "Q26_comparisonCount": 6,
+    "Q28_breakevenThousandsYen": 800,
+    "Q29_netProfitTenThousandsYen": [
+      80,
+      60,
+      270,
+      300,
+      250
+    ],
+    "Q30_netProfitTenThousandsYen": [
+      134,
+      135.5,
+      133,
+      133.5,
+      125
+    ]
+  },
+  "specialChecks": {
+    "Q21": "The item capability vs service-providing organization distinction and answer 3 are consistent.",
+    "Q22": "All five reliability formulas and the differences used for ranking are algebraically consistent under the explicitly stated independent identical-r model; endpoint ties noted.",
+    "Q25": "Correct numerical answer under the stated standard model; the general equilibrium-only limitation is made explicit.",
+    "Q34": "Answer 1 agrees with the official key. The explanation distinguishes backup support after failure from a normal-operation interlock, guarding, alarms and checklists.",
+    "Q35": "Seven principles and the corrected consumer-issues distinction verified."
+  },
+  "assets": [
+    {
+      "question": 1,
+      "page": 1,
+      "asset": "assets/q01.png",
+      "sha256": "44ba0a530a32e5b841504a4a5f30e71a38e9f9624611fb6fe56bfbb8f50831ff",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 2,
+      "page": 1,
+      "asset": "assets/q02.png",
+      "sha256": "d49a59b7162992c3d58dfc5941c14afebebd7137f2250981ff07ddd139ce9507",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 3,
+      "page": 2,
+      "asset": "assets/q03.png",
+      "sha256": "a5f12553fa59d697c105e9231a08806d5c9bf8b7e0ddb1c572be15fddf5a97a2",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 4,
+      "page": 2,
+      "asset": "assets/q04.png",
+      "sha256": "9417eba4be552113b91ff83e234e9957a151ba2b4f914c4b8145bb57235b7c9e",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 5,
+      "page": 3,
+      "asset": "assets/q05.png",
+      "sha256": "076a25227a26c9641cb48114547facb07191ab05eb5a6e710e0d850522f19a95",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 6,
+      "page": 3,
+      "asset": "assets/q06.png",
+      "sha256": "ae9b48884b461722fba7c77378d99198fe446bae9c5a3df3f7bb85b7ff06e4da",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 7,
+      "page": 4,
+      "asset": "assets/q07.png",
+      "sha256": "5b7b09d521445b75c48ba3ceb520f6876c08da3c28ec87399a87f05b626e8ff8",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 8,
+      "page": 4,
+      "asset": "assets/q08.png",
+      "sha256": "39832cf6da9ee7a82928d1763d65f63bbed21368374f77bca9f21a8049ad9092",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 9,
+      "page": 5,
+      "asset": "assets/q09.png",
+      "sha256": "70d64f5856def1d32984510ea5146fd0922b436d9c8c660ee6c0f79c19199883",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 10,
+      "page": 5,
+      "asset": "assets/q10.png",
+      "sha256": "bdc524df4e4161a6a1fb5afc9f37db24c9827974ba55c13c9605ce5d30937788",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 11,
+      "page": 6,
+      "asset": "assets/q11.png",
+      "sha256": "cc05812e7192d5de1120c9858e1a706e914c6de6333fe9430fc63bdc7bc5ec82",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 12,
+      "page": 6,
+      "asset": "assets/q12.png",
+      "sha256": "26b13f3660057a57c9e7a4a7673210f3528dedb920b0b95db7cdb4c8575a2f98",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 13,
+      "page": 6,
+      "asset": "assets/q13.png",
+      "sha256": "6f2e59be2dc0431b5bccd2de4debe9d2678b02055fb42ef4aa0fed58ddc693bf",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 14,
+      "page": 7,
+      "asset": "assets/q14.png",
+      "sha256": "94107186092fc83345b6fb6f258d042082763eda3f454e03eb555a69ce22f95e",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 15,
+      "page": 7,
+      "asset": "assets/q15.png",
+      "sha256": "8e91620a9e2f0babfc042ce9231329ef24fdc6f26cc0087dd6508fcb95401ab2",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 16,
+      "page": 8,
+      "asset": "assets/q16.png",
+      "sha256": "2ab30814cfa754dfb4fc0480c0c34630cbac39da780f4f952a8628780b08d931",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 17,
+      "page": 8,
+      "asset": "assets/q17.png",
+      "sha256": "2ebbd0bad3c3302672c458d35a070d87884feaf52c1c1d049297b5dd29495ee3",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 18,
+      "page": 9,
+      "asset": "assets/q18.png",
+      "sha256": "ede279a0d5548d6d7239dc33993f4a1f035d00f0c9cfaf48effd18cfe8baf633",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 19,
+      "page": 10,
+      "asset": "assets/q19.png",
+      "sha256": "2e452b3d1fa178e415435ced0f8d9a31bac489ebde546026d16fb858699a079c",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 20,
+      "page": 11,
+      "asset": "assets/q20.png",
+      "sha256": "09c89c3db1bc20e1308fbafdd92456f3e20115cc8ef4c240b255040e7dc61e48",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 21,
+      "page": 11,
+      "asset": "assets/q21.png",
+      "sha256": "81eae90112be66a0ec45fc649f10b7b2cc39492c24b23d777239147b9df65d4e",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 22,
+      "page": 12,
+      "asset": "assets/q22.png",
+      "sha256": "ccb9a0efb3ba4587d98be0ce01f2781677ff6c7a793474f69ac954912e745723",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 23,
+      "page": 13,
+      "asset": "assets/q23.png",
+      "sha256": "48559a03913061c34990ecb7da96dd1656c6734510eb382a96df752ea8051bae",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 24,
+      "page": 14,
+      "asset": "assets/q24.png",
+      "sha256": "e3f014280d1fe60be1401fbf0289ecfeb4880664a977850b377692c7ca57ca06",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 25,
+      "page": 14,
+      "asset": "assets/q25.png",
+      "sha256": "81f53f57bf5d2113137bc88da47de6adbbb21a7a8acd0037fc6cd85e2b2164ca",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 26,
+      "page": 15,
+      "asset": "assets/q26.png",
+      "sha256": "6be44a826c9ae7911d0b98575c370f9fe935f323dacb59c3a817efcdb2cd01e0",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 27,
+      "page": 15,
+      "asset": "assets/q27.png",
+      "sha256": "aabfcaa4ffaed3793df17ca96ff1ed8a38b862ba1f6c1bd9362c54ecfacdf226",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 28,
+      "page": 15,
+      "asset": "assets/q28.png",
+      "sha256": "81a91d0593fd9b23e85c1806a99c3354cfffef62d5b5d6156d703f617d57bc38",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 29,
+      "page": 16,
+      "asset": "assets/q29.png",
+      "sha256": "f4a5cfa2404f906495b4bf92d07de412a77025b8805f087670357218e1a4cf87",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 30,
+      "page": 17,
+      "asset": "assets/q30.png",
+      "sha256": "0f51d78cb2df57e5e203de6f518fe2f44dfbf9a234702d51f5ddc22cb776b18f",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 31,
+      "page": 17,
+      "asset": "assets/q31.png",
+      "sha256": "aadb370bd66e21e51b7b64dc598b514a7d78ded830a92c10c518562b20b090ec",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 32,
+      "page": 18,
+      "asset": "assets/q32.png",
+      "sha256": "06a361e4b9be08ed5c480f5096a65b711a9a0937637b47a1a2b4932d1141a169",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 33,
+      "page": 19,
+      "asset": "assets/q33.png",
+      "sha256": "fbed5973e0bc91e0ca36684c96209624f963f7f4895e458d518b4a682b0bfb52",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 34,
+      "page": 19,
+      "asset": "assets/q34.png",
+      "sha256": "3ce9ce857908a0f8cd2c2e431cc9915bbfdf26a577670d612021d7888aa107e7",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    },
+    {
+      "question": 35,
+      "page": 19,
+      "asset": "assets/q35.png",
+      "sha256": "0aca9262e9871690dda4fb53de3c1d706b7367faeead5b9b1c7ccd5bf79bf544",
+      "pixelsMatchSourceCrop": true,
+      "visualStemChoicesAndFiguresComplete": true
+    }
+  ],
+  "limitations": [
+    "Acceptance applies only to this questions.json hash and listed asset hashes.",
+    "No shared main integration, runtime UI, publication, rights clearance or deployment was performed or accepted.",
+    "This is not a full clause-by-clause audit of all cited JIS editions. Official source questions and keys plus independent reasoning underpin this finite educational review.",
+    "Original questions and choices are image-based; original-year/question metadata is preserved. Any future transcription or alternative rendering needs its own changed-part verification."
+  ]
+}

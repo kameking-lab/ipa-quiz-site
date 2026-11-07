@@ -1,0 +1,2305 @@
+{
+  "scope": "73画像73問の全体解説73件・全365肢。図は線/端子/方向/寸法、構造式は結合順と立体配置、表は全行全列を目視追跡。数値は上の式で独立計算。著者による再点検であり第三者レビューではない。",
+  "counts": {
+    "images": 73,
+    "questions": 73,
+    "choiceExplanations": 365,
+    "numericalNearestChoiceChecks": 41,
+    "additionalChecks": 8
+  },
+  "doppler": {
+    "travelTime": 0.14335348615624044,
+    "emissionY": 27.849697707656393,
+    "direction": [
+      0.8206780454247643,
+      -0.5713908870097497
+    ],
+    "observedHz": 92.83232569218796,
+    "finiteDifferenceHz": 92.83232568879639
+  },
+  "calculations": [
+    {
+      "subject": "一基",
+      "qNumber": 2,
+      "derivation": "|A∪B|最小=max(143,170)、200−170",
+      "value": 30.0,
+      "offeredValues": [
+        0,
+        27,
+        30,
+        57,
+        113
+      ],
+      "nearestChoice": 3,
+      "officialAnswer": "3"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 3,
+      "derivation": "a³+b³ mod6 = (4³+3³) mod6",
+      "value": 1.0,
+      "offeredValues": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "nearestChoice": 1,
+      "officialAnswer": "1"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 4,
+      "derivation": "log(5/14)=1−2log2−log7、最初の桁ceil(44.7)",
+      "value": 45.0,
+      "offeredValues": [
+        45,
+        46,
+        47,
+        48,
+        49
+      ],
+      "nearestChoice": 1,
+      "officialAnswer": "1"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 8,
+      "derivation": "f′よりa=3,b=2、積分a/3−b/2+c=4からc=4",
+      "value": 9.0,
+      "offeredValues": [
+        4,
+        6,
+        8,
+        9,
+        10
+      ],
+      "nearestChoice": 4,
+      "officialAnswer": "4"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 11,
+      "derivation": "Aを選びBを除く場合は残り4人から2人、全体6人から3人",
+      "value": 0.3,
+      "offeredValues": [
+        0.4,
+        0.3333333333333333,
+        0.3,
+        0.25,
+        0.2
+      ],
+      "nearestChoice": 3,
+      "officialAnswer": "3"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 12,
+      "derivation": "2枚の表枚数分布P(0,1,2)=(1,2,1)/4",
+      "value": 1.0,
+      "offeredValues": [
+        1.25,
+        1,
+        0.75,
+        0.5,
+        0.25
+      ],
+      "nearestChoice": 2,
+      "officialAnswer": "2"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 19,
+      "derivation": "同数からの比2^(−t/2+t/30)=1/2を解く",
+      "value": 2.142857142857143,
+      "offeredValues": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "nearestChoice": 2,
+      "officialAnswer": "2"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 21,
+      "derivation": "最大波長hc/仕事関数をnmへ",
+      "value": 242.64705882352942,
+      "offeredValues": [
+        24,
+        120,
+        240,
+        480,
+        960
+      ],
+      "nearestChoice": 3,
+      "officialAnswer": "3"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 24,
+      "derivation": "ρQ、時間h→s",
+      "value": 20.0,
+      "offeredValues": [
+        20,
+        410,
+        1200,
+        32000,
+        72000
+      ],
+      "nearestChoice": 1,
+      "officialAnswer": "1"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 8,
+      "derivation": "斜面角Bの余弦=(AB²+BC²−AC²)/(2AB·BC)、N=mgcosB",
+      "value": 8.846153846153847,
+      "offeredValues": [
+        0.9326427425370878,
+        1.5011106998930268,
+        4.333333333333333,
+        8.846153846153847,
+        8.666666666666666
+      ],
+      "nearestChoice": 4,
+      "officialAnswer": "4"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 9,
+      "derivation": "逆向き力5 kg×(10+1·2)m/s÷3s",
+      "value": 20.0,
+      "offeredValues": [
+        5,
+        10,
+        15,
+        20,
+        25
+      ],
+      "nearestChoice": 4,
+      "officialAnswer": "4"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 11,
+      "derivation": "実線x=1山→破線x=4山、6秒で3m、λ=4m",
+      "value": 8.0,
+      "offeredValues": [
+        2,
+        4,
+        6,
+        8,
+        10
+      ],
+      "nearestChoice": 4,
+      "officialAnswer": "4"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 13,
+      "derivation": "340τ=√[40²+(30−15τ)²]を解き、放射→受信方向へ両速度を射影。別法dt放射/dt受信とも一致",
+      "value": 92.83232569218796,
+      "offeredValues": [
+        87,
+        90,
+        93,
+        100,
+        103
+      ],
+      "nearestChoice": 3,
+      "officialAnswer": "3"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 14,
+      "derivation": "赤660nm·1m/0.2mm=3.3mm、青2.2mm、共通周期6.6mm、±10mm内",
+      "value": 3.0,
+      "offeredValues": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "nearestChoice": 3,
+      "officialAnswer": "3"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 18,
+      "derivation": "pV^(5/3)一定、理想気体よりT2/T1=(p2/p1)^(2/5)、K→℃",
+      "value": -173.0,
+      "offeredValues": [
+        -173,
+        -73,
+        -23,
+        27,
+        127
+      ],
+      "nearestChoice": 1,
+      "officialAnswer": "1"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 19,
+      "derivation": "放熱0.9·300·0.5(100−T)=500·4.2(T−20)",
+      "value": 24.83221476510067,
+      "offeredValues": [
+        25,
+        30,
+        35,
+        40,
+        45
+      ],
+      "nearestChoice": 1,
+      "officialAnswer": "1"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 23,
+      "derivation": "右−左=U、3枝KCL (U−1)/1+U/2+(U−4)/3=0、矢印電流U/2",
+      "value": 0.6363636363636364,
+      "offeredValues": [
+        -0.9090909090909091,
+        -0.2727272727272727,
+        0.6,
+        0.6363636363636364,
+        0.9230769230769231
+      ],
+      "nearestChoice": 4,
+      "officialAnswer": "4"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 6,
+      "derivation": "2^(−t/12)=0.1、指定log2=0.30",
+      "value": 40.0,
+      "offeredValues": [
+        20,
+        30,
+        40,
+        50,
+        60
+      ],
+      "nearestChoice": 3,
+      "officialAnswer": "3"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 7,
+      "derivation": "Cu2+1molあたり2molのH+を放出、NaOH0.1×0.008mol",
+      "value": 0.02,
+      "offeredValues": [
+        0.01,
+        0.02,
+        0.04,
+        0.06,
+        0.08
+      ],
+      "nearestChoice": 2,
+      "officialAnswer": "2"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 9,
+      "derivation": "CaF2生成を逆転+1228、昇華178、解離159、電離590+1145、電子付加2×−328",
+      "value": 2644.0,
+      "offeredValues": [
+        188,
+        516,
+        1500,
+        2644,
+        2972
+      ],
+      "nearestChoice": 4,
+      "officialAnswer": "4"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 15,
+      "derivation": "電気量0.10×600C、Ni2+は2電子、質量=(Q/2F)·58.7",
+      "value": 0.018248704663212434,
+      "offeredValues": [
+        0.018,
+        0.027,
+        0.036,
+        0.054,
+        0.091
+      ],
+      "nearestChoice": 1,
+      "officialAnswer": "1"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 17,
+      "derivation": "[H+]=Kw/[OH−]、指定log2=0.30から11.70",
+      "value": 11.698970004336019,
+      "offeredValues": [
+        10.7,
+        11.2,
+        11.7,
+        12.3,
+        12.8
+      ],
+      "nearestChoice": 3,
+      "officialAnswer": "3"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 19,
+      "derivation": "炭素骨格直鎖:1/2ブタノール、分岐:2メチル1/2プロパノール。2ブタノールのみ不斉",
+      "value": 3.0,
+      "offeredValues": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "nearestChoice": 3,
+      "officialAnswer": "3"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 22,
+      "derivation": "式量122.4=0.9·16+n·18でn=6、水60mol÷6×0.9",
+      "value": 9.0,
+      "offeredValues": [
+        0.9,
+        1,
+        9,
+        10,
+        54
+      ],
+      "nearestChoice": 3,
+      "officialAnswer": "3"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 2,
+      "derivation": "NH3必要量0.60×17g、質量分率0.28と密度0.90で体積へ",
+      "value": 40.47619047619047,
+      "offeredValues": [
+        0.41,
+        36,
+        41,
+        24,
+        0.36
+      ],
+      "nearestChoice": 3,
+      "officialAnswer": "3"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 12,
+      "derivation": "C=100×1/100、矩形公差を√3=1.73で割り独立合成",
+      "value": 0.005780635830925218,
+      "offeredValues": [
+        0.02,
+        0.017,
+        0.01,
+        0.0083,
+        0.0058
+      ],
+      "nearestChoice": 5,
+      "officialAnswer": "5"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 18,
+      "derivation": "NaCl0.351/58.5mol、AgNO3全量は滴定100mLの10倍、式量170",
+      "value": 97.14285714285712,
+      "offeredValues": [
+        100,
+        99,
+        98,
+        97,
+        96
+      ],
+      "nearestChoice": 4,
+      "officialAnswer": "4"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 5,
+      "derivation": "点源距離2倍で二乗音圧1/4、線源1/2、無相関和",
+      "value": 71.750612633917,
+      "offeredValues": [
+        68,
+        70,
+        72,
+        74,
+        76
+      ],
+      "nearestChoice": 3,
+      "officialAnswer": "3"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 7,
+      "derivation": "表6帯域をA補正した二乗音圧の総和",
+      "value": 82.42994070207342,
+      "offeredValues": [
+        67,
+        72,
+        77,
+        82,
+        87
+      ],
+      "nearestChoice": 4,
+      "officialAnswer": "4"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 8,
+      "derivation": "W=1mW→LW=90dB、室定数Sα/(1−α)、Lp=LW+10log(4/R)",
+      "value": 88.8081359228079,
+      "offeredValues": [
+        83,
+        85,
+        87,
+        89,
+        91
+      ],
+      "nearestChoice": 4,
+      "officialAnswer": "4"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 10,
+      "derivation": "80dB→p=20μPa·10^4、出力2mVをPaで割り20log",
+      "value": -40.0,
+      "offeredValues": [
+        -20,
+        -34,
+        -40,
+        -74,
+        -92
+      ],
+      "nearestChoice": 3,
+      "officialAnswer": "3"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 17,
+      "derivation": "追加40kgで1mm: k=40g/0.001、ω²=k/(M+40)",
+      "value": 162.64236728467554,
+      "offeredValues": [
+        163,
+        250,
+        326,
+        996,
+        9960
+      ],
+      "nearestChoice": 1,
+      "officialAnswer": "1"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 21,
+      "derivation": "伝達率1/|1−r²|=1/2、r²=3、m=3k/ω²",
+      "value": 9.878815405127932,
+      "offeredValues": [
+        4.2,
+        10,
+        26,
+        420,
+        1000
+      ],
+      "nearestChoice": 2,
+      "officialAnswer": "2"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 22,
+      "derivation": "A距離4→16m・C距離4→8m、Bの二乗音圧比A0.9/C0.1",
+      "value": 74.39332693830262,
+      "offeredValues": [
+        72,
+        75,
+        78,
+        80,
+        82
+      ],
+      "nearestChoice": 2,
+      "officialAnswer": "2"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 23,
+      "derivation": "加速度実効値0.02、基準1e−5、16Hz鉛直補正−6dB",
+      "value": 60.020599913279625,
+      "offeredValues": [
+        60,
+        63,
+        66,
+        69,
+        72
+      ],
+      "nearestChoice": 1,
+      "officialAnswer": "1"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 2,
+      "derivation": "独立成分の分散和→平方根",
+      "value": 24.02623566021111,
+      "offeredValues": [
+        7.9,
+        24,
+        39,
+        48,
+        580
+      ],
+      "nearestChoice": 2,
+      "officialAnswer": "2"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 5,
+      "derivation": "本尺12mm、矢印に一致する副尺13区間×0.05mm",
+      "value": 12.65,
+      "offeredValues": [
+        10.65,
+        12.65,
+        30.65,
+        38,
+        38.65
+      ],
+      "nearestChoice": 2,
+      "officialAnswer": "2"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 7,
+      "derivation": "同じ液面差p=ρgh、比ではg,h相殺",
+      "value": 13.0,
+      "offeredValues": [
+        2,
+        6.5,
+        9.8,
+        13,
+        26
+      ],
+      "nearestChoice": 4,
+      "officialAnswer": "4"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 10,
+      "derivation": "一次遅れ振幅比1.41/2=1/√(1+(10τ)²)",
+      "value": 0.10059678070452494,
+      "offeredValues": [
+        0.01,
+        0.1,
+        1,
+        10,
+        100
+      ],
+      "nearestChoice": 2,
+      "officialAnswer": "2"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 14,
+      "derivation": "I=V/Rの感度係数1/R,−V/R²で各標準不確かさ0.0001を合成、mAへ",
+      "value": 0.1414213562373095,
+      "offeredValues": [
+        0.01,
+        0.1,
+        0.14,
+        0.2,
+        1000
+      ],
+      "nearestChoice": 3,
+      "officialAnswer": "3"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 16,
+      "derivation": "A校正後Bへ、表示=50·gB/gA",
+      "value": 49.94900040799674,
+      "offeredValues": [
+        50.1,
+        50.05,
+        50,
+        49.95,
+        49.9
+      ],
+      "nearestChoice": 4,
+      "officialAnswer": "4"
+    }
+  ],
+  "additionalCalculations": [
+    {
+      "subject": "環化",
+      "qNumber": 21,
+      "derivation": "各分子のH原子数/2×物質量、水はア12>イ9>ウ6>エ3",
+      "result": [
+        12.0,
+        9.0,
+        6.0,
+        3.0
+      ],
+      "officialAnswer": "1"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 9,
+      "derivation": "第1列(1,−1)、第2列=(−3,4)+(1,−1)=(−2,3)。2入力を各5候補へ代入",
+      "result": [
+        [
+          1,
+          -2
+        ],
+        [
+          -1,
+          3
+        ]
+      ],
+      "officialAnswer": "5"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 16,
+      "derivation": "V=1,C=1で節点電位0,1/3,2/3、容量1/3倍の電荷ではなくQ2=3×2/3",
+      "result": {
+        "Q1": 0.3333333333333333,
+        "Q2": 2
+      },
+      "officialAnswer": "3"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 15,
+      "derivation": "横10区間に3周期、周期=10·0.010/3秒、山谷8区間×1V",
+      "result": {
+        "frequencyHz": 30.0,
+        "peakToPeakV": 8
+      },
+      "officialAnswer": "4"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 16,
+      "derivation": "各因子の最大値と現行第2水準を図から独立転記",
+      "result": {
+        "optimum": "A1B2C3D1E2F1G3H2",
+        "gain": 10
+      },
+      "officialAnswer": "1"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 19,
+      "derivation": "(~5&15)+1=11、7+11=18、18&15=2",
+      "result": {
+        "complement": "1011",
+        "seven": "0111",
+        "result": "0010"
+      },
+      "officialAnswer": "1"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 21,
+      "derivation": "独立3測定、係数1,−1/2,−1/2からσ/σx=√(1+1/4+1/4)",
+      "result": 1.224744871391589,
+      "officialAnswer": "3"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 24,
+      "derivation": "基準タンク器差=表示−真値、真値20.10−(−0.10)=20.20、メーター器差0%",
+      "result": {
+        "trueL": 20.200000000000003,
+        "errorPercent": -1.75876914792104e-14
+      },
+      "officialAnswer": "3"
+    }
+  ],
+  "loadCellTerminalNets": {
+    "figure1": [
+      [
+        "amp.E+",
+        "cell1.E+",
+        "cell2.E+"
+      ],
+      [
+        "amp.E−",
+        "cell1.E−",
+        "cell2.E−"
+      ],
+      [
+        "amp.M+",
+        "cell1.M+",
+        "cell2.M+"
+      ],
+      [
+        "amp.M−",
+        "cell1.M−",
+        "cell2.M−"
+      ]
+    ],
+    "figure2": [
+      [
+        "amp.E+",
+        "cell1.E+"
+      ],
+      [
+        "cell1.E−",
+        "cell2.E+"
+      ],
+      [
+        "amp.E−",
+        "cell2.E−"
+      ],
+      [
+        "amp.M+",
+        "cell1.M+",
+        "cell2.M+"
+      ],
+      [
+        "amp.M−",
+        "cell1.M−",
+        "cell2.M−"
+      ]
+    ],
+    "figure3": [
+      [
+        "amp.E+",
+        "cell1.E+",
+        "cell2.E+"
+      ],
+      [
+        "amp.E−",
+        "cell1.E−",
+        "cell2.E−"
+      ],
+      [
+        "amp.M+",
+        "cell1.M+"
+      ],
+      [
+        "cell1.M−",
+        "cell2.M+"
+      ],
+      [
+        "amp.M−",
+        "cell2.M−"
+      ]
+    ],
+    "figure4": [
+      [
+        "amp.E+",
+        "cell1.E+"
+      ],
+      [
+        "cell1.E−",
+        "cell2.E+"
+      ],
+      [
+        "amp.E−",
+        "cell2.E−"
+      ],
+      [
+        "amp.M+",
+        "cell1.M+"
+      ],
+      [
+        "cell1.M−",
+        "cell2.M+"
+      ],
+      [
+        "amp.M−",
+        "cell2.M−"
+      ]
+    ],
+    "figure5": [
+      [
+        "amp.E+",
+        "cell1.E+"
+      ],
+      [
+        "amp.E−",
+        "cell2.E+"
+      ],
+      [
+        "cell1.E−",
+        "cell2.E−"
+      ],
+      [
+        "amp.M+",
+        "cell1.M+"
+      ],
+      [
+        "amp.M−",
+        "cell2.M+"
+      ],
+      [
+        "cell1.M−",
+        "cell2.M−"
+      ]
+    ]
+  },
+  "figureReviews": [
+    {
+      "subject": "一基",
+      "qNumber": 5,
+      "trace": "cos(a+h)=cos(a−h)はa=mπ、cos(b+h)=−cos(b−h)はb=nπ+π/2。表の全5行をこの順に照合、4のみ一致。",
+      "pdf": "7_R07ichiki.pdf",
+      "pdfPage": 6,
+      "sourceSha256": "7167c8fc22f6c98f69354681bf6bb21fa87f53b2e0c6d0a9eeeab6abfd996349",
+      "image": "/images/questions/keiryoshi/ichiki-q5.png",
+      "imageSha256": "a6e1201612de3ff152b8846bec0b3f4570245dc73e8a50965ba5e228a279eac4",
+      "officialAnswer": "4",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "70f2975af3ded7bcc9cd60839c10830c1a18f8f8b4fe5c8ece47300634a1c37c"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 6,
+      "trace": "A→Bは左、A→Hは右下、H→Gは下。右・下を正とすればa=(−s,0),b=(s/√2,s/√2)。HG=a+√2b、AG=a+(1+√2)b。全5式の成分を比較。",
+      "pdf": "7_R07ichiki.pdf",
+      "pdfPage": 7,
+      "sourceSha256": "7167c8fc22f6c98f69354681bf6bb21fa87f53b2e0c6d0a9eeeab6abfd996349",
+      "image": "/images/questions/keiryoshi/ichiki-q6.png",
+      "imageSha256": "abb1ac0cc363ef94a36abd4d3a77978d62aad45b16c07b04c36e966d4392c472",
+      "officialAnswer": "4",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "97537d169ec0a0c1f90817807839c378e41e033a4e6731cafd634a5b1c39f4bf"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 13,
+      "trace": "Aを上向きFで持ち上げると接地支点は右端B。BからAはL、Bから重心はL−x。FL=Mg(L−x)を解きx=(1−F/Mg)L、4。",
+      "pdf": "7_R07ichiki.pdf",
+      "pdfPage": 14,
+      "sourceSha256": "7167c8fc22f6c98f69354681bf6bb21fa87f53b2e0c6d0a9eeeab6abfd996349",
+      "image": "/images/questions/keiryoshi/ichiki-q13.png",
+      "imageSha256": "e6ffb8d195c2c153aa60620a99a690e15ad35a35196bff7178b1c80d6856a640",
+      "officialAnswer": "4",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "4a0c55530046c6b7c15f73cc7b7a81100861148e65a87823f13c9dae5b08e271"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 14,
+      "trace": "天井→ばねk→質点mの順。下向き座標でm x''=mg−kx、中心mg/k、ω²=k/m、エネルギーkA²/2。5肢の質量・振幅依存を照合。",
+      "pdf": "7_R07ichiki.pdf",
+      "pdfPage": 15,
+      "sourceSha256": "7167c8fc22f6c98f69354681bf6bb21fa87f53b2e0c6d0a9eeeab6abfd996349",
+      "image": "/images/questions/keiryoshi/ichiki-q14.png",
+      "imageSha256": "31c420f729331be7508db18c45687871e6984af24d074b2c5f4e4fc19c3043c8",
+      "officialAnswer": "5",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "f11bc7f482b939a53a7cd9e8386c65195d04a19b40162b6f3221279c487b5590"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 15,
+      "trace": "磁場は上向き、導線の傾きは鉛直から30°。P→Qの電流と上向きBの外積が偏位方向。鉛直張力合計mg、水平BIL=mg tan30°。向きと係数を5行照合。",
+      "pdf": "7_R07ichiki.pdf",
+      "pdfPage": 16,
+      "sourceSha256": "7167c8fc22f6c98f69354681bf6bb21fa87f53b2e0c6d0a9eeeab6abfd996349",
+      "image": "/images/questions/keiryoshi/ichiki-q15.png",
+      "imageSha256": "f144d8316998a35ea2cce8215a7fbb61a7766a78ff5168d900f7d9f55eaf59da",
+      "officialAnswer": "1",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "611b15be9237d1cb7d8af49e5b9788691ad6e58e5692d6319bb1f294df7d1569"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 16,
+      "trace": "電池の長線は右が正。定常時C・3Cの枝は開路で、中央Rの電流0・中央節点は電池負極と同電位。外周R3本が直列、左上V/3・右上2V/3。Q1=CV/3、Q2=3C·2V/3。各肢の両列照合。",
+      "pdf": "7_R07ichiki.pdf",
+      "pdfPage": 17,
+      "sourceSha256": "7167c8fc22f6c98f69354681bf6bb21fa87f53b2e0c6d0a9eeeab6abfd996349",
+      "image": "/images/questions/keiryoshi/ichiki-q16.png",
+      "imageSha256": "8f5e5619544340b6a9c5faeaa88fea1934f838f33e1dcb6cefaf8eb07d1cd8ae",
+      "officialAnswer": "3",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "4533b50ba8894d247c26933203b7ac1a6bafa824c10e94b7481e79a8d645f84e"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 17,
+      "trace": "平行入射光→凸レンズ1→共通焦点→凸レンズ2→平行出射光。上下の光線を各1本追い、L1/2:f1=L2/2:f2からf2=(L2/L1)f1。",
+      "pdf": "7_R07ichiki.pdf",
+      "pdfPage": 18,
+      "sourceSha256": "7167c8fc22f6c98f69354681bf6bb21fa87f53b2e0c6d0a9eeeab6abfd996349",
+      "image": "/images/questions/keiryoshi/ichiki-q17.png",
+      "imageSha256": "78a0a8c7323af62b19ceb01f2579d9136128dae70d8d6c456a0f7166521a5ce6",
+      "officialAnswer": "5",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "25f609a0bf14f61d1ceb65002823538ec7ce54dba47fe5f20638980febd18f01"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 18,
+      "trace": "表の波長列・速さ列を別々に追い、f一定、v=c/n、λ'=v/f=λ/n。3のみ両列一致。",
+      "pdf": "7_R07ichiki.pdf",
+      "pdfPage": 19,
+      "sourceSha256": "7167c8fc22f6c98f69354681bf6bb21fa87f53b2e0c6d0a9eeeab6abfd996349",
+      "image": "/images/questions/keiryoshi/ichiki-q18.png",
+      "imageSha256": "9db9f8beb8d0d32ba63567f2081779ec08e6771a307f328f87a5acd664eca6ce",
+      "officialAnswer": "3",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "e7ef46a23da549709de63de91a307c3b39bc4aad6a3e34583ee0366dbcdb122d"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 20,
+      "trace": "Aはレンズ下側でガラス→空気の反射（位相反転なし）、Bは空気→平面ガラス（π反転）。2t=λ/2、r²≈2Rtからr²=λR/2。1・3・5は明線次数0・1・2、2・4は暗線。",
+      "pdf": "7_R07ichiki.pdf",
+      "pdfPage": 21,
+      "sourceSha256": "7167c8fc22f6c98f69354681bf6bb21fa87f53b2e0c6d0a9eeeab6abfd996349",
+      "image": "/images/questions/keiryoshi/ichiki-q20.png",
+      "imageSha256": "9927d64f8592bebb10749bff0ed1e336a84bbd8b760a5f8c8c08fdb89e031921",
+      "officialAnswer": "1",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "df487ae48aadf67a64305dccbbaaeda4e533bc0cfd83d34764d47086a3f7c034"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 22,
+      "trace": "表A列は水の受熱Mc(T−T0)、B列は金属比熱。Mc(T−T0)=m c金属(T1−T)を解き、2のみ両列一致。",
+      "pdf": "7_R07ichiki.pdf",
+      "pdfPage": 23,
+      "sourceSha256": "7167c8fc22f6c98f69354681bf6bb21fa87f53b2e0c6d0a9eeeab6abfd996349",
+      "image": "/images/questions/keiryoshi/ichiki-q22.png",
+      "imageSha256": "835dee31968fa8db2eb805c2674b1114b4df32442497cf0f00cf9e14ba7f027b",
+      "officialAnswer": "2",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "647315ff0a89d5a917462d04dd5194a6a77bd1280ecef08798d85226906c14e1"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 1,
+      "trace": "ア・イ・ウの3列を全5行照合。3は健康で文化的／経済社会／国際的協調。他行の取り違え箇所と全肢解説が一致。",
+      "pdf": "2_R07kanbutsu.pdf",
+      "pdfPage": 2,
+      "sourceSha256": "60c405da45bbb2caa8eca449b4c795a9978653e71949e6f86b738f8286e33921",
+      "image": "/images/questions/keiryoshi/kanbutsu-q1.png",
+      "imageSha256": "0ed4a8d0e77cc64eaa61568228aaf647b2ed2c0245371cca5009f79e7d3eb3a9",
+      "officialAnswer": "3",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "f6591e35ef17a5aea99b33c2765a5b79547fa8bf6fdeab0468718fdd85ee11e0"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 3,
+      "trace": "期限・届出先の2列を全5行照合。30日以内／市町村長が4、他行の7・60日や知事・大臣の指摘と一致。",
+      "pdf": "2_R07kanbutsu.pdf",
+      "pdfPage": 4,
+      "sourceSha256": "60c405da45bbb2caa8eca449b4c795a9978653e71949e6f86b738f8286e33921",
+      "image": "/images/questions/keiryoshi/kanbutsu-q3.png",
+      "imageSha256": "5bf984c7bd45adc7a33b4116626673cc76728e1ac230209cd7c26d613fff8157",
+      "officialAnswer": "4",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "fd2fcc4fa8a37be2ed279d534c76cb86a853c2c3e14e0c35b43e6116bd922d83"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 6,
+      "trace": "図のRは地表から衛星まで、rは中心から地表まで。中心距離r+R。GM=gr²、mv²/(r+R)=GMm/(r+R)²。v=r√[g/(r+R)]、1。",
+      "pdf": "2_R07kanbutsu.pdf",
+      "pdfPage": 7,
+      "sourceSha256": "60c405da45bbb2caa8eca449b4c795a9978653e71949e6f86b738f8286e33921",
+      "image": "/images/questions/keiryoshi/kanbutsu-q6.png",
+      "imageSha256": "b3459156952195a85fbe0d99d227e5cfe3ce408950b531ad4da06b0287694eb6",
+      "officialAnswer": "1",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "0a87c57d225bc6ed67a31ba140e346cf27f6dd37b8494194d29b8144ebca8724"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 7,
+      "trace": "自然長から手放し、最終伸びmg/k。重力仕事m²g²/kの半分がばねに残り、散逸m²g²/(2k)。図のk・mの対応と5係数を照合。",
+      "pdf": "2_R07kanbutsu.pdf",
+      "pdfPage": 8,
+      "sourceSha256": "60c405da45bbb2caa8eca449b4c795a9978653e71949e6f86b738f8286e33921",
+      "image": "/images/questions/keiryoshi/kanbutsu-q7.png",
+      "imageSha256": "191a4946c7b3cc4b86bf169a8164f4670d3056dad2ad5c19ddd17ab379dcdb71",
+      "officialAnswer": "2",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "7f292ac760358207d1dc752e82cebb1857ab674701e9c251debf9cf444665a1b"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 8,
+      "trace": "底辺CB=15、斜面AB=13、対辺AC=7。余弦定理cosB=345/390=23/26。垂直抗力10cosB=115/13 N、4。",
+      "pdf": "2_R07kanbutsu.pdf",
+      "pdfPage": 9,
+      "sourceSha256": "60c405da45bbb2caa8eca449b4c795a9978653e71949e6f86b738f8286e33921",
+      "image": "/images/questions/keiryoshi/kanbutsu-q8.png",
+      "imageSha256": "dcd4570858bba7aa601cefb15c5bd3366c8a238bcefb96405e5cbbfa89ba2307",
+      "officialAnswer": "4",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "104a572077066982c3df0c561bce00defd9cc1138a0d55beb56debf257045ad4"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 10,
+      "trace": "図の初速は最下点、上端は高さ2l。頂上でT=0ならv上²=gl、エネルギー保存v0²=v上²+4gl=5gl、5。",
+      "pdf": "2_R07kanbutsu.pdf",
+      "pdfPage": 11,
+      "sourceSha256": "60c405da45bbb2caa8eca449b4c795a9978653e71949e6f86b738f8286e33921",
+      "image": "/images/questions/keiryoshi/kanbutsu-q10.png",
+      "imageSha256": "beeed759cb9c134b2b10ce9ab51725f76c5662e1ff2ba9f2dbbdf20df3c11ddb",
+      "officialAnswer": "5",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "8eae916145a68ae59300334988b2cf63df9a512f1bf826eb2cdb11827796ec3c"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 11,
+      "trace": "実線山x=1,5、破線山x=0,4。+xへ1波長未満の移動は1→4の3 m、左へ1 mではない。λ=4 m、6秒で3 m、T=8 s。全5周期候補を照合。",
+      "pdf": "2_R07kanbutsu.pdf",
+      "pdfPage": 12,
+      "sourceSha256": "60c405da45bbb2caa8eca449b4c795a9978653e71949e6f86b738f8286e33921",
+      "image": "/images/questions/keiryoshi/kanbutsu-q11.png",
+      "imageSha256": "cf03b78cbe17657baa5209421abb1d32d0cb0b4475f0416666440fa185f38fff",
+      "officialAnswer": "4",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "2419d2fc24de24c92c5cd9753e6cb030234e0c0da3e9ffb9a29640e50071e03f"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 13,
+      "trace": "初期位置は観測者(−40,0)、音源(0,−30)、速度はそれぞれ+x20・+y15。受信4秒では観測者(40,0)。放射位置(0,30−15τ)までの距離340τを解きτ=0.143353486 s、伝播方向(0.820678,−0.571391)、f=92.832326 Hz。放射と受信の位置の区別を解説へ反映、正答3保持。",
+      "pdf": "2_R07kanbutsu.pdf",
+      "pdfPage": 14,
+      "sourceSha256": "60c405da45bbb2caa8eca449b4c795a9978653e71949e6f86b738f8286e33921",
+      "image": "/images/questions/keiryoshi/kanbutsu-q13.png",
+      "imageSha256": "d6c7166c2e2e52faba6c1acf0273af79829ee62b48805841151411671297aeef",
+      "officialAnswer": "3",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "ecaed6b0f89c65672465a9844de458d2b42663a5c8a41f3bca124f4751e51cb9"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 14,
+      "trace": "単スリット→間隔0.2 mmの二重スリット→1 m先のスクリーン。図の20 mmは全幅、範囲±10 mm。赤3.3 mm・青2.2 mm、共通明線−6.6,0,6.6の3点。",
+      "pdf": "2_R07kanbutsu.pdf",
+      "pdfPage": 15,
+      "sourceSha256": "60c405da45bbb2caa8eca449b4c795a9978653e71949e6f86b738f8286e33921",
+      "image": "/images/questions/keiryoshi/kanbutsu-q14.png",
+      "imageSha256": "ad8f1ca4a07b78f929b9e87fc910ea9bd53c2a1df21d1d28df248d865bdd591f",
+      "officialAnswer": "3",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "2fba3545c6a7bbb9b433c47d80cceeab434b57a253480d3fac921c58ef4fdd8f"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 16,
+      "trace": "太陽光は左から水平、地軸は法線からθ傾き、北緯αの水平面法線との角はα−θ。入射垂直面から水平面への射影E=E0 cos(α−θ)、P=4πR²E/cos(α−θ)。sinと乗除の4誤答を照合。",
+      "pdf": "2_R07kanbutsu.pdf",
+      "pdfPage": 17,
+      "sourceSha256": "60c405da45bbb2caa8eca449b4c795a9978653e71949e6f86b738f8286e33921",
+      "image": "/images/questions/keiryoshi/kanbutsu-q16.png",
+      "imageSha256": "f5cdc512d6fc73e5a2e30a80d1f2867a8ecf23bf0c181943ed9fa63e76bdbdbb",
+      "officialAnswer": "5",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "d9bf42e4dc473225550fae792bb75733830b6bac112649d0dc3cff06e99b5333"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 18,
+      "trace": "密閉気体側3.2 MPa・64 cm³・127℃、外側100 kPa。pV^γ一定からT∝p^((γ−1)/γ)、400(1/32)^(2/5)=100 K=−173℃。",
+      "pdf": "2_R07kanbutsu.pdf",
+      "pdfPage": 19,
+      "sourceSha256": "60c405da45bbb2caa8eca449b4c795a9978653e71949e6f86b738f8286e33921",
+      "image": "/images/questions/keiryoshi/kanbutsu-q18.png",
+      "imageSha256": "3c57eae8fd46d1a9bc787715c06dee0540c4a751fad25151b001f8b10c42b22e",
+      "officialAnswer": "1",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "7d3f9054f862fb18b447a90647dbf07534ca901b8c6807d697af96da10b2798b"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 20,
+      "trace": "図は交流電源と抵抗のみの閉ループ。平均V²/R=V0²/(2R)。振幅2倍で4倍、周期2倍は平均に影響なし。",
+      "pdf": "2_R07kanbutsu.pdf",
+      "pdfPage": 21,
+      "sourceSha256": "60c405da45bbb2caa8eca449b4c795a9978653e71949e6f86b738f8286e33921",
+      "image": "/images/questions/keiryoshi/kanbutsu-q20.png",
+      "imageSha256": "fcac794ce6fd4eb0ca9e9bc8cf8b12964dcc038db27a3d01b05515eea347c807",
+      "officialAnswer": "5",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "bf5e0b8ae4ba3f9ecbfd895cc1b2bf34c2963f710fd334b8cd6d5a6efece633d"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 21,
+      "trace": "Sは上極板と電池の間、開くと上極板の電荷を保持。誘電体は両板間を完全充填、C'=2C。Q一定よりV'=V/2。電池の負極と下板の線だけでは上板へ給電できない。",
+      "pdf": "2_R07kanbutsu.pdf",
+      "pdfPage": 22,
+      "sourceSha256": "60c405da45bbb2caa8eca449b4c795a9978653e71949e6f86b738f8286e33921",
+      "image": "/images/questions/keiryoshi/kanbutsu-q21.png",
+      "imageSha256": "52c82a645c09cef4af51f54fda2eebfa3392d45f404464bfaa48837f7b61212d",
+      "officialAnswer": "2",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "6ef57c0fbc240e8be0aaf2b46e5d01413a8fc5fb1ac311285e011ac2f5198128"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 22,
+      "trace": "電池長線上が正→S→C=1 nF→R=1 kΩ→負極の直列回路。初期C電圧0、R電圧1 V。RC=10^−6 s、VR=e^(−t/μs)。図1一定・2直線・3指数減衰・4指数上昇・5ゼロを照合。",
+      "pdf": "2_R07kanbutsu.pdf",
+      "pdfPage": 23,
+      "sourceSha256": "60c405da45bbb2caa8eca449b4c795a9978653e71949e6f86b738f8286e33921",
+      "image": "/images/questions/keiryoshi/kanbutsu-q22.png",
+      "imageSha256": "37e4eea638c1598be44c946bbfe70dc8dc2a31b422a72ef19a16acb8105404c7",
+      "officialAnswer": "3",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "7803f204ee4aeb001c5a14318bc1aa6c9554e57eae1c7bc3142107cf9073c5de"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 23,
+      "trace": "左・右の2節点を結ぶ3枝。上の電池は右が正1 V、下も右が正4 V。R2矢印は右→左。U=右−左とし(U−1)/1+U/2+(U−4)/3=0、U=14/11、I2=+7/11。電源両極と矢印を含め全肢の符号を照合。",
+      "pdf": "2_R07kanbutsu.pdf",
+      "pdfPage": 24,
+      "sourceSha256": "60c405da45bbb2caa8eca449b4c795a9978653e71949e6f86b738f8286e33921",
+      "image": "/images/questions/keiryoshi/kanbutsu-q23.png",
+      "imageSha256": "8c37ecaca2c7c676dcbd007054332680886ead1ce9f59f582d3b56b5e0dddd78",
+      "officialAnswer": "4",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "5721e8f6050540b274c34215931e962cc57ac0282fc58ec065f9e5e252a18ebb"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 9,
+      "trace": "CaF2(s)→気体イオンの右向き矢印が求める分解向き。左下→左上は生成の逆+1228、昇華+178・F2解離+159・2段電離590+1145・電子付加2×(−328)。合計2644。係数2と符号を追跡。",
+      "pdf": "1_R07kanka.pdf",
+      "pdfPage": 10,
+      "sourceSha256": "4c2d616c8730662c17a0f49f975b3a192b428b4366ca92243b26bd1ca768ba56",
+      "image": "/images/questions/keiryoshi/kanka-q9.png",
+      "imageSha256": "ddab721bb8cfe458de8be28ec369386a220c97f9d81818706d9e549e649ab136",
+      "officialAnswer": "4",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "f0137682c27e2a41c395ff231822b998cde008d805aa0b51fc90e0f012e3e586"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 11,
+      "trace": "図1は1,4/1,3位キシレン、図2はナフタレン共鳴、図3はC−CH2−CH2−C−CH2の五員環。図3左右を同じ環位置で対応させると左側CだけOH/CH3が交換、右側Cの結合は保持。図4はC4/C5、図5は乳酸のOH/CO2Hの手前奥交換。全5組の結合位置・環員数・くさびを追跡、3がジアステレオマー。",
+      "pdf": "1_R07kanka.pdf",
+      "pdfPage": 12,
+      "sourceSha256": "4c2d616c8730662c17a0f49f975b3a192b428b4366ca92243b26bd1ca768ba56",
+      "image": "/images/questions/keiryoshi/kanka-q11.png",
+      "imageSha256": "5030d731b897157d22f055ef7ae38e3dfdb468177dd8e51aff8da6b7a29b926b",
+      "officialAnswer": "3",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "a812408c5dbbc4cef6e0feb5968c1d4c89ad64a4f2097f8f484f65dc097f525b"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 13,
+      "trace": "各図でCH3起点から環の結合を数える。1左はCH3なし、2/3左は環−CH2NO2、2/4左は1,3位、3右と5左は1,2位、1/4/5右は1,4位。主生成物o/pの組合せ5を確認。",
+      "pdf": "1_R07kanka.pdf",
+      "pdfPage": 14,
+      "sourceSha256": "4c2d616c8730662c17a0f49f975b3a192b428b4366ca92243b26bd1ca768ba56",
+      "image": "/images/questions/keiryoshi/kanka-q13.png",
+      "imageSha256": "e9aa92e808b411b7668c01af9c7d87f5594fee614ba1e7c63e73ebea401d4ed9",
+      "officialAnswer": "5",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "29f9710ad933efcda4b2b7368e967013d5ffbb8a8ef78a02ef6a1217422efab4"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 16,
+      "trace": "式の圧力補正an²/V²は引力の補償、V−nbは排除体積。表a・b列を全5行照合、5のみ引力／体積。",
+      "pdf": "1_R07kanka.pdf",
+      "pdfPage": 17,
+      "sourceSha256": "4c2d616c8730662c17a0f49f975b3a192b428b4366ca92243b26bd1ca768ba56",
+      "image": "/images/questions/keiryoshi/kanka-q16.png",
+      "imageSha256": "bc230d23c34ead9b914785452d7d368f2c0952db5628f97b4cc74c9d19a01bfd",
+      "officialAnswer": "5",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "5b49628e9f50ef52d6d85dbf4b16ca36dbc8394c5c56ce937573067e34257d71"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 18,
+      "trace": "図の栓は閉鎖、ピストン下向きで体積半分。直後NO2濃度2倍、その後2NO2→N2O4で減少。横方向の光路長は同じ。選択肢4の時間順と各肢解説が一致。",
+      "pdf": "1_R07kanka.pdf",
+      "pdfPage": 19,
+      "sourceSha256": "4c2d616c8730662c17a0f49f975b3a192b428b4366ca92243b26bd1ca768ba56",
+      "image": "/images/questions/keiryoshi/kanka-q18.png",
+      "imageSha256": "ac5f063c04b9270dad182ea3303a80cf9040d14b157834a0377b60685e90daa3",
+      "officialAnswer": "4",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "16f941ba16ea663f19f920ae6e944bce70d4559f8002e83d4cade00a491ac599"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 20,
+      "trace": "左列の製法と右列の確認法を全5行対応。順にCO2,NH3,H2,Cl2,O2。1はCO2に過酸化水素水を対応させた誤り（石灰水なら白濁）、残りのリトマス・燃焼・漂白を照合。",
+      "pdf": "1_R07kanka.pdf",
+      "pdfPage": 21,
+      "sourceSha256": "4c2d616c8730662c17a0f49f975b3a192b428b4366ca92243b26bd1ca768ba56",
+      "image": "/images/questions/keiryoshi/kanka-q20.png",
+      "imageSha256": "a101ebb4a7405606f6a84025297d923596e924214042cd33c9cb885de1c75c14",
+      "officialAnswer": "1",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "ef7cc06a569303a387e0e308add9d6965c2f3ef518337cbf08bd2d4d0d46408c"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 23,
+      "trace": "エタノールの中性・酸化アルデヒド・130℃でエーテルから誤/正/誤。表のア〜ウ3列、5行を解説と照合して4。",
+      "pdf": "1_R07kanka.pdf",
+      "pdfPage": 24,
+      "sourceSha256": "4c2d616c8730662c17a0f49f975b3a192b428b4366ca92243b26bd1ca768ba56",
+      "image": "/images/questions/keiryoshi/kanka-q23.png",
+      "imageSha256": "1f9596ad522142875f38e5b4a388e408988500b72e2b13d135b300764d5b8e5d",
+      "officialAnswer": "4",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "8d60818fb147467d906689062960f198aa3832e4aaf7f85c036b30b0959615f6"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 1,
+      "trace": "表の形式・応答こう配・pHを行単位で追跡。ア−25〜−30は二価陰イオンS2−、イ−50〜−60は一価陰イオンF−（単結晶）、ウ+50〜+60は一価陽イオンNH4+（液体膜）。5行の符号と価数を照合、5。",
+      "pdf": "3_R07kannou.pdf",
+      "pdfPage": 2,
+      "sourceSha256": "e974e7ef94d5d3bea05475e4feb0aae24818b00e11c9863a2c18ff155722e774",
+      "image": "/images/questions/keiryoshi/kanno-q1.png",
+      "imageSha256": "6b1cd4507471bc5a8349b82d02ca705715039475912c16dfdddf202e790bc1a4",
+      "officialAnswer": "5",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "ab0743119dc1118e095d1271a8dd3ace15c8fea51de4c3bb6f64b813038dc899"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 6,
+      "trace": "下線ア塩酸・イ加圧又は減圧・ウメタノールの順。正/正/誤を表へ当て、2のみ一致。各誤答の解説が実際の行の誤列を指すことを確認。",
+      "pdf": "3_R07kannou.pdf",
+      "pdfPage": 7,
+      "sourceSha256": "e974e7ef94d5d3bea05475e4feb0aae24818b00e11c9863a2c18ff155722e774",
+      "image": "/images/questions/keiryoshi/kanno-q6.png",
+      "imageSha256": "ff77aaca48ff08de8e98b8b1000f4df1152a0219820f9b5b78d22236e58c4041",
+      "officialAnswer": "2",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "3799611976ce85603567c881110131da5c21e9204b30ef6fd2bd17600f6456d7"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 8,
+      "trace": "酸化剤→発色試薬→波長の順で表を読む。オゾン／スルファニルアミド／545が3。各行の酸素、別試薬、590/400の指摘を照合。",
+      "pdf": "3_R07kannou.pdf",
+      "pdfPage": 9,
+      "sourceSha256": "e974e7ef94d5d3bea05475e4feb0aae24818b00e11c9863a2c18ff155722e774",
+      "image": "/images/questions/keiryoshi/kanno-q8.png",
+      "imageSha256": "c1e57e4ca1d74a1bdf65b4388f8d92274718923bcf37f2eedf584c23f24f1f1a",
+      "officialAnswer": "3",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "24117de0e2ee7b0919c91298a47a3b1921dd59653386782c62f017f838be3a2c"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 13,
+      "trace": "避ける箇所2列・望ましい流れ1列の表。屈曲／急激に変化する／整流されは1。直線・均一を避けるとする他行の誤りと解説が一致。",
+      "pdf": "3_R07kannou.pdf",
+      "pdfPage": 14,
+      "sourceSha256": "e974e7ef94d5d3bea05475e4feb0aae24818b00e11c9863a2c18ff155722e774",
+      "image": "/images/questions/keiryoshi/kanno-q13.png",
+      "imageSha256": "45f0a41c25df447f4546a06ab624c34b028dd45db640865cc57e3de9d3904615",
+      "officialAnswer": "1",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "73bdbd6aa1e3d078993aa736e20c8d2dcea408023c26b05a30d6f34836e69767"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 16,
+      "trace": "ア吸引採取、イ捕集バッグ、ウ希釈の順に下線と表を対応。正/正/正が4。他行はそれぞれ誤とした列の指摘を確認。",
+      "pdf": "3_R07kannou.pdf",
+      "pdfPage": 17,
+      "sourceSha256": "e974e7ef94d5d3bea05475e4feb0aae24818b00e11c9863a2c18ff155722e774",
+      "image": "/images/questions/keiryoshi/kanno-q16.png",
+      "imageSha256": "3be47750af36c1d6143359a7c283b4e6c218b69fbe05c359071a3e54228872de",
+      "officialAnswer": "4",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "8d32d9457fa79e3253e51a3db5edfd7e88c86487b4c772096b83ff00154afe2c"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 19,
+      "trace": "洗浄液／陽イオン界面活性剤妨害／酸化剤誤差の順。酸／負／負が1。2は第2符号、3は第3符号、4/5は洗浄と符号が違うことを照合。",
+      "pdf": "3_R07kannou.pdf",
+      "pdfPage": 20,
+      "sourceSha256": "e974e7ef94d5d3bea05475e4feb0aae24818b00e11c9863a2c18ff155722e774",
+      "image": "/images/questions/keiryoshi/kanno-q19.png",
+      "imageSha256": "a77d608afd35155ce04581e96e706f94d36b68569574dff10b5eee176ad2cccd",
+      "officialAnswer": "1",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "69a9b410df8b0d83b7f4cfba462f7d6d03252244be3bfa3a26a2c0a31ca575b2"
+    },
+    {
+      "subject": "環濃",
+      "qNumber": 21,
+      "trace": "検出器／背景伝導度／対イオン伝導度の順。電気伝導度／低下／高いが4。背景と対イオンの増減を混同しないことを全行で確認。",
+      "pdf": "3_R07kannou.pdf",
+      "pdfPage": 22,
+      "sourceSha256": "e974e7ef94d5d3bea05475e4feb0aae24818b00e11c9863a2c18ff155722e774",
+      "image": "/images/questions/keiryoshi/kanno-q21.png",
+      "imageSha256": "a3388e6547d53d031a669e8015ba22b61dee8b12522341d8c636e87c91f08bba",
+      "officialAnswer": "4",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "9f0ef03e3f0aa2a18d3ba64e60915f49914fd9134b4d8326089c61ed942010a5"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 5,
+      "trace": "点音源は線音源上、AとBはその垂線上で点・線いずれからも距離r→2r。二乗音圧は点1/4・線1/2、73+10log10(3/4)=71.7506 dB、最寄72。",
+      "pdf": "4_R07kanon.pdf",
+      "pdfPage": 6,
+      "sourceSha256": "7a4875e31447f97800ca8bec580a2dbbd2b151e605bbfd82fedf88de8605f45e",
+      "image": "/images/questions/keiryoshi/kanon-q5.png",
+      "imageSha256": "99d5b337925b8e66ef6119c94d9e014f673661d9f6ea06ce57bf83c8b9bfdc67",
+      "officialAnswer": "3",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "89c1d2cc096061d5afc21e0f63eac84273eee49b179810dd484af1a9cb14e610"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 7,
+      "trace": "表の125,250,500,1000,2000,4000 Hzに85,88,79,73,72,60 dBを対応。A補正後68.9,79.4,75.8,73,73.2,61、二乗音圧合成82.4299 dB。最大帯域約79 dBという誤答根拠も確認。",
+      "pdf": "4_R07kanon.pdf",
+      "pdfPage": 8,
+      "sourceSha256": "7a4875e31447f97800ca8bec580a2dbbd2b151e605bbfd82fedf88de8605f45e",
+      "image": "/images/questions/keiryoshi/kanon-q7.png",
+      "imageSha256": "33fb4f0218d2f97a40f534110d94ef966f1cf83cb115161df0ccd4f1c30b8a5a",
+      "officialAnswer": "4",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "49597446c9432c5c3510f2818ca63fe76b1ce3d34a2c8c28e18ad8f3a215722d"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 14,
+      "trace": "横軸50〜80 dB、縦軸は低い側から増える累積0〜100%。L5は超過5%なので95%高さから曲線へ水平、次に横軸へ降ろすと約70 dB。5%点55 dB、90%点67 dBとの区別を確認。",
+      "pdf": "4_R07kanon.pdf",
+      "pdfPage": 15,
+      "sourceSha256": "7a4875e31447f97800ca8bec580a2dbbd2b151e605bbfd82fedf88de8605f45e",
+      "image": "/images/questions/keiryoshi/kanon-q14.png",
+      "imageSha256": "5d9f8bbacb9addc9e3ee3f6a4ea4aca9289f275dd8fd422bef36cf2393b03675",
+      "officialAnswer": "5",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "39f070ea8cb46dd708c6bc2278f548e802ba5ae93d82079eee762d78ba5c50fe"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 22,
+      "trace": "直線上A−4m−B−4m−C−8m−D。AB=4,AD=16,CB=4,CD=8。BでC寄与0.1・A寄与0.9、D/B=0.9·4/16+0.1·4/8=0.275、74.3933 dB、最寄75。",
+      "pdf": "4_R07kanon.pdf",
+      "pdfPage": 23,
+      "sourceSha256": "7a4875e31447f97800ca8bec580a2dbbd2b151e605bbfd82fedf88de8605f45e",
+      "image": "/images/questions/keiryoshi/kanon-q22.png",
+      "imageSha256": "83692eae6451f31f3309db3b9d664f79ba00859f4b4c07c0c8e8a777e8d10b2c",
+      "officialAnswer": "2",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "a1da30d05ce7547863d9316aa56cf3038afcb39b1945b11de6a64c0520a8f678"
+    },
+    {
+      "subject": "環音",
+      "qNumber": 25,
+      "trace": "表の質量／方式／下限周波数／上限周波数を全5行追跡。700g以下／サーボ／4／31.5が1。他行の方式・上下限・以上以下の指摘と一致。",
+      "pdf": "4_R07kanon.pdf",
+      "pdfPage": 26,
+      "sourceSha256": "7a4875e31447f97800ca8bec580a2dbbd2b151e605bbfd82fedf88de8605f45e",
+      "image": "/images/questions/keiryoshi/kanon-q25.png",
+      "imageSha256": "f79b9b1e685905a56e41e2d622b01c1bc5edf956264534e2b8ba5aa068ac323b",
+      "officialAnswer": "1",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "d0bab66b3f20c59a31198cd19fc21f9318f9736c55633cfd919de5581367290c"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 8,
+      "trace": "図a正規・b有限区間一様・c有限区間U型。独立標本平均は正規母集団で正規、b/cでは中心極限定理、サイコロ2個の平均は離散三角分布。表は正/正/誤/誤で2。",
+      "pdf": "6_R07kanri.pdf",
+      "pdfPage": 9,
+      "sourceSha256": "5ff07c981fa25369969ec9b67cb0ed3d67ca9ee082e911e2f2fe970c34978ffa",
+      "image": "/images/questions/keiryoshi/kanri-q8.png",
+      "imageSha256": "243c0a06fabb1c4e27f027682675dd14944d6f3dccd54fcfdbb2371a86cdd600",
+      "officialAnswer": "2",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "a4c8bfba74720cf467974ff2529d2337d74266eaeeef49b5798c89a15dba8df0"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 10,
+      "trace": "A/e/Tの行とS/f/Vの列を追跡。an個の全自由度an−1、Aはa−1、差はa(n−1)。誤りは3のn−1。他のS分解・V=S/fも対応する行で確認。",
+      "pdf": "6_R07kanri.pdf",
+      "pdfPage": 11,
+      "sourceSha256": "5ff07c981fa25369969ec9b67cb0ed3d67ca9ee082e911e2f2fe970c34978ffa",
+      "image": "/images/questions/keiryoshi/kanri-q10.png",
+      "imageSha256": "2ff5a03ce10a11252bed2e9fc58fb38b79298d037447756e8ea7fda6c192fec2",
+      "officialAnswer": "3",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "82b0b9bdc849580b1341b7a2671239fc51ceb877f2fec9eba87a14ff88c023c1"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 12,
+      "trace": "定義の順は段階的校正の階層→結果の性質→標準と校正のつながり。3列5行を追い、1が校正階層／トレーサビリティ／連鎖。他行解説の入替位置を確認。",
+      "pdf": "6_R07kanri.pdf",
+      "pdfPage": 13,
+      "sourceSha256": "5ff07c981fa25369969ec9b67cb0ed3d67ca9ee082e911e2f2fe970c34978ffa",
+      "image": "/images/questions/keiryoshi/kanri-q12.png",
+      "imageSha256": "2eb6508e2eb02383a68c67ea3f5dfe1dfca56cae761122b40591d29a93ca81b7",
+      "officialAnswer": "1",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "3648be52e9328b7a6f5141f0d412f3b6568912fdc9657e50a40e2f6d98c5c450"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 13,
+      "trace": "校正第1段階・第2段階・調整の扱い・検証を4列に対応。正/正/誤/正が5、全行の解説が実際の誤列と一致。",
+      "pdf": "6_R07kanri.pdf",
+      "pdfPage": 14,
+      "sourceSha256": "5ff07c981fa25369969ec9b67cb0ed3d67ca9ee082e911e2f2fe970c34978ffa",
+      "image": "/images/questions/keiryoshi/kanri-q13.png",
+      "imageSha256": "7d848a5028c3fbacca6bc7609ac0156ed231b0dbddb73a4c80f91cc1a4e13ef4",
+      "officialAnswer": "5",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "0a844903e7417c6d74d24faf868a2f2c38e2bb738cc0450ae3fd48b155fc61e5"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 16,
+      "trace": "図の各点を左からA[11,9],B[10,12,8],C[9,10,11],D[12,9,9],E[8,13,9],F[11,9,10],G[8,10,12],H[10,11,9]と読む。最大A1B2C3D1E2F1G3H2、現行第2水準との差2+0+1+3+0+2+2+0=10、表1。",
+      "pdf": "6_R07kanri.pdf",
+      "pdfPage": 17,
+      "sourceSha256": "5ff07c981fa25369969ec9b67cb0ed3d67ca9ee082e911e2f2fe970c34978ffa",
+      "image": "/images/questions/keiryoshi/kanri-q16.png",
+      "imageSha256": "0e0e46e4be348a9c27916f4d0313082e07e83f337aa6152caddebadfb33d85c1",
+      "officialAnswer": "1",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "32251630940bb7f153eb911461bd97354ffeb2a122cd1ce218778ef59b20b77a"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 19,
+      "trace": "4ビット0101→ビット反転1010→+1で1011。7=0111、0111+1011=10010、桁あふれを除いた0010。本文Nc下付きと表3列5行を確認、1。",
+      "pdf": "6_R07kanri.pdf",
+      "pdfPage": 20,
+      "sourceSha256": "5ff07c981fa25369969ec9b67cb0ed3d67ca9ee082e911e2f2fe970c34978ffa",
+      "image": "/images/questions/keiryoshi/kanri-q19.png",
+      "imageSha256": "597e801288308b9b81c17372a4801fa9a011a5fa199008a70053d5f84f2bb1df",
+      "officialAnswer": "1",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "b2f513ef4dc41de96357491f8717838b4c459a71a90bcfccc8ac80121c7ce3dc"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 20,
+      "trace": "実線Rは1→0、破線Fは0→1、縦軸は確率。F=1−R、f=dF/dt、λ=f/R。3の−Rは負の確率となり曲線にも合わない。残り4肢の意味と軸を確認。",
+      "pdf": "6_R07kanri.pdf",
+      "pdfPage": 21,
+      "sourceSha256": "5ff07c981fa25369969ec9b67cb0ed3d67ca9ee082e911e2f2fe970c34978ffa",
+      "image": "/images/questions/keiryoshi/kanri-q20.png",
+      "imageSha256": "59061070bfbbd92d980f565e54674d1f605c727dc8e972f1c360d42e2926ae32",
+      "officialAnswer": "3",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "cd7d339c3172aec7b0026712cb97d2a4405df92607cab140692e9a0806573ba3"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 21,
+      "trace": "表3列は図名／当てはめ関数／分析法。2量50対の打点は散布図、右肩上がり直線は一次関数、その係数は回帰分析で2。全行の入替と解説を確認。",
+      "pdf": "6_R07kanri.pdf",
+      "pdfPage": 22,
+      "sourceSha256": "5ff07c981fa25369969ec9b67cb0ed3d67ca9ee082e911e2f2fe970c34978ffa",
+      "image": "/images/questions/keiryoshi/kanri-q21.png",
+      "imageSha256": "e583e4178f6c3f7a93253d0b83252ebc7fc825bbe665af3274e98bcb57a21b96",
+      "officialAnswer": "2",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "50502663cd8d5379c7d1cf9a48f547f4ec5e262a9c24393954d1fd58163378f0"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 4,
+      "trace": "表の差動変圧器／流量計／圧力計の3列を全5行確認。変位→差動電圧、隙間→空気流量又は背圧で全て○。1のみ一致し、各誤答解説が×を置いた列を指す。",
+      "pdf": "8_R07keishitsu.pdf",
+      "pdfPage": 5,
+      "sourceSha256": "a5b2df650eec926bdd35e799be932497370fd411e8ccc37b262b38debff412ca",
+      "image": "/images/questions/keiryoshi/keishitsu-q4.png",
+      "imageSha256": "68d8858485f9da24c447e1e3f4103d7d34bdf60a2192144b101e319d9152b2e7",
+      "officialAnswer": "1",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "5e17f123717d0e2b290ff0a4407f291c147faa9dddb32deb5686be7ef750d561"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 5,
+      "trace": "本尺1 mm目盛、バーニヤ0は12〜13 mm間。一致矢印は本尺38 mm・副尺の13番目（数字6と7の間）。副尺1区間は本尺2区間より0.05 mm短い。12+13·0.05=12.65 mm。",
+      "pdf": "8_R07keishitsu.pdf",
+      "pdfPage": 6,
+      "sourceSha256": "a5b2df650eec926bdd35e799be932497370fd411e8ccc37b262b38debff412ca",
+      "image": "/images/questions/keiryoshi/keishitsu-q5.png",
+      "imageSha256": "e9c11297b63d834a8a2fa2cd1786f2e424a567825bfef087933d18aa31694202",
+      "officialAnswer": "2",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "56a6e55b6ada884edf0ad1c57e714def3e1b72527233c3dbceb0c2b5dd0e6667"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 6,
+      "trace": "表を量／単位記号／基本単位表示の順に全5行追跡。Hz=s−1,N=kg·m·s−2,Pa=kg·m−1·s−2,W=kg·m²·s−3。GyのJ/kgは組立単位で基本単位だけならm²/s²、5。",
+      "pdf": "8_R07keishitsu.pdf",
+      "pdfPage": 7,
+      "sourceSha256": "a5b2df650eec926bdd35e799be932497370fd411e8ccc37b262b38debff412ca",
+      "image": "/images/questions/keiryoshi/keishitsu-q6.png",
+      "imageSha256": "1c5cbcf516ce87dec2792c569c53cbe2ec337b46e3b15f52e1e17a46e95f4054",
+      "officialAnswer": "5",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "dcd0d3458dda7efe19da00d6028b9136032c9a0d2e14e1b686668cb740aedc50"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 7,
+      "trace": "左右液面を結ぶ2本の水平破線間が1 cmで、A/B共通。両端各々の変位1 cmではない。p=ρgΔh、B/A=13。内径2対1は静水圧差に入らない。",
+      "pdf": "8_R07keishitsu.pdf",
+      "pdfPage": 8,
+      "sourceSha256": "a5b2df650eec926bdd35e799be932497370fd411e8ccc37b262b38debff412ca",
+      "image": "/images/questions/keiryoshi/keishitsu-q7.png",
+      "imageSha256": "c8d28ad8d82de0e081c1f1d8fe88695d11d30abc5fb9de19c98032ac3c30bb4e",
+      "officialAnswer": "4",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "6b33a2dd3ac96fcbcec0d427c74a9fbc132a4814ebdc1fc4a43d4ad87e504786"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 15,
+      "trace": "横10グリッドに3周期、1周期10/3グリッド。10 ms/グリッドよりf=30 Hz。山は中心から+4、谷−4の計8グリッド、1 V/グリッドよりpp=8 V。全5組照合。",
+      "pdf": "8_R07keishitsu.pdf",
+      "pdfPage": 16,
+      "sourceSha256": "a5b2df650eec926bdd35e799be932497370fd411e8ccc37b262b38debff412ca",
+      "image": "/images/questions/keiryoshi/keishitsu-q15.png",
+      "imageSha256": "774737160dfbc75af7cf52e36c350d15c35c7bb66e019c7c19414de12ac63feb",
+      "officialAnswer": "4",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "eb61f517206dfbd4336e6f717679efe201545aa1bed2634fff2390ebc818bf0e"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 16,
+      "trace": "地図Aは北側9.804、Bは南側9.794 m/s²。A校正後にBへ移動すると荷重力が減る。表示50·9.794/9.804=49.9490 t、目量0.01 tで49.95 t。",
+      "pdf": "8_R07keishitsu.pdf",
+      "pdfPage": 17,
+      "sourceSha256": "a5b2df650eec926bdd35e799be932497370fd411e8ccc37b262b38debff412ca",
+      "image": "/images/questions/keiryoshi/keishitsu-q16.png",
+      "imageSha256": "61ba9cbe6a2360ddb3dbdcb7e17480c8fd14dae054ab71bc696ab287fd0ffd8a",
+      "officialAnswer": "4",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "bd0bc17c38764094dc054baf22feda4830e3e925fa7a195f6f17bb0d07706ebe"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 18,
+      "trace": "公式PDF19ページの全5図を端子ごとに追跡。図1:増幅器X±とセル1/2のX±が同電位(X=E,M)。図2:E1−=E2+、増幅器E+=E1+・E−=E2−、Mは並列。図3:Eは並列、M1−=M2+、増幅器M+=M1+・M−=M2−。図4:E,Mとも図2/3の直列。図5:増幅器E+=E1+,E−=E2+,E1−=E2−;増幅器M+=M1+,M−=M2+,M1−=M2−。黒丸以外の横断箇所は非接続。E/M交差なし。誤解説を修正、正答1保持。",
+      "pdf": "8_R07keishitsu.pdf",
+      "pdfPage": 19,
+      "sourceSha256": "a5b2df650eec926bdd35e799be932497370fd411e8ccc37b262b38debff412ca",
+      "image": "/images/questions/keiryoshi/keishitsu-q18.png",
+      "imageSha256": "29e196285c660eea44f539039671d23881aa66fd28107dcc0a05e637e6c2f16c",
+      "officialAnswer": "1",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "50ad9edd3b1c8040d9e52a2a4934fba1f9e7ce0d16637a085336c689a48106f0"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 20,
+      "trace": "5図の横軸kg・縦軸±gと段差を追跡。1境界0.5/1、2は0.5/1.5、3は0.5/2、4は1/1.5、5は1/2。段階は共通±1/±2/±3。500e・2000eと対応する図3。",
+      "pdf": "8_R07keishitsu.pdf",
+      "pdfPage": 21,
+      "sourceSha256": "a5b2df650eec926bdd35e799be932497370fd411e8ccc37b262b38debff412ca",
+      "image": "/images/questions/keiryoshi/keishitsu-q20.png",
+      "imageSha256": "1be3b6e64a247f6106a3cfebfac97f584e8d7b85634ae01a6e6c998b8b1e9226",
+      "officialAnswer": "3",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "f74c7f440b07629d2db872c81f0e077de737f090c4e1d3f9c6c5052d9d210b7b"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 22,
+      "trace": "検査項目と評価方法を行単位で追跡。繰返し性5回、さおしぼり平行/直角の水平力、台しぼり載せ台水平力、休み装置刃と刃受けは一致。零点変化を環境温度の計量値変化とした3が誤り。",
+      "pdf": "8_R07keishitsu.pdf",
+      "pdfPage": 23,
+      "sourceSha256": "a5b2df650eec926bdd35e799be932497370fd411e8ccc37b262b38debff412ca",
+      "image": "/images/questions/keiryoshi/keishitsu-q22.png",
+      "imageSha256": "b1a41878f7abef9b569d9b8afeaf1d23743aef2460c74c4667b3e288e81a44d7",
+      "officialAnswer": "3",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "3a9c7b56b257e093744c6d6ee4899f1821ae1787aa6b80b08efd9e21b7da7f4e"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 23,
+      "trace": "F1を挟み左a1・右b1、第2/3は左の支点Fiから作用点Aiまでai、力点Biまでbi。P b1=T1 a1、T1 b2=T2 a2、T2 b3=W a3を順に代入しW/P=Πbi/ai。b2−a2とb3−a3は作用点から力点の距離で、支点からの腕ではない。",
+      "pdf": "8_R07keishitsu.pdf",
+      "pdfPage": 24,
+      "sourceSha256": "a5b2df650eec926bdd35e799be932497370fd411e8ccc37b262b38debff412ca",
+      "image": "/images/questions/keiryoshi/keishitsu-q23.png",
+      "imageSha256": "7e6eb7a546d1a10d9f9bea3a531945564dd1f0cc1be0b18436371f9127057429",
+      "officialAnswer": "5",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "640ce8cb34ef2cf4f69107b99accde0f0dd272a57ff73d5e40624ad51ba61332"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 1,
+      "trace": "3列計量／経済／文化の向上が表3。全5行を追い、社会・消費者保護・計量器という誤列と解説を照合。",
+      "pdf": "5_R07houki.pdf",
+      "pdfPage": 2,
+      "sourceSha256": "47a95bc57a6e0ae4d1a7648be2b980013c020c1efcf6c8795c27c33934205b7d",
+      "image": "/images/questions/keiryoshi/houki-q1.png",
+      "imageSha256": "0fde62a5f109e7fba28da3811f01d2c7aeff73e4c9f4ae628d63f2fb2904ffe3",
+      "officialAnswer": "3",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "1d64f63ccce7b0d133482467ff09fa2fd79e77b3b0b4f007836654d7efe49339"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 3,
+      "trace": "放射能−Bq、圧力−bar、照度−lx、長さ−m、仕事−calの各行を追跡。設問は別表第1での対応で5が誤り。SIそのものとの取り違えがないことを解説で確認。",
+      "pdf": "5_R07houki.pdf",
+      "pdfPage": 4,
+      "sourceSha256": "47a95bc57a6e0ae4d1a7648be2b980013c020c1efcf6c8795c27c33934205b7d",
+      "image": "/images/questions/keiryoshi/houki-q3.png",
+      "imageSha256": "ceb450bc8c3c3e6f84f53e36dd2d45a23d1869299c5c57e7e6137942f2d8ae8d",
+      "officialAnswer": "5",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "a4c0456d037f6c122fd546eebf849b302527bf11806ca4ddc5769f6e2b44e5d2"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 4,
+      "trace": "2列は禁じる行為／適用除外。販売又は販売目的の陳列／輸出が5。製造・所持・輸入を含む各行の誤りと解説を照合。",
+      "pdf": "5_R07houki.pdf",
+      "pdfPage": 5,
+      "sourceSha256": "47a95bc57a6e0ae4d1a7648be2b980013c020c1efcf6c8795c27c33934205b7d",
+      "image": "/images/questions/keiryoshi/houki-q4.png",
+      "imageSha256": "c9ffff731dbc34c36932a3f529584a5d5df63c409da7ccaf27f40939bd38396f",
+      "officialAnswer": "5",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "b2a47ea2afc4f6a3997cbed8ef118b9afaef21a22158133acb682a061afa35a5"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 7,
+      "trace": "特定計量器／法定計量単位／所持の3列で1。特定標準器・計量単位・販売/譲渡と置換した各行と解説を照合。",
+      "pdf": "5_R07houki.pdf",
+      "pdfPage": 8,
+      "sourceSha256": "47a95bc57a6e0ae4d1a7648be2b980013c020c1efcf6c8795c27c33934205b7d",
+      "image": "/images/questions/keiryoshi/houki-q7.png",
+      "imageSha256": "9b566079f06514265d7d12b70466e8785520b7fcaab15e47a643ba4d25bbd942",
+      "officialAnswer": "1",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "e690a50d0a51791b9e148c1c9027f3acd517c9be2279f0adf14947afb975d54d"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 8,
+      "trace": "表3列と下の定義注記を追跡。検定証印等／性能／使用公差が2。型式承認表示と検定証印等、構造と性能、検定公差と使用公差の各混同を全行確認。",
+      "pdf": "5_R07houki.pdf",
+      "pdfPage": 9,
+      "sourceSha256": "47a95bc57a6e0ae4d1a7648be2b980013c020c1efcf6c8795c27c33934205b7d",
+      "image": "/images/questions/keiryoshi/houki-q8.png",
+      "imageSha256": "03c432f1f3e6dfdf95e6f73a2d69031b3e42808b5a00afc27650688eb493b971",
+      "officialAnswer": "2",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "a7f5e2ae85d0bcadd4ef98c9ffa1d14479d38cc7aaed073e14b37a4c8e4409bf"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 13,
+      "trace": "主体／技術基準への適合／付すものの3列。届出製造事業者／技術上の基準／表示が4。他行の特殊容器製造事業者・検定公差・検定証印と解説を照合。",
+      "pdf": "5_R07houki.pdf",
+      "pdfPage": 14,
+      "sourceSha256": "47a95bc57a6e0ae4d1a7648be2b980013c020c1efcf6c8795c27c33934205b7d",
+      "image": "/images/questions/keiryoshi/houki-q13.png",
+      "imageSha256": "f88eb55836dd63630b64ffb456f04fcdfd8d4687c78f5e8cdd34c2d4d1f9fa1f",
+      "officialAnswer": "4",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "98efcc3a52526207421b5c34ca4648533d8282ac28a7899ff9f3bc294ee58cdf"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 16,
+      "trace": "所在地の都道府県知事／長さ質量面積体積熱量／音圧レベルの3列が5。改行を跨ぐ体積・熱量を欠かさず読み、騒音レベルとの混同も各行確認。",
+      "pdf": "5_R07houki.pdf",
+      "pdfPage": 17,
+      "sourceSha256": "47a95bc57a6e0ae4d1a7648be2b980013c020c1efcf6c8795c27c33934205b7d",
+      "image": "/images/questions/keiryoshi/houki-q16.png",
+      "imageSha256": "f9359ea8076efa6bd9d154a9a24ea0285235478e76d161b7f6f6e3b3b28c0a65",
+      "officialAnswer": "5",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "e23eb6bb42e37839dd342df1405d8828b94d971ca31863cc4b85f7cec4a889c3"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 17,
+      "trace": "計量器／受検期間／免除期間の3列と除外注記を追跡。騒音計・濃度計・振動計3年/6月、はかり2年/1年。皮革面積計の表3は2年で、1年との不一致を解説が指摘。",
+      "pdf": "5_R07houki.pdf",
+      "pdfPage": 18,
+      "sourceSha256": "47a95bc57a6e0ae4d1a7648be2b980013c020c1efcf6c8795c27c33934205b7d",
+      "image": "/images/questions/keiryoshi/houki-q17.png",
+      "imageSha256": "a39a07ed24e296216a91c010b322b5720515c5a16aad54eede7b3f819e6d4f96",
+      "officialAnswer": "3",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "fb15ef7be02486d6a38360178219d4fbb2561de0a9f39a9878b899ed7ae78222"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 18,
+      "trace": "極めて微量／高度の技術の2列が4。多成分・知識・経験という他行の誤列と解説を照合。",
+      "pdf": "5_R07houki.pdf",
+      "pdfPage": 19,
+      "sourceSha256": "47a95bc57a6e0ae4d1a7648be2b980013c020c1efcf6c8795c27c33934205b7d",
+      "image": "/images/questions/keiryoshi/houki-q18.png",
+      "imageSha256": "54178cf63e359ab56cb21214686c101f94c609e360e79924bdb6c9365e94556a",
+      "officialAnswer": "4",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "565fbb60af43afa696dc717425beab7092e862f7225ead052994cebc14ac1066"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 23,
+      "trace": "指定主体／物象又は物質／製造又は校正の3列。経産大臣／物象／製造が4。他4行の差分を全肢解説と照合。",
+      "pdf": "5_R07houki.pdf",
+      "pdfPage": 24,
+      "sourceSha256": "47a95bc57a6e0ae4d1a7648be2b980013c020c1efcf6c8795c27c33934205b7d",
+      "image": "/images/questions/keiryoshi/houki-q23.png",
+      "imageSha256": "20c1d6557743222743175c476c3cec7177ed58ebd4669915ea8abb20754a6c13",
+      "officialAnswer": "4",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "6ec453bf7b534656e9d7cd9455a0dd9746cd18e3c8d9cbdd6a6854636d7facd9"
+    },
+    {
+      "subject": "法規",
+      "qNumber": 24,
+      "trace": "国際機関／機関が行う行為／末尾の用字の3列。IEC／校正／基準が3。「規準」と「基準」を含め5行と解説を確認。",
+      "pdf": "5_R07houki.pdf",
+      "pdfPage": 25,
+      "sourceSha256": "47a95bc57a6e0ae4d1a7648be2b980013c020c1efcf6c8795c27c33934205b7d",
+      "image": "/images/questions/keiryoshi/houki-q24.png",
+      "imageSha256": "1929dd703743301e4c3279a3c4d8e7ec935cb3852d44e7296c5131d7fc1139eb",
+      "officialAnswer": "3",
+      "reviewedChoiceKeys": [
+        "ア",
+        "イ",
+        "ウ",
+        "エ",
+        "オ"
+      ],
+      "explanationsSha256": "88f1a68cc8ccda9bc535d26424f8d31ccfef133b00fb041718b5e46b2cdf806a"
+    }
+  ],
+  "otherSymbolicReviews": [
+    {
+      "subject": "一基",
+      "qNumber": 7,
+      "derivation": "y²=2x−5を微分して2yy'=2、y'=1/√(2x−5)。各候補の係数とべき指数を比較。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 23,
+      "derivation": "力M·L·T^−2に距離Lを掛け、エネルギーL²MT^−2。"
+    },
+    {
+      "subject": "一基",
+      "qNumber": 25,
+      "derivation": "Bernoulliのp/ρ+v²/2+gz一定より自由表面と穴の間でv²=2gH、密度は相殺。5肢中最大H=1.2mを選ぶ。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 15,
+      "derivation": "真空→膜、膜→ガラスの両反射とも低n→高nでπ反転、相対反転なし。最初の打消し2nd=λ0/2、d=λ0/(4n)。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 17,
+      "derivation": "等圧W=∫p dV=p(5V0−V0)=4pV0=4RT0。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 24,
+      "derivation": "核子Z個の陽子+(A−Z)個の中性子と原子核の質量差を取る。ΔE=[Zmp+(A−Z)mn−M]c²。電子質量は原子核質量に含めない。"
+    },
+    {
+      "subject": "環物",
+      "qNumber": 25,
+      "derivation": "αは2陽子2中性子でq=2e,m=4u。a=qE/m=eE/(2u)、正電荷なので負極へ等加速度運動。"
+    },
+    {
+      "subject": "環化",
+      "qNumber": 14,
+      "derivation": "lnk=lnA−Ea/(RT)、lnk対1/Tの傾き−Ea/R。温度を変えて速度定数を測定する肢を確認。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 6,
+      "derivation": "V=abcの感度係数はbc,ac,ab。独立よりuc²=(bc)²u(a)²+(ac)²u(b)²+(ab)²u(c)²、またはV²[(u(a)/a)²+(u(b)/b)²+(u(c)/c)²]。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 14,
+      "derivation": "y=a+bMの零点a・感度b、校正値の測定誤差で両推定値は変わる。2点ならb=(y2−y1)/(M2−M1)、a=y1−bM1。必ず同じ係数という肢は成立しない。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 15,
+      "derivation": "線形測定y=βM+eでは測定SN比はβ²/σe²を基礎にdB表示。誤差因子の範囲でσe²が変化し、同一機器でもSN比が変わる。"
+    },
+    {
+      "subject": "管理",
+      "qNumber": 24,
+      "derivation": "Cp=(上側規格−下側規格)/(6s)。規格一定ならs増大でCp減少。Cpが大きいほどばらつきが大きいとする肢は逆。"
+    },
+    {
+      "subject": "計質",
+      "qNumber": 19,
+      "derivation": "等しい指示なら空気浮力を除いた重さが等しく、Ms(1−ρa/ρs)=Mr(1−ρa/ρr)。厳密Ms/Mr=(1−ρa/ρr)/(1−ρa/ρs)、一次展開1+ρa(1/ρs−1/ρr)。ρs=ρrで比1、軽い試料ρs<ρrでMs>Mrとなることも確認。"
+    }
+  ]
+}

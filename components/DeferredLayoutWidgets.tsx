@@ -22,10 +22,6 @@ const BadgeTracker = dynamic(
   () => import("@/components/motivation/BadgeTracker").then((m) => m.BadgeTracker),
   { ssr: false },
 );
-const CouponTracker = dynamic(
-  () => import("@/components/motivation/CouponTracker").then((m) => m.CouponTracker),
-  { ssr: false },
-);
 const OfflineIndicator = dynamic(
   () => import("@/components/offline/OfflineIndicator").then((m) => m.OfflineIndicator),
   { ssr: false },
@@ -71,7 +67,6 @@ export function DeferredLayoutWidgets() {
       <AiQuotaIndicator />
       <StreakTracker />
       <BadgeTracker />
-      <CouponTracker />
       <OfflineIndicator />
       <CloudSyncAutoSync />
     </>

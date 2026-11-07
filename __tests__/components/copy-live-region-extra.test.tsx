@@ -2,7 +2,6 @@ import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
 import { render, screen, cleanup, fireEvent, waitFor } from "@testing-library/react";
 
 import { StreamSummary } from "@/components/quiz/stream/StreamSummary";
-import { StreakCouponCard } from "@/components/motivation/StreakCouponCard";
 
 beforeEach(() => {
   cleanup();
@@ -40,21 +39,4 @@ describe("コピー成功の SR 通知(追加コンポーネント)", () => {
     });
   });
 
-  it("StreakCouponCard: クーポンコピーで polite live region に成功が反映される", async () => {
-    // 30 日達成でクーポンが発行される状態をシード
-    localStorage.setItem(
-      "ipa-quiz:streak:v1",
-      JSON.stringify({ currentStreak: 30, longestStreak: 30, lastStudyDate: "2026-05-31" }),
-    );
-
-    render(<StreakCouponCard />);
-
-    // コード表示 → コピー
-    fireEvent.click(await screen.findByRole("button", { name: /クーポンコードを表示/ }));
-    fireEvent.click(screen.getByRole("button", { name: /^コピー$/ }));
-
-    await waitFor(() => {
-      expect(screen.getByRole("status")).toHaveTextContent("クーポンコードをコピーしました");
-    });
-  });
 });

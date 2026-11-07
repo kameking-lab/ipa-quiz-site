@@ -1,0 +1,136 @@
+"use client";
+import { useEffect, useRef, useState } from "react";
+import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
+import type { PetProfileDocument } from "@/lib/pet/v1/profile";
+import { PET_BACKUP_MAX_BYTES } from "@/lib/pet/v1/profile";
+import { parsePetBackup } from "@/lib/pet/v1/profile-store";
+import { PET_PATHS, PET_PATH_LABELS, petGrowthProgress, petNextStageProgress, type PetPath } from "@/lib/pet/v1/growth";
+import { exportCurrentPetBackup, restoreCurrentPetBackup, savePetCare, writeCurrentPetBackup } from "@/lib/pet/v1/browser-care";
+import type { PetCareAction } from "@/lib/pet/v1/care";
+import { PET_ROOM_SCENES, PET_ROOM_STORIES } from "@/lib/pet/v1/room";
+import { petArtFor, petPathArtFor, type PetPose } from "@/lib/pet/v1/art";
+import { examLabel } from "@/lib/utils";
+import styles from "./PetCareSheet.module.css";
+
+const STAGE_NAMES = { puppy: "こいぬ", partner: "学習の相棒", expert: "専門家" } as const;
+
+export default function PetCareSheet({ document: doc, qualificationId, onClose, returnFocus, onPose }: {
+  document: PetProfileDocument | null; qualificationId?: string; onClose(): void;
+  returnFocus(): void; onPose(pose: PetPose, caption: string): void;
+}) {
+  const [selected, setSelected] = useState(qualificationId), [busy, setBusy] = useState(false), [message, setMessage] = useState("");
+  const [pending, setPending] = useState<{ raw: string; expected: PetProfileDocument; pets: number } | null>(null);
+  const [savedPrevious, setSavedPrevious] = useState(false), [confirmed, setConfirmed] = useState(false);
+  const [pose, setPose] = useState<PetPose>("study"), [hearts, setHearts] = useState(0);
+  const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const heading = useRef<HTMLHeadingElement>(null);
+  useEffect(() => () => { if (timer.current) clearTimeout(timer.current); }, []);
+  const showPose = (next: PetPose, caption: string) => {
+    if (timer.current) clearTimeout(timer.current);
+    setPose(next); onPose(next, caption); timer.current = setTimeout(() => setPose("study"), 6000);
+  };
+  const profile = selected ? doc?.profiles.find(item => item.qualificationId === selected) : doc?.profiles[0];
+  const progress = profile ? petGrowthProgress(profile) : null;
+  const next = profile ? petNextStageProgress(profile) : null;
+  const meal = profile?.care.meals.find(item => item.consumedAt === null);
+  const act = async (work: () => Promise<void>) => {
+    if (busy) return;
+    setBusy(true); setMessage("");
+    try { await work(); } catch { setMessage("保存を確認できませんでした。開き直してお試しください。"); }
+    finally { setBusy(false); }
+  };
+  const care = (action: PetCareAction) => {
+    if (!doc || !profile) return;
+    void act(async () => {
+      await savePetCare(doc, profile.qualificationId, action); setMessage("保存しました。");
+      if (action.type === "feed") showPose("meal", "もぐもぐ、ごちそうさま！");
+    });
+  };
+  const pathGoals: Record<PetPath, { now: number; goal: number; hint: string }> | null = progress ? {
+    exploration: { now: progress.fields, goal: 3, hint: "3分野で正解" },
+    memory: { now: progress.delayedAnswers, goal: 3, hint: "日をあけて正解" },
+    precision: { now: progress.delayedQuestions, goal: 5, hint: "日をあけて5問" },
+    companionship: { now: progress.learningDays, goal: 5, hint: "学習した日" },
+  } : null;
+  return <Dialog open onOpenChange={open => { if (!open && !busy) onClose(); }}>
+    <DialogContent className={styles.sheet} onOpenAutoFocus={event => { event.preventDefault(); heading.current?.focus({ preventScroll: true }); }} onCloseAutoFocus={event => { event.preventDefault(); returnFocus(); }}>
+      <DialogTitle ref={heading} tabIndex={-1}>チワワの育成</DialogTitle>
+      <DialogDescription>問題を解くほど育ちます。</DialogDescription>
+      <div role="status" className={styles.message}>{message}</div>
+      {!doc ? <p>読み込み中…</p> : <>
+        {doc.profiles.length > 1 || (selected && !profile && doc.profiles.length > 0) ? <label>資格<select value={profile?.qualificationId ?? ""} disabled={busy} onChange={event => { setSelected(event.target.value); setPose("study"); setMessage(""); }}>
+          {!profile ? <option value="">資格を選んでください</option> : null}
+          {doc.profiles.map(item => <option key={item.petId} value={item.qualificationId}>{examLabel(item.qualificationId)}</option>)}
+        </select></label> : null}
+        {profile && progress && pathGoals ? <>
+          <div className={styles.hero}>
+            <div className={styles.heroArt}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={petArtFor(profile.qualificationId, profile.selectedStage, pose)} width={128} height={128} alt="" />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              {profile.selectedPath ? <img src={petPathArtFor(profile.selectedPath)} width={32} height={32} alt="" className={styles.heroBadge} /> : null}
+              {hearts > 0 ? <span key={hearts} className={styles.heart} aria-hidden="true">♥</span> : null}
+            </div>
+            <div className={styles.heroCopy}>
+              <p className={styles.name}>{examLabel(profile.qualificationId)}の{profile.name}</p>
+              <p className={styles.chips}><span className={styles.stageChip}>{STAGE_NAMES[profile.selectedStage]}</span>
+                {profile.selectedPath ? <span>{PET_PATH_LABELS[profile.selectedPath]}</span> : null}</p>
+              <p className={styles.chips}><span>成長 {profile.growth}</span><span aria-label={`なつき ${profile.bond}`}>♥ {profile.bond}</span><span>{progress.learningDays}日</span></p>
+              {next ? <label className={styles.meter}><span>{STAGE_NAMES[next.stage]}まで {next.parts.map(part => `${part.now}/${part.goal}${part.unit}`).join("・")}</span>
+                <meter min={0} max={1} value={next.parts.reduce((total, part) => total + part.now / part.goal, 0) / next.parts.length} /></label> : null}
+            </div>
+          </div>
+          <section aria-label="世話"><div className={styles.careRow}>
+            <button type="button" onClick={() => { showPose("petted", "なでなで、うれしそう。"); setHearts(count => count + 1); setMessage(""); }}><span aria-hidden="true" className={styles.emoji}>🤲</span>なでる</button>
+            <button type="button" onClick={() => { showPose("rest", "のんびり、ひと休み。"); setMessage(""); }}><span aria-hidden="true" className={styles.emoji}>💤</span>休む</button>
+            {meal ? <button type="button" className={styles.treat} disabled={busy} onClick={() => care({ type: "feed", rewardId: meal.rewardId })}><span aria-hidden="true" className={styles.emoji}>🍖</span>ごほうびごはんを食べる</button> : null}
+          </div><label className={styles.check}><input type="checkbox" checked={profile.care.autoFeed} disabled={busy} onChange={event => care({ type: "autoFeed", enabled: event.target.checked })} />ごほうびごはんは自動で食べる</label></section>
+          <section><h4>姿</h4>
+            <div className={styles.tiles}>{(["puppy", "partner", "expert"] as const).map(stage => { const open = profile.unlockedStages.includes(stage); return <button type="button" key={stage} className={styles.tile} disabled={busy || !open} aria-pressed={profile.selectedStage === stage} onClick={() => care({ type: "stage", stage })}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={petArtFor(profile.qualificationId, stage, "study")} width={64} height={64} alt="" loading="lazy" decoding="async" className={open ? undefined : styles.locked} />{STAGE_NAMES[stage]}</button>; })}</div></section>
+          <section><h4>特技</h4>
+            <div className={styles.paths}>{PET_PATHS.map(path => { const open = profile.unlockedPaths.includes(path), goal = pathGoals[path]; return <div key={path} className={styles.path}>
+              <button type="button" className={styles.tile} disabled={busy || !open} aria-pressed={profile.selectedPath === path} onClick={() => care({ type: "path", path: profile.selectedPath === path ? null : path })}>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={petPathArtFor(path)} width={36} height={36} alt="" loading="lazy" decoding="async" className={open ? undefined : styles.locked} />{PET_PATH_LABELS[path]}</button>
+              {open ? null : <span className={styles.goal}>{goal.hint} {Math.min(goal.now, goal.goal)}/{goal.goal}<meter min={0} max={goal.goal} value={Math.min(goal.now, goal.goal)} /></span>}
+            </div>; })}</div>
+            {profile.selectedPath ? <button type="button" className={styles.plain} disabled={busy} onClick={() => care({ type: "path", path: null })}>系統なし</button> : null}
+          </section>
+          <section><h4>自習室のアルバム</h4>
+            <ul className={styles.album}>{PET_ROOM_SCENES.map(scene => { const event = profile.roomEvents.find(item => item.scene === scene), story = PET_ROOM_STORIES[scene]; return event ? <li key={scene}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={`/images/pet-v1/${story.art}.webp`} alt="" width={72} height={72} loading="lazy" decoding="async" /><strong>{story.title}</strong><time>{event.day}</time>
+            </li> : <li key={scene} className={styles.unseen} aria-label="まだ見ていない出来事"><span aria-hidden="true">？</span></li>; })}</ul></section>
+          {profile.memories.length ? <section><h4>思い出</h4><ol className={styles.memories}>{profile.memories.slice(-50).reverse().map((memory, index) => <li key={`${memory.kind}-${memory.occurredAt}-${index}`}>
+            <time>{new Intl.DateTimeFormat("ja", { timeZone: doc.timeZone, month: "numeric", day: "numeric" }).format(memory.occurredAt)}</time>{memory.kind === "overcome" ? "苦手な問題を克服" : memory.kind === "stage" ? `${STAGE_NAMES[memory.stage]}に成長` : `${PET_PATH_LABELS[memory.path]}の特技`}
+          </li>)}</ol></section> : null}
+          <form key={`${profile.petId}:${profile.name}`} className={styles.nameForm} onSubmit={event => { event.preventDefault(); const data = new FormData(event.currentTarget); care({ type: "name", name: String(data.get("petName") ?? "") }); }}>
+            <label>名前<input name="petName" defaultValue={profile.name} required maxLength={24} disabled={busy} /></label><button disabled={busy} type="submit">名前を保存</button>
+          </form>
+        </> : <p className={styles.empty}>1問解くと、この資格の子に会えます。</p>}
+        <section><h4>バックアップ</h4><p className={styles.note}>育成はこの端末に保存されます（{doc.ownerScope === "guest" ? "ゲスト" : "ログイン中"}）。</p>
+          <div className={styles.careRow}><button type="button" disabled={busy} onClick={() => void act(async () => { await writeCurrentPetBackup(doc, "chihuahua-backup.json"); setMessage("バックアップを書き出しました。"); })}>バックアップを保存</button></div>
+          <label>バックアップを読み込む<input type="file" accept="application/json,.json" disabled={busy} onChange={event => {
+            const file = event.target.files?.[0]; event.target.value = ""; setPending(null); setSavedPrevious(false); setConfirmed(false);
+            if (!file) return;
+            void act(async () => {
+              if (file.size > PET_BACKUP_MAX_BYTES) throw new Error("too_large");
+              const raw = await file.text(), imported = parsePetBackup(raw);
+              if (imported.ownerScope !== doc.ownerScope || imported.timeZone !== doc.timeZone) throw new Error("owner_or_timezone");
+              await exportCurrentPetBackup(doc);
+              setPending({ raw, expected: doc, pets: imported.profiles.length }); setMessage("読み込みました。先に今の育成を退避してください。");
+            });
+          }} /></label>
+          {pending ? <div className={styles.restore}><p>{pending.pets}匹の育成データで置き換えます。</p>
+            <button type="button" disabled={busy} onClick={() => void act(async () => { await writeCurrentPetBackup(pending.expected, "chihuahua-before-restore.json"); setSavedPrevious(true); })}>復元前のデータを保存</button>
+            <label className={styles.check}><input type="checkbox" checked={confirmed} disabled={busy || !savedPrevious} onChange={event => setConfirmed(event.target.checked)} />退避ファイルを保存したことを確認し、置き換えます</label>
+            <div className={styles.careRow}><button type="button" disabled={busy || !savedPrevious || !confirmed} onClick={() => void act(async () => { await restoreCurrentPetBackup(pending.expected, pending.raw); setPending(null); setMessage("復元しました。"); })}>確認したデータを復元</button>
+              <button type="button" disabled={busy} onClick={() => setPending(null)}>復元をやめる</button></div></div> : null}
+        </section>
+      </>}
+      <button type="button" className={styles.done} disabled={busy} onClick={onClose}>育成を閉じて学習に戻る</button>
+    </DialogContent>
+  </Dialog>;
+}

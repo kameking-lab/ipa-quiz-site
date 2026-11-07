@@ -84,13 +84,15 @@ describe("groupByCategory", () => {
 
 describe("title / description / full-name string contracts", () => {
   it("examTopTitle embeds the exam label", () => {
-    expect(examTopTitle("ap")).toBe(`${examLabel("ap")} 過去問一覧・AI解説`);
+    expect(examTopTitle("ap")).toBe(`${examLabel("ap")} 過去問・午前解説と午後対策`);
+    expect(examTopTitle("ip")).toBe(`${examLabel("ip")} 過去問一覧・AI解説`);
   });
 
   it("examTopDescription includes the question count and exam label", () => {
     const desc = examTopDescription("ap", 1234);
-    expect(desc).toContain("1234問");
+    expect(desc).toContain("1,234問");
     expect(desc).toContain(examLabel("ap"));
+    expect(desc).toContain("午後記述のAI採点は未対応");
   });
 
   it("examFullName returns the formal exam name for every code", () => {

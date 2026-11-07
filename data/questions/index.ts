@@ -1,3 +1,19 @@
+import { QUESTIONS as BATCH3_0 } from "./benrishi";
+import { QUESTIONS as BATCH3_1 } from "./sokuryoshi";
+import { QUESTIONS as BATCH3_2 } from "./dokugeki-chiba";
+import { QUESTIONS as BATCH3_3 } from "./jokaso-setsubishi";
+import { QUESTIONS as BATCH3_4 } from "./chiiki-ryoko";
+import { QUESTIONS as BATCH3_5 } from "./junkango-kansai";
+import { QUESTIONS as BATCH3_6 } from "./kukaku-seiri";
+import { QUESTIONS as BATCH3_7 } from "./dojo-osen";
+import { QUESTIONS as BATCH3_8 } from "./kenchikushi2";
+import { QUESTIONS as BATCH3_9 } from "./mokuzo-kenchikushi";
+import { SEKOU_1KENCHIKU_QUESTIONS } from "./sekou-1kenchiku";
+import { PUBLIC_KHK_KAGAKU_QUESTIONS } from "./khk-kagaku/public";
+import { KENCHIKUSHI1_QUESTIONS } from "./kenchikushi1";
+import { BATCH1_QUESTIONS } from "./batch1";
+import { REFORM_MGR_QUESTIONS } from "./reform-mgr";
+import { SHOHI_SODAN_QUESTIONS } from "./shohi-sodan";
 import type { ExamCode, Question } from "@/lib/questions/types";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { CHOSASHI_QUESTIONS } from "./chosashi";
@@ -36,16 +52,6 @@ import { DENKEN2_QUESTIONS } from "./denken2";
 import { DENKEN1_QUESTIONS } from "./denken1";
 import { TAKKEN_QUESTIONS } from "./takken";
 import { isExamPublished } from "@/lib/qualifications/catalog";
-
-// ─── How to add a new exam ───────────────────────────────────────────────────
-// 1. Run:  pnpm fetch:pdfs --exam=<code>
-//          pnpm parse:pdfs --exam=<code> --resume
-// 2. The parser writes data/questions/<code>/by-year/*.ts + by-year/index.ts
-// 3. Create data/questions/<code>/index.ts (see ap/index.ts as reference)
-// 4. Uncomment the import + QUESTIONS_BY_EXAM entry below
-// 5. Uncomment the matching loader in lib/questions/get-questions.ts
-// ────────────────────────────────────────────────────────────────────────────
-
 import { KANTEISHI_QUESTIONS } from "./kanteishi";
 import { KAIKEISHI_QUESTIONS } from "./kaikeishi";
 import { EISEI1_QUESTIONS } from "./eisei1";
@@ -72,7 +78,6 @@ import { GAS_HEI_QUESTIONS } from "./gas/hei";
 import { RINSHO_KENSAGISHI_QUESTIONS } from "./rinsho-kensagishi";
 import { SHINRYO_HOSHASENGISHI_QUESTIONS } from "./shinryo-hoshasengishi";
 import { SHIKA_ISHI_QUESTIONS } from "./shika-ishi";
-
 import { RIYOSHI_QUESTIONS } from "./riyoshi";
 import { RIKU_TOKU_KOKUNAI_QUESTIONS } from "./riku-toku-kokunai";
 import { KAI_TOKU2_QUESTIONS } from "./kai-toku2";
@@ -95,94 +100,212 @@ import { GENERAL3_QUESTIONS } from "./general3";
 import { MARITIME3_QUESTIONS } from "./maritime3";
 import { LAND_SPECIAL2_QUESTIONS } from "./land-special2";
 import { LAND_SPECIAL3_QUESTIONS } from "./land-special3";
+import { CHIZAI2_QUESTIONS } from "./chizai2";
+import { KISHO_QUESTIONS } from "./kisho";
+import { KENCHIKU_SETSUBISHI_STUDY_QUESTIONS } from "./kenchiku-setsubishi";
+import { getAutomotiveQuestions } from "./automotive";
+import { BIYOSHI_QUESTIONS } from "./biyoshi";
+import { QUESTIONS as OT1_QUESTIONS } from "./kikenbutsu-otsu1";
+import { QUESTIONS as OT2_QUESTIONS } from "./kikenbutsu-otsu2";
+import { QUESTIONS as OT6_QUESTIONS } from "./kikenbutsu-otsu6";
+import { JOKASO_CANDIDATES } from "./jokaso";
+import { IJI_SHUZEN_QUESTIONS } from "./iji-shuzen";
+import { DENKI1_QUESTIONS } from "./denki1";
+import { SHUWA_QUESTIONS } from "./shuwa";
+import { JKEN_KATSUYO1_QUESTIONS } from "./jken-katsuyo1";
+import { JKEN_KATSUYO2_QUESTIONS } from "./jken-katsuyo2";
+import { JKEN_KATSUYO3_QUESTIONS } from "./jken-katsuyo3";
+import { JKEN_SYSTEM_QUESTIONS } from "./jken-system";
+import { SHINRISHI_QUESTIONS } from "./shinrishi";
+import { KHK_REITO_1_QUESTIONS } from "./khk-reito-1";
+import { KHK_REITO_2_QUESTIONS } from "./khk-reito-2";
+import { KHK_REITO_3_QUESTIONS } from "./khk-reito-3";
+import { SEKOU_KENCHIKU2_QUESTIONS } from "./sekou-kenchiku2";
+import { DENKI2_QUESTIONS } from "./denki2";
+import { KANKOJI1_QUESTIONS } from "./kankoji1";
+import { YAMAGUCHI_CHORI_QUESTIONS } from "./yamaguchi-chori";
+import { YAMAGUCHI_SEIKA_QUESTIONS } from "./yamaguchi-seika";
+import { YAMAGUCHI_FUGU_QUESTIONS } from "./yamaguchi-fugu";
+import { getKeiryoshiCandidates } from "./keiryoshi";
+import { KENKI2_QUESTIONS } from "./kenki2";
+import { KENKI1_QUESTIONS } from "./kenki1";
+import { GYOSEI_QUESTIONS } from "./gyosei";
+import { SHIHOSHOSHI_BATCH1_QUESTIONS } from "./shihoshoshi";
+import { CAREER_CONSULTANT_QUESTIONS } from "./career-consultant";
+import { KANRI_EIYOSHI_QUESTIONS } from "./kanri-eiyoshi";
+import { SOGO_RYOKO_QUESTIONS } from "./sogo-ryoko";
+import { SHIHO_TANTO_QUESTIONS } from "./shiho-tanto";
+import { YOBI_TANTO_QUESTIONS } from "./yobi-tanto";
+import { SOKURYOSHIHO_QUESTIONS } from "./sokuryoshiho";
+import { CAREMANAGER_QUESTIONS } from "./caremanager";
+import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
+import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
-  ...(isExamPublished("kanteishi") ? { kanteishi: KANTEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
-  ...(isExamPublished("kaikeishi") ? { kaikeishi: KAIKEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
-  ...(isExamPublished("riku-tech2") ? { "riku-tech2": RIKU_TECH2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
-  ...(isExamPublished("amateur2") ? { "amateur2": AMATEUR2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
-  ...(isExamPublished("maritime-radar") ? { "maritime-radar": MARITIME_RADAR_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
-  ...(isExamPublished("amateur1") ? { "amateur1": AMATEUR1_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
-  ...(isExamPublished("maritime-special1") ? { "maritime-special1": MARITIME_SPECIAL1_QUESTIONS } : {}),
-  ...(isExamPublished("aviation-comm") ? { "aviation-comm": AVIATION_COMM_QUESTIONS } : {}),
-  ...(isExamPublished("riku-toku-kokunai") ? { "riku-toku-kokunai": RIKU_TOKU_KOKUNAI_QUESTIONS } : {}),
-  ...(isExamPublished("kai-toku2") ? { "kai-toku2": KAI_TOKU2_QUESTIONS } : {}),
-  ...(isExamPublished("kai-toku3") ? { "kai-toku3": KAI_TOKU3_QUESTIONS } : {}),
-  ...(isExamPublished("koku-toku") ? { "koku-toku": KOKU_TOKU_QUESTIONS } : {}),
-  ...(isExamPublished("land-special1") ? { "land-special1": LAND_SPECIAL1_QUESTIONS } : {}),
-  ...(isExamPublished("riku-tech1") ? { "riku-tech1": RIKU_TECH1_QUESTIONS } : {}),
-  ...(isExamPublished("maritime4") ? { "maritime4": MARITIME4_QUESTIONS } : {}),
-  ...(isExamPublished("maritime1") ? { "maritime1": MARITIME1_QUESTIONS } : {}),
-  ...(isExamPublished("maritime2") ? { "maritime2": MARITIME2_QUESTIONS } : {}),
-  ...(isExamPublished("general1") ? { "general1": GENERAL1_QUESTIONS } : {}),
-  ...(isExamPublished("general2") ? { "general2": GENERAL2_QUESTIONS } : {}),
-  ...(isExamPublished("general3") ? { "general3": GENERAL3_QUESTIONS } : {}),
-  ...(isExamPublished("maritime3") ? { "maritime3": MARITIME3_QUESTIONS } : {}),
-  ...(isExamPublished("land-special2") ? { "land-special2": LAND_SPECIAL2_QUESTIONS } : {}),
-  ...(isExamPublished("land-special3") ? { "land-special3": LAND_SPECIAL3_QUESTIONS } : {}),
-  ...(isExamPublished("chosashi") ? { chosashi: CHOSASHI_QUESTIONS } : {}),
-  ...(isExamPublished("riyoshi") ? { riyoshi: RIYOSHI_QUESTIONS } : {}),
-  ap: AP_QUESTIONS,
-  ip: IP_QUESTIONS,
-  sg: SG_QUESTIONS,
-  fe: FE_QUESTIONS,
-  sc: SC_QUESTIONS,
-  nw: NW_QUESTIONS,
-  db: DB_QUESTIONS,
-  st: ST_QUESTIONS,
-  sa: SA_QUESTIONS,
-  pm: PM_QUESTIONS,
-  es: ES_QUESTIONS,
-  sm: SM_QUESTIONS,
-  au: AU_QUESTIONS,
-  fp2: FP2_QUESTIONS,
-  fp1: FP1_QUESTIONS,
-  fp3: FP3_QUESTIONS,
-  denken3: DENKEN3_QUESTIONS,
-  ...(isExamPublished("denken2") ? { denken2: DENKEN2_QUESTIONS } : {}),
-  ...(isExamPublished("denken1") ? { denken1: DENKEN1_QUESTIONS } : {}),
-  takken: TAKKEN_QUESTIONS,
-  // The official FAQ asks users to notify the examination center. Keep the
-  // reviewed pilot out of all public counts/routes until that receipt exists.
-  ...(isExamPublished("denko2") ? { denko2: DENKO2_QUESTIONS } : {}),
-  ...(isExamPublished("denko1") ? { denko1: DENKO1_QUESTIONS } : {}),
-  ...(isExamPublished("civil2") ? { civil2: CIVIL2_QUESTIONS } : {}),
-  ...(isExamPublished("kankoji2") ? { kankoji2: KANKOJI2_QUESTIONS } : {}),
-  ...(isExamPublished("zoen2") ? { zoen2: ZOEN2_QUESTIONS } : {}),
-  ...(isExamPublished("zoen1") ? { zoen1: ZOEN1_QUESTIONS } : {}),
-  ...(isExamPublished("tsushin2") ? { tsushin2: TSUSHIN2_QUESTIONS } : {}),
-  ...(isExamPublished("tsushin1") ? { tsushin1: TSUSHIN1_QUESTIONS } : {}),
-  ...(isExamPublished("kaigo") ? { kaigo: KAIGO_QUESTIONS } : {}),
-  ...(isExamPublished("civil1") ? { civil1: CIVIL1_QUESTIONS } : {}),
-  ...(isExamPublished("shakai") ? { shakai: SHAKAI_QUESTIONS } : {}),
-  ...(isExamPublished("seishin") ? { seishin: SEISHIN_QUESTIONS } : {}),
-  ...(isExamPublished("tohan") ? { tohan: TOHAN_QUESTIONS } : {}),
-  ...(isExamPublished("kanri") ? { kanri: KANRI_QUESTIONS } : {}),
-  ...(isExamPublished("eisei1") ? { eisei1: EISEI1_QUESTIONS } : {}),
-  ...(isExamPublished("eisei2") ? { eisei2: EISEI2_QUESTIONS } : {}),
-  ...(isExamPublished("soukan") ? { soukan: SOUKAN_QUESTIONS } : {}),
-  ...(isExamPublished("hoikushi") ? { hoikushi: HOIKUSHI_QUESTIONS } : {}),
-  ...(isExamPublished("mankan") ? { mankan: MANKAN_QUESTIONS } : {}),
-  ...(isExamPublished("kashikin") ? { kashikin: KASHIKIN_QUESTIONS } : {}),
-  ...(isExamPublished("sharoushi") ? { sharoushi: SHAROUSHI_QUESTIONS } : {}),
-  ...(isExamPublished("chusho-kigyo-shindanshi") ? { "chusho-kigyo-shindanshi": CHUSHO_KIGYO_SHINDANSHI_QUESTIONS } : {}),
-  ...(isExamPublished("kangoshi") ? { kangoshi: KANGOSHI_QUESTIONS } : {}),
-  ...(isExamPublished("yakuzaishi") ? { yakuzaishi: YAKUZAISHI_QUESTIONS } : {}),
-  ...(isExamPublished("ahaki-anma") ? { "ahaki-anma": AHAKI_ANMA_QUESTIONS } : {}),
-  ...(isExamPublished("ahaki-hari-kyu") ? { "ahaki-hari-kyu": AHAKI_HARI_KYUU_QUESTIONS } : {}),
-  ...(isExamPublished("hokenshi") ? { hokenshi: HOKENSHI_QUESTIONS } : {}),
-  ...(isExamPublished("josanshi") ? { josanshi: JOSANSHI_QUESTIONS } : {}),
-  ...(isExamPublished("rigaku-ryohoshi") ? { "rigaku-ryohoshi": RIGAKU_RYOHOUSHI_QUESTIONS } : {}),
-  ...(isExamPublished("sagyo-ryohoshi") ? { "sagyo-ryohoshi": SAGYO_RYOHOSHI_QUESTIONS } : {}),
-  ...(isExamPublished("shino-kunrenshi") ? { "shino-kunrenshi": SHINO_KUNRENSHI_QUESTIONS } : {}),
-  ...(isExamPublished("rinsho-kogishi") ? { "rinsho-kogishi": RINSHO_KOGISHI_QUESTIONS } : {}),
-  ...(isExamPublished("judo-seifukushi") ? { "judo-seifukushi": JUDO_SEIFUKUSHI_QUESTIONS } : {}),
-  ...(isExamPublished("gas-kou") ? { "gas-kou": GAS_KOU_QUESTIONS } : {}),
-  ...(isExamPublished("gas-otsu") ? { "gas-otsu": GAS_OTSU_QUESTIONS } : {}),
-  ...(isExamPublished("gas-hei") ? { "gas-hei": GAS_HEI_QUESTIONS } : {}),
-  ...(isExamPublished("rinsho-kensagishi") ? { "rinsho-kensagishi": RINSHO_KENSAGISHI_QUESTIONS } : {}),
-  ...(isExamPublished("shinryo-hoshasengishi") ? { "shinryo-hoshasengishi": SHINRYO_HOSHASENGISHI_QUESTIONS } : {}),
-  ...(isExamPublished("shika-ishi") ? { "shika-ishi": SHIKA_ISHI_QUESTIONS } : {}),
+  ...(isExamPublished("benrishi") ? { "benrishi": BATCH3_0.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("sokuryoshi") ? { "sokuryoshi": BATCH3_1.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("dokugeki-chiba") ? { "dokugeki-chiba": BATCH3_2.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("jokaso-setsubishi") ? { "jokaso-setsubishi": BATCH3_3.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("chiiki-ryoko") ? { "chiiki-ryoko": BATCH3_4.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("junkango-kansai") ? { "junkango-kansai": BATCH3_5.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("kukaku-seiri") ? { "kukaku-seiri": BATCH3_6.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("dojo-osen") ? { "dojo-osen": BATCH3_7.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("kenchikushi2") ? { "kenchikushi2": BATCH3_8.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("mokuzo-kenchikushi") ? { "mokuzo-kenchikushi": BATCH3_9.filter(isPracticeReadyQuestion) } : {}),
+
+  ...(isExamPublished("sekou-1kenchiku") ? { "sekou-1kenchiku": SEKOU_1KENCHIKU_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("khk-kagaku") ? { "khk-kagaku": PUBLIC_KHK_KAGAKU_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("kenchikushi1") ? { kenchikushi1: KENCHIKUSHI1_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  "reform-mgr": REFORM_MGR_QUESTIONS,
+  "shohi-sodan": SHOHI_SODAN_QUESTIONS,
+...(isExamPublished("chintai") ? { "chintai": BATCH1_QUESTIONS["chintai"]!.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("kyusui") ? { "kyusui": BATCH1_QUESTIONS["kyusui"]!.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("biru-kan") ? { "biru-kan": BATCH1_QUESTIONS["biru-kan"]!.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("gijutsushi1-kikai") ? { "gijutsushi1-kikai": BATCH1_QUESTIONS["gijutsushi1-kikai"]!.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("hoshasen-1") ? { "hoshasen-1": BATCH1_QUESTIONS["hoshasen-1"]!.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("hoshasen-2") ? { "hoshasen-2": BATCH1_QUESTIONS["hoshasen-2"]!.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("khk-kikai-kou") ? { "khk-kikai-kou": BATCH1_QUESTIONS["khk-kikai-kou"]!.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("khk-kikai-otsu") ? { "khk-kikai-otsu": BATCH1_QUESTIONS["khk-kikai-otsu"]!.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("energy-kanri") ? { "energy-kanri": BATCH1_QUESTIONS["energy-kanri"]!.filter(isPracticeReadyQuestion) } : {}),
+
+...(isExamPublished("kanteishi") ? { kanteishi: KANTEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("kaikeishi") ? { kaikeishi: KAIKEISHI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("riku-tech2") ? { "riku-tech2": RIKU_TECH2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("amateur2") ? { "amateur2": AMATEUR2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("maritime-radar") ? { "maritime-radar": MARITIME_RADAR_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("amateur1") ? { "amateur1": AMATEUR1_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("maritime-special1") ? { "maritime-special1": MARITIME_SPECIAL1_QUESTIONS } : {}),
+...(isExamPublished("aviation-comm") ? { "aviation-comm": AVIATION_COMM_QUESTIONS } : {}),
+...(isExamPublished("riku-toku-kokunai") ? { "riku-toku-kokunai": RIKU_TOKU_KOKUNAI_QUESTIONS } : {}),
+...(isExamPublished("kai-toku2") ? { "kai-toku2": KAI_TOKU2_QUESTIONS } : {}),
+...(isExamPublished("kai-toku3") ? { "kai-toku3": KAI_TOKU3_QUESTIONS } : {}),
+...(isExamPublished("koku-toku") ? { "koku-toku": KOKU_TOKU_QUESTIONS } : {}),
+...(isExamPublished("land-special1") ? { "land-special1": LAND_SPECIAL1_QUESTIONS } : {}),
+...(isExamPublished("riku-tech1") ? { "riku-tech1": RIKU_TECH1_QUESTIONS } : {}),
+...(isExamPublished("maritime4") ? { "maritime4": MARITIME4_QUESTIONS } : {}),
+...(isExamPublished("maritime1") ? { "maritime1": MARITIME1_QUESTIONS } : {}),
+...(isExamPublished("maritime2") ? { "maritime2": MARITIME2_QUESTIONS } : {}),
+...(isExamPublished("general1") ? { "general1": GENERAL1_QUESTIONS } : {}),
+...(isExamPublished("general2") ? { "general2": GENERAL2_QUESTIONS } : {}),
+...(isExamPublished("general3") ? { "general3": GENERAL3_QUESTIONS } : {}),
+...(isExamPublished("maritime3") ? { "maritime3": MARITIME3_QUESTIONS } : {}),
+...(isExamPublished("land-special2") ? { "land-special2": LAND_SPECIAL2_QUESTIONS } : {}),
+...(isExamPublished("land-special3") ? { "land-special3": LAND_SPECIAL3_QUESTIONS } : {}),
+...(isExamPublished("chosashi") ? { chosashi: CHOSASHI_QUESTIONS } : {}),
+...(isExamPublished("riyoshi") ? { riyoshi: RIYOSHI_QUESTIONS } : {}),
+ap: AP_QUESTIONS,
+ip: IP_QUESTIONS,
+sg: SG_QUESTIONS,
+fe: FE_QUESTIONS,
+sc: SC_QUESTIONS,
+nw: NW_QUESTIONS,
+db: DB_QUESTIONS,
+st: ST_QUESTIONS,
+sa: SA_QUESTIONS,
+pm: PM_QUESTIONS,
+es: ES_QUESTIONS,
+sm: SM_QUESTIONS,
+au: AU_QUESTIONS,
+fp2: FP2_QUESTIONS,
+fp1: FP1_QUESTIONS,
+fp3: FP3_QUESTIONS,
+denken3: DENKEN3_QUESTIONS,
+...(isExamPublished("denken2") ? { denken2: DENKEN2_QUESTIONS } : {}),
+...(isExamPublished("denken1") ? { denken1: DENKEN1_QUESTIONS } : {}),
+takken: TAKKEN_QUESTIONS,
+// The official FAQ asks users to notify the examination center. Keep the
+// reviewed pilot out of all public counts/routes until that receipt exists.
+...(isExamPublished("denko2") ? { denko2: DENKO2_QUESTIONS } : {}),
+...(isExamPublished("denko1") ? { denko1: DENKO1_QUESTIONS } : {}),
+...(isExamPublished("civil2") ? { civil2: CIVIL2_QUESTIONS } : {}),
+...(isExamPublished("kankoji2") ? { kankoji2: KANKOJI2_QUESTIONS } : {}),
+...(isExamPublished("zoen2") ? { zoen2: ZOEN2_QUESTIONS } : {}),
+...(isExamPublished("zoen1") ? { zoen1: ZOEN1_QUESTIONS } : {}),
+...(isExamPublished("tsushin2") ? { tsushin2: TSUSHIN2_QUESTIONS } : {}),
+...(isExamPublished("tsushin1") ? { tsushin1: TSUSHIN1_QUESTIONS } : {}),
+...(isExamPublished("kaigo") ? { kaigo: KAIGO_QUESTIONS } : {}),
+...(isExamPublished("civil1") ? { civil1: CIVIL1_QUESTIONS } : {}),
+...(isExamPublished("shakai") ? { shakai: SHAKAI_QUESTIONS } : {}),
+...(isExamPublished("seishin") ? { seishin: SEISHIN_QUESTIONS } : {}),
+...(isExamPublished("tohan") ? { tohan: TOHAN_QUESTIONS } : {}),
+...(isExamPublished("kanri") ? { kanri: KANRI_QUESTIONS } : {}),
+...(isExamPublished("eisei1") ? { eisei1: EISEI1_QUESTIONS } : {}),
+...(isExamPublished("eisei2") ? { eisei2: EISEI2_QUESTIONS } : {}),
+...(isExamPublished("soukan") ? { soukan: SOUKAN_QUESTIONS } : {}),
+...(isExamPublished("hoikushi") ? { hoikushi: HOIKUSHI_QUESTIONS } : {}),
+...(isExamPublished("mankan") ? { mankan: MANKAN_QUESTIONS } : {}),
+...(isExamPublished("kashikin") ? { kashikin: KASHIKIN_QUESTIONS } : {}),
+...(isExamPublished("sharoushi") ? { sharoushi: SHAROUSHI_QUESTIONS } : {}),
+...(isExamPublished("chusho-kigyo-shindanshi") ? { "chusho-kigyo-shindanshi": CHUSHO_KIGYO_SHINDANSHI_QUESTIONS } : {}),
+...(isExamPublished("kangoshi") ? { kangoshi: KANGOSHI_QUESTIONS } : {}),
+...(isExamPublished("yakuzaishi") ? { yakuzaishi: YAKUZAISHI_QUESTIONS } : {}),
+...(isExamPublished("ahaki-anma") ? { "ahaki-anma": AHAKI_ANMA_QUESTIONS } : {}),
+...(isExamPublished("ahaki-hari-kyu") ? { "ahaki-hari-kyu": AHAKI_HARI_KYUU_QUESTIONS } : {}),
+...(isExamPublished("hokenshi") ? { hokenshi: HOKENSHI_QUESTIONS } : {}),
+...(isExamPublished("josanshi") ? { josanshi: JOSANSHI_QUESTIONS } : {}),
+...(isExamPublished("rigaku-ryohoshi") ? { "rigaku-ryohoshi": RIGAKU_RYOHOUSHI_QUESTIONS } : {}),
+...(isExamPublished("sagyo-ryohoshi") ? { "sagyo-ryohoshi": SAGYO_RYOHOSHI_QUESTIONS } : {}),
+...(isExamPublished("shino-kunrenshi") ? { "shino-kunrenshi": SHINO_KUNRENSHI_QUESTIONS } : {}),
+...(isExamPublished("rinsho-kogishi") ? { "rinsho-kogishi": RINSHO_KOGISHI_QUESTIONS } : {}),
+...(isExamPublished("judo-seifukushi") ? { "judo-seifukushi": JUDO_SEIFUKUSHI_QUESTIONS } : {}),
+...(isExamPublished("gas-kou") ? { "gas-kou": GAS_KOU_QUESTIONS } : {}),
+...(isExamPublished("gas-otsu") ? { "gas-otsu": GAS_OTSU_QUESTIONS } : {}),
+...(isExamPublished("gas-hei") ? { "gas-hei": GAS_HEI_QUESTIONS } : {}),
+...(isExamPublished("rinsho-kensagishi") ? { "rinsho-kensagishi": RINSHO_KENSAGISHI_QUESTIONS } : {}),
+...(isExamPublished("shinryo-hoshasengishi") ? { "shinryo-hoshasengishi": SHINRYO_HOSHASENGISHI_QUESTIONS } : {}),
+...(isExamPublished("shika-ishi") ? { "shika-ishi": SHIKA_ISHI_QUESTIONS } : {}),
+...(isExamPublished("kenchiku-setsubishi") ? { "kenchiku-setsubishi": KENCHIKU_SETSUBISHI_STUDY_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("chizai2") ? { chizai2: CHIZAI2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("kisho") ? { kisho: KISHO_QUESTIONS } : {}),
+...(isExamPublished("jidosha-1-small-written") ? { "jidosha-1-small-written": getAutomotiveQuestions("jidosha-1-small-written") } : {}),
+...(isExamPublished("jidosha-2-gasoline") ? { "jidosha-2-gasoline": getAutomotiveQuestions("jidosha-2-gasoline") } : {}),
+...(isExamPublished("jidosha-2-diesel") ? { "jidosha-2-diesel": getAutomotiveQuestions("jidosha-2-diesel") } : {}),
+...(isExamPublished("jidosha-2-chassis") ? { "jidosha-2-chassis": getAutomotiveQuestions("jidosha-2-chassis") } : {}),
+...(isExamPublished("jidosha-2-motorcycle") ? { "jidosha-2-motorcycle": getAutomotiveQuestions("jidosha-2-motorcycle") } : {}),
+...(isExamPublished("jidosha-3-chassis") ? { "jidosha-3-chassis": getAutomotiveQuestions("jidosha-3-chassis") } : {}),
+...(isExamPublished("jidosha-3-gasoline") ? { "jidosha-3-gasoline": getAutomotiveQuestions("jidosha-3-gasoline") } : {}),
+...(isExamPublished("jidosha-3-diesel") ? { "jidosha-3-diesel": getAutomotiveQuestions("jidosha-3-diesel") } : {}),
+...(isExamPublished("jidosha-3-motorcycle") ? { "jidosha-3-motorcycle": getAutomotiveQuestions("jidosha-3-motorcycle") } : {}),
+...(isExamPublished("jidosha-body") ? { "jidosha-body": getAutomotiveQuestions("jidosha-body") } : {}),
+...(isExamPublished("jidosha-electrical") ? { "jidosha-electrical": getAutomotiveQuestions("jidosha-electrical") } : {}),
+biyoshi: BIYOSHI_QUESTIONS,
+"kikenbutsu-otsu1": OT1_QUESTIONS,
+"kikenbutsu-otsu2": OT2_QUESTIONS,
+"kikenbutsu-otsu6": OT6_QUESTIONS,
+...(isExamPublished("jokaso") ? { jokaso: JOKASO_CANDIDATES.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("iji-shuzen") ? { "iji-shuzen": IJI_SHUZEN_QUESTIONS } : {}),
+...(isExamPublished("denki1") ? { denki1: DENKI1_QUESTIONS } : {}),
+...(isExamPublished("shuwa") ? { shuwa: SHUWA_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("jken-katsuyo3") ? { "jken-katsuyo3": JKEN_KATSUYO3_QUESTIONS } : {}),
+...(isExamPublished("jken-katsuyo2") ? { "jken-katsuyo2": JKEN_KATSUYO2_QUESTIONS } : {}),
+...(isExamPublished("jken-katsuyo1") ? { "jken-katsuyo1": JKEN_KATSUYO1_QUESTIONS } : {}),
+...(isExamPublished("jken-system") ? { "jken-system": JKEN_SYSTEM_QUESTIONS } : {}),
+...(isExamPublished("shinrishi") ? { shinrishi: SHINRISHI_QUESTIONS } : {}),
+...(isExamPublished("khk-reito-3") ? { "khk-reito-3": KHK_REITO_3_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("khk-reito-2") ? { "khk-reito-2": KHK_REITO_2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("khk-reito-1") ? { "khk-reito-1": KHK_REITO_1_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("sekou-kenchiku2") ? { "sekou-kenchiku2": SEKOU_KENCHIKU2_QUESTIONS } : {}),
+...(isExamPublished("denki2") ? { denki2: DENKI2_QUESTIONS } : {}),
+...(isExamPublished("kankoji1") ? { kankoji1: KANKOJI1_QUESTIONS } : {}),
+...(isExamPublished("yamaguchi-chori") ? { "yamaguchi-chori": YAMAGUCHI_CHORI_QUESTIONS } : {}),
+...(isExamPublished("yamaguchi-seika") ? { "yamaguchi-seika": YAMAGUCHI_SEIKA_QUESTIONS } : {}),
+...(isExamPublished("yamaguchi-fugu") ? { "yamaguchi-fugu": YAMAGUCHI_FUGU_QUESTIONS } : {}),
+...(isExamPublished("keiryoshi") ? { "keiryoshi": getKeiryoshiCandidates("keiryoshi") } : {}),
+...(isExamPublished("keiryoshi-nodo") ? { "keiryoshi-nodo": getKeiryoshiCandidates("keiryoshi-nodo") } : {}),
+...(isExamPublished("keiryoshi-soon") ? { "keiryoshi-soon": getKeiryoshiCandidates("keiryoshi-soon") } : {}),
+...(isExamPublished("kenki2") ? { kenki2: KENKI2_QUESTIONS } : {}),
+...(isExamPublished("kenki1") ? { kenki1: KENKI1_QUESTIONS } : {}),
+...(isExamPublished("gyosei") ? { gyosei: GYOSEI_QUESTIONS } : {}),
+...(isExamPublished("shihoshoshi") ? { shihoshoshi: SHIHOSHOSHI_BATCH1_QUESTIONS } : {}),
+...(isExamPublished("career-consultant") ? { "career-consultant": CAREER_CONSULTANT_QUESTIONS } : {}),
+...(isExamPublished("kanri-eiyoshi") ? { "kanri-eiyoshi": KANRI_EIYOSHI_QUESTIONS } : {}),
+...(isExamPublished("sogo-ryoko") ? { "sogo-ryoko": SOGO_RYOKO_QUESTIONS } : {}),
+...(isExamPublished("shiho-tanto") ? { "shiho-tanto": SHIHO_TANTO_QUESTIONS } : {}),
+...(isExamPublished("yobi-tanto") ? { "yobi-tanto": YOBI_TANTO_QUESTIONS } : {}),
+...(isExamPublished("sokuryoshiho") ? { "sokuryoshiho": SOKURYOSHIHO_QUESTIONS } : {}),
+...(isExamPublished("caremanager") ? { "caremanager": CAREMANAGER_QUESTIONS } : {}),
+...(isExamPublished("kikai-hozen") ? { "kikai-hozen": KIKAI_HOZEN_QUESTIONS } : {}),
+...(isExamPublished("tsukanshi") ? { "tsukanshi": TSUKANSHI_QUESTIONS } : {})
 };
 
 export const ALL_QUESTIONS: Question[] = (

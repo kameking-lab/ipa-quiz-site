@@ -3,13 +3,12 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
 import { ESSAY_EXAM_CODES } from "@/lib/essay/load";
+import { createElement } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import { ExamTopGuide } from "@/components/exam/ExamTopGuide";
 
-// 論文区分（st/sa/pm/sm/au）の試験ハブ app/[exam]/page.tsx は、午後 II 論述対策
-// セクションの primary CTA を「実際の IPA 午後II 過去問を AI 採点する indexable
-// ハブ /essay（旗艦）」へ寄せる。高オーソリティな試験ハブ（sitemap priority 0.9）
-// から旗艦へ内部リンク equity を流すための配線。
-// /[exam]/afternoon は練習用モック（AI採点ベータ・HD-4）なので primary にしない。
-// このリンク・誇大回避ラベルが消える/退行する回帰を「崩れたら落ちる」形で pin する。
+// /essay grades editorial original material. /[exam]/afternoon publishes no
+// practice, so a hub must not describe either route as official past-paper grading.
 describe("exam hub funnels the 論文 essay CTA to the indexable flagship /essay", () => {
   const source = readFileSync(
     join(process.cwd(), "app/[exam]/page.tsx"),
@@ -20,10 +19,23 @@ describe("exam hub funnels the 論文 essay CTA to the indexable flagship /essay
     expect(source).toContain('<Link href="/essay">');
   });
 
-  it("keeps the beta mock afternoon page as a clearly-labeled secondary link", () => {
-    // 旗艦の実過去問採点と練習用モックを誇大なく区別するラベル（HD-4 尊重）。
-    expect(source).toContain("練習問題で腕試し（ベータ）");
-    expect(source).toContain("`/${code}/afternoon`");
+  it("does not advertise unpublished practice or official past-paper grading", () => {
+    expect(source).not.toContain("練習問題で腕試し（ベータ）");
+    expect(source).not.toContain("実際の午後II過去問で AI 添削");
+    expect(source).toContain("オリジナル論述教材で AI 添削");
+  });
+
+  it.each(["st", "sa"] as const)("%s labels the essay link as original material", exam => {
+    const html = renderToStaticMarkup(createElement(ExamTopGuide, { exam }));
+    expect(html).toContain('href="/essay"');
+    expect(html).toContain("オリジナル論述教材でAI添削");
+    expect(html).not.toContain(`href="/${exam}/afternoon"`);
+  });
+
+  it.each(["sc", "nw", "ap"] as const)("%s does not offer unsupported AI grading", exam => {
+    const html = renderToStaticMarkup(createElement(ExamTopGuide, { exam }));
+    expect(html).not.toContain('href="/essay"');
+    expect(html).not.toContain(`href="/${exam}/afternoon"`);
   });
 
   it("the 論文 exams that receive this CTA are all covered by the /essay flagship", () => {

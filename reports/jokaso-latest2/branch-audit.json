@@ -1,0 +1,1501 @@
+{
+  "branches": 373,
+  "matches": [],
+  "checkedAtUtc": "2026-11-03T16:54:22.744031+00:00",
+  "catalogUniqueBlobsChecked": 146,
+  "catalogContentMatches": [],
+  "refs": [
+    {
+      "ref": "refs/heads/claude/a11y-phase4",
+      "sha": "de2b8d3842517b2209fd0af864654d400c0df240"
+    },
+    {
+      "ref": "refs/heads/claude/admin-exam-usage-20260929",
+      "sha": "feca1d9b6abe37e1a635c396ed21b4ac496020db"
+    },
+    {
+      "ref": "refs/heads/claude/admiring-cray-hyi7fo",
+      "sha": "44eb5a8fe2d7e082408c481e08c014829ab69951"
+    },
+    {
+      "ref": "refs/heads/claude/admiring-hypatia-9lnj7i",
+      "sha": "12412d2b872fcf722da491f5c0076c6788dd48b3"
+    },
+    {
+      "ref": "refs/heads/claude/adoring-galileo-yaitzr",
+      "sha": "45c222b3bdce19071c11d510d6455e7c28ab130f"
+    },
+    {
+      "ref": "refs/heads/claude/affectionate-noether-yzpt54",
+      "sha": "7b289953ec4ba0910caff72b5526cb6bf87bd0a4"
+    },
+    {
+      "ref": "refs/heads/claude/awesome-bohr-5b3jqe",
+      "sha": "b8b059a60f0d5da0cff21f1f9d89b681fdf7eaa7"
+    },
+    {
+      "ref": "refs/heads/claude/awesome-mayer-10yje5",
+      "sha": "db84c57f93895350b0e088aa40a630109b94459d"
+    },
+    {
+      "ref": "refs/heads/claude/blissful-benz-6252b6",
+      "sha": "a71ba956496f3541e5be777b6476c553e9ff1cf9"
+    },
+    {
+      "ref": "refs/heads/claude/blissful-goodall-mtf6n8",
+      "sha": "a16ca4f23b5d52ba470b4762c105ec57c6df2ff6"
+    },
+    {
+      "ref": "refs/heads/claude/blissful-rubin-pks6ce",
+      "sha": "81f12b99e36e00a36305ab5d2bb11819c8ddafbe"
+    },
+    {
+      "ref": "refs/heads/claude/blissful-shannon-bnu1ru",
+      "sha": "fe001d6bbda15c7706f629fdfe48b72f4c5bac34"
+    },
+    {
+      "ref": "refs/heads/claude/busy-hugle-56c7a3",
+      "sha": "c18f76080bfad1cf53c33aefd63fece691027333"
+    },
+    {
+      "ref": "refs/heads/claude/charming-davinci-vg04td",
+      "sha": "f081bbd20b5fef3ddeae541148fb8824ce1e3e3d"
+    },
+    {
+      "ref": "refs/heads/claude/charming-mendel-rg5218",
+      "sha": "3b0480e5127468d0a6760f7825fbe61befcda7f6"
+    },
+    {
+      "ref": "refs/heads/claude/charming-tesla-bo9gst",
+      "sha": "81ec8faf2e1628f34e422f211e6dccfcaa9c989b"
+    },
+    {
+      "ref": "refs/heads/claude/cleanup-phase2",
+      "sha": "88f06401afdb2d319569c49a6b7e2dd66cf671ba"
+    },
+    {
+      "ref": "refs/heads/claude/clever-hopper-eb04e0",
+      "sha": "d403a7694237c4aecdd626c85e83237a1104076a"
+    },
+    {
+      "ref": "refs/heads/claude/clever-wright-aabdbb",
+      "sha": "bf7df8741a8f58f5eb0b176fb3ca84fe74c78d84"
+    },
+    {
+      "ref": "refs/heads/claude/compassionate-brahmagupta-wkiu7v",
+      "sha": "47110393ccddc5f65db82e658306b23d79e26ccf"
+    },
+    {
+      "ref": "refs/heads/claude/compassionate-grothendieck-146e61",
+      "sha": "78e00c7b7bacb2775ddfd96a1ec9f5d696757756"
+    },
+    {
+      "ref": "refs/heads/claude/cool-babbage-qliart",
+      "sha": "0edd2ab2932ca2c6f577bab7bc9d935c40cfc9c9"
+    },
+    {
+      "ref": "refs/heads/claude/cool-cerf-po85e5",
+      "sha": "882a42c6fca05a81a58e2717c35d779800df0207"
+    },
+    {
+      "ref": "refs/heads/claude/denki3-two-year-continuation-nm3yuk",
+      "sha": "aa22d47a03335a249aaa026b844031a6a2e4d4bb"
+    },
+    {
+      "ref": "refs/heads/claude/determined-hermann-df623b",
+      "sha": "fd49e7d14cea8c7cd44c6a3cbf5de1a3029a1535"
+    },
+    {
+      "ref": "refs/heads/claude/distracted-poincare-d58167",
+      "sha": "5906d0dff819c9f60fb14d60d4b4c589c53e5bb8"
+    },
+    {
+      "ref": "refs/heads/claude/eager-dhawan-3809e2",
+      "sha": "4dd4a05fc64f017169711567983bbfa426b59fdd"
+    },
+    {
+      "ref": "refs/heads/claude/ecstatic-ride-tfc4jt",
+      "sha": "8258da1431784ae0b95033f3b47c93ae89ac4131"
+    },
+    {
+      "ref": "refs/heads/claude/epic-volta-l9vm4r",
+      "sha": "128d2aec358188bea4034a1d5996961559a4c3ab"
+    },
+    {
+      "ref": "refs/heads/claude/epic-wing-11f7ec",
+      "sha": "6775cf7d5feea3de7a4f6fe3e1729da07086dce2"
+    },
+    {
+      "ref": "refs/heads/claude/fix-canonical-vercel-fallback",
+      "sha": "0a75750894ef6e92f6edc32b8d4c86b6e312a6e2"
+    },
+    {
+      "ref": "refs/heads/claude/flamboyant-shaw-2c875c",
+      "sha": "6b85ed5fe88a3341db21248c6c844ee2d4752977"
+    },
+    {
+      "ref": "refs/heads/claude/fp1-may-2026-q54-60-n2iz4u",
+      "sha": "d4354df8fd00cef99dae6cd43e1c8efbe887c955"
+    },
+    {
+      "ref": "refs/heads/claude/fp1-may-2026-q54-transcription-3jdeq3",
+      "sha": "889bd8f4e9c00491a92d114e8f732ac52b0f86f6"
+    },
+    {
+      "ref": "refs/heads/claude/fp1-may-q54-author-b-20261010",
+      "sha": "ee1a805e5c3b8fde0902150cbd1e4662c50169d8"
+    },
+    {
+      "ref": "refs/heads/claude/fp1-may-q54-source-a-20261010",
+      "sha": "ee1a805e5c3b8fde0902150cbd1e4662c50169d8"
+    },
+    {
+      "ref": "refs/heads/claude/fp2-2026-may-q11-60-1373zh",
+      "sha": "b209b8c1b7100ba2091d021efcd0b38128574826"
+    },
+    {
+      "ref": "refs/heads/claude/fp2-2026-may-q11-60-1trham",
+      "sha": "9b87bae5aa695f6d969c1b6a818c7798af27c1ec"
+    },
+    {
+      "ref": "refs/heads/claude/funny-brown-u6g4se",
+      "sha": "d43816c8d59bc99fa98c0deaf333edb9425c3e0a"
+    },
+    {
+      "ref": "refs/heads/claude/funny-hugle-c3d009",
+      "sha": "d364fd5deaa309a9b1588293aed0ec6212c6f7a9"
+    },
+    {
+      "ref": "refs/heads/claude/gallant-dirac-w8hzag",
+      "sha": "47110393ccddc5f65db82e658306b23d79e26ccf"
+    },
+    {
+      "ref": "refs/heads/claude/gijutsushi-soukan-20260929",
+      "sha": "a94b494ba3ef266e6e8cc758b1d7e9df2dfe0491"
+    },
+    {
+      "ref": "refs/heads/claude/gracious-hawking-c4ic14",
+      "sha": "e73fa9b72adc1d1b92cc13b0446d40e0b00e3bfa"
+    },
+    {
+      "ref": "refs/heads/claude/gracious-ramanujan-ppyw80",
+      "sha": "45c222b3bdce19071c11d510d6455e7c28ab130f"
+    },
+    {
+      "ref": "refs/heads/claude/gracious-turing-71vh89",
+      "sha": "bdfd61cfee7f79b1433fd7345329cb753c8264fb"
+    },
+    {
+      "ref": "refs/heads/claude/great-jackson-af0b14",
+      "sha": "0703f499279c008b441138d312cd7e068c304a9c"
+    },
+    {
+      "ref": "refs/heads/claude/happy-goodall-cx5z2g",
+      "sha": "07afc13633ef6e1e221ae54671c68843af6cad28"
+    },
+    {
+      "ref": "refs/heads/claude/hoikushi-2rounds-20260929-c",
+      "sha": "a437e7f56023e6611447f7584112e29131eddc0d"
+    },
+    {
+      "ref": "refs/heads/claude/infallible-margulis-76c074",
+      "sha": "98190f9d81f0926bd72f73ec8ee92c4443536efd"
+    },
+    {
+      "ref": "refs/heads/claude/intelligent-mccarthy-uv0az3",
+      "sha": "a23da14acac7d846636c65f12508da95b0ed3264"
+    },
+    {
+      "ref": "refs/heads/claude/intelligent-morse-dba859",
+      "sha": "0f4c833f43971438d76c61bad882a87afd77acb1"
+    },
+    {
+      "ref": "refs/heads/claude/kashikin-2rounds-20260929",
+      "sha": "b549b0098f5fcf865bf13b8b36e7168a45fd57ca"
+    },
+    {
+      "ref": "refs/heads/claude/kind-hopper-p6vjlw",
+      "sha": "eff761f8f50514125e71d7f1ab7407552cbc824d"
+    },
+    {
+      "ref": "refs/heads/claude/lck-choice-explanations-provisional-3au733",
+      "sha": "efbf121ec733a5b8013500e6bf30739224bffd69"
+    },
+    {
+      "ref": "refs/heads/claude/lckohyo-choice-explanations-eoicwj",
+      "sha": "8d37792c8bc8500a81c0af4e7ab5d04575c11f51"
+    },
+    {
+      "ref": "refs/heads/claude/loving-galileo-852qa2",
+      "sha": "f5e3fcf925bc1556e067e54b2876bbb7c5c641b9"
+    },
+    {
+      "ref": "refs/heads/claude/loving-goodall-df47l4",
+      "sha": "ba0474103bede2af0c38fa756371a5a56f45caea"
+    },
+    {
+      "ref": "refs/heads/claude/loving-heisenberg-dft90n",
+      "sha": "cdc070f8d9a4bef92c481521827dfe9bca012e51"
+    },
+    {
+      "ref": "refs/heads/claude/magical-newton-a0t56z",
+      "sha": "2edf160334dcc496080910cddd63674e446b4c9f"
+    },
+    {
+      "ref": "refs/heads/claude/mankan-2rounds-20260929-c",
+      "sha": "69c8393227570b31976ed34a5ecf7f5de53c3538"
+    },
+    {
+      "ref": "refs/heads/claude/nice-bhaskara-0ea874",
+      "sha": "a8b91525b1d4d54669d4284e69710be736ddd47f"
+    },
+    {
+      "ref": "refs/heads/claude/nice-chebyshev-d44087",
+      "sha": "e0c0502154fd4f22849dfe821b7fa28bdd864051"
+    },
+    {
+      "ref": "refs/heads/claude/nurse-morning-questions-y1dm62",
+      "sha": "4bb0ea97005635edd5542beea32bc146cc7af497"
+    },
+    {
+      "ref": "refs/heads/claude/nurse-q11-25-20261010",
+      "sha": "f16830b8dff05737cc4bd804ceee60d7ca38b254"
+    },
+    {
+      "ref": "refs/heads/claude/nurse-q26-50-20261010",
+      "sha": "d3babb932af09fc57f2412c2bd82451fe193d029"
+    },
+    {
+      "ref": "refs/heads/claude/nurse10-20261010",
+      "sha": "2c3df59ab064f28a9d65ff4d95aa24cf1a4a311e"
+    },
+    {
+      "ref": "refs/heads/claude/optimistic-ardinghelli-d7dee6",
+      "sha": "6b4ed95fade5a04bf74e8d17b10d82bab8683bc7"
+    },
+    {
+      "ref": "refs/heads/claude/optimistic-gauss-61a352",
+      "sha": "9cd640493b1a94459d4174b969d8c5fb91f79a59"
+    },
+    {
+      "ref": "refs/heads/claude/pedantic-taussig-88fb06",
+      "sha": "d148c54e2a04452468df209081d38a66e1fb7944"
+    },
+    {
+      "ref": "refs/heads/claude/pensive-lovelace-ICdzm",
+      "sha": "5bafc7a4fb080164a86497b29139f0cfee48d71a"
+    },
+    {
+      "ref": "refs/heads/claude/perf-phase3",
+      "sha": "a72dacbc65a037b3e98a709fc308a2d1c6e9734f"
+    },
+    {
+      "ref": "refs/heads/claude/phase-2-seo",
+      "sha": "24d7ce0cd51169c110c31bfeedd91b3084c82326"
+    },
+    {
+      "ref": "refs/heads/claude/phase-3-content",
+      "sha": "6db0934c25f68e8bdbde28bd17b5dcfbcf709fe6"
+    },
+    {
+      "ref": "refs/heads/claude/phase-4-ogp",
+      "sha": "6ee55a99aae99b42a0bc0389cbd0e7cad57dcd1e"
+    },
+    {
+      "ref": "refs/heads/claude/phase-5-perf",
+      "sha": "cfd9d69500e707abe607bfe78743fd9110274b74"
+    },
+    {
+      "ref": "refs/heads/claude/phase-6-internal-links",
+      "sha": "eafd5efb6b4bad5e3dfc6f4e094f29d27aeae660"
+    },
+    {
+      "ref": "refs/heads/claude/phase-b-monitoring",
+      "sha": "11fafda240d0334ebde44ac3f7397053403e20c5"
+    },
+    {
+      "ref": "refs/heads/claude/phase-c-growth",
+      "sha": "b46d750fc2007f9f4c9190aa0598a132cbf865b4"
+    },
+    {
+      "ref": "refs/heads/claude/phase-d-ux",
+      "sha": "63cb0acbb9056d8878d81753d49816a716f36fb2"
+    },
+    {
+      "ref": "refs/heads/claude/phase1-critical-fixes",
+      "sha": "915ab5a2f88945ab3620aa67cd32a408caff354b"
+    },
+    {
+      "ref": "refs/heads/claude/phase2-seo",
+      "sha": "bb1bd92c0a576ea6865783561827c81c2334d3b2"
+    },
+    {
+      "ref": "refs/heads/claude/phase3-ux",
+      "sha": "536768bb2923d54fa92d7efc52a23424604d73ed"
+    },
+    {
+      "ref": "refs/heads/claude/phase4-content",
+      "sha": "32a0be7a609cee07dead13842ccc977ce0da75fa"
+    },
+    {
+      "ref": "refs/heads/claude/practical-elbakyan-e617a4",
+      "sha": "a1906d1534014c7c16f92048b9ee5cebdb6d16c0"
+    },
+    {
+      "ref": "refs/heads/claude/recursing-haibt-0b46ac",
+      "sha": "18752dcf7741327e7bd02568e737e4f7969a123d"
+    },
+    {
+      "ref": "refs/heads/claude/relaxed-albattani-z4jl1c",
+      "sha": "35689f72ad8ecbac8958a6c3c5b56ed9f92ed985"
+    },
+    {
+      "ref": "refs/heads/claude/seishin-27-20260929",
+      "sha": "a96403b00224e604231f41ab63e2705d28eeef06"
+    },
+    {
+      "ref": "refs/heads/claude/seo-phase5",
+      "sha": "4fdf4c314e1c81079a44cf827313c759023007ef"
+    },
+    {
+      "ref": "refs/heads/claude/serene-edison-422bb5",
+      "sha": "d1d37b44bb3f025afdf5c0f1e1085d0cc729277b"
+    },
+    {
+      "ref": "refs/heads/claude/sharoushi-labor-exam-10-7l2hqf",
+      "sha": "7089875f48115b01efaaa65a4c1ce8c3b2805263"
+    },
+    {
+      "ref": "refs/heads/claude/sharoushi-next30-20261010",
+      "sha": "8492edad51f315857bd497512363037cffa5fb72"
+    },
+    {
+      "ref": "refs/heads/claude/sharoushi10-20261010",
+      "sha": "7ad0e535eb26a232f571e1165095ae5d94319d58"
+    },
+    {
+      "ref": "refs/heads/claude/sharp-clarke-083srb",
+      "sha": "f892daab2d5a8544ba950a8e20c1e5e9eeca35c4"
+    },
+    {
+      "ref": "refs/heads/claude/sleepy-feynman-lcl8m3",
+      "sha": "c3e0145a0745f6dc7934d2ff771b43b351ec8f1f"
+    },
+    {
+      "ref": "refs/heads/claude/sokuryoshi-latest-two-validation-7a4ce8",
+      "sha": "3770b3f05c0b65dcf49653b19217e43d13dc1eef"
+    },
+    {
+      "ref": "refs/heads/claude/sweet-hypatia-qynafk",
+      "sha": "7ced506fe5fff37b7379c62fa1ffb07a15e42cf7"
+    },
+    {
+      "ref": "refs/heads/claude/sweet-mestorf-756856",
+      "sha": "c6afb05698f2d8cbc256a314ceedac86a24cfb5a"
+    },
+    {
+      "ref": "refs/heads/claude/sweet-rubin-1fakor",
+      "sha": "0bbddb1350ad1b471f00f3021e6c7f533bb89bed"
+    },
+    {
+      "ref": "refs/heads/claude/thirsty-liskov-94c6c4",
+      "sha": "e130bd813ed3100ddd40ffd1dae62f1cb13dbc4d"
+    },
+    {
+      "ref": "refs/heads/claude/validate-civil1-staging-lz8zt5",
+      "sha": "e825ce7982c07545a7014fbf346ea611520e4db1"
+    },
+    {
+      "ref": "refs/heads/claude/vibrant-meitner-q7weg8",
+      "sha": "07afc13633ef6e1e221ae54671c68843af6cad28"
+    },
+    {
+      "ref": "refs/heads/claude/vigilant-mayer-jahvey",
+      "sha": "99e189c80ca52af6b684719750274e4ed792b2c1"
+    },
+    {
+      "ref": "refs/heads/claude/wizardly-euclid-58dde6",
+      "sha": "b4b9dbe003c0ee48441e34067c16acef202ce394"
+    },
+    {
+      "ref": "refs/heads/claude/wonderful-bhabha-6448b1",
+      "sha": "2ac57a0230845ae28b5ea60f8ab2c7eab93aae72"
+    },
+    {
+      "ref": "refs/heads/claude/wonderful-bohr-smi3f9",
+      "sha": "4d5d6bee4b995ca6fd6aca024b4810925b88f75e"
+    },
+    {
+      "ref": "refs/heads/claude/wonderful-ramanujan-73f8e2",
+      "sha": "3ca002f963ade0ebfead4155719c8ae1e8f67dee"
+    },
+    {
+      "ref": "refs/heads/claude/zealous-goldberg-2sjth3",
+      "sha": "c0c23d6d85f2bdf1961701e3048c44b54f2d88f3"
+    },
+    {
+      "ref": "refs/heads/codex/about-ai-disclosure-20261011",
+      "sha": "261f903ecc56b7c69f52d4e33b3f9d307a82e4e2"
+    },
+    {
+      "ref": "refs/heads/codex/add-denken1-pilot-20260927",
+      "sha": "38b41efc8de641ec2b403ee82d9cbb6ab6b25519"
+    },
+    {
+      "ref": "refs/heads/codex/add-fp1-2026-may-fifth",
+      "sha": "04b47bb4e3e6c6f2ce1ea44a78b70c22cfc7f2fb"
+    },
+    {
+      "ref": "refs/heads/codex/add-fp1-2026-may-fourth",
+      "sha": "2b76772904d8a1bb5c812ebb9eb3c4933b9db848"
+    },
+    {
+      "ref": "refs/heads/codex/add-fp1-2026-may-second",
+      "sha": "d556391dbe9d96098cb1e475c55b4c29d509f86e"
+    },
+    {
+      "ref": "refs/heads/codex/add-fp1-2026-may-third",
+      "sha": "3d022d83d892ce1cc4c6ccde38f50712bfd75f7e"
+    },
+    {
+      "ref": "refs/heads/codex/add-fp1-pilot-20260927",
+      "sha": "bcfeb9b5d0fd4d3aa17a2882930b7e6d11dbbbd0"
+    },
+    {
+      "ref": "refs/heads/codex/add-ip-score-report-note",
+      "sha": "c468caf2368f144cd6d22fd7ca0118eea29b7906"
+    },
+    {
+      "ref": "refs/heads/codex/add-note-crosslinks-20260927",
+      "sha": "eb662685bc25e5deacad7cbc3f6bd91cd7770190"
+    },
+    {
+      "ref": "refs/heads/codex/add-tsushin1-pilot-20260927",
+      "sha": "2d894337c32f940447fb6e0d47eee70d1190cfbe"
+    },
+    {
+      "ref": "refs/heads/codex/add-zoen1-20260927",
+      "sha": "6d2696418f865361040b7409418e2d12307da750"
+    },
+    {
+      "ref": "refs/heads/codex/add-zoen2-2025-fifth",
+      "sha": "56cea98961d15344c199a83e7c2d1a95208dc2ed"
+    },
+    {
+      "ref": "refs/heads/codex/add-zoen2-2025-fourth",
+      "sha": "59f8827a51a457bb7cda0f80203db372c2d1b009"
+    },
+    {
+      "ref": "refs/heads/codex/add-zoen2-2025-next",
+      "sha": "fe28af9c9eeb4974edc4cac1775057b97049dd4c"
+    },
+    {
+      "ref": "refs/heads/codex/add-zoen2-2025-pilot",
+      "sha": "f3b392fbd91ffcc23e815230e4320fe878c3b5e3"
+    },
+    {
+      "ref": "refs/heads/codex/add-zoen2-2025-sixth",
+      "sha": "4a22fa23fa626ad0cf5a312a9ec4288954011c57"
+    },
+    {
+      "ref": "refs/heads/codex/add-zoen2-2025-third",
+      "sha": "c7f913fad2367ccf363c916e4520cdc8a9b772a8"
+    },
+    {
+      "ref": "refs/heads/codex/add-zoen2-tsushin2-20260927",
+      "sha": "c4e17678119f4422932f3f49c5116c67a217e4aa"
+    },
+    {
+      "ref": "refs/heads/codex/adsense-coverage-20261003",
+      "sha": "532e8bb5ca58ef557519e23af448449286cb5e1e"
+    },
+    {
+      "ref": "refs/heads/codex/adsense-csp-hotfix-20260919",
+      "sha": "246e643fc41c09ddda65213f00d3d4a116d9feee"
+    },
+    {
+      "ref": "refs/heads/codex/adsense-ssr-exam-pages-20260927",
+      "sha": "9dcf3cdae233700da2db28095ca252713e5b90ef"
+    },
+    {
+      "ref": "refs/heads/codex/ahaki-last3-codex-20261010",
+      "sha": "40cf3651e1c3f42f89b8514edcf82f415d62bde0"
+    },
+    {
+      "ref": "refs/heads/codex/approved35-fp1-may-gap-20261007",
+      "sha": "818b7c5cf75c7c99806fa1d3795197baa08440f1"
+    },
+    {
+      "ref": "refs/heads/codex/approved35-seo-denken-years-20261007",
+      "sha": "f146ac38ebd954926d2a09970c1d9d6ed157909d"
+    },
+    {
+      "ref": "refs/heads/codex/approved35-seo-ipa-20261007",
+      "sha": "9ea2655abe30696e325d7439b73ef1dd77f2db1d"
+    },
+    {
+      "ref": "refs/heads/codex/automotive-latest-two-20261011",
+      "sha": "6f4253b9381e3030863e38dfe75b5ca4068ba526"
+    },
+    {
+      "ref": "refs/heads/codex/biru-kan-latest2",
+      "sha": "bdfd61cfee7f79b1433fd7345329cb753c8264fb"
+    },
+    {
+      "ref": "refs/heads/codex/biyoshi-latest-two-saved-20261011",
+      "sha": "3e6eb76a6207e5ff9bdcdff350806f3c525a38ee"
+    },
+    {
+      "ref": "refs/heads/codex/blog-2026-cbt-exam-day-20260928",
+      "sha": "21aaf7c450b4e015b3d2c3849b997ea598db9489"
+    },
+    {
+      "ref": "refs/heads/codex/blog-2026-cbt-results-20260928",
+      "sha": "ab10019d607c5df8411b3406b461ea502c5f4b87"
+    },
+    {
+      "ref": "refs/heads/codex/blog-2026-cbt-schedule-20260928",
+      "sha": "a06f562bf98c5cc755e1a4351c2df421159e6eaa"
+    },
+    {
+      "ref": "refs/heads/codex/blog-exam-format-20260928",
+      "sha": "150938775dd827ab3598cb6b93eee509a6620bfb"
+    },
+    {
+      "ref": "refs/heads/codex/boiler-model-answers",
+      "sha": "75437d5137f9e702273001c6efdf3bdd49a2d8be"
+    },
+    {
+      "ref": "refs/heads/codex/chintai-latest2",
+      "sha": "99e189c80ca52af6b684719750274e4ed792b2c1"
+    },
+    {
+      "ref": "refs/heads/codex/chizai2-latest-two-20261011",
+      "sha": "3023da040da6e70f174b8704e83557f2a96e476e"
+    },
+    {
+      "ref": "refs/heads/codex/chosashi-latest-two-20261011",
+      "sha": "b8a7dc5edc4e28f21d15fce905c1b582c52ecccd"
+    },
+    {
+      "ref": "refs/heads/codex/chusho-latest-two-complete-20261011",
+      "sha": "12a2aca51da126e2486fa214964df189479d6811"
+    },
+    {
+      "ref": "refs/heads/codex/chusho-latest-two-source-inventory-20261011",
+      "sha": "7245f393a60db7849949d58035b941ffbd957a55"
+    },
+    {
+      "ref": "refs/heads/codex/chusho-secondary-latest-two-20261011",
+      "sha": "cbf722bdc323c15b1dedd895059c0aea79d2e369"
+    },
+    {
+      "ref": "refs/heads/codex/ci-inert-changes-20261011",
+      "sha": "993a0a45207d5a08cf374282334f3c5bbce9223a"
+    },
+    {
+      "ref": "refs/heads/codex/civil1-latest-two-20261011",
+      "sha": "24475b44c6459426d319aff3b04b64b69e4b16c8"
+    },
+    {
+      "ref": "refs/heads/codex/civil2-2025-source-20260926",
+      "sha": "d8dd5551ff4d80a0f7622a0b559eb795c1752c2d"
+    },
+    {
+      "ref": "refs/heads/codex/civil2-2026-first-wave-20260925",
+      "sha": "605f76ad039c5f76be9995b37637e0c72e6f316c"
+    },
+    {
+      "ref": "refs/heads/codex/civil2-production-receipt-20260926",
+      "sha": "b33e9d0f568b8a2246ae383fe53dbdc0c074ed23"
+    },
+    {
+      "ref": "refs/heads/codex/cloud-sekou-1kenchiku-latest2",
+      "sha": "2edf160334dcc496080910cddd63674e446b4c9f"
+    },
+    {
+      "ref": "refs/heads/codex/complete-safety-explanations",
+      "sha": "196158f107511d0e1ac2570b55746caa2f35c48f"
+    },
+    {
+      "ref": "refs/heads/codex/copilot-gemini38-20260928",
+      "sha": "22cd76d08ab9f98617327d583f69f56a3b31c127"
+    },
+    {
+      "ref": "refs/heads/codex/copilot-route-timeout-20261011",
+      "sha": "3c8ae9cf8dd399df86d05bf4ff6ad10b255bc9ed"
+    },
+    {
+      "ref": "refs/heads/codex/denken1-primary-machine-all-choices-20261011",
+      "sha": "3ef4bd6428ecfd9e98c7d79ad0409955305c95f9"
+    },
+    {
+      "ref": "refs/heads/codex/denken1-primary-power-all-choices-20261011",
+      "sha": "b95bb03784ac53d9e206e2b33b2c4d06cc6a96cd"
+    },
+    {
+      "ref": "refs/heads/codex/denken1-saved-primary-20261011",
+      "sha": "f3cc1bbb64d024c5d99463c316d22935d4d26868"
+    },
+    {
+      "ref": "refs/heads/codex/denken1-secondary-latest-two-20261011",
+      "sha": "671947f34f599f906a2102bea8ce0129fee2882a"
+    },
+    {
+      "ref": "refs/heads/codex/denken2-secondary-latest-two-20261011",
+      "sha": "ba5d90dc415933926eef2d6c08f3a4cf9a7c49ff"
+    },
+    {
+      "ref": "refs/heads/codex/denken2-two-session-sources-20260928",
+      "sha": "64599dd55e5bb675402c8fa44f9bad2c12a7e07f"
+    },
+    {
+      "ref": "refs/heads/codex/denken3-2025-academic-sol",
+      "sha": "c51a05f68ff588d35868842585259846fb147285"
+    },
+    {
+      "ref": "refs/heads/codex/denken3-latest-two-complete-20261011",
+      "sha": "a81a1fef6915268454ed1c84d9646cf68b62f0e8"
+    },
+    {
+      "ref": "refs/heads/codex/denken3-law-q4-20260928",
+      "sha": "d7b7a95f411290f8d08fa2858458a5ff95be39d6"
+    },
+    {
+      "ref": "refs/heads/codex/denken3-native-20261010",
+      "sha": "709f7ba068c38cb03ac0f95778e2539822c6b5e8"
+    },
+    {
+      "ref": "refs/heads/codex/denken3-power-q1-20260928",
+      "sha": "be3542484ab2d05381ca9622247c0ca74bf3d246"
+    },
+    {
+      "ref": "refs/heads/codex/denken3-seo-count-20260928",
+      "sha": "d5e4214977fb3782c08c93791690e3e6f71283b8"
+    },
+    {
+      "ref": "refs/heads/codex/denken3-two-years",
+      "sha": "b4dff3ca12fbdb3f9dc7ebcd0046209dd5b6ac62"
+    },
+    {
+      "ref": "refs/heads/codex/denko1-2025-lower-hold",
+      "sha": "36305927652202f17f61b29daffa7d3ce6955c50"
+    },
+    {
+      "ref": "refs/heads/codex/denko2-2024-lower",
+      "sha": "2eab675987c3934528bbc1f6a3fd45744bb91734"
+    },
+    {
+      "ref": "refs/heads/codex/denko2-2024-lower-q41-50",
+      "sha": "93dda8f79c215f580821380fa5d20a1abe79f0af"
+    },
+    {
+      "ref": "refs/heads/codex/denko2-2024-oct-q31-40",
+      "sha": "e04117a8e5572b268c127c57dc8de2c2706df34f"
+    },
+    {
+      "ref": "refs/heads/codex/denko2-2024-upper-strict",
+      "sha": "ec0409bb60228c2228a882ddd3d11b9eeadaae68"
+    },
+    {
+      "ref": "refs/heads/codex/denko2-2025-may-portable-fix",
+      "sha": "fcb06164e2400d74b65f9fcdfda6739b754f3cab"
+    },
+    {
+      "ref": "refs/heads/codex/denko2-2025-may-visual-review",
+      "sha": "908353b2effa6df38526eeaefd05c1ec4bc328ec"
+    },
+    {
+      "ref": "refs/heads/codex/denko2-full-years",
+      "sha": "b0a0e03e67efd58e8d6d3dc637190f9f6dd37dcf"
+    },
+    {
+      "ref": "refs/heads/codex/denko2-latest2-20261011",
+      "sha": "07b57960cc2f8d416210b899a4940332d124c876"
+    },
+    {
+      "ref": "refs/heads/codex/dental-hygienist-latest-two-20261011",
+      "sha": "204e76c77b1d8e88ff4c0dc149571b105c6ae788"
+    },
+    {
+      "ref": "refs/heads/codex/diagnose-preview-output-main-20261016",
+      "sha": "c085f2fae16cb317fd10c1a871afbaa814ef19fa"
+    },
+    {
+      "ref": "refs/heads/codex/e2e-parallel-checks-20261011",
+      "sha": "b635cf680511bd7c68a7a8a5d1bf6c120a829fe3"
+    },
+    {
+      "ref": "refs/heads/codex/eisei1-batch02-20260927",
+      "sha": "01008a8ac3e5e6f4cdd1a9bc9a883d44dd549a8c"
+    },
+    {
+      "ref": "refs/heads/codex/eisei1-batch03-20260927",
+      "sha": "9650912addca07d8c7d6f25a237e3c669b7a8965"
+    },
+    {
+      "ref": "refs/heads/codex/eisei1-batch04-20260927",
+      "sha": "901f2d4ae7b1cb5371622b2584bd9289132dc9c5"
+    },
+    {
+      "ref": "refs/heads/codex/eisei1-batch05-20260927",
+      "sha": "87c827def03c1641ac02f588015556f27a456c3b"
+    },
+    {
+      "ref": "refs/heads/codex/eisei1-edition-label-20260927",
+      "sha": "a985c0290ecb9f4f074ad01ff5999812e68340cd"
+    },
+    {
+      "ref": "refs/heads/codex/eisei1-free-note-20260927",
+      "sha": "830f2fc2c92ef3575d04c3025599bcf2e492e017"
+    },
+    {
+      "ref": "refs/heads/codex/eisei2-two-publications-20260928",
+      "sha": "14ddb930db9119e3a76938695d994218476d361e"
+    },
+    {
+      "ref": "refs/heads/codex/emkohyo-2025-choice-explanations",
+      "sha": "c8e7f925b1e7aae7493f317beb14a09cfa81659b"
+    },
+    {
+      "ref": "refs/heads/codex/exam-expansion-20260927",
+      "sha": "2546d356a49857887a224e57ad9624b3ccf32980"
+    },
+    {
+      "ref": "refs/heads/codex/exam-library-ai-followup-20260928",
+      "sha": "d7cb937d0ba0fec26fc2ff41c8b2afa5e2b4b4fe"
+    },
+    {
+      "ref": "refs/heads/codex/explanation-layer-label-20261003",
+      "sha": "06a71790289180ae7361d32a165f6a99757a71af"
+    },
+    {
+      "ref": "refs/heads/codex/fe-b-q2-explanation-20261012",
+      "sha": "83543c9dc37bb236b88832a79fecb238efbcdc76"
+    },
+    {
+      "ref": "refs/heads/codex/fix-explanation-answer-label-20260927",
+      "sha": "ffd633c3ce769da4c91c89eb3f1649c2b243b070"
+    },
+    {
+      "ref": "refs/heads/codex/fix-fp1-release-url",
+      "sha": "43360b0524e64f273a998d90c31ff139b68cda6a"
+    },
+    {
+      "ref": "refs/heads/codex/fp-electric-coverage-audit-20260926",
+      "sha": "9a8096beeb072b8c663f03355e08b478f5aec668"
+    },
+    {
+      "ref": "refs/heads/codex/fp-sitemap-20260925",
+      "sha": "47ae4f5a621c61a964649f4a05b36080f2d6a2b4"
+    },
+    {
+      "ref": "refs/heads/codex/fp1-applied-q52-20261008",
+      "sha": "da957d66a0caf7d85f3026fc37b32f0369d4a092"
+    },
+    {
+      "ref": "refs/heads/codex/fp1-applied-q53-20261008",
+      "sha": "9ba9de1782717d1a90c533b18853693648095d11"
+    },
+    {
+      "ref": "refs/heads/codex/fp1-may-complete-20261010",
+      "sha": "34d7fe466a74fc4fc4fc255419159e508b540912"
+    },
+    {
+      "ref": "refs/heads/codex/fp1-meta-completion-20261008",
+      "sha": "65aefd54000178913cf6367bcbac5e7626e587b7"
+    },
+    {
+      "ref": "refs/heads/codex/fp1-reader-generalize-20261010",
+      "sha": "1b45824ad7ef033108844b70ff3daac151170a66"
+    },
+    {
+      "ref": "refs/heads/codex/fp2-2026-may-q11-60",
+      "sha": "7930128ac1c6b80fb154902b30e5ad66cfd9982e"
+    },
+    {
+      "ref": "refs/heads/codex/fp2-academic-2024-2025-20260923",
+      "sha": "382c1553274638852e9f7d6d87845fc98062330c"
+    },
+    {
+      "ref": "refs/heads/codex/fp2-practical-2026",
+      "sha": "6286c840efe81f9307eec9f126378d8fb47bbecb"
+    },
+    {
+      "ref": "refs/heads/codex/fp2-practical-explanations-20260923",
+      "sha": "8f6bd29a38bcb4fa6a56388429a5fd14ae362540"
+    },
+    {
+      "ref": "refs/heads/codex/fp2-two-year-complete-20260923",
+      "sha": "df3934a01880f2c1c030cf50657335a84e5b8f19"
+    },
+    {
+      "ref": "refs/heads/codex/fp3-2026-q11-category-20261011",
+      "sha": "5c3f815dd4cf8c92578005a72ff86ffb6d67eb06"
+    },
+    {
+      "ref": "refs/heads/codex/gas-latest2-20261011",
+      "sha": "81e7349f054e47c9c28eeb11b67f6c4ccb9cb8aa"
+    },
+    {
+      "ref": "refs/heads/codex/gas-medical-key3-20261011",
+      "sha": "4e56adb2395b1b72fb81faaa9f8feff3275175db"
+    },
+    {
+      "ref": "refs/heads/codex/gemini-3-8-question-chat-20260927",
+      "sha": "32ee977e961ff8393955e82ed6b8aee7bc51f44a"
+    },
+    {
+      "ref": "refs/heads/codex/gemini-chat-generic-qualification-copy",
+      "sha": "03623232af332859cdefcefa2b859602e789534c"
+    },
+    {
+      "ref": "refs/heads/codex/gengo-chokakushi-latest-two-20261011",
+      "sha": "01dfe8bf356ed818798006da4deab4b9dc9ac1bc"
+    },
+    {
+      "ref": "refs/heads/codex/hokenshi-latest-two-20261011",
+      "sha": "a78d031fa60978439071536f96c5ec8f42aa6c3d"
+    },
+    {
+      "ref": "refs/heads/codex/home-direct-qualification-20261012",
+      "sha": "94ec7ad139059ddd148e1bdcc0fb62775590d068"
+    },
+    {
+      "ref": "refs/heads/codex/home-presence-guidance-20261022",
+      "sha": "a78fce997f5978a3be644d0049a8c72d88922873"
+    },
+    {
+      "ref": "refs/heads/codex/home-two-categories",
+      "sha": "eebe4ce5438ab4fbcd89aa9f06b5263f05741f99"
+    },
+    {
+      "ref": "refs/heads/codex/ip-plan-rag-citations-20261012",
+      "sha": "1456e6b95e36ed843b09a3fa59bf7cb6e16b237e"
+    },
+    {
+      "ref": "refs/heads/codex/ipa-amazon-restore-20261004",
+      "sha": "32161c2dd106eedc05ba7719d959cf53a49313a4"
+    },
+    {
+      "ref": "refs/heads/codex/ipa-choice-explanations-advanced-2024-2025",
+      "sha": "18a824265025b7d6a42bb25391392096edcf8478"
+    },
+    {
+      "ref": "refs/heads/codex/ipa-choice-explanations-core-2024-2025",
+      "sha": "3ead54f7d805e3c1815b4907d88c161690b2c5f3"
+    },
+    {
+      "ref": "refs/heads/codex/ipa-session-parity-20260919",
+      "sha": "60ff5eab59f8bc88a11d8f94cec3242bce7201fb"
+    },
+    {
+      "ref": "refs/heads/codex/ipa-two-year-audit-sol-20260924",
+      "sha": "a73d6baf691a2e657de9fa94b73050a795359828"
+    },
+    {
+      "ref": "refs/heads/codex/josanshi-latest-two-20261011",
+      "sha": "cf17ee4a1bac247057d7d42b334cb77c017f93f3"
+    },
+    {
+      "ref": "refs/heads/codex/judo-seifukushi-latest-two-20261011",
+      "sha": "328bca2e8ba2a9f8ee9c4eada4739b1138983497"
+    },
+    {
+      "ref": "refs/heads/codex/kaigo-tsugino-links-20260928",
+      "sha": "1156ffa81492ab0f2a06422cc4f6cdf10ec8eeef"
+    },
+    {
+      "ref": "refs/heads/codex/kaigo-year-copy-20260928",
+      "sha": "b9e8a4b40418a5c46e721f41f5304a6fe8509866"
+    },
+    {
+      "ref": "refs/heads/codex/kaigo37-second-year-20260928",
+      "sha": "553cb6e15e2de6989187ff431979b4be781b528d"
+    },
+    {
+      "ref": "refs/heads/codex/kakomon-a14-20261013",
+      "sha": "d7d7e1b8b40e866233b8661b1c7eafb618e5632d"
+    },
+    {
+      "ref": "refs/heads/codex/kakomon-adsense-quality-20261011",
+      "sha": "0b5319133f835283d2b2f5880d35cda7d21b7982"
+    },
+    {
+      "ref": "refs/heads/codex/kakomon-all-qualifications-20261010",
+      "sha": "b5a2eddb79dc04a7da63df8e98a6631f9ac84ffc"
+    },
+    {
+      "ref": "refs/heads/codex/kakomon-home-design-20261010",
+      "sha": "6e233788b161b60b77fde9958f0998a109aee029"
+    },
+    {
+      "ref": "refs/heads/codex/kakomon-quality-wave1-20261008",
+      "sha": "2c96f6bc4ff65524962d94235c3d1b87be2dfcf3"
+    },
+    {
+      "ref": "refs/heads/codex/kakomon-ux-seo-20260920",
+      "sha": "78df014f9eba6f39b35987e7685692f4d95084b8"
+    },
+    {
+      "ref": "refs/heads/codex/kakomon-ux-st-sa-final-local-20261014",
+      "sha": "4f8312599365231c5cf282fdca77230641f9a223"
+    },
+    {
+      "ref": "refs/heads/codex/kanri-2024-20260927",
+      "sha": "6f57d5e49b4eec7fa57ad33f436b2f7c578f9933"
+    },
+    {
+      "ref": "refs/heads/codex/kanri-2025-complete-20260927",
+      "sha": "3e06d58a732d49ff247d0cf951f3604f88ef4f19"
+    },
+    {
+      "ref": "refs/heads/codex/kanri-2025-q16-17-20260927",
+      "sha": "2124ca146f37ccf4bafc364ebce21b402a4543e4"
+    },
+    {
+      "ref": "refs/heads/codex/kanri-2025-q18-28",
+      "sha": "6554991ce059b6b705d2b97f10ee5753f7ec94e1"
+    },
+    {
+      "ref": "refs/heads/codex/kanri-2025-q19",
+      "sha": "22874683614db1d021f852c4e106ce28ee304691"
+    },
+    {
+      "ref": "refs/heads/codex/kanri-2025-q26",
+      "sha": "0220936c577b5b58db07e52ba776c449085506e9"
+    },
+    {
+      "ref": "refs/heads/codex/kanri-2025-q32-36",
+      "sha": "87e687d4de7939fe9023d1b448d3b279988d0111"
+    },
+    {
+      "ref": "refs/heads/codex/kanri-2025-q37-42",
+      "sha": "911f0b5136fd19d03790ae1c7b18b905acec5fc2"
+    },
+    {
+      "ref": "refs/heads/codex/kanri-2025-q38",
+      "sha": "c86ac55ed1298073f32c10fabc8005da861a8177"
+    },
+    {
+      "ref": "refs/heads/codex/kanri-2025-q43-45",
+      "sha": "68cb556059726b9a8223655cc7ad9953d89689db"
+    },
+    {
+      "ref": "refs/heads/codex/kanri-2025-q46",
+      "sha": "60fab36989c10f1c6ecf1cb3eedf328a5e2f1ec3"
+    },
+    {
+      "ref": "refs/heads/codex/kanri-2025-repair-guideline-20260927",
+      "sha": "214b1178f236de091a6eafc591e234dcc5a9ffec"
+    },
+    {
+      "ref": "refs/heads/codex/kanri-2025-reserve-rights-assembly-20260927",
+      "sha": "13c8e2e3115ff2fbfd520d1ae1771992899b5cab"
+    },
+    {
+      "ref": "refs/heads/codex/kanri-2025-standard-rules-20260927",
+      "sha": "d1e38fb46775ccede4c7a1960e60e29b168021c4"
+    },
+    {
+      "ref": "refs/heads/codex/kanri-2025-tax-accounting-fire-20260927",
+      "sha": "bccb01ea5e404e7c63121f34f6cc77d56ad99094"
+    },
+    {
+      "ref": "refs/heads/codex/kanri-eiyoshi-20261010",
+      "sha": "36abef38f3c6362b7863a609f40a3dafec9cae81"
+    },
+    {
+      "ref": "refs/heads/codex/kanri-license-links-20261003",
+      "sha": "d5630b5a7fa7d525b382ccde11ac75439e4fe813"
+    },
+    {
+      "ref": "refs/heads/codex/kanri-relevant-guides-20261003",
+      "sha": "3240045d2ad59a1eb473cb1c36cf0c18b345970e"
+    },
+    {
+      "ref": "refs/heads/codex/kanri-seo-description-20261008",
+      "sha": "535b3c929c1febe20c581a6b8e0badb721d6abdf"
+    },
+    {
+      "ref": "refs/heads/codex/kenchiku-setsubishi-latest-two-20261011",
+      "sha": "45bbe94856767ac1f0f4cb574ed91bac23ad11c9"
+    },
+    {
+      "ref": "refs/heads/codex/kisho-latest-two-20261011",
+      "sha": "85975a584ccc872d203e4c5a3d32eae5d225b6c9"
+    },
+    {
+      "ref": "refs/heads/codex/kyusui-latest2-audit-20261103",
+      "sha": "f5e3fcf925bc1556e067e54b2876bbb7c5c641b9"
+    },
+    {
+      "ref": "refs/heads/codex/lab-71-72-owner-20261011",
+      "sha": "7b1441108194c340220912489dd9b5f4265778cf"
+    },
+    {
+      "ref": "refs/heads/codex/lab-rad-cli-safe34-20261011",
+      "sha": "822d91f131d68c078cd6990e44edeae4a4754e19"
+    },
+    {
+      "ref": "refs/heads/codex/lab-rad-saved-batch1-20261011",
+      "sha": "16f9c4b57f1908f9a4e69aa0de1f78bfc6a860b3"
+    },
+    {
+      "ref": "refs/heads/codex/lab-remaining-owner-20261011",
+      "sha": "913f93f21c7ecc18dc0cc2266f4c7ab584c6986e"
+    },
+    {
+      "ref": "refs/heads/codex/lab-saved-am24-20261011",
+      "sha": "e8e2ee3e507aa6e35e0a4520ccce1979a3babcc0"
+    },
+    {
+      "ref": "refs/heads/codex/lab-saved-cli-safe7-20261011",
+      "sha": "46758cdc3b407b376bb8e9ba1280a171e06ac612"
+    },
+    {
+      "ref": "refs/heads/codex/lckohyo-2025-choice-explanations-20260923",
+      "sha": "c18d6d919461d6a47cd5c29e6b050c1f7d918c43"
+    },
+    {
+      "ref": "refs/heads/codex/live-study-presence",
+      "sha": "aabfccbc978854b63ed2b50fc90e8950fd86b96c"
+    },
+    {
+      "ref": "refs/heads/codex/medical-ce-union-pr679-20261010",
+      "sha": "c8af60fa68ad46fa0aadd3d09a55968e19295459"
+    },
+    {
+      "ref": "refs/heads/codex/medical-hokenshi112-pilot-20261007",
+      "sha": "311098a01f06bff841f062b34c233629b93ee2e4"
+    },
+    {
+      "ref": "refs/heads/codex/medical-hokenshi112-reviewed13-20261007",
+      "sha": "8e15b0543cde6247e04f7cff5475179ee649f6dd"
+    },
+    {
+      "ref": "refs/heads/codex/medical-key9-closeout-20261011",
+      "sha": "aee7540be32bd97d37a36b0c760c2c800c7ebdce"
+    },
+    {
+      "ref": "refs/heads/codex/medical-next-union-20261010",
+      "sha": "9fc4220a5b27956a65b0bb27bcbc24231265c2fe"
+    },
+    {
+      "ref": "refs/heads/codex/medical161-publication-20261012",
+      "sha": "abcc3afa0bd277cd2f344e618244b0e37a7c7913"
+    },
+    {
+      "ref": "refs/heads/codex/medical34-post675-20261010",
+      "sha": "e989687f44c1d554ca39cf6e17e49ba12ae6aba4"
+    },
+    {
+      "ref": "refs/heads/codex/next-fp1-nurse-20261010",
+      "sha": "9aebb3c230e04b8259a40d2ee79c0c482485b247"
+    },
+    {
+      "ref": "refs/heads/codex/next59-integration-20261010",
+      "sha": "cb2b09d971b7326b4c28590070a2f86a732124d4"
+    },
+    {
+      "ref": "refs/heads/codex/note-catalog-kakomon-20261016",
+      "sha": "a5e4ecf8fea74269b65e7221dbdf701a2b06171a"
+    },
+    {
+      "ref": "refs/heads/codex/note-guides-20260927",
+      "sha": "2fbc152d6c9a743c8a562309c5a8c549f863a881"
+    },
+    {
+      "ref": "refs/heads/codex/nurse-latest-two-owner-20261011",
+      "sha": "08cf745f428adc6b6cab283abda52b4fea3564e2"
+    },
+    {
+      "ref": "refs/heads/codex/nurse-next-batch-decimal-20261010",
+      "sha": "f8d348724f8c23aa3ec499282360c76cc20e87b9"
+    },
+    {
+      "ref": "refs/heads/codex/nurse-primary11-20261011",
+      "sha": "bfced17e78b861ad2ffdc702264c9784596feb0c"
+    },
+    {
+      "ref": "refs/heads/codex/nw-free-index-link-20261003",
+      "sha": "6d0043652fc7d00e4a4eb58848d7cdb8584c5474"
+    },
+    {
+      "ref": "refs/heads/codex/ot13-source-explanations-20261011",
+      "sha": "bd9bc1e423815527dba794d261bd5d073cd89e5b"
+    },
+    {
+      "ref": "refs/heads/codex/ot61-am-next20-20261011",
+      "sha": "25277ca1081994ac49a36f31a41cb2aed1036cbb"
+    },
+    {
+      "ref": "refs/heads/codex/ot61-pm-public15-20261011",
+      "sha": "aa1e4d1fc44d54af4b57a105f01684a0974b3ed9"
+    },
+    {
+      "ref": "refs/heads/codex/pharma-ahaki608-followup-20261010",
+      "sha": "23180e27757a3aabb71ee46921278958585d9aee"
+    },
+    {
+      "ref": "refs/heads/codex/pharmacy-latest-two-graph-saved-20261011",
+      "sha": "a7c234f350c483edfbbd3b2ab90c1422deda4b03"
+    },
+    {
+      "ref": "refs/heads/codex/pharmacy-latest-two-model-saved-20261011",
+      "sha": "1396227bcb35fd3cd1e5350cbb4bcc53430bf4c8"
+    },
+    {
+      "ref": "refs/heads/codex/pharmacy-latest-two-required-figures-20261011",
+      "sha": "bfabb5bb8c7bcf79c1d6a73523ce49037c440bc7"
+    },
+    {
+      "ref": "refs/heads/codex/pharmacy-latest-two-science-saved-20261011",
+      "sha": "32b1631824f3ef1a20f7d6840f4e4de4c9ab1813"
+    },
+    {
+      "ref": "refs/heads/codex/pharmacy-selection-20261010",
+      "sha": "941366480c47bdd3589ffd4361d175617a96a54b"
+    },
+    {
+      "ref": "refs/heads/codex/pharmacy110-q129-q130-20261011",
+      "sha": "5e340e0d8269a5564804f2fe768c6fe25fd364c3"
+    },
+    {
+      "ref": "refs/heads/codex/pharmacy110-q131-q132-20261011",
+      "sha": "a8be667ed1c8fd0de62e4210647d487ad235608f"
+    },
+    {
+      "ref": "refs/heads/codex/pharmacy111-required-saved-20261011",
+      "sha": "b30dc91e46456c7a560d56ffe3e9e2efe445dc64"
+    },
+    {
+      "ref": "refs/heads/codex/pharmacy306-release-20261010",
+      "sha": "47e2f8eeb7df0f22d4bad6d53e531cf8429f4cfa"
+    },
+    {
+      "ref": "refs/heads/codex/presence-by-exam-20261011",
+      "sha": "db686de34c2b1365928689569735d76ea5ac7b57"
+    },
+    {
+      "ref": "refs/heads/codex/privacy-adsense-placement-20260927",
+      "sha": "1ba2537242d67c1f1815fd7c09a124aeca0e7e25"
+    },
+    {
+      "ref": "refs/heads/codex/pt-saved-qa20-20261011",
+      "sha": "d6a23b13182f5e345017bf6131ada07643f4efea"
+    },
+    {
+      "ref": "refs/heads/codex/pt-unowned-20261011",
+      "sha": "67b3486424e56ef942516b1b25e2ac3a1a883a28"
+    },
+    {
+      "ref": "refs/heads/codex/pt61-am16-kenchiku-20261011",
+      "sha": "4a49dcd842544ff2f606b426b245a08500e46fb6"
+    },
+    {
+      "ref": "refs/heads/codex/public7-text-only-20261015",
+      "sha": "2907b648e772a4f72440f42f8df2689971d07d49"
+    },
+    {
+      "ref": "refs/heads/codex/publication-validation-20261021",
+      "sha": "eab49ce7a515d9fdf09959b1dde9d17d94e409b8"
+    },
+    {
+      "ref": "refs/heads/codex/qualification-catalog-audit-20260927",
+      "sha": "da8ca3b4221e6349b780a0f388bfa017504a5b16"
+    },
+    {
+      "ref": "refs/heads/codex/qualification-expansion-20260923",
+      "sha": "28cad835242f439df73d9c4f8b488a75d0ca79a2"
+    },
+    {
+      "ref": "refs/heads/codex/qualification-followup-native-20261010",
+      "sha": "f80450fba3bbf63bc7b47b639bea0fd5210e0ff7"
+    },
+    {
+      "ref": "refs/heads/codex/qualification-followup-public-20261010",
+      "sha": "d0f81e73946130cf2f903bdd70cc28ab0da938ca"
+    },
+    {
+      "ref": "refs/heads/codex/qualification-next-native-20261010",
+      "sha": "94c962fe6591b18a2e15e55e5483ffd5d3748983"
+    },
+    {
+      "ref": "refs/heads/codex/qualification-next75-follow-20261010",
+      "sha": "f6bf8e12223311ececebc10d7ae7f386bd0f4c4e"
+    },
+    {
+      "ref": "refs/heads/codex/qualification-quality-audit-20260912",
+      "sha": "6ea4f43ac8703842737e15c2cd9ebbbf1a3a6225"
+    },
+    {
+      "ref": "refs/heads/codex/qualification-remaining-batch-20261015",
+      "sha": "07f55ba1d6018cd5aa634f7a1ab8a65aa52c3065"
+    },
+    {
+      "ref": "refs/heads/codex/qualification-revenue-eco-20260913",
+      "sha": "6b27921d2e562f291e72f44d68c154fc71a1638d"
+    },
+    {
+      "ref": "refs/heads/codex/qualified-batch-a13-20261011",
+      "sha": "20e5b7f177e30027a8605331c3d296770c4dcc07"
+    },
+    {
+      "ref": "refs/heads/codex/qualified-batch-main4b-20261011",
+      "sha": "27d1f707a468baced6b6ee53b3a3d86e81266120"
+    },
+    {
+      "ref": "refs/heads/codex/quiz-chat-redirect-20260928",
+      "sha": "b0e3df33458d99aafefe7dd2698eea1f71695dfa"
+    },
+    {
+      "ref": "refs/heads/codex/quiz-completion-tsugino-ai-20260928",
+      "sha": "479f53f6ec66c95cb914c57c6200da6536002d4b"
+    },
+    {
+      "ref": "refs/heads/codex/radio84-release-20261015",
+      "sha": "bbfa350f8eb3692ae3f0ce356fef3080922a8842"
+    },
+    {
+      "ref": "refs/heads/codex/radiology-latest-two-20261011",
+      "sha": "0b3f8c5976b90dea45ea18af7313a230c4b5802b"
+    },
+    {
+      "ref": "refs/heads/codex/remove-sc-contamination",
+      "sha": "6203558bc8fc4bc90fb918abd4be920c6deb330b"
+    },
+    {
+      "ref": "refs/heads/codex/revenue-completion-20260913",
+      "sha": "d765dc2f70c1c932763c1057b4d22b647ccc9ccc"
+    },
+    {
+      "ref": "refs/heads/codex/reviewed12-union-20261011",
+      "sha": "5253888861c4211b28d2103dac4e138994f51312"
+    },
+    {
+      "ref": "refs/heads/codex/riyoshi-latest-two-20261011",
+      "sha": "5f4bfe20bdb4d315faf1ed5c8f6975c086b6f5b6"
+    },
+    {
+      "ref": "refs/heads/codex/safety-consultant-final-20260919",
+      "sha": "e9353323f8051e73633290d8eb02f40643f62148"
+    },
+    {
+      "ref": "refs/heads/codex/safety-consultant-merge-ready-20260919",
+      "sha": "ef40f2aabd365051abfeab37ee7b6832d067372c"
+    },
+    {
+      "ref": "refs/heads/codex/safety-exam-note-link-20260911",
+      "sha": "66dbbcedc087ae9bb77ee9d357574c70dab0adea"
+    },
+    {
+      "ref": "refs/heads/codex/safety-exams-20260911",
+      "sha": "a1ece068507df53f3bd58437caf70225ab9e7e69"
+    },
+    {
+      "ref": "refs/heads/codex/safety-ipa-ux",
+      "sha": "edc5c8d4d61f88cec542e7d7f76c8e4398da2ce4"
+    },
+    {
+      "ref": "refs/heads/codex/seo-existing-question-routing-20261008",
+      "sha": "5050eff058067ba0f32d2dd05d8457606caad343"
+    },
+    {
+      "ref": "refs/heads/codex/shakai37-primary-audit-20260928",
+      "sha": "f802f78329f49cf067f9087ad75aab4561e06e90"
+    },
+    {
+      "ref": "refs/heads/codex/shakai37-second-round-20260928",
+      "sha": "22616cea691831dc64157593d753c1c7c53fd296"
+    },
+    {
+      "ref": "refs/heads/codex/sharoushi-kokunen-late6-20261010",
+      "sha": "053fcf29454579e54218dc89d1b9af81acf44a4a"
+    },
+    {
+      "ref": "refs/heads/codex/sharoushi-later15-20261010",
+      "sha": "f2f550aaff05b39eb149b168d17b5ec810dc9b2e"
+    },
+    {
+      "ref": "refs/heads/codex/sharoushi-latest-two-completion-20261011",
+      "sha": "92f8387695528ffde7c75f4ee59faaf53c788924"
+    },
+    {
+      "ref": "refs/heads/codex/sharoushi-post668-ready24-20261010",
+      "sha": "aaf7bc1c3216c93caba828edf88d5c327c70a075"
+    },
+    {
+      "ref": "refs/heads/codex/sharoushi-remaining33-codex-20261010",
+      "sha": "f70916179cc129b5751c4d91144fab1291051e33"
+    },
+    {
+      "ref": "refs/heads/codex/shika-ishi-latest-two-20261011",
+      "sha": "ab3deee5075b1778d084479b45dba4a9d11a8ef1"
+    },
+    {
+      "ref": "refs/heads/codex/site-ux-kakomon-20261018",
+      "sha": "10c93c8124b0060e732145afcd226f1dfd6f3b76"
+    },
+    {
+      "ref": "refs/heads/codex/sokuryoshi-latest-two-20261011",
+      "sha": "f34c1fb24892ec8a16fb3de0ed26cf2a125e714d"
+    },
+    {
+      "ref": "refs/heads/codex/specialist-cooking-source-handoff-20261011",
+      "sha": "fcc30f093edf8445873c9f2a39d9088ef802b445"
+    },
+    {
+      "ref": "refs/heads/codex/ssg-2026-publication-20261022",
+      "sha": "7e8bf78f5d71744fb8dbc6c78221e440f2e0ad47"
+    },
+    {
+      "ref": "refs/heads/codex/st-all-choice-reasons-20261011",
+      "sha": "a559c7d39cf872fbad5dec57902eb193a10676d1"
+    },
+    {
+      "ref": "refs/heads/codex/st-residual11-20261011",
+      "sha": "fa69813be7c55e02301264039ef445b905f78308"
+    },
+    {
+      "ref": "refs/heads/codex/st-sa-note-entry-20261004",
+      "sha": "6e760224428dcb1b233dd582719780825ab302ed"
+    },
+    {
+      "ref": "refs/heads/codex/st-two-year-choice-explanations-20260924",
+      "sha": "4d4a4f7bd89458206351efbdb3005ebe91c99c97"
+    },
+    {
+      "ref": "refs/heads/codex/takken-2024-discovery-20260926",
+      "sha": "10d113ed51df2670b998d1f12029938b6c65957d"
+    },
+    {
+      "ref": "refs/heads/codex/takken-2025-official-20260925",
+      "sha": "7f77807b03137c05c6034080e1f9ec988e96e295"
+    },
+    {
+      "ref": "refs/heads/codex/tohan-2024-kansai-second-session",
+      "sha": "2cdec1c8adfa1716a095c5802cc09b5fcfae6e24"
+    },
+    {
+      "ref": "refs/heads/codex/transparency-counts-20261005",
+      "sha": "8c98d4f11ef78bb803f7d369ecf08c5ec8c5d404"
+    },
+    {
+      "ref": "refs/heads/codex/tsugino-schedule-link-20260927",
+      "sha": "4d6983ac01d18baf42f0d532657dbf25bd4e09c2"
+    },
+    {
+      "ref": "refs/heads/codex/tsushin1-latest-two-20261011",
+      "sha": "1fcaa78f6400c44e02794602cacfab1ad6950b68"
+    },
+    {
+      "ref": "refs/heads/codex/tsushin2-2025-construction6-primary-20261011",
+      "sha": "6cfb289518192cfe76296e0cfdcd5549ced5c050"
+    },
+    {
+      "ref": "refs/heads/codex/tsushin2-2025-law14-primary-20261011",
+      "sha": "f381bba7935285c56a2101f34df66cae3b16a356"
+    },
+    {
+      "ref": "refs/heads/codex/tsushin2-2025-practical7-primary-20261011",
+      "sha": "db011adcabb796124d0be461a9b4f77c996fb34c"
+    },
+    {
+      "ref": "refs/heads/codex/tsushin2-2025-tech12-primary-20261011",
+      "sha": "ea865f5edc7082a6a50475dcd0dc9d1fe114471e"
+    },
+    {
+      "ref": "refs/heads/codex/tsushin2-2025-tech19-primary-20261011",
+      "sha": "14fc0e0fe69f5423b77c49660854b29759ab472d"
+    },
+    {
+      "ref": "refs/heads/codex/tsushin2-2026-law16-primary-20261011",
+      "sha": "01fd0dd2c110474936b8a26a868ef40277b79ed3"
+    },
+    {
+      "ref": "refs/heads/codex/tsushin2-construction10-primary-20261011",
+      "sha": "9b1542d01b754f715955c95e64ac9c5a32ef186b"
+    },
+    {
+      "ref": "refs/heads/codex/tsushin2-final8-primary-20261011",
+      "sha": "1ebf3f38470bff6de98858b48b87dafe1512a0d7"
+    },
+    {
+      "ref": "refs/heads/codex/tsushin2-first5-primary-20261011",
+      "sha": "f6761af8b533f2701b5166ed655e3ed936acbeb7"
+    },
+    {
+      "ref": "refs/heads/codex/tsushin2-last2-primary-20261011",
+      "sha": "d80f53199f8ae0db3c900a3a0821f9cc0931189a"
+    },
+    {
+      "ref": "refs/heads/codex/tsushin2-next5-primary-20261011",
+      "sha": "836b0bfafc649d2c2fb16d7c40155aa538ab026f"
+    },
+    {
+      "ref": "refs/heads/codex/tsushin2-systems10-primary-20261011",
+      "sha": "a35dea5a8b4fdeee47b651dc98e9c491212460af"
+    },
+    {
+      "ref": "refs/heads/codex/tsushin2-tech10-primary-20261011",
+      "sha": "ca44e77c2532a130e2b43f2c515cbc1d56b24b56"
+    },
+    {
+      "ref": "refs/heads/codex/unified-learning-complete",
+      "sha": "d29a1341dff12aa1729c76341f20224c01a7038f"
+    },
+    {
+      "ref": "refs/heads/codex/unpublished-five-20260927",
+      "sha": "3c50c113ec635493a746f0a4f5b508a93ec6b80b"
+    },
+    {
+      "ref": "refs/heads/codex/ux-exam-context-20261011",
+      "sha": "86eab637fe7eac8da2c7ddf2e4d163d82c993249"
+    },
+    {
+      "ref": "refs/heads/codex/ux-qualification-context-20261011",
+      "sha": "cdd64f6e4aa530584a7c2132588a36ea4313999c"
+    },
+    {
+      "ref": "refs/heads/codex/ux-redesign-20261003",
+      "sha": "795019233f16e6414a41b71f8ef5da67bd1b00e6"
+    },
+    {
+      "ref": "refs/heads/codex/zoen1-extra15-20260927",
+      "sha": "52f340166a92846877e78cd3d46da45447748385"
+    },
+    {
+      "ref": "refs/heads/codex/zoen1-owner-batch10-20261011",
+      "sha": "fad1e54c68a29f3c5c7f07b48868ad74cc93803e"
+    },
+    {
+      "ref": "refs/heads/codex/zoen1-owner-batch7-20261011",
+      "sha": "84409046b4e0bbd05b55082fd1b97abf4bf316c3"
+    },
+    {
+      "ref": "refs/heads/codex/zoen1-owner-batch8-20261011",
+      "sha": "2a1a18da35bff5d947409ff3ffd2f821c68ee54c"
+    },
+    {
+      "ref": "refs/heads/codex/zoen1-owner-batch9-20261011",
+      "sha": "1d826d755842dc6c26e772d216bcf399e7060dea"
+    },
+    {
+      "ref": "refs/heads/codex/zoen1-owner-next-20261011",
+      "sha": "699240af03793bb4f27b9c5bd4090fab71144cae"
+    },
+    {
+      "ref": "refs/heads/codex/zoen1-primary-batch5-20261011",
+      "sha": "8ca718d572ed17edc82cfac00e1a82b6f8baa6bd"
+    },
+    {
+      "ref": "refs/heads/codex/zoen2-latest-two-complete-20261011",
+      "sha": "2a4fcbb7b8285f5eb7b58ca268722a30b1060d58"
+    },
+    {
+      "ref": "refs/heads/codex/zoen2-seo-coverage-20261008",
+      "sha": "c55f9275981d07b9fb36224ff46d41824fc6b5b9"
+    }
+  ]
+}

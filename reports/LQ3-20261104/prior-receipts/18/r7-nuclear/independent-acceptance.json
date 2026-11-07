@@ -1,0 +1,339 @@
+{
+  "scope": "qual-new:18",
+  "reviewer": "/root/independent_content_review",
+  "status": "accepted_with_scope_limitations",
+  "reviewedAt": "2026-11-01T10:03:20.271389+00:00",
+  "questionsSha256": "be3078093edd6f0c291615147623ee8c132ca59f1aff3b8ba529cc50a81f7b94",
+  "sourceDocuments": [
+    {
+      "path": "work/sources/r7-nuclear.pdf",
+      "sha256": "1d17959e63efd31f51e590bcf9bf5be1a1d5a259bc11044b8b3965dd5e007c37"
+    },
+    {
+      "path": "work/sources/r7-answers.pdf",
+      "sha256": "6d4f5427838059ab50f0e7785f3f9cb2718fafaf96a8b74afcb332d969d7e311"
+    }
+  ],
+  "counts": {
+    "questions": 35,
+    "choiceReasons": 175,
+    "originalQuestionImages": 37,
+    "independentNumericalChecks": 13
+  },
+  "checks": {
+    "allQuestionExplanationsAnd175ReasonsRead": true,
+    "all37ImagesVisuallyInspected": true,
+    "all37ImagePixelsMatchIndependentSourcePdfRerender": true,
+    "all37ImageHashesMatchManifest": true,
+    "all35AnswersIndependentlyMatchOfficialPage22": true,
+    "allOriginalQuestionNumbersAndYearMatch": true,
+    "noClippedTextOrAdjacentQuestionContaminationAfterFix": true,
+    "noParaphrasedQuestionStatementsAdopted": true
+  },
+  "resolvedFindings": [
+    {
+      "question": 15,
+      "choice": 1,
+      "issue": "He原子2個分という電子数の誤記",
+      "resolution": "He原子1個に属する2個の電子へ修正。最終差分確認済み。"
+    },
+    {
+      "question": 34,
+      "choice": 1,
+      "issue": "誤対応のBが理由から欠落",
+      "resolution": "A,B,C,Dすべてが誤りへ修正。最終差分確認済み。"
+    },
+    {
+      "question": 16,
+      "issue": "原問画像の冒頭行と問題番号欠け",
+      "resolution": "上端を847/1.4ptへ拡張。修正画像を目視確認し、全文と問題番号の復元、隣接問混入なしを確認。"
+    }
+  ],
+  "openFindings": [],
+  "numericalQuestionNumbers": [
+    1,
+    8,
+    10,
+    11,
+    14,
+    16,
+    18,
+    22,
+    23,
+    27,
+    28,
+    31,
+    33
+  ],
+  "supportingReviewArtifacts": [
+    "work/review-notes.json",
+    "work/review-calculations.json"
+  ],
+  "imageEvidence": [
+    {
+      "path": "assets/q01-1.png",
+      "sha256": "c890843f8f3724f748c4d033ba4d42aeae5a657866bcb530585a56a5d21cafc3",
+      "sourcePage": 1,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q02-1.png",
+      "sha256": "e9a86fe6b99e966386302a0d6667e55e0a89d10102bb6f83879a38306d18f08a",
+      "sourcePage": 1,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q03-1.png",
+      "sha256": "c828e049e3368eaaddc6b1879df31fb1b546ca2d68858e80563b5d0c1f7ad2e6",
+      "sourcePage": 2,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q04-1.png",
+      "sha256": "5df0d60e01caae23260324420f16a3b3cff890bf6c72dbddd2bd0a1a743f5c1d",
+      "sourcePage": 2,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q05-1.png",
+      "sha256": "19ad497c2516785828624de36826cf0fb5b457b71e6fa90947d5f52fc0812f6c",
+      "sourcePage": 3,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q06-1.png",
+      "sha256": "5e24f5281a0c9701a55f2abeae0098856f714712ad85c16e4c78dddeceafb8ad",
+      "sourcePage": 3,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q07-1.png",
+      "sha256": "f9b0cf654f43b5fac89cefc50f790139a4e32fe7410ac9385f846fb3059d58f8",
+      "sourcePage": 4,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q08-1.png",
+      "sha256": "511c5efaef9ef70497d136965df252b10368c4314c5e4f401d7c2e38cc134cf7",
+      "sourcePage": 5,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q08-2.png",
+      "sha256": "0f29e1fe891a71d0344da9bb6a8cb0dc178e9c9d35aa28ec336012be965ea28f",
+      "sourcePage": 6,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q09-1.png",
+      "sha256": "37f8812f8048d6acbdc2bd101c1bcec461958813168f146a8708655924b2a670",
+      "sourcePage": 7,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q10-1.png",
+      "sha256": "33775882991d3d61595c8d3f97824fdb02e4cd78d8021dff9d85d8af4312914c",
+      "sourcePage": 8,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q11-1.png",
+      "sha256": "f56a07280b3dd1b9da1aa557f2fabc3b061bfefb710f0a991d3baeb5b95297b1",
+      "sourcePage": 9,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q11-2.png",
+      "sha256": "e049cca93904cc164aa44f03140ca10af06bb1ca2081973e243b316f8a115242",
+      "sourcePage": 10,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q12-1.png",
+      "sha256": "1b810a1b87432488a3aa04ade30f22dfd9098075cd962c4b48e530575494ad62",
+      "sourcePage": 11,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q13-1.png",
+      "sha256": "71832b5c3989a63c41684d812f8ba020f7bc5c1b0cf243796e17520211d349eb",
+      "sourcePage": 12,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q14-1.png",
+      "sha256": "90c0254a16696a5a31322e3e1385f82dff2da5047324960bf3e5bede88b04bc1",
+      "sourcePage": 13,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q15-1.png",
+      "sha256": "8a9f45028ada7009c0974d01f7f5a1960813de30dc7972c5903d7badd564ba54",
+      "sourcePage": 13,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q16-1.png",
+      "sha256": "23e567ed117b475fa95a5423975a04f1d3c94f5e14eed552dd0ea08ffe01be46",
+      "sourcePage": 13,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q17-1.png",
+      "sha256": "d9939921a4ac2b5f6cb6097b4bba3bf4782a44232121b9238bf5e5f7cba27586",
+      "sourcePage": 14,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q18-1.png",
+      "sha256": "186b234a70cad4388ed0c207ace7636f8fce84bf6fbd4c4e68d8aa94fe9b65d4",
+      "sourcePage": 14,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q19-1.png",
+      "sha256": "d1c19c2bcf57dd5c4e1f71251f7d4b9c98637801d502470f740543bb0853bba5",
+      "sourcePage": 14,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q20-1.png",
+      "sha256": "3affbbba3111dbbfc835849373d5240548c0d741aea062d0eb6e27796c170117",
+      "sourcePage": 15,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q21-1.png",
+      "sha256": "50ac0f7f7ab0fa17db6a71c4ee7cc9ff597cc9d937625b14d2c553384c7d08f2",
+      "sourcePage": 15,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q22-1.png",
+      "sha256": "25dba7e03762e85ece26296ea70c2d1aeef618bb1722563ac2a8cd6118870af7",
+      "sourcePage": 16,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q23-1.png",
+      "sha256": "c6fea6d1f09502b7e99aed73fdf43bff14e52aa4a3dec07b066c8960e522e6b6",
+      "sourcePage": 16,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q24-1.png",
+      "sha256": "455bba7195e07d2b33d4fc6009f3049f45eaa11cc31e2c302280c9bf92e600a2",
+      "sourcePage": 16,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q25-1.png",
+      "sha256": "8e0ba8f66228c75d1c74553a630b5dc67b7de26a121258b958c6c8da3359fe02",
+      "sourcePage": 17,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q26-1.png",
+      "sha256": "4e0618b7f8bc6816ed1a1f4b02a935babc92e99d31f65b50e8a3aae7c235e1b9",
+      "sourcePage": 17,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q27-1.png",
+      "sha256": "3a8039157974bb2f7297e759616f253eea29f19ef32203565eb2e6d0997030f9",
+      "sourcePage": 17,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q28-1.png",
+      "sha256": "c89a362fd0e77412e4d1e3f427435ba595d284a1f30d4aa7266b369772a8f257",
+      "sourcePage": 18,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q29-1.png",
+      "sha256": "be05e2cf382b26a1b5864410e20ab221c5df3572d373ae9460370691af6ff9f6",
+      "sourcePage": 18,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q30-1.png",
+      "sha256": "e2716ea83d2016bed91fba326ac6a9f2507f15adf459d18bc11513101be9fe1b",
+      "sourcePage": 19,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q31-1.png",
+      "sha256": "46e991baf6cbbc854a3a5f83346c0d2754145798aa7a8ef14192910690df8ecd",
+      "sourcePage": 19,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q32-1.png",
+      "sha256": "4a8fe3039da9f49707f84a85c73f67db44cbd97301fb173b4bd5549f287f79c7",
+      "sourcePage": 20,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q33-1.png",
+      "sha256": "86ad75a44d7114f38b9ac82c153f6844c72f7b0a036389a6b16a37602bff03a9",
+      "sourcePage": 21,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q34-1.png",
+      "sha256": "0068dd50acd57237578f52473e029d51a884a9ef861b3e1835a66e0ee2ae00a1",
+      "sourcePage": 22,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    },
+    {
+      "path": "assets/q35-1.png",
+      "sha256": "7bc748f86c56666363aa859e0d07665bb97b1cd495275f5668a34a0edaa68c17",
+      "sourcePage": 23,
+      "visualReview": "pass",
+      "sourcePixelsMatch": true
+    }
+  ],
+  "limitations": [
+    "main取込用中間packetの限定受入。アプリAPI互換性、取込アダプタ、実画面動作は受入対象外。",
+    "原問は画像方式。全文テキスト書き起こし・スクリーンリーダー読み上げは検証対象外。",
+    "Q13は公式正答1を採用。微分図Dに必要な実用微分の条件と理想微分との差異を解説の留意事項として維持。",
+    "共有への採用、本番反映、公開の実施・承認を意味しない。"
+  ]
+}

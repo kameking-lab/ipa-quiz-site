@@ -1,0 +1,1369 @@
+{
+  "scopeOriginals": 85,
+  "newGradableOriginals": 83,
+  "referenceIds": [
+    "jidosha-2025-second-2-gasoline-q13"
+  ],
+  "remainingIds": [
+    "jidosha-2026-first-body-q37"
+  ],
+  "rows": [
+    {
+      "id": "jidosha-2026-first-2-gasoline-q29",
+      "candidateSha256": "a8229f52af91e49756a767a261e9b0590a710b2392a9d071c8cbc0069eae6e5d",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        11
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.エ; validation",
+          "issue": "All four explanations checked: rollers versus sprags, hydraulically compressed alternating clutch plates, band/servo construction versus multidisc brake parts, and front-sun-gear locking through the reverse-clutch drum in this mechanism. The Nissan 2004 Altima manufacturer manual component table expressly supports front-sun-gear locking. The unsupported 2014 JASPA citation has been removed. Official answer 2 agrees.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-gasoline-p11.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png column 21 Q29=2; https://boredmder.com/FSMs/Nissan/Altima/2004/AT.pdf printed AT-19 component table, primary manufacturer text available in search index; candidate reference https://device.report/m/5a5467649e35bb91a1ee5a65b7479076778c5684a307d5a46238fadda19705b7.pdf"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/4e5e480e8de4-lq1c-review-revision2.json",
+      "evidenceSha256": "4e5e480e8de41eb4f93ae69ebcbc6d504f0f0d976f35a9ff72dba99512127dc3"
+    },
+    {
+      "id": "jidosha-2026-first-2-gasoline-q31",
+      "candidateSha256": "350811a10cb5d4b9b84a6594caf679ba06861d786a72d88ddedb71523550bb16",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        12
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "candidateSha256",
+          "issue": "Verified actual Q31 row SHA-256 using compact UTF-8 JSON in stored key order; matches binding and revision1 afterSha256. Every delta field matches the current candidate.",
+          "replacement": "None required; retain current candidate.",
+          "source": "data/qualification-staging/automotive/latest-two/qa/lq1c-candidates.json: writtenOriginals[id=jidosha-2026-first-2-gasoline-q31] and bindings; data/qualification-staging/automotive/latest-two/qa/lq1d-revision1-delta.json: Q31 afterSha256 and fields."
+        },
+        {
+          "field": "question; choices; answer",
+          "issue": "Original stem and all four choices agree. Official answer is (2), corresponding to candidate answer I (U+30A4).",
+          "replacement": "None required; retain current candidate.",
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-gasoline-p12.png: physical/printed page 12, No.31, choices (1)-(4); tmp/lq1b-sources/jaspa-2026-first-answers-p1.png: physical page 1, leftmost 21 (2 gasoline) column, No.31 = 2."
+        },
+        {
+          "field": "explanation; choiceExplanations.U+30A4",
+          "issue": "Prior HOLD resolved by positive primary comparator. The publisher explicitly groups ball, needle roller and cylindrical roller under radial (016-05), ball and tapered roller under angular (016-08), and ball and needle roller under thrust (016-07). This establishes the exact tapered-to-cylindrical correction within the teaching taxonomy, without requiring a specific textbook edition. TSK independently corroborates angular ball/tapered grouping. The explanation correctly distinguishes this teaching convention from broader manufacturer classification and real transmission use; it does not deny tapered bearings radial load capacity.",
+          "replacement": "None required; retain current candidate.",
+          "source": "data/qualification-staging/automotive/latest-two/qa/lq1d-supporting-sources/kouron-dictionary-p224.png: publisher sample physical page 6, printed page 224, diagrams 016-05, 016-07, 016-08; data/qualification-staging/automotive/latest-two/qa/lq1d-supporting-sources/tsk-bearing-p18.png: physical page 18, printed page 16, Problem 13 choice (2), explanation (2) angular ball/tapered diagrams and explanation (3) ball/needle/cylindrical diagrams. NSK https://www.nsk.com/jp-ja/products/roller-bearings/tapered-roller-bearings/ overview, radial and one-direction axial loads (lines 399-401); https://www.nsk.com/jp-ja/products/automotive/manual-transmissions/ product list, QAT tapered roller bearings (lines 415-419)."
+        },
+        {
+          "field": "choiceExplanations.U+30A2",
+          "issue": "Correct and instructional: M denotes metric thread, 10 is nominal outside diameter in mm, and 1.25 is pitch in mm. Distinguishes diameter from pitch.",
+          "replacement": "None required; retain current candidate.",
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-gasoline-p12.png: No.31(1); data/qualification-staging/automotive/latest-two/qa/lq1d-supporting-sources/kouron-dictionary-p224.png: physical page 6, printed 224, 016-01 metric screw diagram, external diameter and pitch labels."
+        },
+        {
+          "field": "choiceExplanations.U+30A6",
+          "issue": "Correct and instructional: the curved bearing surface supports radial load perpendicular to the shaft; the flange supports axial/thrust load parallel to it.",
+          "replacement": "None required; retain current candidate.",
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-gasoline-p12.png: No.31(3); data/qualification-staging/automotive/latest-two/qa/lq1d-supporting-sources/kouron-dictionary-p224.png: physical page 6, printed 224, 016-06 flanged half bearing; data/qualification-staging/automotive/latest-two/qa/lq1d-supporting-sources/tsk-bearing-p18.png: physical page 18, printed 16, Problem 13(1) and explanation (1), plain and flanged half bearing illustrations."
+        },
+        {
+          "field": "choiceExplanations.U+30A8",
+          "issue": "Correct and instructional: integral resin or deformed-metal locking features resist loosening; accurately distinguishes these from a slotted nut secured with a split pin.",
+          "replacement": "None required; retain current candidate.",
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-gasoline-p12.png: No.31(4); data/qualification-staging/automotive/latest-two/qa/lq1d-supporting-sources/kouron-dictionary-p224.png: physical page 6, printed 224, 016-03 self-locking nut resin and crimp features, contrasted with 016-02 slotted/castle nuts."
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/a5e05621e1f5-lq1d-review-q31.json",
+      "evidenceSha256": "a5e05621e1f578afba7833ebd5db49cfd2dd5d803f52346e4a2933bcf2cefb33"
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q01",
+      "candidateSha256": "0417d71509489e2c693a3c351975b3a4d86fff5bb217b464220ac4407729a661",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "All four explanations and original transcription checked. Official column 22 Q1=1 agrees. Excess-air CO, organic fuel/oil-derived SOF and thermal NOx distinctions are correct. The revised pre-injection explanation removes the unsupported PM assertion, retains shortened ignition delay and reduced combustion noise, and qualifies the pre/pilot terminology to this examination. It does not deny condition-dependent HC effects. No replacement needed.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-diesel-p02.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png column 22 Q1=1"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/964fed3fbba1-lq1c-review-revision3.json",
+      "evidenceSha256": "964fed3fbba11eefc1db91dcd7585c9cfefacf1a5fc261bad3f64646a439e7fe"
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q08",
+      "candidateSha256": "a966de13a2ea3e0bd8bbadd31fd35473d89c82ada7b1c44abaf0d38bb3f9d919",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        4
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "4?????????????A=CPU/B=RAM?????????????????????????????????????????????????4????",
+          "replacement": null,
+          "source": "DENSO CRS service manual Operation 1-73 (6) Fuel Injection Pressure Control: https://old.autonerdz.com/yabbfiles/Attachments/Denso_CRS_service_manual.pdf; ??? 2026-first-2-diesel p[4]; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
+      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q12",
+      "candidateSha256": "a0e674ebe0bf923cdfb3600cdcd8ddec443e509e766e87ccf360a2948354b6c8",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        6
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "Official answer 2 is preserved. The revised explanations distinguish radial journal support from axial thrust restraint and expressly acknowledge coexistence. They no longer insert only into the original option or deny all thrust bearings. This is supportable for the conventional bearing arrangement addressed here, not a claim that every turbo uses journal bearings. Intercooler density increase, wastegate bypass and low-flow variable-nozzle control in the other three explanations agree.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-diesel-p06.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png; https://www.garrettmotion.com/knowledge-center-category/turbo-replacement/turbocharger-bearing-systems/ (journal, thrust and ball-bearing distinctions)"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/a098fbbf1c81-lq1c-review-revision1-repaired.json",
+      "evidenceSha256": "a098fbbf1c81b9bbf070618762c51a0c95e48f26fbbd05d389512ce40d561c14"
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q15",
+      "candidateSha256": "3591670d2d313ccc7558d50da83841ff175da86fa2fad6d381e816718c63a840",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "Official answer 4 is preserved. The added qualification makes the general explanation specific to the examination system. Visual inspection of JASPA 2025-first 3-diesel Q15(2), p5, explicitly confirms coolant-temperature-controlled preheat time; its official answer is 2. JASPA 2019-first 2-diesel Q15(1), p8, additionally describes ECU control using starting coolant temperature and an intake-passage heater. The revised caveat correctly allows other designs to use intake temperature. The other three explanations agree with the textbook vehicle-size tendency, increasing resistance/current regulation, and series metal-glow-plug coil construction. Coolant temperature does not mean the coolant must be cold as a separate input category.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-diesel-p07.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20251005_3d.pdf p5 Q15(2); https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20251005_kai.pdf p1 column 33 Q15=2; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2019/20191006_2d.pdf p8 Q15(1); https://www.ngkntk.com/products/glow-plugs; https://www.international.com/-/media/project/tratongroup/international/international/vehicles/resources/tem-body-builder/engine-media/epa-21-international-a26/a26_engine_cold_start_assist_pdf.pdf?rev=e23fedbd33b64aa2a7912dc5b7205919"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/a098fbbf1c81-lq1c-review-revision1-repaired.json",
+      "evidenceSha256": "a098fbbf1c81b9bbf070618762c51a0c95e48f26fbbd05d389512ce40d561c14"
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q27",
+      "candidateSha256": "62a37c47adc9d6b6436331caf6cd3cbbfcedc38ab08fda719b8ca1f76b066208",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        12
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "question, answer, explanation, choiceExplanations",
+          "issue": "Original question, all four choices and explanations visually checked. Target official column 22 Q27=4 agrees with answer エ. Temperature raises sensing-chamber pressure; throttling produces a low-pressure liquid/vapor mist; outlet sensing regulates supply with load. The identical 2019 box-type diagram explicitly labels A as gas-phase refrigerant, directly supporting choiceExplanations.ウ without relying on an answer key to infer the charge. Its key gives Q27=1 for the reversed temperature/pressure statement. The revision appropriately excludes universal no-liquid-at-any-condition claims. No repair required.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-diesel-p12.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png column 22 Q27=4; qa/lq1c-supporting-sources/lq1c-20190324-2d-p13.png; qa/lq1c-supporting-sources/lq1c-20190324-key-p01.png column 22 Q27=1; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2018/20190324_2d.pdf#page=13"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/d3ba7035fe40-lq1c-review-revision4.json",
+      "evidenceSha256": "d3ba7035fe40d056443573a15608d9312035b2292fdfbd0935c16f0bd86301ee"
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q38",
+      "candidateSha256": "fc531ae6e4ed43d1a364c49fb773e184ed4055fe3068af2a968008f4e3c77ed7",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        15
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "Historical Article 102 paragraph 3 independently confirms unloaded 550 mm, secure mounting, symmetry and the 100 mm lateral relation. The later Article 180 specifies 450/500 mm with conditional 550 mm alternatives. All four explanations agree when read under the stated historical scope. The revision appropriately avoids claiming universal present-day applicability and requires class/build-date applicability checks for actual vehicles. Official answer 1 agrees.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-diesel-p15.png; https://www.mlit.go.jp/jidosha/kijyun/saimokukokuji/saikoku_102_00.pdf p2 paragraph 3; https://www.mlit.go.jp/jidosha/content/S180.pdf pp2-3 paragraph 3; target key p1 column 22 Q38=1"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/4e5e480e8de4-lq1c-review-revision2.json",
+      "evidenceSha256": "4e5e480e8de41eb4f93ae69ebcbc6d504f0f0d976f35a9ff72dba99512127dc3"
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q12",
+      "candidateSha256": "572c59cdf1642a0e23a2b2d9ee034b7e4a2bee2118e1c4f609be975f0fd9f0ae",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "????????????Honda????????????????????60???????????????????????????OFF??????????MAP????TPS???????????????????",
+          "replacement": null,
+          "source": "Honda service manual Fuel System 5-112/5-113??????????????? https://device.report/m/f5f492ba7e847359c40c83c3f4f3ab336599543f745f2406da8ced50251d757c; tmp/lq1b-sources/jaspa-2026-first-2-motorcycle-p05.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
+      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q21",
+      "candidateSha256": "08b528ad3caba4b1ab2d65753c1980789847fe65df0d612c41e43b3a723dc116",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        8
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "??4???????????????????????????????????????????????????????????????????????????????????3????",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-motorcycle-p08.png; ??? 2026-first-2-motorcycle p[8]; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
+      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+    },
+    {
+      "id": "jidosha-2026-first-2-motorcycle-q26",
+      "candidateSha256": "7eae9994ee0c8b9146c247c0be7f3b8c6c0cced3ed23e9eba249f51c69fdf10f",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        10
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "?????????????????????????????????????????????????????????????????????????????2?4???????????????????????????1?",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-motorcycle-p10.png; ??? 2026-first-2-motorcycle p[10]; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
+      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+    },
+    {
+      "id": "jidosha-2026-first-3-chassis-q09",
+      "candidateSha256": "041ec92b79f8f00aa4411d01d48b204e72faf3c5652ffe032ef2c7a352cdde51",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        4
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "All four explanations and original transcription checked. Official column 31 Q9=4 agrees. Relief limits pressure, the control valve directs cylinder flow, and vane pumps are standard here. Independently downloaded and visually inspected 2016-03-20 3-chassis Q10: option 4 explicitly specifies idling for reservoir-level inspection. Its incorrect-statement key is 1, supporting option 4. The candidate appropriately limits this scheme to the exam and preserves manufacturer engine-off procedures rather than imposing a universal idling rule.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-3-chassis-p04.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png column 31 Q9=4; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/20160320_20160828/20160320_3c.pdf physical p4 Q10(4); https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/20160320_20160828/20160320_ka.pdf physical p1 column 31 Q10=1; tmp/lq1c-r3-20160320-3c-p4.png; tmp/lq1c-r3-20160320-key-p1.png"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/964fed3fbba1-lq1c-review-revision3.json",
+      "evidenceSha256": "964fed3fbba11eefc1db91dcd7585c9cfefacf1a5fc261bad3f64646a439e7fe"
+    },
+    {
+      "id": "jidosha-2026-first-3-gasoline-q04",
+      "candidateSha256": "c29e458e844c647f4a57671bd42ac1729b0ace028be7bf6f5ec20ed433be98bc",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "??????????????????????????3?????????",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-3-gasoline-p02.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_kai.pdf"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
+      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+    },
+    {
+      "id": "jidosha-2026-first-3-gasoline-q05",
+      "candidateSha256": "03501ff22d7f423f2e3c0d292aa90d5f14ba660f9ee570db9e813f93c9b564c8",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "Official answer 4 is preserved. The replacement explicitly separates the exam treatment from an exact universal minimum at 60 percent, and identifies formulation and concentration-definition dependence. BASF G48 specifies volume concentration and reports below -50 C at 60 vol percent, without establishing an exact universal minimum. Cap pressure/vacuum regulation, shroud airflow guidance and coolant oxidation/additive deterioration explanations are consistent.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-3-gasoline-p02.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png; https://promo.basf.com/campaign/tasa/fichas-tecnicas/Glysantin%C2%AE%20G48%C2%AE%20-%20Engine%20Coolant%20Concentrate%20-%20TI.pdf p2"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/a098fbbf1c81-lq1c-review-revision1-repaired.json",
+      "evidenceSha256": "a098fbbf1c81b9bbf070618762c51a0c95e48f26fbbd05d389512ce40d561c14"
+    },
+    {
+      "id": "jidosha-2026-first-3-diesel-q11",
+      "candidateSha256": "b85f6b2a04e30e60f13703d1bc5bae6f0d495d31f44760877bec3ea61fc6bcbc",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        4
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "Official answer 4 and all four reasons checked. Jiggle-valve air venting and the distinction between pressure-valve opening-pressure testing and vacuum-valve operation checking are sound. The numerical coolant and thermostat statements are explicitly attributed to the exam assumptions rather than universal specifications. BASF G48 specifies volume concentration and a below -50 C result at 60 percent; this alone does not prove a -60 C freezing boundary. The revised wording does not make that inference. The 82-88 C and 5-7 C values remain representative exam values, not independently established universal calibrations.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-3-diesel-p04.png; https://promo.basf.com/campaign/tasa/fichas-tecnicas/Glysantin%C2%AE%20G48%C2%AE%20-%20Engine%20Coolant%20Concentrate%20-%20TI.pdf p2; https://fuji-seiko.co.jp/product1/; target key p1 column 33 Q11=4"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/4e5e480e8de4-lq1c-review-revision2.json",
+      "evidenceSha256": "4e5e480e8de41eb4f93ae69ebcbc6d504f0f0d976f35a9ff72dba99512127dc3"
+    },
+    {
+      "id": "jidosha-2026-first-3-diesel-q15",
+      "candidateSha256": "f0b6ccb04046383ff434b5e914b97838a06697651ff31559443f29d193d96812",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "Official answer 2 is preserved. The revised explanation clearly treats 250-350 C as the examination description rather than a guaranteed range for all diesel fuel, and accurately states the ENEOS SDS example of approximately 240 C autoignition. It does not confuse autoignition with flash point. Cold-weather grades 3/special 3, viscosity/ignition quality and the elementary pour-point explanation remain consistent.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-3-diesel-p05.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png; https://www.eneos.co.jp/business/sds/gasoline/pdf/02001_r.pdf section 9 p7, revised 2024-02-01"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/a098fbbf1c81-lq1c-review-revision1-repaired.json",
+      "evidenceSha256": "a098fbbf1c81b9bbf070618762c51a0c95e48f26fbbd05d389512ce40d561c14"
+    },
+    {
+      "id": "jidosha-2026-first-body-q02",
+      "candidateSha256": "d66fc43b486a129404997afd989f6d576527a637795168770ebd3f10663ed4e2",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2026-first-body-q03",
+      "candidateSha256": "fe6538f8fe2f4d91c598f483edcee58cf9e61f4383641ad0fc4e4f82f88b1350",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2026-first-body-q05",
+      "candidateSha256": "4e132e5879302d49a474a42dadd9b1d817653c076f6e4c15bed459cba4c75a00",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2026-first-body-q06",
+      "candidateSha256": "16f0c4759a98d9dc28a1dc822f01f1e94b3a9196dd65391c700b2d48599c56fe",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        3
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2026-first-body-q08",
+      "candidateSha256": "7bad2cf743a27b89da88b1ac6d0f73de1359aa3f9361f4c81753628b355b5514",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        3
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "Visually checked 2020 body Q8 and key column 43: all four statements are correct, answer 4. This independently establishes rib reinforcement, separate toe board for split panels, integrated toe board for one-piece panels and FF cross-member application. In the 2026 wording only statements (i) and (iv) remain correct, giving 2. All four count explanations now consistently identify this pair.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-body-p03.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png; qa/lq1c-supporting-sources/lq1c-20201004-body-p04.png Q8; qa/lq1c-supporting-sources/lq1c-20201004-key-p01.png column 43 Q8=4"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/4e5e480e8de4-lq1c-review-revision2.json",
+      "evidenceSha256": "4e5e480e8de41eb4f93ae69ebcbc6d504f0f0d976f35a9ff72dba99512127dc3"
+    },
+    {
+      "id": "jidosha-2026-first-body-q09",
+      "candidateSha256": "a6b1ae7f0d00fe225050fb1f759b50194c5cf77ae51c2d1fe28eb8ddcad6ec1b",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        3
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2026-first-body-q10",
+      "candidateSha256": "b0d4d73b4e33da50019771cf22f192d511666349195290129347b92e800e0eec",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        4
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/db05640eb692-lq1c-review-revision1-unreviewed.json",
+      "evidenceSha256": "db05640eb692410e37783d488e05a525558fdd2565ec888b6fd293f65251bac7"
+    },
+    {
+      "id": "jidosha-2026-first-body-q12",
+      "candidateSha256": "889f9e42673967780b57131168f791641beb649bc4ce83c6b480ac3a30527ce4",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        4
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2026-first-body-q14",
+      "candidateSha256": "53875a6501e4ccb986135e190d72e83efb763b2b2cf323b8efb2d6febccf4a76",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2026-first-body-q15",
+      "candidateSha256": "58f3cbf3e8c75126d49a51fbbdb38ccb324c13d6e0f1a516b4bdbf4bb1f5787c",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2026-first-body-q16",
+      "candidateSha256": "dc93626d5e635b72f04d2ec916a60c1b7f5cfbdbaf652ab1e2335edf120128f4",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        6
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2026-first-body-q17",
+      "candidateSha256": "48fa67f52e2449b139ff3b445e5f88fb029d757cb65767afa1b800642e174f3a",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        6
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2026-first-body-q19",
+      "candidateSha256": "f00911fbb8bf087a3443a4330ca31991702489593caa3f4b6ec6660cc56e59e9",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2026-first-body-q20",
+      "candidateSha256": "5607151d4beda307f0d6bd0ce0fcb2720332ea5901445617b00372cdab084f19",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2026-first-body-q21",
+      "candidateSha256": "9a93a564a5eae9c0ac24936b595c0d92d21e136b4213f3f5cd98d9826d60582a",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2026-first-body-q22",
+      "candidateSha256": "0dac0d2e27ca59e6fdb882db0f19bac445b6aca3da1b19014c21e7bd58465bc2",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/db05640eb692-lq1c-review-revision1-unreviewed.json",
+      "evidenceSha256": "db05640eb692410e37783d488e05a525558fdd2565ec888b6fd293f65251bac7"
+    },
+    {
+      "id": "jidosha-2026-first-body-q23",
+      "candidateSha256": "b66123ce743774209be225754c9e4c15fc0a685826e7984d1d2ebd37f4c178eb",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        8
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2026-first-body-q24",
+      "candidateSha256": "1a5ea647f84218d5147c4abc23dc3d89f39d5b4b451eedab5143485e9516ed28",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        8
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/db05640eb692-lq1c-review-revision1-unreviewed.json",
+      "evidenceSha256": "db05640eb692410e37783d488e05a525558fdd2565ec888b6fd293f65251bac7"
+    },
+    {
+      "id": "jidosha-2026-first-body-q25",
+      "candidateSha256": "dc4e8a4af17e68c32526516a2e3ae090564b4fc4be9f03cfe21bbd8d5e154817",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        8
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2026-first-body-q26",
+      "candidateSha256": "51ac2378cfe1c88c4bba1b134442ac61f36c3e115bb132e1e9edda849ff6c600",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        8
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2026-first-body-q27",
+      "candidateSha256": "23eadc74d9227b9a26079c3f683c8bd1bb988de6642ea52782f0163369ff3a84",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        9
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2026-first-body-q31",
+      "candidateSha256": "5b5302b3e395e625c5995d8784f50f144ba15fc7b0102b56e71d394e8bdc2f6e",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        10
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2026-first-body-q33",
+      "candidateSha256": "9a457d27f79d21bc03008b285bf1ab4aee3b39123da1c394eaa16eafd6baee4e",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        11
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2026-first-body-q35",
+      "candidateSha256": "13ab36e1d13436788a4a36003ddb967b0d84010c41241db2c03b283a12af05fe",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        11
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2026-first-body-q36",
+      "candidateSha256": "e3ca23d5685658f5d145ad80cb27cce9779098b19f313c4bb3f5321eda5c2fb3",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        11
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2026-first-body-q37",
+      "candidateSha256": "465322fa0a2adf38a38647dcebdd95d6269ed2dde33ef0035b64bf40d6a5d99f",
+      "verdict": "HOLD",
+      "sourcePagesChecked": [
+        12
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.ウ",
+          "issue": "Choice (3) still restates rejection by the official key, followed by sound but generic tool-selection advice. Neither inspected examination identifies which member or material/stage assignment makes the straight/orbital/DA combination inappropriate for the stated polyester-putty category. Thus the learner cannot derive the intended correction independently of memorizing the key.",
+          "replacement": "Retain official answer (2) and the practical caveat. Pending evidence, state explicitly: The official key rejects this combination, but the exact textbook mismatch has not yet been established. To complete the explanation, obtain the applicable JASPA textbook edition/page, official worked rationale, or a positive comparator establishing the relevant correct grouping; identify the specific misplaced tool or category and give the supported replacement. Do not infer that any listed machine is universally incapable of sanding polyester putty.",
+          "source": "tmp/lq1b-sources/jaspa-2026-first-body-p12.png, Q37; qa/lq1c-supporting-sources/lq1c-20201004-body-p14.png, Q37; qa/lq1c-supporting-sources/lq1c-20201004-key-p01.png, body Q37=1; https://www.3m.com/3M/en_US/collision-repair-us/applications/metal-shop/small-damage-repair-sop/ (steps 2, 4, 6 and application-specific guidance)"
+        },
+        {
+          "field": "choiceExplanations.エ",
+          "issue": "The positive rotary-plus-disc mapping for paint/rust does not establish an exclusive use or show why rotary/disc/DA is the wrong body-filler grouping. Flatness and finish quality are relevant considerations, but the present explanation does not connect them to a source-supported mismatch in this option. The 2020 comparator repeats this rejected combination and therefore provides no positive filler-group correction.",
+          "replacement": "Retain the supported paint/rust mapping and the statement that DA body-filler sanding is not universally prohibited. Explicitly label the body-filler grouping rationale as unresolved until an applicable textbook passage, official worked explanation or positive comparator identifies the intended correction. Then state the particular tool/category mismatch and supported correct grouping or stage-specific distinction. Do not treat a tool being appropriate for paint removal as proof that it is excluded from filler work.",
+          "source": "tmp/lq1b-sources/jaspa-2026-first-body-p12.png, Q37; qa/lq1c-supporting-sources/lq1c-20201004-body-p14.png, Q37; qa/lq1c-supporting-sources/lq1c-20201004-key-p01.png, body Q37=1; https://www.3m.com/3M/en_US/collision-repair-us/applications/metal-shop/small-damage-repair-sop/ (steps 2, 4, 6 and application-specific guidance)"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/3341d4ab34ef-lq1c-review-revision5.json",
+      "evidenceSha256": "3341d4ab34efa109c8e155982c22cb6485f178653ea5309005c7652737926add"
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q09",
+      "candidateSha256": "8718f84bbee377b0687999271306eec0785ad3fca5c479b2b30ed1112dcfe7a7",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/db05640eb692-lq1c-review-revision1-unreviewed.json",
+      "evidenceSha256": "db05640eb692410e37783d488e05a525558fdd2565ec888b6fd293f65251bac7"
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q11",
+      "candidateSha256": "36242ef010647b0d0034f0dd210ace756c8231d520b36200bd174668e8fd4188",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        9
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q17",
+      "candidateSha256": "f9bf674f5374c0d52c92bdc5777da5e80627788bc76b27b5b5b8ac615a93921a",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        12
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "The manufacturer manual independently specifies at most 10 mA in the lowest resistance range and prohibits inflator continuity testing. All four combination explanations correctly implement false/false/true. Torsion-bar load limitation permits belt payout after locking-base arrest; acceleration sensing converts the crash input to an electrical signal. This is a specified circuit-test condition, not authorization to measure a squib.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-1-small-written-p12.png; https://kiroku.bufsiz.jp/kiroku/syuurisyo2/SUZUKI/SUZUKI2/EVERY-DA62Vairbag.pdf physical p37, printed SRS airbag 4E-11; tmp/lq1c-r2-srs-37.png; target key p1 column 12 Q17=4"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/4e5e480e8de4-lq1c-review-revision2.json",
+      "evidenceSha256": "4e5e480e8de41eb4f93ae69ebcbc6d504f0f0d976f35a9ff72dba99512127dc3"
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q19",
+      "candidateSha256": "8850cbf214853b45a6dbd7a4bf9755e70b28d0476fa3e5e4fe4b8de9bbfdccf0",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        13
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/db05640eb692-lq1c-review-revision1-unreviewed.json",
+      "evidenceSha256": "db05640eb692410e37783d488e05a525558fdd2565ec888b6fd293f65251bac7"
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q22",
+      "candidateSha256": "90d8ebbadf6d83149936a989b9d71e6744c325b052027c872860e129ab8d6d53",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        15
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "All four explanations and original transcription checked. Target column 12 Q22=1 agrees. Electrical substitution of range 1 and the actual manual-valve range 2 explain the 2_1 result. Idle/full contacts provide three substitute throttle states; constant maximum pressure is not the throttle-sensor fallback described here. The 2020 Q17(4), with official answer 4, explicitly establishes D/2 fixed in third and range 1 fixed in second. The 2023 Q21 key 2 gives false/false/true: line-pressure-solenoid OFF still allows first through fourth, with increased shift/select shock. These are mechanism-specific conclusions, not universal AT fallback rules.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-1-small-written-p15.png; tmp/lq1b-sources/jaspa-2025-second-answers-p1.png column 12 Q22=1; qa/lq1c-supporting-sources/lq1c-20200322-1k-p12.png Q17; qa/lq1c-supporting-sources/lq1c-20200322-key-p01.png column 12 Q17=4; qa/lq1c-supporting-sources/lq1c-20230326-1k-p15.png Q21; qa/lq1c-supporting-sources/lq1c-20230326-key-p01.png column 12 Q21=2"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/964fed3fbba1-lq1c-review-revision3.json",
+      "evidenceSha256": "964fed3fbba11eefc1db91dcd7585c9cfefacf1a5fc261bad3f64646a439e7fe"
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q37",
+      "candidateSha256": "074f118467af7f7189f080506813432a8ea1bb77b0504b38051ed21fd817a086",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        26
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.イ",
+          "issue": "The sole remaining revision4 failure is resolved. The numerical fallback example now explicitly requires abnormalities of BOTH A and B while driving: D and 2 fixed in third gear, range 1 fixed in second gear. This matches primary 2020 Q17(4). It expressly states that this example alone does not establish B-only fallback gears and does not universally deny secondary shock. No repair required.",
+          "replacement": null,
+          "source": "qa/lq1c-supporting-sources/lq1c-20200322-1k-p12.png Q17(4), visually rechecked; qa/lq1c-supporting-sources/lq1c-20200322-key-p01.png column 12 Q17=4, checked in revision4; qa/lq1c-review-revision4.json remaining failure and targeted repair"
+        },
+        {
+          "field": "question, answer, explanation, all four choiceExplanations",
+          "issue": "The changed explanation remains consistent with the original B-only option and official answer (3), label ウ. The unchanged explanations distinguish lockup control, throttle-load substitution and pressure/shift control, and the hot-side oil-temperature-short signal without asserting universally maximum pressure or absence of secondary shock. All previously checked fields are cryptographically unchanged. No remaining failure found.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-1-small-written-p26.png Q37; tmp/lq1b-sources/jaspa-2025-second-answers-p1.png column 12 Q37=3; qa/lq1c-review-revision4.json; qa/lq1c-revision4-delta.json; qa/lq1c-revision6-delta.json"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/f06a4055aa92-lq1c-review-revision6.json",
+      "evidenceSha256": "f06a4055aa9240135c516f4935043a4d74e92946a65f23239ff2ae7442057049"
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q44",
+      "candidateSha256": "555a50f45cde31fc6f96ed34199b6e0072d28359567e776e22f8c40bf93c8720",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        30
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q46",
+      "candidateSha256": "c47bd5dc42bd7075c5461cc8eee8f5eb4754cb597ab93f60e066d3ebfb7f3f5c",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        30
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q48",
+      "candidateSha256": "2599a25d7acb774b97d95f87a52c9eaad167b3155083e5638134f4c7aa03c3dc",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        31
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/db05640eb692-lq1c-review-revision1-unreviewed.json",
+      "evidenceSha256": "db05640eb692410e37783d488e05a525558fdd2565ec888b6fd293f65251bac7"
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q50",
+      "candidateSha256": "194e4565decc7c546215f1adde49be7f54d98631eeb9914dfe673a7e07362bbd",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        32
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-2-gasoline-q01",
+      "candidateSha256": "e80bfc9762cb8ffae0e7ba578b40149efb973fe54e589fdabc86edd45194887f",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "All four reasons checked: conformability, seizure resistance rather than fatigue resistance, the explicitly exam-scoped tin-content claim, and embeddability. The revision does not infer composite-shell expansion from pure-element coefficients and directs actual clearance selection to material/construction/service-specific manufacturer specifications. The exact assumed alloy and layer structure remain unidentified; acceptance is for this accurate caveat, not a newly verified universal tin-content law. Official answer 2 agrees.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-2-gasoline-p02.png; https://www.mahle-aftermarket.com/na/en/support/questions-and-comments/ bearing oil-clearance discussion; target key p1 column 21 Q1=2"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/4e5e480e8de4-lq1c-review-revision2.json",
+      "evidenceSha256": "4e5e480e8de41eb4f93ae69ebcbc6d504f0f0d976f35a9ff72dba99512127dc3"
+    },
+    {
+      "id": "jidosha-2025-second-2-gasoline-q13",
+      "candidateSha256": "826b20228be88d3e3bb2aff722f9f62de78bf18ac75c1cb30eaf28dcb5af2347",
+      "verdict": "REFERENCE",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "????p1?????????????2?3.14?1200?10/60=1256 W=1.256 kW???4?0.746/1.265/2.456/4.726???????????PASS????REFERENCE?",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-2-gasoline-p05.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
+      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+    },
+    {
+      "id": "jidosha-2025-second-2-gasoline-q15",
+      "candidateSha256": "419955d58b9ec376ec0b7cdec6a0b4273f07c93843123c3a0ceec046bd022631",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "All four explanations and original transcription checked. Target column 21 Q15=3 agrees. MAP voltage rises with pressure, Hall sensing detects throttle position, and zirconia output is high rich/low lean in the stated comparison. Visually inspected publisher printed p137 at physical p11 of the 24-page sample: paragraph 4 and the diagram explicitly show the tooth-facing magnetic-flux component and resistance at their minima. This supports both corrected quantities. The earlier absent-page objection is withdrawn; physical page 137 was the wrong locator. Candidate hash is unchanged and no textual repair is required.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-2-gasoline-p05.png; tmp/lq1b-sources/jaspa-2025-second-answers-p1.png column 21 Q15=3; https://www.kouronpub-onlineshop.com/html/template/default/assets/pdf/2gmk_2025.pdf physical p11, printed p137; tmp/lq1c-2gmk-2025.pdf; tmp/lq1c-2gmk-p11.png"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/964fed3fbba1-lq1c-review-revision3.json",
+      "evidenceSha256": "964fed3fbba11eefc1db91dcd7585c9cfefacf1a5fc261bad3f64646a439e7fe"
+    },
+    {
+      "id": "jidosha-2025-second-2-gasoline-q23",
+      "candidateSha256": "e451c867f331757dfa054e9fd536fb237cc6aad71ac153b43272bb5700f5c2a5",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "All four reasons checked: sleeve-type flux variation, ring-type relative displacement/inductance, column versus pinion assistance, and input magnet/output yoke in the described Hall arrangement. Toyota training p5-18 explicitly locates rings 1/2 on the input shaft and ring 3 on the output shaft and explains inductance variation. The revision no longer incorrectly relocates sleeve-type shaft protrusions. Official answer 1 agrees.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-2-gasoline-p07.png; https://www.mri-auto-diagnostics.com/wp-content/uploads/2020/11/Power-Steering-2004-2009-Prius.pdf physical p4, printed 5-18 Fig.5.21, fetched and text inspected; target key p1 column 21 Q23=1"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/4e5e480e8de4-lq1c-review-revision2.json",
+      "evidenceSha256": "4e5e480e8de41eb4f93ae69ebcbc6d504f0f0d976f35a9ff72dba99512127dc3"
+    },
+    {
+      "id": "jidosha-2025-second-3-chassis-q07",
+      "candidateSha256": "408ad97025744824edc8755cba91c9d17a7fb2e7cfd47a3527f0b5b8269cc259",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        3
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "??????????????????????????????????????????????",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-3-chassis-p03.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
+      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q01",
+      "candidateSha256": "fde559057a95c4257f291cbd2974d27e048ed7554c2ee77809bce8d443df2c50",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/db05640eb692-lq1c-review-revision1-unreviewed.json",
+      "evidenceSha256": "db05640eb692410e37783d488e05a525558fdd2565ec888b6fd293f65251bac7"
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q03",
+      "candidateSha256": "4be073d6a87c89c6dc0cd3af9ce57f657e1a73e904158162e0be5dc1a707e288",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q05",
+      "candidateSha256": "a1cd6fd058a091f639f0ece645e9d5315499fcac7bebdd00d1d14401177d495e",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        3
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q08",
+      "candidateSha256": "62e3f53966e4e55234160f4a23baedacb915b5d59f655aed0ed141ba327f38c6",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        3
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q09",
+      "candidateSha256": "bc6c189d9e60304e8ed77ddd486e2197ab28fc6dae012816289175bbbaf16bce",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        3
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q10",
+      "candidateSha256": "46110631b0813850ec2b9cdaf47c132d4181a9aeb8d6a9c18f3cd3c0073623fd",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        4
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q11",
+      "candidateSha256": "36bcff5c70901bd185f89a86f19f03edcd7bc6eb6c8aca56f798cf6ec538f0b5",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        4
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q15",
+      "candidateSha256": "30f6a974d9273b0431635e530020e25a0e6c1c33cf2d4147ce20a87698061109",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "All four explanations and original transcription checked. Target column 32 Q15=2 agrees. Absorptive material removes acoustic energy; simply increasing pressure is not the stated silencing mechanism. The 2023 Q13 incorrect-statement question has official answer 3, confirming both option 1 restriction to suppress pressure fluctuations and option 4 expansion with pressure reduction. The revised explanation correctly distinguishes these exam descriptions and explicitly avoids denying the silencing contribution of an expanded chamber.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-3-gasoline-p05.png; tmp/lq1b-sources/jaspa-2025-second-answers-p1.png column 32 Q15=2; tmp/lq1c-20230326-3g-p04.png Q13(1),(4); tmp/lq1c-20230326-key-p01.png column 32 Q13=3"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/964fed3fbba1-lq1c-review-revision3.json",
+      "evidenceSha256": "964fed3fbba11eefc1db91dcd7585c9cfefacf1a5fc261bad3f64646a439e7fe"
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q19",
+      "candidateSha256": "1316cafb9de93f014787926b48d9e80d85637dbb474b63edd12480b0d7dfd865",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        6
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q20",
+      "candidateSha256": "72984e35e9193ce1cd80cf404bdbfafb064d37c05a30dfc3354ee13deb8617e0",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        6
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q23",
+      "candidateSha256": "ef498df2918c88392df6bcfe94cbd719c05f6ba2d3a1e63f8041a9974b7c8ea9",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q27",
+      "candidateSha256": "312467e5956ddaeb82eb09fcd2fdf4541332ebcca3b804c2f6a4aedc218ad671",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        8
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q01",
+      "candidateSha256": "456efa120e514007a8b3915133f64d6c4418987ff47bd6af5987768ee68b0afe",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q03",
+      "candidateSha256": "8db8b0988551b98f16596ead8e9b9338aa54c7a9bc5d5b2230a909eaec4eb2a6",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q04",
+      "candidateSha256": "28a5d7663610eb380e497a76f93898a36aae259ad5e1efaae43d62fc962a2a41",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q08",
+      "candidateSha256": "702cd0202fba2eae0704fb36f25e892952efd26edef481f2db25915c25f4af20",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        3
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q09",
+      "candidateSha256": "7813fda646110c0eae2f2d18fc56fe60527a27206b1b7a01a28a21e02c4619d5",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        3
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q11",
+      "candidateSha256": "183ba41ed6387c7a9822028b37c6ef7ad7e8abe1f235e37526148a3e2c6218db",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        4
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q13",
+      "candidateSha256": "71a62f97ceecbc59c78c8b9d6b095c7910c318ec3975e9da8fcce6c91d476639",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q14",
+      "candidateSha256": "5a7480f736cfc281c5e7e4df7ada2c8398dea2f77cb7fe9e84947fe2b5e9ea08",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q16",
+      "candidateSha256": "51fa205d9daba40ade7da7bbe67af8b962057ac9eb54ec4ee35a9087c7984b6a",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q17",
+      "candidateSha256": "ed7a429f250fa39bd424c89684d519b0b7ddc2098263f4bc1312ac017237a467",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        6
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q20",
+      "candidateSha256": "4fa04c6f2a91e13d248aaf3a9133e88ed246de2cf985b6ba5594a18d5f3ea920",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        6
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q25",
+      "candidateSha256": "ad06999607829718a82f034c7ec67d8dc2e0ecb3139a64a30262c314fd9223da",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/db05640eb692-lq1c-review-revision1-unreviewed.json",
+      "evidenceSha256": "db05640eb692410e37783d488e05a525558fdd2565ec888b6fd293f65251bac7"
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q26",
+      "candidateSha256": "af377593255b672186d421ffc05e1a23858e00ab051db88f028c1b377e5903e4",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/00197a0b0211-lq1c-review-unreviewed.json",
+      "evidenceSha256": "00197a0b0211594f2945d86aec27cf4d2811dd6ef7c12ce915d834ff359fedaf"
+    },
+    {
+      "id": "jidosha-2025-second-3-motorcycle-q04",
+      "candidateSha256": "b048b933e62bce9ac3a890eee863da4abf4ecf075219f7bb8ceb679f9f8dea51",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "????????????????????????????????????????????",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-3-motorcycle-p02.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf; https://www.idemitsu.com/jp/apollolink/carlife/mainte/e-oil/index.html"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
+      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+    },
+    {
+      "id": "jidosha-2025-second-electrical-q01",
+      "candidateSha256": "0ecb2fa894e3552dce6fd2596e8eeb50d3e38b7dbb7cd70a8808d167710152be",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "??2???????????????????????????????????????????????",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-electrical-p02.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf; https://toshiba.semicon-storage.com/jp/semiconductor/knowledge/e-learning/basics-of-schottky-barrier-diodes/chap1/chap1-2.html"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/fbf996143950-lq1c-review-repaired.json",
+      "evidenceSha256": "fbf9961439509843e5a2b51a31caa589d5ea270281ab1cc074b5e84a3eb20730"
+    },
+    {
+      "id": "jidosha-2025-second-body-q24",
+      "candidateSha256": "d5249fe81224eddec0816d8caedc7b5b001104270dc24876aee651ded4c82512",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        8
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "All four reasons checked. The revised first explanation accurately reports the official treatment without claiming that compatible filler requires identical composition or inventing an ordinary-sheet-metal assumption. The 309-series dissimilar-joint example is directly supported. Dedicated cast-iron repair consumables also exist. Primary-input capacity, unloaded voltage before arcing, and flux-coated covered electrodes are correct. Acceptance covers the explicit distinction between exam scoring and practical exceptions; it does not certify the broad original option 1 as universally false.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-body-p08.png; https://www.weld.nipponsteel.com/techinfo/weldqa/detail.php?id=27TP33C; https://lincolnelectric.co.jp/products/Consumable (TECH-ROD 55 cast-iron welding/repair); target key p2 column 43 Q24=2"
+        }
+      ],
+      "evidencePath": "data/qualification-staging/automotive/latest-two/qa/lq1b-recovered-evidence/4e5e480e8de4-lq1c-review-revision2.json",
+      "evidenceSha256": "4e5e480e8de41eb4f93ae69ebcbc6d504f0f0d976f35a9ff72dba99512127dc3"
+    }
+  ]
+}

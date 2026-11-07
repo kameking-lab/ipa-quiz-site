@@ -1,0 +1,86 @@
+{
+  "taskStatus": "completed-unpublished-staging",
+  "round75TargetSourceQuestions": 200,
+  "round75SourceQuestions": 200,
+  "round75RemainingSourceQuestions": 0,
+  "ingested75Questions": 200,
+  "registered75QualificationQuestionCounts": {
+    "keiryoshi": 100,
+    "keiryoshi-nodo": 100,
+    "keiryoshi-soon": 100
+  },
+  "latestTwoQualificationQuestionCounts": {
+    "keiryoshi": 200,
+    "keiryoshi-nodo": 200,
+    "keiryoshi-soon": 200
+  },
+  "latestTwoSourceQuestions": 400,
+  "latestTwoCandidateIds": 600,
+  "ocrCandidates": 200,
+  "visualTranscriptionReviews": 200,
+  "machineDiffsReviewed": 200,
+  "choiceExplanationsWritten": 1000,
+  "figureClassificationReviewed": 200,
+  "figureCropsPixelVerified": 55,
+  "independentCalculationAndConditionChecks": 81,
+  "calculationFlaggedQuestions": 79,
+  "historicalLawSources": 11,
+  "checks": {
+    "validate": {
+      "command": [
+        "pnpm",
+        "validate:questions"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 6.6,
+      "log": "validate.log"
+    },
+    "typecheck": {
+      "command": [
+        "pnpm",
+        "typecheck"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 33.86,
+      "log": "typecheck.log",
+      "NODE_OPTIONS": "--max-old-space-size=8192"
+    },
+    "vitest": {
+      "command": [
+        "npx",
+        "vitest",
+        "run",
+        "__tests__/keiryoshi-staging.test.ts",
+        "__tests__/seo"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 99.36,
+      "log": "vitest.log"
+    },
+    "source-verifier": {
+      "command": [
+        "python3",
+        "scripts/verify-keiryoshi-source.py"
+      ],
+      "exitCode": 0,
+      "elapsedSeconds": 3.07,
+      "log": "source-verifier.log"
+    }
+  },
+  "validationScope": "第75回200原問・300候補を含む両回400原問・600候補。画像画素監査・再計算は別途成功。テキストの意味・忠実性の著者目視照合は200問別台帳。",
+  "round76UnchangedFiles": 163,
+  "sharedIndexChange": "第75回の8科目import・原問配列追加。第76回原問は変更なし。",
+  "publication": "staging remains unpublished",
+  "independentReviewRequested": false,
+  "independentReviewPassed": false,
+  "correctionNoticeStatus": "公式検索では第75回訂正未発見。案内ページHTTP403のため不存在は確認できず。",
+  "commit": false,
+  "push": false,
+  "build": false,
+  "pr": false,
+  "deploy": false,
+  "git diff --check": {
+    "exitCode": 0
+  },
+  "commitConstraint": ".gitは環境設定で読み取り専用。権限変更・別経路による回避はしていない。"
+}

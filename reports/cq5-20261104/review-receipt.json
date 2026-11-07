@@ -1,0 +1,18 @@
+{
+  "task": "CQ5",
+  "model": "gpt-6-astra",
+  "sandbox": "read-only",
+  "executable": "C:/Users/kanet/AppData/Roaming/npm/codex.cmd",
+  "separateProcess": true,
+  "reviewedCommit": "6a7a08a92",
+  "baseCommit": "bb912dfd0",
+  "reviews": [
+    {"attempt": 1, "status": "FAIL", "sessionId": "01a1a6b3-0b14-7290-80f0-d9348a749b92", "command": "codex.cmd exec -m gpt-6-astra -s read-only -C C:/Users/kanet/20260522/wt-chiiki-ryoko -o reports/cq5-20261104/review-1.md -", "resultFile": "review-1.md"},
+    {"attempt": 2, "status": "FAIL", "sessionId": "01a1a6b9-77bc-7c50-89ed-17012c8a82d6", "command": "codex.cmd exec -m gpt-6-astra -s read-only -C C:/Users/kanet/20260522/wt-chiiki-ryoko -o reports/cq5-20261104/review-2.md -", "resultFile": "review-2.md"},
+    {"attempt": 3, "status": "PASS", "sessionId": "01a1a6b9-77bc-7c50-89ed-17012c8a82d6", "command": "codex.cmd exec -m gpt-6-astra -s read-only -C C:/Users/kanet/20260522/wt-chiiki-ryoko resume 01a1a6b9-77bc-7c50-89ed-17012c8a82d6 -o reports/cq5-20261104/review-3.md -", "resultFile": "review-3.md", "note": "New CLI process, continued independent reviewer context to retain its completed whole-pack review."}
+  ],
+  "scope": {"stems":118,"choices":472,"officialAnswers":118,"images":51,"allChoiceExplanationsRead":472},
+  "officialAnswersChanged": false,
+  "publicAllowed": false,
+  "limitation": "Reviewer sandbox could not start Vitest (spawn EPERM); parent test and typecheck successes are recorded separately in validation.json. Review does not certify an exhaustive history of every legal amendment."
+}

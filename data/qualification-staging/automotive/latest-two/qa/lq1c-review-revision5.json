@@ -1,0 +1,37 @@
+{
+  "model": "gpt-6-astra",
+  "scope": "Independent re-review of only jidosha-2026-first-body-q37 in the current frozen packet and revision5 delta. Original 2026 body page 12 and 2020 body page 14 visually inspected; 2020 key page 1 and current official-answer table checked. Transcription, official answer (2), overall explanation and all four choice explanations examined. Canonical candidate hash, revision delta hash, local source PDF hash and physical-page URL binding verified. No calculation is required. Choice (1) now has a supported positive correction to rotary plus disc for the examination grouping; choice (2) correctly explains DA feather edging.",
+  "limitations": [
+    "sourcePagesChecked lists pages of the current question PDF only; supplementary comparator pages are identified separately in scope and findings.",
+    "The 2020 positive comparator and key establish the accepted old-paint/rust pair and reject the two filler combinations, but do not supply the reason for either filler-group mismatch or their accepted replacements.",
+    "3M practical guidance supports DA paint removal and feather edging and distinguishes filler shaping, glaze sanding and subsequent refinement. It does not identify the JASPA textbook grouping or establish a one-to-one equivalence between its material categories and the examination terms.",
+    "No false universal inability claim is identified in the revised DA caveats. HOLD concerns the missing educational rationale for choices (3) and (4), not an answer-key discrepancy or a demand to invent exclusive real-world tool uses.",
+    "No candidate, product, prior receipt or commit was changed. Report prose is ASCII; field labels use JSON Unicode escapes."
+  ],
+  "rows": [
+    {
+      "id": "jidosha-2026-first-body-q37",
+      "candidateSha256": "465322fa0a2adf38a38647dcebdd95d6269ed2dde33ef0035b64bf40d6a5d99f",
+      "verdict": "HOLD",
+      "sourcePagesChecked": [
+        12
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.\u30a6",
+          "issue": "Choice (3) still restates rejection by the official key, followed by sound but generic tool-selection advice. Neither inspected examination identifies which member or material/stage assignment makes the straight/orbital/DA combination inappropriate for the stated polyester-putty category. Thus the learner cannot derive the intended correction independently of memorizing the key.",
+          "replacement": "Retain official answer (2) and the practical caveat. Pending evidence, state explicitly: The official key rejects this combination, but the exact textbook mismatch has not yet been established. To complete the explanation, obtain the applicable JASPA textbook edition/page, official worked rationale, or a positive comparator establishing the relevant correct grouping; identify the specific misplaced tool or category and give the supported replacement. Do not infer that any listed machine is universally incapable of sanding polyester putty.",
+          "source": "tmp/lq1b-sources/jaspa-2026-first-body-p12.png, Q37; qa/lq1c-supporting-sources/lq1c-20201004-body-p14.png, Q37; qa/lq1c-supporting-sources/lq1c-20201004-key-p01.png, body Q37=1; https://www.3m.com/3M/en_US/collision-repair-us/applications/metal-shop/small-damage-repair-sop/ (steps 2, 4, 6 and application-specific guidance)"
+        },
+        {
+          "field": "choiceExplanations.\u30a8",
+          "issue": "The positive rotary-plus-disc mapping for paint/rust does not establish an exclusive use or show why rotary/disc/DA is the wrong body-filler grouping. Flatness and finish quality are relevant considerations, but the present explanation does not connect them to a source-supported mismatch in this option. The 2020 comparator repeats this rejected combination and therefore provides no positive filler-group correction.",
+          "replacement": "Retain the supported paint/rust mapping and the statement that DA body-filler sanding is not universally prohibited. Explicitly label the body-filler grouping rationale as unresolved until an applicable textbook passage, official worked explanation or positive comparator identifies the intended correction. Then state the particular tool/category mismatch and supported correct grouping or stage-specific distinction. Do not treat a tool being appropriate for paint removal as proof that it is excluded from filler work.",
+          "source": "tmp/lq1b-sources/jaspa-2026-first-body-p12.png, Q37; qa/lq1c-supporting-sources/lq1c-20201004-body-p14.png, Q37; qa/lq1c-supporting-sources/lq1c-20201004-key-p01.png, body Q37=1; https://www.3m.com/3M/en_US/collision-repair-us/applications/metal-shop/small-damage-repair-sop/ (steps 2, 4, 6 and application-specific guidance)"
+        }
+      ]
+    }
+  ]
+}

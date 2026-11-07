@@ -1,0 +1,41 @@
+{
+  "status": "on-hold",
+  "reason": "公式正答5に対する肢1の評価を確定できない。正答は変更せず、演習用ステージングから除外。",
+  "question": {
+    "id": "hoshasen-2-2026-kagaku-q9",
+    "grade": 2,
+    "year": 2026,
+    "subject": "化学",
+    "number": 9,
+    "pdfPage": 13,
+    "question": "次の密封線源、線源からの放射線、及びその放射線を利用する装置についての組合せのうち、正しいものはどれか。",
+    "choices": [
+      "²²Na　消滅放射線　陽電子消滅寿命測定装置",
+      "³²P　β⁻線　ECDガスクロマトグラフ",
+      "⁶⁰Co　γ線　メスバウアー分光装置",
+      "²⁴¹Am　α線　蛍光X線分析装置",
+      "²⁵²Cf　中性子線　水分計"
+    ],
+    "officialAnswerNumber": 5,
+    "explanation": "公式正答番号5は原本正答表どおり保存する。²⁵²Cfの中性子と水分計の対応は妥当。一方、肢1の²²Na・消滅放射線・陽電子消滅寿命測定の対応も公的資料に整合するため、単一正答としての解説を確定せず保留する。",
+    "choiceExplanations": [
+      "公式正答は5。ただし²²Naを陽電子源とし、1.27 MeVの生成時γ線と511 keVの消滅γ線の時刻差を測る寿命測定は公的研究機関の資料に記載されている。本肢を誤りと断定する根拠を確認できないため、設問全体を演習候補から保留した。",
+      "ECDの代表的線源は⁶³Ni等であり、³²Pではない。",
+      "代表的メスバウアー線源は⁵⁷Co等で、⁶⁰Coではない。",
+      "²⁴¹Amを蛍光X線励起に使う際は主に低エネルギーγ線・X線を用い、α線を用いる組合せではない。",
+      "正しい。²⁵²Cfの自発核分裂中性子が水素で減速される性質を利用して水分を測る。"
+    ],
+    "topic": "放射線の利用",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2_butsurikagakuseibutsu.pdf",
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R08_2seitou.pdf",
+    "answerPdfPage": 3,
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和8年度 第2種放射線取扱主任者試験 化学 問9（問題・正答）。空白・改行を整理、数式をUnicodeで表記。解説は独自作成。",
+    "hasImage": false,
+    "referenceUrls": [
+      "https://nsec.jaea.go.jp/fme/group5/group5_thema10.htm",
+      "https://bukko.bk.tsukuba.ac.jp/~positron/positron/positron_lifetime.html"
+    ]
+  },
+  "lastReviewedAt": "2026-11-04",
+  "reviewEvidence": "LQ8Dで公式一覧とJAEA・筑波大学の説明を再確認。公式問題・正答を通常HTTPS GETで再取得し200、SHA-256はいずれも既存原本と一致。正答5の変更や肢1を一意に排除する新根拠がないためKEEP HOLD。独立再レビューreports/lq8d-review-held.mdもKEEP HOLD。"
+}

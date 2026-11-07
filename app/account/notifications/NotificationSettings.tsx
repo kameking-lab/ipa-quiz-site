@@ -70,21 +70,12 @@ export function NotificationSettings() {
   }
 
   async function sendTestEmail() {
-    if (!prefs?.email) {
-      setStatus({ kind: "error", message: "メールアドレスを入力してください" });
-      return;
-    }
     setStatus({ kind: "loading", message: "テストメール送信中..." });
     try {
       const res = await fetch("/api/email", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          to: prefs.email,
-          subject: "【過去問AI】通知のテスト送信",
-          text:
-            "このメールは過去問AI の通知設定テストです。\n\n" +
-            "学習リマインダーや週次ダイジェストはここから配信されます。\n",
           type: "test",
         }),
       });
@@ -96,10 +87,10 @@ export function NotificationSettings() {
       if (data.mocked) {
         setStatus({
           kind: "success",
-          message: "モック送信成功（RESEND_API_KEY 未設定のためサーバーログに出力されました）",
+          message: "テスト送信を受け付けました",
         });
       } else {
-        setStatus({ kind: "success", message: `テストメールを送信しました: ${prefs.email}` });
+        setStatus({ kind: "success", message: "テストメールを送信しました（ログイン中のアカウント宛て）" });
       }
     } catch (err) {
       setStatus({
@@ -122,7 +113,7 @@ export function NotificationSettings() {
             メール通知
           </CardTitle>
           <CardDescription>
-            学習リマインダーや週次ダイジェストをメールでお届けします。
+            メール通知の端末内設定です。定期メールの登録受付は終了しました。
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -166,18 +157,6 @@ export function NotificationSettings() {
             />
           </div>
 
-          <div className="flex items-center justify-between">
-            <div>
-              <p className="font-medium text-sm">週次ダイジェスト</p>
-              <p className="text-xs text-muted-foreground">毎週日曜日に学習サマリーをお届け</p>
-            </div>
-            <Switch
-              aria-label="週次ダイジェスト"
-              checked={prefs.weeklyDigest}
-              onCheckedChange={(checked) => update({ weeklyDigest: checked })}
-              disabled={!prefs.emailEnabled}
-            />
-          </div>
 
           <div>
             <label className="mb-1 block text-sm font-medium" htmlFor="hour">

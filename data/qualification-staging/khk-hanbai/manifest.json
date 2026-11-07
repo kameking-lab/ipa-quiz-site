@@ -1,0 +1,107 @@
+{
+  "taskSlug": "khk-hanbai",
+  "publicationStatus": "staging",
+  "publicAllowed": false,
+  "needsIndependentReview": false,
+  "years": [
+    2025,
+    2024
+  ],
+  "targetTotal": 230,
+  "total": 230,
+  "choiceExplanations": 1150,
+  "qualifications": [
+    {
+      "slug": "khk-hanbai",
+      "name": "高圧ガス販売主任者 第一種",
+      "file": "khk-hanbai/questions.json",
+      "total": 80,
+      "targetTotal": 80,
+      "counts": {
+        "2025": {
+          "JX": 20,
+          "JY": 20
+        },
+        "2024": {
+          "JX": 20,
+          "JY": 20
+        }
+      },
+      "complete": true
+    },
+    {
+      "slug": "khk-hanbai2",
+      "name": "高圧ガス販売主任者 第二種",
+      "file": "khk-hanbai2/questions.json",
+      "total": 80,
+      "targetTotal": 80,
+      "counts": {
+        "2025": {
+          "KX": 20,
+          "KY": 20
+        },
+        "2024": {
+          "KX": 20,
+          "KY": 20
+        }
+      },
+      "complete": true
+    },
+    {
+      "slug": "khk-setsubishi",
+      "name": "液化石油ガス設備士（学科）",
+      "file": "khk-setsubishi/questions.json",
+      "total": 70,
+      "targetTotal": 70,
+      "counts": {
+        "2025": {
+          "LX": 15,
+          "LY": 20
+        },
+        "2024": {
+          "LX": 15,
+          "LY": 20
+        }
+      },
+      "complete": true
+    }
+  ],
+  "missingPdfUrls": [],
+  "remainingQuestions": 0,
+  "remainingScope": "なし（3資格・令和7・6年度の学科全230問を収録）。技能試験は対象外。",
+  "normalization": [
+    "印刷用柱・ノンブルを除去、改行と空白を整理。問題本文・全5肢の並びを公式PDFと照合。",
+    "引継ぎデータの追記「出題基準」見出しを本文からlawNoteへ分離。公式の共通条件はsharedContextに保存。",
+    "選択肢キーのア〜オは公式番号1〜5に順に対応。本文内イ・ロ・ハ・ニとは別。",
+    "全問needsReview=trueを維持。公式問題原本・抽出草稿はコミット対象外。",
+    "PDFの字位置に従い、面積・体積の単位m²・m³（全角ｍを含む）の上付き指数を復元。Qmaxの下付きmaxはプレーンテキストで表現。",
+    "配管理論等（LY）40問は session=piping。問12・問20の図と別紙寸法早見表は images/ のwebpを併用し、本文末尾に【図】【表】【別紙抜粋】として数値を文章化（原本の文章ではなく転記補助）。"
+  ],
+  "independentReview": {
+    "status": "PASS",
+    "reviewer": "gpt-6-astra",
+    "sandbox": "read-only",
+    "reviewedCommit": "8f457fd69",
+    "report": "reports/lk6-review-2.md",
+    "scope": "収録済み190問（2026-11-04 PASS）。配管理論等40問は2026-11-06追加分として別途独立レビュー（lyReview参照）。",
+    "humanReviewFlagsRetained": true
+  },
+  "recoveredPdfUrls": [
+    "https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7ACLY-W-W.pdf",
+    "https://www.khk.or.jp/Portals/0/khk/exam/2024/R6ACLY-W-W.pdf"
+  ],
+  "recoveredPdfNote": "2026-11-06、Wayback CDX の記録から令和7年度の正しいファイル名（末尾「-W-W.pdf」）を特定し、両年度とも公式サーバー（www.khk.or.jp）から通常GETで取得（HTTP 200）。ログイン・CAPTCHA等の迂回なし。",
+  "lyReview": {
+    "status": "PASS",
+    "reviewer": "独立Claudeエージェント（read-only）",
+    "reviewedCommit": "1caf399af",
+    "report": "reports/khk-setsubishi-ly-review.md",
+    "scope": "配管理論等40問（正答・転記・図表・計算・解説）",
+    "p3Applied": [
+      "2025-piping-q17",
+      "2025-piping-q9",
+      "2024-piping-q19",
+      "2024-piping-q9"
+    ]
+  }
+}

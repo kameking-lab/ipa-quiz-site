@@ -1,0 +1,55 @@
+{
+  "scope": "qual-new:16",
+  "title": "令和7年度 技術士第一次・生物工学 公式過去問35問",
+  "finalizedAt": "2026-11-01T19:15:54.701002+09:00",
+  "status": "PRIVATE_CONTENT_ACCEPTED_MAIN_ADOPTION_PACKET_READY",
+  "primaryPayload": "questions.candidate.json",
+  "readableArtifact": "study-reader.html",
+  "candidateSha256": "e764ab92834e95f9b6df918a00324d3517a17bf5ed6bbfa41e82667481699025",
+  "questions": 35,
+  "choices": 175,
+  "choiceReasons": 175,
+  "originalQuestions": 0,
+  "independentContentAcceptance": true,
+  "independentTranscriptionAcceptance": true,
+  "normalizations": [
+    "改行・字間を整理",
+    "下付き・上付き・ギリシャ文字をUnicode/平文表記",
+    "四角枠を［］に表現",
+    "問8/11の表は列順a,b,c,dを構造化して保持"
+  ],
+  "officialQuestionArtifact": "sources/official-2025-biotechnology.pdf",
+  "officialQuestionSha256": "ac0d27b8968e38d751daa2e449577e3ea1813fffcdcfd70363f6993d5c2bdcc9",
+  "sourceTruth": "本文・選択肢は原典に対応し、誤った選択肢の文面も修正せず保持。正しい理解は解説側にのみ記載。",
+  "sourceDates": "令和7年度・2025年11月23日。問32は2025年5月という月の指定のみ。架空の年月日・回は付加しない。",
+  "privateScopeComplete": true,
+  "sharedAdopted": false,
+  "published": false,
+  "mainRecipient": "01a18919-2bca-71a1-aee9-c0486fa7203b",
+  "requiredMainWork": [
+    "固定入力のExamCodeに生物工学コードがないため、main側で提案コードgijutsushi1-biotechnologyの採用と既存登録規約への整合を処理する。ownerは共有schema/catalog/routeを編集していない。",
+    "35件の原問・選択肢・公式正答・全肢理由をひとまとまりで採用。ChoiceKeyア～オは印刷①～⑤へ順序対応し、公式正答番号も保持。",
+    "問8/11のa,b,c,d列と5行を保持し、選択肢順を無断に変更しない。原問35の誤った周期順序などを本文側で直さない。",
+    "共有実装に応じた新規差分の型・表示・採点受入はmainで実施。本packetはUI動作・本番公開を検証済みとは称さない。"
+  ],
+  "exclusions": "独自35問は別フォルダに隔離し、このpacket/ZIPには含まない。既存note商品・他部門・過年度・基礎適性・runtime・権限操作・公開を含まない。",
+  "acceptanceEvidence": [
+    "independent-review.json",
+    "transcription-review.json",
+    "assembly-check.json",
+    "C035-field-guards.json"
+  ],
+  "referenceEvidence": [
+    "target-manifest.json",
+    "duplicate-check.json",
+    "supporting-sources.json",
+    "transcription-corrections.json",
+    "operation-boundaries.json"
+  ],
+  "supersedes": [
+    "../HANDOFF-CONDITIONS.jsonの年度未指定gate",
+    "../production-start.jsonのoriginal-practice制作を採用成果とする扱い"
+  ],
+  "userInputRequired": [],
+  "remainingPrivateContentOperations": []
+}

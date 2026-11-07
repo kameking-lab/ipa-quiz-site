@@ -1,0 +1,15 @@
+{
+  "sourceHead": "eb7bf840eb4f4e8efa1a40298df1716fb0a30cc3",
+  "startedAt": "2026-11-04T18:23:53.998654+00:00",
+  "endedAt": "2026-11-04T18:23:54.160915+00:00",
+  "command": [
+    "node",
+    "--test",
+    "scripts/vercel-migrate.test.mjs"
+  ],
+  "exitCode": 0,
+  "seconds": 0.16,
+  "log": "reports/int7-20261105/migrate-gate-verified.log",
+  "sha256": "c240c4087b7a96cac8a37800186ae5c0907e7d61b8c8b35f03357e7a0e7608b8",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

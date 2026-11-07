@@ -60,35 +60,35 @@ describe("truthful reward and motion controls", () => {
       const [answered,setAnswered] = useState(false);
       return <><button onClick={() => {
         if (order === "before") setAnswered(true);
-        recordStudyReward({scope:"quiz:ip",questionId,exam:"ip",label:"ITパスポート"});
+        recordStudyReward({scope:"library:ip",questionId,exam:"ip",label:"ITパスポート"});
         if (order === "after") setAnswered(true);
-      }}>回答</button><StudyRewardCorner scope="quiz:ip" questionId={questionId} answered={answered} /></>;
+      }}>回答</button><StudyRewardCorner scope="library:ip" questionId={questionId} answered={answered} /></>;
     }
     const {container} = render(<AnswerHarness />);
     fireEvent.click(screen.getByRole("button",{name:"回答"}));
     expect(container.querySelector("section")).toHaveAttribute("data-moving","true");
   });
   it("starts only for a real notification, never back navigation, exam switch, reset or restored mount", () => {
-    const {container, rerender, unmount} = render(<StudyRewardCorner scope="quiz:fe" questionId="back-regression" answered={false} />);
+    const {container, rerender, unmount} = render(<StudyRewardCorner scope="library:fe" questionId="back-regression" answered={false} />);
     expect(container.querySelector("section")).toBeNull();
-    act(() => { recordStudyReward({scope:"quiz:fe", questionId:"back-regression", exam:"fe", label:"基本情報"}); });
-    rerender(<StudyRewardCorner scope="quiz:fe" questionId="back-regression" answered />);
+    act(() => { recordStudyReward({scope:"library:fe", questionId:"back-regression", exam:"fe", label:"基本情報"}); });
+    rerender(<StudyRewardCorner scope="library:fe" questionId="back-regression" answered />);
     // Explicit answer renders the reward; playback itself is tested below with
     // a notification while the answered UI is present.
     fireEvent.click(screen.getByRole("button", {name:"動きを見る"}));
-    rerender(<StudyRewardCorner scope="quiz:fe" questionId="next-unanswered" answered={false} />);
+    rerender(<StudyRewardCorner scope="library:fe" questionId="next-unanswered" answered={false} />);
     expect(container.querySelector("section")).toBeNull();
-    rerender(<StudyRewardCorner scope="quiz:fe" questionId="back-regression" answered />);
+    rerender(<StudyRewardCorner scope="library:fe" questionId="back-regression" answered />);
     expect(container.querySelector("section")).toHaveAttribute("data-moving","false");
-    rerender(<StudyRewardCorner scope="quiz:ap" questionId="back-regression" answered />);
+    rerender(<StudyRewardCorner scope="library:ap" questionId="back-regression" answered />);
     expect(container.querySelector("section")).toBeNull();
-    rerender(<StudyRewardCorner scope="quiz:fe" questionId="back-regression" answered={false} />);
+    rerender(<StudyRewardCorner scope="library:fe" questionId="back-regression" answered={false} />);
     expect(container.querySelector("section")).toBeNull();
     unmount();
-    const restored = render(<StudyRewardCorner scope="quiz:fe" questionId="back-regression" answered />);
+    const restored = render(<StudyRewardCorner scope="library:fe" questionId="back-regression" answered />);
     expect(restored.container.querySelector("section")).toHaveAttribute("data-moving","false");
-    act(() => { recordStudyReward({scope:"quiz:fe",questionId:"new-live",exam:"fe",label:"基本情報"}); });
-    restored.rerender(<StudyRewardCorner scope="quiz:fe" questionId="new-live" answered />);
+    act(() => { recordStudyReward({scope:"library:fe",questionId:"new-live",exam:"fe",label:"基本情報"}); });
+    restored.rerender(<StudyRewardCorner scope="library:fe" questionId="new-live" answered />);
     expect(restored.container.querySelector("section")).toHaveAttribute("data-moving","false");
   });
   it("deduplicates repeated submissions, persists in the tab and never changes progress keys", async () => {
@@ -96,7 +96,7 @@ describe("truthful reward and motion controls", () => {
     const store = await import("@/lib/study-reward");
     localStorage.setItem(LS_KEYS.premium, "unchanged");
     localStorage.setItem(LS_KEYS.xpState, "unchanged");
-    const input = {scope:"quiz:ap",questionId:"ap-q1",exam:"ap",label:"応用情報"};
+    const input = {scope:"library:ap",questionId:"ap-q1",exam:"ap",label:"応用情報"};
     expect(store.getStudyReward()).toBeNull();
     expect(store.recordStudyReward(input)).toBe(true);
     expect(store.recordStudyReward(input)).toBe(false);

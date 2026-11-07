@@ -1,0 +1,22 @@
+{
+  "base": "f95bd49d0a9affc4ad34795b94dc9d3f20ecf9eb",
+  "incoming": "127be5504913e54fdc70eb8034c46fb92c33a47f",
+  "unchanged": [
+    "prisma",
+    "scripts/vercel-migrate.mjs",
+    "scripts/vercel-migrate.test.mjs",
+    "package.json",
+    "pnpm-lock.yaml"
+  ],
+  "migrationCount": 11,
+  "schemaSha256": "1b34c94c0a6d92a58e10561f8e6e7d3de48470529b315f15b399e1e77536fb49",
+  "guardSha256": "c1addf9b27ba9ea182d2ec5b058dcc643385fdbf91856e6e13653d321cc72d93",
+  "tests": [
+    "zero pending accepted",
+    "all three DB1 pending accepted",
+    "existing feedback missing rejected",
+    "extra unapproved migration rejected"
+  ],
+  "blogMappings": 179,
+  "productionDatabaseAccessed": false
+}

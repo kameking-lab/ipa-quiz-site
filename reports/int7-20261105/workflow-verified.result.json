@@ -1,0 +1,15 @@
+{
+  "sourceHead": "eb7bf840eb4f4e8efa1a40298df1716fb0a30cc3",
+  "startedAt": "2026-11-04T18:23:53.967191+00:00",
+  "endedAt": "2026-11-04T18:23:56.327522+00:00",
+  "command": [
+    "node",
+    "--test",
+    ".github/scripts/e2e-workflow.test.mjs"
+  ],
+  "exitCode": 0,
+  "seconds": 2.36,
+  "log": "reports/int7-20261105/workflow-verified.log",
+  "sha256": "aff24ba9583695c8d274dd0e8eaea70164ccd68bee676a9de546e26898db3e4b",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

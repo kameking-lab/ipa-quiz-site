@@ -1,0 +1,22 @@
+CQ2の独立再レビュー6をread-onlyで実施してください。編集・commit・push・PR・deploy・main操作は禁止。
+対象: C:/Users/kanet/20260522/wt-sokuryoshi
+base: bb912dfd0494f7095ec5387f9f2e53f46381cd1f
+
+要件と画像正本方式は reports/cq2-sokuryoshi/review-1-prompt.txt をUTF-8で読んでください。
+過去の指摘と修正は同ディレクトリ内 review-1～5-result.md / review-1～5-fixes.md を確認してください。
+
+レビュー5の新規2件は修正しました。
+1. 2026午後No.5 C-1: 緑色・反射・近赤外・透過・屈折の全5空欄を理由付きで説明。近赤外は水中をほとんど透過せず緑色は透過しやすい点を明示。
+2. 2025午後No.3 B-1: 原文の「レンズのブレ等」を「ひずみ」とした誤りを修正。焦点距離の自動調整とレンズのブレ等の自動補正の解除を説明。
+主要原稿はdata/qualification-staging/sokuryoshi/pm-notes.json、生成データは2025.json/2026.json。
+過去のfixes文書は当時の修正内容の記録であり、今回の最新データは上記原稿と年別JSONです。
+
+全66原問、午前280肢、午後104小問説明、原本186ページ、publicAllowed=false。
+PDF原本・公式準則standards.pdf/txt・補助OCRの場所:
+C:/Users/kanet/AppData/Local/Temp/codex-work/cq2-sokuryoshi
+最新通常実行ログ: reports/cq2-sokuryoshi/{validate-questions,typecheck,related-tests}.log
+
+過去指摘の修正を原本で確認するとともに、未指摘の実質的な誤りや不足も批判的に確認してください。
+原文と公式答はassetsの原本ページ画像に保持し、文字OCRを原文に採用していません。画像正本方式や人手公開前確認ガードneedsReview=true自体ではなく、非公開収録の内容・対応・検証を評価してください。
+read-onlyでspawn EPERMが出る場合は制約を迂回せず分離して報告してください。
+最後にPASS又はFAILを明記。FAILの場合は具体的ファイル・設問・根拠・修正案を示してください。

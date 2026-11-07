@@ -1,0 +1,18 @@
+{
+  "sourceHead": "cff99c61bae24a5377f474974ba951402ca6cbbd",
+  "startedAt": "2026-11-04T17:55:26.162249+00:00",
+  "endedAt": "2026-11-04T17:55:29.197207+00:00",
+  "command": [
+    "corepack.cmd",
+    "pnpm",
+    "exec",
+    "playwright",
+    "test",
+    "--list"
+  ],
+  "exitCode": 0,
+  "seconds": 3.03,
+  "log": "reports/int7-20261105/e2e-list.log",
+  "sha256": "a6e37f9adf5034a54a36ad26b563a79f4b50be117dd2c395250c4117a339f6d2",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

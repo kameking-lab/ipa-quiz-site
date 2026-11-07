@@ -1,0 +1,783 @@
+{
+  "model": "gpt-6-astra",
+  "scope": "Independent content review of all 61 IDs in qa/lq1c-unreviewed-ids.json against frozen qa/lq1c-candidates.json; source page PNGs visually inspected for every row; official answers and all four choice explanations checked; source PDF SHA-256 and physical-page URL bindings verified for all 61. No candidates or product files changed. All five referenced WebP figure/page assets were also visually checked against their original PNG pages.",
+  "limitations": [
+    "The requested source/official-answers.json path does not exist; the supplied official-answer table is latest-two/official-answers.json and is used instead.",
+    "Whitespace, line wrapping and furigana are treated as non-substantive transcription normalization. Historical permission flags are not acceptance criteria.",
+    "Source spelling normalization such as ???? to ????? and faithful linearization of tables were accepted where meaning, values and choice mapping were preserved; this is a content-fidelity review, not a typography facsimile certification.",
+    "HOLD means all listed materials were examined but the specific technical rationale remains unsubstantiated; answerChecked/allFourExplanationsChecked describe review performed, not acceptance.",
+    "Only one selected item is marked isCalculation: 2025-second-3-diesel-q13. Independently checked: 2 crank revolutions = 1 pump-drive revolution = 4 delivery/plunger cycles for four cylinders. Also checked numeric statements and true-statement counts in other selected items.",
+    "Primary supplementary sources were used for disputed claims. Exam-specific AT controls and textbook-specific body classifications remain HOLD where the applicable source could not be established."
+  ],
+  "rows": [
+    {
+      "id": "jidosha-2026-first-body-q02",
+      "candidateSha256": "d66fc43b486a129404997afd989f6d576527a637795168770ebd3f10663ed4e2",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q03",
+      "candidateSha256": "fe6538f8fe2f4d91c598f483edcee58cf9e61f4383641ad0fc4e4f82f88b1350",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q05",
+      "candidateSha256": "4e132e5879302d49a474a42dadd9b1d817653c076f6e4c15bed459cba4c75a00",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q06",
+      "candidateSha256": "16f0c4759a98d9dc28a1dc822f01f1e94b3a9196dd65391c700b2d48599c56fe",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        3
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q08",
+      "candidateSha256": "a900c0ef2e2c450df9781dbcd4455c31500838e017240db7592441d752e4c302",
+      "verdict": "HOLD",
+      "sourcePagesChecked": [
+        3
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "explanation; choiceExplanations",
+          "issue": "The official count is two, but it does not identify the two true statements. The asserted (?)(?) pair and dismissal of rib reinforcement were not independently substantiated.",
+          "replacement": "Retain official answer (2), but withhold acceptance of the (?)(?) assertion until a JASPA body-structure textbook edition/page establishes each of (?)?(?); then replace every choice explanation with that verified pair.",
+          "source": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=3"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-body-q09",
+      "candidateSha256": "a6b1ae7f0d00fe225050fb1f759b50194c5cf77ae51c2d1fe28eb8ddcad6ec1b",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        3
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q10",
+      "candidateSha256": "8a772e9f3f46e49c480ed2d2929474b87cc1bbe6807cea5789055bca76a8f17c",
+      "verdict": "FAIL",
+      "sourcePagesChecked": [
+        4
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "explanation; choiceExplanations.?",
+          "issue": "The explanation omits the actual beading-versus-hemming error and instead rejects full-perimeter adhesive without evidence.",
+          "replacement": "?????????????????????????????????????????????????????????????????????????????????",
+          "source": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=4; https://www.jstage.jst.go.jp/article/qjjws1943/70/2/70_2_248/_pdf/-char/en (section 2.2)"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-body-q12",
+      "candidateSha256": "889f9e42673967780b57131168f791641beb649bc4ce83c6b480ac3a30527ce4",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        4
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q14",
+      "candidateSha256": "53875a6501e4ccb986135e190d72e83efb763b2b2cf323b8efb2d6febccf4a76",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q15",
+      "candidateSha256": "58f3cbf3e8c75126d49a51fbbdb38ccb324c13d6e0f1a516b4bdbf4bb1f5787c",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q16",
+      "candidateSha256": "dc93626d5e635b72f04d2ec916a60c1b7f5cfbdbaf652ab1e2335edf120128f4",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        6
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q17",
+      "candidateSha256": "48fa67f52e2449b139ff3b445e5f88fb029d757cb65767afa1b800642e174f3a",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        6
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q19",
+      "candidateSha256": "f00911fbb8bf087a3443a4330ca31991702489593caa3f4b6ec6660cc56e59e9",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q20",
+      "candidateSha256": "5607151d4beda307f0d6bd0ce0fcb2720332ea5901445617b00372cdab084f19",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q21",
+      "candidateSha256": "9a93a564a5eae9c0ac24936b595c0d92d21e136b4213f3f5cd98d9826d60582a",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q22",
+      "candidateSha256": "750de718c95092c419c901098515119edee0eece12bc795e73d941821d5861de",
+      "verdict": "FAIL",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "explanation; choiceExplanations.?",
+          "issue": "The explanation only says the method is wrong and does not state the correct channel reinforcement placement.",
+          "replacement": "??????????????????????????????????????????????????????????????????????????????????????????????",
+          "source": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/20160320_20160828/20160320_bo.pdf#page=8 (Q21(2)); https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=7"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-body-q23",
+      "candidateSha256": "b66123ce743774209be225754c9e4c15fc0a685826e7984d1d2ebd37f4c178eb",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        8
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q24",
+      "candidateSha256": "8b5316091ef13dde9fc5b49317b4cacd95b5d602e37f56e267cf25ac545f34b1",
+      "verdict": "FAIL",
+      "sourcePagesChecked": [
+        8
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.?; choiceExplanations.?",
+          "issue": "The rejected flame descriptions are not corrected precisely. The 1:1 mixture is rejected together with the erroneous temperature, although neutral oxyacetylene flame uses approximately equal supplied gases.",
+          "replacement": "(2) ????????????????????????(3) ?????????3,200??????2,800???????1?1????????????????",
+          "source": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=8; https://www.jarac.or.jp/images/qualification/h26-reibai-houkoku.pdf (neutral/reducing flame comparison)"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-body-q25",
+      "candidateSha256": "dc4e8a4af17e68c32526516a2e3ae090564b4fc4be9f03cfe21bbd8d5e154817",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        8
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q26",
+      "candidateSha256": "51ac2378cfe1c88c4bba1b134442ac61f36c3e115bb132e1e9edda849ff6c600",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        8
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q27",
+      "candidateSha256": "23eadc74d9227b9a26079c3f683c8bd1bb988de6642ea52782f0163369ff3a84",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        9
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q31",
+      "candidateSha256": "5b5302b3e395e625c5995d8784f50f144ba15fc7b0102b56e71d394e8bdc2f6e",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        10
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q33",
+      "candidateSha256": "9a457d27f79d21bc03008b285bf1ab4aee3b39123da1c394eaa16eafd6baee4e",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        11
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q35",
+      "candidateSha256": "13ab36e1d13436788a4a36003ddb967b0d84010c41241db2c03b283a12af05fe",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        11
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q36",
+      "candidateSha256": "e3ca23d5685658f5d145ad80cb27cce9779098b19f313c4bb3f5321eda5c2fb3",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        11
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2026-first-body-q37",
+      "candidateSha256": "6a75abc94c11ac3b9a596f67ca21728381a2b32fb0eea4c7603969a28b8b09d3",
+      "verdict": "HOLD",
+      "sourcePagesChecked": [
+        12
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.?; choiceExplanations.?; choiceExplanations.?",
+          "issue": "All three distractor explanations only reject the listed sets without identifying which machine is misplaced or the correct set. General commercial tool capability cannot establish this textbook-specific table.",
+          "replacement": "Keep official answer (2). Obtain the JASPA body-painting textbook usage table and state the exact approved machine set for old-paint/rust removal, polyester putty and body filler, identifying the erroneous tool in each distractor before release.",
+          "source": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2026/20261004_bo.pdf#page=12"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q09",
+      "candidateSha256": "24092f10e88b6d2a1dd1e5861a51371c484e5eae9e8dfb670c9157b7802ebacf",
+      "verdict": "FAIL",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "explanation; choiceExplanations.?; choiceExplanations.?",
+          "issue": "Continuous acquisition is described vaguely as scrolling, conflating ROLL with the separate SCRL display-position control. The 50 Hz assertion is not evaluated.",
+          "replacement": "(2)?ROLL???????????RUN???????????SCRL?????????????????????(3)?50Hz????????????????????AUTO??????????????",
+          "source": "https://download.tek.com/manual/TekScope-Application-User-Manual-EN-US-077-1699-00_077169900.pdf; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=7"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q11",
+      "candidateSha256": "36242ef010647b0d0034f0dd210ace756c8231d520b36200bd174668e8fd4188",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        9
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q17",
+      "candidateSha256": "1c6216a5dbd9dfb12fc72ee6e3b187fba58475103fd8216ac2dc772600f330d1",
+      "verdict": "HOLD",
+      "sourcePagesChecked": [
+        12
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "explanation; choiceExplanations.?",
+          "issue": "The wrong 100 mA threshold is acknowledged but the correct specified tester current is not supplied; generic avoidance does not resolve this factual statement.",
+          "replacement": "Keep official combination ?????. Verify the applicable JASPA/manufacturer SRS test procedure and replace 100mA with its specified maximum (10mA is a lead, not established here); distinguish permitted harness checks from prohibited squib resistance measurement.",
+          "source": "Original Q17 and manufacturer-specific SRS service procedure required.; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=12"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q19",
+      "candidateSha256": "6a9b2f422b2b6269f598e781918445ee2d36109acc3c2d577dc79ecd3fc79424",
+      "verdict": "FAIL",
+      "sourcePagesChecked": [
+        13
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choices.?",
+          "issue": "The original wind-noise table says ???; the candidate drops the dakuten and transcribes ???.",
+          "replacement": "???(1)??????????????????????????????????????????(3)??????",
+          "source": "tmp/lq1b-sources/jaspa-2025-second-1-small-written-p13.png; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k.pdf#page=13"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q22",
+      "candidateSha256": "b96b4bc6b76b6bcfe2a996b16cc8b7075eee6198289600a919a4eace32cc4f7a",
+      "verdict": "HOLD",
+      "sourcePagesChecked": [
+        15
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.?; choiceExplanations.?",
+          "issue": "The model-specific fail-safe gears and overdrive prohibition are rejected without stating the actual gear mapping or control.",
+          "replacement": "Retain official answer (1); obtain the applicable four-speed AT fail-safe table, state D/2/1 gears for simultaneous A/B failure and the permitted gears after line-pressure-solenoid failure, then rewrite (3)/(4) explanations from that table.",
+          "source": "Original Q22; applicable JASPA AT fail-safe table required.; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=15"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q37",
+      "candidateSha256": "439fd4414b3845b7cc4bb79e44b9ca14d2bf76b9845bc38a49163316dfe1db98",
+      "verdict": "HOLD",
+      "sourcePagesChecked": [
+        26
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "explanation; choiceExplanations",
+          "issue": "The distractors are ranked by generic plausibility rather than verified fault behavior of this specified AT. No source establishes that a B-solenoid open or oil-temperature short cannot produce this symptom.",
+          "replacement": "Retain official answer (3). Cite the applicable warm-engine AT diagnostic/fail-safe chart and explain the specific symptom and substitute control for each of the four faults; avoid unsupported claims that other faults are less representative.",
+          "source": "Original Q37; applicable AT diagnostic chart required.; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=26"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q44",
+      "candidateSha256": "555a50f45cde31fc6f96ed34199b6e0072d28359567e776e22f8c40bf93c8720",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        30
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q46",
+      "candidateSha256": "c47bd5dc42bd7075c5461cc8eee8f5eb4754cb597ab93f60e066d3ebfb7f3f5c",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        30
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q48",
+      "candidateSha256": "1e26667f89946a67e003bf8bae3761c2b35ff41a5c0887f1dded54b5522dd3e3",
+      "verdict": "FAIL",
+      "sourcePagesChecked": [
+        31
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.?",
+          "issue": "Incorrectly rejects 150m and driving-beam illumination; both are explicitly required by Article 210(1)(iii). The wrong word is daytime.",
+          "replacement": "?????????????????????150m?????????????????????????????????????????????????????",
+          "source": "https://www.mlit.go.jp/jidosha/content/S210.pdf (?210??1????); https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_1k_0.pdf#page=31"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q50",
+      "candidateSha256": "194e4565decc7c546215f1adde49be7f54d98631eeb9914dfe673a7e07362bbd",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        32
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q01",
+      "candidateSha256": "8b53918556d8141146be13455cf158ba189b0bc97ac27fd61be7e82bda5561fa",
+      "verdict": "FAIL",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.?",
+          "issue": "The phrase ??? minus base-circle radius is ambiguous: lobe height commonly denotes the full measured cam height, in which case subtracting a radius is incorrect.",
+          "replacement": "????????????????????????????????????????????????????????????????????",
+          "source": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf#page=2; geometric definition of cam lift"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q03",
+      "candidateSha256": "4be073d6a87c89c6dc0cd3af9ce57f657e1a73e904158162e0be5dc1a707e288",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q05",
+      "candidateSha256": "a1cd6fd058a091f639f0ece645e9d5315499fcac7bebdd00d1d14401177d495e",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        3
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q08",
+      "candidateSha256": "62e3f53966e4e55234160f4a23baedacb915b5d59f655aed0ed141ba327f38c6",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        3
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q09",
+      "candidateSha256": "bc6c189d9e60304e8ed77ddd486e2197ab28fc6dae012816289175bbbaf16bce",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        3
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q10",
+      "candidateSha256": "46110631b0813850ec2b9cdaf47c132d4181a9aeb8d6a9c18f3cd3c0073623fd",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        4
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q11",
+      "candidateSha256": "36bcff5c70901bd185f89a86f19f03edcd7bc6eb6c8aca56f798cf6ec538f0b5",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        4
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q15",
+      "candidateSha256": "adbe3b77b0974d9af80f9cfcbe9303a0f442384cae4da07d82ae95fde0b217de",
+      "verdict": "HOLD",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.?",
+          "issue": "The explanation is circular and does not distinguish expansion-chamber silencing from throttling of pressure pulsations. Widening a passage can be part of a real silencer, so a blanket rejection is not an adequate technical rationale.",
+          "replacement": "Retain official answer (2). Verify the JASPA muffler-principle passage and explicitly distinguish expansion/pressure reduction from restriction used to smooth pulsations. State exactly why ?? in (4) is the intended error; do not assert that passage expansion never attenuates sound.",
+          "source": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf#page=5; https://patents.google.com/patent/JP2001214730A/ja paragraphs 0022-0023"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q19",
+      "candidateSha256": "1316cafb9de93f014787926b48d9e80d85637dbb474b63edd12480b0d7dfd865",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        6
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q20",
+      "candidateSha256": "72984e35e9193ce1cd80cf404bdbfafb064d37c05a30dfc3354ee13deb8617e0",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        6
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q23",
+      "candidateSha256": "ef498df2918c88392df6bcfe94cbd719c05f6ba2d3a1e63f8041a9974b7c8ea9",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q27",
+      "candidateSha256": "312467e5956ddaeb82eb09fcd2fdf4541332ebcca3b804c2f6a4aedc218ad671",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        8
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q01",
+      "candidateSha256": "456efa120e514007a8b3915133f64d6c4418987ff47bd6af5987768ee68b0afe",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q03",
+      "candidateSha256": "8db8b0988551b98f16596ead8e9b9338aa54c7a9bc5d5b2230a909eaec4eb2a6",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q04",
+      "candidateSha256": "28a5d7663610eb380e497a76f93898a36aae259ad5e1efaae43d62fc962a2a41",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q08",
+      "candidateSha256": "702cd0202fba2eae0704fb36f25e892952efd26edef481f2db25915c25f4af20",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        3
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q09",
+      "candidateSha256": "7813fda646110c0eae2f2d18fc56fe60527a27206b1b7a01a28a21e02c4619d5",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        3
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q11",
+      "candidateSha256": "183ba41ed6387c7a9822028b37c6ef7ad7e8abe1f235e37526148a3e2c6218db",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        4
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q13",
+      "candidateSha256": "71a62f97ceecbc59c78c8b9d6b095c7910c318ec3975e9da8fcce6c91d476639",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q14",
+      "candidateSha256": "5a7480f736cfc281c5e7e4df7ada2c8398dea2f77cb7fe9e84947fe2b5e9ea08",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q16",
+      "candidateSha256": "51fa205d9daba40ade7da7bbe67af8b962057ac9eb54ec4ee35a9087c7984b6a",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q17",
+      "candidateSha256": "ed7a429f250fa39bd424c89684d519b0b7ddc2098263f4bc1312ac017237a467",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        6
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q20",
+      "candidateSha256": "4fa04c6f2a91e13d248aaf3a9133e88ed246de2cf985b6ba5594a18d5f3ea920",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        6
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q25",
+      "candidateSha256": "bfcc2cae21bc46c76e53a0ee4d7da444d83659e3a997d9477bd680c4e4e4280b",
+      "verdict": "FAIL",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.?",
+          "issue": "The explanation suggests that the stated 2?3 repetitions may be wrong and does not identify the aggregation error: maximum across repeated readings versus their average.",
+          "replacement": "????1???????2?3????????????????????????????????????????????????????????????????????????????????",
+          "source": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3d.pdf#page=7; https://www.esco-net.com/wcs/escort/ItemFile/EA5/EA514/EA514BE/EA514BE_MNL_JPN_PDF_OUT%2801%29.pdf (steps 5?6; corroborating compression-test measurement principle, gasoline instrument)"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-3-diesel-q26",
+      "candidateSha256": "af377593255b672186d421ffc05e1a23858e00ab051db88f028c1b377e5903e4",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": []
+    }
+  ]
+}

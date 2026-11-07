@@ -68,7 +68,9 @@ export async function getExplicitPoolIds(raw: unknown): Promise<string[]> {
 
 /** Look up a single question by ID (server-only). */
 export async function findQuestionById(id: string): Promise<Question | undefined> {
-  const examCode = id.split("-")[0] as ExamCode;
+  // Original JASPA IDs put fiscal year/sitting before their qualification.
+  const automotive = /^jidosha-(?:20\d{2}-(?:first|second))-(1-small-written|2-gasoline|2-diesel|2-chassis|2-motorcycle|3-chassis|3-gasoline|3-diesel|3-motorcycle|body|electrical)-q\d+$/.exec(id);
+  const examCode = (automotive ? `jidosha-${automotive[1]}` : id.split("-")[0]) as ExamCode;
   const pool = await getQuestionsForExam(examCode);
   const hit = pool.find((q) => q.id === id);
   if (hit) return hit;

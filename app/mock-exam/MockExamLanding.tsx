@@ -31,7 +31,7 @@ const MODE_OPTIONS: { id: SelectionMode; label: string; hint: string }[] = [
   { id: "random", label: "完全ランダム", hint: "プールから無作為抽出" },
 ];
 
-export function MockExamLanding({ examFromQuery, returnTo }: { examFromQuery?: string; returnTo?: string }) {
+export function MockExamLanding({ examFromQuery, returnTo, countFromQuery }: { examFromQuery?: string; returnTo?: string; countFromQuery?: string }) {
   if (examFromQuery !== undefined && !isMockExamCode(examFromQuery)) {
     const knownExam = Object.hasOwn(EXAM_LABELS, examFromQuery);
     return (
@@ -46,12 +46,13 @@ export function MockExamLanding({ examFromQuery, returnTo }: { examFromQuery?: s
     );
   }
   const initialExam = examFromQuery ?? "ap";
-  return <SupportedMockExamLanding key={initialExam} initialExam={initialExam} returnTo={returnTo} />;
+  return <SupportedMockExamLanding key={initialExam} initialExam={initialExam} returnTo={returnTo} countFromQuery={countFromQuery} />;
 }
 
-function SupportedMockExamLanding({ initialExam, returnTo }: { initialExam: MockExamCode; returnTo?: string }) {
+function SupportedMockExamLanding({ initialExam, returnTo, countFromQuery }: { initialExam: MockExamCode; returnTo?: string; countFromQuery?: string }) {
   const [exam, setExam] = React.useState<MockExamCode>(initialExam);
   const [mode, setMode] = React.useState<SelectionMode>("balanced");
+  const [countChoice, setCountChoice] = React.useState(countFromQuery ?? "full");
   const [questions, setQuestions] = React.useState<SlimMockQuestion[] | null>(
     null,
   );
@@ -78,13 +79,16 @@ function SupportedMockExamLanding({ initialExam, returnTo }: { initialExam: Mock
   }, [running]);
 
   const config = getMockConfig(exam);
+  const countOptions = [...new Set([config.questions, Math.ceil(config.questions / 2), 20, 10])].filter((value) => value <= config.questions);
+  const questionCount = countOptions.includes(Number(countChoice)) ? Number(countChoice) : config.questions;
+  const examMinutes = Math.ceil(config.minutes * questionCount / config.questions);
 
   const startMock = async () => {
     setLoading(true);
     setError(null);
     setResumeState(null);
     try {
-      const res = await fetch(`/api/mock-exam/${exam}?mode=${mode}`, {
+      const res = await fetch(`/api/mock-exam/${exam}?mode=${mode}&count=${questionCount}`, {
         cache: "no-store",
       });
       if (!res.ok) {
@@ -135,7 +139,7 @@ function SupportedMockExamLanding({ initialExam, returnTo }: { initialExam: Mock
     return (
       <MockExamRunner
         questions={questions}
-        config={config}
+        config={{ ...config, questions: questions.length, minutes: resumeState ? resumeState.totalSec / 60 : Math.ceil(config.minutes * questions.length / config.questions) }}
         onFinish={onFinish}
         resumeFrom={resumeState ?? undefined}
       />
@@ -208,20 +212,27 @@ function SupportedMockExamLanding({ initialExam, returnTo }: { initialExam: Mock
         exams={AVAILABLE_EXAMS}
         current={exam}
         defaultExam="ap"
-        onSelect={setExam}
+        onSelect={(next) => { setExam(next); setCountChoice("full"); }}
       />
 
       <Card className="mb-4 min-h-[200px]">
         <CardContent className="pt-5">
           <h2 className="mb-3 line-clamp-2 text-base font-semibold">{config.label}</h2>
           <div className="grid grid-cols-3 gap-4 text-center">
-            <Stat label="問題数" value={`${config.questions}問`} />
-            <Stat label="制限時間" value={`${config.minutes}分`} />
+            <Stat label="問題数" value={`${questionCount}問`} />
+            <Stat label="制限時間" value={`${examMinutes}分`} />
             <Stat
               label="合格基準"
               value={`${Math.round(config.passThreshold * 100)}%`}
             />
           </div>
+
+          <label className="mt-5 block text-sm font-medium">演習する問題数
+            <select value={String(questionCount)} onChange={(event) => setCountChoice(event.target.value)} className="mt-2 block min-h-11 w-full rounded-xl border border-border bg-background px-3">
+              {countOptions.map((count) => <option key={count} value={count}>{count === config.questions ? `全問（${count}問）` : `${count}問（短時間演習）`}</option>)}
+            </select>
+          </label>
+          {questionCount < config.questions ? <p className="mt-2 text-xs text-muted-foreground">短時間演習です。制限時間は本番形式の問題数に比例して設定します。</p> : null}
 
           <div className="mt-5">
             <div className="mb-2 text-xs font-semibold text-zinc-500">

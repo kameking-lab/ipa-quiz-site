@@ -1,0 +1,21 @@
+{
+  "command": [
+    "corepack.cmd",
+    "pnpm",
+    "exec",
+    "vitest",
+    "run",
+    "__tests__/batch3-release.test.ts",
+    "__tests__/batch3-related-gate.test.ts",
+    "__tests__/billing/feedback-purchase.test.tsx",
+    "__tests__/mobile/catalog-parity.test.ts",
+    "__tests__/seo/question-jsonld.test.ts",
+    "--maxWorkers=2",
+    "--reporter=verbose"
+  ],
+  "exitCode": 1,
+  "seconds": 29.53,
+  "log": "reports/int7-20261105/failed-tests.log",
+  "sha256": "ef5b4214b9486d5abf72fd2b45398cb6d23d008193e6df77789dec031c92806f",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

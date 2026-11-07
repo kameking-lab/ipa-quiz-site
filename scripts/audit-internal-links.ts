@@ -26,10 +26,6 @@ import {
   getQuestionsByExamStrict,
   groupByCategory,
 } from "@/lib/seo/exam-meta";
-import {
-  getAllSuccessStorySummaries,
-  getSuccessStoryExams,
-} from "@/data/success-stories";
 
 // ─── Constants ────────────────────────────────────────────────────────────────
 
@@ -199,16 +195,6 @@ function buildValidPaths(): Set<string> {
   for (const k of KEYWORD_PAGES) {
     paths.add(`/keywords/${k.slug}`);
     paths.add(`/keywords/${k.slug}/`);
-  }
-
-  // Success-story pages /success-stories/{exam} and /{exam}/{slug}
-  for (const exam of getSuccessStoryExams()) {
-    paths.add(`/success-stories/${exam}`);
-    paths.add(`/success-stories/${exam}/`);
-  }
-  for (const s of getAllSuccessStorySummaries()) {
-    paths.add(`/success-stories/${s.exam}/${s.slug}`);
-    paths.add(`/success-stories/${s.exam}/${s.slug}/`);
   }
 
   // Known dynamic-parameter routes that appear as links

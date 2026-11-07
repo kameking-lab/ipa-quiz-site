@@ -1,0 +1,43 @@
+{
+  "exam": "tsushin2",
+  "year": 2026,
+  "season": "early",
+  "session": "gakka",
+  "officialQuestionCount": 65,
+  "questionUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_mondai.pdf",
+  "answerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608e_seitou.pdf",
+  "questionSha256": "7ef041a4421c9b3802a6cc95a658635d7d669fd4c2a669505c596854cb40ff7f",
+  "answerSha256": "d06bb590bd241162ac6164b0e65ac01895b8a3eea5735d783ccc6e536cf17f15",
+  "publishedCount": 1,
+  "questions": [
+    {
+      "number": 54,
+      "pdfPage": 25,
+      "category": "施工管理",
+      "topic": "第一次検定（前期）",
+      "officialAnswerNumbers": [
+        4
+      ],
+      "question": "金属線ぴ工事に関する次の記述のうち，適当でないものはどれか。",
+      "choices": [
+        "1 種金属製線ぴに収める電線本数は，10 本以下とする。",
+        "2 種金属製線ぴに収める電線本数は，電線の被覆絶縁物を含む断面積の総和が当該線ぴの内断 面積の 20 ％ 以下とする。",
+        "金属線ぴとボックスその他付属品とは，堅ろうに，かつ，電気的に完全に接続する。",
+        "1 種金属製線ぴ内で電線を接続し，分岐点を設ける。"
+      ],
+      "explanation": "電気設備の技術基準の解釈161条1項2号は、金属線ぴ内では原則として電線に接続点を設けないとします。分岐の例外には2種金属製線ぴなどの条件があるため、1種線ぴ内で接続・分岐を設ける選択肢4が適当ではありません。収容本数、断面積の割合、ボックスとの接続条件も分けて確認します。",
+      "choiceExplanations": [
+        "1種金属製線ぴの電線本数を10本以下とする収容基準の記述です。電技161条の接続禁止とは別の収容基準を確認します。",
+        "2種金属製線ぴの被覆絶縁物を含む電線断面積の割合を20％以下とする収容基準の記述です。本数の制限とは区別します。",
+        "161条3項1号は、線ぴ相互及び線ぴとボックスその他の附属品を堅ろうに、かつ電気的に完全に接続することを求めます。本記述は適当です。",
+        "線ぴ内の電線接続は禁止が原則です。分岐の例外は2種線ぴ、容易な点検、接地などの条件付きであり、1種線ぴ内で接続・分岐するとした本記述は不適当です。"
+      ],
+      "officialReferenceUrls": [
+        "https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf",
+        "https://esctlg.panasonic.biz/iportal/CatalogPageGroupDetail.do?catalogID=7740110000&method=initial_screen&pageGroupID=421&volumeID=PEWJ0001",
+        "https://esctlg.panasonic.biz/iportal/CatalogDetail.do?catalogID=7740110000&designID=activeOut_sp&method=initial_screen&type=clcsr&volumeID=PEWJ0001",
+        "https://www.kanafuji.co.jp/pdf/cat02.pdf"
+      ]
+    }
+  ]
+}

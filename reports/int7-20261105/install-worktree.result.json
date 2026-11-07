@@ -1,0 +1,15 @@
+{
+  "command": [
+    "corepack.cmd",
+    "pnpm",
+    "install",
+    "--frozen-lockfile",
+    "--offline",
+    "--ignore-scripts"
+  ],
+  "exitCode": 1,
+  "seconds": 43.75,
+  "log": "reports/int7-20261105/install-worktree.log",
+  "sha256": "b49e6f0db2d6280d6b02f105be0690ad058a4f4e3916fe3bd4acca6cdefe9c76",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

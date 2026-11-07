@@ -6,6 +6,10 @@ const eslintConfig = defineConfig([
   ...nextVitals,
   ...nextTs,
   {
+    files: ["reports/sekou-2denki/verify-runtime.cjs"],
+    rules: { "@typescript-eslint/no-require-imports": "off" },
+  },
+  {
     rules: {
       // React 19 ships these strict rules but they over-trigger on legitimate
       // client-only patterns we use throughout the app:
@@ -32,8 +36,15 @@ const eslintConfig = defineConfig([
     ".next/**",
     "out/**",
     "build/**",
+    // Local performance tools, traces and preserved production build artifacts.
+    ".cache/**",
+    "test-results/**",
+    "playwright-report/**",
     // Local PDF/OCR outputs and one-off audit bundles are not application code.
     "tmp/**",
+    // Historical generated audit evidence is retained byte-for-byte.
+    "mobile/docs/evidence/**",
+    "mobile/dist/**",
     "next-env.d.ts",
   ]),
 ]);

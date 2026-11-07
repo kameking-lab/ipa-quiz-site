@@ -1,0 +1,36 @@
+{
+  "reviewedHead": "ae52186d939b6a5895208fbe6c826def08d5dba8",
+  "model": "gpt-6-astra",
+  "sandbox": "read-only",
+  "exitCode": 0,
+  "verdict": "PASS",
+  "command": [
+    "C:/Users/kanet/AppData/Roaming/npm/codex.cmd",
+    "exec",
+    "-m",
+    "gpt-6-astra",
+    "-s",
+    "read-only",
+    "-C",
+    "C:\\Users\\kanet\\20260522\\wt-batch3",
+    "-o",
+    "C:\\Users\\kanet\\20260522\\wt-batch3\\reports\\int7-20261105\\independent-review-final.md",
+    "-"
+  ],
+  "seconds": 111.88730669021606,
+  "reviewSha256": "2fc16d0e2f21b3e70d55433ce018168c295bf4140459eee7cf2b5ae5c8c97a71",
+  "reviewLogSha256": "ebd139d60c4a4aa93eea19f0b9df867b4c421f62c14a55f479b49bf3372404c8",
+  "implementation": "1ca14f4ce39be16b8b00660800bd05a225ff0ee2",
+  "qaRevision": "122a252a0b4ca0f0dfbd6e1d499d49bcbaa2fc64",
+  "postReviewApplicationChanges": false,
+  "reportSha256": "08a4057f73b98c7491a762a9bc939a2ce99232921318ed40eca4206f924df9c4",
+  "publishListSha256": "69ed9f1a416780948932db9d19c394da30abb1136fa77da0e1f744d4c8d879c4",
+  "externalCopiesMatch": true,
+  "prohibitedOperationsPerformed": {
+    "push": false,
+    "pullRequest": false,
+    "deploy": false,
+    "productionDb": false,
+    "adsenseReapply": false
+  }
+}

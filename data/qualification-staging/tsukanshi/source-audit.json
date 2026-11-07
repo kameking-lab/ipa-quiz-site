@@ -1,0 +1,12 @@
+{
+ "checkedAt": "2026-11-07",
+ "59": {
+  "textSources": "sources/59-0..3.txt（pdftotext -layout、WIPで保持。SHA-256はsources/wip-manifest-59.jsonと一致を再確認）",
+  "answers": "official-answers.json を正答表PDF画像と全105単位目視照合",
+  "build": "scripts/build-tsukanshi-staging.py: 転記の正答と official-answers.json の一致、語群全空欄・全記述の解説、optionSelected と公式正答の一致、計算式の最終値が公式正答に到達することを検査（errors 0）"
+ },
+ "60": {
+  "transcription": "sources/transcription-60.json: stem・全選択肢（521件）がPyMuPDFテキスト層の空白除去部分文字列であることを照合（ルビ混入2件を除去して一致、notesに記録）"
+ },
+ "independentReview": "reports/w3-review/TRV1.json, TRV2.json と reports/tsukanshi-review.md"
+}

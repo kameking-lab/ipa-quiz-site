@@ -1,0 +1,101 @@
+{
+  "createdAtUtc": "2026-10-23T12:08:26.713881+00:00",
+  "reviewer": "task22; gpt-6.1-sol Standard",
+  "reviewKind": "One consolidated independent delta review of two other-author frozen packets",
+  "claim": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-22\\output\\repair-delta-review-20261023\\CLAIMED-DELTAS.json",
+    "sha256": "ebdcbd73f17efd2faa56273e05528f81f9cc7abf42812960f427fb0a4769e0ba"
+  },
+  "counts": {
+    "originalsReferenced": 4,
+    "automotiveNewUniqueContentAcceptedOriginals": 2,
+    "civilNewUniqueContentAcceptedOriginals": 0,
+    "totalNewUniqueContentAcceptedOriginals": 2,
+    "changedFieldsReviewed": 6,
+    "changedFieldPass": 5,
+    "changedFieldHold": 1,
+    "newOptionReasonDeltasReviewed": 5,
+    "newOptionReasonDeltaPass": 4,
+    "newOptionReasonDeltaHold": 1,
+    "generalExplanationDeltasReviewed": 1,
+    "generalExplanationDeltaPass": 1,
+    "unchangedAutomotiveCheckedReasonsCarried": 6,
+    "automotiveFullReasonCoverageViaCarryPlusDelta": 8,
+    "newAnswerFieldsCreated": 0,
+    "essaySections": 0,
+    "formalIncrement": 0,
+    "integrationIncrement": 0,
+    "publicationIncrement": 0
+  },
+  "automotiveAcceptedIds": [
+    "jidosha-2025-second-3-motorcycle-q21",
+    "jidosha-2025-second-3-motorcycle-q29"
+  ],
+  "civilReasonPassIds": [
+    "2026-B7:1",
+    "2026-B7:4"
+  ],
+  "civilReasonHoldIds": [
+    "2025-A48:1"
+  ],
+  "automotiveReceipt": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-22\\output\\repair-delta-review-20261023\\AUTOMOTIVE-DELTA-RESULTS.json",
+    "sha256": "dddf0ff409c6b0ef2bb36f0e1c67535c9c526e1d905855363ad0826b3c5fb4a9"
+  },
+  "automotiveUnchangedFields": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-22\\output\\repair-delta-review-20261023\\AUTOMOTIVE-UNCHANGED-FIELD-HASHES.json",
+    "sha256": "3d4daa5fbedd0aa1820c925b12f85597d59ef3b7d7c3233df50b07b6048d9c42"
+  },
+  "civilReceipt": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-23\\task-22\\output\\repair-delta-review-20261023\\CIVIL-DELTA-RESULTS.json",
+    "sha256": "5d1b8a5553b5148704ad4d1095b2ccdeea11bf94716a26a1da4b318d48bf2f86"
+  },
+  "remainingBlockers": [
+    {
+      "id": "2025-A48:1",
+      "status": "HOLD_INSUFFICIENT_SPECIFIC_TECHNICAL_SUPPORT",
+      "action": "Independent delta content review against the existing JRTT2024 clauses",
+      "target": "General exam statement about heavy machinery at conventional operating-line/proximity works",
+      "reason": "JRTT contractual planning/definition clauses support before-work machinery and safety planning/submission but do not supply the specific applicability bridge and exact site-wide accident-prevention requirement.",
+      "completed": "JRTT1-4(1),1-4(2),1-2(5) captured body read; useful scoped source retained; candidate unchanged.",
+      "denied": false,
+      "pending": false,
+      "uncertain": false
+    },
+    {
+      "id": "2025-A48",
+      "status": "INHERITED_ORIGINAL_IDENTITY_HOLD_UNCHANGED",
+      "reason": "2025 original/key/figure identity101 is not established; this delta review does not authenticate the originals."
+    },
+    {
+      "id": "2026-B7",
+      "status": "INHERITED_CHOICES2_3_HOLD_UNCHANGED",
+      "reason": "A/C mobile-scaffold use-provision/management facts and article31(1)/(2)/regulation655 applicability remain unresolved."
+    }
+  ],
+  "inheritedAcquisitionStops": {
+    "railwayPdf": {
+      "action": "web.open primary PDF in author history",
+      "target": "https://jtsb.mlit.go.jp/railway/rep-acci/RA2025-3-1.pdf",
+      "status": "403_KNOWN_UNACQUIRED_STOP_PRESERVED",
+      "newAttempt": false
+    },
+    "examDateLawApis": "Two exact blocked endpoints retained in civil sourceStopRecords; no new acquisition or alternate route.",
+    "diesel": "Denied20260322_2d.pdf not touched"
+  },
+  "candidateModificationsByReviewer": 0,
+  "authorSelfAcceptanceUsed": false,
+  "prior43AndElectricalLaw7ReceiptsModified": false,
+  "excludedMachineQ02Touched": false,
+  "automotiveAccepted15AndSourceHold13ReviewedAgain": false,
+  "transferred88Touched": false,
+  "civilAccepted100ReviewedAgain": false,
+  "externalAiCalls": 0,
+  "sourceRequestsOrRetries": 0,
+  "gitOperations": 0,
+  "sharedCodeWrites": 0,
+  "buildDeploy": 0,
+  "spreadsheetWrites": 0,
+  "securityOrSettingsChanges": 0,
+  "newWorkers": 0
+}

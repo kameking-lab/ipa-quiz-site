@@ -1,0 +1,249 @@
+{
+  "status": "PARTIAL_CONTENT_ACCEPTED_NOT_REGISTERED",
+  "qualification": "gijutsushi1-kikai",
+  "year": 2024,
+  "subject": "basis",
+  "expectedFullQualificationCount": 160,
+  "questions": [
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-1-1",
+      "printedNumber": "Ⅰ－1－1",
+      "questionNumber": 1,
+      "questionText": "ユニバーサルデザインに関する次の記述の、［ ］に入る語句の組合せとして、最も適切なものはどれか。\n障害を持つ人々があらゆる分野で差別を受けないようにするためや不便さを取り除くため、自身も車椅子を利用する障害者であったロナルド・メイスが、それまでのバリアフリーなどの概念に代わって提唱したのがユニバーサルデザインである。ユニバーサルデザインの7つの原則は、（1）公平な利用、（2）利用における［ア］、（3）［イ］で直感的な利用、（4）認知できる情報、（5）失敗に対する［ウ］さ、（6）少ない［エ］な労力、（7）接近や利用のためのサイズと空間、である。",
+      "choices": {
+        "1": "ア：柔軟性／イ：単純／ウ：寛大／エ：身体的",
+        "2": "ア：限定性／イ：単純／ウ：厳格／エ：精神的",
+        "3": "ア：柔軟性／イ：単純／ウ：厳格／エ：身体的",
+        "4": "ア：限定性／イ：複雑／ウ：厳格／エ：身体的",
+        "5": "ア：柔軟性／イ：複雑／ウ：寛大／エ：精神的"
+      },
+      "officialAnswer": 1,
+      "scoringException": null,
+      "explanation": "正答は1です。利用方法の柔軟性、単純で直感的な利用、失敗に対する寛大さ、少ない身体的労力が、7原則の対応する内容です。",
+      "choiceExplanations": {
+        "1": "適切です。多様な利用方法、理解しやすさ、誤りへの許容、身体的負担の軽減を表します。",
+        "2": "利用の限定性と失敗への厳格さは原則に反し、労力の語も身体的です。",
+        "3": "柔軟性・単純・身体的は正しいですが、失敗には厳格でなく寛大であることが原則です。",
+        "4": "利用を限定し、操作を複雑にし、失敗に厳格にするという三つの点が原則と逆です。",
+        "5": "柔軟性と寛大さは正しいですが、利用は単純で直感的、労力は身体的です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 1,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－1－1。改行・空白・句読点と数式表記を整理。表は列名付きで全文転記。解説は独自作成。",
+      "transcription": "Official PDF pages1-5 visually checked. All table values retained with explicit column labels. Printed group/item retained.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review12.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-1-2",
+      "printedNumber": "Ⅰ－1－2",
+      "questionNumber": 2,
+      "questionText": "限界状態設計法は構造物に生じてはならない限界状態を設定し、その状態の発生に対する安全性を個々に照査するものである。限界状態は一般的に大きく分けて、終局限界状態、使用限界状態、疲労限界状態に分類できる。限界状態に関する次の（ア）～（ウ）の記述について、それぞれを表している限界状態の組合せとして、最も適切なものはどれか。\n（ア）通常の供用又は耐久性に関する限界状態である。\n（イ）荷重が繰り返し作用することによって生じる限界状態である。\n（ウ）最大耐力に対応する限界状態である。",
+      "choices": {
+        "1": "ア：使用限界状態／イ：終局限界状態／ウ：疲労限界状態",
+        "2": "ア：使用限界状態／イ：疲労限界状態／ウ：終局限界状態",
+        "3": "ア：終局限界状態／イ：疲労限界状態／ウ：使用限界状態",
+        "4": "ア：疲労限界状態／イ：使用限界状態／ウ：終局限界状態",
+        "5": "ア：疲労限界状態／イ：終局限界状態／ウ：使用限界状態"
+      },
+      "officialAnswer": 2,
+      "scoringException": null,
+      "explanation": "正答は2です。供用時の機能等は使用限界状態、繰返し荷重は疲労限界状態、最大耐力は終局限界状態に対応します。",
+      "choiceExplanations": {
+        "1": "アは正しいですが、イとウの疲労・終局が逆です。",
+        "2": "適切です。通常の使用、繰返し作用、耐力限界をそれぞれ正しく区別しています。",
+        "3": "イは正しいですが、アとウの使用・終局が逆です。",
+        "4": "ウは正しいですが、通常供用に関するアは使用、繰返し作用に関するイは疲労です。",
+        "5": "三つとも対応が異なります。アは使用、イは疲労、ウは終局です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 2,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－1－2。改行・空白・句読点と数式表記を整理。表は列名付きで全文転記。解説は独自作成。",
+      "transcription": "Official PDF pages1-5 visually checked. All table values retained with explicit column labels. Printed group/item retained.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review12.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-1-3",
+      "printedNumber": "Ⅰ－1－3",
+      "questionNumber": 3,
+      "questionText": "次の記述の、［ ］に入る語句の組合せとして、最も適切なものはどれか。\n断面が円形の等分布荷重を受ける片持ばりにおいて、最大曲げ応力は断面の円の直径の［ア］に［イ］し、最大たわみは断面の円の直径の［ウ］に［エ］する。",
+      "choices": {
+        "1": "ア：3乗／イ：反比例／ウ：4乗／エ：反比例",
+        "2": "ア：4乗／イ：比例／ウ：4乗／エ：反比例",
+        "3": "ア：4乗／イ：反比例／ウ：3乗／エ：反比例",
+        "4": "ア：4乗／イ：比例／ウ：3乗／エ：比例",
+        "5": "ア：3乗／イ：反比例／ウ：4乗／エ：比例"
+      },
+      "officialAnswer": 1,
+      "scoringException": null,
+      "explanation": "正答は1です。同じ荷重・長さ・材料なら最大曲げモーメントは同じです。円形断面の断面係数Z＝πd³/32より応力はd³に反比例、断面二次モーメントI＝πd⁴/64よりたわみはd⁴に反比例します。",
+      "choiceExplanations": {
+        "1": "適切です。応力はM/Z、たわみは曲げ剛性EIの逆数に比例することに対応します。",
+        "2": "応力は直径4乗に比例せず、断面係数を介して3乗に反比例します。",
+        "3": "応力とたわみに対応する直径の指数が逆です。",
+        "4": "断面を太くすると応力・たわみは減るため、比例という二つの記述が誤りです。",
+        "5": "応力は正しいですが、直径が増えるとたわみは増大せず、4乗に反比例して減少します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 2,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－1－3。改行・空白・句読点と数式表記を整理。表は列名付きで全文転記。解説は独自作成。",
+      "transcription": "Official PDF pages1-5 visually checked. All table values retained with explicit column labels. Printed group/item retained.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review12.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-1-4",
+      "printedNumber": "Ⅰ－1－4",
+      "questionNumber": 4,
+      "questionText": "速度伝達比が30で動力伝達効率がほぼ100%で滑りのない歯車装置の記述として、最も適切なものはどれか。ただし、速度伝達比は、歯車装置の入力軸の角速度を出力軸の角速度で割った値とする。",
+      "choices": {
+        "1": "入力軸が1回転する間に出力軸は30回転し、出力軸のトルクは入力軸のトルクとほぼ等しい。",
+        "2": "入力軸が30回転する間に出力軸は1回転し、出力軸のトルクは入力軸のトルクとほぼ等しい。",
+        "3": "入力軸が30回転する間に出力軸は1回転し、出力軸のトルクは入力軸のトルクのほぼ30倍になる。",
+        "4": "入力軸が1回転する間に出力軸は30回転し、出力軸のトルクは入力軸のトルクのほぼ30倍になる。",
+        "5": "入力軸が30回転する間に出力軸は1回転し、出力軸のトルクは入力軸のトルクのほぼ1/30倍になる。"
+      },
+      "officialAnswer": 3,
+      "scoringException": null,
+      "explanation": "正答は3です。ω_in/ω_out＝30なので、入力30回転に対して出力1回転です。動力Tωがほぼ保存されるため、出力トルクは入力の約30倍になります。",
+      "choiceExplanations": {
+        "1": "速度比の定義が逆であり、トルクを等しいとする点も動力保存と合いません。",
+        "2": "回転数比は正しいですが、回転速度が1/30なら同じ動力を伝えるトルクは30倍です。",
+        "3": "適切です。減速による角速度低下とトルク増大が動力保存を満たします。",
+        "4": "回転数比を逆にしながらトルクも増大すると、出力動力が入力を大きく上回ってしまいます。",
+        "5": "回転数比は正しいですが、トルク比を逆にしています。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 3,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－1－4。改行・空白・句読点と数式表記を整理。表は列名付きで全文転記。解説は独自作成。",
+      "transcription": "Official PDF pages1-5 visually checked. All table values retained with explicit column labels. Printed group/item retained.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review12.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-1-5",
+      "printedNumber": "Ⅰ－1－5",
+      "questionNumber": 5,
+      "questionText": "ある工場で原料A、Bを用いて、製品1、2を生産し販売している。製品1、2は共通の製造ラインで生産されており、2つを同時に生産することはできない。下表に示すように製品1を1 kg生産するために原料A、Bはそれぞれ1 kg、3 kg必要で、製品2を1 kg生産するためには原料A、Bをそれぞれ2 kg、1 kg必要とする。また、製品1、2を1 kgずつ生産するために、生産ラインを1時間ずつ稼働させる必要がある。原料A、Bの使用量、及び、生産ラインの稼働時間については、1日当たりの上限があり、それぞれ12 kg、15 kg、7時間である。製品1、2の販売から得られる利益が、それぞれ300万円/kg、200万円/kgのとき、全体の利益が最大となるように製品1、2の生産量を決定したい。1日当たりの最大の利益として、最も適切なものはどれか。\n表：製品の製造における原料の制約と生産ラインの稼働時間及び販売利益\n列：製品1／製品2／使用上限\n原料A［kg］：1／2／12\n原料B［kg］：3／1／15\nライン稼働時間［時間］：1／1／7\n利益［万円/kg］：300／200／適用なし",
+      "choices": {
+        "1": "1,200万円",
+        "2": "1,500万円",
+        "3": "1,600万円",
+        "4": "1,800万円",
+        "5": "1,920万円"
+      },
+      "officialAnswer": 4,
+      "scoringException": null,
+      "explanation": "正答は4です。生産量x、yについてx＋2y≦12、3x＋y≦15、x＋y≦7、x,y≧0。目的関数は300x＋200yです。実行可能領域の頂点(0,0)、(5,0)、(4,3)、(2,5)、(0,6)を比較すると、(4,3)で最大1800万円です。",
+      "choiceExplanations": {
+        "1": "製品2のみを6 kg作ると1200万円ですが、製品1も組み合わせることで利益を増やせます。",
+        "2": "製品1のみ5 kgの利益です。余ったライン時間を利用する組合せでさらに利益を得られます。",
+        "3": "x＝2、y＝5で1600万円ですが、別の実行可能頂点x＝4、y＝3で1800万円になります。",
+        "4": "適切です。x＝4、y＝3は原料A10 kg、原料B15 kg、時間7時間で全制約を満たし、頂点比較でも最大です。",
+        "5": "原料二つの制約の交点x＝3.6、y＝4.2では1920万円ですが、ライン時間7.8時間となり上限7時間を超えます。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 4,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－1－5。改行・空白・句読点と数式表記を整理。表は列名付きで全文転記。解説は独自作成。",
+      "transcription": "Official PDF pages1-5 visually checked. All table values retained with explicit column labels. Printed group/item retained.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review12.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-1-6",
+      "printedNumber": "Ⅰ－1－6",
+      "questionNumber": 6,
+      "questionText": "次の記述の、［ ］に入る表記の組合せとして、最も適切なものはどれか。\n独立に製造された軸A1と軸A2を長さ方向にすき間なく接続する。軸A1の長さと軸A2の長さがそれぞれ独立に正規分布N(μ_A1, σ_A1²)、正規分布N(μ_A2, σ_A2²)に従うとき、接続されたものの長さは正規分布［ア］に従う。\nまた、独立に製造された軸B1と軸受B2のはめあいを考える。軸B1の外径と軸受B2の内径がそれぞれ独立に正規分布N(μ_B1, σ_B1²)、正規分布N(μ_B2, σ_B2²)に従うとき、このすき間寸法は正規分布［イ］に従う。ただし、常にμ_B2＞μ_B1であるものとする。",
+      "choices": {
+        "1": "ア：N(μ_A1＋μ_A2, σ_A1²＋σ_A2²)／イ：N(μ_B2＋μ_B1, σ_B2²＋σ_B1²)",
+        "2": "ア：N(μ_A1＋μ_A2, σ_A1²＋σ_A2²)／イ：N(μ_B2−μ_B1, σ_B2²−σ_B1²)",
+        "3": "ア：N(μ_A1＋μ_A2, σ_A1²＋σ_A2²)／イ：N(μ_B2−μ_B1, σ_B2²＋σ_B1²)",
+        "4": "ア：N(μ_A1＋μ_A2, σ_A1²−σ_A2²)／イ：N(μ_B2−μ_B1, σ_B2²−σ_B1²)",
+        "5": "ア：N(μ_A1＋μ_A2, σ_A1²−σ_A2²)／イ：N(μ_B2＋μ_B1, σ_B2²−σ_B1²)"
+      },
+      "officialAnswer": 3,
+      "scoringException": null,
+      "explanation": "正答は3です。独立な正規変数の和と差は正規分布です。平均は和なら加算、差なら減算しますが、分散は係数の二乗で寄与するため、和でも差でも二つの分散の和です。",
+      "choiceExplanations": {
+        "1": "アは正しいですが、すき間は内径−外径なのでイの平均はμ_B2−μ_B1です。",
+        "2": "平均は正しいですが、独立な変数の差でも分散は差でなく和です。",
+        "3": "適切です。接続長の平均は和、すき間の平均は差、いずれも分散は和となります。",
+        "4": "和と差のどちらの場合も分散を減算している点が誤りです。",
+        "5": "アの分散、イの平均と分散が誤りです。独立なばらつきは分散として加算します。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 5,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－1－6。改行・空白・句読点と数式表記を整理。表は列名付きで全文転記。解説は独自作成。",
+      "transcription": "Official PDF pages1-5 visually checked. All table values retained with explicit column labels. Printed group/item retained.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review12.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    }
+  ]
+}

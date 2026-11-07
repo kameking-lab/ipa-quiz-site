@@ -1,3 +1,5 @@
+import { isReferenceOnlyQuestionId } from "@/lib/questions/assessment";
+import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
 import { strictContentGateEnabled } from "@/lib/billing/content-policy";
 import { ContentPage } from "@/mobile/server/ContentPage";
 import { displayQuestionExplanation } from "@/lib/questions/explanation-display";
@@ -47,7 +49,6 @@ import {
 import { examTopicPageExists } from "@/lib/seo/exam-meta";
 import { buildQuestionJsonLd, questionBreadcrumbItems, sessionLabel } from "@/lib/seo/question-jsonld";
 import { questionSnippet, questionTitle } from "@/lib/seo/question-meta";
-import { ExamNoteGuide } from "@/components/exam/ExamNoteGuide";
 import { CurrentLearningLinks } from "@/components/term-relations/CurrentLearningLinks";
 import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
 import { DescriptiveAnswerCard } from "@/components/quiz/DescriptiveAnswerCard";
@@ -55,7 +56,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { ShareButtons } from "@/components/ShareButtons";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { ExplanationLayers, ExplanationStructureLabel } from "@/components/quiz/ExplanationLayers";
+import { ExplanationLayers } from "@/components/quiz/ExplanationLayers";
 import { QuestionBody } from "@/components/quiz/QuestionBody";
 import { QuestionSourcePresentation } from "@/components/quiz/QuestionSourcePresentation";
 import { AiTransparencyDisclaimer } from "@/components/quiz/AiTransparencyDisclaimer";
@@ -63,7 +64,6 @@ import { AfternoonEssayHint } from "@/components/quiz/AfternoonEssayHint";
 import { KamokuBStudyHint } from "@/components/quiz/KamokuBStudyHint";
 import { CategoryStudyTip } from "@/components/quiz/CategoryStudyTip";
 import { DifficultyMeter } from "@/components/quiz/DifficultyMeter";
-import { InlineBookHint } from "@/components/quiz/InlineBookHint";
 import { createQuestionReportContextForDisplay } from "@/lib/feedback/question-report-context-server";
 import { QuestionFeedback } from "@/components/quiz/QuestionFeedback";
 import { topicTagToSlug } from "@/lib/seo/topics";
@@ -171,7 +171,7 @@ export default async function QuestionPage({
   }
   // Keep detail pages, paper listings and the interactive player on the same
   // quality boundary. A listed question must also be readable and playable.
-  if (!isPracticeReadyQuestion(q)) notFound();
+  if (!isPracticeReadyQuestion(q) && !(isReferenceOnlyQuestionId(q.id) && !q.needsReview && !hasUnrenderableContent(q))) notFound();
 
   const answerKeys = Array.isArray(q.answer) ? q.answer : [q.answer];
   const answerText = q.type === "ordering" ? undefined :
@@ -242,7 +242,6 @@ export default async function QuestionPage({
   const canonicalQuestion = getQuestionCanonicalRepresentative(ALL_QUESTIONS, q);
   const canonicalPageUrlAbs = `${SITE_BASE_URL}${questionPagePath(canonicalQuestion)}`;
   const requestedPageUrlAbs = `${SITE_BASE_URL}${questionPagePath(q)}`;
-  const examPath = `/${q.exam}`;
   const title = questionTitle(q);
   const lastUpdatedISO = getRecordedLastUpdatedISO(q);
   const lastUpdatedJa = lastUpdatedISO ? formatLastUpdatedJa(lastUpdatedISO) : undefined;
@@ -428,7 +427,7 @@ export default async function QuestionPage({
         </section>
       )}
 
-      {q.type === "descriptive" && q.exam === "chosashi" && (
+      {isSelfReviewedDescriptiveQuestion(q) && (
         <div className="mt-5">
           <DescriptiveAnswerCard question={q} defaultOpen />
         </div>
@@ -442,14 +441,9 @@ export default async function QuestionPage({
               <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-violet-500 text-primary-foreground shadow-sm">
                 <BookOpenCheck className="h-4 w-4" />
               </span>
-              <div className="leading-tight">
-                <h2 className="text-base font-bold tracking-tight text-foreground sm:text-lg">
-                  解説
-                </h2>
-                {showRealExplanation && (
-                  <ExplanationStructureLabel explanation={displayQuestionExplanation(q.exam, q.explanation)} />
-                )}
-              </div>
+              <h2 className="text-base font-bold tracking-tight text-foreground sm:text-lg">
+                解説
+              </h2>
             </div>
             <span className="inline-flex items-center gap-1 rounded-full border border-border bg-card px-2.5 py-1 text-[11px] font-medium text-muted-foreground transition group-open:bg-muted">
               <ChevronDown className="h-3.5 w-3.5 transition group-open:rotate-180" />
@@ -501,7 +495,6 @@ export default async function QuestionPage({
           {q.officialReferenceUrls && q.officialReferenceUrls.length > 0 && (
             <nav aria-label="問題・正答と参照資料" className="mt-4 text-sm">
               <h3 className="font-semibold">問題・正答と参照資料</h3>
-              <p className="mt-1 text-xs text-muted-foreground">問題冊子・正答表・図版と、解説の参照資料は役割が異なります。公式問題と正答の掲載は、独自解説の全説明を公式機関が認めたことを意味しません。</p>
               <ul className="mt-2 list-inside list-disc space-y-2">
                 {q.officialReferenceUrls.map((url, index) => (
                   <li key={url}><a href={url} target="_blank" rel="noopener noreferrer" className="underline">{questionReferenceLabel(q, url)} {index + 1}（{new URL(url).hostname}）</a></li>
@@ -513,7 +506,7 @@ export default async function QuestionPage({
             // 独自解説であることを常に見える位置に示す（ポップオーバー内だけにしない）。
             <p className="mt-4 text-xs leading-relaxed text-muted-foreground">{q.sourceAttribution}</p>
           )}
-          {!(q.exam === "chosashi" && q.type === "descriptive") && <AiTransparencyDisclaimer
+          {!(isSelfReviewedDescriptiveQuestion(q)) && <AiTransparencyDisclaimer
             lastUpdatedISO={lastUpdatedISO}
             lastUpdatedJa={lastUpdatedJa}
             sourcePdfUrl={getSafePdfUrl(q.sourcePdfUrl)}
@@ -531,7 +524,6 @@ export default async function QuestionPage({
         <span>この問題を共有</span>
         <ShareButtons url={requestedPageUrlAbs} text={title} compact />
       </div>
-      <div className="print:hidden"><ExamNoteGuide exam={q.exam} /></div>
 
       {/* Category-level study guidance */}
       <div className="print:hidden">
@@ -540,15 +532,6 @@ export default async function QuestionPage({
           exam={q.exam}
           topicTags={q.topicTags}
           hasTopicPage={topicPageExists}
-        />
-      </div>
-
-      {/* Inline book recommendation tied to the category */}
-      <div className="print:hidden">
-        <InlineBookHint
-          exam={q.exam}
-          category={q.category}
-          pagePath={`/q/${p.exam}/${p.yearSeason}/${p.section}/${p.qnum}`}
         />
       </div>
 
@@ -580,9 +563,6 @@ export default async function QuestionPage({
             <h2 className="text-base font-bold tracking-tight text-foreground sm:text-lg">
               この問題を AI と深掘りする
             </h2>
-            <p className="mt-1 text-sm leading-relaxed text-muted-foreground">
-              用語解説・選択肢分析をその場で対話。クイズモードでは解答→解説がゼロ遷移。
-            </p>
           </div>
           <Button asChild variant="gradient" size="lg" className="w-full shrink-0 sm:w-auto">
             <Link
@@ -592,30 +572,6 @@ export default async function QuestionPage({
               <ArrowRight className="h-4 w-4" />
             </Link>
           </Button>
-        </div>
-        <div className="relative mt-4 border-t border-primary/15 pt-3">
-          <p className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-            AIに質問できる例
-          </p>
-          <ul aria-label="AIへの質問例" className="flex flex-wrap gap-1.5">
-            {[
-              "この選択肢の違いは？",
-              "用語をやさしく解説して",
-              `${q.category}の前提知識を整理して`,
-              "実例で教えて",
-              "覚え方を教えて",
-            ].map((label) => (
-              <li key={label}>
-                <Link
-                  href={`/quiz?mode=year&exam=${q.exam}&year=${q.year}&season=${q.season}&session=${q.session}&question=${encodeURIComponent(q.id)}&returnTo=${encodeURIComponent(questionPagePath(q))}#q${q.qNumber}`}
-                  className="inline-flex items-center gap-1 rounded-full border border-primary/30 bg-card px-2.5 py-1 text-xs text-foreground transition hover:-translate-y-0.5 hover:border-primary/60 hover:bg-primary-soft"
-                >
-                  <Sparkles className="h-3 w-3 text-primary" aria-hidden="true" />
-                  {label}
-                </Link>
-              </li>
-            ))}
-          </ul>
         </div>
       </section>
 
@@ -684,9 +640,6 @@ export default async function QuestionPage({
               <h2 className="text-lg font-bold tracking-tight text-foreground">
                 関連する問題
               </h2>
-              <p className="mt-0.5 text-xs text-muted-foreground">
-                {q.category} の他の問題
-              </p>
             </div>
           </div>
           <ul className="flex flex-col gap-2">

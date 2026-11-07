@@ -1,0 +1,160 @@
+{
+  "status": "PASS",
+  "runtime": "production",
+  "browserVersion": "156.0.8078.74",
+  "serviceWorkers": "blocked (online acceptance)",
+  "externalRequests": "blocked",
+  "story": "accepted registry -> ordinary question page -> answer -> all choice reasons -> browser history retained after reload; holds remain unavailable",
+  "flows": [
+    {
+      "id": "biyoshi-2026-first-gakka-q44",
+      "httpStatus": 200,
+      "scoring": true,
+      "allChoiceReasons": true,
+      "historyAfterReload": true,
+      "apiStatus": 200
+    },
+    {
+      "id": "biyoshi-2026-second-gakka-q47",
+      "httpStatus": 200,
+      "scoring": true,
+      "allChoiceReasons": true,
+      "historyAfterReload": true,
+      "apiStatus": 200
+    },
+    {
+      "id": "otsu1-published-202606-q26",
+      "httpStatus": 200,
+      "scoring": true,
+      "allChoiceReasons": true,
+      "historyAfterReload": true,
+      "apiStatus": 200
+    },
+    {
+      "id": "otsu1-published-202606-q30",
+      "httpStatus": 200,
+      "scoring": true,
+      "allChoiceReasons": true,
+      "historyAfterReload": true,
+      "apiStatus": 200
+    },
+    {
+      "id": "kikenbutsu-otsu2-published-202606-q26",
+      "httpStatus": 200,
+      "scoring": true,
+      "allChoiceReasons": true,
+      "historyAfterReload": true,
+      "apiStatus": 200
+    },
+    {
+      "id": "kikenbutsu-otsu2-published-202606-q30",
+      "httpStatus": 200,
+      "scoring": true,
+      "allChoiceReasons": true,
+      "historyAfterReload": true,
+      "apiStatus": 200
+    },
+    {
+      "id": "kiken-otsu6-published-202606-q26",
+      "httpStatus": 200,
+      "scoring": true,
+      "allChoiceReasons": true,
+      "historyAfterReload": true,
+      "apiStatus": 200
+    },
+    {
+      "id": "kiken-otsu6-published-202606-q30",
+      "httpStatus": 200,
+      "scoring": true,
+      "allChoiceReasons": true,
+      "historyAfterReload": true,
+      "apiStatus": 200
+    }
+  ],
+  "holds": [
+    {
+      "id": "biyoshi-2026-first-gakka-q6",
+      "page": 404,
+      "api": 404
+    },
+    {
+      "id": "biyoshi-2026-first-gakka-q48",
+      "page": 404,
+      "api": 404
+    },
+    {
+      "id": "biyoshi-2026-second-gakka-q50",
+      "page": 404,
+      "api": 404
+    },
+    {
+      "id": "biyoshi-2026-second-gakka-q55",
+      "page": 404,
+      "api": 404
+    }
+  ],
+  "images": [
+    {
+      "id": "biyoshi-2026-first-gakka-q44",
+      "url": "/images/questions/biyoshi/biyoshi-53-q44-figure.png",
+      "decoded": true
+    },
+    {
+      "id": "biyoshi-2026-second-gakka-q47",
+      "url": "/images/questions/biyoshi/biyoshi-54-q47-figure.png",
+      "decoded": true
+    },
+    {
+      "id": "otsu1-published-202606-q26",
+      "url": "/images/questions/kikenbutsu-otsu1/official-page-14.png",
+      "decoded": true
+    },
+    {
+      "id": "otsu1-published-202606-q30",
+      "url": "/images/questions/kikenbutsu-otsu1/official-page-16.png",
+      "decoded": true
+    },
+    {
+      "id": "kiken-otsu6-published-202606-q26",
+      "url": "/images/questions/kikenbutsu-otsu6/q26.png",
+      "decoded": true
+    },
+    {
+      "id": "kiken-otsu6-published-202606-q30",
+      "url": "/images/questions/kikenbutsu-otsu6/q30.png",
+      "decoded": true
+    }
+  ],
+  "search": [
+    {
+      "exam": "biyoshi",
+      "status": 200,
+      "total": 106
+    },
+    {
+      "exam": "tsushin2",
+      "status": 200,
+      "total": 129
+    },
+    {
+      "exam": "kikenbutsu-otsu1",
+      "status": 200,
+      "total": 10
+    },
+    {
+      "exam": "kikenbutsu-otsu2",
+      "status": 200,
+      "total": 10
+    },
+    {
+      "exam": "kikenbutsu-otsu6",
+      "status": 200,
+      "total": 10
+    }
+  ],
+  "errors": [],
+  "searchUI": {
+    "exam": "biyoshi",
+    "filterVisible": true
+  }
+}

@@ -1,9 +1,9 @@
 "use client";
 
 import * as React from "react";
+import Link from "next/link";
 import { Sparkles } from "lucide-react";
 import { BadgeWall } from "@/app/account/badges/BadgeWall";
-import { StreakCouponCard } from "@/components/motivation/StreakCouponCard";
 import { readXp, xpProgress, type XpProgress } from "@/lib/gamification/xp";
 
 export function DashboardBadges() {
@@ -53,7 +53,7 @@ export function DashboardBadges() {
         )}
       </div>
 
-      <StreakCouponCard variant="full" />
+      <p className="text-sm text-muted-foreground">以前に案内された特典については、<Link href="/contact#legacy-benefits" className="underline">お問い合わせください</Link>。</p>
 
       <BadgeWall />
     </div>

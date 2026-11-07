@@ -1,9 +1,11 @@
+import { isReferenceOnlyQuestionId } from "./assessment";
 import { nativeBQuestionIssue } from "./native-b";
 import { numericQuestionIssue } from "./numeric";
 import { orderingQuestionIssue } from "./ordering";
 import { hasUnrenderableContent } from "./content-quality";
 import type { Question, QuizFilter } from "./types";
 import type { HistoryStore } from "@/lib/storage/history";
+import { usesNumberedChoices } from "./display";
 
 
 
@@ -18,7 +20,7 @@ export function isPlaceholderExplanation(q: Question): boolean {
  * paper page from promising more questions than the quiz can actually serve.
  */
 export function isPracticeReadyQuestion(q: Question): boolean {
-  return !nativeBQuestionIssue(q) && !numericQuestionIssue(q) && !orderingQuestionIssue(q) && !hasUnrenderableContent(q) && !q.needsReview && !isPlaceholderExplanation(q);
+  return !q.officialScoring && q.publicAllowed !== false && !isReferenceOnlyQuestionId(q.id) && !nativeBQuestionIssue(q) && !numericQuestionIssue(q) && !orderingQuestionIssue(q) && !hasUnrenderableContent(q) && !q.needsReview && !isPlaceholderExplanation(q);
 }
 
 export function filterQuestions(
@@ -83,9 +85,10 @@ export function shuffle<T>(arr: T[]): T[] {
 }
 
 export function shuffleChoices(q: Question): Question {
-  // These explanations or answer metadata refer to the official choice numbers.
-  // Preserve their order in shuffled quiz and API requests.
-  if (q.exam === "kanteishi" || q.exam === "kaikeishi" || q.exam === "judo-seifukushi" || q.exam === "riku-toku-kokunai" || q.exam === "kai-toku2" || q.exam === "kai-toku3" || q.exam === "koku-toku" || q.exam === "land-special1" || q.exam === "riku-tech1" || q.exam === "maritime4" || q.exam === "aviation-comm" || q.exam === "amateur1" || q.exam === "maritime-special1" || q.exam === "riku-tech2" || q.exam === "amateur2" || q.exam === "maritime-radar" || q.exam === "maritime3" || q.exam === "maritime2" || q.exam === "maritime1" || q.exam === "general3" || q.exam === "general2" || q.exam === "general1" || q.exam === "land-special2" || q.exam === "land-special3") return q;
+  // Printed numbers and official answer fields refer to the original order.
+  if (usesNumberedChoices(q.exam) || q.officialAnswerNumber !== undefined) return q;
+  if (["chintai", "kyusui", "biru-kan", "gijutsushi1-kikai", "hoshasen-1", "hoshasen-2", "khk-kikai-kou", "khk-kikai-otsu", "energy-kanri", "reform-mgr", "shohi-sodan"].includes(q.exam)) return q;
+  if (["denki1","kisho","kenchiku-setsubishi","chizai2","kanteishi","kaikeishi","judo-seifukushi","riku-toku-kokunai","kai-toku2","kai-toku3","koku-toku","land-special1","riku-tech1","maritime4","aviation-comm","amateur1","maritime-special1","riku-tech2","amateur2","maritime-radar","maritime3","maritime2","maritime1","general3","general2","general1","land-special2","land-special3","biyoshi","tsushin2","shuwa","shinrishi"].includes(q.exam) || q.exam.startsWith("kikenbutsu-otsu")) return q;
   if (!q.choices) return q;
   // Labels in authored prose refer to the original choices. Reordering only the
   // answer map would silently contradict the explanation (for example AP 2017秋 問2).

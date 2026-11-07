@@ -23,6 +23,7 @@ import {
   type QuestionMeta,
 } from "@/lib/dashboard/analytics";
 import type { HistoryEntry } from "@/lib/storage/history";
+import { MockExamInsight } from "../MockExamInsight";
 
 interface ProgressData {
   totalAnswered: number;
@@ -90,6 +91,7 @@ export function DashboardProgress() {
 
   return (
     <div className="space-y-6">
+      <MockExamInsight />
       <section className="grid grid-cols-1 gap-4 lg:grid-cols-3">
         <div className="rounded-2xl border border-zinc-200 bg-white p-4 lg:col-span-2 dark:border-zinc-800 dark:bg-zinc-950">
           <h2 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">

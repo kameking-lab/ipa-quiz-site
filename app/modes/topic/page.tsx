@@ -1,3 +1,4 @@
+import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import { defaultPracticeSession, parsePracticeSession, PRACTICE_SESSIONS } from "@/lib/questions/practice-session";
 import { PracticeSessionTabs } from "@/components/quiz/PracticeSessionTabs";
 import type { Metadata } from "next";
@@ -32,32 +33,11 @@ export async function generateMetadata({
     title,
     description,
     alternates: { canonical },
+    robots: { index: false, follow: true },
   };
 }
 
-const VALID_EXAMS: ExamCode[] = ["kanteishi", "kaikeishi",
-  "land-special1", "riku-tech1", "maritime4", "aviation-comm", "amateur1", "maritime-special1", "riku-tech2", "amateur2", "maritime-radar", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1", "land-special2", "land-special3", "kai-toku2",
-  "riku-toku-kokunai",
-  "kai-toku3",
-  "koku-toku",
-  "ip",
-  "sg",
-  "fe",
-  "ap",
-  "st",
-  "sa",
-  "pm",
-  "nw",
-  "db",
-  "es",
-  "sc",
-  "sm",
-  "au",
-  "takken",
-  "tohan",
-  "kanri",
-  "chusho-kigyo-shindanshi",
-];
+const VALID_EXAMS = ALL_QUIZ_EXAM_CODES;
 
 function isExamCode(s: unknown): s is ExamCode {
   return typeof s === "string" && (VALID_EXAMS as string[]).includes(s);
@@ -129,6 +109,8 @@ export default async function TopicModePage({
           <p className="mt-3 max-w-xl text-pretty text-sm text-muted-foreground sm:text-base">
             {isApPool
               ? "応用情報の出題範囲を AP・FE・IP・SG から横断学習できます。同じ知識領域を異なる難度・出題形式で攻略。"
+              : exam === "kenchiku-setsubishi"
+              ? "建築一般知識・建築法規・建築設備から科目を選んで過去問を学習できます。"
               : `セキュリティ・ネットワーク・データベース・経営戦略など、分野を絞って${label}の過去問を学習できます。`}
           </p>
           <div className="mt-3 flex flex-wrap gap-2 text-xs">

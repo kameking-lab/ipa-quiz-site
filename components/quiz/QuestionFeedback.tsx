@@ -5,18 +5,20 @@ import { ThumbsUp, AlertCircle, Flag, Check } from "lucide-react";
 
 import { readQuestionReportContext, questionReportContextLines, type QuestionReportContext } from "@/lib/feedback/question-report-context";
 import { LS_KEYS } from "@/lib/storage/keys";
+import { submitSupport } from "@/lib/feedback/submit";
+import { PrivacyNote } from "@/components/ui/privacy-note";
+import { readLocalFeedback } from "@/lib/feedback/local-data";
 
 type Rating = "helpful" | "unclear" | "report";
 
-type Stored = Record<string, { rating: Rating; ts: number }>;
+type Stored = Record<string, { rating: Rating; ts: number; receiptId?: string }>;
 
 function readStore(): Stored {
   if (typeof window === "undefined") return {};
   try {
-    const raw = window.localStorage.getItem(LS_KEYS.questionFeedback);
-    if (!raw) return {};
-    const parsed = JSON.parse(raw) as Stored;
-    return parsed && typeof parsed === "object" ? parsed : {};
+    const legacy = readLocalFeedback(LS_KEYS.questionFeedback);
+    const current = readLocalFeedback(LS_KEYS.questionRatings);
+    return { ...(legacy && typeof legacy === "object" && !Array.isArray(legacy) ? legacy : {}), ...(current && typeof current === "object" && !Array.isArray(current) ? current : {}) } as Stored;
   } catch {
     return {};
   }
@@ -25,7 +27,7 @@ function readStore(): Stored {
 function writeStore(store: Stored): void {
   if (typeof window === "undefined") return;
   try {
-    window.localStorage.setItem(LS_KEYS.questionFeedback, JSON.stringify(store));
+    window.localStorage.setItem(LS_KEYS.questionRatings, JSON.stringify(store));
   } catch {
     /* quota exceeded — ignore */
   }
@@ -67,6 +69,8 @@ export function QuestionFeedback({ questionId, context }: QuestionFeedbackProps)
 }
 function QuestionFeedbackForm({ questionId, context }: { questionId: string; context: QuestionReportContext | null }) {
   const [submitted, setSubmitted] = useState<Rating | null>(null);
+  const [receiptId, setReceiptId] = useState("");
+  const [error, setError] = useState("");
   const [comment, setComment] = useState("");
   const [showCommentBox, setShowCommentBox] = useState(false);
   const [busy, setBusy] = useState(false);
@@ -74,35 +78,32 @@ function QuestionFeedbackForm({ questionId, context }: { questionId: string; con
   useEffect(() => {
     const store = readStore();
     const existing = store[questionId];
-    if (existing) setSubmitted(existing.rating);
+    if (existing?.receiptId) { setSubmitted(existing.rating); setReceiptId(existing.receiptId); }
   }, [questionId]);
 
-  async function send(rating: Rating, optionalComment?: string): Promise<void> {
+  async function send(rating: Rating, optionalComment?: string): Promise<boolean> {
     setBusy(true);
+    setError("");
     try {
-      await fetch("/api/contact", {
-        method: "POST",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify({
+      const receipt = await submitSupport({
           kind: "question-rating",
           questionId,
           rating,
           ...(rating !== "helpful" && context ? { context } : {}),
           comment: optionalComment?.trim() ? optionalComment.trim() : undefined,
-        }),
-        cache: "no-store",
-        keepalive: true,
-      }).catch(() => {
-        /* network error — local state still recorded */
       });
+      const store = readStore();
+      store[questionId] = { rating, ts: Date.now(), receiptId: receipt };
+      writeStore(store);
+      setReceiptId(receipt);
+      setSubmitted(rating);
+      return true;
+    } catch (cause) {
+      setError(cause instanceof Error ? cause.message : "送信できませんでした。再送信してください。");
+      return false;
     } finally {
       setBusy(false);
     }
-
-    const store = readStore();
-    store[questionId] = { rating, ts: Date.now() };
-    writeStore(store);
-    setSubmitted(rating);
   }
 
   function onPick(rating: Rating): void {
@@ -117,8 +118,7 @@ function QuestionFeedbackForm({ questionId, context }: { questionId: string; con
 
   async function onSubmitWithComment(): Promise<void> {
     if (!submitted || submitted === "helpful") return;
-    await send(submitted, comment);
-    setShowCommentBox(false);
+    if (await send(submitted, comment)) setShowCommentBox(false);
   }
 
   if (submitted && !showCommentBox) {
@@ -129,7 +129,7 @@ function QuestionFeedbackForm({ questionId, context }: { questionId: string; con
         className={`inline-flex items-center gap-2 rounded-xl border px-3 py-2 text-sm ${meta.ring} ${meta.tone}`}
       >
         <Check className="h-4 w-4" />
-        <span>{meta.ack}</span>
+        <span>{meta.ack}<span className="mt-1 block break-all text-xs">運営の受付先に送信しました。受付番号: {receiptId}</span></span>
       </div>
     );
   }
@@ -149,7 +149,7 @@ function QuestionFeedbackForm({ questionId, context }: { questionId: string; con
               type="button"
               onClick={() => onPick(r)}
               disabled={busy || (submitted !== null && submitted !== r)}
-              className={`inline-flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition ${meta.ring} ${meta.tone} disabled:opacity-50`}
+              className={`inline-flex min-h-11 items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-medium transition ${meta.ring} ${meta.tone} disabled:opacity-50`}
             >
               <Icon className="h-3.5 w-3.5" />
               {meta.label}
@@ -157,6 +157,7 @@ function QuestionFeedbackForm({ questionId, context }: { questionId: string; con
           );
         })}
       </div>
+      {error && <p role="alert" className="mt-2 text-sm text-rose-700 dark:text-rose-300">{error}</p>}
 
       {showCommentBox && submitted && submitted !== "helpful" && (
         <div className="mt-3 space-y-2">
@@ -180,6 +181,7 @@ function QuestionFeedbackForm({ questionId, context }: { questionId: string; con
             rows={3}
             maxLength={800}
             value={comment}
+            disabled={busy}
             onChange={(e) => setComment(e.target.value)}
             className="w-full rounded-xl border border-border bg-background p-2.5 text-sm text-foreground focus:outline-none focus:ring-2 focus:ring-primary/40"
             placeholder="例: 解説の選択肢ウの説明が事実と異なります"
@@ -189,7 +191,7 @@ function QuestionFeedbackForm({ questionId, context }: { questionId: string; con
               type="button"
               onClick={() => void onSubmitWithComment()}
               disabled={busy}
-              className="inline-flex items-center justify-center rounded-xl bg-foreground px-3 py-1.5 text-xs font-semibold text-background transition hover:bg-foreground/85 disabled:opacity-50"
+              className="inline-flex min-h-11 items-center justify-center rounded-xl bg-foreground px-3 py-1.5 text-xs font-semibold text-background transition hover:bg-foreground/85 disabled:opacity-50"
             >
               送信
             </button>
@@ -197,11 +199,12 @@ function QuestionFeedbackForm({ questionId, context }: { questionId: string; con
               type="button"
               onClick={() => void onSubmitWithComment()}
               disabled={busy}
-              className="text-xs text-muted-foreground hover:text-foreground"
+              className="min-h-11 text-xs text-muted-foreground hover:text-foreground"
             >
               コメントなしで送信
             </button>
           </div>
+          <PrivacyNote variant="message" />
         </div>
       )}
     </div>

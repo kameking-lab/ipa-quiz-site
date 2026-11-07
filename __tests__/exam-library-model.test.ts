@@ -60,37 +60,12 @@ describe("exam-library catalog contract", () => {
     ).toBeNull();
   });
 
-  it("keeps only https note links and de-duplicates ids", () => {
-    const parsed = parseExamCatalog([
-      {
-        ...baseEntry,
-        noteLinks: [
-          { title: "解説", url: "https://note.com/example/n/abc" },
-          { title: "bad", url: "javascript:alert(1)" },
-        ],
-      },
-      baseEntry,
-    ]);
+  it("ignores retired article metadata while preserving catalog and source fields", () => {
+    const parsed = parseExamCatalog([{ ...baseEntry, noteLinks: [{ title: "old", url: "https://note.com/example/n/abc" }] }, baseEntry]);
     expect(parsed).toHaveLength(1);
-    expect(parsed[0].noteLinks).toEqual([{ title: "解説", url: "https://note.com/example/n/abc" }]);
-  });
-
-  it("keeps a valid free/paid noteLinks.kind and drops an invalid one, without free/paid mislabeling", () => {
-    const parsed = parseExamCatalog([
-      {
-        ...baseEntry,
-        noteLinks: [
-          { title: "無料記事", url: "https://note.com/example/n/free1", kind: "free" },
-          { title: "有料記事", url: "https://note.com/example/n/paid1", kind: "paid" },
-          { title: "kind不正", url: "https://note.com/example/n/bad1", kind: "discount" },
-        ],
-      },
-    ]);
-    expect(parsed[0].noteLinks).toEqual([
-      { title: "無料記事", url: "https://note.com/example/n/free1", kind: "free" },
-      { title: "有料記事", url: "https://note.com/example/n/paid1", kind: "paid" },
-      { title: "kind不正", url: "https://note.com/example/n/bad1" },
-    ]);
+    expect(parsed[0]).not.toHaveProperty("noteLinks");
+    expect(parsed[0].pdfUrl).toBe(baseEntry.pdfUrl);
+    expect(parsed[0].indexUrl).toBe(baseEntry.indexUrl);
   });
 
   it("formats dates with their meaning", () => {

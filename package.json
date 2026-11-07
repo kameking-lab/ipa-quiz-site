@@ -8,7 +8,7 @@
   "packageManager": "pnpm@10.33.0",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "node scripts/vercel-migrate.mjs && next build",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
@@ -47,11 +47,10 @@
     "check:canonical": "tsx scripts/check-canonical.ts",
     "audit:essays": "tsx scripts/audit-essays.ts",
     "audit:essays:ci": "tsx scripts/audit-essays.ts --ci",
-    "audit:success-stories": "tsx scripts/audit-success-stories.ts",
-    "audit:success-stories:ci": "tsx scripts/audit-success-stories.ts --ci",
     "copilot:index": "tsx scripts/build-copilot-index.ts",
     "copilot:eval": "tsx scripts/eval-copilot-rag.ts",
-    "test": "vitest run"
+    "test": "vitest run",
+    "mascots:build": "tsx scripts/build-study-room-mascots.ts"
   },
   "dependencies": {
     "@auth/prisma-adapter": "2.11.3",
@@ -67,9 +66,9 @@
     "clsx": "^2.1.1",
     "framer-motion": "^12.38.0",
     "lucide-react": "^1.16.0",
-    "next": "16.4.3",
+    "next": "16.4.5",
     "next-auth": "5.0.0-beta.32",
-    "nodemailer": "^8.0.7",
+    "nodemailer": "10.3.1",
     "posthog-js": "^1.373.5",
     "prisma": "^6.19.3",
     "react": "19.2.6",
@@ -78,7 +77,7 @@
     "recharts": "^3.8.1",
     "remark-gfm": "^4.0.1",
     "tailwind-merge": "^3.6.0",
-    "zod": "^4.4.3"
+    "zod": "4.6.7"
   },
   "devDependencies": {
     "@playwright/test": "^1.60.0",
@@ -90,12 +89,12 @@
     "@types/react-dom": "^19",
     "@vitejs/plugin-react": "^4.7.0",
     "eslint": "^9",
-    "eslint-config-next": "16.4.3",
+    "eslint-config-next": "16.4.5",
     "jsdom": "^26.1.0",
     "tailwindcss": "^4.3.0",
     "tsx": "^4.22.0",
     "typescript": "^5",
-    "vitest": "^3.2.4",
+    "vitest": "4.1.12",
     "vite": "7.3.7"
   }
 }

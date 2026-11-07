@@ -18,7 +18,6 @@ import {
   RotateCcw,
   Settings as SettingsIcon,
   Sliders,
-  Sparkles,
   Sun,
   TrendingUp,
   Upload,
@@ -29,13 +28,6 @@ import { Badge } from "@/components/ui/badge";
 import { useTheme } from "@/components/theme-provider";
 import { useRovingRadioGroup } from "@/lib/a11y/use-roving-radio";
 import { readSettings, writeSettings, type AppSettings } from "@/lib/storage/settings";
-import {
-  readCharacterState,
-  writeCharacterId,
-  writeCharacterEnabled,
-} from "@/lib/storage/character";
-import { CharacterSelector } from "@/components/character/CharacterSelector";
-import { DEFAULT_CHARACTER_ID, type CharacterId } from "@/lib/ai/characters";
 import { createHistoryStore } from "@/lib/storage/history";
 import { clearLastQuestion } from "@/lib/storage/last-question";
 import { resetUserContext } from "@/lib/storage/user-context";
@@ -59,7 +51,6 @@ const THEME_OPTIONS: { value: Theme; label: string; icon: React.ReactNode }[] = 
 const SECTIONS = [
   { id: "home-screen", label: "ホーム画面に追加", icon: <Download className="h-3.5 w-3.5" /> },
   { id: "appearance", label: "外観", icon: <Palette className="h-3.5 w-3.5" /> },
-  { id: "character", label: "AIキャラ", icon: <Sparkles className="h-3.5 w-3.5" /> },
   { id: "quiz-options", label: "クイズオプション", icon: <Sliders className="h-3.5 w-3.5" /> },
   { id: "notifications", label: "通知設定", icon: <Bell className="h-3.5 w-3.5" /> },
   { id: "exam-schedule", label: "試験予定", icon: <CalendarClock className="h-3.5 w-3.5" /> },
@@ -138,8 +129,6 @@ export default function SettingsPage() {
     reduceMotion: false,
   });
   const [stats, setStats] = useState({ total: 0, correct: 0, accuracy: 0, uniqueAnswered: 0 });
-  const [characterId, setCharacterId] = useState<CharacterId>(DEFAULT_CHARACTER_ID);
-  const [characterEnabled, setCharacterEnabledState] = useState(true);
   const [toast, setToast] = useState<{ type: "ok" | "err"; msg: string } | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -149,9 +138,6 @@ export default function SettingsPage() {
     setMotivation(readMotivationSettings());
     const store = createHistoryStore();
     setStats(store.getStats());
-    const cs = readCharacterState();
-    setCharacterId(cs.id);
-    setCharacterEnabledState(cs.enabled);
   }, []);
 
   function updateMotivation<K extends keyof MotivationSettings>(
@@ -161,16 +147,6 @@ export default function SettingsPage() {
     const next = { ...motivation, [key]: value };
     setMotivation(next);
     writeMotivationSettings(next);
-  }
-
-  function handleCharacterChange(id: CharacterId) {
-    setCharacterId(id);
-    writeCharacterId(id);
-  }
-
-  function handleCharacterEnabledChange(on: boolean) {
-    setCharacterEnabledState(on);
-    writeCharacterEnabled(on);
   }
 
   function showToast(type: "ok" | "err", msg: string) {
@@ -332,34 +308,7 @@ export default function SettingsPage() {
             </div>
           </section>
 
-          {/* AI Character */}
-          <section>
-            <SectionTitle
-              id="character"
-              icon={<Sparkles className="h-5 w-5" />}
-              description="AI コパイロットの口調・キャラクター"
-            >
-              AI キャラクター
-            </SectionTitle>
-            <div className="divide-y divide-border rounded-2xl border border-border bg-card shadow-sm">
-              <SettingRow
-                label="AI キャラクターを有効化"
-                description="OFF にすると従来のニュートラルな口調で応答します"
-              >
-                <Switch
-                  checked={characterEnabled}
-                  onCheckedChange={handleCharacterEnabledChange}
-                />
-              </SettingRow>
-              <div className="p-5">
-                <CharacterSelector
-                  value={characterId}
-                  onChange={handleCharacterChange}
-                  disabled={!characterEnabled}
-                />
-              </div>
-            </div>
-          </section>
+          <span id="character" className="scroll-mt-20" aria-hidden="true" />
 
           {/* Quiz Options + Motivation */}
           <section>

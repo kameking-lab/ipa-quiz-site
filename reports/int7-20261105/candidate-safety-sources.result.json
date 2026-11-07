@@ -1,0 +1,16 @@
+{
+  "sourceHead": "1ca14f4ce39be16b8b00660800bd05a225ff0ee2",
+  "startedAt": "2026-11-04T19:14:40.582802+00:00",
+  "endedAt": "2026-11-04T19:14:43.629863+00:00",
+  "command": [
+    "node",
+    "scripts/validate-safety-exams.mjs",
+    "--require-consultant-five-years",
+    "--require-explanations"
+  ],
+  "exitCode": 0,
+  "seconds": 3.05,
+  "log": "reports/int7-20261105/candidate-safety-sources.log",
+  "sha256": "a9ddf45008bfd29698ec04ab769fd3dec1a1c80631fd818de712181ec2d4264a",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

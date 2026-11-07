@@ -1,0 +1,62 @@
+{
+  "verdict": "FAIL",
+  "scope": "非公開staging追加としての独立レビュー",
+  "reviewedHead": "f8198afe1ceef4b5d7e6151e18a1ba2527fadf12",
+  "base": "origin/main: bb912dfd0494f7095ec5387f9f2e53f46381cd1f",
+  "blockers": [
+    {
+      "problemId": "junkango-kansai-2025-q88",
+      "choice": 2,
+      "files": [
+        "data/qualification-staging/junkango-kansai/2025-annual.json:4489",
+        "data/qualification-staging/junkango-kansai/2025-annual.json:4495",
+        "data/qualification-staging/junkango-kansai/explanations/2025.tsv:88"
+      ],
+      "problem": "「急性の悪心・嘔吐は投与直後から数日以内に多い」は、急性と遅発性の時間区分を混同している。急性は投与後24時間以内であり、数日後までを急性として教える説明は不正確。editorial-notesの遅発性への注意書きでは、この誤りは解消されない。",
+      "requiredFix": "原問と公式正答3は保持する。肢2を「急性は投与後24時間以内、遅発性は24時間以降に生じ、数日間続く場合がある。5〜7日頃にも症状はあり得るため、原問の組合せを普遍的に否定しない」趣旨に修正し、TSV・choiceExplanations・集約explanationを同期する。",
+      "evidence": "[国立がん研究センター東病院：吐き気・嘔吐について](https://www.ncc.go.jp/jp/ncce/division/pharmacy/kouganzai/supportivecare_antiemetic.html)"
+    }
+  ],
+  "coverage": {
+    "diff": "origin/mainとの差分323ファイル。新規ファイルを含め確認。",
+    "text": "両年度の全300問の本文・1200選択肢・1200肢解説を通読。TSV全1200肢とJSONの一致も機械確認。",
+    "implementation": "index.ts、専用バリデータ、固定正答テスト、extract/enrich/audit_source、README、manifest、editorial-notes、参照資料一覧、受領記録、画像対応表、source-audit、gitattributes、変更された取り込み手順書を確認。",
+    "originals": "原本PDF4件のハッシュ、全300問・25349文字の空白除去後の文字順、正答表300セルを照合。",
+    "images": "2025問58、2026問50・130と正答表2枚を目視確認。全300問画像と正答表2枚は、原本PDFの指定領域の再描画との画素一致を確認。残り297問画像は個別目視していない。",
+    "publication": "全300問のpublicAllowed=false・needsReview=trueを確認。公開側コード・問題レジストリ等へのslug参照は検出されず、今回の差分に公開接続の追加なし。",
+    "scoring": "問6の全員正解と問139の2または4の単独正解を確認。[公式採点上の取扱い](https://www.kouiki-kansai.jp/koikirengo/jisijimu/shikakumenkyo/junan_top/jyunkangosisiken/9022.html)"
+  },
+  "verification": [
+    {
+      "command": "audit_source.pyをメモリ内で読み込み、mkdir/write_textを除外して実行",
+      "result": "PASS：300問、25349文字、正答300セル、PDF4件のハッシュ一致"
+    },
+    {
+      "command": "python -B -X utf8 - による独立照合",
+      "result": "PASS：300画像・正答表2枚の画素一致、TSV1200肢、集約解説300件、年度・日付・ID・画像対応・参照URL対応"
+    },
+    {
+      "command": "TSX_DISABLE_CACHE=1; node --import tsx scripts/validate-junkango-kansai.ts",
+      "result": "環境制約によりesbuildのspawn EPERMで起動失敗"
+    },
+    {
+      "command": "TypeScriptをメモリ内でCommonJSへ変換して専用バリデータ・採点関数を実行",
+      "result": "PASS：300問・1200肢・300画像、採点2400ケース。固定テストの正答300件も別途一致確認"
+    },
+    {
+      "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "result": "PASS：終了コード0"
+    },
+    {
+      "command": "git diff --check origin/main; git status --porcelain",
+      "result": "PASS：差分エラーなし、作業ツリー変更なし"
+    }
+  ],
+  "limitations": [
+    "医学的・法的正確性を全1200肢について一次資料と照合したものではない。通読に加え、指摘した悪心・嘔吐の時間区分などを一次資料で確認した。",
+    "画像の画素一致は記録された切り出し領域の再現性を示す。全300画像の目視による切り出し完全性確認ではない。",
+    "Vitest・既存validate:questions・ESLintは今回再実行していない。作者報告を独立実行結果として扱っていない。",
+    "専門家による公開前承認・権利許諾は本レビューの対象外。"
+  ],
+  "readOnly": "ファイル変更、別エージェント起動、push、PR、デプロイ、main操作は行っていない。"
+}

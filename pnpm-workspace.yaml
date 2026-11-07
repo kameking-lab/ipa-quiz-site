@@ -7,5 +7,16 @@ packages:
   - 'mobile'
 
 overrides:
-  postcss: '>=8.5.10'
-  protobufjs: '^7.5.8'
+  postcss: '^8.5.32'
+  protobufjs: '^7.6.5'
+  'ws@>=8 <8.21.0': '^8.22.1'
+  'brace-expansion@<2': '1.1.21'
+  'brace-expansion@>=3 <5.0.12': '^5.0.12'
+  'js-yaml@>=4 <4.3.2': '^4.3.2'
+  'fast-uri@>=3 <3.1.9': '^3.1.9'
+  'nanoid@>=3 <3.3.18': '^3.3.18'
+  'browserslist@<4.28.7': '^4.29.5'
+  'source-map-js@<1.2.2': '^1.2.2'
+  'deepmerge-ts@<8': '^8.0.2'
+  'dompurify@<3.4.17': '^3.4.17'
+  'tinypool@<2.1.2': '^2.2.0'

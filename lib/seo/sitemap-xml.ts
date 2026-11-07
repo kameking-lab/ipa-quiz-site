@@ -9,6 +9,7 @@ import { publicBlogDates } from "@/lib/blog/editorial";
 import { getAllBlogSummaries } from "@/data/blog";
 import { getLastUpdatedISO } from "@/lib/questions/last-updated";
 import { SITE_BASE_URL } from "./config";
+import { isIndexableCategoryCollection } from "./collection-policy";
 import {
   getAvailableExams,
   getQuestionsByExamStrict,
@@ -104,9 +105,7 @@ const STATIC_ROUTES: UrlEntry[] = [
   { url: `${SITE_BASE_URL}/ipa`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "daily", priority: 0.9 },
   { url: `${SITE_BASE_URL}/qualifications`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 },
   { url: SITE_BASE_URL, lastModified: STATIC_CONTENT_DATE, changeFrequency: "daily", priority: 1 },
-  { url: `${SITE_BASE_URL}/search`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "weekly", priority: 0.7 },
   { url: `${SITE_BASE_URL}/modes/year`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 },
-  { url: `${SITE_BASE_URL}/modes/topic`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/topics`, changeFrequency: "weekly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/glossary`, lastModified: CONTENT_LAST_UPDATED, changeFrequency: "monthly", priority: 0.7 },
   { url: `${SITE_BASE_URL}/keywords`, lastModified: CONTENT_LAST_UPDATED, changeFrequency: "weekly", priority: 0.7 },
@@ -129,15 +128,12 @@ const STATIC_ROUTES: UrlEntry[] = [
   ),
   { url: `${SITE_BASE_URL}/why-kakomon-ai`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 },
   { url: `${SITE_BASE_URL}/blog`, changeFrequency: "weekly", priority: 0.8 },
-  // /success-stories と /essays は AI 生成の架空コンテンツで noindex（致命傷③）。
+  // /success-stories は廃止・301。/essays は noindex。
   // noindex ページを sitemap に載せるとクローラ signal が矛盾するため除外する。
   { url: `${SITE_BASE_URL}/mock-exam`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
   { url: `${SITE_BASE_URL}/challenge`, changeFrequency: "daily", priority: 0.6 },
   { url: `${SITE_BASE_URL}/essay`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
   { url: `${SITE_BASE_URL}/study-plan`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.7 },
-  { url: `${SITE_BASE_URL}/student`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.6 },
-  { url: `${SITE_BASE_URL}/referral`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.4 },
-  { url: `${SITE_BASE_URL}/ranking`, changeFrequency: "weekly", priority: 0.5 },
   { url: `${SITE_BASE_URL}/sitemap`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "weekly", priority: 0.5 },
   { url: `${SITE_BASE_URL}/faq`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.4 },
   { url: `${SITE_BASE_URL}/about`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 },
@@ -194,6 +190,7 @@ function getExamHubRoutes(): UrlEntry[] {
       });
     }
     for (const c of groupByCategory(questions)) {
+      if (!isIndexableCategoryCollection(c.count)) continue;
       entries.push({
         url: `${SITE_BASE_URL}/${exam}/topic/${encodeURIComponent(c.category)}`,
         lastModified: CONTENT_LAST_UPDATED,

@@ -1,9 +1,12 @@
 "use client";
+import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
 import { useNativeQuestionGrant, NativeAccessState } from "@/mobile/shared/NativeQuestionGate";
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 
 
 import * as React from "react";
+import { usePetLearning } from "@/components/pet/usePetLearning";
+import { LearningPetCorner } from "@/components/pet/LearningPetCorner";
 import type { NativeBGrade } from "@/lib/questions/types";
 import { gradeNativeB, serializeNativeBSelections, formatNativeBAnswer, type NativeBSelections } from "@/lib/questions/native-b";
 import { NativeBAnswerInput, NativeBFeedback } from "../NativeBAnswer";
@@ -18,6 +21,8 @@ import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { choiceDisplayLabel, questionNumberLabel } from "@/lib/questions/display";
 import { formatOrderingAnswer, isOrderingAnswerCorrect } from "@/lib/questions/ordering";
 import { OrderingAnswerInput } from "../OrderingAnswerInput";
+import { NumericAnswerInput } from "../NumericAnswerInput";
+import { formatNumericAnswer, isNumericAnswerCorrect } from "@/lib/questions/numeric";
 import { createHistoryStore } from "@/lib/storage/history";
 import { FOCUSABLE_SELECTOR, trapTabTarget } from "@/lib/a11y/focus-trap";
 import { ArrowLeft, ChevronUp, ChevronDown, Check, X, Flame } from "lucide-react";
@@ -34,6 +39,7 @@ interface AnswerLog {
 }
 
 export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: Question[]; backHref?: string }) {
+  const pet = usePetLearning();
   const router = useRouter();
   const history = React.useMemo(() => createHistoryStore(), []);
   const [index, setIndex] = React.useState(0);
@@ -63,10 +69,10 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   const question = questions[index];
   const nativePermission = useNativeQuestionGrant(question?.id);
   React.useEffect(() => {
-    if (question?.exam === "chosashi" && question.type === "descriptive") {
+    if (isSelfReviewedDescriptiveQuestion(question)) {
       descriptiveStartRef.current?.focus({ preventScroll: true });
       descriptiveStartRef.current?.scrollIntoView?.({ block: "start", behavior: "instant" });
-    } else if (questions[index - 1]?.exam === "chosashi" && questions[index - 1]?.type === "descriptive") {
+    } else if (isSelfReviewedDescriptiveQuestion(questions[index - 1])) {
       window.scrollTo?.({ top: 0, behavior: "instant" });
     }
   }, [index, question, questions]);
@@ -109,13 +115,14 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     setRevealed(true);
     setAnswers((previous) => [...previous, { questionId: question.id, selected: selection, correct: result.isCorrect, nativeBResult: result }]);
     history.record({ id: question.id, selected: selection, correct: result.isCorrect, at: Date.now(), nativeBResult: result });
+    pet.answer(question, { kind: "native-b", selections: Object.fromEntries(Object.entries(selections).filter((pair): pair is [string, string] => typeof pair[1] === "string")) });
     if (result.isCorrect) setCombo((previous) => previous + 1);
     else setCombo(0);
-  }, [question, revealed, history]);
+  }, [question, revealed, history, pet]);
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
-      if (!question || revealed || question.type === "ordering") return;
+      if (!question || revealed || question.type === "ordering" || question.type === "numeric") return;
       const correct = isAcceptedAnswer(question.answer, key);
       setSelected(key);
       setRevealed(true);
@@ -124,6 +131,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         { questionId: question.id, selected: key, correct },
       ]);
       history.record({ id: question.id, selected: key, correct, at: Date.now() });
+      pet.answer(question, { kind: "multiple-choice", selected: [key] });
       if (correct) {
         setCombo((c) => {
           const next = c + 1;
@@ -137,7 +145,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         setCombo(0);
       }
     },
-    [question, revealed, history],
+    [question, revealed, history, pet],
   );
 
   const onOrderingAnswer = React.useCallback((value: ChoiceKey[]) => {
@@ -147,6 +155,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     setRevealed(true);
     setAnswers((previous) => [...previous, { questionId: question.id, selected: display, correct }]);
     history.record({ id: question.id, selected: value.join("→"), correct, at: Date.now() });
+    pet.answer(question, { kind: "ordering", selected: [...value] });
     if (correct) {
       setCombo((previous) => {
         const next = previous + 1;
@@ -157,11 +166,22 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         return next;
       });
     } else setCombo(0);
-  }, [question, revealed, history]);
+  }, [question, revealed, history, pet]);
+
+  const onNumericAnswer = React.useCallback((value: string) => {
+    if (!question || question.type !== "numeric" || revealed) return;
+    const correct = isNumericAnswerCorrect(question, value);
+    setRevealed(true);
+    setAnswers(previous => [...previous, { questionId: question.id, selected: value, correct }]);
+    history.record({ id: question.id, selected: value, correct, at: Date.now() });
+    pet.answer(question, { kind: "numeric", value });
+    if (correct) setCombo(previous => previous + 1);
+    else setCombo(0);
+  }, [question, revealed, history, pet]);
 
   React.useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (!question || showSummary || reviewing || (question.exam === "chosashi" && question.type === "descriptive")) return;
+      if (!question || showSummary || reviewing || (isSelfReviewedDescriptiveQuestion(question))) return;
       if (e.target instanceof HTMLElement) {
         const tag = e.target.tagName;
         if (tag === "INPUT" || tag === "TEXTAREA" || tag === "SELECT") return;
@@ -186,7 +206,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   if (!nativePermission.allowed) return <NativeAccessState permission={nativePermission}/>;
   if (!question) return null;
 
-  if (showSummary && question.exam === "chosashi" && answers.length === 0) {
+  if (showSummary && isSelfReviewedDescriptiveQuestion(question) && answers.length === 0) {
     return (
       <main className="mx-auto max-w-3xl space-y-5 px-4 py-6">
         <h1 className="text-xl font-semibold">記述の確認を終えました</h1>
@@ -216,7 +236,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     );
   }
 
-  if (question.exam === "chosashi" && question.type === "descriptive") {
+  if (isSelfReviewedDescriptiveQuestion(question)) {
     return (
       <main className="mx-auto max-w-3xl space-y-5 px-4 py-6">
         <Link href={backHref} className="inline-block min-h-11 py-3 underline">戻る</Link>
@@ -228,7 +248,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     );
   }
 
-  const answerKey = question.type === "native-b" ? formatNativeBAnswer(question.nativeB!) : question.type === "ordering" ? formatOrderingAnswer(question.exam, question.answer as ChoiceKey[]) : formatAcceptedAnswers(question.answer);
+  const answerKey = question.type === "native-b" ? formatNativeBAnswer(question.nativeB!) : question.type === "ordering" ? formatOrderingAnswer(question.exam, question.answer as ChoiceKey[]) : question.type === "numeric" ? formatNumericAnswer(question) : formatAcceptedAnswers(question.answer);
 
   return (
     <div
@@ -292,7 +312,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         </div>
 
         <div className="space-y-2">
-          {question.type === "native-b" ? <NativeBAnswerInput key={question.id} data={question.nativeB!} displayedImageUrls={question.imageUrls} disabled={revealed} onAnswer={onNativeBAnswer} /> : question.type === "ordering" ? <OrderingAnswerInput key={question.id} question={question} disabled={revealed} onAnswer={onOrderingAnswer} /> : question.choices &&
+          {question.type === "native-b" ? <NativeBAnswerInput key={question.id} data={question.nativeB!} displayedImageUrls={question.imageUrls} disabled={revealed} onAnswer={onNativeBAnswer} /> : question.type === "ordering" ? <OrderingAnswerInput key={question.id} question={question} disabled={revealed} onAnswer={onOrderingAnswer} /> : question.type === "numeric" ? <div className="text-foreground"><NumericAnswerInput key={question.id} unit={question.numericAnswer!.unit} specification={question.numericAnswer} disabled={revealed} onAnswer={onNumericAnswer} /></div> : question.choices &&
             getChoiceKeys(question.choices).map((key) => {
               const isCorrect = isAcceptedAnswer(question.answer, key);
               const isSelected = selected === key;
@@ -349,6 +369,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
             <div className="mt-2 text-zinc-200"><QuestionBody text={question.explanation || "解説は準備中です。"} /></div>
           </div>
         )}
+        <LearningPetCorner qualificationId={question.exam} questionId={question.id} />
       </main>
 
       {revealed && (
@@ -422,7 +443,7 @@ function ReviewOverlay({
     }
   };
 
-  const answerKey = question.type === "native-b" ? formatNativeBAnswer(question.nativeB!) : question.type === "ordering" ? formatOrderingAnswer(question.exam, question.answer as ChoiceKey[]) : formatAcceptedAnswers(question.answer);
+  const answerKey = question.type === "native-b" ? formatNativeBAnswer(question.nativeB!) : question.type === "ordering" ? formatOrderingAnswer(question.exam, question.answer as ChoiceKey[]) : question.type === "numeric" ? formatNumericAnswer(question) : formatAcceptedAnswers(question.answer);
 
   return (
     <div

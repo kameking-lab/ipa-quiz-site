@@ -1,0 +1,51 @@
+{
+  "checkedAt": "2026-11-03T23:28:29.164589+00:00",
+  "checks": [
+    {
+      "command": "pnpm validate:questions",
+      "exitCode": 0,
+      "log": "validate.log",
+      "logSha256": "5e5d0ab804ca8d0ea574825c0a283e30341f435c0617f88afcfa2f44906ef586"
+    },
+    {
+      "command": "NODE_OPTIONS=--max-old-space-size=8192 pnpm typecheck",
+      "exitCode": 0,
+      "log": "typecheck.log",
+      "logSha256": "0dc697c8d01e3a91a42cd2e956526811e66ef4fa69bbcdd5bdc3cf176986b67e"
+    },
+    {
+      "command": "npx vitest run __tests__/keiryoshi-staging.test.ts __tests__/seo",
+      "exitCode": 0,
+      "log": "vitest.log",
+      "logSha256": "7e24df679f6e7b09aef4ec8cd299e412c16dde0596b1934b5a60e450ebfd73cc"
+    },
+    {
+      "command": "python3 scripts/verify-keiryoshi-source.py",
+      "exitCode": 0,
+      "log": "source-verifier.log",
+      "logSha256": "98198d369d9651bb6f6ecf12fe68157cca03b90832a68148cbb50eacf2740e53"
+    }
+  ],
+  "vitest": {
+    "files": 111,
+    "tests": 599,
+    "durationSeconds": 81.24
+  },
+  "rerunNote": "直前のVitest再実行は終了143で完了しなかったため再実行。上記ログは完了した最終実行。",
+  "dataSha256": {
+    "data/questions/keiryoshi/2024-houki.json": "fcd6d8968554f66cc2fe637c987c79bf4589e51ec83fe832211d4c7c664b0f1e",
+    "data/questions/keiryoshi/2024-ichiki.json": "1fa449ecd60284c752e3deedce46f4e6a2179ae70da191d67846ea2c748de058",
+    "data/questions/keiryoshi/2024-kanbutsu.json": "bd19a3ca8ad8ec7a93b15fbcc424e88ae800828eaf8f3cce30633ae494aadac3",
+    "data/questions/keiryoshi/2024-kanka.json": "4a83d10ff09ea0065efc86a9344090cbca904121ab25dd51a388b08e3c702427",
+    "data/questions/keiryoshi/2024-kanno.json": "ae6423d09d1c15b23bf0e901ab08196dfca9765deed15813feffb4ef757ee1ff",
+    "data/questions/keiryoshi/2024-kanon.json": "ce300bd0e95ac494039ff806a6f30ea3e5cdcb1026683c64626e4c23d6c8584b",
+    "data/questions/keiryoshi/2024-kanri.json": "657cf6a09a67ed0078d9fdc500dbd3c3e8d300d556339f6baffef8da43d7564b",
+    "data/questions/keiryoshi/2024-keishitsu.json": "bd02d46f3612008693ba4b6c420b7702434bb0da985ba1f06481ec1925fb59a0"
+  },
+  "supplementalChecks": [
+    "audit.py: 200問/1000肢/55図、39数値モデル、誤答モデル2件、近似表現13箇所、163ファイル保全、成功",
+    "legal-audit.py: 200問分類/法令・委任規格46問、成功",
+    "既存recalculate-all.py 60件、recalculate-ichiki.py 21件、成功",
+    "git diff --check 成功"
+  ]
+}

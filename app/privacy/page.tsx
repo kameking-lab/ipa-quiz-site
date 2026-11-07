@@ -97,7 +97,7 @@ export default function PrivacyPage() {
           <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
             プライバシーポリシー
           </h1>
-          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年10月29日</p>
+          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年11月6日</p>
           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
             過去問AI（以下「本サービス」）は、ユーザーのプライバシーを尊重し、
             個人情報の適切な取り扱いに努めます。
@@ -105,6 +105,26 @@ export default function PrivacyPage() {
         </header>
 
         <div className="space-y-5">
+          <section
+            id="security"
+            aria-labelledby="security-heading"
+            className="scroll-mt-20 rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-7"
+          >
+            <h2 id="security-heading" className="flex items-center gap-2 text-lg font-semibold text-foreground">
+              <ShieldCheck className="h-5 w-5 text-primary" aria-hidden="true" />
+              情報を守るための取り組み
+            </h2>
+            <ul className="mt-4 list-disc space-y-1.5 pl-5 text-sm leading-relaxed text-muted-foreground">
+              <li>通信は暗号化（HTTPS）して送受信します。</li>
+              <li>ログインは Apple・Google・GitHub・メールのログインリンクで行い、パスワードを当サイトに保存しません。</li>
+              <li>カード番号は、ウェブでは Stripe、iPhoneアプリでは Apple の購入画面で入力し、当サイトには届きません。</li>
+              <li>AIへの質問に、アカウントの氏名・メールアドレスを自動で付け加えません。名前や住所を書かなくても使えます。</li>
+              <li>お問い合わせ・ご意見は、その対応とサービス改善のためにだけ使います。個人情報を第三者に販売しません。</li>
+              <li>不正利用を防ぐため、送信回数の制限、スパム対策の確認、他サイトへの埋め込み禁止などの対策を行っています。</li>
+              <li>万一、情報の漏えいが起きた場合の対応は <a href="#6" className="font-medium text-primary underline-offset-4 hover:underline">第6項</a> のとおりです。</li>
+            </ul>
+          </section>
+
           <Section
             number="1"
             icon={<HardDrive className="h-5 w-5" />}
@@ -291,8 +311,14 @@ export default function PrivacyPage() {
             icon={<MessageCircle className="h-5 w-5" />}
             title="お問い合わせ"
           >
+            <p>「次の資格」と「過去問AI」は同じ kameking-lab が運営し、このフォームは両サイトのお問い合わせを受け付けます。送信される情報は、種別、本文、任意のお名前・メールアドレスです。お問い合わせ対応のためにのみ利用し、運営者のSlackへ、設定に応じて通知メールへ転送します。問い合わせ内容をアプリのデータベースやアクセスログへ保存しません。通知先のSlack・メールには対応のための記録が残る場合があります。削除のご相談もフォームから受け付けます。</p>
+            <p>スパム対策としてCloudflare Turnstileによる確認を行い、IPアドレスを不正利用防止に使用します。氏名・受験番号・ログイン情報など、対応に不要な個人情報を本文へ記載しないでください。返信が必要な場合は任意のメールアドレス欄をご利用ください。原則3営業日以内を目安に返信しますが、内容により確認に時間がかかる場合があります。</p>
             <p>
               プライバシーに関するご質問・ご要望は、{" "}
+              <Link href="/contact" className="font-medium text-primary underline-offset-4 hover:underline">
+                お問い合わせフォーム
+              </Link>
+              {" "}からご連絡ください。GitHub アカウントをお持ちの場合は、{" "}
               <a
                 href="https://github.com/kameking-lab/ipa-quiz-site/issues"
                 target="_blank"
@@ -302,7 +328,7 @@ export default function PrivacyPage() {
                 GitHub Issues
                 <ExternalLink className="h-3 w-3" />
               </a>
-              {" "}からご連絡ください。
+              {" "}も利用できます。公開の投稿には個人情報を記載しないでください。
             </p>
           </Section>
 

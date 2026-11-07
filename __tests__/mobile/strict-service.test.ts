@@ -4,7 +4,7 @@ import {billingConfig} from "@/lib/billing/config";
 import {MemoryStore} from "../billing/memory-store";
 afterEach(()=>vi.unstubAllEnvs());
 it("serializes concurrent cross-device requests into exactly ten grants, disabling the old free grace",async()=>{
-  vi.stubEnv("MOBILE_IAP_ENABLED","true");
+  vi.stubEnv("WEB_STRICT_CONTENT_GATE","true");
   const store=new MemoryStore(),c={...billingConfig({}),mode:"mock" as const,transitionStartsAt:"2026-10-02T00:00:00.000Z",transitionDays:90};
   let now=new Date("2026-10-25T14:59:59Z");
   const web=new BillingService(store,c,()=>now),app=new BillingService(store,c,()=>now);

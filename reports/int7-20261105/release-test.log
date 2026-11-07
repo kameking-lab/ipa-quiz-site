@@ -1,0 +1,41 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mC:/Users/kanet/20260522/wt-batch3[39m
+
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mserves benrishi through eager/lazy registries, canonical routes, home and question API[33m 355[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mserves sokuryoshi through eager/lazy registries, canonical routes, home and question API[32m 40[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mserves dokugeki-chiba through eager/lazy registries, canonical routes, home and question API[32m 186[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mserves jokaso-setsubishi through eager/lazy registries, canonical routes, home and question API[32m 44[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mserves chiiki-ryoko through eager/lazy registries, canonical routes, home and question API[32m 51[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mserves junkango-kansai through eager/lazy registries, canonical routes, home and question API[32m 44[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mserves kukaku-seiri through eager/lazy registries, canonical routes, home and question API[32m 39[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mserves dojo-osen through eager/lazy registries, canonical routes, home and question API[32m 44[2mms[22m[39m
+ [31m×[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mserves kenchikushi2 through eager/lazy registries, canonical routes, home and question API[32m 40[2mms[22m[39m
+[31m   → actual value must be number or bigint, received "undefined"[39m
+ [31m×[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mserves mokuzo-kenchikushi through eager/lazy registries, canonical routes, home and question API[32m 38[2mms[22m[39m
+[31m   → actual value must be number or bigint, received "undefined"[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mkeeps source asset mappings byte-identical in their public copies[33m 1276[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mpreserves exact multi-selection and alternate single-answer semantics[32m 1[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mexcludes official credit-for-all and keeps the 2026-only scope explicit[32m 5[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mpreserves surveyor descriptive answer images and manual assessment without inventing choice scores[32m 1[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 2 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mserves kenchikushi2 through eager/lazy registries, canonical routes, home and question API
+[41m[1m FAIL [22m[49m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mserves mokuzo-kenchikushi through eager/lazy registries, canonical routes, home and question API
+[31m[1mTypeError[22m: actual value must be number or bigint, received "undefined"[39m
+[36m [2m❯[22m __tests__/batch3-release.test.ts:[2m33:35[22m[39m
+    [90m 31|[39m       const [, , exam, yearSeason, section, qnum] = questionPagePath(q…
+    [90m 32|[39m       expect(findQuestionByRoute(ALL_QUESTIONS, {exam, yearSeason, sec…
+    [90m 33|[39m       [34mexpect[39m(q[33m.[39mimageUrls[33m?.[39mlength)[33m.[39m[34mtoBeGreaterThan[39m([34m0[39m)[33m;[39m
+    [90m   |[39m                                   [31m^[39m
+    [90m 34|[39m       [34mexpect[39m(q[33m.[39msourceAttribution)[33m.[39m[34mtoBeTruthy[39m()[33m;[39m
+    [90m 35|[39m     }
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[31m2 failed[39m[22m[2m | [22m[1m[32m12 passed[39m[22m[90m (14)[39m
+[2m   Start at [22m 02:18:15
+[2m   Duration [22m 17.80s[2m (transform 11.41s, setup 186ms, import 14.51s, tests 2.17s, environment 769ms)[22m
+

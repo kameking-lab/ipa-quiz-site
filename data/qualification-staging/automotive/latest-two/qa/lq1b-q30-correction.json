@@ -1,0 +1,135 @@
+{
+  "id": "jidosha-2025-second-2-diesel-q30",
+  "before": {
+    "id": "jidosha-2025-second-2-diesel-q30",
+    "qNumber": 30,
+    "question": "図に示すライト消し忘れ警報装置の不具合要因に関する次の文章の（　）に当てはまるものとして、適切なものはどれか。図のようにイグニション（キー）・スイッチがOFF、ライト・コントロール・スイッチがON、カーテシ・スイッチ（運転席）がONの状態でブザーが吹鳴しないとき、AとE間の電圧が12 V、BとE間の電圧が0 V、CとE間の電圧が12 V、DとE間の電圧が10 Vの場合の不具合要因としては、（　）が考えられる。",
+    "choices": {
+      "ア": "(1) ライト・コントロール・スイッチの接点の抵抗増大",
+      "イ": "(2) リレー1のAとB間の抵抗増大",
+      "ウ": "(3) ヒューズ1の断線",
+      "エ": "(4) リレー1のDとアース間の短絡"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "適切なのは(1)。ライトスイッチを通るDの電圧が10 Vへ低下しており、接点の抵抗増大で電圧降下が生じている。",
+    "choiceExplanations": {
+      "ア": "Dが12 Vより2 V低いのはライトスイッチ側の電圧降下と整合する。",
+      "イ": "A―Bの問題だけではDの10 V低下を説明できない。",
+      "ウ": "ヒューズ断線ならその先の通電点は0 Vとなる。",
+      "エ": "Dがアース短絡ならDはほぼ0 Vで、10 Vにはならない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePages": [
+      13
+    ],
+    "sourceFigureRequired": true,
+    "topicTags": [
+      "警報回路",
+      "故障診断"
+    ],
+    "difficulty": 3,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "2-diesel",
+    "category": "二級ジーゼル自動車",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 二級ジーゼル自動車 No.30",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-10-11",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 13,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf#page=13",
+        "pdfSha256": "97894c45223517f7dab19340d95a1ee8db72f9c5409ee32169e41b782969e65a"
+      }
+    ],
+    "sourceFigureAssets": [
+      {
+        "physicalPage": 13,
+        "relativePath": "figures/jaspa-2025-second-2-diesel-p13.webp"
+      }
+    ]
+  },
+  "after": {
+    "id": "jidosha-2025-second-2-diesel-q30",
+    "qNumber": 30,
+    "question": "図に示すライト消し忘れ警報装置の不具合要因に関する次の文章の（　）に当てはまるものとして、適切なものはどれか。図のようにイグニション（キー）・スイッチがOFF、ライト・コントロール・スイッチがON、カーテシ・スイッチ（運転席）がONの状態でブザーが吹鳴しないとき、AとE間の電圧が12 V、BとE間の電圧が0 V、CとE間の電圧が12 V、DとE間の電圧が10 Vの場合の不具合要因としては、（　）が考えられる。",
+    "choices": {
+      "ア": "(1) ライト・コントロール・スイッチの接点の抵抗増大",
+      "イ": "(2) リレー1のAとB間の抵抗増大",
+      "ウ": "(3) ヒューズ1の断線",
+      "エ": "(4) リレー1のDとアース間の短絡"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "適切なのは(1)。Eを基準にCは12 V、Dは10 Vなので、リレー1のコイルC―D間には2 Vしか掛かっていない。ONのライト・コントロール・スイッチに10 Vの電圧降下が残ることから、その接点抵抗の増大が考えられる。",
+    "choiceExplanations": {
+      "ア": "適切。ONのスイッチ接点の抵抗が増すとD―E間に10 Vの電圧降下が生じ、C―D間のコイル電圧は12−10＝2 Vとなる。",
+      "イ": "不適切。A―Bは接点側の経路であり、その抵抗増大だけではコイル側Dの対地電圧が10 Vとなる測定条件を説明できない。",
+      "ウ": "不適切。ヒューズ1はカーテシ・スイッチからNOT回路に至る入力経路にあり、その断線だけではライト・コントロール・スイッチ上端Dの10 Vを説明できない。",
+      "エ": "Dがアース短絡ならDはほぼ0 Vで、10 Vにはならない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePages": [
+      13
+    ],
+    "sourceFigureRequired": true,
+    "topicTags": [
+      "警報回路",
+      "故障診断"
+    ],
+    "difficulty": 3,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2025,
+    "fiscalYear": 2025,
+    "season": "second",
+    "term": "second",
+    "subject": "2-diesel",
+    "category": "二級ジーゼル自動車",
+    "examDate": "2026-03-22",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+    "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 二級ジーゼル自動車 No.30",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-04",
+    "permissionVerified": false,
+    "publicGo": 0,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 13,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_2d.pdf#page=13",
+        "pdfSha256": "97894c45223517f7dab19340d95a1ee8db72f9c5409ee32169e41b782969e65a"
+      }
+    ],
+    "sourceFigureAssets": [
+      {
+        "physicalPage": 13,
+        "relativePath": "figures/jaspa-2025-second-2-diesel-p13.webp"
+      }
+    ]
+  },
+  "source": "official PDF physical page13; C-E12V D-E10V => coil C-D2V; switch D-E10V",
+  "independentFinding": "tmp/lq1b-astra-initial.md"
+}

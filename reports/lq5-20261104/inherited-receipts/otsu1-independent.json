@@ -1,0 +1,143 @@
+{
+  "scope": "qual-new:20",
+  "reviewer": "/root/content_acceptance",
+  "reviewedAtJST": "2026-11-01T19:15:17.116686+09:00",
+  "status": "PASS_PRIVATE_SOURCE_BINDING",
+  "reviewType": "delta-only; original question images plus accepted annotations binding",
+  "candidateSHA256": "fe157dc7afa41e003210f957d40b748fa1b9ae9fc2c107acd736618f248a3b7f",
+  "sourcePdfSHA256": "d015ddf87c66aa877bc6aeb0c424d73ecded09fd907205d733faa4150f6cbd8d",
+  "acceptedAnnotationsSHA256": "878e6bacf77df6e9f4fbe14be687e83d3ec4d20aa7fb4f7d88e570b5fcba35f0",
+  "questions": 10,
+  "choiceBindings": 50,
+  "questionNumbers": [
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    33,
+    34,
+    35
+  ],
+  "officialAnswerVector": [
+    4,
+    3,
+    1,
+    2,
+    1,
+    1,
+    5,
+    2,
+    2,
+    4
+  ],
+  "internalAnswerVector": [
+    "エ",
+    "ウ",
+    "ア",
+    "イ",
+    "ア",
+    "ア",
+    "オ",
+    "イ",
+    "イ",
+    "エ"
+  ],
+  "checks": {
+    "imagePixelIdentity": "PASS: 7 whole pages at 144dpi, no missing pixels/crop/retouch",
+    "questionAndChoiceCompleteness": "PASS: already visually inspected pages14–19 contain all target question stems and 5 choices; new images pixel-identical to same source pages",
+    "numberAndPageBinding": "PASS: q26→14; q27–28→15; q29–30→16; q31–32→17; q33–34→18; q35→19",
+    "answerImage": "PASS: page44 matches official key; common 1–25 key present in full page but not added as independent questions",
+    "choiceKeyMapping": "PASS: ア/イ/ウ/エ/オ maps exactly to 1/2/3/4/5",
+    "acceptedContentReuse": "PASS: 10 summaries and 50 reasons/corrections/truth values/errorLocations unchanged",
+    "unknownExamDate": "PASS: year/session null preserved; publicationVersion separate",
+    "typeCompatibility": "explicitly false; not directly assignable to current shared Question type"
+  },
+  "assets": [
+    {
+      "page": 14,
+      "pixelIdentity": true,
+      "dimensions": [
+        1191,
+        1684
+      ],
+      "sha256": "01cdef807b9a775dbbdbc535a6210655ea122cf8d7c5c261ac9f1f1f1b2f227c"
+    },
+    {
+      "page": 15,
+      "pixelIdentity": true,
+      "dimensions": [
+        1191,
+        1684
+      ],
+      "sha256": "631f9882b5968ae81f9c387d4a980417c90b301e2052178799a6949db61d32a1"
+    },
+    {
+      "page": 16,
+      "pixelIdentity": true,
+      "dimensions": [
+        1191,
+        1684
+      ],
+      "sha256": "82d3aa8fadf7d18ca1c8f7ed468213d09c01139ed5d74c13f70a141c2ba006c3"
+    },
+    {
+      "page": 17,
+      "pixelIdentity": true,
+      "dimensions": [
+        1191,
+        1684
+      ],
+      "sha256": "ed4c6d46a011203843dce07cf0be4f99ccc559260e180e6f9b7f9d949d54b590"
+    },
+    {
+      "page": 18,
+      "pixelIdentity": true,
+      "dimensions": [
+        1191,
+        1684
+      ],
+      "sha256": "ae887e26e7f429b8b694c2fb36361a055e340baaf951f266fd1adde33704a5ae"
+    },
+    {
+      "page": 19,
+      "pixelIdentity": true,
+      "dimensions": [
+        1191,
+        1684
+      ],
+      "sha256": "4e359e1fd857ed0e271640cf7e0b7d7222e8a0388359739d60a38ae2734dcd15"
+    },
+    {
+      "page": 44,
+      "pixelIdentity": true,
+      "dimensions": [
+        1191,
+        1684
+      ],
+      "sha256": "2242107928a2e4b90bf41601341785dcc319b2064862115ff735a40f49b9552f"
+    }
+  ],
+  "resolvedFinding": {
+    "issue": "choiceErrorLocations missing from candidate",
+    "resolution": "Added unchanged mapping for all 50 choices; main must preserve/display these error locations alongside reason and correction"
+  },
+  "unresolvedBindingFindings": [],
+  "notAcceptedOrExecuted": [
+    "shared schema/exam/license registration",
+    "runtime/UI grading/persistence",
+    "production/publication",
+    "build/server startup",
+    "rights decision",
+    "new chemistry content review",
+    "discarded original-practice packet adoption"
+  ],
+  "mainRequirements": [
+    "Keep choiceErrorLocations, choiceExplanations, polarity, factTruth and source attribution together",
+    "Do not coerce publication year to unknown exam year",
+    "Keep internal answer buttons numerically corresponding to original choices",
+    "Shared integration handled solely by main; this PASS concerns private binding only"
+  ]
+}

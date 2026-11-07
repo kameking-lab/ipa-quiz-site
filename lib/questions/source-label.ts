@@ -4,7 +4,7 @@ import { formatYearSeason } from "@/lib/utils";
 
 /** exam is the learning filter; the shared AM1 paper is not that exam's AM2. */
 export function questionSourceExam(q: Pick<Question, "exam" | "year" | "season" | "session">): string {
-  return q.session === "am1" ? "高度試験共通" : examLabelAt(q.exam, q.year, q.season);
+  return q.session === "am1" && q.exam !== "kenchiku-setsubishi" ? "高度試験共通" : examLabelAt(q.exam, q.year, q.season);
 }
 
 /** 公式冊子の表紙で照合した回次・実施年。保存年や既存URLは年度/実施年が混在するため表示に使わない。 */
@@ -27,7 +27,54 @@ const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string,
   },
 };
 
-export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl"> & Partial<Pick<Question, "exam">>): string {
+export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl"> & Partial<Pick<Question, "exam" | "fiscalYear">>): string {
+  if (q.exam === "junkango-kansai") {
+    return q.fiscalYear !== undefined
+      ? `令和${q.fiscalYear - 2018}年度（${q.year}年実施）`
+      : `${q.year}年実施`;
+  }
+
+if (q.exam?.startsWith("jidosha-")) {
+    if (q.year === 2026 && q.season === "first")
+        return "令和8年度第1回（2026年10月4日実施）";
+    if (q.year === 2025 && q.season === "second")
+        return "令和7年度第2回（2026年3月22日実施）";
+    if (q.year === 2025 && q.season === "first")
+        return "令和7年度第1回（2025年10月5日実施）";
+    if (q.year === 2024 && q.season === "second")
+        return "令和6年度第2回（2025年3月23日実施）";
+}
+if (q.exam === "biyoshi" && q.year === 2026) {
+    if (q.season === "first")
+        return "第53回（2026年3月1日実施）";
+    if (q.season === "second")
+        return "第54回（2026年9月6日実施）";
+}
+if (q.exam?.startsWith("kikenbutsu-otsu") && q.season === "published")
+    return "2026年6月公表版（個別の出題年・回は非公表）";
+if (q.exam?.startsWith("jken-katsuyo")) {
+    if (q.year === 2026 && q.season === "first" && /\/260621_mondaijk0[123]\.pdf$/.test(q.sourcePdfUrl))
+        return "令和8年度前期（2026年6月21日実施）";
+    if (q.year === 2025 && q.season === "second" && /\/251221_mondaijk0[123]\.pdf$/.test(q.sourcePdfUrl))
+        return "令和7年度後期（2025年12月21日実施）";
+}
+if (q.exam === "shinrishi" && q.year === 2025)
+    return "第8回（2025年3月2日実施）";
+if (q.exam === "shinrishi" && q.year === 2026)
+    return "第9回（2026年3月1日実施）";
+if (q.year === 2024 && q.season === "annual" &&
+    /^https:\/\/www\.meti\.go\.jp\/policy\/economy\/hyojun\/techno_infra\/[1-8]_R06(?:kanka|kanbutsu|kannou|kanon|houki|kanri|ichiki|keishitsu)\.pdf$/.test(q.sourcePdfUrl)) {
+    return "第75回（令和6年12月実施）";
+}
+if (q.year === 2025 && q.season === "annual" &&
+    /^https:\/\/www\.meti\.go\.jp\/policy\/economy\/hyojun\/techno_infra\/00_download\/[1-8]_R07(?:kanka|kanbutsu|kannou|kanon|houki|kanri|ichiki|keishitsu)\.pdf$/.test(q.sourcePdfUrl)) {
+    return "第76回（令和7年12月実施）";
+}
+  if (q.exam === "chizai2" && q.year === 2026) {
+    if (q.season === "spring") return "第53回（2026年3月8日実施）";
+    if (q.season === "july") return "第54回（2026年7月12日実施）";
+  }
+  if (q.exam === "kisho" && q.year === 2026) return q.season === "second" ? "第65回（2026年1月25日）" : "第66回（2026年8月23日）";
   if (q.exam === "riku-tech1" && q.season === "july") return `${q.year}年7月試験`;
   if (q.exam === "shika-ishi" && q.season === "annual" && (q.year === 2025 || q.year === 2026)) {
     return `第${q.year - 1907}回（${q.year}年実施）`;

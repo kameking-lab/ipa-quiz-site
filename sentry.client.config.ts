@@ -1,6 +1,7 @@
 // Sentry クライアント側初期化。
 // NEXT_PUBLIC_SENTRY_DSN 未設定時は init をスキップして完全 no-op。
 import * as Sentry from "@sentry/nextjs";
+import { sanitizeTelemetryEvent, sanitizeBreadcrumb } from "@/lib/monitoring/privacy";
 
 const DSN = process.env.NEXT_PUBLIC_SENTRY_DSN;
 const isProd = process.env.NODE_ENV === "production";
@@ -56,51 +57,11 @@ if (DSN) {
     // PII除去 — IP・User-Agent等の個人情報をイベントから消す
     beforeSend(event) {
       // サーバー側で付与されるIPは不要
-      if (event.user) {
-        delete event.user.ip_address;
-        delete event.user.email;
-        delete event.user.username;
-      }
-      // request ヘッダからPIIを除去
-      if (event.request?.headers) {
-        const headers = event.request.headers as Record<string, string>;
-        delete headers["Cookie"];
-        delete headers["Authorization"];
-        delete headers["X-Forwarded-For"];
-      }
-      // URLのクエリパラメータからPIIを除去
-      if (event.request?.url) {
-        try {
-          const url = new URL(event.request.url);
-          url.searchParams.delete("token");
-          url.searchParams.delete("key");
-          url.searchParams.delete("secret");
-          event.request.url = url.toString();
-        } catch {
-          // URL parse失敗は無視
-        }
-      }
-      return event;
+      return sanitizeTelemetryEvent(event);
     },
 
     // Breadcrumbからもセンシティブ情報を除去
-    beforeBreadcrumb(breadcrumb) {
-      // fetchリクエストのURLからPIIクエリパラメータを除去
-      if (breadcrumb.category === "fetch" || breadcrumb.category === "xhr") {
-        const data = breadcrumb.data as Record<string, string> | undefined;
-        if (data?.url) {
-          try {
-            const url = new URL(data.url, "https://placeholder.invalid");
-            url.searchParams.delete("token");
-            url.searchParams.delete("key");
-            url.searchParams.delete("secret");
-            data.url = url.pathname + (url.search || "");
-          } catch {
-            // 解析不能URLはそのまま
-          }
-        }
-      }
-      return breadcrumb;
-    },
+    beforeBreadcrumb: sanitizeBreadcrumb,
+    beforeSendTransaction: sanitizeTelemetryEvent,
   });
 }

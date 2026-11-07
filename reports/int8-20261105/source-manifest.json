@@ -1,0 +1,335 @@
+{
+  "base": "f95bd49d0a9affc4ad34795b94dc9d3f20ecf9eb",
+  "incoming": "127be5504913e54fdc70eb8034c46fb92c33a47f",
+  "files": [
+    {
+      "path": "__tests__/api/contact-delivery.test.ts",
+      "sha256": "57754f3e1727a5c35821315dcb904c474eba11ff1047181e9dd18fe700defffa"
+    },
+    {
+      "path": "__tests__/api/contact-feedback-unlock.test.ts",
+      "sha256": "351fb151252a689274768e9893473fb9496f4cfa6eabc39bbab7a836ca2c4d55"
+    },
+    {
+      "path": "__tests__/api/contact-slack-after.test.ts",
+      "sha256": "f5ed51663ea3a5d5b05306be9ce086fdaf5851a0989e574772e55dfee964731a"
+    },
+    {
+      "path": "__tests__/aviation68-integration.test.ts",
+      "sha256": "147b890a071a731b8c41810aeba821e3caeef1b64da6a090dabfcd9bd9454147"
+    },
+    {
+      "path": "__tests__/billing/FeedbackUnlock.test.tsx",
+      "sha256": "33f066affb01886dd9dadde435fb7b111661771cba19eeac4506c1baf63fa278"
+    },
+    {
+      "path": "__tests__/billing/QuizClient.player.test.tsx",
+      "sha256": "06d33f83863465a537625cb5d5cc22c9bef0a2fbf5fa493004eccb85b7ee7f3f"
+    },
+    {
+      "path": "__tests__/components/BlogPractice.test.tsx",
+      "sha256": "bd025a5eec7fb971fb7f086646957b33b0908140540d05bf760607c215fbe74b"
+    },
+    {
+      "path": "__tests__/components/ContactForm.test.tsx",
+      "sha256": "0026b2b68d9544629d34e83a67da5da9e3dfe736d120d28ce324010d389cc162"
+    },
+    {
+      "path": "__tests__/components/ContactForm.turnstile.test.tsx",
+      "sha256": "54efc36887083b22c501ccd534c599855ca98c8f4376e663de25c64d7a555f51"
+    },
+    {
+      "path": "__tests__/components/ContentEndAd.test.tsx",
+      "sha256": "44677fb030741b2371240b27ed6f12d937497c211baffa787ed372e1c0019f19"
+    },
+    {
+      "path": "__tests__/components/QuizPlayer.detailLink.test.tsx",
+      "sha256": "bb13b6241ac3bac86769e656c9263d442b5ff977d4303c85e9d633e3fed5b012"
+    },
+    {
+      "path": "__tests__/components/StreakTracker.test.tsx",
+      "sha256": "6a423d6d247ed067743c161b7cfae9c4fdb41b88200a50b829838ca032618df5"
+    },
+    {
+      "path": "__tests__/components/SupportDelivery.test.tsx",
+      "sha256": "d2477cbeb9b818a5762e7547a2676af69346b109d68b4ab21ddaf12804bdd32f"
+    },
+    {
+      "path": "__tests__/components/TotalAnswerCounter.zero.test.tsx",
+      "sha256": "831634883a8d1cd398f21a3553d53099e84b13bbb7c4e80353ef3b65efc94f68"
+    },
+    {
+      "path": "__tests__/fixtures/int8-runtime-pins.json",
+      "sha256": "306bfc6a90b0a84e672190facaa693cfa436d03cc1a2b4af655c6446009f60b9"
+    },
+    {
+      "path": "__tests__/fixtures/kperf1-runtime-pins.json",
+      "sha256": "450db7cd385f9f7d58afb44130dda3c36c62adabc06463e6a95c348ab603f56d"
+    },
+    {
+      "path": "__tests__/fixtures/kux1-runtime-pins.json",
+      "sha256": "4dc4dd0a6c02cddf42349672113f469c7bb7f2639dbd26a03cf63b4e26a69da4"
+    },
+    {
+      "path": "__tests__/lib/blog-practice.test.ts",
+      "sha256": "d11b88198fd21d0e3913e1d40ba9212e1f5537f15ab67c5759eb8120cfd890c7"
+    },
+    {
+      "path": "__tests__/lib/economy.test.ts",
+      "sha256": "e65fcb087f4df8932bf733d1424f5f88d6f81c24b71e831c8517c68c8b94ef94"
+    },
+    {
+      "path": "__tests__/lib/kgrow2-progress.test.ts",
+      "sha256": "b1c151d7c9a85d6dc1593844b26bf10c61e7547c2b1771cf910c85d83565998f"
+    },
+    {
+      "path": "__tests__/lib/motivation-combo.test.ts",
+      "sha256": "d0b8345fc844f99560cb28a6d6856057030237e057bc0dedd52e9ecfdd75b95c"
+    },
+    {
+      "path": "__tests__/seo/blog-practice-gate.test.tsx",
+      "sha256": "708d545daefe9847172d2a68ce3b0707e7daa70b236b7158b5f2f1a995415eb3"
+    },
+    {
+      "path": "__tests__/seo/exam-entry.test.tsx",
+      "sha256": "18d2f7700329c47afbd6e927054d96b7ba0207705153c4a233ccbb8e1c3ddbdc"
+    },
+    {
+      "path": "__tests__/seo/exam-hub-essay-flagship-cta.test.ts",
+      "sha256": "5cfab4eacf5789dcae1e408f5ec7a320da10397965998e974fe4b9c22088fff1"
+    },
+    {
+      "path": "__tests__/seo/exam-meta-grouping.test.ts",
+      "sha256": "a81a5a7fde576c471991ae1fef25973001b14f8c30173b1d0e245a10acc6b5a9"
+    },
+    {
+      "path": "__tests__/seo/exam-top-unsupported-grading.test.tsx",
+      "sha256": "e2072f63f5a5c868c4ffb662a7f7fc35f4db94edd7497682e0ddb8c2d5a6847e"
+    },
+    {
+      "path": "app/[exam]/page.tsx",
+      "sha256": "403e6735a799681d18319eb6213ddf1f04e87b1a9c36ae4e752744ccd2730567"
+    },
+    {
+      "path": "app/api/contact/route.ts",
+      "sha256": "173e3e8d7730b20d5ddae9549a863530178b836a99a37175895ac4a22d612065"
+    },
+    {
+      "path": "app/blog/[slug]/page.tsx",
+      "sha256": "823a33022c7fd92d1f88a350ddd0133fcca00854a7a80af88df64c49227f12e1"
+    },
+    {
+      "path": "app/contact/ContactForm.tsx",
+      "sha256": "4e777e28bd144d5b9bdcc1b1e5942f4f0812308cb02fcf9c0b35dfa21721d824"
+    },
+    {
+      "path": "app/layout.tsx",
+      "sha256": "40f3e6fda6f3bbec930fbc19fc31983b53ba78f2890e8a31246c26fd154363c3"
+    },
+    {
+      "path": "app/quiz/QuizClient.tsx",
+      "sha256": "1a5164cee315cd7cbd659df73389d8931ae638ee4555dbbf0428f3a98d3b2102"
+    },
+    {
+      "path": "components/MobileBottomNav.tsx",
+      "sha256": "616938c704a3d0be4edc03fe817f308f3c4697c64d50ecd154816f1577d58e45"
+    },
+    {
+      "path": "components/SiteHeader.tsx",
+      "sha256": "68254029d5908502145bdc5b82ebda18a415af2a9e42d853f3cfde8ddee1ea74"
+    },
+    {
+      "path": "components/ads/ContentEndAd.tsx",
+      "sha256": "4df86e4a4e088ac2770839122bf2c36137a9660929f2a762126ea66c2f339554"
+    },
+    {
+      "path": "components/blog/BlogMarkdown.tsx",
+      "sha256": "ba48b8c6f7b040fbbb12f148bd5e08b205b98ff8b386bb8341473a49c7fec0c1"
+    },
+    {
+      "path": "components/blog/BlogPractice.tsx",
+      "sha256": "35c675356e85bfb093f3bce3c669f8bcab59d6dd1d5caa317f8be6b6a008627c"
+    },
+    {
+      "path": "components/exam/ExamTopBrowse.tsx",
+      "sha256": "da6171d7254e841607ab3793abc8f821039884b09c93bb4406d210c81ad905b9"
+    },
+    {
+      "path": "components/exam/ExamTopGuide.tsx",
+      "sha256": "1b3c1cf6de820461ed89cf8ecdae67f884383648aa60531dd4d235f2f18e108e"
+    },
+    {
+      "path": "components/exam/FirstPracticeEntry.tsx",
+      "sha256": "3d6ea282c43157f1a3b06c857533d33d57aa7e34e3830b5b701a7f88544d148b"
+    },
+    {
+      "path": "components/home/LearningCalendar.tsx",
+      "sha256": "dc43084ffb549cfa868190e1d74eeb7802c1cd46f6585dbe406498e024931603"
+    },
+    {
+      "path": "components/home/StudyReturnLink.tsx",
+      "sha256": "f6d466af98d5a959ab2155b1d6c73d2c386e3606d34d3f2d78276bb8df0c0e6c"
+    },
+    {
+      "path": "components/home/StudyRewardCorner.tsx",
+      "sha256": "1357339c0afdcf250281f6238f15157df327896aba095467b67c0d224ecfb955"
+    },
+    {
+      "path": "components/home/StudyRoom.tsx",
+      "sha256": "24826a058a49c233f555fb349509846948bbf1252b3a6b4a6eae1283b215a9c6"
+    },
+    {
+      "path": "components/motivation/AchievementToast.tsx",
+      "sha256": "79ca8ac46b2da928e771f4630577a88e79c0e62de808eebbc0648bd17b32302e"
+    },
+    {
+      "path": "components/quiz/ExplanationCard.tsx",
+      "sha256": "b1588b7042d8b55068494abc86645b96ace667a59764726f909702603d6bccdd"
+    },
+    {
+      "path": "components/quiz/PracticeTransition.tsx",
+      "sha256": "22b991c1fc4891e2746fc2bb336c650b6e8eb59af3c42af459943f60b2696dc4"
+    },
+    {
+      "path": "components/quiz/QuestionCommentBox.tsx",
+      "sha256": "89b3c1f226b919e1f31ba9592a1879d4da2e9acad36ad86e888e914aa7882f63"
+    },
+    {
+      "path": "components/quiz/QuestionFeedback.tsx",
+      "sha256": "87735516c58ae4554694c33200c6cc91444075132ea8a663091f4931ff7464cd"
+    },
+    {
+      "path": "components/quiz/QuizPlayer.tsx",
+      "sha256": "d05c9dd110186614612340b976d91aa99160969fd8b77b2a0d7a80408e3cc5ab"
+    },
+    {
+      "path": "components/ui/markdown.tsx",
+      "sha256": "21bef7218057e533362370169a705d1c45a1ca0c2edde848e1659a57911b08d8"
+    },
+    {
+      "path": "data/blog/practice-map.json",
+      "sha256": "da8f834ef7c5a3c86068a7fd9f4172e299ad41f23e4352502032af10e0b4bad6"
+    },
+    {
+      "path": "eslint.config.mjs",
+      "sha256": "2759c8b2d77b15a02ba5bea8c99581c054940c4a2f8ead28586453ab67573ed0"
+    },
+    {
+      "path": "lib/blog/practice.ts",
+      "sha256": "c6e8a22a0802960559977fe495b494d227b867e501ac8f02d47f70eb4f034764"
+    },
+    {
+      "path": "lib/feedback/local-data.ts",
+      "sha256": "57d9836451f2062307df55f3b76496ab2530f4a5d3f832072b8660e3fad119cc"
+    },
+    {
+      "path": "lib/feedback/submit.ts",
+      "sha256": "09dfc42fd940056a396770725c7bc1fceec5e085748d2f2355fba891a4474d34"
+    },
+    {
+      "path": "lib/gamification/economy.ts",
+      "sha256": "d7bd22f1f6505f1a10a785709affb1d011d3a0c5f98b976b7d1373f42b4ea4f0"
+    },
+    {
+      "path": "lib/gamification/xp.ts",
+      "sha256": "93eba681039696734aa5fc6a6c4f7113eec8ec10fad6b2aeb8276667d3baeb3a"
+    },
+    {
+      "path": "lib/motivation/combo.ts",
+      "sha256": "bfe03de0450b6d268f239db8f52770e069dfa804d5c37070e5e42b004629d3dc"
+    },
+    {
+      "path": "lib/performance/browser-idle.ts",
+      "sha256": "8a14e59fcbe7d4b05b843667a12930860d78bcb7c0ea42f466460f4b885d62e1"
+    },
+    {
+      "path": "lib/posthog.ts",
+      "sha256": "ef79541c4e7a5c28c0302f575a6ca4586988acc491923de386b0882021ad9d7f"
+    },
+    {
+      "path": "lib/seo/exam-entry.ts",
+      "sha256": "9e898bc7725115d67f22b98d90306c4086db880b532bda251f25592cc58c7ef0"
+    },
+    {
+      "path": "lib/seo/exam-meta.ts",
+      "sha256": "7c0059f7a651d89d81b1908b8685d7a7fb42fb4837b352e5b3b8c10b2164d6e4"
+    },
+    {
+      "path": "lib/storage/keys.ts",
+      "sha256": "7e44661ea1438c1f639289bb69d97efb0733fe2bc802d6cc31ad50db7340a29a"
+    },
+    {
+      "path": "lib/streak/StreakTracker.tsx",
+      "sha256": "ddca7c428dcf9e718a3d4a441616b633ed13eea5960e57333e50a3a645327cbe"
+    },
+    {
+      "path": "scripts/kperf1-local.mjs",
+      "sha256": "a59e692fa868958abebab04fa87b70d5511eaa3856b512d0d4886d202c221b0f"
+    },
+    {
+      "path": "scripts/kperf1-measure.mjs",
+      "sha256": "d0a68e429b2cd3c1829a7e5fece67b9ae490e8a8f59a170e810f77963348079f"
+    },
+    {
+      "path": "scripts/kperf1-server.mjs",
+      "sha256": "82539081dbffe1437cd596a2dfe5e822772892ba9642a60c55930efdfcb87a5c"
+    },
+    {
+      "path": "scripts/kux1-check.mjs",
+      "sha256": "107fb2ca42d6ab29afef2f995c3452ed3bf28e9e38cdc5c9be8fa413c407f666"
+    },
+    {
+      "path": "scripts/kux1-compare.mjs",
+      "sha256": "bf30d66ae751095d931f86f4c32ff580a32ae100ceb987958e8e6e58d959dbf5"
+    },
+    {
+      "path": "scripts/kux1-measure.mjs",
+      "sha256": "a3f8ed8b44d6d8ae2321980dc575c32fb26f10c8d3a1d0b35055bf9c27d5e5b5"
+    },
+    {
+      "path": "scripts/kux2-measure.mjs",
+      "sha256": "caee4aa4bad107e6a3c2102c629ba6d5e9eb8cb02984ee4389de7a3bec2af786"
+    },
+    {
+      "path": "tests/e2e/badge-toast-overlap.spec.ts",
+      "sha256": "2c42ae4c6836081676439cd8adb2a3e62e12984cbf3e0ff31bc9d1b36d0cbe0c"
+    },
+    {
+      "path": "tests/e2e/exam-top-entry.spec.ts",
+      "sha256": "12c90c28db659d05f77897bde128dcaadb124660ceaba208bbafec58e04ab6e0"
+    },
+    {
+      "path": "tests/e2e/exam-year-coverage.spec.ts",
+      "sha256": "95f20fe6669fd562924c0fe8f72513948c32c3055fc61a648e365c0e2583a50e"
+    },
+    {
+      "path": "tests/e2e/first-ten-limit-fixture.spec.ts",
+      "sha256": "1ed591bee52346d487cc1a70a73bd6aa87224480f2407a64b2d2cd59c8d004fb"
+    },
+    {
+      "path": "tests/e2e/first-ten.spec.ts",
+      "sha256": "049cce77af3ab37f210cedf056939edbacb3432856fd37cad784f35b301041f3"
+    },
+    {
+      "path": "tests/e2e/home-study-entry.spec.ts",
+      "sha256": "0c6623b592f08621e724fcbc21c2d76bf05d502500e6b33e958fdc13e6a1ff38"
+    },
+    {
+      "path": "tests/e2e/kgrow2-blog-practice.spec.ts",
+      "sha256": "32299767c42ee322095c9d42339a3630882d77ce7b5ee72633332fde5974f3e6"
+    },
+    {
+      "path": "tests/e2e/kperf1-explanation-ready.spec.ts",
+      "sha256": "02373a39b92905885fbaf086e8cf30b5887884ec3cb9f73c09a1b45b15923cb6"
+    },
+    {
+      "path": "tests/e2e/study-presence.spec.ts",
+      "sha256": "0190e250d553485b2e3726405f06cd31ee8b2c747a4c20f6ea8a7c311641fe2d"
+    },
+    {
+      "path": "tests/e2e/tsugino-funnel.spec.ts",
+      "sha256": "576ee986a8999e5e868ec64e433bf4f2debc9402c5655254e52d054116bae160"
+    }
+  ],
+  "aggregate": "dc3008b99970901dcb71d35c63f072465ffd2bd424696f63c93d04479fe4be94"
+}

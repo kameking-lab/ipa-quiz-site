@@ -1,3 +1,5 @@
+import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
+import { referralPracticeHref } from "@/lib/questions/referral-practice";
 import { practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -157,6 +159,7 @@ export default async function ExamYearSeasonPage({
       items: items.map((q) => ({
         id: q.id,
         qNumber: q.qNumber,
+        officialQuestionLabel: q.officialQuestionLabel,
         category: q.category,
         isCalculation: !!q.isCalculation,
         isPlaceholder: isPlaceholderExplanation(q),
@@ -257,6 +260,7 @@ export default async function ExamYearSeasonPage({
 
       <div className="relative mx-auto w-full max-w-3xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
         <JsonLd data={jsonLd} />
+      <TsuginoWelcome href={referralPracticeHref(pool, `/${exam}/${yearSeason}`)} qualification={histLabel} />
 
         <nav
           aria-label="パンくずリスト"
@@ -300,7 +304,9 @@ export default async function ExamYearSeasonPage({
           </p>
           {code === "shakai" && (
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-              第38回（試験日 令和8年2月1日）の全129問です。共通科目は問題1〜84、専門科目は問題85〜129。「2つ選びなさい」の問題は2つ選ぶと採点します。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。
+              {parsed.year === 2024
+                ? "第37回（試験日 令和7年2月2日）の共通科目81問と専門科目45問です。共通科目は精神保健福祉士第27回と同じ問題で、公式正答を原文から一意に説明できない3問（問題4・69・76）は掲載を保留しています。"
+                : "第38回（試験日 令和8年2月1日）の全129問です。共通科目は問題1〜84、専門科目は問題85〜129。"}「2つ選びなさい」の問題は2つ選ぶと採点します。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。
             </p>
           )}
           {code === "seishin" && (
@@ -347,7 +353,7 @@ export default async function ExamYearSeasonPage({
           )}
           {code === "tohan" && parsed.season === "kansai" && (
             <p className="mt-2 text-sm text-muted-foreground">
-              関西広域連合（滋賀・京都・大阪・兵庫・和歌山・奈良・徳島）の令和7年度試験 全{pool.length}問です。選択肢は原本と同じ番号(1)〜(5)で表示しています。
+              令和{parsed.year - 2018}年度試験 全{pool.length}問です。出典は関西広域連合の公式問題・正答。選択肢は原本と同じ番号(1)〜(5)で表示しています。
             </p>
           )}
           <div className="mt-3 flex flex-wrap gap-2 text-xs">

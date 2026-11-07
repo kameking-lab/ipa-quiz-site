@@ -1,0 +1,6 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": { "incremental": false, "noEmit": true, "allowJs": false, "noUncheckedIndexedAccess": true },
+  "include": ["./*.ts", "../../components/kisho-private/*.tsx", "../../__tests__/kisho-private*.test.tsx"],
+  "exclude": []
+}

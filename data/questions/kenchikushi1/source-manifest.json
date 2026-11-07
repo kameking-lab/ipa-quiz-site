@@ -1,0 +1,1720 @@
+{
+  "exam": "kenchikushi1",
+  "checkedAt": "2026-11-04",
+  "officialIndexUrl": "https://www.jaeic.or.jp/shiken/1k/1k-mondai.html",
+  "status": "ready-to-ingest",
+  "publicationGo": false,
+  "scope": "学科のみ。設計製図は対象外。",
+  "sources": [
+    {
+      "year": 2026,
+      "kind": "gakka1_2",
+      "url": "https://www.jaeic.or.jp/.assets/1k-2026-1st-gakka1_2.pdf",
+      "sha256": "0d0c77ce367c9a5668e39a3c6c23e42ba2718270e479dd2c099b601a30adf7b3",
+      "bytes": 1130195
+    },
+    {
+      "year": 2026,
+      "kind": "gakka3",
+      "url": "https://www.jaeic.or.jp/.assets/1k-2026-1st-gakka3.pdf",
+      "sha256": "a97a1d754de0ec7f539ce1f2b682dab6d18f7d313e9737ece4826ea454ef7030",
+      "bytes": 869221
+    },
+    {
+      "year": 2026,
+      "kind": "gakka4_5",
+      "url": "https://www.jaeic.or.jp/.assets/1k-2026-1st-gakka4_5.pdf",
+      "sha256": "04903b7678e64394f56501579c6fdc0a61c7f1683596c115136cef6e855188aa",
+      "bytes": 1572615
+    },
+    {
+      "year": 2026,
+      "kind": "gokakukijun",
+      "url": "https://www.jaeic.or.jp/.assets/1k-2026-1st-gokakukijun.pdf",
+      "sha256": "0cba655793975a94bcc8b84a769c885261d66434ba6627af0349ea9c4b8f80b8",
+      "bytes": 474552
+    },
+    {
+      "year": 2025,
+      "kind": "gakka1_2",
+      "url": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2025-1st-gakka1_2.pdf",
+      "sha256": "e3446e195fc9b042cb3f1a88393c6b85d4c2e0b8a1a6a6c538cc1d77ac841503",
+      "bytes": 539437
+    },
+    {
+      "year": 2025,
+      "kind": "gakka3",
+      "url": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2025-1st-gakka3.pdf",
+      "sha256": "d691e1b9542f185c32dc1f5d0947451a33349caf488c15ed1b5585e7a542afb0",
+      "bytes": 650428
+    },
+    {
+      "year": 2025,
+      "kind": "gakka4_5",
+      "url": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2025-1st-gakka4_5.pdf",
+      "sha256": "ef64537389a52b31cab7b841ab24081250f886077dc69c070e7f19dbbb88539a",
+      "bytes": 875361
+    },
+    {
+      "year": 2025,
+      "kind": "gokakukijun",
+      "url": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2025-1st-gokakukijun.pdf",
+      "sha256": "23f5e9b60091e1503592f7e0c8af7d3dac60e85958ab73db10bde6e849f19219",
+      "bytes": 93670
+    }
+  ],
+  "rounds": [
+    {
+      "year": 2026,
+      "season": "annual",
+      "lawReferenceDate": "2026-01-01",
+      "lawReferenceNote": "法令は出題時点に基づく。2026-01-01現在の施行規定による。",
+      "expectedQuestions": 125,
+      "transcribedQuestions": 125,
+      "sourceAnswerUrl": "https://www.jaeic.or.jp/.assets/1k-2026-1st-gokakukijun.pdf",
+      "subjects": [
+        {
+          "subject": "計画",
+          "session": "keikaku",
+          "expectedQuestions": 20,
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/1k-2026-1st-gakka1_2.pdf",
+          "answers": [
+            {
+              "qNumber": 1,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 2,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 3,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 4,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 5,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 6,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 7,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 8,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 9,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 10,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 11,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 12,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 13,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 14,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 15,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 16,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 17,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 18,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 19,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 20,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            }
+          ],
+          "transcribedQuestions": 20,
+          "transcribedQuestionNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "humanReviewedQuestions": 0
+        },
+        {
+          "subject": "環境・設備",
+          "session": "kankyo-setsubi",
+          "expectedQuestions": 20,
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/1k-2026-1st-gakka1_2.pdf",
+          "answers": [
+            {
+              "qNumber": 1,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 2,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 3,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 4,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 5,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 6,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 7,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 8,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 9,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 10,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 11,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 12,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 13,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 14,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 15,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 16,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 17,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 18,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 19,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 20,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            }
+          ],
+          "transcribedQuestions": 20,
+          "transcribedQuestionNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "humanReviewedQuestions": 0
+        },
+        {
+          "subject": "法規",
+          "session": "houki",
+          "expectedQuestions": 30,
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/1k-2026-1st-gakka3.pdf",
+          "answers": [
+            {
+              "qNumber": 1,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 2,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 3,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 4,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 5,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 6,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 7,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 8,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 9,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 10,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 11,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 12,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 13,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 14,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 15,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 16,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 17,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 18,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 19,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 20,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 21,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 22,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 23,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 24,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 25,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 26,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 27,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 28,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 29,
+              "officialAnswerNumber": null,
+              "grading": "credit-for-all"
+            },
+            {
+              "qNumber": 30,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            }
+          ],
+          "transcribedQuestions": 30,
+          "transcribedQuestionNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "humanReviewedQuestions": 0
+        },
+        {
+          "subject": "構造",
+          "session": "kozo",
+          "expectedQuestions": 30,
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/1k-2026-1st-gakka4_5.pdf",
+          "answers": [
+            {
+              "qNumber": 1,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 2,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 3,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 4,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 5,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 6,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 7,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 8,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 9,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 10,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 11,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 12,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 13,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 14,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 15,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 16,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 17,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 18,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 19,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 20,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 21,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 22,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 23,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 24,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 25,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 26,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 27,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 28,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 29,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 30,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            }
+          ],
+          "transcribedQuestions": 30,
+          "transcribedQuestionNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "humanReviewedQuestions": 0
+        },
+        {
+          "subject": "施工",
+          "session": "sekou",
+          "expectedQuestions": 25,
+          "sourcePdfUrl": "https://www.jaeic.or.jp/.assets/1k-2026-1st-gakka4_5.pdf",
+          "answers": [
+            {
+              "qNumber": 1,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 2,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 3,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 4,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 5,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 6,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 7,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 8,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 9,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 10,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 11,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 12,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 13,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 14,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 15,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 16,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 17,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 18,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 19,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 20,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 21,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 22,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 23,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 24,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 25,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            }
+          ],
+          "transcribedQuestions": 25,
+          "transcribedQuestionNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "humanReviewedQuestions": 0
+        }
+      ]
+    },
+    {
+      "year": 2025,
+      "season": "annual",
+      "lawReferenceDate": "2025-01-01",
+      "lawReferenceNote": "法令は出題時点に基づく。指定された省エネ関連改正法令（令和4年法律第69号・令和6年政令第172号・令和6年国土交通省令第68号）については2025-04-01現在の施行規定を適用する例外あり。",
+      "expectedQuestions": 125,
+      "transcribedQuestions": 125,
+      "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2025-1st-gokakukijun.pdf",
+      "subjects": [
+        {
+          "subject": "計画",
+          "session": "keikaku",
+          "expectedQuestions": 20,
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2025-1st-gakka1_2.pdf",
+          "answers": [
+            {
+              "qNumber": 1,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 2,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 3,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 4,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 5,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 6,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 7,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 8,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 9,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 10,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 11,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 12,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 13,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 14,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 15,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 16,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 17,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 18,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 19,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 20,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            }
+          ],
+          "transcribedQuestions": 20,
+          "transcribedQuestionNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "humanReviewedQuestions": 0
+        },
+        {
+          "subject": "環境・設備",
+          "session": "kankyo-setsubi",
+          "expectedQuestions": 20,
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2025-1st-gakka1_2.pdf",
+          "answers": [
+            {
+              "qNumber": 1,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 2,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 3,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 4,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 5,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 6,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 7,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 8,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 9,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 10,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 11,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 12,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 13,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 14,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 15,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 16,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 17,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 18,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 19,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 20,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            }
+          ],
+          "transcribedQuestions": 20,
+          "transcribedQuestionNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "humanReviewedQuestions": 0
+        },
+        {
+          "subject": "法規",
+          "session": "houki",
+          "expectedQuestions": 30,
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2025-1st-gakka3.pdf",
+          "answers": [
+            {
+              "qNumber": 1,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 2,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 3,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 4,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 5,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 6,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 7,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 8,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 9,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 10,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 11,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 12,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 13,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 14,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 15,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 16,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 17,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 18,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 19,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 20,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 21,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 22,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 23,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 24,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 25,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 26,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 27,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 28,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 29,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 30,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            }
+          ],
+          "transcribedQuestions": 30,
+          "transcribedQuestionNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "humanReviewedQuestions": 0
+        },
+        {
+          "subject": "構造",
+          "session": "kozo",
+          "expectedQuestions": 30,
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2025-1st-gakka4_5.pdf",
+          "answers": [
+            {
+              "qNumber": 1,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 2,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 3,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 4,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 5,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 6,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 7,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 8,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 9,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 10,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 11,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 12,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 13,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 14,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 15,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 16,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 17,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 18,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 19,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 20,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 21,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 22,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 23,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 24,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 25,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 26,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 27,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 28,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 29,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 30,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            }
+          ],
+          "transcribedQuestions": 30,
+          "transcribedQuestionNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27,
+            28,
+            29,
+            30
+          ],
+          "humanReviewedQuestions": 0
+        },
+        {
+          "subject": "施工",
+          "session": "sekou",
+          "expectedQuestions": 25,
+          "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2025-1st-gakka4_5.pdf",
+          "answers": [
+            {
+              "qNumber": 1,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 2,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 3,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 4,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 5,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 6,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 7,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 8,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 9,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 10,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 11,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 12,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 13,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 14,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 15,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 16,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 17,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 18,
+              "officialAnswerNumber": 2,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 19,
+              "officialAnswerNumber": 4,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 20,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 21,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 22,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 23,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 24,
+              "officialAnswerNumber": 3,
+              "grading": "single-choice"
+            },
+            {
+              "qNumber": 25,
+              "officialAnswerNumber": 1,
+              "grading": "single-choice"
+            }
+          ],
+          "transcribedQuestions": 25,
+          "transcribedQuestionNumbers": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25
+          ],
+          "humanReviewedQuestions": 0
+        }
+      ]
+    }
+  ],
+  "publicAllowed": false,
+  "ingestionBlocked": false,
+  "ownerDecision": {
+    "decidedAt": "2026-11-04T06:10:00+09:00",
+    "action": "本文・図表・独自全肢解説を未公開で収録。転載禁止表示は報告に記録し収録停止理由にしない。",
+    "rightsHolderPermissionObtained": false
+  },
+  "reuseNotice": "公式一覧の注意事項3及び問題PDF表紙に個人利用以外の無断転載・複製禁止表示あり。オーナー判断と権利者の許諾は区別する。",
+  "stagingDirectory": "data/qualification-staging/kenchikushi1",
+  "unavailablePdfUrls": []
+}

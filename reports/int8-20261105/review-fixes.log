@@ -1,0 +1,42 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mC:/Users/kanet/20260522/wt-batch3[39m
+
+[90mstdout[2m | __tests__/api/contact-slack-after.test.ts[2m > [22m[2mPOST /api/contact — 配信確認と既存feedbackの非同期通知[2m > [22m[2m通常の問い合わせは従来どおり過去問AIとして通知し、返信先なしでも受け付ける
+[22m[39m{"tag":"kakomon-ai:inbound","kind":"contact","receivedAt":"2026-11-04T23:07:15.048Z","ipHash":"ip-1hsg7yd"}
+
+[90mstdout[2m | __tests__/api/contact-slack-after.test.ts[2m > [22m[2mPOST /api/contact — 配信確認と既存feedbackの非同期通知[2m > [22m[2mレスポンスを返す時点では Slack を叩いていない（送信レイテンシを乗せない）
+[22m[39m{"tag":"kakomon-ai:inbound","kind":"feedback","receivedAt":"2026-11-04T23:07:15.052Z","ipHash":"ip-1hsg7yj"}
+
+[90mstderr[2m | __tests__/api/contact-slack-after.test.ts[2m > [22m[2mPOST /api/contact — 配信確認と既存feedbackの非同期通知[2m > [22m[2mレスポンスを返す時点では Slack を叩いていない（送信レイテンシを乗せない）
+[22m[39m[feedback-token] AUTH_SECRET が未設定のため無料枠解除トークンを発行できません
+
+[90mstdout[2m | __tests__/api/contact-slack-after.test.ts[2m > [22m[2mPOST /api/contact — 配信確認と既存feedbackの非同期通知[2m > [22m[2m補足は応答前に運営への配信を確認する
+[22m[39m{"tag":"kakomon-ai:inbound","kind":"question-comment","receivedAt":"2026-11-04T23:07:15.053Z","ipHash":"ip-1hsg7yk"}
+
+[90mstdout[2m | __tests__/api/contact-slack-after.test.ts[2m > [22m[2mPOST /api/contact — 配信確認と既存feedbackの非同期通知[2m > [22m[2mSlack が失敗しても問い合わせは受理済み（fail-open）
+[22m[39m{"tag":"kakomon-ai:inbound","kind":"feedback","receivedAt":"2026-11-04T23:07:15.054Z","ipHash":"ip-xsdl64"}
+
+[90mstderr[2m | __tests__/api/contact-slack-after.test.ts[2m > [22m[2mPOST /api/contact — 配信確認と既存feedbackの非同期通知[2m > [22m[2mSlack が失敗しても問い合わせは受理済み（fail-open）
+[22m[39m[feedback-token] AUTH_SECRET が未設定のため無料枠解除トークンを発行できません
+
+[90mstdout[2m | __tests__/api/contact-slack-after.test.ts[2m > [22m[2mPOST /api/contact — 配信確認と既存feedbackの非同期通知[2m > [22m[2mafter() が使えない文脈でも 500 にせず通知を試みる（fail-open）
+[22m[39m{"tag":"kakomon-ai:inbound","kind":"feedback","receivedAt":"2026-11-04T23:07:15.054Z","ipHash":"ip-xsdl65"}
+
+[90mstderr[2m | __tests__/api/contact-slack-after.test.ts[2m > [22m[2mPOST /api/contact — 配信確認と既存feedbackの非同期通知[2m > [22m[2mafter() が使えない文脈でも 500 にせず通知を試みる（fail-open）
+[22m[39m[feedback-token] AUTH_SECRET が未設定のため無料枠解除トークンを発行できません
+
+ [32m✓[39m __tests__/api/contact-slack-after.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 17[2mms[22m[39m
+ [32m✓[39m __tests__/billing/FeedbackUnlock.test.tsx [2m([22m[2m9 tests[22m[2m)[22m[33m 328[2mms[22m[39m
+ [32m✓[39m __tests__/billing/QuizClient.player.test.tsx [2m([22m[2m5 tests[22m[2m)[22m[33m 4579[2mms[22m[39m
+     [33m[2m✓[22m[39m answers ordinary questions across qualifications, preserves player state and storage, and offers exits at the eleventh [33m 2311[2mms[22m[39m
+     [33m[2m✓[22m[39m keeps free exits and storage when 428 guest_cookie_required is returned [33m 593[2mms[22m[39m
+   [33m[2m✓[22m[39m submits feedback at the wall, answers bonus questions 11-20, stops at 21 and preserves exhaustion on reload [33m 1640[2mms[22m[39m
+ [32m✓[39m __tests__/seo/exam-hub-essay-flagship-cta.test.ts [2m([22m[2m8 tests[22m[2m)[22m[32m 12[2mms[22m[39m
+ [32m✓[39m __tests__/seo/exam-top-unsupported-grading.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 62[2mms[22m[39m
+ [32m✓[39m __tests__/seo/blog-practice-gate.test.tsx [2m([22m[2m2 tests[22m[2m)[22m[32m 82[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m6 passed[39m[22m[90m (6)[39m
+[2m      Tests [22m [1m[32m34 passed[39m[22m[90m (34)[39m
+[2m   Start at [22m 08:07:13
+[2m   Duration [22m 23.62s[2m (transform 27.20s, setup 445ms, import 37.10s, tests 5.08s, environment 3.64s)[22m
+

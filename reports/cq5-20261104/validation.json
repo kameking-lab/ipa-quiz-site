@@ -1,0 +1,30 @@
+{
+  "task": "CQ5",
+  "qualification": "chiiki-ryoko",
+  "checkedAt": "2026-11-04 JST",
+  "publicAllowed": false,
+  "commands": [
+    {"command": "python scripts/ingest-chiiki-ryoko.py --source-dir <temporary PDFs>", "exitCode": 0, "result": "4 PDF hashes; 118 stems; 472 choices; 118 official answers; 51 source-page PNGs reproduced and matched after review fixes"},
+    {"command": "pnpm validate:questions --exam=chiiki-ryoko", "exitCode": 0, "result": "Private 118 questions / 472 explanations / 51 images validated. Public registry count remains 0 for this slug."},
+    {"command": "pnpm validate:questions", "exitCode": 0, "result": "Private validation passed; ordinary validator 34383 questions, fail=0, warn=20263 (existing ordinary data warnings)."},
+    {"command": "pnpm typecheck", "exitCode": 0, "result": "tsc --noEmit; rerun after review corrections"},
+    {"command": "pnpm test __tests__/questions/chiiki-ryoko-staging.test.ts", "exitCode": 0, "result": "1 file, 10 tests passed; includes all 118 fixed answers, publication isolation, hotel/JR boundary regression and six corruption rejection cases"},
+    {"command": "pnpm test __tests__/questions/live-qualification-coverage.test.ts __tests__/questions/qualification-expansion.test.ts", "exitCode": 0, "result": "2 files, 1073 tests passed"},
+    {"command": "git diff --check", "exitCode": 0, "result": "No whitespace errors"}
+  ],
+  "environment": {
+    "node": "24.13.1",
+    "pnpm": "9.15.9",
+    "python": "3.12.10",
+    "PyMuPDF": "1.28.0",
+    "dependencySetup": "Local pnpm 9 frozen install rejected the pnpm 10 workspace overrides. No lockfile/package edits. Reused existing wt-batch1/node_modules through a worktree-local junction for verification."
+  },
+  "sourceRetrieval": {
+    "officialExamPdfs": "All four returned HTTP 200 application/pdf via ordinary Invoke-WebRequest GET.",
+    "inaccessibleExamPdfUrls": [],
+    "supplementalReferenceChecks": [
+      {"url": "https://wwwtb.mlit.go.jp/kanto/content/000359033.pdf", "httpStatus": 200, "note": "Ordinary Windows GET succeeds; document is the 2025-09-26 Kanto fare notice. Used to confirm 70% threshold and surcharge method."},
+      {"url": "https://wwwtb.mlit.go.jp/kanto/content/000359033_0001.pdf", "httpStatus": 404, "note": "Supplemental URL attempted by the independent reviewer. No bypass; not one of the four required exam PDFs."}
+    ]
+  }
+}

@@ -4,3 +4,33 @@ docs/evidence/denken3/input/** -text -diff
 docs/evidence/denken2/raw/** -text -diff
 docs/evidence/denken2/input/** -text -diff
 reports/kankoji2-20260926/evidence/*-raw.json -text -diff
+# Reused acceptance snapshots carry byte hashes (the JSON includes CRLF).
+data/prepared-chizai2/* -text -diff
+reports/qchizai2-20261103/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+data/questions/chizai2/* text eol=lf
+scripts/verify-chizai2-* text eol=lf
+scripts/write-chizai2-receipt.ts text eol=lf
+
+# LQ4C acceptance binds exact UTF-8 manuscript and review bytes.
+data/qualification-staging/lq4c-*/** text eol=lf
+reports/lq4c-20261104/** -text whitespace=trailing-space,space-before-tab,cr-at-eol
+scripts/validate-lq4-staging.mjs text eol=lf
+data/qualification-staging/lq4c-*/assets/** -text
+reports/LQ3-20261104/prior-receipts/** -text -diff
+# CQ3 generated manuscripts must stay stable across Windows regeneration.
+data/qualification-staging/dokugeki-chiba/*.json text eol=lf
+data/qualification-staging/dokugeki-chiba/assets/** -text
+reports/cq3-dokugeki-chiba/*.json text eol=lf
+# The accepted Kisho raw packet hashes its original CRLF bytes.
+data/qualification-staging/kisho-65-66-private/raw-combined.json -text -diff
+
+# Imported historical receipts retain their exact original terminal/review bytes.
+mobile/docs/evidence/** -text -whitespace
+reports/cloud-sekou-1kenchiku-review.md -text -whitespace
+
+# INT5 command outputs and review prompts are byte-preserved audit receipts.
+reports/int5-20261104/validation/** -text -whitespace
+reports/int5-20261104/review*-prompt.txt -text -whitespace
+
+# INT5B validation logs are hashed byte-for-byte.
+reports/int5b-20261105/validation/** -text -whitespace

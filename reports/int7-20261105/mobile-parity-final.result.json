@@ -1,0 +1,17 @@
+{
+  "command": [
+    "corepack.cmd",
+    "pnpm",
+    "exec",
+    "vitest",
+    "run",
+    "__tests__/mobile/catalog-parity.test.ts",
+    "--maxWorkers=1",
+    "--reporter=verbose"
+  ],
+  "exitCode": 0,
+  "seconds": 25.69,
+  "log": "reports/int7-20261105/mobile-parity-final.log",
+  "sha256": "d05f626333b8daf0b9fcf7719b5d092ba5739bae506509fcbf411be2bc420aad",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

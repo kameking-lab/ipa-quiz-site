@@ -10,6 +10,7 @@ import {
 import { maskPII, totalHits } from "@/lib/feedback/pii-masker";
 import { verifyTurnstileToken } from "@/lib/turnstile";
 import { sendSlackMessage } from "@/lib/notify/slack";
+import { randomUUID } from "node:crypto";
 
 export const runtime = "nodejs";
 
@@ -48,6 +49,7 @@ const ContactSchema = z.object({
     "enterprise",
     "media",
     "other",
+    "tsugino",
   ]),
   name: z.string().max(80).optional().default(""),
   email: z.string().max(120).optional().default(""),
@@ -151,15 +153,19 @@ export async function POST(req: Request) {
       kind: payload.kind,
       receivedAt: new Date().toISOString(),
       ipHash: hashIp(ip),
-      payload: safeBody,
+      // Contact bodies can contain email addresses, essays and credentials.
+      // Deliver them only to the configured support channel, never log stores.
       maskHits: totalHits(maskHits) > 0 ? maskHits : undefined,
     }),
   );
 
-  // Optional: forward to Resend if configured
-  if (process.env.RESEND_API_KEY && process.env.CONTACT_NOTIFY_EMAIL) {
+  const receiptId = `KG-${randomUUID()}`;
+  // A support submission is accepted only after a configured operator channel
+  // acknowledges delivery. No public comment database or background queue.
+  async function forwardEmail(): Promise<boolean> {
+    if (!process.env.RESEND_API_KEY || !process.env.CONTACT_NOTIFY_EMAIL) return false;
     try {
-      await fetch("https://api.resend.com/emails", {
+      const response = await fetch("https://api.resend.com/emails", {
         method: "POST",
         headers: {
           authorization: `Bearer ${process.env.RESEND_API_KEY}`,
@@ -168,14 +174,28 @@ export async function POST(req: Request) {
         body: JSON.stringify({
           from: process.env.CONTACT_FROM_EMAIL ?? "noreply@kakomon-ai.dev",
           to: process.env.CONTACT_NOTIFY_EMAIL,
-          subject: `[過去問 AI] ${payload.kind} 受信`,
-          text: safeBody,
+          subject: `[過去問 AI] ${payload.kind} ${receiptId}`,
+          text: `受付番号: ${receiptId}\n${safeBody}`,
         }),
+        signal: AbortSignal.timeout(5_000),
       });
-    } catch (err) {
-      console.error("contact forward failed", err);
+      return response.ok;
+    } catch {
+      console.error("contact forward failed");
+      return false;
     }
   }
+
+  if (payload.kind !== "feedback") {
+    const slackDelivered = await sendSlackMessage(`受付番号: ${receiptId}\n${buildSlackText(maskedPayload, hashIp(ip))}`);
+    const delivered = slackDelivered || await forwardEmail();
+    if (!delivered) return NextResponse.json({ ok: false, error: "delivery_failed", message: "運営への送信を確認できませんでした。入力内容を残したまま、時間をおいて再送信してください。" }, { status: 503 });
+    return NextResponse.json({ ok: true, receiptId, delivery: "delivered" });
+  }
+
+  // Preserve the existing feedback/unlock path, including its best-effort
+  // notifications. This change does not alter AI access or its signed cookie.
+  await forwardEmail();
 
   // Forward to Slack so inbound signals reach the team (the old admin/feedback
   // dashboard read a file nothing wrote to and was always empty).
@@ -223,7 +243,8 @@ export async function POST(req: Request) {
 }
 
 function buildSlackText(payload: z.infer<typeof BodySchema>, ipHash: string): string {
-  const head = `[過去問AI] ${payload.kind} 受信 (${ipHash})`;
+  const siteName = payload.kind === "contact" && payload.category === "tsugino" ? "次の資格" : "過去問AI";
+  const head = `[${siteName}] ${payload.kind} 受信 (${ipHash})`;
   switch (payload.kind) {
     case "feedback":
       return `${head}\n選択: ${payload.choice}${payload.source ? ` / ${payload.source}` : ""}\n${payload.comment || "(コメントなし)"}`;

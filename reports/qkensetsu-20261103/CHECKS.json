@@ -1,0 +1,44 @@
+[
+  {
+    "name": "schema",
+    "command": "node node_modules/tsx/dist/cli.mjs scripts/validate-qkensetsu.ts --receipt",
+    "exitCode": 0,
+    "log": "schema.log",
+    "logSha256": "a66d8d8ba7c9ffbb661cac751e78c464c23228f18f6d3513da8721b384943295"
+  },
+  {
+    "name": "tests",
+    "command": "node node_modules/vitest/vitest.mjs run __tests__/questions/qkensetsu-two-rounds.test.ts",
+    "exitCode": 0,
+    "log": "tests.log",
+    "logSha256": "dd7c67794aea5d83a9cb0dde78d4a299f177de1ac073b01351191c3e87e56aef"
+  },
+  {
+    "name": "typecheck",
+    "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+    "exitCode": 0,
+    "log": "typecheck.log",
+    "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "lint",
+    "command": "node node_modules/eslint/bin/eslint.js (six added TypeScript files)",
+    "exitCode": 0,
+    "log": "lint.log",
+    "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "name": "build",
+    "command": "node node_modules/next/dist/bin/next build --webpack",
+    "exitCode": 0,
+    "log": "build.log",
+    "logSha256": "3b6c705017b447c9af54925d84b020a884c9289a51d3ae325b2661326aeb07d7"
+  },
+  {
+    "name": "initial typecheck omitted evidence inputs",
+    "exitCode": 2,
+    "log": "typecheck-omitted-inputs.log",
+    "logSha256": "66c1b0a59a7cbe6fcaae061f36f3558f652c4e201a3fca78e8bf0d968e2dcba4",
+    "resolution": "96 baseline evidence JSON inputs restored from Git; final full typecheck passed"
+  }
+]

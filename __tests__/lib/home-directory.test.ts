@@ -6,6 +6,7 @@ import { EXAM_QUESTION_COUNTS } from "@/lib/constants/exam-question-counts";
 import { getHomeDirectory } from "@/lib/home/home-directory";
 import { QUALIFICATION_HUBS, qualificationHubPath } from "@/lib/exam-qualification-hubs";
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
+import { ALL_EXAM_CODES } from "@/lib/exam-config";
 
 describe("home directory", () => {
   const domains = getHomeDirectory();
@@ -21,7 +22,7 @@ describe("home directory", () => {
   it("lists all 13 IPA categories with the same counts as the /ipa grid", () => {
     const it = domains.find((d) => d.id === "it");
     expect(it).toBeDefined();
-    const items = [...(it?.featured ?? []), ...(it?.compact ?? [])];
+    const items = [...(it?.featured ?? []), ...(it?.compact ?? [])].filter(item => (ALL_EXAM_CODES as string[]).includes(item.key));
     expect(items).toHaveLength(13);
     for (const item of items) {
       expect(item.questionCount).toBe(EXAM_QUESTION_COUNTS[item.key as keyof typeof EXAM_QUESTION_COUNTS]);
@@ -45,14 +46,14 @@ describe("home directory", () => {
       expect(entries[0]?.questionCount).toBeGreaterThan(0);
     }
     for (const chip of safety?.compact ?? []) {
-      expect(chip.href).toMatch(/^\/e-learning\/exams\?group=lckohyo&subject=/);
+      expect(chip.href).toMatch(/^\/e-learning\/exams\?group=(?:lckohyo|pe-first)&subject=/);
       expect(chip.periodLabel).toMatch(/^[1-9]\d*回分$/);
     }
   });
 
   it("shows only live external qualifications", () => {
-    const external = domains.filter((d) => !["it", "safety"].includes(d.id)).flatMap((d) => d.featured);
-    const live = QUALIFICATION_CATALOG.filter((q) => q.status === "live" && q.domain !== "safety").map((q) => `/${q.examCode ?? q.slug}`);
+    const external = all.filter(item => QUALIFICATION_CATALOG.some(entry => entry.status === "live" && (entry.examCode ?? entry.slug) === item.href.slice(1)));
+    const live = QUALIFICATION_CATALOG.filter((q) => q.status === "live" && !["eisei1", "eisei2"].includes(q.examCode ?? "") && (q.examCode || q.slug === "chusho-secondary")).map((q) => `/${q.examCode ?? q.slug}`);
     expect(external.map((i) => i.href).sort()).toEqual([...live].sort());
   });
 

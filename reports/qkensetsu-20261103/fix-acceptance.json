@@ -1,0 +1,139 @@
+{
+  "schema": "qkensetsu-fix-acceptance/v1",
+  "date": "2026-11-03",
+  "branch": "qual/qkensetsu-20261103",
+  "status": "CODE_TESTS_TYPECHECK_LINT_BUILD_PASS_BROWSER_INCOMPLETE_EXTERNAL_CLEANUP",
+  "materials": 210,
+  "publicStudy": 209,
+  "publicByYear": {
+    "2025": 105,
+    "2026": 104
+  },
+  "savedChoiceReasons": 840,
+  "publicChoiceReasons": 836,
+  "publicImages": 32,
+  "imageQuestions": 23,
+  "excluded": [
+    "kenchiku-setsubishi-2026-annual-am2-q18"
+  ],
+  "q18Decision": "Official original and answer 1 retained privately; direct official interpretation/correction not confirmed. Excluded from all public loaders/search/list/quiz/detail; assessment ID guards retained.",
+  "changedQuestions": [
+    {
+      "id": "kenchiku-setsubishi-2025-annual-am2-q1",
+      "fields": [
+        "lastUpdated",
+        "choiceExplanations",
+        "explanation"
+      ],
+      "previousContentSha256": "7a3313a4d31623530f14c6e0fb37c3dbd34584bf28f9280ee625d689bb41f329",
+      "contentSha256": "dc70b61f752d6b77f69c801a8a41ce13241232e7ed41f9e437f433f725cc7e66"
+    },
+    {
+      "id": "kenchiku-setsubishi-2025-annual-am2-q17",
+      "fields": [
+        "choices",
+        "lastUpdated"
+      ],
+      "previousContentSha256": "dabd9b5552a59cf0988c59df6a5f30d13277af3af9bc74e046255eaa5aa341c1",
+      "contentSha256": "378004c52941d369179f5f542418186d56211abb8bedad535f2d854ee1c26bb4"
+    }
+  ],
+  "unchangedPackets": 5,
+  "distinctTestFiles": 22,
+  "distinctTests": 309,
+  "checks": {
+    "qualificationSchema": 0,
+    "sharedSchema": 0,
+    "relatedTests": 0,
+    "searchRetest": 0,
+    "subjectRegression": 0,
+    "typecheck": 0,
+    "lint": 0,
+    "build": 0
+  },
+  "buildPages": 12579,
+  "browser": {
+    "status": "INCOMPLETE",
+    "verified": "Final three-subject top page screenshot, home and qualification links, earlier year page counts. Unit integration covers loaders/search/subjects/answer/reasons/history/SRS/rewards.",
+    "failure": "Shared dependency directories and own ignored node_modules link / .next/server/app / BUILD_ID disappeared during verification. Subsequent runtime returned 500 due to missing React client manifest; full image and quiz browser readback not completed.",
+    "notClaimed": [
+      "All 23 image pages rendered",
+      "All 32 image URLs fetched over HTTP",
+      "Authenticated account or production readback"
+    ]
+  },
+  "recovery": {
+    "linkReplacement": "Automatic approval review rejected the proposed removal/replacement of the ignored node_modules junction; no removal was executed.",
+    "saferAttempt": "Used same-version existing dependencies directly at command scope. After link was externally removed, created a new ignored junction without deleting anything, but its dependency target was also externally removed. No settings/package/lock files changed."
+  },
+  "searchInitialFailure": "3 cross-exam lazy-load tests exceeded 15s in parallel; CLI-only retest with one worker and 60s passed all 42. Existing search tests/config unchanged.",
+  "scope": "First examination only. Existing acceptance reused for unchanged originals, not a new specialist review of all 840 reasons. Not deployed.",
+  "buildWarnings": [
+    "existing middleware deprecation",
+    "existing Edge Runtime deprecation",
+    "existing chart dimensions"
+  ],
+  "logs": [
+    {
+      "check": "related tests: 17 files, 266 tests",
+      "path": "C:\\Users\\kanet\\AppData\\Local\\Temp\\codex-work\\qkensetsu-fix-final-tests.log",
+      "sha256": "fb4ec398704f2813a8be0eb4f884a6427a80576f0671afe8bb0c3d81fea8cb7a",
+      "exitCode": 0
+    },
+    {
+      "check": "search retest: 5 files, 42 tests",
+      "path": "C:\\Users\\kanet\\AppData\\Local\\Temp\\codex-work\\qkensetsu-fix-search-retest.log",
+      "sha256": "7b31de94368ee949d61ecf33db4f1cdc436208fb0e0609522533ecfcd91dc66a",
+      "exitCode": 0
+    },
+    {
+      "check": "subject regression: 3 files, 36 tests, including 1 new test",
+      "path": "C:\\Users\\kanet\\AppData\\Local\\Temp\\codex-work\\qkensetsu-fix-subject-tests.log",
+      "sha256": "6c13d409744e30330ae288c5419c828ebc5c416f5e8d0680db39dc9b94d227bb",
+      "exitCode": 0
+    },
+    {
+      "check": "standalone typecheck",
+      "path": "C:\\Users\\kanet\\AppData\\Local\\Temp\\codex-work\\qkensetsu-fix-final-typecheck.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exitCode": 0
+    },
+    {
+      "check": "changed TS/TSX lint",
+      "path": "C:\\Users\\kanet\\AppData\\Local\\Temp\\codex-work\\qkensetsu-fix-final-lint.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "exitCode": 0
+    },
+    {
+      "check": "shared schema: 209 ok, 0 failed, 20 warnings",
+      "path": "C:\\Users\\kanet\\AppData\\Local\\Temp\\codex-work\\qkensetsu-fix-global-schema.log",
+      "sha256": "aacb7f7ea53d5b62ca8c6928345c6e4c8ecbc6d123e4326e38841968d9c55d5a",
+      "exitCode": 0
+    },
+    {
+      "check": "final build: 12579 pages, exit 0",
+      "path": "C:\\Users\\kanet\\AppData\\Local\\Temp\\codex-work\\qkensetsu-fix-verified-build.log",
+      "sha256": "8398db18dcacc45f95e773c56b5ff25a9ebf65f282de1583c36793f997218f77",
+      "exitCode": 0
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "reports/qkensetsu-20261103/manifest.json",
+      "sha256": "dab26bfa57c2a9bdd39cc1705b12963da983e912aeeddf22d8147e0e2836376e"
+    },
+    {
+      "path": "reports/qkensetsu-20261103/validation.json",
+      "sha256": "0ddfa29075b2d8ed8c34eb2c089fd1c31ec0a1307fb567fa681a46a147222083"
+    },
+    {
+      "path": "reports/qkensetsu-20261103/fix-review.md",
+      "sha256": "a20f831023b632d20d6ab0bd68940b17ae30c0223cc0ff5e7b341e9c5af96ec2"
+    },
+    {
+      "path": "reports/qkensetsu-20261103/fix-source-check.json",
+      "sha256": "7ff77452d8cf50b6b67f29c783cd02fe7634ce6338a90fc238f0a06f8e1bfe20"
+    }
+  ],
+  "prohibitedOperationsPerformed": []
+}

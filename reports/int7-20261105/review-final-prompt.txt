@@ -1,0 +1,17 @@
+INT7 の最終独立レビューです。日本語で、最後に必ず VERDICT: PASS または VERDICT: FAIL を書いてください。
+対象 worktree: C:/Users/kanet/20260522/wt-batch3、branch release/batch3-20261105。
+起点 ef95cd92d198186d2dc52095bd27fe4ebea4676e、検証済み実装 SHA 1ca14f4ce39be16b8b00660800bd05a225ff0ee2。後続は証跡・報告のみの予定です。現在HEADとの差分も確認してください。
+ユーザー依頼: 指定4機能と9資格ブランチを全部統合して今回の追加資格を公開状態にする。二級建築士 branch88685e0a4には二級200+木造200。追加1784保存単位のうち公式全員正解2問を通常演習から除外して1782公開。既存batch1+batch2・iOS機能・migration自動適用を保持する。公開ビルドは将来まとめて1回、AdSense再申請も公開後1回。今回は push/PR/deploy/本番DB接続禁止。
+独立した read-only レビューだけを実施してください。ファイル変更、重いテスト・ビルド、ネットワーク接続、秘密値/環境資格情報の読み取りは禁止です。Git履歴と差分、ソース、既存のローカル検証証跡を読み取れます。
+ユーザーは原稿を今回公開するよう明示的に指示しています。stagingのpublicAllowed=false等を元原稿に保持し、別public projectionを作る既存のbatch1形式を採用。新たな専門家校閲・権利者許諾を完了したとは主張しません。公開範囲の指示を勝手に撤回しないでください。権利/正答の具体的な新規問題を発見すれば指摘してください。
+Preview実AIの§7はユーザー指定でClaude担当です。この実AI未実施を今回のローカル統合検証未完とは混同せず、引継ぎ手順の正確さを確認してください。4APIの実provider/STOP/実測tokens/費用精算差分はClaudeがPreviewで実証するまで未達と明記されています。
+
+重点確認:
+1. 指定ブランチ全先端の祖先関係、原稿1387ファイル不変、既存141資格の通常出題件数不変。公開1782、選択1772+測量士自己確認10、全員正解除外2、准看護師139の単独2または4、旅行の全選択一致、土地区画整理士2026年度のみ。source/runtime/projection auditsとコードを相互照合。
+2. 同期/遅延/API/一覧/年度/科目/URL/SEO/iOS catalogの整合。原本画像・答案用紙・公式解答例・sourceIssue技術注記保持。日本語ラベル破損なし、准看護師の年度と実施年の区別。
+3. PRK/KGROW/KFUN/PRT2とINT5+INT5Bの競合解決。通常Webの学習継続、native/strict gate・個人情報・課金・関連問題の保護。DB/migration/iOS server本体が起点と同じ。中間レビュー3所見（自己確認predicate、native related自動取得、解答用紙欠落）が全て解消したか。
+4. 検証の信頼性: reports/int7-20261105/candidate-*.result.json、candidate-test.json、E2E/candidate-visual/candidate-funnel logs、final-validation.json（存在すれば）を確認。終了コード/件数/ログSHA256/検証SHAの一致。全テスト、typecheck、lint、validate、build、CIと同じpnpm e2e、追加funnel7件、スマホ実画面の証跡。Windows Node24とCI Linux Node22との差・既存警告・既定skipが正直に記載されているか。
+5. GSC実測の流入区分トップと/blog等がHTTP200・canonical維持。KFUN104リンクのutm/subject維持。local-landings.jsonのsourceRevisionは入力fixture先端であり、候補SHAは実行receiptのsourceHeadと区別する。
+6. batch3-publish-list.mdはINT1B形式、int7-report.mdとpreview-handoff.mdの範囲/件数/残るClaude作業/禁止操作を誤解なく読めるか。最終成果に必須な問題のみ列挙し、場所と具体的再現を示す。問題がなければPASS。
+
+補足: アプリ実装SHA1ca14f4ceをfreeze後、E2Eだけを122a252a0で修正しました。遷移前の元ページに同名regionが存在して誤操作したことを navigation-race/trace.zip と evidence.json で特定し、URL/見出しの遷移完了と遅延画像待機を追加。アプリ差分はゼロ（source-equivalence.json）。5回連続retryなしPASS後に全pnpm e2eを再実行済みです。旧build/全ユニットの証跡を適用できることと、QA変更後typecheck/対象lintを確認してください。失敗ログは e2e-before-navigation-wait.* に保存してあり、最終候補のPASSには混ぜません。

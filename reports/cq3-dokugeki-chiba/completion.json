@@ -1,0 +1,82 @@
+{
+  "task": "CQ3",
+  "status": "complete",
+  "completedAt": "2026-11-04T21:21:31.142792+09:00",
+  "baseCommit": "bb912dfd0494f7095ec5387f9f2e53f46381cd1f",
+  "reviewedContentCommit": "2c52b475e76cb764dfa41b3bc7fc624f8799dbc5",
+  "branch": "qual/dokugeki-chiba-20261104",
+  "slug": "dokugeki-chiba",
+  "publicAllowed": false,
+  "editionCount": 6,
+  "answerColumns": 480,
+  "choiceExplanations": 2400,
+  "sourceProblemPages": 228,
+  "downloadedPdfs": 12,
+  "unavailablePdfUrls": [],
+  "deletedDownloadedPdfs": 12,
+  "remainingTemporaryPdfs": 0,
+  "knownOriginalWordingReviewColumns": 6,
+  "checks": [
+    {
+      "command": "pnpm validate:questions --exam=dokugeki-chiba",
+      "result": "PASS",
+      "columns": 480
+    },
+    {
+      "command": "pnpm typecheck",
+      "result": "PASS"
+    },
+    {
+      "command": "pnpm exec vitest run __tests__/questions/dokugeki-chiba-staging.test.ts",
+      "result": "PASS",
+      "tests": 11
+    },
+    {
+      "command": "pnpm exec vitest run __tests__/questions/qualification-expansion.test.ts __tests__/exam-qualification-hubs.test.ts",
+      "result": "PASS",
+      "tests": 1071
+    },
+    {
+      "command": "pnpm exec vitest run __tests__/lib/home-directory.test.ts",
+      "result": "PASS",
+      "tests": 11
+    },
+    {
+      "command": "pnpm exec eslint scripts/validate-dokugeki-chiba.ts data/qualification-staging/dokugeki-chiba/index.ts __tests__/questions/dokugeki-chiba-staging.test.ts",
+      "result": "PASS"
+    },
+    {
+      "command": "python scripts/audit-dokugeki-chiba.py --source-dir <temporary-dir> --output reports/cq3-dokugeki-chiba/source-audit.json",
+      "result": "PASS",
+      "independentAnswerMatches": 480,
+      "pixelIdenticalPages": 228
+    }
+  ],
+  "independentReview": {
+    "command": "C:/Users/kanet/AppData/Roaming/npm/codex.cmd exec -m gpt-6-astra -s read-only",
+    "model": "gpt-6-astra",
+    "sandbox": "read-only",
+    "separateProcess": true,
+    "delegation": false,
+    "sessionId": "01a1a67a-d71e-7111-84e6-151be4a68797",
+    "exitCode": 0,
+    "result": "PASS",
+    "requiredFixes": 0,
+    "report": "reports/cq3-dokugeki-chiba/review-round1.md",
+    "reportSha256": "daa6e03ac7ee4ca8f0c55c27bb4f1a85ae7843b5e932f779f0a8ca6d99fa265b",
+    "executionLog": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-02\\task-2\\cq3-review-round1.log",
+    "executionLogSha256": "bb69e3fe3a4f907e3f3d37f6a856b1feb929b4979aa64a3dc58f004a9891edf7",
+    "limits": "Reviewer normal validator CLI and Vitest could not spawn under Windows read-only sandbox (EPERM). Reviewer instead passed typecheck with incremental disabled, in-memory execution of actual validator, and 4800 scoring cases. Primary process passed normal CLI and Vitest. External literature was not checked individually for every rationale."
+  },
+  "sourceAuditSha256": "d8358cd5dddd05a438164587545bca586c3a8e341b7621e8fe66ae2143a56c1f",
+  "sourceManifestSha256": "fa67b55b2d5646a5b748eb8fa540b67df4c956ad004c140c561572b4ae02d6c7",
+  "publicationPrerequisites": [
+    "Individual reuse permission/terms decision",
+    "Resolve original chemical terminology issues",
+    "Explicit publication decision and runtime integration"
+  ],
+  "push": false,
+  "pullRequest": false,
+  "deployment": false,
+  "mainCheckoutOrModification": false
+}

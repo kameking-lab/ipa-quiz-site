@@ -13,7 +13,7 @@ function sourceQuestionFingerprint(q: Question): string {
   return JSON.stringify({
     type: q.type,
     question: q.question,
-    choices: CHOICE_KEYS.map((key) => q.choices?.[key] ?? null),
+    choices: [...CHOICE_KEYS.map((key) => q.choices?.[key] ?? null), ...(q.choices?.タ !== undefined ? [q.choices.タ] : [])],
     answer: q.answer,
     hasImage: q.hasImage,
     imageUrls: q.imageUrls ?? null,

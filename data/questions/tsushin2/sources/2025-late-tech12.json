@@ -1,0 +1,345 @@
+{
+  "exam": "tsushin2",
+  "year": 2025,
+  "season": "late",
+  "session": "gakka",
+  "officialQuestionCount": 65,
+  "publishedCount": 12,
+  "questionUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_mondaia.pdf",
+  "questionSha256": "b657b18d52bfca9c33bf14774319680f03ae0690f4e7e6aa5a6696d8f6e4ba7f",
+  "answerUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2025/11/20251117e_seitou.pdf",
+  "answerSha256": "98cb318c09fc9f673964ba87032011f0c38cd791bfc05d37de9bcc12904f1201",
+  "questions": [
+    {
+      "number": 1,
+      "pdfPage": 2,
+      "category": "電気通信技術",
+      "topic": "第一次検定（後期）",
+      "officialAnswerNumbers": [
+        3
+      ],
+      "question": "下図に示すように，半径r＝0.2［m］の1巻の円形コイルに電流I＝1［A］を流したとき，中心点Pにおける磁界の強さH［A/m］の値として，適当なものは次のうちどれか。",
+      "choices": [
+        "0.8［A/m］",
+        "1.3［A/m］",
+        "2.5［A/m］",
+        "7.9［A/m］"
+      ],
+      "explanation": "1巻の円形コイルの中心ではH＝I/(2r)です。r＝0.2 m、I＝1 Aを代入するとH＝1/(2×0.2)＝2.5 A/mとなり、選択肢3が適当です。磁束密度B＝μ₀I/(2r)と磁界の強さHを区別し、直線導体の周囲の式I/(2πr)を円形コイル中心に使わないようにします。",
+      "choiceExplanations": [
+        "円形コイル中心の式はI/(2r)です。本問では1/0.4＝2.5 A/mとなるため、0.8 A/mは計算結果と一致しません。",
+        "半径0.2 mを式H＝I/(2r)に代入すると2.5 A/mです。1.3 A/mはその値より小さく、与えられた電流と半径の条件に合いません。",
+        "H＝1/(2×0.2)＝2.5 A/mなので、この値が適当です。1巻のコイル中心であることと、単位がA/mであることを確認します。",
+        "H＝I/(2r)に本問の値を代入した結果は2.5 A/mです。7.9 A/mはその約3倍で、円形コイル中心の計算結果に合いません。"
+      ],
+      "officialReferenceUrls": [
+        "https://openstax.org/books/university-physics-volume-2/pages/12-4-magnetic-field-of-a-current-loop"
+      ],
+      "imageUrl": "/images/questions/tsushin2/2025-late-gakka-q1.png"
+    },
+    {
+      "number": 2,
+      "pdfPage": 2,
+      "category": "電気通信技術",
+      "topic": "第一次検定（後期）",
+      "officialAnswerNumbers": [
+        1
+      ],
+      "question": "下図に示す回路において，抵抗R＝200［Ω］に電流I＝0.1［A］を2秒間流したときに発生する熱量Q［J］の値として，適当なものは次のうちどれか。",
+      "choices": [
+        "4［J］",
+        "40［J］",
+        "800［J］",
+        "8,000［J］"
+      ],
+      "explanation": "抵抗で発生する熱量はQ＝I²Rtです。電流を二乗して、Q＝0.1²×200×2＝4 Jとなるため、選択肢1が適当です。発熱する電力I²Rは2 Wであり、これに2秒を掛けると同じ4 Jになります。0.1²＝0.01であることを確認します。",
+      "choiceExplanations": [
+        "電力は0.1²×200＝2 Wです。2秒間の熱量は2×2＝4 Jなので、この値が適当です。",
+        "40 Jは本問の4 Jより10倍大きい値です。電流を一乗で扱うと誤り、Qには0.1²＝0.01を用います。",
+        "200 Ωと2秒だけでは熱量は決まりません。0.1 Aの二乗を掛けると4 Jとなり、800 Jにはなりません。",
+        "電流は0.1 A、時間は2秒なのでQ＝4 Jです。8,000 Jは単位換算を含めても本問の条件から得られる値ではありません。"
+      ],
+      "officialReferenceUrls": [
+        "https://openstax.org/books/university-physics-volume-2/pages/9-5-electrical-energy-and-power"
+      ],
+      "imageUrl": "/images/questions/tsushin2/2025-late-gakka-q2.png"
+    },
+    {
+      "number": 3,
+      "pdfPage": 3,
+      "category": "電気通信技術",
+      "topic": "第一次検定（後期）",
+      "officialAnswerNumbers": [
+        2
+      ],
+      "question": "下図に示すRC並列回路において，抵抗R［Ω］，コンデンサの静電容量C［F］とした場合のインピーダンスの大きさZ［Ω］として，適当なものは次のうちどれか。\nただし，電源の角周波数をω［rad/s］で表すものとする。",
+      "choices": [
+        "Z＝ωCR/√(R²＋(ωC)²)［Ω］",
+        "Z＝R/√(1＋(ωCR)²)［Ω］",
+        "Z＝√(R²＋(1/(ωC))²)［Ω］",
+        "Z＝√(R²＋(ωC)²)［Ω］"
+      ],
+      "explanation": "並列回路では各枝のアドミタンスを加え、Y＝1/R＋jωCとなります。|Y|＝√((1/R)²＋(ωC)²)の逆数を取れば、Z＝R/√(1＋(ωCR)²)で、選択肢2が適当です。コンデンサの電流は電圧より90度進むため、抵抗枝と単純に同じ向きの量として加えません。",
+      "choiceExplanations": [
+        "Rは抵抗、ωCはコンデンサのアドミタンスであり、単位が異なります。これらの二乗をそのまま足す分母は並列RCの合成式になりません。",
+        "Y＝1/R＋jωCの大きさの逆数を取り、分子・分母にRを掛けるとこの式になります。並列RCのインピーダンスの大きさとして適当です。",
+        "この式は抵抗Rと容量リアクタンス1/(ωC)を直列で合成する場合の大きさです。本問は並列接続なので適当ではありません。",
+        "容量リアクタンスは1/(ωC)であり、ωCではありません。さらに本問は並列回路なので、示された二乗和の平方根は合成式になりません。"
+      ],
+      "officialReferenceUrls": [
+        "https://openstax.org/books/university-physics-volume-2/pages/15-2-simple-ac-circuits",
+        "https://openstax.org/books/university-physics-volume-2/pages/10-3-kirchhoffs-rules"
+      ],
+      "imageUrl": "/images/questions/tsushin2/2025-late-gakka-q3.png"
+    },
+    {
+      "number": 4,
+      "pdfPage": 3,
+      "category": "電気通信技術",
+      "topic": "第一次検定（後期）",
+      "officialAnswerNumbers": [
+        3
+      ],
+      "question": "2進数の10011111101を10進数に変換したものとして，適当なものは次のうちどれか。",
+      "choices": [
+        "512",
+        "780",
+        "1277",
+        "2254"
+      ],
+      "explanation": "右端から各桁に1、2、4、8、16、32、64、128、256、512、1024の重みを付けます。1の桁を足すと1024＋128＋64＋32＋16＋8＋4＋1＝1277となり、選択肢3が適当です。2進数を十進の位取りとして読まないようにします。",
+      "choiceExplanations": [
+        "512は2⁹ですが、本問は左端が2¹⁰の1です。左端の1024だけでも512を超えるため、この値にはなりません。",
+        "本問では左端の1が1024を表します。780は1024より小さいため、その桁を含む2進数の値として適当ではありません。",
+        "1になっている桁の重み1024、128、64、32、16、8、4、1を合計すると1277です。各桁の重みと一致する値なので適当です。",
+        "11桁の2進数が表せる最大値は2047です。2254はその範囲も超えているため、本問の10011111101の値にはなりません。"
+      ],
+      "officialReferenceUrls": [
+        "https://computationstructures.org/lectures/info/info.html",
+        "https://docs.python.org/3/library/functions.html#int"
+      ]
+    },
+    {
+      "number": 5,
+      "pdfPage": 4,
+      "category": "電気通信技術",
+      "topic": "第一次検定（後期）",
+      "officialAnswerNumbers": [
+        4
+      ],
+      "question": "下図に示す論理回路の真理値表として，適当なものは次のうちどれか。",
+      "choices": [
+        "|入力 A|入力 B|出力 F|\n|---|---|---|\n|0|0|0|\n|0|1|0|\n|1|0|1|\n|1|1|0|",
+        "|入力 A|入力 B|出力 F|\n|---|---|---|\n|0|0|1|\n|0|1|1|\n|1|0|0|\n|1|1|1|",
+        "|入力 A|入力 B|出力 F|\n|---|---|---|\n|0|0|0|\n|0|1|1|\n|1|0|0|\n|1|1|1|",
+        "|入力 A|入力 B|出力 F|\n|---|---|---|\n|0|0|0|\n|0|1|1|\n|1|0|0|\n|1|1|0|"
+      ],
+      "explanation": "最初のゲートは出力に反転の丸があるNANDで、出力はNOT(A AND B)です。これをBとANDに入れるのでF＝NOT(A AND B) AND Bとなります。A、Bが00、01、10、11の順でFは0、1、0、0になり、選択肢4が適当です。",
+      "choiceExplanations": [
+        "A＝0、B＝1のときはNAND出力が1で、最後のANDも1になります。この表はその行を0とし、A＝1、B＝0も1とするため不適当です。",
+        "B＝0のときは最後のAND出力が必ず0になります。この表はA＝0、B＝0を1とし、A＝1、B＝1も1なので回路と合いません。",
+        "最初の三行は一致しますが、A＝1、B＝1ではNAND出力が0となりFも0です。最後の行を1とした点が不適当です。",
+        "B＝0ならF＝0、B＝1ならF＝NOT Aです。00、01、10、11に対して0、1、0、0となり、表の全行が回路と一致します。"
+      ],
+      "officialReferenceUrls": [
+        "https://www.ti.com/lit/ds/symlink/sn74hc00.pdf",
+        "https://www.ti.com/product/SN74HC08"
+      ],
+      "imageUrl": "/images/questions/tsushin2/2025-late-gakka-q5.png"
+    },
+    {
+      "number": 6,
+      "pdfPage": 5,
+      "category": "電気通信技術",
+      "topic": "第一次検定（後期）",
+      "officialAnswerNumbers": [
+        2
+      ],
+      "question": "無線通信における変調に関する下記の文章中の空欄のア，イに当てはまる語句の組合せとして，適当なものは次のうちどれか。\n「下図のように，信号波の振幅に応じて搬送波の［ア］を変化させる方式を［ア］変調といい，変調された波（変調波）を［イ］波という。」",
+      "choices": [
+        "ア：周波数／イ：AM",
+        "ア：周波数／イ：FM",
+        "ア：位相／イ：AM",
+        "ア：位相／イ：FM"
+      ],
+      "explanation": "原図では変調波の振幅がおおむね一定で、信号波に応じて山と山の間隔が変わっています。搬送波の周波数を変える周波数変調、すなわちFMなので、選択肢2が適当です。AMは搬送波の振幅を変える方式であり、位相変調はPMと呼びます。",
+      "choiceExplanations": [
+        "変化させる量が周波数である点は適当ですが、その方式はFMです。AMは搬送波の振幅を変える方式なので名称が一致しません。",
+        "搬送波の周波数を信号波に応じて変える方式は周波数変調です。その変調波をFM波と呼ぶため、二つとも一致します。",
+        "原図が示すのは周波数変調であり、位相を空欄に入れるのは不適当です。AMという名称も振幅変調を指すため一致しません。",
+        "FMという名称は適当ですが、搬送波で変化させる量は周波数です。位相を変える方式の名称は位相変調PMなので組合せが合いません。"
+      ],
+      "officialReferenceUrls": [
+        "https://www.keysight.com/us/en/assets/7018-01906/application-notes/5989-9332.pdf",
+        "https://www.keysight.com/us/en/assets/7018-01563/technical-overviews/5989-6535.pdf"
+      ],
+      "imageUrl": "/images/questions/tsushin2/2025-late-gakka-q6.png"
+    },
+    {
+      "number": 7,
+      "pdfPage": 5,
+      "category": "電気通信技術",
+      "topic": "第一次検定（後期）",
+      "officialAnswerNumbers": [
+        1
+      ],
+      "question": "データ伝送に使われる同期方式に関する次の記述のうち，適当でないものはどれか。",
+      "choices": [
+        "フレーム同期方式は，フレームのはじめと終わりに付加されているパリティビットにより同期をとる方式である。",
+        "キャラクタ同期方式は，同期をとるためのSYN符号を通常2つ以上付けて同期をとる方式である。",
+        "調歩同期方式とは，各文字データの前後にスタートビットとストップビットを付けて同期をとる方式である。",
+        "連続同期方式とは，データとは別に常にビット位置を示す信号を送り出し同期をとる方式である。"
+      ],
+      "explanation": "フレームの境界を見つけるために用いるのはフラグなどの同期用パターンです。パリティビットは誤り検出用なので、フレーム同期のための印とした選択肢1が適当ではありません。SYN符号による文字同期、スタート・ストップビットによる調歩同期、別のクロック信号による連続同期を区別します。",
+      "choiceExplanations": [
+        "パリティビットはビット列の誤り検出に使います。フレームの境界を識別するフラグなどの同期パターンと役割を取り違えているため不適当です。",
+        "SYNは同期をとるための制御符号です。キャラクタ同期でSYNを送り、文字の区切りを合わせる説明として適当です。",
+        "調歩同期は文字ごとにスタートビットを検出して受信を始め、ストップビットで区切ります。各文字の前後に付ける説明は適当です。",
+        "データと別にビットの時刻を知らせるクロック信号を送れば、それを基準に連続して受信できます。この同期方式の説明は適当です。"
+      ],
+      "officialReferenceUrls": [
+        "https://www.rfc-editor.org/rfc/rfc1662",
+        "https://www.rfc-editor.org/rfc/rfc20",
+        "https://developerhelp.microchip.com/xwiki/bin/view/products/mcu-mpu/8-bit-avr/peripherals/usart/"
+      ]
+    },
+    {
+      "number": 8,
+      "pdfPage": 6,
+      "category": "電気通信技術",
+      "topic": "第一次検定（後期）",
+      "officialAnswerNumbers": [
+        4
+      ],
+      "question": "下図は，電波の進行方向に分布する電界と磁界の強さを表したものである。図中の空欄のア～ウに当てはまる語句の組合せとして，適当なものは次のうちどれか。\nただし，電波は導体に高周波の正弦波電流を加えた際に生じたものとする。\nなお，xを垂直方向，yを水平方向，zを電波の進行方向とする。",
+      "choices": [
+        "ア：磁界／イ：電界／ウ：振幅",
+        "ア：磁界／イ：電界／ウ：波長",
+        "ア：電界／イ：磁界／ウ：振幅",
+        "ア：電界／イ：磁界／ウ：波長"
+      ],
+      "explanation": "垂直な導体から生じる原図では、アの垂直方向が電界、イの水平方向が磁界です。電界と磁界は互いに直交し、どちらも進行方向zに直交しています。ウは同じ位相の点までの進行方向の距離なので波長となり、選択肢4が適当です。振幅は波の強さを表す縦方向の最大値です。",
+      "choiceExplanations": [
+        "アとイの電界・磁界が逆です。さらにウは進行方向に測る一周期の長さなので、波の強さを表す振幅ではありません。",
+        "ウの波長は適当ですが、原図の垂直方向アは電界、水平方向イは磁界です。二つの場の名称を逆にしているため不適当です。",
+        "アの電界、イの磁界は適当ですが、ウは山から次の山までの進行方向の距離です。振幅ではなく波長なので組合せが合いません。",
+        "アは垂直の電界、イは水平の磁界です。ウは同位相点間の距離を示す波長なので、三つとも原図と一致します。"
+      ],
+      "officialReferenceUrls": [
+        "https://openstax.org/books/university-physics-volume-2/pages/16-2-plane-electromagnetic-waves"
+      ],
+      "imageUrl": "/images/questions/tsushin2/2025-late-gakka-q8.png"
+    },
+    {
+      "number": 9,
+      "pdfPage": 6,
+      "category": "電気通信技術",
+      "topic": "第一次検定（後期）",
+      "officialAnswerNumbers": [
+        3
+      ],
+      "question": "コンパイラに関する次の記述のうち，適当でないものはどれか。",
+      "choices": [
+        "コンパイラは，ソースプログラムを一括して翻訳し，機械語プログラムを生成する。",
+        "コンパイラによるプログラムは，インタプリタによるプログラムに比べ一般に実行速度が速い。",
+        "コンパイラは，対話的に実行できるため，プログラムの誤りを修正しやすい。",
+        "コンパイラを使用するプログラム言語の代表的なものとして，C言語やC++がある。"
+      ],
+      "explanation": "従来の基本的な区分では、コンパイラは実行前にソースを翻訳し、インタプリタは入力した文などを逐次解釈して実行します。対話的に実行して誤りを修正しやすい特徴をコンパイラの説明とした選択肢3が適当ではありません。実際の処理系にはJITなど両者を組み合わせる方式もあるため、本問では基本的な方式の比較として判断します。",
+      "choiceExplanations": [
+        "本問の基本的な区分では、コンパイラはソースを実行前にまとめて翻訳して実行用のプログラムを作ります。この説明は適当です。",
+        "事前に翻訳された命令を実行するため、従来の逐次解釈方式との一般的な比較では高速になります。すべての処理系で必ず速いという意味ではありません。",
+        "入力した文などをその場で解釈して実行する特徴は、基本的にはインタプリタの説明です。コンパイラの特徴として挙げるのは不適当です。",
+        "CとC++にはGCCなどのコンパイラがあり、代表的なコンパイル対象言語です。例示された言語として適当です。"
+      ],
+      "officialReferenceUrls": [
+        "https://gcc.gnu.org/onlinedocs/gcc/Overall-Options.html",
+        "https://docs.python.org/3/tutorial/interpreter.html",
+        "https://computationstructures.org/lectures/compilers/compilers.html"
+      ]
+    },
+    {
+      "number": 10,
+      "pdfPage": 7,
+      "category": "電気通信技術",
+      "topic": "第一次検定（後期）",
+      "officialAnswerNumbers": [
+        2
+      ],
+      "question": "20 MIPSの性能をもつCPUの1命令あたりの平均命令実行時間T［μs］の値として，適当なものは次のうちどれか。",
+      "choices": [
+        "0.02［μs］",
+        "0.05［μs］",
+        "20［μs］",
+        "50［μs］"
+      ],
+      "explanation": "20 MIPSは1秒に20×10⁶命令を実行する速さです。1命令あたりの平均時間はその逆数で、T＝1/(20×10⁶) s＝5×10⁻⁸ s＝0.05 μsとなり、選択肢2が適当です。これは平均の処理率から求める値であり、CPUのクロック周期そのものとは限りません。",
+      "choiceExplanations": [
+        "0.02 μsの逆数は毎秒50×10⁶命令です。50 MIPSに対応するため、本問の20 MIPSの平均時間として適当ではありません。",
+        "毎秒20×10⁶命令の逆数は0.05×10⁻⁶秒です。μsに直すと0.05 μsとなるため、この値が適当です。",
+        "MIPSは1秒あたりの命令数であり、時間とは逆数の関係です。20をそのままμsとすることはできず、正しくは0.05 μsです。",
+        "50 μsでは毎秒20,000命令、すなわち0.02 MIPSになります。μsへの換算で桁が合わず、20 MIPSの平均時間ではありません。"
+      ],
+      "officialReferenceUrls": [
+        "https://computationstructures.org/lectures/performance/performance.html",
+        "https://www.bipm.org/en/measurement-units/si-prefixes"
+      ]
+    },
+    {
+      "number": 11,
+      "pdfPage": 7,
+      "category": "電気通信技術",
+      "topic": "第一次検定（後期）",
+      "officialAnswerNumbers": [
+        1
+      ],
+      "question": "各種ダイオードに関する次の記述のうち，適当でないものはどれか。",
+      "choices": [
+        "ホトダイオードは，順方向電圧を加えるとレーザ光を発生する。",
+        "発光ダイオードは，順方向電圧を加えると発光する。",
+        "可変容量ダイオードは，加える逆方向電圧の大きさが変化すると，静電容量の大きさを変化する。",
+        "定電圧ダイオードは，加える逆方向電圧がある値を超えると急激に電流が流れ出す降伏現象を利用している。"
+      ],
+      "explanation": "ホトダイオードは入射した光を電流などの電気信号に変える受光素子です。レーザ光を発生するとした選択肢1が適当ではありません。発光ダイオードは順方向の電流で発光し、可変容量ダイオードは逆方向電圧で接合容量を変えます。定電圧ダイオードは逆方向の降伏領域を利用します。",
+      "choiceExplanations": [
+        "ホトダイオードは光を検出して電気信号に変える素子です。順方向でレーザ光を発生するという説明はレーザダイオードとの混同で、不適当です。",
+        "発光ダイオードは順方向に電流を流したときに発光します。逆方向の降伏や受光による光電流と区別した説明として適当です。",
+        "逆方向電圧を変えると接合の空乏層の厚さが変わり、接合容量も変わります。可変容量ダイオードの動作として適当です。",
+        "ツェナーなどの定電圧ダイオードは逆方向の降伏領域を利用します。逆電圧が一定の範囲で電流が変化する特性の説明として適当です。"
+      ],
+      "officialReferenceUrls": [
+        "https://www.hamamatsu.com/eu/en/news/featured-products_and_technologies/2024/photodiodes-exposed-unlocking-the-characteristics-of-these-crucial-sensors.html",
+        "https://toshiba.semicon-storage.com/us/semiconductor/knowledge/e-learning/discrete/chap2/chap2-9.html",
+        "https://toshiba.semicon-storage.com/us/semiconductor/knowledge/e-learning/discrete/chap2/chap2-5.html",
+        "https://www.kingbrightusa.com/images/catalog/SPEC/WP7113ID.pdf"
+      ]
+    },
+    {
+      "number": 12,
+      "pdfPage": 7,
+      "category": "電気通信技術",
+      "topic": "第一次検定（後期）",
+      "officialAnswerNumbers": [
+        3
+      ],
+      "question": "フィードバック制御に関する下記の文章に該当する制御の名称として，適当なものは次のうちどれか。\n「工場で原料から製品をつくる生産工程において，生産工程に加わる外部環境の変化の抑制を主目的としたもので，制御量として温度，流量，圧力，液面の高さなどを取り扱う。」",
+      "choices": [
+        "サーボ機構",
+        "順序制御",
+        "プロセス制御",
+        "時限制御"
+      ],
+      "explanation": "生産工程の温度、流量、圧力、液面などを目標に保ち、外部からの変動の影響を抑える制御はプロセス制御です。選択肢3が適当です。サーボ機構は位置や角度などを目標に追従させ、順序制御は操作を所定の順で進め、時限制御は時間に基づいて動作させます。実設備で複数方式を併用する場合でも、本問の説明の中心は工程の状態量です。",
+      "choiceExplanations": [
+        "サーボ機構は位置、角度などの機械的な量を目標に追従させる制御です。本問の温度・流量・圧力・液面を扱う生産工程の分類には一致しません。",
+        "順序制御は所定の順に動作や操作を進める制御です。本問では操作の順番ではなく、連続的な工程の状態量を保つことが説明されています。",
+        "生産工程の温度、流量、圧力、液面を測定して目標に調整するものはプロセス制御です。外部からの変動を抑える本問の説明と一致します。",
+        "時限制御は時間を条件として動作させる制御です。本問は経過時間による動作ではなく、測定した工程の状態量を調整する説明なので一致しません。"
+      ],
+      "officialReferenceUrls": [
+        "https://www.yokogawa.com/id/library/resources/application-notes/tank-level-control-and-monitoring-in-food-manufacturing-processes/",
+        "https://www.yokogawa.com/it/library/resources/faqs/ns-faq-ut-2153-setting/"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,98 @@
+{
+  "schema": "qual73-unapplied-patch/v1",
+  "atUtc": "2026-10-31T23:45:41.271570+00:00",
+  "status": "PRIVATE_UNAPPLIED_PATCH_READY_FOR_SHARED_OWNER",
+  "sharedOwner": "01a18919-2bca-71a1-aee9-c0486fa7203b",
+  "targetLayer": "development",
+  "targetPath": "data/qualification-staging/kisho-65-66-private/source-pages.json",
+  "specification": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual73-weather-private-finish\\outputs\\integrated-boundary-20261031\\MINIMAL-BINDING-REPAIR.json",
+    "bytes": 8059,
+    "sha256": "ddf40b66ada212d83f7cd4cfcdad3ff9bfb4ac1e03e33ce525f82efd9ee38543"
+  },
+  "base": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-30\\task-2\\resume-20261030\\master-candidate-20261031-rest-adapter\\development\\files\\data\\qualification-staging\\kisho-65-66-private\\source-pages.json",
+    "bytes": 417004,
+    "sha256": "b6f72f9fc7bd3765e18b23a5a5c13fb16922bd795ccdf745b1b420b9f7c4a0d9"
+  },
+  "patch": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual73-weather-private-finish\\outputs\\integrated-binding-patch-20261101\\qual73-six-diagram-bindings.patch",
+    "bytes": 19855,
+    "sha256": "1769ba09502d8d46657e67bef3371f11fa037fa0bf6eb53ddd52ef7358e56efd"
+  },
+  "postimage": {
+    "path": "C:\\Users\\kanet\\Documents\\Codex\\2026-10-31\\qual73-weather-private-finish\\outputs\\integrated-binding-patch-20261101\\source-pages.postimage.json",
+    "bytes": 417370,
+    "sha256": "d9fc1a0d244f396c4f0cd218f1dafae10b0dc2e033e80b93f3af4340050f53c0"
+  },
+  "patchApplicationValidation": {
+    "result": "PASS",
+    "method": "Independent strict unified-hunk apply against exact preimage in memory; no Git",
+    "specTestsPassed": 24,
+    "replacements": 6,
+    "removedLines": 6,
+    "addedLines": 6,
+    "hunks": [
+      {
+        "oldStartLine": 6557,
+        "newStartLine": 6557,
+        "oldLines": 81,
+        "newLines": 81,
+        "preimageContextMatches": 1
+      },
+      {
+        "oldStartLine": 7220,
+        "newStartLine": 7220,
+        "oldLines": 105,
+        "newLines": 105,
+        "preimageContextMatches": 1
+      },
+      {
+        "oldStartLine": 7751,
+        "newStartLine": 7751,
+        "oldLines": 81,
+        "newLines": 81,
+        "preimageContextMatches": 1
+      },
+      {
+        "oldStartLine": 8087,
+        "newStartLine": 8087,
+        "oldLines": 153,
+        "newLines": 153,
+        "preimageContextMatches": 1
+      }
+    ],
+    "eachHunkPreimageUnique": true,
+    "appliedBytesExactlyPostimage": true,
+    "jsonEqualsGuardedRfc6902Result": true,
+    "contextLines": 40,
+    "generationCorrection": "Initial three-line context was ambiguous across repeated null metadata; no patch or postimage was emitted. Context expanded to include unique field identity; replacement scope remains six lines.",
+    "changedJsonPointers": [
+      "/answerFields/132/officialAnswerImageAssetId",
+      "/answerFields/164/officialAnswerImageAssetId",
+      "/answerFields/165/officialAnswerImageAssetId",
+      "/answerFields/194/officialAnswerImageAssetId",
+      "/answerFields/208/officialAnswerImageAssetId",
+      "/answerFields/211/officialAnswerImageAssetId"
+    ],
+    "allOtherBytesPreserved": true
+  },
+  "applicationConditions": [
+    "Require exact preimage SHA256 and all 24 specification tests before shared application; differing current source stops this target.",
+    "Apply this one patch once, OR the original guarded RFC6902 specification, never both.",
+    "Shared owner updates affected packaging hashes and verifies actual UI after application."
+  ],
+  "reused": "Parent independent validation of original specification, wrong-question guards and five existing diagram hashes; not rerun here.",
+  "notExecuted": [
+    "Shared application",
+    "New content/original-image review",
+    "Decode/browser/type/application runtime/dependencies",
+    "Git/build/publication"
+  ],
+  "originalSpecUnchanged": true,
+  "originalPreimageUnchanged": true,
+  "sharedEdits": 0,
+  "acceptanceIncrement": 0,
+  "formalAcceptance": false,
+  "publication": 0
+}

@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useNativeQuestionGrant, NativeAccessState } from "@/mobile/shared/NativeQuestionGate";
 
 import {
@@ -21,8 +22,6 @@ import {
 } from "lucide-react";
 import { isExamReferenceOnly, excludeSurveyAssistantReferenceAnswers } from "@/lib/exam-library/survey-assistant-reference-policy";
 import { SurveyAssistantReferencePanel } from "@/components/exam-library/survey-assistant-reference-panel";
-import { TrackedNoteLink } from "@/components/analytics/TrackedNoteLink";
-import { deriveNoteAccountFromUrl } from "@/lib/note-accounts";
 import { posthogCapture } from "@/lib/posthog";
 import { findExamEntry } from "@/lib/exam-library-catalog";
 import { qualificationHubForEntry } from "@/lib/exam-qualification-hubs";
@@ -45,7 +44,6 @@ import {
   boilerAnswerPage,
   isScorableQuestion,
   officialPdfPageUrl,
-  type ExamNoteLink,
   type ExamQuestion,
   type ExamSourceMode,
 } from "@/lib/exam-library-model";
@@ -76,8 +74,6 @@ interface ExamQuestionPlayerProps {
   questionIndex?: readonly PaperQuestionIndex[];
   resolveQuestion?: (id: string, signal: AbortSignal) => Promise<ExamQuestion>;
   resolveResults?: (answers: {id:string;choice:number|null;proof?:string}[], signal:AbortSignal) => Promise<{id:string;choice:number|null;result:"correct"|"incorrect"|"unscored"}[]>;
-  /** 出典: ExamCatalogEntry.noteLinks。存在すれば解答後(submitted)のみ表示する。 */
-  noteLinks?: readonly ExamNoteLink[];
 }
 
 type AnswerStatus = ReturnType<typeof answerResult> | "pending";
@@ -152,7 +148,6 @@ export function ExamQuestionPlayer({
   questionIndex,
   resolveQuestion,
   resolveResults,
-  noteLinks,
 }: ExamQuestionPlayerProps) {
   // The paper's complete ID set owns progress; granted bodies are a separate cache.
   const [granted, setGranted] = useState<Record<string, ExamQuestion>>({});
@@ -217,6 +212,14 @@ export function ExamQuestionPlayer({
   const nativePermission = useNativeQuestionGrant(resolveQuestion ? undefined : current?.id, examId);
   const currentAnswer = currentId ? answers[currentId] : undefined;
   const referenceOnly = Boolean(current && isExamReferenceOnly(current));
+  const startedExam = useRef<string | null>(null);
+  useEffect(() => {
+    if (!current || referenceOnly || view !== "question" || startedExam.current === examId) return;
+    startedExam.current = examId;
+    const entry = findExamEntry(examId);
+    posthogCapture("quiz_started", { exam: entry?.subject ?? examId, examId,
+      player: "exam_library", year: entry?.date.slice(0, 4), hubSlug, total: practiceQuestions.length });
+  }, [current, referenceOnly, view, examId, hubSlug, practiceQuestions.length]);
   const submitted = !referenceOnly && Boolean(currentAnswer?.submitted);
   const status: AnswerStatus = current ? answerResult(current, currentAnswer) : "unanswered";
   const resultFor = useCallback((question: ExamQuestion, source = answers): AnswerStatus => {
@@ -534,7 +537,7 @@ export function ExamQuestionPlayer({
   if (!nativePermission.allowed) return <NativeAccessState permission={nativePermission}/>;
   if (contentPending) return <section className="space-y-4" aria-live="polite">
     {contentError ? <p role="alert">{contentError === "daily_limit" ? "本日の無料10問を使い切りました。日本時間0時に更新されます。" : contentError === "sign_in_required" ? "無料枠を端末間で共有するためログインが必要です。" : contentError}</p> : <p role="status">利用枠と回答済みの問題を確認しています…</p>}
-    {contentError && <><button type="button" onClick={()=>setContentAttempt(n=>n+1)}>再確認</button><p><a href={`/auth/signin?callbackUrl=${encodeURIComponent(`/e-learning/exams/${examId}?question=${currentId ?? ""}`)}`}>ログイン・本人確認</a> · <a href="/billing">有料会員・購入復元</a></p></>}
+    {contentError && <><button type="button" onClick={()=>setContentAttempt(n=>n+1)}>再確認</button><p><a href={`/auth/signin?callbackUrl=${encodeURIComponent(`/e-learning/exams/${examId}?question=${currentId ?? ""}`)}`}>ログイン・本人確認</a> · <Link href="/billing">有料会員・購入復元</Link></p></>}
     <nav className="flex flex-wrap gap-4"><button type="button" disabled={index<=0} onClick={()=>goTo(index-1)}>前の問題</button><button type="button" disabled={index>=roundIds.length-1} onClick={()=>goTo(index+1)}>次の問題</button><button type="button" onClick={showSummary}>結果を見る</button></nav>
   </section>;
   if (questions.length === 0) return null;
@@ -723,7 +726,7 @@ export function ExamQuestionPlayer({
               <div className="mt-5">
                 <SurveyAssistantReferencePanel notice={current.referenceNotice ?? "参照専用です。採点・履歴・復習には算入しません。"} explanation={current.explanation ?? ""} reasons={current.referenceReasons ?? []} officialKey={current.officialKey} />
                 <a href={officialPdfPageUrl(current.originalPdf ?? pdfUrl, sourcePage)} target="_blank" rel="noopener noreferrer" className={linkClass}>原本問題PDFを確認</a>
-                {current.answerPdf ? <a href={officialPdfPageUrl(current.answerPdf, 1)} target="_blank" rel="noopener noreferrer" className={linkClass}>公式解答PDFの記録を確認</a> : null}
+                {current.answerPdf ? <a href={current.answerPdf} target="_blank" rel="noopener noreferrer" className={linkClass}>公式解答PDFの記録を確認</a> : null}
               </div>
             ) : current.choiceCount > 0 ? (
               <fieldset className="mt-5" aria-describedby="exam-answer-help">
@@ -859,7 +862,7 @@ export function ExamQuestionPlayer({
                     </div>
                   ) : null}
                   <div className="mt-1 flex flex-wrap gap-x-4">
-                    {current.answerPdf ? <a href={officialPdfPageUrl(current.answerPdf, 1)} target="_blank" rel="noopener noreferrer" className={linkClass}>公式解答PDFを確認</a> : null}
+                    {current.answerPdf ? <a href={current.answerPdf} target="_blank" rel="noopener noreferrer" className={linkClass}>公式解答PDFを確認</a> : null}
                     {answerPage ? (
                       <a href={officialPdfPageUrl(pdfUrl, answerPage)} target="_blank" rel="noopener noreferrer" className={linkClass}>
                         公式の正答・正答例を確認（PDF {answerPage}ページ）
@@ -901,44 +904,6 @@ export function ExamQuestionPlayer({
                   </button>
                 ) : null}
 
-                {noteLinks && noteLinks.length > 0 ? (
-                  <div className="mt-4 border-t border-current/25 pt-3">
-                    <h4 className="font-semibold">関連する解説記事</h4>
-                    <ul className="mt-1 grid gap-1">
-                      {noteLinks.map((link) => {
-                        const account = deriveNoteAccountFromUrl(link.url);
-                        const linkBody = (
-                          <>
-                            {link.title}
-                            <span className="sr-only">（新しいタブで開きます）</span>
-                            <ExternalLink className="h-4 w-4 shrink-0" aria-hidden="true" />
-                          </>
-                        );
-                        return (
-                          <li key={link.url}>
-                            {link.kind ? (
-                              <span
-                                className="mr-1.5 inline-block rounded px-1.5 py-0.5 text-xs font-bold text-white forced-colors:border forced-colors:border-[CanvasText] forced-colors:bg-[Canvas] forced-colors:text-[CanvasText]"
-                                style={{ backgroundColor: link.kind === "free" ? "#0284c7" : "#a16207" }}
-                              >
-                                {link.kind === "free" ? "無料" : "有料"}
-                              </span>
-                            ) : null}
-                            {account ? (
-                              <TrackedNoteLink href={link.url} source="exam_library" account={account} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                                {linkBody}
-                              </TrackedNoteLink>
-                            ) : (
-                              <a href={link.url} target="_blank" rel="noopener noreferrer" className={linkClass}>
-                                {linkBody}
-                              </a>
-                            )}
-                          </li>
-                        );
-                      })}
-                    </ul>
-                  </div>
-                ) : null}
               </div>
             ) : null}
 

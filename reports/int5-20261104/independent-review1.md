@@ -1,0 +1,7 @@
+VERDICT: FAIL
+
+- **P2 — The merged grading index bypasses the iOS content gate.** [next.config.ts:66](C:/Users/kanet/20260522/wt-batch2/next.config.ts:66) and [mobile/vite.config.ts:10](C:/Users/kanet/20260522/wt-batch2/mobile/vite.config.ts:10) exclude only the survey-assistant grading index. Batch1’s `reference-aware-grading-index.ts` directly imports `pe-first/information-grading-index.json`, containing question IDs and correct choices. Both client-side progress libraries import this wrapper, so the answer key remains reachable in strict Web and native bundles without a content grant. Extend the gated replacement to cover this wrapper, preserve ordinary Web behavior, and add this index to the bundle audit.
+
+Reviewed fixed commit `88da5050d` against `ca99d7f72`. Numeric/descriptive behavior is preserved in the inspected merge resolutions. The four AI routes match the supplied SEC1 reservation/settlement changes; the common libraries match `7ab33c41a`. DB1 migration ordering and disabled-mobile short circuits are consistent with the documented boundary.
+
+Static review only; no build or runtime tests executed. No files changed or external services contacted. Real Preview AI verification remains **OUTSTANDING**; this verdict does not establish production readiness.

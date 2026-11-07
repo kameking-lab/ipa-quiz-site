@@ -6,7 +6,7 @@ import {questionPagePath} from "../../lib/seo/question-url";
 import {materialGroups} from "../shared/material-source";
 import {loadExamPaper} from "../../lib/exam-library-papers";
 import {auditProtectedArtifact,fingerprints,containsGradingIndex} from "./web-content-audit";
-import {SURVEY_ASSISTANT_REFERENCE_ID} from "../../lib/exam-library/survey-assistant-reference-policy";
+import {SURVEY_ASSISTANT_REFERENCE_ID,PE_FIRST_REFERENCE_ID} from "../../lib/exam-library/survey-assistant-reference-policy";
 const root=resolve(import.meta.dirname,"../..");
 async function files(dir:string):Promise<string[]>{const out:string[]=[];for(const d of await readdir(dir,{withFileTypes:true})){const p=resolve(dir,d.name);if(d.isDirectory())out.push(...await files(p));else out.push(p);}return out;}
 const app=resolve(root,".next/server/app");
@@ -41,7 +41,9 @@ for(const path of artifacts.sort()) {
 if(protectedRsc<expected.length)throw new Error("Missing generated protected RSC payloads");
 const chunks=(await files(resolve(root,".next/static/chunks"))).filter(path=>path.endsWith(".js"));
 const index=JSON.parse(await readFile(resolve(root,"data/exam-library/survey-assistant/grading-index.json"),"utf8")) as {questions:{id:string}[]}[];
-const indexIds=index.flatMap(paper=>paper.questions.map(q=>q.id));
+const informationIndex=JSON.parse(await readFile(resolve(root,"data/exam-library/pe-first/information-grading-index.json"),"utf8")) as {id:string}[];
+// The exact reference-only ID is a public exclusion rule, never a scoring key.
+const indexIds=[...index.flatMap(paper=>paper.questions.map(q=>q.id)),...informationIndex.filter(q=>q.id!==PE_FIRST_REFERENCE_ID).map(q=>q.id)];
 const samples=[...new Set([...routeSources.values()].flatMap(source=>fingerprints(source)))];
 const escape=(s:string)=>s.replace(/[.*+?^${}()|[\]\\]/g,"\\$&");
 const pattern=new RegExp([...new Set(samples.flatMap(s=>[s,JSON.stringify(s).slice(1,-1)]))].map(escape).join("|"));

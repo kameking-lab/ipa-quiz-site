@@ -1,0 +1,102 @@
+{
+  "model": "gpt-6-astra",
+  "scope": "Independent revision-3 re-review of exactly the five IDs in qa/lq1c-revision3-ids.json against current qa/lq1c-candidates.json and qa/lq1c-revision3-delta.json. Original question and all four choices, official answer, overall explanation and all four choice explanations reviewed. qa paths are relative to data/qualification-staging/automotive/latest-two/. sourcePagesChecked lists physical target-question pages; supplemental pages and keys are identified in findings.source.",
+  "limitations": [
+    "All five target question PNGs and both relevant official key pages were visually inspected. Supplementary AT question/key pages, muffler question/key pages, publisher printed p137 and the newly downloaded 2016 chassis question/key pages were visually inspected.",
+    "All five candidate hashes were recomputed from insertion-order compact UTF-8 JSON and matched packet bindings. All four revision-3 delta after-hashes matched. The unchanged sensor candidate is deliberately included although absent from the four-row delta. Target source PDF hashes matched all five candidate references. Supporting PNG manifest hashes and publisher PDF hash matched; the publisher PDF has 24 physical pages.",
+    "PASS is limited to the described examination mechanisms. AT fallback behavior, steering-fluid inspection conditions and pre/pilot injection naming are not certified as universal manufacturer procedures. Muffler explanations retain the elementary examination model rather than claiming a complete acoustic analysis.",
+    "No separate calculation problems occur. The three throttle states, AT gear assignments, truth combination and sensor extrema were checked. Historical rights/publication flags were not treated as blockers. No candidate or product files were edited; no agents, commits or access bypass were used."
+  ],
+  "rows": [
+    {
+      "id": "jidosha-2026-first-2-diesel-q01",
+      "candidateSha256": "0417d71509489e2c693a3c351975b3a4d86fff5bb217b464220ac4407729a661",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "All four explanations and original transcription checked. Official column 22 Q1=1 agrees. Excess-air CO, organic fuel/oil-derived SOF and thermal NOx distinctions are correct. The revised pre-injection explanation removes the unsupported PM assertion, retains shortened ignition delay and reduced combustion noise, and qualifies the pre/pilot terminology to this examination. It does not deny condition-dependent HC effects. No replacement needed.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-diesel-p02.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png column 22 Q1=1"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-3-chassis-q09",
+      "candidateSha256": "041ec92b79f8f00aa4411d01d48b204e72faf3c5652ffe032ef2c7a352cdde51",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        4
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "All four explanations and original transcription checked. Official column 31 Q9=4 agrees. Relief limits pressure, the control valve directs cylinder flow, and vane pumps are standard here. Independently downloaded and visually inspected 2016-03-20 3-chassis Q10: option 4 explicitly specifies idling for reservoir-level inspection. Its incorrect-statement key is 1, supporting option 4. The candidate appropriately limits this scheme to the exam and preserves manufacturer engine-off procedures rather than imposing a universal idling rule.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-3-chassis-p04.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png column 31 Q9=4; https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/20160320_20160828/20160320_3c.pdf physical p4 Q10(4); https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/20160320_20160828/20160320_ka.pdf physical p1 column 31 Q10=1; tmp/lq1c-r3-20160320-3c-p4.png; tmp/lq1c-r3-20160320-key-p1.png"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q22",
+      "candidateSha256": "90d8ebbadf6d83149936a989b9d71e6744c325b052027c872860e129ab8d6d53",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        15
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "All four explanations and original transcription checked. Target column 12 Q22=1 agrees. Electrical substitution of range 1 and the actual manual-valve range 2 explain the 2_1 result. Idle/full contacts provide three substitute throttle states; constant maximum pressure is not the throttle-sensor fallback described here. The 2020 Q17(4), with official answer 4, explicitly establishes D/2 fixed in third and range 1 fixed in second. The 2023 Q21 key 2 gives false/false/true: line-pressure-solenoid OFF still allows first through fourth, with increased shift/select shock. These are mechanism-specific conclusions, not universal AT fallback rules.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-1-small-written-p15.png; tmp/lq1b-sources/jaspa-2025-second-answers-p1.png column 12 Q22=1; qa/lq1c-supporting-sources/lq1c-20200322-1k-p12.png Q17; qa/lq1c-supporting-sources/lq1c-20200322-key-p01.png column 12 Q17=4; qa/lq1c-supporting-sources/lq1c-20230326-1k-p15.png Q21; qa/lq1c-supporting-sources/lq1c-20230326-key-p01.png column 12 Q21=2"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q15",
+      "candidateSha256": "30f6a974d9273b0431635e530020e25a0e6c1c33cf2d4147ce20a87698061109",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "All four explanations and original transcription checked. Target column 32 Q15=2 agrees. Absorptive material removes acoustic energy; simply increasing pressure is not the stated silencing mechanism. The 2023 Q13 incorrect-statement question has official answer 3, confirming both option 1 restriction to suppress pressure fluctuations and option 4 expansion with pressure reduction. The revised explanation correctly distinguishes these exam descriptions and explicitly avoids denying the silencing contribution of an expanded chamber.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-3-gasoline-p05.png; tmp/lq1b-sources/jaspa-2025-second-answers-p1.png column 32 Q15=2; tmp/lq1c-20230326-3g-p04.png Q13(1),(4); tmp/lq1c-20230326-key-p01.png column 32 Q13=3"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-2-gasoline-q15",
+      "candidateSha256": "419955d58b9ec376ec0b7cdec6a0b4273f07c93843123c3a0ceec046bd022631",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        5
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "All four explanations and original transcription checked. Target column 21 Q15=3 agrees. MAP voltage rises with pressure, Hall sensing detects throttle position, and zirconia output is high rich/low lean in the stated comparison. Visually inspected publisher printed p137 at physical p11 of the 24-page sample: paragraph 4 and the diagram explicitly show the tooth-facing magnetic-flux component and resistance at their minima. This supports both corrected quantities. The earlier absent-page objection is withdrawn; physical page 137 was the wrong locator. Candidate hash is unchanged and no textual repair is required.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-2-gasoline-p05.png; tmp/lq1b-sources/jaspa-2025-second-answers-p1.png column 21 Q15=3; https://www.kouronpub-onlineshop.com/html/template/default/assets/pdf/2gmk_2025.pdf physical p11, printed p137; tmp/lq1c-2gmk-2025.pdf; tmp/lq1c-2gmk-p11.png"
+        }
+      ]
+    }
+  ]
+}

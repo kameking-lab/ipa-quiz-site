@@ -1,0 +1,30 @@
+{
+  "environment": "local mock KV; real guest API and PostHog SDK; all remote traffic intercepted",
+  "stages": [
+    {
+      "event": "referral_landed",
+      "count": 1,
+      "utm_source": "tsugino_shikaku",
+      "utm_content": "kfun1.hero"
+    },
+    {
+      "event": "quiz_started",
+      "count": 1,
+      "utm_source": "tsugino_shikaku",
+      "utm_content": "kfun1.hero"
+    },
+    {
+      "event": "practice_free_limit_reached",
+      "count": 1,
+      "utm_source": "tsugino_shikaku",
+      "utm_content": "kfun1.hero"
+    },
+    {
+      "event": "practice_upgrade_clicked",
+      "count": 1,
+      "utm_source": "tsugino_shikaku",
+      "utm_content": "kfun1.hero"
+    }
+  ],
+  "same_referral": true
+}

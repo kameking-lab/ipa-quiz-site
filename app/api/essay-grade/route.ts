@@ -9,7 +9,7 @@ import type { LLMProvider, StreamCompletion } from "@/lib/ai/provider";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit/server";
 import { checkAiNormalUse } from "@/lib/ai/normal-use-server";
 import { prepareAiUsage, consumeAiUsage, withAiUsageResponse, type AiUsageContext } from "@/lib/ai/usage-server";
-import { checkMonthlyCostCap, recordAiCost, estimateTokens } from "@/lib/ai/cost-guard";
+import { checkMonthlyCostCap, recordAiCost, estimateTokens, textBudget } from "@/lib/ai/cost-guard";
 import { tierForModel } from "@/lib/ai/cost-tracker";
 import { buildGradingFallbackAlert, notifyOpsInBackground } from "@/lib/notify/ops-alert";
 import { findEssayQuestion } from "@/lib/essay/load";
@@ -290,7 +290,11 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
   }
 
   // CLAUDE.md §0 hard cap: stop new real AI requests at ¥50,000/month.
-  const cap = await checkMonthlyCostCap(provider.name);
+  const userPrompt = buildUserPrompt(question, payload.industry, payload.answers);
+  // 論述採点は上位モデル（採点品質優先・強み2）。四択/コパイロットは free のまま。
+  const model = resolveModel("grading");
+  const budget = textBudget(tierForModel(model), ESSAY_SYSTEM_PROMPT, [{ content: userPrompt }], 8000);
+  const cap = await checkMonthlyCostCap(provider.name, budget);
   if (!cap.allowed) {
     if (!usage.legacy) usage.headers["X-AI-RateLimit-Scope"] = "service-cost";
     return NextResponse.json(
@@ -304,15 +308,15 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     );
   }
 
-  const userPrompt = buildUserPrompt(question, payload.industry, payload.answers);
-  // 論述採点は上位モデル（採点品質優先・強み2）。四択/コパイロットは free のまま。
-  const model = resolveModel("grading");
 
   let buf = "";
   // コールバック代入は TS の到達解析で undefined に狭められるため、箱で受ける。
   const completed: { value?: StreamCompletion } = {};
   const usageDenial = await consumeAiUsage(usage, provider.name);
-  if (usageDenial) return usageDenial;
+  if (usageDenial) {
+    if (cap.reservation) await recordAiCost({ ...budget, inputTokens: 0, outputTokens: 0, reservation: cap.reservation });
+    return usageDenial;
+  }
   const admissionHeaders = usage.headers;
   try {
     for await (const chunk of provider.streamChat({
@@ -333,7 +337,13 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     })) {
       buf += chunk;
     }
-    // await は必須。fire-and-forget にすると return でレスポンスが完了した時点で
+  } catch {
+    console.error("[essay-grade] provider request failed");
+    return NextResponse.json(gradingUnavailable("provider_error"), {
+      status: 503, headers: { ...admissionHeaders, "X-Error-Type": "provider_error", "X-Grading-Mode": "unavailable" },
+    });
+  } finally {
+    // Persist partial/failed requests before completing the error response too.
     // サーバレス関数が凍結され、未完了の KV 書き込みが捨てられる（§0 の上限が
     // 最高単価の経路を見失う）。recordAiCost は内部で握り潰すので決して throw しない。
     // 実測トークンが取れたらそれを使う。思考トークンは出力として課金される
@@ -344,17 +354,15 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
       // （手書きの "flash-lite" は pro の 1/25 の出力単価で、集計が大幅に過小だった）。
       tier: tierForModel(model),
       inputTokens:
-        usage?.promptTokens ?? estimateTokens(ESSAY_SYSTEM_PROMPT.length + userPrompt.length),
+        usage?.promptTokens ?? budget.inputTokens,
       outputTokens:
-        (usage?.outputTokens ?? estimateTokens(buf.length)) + (usage?.thoughtsTokens ?? 0),
+        usage?.totalTokens !== undefined && usage.promptTokens !== undefined
+              ? Math.max(0, usage.totalTokens - usage.promptTokens)
+              : usage?.outputTokens !== undefined && usage.thoughtsTokens !== undefined
+          ? usage.outputTokens + usage.thoughtsTokens
+          : Math.max(8000, estimateTokens(buf.length)),
       label: "essay-grade",
-    });
-  } catch (err) {
-    // Log internal detail server-side only; never echo upstream error messages
-    // (which can include API keys, internal paths, env var names) to the client.
-    console.error("[essay-grade] provider error", err);
-    return NextResponse.json(gradingUnavailable("provider_error"), {
-      status: 503, headers: { ...admissionHeaders, "X-Error-Type": "provider_error", "X-Grading-Mode": "unavailable" },
+      reservation: cap.reservation,
     });
   }
 

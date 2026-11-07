@@ -1,6 +1,8 @@
 "use client";
 import { readQuizReturn, safeQuizReturn, saveQuizReturn } from "@/lib/billing/quiz-return";
 import { useRef, useState } from "react";
+import { posthogCapture } from "@/lib/posthog";
+import { PrivacyNote } from "@/components/ui/privacy-note";
 export function CheckoutButton({ terms, amount, enabled, testMode = true, recurring = false }: { terms: string; amount: number; enabled: boolean; testMode?: boolean; recurring?: boolean }) {
   const [busy, setBusy] = useState(false);
   const submitting = useRef(false);
@@ -17,6 +19,8 @@ export function CheckoutButton({ terms, amount, enabled, testMode = true, recurr
         throw new Error(messages[value.error] ?? "決済を開始できませんでした。再試行しても同じ未完了の注文を使用します。解決しない場合はサポートへご連絡ください。");
       }
       // Bind only a confirmed checkout response to the UI return context. No provider/API contract changes.
+      posthogCapture("checkout_started", { plan: recurring ? "monthly" : "pass", amount,
+        test_mode: testMode, source: "billing" });
       try {
         const href = safeQuizReturn(new URL(window.location.href).searchParams.get("returnTo")) ?? readQuizReturn(window.sessionStorage);
         if (href && typeof value.orderId === "string") saveQuizReturn(window.sessionStorage, href, Date.now(), value.orderId);
@@ -30,6 +34,7 @@ export function CheckoutButton({ terms, amount, enabled, testMode = true, recurr
       {busy ? "決済画面を開いています…" : testMode ? "同意してテスト決済へ" : "同意して決済へ進む"}
     </button>
     <p id="checkout-next" className="text-xs text-muted-foreground">{testMode && "実際の請求はありません。"}次の画面で{recurring ? "月額" : ""}{amount.toLocaleString("ja-JP")}円（税込）の支払いを確定します。確定前に戻れます。</p>
+    <PrivacyNote variant="purchase" />
     {error && <p role="alert" className="text-sm">{error}</p>}
   </div>;
 }

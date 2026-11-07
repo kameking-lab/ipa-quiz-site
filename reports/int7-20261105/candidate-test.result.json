@@ -1,0 +1,19 @@
+{
+  "sourceHead": "1ca14f4ce39be16b8b00660800bd05a225ff0ee2",
+  "startedAt": "2026-11-04T18:53:16.169453+00:00",
+  "endedAt": "2026-11-04T19:12:02.989661+00:00",
+  "command": [
+    "corepack.cmd",
+    "pnpm",
+    "test",
+    "--maxWorkers=2",
+    "--reporter=default",
+    "--reporter=json",
+    "--outputFile=reports/int7-20261105/candidate-test.json"
+  ],
+  "exitCode": 0,
+  "seconds": 1126.82,
+  "log": "reports/int7-20261105/candidate-test.log",
+  "sha256": "c4e309c9499791f68afbd4bb94a36f3660f363af1aae54e2aaabb2e64f33c3d6",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

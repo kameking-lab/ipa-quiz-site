@@ -1,3 +1,5 @@
+import { setPostHogClient } from "@/lib/posthog";
+import type { PostHog } from "posthog-js";
 import { StrictMode } from "react";
 import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
@@ -18,16 +20,20 @@ beforeEach(() => {
   Object.defineProperty(HTMLElement.prototype, "scrollIntoView", { configurable: true, value: vi.fn() });
   vi.spyOn(window, "scrollTo").mockImplementation(() => {});
 });
-afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.restoreAllMocks(); });
+afterEach(() => { setPostHogClient(null); cleanup(); vi.unstubAllGlobals(); vi.restoreAllMocks(); });
 
 describe("QuizClient with the real player and local learning stores", () => {
   it("answers ordinary questions across qualifications, preserves player state and storage, and offers exits at the eleventh", async () => {
+    window.history.replaceState({}, "", "/quiz?mode=year&exam=fe&utm_source=tsugino_shikaku&utm_content=fe.hero");
+    const capture = vi.fn(); setPostHogClient({ capture } as unknown as PostHog);
     const fe = FE_QUESTIONS_2009_AUTUMN_AM.slice(0, 6);
     const fp = FP3_QUESTIONS.slice(0, 6);
     const questions = new Map([...fe, ...fp].map(question => [question.id, question]));
     const started = new Set<string>();
     let cookie = false;
     const fetcher = vi.fn(async (url: string, options?: RequestInit) => {
+      if (url === "/api/auth/session") return Response.json({});
+      if (url === "/api/questions/related") return Response.json({ questions: [] });
       if (url.startsWith("/api/questions/next?")) {
         return Response.json(questions.get(new URL(url, "http://localhost").searchParams.get("id")!));
       }
@@ -44,19 +50,20 @@ describe("QuizClient with the real player and local learning stores", () => {
 
     for (let i = 0; i < 5; i += 1) {
       await waitFor(() => {
-        expect(screen.getByRole("complementary", { name: "ログインなしの無料演習枠" })).toHaveTextContent(`今日あと${9 - i}問`);
         expect(screen.getAllByRole("radio")[0]).not.toBeDisabled();
       });
       expect(screen.queryByText("1問、回答しました。")).toBeNull();
       expect(screen.queryByRole("link", { name: /ログイン/ })).toBeNull();
       expect(screen.queryByTestId("achievement-toast")).toBeNull();
       expect(screen.queryByRole("dialog")).toBeNull();
+      expect(screen.queryByRole("complementary", { name: "ログインなしの無料演習枠" })).toBeNull();
       const choice = screen.getAllByRole("radio")[0];
       fireEvent.click(choice); fireEvent.click(choice);
       expect(screen.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeInTheDocument();
+      expect(screen.queryByTestId("achievement-toast")).toBeNull();
       expect(createHistoryStore().getAllEntries()).toHaveLength(i + 1);
       expect(getStudyReward()?.questionId).toBe(fe[i].id);
-      // The cumulative count would reset here if the banner re-mounted Player.
+      // The cumulative count must survive every question transition.
       expect(screen.getByLabelText(new RegExp(`回答済み ${i + 1}（`))).toBeInTheDocument();
       if (i < 4) fireEvent.click(screen.getByRole("button", { name: "次の問題へ" }));
     }
@@ -65,7 +72,6 @@ describe("QuizClient with the real player and local learning stores", () => {
     render(<QuizClient billingGateEnabled poolIds={fp.map(q => q.id)} mode="year" exam="fp3" backHref="/fp3" />);
     for (let i = 0; i < 5; i += 1) {
       await waitFor(() => {
-        expect(screen.getByRole("complementary", { name: "ログインなしの無料演習枠" })).toHaveTextContent(`今日あと${4 - i}問`);
         expect(screen.getAllByRole("radio")[0]).not.toBeDisabled();
       });
       expect(screen.queryByText("1問、回答しました。")).toBeNull();
@@ -74,6 +80,7 @@ describe("QuizClient with the real player and local learning stores", () => {
       expect(screen.queryByRole("dialog")).toBeNull();
       fireEvent.click(screen.getAllByRole("radio")[0]);
       expect(screen.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeInTheDocument();
+      expect(screen.queryByTestId("achievement-toast")).toBeNull();
       expect(createHistoryStore().getAllEntries()).toHaveLength(i + 6);
       if (i < 4) fireEvent.click(screen.getByRole("button", { name: "次の問題へ" }));
     }
@@ -84,7 +91,7 @@ describe("QuizClient with the real player and local learning stores", () => {
     expect(limit).toHaveTextContent("本日の無料連続演習枠（10問）を使い切りました");
     expect(limit).toHaveTextContent("10/31 0:00（日本時間）");
     expect(screen.getByRole("link", { name: "保存済みの履歴を無料で復習する" })).toHaveAttribute("href", "/review");
-    const billing = new URL(screen.getByRole("link", { name: "有料にして続きを解く" }).getAttribute("href")!, window.location.origin);
+    const billing = new URL(screen.getByRole("link", { name: "月額プランの料金・条件を見る" }).getAttribute("href")!, window.location.origin);
     expect(billing.pathname).toBe("/billing");
     const resume = billing.searchParams.get("returnTo");
     expect(resume).toBe(`/quiz?mode=year&exam=fp3&question=${fp[5].id}`);
@@ -98,7 +105,16 @@ describe("QuizClient with the real player and local learning stores", () => {
     expect(sessionStorage.getItem(LS_KEYS.studyReward)).toBe(reward);
     expect(JSON.parse(localStorage.getItem(LS_KEYS.studyRewardPreferences)!)).toEqual({ closed: false, paused: true });
     expect(createHistoryStore().getAllEntries().some(entry => entry.id === fp[5].id)).toBe(false);
-    expect(fetcher.mock.calls.every(([url]) => url.startsWith("/api/questions/next?") || url === "/api/billing/question")).toBe(true);
+    expect(fetcher.mock.calls.every(([url]) => url.startsWith("/api/questions/next?") || url === "/api/billing/question" || url === "/api/questions/related" || url === "/api/auth/session")).toBe(true);
+    expect(capture.mock.calls.filter(call => call[0] === "referral_landed")).toHaveLength(1);
+    const limits = capture.mock.calls.filter(call => call[0] === "practice_free_limit_reached");
+    expect(limits).toHaveLength(1);
+    expect(limits[0][1]).toMatchObject({ utm_source: "tsugino_shikaku", utm_content: "fe.hero", reason: "last_free_question", free_daily: 10 });
+    expect(capture.mock.calls.some(call => call[0] === "quiz_started" && call[1].utm_content === "fe.hero")).toBe(true);
+    const upgrade = screen.getByRole("link", { name: "月額プランの料金・条件を見る" });
+    upgrade.addEventListener("click", event => event.preventDefault());
+    fireEvent.click(upgrade);
+    expect(capture.mock.calls.some(call => call[0] === "practice_upgrade_clicked" && call[1].utm_content === "fe.hero")).toBe(true);
   });
 
   it.each([
@@ -108,14 +124,16 @@ describe("QuizClient with the real player and local learning stores", () => {
   ])("keeps free exits and storage when %s %s is returned", async (status, error, access, message) => {
     localStorage.setItem(LS_KEYS.history, JSON.stringify({ entries: [{ id: "prior", correct: false, selected: "ア", at: 1 }], starredIds: [] }));
     const history = localStorage.getItem(LS_KEYS.history);
-    const fetcher = vi.fn(async () => Response.json({ error, access }, { status: status as number }));
+    const fetcher = vi.fn(async (url: string) => url === "/api/auth/session" ? Response.json({}) : Response.json({ error, access }, { status: status as number }));
     vi.stubGlobal("fetch", fetcher);
     render(<QuizClient billingGateEnabled poolIds={["normal-question"]} mode="year" backHref="/fe" />);
     await screen.findByText(message as RegExp);
     expect(screen.getByRole("link", { name: "保存済みの履歴・無料復習" })).toHaveAttribute("href", "/review");
     expect(screen.getByRole("link", { name: "科目選択へ戻る" })).toHaveAttribute("href", "/fe");
     expect(localStorage.getItem(LS_KEYS.history)).toBe(history);
-    await waitFor(() => expect(fetcher).toHaveBeenCalledTimes(status === 428 ? 2 : 1));
+    // Optional local pet views verify auth independently of billing. Count the
+    // billing boundary itself, rather than racing deferred session checks.
+    await waitFor(() => expect(fetcher.mock.calls.filter(([url]) => url === "/api/billing/question")).toHaveLength(status === 428 ? 2 : 1));
     expect(screen.queryByText(/本日の無料連続演習枠を使い切りました/)).toBeNull();
   });
 });
@@ -127,6 +145,7 @@ it("submits feedback at the wall, answers bonus questions 11-20, stops at 21 and
   let submitted = false;
   let loggedIn = false;
   const fetcher = vi.fn(async (url: string, init?: RequestInit) => {
+    if (url === "/api/auth/session") return Response.json(loggedIn ? { user: { id: "billing-test" } } : {});
     if (url === "/api/feedback-unlock") {
       if (!loggedIn) return Response.json({ eligible: false, requiresLogin: true });
       if (init?.method === "POST") { submitted = true; return Response.json({ ok: true, remaining: 10 }); }

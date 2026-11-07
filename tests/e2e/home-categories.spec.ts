@@ -35,15 +35,21 @@ for (const width of [390, 1280]) {
     await expect(finder.getByRole("searchbox", { name: "資格名・略称で検索" })).toBeInViewport();
     await expect(finder.getByRole("link", { name: /^ITパスポート/ })).toBeInViewport();
     const filters = finder.locator(".study-filters").getByRole("button", { pressed: false });
-    expect(await filters.count()).toBe(6);
+    // Automotive discovery adds a seventh domain; all remain unselected initially.
+    await expect(filters).toHaveText([
+      "自動車整備", "IT・情報処理", "安全衛生", "電気",
+      "建設・施工管理", "お金・不動産・経営", "医療・福祉",
+    ]);
+    await expect(finder.getByRole("button", { name: "すべて", exact: true })).toHaveAttribute("aria-pressed", "true");
 
     // 各分野の資格カードと一覧ページへの導線。
     const main = page.locator("main");
     for (const href of ["/ip", "/sg", "/fe", "/ap", "/au", "/fp3", "/fp2", "/takken", "/denken3", "/denken2", "/denko2", "/denko1", "/civil1", "/civil2", "/kankoji2", "/zoen2", "/tsushin2", "/kaigo", "/shakai", "/seishin", "/tohan",
-      "/e-learning/exams/qualifications/dai-1-shu-eisei-kanrisha", "/ipa", "/e-learning/exams", "/qualifications",
-      "/operator"]) {
+      "/e-learning/exams/qualifications/dai-1-shu-eisei-kanrisha", "/ipa", "/e-learning/exams", "/qualifications"]) {
       await expect(main.locator(`a[href="${href}"]`).first(), href).toBeAttached();
     }
+    // Operator information stays reachable from the shared footer.
+    await expect(page.locator('footer a[href="/operator"]').first()).toBeAttached();
     // 問題数バッジは実数（0問のカードは出さない）。
     await expect(page.locator('#domain-it a[href="/ip"]')).toContainText(/[1-9][\d,]*問/);
     await expect(main.getByText(/^0問$/)).toHaveCount(0);

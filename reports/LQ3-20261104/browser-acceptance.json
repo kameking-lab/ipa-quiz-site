@@ -1,0 +1,26 @@
+{
+  "story": "部門一覧から化学専門科目を開き、原問画像を読み、解答・全肢理由を確認し、保存後の再読み込みで復元する。",
+  "origin": "http://127.0.0.1:3133",
+  "checkedAtJst": "2026-11-04T01:18:16+09:00",
+  "catalog": {
+    "peDepartmentLinks": 16,
+    "allPaperCount": 130,
+    "allQuestionCount": 2977,
+    "allScoredCount": 2803
+  },
+  "chemical": {
+    "route": "/e-learning/exams/pe-first-chemical-2025",
+    "sourceImageLoaded": true,
+    "questionNumber": 1,
+    "selectedChoice": 4,
+    "displayedResult": "正解",
+    "choiceReasonsDisplayed": 5,
+    "officialAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_4.pdf#page=7",
+    "savedAndReloadedResult": "correct"
+  },
+  "screenshots": {
+    "status": "STOPPED",
+    "reason": "Playwright connector rejected save to the dedicated worktree; its allowed roots point to the original tree. Did not retry screenshot save through another path or client."
+  },
+  "toolArtifactLocationNote": "The connected browser tool automatically stored snapshots/traces under the original workspace .playwright-mcp before its save-root constraint was discovered. No source files there were edited; those tool-owned traces were left untouched."
+}

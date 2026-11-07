@@ -1,5 +1,6 @@
 import { LS_KEYS } from "@/lib/storage/keys";
 import type { ExamCode } from "@/lib/questions/types";
+import { getMockExamHistory } from "@/lib/mock-exam/storage";
 
 export interface MockScore {
   id: string;
@@ -51,7 +52,14 @@ export function recordMockScore(score: Omit<MockScore, "id" | "takenAt">): MockS
 }
 
 export function getMockScores(): MockScore[] {
-  return read().scores;
+  const scores = new Map(read().scores.map((score) => [score.id, score]));
+  for (const result of getMockExamHistory()) {
+    scores.set(result.id, {
+      id: result.id, exam: result.exam, score: result.correct,
+      total: result.totalQuestions, takenAt: result.finishedAt,
+    });
+  }
+  return [...scores.values()].sort((a, b) => a.takenAt - b.takenAt);
 }
 
 export function getNickname(): string {

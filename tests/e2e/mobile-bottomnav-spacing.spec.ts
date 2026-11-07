@@ -7,8 +7,8 @@ const bottomNav = "nav[aria-label='モバイル底タブ']";
 const surfaces = [
   {
     path: "/",
-    // The trust links (運営者情報など) are the final CTA on the home page.
-    selector: "main section[aria-labelledby='home-trust-title'] a",
+    // The exam-schedule links are the final CTA on the home page.
+    selector: "main section[aria-labelledby='home-schedule-title'] a",
   },
   {
     path: "/ipa",

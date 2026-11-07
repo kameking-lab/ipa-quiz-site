@@ -1,0 +1,1797 @@
+{
+  "slug": "benrishi",
+  "publicAllowed": false,
+  "status": "private-staged",
+  "baseCommit": "bb912dfd0494f7095ec5387f9f2e53f46381cd1f",
+  "candidateEvidence": "COV1 B #5 (2026-11-04)",
+  "downloadedSources": [
+    {
+      "year": 2025,
+      "kind": "question",
+      "url": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "method": "GET",
+      "client": "Windows PowerShell Invoke-WebRequest -UseBasicParsing (default headers)",
+      "status": 200,
+      "bytes": 380480,
+      "sha256": "69b5c0a44a121615bd80282cdb54f37a1b4a7dae7d495618f949c615c4aef477",
+      "checkedOn": "2026-11-04",
+      "pages": 65
+    },
+    {
+      "year": 2025,
+      "kind": "answer",
+      "url": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/answer.pdf",
+      "method": "GET",
+      "client": "Windows PowerShell Invoke-WebRequest -UseBasicParsing (default headers)",
+      "status": 200,
+      "bytes": 86721,
+      "sha256": "02ddb509a45d36b0f585f8f4b58c548d7f7e1282d39277e20904528e05d5e295",
+      "checkedOn": "2026-11-04",
+      "pages": 1
+    },
+    {
+      "year": 2026,
+      "kind": "question",
+      "url": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "method": "GET",
+      "client": "Windows PowerShell Invoke-WebRequest -UseBasicParsing (default headers)",
+      "status": 200,
+      "bytes": 641024,
+      "sha256": "dc75d689f4bd4869bbb53c3b3918bad935604dafe46cdc08c49b527b65a96529",
+      "checkedOn": "2026-11-04",
+      "pages": 65
+    },
+    {
+      "year": 2026,
+      "kind": "answer",
+      "url": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
+      "method": "GET",
+      "client": "Windows PowerShell Invoke-WebRequest -UseBasicParsing (default headers)",
+      "status": 200,
+      "bytes": 42983,
+      "sha256": "d64d3dd342c06181c437730e255a3dae3db2f257f674589c0f1508918c1f182e",
+      "checkedOn": "2026-11-04",
+      "pages": 1
+    }
+  ],
+  "unavailablePdfUrls": [],
+  "publicationDates": {
+    "2025": "2025-05-19",
+    "2026": "2026-05-18"
+  },
+  "lawBasis": "出題時点の法令に基づく。2026年度は受験案内の試験日・法令適用基準を一次PDFで確認。2025年度の基準日は一次本文未確認のため日付未設定。",
+  "reuseTerms": {
+    "url": "https://www.jpo.go.jp/toppage/about/index.html",
+    "appendixUrl": "https://www.jpo.go.jp/toppage/about/appendix.html",
+    "directGetStatus": 202,
+    "directBodyBytes": 0,
+    "status": "要再確認（検索インデックスはPDL1.0を示すが通常GET本文未取得）"
+  },
+  "priorDraft": {
+    "commit": "3989c0f8f",
+    "path": "data/staging/benrishi",
+    "use": "転記及び問題単位の独自解説草稿を再利用。今回取得原本のハッシュと再抽出で検証し、全肢解説を追加する。"
+  },
+  "assets": [
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p02.png",
+      "sha256": "b2c13cda5d7682920c3220cd186128f7e322121ca8061cbbffe4e946025f697d",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 2,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p03.png",
+      "sha256": "9ba2ea423e3214080cda804d0a9bf6cafaba98834351dd07f1f82e8ccea34633",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 3,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p04.png",
+      "sha256": "eeac81aab522c6dda8b2e4cba2e9dccefc72a061b4833b0fb7a029bf016272bf",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 4,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p05.png",
+      "sha256": "dbf449307cad0a943da4243e2f1cf27e3820a262525d97cf09c229cfa9b641a3",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 5,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p06.png",
+      "sha256": "c7c8ddea3983ae6a552b5d4456a1b2a3df84fb6d92f2d6cdc38f2d4718f99521",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 6,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p07.png",
+      "sha256": "a8e86b9bfb87370e3046bb2794fb98129d5c4c0c62b34481803593e4d7695464",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 7,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p08.png",
+      "sha256": "226f9fdd66f65afd6c698a1ba4a5de3056b06078d3294070045a2d82eb345047",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 8,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p09.png",
+      "sha256": "7a01c69b28232b60d60f7f8960055e72f945f5183811e102c7eb6dd840ec80a3",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 9,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p10.png",
+      "sha256": "4ec5d6d34d657a53d91ef8cee7557616bb7d30683d71b5ec87992815b0197afc",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 10,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p11.png",
+      "sha256": "3cb1b69a6f62e1faa0dcab99d720cfdc94c8e393115f82ae9d02cab81bdd55a7",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 11,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p12.png",
+      "sha256": "a2cb6acbef0823836979b94c727c35f3993f3592fc79f47c62e2a3eb424821c4",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 12,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p13.png",
+      "sha256": "201f53355e28bded15e8f0e815676bc6e372eddc8d5d240fb2c2faf364a61dcf",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 13,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p14.png",
+      "sha256": "3669bf4a2af8254cc6fd930b8c0479a202f3f71a493a1a9e803ad8516be0f2f0",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 14,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p15.png",
+      "sha256": "7665c289181a314b9097f78b4d71826a6246447d508174321aa63f17d5cb9ef9",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 15,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p16.png",
+      "sha256": "c1d9d10ba3d6a40b0f6173cc9c500c778fff7b06258793b2cac432475fe3ee68",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 16,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p17.png",
+      "sha256": "898a937e96dbef0f1e9312e2b54d76deeed94dbe37f5cff878864369bd92c0f9",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 17,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p18.png",
+      "sha256": "1921b82af85c083cbf6e8b2d4f8a069f5471cd2e93c36fa982e330626da07ea6",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 18,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p19.png",
+      "sha256": "388979cabaef96fbcc13da38279e7305e94a04d06ad03380dd5c3277f4069854",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 19,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p20.png",
+      "sha256": "0435dbc57efec38881d0638acd81fe628db0bbe4e9f1c91f2b6292e979735961",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 20,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p21.png",
+      "sha256": "9341d0663212952ea29679b0700f0aa8037a131b306f78ab534dc51f7a204796",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 21,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p22.png",
+      "sha256": "0a0423db7db0f083b5e59dba0439379a126a0edde7d89468edbb7619c6d00358",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 22,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p23.png",
+      "sha256": "509290d8e6324179634eb6c88ed6b7ea14b7ab930b5c9412fd84f75491900204",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 23,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p24.png",
+      "sha256": "4e8db72b0e09566e31f5f2b53dda61de26e7014bfc567e63cc56905ced904c39",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 24,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p25.png",
+      "sha256": "0ac84f1f527a6a636be553a92afc7afd3e98b4170aa5abda639fdfd6d74c8509",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 25,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p26.png",
+      "sha256": "c96a92c726e72ed99f207ede97d6a02112b401fbcd1975c94d7ceb5d5c11d88b",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 26,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p27.png",
+      "sha256": "a6618419629b90fc4098278b5c4c6a6f2f235945cffa08315505c1bbb2518353",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 27,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p28.png",
+      "sha256": "6cd5b3e2ca0ed0650ebf5525fb918cc3e0d2f32faa4eabcb4cf5d8c273f6cd95",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 28,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p29.png",
+      "sha256": "243fdef3c548776b0a90f53b38f9e1cf50b503c1beb2a677e6e9dcf6476085d0",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 29,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p30.png",
+      "sha256": "0ee4033800cb2b35c01786d95d7d81fa366405c7aeb4385d5928a480da356fca",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 30,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p31.png",
+      "sha256": "2076326bf96caaad26aeda02b3d8405929d42da0f942e3ad1b1407ee947addf2",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 31,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p32.png",
+      "sha256": "c1fb416c8317ea8ee43985a8f5567139661869d284e61cb9fd59e09d83ec5be9",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 32,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p33.png",
+      "sha256": "1e82d5ae737f5a3caa2beb5727266642e0ef2f6b23694ea47229b09ac96c9249",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 33,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p34.png",
+      "sha256": "80a74bb707a674bb5a0c6dc501925a246f60682538ce0ba280bb7c401007dee8",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 34,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p35.png",
+      "sha256": "09cb1bd93f5f35baa73203156a67576d1ac39b1f8ceb9560edde07896292555c",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 35,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p36.png",
+      "sha256": "0d3a89b8278c802af07df7cc0a21bd2d97a1a992c36a9651ac060b03e3c8fe5a",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 36,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p37.png",
+      "sha256": "62591e2c5e7b6714ffa6c20b91fbc51a015673f270c1a01d7fab4a2174a4ffd0",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 37,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p38.png",
+      "sha256": "4d83b7dae8fe4e83293cc80481e585697d216e05cd55fce4cc5cb447dd40e953",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 38,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p39.png",
+      "sha256": "e6aad3ca27ad36bbcd47d0f591a62c5ae42b7cf44d212a1afc244fcfff01f437",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 39,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p40.png",
+      "sha256": "93f7d92c358ad16d4e86f0a9eccef28ab7b90ebbce2e9618751cf1fcbaf17855",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 40,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p41.png",
+      "sha256": "1402d26a8889814df2c832ad81f53512e9b26645b6df7e783fd91bbae587936d",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 41,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p42.png",
+      "sha256": "0c9975d8185f0116074de61f96ce58ee02a9daf86c12d3d72974f787452a39ba",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 42,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p43.png",
+      "sha256": "6a240afd531d5140675314920c77f4d69d25d30d7383c299906c4c7986a26373",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 43,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p44.png",
+      "sha256": "24441bfb1c261d1cdc31f91d7c4cabc0501ad49bb4336d2fd06f3aa3c2ac5256",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 44,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p45.png",
+      "sha256": "021904caadc35218308a64425c19685802ebd39254b11858ffcb4add0c1b390e",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 45,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p46.png",
+      "sha256": "a605d3b18d3131f2aef73a42eed71c6b10020bb880b06a176107fa312ae89d51",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 46,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p47.png",
+      "sha256": "256a493142e456f5d307a05c281e4cb64f011adcbf86d02a5335bda89c6c346c",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 47,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p48.png",
+      "sha256": "c00fdb0cb13bdc50d1a61a1bde046f43de87e5396a0928e6bd49519d7cc41125",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 48,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p49.png",
+      "sha256": "151d0baed82b6b9b66e3e689e70df80796e6bea47f291b85bfbac2b882499e7e",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 49,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p50.png",
+      "sha256": "abd9f2087abdc9f9eb1f027dc16891cfd0ce526fdb22f8686dc1383227bea513",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 50,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p51.png",
+      "sha256": "ad970f271fb7a1cc323626efbbc1c79aa92cd1ea15d02a2043e12c5a35c9d086",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 51,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p52.png",
+      "sha256": "20587bc8c8fe84e90bfd074950146786f90feacb5dd0749e9e2fb36f294d53c8",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 52,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p53.png",
+      "sha256": "a825b65226b8dd1bdddad4065f7581b055d305ef9309aeaa258461d7758d18c5",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 53,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p54.png",
+      "sha256": "5fb83ef142e6ae7d9f3e284cb30b827ef214949c731f878a5e27a30900046960",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 54,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p55.png",
+      "sha256": "df680bb765079cd5c6fc0b6e4412a3e619c6770ab822d69d97b2e23621a2e624",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 55,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p56.png",
+      "sha256": "38d38049b69c54f05f3b6b2ebc85a52994c81d440a045cf4171bd794f33e240c",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 56,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p57.png",
+      "sha256": "339bac36fd9c4747ab311d8c9d789cad5975296b8b1a2a843e96edee47772eda",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 57,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p58.png",
+      "sha256": "aff14501d90bb89628a9b4a9bf3edf32b83786e2e781c082ca8bf891e27f05f1",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 58,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p59.png",
+      "sha256": "564459a89c3d5139e915a3e6f31231af39bc15b522480859818ee16d1278d39d",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 59,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p60.png",
+      "sha256": "19cc034872472d478a752a41c2c05d2027eff4ebebd65130a15fb2e87d59a130",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 60,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p61.png",
+      "sha256": "f94404f0ada21ab33874b621d54fb635f99c6a9f0a66206a8e00d3cdb7d67556",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 61,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p62.png",
+      "sha256": "8cd7c44752559511b0afc412fdbeb40c208c3bdcbfa6283eabff4f92d4486272",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 62,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p63.png",
+      "sha256": "b932ead7e34c2c76b3a065a52606234eb725f71f510bcd55982cfbfd144eba31",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 63,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p64.png",
+      "sha256": "18429486a61a4fb9bcfd5f03be62516fea4472bb2d46a3fe9c3992b5eb80856a",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 64,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-question-p65.png",
+      "sha256": "4d235e38edd35a46e7a3081f982baa7de12ff975bad7cbe2b942269b38d6226e",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/question.pdf",
+      "pdfPage": 65,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.2760009765625,
+        841.8900146484375
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2025-answer-p01.png",
+      "sha256": "7e11d6e17f641406ed9e61dba3eeb9d422c46aefc2afcfda052ebcd733f7e316",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2025tanto/answer.pdf",
+      "pdfPage": 1,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.219970703125,
+        842.0
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p02.png",
+      "sha256": "3105e92d3208e6ebf0ff81253275f06d899c16447ef130358c6211684f558020",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 2,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p03.png",
+      "sha256": "147f8e098bc2d3170ebe96811be917d15361e3bf4b4990d110c8b29eee3d2066",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 3,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p04.png",
+      "sha256": "718a0fd92ef609709c768f6c1ecbfac7cdfceb52a173b9b9ebec5c81613eb849",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 4,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p05.png",
+      "sha256": "6490fc8b1091ced424df92b481d3ccb47febff0e6cd61d4ec9bacc7c7451fc75",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 5,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p06.png",
+      "sha256": "b9ec22d93a9a5caa98cae5630fea1f2534a56b66278b17d732303fe4980e8221",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 6,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p07.png",
+      "sha256": "ad343104032f04546167a15ef962919e6fd775f7535ff95e80963a5391216bf9",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 7,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p08.png",
+      "sha256": "39a6030dee6539fe0b99e268945ca829ab89e7aa33280a51755d6a1210304513",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 8,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p09.png",
+      "sha256": "77fceea7202ef6e736c6d337c64ee7d0de9602f9b6ef3affeb59fff7c02171db",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 9,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p10.png",
+      "sha256": "f6dc3403829d93a6d54efe904421ed5eaa77ac7fc17efe23db879ec47d8b1594",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 10,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p11.png",
+      "sha256": "6a712226e4c5b8e7e63fb467619d6288fee19f9c59388adce370ddfdade0751a",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 11,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p12.png",
+      "sha256": "5ea509ace00f3334b8e4833f6b0293cd424666336f7aa0613e59ddece3c62423",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 12,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p13.png",
+      "sha256": "30487e1e26b8d7a767bc37016ad0cf31c0a6b25e077d07cb1cf80d0851539c97",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 13,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p14.png",
+      "sha256": "641c5b335e87f470d2f74653431c1d981bd5933480fd48ce36f77ce897054e69",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 14,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p15.png",
+      "sha256": "e6b6fb959ec37c26d30f450cda92adb4ace980abb87d993f91973717988936ac",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 15,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p16.png",
+      "sha256": "c137d9215ca55b3b711f6061e55da54aea08e53b676bd8999863c0c91efb8f7f",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 16,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p17.png",
+      "sha256": "caa7f729226021cae2caa8bc99097189c4bdb706fad473a9bc5ece5e6c31226f",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 17,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p18.png",
+      "sha256": "84510cd0d0655961ae2e8551968b03f034207c10e3e2f9e08b68ba62249fb580",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 18,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p19.png",
+      "sha256": "c9e6d07f149f72a1babaaf8365e6db20a9fa46aa309bea7fe3c41d374f091476",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 19,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p20.png",
+      "sha256": "8980d68d8749cbc6c1cfc79495979d6e1c335d39bac802b456114444fe1221a8",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 20,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p21.png",
+      "sha256": "21ec47230e06bf72f8632c1d47c7ed99e55066ad4e4cd1768e934297d3a0e8e3",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 21,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p22.png",
+      "sha256": "bcf0df6e3ba1a52c459fdd71b28ef2c879d21acbdf8561269195ec7e7322fe48",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 22,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p23.png",
+      "sha256": "1aed9495bd80129fe89228207bb5807fd7e726c7b1f459a5d49635792dd58313",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 23,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p24.png",
+      "sha256": "7f9cd94fe47c19f95125128ee46621483e2417e3242e69d9ff5f57116d6cf576",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 24,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p25.png",
+      "sha256": "b776ddf6ec731f0e619978166d6f994fbec6e0748ec50185324f19f6e30c2156",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 25,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p26.png",
+      "sha256": "023b8b60288850c0968080b6a5481b4819f9b78ee3198fc895a53983fd781da2",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 26,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p27.png",
+      "sha256": "9616c86a41c9a2a10b99cc03aab12f538f2956111ba39f13b1209c89080f736e",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 27,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p28.png",
+      "sha256": "f7c223a190567af0c97fc5606b10b6a878b442a0a8383d57eb607a9ab4645901",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 28,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p29.png",
+      "sha256": "2c1fff684e4e4f39f632d386c79690a16513410a0935a2e99710604feefc74fb",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 29,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p30.png",
+      "sha256": "7c9ec636bfee978ccb430db2b8cb8629250a9ffb2d33c6a255e3c3f61b2a401b",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 30,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p31.png",
+      "sha256": "bb5122817fca14febec8e2e9fade961ed14cf8272e86384525ab0e7de73c331d",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 31,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p32.png",
+      "sha256": "1807a5b15f69e11c99f2f9a8b0c577a8e5385c0dbda4e87b5d0c2a28a10bc544",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 32,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p33.png",
+      "sha256": "be59dd5ab24499a180aab18fd29a1545289892a909851ec162ac4a531297cc1c",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 33,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p34.png",
+      "sha256": "d4d6ec023eb783daa21538f07830326e9379cf00ab6f8085928c70dda01b2095",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 34,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p35.png",
+      "sha256": "10cb1d41aa46ad527d624fe5dbaff12347021f546ffda267cd8d12f7edc8430f",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 35,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p36.png",
+      "sha256": "15149d4ad48861b7c58a6f0aed46298d1c5fcd478ccf7a133e467d8076b23eae",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 36,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p37.png",
+      "sha256": "a259b9ab1971dfc62f730d65bb74710d046cc0f2b57c0ff1ec61da4e586539c1",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 37,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p38.png",
+      "sha256": "3eaf59d51b09230d7b4e27ab7a4badf02017c028edc3376000e536d21ac6e5d1",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 38,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p39.png",
+      "sha256": "a3d23ee990d425570daace71f05357ac6fe69f7c9c4f08c0cbaf8483685aa0ce",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 39,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p40.png",
+      "sha256": "d0eed088e25d33fd4094bbc0e1f8e52cd5e0f8b0ab210c0a8ae16d1ae958d4be",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 40,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p41.png",
+      "sha256": "77bae60692ba2ac3ed0ffee9fb204c5e5e0fafab83060815a121d9f15a484252",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 41,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p42.png",
+      "sha256": "8397f638505b74fa31d38881fa59884ec1a77eae48fb7b0a82298aaf7964e507",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 42,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p43.png",
+      "sha256": "4507f63250f0bf94b2f4b02b977b69b52ee32d2016d8ce0ba6ffe3a8ba12c02f",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 43,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p44.png",
+      "sha256": "e25c4a1ac72d144186bed03c02e3f6369bb048e8a13883da881624485b2f27d5",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 44,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p45.png",
+      "sha256": "8b3ecb7b45350b20ee46bfe625a77104963177e0940246bc674f5205f581b20c",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 45,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p46.png",
+      "sha256": "fd721e2e8fe976cece579a6b632b9b799140a2e852d167e2c37893af603ae434",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 46,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p47.png",
+      "sha256": "630e9ceeae8d0d2f4bc07d73a19b9e6f2ede06f265ea4a8cc9d76d0cf09b98ad",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 47,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p48.png",
+      "sha256": "4115282dab4501e4f965fa67723b8487782571dcd5423d8c61fdc8e2323afd53",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 48,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p49.png",
+      "sha256": "d87481cade20b5e3815f7d165fe97f13183f3f65b2570fb3e7cb4a5a36da131d",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 49,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p50.png",
+      "sha256": "2f277f3896624c16752764925a3c257e85f6034d465e6de45416128f08005464",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 50,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p51.png",
+      "sha256": "dba00f7717632d28cc1829c471d42deb6ea0a805dab6a81ff56a5bc225c8590d",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 51,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p52.png",
+      "sha256": "e1b76ea12f90a16f37a3405eb3b87462ee56ee745794f2377291ac82d59c342b",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 52,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p53.png",
+      "sha256": "5a5d6535e53dd91496d07daa0db164cb8a394428d081042a0cc11df4cb9d4f1a",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 53,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p54.png",
+      "sha256": "a2910cfbf4eda741f448add8272611db99165bc8c3839364d039c615530bec7b",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 54,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p55.png",
+      "sha256": "1f7f9911e3aeb3494f5326ae486b45d32b878ee2f84b97cac624a3b4db9d4449",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 55,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p56.png",
+      "sha256": "ac039aba0e90f7691bb1e9a46aae4840a9131bae4a4d5002f24e0efad448105d",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 56,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p57.png",
+      "sha256": "a41fcc73f7fe4dde32662680bb66e1046b4e36790c08c74ae6a6f2a404b15e21",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 57,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p58.png",
+      "sha256": "cbbdb74ac6faf3cda122243e3f3fcbeb4cb8d4f170886c0d65b47f057ec78a27",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 58,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p59.png",
+      "sha256": "908c80ca20a983af62b047c62500bda6475bae072a1402259df4497272e5c2b6",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 59,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p60.png",
+      "sha256": "fb12e37760639b1157ee04d9bd8d2b9ec08d58b4d173e783a0fda76ef0071ee5",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 60,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p61.png",
+      "sha256": "ef49f435f436315f3f2092eb881cecb290b0d8e166959313d2df7900df405d33",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 61,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p62.png",
+      "sha256": "e2a8564e8b2a6e7061fca46f8253e599c3bf1e91e55d8a728f1858d77b2d7995",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 62,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p63.png",
+      "sha256": "e70e05b86f2946cd0300abc7a9483d716afec68be2fa3482d200a48ede291e70",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 63,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p64.png",
+      "sha256": "154caf1bed1e96314e03a80e12f094d0695c0f28d3f626ded1e9c42e8950fca7",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 64,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-question-p65.png",
+      "sha256": "72fa4b3cbac07a373cb43dd5ae2aaccf2785dbbaf66b577aa44f9d3717431a77",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/question.pdf",
+      "pdfPage": 65,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.3200073242188,
+        841.9199829101562
+      ],
+      "renderScale": 1.3
+    },
+    {
+      "path": "data/qualification-staging/benrishi/assets/2026-answer-p01.png",
+      "sha256": "18aeb604ad815d3f86509d033a009f8a5a8dd324db93a0b46cb12c1f68c6a9ab",
+      "pdfUrl": "https://www.jpo.go.jp/news/benrishi/shiken-mondai/document/2026tanto/answer.pdf",
+      "pdfPage": 1,
+      "clipRectPoints": [
+        0.0,
+        0.0,
+        595.219970703125,
+        842.0
+      ],
+      "renderScale": 1.3
+    }
+  ],
+  "visualObjectAudit": [
+    {
+      "year": 2025,
+      "page": 23,
+      "images": 0,
+      "drawings": 176
+    },
+    {
+      "year": 2025,
+      "page": 24,
+      "images": 0,
+      "drawings": 97
+    }
+  ],
+  "referenceSources": [
+    {
+      "kind": "2026-exam-guide",
+      "url": "https://www.jpo.go.jp/news/benrishi/document/jukenannai/01jukenannai.pdf",
+      "method": "GET",
+      "status": 200,
+      "bytes": 4168717,
+      "sha256": "b43e0e26d00de546320b20f0964fca590e35e1539229e5dbba68608cd20996ae",
+      "checkedOn": "2026-11-04",
+      "pdfPage": 1,
+      "examDate": "2026-05-17",
+      "lawRule": "試験実施日に施行されている特許法等に関して出題する旨を表紙で確認",
+      "coverImage": "data/qualification-staging/benrishi/2026-guide-cover.png",
+      "coverImageSha256": "b97846aaed4a227ba4e2f208d9171163d815506873ff794bc9a7b3fab7e94132"
+    }
+  ]
+}

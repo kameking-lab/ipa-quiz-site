@@ -50,8 +50,9 @@ describe("第27回（令和6年度）精神保健福祉士の公式照合", () =
     expect(SEISHIN_2024.every((q) => q.examDate === "2025-02-01/2025-02-02" && q.season === "annual")).toBe(true);
     expect(EXAM_CONFIGS.seishin.yearRange).toEqual({ start: 2024, end: 2025 });
     expect(sources).toMatchObject({ round: 27, fiscalYear: 2024, examDate: "2025-02-01/2025-02-02" });
-    // 社会福祉士第37回（同じ共通科目を含む）は別レーンの HOLD のまま。
-    expect(SHAKAI_QUESTIONS.every((q) => q.year === 2025)).toBe(true);
+    // 社会福祉士第37回は共通科目をこのJSONと共有する（保留3問は社会福祉士側でも出さない）。
+    const shakai2024 = SHAKAI_QUESTIONS.filter((q) => q.year === 2024);
+    expect(shakai2024.filter((q) => q.session === "kyotsu").map((q) => q.qNumber)).toEqual(range(1, 84).filter((n) => !HELD_KYOTSU.includes(n)));
   });
 
   it("保留問題は公開データ・全問題プールのどこにも出さず、理由を台帳に残す", () => {
@@ -148,8 +149,13 @@ describe("第27回（令和6年度）精神保健福祉士の公式照合", () =
         expect(q.lastUpdated, q.id).toBe("2026-09-29");
         const [, , exam, yearSeason, section, qnum] = questionPagePath(q).split("/");
         expect(findQuestionByRoute(ALL_SEISHIN_QUESTIONS, { exam: exam!, yearSeason: yearSeason!, section: section!, qnum: qnum! })?.id).toBe(q.id);
-        // 社会福祉士第37回は未公開なので、第27回の共通科目は精神保健福祉士側が正規URL。
-        expect(getQuestionCanonicalRepresentative(ALL_QUESTIONS, q).id, q.id).toBe(q.id);
+        // 共通科目は社会福祉士第37回と同一問題なので社会福祉士側が正規URL。専門科目は自分自身。
+        const representative = getQuestionCanonicalRepresentative(ALL_QUESTIONS, q);
+        if (session === "kyotsu") {
+          expect(representative.id, q.id).toBe(`shakai-2024-annual-kyotsu-q${q.qNumber}`);
+        } else {
+          expect(representative.id, q.id).toBe(q.id);
+        }
       }
     }
   });

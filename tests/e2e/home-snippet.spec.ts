@@ -55,22 +55,14 @@ test.describe("home SERP snippet", () => {
     }));
     const list = nodes.find(node => node["@type"] === "ItemList");
     expect(list?.numberOfItems).toBe(list?.itemListElement.length);
-    expect(list?.itemListElement.length).toBeGreaterThanOrEqual(29);
-    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/ip"))).toBe(true);
-    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/fp3"))).toBe(true);
-    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/denko2"))).toBe(true);
-    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/denken3"))).toBe(true);
-    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/denken2"))).toBe(true);
-    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/takken"))).toBe(true);
-    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/civil2"))).toBe(true);
-    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/kankoji2"))).toBe(true);
-    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/zoen2"))).toBe(true);
-    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/tsushin2"))).toBe(true);
-    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/kaigo"))).toBe(true);
-    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/civil1"))).toBe(true);
-    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/denko1"))).toBe(true);
-    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/shakai"))).toBe(true);
-    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/seishin"))).toBe(true);
-    expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith("/tohan"))).toBe(true);
+    expect(list?.itemListElement).toHaveLength(13);
+    for (const code of ["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au"]) {
+      expect(list?.itemListElement.some((item: { url: string }) => item.url.endsWith(`/${code}`))).toBe(true);
+    }
+    // The all-qualification catalog lives at the root; /ipa retains its IPA list.
+    await page.goto("/");
+    for (const code of ["fp3", "denko2", "denken3", "denken2", "takken", "civil2", "kankoji2", "zoen2", "tsushin2", "kaigo", "civil1", "denko1", "shakai", "seishin", "tohan", "benrishi", "junkango-kansai"]) {
+      await expect(page.locator(`a[href="/${code}"]`).first()).toBeAttached();
+    }
   });
 });

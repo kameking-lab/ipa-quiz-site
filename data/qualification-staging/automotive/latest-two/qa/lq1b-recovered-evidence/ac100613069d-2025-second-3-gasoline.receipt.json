@@ -1,0 +1,3612 @@
+{
+  "schemaVersion": 1,
+  "reviewKind": "independent-author-external-technical-content-review",
+  "reviewer": "Codex; no Claude used",
+  "createdAtUtc": "2026-10-23T07:53:39.168Z",
+  "batch": "2025-second-3-gasoline",
+  "fixedRepository": "kameking-lab/ipa-quiz-site",
+  "fixedPr": 731,
+  "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+  "scope": {
+    "uniqueQuestions": 30,
+    "choiceReasonsReviewed": 120,
+    "uniqueQuestionsAccepted": 18,
+    "acceptedQuestionChoiceReasons": 72,
+    "heldQuestions": 12,
+    "acceptedRepairFields": 0,
+    "heldRepairProposalFields": 1
+  },
+  "acceptanceRule": "All four existing reasons inspected for technical meaning and application conditions; originals, key, required figures and technical evidence/explicit derivation must correspond. Mechanical checks alone do not confer acceptance.",
+  "rightsHold": false,
+  "publication": false,
+  "upstreamWorkingTreeModified": false,
+  "rows": [
+    {
+      "id": "jidosha-2025-second-3-gasoline-q01",
+      "manuscriptSha256": "8b53918556d8141146be13455cf158ba189b0bc97ac27fd61be7e82bda5561fa",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          2
+        ],
+        "locator": "No.1",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 1,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p2:No1",
+        "HKS-valve-spring:取付向き",
+        "derivation:4行程弁周期・カム半径差"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p2:No1"
+        },
+        {
+          "kind": "unresolved-alias",
+          "id": "HKS-valve-spring",
+          "locator": "取付向き"
+        },
+        {
+          "kind": "explicit-derivation",
+          "locator": "4行程弁周期・カム半径差"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) バルブ・スプリングには、高速時の異常振動などを防ぐため、シリンダ・ヘッド側のピッチを広くした不等ピッチのスプリングが用いられている。",
+          "reason": "不等ピッチの狭い側をシリンダ・ヘッド側にする。",
+          "reasonSha256": "f843bd58a22e1be4c3f5f1c6c44813a90254c01a64de85852b8c12fc81b0a283",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "不等ピッチの密側をヘッド側へ置く。",
+          "evidence": [
+            "official-original:p2:No1",
+            "HKS-valve-spring:取付向き",
+            "derivation:4行程弁周期・カム半径差"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) カムシャフトのカムは卵形状で、カムの長径をカム・リフトという。",
+          "reason": "カム・リフトは長径そのものではなく、山高さと基円半径との差。",
+          "reasonSha256": "af28f140e6e87e230ce90c33e2372e31404382650de538dbf69e8e456c5b31a4",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "カムリフトは長径そのものではなく長径と基礎円直径の差。原稿の『山高さと基円半径』は基準を混在させている。",
+          "evidence": [
+            "official-original:p2:No1",
+            "HKS-valve-spring:取付向き",
+            "derivation:4行程弁周期・カム半径差"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) カムシャフト・タイミング・スプロケットは、クランクシャフト・タイミング・スプロケットの1/2の回転速度で回る。",
+          "reason": "カムシャフトの回転速度はクランクシャフトの半分。",
+          "reasonSha256": "a77e5a64e4c9ef29d1fd0e8f483b2f25183c4f00a2a28ffa5a074971e971eef8",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "4行程720度に対して弁作動は一周期なのでカムは半速。",
+          "evidence": [
+            "official-original:p2:No1",
+            "HKS-valve-spring:取付向き",
+            "derivation:4行程弁周期・カム半径差"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) エキゾースト・バルブのバルブ・ヘッドの外径は、一般に排気効率を向上させるため、インテーク・バルブより大きい。",
+          "reason": "一般に吸気バルブのヘッド径が排気バルブより大きい。",
+          "reasonSha256": "e6af7bb911d5bf9e41dd97ca43b2f31ccca2fab0e4979376215b62afade2198d",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "一般に吸気側の傘径が大きい。",
+          "evidence": [
+            "official-original:p2:No1",
+            "HKS-valve-spring:取付向き",
+            "derivation:4行程弁周期・カム半径差"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "吸排気バルブ径の一般的大小の一次設計根拠が未確保。リフト修復案も全肢受入れに含めず保存。"
+      ],
+      "repairs": [
+        {
+          "field": "choiceExplanations.イ",
+          "before": "カム・リフトは長径そのものではなく、山高さと基円半径との差。",
+          "after": "カム・リフトは、カムの長径と基礎円の直径との差。",
+          "why": "山高さと基円半径という基準の混在を避け、測定可能な二つの全長寸法で示す。"
+        }
+      ],
+      "candidateManuscriptSha256": "85a1a0dd4a305e2edcb5cf46b3cf2e091c47c7d130f06f911b7549d4552ba733",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q02",
+      "manuscriptSha256": "a3396bc077f7ec308fe0daae6d40fcd9a626fd844b24fa7c77abb2b81722d8cd",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          2
+        ],
+        "locator": "No.2",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 2,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p2:No2",
+        "Motorservice-rings:5-6:断面分類;9:3ピース;13:クラウン面;18:ねじれ"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p2:No2"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "Motorservice-rings",
+          "url": "https://www.ms-motorservice.com/MediaAssets/piston-rings-for-combustion-engines_53094.pdf",
+          "localFile": "sources/Motorservice-piston-rings.pdf",
+          "sha256": "66a559332995e0d25f241cc05a8d88c179c5dce3ce4cb080fadf2a3b981bf196",
+          "locator": "5-6:断面分類;9:3ピース;13:クラウン面;18:ねじれ"
+        }
+      ],
+      "conditions": "設問の組合せはサイドレールを用いる3ピース。コイルばねを用いる2ピースと区別。",
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) バレル・フェース型は、しゅう動面が円弧状になっているため、初期なじみの際の異常摩耗を防止できる。",
+          "reason": "バレル面は初期なじみ時の異常摩耗を抑える。",
+          "reasonSha256": "876c068eaa71542ab9d6f0731a992b57272d69e4f49850179269fa6cdb9bc0f6",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "円弧面をあらかじめ付けて初期の過大ななじみ摩耗を抑える。",
+          "evidence": [
+            "official-original:p2:No2",
+            "Motorservice-rings:5-6:断面分類;9:3ピース;13:クラウン面;18:ねじれ"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) アンダ・カット型は、最も基本的な形状で、気密性、熱伝導性が優れている。",
+          "reason": "基本形はレクタンギュラ型。",
+          "reasonSha256": "dc2435e96cdbbdafd4c2bca5092418b80077d97fb4c814c95127600bfda978ab",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "最も基本的な矩形断面はレクタンギュラ。アンダカットは油かき落とし用段付き形状。",
+          "evidence": [
+            "official-original:p2:No2",
+            "Motorservice-rings:5-6:断面分類;9:3ピース;13:クラウン面;18:ねじれ"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) インナ・ベベル型は、オイルをかき落とす性能に優れているので、一般にトップ・リング又はセカンド・リングに使用されている。",
+          "reason": "インナ・ベベル型はねじれ作用で油をかき落とす。",
+          "reasonSha256": "1963b70b72c4c2ac5218176aac4689581eec236988b8e402a92d9a7d40efacf3",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "内側面取りで装着時にねじれ、油制御に寄与する。",
+          "evidence": [
+            "official-original:p2:No2",
+            "Motorservice-rings:5-6:断面分類;9:3ピース;13:クラウン面;18:ねじれ"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 組み合わせ型オイル・リングは、サイド・レールとスペーサ・エキスパンダを組み合わせている。",
+          "reason": "サイド・レールとスペーサ・エキスパンダで構成する。",
+          "reasonSha256": "f37a313a5d0ce13a2c4e9bee9d0fdb1fa9078fd3de4497e31431b3f71955b65d",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "3ピース油リングは薄い上下レールとスペーサエキスパンダ。",
+          "evidence": [
+            "official-original:p2:No2",
+            "Motorservice-rings:5-6:断面分類;9:3ピース;13:クラウン面;18:ねじれ"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "a3396bc077f7ec308fe0daae6d40fcd9a626fd844b24fa7c77abb2b81722d8cd",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q03",
+      "manuscriptSha256": "4be073d6a87c89c6dc0cd3af9ce57f657e1a73e904158162e0be5dc1a707e288",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          2
+        ],
+        "locator": "No.3",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 3,
+        "answer": "エ",
+        "number": "4",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p2:No3",
+        "DENSO:11-16:リングギヤかみあい",
+        "derivation:回転慣性による変動の平滑化"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p2:No3"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "DENSO",
+          "url": "https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf",
+          "localFile": "sources/DENSO-Starter-Alternator-Manual-English.pdf",
+          "sha256": "fb1fca26e8c4d4197a95de5db598f4fee3389ec706ef9a52d884104e7ae5fe53",
+          "locator": "11-16:リングギヤかみあい"
+        },
+        {
+          "kind": "explicit-derivation",
+          "locator": "回転慣性による変動の平滑化"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) リング・ギヤには、一般に炭素鋼製のスパー・ギヤが用いられる。",
+          "reason": "炭素鋼製の平歯車が用いられる。",
+          "reasonSha256": "a6bb5e872284b98ff80a324166182393ef5638d93b7678d3052335ae664c7a19",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "リングギヤは平行軸の平歯車として始動ピニオンとかみ合う。",
+          "evidence": [
+            "official-original:p2:No3",
+            "DENSO:11-16:リングギヤかみあい",
+            "derivation:回転慣性による変動の平滑化"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) フライホイールの振れの点検は、ダイヤル・ゲージを用いて測定する。",
+          "reason": "振れはダイヤル・ゲージで測る。",
+          "reasonSha256": "d46071847e3185a0b83a7a056fc9a75dee890470d003524804f8662a4ac705d5",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "端面の回転振れをダイヤルゲージで追う。",
+          "evidence": [
+            "official-original:p2:No3",
+            "DENSO:11-16:リングギヤかみあい",
+            "derivation:回転慣性による変動の平滑化"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) フライホイールは、燃焼（膨張）によって変化するクランクシャフトの回転力を平均化する働きをする。",
+          "reason": "慣性で回転変動を平滑化する。",
+          "reasonSha256": "a57ba48af9e225993bad7f1ef2ea9c3b8aa044fbd23a32f59a20c3d871781328",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "回転慣性で燃焼による回転変動を平滑化する。",
+          "evidence": [
+            "official-original:p2:No3",
+            "DENSO:11-16:リングギヤかみあい",
+            "derivation:回転慣性による変動の平滑化"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) リング・ギヤは、フライホイールの外周にボルトで固定されている。",
+          "reason": "ボルト固定ではなく焼きばめが一般的。",
+          "reasonSha256": "f621628d7465b2735a19a8277dc96781a82acb63690cb4d11ca52ff26b4002af",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "通常は外周へ焼きばめ。",
+          "evidence": [
+            "official-original:p2:No3",
+            "DENSO:11-16:リングギヤかみあい",
+            "derivation:回転慣性による変動の平滑化"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "炭素鋼製平歯車・焼きばめという一般的製造仕様と振れ点検手順の一次資料が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "4be073d6a87c89c6dc0cd3af9ce57f657e1a73e904158162e0be5dc1a707e288",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q04",
+      "manuscriptSha256": "5b8c88774b44f0f04d8f168787cdd627ba7e82dbb7f08b0c895759201ee991cc",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          2
+        ],
+        "locator": "No.4",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 4,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [
+        {
+          "bookId": "jaspa-2025-second-3-gasoline",
+          "physicalPage": 2,
+          "pdfSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+          "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf#page=2",
+          "originalQuestionIds": [
+            "jidosha-2025-second-3-gasoline-q04"
+          ],
+          "relativePath": "figures/jaspa-2025-second-3-gasoline-p02.webp",
+          "width": 1490,
+          "height": 2106,
+          "sha256": "813da3652c801e461c4beb111cec6f6fd3986af6aeb0802d86d85189c7eedf3d",
+          "bytes": 212268,
+          "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+          "actualSha256": "813da3652c801e461c4beb111cec6f6fd3986af6aeb0802d86d85189c7eedf3d",
+          "visuallyReviewed": true
+        }
+      ],
+      "evidence": [
+        "official-original:p2:No4:A/B/C/D矢印",
+        "derivation:中心軸とコンロッド大端の偏心取付軸を原図で区別"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p2:No4:A/B/C/D矢印"
+        },
+        {
+          "kind": "explicit-derivation",
+          "locator": "中心軸とコンロッド大端の偏心取付軸を原図で区別"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) A",
+          "reason": "Aはクランク・ピンではない。",
+          "reasonSha256": "0d0f65d3ba6912e10efd9ea11fc1d4fecb75162f0828e5f079155fed07ecf0ac",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Aは問われた偏心したコンロッド取付軸部ではない。",
+          "evidence": [
+            "official-original:p2:No4:A/B/C/D矢印",
+            "derivation:中心軸とコンロッド大端の偏心取付軸を原図で区別"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) B",
+          "reason": "Bはクランク・ピンではない。",
+          "reasonSha256": "8ba7d5e92a559f7f15161cb27b449d22b3d5027c41479078a9cd1dda61b22f36",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Bは広いウェブ/つり合い部を指し、円筒状のピン軸部ではない。",
+          "evidence": [
+            "official-original:p2:No4:A/B/C/D矢印",
+            "derivation:中心軸とコンロッド大端の偏心取付軸を原図で区別"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) C",
+          "reason": "Cがクランク・ピン。",
+          "reasonSha256": "729891f78dc2d6397397942e3ca0cbfaeef775fbb50fa9fc78c0bf3f8160a5a0",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Cはクランク中心軸から偏心したコンロッド大端取付部。",
+          "evidence": [
+            "official-original:p2:No4:A/B/C/D矢印",
+            "derivation:中心軸とコンロッド大端の偏心取付軸を原図で区別"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) D",
+          "reason": "Dはクランク・ピンではない。",
+          "reasonSha256": "3242ca13cb4c47e8f1b7af85448633560fb948fac0deb4d12ecb0cb53cd629d7",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Dは中心軸側の端部を指し、Cの偏心軸部とは異なる。",
+          "evidence": [
+            "official-original:p2:No4:A/B/C/D矢印",
+            "derivation:中心軸とコンロッド大端の偏心取付軸を原図で区別"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "5b8c88774b44f0f04d8f168787cdd627ba7e82dbb7f08b0c895759201ee991cc",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q05",
+      "manuscriptSha256": "a1cd6fd058a091f639f0ece645e9d5315499fcac7bebdd00d1d14401177d495e",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          3
+        ],
+        "locator": "No.5",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 5,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p3:No5",
+        "ENEOS-gasoline:アンチノック性"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p3:No5"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "ENEOS-gasoline",
+          "url": "https://www.eneos.co.jp/binran/part02/chapter01/section01.html",
+          "localFile": "sources/ENEOS-gasoline.html",
+          "sha256": "0aaed8117eb00b60e2da5cd8a8a71ae2a7018c75f640bcef1b4f254335286216",
+          "locator": "アンチノック性"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 熱勘定とは、有効な仕事に変えられた熱量と、供給された燃料の発熱量との比をいう。",
+          "reason": "この比率は熱効率の定義。",
+          "reasonSha256": "90f7853a35cae72531e10e1a36d8256d271ad8fdca931e37f0404c98aabd3a75",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "有効仕事/投入熱は熱効率。熱勘定は有効仕事・冷却・排気等への熱の配分。",
+          "evidence": [
+            "official-original:p3:No5",
+            "ENEOS-gasoline:アンチノック性"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) ノッキングの害の一つに、異音の発生がある。",
+          "reason": "ノッキングは金属的な異音を伴う。",
+          "reasonSha256": "349024bff967aa132776c5742abb871fbe576d2427728b3d77fcf17ca0320a0d",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "ノックには打音を伴う異常燃焼の害がある。",
+          "evidence": [
+            "official-original:p3:No5",
+            "ENEOS-gasoline:アンチノック性"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 燃料蒸発ガスとは、フューエル・タンクなどの燃料装置から燃料が蒸発し、大気中に放出されるガスをいう。",
+          "reason": "燃料装置からの蒸発成分を指す。",
+          "reasonSha256": "28317df98061cbdef1ac43bcfc217ed2cee936571521a96699cc29f5e2dc6d2e",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "燃料系からの蒸発成分である。",
+          "evidence": [
+            "official-original:p3:No5",
+            "ENEOS-gasoline:アンチノック性"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 一般に始動時、高負荷時などには、理論空燃比より濃い混合気が必要となる。",
+          "reason": "始動時や高負荷時は濃い混合気が必要。",
+          "reasonSha256": "a27b1c1a5736482f402b6bb6031a6361c5fa6fd50c7aa885baadaf971b5a8107",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "従来の火花点火機関で始動や高負荷の増量を行う。",
+          "evidence": [
+            "official-original:p3:No5",
+            "ENEOS-gasoline:アンチノック性"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "熱勘定の定義、蒸発ガスと従来火花点火機関の始動/高負荷増量を示す一次技術図が未確保。直噴等の全運転条件への一般化は避ける。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "a1cd6fd058a091f639f0ece645e9d5315499fcac7bebdd00d1d14401177d495e",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q06",
+      "manuscriptSha256": "9907f16d4ca19054e19f1a14210a741d9af91c57f28d20d955a7a24010b65e95",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          3
+        ],
+        "locator": "No.6",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 6,
+        "answer": "エ",
+        "number": "4",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p3:No6",
+        "HELLA-coil:Primary/secondary construction",
+        "Delphi-coil:約200巻と20000巻の比較"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p3:No6"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "HELLA-coil",
+          "url": "https://www.hella.com/partnerworld/assets/documents/B_1053_Ignition_Coils_Brochure.pdf",
+          "localFile": null,
+          "sha256": null,
+          "locator": "Primary/secondary construction"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "Delphi-coil",
+          "url": "https://www.delphiautoparts.com/resource-center/article/ignition-coils.-design-and-mode-of-operation",
+          "localFile": null,
+          "sha256": null,
+          "locator": "約200巻と20000巻の比較"
+        }
+      ],
+      "conditions": "一般的な電磁誘導式点火コイルの一次/二次比較。",
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 銅線が太く巻き数が多い。",
+          "reason": "太さは合うが巻数が多いは誤り。",
+          "reasonSha256": "c438abcf663d548e716e62e15db51006cdbac357e009d1ce73eb197c9be17db2",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "一次は太いが巻数は二次より少ない。",
+          "evidence": [
+            "official-original:p3:No6",
+            "HELLA-coil:Primary/secondary construction",
+            "Delphi-coil:約200巻と20000巻の比較"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 銅線が細く巻き数が多い。",
+          "reason": "細く巻数が多いのは二次側。",
+          "reasonSha256": "af6f143f89e5891e7003407ebba02d57df3a9afe84646a37c8b0882e07aa4947",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "細い線・多巻数は高電圧の二次側。",
+          "evidence": [
+            "official-original:p3:No6",
+            "HELLA-coil:Primary/secondary construction",
+            "Delphi-coil:約200巻と20000巻の比較"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 銅線が細く巻き数が少ない。",
+          "reason": "巻数は少ないが線は太い。",
+          "reasonSha256": "6dc3405abb6c8aa974c6d0df53b34c47ab1caa45900ef926e332d77941bcc426",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "巻数は合うが一次線は太い。",
+          "evidence": [
+            "official-original:p3:No6",
+            "HELLA-coil:Primary/secondary construction",
+            "Delphi-coil:約200巻と20000巻の比較"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 銅線が太く巻き数が少ない。",
+          "reason": "一次側は太い銅線で巻数が少ない。",
+          "reasonSha256": "64581d2157ad4546d1d8e2e7af055d1b7876b96701c703a6a4771fc69bc90bca",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "一次は低電圧側の太い線・少巻数、二次は細線・多巻数。",
+          "evidence": [
+            "official-original:p3:No6",
+            "HELLA-coil:Primary/secondary construction",
+            "Delphi-coil:約200巻と20000巻の比較"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "9907f16d4ca19054e19f1a14210a741d9af91c57f28d20d955a7a24010b65e95",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q07",
+      "manuscriptSha256": "56838328c2805de79ea088f219b7bffacdbe2a90c48497bf10217269c3fb0378",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          3
+        ],
+        "locator": "No.7",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 7,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p3:No7",
+        "derivation:点火1-3-4-2、間隔180度、各気筒720度周期"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p3:No7"
+        },
+        {
+          "kind": "explicit-derivation",
+          "locator": "点火1-3-4-2、間隔180度、各気筒720度周期"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 第1シリンダ",
+          "reason": "第1シリンダが排気上死点。",
+          "reasonSha256": "038fcfdd3cbff778ee0014808a2e652c3f44ff6a239c69ff84d0af627ccba734",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "第2の最終位相540度から第1は180度後なので位相360度、排気TDC。",
+          "evidence": [
+            "official-original:p3:No7",
+            "derivation:点火1-3-4-2、間隔180度、各気筒720度周期"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 第2シリンダ",
+          "reason": "第2シリンダは吸入下死点。",
+          "reasonSha256": "54335ff5c59e8f0eb44a746f8b8c06d6bcc4bfe56d88b99bc8a13794167e3e61",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "第2は180+360=540度で吸入BDC。",
+          "evidence": [
+            "official-original:p3:No7",
+            "derivation:点火1-3-4-2、間隔180度、各気筒720度周期"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 第3シリンダ",
+          "reason": "第3シリンダは膨張下死点。",
+          "reasonSha256": "62598cf5c89ffc17ba133247f15207b53df5544b3377e849cca3ab780cca6296",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "第3は位相180度で膨張BDC。",
+          "evidence": [
+            "official-original:p3:No7",
+            "derivation:点火1-3-4-2、間隔180度、各気筒720度周期"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 第4シリンダ",
+          "reason": "第4シリンダは圧縮上死点。",
+          "reasonSha256": "d47bc282842bb0e2bc8e753191b49f8a647255dbec9163078be1d322d803ec9e",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "第4は位相0度で圧縮TDC。",
+          "evidence": [
+            "official-original:p3:No7",
+            "derivation:点火1-3-4-2、間隔180度、各気筒720度周期"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "56838328c2805de79ea088f219b7bffacdbe2a90c48497bf10217269c3fb0378",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q08",
+      "manuscriptSha256": "62e3f53966e4e55234160f4a23baedacb915b5d59f655aed0ed141ba327f38c6",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          3
+        ],
+        "locator": "No.8",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 8,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p3:No8",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p3:No8"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) オイル・パン内部のバッフル・プレートは、オイル・パン底部にたまった鉄粉を吸着する働きがある。",
+          "reason": "バッフルは油面の揺動を抑える。",
+          "reasonSha256": "f4e3d2a8984f8af5fc48f5c99b8a2ff008c4b153e649b8be038dc38d5b064062",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "バッフルは油面移動を抑え、鉄粉吸着用磁石とは異なる。",
+          "evidence": [
+            "official-original:p3:No8",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) トロコイド式オイル・ポンプのアウタ・ロータの山とインナ・ロータの山とのすき間をサイド・クリアランスという。",
+          "reason": "そのすき間はチップ・クリアランス。",
+          "reasonSha256": "b2b91fd968d571358bf20a8ac94d048bf61fc810949f81a9b50d219d84d42ca1",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "ロータ歯先同士はチップ隙間。サイドは端面側。",
+          "evidence": [
+            "official-original:p3:No8",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) オイル・ポンプのリリーフ・バルブは、ポンプから圧送されるオイルの圧力が規定値以上になると余分なオイルをオイル・パンなどに戻す。",
+          "reason": "規定圧以上で余剰油を戻す。",
+          "reasonSha256": "c95208ea936309dedf0463ffc23398f5ef37b0c7be41c3a077f0b935a554de0e",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "過圧時に油を逃がす調圧弁である。",
+          "evidence": [
+            "official-original:p3:No8",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) オイル・プレッシャ・スイッチは、油圧が規定値以上になると、コンビネーション・メータ内のオイル・プレッシャ・ランプを点灯させる。",
+          "reason": "油圧低下時に警告ランプを点灯させる。",
+          "reasonSha256": "17f1a16d018eeeb4fb669213e22f48a931d5fc8b0f6633ed437ccd816fe92f8a",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "通常の油圧警告は低圧側で点灯。",
+          "evidence": [
+            "official-original:p3:No8",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "トロコイド各隙間定義、バッフルと油圧スイッチ・リリーフ系統を直接示す一次構造図が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "62e3f53966e4e55234160f4a23baedacb915b5d59f655aed0ed141ba327f38c6",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q09",
+      "manuscriptSha256": "bc6c189d9e60304e8ed77ddd486e2197ab28fc6dae012816289175bbbaf16bce",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          3
+        ],
+        "locator": "No.9",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 9,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p3:No9",
+        "NTCL-element:低温閉弁・昇温開弁"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p3:No9"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "NTCL-element",
+          "url": "https://www.ntcl.co.jp/products/thermo_element.html",
+          "localFile": null,
+          "sha256": null,
+          "locator": "低温閉弁・昇温開弁"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) サーモスタットの取り付け位置による水温制御の方法には、出口制御式と入口制御式とがある。",
+          "reason": "入口・出口制御式がある。",
+          "reasonSha256": "3a5bcc8495e58c4fcf2112a9c9f4d887633abeb52e7ea1775b00894381d37e8f",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "入口側/出口側の配置による方式がある。",
+          "evidence": [
+            "official-original:p3:No9",
+            "NTCL-element:低温閉弁・昇温開弁"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 冷却水温度が低いときは、スプリングのばね力によってバルブは開いている。",
+          "reason": "低温時は主バルブが閉じる。",
+          "reasonSha256": "2cb9bc0a2e0bf60196277bd03b7a1d50913692dcd3043a28ea98de8b863e3bbc",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "低温で主弁は閉じる。",
+          "evidence": [
+            "official-original:p3:No9",
+            "NTCL-element:低温閉弁・昇温開弁"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 冷却水温度が低くなると、液体のワックスが固体となって収縮し、圧縮されていた合成ゴムは元の状態に戻る。",
+          "reason": "冷えるとワックスが収縮する。",
+          "reasonSha256": "1b72c39267021fedb9765ae4dc46d48bb82f1c05b589d7b340dc0a6ee93e6f09",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "ワックスは冷却で固化収縮し駆動部が戻る。",
+          "evidence": [
+            "official-original:p3:No9",
+            "NTCL-element:低温閉弁・昇温開弁"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) ジグル・バルブは、冷却水の循環系統内に残留している空気がない場合、浮力と水圧により閉じている。",
+          "reason": "ジグル・バルブはエア抜きに用いられる。",
+          "reasonSha256": "7d9e6bc356ea5d6c9568b09b6ff85d51fb8401a10572a82014c03c79433cd9aa",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "空気がなくなればジグル弁は閉じる。既存理由のエア抜き用途だけでは閉弁条件の根拠にならない。",
+          "evidence": [
+            "official-original:p3:No9",
+            "NTCL-element:低温閉弁・昇温開弁"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "ジグル弁の浮力/水圧による閉鎖と、入口/出口方式の一次対応図が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "bc6c189d9e60304e8ed77ddd486e2197ab28fc6dae012816289175bbbaf16bce",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q10",
+      "manuscriptSha256": "46110631b0813850ec2b9cdaf47c132d4181a9aeb8d6a9c18f3cd3c0073623fd",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          4
+        ],
+        "locator": "No.10",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 10,
+        "answer": "エ",
+        "number": "4",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p4:No10",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p4:No10"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) エレメントが汚れて目詰まりを起こすと吸入空気量が減少し、有害排気ガスが発生する原因になる。",
+          "reason": "目詰まりによる空気不足は排気を悪化させる。",
+          "reasonSha256": "b986ac7ec9e7f58d3552f44da29cb29eb2935cf2b309f7082e0b1f2c7c321696",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "吸気抵抗増大と空気量低下で従来系の混合気/排気が悪化する。",
+          "evidence": [
+            "official-original:p4:No10",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 吸気経路の途中に設けられたレゾネータは、共鳴効果を利用して吸気騒音を小さくする。",
+          "reason": "レゾネータは吸気騒音を下げる。",
+          "reasonSha256": "ff7cd4c7b8c48acb60de1bdc7e40a90cb8cd17bcd529493ac04679f182593155",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "レゾネータは共鳴による騒音低減器。",
+          "evidence": [
+            "official-original:p4:No10",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) エンジンに吸入される空気は、エレメントを通過することによってごみなどが取り除かれる。",
+          "reason": "エレメントが吸気中のごみを除く。",
+          "reasonSha256": "26f28613f14c00870c0df83c3df90d123997d650554ad37bbc06984a3161a694",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "ろ材で吸気中の塵埃を捕集する。",
+          "evidence": [
+            "official-original:p4:No10",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) ビスカス式エレメントの清掃は、エレメントの内側（空気の流れの下流側）から圧縮空気を吹き付けて行う。",
+          "reason": "ビスカス式は圧縮空気清掃の対象ではない。",
+          "reasonSha256": "fe864d7267133d9fea8d2f6ca7dacad1ca69b1cb8cb881c1e6d1422c29829b20",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "粘着油を使うビスカスろ材はエア清掃の対象としない。",
+          "evidence": [
+            "official-original:p4:No10",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "ビスカス式清掃禁止、吸気レゾネータの原理と目詰まり時の排気悪化の適用条件を示す一次資料が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "46110631b0813850ec2b9cdaf47c132d4181a9aeb8d6a9c18f3cd3c0073623fd",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q11",
+      "manuscriptSha256": "36bcff5c70901bd185f89a86f19f03edcd7bc6eb6c8aca56f798cf6ec538f0b5",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          4
+        ],
+        "locator": "No.11",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 11,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p4:No11",
+        "official-key"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p4:No11"
+        },
+        {
+          "kind": "official-key",
+          "locator": "existing independently checked answer table"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) チャコール・キャニスタは、燃料蒸発ガスが大気中に放出されるのを防止している。",
+          "reason": "蒸発ガスを吸着して大気放出を防ぐ。",
+          "reasonSha256": "225aad3598cd750d3670ce49b2d7f3a8216729c57e78d8d11287bc0f9ffebbd7",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "キャニスタは蒸発燃料を活性炭へ吸着する。",
+          "evidence": [
+            "official-original:p4:No11",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) プレッシャ・レギュレータは、インジェクタのソレノイド・コイルへの通電時間を制御している。",
+          "reason": "燃圧調整用であり通電時間を制御しない。",
+          "reasonSha256": "4e8e59830d862926f102157c2999d5cc83501ea6b743fc1b51da1e924b00a7b2",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "レギュレータは燃圧調整、通電時間はECU制御。",
+          "evidence": [
+            "official-original:p4:No11",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) インジェクタのソレノイド・コイルに電流が流れると、ニードル・バルブが全開位置に移動し、燃料が噴射される。",
+          "reason": "通電でニードルが開き噴射する。",
+          "reasonSha256": "cc79027ddd999c193b5dc0c7a212bb2516ba3096ebf1b2cb5d49c9f0d9a35233",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "電磁力でニードルが開く。",
+          "evidence": [
+            "official-original:p4:No11",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) くら型のフューエル・タンクでは、ジェット・ポンプによりサブ室からメーン室に燃料を移送している。",
+          "reason": "ジェット・ポンプでサブ室から移送する。",
+          "reasonSha256": "83470fe80e02030cfa78d956d369ee1f2db2bf072e2046e700d574e9cea530a7",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "サドルタンクのサブ室からメーン室へ移送する。",
+          "evidence": [
+            "official-original:p4:No11",
+            "official-key"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "サドルタンク・ジェットポンプとレギュレータ・電磁噴射弁・蒸発ガス系統を直接対応できる一次燃料系資料が未確保。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "36bcff5c70901bd185f89a86f19f03edcd7bc6eb6c8aca56f798cf6ec538f0b5",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q12",
+      "manuscriptSha256": "864b36b46a005b0efe809a63fc7d6f84d3f30193fdb872d6ea05cc3719297736",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          4
+        ],
+        "locator": "No.12",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 12,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p4:No12",
+        "DENSO:11:overrunning;14:Reduction;17-18:Planetary"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p4:No12"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "DENSO",
+          "url": "https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf",
+          "localFile": "sources/DENSO-Starter-Alternator-Manual-English.pdf",
+          "sha256": "fb1fca26e8c4d4197a95de5db598f4fee3389ec706ef9a52d884104e7ae5fe53",
+          "locator": "11:overrunning;14:Reduction;17-18:Planetary"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) オーバランニング・クラッチは、アーマチュアの回転を増速させる働きをしている。",
+          "reason": "クラッチは逆駆動防止用。",
+          "reasonSha256": "dfa21dca55526608489c62b61f88331b7d23459c1131a02536bc53c26dc02fe2",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "ワンウェイクラッチはエンジン始動後の高速逆駆動を遮り、増速機構ではない。",
+          "evidence": [
+            "official-original:p4:No12",
+            "DENSO:11:overrunning;14:Reduction;17-18:Planetary"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 内接式のリダクション式スタータは、一般にプラネタリ・ギヤ式とも呼ばれている。",
+          "reason": "内接式は遊星歯車式とも呼ばれる。",
+          "reasonSha256": "57b1f81ac7af0acb12831496e175df2a9fe345e93bc86742d494a612e581c295",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "内歯リングと遊星歯車を用いるプラネタリ式が該当。",
+          "evidence": [
+            "official-original:p4:No12",
+            "DENSO:11:overrunning;14:Reduction;17-18:Planetary"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 減速ギヤ部によって、アーマチュアの回転を減速し、駆動トルクを増大させてピニオン・ギヤに伝えている。",
+          "reason": "減速によりトルクを増やす。",
+          "reasonSha256": "a6934f6f09326d83ee20db4dcd53b16f950f852a1166af1681002aa2f2a8e7ab",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "減速歯車比で速度低下とトルク増大を行う。",
+          "evidence": [
+            "official-original:p4:No12",
+            "DENSO:11:overrunning;14:Reduction;17-18:Planetary"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 直結式スタータより小型軽量化ができる利点がある。",
+          "reason": "高回転モータを使えて小型化できる。",
+          "reasonSha256": "6a37f0e4a6c651dcf6aaf95c08fe337d7f35bbebb02da429c31671437adf39ca",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "高回転の小型モータで必要始動トルクを得られる。",
+          "evidence": [
+            "official-original:p4:No12",
+            "DENSO:11:overrunning;14:Reduction;17-18:Planetary"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "864b36b46a005b0efe809a63fc7d6f84d3f30193fdb872d6ea05cc3719297736",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q13",
+      "manuscriptSha256": "438098b86e9030480fa36b75ae9de0dc9aaa76807afa423cf255877c454d64cf",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          4
+        ],
+        "locator": "No.13",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 13,
+        "answer": "エ",
+        "number": "4",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p4:No13",
+        "NTCL-element:実車搭載例・低温閉/昇温開",
+        "KYK-coolant:30-60%希釈時凍結温度",
+        "DENSO:28-30:電動ウォータポンプ・機械駆動に対する制御"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p4:No13"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "NTCL-element",
+          "url": "https://www.ntcl.co.jp/products/thermo_element.html",
+          "localFile": null,
+          "sha256": null,
+          "locator": "実車搭載例・低温閉/昇温開"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "KYK-coolant",
+          "url": "https://www.kykk.jp/products/cat007/%E3%82%B9%E3%83%BC%E3%83%91%E3%83%BC%E3%82%AF%E3%83%BC%E3%83%A9%E3%83%B3%E3%83%88-jis-%E3%83%94%E3%83%B3%E3%82%AF/",
+          "localFile": null,
+          "sha256": null,
+          "locator": "30-60%希釈時凍結温度"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "DENSO",
+          "url": "https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf",
+          "localFile": "sources/DENSO-Starter-Alternator-Manual-English.pdf",
+          "sha256": "fb1fca26e8c4d4197a95de5db598f4fee3389ec706ef9a52d884104e7ae5fe53",
+          "locator": "28-30:電動ウォータポンプ・機械駆動に対する制御"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) サーモスタットは、ラジエータ内に設けられている。",
+          "reason": "サーモスタットは冷却水通路に設ける。",
+          "reasonSha256": "1d415dcab3ca7b7e7b8b622f303f86c6a356dd1320d67d5996f75c134b88f877",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "サーモスタットはエンジン冷却通路側に設け、ラジエータ本体内とはしない。",
+          "evidence": [
+            "official-original:p4:No13",
+            "NTCL-element:実車搭載例・低温閉/昇温開",
+            "KYK-coolant:30-60%希釈時凍結温度",
+            "DENSO:28-30:電動ウォータポンプ・機械駆動に対する制御"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 標準型のサーモスタットのバルブは、冷却水温度が上昇し規定温度に達すると閉じ、冷却水がラジエータを循環して冷却水温度が下がる。",
+          "reason": "温度上昇で主バルブは開く。",
+          "reasonSha256": "1906617b42a0d3aa6548439bf90be860fd706662ff26bd091cef5033ed81b57c",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "設定温度へ上がると主弁を開きラジエータ流路を通す。",
+          "evidence": [
+            "official-original:p4:No13",
+            "NTCL-element:実車搭載例・低温閉/昇温開",
+            "KYK-coolant:30-60%希釈時凍結温度",
+            "DENSO:28-30:電動ウォータポンプ・機械駆動に対する制御"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 冷却水の凍結温度は、不凍液の混合率を30％にしたとき最も低い。",
+          "reason": "最低凍結温度となる混合率は30％ではない。",
+          "reasonSha256": "f00902087e76a70132a1ece92b610c45a867b6305c50051afafed35c7a12b0ed",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "メーカー混合表で30%より60%の凍結温度が低く、30%が最低という文は誤り。",
+          "evidence": [
+            "official-original:p4:No13",
+            "NTCL-element:実車搭載例・低温閉/昇温開",
+            "KYK-coolant:30-60%希釈時凍結温度",
+            "DENSO:28-30:電動ウォータポンプ・機械駆動に対する制御"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 電動式ウォータ・ポンプは、補機駆動用ベルトやタイミング・ベルトによって駆動されるものと比べて、燃費を低減させることができる。",
+          "reason": "電動式は駆動損失を減らし燃費改善に寄与する。",
+          "reasonSha256": "8977c2757955559e1e93abfbe0b4e243fcd1f3d4b6382d518360939ff18ab19e",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "機械駆動と切り離して必要流量へ制御し不要時の駆動負荷を抑えられる。",
+          "evidence": [
+            "official-original:p4:No13",
+            "NTCL-element:実車搭載例・低温閉/昇温開",
+            "KYK-coolant:30-60%希釈時凍結温度",
+            "DENSO:28-30:電動ウォータポンプ・機械駆動に対する制御"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "438098b86e9030480fa36b75ae9de0dc9aaa76807afa423cf255877c454d64cf",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q14",
+      "manuscriptSha256": "c1a57f4a6e4132d4db5124bf5a38f52c82978cef55c252c8c0fed9ae8bc2e4ca",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          4
+        ],
+        "locator": "No.14",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 14,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p4:No14",
+        "Bosch-IAT:NTC原理",
+        "Bosch-water-temp:NTC用途",
+        "NXP-MAP:1:シリコンMAPセンサ",
+        "Niterra-wide-range:全領域センサ/ジルコニア系",
+        "Sokken-UEGO:積層ジルコニア"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p4:No14"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "Bosch-IAT",
+          "url": "https://www.bosch-motorsport.com/products/sensors/temperature/temperature-sensor-ntc-m12-l/",
+          "localFile": null,
+          "sha256": null,
+          "locator": "NTC原理"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "Bosch-water-temp",
+          "url": "https://www.bosch-motorsport.com/products/sensors/temperature/temperature-sensor-ntc-m12/",
+          "localFile": null,
+          "sha256": null,
+          "locator": "NTC用途"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "NXP-MAP",
+          "url": "https://www.nxp.com/docs/en/data-sheet/MPXAZ4100A.pdf",
+          "localFile": null,
+          "sha256": null,
+          "locator": "1:シリコンMAPセンサ"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "Niterra-wide-range",
+          "url": "https://www.niterragroup.com/product/sensors_plugs/wide_range_oxygen.html",
+          "localFile": null,
+          "sha256": null,
+          "locator": "全領域センサ/ジルコニア系"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "Sokken-UEGO",
+          "url": "https://www.sokken.co.jp/gas/201011/entry455.html",
+          "localFile": null,
+          "sha256": null,
+          "locator": "積層ジルコニア"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 吸気温センサには、磁気抵抗素子が用いられている。",
+          "reason": "吸気温測定はサーミスタが一般的。",
+          "reasonSha256": "8cd1d1fdd4d690eed9275a0389dc7269b3dd2c1b1e6ae9fb1db74b0d2854aa19",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "吸気温にはNTCの温度依存抵抗を用いる。磁気抵抗素子の用途とは違う。",
+          "evidence": [
+            "official-original:p4:No14",
+            "Bosch-IAT:NTC原理",
+            "Bosch-water-temp:NTC用途",
+            "NXP-MAP:1:シリコンMAPセンサ",
+            "Niterra-wide-range:全領域センサ/ジルコニア系",
+            "Sokken-UEGO:積層ジルコニア"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) バキューム・センサには、半導体が用いられている。",
+          "reason": "圧力検出に半導体素子を用いる。",
+          "reasonSha256": "2a38c8ee80d1884c8080d998f41f73c7df886a69eabec0482ca362298e1420d5",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "MAPはシリコンの圧力依存特性と信号処理を用いる半導体圧力センサ。",
+          "evidence": [
+            "official-original:p4:No14",
+            "Bosch-IAT:NTC原理",
+            "Bosch-water-temp:NTC用途",
+            "NXP-MAP:1:シリコンMAPセンサ",
+            "Niterra-wide-range:全領域センサ/ジルコニア系",
+            "Sokken-UEGO:積層ジルコニア"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 空燃比センサには、ジルコニア素子が用いられている。",
+          "reason": "空燃比センサにジルコニア素子を用いる。",
+          "reasonSha256": "43102db0f1f4e5b6eb7641ece21c01efa57efebb4471d7df14d1cca983b2d19f",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "酸素イオン伝導性ジルコニアを用いる空燃比検出。",
+          "evidence": [
+            "official-original:p4:No14",
+            "Bosch-IAT:NTC原理",
+            "Bosch-water-temp:NTC用途",
+            "NXP-MAP:1:シリコンMAPセンサ",
+            "Niterra-wide-range:全領域センサ/ジルコニア系",
+            "Sokken-UEGO:積層ジルコニア"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 水温センサには、サーミスタが用いられている。",
+          "reason": "水温センサにサーミスタを用いる。",
+          "reasonSha256": "182a849a22bd8d9d5c56ddb5037ba9689734d257d82c051ff9bc0645974b4117",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "水温には温度依存抵抗を使うサーミスタ。",
+          "evidence": [
+            "official-original:p4:No14",
+            "Bosch-IAT:NTC原理",
+            "Bosch-water-temp:NTC用途",
+            "NXP-MAP:1:シリコンMAPセンサ",
+            "Niterra-wide-range:全領域センサ/ジルコニア系",
+            "Sokken-UEGO:積層ジルコニア"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "c1a57f4a6e4132d4db5124bf5a38f52c82978cef55c252c8c0fed9ae8bc2e4ca",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q15",
+      "manuscriptSha256": "adbe3b77b0974d9af80f9cfcbe9303a0f442384cae4da07d82ae95fde0b217de",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          5
+        ],
+        "locator": "No.15",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 15,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p5:No15:特定方式の指定なし",
+        "HKS-muffler:吸音材使用例"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p5:No15:特定方式の指定なし"
+        },
+        {
+          "kind": "unresolved-alias",
+          "id": "HKS-muffler",
+          "locator": "吸音材使用例"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 高温・高圧の排気ガスは、マフラ内の圧力を上げることで消音される。",
+          "reason": "圧力を上げることが消音の目的ではない。",
+          "reasonSha256": "d8b86657267464d7826a1be1b4a811eac9f56e1a5992c1a2220b5c774075b948",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "消音をマフラ内圧の単純な上昇で説明できない。",
+          "evidence": [
+            "official-original:p5:No15:特定方式の指定なし",
+            "HKS-muffler:吸音材使用例"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 吸音材料により音波を吸収する。",
+          "reason": "吸音材で音を吸収する。",
+          "reasonSha256": "7f25cb695e57751b7a0a848248f4a7aa8399bc6d9b6eaea126f4135e155cdab5",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "吸音材を用いる方式では音波エネルギーを吸収する。",
+          "evidence": [
+            "official-original:p5:No15:特定方式の指定なし",
+            "HKS-muffler:吸音材使用例"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 管の断面積を急に大きくし、排気ガスを膨張させることにより圧力を上げて音を減少させる。",
+          "reason": "膨張では圧力を下げる。",
+          "reasonSha256": "db00cdc41677b0be272a7c808901fa35f06bcdddb6207605374b29f0dda7f659",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "面積急拡大の膨張を圧力上昇で説明する箇所が不適切。",
+          "evidence": [
+            "official-original:p5:No15:特定方式の指定なし",
+            "HKS-muffler:吸音材使用例"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 排気の通路を広げ、圧力の変動を抑えることで音を減少させる。",
+          "reason": "単純に通路を広げるという説明だけでは設問の消音方式と異なる。",
+          "reasonSha256": "e66e02fad7cc39f6566d3cf84844470a814778a6decc760636d138b340d90219",
+          "independentStatementVerdict": "unresolved",
+          "technicalAssessment": "通路拡大と圧力変動抑制による消音は膨張室の議論と関わる。原問は特定方式を限定しておらず、既存理由の『設問の消音方式と異なる』という根拠は未成立。",
+          "evidence": [
+            "official-original:p5:No15:特定方式の指定なし",
+            "HKS-muffler:吸音材使用例"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "選択肢(4)が成立しない条件をメーカーの膨張/干渉/吸音方式一次資料で特定できていない。公式キー(2)を保持し、架空の教材上限定を足さない。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "adbe3b77b0974d9af80f9cfcbe9303a0f442384cae4da07d82ae95fde0b217de",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q16",
+      "manuscriptSha256": "cd5ddb393ba91a238c71eb62e7ec926d0e09f25fe112a8d071f1c0a9bfcd677e",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          5
+        ],
+        "locator": "No.16",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 16,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [
+        {
+          "bookId": "jaspa-2025-second-3-gasoline",
+          "physicalPage": 5,
+          "pdfSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+          "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf#page=5",
+          "originalQuestionIds": [
+            "jidosha-2025-second-3-gasoline-q16"
+          ],
+          "relativePath": "figures/jaspa-2025-second-3-gasoline-p05.webp",
+          "width": 1490,
+          "height": 2106,
+          "sha256": "df11345f0d09da4b85dd696208842c89144a5a60987236736c1df91124d08b25",
+          "bytes": 183520,
+          "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+          "actualSha256": "df11345f0d09da4b85dd696208842c89144a5a60987236736c1df91124d08b25",
+          "visuallyReviewed": true
+        }
+      ],
+      "evidence": [
+        "official-original:p5:No16:断面図A/B/C/D",
+        "DENSO-plug:ターミナル・中軸・中心電極・接地電極"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p5:No16:断面図A/B/C/D"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "DENSO-plug",
+          "url": "https://www.denso.com/jp/ja/products-and-services/automotive-service-parts-and-accessories/plug/basic/structure/",
+          "localFile": null,
+          "sha256": null,
+          "locator": "ターミナル・中軸・中心電極・接地電極"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) A",
+          "reason": "図のAは上端の端子側で、火花を飛ばす中心電極の先端ではない。",
+          "reasonSha256": "92d478aee4b1b09b19672b637accd132b82610b475528e68dc57004e37e8e838",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Aはコードへ接続するターミナル側。",
+          "evidence": [
+            "official-original:p5:No16:断面図A/B/C/D",
+            "DENSO-plug:ターミナル・中軸・中心電極・接地電極"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) B",
+          "reason": "図のBは中心導体側で、問われた中心電極の先端はC。",
+          "reasonSha256": "3322afa00b5135716ae4e82a8054f94d2dd24333a017d54c321e658e50ecb90e",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Bはターミナルと中心電極をつなぐ中軸側。",
+          "evidence": [
+            "official-original:p5:No16:断面図A/B/C/D",
+            "DENSO-plug:ターミナル・中軸・中心電極・接地電極"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) C",
+          "reason": "図のCが絶縁体の先に出た中心電極である。",
+          "reasonSha256": "2a8d7ae55534654d3ee017f1d56c1d5e5fc07325c8c229a56d34ecc09467e97e",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Cは碍子先端から燃焼室側へ出る中心電極。",
+          "evidence": [
+            "official-original:p5:No16:断面図A/B/C/D",
+            "DENSO-plug:ターミナル・中軸・中心電極・接地電極"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) D",
+          "reason": "図のDは外側から曲がる接地電極で、中心電極ではない。",
+          "reasonSha256": "e4ffee5a3c00af4f8f70d350fe9fb95ce1c50e6cd9d2a9680055d4d969c518a6",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Dはハウジングから曲がった接地電極。",
+          "evidence": [
+            "official-original:p5:No16:断面図A/B/C/D",
+            "DENSO-plug:ターミナル・中軸・中心電極・接地電極"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "cd5ddb393ba91a238c71eb62e7ec926d0e09f25fe112a8d071f1c0a9bfcd677e",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q17",
+      "manuscriptSha256": "ccb54ee4b3d0ee7d13967674418d1046031911dc327327919c14f59bfad2624c",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          5
+        ],
+        "locator": "No.17",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 17,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p5:No17",
+        "NGK-heat:熱の逃げ方",
+        "DENSO-plug:碍子・鉄鋼中軸・ニッケル電極",
+        "NGK-history:銅中軸"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p5:No17"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "NGK-heat",
+          "url": "https://www.ngk-sparkplugs.jp/ngk/sparkplugs/basic/qa/000003.html",
+          "localFile": "sources/NGK-heat.html",
+          "sha256": "0a1005b91a568e5e955d27870e4065b8951ff260eed31960f9f2cc459dfdd314",
+          "locator": "熱の逃げ方"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "DENSO-plug",
+          "url": "https://www.denso.com/jp/ja/products-and-services/automotive-service-parts-and-accessories/plug/basic/structure/",
+          "localFile": null,
+          "sha256": null,
+          "locator": "碍子・鉄鋼中軸・ニッケル電極"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "NGK-history",
+          "url": "https://why-ngksparkplugs.jp/history/",
+          "localFile": null,
+          "sha256": null,
+          "locator": "銅中軸"
+        }
+      ],
+      "conditions": "一般的従来構造の説明。イリジウム/白金チップ付き製品の全電極をニッケルのみと断定しない。",
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 低熱価型プラグは、標準熱価型プラグと比較して、放熱しやすく電極部は焼けにくい。",
+          "reason": "放熱しやすいのは高熱価型。",
+          "reasonSha256": "7dd260abd5245f3269c657e113ff0ea3411309545f14a07208d09af2446a1237",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "低熱価は放熱しにくい側であり文は逆。",
+          "evidence": [
+            "official-original:p5:No17",
+            "NGK-heat:熱の逃げ方",
+            "DENSO-plug:碍子・鉄鋼中軸・ニッケル電極",
+            "NGK-history:銅中軸"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 電極には腐食に強いニッケル合金、中軸には鋼又は銅合金が用いられている。",
+          "reason": "耐食性を考えた電極材と導体を用いる。",
+          "reasonSha256": "f309172891379f3c305725a55c9a42f163f6d771115f02567714f0a4fb421d92",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "従来電極のニッケル合金と中軸の鉄鋼材/銅系という材料説明に整合する。",
+          "evidence": [
+            "official-original:p5:No17",
+            "NGK-heat:熱の逃げ方",
+            "DENSO-plug:碍子・鉄鋼中軸・ニッケル電極",
+            "NGK-history:銅中軸"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 高熱価型プラグは、標準熱価型プラグと比較して碍子脚部が短い。",
+          "reason": "高熱価型は碍子脚部が短く放熱しやすい。",
+          "reasonSha256": "bd41433e848def2b517b5117a7078b456ef816ab2a89fd2e4a9214ddfcb85e77",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "高熱価は短い脚部で熱が逃げやすい。",
+          "evidence": [
+            "official-original:p5:No17",
+            "NGK-heat:熱の逃げ方",
+            "DENSO-plug:碍子・鉄鋼中軸・ニッケル電極",
+            "NGK-history:銅中軸"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 絶縁碍子は、電極の支持と高電圧の漏電を防ぐ働きをしている。",
+          "reason": "絶縁碍子は電極支持と絶縁を担う。",
+          "reasonSha256": "820aa8df434e22556d2eb7dd9e80eecd53f35063b334310f4980b3780d4de264",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "碍子は中軸/中心電極をハウジングから絶縁・支持する。",
+          "evidence": [
+            "official-original:p5:No17",
+            "NGK-heat:熱の逃げ方",
+            "DENSO-plug:碍子・鉄鋼中軸・ニッケル電極",
+            "NGK-history:銅中軸"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "ccb54ee4b3d0ee7d13967674418d1046031911dc327327919c14f59bfad2624c",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q18",
+      "manuscriptSha256": "b439f4dc202c538c17efda9de3865cc346914456dad67ff2810088e3315e3649",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          5
+        ],
+        "locator": "No.18",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 18,
+        "answer": "エ",
+        "number": "4",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p5:No18",
+        "DENSO:50:Rotor/Fan/Stator;51:Rectifier",
+        "derivation:Faraday e=-N dΦ/dt"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p5:No18"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "DENSO",
+          "url": "https://assets.denso-am.eu/production/attachments/Starter-Alternator-Manual-English.pdf",
+          "localFile": "sources/DENSO-Starter-Alternator-Manual-English.pdf",
+          "sha256": "fb1fca26e8c4d4197a95de5db598f4fee3389ec706ef9a52d884104e7ae5fe53",
+          "locator": "50:Rotor/Fan/Stator;51:Rectifier"
+        },
+        {
+          "kind": "explicit-derivation",
+          "locator": "Faraday e=-N dΦ/dt"
+        }
+      ],
+      "conditions": "巻数比較は同じ磁束変化条件。",
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 一般にステータには、一体化された冷却用ファンが取り付けられている。",
+          "reason": "ファンは回転側に取り付く。",
+          "reasonSha256": "dd182ea20983cf844ec32177c58ab3a91a2cb6438a7fc8de7f89c631b205919e",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "冷却ファンはロータとともに回転する。固定ステータ側ではない。",
+          "evidence": [
+            "official-original:p5:No18",
+            "DENSO:50:Rotor/Fan/Stator;51:Rectifier",
+            "derivation:Faraday e=-N dΦ/dt"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) ステータ・コイルに発生する誘導起電力の大きさは、ステータ・コイルの巻き数が多いほど小さくなる。",
+          "reason": "巻数増加は誘導起電力を大きくする。",
+          "reasonSha256": "be8d2f00f87563ae01d7a830d795a05b481a3a6c93b67866fdf1754c403c7678",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "同じ磁束変化なら巻数増で誘導電圧が大きくなる。",
+          "evidence": [
+            "official-original:p5:No18",
+            "DENSO:50:Rotor/Fan/Stator;51:Rectifier",
+            "derivation:Faraday e=-N dΦ/dt"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) オルタネータは、ステータ・コイルに発生した交流電流をトランジスタによって整流している。",
+          "reason": "整流はダイオードで行う。",
+          "reasonSha256": "35a04bfd4375e9e5f4f12be8a27071557b5839bfe8153c79cc48404390e9066e",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "三相交流を整流するのはダイオード。レギュレータのトランジスタと役目が違う。",
+          "evidence": [
+            "official-original:p5:No18",
+            "DENSO:50:Rotor/Fan/Stator;51:Rectifier",
+            "derivation:Faraday e=-N dΦ/dt"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) ロータ・コアは、スリップ・リングを通してロータ・コイルに電流を流すことによって磁化される。",
+          "reason": "ロータ・コイルへの通電でコアが磁化される。",
+          "reasonSha256": "5986b135ebfb35c3c2d498ec127eedd6927dadd4598d9cf92b452eb5dd074659",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "ブラシ/スリップリングから励磁コイルに給電し爪形磁極を磁化する。",
+          "evidence": [
+            "official-original:p5:No18",
+            "DENSO:50:Rotor/Fan/Stator;51:Rectifier",
+            "derivation:Faraday e=-N dΦ/dt"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "b439f4dc202c538c17efda9de3865cc346914456dad67ff2810088e3315e3649",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q19",
+      "manuscriptSha256": "1316cafb9de93f014787926b48d9e80d85637dbb474b63edd12480b0d7dfd865",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          6
+        ],
+        "locator": "No.19",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 19,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p6:No19",
+        "NXP-MAP:1/4:圧力正比例出力",
+        "Niterra-wide-range:排気ガス中酸素濃度出力"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p6:No19"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "NXP-MAP",
+          "url": "https://www.nxp.com/docs/en/data-sheet/MPXAZ4100A.pdf",
+          "localFile": null,
+          "sha256": null,
+          "locator": "1/4:圧力正比例出力"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "Niterra-wide-range",
+          "url": "https://www.niterragroup.com/product/sensors_plugs/wide_range_oxygen.html",
+          "localFile": null,
+          "sha256": null,
+          "locator": "排気ガス中酸素濃度出力"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 電子制御式スロットル装置のスロットル・ポジション・センサは、アクセル・ペダルの踏み込み角度を検出している。",
+          "reason": "スロットル・ポジション・センサは弁開度を検出する。",
+          "reasonSha256": "ca8f0d9cafce41ef5722a3639d2f6602847097cde60beed16cd397843f15a7ea",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "TPSはスロットル弁開度、ペダルはアクセルポジションセンサ。",
+          "evidence": [
+            "official-original:p6:No19",
+            "NXP-MAP:1/4:圧力正比例出力",
+            "Niterra-wide-range:排気ガス中酸素濃度出力"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 熱線式エア・フロー・メータの出力電圧は、吸入空気量が少ないほど高くなる。",
+          "reason": "吸気量が増えるほど出力が高くなる。",
+          "reasonSha256": "7095e3b05a052b152334478777e0ceda56674458c0e6a868366a34fc30962a07",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "一般的な熱線式の流量増加側で電圧も増加するが、一次特性曲線の型式対応が未完。",
+          "evidence": [
+            "official-original:p6:No19",
+            "NXP-MAP:1/4:圧力正比例出力",
+            "Niterra-wide-range:排気ガス中酸素濃度出力"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) バキューム・センサの圧力信号の電圧特性は、インテーク・マニホールド圧力が真空から大気圧に近付くほど出力電圧が大きくなる。",
+          "reason": "真空から大気圧へ近付くと出力電圧が上がる。",
+          "reasonSha256": "292042e0d831b5c4f4fd15de33c5224c8ad2dfe92506d40d7a3b245e2e092190",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "絶対圧上昇で出力電圧が増すMAPの特性。",
+          "evidence": [
+            "official-original:p6:No19",
+            "NXP-MAP:1/4:圧力正比例出力",
+            "Niterra-wide-range:排気ガス中酸素濃度出力"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 空燃比センサは、インテーク・マニホールドに取り付けられている。",
+          "reason": "空燃比センサは排気系に取り付ける。",
+          "reasonSha256": "93bc3c183d972cdea5ba58b6b2c44cb2e1b546f96e10bef72dbd7a74b4427445",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "原問の排気空燃比制御センサは排気側に置く。吸気側酸素検出へ応用したセンサと区別する。",
+          "evidence": [
+            "official-original:p6:No19",
+            "NXP-MAP:1/4:圧力正比例出力",
+            "Niterra-wide-range:排気ガス中酸素濃度出力"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "熱線式MAFの出力極性とTPS/ペダルセンサの一次特性・配置を合わせた対応が未完。メーカーの熱膜式の現行デジタル出力仕様を熱線アナログ出力へ転用しない。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "1316cafb9de93f014787926b48d9e80d85637dbb474b63edd12480b0d7dfd865",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q20",
+      "manuscriptSha256": "72984e35e9193ce1cd80cf404bdbfafb064d37c05a30dfc3354ee13deb8617e0",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          6
+        ],
+        "locator": "No.20",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 20,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p6:No20",
+        "Toshiba-Ptype:真性/不純物の区別"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p6:No20"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "Toshiba-Ptype",
+          "url": "https://toshiba.semicon-storage.com/jp/semiconductor/knowledge/e-learning/discrete/chap1/chap1-4.html",
+          "localFile": "sources/Toshiba-Ptype.html",
+          "sha256": "16d3ee010dfe172958803825e6511af36bb0868d9318951eb66bb22789629d1a",
+          "locator": "真性/不純物の区別"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 真性半導体は、シリコンやゲルマニウムに他の原子をごく少量加えたものである。",
+          "reason": "不純物を加えたものは不純物半導体。",
+          "reasonSha256": "974cb840a40437ff9454823f8f66f03d491bc0d9394dc919bb2168b6c50bcf24",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "添加後は不純物半導体で真性ではない。",
+          "evidence": [
+            "official-original:p6:No20",
+            "Toshiba-Ptype:真性/不純物の区別"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 発光ダイオードは、順方向の電圧を加えて電流を流すと発光するものである。",
+          "reason": "LEDは順方向通電で発光する。",
+          "reasonSha256": "8c6a106b450a70d75d6012a9edd3949fc88d4d77829c18277d60a1f1889c3448",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "LEDは順方向通電で発光する。",
+          "evidence": [
+            "official-original:p6:No20",
+            "Toshiba-Ptype:真性/不純物の区別"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) IC（集積回路）は、「はんだ付けによる故障が少ない」、「超小型化が可能になる」、「消費電力が少ない」などの特長がある。",
+          "reason": "集積化で小型・低消費電力化できる。",
+          "reasonSha256": "40acc2b2b6f2a50cdbdd4e23100ed096981f104cb36bd66fefba7a8eaeb3531c",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "集積化ははんだ接続点削減、小型化、低電力化を可能にする。全ICの任意回路比較で必ず低電力という意味にはしない。",
+          "evidence": [
+            "official-original:p6:No20",
+            "Toshiba-Ptype:真性/不純物の区別"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) N型半導体は、自由電子が多くあるようにつくられた不純物半導体である。",
+          "reason": "N型は自由電子を主な担体とする。",
+          "reasonSha256": "cf13d6b874d8cdee2552d333ccdc4cf799157592a3dfab542945a2fdc38984a2",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "N型の多数キャリアは自由電子。",
+          "evidence": [
+            "official-original:p6:No20",
+            "Toshiba-Ptype:真性/不純物の区別"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "ICの3特長を離散回路との比較条件つきで示す一次教育資料と、LED/N型の一次基礎資料への個別対応が未完。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "72984e35e9193ce1cd80cf404bdbfafb064d37c05a30dfc3354ee13deb8617e0",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q21",
+      "manuscriptSha256": "c9d73b13cc47c9f6fa5ba6cb4e4c3c53f37b4fb63f6998b943838a7b12afad9f",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          6
+        ],
+        "locator": "No.21",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 21,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [
+        {
+          "bookId": "jaspa-2025-second-3-gasoline",
+          "physicalPage": 6,
+          "pdfSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+          "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf#page=6",
+          "originalQuestionIds": [
+            "jidosha-2025-second-3-gasoline-q21"
+          ],
+          "relativePath": "figures/jaspa-2025-second-3-gasoline-p06.webp",
+          "width": 1490,
+          "height": 2106,
+          "sha256": "cefbfc5b550db7f3ab258bb3d1a570e1d194b535bb6bfd0f214d4cb413719f79",
+          "bytes": 215172,
+          "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+          "actualSha256": "cefbfc5b550db7f3ab258bb3d1a570e1d194b535bb6bfd0f214d4cb413719f79",
+          "visuallyReviewed": true
+        }
+      ],
+      "evidence": [
+        "official-original:p6:No21:有効半径A60/B90/C75",
+        "derivation:一本のベルト・滑りなし・周速度一定v=2πrn"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p6:No21:有効半径A60/B90/C75"
+        },
+        {
+          "kind": "explicit-derivation",
+          "locator": "一本のベルト・滑りなし・周速度一定v=2πrn"
+        }
+      ],
+      "conditions": "Cは同一ベルトの別接触プーリで、A/Bの速度比から消去される。",
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 225min⁻¹",
+          "reason": "225min⁻¹ではBの周速度がAより小さい。",
+          "reasonSha256": "12e3955d5c8cc6314fb5833b536bea75291070c24986dcd686859e7fea6d02c9",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "nB=225では周速度比が225×90/(600×60)=0.5625で滑りなし条件と不一致。",
+          "evidence": [
+            "official-original:p6:No21:有効半径A60/B90/C75",
+            "derivation:一本のベルト・滑りなし・周速度一定v=2πrn"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 400min⁻¹",
+          "reason": "400min⁻¹が600×60÷90の結果。",
+          "reasonSha256": "fdcda3954deed32c353a02beff383405de570325bbf2f7838d32c343f1d691c6",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "nA rA=nB rBより600×60/90=400。",
+          "evidence": [
+            "official-original:p6:No21:有効半径A60/B90/C75",
+            "derivation:一本のベルト・滑りなし・周速度一定v=2πrn"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 900min⁻¹",
+          "reason": "900min⁻¹は半径比を逆に掛けた値。",
+          "reasonSha256": "e377c21786c79e061d563aacb30d50ba2aff7dc4878c75606dac9835a7779a5e",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "900では周速度比2.25で条件と不一致。",
+          "evidence": [
+            "official-original:p6:No21:有効半径A60/B90/C75",
+            "derivation:一本のベルト・滑りなし・周速度一定v=2πrn"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 1,350min⁻¹",
+          "reason": "1,350min⁻¹ではBの周速度がAより大きい。",
+          "reasonSha256": "a8386c63611bda2c88ed504850846bd56c5f965bbc41681240be3b8f2ea008c9",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "1350では周速度比3.375で条件と不一致。",
+          "evidence": [
+            "official-original:p6:No21:有効半径A60/B90/C75",
+            "derivation:一本のベルト・滑りなし・周速度一定v=2πrn"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "c9d73b13cc47c9f6fa5ba6cb4e4c3c53f37b4fb63f6998b943838a7b12afad9f",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q22",
+      "manuscriptSha256": "9ed5ee4b4c82ea3861ff898416acca7fb5d69d5a0146c05c5ff5130db314d018",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          6
+        ],
+        "locator": "No.22",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 22,
+        "answer": "エ",
+        "number": "4",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p6:No22",
+        "Bando-ribace:特長・自動車補機駆動用途"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p6:No22"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "Bando-ribace",
+          "url": "https://products.bandogrp.com/product/ribace2_industrial_vribbedbelt/",
+          "localFile": null,
+          "sha256": null,
+          "locator": "特長・自動車補機駆動用途"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) Vベルトと比較して張力の低下が少ない。",
+          "reason": "Vリブド・ベルトはVベルトに比べて使用中の張力低下が少ない。",
+          "reasonSha256": "3e5b180771f8c81c1daad488e7cb64da68af7798e0444ee374ab4eb59109a976",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "従来V形より溝への沈みが少なく張力維持に有利。",
+          "evidence": [
+            "official-original:p6:No22",
+            "Bando-ribace:特長・自動車補機駆動用途"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) Vベルトと同様に、オルタネータなどを駆動している。",
+          "reason": "補機駆動に使われる。",
+          "reasonSha256": "26398043242e5d9986a327a5e7866c93df820abcc32087371b25f3b76c911b24",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "自動車補機駆動用に使われてきたベルト。",
+          "evidence": [
+            "official-original:p6:No22",
+            "Bando-ribace:特長・自動車補機駆動用途"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) Vベルトと比較してベルト断面が薄いため、耐屈曲性及び耐疲労性に優れている。",
+          "reason": "薄い断面で屈曲・疲労に強い。",
+          "reasonSha256": "2258a27314bc540acdc65b451be3e1f8cf08597be01fc90f21329c16ddfd5cc2",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "薄断面で屈曲ロスが少なく小径プーリに対応する。",
+          "evidence": [
+            "official-original:p6:No22",
+            "Bando-ribace:特長・自動車補機駆動用途"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) Vベルトと比較して伝達効率が低い。",
+          "reason": "伝達効率は低くなく高い。",
+          "reasonSha256": "0c1718569378291152922a4c245e7fcd83718a5f3f3c742c1c9d16b31007d2cd",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "屈曲ロスの低下により従来V形より効率がよいので文は逆。",
+          "evidence": [
+            "official-original:p6:No22",
+            "Bando-ribace:特長・自動車補機駆動用途"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "9ed5ee4b4c82ea3861ff898416acca7fb5d69d5a0146c05c5ff5130db314d018",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q23",
+      "manuscriptSha256": "ef498df2918c88392df6bcfe94cbd719c05f6ba2d3a1e63f8041a9974b7c8ea9",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          7
+        ],
+        "locator": "No.23",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 23,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p7:No23",
+        "Kyodo-grease:Ca石けん/Li石けん/非石けん",
+        "ENEOS-grease:増ちょう剤分類"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p7:No23"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "Kyodo-grease",
+          "url": "https://www.kyodoyushi.co.jp/knowledge/grease/category/",
+          "localFile": null,
+          "sha256": null,
+          "locator": "Ca石けん/Li石けん/非石けん"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "ENEOS-grease",
+          "url": "https://www.eneos.co.jp/binran/part02/chapter03/section03.html",
+          "localFile": null,
+          "sha256": null,
+          "locator": "増ちょう剤分類"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) グリースは、常温では半固体状であるが、潤滑部が作動し始めると摩擦熱で徐々に柔らかくなる。",
+          "reason": "作動で柔らかくなり潤滑面に広がる。",
+          "reasonSha256": "ab10e64457ebf35e838c846822fd87eadd93693578df376d922f2cc6c4534ef6",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "半固体状で作動・昇温により流動しやすくなる。",
+          "evidence": [
+            "official-original:p7:No23",
+            "Kyodo-grease:Ca石けん/Li石けん/非石けん",
+            "ENEOS-grease:増ちょう剤分類"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) リチウム石けんグリースは、ウォータ・ポンプなどに用いられ、耐水性に優れていることが第一条件である。",
+          "reason": "ウォータ・ポンプ用など耐水性重視はカルシウム石けん系が代表。",
+          "reasonSha256": "ef689e2fac6bb034fd63866c04b61c6ab6f50d2f316a08b034d1677df6e1c182",
+          "independentStatementVerdict": "unresolved",
+          "technicalAssessment": "原稿は耐水性重視をカルシウム代表として退けるが、メーカーはリチウムにも優れた耐水性を明記している。水ポンプ用途の否定根拠は不足。",
+          "evidence": [
+            "official-original:p7:No23",
+            "Kyodo-grease:Ca石けん/Li石けん/非石けん",
+            "ENEOS-grease:増ちょう剤分類"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) カルシウム石けんグリースは、マルチパーパス・グリースともいわれている。",
+          "reason": "マルチパーパスはリチウム石けん系が代表。",
+          "reasonSha256": "b1aa45f66dc4cb31ca57f2b7755c10f93cefc3f0f9daf6dec46a520ce2585798",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "万能型の代表はリチウム石けん。",
+          "evidence": [
+            "official-original:p7:No23",
+            "Kyodo-grease:Ca石けん/Li石けん/非石けん",
+            "ENEOS-grease:増ちょう剤分類"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 石けん系のグリースには、ベントン・グリースやシリカゲル・グリースなどがある。",
+          "reason": "ベントン・シリカゲルは非石けん系増ちょう剤。",
+          "reasonSha256": "523e6fcfbeaa5e3e5ceb22f1b61dff4b8603bbace1a6359936a72f4dfade0936",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "ベントン/シリカゲルは非石けん系増ちょう剤。",
+          "evidence": [
+            "official-original:p7:No23",
+            "Kyodo-grease:Ca石けん/Li石けん/非石けん",
+            "ENEOS-grease:増ちょう剤分類"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "(2)のリチウム石けん・ウォータポンプ・耐水性第一条件を不適切とする根拠が未確定。『耐水性があるのはカルシウムだけ』という誤った理由を追加しない。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "ef498df2918c88392df6bcfe94cbd719c05f6ba2d3a1e63f8041a9974b7c8ea9",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q24",
+      "manuscriptSha256": "49397ab8685c3f3c6b8696565e838435ae4bfc2375bd77a7594fb33edbc03269",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          7
+        ],
+        "locator": "No.24",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 24,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p7:No24",
+        "OSG-reamer:リーマの用途",
+        "OSG-dies:おねじ加工"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p7:No24"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "OSG-reamer",
+          "url": "https://www.osg.co.jp/products/drill/",
+          "localFile": null,
+          "sha256": null,
+          "locator": "リーマの用途"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "OSG-dies",
+          "url": "https://www.osg.co.jp/products/dies/",
+          "localFile": null,
+          "sha256": null,
+          "locator": "おねじ加工"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 金属材料の「はつり」及び切断に使用する。",
+          "reason": "はつりや切断には用いない。",
+          "reasonSha256": "c06785ce930f93ae6ae3fa94d3f702f40cf777c8adaf622e0a0c16f7bf3c6c32",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "リーマは穴内周仕上げ切刃で、はつりや材料切断用でない。",
+          "evidence": [
+            "official-original:p7:No24",
+            "OSG-reamer:リーマの用途",
+            "OSG-dies:おねじ加工"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) おねじのねじ立てに使用する。",
+          "reason": "おねじ立てはダイスなどを用いる。",
+          "reasonSha256": "3c2db5189464e53e08b792735dbbda92978ec2a2556c973307f6c249bf10e86f",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "おねじにはダイス等を用いる。",
+          "evidence": [
+            "official-original:p7:No24",
+            "OSG-reamer:リーマの用途",
+            "OSG-dies:おねじ加工"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 金属材料の穴の内面仕上げに使用する。",
+          "reason": "穴の内面仕上げに用いる。",
+          "reasonSha256": "4046f40e383bca9daa098d7b9ca5a7d1a8d43bba4ef7a2541daa3d8a86e3acb2",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "下穴の内面を精密に切削仕上げする工具。",
+          "evidence": [
+            "official-original:p7:No24",
+            "OSG-reamer:リーマの用途",
+            "OSG-dies:おねじ加工"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) ベアリングやブシュなどの脱着に使用する。",
+          "reason": "ベアリングやブシュの脱着にはプーラなどを使い、リーマは穴の内面を仕上げる。",
+          "reasonSha256": "d7661704296f43ec53ef5f578e811ac35decd83d51ea2d434197f16951dd6857",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "脱着はプーラやプレス等の仕事で、穴内面切削とは異なる。",
+          "evidence": [
+            "official-original:p7:No24",
+            "OSG-reamer:リーマの用途",
+            "OSG-dies:おねじ加工"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "49397ab8685c3f3c6b8696565e838435ae4bfc2375bd77a7594fb33edbc03269",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q25",
+      "manuscriptSha256": "70dd95db446f56bb9b3bc190692425f31ce31d64a2f01399fb94f7963cb14f55",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          7
+        ],
+        "locator": "No.25",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 25,
+        "answer": "ア",
+        "number": "1",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p7:No25",
+        "Misumi-bronze:銅/スズ系潤滑材料",
+        "Isoda-kelmet:銅鉛系",
+        "Osumi-brass:Cu-Zn",
+        "Nikkeikin-materials:工業材料比較表",
+        "Aluminum-association:比重2.7/鉄7.8"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p7:No25"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "Misumi-bronze",
+          "url": "https://jp.misumi-ec.com/tech-info/categories/machine_design/md05/g0064.html",
+          "localFile": null,
+          "sha256": null,
+          "locator": "銅/スズ系潤滑材料"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "Isoda-kelmet",
+          "url": "https://www.isodametal.co.jp/",
+          "localFile": null,
+          "sha256": null,
+          "locator": "銅鉛系"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "Osumi-brass",
+          "url": "https://www.osumi-sg.co.jp/archives/pro-item01/%E9%BB%84%E9%8A%85%EF%BC%88%E7%9C%9F%E9%8D%AE%EF%BC%89",
+          "localFile": null,
+          "sha256": null,
+          "locator": "Cu-Zn"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "Nikkeikin-materials",
+          "url": "https://www.nikkeikin-act.co.jp/technology/basic.html",
+          "localFile": null,
+          "sha256": null,
+          "locator": "工業材料比較表"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "Aluminum-association",
+          "url": "https://www.aluminum.or.jp/wp-content/themes/dp-colors/img/AboutAluminum.pdf",
+          "localFile": null,
+          "sha256": null,
+          "locator": "比重2.7/鉄7.8"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 青銅は、銅に錫を加えた合金で、耐摩耗性に優れ、潤滑油とのなじみもよい。",
+          "reason": "青銅は銅錫合金で耐摩耗性がある。",
+          "reasonSha256": "666e36afc6048aebf9e9586ef150ca086fa2983dd2cd6bfbd4bb4dc3a609135d",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "Cu-Sn系青銅は摺動用途の代表材料で油潤滑になじむ。",
+          "evidence": [
+            "official-original:p7:No25",
+            "Misumi-bronze:銅/スズ系潤滑材料",
+            "Isoda-kelmet:銅鉛系",
+            "Osumi-brass:Cu-Zn",
+            "Nikkeikin-materials:工業材料比較表",
+            "Aluminum-association:比重2.7/鉄7.8"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) ケルメットは、銀に鉛を加えたもので、軸受合金として使用されている。",
+          "reason": "ケルメットは銅鉛系合金。",
+          "reasonSha256": "3bdf60a0147cb9088b969b2715560bdd78460d6c56c8e1294a9db4b754e402be",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "ケルメットはCu-Pb系で銀鉛ではない。",
+          "evidence": [
+            "official-original:p7:No25",
+            "Misumi-bronze:銅/スズ系潤滑材料",
+            "Isoda-kelmet:銅鉛系",
+            "Osumi-brass:Cu-Zn",
+            "Nikkeikin-materials:工業材料比較表",
+            "Aluminum-association:比重2.7/鉄7.8"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) アルミニウムは、比重が鉄の約3倍、線膨張係数は鉄の約2倍である。",
+          "reason": "アルミニウムの比重は鉄の約1/3。",
+          "reasonSha256": "310ca33909c4657c2b606164b976e8f842d7f4da3221e35e22b782ef5bbe9961",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "Al比重約2.7/鉄約7.8で約1/3。膨張係数側の約2倍とは混同しない。",
+          "evidence": [
+            "official-original:p7:No25",
+            "Misumi-bronze:銅/スズ系潤滑材料",
+            "Isoda-kelmet:銅鉛系",
+            "Osumi-brass:Cu-Zn",
+            "Nikkeikin-materials:工業材料比較表",
+            "Aluminum-association:比重2.7/鉄7.8"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 黄銅（真ちゅう）は、銅にアルミニウムを加えたもので、加工性に優れている。",
+          "reason": "黄銅は銅と亜鉛の合金で、銅とアルミニウムの合金ではない。",
+          "reasonSha256": "55a53e56505e68451c38500c272754ce1791c568f94e5547679334e12ba4bb73",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "黄銅はCu-Zn系でCu-Alではない。",
+          "evidence": [
+            "official-original:p7:No25",
+            "Misumi-bronze:銅/スズ系潤滑材料",
+            "Isoda-kelmet:銅鉛系",
+            "Osumi-brass:Cu-Zn",
+            "Nikkeikin-materials:工業材料比較表",
+            "Aluminum-association:比重2.7/鉄7.8"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "70dd95db446f56bb9b3bc190692425f31ce31d64a2f01399fb94f7963cb14f55",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q26",
+      "manuscriptSha256": "2b52c6097ac85125ea9c08e6d8a7d527edb24826ef8f945e3c2f9dd10787f162",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          7
+        ],
+        "locator": "No.26",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 26,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [
+        {
+          "bookId": "jaspa-2025-second-3-gasoline",
+          "physicalPage": 7,
+          "pdfSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+          "officialUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf#page=7",
+          "originalQuestionIds": [
+            "jidosha-2025-second-3-gasoline-q26"
+          ],
+          "relativePath": "figures/jaspa-2025-second-3-gasoline-p07.webp",
+          "width": 1490,
+          "height": 2106,
+          "sha256": "60f9e3c491da2749f5e17d8c17a85207189ddaf17c6c604daa0ccf41b3aa6df7",
+          "bytes": 176240,
+          "processing": "Original PDF physical page rendered to PNG, then converted to WebP; no retouch or generated content.",
+          "actualSha256": "60f9e3c491da2749f5e17d8c17a85207189ddaf17c6c604daa0ccf41b3aa6df7",
+          "visuallyReviewed": true
+        }
+      ],
+      "evidence": [
+        "official-original:p7:No26:電流計が合流後にある回路",
+        "derivation:Rtotal=8+(6×12)/(6+12)=12;I=1"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p7:No26:電流計が合流後にある回路"
+        },
+        {
+          "kind": "explicit-derivation",
+          "locator": "Rtotal=8+(6×12)/(6+12)=12;I=1"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 0.5",
+          "reason": "0.5Aなら全抵抗24Ωとなり、図の12Ωと合わない。",
+          "reasonSha256": "778d75e91e6d45811227a7e89689ee01d37f1b431cb2e1770e224515d20a0ba8",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "0.5Aなら全抵抗24Ωで図の計算と不一致。",
+          "evidence": [
+            "official-original:p7:No26:電流計が合流後にある回路",
+            "derivation:Rtotal=8+(6×12)/(6+12)=12;I=1"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 1",
+          "reason": "1Aが12V÷12Ωの全回路電流。",
+          "reasonSha256": "1361e246fff4cbc424450d49f74dd781c039143649747afa988c6192657c9ad4",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "6||12=4Ω、8+4=12Ω、I=12/12=1A。",
+          "evidence": [
+            "official-original:p7:No26:電流計が合流後にある回路",
+            "derivation:Rtotal=8+(6×12)/(6+12)=12;I=1"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 1.5",
+          "reason": "1.5Aは8Ωだけに12Vを掛けた値で並列部を無視する。",
+          "reasonSha256": "2c8a50adf07080238c173f3044655110ce7e08a1b05adb77c1ba6e5e3cd95535",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "1.5Aは並列部の電圧降下を無視した値。",
+          "evidence": [
+            "official-original:p7:No26:電流計が合流後にある回路",
+            "derivation:Rtotal=8+(6×12)/(6+12)=12;I=1"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 2",
+          "reason": "2Aなら全抵抗6Ωとなり、直列の8Ωだけより小さく矛盾する。",
+          "reasonSha256": "6f82aa103f3dd7cddc18b5ce3a32086d77c1ec083f71f3d6bf3fa15830253642",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "全抵抗6Ωでは直列8Ωのみより小さくなり矛盾。",
+          "evidence": [
+            "official-original:p7:No26:電流計が合流後にある回路",
+            "derivation:Rtotal=8+(6×12)/(6+12)=12;I=1"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "2b52c6097ac85125ea9c08e6d8a7d527edb24826ef8f945e3c2f9dd10787f162",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q27",
+      "manuscriptSha256": "312467e5956ddaeb82eb09fcd2fdf4541332ebcca3b804c2f6a4aedc218ad671",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          8
+        ],
+        "locator": "No.27",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 27,
+        "answer": "エ",
+        "number": "4",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p8:No27",
+        "GSYuasa-EC:補水/充電一般"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p8:No27"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "GSYuasa-EC",
+          "url": "https://gyb.gs-yuasa.com/assets/data/manual_ec.pdf",
+          "localFile": "sources/GS-Yuasa-manual-ec.pdf",
+          "sha256": "9d59cef690f100724d80cdc0244ac26db2f1dc7c7e531773ff2497d6a45c4e4d",
+          "locator": "補水/充電一般"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 急速充電時の最大電流値は、充電しようとするバッテリの定格容量（Ah）の数値にアンペア（A）をつけた値である。",
+          "reason": "急速充電時の最大電流の目安。",
+          "reasonSha256": "a2fb0f6dc94894bcc355b9256754336fe7e2c4ce30e2daf2018f14808cb5af9d",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "急速時1C相当を最大目安とする数値を保持する。",
+          "evidence": [
+            "official-original:p8:No27",
+            "GSYuasa-EC:補水/充電一般"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 充電中は、電解液の温度が45℃（急速充電の場合は55℃）を超えないように注意する。",
+          "reason": "充電中の液温上昇に注意する。",
+          "reasonSha256": "ae2562543e517e3b1e008b272fda0cd1b08a52f44f43eecd772becbb6fba50d8",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "通常45℃・急速55℃の温度上限を原文どおり保持する。",
+          "evidence": [
+            "official-original:p8:No27",
+            "GSYuasa-EC:補水/充電一般"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 定電流充電法では、一般に定格容量の1/10程度の電流で充電を行う。",
+          "reason": "定電流は容量の約1/10を目安とする。",
+          "reasonSha256": "a401dc7952e05699b57fc139b860336508bb7a0397608b7f81cea31c54f65d41",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "通常定電流は0.1C程度という目安。",
+          "evidence": [
+            "official-original:p8:No27",
+            "GSYuasa-EC:補水/充電一般"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 補充電とは、放電状態にあるバッテリを、短時間でその放電量の幾らかを補うために、大電流（定電流充電の数倍～十倍程度）で充電を行う方法である。",
+          "reason": "大電流短時間の説明は急速充電。",
+          "reasonSha256": "c11487cb3f7f9a265b7abeb01255b1407835b836c815e9e9873ed4ba031c785b",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "大電流短時間は急速充電であり、補充電の一般定義ではない。",
+          "evidence": [
+            "official-original:p8:No27",
+            "GSYuasa-EC:補水/充電一般"
+          ],
+          "reasonDisposition": "reviewed-question-held"
+        }
+      ],
+      "status": "HOLD",
+      "holds": [
+        "電池方式と充電器条件を指定した1C急速・0.1C通常・45/55℃上限の一次充電指示が未確保。目安を全車用電池共通の設定値として受け入れない。"
+      ],
+      "repairs": [],
+      "candidateManuscriptSha256": "312467e5956ddaeb82eb09fcd2fdf4541332ebcca3b804c2f6a4aedc218ad671",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q28",
+      "manuscriptSha256": "b843b064e198332428e26de7f5bb6249556d3ba0d24a32d9988c2e51d2e75d36",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          8
+        ],
+        "locator": "No.28",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 28,
+        "answer": "イ",
+        "number": "2",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p8:No28",
+        "Vehicles-law:第67条第1項本文"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p8:No28"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "Vehicles-law",
+          "url": "https://laws.e-gov.go.jp/api/1/lawdata/326AC0000000185",
+          "localFile": "sources/vehicles-law.xml",
+          "sha256": "f07627b20c37c1d500a0b0ecbf01013d67cde41e665d28e7efc1d7eca12afd0e",
+          "locator": "第67条第1項本文"
+        }
+      ],
+      "conditions": "本文の期間を答える設問。失効車検証の使用時特例・行政区画変更等の適用除外は同条ただし書/2項にある。",
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 10日",
+          "reason": "10日は法定期限の15日より5日短く、変更記録は事由発生日から15日以内。",
+          "reasonSha256": "afe1661f6cbcf3f4129549f2f463db59e15670dc638f475dc7fef9cbb5ffc9fd",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "法定期間15日を10日とする値。10日以内に実施すること自体が違法という意味ではない。",
+          "evidence": [
+            "official-original:p8:No28",
+            "Vehicles-law:第67条第1項本文"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 15日",
+          "reason": "15日以内が規定期限。",
+          "reasonSha256": "eb954e8364a193a37e2ab6f56b6fd485ef1efe744a5c57f4700081f89bc09674",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "法67条1項本文の15日以内。",
+          "evidence": [
+            "official-original:p8:No28",
+            "Vehicles-law:第67条第1項本文"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 20日",
+          "reason": "20日では法定期限の15日を5日過ぎるため、変更記録は15日以内に受ける。",
+          "reasonSha256": "aa69dd788e07670bddddc6cae6e8472bd722bdbaed1c0c050852c2a4b20fb76b",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "20日は法定期間を5日超える。",
+          "evidence": [
+            "official-original:p8:No28",
+            "Vehicles-law:第67条第1項本文"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 25日",
+          "reason": "25日では法定期限の15日を10日過ぎるため、変更記録は15日以内に受ける。",
+          "reasonSha256": "939b9ae61eee0b1865c04b5a9cbe6ef80959f30d8a61e80a8b52cc5233837f63",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "25日は法定期間を10日超える。",
+          "evidence": [
+            "official-original:p8:No28",
+            "Vehicles-law:第67条第1項本文"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "b843b064e198332428e26de7f5bb6249556d3ba0d24a32d9988c2e51d2e75d36",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q29",
+      "manuscriptSha256": "b531def96bd1a1e5515c667d546e62344c6bbcb993f6629c8301c957df7d91dc",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          8
+        ],
+        "locator": "No.29",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 29,
+        "answer": "ウ",
+        "number": "3",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p8:No29",
+        "MLIT-S136:2025.6.17版:第136条第1項第1号"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p8:No29"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "MLIT-S136",
+          "url": "https://www.mlit.go.jp/jidosha/content/S136.pdf",
+          "localFile": null,
+          "sha256": null,
+          "locator": "2025.6.17版:第136条第1項第1号"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) （イ）昼間／（ロ）300",
+          "reason": "昼間だが300mではない。",
+          "reasonSha256": "90e6324c5a4aa5599c6bf5b2b72069dc83850033d018cd6d555f398e3662cfc2",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "昼間は合うが規定距離は100m。",
+          "evidence": [
+            "official-original:p8:No29",
+            "MLIT-S136:2025.6.17版:第136条第1項第1号"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) （イ）夜間／（ロ）300",
+          "reason": "夜間300mではない。",
+          "reasonSha256": "93a251d8e4258714e11f68e3c65b388a961700ca50176f991718f337f9b612b3",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "夜間と300mの双方が違う。",
+          "evidence": [
+            "official-original:p8:No29",
+            "MLIT-S136:2025.6.17版:第136条第1項第1号"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) （イ）昼間／（ロ）100",
+          "reason": "昼間100mが正しい。",
+          "reasonSha256": "5c1537deccf0be354efafa360af7aeab97f04c72a82b3134171897475f3561bd",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "原問の小型四輪車には昼間後方100m基準。",
+          "evidence": [
+            "official-original:p8:No29",
+            "MLIT-S136:2025.6.17版:第136条第1項第1号"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) （イ）夜間／（ロ）100",
+          "reason": "100mだが夜間ではない。",
+          "reasonSha256": "2f02b392a8be421ac35ad7bcd5c8ed820147aa731584c03c8bfe58226bd05fd9",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "距離は合うが夜間ではない。",
+          "evidence": [
+            "official-original:p8:No29",
+            "MLIT-S136:2025.6.17版:第136条第1項第1号"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "b531def96bd1a1e5515c667d546e62344c6bbcb993f6629c8301c957df7d91dc",
+      "protectedFieldsUnchanged": true
+    },
+    {
+      "id": "jidosha-2025-second-3-gasoline-q30",
+      "manuscriptSha256": "515d9cd74d3a5b236eecc822d758b149cdcd96152a43f871a6f1730e482a81f4",
+      "hashContract": "SHA256(UTF8(JSON.stringify(parsed question object))); original property order retained",
+      "fixedCommit": "6f4253b9381e3030863e38dfe75b5ca4068ba526",
+      "fixedBlobSha": "320fa720a1c2326e48c910b4eeaff32c92c7137d",
+      "fixedCommitTargetIdentical": true,
+      "officialOriginal": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3g.pdf",
+        "sha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "localFile": "sources/20260322_3g.pdf",
+        "localSha256": "a69bb4ddfe894a14a557c25ec3844ec5c88858e7c1b1026faffce4eb1af584bf",
+        "physicalPages": [
+          8
+        ],
+        "locator": "No.30",
+        "visuallyReviewed": true
+      },
+      "officialKey": {
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+        "sha256": "2f73820401362ca24f052d8339bf20e4865dab2f2afe74b7c7b546b7b90d6701",
+        "physicalPage": 1,
+        "subject": "3-gasoline",
+        "qNumber": 30,
+        "answer": "エ",
+        "number": "4",
+        "storedTableMatches": true,
+        "transcriptionReview": "Existing independent 610-answer review reused; no new full-table transcription counted."
+      },
+      "figureReceipts": [],
+      "evidence": [
+        "official-original:p8:No30",
+        "Vehicles-law:第48条第1項1-3号",
+        "MLIT-inspection:点検整備制度と車種の関係"
+      ],
+      "technicalEvidence": [
+        {
+          "kind": "official-original",
+          "locator": "p8:No30"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "Vehicles-law",
+          "url": "https://laws.e-gov.go.jp/api/1/lawdata/326AC0000000185",
+          "localFile": "sources/vehicles-law.xml",
+          "sha256": "f07627b20c37c1d500a0b0ecbf01013d67cde41e665d28e7efc1d7eca12afd0e",
+          "locator": "第48条第1項1-3号"
+        },
+        {
+          "kind": "primary-source-catalog",
+          "id": "MLIT-inspection",
+          "url": "https://www.mlit.go.jp/common/000012376.pdf",
+          "localFile": null,
+          "sha256": null,
+          "locator": "点検整備制度と車種の関係"
+        }
+      ],
+      "conditions": null,
+      "allChoiceReasons": [
+        {
+          "label": "ア",
+          "statement": "(1) 乗車定員5人の小型乗用自動車のレンタカー",
+          "reason": "レンタカーは1年ごとの区分ではない。",
+          "reasonSha256": "f8e04e8ee63fd6e560ed1287646d97502f37567383ba1170139a0b9cb246b1c7",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "5人乗り乗用レンタカーは6月区分。",
+          "evidence": [
+            "official-original:p8:No30",
+            "Vehicles-law:第48条第1項1-3号",
+            "MLIT-inspection:点検整備制度と車種の関係"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "イ",
+          "statement": "(2) 総排気量2.00Lの自動車運送事業用の自動車",
+          "reason": "事業用自動車はより短い周期。",
+          "reasonSha256": "21709c672cfa5e0f15eb7286c2cca11cdcd0c007fc562daff2213f1fb10353f4",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "自動車運送事業用は原則3月区分。排気量2.00Lでも原問区分は変わらない。",
+          "evidence": [
+            "official-original:p8:No30",
+            "Vehicles-law:第48条第1項1-3号",
+            "MLIT-inspection:点検整備制度と車種の関係"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "ウ",
+          "statement": "(3) 車両総重量9tの自家用自動車",
+          "reason": "総重量9tの自家用車はより短い周期。",
+          "reasonSha256": "50fed979d70463fe6d247d675137a72d5bf68046fa847cb00491b5c911d98579",
+          "independentStatementVerdict": "false",
+          "technicalAssessment": "車両総重量9tは8t以上の3月区分。",
+          "evidence": [
+            "official-original:p8:No30",
+            "Vehicles-law:第48条第1項1-3号",
+            "MLIT-inspection:点検整備制度と車種の関係"
+          ],
+          "reasonDisposition": "accepted"
+        },
+        {
+          "label": "エ",
+          "statement": "(4) 自家用乗用自動車",
+          "reason": "自家用乗用自動車は1年ごと。",
+          "reasonSha256": "03fce8926695d48a5c03be90037e354cf37434f7d24c082eaa48a12426e858f3",
+          "independentStatementVerdict": "true",
+          "technicalAssessment": "自家用乗用は前2区分以外の1年区分。",
+          "evidence": [
+            "official-original:p8:No30",
+            "Vehicles-law:第48条第1項1-3号",
+            "MLIT-inspection:点検整備制度と車種の関係"
+          ],
+          "reasonDisposition": "accepted"
+        }
+      ],
+      "status": "ACCEPT",
+      "holds": [],
+      "repairs": [],
+      "candidateManuscriptSha256": "515d9cd74d3a5b236eecc822d758b149cdcd96152a43f871a6f1730e482a81f4",
+      "protectedFieldsUnchanged": true
+    }
+  ]
+}

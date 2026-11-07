@@ -1,0 +1,14 @@
+**Overall: PASS — saved LQ4D handoff integrity. No mandatory corrections found.** This is partial content acceptance, not full qualification completion or publication approval.
+
+- **Branch/scope:** `qual/lq4b-integration-20261104`, baseline `82db93b10`, audited HEAD `c87ff10b6`. All 99 changed files match their actual HEAD blobs. Changes are confined to building-hygiene staging and reports. Engineering’s four receipt batches and eight stored content/assets files remain unchanged; app/runtime/code unchanged.
+- **Reports identical:** repository report, external `lq4d-report.md`, and committed report are byte-identical. SHA256: `48c3ae4adf7f41fc1be27a903b8dfc6a97e8bbdadf221739bf7a6765f7be649c`.
+- **Counts/coverage:** exactly **135 new originals / 675 reasons**, across 10 batches. Previous 45 unchanged; total **180/360**. Both years contain exactly Q1–90. Remaining inventory exactly Q91–180 per year: **180 originals / 900 reasons**. No pending manuscripts; all `publicGo:false`.
+- **Review integrity:** independently recomputed manuscript, snapshot and report hashes; compared complete JSON content excluding acceptance metadata; checked IDs/answers against the frozen official index. PASS evidence covers reviews **3/4/5A/6/7/9/13/15/16**. Seven failed predecessors remain preserved, with actual differences matching subsequent reviews. Execution logs corroborate `gpt-6-astra`, read-only execution and recorded exits. Review10 capacity failure exited 1; review13 retried the same model and passed.
+- **Figures/blobs:** all eight actual figure hashes match declarations and preserved crop metadata. Existing independent PDF reproduction verdicts cover all eight. Independently read all **37 Git blobs** at `dfa7e4813` and HEAD: exact equality with current files; the manifest covers the complete expected set.
+- **Validation:** strict staging validator rerun **exit 0, failures 0**, including 14 saved source PDFs. Saved logs, hashes, exit files and committed bytes verify **26,873 / fail 0 / warn 16,854**, typecheck exit 0, **25 Vitest files / 282 tests**, and **14 Node tests**. Those broader tests were verified from saved evidence, not rerun. LQ4 staging is excluded from the common-loader count.
+
+The report correctly discloses remaining content work, lack of registration/publication, and medical caveats for **2024 Q27, Q36 and 2025 Q41**.
+
+**Optional only:** reference-link maintenance and additional citations identified in prior reviews. Two untracked audit artifacts (`review17-prompt.txt`, `scope-verification.json`) are outside the saved handoff; neither is a manuscript.
+
+No edits, commits, pushes, PRs, deployment, publication or registration performed.

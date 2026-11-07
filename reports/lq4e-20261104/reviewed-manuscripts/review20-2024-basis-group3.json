@@ -1,0 +1,273 @@
+{
+  "status": "DRAFT_PENDING_INDEPENDENT_REVIEW",
+  "qualification": "gijutsushi1-kikai",
+  "year": 2024,
+  "subject": "basis",
+  "expectedFullQualificationCount": 160,
+  "questions": [
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-3-1",
+      "questionNumber": 13,
+      "printedNumber": "Ⅰ－3－1",
+      "questionText": "変数f、gと変数x、yの間には、f＝f(x,y)、g＝g(x,y)の関係があるとする。このとき、関数u(f,g)のf、gによる偏微分とx、yによる偏微分は次式によって関連付けられる。\n(∂u/∂x, ∂u/∂y)ᵀ＝[J](∂u/∂f, ∂u/∂g)ᵀ\nここで[J]はヤコビ行列と呼ばれ、ここでは2×2の行列となる。[J]として、最も適切なものはどれか。行列は[[第1行],[第2行]]で表す。",
+      "choices": {
+        "1": "[[∂x/∂f,∂y/∂f],[∂x/∂g,∂y/∂g]]",
+        "2": "[[∂f/∂x,∂f/∂y],[∂g/∂x,∂g/∂y]]",
+        "3": "[[∂u/∂f,∂u/∂g],[∂u/∂x,∂u/∂y]]",
+        "4": "[[∂f/∂x,∂g/∂x],[∂f/∂y,∂g/∂y]]",
+        "5": "[[∂x/∂f,∂x/∂g],[∂y/∂f,∂y/∂g]]"
+      },
+      "officialAnswer": 4,
+      "scoringException": null,
+      "explanation": "正答は4です。連鎖律よりu_x＝f_x u_f＋g_x u_g、u_y＝f_y u_f＋g_y u_gです。各式の係数を行に置けば選択肢4となります。",
+      "choiceExplanations": {
+        "1": "x、yをf、gで微分する向きが、指定された変換と逆です。",
+        "2": "必要な行列の転置です。第1行にはxで微分したfとgを並べます。",
+        "3": "変換係数にu自身の偏微分を並べており、連鎖律の係数行列ではありません。",
+        "4": "適切です。行列積で連鎖律の二つの式を再現できます。",
+        "5": "逆向きの座標変換のヤコビ行列に相当し、指定式の係数ではありません。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 10,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－3－1。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF and saved OCR checked. Printed group/item and all five choices retained; matrices use row notation.",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-3-2",
+      "questionNumber": 14,
+      "printedNumber": "Ⅰ－3－2",
+      "questionText": "3次元空間に原点を始点とする2つのベクトルa、bがあり、bの大きさ|b|は1である。aの終点から、bが定める直線への垂線を表すベクトルとして、最も適切なものはどれか。なお、a・bはaとbの内積、a×bはaとbの外積を表す。",
+      "choices": {
+        "1": "a×b",
+        "2": "(b・a)b−a",
+        "3": "b−a",
+        "4": "(b・a)b",
+        "5": "a×b−a"
+      },
+      "officialAnswer": 2,
+      "scoringException": null,
+      "explanation": "正答は2です。垂線の足の位置ベクトルは単位ベクトルbへの射影(b・a)bです。aの終点から足へ向かうベクトルは、終点の位置から始点の位置を引いた(b・a)b−aです。",
+      "choiceExplanations": {
+        "1": "aとbの両方に垂直なベクトルで、aの終点から直線への変位ではありません。",
+        "2": "適切です。bとの内積が0で、終点はbの張る直線上にあります。",
+        "3": "足が常にbの終点にあるとは限りません。",
+        "4": "原点から垂線の足への位置ベクトルであり、aの終点からの変位ではありません。",
+        "5": "終点a＋(a×b−a)＝a×bは一般にbの張る直線上にありません。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 10,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－3－2。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF and saved OCR checked. Printed group/item and all five choices retained; matrices use row notation.",
+      "needsIndependentReview": true,
+      "publicGo": false
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-3-3",
+      "questionNumber": 15,
+      "printedNumber": "Ⅰ－3－3",
+      "questionText": "下図は、ニュートン-ラフソン法（ニュートン法）を用いて非線形方程式f(x)＝0の近似解を得るためのフローチャートを示している。図中の（ア）及び（イ）に入れる処理の組合せとして、最も適切なものはどれか。",
+      "choices": {
+        "1": "ア：Δx←−f(x_n)・f′(x_n)／イ：|Δx|＜ε",
+        "2": "ア：Δx←−f′(x_n)/f(x_n)／イ：|Δx|＞ε",
+        "3": "ア：Δx←−f′(x_n)/f(x_n)／イ：|Δx|＜ε",
+        "4": "ア：Δx←−f(x_n)/f′(x_n)／イ：|Δx|＞ε",
+        "5": "ア：Δx←−f(x_n)/f′(x_n)／イ：|Δx|＜ε"
+      },
+      "officialAnswer": 5,
+      "scoringException": null,
+      "explanation": "正答は5です。接線による更新量はΔx＝−f(x_n)/f′(x_n)。図は判定YESで終了するため、更新量の絶対値がしきい値より小さいことを収束条件とします。",
+      "choiceExplanations": {
+        "1": "更新量では関数値と導関数を掛けず、関数値を導関数で割ります。",
+        "2": "比の分子分母が逆で、判定の不等号も終了条件と逆です。",
+        "3": "収束判定は正しいですが、更新量の分子分母が逆です。",
+        "4": "更新量は正しいですが、YESで終了するので小さい側を判定します。",
+        "5": "適切です。接線近似による更新と小さい更新量での終了を満たします。"
+      },
+      "hasRequiredFigure": true,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 11,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－3－3。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF and saved OCR checked. Printed group/item and all five choices retained; matrices use row notation.",
+      "needsIndependentReview": true,
+      "publicGo": false,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2024-basis-I-3-3.png",
+          "alt": "ニュートン法フローチャート。初期値とεを設定しn=0、fとf′を計算、ア、イの順に処理。YESならx_n出力して終了、NOならx_{n+1}=x_n+Δx、n=n+1として反復。",
+          "sourceQuestionPage": 11,
+          "sourceClipPdfPoints": [
+            70,
+            135,
+            520,
+            570
+          ],
+          "renderDpi": 180,
+          "sha256": "9e4aeb67c62c8e3b565a186b162a49015f1beadfaa4eb239b4ba1186b2640a8b"
+        }
+      ]
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-3-4",
+      "questionNumber": 16,
+      "printedNumber": "Ⅰ－3－4",
+      "questionText": "下図に示す支持条件の異なる3種類の柱(a)、(b)、(c)を考える。すべての柱の材料・断面・長さは同じである。柱(a)、(b)、(c)が図に矢印で示す軸方向荷重を受けるときの座屈荷重をそれぞれ、P_a、P_b、P_cとしたとき、それらの大小関係として、最も適切なものはどれか。",
+      "choices": {
+        "1": "P_a＞P_b＞P_c",
+        "2": "P_a＞P_c＞P_b",
+        "3": "P_b＞P_a＞P_c",
+        "4": "P_b＞P_c＞P_a",
+        "5": "P_c＞P_a＞P_b"
+      },
+      "officialAnswer": 3,
+      "scoringException": null,
+      "explanation": "正答は3です。(a)は両端ピン、(b)は一端固定・他端ピン、(c)は一端固定・他端自由です。オイラー座屈荷重はπ²EI/(KL)²で、有効長係数Kはそれぞれ1、約0.7、2。したがってP_b＞P_a＞P_cです。",
+      "choiceExplanations": {
+        "1": "固定・ピンの(b)は両端ピンの(a)より座屈荷重が大きいので、aとbが逆です。",
+        "2": "最も大きいbを最後にしており、支持条件による拘束の強さと逆です。",
+        "3": "適切です。有効長が短い順b、a、cに座屈荷重が大きくなります。",
+        "4": "bが最大は正しいですが、自由端を持つcはaより小さくなります。",
+        "5": "自由端を持つcを最大とする点が誤りです。"
+      },
+      "hasRequiredFigure": true,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 12,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－3－4。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF and saved OCR checked. Printed group/item and all five choices retained; matrices use row notation.",
+      "needsIndependentReview": true,
+      "publicGo": false,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2024-basis-I-3-4.png",
+          "alt": "柱aは両端ピン支持、bは上端ピン・下端固定、cは上端自由・下端固定。全て同じ長さで上端に軸圧縮荷重。",
+          "sourceQuestionPage": 12,
+          "sourceClipPdfPoints": [
+            85,
+            170,
+            505,
+            500
+          ],
+          "renderDpi": 180,
+          "sha256": "ec688b7c49aa92f58fb228e6fe2aeb701630edd67430ab1f36ba1284c3f79248"
+        }
+      ]
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-3-5",
+      "questionNumber": 17,
+      "printedNumber": "Ⅰ－3－5",
+      "questionText": "下図に示すように、2つのばねと1つの質点からなるばね質点系a、b、cがある。図中のばねのばね定数はすべて同じkであり、また、図中の質点の質量はすべて同じmである。最小の固有振動数を有するばね質点系として、最も適切なものはどれか。",
+      "choices": {
+        "1": "aのみ",
+        "2": "bのみ",
+        "3": "cのみ",
+        "4": "aとb",
+        "5": "bとc"
+      },
+      "officialAnswer": 3,
+      "scoringException": null,
+      "explanation": "正答は3です。aは並列2本で等価ばね定数2k、bは左右から復元力を受けるため2k、cは直列2本でk/2です。固有角振動数√(k_eq/m)が最小となるのはcです。",
+      "choiceExplanations": {
+        "1": "aの等価ばね定数は2kであり、cより固有振動数が大きくなります。",
+        "2": "bも左右の復元力が加わるため等価ばね定数は2kです。",
+        "3": "適切です。直列のcは等価ばね定数k/2で最小です。",
+        "4": "aとbは同じ固有振動数ですが、最小ではありません。",
+        "5": "bとcは等価ばね定数が異なり、cだけが最小です。"
+      },
+      "hasRequiredFigure": true,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 13,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－3－5。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF and saved OCR checked. Printed group/item and all five choices retained; matrices use row notation.",
+      "needsIndependentReview": true,
+      "publicGo": false,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2024-basis-I-3-5.png",
+          "alt": "系aは固定壁と質点間のばね2本並列、bは質点が左右の固定壁へばねで接続、cは固定壁と質点間のばね2本直列。",
+          "sourceQuestionPage": 13,
+          "sourceClipPdfPoints": [
+            90,
+            145,
+            505,
+            500
+          ],
+          "renderDpi": 180,
+          "sha256": "38eb7dabfaab9026b710b7b2db564cb5407bf65983445e96d42e94720c347986"
+        }
+      ]
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-basis-I-3-6",
+      "questionNumber": 18,
+      "printedNumber": "Ⅰ－3－6",
+      "questionText": "下図の回路において、各抵抗器の抵抗値は1Ωである。a、b間の合成抵抗値として、最も適切なものはどれか。なお、図中の「●」は接続点を示している。ただし、抵抗器以外の導線及び接続部分で付加的な抵抗は存在しないものとする。",
+      "choices": {
+        "1": "4/3 Ω",
+        "2": "1 Ω",
+        "3": "2/3 Ω",
+        "4": "1/3 Ω",
+        "5": "1/6 Ω"
+      },
+      "officialAnswer": 3,
+      "scoringException": null,
+      "explanation": "正答は3です。上下対称かつ左右対称なので、上・中央・下の3節点は等電位となり、縦の抵抗には電流が流れません。aからbへ2Ωの枝が3本並列となるため、合成抵抗は2/3Ωです。",
+      "choiceExplanations": {
+        "1": "等電位の節点を使って3枝を並列化すると4/3Ωにはなりません。",
+        "2": "上下の2枝だけなら1Ωですが、中央の2Ωの枝も並列に存在します。",
+        "3": "適切です。(1/2＋1/2＋1/2)の逆数は2/3Ωです。",
+        "4": "各枝は1Ωでなく2Ωの直列です。",
+        "5": "全ての抵抗を直接並列とすることはできません。"
+      },
+      "hasRequiredFigure": true,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_1.pdf",
+      "sourceQuestionPage": 14,
+      "sourceQuestionSha256": "f4c593ee3d3afee341f56d1049c2ebf60e39b3141457cba2b112b7ac6a72a7b0",
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 1,
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 基礎科目 Ⅰ－3－6。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF and saved OCR checked. Printed group/item and all five choices retained; matrices use row notation.",
+      "needsIndependentReview": true,
+      "publicGo": false,
+      "figures": [
+        {
+          "path": "data/qualification-staging/lq4e-engineer-first/assets/2024-basis-I-3-6.png",
+          "alt": "菱形の上下左右と中央の5節点。外周4辺と左右中央の2辺、上下中央の2辺の計8本に各1Ω。aは左、bは右。",
+          "sourceQuestionPage": 14,
+          "sourceClipPdfPoints": [
+            130,
+            180,
+            470,
+            425
+          ],
+          "renderDpi": 180,
+          "sha256": "915d880f5332d88678ea054b1a94543720c60e36e83cc37f8aca31108593cb10"
+        }
+      ]
+    }
+  ]
+}

@@ -4,7 +4,7 @@ import { NextResponse } from "next/server";
 import { requestsNewQuestion, ORIGINAL_QUESTION_ONLY_MESSAGE } from "@/lib/copilot/original-question-request";
 import { z } from "zod";
 import { getProvider, type LLMProvider } from "@/lib/ai/provider";
-import { checkMonthlyCostCap, estimateTokens, recordAiCost } from "@/lib/ai/cost-guard";
+import { checkMonthlyCostCap, estimateTokens, recordAiCost, textBudget } from "@/lib/ai/cost-guard";
 import { tierForModel } from "@/lib/ai/cost-tracker";
 import { checkAiNormalUse } from "@/lib/ai/normal-use-server";
 import { findExamEntry } from "@/lib/exam-library-catalog";
@@ -110,8 +110,12 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
   } catch {
     return NextResponse.json({ error: "provider_unavailable", message: "AIサービスが一時的に利用できません。" }, { status: 503 });
   }
+  const maxTokens = 1200;
+  const budget = textBudget(tierForModel(COPILOT_MODEL), system, messages, maxTokens);
+  let reservation: Awaited<ReturnType<typeof checkMonthlyCostCap>>["reservation"];
   if (provider.name !== "mock") {
-    const cap = await checkMonthlyCostCap(provider.name);
+    const cap = await checkMonthlyCostCap(provider.name, budget);
+    reservation = cap.reservation;
     if (!cap.allowed) {
     if (!usage.legacy) usage.headers["X-AI-RateLimit-Scope"] = "service-cost";
       return NextResponse.json({ error: cap.reason ?? "cost_capped", message: cap.reason === "budget_unavailable"
@@ -120,9 +124,11 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     }
   }
 
-  const maxTokens = 1200;
   const usageDenial = await consumeAiUsage(usage, provider.name);
-  if (usageDenial) return usageDenial;
+  if (usageDenial) {
+    if (reservation) await recordAiCost({ ...budget, inputTokens: 0, outputTokens: 0, reservation });
+    return usageDenial;
+  }
   const stream = createCopilotResponseStream({
     provider,
     system,
@@ -134,16 +140,16 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     hasGrounding: false,
     timeoutMs: 35_000,
     onComplete: provider.name === "mock" ? undefined : async (outputChars, usage) => {
-      const inputChars = system.length + messages.reduce((total, message) => total + message.content.length, 0);
       await recordAiCost({
         tier: tierForModel(COPILOT_MODEL),
-        inputTokens: usage?.promptTokens ?? estimateTokens(inputChars),
+        inputTokens: usage?.promptTokens ?? budget.inputTokens,
         outputTokens: usage?.totalTokens !== undefined && usage.promptTokens !== undefined
           ? Math.max(0, usage.totalTokens - usage.promptTokens)
           : usage?.outputTokens !== undefined && usage.thoughtsTokens !== undefined
             ? usage.outputTokens + usage.thoughtsTokens
             : Math.max(maxTokens, (usage?.outputTokens ?? 0) + (usage?.thoughtsTokens ?? 0), estimateTokens(outputChars)),
         label: "copilot",
+            reservation,
       });
     },
   });

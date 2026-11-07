@@ -17,6 +17,7 @@ import DeleteAccountPage from "../../../app/account/delete/page";
 import "../../src/native.css";
 import {QuizPlayer} from "../../../components/quiz/QuizPlayer";
 import type {Question} from "../../../lib/questions/types";
+import "./pet-harness";
 type StoreScenario="cancelled"|"pending"|"changed-price"|"no-restorable-purchase";
 declare global {interface Window {paperTest:{show:(index:PaperQuestionIndex[],initialId?:string,initialView?:"question"|"summary")=>void;purgeCache:()=>Promise<void>;showDeletion:()=>void}}}
 window.paperTest={

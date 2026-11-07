@@ -1,0 +1,158 @@
+{
+  "model": "gpt-6-astra",
+  "scope": "Independent revision-2 content review restricted to the eight IDs in lq1c-revision2-ids.json against the NEW candidate packet. All four explanations, original question, official key and numeric claims are checked. No standalone calculation problems are present. sourcePagesChecked uses physical target-question PDF pages; supplementary pages and keys are identified in findings.source.",
+  "limitations": [
+    "All eight original question PNG pages and both relevant official answer sheets (2026 p1; 2025-second pp1-2) were visually inspected. Candidate hashes were recomputed using the packet producer convention (insertion-order compact UTF-8 JSON, no key sorting) and matched both bindings and revision-2 delta. All target source PDF hashes and all three supporting PNG hashes matched their manifests.",
+    "The campus syllabus URL returned a verification page; it was not bypassed or treated as independently read. SRS 10 mA and the inflator prohibition were independently verified visually in the Suzuki manufacturer manual on physical p37, printed SRS airbag 4E-11. Physical p10 has another printed 4E-11 in a different section and is not the supporting page.",
+    "The Toyota training mirror failed in the web reader but downloaded normally through requests; printed p5-18 text was independently read. Nissan full-PDF retrieval failed (web reader size limit and HTTP errors); its AT-19 manufacturer component table was independently available in the search index. No access controls were bypassed.",
+    "PASS for coolant, thermostat and bearing explanations accepts their explicit exam-context qualifications. It does not independently certify an exact universal freezing boundary, thermostat calibration or tin-content expansion law. The bearing alloy/layer construction remains unspecified. No contradictory general law is asserted by these revised explanations.",
+    "The welding explanation explicitly preserves a discrepancy between official scoring and the broad practical wording of option 1; acceptance is for this candid and technically accurate explanation, not an endorsement of a universal ban on dissimilar filler. The historical legal explanation is educational, not an applicability determination for a particular vehicle.",
+    "No standalone calculation is required. The dash-panel count was independently recomputed as two; SRS truth combinations, current units, coolant values, thermostat ranges and historical dimensional limits were checked. Rights and legacy publication flags were outside this content review."
+  ],
+  "rows": [
+    {
+      "id": "jidosha-2026-first-body-q08",
+      "candidateSha256": "7bad2cf743a27b89da88b1ac6d0f73de1359aa3f9361f4c81753628b355b5514",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        3
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "Visually checked 2020 body Q8 and key column 43: all four statements are correct, answer 4. This independently establishes rib reinforcement, separate toe board for split panels, integrated toe board for one-piece panels and FF cross-member application. In the 2026 wording only statements (i) and (iv) remain correct, giving 2. All four count explanations now consistently identify this pair.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-body-p03.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png; qa/lq1c-supporting-sources/lq1c-20201004-body-p04.png Q8; qa/lq1c-supporting-sources/lq1c-20201004-key-p01.png column 43 Q8=4"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-1-small-written-q17",
+      "candidateSha256": "f9bf674f5374c0d52c92bdc5777da5e80627788bc76b27b5b5b8ac615a93921a",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        12
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "The manufacturer manual independently specifies at most 10 mA in the lowest resistance range and prohibits inflator continuity testing. All four combination explanations correctly implement false/false/true. Torsion-bar load limitation permits belt payout after locking-base arrest; acceleration sensing converts the crash input to an electrical signal. This is a specified circuit-test condition, not authorization to measure a squib.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-1-small-written-p12.png; https://kiroku.bufsiz.jp/kiroku/syuurisyo2/SUZUKI/SUZUKI2/EVERY-DA62Vairbag.pdf physical p37, printed SRS airbag 4E-11; tmp/lq1c-r2-srs-37.png; target key p1 column 12 Q17=4"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-gasoline-q29",
+      "candidateSha256": "a8229f52af91e49756a767a261e9b0590a710b2392a9d071c8cbc0069eae6e5d",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        11
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "choiceExplanations.\u30a8; validation",
+          "issue": "All four explanations checked: rollers versus sprags, hydraulically compressed alternating clutch plates, band/servo construction versus multidisc brake parts, and front-sun-gear locking through the reverse-clutch drum in this mechanism. The Nissan 2004 Altima manufacturer manual component table expressly supports front-sun-gear locking. The unsupported 2014 JASPA citation has been removed. Official answer 2 agrees.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-gasoline-p11.png; tmp/lq1b-sources/jaspa-2026-first-answers-p1.png column 21 Q29=2; https://boredmder.com/FSMs/Nissan/Altima/2004/AT.pdf printed AT-19 component table, primary manufacturer text available in search index; candidate reference https://device.report/m/5a5467649e35bb91a1ee5a65b7479076778c5684a307d5a46238fadda19705b7.pdf"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-2-gasoline-q23",
+      "candidateSha256": "e451c867f331757dfa054e9fd536fb237cc6aad71ac153b43272bb5700f5c2a5",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        7
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "All four reasons checked: sleeve-type flux variation, ring-type relative displacement/inductance, column versus pinion assistance, and input magnet/output yoke in the described Hall arrangement. Toyota training p5-18 explicitly locates rings 1/2 on the input shaft and ring 3 on the output shaft and explains inductance variation. The revision no longer incorrectly relocates sleeve-type shaft protrusions. Official answer 1 agrees.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-2-gasoline-p07.png; https://www.mri-auto-diagnostics.com/wp-content/uploads/2020/11/Power-Steering-2004-2009-Prius.pdf physical p4, printed 5-18 Fig.5.21, fetched and text inspected; target key p1 column 21 Q23=1"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-body-q24",
+      "candidateSha256": "d5249fe81224eddec0816d8caedc7b5b001104270dc24876aee651ded4c82512",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        8
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "All four reasons checked. The revised first explanation accurately reports the official treatment without claiming that compatible filler requires identical composition or inventing an ordinary-sheet-metal assumption. The 309-series dissimilar-joint example is directly supported. Dedicated cast-iron repair consumables also exist. Primary-input capacity, unloaded voltage before arcing, and flux-coated covered electrodes are correct. Acceptance covers the explicit distinction between exam scoring and practical exceptions; it does not certify the broad original option 1 as universally false.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-body-p08.png; https://www.weld.nipponsteel.com/techinfo/weldqa/detail.php?id=27TP33C; https://lincolnelectric.co.jp/products/Consumable (TECH-ROD 55 cast-iron welding/repair); target key p2 column 43 Q24=2"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-3-diesel-q11",
+      "candidateSha256": "b85f6b2a04e30e60f13703d1bc5bae6f0d495d31f44760877bec3ea61fc6bcbc",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        4
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "Official answer 4 and all four reasons checked. Jiggle-valve air venting and the distinction between pressure-valve opening-pressure testing and vacuum-valve operation checking are sound. The numerical coolant and thermostat statements are explicitly attributed to the exam assumptions rather than universal specifications. BASF G48 specifies volume concentration and a below -50 C result at 60 percent; this alone does not prove a -60 C freezing boundary. The revised wording does not make that inference. The 82-88 C and 5-7 C values remain representative exam values, not independently established universal calibrations.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-3-diesel-p04.png; https://promo.basf.com/campaign/tasa/fichas-tecnicas/Glysantin%C2%AE%20G48%C2%AE%20-%20Engine%20Coolant%20Concentrate%20-%20TI.pdf p2; https://fuji-seiko.co.jp/product1/; target key p1 column 33 Q11=4"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-2-gasoline-q01",
+      "candidateSha256": "e80bfc9762cb8ffae0e7ba578b40149efb973fe54e589fdabc86edd45194887f",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        2
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "All four reasons checked: conformability, seizure resistance rather than fatigue resistance, the explicitly exam-scoped tin-content claim, and embeddability. The revision does not infer composite-shell expansion from pure-element coefficients and directs actual clearance selection to material/construction/service-specific manufacturer specifications. The exact assumed alloy and layer structure remain unidentified; acceptance is for this accurate caveat, not a newly verified universal tin-content law. Official answer 2 agrees.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2025-second-2-gasoline-p02.png; https://www.mahle-aftermarket.com/na/en/support/questions-and-comments/ bearing oil-clearance discussion; target key p1 column 21 Q1=2"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2026-first-2-diesel-q38",
+      "candidateSha256": "fc531ae6e4ed43d1a364c49fb773e184ed4055fe3068af2a968008f4e3c77ed7",
+      "verdict": "PASS",
+      "sourcePagesChecked": [
+        15
+      ],
+      "answerChecked": true,
+      "allFourExplanationsChecked": true,
+      "findings": [
+        {
+          "field": "validation",
+          "issue": "Historical Article 102 paragraph 3 independently confirms unloaded 550 mm, secure mounting, symmetry and the 100 mm lateral relation. The later Article 180 specifies 450/500 mm with conditional 550 mm alternatives. All four explanations agree when read under the stated historical scope. The revision appropriately avoids claiming universal present-day applicability and requires class/build-date applicability checks for actual vehicles. Official answer 1 agrees.",
+          "replacement": null,
+          "source": "tmp/lq1b-sources/jaspa-2026-first-2-diesel-p15.png; https://www.mlit.go.jp/jidosha/kijyun/saimokukokuji/saikoku_102_00.pdf p2 paragraph 3; https://www.mlit.go.jp/jidosha/content/S180.pdf pp2-3 paragraph 3; target key p1 column 22 Q38=1"
+        }
+      ]
+    }
+  ]
+}

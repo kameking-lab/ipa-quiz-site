@@ -1,4 +1,5 @@
 import type { ChoiceKey, Question, Season } from "@/lib/questions/types";
+import source2024Kansai from "./2024-kansai.json";
 import source2025Kansai from "./2025-kansai.json";
 
 const keys: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ"];
@@ -77,11 +78,13 @@ function toQuestions(source: TohanSource): Question[] {
       sourceAttribution: `出典：関西広域連合 令和${reiwa}年度 登録販売者試験（${item.pdfPart}）問${item.number}。ルビ・改行・表組みを整理。解説は本サイト作成。`,
       officialReferenceUrls: [source.guideline.url],
       license: "KANSAI-UNION-reuse",
-      lastUpdated: "2026-09-26",
+      lastUpdated: source.year === 2024 ? "2026-11-06" : "2026-09-26",
     };
   });
 }
 
 /** 令和7年度（2025年8月23日実施）関西広域連合 登録販売者試験 全120問。 */
 export const TOHAN_2025_KANSAI_QUESTIONS = toQuestions(source2025Kansai as TohanSource);
-export const TOHAN_QUESTIONS: Question[] = [...TOHAN_2025_KANSAI_QUESTIONS];
+/** 令和6年度（2024年8月31日実施）関西広域連合 登録販売者試験 全120問。 */
+export const TOHAN_2024_KANSAI_QUESTIONS = toQuestions(source2024Kansai as TohanSource);
+export const TOHAN_QUESTIONS: Question[] = [...TOHAN_2025_KANSAI_QUESTIONS, ...TOHAN_2024_KANSAI_QUESTIONS];

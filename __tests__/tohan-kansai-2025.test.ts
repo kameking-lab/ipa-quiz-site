@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { TOHAN_CATEGORIES, TOHAN_QUESTIONS } from "@/data/questions/tohan";
+import { TOHAN_2025_KANSAI_QUESTIONS as TOHAN_QUESTIONS, TOHAN_CATEGORIES, TOHAN_QUESTIONS as ALL_TOHAN_QUESTIONS } from "@/data/questions/tohan";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { getQualificationByExamCode, isExamPublished } from "@/lib/qualifications/catalog";
 import { choiceDisplayLabel } from "@/lib/questions/display";
@@ -33,12 +33,12 @@ const chapterOf = (n: number) =>
         : n <= 100 ? "薬事に関する法規と制度"
           : "医薬品の適正使用と安全対策";
 
-describe("登録販売者試験（関西広域連合）令和7年度 全120問", () => {
+describe("登録販売者試験令和7年度 全120問", () => {
   it("公開済みで、年度・試験回・演習区分が決まっている", () => {
     expect(isExamPublished("tohan")).toBe(true);
     expect(getQualificationByExamCode("tohan")?.officialReuseTermsUrl).toBe("https://www.kouiki-kansai.jp/site/221.html");
     expect(defaultPracticeSession("tohan")).toBe("gakka");
-    expect(formatYearSeason(2025, "kansai")).toBe("令和7年度 関西広域連合");
+    expect(formatYearSeason(2025, "kansai")).toBe("令和7年度");
     expect(EXAM_CONFIGS.tohan.sessions[0]?.expectedQuestions).toBe(120);
     expect(EXAM_CONFIGS.tohan.sessions[0]?.categories).toEqual([...TOHAN_CATEGORIES]);
     expect(TOHAN_QUESTIONS).toHaveLength(120);
@@ -108,7 +108,7 @@ describe("登録販売者試験（関西広域連合）令和7年度 全120問",
     for (const q of TOHAN_QUESTIONS) {
       const [, , exam, yearSeason, section, qnum] = questionPagePath(q).split("/");
       expect(yearSeason, q.id).toBe("2025-kansai");
-      expect(findQuestionByRoute(TOHAN_QUESTIONS, { exam, yearSeason, section, qnum })?.id, q.id).toBe(q.id);
+      expect(findQuestionByRoute(ALL_TOHAN_QUESTIONS, { exam, yearSeason, section, qnum })?.id, q.id).toBe(q.id);
     }
   });
 

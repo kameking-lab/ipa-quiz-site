@@ -83,7 +83,6 @@ export function ExamBrowseTabs({ exam, years, categories }: Props) {
           </p>
         ) : (
           <div>
-            <p className="mb-2 text-xs font-semibold text-muted-foreground">直近の収録年度・回</p>
             <ul className="grid gap-2 sm:grid-cols-2">{years.slice(0, 4).map((item) => <YearLink key={item.key} item={item} exam={exam} />)}</ul>
             {years.length > 4 && <details className="group mt-3 rounded-xl border border-border"><summary className="flex min-h-12 cursor-pointer items-center justify-between px-4 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">以前の年度・回も見る（残り{years.length - 4}件）<ChevronRight aria-hidden="true" className="h-4 w-4 transition group-open:rotate-90" /></summary><ul className="grid gap-2 p-3 pt-0 sm:grid-cols-2">{years.slice(4).map((item) => <YearLink key={item.key} item={item} exam={exam} />)}</ul></details>}
           </div>

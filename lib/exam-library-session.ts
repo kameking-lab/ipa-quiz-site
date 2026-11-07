@@ -1,6 +1,6 @@
 import { LS_KEYS } from "@/lib/storage/keys";
 import type { ExamQuestion } from "@/lib/exam-library-model";
-import { loadSurveyAssistantGradingPaper as loadSurveyAssistantPaper } from "@/lib/exam-library/survey-assistant-grading-index";
+import { loadReferenceAwareGradingPaper } from "@/lib/exam-library/reference-aware-grading-index";
 import { EXAM_PROGRESS_CHANGE_EVENT, sanitizeExamProgressForStorage, parseExamProgress, summarizeExamProgress, type ExamProgress, type ExamProgressSummary } from "@/lib/exam-library-progress";
 
 export interface ExamTabSummary extends ExamProgressSummary {
@@ -50,7 +50,7 @@ export function listExamTabSummaries(): ExamTabSummary[] {
         if (!summary || typeof summary.examId !== "string" || !/^[a-z0-9-]+$/i.test(summary.examId) || typeof summary.examTitle !== "string" || typeof summary.updatedAt !== "string") continue;
         if (![summary.answered, summary.total, summary.correct, summary.incorrect, summary.unscored, summary.scorable].every((count) => typeof count === "number" && Number.isSafeInteger(count) && count >= 0)) continue;
         if (summary.lastQuestionId !== null && typeof summary.lastQuestionId !== "string") continue;
-        const survey = loadSurveyAssistantPaper(summary.examId);
+        const survey = loadReferenceAwareGradingPaper(summary.examId);
         if (survey) {
           if (!("progress" in value)) continue;
           const parsed = parseExamProgress(JSON.stringify(value.progress), summary.examId, survey);
@@ -73,7 +73,7 @@ export function listExamLearningSummaries(): ExamTabSummary[] {
       if (!key?.startsWith(LS_KEYS.examLibraryPrefix)) continue;
       try {
         const raw = JSON.parse(storage.getItem(key) ?? "null") as ExamProgress | null;
-        const survey = raw && typeof raw.examId === "string" ? loadSurveyAssistantPaper(raw.examId) : null;
+        const survey = raw && typeof raw.examId === "string" ? loadReferenceAwareGradingPaper(raw.examId) : null;
         const parsed = raw && survey ? parseExamProgress(JSON.stringify(raw), raw.examId, survey) : null;
         const progress = raw && survey ? (parsed ? { ...parsed, summary: { ...summarizeExamProgress(survey, parsed.answers), examTitle: raw.summary?.examTitle ?? "測量士補" } } : null) : raw;
         if (!progress?.summary || typeof progress.examId !== "string" || summaries.has(progress.examId)) continue;

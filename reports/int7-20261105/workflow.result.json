@@ -1,0 +1,12 @@
+{
+  "command": [
+    "node",
+    "--test",
+    ".github/scripts/e2e-workflow.test.mjs"
+  ],
+  "exitCode": 0,
+  "seconds": 1.85,
+  "log": "reports/int7-20261105/workflow.log",
+  "sha256": "2f9f2ec34d093cf027e8f2f8b30cb120eff91172c78a532bba6de04693c0fcdc",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

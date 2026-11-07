@@ -1,0 +1,10 @@
+{
+  "status": "PASS",
+  "counts": {
+    "ownerPdfs": 12,
+    "officialAnswers": 400,
+    "questionBodies": 400,
+    "choices": 2000
+  },
+  "normalization": "NFKC; whitespace/control removal; wave dash variants normalized to ～; ruby stored separately; source diagrams retained as PNG and labels excluded from prose; printed fractions, radicals, superscripts, ■ and ± restored by visual source comparison; choice tables independently parsed with PDFMiner/pdfplumber; paper-specific normalization documented in staging README and extraction functions"
+}

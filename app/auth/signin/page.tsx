@@ -17,6 +17,7 @@ import { EmailSignInForm } from "./EmailSignInForm";
 import { AppReviewSignInForm } from "./AppReviewSignInForm";
 import { appReviewConfig } from "@/lib/auth/app-review-config";
 import { safeAuthCallback } from "@/lib/auth/redirect";
+import { PrivacyNote } from "@/components/ui/privacy-note";
 
 export const metadata: Metadata = {
   title: "ログイン",
@@ -130,6 +131,7 @@ export default async function SignInPage({
                 </>
               )}
               {appReviewConfig() && <AppReviewSignInForm callbackUrl={callbackUrl} />}
+              <PrivacyNote variant="signin" className="mt-5" />
             </>
           ) : (
             <div className="rounded-xl border border-dashed border-border bg-muted/40 px-4 py-6 text-center text-sm text-muted-foreground">

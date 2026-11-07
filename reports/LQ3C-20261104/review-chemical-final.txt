@@ -1,0 +1,5 @@
+指定gpt-6-astraで化学2024の独立再レビュー。read-only、編集・push・PR・デプロイ・秘密値読出し禁止。
+
+先のreports/LQ3C-20261104/astra-chemical.mdで唯一の必須修正Q21を修正した。原本16ページを再目視し、B・C重付加、D付加縮合、A・E縮合重合と訂正。要約と全5肢理由を各行に対応させ、①の原本にないCという指摘も削除した。scripts/fix-lq3c-chemical-review.pyに全修正を記録。Q11・12に外務省とエネルギー白書2023の補強一次資料リンクも加えた。
+
+第一票で全22ページ・35問175肢・35公式正答・22画像画素一致と全hashが確認済み。その前提で修正箇所と残る説明、原稿/採用データ/manifest一致を再確認し、当該35問のPASS/FAILを日本語で返す。原本reports/LQ3B-20261104/sources/2024-05.pdf、閲覧画像reports/LQ3C-20261104/local/chemical-q21.png。最新テストログtests-final.log・typecheck-final.logは作業側実行中/予定。対象はこの35問のみで全8件完了ではない。

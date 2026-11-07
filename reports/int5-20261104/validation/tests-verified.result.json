@@ -1,0 +1,18 @@
+{
+  "label": "tests-verified",
+  "command": [
+    "pnpm",
+    "test",
+    "--maxWorkers=6",
+    "--minWorkers=1",
+    "--reporter=default",
+    "--reporter=json",
+    "--outputFile=reports/int5-20261104/validation/tests-verified.json"
+  ],
+  "sourceHead": "5b45d3fb8dda8fdfe9fcca01a9225d256dca1ae0",
+  "startedAt": "2026-11-04T11:06:24.574Z",
+  "finishedAt": "2026-11-04T11:06:25.433Z",
+  "exitCode": 1,
+  "logSha256": "6679f80fa567116cb0896a02cde4d5587bad94a6a0763e7850ce9b61eda99f1c",
+  "environment": "CI=true; inherited service credentials and mobile/feedback rollout configuration removed; no secret env files loaded"
+}

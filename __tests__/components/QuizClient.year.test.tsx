@@ -9,7 +9,7 @@ const { historyStore } = vi.hoisted(() => ({ historyStore: {
 } }));
 vi.mock("@/lib/storage/history", () => ({ createHistoryStore: () => historyStore }));
 vi.mock("@/lib/motivation/session", () => ({ startSession: vi.fn() }));
-vi.mock("@/lib/learning/spaced-repetition", () => ({ orderByPriority: (ids: string[]) => [...ids].reverse() }));
+vi.mock("@/lib/learning/spaced-repetition", () => ({ getDueCards: () => [], orderByPriority: (ids: string[]) => [...ids].reverse() }));
 vi.mock("@/components/quiz/QuizPlayer", () => ({
   QuizPlayer: ({ question, index, total, onNext }: { question: Question | null; index: number; total: number; onNext: () => void }) => (
     <div><output data-testid="position">{index + 1}/{total}</output>

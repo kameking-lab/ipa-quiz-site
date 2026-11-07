@@ -103,11 +103,15 @@ export function gradeFromCorrect(correct: boolean, accuracyHint?: number): SrsGr
   return 4;
 }
 
-export function recordReview(id: string, correct: boolean, accuracyHint?: number): SrsCard {
+export function recordReview(id: string, correct: boolean, accuracyHint?: number,
+  beforeWrite?: (before: Pick<SrsCard, "lastReviewedAt" | "dueAt"> | null) => void): SrsCard {
   const state = read();
   // Compatibility return only: no grading, timestamp update or storage write.
   if (isReferenceOnlyQuestionId(id)) return structuredClone(state.cards[id] ?? defaultCard(id));
   const existing = state.cards[id] ?? defaultCard(id);
+  // Share the already-read, pre-answer evidence. Optional observers cannot
+  // interrupt learning or cause a second storage read on the answer path.
+  try { beforeWrite?.(state.cards[id] ? { lastReviewedAt: existing.lastReviewedAt, dueAt: existing.dueAt } : null); } catch { /* optional */ }
   const grade = gradeFromCorrect(correct, accuracyHint);
   const updated = applyGrade(existing, grade);
   state.cards[id] = updated;

@@ -43,9 +43,6 @@ export function CategoryStudyTip({
           <h2 className="text-base font-bold tracking-tight text-foreground sm:text-lg">
             分野「{category}」の学習ポイント
           </h2>
-          <p className="text-[11px] text-muted-foreground">
-            この問題の理解を「分野全体の力」に広げるための足がかり
-          </p>
         </div>
       </div>
 

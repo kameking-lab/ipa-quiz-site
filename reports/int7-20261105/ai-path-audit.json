@@ -1,0 +1,38 @@
+{
+  "base": "ef95cd92d198186d2dc52095bd27fe4ebea4676e",
+  "sourceHead": "1ca14f4ce39be16b8b00660800bd05a225ff0ee2",
+  "aiPathChanged": true,
+  "apiRoutes": [
+    {
+      "path": "app/api/copilot/route.ts",
+      "baseBlob": "0be154701ccc39fabfdcedb46445e292eb46889b",
+      "candidateBlob": "e71c2ad8dd66ae3385ecdbd7f2715be62fedafc7",
+      "changed": true
+    },
+    {
+      "path": "app/api/copilot/exam-library/route.ts",
+      "baseBlob": "badb04e44202f598bbf4b976e13e3c63ba05d561",
+      "candidateBlob": "badb04e44202f598bbf4b976e13e3c63ba05d561",
+      "changed": false
+    },
+    {
+      "path": "app/api/scoring/route.ts",
+      "baseBlob": "fcd25621a5d9661edc389d589f03bf3272faaad4",
+      "candidateBlob": "fcd25621a5d9661edc389d589f03bf3272faaad4",
+      "changed": false
+    },
+    {
+      "path": "app/api/essay-grade/route.ts",
+      "baseBlob": "7c036fd14d00d13da48ef65b307911f27ec8c4cf",
+      "candidateBlob": "7c036fd14d00d13da48ef65b307911f27ec8c4cf",
+      "changed": false
+    }
+  ],
+  "changes": [
+    "M\tapp/api/copilot/route.ts",
+    "D\tlib/ai/characters.ts",
+    "M\tlib/copilot/prompt-assembly.ts"
+  ],
+  "reason": "PRK removes character inputs and character prompt assembly. New public qualifications supply additional question contexts. Preview real-AI proof belongs to Claude.",
+  "providerModelBudgetPolicy": "No changes under lib/ai except deletion of characters.ts; no provider/model/budget/rate edits in API diffs."
+}

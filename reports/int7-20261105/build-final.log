@@ -1,0 +1,936 @@
+
+> ipa-quiz-site@1.0.0 build C:\Users\kanet\20260522\wt-batch3
+> node scripts/vercel-migrate.mjs && next build
+
+[vercel-migrate] Skipped: not a hosted Vercel production build.
+▲ Next.js 16.4.5 (Turbopack)
+✓ Running next.config.ts took 96ms
+- Experiments (use with caution):
+  · cpus: 4
+  · optimizePackageImports
+
+⚠ The "middleware" file convention is deprecated. Please use "proxy" instead.
+
+  To migrate automatically, run:
+  npx @next/codemod@canary middleware-to-proxy .
+
+  Learn more: https://nextjs.org/docs/messages/middleware-to-proxy
+  Creating an optimized production build ...
+✓ Finished filesystem cache database compaction in 14.6s
+
+> Build error occurred
+Error: Turbopack build failed with 32 errors:
+./mobile/src/NativeTools.tsx:3:1
+Error: Module not found: Can't resolve '@capacitor/app'
+  [90m1 |[0m [32m"use client"[0m;
+  [90m2 |[0m [36mimport[0m { [33mSuspense[0m, useCallback, useEffect, useRef, useState } [36mfrom[0m [32m"react"[0m;
+[31m[1m>[0m [90m3 |[0m [36mimport[0m { [33mApp[0m } [36mfrom[0m [32m"@capacitor/app"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m4 |[0m [36mimport[0m { [33mBrowser[0m } [36mfrom[0m [32m"@capacitor/browser"[0m;
+  [90m5 |[0m [36mimport[0m { [33mShare[0m } [36mfrom[0m [32m"@capacitor/share"[0m;
+  [90m6 |[0m [36mimport[0m { [33mCapacitor[0m } [36mfrom[0m [32m"@capacitor/core"[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/login.ts:2:1
+Error: Module not found: Can't resolve '@capacitor/app'
+  [90m1 |[0m [36mimport[0m { [33mBrowser[0m } [36mfrom[0m [32m"@capacitor/browser"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mApp[0m } [36mfrom[0m [32m"@capacitor/app"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m [36mimport[0m { [33mPreferences[0m } [36mfrom[0m [32m"@capacitor/preferences"[0m;
+  [90m4 |[0m [36mimport[0m {[33mCapacitor[0m,[33mCapacitorHttp[0m} [36mfrom[0m [32m"@capacitor/core"[0m;
+  [90m5 |[0m [36mconst[0m [33mPENDING[0m = [32m"kakomon:auth-pkce:v1"[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/login.ts [Client Component Browser]
+    ./mobile/src/NativeSignInBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativeSignInBoundary.tsx [Server Component]
+    ./app/auth/signin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/login.ts [Client Component SSR]
+    ./mobile/src/NativeSignInBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativeSignInBoundary.tsx [Server Component]
+    ./app/auth/signin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/NativeTools.tsx:4:1
+Error: Module not found: Can't resolve '@capacitor/browser'
+  [90m2 |[0m [36mimport[0m { [33mSuspense[0m, useCallback, useEffect, useRef, useState } [36mfrom[0m [32m"react"[0m;
+  [90m3 |[0m [36mimport[0m { [33mApp[0m } [36mfrom[0m [32m"@capacitor/app"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { [33mBrowser[0m } [36mfrom[0m [32m"@capacitor/browser"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m [36mimport[0m { [33mShare[0m } [36mfrom[0m [32m"@capacitor/share"[0m;
+  [90m6 |[0m [36mimport[0m { [33mCapacitor[0m } [36mfrom[0m [32m"@capacitor/core"[0m;
+  [90m7 |[0m [36mimport[0m { [33mPurchases[0m, [36mtype[0m [33mPurchasesPackage[0m } [36mfrom[0m [32m"@revenuecat/purchases-capacitor"[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/QualificationActions.tsx:3:1
+Error: Module not found: Can't resolve '@capacitor/browser'
+  [90m1 |[0m [32m"use client"[0m;
+  [90m2 |[0m [36mimport[0m { useEffect, useRef, useState } [36mfrom[0m [32m"react"[0m;
+[31m[1m>[0m [90m3 |[0m [36mimport[0m { [33mBrowser[0m } [36mfrom[0m [32m"@capacitor/browser"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m4 |[0m [36mimport[0m { usePathname, useSearchParams } [36mfrom[0m [32m"next/navigation"[0m;
+  [90m5 |[0m [36mimport[0m { pageQualifications } [36mfrom[0m [32m"../shared/qualification-context"[0m;
+  [90m6 |[0m [36mimport[0m { qualificationTargets, qualificationUrl, todayJst, [36mtype[0m [33mCalendarDraft[0m, [36mtype[0m [33mQualifi...[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/QualificationActions.tsx [Client Component Browser]
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/QualificationActions.tsx [Client Component SSR]
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/login.ts:1:1
+Error: Module not found: Can't resolve '@capacitor/browser'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mBrowser[0m } [36mfrom[0m [32m"@capacitor/browser"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { [33mApp[0m } [36mfrom[0m [32m"@capacitor/app"[0m;
+  [90m3 |[0m [36mimport[0m { [33mPreferences[0m } [36mfrom[0m [32m"@capacitor/preferences"[0m;
+  [90m4 |[0m [36mimport[0m {[33mCapacitor[0m,[33mCapacitorHttp[0m} [36mfrom[0m [32m"@capacitor/core"[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/login.ts [Client Component Browser]
+    ./mobile/src/NativeSignInBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativeSignInBoundary.tsx [Server Component]
+    ./app/auth/signin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/login.ts [Client Component SSR]
+    ./mobile/src/NativeSignInBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativeSignInBoundary.tsx [Server Component]
+    ./app/auth/signin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/open-subscription-management.ts:1:1
+Error: Module not found: Can't resolve '@capacitor/browser'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mBrowser[0m } [36mfrom[0m [32m"@capacitor/browser"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [90m/** Existing customer portal only; product selection and checkout remain unavailable. */[0m
+  [90m3 |[0m [36mexport[0m [36masync[0m [36mfunction[0m openSubscriptionManagement(url: string) {
+  [90m4 |[0m   [36mif[0m ([36mnew[0m [33mURL[0m(url).origin !== [32m"https://billing.stripe.com"[0m) [36mthrow[0m [36mnew[0m [33mError[0m([32m"契約管理のリ[0mン...
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/open-subscription-management.ts [Client Component Browser]
+    ./app/billing/ManageSubscriptionButton.tsx [Client Component Browser]
+    ./app/billing/ManageSubscriptionButton.tsx [Server Component]
+    ./app/billing/MonthlyPage.tsx [Server Component]
+    ./app/billing/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/open-subscription-management.ts [Client Component SSR]
+    ./app/billing/ManageSubscriptionButton.tsx [Client Component SSR]
+    ./app/billing/ManageSubscriptionButton.tsx [Server Component]
+    ./app/billing/MonthlyPage.tsx [Server Component]
+    ./app/billing/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/platform.ts:3:1
+Error: Module not found: Can't resolve '@capacitor/browser'
+  [90m1 |[0m [36mimport[0m { [33mCapacitor[0m, [33mCapacitorHttp[0m } [36mfrom[0m [32m"@capacitor/core"[0m;
+  [90m2 |[0m [36mimport[0m { [33mNetwork[0m } [36mfrom[0m [32m"@capacitor/network"[0m;
+[31m[1m>[0m [90m3 |[0m [36mimport[0m { [33mBrowser[0m } [36mfrom[0m [32m"@capacitor/browser"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m4 |[0m [36mimport[0m { [33mLocalNotifications[0m } [36mfrom[0m [32m"@capacitor/local-notifications"[0m;
+  [90m5 |[0m
+  [90m6 |[0m [36mexport[0m [36mconst[0m [33mAPI_ORIGIN[0m = [32m"https://www.kakomon-ai.jp"[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/platform.ts [Client Component Browser]
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/platform.ts [Client Component SSR]
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/qualification-platform.ts:2:1
+Error: Module not found: Can't resolve '@capacitor/browser'
+  [90m1 |[0m [36mimport[0m { [33mCapacitor[0m, [33mCapacitorHttp[0m, registerPlugin } [36mfrom[0m [32m"@capacitor/core"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mBrowser[0m } [36mfrom[0m [32m"@capacitor/browser"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m [36mimport[0m { confirmedSchedules, isQualificationUrl, [33mQUALIFICATION_ORIGIN[0m, qualificationUrl, to...
+  [90m4 |[0m [36minterface[0m [33mQualificationBridge[0m {
+  [90m5 |[0m   openUniversalLink(options: { url: string }): [33mPromise[0m<{ opened: boolean }>;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/qualification-platform.ts [Client Component Browser]
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/qualification-platform.ts [Client Component SSR]
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/NativeTools.tsx:6:1
+Error: Module not found: Can't resolve '@capacitor/core'
+  [90m4 |[0m [36mimport[0m { [33mBrowser[0m } [36mfrom[0m [32m"@capacitor/browser"[0m;
+  [90m5 |[0m [36mimport[0m { [33mShare[0m } [36mfrom[0m [32m"@capacitor/share"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m { [33mCapacitor[0m } [36mfrom[0m [32m"@capacitor/core"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mimport[0m { [33mPurchases[0m, [36mtype[0m [33mPurchasesPackage[0m } [36mfrom[0m [32m"@revenuecat/purchases-capacitor"[0m;
+  [90m8 |[0m [36mimport[0m { [33mPreferences[0m } [36mfrom[0m [32m"@capacitor/preferences"[0m;
+  [90m9 |[0m [36mimport[0m [33mLink[0m [36mfrom[0m [32m"next/link"[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/images.ts:1:1
+Error: Module not found: Can't resolve '@capacitor/core'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mCapacitor[0m, [33mCapacitorHttp[0m } [36mfrom[0m [32m"@capacitor/core"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { [33mFilesystem[0m, [33mDirectory[0m } [36mfrom[0m [32m"@capacitor/filesystem"[0m;
+  [90m3 |[0m [36mimport[0m { [33mPreferences[0m } [36mfrom[0m [32m"@capacitor/preferences"[0m;
+  [90m4 |[0m [36mimport[0m { downloads, hex } [36mfrom[0m [32m"./downloads"[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/images.ts [Client Component Browser]
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/images.ts [Client Component SSR]
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/login.ts:4:1
+Error: Module not found: Can't resolve '@capacitor/core'
+  [90m2 |[0m [36mimport[0m { [33mApp[0m } [36mfrom[0m [32m"@capacitor/app"[0m;
+  [90m3 |[0m [36mimport[0m { [33mPreferences[0m } [36mfrom[0m [32m"@capacitor/preferences"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m {[33mCapacitor[0m,[33mCapacitorHttp[0m} [36mfrom[0m [32m"@capacitor/core"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m [36mconst[0m [33mPENDING[0m = [32m"kakomon:auth-pkce:v1"[0m;
+  [90m6 |[0m [36mconst[0m b64 = (bytes: [33mUint8Array[0m) => btoa([33mString[0m.fromCharCode(...bytes)).replace([35m/\+/g[0m,[32m"-"[0m).r...
+  [90m7 |[0m [36mexport[0m [36masync[0m [36mfunction[0m beginLogin(origin: string, returnTo = location.pathname+location.sear...
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/login.ts [Client Component Browser]
+    ./mobile/src/NativeSignInBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativeSignInBoundary.tsx [Server Component]
+    ./app/auth/signin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/login.ts [Client Component SSR]
+    ./mobile/src/NativeSignInBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativeSignInBoundary.tsx [Server Component]
+    ./app/auth/signin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/offline-assets.ts:1:1
+Error: Module not found: Can't resolve '@capacitor/core'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mCapacitor[0m, [33mCapacitorHttp[0m } [36mfrom[0m [32m"@capacitor/core"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { [33mFilesystem[0m, [33mDirectory[0m } [36mfrom[0m [32m"@capacitor/filesystem"[0m;
+  [90m3 |[0m [36mexport[0m [36minterface[0m [33mSavedAsset[0m { path: string; sha256: string; bytes: number }
+  [90m4 |[0m [90m/** Native uses durable file URLs; the web test adapter reads its IndexedDB bytes. */[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/offline-assets.ts [Client Component Browser]
+    ./mobile/src/images.ts [Client Component Browser]
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/offline-assets.ts [Client Component SSR]
+    ./mobile/src/images.ts [Client Component SSR]
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/platform.ts:1:1
+Error: Module not found: Can't resolve '@capacitor/core'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mCapacitor[0m, [33mCapacitorHttp[0m } [36mfrom[0m [32m"@capacitor/core"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { [33mNetwork[0m } [36mfrom[0m [32m"@capacitor/network"[0m;
+  [90m3 |[0m [36mimport[0m { [33mBrowser[0m } [36mfrom[0m [32m"@capacitor/browser"[0m;
+  [90m4 |[0m [36mimport[0m { [33mLocalNotifications[0m } [36mfrom[0m [32m"@capacitor/local-notifications"[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/platform.ts [Client Component Browser]
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/platform.ts [Client Component SSR]
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/purchases.ts:2:1
+Error: Module not found: Can't resolve '@capacitor/core'
+  [90m1 |[0m [36mimport[0m { [33mPurchases[0m, [33mPACKAGE_TYPE[0m, [33mPURCHASES_ERROR_CODE[0m, [36mtype[0m [33mPurchasesPackage[0m } [36mfrom[0m [32m"@reve...[0m
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mCapacitor[0m } [36mfrom[0m [32m"@capacitor/core"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m [36mimport[0m { [33mPreferences[0m } [36mfrom[0m [32m"@capacitor/preferences"[0m;
+  [90m4 |[0m [36mimport[0m [36mtype[0m { [33mMobileConfiguration[0m, [33mMobileEntitlement[0m } [36mfrom[0m [32m"../shared/contracts"[0m;
+  [90m5 |[0m [36mexport[0m [36mfunction[0m purchaseError(error:unknown) {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/purchases.ts [Client Component Browser]
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/purchases.ts [Client Component SSR]
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/qualification-platform.ts:1:1
+Error: Module not found: Can't resolve '@capacitor/core'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mCapacitor[0m, [33mCapacitorHttp[0m, registerPlugin } [36mfrom[0m [32m"@capacitor/core"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { [33mBrowser[0m } [36mfrom[0m [32m"@capacitor/browser"[0m;
+  [90m3 |[0m [36mimport[0m { confirmedSchedules, isQualificationUrl, [33mQUALIFICATION_ORIGIN[0m, qualificationUrl, to...
+  [90m4 |[0m [36minterface[0m [33mQualificationBridge[0m {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/qualification-platform.ts [Client Component Browser]
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/qualification-platform.ts [Client Component SSR]
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/tracking.ts:1:1
+Error: Module not found: Can't resolve '@capacitor/core'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mCapacitor[0m, registerPlugin } [36mfrom[0m [32m"@capacitor/core"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m
+  [90m3 |[0m [36mexport[0m [36mtype[0m [33mTrackingStatus[0m = [32m"notDetermined"[0m | [32m"restricted"[0m | [32m"denied"[0m | [32m"authorized"[0m;
+  [90m4 |[0m [36mexport[0m [36minterface[0m [33mAdsConfiguration[0m { enabled: boolean; client: string; slot: string; cmpScri...
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/tracking.ts [Client Component Browser]
+    ./lib/ads/native-consent.ts [Client Component Browser]
+    ./components/ads/ContentEndAd.tsx [Client Component Browser]
+    ./components/ads/ContentEndAd.tsx [Server Component]
+    ./app/blog/[slug]/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/tracking.ts [Client Component SSR]
+    ./lib/ads/native-consent.ts [Client Component SSR]
+    ./components/ads/ContentEndAd.tsx [Client Component SSR]
+    ./components/ads/ContentEndAd.tsx [Server Component]
+    ./app/blog/[slug]/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/delete-device-data.ts:6:1
+Error: Module not found: Can't resolve '@capacitor/filesystem'
+  [90m4 |[0m [36mimport[0m { [33mMembership[0m } [36mfrom[0m [32m"./purchases"[0m;
+  [90m5 |[0m [36mimport[0m { setReminder } [36mfrom[0m [32m"./platform"[0m;
+[31m[1m>[0m [90m6 |[0m [36mimport[0m { [33mFilesystem[0m,[33mDirectory[0m } [36mfrom[0m [32m"@capacitor/filesystem"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m7 |[0m [36mexport[0m [36masync[0m [36mfunction[0m deleteDeviceData(){
+  [90m8 |[0m   [36mawait[0m downloads.invalidate();
+  [90m9 |[0m   [90m// Explicit device-data deletion clears all saved accounts on this device.[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/delete-device-data.ts [Client Component Browser]
+    ./app/account/delete/AccountDeletionClient.tsx [Client Component Browser]
+    ./app/account/delete/AccountDeletionClient.tsx [Server Component]
+    ./app/account/delete/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/delete-device-data.ts [Client Component SSR]
+    ./app/account/delete/AccountDeletionClient.tsx [Client Component SSR]
+    ./app/account/delete/AccountDeletionClient.tsx [Server Component]
+    ./app/account/delete/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/downloads.ts:1:1
+Error: Module not found: Can't resolve '@capacitor/filesystem'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mFilesystem[0m, [33mDirectory[0m, [33mEncoding[0m } [36mfrom[0m [32m"@capacitor/filesystem"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { [33mPreferences[0m } [36mfrom[0m [32m"@capacitor/preferences"[0m;
+  [90m3 |[0m [36mimport[0m [36mtype[0m { [33mQuestion[0m } [36mfrom[0m [32m"@/lib/questions/types"[0m;
+  [90m4 |[0m [36mimport[0m [36mtype[0m { [33mCatalogEntry[0m, [33mMobileEntitlement[0m } [36mfrom[0m [32m"../shared/contracts"[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/downloads.ts [Client Component Browser]
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/downloads.ts [Client Component SSR]
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/images.ts:2:1
+Error: Module not found: Can't resolve '@capacitor/filesystem'
+  [90m1 |[0m [36mimport[0m { [33mCapacitor[0m, [33mCapacitorHttp[0m } [36mfrom[0m [32m"@capacitor/core"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mFilesystem[0m, [33mDirectory[0m } [36mfrom[0m [32m"@capacitor/filesystem"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m [36mimport[0m { [33mPreferences[0m } [36mfrom[0m [32m"@capacitor/preferences"[0m;
+  [90m4 |[0m [36mimport[0m { downloads, hex } [36mfrom[0m [32m"./downloads"[0m;
+  [90m5 |[0m [36mimport[0m { localAssetSrc } [36mfrom[0m [32m"./offline-assets"[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/images.ts [Client Component Browser]
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/images.ts [Client Component SSR]
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/offline-assets.ts:2:1
+Error: Module not found: Can't resolve '@capacitor/filesystem'
+  [90m1 |[0m [36mimport[0m { [33mCapacitor[0m, [33mCapacitorHttp[0m } [36mfrom[0m [32m"@capacitor/core"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mFilesystem[0m, [33mDirectory[0m } [36mfrom[0m [32m"@capacitor/filesystem"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m [36mexport[0m [36minterface[0m [33mSavedAsset[0m { path: string; sha256: string; bytes: number }
+  [90m4 |[0m [90m/** Native uses durable file URLs; the web test adapter reads its IndexedDB bytes. */[0m
+  [90m5 |[0m [36mexport[0m [36masync[0m [36mfunction[0m localAssetSrc(asset: [33mSavedAsset[0m) {
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/offline-assets.ts [Client Component Browser]
+    ./mobile/src/images.ts [Client Component Browser]
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/offline-assets.ts [Client Component SSR]
+    ./mobile/src/images.ts [Client Component SSR]
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/platform.ts:4:1
+Error: Module not found: Can't resolve '@capacitor/local-notifications'
+  [90m2 |[0m [36mimport[0m { [33mNetwork[0m } [36mfrom[0m [32m"@capacitor/network"[0m;
+  [90m3 |[0m [36mimport[0m { [33mBrowser[0m } [36mfrom[0m [32m"@capacitor/browser"[0m;
+[31m[1m>[0m [90m4 |[0m [36mimport[0m { [33mLocalNotifications[0m } [36mfrom[0m [32m"@capacitor/local-notifications"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m5 |[0m
+  [90m6 |[0m [36mexport[0m [36mconst[0m [33mAPI_ORIGIN[0m = [32m"https://www.kakomon-ai.jp"[0m;
+  [90m7 |[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/platform.ts [Client Component Browser]
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/platform.ts [Client Component SSR]
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/platform.ts:2:1
+Error: Module not found: Can't resolve '@capacitor/network'
+  [90m1 |[0m [36mimport[0m { [33mCapacitor[0m, [33mCapacitorHttp[0m } [36mfrom[0m [32m"@capacitor/core"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mNetwork[0m } [36mfrom[0m [32m"@capacitor/network"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m [36mimport[0m { [33mBrowser[0m } [36mfrom[0m [32m"@capacitor/browser"[0m;
+  [90m4 |[0m [36mimport[0m { [33mLocalNotifications[0m } [36mfrom[0m [32m"@capacitor/local-notifications"[0m;
+  [90m5 |[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/platform.ts [Client Component Browser]
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/platform.ts [Client Component SSR]
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/NativeTools.tsx:8:1
+Error: Module not found: Can't resolve '@capacitor/preferences'
+  [90m 6 |[0m [36mimport[0m { [33mCapacitor[0m } [36mfrom[0m [32m"@capacitor/core"[0m;
+  [90m 7 |[0m [36mimport[0m { [33mPurchases[0m, [36mtype[0m [33mPurchasesPackage[0m } [36mfrom[0m [32m"@revenuecat/purchases-capacitor"[0m;
+[31m[1m>[0m [90m 8 |[0m [36mimport[0m { [33mPreferences[0m } [36mfrom[0m [32m"@capacitor/preferences"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m 9 |[0m [36mimport[0m [33mLink[0m [36mfrom[0m [32m"next/link"[0m;
+  [90m10 |[0m [36mimport[0m [36mtype[0m { [33mMobileConfiguration[0m, [33mMobileEntitlement[0m, [33mCatalogEntry[0m } [36mfrom[0m [32m"../shared/contr...[0m
+  [90m11 |[0m [36mimport[0m { downloads, [36mtype[0m [33mDownloadIndex[0m } [36mfrom[0m [32m"./downloads"[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/delete-device-data.ts:1:1
+Error: Module not found: Can't resolve '@capacitor/preferences'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mPreferences[0m } [36mfrom[0m [32m"@capacitor/preferences"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { downloads } [36mfrom[0m [32m"./downloads"[0m;
+  [90m3 |[0m [36mimport[0m { deleteStudy } [36mfrom[0m [32m"./portable-storage"[0m;
+  [90m4 |[0m [36mimport[0m { [33mMembership[0m } [36mfrom[0m [32m"./purchases"[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/delete-device-data.ts [Client Component Browser]
+    ./app/account/delete/AccountDeletionClient.tsx [Client Component Browser]
+    ./app/account/delete/AccountDeletionClient.tsx [Server Component]
+    ./app/account/delete/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/delete-device-data.ts [Client Component SSR]
+    ./app/account/delete/AccountDeletionClient.tsx [Client Component SSR]
+    ./app/account/delete/AccountDeletionClient.tsx [Server Component]
+    ./app/account/delete/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/downloads.ts:2:1
+Error: Module not found: Can't resolve '@capacitor/preferences'
+  [90m1 |[0m [36mimport[0m { [33mFilesystem[0m, [33mDirectory[0m, [33mEncoding[0m } [36mfrom[0m [32m"@capacitor/filesystem"[0m;
+[31m[1m>[0m [90m2 |[0m [36mimport[0m { [33mPreferences[0m } [36mfrom[0m [32m"@capacitor/preferences"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m3 |[0m [36mimport[0m [36mtype[0m { [33mQuestion[0m } [36mfrom[0m [32m"@/lib/questions/types"[0m;
+  [90m4 |[0m [36mimport[0m [36mtype[0m { [33mCatalogEntry[0m, [33mMobileEntitlement[0m } [36mfrom[0m [32m"../shared/contracts"[0m;
+  [90m5 |[0m [36mimport[0m { verifyLease } [36mfrom[0m [32m"./lease"[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/downloads.ts [Client Component Browser]
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/downloads.ts [Client Component SSR]
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/images.ts:3:1
+Error: Module not found: Can't resolve '@capacitor/preferences'
+  [90m1 |[0m [36mimport[0m { [33mCapacitor[0m, [33mCapacitorHttp[0m } [36mfrom[0m [32m"@capacitor/core"[0m;
+  [90m2 |[0m [36mimport[0m { [33mFilesystem[0m, [33mDirectory[0m } [36mfrom[0m [32m"@capacitor/filesystem"[0m;
+[31m[1m>[0m [90m3 |[0m [36mimport[0m { [33mPreferences[0m } [36mfrom[0m [32m"@capacitor/preferences"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m4 |[0m [36mimport[0m { downloads, hex } [36mfrom[0m [32m"./downloads"[0m;
+  [90m5 |[0m [36mimport[0m { localAssetSrc } [36mfrom[0m [32m"./offline-assets"[0m;
+  [90m6 |[0m [36mconst[0m [33mORIGIN[0m = [32m"https://www.kakomon-ai.jp"[0m, [33mKEY[0m=[32m"kakomon:image-cache:v1"[0m, [33mMAX_BYTES[0m=[35m100[0m*[35m104...[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/images.ts [Client Component Browser]
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/images.ts [Client Component SSR]
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/login.ts:3:1
+Error: Module not found: Can't resolve '@capacitor/preferences'
+  [90m1 |[0m [36mimport[0m { [33mBrowser[0m } [36mfrom[0m [32m"@capacitor/browser"[0m;
+  [90m2 |[0m [36mimport[0m { [33mApp[0m } [36mfrom[0m [32m"@capacitor/app"[0m;
+[31m[1m>[0m [90m3 |[0m [36mimport[0m { [33mPreferences[0m } [36mfrom[0m [32m"@capacitor/preferences"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m4 |[0m [36mimport[0m {[33mCapacitor[0m,[33mCapacitorHttp[0m} [36mfrom[0m [32m"@capacitor/core"[0m;
+  [90m5 |[0m [36mconst[0m [33mPENDING[0m = [32m"kakomon:auth-pkce:v1"[0m;
+  [90m6 |[0m [36mconst[0m b64 = (bytes: [33mUint8Array[0m) => btoa([33mString[0m.fromCharCode(...bytes)).replace([35m/\+/g[0m,[32m"-"[0m).r...
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/login.ts [Client Component Browser]
+    ./mobile/src/NativeSignInBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativeSignInBoundary.tsx [Server Component]
+    ./app/auth/signin/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/login.ts [Client Component SSR]
+    ./mobile/src/NativeSignInBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativeSignInBoundary.tsx [Server Component]
+    ./app/auth/signin/page.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/portable-storage.ts:1:1
+Error: Module not found: Can't resolve '@capacitor/preferences'
+[31m[1m>[0m [90m1 |[0m [36mimport[0m { [33mPreferences[0m } [36mfrom[0m [32m"@capacitor/preferences"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m [36mimport[0m { [33mLS_KEYS[0m } [36mfrom[0m [32m"@/lib/storage/keys"[0m;
+  [90m3 |[0m [36mconst[0m [33mLEGACY[0m = [32m"kakomon:portable-study:v1"[0m;
+  [90m4 |[0m [36mconst[0m [33mPREFIX[0m = [32m"kakomon:portable-study:v2:"[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/portable-storage.ts [Client Component Browser]
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/portable-storage.ts [Client Component SSR]
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/purchases.ts:3:1
+Error: Module not found: Can't resolve '@capacitor/preferences'
+  [90m1 |[0m [36mimport[0m { [33mPurchases[0m, [33mPACKAGE_TYPE[0m, [33mPURCHASES_ERROR_CODE[0m, [36mtype[0m [33mPurchasesPackage[0m } [36mfrom[0m [32m"@reve...[0m
+  [90m2 |[0m [36mimport[0m { [33mCapacitor[0m } [36mfrom[0m [32m"@capacitor/core"[0m;
+[31m[1m>[0m [90m3 |[0m [36mimport[0m { [33mPreferences[0m } [36mfrom[0m [32m"@capacitor/preferences"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m4 |[0m [36mimport[0m [36mtype[0m { [33mMobileConfiguration[0m, [33mMobileEntitlement[0m } [36mfrom[0m [32m"../shared/contracts"[0m;
+  [90m5 |[0m [36mexport[0m [36mfunction[0m purchaseError(error:unknown) {
+  [90m6 |[0m   [36mconst[0m code=error&&[36mtypeof[0m error===[32m"object"[0m&&[32m"code"[0m[36min[0m error?[33mString[0m(error.code):[32m""[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/purchases.ts [Client Component Browser]
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/purchases.ts [Client Component SSR]
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/NativeTools.tsx:5:1
+Error: Module not found: Can't resolve '@capacitor/share'
+  [90m3 |[0m [36mimport[0m { [33mApp[0m } [36mfrom[0m [32m"@capacitor/app"[0m;
+  [90m4 |[0m [36mimport[0m { [33mBrowser[0m } [36mfrom[0m [32m"@capacitor/browser"[0m;
+[31m[1m>[0m [90m5 |[0m [36mimport[0m { [33mShare[0m } [36mfrom[0m [32m"@capacitor/share"[0m;
+  [90m  |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m6 |[0m [36mimport[0m { [33mCapacitor[0m } [36mfrom[0m [32m"@capacitor/core"[0m;
+  [90m7 |[0m [36mimport[0m { [33mPurchases[0m, [36mtype[0m [33mPurchasesPackage[0m } [36mfrom[0m [32m"@revenuecat/purchases-capacitor"[0m;
+  [90m8 |[0m [36mimport[0m { [33mPreferences[0m } [36mfrom[0m [32m"@capacitor/preferences"[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/NativeTools.tsx:7:1
+Error: Module not found: Can't resolve '@revenuecat/purchases-capacitor'
+  [90m 5 |[0m [36mimport[0m { [33mShare[0m } [36mfrom[0m [32m"@capacitor/share"[0m;
+  [90m 6 |[0m [36mimport[0m { [33mCapacitor[0m } [36mfrom[0m [32m"@capacitor/core"[0m;
+[31m[1m>[0m [90m 7 |[0m [36mimport[0m { [33mPurchases[0m, [36mtype[0m [33mPurchasesPackage[0m } [36mfrom[0m [32m"@revenuecat/purchases-capacitor"[0m;
+  [90m   |[0m [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m 8 |[0m [36mimport[0m { [33mPreferences[0m } [36mfrom[0m [32m"@capacitor/preferences"[0m;
+  [90m 9 |[0m [36mimport[0m [33mLink[0m [36mfrom[0m [32m"next/link"[0m;
+  [90m10 |[0m [36mimport[0m [36mtype[0m { [33mMobileConfiguration[0m, [33mMobileEntitlement[0m, [33mCatalogEntry[0m } [36mfrom[0m [32m"../shared/contr...[0m
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+./mobile/src/purchases.ts:1:1
+Error: Module not found: Can't resolve '@revenuecat/purchases-capacitor'
+[31m[1m>[0m [90m1 |[0m ...[33mses[0m, [33mPACKAGE_TYPE[0m, [33mPURCHASES_ERROR_CODE[0m, [36mtype[0m [33mPurchasesPackage[0m } [36mfrom[0m [32m"@revenuecat/purch...[0m
+  [90m  |[0m    [31m[1m^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^[0m
+  [90m2 |[0m ...[33mtor[0m } [36mfrom[0m [32m"@capacitor/core"[0m;
+  [90m3 |[0m ...[33mences[0m } [36mfrom[0m [32m"@capacitor/preferences"[0m;
+  [90m4 |[0m ...[33mobileConfiguration[0m, [33mMobileEntitlement[0m } [36mfrom[0m [32m"../shared/contracts"[0m;
+
+
+
+Import traces:
+  Client Component Browser:
+    ./mobile/src/purchases.ts [Client Component Browser]
+    ./mobile/src/NativeTools.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component Browser]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+  Client Component SSR:
+    ./mobile/src/purchases.ts [Client Component SSR]
+    ./mobile/src/NativeTools.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Client Component SSR]
+    ./mobile/src/NativePurchaseBoundary.tsx [Server Component]
+    ./app/billing/layout.tsx [Server Component]
+
+https://nextjs.org/docs/messages/module-not-found
+
+
+    at <unknown> (https://nextjs.org/docs/messages/module-not-found)
+    ... collapsed 31 duplicate lines matching above 1 lines 31 times...
+ ELIFECYCLE  Command failed with exit code 1.

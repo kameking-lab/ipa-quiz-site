@@ -15,7 +15,7 @@ const TIMEOUT_MS = 3_000;
 export async function sendSlackMessage(text: string): Promise<boolean> {
   const url = process.env.SLACK_WEBHOOK_URL;
   if (!url) {
-    console.error("[slack] SLACK_WEBHOOK_URL unset; message not delivered:", text);
+    console.error("[slack] notification unavailable");
     return false;
   }
   try {
@@ -26,8 +26,8 @@ export async function sendSlackMessage(text: string): Promise<boolean> {
       signal: AbortSignal.timeout(TIMEOUT_MS),
     });
     return res.ok;
-  } catch (err) {
-    console.error("[slack] send failed", err);
+  } catch {
+    console.error("[slack] send failed");
     return false;
   }
 }

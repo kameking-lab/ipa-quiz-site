@@ -1,0 +1,159 @@
+
+[1m[30m[46m RUN [49m[39m[22m [36mv4.1.12 [39m[90mC:/Users/kanet/20260522/wt-batch3[39m
+
+ [32m✓[39m __tests__/seo/question-jsonld.test.ts[2m > [22mbuildQuestionJsonLd[2m > [22mmodels an editorial problem as a LearningResource, never a QAPage[32m 4[2mms[22m[39m
+ [32m✓[39m __tests__/seo/question-jsonld.test.ts[2m > [22mbuildQuestionJsonLd[2m > [22mnests the real Question and only its published accepted answer[32m 1[2mms[22m[39m
+ [32m✓[39m __tests__/seo/question-jsonld.test.ts[2m > [22mbuildQuestionJsonLd[2m > [22mkeeps dates, authorship and publisher metadata on the resource[32m 1[2mms[22m[39m
+ [32m✓[39m __tests__/seo/question-jsonld.test.ts[2m > [22mbuildQuestionJsonLd[2m > [22momits unknown or invalid recorded dates instead of inventing publication dates[32m 1[2mms[22m[39m
+ [32m✓[39m __tests__/seo/question-jsonld.test.ts[2m > [22mbuildQuestionJsonLd[2m > [22mkeeps the public canonical resource distinct from requested breadcrumb context[32m 0[2mms[22m[39m
+ [32m✓[39m __tests__/seo/question-jsonld.test.ts[2m > [22mbuildQuestionJsonLd[2m > [22mattributes a published dental question to MHLW without an IPA license URL[32m 0[2mms[22m[39m
+ [32m✓[39m __tests__/seo/question-jsonld.test.ts[2m > [22mbuildQuestionJsonLd[2m > [22mattributes all 308 published shinrishi questions to JCCPP with its official terms[32m 16[2mms[22m[39m
+ [32m✓[39m __tests__/seo/question-jsonld.test.ts[2m > [22mbuildQuestionJsonLd[2m > [22mattributes a published judo question to ZAIJUSEI without inventing a license[32m 1[2mms[22m[39m
+ [32m✓[39m __tests__/seo/question-jsonld.test.ts[2m > [22msessionLabel[2m > [22mmaps known sessions to Japanese labels[32m 0[2mms[22m[39m
+ [32m✓[39m __tests__/seo/question-jsonld.test.ts[2m > [22msessionLabel[2m > [22mfalls back to upper-cased input for unknown sessions[32m 0[2mms[22m[39m
+ [32m✓[39m __tests__/seo/question-jsonld.test.ts[2m > [22msessionLabel[2m > [22mmaps every Session union member to a real label[32m 2[2mms[22m[39m
+ [32m✓[39m __tests__/seo/question-jsonld.test.ts[2m > [22mLQ4B source metadata[2m > [22mattributes kisho to its original institution[32m 0[2mms[22m[39m
+ [32m✓[39m __tests__/seo/question-jsonld.test.ts[2m > [22mLQ4B source metadata[2m > [22mattributes kenchiku-setsubishi to its original institution[32m 0[2mms[22m[39m
+ [32m✓[39m __tests__/seo/question-jsonld.test.ts[2m > [22mLQ4B source metadata[2m > [22muses weather subject labels in question metadata[32m 0[2mms[22m[39m
+ [32m✓[39m __tests__/billing/feedback-purchase.test.tsx[2m > [22mtracks confirmation views by customers with feedback history (true), without claiming conversion[32m 108[2mms[22m[39m
+ [32m✓[39m __tests__/billing/feedback-purchase.test.tsx[2m > [22mtracks confirmation views by customers with feedback history (false), without claiming conversion[32m 37[2mms[22m[39m
+ [32m✓[39m __tests__/billing/feedback-purchase.test.tsx[2m > [22mcounts a view of a previously paid order after feedback and a new session as views only[32m 31[2mms[22m[39m
+ [32m✓[39m __tests__/billing/feedback-purchase.test.tsx[2m > [22mdoes not count an unconfirmed order: {"entitled":false,"id":"order","status":"paid"}[32m 9[2mms[22m[39m
+ [32m✓[39m __tests__/billing/feedback-purchase.test.tsx[2m > [22mdoes not count an unconfirmed order: {"entitled":true,"id":"other","status":"paid"}[32m 7[2mms[22m[39m
+ [32m✓[39m __tests__/billing/feedback-purchase.test.tsx[2m > [22mdoes not count an unconfirmed order: {"entitled":true,"id":"order","status":"failed"}[32m 10[2mms[22m[39m
+ [32m✓[39m __tests__/mobile/catalog-parity.test.ts[2m > [22mindependently includes every released skill and inseparable annotated note[32m 5[2mms[22m[39m
+ [31m×[39m __tests__/mobile/catalog-parity.test.ts[2m > [22mincludes exactly every web-published practice question, library paper and alternative reader[33m 331[2mms[22m[39m
+[31m   → expected Set{ 'sekou-1kenchiku', …(306) } to deeply equal Set{ 'sekou-1kenchiku', …(316) }[39m
+ [32m✓[39m __tests__/batch3-related-gate.test.ts[2m > [22mINT7 optional related previews respect existing content grants[2m > [22mdoes not expose or automatically grant bodies in native mode[32m 8[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-related-gate.test.ts[2m > [22mINT7 optional related previews respect existing content grants[2m > [22mdoes not expose or automatically grant bodies in strict mode[32m 1[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mserves benrishi through eager/lazy registries, canonical routes, home and question API[33m 519[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mserves sokuryoshi through eager/lazy registries, canonical routes, home and question API[32m 47[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mserves dokugeki-chiba through eager/lazy registries, canonical routes, home and question API[32m 219[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mserves jokaso-setsubishi through eager/lazy registries, canonical routes, home and question API[32m 46[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mserves chiiki-ryoko through eager/lazy registries, canonical routes, home and question API[32m 58[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mserves junkango-kansai through eager/lazy registries, canonical routes, home and question API[32m 66[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mserves kukaku-seiri through eager/lazy registries, canonical routes, home and question API[32m 51[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mserves dojo-osen through eager/lazy registries, canonical routes, home and question API[32m 60[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mserves kenchikushi2 through eager/lazy registries, canonical routes, home and question API[32m 68[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mserves mokuzo-kenchikushi through eager/lazy registries, canonical routes, home and question API[32m 55[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mkeeps source asset mappings byte-identical in their public copies[33m 1804[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mpreserves exact multi-selection and alternate single-answer semantics[32m 3[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mexcludes official credit-for-all and keeps the 2026-only scope explicit[32m 9[2mms[22m[39m
+ [32m✓[39m __tests__/batch3-release.test.ts[2m > [22mINT7 batch3 public release integration[2m > [22mpreserves surveyor descriptive answer images and manual assessment without inventing choice scores[32m 1[2mms[22m[39m
+
+[31m⎯⎯⎯⎯⎯⎯⎯[39m[1m[41m Failed Tests 1 [49m[22m[31m⎯⎯⎯⎯⎯⎯⎯[39m
+
+[41m[1m FAIL [22m[49m __tests__/mobile/catalog-parity.test.ts[2m > [22mincludes exactly every web-published practice question, library paper and alternative reader
+[31m[1mAssertionError[22m: expected Set{ 'sekou-1kenchiku', …(306) } to deeply equal Set{ 'sekou-1kenchiku', …(316) }[39m
+
+[32m- Expected[39m
+[31m+ Received[39m
+
+[33m@@ -4,14 +4,12 @@[39m
+[2m    "amateur1",[22m
+[2m    "amateur2",[22m
+[2m    "ap",[22m
+[2m    "au",[22m
+[2m    "aviation-comm",[22m
+[32m-   "benrishi",[39m
+[2m    "biru-kan",[22m
+[2m    "biyoshi",[22m
+[32m-   "chiiki-ryoko",[39m
+[2m    "chintai",[22m
+[2m    "chizai2",[22m
+[2m    "chosashi",[22m
+[2m    "chusho-kigyo-shindanshi",[22m
+[2m    "civil1",[22m
+[33m@@ -22,12 +20,10 @@[39m
+[2m    "denken3",[22m
+[2m    "denki1",[22m
+[2m    "denki2",[22m
+[2m    "denko1",[22m
+[2m    "denko2",[22m
+[32m-   "dojo-osen",[39m
+[32m-   "dokugeki-chiba",[39m
+[2m    "eisei1",[22m
+[2m    "eisei2",[22m
+[2m    "energy-kanri",[22m
+[2m    "es",[22m
+[2m    "fe",[22m
+[33m@@ -62,14 +58,12 @@[39m
+[2m    "jken-katsuyo1",[22m
+[2m    "jken-katsuyo2",[22m
+[2m    "jken-katsuyo3",[22m
+[2m    "jken-system",[22m
+[2m    "jokaso",[22m
+[32m-   "jokaso-setsubishi",[39m
+[2m    "josanshi",[22m
+[2m    "judo-seifukushi",[22m
+[32m-   "junkango-kansai",[39m
+[2m    "kai-toku2",[22m
+[2m    "kai-toku3",[22m
+[2m    "kaigo",[22m
+[2m    "kaikeishi",[22m
+[2m    "kangoshi",[22m
+[33m@@ -81,11 +75,10 @@[39m
+[2m    "keiryoshi",[22m
+[2m    "keiryoshi-nodo",[22m
+[2m    "keiryoshi-soon",[22m
+[2m    "kenchiku-setsubishi",[22m
+[2m    "kenchikushi1",[22m
+[32m-   "kenchikushi2",[39m
+[2m    "kenki1",[22m
+[2m    "kenki2",[22m
+[2m    "khk-kagaku",[22m
+[2m    "khk-kikai-kou",[22m
+[2m    "khk-kikai-otsu",[22m
+[33m@@ -95,11 +88,10 @@[39m
+[2m    "kikenbutsu-otsu1",[22m
+[2m    "kikenbutsu-otsu2",[22m
+[2m    "kikenbutsu-otsu6",[22m
+[2m    "kisho",[22m
+[2m    "koku-toku",[22m
+[32m-   "kukaku-seiri",[39m
+[2m    "kyusui",[22m
+[2m    "land-special1",[22m
+[2m    "land-special2",[22m
+[2m    "land-special3",[22m
+[2m    "library.cskohyo-CS20211901",[22m
+[33m@@ -273,11 +265,10 @@[39m
+[2m    "material.fp1-applied",[22m
+[2m    "material.fp2-practical",[22m
+[2m    "material.fp3-practical",[22m
+[2m    "material.sharoushi-sentaku",[22m
+[2m    "material.st-annotated-notes",[22m
+[32m-   "mokuzo-kenchikushi",[39m
+[2m    "nw",[22m
+[2m    "pm",[22m
+[2m    "reform-mgr",[22m
+[2m    "rigaku-ryohoshi",[22m
+[2m    "riku-tech1",[22m
+[33m@@ -301,11 +292,10 @@[39m
+[2m    "shinrishi",[22m
+[2m    "shinryo-hoshasengishi",[22m
+[2m    "shohi-sodan",[22m
+[2m    "shuwa",[22m
+[2m    "sm",[22m
+[32m-   "sokuryoshi",[39m
+[2m    "soukan",[22m
+[2m    "st",[22m
+[2m    "takken",[22m
+[2m    "tohan",[22m
+[2m    "tsushin1",[22m
+
+[36m [2m❯[22m __tests__/mobile/catalog-parity.test.ts:[2m19:51[22m[39m
+    [90m 17|[39m })[33m;[39m
+    [90m 18|[39m it("includes exactly every web-published practice question, library pa…
+    [90m 19|[39m   expect(new Set(generated.exams.map(e=>e.code))).toEqual(new Set(cata…
+    [90m   |[39m                                                   [31m^[39m
+    [90m 20|[39m   [35mfor[39m([35mconst[39m code [35mof[39m [34mgetRegisteredExamCodes[39m()){
+    [90m 21|[39m     const web=(await getQuestionsForExam(code)).filter(isPracticeReady…
+
+[31m[2m⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯[22m[39m
+
+
+[2m Test Files [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m4 passed[39m[22m[90m (5)[39m
+[2m      Tests [22m [1m[31m1 failed[39m[22m[2m | [22m[1m[32m37 passed[39m[22m[90m (38)[39m
+[2m   Start at [22m 02:29:10
+[2m   Duration [22m 27.14s[2m (transform 18.03s, setup 1.64s, import 25.28s, tests 3.59s, environment 7.69s)[22m
+

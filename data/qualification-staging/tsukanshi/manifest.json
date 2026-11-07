@@ -1,0 +1,100 @@
+{
+ "slug": "tsukanshi",
+ "name": "通関士試験",
+ "publicationStatus": "staging",
+ "publishable": false,
+ "ownerRightsDecision": "2026-11-04 オーナー決定: 権利・転載条件の文言では止めない。税関の利用規約案内（https://www.customs.go.jp/kiyaku.htm）は、別のルールがあるものを除き利用ルールに従う複製・公衆送信・翻案と商用利用を可能と案内。",
+ "officialIndexUrl": "https://www.customs.go.jp/tsukanshi/",
+ "rounds": {
+  "59": {
+   "examDate": "2025-10-05",
+   "status": "staged",
+   "records": 105,
+   "originalQuestions": 65,
+   "excluded": "通関実務 第1問・第2問（申告書作成式。別紙仕入書・別冊を使う欄入力で、既存の問題形式で表せない）"
+  },
+  "60": {
+   "examDate": "2026-10-04",
+   "status": "questions-only",
+   "originalQuestions": 59,
+   "answers": "未公表。税関サイトで2026-11-10の合格発表以降に正答掲載予定。sources/transcription-60.json に問題文のみ転記（officialAnswers: null）。",
+   "excluded": "通関実務 第1問・第2問（申告書作成式）"
+  }
+ },
+ "wipSource": "origin/claude/compassionate-brahmagupta-wkiu7v（47110393c）の第59回転記・公式正答を取り込み、共有レジストリ・UI変更は reports/tsukanshi-registry.md に移した。",
+ "checkedAt": "2026-11-06",
+ "files": [
+  {
+   "round": 59,
+   "url": "https://www.customs.go.jp/tsukanshi/59_shiken/20251005tukanshi01.pdf",
+   "sha256": "3bca0e67602bca9f9df1934010819879cc6296c5c4495e704dd6c8f34856a925",
+   "pages": 16,
+   "retrievedAt": "2026-11-06",
+   "kind": "question"
+  },
+  {
+   "round": 59,
+   "url": "https://www.customs.go.jp/tsukanshi/59_shiken/20251005tukanshi02.pdf",
+   "sha256": "9ad59c538312318c51dd34ab201ad5d2b3a13096a4b3fcda4fdc625ee1fc7067",
+   "pages": 28,
+   "retrievedAt": "2026-11-06",
+   "kind": "question"
+  },
+  {
+   "round": 59,
+   "url": "https://www.customs.go.jp/tsukanshi/59_shiken/20251005tukanshi03.pdf",
+   "sha256": "ee682781e74678220163186307dd354fd3098bafe118465a64104ddbfb0a2a7c",
+   "pages": 28,
+   "retrievedAt": "2026-11-06",
+   "kind": "question"
+  },
+  {
+   "round": 59,
+   "url": "https://www.customs.go.jp/tsukanshi/59_shiken/20251005tukanshi04.pdf",
+   "sha256": "276caafc1711681452db1ad26b6cb310ebd43f620181a4388e46ce5835a00626",
+   "pages": 16,
+   "retrievedAt": "2026-11-06",
+   "kind": "booklet"
+  },
+  {
+   "round": 59,
+   "url": "https://www.customs.go.jp/tsukanshi/59_shiken/59shiken_seikai.pdf",
+   "sha256": "2e525a3f1584df4dc4135febb93b229a79df626149b4755a846448e9cc8590d1",
+   "pages": 1,
+   "retrievedAt": "2026-11-06",
+   "kind": "answer"
+  },
+  {
+   "round": 60,
+   "url": "https://www.customs.go.jp/tsukanshi/60_shiken/20261004tukanshi01.pdf",
+   "sha256": "2d2cbc26f4e32bf163f692f8c30133cc3fe5259fa30817edf1072b475d4e6a03",
+   "pages": 16,
+   "retrievedAt": "2026-11-06",
+   "kind": "question"
+  },
+  {
+   "round": 60,
+   "url": "https://www.customs.go.jp/tsukanshi/60_shiken/20261004tukanshi02.pdf",
+   "sha256": "bd868420bec05dd8a1ebd5eb74169211cbdd825ee1911f521a668ad4a29b82de",
+   "pages": 28,
+   "retrievedAt": "2026-11-06",
+   "kind": "question"
+  },
+  {
+   "round": 60,
+   "url": "https://www.customs.go.jp/tsukanshi/60_shiken/20261004tukanshi03.pdf",
+   "sha256": "689b5022417f4eb93970df729cc122e93064d6019dd196c8dd76795a0822bb66",
+   "pages": 27,
+   "retrievedAt": "2026-11-06",
+   "kind": "question"
+  },
+  {
+   "round": 60,
+   "url": "https://www.customs.go.jp/tsukanshi/60_shiken/20261004tukanshi04.pdf",
+   "sha256": "e091860d3e6d9318ae3645af8dcf0cd53c23f7686e0aac341cc1324faaf905a3",
+   "pages": 16,
+   "retrievedAt": "2026-11-06",
+   "kind": "booklet"
+  }
+ ]
+}

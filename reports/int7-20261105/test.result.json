@@ -1,0 +1,15 @@
+{
+  "command": [
+    "corepack.cmd",
+    "pnpm",
+    "test",
+    "--maxWorkers=2",
+    "--reporter=json",
+    "--outputFile=reports/int7-20261105/test.json"
+  ],
+  "exitCode": 1,
+  "seconds": 879.52,
+  "log": "reports/int7-20261105/test.log",
+  "sha256": "2b2c0ba3c196057d7cda1870a4cee8ca0b7a0ee37cc0c94414bc90941c735828",
+  "environment": "allowlisted OS variables only; CI=1, telemetry disabled, NODE_OPTIONS=4096; no service credentials or env files"
+}

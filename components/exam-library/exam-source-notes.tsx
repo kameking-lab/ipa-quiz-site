@@ -1,6 +1,4 @@
 import { ExternalLink } from "lucide-react";
-import { NOTE_CATALOG_URL, noteCatalogDestination } from "@/lib/note-catalog";
-import relatedGuides from "@/data/exam-library/related-guides.json";
 import { EXAM_GROUPS, examSourcePdfUrl, type ExamCatalogEntry, type ExamGroupId } from "@/lib/exam-library-model";
 
 interface ExamSourceNotesProps {
@@ -8,27 +6,17 @@ interface ExamSourceNotesProps {
   entry?: ExamCatalogEntry;
   /** 資格ハブでは、その資格が属する公表区分だけを表示する */
   groupIds?: readonly ExamGroupId[];
-  noteLinks?: readonly { url: string }[];
   className?: string;
 }
 
 /** 出典・日付の意味・法令時点・採点方針の簡潔な注記 */
-export function ExamSourceNotes({ entry, groupIds, noteLinks, className = "" }: ExamSourceNotesProps) {
-  const qualifications = new Set((entry?.noteLinks ?? noteLinks ?? []).flatMap(link => {
-    const destination = new URL(noteCatalogDestination(link.url, "exam_library"));
-    const qualification = destination.searchParams.get("qualification");
-    return destination.origin === new URL(NOTE_CATALOG_URL).origin && qualification ? [qualification] : [];
-  }));
-  function guideDestination(href: string): string {
-    const destination = new URL(noteCatalogDestination(href, "exam_library"));
-    if (destination.origin === new URL(NOTE_CATALOG_URL).origin && qualifications.size === 1) destination.searchParams.set("qualification", [...qualifications][0]!);
-    return destination.href;
-  }
+export function ExamSourceNotes({ entry, groupIds, className = "" }: ExamSourceNotesProps) {
   const selectedGroupIds = entry ? [entry.group] : groupIds;
   const surveyOnly = selectedGroupIds?.length === 1 && selectedGroupIds[0] === "survey-assistant";
   const groups = selectedGroupIds
     ? EXAM_GROUPS.filter((group) => selectedGroupIds.includes(group.id))
     : EXAM_GROUPS;
+  const peFirstOnly = groups.length === 1 && groups[0]?.id === "pe-first";
   return (
     <section
       aria-labelledby="exam-source-notes-title"
@@ -39,7 +27,7 @@ export function ExamSourceNotes({ entry, groupIds, noteLinks, className = "" }: 
       </h2>
       <ul className="mt-3 list-disc space-y-2 pl-5 text-sm leading-6">
         <li>
-          {surveyOnly ? "問題は国土地理院が公表した測量士補試験の原本PDFに基づきます。当サイトは国土地理院とは別の運営です。解説は当サイトの学習用です。" : groups.some(group => group.id === "survey-assistant") ? "問題は公益財団法人安全衛生技術試験協会および国土地理院の公表PDFに基づきます。当サイトは各試験実施団体とは別の運営です。各演習ページから原本を確認できます。" : "問題は公益財団法人安全衛生技術試験協会の公表PDFに基づきます。当サイトは同協会とは別の運営です。"}
+          {peFirstOnly ? "出典は公益社団法人日本技術士会の公式問題・公式正答PDFです。解説は当サイト独自の学習用で、日本技術士会の公式解説ではありません。画像の原問は指定されたⅢの番号を読んでください。" : surveyOnly ? "問題は国土地理院が公表した測量士補試験の原本PDFに基づきます。当サイトは国土地理院とは別の運営です。解説は当サイトの学習用です。" : groups.some(group => group.id === "pe-first") ? "問題は安全衛生技術試験協会・国土地理院・日本技術士会の公表PDFに基づきます。当サイトは各試験実施団体とは別の運営です。解説は当サイトの学習用です。" : groups.some(group => group.id === "survey-assistant") ? "問題は公益財団法人安全衛生技術試験協会および国土地理院の公表PDFに基づきます。当サイトは各試験実施団体とは別の運営です。各演習ページから原本を確認できます。" : "問題は公益財団法人安全衛生技術試験協会の公表PDFに基づきます。当サイトは同協会とは別の運営です。"}
         </li>
         {surveyOnly ? <li>原本PDFと図表は取得した原本の保存コピーです。原本の数値・式・公式解答は変更していません。2026年No.12は参照専用で、採点・成績・解答履歴・復習には含めません。</li> : entry?.sourceMode === "official-archive-copy" ? (
           <li>この回の旧公式PDFは公開を終了しているため、旧公式索引と照合した公開保存コピー（osh-lab.com）へリンクします。</li>
@@ -59,15 +47,6 @@ export function ExamSourceNotes({ entry, groupIds, noteLinks, className = "" }: 
           回答は同じタブ内の移動や再読み込みで保持します。タブを閉じた後も残す場合は「この端末に保存する」をオンにしてください。
         </li>
       </ul>
-      <div className="mt-5 border-t border-sky-300 pt-4 dark:border-sky-700">
-        <h3 className="font-bold">学び方の無料記事</h3>
-        <p className="mt-1 text-sm leading-6">試験の選び方や、間違えた問題の振り返り方をnoteで紹介しています。</p>
-        {relatedGuides.filter((guide) => !selectedGroupIds || guide.groups.some((group) => selectedGroupIds.includes(group as ExamGroupId))).map((guide) => (
-          <a key={guide.url} href={guideDestination(guide.url)} target="_blank" rel="noopener noreferrer" className="mt-2 inline-flex min-h-11 items-center gap-2 text-sm font-bold underline underline-offset-4">
-            {guide.title}<span className="sr-only">（note・新しいタブで開きます）</span><ExternalLink className="h-4 w-4 shrink-0" aria-hidden="true" />
-          </a>
-        ))}
-      </div>
       {entry ? (
         <div className="mt-3 flex flex-wrap gap-x-5">
           <a

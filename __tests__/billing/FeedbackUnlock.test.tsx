@@ -6,15 +6,17 @@ import { FeedbackUnlock } from "@/components/quiz/FeedbackUnlock";
 import { PracticeDailyLimit } from "@/components/quiz/PracticeTransition";
 beforeEach(() => { window.history.replaceState({}, "", "/quiz"); vi.stubEnv("NEXT_PUBLIC_TURNSTILE_SITE_KEY", ""); vi.clearAllMocks(); sessionStorage.clear(); });
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.unstubAllEnvs(); });
-it("keeps purchase primary, accepts multiple choices, and resumes only after storage success", async () => {
+it("offers free exits before the optional plan, accepts multiple choices, and resumes only after storage success", async () => {
   const resume = vi.fn();
   let finish: (r: Response) => void = () => {};
   const fetcher = vi.fn(async (_url: string, init?: RequestInit) => init?.method === "POST" ? new Promise<Response>(resolve => { finish = resolve; }) : Response.json({ eligible: true, submitted: false, remaining: 0 }));
   vi.stubGlobal("fetch", fetcher);
   render(<PracticeDailyLimit reset={null} resumeHref="/quiz?mode=year" backHref="/" onUnlocked={resume} />);
   const button = await screen.findByRole("button", { name: "意見を送って、さらに10問無料で解く" });
-  const purchase = screen.getByRole("link", { name: "有料にして続きを解く" });
-  expect(purchase.compareDocumentPosition(button) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  const purchase = screen.getByRole("link", { name: "月額プランの料金・条件を見る" });
+  const review = screen.getByRole("link", { name: "保存済みの履歴を無料で復習する" });
+  expect(button.compareDocumentPosition(purchase) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  expect(review.compareDocumentPosition(purchase) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
   fireEvent.click(button);
   fireEvent.click(screen.getByLabelText("解説をもっと詳しく"));
   fireEvent.click(screen.getByLabelText("スマホでの使いやすさ"));

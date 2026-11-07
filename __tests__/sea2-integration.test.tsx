@@ -1,3 +1,4 @@
+import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import { describe, expect, it } from "vitest";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -33,7 +34,7 @@ describe("Sea2 historical original-only candidate", () => {
     expect((await getQuestionsForExam(exam)).filter(isPracticeReadyQuestion)).toEqual(ready);
     expect(getQuestionsByExamStrict(exam)).toEqual(ready);
     expect(new Set(await getPoolIds({ exam, mode: "random" }))).toEqual(new Set(ready.map(q => q.id)));
-    expect(getRegisteredExamCodes()).toHaveLength(84); expect(ALL_EXAM_CODES).not.toContain(exam);
+    expect(new Set(getRegisteredExamCodes())).toEqual(new Set(ALL_QUIZ_EXAM_CODES)); expect(ALL_EXAM_CODES).not.toContain(exam);
     expect(EXAM_CONFIGS[exam].sessions.map(s => s.expectedQuestions)).toEqual([12,12]);
     expect(defaultPracticeSession(exam)).toBe("houki");
     const home = getHomeDirectory().flatMap(d => [...d.featured,...d.compact]).find(q => q.key === exam)!;

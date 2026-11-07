@@ -3,7 +3,6 @@ import type { PresenceViewState } from "../../lib/study-presence-contract";
 import type { StudyPresenceSnapshot } from "../../lib/study-presence";
 
 // Explicit synthetic UI fixtures: no heartbeat or production learner is recorded.
-const fallbackLabel = "資格紹介";
 type MeasuredState = Extract<PresenceViewState, { mode: "measured" }>;
 test.use({ serviceWorkers: "block" });
 test.beforeEach(async ({ page }) => {
@@ -14,11 +13,125 @@ test.beforeEach(async ({ page }) => {
   }));
 });
 
+test("VIS3C qualification mascots stay fixed, bounded and lazy on mobile", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.addInitScript(() => sessionStorage.setItem("study-room-mascot-visit:v1", "0"));
+  const requested = new Set<string>();
+  let atlasRequests = 0;
+  page.on("request", request => {
+    const pathname = new URL(request.url()).pathname;
+    if (pathname.endsWith("/study-mascots-atlas.webp")) atlasRequests++;
+    if (pathname.includes("/study-room-mascots/")) requested.add(pathname);
+  });
+  await page.goto("/");
+  const state = await measured(page, { count: 12, exams: ["ip", "ap", "civil2", "fp3", "takken", "yakuzaishi"].map(exam => ({ exam, count: 2 })) });
+  await show(page, state);
+  const scene = page.locator(".study-room-scene");
+  await scene.scrollIntoViewIfNeeded();
+  const images = scene.locator("img");
+  await expect(images).toHaveCount(12);
+  const stable = () => images.evaluateAll(elements => elements.map(el => ({ src: el.getAttribute("src"), alt: el.getAttribute("alt"), direction: el.parentElement?.getAttribute("data-mirrored") })));
+  const initial = await stable();
+  for (const image of await images.all()) {
+    await expect(image).toHaveAttribute("loading", "lazy");
+    await expect(image).toHaveAttribute("decoding", "async");
+    await expect(image).toHaveAttribute("alt", /のチワワ（(?:勉強中|あるある：.+)）/);
+    await expect(image).toHaveAttribute("src", /\/(?:ip|ap|civil2|fp3|takken|pharmacy)-(?:study|break)\.webp$/);
+    await expect(image).toHaveCSS("background-image", "none");
+  }
+  expect(await scene.locator('[data-mascot-state="break"]').count()).toBeGreaterThanOrEqual(1);
+  expect(await scene.locator('[data-mascot-state="break"]').count()).toBeLessThanOrEqual(2);
+  await expect(scene.locator(".study-room-away")).toHaveCount(0);
+  expect(initial.some(item => item.direction === "true")).toBe(true);
+  expect(initial.some(item => item.direction === "false")).toBe(true);
+  // Scroll the room itself so every potentially visible tile is decoded.
+  await page.locator(".study-room-scroll").evaluate(el => { el.scrollLeft = el.scrollWidth; });
+  await expect.poll(() => images.evaluateAll(elements => elements.every(el => (el as HTMLImageElement).complete && (el as HTMLImageElement).naturalWidth === 256))).toBe(true);
+  await page.locator(".study-room-scroll").evaluate(el => { el.scrollLeft = 0; });
+  requested.clear();
+  await show(page, { ...state, snapshot: { ...state.snapshot } });
+  await page.getByRole("group", { name: "自習室の席を選ぶ" }).getByRole("button").first().click();
+  expect(await stable()).toEqual(initial);
+  expect(requested.size).toBe(0);
+  expect(atlasRequests).toBe(0);
+  await expectBounded(page);
+  await page.locator("#study-room").screenshot({ path: "test-results/vis3c-mobile-390.png" });
+  await page.setViewportSize({ width: 320, height: 800 });
+  await expectBounded(page);
+  expect(await stable()).toEqual(initial);
+  await page.locator("#study-room").screenshot({ path: "test-results/vis3c-mobile-320.png" });
+  await page.reload();
+  await show(page, state);
+  expect(await stable()).toEqual(initial);
+  requested.clear();
+  await show(page, await measured(page, { count: 0, exams: [] }));
+  await expect(scene.locator("img")).toHaveCount(0);
+  expect(requested.size).toBe(0);
+});
+
 async function measured(page: Page, value: StudyPresenceSnapshot): Promise<MeasuredState> {
   const now = await page.evaluate(() => Date.now());
   return { mode: "measured", previous: null, snapshot: { ...value, status: "measured", total: value.count,
     measuredAt: new Date(now).toISOString(), validUntil: new Date(now + 90_000).toISOString(), windowSeconds: 300 } };
 }
+
+test("VIS3E away dog occupies clear floor with an empty desk, stays fixed and respects reduced motion", async ({ page }) => {
+  await page.setViewportSize({ width: 390, height: 844 });
+  await page.addInitScript(() => sessionStorage.setItem("study-room-mascot-visit:v1", "2"));
+  await page.goto("/");
+  const state = await measured(page, { count: 12, exams: [{ exam: "ip", count: 12 }] });
+  await show(page, state);
+  const scene = page.locator(".study-room-scene");
+  await scene.scrollIntoViewIfNeeded();
+  const away = scene.locator(".study-room-away");
+  const vacant = scene.locator('[data-mascot-state="vacant"]');
+  await expect(away).toHaveCount(1);
+  await expect(vacant).toHaveCount(1);
+  await expect(away).toHaveAttribute("data-origin-seat", "0");
+  await expect(away.locator("img")).toHaveAttribute("alt", /席を立って遊んでいる/);
+  await expect(vacant.locator("img")).toHaveAttribute("alt", /空席（椅子と机、開いたままの本）/);
+  await expect(scene.locator(".study-mascot")).toHaveCount(12);
+  await expect(scene.locator("img")).toHaveCount(13);
+  const stable = () => scene.locator("img").evaluateAll(images => images.map(img => ({ src: img.getAttribute("src"), alt: img.getAttribute("alt"), mirrored: img.parentElement?.getAttribute("data-mirrored") })));
+  const initial = await stable();
+  for (const width of [390, 320]) {
+    await page.setViewportSize({ width, height: 844 });
+    await expectBounded(page);
+    await page.locator(".study-room-scroll").evaluate(el => { el.scrollLeft = el.scrollWidth; });
+    await expect.poll(() => scene.locator("img").evaluateAll(images => images.every(img => (img as HTMLImageElement).complete && (img as HTMLImageElement).naturalWidth === 256))).toBe(true);
+    // The floor lane begins below every desk's square, at every expanded room width.
+    const geometry = await scene.evaluate(el => {
+      const dog = el.querySelector(".study-room-away")!.getBoundingClientRect();
+      return { top: dog.top, bottom: dog.bottom, sceneBottom: el.getBoundingClientRect().bottom,
+        deskBottom: Math.max(...[...el.querySelectorAll(".study-room-seat")].map(desk => desk.getBoundingClientRect().bottom)) };
+    });
+    expect(geometry.top).toBeGreaterThan(geometry.deskBottom);
+    expect(geometry.bottom).toBeLessThan(geometry.sceneBottom);
+    expect(await stable()).toEqual(initial);
+    await page.locator(".study-room-scroll").evaluate(el => { el.scrollLeft = 0; });
+    await page.locator("#study-room").screenshot({ path: `test-results/vis3e-mobile-${width}.png` });
+    await scene.scrollIntoViewIfNeeded();
+    await page.screenshot({ path: `test-results/vis3e-viewport-${width}.png` });
+  }
+  await page.getByRole("group", { name: "自習室の席を選ぶ" }).getByRole("button").first().click();
+  await expect(away).toHaveAttribute("data-selected", "true");
+  await scene.screenshot({ path: "test-results/vis3e-away-selected.png" });
+  await show(page, { ...state, snapshot: { ...state.snapshot } });
+  expect(await stable()).toEqual(initial);
+  await page.reload();
+  await show(page, state);
+  expect(await stable()).toEqual(initial);
+  await page.emulateMedia({ reducedMotion: "reduce" });
+  await expect(away.locator("img")).toHaveCSS("animation-name", "none");
+  await show(page, await measured(page, { count: 49, exams: [{ exam: "ip", count: 49 }] }));
+  await expect(away).toHaveCount(1);
+  expect(await stable()).toEqual(initial);
+  await show(page, await measured(page, { count: 1, exams: [{ exam: "ip", count: 1 }] }));
+  await expect(away).toHaveCount(1);
+  await expect(vacant).toHaveCount(1);
+  await show(page, await measured(page, { count: 0, exams: [] }));
+  await expect(scene.locator("img")).toHaveCount(0);
+});
 async function show(page: Page, state: PresenceViewState, expectedLabel = state.mode === "promotion" ? "学習のご案内" : "前回取得時点の学習状況") {
   const viewer = page.locator("[data-study-presence-viewer]");
   await expect(viewer).toHaveCount(1);
@@ -35,12 +148,13 @@ async function expectBounded(page: Page) {
 }
 async function expectGuidance(page: Page) {
   const guidance = page.getByRole("region", { name: "学習のご案内" });
-  await expect(guidance.getByText(fallbackLabel, { exact: true })).toBeVisible();
   await expect(guidance.getByRole("link", { name: "ほかの資格を探す", exact: true })).toHaveAttribute("href", "#choose-qualification");
   const suggestions = guidance.locator(".study-room-guidance li a");
   await expect(suggestions).toHaveCount(6);
   for (const link of await suggestions.all()) await expect(link).toHaveAttribute("href", /^\/(?!\/)/);
-  await expect(guidance.getByRole("link")).toHaveCount(7);
+  await expect(guidance.getByRole("link", { name: "資格を選んで1問始める", exact: true })).toHaveCount(1);
+  for (const link of await guidance.getByRole("link", { name: "資格を選んで1問始める", exact: true }).all()) await expect(link).toHaveAttribute("href", "/#choose-qualification");
+  await expect(guidance.getByRole("link")).toHaveCount(8);
   await expect(guidance.getByText(/実際の学習人数では|利用者個人や実際の行動/)).toHaveCount(0);
   await expect(guidance.getByRole("list", { name: "資格別の学習人数" })).toHaveCount(0);
   await expect(guidance.locator("time")).toHaveCount(0);
@@ -59,11 +173,10 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
     await show(page, fresh);
     const region = page.getByRole("region", { name: "前回取得時点の学習状況" });
     await expect(region.getByRole("list", { name: "資格別の学習人数" }).getByRole("listitem")).toHaveText([
-      "前回取得時点の直近5分に3人が基本情報技術者を学習しました。", "前回取得時点の直近5分に1人が第二種電気工事士を学習しました。",
+      "基本情報技術者 3人", "第二種電気工事士 1人",
     ]);
     await expect(region.locator(".study-room-total")).toHaveText("4人");
     await expect(region.locator("time")).toHaveAttribute("datetime", fresh.snapshot.measuredAt);
-    await expect(region.getByText("学習者数は1時間ごとに取得します。リアルタイム表示ではありません。席と人数は前回取得時点の集計です。", { exact: true })).toBeVisible();
     const seats = region.getByRole("group", { name: "自習室の席を選ぶ", exact: true }).getByRole("button");
     await expect(seats).toHaveCount(4);
     for (const [index, name] of ["基本情報技術者", "基本情報技術者", "基本情報技術者", "第二種電気工事士"].entries()) {
@@ -72,30 +185,28 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
     }
     const scene = region.getByRole("group", { name: "前回取得時点の集計に基づくチワワの自習室", exact: true });
     await expect(scene.getByRole("button")).toHaveCount(0);
-    await expect(scene.locator('.study-room-seat[aria-hidden="true"]')).toHaveCount(4);
-    await expect(region.getByText("同じブラウザは1人として集計", { exact: true })).toBeVisible();
-    await expect(region.getByText(fallbackLabel, { exact: true })).toHaveCount(0);
+    await expect(scene.locator('.study-room-seat:has(img[alt])')).toHaveCount(4);
+    await expect(region.getByRole("link", { name: "ほかの資格を探す", exact: true })).toHaveCount(0);
     await expect(region.getByText(/直近2分/)).toHaveCount(0);
     await expectBounded(page);
 
     await show(page, await measured(page, { count: 0, exams: [] }));
-    await expect(region.getByText("前回取得時点の直近5分の学習人数は0人です。", { exact: true })).toBeVisible();
     await expect(region.locator(".study-room-total")).toHaveText("0人");
     const emptyRoom = region.getByRole("group", { name: "前回取得時点の集計に基づくチワワの自習室", exact: true });
     await expect(emptyRoom).toBeVisible();
     await expect(emptyRoom.getByRole("button")).toHaveCount(0);
     await expect(emptyRoom.locator(".study-mascot")).toHaveCount(0);
     await expect(region.getByRole("group", { name: "自習室の席を選ぶ", exact: true })).toHaveCount(0);
-    await expect(region.getByRole("region", { name: "チワワと、ひと休み。", exact: true }).getByRole("button", { name: "チワワのひと休みを閉じる", exact: true })).toBeVisible();
-    await expect(region.getByText(fallbackLabel, { exact: true })).toHaveCount(0);
+    await expect(region.getByRole("region", { name: "あなたの席", exact: true }).getByRole("button", { name: "チワワのひと休みを閉じる", exact: true })).toBeVisible();
+    await expect(region.getByRole("link", { name: "ほかの資格を探す", exact: true })).toHaveCount(0);
     await expect(region.getByRole("link", { name: "資格から問題を探す", exact: true })).toBeVisible();
-    await expect(region.getByRole("link")).toHaveCount(7);
+    await expect(region.getByRole("link", { name: "資格を選んで1問始める", exact: true })).toHaveCount(1);
+    await expect(region.getByRole("link")).toHaveCount(8);
     await expectBounded(page);
 
     await show(page, { mode: "stale", snapshot: null, previous: fresh.snapshot, reason: "unavailable" });
     await expect(region.locator(".study-room-total")).toHaveText("4人");
     await expect(region.locator("time")).toHaveAttribute("datetime", fresh.snapshot.measuredAt);
-    await expect(region.getByText("学習者数は1時間ごとに取得します。リアルタイム表示ではありません。席と人数は前回取得時点の集計です。", { exact: true })).toBeVisible();
     await expectBounded(page);
     await show(page, { mode: "promotion", snapshot: null, previous: null, reason: "unavailable" });
     await expectGuidance(page);
@@ -111,7 +222,6 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
   const historical = page.getByRole("region", { name: "前回取得時点の学習状況" });
   await expect(historical.locator(".study-room-total")).toHaveText("4人");
   await expect(historical.locator("time")).toHaveAttribute("datetime", cached.snapshot.measuredAt);
-  await expect(historical.getByText("学習者数は1時間ごとに取得します。リアルタイム表示ではありません。席と人数は前回取得時点の集計です。", { exact: true })).toBeVisible();
   await show(page, { mode: "stale", snapshot: null, previous: cached.snapshot, reason: "expired" });
   await expect(historical.locator("time")).toHaveAttribute("datetime", cached.snapshot.measuredAt);
   await expect(historical.locator(".study-room-total")).toHaveText("4人");
@@ -147,7 +257,7 @@ test("many qualifications stay within a keyboard-scrollable small list", async (
   const list = page.getByRole("list", { name: "資格別の学習人数" });
   await expect(list.getByRole("listitem")).toHaveCount(codes.length);
   await expect(list.getByRole("listitem")).toHaveText(expectedOrder.map(row =>
-    `前回取得時点の直近5分に1人が${row.name}を学習しました。`));
+    `${row.name} 1人`));
   await expect(region.locator(".study-room-total")).toHaveText("15人");
   expect((await list.boundingBox())?.height).toBeLessThanOrEqual(220);
   await expect(list).toHaveAttribute("tabindex", "0");
@@ -172,10 +282,8 @@ test("many qualifications stay within a keyboard-scrollable small list", async (
   };
   await expectSeatOrder();
   await expect(scene.getByRole("button")).toHaveCount(0);
-  await expect(scene.locator('.study-room-seat[aria-hidden="true"]')).toHaveCount(12);
+  await expect(scene.locator('.study-room-seat:has(img[alt])')).toHaveCount(12);
   await expect(scene).toHaveAttribute("data-stage", "2");
-  await expect(region.getByText("イラスト 12体・ほか 3人", { exact: true })).toBeVisible();
-  await expect(region.getByText("全15人の集計を一部イラストで表示", { exact: true })).toBeVisible();
   await expect(region.getByRole("navigation", { name: "自習室の部屋を選ぶ" })).toHaveCount(0);
   await expect(region.getByRole("button", { name: "次の部屋", exact: true })).toHaveCount(0);
   const scroll = region.getByLabel("広がる自習室。横にスクロールできます", { exact: true });

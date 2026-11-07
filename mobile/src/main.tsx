@@ -25,6 +25,7 @@ import catalog from "./generated/catalog.json";
 import { QualificationCardActions } from "./QualificationActions";
 import "./native.css";
 import { prepareTrackingPrivacy } from "./tracking";
+import { installNativePetSupport, observePetStudyWrites, persistStudyAfterPets } from "./pet-support";
 const ORIGIN="https://www.kakomon-ai.jp";
 const MaterialReader=lazy(()=>import("./MaterialReader"));
 const EXAMS=catalog.exams as CatalogEntry[];
@@ -52,9 +53,12 @@ function App() {
   useEffect(()=>{reading.current=!!(pool.length||library||materials.length);},[pool.length,library,materials.length]);
   const history=createHistoryStore(),stats=history.getStats();
   const persist=(id:string|null)=>persistAllowed.current?persistStudy(id):Promise.resolve();
+  // Leaving the shell (background / online) also flushes pending pet state.
+  const persistLeaving=(id:string|null)=>persistAllowed.current?persistStudyAfterPets(id):Promise.resolve();
   useEffect(()=>{
     let disposed=false; const disposers:Array<()=>void>=[];
     const keep=(dispose:()=>void)=>{ if(disposed) dispose(); else disposers.push(dispose); };
+    keep(observePetStudyWrites(()=>({ready:readyRef.current&&persistAllowed.current,owner:ownerRef.current}),e=>setNotice(String(e))));
     const markReady=(id:string|null)=>{ if(!disposed){ownerRef.current=id;readyRef.current=true;setOwner(id);setReady(true);} };
     void downloads.list().then(v=>{ if(!disposed) setSaved(v); }).catch(log("saved index"));
     void downloads.rights().then(async r=>{
@@ -70,7 +74,7 @@ function App() {
       void observeLogin(ORIGIN,e=>setNotice(String(e))).then(keep).catch(log("login listener"));
       void NativeApp.addListener("appStateChange",s=>{
         if(!readyRef.current)return;
-        if(!s.isActive)void persist(ownerRef.current).catch(log("persist study"));
+        if(!s.isActive)void persistLeaving(ownerRef.current).catch(log("persist study"));
         else void refreshDeviceRights().then(()=>{if(reading.current)return downloads.authorize();}).catch(e=>{setPool([]);setQuestion(null);setLibrary(null);setMaterials([]);setNotice(String(e));});
       }).then(h=>keep(()=>{ void h.remove(); })).catch(log("app state listener"));
     }
@@ -122,7 +126,7 @@ function App() {
   }
   async function openOnline(path="/") {
     // History hand-off must not block studying: log and continue online.
-    await persist(owner).catch(log("persist before online"));
+    await persistLeaving(owner).catch(log("persist before online"));
     location.assign(ORIGIN+path);
   }
   const studying=!!(materials.length||library?.entry.paper||pool.length);
@@ -209,6 +213,7 @@ async function start() {
     await step("store public SDK key",()=>Preferences.set({ key: "kakomon:rc-ios-public-key", value: publicSdkKey }));
   }
   await step("local API",installLocalApi);
+  await step("pet support",installNativePetSupport);
   createRoot(document.getElementById("root")!).render(<StartupBoundary><App/></StartupBoundary>);
 }
 void start().catch(error => {

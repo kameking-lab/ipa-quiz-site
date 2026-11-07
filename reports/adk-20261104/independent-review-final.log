@@ -1,0 +1,1900 @@
+codex.cmd : OpenAI Codex v0.166.0
+発生場所 行:2 文字:80
++ ... final.txt | & C:/Users/kanet/AppData/Roaming/npm/codex.cmd exec -m gp ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (OpenAI Codex v0.166.0:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+--------
+workdir: C:\Users\kanet\20260522\wt-batch1
+model: gpt-6-astra
+provider: openai
+approval: never
+sandbox: read-only
+reasoning effort: low
+reasoning summaries: none
+session id: 01a1a568-6c50-77c3-b292-b82ab02a40e0
+--------
+user
+??????????????????????read-only????????Git????????????push?PR????????????AI API???????????????????
+
+?? C:/Users/kanet/20260522/wt-batch1?release/batch1-20261105??? cc892a8f4 ? ???????? c9b4700e9?
+reports/adk-20261104/review-prompt.txt ????????????????????? independent-review1.md ??????PASS??????????????????
+
+???????????????validation.json?typecheck.log?lint.log?test.log?build.log?browser.log ??????????????????????????? typech
+eck=0?lint=0?????8???722????/7592???/??2??????build=0?17700???????????9?????????????2????????details???????????????????
+?? #explanation > details ??????????????????81c6e924d???????????
+
+??????????????????????????????????????????????????????????????PASS???FAIL??????????????????????????????????????????????
+????????????????????????????????????????
+
+???????????????????????????????????????????????????????????????AdSense?????????????
+
+
+codex
+指定のレビュー指示と証跡、Git の状態を read-only で確認します。push・PR 作成やファイル変更は行わず、確認できた根拠に基づいて PASS / FAIL を報告します。文字化けしている部分は、レビュー指示ファイルで補いま
+す。
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command "Get-Content reports/adk-20261104/review-prom
+pt.txt; git status --short; git branch --show-current; git rev-parse HEAD; rg --files -g AGENTS.md -g '*independent-rev
+iew1*' -g 'validation.json' -g '*typecheck.log' -g '*lint.log' -g '*test.log' -g '*build.log' -g '*browser.log'" in C:\
+Users\kanet\20260522\wt-batch1
+ succeeded in 226ms:
+独立レビューを日本語で実施してください。read-only厳守。ファイル・Git・外部サービスの変更、push・PR・チE�Eロイ・再審査申請、AI API呼び出し、追加エージェント起動をしなぁE��ください、E
+対象: C:/Users/kanet/20260522/wt-batch1、release/batch1-20261105、E基点INT1B cc892a8f4 から現在HEADまでのADK差刁E��、reports/adk-202611
+04/ の監査・報告�E検証証跡をレビューする、ENT1B既存変更全体�E今回の修正対象ではなぁE��E
+依頼は kakomon-ai.jp のAdSense対策。メールの一般皁E��「サイト�E庁E��を掲載する準備がまだ整ってぁE��ぁE��以外�E具体理由は不�E。所有老Epub-8751260838396451。一次賁E��とHTTP
+実測から候補を整琁E��、不足を直す。庁E��増設禁止、AI呼び出し経路変更禁止。noindex・統合�E根拠があれ�E可。�E検証は親が実行中また�E完亁E��ログを保存する。未完亁E��グを�E功したと扱わなぁE��E
+確認点:
+- 1問�E野一覧287件と /search・/modes/topic に対する noindex,follow とXML除外が同じ条件で適用されるか。閲覧・問題本斁E�E解説・演習�E回帰がなぁE��。動皁E��ータ追加後も整合するか、E
+- 独自解説やCookie説明�E所有権確認�E既存で足りてぁE��箁E��を過剰に変更してぁE��ぁE��、EdSense headスクリプトなしでも�E式�Eads.txt/メタタグ確認方法を区別できてぁE��か、E- 原文だけと判定
+する際に、短ぁE��解説以外�E choiceExplanations/explanationSections を見落としてぁE��ぁE��。noindexをAdSense審査回避めE��格保証としてぁE��ぁE��、E- 基点からAI経
+路・問題データ・庁E��数/配置・本番操作�E禁止差刁E��なぁE��、E- reports/adk-20261104/adk-report.md の測定結果・確定理由と候補�E区別・検証限界・オーナ�EのチE�Eロイ後�E再審査手頁E�
+�正確か。既存ブランチ�E全体統合�E今回の依頼でなぁE��E- 新規�E全刁E��整合テストとブラウザチE��トが実際のルートと導線を検証できるか、E
+忁E��に応じてread-onlyコマンドと証跡を確認してください。�E頭にPASSまた�EFAIL。修正忁E���E具体的不�E合があればファイルと行�E再現・影響を示してください。無関係な庁E��E��の改喁E��案を修正忁E��にし
+なぁE��ください。確認できなぁE��E��は明示してください、E
+?? reports/adk-20261104/independent-review-final.log
+?? reports/adk-20261104/review-prompt-final.txt
+release/batch1-20261105
+c9b4700e950529596353fa2b85813d346c1898b6
+docs\evidence\zoen2-latest-two-20261011\validation.json
+reports\sekou-1kankoji\typecheck.log
+reports\qkishou-20261103\typecheck.log
+reports\qkishou-20261103\lint.log
+reports\qkishou-20261103\fix-browser-lint.log
+reports\qkishou-20261103\build.log
+reports\qkensetsu-20261103\validation.json
+reports\qkensetsu-20261103\typecheck.log
+reports\qkensetsu-20261103\lint.log
+reports\qkensetsu-20261103\build.log
+data\qualification-staging\automotive\latest-two\validation.json
+reports\lq9-evidence\vitest.log
+reports\lq9-evidence\typecheck.log
+reports\lq5-20261104\typecheck.log
+reports\int1b-20261104\validation.json
+reports\lq4g-20261104\typecheck.log
+data\qualification-staging\automotive\latest-two\qa\lq1b-typecheck.log
+reports\int1b-20261104\validation\typecheck.log
+reports\int1b-20261104\validation\test.log
+reports\int1b-20261104\validation\lint.log
+reports\int1b-20261104\validation\build.log
+reports\int1b-20261104\validation\browser.log
+reports\int1b-20261104\independent-review1.md
+data\qualification-staging\automotive\latest-two\qa\lq1b-home-eslint.log
+data\qualification-staging\automotive\latest-two\qa\lq1b-eslint.log
+reports\lq4f-20261104\typecheck.log
+reports\lq4f-20261104\related-vitest.log
+reports\lq4f-20261104\independent-review19.md
+reports\lq4f-20261104\independent-review18.md
+reports\lq4f-20261104\independent-review17.md
+reports\lq4f-20261104\independent-review16.md
+reports\lq4f-20261104\independent-review15.md
+reports\lq4f-20261104\independent-review14.md
+reports\lq4f-20261104\independent-review13.md
+reports\lq4f-20261104\independent-review12.md
+reports\lq4f-20261104\independent-review11.md
+reports\lq4f-20261104\independent-review10.md
+reports\lq4f-20261104\independent-review1.md
+reports\lq4e-20261104\typecheck.log
+reports\adk-20261104\validation.json
+reports\adk-20261104\typecheck.log
+reports\adk-20261104\test.log
+reports\adk-20261104\lint.log
+reports\adk-20261104\independent-review1.md
+reports\adk-20261104\independent-review1.log
+reports\adk-20261104\build.log
+reports\adk-20261104\browser.log
+reports\lq4e-20261104\independent-review19.md
+reports\lq4e-20261104\independent-review16.md
+reports\lq4e-20261104\independent-review15.md
+reports\lq4e-20261104\independent-review14.md
+reports\lq4e-20261104\independent-review13.md
+reports\lq4e-20261104\independent-review12.md
+reports\lq4e-20261104\independent-review11.md
+reports\lq4e-20261104\independent-review10.md
+reports\lq4e-20261104\independent-review1.md
+reports\lq4e-20261104\eslint.log
+reports\lq4d-20261104\typecheck.log
+reports\lq4d-20261104\independent-review17.md
+reports\lq4d-20261104\independent-review16.md
+reports\lq4d-20261104\independent-review15.md
+reports\lq4d-20261104\independent-review14.md
+reports\lq4d-20261104\independent-review13.md
+reports\lq4d-20261104\independent-review12.md
+reports\lq4d-20261104\independent-review11.md
+reports\lq4d-20261104\independent-review1.md
+reports\lq4c-20261104\typecheck.log
+reports\lq4c-20261104\lint.log
+reports\lq4c-20261104\independent-review19.md
+reports\lq4c-20261104\independent-review18.md
+reports\lq4c-20261104\independent-review17.md
+reports\lq4c-20261104\independent-review16.md
+reports\lq4c-20261104\independent-review15.md
+reports\lq4c-20261104\independent-review14.md
+reports\lq4c-20261104\independent-review13.md
+reports\lq4c-20261104\independent-review12.md
+reports\lq4c-20261104\independent-review11.md
+reports\lq4c-20261104\independent-review10.md
+reports\lq4c-20261104\independent-review1.md
+reports\lq4b-20261104\typecheck.log
+reports\lq4b-20261104\lint.log
+reports\lq4b-20261104\independent-review1.md
+reports\lq4b-20261104\build.log
+reports\LQ3E-20261104\typecheck.log
+docs\evidence\keiryoshi-76\round6-vitest.log
+docs\evidence\keiryoshi-76\round6-typecheck.log
+docs\evidence\keiryoshi-76\round5-vitest.log
+docs\evidence\keiryoshi-76\round5-typecheck.log
+docs\evidence\keiryoshi-76\round4-vitest.log
+docs\evidence\keiryoshi-76\round4-typecheck.log
+docs\evidence\keiryoshi-75\vitest.log
+docs\evidence\keiryoshi-75\typecheck.log
+docs\evidence\keiryoshi-75\round2-resolution\vitest.log
+docs\evidence\keiryoshi-75\round2-resolution\typecheck.log
+docs\evidence\keiryoshi-75\round1-resolution\vitest.log
+docs\evidence\keiryoshi-75\round1-resolution\typecheck.log
+docs\evidence\hokenshi-latest-two-20261011\validation.json
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'Get-Content -Encoding UTF8 reports/adk-20261
+104/review-prompt-final.txt; Get-Content -Encoding UTF8 reports/adk-20261104/validation.json; Get-Content -Encoding UTF
+8 reports/adk-20261104/independent-review1.md; git diff --stat cc892a8f4 HEAD; git log --oneline cc892a8f4..HEAD; Get-C
+ontent -Encoding UTF8 reports/adk-20261104/adk-report.md' in C:\Users\kanet\20260522\wt-batch1
+ succeeded in 184ms:
+�ŏI�̓Ɨ����r���[����{��ōs���Ă��������Bread-only����B�t�@�C���EGit�E�O���T�[�r�X�ւ̕ύX�Apush�EPR�E�f�v���C�E�ĐR���\���AAI 
+API�Ăяo���A�ǉ��G�[�W�F���g�N���͋֎~�B
+
+�Ώ� C:/Users/kanet/20260522/wt-batch1�Arelease/batch1-20261105�A��_ cc892a8f4 �� �ŏI���؃R�~�b�g c9b4700e9�B
+reports/adk-20261104/review-prompt.txt �Ɍ��̈˗��E�m�F�ϓ_������܂��B���t�H���_ independent-review1.md �͐ÓI������PASS�ł����
+A�����̑S���؂͖������ł����B
+
+����͑S���؂��������Ă��܂��Bvalidation.json�Atypecheck.log�Alint.log�Atest.log�Abuild.log�Abrowser.log �Ǝ��R�[�h�E�񍐂��ƍ��
+��Ă��������B�e���m�F�������ʂ� typecheck=0�Alint=0�i�����x��8�j�A�S722�t�@�C��/7592������/�C��2���X�L�b�v�Abuild=0�i1770
+0�ÓI�y�[�W�j�A�u���E�U9�������ł��B�u���E�U�̏���2���̎��s�͓���qdetails�ɑ΂���P��v�f�Z���N�^�̌��ŁA�e�X�g�� #explanation > d
+etails �ɏC�����ĉ������܂����B�A�v��������81c6e924d�ȍ~�ύX���Ă��܂���B
+
+����̐ÓI�m�F�ɉ����A�ŏI�łɏC���K�{�̋@�\�s��E�����̌��E�֎~�͈͂̕ύX�E���؏ؐՂƂ̐H���Ⴂ���Ȃ������m�F���A�擪��PASS�܂���FAIL�𖾋L���Ă��
+������B�񍐂́u�ŏI���r���[�ǉ����{���v�͂��̃��r���[�̌��ʂŐe���m�肷��\��ł��B���r���[�����O�ɐ�����s�����Ȃ����߂̋L�ڂŁA���ꎩ�̂͌��ׂł͂
+���܂���B
+
+�m�F�͈͂Ɩ��m�F�������Ȍ��ɖ������Ă��������B�ǎ��p�Ń��O�E�R�[�h�E�ؐՂ��m�F���A�S�e�X�g�̓Ɨ��Ď��s����J����͕s�v�ł��BAdSense���F�
+Ƃ͋�ʂ��Ă��������B
+{
+    "verifiedAt":  "2026-11-04T16:13:35.1975208+09:00",
+    "base":  "cc892a8f4",
+    "implementation":  "81c6e924d",
+    "checks":  [
+                   {
+                       "command":  "corepack pnpm typecheck",
+                       "exitCode":  0,
+                       "log":  "typecheck.log"
+                   },
+                   {
+                       "command":  "corepack pnpm lint",
+                       "exitCode":  0,
+                       "errors":  0,
+                       "warnings":  8,
+                       "log":  "lint.log"
+                   },
+                   {
+                       "command":  "corepack pnpm test --maxWorkers=2",
+                       "exitCode":  0,
+                       "filesPassed":  722,
+                       "testsPassed":  7592,
+                       "testsSkipped":  2,
+                       "testsFailed":  0,
+                       "log":  "test.log"
+                   },
+                   {
+                       "command":  "corepack pnpm build",
+                       "exitCode":  0,
+                       "staticPages":  17700,
+                       "log":  "build.log"
+                   },
+                   {
+                       "command":  "Playwright adk-readiness + adsense-learning-quality selected flows, E2E_BASE_URL=ht
+tp://127.0.0.1:3147, workers=2",
+                       "exitCode":  0,
+                       "passed":  9,
+                       "log":  "browser.log"
+                   }
+               ],
+    "forbiddenPathDiff":  [
+
+                          ],
+    "reactReview":  "Server components preserved; no new hook/client bundle/external calls; existing Link reused",
+    "evidence":  [
+                     {
+                         "name":  "adk-report.md",
+                         "sha256":  "15b3efc95fb6217949a2274c814928a91b4b7fdda4f4f56d06537a63db9c8524"
+                     },
+                     {
+                         "name":  "baseline.md",
+                         "sha256":  "5bfa46effee63e351b109590940e4a15a59bef7df0cab88bbd548023605a18d9"
+                     },
+                     {
+                         "name":  "browser-initial.log",
+                         "sha256":  "ce1f0252ed0e30bee88a3884ac8df7716422619cc97d6d9ad01bd0e6fa9b3132"
+                     },
+                     {
+                         "name":  "browser.log",
+                         "sha256":  "db274826e08ef73d8a53265ca1cd5321d6c01b0a00d5976d2c5a82a555c26e7d"
+                     },
+                     {
+                         "name":  "build.log",
+                         "sha256":  "65f5ab47f35fc436677b81eb2dd67c8b8cadfd336d2d9f1bf23c5a1c14e4303e"
+                     },
+                     {
+                         "name":  "corpus.json",
+                         "sha256":  "bcde16175c9349525076b26d876b4cba6aadfb915689b600d20ddc247968922c"
+                     },
+                     {
+                         "name":  "independent-review1.log",
+                         "sha256":  "b91656b873bb1f5a9b73894e0c23dd04aa0634f8b90575e59b573cfdff3f561c"
+                     },
+                     {
+                         "name":  "independent-review1.md",
+                         "sha256":  "f88e8cc72977bee10ae089eb4ec1104efa16e6f2fa1be3d909a8750a5b7b22bf"
+                     },
+                     {
+                         "name":  "lint.log",
+                         "sha256":  "a0b6068cf456b55e40b7e7e34d40fdfa55daa9abe80ca096998e0b9d222d59e3"
+                     },
+                     {
+                         "name":  "production-http.json",
+                         "sha256":  "000657e2072e987d1c2b23c6c6862fb57825da4e4f7e358039466a5426d60dda"
+                     },
+                     {
+                         "name":  "review-prompt.txt",
+                         "sha256":  "fa150b1b574676d515ed371d2355c015a5ae937956a607e366cc9e14acfd1ab5"
+                     },
+                     {
+                         "name":  "test.log",
+                         "sha256":  "7d2a99c43e822b4e13e38de658537edf95131c3e4a2412371365e10d0df7abdb"
+                     },
+                     {
+                         "name":  "typecheck.log",
+                         "sha256":  "2bfbc22d681abcf0444377d9294302085d3f30053a8c0072cf3c75a629f71b6a"
+                     }
+                 ]
+}
+PASS�i�����̐ÓI���r���[�B�S���؂̊�������ł͂���܂���j
+
+�Ώۂ� `cc892a8f4` �� `81c6e924d` �ƍ�ƃc���[��ADK�ؐՂł��B�C���K�{�Ɣ��f�����̓I�ȋ@�\�s��͌�����܂���ł����B
+
+- 1��ꗗ287���� `/search`�E`/modes/topic` ��noindex�EXML���O�͐������Ă��܂��B2��ȏ�818���͌f�ڂ��ێ����A��萔���ς�����ۂ����ʊ�Ŕ��
+肳��܂��B
+- �{���E��胊���N�E���K��ύX���鍷���͂���܂���BAI�o�H�E���f�[�^�E�F�؁E�ۋ��E�L���z�u�̕ύX������܂���B
+- �W�v�� `choiceExplanations`�E`explanationSections` ���܂݁A�����������Œ�i���ƒf�肵�Ă��܂���B
+- �L���X�N���v�g�s�݂Ə��L���m�F����ʂ��Ă��܂��Bads.txt�E���^�^�O���m�F�����ł��邱�Ƃ�[Google��������](https://support.google.
+com/adsense/answer/7584263?hl=ja)�ƈ�v���܂��B
+- HTTP�ؐՂ�222����219��200�E3��404�͕񍐂ƈ�v�B���ۗ��R�̌��A�����̌��E�Anoindex�����F�ۏ؂ɂȂ�Ȃ��_�����L����Ă��܂��B
+
+���m�F�����F�e�X�g�E�r���h�̊����A�u���E�U�e�X�g�̎��s���ʁA�{�Ԃւ̕ύX���f�AAdSense�Ǘ���ʂ̏ڍח��R�B�r�����O�𐬌��������Ă��܂���B
+[���|�[�g](C:/Users/kanet/20260522/wt-batch1/reports/adk-20261104/adk-report.md)�̌��ؗ��́A�e��ƂŊ�����Ɋm�肷��K�v������܂��B
+
+�ǂݎ���p�Ŏ��{���A�t�@�C���ύX�EGit�ύX�Epush�EPR�EAI API�Ăяo���͍s���Ă��܂���B
+ __tests__/seo/adk-collection-indexing.test.ts      |    44 +
+ __tests__/seo/sitemap-render.test.ts               |     2 +-
+ app/[exam]/topic/[topicSlug]/page.tsx              |     4 +
+ app/modes/topic/page.tsx                           |     1 +
+ app/privacy/page.tsx                               |     8 +-
+ app/search/page.tsx                                |    11 +-
+ lib/seo/collection-policy.ts                       |     9 +
+ lib/seo/sitemap-xml.ts                             |     4 +-
+ reports/adk-20261104/adk-report.md                 |    90 +
+ reports/adk-20261104/baseline.md                   |    31 +
+ reports/adk-20261104/browser-initial.log           |   119 +
+ reports/adk-20261104/browser.log                   |    28 +
+ .../browser/visible-explanation-mobile.png         |   Bin 0 -> 99149 bytes
+ .../adk-20261104/browser/worked-guide-mobile.png   |   Bin 0 -> 620804 bytes
+ .../adk-20261104/browser/worked-guide-viewport.png |   Bin 0 -> 108050 bytes
+ reports/adk-20261104/build.log                     |   384 +
+ reports/adk-20261104/corpus.json                   |  2136 ++
+ reports/adk-20261104/independent-review1.log       | 13911 ++++++++++
+ reports/adk-20261104/independent-review1.md        |    13 +
+ reports/adk-20261104/lint.log                      |    25 +
+ reports/adk-20261104/production-http.json          | 25338 +++++++++++++++++++
+ reports/adk-20261104/review-prompt.txt             |    16 +
+ reports/adk-20261104/test.log                      |    64 +
+ reports/adk-20261104/typecheck.log                 |     4 +
+ reports/adk-20261104/validation.json               |    98 +
+ scripts/audit-adk-corpus.ts                        |    32 +
+ scripts/audit-adk-http.py                          |   114 +
+ tests/e2e/adk-readiness.spec.ts                    |    61 +
+ 28 files changed, 42535 insertions(+), 12 deletions(-)
+c9b4700e9 test(adk): verify production audit and complete release checks
+81c6e924d fix(adk): align collection indexing and public privacy contact
+4c9039a17 docs(adk): record policy sources and production AdSense audit
+# ADK: �ߋ���AI AdSense �΍�
+
+�Ώۂ� `C:/Users/kanet/20260522/wt-batch1`�A`release/batch1-20261105`�BINT1B ���� `cc892a8f4` �̏�ɒ��ڒǉ��B�T�C�g�^�c�� ID 
+�� `pub-8751260838396451`�B���J�o�b�`1�p�̃��[�J���C���ŁApush�EPR�Emain�}�[�W�E�f�v���C�E�ĐR���\���͍s���Ă��Ȃ��BAI �Ăяo��
+�o�H�E���f�[�^�E�F�؁E�ۋ��E�L�����Ɣz�u�͕ύX���Ă��Ȃ��B
+
+## �s���F���R�ƌ������
+
+�I�[�i�[�񋟂̒ʒm���� anzen-ai-portal.jp ��10/16�Akakomon-ai.jp ��10/25�Atsugino-shikaku.jp ��11/4�B�ʒm�{���͈�ʓI�ȁu�T�C�g�
+͍L�����f�ڂ��鏀�����܂������Ă��Ȃ��v�̂݁B�Ǘ���ʂ̏ڍח��R�͖��擾�ł���A�ȉ��͋Z�p�����ƌ�����������̌��ŁAGoogle �̊m�肵�����ۗ��R�ł͂Ȃ��B
+
+| ��� | �����E����̊ϑ� | ���f |
+|---|---|---|
+| �L�p���E�Ǝ����̕s���A���l��ǉ����Ȃ����� | �����͑��@�ւ̒��앨�B�Ǝ��̗��R�����E�������E��r�������Ȃ���΁A�����]�ڂƐ��������̃y�[�
+W�ɂȂ蓾��B���o�b�`�̕���ꗗ1,105����287����1�₾���̃����N�ꗗ�ŁA�Ɨ��������������Ƃ��Ă̏�񂪏��Ȃ� | �D�悵�ĉ��P������B���̗v�񕶎��������ŕ
+i�����肵�Ȃ� |
+| �i�r�Q�[�V������p�y�[�W�E�����t�H�[�������������ɍ��� | `/search` �̋�t�H�[���� `/modes/topic` �͌����\�EXML�f�ڂ������B
+������y�[�W�ɔ�ׂĖ{���̓Ǝ��������Ȃ� | 2��ʂ�287����ꗗ�̌����f�ڂ𐮗� |
+| �T�C�g��~�E���p�s�A���O�C���E���ӂɂ��Ւf | �{��222 URL�̌���HTTP�č��Ŏ�v�y�[�W��200�B���J�{���E�J�����Ǝ������HTML�Ŏ擾�BGo
+oglebot�nUA6�擾��200�B���F�؂ŗ��p�\ | ���݂̎擾�ł͗��t���Ȃ��B�R�����_�̏�Q�E�{����Google IP�ɑ΂���WAF����͖��m�F |
+| �L���R�[�h�E���L���m�F�̕s�� | head �� `adsbygoogle.js` �̓T���v����0�Bhead �̏��L�҃��^�^�O�͐������Bads.txt ��200�E�����
+�ID�Ō��J | �X�N���v�g���@�����������ƒf�肵�Ȃ��B������ ads.txt�E���^�^�O���m�F��i�Ƃ��ĔF�߂�B�Ǘ���ʂ̊m�F�����ƌ��o��Ԃ̓I�[�i�[�
+m�F���� |
+| Cookie�����E�^�c�E�A����̕s�� | `/privacy` �ɑ�O�Ҕz�M�AGoogle�L��Cookie�A���T�C�g���܂މߋ��̉{���Ɋ�Â��L���A�����������N���
+�B`/operator`�E`/contact` ��200 | �K�{�����͊����Ŏ����ς݁Bprivacy ���烍�O�C���s�v�̃t�H�[���ւ̓�����ǉ� |
+| �����X�p���E��ʐ��� | ����╪�͂̉��l�𔺂�Ȃ���ʃy�[�W�͌����|���V�[������BAI���g�������������ł͊Y���ƒf��ł��Ȃ� | �d���E����p�y�
+[�W�𐮗��B�S�R�[�p�X�̐��m���E�Ǝ����R���ς݂Ƃ͎咣���Ȃ� |
+
+Google �̓T�C�g�S�̂�R������Bnoindex �͌������ʂւ̌f�ڕ��j�ł���AAdSense �̐R������Ώۃy�[�W���B���@�\�ł͂Ȃ��A���i�ۏ؂ɂ��Ȃ�Ȃ��B
+
+## �Q�Ƃ����ꎟ�����i2026-11-04�Ɍ����{�����m�F�j
+
+- [AdSense �v���O���� �|���V�[](https://support.google.com/adsense/answer/48182?hl=ja)
+- [�T�C�g�ōL���\���̏������������Ă��Ȃ��ꍇ�̑Ώ����@](https://support.google.com/adsense/answer/12176698?hl=ja)
+- [AdSense �A�J�E���g�����F����܂���ł���](https://support.google.com/adsense/answer/81904?hl=ja) ? ���e�s���E���ƃi�r�Q�[
+�V�����̖��B
+- [Google �p�u���b�V���[�����|���V�[](https://support.google.com/publisherpolicies/answer/10502938?hl=ja) ? �L�p���̒Ⴂ�L
+���g�A�쐬���E�����p�̉�ʁA���l��ǉ����Ȃ������B
+- [AdSense �N���[���̖�����������](https://support.google.com/adsense/answer/2381908?hl=ja) ? ��~�E���p�s�A���O�C���Aro
+bots�AIP�����AWAF�B
+- [�T�C�g�� AdSense �Ƀ����N����](https://support.google.com/adsense/answer/7584263?hl=ja) ? �X�N���v�g�Eads.txt�E���^�^
+�O�̊m�F�����B
+- [�K�{�R���e���c](https://support.google.com/adsense/answer/1348695?hl=ja) ? Cookie�Ƒ�O�ҍL���̐����B
+- [Google �����̃X�p���Ɋւ���|���V�[](https://developers.google.com/search/docs/essentials/spam-policies?hl=ja)
+
+## �{�Ԃ̎���
+
+�ؐՂ� `reports/adk-20261104/production-http.json`�B222 URL��GET���A219���ŏI200�A3��404�B404�͒T���p�ɉ��肵�� `/sources`�E`/
+exams` �ƈӐ}�I�ȕs����URL�ŁA���o�������������N��404�ł͂Ȃ��B��v28 URL�ƁA�������璊�o����50��̃T���v�������܂ތ���č��ł���A�SURL�̃
+N���[���ł͂Ȃ��B
+
+- `https://kakomon-ai.jp/ads.txt` �� www ��307��200�A���e�� `google.com, pub-8751260838396451, DIRECT, f08c47fec0942fa0
+`�B
+- HTTP��HTTPS��308�Aapex��www��307�B�ŏIURL��200�B���L�� `/blog/fe-jisseki-mondai-bunseki` ��301�œƎ�����L���֓�������A�]�
+����canonical�ƈ�v����B
+- robots.txt�͌��J�y�[�W�������A`/api/`�E`/admin/`�E`/auth/` ���̂݋��ہBGooglebot�EMediapartners-Google�����ۂ���O���[�v�Ȃ
+��BAmazonbot�EGPTBot�EClaudeBot�̋��ۃO���[�v�Ƃ͕ʁB
+- �g�b�v�AFE/AP/FP3/���Ȉ�t/�y�n�Ɖ������m�̎��i�n�u�E�N�x�E���Ablog�Aprivacy�Aoperator�Aabout�Acontact�Aterms�Atransparen
+cy���擾�B����y�[�W��canonical��www�̑Ή��y�[�W�B�s����URL��404�Enoindex�B
+- �ÓI���̓Ǝ������HTML�{���ɂ���A���O�C����AI�Ăяo����v���Ȃ��B���A�����A���R�A�I�����ʐ����A�����o�T�ƓƎ������̋�ʂ�����BFE�Ȗ�B
+�EFP3�E���ȁE�y�n�Ɖ������m����̗�Ƃ��Ċm�F�B
+- �L���̎��N���X�N���v�g�̓T���v����0�B���L�����^�^�O�� `ca-pub-8751260838396451`�B�L���̊m�F�䒠�͋�ŁA���m�F�L���E���i�g�b�v
+���̍L���g�͋N�����Ȃ��B
+- ��̃R���e���c�y�[�W����������N��404�́A���̃T���v���ł͌��o���Ă��Ȃ��B`/billing` �̏������\���͐\���̈ē��ŁA�L���͂Ȃ��B�A�����K�
+E�L���\����l�����̐����ƁA���J�̖��{���{������ʂ���B�₢���킹���M�͑��҂ւ̃��b�Z�[�W�ɂȂ邽�ߎ����M���Ă��Ȃ��B
+
+UA��ς����擾�͎��ۂ�Google���M��IP�̊m�F�ł͂Ȃ��B�A�J�E���g��Auto ads�E�n���CMP�E���L���z�M�E�ߋ��̏�Q�͖����؁B
+
+## �����΍�ƍ���̍���
+
+9/19��CSP�΍�A9/9�̍L���z�u�񍐁A10/11�̕i�����P�񍐁A11/3�̖������u�����`��ǂ񂾁B10/11��13�w�K�L���̓Ǝ�����Ƌ�13�L����301�A�ÓI���E
+�o�T�E�����������A���i�g�b�v�L���P���͌�HEAD�ɂ���B9/19��tsugino-shikaku�́u�L�p���̒Ⴂ�R���e���c�v�͂��̃T�C�g�̓����̋L�^�ŁAka
+komon-ai��10/25�̗��R�ɂ͓]�p���Ȃ��B
+
+11/3�u�����`�ɂ͓�����169 URL��C�Ӄt���O�Ō������O����Ă����������������B���݂̍݌ɂōČv�Z���A�ȉ������𔽉f�����B���u�����`�̘_�q���
+[�_�[�E�̓_��~����AI�o�H�Ɋ֌W���邽�ߎ�荞��ł��Ȃ��B
+
+1. 1��݂̂̕���ꗗ287���� `noindex,follow` �ɂ��AXML���珜�O�B2��ȏ��818����͌f�ڂ��ێ��B�f�[�^���������Ă����^�f�[�^��XML�ɓ�������
+K�p�����B�Ɨ������ꗗ�Ƃ��Ă̏��ʂɊ�Â��ҏW���f�ŁAGoogle�̍Œ��萔�Ƃ����Ӗ��ł͂Ȃ��B
+2. `/search` �� `/modes/topic` �̃N�G������E�Ȃ��� `noindex,follow` �Ƃ�XML���珜�O�B���{���E���K�E���������N�͈ێ��B
+3. privacy�̘A����ɁAGitHub�ւ̌��J���e��v���Ȃ������̖₢���킹�t�H�[����ǉ��B�L��Cookie�̊��������͈ێ��B
+4. �Ď��s�\��HTTP�č��E�R�[�p�X�W�v�ƁA�S����̃��^�f�[�^/XML�����e�X�g�E���u���E�U�m�F��ǉ��B
+
+�R�[�p�X�W�v `corpus.json`: ���ʓo�^34,383�A���K�\32,373�A�i�����E���ŏ��O2,010�A�d���̑�\�ɓ����������XML��29,464 URL�B��
+p���W�X�g���͕ʂŁA�z�[���̍��v�Ƃ͒P�ʂ��قȂ�B
+
+���K�\���Ŏ���50��������4,140�������A�I�����ʁE�L�q�ʐ������܂߂�50��������38���A100��������1,227���B����͒Z���̒I�����ł���u�
+����y�[�W�v�̊m�萔�ł͂Ȃ��B�Z�����F��v�m�̐����v��ɂ��ʗ��ŋL�q�ʂ̗��R���t�����Ƃ��m�F�����B�����݂̂̒P���Ȓ�^���ɍ��v������͍̂���̌���
+p�^�[���ł�0�B�������ɂ��ꊇnoindex�E���폜�E���m�F�̉�����ʂ͍s��Ȃ��B
+
+## ����
+
+| ���� | ���� |
+|---|---|
+| `corepack pnpm typecheck` | PASS�E�I���R�[�h0 |
+| `corepack pnpm lint` | PASS�E�I���R�[�h0�A�G���[0�E�����x��8�� |
+| `corepack pnpm test --maxWorkers=2` | PASS�E722�t�@�C���A7,592�������E���s0�E�����̔C��2���X�L�b�v |
+| `corepack pnpm build` | PASS�E�I���R�[�h0�A17,700�ÓI�y�[�W���� |
+| �S�����robots�EXML�E�����N�������̊֘A�e�X�g | 4�t�@�C���E48�������i�S�e�X�g�ɂ��܂ށj |
+| ���[�J��production�ւ�Playwright | 9�������B1�╪��̃����N�Ɩ{���E�J��������A�N�G���L����noindex�A���F�؂̏���{���Aprivacy�A
+����AJS�Ȃ���3���i�̔N�x�����A���͋L����301�ƓƎ����́A�L���̔�N�� |
+| �w��̓Ɨ����r���[ | ����͐ÓI�����ɂ���PASS�B�����ؐՂ��܂ލŏI���r���[��ǉ����{�� |
+
+�u���E�U�̏���͐V�K�e�X�g2�������s�����B�����͓���q�� `details` ��P��v�f�Ƃ��Ďw�肵���e�X�g�̌��ŁA�A�v���̕\���s��ł͂Ȃ������B`#
+explanation > details` �ɏC����A9�����ׂĐ����B���񃍃O���ێ������B�e�X�g�ȊO�̃A�v���R�[�h�̓r���h�E�S�e�X�g������ɕύX���Ă��Ȃ��B
+
+�C�ӃX�L�b�v2���͊����̋�����PDF��Poppler�Œǉ��ƍ����錟�؁B�r���h�ɂ͊�����middleware/Edge�񐄏���SSR���`���[�g���@�̌x���A�e�X�g�ɂ
+͊�����jsdom��ʑJ�ڔ�Ή��̏o�͂�����B�e�R�}���h�̏I���R�[�h�ƍŏI�����������m�F�����B����̕ύX�t�@�C���ɐV�K��lint�x���͂Ȃ��B
+
+`reports/adk-20261104/` �Ɋe���O�Evalidation.json�E�Ɨ����r���[��ۑ��B390px�̓Ǝ������ʂƊw�K�L���̃X�N���[���V���b�g��ڎ��m�F��
+���BReact�i���`�F�b�N�ł́AServer Component�̂܂܁A�ǉ��̃t�b�N�E�N���C�A���g�z�M�E�O���ʐM�Ȃ��A����Link���g�����A����Ƃ��Ċm�F��
+���B
+
+## �f�v���C��ɃI�[�i�[���s���ĐR��
+
+1. �ʓr���J�o�b�`1���f�v���C��Awww/apex�̃g�b�v�Aads.txt�Arobots�Aprivacy�Aoperator�Acontact�A��v�Ȗ��E����E�w�K�L������ʌ�
+�J�œǂ߂邱�Ƃ��Ċm�F����B287����2��ʂ�noindex�EXML���O�A���L��301���m�F����B�K�v�Ȃ� `python scripts/audit-adk-http.py --out <
+�ۑ���.json>` ���Ď��s����B
+2. �^�c��ID `pub-8751260838396451` ��AdSense�Ƀ��O�C�����A�m�T�C�g�n�������� `kakomon-ai.jp` ���J���B�ڍח��R�Eads.txt/���
+L���̌��o��Ԃ��m�F���ĕۑ�����B��2�T�C�g�̗��R�ƍ������Ȃ��B
+3. ���L���͊����� ads.txt �܂��̓��^�^�O�ɂ��������m�F����B�R�[�h�������I������Ă���ꍇ�́A��ʂ̈ē��ɏ]��������ads.txt/���^�^�O���
+���I�ԁB����̑΍�𗝗R�ɍL���g��Auto ads��ǉ�����K�v�͂Ȃ��B
+4. �T�C�g�̏C�����e���m�F���A��ʂɏC���m�F�̃`�F�b�N������΃I���ɂ��A�m���ցn���m�R�������N�G�X�g�n�������B��ʂ̕\���ɏ]���B���N�
+G�X�g�����Ǝ��ۂ̏ڍח��R���T����B
+5. Google�̒ʒm�E�m�T�C�g�n�̏�Ԃ��m�F����B�ʏ퐔���A2�`4�T�Ԃ����邱�Ƃ�����Ƃ��������ē��B�ēx�s���F�Ȃ�ڍח��R���N�_�ɒǉ����P����B����
+̋Z�p���r���[PASS��AdSense���F���Ӗ����Ȃ��B
+
+## �R�~�b�g
+
+- `4c9039a17`: �ꎟ�����E�{��HTTP�č��E���f�[�^�̒I�����B
+- `81c6e924d`: �ꗗ/�����̌����f�ڕ��j�AXML�����Aprivacy�A����Ɖ�A���؁B
+- �㑱�̌��؃R�~�b�g�ɁAHTTP�]���`�F�[���E�u���E�U���؂̎w��C���E�������O�E�ŏI�񍐂�ۑ��B������AI�o�H�ւ̋֎~������0�B
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command 'git diff cc892a8f4 HEAD -- app lib __tests__
+ scripts tests; Get-Content reports/adk-20261104/adk-report.md; Get-Content reports/adk-20261104/browser.log; Get-Conte
+nt reports/adk-20261104/test.log -Tail 12; Get-Content reports/adk-20261104/lint.log; Get-Content reports/adk-20261104/
+typecheck.log; Get-Content reports/adk-20261104/build.log -Tail 15; git diff --name-only 81c6e924d HEAD' in C:\Users\ka
+net\20260522\wt-batch1
+ succeeded in 180ms:
+diff --git a/__tests__/seo/adk-collection-indexing.test.ts b/__tests__/seo/adk-collection-indexing.test.ts
+new file mode 100644
+index 000000000..dddb717f5
+--- /dev/null
++++ b/__tests__/seo/adk-collection-indexing.test.ts
+@@ -0,0 +1,44 @@
++import { describe, expect, it } from "vitest";
++import { generateMetadata as categoryMetadata, generateStaticParams } from "@/app/[exam]/topic/[topicSlug]/page";
++import { generateMetadata as searchMetadata } from "@/app/search/page";
++import { generateMetadata as modeMetadata } from "@/app/modes/topic/page";
++import { getAvailableExams, getQuestionsByExamStrict, groupByCategory } from "@/lib/seo/exam-meta";
++import { renderExamsSitemapXml, renderMainSitemapXml } from "@/lib/seo/sitemap-xml";
++import { SITE_BASE_URL } from "@/lib/seo/config";
++
++describe("ADK collection search boundaries", () => {
++  it("keeps every category usable but advertises only collections of multiple explained questions", async () => {
++    const staticParams = new Set((await generateStaticParams()).map(p => `${p.exam}/${p.topicSlug}`));
++    const sitemap = renderExamsSitemapXml();
++    let singletonCount = 0;
++    let collectionCount = 0;
++    for (const exam of getAvailableExams()) {
++      for (const { category, count } of groupByCategory(getQuestionsByExamStrict(exam))) {
++        const path = `/${exam}/topic/${encodeURIComponent(category)}`;
++        const metadata = await categoryMetadata({ params: Promise.resolve({ exam, topicSlug: category }) });
++        expect(staticParams.has(`${exam}/${category}`), path).toBe(true);
++        expect(metadata.alternates?.canonical, path).toBe(path);
++        expect(metadata.robots, path).toEqual({ index: count > 1, follow: true });
++        expect(sitemap.includes(`<loc>${SITE_BASE_URL}${path}</loc>`), path).toBe(count > 1);
++        if (count === 1) singletonCount++;
++        else collectionCount++;
++      }
++    }
++    expect(singletonCount).toBeGreaterThan(0);
++    expect(collectionCount).toBeGreaterThan(0);
++  });
++
++  it("keeps empty and parameterized search and mode pages crawlable with noindex", async () => {
++    for (const params of [{}, { q: "TLS" }, { q: ["TLS", "DNS"] }]) {
++      expect((await searchMetadata({ searchParams: Promise.resolve(params) })).robots)
++        .toEqual({ index: false, follow: true });
++    }
++    for (const params of [{}, { exam: "fe" }, { exam: "fp3", session: "gakka" }]) {
++      expect((await modeMetadata({ searchParams: Promise.resolve(params) })).robots)
++        .toEqual({ index: false, follow: true });
++    }
++    const sitemap = renderMainSitemapXml();
++    expect(sitemap).not.toContain(`<loc>${SITE_BASE_URL}/search</loc>`);
++    expect(sitemap).not.toContain(`<loc>${SITE_BASE_URL}/modes/topic</loc>`);
++  });
++});
+diff --git a/__tests__/seo/sitemap-render.test.ts b/__tests__/seo/sitemap-render.test.ts
+index cfa51dda1..4b4dd23db 100644
+--- a/__tests__/seo/sitemap-render.test.ts
++++ b/__tests__/seo/sitemap-render.test.ts
+@@ -207,7 +207,7 @@ describe("renderMainSitemapXml route contract", () => {
+   });
+ 
+   it("includes representative public routes", () => {
+-    for (const path of ["/about", "/search", "/topics", "/blog", "/stats"]) {
++    for (const path of ["/about", "/topics", "/blog", "/stats"]) {
+       expect(mainLocs).toContain(path);
+     }
+   });
+diff --git a/app/[exam]/topic/[topicSlug]/page.tsx b/app/[exam]/topic/[topicSlug]/page.tsx
+index 8ea6f7fb8..fe0f38be5 100644
+--- a/app/[exam]/topic/[topicSlug]/page.tsx
++++ b/app/[exam]/topic/[topicSlug]/page.tsx
+@@ -14,6 +14,7 @@ import {
+   groupByCategory,
+ } from "@/lib/seo/exam-meta";
+ import { questionPagePath } from "@/lib/seo/question-url";
++import { isIndexableCategoryCollection } from "@/lib/seo/collection-policy";
+ import { isPlaceholderExplanation } from "@/lib/questions/filter";
+ import { JsonLd } from "@/components/seo/JsonLd";
+ import { Badge } from "@/components/ui/badge";
+@@ -47,6 +48,8 @@ export async function generateMetadata({
+     return { title: "分野が見つかりません", robots: { index: false } };
+   }
+   const category = decodeURIComponent(topicSlug);
++  const questionCount = getQuestionsByExamStrict(exam as ExamCode)
++    .filter((q) => q.category === category).length;
+   const title = `${examLabel(exam as ExamCode)} ${category} 過去問・解説`;
+   const description = `${examLabel(exam as ExamCode)}試験の「${category}」分野の過去問をまとめて確認できます。AI解説付きで理解を深められます。`;
+   const ogImageUrl = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
+@@ -58,6 +61,7 @@ export async function generateMetadata({
+     title,
+     description,
+     alternates: { canonical: `/${exam}/topic/${encodeURIComponent(category)}` },
++    robots: { index: isIndexableCategoryCollection(questionCount), follow: true },
+     openGraph: {
+       title,
+       description,
+diff --git a/app/modes/topic/page.tsx b/app/modes/topic/page.tsx
+index 71aca72d4..332a4b31a 100644
+--- a/app/modes/topic/page.tsx
++++ b/app/modes/topic/page.tsx
+@@ -33,6 +33,7 @@ export async function generateMetadata({
+     title,
+     description,
+     alternates: { canonical },
++    robots: { index: false, follow: true },
+   };
+ }
+ 
+diff --git a/app/privacy/page.tsx b/app/privacy/page.tsx
+index b9d27413a..41d3500b8 100644
+--- a/app/privacy/page.tsx
++++ b/app/privacy/page.tsx
+@@ -97,7 +97,7 @@ export default function PrivacyPage() {
+           <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+             プライバシーポリシー
+           </h1>
+-          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年10月29日</p>
++          <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年11月4日</p>
+           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
+             過去問AI（以下「本サービス」）は、ユーザーのプライバシーを尊重し、
+             個人情報の適切な取り扱いに努めます。
+@@ -281,6 +281,10 @@ export default function PrivacyPage() {
+           >
+             <p>
+               プライバシーに関するご質問・ご要望は、{" "}
++              <Link href="/contact" className="font-medium text-primary underline-offset-4 hover:underline">
++                お問い合わせフォーム
++              </Link>
++              {" "}からご連絡ください。GitHub アカウントをお持ちの場合は、{" "}
+               <a
+                 href="https://github.com/kameking-lab/ipa-quiz-site/issues"
+                 target="_blank"
+@@ -290,7 +294,7 @@ export default function PrivacyPage() {
+                 GitHub Issues
+                 <ExternalLink className="h-3 w-3" />
+               </a>
+-              {" "}からご連絡ください。
++              {" "}も利用できます。公開の投稿には個人情報を記載しないでください。
+             </p>
+           </Section>
+ 
+diff --git a/app/search/page.tsx b/app/search/page.tsx
+index 85b4c8f0a..0f7726b51 100644
+--- a/app/search/page.tsx
++++ b/app/search/page.tsx
+@@ -15,17 +15,14 @@ export async function generateMetadata({
+ }: {
+   searchParams: Promise<Record<string, string | string[] | undefined>>;
+ }): Promise<Metadata> {
+-  const params = await searchParams;
+-  const hasSearchState = Object.values(params).some((value) =>
+-    Array.isArray(value) ? value.some(Boolean) : Boolean(value),
+-  );
++  await searchParams;
+   return {
+     title: "問題検索",
+     description: SEARCH_DESCRIPTION,
+     alternates: { canonical: "/search" },
+-    robots: hasSearchState
+-      ? { index: false, follow: true }
+-      : { index: true, follow: true },
++    // The empty form and its result variants are navigation tools. Explained
++    // questions and curated collections are the search landing pages.
++    robots: { index: false, follow: true },
+   };
+ }
+ 
+diff --git a/lib/seo/collection-policy.ts b/lib/seo/collection-policy.ts
+new file mode 100644
+index 000000000..c3e3909d6
+--- /dev/null
++++ b/lib/seo/collection-policy.ts
+@@ -0,0 +1,9 @@
++/**
++ * A category containing one question repeats the individual question's discovery
++ * path without offering a comparison or collection. Keep it usable in navigation,
++ * but advertise the explained question and broader collections to Search instead.
++ * This is our editorial choice, not a Google minimum question/word count.
++ */
++export function isIndexableCategoryCollection(questionCount: number): boolean {
++  return questionCount > 1;
++}
+diff --git a/lib/seo/sitemap-xml.ts b/lib/seo/sitemap-xml.ts
+index c9a4c1805..b9e983a6f 100644
+--- a/lib/seo/sitemap-xml.ts
++++ b/lib/seo/sitemap-xml.ts
+@@ -9,6 +9,7 @@ import { publicBlogDates } from "@/lib/blog/editorial";
+ import { getAllBlogSummaries } from "@/data/blog";
+ import { getLastUpdatedISO } from "@/lib/questions/last-updated";
+ import { SITE_BASE_URL } from "./config";
++import { isIndexableCategoryCollection } from "./collection-policy";
+ import {
+   getAvailableExams,
+   getQuestionsByExamStrict,
+@@ -104,9 +105,7 @@ const STATIC_ROUTES: UrlEntry[] = [
+   { url: `${SITE_BASE_URL}/ipa`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "daily", priority: 0.9 },
+   { url: `${SITE_BASE_URL}/qualifications`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0
+.8 },
+   { url: SITE_BASE_URL, lastModified: STATIC_CONTENT_DATE, changeFrequency: "daily", priority: 1 },
+-  { url: `${SITE_BASE_URL}/search`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "weekly", priority: 0.7 },
+   { url: `${SITE_BASE_URL}/modes/year`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 }
+,
+-  { url: `${SITE_BASE_URL}/modes/topic`, lastModified: STATIC_CONTENT_DATE, changeFrequency: "monthly", priority: 0.8 
+},
+   { url: `${SITE_BASE_URL}/topics`, changeFrequency: "weekly", priority: 0.8 },
+   { url: `${SITE_BASE_URL}/glossary`, lastModified: CONTENT_LAST_UPDATED, changeFrequency: "monthly", priority: 0.7 },
+   { url: `${SITE_BASE_URL}/keywords`, lastModified: CONTENT_LAST_UPDATED, changeFrequency: "weekly", priority: 0.7 },
+@@ -194,6 +193,7 @@ function getExamHubRoutes(): UrlEntry[] {
+       });
+     }
+     for (const c of groupByCategory(questions)) {
++      if (!isIndexableCategoryCollection(c.count)) continue;
+       entries.push({
+         url: `${SITE_BASE_URL}/${exam}/topic/${encodeURIComponent(c.category)}`,
+         lastModified: CONTENT_LAST_UPDATED,
+diff --git a/scripts/audit-adk-corpus.ts b/scripts/audit-adk-corpus.ts
+new file mode 100644
+index 000000000..8937d0c5b
+--- /dev/null
++++ b/scripts/audit-adk-corpus.ts
+@@ -0,0 +1,32 @@
++import { writeFileSync } from "node:fs";
++import { ALL_QUESTIONS } from "../data/questions";
++import { isPracticeReadyQuestion, isPlaceholderExplanation } from "../lib/questions/filter";
++import { getAvailableExams, getQuestionsByExamStrict, groupByCategory } from "../lib/seo/exam-meta";
++import { questionPagePath } from "../lib/seo/question-url";
++import { getSitemapQuestions } from "../lib/seo/sitemap-pagination";
++
++const ready = ALL_QUESTIONS.filter(isPracticeReadyQuestion);
++const categories = getAvailableExams().flatMap(exam => groupByCategory(getQuestionsByExamStrict(exam)).map(c => ({
++  path: `/${exam}/topic/${encodeURIComponent(c.category)}`,
++  count: c.count,
++})));
++const answerOnly = ready.filter(q => /^\s*(?:正解|正答|答え)\s*(?:は|[:：])?\s*[「『(（]?[アイウエオカキクケコ\d、,・\s]+[」』)）]?(?:です)?[。.\s]
+*$/u.test(q.explanation));
++const shortest = [...ready].sort((a, b) => a.explanation.length - b.explanation.length).slice(0, 40).map(q => ({
++  path: questionPagePath(q), explanation: q.explanation, choiceReasons: q.choiceExplanations,
++  explanationSections: q.explanationSections,
++}));
++const result = {
++  scope: "Common question registry and its category routes; lengths are triage signals, not Google thresholds or seman
+tic accuracy review. Dedicated registries are outside these counts.",
++  registered: ALL_QUESTIONS.length, practiceReady: ready.length,
++  placeholders: ALL_QUESTIONS.filter(isPlaceholderExplanation).length,
++  excludedByReadiness: ALL_QUESTIONS.length - ready.length,
++  canonicalSitemapQuestions: getSitemapQuestions().length,
++  explanationLengthBuckets: [50, 100, 200].map(under => ({ under, count: ready.filter(q => q.explanation.trim().length
+ < under).length })),
++  explanationAndSupplementLengthBuckets: [50, 100, 200].map(under => ({ under, count: ready.filter(q =>
++    [q.explanation, ...Object.values(q.choiceExplanations ?? {}), ...(q.explanationSections ?? []).map(section => sect
+ion.text)].join("").trim().length < under).length })),
++  answerOnly: answerOnly.map(q => ({path: questionPagePath(q), explanation: q.explanation})),
++  categories: { total: categories.length, singleton: categories.filter(c => c.count === 1), multiple: categories.filte
+r(c => c.count > 1).length },
++  shortest,
++};
++writeFileSync(process.argv[2] ?? "reports/adk-20261104/corpus.json", JSON.stringify(result, null, 2) + "\n");
++console.log(JSON.stringify({ ...result, shortest: undefined, categories: {...result.categories, singleton: result.cate
+gories.singleton.length}}));
+diff --git a/scripts/audit-adk-http.py b/scripts/audit-adk-http.py
+new file mode 100644
+index 000000000..c56ddd544
+--- /dev/null
++++ b/scripts/audit-adk-http.py
+@@ -0,0 +1,114 @@
++"""Read-only public HTTP audit; never submits forms or requests ads/AI APIs."""
++import argparse
++import concurrent.futures
++import datetime
++import hashlib
++import json
++from html.parser import HTMLParser
++from pathlib import Path
++import urllib.error
++import urllib.request
++from urllib.parse import urljoin, urlparse
++
++
++class Redirects(urllib.request.HTTPRedirectHandler):
++    def __init__(self):
++        self.chain = []
++
++    def redirect_request(self, req, fp, code, msg, headers, newurl):
++        self.chain.append({'url': req.full_url, 'status': code, 'location': newurl})
++        return super().redirect_request(req, fp, code, msg, headers, newurl)
++
++
++class Page(HTMLParser):
++    def __init__(self):
++        super().__init__()
++        self.hidden = 0
++        self.in_head = False
++        self.in_main = False
++        self.text = []
++        self.main = []
++        self.links = set()
++        self.canonical = []
++        self.robots = []
++        self.ad_scripts = []
++        self.account = []
++
++    def handle_starttag(self, tag, attrs):
++        a = dict(attrs)
++        if tag in ('script', 'style'): self.hidden += 1
++        if tag == 'head': self.in_head = True
++        if tag == 'main': self.in_main = True
++        if tag == 'a' and a.get('href'): self.links.add(a['href'])
++        if tag == 'link' and a.get('rel') == 'canonical': self.canonical.append(a.get('href'))
++        if tag == 'meta' and a.get('name') in ('robots', 'googlebot'): self.robots.append(a)
++        if tag == 'meta' and a.get('name') == 'google-adsense-account': self.account.append(a.get('content'))
++        if tag == 'script' and 'adsbygoogle' in a.get('src', ''): self.ad_scripts.append({'src': a['src'], 'in_head': 
+self.in_head})
++
++    def handle_endtag(self, tag):
++        if tag in ('script', 'style'): self.hidden = max(0, self.hidden - 1)
++        if tag == 'head': self.in_head = False
++        if tag == 'main': self.in_main = False
++
++    def handle_data(self, data):
++        if not self.hidden:
++            self.text.append(data)
++            if self.in_main: self.main.append(data)
++
++
++def fetch(url, ua='ADK-read-only-audit/1.0'):
++    try:
++        req = urllib.request.Request(url, headers={'User-Agent': ua})
++        redirects = Redirects()
++        opener = urllib.request.build_opener(redirects)
++        try:
++            response = opener.open(req, timeout=45)
++        except urllib.error.HTTPError as error:
++            response = error
++        body = response.read()
++        html = body.decode('utf-8', errors='replace')
++        page = Page()
++        page.feed(html)
++        main = ' '.join(' '.join(page.main).split())
++        return {'url': url, 'final_url': response.url, 'status': response.status,
++                'redirects': redirects.chain,
++                'x_robots_tag': response.headers.get('X-Robots-Tag'),
++                'content_type': response.headers.get('Content-Type'),
++                'sha256': hashlib.sha256(body).hexdigest(), 'bytes': len(body),
++                'canonical': page.canonical, 'robots': page.robots,
++                'ad_scripts': page.ad_scripts, 'account': page.account,
++                'main_chars': len(main), 'main_text': main,
++                'links': sorted(page.links),
++                'plain_body': html if not 'html' in response.headers.get('Content-Type', '') else None}
++    except Exception as error:
++        return {'url': url, 'error': str(error)}
++
++
++def main():
++    parser = argparse.ArgumentParser()
++    parser.add_argument('--base', default='https://www.kakomon-ai.jp')
++    parser.add_argument('--out', required=True)
++    args = parser.parse_args()
++    paths = ['/', '/ads.txt', '/robots.txt', '/sitemap.xml', '/privacy', '/operator', '/about', '/contact', '/terms', 
+'/transparency', '/sources', '/exams', '/blog', '/fe', '/ap', '/fp3', '/shika-ishi', '/chosashi', '/fe/2025-cbt', '/fp3
+/2026-published', '/blog/fe-hinnshutsu-ronten-toppu10', '/blog/fe-jisseki-mondai-bunseki', '/q/fe/2025-cbt/kamoku-b/q1'
+, '/q/fp3/2026-published/gakka/q11', '/q/shika-ishi/2026-annual/mondai-a/q5', '/q/chosashi/2025-autumn/am/q11', '/quiz?
+exam=fe', '/adk-missing-page-20261104']
++    with concurrent.futures.ThreadPoolExecutor(max_workers=4) as pool:
++        rows = list(pool.map(fetch, [args.base + p for p in paths]))
++        # Check ordinary internal links exposed by the sampled pages, bounded to
++        # avoid crawling the whole corpus; sample question routes separately.
++        links = sorted({urljoin(args.base, link).split('#')[0] for row in rows for link in row.get('links', [])
++                        if link.startswith('/') and not link.startswith('//') and not link.startswith('/api/')})
++        checked = {r['url'] for r in rows}
++        questions = [link for link in links if '/q/' in link]
++        sample = questions[::max(1, len(questions) // 50)][:50]
++        other = [link for link in links if '/q/' not in link and not '/quiz' in link and '?' not in link][:150]
++        rows.extend(pool.map(fetch, [link for link in sample + other if link not in checked]))
++    bots = [fetch(args.base + path, agent) for agent in ['Googlebot', 'Mediapartners-Google'] for path in ['/', '/robo
+ts.txt', '/q/fe/2025-cbt/kamoku-b/q1']]
++    host_checks = [fetch(url) for url in ['http://kakomon-ai.jp/', 'https://kakomon-ai.jp/', 'http://www.kakomon-ai.jp
+/', 'https://kakomon-ai.jp/ads.txt']]
++    data = {'timestamp_utc': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'base': args.base,
++            'scope': 'bounded HTTP sample, no JS/real Google IP/account access; /sources, /exams and /adk-missing-page
+-20261104 are invented route probes, not extracted links; main_chars is not a quality verdict',
++            'pages': rows, 'bot_user_agent_checks': bots, 'host_checks': host_checks}
++    Path(args.out).parent.mkdir(parents=True, exist_ok=True)
++    Path(args.out).write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding='utf-8')
++    print(json.dumps({'pages': len(rows), 'statuses': {str(s): sum(r.get('status') == s for r in rows) for s in {r.get
+('status') for r in rows}}, 'errors': [r for r in rows if r.get('error')], 'output': args.out}, ensure_ascii=False))
++
++
++if __name__ == '__main__': main()
+diff --git a/tests/e2e/adk-readiness.spec.ts b/tests/e2e/adk-readiness.spec.ts
+new file mode 100644
+index 000000000..33bd1698f
+--- /dev/null
++++ b/tests/e2e/adk-readiness.spec.ts
+@@ -0,0 +1,61 @@
++import { test, expect } from "@playwright/test";
++
++test("singleton category stays readable without JavaScript and points to an explained question", async ({ browser, req
+uest }) => {
++  const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
++  const page = await context.newPage();
++  const path = `/chintai/topic/${encodeURIComponent("重要事項説明書")}`;
++  const response = await page.goto(path);
++  expect(response?.status()).toBe(200);
++  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "noindex, follow");
++  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", `https://www.kakomon-ai.jp${path}`);
++  const question = page.locator('main a[href^="/q/"]').first();
++  await expect(question).toBeVisible();
++  await question.click();
++  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "index, follow");
++  await expect(page.locator('#explanation > details')).toHaveAttribute("open", "");
++  expect((await page.locator('#explanation').innerText()).length).toBeGreaterThan(30);
++  expect(await page.getByRole("dialog").count()).toBe(0);
++  const sitemap = await request.get("/sitemap/exams.xml");
++  expect(sitemap.status()).toBe(200);
++  expect(await sitemap.text()).not.toContain(`<loc>https://www.kakomon-ai.jp${path}</loc>`);
++  await context.close();
++});
++
++test("search and mode selection are noindex across query variants", async ({ page, request }) => {
++  await page.route("**/*", route => {
++    const request = route.request();
++    if (request.method() !== "GET" || /googlesyndication|doubleclick|generativelanguage/.test(request.url())) return r
+oute.abort();
++    return route.continue();
++  });
++  for (const path of ["/search", "/search?q=TLS", "/modes/topic", "/modes/topic?exam=fe"]) {
++    expect((await page.goto(path))?.status()).toBe(200);
++    await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "noindex, follow");
++    await expect(page.locator("main h1")).toBeVisible();
++    await expect(page.getByRole("dialog")).toHaveCount(0);
++    await expect(page.locator('script[src*="adsbygoogle"], ins.adsbygoogle')).toHaveCount(0);
++  }
++  const sitemap = await request.get("/sitemap/main.xml");
++  expect(sitemap.status()).toBe(200);
++  const xml = await sitemap.text();
++  expect(xml).not.toContain("<loc>https://www.kakomon-ai.jp/search</loc>");
++  expect(xml).not.toContain("<loc>https://www.kakomon-ai.jp/modes/topic</loc>");
++});
++
++test("fresh visitors can read the problem, reasoning and privacy contact without a login or consent dialog", async ({ 
+browser }, testInfo) => {
++  const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
++  await context.route("**/*", route => {
++    if (route.request().method() !== "GET" || !route.request().url().startsWith(testInfo.project.use.baseURL as string
+)) return route.abort();
++    return route.continue();
++  });
++  const page = await context.newPage();
++  expect((await page.goto("/q/fe/2025-cbt/kamoku-b/q1"))?.status()).toBe(200);
++  await expect(page.locator("main h1")).toBeVisible();
++  await expect(page.locator('#explanation > details')).toHaveAttribute("open", "");
++  await expect(page.getByRole("dialog")).toHaveCount(0);
++  await page.locator('#explanation').scrollIntoViewIfNeeded();
++  await page.screenshot({ path: testInfo.outputPath("visible-explanation-mobile.png") });
++  await page.goto("/privacy");
++  await expect(page.getByRole("link", { name: "お問い合わせフォーム", exact: true })).toBeVisible();
++  await expect(page.getByRole("link", { name: "Google の広告設定", exact: true })).toHaveAttribute("href", "https://adssett
+ings.google.com/");
++  await context.close();
++});
+# ADK: 過去問AI AdSense 対筁E
+対象は `C:/Users/kanet/20260522/wt-batch1`、`release/batch1-20261105`、ENT1B 完亁E`cc892a8f4` の上に直接追加。サイト運営老EID は `pub-8751260
+838396451`。�E開バチE��1用のローカル修正で、push・PR・mainマ�Eジ・チE�Eロイ・再審査申請�E行ってぁE��ぁE��EI 呼び出し経路・問題データ・認証・課金�E庁E��数と配置は変更してぁE��ぁE��E
+## 不承認理由と原因候裁E
+オーナ�E提供�E通知日は anzen-ai-portal.jp ぁE0/16、kakomon-ai.jp ぁE0/25、tsugino-shikaku.jp ぁE1/4。通知本斁E�E一般皁E��「サイト�E庁E��を掲載する準備がまだ
+整ってぁE��ぁE���Eみ。管琁E��面の詳細琁E��は未取得であり、以下�E技術実測と公式文書からの候補で、Google の確定した拒否琁E��ではなぁE��E
+| 候裁E| 根拠・今回の観測 | 判断 |
+|---|---|---|
+| 有用性・独自性の不足、価値を追加しなぁE��E�� | 原問題�E他機関の著作物。独自の琁E��説明�E解き方・比輁E��見えなければ、原斁E��載と正答だけ�Eペ�Eジになり得る。現バッチ�E刁E��一覧1,105件中287件ぁE問
+だけ�Eリンク一覧で、独立した検索入口としての惁E��が少なぁE| 優先して改喁E��る候補。問題�E要紁E��字数だけで品質判定しなぁE|
+| ナビゲーション専用ペ�Eジ・検索フォームが検索入口に混在 | `/search` の空フォームと `/modes/topic` は検索可能・XML掲載だった。問題解説ペ�Eジに比べて本斁E�E独自性が少なぁE| 2画面と287刁E��
+一覧の検索掲載を整琁E|
+| サイト停止・利用不可、ログイン・同意による遮断 | 本番222 URLの限定HTTP監査で主要�Eージは200。�E開本斁E�E開いた独自解説をHTMLで取得、Eooglebot系UA6取得も200。無認証で利用可能 | 現在の取得で
+は裏付けなし。審査時点の障害・本物のGoogle IPに対するWAF動作�E未確誁E|
+| 庁E��コード�E所有権確認�E不足 | head の `adsbygoogle.js` はサンプル冁E。head の所有老E��タタグは正しい。ads.txt は200・正しいIDで公閁E| スクリプト欠如だけを原因と断定しなぁE�
+��E式�E ads.txt・メタタグも確認手段として認める。管琁E��面の確認方式と検�E状態�Eオーナ�E確認事頁E|
+| Cookie説明�E運営・連絡先�E不足 | `/privacy` に第三老E�E信、Google庁E��Cookie、他サイトを含む過去の閲覧に基づく庁E��、無効化リンクあり。`/operator`・`/contact` めE00
+ | 忁E��説明�E既存で実裁E��み。privacy からログイン不要�Eフォームへの導線を追加 |
+| 検索スパム・大量生戁E| 解説めE�E析�E価値を伴わなぁE��量�Eージは検索ポリシー上も候補、EIを使った事実だけでは該当と断定できなぁE| 重褁E�E操作用ペ�Eジを整琁E���Eコーパスの正確性・独自性審査済みとは主張しなぁE
+|
+
+Google はサイト�E体を審査する。noindex は検索結果への掲載方針であり、AdSense の審査から対象ペ�Eジを隠す機�Eではなく、合格保証にもならなぁE��E
+## 参�Eした一次賁E���E�E026-11-04に公式本斁E��確認！E
+- [AdSense プログラム ポリシー](https://support.google.com/adsense/answer/48182?hl=ja)
+- [サイトで庁E��表示の準備が完亁E��てぁE��ぁE��合�E対処方法](https://support.google.com/adsense/answer/12176698?hl=ja)
+- [AdSense アカウントが承認されませんでした](https://support.google.com/adsense/answer/81904?hl=ja)  E冁E��不足・質とナビゲーションの問題、E- [Google パブ
+リチE��ャー向けポリシー](https://support.google.com/publisherpolicies/answer/10502938?hl=ja)  E有用性の低い庁E��枠、作�E中・操作専用の画面、価値を追加しなぁE
+��E��、E- [AdSense クローラの問題を解決する](https://support.google.com/adsense/answer/2381908?hl=ja)  E停止・利用不可、ログイン、robots、IP制限、WAF
+、E- [サイトを AdSense にリンクする](https://support.google.com/adsense/answer/7584263?hl=ja)  Eスクリプト・ads.txt・メタタグの確認方式、E- [忁E��コン
+チE��ツ](https://support.google.com/adsense/answer/1348695?hl=ja)  ECookieと第三老E��E��の説明、E- [Google 検索のスパムに関するポリシー](https:
+//developers.google.com/search/docs/essentials/spam-policies?hl=ja)
+
+## 本番の実測
+
+証跡は `reports/adk-20261104/production-http.json`、E22 URLをGETし、E19が最絁E00、EぁE04、E04は探索用に仮定しぁE`/sources`・`/exams` と意図皁E��不存
+在URLで、抽出した冁E��リンクの404ではなぁE��主要E8 URLと、そこから抽出した50問�Eサンプル等を含む限定監査であり、�EURLのクロールではなぁE��E
+- `https://kakomon-ai.jp/ads.txt` は www へ307征E00、�E容は `google.com, pub-8751260838396451, DIRECT, f08c47fec0942fa0`、E- H
+TTP→HTTPSは308、apex→wwwは307。最終URLで200。旧記亁E`/blog/fe-jisseki-mondai-bunseki` は301で独自解説記事へ統合され、転送�Eのcanonicalと一致する、E- robo
+ts.txtは公開�Eージを許可し、`/api/`・`/admin/`・`/auth/` 等�Eみ拒否、Eooglebot・Mediapartners-Googleを拒否するグループなし、Emazonbot・GPTBot・ClaudeBo
+tの拒否グループとは別、E- トップ、FE/AP/FP3/歯科医師/土地家屋調査士の賁E��ハブ・年度・問題、blog、privacy、operator、about、contact、terms、transparencyを取得。正常ペ�Eジ
+のcanonicalはwwwの対応�Eージ。不存在URLは404・noindex、E- 静的問題�E独自解説はHTML本斁E��あり、ログインやAI呼び出しを要さなぁE��問題、正答、理由、E��択肢別説明、�E式�E典と独自説明�E区別
+がある、EE科目B・FP3・歯科�E土地家屋調査士を�E体例として確認、E- 庁E��の実起動スクリプトはサンプル冁E。所有権メタタグは `ca-pub-8751260838396451`。庁E��の確認台帳は空で、未確認記事�E賁E��
+トップ等�E庁E��枠は起動しなぁE��E- 空のコンチE��チE�EージめE�E部リンクの404は、このサンプルでは検�EしてぁE��ぁE��`/billing` の準備中表示は申込の案�Eで、庁E��はなぁE��連続演習�E有料申込め
+E��人履歴の制限と、�E開�E問題本斁E��覧を区別する。問ぁE��わせ送信は他老E��のメチE��ージになるため実送信してぁE��ぁE��E
+UAを変えた取得�E実際のGoogle送信元IPの確認ではなぁE��アカウント�EAuto ads・地域別CMP・実庁E��配信・過去の障害は未検証、E
+## 既存対策と今回の差刁E
+9/19のCSP対策、E/9の庁E��配置報告、E0/11の品質改喁E��告、E1/3の未統合ブランチを読んだ、E0/11の13学習記事�E独自解説と旧13記事�E301、E��皁E��題�E出典・透�E性説明、賁E��トップ庁E��撤去
+は現HEADにある、E/19のtsugino-shikakuの「有用性の低いコンチE��チE���Eそ�Eサイト�E当時の記録で、kakomon-aiの10/25の琁E��には転用しなぁE��E
+11/3ブランチには当時の169 URLを任意フラグで検索除外する案があったが未統合。現在の在庫で再計算し、以下だけを反映した。同ブランチ�E論述ローダー・採点停止等�EAI経路に関係するため取り込んでぁE��ぁE��E
+1. 1問�Eみの刁E��一覧287件めE`noindex,follow` にし、XMLから除外、E問以上�E818刁E��は掲載を維持。データが増減してもメタチE�EタとXMLに同じ基準が適用される。独立した一覧としての惁E��量に基づ
+く編雁E��断で、Googleの最低問題数とぁE��意味ではなぁE��E2. `/search` と `/modes/topic` のクエリあり・なしを `noindex,follow` としXMLから除外。問題本斁E�E演習�E冁E��
+リンクは維持、E3. privacyの連絡先に、GitHubへの公開投稿を要しなぁE��存�E問い合わせフォームを追加。庁E��Cookieの既存説明�E維持、E4. 再実行可能なHTTP監査・コーパス雁E��と、�E刁E��のメタチE�
+Eタ/XML整合テスト�E実ブラウザ確認を追加、E
+コーパス雁E��E`corpus.json`: 共通登録34,383、演習可能32,373、品質墁E��等で除夁E,010、E��褁E�E代表に統合した問題XMLは29,464 URL。専用レジストリは別で、�Eームの合計とは単位が異なる
+、E
+演習可能問題で主解説50字未満は4,140件だが、E��択肢別・記述別説明を含めて50字未満は38件、E00字未満は1,227件。これ�E短斁E�E棚卸しであり「薄ぁE�Eージ」�E確定数ではなぁE��短ぁE�E認会計士の正答要紁E��も
+別欁E��記述別の琁E��が付くことを確認した。正答�Eみの単純な定型斁E��合�Eするも�Eは今回の限定パターンでは0。文字数による一括noindex・問題削除・未確認�E解説増量は行わなぁE��E
+## 検証
+
+| 検証 | 結果 |
+|---|---|
+| `corepack pnpm typecheck` | PASS・終亁E��ーチE |
+| `corepack pnpm lint` | PASS・終亁E��ーチE、エラー0・既存警呁E件 |
+| `corepack pnpm test --maxWorkers=2` | PASS・722ファイル、E,592件成功・失敁E・既存�E任愁E件スキチE�E |
+| `corepack pnpm build` | PASS・終亁E��ーチE、E7,700静的ペ�Eジ生�E |
+| 全刁E��のrobots・XML・リンク整合等�E関連チE��チE| 4ファイル・48件成功�E��EチE��トにも含む�E�E|
+| ローカルproductionへのPlaywright | 9件成功、E問�E野�Eリンクと本斁E�E開いた解説、クエリ有無のnoindex、無認証の初回閲覧、privacy連絡先、JSなし�E3賁E��の年度→問題、�E析記事�E30
+1と独自刁E��、庁E��の非起勁E|
+| 持E���E独立レビュー | 初回は静的差刁E��つぁE��PASS。完亁E��跡を含む最終レビューを追加実施中 |
+
+ブラウザの初回は新規テスチE件が失敗した。原因は入れ子�E `details` を単一要素として持E��したテスト�E誤りで、アプリの表示不�E合ではなかった。`#explanation > details` に修正後、E件すべて成功。�
+E回ログも保持した。テスト以外�Eアプリコード�Eビルド�E全チE��ト�E功後に変更してぁE��ぁE��E
+任意スキチE�E2件は既存�E給水原PDFをPopplerで追加照合する検証。ビルドには既存�Emiddleware/Edge非推奨とSSR時チャート寸法�E警告、テストには既存�Ejsdom画面遷移非対応�E出力がある。各コマンド�E終
+亁E��ードと最終�E功件数を確認した。今回の変更ファイルに新規�Elint警告�EなぁE��E
+`reports/adk-20261104/` に吁E��グ・validation.json・独立レビューを保存、E90pxの独自解説画面と学習記事�EスクリーンショチE��を目視確認した。React品質チェチE��では、Server C
+omponentのまま、追加のフック・クライアント�E信・外部通信なし、既存Linkを使った連絡先として確認した、E
+## チE�Eロイ後にオーナ�Eが行う再審査
+
+1. 別途�E開バチE��1をデプロイ後、www/apexのトップ、ads.txt、robots、privacy、operator、contact、主要な問題�E解説・学習記事が一般公開で読めることを�E確認する、E87件と2画面のnoi
+ndex・XML除外、旧記亁E01を確認する。忁E��なめE`python scripts/audit-adk-http.py --out <保存�E.json>` を�E実行する、E2. 運営老ED `pub-8751260838396
+451` のAdSenseにログインし、E��サイト］→既存�E `kakomon-ai.jp` を開く。詳細琁E��・ads.txt/所有権の検�E状態を確認して保存する。仁Eサイト�E琁E��と混同しなぁE��E3. 所有権は既存�E
+ ads.txt また�Eメタタグによる方式を確認する。コード方式が選択されてぁE��場合�E、画面の案�Eに従い既存�Eads.txt/メタタグ方式を選ぶ。今回の対策を琁E��に庁E��枠やAuto adsを追加する忁E���EなぁE�
+�E4. サイト�E修正冁E��を確認し、画面に修正確認�EチェチE��があれ�Eオンにし、E��次へ�E�→［審査をリクエスト］を押す。画面の表示に従う。リクエスト日時と実際の詳細琁E��を控える、E5. Googleの通知・�E�サイ
+ト］の状態を確認する。通常数日、E�E�E週間かかることもあるとぁE��公式案�E。�E度不承認なら詳細琁E��を起点に追加改喁E��る。今回の技術レビューPASSはAdSense承認を意味しなぁE��E
+## コミッチE
+- `4c9039a17`: 一次賁E��・本番HTTP監査・現チE�Eタの棚卸し、E- `81c6e924d`: 一覧/検索の検索掲載方針、XML整合、privacy連絡先と回帰検証、E- 後続�E検証コミットに、HTTP転送チェーン・
+ブラウザ検証の持E��修正・成功ログ・最終報告を保存。実裁E�EAI経路への禁止差刁E�E0、E
+
+Running 9 tests using 2 workers
+
+corepack : (node:48904) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+発生場所 衁E2 斁E��E157
++ ... .0.1:3147'; corepack pnpm exec playwright test tests/e2e/adk-readines ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: ((node:48904) Wa... env being set.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:65004) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:65004) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:48904) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ok 2 tests\e2e\adk-readiness.spec.ts:3:5 › singleton category stays readable without JavaScript and points to an expl
+ained question (810ms)
+  ok 1 tests\e2e\adk-readiness.spec.ts:24:5 › search and mode selection are noindex across query variants (1.5s)
+  ok 3 tests\e2e\adk-readiness.spec.ts:44:5 › fresh visitors can read the problem, reasoning and privacy contact withou
+t a login or consent dialog (1.1s)
+  ok 4 tests\e2e\adsense-learning-quality.spec.ts:31:7 › /fp3/2026-published exposes static explanation links without J
+avaScript (680ms)
+  ok 5 tests\e2e\adsense-learning-quality.spec.ts:31:7 › /shika-ishi/2026-annual exposes static explanation links witho
+ut JavaScript (836ms)
+  ok 6 tests\e2e\adsense-learning-quality.spec.ts:31:7 › /chosashi/2025-autumn exposes static explanation links without
+ JavaScript (599ms)
+  ok 8 tests\e2e\adsense-learning-quality.spec.ts:61:5 › dental and land-surveyor pages distinguish originals and indep
+endent explanations (751ms)
+  ok 7 tests\e2e\adsense-learning-quality.spec.ts:45:5 › worked guide contains its problem, comparison, and check and t
+he old URL is a 301 (811ms)
+  ok 9 tests\e2e\adsense-learning-quality.spec.ts:105:5 › unapproved learning, navigation and error routes never initia
+lize Google ads (1.4s)
+
+  9 passed (5.6s)
+    at exports.navigate (C:\Users\kanet\20260522\wt-batch1\node_modules\jsdom\lib\jsdom\living\window\navigation.js:55:
+3)
+    at Timeout._onTimeout (C:\Users\kanet\20260522\wt-batch1\node_modules\jsdom\lib\jsdom\living\nodes\HTMLHyperlinkEle
+mentUtils-impl.js:80:7)
+    at listOnTimeout (node:internal/timers:605:17)
+    at processTimers (node:internal/timers:541:7) undefined
+
+ Test Files  722 passed (722)
+      Tests  7592 passed | 2 skipped (7594)
+   Start at  16:00:07
+   Duration  610.68s (transform 72.72s, setup 81.26s, import 508.87s, tests 154.66s, environment 374.65s)
+
+
+> ipa-quiz-site@1.0.0 lint C:\Users\kanet\20260522\wt-batch1
+> eslint
+
+
+C:\Users\kanet\20260522\wt-batch1\__tests__\pe-first-lq3d.test.tsx
+   4:19  warning  'fireEvent' is defined but never used           @typescript-eslint/no-unused-vars
+   4:30  warning  'render' is defined but never used              @typescript-eslint/no-unused-vars
+   4:38  warning  'screen' is defined but never used              @typescript-eslint/no-unused-vars
+  12:10  warning  'ExamQuestionPlayer' is defined but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\kanet\20260522\wt-batch1\app\billing\PurchaseStatus.tsx
+  47:66  warning  The ref value 'request.current' will likely have changed by the time this effect cleanup function run
+s. If this ref points to a node rendered by React, copy 'request.current' to a variable inside the effect, and use that
+ variable in the cleanup function  react-hooks/exhaustive-deps
+
+C:\Users\kanet\20260522\wt-batch1\app\billing\mock\MockCheckout.tsx
+  12:7  warning  Do not use `window.location.assign()` to navigate to internal Next.js pages. Use `redirect()` in the r
+ender phase, or `useRouter().push()` in Client Components' event handlers instead. See: https://nextjs.org/docs/message
+s/no-location-assign-relative-destination  @next/next/no-location-assign-relative-destination
+
+C:\Users\kanet\20260522\wt-batch1\app\q\[exam]\[yearSeason]\[section]\[qnum]\page.tsx
+  242:9  warning  'examPath' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+C:\Users\kanet\20260522\wt-batch1\reports\civil2-2026-completion-20260926\parse-fenced-results.mjs
+  3:9  warning  'base' is assigned a value but never used  @typescript-eslint/no-unused-vars
+
+✁E8 problems (0 errors, 8 warnings)
+
+
+> ipa-quiz-site@1.0.0 typecheck C:\Users\kanet\20260522\wt-batch1
+> tsc --noEmit
+
+━E━E◁E/topics/午征E
+━E━E◁E/topics/コンピュータシスチE��
+━E━E◁E/topics/午前
+━E━E◁E[+6313 more paths]
+━E◁E/transparency                                                        5m      1y
+━E◁E/updates
+━E◁E/why-kakomon-ai
+
+
+ƁEProxy (Middleware)
+
+◁E (Static)   prerendered as static content
+◁E (SSG)      prerendered as static HTML (uses generateStaticParams)
+ƁE (Dynamic)  server-rendered on demand
+
+reports/adk-20261104/adk-report.md
+reports/adk-20261104/browser-initial.log
+reports/adk-20261104/browser.log
+reports/adk-20261104/browser/visible-explanation-mobile.png
+reports/adk-20261104/browser/worked-guide-mobile.png
+reports/adk-20261104/browser/worked-guide-viewport.png
+reports/adk-20261104/build.log
+reports/adk-20261104/independent-review1.log
+reports/adk-20261104/independent-review1.md
+reports/adk-20261104/lint.log
+reports/adk-20261104/production-http.json
+reports/adk-20261104/review-prompt.txt
+reports/adk-20261104/test.log
+reports/adk-20261104/typecheck.log
+reports/adk-20261104/validation.json
+scripts/audit-adk-http.py
+tests/e2e/adk-readiness.spec.ts
+
+codex
+ログの最終集計は、722ファイル・7,592件成功、2件スキップ、ブラウザ9件成功と一致しています。アプリ実装は `81c6e924d` 以降変更されていません。引き続き、証跡のハッシュと集計、初回ブラウザ失敗の原因、メタデータと XML
+ の判定条件を照合します。
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$v = Get-Content -Raw reports/adk-20261104/v
+alidation.json | ConvertFrom-Json; $v.evidence | ForEach-Object { [pscustomobject]@{ name=$_.name; matches=((Get-FileHa
+sh -Algorithm SHA256 (Join-Path reports/adk-20261104 $_.name)).Hash -eq $_.sha256) } } | Format-Table; Get-Content -Enc
+oding UTF8 tests/e2e/adk-readiness.spec.ts; rg -n '"'strict mode|resolved to|failed|details' reports/adk-20261104/brows
+er-initial.log; rg -n '17700|Compiled|Error|Generating static' reports/adk-20261104/build.log; Get-Content -Encoding UT
+F8 -LiteralPath 'app/[exam]/topic/[topicSlug]/page.tsx'; rg -n 'getQuestionsByExamStrict|groupByCategory' lib/seo/exam-
+meta.ts; Get-Content reports/adk-20261104/corpus.json -Head 32; "'$h = Get-Content -Raw -Encoding UTF8 reports/adk-2026
+1104/production-http.json | ConvertFrom-Json; $h.pages | Group-Object status | Select-Object Name,Count; $h.bot_user_ag
+ent_checks | Select-Object status; git diff 81c6e924d HEAD -- tests/e2e/adk-readiness.spec.ts' in C:\Users\kanet\202605
+22\wt-batch1
+ succeeded in 538ms:
+�l "System.Collections.Specialized.OrderedDictionary" ���^ "System.Management.Automation.LanguagePrimitives+InternalPSC
+ustomObject" �ɕϊ��ł��܂���B�G���[: "�n�b�V�� �e�[�u�������̎�ނ̃I�u�W�F�N�g�ɕϊ��ł��܂���: System.Management.Autom
+ation.LanguagePrimitives+InternalPSCustomObject�B����t�����ꃂ�[�h�A�������ꃂ�[�h�܂��� Data �Z�N�V�����ł́A�n�b�V�� �e�[
+�u������I�u�W�F�N�g�ւ̕ϊ��̓T�|�[�g����܂���B"
+�����ꏊ �s:2 ����:111
++ ... ch-Object { [pscustomobject]@{ name=$_.name; matches=((Get-FileHash - ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) []�ARuntimeException
+    + FullyQualifiedErrorId : InvalidCastConstructorException
+ 
+�l "System.Collections.Specialized.OrderedDictionary" ���^ "System.Management.Automation.LanguagePrimitives+InternalPSC
+ustomObject" �ɕϊ��ł��܂���B�G���[: "�n�b�V�� �e�[�u�������̎�ނ̃I�u�W�F�N�g�ɕϊ��ł��܂���: System.Management.Autom
+ation.LanguagePrimitives+InternalPSCustomObject�B����t�����ꃂ�[�h�A�������ꃂ�[�h�܂��� Data �Z�N�V�����ł́A�n�b�V�� �e�[
+�u������I�u�W�F�N�g�ւ̕ϊ��̓T�|�[�g����܂���B"
+�����ꏊ �s:2 ����:111
++ ... ch-Object { [pscustomobject]@{ name=$_.name; matches=((Get-FileHash - ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) []�ARuntimeException
+    + FullyQualifiedErrorId : InvalidCastConstructorException
+ 
+�l "System.Collections.Specialized.OrderedDictionary" ���^ "System.Management.Automation.LanguagePrimitives+InternalPSC
+ustomObject" �ɕϊ��ł��܂���B�G���[: "�n�b�V�� �e�[�u�������̎�ނ̃I�u�W�F�N�g�ɕϊ��ł��܂���: System.Management.Autom
+ation.LanguagePrimitives+InternalPSCustomObject�B����t�����ꃂ�[�h�A�������ꃂ�[�h�܂��� Data �Z�N�V�����ł́A�n�b�V�� �e�[
+�u������I�u�W�F�N�g�ւ̕ϊ��̓T�|�[�g����܂���B"
+�����ꏊ �s:2 ����:111
++ ... ch-Object { [pscustomobject]@{ name=$_.name; matches=((Get-FileHash - ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) []�ARuntimeException
+    + FullyQualifiedErrorId : InvalidCastConstructorException
+ 
+�l "System.Collections.Specialized.OrderedDictionary" ���^ "System.Management.Automation.LanguagePrimitives+InternalPSC
+ustomObject" �ɕϊ��ł��܂���B�G���[: "�n�b�V�� �e�[�u�������̎�ނ̃I�u�W�F�N�g�ɕϊ��ł��܂���: System.Management.Autom
+ation.LanguagePrimitives+InternalPSCustomObject�B����t�����ꃂ�[�h�A�������ꃂ�[�h�܂��� Data �Z�N�V�����ł́A�n�b�V�� �e�[
+�u������I�u�W�F�N�g�ւ̕ϊ��̓T�|�[�g����܂���B"
+�����ꏊ �s:2 ����:111
++ ... ch-Object { [pscustomobject]@{ name=$_.name; matches=((Get-FileHash - ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) []�ARuntimeException
+    + FullyQualifiedErrorId : InvalidCastConstructorException
+ 
+�l "System.Collections.Specialized.OrderedDictionary" ���^ "System.Management.Automation.LanguagePrimitives+InternalPSC
+ustomObject" �ɕϊ��ł��܂���B�G���[: "�n�b�V�� �e�[�u�������̎�ނ̃I�u�W�F�N�g�ɕϊ��ł��܂���: System.Management.Autom
+ation.LanguagePrimitives+InternalPSCustomObject�B����t�����ꃂ�[�h�A�������ꃂ�[�h�܂��� Data �Z�N�V�����ł́A�n�b�V�� �e�[
+�u������I�u�W�F�N�g�ւ̕ϊ��̓T�|�[�g����܂���B"
+�����ꏊ �s:2 ����:111
++ ... ch-Object { [pscustomobject]@{ name=$_.name; matches=((Get-FileHash - ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) []�ARuntimeException
+    + FullyQualifiedErrorId : InvalidCastConstructorException
+ 
+�l "System.Collections.Specialized.OrderedDictionary" ���^ "System.Management.Automation.LanguagePrimitives+InternalPSC
+ustomObject" �ɕϊ��ł��܂���B�G���[: "�n�b�V�� �e�[�u�������̎�ނ̃I�u�W�F�N�g�ɕϊ��ł��܂���: System.Management.Autom
+ation.LanguagePrimitives+InternalPSCustomObject�B����t�����ꃂ�[�h�A�������ꃂ�[�h�܂��� Data �Z�N�V�����ł́A�n�b�V�� �e�[
+�u������I�u�W�F�N�g�ւ̕ϊ��̓T�|�[�g����܂���B"
+�����ꏊ �s:2 ����:111
++ ... ch-Object { [pscustomobject]@{ name=$_.name; matches=((Get-FileHash - ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) []�ARuntimeException
+    + FullyQualifiedErrorId : InvalidCastConstructorException
+ 
+�l "System.Collections.Specialized.OrderedDictionary" ���^ "System.Management.Automation.LanguagePrimitives+InternalPSC
+ustomObject" �ɕϊ��ł��܂���B�G���[: "�n�b�V�� �e�[�u�������̎�ނ̃I�u�W�F�N�g�ɕϊ��ł��܂���: System.Management.Autom
+ation.LanguagePrimitives+InternalPSCustomObject�B����t�����ꃂ�[�h�A�������ꃂ�[�h�܂��� Data �Z�N�V�����ł́A�n�b�V�� �e�[
+�u������I�u�W�F�N�g�ւ̕ϊ��̓T�|�[�g����܂���B"
+�����ꏊ �s:2 ����:111
++ ... ch-Object { [pscustomobject]@{ name=$_.name; matches=((Get-FileHash - ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) []�ARuntimeException
+    + FullyQualifiedErrorId : InvalidCastConstructorException
+ 
+�l "System.Collections.Specialized.OrderedDictionary" ���^ "System.Management.Automation.LanguagePrimitives+InternalPSC
+ustomObject" �ɕϊ��ł��܂���B�G���[: "�n�b�V�� �e�[�u�������̎�ނ̃I�u�W�F�N�g�ɕϊ��ł��܂���: System.Management.Autom
+ation.LanguagePrimitives+InternalPSCustomObject�B����t�����ꃂ�[�h�A�������ꃂ�[�h�܂��� Data �Z�N�V�����ł́A�n�b�V�� �e�[
+�u������I�u�W�F�N�g�ւ̕ϊ��̓T�|�[�g����܂���B"
+�����ꏊ �s:2 ����:111
++ ... ch-Object { [pscustomobject]@{ name=$_.name; matches=((Get-FileHash - ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) []�ARuntimeException
+    + FullyQualifiedErrorId : InvalidCastConstructorException
+ 
+�l "System.Collections.Specialized.OrderedDictionary" ���^ "System.Management.Automation.LanguagePrimitives+InternalPSC
+ustomObject" �ɕϊ��ł��܂���B�G���[: "�n�b�V�� �e�[�u�������̎�ނ̃I�u�W�F�N�g�ɕϊ��ł��܂���: System.Management.Autom
+ation.LanguagePrimitives+InternalPSCustomObject�B����t�����ꃂ�[�h�A�������ꃂ�[�h�܂��� Data �Z�N�V�����ł́A�n�b�V�� �e�[
+�u������I�u�W�F�N�g�ւ̕ϊ��̓T�|�[�g����܂���B"
+�����ꏊ �s:2 ����:111
++ ... ch-Object { [pscustomobject]@{ name=$_.name; matches=((Get-FileHash - ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) []�ARuntimeException
+    + FullyQualifiedErrorId : InvalidCastConstructorException
+ 
+�l "System.Collections.Specialized.OrderedDictionary" ���^ "System.Management.Automation.LanguagePrimitives+InternalPSC
+ustomObject" �ɕϊ��ł��܂���B�G���[: "�n�b�V�� �e�[�u�������̎�ނ̃I�u�W�F�N�g�ɕϊ��ł��܂���: System.Management.Autom
+ation.LanguagePrimitives+InternalPSCustomObject�B����t�����ꃂ�[�h�A�������ꃂ�[�h�܂��� Data �Z�N�V�����ł́A�n�b�V�� �e�[
+�u������I�u�W�F�N�g�ւ̕ϊ��̓T�|�[�g����܂���B"
+�����ꏊ �s:2 ����:111
++ ... ch-Object { [pscustomobject]@{ name=$_.name; matches=((Get-FileHash - ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) []�ARuntimeException
+    + FullyQualifiedErrorId : InvalidCastConstructorException
+ 
+�l "System.Collections.Specialized.OrderedDictionary" ���^ "System.Management.Automation.LanguagePrimitives+InternalPSC
+ustomObject" �ɕϊ��ł��܂���B�G���[: "�n�b�V�� �e�[�u�������̎�ނ̃I�u�W�F�N�g�ɕϊ��ł��܂���: System.Management.Autom
+ation.LanguagePrimitives+InternalPSCustomObject�B����t�����ꃂ�[�h�A�������ꃂ�[�h�܂��� Data �Z�N�V�����ł́A�n�b�V�� �e�[
+�u������I�u�W�F�N�g�ւ̕ϊ��̓T�|�[�g����܂���B"
+�����ꏊ �s:2 ����:111
++ ... ch-Object { [pscustomobject]@{ name=$_.name; matches=((Get-FileHash - ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) []�ARuntimeException
+    + FullyQualifiedErrorId : InvalidCastConstructorException
+ 
+�l "System.Collections.Specialized.OrderedDictionary" ���^ "System.Management.Automation.LanguagePrimitives+InternalPSC
+ustomObject" �ɕϊ��ł��܂���B�G���[: "�n�b�V�� �e�[�u�������̎�ނ̃I�u�W�F�N�g�ɕϊ��ł��܂���: System.Management.Autom
+ation.LanguagePrimitives+InternalPSCustomObject�B����t�����ꃂ�[�h�A�������ꃂ�[�h�܂��� Data �Z�N�V�����ł́A�n�b�V�� �e�[
+�u������I�u�W�F�N�g�ւ̕ϊ��̓T�|�[�g����܂���B"
+�����ꏊ �s:2 ����:111
++ ... ch-Object { [pscustomobject]@{ name=$_.name; matches=((Get-FileHash - ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) []�ARuntimeException
+    + FullyQualifiedErrorId : InvalidCastConstructorException
+ 
+�l "System.Collections.Specialized.OrderedDictionary" ���^ "System.Management.Automation.LanguagePrimitives+InternalPSC
+ustomObject" �ɕϊ��ł��܂���B�G���[: "�n�b�V�� �e�[�u�������̎�ނ̃I�u�W�F�N�g�ɕϊ��ł��܂���: System.Management.Autom
+ation.LanguagePrimitives+InternalPSCustomObject�B����t�����ꃂ�[�h�A�������ꃂ�[�h�܂��� Data �Z�N�V�����ł́A�n�b�V�� �e�[
+�u������I�u�W�F�N�g�ւ̕ϊ��̓T�|�[�g����܂���B"
+�����ꏊ �s:2 ����:111
++ ... ch-Object { [pscustomobject]@{ name=$_.name; matches=((Get-FileHash - ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : InvalidArgument: (:) []�ARuntimeException
+    + FullyQualifiedErrorId : InvalidCastConstructorException
+ 
+import { test, expect } from "@playwright/test";
+
+test("singleton category stays readable without JavaScript and points to an explained question", async ({ browser, requ
+est }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
+  const page = await context.newPage();
+  const path = `/chintai/topic/${encodeURIComponent("�d�v����������")}`;
+  const response = await page.goto(path);
+  expect(response?.status()).toBe(200);
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "noindex, follow");
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", `https://www.kakomon-ai.jp${path}`);
+  const question = page.locator('main a[href^="/q/"]').first();
+  await expect(question).toBeVisible();
+  await question.click();
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "index, follow");
+  await expect(page.locator('#explanation > details')).toHaveAttribute("open", "");
+  expect((await page.locator('#explanation').innerText()).length).toBeGreaterThan(30);
+  expect(await page.getByRole("dialog").count()).toBe(0);
+  const sitemap = await request.get("/sitemap/exams.xml");
+  expect(sitemap.status()).toBe(200);
+  expect(await sitemap.text()).not.toContain(`<loc>https://www.kakomon-ai.jp${path}</loc>`);
+  await context.close();
+});
+
+test("search and mode selection are noindex across query variants", async ({ page, request }) => {
+  await page.route("**/*", route => {
+    const request = route.request();
+    if (request.method() !== "GET" || /googlesyndication|doubleclick|generativelanguage/.test(request.url())) return ro
+ute.abort();
+    return route.continue();
+  });
+  for (const path of ["/search", "/search?q=TLS", "/modes/topic", "/modes/topic?exam=fe"]) {
+    expect((await page.goto(path))?.status()).toBe(200);
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "noindex, follow");
+    await expect(page.locator("main h1")).toBeVisible();
+    await expect(page.getByRole("dialog")).toHaveCount(0);
+    await expect(page.locator('script[src*="adsbygoogle"], ins.adsbygoogle')).toHaveCount(0);
+  }
+  const sitemap = await request.get("/sitemap/main.xml");
+  expect(sitemap.status()).toBe(200);
+  const xml = await sitemap.text();
+  expect(xml).not.toContain("<loc>https://www.kakomon-ai.jp/search</loc>");
+  expect(xml).not.toContain("<loc>https://www.kakomon-ai.jp/modes/topic</loc>");
+});
+
+test("fresh visitors can read the problem, reasoning and privacy contact without a login or consent dialog", async ({ b
+rowser }, testInfo) => {
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  await context.route("**/*", route => {
+    if (route.request().method() !== "GET" || !route.request().url().startsWith(testInfo.project.use.baseURL as string)
+) return route.abort();
+    return route.continue();
+  });
+  const page = await context.newPage();
+  expect((await page.goto("/q/fe/2025-cbt/kamoku-b/q1"))?.status()).toBe(200);
+  await expect(page.locator("main h1")).toBeVisible();
+  await expect(page.locator('#explanation > details')).toHaveAttribute("open", "");
+  await expect(page.getByRole("dialog")).toHaveCount(0);
+  await page.locator('#explanation').scrollIntoViewIfNeeded();
+  await page.screenshot({ path: testInfo.outputPath("visible-explanation-mobile.png") });
+  await page.goto("/privacy");
+  await expect(page.getByRole("link", { name: "���₢���킹�t�H�[��", exact: true })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Google �̍L���ݒ�", exact: true })).toHaveAttribute("href", "https://adsse
+ttings.google.com/");
+  await context.close();
+});
+39:    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveAttribute[2m([22m[32mexpected[39m[2m)[22m failed
+41:    Locator: locator('#explanation details')
+43:    Error: strict mode violation: locator('#explanation details') resolved to 3 elements:
+44:        1) <details open="" class="group">…</details> aka getByText('解説結論 → 詳細 の 2 層構成展開閉じる結論Layer')
+45:        2) <details open="" class="group/layer">…</details> aka getByText('詳細Layer 2展開閉じる1')
+46:        3) <details open="" class="group mt-4 rounded-xl border border-border bg-muted/20 p-3 text-xs">…</details> a
+ka getByText('解説・公式出典について解説は学習支援用に作成したもので、試験実施機関による公式解説ではありません。 事実誤認・選択肢の取り違え・最新法令の反映漏れ等を含む可能性')
+50:    [2m  - waiting for locator('#explanation details')[22m
+55:    > 15 |   await expect(page.locator('#explanation details')).toHaveAttribute("open", "");
+63:    test-results\adk-readiness-singleton-ca-e6dd3-ts-to-an-explained-question\test-failed-1.png
+78:    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveAttribute[2m([22m[32mexpected[39m[2m)[22m failed
+80:    Locator: locator('#explanation details')
+82:    Error: strict mode violation: locator('#explanation details') resolved to 4 elements:
+83:        1) <details open="" class="group">…</details> aka getByText('解説結論 → 詳細 → 補足 の 3 層構成展開閉じる結論')
+84:        2) <details open="" class="group/layer">…</details> aka getByText('詳細Layer 2展開閉じるnを4で割った余りが1なら3')
+85:        3) <details open="" class="group/layer">…</details> aka getByText('補足Layer 3展開閉じる次にtempNから始め、m')
+86:        4) <details open="" class="group mt-4 rounded-xl border border-border bg-muted/20 p-3 text-xs">…</details> a
+ka getByText('解説・公式出典について解説は学習支援用に作成したもので、試験実施機関による公式解説ではありません。 事実誤認・選択肢の取り違え・最新法令の反映漏れ等を含む可能性')
+90:    [2m  - waiting for locator('#explanation details')[22m
+95:    > 53 |   await expect(page.locator('#explanation details')).toHaveAttribute("open", "");
+103:    test-results\adk-readiness-fresh-visito-b46c0-t-a-login-or-consent-dialog\test-failed-1.png
+116:  2 failed
+16:    + FullyQualifiedErrorId : NativeCommandError
+24:✓ Compiled successfully in 32.4s
+31:  Generating static pages using 4 workers (0/17700) ...
+32:  Generating static pages using 4 workers (4425/17700) 
+33:  Generating static pages using 4 workers (8164/17700) 
+34:  Generating static pages using 4 workers (8850/17700) 
+35:  Generating static pages using 4 workers (11642/17700) 
+36:  Generating static pages using 4 workers (13275/17700) 
+45:  Generating static pages using 4 workers (15371/17700) 
+46:  Generating static pages using 4 workers (16772/17700) 
+47:  Generating static pages using 4 workers (17524/17700) 
+48:✓ Generating static pages using 4 workers (17700/17700) in 7.1min
+import { questionNumberLabel } from "@/lib/questions/display";
+import { practiceSessionLabel } from "@/lib/questions/practice-session";
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { ChevronRight, Tags } from "lucide-react";
+
+import type { ExamCode } from "@/lib/questions/types";
+import { examLabel, formatYearSeason } from "@/lib/utils";
+import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
+import {
+  getAvailableExams,
+  getQuestionsByExamStrict,
+  groupByCategory,
+} from "@/lib/seo/exam-meta";
+import { questionPagePath } from "@/lib/seo/question-url";
+import { isIndexableCategoryCollection } from "@/lib/seo/collection-policy";
+import { isPlaceholderExplanation } from "@/lib/questions/filter";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+
+export const dynamicParams = false;
+
+interface RouteParams {
+  exam: string;
+  topicSlug: string;
+}
+
+export async function generateStaticParams(): Promise<RouteParams[]> {
+  const out: RouteParams[] = [];
+  for (const exam of getAvailableExams()) {
+    const cats = groupByCategory(getQuestionsByExamStrict(exam));
+    for (const c of cats) {
+      out.push({ exam, topicSlug: c.category });
+    }
+  }
+  return out;
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<RouteParams>;
+}): Promise<Metadata> {
+  const { exam, topicSlug } = await params;
+  if (!getAvailableExams().includes(exam as ExamCode)) {
+    return { title: "���삪������܂���", robots: { index: false } };
+  }
+  const category = decodeURIComponent(topicSlug);
+  const questionCount = getQuestionsByExamStrict(exam as ExamCode)
+    .filter((q) => q.category === category).length;
+  const title = `${examLabel(exam as ExamCode)} ${category} �ߋ���E���`;
+  const description = `${examLabel(exam as ExamCode)}�����́u${category}�v����̉ߋ�����܂Ƃ߂Ċm�F�ł��܂��BAI����t���ŗ�����[�߂�
+�܂��B`;
+  const ogImageUrl = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
+    type: "topic",
+    title: category,
+    subtitle: `${examLabel(exam as ExamCode)} �����`,
+  }).toString()}`;
+  return {
+    title,
+    description,
+    alternates: { canonical: `/${exam}/topic/${encodeURIComponent(category)}` },
+    robots: { index: isIndexableCategoryCollection(questionCount), follow: true },
+    openGraph: {
+      title,
+      description,
+      url: `/${exam}/topic/${encodeURIComponent(category)}`,
+      type: "website",
+      siteName: SITE_NAME,
+      locale: "ja_JP",
+      images: [{ url: ogImageUrl, width: 1200, height: 630, alt: title }],
+    },
+    twitter: { card: "summary_large_image", title, description, images: [ogImageUrl] },
+  };
+}
+
+export default async function ExamTopicPage({
+  params,
+}: {
+  params: Promise<RouteParams>;
+}) {
+  const { exam, topicSlug } = await params;
+  if (!getAvailableExams().includes(exam as ExamCode)) notFound();
+  const category = decodeURIComponent(topicSlug);
+  const code = exam as ExamCode;
+  const pool = getQuestionsByExamStrict(code)
+    .filter((q) => q.category === category)
+    .sort((a, b) => (b.year !== a.year ? b.year - a.year : a.qNumber - b.qNumber));
+  if (pool.length === 0) notFound();
+
+  const absUrl = `${SITE_BASE_URL}/${exam}/topic/${encodeURIComponent(category)}`;
+
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        name: `${examLabel(code)} ${category} �ߋ���`,
+        url: absUrl,
+        inLanguage: "ja",
+      },
+      {
+        "@type": "BreadcrumbList",
+        itemListElement: [
+          { "@type": "ListItem", position: 1, name: "�z�[��", item: SITE_BASE_URL },
+          {
+            "@type": "ListItem",
+            position: 2,
+            name: examLabel(code),
+            item: `${SITE_BASE_URL}/${exam}`,
+          },
+          { "@type": "ListItem", position: 3, name: category, item: absUrl },
+        ],
+      },
+    ],
+  };
+
+  return (
+    <main className="relative flex-1">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 bg-radial-spotlight"
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-grid opacity-30 [mask-image:radial-gradien
+t(60%_50%_at_50%_0%,#000_30%,transparent_70%)]"
+      />
+
+      <div className="relative mx-auto w-full max-w-3xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
+        <JsonLd data={jsonLd} />
+
+        <nav
+          aria-label="�p���������X�g"
+          className="mb-4 text-xs text-muted-foreground"
+        >
+          <ol className="flex flex-wrap items-center gap-1.5">
+            <li>
+              <Link href="/" className="inline-block py-1.5 hover:text-foreground hover:underline">
+                �z�[��
+              </Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li>
+              <Link
+                href={`/${exam}`}
+                className="inline-block py-1.5 hover:text-foreground hover:underline"
+              >
+                {examLabel(code)}
+              </Link>
+            </li>
+            <li aria-hidden="true">/</li>
+            <li aria-current="page" className="text-foreground">
+              {category}
+            </li>
+          </ol>
+        </nav>
+
+        <header className="mb-8 animate-fade-in">
+          <Badge variant="soft" className="mb-3">
+            <Tags className="h-3 w-3" />
+            {examLabel(code)}
+          </Badge>
+          <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            {examLabel(code)}{" "}
+            <span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent"
+>
+              {category}
+            </span>
+          </h1>
+          <p className="mt-3 text-sm text-muted-foreground">
+            ����u{category}�v�̉ߋ�����ꗗ�Ŋm�F�ł��܂��B
+          </p>
+          <div className="mt-3 flex flex-wrap gap-2 text-xs">
+            <Badge variant="outline">{pool.length} ��</Badge>
+          </div>
+        </header>
+
+        <section aria-label="�N�C�Y���n�߂�" className="mb-8">
+          <div className="flex flex-wrap gap-2">
+            {[...new Set(pool.filter((q) => q.type === "multiple-choice").map((q) => q.session))].map((session) => (
+              <Button key={session} asChild variant="gradient" size="lg">
+                <Link href={`/quiz?mode=topic&exam=${exam}&category=${encodeURIComponent(category)}&session=${session}&
+returnTo=${encodeURIComponent(`/${exam}/topic/${topicSlug}`)}`}>
+                  {practiceSessionLabel(session, exam as ExamCode)}�E���̕��������<ChevronRight className="h-4 w-4" />
+                </Link>
+              </Button>
+            ))}
+          </div>
+        </section>
+
+        <ul className="space-y-2">
+          {pool.map((q) => {
+            const isPlaceholder = isPlaceholderExplanation(q);
+            return (
+              <li key={q.id}>
+                <Link
+                  href={questionPagePath(q)}
+                  className="group flex items-start gap-3 rounded-2xl border border-border bg-card p-4 transition-all h
+over:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+                >
+                  <span className="flex h-8 shrink-0 items-center justify-center rounded-lg bg-primary-soft px-2.5 text
+-xs font-bold text-primary-soft-foreground">
+                    {questionNumberLabel(q)}
+                  </span>
+                  <span className="flex-1 space-y-1.5 min-w-0">
+                    <span className="flex flex-wrap items-center gap-1.5 text-xs">
+                      <Badge variant="outline">
+                        {formatYearSeason(q.year, q.season)}
+                      </Badge>
+                      {q.isCalculation && <Badge variant="warn">�v�Z</Badge>}
+                      {isPlaceholder && <Badge variant="warn">���������</Badge>}
+                    </span>
+                    <span className="line-clamp-2 block text-sm leading-relaxed text-foreground">
+                      {q.question.slice(0, 140)}
+                      {q.question.length > 140 ? "�c" : ""}
+                    </span>
+                  </span>
+                  <ChevronRight className="mt-2 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover
+:translate-x-0.5 group-hover:text-primary" />
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </main>
+  );
+}
+162:export function getQuestionsByExamStrict(exam: ExamCode): Question[] {
+172:    return getQuestionsByExamStrict(exam).some((q) => q.category === category);
+201:export function groupByCategory(questions: Question[]): {
+505:    const years = getQuestionsByExamStrict(exam).map((q) => q.year);
+514:    const questions = getQuestionsByExamStrict(exam);
+516:    const categoryCount = groupByCategory(questions).length;
+530:    return getQuestionsByExamStrict(exam).length;
+{
+  "scope": "Common question registry and its category routes; lengths are triage signals, not Google thresholds or sema
+ntic accuracy review. Dedicated registries are outside these counts.",
+  "registered": 34383,
+  "practiceReady": 32373,
+  "placeholders": 0,
+  "excludedByReadiness": 2010,
+  "canonicalSitemapQuestions": 29464,
+  "explanationLengthBuckets": [
+    {
+      "under": 50,
+      "count": 4140
+    },
+    {
+      "under": 100,
+      "count": 13952
+    },
+    {
+      "under": 200,
+      "count": 28054
+    }
+  ],
+  "explanationAndSupplementLengthBuckets": [
+    {
+      "under": 50,
+      "count": 38
+    },
+    {
+      "under": 100,
+      "count": 1227
+    },
+    {
+      "under": 200,
+
+diff --git a/tests/e2e/adk-readiness.spec.ts b/tests/e2e/adk-readiness.spec.ts
+index 043ec5b72..33bd1698f 100644
+--- a/tests/e2e/adk-readiness.spec.ts
++++ b/tests/e2e/adk-readiness.spec.ts
+@@ -12,7 +12,7 @@ test("singleton category stays readable without JavaScript and points to an expl
+   await expect(question).toBeVisible();
+   await question.click();
+   await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "index, follow");
+-  await expect(page.locator('#explanation details')).toHaveAttribute("open", "");
++  await expect(page.locator('#explanation > details')).toHaveAttribute("open", "");
+   expect((await page.locator('#explanation').innerText()).length).toBeGreaterThan(30);
+   expect(await page.getByRole("dialog").count()).toBe(0);
+   const sitemap = await request.get("/sitemap/exams.xml");
+@@ -50,7 +50,7 @@ test("fresh visitors can read the problem, reasoning and privacy contact without
+   const page = await context.newPage();
+   expect((await page.goto("/q/fe/2025-cbt/kamoku-b/q1"))?.status()).toBe(200);
+   await expect(page.locator("main h1")).toBeVisible();
+-  await expect(page.locator('#explanation details')).toHaveAttribute("open", "");
++  await expect(page.locator('#explanation > details')).toHaveAttribute("open", "");
+   await expect(page.getByRole("dialog")).toHaveCount(0);
+   await page.locator('#explanation').scrollIntoViewIfNeeded();
+   await page.screenshot({ path: testInfo.outputPath("visible-explanation-mobile.png") });
+Name Count
+---- -----
+200    219
+404      3
+          
+          
+          
+          
+          
+          
+
+
+
+exec
+"C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\powershell.exe" -Command '$v = Get-Content -Raw reports/adk-20261104/v
+alidation.json | ConvertFrom-Json; $v.evidence | ForEach-Object { $_.name; (Get-FileHash -Algorithm SHA256 (Join-Path r
+eports/adk-20261104 $_.name)).Hash -eq $_.sha256 }; Get-Content -Encoding UTF8 tests/e2e/adk-readiness.spec.ts; rg -n '
+"'strict mode|resolved to|failed|17700' reports/adk-20261104/browser-initial.log reports/adk-20261104/build.log; Get-Co
+ntent lib/seo/exam-meta.ts | Select-Object -Skip 155 -First 65; git status --short" in C:\Users\kanet\20260522\wt-batch
+1
+ succeeded in 359ms:
+adk-report.md
+True
+baseline.md
+True
+browser-initial.log
+True
+browser.log
+True
+build.log
+True
+corpus.json
+True
+independent-review1.log
+True
+independent-review1.md
+True
+lint.log
+True
+production-http.json
+True
+review-prompt.txt
+True
+test.log
+True
+typecheck.log
+True
+import { test, expect } from "@playwright/test";
+
+test("singleton category stays readable without JavaScript and points to an explained question", async ({ browser, requ
+est }) => {
+  const context = await browser.newContext({ javaScriptEnabled: false, viewport: { width: 390, height: 844 } });
+  const page = await context.newPage();
+  const path = `/chintai/topic/${encodeURIComponent("�d�v����������")}`;
+  const response = await page.goto(path);
+  expect(response?.status()).toBe(200);
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "noindex, follow");
+  await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", `https://www.kakomon-ai.jp${path}`);
+  const question = page.locator('main a[href^="/q/"]').first();
+  await expect(question).toBeVisible();
+  await question.click();
+  await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "index, follow");
+  await expect(page.locator('#explanation > details')).toHaveAttribute("open", "");
+  expect((await page.locator('#explanation').innerText()).length).toBeGreaterThan(30);
+  expect(await page.getByRole("dialog").count()).toBe(0);
+  const sitemap = await request.get("/sitemap/exams.xml");
+  expect(sitemap.status()).toBe(200);
+  expect(await sitemap.text()).not.toContain(`<loc>https://www.kakomon-ai.jp${path}</loc>`);
+  await context.close();
+});
+
+test("search and mode selection are noindex across query variants", async ({ page, request }) => {
+  await page.route("**/*", route => {
+    const request = route.request();
+    if (request.method() !== "GET" || /googlesyndication|doubleclick|generativelanguage/.test(request.url())) return ro
+ute.abort();
+    return route.continue();
+  });
+  for (const path of ["/search", "/search?q=TLS", "/modes/topic", "/modes/topic?exam=fe"]) {
+    expect((await page.goto(path))?.status()).toBe(200);
+    await expect(page.locator('meta[name="robots"]')).toHaveAttribute("content", "noindex, follow");
+    await expect(page.locator("main h1")).toBeVisible();
+    await expect(page.getByRole("dialog")).toHaveCount(0);
+    await expect(page.locator('script[src*="adsbygoogle"], ins.adsbygoogle')).toHaveCount(0);
+  }
+  const sitemap = await request.get("/sitemap/main.xml");
+  expect(sitemap.status()).toBe(200);
+  const xml = await sitemap.text();
+  expect(xml).not.toContain("<loc>https://www.kakomon-ai.jp/search</loc>");
+  expect(xml).not.toContain("<loc>https://www.kakomon-ai.jp/modes/topic</loc>");
+});
+
+test("fresh visitors can read the problem, reasoning and privacy contact without a login or consent dialog", async ({ b
+rowser }, testInfo) => {
+  const context = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  await context.route("**/*", route => {
+    if (route.request().method() !== "GET" || !route.request().url().startsWith(testInfo.project.use.baseURL as string)
+) return route.abort();
+    return route.continue();
+  });
+  const page = await context.newPage();
+  expect((await page.goto("/q/fe/2025-cbt/kamoku-b/q1"))?.status()).toBe(200);
+  await expect(page.locator("main h1")).toBeVisible();
+  await expect(page.locator('#explanation > details')).toHaveAttribute("open", "");
+  await expect(page.getByRole("dialog")).toHaveCount(0);
+  await page.locator('#explanation').scrollIntoViewIfNeeded();
+  await page.screenshot({ path: testInfo.outputPath("visible-explanation-mobile.png") });
+  await page.goto("/privacy");
+  await expect(page.getByRole("link", { name: "���₢���킹�t�H�[��", exact: true })).toBeVisible();
+  await expect(page.getByRole("link", { name: "Google �̍L���ݒ�", exact: true })).toHaveAttribute("href", "https://adsse
+ttings.google.com/");
+  await context.close();
+});
+reports/adk-20261104/browser-initial.log:39:    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveAttribute[2m(
+[22m[32mexpected[39m[2m)[22m failed
+reports/adk-20261104/browser-initial.log:43:    Error: strict mode violation: locator('#explanation details') resolved 
+to 3 elements:
+reports/adk-20261104/browser-initial.log:63:    test-results\adk-readiness-singleton-ca-e6dd3-ts-to-an-explained-questi
+on\test-failed-1.png
+reports/adk-20261104/browser-initial.log:78:    Error: [2mexpect([22m[31mlocator[39m[2m).[22mtoHaveAttribute[2m(
+[22m[32mexpected[39m[2m)[22m failed
+reports/adk-20261104/browser-initial.log:82:    Error: strict mode violation: locator('#explanation details') resolved 
+to 4 elements:
+reports/adk-20261104/browser-initial.log:103:    test-results\adk-readiness-fresh-visito-b46c0-t-a-login-or-consent-dia
+log\test-failed-1.png
+reports/adk-20261104/browser-initial.log:116:  2 failed
+reports/adk-20261104/build.log:31:  Generating static pages using 4 workers (0/17700) ...
+reports/adk-20261104/build.log:32:  Generating static pages using 4 workers (4425/17700) 
+reports/adk-20261104/build.log:33:  Generating static pages using 4 workers (8164/17700) 
+reports/adk-20261104/build.log:34:  Generating static pages using 4 workers (8850/17700) 
+reports/adk-20261104/build.log:35:  Generating static pages using 4 workers (11642/17700) 
+reports/adk-20261104/build.log:36:  Generating static pages using 4 workers (13275/17700) 
+reports/adk-20261104/build.log:45:  Generating static pages using 4 workers (15371/17700) 
+reports/adk-20261104/build.log:46:  Generating static pages using 4 workers (16772/17700) 
+reports/adk-20261104/build.log:47:  Generating static pages using 4 workers (17524/17700) 
+reports/adk-20261104/build.log:48:✓ Generating static pages using 4 workers (17700/17700) in 7.1min
+ * length while the home headline + sitemap used the indexable count, so
+ * summing the category badges produced a third, larger number. Deriving
+ * everything from the playable set makes all breakdowns reconcile to the
+ * headline. Unrenderable, needsReview, and placeholder-explanation questions
+ * 404 at /q, so none should be advertised in counts/listings.
+ */
+export function getQuestionsByExamStrict(exam: ExamCode): Question[] {
+    return (QUESTIONS_BY_EXAM[exam] ?? []).filter(isPracticeReadyQuestion);
+}
+/**
+ * /[exam]/topic/[category] ペ�Eジが実在するか！E strict プ�Eルに同�E野�E
+ * 問題が 1 件以上あるか�E�。topic ルート�E dynamicParams=false かつ pool 空で
+ * notFound() するため、空刁E��へのリンクは 404 になる。問題詳細ペ�Eジが�E釁E
+ * リンクを張ってよいか�E単一の判定源、E
+ */
+export function examTopicPageExists(exam: ExamCode, category: string): boolean {
+    return getQuestionsByExamStrict(exam).some((q) => q.category === category);
+}
+export interface YearSeasonGroup {
+    year: number;
+    season: Question["season"];
+    key: string;
+    label: string;
+    count: number;
+}
+export function groupByYearSeason(questions: Question[]): YearSeasonGroup[] {
+    const map = new Map<string, YearSeasonGroup>();
+    for (const q of questions) {
+        const key = `${q.year}-${q.season}`;
+        const existing = map.get(key);
+        if (existing) {
+            existing.count += 1;
+        }
+        else {
+            map.set(key, {
+                year: q.year,
+                season: q.season,
+                key,
+                label: questionSourceEdition(q),
+                count: 1
+            });
+        }
+    }
+    return [...map.values()].sort((a, b) => b.year !== a.year ? b.year - a.year : a.season.localeCompare(b.season));
+}
+export function groupByCategory(questions: Question[]): {
+    category: string;
+    count: number;
+}[] {
+    const map = new Map<string, number>();
+    for (const q of questions)
+        map.set(q.category, (map.get(q.category) ?? 0) + 1);
+    return [...map.entries()]
+        .map(([category, count]) => ({ category, count }))
+        .sort((a, b) => b.count - a.count);
+}
+export function examTopTitle(exam: ExamCode): string {
+    return `${examLabel(exam)} 過去問一覧・AI解説`;
+}
+export function examTopDescription(exam: ExamCode, questionCount: number): string {
+    if (exam === "shika-ishi" || exam === "rinsho-kensagishi" || exam === "shinryo-hoshasengishi")
+        return examMetaDescription(exam, questionCount);
+    const base = EXAM_DESCRIPTIONS[exam] ?? "";
+    return `${base}${examLabel(exam)}の過去啁E{questionCount}問を年度別・刁E��別に収録、EIコパイロチE��付きで効玁E��に学習。`;
+}
+?? reports/adk-20261104/independent-review-final.log
+?? reports/adk-20261104/review-prompt-final.txt
+
+codex
+PASS
+
+`release/batch1-20261105` の `cc892a8f4` → `c9b4700e9` を読み取り専用で確認しました。修正必須の機能不具合、禁止範囲の変更、報告と検証証跡の重大な不一致は見つかりませんでした。
+
+- 1問分野一覧の noindex と XML 除外は、同じ問題集合と共通判定を使用しています。データ更新後も再ビルド時に整合します。`/search`・`/modes/topic` も整合しています。
+- 問題本文・解説・演習、AI経路、問題データ、広告数・配置の変更はありません。
+- 保存証跡は typecheck=0、lint=0（警告8件）、722ファイル／7,592件成功・2件スキップ、build=0（17,700ページ）、ブラウザ9件成功と整合しています。証跡14ファイルの SHA-256 もすべて一致しま
+した。
+- 初回ブラウザ2件失敗は複数の `details` に一致したセレクタの問題です。`#explanation > details` への修正と再実行成功を確認しました。アプリ実装は `81c6e924d` 以降変更されていません。
+- HTTP証跡の219件200・3件404は報告と一致しています。拒否理由の候補と確定事項、短文と補足解説、所有権確認と広告スクリプトを区別しています。
+
+今回はコード・保存ログの照合であり、全テストの独立再実行、本番反映、AdSense管理画面の詳細理由は未確認です。**このPASSはAdSense承認を意味しません。**
+
+ファイル・Git・外部サービスの変更、push・PR、AI API呼び出し、追加エージェント起動は行っていません。
+tokens used
+PASS
+
+`release/batch1-20261105` の `cc892a8f4` → `c9b4700e9` を読み取り専用で確認しました。修正必須の機能不具合、禁止範囲の変更、報告と検証証跡の重大な不一致は見つかりませんでした。
+
+- 1問分野一覧の noindex と XML 除外は、同じ問題集合と共通判定を使用しています。データ更新後も再ビルド時に整合します。`/search`・`/modes/topic` も整合しています。
+- 問題本文・解説・演習、AI経路、問題データ、広告数・配置の変更はありません。
+- 保存証跡は typecheck=0、lint=0（警告8件）、722ファイル／7,592件成功・2件スキップ、build=0（17,700ページ）、ブラウザ9件成功と整合しています。証跡14ファイルの SHA-256 もすべて一致しました。
+- 初回ブラウザ2件失敗は複数の `details` に一致したセレクタの問題です。`#explanation > details` への修正と再実行成功を確認しました。アプリ実装は `81c6e924d` 以降変更されていません。
+- HTTP証跡の219件200・3件404は報告と一致しています。拒否理由の候補と確定事項、短文と補足解説、所有権確認と広告スクリプトを区別しています。
+
+今回はコード・保存ログの照合であり、全テストの独立再実行、本番反映、AdSense管理画面の詳細理由は未確認です。**このPASSはAdSense承認を意味しません。**
+
+ファイル・Git・外部サービスの変更、push・PR、AI API呼び出し、追加エージェント起動は行っていません。
+36,798

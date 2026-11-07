@@ -207,7 +207,7 @@ describe("renderMainSitemapXml route contract", () => {
   });
 
   it("includes representative public routes", () => {
-    for (const path of ["/about", "/search", "/topics", "/blog", "/stats"]) {
+    for (const path of ["/about", "/topics", "/blog", "/stats"]) {
       expect(mainLocs).toContain(path);
     }
   });
@@ -216,6 +216,9 @@ describe("renderMainSitemapXml route contract", () => {
     // /quiz and /support 301-redirect (next.config.ts).
     expect(mainLocs).not.toContain("/quiz");
     expect(mainLocs).not.toContain("/support");
+    for (const path of ["/ranking", "/student", "/referral", "/success-stories"]) {
+      expect(mainLocs).not.toContain(path);
+    }
   });
 
   it("omits noindex routes", () => {

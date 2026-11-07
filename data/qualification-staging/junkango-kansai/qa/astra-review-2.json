@@ -1,0 +1,52 @@
+{
+  "verdict": "PASS",
+  "reviewedHead": "2cdd8471339508f16d48ca216cba84696a2b676e",
+  "scope": "非公開staging追加として合格。専門家の公開承認・権利許諾を意味しない。",
+  "resolvedFindings": [
+    {
+      "id": "junkango-kansai-2025-q88",
+      "choice": 2,
+      "result": "急性と遅発性の時間区分の誤りは解消。5〜7日頃の症状を否定せず、公式正答3と医学的説明を区別している。TSV・JSON肢解説・集約解説は同期済み。",
+      "evidence": "[国立がん研究センター東病院の一次資料](https://www.ncc.go.jp/jp/ncce/division/pharmacy/kouganzai/supportivecare_antiemetic.html)の時間区分・持続期間と整合する。"
+    }
+  ],
+  "blockers": [],
+  "coverage": {
+    "previousReview": "初回レビューJSONに、全300問・1200選択肢・1200肢解説の通読、原文25349文字・正答300セルのPDF照合、300画像と正答表2枚の画素一致の記録がある。これらを今回の再実施結果とは扱っていない。",
+    "currentReview": "初回HEADから現在HEADまでの全6ファイルの差分を確認。初回レビューJSONの追加、回帰テスト、参照資料、編集注記を含む。実データの変更は2025年問88のchoiceExplanations・explanation・officialReferenceUrlsのみ。",
+    "unchanged": "全差分から、原文・公式正答・許容正答・採点実装・全画像・原文ハッシュに変更がないことを確認。",
+    "publication": "全300問のneedsReview=true・publicAllowed=falseを確認。スキーマも逆の値を拒否する。公開側コード・問題データ・カタログ・publicの検索で対象slug参照は検出されず、公開接続の追加なし。"
+  },
+  "verification": [
+    {
+      "check": "専用バリデータをTypeScriptからメモリ内CommonJS変換して実行",
+      "result": "PASS：300問・1200肢・300画像。原文ハッシュ、画像ハッシュ、公式正答、採点区分、公開ゲートを検証。"
+    },
+    {
+      "check": "独立したメモリ内照合",
+      "result": "PASS：TSVとJSONの1200肢一致、集約解説300件の肢説明部分一致、固定正答300件一致、採点2400ケース、公開フラグとスキーマ拒否検証。"
+    },
+    {
+      "check": "一次資料の閲覧",
+      "result": "公式索引と、問6全員正解・問139の2または4を正解とする[公式採点特例](https://www.kouiki-kansai.jp/koikirengo/jisijimu/shikakumenkyo/junan_top/jyunkangosisiken/9022.html)を確認。"
+    },
+    {
+      "check": "ローカル原本PDF4件のSHA-256",
+      "result": "PASS：受領記録と一致。"
+    },
+    {
+      "check": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+      "result": "PASS：終了コード0。"
+    },
+    {
+      "check": "git diff --check f8198afe HEAD、git status --porcelain",
+      "result": "PASS：差分エラーなし、作業ツリー変更なし。"
+    }
+  ],
+  "limitations": [
+    "今回、全本文・全解説の再通読、PDF全文照合、画像の再描画・画素照合は実施していない。",
+    "Vitest、ESLint、audit_source.py、307ファイル再生成、既存公開側validate:questionsは再実行していない。作者報告は独立実行結果に含めていない。",
+    "補助検証の初回試行は子プロセス・PowerShell制限で停止。別の照合式は採点特例の前置き説明を考慮せず停止したが、修正後の照合はPASS。",
+    "ファイル変更・別エージェント起動・push・PR・デプロイ・main操作は行っていない。"
+  ]
+}

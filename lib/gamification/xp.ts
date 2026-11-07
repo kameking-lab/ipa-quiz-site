@@ -108,7 +108,14 @@ export function readXp(): XpState {
 function write(state: XpState): void {
   if (typeof window === "undefined") return;
   try {
-    window.localStorage.setItem(LS_KEYS.xpState, JSON.stringify(state));
+    // Retain legacy metadata used by older clients, while both award paths now
+    // write through this single daily/lifetime accumulator.
+    let previous: Record<string, unknown> = {};
+    try {
+      const parsed = JSON.parse(window.localStorage.getItem(LS_KEYS.xpState) ?? "null");
+      if (parsed && typeof parsed === "object" && !Array.isArray(parsed)) previous = parsed;
+    } catch { /* corrupt optional state */ }
+    window.localStorage.setItem(LS_KEYS.xpState, JSON.stringify({ ...previous, ...state, level: levelFromXp(state.total), updatedAt: Date.now() }));
   } catch {
     // ignore
   }
@@ -124,7 +131,7 @@ export interface XpAwardResult {
 }
 
 export function awardXp(amount: number): XpAwardResult {
-  const safe = Math.max(0, Math.floor(amount));
+  const safe = Number.isFinite(amount) ? Math.max(0, Math.floor(amount)) : 0;
   const before = readXp();
   const today = jstDate();
   const sameDay = before.lastEarnedDate === today;

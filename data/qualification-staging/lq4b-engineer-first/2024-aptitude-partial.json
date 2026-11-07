@@ -1,0 +1,54 @@
+{
+  "status": "PARTIAL_CONTENT_ACCEPTED_NOT_REGISTERED",
+  "qualification": "gijutsushi1-kikai",
+  "year": 2024,
+  "subject": "aptitude",
+  "expectedFullQualificationCount": 160,
+  "questions": [
+    {
+      "id": "gijutsushi1-kikai-2024-aptitude-II-09",
+      "printedNumber": "Ⅱ－9",
+      "questionNumber": 9,
+      "questionText": "個人情報の保護に関する法律（個人情報保護法）は，デジタル社会の進展に伴い個人情報の利用が著しく拡大していることに鑑み，「個人情報の適正かつ効果的な活用が新たな産業の創出並びに活力ある経済社会及び豊かな国民生活の実現に資するものであることその他の個人情報の有用性に配慮しつつ，個人の権利利益を保護すること」等を目的としている。\n法に基づき制定された「個人情報の保護に関する法律施行令（政令）」では，個人情報の定義の明確化として，旅券番号や基礎年金番号などとともに，個人の身体の一部の特徴を電子計算機の用に供するために変換した文字，番号，記号その他の符号について「個人識別符号」として，個人情報に位置付けている。\n個人識別符号に関する次の記述のうち，前記政令に記載がないものはどれか。",
+      "choices": {
+        "1": "指紋又は掌紋",
+        "2": "顔の骨格及び皮膚の色並びに目，鼻，口その他の顔の部位の位置及び形状によって定まる容貌",
+        "3": "発声の際の声帯の振動，声門の開閉並びに声道の形状及びその変化",
+        "4": "歩行の際の姿勢及び両腕の動作，歩幅その他の歩行の態様",
+        "5": "内耳を介さずに耳周辺の骨を振動させた際の蝸牛に伝わる振動特性"
+      },
+      "officialAnswer": 5,
+      "explanation": "問われているのは，個人識別符号の対象となる身体の特徴として政令に列挙されているかどうかです。施行令第1条第1号は，顔，声，歩行，指紋・掌紋などを列挙していますが，選択肢5の振動特性は列挙していません。したがって公式正答は5です。なお，列挙された身体の特徴そのものが無条件に個人識別符号になるのではなく，電子計算機用に変換され，特定の個人を識別するに足りる基準に適合する符号が対象です。",
+      "choiceExplanations": {
+        "1": "政令に記載されています。施行令第1条第1号トは指紋又は掌紋を列挙しているため，本問の「記載がないもの」には当たりません。",
+        "2": "政令に記載されています。施行令第1条第1号ロは，顔の骨格・皮膚の色・各部位の位置や形状によって定まる容貌を列挙しています。顔の特徴を用いる認証が対応します。",
+        "3": "政令に記載されています。施行令第1条第1号ニが，発声時の声帯の振動，声門の開閉，声道の形状と変化を列挙しています。単なる発言内容ではなく，声の身体的な特徴を扱う記述です。",
+        "4": "政令に記載されています。施行令第1条第1号ホが，歩行時の姿勢，両腕の動作，歩幅などの歩行の態様を列挙しているため，本問では選びません。",
+        "5": "これが正答です。施行令第1条第1号イからトの列挙に，耳周辺の骨から蝸牛へ伝わる振動特性という項目はありません。本問は列挙の有無を問うものであり，この情報が利用状況を問わず個人情報に当たらないという意味ではありません。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_2.pdf",
+      "sourceQuestionPage": 9,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 2,
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 適性科目 Ⅱ－9。改行・空白・句読点の表記を整理。解説は独自作成。",
+      "explanationReferenceUrls": [
+        "https://www.ppc.go.jp/files/pdf/report_office.pdf",
+        "https://laws.e-gov.go.jp/document?law_unique_id=415CO0000000507_20170530_428CO0000000324"
+      ],
+      "transcription": "160dpi/PSM3 and 220dpi/PSM6 OCR compared against the rendered official page; line wraps, spacing and punctuation normalized; no figures required",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "reviewedCommit": "500496bd0",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4b-20261104/independent-review4.md",
+        "reviewedContentSha256": "7594bfb4a034fffb224f3318ee8b9e16847b002fc185fa306c6eb3e06bee6d4b",
+        "scope": "ONE_ORIGINAL_NOT_FULL_QUALIFICATION"
+      },
+      "sourceQuestionSha256": "8c5879fd8a535352bed4295a0de6e1040a41dca0e33c439728953cf6e0c5ec0b",
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14"
+    }
+  ]
+}

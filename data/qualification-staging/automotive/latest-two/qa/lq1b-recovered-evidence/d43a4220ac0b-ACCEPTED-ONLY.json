@@ -1,0 +1,922 @@
+{
+  "source": "PACKET.json",
+  "ids": [
+    "jidosha-2025-second-3-motorcycle-q01",
+    "jidosha-2025-second-3-motorcycle-q03",
+    "jidosha-2025-second-3-motorcycle-q05",
+    "jidosha-2025-second-3-motorcycle-q06",
+    "jidosha-2025-second-3-motorcycle-q07",
+    "jidosha-2025-second-3-motorcycle-q08",
+    "jidosha-2025-second-3-motorcycle-q16",
+    "jidosha-2025-second-3-motorcycle-q19",
+    "jidosha-2025-second-3-motorcycle-q20",
+    "jidosha-2025-second-3-motorcycle-q23",
+    "jidosha-2025-second-3-motorcycle-q24",
+    "jidosha-2025-second-3-motorcycle-q26",
+    "jidosha-2025-second-3-motorcycle-q27",
+    "jidosha-2025-second-3-motorcycle-q28",
+    "jidosha-2025-second-3-motorcycle-q30"
+  ],
+  "writtenOriginals": [
+    {
+      "id": "jidosha-2025-second-3-motorcycle-q01",
+      "qNumber": 1,
+      "question": "4サイクル・エンジンに関する記述として、適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) 混合気は、クランクケース内で圧縮された後にシリンダへ送られる。",
+        "イ": "(2) ピストンが1ストローク作動すると、クランクシャフトは1回転する。",
+        "ウ": "(3) オーバラップとは、インテーク・バルブ及びエキゾースト・バルブの両バルブがともに開いている時期をいう。",
+        "エ": "(4) エキゾースト・バルブは、燃焼ガスの排気効率を高めるためピストンが上死点に達する前に開き、下死点を少し過ぎてから閉じる。"
+      },
+      "answer": "ウ",
+      "officialAnswerNumber": "3",
+      "explanation": "4サイクル機関のオーバラップは吸排気両バルブが同時に開く期間を指す。",
+      "choiceExplanations": {
+        "ア": "クランクケース圧縮は2サイクル機関の説明である。",
+        "イ": "1ストロークでクランクシャフトは半回転する。",
+        "ウ": "吸排気両バルブが同時に開く時期がオーバラップである。",
+        "エ": "排気バルブは下死点前に開き、上死点後に閉じる。上下死点が逆である。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        2
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "4サイクル・エンジン"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "3-motorcycle",
+      "category": "三級２輪自動車",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級２輪自動車 No.1",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 2,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf#page=2",
+          "pdfSha256": "e1278a36badf4c8896c7a1ee4362a2badc67dc2bad50f9fa2a91934c40e3e1fc"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2025-second-3-motorcycle-q03",
+      "qNumber": 3,
+      "question": "バルブ機構に関する記述として、適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) カム・リフトとは、長径と短径との和をいう。",
+        "イ": "(2) バルブ・シートは、バルブ・フェースと密着し燃焼室の気密を保持する部分である。",
+        "ウ": "(3) バルブ・スプリングの材料は、耐摩耗性の高い特殊鋳鉄が用いられている。",
+        "エ": "(4) カム・チェーン・テンショナは、クランクシャフトの回転をカム・スプロケットへ伝えるためのものである。"
+      },
+      "answer": "イ",
+      "officialAnswerNumber": "2",
+      "explanation": "バルブ・シートとバルブ・フェースが密着して燃焼室を密封する。",
+      "choiceExplanations": {
+        "ア": "カム・リフトは長径と短径の差である。",
+        "イ": "接触部が密着して気密を保つ。",
+        "ウ": "バルブ・スプリングはばね鋼を用い、鋳鉄ではない。",
+        "エ": "回転を伝えるのはカム・チェーン。テンショナはチェーン張力を保つ。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        2
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "バルブ機構"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "3-motorcycle",
+      "category": "三級２輪自動車",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級２輪自動車 No.3",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 2,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf#page=2",
+          "pdfSha256": "e1278a36badf4c8896c7a1ee4362a2badc67dc2bad50f9fa2a91934c40e3e1fc"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2025-second-3-motorcycle-q05",
+      "qNumber": 5,
+      "question": "図に示すスパーク・プラグの端子を表すものとして、適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) A",
+        "イ": "(2) B",
+        "ウ": "(3) C",
+        "エ": "(4) D"
+      },
+      "answer": "エ",
+      "officialAnswerNumber": "4",
+      "explanation": "図のDはスパーク・プラグ上端の端子で、高電圧が入力される。",
+      "choiceExplanations": {
+        "ア": "Aは火花ギャップ側の電極で、端子ではない。",
+        "イ": "Bは先端の電極付近で、端子ではない。",
+        "ウ": "Cは内部の導電部付近で、外部接続端子ではない。",
+        "エ": "Dが上端の接続端子である。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "sourcePages": [
+        3
+      ],
+      "sourceFigureRequired": true,
+      "topicTags": [
+        "図に示すスパーク・プラグの端子を表すものとして、適切なも"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "3-motorcycle",
+      "category": "三級２輪自動車",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級２輪自動車 No.5",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 3,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf#page=3",
+          "pdfSha256": "e1278a36badf4c8896c7a1ee4362a2badc67dc2bad50f9fa2a91934c40e3e1fc"
+        }
+      ],
+      "sourceFigureAssets": [
+        {
+          "physicalPage": 3,
+          "relativePath": "figures/jaspa-2025-second-3-motorcycle-p03.webp"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-3-motorcycle-q06",
+      "qNumber": 6,
+      "question": "吸排気装置に関する記述として、適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) エア・クリーナの役割の一つに、エンジンの空気吸入騒音の低減がある。",
+        "イ": "(2) ビスカス式エレメントのエア・クリーナは、エレメントに目詰まりがある場合、内側からエアを吹きつけて清掃を行う。",
+        "ウ": "(3) マフラは、エンジンから排出される高温・高圧の排気ガスの圧力を上げることで、排気騒音を低下させる。",
+        "エ": "(4) ブローバイ・ガス還元装置は、クランクケース内に吹き抜けた未燃焼ガスを、エキゾースト・ポートに導入して燃焼させる。"
+      },
+      "answer": "ア",
+      "officialAnswerNumber": "1",
+      "explanation": "エア・クリーナは吸入空気をろ過するほか、吸気騒音の低減にも寄与する。",
+      "choiceExplanations": {
+        "ア": "ろ過と吸気騒音低減の役割がある。",
+        "イ": "ビスカス式は清掃再使用せず、目詰まり時は交換する。",
+        "ウ": "マフラは排気ガスの圧力変動を減衰させ騒音を下げる。",
+        "エ": "ブローバイ・ガスは吸気系へ戻して再燃焼させる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        3
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "吸排気装置"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "3-motorcycle",
+      "category": "三級２輪自動車",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級２輪自動車 No.6",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 3,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf#page=3",
+          "pdfSha256": "e1278a36badf4c8896c7a1ee4362a2badc67dc2bad50f9fa2a91934c40e3e1fc"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2025-second-3-motorcycle-q07",
+      "qNumber": 7,
+      "question": "エンジンの電子制御装置に関する記述として、不適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) 温度センサは、温度変化により、抵抗値が変化するサーミスタが用いられている。",
+        "イ": "(2) スロットル・ポジション・センサは、可変抵抗器の抵抗値変化を電圧の変化に置き換えている。",
+        "ウ": "(3) バキューム・センサは、インジェクタに掛かる燃圧をインテーク・マニホールド内の圧力に対して常に一定に保つ働きをするものである。",
+        "エ": "(4) アイドル・スピード・コントロール・バルブは、始動、暖機、アイドリングのエンジン回転速度条件に合わせて吸入空気量を最適に制御している。"
+      },
+      "answer": "ウ",
+      "officialAnswerNumber": "3",
+      "explanation": "不適切なのは(3)。バキューム・センサは吸気管圧力を検出する。燃圧調整はプレッシャ・レギュレータの働きである。",
+      "choiceExplanations": {
+        "ア": "サーミスタの抵抗変化で温度を検出する。",
+        "イ": "可変抵抗器の出力電圧でスロットル開度を検出する。",
+        "ウ": "燃圧を吸気管圧に対して調整するのはプレッシャ・レギュレータである。",
+        "エ": "吸入空気量を調整してアイドル回転数を制御する。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        3
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "エンジンの電子制御装置"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "3-motorcycle",
+      "category": "三級２輪自動車",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級２輪自動車 No.7",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 3,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf#page=3",
+          "pdfSha256": "e1278a36badf4c8896c7a1ee4362a2badc67dc2bad50f9fa2a91934c40e3e1fc"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2025-second-3-motorcycle-q08",
+      "qNumber": 8,
+      "question": "励磁式オルタネータの構成部品として、不適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) コンミュテータ",
+        "イ": "(2) ステータ・コイル",
+        "ウ": "(3) ロータ・コイル",
+        "エ": "(4) ダイオード"
+      },
+      "answer": "ア",
+      "officialAnswerNumber": "1",
+      "explanation": "不適切なのは(1)。励磁式オルタネータはスリップ・リングを用い、コンミュテータは直流機の部品である。",
+      "choiceExplanations": {
+        "ア": "コンミュテータは直流機の整流子で、交流発電機の構成部品ではない。",
+        "イ": "ステータ・コイルに交流が誘起される。",
+        "ウ": "ロータ・コイルを励磁して磁界を作る。",
+        "エ": "ダイオードで発生した交流を整流する。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        3
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "励磁式オルタネータの構成部品として、不適切なものは次のう"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "3-motorcycle",
+      "category": "三級２輪自動車",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級２輪自動車 No.8",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 3,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf#page=3",
+          "pdfSha256": "e1278a36badf4c8896c7a1ee4362a2badc67dc2bad50f9fa2a91934c40e3e1fc"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2025-second-3-motorcycle-q16",
+      "qNumber": 16,
+      "question": "機械式のドラム式ブレーキの構成部品として、適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) ブリーダ・ボルト",
+        "イ": "(2) ブレーキ・カム",
+        "ウ": "(3) ピストン・シール",
+        "エ": "(4) ピストン・カップ"
+      },
+      "answer": "イ",
+      "officialAnswerNumber": "2",
+      "explanation": "機械式ドラム・ブレーキではブレーキ・カムがシューを押し広げる。",
+      "choiceExplanations": {
+        "ア": "ブリーダ・ボルトは油圧式のエア抜き部品である。",
+        "イ": "ブレーキ・カムがシューを機械的に押し広げる。",
+        "ウ": "ピストン・シールは油圧式の部品である。",
+        "エ": "ピストン・カップは油圧式の部品である。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        5
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "機械式のドラム式ブレーキの構成部品として、適切なものは次"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "3-motorcycle",
+      "category": "三級２輪自動車",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級２輪自動車 No.16",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 5,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf#page=5",
+          "pdfSha256": "e1278a36badf4c8896c7a1ee4362a2badc67dc2bad50f9fa2a91934c40e3e1fc"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2025-second-3-motorcycle-q19",
+      "qNumber": 19,
+      "question": "シャシ関係の点検・整備に関する記述として、不適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) クラッチの作用の点検は、エンジンをアイドリングさせた状態で行う。",
+        "イ": "(2) チェーンのたるみの調整は、リヤ・ホイールのアクスル・ナットを緩めて、チェーン・アジャスタで調整する。",
+        "ウ": "(3) ドラム式ブレーキのブレーキ・ペダルの遊びの点検は、ブレーキ・ペダルを手で押して遊びがないことを点検する。",
+        "エ": "(4) ディスクとパッドの隙間の点検は、ブレーキを数回作動させ、パッドを安定させた後、ホイールを浮かせて手で回したときに引きずりがないかを点検する。"
+      },
+      "answer": "ウ",
+      "officialAnswerNumber": "3",
+      "explanation": "不適切なのは(3)。ペダルには規定の遊びが必要であり、遊びがない状態を良しとしない。",
+      "choiceExplanations": {
+        "ア": "クラッチの作用確認にはアイドリング中の入切状態を確認する。",
+        "イ": "アクスルを緩め、左右のアジャスタでたるみを合わせる。",
+        "ウ": "遊びは規定範囲であることを確認する。ゼロにしない。",
+        "エ": "ブレーキを作動させてから車輪を回し、引きずりを確認する。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        6
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "シャシ関係の点検・整備"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "3-motorcycle",
+      "category": "三級２輪自動車",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級２輪自動車 No.19",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 6,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf#page=6",
+          "pdfSha256": "e1278a36badf4c8896c7a1ee4362a2badc67dc2bad50f9fa2a91934c40e3e1fc"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2025-second-3-motorcycle-q20",
+      "qNumber": 20,
+      "question": "ヘッドランプの点検に関する記述として、不適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) ランプが暗い場合は、充電量不足が推測される。",
+        "イ": "(2) 光度が不足する場合は、ヒューズ切れが推測される。",
+        "ウ": "(3) ランプが点灯しない場合は、配線の断線が推測される。",
+        "エ": "(4) 減光操作をすると消灯する場合は、ディマ・スイッチの故障が推測される。"
+      },
+      "answer": "イ",
+      "officialAnswerNumber": "2",
+      "explanation": "不適切なのは(2)。ヒューズ切れなら通常は点灯しない。光度不足なら電圧降下やレンズ汚れなどを調べる。",
+      "choiceExplanations": {
+        "ア": "電源電圧が低いとランプが暗くなり得る。",
+        "イ": "ヒューズ切れは回路を遮断するため、光度不足ではなく不点灯になる。",
+        "ウ": "断線は不点灯の原因となる。",
+        "エ": "切替操作時だけ消灯するならディマ・スイッチなどを疑う。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        6
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "ヘッドランプの点検"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "3-motorcycle",
+      "category": "三級２輪自動車",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級２輪自動車 No.20",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 6,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf#page=6",
+          "pdfSha256": "e1278a36badf4c8896c7a1ee4362a2badc67dc2bad50f9fa2a91934c40e3e1fc"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2025-second-3-motorcycle-q23",
+      "qNumber": 23,
+      "question": "制動力を表す単位として、適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) N・m（ニュートン・メートル）",
+        "イ": "(2) C（クーロン）",
+        "ウ": "(3) W（ワット）",
+        "エ": "(4) kN（キロニュートン）"
+      },
+      "answer": "エ",
+      "officialAnswerNumber": "4",
+      "explanation": "制動力は力なので、kNなどの力の単位で表す。",
+      "choiceExplanations": {
+        "ア": "N・mはトルクまたは仕事の単位である。",
+        "イ": "Cは電荷の単位である。",
+        "ウ": "Wは仕事率の単位である。",
+        "エ": "kNは力の単位で、制動力を表せる。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        7
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "制動力を表す単位として、適切なものは次のうちどれか。"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "3-motorcycle",
+      "category": "三級２輪自動車",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級２輪自動車 No.23",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 7,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf#page=7",
+          "pdfSha256": "e1278a36badf4c8896c7a1ee4362a2badc67dc2bad50f9fa2a91934c40e3e1fc"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2025-second-3-motorcycle-q24",
+      "qNumber": 24,
+      "question": "ベアリングのうちラジアル方向とスラスト方向の両方の荷重を受ける転がり軸受けとして、適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) プレーン・ベアリング",
+        "イ": "(2) ラジアル・ベアリング",
+        "ウ": "(3) アンギュラ・ベアリング",
+        "エ": "(4) スラスト・ベアリング"
+      },
+      "answer": "ウ",
+      "officialAnswerNumber": "3",
+      "explanation": "アンギュラ・ベアリングは接触角を持ち、ラジアル荷重とスラスト荷重の両方を受ける。",
+      "choiceExplanations": {
+        "ア": "プレーン・ベアリングはすべり軸受であり、設問の転がり軸受ではない。",
+        "イ": "ラジアル・ベアリングは主として半径方向の荷重を受ける。",
+        "ウ": "接触角により両方向の荷重を受ける。",
+        "エ": "スラスト・ベアリングは主として軸方向の荷重を受ける。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        7
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "ベアリングのうちラジアル方向とスラスト方向の両方の荷重を"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "3-motorcycle",
+      "category": "三級２輪自動車",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級２輪自動車 No.24",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 7,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf#page=7",
+          "pdfSha256": "e1278a36badf4c8896c7a1ee4362a2badc67dc2bad50f9fa2a91934c40e3e1fc"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2025-second-3-motorcycle-q26",
+      "qNumber": 26,
+      "question": "図に示す電気回路において、電圧計Vが示す値として、適切なものは次のうちどれか。ただし、バッテリ、配線等の抵抗はないものとする。",
+      "choices": {
+        "ア": "(1) 0.75 V",
+        "イ": "(2) 4 V",
+        "ウ": "(3) 8 V",
+        "エ": "(4) 9 V"
+      },
+      "answer": "イ",
+      "officialAnswerNumber": "2",
+      "explanation": "3 Ωと6 Ωは直列で合計9 Ω。3 Ωにかかる電圧は12×3／9＝4 Vである。",
+      "choiceExplanations": {
+        "ア": "0.75 Vは直列分圧の計算結果ではない。",
+        "イ": "3 Ωの電圧降下は4 Vとなる。",
+        "ウ": "8 Vは6 Ω側の電圧降下である。",
+        "エ": "9 Vは抵抗の合計値9 Ωを電圧と混同している。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": true,
+      "sourcePages": [
+        7
+      ],
+      "sourceFigureRequired": true,
+      "topicTags": [
+        "図に示す電気回路において、電圧計Vが示す値として、適切な"
+      ],
+      "difficulty": 3,
+      "isCalculation": true,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "3-motorcycle",
+      "category": "三級２輪自動車",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級２輪自動車 No.26",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 7,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf#page=7",
+          "pdfSha256": "e1278a36badf4c8896c7a1ee4362a2badc67dc2bad50f9fa2a91934c40e3e1fc"
+        }
+      ],
+      "sourceFigureAssets": [
+        {
+          "physicalPage": 7,
+          "relativePath": "figures/jaspa-2025-second-3-motorcycle-p07.webp"
+        }
+      ]
+    },
+    {
+      "id": "jidosha-2025-second-3-motorcycle-q27",
+      "qNumber": 27,
+      "question": "燃焼室容積48 cm³、ピストンの行程容積（排気量）648 cm³のエンジンの圧縮比として、適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) 11.5",
+        "イ": "(2) 12.5",
+        "ウ": "(3) 13.5",
+        "エ": "(4) 14.5"
+      },
+      "answer": "エ",
+      "officialAnswerNumber": "4",
+      "explanation": "圧縮比＝（行程容積＋燃焼室容積）／燃焼室容積＝（648＋48）／48＝14.5。",
+      "choiceExplanations": {
+        "ア": "下死点での全容積696cm³を上死点の燃焼室容積48cm³で割るため、11.5にはならない。",
+        "イ": "圧縮比の分子は648＋48＝696cm³である。696／48＝14.5となり、12.5は計算結果と一致しない。",
+        "ウ": "648／48＝13.5は行程容積だけを燃焼室容積で割った値。圧縮比には燃焼室容積も加えるため、13.5＋1＝14.5となる。",
+        "エ": "圧縮比は下死点の全容積と上死点の燃焼室容積の比。（648＋48）／48＝696／48＝14.5で、与条件から得られる値。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        7
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "圧縮比",
+        "行程容積",
+        "燃焼室容積"
+      ],
+      "difficulty": 3,
+      "isCalculation": true,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "3-motorcycle",
+      "category": "三級２輪自動車",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級２輪自動車 No.27",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 7,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf#page=7",
+          "pdfSha256": "e1278a36badf4c8896c7a1ee4362a2badc67dc2bad50f9fa2a91934c40e3e1fc"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2025-second-3-motorcycle-q28",
+      "qNumber": 28,
+      "question": "「道路運送車両法」に照らし、次の文章の（　）に当てはまるものとして、適切なものはどれか。「道路運送車両」とは、（　）をいう。",
+      "choices": {
+        "ア": "(1) 自動車及び軽車両",
+        "イ": "(2) 自動車及び原動機付自転車",
+        "ウ": "(3) 原動機付自転車及び軽自動車",
+        "エ": "(4) 自動車、原動機付自転車及び軽車両"
+      },
+      "answer": "エ",
+      "officialAnswerNumber": "4",
+      "explanation": "道路運送車両法では、自動車、原動機付自転車、軽車両を道路運送車両とする。",
+      "choiceExplanations": {
+        "ア": "原動機付自転車が欠ける。",
+        "イ": "軽車両が欠ける。",
+        "ウ": "自動車の全体が欠ける。軽自動車だけでは足りない。",
+        "エ": "三つの車両区分をすべて含む。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        8
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "「道路運送車両法」に照らし、次の文章の（　）に当てはまる"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "3-motorcycle",
+      "category": "三級２輪自動車",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級２輪自動車 No.28",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 8,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf#page=8",
+          "pdfSha256": "e1278a36badf4c8896c7a1ee4362a2badc67dc2bad50f9fa2a91934c40e3e1fc"
+        }
+      ],
+      "sourceFigureAssets": []
+    },
+    {
+      "id": "jidosha-2025-second-3-motorcycle-q30",
+      "qNumber": 30,
+      "question": "「道路運送車両の保安基準」及び「道路運送車両の保安基準の細目を定める告示」に照らし、最高速度が100 km/hの二輪自動車の尾灯の基準に関する記述として、不適切なものは次のうちどれか。",
+      "choices": {
+        "ア": "(1) 尾灯の灯光の色は、赤色であること。",
+        "イ": "(2) 尾灯は、後面に1個備えればよい。",
+        "ウ": "(3) 尾灯は、灯器が損傷し、又はレンズ面が著しく汚損しているものでないこと。",
+        "エ": "(4) 尾灯は、夜間にその後方150 mの距離から点灯を確認できるものであり、かつ、その照射光線は、他の交通を妨げないものであること。"
+      },
+      "answer": "エ",
+      "officialAnswerNumber": "4",
+      "explanation": "不適切なのは(4)。尾灯の視認距離は夜間後方300 mであり、150 mでは不足する。",
+      "choiceExplanations": {
+        "ア": "尾灯の色は赤色である。",
+        "イ": "二輪車の尾灯は後面に1個を備えればよい。",
+        "ウ": "損傷や著しい汚損がないことが必要である。",
+        "エ": "150 mではなく、夜間後方300 mから点灯を確認できる基準である。"
+      },
+      "explanationCoverage": "full",
+      "hasImage": false,
+      "sourcePages": [
+        8
+      ],
+      "sourceFigureRequired": false,
+      "topicTags": [
+        "「道路運送車両の保安基準」及び「道路運送車両の保安基準の"
+      ],
+      "difficulty": 2,
+      "isCalculation": false,
+      "needsReview": false,
+      "reviewNotes": [],
+      "officialReferenceUrls": [
+        "https://www.mlit.go.jp/jidosha/kijyun/saimokubetten/saibet_064_00.pdf"
+      ],
+      "qualification": "jidousha-seibishi-gakka",
+      "session": "gakka",
+      "type": "multiple-choice",
+      "year": 2025,
+      "fiscalYear": 2025,
+      "season": "second",
+      "term": "second",
+      "subject": "3-motorcycle",
+      "category": "三級２輪自動車",
+      "examDate": "2026-03-22",
+      "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf",
+      "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_kai.pdf",
+      "sourceAttribution": "出典：日本自動車整備振興会連合会 令和7年度第2回自動車整備技能登録試験 三級２輪自動車 No.30",
+      "officialQuestionStatus": "normal",
+      "lastUpdated": "2026-10-11",
+      "permissionVerified": false,
+      "publicGo": 0,
+      "sourcePageReferences": [
+        {
+          "physicalPage": 8,
+          "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2025/20260322_3n.pdf#page=8",
+          "pdfSha256": "e1278a36badf4c8896c7a1ee4362a2badc67dc2bad50f9fa2a91934c40e3e1fc"
+        }
+      ],
+      "sourceFigureAssets": []
+    }
+  ],
+  "publication": false
+}

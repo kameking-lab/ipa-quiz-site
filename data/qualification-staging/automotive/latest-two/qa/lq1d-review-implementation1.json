@@ -1,0 +1,75 @@
+{
+  "model": "gpt-6-astra",
+  "verdict": "PASS",
+  "scope": {
+    "baselineCommit": "0a80989b0",
+    "reviewedCommit": "4c4c59a01",
+    "branch": "qual/LQ1D-20261104",
+    "reviewType": "Independent bounded LQ1D implementation review of committed changes and current accept-lq1c.py, receipt attributes, source-manifest line endings and ledger hash fixes.",
+    "newlyAcceptedIds": [
+      "jidosha-2026-first-2-gasoline-q31"
+    ],
+    "releaseOriginals": 608,
+    "baselineOriginalsPreserved": 607,
+    "continuationOriginals": 85,
+    "continuationPass": 83,
+    "referenceExcluded": [
+      "jidosha-2025-second-2-gasoline-q13"
+    ],
+    "holdExcluded": [
+      "jidosha-2026-first-body-q37"
+    ],
+    "taskFullyComplete": false,
+    "rights": "Owner rights accepted as verified; no STOP based on historic rights or acquisition flags."
+  },
+  "checks": [
+    {
+      "name": "baseline preservation",
+      "result": "PASS",
+      "detail": "Compared baseline Git objects against current parsed release and ledger: all 607 question objects and all 607 receipt rows unchanged. Every referenced baseline immutable receipt remains byte-identical to baseline Git content."
+    },
+    {
+      "name": "exact admission and candidate identity",
+      "result": "PASS",
+      "detail": "Only Q31 added to the release and only Q31 changed in the 85-candidate packet. Every candidate binding recomputed. Q31 canonical compact UTF-8 SHA256 is 350811a10cb5d4b9b84a6594caf679ba06861d786a72d88ddedb71523550bb16; matches release, ledger, delta and saved gpt-6-astra PASS receipt. All revision fields match. Full official identity retained: fiscalYear, term, subject, qNumber, answer, officialAnswerNumber and full source PDF/answer URLs, plus original stem, choices and source pages."
+    },
+    {
+      "name": "decision provenance and official answers",
+      "result": "PASS",
+      "detail": "All 85 progress decisions match copied gpt-6-astra receipts and receipt hashes. All 83 admitted continuation candidates have PASS, answerChecked, allFourExplanationsChecked and source-page coverage. All 608 release candidate and receipt hashes match the ledger; all answers match the official table under full year/term/subject/question identity; each retains four nonempty explanations. Q31 receipt explicitly addresses all four explanations and the official answer (2). Existing technical PASS not re-researched."
+    },
+    {
+      "name": "supporting source bytes and Git conversion",
+      "result": "PASS",
+      "detail": "Both supporting PNG hashes and available source PDF hashes match the source manifest. All three Q31 supportingEvidence hashes match current bytes, including manifest SHA256 6dfe244ac82dd1633bfe3b472fcde35191d1f4f052b8f3b810ab29208ddb8736. Git hash-object clean-filter identities equal raw identities for supporting files, original Q31 receipt and every release receipt. Original Q31 receipt equals immutable copy byte-for-byte. Both receipt paths have text unset through applicable .gitattributes; whitespace=cr-at-eol does not change bytes."
+    },
+    {
+      "name": "acceptance replay",
+      "result": "PASS",
+      "detail": "Executed accept-lq1c.py with no arguments and with the original Q31 review path. Intercepted all four proposed writes on each run and compared to existing UTF-8 text: identical. Copy operations were prohibited and none occurred. Identical accepted Q31 retains supportingEvidence through the new candidate-hash guard."
+    },
+    {
+      "name": "materialization and metadata",
+      "result": "PASS",
+      "detail": "Executed materialize-reviewed-release.py and refresh-release-metadata.py with writes intercepted and copies prohibited. Both materialized outputs and all three metadata outputs equal current text. Counts reproduce 608 questions, 11 qualifications, 105 existing public images and two excluded originals. Every bound public asset SHA256 checked."
+    },
+    {
+      "name": "reference and HOLD excluded from registries and grading",
+      "result": "PASS",
+      "detail": "Q13 reference and body Q37 absent from reviewed release; Q13 also absent from asset registry. Remaining register contains only Q37 HOLD. Inspected automotive adapter and eager/lazy registry routing: all use reviewed release. Saved automotive-release tests verify registry/pool equality and exclusion of unreleased IDs."
+    },
+    {
+      "name": "regression logs",
+      "result": "PASS",
+      "detail": "Inspected bounded lq1d-wave1 log summaries, not gigantic raw CLI logs: validation 27052 ok, fail=0; typecheck invokes tsc --noEmit without diagnostics; Vitest 5 files/1127 tests and 4 files/39 tests passed; Node 5 passed/0 failed. These are consistent with the reported validation/typecheck exit codes 0."
+    }
+  ],
+  "findings": [],
+  "limitations": [
+    "PASS applies only to this implementation scope. Q37 remains HOLD, Q13 remains REFERENCE outside ordinary grading, and the overall task is not fully complete.",
+    "Independent Q31 technical research and reviewer execution were not repeated; saved Astra evidence and its exact candidate binding were verified.",
+    "Generators were executed with writes intercepted; output equality compares Python-decoded text with universal newline handling. Receipt and supporting-evidence byte preservation was separately verified with raw hashes and Git clean filters; no fresh checkout or index mutation was performed.",
+    "Regression suites were assessed from existing logs, not rerun. The typecheck log contains no explicit process exit marker; reported exit 0 is corroborated by no diagnostics, not independently recovered from that log.",
+    "No product edits, commits, push, PR, deployment, secrets or agents. Any unfinished body investigation2 artifact is outside scope and ignored."
+  ]
+}

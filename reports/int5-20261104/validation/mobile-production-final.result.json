@@ -1,0 +1,16 @@
+{
+  "label": "mobile-production-final",
+  "command": [
+    "pnpm",
+    "--dir",
+    "mobile",
+    "run",
+    "build"
+  ],
+  "sourceHead": "c017ab7b04d0751fce05b868a042c15b0eb14d2a",
+  "startedAt": "2026-11-04T10:48:16.385Z",
+  "finishedAt": "2026-11-04T10:50:08.700Z",
+  "exitCode": 0,
+  "logSha256": "13ca8cc3603539b3168619b3ea19cb9c76fb0d315b44f673c9b2a4b3d80970fc",
+  "environment": "CI=true; inherited service credentials and mobile/feedback rollout configuration removed; no secret env files loaded"
+}

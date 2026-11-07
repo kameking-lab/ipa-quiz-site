@@ -18,7 +18,9 @@ import { NativePageQualificationActions } from "./QualificationActions";
 import { isQualificationUrl } from "../shared/qualification-schedules";
 import { openQualificationUrl } from "./qualification-platform";
 import { ManageSubscriptionButton } from "@/app/billing/ManageSubscriptionButton";
+import { PrivacyNote } from "@/components/ui/privacy-note";
 import { blocksNativeWebPurchase } from "../shared/native-billing-policy";
+import { installNativePetSupport, observePetStudyWrites, persistStudyAfterPets } from "./pet-support";
 const defaultMembership = new Membership();
 export const SITE_ORIGIN = "https://www.kakomon-ai.jp";
 const localUrl = "capacitor://localhost/index.html";
@@ -76,11 +78,13 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     if (!Capacitor.isNativePlatform() || !inSite) return;
     const disposers: Array<()=>void> = []; let disposed = false;
     const keep = (dispose: ()=>void)=> { if (disposed) dispose(); else disposers.push(dispose); };
+    keep(installNativePetSupport());
+    keep(observePetStudyWrites(()=>({ready:studyReady.current,owner:user.current}),e=>setNotice(String(e))));
     void refresh().catch(e=>setNotice(String(e)));
     void observeLogin(SITE_ORIGIN, e=>setNotice(String(e))).then(keep);
     void App.addListener("appStateChange", s=>{
       if(s.isActive)void refresh(true).catch(e=>setNotice(String(e)));
-      else if(studyReady.current)void persistStudy(user.current).catch(e=>setNotice(String(e)));
+      else if(studyReady.current)void persistStudyAfterPets(user.current).catch(e=>setNotice(String(e)));
     }).then(h=>keep(()=>{ void h.remove(); }));
     void observeReminderTap(()=>window.location.assign(`${SITE_ORIGIN}/review`)).then(keep);
     void Purchases.addCustomerInfoUpdateListener(()=>{ void refresh(true).catch(e=>setNotice(String(e))); }).then(id=>keep(()=>{ void Purchases.removeCustomerInfoUpdateListener({ listenerToRemove: id }); })).catch(()=>{});
@@ -120,7 +124,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   const card = "space-y-3 rounded-2xl border border-border bg-card p-4";
   return <aside aria-label="iPhoneの学習機能" className="border-b border-border bg-background px-4 py-2 text-sm">
     {!membershipOnly && <div className="mx-auto flex max-w-2xl items-center gap-2">
-      <button className={pill} onClick={()=>void run(async()=>{await persistStudy(user.current);location.assign(localUrl);})}>アプリのホーム</button>
+      <button className={pill} onClick={()=>void run(async()=>{await persistStudyAfterPets(user.current);location.assign(localUrl);})}>アプリのホーム</button>
       <button className={`${pill} ml-auto`} aria-expanded={open} aria-controls="native-settings" onClick={()=>setOpen(!open)}>会員・設定</button>
       <button className={pill} aria-label="このページを共有" onClick={()=>void run(async()=>{ await Share.share({ title:"過去問AI", url:location.href }); })}>共有</button>
     </div>}
@@ -144,7 +148,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
               await Preferences.set({key:`kakomon:pending-purchase:${r.entitlement.userId}`,value:"true"});setPurchasePending(true);
             });const confirmed=await refresh(true);
             setNotice(confirmed.entitlement.entitled?"購入を確認しました。有料会員の機能を利用できます。":"購入内容の確認待ちです。再購入せず、購入復元または会員状態の再確認をご利用ください。");
-          })}>{offer.product.priceString} / 月で登録</button></div>}
+          })}>{offer.product.priceString} / 月で登録</button><PrivacyNote variant="purchase" /></div>}
           {!access.entitled && access.userId && !offer && <p className="text-sm">商品情報を取得できていません。設定と通信を確認してください。</p>}
           <div className="grid gap-2 sm:grid-cols-2"><button className={secondary} disabled={busy || !access.userId || !config?.sdkKey} onClick={()=>void run(async()=>{ const r=await refresh(true); await membership.restore(r.configuration,r.entitlement); const confirmed=await refresh(true); setNotice(confirmed.entitlement.entitled?"購入を復元し、サーバーで権利を確認しました。":"有効な購入をサーバーで確認できませんでした。購入に使用したApple IDとログイン中のアカウントをご確認ください。承認待ちの場合は、承認後に再確認してください。"); })}>購入を復元</button>
             <button className={secondary} onClick={()=>void Browser.open({ url:"https://apps.apple.com/account/subscriptions" })}>App Storeで管理・解約</button></div>

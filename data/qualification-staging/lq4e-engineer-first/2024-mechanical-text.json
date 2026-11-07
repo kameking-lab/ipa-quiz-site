@@ -1,0 +1,529 @@
+{
+  "status": "PARTIAL_CONTENT_ACCEPTED_NOT_REGISTERED",
+  "qualification": "gijutsushi1-kikai",
+  "year": 2024,
+  "subject": "mechanical",
+  "expectedFullQualificationCount": 160,
+  "questions": [
+    {
+      "id": "gijutsushi1-kikai-2024-mechanical-III-07",
+      "printedNumber": "Ⅲ－7",
+      "questionNumber": 7,
+      "questionText": "内径 d＝8.0 [m]、肉厚 t＝4.0 [mm] の薄肉球殻容器に内圧 p＝1.0 [MPa] が作用するとき、円周方向応力 σθ に最も近い値はどれか。",
+      "choices": {
+        "1": "σθ＝125 [MPa]",
+        "2": "σθ＝500 [MPa]",
+        "3": "σθ＝750 [MPa]",
+        "4": "σθ＝1000 [MPa]",
+        "5": "σθ＝2000 [MPa]"
+      },
+      "officialAnswer": 2,
+      "scoringException": null,
+      "explanation": "薄肉球殻の膜応力は σθ＝pd/(4t)。d＝8000 mm とすると、1.0×8000/(4×4.0)＝500 MPa なので正答は2です。",
+      "choiceExplanations": {
+        "1": "125 MPaは正しい膜応力500 MPaの1/4であり、球殻の力の釣合いを満たしません。",
+        "2": "球殻を半分に切った断面で内圧の合力と膜応力を釣り合わせた値500 MPaに一致します。",
+        "3": "750 MPaは式 pd/(4t) に与えられた値を代入した結果と一致しません。",
+        "4": "1000 MPaは薄肉円筒の周方向応力 pd/(2t) に相当します。球殻ではその半分です。",
+        "5": "2000 MPaは正しい値の4倍です。内径と肉厚を同じ長さ単位にそろえて pd/(4t) を使います。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_3.pdf",
+      "sourceQuestionPage": 5,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "f817b23ab7316f6b9a2cc57b1304c1d8c82d876598ffefa44d93119196ac52d8",
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 専門科目 機械部門 Ⅲ－7。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against both saved OCR passes; equations and tables represented as explicit text.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review5.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-mechanical-III-08",
+      "printedNumber": "Ⅲ－8",
+      "questionNumber": 8,
+      "questionText": "A群の材料の力学的性質について、これらを評価するための適切な試験がB群にないものはどれか。\nB群：引張試験、疲労試験、クリープ試験、シャルピー衝撃試験、破壊靭性試験",
+      "choices": {
+        "1": "硬さ",
+        "2": "縦弾性係数",
+        "3": "延性－脆性遷移温度",
+        "4": "降伏点",
+        "5": "S－N線図"
+      },
+      "officialAnswer": 1,
+      "scoringException": null,
+      "explanation": "正答は1です。硬さを直接評価するブリネル、ビッカース、ロックウェルなどの硬さ試験はB群にありません。",
+      "choiceExplanations": {
+        "1": "該当します。圧子の押込み等で硬さを測る硬さ試験がB群に含まれていません。",
+        "2": "該当しません。引張試験の弾性域の応力－ひずみ線図の傾きから評価できます。",
+        "3": "該当しません。温度を変えたシャルピー衝撃試験による吸収エネルギー等から評価できます。",
+        "4": "該当しません。引張試験の応力－ひずみ線図から評価できます。",
+        "5": "該当しません。疲労試験で応力振幅と破断までの繰返し数を求めて作成できます。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_3.pdf",
+      "sourceQuestionPage": 6,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "f817b23ab7316f6b9a2cc57b1304c1d8c82d876598ffefa44d93119196ac52d8",
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 専門科目 機械部門 Ⅲ－8。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against both saved OCR passes; equations and tables represented as explicit text.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review5.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-mechanical-III-11",
+      "printedNumber": "Ⅲ－11",
+      "questionNumber": 11,
+      "questionText": "次の状態方程式・出力方程式で表される2次の線形システムの、入力 u から出力 y までの伝達関数 G(s) を表す式として、最も適切なものはどれか。ただし、x は2次の状態ベクトルである。\nẋ＝[[0, 1], [−6, −5]]x＋[0, 1]ᵀu、y＝[1, 0]x",
+      "choices": {
+        "1": "G(s)＝s²＋5s＋6",
+        "2": "G(s)＝s²−5s＋6",
+        "3": "G(s)＝1/(s²＋5s＋6)",
+        "4": "G(s)＝1/(s²−5s＋6)",
+        "5": "状態ベクトル x が具体的に示されないと伝達関数は求められない"
+      },
+      "officialAnswer": 3,
+      "scoringException": null,
+      "explanation": "正答は3です。ẋ₁＝x₂、ẋ₂＝−6x₁−5x₂＋u、y＝x₁ より、ÿ＋5ẏ＋6y＝u。初期値を0としてラプラス変換すると G(s)＝Y/U＝1/(s²＋5s＋6) です。",
+      "choiceExplanations": {
+        "1": "s²＋5s＋6は伝達関数の分母であり、その逆数が必要です。",
+        "2": "分母と分子を逆にしているうえ、5sの符号も状態方程式と一致しません。",
+        "3": "適切です。状態方程式から消去した微分方程式と一致します。",
+        "4": "減衰項5sの符号が逆です。状態行列の−5から分母には＋5sが現れます。",
+        "5": "係数行列と入出力行列が与えられているため、状態の具体的な物理量を知らなくても求められます。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_3.pdf",
+      "sourceQuestionPage": 8,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "f817b23ab7316f6b9a2cc57b1304c1d8c82d876598ffefa44d93119196ac52d8",
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 専門科目 機械部門 Ⅲ－11。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against both saved OCR passes; equations and tables represented as explicit text.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review5.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-mechanical-III-12",
+      "printedNumber": "Ⅲ－12",
+      "questionNumber": 12,
+      "questionText": "s領域で表された次の式 F(s) を逆ラプラス変換した f(t) の結果として、最も適切なものはどれか。ただし、s はラプラス演算子、t は時間とする。\nF(s)＝(s＋1)/(s²＋4s＋5)\n参考：ラプラス変換表 e^(at) ↔ 1/(s−a)、sin(ωt) ↔ ω/(s²＋ω²)、cos(ωt) ↔ s/(s²＋ω²)",
+      "choices": {
+        "1": "f(t)＝e^(−2t)(cos t−sin t)",
+        "2": "f(t)＝e^(2t)(cos t＋sin t)",
+        "3": "f(t)＝e^(2t)(cos t−sin t)",
+        "4": "f(t)＝e^(−2t)cos 2t",
+        "5": "f(t)＝e^(−t)cos t"
+      },
+      "officialAnswer": 1,
+      "scoringException": null,
+      "explanation": "正答は1です。分母は(s＋2)²＋1、分子は(s＋2)−1です。sをs＋2に移動する公式から e^(−2t)(cos t−sin t) となります。",
+      "choiceExplanations": {
+        "1": "適切です。(s＋2)/((s＋2)²＋1) と −1/((s＋2)²＋1) の逆変換の和です。",
+        "2": "指数の符号とsin項の符号が逆です。極は−2±iなので減衰します。",
+        "3": "sin項の符号は合っていますが、指数は e^(−2t) であり増大する e^(2t) ではありません。",
+        "4": "振動角周波数は1です。分母の平方完成後の定数1は角周波数の二乗に相当します。",
+        "5": "減衰率は2であり、sin項も必要です。この式の変換は与式と一致しません。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_3.pdf",
+      "sourceQuestionPage": 8,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "f817b23ab7316f6b9a2cc57b1304c1d8c82d876598ffefa44d93119196ac52d8",
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 専門科目 機械部門 Ⅲ－12。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against both saved OCR passes; equations and tables represented as explicit text.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review5.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-mechanical-III-13",
+      "printedNumber": "Ⅲ－13",
+      "questionNumber": 13,
+      "questionText": "以下の伝達関数 G(s) を持つ系の安定性に関する次の記述のうち、最も適切なものはどれか。\nG(s)＝(s−2)/(s²＋5s＋6)",
+      "choices": {
+        "1": "2つの極（根）が正の値（2、3）を持つから、この系は不安定である。",
+        "2": "2つの極（根）が負の値（−2、−3）を持つから、この系は安定である。",
+        "3": "2つの極（根）が負の値（−2、−3）を持つから、この系は不安定である。",
+        "4": "零点が2であるから、この系は不安定である。",
+        "5": "零点が−2であるから、この系は安定である。"
+      },
+      "officialAnswer": 2,
+      "scoringException": null,
+      "explanation": "正答は2です。分母は(s＋2)(s＋3)なので極は−2と−3です。すべて左半平面にあり安定です。右半平面の零点2は非最小位相性に関係しますが、この系の極の安定性とは別です。",
+      "choiceExplanations": {
+        "1": "分母の根の符号が逆です。極は2、3ではなく−2、−3です。",
+        "2": "適切です。連続時間系の極がすべて実部負であるため応答は減衰します。",
+        "3": "極の値は正しいものの、すべて実部負であるため安定という結論になります。",
+        "4": "零点2だけで不安定とは判断できません。安定性を決める極は左半平面にあります。",
+        "5": "零点は分子s−2の根である2です。−2は極であり零点ではありません。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_3.pdf",
+      "sourceQuestionPage": 9,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "f817b23ab7316f6b9a2cc57b1304c1d8c82d876598ffefa44d93119196ac52d8",
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 専門科目 機械部門 Ⅲ－13。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against both saved OCR passes; equations and tables represented as explicit text.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review5.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-mechanical-III-16",
+      "printedNumber": "Ⅲ－16",
+      "questionNumber": 16,
+      "questionText": "横振動するはりの境界条件には、自由端、固定端、単純支持端などがある。以下はそれぞれの境界条件に適合する式を示したものである。条件式（A）、（B）、（C）と、境界条件の組合せにおいて、最も適切なものはどれか。ただし、はりの長手方向の座標を x、横方向の変位を w(x) とする。\n（A）w(x)＝0、∂w(x)/∂x＝0\n（B）w(x)＝0、∂²w(x)/∂x²＝0\n（C）∂²w(x)/∂x²＝0、∂³w(x)/∂x³＝0",
+      "choices": {
+        "1": "A：固定端／B：単純支持端／C：自由端",
+        "2": "A：固定端／B：自由端／C：単純支持端",
+        "3": "A：単純支持端／B：固定端／C：自由端",
+        "4": "A：単純支持端／B：自由端／C：固定端",
+        "5": "A：自由端／B：単純支持端／C：固定端"
+      },
+      "officialAnswer": 1,
+      "scoringException": null,
+      "explanation": "正答は1です。固定端では変位と傾きが0、単純支持端では変位と曲げモーメントが0、自由端では曲げモーメントとせん断力が0です。曲げモーメントはwの2階微分、せん断力は3階微分に対応します。",
+      "choiceExplanations": {
+        "1": "適切です。Aは変位・傾き拘束、Bは変位拘束・曲げモーメントなし、Cは曲げモーメント・せん断力なしです。",
+        "2": "BとCが逆です。自由端では変位を0に拘束しません。",
+        "3": "AとBが逆です。固定端は傾きも0でありAに対応します。",
+        "4": "Aは固定端、Bは単純支持端、Cは自由端なので、すべての対応が異なります。",
+        "5": "AとCが逆です。自由端の条件は力学的な端部荷重が0であるCです。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_3.pdf",
+      "sourceQuestionPage": 12,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "f817b23ab7316f6b9a2cc57b1304c1d8c82d876598ffefa44d93119196ac52d8",
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 専門科目 機械部門 Ⅲ－16。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against both saved OCR passes; equations and tables represented as explicit text.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review5.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-mechanical-III-23",
+      "printedNumber": "Ⅲ－23",
+      "questionNumber": 23,
+      "questionText": "室温20 ℃の大きな部屋で、表面温度300 ℃、放射率0.8の物体が置かれている。物体表面での平均対流熱伝達率を20 W/(m²・K) とするとき、物体から放熱される熱流束として、最も近い値はどれか。ただし、物体からの伝熱は等方的であるとし、ステファン・ボルツマン定数は5.67×10^−8 W/(m²・K⁴) とする。",
+      "choices": {
+        "1": "0.5 kW/m²",
+        "2": "1 kW/m²",
+        "3": "5 kW/m²",
+        "4": "6 kW/m²",
+        "5": "10 kW/m²"
+      },
+      "officialAnswer": 5,
+      "scoringException": null,
+      "explanation": "正答は5です。対流は20×(300−20)＝5600 W/m²。放射は0.8×5.67×10^−8×(573.15⁴−293.15⁴)≒4560 W/m²。合計約10.2 kW/m²です。放射の温度には絶対温度を使います。",
+      "choiceExplanations": {
+        "1": "0.5 kW/m²は対流成分5.6 kW/m²だけよりも小さく、総放熱量として不足します。",
+        "2": "1 kW/m²も対流成分だけより小さく、放射を加えた値と一致しません。",
+        "3": "放射成分約4.6 kW/m²に近い値ですが、対流成分も加える必要があります。",
+        "4": "対流成分約5.6 kW/m²には近いものの、放射成分約4.6 kW/m²が欠けています。",
+        "5": "適切です。対流と放射を加えた約10.2 kW/m²に最も近い値です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_3.pdf",
+      "sourceQuestionPage": 17,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "f817b23ab7316f6b9a2cc57b1304c1d8c82d876598ffefa44d93119196ac52d8",
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 専門科目 機械部門 Ⅲ－23。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against both saved OCR passes; equations and tables represented as explicit text.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review5.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-mechanical-III-25",
+      "printedNumber": "Ⅲ－25",
+      "questionNumber": 25,
+      "questionText": "定常状態で用いられている熱交換器に関する次の（ア）～（オ）の記述のうち、正しいものの組合せとして、最も適切なものはどれか。\n（ア）並流型熱交換器において、高温流体と低温流体の温度差は入口において最大となる。\n（イ）対数平均温度差は、高温流体の入口温度と低温流体の出口温度が与えられれば求めることができる。\n（ウ）向流型熱交換器において、低温流体の温度は高温流体の出口温度を超えることがある。\n（エ）向流型熱交換器の熱交換量は、熱通過率と対数平均温度差が与えられれば求められる。\n（オ）熱交換器内部の隔板の熱通過率に対し、隔板の厚さと密度の両方が影響する。",
+      "choices": {
+        "1": "（ア）と（ウ）",
+        "2": "（ウ）と（エ）",
+        "3": "（ウ）と（オ）",
+        "4": "（ア）と（エ）",
+        "5": "（イ）と（エ）"
+      },
+      "officialAnswer": 1,
+      "scoringException": null,
+      "explanation": "正答は1です。アとウが正しい記述です。イは両端の温度差が必要、エは伝熱面積も必要、オは定常の熱抵抗に用いる物性が密度ではなく熱伝導率であるため誤りです。",
+      "choiceExplanations": {
+        "1": "適切です。並流では入口で温度差が最大です。向流では低温側出口温度が高温側出口温度を超えることがあります。",
+        "2": "エが誤りです。Q＝UAΔTlmなので熱通過率Uと対数平均温度差だけでは伝熱面積Aが足りません。",
+        "3": "オが誤りです。隔板の熱抵抗は厚さを熱伝導率で割った値に関係し、密度そのものは入りません。",
+        "4": "アは正しいですが、エは伝熱面積を欠いています。",
+        "5": "イは高温側出口と低温側入口の情報も必要です。エも伝熱面積を欠きます。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_3.pdf",
+      "sourceQuestionPage": 18,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "f817b23ab7316f6b9a2cc57b1304c1d8c82d876598ffefa44d93119196ac52d8",
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 専門科目 機械部門 Ⅲ－25。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against both saved OCR passes; equations and tables represented as explicit text.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review5.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-mechanical-III-27",
+      "printedNumber": "Ⅲ－27",
+      "questionNumber": 27,
+      "questionText": "次の記述の、［ ］に入る数字の組合せとして、最も適切なものはどれか。\n一様流中に水平に置かれた平板上を流れる層流による強制対流熱伝達について考える。平板の平均熱伝達率は、流れ方向の平板の長さが2倍になると［ア］倍に、流速が2倍になると［イ］倍になる。",
+      "choices": {
+        "1": "ア：0.5／イ：2",
+        "2": "ア：1.4／イ：1.4",
+        "3": "ア：1.4／イ：0.7",
+        "4": "ア：0.7／イ：1.4",
+        "5": "ア：2／イ：0.5"
+      },
+      "officialAnswer": 4,
+      "scoringException": null,
+      "explanation": "正答は4です。層流平板の平均ヌセルト数はRe_L^(1/2)に比例します。平均熱伝達率はU^(1/2)L^(−1/2)に比例するので、長さ2倍で1/√2≒0.7倍、流速2倍で√2≒1.4倍です。",
+      "choiceExplanations": {
+        "1": "長さ・流速とも一次比例ではありません。長さには−1/2乗、流速には1/2乗で依存します。",
+        "2": "流速の倍率は正しいですが、長さを増やすと平均熱伝達率は減少します。",
+        "3": "長さと流速の効果が逆です。長さ2倍で減少し、流速2倍で増加します。",
+        "4": "適切です。ア＝1/√2、イ＝√2を近似した組合せです。",
+        "5": "長さを増やすと熱伝達率は低下し、流速を増やすと上昇するため、増減が逆です。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_3.pdf",
+      "sourceQuestionPage": 19,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "f817b23ab7316f6b9a2cc57b1304c1d8c82d876598ffefa44d93119196ac52d8",
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 専門科目 機械部門 Ⅲ－27。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against both saved OCR passes; equations and tables represented as explicit text.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review5.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-mechanical-III-30",
+      "printedNumber": "Ⅲ－30",
+      "questionNumber": 30,
+      "questionText": "xy平面上の2次元流れにおいて、速度ベクトルのx方向成分 u、y方向成分 v がそれぞれ\nu＝A(x＋y)、v＝A(x−y)\nと表されているとき、xy平面に直交する方向の渦度として、最も適切なものはどれか。ただし、Aは定数とする。",
+      "choices": {
+        "1": "−2A",
+        "2": "−A",
+        "3": "0",
+        "4": "A",
+        "5": "2A"
+      },
+      "officialAnswer": 3,
+      "scoringException": null,
+      "explanation": "正答は3です。渦度のz成分は ∂v/∂x−∂u/∂y＝A−A＝0 です。",
+      "choiceExplanations": {
+        "1": "−2Aは与えられた二つの偏微分の符号を取り違えた値です。どちらもAです。",
+        "2": "一方の偏微分だけを用いています。渦度は二つの偏微分の差です。",
+        "3": "適切です。∂v/∂xと∂u/∂yが等しいため、差は0です。",
+        "4": "一方の偏微分のみでは渦度にはなりません。A−Aを計算します。",
+        "5": "二つの偏微分の和ではなく差を取るため2Aにはなりません。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_3.pdf",
+      "sourceQuestionPage": 20,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "f817b23ab7316f6b9a2cc57b1304c1d8c82d876598ffefa44d93119196ac52d8",
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 専門科目 機械部門 Ⅲ－30。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against both saved OCR passes; equations and tables represented as explicit text.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review5.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-mechanical-III-32",
+      "printedNumber": "Ⅲ－32",
+      "questionNumber": 32,
+      "questionText": "流体力学に関する次の記述のうち、最も不適切なものはどれか。",
+      "choices": {
+        "1": "自由渦では、渦度は存在しない。",
+        "2": "ニュートン流体では、せん断ひずみ速度とせん断応力が比例関係にある。",
+        "3": "定常状態では流線・流脈線・流跡線が一致する。",
+        "4": "粘性のない流体の流れをポテンシャル流れと呼ぶ。",
+        "5": "非圧縮性流れの連続の式は、流体の密度に依存しない形で与えられる。"
+      },
+      "officialAnswer": 4,
+      "scoringException": null,
+      "explanation": "正答は4です。ポテンシャル流れは速度ポテンシャルで表せる渦なしの流れです。非粘性であるだけでは渦なしとは限りません。",
+      "choiceExplanations": {
+        "1": "適切です。理想自由渦の速度場は渦中心の特異点を除いて渦度0です。中心についての特異性は別に扱います。",
+        "2": "適切です。比例係数を粘性係数とするニュートンの粘性法則です。",
+        "3": "適切です。速度場が時間によらない定常流では、これら三つの線が一致します。",
+        "4": "不適切です。非粘性という条件だけではポテンシャル流れになりません。渦なしであることが必要です。",
+        "5": "適切です。非圧縮性条件では連続の式は速度場の発散0と表せます。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_3.pdf",
+      "sourceQuestionPage": 21,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "f817b23ab7316f6b9a2cc57b1304c1d8c82d876598ffefa44d93119196ac52d8",
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 専門科目 機械部門 Ⅲ－32。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against both saved OCR passes; equations and tables represented as explicit text.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review5.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-mechanical-III-34",
+      "printedNumber": "Ⅲ－34",
+      "questionNumber": 34,
+      "questionText": "固体壁近傍に発達する境界層について考える。境界層厚さを δ、境界層外縁の一様流速を U、壁面からの距離を y とし、境界層内の速度分布 u(y) が、\nu(y)＝U(y/δ)^(1/7)\nで与えられるとする。δ＝30 [mm] のとき、形状係数の値として、最も近い値はどれか。",
+      "choices": {
+        "1": "0.78",
+        "2": "1.29",
+        "3": "2.92",
+        "4": "3.75",
+        "5": "7.00"
+      },
+      "officialAnswer": 2,
+      "scoringException": null,
+      "explanation": "正答は2です。排除厚さδ*＝∫(1−u/U)dy＝δ/8、運動量厚さθ＝∫(u/U)(1−u/U)dy＝7δ/72。形状係数H＝δ*/θ＝9/7≒1.29です。δ＝30 mmは比で消えます。",
+      "choiceExplanations": {
+        "1": "0.78は形状係数の逆数7/9に近い値です。定義は排除厚さを運動量厚さで割ります。",
+        "2": "適切です。δ*/θ＝(δ/8)/(7δ/72)＝9/7です。",
+        "3": "与えられた速度分布を積分した比9/7と一致しません。厚さδ自体の大きさには依存しません。",
+        "4": "3.75 mmはδ/8で求める排除厚さです。無次元の形状係数とは異なります。",
+        "5": "指数の分母7そのものは形状係数ではありません。二つの厚さの積分から求めます。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_3.pdf",
+      "sourceQuestionPage": 22,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "f817b23ab7316f6b9a2cc57b1304c1d8c82d876598ffefa44d93119196ac52d8",
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 専門科目 機械部門 Ⅲ－34。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against both saved OCR passes; equations and tables represented as explicit text.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review5.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    },
+    {
+      "id": "gijutsushi1-kikai-2024-mechanical-III-35",
+      "printedNumber": "Ⅲ－35",
+      "questionNumber": 35,
+      "questionText": "直径 d のノズルから速度 v で噴出する水の噴流が、噴流と同じ向きに速度 u で動いている大きな平板に垂直に衝突するとき、噴流が平板に及ぼす力として、最も適切なものはどれか。ただし、水の密度は ρ とし、v＞u であり、粘性の影響は無視する。",
+      "choices": {
+        "1": "ρ(v²−u²)(π/4)d²",
+        "2": "ρ(v²−u²)((π/4)d²)²",
+        "3": "ρ(v−u)(π/4)d²",
+        "4": "ρ(v−u)²(π/4)d²",
+        "5": "ρ(v−u)²((π/4)d²)²"
+      },
+      "officialAnswer": 4,
+      "scoringException": null,
+      "explanation": "正答は4です。平板が受ける質量流量はρA(v−u)、流れ方向の単位質量当たりの速度変化はv−uです。したがってF＝ρA(v−u)²、A＝πd²/4となります。",
+      "choiceExplanations": {
+        "1": "速度の二乗の差ではなく、相対速度の二乗が必要です。衝突する質量流量にもv−uを用います。",
+        "2": "相対速度の扱いに加え、面積を二乗しているため力の次元にもなりません。",
+        "3": "速度の因子が一つ不足しています。この式は質量流量の次元になります。",
+        "4": "適切です。平板に対する相対速度を質量流量と運動量変化の両方に用います。",
+        "5": "面積は一乗です。面積を二乗すると力の次元になりません。"
+      },
+      "hasRequiredFigure": false,
+      "sourceQuestionUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10606_3.pdf",
+      "sourceQuestionPage": 22,
+      "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_5.pdf",
+      "sourceAnswerPage": 3,
+      "sourceQuestionSha256": "f817b23ab7316f6b9a2cc57b1304c1d8c82d876598ffefa44d93119196ac52d8",
+      "sourceAnswerSha256": "256a6293b49f67f9849172e8cce6ad0219d8573a1b9ed34b322dea1b9dc91b14",
+      "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第一次試験 専門科目 機械部門 Ⅲ－35。改行・空白・句読点と数式表記を整理。解説は独自作成。",
+      "transcription": "Official PDF page visually checked against both saved OCR passes; equations and tables represented as explicit text.",
+      "needsIndependentReview": false,
+      "publicGo": false,
+      "contentReview": {
+        "status": "PASS",
+        "model": "gpt-6-astra",
+        "report": "reports/lq4e-20261104/independent-review5.md",
+        "scope": "BATCH_ONLY_NOT_FULL_QUALIFICATION"
+      }
+    }
+  ]
+}

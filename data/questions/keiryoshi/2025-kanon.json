@@ -1,0 +1,1086 @@
+[
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "音波の伝搬に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "温度が同じであれば、空気より密度の大きい気体中の音の速さは、空気中より速い。",
+      "イ": "同じ気体であれば、温度が低いほど音の速さは遅くなる。",
+      "ウ": "温度 0 ℃、気圧 101.325 kPa、相対湿度 50 ％における空気中の音の速さは、約 331.5 m/s である。",
+      "エ": "水中の音の速さは、20 ℃で約 1.5 km/s である。",
+      "オ": "縦波の速さは、空気中よりも固体中のほうが速い。"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "気体の音速は弾性率と密度で決まり、同温で密度の大きい気体ほど速いという一般則はない。",
+    "choiceExplanations": {
+      "ア": "気体の音速は弾性率と密度で決まり、同温で密度の大きい気体ほど速いという一般則はない。",
+      "イ": "同じ気体では音速は絶対温度の平方根に比例する。",
+      "ウ": "0 ℃付近の空気中音速は約331.5 m/sである。",
+      "エ": "水中の音速は約1500 m/sである。",
+      "オ": "一般に固体中の縦波は空気中の音より速い。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問1（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "1",
+    "examDate": "2025-12-14",
+    "subject": "環音"
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "時刻tにおける瞬時音圧p(t)がp(t)＝A sin(ωt)と表される正弦音波の波形に関する次の記述の中から、誤っているものを一つ選べ。なお、振幅をA、角周波数をω、音の速さをcとする。",
+    "choices": {
+      "ア": "周期は、2π/ωである。",
+      "イ": "波長は、πc/ωである。",
+      "ウ": "周波数は、ω/(2π)である。",
+      "エ": "波高率は、√2である。",
+      "オ": "実効値は、A/√2である。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "波長はcT＝2πc/ω。印刷されたπc/ωは半分の値である。",
+    "choiceExplanations": {
+      "ア": "角周波数と周期はT＝2π/ωの関係にある。",
+      "イ": "波長はcT＝2πc/ω。印刷されたπc/ωは半分の値である。",
+      "ウ": "周波数はf＝ω/(2π)である。",
+      "エ": "正弦波の波高率は最大値/実効値＝√2である。",
+      "オ": "正弦波の実効値は振幅の1/√2である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問2（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "2",
+    "examDate": "2025-12-14",
+    "subject": "環音"
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "人の聴覚に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "最小可聴値とは、指定された音が、評定者の聴覚を起こし得るときのその音の最小音圧レベルである。",
+      "イ": "音の大きさ 1 phon は、平面波として前方から提示された音圧レベル 40 dB、周波数 1000 Hz の純音の大きさに等しい。",
+      "ウ": "マスキングとは、他の音の存在によって、ある音の聴覚閾値が上昇する現象である。",
+      "エ": "長時間の騒音暴露などによって難聴になると最小可聴値が上昇する。",
+      "オ": "等ラウドネス曲線とは、正常聴覚をもつ評定者に、ある特定の種類の音を特定の方法で提示したときに、同じ大きさの感覚を生じさせる音の音圧レベルを、横軸に周波数をとって結んだ曲線である。"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "1000 Hz、40 dBの純音に等しい大きさのレベルは40 phonであり、1 phonではない。1 soneとの混同にも注意する。",
+    "choiceExplanations": {
+      "ア": "最小可聴値は聴覚を生じる最小音圧レベルを表す。",
+      "イ": "1000 Hz、40 dBの純音に等しい大きさのレベルは40 phonであり、1 phonではない。1 soneとの混同にも注意する。",
+      "ウ": "他の音によって聴覚閾値が上がる現象をマスキングという。",
+      "エ": "難聴では聴き取れる音圧レベルの下限が上がる。",
+      "オ": "周波数ごとに等しいラウドネスを生じるレベルを結ぶ。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問3（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "2",
+    "examDate": "2025-12-14",
+    "subject": "環音"
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "音の物理量に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "瞬時音圧とは、流れのない媒質中のある点で、対象とする瞬間に存在する圧力から静圧を引いた値である。",
+      "イ": "音の速さとは、自由進行音波の位相速度の大きさである。",
+      "ウ": "音響インテンシティとは、指定された方向に平行な面を通過する瞬時ポテンシャル音響エネルギー密度をその面積で除した値である。",
+      "エ": "音源の音響パワーとは、ある時間の長さで、指定された周波数帯域の音源が放射する全音響エネルギーをその時間で除した値である。",
+      "オ": "体積速度とは、表面に垂直な粒子速度成分とその微小面積との積の振動面にわたる積分である。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "インテンシティは面に垂直な方向の単位面積を単位時間に通る音響エネルギーである。平行な面やポテンシャルエネルギー密度とする説明は誤り。",
+    "choiceExplanations": {
+      "ア": "音波による瞬時の圧力変動を静圧との差で表す。",
+      "イ": "音の速さは位相の伝わる速度の大きさである。",
+      "ウ": "インテンシティは面に垂直な方向の単位面積を単位時間に通る音響エネルギーである。平行な面やポテンシャルエネルギー密度とする説明は誤り。",
+      "エ": "音響パワーは放射エネルギーの時間あたりの量である。",
+      "オ": "振動面に垂直な粒子速度を面積で積分すると体積速度となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問4（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "3",
+    "examDate": "2025-12-14",
+    "subject": "環音"
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "自由音場にて、図のように点音源と無限長の線音源が存在し、観測点 A は点音源から r 、観測点 B は点音源から 2r の距離にある。観測点 A において、線音源のみまたは点音源のみを駆動したとき音圧レベルはそれぞれ 73 dB を観測した。線音源と点音源を同時に駆動したとき、観測点 B の音圧レベルは何 dB か。次の中から最も近い数値を一つ選べ。ただし、線音源から発せられる音と点音源から発せられる音の間には相関がないものとする。",
+    "choices": {
+      "ア": "68",
+      "イ": "70",
+      "ウ": "72",
+      "エ": "74",
+      "オ": "76"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "距離2倍で線音源70 dB、点音源67 dB。10 log₁₀(10⁷＋10⁶⋅⁷)≒71.8 dB。",
+    "choiceExplanations": {
+      "ア": "線音源は約3 dB減、点音源は約6 dB減で、エネルギー和は約72 dBとなる。",
+      "イ": "70 dBは線音源単独の値であり点音源の寄与もある。",
+      "ウ": "距離2倍で線音源70 dB、点音源67 dB。10 log₁₀(10⁷＋10⁶⋅⁷)≒71.8 dB。",
+      "エ": "点音源と線音源の距離減衰を各々適用すると約72 dBとなる。",
+      "オ": "元の位置での合成値約76 dBをそのまま用いることはできない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問5（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/keiryoshi/kanon-q5.png"
+    ],
+    "imageAltTexts": [
+      "第76回 環音 問5 の公式図"
+    ],
+    "officialAnswerNumber": "3",
+    "examDate": "2025-12-14",
+    "subject": "環音"
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "音圧レベルおよび騒音レベルに関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "音圧レベルとは、音圧が 10 倍になると 20 dB 増加する対数的な指標である。",
+      "イ": "騒音レベルとは、周波数重み付け特性 A を適用した音圧レベルのことである。",
+      "ウ": "音圧レベルとは、音の大きさそのものではなく、基準の音圧を基に算出される相対的な値である。",
+      "エ": "ホワイトノイズにおいて、中心周波数 2 kHz のオクターブバンド音圧レベルが65 dB であるとき、中心周波数 500 Hz のオクターブバンド音圧レベルは 59 dBである。",
+      "オ": "純音の音圧レベルは、常に騒音レベルよりも大きな値となる。"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "A特性には正の補正となる周波数もあり、純音の音圧レベルが常に大きいとは限らない。",
+    "choiceExplanations": {
+      "ア": "音圧比に20 log₁₀をとるので10倍は20 dB増である。",
+      "イ": "騒音レベルはA特性による重み付け音圧レベルである。",
+      "ウ": "対数レベルは基準値との比を表す。",
+      "エ": "ホワイトノイズは単位帯域幅あたりのエネルギー一定。2オクターブ下がると帯域幅が1/4となり6 dB下がる。",
+      "オ": "A特性には正の補正となる周波数もあり、純音の音圧レベルが常に大きいとは限らない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問6（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "5",
+    "examDate": "2025-12-14",
+    "subject": "環音"
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "ある騒音をオクターブバンド分析したところ、下表のような結果が得られた。この騒音の騒音レベルは何dBか。次の中から最も近い数値を一つ選べ。\n\n|オクターブバンド中心周波数 [Hz]|125|250|500|1000|2000|4000|\n|---|---|---|---|---|---|---|\n|オクターブバンド音圧レベル [dB]|85|88|79|73|72|60|",
+    "choices": {
+      "ア": "67",
+      "イ": "72",
+      "ウ": "77",
+      "エ": "82",
+      "オ": "87"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "各帯域にA補正約−16.1、−8.6、−3.2、0、＋1.2、＋1.0 dBを加えてエネルギー合成すると約82.4 dB。",
+    "choiceExplanations": {
+      "ア": "A補正後の250 Hz帯域だけでも約79 dBあるため低すぎる。",
+      "イ": "各帯域の寄与の和より小さすぎる。",
+      "ウ": "補正後の最大帯域だけでも約79 dBである。",
+      "エ": "各帯域にA補正約−16.1、−8.6、−3.2、0、＋1.2、＋1.0 dBを加えてエネルギー合成すると約82.4 dB。",
+      "オ": "各帯域にA特性補正を加え、二乗音圧を合成すると約82.4 dBとなるため、87 dBは最も近い選択肢ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問7（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "4",
+    "examDate": "2025-12-14",
+    "subject": "環音",
+    "imageUrls": [
+      "/images/questions/keiryoshi/kanon-q7.png"
+    ],
+    "imageAltTexts": [
+      "第76回 環音 問7 の公式表（列見出しと全行）"
+    ]
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "ある室の中央に、音響出力 1 mW のスピーカが設置されている。床、天井を含む室の総面積は 100 m² であり、平均吸音率は 0.05 であった。このときの音圧レベルは何 dB か。次の中から最も近い数値を一つ選べ。",
+    "choices": {
+      "ア": "83",
+      "イ": "85",
+      "ウ": "87",
+      "エ": "89",
+      "オ": "91"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "音響パワーレベル90 dB、室定数R＝100×0.05/(1−0.05)≒5.26 m²。90＋10 log₁₀(4/R)≒88.8 dB。",
+    "choiceExplanations": {
+      "ア": "室の残響によるエネルギー密度を考慮すると約89 dBとなる。",
+      "イ": "吸音面積5 m²と拡散音場の係数4を考慮する。",
+      "ウ": "式の係数を含めると約89 dBである。",
+      "エ": "音響パワーレベル90 dB、室定数R＝100×0.05/(1−0.05)≒5.26 m²。90＋10 log₁₀(4/R)≒88.8 dB。",
+      "オ": "平均吸音率を室定数に反映すると約89 dBである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問8（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "4",
+    "examDate": "2025-12-14",
+    "subject": "環音"
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "「JIS Z 8733 音響－音圧法による騒音源の音響パワーレベルの測定方法－反射面上の準自由音場における実用測定方法」に規定された内容に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "測定表面は、仮想的な半球面又は部分半球面のみに限定される。",
+      "イ": "環境補正値 K₂ は、数値的には 2 dB 以下でなければならない。",
+      "ウ": "時間重み特性 S で測定した音圧レベルの変動が±1 dB 未満である場合、その最大レベルと最小レベルの算術平均を時間平均音圧レベルとしてもよい。",
+      "エ": "複数のマイクロホン位置上でパワー平均した暗騒音のレベルは、測定されるべき音圧レベルよりも、少なくとも 6 dB は低くなければならない。",
+      "オ": "160 Hz 以下を中心とする周波数バンドに対しては、測定時間は少なくとも30 秒とし、200 Hz 以上を中心とする周波数バンドに対しては、測定時間は少なくとも 10 秒とする。"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "測定表面は半球面等だけに限定されず、直方体測定面等も用いられる。",
+    "choiceExplanations": {
+      "ア": "測定表面は半球面等だけに限定されず、直方体測定面等も用いられる。",
+      "イ": "この実用測定方法の環境補正値の上限は2 dBである。",
+      "ウ": "変動が小さい条件では最大・最小レベルの算術平均を用いる扱いがある。",
+      "エ": "暗騒音と対象音のレベル差は少なくとも6 dBが必要である。",
+      "オ": "低周波では長い測定時間を確保し、規定された30秒又は10秒以上を用いる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問9（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "1",
+    "examDate": "2025-12-14",
+    "subject": "環音"
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "あるコンデンサマイクロホンを用いて、周波数 1000 Hz の正弦音波を測定したところ、マイクロホン膜面上の音圧レベルが 80 dB のとき、マイクロホンの開放出力電圧は 2 mV であった。このマイクロホンの音圧感度レベルは何 dB か。次の中から最も近い数値を一つ選べ。ただし音圧感度レベルの基準値は 1 V / Pa である。",
+    "choices": {
+      "ア": "－20",
+      "イ": "－34",
+      "ウ": "－40",
+      "エ": "－74",
+      "オ": "－92"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "p＝20 μPa×10⁴＝0.2 Pa、感度＝0.002/0.2＝0.01 V/Pa。20 log₁₀0.01＝−40 dB。",
+    "choiceExplanations": {
+      "ア": "音圧80 dBを基準音圧20 μPaから変換する必要がある。",
+      "イ": "−34 dBは約0.020 V/Paの感度に対応するが、設問の音圧0.2 Paと出力0.002 Vから得られる感度は0.010 V/Paである。",
+      "ウ": "p＝20 μPa×10⁴＝0.2 Pa、感度＝0.002/0.2＝0.01 V/Pa。20 log₁₀0.01＝−40 dB。",
+      "エ": "音圧のレベルをそのまま電圧レベルから引くことはできない。",
+      "オ": "感度は0.01 V/Paなので−40 dBである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問10（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "3",
+    "examDate": "2025-12-14",
+    "subject": "環音"
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "「JIS C 1509-1 電気音響－サウンドレベルメータ（騒音計）－第 1 部：仕様」に規定されたサウンドレベルメータの性能に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "クラス 1 に適合するサウンドレベルメータは、周波数重み付け特性 A、C 及び Zを備えていなければならない。",
+      "イ": "サウンドレベルメータに時間重み付きサウンドレベルの最大値又はピークサウンドレベル測定機能を備えている場合には、レベル保持（ホールド）機能を備えていなければならない。",
+      "ウ": "時間重み付け特性 F の時定数の設計目標値は 0.125 s である。",
+      "エ": "レベル直線性偏差は、クラス 1 のサウンドレベルメータでは±0.8 dB を超えてはならない。",
+      "オ": "コンピュータのソフトウェアがサウンドレベルメータの一部分を構成してもよい。"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "クラス1でもZ特性まで全て必須とはされないため誤り。必須の周波数重み付けと任意機能を区別する。",
+    "choiceExplanations": {
+      "ア": "クラス1でもZ特性まで全て必須とはされないため誤り。必須の周波数重み付けと任意機能を区別する。",
+      "イ": "最大値・ピークの読取りのためホールド機能が必要である。",
+      "ウ": "Fの設計目標時定数は0.125 sである。",
+      "エ": "クラス1のレベル直線性偏差は±0.8 dB以内である。",
+      "オ": "処理や表示を行うソフトウェアがシステムの一部でもよい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問11（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "1",
+    "examDate": "2025-12-14",
+    "subject": "環音"
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "計量法および「JIS C 1516 騒音計－取引又は証明用」に規定される、騒音計の再検定を必要とする計量法上の「修理」に該当する内容として、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "マイクロホンやプリアンプの交換又は補修",
+      "イ": "計量結果に影響を与える機構部品や電気回路部品の交換又は補修",
+      "ウ": "検定証印等が付された部品の交換",
+      "エ": "計量結果に影響を与える調整",
+      "オ": "外部記憶装置、印字装置など、計量結果を後続使用する装置の交換又は補修"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "令和7年12月（出題時点）の法令に基づく解説。\n\n結果を後続使用する外部記憶装置等の交換は、ここでいう再検定を要する修理の列挙から除かれる。",
+    "choiceExplanations": {
+      "ア": "マイクロホン等の交換・補修は計量性能に直接影響する修理である。",
+      "イ": "計量結果に影響する部品の交換・補修は修理に該当する。",
+      "ウ": "検定証印等の付された部品の交換は再検定の対象となる。",
+      "エ": "計量結果を変える調整は修理に該当する。",
+      "オ": "結果を後続使用する外部記憶装置等の交換は、ここでいう再検定を要する修理の列挙から除かれる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問12（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "5",
+    "examDate": "2025-12-14",
+    "lawReferenceDate": "2025-12-14",
+    "subject": "環音"
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "「JIS Z 8731 環境騒音の表示・測定方法」に規定された騒音評価量に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "最大騒音レベルL_pA,Fmaxは、時間重み付け特性 F を掛けて測定する騒音レベルの最大値である。",
+      "イ": "N パーセント時間率騒音レベルL_AN,F,Tは、時間重み付け特性 F を掛けて測定する騒音レベルが、対象とする時間 T の N パーセントの時間にわたってあるレベルを超えている場合の騒音レベルである。",
+      "ウ": "単発騒音暴露レベルL_EAは、現象時間が限られている単発性の騒音のエネルギー的な平均値を評価するための量である。",
+      "エ": "等価騒音レベルL_Aeq,Tは、ある時間 T について、変動する騒音の騒音レベルをエネルギー的な平均値として表した量である。",
+      "オ": "時間帯補正等価騒音レベルL_denは、昼間、夕方、夜間の時間帯別に騒音の影響に関する重み付けをして評価した１日にわたる等価騒音レベルである。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "単発騒音暴露レベルはエネルギーの総量を基準時間1秒に規準化する。現象時間での平均値ではない。",
+    "choiceExplanations": {
+      "ア": "最大騒音レベルはF特性で測定する最大値である。",
+      "イ": "超過時間率N %に対応する値という定義である。",
+      "ウ": "単発騒音暴露レベルはエネルギーの総量を基準時間1秒に規準化する。現象時間での平均値ではない。",
+      "エ": "等価騒音レベルは対象時間でのエネルギー平均である。",
+      "オ": "時間帯に応じた補正によって一日の騒音を評価する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問13（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "3",
+    "examDate": "2025-12-14",
+    "subject": "環音"
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "ある変動騒音の騒音レベルを一定時間間隔で読み取って、それらの数値の累積百分率曲線を求めたところ、横軸が騒音レベル(dB)、縦軸が騒音レベルの累積百分率(%)の下図が得られた。この変動騒音の時間率騒音レベルL_A5,F,T（90 %レンジの上端の値）は何dBか。次の中から最も近い数値を一つ選べ。",
+    "choices": {
+      "ア": "55",
+      "イ": "56",
+      "ウ": "59",
+      "エ": "67",
+      "オ": "70"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "90 %レンジ上端は超過5 %点L₅。低い側からの累積百分率では95 %点を読み、約70 dBとなる。",
+    "choiceExplanations": {
+      "ア": "55 dBは累積約5 %に対応し、上端ではない。",
+      "イ": "下側の累積値を読んだ値である。",
+      "ウ": "59 dB付近は中央値に近い。",
+      "エ": "67 dB付近は累積約90 %であり、必要な95 %点ではない。",
+      "オ": "90 %レンジ上端は超過5 %点L₅。低い側からの累積百分率では95 %点を読み、約70 dBとなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問14（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/keiryoshi/kanon-q14.png"
+    ],
+    "imageAltTexts": [
+      "第76回 環音 問14 の公式図"
+    ],
+    "officialAnswerNumber": "5",
+    "examDate": "2025-12-14",
+    "subject": "環音"
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "省令や告示、環境省作成の測定マニュアルなどで示されている騒音の測定方法や評価方法に関する次の記述の中から、下線部の内容が誤っているものを一つ選べ。なお、省令や告示、ガイドラインは現在有効な最新のものとする。\n\n（原本の下線部は太字で表示。）",
+    "choices": {
+      "ア": "環境省が公開している「新幹線鉄道騒音測定・評価マニュアル」によれば、新幹線鉄道騒音の測定は、上りおよび下りの列車を合わせて、原則として連続して通過する 20 本の列車について、列車ごとの**最大騒音レベル(L_A,Smax )**を測定する。",
+      "イ": "環境省が公開している「騒音に係る環境基準の評価マニュアル        道路に面する地域編」によれば、騒音の測定項目は**昼間と夜間の等価騒音レベル(L_Aeq )**及び騒音測定時の交通条件（車種別交通量、速度等）である。また、騒音レベルの分布特性を把握するため、時間率騒音レベルも測定することが望ましい。",
+      "ウ": "環境省告示「特定工場等において発生する騒音の規制に関する基準」によれば、**騒音計の周波数補正回路は A 特性、動特性は遅い動特性（SLOW）**を用いる。",
+      "エ": "環境省告示「航空機騒音に係る環境基準について」によれば、測定は原則として連続 7 日間行い、騒音レベルの最大値が暗騒音より 10 dB 以上大きい航空機騒音について、**単発騒音曝露レベル(L_AE )**を計測する。",
+      "オ": "環境省が公開している「低周波音の測定方法に関するマニュアル」によれば、超低周波音の感覚及び睡眠への影響に関しては、**G 特性音圧レベル**を測定する。（注:本マニュアルにおいて、超低周波音は 1/3 オクターブバンド中心周波数で1 Hz から 20 Hz の音波を指す。）"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "令和7年12月（出題時点）の法令に基づく解説。\n\n特定工場等の騒音測定の動特性は速い動特性FASTであり、SLOWとする部分が誤り。",
+    "choiceExplanations": {
+      "ア": "上下合わせて原則連続20本の列車の最大騒音レベルを測定する。",
+      "イ": "等価騒音レベルと交通条件を測定し、分布の把握には時間率騒音レベルも用いる。",
+      "ウ": "特定工場等の騒音測定の動特性は速い動特性FASTであり、SLOWとする部分が誤り。",
+      "エ": "原則7日連続で測り、暗騒音との差を確認して単発騒音曝露レベルを測定する。",
+      "オ": "超低周波音の評価でG特性音圧レベルを測定する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問15（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "3",
+    "examDate": "2025-12-14",
+    "lawReferenceDate": "2025-12-14",
+    "subject": "環音"
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "二つの正弦振動A cos(2πf₁t)とA cos(2πf₂t)の合成波を考える。このとき発生するうなり現象に関する次の記述の中から、正しいものを一つ選べ。なお、Aとf₁とf₂は正の定数であり、f₁とf₂はf₁＜f₂を満たし非常に近いものとする。また、tは時刻を表す。",
+    "choices": {
+      "ア": "振動数の和f₁＋f₂が、うなりの大きさを決める。",
+      "イ": "合成波には振動数f₁の成分が含まれない。",
+      "ウ": "合成波の振幅がうなりによって最大になるとき、その振幅はAである。",
+      "エ": "うなりの振動数は、(1/2)(f₁＋f₂)である。",
+      "オ": "うなりの周期は、1/(f₂−f₁)である。"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "加法定理で包絡振幅は2A cos(π(f₂−f₁)t)。大きさの繰返し周期は1/(f₂−f₁)となる。",
+    "choiceExplanations": {
+      "ア": "振動数の和は合成波の速い振動に関係する。合成波は2A cos[π(f₂−f₁)t] cos[π(f₁＋f₂)t]で、うなりの振幅の大きさは包絡線の絶対値、最大値は2Aである。和が大きさを決めるという説明は誤り。",
+      "イ": "合成波にも元のf₁、f₂の成分が含まれる。",
+      "ウ": "最大振幅はAではなく2Aである。",
+      "エ": "(f₁＋f₂)/2は速い振動の周波数で、うなり周波数ではない。",
+      "オ": "加法定理で包絡振幅は2A cos(π(f₂−f₁)t)。大きさの繰返し周期は1/(f₂−f₁)となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問16（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "5",
+    "examDate": "2025-12-14",
+    "subject": "環音"
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "鉛直方向の一自由度振動系とみなせる防振台がある。その防振台の可動部の質量を M とする。その可動部に 40 kg の質量を追加したところ、可動部は 1 mm だけ鉛直下方向に変位した。また、その際の防振台の固有振動数は 7 Hz になった。質量 M は何 kg か。次の中から最も近い数値を一つ選べ。ただし、防振台が置かれている場所の重力加速度を 9.8 m/s² とみなす。",
+    "choices": {
+      "ア": "163",
+      "イ": "250",
+      "ウ": "326",
+      "エ": "996",
+      "オ": "9960"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "k＝40×9.8/0.001＝392000 N/m。総質量はk/(2π×7)²≒203 kgで、追加40 kgを引き約163 kg。",
+    "choiceExplanations": {
+      "ア": "k＝40×9.8/0.001＝392000 N/m。総質量はk/(2π×7)²≒203 kgで、追加40 kgを引き約163 kg。",
+      "イ": "追加質量を考慮して固有振動数の式を解くと163 kgとなる。",
+      "ウ": "総質量は約203 kgで、326 kgではない。",
+      "エ": "1 mmを0.001 mに換算して計算する。",
+      "オ": "ばねの静変位と固有振動数を両方用いると約163 kgとなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問17（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "1",
+    "examDate": "2025-12-14",
+    "subject": "環音"
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "質量とばね、ダンパで構成される一自由度振動系を考える。次の記述の中から、正しいものを一つ選べ。なお、ステップ応答とは、外力がステップ入力であるときの系の時間的な応答のことである。",
+    "choices": {
+      "ア": "減衰が大きいほど、固有振動数は高くなる。",
+      "イ": "減衰が小さいほど、周波数応答の最大値は小さくなる。",
+      "ウ": "減衰が大きいほど、ステップ応答にオーバーシュートは現れにくくなる。",
+      "エ": "減衰が同じ条件では、固有振動数が高いほど、ステップ応答の立ち上がりは遅くなる。",
+      "オ": "減衰がゼロのとき、ステップ応答は速やかに定常値に収束する。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "減衰を強めるとオーバーシュートを抑えられる。",
+    "choiceExplanations": {
+      "ア": "非減衰固有振動数は質量とばね定数で決まり、減衰を増やしても高くならない。減衰振動が生じる範囲では、減衰固有振動数は減衰が増すほど低くなる。",
+      "イ": "小減衰ほど共振ピークは大きくなる。",
+      "ウ": "減衰を強めるとオーバーシュートを抑えられる。",
+      "エ": "固有振動数が高いほど応答の時間尺度は短くなる。",
+      "オ": "無減衰では振動が続き、定常値に収束しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問18（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "3",
+    "examDate": "2025-12-14",
+    "subject": "環音"
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "振動レベル計に関する規格「JIS C 1510:2023」に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "振動レベル計は、時定数 0.63 s の時間重み付け特性を備えなければならない。",
+      "イ": "直線動作範囲は、基準レベルレンジにおいて 60 dB 以上でなければならない。",
+      "ウ": "振動加速度の基準値は、ISO 1683 で推奨する基準値と同じ 10⁻⁶ m/s² である。",
+      "エ": "振動レベル計の本体の見やすい箇所に、振動レベルの直線動作全範囲と周波数範囲を表記する。振動ピックアップの見やすい箇所に、受感軸の方向を表記する。",
+      "オ": "振動レベル計は、鉛直特性、水平特性及び平たん特性の周波数重み付け特性を備えなければならない。"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "この規格の振動加速度基準値は10⁻⁵ m/s²である。ISOの推奨値10⁻⁶ m/s²と同一とする点が誤り。",
+    "choiceExplanations": {
+      "ア": "時間重み付け特性の時定数は0.63 sである。",
+      "イ": "基準レンジの直線動作範囲は60 dB以上を要する。",
+      "ウ": "この規格の振動加速度基準値は10⁻⁵ m/s²である。ISOの推奨値10⁻⁶ m/s²と同一とする点が誤り。",
+      "エ": "本体に測定範囲等、ピックアップに受感軸を表記する。",
+      "オ": "鉛直・水平・平たんの周波数重み付け特性を備える。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問19（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "3",
+    "examDate": "2025-12-14",
+    "subject": "環音"
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "振動ピックアップに関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "振動ピックアップは、振動を検知し電気信号に変換する機能を持つ。",
+      "イ": "動電式の振動ピックアップは、磁界を横切るコイルに発生する起電力が速度に比例する、という原理を利用している。",
+      "ウ": "振動数 10 kHz の振動を計測する際には、サーボ式のピックアップよりも圧電式のピックアップを用いるほうが望ましい。",
+      "エ": "圧電式の振動ピックアップには固有振動数がなく、周波数特性は平たんである。",
+      "オ": "振動ピックアップによって地表面の振動を正確に検知するには、地表面に対しできるだけ強固に設置するほうが望ましい。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "圧電式にも機械的な固有振動数と共振があり、全周波数で平たんではない。",
+    "choiceExplanations": {
+      "ア": "機械振動を電気信号へ変換する検出器である。",
+      "イ": "磁束を横切るコイルの誘導起電力は速度に比例する。",
+      "ウ": "圧電式は高周波の振動測定に適する。",
+      "エ": "圧電式にも機械的な固有振動数と共振があり、全周波数で平たんではない。",
+      "オ": "測定対象と十分に結合させることで設置による誤差を抑える。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問20（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "4",
+    "examDate": "2025-12-14",
+    "subject": "環音"
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 21,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "振動数 100 Hz で鉛直振動する質量 m の装置が、弾性ばねで基礎上に支持されている。このとき、弾性ばねのばね定数を 1.3×10⁶ N/m に設定すると、基礎への振動伝達率が 1/2 となった。質量 m は何 kg か。次の中から最も近い数値を一つ選べ。",
+    "choices": {
+      "ア": "4.2",
+      "イ": "10",
+      "ウ": "26",
+      "エ": "420",
+      "オ": "1000"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "r²＝mω²/k＝3よりm＝3k/(2πf)²≒9.88 kg。10 kgが最も近い。",
+    "choiceExplanations": {
+      "ア": "無減衰近似の振動伝達率1/|1−r²|＝1/2からr²＝3が必要である。",
+      "イ": "r²＝mω²/k＝3よりm＝3k/(2πf)²≒9.88 kg。10 kgが最も近い。",
+      "ウ": "r²＝3の条件と合わない。",
+      "エ": "周波数100 Hzを角周波数2πfへ変換する必要がある。",
+      "オ": "周波数の単位と角周波数を反映すると約10 kgとなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問21（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "2",
+    "examDate": "2025-12-14",
+    "subject": "環音"
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 22,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "下図のように、振動源 A、C および測定点 B、D が地表面の直線上に位置している。振動源 A および C は、いずれも一定の大きさの鉛直振動を発生させる。振動源 C のみを作動させたときの測定点 B での振動加速度レベルは 70 dB であった。また、振動源 A および C を同時に作動させたときの測定点 B での振動加速度レベルは80 dB であった。このとき、振動源 A および C を同時に作動させたときの測定点 Dでの振動加速度レベルは何 dB か。次の中から最も近い数値を一つ選べ。ただし、2つの振動源からの波動は表面波で互いに干渉しないものとし、地盤の内部減衰は無視できるものとする。",
+    "choices": {
+      "ア": "72",
+      "イ": "75",
+      "ウ": "78",
+      "エ": "80",
+      "オ": "82"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "表面波ではエネルギーは距離に反比例。B→DでAの寄与は1/4、Cは1/2になり、合計比0.9/4＋0.1/2＝0.275。80＋10 log₁₀0.275≒74.4 dB。",
+    "choiceExplanations": {
+      "ア": "AのBでのエネルギーは合計の0.9、Cは0.1。Dまでの距離減衰を別々に計算する。",
+      "イ": "表面波ではエネルギーは距離に反比例。B→DでAの寄与は1/4、Cは1/2になり、合計比0.9/4＋0.1/2＝0.275。80＋10 log₁₀0.275≒74.4 dB。",
+      "ウ": "距離比による減衰を考慮すると約74.4 dBである。",
+      "エ": "Dは両振動源からBより遠く、表面波の距離減衰によって合成振動加速度レベルは約74.4 dBに下がるため、80 dBではない。",
+      "オ": "Dは両振動源から遠いため増加しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問22（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "imageUrls": [
+      "/images/questions/keiryoshi/kanon-q22.png"
+    ],
+    "imageAltTexts": [
+      "第76回 環音 問22 の公式図"
+    ],
+    "officialAnswerNumber": "2",
+    "examDate": "2025-12-14",
+    "subject": "環音"
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 23,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "振動数が 16 Hz、振動加速度の実効値が 0.02 m/s² である鉛直方向の正弦振動の振動レベルは何 dB か。次の中から最も近い数値を一つ選べ。",
+    "choices": {
+      "ア": "60",
+      "イ": "63",
+      "ウ": "66",
+      "エ": "69",
+      "オ": "72"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "無補正の振動加速度レベルは66 dB。16 Hzの鉛直補正−6 dBを加え約60 dB。",
+    "choiceExplanations": {
+      "ア": "無補正の振動加速度レベルは66 dB。16 Hzの鉛直補正−6 dBを加え約60 dB。",
+      "イ": "16 Hzでの鉛直重み付け補正は約−6 dBである。",
+      "ウ": "66 dBは無補正の振動加速度レベルである。",
+      "エ": "補正は正ではなく負である。",
+      "オ": "鉛直特性の補正を反映すると約60 dBである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問23（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "1",
+    "examDate": "2025-12-14",
+    "subject": "環音"
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 24,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "振動規制法施行規則の規定に基づく道路交通振動の測定に関する次の記述の中から、誤っているものを一つ選べ。",
+    "choices": {
+      "ア": "振動の測定は、計量法第七十一条の条件に合格した振動レベル計を用い、鉛直方向について行うものとする。",
+      "イ": "振動の測定場所は、道路の敷地の境界線とする。",
+      "ウ": "振動の測定は、当該道路に係る道路交通振動を対象とし、当該道路交通振動の状況を代表すると認められる一日について、昼間及び夜間の区分ごとに一時間当たり一回以上の測定を四時間以上行うものとする。",
+      "エ": "振動レベルは、五秒間隔、百個又はこれに準ずる間隔、個数の測定値の九十パーセントレンジの上端の数値を、昼間及び夜間の区分ごとにすべてについて平均した数値とする。",
+      "オ": "夜間の測定は、午後七時、八時、九時又は十時から翌日の午前五時、六時、七時又は八時までの範囲内において都道府県知事（市の区域内の区域に係る時間については、市長。）が定めた時間に行うものとする。"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "令和7年12月（出題時点）の法令に基づく解説。\n\n道路交通振動は80 %レンジの上端値L₁₀を用いる。90 %レンジ上端とする点が誤り。",
+    "choiceExplanations": {
+      "ア": "規定に適合する振動レベル計を用いて鉛直方向を測定する。",
+      "イ": "測定場所は道路敷地の境界線である。",
+      "ウ": "代表的一日について昼夜それぞれ1時間に1回以上、4時間以上測定する。",
+      "エ": "道路交通振動は80 %レンジの上端値L₁₀を用いる。90 %レンジ上端とする点が誤り。",
+      "オ": "規定範囲内で知事等が定めた夜間時間帯に行う。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問24（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "4",
+    "examDate": "2025-12-14",
+    "lawReferenceDate": "2025-12-14",
+    "subject": "環音"
+  },
+  {
+    "session": "measurement-sound",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 25,
+    "type": "multiple-choice",
+    "category": "環音",
+    "topicTags": [
+      "環音",
+      "第76回"
+    ],
+    "difficulty": 3,
+    "question": "特定計量器である振動レベル計の検定に使われる振動基準器に関する以下の説明において、空欄（ ア ）から（ エ ）に入る正しい組み合わせはどれか。次の中から一つ選べ。計量法の基準器検査規則では、振動基準器は質量が（ ア ）の（ イ ）式ピックアップであることが規定されている。また （ ウ ）Hz から（ エ ）Hz までの 5 周波数における感度の安定性についても規定されている。（ ア ） （ イ ） （ ウ ） （ エ ）",
+    "choices": {
+      "ア": "700 g以下／サーボ／4／31.5",
+      "イ": "700 g以下／動電／4／31.5",
+      "ウ": "700 g以下／サーボ／1／125",
+      "エ": "700 g以上／動電／1／125",
+      "オ": "700 g以上／サーボ／1／125"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "令和7年12月（出題時点）の法令に基づく解説。\n\n700 g以下のサーボ式で、安定性の規定は4～31.5 Hzの5周波数である。",
+    "choiceExplanations": {
+      "ア": "700 g以下のサーボ式で、安定性の規定は4～31.5 Hzの5周波数である。",
+      "イ": "方式は動電式でなくサーボ式である。",
+      "ウ": "質量と方式は合うが周波数の両端が合わない。",
+      "エ": "質量、方式、周波数範囲がいずれも合わない。",
+      "オ": "質量は700 g以上ではなく以下で、周波数範囲も異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.meti.go.jp/policy/economy/hyojun/techno_infra/00_download/4_R07kanon.pdf",
+    "sourceAnswerUrl": "https://www.meti.go.jp/information/license/data/pdf/c251215aj.pdf",
+    "sourceAttribution": "出典：経済産業省 第76回計量士国家試験 環音 問25（問題・訂正版正答）。テキスト化・図の切り出しは過去問AI、解説は独自作成。",
+    "license": "METI-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-03",
+    "officialAnswerNumber": "1",
+    "examDate": "2025-12-14",
+    "lawReferenceDate": "2025-12-14",
+    "subject": "環音",
+    "imageUrls": [
+      "/images/questions/keiryoshi/kanon-q25.png"
+    ],
+    "imageAltTexts": [
+      "第76回 環音 問25 の公式表（列見出しと全行）"
+    ]
+  }
+]

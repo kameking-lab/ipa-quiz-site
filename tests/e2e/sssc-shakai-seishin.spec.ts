@@ -1,10 +1,10 @@
 import { test, expect } from "@playwright/test";
 
 test.describe("社会福祉士 第38回・精神保健福祉士 第28回", () => {
-  test("shakai hub lists 129 questions and the year page splits common and specialized subjects", async ({ page }) => {
+  test("shakai hub lists both rounds and the year page splits common and specialized subjects", async ({ page }) => {
     await page.goto("/shakai");
     await expect(page.getByRole("heading", { level: 1 })).toContainText("社会福祉士");
-    await expect(page.getByText("収録 129 問")).toBeVisible();
+    await expect(page.getByText("収録 255 問")).toBeVisible();
     await page.goto("/shakai/2025-annual");
     await expect(page.getByText(/共通科目・医学概論 問題1〜6/).first()).toBeVisible();
     await expect(page.getByText(/専門科目・福祉サービスの組織と経営 問題/).first()).toBeVisible();

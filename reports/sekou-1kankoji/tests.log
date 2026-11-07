@@ -1,0 +1,15 @@
+
+ RUN  v3.2.4 /home/user/ipa-quiz-site
+
+ ✓ __tests__/components/TwoChoiceSelection.test.tsx (5 tests) 744ms
+ ✓ __tests__/components/AcceptedSelectionCount.test.tsx (3 tests) 542ms
+ ✓ __tests__/questions/jctc-first-wave.test.ts (7 tests) 138ms
+ ✓ __tests__/lib/exam-config-integrity.test.ts (6 tests) 112ms
+ ✓ __tests__/questions/qualification-expansion.test.ts (1066 tests) 474ms
+ ✓ __tests__/questions/kankoji1-staging.test.tsx (10 tests) 1034ms
+   ✓ 1級管工事 令和8年度・未公開 > 訂正後も1を含まない二肢は不正解、1を含む二肢は正解  418ms
+
+ Test Files  6 passed (6)
+      Tests  1097 passed (1097)
+   Start at  17:43:20
+   Duration  32.20s (transform 26.80s, setup 732ms, collect 67.47s, tests 3.04s, environment 4.28s, prepare 1.19s)

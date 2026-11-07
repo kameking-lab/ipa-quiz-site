@@ -8,6 +8,7 @@ import { MockExamLanding } from "./MockExamLanding";
 interface SearchParams {
   exam?: string;
   returnTo?: string;
+  count?: string;
 }
 
 const DESCRIPTION =
@@ -79,7 +80,7 @@ export default async function MockExamPage({
   return (
     <>
       <JsonLd data={jsonLd} />
-      <MockExamLanding examFromQuery={sp.exam} returnTo={sp.returnTo} />
+      <MockExamLanding examFromQuery={sp.exam} returnTo={sp.returnTo} countFromQuery={sp.count} />
     </>
   );
 }

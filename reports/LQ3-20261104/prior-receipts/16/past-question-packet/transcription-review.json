@@ -1,0 +1,1125 @@
+{
+  "scope": "qual-new:16",
+  "reviewer": "independent_acceptance",
+  "reviewedAt": "2026-11-01T10:14:35.288342+00:00",
+  "target": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new16-private-20261101\\outputs\\past-question-packet\\original-transcription.json",
+  "targetSha256": "d31a74d56d899310b02f0a2debf6cacadc860919a219184574d4d0efd928e28c",
+  "source": {
+    "url": "https://www.engineer.or.jp/c_topics/011/attached/attach_11458_9.pdf",
+    "file": "work/sources/2025-biotechnology.pdf",
+    "sha256": "ac0d27b8968e38d751daa2e449577e3ea1813fffcdcfd70363f6993d5c2bdcc9",
+    "pages": 16
+  },
+  "method": "原画像全16ページを視読し、35問の本文・175肢の文言、数値、否定、肢順を照合。前回中断前の全件照合を引き継ぎ、疑義箇所は高解像度再描画で再確認。OCRは実施していない。",
+  "allowedNormalizations": [
+    "改行・字間を整理",
+    "下付き・上付き・ギリシャ文字をUnicode/平文表記",
+    "四角枠を［］に表現",
+    "問8/11の表は列順a,b,c,dを構造化して保持"
+  ],
+  "status": "PASS_TRANSCRIPTION_WITH_DECLARED_NORMALIZATIONS",
+  "adoptionPass": true,
+  "counts": {
+    "questionsReviewed": 35,
+    "choicesReviewed": 175,
+    "questionsMatched": 35,
+    "questionsWithFindings": 0,
+    "findings": 3,
+    "historicalFindings": 3,
+    "openFindings": 0
+  },
+  "findings": [
+    {
+      "id": "T01",
+      "question": 12,
+      "choice": 2,
+      "severity": "P2",
+      "type": "文字置換",
+      "actual": "原生動物の侵入",
+      "expected": "原生動物の侵襲",
+      "sourcePage": 6,
+      "required": true,
+      "status": "RESOLVED",
+      "verifiedAgainstSource": true
+    },
+    {
+      "id": "T02",
+      "question": 12,
+      "choice": 2,
+      "severity": "P2",
+      "type": "原文にない語の追加",
+      "actual": "培養対象の微細藻類の種とは",
+      "expected": "培養対象の微細藻類とは",
+      "sourcePage": 6,
+      "required": true,
+      "status": "RESOLVED",
+      "verifiedAgainstSource": true
+    },
+    {
+      "id": "T03",
+      "question": 35,
+      "choice": 2,
+      "severity": "P2",
+      "type": "文字置換",
+      "actual": "順系",
+      "expected": "順番",
+      "sourcePage": 16,
+      "required": true,
+      "status": "RESOLVED",
+      "verifiedAgainstSource": true
+    }
+  ],
+  "questionResults": [
+    {
+      "number": 1,
+      "sourcePage": 1,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 2,
+      "sourcePage": 1,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 3,
+      "sourcePage": 2,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 4,
+      "sourcePage": 2,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 5,
+      "sourcePage": 3,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 6,
+      "sourcePage": 3,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 7,
+      "sourcePage": 4,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 8,
+      "sourcePage": 4,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 9,
+      "sourcePage": 5,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 10,
+      "sourcePage": 5,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 11,
+      "sourcePage": 6,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 12,
+      "sourcePage": 6,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": [
+        "T01",
+        "T02"
+      ]
+    },
+    {
+      "number": 13,
+      "sourcePage": 7,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 14,
+      "sourcePage": 7,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 15,
+      "sourcePage": 8,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 16,
+      "sourcePage": 8,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 17,
+      "sourcePage": 9,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 18,
+      "sourcePage": 9,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 19,
+      "sourcePage": 9,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 20,
+      "sourcePage": 10,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 21,
+      "sourcePage": 10,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 22,
+      "sourcePage": 11,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 23,
+      "sourcePage": 11,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 24,
+      "sourcePage": 12,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 25,
+      "sourcePage": 12,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 26,
+      "sourcePage": 13,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 27,
+      "sourcePage": 13,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 28,
+      "sourcePage": 14,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 29,
+      "sourcePage": 14,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 30,
+      "sourcePage": 14,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 31,
+      "sourcePage": 15,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 32,
+      "sourcePage": 15,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 33,
+      "sourcePage": 15,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 34,
+      "sourcePage": 16,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": []
+    },
+    {
+      "number": 35,
+      "sourcePage": 16,
+      "stem": "MATCH",
+      "choices": [
+        {
+          "number": 1,
+          "status": "MATCH"
+        },
+        {
+          "number": 2,
+          "status": "MATCH"
+        },
+        {
+          "number": 3,
+          "status": "MATCH"
+        },
+        {
+          "number": 4,
+          "status": "MATCH"
+        },
+        {
+          "number": 5,
+          "status": "MATCH"
+        }
+      ],
+      "numbersNegationAndOrder": "MATCH",
+      "findingIds": [
+        "T03"
+      ]
+    }
+  ],
+  "specialChecks": {
+    "III-8": "本文の成長調整物質・幼葉鞘を含め一致。表のa,b,c,d順と5行20セルが一致。",
+    "III-9": "冒頭は原図でも器具・試薬。中黒で一致。RNA、121℃、0.2 µmも一致。",
+    "III-11": "加水分解して，を含め一致。表のa,b,c,d順と5行20セルが一致。",
+    "III-12": "②の侵襲、培養対象の微細藻類とはへの修正を原画像に再照合し一致。その他本文・4肢は前回一致。",
+    "III-16": "AOAC. 2011. 25法の句点は原図に存在。空白を除くAOAC.2011.25法で一致。各肢の句読点も一致。",
+    "III-35": "②の順番への修正を原画像に再照合し一致。原問の誤答であるS→G1→M→G2→Sは原図どおり保持。"
+  },
+  "explanationDelta": {
+    "candidate": "C:\\Users\\kanet\\Documents\\Codex\\2026-11-01\\qual-new16-private-20261101\\outputs\\past-question-packet\\questions.candidate.json",
+    "candidateSha256": "e764ab92834e95f9b6df918a00324d3517a17bf5ed6bbfa41e82667481699025",
+    "question": 6,
+    "choice": 2,
+    "status": "ACCEPT",
+    "reviewedText": "単純な比較では小さいKmほど低い基質濃度で半最大速度に達する。",
+    "reason": "半最大速度となる基質濃度という定義に限定され、先の任意改善指摘を解消。既受入35問175肢理由の同版再審査はしていない。"
+  },
+  "acceptanceScope": "宣言済み表記正規化を認めた原問35問175肢の一致を受入。対象SHAの転記およびcandidate内のquestion/choices/originalContentへの同文集約を確認。旧3指摘は修正済み。III-6②指定解説差分1文も受入。既受入の解説同版全件は再審査していない。adoptionPassは本独立担当の原問内容受入の意味であり、UI・データ方式全般・共有repo・公開を承認するものではない。",
+  "initialTargetSha256": "f962c86d6dc4c6c05c80cc2d6d3f413026aab6cc34eaa3232b5aa4eb30ee493d",
+  "initialTargetSnapshot": "work/original-transcription-review1.json",
+  "followup": {
+    "changedQuestions": [
+      12,
+      35
+    ],
+    "changedFragments": 3,
+    "otherTranscriptionChanges": false,
+    "candidateOriginalBodyAndChoicesMatchTranscription": true,
+    "candidateSha256": "e764ab92834e95f9b6df918a00324d3517a17bf5ed6bbfa41e82667481699025",
+    "reviewedAt": "2026-11-01T10:14:35.292378+00:00"
+  }
+}
