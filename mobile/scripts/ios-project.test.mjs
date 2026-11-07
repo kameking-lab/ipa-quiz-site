@@ -93,12 +93,29 @@ test("native pre-consent rules block ad traffic while keeping learning and CMP r
   const encoded = source.match(/let rules = #"(.*)"#/)[1];
   const rules = JSON.parse(encoded);
   const blocked = url => rules.some(rule => rule.action.type === "block" && new RegExp(rule.trigger["url-filter"]).test(url));
+  // JavaScript accepts more than WKContentRuleListStore. WebKit's URLFilterParser
+  // rejects disjunctions ("Disjunctions are not supported yet."), back-references,
+  // lookarounds and {n,m} quantifiers; one such rule fails the whole list on device.
+  for (const rule of rules) {
+    const filter = rule.trigger["url-filter"];
+    assert.doesNotMatch(filter, /\|/, `WebKit content rules do not support disjunction: ${filter}`);
+    assert.doesNotMatch(filter, /\(\?|\\[1-9bBdDsSwW]|\{\d/, `unsupported WebKit content rule syntax: ${filter}`);
+  }
   for (const host of ["pagead2.googlesyndication.com", "tpc.googlesyndication.com", "googleads.g.doubleclick.net", "www.googleadservices.com", "www.googletagservices.com", "ep1.adtrafficquality.google", "ep2.adtrafficquality.google"]) {
     assert.equal(blocked(`https://${host}/ads`), true, host);
   }
   for (const url of ["https://www.kakomon-ai.jp/quiz", "https://fundingchoicesmessages.google.com/i/pub-1234567890123456?ers=1", "https://www.gstatic.com/image.png", "https://googlesyndication.com.evil.invalid/ads"]) {
     assert.equal(blocked(url), false, url);
   }
+});
+
+test("privacy preparation never rejects, so the app always starts with ads off", () => {
+  const source = readFileSync(join(mobile, "ios-assets/TrackingTransparencyPlugin.swift"), "utf8");
+  const prepare = source.slice(source.indexOf("@objc func prepare"), source.indexOf("private func statusName"));
+  assert.doesNotMatch(prepare, /call\.reject/);
+  assert.match(prepare, /call\.resolve\(\["enabled": false/);
+  // Without the compiled block list, ATT and ad enabling stay unavailable.
+  assert.match(source, /private var configured: Bool \{ blockList != nil && /);
 });
 
 test("the only native ATT request is guarded by the bundled ads setting", () => {

@@ -83,7 +83,7 @@ try {
       const url = reminder ? local : config.origin + routes[index];
       await page.goto(url, { waitUntil: 'networkidle', timeout: 60000 });
       if (reminder) await page.locator('main[data-mobile-ready=true]').waitFor();
-      else await page.getByText('iPhone設定・会員・保存', { exact: true }).waitFor();
+      else await page.locator('[aria-label="iPhoneの学習機能"]').waitFor();
       if (index === 2) await page.getByText('復習キューはまだ空です', { exact: false }).waitFor();
       if (index === 3) {
         await page.getByText('総問題数', { exact: true }).waitFor();

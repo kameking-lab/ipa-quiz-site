@@ -19,6 +19,25 @@ class QualificationBridgeViewController: CAPBridgeViewController {
         }
         #endif
     }
+
+    // The WebView is edge-to-edge (contentInset "never"). Publish the real
+    // status bar / Dynamic Island and home-indicator insets to CSS as
+    // --native-safe-top/bottom so pages never depend on env() alone
+    // (app/globals.css takes the larger of the two).
+    override func viewSafeAreaInsetsDidChange() {
+        super.viewSafeAreaInsetsDidChange()
+        guard let webView = webView else { return }
+        let insets = view.safeAreaInsets
+        let source = "(function(){function f(){var r=document.documentElement;if(!r){return false;}"
+            + "r.style.setProperty('--native-safe-top','\(Int(insets.top.rounded()))px');"
+            + "r.style.setProperty('--native-safe-bottom','\(Int(insets.bottom.rounded()))px');return true;}"
+            + "if(!f()){document.addEventListener('readystatechange',f);}})();"
+        // Runs for every later document (local shell and www.kakomon-ai.jp)...
+        webView.configuration.userContentController.addUserScript(
+            WKUserScript(source: source, injectionTime: .atDocumentStart, forMainFrameOnly: true))
+        // ...and updates the document that is already showing.
+        webView.evaluateJavaScript(source, completionHandler: nil)
+    }
 }
 
 // The implementation and its arguments do not exist in distribution binaries.

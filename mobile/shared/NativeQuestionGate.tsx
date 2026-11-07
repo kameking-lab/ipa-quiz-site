@@ -34,7 +34,8 @@ export function NativeAccessState({ permission }: { permission: ReturnType<typeo
   // Legacy players keep keyboard handlers while their content is gated.
   // Stop those handlers during the gate, preserving native button activation.
   useEffect(()=>{ const block=(event:KeyboardEvent)=>event.stopImmediatePropagation();window.addEventListener("keydown",block,true);return()=>window.removeEventListener("keydown",block,true); },[]);
-  return <section className="mx-auto max-w-lg space-y-4 p-6" aria-live="polite"><h2>演習の利用枠を確認しています</h2>{permission.error&&<><p>{permission.error === "daily_limit" ? "本日の無料10問を使い切りました。日本時間0時に更新されます。有料会員は全問題を無制限で利用できます。" : permission.error}</p><button onClick={permission.retry}>再確認</button><p><Link href="/billing">App Storeの月額プラン・購入復元</Link></p><p><Link href="/review">学習メニューへ</Link></p></>}</section>;
+  const action="flex min-h-11 w-full items-center justify-center rounded-xl border border-border bg-background px-4 text-sm font-medium";
+  return <section className="mx-auto max-w-lg space-y-4 p-6" aria-live="polite"><h2 className="text-lg font-bold">演習の利用枠を確認しています</h2>{permission.error&&<><p className="break-words">{permission.error === "daily_limit" ? "本日の無料10問を使い切りました。日本時間0時に更新されます。有料会員は全問題を無制限で利用できます。" : permission.error}</p><button className={action} onClick={permission.retry}>再確認</button><Link className="flex min-h-11 w-full items-center justify-center rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground" href="/billing">App Storeの月額プラン・購入復元</Link><Link className={action} href="/review">学習メニューへ</Link></>}</section>;
 }
 export function NativeQuestionGate({id,paper,children}:{id?:string;paper?:string;children:ReactNode}) {
   const permission=useNativeQuestionGrant(id,paper);

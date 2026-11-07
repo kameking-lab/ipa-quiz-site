@@ -47,22 +47,22 @@ test("alternative FP practical reader reuses the web view from a paid downloaded
   const material=JSON.parse(await readFile(new URL("../../.cache/e2e-material.json",import.meta.url),"utf8")) as Extract<Material,{kind:"fp3"}>;
   const rows=[material];const metadata:CatalogEntry={...entry,code:"material.fp3-practical",name:"FP3級 実技",count:1,material:true,revision:createHash("sha256").update(JSON.stringify(rows)).digest("hex")};
   await seed(page,rows,metadata);await context.setOffline(true);await page.goto(ORIGIN+"/index.html");
-  await page.locator(".native-exam").filter({hasText:"FP3級 実技"}).getByRole("button",{name:"保存問題で学習"}).click();
+  await page.locator(".native-exam").filter({hasText:"FP3級 実技"}).first().click();await page.getByRole("button",{name:"保存問題で学習"}).click();
   await expect(page.getByRole("heading",{name:`${material.data.label} 実技 問${material.q.number}`,exact:true})).toBeVisible();
   await page.locator("summary").filter({hasText:"公式模範解答を見る"}).click();await expect(page.getByText(`${material.q.answer}. ${material.q.choices[material.q.answer-1]}`,{exact:true}).first()).toBeVisible();
 });
 test("paid qualification download uses shared quiz, keeps history on restart, and is disabled on revocation",async({page,context})=>{
   const errors:string[]=[];page.on("pageerror",e=>errors.push(e.message));await routeLocal(context);await seed(page);await context.setOffline(true);await page.goto(ORIGIN+"/index.html");
-  const exam=page.locator(".native-exam").filter({hasText:"ITパスポート"});await exam.getByRole("button",{name:"保存問題で学習"}).click();
+  await page.locator(".native-exam").filter({hasText:"ITパスポート"}).first().click();await page.getByRole("button",{name:"保存問題で学習"}).click();
   await expect(page.getByRole("radiogroup")).toBeVisible();await page.getByRole("radio").first().click();await expect(page.getByRole("button",{name:"次の問題へ",exact:true}).first()).toBeVisible();
   await page.screenshot({path:"test-results/shared-quiz.png",fullPage:false});
-  await page.getByRole("button",{name:"資格目次",exact:true}).click();await expect(page.getByText(/1問 · 正解/)).toBeVisible();await page.reload();await expect(page.getByText(/1問 · 正解/)).toBeVisible();
+  await page.getByRole("button",{name:"資格一覧",exact:true}).click();await page.locator("summary").filter({hasText:"その他の機能"}).click();await expect(page.getByText(/1問 · 正解/)).toBeVisible();await page.reload();await page.locator("summary").filter({hasText:"その他の機能"}).click();await expect(page.getByText(/1問 · 正解/)).toBeVisible();
   await page.goto(ORIGIN+"/tests/e2e/harness.html");await page.waitForFunction(()=>!!window.mobileTest);await page.evaluate(()=>window.mobileTest.invalidate());await page.goto(ORIGIN+"/index.html");
-  await page.locator(".native-exam").filter({hasText:"ITパスポート"}).getByRole("button",{name:"保存問題で学習"}).click();await expect(page.getByRole("status")).toContainText("有料会員専用");await expect(page.getByRole("radiogroup")).toHaveCount(0);expect(errors).toEqual([]);
+  await page.locator(".native-exam").filter({hasText:"ITパスポート"}).first().click();await page.getByRole("button",{name:"保存問題で学習"}).click();await expect(page.getByRole("status")).toContainText("有料会員専用");await expect(page.getByRole("radiogroup")).toHaveCount(0);expect(errors).toEqual([]);
 });
 test("free membership explains paid-only downloads and never requests the download endpoint",async({page,context})=>{
   const requests=await routeLocal(context);await page.goto(ORIGIN+"/tests/e2e/harness.html");await page.waitForFunction(()=>!!window.mobileTest);await page.evaluate(()=>window.mobileTest.showMembership());
-  await expect(page.getByText("無料会員",{exact:true})).toBeVisible();await page.getByRole("button",{name:"有料特典を見る"}).click();await expect(page.getByRole("status")).toContainText("無料でもオンラインで全資格から1日10問");expect(requests.some(r=>r.includes("/api/mobile/download"))).toBe(false);
+  await expect(page.getByText("無料会員",{exact:true})).toBeVisible();await page.locator("summary").filter({hasText:"資格ごとの事前ダウンロード"}).click();await page.getByRole("button",{name:"有料特典を見る"}).click();await expect(page.getByRole("status")).toContainText("無料でもオンラインで全資格から1日10問");expect(requests.some(r=>r.includes("/api/mobile/download"))).toBe(false);
   await expect(page.getByRole("link",{name:"利用規約",exact:true})).toHaveAttribute("href",ORIGIN+"/terms");await expect(page.getByRole("link",{name:"プライバシーポリシー",exact:true})).toHaveAttribute("href",ORIGIN+"/privacy");
 });
 test("existing web subscribers see no second purchase, with restore and App Store management available",async({page,context})=>{
@@ -150,7 +150,7 @@ test("unviewed diagram survives save, restart and airplane mode",async({page,con
   const questions=[{...qs[0],hasImage:true,imageUrls:["/images/e2e-unviewed.svg"]}];
   const metadata={...entry,count:1,revision:createHash("sha256").update(JSON.stringify(questions)).digest("hex")};
   await seed(page,questions,metadata);await context.setOffline(true);await page.goto(ORIGIN+"/index.html");
-  await page.locator(".native-exam").filter({hasText:"ITパスポート"}).getByRole("button",{name:"保存問題で学習"}).click();
+  await page.locator(".native-exam").filter({hasText:"ITパスポート"}).first().click();await page.getByRole("button",{name:"保存問題で学習"}).click();
   const image=page.locator('img[src^="data:image/svg+xml"]').first();await expect(image).toBeVisible();expect(await image.evaluate((img:HTMLImageElement)=>img.naturalWidth)).toBeGreaterThan(0);
 });
 test("account deletion requires explicit confirmation and recent login",async({page,context})=>{
@@ -178,7 +178,7 @@ for(const fixture of figureFixtures) test(`unviewed answer figures survive Cache
   const cdp=await context.newCDPSession(page);await cdp.send("Network.clearBrowserCache");await cdp.detach();
   await page.close();airplane=true;await context.setOffline(true);
   const restarted=await context.newPage();await restarted.goto(ORIGIN+"/index.html");
-  await restarted.locator(".native-exam").filter({hasText:fixture.entry.name}).getByRole("button",{name:"保存問題で学習"}).click();
+  await restarted.locator(".native-exam").filter({hasText:fixture.entry.name}).first().click();await restarted.getByRole("button",{name:"保存問題で学習"}).click();
   await restarted.getByRole("button",{name:"模範解答を見る",exact:true}).click();
   for(const expected of answerRegistry[fixture.question.id]) {
     const button=restarted.getByRole("button",{name:`${expected.alt}を拡大`,exact:true});
