@@ -57,6 +57,8 @@ export interface Observation {
 export interface MonthlyProvider {
   customer(attemptId: string): Promise<string>;
   checkout(customerId: string, signup: Signup, email?: string): Promise<{ id: string; url: string }>;
+  /** Close an unpaid Checkout session; rejects with subscription_exists if it was completed. */
+  expireCheckout(sessionId: string): Promise<void>;
   portal(customerId: string, configurationId: string): Promise<string>;
   resolve(event: unknown): Promise<Target | null>;
   observe(target: Target): Promise<Observation>;

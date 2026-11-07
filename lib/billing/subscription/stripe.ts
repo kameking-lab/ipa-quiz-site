@@ -100,6 +100,14 @@ export class StripeMonthlyProvider implements MonthlyProvider {
     if (!result.id.startsWith(this.c.mode === "stripe-live" ? "cs_live_" : "cs_test_") || new URL(result.url).origin !== "https://checkout.stripe.com") throw new BillingError("invalid_checkout_url", 503);
     return { id: result.id, url: result.url };
   }
+  async expireCheckout(sessionId: string) {
+    const path = `checkout/sessions/${encodeURIComponent(sessionId)}`;
+    const state = z.object({ id, livemode: z.boolean(), status: z.enum(["open", "complete", "expired"]) });
+    const current = state.parse(await this.api(path)); this.mode(current);
+    if (current.id !== sessionId) throw new BillingError("checkout_owner_mismatch", 503);
+    if (current.status === "complete") throw new BillingError("subscription_exists");
+    if (current.status === "open") { const closed = state.parse(await this.api(`${path}/expire`, {})); this.mode(closed); if (closed.status !== "expired") throw new BillingError("subscription_exists"); }
+  }
   async portal(customerId: string, configurationId: string) {
     await this.checkPortalConfiguration(configurationId);
     const result = z.object({ url: z.string().url() }).parse(await this.api("billing_portal/sessions", {

@@ -83,7 +83,7 @@ export default async function SignInPage({
       <div className="relative w-full max-w-md">
         {/* Hero */}
         <div className="mb-8 text-center">
-          {forPurchase ? <PurchaseSignInBeacon /> : <Badge variant="success" className="mb-4">
+          {forPurchase ? <><PurchaseSignInBeacon /><span data-purchase-focus hidden /></> : <Badge variant="success" className="mb-4">
             無料の学習機能と月額プラン
           </Badge>}
           <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">

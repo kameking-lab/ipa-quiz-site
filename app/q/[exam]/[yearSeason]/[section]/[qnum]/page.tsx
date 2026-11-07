@@ -65,7 +65,6 @@ import { AiTransparencyDisclaimer } from "@/components/quiz/AiTransparencyDiscla
 import { AfternoonEssayHint } from "@/components/quiz/AfternoonEssayHint";
 import { KamokuBStudyHint } from "@/components/quiz/KamokuBStudyHint";
 import { CategoryStudyTip } from "@/components/quiz/CategoryStudyTip";
-import { DifficultyMeter } from "@/components/quiz/DifficultyMeter";
 import { createQuestionReportContextForDisplay } from "@/lib/feedback/question-report-context-server";
 import { QuestionFeedback } from "@/components/quiz/QuestionFeedback";
 import { topicTagToSlug } from "@/lib/seo/topics";
@@ -358,9 +357,6 @@ export default async function QuestionPage({
               #{t}
             </Link>
           ))}
-        </div>
-        <div className="mt-2">
-          <DifficultyMeter difficulty={q.difficulty} />
         </div>
       </header>
 

@@ -81,6 +81,10 @@ test("/q pages share the free 10; plan → sign-in → Checkout → back to the 
   await expect(page.getByRole("region", { name: "問題文" })).toBeHidden();
   await expect(plan).toHaveAttribute("href", `/billing/start?returnTo=${encodeURIComponent(url)}`);
   await expect(page.getByText("明日また10問", { exact: true })).toBeVisible();
+  // Anonymous and the bonus unused: the second button goes to sign-in, then the feedback form.
+  const bonus = page.getByRole("link", { name: "意見を送ってあと10問" });
+  await expect(bonus).toBeVisible({ timeout: 60_000 });
+  await expect(bonus).toHaveAttribute("href", `/auth/signin?callbackUrl=${encodeURIComponent(`${url}#feedback-unlock`)}`);
   await page.getByRole("heading", { name: "今日の無料10問はここまで" }).scrollIntoViewIfNeeded();
   await shot(page, "02-q-11th-limit.png");
   await expect.poll(() => funnel).toContain("free_limit_reached");
@@ -91,6 +95,9 @@ test("/q pages share the free 10; plan → sign-in → Checkout → back to the 
   expect(new URL(page.url()).searchParams.get("callbackUrl")).toBe(`/billing/start?returnTo=${encodeURIComponent(url)}`);
   const google = page.getByRole("button", { name: /Google でログイン/ });
   await expect(google).toBeVisible({ timeout: 60_000 });
+  if (process.env.E2E_PAYWALL_APPLE === "1") await expect(page.getByRole("button", { name: "Appleでサインイン" })).toBeVisible();
+  await expect(page.locator("footer.site-footer")).toBeHidden();
+  await expect(page.locator(".mobile-bottom-nav")).toBeHidden();
   await expect(page.getByRole("heading", { name: "ログインして決済へ" })).toBeVisible();
   await expect(page.getByRole("textbox")).toHaveCount(0);
   await shot(page, "03-signin-providers-only.png");

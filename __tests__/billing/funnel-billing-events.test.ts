@@ -77,4 +77,23 @@ describe("Stripe Checkout stays minimal", () => {
       priceId: f.config.priceId, state: "pending", sessionId: null, url: null, subscriptionId: null };
     await expect(f.provider.checkout("cus_monthly", signup, "buyer@example.com")).resolves.toMatchObject({ url: expect.stringMatching(/^https:\/\/checkout\.stripe\.com\//) });
   });
+  it("expires an open stale session at Stripe, and refuses (subscription_exists) when it was completed", async () => {
+    const f = await monthlyStripeFixture();
+    const original = vi.mocked(f.fetcher).getMockImplementation()!;
+    let status = "open"; const posts: string[] = [];
+    vi.mocked(f.fetcher).mockImplementation(async (input, options) => {
+      const path = new URL(String(input)).pathname.replace("/v1/", "");
+      if (path === "checkout/sessions/cs_test_old") {
+        return Response.json({ id: "cs_test_old", livemode: false, status });
+      }
+      if (path === "checkout/sessions/cs_test_old/expire") { posts.push(path); status = "expired"; return Response.json({ id: "cs_test_old", livemode: false, status }); }
+      return original(input, options);
+    });
+    await f.provider.expireCheckout("cs_test_old");
+    expect(posts).toEqual(["checkout/sessions/cs_test_old/expire"]);
+    await f.provider.expireCheckout("cs_test_old");
+    expect(posts).toHaveLength(1);
+    status = "complete";
+    await expect(f.provider.expireCheckout("cs_test_old")).rejects.toMatchObject({ code: "subscription_exists" });
+  });
 });
