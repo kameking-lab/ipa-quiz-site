@@ -1,5 +1,5 @@
 {
- "note": "Playwright WebKit (rev 2287), full-screen app viewport, native bridge emulated (TrackingTransparency.prepare rejects PRIVACY_UNAVAILABLE as on build 12). Notch/home indicator emulated via --native-safe-top/bottom (the same path QualificationBridgeViewController publishes) plus a red overlay. production-before-* = current www.kakomon-ai.jp (old code, not yet deployed), env() is 0 in this emulator.",
+ "note": "Playwright WebKit (rev 2287; rerun after merging origin/main 3e11e8070), full-screen app viewport, native bridge emulated (TrackingTransparency.prepare rejects PRIVACY_UNAVAILABLE as on build 12). Notch/home indicator emulated via --native-safe-top/bottom (the same path QualificationBridgeViewController publishes) plus a red overlay. production-before-* = current www.kakomon-ai.jp (old code, not yet deployed), env() is 0 in this emulator.",
  "devices": {
   "iPhone 13": [
    {
@@ -64,16 +64,7 @@
     "scrollWidth": 390,
     "viewportWidth": 390,
     "horizontalOverflow": [],
-    "smallTapTargets": [
-     "button「覚え方」 53x24",
-     "button「覚え方 をピン留め」 24x24",
-     "button「+他 6 個を見る」 89x27",
-     "button「用語をやさしく」 89x26",
-     "button「前提知識を整理」 103x26",
-     "button「実例で教えて」 86x26",
-     "button「覚え方のコツ」 83x26",
-     "button「あとで復習に追加（Rキー）」 32x32"
-    ]
+    "smallTapTargets": []
    },
    {
     "file": "i13-09-explanation-scrolled.png",
@@ -81,13 +72,7 @@
     "scrollWidth": 390,
     "viewportWidth": 390,
     "horizontalOverflow": [],
-    "smallTapTargets": [
-     "a「分野別で集中対策」 138x28",
-     "a「問題PDF」 80x27",
-     "a「公式解答PDF」 102x27",
-     "button「投稿する」 83x28",
-     "button「閉じる」 24x24"
-    ]
+    "smallTapTargets": []
    },
    {
     "file": "i13-10-online-page-top.png",
@@ -103,12 +88,7 @@
     "scrollWidth": 390,
     "viewportWidth": 390,
     "horizontalOverflow": [],
-    "smallTapTargets": [
-     "a「分野別で集中対策」 138x28",
-     "a「問題PDF」 80x27",
-     "a「公式解答PDF」 102x27",
-     "button「閉じる」 24x24"
-    ]
+    "smallTapTargets": []
    },
    {
     "file": "i13-12-settings.png",
@@ -140,7 +120,11 @@
     "scrollWidth": 390,
     "viewportWidth": 390,
     "horizontalOverflow": [],
-    "smallTapTargets": []
+    "smallTapTargets": [
+     "button「3行」 37x21",
+     "button「5行」 37x21",
+     "button「10行」 42x21"
+    ]
    },
    {
     "file": "i13-16-site-header-only-scrolled.png",
@@ -151,12 +135,7 @@
     "smallTapTargets": [
      "button「3行」 37x21",
      "button「5行」 37x21",
-     "button「10行」 42x21",
-     "button「用語解説」 68x24",
-     "button「用語解説 をピン留め」 24x24",
-     "button「もっと簡単に」 79x24",
-     "button「もっと簡単に をピン留め」 24x24",
-     "button「もっと詳しく」 73x24"
+     "button「10行」 42x21"
     ]
    }
   ],
@@ -215,11 +194,7 @@
     "scrollWidth": 393,
     "viewportWidth": 393,
     "horizontalOverflow": [],
-    "smallTapTargets": [
-     "button「3行」 37x21",
-     "button「5行」 37x21",
-     "button「10行」 42x21"
-    ]
+    "smallTapTargets": []
    },
    {
     "file": "i15pro-08-answered.png",
@@ -227,16 +202,7 @@
     "scrollWidth": 393,
     "viewportWidth": 393,
     "horizontalOverflow": [],
-    "smallTapTargets": [
-     "button「覚え方」 53x24",
-     "button「覚え方 をピン留め」 24x24",
-     "button「+他 6 個を見る」 89x27",
-     "button「用語をやさしく」 89x26",
-     "button「前提知識を整理」 103x26",
-     "button「実例で教えて」 86x26",
-     "button「覚え方のコツ」 83x26",
-     "button「あとで復習に追加（Rキー）」 32x32"
-    ]
+    "smallTapTargets": []
    },
    {
     "file": "i15pro-09-explanation-scrolled.png",
@@ -244,13 +210,7 @@
     "scrollWidth": 393,
     "viewportWidth": 393,
     "horizontalOverflow": [],
-    "smallTapTargets": [
-     "a「分野別で集中対策」 138x28",
-     "a「問題PDF」 80x27",
-     "a「公式解答PDF」 102x27",
-     "button「投稿する」 83x28",
-     "button「閉じる」 24x24"
-    ]
+    "smallTapTargets": []
    },
    {
     "file": "i15pro-10-online-page-top.png",
@@ -266,12 +226,7 @@
     "scrollWidth": 393,
     "viewportWidth": 393,
     "horizontalOverflow": [],
-    "smallTapTargets": [
-     "a「分野別で集中対策」 138x28",
-     "a「問題PDF」 80x27",
-     "a「公式解答PDF」 102x27",
-     "button「閉じる」 24x24"
-    ]
+    "smallTapTargets": []
    },
    {
     "file": "i15pro-12-settings.png",
@@ -303,7 +258,11 @@
     "scrollWidth": 393,
     "viewportWidth": 393,
     "horizontalOverflow": [],
-    "smallTapTargets": []
+    "smallTapTargets": [
+     "button「3行」 37x21",
+     "button「5行」 37x21",
+     "button「10行」 42x21"
+    ]
    },
    {
     "file": "i15pro-16-site-header-only-scrolled.png",
@@ -314,12 +273,7 @@
     "smallTapTargets": [
      "button「3行」 37x21",
      "button「5行」 37x21",
-     "button「10行」 42x21",
-     "button「用語解説」 68x24",
-     "button「用語解説 をピン留め」 24x24",
-     "button「もっと簡単に」 79x24",
-     "button「もっと簡単に をピン留め」 24x24",
-     "button「もっと詳しく」 73x24"
+     "button「10行」 42x21"
     ]
    }
   ],
@@ -378,11 +332,7 @@
     "scrollWidth": 375,
     "viewportWidth": 375,
     "horizontalOverflow": [],
-    "smallTapTargets": [
-     "button「3行」 37x21",
-     "button「5行」 37x21",
-     "button「10行」 42x21"
-    ]
+    "smallTapTargets": []
    },
    {
     "file": "i13mini-08-answered.png",
@@ -390,16 +340,7 @@
     "scrollWidth": 375,
     "viewportWidth": 375,
     "horizontalOverflow": [],
-    "smallTapTargets": [
-     "button「実例で教えて」 84x24",
-     "button「実例で教えて をピン留め」 24x24",
-     "button「覚え方」 53x24",
-     "button「覚え方 をピン留め」 24x24",
-     "button「+他 6 個を見る」 89x27",
-     "button「用語をやさしく」 89x26",
-     "button「前提知識を整理」 103x26",
-     "button「実例で教えて」 86x26"
-    ]
+    "smallTapTargets": []
    },
    {
     "file": "i13mini-09-explanation-scrolled.png",
@@ -407,12 +348,7 @@
     "scrollWidth": 375,
     "viewportWidth": 375,
     "horizontalOverflow": [],
-    "smallTapTargets": [
-     "a「分野別で集中対策」 138x28",
-     "a「問題PDF」 80x27",
-     "a「公式解答PDF」 102x27",
-     "button「閉じる」 24x24"
-    ]
+    "smallTapTargets": []
    },
    {
     "file": "i13mini-10-online-page-top.png",
@@ -428,12 +364,7 @@
     "scrollWidth": 375,
     "viewportWidth": 375,
     "horizontalOverflow": [],
-    "smallTapTargets": [
-     "a「分野別で集中対策」 138x28",
-     "a「問題PDF」 80x27",
-     "a「公式解答PDF」 102x27",
-     "button「閉じる」 24x24"
-    ]
+    "smallTapTargets": []
    },
    {
     "file": "i13mini-12-settings.png",
@@ -476,12 +407,7 @@
     "smallTapTargets": [
      "button「3行」 37x21",
      "button「5行」 37x21",
-     "button「10行」 42x21",
-     "button「用語解説」 68x24",
-     "button「用語解説 をピン留め」 24x24",
-     "button「もっと簡単に」 79x24",
-     "button「もっと簡単に をピン留め」 24x24",
-     "button「もっと詳しく」 73x24"
+     "button「10行」 42x21"
     ]
    }
   ],
@@ -552,16 +478,7 @@
     "scrollWidth": 430,
     "viewportWidth": 430,
     "horizontalOverflow": [],
-    "smallTapTargets": [
-     "button「もっと詳しく」 73x24",
-     "button「もっと詳しく をピン留め」 24x24",
-     "button「実例で教えて」 84x24",
-     "button「実例で教えて をピン留め」 24x24",
-     "button「覚え方」 53x24",
-     "button「覚え方 をピン留め」 24x24",
-     "button「+他 6 個を見る」 89x27",
-     "button「用語をやさしく」 89x26"
-    ]
+    "smallTapTargets": []
    },
    {
     "file": "i15max-09-explanation-scrolled.png",
@@ -569,13 +486,7 @@
     "scrollWidth": 430,
     "viewportWidth": 430,
     "horizontalOverflow": [],
-    "smallTapTargets": [
-     "a「分野別で集中対策」 138x28",
-     "a「問題PDF」 80x27",
-     "a「公式解答PDF」 102x27",
-     "button「投稿する」 83x28",
-     "button「閉じる」 24x24"
-    ]
+    "smallTapTargets": []
    },
    {
     "file": "i15max-10-online-page-top.png",
@@ -595,13 +506,7 @@
     "scrollWidth": 430,
     "viewportWidth": 430,
     "horizontalOverflow": [],
-    "smallTapTargets": [
-     "a「分野別で集中対策」 138x28",
-     "a「問題PDF」 80x27",
-     "a「公式解答PDF」 102x27",
-     "button「投稿する」 83x28",
-     "button「閉じる」 24x24"
-    ]
+    "smallTapTargets": []
    },
    {
     "file": "i15max-12-settings.png",
@@ -648,12 +553,7 @@
     "smallTapTargets": [
      "button「3行」 37x21",
      "button「5行」 37x21",
-     "button「10行」 42x21",
-     "button「用語解説」 68x24",
-     "button「用語解説 をピン留め」 24x24",
-     "button「もっと簡単に」 79x24",
-     "button「もっと簡単に をピン留め」 24x24",
-     "button「もっと詳しく」 73x24"
+     "button「10行」 42x21"
     ]
    }
   ]
