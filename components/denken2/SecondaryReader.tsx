@@ -121,4 +121,4 @@ function SecondaryReaderBody({ question, previous, next }: { question: Secondary
   </main>;
 }
 
-export function SecondaryReader(props:Parameters<typeof SecondaryReaderBody>[0]) { return <NativeQuestionGate id={props.question.id}><SecondaryReaderBody {...props}/></NativeQuestionGate>; }
+export function SecondaryReader(props:Parameters<typeof SecondaryReaderBody>[0]) { return <NativeQuestionGate webQuota id={props.question.id}><SecondaryReaderBody {...props}/></NativeQuestionGate>; }

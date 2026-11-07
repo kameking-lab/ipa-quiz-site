@@ -1,7 +1,8 @@
 import "server-only";
+import { PLAN_OFFER } from "../plan-offer";
 
 /** Approved public offer; sales activation and stored billing facts are separate. */
-export const MONTHLY_PUBLIC_OFFER = Object.freeze({ priceYen: 980, freeDaily: 10 });
+export const MONTHLY_PUBLIC_OFFER = PLAN_OFFER;
 
 /** Direct mailbox delivery and manual response workflow approved by the owner. */
 export function monthlySellerDisclosure() {

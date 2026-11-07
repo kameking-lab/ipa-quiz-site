@@ -2,35 +2,28 @@
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { PurchaseStatus } from "@/app/billing/PurchaseStatus";
-import { CheckoutButton } from "@/app/billing/CheckoutButton";
-afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
+import { AutoCheckout } from "@/app/billing/start/AutoCheckout";
+import { readQuizReturn } from "@/lib/billing/quiz-return";
+afterEach(() => { cleanup(); vi.unstubAllGlobals(); sessionStorage.clear(); });
 describe("monthly purchase copy and status", () => {
-  it("keeps explicit consent and price next to the disabled purchase action", () => {
-    const fetchMock = vi.fn(); vi.stubGlobal("fetch", fetchMock);
-    render(<CheckoutButton recurring amount={980} terms={"a".repeat(64)} enabled={false} testMode={false} />);
-    expect(screen.getByText("対象の演習と料金・毎月更新・解約・返金条件に同意して進みます。")).toBeTruthy();
-    expect(screen.getByText("次の画面で月額980円（税込）の支払いを確定します。確定前に戻れます。")).toBeTruthy();
-    const button = screen.getByRole("button", { name: "同意して決済へ進む" }) as HTMLButtonElement;
-    expect(button.disabled).toBe(true);
-    expect(button.getAttribute("aria-describedby")).toBe("purchase-consent checkout-next");
-    fireEvent.click(button); expect(fetchMock).not.toHaveBeenCalled();
-  });
-  it("requires the explicit consent action and suppresses duplicate submission before response", async () => {
-    let settle: ((response: Response) => void) | undefined;
-    const fetchMock = vi.fn(() => new Promise<Response>(resolve => { settle = resolve; }));
+  it("opens Stripe Checkout once, without another tap, and remembers the question to return to", async () => {
+    const fetchMock = vi.fn(async () => Response.json({ url: "https://checkout.stripe.com/c/pay/cs_test_fixture", orderId: "order-1" }));
     vi.stubGlobal("fetch", fetchMock);
-    render(<CheckoutButton recurring amount={980} terms={"a".repeat(64)} enabled testMode={false} />);
-    expect(fetchMock).not.toHaveBeenCalled();
-    expect(screen.queryByRole("checkbox")).toBeNull();
-    const button = screen.getByRole("button", { name: "同意して決済へ進む" }) as HTMLButtonElement;
-    fireEvent.click(button); fireEvent.click(button);
+    const replace = vi.fn();
+    vi.stubGlobal("location", { ...window.location, replace });
+    const view = render(<AutoCheckout terms={"a".repeat(64)} returnTo="/q/ap/2023-spring/am/1" fallback="/billing" />);
+    view.rerender(<AutoCheckout terms={"a".repeat(64)} returnTo="/q/ap/2023-spring/am/1" fallback="/billing" />);
+    await waitFor(() => expect(replace).toHaveBeenCalledWith("https://checkout.stripe.com/c/pay/cs_test_fixture"));
     expect(fetchMock).toHaveBeenCalledTimes(1);
     expect(fetchMock).toHaveBeenCalledWith("/api/billing/checkout", expect.objectContaining({ method: "POST", body: JSON.stringify({ terms: "a".repeat(64) }) }));
-    expect(button.disabled).toBe(true);
-    settle!(Response.json({ error: "fixture_declined" }, { status: 503 }));
-    await waitFor(() => expect(button.disabled).toBe(false));
-    expect(screen.getByRole("alert")).toBeTruthy();
-    expect(fetchMock).toHaveBeenCalledTimes(1);
+    expect(readQuizReturn(sessionStorage, Date.now(), "order-1")).toBe("/q/ap/2023-spring/am/1");
+    expect(readQuizReturn(sessionStorage)).toBe("/q/ap/2023-spring/am/1");
+  });
+  it("shows one short error and a way to the plan page when checkout cannot open", async () => {
+    vi.stubGlobal("fetch", vi.fn(async () => Response.json({ error: "subscription_exists" }, { status: 409 })));
+    render(<AutoCheckout terms={"a".repeat(64)} returnTo={null} fallback="/billing" />);
+    expect(await screen.findByRole("alert")).toHaveTextContent("契約済みか、支払確認中の申込があります。");
+    expect(screen.getByRole("link", { name: "料金・契約の画面へ" })).toHaveAttribute("href", "/billing");
   });
   it("shows period-end cancellation and management without claiming no auto-renewal", async () => {
     vi.stubGlobal("fetch", vi.fn(async () => Response.json({ billingModel: "subscription", entitled: true, canManage: true,

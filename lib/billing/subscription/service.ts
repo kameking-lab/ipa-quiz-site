@@ -2,7 +2,7 @@ import "server-only";
 import { createHash, randomUUID } from "node:crypto";
 import { BillingError, jstDay } from "../domain";
 import { refundState } from "../finance";
-import { terminal, type Account, type MonthlyConfig, type MonthlyProvider, type MonthlyStore, type Invoice } from "./domain";
+import { terminal, type Account, type MonthlyConfig, type MonthlyProvider, type MonthlyStore, type Invoice, type Signup } from "./domain";
 
 export function monthlyTerms(c: MonthlyConfig) {
   return createHash("sha256").update(JSON.stringify({ version: c.termsVersion, price: c.priceYen, priceId: c.priceId,
@@ -50,29 +50,41 @@ export function access(a: Account, now: number) {
 export class MonthlyService {
   constructor(private store: MonthlyStore, readonly config: MonthlyConfig, private clock = () => new Date()) {}
   private tx<T>(id: string, fn: (a: Account) => Promise<T>, readOnly = false) { return this.store.transaction(id, this.config.mode, this.config.sourceInstance, fn, readOnly); }
-  async checkout(userId: string, terms: string, provider: MonthlyProvider) {
+  async checkout(userId: string, terms: string, provider: MonthlyProvider, email?: string) {
     if (!this.config.enabled) throw new BillingError("billing_unavailable", 503);
     if (terms !== monthlyTerms(this.config)) throw new BillingError("terms_changed");
-    const reservation = await this.tx(userId, async a => {
-      assertPolicyReady(a);
-      if (disputeHold(a)) throw new BillingError("billing_review_required");
-      if (Object.values(a.contracts).some(c => !terminal(c.status))) throw new BillingError("subscription_exists");
-      const now = this.clock();
-      let s = Object.values(a.signups).find(s => s.state === "pending");
-      if (s && (now.getTime() - Date.parse(s.createdAt) >= 23 * 3600000 || s.terms !== terms)) throw new BillingError("pending_subscription_contact_support");
-      if (!s) { s = { id: randomUUID(), createdAt: now.toISOString(), terms, amount: this.config.priceYen, priceId: this.config.priceId,
-        state: "pending", sessionId: null, url: null, subscriptionId: null }; a.signups[s.id] = s; }
-      if (!a.customer) a.customer = { attemptId: randomUUID(), createdAt: now.toISOString(), id: null };
-      if (!a.customer.id && now.getTime() - Date.parse(a.customer.createdAt) >= 23 * 3600000) throw new BillingError("customer_creation_contact_support");
-      return structuredClone({ signup: s, customer: a.customer });
-    });
+    // A stale (23h+, near Stripe's 24h session/idempotency limit) or outdated pending
+    // signup never blocks a new purchase: its Checkout session is expired at Stripe
+    // (refused if it was actually paid) and a fresh signup starts immediately.
+    type Reservation = { signup: Signup; customer: NonNullable<Account["customer"]> };
+    let reservation: Reservation | null = null;
+    for (let round = 0; round < 3 && !reservation; round++) {
+      const step = await this.tx(userId, async (a): Promise<Reservation | { stale: Signup }> => {
+        assertPolicyReady(a);
+        if (disputeHold(a)) throw new BillingError("billing_review_required");
+        if (Object.values(a.contracts).some(c => !terminal(c.status))) throw new BillingError("subscription_exists");
+        const now = this.clock();
+        let s = Object.values(a.signups).find(s => s.state === "pending");
+        if (s && (now.getTime() - Date.parse(s.createdAt) >= 23 * 3600000 || s.terms !== terms)) return structuredClone({ stale: s });
+        if (!s) { s = { id: randomUUID(), createdAt: now.toISOString(), terms, amount: this.config.priceYen, priceId: this.config.priceId,
+          state: "pending", sessionId: null, url: null, subscriptionId: null }; a.signups[s.id] = s; }
+        // An unconfirmed customer attempt past the idempotency window starts over (at worst an unused Stripe customer).
+        if (!a.customer || !a.customer.id && now.getTime() - Date.parse(a.customer.createdAt) >= 23 * 3600000) a.customer = { attemptId: randomUUID(), createdAt: now.toISOString(), id: null };
+        return structuredClone({ signup: s, customer: a.customer });
+      });
+      if ("stale" in step) {
+        if (step.stale.sessionId) await provider.expireCheckout(step.stale.sessionId);
+        await this.tx(userId, async a => { const current = a.signups[step.stale.id]; if (current?.state === "pending") current.state = "expired"; });
+      } else reservation = step;
+    }
+    if (!reservation) throw new BillingError("checkout_conflict", 503);
     const customerId = reservation.customer.id ?? await provider.customer(reservation.customer.attemptId);
     await this.tx(userId, async a => {
       if (a.customer?.attemptId !== reservation.customer.attemptId || a.customer.id && a.customer.id !== customerId) problem("customer_conflict");
       a.customer.id = customerId;
     });
     const result = reservation.signup.sessionId && reservation.signup.url
-      ? { id: reservation.signup.sessionId, url: reservation.signup.url } : await provider.checkout(customerId, reservation.signup);
+      ? { id: reservation.signup.sessionId, url: reservation.signup.url } : await provider.checkout(customerId, reservation.signup, email);
     return this.tx(userId, async a => {
       const current = a.signups[reservation.signup.id];
       if (!current || current.sessionId && current.sessionId !== result.id) problem("checkout_conflict");

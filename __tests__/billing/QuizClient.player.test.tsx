@@ -87,16 +87,17 @@ describe("QuizClient with the real player and local learning stores", () => {
     const history = localStorage.getItem(LS_KEYS.history);
     const reward = sessionStorage.getItem(LS_KEYS.studyReward);
     fireEvent.click(screen.getByRole("button", { name: "次の問題へ" }));
-    const limit = await screen.findByRole("region", { name: "今日の無料演習はここまで" });
-    expect(limit).toHaveTextContent("明日また10問");
-    const billing = new URL(screen.getByRole("link", { name: "月額980円で続ける" }).getAttribute("href")!, window.location.origin);
-    expect(billing.pathname).toBe("/billing");
-    const resume = billing.searchParams.get("returnTo");
+    const limit = await screen.findByRole("region", { name: "今日の無料10問はここまで" });
+    // Purchase first, one line of terms, the feedback bonus, a tiny "tomorrow" line: nothing else.
+    const plan = screen.getByRole("link", { name: "月額980円で続ける" });
+    const start = new URL(plan.getAttribute("href")!, window.location.origin);
+    expect(start.pathname).toBe("/billing/start");
+    const resume = start.searchParams.get("returnTo");
     expect(resume).toBe(`/quiz?mode=year&exam=fp3&question=${fp[5].id}`);
-    // Short screen: plan, the one-time +10 and one line; no other links or paragraphs.
-    expect(screen.queryByRole("link", { name: "明日、この問題から再開する" })).toBeNull();
-    expect(screen.queryByRole("link", { name: /復習/ })).toBeNull();
+    expect(limit).toHaveTextContent("税込・毎月自動更新・いつでも解約可");
+    expect(limit).toHaveTextContent("明日また10問");
     expect(limit).not.toHaveTextContent("このボタンだけで課金は始まりません");
+    expect(screen.queryByRole("link", { name: "保存済みの履歴を無料で復習する" })).toBeNull();
     expect(document.activeElement).toHaveAttribute("aria-label", "本日の無料演習の終了");
     expect(screen.queryByRole("radiogroup")).toBeNull();
     expect(started.size).toBe(10);
@@ -181,12 +182,12 @@ it("submits feedback at the wall, answers bonus questions 11-20, stops at 21 and
     expect(createHistoryStore().getAllEntries()).toHaveLength(n + 1);
     fireEvent.click(screen.getByRole("button", { name: "次の問題へ" }));
   }
-  await screen.findByRole("region", { name: "今日の無料演習はここまで" });
+  await screen.findByRole("region", { name: "今日の無料10問はここまで" });
   expect(bonus.size).toBe(10);
   const saved = localStorage.getItem(LS_KEYS.history);
   first.unmount();
   render(<QuizClient billingGateEnabled poolIds={pool.map(q => q.id)} initialQuestionId={pool[20].id} mode="year" exam="fe" backHref="/fe" />);
-  await screen.findByRole("region", { name: "今日の無料演習はここまで" });
+  await screen.findByRole("region", { name: "今日の無料10問はここまで" });
   expect(screen.queryByRole("radiogroup")).toBeNull();
   expect(localStorage.getItem(LS_KEYS.history)).toBe(saved);
   expect(bonus.size).toBe(10);

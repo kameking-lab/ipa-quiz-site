@@ -1,6 +1,8 @@
 import { isReferenceOnlyQuestionId } from "@/lib/questions/assessment";
 import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
 import { strictContentGateEnabled } from "@/lib/billing/content-policy";
+import { practiceGateEnabled } from "@/lib/billing/practice-access";
+import { QuestionPracticeGate } from "@/components/quiz/QuestionPracticeGate";
 import { ContentPage } from "@/mobile/server/ContentPage";
 import { displayQuestionExplanation } from "@/lib/questions/explanation-display";
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
@@ -47,7 +49,7 @@ import {
   type QuestionRouteParams,
 } from "@/lib/seo/question-url";
 import { examTopicPageExists } from "@/lib/seo/exam-meta";
-import { buildQuestionJsonLd, questionBreadcrumbItems, sessionLabel } from "@/lib/seo/question-jsonld";
+import { buildQuestionJsonLd, questionBreadcrumbItems, sessionLabel, withQuotaPaywall } from "@/lib/seo/question-jsonld";
 import { questionSnippet, questionTitle } from "@/lib/seo/question-meta";
 import { CurrentLearningLinks } from "@/components/term-relations/CurrentLearningLinks";
 import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
@@ -63,7 +65,6 @@ import { AiTransparencyDisclaimer } from "@/components/quiz/AiTransparencyDiscla
 import { AfternoonEssayHint } from "@/components/quiz/AfternoonEssayHint";
 import { KamokuBStudyHint } from "@/components/quiz/KamokuBStudyHint";
 import { CategoryStudyTip } from "@/components/quiz/CategoryStudyTip";
-import { DifficultyMeter } from "@/components/quiz/DifficultyMeter";
 import { createQuestionReportContextForDisplay } from "@/lib/feedback/question-report-context-server";
 import { QuestionFeedback } from "@/components/quiz/QuestionFeedback";
 import { topicTagToSlug } from "@/lib/seo/topics";
@@ -247,6 +248,8 @@ export default async function QuestionPage({
   const lastUpdatedJa = lastUpdatedISO ? formatLastUpdatedJa(lastUpdatedISO) : undefined;
 
   const breadcrumbItems = questionBreadcrumbItems(q, requestedPageUrlAbs);
+  let gateEnabled = false;
+  try { gateEnabled = practiceGateEnabled(); } catch { /* Billing misconfigured: the page stays fully open. */ }
   const jsonLd = buildQuestionJsonLd({
     question: q,
     pageUrlAbs: canonicalPageUrlAbs,
@@ -266,7 +269,7 @@ export default async function QuestionPage({
         <link rel="next" href={`${SITE_BASE_URL}${questionPagePath(next)}`} />
       )}
     <main data-study-presence-exam={q.exam} className="mx-auto w-full max-w-3xl px-4 py-6 sm:py-10">
-      <JsonLd data={jsonLd} />
+      <JsonLd data={gateEnabled ? withQuotaPaywall(jsonLd) : jsonLd} />
 
       {/* Breadcrumb */}
       <nav
@@ -355,9 +358,6 @@ export default async function QuestionPage({
             </Link>
           ))}
         </div>
-        <div className="mt-2">
-          <DifficultyMeter difficulty={q.difficulty} />
-        </div>
       </header>
 
       {/* Figure-bearing notice — text-only fallback hint */}
@@ -385,7 +385,10 @@ export default async function QuestionPage({
         </aside>
       )}
 
-      {/* Question body */}
+      {/* Question, answer and explanation: past the shared daily free 10 a person
+          sees the limit screen here instead (crawlers keep the full text; the
+          part is declared paywalled in JSON-LD — flexible sampling). */}
+      <QuestionPracticeGate id={q.id} enabled={gateEnabled}>
       <section
         aria-label="問題文"
         className="selectable-content rounded-2xl border border-border bg-card p-5 text-base leading-[1.85] text-card-foreground shadow-sm sm:p-6 sm:text-[17px]"
@@ -515,6 +518,7 @@ export default async function QuestionPage({
           />}
         </details>
       </section>
+      </QuestionPracticeGate>
 
       <nav aria-label="解説のあとに学ぶ" className="print:hidden mb-6 flex flex-wrap gap-2 rounded-2xl border border-border bg-card p-4">
         {next && <Link href={questionPagePath(next)} className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground">次の問題へ<ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>}

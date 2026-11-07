@@ -358,4 +358,4 @@ function formatTime(iso: string): string {
   }
 }
 
-export function EssayEditor(props:Parameters<typeof EssayEditorBody>[0]) { return <NativeQuestionGate id={props.question.id}><EssayEditorBody {...props}/></NativeQuestionGate>; }
+export function EssayEditor(props:Parameters<typeof EssayEditorBody>[0]) { return <NativeQuestionGate webQuota id={props.question.id}><EssayEditorBody {...props}/></NativeQuestionGate>; }

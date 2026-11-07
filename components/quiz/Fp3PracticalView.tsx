@@ -45,4 +45,4 @@ function Fp3PracticalViewBody({edition,data,q,source}:{edition:string;data:Omit<
 }
 
 
-export function Fp3PracticalView(props:Parameters<typeof Fp3PracticalViewBody>[0]) { return <NativeQuestionGate id={`fp3-practical-${props.edition}-${props.q.number}`}><Fp3PracticalViewBody {...props}/></NativeQuestionGate>; }
+export function Fp3PracticalView(props:Parameters<typeof Fp3PracticalViewBody>[0]) { return <NativeQuestionGate webQuota id={`fp3-practical-${props.edition}-${props.q.number}`}><Fp3PracticalViewBody {...props}/></NativeQuestionGate>; }

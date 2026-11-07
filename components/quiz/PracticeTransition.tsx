@@ -2,7 +2,9 @@
 
 import Link from "next/link";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
-import { billingHref, saveQuizReturn } from "@/lib/billing/quiz-return";
+import { planStartHref, saveQuizReturn } from "@/lib/billing/quiz-return";
+import { PLAN_OFFER } from "@/lib/billing/plan-offer";
+import { sendFunnelEvent } from "@/lib/billing/funnel-client";
 import { useEffect } from "react";
 import { posthogCapture } from "@/lib/posthog";
 import dynamic from "next/dynamic";
@@ -18,17 +20,32 @@ export function PracticeLoading({ index = 0, total = 0 }: { index?: number; tota
   </div>;
 }
 
-export function PracticeDailyLimit({ resumeHref, freeDaily, onUnlocked }: { reset: string | null; resumeHref: string; backHref: string; freeDaily?: number; onUnlocked?: () => void }) {
-  useEffect(() => { posthogCapture("practice_limit_viewed", { freeDaily: freeDaily ?? 10 }); }, [freeDaily]);
-  // Owner decision 2026-11-07: plan first, the one-time feedback +10 second, one line for tomorrow.
+/**
+ * The free-10 limit screen (web and app share it). Purchase first, one line of
+ * required terms under the button, the one-time feedback bonus second, nothing
+ * else. On the web the plan button goes straight to Stripe Checkout (sign-in
+ * first when needed); in the iOS app the native host turns any /billing link
+ * into the App Store purchase sheet, so Stripe is never reached there.
+ */
+export function PracticeDailyLimit({ resumeHref, freeDaily, onUnlocked }: { reset?: string | null; resumeHref: string; backHref?: string; freeDaily?: number; onUnlocked?: () => void }) {
+  const free = Number.isFinite(freeDaily) && freeDaily! > 0 ? freeDaily! : PLAN_OFFER.freeDaily;
+  // The KV funnel count goes first: it must not depend on the analytics SDK.
+  useEffect(() => { sendFunnelEvent("free_limit_reached"); posthogCapture("practice_limit_viewed", { freeDaily: free }); }, [free]);
+  const start = () => {
+    sendFunnelEvent("paywall_plan_click");
+    posthogCapture("practice_upgrade_clicked", { source: "daily_limit" });
+    try { saveQuizReturn(window.sessionStorage, resumeHref); } catch { /* The link itself carries the return path. */ }
+  };
   return <section aria-labelledby="practice-limit-title" className="mx-auto min-h-[100dvh] w-full max-w-md px-4 py-8">
     <div className="space-y-4 rounded-3xl border border-sky-200 bg-gradient-to-b from-sky-50 via-card to-card p-5 text-center shadow-sm dark:border-sky-800 dark:from-sky-950">
-      <div className="flex justify-center"><ChihuahuaMascot pose="celebrate" size={96} /></div>
-      <h2 id="practice-limit-title" className="text-2xl font-bold leading-snug">今日の無料演習はここまで</h2>
-      {/* In the iOS app NativeTools intercepts /billing and opens the App Store purchase screen. */}
-      <Link href={billingHref(resumeHref)} onClick={() => { posthogCapture("practice_upgrade_clicked", { source: "daily_limit" }); try { saveQuizReturn(window.sessionStorage, resumeHref); } catch { /* The link retains the exact context even without storage. */ } }} className="flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-4 py-3 font-semibold text-primary-foreground hover:bg-primary/90">月額980円で続ける</Link>
+    <div className="flex justify-center"><ChihuahuaMascot pose="celebrate" size={96} /></div>
+    <h2 id="practice-limit-title" className="text-2xl font-bold leading-snug">今日の無料{free}問はここまで</h2>
+    <div className="space-y-3">
+      <a href={planStartHref(resumeHref)} onClick={start} aria-describedby="plan-terms" className="flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-4 py-3 text-lg font-bold text-primary-foreground hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">月額{PLAN_OFFER.priceYen}円で続ける</a>
+      <p id="plan-terms" className="text-xs text-muted-foreground">税込・毎月自動更新・いつでも解約可 <Link href="/billing/terms" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">条件・返金</Link></p>
       <FeedbackUnlock onUnlocked={onUnlocked ?? (() => window.location.reload())} />
-      <p className="text-xs text-muted-foreground">明日また10問</p>
+    </div>
+    <p className="text-xs text-muted-foreground">明日また{free}問</p>
     </div>
   </section>;
 }

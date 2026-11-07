@@ -28,6 +28,7 @@ export async function monthlyFixture() {
     customer: vi.fn(async () => "cus_alice"), checkout: vi.fn(async () => ({ id: "cs_test_monthly", url: "https://checkout.stripe.com/c/pay/monthly" })),
     portal: vi.fn(async () => "https://billing.stripe.com/p/session/fixture"), resolve: vi.fn(async () => ({ customerId: "cus_alice", subscriptionIds: ["sub_monthly"], invoiceIds: [] })),
     observe: vi.fn(async () => structuredClone(observation)), stopRenewal: vi.fn(async () => undefined),
+    expireCheckout: vi.fn(async () => undefined),
   };
   const checkout = await service.checkout("alice", monthlyTerms(config), provider);
   const start = Date.parse("2026-01-31T00:00:00Z") / 1000, end = Date.parse("2026-02-28T00:00:00Z") / 1000;

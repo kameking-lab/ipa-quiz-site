@@ -52,4 +52,4 @@ function Fp1AppliedViewBody({edition,data,question}:{edition:string;data:Omit<Fp
   </main>;
 }
 
-export function Fp1AppliedView(props:Parameters<typeof Fp1AppliedViewBody>[0]) { return <NativeQuestionGate id={props.question.id}><Fp1AppliedViewBody {...props}/></NativeQuestionGate>; }
+export function Fp1AppliedView(props:Parameters<typeof Fp1AppliedViewBody>[0]) { return <NativeQuestionGate webQuota id={props.question.id}><Fp1AppliedViewBody {...props}/></NativeQuestionGate>; }

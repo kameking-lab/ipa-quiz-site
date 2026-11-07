@@ -36,7 +36,7 @@ test("quota UI fixture: ten uninterrupted answers, then free exits before the op
     await expect(page.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeInViewport();
     await page.getByRole("button", { name: /^(次の問題へ|結果を見る)/ }).first().tap();
   }
-  await expect(page.getByRole("heading", { name: "今日の無料演習はここまで" })).toBeVisible();
+  await expect(page.getByRole("heading", { name: "今日の無料10問はここまで" })).toBeVisible();
   expect(granted.size).toBe(10);
   expect(await page.evaluate(() => JSON.parse(localStorage.getItem("ipa-quiz:history:v1")!).entries.length)).toBe(10);
   const plan = page.getByRole("link", { name: "月額980円で続ける", exact: true });

@@ -634,3 +634,8 @@ html.native-app .sticky.top-0 { top: var(--safe-top); }
 html.native-app .sticky.top-24 { top: calc(var(--safe-top) + 6rem); }
 html.native-app [role="dialog"].inset-y-0 { padding-top: calc(var(--safe-top) + 1.5rem); }
 html.native-app [role="dialog"].inset-y-0 > button.absolute.top-4 { top: calc(var(--safe-top) + 1rem); }
+
+/* Purchase sign-in (/auth/signin on the way to Checkout): title, provider buttons and
+   one-line notes only. The page renders [data-purchase-focus]. */
+body:has([data-purchase-focus]) .site-footer,
+body:has([data-purchase-focus]) .mobile-bottom-nav { display: none; }

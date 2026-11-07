@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
+import { SellerDisclosureLine } from "@/components/billing/SellerDisclosureLine";
 import Link from "next/link";
-import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
 import {
   AlertTriangle,
   ArrowLeft,
@@ -245,8 +245,9 @@ export default function OperatorPage() {
           </div>
           <div className="space-y-3 text-sm leading-relaxed text-muted-foreground">
             <p>
-              月額プランの販売者情報、支払方法、提供期間、解約・返金条件は <Link href={PRICE_PAGE_LINK.href} className="font-medium text-primary underline-offset-4 hover:underline">{PRICE_PAGE_LINK.label}</Link> をご確認ください。販売の受付状況にかかわらず、既存契約の条件をご確認いただけます。
+              月額プランの価格・支払方法・提供期間・解約・返金は <Link href="/billing/terms" className="font-medium text-primary underline-offset-4 hover:underline">月額プランの条件・特定商取引法に基づく表示</Link> に記載しています。
             </p>
+            <SellerDisclosureLine />
             <p>運営に関するお問い合わせは <Link href="/contact" className="font-medium text-primary underline-offset-4 hover:underline">お問い合わせフォーム</Link> よりお寄せください。</p>
           </div>
         </section>

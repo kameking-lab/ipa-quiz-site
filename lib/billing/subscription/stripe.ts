@@ -73,8 +73,11 @@ export class StripeMonthlyProvider implements MonthlyProvider {
     const customer = z.object({ id, livemode: z.boolean() }).parse(await this.api("customers", { "metadata[source_instance]": this.c.sourceInstance }, `${this.c.sourceInstance}:customer:${attemptId}`));
     this.mode(customer); if (!customer.id.startsWith("cus_")) throw new BillingError("invalid_customer", 503); return customer.id;
   }
-  async checkout(customerId: string, signup: Signup) {
+  async checkout(customerId: string, signup: Signup, email?: string) {
     await this.checkPortalConfiguration(this.c.portalConfigurationId);
+    // Checkout shows the customer's address, so the buyer never types it again.
+    // A failed prefill never blocks the purchase; Checkout then asks for the address.
+    if (email) try { await this.api(`customers/${encodeURIComponent(customerId)}`, { email }); } catch { /* optional */ }
     const price = priceSchema.extend({ active: z.literal(true) }).parse(await this.api(`prices/${encodeURIComponent(signup.priceId)}`)); this.mode(price);
     if (price.id !== signup.priceId || price.unit_amount !== signup.amount) throw new BillingError("subscription_price_mismatch", 503);
     // Also detect contracts created outside this server, or a successful Checkout whose response/event was lost.
@@ -84,7 +87,9 @@ export class StripeMonthlyProvider implements MonthlyProvider {
     const body: Record<string, string> = { mode: "subscription", integration_identifier: `kakomon-monthly-${suffix}`, customer: customerId, client_reference_id: signup.id,
       "line_items[0][price]": signup.priceId, "line_items[0][quantity]": "1", "adaptive_pricing[enabled]": "false", "automatic_tax[enabled]": "false",
       success_url: `${this.c.origin}/billing/success?order=${signup.id}`, cancel_url: `${this.c.origin}/billing/cancel?order=${signup.id}`,
-      "custom_text[submit][message]": `月額${signup.amount}円（税込）。毎月自動更新。期間末解約。${this.c.seller.refund}` };
+      locale: "ja",
+      // One line of required terms next to Stripe's pay button (price, renewal, cancellation, refund, terms link).
+      "custom_text[submit][message]": `月額${signup.amount}円（税込）・毎月自動更新・いつでも解約可（期間末まで利用可）。${this.c.seller.refund} [利用条件](${this.c.origin}/billing/terms)` };
     for (const prefix of ["metadata", "subscription_data[metadata]"]) {
       body[`${prefix}[signup_id]`] = signup.id; body[`${prefix}[source_instance]`] = this.c.sourceInstance; body[`${prefix}[terms_hash]`] = signup.terms;
     }
@@ -94,6 +99,14 @@ export class StripeMonthlyProvider implements MonthlyProvider {
       || result.amount_subtotal !== signup.amount || result.amount_total !== signup.amount) throw new BillingError("checkout_total_or_owner_mismatch", 503);
     if (!result.id.startsWith(this.c.mode === "stripe-live" ? "cs_live_" : "cs_test_") || new URL(result.url).origin !== "https://checkout.stripe.com") throw new BillingError("invalid_checkout_url", 503);
     return { id: result.id, url: result.url };
+  }
+  async expireCheckout(sessionId: string) {
+    const path = `checkout/sessions/${encodeURIComponent(sessionId)}`;
+    const state = z.object({ id, livemode: z.boolean(), status: z.enum(["open", "complete", "expired"]) });
+    const current = state.parse(await this.api(path)); this.mode(current);
+    if (current.id !== sessionId) throw new BillingError("checkout_owner_mismatch", 503);
+    if (current.status === "complete") throw new BillingError("subscription_exists");
+    if (current.status === "open") { const closed = state.parse(await this.api(`${path}/expire`, {})); this.mode(closed); if (closed.status !== "expired") throw new BillingError("subscription_exists"); }
   }
   async portal(customerId: string, configurationId: string) {
     await this.checkPortalConfiguration(configurationId);

@@ -3,11 +3,18 @@ const KEY = "ipa-quiz:billing-return:v1";
 const TTL = 48 * 60 * 60 * 1000;
 type Store = Pick<Storage, "getItem" | "setItem">;
 
+/**
+ * A local page to return to after purchase: a continuous-quiz position
+ * (/quiz?…&question=…) or any other study page such as /q/… . Billing, sign-in
+ * and API paths are never return targets (no loops, no open redirect).
+ */
 export function safeQuizReturn(value: unknown): string | null {
-  if (typeof value !== "string" || value.length > 8192 || !value.startsWith("/quiz?") || /[\\\u0000-\u0020]/.test(value)) return null;
+  if (typeof value !== "string" || value.length > 8192 || !value.startsWith("/") || value.startsWith("//") || /[\\\u0000- ]/.test(value)) return null;
   try {
     const url = new URL(value, "https://quiz.invalid");
-    if (url.origin !== "https://quiz.invalid" || url.pathname !== "/quiz" || url.hash || !url.searchParams.get("question")) return null;
+    if (url.origin !== "https://quiz.invalid" || url.hash) return null;
+    if (/^\/(billing|auth|api)(\/|$)/.test(url.pathname)) return null;
+    if (url.pathname === "/quiz" && !url.searchParams.get("question")) return null;
     return url.pathname + url.search;
   } catch { return null; }
 }
@@ -36,4 +43,10 @@ export function readQuizReturn(store: Store, now = Date.now(), order?: string): 
 export function billingHref(href: string): string {
   const safe = safeQuizReturn(href);
   return safe ? `/billing?returnTo=${encodeURIComponent(safe)}` : "/billing";
+}
+
+/** The plan button: straight to Checkout (sign-in first when needed), then back to `href`. */
+export function planStartHref(href: string): string {
+  const safe = safeQuizReturn(href);
+  return safe ? `/billing/start?returnTo=${encodeURIComponent(safe)}` : "/billing/start";
 }

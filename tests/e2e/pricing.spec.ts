@@ -19,7 +19,7 @@ test.describe("/pricing は恒久削除（410 Gone）", () => {
     await expect(section.getByText(/連続演習はログインなしでも1日10問まで無料で、日本時間0時に\s*更新されます。/)).toBeVisible();
     await expect(section.getByText(/履歴の同期などは無料ログインで利用できます。/)).toBeVisible();
     await expect(section.getByText(/月額プランは税込980円で毎月自動更新され/)).toBeVisible();
-    await expect(section.getByRole("link", { name: "料金・月額プラン", exact: true })).toHaveAttribute("href", "/billing");
+    await expect(section.getByRole("link", { name: "月額プランの条件", exact: true })).toHaveAttribute("href", "/billing/terms");
   });
 
   test("Sitemap returns 200", async ({ request }) => {

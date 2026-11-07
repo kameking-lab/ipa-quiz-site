@@ -18,4 +18,4 @@ function AppliedExtensionPageBody({ data, question }: { data: Omit<Fp1AppliedExt
   </main>;
 }
 
-export function AppliedExtensionPage(props:Parameters<typeof AppliedExtensionPageBody>[0]) { return <NativeQuestionGate id={props.question.id}><AppliedExtensionPageBody {...props}/></NativeQuestionGate>; }
+export function AppliedExtensionPage(props:Parameters<typeof AppliedExtensionPageBody>[0]) { return <NativeQuestionGate webQuota id={props.question.id}><AppliedExtensionPageBody {...props}/></NativeQuestionGate>; }

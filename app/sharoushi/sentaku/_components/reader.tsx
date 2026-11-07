@@ -28,4 +28,4 @@ function SentakuReaderBody({ question:q }: { question:SentakuQuestion }) {
  </main>;
 }
 
-export function SentakuReader(props:Parameters<typeof SentakuReaderBody>[0]) { return <NativeQuestionGate id={props.question.id}><SentakuReaderBody {...props}/></NativeQuestionGate>; }
+export function SentakuReader(props:Parameters<typeof SentakuReaderBody>[0]) { return <NativeQuestionGate webQuota id={props.question.id}><SentakuReaderBody {...props}/></NativeQuestionGate>; }

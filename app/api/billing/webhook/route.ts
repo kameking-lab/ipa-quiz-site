@@ -4,6 +4,7 @@ import { eventDigest, verifyStripeEvent } from "@/lib/billing/signature";
 import { StripeCheckoutProvider } from "@/lib/billing/stripe";
 import { billingWebhookConfig } from "@/lib/billing/config";
 import { monthlyConfig, monthlySelected } from "@/lib/billing/subscription/config";
+import { recordFunnel } from "@/lib/billing/funnel";
 export const runtime = "nodejs";
 export async function POST(request: Request) {
   try {
@@ -17,6 +18,9 @@ export async function POST(request: Request) {
     if (monthly) {
       const { service, provider } = (await import("@/lib/billing/subscription/runtime")).monthlyRuntime();
       const result = await service.receive(event as { id: string }, eventDigest(raw), provider);
+      const session = completedSubscriptionSession(event);
+      // Counted once per Checkout session (Stripe retries are de-duplicated), awaited before the 2xx.
+      if (session && result !== "ignored") await recordFunnel("checkout_completed", `session:${session}`);
       return json({ received: true, result });
     }
     const { service, provider } = billingWebhookRuntime();
@@ -26,4 +30,13 @@ export async function POST(request: Request) {
     await service.receive(snapshot); // 2xx only after transaction commit; DB/provider errors remain retryable.
     return json({ received: true });
   } catch (error) { return billingFailure(error); }
+}
+
+/** The verified event's Checkout session ID when it completed a subscription purchase. */
+function completedSubscriptionSession(event: unknown): string | null {
+  if (!event || typeof event !== "object") return null;
+  const e = event as { type?: unknown; data?: { object?: { id?: unknown; mode?: unknown; status?: unknown } } };
+  const object = e.data?.object;
+  return e.type === "checkout.session.completed" && object?.mode === "subscription" && object.status === "complete"
+    && typeof object.id === "string" ? object.id : null;
 }

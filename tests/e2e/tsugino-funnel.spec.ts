@@ -94,7 +94,7 @@ for (const width of [390, 1440]) {
       await expect(page.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeVisible();
       await page.getByRole("button", { name: "次の問題へ", exact: true }).click();
     }
-    await expect(page.getByRole("heading", { name: "今日の無料演習はここまで" })).toBeVisible();
+    await expect(page.getByRole("heading", { name: "今日の無料10問はここまで" })).toBeVisible();
     await expect(page.getByRole("radiogroup")).toHaveCount(0);
     expect(new URL(page.url()).searchParams.get("year")).toBe("2024");
     await page.screenshot({ path: screenshotPath(`native-limit-${width}.png`) });

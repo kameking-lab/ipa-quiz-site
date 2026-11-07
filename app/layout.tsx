@@ -165,7 +165,7 @@ export default function RootLayout({
             >
               {children}
             </div>
-            <footer className="mobile-bottom-nav-footer-reserve mt-auto border-t border-border bg-background/60 px-4 pt-8 text-xs text-muted-foreground">
+            <footer className="site-footer mobile-bottom-nav-footer-reserve mt-auto border-t border-border bg-background/60 px-4 pt-8 text-xs text-muted-foreground">
               <div className="mx-auto max-w-5xl">
                 <div className="native-app-hidden print:hidden grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
                   <nav aria-labelledby="footer-nav-exams">

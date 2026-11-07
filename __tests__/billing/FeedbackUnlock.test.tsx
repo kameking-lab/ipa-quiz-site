@@ -6,19 +6,21 @@ import { FeedbackUnlock } from "@/components/quiz/FeedbackUnlock";
 import { PracticeDailyLimit } from "@/components/quiz/PracticeTransition";
 beforeEach(() => { window.history.replaceState({}, "", "/quiz"); vi.stubEnv("NEXT_PUBLIC_TURNSTILE_SITE_KEY", ""); vi.clearAllMocks(); sessionStorage.clear(); });
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.unstubAllEnvs(); });
-it("offers free exits before the optional plan, accepts multiple choices, and resumes only after storage success", async () => {
+it("puts the plan first and the feedback bonus second, accepts multiple choices, and resumes only after storage success", async () => {
   const resume = vi.fn();
   let finish: (r: Response) => void = () => {};
   const fetcher = vi.fn(async (_url: string, init?: RequestInit) => init?.method === "POST" ? new Promise<Response>(resolve => { finish = resolve; }) : Response.json({ eligible: true, submitted: false, remaining: 0 }));
   vi.stubGlobal("fetch", fetcher);
-  render(<PracticeDailyLimit reset={null} resumeHref="/quiz?mode=year" backHref="/" onUnlocked={resume} />);
+  render(<PracticeDailyLimit reset={null} resumeHref="/quiz?mode=year&question=q1" backHref="/" onUnlocked={resume} />);
   const button = await screen.findByRole("button", { name: "意見を送ってあと10問" });
   const purchase = screen.getByRole("link", { name: "月額980円で続ける" });
-  // Owner decision: the plan is the primary action, the one-time +10 comes second.
+  expect(purchase).toHaveAttribute("href", "/billing/start?returnTo=" + encodeURIComponent("/quiz?mode=year&question=q1"));
   expect(purchase.compareDocumentPosition(button) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-  expect(purchase.classList.contains("bg-primary")).toBe(true);
+  expect(screen.getByRole("heading", { name: "今日の無料10問はここまで" })).toBeTruthy();
   expect(screen.getByText("明日また10問")).toBeTruthy();
-  expect(screen.getAllByRole("link").map(link => link.textContent)).toEqual(["月額980円で続ける"]);
+  expect(purchase.classList.contains("bg-primary")).toBe(true);
+  // Only the plan button and the one-line terms link; nothing else to tap.
+  expect(screen.getAllByRole("link").map(link => link.textContent)).toEqual(["月額980円で続ける", "条件・返金"]);
   fireEvent.click(button);
   fireEvent.click(screen.getByLabelText("解説をもっと詳しく"));
   fireEvent.click(screen.getByLabelText("スマホでの使いやすさ"));
@@ -63,10 +65,14 @@ it("opens the form after login without storage access, retaining the exact quest
 
 it("never opens a form for a used account even with a forged return marker", async () => {
   window.history.replaceState({}, "", "/quiz?question=q11#feedback-unlock");
-  vi.stubGlobal("fetch", vi.fn(async () => Response.json({ eligible: false, submitted: true, remaining: 0 })));
+  const fetcher = vi.fn(async () => Response.json({ eligible: false, submitted: true, remaining: 0 }));
+  vi.stubGlobal("fetch", fetcher);
   render(<FeedbackUnlock onUnlocked={vi.fn()} />);
-  await screen.findByText(/受け取り済み/);
+  await waitFor(() => expect(fetcher).toHaveBeenCalled());
+  await act(async () => {});
+  // A used bonus disappears from the limit screen entirely.
   expect(screen.queryByRole("textbox")).toBeNull();
+  expect(screen.queryByText(/10問/)).toBeNull();
 });
 
 it("preserves all inputs through 401, login navigation and remount, requiring a fresh submission", async () => {
@@ -133,9 +139,12 @@ it.each(["expired", "other-question"])("discards a %s draft on return", async re
   expect(sessionStorage.getItem("feedback-unlock-draft:v1")).toBeNull();
 });
 it("offers only the plan once the feedback bonus is used", async () => {
-  vi.stubGlobal("fetch", vi.fn(async () => Response.json({ eligible: false, submitted: true, remaining: 0 })));
+  const fetcher = vi.fn(async () => Response.json({ eligible: false, submitted: true, remaining: 0 }));
+  vi.stubGlobal("fetch", fetcher);
   render(<PracticeDailyLimit reset={null} resumeHref="/quiz?mode=year" backHref="/" onUnlocked={vi.fn()} />);
-  await screen.findByText(/受け取り済み/);
+  await waitFor(() => expect(fetcher).toHaveBeenCalled());
+  await act(async () => {});
+  expect(screen.queryByText(/受け取り済み/)).toBeNull();
   expect(screen.getByRole("link", { name: "月額980円で続ける" }).getAttribute("href")).toMatch(/^\/billing/);
   expect(screen.queryByRole("button", { name: "意見を送ってあと10問" })).toBeNull();
 });
