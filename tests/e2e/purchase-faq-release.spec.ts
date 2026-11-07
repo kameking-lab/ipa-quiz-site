@@ -5,18 +5,20 @@ test.beforeEach(async ({ baseURL }) => {
   expect(baseURL).toBe("http://127.0.0.1:3000");
 });
 
-test("purchase offer keeps essential terms visible and detailed terms accessible at narrow width", async ({ page }) => {
+test("purchase offer is one button with one line of terms, and the full conditions are one tap away at narrow width", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/billing");
   const offer = page.locator('section[aria-labelledby="monthly-price"]');
-  await expect(offer.getByRole("heading", { name: /月額980円.*税込/ })).toBeVisible();
-  await expect(offer.getByText("毎月自動更新", { exact: true })).toBeVisible();
-  await expect(offer.getByText(/日割返金はありません/)).toBeVisible();
-  await expect(offer.getByRole("link", { name: /支払・解約・返金の詳細条件/ })).toHaveAttribute("href", "/billing/terms");
-  await page.getByText("支払・解約・返金・販売者情報", { exact: true }).click();
-  await expect(page.getByText(/法令上の権利は制限しません/)).toBeVisible();
-  await expect(page.getByText(/返信を受けて内容を確認してから/)).toBeVisible();
+  await expect(offer.getByText(/月額980円（税込）・毎月自動更新・いつでも解約可（期間末まで利用可）・日割返金なし/)).toBeVisible();
+  await expect(offer.getByText(/ご請求があれば遅滞なく開示します/)).toBeVisible();
+  await expect(offer.getByText(/返信を受けて内容を確認してから|申込前に返信/)).toHaveCount(0);
+  const terms = offer.getByRole("link", { name: "条件・特商法表示" });
+  await expect(terms).toHaveAttribute("href", "/billing/terms");
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)).toBe(true);
+  await terms.click();
+  await expect(page.getByRole("heading", { name: /特定商取引法に基づく表示/ })).toBeVisible();
+  await expect(page.getByText(/法令上の権利は制限しません/)).toBeVisible();
+  await expect(page.getByText(/日割返金はありません/)).toBeVisible();
 });
 
 test("difficulty FAQ does not assert unverified scoring sources", async ({ page }) => {
