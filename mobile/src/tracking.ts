@@ -12,11 +12,19 @@ const TrackingTransparency = registerPlugin<{
 
 const disabled: AdsConfiguration = { enabled: false, client: "", slot: "", cmpScriptUrl: "" };
 let preparation: Promise<AdsConfiguration> | undefined;
+/**
+ * Installs native ad-host blocking. Never rejects: a missing plugin or a rule
+ * list that cannot be compiled leaves ads disabled for this document (ATT and
+ * enableAds are never reached) but must not stop the learning app starting.
+ */
 export function prepareTrackingPrivacy(): Promise<AdsConfiguration> {
   if (!Capacitor.isNativePlatform()) return Promise.resolve(disabled);
-  // One preparation per document. Failure remains a rejection so the shell
-  // cannot navigate to remote pages without native network protection.
-  return preparation ??= TrackingTransparency.prepare();
+  return preparation ??= TrackingTransparency.prepare()
+    .then(config => config?.enabled === true ? config : disabled)
+    .catch((error: unknown) => {
+      console.error("[tracking] privacy preparation failed; ads stay disabled", error);
+      return disabled;
+    });
 }
 export function canTrack(status: TrackingStatus): boolean { return status === "authorized"; }
 export async function requestTrackingPermission(): Promise<TrackingStatus> {
@@ -32,7 +40,11 @@ export async function trackingStatus(): Promise<TrackingStatus> {
   catch { return "restricted"; }
 }
 export async function enableTrackingAds(): Promise<boolean> {
-  try { return (await TrackingTransparency.enableAds()).enabled === true; }
+  try {
+    // Never enable ads unless this document's native blocking was installed.
+    if (!(await prepareTrackingPrivacy()).enabled) return false;
+    return (await TrackingTransparency.enableAds()).enabled === true;
+  }
   catch { return false; }
 }
 export async function disableTrackingAds(reload = false): Promise<void> {

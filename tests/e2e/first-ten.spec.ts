@@ -30,7 +30,7 @@ for (const source of ["search", "tsugino"]) {
         expect(page.url()).toBe(url);
         await expect(page.getByRole("dialog")).toHaveCount(0);
         await expect(page.getByTestId("achievement-toast")).toHaveCount(0);
-        if (index < 9) await page.getByRole("navigation", { name: "解答後の学習操作" }).getByRole("button", { name: "次の1問" }).tap();
+        if (index < 9) await page.getByRole("button", { name: /^(次の問題へ|結果を見る)/ }).first().tap();
       }
       expect(await page.evaluate(() => JSON.parse(localStorage.getItem("ipa-quiz:history:v1")!).entries.length)).toBe(10);
       expect(ai).toEqual([]);
@@ -56,7 +56,7 @@ for (const source of ["search", "tsugino"]) {
         await answer.tap();
         await expect(page.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeInViewport();
         await expect(page.getByRole("dialog")).toHaveCount(0);
-        if (index < 8) await page.getByRole("navigation", { name: "解答後の学習操作" }).getByRole("button", { name: "次の1問" }).tap();
+        if (index < 8) await page.getByRole("button", { name: /^(次の問題へ|結果を見る)/ }).first().tap();
       }
       expect(await page.evaluate(() => JSON.parse(localStorage.getItem("ipa-quiz:history:v1")!).entries.length)).toBe(10);
     });
@@ -78,7 +78,7 @@ test("a fresh visitor can answer ten real questions without account prompts or a
     expect(page.url()).toBe(url);
     await expect(page.getByTestId("achievement-toast")).toHaveCount(0);
     expect(await page.evaluate(() => JSON.parse(localStorage.getItem("ipa-quiz:history:v1")!).entries.length)).toBe(index + 1);
-    if (index < 9) await page.getByRole("navigation", { name: "解答後の学習操作" }).getByRole("button", { name: "次の1問" }).tap();
+    if (index < 9) await page.getByRole("button", { name: /^(次の問題へ|結果を見る)/ }).first().tap();
   }
   expect(ai).toEqual([]);
 });

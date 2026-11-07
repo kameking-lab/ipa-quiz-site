@@ -12,11 +12,13 @@ it("offers free exits before the optional plan, accepts multiple choices, and re
   const fetcher = vi.fn(async (_url: string, init?: RequestInit) => init?.method === "POST" ? new Promise<Response>(resolve => { finish = resolve; }) : Response.json({ eligible: true, submitted: false, remaining: 0 }));
   vi.stubGlobal("fetch", fetcher);
   render(<PracticeDailyLimit reset={null} resumeHref="/quiz?mode=year" backHref="/" onUnlocked={resume} />);
-  const button = await screen.findByRole("button", { name: "意見を送って、さらに10問無料で解く" });
-  const purchase = screen.getByRole("link", { name: "月額プランの料金・条件を見る" });
-  const review = screen.getByRole("link", { name: "保存済みの履歴を無料で復習する" });
-  expect(button.compareDocumentPosition(purchase) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
-  expect(review.compareDocumentPosition(purchase) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  const button = await screen.findByRole("button", { name: "意見を送ってあと10問" });
+  const purchase = screen.getByRole("link", { name: "月額980円で続ける" });
+  // Owner decision: the plan is the primary action, the one-time +10 comes second.
+  expect(purchase.compareDocumentPosition(button) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
+  expect(purchase.classList.contains("bg-primary")).toBe(true);
+  expect(screen.getByText("明日また10問")).toBeTruthy();
+  expect(screen.getAllByRole("link").map(link => link.textContent)).toEqual(["月額980円で続ける"]);
   fireEvent.click(button);
   fireEvent.click(screen.getByLabelText("解説をもっと詳しく"));
   fireEvent.click(screen.getByLabelText("スマホでの使いやすさ"));
@@ -32,7 +34,7 @@ it("preserves the form and never grants a reward on failure", async () => {
   const resume = vi.fn();
   vi.stubGlobal("fetch", vi.fn(async (_url: string, init?: RequestInit) => init?.method === "POST" ? Response.json({ error: "feedback_unavailable" }, { status: 503 }) : Response.json({ eligible: true })));
   render(<FeedbackUnlock onUnlocked={resume} />);
-  fireEvent.click(await screen.findByRole("button", { name: "意見を送って、さらに10問無料で解く" }));
+  fireEvent.click(await screen.findByRole("button", { name: "意見を送ってあと10問" }));
   fireEvent.change(screen.getByRole("textbox", { name: /自由記述/ }), { target: { value: "資格を増やしてほしい" } });
   fireEvent.click(screen.getByRole("button", { name: "意見を送信して10問追加" }));
   await screen.findByRole("alert");
@@ -44,9 +46,9 @@ it("offers login with the current question as return URL and hides anonymous sub
   window.history.replaceState({}, "", "/quiz?question=q11");
   vi.stubGlobal("fetch", vi.fn(async () => Response.json({ eligible: false, requiresLogin: true })));
   render(<FeedbackUnlock onUnlocked={vi.fn()} />);
-  const link = await screen.findByRole("link", { name: "ログインして意見を送ると、さらに10問" });
+  const link = await screen.findByRole("link", { name: "意見を送ってあと10問" });
   expect(link).toHaveAttribute("href", "/auth/signin?callbackUrl=" + encodeURIComponent("/quiz?question=q11#feedback-unlock"));
-  expect(screen.queryByRole("button", { name: "意見を送って、さらに10問無料で解く" })).toBeNull();
+  expect(screen.queryByRole("button", { name: "意見を送ってあと10問" })).toBeNull();
 });
 
 it("opens the form after login without storage access, retaining the exact question", async () => {
@@ -74,12 +76,12 @@ it("preserves all inputs through 401, login navigation and remount, requiring a 
     ? Response.json({}, { status: 401 }) : Response.json({ eligible: true }));
   vi.stubGlobal("fetch", fetcher);
   const first = render(<FeedbackUnlock onUnlocked={resume} />);
-  fireEvent.click(await screen.findByRole("button", { name: "意見を送って、さらに10問無料で解く" }));
+  fireEvent.click(await screen.findByRole("button", { name: "意見を送ってあと10問" }));
   fireEvent.click(screen.getByLabelText("資格の数を増やしてほしい"));
   fireEvent.change(screen.getByRole("textbox", { name: /希望資格/ }), { target: { value: "行政書士" } });
   fireEvent.change(screen.getByRole("textbox", { name: /自由記述/ }), { target: { value: "入力を保つ" } });
   fireEvent.click(screen.getByRole("button", { name: "意見を送信して10問追加" }));
-  const link = await screen.findByRole("link", { name: "ログインして意見を送ると、さらに10問" });
+  const link = await screen.findByRole("link", { name: "意見を送ってあと10問" });
   expect(screen.getByRole("alert")).toHaveTextContent("有効期限");
   expect(screen.getByRole("button", { name: "意見を送信して10問追加" })).toBeDisabled();
   expect(link.getAttribute("href")).not.toContain("行政書士");
@@ -104,10 +106,10 @@ it("keeps inputs when storage is blocked and can continue after login in another
     ? Response.json({}, { status: 401 }) : Response.json({ eligible: true }));
   vi.stubGlobal("fetch", fetcher);
   render(<FeedbackUnlock onUnlocked={vi.fn()} />);
-  fireEvent.click(await screen.findByRole("button", { name: "意見を送って、さらに10問無料で解く" }));
+  fireEvent.click(await screen.findByRole("button", { name: "意見を送ってあと10問" }));
   fireEvent.change(screen.getByRole("textbox", { name: /自由記述/ }), { target: { value: "下書き" } });
   fireEvent.click(screen.getByRole("button", { name: "意見を送信して10問追加" }));
-  const link = await screen.findByRole("link", { name: "ログインして意見を送ると、さらに10問" });
+  const link = await screen.findByRole("link", { name: "意見を送ってあと10問" });
   const storage = vi.spyOn(Storage.prototype, "setItem").mockImplementation(() => { throw new Error("blocked"); });
   fireEvent.click(link);
   expect(screen.getByRole("alert")).toHaveTextContent("別のタブ");
@@ -129,4 +131,11 @@ it.each(["expired", "other-question"])("discards a %s draft on return", async re
   render(<FeedbackUnlock onUnlocked={vi.fn()} />);
   expect(await screen.findByRole("textbox", { name: /自由記述/ })).toHaveValue("");
   expect(sessionStorage.getItem("feedback-unlock-draft:v1")).toBeNull();
+});
+it("offers only the plan once the feedback bonus is used", async () => {
+  vi.stubGlobal("fetch", vi.fn(async () => Response.json({ eligible: false, submitted: true, remaining: 0 })));
+  render(<PracticeDailyLimit reset={null} resumeHref="/quiz?mode=year" backHref="/" onUnlocked={vi.fn()} />);
+  await screen.findByText(/受け取り済み/);
+  expect(screen.getByRole("link", { name: "月額980円で続ける" }).getAttribute("href")).toMatch(/^\/billing/);
+  expect(screen.queryByRole("button", { name: "意見を送ってあと10問" })).toBeNull();
 });

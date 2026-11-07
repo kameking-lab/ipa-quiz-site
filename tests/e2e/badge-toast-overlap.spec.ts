@@ -24,7 +24,7 @@ test.describe("quiet achievements / post-answer controls", () => {
   test("the next-question CTA bar is usable immediately", async ({ page }) => {
     await answerFirst(page);
     await expect(page.getByTestId("achievement-toast")).toHaveCount(0);
-    const next = page.getByRole("navigation", { name: "解答後の学習操作" }).getByRole("button", { name: "次の1問" });
+    const next = page.getByRole("button", { name: /^(次の問題へ|結果を見る)/ }).first();
     await next.click();
     await expect(page.getByRole("progressbar", { name: "クイズ進捗" })).toHaveAttribute("aria-valuenow", "2");
     await expect(page.getByRole("radio").first()).toBeEnabled();

@@ -98,7 +98,7 @@ for (const width of [390, 1440]) {
     await expect(page.getByRole("radiogroup")).toHaveCount(0);
     expect(new URL(page.url()).searchParams.get("year")).toBe("2024");
     await page.screenshot({ path: screenshotPath(`native-limit-${width}.png`) });
-    await page.getByRole("link", { name: "月額プランの料金・条件を見る" }).click();
+    await page.getByRole("link", { name: "月額980円で続ける" }).click();
     await expect(page).toHaveURL(/\/billing/);
     await expect.poll(() => events.filter(event => event.event === "practice_upgrade_clicked").length).toBe(1);
     for (const name of ["referral_landed", "quiz_started", "practice_free_limit_reached", "practice_upgrade_clicked"]) {

@@ -36,7 +36,7 @@ for (const width of [320, 390]) test(`the same local child follows answers and t
   await page.goto(quiz);
   await expect(page.getByRole("button", { name: "チワワのひと休みを開く" })).toBeVisible();
   await page.getByRole("radio").first().tap();
-  await page.getByRole("navigation", { name: "解答後の学習操作" }).getByRole("button", { name: "次の1問", exact: true }).tap();
+  await page.getByRole("button", { name: /^(次の問題へ|結果を見る)/ }).first().tap();
   await page.waitForURL(url => url.searchParams.get("question") !== "ap-2023h-am-q1");
   await page.getByRole("radio").first().tap();
   await expect.poll(() => page.evaluate(key => JSON.parse(localStorage.getItem(key)!).profiles.find((profile: { qualificationId: string }) => profile.qualificationId === "ap").growth, key), { timeout: 15000 }).toBeGreaterThan(3);

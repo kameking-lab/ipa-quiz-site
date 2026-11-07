@@ -167,7 +167,7 @@ export default function RootLayout({
             </div>
             <footer className="mobile-bottom-nav-footer-reserve mt-auto border-t border-border bg-background/60 px-4 pt-8 text-xs text-muted-foreground">
               <div className="mx-auto max-w-5xl">
-                <div className="print:hidden grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
+                <div className="native-app-hidden print:hidden grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
                   <nav aria-labelledby="footer-nav-exams">
                     <h3 id="footer-nav-exams" className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-foreground">
                       IPAの試験
@@ -266,7 +266,7 @@ export default function RootLayout({
                 </div>
 
                 {/* Theme */}
-                <div className="print:hidden mt-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div className="native-app-hidden print:hidden mt-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                   <div className="flex items-center gap-2 text-[11px]">
                     <span className="text-muted-foreground">テーマ</span>
                     <ThemeToggle />

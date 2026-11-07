@@ -14,9 +14,14 @@ const mobile = fileURLToPath(new URL("../", import.meta.url));
 const require = createRequire(import.meta.url);
 const { checkAppId } = require("../node_modules/@capacitor/cli/dist/common.js");
 const { loadConfig } = require("../node_modules/@capacitor/cli/dist/config.js");
-const runWithEnvironment = (cwd, script, environment, ...args) => spawnSync("ruby", [join(mobile, "scripts", script), ...args], {
-  cwd, encoding: "utf8", env: { ...process.env, BUILD_NUMBER: "37", MOBILE_ADS_ENABLED: "", MOBILE_ADS_WEB_CONSENT_READY: "", MOBILE_ADSENSE_CLIENT: "", MOBILE_ADSENSE_SLOT: "", MOBILE_ADS_CMP_SCRIPT_URL: "", MOBILE_GAD_APPLICATION_ID: "", ...environment },
-});
+const runWithEnvironment = (cwd, script, environment, ...args) => {
+  const options = { cwd, encoding: "utf8", env: { ...process.env, BUILD_NUMBER: "37", MOBILE_ADS_ENABLED: "", MOBILE_ADS_WEB_CONSENT_READY: "", MOBILE_ADSENSE_CLIENT: "", MOBILE_ADSENSE_SLOT: "", MOBILE_ADS_CMP_SCRIPT_URL: "", MOBILE_GAD_APPLICATION_ID: "", ...environment } };
+  if (script === "configure-ios.rb") {
+    const pods = spawnSync(process.execPath, [join(mobile, "scripts/configure-ads-pods.mjs")], options);
+    if (pods.status !== 0) return pods;
+  }
+  return spawnSync("ruby", [join(mobile, "scripts", script), ...args], options);
+};
 const run = (cwd, script, ...args) => runWithEnvironment(cwd, script, {}, ...args);
 const success = (result) => assert.equal(result.status, 0, `${result.error ?? ""}\n${result.stdout}\n${result.stderr}`);
 const ruby = (cwd, code) => {
@@ -52,13 +57,35 @@ const rejects = (cwd, message, ...args) => {
   assert.match(result.stderr, message);
 };
 
+test("generated native sources match the checked plugin contracts and are compiled by App", () => {
+  const sources = ["QualificationBridgeViewController.swift", "TrackingTransparencyPlugin.swift"];
+  for (const source of sources) {
+    assert.equal(readFileSync(join(mobile, "ios/App/App", source), "utf8"),
+      readFileSync(join(mobile, "ios-assets", source), "utf8"), `${source}: rerun ios:prepare`);
+  }
+  const compiled = JSON.parse(ruby(mobile, `
+    project = Xcodeproj::Project.open('ios/App/App.xcodeproj')
+    target = project.targets.find { |t| t.name == 'App' }
+    puts JSON.generate(target.source_build_phase.files_references.map(&:path))
+  `));
+  for (const source of sources) assert.equal(compiled.filter(path => path === source).length, 1, source);
+  const storyboard = readFileSync(join(mobile, "ios/App/App/Base.lproj/Main.storyboard"), "utf8");
+  assert.match(storyboard, /customClass="QualificationBridgeViewController" customModule="App"/);
+});
+
 test("Ads pod configuration preserves Capacitor hooks and is idempotent", () => {
   const original = "def capacitor_pods\n  pod 'Capacitor'\nend\ntarget 'App' do\n  capacitor_pods\n  # Add your Pods here\nend\npost_install do |installer|\n  assertDeploymentTarget(installer)\nend\n";
-  const configured = configureAdsPods(original);
-  assert.equal(configureAdsPods(configured), configured);
+  const configured = configureAdsPods(original, true);
+  assert.equal(configureAdsPods(configured, true), configured);
   assert.match(configured, /pod 'Google-Mobile-Ads-SDK', '13.11.0'/);
   assert.match(configured, /assertDeploymentTarget\(installer\)/);
   assert.match(configured, /IPHONEOS_DEPLOYMENT_TARGET/);
+  const disabled = configureAdsPods(configured, false);
+  assert.doesNotMatch(disabled, /Google-Mobile-Ads-SDK|GoogleUserMessagingPlatform/);
+  assert.match(disabled, /pod 'Capacitor'/);
+  assert.match(disabled, /assertDeploymentTarget\(installer\)/);
+  assert.equal(configureAdsPods(disabled, false), disabled);
+  assert.equal(configureAdsPods(disabled, true), configured);
 });
 
 test("native pre-consent rules block ad traffic while keeping learning and CMP reachable", () => {
@@ -66,6 +93,14 @@ test("native pre-consent rules block ad traffic while keeping learning and CMP r
   const encoded = source.match(/let rules = #"(.*)"#/)[1];
   const rules = JSON.parse(encoded);
   const blocked = url => rules.some(rule => rule.action.type === "block" && new RegExp(rule.trigger["url-filter"]).test(url));
+  // JavaScript accepts more than WKContentRuleListStore. WebKit's URLFilterParser
+  // rejects disjunctions ("Disjunctions are not supported yet."), back-references,
+  // lookarounds and {n,m} quantifiers; one such rule fails the whole list on device.
+  for (const rule of rules) {
+    const filter = rule.trigger["url-filter"];
+    assert.doesNotMatch(filter, /\|/, `WebKit content rules do not support disjunction: ${filter}`);
+    assert.doesNotMatch(filter, /\(\?|\\[1-9bBdDsSwW]|\{\d/, `unsupported WebKit content rule syntax: ${filter}`);
+  }
   for (const host of ["pagead2.googlesyndication.com", "tpc.googlesyndication.com", "googleads.g.doubleclick.net", "www.googleadservices.com", "www.googletagservices.com", "ep1.adtrafficquality.google", "ep2.adtrafficquality.google"]) {
     assert.equal(blocked(`https://${host}/ads`), true, host);
   }
@@ -74,26 +109,93 @@ test("native pre-consent rules block ad traffic while keeping learning and CMP r
   }
 });
 
+test("privacy preparation never rejects, so the app always starts with ads off", () => {
+  const source = readFileSync(join(mobile, "ios-assets/TrackingTransparencyPlugin.swift"), "utf8");
+  const prepare = source.slice(source.indexOf("@objc func prepare"), source.indexOf("private func statusName"));
+  assert.doesNotMatch(prepare, /call\.reject/);
+  assert.match(prepare, /call\.resolve\(\["enabled": false/);
+  // Without the compiled block list, ATT and ad enabling stay unavailable.
+  assert.match(source, /private var configured: Bool \{ blockList != nil && /);
+});
+
+test("the only native ATT request is guarded by the bundled ads setting", () => {
+  const source = readFileSync(join(mobile, "ios-assets/TrackingTransparencyPlugin.swift"), "utf8");
+  assert.match(source, /private var configured: Bool \{[^\n]*"KakomonAdsEnabled"\) as\? Bool == true \}/);
+  assert.equal(source.match(/ATTrackingManager\.requestTrackingAuthorization/g)?.length, 1);
+  const request = source.slice(source.indexOf("@objc func requestPermission"), source.indexOf("@objc func enableAds"));
+  assert.match(request, /guard self\.configured, self\.trustedPage else \{\s*call\.resolve\(\["status": "restricted"\]\); return\s*\}/);
+  assert.ok(request.indexOf("guard self.configured") < request.indexOf("ATTrackingManager.requestTrackingAuthorization"));
+  assert.match(source, /#if canImport\(GoogleMobileAds\)\s*import GoogleMobileAds\s*#endif/);
+  assert.match(source, /#if canImport\(GoogleMobileAds\)[\s\S]*MobileAds\.shared\.register\(webView\)[\s\S]*#else\s*self\.blockAds\(\)\s*call\.resolve\(\["enabled": false\]\)\s*#endif/);
+});
+
 test("optional ads configuration enables only complete publisher settings and clears stale values", t => {
   const cwd = fixture(t);
   const read = () => JSON.parse(ruby(cwd, "puts JSON.generate(Xcodeproj::Plist.read_from_path('ios/App/App/Info.plist'))"));
-  assert.equal(read().KakomonAdsEnabled, false);
-  assert.equal(read().GADApplicationIdentifier, undefined);
+  const privacy = () => JSON.parse(ruby(cwd, "puts JSON.generate(Xcodeproj::Plist.read_from_path('ios/App/App/PrivacyInfo.xcprivacy'))"));
+  const disabled = () => {
+    const plist = read();
+    assert.equal(plist.KakomonAdsEnabled, false);
+    assert.equal(plist.NSUserTrackingUsageDescription, undefined);
+    assert.deepEqual(Object.keys(plist).filter(key => key.startsWith("GAD")), []);
+    assert.doesNotMatch(readFileSync(join(cwd, "ios/App/Podfile"), "utf8"), /Google-Mobile-Ads-SDK|GoogleUserMessagingPlatform/);
+    const manifest = privacy();
+    assert.equal(manifest.NSPrivacyTracking, false);
+    assert.equal(manifest.NSPrivacyTrackingDomains, undefined);
+    assert.ok(manifest.NSPrivacyCollectedDataTypes.every(data => data.NSPrivacyCollectedDataTypeTracking === false));
+    assert.ok(manifest.NSPrivacyCollectedDataTypes.every(data => !data.NSPrivacyCollectedDataTypePurposes.includes("NSPrivacyCollectedDataTypePurposeThirdPartyAdvertising")));
+    assert.ok(manifest.NSPrivacyAccessedAPITypes.length > 0);
+    success(run(cwd, "verify-ios.rb"));
+  };
+  disabled();
   const settings = { MOBILE_ADS_ENABLED: "true", MOBILE_ADS_WEB_CONSENT_READY: "true", MOBILE_ADSENSE_CLIENT: "ca-pub-1234567890123456", MOBILE_ADSENSE_SLOT: "1234567890", MOBILE_ADS_CMP_SCRIPT_URL: "https://fundingchoicesmessages.google.com/i/pub-1234567890123456?ers=1" };
   success(runWithEnvironment(cwd, "configure-ios.rb", settings));
   success(run(cwd, "verify-ios.rb"));
   assert.equal(read().KakomonAdsEnabled, true);
   assert.equal(read().GADIntegrationManager, "webview");
+  assert.ok(read().NSUserTrackingUsageDescription.length > 0);
+  const template = JSON.parse(ruby(cwd, `puts JSON.generate(Xcodeproj::Plist.read_from_path(${JSON.stringify(join(mobile, "ios-assets/PrivacyInfo.xcprivacy").replaceAll("\\", "/"))}))`));
+  assert.deepEqual(privacy(), template, "ads-enabled disclosures must be unchanged");
   for (const key of Object.keys(settings)) {
+    // Seed all enabled declarations before testing each missing setting.
+    success(runWithEnvironment(cwd, "configure-ios.rb", settings));
     success(runWithEnvironment(cwd, "configure-ios.rb", { ...settings, [key]: "" }));
-    assert.equal(read().KakomonAdsEnabled, false, key);
+    disabled();
   }
   success(runWithEnvironment(cwd, "configure-ios.rb", { ...settings, MOBILE_GAD_APPLICATION_ID: "ca-app-pub-1234567890123456~1234567890" }));
   assert.equal(read().GADApplicationIdentifier, "ca-app-pub-1234567890123456~1234567890");
   success(run(cwd, "configure-ios.rb"));
-  assert.equal(read().GADApplicationIdentifier, undefined);
+  disabled();
   assert.equal(read().KakomonAdsenseClient, "");
+  // A leftover optional App ID or additional GAD key cannot opt in to ads.
+  ruby(cwd, "path = 'ios/App/App/Info.plist'; p = Xcodeproj::Plist.read_from_path(path); p['GADIsAdManagerApp'] = true; Xcodeproj::Plist.write_to_path(p, path)");
+  success(runWithEnvironment(cwd, "configure-ios.rb", { MOBILE_GAD_APPLICATION_ID: "ca-app-pub-1234567890123456~1234567890" }));
+  disabled();
+  success(runWithEnvironment(cwd, "configure-ios.rb", settings));
+  assert.deepEqual(privacy(), template, "re-enabling restores the complete template");
 });
+
+test("verification rejects linked advertising dependencies when ads are disabled", t => {
+  const cwd = fixture(t);
+  const file = join(cwd, "ios/App/Podfile");
+  writeFileSync(file, configureAdsPods(readFileSync(file, "utf8"), true));
+  rejects(cwd, /Ads SDK dependency present with ads disabled/);
+});
+
+for (const [name, edit, message] of [
+  ["ATT description", "p['NSUserTrackingUsageDescription'] = 'stale'", /ATT usage description present/],
+  ["GAD settings", "p['GADApplicationIdentifier'] = 'stale'", /GAD settings present/],
+  ["privacy tracking", "p['NSPrivacyTracking'] = true", /Privacy tracking enabled/],
+  ["tracking domains", "p['NSPrivacyTrackingDomains'] = ['example.com']", /Privacy tracking domains present/],
+  ["collected data tracking", "p['NSPrivacyCollectedDataTypes'][0]['NSPrivacyCollectedDataTypeTracking'] = true", /Collected data tracking enabled/],
+]) {
+  test(`verification rejects stale ${name} when ads are disabled`, t => {
+    const cwd = fixture(t);
+    const file = name === "ATT description" || name === "GAD settings" ? "Info.plist" : "PrivacyInfo.xcprivacy";
+    ruby(cwd, `path = 'ios/App/App/${file}'; p = Xcodeproj::Plist.read_from_path(path); ${edit}; Xcodeproj::Plist.write_to_path(p, path)`);
+    rejects(cwd, message);
+  });
+}
 
 test("the pinned CLI accepts the generation ID and rejects the registered Apple ID", async () => {
   const config = await loadConfig();

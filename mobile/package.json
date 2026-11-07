@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run",
+    "test": "vitest run && node --test scripts/asc_image_check.test.mjs scripts/asc_repository_check.test.mjs",
     "test:e2e": "node scripts/run-e2e.mjs",
     "catalog": "tsx --tsconfig tsconfig.scripts.json scripts/generate-catalog.ts",
     "build": "npm run catalog && npm run typecheck && vite build && node scripts/measure-bundle.mjs",
@@ -26,7 +26,7 @@
     "@capacitor/network": "8.0.1",
     "@capacitor/preferences": "8.0.1",
     "@capacitor/share": "8.0.3",
-    "@revenuecat/purchases-capacitor": "14.0.0",
+    "@revenuecat/purchases-capacitor": "13.8.0",
     "react": "19.2.6",
     "react-dom": "19.2.6",
     "zod": "4.6.7"

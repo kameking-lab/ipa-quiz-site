@@ -35,7 +35,7 @@ import { createHistoryStore } from "@/lib/storage/history";
 import { writeLastQuestion } from "@/lib/storage/last-question";
 
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Timer, Share2, Check, Copy, Sparkles, Star, ArrowRight, BookOpen } from "lucide-react";
+import { ArrowLeft, Timer, Share2, Check, Copy, Sparkles, Star, BookOpen } from "lucide-react";
 import { examLabel } from "@/lib/utils";
 import { comboLevel, readMotivationSettings } from "@/lib/motivation/combo";
 import { playPiroro } from "@/lib/motivation/sound";
@@ -481,7 +481,7 @@ function ScoredQuizPlayer({
 
   return (
     <div className="flex min-h-[100dvh] flex-col bg-zinc-50 dark:bg-zinc-950">
-      <div role="region" aria-label="クイズナビゲーション" className="sticky top-0 z-20 flex flex-col border-b border-zinc-200 bg-white/90 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/90">
+      <div role="region" aria-label="クイズナビゲーション" className="sticky top-0 z-20 flex flex-col border-b border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
         <div className="flex items-center gap-2 px-3 py-2 sm:py-2.5">
           <Button
             variant="ghost"
@@ -661,13 +661,12 @@ function ScoredQuizPlayer({
 
       {revealed && (
         <nav aria-label="解答後の学習操作" className="fixed inset-x-0 bottom-0 z-30 border-t border-border bg-background px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 shadow-lg">
-          <div className="mx-auto grid max-w-2xl grid-cols-3 gap-2">
+          <div className="mx-auto grid max-w-2xl grid-cols-2 gap-2">
             <Button variant="outline" className="min-h-12 px-2 text-xs sm:text-sm" disabled={!onRelated} onClick={() => {
               setShowRelated(true);
               requestAnimationFrame(() => { relatedRef.current?.focus({ preventScroll: true }); relatedRef.current?.scrollIntoView({ block: "center", behavior: "instant" }); });
             }}><BookOpen className="h-4 w-4" aria-hidden="true" />関連問題</Button>
             <Button variant="outline" className="min-h-12 px-2 text-xs sm:text-sm" aria-pressed={starred} onClick={toggleStar}><Star className="h-4 w-4" aria-hidden="true" fill={starred ? "currentColor" : "none"} />{starred ? "復習登録済み" : "復習に登録"}</Button>
-            <Button className="min-h-12 px-2 text-xs sm:text-sm" onClick={goNext}>{index + 1 >= total ? "学習結果へ" : "次の1問"}<ArrowRight className="h-4 w-4" aria-hidden="true" /></Button>
           </div>
         </nav>
       )}
