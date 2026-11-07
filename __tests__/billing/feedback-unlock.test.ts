@@ -2,8 +2,11 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { UnlockFeedbackSchema } from "@/lib/feedback/unlock-contract";
 import { FeedbackUnlockStore, type UnlockIdentity } from "@/lib/feedback/unlock-store";
 import type { SqlDatabase } from "@/lib/billing/postgres-store";
+import { BillingError } from "@/lib/billing/domain";
+import { SITE_BASE_URL } from "@/lib/seo/config";
 
-const m = vi.hoisted(() => ({ submit: vi.fn(), status: vi.fn(), origin: vi.fn(), rate: vi.fn(), bot: vi.fn(), user: "alice" as string | null, claim: vi.fn() }));
+const m = vi.hoisted(() => ({ submit: vi.fn(), status: vi.fn(), origin: vi.fn(), rate: vi.fn(), bot: vi.fn(), user: "alice" as string | null, claim: vi.fn(), slack: vi.fn() }));
+vi.mock("@/lib/notify/slack", () => ({ sendSlackMessage: m.slack }));
 vi.mock("@/lib/feedback/unlock-runtime", () => ({ feedbackStore: () => ({ submit: m.submit, status: m.status, consumeRate: m.rate, claim: m.claim }), unlockIdentity: () => ({ realm: "test", account: m.user, browser: "browser" }), feedbackHash: () => "network-hash", readFeedbackBrowser: () => "browser", newFeedbackBrowser: () => "browser", feedbackBrowserHeader: () => "feedback_browser=test" }));
 vi.mock("@/lib/billing/runtime", () => ({ sameOrigin: m.origin, optionalBillingIdentity: async () => m.user, json: (v: unknown, status = 200) => Response.json(v, { status }) }));
 vi.mock("@/lib/billing/practice-access", () => ({ practiceGateEnabled: () => true }));
@@ -11,10 +14,98 @@ vi.mock("@/lib/rate-limit/server", () => ({ getClientIp: () => "192.0.2.1", chec
 vi.mock("@/lib/turnstile", () => ({ verifyTurnstileToken: m.bot }));
 import { GET, POST } from "@/app/api/feedback-unlock/route";
 
-beforeEach(() => { vi.clearAllMocks(); vi.stubEnv("FEEDBACK_UNLOCK_ENABLED", "true"); m.user = "alice"; vi.stubEnv("TURNSTILE_SECRET_KEY", "test-only"); vi.stubEnv("NEXT_PUBLIC_TURNSTILE_SITE_KEY", "test-only"); m.rate.mockResolvedValue(true); m.bot.mockResolvedValue({ ok: true }); m.submit.mockResolvedValue({ eventId: "event", remaining: 10 }); });
+beforeEach(() => { vi.clearAllMocks(); vi.stubEnv("SLACK_WEBHOOK_URL", ""); m.slack.mockResolvedValue(true); vi.stubEnv("FEEDBACK_UNLOCK_ENABLED", "true"); m.user = "alice"; vi.stubEnv("TURNSTILE_SECRET_KEY", "test-only"); vi.stubEnv("NEXT_PUBLIC_TURNSTILE_SITE_KEY", "test-only"); m.rate.mockResolvedValue(true); m.bot.mockResolvedValue({ ok: true }); m.submit.mockResolvedValue({ eventId: "event", remaining: 10 }); });
 afterEach(() => vi.unstubAllEnvs());
 const payload = { choices: ["explanations", "mobile"], comment: "連絡 test@example.jp 090-1234-5678" };
 const request = (body: unknown) => new Request("https://example.test/api/feedback-unlock", { method: "POST", body: JSON.stringify(body) });
+describe("feedback Slack notification", () => {
+  beforeEach(() => vi.stubEnv("SLACK_WEBHOOK_URL", "https://hooks.slack.test/feedback"));
+
+  it("notifies once after persistence using masked fields, labels, receipt time and the admin link", async () => {
+    const startedAt = Date.now();
+    const res = await POST(request({
+      choices: ["qualifications", "explanations", "explanations"],
+      requestedQualifications: ["情報処理安全確保支援士", "連絡 test@example.jp"],
+      comment: "山田太郎さん test@example.jp 090-1234-5678 ID: private-user-42 <@U123456> <https://example.test|リンク> & ご意見",
+    }));
+    expect(res.status).toBe(200);
+    expect(await res.json()).toEqual({ ok: true, eventId: "event", remaining: 10 });
+    expect(m.slack).toHaveBeenCalledTimes(1);
+    expect(m.submit.mock.invocationCallOrder[0]).toBeLessThan(m.slack.mock.invocationCallOrder[0]);
+    const text = m.slack.mock.calls[0][0] as string;
+    expect(text).toContain("[過去問AI] フィードバックで+10問 受信");
+    expect(text).toContain("選ばれた改善点: 資格の数を増やしてほしい / 解説をもっと詳しく");
+    expect(text).toContain("ほしい資格: 情報処理安全確保支援士 / 連絡 [削除済み]");
+    expect(text).toContain(`管理画面: ${SITE_BASE_URL}/admin/feedback`);
+    expect(text).toContain("&lt;https://example.test|リンク&gt; &amp; ご意見");
+    const timestamp = text.match(/受信日時: (.+)/)![1];
+    expect(new Date(timestamp).toISOString()).toBe(timestamp);
+    expect(Date.parse(timestamp)).toBeGreaterThanOrEqual(startedAt);
+    expect(Date.parse(timestamp)).toBeLessThanOrEqual(Date.now());
+    for (const secret of ["山田太郎", "test@example.jp", "090-1234-5678", "private-user-42", "U123456", "alice", "browser", "event", "192.0.2.1", "network-hash"]) expect(text).not.toContain(secret);
+    const saved = m.submit.mock.calls[0][2];
+    expect(text).toContain(saved.commentMasked.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;"));
+  });
+
+  it("waits for Slack to settle before returning the successful benefit response", async () => {
+    let finish!: (delivered: boolean) => void;
+    m.slack.mockImplementationOnce(() => new Promise<boolean>(resolve => { finish = resolve; }));
+    let returned = false;
+    const response = POST(request(payload)).then(res => { returned = true; return res; });
+    await vi.waitFor(() => expect(m.slack).toHaveBeenCalledTimes(1));
+    expect(m.submit).toHaveBeenCalledTimes(1);
+    expect(returned).toBe(false);
+    finish(true);
+    expect(await (await response).json()).toMatchObject({ ok: true, remaining: 10 });
+  });
+
+  it.each(["non-2xx", "exception"])("logs %s failures without payload or error details and preserves +10", async failure => {
+    const log = vi.spyOn(console, "error").mockImplementation(() => {});
+    try {
+      if (failure === "exception") m.slack.mockRejectedValueOnce(new Error("secret-webhook test@example.jp"));
+      else m.slack.mockResolvedValueOnce(false);
+      const res = await POST(request(payload));
+      expect(res.status).toBe(200);
+      expect(await res.json()).toEqual({ ok: true, eventId: "event", remaining: 10 });
+      expect(m.submit).toHaveBeenCalledTimes(1);
+      expect(m.slack).toHaveBeenCalledTimes(1);
+      expect(log.mock.calls).toEqual([["[feedback-unlock] Slack notification failed"]]);
+    } finally { log.mockRestore(); }
+  });
+
+  it("does nothing when the webhook is unset", async () => {
+    vi.stubEnv("SLACK_WEBHOOK_URL", "");
+    const log = vi.spyOn(console, "error").mockImplementation(() => {});
+    try {
+      expect(await (await POST(request(payload))).json()).toMatchObject({ ok: true, remaining: 10 });
+      expect(m.slack).not.toHaveBeenCalled();
+      expect(log).not.toHaveBeenCalled();
+    } finally { log.mockRestore(); }
+  });
+
+  it("supports optional empty fields and comment-only feedback", async () => {
+    await POST(request({ choices: ["mobile"] }));
+    expect(m.slack.mock.calls[0][0]).toContain("ほしい資格: (未記入)\nコメント: (コメントなし)");
+    await POST(request({ choices: [], comment: "便利です" }));
+    expect(m.slack.mock.calls[1][0]).toContain("選ばれた改善点: (選択なし)");
+  });
+
+  it("does not notify rejected, duplicate or failed submissions", async () => {
+    m.submit.mockRejectedValueOnce(Error("database"));
+    expect((await POST(request(payload))).status).toBe(503);
+    m.submit.mockRejectedValueOnce(new BillingError("already_submitted", 409));
+    expect((await POST(request(payload))).status).toBe(409);
+    m.bot.mockResolvedValueOnce({ ok: false });
+    expect((await POST(request(payload))).status).toBe(403);
+    m.rate.mockResolvedValueOnce(false);
+    expect((await POST(request(payload))).status).toBe(429);
+    expect((await POST(request({ choices: [] }))).status).toBe(400);
+    m.user = null;
+    expect((await POST(request(payload))).status).toBe(401);
+    expect(m.slack).not.toHaveBeenCalled();
+  });
+});
+
 describe("feedback acceptance", () => {
   it("requires a choice or nonblank comment and bounds every input", () => {
     expect(UnlockFeedbackSchema.safeParse({ choices: [], comment: "  " }).success).toBe(false);

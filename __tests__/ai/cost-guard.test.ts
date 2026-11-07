@@ -145,7 +145,7 @@ describe("cost-guard monthly cap", () => {
     const { recordAiCost } = await import("@/lib/ai/cost-guard");
     await expect(
       recordAiCost({ tier: "flash-lite", inputTokens: 0, outputTokens: 2_000_000, label: "t" }),
-    ).resolves.toBeUndefined();
+    ).resolves.toBe("recorded");
     expect(errSpy).toHaveBeenCalled();
     expect(
       errSpy.mock.calls.some((args) =>
@@ -159,5 +159,39 @@ describe("cost-guard monthly cap", () => {
     expect(estimateTokens(0)).toBe(0);
     expect(estimateTokens(10)).toBe(5);
     expect(estimateTokens(-5)).toBe(0);
+  });
+
+  it("confirms a successful increment after the monthly bucket is updated", async () => {
+    const { store } = installKvMock();
+    const { recordAiCost, monthlyCostKey } = await import("@/lib/ai/cost-guard");
+    expect(await recordAiCost({ tier: "flash-lite", inputTokens: 10, outputTokens: 20, label: "test" })).toBe("recorded");
+    expect(Number(store.get(monthlyCostKey()))).toBeGreaterThan(0);
+  });
+
+  it("reports failed when KV is absent or no increment is attempted", async () => {
+    const { fetchMock } = installKvMock();
+    const { recordAiCost } = await import("@/lib/ai/cost-guard");
+    const input = { tier: "flash-lite" as const, inputTokens: 0, outputTokens: 0, label: "test" };
+    expect(await recordAiCost(input)).toBe("failed");
+    vi.stubEnv("KV_REST_API_TOKEN", "");
+    expect(await recordAiCost({ ...input, inputTokens: 10 })).toBe("failed");
+    expect(fetchMock).not.toHaveBeenCalled();
+  });
+
+  it.each([false, true])("does not confirm ambiguous KV writes (reservation=%s)", async (reserved) => {
+    const { fetchMock } = installKvMock();
+    const { recordAiCost, monthlyCostKey } = await import("@/lib/ai/cost-guard");
+    const input = {
+      tier: "flash-lite" as const, inputTokens: 10, outputTokens: 20, label: "test",
+      ...(reserved ? { reservation: { key: monthlyCostKey(), receipt: "test-receipt", amount: 1 } } : {}),
+    };
+    for (const body of [{ result: null }, { result: "NaN" }, { result: -1 }, { error: "private-error", result: "123" }]) {
+      fetchMock.mockResolvedValueOnce(Response.json(body));
+      expect(await recordAiCost(input)).toBe("failed");
+    }
+    fetchMock.mockResolvedValueOnce(new Response("unavailable", { status: 503 }));
+    expect(await recordAiCost(input)).toBe("failed");
+    fetchMock.mockRejectedValueOnce(new Error("private-network-error"));
+    expect(await recordAiCost(input)).toBe("failed");
   });
 });
