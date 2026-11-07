@@ -48,6 +48,9 @@ workflows:
             echo "Set MOBILE_RC_IOS_PUBLIC_KEY to the RevenueCat public iOS SDK key in kakomon_ios." >&2
             exit 1
           fi
+          # tsc aborted with the default heap after the app started type-checking the
+          # shared web code (Abort trap: 6, 2026-11-07). Give Node room on the build Mac.
+          export NODE_OPTIONS="--max-old-space-size=6144"
           npm run typecheck
           npm test
           npm run build
