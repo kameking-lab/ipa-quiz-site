@@ -116,8 +116,7 @@ function QuestionCommentForm({ questionId }: { questionId: string }) {
         運営へ補足解説・別解を送る
       </h3>
       <p className="mb-3 text-[11px] text-zinc-500 dark:text-zinc-400">
-        運営への連絡用です。他の利用者には公開されません。送信できた内容の控えをこの端末に保存します。
-        解説の誤りは「誤りを報告」から、返信が必要な場合はお問い合わせをご利用ください。個人情報は入力しないでください。
+        運営だけが読みます（公開されません）。個人情報は書かないでください。
       </p>
 
       <label htmlFor={`qcomment-${questionId}`} className="sr-only">

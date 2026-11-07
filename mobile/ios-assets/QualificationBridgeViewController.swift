@@ -3,21 +3,211 @@ import UIKit
 import EventKit
 import EventKitUI
 import WebKit
+import os.log
 
 @objc(QualificationBridgeViewController)
 class QualificationBridgeViewController: CAPBridgeViewController {
+    #if ASC_CAPTURE && DEBUG && targetEnvironment(simulator)
+    private var ascCapture: ASCCapture?
+    #endif
     override func capacitorDidLoad() {
         bridge?.registerPluginInstance(QualificationBridgePlugin())
         bridge?.registerPluginInstance(TrackingTransparencyPlugin())
+        #if ASC_CAPTURE && DEBUG && targetEnvironment(simulator)
+        if ASCCapture.isActive, let webView = webView {
+            ascCapture = ASCCapture(webView: webView)
+        }
+        #endif
+    }
 
+    // The WebView is edge-to-edge (contentInset "never"). Publish the real
+    // status bar / Dynamic Island and home-indicator insets to CSS as
+    // --native-safe-top/bottom so pages never depend on env() alone
+    // (app/globals.css takes the larger of the two).
+    override func viewSafeAreaInsetsDidChange() {
+        super.viewSafeAreaInsetsDidChange()
+        guard let webView = webView else { return }
+        let insets = view.safeAreaInsets
+        let source = "(function(){function f(){var r=document.documentElement;if(!r){return false;}"
+            + "r.style.setProperty('--native-safe-top','\(Int(insets.top.rounded()))px');"
+            + "r.style.setProperty('--native-safe-bottom','\(Int(insets.bottom.rounded()))px');return true;}"
+            + "if(!f()){document.addEventListener('readystatechange',f);}})();"
+        // Runs for every later document (local shell and www.kakomon-ai.jp)...
+        webView.configuration.userContentController.addUserScript(
+            WKUserScript(source: source, injectionTime: .atDocumentStart, forMainFrameOnly: true))
+        // ...and updates the document that is already showing.
+        webView.evaluateJavaScript(source, completionHandler: nil)
     }
 }
+
+// The implementation and its arguments do not exist in distribution binaries.
+// No URL scheme, preference, remote flag or JavaScript API can enable capture.
+enum ASCCaptureGate {
+    static var isActive: Bool {
+        #if ASC_CAPTURE && DEBUG && targetEnvironment(simulator)
+        return ASCCapture.isActive
+        #else
+        return false
+        #endif
+    }
+}
+
+#if ASC_CAPTURE && DEBUG && targetEnvironment(simulator)
+private final class ASCCapture {
+    static let routes = ["/", "/ap", "/review", "/account/dashboard", "reminder"]
+    static let request: (route: String, token: String)? = {
+        let arguments = ProcessInfo.processInfo.arguments
+        // simctl passes application arguments after the bundle ID: -key value.
+        // Reject duplicate, missing and legacy key=value forms rather than
+        // silently enabling a different capture request.
+        func value(_ key: String) -> String? {
+            guard !arguments.contains(where: { $0.hasPrefix(key + "=") }) else { return nil }
+            let indices = arguments.indices.filter { arguments[$0] == key }
+            guard indices.count == 1, let index = indices.first, index + 1 < arguments.count else { return nil }
+            return arguments[index + 1]
+        }
+        guard let route = value("-ascCaptureRoute"), let token = value("-ascCaptureToken") else { return nil }
+        guard ASCCapture.routes.contains(route), UUID(uuidString: token) != nil else { return nil }
+        return (route, token)
+    }()
+    static var isActive: Bool { request != nil }
+    private weak var webView: WKWebView?
+    private var timer: Timer?
+    private var evaluating = false
+    private var navigated = false
+    private var finished = false
+    private var ticks = 0
+    private let deadline = Date().addingTimeInterval(150)
+    private static let captureLog = OSLog(subsystem: "jp.kakomon-ai.app.asc-capture", category: "readiness")
+
+    private func emit(_ event: String, _ detail: String) {
+        guard let request = Self.request else { return }
+        // Public placeholders are deliberate: only the non-secret launch UUID,
+        // allowlisted route and fixed state labels are emitted, never DOM/URLs.
+        os_log("ASC_CAPTURE_%{public}@ %{public}@ %{public}@", log: Self.captureLog,
+               type: .default, event, request.token, detail)
+        // Independent of unified logging subscription, privacy and persistence.
+        // Python may only fall back to pixels with this launch's READY receipt.
+        do {
+            let directory = FileManager.default.urls(for: .cachesDirectory, in: .userDomainMask)[0]
+            let path = directory.appendingPathComponent("asc-capture-" + request.token + ".json")
+            let data = try JSONSerialization.data(withJSONObject: [
+                "token": request.token, "route": request.route, "event": event, "detail": detail
+            ])
+            try data.write(to: path, options: .atomic)
+        } catch {
+            os_log("ASC_CAPTURE_RECEIPT_ERROR %{public}@", log: Self.captureLog, type: .error, request.token)
+        }
+    }
+
+    init(webView: WKWebView) {
+        self.webView = webView
+        emit("STARTED", Self.request!.route)
+        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { [weak self] _ in self?.poll() }
+    }
+    deinit { timer?.invalidate() }
+    private func poll() {
+        guard !finished else { return }
+        guard let request = Self.request, let webView = webView else { timer?.invalidate(); return }
+        guard Date() < deadline else {
+            finished = true
+            emit("FAILED", "timeout")
+            timer?.invalidate(); return
+        }
+        ticks += 1
+        guard !evaluating, !webView.isLoading else {
+            if ticks % 20 == 0 { emit("STATE", evaluating ? "javascript-pending" : "webview-loading") }
+            return
+        }
+        evaluating = true
+        if !navigated {
+            // Wait for privacy blocking, public SDK config, React and actual
+            // anonymous local history restoration before any online navigation.
+            webView.evaluateJavaScript("location.origin === 'capacitor://localhost' && !!document.querySelector('#root main[data-mobile-ready=true]')") { [weak self] result, _ in
+                guard let self = self else { return }
+                self.evaluating = false
+                guard !self.finished, Date() < self.deadline else { return }
+                guard result as? Bool == true else {
+                    if self.ticks % 20 == 0 { self.emit("STATE", "local-bootstrap-pending") }
+                    return
+                }
+                self.navigated = true
+                if request.route != "reminder", let url = URL(string: "https://www.kakomon-ai.jp" + request.route) {
+                    webView.load(URLRequest(url: url))
+                }
+            }
+            return
+        }
+        let encoded = try! JSONSerialization.data(withJSONObject: ["route": request.route])
+        let prefix = "const captureRequest = " + String(data: encoded, encoding: .utf8)! + ";\n"
+        webView.evaluateJavaScript("(() => {\n" + prefix + Self.pageScript + "\n})()") { [weak self] result, error in
+            guard let self = self else { return }
+            self.evaluating = false
+            guard !self.finished, Date() < self.deadline else { return }
+            if let state = result as? String, state == "ready" {
+                self.finished = true
+                self.emit("READY", request.route)
+                self.timer?.invalidate()
+            } else if self.ticks % 20 == 0 {
+                self.emit("STATE", (result as? String) ?? (error == nil ? "pending" : "javascript-error"))
+            }
+        }
+    }
+
+    // ASC_CAPTURE_PAGE_SCRIPT: evaluated only by the gated simulator helper.
+    static let pageScript = #"""
+const route = captureRequest.route;
+const local = route === 'reminder';
+if (location.origin !== (local ? 'capacitor://localhost' : 'https://www.kakomon-ai.jp') ||
+    (!local && location.pathname !== route)) return 'waiting for expected URL';
+if (document.readyState !== 'complete') return 'waiting for document';
+const visible = e => !!e && e.getClientRects().length > 0;
+const inViewport = e => { if (!visible(e)) return false; const r = e.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; };
+const state = window.__ascCapturePage ??= { stable: '', since: Date.now() };
+const pending = reason => { state.stable = ''; state.since = Date.now(); return reason; };
+if ([...document.querySelectorAll('main [aria-busy=true],main [role=progressbar],main .animate-spin')].some(inViewport) ||
+    [...document.querySelectorAll('main p,main span,main div')].some(e => inViewport(e) && e.children.length === 0 && /^(読み込み中|Loading)[.…。\s]*$/i.test(e.innerText.trim()))) return pending('waiting for loading indicator');
+// Use existing, explicit dismissal controls; never accept consent or start a quiz.
+for (const dialog of document.querySelectorAll('[role=dialog],dialog[open]')) {
+  if (!visible(dialog)) continue;
+  const privacy = /cookie|クッキー|広告|プライバシー/i.test(dialog.innerText);
+  const labels = privacy ? ['同意しない', 'すべて拒否', 'Reject all', 'Reject All'] : ['スキップ', 'スキップして閉じる', 'あとで'];
+  const button = [...dialog.querySelectorAll('button')].find(b => visible(b) && !b.disabled && labels.includes(b.textContent.trim()));
+  if (!button) return pending('blocked by unknown dialog');
+  button.click(); return pending('dismissing dialog');
+}
+if (!local && !visible(document.querySelector('[aria-label="iPhoneの学習機能"]'))) return pending('waiting for native online tools');
+let selector = local ? 'input[type=time]' : 'main h1';
+if (route === '/') {
+  const filter = [...document.querySelectorAll('#choose-qualification button')].find(b => b.textContent.trim() === 'IT・情報処理');
+  if (!visible(filter)) return pending('waiting for IT filter');
+  if (filter.getAttribute('aria-pressed') !== 'true') { filter.click(); return pending('selecting IT filter'); }
+  if (!visible(document.querySelector('#qualification-results a[href="/ap"]'))) return pending('waiting for qualifications');
+  selector = '#choose-qualification';
+}
+const target = document.querySelector(selector);
+if (!visible(target) || (local && !document.querySelector('main[data-mobile-ready=true]'))) return pending('waiting for screen');
+const mainText = document.querySelector('main')?.innerText ?? '';
+if (route === '/review' && !mainText.includes('復習キューはまだ空です')) return pending('waiting for actual empty review');
+if (route === '/account/dashboard' && !mainText.includes('総問題数')) return pending('waiting for actual dashboard data');
+document.activeElement?.blur();
+target.scrollIntoView({block:'start',behavior:'instant'});
+if (document.fonts.status !== 'loaded') return pending('waiting for fonts');
+if (![...document.images].filter(e => { const r = e.getBoundingClientRect(); return r.bottom > 0 && r.top < innerHeight; }).every(e => e.complete && e.naturalWidth > 0)) return pending('waiting for visible images');
+// Require a settled layout, text and scroll position for two seconds. This also
+// lets React hydration, anonymous history reads and dismissal effects settle.
+const signature = JSON.stringify([document.body.innerText, target.getBoundingClientRect().top, scrollY, document.body.scrollHeight]);
+if (state.stable !== signature) { state.stable = signature; state.since = Date.now(); }
+return Date.now() - state.since >= 2000 ? 'ready' : 'waiting for stable layout';
+"""#
+}
+#endif
 
 @objc(QualificationBridgePlugin)
 public class QualificationBridgePlugin: CAPPlugin, CAPBridgedPlugin, EKEventEditViewDelegate {
     public let identifier = "QualificationBridgePlugin"
     public let jsName = "QualificationBridge"
-    public let pluginMethods = [
+    public let pluginMethods: [CAPPluginMethod] = [
         CAPPluginMethod(name: "openUniversalLink", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "presentCalendar", returnType: CAPPluginReturnPromise)
     ]

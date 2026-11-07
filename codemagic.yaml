@@ -100,3 +100,104 @@ workflows:
         # Upload only. No TestFlight beta distribution; the owner tests on device after release.
         submit_to_testflight: false
         submit_to_app_store: false
+
+  # Dedicated tags only; ordinary branch pushes still use TestFlight above.
+  # Tag format and submission guards are enforced again by AscConfig.
+  kakomon-asc-metadata:
+    name: Kakomon AI - App Store listing and screenshots
+    instance_type: mac_mini_m2
+    max_build_duration: 90
+    triggering:
+      events:
+        - tag
+      tag_patterns:
+        - pattern: "asc-kakomon-*"
+          include: true
+      cancel_previous_builds: false
+    integrations:
+      app_store_connect: App Store Key
+    environment:
+      groups:
+        - kakomon_ios
+      vars:
+        ASC_APP_VERSION: "1.0.0"
+        SUBMIT_FOR_REVIEW: "false"
+      node: "22"
+      ruby: "3.4.7"
+      xcode: latest
+      cocoapods: default
+    scripts:
+      - name: Route preparation tags without selecting or submitting an app build
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          if [[ "${CM_TAG:-}" =~ ^asc-kakomon-(catalog|iapshot|settings|iapreview)- ]]; then
+            python3 scripts/asc_setup.py --validate
+            echo 'ASC_SETUP_MODE=true' >> "$CM_ENV"
+          else
+            echo 'ASC_SETUP_MODE=false' >> "$CM_ENV"
+          fi
+      - name: Resolve dedicated tag into non-secret request parameters
+        script: |
+          set -euo pipefail
+          if [[ "${ASC_SETUP_MODE:-false}" == true ]]; then exit 0; fi
+          cd "$CM_BUILD_DIR/mobile"
+          # Only version/build/submission are written; never export review secrets.
+          ruby scripts/asc_config.rb >> "$CM_ENV"
+      - name: Validate request and emit API follow-up report
+        script: |
+          set -euo pipefail
+          if [[ "${ASC_SETUP_MODE:-false}" == true ]]; then exit 0; fi
+          cd "$CM_BUILD_DIR/mobile"
+          mkdir -p build/asc
+          cp asc/api-followup.md build/asc/asc-api-followup.md
+          # Fail before credentials/network work if committed images are incomplete.
+          python3 scripts/asc_validate.py --screenshots
+          ruby -r ./scripts/asc_config -e 'AscConfig.read(ENV); puts "ASC request validation PASS"'
+      - name: Authenticate with the existing integration using official Codemagic tooling
+        script: |
+          set -euo pipefail
+          cd "$CM_BUILD_DIR/mobile"
+          python3 -m venv .cache/asc-auth-venv
+          .cache/asc-auth-venv/bin/pip install --disable-pip-version-check -r asc/auth-requirements.txt
+          # Only a non-secret executable path crosses build steps. Keys and JWTs
+          # never go to CM_ENV, command arguments, artifacts or a disk cache.
+          echo "ASC_SETUP_PYTHON=$PWD/.cache/asc-auth-venv/bin/python" >> "$CM_ENV"
+          .cache/asc-auth-venv/bin/python scripts/asc_auth.py --check
+      - name: Install screenshot validation and listing upload dependencies
+        script: |
+          set -euo pipefail
+          if [[ "${ASC_SETUP_MODE:-false}" == true ]]; then exit 0; fi
+          cd "$CM_BUILD_DIR/mobile"
+          npm ci
+          node scripts/asc_repository_check.mjs
+          bundle config set --local path vendor/bundle
+          bundle config set --local frozen true
+          bundle install
+      - name: Upload listing and screenshots; optionally submit for review
+        script: |
+          set -euo pipefail
+          if [[ "${ASC_SETUP_MODE:-false}" == true ]]; then exit 0; fi
+          cd "$CM_BUILD_DIR/mobile"
+          # No publishing block: only the guarded fastlane lane can submit.
+          FASTLANE_SKIP_UPDATE_CHECK=1 FASTLANE_HIDE_CHANGELOG=1 \
+            bundle exec fastlane ios asc_metadata
+      - name: Prepare ASC resources through API without review submission
+        script: |
+          set -euo pipefail
+          if [[ "${ASC_SETUP_MODE:-false}" != true ]]; then exit 0; fi
+          cd "$CM_BUILD_DIR/mobile"
+          "$ASC_SETUP_PYTHON" scripts/asc_setup.py
+    artifacts:
+      - mobile/fastlane/screenshots/ja/*.jpg
+      - mobile/fastlane/screenshots/manifest.json
+      - mobile/build/asc/*.md
+      - mobile/build/asc/result.json
+      - mobile/build/asc/setup-result.json
+      - mobile/build/asc/simulator-build.log
+      - mobile/build/asc/diagnostics/**/*.log
+      - mobile/build/asc/diagnostics/**/*.txt
+      - mobile/build/asc/diagnostics/**/*.json
+      - mobile/build/asc/diagnostics/**/*.html
+      - mobile/build/asc/diagnostics/**/*.xml
+      - mobile/build/asc/diagnostics/**/*.png

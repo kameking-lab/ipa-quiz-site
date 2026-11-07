@@ -88,16 +88,15 @@ describe("QuizClient with the real player and local learning stores", () => {
     const reward = sessionStorage.getItem(LS_KEYS.studyReward);
     fireEvent.click(screen.getByRole("button", { name: "次の問題へ" }));
     const limit = await screen.findByRole("region", { name: "今日の無料演習はここまで" });
-    expect(limit).toHaveTextContent("本日の無料連続演習枠（10問）を使い切りました");
-    expect(limit).toHaveTextContent("10/31 0:00（日本時間）");
-    expect(screen.getByRole("link", { name: "保存済みの履歴を無料で復習する" })).toHaveAttribute("href", "/review");
-    const billing = new URL(screen.getByRole("link", { name: "月額プランの料金・条件を見る" }).getAttribute("href")!, window.location.origin);
+    expect(limit).toHaveTextContent("明日また10問");
+    const billing = new URL(screen.getByRole("link", { name: "月額980円で続ける" }).getAttribute("href")!, window.location.origin);
     expect(billing.pathname).toBe("/billing");
     const resume = billing.searchParams.get("returnTo");
     expect(resume).toBe(`/quiz?mode=year&exam=fp3&question=${fp[5].id}`);
-    expect(screen.getByRole("link", { name: "明日、この問題から再開する" })).toHaveAttribute("href", resume);
-    expect(limit).toHaveTextContent("このボタンだけで課金は始まりません");
-    expect(limit).toHaveTextContent("ログインだけでは本日の無料枠は増えません");
+    // Short screen: plan, the one-time +10 and one line; no other links or paragraphs.
+    expect(screen.queryByRole("link", { name: "明日、この問題から再開する" })).toBeNull();
+    expect(screen.queryByRole("link", { name: /復習/ })).toBeNull();
+    expect(limit).not.toHaveTextContent("このボタンだけで課金は始まりません");
     expect(document.activeElement).toHaveAttribute("aria-label", "本日の無料演習の終了");
     expect(screen.queryByRole("radiogroup")).toBeNull();
     expect(started.size).toBe(10);
@@ -111,7 +110,7 @@ describe("QuizClient with the real player and local learning stores", () => {
     expect(limits).toHaveLength(1);
     expect(limits[0][1]).toMatchObject({ utm_source: "tsugino_shikaku", utm_content: "fe.hero", reason: "last_free_question", free_daily: 10 });
     expect(capture.mock.calls.some(call => call[0] === "quiz_started" && call[1].utm_content === "fe.hero")).toBe(true);
-    const upgrade = screen.getByRole("link", { name: "月額プランの料金・条件を見る" });
+    const upgrade = screen.getByRole("link", { name: "月額980円で続ける" });
     upgrade.addEventListener("click", event => event.preventDefault());
     fireEvent.click(upgrade);
     expect(capture.mock.calls.some(call => call[0] === "practice_upgrade_clicked" && call[1].utm_content === "fe.hero")).toBe(true);
@@ -161,7 +160,7 @@ it("submits feedback at the wall, answers bonus questions 11-20, stops at 21 and
   });
   vi.stubGlobal("fetch", fetcher);
   const anonymous = render(<QuizClient billingGateEnabled poolIds={pool.map(q => q.id)} initialQuestionId={pool[10].id} mode="year" exam="fe" backHref="/fe" />);
-  const login = await screen.findByRole("link", { name: "ログインして意見を送ると、さらに10問" }, { timeout: 5000 });
+  const login = await screen.findByRole("link", { name: "意見を送ってあと10問" }, { timeout: 5000 });
   expect(screen.queryByRole("textbox")).toBeNull();
   const callback = new URL(login.getAttribute("href")!, window.location.origin).searchParams.get("callbackUrl")!;
   expect(callback).toContain(`question=${pool[10].id}#feedback-unlock`);

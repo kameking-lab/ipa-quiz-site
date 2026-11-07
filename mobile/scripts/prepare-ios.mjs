@@ -23,11 +23,11 @@ catch (error) {
   if (error.code !== "ENOENT") throw error;
   cap("add", "ios", "--packagemanager", "CocoaPods");
 }
-// cap sync preserves the App target additions. Install our pinned Pod before
-// sync invokes pod install (including on an existing generated project).
+// cap sync preserves the App target additions. Add/remove advertising Pods
+// before sync invokes pod install (including on an existing generated project).
 run(process.execPath, ["scripts/configure-ads-pods.mjs"]);
 cap("sync", "ios");
-await copyFile(new URL("../ios-assets/PrivacyInfo.xcprivacy", import.meta.url), new URL("../ios/App/App/PrivacyInfo.xcprivacy", import.meta.url));
+// configure-ios.rb generates the privacy manifest for the effective ads setting.
 await copyFile(new URL("../ios-assets/QualificationBridgeViewController.swift", import.meta.url), new URL("../ios/App/App/QualificationBridgeViewController.swift", import.meta.url));
 await copyFile(new URL("../ios-assets/TrackingTransparencyPlugin.swift", import.meta.url), new URL("../ios/App/App/TrackingTransparencyPlugin.swift", import.meta.url));
 await cp(new URL("../ios-assets/AppIcon.appiconset/", import.meta.url),

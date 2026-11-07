@@ -1,0 +1,22 @@
+{
+ "what": "Web question flow inside the app (iPhone 15 Pro 393x852, Dynamic Island 59px emulated, native bridge emulated), anonymous user, no login.",
+ "server": "local next dev of fix/ios-real-device-20261107 (origin/main 3e11e8070 + fixes) served as https://www.kakomon-ai.jp; /api/billing/question stubbed: 10 distinct questions granted, then daily_limit (429)",
+ "result": {
+  "distinctQuestionsAnswered": 10,
+  "dailyLimitResponses": 1,
+  "navigationsToSignIn": 0,
+  "horizontalScroll": false,
+  "nextButtonsAfterAnswer": 1
+ },
+ "afterLimit": "web-after-05: primary 「月額980円で続ける」 (iOS: /billing is intercepted by the native tools and opens the App Store purchase screen), secondary 「意見を送ってあと10問」 (login only at that step, shown while unused), one line 「明日また10問」",
+ "tapTargetsUnder44pxAfterAnswer": {
+  "beforeMeasuredOnProductionAndPreFixRun": [
+   "AI quick-action chips 24-27px",
+   "pin buttons 24x24",
+   "star/bookmark 32x32",
+   "PDF links 27px"
+  ],
+  "after": []
+ },
+ "stubbedResetAt": "next 00:00 JST (same formula as lib/billing/guest-practice resetAt)"
+}
