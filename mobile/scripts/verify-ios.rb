@@ -50,6 +50,11 @@ urls = [{ 'CFBundleURLName' => "#{bundle_id}.auth", 'CFBundleURLSchemes' => ['ka
 raise 'Auth URL scheme mismatch' unless plist['CFBundleURLTypes'] == urls
 config = JSON.parse(File.read('ios/App/App/capacitor.config.json'))
 raise 'Native Capacitor runtime Bundle ID mismatch' unless config['appId'] == bundle_id
+# The purchase UI calls the native RevenueCat plugin from the WebView. Without
+# the pod and its class in packageClassList, every call answers UNIMPLEMENTED
+# and the membership panel can never show a price.
+raise 'RevenueCat pod missing from Podfile' unless podfile.match?(/^\s*pod 'RevenuecatPurchasesCapacitor'/)
+raise 'RevenueCat plugin missing from packageClassList' unless Array(config['packageClassList']).include?('PurchasesPlugin')
 
 if ARGV.length > 1
   raise 'Usage: ruby scripts/verify-ios.rb [export_options.plist]'

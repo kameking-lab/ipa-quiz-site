@@ -18,30 +18,41 @@ import "../../src/native.css";
 import {QuizPlayer} from "../../../components/quiz/QuizPlayer";
 import type {Question} from "../../../lib/questions/types";
 import "./pet-harness";
-type StoreScenario="cancelled"|"pending"|"changed-price"|"no-restorable-purchase";
+type StoreScenario="cancelled"|"pending"|"changed-price"|"changed-product"|"no-restorable-purchase"|"success"|"no-products"|"unimplemented";
 declare global {interface Window {paperTest:{show:(index:PaperQuestionIndex[],initialId?:string,initialView?:"question"|"summary")=>void;purgeCache:()=>Promise<void>;showDeletion:()=>void}}}
 window.paperTest={
   show:(index,initialId,initialView)=>createRoot(document.getElementById("root")!).render(<AuthorizedContent paper="lckohyo-TEST01" paperIndex={index} initialId={initialId} initialView={initialView} items={index.map(q=>({id:q.id,title:`問${q.number}`}))}/>),
   purgeCache:async()=>{await Filesystem.rmdir({directory:Directory.Cache,path:"images",recursive:true}).catch(()=>{});localStorage.removeItem("CapacitorStorage.kakomon:image-cache:v1");},
   showDeletion:()=>createRoot(document.getElementById("root")!).render(<DeleteAccountPage/>),
 };
-declare global { interface Window {mobileTest:{showContent:()=>void;showDeletion:()=>void;aiConsent:()=>boolean;seed:(questions:Array<{id:string}>,entry:CatalogEntry,access:MobileEntitlement)=>Promise<void>;invalidate:()=>Promise<void>;showMembership:()=>void;showOnlinePage:(question:Question)=>void;mockStore:(scenario:StoreScenario)=>void;storeCalls:()=>{purchases:number;restores:number};showQualification:(scenario:"saved"|"cancelled"|"unconfirmed"|"app-installed")=>void;qualificationCalls:()=>{universal:string[];browser:string[];editors:number;fetches:number}}} }
-const calls={purchases:0,restores:0};
+declare global { interface Window {mobileTest:{showContent:()=>void;showDeletion:()=>void;aiConsent:()=>boolean;seed:(questions:Array<{id:string}>,entry:CatalogEntry,access:MobileEntitlement)=>Promise<void>;invalidate:()=>Promise<void>;showMembership:()=>void;showOnlinePage:(question:Question)=>void;mockStore:(scenario:StoreScenario)=>void;storeCalls:()=>{purchases:number;restores:number;signIns:string[];identities:string[]};showQualification:(scenario:"saved"|"cancelled"|"unconfirmed"|"app-installed")=>void;qualificationCalls:()=>{universal:string[];browser:string[];editors:number;fetches:number}}} }
+const calls={purchases:0,restores:0,signIns:[] as string[],identities:[] as string[]};
 let storeScenario:StoreScenario="no-restorable-purchase",offerings=0;
 function mockStore(scenario:StoreScenario) {
   storeScenario=scenario;offerings=0;
 }
+const signIn=async(returnTo:string)=>{calls.signIns.push(returnTo);};
 // Inject a mock at the SDK adapter boundary; the Capacitor proxy deliberately
 // ignores property overrides, so mutating Purchases itself is not a mock.
+// Mirrors the native plugin: configure() must happen before anything else, and
+// the identity is anonymous until logIn()/configure(appUserID).
+let configured=false;
+const unimplemented=()=>Object.assign(new Error('"Purchases.isConfigured()" is not implemented on ios'),{code:"UNIMPLEMENTED"});
 const sdk={
-    isConfigured:async()=>({isConfigured:false}),isAnonymous:async()=>({isAnonymous:false}),configure:async()=>{},logIn:async()=>{},logOut:async()=>{},
+    isConfigured:async()=>{if(storeScenario==="unimplemented")throw unimplemented();return {isConfigured:configured};},
+    isAnonymous:async()=>({isAnonymous:calls.identities.at(-1)==="anonymous"}),
+    configure:async({appUserID}:{appUserID?:string})=>{configured=true;calls.identities.push(appUserID??"anonymous");},
+    logIn:async({appUserID}:{appUserID:string})=>{calls.identities.push(appUserID);},logOut:async()=>{calls.identities.push("anonymous");},
     getOfferings:async()=>{
+      if(!configured)throw {code:"23",message:"Purchases must be configured before calling this function"};
+      if(storeScenario==="no-products")throw Object.assign(new Error("There is an issue with your configuration. Check the underlying error for more details."),{code:"23",underlyingErrorMessage:"None of the products registered in the RevenueCat dashboard could be fetched from App Store Connect."});
       offerings++;
       const price=storeScenario==="changed-price"&&offerings>1?1200:980;
-      const item={identifier:"monthly",packageType:PACKAGE_TYPE.MONTHLY,product:{identifier:"mock.monthly",price,priceString:`¥${price}`,currencyCode:"JPY",subscriptionPeriod:"P1M"}} as PurchasesPackage;
+      const identifier=storeScenario==="changed-product"&&offerings>1?"mock.other":"mock.monthly";
+      const item={identifier:"monthly",packageType:PACKAGE_TYPE.MONTHLY,product:{identifier,price,priceString:`¥${price}`,currencyCode:"JPY",subscriptionPeriod:"P1M"}} as PurchasesPackage;
       return {all:{main:{availablePackages:[item]}}};
     },
-    purchasePackage:async()=>{calls.purchases++;throw {code:storeScenario==="pending"?"20":"1"};},
+    purchasePackage:async()=>{calls.purchases++;if(storeScenario==="success"||storeScenario==="changed-price"){window.dispatchEvent(new Event("mock:purchased"));return {};}throw {code:storeScenario==="pending"?"20":"1"};},
     restorePurchases:async()=>{calls.restores++;return {};},
 };
 const membership=new Membership(sdk as unknown as ConstructorParameters<typeof Membership>[0]);
@@ -56,6 +67,6 @@ function showQualification(scenario:"saved"|"cancelled"|"unconfirmed"|"app-insta
   const browser={open:async({url}:{url:string})=>{qualificationCalls.browser.push(url);}} as unknown as Parameters<typeof openQualificationUrl>[2];
   createRoot(document.getElementById("root")!).render(<QualificationActions target={target} service={{fetch:request,add:(event,t)=>addQualificationEvent(event,t,request,native),open:url=>openQualificationUrl(url,native,browser),source:async url=>{qualificationCalls.browser.push(url);}}}/>);
 }
-window.mobileTest={showContent:()=>createRoot(document.getElementById("root")!).render(<AuthorizedContent items={Array.from({length:11},(_,i)=>({id:`mock-${i+1}`,title:`??${i+1}`}))}/>),showDeletion:()=>createRoot(document.getElementById("root")!).render(<AccountDeletionClient/>),aiConsent:requestAiConsent,async seed(questions,entry,access){await downloads.updateRights(access,config.leasePublicKey);await downloads.download(entry.code,async()=>Response.json({entry,questions,nextOffset:null,entitlement:access}),()=>{},new AbortController().signal);},invalidate:()=>downloads.invalidate(),showMembership:()=>createRoot(document.getElementById("root")!).render(<NativeTools membershipOnly membership={membership}/>),
+window.mobileTest={showContent:()=>createRoot(document.getElementById("root")!).render(<AuthorizedContent items={Array.from({length:11},(_,i)=>({id:`mock-${i+1}`,title:`??${i+1}`}))}/>),showDeletion:()=>createRoot(document.getElementById("root")!).render(<AccountDeletionClient/>),aiConsent:requestAiConsent,async seed(questions,entry,access){await downloads.updateRights(access,config.leasePublicKey);await downloads.download(entry.code,async()=>Response.json({entry,questions,nextOffset:null,entitlement:access}),()=>{},new AbortController().signal);},invalidate:()=>downloads.invalidate(),showMembership:()=>createRoot(document.getElementById("root")!).render(<NativeTools membershipOnly membership={membership} signIn={signIn}/>),
   // An online page as NativeAppHost renders it: native tools, the sticky site header, then the shared quiz.
-  showOnlinePage:question=>{document.documentElement.classList.add("native-app");createRoot(document.getElementById("root")!).render(<><NativeTools membership={membership}/><header className="sticky top-0 z-40 flex h-14 items-center border-b border-border bg-background px-4 font-bold">過去問AI（サイトのヘッダー）</header><QuizPlayer question={question} index={0} total={1} mode="random" exam={question.exam} onNext={()=>{}}/></>);},mockStore,storeCalls:()=>({...calls}),showQualification,qualificationCalls:()=>({...qualificationCalls})};
+  showOnlinePage:question=>{document.documentElement.classList.add("native-app");createRoot(document.getElementById("root")!).render(<><NativeTools membership={membership} signIn={signIn}/><header className="sticky top-0 z-40 flex h-14 items-center border-b border-border bg-background px-4 font-bold">過去問AI（サイトのヘッダー）</header><QuizPlayer question={question} index={0} total={1} mode="random" exam={question.exam} onNext={()=>{}}/></>);},mockStore,storeCalls:()=>({...calls}),showQualification,qualificationCalls:()=>({...qualificationCalls})};

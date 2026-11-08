@@ -77,9 +77,9 @@ async function openMockStore(page:Page,context:BrowserContext,scenario:Parameter
   await page.evaluate(scenario=>{window.mobileTest.mockStore(scenario);window.mobileTest.showMembership();},scenario);
   await expect(page.getByRole("button",{name:"¥980 / 月で登録",exact:true})).toBeEnabled();
 }
-test("a changed store price does not start a purchase or leave the membership locked as pending",async({page,context})=>{
-  await openMockStore(page,context,"changed-price");await page.getByRole("button",{name:"¥980 / 月で登録",exact:true}).click();
-  await expect(page.getByRole("status")).toContainText("月額商品の設定・価格");
+test("a changed store product does not start a purchase or leave the membership locked as pending",async({page,context})=>{
+  await openMockStore(page,context,"changed-product");await page.getByRole("button",{name:"¥980 / 月で登録",exact:true}).click();
+  await expect(page.getByRole("status")).toContainText("mock.monthly なし");
   await expect(page.getByRole("button",{name:"¥980 / 月で登録",exact:true})).toBeEnabled();
   expect((await page.evaluate(()=>window.mobileTest.storeCalls())).purchases).toBe(0);
   await expect(page.getByText("購入内容をサーバーで確認中です。",{exact:false})).toHaveCount(0);
