@@ -30,7 +30,8 @@ export function mascotVisitSeed() {
   return memorySeed;
 }
 
-function randomFor(seed: number) {
+/** Deterministic per-visit random source (the same visit draws the same room). */
+export function randomFor(seed: number) {
   let value = seed >>> 0;
   return () => {
     value += 0x6d2b79f5;

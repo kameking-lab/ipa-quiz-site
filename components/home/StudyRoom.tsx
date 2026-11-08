@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { presenceExamName } from "@/lib/study-presence";
 import type { MeasuredPresence } from "@/lib/study-presence-contract";
-import { initialSeatIdles, mascotVisitSeed, measuredRoom, nextSeatIdles, qualificationMascot, roomCharacter, roomMascots, roomStage, type SeatIdle } from "@/lib/home/study-room";
+import { initialSeatIdles, mascotVisitSeed, measuredRoom, nextSeatIdles, qualificationMascot, randomFor, roomCharacter, roomMascots, roomStage, type SeatIdle } from "@/lib/home/study-room";
 import { PetOwnStudySeat } from "@/components/pet/PetOwnStudySeat";
 import { usePetProfileView } from "@/components/pet/usePetProfileView";
 import { StudyReturnLink } from "./StudyReturnLink";
@@ -65,7 +65,8 @@ export function StudyRoom({ snapshot, suggestions }: {
   const [idles, setIdles] = useState<SeatIdle[]>([]);
   useEffect(() => {
     if (visitSeed === null) return;
-    setIdles(initialSeatIdles(characterKey.split("|").map(character => character || null), Math.random));
+    // Seeded by the visit so a remount shows the same room; only later ticks vary.
+    setIdles(initialSeatIdles(characterKey.split("|").map(character => character || null), randomFor(visitSeed ^ 0x9e3779b9)));
   }, [characterKey, visitSeed]);
   useEffect(() => {
     if (!motionVisible || visitSeed === null || window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
