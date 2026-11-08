@@ -108,12 +108,10 @@ describe("clinical laboratory first75 local release payload", () => {
     expect(getExamQuestionCount("rinsho-kensagishi")).toBe(106);
     expect(countByExam("rinsho-kensagishi")).toBe(106);
     expect(dynamicParams).toBe(true);
-    const params = await generateStaticParams();
+    // Detail pages are not prerendered at build; every accepted URL resolves on demand.
+    expect(await generateStaticParams()).toEqual([]);
     const xml = Array.from({ length: getSitemapChunkCount() }, (_, i) => renderQuestionsSitemapChunkXml(i)).join("");
     for (const q of selected) {
-      // Pre-rendering is bounded; accepted older URLs still resolve on demand.
-      if (q.year >= 2026) expect(params, q.id).toContainEqual(route(q));
-      else expect(params, q.id).not.toContainEqual(route(q));
       const metadata = await generateMetadata({ params: Promise.resolve(route(q)) });
       expect(metadata.robots, q.id).toEqual({ index: true, follow: true });
       expect(metadata.alternates?.canonical, q.id).toBe(questionPagePath(q));
