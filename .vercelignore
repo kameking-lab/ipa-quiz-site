@@ -16,6 +16,8 @@ tests/
 # Keep the production migration entry point in the uploaded build context.
 scripts/*
 !scripts/vercel-migrate.mjs
+# Builds the copilot BM25 index before next build (see package.json "build").
+!scripts/build-copilot-index.ts
 
 # Internal docs (markdown; not imported by the app)
 docs/

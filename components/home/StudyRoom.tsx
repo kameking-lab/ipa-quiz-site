@@ -37,6 +37,21 @@ export function StudyRoom({ snapshot, suggestions }: {
   const seatListRef = useRef<HTMLDivElement>(null);
   const focusedSeat = useRef<string | null>(null);
   const [motionVisible, setMotionVisible] = useState(false);
+  // 背景の大きな部屋の絵（約 300KB）は、自習室が画面に近づいてから読み込む。
+  // ページ下部にあるので、開いた直後のダウンロードをトップの絵などに譲る。
+  const [backgroundReady, setBackgroundReady] = useState(false);
+  useEffect(() => {
+    const scene = sceneRef.current;
+    if (!scene) return;
+    if (typeof IntersectionObserver === "undefined") { setBackgroundReady(true); return; }
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      setBackgroundReady(true);
+      observer.disconnect();
+    }, { rootMargin: "800px 0px" });
+    observer.observe(scene);
+    return () => observer.disconnect();
+  }, []);
   useEffect(() => {
     const scene = sceneRef.current;
     if (!scene) return;
@@ -89,7 +104,7 @@ export function StudyRoom({ snapshot, suggestions }: {
     <div className="study-room-layout">
       <div className="study-room-card">
         <div className="study-room-toolbar"><h3>木もれびの自習室</h3></div>
-        <div ref={scrollRef} className="study-room-scroll" tabIndex={0} aria-label="広がる自習室。横にスクロールできます"><div ref={sceneRef} data-stage={stage} data-motion-visible={motionVisible} className="study-room-scene" role="group" aria-label={snapshot ? "前回取得時点の集計に基づくチワワの自習室" : "資格を紹介するイメージルーム"} onKeyDown={event => { if (event.key === "Escape") setSelected(null); }}>
+        <div ref={scrollRef} className="study-room-scroll" tabIndex={0} aria-label="広がる自習室。横にスクロールできます"><div ref={sceneRef} data-stage={stage} data-motion-visible={motionVisible} data-bg-ready={backgroundReady} className="study-room-scene" role="group" aria-label={snapshot ? "前回取得時点の集計に基づくチワワの自習室" : "資格を紹介するイメージルーム"} onKeyDown={event => { if (event.key === "Escape") setSelected(null); }}>
           <span className="study-room-light" aria-hidden="true">木もれびの時間</span>
           <div className={styles.seatedArea}>
           {illustratedSeats.map(seat => {

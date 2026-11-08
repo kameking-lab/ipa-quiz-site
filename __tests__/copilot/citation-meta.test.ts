@@ -9,6 +9,8 @@ import { IPA_EXAM_INFO_URL } from "@/lib/exam-config";
 import { getAllQuestions } from "@/lib/questions/load";
 import type { CorpusDoc, RerankedCandidate } from "@/lib/copilot/types";
 
+const byId = (id: string) => getAllQuestions().find((q) => q.id === id);
+
 function glossaryDoc(text: string): CorpusDoc {
   // A `g:` doc whose term is NOT in the real GLOSSARY, so meta enrichment is
   // skipped and the snippet falls back to doc.text — isolating the snippet
@@ -33,20 +35,20 @@ describe("buildCitationMetas", () => {
       candidate(glossaryDoc("a"), 0),
       candidate(glossaryDoc("b"), 1),
       candidate(glossaryDoc("c"), 2),
-    ]);
+    ], byId);
     expect(metas.map((m) => m.ordinal)).toEqual([1, 2, 3]);
   });
 
   it("collapses internal whitespace in the snippet", () => {
     const [meta] = buildCitationMetas([
       candidate(glossaryDoc("  foo\n\n  bar\t baz  "), 0),
-    ]);
+    ], byId);
     expect(meta.snippet).toBe("foo bar baz");
   });
 
   it("truncates long snippets to 320 chars plus an ellipsis", () => {
     const long = "あ".repeat(400);
-    const [meta] = buildCitationMetas([candidate(glossaryDoc(long), 0)]);
+    const [meta] = buildCitationMetas([candidate(glossaryDoc(long), 0)], byId);
     expect(meta.snippet.length).toBe(321); // 320 + "…"
     expect(meta.snippet.endsWith("…")).toBe(true);
     expect(meta.snippet.startsWith("あ")).toBe(true);
@@ -54,13 +56,13 @@ describe("buildCitationMetas", () => {
 
   it("leaves a snippet at exactly the limit untouched (no ellipsis)", () => {
     const exact = "x".repeat(320);
-    const [meta] = buildCitationMetas([candidate(glossaryDoc(exact), 0)]);
+    const [meta] = buildCitationMetas([candidate(glossaryDoc(exact), 0)], byId);
     expect(meta.snippet).toBe(exact);
     expect(meta.snippet.endsWith("…")).toBe(false);
   });
 
   it("marks unknown glossary docs as kind=glossary without enriched meta", () => {
-    const [meta] = buildCitationMetas([candidate(glossaryDoc("text"), 0)]);
+    const [meta] = buildCitationMetas([candidate(glossaryDoc("text"), 0)], byId);
     expect(meta.kind).toBe("glossary");
     expect(meta.glossary).toBeUndefined();
     expect(meta.docId).toBe("g:__test-term-not-in-glossary__");
@@ -80,7 +82,7 @@ describe("buildCitationMetas — 出典リンク (fullSourceUrl) gating", () => 
       q.sourcePdfUrl?.includes("jitec.ipa.go.jp"),
     );
     if (jitecQ) {
-      const [meta] = buildCitationMetas([candidate(questionDoc(jitecQ.id), 0)]);
+      const [meta] = buildCitationMetas([candidate(questionDoc(jitecQ.id), 0)], byId);
       expect(meta.fullSourceUrl).toBe(IPA_EXAM_INFO_URL);
     }
     // Invariant (holds even after data migration): no question citation ever
@@ -89,6 +91,7 @@ describe("buildCitationMetas — 出典リンク (fullSourceUrl) gating", () => 
       getAllQuestions()
         .slice(0, 500)
         .map((q, i) => candidate(questionDoc(q.id), i)),
+      byId,
     );
     for (const m of metas) {
       expect(m.fullSourceUrl).not.toContain("jitec.ipa.go.jp");
@@ -101,7 +104,7 @@ describe("citation header encode/decode round-trip", () => {
     const metas = buildCitationMetas([
       candidate(glossaryDoc("セキュリティの解説本文"), 0),
       candidate(glossaryDoc("ネットワーク層の説明"), 1),
-    ]);
+    ], byId);
     const header = encodeCitationsHeader(metas);
     // Header must be ASCII-safe (base64) so it survives HTTP transport.
     expect(/^[A-Za-z0-9+/=]+$/.test(header)).toBe(true);

@@ -94,7 +94,9 @@ body:has(.study-home) { background:#f7f3e9; }
 .study-room-toolbar p { font-size:10px; color:var(--study-muted); margin-top:3px; letter-spacing:.08em; }
 .study-room-scroll { overflow-x:auto; container-type:inline-size; }
 .study-room-scroll:focus-visible { outline:3px solid #355b38; outline-offset:2px; }
-.study-room-scene { height:78.22cqw; position:relative; isolation:isolate; background:#c7a471 url("/images/home/study-room-expanded.webp") left top/140cqw 78.22cqw no-repeat; }
+.study-room-scene { height:78.22cqw; position:relative; isolation:isolate; background:#c7a471 left top/140cqw 78.22cqw no-repeat; }
+/* StudyRoom sets data-bg-ready once the room nears the viewport (defers ~300KB below the fold). */
+.study-room-scene[data-bg-ready="true"] { background-image:url("/images/home/study-room-expanded.webp"); }
 .study-room-scene[data-stage="1"] { width:110%; }
 .study-room-scene[data-stage="2"] { width:120%; }
 .study-room-scene[data-stage="3"] { width:130%; }

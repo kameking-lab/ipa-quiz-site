@@ -1,7 +1,6 @@
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import "server-only";
 import type { CitationMeta } from "./header-codec";
-import { getAllQuestions } from "@/lib/questions/load";
 import { GLOSSARY } from "@/data/glossary";
 import { getSafePdfUrl } from "@/lib/exam-config";
 import type { Question } from "@/lib/questions/types";
@@ -23,10 +22,6 @@ function shortenSnippet(text: string): string {
   return `${trimmed.slice(0, SNIPPET_MAX_LEN)}…`;
 }
 
-function questionById(id: string): Question | undefined {
-  return getAllQuestions().find((q) => q.id === id);
-}
-
 function glossaryByTerm(term: string) {
   return GLOSSARY.find((g) => g.term === term);
 }
@@ -38,6 +33,8 @@ function glossaryByTerm(term: string) {
  */
 export function buildCitationMetas(
   passages: RerankedCandidate[],
+  /** 問題を ID で引く（コパイロットは getCopilotSource().getQuestion を渡す）。 */
+  questionById: (id: string) => Question | undefined,
 ): CitationMeta[] {
   return passages.map((p, i) => {
     const ordinal = i + 1;

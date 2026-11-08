@@ -266,7 +266,8 @@ export default async function QuestionPage({
     <main data-study-presence-exam={q.exam} className="mx-auto w-full max-w-3xl px-4 py-6 sm:py-10">
       <JsonLd data={gateEnabled ? withQuotaPaywall(jsonLd) : jsonLd} />
 
-      {/* Breadcrumb */}
+      {/* Breadcrumb — no viewport prefetch: rarely clicked, and each prefetch
+          downloads another page's RSC payload on every question view. */}
       <nav
         aria-label="パンくずリスト"
         className="mb-4 text-xs text-muted-foreground"
@@ -275,6 +276,7 @@ export default async function QuestionPage({
           <li>
             <Link
               href={breadcrumbItems[0].href}
+              prefetch={false}
               className="underline underline-offset-4 transition hover:text-foreground"
             >
               {breadcrumbItems[0].name}
@@ -286,6 +288,7 @@ export default async function QuestionPage({
           <li>
             <Link
               href={breadcrumbItems[1].href}
+              prefetch={false}
               className="underline underline-offset-4 transition hover:text-foreground"
             >
               {breadcrumbItems[1].name}
@@ -297,6 +300,7 @@ export default async function QuestionPage({
           <li>
             <Link
               href={breadcrumbItems[2].href}
+              prefetch={false}
               className="underline underline-offset-4 transition hover:text-foreground"
             >
               {breadcrumbItems[2].name}
