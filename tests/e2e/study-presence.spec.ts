@@ -110,7 +110,7 @@ test("VIS3E away dog occupies clear floor with an empty desk, stays fixed and re
       const dog = el.querySelector(".study-room-away")!;
       const box = dog.getBoundingClientRect();
       const desks = [...el.querySelectorAll(".study-room-seat")];
-      const front = desks.filter(desk => /(?:^|\s)study-seat-(?:1|3|7|11)(?:\s|$)/.test(desk.className)).map(desk => desk.getBoundingClientRect());
+      const front = desks.filter(desk => /(?:^|\s)study-seat-(?:1|2)(?:\s|$)/.test(desk.className)).map(desk => desk.getBoundingClientRect());
       return { top: box.top, bottom: box.bottom, sceneBottom: el.getBoundingClientRect().bottom,
         deskBottom: Math.max(...desks.map(desk => desk.getBoundingClientRect().bottom)),
         frontTop: Math.min(...front.map(desk => desk.top)),
