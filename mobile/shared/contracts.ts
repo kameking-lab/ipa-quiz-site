@@ -6,6 +6,8 @@ export interface MobileEntitlement {
   expiresAt: string | null;
   checkedAt: string;
   lease: string | null;
+  /** Why an entitled response carries no offline lease (server key configuration). */
+  leaseError?: string;
 }
 export interface CatalogEntry {
   code: string; name: string; count: number;

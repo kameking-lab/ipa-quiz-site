@@ -34,6 +34,18 @@ async function fetchQuestion(id: string, shuffle: boolean, start: boolean, signa
   return { question: (await res.json()) as Question, access: null };
 }
 
+/**
+ * Whether the next question may be shown from the prefetch while its grant is
+ * confirmed in the background. Only when the last grant proves the next one
+ * will be allowed (paid/unlimited, or free questions left), so a free user at
+ * the limit still never sees the eleventh question.
+ */
+export function canShowBeforeGrant(access: PracticeAccess | null): boolean {
+  if (!access) return false;
+  if (access.kind === "pass" || access.kind === "free") return true;
+  return access.kind !== "unavailable" && access.kind !== "sample" && access.remaining !== null && access.remaining > 0;
+}
+
 function resetLabel(access: PracticeAccess | null) {
   if (!access) return null;
   // The quota policy is "next 00:00 JST"; never display another time of day.
@@ -98,6 +110,8 @@ export function QuizClient({
     if (current || loadError) navigating.current = false;
   }, [index, current, loadError]);
   const cache = React.useRef<Map<string, Question>>(new Map());
+  // Set from each confirmed grant: may the next question appear before its own grant returns?
+  const showBeforeGrant = React.useRef(false);
   const initializedPool = React.useRef<string | null>(null);
 
   // Optional content is fetched while the learner reads the current question.
@@ -215,9 +229,17 @@ export function QuizClient({
         if (cancelled) return;
         if (setActive && result.access?.feedbackBonus?.newlyUsed) posthogCapture("practice_feedback_bonus_used", { remaining: result.access.feedbackBonus.remaining });
         cache.current.set(id, result.question);
-        if (setActive) { setCurrent(result.question); setAccess(result.access); setLoadError(false); setAccessError(null); }
+        if (setActive) {
+          showBeforeGrant.current = canShowBeforeGrant(result.access);
+          // Keep a question already on screen (shown from the prefetch): swapping
+          // in the server copy would reshuffle the choices under the user's finger.
+          setCurrent((shown) => shown?.id === result.question.id ? shown : result.question);
+          setAccess(result.access); setLoadError(false); setAccessError(null);
+        }
       } catch (error) {
         if (setActive && !cancelled) {
+          showBeforeGrant.current = false;
+          setCurrent(null);
           setLoadError(true);
           setAccess(error instanceof PracticeRequestError ? error.access : null);
           setAccessError(error instanceof Error ? error.message : null);
@@ -225,7 +247,7 @@ export function QuizClient({
       }
     };
 
-    setCurrent(null);
+    setCurrent((shown) => shown?.id === currentId ? shown : null);
     setAccess(null);
     setLoadError(false);
     void loadInto(currentId, true);
@@ -243,7 +265,11 @@ export function QuizClient({
     navigating.current = true;
     transitionHost.current?.scrollIntoView({ block: "start", behavior: "instant" });
     const nextId = sessionIds?.[index + 1];
-    setCurrent(!(nativeClient() || billingGateEnabled && mode !== "review") ? cache.current.get(nextId ?? "") ?? null : null);
+    const gated = nativeClient() || billingGateEnabled && mode !== "review";
+    // Gated sessions used to blank the screen ("次の問題を読み込んでいます") for every
+    // question while the grant round-trip ran. When the last grant proves the
+    // next one is allowed, show the prefetched question at once.
+    setCurrent(!gated || showBeforeGrant.current ? cache.current.get(nextId ?? "") ?? null : null);
     setAccess(null);
     setLoadError(false);
     setIndex((i) => i + 1);
