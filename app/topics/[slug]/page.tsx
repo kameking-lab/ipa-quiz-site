@@ -10,26 +10,34 @@ import { isPlaceholderExplanation } from "@/lib/questions/filter";
 import type { ExamCode } from "@/lib/questions/types";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { questionPagePath } from "@/lib/seo/question-url";
+import { decodeRouteSegment } from "@/lib/seo/route-segment";
 import {
-  findTopicByAnySlug,
-  getAllTopics,
+  findTopicBySlug,
   getHubTopics,
   getQuestionsByTopic,
 } from "@/lib/seo/topics";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 
-export const dynamicParams = false;
+// ~9,000 topic hubs are rendered on their first request and then cached until
+// the next deployment (no revalidate: the content only changes on deploy).
+// Prerendering all of them took ~4 min of every Vercel build. The reachable set
+// is unchanged: resolveTopic() only accepts the canonical slugs of
+// getAllTopics() — the same list the /topics index links (the sitemap lists
+// the hub subset of it) — and everything else, including alias spellings, is
+// a hard 404.
+export const dynamicParams = true;
 
 interface RouteParams {
   slug: string;
 }
 
 export async function generateStaticParams(): Promise<RouteParams[]> {
-  // トピック索引ページ (/topics) は「その他のトピック」節で getAllTopics() の
-  // 全トピックをリンクするため、ロングテール (count<4) も含めて全件を静的生成し、
-  // 索引からのリンク先が 404 にならないようにする。dynamicParams=false のままなので
-  // 実在しないスラッグは従来どおりハード 404 を返す。
-  return getAllTopics().map((t) => ({ slug: t.slug }));
+  return [];
+}
+
+function resolveTopic(slug: string) {
+  const decoded = decodeRouteSegment(slug);
+  return decoded === undefined ? undefined : findTopicBySlug(decoded);
 }
 
 export async function generateMetadata({
@@ -38,8 +46,7 @@ export async function generateMetadata({
   params: Promise<RouteParams>;
 }): Promise<Metadata> {
   const { slug } = await params;
-  const decoded = decodeURIComponent(slug);
-  const topic = findTopicByAnySlug(decoded);
+  const topic = resolveTopic(slug);
   if (!topic) {
     return { title: "トピックが見つかりません", robots: { index: false } };
   }
@@ -81,8 +88,7 @@ export default async function TopicHubPage({
   params: Promise<RouteParams>;
 }) {
   const { slug } = await params;
-  const decoded = decodeURIComponent(slug);
-  const topic = findTopicByAnySlug(decoded);
+  const topic = resolveTopic(slug);
   if (!topic) notFound();
 
   const pool = getQuestionsByTopic(topic.tag).sort((a, b) => {

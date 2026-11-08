@@ -87,9 +87,23 @@ const nextConfig: NextConfig = {
       "@/lib/exam-library/reference-aware-grading-index": "./mobile/shared/granted-paper-grading.ts",
     } : {},
   },
+  // Prisma uses the Node-API library engine here (engineType "library"), which loads
+  // runtime/library.js + the native .so engine. The per-database WASM query engines /
+  // compilers (~50MB, used only by edge/driver-adapter clients) and source maps are
+  // traced anyway and pushed /api/copilot past Vercel's 250MB function limit.
+  outputFileTracingExcludes: {
+    "/*": [
+      "**/node_modules/@prisma/client/runtime/*.wasm-base64.js",
+      "**/node_modules/@prisma/client/runtime/*.wasm-base64.mjs",
+      "**/node_modules/@prisma/client/runtime/*.map",
+    ],
+  },
   outputFileTracingIncludes: {
     "/e-learning/exams": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json", "./data/exam-library/pe-first/*.json"],
     "/api/home/resume": ["./data/exam-library/pe-first/*.json"],
+    // Prebuilt copilot index, search docs and sharded questions (pnpm copilot:index:write,
+    // run by pnpm build). /api/copilot reads only these in production, not data/questions.
+    "/api/copilot": ["./generated/copilot/**/*"],
     "/api/copilot/exam-library": ["./data/exam-library/pe-first/*.json"],
     "/e-learning/search": ["./data/exam-library/pe-first/*.json"],
     "/e-learning/exams/*": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json", "./data/exam-library/pe-first/*.json"],
@@ -162,6 +176,14 @@ const nextConfig: NextConfig = {
       // /why-kakomon-ai（「過去問AI を選ぶ理由」）に統合済。301 で誘導する。
       { source: "/trust", destination: "/why-kakomon-ai", permanent: true },
     ];
+  },
+  // The Vercel build skips Next's built-in type check (12-68s per build).
+  // Type safety is still enforced before anything reaches main: the required
+  // GitHub Actions check (.github/workflows/e2e.yml) runs `pnpm typecheck` AND
+  // a full `pnpm build` (VERCEL unset, so the type check runs there) on every
+  // PR and every push to main. Local `pnpm build` keeps the check too.
+  typescript: {
+    ignoreBuildErrors: process.env.VERCEL === "1",
   },
   compress: true,
   poweredByHeader: false,

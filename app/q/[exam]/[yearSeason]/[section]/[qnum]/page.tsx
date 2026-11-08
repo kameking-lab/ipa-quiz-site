@@ -44,7 +44,6 @@ import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import {
   findQuestionByRoute,
   parseQuestionNumberSegment,
-  questionNumberSegment,
   questionPagePath,
   type QuestionRouteParams,
 } from "@/lib/seo/question-url";
@@ -70,25 +69,21 @@ import { QuestionFeedback } from "@/components/quiz/QuestionFeedback";
 import { topicTagToSlug } from "@/lib/seo/topics";
 import { getQuestionCanonicalRepresentative } from "@/lib/seo/question-canonical";
 
-// Pre-render 2026 and later to limit the initial static-generation set; let older
-// years render on-demand with ISR caching. dynamicParams=true is what lets
-// the route resolve unlisted params instead of returning 404 at the router
-// layer — the page handler then validates the params and falls back to
-// notFound() for genuinely bad URLs. See logs/sitemap-coverage-2026-05-23.md
-// for the SEO motivation: the sitemap advertises every indexable question
-// (~14k), but with dynamicParams=false anything before SSG_MIN_YEAR 404'd.
+// Every question page renders on its first request and is then cached (ISR)
+// until the next deployment / revalidate window. dynamicParams=true lets the
+// route resolve params that were not prerendered; the page handler validates
+// them and falls back to notFound() for genuinely bad URLs, so the reachable
+// set is still exactly "questions that exist". The sitemap advertises every
+// indexable question independently of this list (lib/seo/sitemap-pagination).
+//
+// Build time: prerendering ~10k question pages at build took ~4-5 min of the
+// 17-23 min Vercel build (plus the output/upload of every generated file).
+// Rendering on demand moves that work to the first visit (a few hundred ms).
 export const dynamicParams = true;
 export const revalidate = 86400;
 
-const SSG_MIN_YEAR = 2026;
-
 export async function generateStaticParams(): Promise<QuestionRouteParams[]> {
-  return ALL_QUESTIONS.filter((q) => q.year >= SSG_MIN_YEAR && isPracticeReadyQuestion(q)).map((q) => ({
-    exam: q.exam,
-    yearSeason: `${q.year}-${q.season}`,
-    section: q.session,
-    qnum: questionNumberSegment(q.qNumber, q.part),
-  }));
+  return [];
 }
 
 export async function generateMetadata({
@@ -271,7 +266,8 @@ export default async function QuestionPage({
     <main data-study-presence-exam={q.exam} className="mx-auto w-full max-w-3xl px-4 py-6 sm:py-10">
       <JsonLd data={gateEnabled ? withQuotaPaywall(jsonLd) : jsonLd} />
 
-      {/* Breadcrumb */}
+      {/* Breadcrumb — no viewport prefetch: rarely clicked, and each prefetch
+          downloads another page's RSC payload on every question view. */}
       <nav
         aria-label="パンくずリスト"
         className="mb-4 text-xs text-muted-foreground"
@@ -280,6 +276,7 @@ export default async function QuestionPage({
           <li>
             <Link
               href={breadcrumbItems[0].href}
+              prefetch={false}
               className="underline underline-offset-4 transition hover:text-foreground"
             >
               {breadcrumbItems[0].name}
@@ -291,6 +288,7 @@ export default async function QuestionPage({
           <li>
             <Link
               href={breadcrumbItems[1].href}
+              prefetch={false}
               className="underline underline-offset-4 transition hover:text-foreground"
             >
               {breadcrumbItems[1].name}
@@ -302,6 +300,7 @@ export default async function QuestionPage({
           <li>
             <Link
               href={breadcrumbItems[2].href}
+              prefetch={false}
               className="underline underline-offset-4 transition hover:text-foreground"
             >
               {breadcrumbItems[2].name}

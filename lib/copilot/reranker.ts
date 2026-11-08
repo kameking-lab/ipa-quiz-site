@@ -68,7 +68,7 @@ export function deterministicRerank(
         }
       }
     }
-    const textLen = c.doc.text.length;
+    const textLen = c.doc.textLength ?? c.doc.text.length;
     if (textLen > 4000) mult *= 0.92;
     return { ...c, rerankScore: c.score * mult };
   });

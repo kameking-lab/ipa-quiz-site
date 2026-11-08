@@ -18,17 +18,16 @@ function imageSource(image: HTMLImageElement) {
 describe("registered OT source-backed routes and figures", () => {
   it("resolves all 11 recovered routes on demand and keeps official exclusions unavailable", async () => {
     expect(dynamicParams).toBe(true);
-    const paths = await generateStaticParams();
+    // Detail pages are not prerendered at build; every route resolves on demand.
+    expect(await generateStaticParams()).toEqual([]);
     for (const question of OT13_RECOVERED_QUESTIONS) {
-      if (question.year >= 2026) expect(paths, question.id).toContainEqual(route(question));
-      else expect(paths, question.id).not.toContainEqual(route(question));
       expect(findQuestionByRoute(ALL_QUESTIONS, route(question)), question.id).toEqual(question);
       const metadata = await generateMetadata({ params: Promise.resolve(route(question)) });
       expect(metadata.robots).toEqual({ index: true, follow: true });
       expect(metadata.alternates?.canonical, question.id).toBe(questionPagePath(question));
     }
     for (const question of OT13_OFFICIAL_EXCLUSIONS) {
-      expect(paths).not.toContainEqual(route(question));
+      expect(findQuestionByRoute(ALL_QUESTIONS, route(question)), question.id).toBeUndefined();
       const metadata = await generateMetadata({ params: Promise.resolve(route(question)) });
       expect(metadata.robots).toEqual({ index: false, follow: false });
       await expect(QuestionPage({ params: Promise.resolve(route(question)) })).rejects.toThrow();

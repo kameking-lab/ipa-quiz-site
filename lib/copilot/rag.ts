@@ -1,7 +1,7 @@
 import type { LLMProvider } from "@/lib/ai/provider";
 import type { Question } from "@/lib/questions/types";
-import { getCorpus } from "./corpus";
-import { getCachedIndex, maxQueryIdf, retrieve } from "./retriever";
+import { maxQueryIdf, retrieve } from "./retriever";
+import { getCopilotSource, type CopilotSource } from "./source";
 import {
   buildRetrievalQuery,
   deterministicRerank,
@@ -28,6 +28,8 @@ export interface RAGRunInput {
   rerankerProvider?: LLMProvider;
   /** abort 用 signal。 */
   signal?: AbortSignal;
+  /** 問題データと索引の入手口（省略時は getCopilotSource()）。 */
+  source?: CopilotSource;
 }
 
 /** RAG 不要なクイックアクション（雑談・モチベ系 / 既に問題コンテキストで足りる系）。 */
@@ -63,7 +65,7 @@ export async function runRAG(input: RAGRunInput): Promise<RAGResult> {
   };
 
   const fullQuery = buildRetrievalQuery(input.userMessage, ctx);
-  const index = getCachedIndex(getCorpus);
+  const index = (input.source ?? (await getCopilotSource())).index();
 
   // 雑談・モチベ系のチットチャットは「識別力のあるトークン」を持たない傾向がある。
   // 最大 IDF がしきい値（デフォルト 3.0）未満なら早期 return して

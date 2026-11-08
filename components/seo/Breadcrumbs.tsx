@@ -60,7 +60,9 @@ export function Breadcrumbs({
                       {it.name}
                     </span>
                   ) : (
-                    <Link href={it.href} className="hover:underline">
+                    // No viewport prefetch: breadcrumbs are rarely clicked, and prefetching
+                    // every ancestor downloads their RSC payloads on each page view.
+                    <Link href={it.href} prefetch={false} className="hover:underline">
                       {it.name}
                     </Link>
                   )}

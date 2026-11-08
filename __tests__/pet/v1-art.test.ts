@@ -17,14 +17,11 @@ it("ships only small derivatives of the accepted original or recorded ANIM2 sour
     expect(output.length).toBeLessThan(60000);
   }
 });
-it("keeps qualification outfits and explicit pharmacy alias; never borrows another qualification", () => {
-  for (const stage of ["puppy", "partner"] as const) for (const pose of ["study", "correct", "incorrect", "revealed", "rest", "meal", "petted", "slack"] as const) {
-    for (const qualification of ["ip", "ap", "takken", "fp3", "civil2", "yakuzaishi"]) expect(petArtFor(qualification, stage, pose)).toContain(`/${qualification}-${stage}-${pose}.webp`);
-  }
+it("keeps the explicit pharmacy alias and never borrows another qualification", () => {
   expect(petArtFor("pharmacy", "puppy", "study")).toBe(petArtFor("yakuzaishi", "puppy", "study"));
+  expect(petArtFor("pharmacy", "expert", "correct")).toBe(petArtFor("yakuzaishi", "expert", "correct"));
   expect(petArtFor("__proto__", "puppy", "correct")).toBe(PET_GENERIC_ART.study);
   expect(petArtFor(null, "puppy", "rest")).toBe(PET_GENERIC_ART.rest);
-  for (const qualification of ["ip", "ap", "takken", "fp3", "civil2", "yakuzaishi"]) expect(existsSync(`public${petArtFor(qualification, "puppy", "study")}`)).toBe(true);
 });
 
 it("never falls back to the slimmer guide art; other qualifications keep their own round study-room outfit", () => {
@@ -44,46 +41,30 @@ it("never falls back to the slimmer guide art; other qualifications keep their o
   for (const src of Object.values(PET_GENERIC_ART)) expect(existsSync(`public${src}`)).toBe(true);
 });
 const POSES = ["study", "correct", "incorrect", "revealed", "rest", "meal", "petted", "slack"] as const;
-it("FE and SG puppies react in their own study-room outfit", () => {
-  for (const exam of ["fe", "sg"]) {
-    for (const pose of ["correct", "incorrect", "revealed", "meal", "petted", "rest"] as const) {
-      const src = petArtFor(exam, "puppy", pose);
-      expect(src).toBe(`/images/pet-v1/${exam}-puppy-${pose}.webp`);
-      expect(readFileSync(`public${src}`).length).toBeLessThan(60000);
-    }
-    expect(petArtFor(exam, "puppy", "study")).toBe(`/images/home/study-room-mascots/${exam}-study.webp`);
-    expect(petArtFor(exam, "puppy", "slack")).toBe(`/images/home/study-room-mascots/${exam}-break.webp`);
-  }
-});
-it("every stage of the eight pet qualifications has its own drawn look in all poses", () => {
-  for (const exam of ["ip", "ap", "takken", "fp3", "civil2", "yakuzaishi", "fe", "sg"]) {
-    for (const stage of ["partner", "expert"] as const) for (const pose of POSES) {
-      const src = petArtFor(exam, stage, pose);
-      expect(src).toBe(`/images/pet-v1/${exam}-${stage}-${pose}.webp`);
-      expect(readFileSync(`public${src}`).length).toBeLessThan(60000);
-    }
-  }
-});
-
-it("every catalog qualification has drawn art for every stage and pose: dedicated, then field, then its study-room pair", () => {
+/** The approved character every qualification shows at every stage: its own (30 dedicated) or its field's. */
+function character(exam: string) {
+  const fieldOf = fields as Record<string, string>;
+  return Object.hasOwn(fieldOf, exam) ? `field-${fieldOf[exam]}` : exam;
+}
+it("every catalog qualification shows its approved character at every stage and pose", () => {
   const fieldOf = fields as Record<string, string>;
   expect(fieldOf).toEqual(catalog.away.examFields);
-  const room = "/images/home/study-room-mascots/";
+  const audited = new Set(audit.files.map(file => file.id));
   for (const exam of Object.keys(catalog.exams)) {
-    const field = Object.hasOwn(fieldOf, exam) ? fieldOf[exam] : null;
+    const c = character(exam);
+    const pair = catalog.exams[exam as keyof typeof catalog.exams];
     for (const stage of ["puppy", "partner", "expert"] as const) for (const pose of POSES) {
       const src = petArtFor(exam, stage, pose);
       expect(existsSync(`public${src}`), `${exam}/${stage}/${pose} -> ${src}`).toBe(true);
       expect(readFileSync(`public${src}`).length).toBeLessThan(60000);
-      expect(Object.values(PET_GENERIC_ART)).not.toContain(src);
-      const own = stage === "puppy" && (pose === "study" || pose === "slack");
-      if (own && src.startsWith(room)) {
-        // The puppy studies and takes breaks at its own study-room seat (own outfit + desk prop).
-        expect(src).toBe(catalog.exams[exam as keyof typeof catalog.exams][pose === "study" ? "study" : "break"]);
-      } else if (field) {
-        expect(src).toBe(`/images/pet-v1/field-${field}-${stage}-${pose}.webp`);
-      } else {
-        expect(src).toBe(`/images/pet-v1/${exam}-${stage}-${pose}.webp`);
+      if (stage === "puppy" && pose === "study") expect(src).toBe(pair.study);
+      else if (stage === "puppy" && pose === "slack") expect(src).toBe(pair.break);
+      // The puppy's nap is the same desk-nap moment it shows in the study room.
+      else if (stage === "puppy" && pose === "rest") expect(src).toBe(`/images/home/study-room-mascots/idle/${c}-nap.webp`);
+      else {
+        // Checksummed originals stay untouched; their redrawn look ships beside them as v2-.
+        const key = `${c}-${stage}-${pose}`;
+        expect(src).toBe(`/images/pet-v1/${audited.has(key) ? "v2-" : ""}${key}.webp`);
       }
     }
   }

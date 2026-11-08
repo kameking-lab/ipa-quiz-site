@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { presenceExamName } from "@/lib/study-presence";
 import type { MeasuredPresence } from "@/lib/study-presence-contract";
-import { mascotVisitSeed, measuredRoom, qualificationMascot, roomMascots, roomStage } from "@/lib/home/study-room";
+import { initialSeatIdles, mascotVisitSeed, measuredRoom, nextSeatIdles, qualificationMascot, randomFor, roomCharacter, roomMascots, roomStage, type SeatIdle } from "@/lib/home/study-room";
 import { PetOwnStudySeat } from "@/components/pet/PetOwnStudySeat";
 import { usePetProfileView } from "@/components/pet/usePetProfileView";
 import { StudyReturnLink } from "./StudyReturnLink";
@@ -37,6 +37,21 @@ export function StudyRoom({ snapshot, suggestions }: {
   const seatListRef = useRef<HTMLDivElement>(null);
   const focusedSeat = useRef<string | null>(null);
   const [motionVisible, setMotionVisible] = useState(false);
+  // 背景の大きな部屋の絵（約 300KB）は、自習室が画面に近づいてから読み込む。
+  // ページ下部にあるので、開いた直後のダウンロードをトップの絵などに譲る。
+  const [backgroundReady, setBackgroundReady] = useState(false);
+  useEffect(() => {
+    const scene = sceneRef.current;
+    if (!scene) return;
+    if (typeof IntersectionObserver === "undefined") { setBackgroundReady(true); return; }
+    const observer = new IntersectionObserver(([entry]) => {
+      if (!entry.isIntersecting) return;
+      setBackgroundReady(true);
+      observer.disconnect();
+    }, { rootMargin: "800px 0px" });
+    observer.observe(scene);
+    return () => observer.disconnect();
+  }, []);
   useEffect(() => {
     const scene = sceneRef.current;
     if (!scene) return;
@@ -60,7 +75,21 @@ export function StudyRoom({ snapshot, suggestions }: {
     const name = presenceExamName(seat.exam)!;
     return { name, exam: seat.exam, href: suggestions.find(item => item.name === name)?.href, index: seat.index };
   }) : introductions.map((item, index) => ({ ...item, exam: item.exam ?? item.href.split("/")[1], index }));
-  const illustratedSeats = seats.map(seat => ({ ...seat, mascot: mascots && qualificationMascot(seat.exam, mascots[seat.index]) }));
+  // Studying seats rotate through their character's idle moments (never the same one twice in a row).
+  const characterKey = seats.map(seat => mascots?.[seat.index]?.state === "study" ? roomCharacter(seat.exam) : "").join("|");
+  const [idles, setIdles] = useState<SeatIdle[]>([]);
+  useEffect(() => {
+    if (visitSeed === null) return;
+    // Seeded by the visit so a remount shows the same room; only later ticks vary.
+    setIdles(initialSeatIdles(characterKey.split("|").map(character => character || null), randomFor(visitSeed ^ 0x9e3779b9)));
+  }, [characterKey, visitSeed]);
+  useEffect(() => {
+    if (!motionVisible || visitSeed === null || window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+    const characters = characterKey.split("|").map(character => character || null);
+    const timer = setInterval(() => setIdles(current => nextSeatIdles(current.length === characters.length ? current : characters.map(() => ({ idle: null, last: null })), characters, Math.random)), 7000);
+    return () => clearInterval(timer);
+  }, [characterKey, motionVisible, visitSeed]);
+  const illustratedSeats = seats.map((seat, i) => ({ ...seat, mascot: mascots && qualificationMascot(seat.exam, mascots[seat.index], idles[i]?.idle ?? null) }));
   const awaySeat = illustratedSeats.find(seat => seat.mascot?.state === "away");
   const away = awaySeat?.mascot;
   const selectionKey = (seat: Seat) => `${measured ? "measured" : "introduction"}:${seat.index}:${seat.name}`;
@@ -89,7 +118,7 @@ export function StudyRoom({ snapshot, suggestions }: {
     <div className="study-room-layout">
       <div className="study-room-card">
         <div className="study-room-toolbar"><h3>木もれびの自習室</h3></div>
-        <div ref={scrollRef} className="study-room-scroll" tabIndex={0} aria-label="広がる自習室。横にスクロールできます"><div ref={sceneRef} data-stage={stage} data-motion-visible={motionVisible} className="study-room-scene" role="group" aria-label={snapshot ? "前回取得時点の集計に基づくチワワの自習室" : "資格を紹介するイメージルーム"} onKeyDown={event => { if (event.key === "Escape") setSelected(null); }}>
+        <div ref={scrollRef} className="study-room-scroll" tabIndex={0} aria-label="広がる自習室。横にスクロールできます"><div ref={sceneRef} data-stage={stage} data-motion-visible={motionVisible} data-bg-ready={backgroundReady} className="study-room-scene" role="group" aria-label={snapshot ? "前回取得時点の集計に基づくチワワの自習室" : "資格を紹介するイメージルーム"} onKeyDown={event => { if (event.key === "Escape") setSelected(null); }}>
           <span className="study-room-light" aria-hidden="true">木もれびの時間</span>
           <div className={styles.seatedArea}>
           {illustratedSeats.map(seat => {

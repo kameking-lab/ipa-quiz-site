@@ -11,6 +11,11 @@ export interface CorpusDoc {
   url: string;
   /** BM25 で検索対象になる本文（タイトル + 本文 + 解説 + タグを統合）。 */
   text: string;
+  /**
+   * text.length（ビルド時に作った文書だけが持つ）。本文は使うときに組み立てるので、
+   * 長さだけ要る場面（リランクの長文ペナルティ）で本文を読まずに済ませる。
+   */
+  textLength?: number;
   /** リランク・フィルタで使うメタ情報。 */
   meta: {
     exam?: ExamCode;

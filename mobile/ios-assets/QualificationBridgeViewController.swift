@@ -10,6 +10,19 @@ class QualificationBridgeViewController: CAPBridgeViewController {
     #if ASC_CAPTURE && DEBUG && targetEnvironment(simulator)
     private var ascCapture: ASCCapture?
     #endif
+
+    // Capacitor paints the WebView systemBackground (white, or black in dark
+    // mode) until index.html draws. Use the launch screen's colour instead so
+    // LaunchScreen -> bundled splash -> web home never flashes white/black.
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let background = UIColor(named: "LaunchBackground")
+            ?? UIColor(red: 0.969, green: 0.953, blue: 0.914, alpha: 1)
+        view.backgroundColor = background
+        webView?.backgroundColor = background
+        webView?.scrollView.backgroundColor = background
+    }
+
     override func capacitorDidLoad() {
         bridge?.registerPluginInstance(QualificationBridgePlugin())
         bridge?.registerPluginInstance(TrackingTransparencyPlugin())

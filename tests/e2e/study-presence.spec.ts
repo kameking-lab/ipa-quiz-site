@@ -15,6 +15,9 @@ test.beforeEach(async ({ page }) => {
 
 test("VIS3C qualification mascots stay fixed, bounded and lazy on mobile", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
+  // Studying seats rotate through idle moments over time; reduced motion keeps the room still,
+  // so this test pins that re-renders, refreshes and clicks never swap a picture.
+  await page.emulateMedia({ reducedMotion: "reduce" });
   await page.addInitScript(() => sessionStorage.setItem("study-room-mascot-visit:v1", "0"));
   const requested = new Set<string>();
   let atlasRequests = 0;
@@ -35,8 +38,9 @@ test("VIS3C qualification mascots stay fixed, bounded and lazy on mobile", async
   for (const image of await images.all()) {
     await expect(image).toHaveAttribute("loading", "lazy");
     await expect(image).toHaveAttribute("decoding", "async");
-    await expect(image).toHaveAttribute("alt", /のチワワ（(?:勉強中|あるある：.+)）/);
-    await expect(image).toHaveAttribute("src", /\/(?:ip|ap|civil2|fp3|takken|pharmacy)-(?:study|break)\.webp$/);
+    await expect(image).toHaveAttribute("alt", /のチワワ（(?:勉強中|あるある：.+|ひと休み：.+)）/);
+    // Its own seat pair, or an idle moment of the same character.
+    await expect(image).toHaveAttribute("src", /\/(?:(?:ip|ap|civil2|fp3|takken|pharmacy)-(?:study|break)|idle\/(?:ip|ap|civil2|fp3|takken|yakuzaishi)-[a-z]+)\.webp$/);
     await expect(image).toHaveCSS("background-image", "none");
   }
   expect(await scene.locator('[data-mascot-state="break"]').count()).toBeGreaterThanOrEqual(1);
@@ -77,6 +81,7 @@ async function measured(page: Page, value: StudyPresenceSnapshot): Promise<Measu
 
 test("VIS3E away dog occupies clear floor with an empty desk, stays fixed and respects reduced motion", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
+  await page.emulateMedia({ reducedMotion: "reduce" });
   await page.addInitScript(() => sessionStorage.setItem("study-room-mascot-visit:v1", "2"));
   await page.goto("/");
   const state = await measured(page, { count: 12, exams: [{ exam: "ip", count: 12 }] });
@@ -99,14 +104,22 @@ test("VIS3E away dog occupies clear floor with an empty desk, stays fixed and re
     await expectBounded(page);
     await page.locator(".study-room-scroll").evaluate(el => { el.scrollLeft = el.scrollWidth; });
     await expect.poll(() => scene.locator("img").evaluateAll(images => images.every(img => (img as HTMLImageElement).complete && (img as HTMLImageElement).naturalWidth === 256))).toBe(true);
-    // The floor lane begins below every desk's square, at every expanded room width.
+    // The playing dog is drawn at front-row size: its feet stand on the floor in front of every
+    // desk, it is layered in front of them, and its head never reaches the back rows.
     const geometry = await scene.evaluate(el => {
-      const dog = el.querySelector(".study-room-away")!.getBoundingClientRect();
-      return { top: dog.top, bottom: dog.bottom, sceneBottom: el.getBoundingClientRect().bottom,
-        deskBottom: Math.max(...[...el.querySelectorAll(".study-room-seat")].map(desk => desk.getBoundingClientRect().bottom)) };
+      const dog = el.querySelector(".study-room-away")!;
+      const box = dog.getBoundingClientRect();
+      const desks = [...el.querySelectorAll(".study-room-seat")];
+      const front = desks.filter(desk => /(?:^|\s)study-seat-(?:1|3|7|11)(?:\s|$)/.test(desk.className)).map(desk => desk.getBoundingClientRect());
+      return { top: box.top, bottom: box.bottom, sceneBottom: el.getBoundingClientRect().bottom,
+        deskBottom: Math.max(...desks.map(desk => desk.getBoundingClientRect().bottom)),
+        frontTop: Math.min(...front.map(desk => desk.top)),
+        dogZ: Number(getComputedStyle(dog).zIndex), deskZ: Math.max(...desks.map(desk => Number(getComputedStyle(desk).zIndex) || 0)) };
     });
-    expect(geometry.top).toBeGreaterThan(geometry.deskBottom);
+    expect(geometry.bottom).toBeGreaterThan(geometry.deskBottom);
     expect(geometry.bottom).toBeLessThan(geometry.sceneBottom);
+    expect(geometry.top).toBeGreaterThan(geometry.frontTop);
+    expect(geometry.dogZ).toBeGreaterThan(geometry.deskZ);
     expect(await stable()).toEqual(initial);
     await page.locator(".study-room-scroll").evaluate(el => { el.scrollLeft = 0; });
     await page.locator("#study-room").screenshot({ path: `test-results/vis3e-mobile-${width}.png` });

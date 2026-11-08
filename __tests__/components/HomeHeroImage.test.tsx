@@ -6,13 +6,18 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { HomeHeroImage } from "@/components/home/landing/HomeHeroImage";
 import { DEFAULT_HERO, HERO_VARIANTS, selectHeroVariant } from "@/components/home/landing/heroVariants";
 
-vi.mock("next/image", () => ({ default: ({ src, alt }: { src: string; alt: string }) => createElement("img", { src, alt }) }));
+vi.mock("next/image", () => ({
+  default: ({ src, alt }: { src: string; alt: string }) => createElement("img", { src, alt }),
+  getImageProps: ({ src, alt, sizes }: { src: string; alt: string; sizes?: string }) => ({ props: { src, alt, sizes, srcSet: `${src} 640w` } }),
+}));
 
 class LoadingImage {
   static instances: LoadingImage[] = [];
   onload: (() => void) | null = null;
   onerror: (() => void) | null = null;
   src = "";
+  srcset = "";
+  sizes = "";
   decode = vi.fn(() => Promise.resolve());
   constructor() { LoadingImage.instances.push(this); }
 }
@@ -58,6 +63,10 @@ describe("home hero image", () => {
     expect(image).toHaveAttribute("src", DEFAULT_HERO.src);
     expect(LoadingImage.instances).toHaveLength(1);
     expect(LoadingImage.instances[0].src).toBe(HERO_VARIANTS[0].src);
+    // Preload the same responsive candidate list as the rendered <Image>, so the
+    // browser reuses the download instead of fetching the illustration twice.
+    expect(LoadingImage.instances[0].srcset).toBe(`${HERO_VARIANTS[0].src} 640w`);
+    expect(LoadingImage.instances[0].sizes).toBe("(max-width: 767px) 100vw, 55vw");
     await act(async () => { LoadingImage.instances[0].onload?.(); });
     expect(image).toHaveAttribute("src", HERO_VARIANTS[0].src);
     expect(image).toHaveAttribute("alt", HERO_VARIANTS[0].alt);

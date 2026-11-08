@@ -14,16 +14,22 @@ import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import {
   getAvailableExams,
   getQuestionsByExamStrict,
-  groupByCategory,
 } from "@/lib/seo/exam-meta";
 import { questionPagePath } from "@/lib/seo/question-url";
+import { decodeRouteSegment } from "@/lib/seo/route-segment";
 import { isIndexableCategoryCollection } from "@/lib/seo/collection-policy";
 import { isPlaceholderExplanation } from "@/lib/questions/filter";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 
-export const dynamicParams = false;
+// ~1,900 (exam, category) pages render on their first request and are then
+// cached until the next deployment (no revalidate: content changes only on
+// deploy). The reachable set is unchanged: the page 404s unless the exam is
+// available and the category has at least one question in the strict pool —
+// exactly the pairs the old full prerender listed (see
+// __tests__/seo/adk-collection-indexing.test.ts).
+export const dynamicParams = true;
 
 interface RouteParams {
   exam: string;
@@ -31,14 +37,7 @@ interface RouteParams {
 }
 
 export async function generateStaticParams(): Promise<RouteParams[]> {
-  const out: RouteParams[] = [];
-  for (const exam of getAvailableExams()) {
-    const cats = groupByCategory(getQuestionsByExamStrict(exam));
-    for (const c of cats) {
-      out.push({ exam, topicSlug: c.category });
-    }
-  }
-  return out;
+  return [];
 }
 
 export async function generateMetadata({
@@ -50,7 +49,10 @@ export async function generateMetadata({
   if (!getAvailableExams().includes(exam as ExamCode)) {
     return { title: "分野が見つかりません", robots: { index: false } };
   }
-  const category = decodeURIComponent(topicSlug);
+  const category = decodeRouteSegment(topicSlug);
+  if (category === undefined) {
+    return { title: "分野が見つかりません", robots: { index: false } };
+  }
   const questionCount = getQuestionsByExamStrict(exam as ExamCode)
     .filter((q) => q.category === category).length;
   const title = `${examLabel(exam as ExamCode)} ${category} 過去問・解説`;
@@ -85,7 +87,8 @@ export default async function ExamTopicPage({
 }) {
   const { exam, topicSlug } = await params;
   if (!getAvailableExams().includes(exam as ExamCode)) notFound();
-  const category = decodeURIComponent(topicSlug);
+  const category = decodeRouteSegment(topicSlug);
+  if (category === undefined) notFound();
   const code = exam as ExamCode;
   const pool = getQuestionsByExamStrict(code)
     .filter((q) => q.category === category)

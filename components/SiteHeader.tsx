@@ -119,8 +119,11 @@ function SiteHeaderContent({ search }: { search: Pick<URLSearchParams, "get"> | 
     >
       <div className="mx-auto flex h-14 w-full max-w-6xl items-center justify-between gap-3 px-4 sm:px-6">
         <div className="flex items-center gap-4">
+          {/* No viewport prefetch: the logo is on every page, so prefetching downloads
+              the home page payload (~25KB) on each new page load. */}
           <Link
             href="/"
+            prefetch={false}
             className="flex min-h-[44px] items-center rounded-md outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             aria-label="過去問AI ホーム"
           >

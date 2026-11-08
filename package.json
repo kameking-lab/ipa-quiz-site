@@ -8,7 +8,7 @@
   "packageManager": "pnpm@10.33.0",
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/vercel-migrate.mjs && next build",
+    "build": "node scripts/vercel-migrate.mjs && pnpm run copilot:index:write && next build",
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
@@ -48,6 +48,7 @@
     "audit:essays": "tsx scripts/audit-essays.ts",
     "audit:essays:ci": "tsx scripts/audit-essays.ts --ci",
     "copilot:index": "tsx scripts/build-copilot-index.ts",
+    "copilot:index:write": "node --max-old-space-size=4096 --import tsx scripts/build-copilot-index.ts --write",
     "copilot:eval": "tsx scripts/eval-copilot-rag.ts",
     "test": "vitest run",
     "mascots:build": "tsx scripts/build-study-room-mascots.ts"
