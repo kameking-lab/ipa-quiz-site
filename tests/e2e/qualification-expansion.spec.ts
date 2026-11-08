@@ -33,7 +33,8 @@ async function followBrowseJourney(page: Page, c: QualificationCase): Promise<vo
   await page.goto(`/${c.exam}`);
   await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
 
-  await page.locator(`a[href='/${c.exam}/${c.yearSeason}']`).click();
+  // During hydration the year tab can briefly hold two copies of the same link; either navigates.
+  await page.locator(`a[href='/${c.exam}/${c.yearSeason}']`).first().click();
   await expect(page).toHaveURL(new RegExp(`/${c.exam}/${c.yearSeason}$`));
 
   await page.locator(`a[href*="question=${c.questionId}&"]`).click();

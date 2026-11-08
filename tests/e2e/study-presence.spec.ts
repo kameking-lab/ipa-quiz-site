@@ -333,7 +333,14 @@ test("many qualifications stay within a keyboard-scrollable small list", async (
   await expect(scene.getByRole("button", { name: /動き/ })).toHaveCount(0);
   await expect(region.getByText("静止表示", { exact: true })).toHaveCount(0);
   await scene.scrollIntoViewIfNeeded();
-  await expect(scene).toHaveAttribute("data-motion-visible", "true");
+  await expect(scene).toHaveAttribute("data-motion-visible", "true", { timeout: 10_000 }).catch(async error => {
+    // Record why the room thinks it is off screen (CI-only failure investigation).
+    console.log("study-room visibility", JSON.stringify(await scene.evaluate(el => {
+      const r = el.getBoundingClientRect(), scroll = el.closest(".study-room-scroll")!.getBoundingClientRect();
+      return { hidden: document.hidden, visibility: document.visibilityState, inner: [innerWidth, innerHeight], scene: [r.left, r.top, r.width, r.height], scroll: [scroll.left, scroll.top, scroll.width, scroll.height], scrollY };
+    })));
+    throw error;
+  });
   await page.emulateMedia({ reducedMotion: "reduce" });
   expect(await region.locator(".study-room-scene .study-mascot").evaluateAll(elements => elements.every(el => getComputedStyle(el).animationName === "none"))).toBe(true);
   await expectBounded(page);
