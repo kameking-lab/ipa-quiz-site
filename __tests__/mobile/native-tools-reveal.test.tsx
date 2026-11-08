@@ -1,0 +1,67 @@
+// @vitest-environment-options {"url":"https://www.kakomon-ai.jp/q/ip/2024-cbt/am/q12"}
+import { act, fireEvent, render, screen } from "@testing-library/react";
+import { afterEach, beforeEach, expect, it, vi } from "vitest";
+
+
+vi.mock("@capacitor/core", () => ({ Capacitor: { isNativePlatform: () => true, getPlatform: () => "ios" } }));
+vi.mock("@capacitor/app", () => ({ App: { addListener: () => Promise.resolve({ remove: () => Promise.resolve() }) } }));
+vi.mock("@capacitor/browser", () => ({ Browser: { open: vi.fn(() => Promise.resolve()) } }));
+vi.mock("@capacitor/share", () => ({ Share: { share: vi.fn(() => Promise.resolve()) } }));
+vi.mock("@capacitor/preferences", () => ({ Preferences: { get: vi.fn(() => Promise.resolve({ value: null })), set: vi.fn(), remove: vi.fn(() => Promise.resolve()) } }));
+vi.mock("@revenuecat/purchases-capacitor", () => ({ Purchases: { addCustomerInfoUpdateListener: vi.fn(() => Promise.reject(new Error("unavailable"))), removeCustomerInfoUpdateListener: vi.fn() } }));
+vi.mock("@/mobile/src/downloads", () => ({ downloads: { invalidate: vi.fn(() => Promise.resolve()), list: vi.fn(() => Promise.resolve({})), updateRights: vi.fn(() => Promise.resolve()) } }));
+vi.mock("@/mobile/src/purchases", () => ({
+  Membership: class { disconnect() { return Promise.resolve(); } offer() { return Promise.resolve(null); } },
+  purchaseError: () => ({ cancelled: false, pending: false, rejected: false }),
+  nativePublicSdkKey: (key: string) => Promise.resolve(key),
+}));
+vi.mock("@/mobile/src/login", () => ({ beginLogin: vi.fn(() => Promise.resolve()), observeLogin: vi.fn(() => Promise.resolve(() => {})) }));
+vi.mock("@/mobile/src/platform", () => ({ observeReminderTap: vi.fn(() => Promise.resolve(() => {})), setReminder: vi.fn() }));
+vi.mock("@/mobile/src/portable-storage", () => ({ persistStudy: vi.fn(() => Promise.resolve()), restoreStudy: vi.fn(() => Promise.resolve()) }));
+vi.mock("@/mobile/src/images", () => ({ cachedImage: vi.fn() }));
+vi.mock("@/mobile/src/QualificationActions", () => ({ NativePageQualificationActions: () => null }));
+vi.mock("@/mobile/src/qualification-platform", () => ({ openQualificationUrl: vi.fn() }));
+vi.mock("@/mobile/src/pet-support", () => ({ installNativePetSupport: () => () => {}, observePetStudyWrites: () => () => {}, persistStudyAfterPets: vi.fn(() => Promise.resolve()) }));
+vi.mock("@/app/billing/ManageSubscriptionButton", () => ({ ManageSubscriptionButton: () => null }));
+
+import { NativeTools, noticeText } from "@/mobile/src/NativeTools";
+
+const entitlement = { entitlement: { userId: null, entitled: false }, configuration: { sdkKey: "" } };
+let scrollTo: ReturnType<typeof vi.fn>;
+beforeEach(() => {
+  scrollTo = vi.fn();
+  window.scrollTo = scrollTo as unknown as typeof window.scrollTo;
+  vi.stubGlobal("fetch", vi.fn(async (input: RequestInfo | URL) => {
+    const url = String(input instanceof Request ? input.url : input);
+    if (url.includes("/api/mobile/catalog")) return Response.json({ exams: [] });
+    return Response.json(entitlement);
+  }));
+});
+afterEach(() => { vi.unstubAllGlobals(); document.body.innerHTML = ""; });
+
+it("scrolls the membership panel into view when a /billing link far down the page is tapped", async () => {
+  render(<><NativeTools /><main><a href="/billing/start?returnTo=%2Fq">月額980円で続ける</a></main></>);
+  await act(async () => {});
+  expect(screen.queryByRole("heading", { name: "会員・設定" })).toBeNull();
+  await act(async () => { fireEvent.click(screen.getByText("月額980円で続ける")); });
+  const heading = screen.getByRole("heading", { name: "会員・設定" });
+  expect(scrollTo).toHaveBeenCalledWith(expect.objectContaining({ top: 0 }));
+  expect(document.activeElement).toBe(heading);
+  // A second tap while the panel is already open must still bring it back.
+  scrollTo.mockClear();
+  await act(async () => { fireEvent.click(screen.getByText("月額980円で続ける")); });
+  expect(scrollTo).toHaveBeenCalledWith(expect.objectContaining({ top: 0 }));
+});
+
+it("does not scroll when the panel is opened from its own button at the top", async () => {
+  render(<NativeTools />);
+  await act(async () => {});
+  await act(async () => { fireEvent.click(screen.getByRole("button", { name: "会員・設定" })); });
+  expect(screen.getByRole("heading", { name: "会員・設定" })).toBeVisible();
+  expect(scrollTo).not.toHaveBeenCalled();
+});
+
+it("shows failures without the 'Error: ' prefix", () => {
+  expect(noticeText(new Error("会員状態を確認できません。"))).toBe("会員状態を確認できません。");
+  expect(noticeText("plain")).toBe("plain");
+});

@@ -22,6 +22,8 @@ import { PrivacyNote } from "@/components/ui/privacy-note";
 import { blocksNativeWebPurchase } from "../shared/native-billing-policy";
 import { installNativePetSupport, observePetStudyWrites, persistStudyAfterPets } from "./pet-support";
 const defaultMembership = new Membership();
+/** User-facing text for a failure: the message, without the "Error: " prefix String(e) adds. */
+export function noticeText(error: unknown): string { return error instanceof Error ? error.message : String(error); }
 export const SITE_ORIGIN = "https://www.kakomon-ai.jp";
 // The bundled shell: offline study with saved questions (paid downloads).
 const localUrl = "capacitor://localhost/index.html?local=1";
@@ -32,6 +34,11 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   const [notice, setNotice] = useState(""), [busy, setBusy] = useState(false), [time, setTime] = useState("20:00");
   const [signingIn, setSigningIn] = useState<"" | "opening" | "finishing">("");
   const [purchasePending,setPurchasePending]=useState(false);
+  // Bumped whenever something other than the 「会員・設定」 button opens the panel
+  // (a /billing link, a blocked web checkout, returning from sign-in). The panel
+  // sits above the site header, so without scrolling to it the tap looked dead.
+  const [revealTick,setRevealTick]=useState(0);
+  const heading=useRef<HTMLHeadingElement>(null);
   const [downloading,setDownloading]=useState(false);
   const abort = useRef<AbortController | null>(null), user = useRef<string | null>(null);
   const studyReady = useRef(false), accessSignature = useRef("");
@@ -81,19 +88,19 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     const disposers: Array<()=>void> = []; let disposed = false;
     const keep = (dispose: ()=>void)=> { if (disposed) dispose(); else disposers.push(dispose); };
     keep(installNativePetSupport());
-    keep(observePetStudyWrites(()=>({ready:studyReady.current,owner:user.current}),e=>setNotice(String(e))));
-    void refresh().catch(e=>setNotice(String(e)));
-    void observeLogin(SITE_ORIGIN, e=>{setSigningIn("");setNotice(String(e));}, ()=>{setOpen(true);setSigningIn("finishing");}).then(keep);
+    keep(observePetStudyWrites(()=>({ready:studyReady.current,owner:user.current}),e=>setNotice(noticeText(e))));
+    void refresh().catch(e=>setNotice(noticeText(e)));
+    void observeLogin(SITE_ORIGIN, e=>{setSigningIn("");setNotice(noticeText(e));}, ()=>{setOpen(true);setRevealTick(n=>n+1);setSigningIn("finishing");}).then(keep);
     void App.addListener("appStateChange", s=>{
-      if(s.isActive)void refresh(true).catch(e=>setNotice(String(e)));
-      else if(studyReady.current)void persistStudyAfterPets(user.current).catch(e=>setNotice(String(e)));
+      if(s.isActive)void refresh(true).catch(e=>setNotice(noticeText(e)));
+      else if(studyReady.current)void persistStudyAfterPets(user.current).catch(e=>setNotice(noticeText(e)));
     }).then(h=>keep(()=>{ void h.remove(); }));
     void observeReminderTap(()=>window.location.assign(`${SITE_ORIGIN}/review`)).then(keep);
-    void Purchases.addCustomerInfoUpdateListener(()=>{ void refresh(true).catch(e=>setNotice(String(e))); }).then(id=>keep(()=>{ void Purchases.removeCustomerInfoUpdateListener({ listenerToRemove: id }); })).catch(()=>{});
-    const interval = window.setInterval(()=>{ void refresh().catch(e=>setNotice(String(e))); },60000);
+    void Purchases.addCustomerInfoUpdateListener(()=>{ void refresh(true).catch(e=>setNotice(noticeText(e))); }).then(id=>keep(()=>{ void Purchases.removeCustomerInfoUpdateListener({ listenerToRemove: id }); })).catch(()=>{});
+    const interval = window.setInterval(()=>{ void refresh().catch(e=>setNotice(noticeText(e))); },60000);
     const deleted=()=>{studyReady.current=false;user.current=null;abort.current?.abort();setAccess(null);setOffer(null);clearInterval(interval);};
     window.addEventListener("mobile:account-deleted",deleted);
-    const mirror=window.setInterval(()=>{if(studyReady.current)void persistStudy(user.current).catch(e=>setNotice(String(e)));},5000);
+    const mirror=window.setInterval(()=>{if(studyReady.current)void persistStudy(user.current).catch(e=>setNotice(noticeText(e)));},5000);
     const cacheVisibleImages=()=>document.querySelectorAll<HTMLImageElement>("img").forEach(img=>{if(img.complete && img.naturalWidth>0)void cachedImage(img.currentSrc||img.src);});
     const imageObserver=new MutationObserver(cacheVisibleImages); imageObserver.observe(document.body,{childList:true,subtree:true});
     document.addEventListener("load",cacheVisibleImages,true);cacheVisibleImages();
@@ -101,13 +108,13 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     const original = window.fetch;
     window.fetch = async (input, init) => {
       const url = new URL(input instanceof Request ? input.url : String(input), location.href);
-      if (blocksNativeWebPurchase(url)) { setOpen(true); return Response.json({ error: "use_app_store" }, { status: 403 }); }
+      if (blocksNativeWebPurchase(url)) { setOpen(true); setRevealTick(n=>n+1); return Response.json({ error: "use_app_store" }, { status: 403 }); }
       return original(input, init);
     };
     const click = (e: MouseEvent)=>{
       const a = (e.target as Element)?.closest?.("a[href]"); if (!a) return;
       const url = new URL(a.getAttribute("href")!, location.href);
-      if (url.origin === SITE_ORIGIN && url.pathname.startsWith("/billing")) { e.preventDefault(); e.stopPropagation(); setOpen(true); }
+      if (url.origin === SITE_ORIGIN && url.pathname.startsWith("/billing")) { e.preventDefault(); e.stopPropagation(); setOpen(true); setRevealTick(n=>n+1); }
       else if (url.origin !== SITE_ORIGIN && url.protocol === "https:") { e.preventDefault(); e.stopPropagation(); void (isQualificationUrl(url.href) ? openQualificationUrl(url.href) : Browser.open({ url: url.href })).catch(()=>setNotice("リンクを開けませんでした。再度お試しください。")); }
     };
     document.addEventListener("click",click,true);
@@ -121,6 +128,12 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     const response = await fetch("/api/mobile/catalog", { cache:"no-store" });
     if (response.ok && !cancelled) setCatalog((await response.json() as { exams: CatalogEntry[] }).exams);
   })().catch(error=>{ if(!cancelled)setNotice(error instanceof Error?error.message:"会員状態を確認できません。"); }); return ()=>{cancelled=true;}; },[open,inSite,refresh,membership]);
+  useEffect(()=>{
+    if (!revealTick) return;
+    const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
+    window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
+    heading.current?.focus({ preventScroll: true });
+  },[revealTick]);
   const startLogin = ()=>{
     // Instant feedback, then the system sign-in sheet; nothing else is awaited first.
     if (signingIn) return;
@@ -142,7 +155,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     {!membershipOnly && <Suspense fallback={null}><NativePageQualificationActions collapsed /></Suspense>}
     {notice && !open && <p role="status" className="mx-auto mt-2 max-w-2xl break-words">{notice}</p>}
     {open && <section id="native-settings" className="mx-auto max-w-2xl space-y-4 py-4 text-base">
-      <div className="flex items-center justify-between gap-3"><h1 className="text-xl font-bold">会員・設定</h1>{!membershipOnly && <button className={secondary} onClick={()=>setOpen(false)}>閉じる</button>}</div>
+      <div className="flex items-center justify-between gap-3"><h1 ref={heading} tabIndex={-1} className="text-xl font-bold outline-none">会員・設定</h1>{!membershipOnly && <button className={secondary} onClick={()=>setOpen(false)}>閉じる</button>}</div>
       {notice && <p role="status" className="break-words rounded-xl bg-muted p-3 text-sm">{notice}</p>}
       <section aria-labelledby="native-plan" className={card}>
         <h2 id="native-plan" className="font-bold">有料会員（月額プラン）</h2>
