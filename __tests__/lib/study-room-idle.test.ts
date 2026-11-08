@@ -61,3 +61,19 @@ describe("study room idle rotation", () => {
     expect(qualificationMascot("sharoushi", studying, "tea").state).toBe("study");
   });
 });
+
+describe("quiet rooms", () => {
+  it("shows everyone studying at their desk below 4 learners, and the full mix from 4", async () => {
+    const { quietRoomMascots } = await import("@/lib/home/study-room");
+    for (let seed = 0; seed < 200; seed++) {
+      const room = roomMascots(seed);
+      for (const learners of [1, 2, 3]) {
+        const quiet = quietRoomMascots(room, learners);
+        expect(quiet.quiet).toBe(true);
+        expect(quiet.slice(0, learners).every(slot => slot.state === "study" && slot.vacantSrc === undefined)).toBe(true);
+      }
+      expect(quietRoomMascots(room, 4).quiet).toBe(false);
+      expect(quietRoomMascots(room, 4).map(slot => slot.state)).toEqual(room.map(slot => slot.state));
+    }
+  });
+});

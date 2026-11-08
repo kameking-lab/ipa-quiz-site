@@ -10,6 +10,8 @@ import type { PetCareAction } from "@/lib/pet/v1/care";
 import { PET_ROOM_SCENES, PET_ROOM_STORIES } from "@/lib/pet/v1/room";
 import { petArtFor, petPathArtFor, type PetPose } from "@/lib/pet/v1/art";
 import { examLabel } from "@/lib/utils";
+import { normalizePetName, PET_DEFAULT_NAME, PET_NAME_MAX } from "@/lib/pet/v1/name";
+import { petDisplayName } from "./PetNameTitle";
 import styles from "./PetCareSheet.module.css";
 
 const STAGE_NAMES = { puppy: "こいぬ", partner: "学習の相棒", expert: "専門家" } as const;
@@ -72,7 +74,7 @@ export default function PetCareSheet({ document: doc, qualificationId, onClose, 
               {hearts > 0 ? <span key={hearts} className={styles.heart} aria-hidden="true">♥</span> : null}
             </div>
             <div className={styles.heroCopy}>
-              <p className={styles.name}>{examLabel(profile.qualificationId)}の{profile.name}</p>
+              <p className={styles.name}>{petDisplayName(examLabel(profile.qualificationId), profile.name)}</p>
               <p className={styles.chips}><span className={styles.stageChip}>{STAGE_NAMES[profile.selectedStage]}</span>
                 {profile.selectedPath ? <span>{PET_PATH_LABELS[profile.selectedPath]}</span> : null}</p>
               <p className={styles.chips}><span>成長 {profile.growth}</span><span aria-label={`なつき ${profile.bond}`}>♥ {profile.bond}</span><span>{progress.learningDays}日</span></p>
@@ -106,8 +108,11 @@ export default function PetCareSheet({ document: doc, qualificationId, onClose, 
           {profile.memories.length ? <section><h4>思い出</h4><ol className={styles.memories}>{profile.memories.slice(-50).reverse().map((memory, index) => <li key={`${memory.kind}-${memory.occurredAt}-${index}`}>
             <time>{new Intl.DateTimeFormat("ja", { timeZone: doc.timeZone, month: "numeric", day: "numeric" }).format(memory.occurredAt)}</time>{memory.kind === "overcome" ? "苦手な問題を克服" : memory.kind === "stage" ? `${STAGE_NAMES[memory.stage]}に成長` : `${PET_PATH_LABELS[memory.path]}の特技`}
           </li>)}</ol></section> : null}
-          <form key={`${profile.petId}:${profile.name}`} className={styles.nameForm} onSubmit={event => { event.preventDefault(); const data = new FormData(event.currentTarget); care({ type: "name", name: String(data.get("petName") ?? "") }); }}>
-            <label>名前<input name="petName" defaultValue={profile.name} required maxLength={24} disabled={busy} /></label><button disabled={busy} type="submit">名前を保存</button>
+          <form key={`${profile.petId}:${profile.name}`} className={styles.nameForm} onSubmit={event => { event.preventDefault(); const data = new FormData(event.currentTarget);
+            const result = normalizePetName(String(data.get("petName") ?? ""));
+            if (!result.ok) { setMessage(result.error); return; }
+            care({ type: "name", name: result.name }); }}>
+            <label>名前<input name="petName" defaultValue={profile.name === PET_DEFAULT_NAME ? "" : profile.name} placeholder={PET_DEFAULT_NAME} maxLength={PET_NAME_MAX * 2} autoComplete="off" disabled={busy} /></label><button disabled={busy} type="submit">名前を保存</button>
           </form>
         </> : <p className={styles.empty}>1問解くと、この資格の子に会えます。</p>}
         <section><h4>バックアップ</h4><p className={styles.note}>育成はこの端末に保存されます（{doc.ownerScope === "guest" ? "ゲスト" : "ログイン中"}）。</p>

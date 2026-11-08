@@ -7,6 +7,7 @@ import { petArtFor, petPathArtFor, type PetPose } from "@/lib/pet/v1/art";
 import { PET_PATH_LABELS, petNextStageProgress } from "@/lib/pet/v1/growth";
 import { canonicalPetQualification } from "@/lib/pet/v1/qualification";
 import { usePetProfileView, type PetCommittedDetail, type PetProfileView } from "./usePetProfileView";
+import { PetNameTitle } from "./PetNameTitle";
 import styles from "./LearningPetCorner.module.css";
 const PetCareSheet = dynamic(() => import("./PetCareSheet"), { ssr: false });
 
@@ -101,7 +102,9 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
   const popText = pop ? `${pop.growth > 0 ? `+${pop.growth}` : ""}${pop.bond > 0 ? ` ♥+${pop.bond}` : ""}`.trim() : "";
   return <section ref={panel} className={styles.panel} aria-labelledby={title} data-pet-id={profile?.petId ?? ""} data-pet-pose={pose} data-moving={moving}>
     <header className={styles.header}>
-      <h3 id={title} className={styles.title}>{selectedQualification ? `${examLabel(selectedQualification)}の` : "あなたの"}{profile?.name ?? "チワワ"}</h3>
+      {selectedQualification ? <PetNameTitle id={title} qualificationLabel={examLabel(selectedQualification)} name={profile?.name}
+        document={view.status === "ready" && profile ? view.document ?? null : null} qualificationId={profile?.qualificationId} />
+        : <h3 id={title} className={styles.title}>あなたの{profile?.name ?? "チワワ"}</h3>}
       {profile ? <span className={styles.stage}>{PET_STAGE_LABELS[stage]}</span> : null}
       <button type="button" ref={closeButton} className={styles.button} aria-label="チワワのひと休みを閉じる" onClick={() => preferences(true, paused)}>閉じる</button>
     </header>
