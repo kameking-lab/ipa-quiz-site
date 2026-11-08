@@ -1,11 +1,10 @@
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import "server-only";
 import type { RelatedQuestion } from "./header-codec";
-import { getAllQuestions } from "@/lib/questions/load";
 import { questionPagePath } from "@/lib/seo/question-url";
-import type { ExamCode, Question } from "@/lib/questions/types";
+import type { ExamCode } from "@/lib/questions/types";
 import { retrieve } from "./retriever";
-import { getCopilotIndex } from "./index-store";
+import type { CopilotSource } from "./source";
 import { buildRetrievalQuery, isQueryRetrievable, type RerankContext } from "./reranker";
 
 /**
@@ -102,6 +101,8 @@ interface FindRelatedInput {
   excludeDocIds: ReadonlySet<string>;
   /** 返却件数。デフォルト 4。 */
   limit?: number;
+  /** 問題データと索引の入手口（rag-pipeline は getCopilotSource() の結果を渡す）。 */
+  source: Pick<CopilotSource, "getQuestion" | "index">;
 }
 
 /**
@@ -123,17 +124,15 @@ export function findRelatedQuestions(input: FindRelatedInput): RelatedQuestion[]
     currentTopicTags: input.currentTopicTags,
     currentExam: input.currentExam,
   };
-  const allQuestions = getAllQuestions();
-  const currentQuestionText = input.currentQuestionText ?? allQuestions.find(q => q.id === input.currentQuestionId)?.question;
+  const currentQuestionText = input.currentQuestionText ??
+    (input.currentQuestionId ? input.source.getQuestion(input.currentQuestionId)?.question : undefined);
   const focusTerms = currentQuestionText ? questionFocusTerms(currentQuestionText) : [];
   const query = buildRetrievalQuery([input.userMessage, ...focusTerms].join(" "), ctx);
-  const index = getCopilotIndex();
+  const index = input.source.index();
 
   // citation top-N 用より少し広めに取り、フィルタ後に limit へ落とす。
   const candidates = retrieve(index, query, Math.max(limit * 4, 12));
   if (candidates.length === 0) return [];
-
-  const questionMap = questionMapFor(allQuestions);
 
   // When a question is being viewed, gate to its subfield: prefer candidates
   // that share the category or a topic tag, so a surface-token BM25 hit from a
@@ -149,7 +148,7 @@ export function findRelatedQuestions(input: FindRelatedInput): RelatedQuestion[]
     if (input.excludeDocIds.has(c.doc.id)) continue;
     const qid = c.doc.id.replace(/^q:/, "");
     if (input.currentQuestionId && qid === input.currentQuestionId) continue;
-    const q = questionMap.get(qid);
+    const q = input.source.getQuestion(qid);
     if (!q) continue;
     if (input.currentExam && q.exam !== input.currentExam) continue;
     // 解説が極端に短い問題は学習教材として弱いため、関連サジェストには含めない。
@@ -203,11 +202,3 @@ export function findRelatedQuestions(input: FindRelatedInput): RelatedQuestion[]
 export { encodeRelatedHeader, decodeRelatedHeader } from "./header-codec";
 export type { RelatedQuestion } from "./header-codec";
 
-// 全問題（約 3.9 万件）の id → 問題の表を毎リクエスト作り直さない。
-let QUESTION_MAP_CACHE: { source: readonly Question[]; map: Map<string, Question> } | null = null;
-function questionMapFor(all: readonly Question[]): Map<string, Question> {
-  if (QUESTION_MAP_CACHE?.source !== all) {
-    QUESTION_MAP_CACHE = { source: all, map: new Map(all.map((q) => [q.id, q])) };
-  }
-  return QUESTION_MAP_CACHE.map;
-}

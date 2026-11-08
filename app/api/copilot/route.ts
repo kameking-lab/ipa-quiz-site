@@ -1,5 +1,4 @@
 import { strictContentGateEnabled } from "@/lib/billing/content-policy";
-import { contentGrant } from "@/lib/billing/content-grant";
 import { NextResponse } from "next/server";
 import { requestsNewQuestion, ORIGINAL_QUESTION_ONLY_MESSAGE } from "@/lib/copilot/original-question-request";
 import { z } from "zod";
@@ -8,11 +7,11 @@ import type { LLMProvider } from "@/lib/ai/provider";
 import type { QuickActionId, LearnerProfile, ResponseLength } from "@/lib/ai/prompts";
 import { checkAiNormalUse } from "@/lib/ai/normal-use-server";
 import type { Question } from "@/lib/questions/types";
-import { getQuestionById } from "@/lib/questions/load";
 import { isCompleteSelectionCorrect, requiredSelectionCount } from "@/lib/questions/answers";
 import { ragEnabled } from "@/lib/copilot/rag";
 import { runCopilotRAGPipeline } from "@/lib/copilot/rag-pipeline";
-import { warmCopilotIndexSoon } from "@/lib/copilot/index-store";
+import { getCopilotSource, warmCopilotIndexSoon, type CopilotSource } from "@/lib/copilot/source";
+import { captureException } from "@/lib/monitoring/sentry";
 import { assembleCopilotPrompt } from "@/lib/copilot/prompt-assembly";
 import { createCopilotResponseStream } from "@/lib/copilot/streaming";
 import { createCopilotGeminiProvider } from "@/lib/copilot/gemini-flash38";
@@ -69,14 +68,29 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
   }
 
   // 問題文・選択肢・正答・標準解説はクライアント入力を信頼しない。
-  const question: Question | undefined = getQuestionById(payload.question.id);
+  // 本番はビルド時に書き出した問題ファイルから引く（全問題データを読み込まない）。
+  let source: CopilotSource;
+  let question: Question | undefined;
+  try {
+    source = await getCopilotSource();
+    question = source.getQuestion(payload.question.id);
+  } catch (err) {
+    await captureException(err, { route: "/api/copilot", extra: { phase: "source" } });
+    return NextResponse.json(
+      { error: "copilot_data_unavailable", message: "AIサービスが一時的に利用できません。しばらく待ってから再試行してください。" },
+      { status: 503, headers: { "X-Error-Type": "server_error" } },
+    );
+  }
   if (!question) {
     return NextResponse.json(
       { error: "unknown_question", message: "問題が見つかりません。ページを更新してください。" },
       { status: 400 },
     );
   }
-  if(strictContentGateEnabled()){ if(req.headers.get("X-Kakomon-AI-Consent")!=="20261103")return NextResponse.json({error:"ai_consent_required"},{status:428}); const grant=await contentGrant(req,question.id);if(!grant.ok)return grant;}
+  if(strictContentGateEnabled()){ if(req.headers.get("X-Kakomon-AI-Consent")!=="20261103")return NextResponse.json({error:"ai_consent_required"},{status:428});
+    // 動的 import: content-grant は全問題データを読み込むため、ゲートが無効（既定）のときは読み込まない。
+    const { contentGrant } = await import("@/lib/billing/content-grant");
+    const grant=await contentGrant(req,question.id);if(!grant.ok)return grant;}
   const selectedKeys = payload.selectedChoice?.split("・") ?? [];
   const selectedChoice = selectedKeys.length > 0 &&
     selectedKeys.every((key) => question.choices?.[key as keyof typeof question.choices] !== undefined)
@@ -126,6 +140,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     quickAction,
     // The assembler below includes this same question's complete context before RAG.
     questionContextIncluded: true,
+    source,
   });
   // 最初の文字までの内訳（利用枠・レート制限の確認 / 検索）。秒単位の遅れを切り分けるため。
   const serverTiming = `pre;dur=${ragStartedAt - startedAt}, rag;dur=${Date.now() - ragStartedAt}`;

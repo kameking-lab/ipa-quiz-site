@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { buildIndex, getCachedIndex, resetIndexCache, retrieve, scoreBM25 } from "@/lib/copilot/retriever";
-import { deserializeIndex, serializeIndex } from "@/lib/copilot/index-artifact";
+import { corpusFingerprint, deserializeIndex, serializeIndex } from "@/lib/copilot/index-artifact";
 import type { CorpusDoc } from "@/lib/copilot/types";
 
 function doc(id: string, text: string, kind: CorpusDoc["kind"] = "question"): CorpusDoc {
@@ -38,6 +38,14 @@ describe("prebuilt copilot index artifact", () => {
     const changed = DOCS.map((d) => (d.id === "d2" ? { ...d, text: `${d.text} 追記` } : d));
     expect(deserializeIndex(bytes, changed)).toBeNull();
     expect(deserializeIndex(bytes, DOCS.slice(1))).toBeNull();
+  });
+
+  it("accepts a known fingerprint without re-reading document text (prebuilt mode)", () => {
+    const built = buildIndex(DOCS);
+    const bytes = serializeIndex(built);
+    const fingerprint = corpusFingerprint(DOCS);
+    expect(deserializeIndex(bytes, DOCS, { fingerprint, verifyTokenization: false })).not.toBeNull();
+    expect(deserializeIndex(bytes, DOCS, { fingerprint: "other", verifyTokenization: false })).toBeNull();
   });
 
   it("handles an empty corpus", () => {

@@ -7,7 +7,8 @@ import { buildCitationFooter, buildRAGContextBlock } from "@/lib/copilot/citatio
 import type { RAGResult } from "@/lib/copilot/types";
 import { buildCitationMetas, encodeCitationsHeader } from "@/lib/copilot/citation-meta";
 import { encodeRelatedHeader, findRelatedQuestions, matchesQuestionTopic } from "@/lib/copilot/related";
-import { buildQuestionDoc } from "@/lib/copilot/corpus";
+import { buildQuestionDoc } from "@/lib/copilot/corpus-docs";
+import { getCopilotSource, type CopilotSource } from "@/lib/copilot/source";
 
 export interface RAGPipelineInput {
   question: Question;
@@ -15,6 +16,8 @@ export interface RAGPipelineInput {
   quickAction?: QuickActionId;
   /** Only opt in when the same prompt includes the complete buildQuestionContext(question). */
   questionContextIncluded?: boolean;
+  /** 問題データと索引の入手口（省略時は getCopilotSource()）。 */
+  source?: CopilotSource;
 }
 
 export interface RAGPipelineOutput {
@@ -57,11 +60,14 @@ export async function runCopilotRAGPipeline(
   if (!lastUserMsg) return EMPTY;
 
   let ragResult: RAGResult = EMPTY.ragResult;
+  let source: CopilotSource;
   try {
+    source = input.source ?? (await getCopilotSource());
     ragResult = await runRAG({
       userMessage: lastUserMsg,
       question,
       quickAction,
+      source,
     });
   } catch (err) {
     await captureException(err, {
@@ -119,7 +125,7 @@ export async function runCopilotRAGPipeline(
   const ragContextBlock = buildRAGContextBlock(promptPassages);
   const citationFooter = buildCitationFooter(ragResult.passages);
 
-  const citationMetas = buildCitationMetas(ragResult.passages);
+  const citationMetas = buildCitationMetas(ragResult.passages, source.getQuestion);
   const citationsHeader = encodeCitationsHeader(citationMetas);
 
   let relatedHeader = "";
@@ -134,6 +140,7 @@ export async function runCopilotRAGPipeline(
       currentQuestionText: question.question,
       excludeDocIds: excluded,
       limit: 4,
+      source,
     });
     relatedHeader = encodeRelatedHeader(related);
   } catch (relErr) {

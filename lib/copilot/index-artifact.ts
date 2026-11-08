@@ -23,7 +23,7 @@ const MAGIC = "CPIX";
 const FORMAT_VERSION = 1;
 
 /** リポジトリ直下からの相対パス。next.config.ts の outputFileTracingIncludes と揃える。 */
-export const COPILOT_INDEX_RELATIVE_PATH = "generated/copilot-index.bin";
+export const COPILOT_INDEX_RELATIVE_PATH = "generated/copilot/index.bin";
 
 interface ArtifactHeader {
   fingerprint: string;
@@ -146,6 +146,13 @@ function isArtifactHeader(value: unknown): value is ArtifactHeader {
       .every((key) => Number.isInteger(v[key]) && (v[key] as number) >= 0);
 }
 
+export interface DeserializeOptions {
+  /** 期待する指紋。省略時は docs の本文から計算する（全文を読む）。 */
+  fingerprint?: string;
+  /** 抜き取りで docs の本文をトークン化し、索引の文書長と照合する（既定 true）。 */
+  verifyTokenization?: boolean;
+}
+
 /**
  * gzip 済みバイト列から索引を復元する。`docs` は今のコーパス（getCorpus() の結果）。
  * 指紋・件数・トークン化の抜き取り検査のどれかが合わなければ null。
@@ -153,8 +160,9 @@ function isArtifactHeader(value: unknown): value is ArtifactHeader {
 export function deserializeIndex(
   gz: Uint8Array,
   docs: CorpusDoc[],
-  fingerprint: string = corpusFingerprint(docs),
+  options: DeserializeOptions = {},
 ): InvertedIndex | null {
+  const fingerprint = options.fingerprint ?? corpusFingerprint(docs);
   const raw = gunzipSync(gz);
   const view = new DataView(raw.buffer, raw.byteOffset, raw.byteLength);
   if (raw.length < 12 || new TextDecoder().decode(raw.subarray(0, 4)) !== MAGIC) return null;
@@ -214,7 +222,7 @@ export function deserializeIndex(
   if (cursor !== raw.length) return null;
 
   // トークナイザが変わったのに古い索引が残っている場合を、抜き取りで検出する。
-  const samples = Math.min(docs.length, 16);
+  const samples = options.verifyTokenization === false ? 0 : Math.min(docs.length, 16);
   for (let s = 0; s < samples; s++) {
     const i = Math.floor((s * docs.length) / samples);
     if (tokenize(docs[i].text).length !== docLen[i]) return null;

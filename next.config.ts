@@ -101,8 +101,9 @@ const nextConfig: NextConfig = {
   outputFileTracingIncludes: {
     "/e-learning/exams": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json", "./data/exam-library/pe-first/*.json"],
     "/api/home/resume": ["./data/exam-library/pe-first/*.json"],
-    // Prebuilt copilot BM25 index (pnpm copilot:index:write, run by pnpm build).
-    "/api/copilot": ["./generated/copilot-index.bin"],
+    // Prebuilt copilot index, search docs and sharded questions (pnpm copilot:index:write,
+    // run by pnpm build). /api/copilot reads only these in production, not data/questions.
+    "/api/copilot": ["./generated/copilot/**/*"],
     "/api/copilot/exam-library": ["./data/exam-library/pe-first/*.json"],
     "/e-learning/search": ["./data/exam-library/pe-first/*.json"],
     "/e-learning/exams/*": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json", "./data/exam-library/pe-first/*.json"],
