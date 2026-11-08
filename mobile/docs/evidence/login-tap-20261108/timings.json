@@ -1,0 +1,12 @@
+{
+ "how": "Playwright WebKit, iPhone 15 Pro 393x852, harness page rendering the web NativeTools (会員・設定) at https://www.kakomon-ai.jp; Capacitor bridge stubbed (Browser.open 30ms, Preferences 8ms per call), /api/mobile/entitlement and /api/mobile/catalog answer after the given delay. The user opens 会員・設定 and taps 「ログイン」 as soon as it is visible; time = tap (capture phase) -> native Browser.open call.",
+ "before": [
+  { "apiDelayMs": 1500, "firstTapOpenedSheet": false, "secondTapToBrowserOpenMs": 26, "firstTapToBrowserOpenMs": 6385, "labelAfterTap": "ログイン" },
+  { "apiDelayMs": 300, "firstTapOpenedSheet": false, "secondTapToBrowserOpenMs": 40, "firstTapToBrowserOpenMs": 6409, "labelAfterTap": "ログイン" }
+ ],
+ "after": [
+  { "apiDelayMs": 1500, "firstTapOpenedSheet": true, "tapToBrowserOpenMs": 10, "labelAfterTap": "ログイン画面を開いています…" },
+  { "apiDelayMs": 300, "firstTapOpenedSheet": true, "tapToBrowserOpenMs": 10, "labelAfterTap": "ログイン画面を開いています…" }
+ ],
+ "note": "firstTapToBrowserOpenMs before = the first tap was dropped; the sheet opened only on the user's second tap (the script taps again after waiting 6 s)."
+}
