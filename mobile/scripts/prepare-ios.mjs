@@ -1,6 +1,7 @@
 import { access, copyFile, cp } from "node:fs/promises";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { installLaunchScreen } from "./install-launch-screen.mjs";
 
 // Windows can generate and inspect native files with Ruby + xcodeproj. Only
 // macOS can install CocoaPods, compile, sign or upload the resulting app.
@@ -32,6 +33,7 @@ await copyFile(new URL("../ios-assets/QualificationBridgeViewController.swift", 
 await copyFile(new URL("../ios-assets/TrackingTransparencyPlugin.swift", import.meta.url), new URL("../ios/App/App/TrackingTransparencyPlugin.swift", import.meta.url));
 await cp(new URL("../ios-assets/AppIcon.appiconset/", import.meta.url),
   new URL("../ios/App/App/Assets.xcassets/AppIcon.appiconset/", import.meta.url), { recursive: true, force: true });
+await installLaunchScreen(fileURLToPath(new URL("../ios/App/App/", import.meta.url)));
 run("ruby", ["scripts/configure-ios.rb"]);
 run("ruby", ["scripts/verify-ios.rb"]);
 if (process.platform !== "darwin") {

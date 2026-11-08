@@ -1,0 +1,648 @@
+{
+ "how": "Playwright WebKit 1.60 (Windows), iPhone 15 Pro 393x852 @3x, --native-safe-top 59px / --native-safe-bottom 34px as QualificationBridgeViewController publishes, window.webkit bridge present (Capacitor native platform, web plugin fallbacks), bundled mobile/dist served locally, online hand-off to production https://www.kakomon-ai.jp. Screenshots taken back to back; whiteRatio = share of pure-white pixels per frame (a white flash would be ~1.0). The first frame of each run (~100ms) is black in headless WebKit before any paint; on iOS the WebView is painted LaunchBackground by QualificationBridgeViewController. *-01-launchscreen.png are composed from LaunchScreen.storyboard geometry (no Xcode on Windows). Overlay: Dynamic Island, home indicator and 59/34px safe-area bands (pink), not part of the page. The Preferences notice in web frames comes from the stubbed bridge, not the app.",
+ "light": {
+  "navigatedAt": 1318,
+  "frames": [
+   {
+    "t": 105,
+    "url": "capacitor://localhost/index.html",
+    "whiteRatio": 0,
+    "mean": [
+     0,
+     0,
+     0
+    ]
+   },
+   {
+    "t": 264,
+    "url": "capacitor://localhost/index.html",
+    "whiteRatio": 0,
+    "mean": [
+     245,
+     241,
+     231
+    ]
+   },
+   {
+    "t": 430,
+    "url": "capacitor://localhost/index.html",
+    "whiteRatio": 0,
+    "mean": [
+     245,
+     241,
+     231
+    ]
+   },
+   {
+    "t": 597,
+    "url": "capacitor://localhost/index.html",
+    "whiteRatio": 0,
+    "mean": [
+     245,
+     241,
+     231
+    ]
+   },
+   {
+    "t": 772,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0,
+    "mean": [
+     245,
+     241,
+     231
+    ]
+   },
+   {
+    "t": 1324,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.124,
+    "mean": [
+     207,
+     198,
+     180
+    ]
+   },
+   {
+    "t": 1692,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.186,
+    "mean": [
+     204,
+     197,
+     182
+    ]
+   },
+   {
+    "t": 2060,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     206,
+     200,
+     186
+    ]
+   },
+   {
+    "t": 2420,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     206,
+     200,
+     186
+    ]
+   },
+   {
+    "t": 2781,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     206,
+     200,
+     186
+    ]
+   },
+   {
+    "t": 3143,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     206,
+     200,
+     186
+    ]
+   },
+   {
+    "t": 3512,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     206,
+     200,
+     186
+    ]
+   },
+   {
+    "t": 3870,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     206,
+     200,
+     186
+    ]
+   },
+   {
+    "t": 4212,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     206,
+     200,
+     186
+    ]
+   },
+   {
+    "t": 4543,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     206,
+     200,
+     186
+    ]
+   },
+   {
+    "t": 4875,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     206,
+     200,
+     186
+    ]
+   },
+   {
+    "t": 5206,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     206,
+     200,
+     186
+    ]
+   },
+   {
+    "t": 5543,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     206,
+     200,
+     186
+    ]
+   },
+   {
+    "t": 5875,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     206,
+     200,
+     186
+    ]
+   },
+   {
+    "t": 6246,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     206,
+     200,
+     186
+    ]
+   },
+   {
+    "t": 6632,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     206,
+     200,
+     186
+    ]
+   },
+   {
+    "t": 7217,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     206,
+     200,
+     186
+    ]
+   },
+   {
+    "t": 7739,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     206,
+     200,
+     186
+    ]
+   }
+  ]
+ },
+ "dark": {
+  "navigatedAt": 1736,
+  "frames": [
+   {
+    "t": 102,
+    "url": "capacitor://localhost/index.html",
+    "whiteRatio": 0,
+    "mean": [
+     0,
+     0,
+     0
+    ]
+   },
+   {
+    "t": 270,
+    "url": "capacitor://localhost/index.html",
+    "whiteRatio": 0,
+    "mean": [
+     33,
+     41,
+     35
+    ]
+   },
+   {
+    "t": 427,
+    "url": "capacitor://localhost/index.html",
+    "whiteRatio": 0,
+    "mean": [
+     33,
+     41,
+     35
+    ]
+   },
+   {
+    "t": 583,
+    "url": "capacitor://localhost/index.html",
+    "whiteRatio": 0,
+    "mean": [
+     33,
+     42,
+     36
+    ]
+   },
+   {
+    "t": 743,
+    "url": "capacitor://localhost/index.html",
+    "whiteRatio": 0,
+    "mean": [
+     33,
+     42,
+     36
+    ]
+   },
+   {
+    "t": 897,
+    "url": "capacitor://localhost/index.html",
+    "whiteRatio": 0,
+    "mean": [
+     33,
+     42,
+     36
+    ]
+   },
+   {
+    "t": 1065,
+    "url": "capacitor://localhost/index.html",
+    "whiteRatio": 0,
+    "mean": [
+     33,
+     42,
+     36
+    ]
+   },
+   {
+    "t": 1224,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0,
+    "mean": [
+     33,
+     42,
+     36
+    ]
+   },
+   {
+    "t": 1682,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0,
+    "mean": [
+     76,
+     72,
+     54
+    ]
+   },
+   {
+    "t": 2026,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0,
+    "mean": [
+     75,
+     71,
+     53
+    ]
+   },
+   {
+    "t": 2362,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0,
+    "mean": [
+     70,
+     66,
+     51
+    ]
+   },
+   {
+    "t": 2718,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0,
+    "mean": [
+     70,
+     66,
+     51
+    ]
+   },
+   {
+    "t": 3074,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0,
+    "mean": [
+     70,
+     66,
+     51
+    ]
+   },
+   {
+    "t": 3392,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0,
+    "mean": [
+     70,
+     66,
+     51
+    ]
+   },
+   {
+    "t": 3736,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0,
+    "mean": [
+     70,
+     66,
+     51
+    ]
+   },
+   {
+    "t": 4077,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0,
+    "mean": [
+     70,
+     66,
+     51
+    ]
+   },
+   {
+    "t": 4415,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0,
+    "mean": [
+     70,
+     66,
+     51
+    ]
+   },
+   {
+    "t": 4750,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0,
+    "mean": [
+     70,
+     66,
+     51
+    ]
+   },
+   {
+    "t": 5106,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0,
+    "mean": [
+     70,
+     66,
+     51
+    ]
+   },
+   {
+    "t": 5443,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0,
+    "mean": [
+     70,
+     66,
+     51
+    ]
+   },
+   {
+    "t": 5792,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0,
+    "mean": [
+     70,
+     66,
+     51
+    ]
+   },
+   {
+    "t": 6140,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0,
+    "mean": [
+     70,
+     66,
+     51
+    ]
+   },
+   {
+    "t": 6478,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0,
+    "mean": [
+     70,
+     66,
+     51
+    ]
+   },
+   {
+    "t": 6814,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0,
+    "mean": [
+     70,
+     66,
+     51
+    ]
+   },
+   {
+    "t": 7151,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0,
+    "mean": [
+     70,
+     66,
+     51
+    ]
+   },
+   {
+    "t": 7487,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0,
+    "mean": [
+     70,
+     66,
+     51
+    ]
+   },
+   {
+    "t": 7821,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0,
+    "mean": [
+     70,
+     66,
+     51
+    ]
+   }
+  ]
+ },
+ "before": {
+  "navigatedAt": 1217,
+  "frames": [
+   {
+    "t": 111,
+    "url": "capacitor://localhost/index.html",
+    "whiteRatio": 0,
+    "mean": [
+     0,
+     0,
+     0
+    ]
+   },
+   {
+    "t": 287,
+    "url": "capacitor://localhost/index.html",
+    "whiteRatio": 0.996,
+    "mean": [
+     255,
+     255,
+     255
+    ]
+   },
+   {
+    "t": 438,
+    "url": "capacitor://localhost/index.html",
+    "whiteRatio": 0.996,
+    "mean": [
+     255,
+     255,
+     255
+    ]
+   },
+   {
+    "t": 3794,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     205,
+     199,
+     184
+    ]
+   },
+   {
+    "t": 4208,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     205,
+     199,
+     184
+    ]
+   },
+   {
+    "t": 4625,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     205,
+     199,
+     184
+    ]
+   },
+   {
+    "t": 5046,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     205,
+     199,
+     184
+    ]
+   },
+   {
+    "t": 5439,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     205,
+     199,
+     184
+    ]
+   },
+   {
+    "t": 5839,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     205,
+     199,
+     184
+    ]
+   },
+   {
+    "t": 6240,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     205,
+     199,
+     184
+    ]
+   },
+   {
+    "t": 6628,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     205,
+     199,
+     184
+    ]
+   },
+   {
+    "t": 7024,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     205,
+     199,
+     184
+    ]
+   },
+   {
+    "t": 7408,
+    "url": "https://www.kakomon-ai.jp/",
+    "whiteRatio": 0.211,
+    "mean": [
+     205,
+     199,
+     184
+    ]
+   }
+  ]
+ }
+}
