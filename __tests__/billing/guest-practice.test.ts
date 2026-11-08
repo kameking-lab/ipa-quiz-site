@@ -21,7 +21,7 @@ describe("guest identity", () => {
   it("rejects action-incompatible status and invalid snapshot shapes", async () => {
     vi.stubEnv("AUTH_SECRET", "test-secret"); vi.stubEnv("KV_REST_API_URL", "https://test.invalid"); vi.stubEnv("KV_REST_API_TOKEN", "test-token");
     const reply = (result: unknown) => vi.stubGlobal("fetch", vi.fn().mockImplementation(async () => Response.json({ result: JSON.stringify(result) })));
-    for (const status of ["none", "other"]) { reply({ status }); await expect(guestGrant("r", "g", "q", 10, Date.now())).rejects.toMatchObject({ code: "billing_unavailable" }); }
+    for (const status of ["none", "other"]) { reply({ status }); await expect(guestGrant("r", "g", "q", 10, Date.now(), new Request("http://localhost"))).rejects.toMatchObject({ code: "billing_unavailable" }); }
     for (const status of ["ok", "limit", "rate", "other"]) { reply({ status, used: 0, retry: 1 }); await expect(guestClaim("r", "g", "u", 10, Date.now())).rejects.toMatchObject({ code: "billing_unavailable" }); }
     for (const status of ["none", "ok", "limit", "rate"]) {
       vi.stubGlobal("fetch", vi.fn().mockImplementationOnce(async () => Response.json({ result: JSON.stringify({ status: "none" }) }))
@@ -38,7 +38,7 @@ describe("guest identity", () => {
       .mockResolvedValueOnce(Response.json({ result: JSON.stringify({ status: "claimed", ids: ["q-today"] }) }));
     vi.stubGlobal("fetch", fetcher);
     const now = Date.parse("2026-10-30T15:00:01Z");
-    await expect(guestGrant("realm", "id", "q", 10, now)).rejects.toMatchObject({ code: "billing_unavailable" });
+    await expect(guestGrant("realm", "id", "q", 10, now, new Request("http://localhost"))).rejects.toMatchObject({ code: "billing_unavailable" });
     expect(await guestClaim("realm", "id", "alice", 10, now)).toEqual([{ day: "2026-10-30", ids: ["q-old"] }, { day: "2026-10-31", ids: ["q-today"] }]);
     const body = JSON.parse(fetcher.mock.calls[1][1].body as string) as string[];
     expect(body[0]).toBe("EVAL"); expect(body[2]).toBe("3"); expect(body.join(" ")).not.toContain("alice");
