@@ -43,7 +43,7 @@ it("renders the same private pet appearance and saved scene without a public-per
   const before = serializePetProfileDocument(doc), view = render(<PetOwnStudySeat view={{ status: "ready", document: doc }} />);
   expect(view.container.querySelector("section")).toHaveAttribute("data-own-pet-id", pet.petId);
   expect(view.container.querySelector("img")).toHaveAttribute("src", petArtFor("ap", "partner", "slack"));
-  expect(screen.getByText("応用情報技術者のこむぎ")).toBeVisible(); expect(screen.getByText(/いつもの机/)).toBeVisible(); expect(screen.getByRole("button", { name: "育成を見る" })).toBeEnabled();
+  expect(screen.getByRole("button", { name: "こむぎ・応用情報技術者（名前を変える）" })).toBeVisible(); expect(screen.getByText(/いつもの机/)).toBeVisible(); expect(screen.getByRole("button", { name: "育成を見る" })).toBeEnabled();
   expect(view.container.querySelector("section")).toHaveAttribute("data-room-scene", "first-meeting");
   expect(serializePetProfileDocument(doc)).toBe(before);
   view.rerender(<PetOwnStudySeat view={{ status: "unavailable", document: null }} />);
