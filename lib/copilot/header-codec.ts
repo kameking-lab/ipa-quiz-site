@@ -37,27 +37,36 @@ export interface CitationMeta {
 }
 
 
+// Buffer を使わない（ブラウザ側のデコードでも読み込まれるため、Buffer を参照すると
+// 約 30KB の Buffer ポリフィルが問題ページの JS に同梱されてしまう）。
+// btoa/atob と TextEncoder/TextDecoder は Node 18+ とブラウザの両方にある。
+function utf8ToBase64(text: string): string {
+  const bytes = new TextEncoder().encode(text);
+  let binary = "";
+  for (let i = 0; i < bytes.length; i += 0x8000) {
+    binary += String.fromCharCode(...bytes.subarray(i, i + 0x8000));
+  }
+  return btoa(binary);
+}
+
+function base64ToUtf8(base64: string): string {
+  const binary = atob(base64);
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) bytes[i] = binary.charCodeAt(i);
+  return new TextDecoder("utf-8", { fatal: true }).decode(bytes);
+}
+
 export function encodeCitationsHeader(metas: CitationMeta[]): string {
   if (metas.length === 0) return "";
   const json = JSON.stringify(metas);
-  // Node.js runtime 想定: Buffer 使用。Edge runtime でも Buffer は polyfill されている。
-  return Buffer.from(json, "utf8").toString("base64");
+  return utf8ToBase64(json);
 }
 
 /** クライアント側で X-RAG-Citations ヘッダを CitationMeta[] に戻す。 */
 export function decodeCitationsHeader(header: string | null): CitationMeta[] {
   if (!header) return [];
   try {
-    const json =
-      typeof atob === "function"
-        ? decodeURIComponent(
-            Array.prototype.map
-              .call(atob(header), (c: string) =>
-                `%${`00${c.charCodeAt(0).toString(16)}`.slice(-2)}`,
-              )
-              .join(""),
-          )
-        : Buffer.from(header, "base64").toString("utf8");
+    const json = base64ToUtf8(header);
     const parsed = JSON.parse(json) as CitationMeta[];
     if (!Array.isArray(parsed)) return [];
     return parsed;
@@ -88,23 +97,14 @@ export interface RelatedQuestion {
 export function encodeRelatedHeader(items: RelatedQuestion[]): string {
   if (items.length === 0) return "";
   const json = JSON.stringify(items);
-  return Buffer.from(json, "utf8").toString("base64");
+  return utf8ToBase64(json);
 }
 
 /** クライアント側で X-Related-Questions ヘッダを RelatedQuestion[] に戻す。 */
 export function decodeRelatedHeader(header: string | null): RelatedQuestion[] {
   if (!header) return [];
   try {
-    const json =
-      typeof atob === "function"
-        ? decodeURIComponent(
-            Array.prototype.map
-              .call(atob(header), (c: string) =>
-                `%${`00${c.charCodeAt(0).toString(16)}`.slice(-2)}`,
-              )
-              .join(""),
-          )
-        : Buffer.from(header, "base64").toString("utf8");
+    const json = base64ToUtf8(header);
     const parsed = JSON.parse(json) as RelatedQuestion[];
     if (!Array.isArray(parsed)) return [];
     return parsed;

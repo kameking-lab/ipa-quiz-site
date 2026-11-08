@@ -12,6 +12,7 @@ import { getQuestionById } from "@/lib/questions/load";
 import { isCompleteSelectionCorrect, requiredSelectionCount } from "@/lib/questions/answers";
 import { ragEnabled } from "@/lib/copilot/rag";
 import { runCopilotRAGPipeline } from "@/lib/copilot/rag-pipeline";
+import { warmCopilotIndexSoon } from "@/lib/copilot/index-store";
 import { assembleCopilotPrompt } from "@/lib/copilot/prompt-assembly";
 import { createCopilotResponseStream } from "@/lib/copilot/streaming";
 import { createCopilotGeminiProvider } from "@/lib/copilot/gemini-flash38";
@@ -56,6 +57,7 @@ export async function POST(req: Request) {
 }
 
 async function handlePost(req: Request, track: (context: AiUsageContext) => void) {
+  const startedAt = Date.now();
   let payload: z.infer<typeof BodySchema>;
   try {
     payload = BodySchema.parse(await req.json());
@@ -92,6 +94,9 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     );
   }
 
+  // 冷えたサーバでは索引の読み込みを、下の利用枠・レート制限の確認（KV 往復）と重ねる。
+  if (ragEnabled()) warmCopilotIndexSoon();
+
   const usage = await prepareAiUsage("copilot");
   track(usage);
   if (usage.response) return usage.response;
@@ -114,6 +119,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
 
   const quickAction = payload.quickAction as QuickActionId | undefined;
 
+  const ragStartedAt = Date.now();
   const rag = await runCopilotRAGPipeline({
     question,
     messages: payload.messages,
@@ -121,6 +127,8 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
     // The assembler below includes this same question's complete context before RAG.
     questionContextIncluded: true,
   });
+  // 最初の文字までの内訳（利用枠・レート制限の確認 / 検索）。秒単位の遅れを切り分けるため。
+  const serverTiming = `pre;dur=${ragStartedAt - startedAt}, rag;dur=${Date.now() - ragStartedAt}`;
 
   const { system, userMessages } = assembleCopilotPrompt({
     question,
@@ -205,7 +213,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
         // だとレスポンス完了で関数が凍結され、KV 書き込みが失われうる）。
         async (outputChars, usage) => {
           console.info("[copilot] completed", {
-            questionId: payload.question.id, model,
+            questionId: payload.question.id, model, serverTiming,
             finishReason: usage?.finishReason,
             promptTokens: usage?.promptTokens,
             outputTokens: usage?.outputTokens,
@@ -237,6 +245,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
       "X-Provider": provider.name,
       "X-Model": provider.name === "mock" ? "mock" : model,
       "X-Timeout-Ms": String(STREAM_TIMEOUT_MS),
+      "Server-Timing": serverTiming,
       "X-RAG-Enabled": ragEnabled() ? "1" : "0",
       "X-RAG-Passages": String(rag.ragResult.passages.length),
       "X-RAG-Top-Score": rag.ragResult.topScore.toFixed(3),

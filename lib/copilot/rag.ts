@@ -1,7 +1,7 @@
 import type { LLMProvider } from "@/lib/ai/provider";
 import type { Question } from "@/lib/questions/types";
-import { getCorpus } from "./corpus";
-import { getCachedIndex, maxQueryIdf, retrieve } from "./retriever";
+import { maxQueryIdf, retrieve } from "./retriever";
+import { getCopilotIndex } from "./index-store";
 import {
   buildRetrievalQuery,
   deterministicRerank,
@@ -63,7 +63,7 @@ export async function runRAG(input: RAGRunInput): Promise<RAGResult> {
   };
 
   const fullQuery = buildRetrievalQuery(input.userMessage, ctx);
-  const index = getCachedIndex(getCorpus);
+  const index = getCopilotIndex();
 
   // 雑談・モチベ系のチットチャットは「識別力のあるトークン」を持たない傾向がある。
   // 最大 IDF がしきい値（デフォルト 3.0）未満なら早期 return して
