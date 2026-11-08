@@ -75,6 +75,8 @@ it("uses a one-use short-lived PKCE code without putting the session token into 
   const page=await complete(new Request(address));expect(page.status).toBe(200);
   // no-referrer makes Safari send Origin: null on the consent POST, which fails the origin check.
   expect(page.headers.get("referrer-policy")).toBe("same-origin");
+  // CSP form-action also governs the post-submit redirect; without kakomonai: the return to the app is blocked.
+  expect(page.headers.get("content-security-policy")).toMatch(/form-action 'self' kakomonai:/);
   const html=await page.text();
   const proof=/name="proof" value="([a-f0-9]+)"/.exec(html)![1];
   const nonce=/name="nonce" value="([\w.-]+)"/.exec(html)![1];

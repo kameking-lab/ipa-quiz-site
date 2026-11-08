@@ -7,6 +7,7 @@ import { BillingError } from "@/lib/billing/domain";
 import { billingFailure } from "@/lib/billing/runtime";
 import { reviewSessionClaims, reviewSessionValid } from "@/lib/auth/app-review";
 const digest = (s: string) => createHash("sha256").update(s).digest("base64url");
+const escapeHtml = (s: string) => s.replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" })[c]!);
 function consentProof(user:string,nonce:string,challenge:string,state:string){
   const secret=process.env.AUTH_SECRET;if(!secret)throw new BillingError("auth_unavailable",503);
   return createHmac("sha256",secret).update(JSON.stringify(["native-consent-v1",user,nonce,challenge,state])).digest("hex");
@@ -22,10 +23,13 @@ export async function complete(request: Request) {
       // broke on real iPhones: reopening the page via back/forward replaced the cookie, so the
       // displayed form no longer matched it (invalid_consent on TestFlight build 15).
       const nonce=`${Date.now()+300000}.${randomBytes(24).toString("base64url")}`,proof=consentProof(session.user.id,nonce,challenge,state);
-      const html=`<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>アプリへのログイン確認</title><body><main><h1>過去問AIアプリにログイン</h1><p>ログイン中のアカウントでiPhoneアプリを利用します。アプリへ戻って学習を続けますか？</p><form method="post" action="${url.pathname}?challenge=${challenge}&state=${state}"><input type="hidden" name="nonce" value="${nonce}"><input type="hidden" name="proof" value="${proof}"><button type="submit">確認してアプリに戻る</button></form><p><a href="/auth/signout">別のアカウントでログインする</a></p></main></body></html>`;
+      const who=escapeHtml(session.user.name||session.user.email||"");
+      const html=`<!doctype html><html lang="ja"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><title>過去問AIアプリに戻る</title><style>body{margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#fdf6ec;font-family:-apple-system,"Hiragino Sans",sans-serif;color:#2b2118}main{width:min(100% - 40px,380px);text-align:center;padding:32px 0}img{width:112px;height:112px;border-radius:28px;box-shadow:0 8px 24px rgba(120,80,30,.18)}h1{font-size:22px;margin:20px 0 6px}p{margin:0 0 24px;color:#6b5a48;font-size:15px}button{width:100%;min-height:56px;border:0;border-radius:16px;background:#e8547a;color:#fff;font-size:18px;font-weight:700}a{display:inline-block;margin-top:18px;color:#8a7764;font-size:14px}</style><body><main><img src="/brand/chihuahua-icon-192.png" alt=""><h1>ログインできました</h1><p>${who?`${who} さんとして`:""}アプリで続きを学習しましょう。</p><form method="post" action="${url.pathname}?challenge=${challenge}&state=${state}"><input type="hidden" name="nonce" value="${nonce}"><input type="hidden" name="proof" value="${proof}"><button type="submit">アプリに戻る</button></form><a href="/auth/signout">別のアカウントでログイン</a></main></body></html>`;
       // same-origin, not no-referrer: with no-referrer Safari posts the consent form with Origin: null,
       // which the origin check below rejects as invalid_origin (seen on TestFlight build 14).
-      return new Response(html,{headers:{"Content-Type":"text/html; charset=utf-8","Cache-Control":"no-store","Referrer-Policy":"same-origin","Content-Security-Policy":"default-src 'none'; form-action 'self'; frame-ancestors 'none'; base-uri 'none'"}});
+      // form-action must allow kakomonai: — CSP form-action also governs the redirect after submit, and
+      // 'self' alone silently blocked the 302 back to the app (owner "can't return" on build 15).
+      return new Response(html,{headers:{"Content-Type":"text/html; charset=utf-8","Cache-Control":"no-store","Referrer-Policy":"same-origin","Content-Security-Policy":"default-src 'none'; style-src 'unsafe-inline'; img-src 'self'; form-action 'self' kakomonai:; frame-ancestors 'none'; base-uri 'none'"}});
     }
     // CSRF: same-origin POST only, the session cookie is SameSite=Lax, and the proof binds user, challenge, state and expiry.
     if(request.headers.get("origin")!==url.origin)throw new BillingError("invalid_origin",403);
