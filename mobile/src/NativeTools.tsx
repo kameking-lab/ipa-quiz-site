@@ -33,8 +33,16 @@ const INTENT_KEY = "kakomon:purchase-intent:v1";
 type Intent = "buy" | "restore";
 const defaultSignIn = (returnTo: string) => beginLogin(SITE_ORIGIN, returnTo);
 /** Message for a failed action: our own sentences as-is, SDK failures with their code. */
+/** The membership check itself failed. Shown once, as its own line, and cleared by the next success. */
+export class StatusError extends Error {}
+export async function statusFailureText(response: Response | null): Promise<string> {
+  if (!response) return "会員状態を確認できません（通信エラー）。電波の良い場所で「再確認」を押してください。";
+  const body = await response.json().catch(() => null) as { error?: string; detail?: string } | null;
+  const reason = [body?.error || `HTTP ${response.status}`, body?.detail].filter(Boolean).join(" / ");
+  return `会員状態を確認できません（${reason}）。「再確認」を押してください。続く場合はこの表示をお知らせください。`;
+}
 export function actionFailureText(error: unknown, step: string): string {
-  if (error instanceof StoreError) return error.message;
+  if (error instanceof StoreError || error instanceof StatusError) return error.message;
   if (error instanceof Error && !("code" in error)) return error.message;
   return describeStoreError(error, step);
 }
@@ -49,6 +57,9 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   // later action clears, so the reason stays on screen until it is fixed.
   const [offerError,setOfferError]=useState(""), [offerLoading,setOfferLoading]=useState(false);
   const [resume,setResume]=useState<Intent|null>(null);
+  // The last failed membership check (server code included). Separate from
+  // `notice` so a later success removes it instead of leaving a stale banner.
+  const [statusError,setStatusError]=useState("");
   // Bumped whenever something other than the 「会員・設定」 button opens the panel
   // (a /billing link, a blocked web checkout, returning from sign-in). The panel
   // sits above the site header, so without scrolling to it the tap looked dead.
@@ -62,8 +73,15 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   const inSite = typeof location !== "undefined" && location.origin === SITE_ORIGIN;
   const refresh = useCallback((fresh = false) => {
     const task=refreshing.current.then(async()=>{
-    const response = await fetch("/api/mobile/entitlement", { method: fresh ? "POST" : "GET", cache: "no-store" });
-    if (!response.ok) { setAccess(null); setOffer(null); await downloads.invalidate(); throw new Error("会員状態を確認できません。購入・保存の前にオンラインで再確認してください。"); }
+    const response = await fetch("/api/mobile/entitlement", { method: fresh ? "POST" : "GET", cache: "no-store" }).catch(()=>null);
+    if (!response?.ok) {
+      // Keep what we last knew (signed in / member): replacing it with a login
+      // button made a signed-in buyer look signed out right after paying.
+      setOffer(null); await downloads.invalidate();
+      const message=await statusFailureText(response);
+      setStatusError(message); throw new StatusError(message);
+    }
+    setStatusError("");
     const result = await response.json() as { entitlement: MobileEntitlement; configuration: MobileConfiguration };
     result.configuration.sdkKey = await nativePublicSdkKey(result.configuration.sdkKey);
     if (studyReady.current && result.entitlement.userId !== user.current) {
@@ -94,7 +112,8 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     try { await fn(); } catch(error) {
       const {cancelled,pending,rejected}=purchaseError(error);
       if(rejected&&user.current){await Preferences.remove({key:`kakomon:pending-purchase:${user.current}`}).catch(()=>{});setPurchasePending(false);}
-      setNotice(cancelled?"購入をキャンセルしました。":pending?"購入の承認待ちです。再購入せず、承認後に権利を再確認してください。":actionFailureText(error,"処理を完了できませんでした"));
+      // A failed membership check is already on screen as statusError.
+      setNotice(error instanceof StatusError?"":cancelled?"購入をキャンセルしました。":pending?"購入の承認待ちです。再購入せず、承認後に権利を再確認してください。":actionFailureText(error,"処理を完了できませんでした"));
     }
     finally { running.current=false;setBusy(false); }
   }, []);
@@ -102,17 +121,18 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     if (!Capacitor.isNativePlatform() || !inSite) return;
     const disposers: Array<()=>void> = []; let disposed = false;
     const keep = (dispose: ()=>void)=> { if (disposed) dispose(); else disposers.push(dispose); };
+    const report=(e:unknown)=>{ if(!(e instanceof StatusError))setNotice(noticeText(e)); };
     keep(installNativePetSupport());
     keep(observePetStudyWrites(()=>({ready:studyReady.current,owner:user.current}),e=>setNotice(noticeText(e))));
-    void refresh().catch(e=>setNotice(noticeText(e)));
+    void refresh().catch(report);
     void observeLogin(SITE_ORIGIN, e=>{setSigningIn("");setNotice(noticeText(e));}, ()=>{setOpen(true);setRevealTick(n=>n+1);setSigningIn("finishing");}).then(keep);
     void App.addListener("appStateChange", s=>{
-      if(s.isActive)void refresh(true).catch(e=>setNotice(noticeText(e)));
+      if(s.isActive)void refresh(true).catch(report);
       else if(studyReady.current)void persistStudyAfterPets(user.current).catch(e=>setNotice(noticeText(e)));
     }).then(h=>keep(()=>{ void h.remove(); }));
     void observeReminderTap(()=>window.location.assign(`${SITE_ORIGIN}/review`)).then(keep);
-    void Purchases.addCustomerInfoUpdateListener(()=>{ void refresh(true).catch(e=>setNotice(noticeText(e))); }).then(id=>keep(()=>{ void Purchases.removeCustomerInfoUpdateListener({ listenerToRemove: id }); })).catch(()=>{});
-    const interval = window.setInterval(()=>{ void refresh().catch(e=>setNotice(noticeText(e))); },60000);
+    void Purchases.addCustomerInfoUpdateListener(()=>{ void refresh(true).catch(report); }).then(id=>keep(()=>{ void Purchases.removeCustomerInfoUpdateListener({ listenerToRemove: id }); })).catch(()=>{});
+    const interval = window.setInterval(()=>{ void refresh().catch(report); },60000);
     const deleted=()=>{studyReady.current=false;user.current=null;abort.current?.abort();setAccess(null);setOffer(null);clearInterval(interval);};
     window.addEventListener("mobile:account-deleted",deleted);
     const mirror=window.setInterval(()=>{if(studyReady.current)void persistStudy(user.current).catch(e=>setNotice(noticeText(e)));},5000);
@@ -163,7 +183,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     }
     const response = await fetch("/api/mobile/catalog", { cache:"no-store" });
     if (response.ok && !cancelled) setCatalog((await response.json() as { exams: CatalogEntry[] }).exams);
-  })().catch(error=>{ if(!cancelled)setNotice(error instanceof Error?error.message:"会員状態を確認できません。"); }); return ()=>{cancelled=true;}; },[open,inSite,refresh,loadOffer]);
+  })().catch(error=>{ if(!cancelled && !(error instanceof StatusError))setNotice(error instanceof Error?error.message:"会員状態を確認できません。"); }); return ()=>{cancelled=true;}; },[open,inSite,refresh,loadOffer]);
   useEffect(()=>{
     if (!revealTick) return;
     const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
@@ -186,8 +206,15 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     if(!selected)throw new StoreError("商品情報を取得できないため購入を開始できません。表示中の理由をご確認ください。","no_offer");
     await membership.buy(r.configuration,r.entitlement,selected,async()=>{
       await Preferences.set({key:`kakomon:pending-purchase:${r.entitlement.userId}`,value:"true"});setPurchasePending(true);
-    });const confirmed=await refresh(true);
-    setNotice(confirmed.entitlement.entitled?"購入を確認しました。有料会員の機能を利用できます（ウェブでも同じ会員です）。":"購入内容の確認待ちです。再購入せず、購入復元または会員状態の再確認をご利用ください。");
+    });
+    // StoreKit has charged at this point. RevenueCat may need a moment to show
+    // the receipt to our server, so re-check a few times before giving up.
+    let confirmed:Awaited<ReturnType<typeof refresh>>|null=null;
+    for(let attempt=0;attempt<4&&!confirmed?.entitlement.entitled;attempt++){
+      if(attempt)await new Promise(resolve=>setTimeout(resolve,1500));
+      confirmed=await refresh(true).catch(()=>null);
+    }
+    setNotice(confirmed?.entitlement.entitled?"購入を確認しました。有料会員です（ウェブでも同じ会員です）。":"購入は完了しています。会員状態の反映を確認中です。再購入せず、少し待ってから「再確認」を押してください。");
   });
   const restore = ()=>void run(async()=>{
     const r=await refresh(true);
@@ -219,14 +246,16 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       <button className={pill} aria-label="このページを共有" onClick={()=>void run(async()=>{ await Share.share({ title:"過去問AI", url:location.href }); })}>共有</button>
     </div>}
     {!membershipOnly && <Suspense fallback={null}><NativePageQualificationActions collapsed /></Suspense>}
+    {statusError && !open && <div role="alert" className="mx-auto mt-2 flex max-w-2xl items-start gap-2"><p className="min-w-0 flex-1 break-words text-sm">{statusError}</p><button className={pill} disabled={busy} onClick={()=>void run(async()=>{ await refresh(true); })}>再確認</button></div>}
     {notice && !open && <p role="status" className="mx-auto mt-2 max-w-2xl break-words">{notice}</p>}
     {open && <section id="native-settings" className="mx-auto max-w-2xl space-y-4 py-4 text-base">
       <div className="flex items-center justify-between gap-3"><h1 ref={heading} tabIndex={-1} className="text-xl font-bold outline-none">会員・設定</h1>{!membershipOnly && <button className={secondary} onClick={()=>setOpen(false)}>閉じる</button>}</div>
+      {statusError && <div role="alert" className="space-y-2 rounded-xl border border-destructive/40 p-3 text-sm"><p className="break-words">{statusError}</p><button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await refresh(true); })}>会員状態を再確認</button></div>}
       {notice && <p role="status" className="break-words rounded-xl bg-muted p-3 text-sm">{notice}</p>}
       <section aria-labelledby="native-plan" className={card}>
         <h2 id="native-plan" className="font-bold">有料会員（月額プラン）</h2>
         <p className="text-sm">ログイン不要で1日10問（全資格共通・日本時間0時リセット）。意見を1回送ると＋10問。有料会員は回数無制限、資格ごとの事前ダウンロードも使えます。</p>
-        {!access ? <>{loginButton}<button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await refresh(true); })}>会員状態を再確認</button></> : <>
+        {!access ? <>{loginButton}{!statusError && <button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await refresh(true); })}>会員状態を再確認</button>}</> : <>
           <p className="font-semibold">{access.entitled ? access.source === "web" ? "ウェブの有料会員です。追加購入は不要です。" : "App Storeの有料会員です。" : "無料会員"}</p>
           {access.source === "web" && <div className="space-y-2"><p className="text-sm">既存のウェブ契約の管理・解約を開きます。</p><ManageSubscriptionButton label="ウェブ契約の管理・解約"/></div>}
           {!access.userId && loginButton}
@@ -238,6 +267,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
           <p className="text-sm"><Link className="underline underline-offset-4" href="/terms">利用規約</Link> · <Link className="underline underline-offset-4" href="/privacy">プライバシーポリシー</Link> · <a className="underline underline-offset-4" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple標準使用許諾契約</a></p>
           <details className="rounded-xl border border-border px-3"><summary className="flex min-h-11 cursor-pointer items-center font-semibold">資格ごとの事前ダウンロード（有料会員限定）</summary>
             <div className="space-y-2 pb-3"><p className="text-sm">必要な図表も事前に取得・検証し、すべて保存できた資格のみ保存済みになります。保存した問題は会員権利の有効期限内で利用できます。オフラインの権利確認は最大24時間です。</p>
+            {access.entitled && !access.lease && access.leaseError && <p role="status" className="text-sm">事前ダウンロードは現在準備中です（{access.leaseError}）。オンラインの有料機能はそのまま使えます。</p>}
             {catalog.map(e=><div key={e.code} className="flex flex-wrap items-center justify-between gap-2 border-b border-border py-2"><span className="min-w-0 break-words">{e.name} · {e.count}問 · {(e.bytes/1048576).toFixed(1)}MB {saved[e.code] ? "保存済み" : ""}</span>
               <span className="flex gap-2"><button className={secondary} disabled={busy} onClick={()=>void run(async()=>{
                 if (!access.entitled) { setNotice("事前ダウンロードは有料会員の特典です。無料でもオンラインで全資格から1日10問使えます。"); return; }

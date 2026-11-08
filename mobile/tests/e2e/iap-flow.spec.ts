@@ -7,7 +7,7 @@ import type {MobileEntitlement} from "../../shared/contracts";
 // and, for the iPhone check, with playwright.webkit.config.ts (iPhone 15 Pro,
 // 59px status bar / Dynamic Island inset).
 const ORIGIN="https://www.kakomon-ai.jp";
-interface Server { user: string|null; entitledAfterPurchase: boolean; requests: string[] }
+interface Server { user: string|null; entitledAfterPurchase: boolean; requests: string[]; failAfterPurchase?: boolean }
 const free=(user:string|null):MobileEntitlement=>({userId:user,appUserId:user?"kakomon_opaque":null,entitled:false,source:"free",expiresAt:null,checkedAt:new Date().toISOString(),lease:null});
 async function serve(context:BrowserContext,page:Page,server:Server){
   await context.route("**/*",async route=>{
@@ -16,6 +16,8 @@ async function serve(context:BrowserContext,page:Page,server:Server){
     if(url.pathname==="/api/mobile/entitlement"){
       // The server only grants after it has seen the store purchase (RevenueCat API).
       const purchased=server.entitledAfterPurchase&&await page.evaluate(()=>window.mobileTest.storeCalls().purchases>0).catch(()=>false);
+      // Production before the fix: every entitled response crashed while signing the offline lease.
+      if(purchased&&server.failAfterPurchase){await route.fulfill({status:503,json:{error:"billing_unavailable",detail:"Error:ERR_OSSL_UNSUPPORTED"}});return;}
       const entitlement=purchased&&server.user?{...free(server.user),entitled:true,source:"app-store" as const,expiresAt:new Date(Date.now()+30*86400000).toISOString()}:free(server.user);
       await route.fulfill({json:{entitlement,configuration:{sdkKey:"appl_mock_public_key",productId:"mock.monthly",offeringId:"main",entitlement:"kakomon_pro",expectedPriceYen:980,leasePublicKey:""}}});return;
     }
@@ -49,7 +51,7 @@ test("signed out: price is visible, 登録 opens sign-in, and the purchase conti
   // Sign-in completes (system browser → app) and the page reloads at the return URL.
   server.user="web-and-app-user";
   await open(page,"success","#app-settings");
-  await expect(page.getByRole("status")).toContainText("購入を確認しました。有料会員の機能を利用できます（ウェブでも同じ会員です）。");
+  await expect(page.getByRole("status")).toContainText("購入を確認しました。有料会員です（ウェブでも同じ会員です）。");
   await expect(page.getByText("App Storeの有料会員です。",{exact:true})).toBeVisible();
   calls=await page.evaluate(()=>window.mobileTest.storeCalls());
   expect(calls.purchases).toBe(1);expect(calls.identities.at(-1)).toBe("kakomon_opaque");
@@ -104,4 +106,20 @@ test("the price is reachable below the 59px status bar without horizontal scroll
   const box=(await buy.boundingBox())!;
   expect(box.height).toBeGreaterThanOrEqual(44);
   expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true);
+});
+test("after paying, a failing membership check keeps the signed-in state, names the server code, and clears once the server answers",async({page,context},info)=>{
+  const server:Server={user:"buyer",entitledAfterPurchase:true,failAfterPurchase:true,requests:[]};await serve(context,page,server);
+  await open(page,"success");
+  await page.getByRole("button",{name:"¥980 / 月で登録",exact:true}).click();
+  const alert=page.getByRole("alert");
+  await expect(alert).toContainText("会員状態を確認できません（billing_unavailable / Error:ERR_OSSL_UNSUPPORTED）",{timeout:15000});
+  // The purchase is not reported as failed and the buyer is not shown a login button.
+  await expect(page.getByRole("status").first()).toContainText("購入は完了しています");
+  await expect(page.getByRole("button",{name:"ログイン",exact:true})).toHaveCount(0);
+  await page.screenshot({path:info.outputPath("5-check-failed.png")});
+  server.failAfterPurchase=false;
+  await page.getByRole("button",{name:"会員状態を再確認"}).first().click();
+  await expect(page.getByText("App Storeの有料会員です。",{exact:true})).toBeVisible();
+  await expect(alert).toHaveCount(0);
+  await page.screenshot({path:info.outputPath("6-member.png")});
 });

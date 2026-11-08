@@ -12,7 +12,19 @@ export async function status(request: Request) {
     const c = mobileConfig();
     return json({ entitlement, configuration: { sdkKey: c.enabled ? c.sdkKey : "", productId: c.productId, offeringId: c.offeringId,
       entitlement: c.entitlement, expectedPriceYen: MONTHLY_PUBLIC_OFFER.priceYen, leasePublicKey: c.leasePublicKey } });
-  } catch (error) { return billingFailure(error); }
+  } catch (error) { return statusFailure(error); }
+}
+/**
+ * The app shows this code on screen, so an unexpected failure names its kind
+ * (never its message, which could contain configuration) and is logged.
+ */
+export function statusFailure(error: unknown) {
+  if (error instanceof BillingError) return billingFailure(error);
+  const name = error instanceof Error ? error.name : typeof error;
+  const code = error && typeof error === "object" && "code" in error && typeof error.code === "string" ? error.code : "";
+  const detail = (code ? `${name}:${code}` : name).replace(/[^\w:.-]/g, "").slice(0, 60);
+  console.error("[mobile/entitlement] failed", detail, error instanceof Error ? error.message.slice(0, 300) : "");
+  return json({ error: "billing_unavailable", detail }, 503);
 }
 export async function catalog() {
   try {

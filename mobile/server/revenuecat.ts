@@ -19,7 +19,12 @@ const subscriberSchema = z.object({ subscriber: z.object({
 }) });
 export function verifiedExpiration(body: unknown, config: { entitlement: string; productId: string; environment: string }, now: number): string | null {
   if (!["PRODUCTION","SANDBOX","APP_STORE"].includes(config.environment)) return null;
-  const { subscriber } = subscriberSchema.parse(body);
+  const parsed = subscriberSchema.safeParse(body);
+  if (!parsed.success) {
+    console.error("[revenuecat] unexpected subscriber shape", parsed.error.issues.slice(0, 5).map(issue => issue.path.join(".")).join(","));
+    throw new BillingError("mobile_verification_unexpected_response", 503);
+  }
+  const { subscriber } = parsed.data;
   const e = subscriber.entitlements[config.entitlement], sub = subscriber.subscriptions[config.productId];
   if (!e || !sub || e.product_identifier !== config.productId || sub.store !== "app_store" || sub.refunded_at
     || config.environment !== "APP_STORE" && sub.is_sandbox !== (config.environment === "SANDBOX") || !e.expires_date || !sub.expires_date) return null;
@@ -51,7 +56,10 @@ export async function refreshRevenueCat(appUserId: string, transport: typeof fet
     const response = await transport(`https://api.revenuecat.com/v1/subscribers/${encodeURIComponent(appUserId)}`, {
       headers: { Authorization: `Bearer ${c.apiKey}`, Accept: "application/json" }, cache: "no-store", signal: AbortSignal.timeout(8000), redirect: "error",
     });
-    if (!response.ok && response.status !== 404) throw new BillingError("mobile_verification_unavailable", 503);
+    if (!response.ok && response.status !== 404) {
+      console.error("[revenuecat] subscriber lookup failed", response.status);
+      throw new BillingError(`mobile_verification_unavailable_${response.status}`, 503);
+    }
     const now = Date.now(), body = response.status === 404 ? null : await response.json();
     const productionExpiresAt = body ? verifiedExpiration(body,{...c,environment:"PRODUCTION"},now) : null;
     const sandboxExpiresAt = body ? verifiedExpiration(body,{...c,environment:"SANDBOX"},now) : null;

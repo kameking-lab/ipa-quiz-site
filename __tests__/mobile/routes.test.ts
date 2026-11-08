@@ -5,7 +5,7 @@ vi.mock("@/mobile/server/entitlement",()=>({mobileEntitlement:m.access}));
 vi.mock("@/mobile/server/config",()=>({mobileConfig:()=>({}),requireMobileReady:()=>({webhookAuthorization:"Bearer "+"x".repeat(32),appId:"app-test",environment:"SANDBOX"})}));
 vi.mock("@/mobile/server/catalog",()=>({catalogCodes:()=>["ip"],examCatalog:async()=>m.entry,examContent:async()=>Array.from({length:21},(_,i)=>({id:`q${i}`}))}));
 vi.mock("@/mobile/server/revenuecat",async importOriginal=>({...await importOriginal<typeof import("@/mobile/server/revenuecat")>(),refreshRevenueCat:m.refresh}));
-import { download, catalog } from "@/mobile/server/routes";
+import { download, catalog, status } from "@/mobile/server/routes";
 import { POST as webhook } from "@/app/api/mobile/revenuecat/route";
 import { GET as retired } from "@/app/api/mobile/packs/route";
 beforeEach(()=>{vi.resetAllMocks();m.user="u";m.access.mockResolvedValue({userId:"u",entitled:true,lease:"signed"});});
@@ -28,3 +28,11 @@ it("reconciles both sides of transfers and returns non-200 for retryable provide
   m.refresh.mockRejectedValue(Error("provider timeout"));expect((await webhook(event({id:"e2",app_id:"app-test",environment:"SANDBOX",app_user_id:"new"}))).status).toBe(503);
 });
 it("retires the 36-question public pack instead of returning a free offline pack",async()=>{expect((await retired()).status).toBe(410);});
+it("names the kind of an unexpected entitlement failure so the app can show it, without the message",async()=>{
+  const error=vi.spyOn(console,"error").mockImplementation(()=>{});
+  m.access.mockRejectedValue(Object.assign(new Error("secret-ish decoder detail"),{code:"ERR_OSSL_UNSUPPORTED"}));
+  const res=await status(new Request("https://site.test/api/mobile/entitlement"));
+  expect(res.status).toBe(503);
+  const body=await res.json();expect(body).toEqual({error:"billing_unavailable",detail:"Error:ERR_OSSL_UNSUPPORTED"});
+  expect(JSON.stringify(body)).not.toContain("secret");error.mockRestore();
+});
