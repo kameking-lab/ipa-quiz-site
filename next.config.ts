@@ -163,6 +163,14 @@ const nextConfig: NextConfig = {
       { source: "/trust", destination: "/why-kakomon-ai", permanent: true },
     ];
   },
+  // The Vercel build skips Next's built-in type check (12-68s per build).
+  // Type safety is still enforced before anything reaches main: the required
+  // GitHub Actions check (.github/workflows/e2e.yml) runs `pnpm typecheck` AND
+  // a full `pnpm build` (VERCEL unset, so the type check runs there) on every
+  // PR and every push to main. Local `pnpm build` keeps the check too.
+  typescript: {
+    ignoreBuildErrors: process.env.VERCEL === "1",
+  },
   compress: true,
   poweredByHeader: false,
   reactStrictMode: true,

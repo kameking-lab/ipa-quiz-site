@@ -1,25 +1,46 @@
 import { describe, expect, it } from "vitest";
 
-import { generateStaticParams } from "@/app/topics/[slug]/page";
+import TopicHubPage, { generateMetadata, generateStaticParams } from "@/app/topics/[slug]/page";
 import { getAllTopics, getQuestionsByTopic } from "@/lib/seo/topics";
 
 /**
  * /topics 索引ページは「その他のトピック」節で getAllTopics() の全トピックを
- * /topics/{slug} へリンクする。一方 /topics/[slug] は dynamicParams=false の
- * ため、generateStaticParams() が返したスラッグ以外はハード 404 になる。
+ * /topics/{slug} へリンクする。/topics/[slug] はビルド時に事前生成せず、初回
+ * アクセス時に生成してデプロイまでキャッシュする（dynamicParams=true・
+ * generateStaticParams は空）。そのため「到達できる URL = 索引のリンク先」は
+ * ページ側の判定（正規スラッグとの完全一致）で保証する。
  *
- * 過去にここが getHubTopics(80, 4)（count>=4 のハブのみ）に限定されており、
- * ロングテール（count<4）のトピックが索引からリンクされているのに 404 を返す
- * 内部リンク切れが発生していた。索引のリンク先 = 静的生成セット を保証する。
+ * 過去に静的生成セットが getHubTopics(80, 4) に限定され、ロングテール（count<4）
+ * のトピックが索引からリンクされているのに 404 を返す内部リンク切れが発生した。
  */
-describe("/topics/[slug] static params cover every linked topic", () => {
-  it("generateStaticParams covers all topics the /topics index links", async () => {
-    const params = await generateStaticParams();
-    const generated = new Set(params.map((p) => p.slug));
-    const missing = getAllTopics()
-      .map((t) => t.slug)
-      .filter((slug) => !generated.has(slug));
-    expect(missing).toEqual([]);
+describe("/topics/[slug] resolves every linked topic and nothing else", () => {
+  it("prerenders nothing at build time", async () => {
+    expect(await generateStaticParams()).toEqual([]);
+  });
+
+  it("every topic the /topics index links resolves (metadata and page)", async () => {
+    const unresolved: string[] = [];
+    for (const t of getAllTopics()) {
+      const params = Promise.resolve({ slug: t.slug });
+      const metadata = await generateMetadata({ params });
+      if (metadata.alternates?.canonical !== `/topics/${encodeURIComponent(t.slug)}`) unresolved.push(t.slug);
+    }
+    expect(unresolved).toEqual([]);
+    // 実ページも描画できること（代表として先頭とロングテール末尾）
+    const all = getAllTopics();
+    for (const t of [all[0]!, all[all.length - 1]!]) {
+      await expect(TopicHubPage({ params: Promise.resolve({ slug: t.slug }) })).resolves.toBeTruthy();
+    }
+  });
+
+  it("returns 404 for unknown, alias and malformed slugs", async () => {
+    const spaced = getAllTopics().find((t) => t.slug.includes("-") && !t.tag.includes("-"));
+    const bad = ["存在しないトピック名-xyz", "%zz", ...(spaced ? [spaced.tag] : [])];
+    for (const slug of bad) {
+      await expect(TopicHubPage({ params: Promise.resolve({ slug }) }), slug).rejects.toThrow();
+      const metadata = await generateMetadata({ params: Promise.resolve({ slug }) });
+      expect(metadata.robots, slug).toEqual({ index: false });
+    }
   });
 });
 
