@@ -600,6 +600,16 @@ button,
   .study-pet .reward-copy { flex-basis: auto; }
 }
 
+/* iOS Safari and the app's WKWebView zoom into any focused field whose text is
+   under 16px, and stay zoomed after it blurs. On touch screens every text field
+   is at least 16px. Unlayered on purpose: it outranks text-sm / text-xs
+   utilities (Tailwind's @layer), so a new field cannot reintroduce the zoom. */
+@media (hover: none) and (pointer: coarse) {
+  input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"], [type="color"], [type="button"], [type="submit"], [type="reset"], [type="image"], [type="hidden"]),
+  select,
+  textarea { font-size: 16px; }
+}
+
 /* iOS app WebView (html.native-app, set by NativeAppHost and the bundled
    shell). The WebView runs edge-to-edge (viewport-fit=cover, contentInset
    "never"), so env() insets are the only thing keeping content out from under
@@ -628,6 +638,10 @@ html.native-app body::before {
   z-index: 60;
   pointer-events: none;
 }
+/* Reserved slot for the native bar (NativeTools: py-2 + one 44px row + border)
+   while its chunk loads, so content does not shift under the learner's finger. */
+.native-tools-placeholder { display: none; }
+html.native-app .native-tools-placeholder { display: block; height: calc(2.75rem + 1rem + 1px); border-bottom: 1px solid var(--border); }
 /* In the app the practice route is just the practice: no site-wide link grid. */
 html.native-app .native-app-hidden { display: none; }
 html.native-app .sticky.top-0 { top: var(--safe-top); }

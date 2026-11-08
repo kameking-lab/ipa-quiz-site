@@ -11,5 +11,9 @@ export function NativeAppHost() {
     document.documentElement.classList.add("native-app");
     void import("@/mobile/src/NativeTools").then(m=>setTools(()=>m.NativeTools)).catch(error=>console.error("[native] tools failed to load",error));
   }, []);
-  return Tools && !pathname.startsWith("/billing") ? <Tools /> : null;
+  if (pathname.startsWith("/billing")) return null;
+  // Until the tools chunk arrives, hold the height of their first row (only
+  // visible under html.native-app, see app/globals.css) so the page below
+  // does not jump when the bar appears.
+  return Tools ? <Tools /> : <div className="native-tools-placeholder" aria-hidden="true" />;
 }
