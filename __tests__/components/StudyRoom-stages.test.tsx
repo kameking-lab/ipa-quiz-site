@@ -23,7 +23,7 @@ it.each([
   expect(illustrations).toHaveLength(visible);
   for (const illustration of illustrations) {
     expect(illustration).not.toHaveAttribute("aria-hidden", "true");
-    expect(within(illustration as HTMLElement).getByRole("img")).toHaveAccessibleName(/^基本情報技術者の(?:チワワ（(?:勉強中|あるある：.+)）|空席（椅子と机、開いたままの本）)$/);
+    expect(within(illustration as HTMLElement).getByRole("img")).toHaveAccessibleName(/^基本情報技術者の(?:チワワ（(?:勉強中|あるある：.+|ひと休み：.+)）|空席（椅子と机、開いたままの本）)$/);
   }
   const seatList = screen.queryByRole("group", { name: "自習室の席を選ぶ" });
   const seats = seatList ? within(seatList).getAllByRole("button") : [];

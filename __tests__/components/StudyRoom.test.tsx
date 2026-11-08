@@ -79,8 +79,9 @@ it("loads only occupied seat images with accessible qualification/state and keep
   images().forEach((img, index) => {
     expect(img).toHaveAttribute("loading", "lazy");
     expect(img).toHaveAttribute("decoding", "async");
-    expect(img.src).toContain(index < 6 ? "/ip-" : "/pharmacy-");
-    expect(img.alt).toMatch(index < 6 ? /^ITパスポートのチワワ（(勉強中|あるある：)/ : /^薬剤師のチワワ（(勉強中|あるある：)/);
+    // A seat shows its own pair, or an idle moment of the same character (named as ひと休み).
+    expect(img.src).toMatch(index < 6 ? /\/(idle\/)?ip-/ : /\/(pharmacy-|idle\/yakuzaishi-)/);
+    expect(img.alt).toMatch(index < 6 ? /^ITパスポートのチワワ（(勉強中|あるある：|ひと休み：)/ : /^薬剤師のチワワ（(勉強中|あるある：|ひと休み：)/);
     expect(img.closest('[aria-hidden="true"]')).toBeNull();
   });
   fireEvent.click(screen.getByRole("group", { name: "自習室の席を選ぶ" }).querySelectorAll("button")[2]);
