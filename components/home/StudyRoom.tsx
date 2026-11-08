@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { presenceExamName } from "@/lib/study-presence";
 import type { MeasuredPresence } from "@/lib/study-presence-contract";
-import { initialSeatIdles, mascotVisitSeed, measuredRoom, nextSeatIdles, qualificationMascot, randomFor, roomCharacter, roomMascots, roomStage, type SeatIdle } from "@/lib/home/study-room";
+import { initialSeatIdles, mascotVisitSeed, measuredRoom, nextSeatIdles, qualificationMascot, quietRoomMascots, randomFor, roomCharacter, roomMascots, roomStage, type SeatIdle } from "@/lib/home/study-room";
 import { PetOwnStudySeat } from "@/components/pet/PetOwnStudySeat";
 import { usePetProfileView } from "@/components/pet/usePetProfileView";
 import { StudyReturnLink } from "./StudyReturnLink";
@@ -75,8 +75,11 @@ export function StudyRoom({ snapshot, suggestions }: {
     const name = presenceExamName(seat.exam)!;
     return { name, exam: seat.exam, href: suggestions.find(item => item.name === name)?.href, index: seat.index };
   }) : introductions.map((item, index) => ({ ...item, exam: item.exam ?? item.href.split("/")[1], index }));
+  // A quiet room (1-3 learners) shows everyone studying at their desk; breaks, idle moments and the
+  // playing dog only start from 4 learners, so a single learner never looks like an empty desk.
+  const slots = mascots && quietRoomMascots(mascots, seats.length);
   // Studying seats rotate through their character's idle moments (never the same one twice in a row).
-  const characterKey = seats.map(seat => mascots?.[seat.index]?.state === "study" ? roomCharacter(seat.exam) : "").join("|");
+  const characterKey = seats.map(seat => slots?.[seat.index]?.state === "study" && !slots.quiet ? roomCharacter(seat.exam) : "").join("|");
   const [idles, setIdles] = useState<SeatIdle[]>([]);
   useEffect(() => {
     if (visitSeed === null) return;
@@ -89,7 +92,7 @@ export function StudyRoom({ snapshot, suggestions }: {
     const timer = setInterval(() => setIdles(current => nextSeatIdles(current.length === characters.length ? current : characters.map(() => ({ idle: null, last: null })), characters, Math.random)), 7000);
     return () => clearInterval(timer);
   }, [characterKey, motionVisible, visitSeed]);
-  const illustratedSeats = seats.map((seat, i) => ({ ...seat, mascot: mascots && qualificationMascot(seat.exam, mascots[seat.index], idles[i]?.idle ?? null) }));
+  const illustratedSeats = seats.map((seat, i) => ({ ...seat, mascot: slots && qualificationMascot(seat.exam, slots[seat.index], slots.quiet ? null : idles[i]?.idle ?? null) }));
   const awaySeat = illustratedSeats.find(seat => seat.mascot?.state === "away");
   const away = awaySeat?.mascot;
   const selectionKey = (seat: Seat) => `${measured ? "measured" : "introduction"}:${seat.index}:${seat.name}`;

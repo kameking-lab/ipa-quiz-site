@@ -153,3 +153,12 @@ export function nextSeatIdles(poses: SeatIdle[], characters: (string | null)[], 
   next[index] = { idle: choices[Math.floor(random() * choices.length)], last: current.last };
   return next;
 }
+
+/** Fewer learners than this: everyone studies at their desk (no break, idle moment or playing dog). */
+export const QUIET_ROOM_BELOW = 4;
+export function quietRoomMascots(slots: SeatMascot[], learners: number): SeatMascot[] & { quiet: boolean } {
+  const quiet = learners < QUIET_ROOM_BELOW;
+  const result = (quiet ? slots.map(slot => slot.state === "study" ? slot : { ...slot, state: "study" as const, stateLabel: "勉強中", vacantSrc: undefined }) : slots.slice()) as SeatMascot[] & { quiet: boolean };
+  result.quiet = quiet;
+  return result;
+}
