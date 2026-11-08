@@ -8,6 +8,7 @@ import { ThemeProvider, THEME_BOOTSTRAP_SCRIPT } from "@/components/theme-provid
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { SiteHeader } from "@/components/SiteHeader";
 import { NativeAppHost } from "@/components/NativeAppHost";
+import { NATIVE_APP_BOOTSTRAP_SCRIPT } from "@/lib/native-app-bootstrap";
 import { NativeAdPrivacy } from "@/components/ads/NativeAdPrivacy";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 import { MobileInstallProvider } from "@/components/pwa/MobileInstallProvider";
@@ -127,6 +128,7 @@ export default function RootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_BOOTSTRAP_SCRIPT }} />
+        <script dangerouslySetInnerHTML={{ __html: NATIVE_APP_BOOTSTRAP_SCRIPT }} />
         <link rel="dns-prefetch" href="https://us.i.posthog.com" />
         <link rel="preconnect" href="https://us.i.posthog.com" />
       </head>

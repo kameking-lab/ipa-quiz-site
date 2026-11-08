@@ -10,10 +10,6 @@ const KeyboardShortcutsHelp = dynamic(
   () => import("@/components/KeyboardShortcutsHelp").then((m) => m.KeyboardShortcutsHelp),
   { ssr: false },
 );
-const AiQuotaIndicator = dynamic(
-  () => import("@/components/AiQuotaIndicator").then((m) => m.AiQuotaIndicator),
-  { ssr: false },
-);
 const StreakTracker = dynamic(
   () => import("@/lib/streak/StreakTracker").then((m) => m.StreakTracker),
   { ssr: false },
@@ -64,7 +60,6 @@ export function DeferredLayoutWidgets() {
   return (
     <>
       <KeyboardShortcutsHelp />
-      <AiQuotaIndicator />
       <StreakTracker />
       <BadgeTracker />
       <OfflineIndicator />

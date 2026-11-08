@@ -75,9 +75,16 @@ it("uses a one-use short-lived PKCE code without putting the session token into 
   const page=await complete(new Request(address));expect(page.status).toBe(200);
   // no-referrer makes Safari send Origin: null on the consent POST, which fails the origin check.
   expect(page.headers.get("referrer-policy")).toBe("same-origin");
-  const proof=/name="proof" value="([a-f0-9]+)"/.exec(await page.text())![1];
-  const consentCookie=page.headers.get("set-cookie")!.split(";")[0];
-  const result=await complete(new Request(address,{method:"POST",headers:{origin:"https://site.test",cookie:consentCookie},body:new URLSearchParams({proof}).toString()}));
+  // CSP form-action also governs the post-submit redirect; without kakomonai: the return to the app is blocked.
+  expect(page.headers.get("content-security-policy")).toMatch(/form-action 'self' kakomonai:/);
+  const html=await page.text();
+  const proof=/name="proof" value="([a-f0-9]+)"/.exec(html)![1];
+  const nonce=/name="nonce" value="([\w.-]+)"/.exec(html)![1];
+  // No cookie is involved: reopening the page (back/forward) must not invalidate the displayed form.
+  expect(page.headers.has("set-cookie")).toBe(false);
+  const tampered=await complete(new Request(address,{method:"POST",headers:{origin:"https://site.test"},body:new URLSearchParams({nonce:`${Date.now()+1000}.${"x".repeat(32)}`,proof}).toString()}));
+  expect(tampered.status).toBe(403);
+  const result=await complete(new Request(address,{method:"POST",headers:{origin:"https://site.test"},body:new URLSearchParams({nonce,proof}).toString()}));
   const url=new URL(result.headers.get("location")!);expect(url.protocol).toBe("kakomonai:");expect(url.searchParams.get("state")).toBe(state);expect(url.searchParams.has("token")).toBe(false);
   const code=url.searchParams.get("code")!;expect(m.rows.has(code)).toBe(false);expect(m.rows.has(hash(code))).toBe(true);
   const wrong=await exchange(new Request("https://site.test/api/mobile/auth/exchange",{method:"POST",headers:{"X-Kakomon-Native":"ios"},body:JSON.stringify({code,verifier:randomBytes(32).toString("base64url")})}));expect(wrong.status).toBe(401);
