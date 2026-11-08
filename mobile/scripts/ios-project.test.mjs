@@ -2,7 +2,7 @@
 // xcodeproj are required, but no Xcode, real profiles or signing keys are used.
 import assert from "node:assert/strict";
 import { spawnSync } from "node:child_process";
-import { cpSync, existsSync, mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
+import { cpSync, existsSync, mkdtempSync, mkdirSync, readFileSync, readdirSync, rmSync, writeFileSync } from "node:fs";
 import { createRequire } from "node:module";
 import { tmpdir } from "node:os";
 import { basename, dirname, join, resolve } from "node:path";
@@ -71,6 +71,19 @@ test("generated native sources match the checked plugin contracts and are compil
   for (const source of sources) assert.equal(compiled.filter(path => path === source).length, 1, source);
   const storyboard = readFileSync(join(mobile, "ios/App/App/Base.lproj/Main.storyboard"), "utf8");
   assert.match(storyboard, /customClass="QualificationBridgeViewController" customModule="App"/);
+});
+
+test("generated project shows the Chihuahua launch screen from ios-assets, not Capacitor's template", () => {
+  const app = join(mobile, "ios/App/App");
+  assert.equal(readFileSync(join(app, "Base.lproj/LaunchScreen.storyboard"), "utf8"),
+    readFileSync(join(mobile, "ios-assets/LaunchScreen.storyboard"), "utf8"), "LaunchScreen.storyboard: rerun ios:prepare");
+  assert.match(readFileSync(join(app, "Info.plist"), "utf8"), /<key>UILaunchStoryboardName<\/key>\s*<string>LaunchScreen<\/string>/);
+  assert.equal(existsSync(join(app, "Assets.xcassets/Splash.imageset")), false, "Capacitor template splash must not ship");
+  for (const set of ["LaunchChihuahua.imageset", "LaunchBackground.colorset"]) {
+    for (const file of readdirSync(join(mobile, "ios-assets", set))) {
+      assert.deepEqual(readFileSync(join(app, "Assets.xcassets", set, file)), readFileSync(join(mobile, "ios-assets", set, file)), `${set}/${file}`);
+    }
+  }
 });
 
 test("the scene window uses the bridge that registers the custom plugins", (t) => {

@@ -230,11 +230,6 @@ async function openWebHome() {
   await Promise.race([handOff, new Promise(resolve => setTimeout(resolve, 3000))]);
   location.replace(ORIGIN + "/");
 }
-function Splash() {
-  return <main className="native-main flex min-h-[60vh] flex-col items-center justify-center gap-3 text-center" aria-busy="true">
-    <p className="text-lg font-bold">過去問AI</p>
-  </main>;
-}
 async function start() {
   document.documentElement.classList.add("native-app");
   // Install native ad-host blocking before any UI/deep-link can leave the shell.
@@ -247,8 +242,10 @@ async function start() {
   }
   await step("local API",installLocalApi);
   await step("pet support",installNativePetSupport);
+  // index.html's boot splash (Chihuahua on the launch-screen colour) stays up
+  // until the web home replaces the page; the offline shell renders over it.
+  if (await shouldOpenWebHome()) { await openWebHome(); return; }
   const root = createRoot(document.getElementById("root")!);
-  if (await shouldOpenWebHome()) { root.render(<Splash/>); await openWebHome(); return; }
   root.render(<StartupBoundary><App offlineFallback={recentHandoffFailed()}/></StartupBoundary>);
 }
 void start().catch(error => {
