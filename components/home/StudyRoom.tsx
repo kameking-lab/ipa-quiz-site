@@ -4,7 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
 import { presenceExamName } from "@/lib/study-presence";
 import type { MeasuredPresence } from "@/lib/study-presence-contract";
-import { mascotVisitSeed, measuredRoom, qualificationMascot, roomMascots, roomStage } from "@/lib/home/study-room";
+import { initialSeatIdles, mascotVisitSeed, measuredRoom, nextSeatIdles, qualificationMascot, roomCharacter, roomMascots, roomStage, type SeatIdle } from "@/lib/home/study-room";
 import { PetOwnStudySeat } from "@/components/pet/PetOwnStudySeat";
 import { usePetProfileView } from "@/components/pet/usePetProfileView";
 import { StudyReturnLink } from "./StudyReturnLink";
@@ -60,7 +60,20 @@ export function StudyRoom({ snapshot, suggestions }: {
     const name = presenceExamName(seat.exam)!;
     return { name, exam: seat.exam, href: suggestions.find(item => item.name === name)?.href, index: seat.index };
   }) : introductions.map((item, index) => ({ ...item, exam: item.exam ?? item.href.split("/")[1], index }));
-  const illustratedSeats = seats.map(seat => ({ ...seat, mascot: mascots && qualificationMascot(seat.exam, mascots[seat.index]) }));
+  // Studying seats rotate through their character's idle moments (never the same one twice in a row).
+  const characterKey = seats.map(seat => mascots?.[seat.index]?.state === "study" ? roomCharacter(seat.exam) : "").join("|");
+  const [idles, setIdles] = useState<SeatIdle[]>([]);
+  useEffect(() => {
+    if (visitSeed === null) return;
+    setIdles(initialSeatIdles(characterKey.split("|").map(character => character || null), Math.random));
+  }, [characterKey, visitSeed]);
+  useEffect(() => {
+    if (!motionVisible || visitSeed === null || window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
+    const characters = characterKey.split("|").map(character => character || null);
+    const timer = setInterval(() => setIdles(current => nextSeatIdles(current.length === characters.length ? current : characters.map(() => ({ idle: null, last: null })), characters, Math.random)), 7000);
+    return () => clearInterval(timer);
+  }, [characterKey, motionVisible, visitSeed]);
+  const illustratedSeats = seats.map((seat, i) => ({ ...seat, mascot: mascots && qualificationMascot(seat.exam, mascots[seat.index], idles[i]?.idle ?? null) }));
   const awaySeat = illustratedSeats.find(seat => seat.mascot?.state === "away");
   const away = awaySeat?.mascot;
   const selectionKey = (seat: Seat) => `${measured ? "measured" : "introduction"}:${seat.index}:${seat.name}`;
