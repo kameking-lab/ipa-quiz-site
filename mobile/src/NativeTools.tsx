@@ -30,6 +30,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   const [config, setConfig] = useState<MobileConfiguration | null>(null), [offer, setOffer] = useState<PurchasesPackage | null>(null);
   const [catalog, setCatalog] = useState<CatalogEntry[]>([]), [saved, setSaved] = useState<DownloadIndex>({});
   const [notice, setNotice] = useState(""), [busy, setBusy] = useState(false), [time, setTime] = useState("20:00");
+  const [signingIn, setSigningIn] = useState<"" | "opening" | "finishing">("");
   const [purchasePending,setPurchasePending]=useState(false);
   const [downloading,setDownloading]=useState(false);
   const abort = useRef<AbortController | null>(null), user = useRef<string | null>(null);
@@ -82,7 +83,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     keep(installNativePetSupport());
     keep(observePetStudyWrites(()=>({ready:studyReady.current,owner:user.current}),e=>setNotice(String(e))));
     void refresh().catch(e=>setNotice(String(e)));
-    void observeLogin(SITE_ORIGIN, e=>setNotice(String(e))).then(keep);
+    void observeLogin(SITE_ORIGIN, e=>{setSigningIn("");setNotice(String(e));}, ()=>{setOpen(true);setSigningIn("finishing");}).then(keep);
     void App.addListener("appStateChange", s=>{
       if(s.isActive)void refresh(true).catch(e=>setNotice(String(e)));
       else if(studyReady.current)void persistStudyAfterPets(user.current).catch(e=>setNotice(String(e)));
@@ -112,13 +113,22 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     document.addEventListener("click",click,true);
     return ()=>{ window.removeEventListener("mobile:account-deleted",deleted);disposed=true; disposers.forEach(fn=>fn()); clearInterval(interval);clearInterval(mirror);imageObserver.disconnect();document.removeEventListener("load",cacheVisibleImages,true); window.fetch=original; document.removeEventListener("click",click,true); abort.current?.abort(); };
   },[inSite,refresh,run]);
-  useEffect(()=>{ if (open && inSite) void run(async()=>{
-    const r = await refresh(true); setOffer(null);
-    if (!r.entitlement.entitled && r.entitlement.userId && r.configuration.sdkKey) setOffer(await membership.offer(r.configuration, r.entitlement));
+  // Loading the panel's data must never hold the action lock: a tap on
+  // 「ログイン」 while it loads used to be silently dropped by run().
+  useEffect(()=>{ if (!open || !inSite) return; let cancelled=false; void (async()=>{
+    const r = await refresh(true); if(cancelled)return; setOffer(null);
+    if (!r.entitlement.entitled && r.entitlement.userId && r.configuration.sdkKey) { const found=await membership.offer(r.configuration, r.entitlement); if(!cancelled)setOffer(found); }
     const response = await fetch("/api/mobile/catalog", { cache:"no-store" });
-    if (response.ok) setCatalog((await response.json() as { exams: CatalogEntry[] }).exams);
-  }); },[open,inSite,refresh,run,membership]);
+    if (response.ok && !cancelled) setCatalog((await response.json() as { exams: CatalogEntry[] }).exams);
+  })().catch(error=>{ if(!cancelled)setNotice(error instanceof Error?error.message:"会員状態を確認できません。"); }); return ()=>{cancelled=true;}; },[open,inSite,refresh,membership]);
+  const startLogin = ()=>{
+    // Instant feedback, then the system sign-in sheet; nothing else is awaited first.
+    if (signingIn) return;
+    setSigningIn("opening"); setNotice("");
+    void beginLogin(SITE_ORIGIN).catch(error=>setNotice(error instanceof Error?error.message:"ログイン画面を開けませんでした。")).finally(()=>setTimeout(()=>setSigningIn(s=>s==="opening"?"":s),1500));
+  };
   if (!inSite) return null;
+  const loginButton = <button className={`inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-4 font-semibold text-primary-foreground disabled:opacity-60 active:opacity-80 touch-manipulation`} aria-busy={!!signingIn} disabled={!!signingIn} onClick={startLogin}>{signingIn==="finishing"?"ログインしています…":signingIn?"ログイン画面を開いています…":"ログイン"}</button>;
   const pill = "inline-flex min-h-11 shrink-0 items-center justify-center rounded-full border border-border bg-background px-3 text-sm font-medium text-foreground disabled:opacity-50";
   const primary = "inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-4 font-semibold text-primary-foreground disabled:opacity-50";
   const secondary = "inline-flex min-h-11 items-center justify-center rounded-xl border border-border bg-background px-4 text-sm font-medium disabled:opacity-50";
@@ -137,10 +147,10 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       <section aria-labelledby="native-plan" className={card}>
         <h2 id="native-plan" className="font-bold">有料会員（月額プラン）</h2>
         <p className="text-sm">ログイン不要で1日10問（全資格共通・日本時間0時リセット）。意見を1回送ると＋10問。有料会員は回数無制限、資格ごとの事前ダウンロードも使えます。</p>
-        {!access ? <button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await refresh(true); })}>会員状態を再確認</button> : <>
+        {!access ? <>{loginButton}<button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await refresh(true); })}>会員状態を再確認</button></> : <>
           <p className="font-semibold">{access.entitled ? access.source === "web" ? "ウェブの有料会員です。追加購入は不要です。" : "App Storeの有料会員です。" : "無料会員"}</p>
           {access.source === "web" && <div className="space-y-2"><p className="text-sm">既存のウェブ契約の管理・解約を開きます。</p><ManageSubscriptionButton label="ウェブ契約の管理・解約"/></div>}
-          {!access.userId && <button className={primary} onClick={()=>void run(()=>beginLogin(SITE_ORIGIN))}>ログイン</button>}
+          {!access.userId && loginButton}
           {purchasePending&&<p role="status" className="text-sm">購入内容をサーバーで確認中です。再購入せず「購入を復元」または会員状態の再確認をご利用ください。</p>}
           {offer && !access.entitled && <div className="space-y-3 rounded-xl border border-border p-4"><h3 className="font-bold">過去問AI 月額プラン</h3><p>{offer.product.priceString} / 1か月（税込・自動更新）</p><p className="text-sm">全資格の問題を無制限で演習、資格ごとの事前ダウンロード。購入確認時にApple IDへ請求されます。解約するまで自動更新され、更新前にApp Storeのサブスクリプション管理で解約できます。解約後も有効期間の末日までは利用できます。</p><button className={primary} disabled={busy||purchasePending} onClick={()=>void run(async()=>{
             const r=await refresh(true);
