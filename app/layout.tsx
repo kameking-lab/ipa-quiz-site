@@ -8,6 +8,7 @@ import { ThemeProvider, THEME_BOOTSTRAP_SCRIPT } from "@/components/theme-provid
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { SiteHeader } from "@/components/SiteHeader";
 import { NativeAppHost } from "@/components/NativeAppHost";
+import { NATIVE_APP_BOOTSTRAP_SCRIPT } from "@/lib/native-app-bootstrap";
 import { NativeAdPrivacy } from "@/components/ads/NativeAdPrivacy";
 import { ServiceWorkerRegistration } from "@/components/ServiceWorkerRegistration";
 import { MobileInstallProvider } from "@/components/pwa/MobileInstallProvider";
@@ -21,6 +22,8 @@ import { StudyPresence } from "@/components/StudyPresence";
 import { EmergencyBanner } from "@/components/EmergencyBanner";
 import { SITE_BASE_URL } from "@/lib/seo/config";
 import { FeedbackAccountClaim } from "@/components/quiz/FeedbackAccountClaim";
+import { AppStorePromo } from "@/components/app-store/AppStorePromo";
+import { appStoreItunesMetadata } from "@/lib/app-store";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -58,8 +61,8 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/favicon.png?v=chihuahua", type: "image/png", sizes: "64x64" },
-      { url: "/brand/chihuahua-icon-192.png", type: "image/png", sizes: "192x192" },
+      { url: "/favicon.png?v=appicon-20261107", type: "image/png", sizes: "64x64" },
+      { url: "/icon-192.png", type: "image/png", sizes: "192x192" },
     ],
     apple: [
       { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
@@ -98,6 +101,8 @@ export const metadata: Metadata = {
   other: {
     "google-adsense-account": "ca-pub-8751260838396451",
   },
+  // Safari の Smart App Banner。NEXT_PUBLIC_APP_STORE_LIVE=true のときだけ出す（lib/app-store.ts）。
+  itunes: appStoreItunesMetadata(),
 };
 
 export const viewport: Viewport = {
@@ -123,6 +128,7 @@ export default function RootLayout({
     >
       <head>
         <script dangerouslySetInnerHTML={{ __html: THEME_BOOTSTRAP_SCRIPT }} />
+        <script dangerouslySetInnerHTML={{ __html: NATIVE_APP_BOOTSTRAP_SCRIPT }} />
         <link rel="dns-prefetch" href="https://us.i.posthog.com" />
         <link rel="preconnect" href="https://us.i.posthog.com" />
       </head>
@@ -161,9 +167,9 @@ export default function RootLayout({
             >
               {children}
             </div>
-            <footer className="mobile-bottom-nav-footer-reserve mt-auto border-t border-border bg-background/60 px-4 pt-8 text-xs text-muted-foreground">
+            <footer className="site-footer mobile-bottom-nav-footer-reserve mt-auto border-t border-border bg-background/60 px-4 pt-8 text-xs text-muted-foreground">
               <div className="mx-auto max-w-5xl">
-                <div className="print:hidden grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
+                <div className="native-app-hidden print:hidden grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
                   <nav aria-labelledby="footer-nav-exams">
                     <h3 id="footer-nav-exams" className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-foreground">
                       IPAの試験
@@ -262,12 +268,14 @@ export default function RootLayout({
                 </div>
 
                 {/* Theme */}
-                <div className="print:hidden mt-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+                <div className="native-app-hidden print:hidden mt-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
                   <div className="flex items-center gap-2 text-[11px]">
                     <span className="text-muted-foreground">テーマ</span>
                     <ThemeToggle />
                   </div>
                 </div>
+
+                <AppStorePromo variant="footer" className="print:hidden mt-4" />
 
                 <SourceRelationshipFooter />
               </div>

@@ -6,10 +6,10 @@ export function cn(...inputs: ClassValue[]) {
 export const EXAM_LABELS: Record<string, string> = {
   "benrishi": "弁理士（短答式）",
   "sokuryoshi": "測量士",
-  "dokugeki-chiba": "毒物劇物取扱者（千葉県）",
+  "dokugeki-chiba": "毒物劇物取扱者",
   "jokaso-setsubishi": "浄化槽設備士（学科）",
   "chiiki-ryoko": "地域限定旅行業務取扱管理者",
-  "junkango-kansai": "准看護師（関西広域連合）",
+  "junkango-kansai": "准看護師",
   "kukaku-seiri": "土地区画整理士（学科）",
   "dojo-osen": "土壌汚染調査技術管理者",
   "kenchikushi2": "二級建築士（学科）",
@@ -147,15 +147,24 @@ export const EXAM_LABELS: Record<string, string> = {
     "sekou-kenchiku2": "2級建築施工管理（第一次検定）",
     denki2: "2級電気工事施工管理（第一次検定）",
     kankoji1: "1級管工事施工管理技士",
-    "yamaguchi-chori": "調理師（山口県）",
-    "yamaguchi-seika": "製菓衛生師（山口県）",
-    "yamaguchi-fugu": "ふぐ処理師（山口県・学科）",
+    "yamaguchi-chori": "調理師",
+    "yamaguchi-seika": "製菓衛生師",
+    "yamaguchi-fugu": "ふぐ処理師（学科）",
     "keiryoshi": "一般計量士",
     "keiryoshi-nodo": "環境計量士（濃度関係）",
     "keiryoshi-soon": "環境計量士（騒音・振動関係）",
     kenki2: "2級建設機械施工管理（第一次）",
     kenki1: "1級建設機械施工管理（第一次）",
-    gyosei: "行政書士"
+    gyosei: "行政書士",
+    "career-consultant": "キャリアコンサルタント（学科）",
+    "kanri-eiyoshi": "管理栄養士",
+    "sogo-ryoko": "総合旅行業務取扱管理者",
+    "shiho-tanto": "司法試験（短答）",
+    "yobi-tanto": "予備試験（短答）",
+    "sokuryoshiho": "測量士補",
+    "caremanager": "ケアマネ試験",
+    "kikai-hozen": "機械保全技能士 2級",
+    "tsukanshi": "通関士"
 };
 export function examLabel(exam: string): string {
     return EXAM_LABELS[exam] ?? exam.toUpperCase();
@@ -204,7 +213,7 @@ export function seasonLabel(season: string): string {
     if (season === "primary")
         return "一次試験";
     if (season === "kansai")
-        return "関西広域連合";
+        return "年1回";
     return season;
 }
 export function formatYearSeason(year: number, season: string): string {
@@ -217,7 +226,7 @@ export function formatYearSeason(year: number, season: string): string {
     const reiwa = year - 2018;
     const era = reiwa >= 1 ? `令和${reiwa}年度` : `${year}年度`;
     // 年1回の国家試験（介護福祉士等）は年度だけで回を特定する。
-    if (season === "annual")
+    if (season === "annual" || season === "kansai")
         return era;
     return `${era} ${seasonLabel(season)}`;
 }

@@ -5,6 +5,9 @@ import {
   findRelatedQuestions,
   type RelatedQuestion,
 } from "@/lib/copilot/related";
+import { createRuntimeCopilotSource } from "@/lib/copilot/source-runtime";
+
+const source = createRuntimeCopilotSource();
 
 /**
  * Characterization tests for the three previously-untested exports of
@@ -89,14 +92,14 @@ describe("findRelatedQuestions", () => {
 
   it("検索不能なクエリ（記号のみ）は空配列を返す", () => {
     expect(
-      findRelatedQuestions({ userMessage: "?????", excludeDocIds: emptyExclude }),
+      findRelatedQuestions({ userMessage: "?????", excludeDocIds: emptyExclude, source }),
     ).toEqual([]);
   });
 
   it("有効なクエリは limit 件以下・スコア降順・question 種別のみを返す", () => {
     const results = findRelatedQuestions({
       userMessage: "TCP/IP の階層モデル",
-      excludeDocIds: emptyExclude,
+      excludeDocIds: emptyExclude, source,
       limit: 3,
     });
     // コーパスにヒットがあること（vacuous pass の防止）。
@@ -118,14 +121,14 @@ describe("findRelatedQuestions", () => {
   it("excludeDocIds に入れた docId は結果から除外される", () => {
     const baseline = findRelatedQuestions({
       userMessage: "TCP/IP の階層モデル",
-      excludeDocIds: emptyExclude,
+      excludeDocIds: emptyExclude, source,
       limit: 4,
     });
     expect(baseline.length).toBeGreaterThan(0);
     const excludedId = `q:${baseline[0].questionId}`;
     const filtered = findRelatedQuestions({
       userMessage: "TCP/IP の階層モデル",
-      excludeDocIds: new Set([excludedId]),
+      excludeDocIds: new Set([excludedId]), source,
       limit: 4,
     });
     expect(filtered.map((r) => r.questionId)).not.toContain(
@@ -136,7 +139,7 @@ describe("findRelatedQuestions", () => {
   it("currentQuestionId に一致する自問題は結果に含めない", () => {
     const baseline = findRelatedQuestions({
       userMessage: "TCP/IP の階層モデル",
-      excludeDocIds: emptyExclude,
+      excludeDocIds: emptyExclude, source,
       limit: 4,
     });
     expect(baseline.length).toBeGreaterThan(0);
@@ -144,7 +147,7 @@ describe("findRelatedQuestions", () => {
     const filtered = findRelatedQuestions({
       userMessage: "TCP/IP の階層モデル",
       currentQuestionId: selfId,
-      excludeDocIds: emptyExclude,
+      excludeDocIds: emptyExclude, source,
       limit: 4,
     });
     expect(filtered.map((r) => r.questionId)).not.toContain(selfId);

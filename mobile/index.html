@@ -3,9 +3,36 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-    <meta name="theme-color" content="#122d2b" />
+    <meta name="theme-color" content="#f7f3e9" />
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob: https://www.kakomon-ai.jp; connect-src 'self' https://www.kakomon-ai.jp; object-src 'none'; base-uri 'none'; form-action 'none'" />
     <title>過去問AI</title>
+    <!-- Boot splash: painted from the HTML alone, before any script runs, so the
+         launch screen (ios-assets/LaunchScreen.storyboard: same colour, same art at
+         the same place) flows straight into it while the web home loads. React
+         replaces it (offline shell) or the web home navigation covers it. -->
+    <style>
+      .boot-splash { position: fixed; inset: 0; z-index: 70; background: #f7f3e9; color: #293f35; font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif; text-align: center; overflow: hidden; -webkit-user-select: none; user-select: none; }
+      .boot-splash-art { position: absolute; left: 50%; top: 50%; width: 120px; height: 120px; margin: -100px 0 0 -60px; transform-origin: 50% 90%; animation: boot-sway 2.8s ease-in-out .5s infinite; }
+      .boot-splash-copy { position: absolute; left: 16px; right: 16px; top: calc(50% + 38px); animation: boot-in .5s ease-out .05s both; }
+      .boot-splash-name { margin: 0; font-size: 22px; font-weight: 700; line-height: 1.4; letter-spacing: .02em; }
+      .boot-splash-line { margin: 2px 0 0; font-size: 13px; line-height: 1.7; letter-spacing: .08em; color: #65705e; }
+      .boot-splash-dots { display: flex; justify-content: center; gap: 7px; margin-top: 16px; }
+      .boot-splash-dots i { width: 6px; height: 6px; border-radius: 50%; background: #355b47; opacity: .2; animation: boot-dot 1.2s ease-in-out infinite; }
+      .boot-splash-dots i:nth-child(2) { animation-delay: .18s; }
+      .boot-splash-dots i:nth-child(3) { animation-delay: .36s; }
+      @keyframes boot-sway { 0%, 50%, 100% { transform: none; } 20% { transform: translateY(-3px) rotate(-3deg); } 70% { transform: translateY(-3px) rotate(3deg); } }
+      @keyframes boot-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+      @keyframes boot-dot { 0%, 70%, 100% { opacity: .2; transform: none; } 35% { opacity: 1; transform: translateY(-3px); } }
+      @media (prefers-color-scheme: dark) {
+        .boot-splash { background: #1b241e; color: #edece1; }
+        .boot-splash-line { color: #b4bfad; }
+        .boot-splash-dots i { background: #b6cfaa; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .boot-splash-art, .boot-splash-copy, .boot-splash-dots i { animation: none; }
+        .boot-splash-dots i { opacity: .5; }
+      }
+    </style>
   </head>
-  <body><div id="root"></div><script type="module" src="/src/main.tsx"></script></body>
+  <body><div id="root"><div class="boot-splash" aria-busy="true"><img class="boot-splash-art" src="./src/assets/launch-chihuahua.webp" width="120" height="120" alt="" /><div class="boot-splash-copy"><p class="boot-splash-name">過去問AI</p><p class="boot-splash-line">今日も1問から</p><div class="boot-splash-dots" aria-hidden="true"><i></i><i></i><i></i></div></div></div></div><script type="module" src="/src/main.tsx"></script></body>
 </html>

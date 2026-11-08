@@ -221,6 +221,16 @@ export interface RecordCostInput {
   reservation?: CostReservation;
 }
 
+// 1 回の AI 呼び出しが実際に月次の費用に計上されたかを、ログで確かめられるようにする
+// （CLAUDE.md §7: Preview で 1 回叩いて「コストが計上されているか」を見る）。金額のみで秘密値は含まない。
+function logRecorded(label: string, jpy: number, monthTotalJpy: number | null): void {
+  console.info("[cost-guard] recorded", {
+    label,
+    jpy: Math.round(jpy * 10000) / 10000,
+    monthTotalJpy: monthTotalJpy === null ? null : Math.round(monthTotalJpy * 100) / 100,
+  });
+}
+
 /**
  * Record the estimated cost of one completed AI call into the monthly bucket and
  * fire Slack notifications when the ¥40k / ¥50k thresholds are first crossed.
@@ -235,6 +245,7 @@ export async function recordAiCost(input: RecordCostInput): Promise<"recorded" |
     if (input.reservation) {
       // Keep the conservative charge on missing/ambiguous settlement; never retry.
       const total = budgetNumber(await budgetCommand(SETTLE_COST_LUA, input.reservation, jpy));
+      logRecorded(input.label, jpy, total);
       if (total !== null) status = "recorded";
       if (total !== null) await maybeNotifyThresholds(input.reservation.key, total);
       return status;
@@ -243,6 +254,7 @@ export async function recordAiCost(input: RecordCostInput): Promise<"recorded" |
 
     const key = monthlyCostKey();
     const total = await kvIncrByFloat(key, jpy);
+    logRecorded(input.label, jpy, total);
     if (total === null) return status;
     status = "recorded";
 

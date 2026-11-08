@@ -23,7 +23,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { addGold, addXp } from "@/lib/gamification/economy";
 import { evaluateAchievementsAfterMock } from "@/lib/gamification/achievements";
-import { recordReview } from "@/lib/learning/spaced-repetition";
+import { usePetLearning } from "@/components/pet/usePetLearning";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 import { readSettings } from "@/lib/storage/settings";
 import { mockReviewHref } from "@/lib/mock-exam/review";
@@ -46,6 +46,7 @@ function getVerdict(scorePct: number, passThreshold: number): "合格圏内" | "
 }
 
 export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Props) {
+  const pet = usePetLearning();
   const totalSec = config.minutes * 60;
   const [startedAt] = React.useState(() => resumeFrom?.startedAt ?? Date.now());
   const [remaining, setRemaining] = React.useState(() =>
@@ -134,7 +135,9 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
             at: finishedAt,
           });
         }
-        recordReview(q.id, isCorrect);
+        // An assessed blank still updates existing learning history/SRS, but
+        // is not an explicit complete answer for the pet. No completion bonus.
+        pet.mock(q, ans, isCorrect);
       }
       recordStudyOnDate();
       const answered = latestAnswers.filter((a) => a !== undefined).length;
@@ -168,7 +171,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
       setPhase("submitted");
       void auto;
     },
-    [questions, startedAt, config],
+    [questions, startedAt, config, pet],
   );
 
   const submitRef = React.useRef(submit);

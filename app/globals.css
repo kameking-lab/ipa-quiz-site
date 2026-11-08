@@ -599,3 +599,66 @@ button,
 @media (max-width: 480px) {
   .study-pet .reward-copy { flex-basis: auto; }
 }
+
+/* iOS Safari and the app's WKWebView zoom into any focused field whose text is
+   under 16px, and stay zoomed after it blurs. On touch screens every text field
+   is at least 16px. Unlayered on purpose: it outranks text-sm / text-xs
+   utilities (Tailwind's @layer), so a new field cannot reintroduce the zoom. */
+@media (hover: none) and (pointer: coarse) {
+  input:not([type="checkbox"], [type="radio"], [type="range"], [type="file"], [type="color"], [type="button"], [type="submit"], [type="reset"], [type="image"], [type="hidden"]),
+  select,
+  textarea { font-size: 16px; }
+}
+
+/* iOS app WebView (html.native-app, set by NativeAppHost and the bundled
+   shell). The WebView runs edge-to-edge (viewport-fit=cover, contentInset
+   "never"), so env() insets are the only thing keeping content out from under
+   the status bar / Dynamic Island and the home indicator. Sticky bars stick
+   below an opaque status-bar band instead of scrolling underneath it.
+   The app also publishes its measured insets as --native-safe-* (inline on
+   <html>, QualificationBridgeViewController), so the band never depends on
+   env() alone. Tests emulate a notch through the same variables. */
+:root {
+  --safe-top: max(env(safe-area-inset-top, 0px), var(--native-safe-top, 0px));
+  --safe-bottom: max(env(safe-area-inset-bottom, 0px), var(--native-safe-bottom, 0px));
+  --safe-left: env(safe-area-inset-left, 0px);
+  --safe-right: env(safe-area-inset-right, 0px);
+}
+/* Every first element (shell header, native tools, site header on /billing,
+   the header painted before the native tools load) starts below the clock. */
+html.native-app body { padding-top: var(--safe-top); }
+html.native-app body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--safe-top);
+  background: var(--background);
+  z-index: 60;
+  pointer-events: none;
+}
+/* Reserved slot for the native bar (NativeTools: py-2 + one 44px row + border)
+   while its chunk loads, so content does not shift under the learner's finger. */
+.native-tools-placeholder { display: none; }
+html.native-app .native-tools-placeholder { display: block; height: calc(2.75rem + 1rem + 1px); border-bottom: 1px solid var(--border); }
+/* In the app the practice route is just the practice: no site-wide link grid. */
+html.native-app .native-app-hidden { display: none; }
+html.native-app .sticky.top-0 { top: var(--safe-top); }
+/* Bottom bars use the same measured inset (env() alone may report 0 in the app). */
+html.native-app .pb-safe { padding-bottom: max(var(--safe-bottom), 0.5rem); }
+html.native-app .mobile-bottom-nav { height: calc(3rem + 1px + max(var(--safe-bottom), 0.5rem)); }
+html.native-app .mobile-bottom-nav-reserve { padding-bottom: calc(3rem + 1px + max(var(--safe-bottom), 0.5rem) + 0.5rem); }
+html.native-app .mobile-bottom-nav-footer-reserve { padding-bottom: calc(2rem + 3rem + 1px + max(var(--safe-bottom), 0.5rem) + 0.5rem); }
+@media (min-width: 45rem) {
+  html.native-app .mobile-bottom-nav-reserve { padding-bottom: var(--safe-bottom); }
+  html.native-app .mobile-bottom-nav-footer-reserve { padding-bottom: max(var(--safe-bottom), 2rem); }
+}
+html.native-app .sticky.top-24 { top: calc(var(--safe-top) + 6rem); }
+html.native-app [role="dialog"].inset-y-0 { padding-top: calc(var(--safe-top) + 1.5rem); }
+html.native-app [role="dialog"].inset-y-0 > button.absolute.top-4 { top: calc(var(--safe-top) + 1rem); }
+
+/* Purchase sign-in (/auth/signin on the way to Checkout): title, provider buttons and
+   one-line notes only. The page renders [data-purchase-focus]. */
+body:has([data-purchase-focus]) .site-footer,
+body:has([data-purchase-focus]) .mobile-bottom-nav { display: none; }

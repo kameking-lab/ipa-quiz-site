@@ -17,6 +17,8 @@ import { EmailSignInForm } from "./EmailSignInForm";
 import { AppReviewSignInForm } from "./AppReviewSignInForm";
 import { appReviewConfig } from "@/lib/auth/app-review-config";
 import { safeAuthCallback } from "@/lib/auth/redirect";
+import { PrivacyNote } from "@/components/ui/privacy-note";
+import { PurchaseSignInBeacon } from "./PurchaseSignInBeacon";
 
 export const metadata: Metadata = {
   title: "ログイン",
@@ -57,7 +59,8 @@ export default async function SignInPage({
   if (session?.user) redirect(callbackUrl);
 
   const errorMessage = sp.error ? friendlyAuthError(sp.error) : null;
-  const forPurchase = callbackUrl === "/billing" || callbackUrl.startsWith("/billing?");
+  // On the way to Checkout: the provider buttons only, then straight on to payment.
+  const forPurchase = callbackUrl === "/billing" || callbackUrl.startsWith("/billing?") || callbackUrl === "/billing/start" || callbackUrl.startsWith("/billing/start?");
   const nativeLogin=callbackUrl.startsWith("/api/mobile/auth/complete?");
 
   const providerIds = new Set(
@@ -80,19 +83,19 @@ export default async function SignInPage({
       <div className="relative w-full max-w-md">
         {/* Hero */}
         <div className="mb-8 text-center">
-          <Badge variant="success" className="mb-4">
-            {forPurchase ? "あと2ステップ：ログイン → 決済" : "無料の学習機能と月額プラン"}
-          </Badge>
+          {forPurchase ? <><PurchaseSignInBeacon /><span data-purchase-focus hidden /></> : <Badge variant="success" className="mb-4">
+            無料の学習機能と月額プラン
+          </Badge>}
           <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            {forPurchase ? "ログインして購入へ" : <><span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
+            {forPurchase ? "ログインして決済へ" : <><span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
               過去問AI
             </span>
             {" "}にログイン</>}
           </h1>
-          <p className="mx-auto mt-3 max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground">
-            {forPurchase ? "ログイン後、月額プランの決済へ進めます。ログインだけで課金は始まりません。" : <>無料の連続演習はログインなしでも1日{MONTHLY_PUBLIC_OFFER.freeDaily}問まで利用できます。履歴のクラウド同期などにはログインをご利用ください。
-            月額{MONTHLY_PUBLIC_OFFER.priceYen}円（税込）の有料会員プランにもログインが必要です。</>}
-          </p>
+          {!forPurchase && <p className="mx-auto mt-3 max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground">
+            <>無料の連続演習はログインなしでも1日{MONTHLY_PUBLIC_OFFER.freeDaily}問まで利用できます。履歴のクラウド同期などにはログインをご利用ください。
+            月額{MONTHLY_PUBLIC_OFFER.priceYen}円（税込）の有料会員プランにもログインが必要です。</>
+          </p>}
         </div>
 
         {/* Card */}
@@ -119,7 +122,7 @@ export default async function SignInPage({
               />
               {nativeLogin&&!providerIds.has("apple")&&<p className="text-sm">アプリの通常ログインはAppleログインの設定後に利用できます。審査担当者は下の審査用ログインをご利用ください。</p>}
 
-              {providerIds.has("nodemailer") && (
+              {providerIds.has("nodemailer") && !forPurchase && (
                 <>
                   <div className="my-5 flex items-center gap-3 text-xs uppercase tracking-wider text-muted-foreground">
                     <span className="h-px flex-1 bg-border" />
@@ -130,6 +133,7 @@ export default async function SignInPage({
                 </>
               )}
               {appReviewConfig() && <AppReviewSignInForm callbackUrl={callbackUrl} />}
+              <PrivacyNote variant="signin" className="mt-5" />
             </>
           ) : (
             <div className="rounded-xl border border-dashed border-border bg-muted/40 px-4 py-6 text-center text-sm text-muted-foreground">
@@ -166,8 +170,6 @@ export default async function SignInPage({
             label="アカウントで学習を管理"
           />
         </div>}
-
-        {forPurchase && <p className="mt-4 text-center text-sm"><Link className="underline" href={callbackUrl}>購入画面に戻る</Link></p>}
 
         {/* Legal */}
         <p className="mt-6 text-center text-[11px] leading-relaxed text-muted-foreground">

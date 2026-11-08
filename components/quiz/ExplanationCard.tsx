@@ -6,16 +6,13 @@ import { questionReferenceLabel } from "@/lib/questions/reference-label";
 import * as React from "react";
 import type { NativeBGrade } from "@/lib/questions/types";
 import { NativeBFeedback } from "./NativeBAnswer";
-import Link from "next/link";
-import { Star, Sparkles, ArrowRight, AlertCircle, CheckCircle2, FileText, Tags } from "lucide-react";
+import { Star, Sparkles, ArrowRight, AlertCircle, CheckCircle2, FileText } from "lucide-react";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { choiceDisplayLabel, formatQuestionAnswerForDisplay } from "@/lib/questions/display";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { getOfficialAnswerPdfUrl, getSafePdfUrl, ipaSourceLabel } from "@/lib/exam-config";
-import { ShareButtons } from "@/components/ShareButtons";
 import { BookmarkButton } from "@/components/BookmarkButton";
-import { questionPagePath } from "@/lib/seo/question-url";
 import { QuestionBody } from "./QuestionBody";
 import { QuestionSourcePresentation } from "./QuestionSourcePresentation";
 import { RikuTech2CylinderGuide } from "./RikuTech2CylinderGuide";
@@ -34,6 +31,7 @@ interface Props {
   onNext: () => void;
   nextLabel?: string;
   onAskAI: () => void;
+  /** Accepted for existing callers; the copilot's 「なぜ間違えた？分析」 chip is the single entry point now. */
   onAnalyzeWrong?: () => void;
 }
 
@@ -47,7 +45,6 @@ export function ExplanationCard({
   onNext,
   nextLabel = "次の問題へ",
   onAskAI,
-  onAnalyzeWrong,
 }: Props) {
   if (question.type === "native-b" && question.nativeB) return <div className="space-y-4" role="region" aria-label="五枠の解説">
     <NativeBFeedback data={question.nativeB} result={nativeBResult} />
@@ -111,7 +108,7 @@ export function ExplanationCard({
             aria-pressed={starred}
             aria-keyshortcuts="r"
             className={cn(
-              "rounded-full p-2 transition-colors",
+              "inline-flex h-11 w-11 items-center justify-center rounded-full transition-colors",
               "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-600 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:focus-visible:ring-amber-300",
               starred
                 ? "bg-amber-200 text-amber-900 dark:bg-amber-900/60 dark:text-amber-200"
@@ -134,24 +131,6 @@ export function ExplanationCard({
         </Button>
       </div>
 
-      {question.explanationCoverage === "official-summary" && (
-        <p className="mb-3 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-xs font-medium text-amber-900 dark:border-amber-700 dark:bg-amber-950/40 dark:text-amber-100">
-          公式正答と一般解説を掲載しています。選択肢ごとの解説は掲載していません。
-        </p>
-      )}
-
-      {!isCorrect && onAnalyzeWrong && (
-        <button
-          onClick={onAnalyzeWrong}
-          className="mb-3 flex w-full items-center justify-between rounded-xl border border-zinc-300 bg-white px-4 py-3 text-left text-sm font-semibold text-zinc-700 transition hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800"
-        >
-          <span className="flex items-center gap-2">
-            <Sparkles className="h-4 w-4" />
-            なぜ間違えた？ AIに質問する
-          </span>
-          <ArrowRight className="h-4 w-4" />
-        </button>
-      )}
 
       {isPlaceholderExplanation(question.explanation) ? (
         <div className="selectable-content mb-4 rounded-xl bg-amber-50 p-3 text-sm text-amber-800 dark:bg-amber-950/30 dark:text-amber-200">
@@ -219,47 +198,13 @@ export function ExplanationCard({
         </Button>
       </div>
 
-      {isCorrect && (
-        <div className="mt-4 rounded-xl border border-emerald-200 bg-white/60 p-3 dark:border-emerald-900/40 dark:bg-zinc-950/40">
-          <p className="mb-2 text-[11px] font-semibold text-emerald-800 dark:text-emerald-200">
-            ✨ 正解おめでとうございます！教育貢献プロジェクトをシェアして仲間と学習しませんか？
-          </p>
-          <ShareButtons
-            url={`https://www.kakomon-ai.jp${questionPagePath(question)}`}
-            text={`過去問AI で「${question.question.slice(0, 40)}...」の問題を解きました！`}
-            hashtags={["過去問AI", "資格試験"]}
-            compact
-          />
-        </div>
-      )}
-
-      {!isCorrect && (
-        <div className="mt-3 rounded-xl border border-amber-200 bg-amber-50/60 px-4 py-3 dark:border-amber-900/40 dark:bg-amber-950/20">
-          <p className="mb-2 text-xs font-medium text-amber-800 dark:text-amber-200">
-            苦手分野を克服しませんか？
-          </p>
-          <Link
-            href={`/${question.exam}/topic/${encodeURIComponent(question.category)}`}
-            prefetch={false}
-            data-track="explanation-cta-topic"
-            className="inline-flex items-center gap-1.5 rounded-lg bg-amber-600 px-3 py-1.5 text-xs font-semibold text-white transition hover:bg-amber-700 active:scale-95"
-          >
-            <Tags className="h-3.5 w-3.5" />
-            分野別で集中対策
-          </Link>
-        </div>
-      )}
-
-      <div className="mt-3 space-y-2 rounded-lg border border-zinc-200/80 bg-zinc-50/60 px-3 py-2.5 dark:border-zinc-700/50 dark:bg-zinc-900/30">
-        <p className="text-sm leading-7 text-zinc-700 dark:text-zinc-200">
-          ※ 解説は誤りを含む可能性があります。重要な判断は公式資料でご確認ください。
-        </p>
+      <div className="mt-3 space-y-2">
         <div className="flex flex-wrap gap-1.5">
           <a
             href={getSafePdfUrl(question.sourcePdfUrl)}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-2.5 py-1 text-[11px] text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
+            className="inline-flex min-h-11 items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-xs text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
           >
             <FileText className="h-3 w-3 flex-shrink-0" />
             {ipaSourceLabel(getSafePdfUrl(question.sourcePdfUrl), "question")}
@@ -268,7 +213,7 @@ export function ExplanationCard({
             href={getOfficialAnswerPdfUrl(question.sourcePdfUrl, question.sourceAnswerUrl)}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-2.5 py-1 text-[11px] text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
+            className="inline-flex min-h-11 items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-xs text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
           >
             <FileText className="h-3 w-3 flex-shrink-0" />
             {ipaSourceLabel(getOfficialAnswerPdfUrl(question.sourcePdfUrl, question.sourceAnswerUrl), "answer")}
@@ -279,7 +224,7 @@ export function ExplanationCard({
               href={url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-2.5 py-1 text-[11px] text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
+              className="inline-flex min-h-11 items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-xs text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
             >
               <FileText className="h-3 w-3 flex-shrink-0" />
               {questionReferenceLabel(question, url)}

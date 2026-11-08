@@ -1,4 +1,13 @@
 .illustration { pointer-events: none; }
+.seatedArea { position: absolute; inset: 0 0 16cqw; pointer-events: none; }
+/* The playing dog stands alone on its canvas, so it is drawn ~1.17x larger per pixel than a seated dog
+   (measured head width: 117px vs 100px at 256px). It stands in front of the front row (24cqw seats),
+   so 24 / 1.17 = 20.5cqw keeps its head the same size as the front-row dogs. */
+.floor { position: absolute; left: 50%; bottom: 1cqw; width: 20.5cqw; aspect-ratio: 1; transform: translateX(-50%); z-index: 10; }
+.vacant { display: block; width: 100%; height: 100%; }
+.direction { display: block; width: 100%; height: 100%; }
+.direction[data-mirrored="true"] { transform: scaleX(-1); }
+.illustration .image { object-fit: contain; background-image: none; }
 .illustration[data-selected="true"] { z-index: 20; }
 .illustration[data-selected="true"] :global(.study-mascot) { filter: drop-shadow(0 0 3px #fff3a2); }
 .number, .listNumber { display: inline-grid; place-items: center; border-radius: 50%; background: #fffdf1; color: #3c5039; font-weight: 700; }

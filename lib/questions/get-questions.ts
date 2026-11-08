@@ -155,7 +155,16 @@ kankoji1: async () => isExamPublished("kankoji1") ? (await import("@/data/questi
 kenki2: async () => isExamPublished("kenki2") ? (await import("@/data/questions/kenki2")).KENKI2_QUESTIONS : [],
 kenki1: async () => isExamPublished("kenki1") ? (await import("@/data/questions/kenki1")).KENKI1_QUESTIONS : [],
 gyosei: async () => isExamPublished("gyosei") ? (await import("@/data/questions/gyosei")).GYOSEI_QUESTIONS : [],
-shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/questions/shihoshoshi")).SHIHOSHOSHI_BATCH1_QUESTIONS : []
+shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/questions/shihoshoshi")).SHIHOSHOSHI_BATCH1_QUESTIONS : [],
+"career-consultant": async () => isExamPublished("career-consultant") ? (await import("@/data/questions/career-consultant")).CAREER_CONSULTANT_QUESTIONS : [],
+"kanri-eiyoshi": async () => isExamPublished("kanri-eiyoshi") ? (await import("@/data/questions/kanri-eiyoshi")).KANRI_EIYOSHI_QUESTIONS : [],
+"sogo-ryoko": async () => isExamPublished("sogo-ryoko") ? (await import("@/data/questions/sogo-ryoko")).SOGO_RYOKO_QUESTIONS : [],
+"shiho-tanto": async () => isExamPublished("shiho-tanto") ? (await import("@/data/questions/shiho-tanto")).SHIHO_TANTO_QUESTIONS : [],
+"yobi-tanto": async () => isExamPublished("yobi-tanto") ? (await import("@/data/questions/yobi-tanto")).YOBI_TANTO_QUESTIONS : [],
+"sokuryoshiho": async () => isExamPublished("sokuryoshiho") ? (await import("@/data/questions/sokuryoshiho")).SOKURYOSHIHO_QUESTIONS : [],
+"caremanager": async () => isExamPublished("caremanager") ? (await import("@/data/questions/caremanager")).CAREMANAGER_QUESTIONS : [],
+"kikai-hozen": async () => isExamPublished("kikai-hozen") ? (await import("@/data/questions/kikai-hozen")).KIKAI_HOZEN_QUESTIONS : [],
+"tsukanshi": async () => isExamPublished("tsukanshi") ? (await import("@/data/questions/tsukanshi")).TSUKANSHI_QUESTIONS : []
 };
 
 /** Load questions for one exam (lazy — only loads the requested exam's chunk). */

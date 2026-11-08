@@ -5,7 +5,7 @@ for (const exam of ["ap", "sc", "fe"]) {
     await page.setViewportSize({ width: 390, height: 844 });
     await page.goto(`/${exam}`);
     if (exam === "fe") await page.getByRole("tab", { name: "年度別", exact: true }).click();
-    else await page.getByRole("navigation", { name: "学習メニュー" }).getByRole("link", { name: "年度別の過去問", exact: true }).click();
+    else await page.getByRole("navigation", { name: "学習メニュー" }).getByRole("link", { name: "年度別", exact: true }).click();
     const text = await page.locator("main").innerText();
 
     // A card's range explanation and its right-side badge must not repeat the

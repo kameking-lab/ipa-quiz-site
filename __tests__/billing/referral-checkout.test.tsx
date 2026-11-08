@@ -1,8 +1,8 @@
-import { cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
+import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import type { PostHog } from "posthog-js";
 import { setPostHogClient } from "@/lib/posthog";
-import { CheckoutButton } from "@/app/billing/CheckoutButton";
+import { AutoCheckout } from "@/app/billing/start/AutoCheckout";
 import { PurchaseStatus } from "@/app/billing/PurchaseStatus";
 vi.mock("@/app/billing/QuizResumeLinks", () => ({ QuizResumeLinks: () => null }));
 vi.mock("@/app/billing/ManageSubscriptionButton", () => ({ ManageSubscriptionButton: () => null }));
@@ -15,11 +15,10 @@ beforeEach(() => {
 afterEach(() => { cleanup(); setPostHogClient(null); vi.unstubAllGlobals(); });
 
 it("records a confirmed checkout once, with UTM and test realm, without sending the order ID", async () => {
-  const fetcher = vi.fn(async () => Response.json({ url: "#test-checkout", orderId: "private-order" }));
+  const fetcher = vi.fn(async () => Response.json({ url: "https://checkout.stripe.com/c/pay/cs_test_fixture", orderId: "private-order" }));
   vi.stubGlobal("fetch", fetcher);
-  render(<CheckoutButton terms="test" amount={980} enabled recurring />);
-  const button = screen.getByRole("button", { name: "同意してテスト決済へ" });
-  fireEvent.click(button); fireEvent.click(button);
+  vi.stubGlobal("location", { ...window.location, replace: vi.fn() });
+  render(<AutoCheckout terms="test" returnTo={null} fallback="/billing" testMode />);
   await waitFor(() => expect(capture.mock.calls.some(call => call[0] === "checkout_started")).toBe(true));
   const events = capture.mock.calls.filter(call => call[0] === "checkout_started");
   expect(events).toHaveLength(1);
@@ -27,14 +26,11 @@ it("records a confirmed checkout once, with UTM and test realm, without sending 
   expect(JSON.stringify(events)).not.toContain("private-order");
   expect(fetcher).toHaveBeenCalledTimes(1);
 });
-it("does not count failed checkout or a disabled purchase button", async () => {
+it("does not count a failed checkout", async () => {
   vi.stubGlobal("fetch", vi.fn(async () => Response.json({ error: "sign_in_required" }, { status: 401 })));
-  const view = render(<CheckoutButton terms="test" amount={980} enabled />);
-  fireEvent.click(screen.getByRole("button"));
+  render(<AutoCheckout terms="test" returnTo={null} fallback="/billing" />);
   await screen.findByRole("alert");
   expect(capture.mock.calls.some(call => call[0] === "checkout_started")).toBe(false);
-  view.rerender(<CheckoutButton terms="test" amount={980} enabled={false} />);
-  expect(screen.getByRole("button")).toBeDisabled();
 });
 it.each(["pending", "failed", "refunded", "expired"])("does not count a %s status as a completed application", async status => {
   vi.stubGlobal("fetch", vi.fn(async () => Response.json({ entitled: false, expiresAt: null, purchase: { id: "private-order", status, expiresAt: null } })));

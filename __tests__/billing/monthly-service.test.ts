@@ -44,7 +44,28 @@ describe("monthly contract and invoice lifecycle (offline transactional fixture)
   it("uses the same durable signup under concurrent retries and times out conservatively", async () => {
     const f = await monthlyFixture(); const results = await Promise.all([1, 2, 3].map(() => f.service.checkout("alice", monthlyTerms(f.config), f.provider)));
     expect(new Set(results.map(r => r.orderId)).size).toBe(1); expect(f.provider.checkout).toHaveBeenCalledTimes(1);
-    f.setNow("2026-02-01T00:00:00Z"); await expect(f.service.checkout("alice", monthlyTerms(f.config), f.provider)).rejects.toMatchObject({ code: "pending_subscription_contact_support" });
+  });
+  it("never sends a buyer to support for a stale unpaid checkout: expires it and opens a new one at once", async () => {
+    const f = await monthlyFixture();
+    f.setNow("2026-02-01T00:00:00Z");
+    const fresh = await f.service.checkout("alice", monthlyTerms(f.config), f.provider);
+    expect(f.provider.expireCheckout).toHaveBeenCalledWith("cs_test_monthly");
+    expect(fresh.orderId).not.toBe(f.checkout.orderId);
+    expect(f.provider.checkout).toHaveBeenCalledTimes(2);
+    const signups = f.store.accounts.get("stripe-test:alice")!.signups;
+    expect(signups[f.checkout.orderId].state).toBe("expired");
+    expect(signups[fresh.orderId].state).toBe("pending");
+    // A retry within the window reuses the new session.
+    expect((await f.service.checkout("alice", monthlyTerms(f.config), f.provider)).orderId).toBe(fresh.orderId);
+    expect(f.provider.checkout).toHaveBeenCalledTimes(2);
+  });
+  it("keeps a stale checkout that was actually paid: no second session, and the answer is 'already applied'", async () => {
+    const f = await monthlyFixture();
+    vi.mocked(f.provider.expireCheckout).mockRejectedValueOnce(Object.assign(new Error("complete"), { code: "subscription_exists", status: 409 }));
+    f.setNow("2026-02-01T00:00:00Z");
+    await expect(f.service.checkout("alice", monthlyTerms(f.config), f.provider)).rejects.toMatchObject({ code: "subscription_exists" });
+    expect(f.provider.checkout).toHaveBeenCalledTimes(1);
+    expect(f.store.accounts.get("stripe-test:alice")!.signups[f.checkout.orderId].state).toBe("pending");
   });
   it("partial refund preserves the paid period and renewal", async () => {
     const f = await monthlyFixture(); f.observation.payments[0].refunds.re_one = { id: "re_one", amount: 100, state: "succeeded" }; await f.send();

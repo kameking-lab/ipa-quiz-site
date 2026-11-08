@@ -44,13 +44,12 @@ it("stops while idle and resumes without a catch-up request before the hourly bo
 });
 it("labels a retained historical sample with its original timestamp and never clears learning data",async()=>{
   localStorage.setItem(LS_KEYS.history,"existing-history");render(<TotalAnswerCounter/>);
-  expect(screen.getByText(/リアルタイム表示ではありません/)).toBeInTheDocument();
   const snapshot=measuredPresence(data,Date.now());emit({mode:"measured",snapshot,previous:null});
-  expect(screen.getByLabelText("前回取得時点の学習状況")).toBeInTheDocument();expect(screen.getByText(/前回取得時点の直近5分の学習者 3人/)).toBeInTheDocument();
+  expect(screen.getByLabelText("前回取得時点の学習状況")).toBeInTheDocument();expect(document.querySelector(".study-room-total")).toHaveTextContent("3人");
   await advance(PRESENCE_REFRESH_MS);emit({mode:"stale",snapshot:null,previous:snapshot,reason:"unavailable"});
-  expect(document.querySelector("time")?.getAttribute("datetime")).toBe(snapshot.measuredAt);expect(screen.getByText(/JST/)).toBeInTheDocument();expect(localStorage.getItem(LS_KEYS.history)).toBe("existing-history");
+  expect(document.querySelector("time")?.getAttribute("datetime")).toBe(snapshot.measuredAt);expect(screen.getByText(/時点/)).toBeInTheDocument();expect(localStorage.getItem(LS_KEYS.history)).toBe("existing-history");
 });
 it("preserves a measured zero but refuses unvalidated error-body counts",()=>{
-  render(<TotalAnswerCounter/>);const snapshot=measuredPresence({count:0,exams:[]},Date.now());emit({mode:"measured",snapshot,previous:null});expect(screen.getByText(/前回取得時点の直近5分の学習者 0人/)).toBeInTheDocument();
+  render(<TotalAnswerCounter/>);const snapshot=measuredPresence({count:0,exams:[]},Date.now());emit({mode:"measured",snapshot,previous:null});expect(document.querySelector(".study-room-total")).toHaveTextContent("0人");
   emit({mode:"stale",previous:{count:99,exams:[]},snapshot:null});expect(screen.queryByText(/99人/)).not.toBeInTheDocument();expect(document.querySelector("time")).toBeNull();
 });

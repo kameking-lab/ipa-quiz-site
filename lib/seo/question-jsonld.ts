@@ -1,4 +1,5 @@
 import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
+import { PAYWALLED_SELECTOR } from "@/lib/billing/paywall";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import { questionPagePath } from "@/lib/seo/question-url";
 import { recordedContentDate } from "@/lib/questions/last-updated";
@@ -30,6 +31,16 @@ export function sessionLabel(session: string, exam?: ExamCode): string {
   if (parsed && (exam === "kenki1" || exam === "kenki2" || exam === "kanteishi" || exam === "kaikeishi")) return practiceSessionLabel(parsed, exam);
   if (parsed && ["gyosei", "kanri", "kansa", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "required", "theory", "practical", "kiso", "kogaku-a", "kogaku-b", "hoki", "tiri"].includes(parsed)) return practiceSessionLabel(parsed);
   const map: Record<string, string> = {
+    "constitution": "憲法",
+    "civil-law": "民法",
+    "criminal-law": "刑法",
+    "admin-law": "行政法",
+    "commercial-law": "商法",
+    "civil-procedure": "民事訴訟法",
+    "criminal-procedure": "刑事訴訟法",
+    "tsukan-law": "通関業法",
+    "customs-law": "関税法等",
+    "tsukan-practical": "通関実務",
     "patent": "特許・実用新案",
     "design": "意匠",
     "trademark": "商標",
@@ -142,6 +153,7 @@ export interface QuestionJsonLdInput {
   /** Requested breadcrumb context may differ from the canonical resource. */
   requestedPageUrlAbs?: string;
   breadcrumbItems?: QuestionBreadcrumbItem[];
+
 }
 
 /**
@@ -168,7 +180,7 @@ export function buildQuestionJsonLd({
 
   // The administering body authored the question; this site authored the
   // learning explanation. Keep the author inline so the node is self-contained.
-  const releaseSource = ["benrishi", "sokuryoshi", "dokugeki-chiba", "jokaso-setsubishi", "chiiki-ryoko", "junkango-kansai", "kukaku-seiri", "dojo-osen", "kenchikushi2", "mokuzo-kenchikushi", "kenchikushi1", "khk-kagaku", "sekou-1kenchiku", "chintai", "kyusui", "biru-kan", "gijutsushi1-kikai", "hoshasen-1", "hoshasen-2", "energy-kanri"].includes(q.exam) ? getQualificationByExamCode(q.exam) : undefined;
+  const releaseSource = ["benrishi", "sokuryoshi", "dokugeki-chiba", "jokaso-setsubishi", "chiiki-ryoko", "junkango-kansai", "kukaku-seiri", "dojo-osen", "kenchikushi2", "mokuzo-kenchikushi", "kenchikushi1", "khk-kagaku", "sekou-1kenchiku", "chintai", "kyusui", "biru-kan", "gijutsushi1-kikai", "hoshasen-1", "hoshasen-2", "energy-kanri", "career-consultant", "kanri-eiyoshi", "sogo-ryoko", "shiho-tanto", "yobi-tanto", "sokuryoshiho", "caremanager", "kikai-hozen", "tsukanshi"].includes(q.exam) ? getQualificationByExamCode(q.exam) : undefined;
   const questionAuthor = releaseSource
     ? { "@type": "Organization", name: releaseSource.administrator, url: new URL(releaseSource.officialQuestionsUrl).origin }
     : q.exam === "kisho"
@@ -427,4 +439,15 @@ export function buildQuestionJsonLd({
       },
     ],
   };
+}
+
+/**
+ * The daily free quota is active: a person past it sees the limit screen in
+ * place of the element matching PAYWALLED_SELECTOR. Declared as paywalled
+ * content (Google flexible sampling), so the crawler's full view is not cloaking.
+ */
+export function withQuotaPaywall(jsonLd: ReturnType<typeof buildQuestionJsonLd>) {
+  return { ...jsonLd, "@graph": jsonLd["@graph"].map(node => "hasPart" in node
+    ? { ...node, isAccessibleForFree: false, hasPart: [node.hasPart, { "@type": "WebPageElement", isAccessibleForFree: false, cssSelector: PAYWALLED_SELECTOR }] }
+    : node) };
 }

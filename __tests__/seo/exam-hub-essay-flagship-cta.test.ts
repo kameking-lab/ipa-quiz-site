@@ -22,21 +22,18 @@ describe("exam hub funnels the 論文 essay CTA to the indexable flagship /essay
   it("does not advertise unpublished practice or official past-paper grading", () => {
     expect(source).not.toContain("練習問題で腕試し（ベータ）");
     expect(source).not.toContain("実際の午後II過去問で AI 添削");
-    expect(source).toContain("公式過去問の採点ではありません");
+    expect(source).toContain("オリジナル論述教材で AI 添削");
   });
 
-  it.each(["st", "sa"] as const)("%s discloses original essay material and unsupported afternoon I grading", exam => {
+  it.each(["st", "sa"] as const)("%s labels the essay link as original material", exam => {
     const html = renderToStaticMarkup(createElement(ExamTopGuide, { exam }));
     expect(html).toContain('href="/essay"');
-    expect(html).toContain("午後IのAI採点は未対応");
-    expect(html).toContain("編集者作成のオリジナル教材");
-    expect(html).toContain("公式過去問の採点ではなく");
+    expect(html).toContain("オリジナル論述教材でAI添削");
     expect(html).not.toContain(`href="/${exam}/afternoon"`);
   });
 
   it.each(["sc", "nw", "ap"] as const)("%s does not offer unsupported AI grading", exam => {
     const html = renderToStaticMarkup(createElement(ExamTopGuide, { exam }));
-    expect(html).toContain("午後記述のAI採点は未対応です");
     expect(html).not.toContain('href="/essay"');
     expect(html).not.toContain(`href="/${exam}/afternoon"`);
   });

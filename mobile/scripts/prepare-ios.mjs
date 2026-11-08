@@ -1,6 +1,7 @@
 import { access, copyFile, cp } from "node:fs/promises";
 import { execFileSync } from "node:child_process";
 import { fileURLToPath } from "node:url";
+import { installLaunchScreen } from "./install-launch-screen.mjs";
 
 // Windows can generate and inspect native files with Ruby + xcodeproj. Only
 // macOS can install CocoaPods, compile, sign or upload the resulting app.
@@ -23,15 +24,16 @@ catch (error) {
   if (error.code !== "ENOENT") throw error;
   cap("add", "ios", "--packagemanager", "CocoaPods");
 }
-// cap sync preserves the App target additions. Install our pinned Pod before
-// sync invokes pod install (including on an existing generated project).
+// cap sync preserves the App target additions. Add/remove advertising Pods
+// before sync invokes pod install (including on an existing generated project).
 run(process.execPath, ["scripts/configure-ads-pods.mjs"]);
 cap("sync", "ios");
-await copyFile(new URL("../ios-assets/PrivacyInfo.xcprivacy", import.meta.url), new URL("../ios/App/App/PrivacyInfo.xcprivacy", import.meta.url));
+// configure-ios.rb generates the privacy manifest for the effective ads setting.
 await copyFile(new URL("../ios-assets/QualificationBridgeViewController.swift", import.meta.url), new URL("../ios/App/App/QualificationBridgeViewController.swift", import.meta.url));
 await copyFile(new URL("../ios-assets/TrackingTransparencyPlugin.swift", import.meta.url), new URL("../ios/App/App/TrackingTransparencyPlugin.swift", import.meta.url));
 await cp(new URL("../ios-assets/AppIcon.appiconset/", import.meta.url),
   new URL("../ios/App/App/Assets.xcassets/AppIcon.appiconset/", import.meta.url), { recursive: true, force: true });
+await installLaunchScreen(fileURLToPath(new URL("../ios/App/App/", import.meta.url)));
 run("ruby", ["scripts/configure-ios.rb"]);
 run("ruby", ["scripts/verify-ios.rb"]);
 if (process.platform !== "darwin") {

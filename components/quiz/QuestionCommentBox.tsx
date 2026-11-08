@@ -6,6 +6,7 @@ import { MessageSquare, Send } from "lucide-react";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { cn } from "@/lib/utils";
 import { submitSupport } from "@/lib/feedback/submit";
+import { PrivacyNote } from "@/components/ui/privacy-note";
 import { readLocalFeedback } from "@/lib/feedback/local-data";
 
 export interface QuestionComment {
@@ -115,8 +116,7 @@ function QuestionCommentForm({ questionId }: { questionId: string }) {
         運営へ補足解説・別解を送る
       </h3>
       <p className="mb-3 text-[11px] text-zinc-500 dark:text-zinc-400">
-        運営への連絡用です。他の利用者には公開されません。送信できた内容の控えをこの端末に保存します。
-        解説の誤りは「誤りを報告」から、返信が必要な場合はお問い合わせをご利用ください。個人情報は入力しないでください。
+        運営だけが読みます（公開されません）。個人情報は書かないでください。
       </p>
 
       <label htmlFor={`qcomment-${questionId}`} className="sr-only">
@@ -152,6 +152,7 @@ function QuestionCommentForm({ questionId }: { questionId: string }) {
           {sending ? "送信中..." : "運営へ送信する"}
         </button>
       </div>
+      <PrivacyNote variant="message" className="mt-2" />
       {receiptId && <p role="status" className="mt-3 break-all text-xs">運営の受付先に送信しました。受付番号: {receiptId}</p>}
       <Link href="/contact" className="inline-flex min-h-11 items-center text-xs underline">返信が必要なお問い合わせ</Link>
 

@@ -1,0 +1,2261 @@
+{
+  "checkedAt": "2026-11-06",
+  "questionCount": 100,
+  "files": [
+    {
+      "name": "2024-questions",
+      "url": "https://www.kikaihozenshi.jp/pdf/2024/2024_2kyu_kikai_mondai.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "bytes": 1031218,
+      "sha256": "f0d3c47c972b07a6e90c38c9d12d343acb8e44afda774827e5571c2efd291edd",
+      "pages": 11,
+      "lastModified": "Fri, 20 Dec 2024 00:09:53 GMT"
+    },
+    {
+      "name": "2024-answers",
+      "url": "https://www.kikaihozenshi.jp/pdf/2024/2024_2kyu_kikai_kaitou.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "bytes": 170697,
+      "sha256": "718b96b0a078ed89f28708af4d9793981df83ea99319b7c531ea0fb5eea1674d",
+      "pages": 1,
+      "lastModified": "Fri, 20 Dec 2024 00:09:53 GMT"
+    },
+    {
+      "name": "2025-questions",
+      "url": "https://www.kikaihozenshi.jp/pdf/2025/2025_2kyu_kikai_mondai.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "bytes": 1024420,
+      "sha256": "174a0d191169618a60672b7ac7558d80957bc20b244b63515155987ff3c8a1af",
+      "pages": 11,
+      "lastModified": "Fri, 19 Dec 2025 00:28:10 GMT"
+    },
+    {
+      "name": "2025-answers",
+      "url": "https://www.kikaihozenshi.jp/pdf/2025/2025_2kyu_kikai_kaitou.pdf",
+      "status": 200,
+      "contentType": "application/pdf",
+      "bytes": 170729,
+      "sha256": "5079e853c42a8ce5595963e52c88c5eb47f1d291e8e6cc64d58bdc83e5a1a5e3",
+      "pages": 1,
+      "lastModified": "Fri, 19 Dec 2025 00:30:13 GMT"
+    }
+  ],
+  "method": "PyMuPDF 1.28でテキスト層を行座標ごとに取得し、問番号アンカーのy範囲で本文・選択肢を再構成。テキスト層の出現順は印刷順と一致しない（例：2024年度No.1〜7の順序が入れ替わる）ため、座標順を採用。全ページを2倍描画したPNGと目視照合。図表問題は3倍描画のページ全体から切り出しWebP（ロスレス）で保存。",
+  "sourceTextSha256Definition": "sha256(UTF-8(NFC(JSON.stringify({question, choices}))))",
+  "questions": [
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q1",
+      "year": 2024,
+      "qNumber": 1,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        65.4,
+        545,
+        106.6
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "e83e04f62516178b12ef2893bf59ddeba681d58ccd9ffb1ebb97e3f326a712a1",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q2",
+      "year": 2024,
+      "qNumber": 2,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        112.0,
+        545,
+        153.2
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "ccae58a04e36ac02696fec151f38592ddbaffb8450b0fc801325b6cbb6586cc4",
+      "officialAnswer": "×",
+      "answerFromAnswerPdf": "×",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q3",
+      "year": 2024,
+      "qNumber": 3,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        156.3,
+        545,
+        184.3
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "40fb398822f2d36dfd58e06ed9716cb43d12514d047e5b19603099230a468763",
+      "officialAnswer": "×",
+      "answerFromAnswerPdf": "×",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q4",
+      "year": 2024,
+      "qNumber": 4,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        189.5,
+        545,
+        217.5
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "df6e49a1180a0ceb41b1c801a4f8d463282b2fe9d2f4e7337a8fc7178af374a9",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q5",
+      "year": 2024,
+      "qNumber": 5,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        222.8,
+        545,
+        264.0
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "cdeb513820081201be942df3e1b6122e618db3d6834ebcec97c99b6898097a07",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q6",
+      "year": 2024,
+      "qNumber": 6,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        269.3,
+        545,
+        297.3
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "a6b0def3576cb2e394e874203135c0c06444c23285f6c27cfeb2f8285687962f",
+      "officialAnswer": "×",
+      "answerFromAnswerPdf": "×",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q7",
+      "year": 2024,
+      "qNumber": 7,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        302.6,
+        545,
+        330.6
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "4961eff41e2c30003de0cfa485c613b7ab6d7ebe1972e37e42b97e93cbc491a9",
+      "officialAnswer": "×",
+      "answerFromAnswerPdf": "×",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q8",
+      "year": 2024,
+      "qNumber": 8,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        335.8,
+        545,
+        377.0
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [
+        "question"
+      ],
+      "sourceTextSha256": "eec51ff43938f04007d58d0d1bb824a0729cafd02aa2055b13348fcb378b49a0",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q9",
+      "year": 2024,
+      "qNumber": 9,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        380.1,
+        545,
+        408.1
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "b156cedb5eeb5bbc560212079651ed627fbbc0b0a6defbd7a7ea405e5dd27921",
+      "officialAnswer": "×",
+      "answerFromAnswerPdf": "×",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q10",
+      "year": 2024,
+      "qNumber": 10,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        413.3,
+        545,
+        441.3
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "9abf9330390df72cc0632fc4da91469f58a4da9f18ac2402c8db83a61f7be95f",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q11",
+      "year": 2024,
+      "qNumber": 11,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        446.6,
+        545,
+        487.8
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "118d837744dfab4b5c85fd363e64f42a54a8a59d6dea66b868965cdd00358c68",
+      "officialAnswer": "×",
+      "answerFromAnswerPdf": "×",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q12",
+      "year": 2024,
+      "qNumber": 12,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        490.8,
+        545,
+        518.8
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "e167c38db3b63e966334839eed1a06cd38965e0715504280c441f46845b7ab5c",
+      "officialAnswer": "×",
+      "answerFromAnswerPdf": "×",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q13",
+      "year": 2024,
+      "qNumber": 13,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        524.1,
+        545,
+        565.3
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "4838287456a24bc8169b00f1467bf65465277733df10cdd53f2aa52ebbb93e63",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q14",
+      "year": 2024,
+      "qNumber": 14,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        571.4,
+        545,
+        612.6
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "3ab6d0351ca785626855582fe4b42a55159a415bae5a6e27413d46fdafe23740",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q15",
+      "year": 2024,
+      "qNumber": 15,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        617.1,
+        545,
+        645.1
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "931aca90b8290a8d5624c98b407c55274a55e82960cb6acdd8855bf56d79aa17",
+      "officialAnswer": "×",
+      "answerFromAnswerPdf": "×",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q16",
+      "year": 2024,
+      "qNumber": 16,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        650.3,
+        545,
+        678.3
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "898b135fa321915d764692c675c43ead46a8b9eae9235b4987f33ed8ec983156",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q17",
+      "year": 2024,
+      "qNumber": 17,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        683.6,
+        545,
+        711.6
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "2a9e4f57d14723d81792de80adebdd2a8d8c51b3b771b6c3a4f32a87aaa2dca7",
+      "officialAnswer": "×",
+      "answerFromAnswerPdf": "×",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q18",
+      "year": 2024,
+      "qNumber": 18,
+      "sourcePage": 3,
+      "printedPage": 2,
+      "clip": [
+        30,
+        61.7,
+        545,
+        89.7
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "e518259cc53e405b110ed1a73e411ca8f0b51fa3b61653d324f995c075465e78",
+      "officialAnswer": "×",
+      "answerFromAnswerPdf": "×",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q19",
+      "year": 2024,
+      "qNumber": 19,
+      "sourcePage": 3,
+      "printedPage": 2,
+      "clip": [
+        30,
+        95.0,
+        545,
+        123.0
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "a24dee6fa0c289ef6dfe550421bdc38bdf7874fb367bb49469e452cd5eadf7e9",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q20",
+      "year": 2024,
+      "qNumber": 20,
+      "sourcePage": 3,
+      "printedPage": 2,
+      "clip": [
+        30,
+        128.2,
+        545,
+        156.2
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "061f92f6d81451c47fea1632121e698123b0d138ff83686e7a9525a3bb6386ae",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q21",
+      "year": 2024,
+      "qNumber": 21,
+      "sourcePage": 3,
+      "printedPage": 2,
+      "clip": [
+        30,
+        161.4,
+        545,
+        202.6
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "a4fe899e18f39c31d16d56df7cad0fea8694d8ebf2bb232b33b6fb7095a95842",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q22",
+      "year": 2024,
+      "qNumber": 22,
+      "sourcePage": 3,
+      "printedPage": 2,
+      "clip": [
+        30,
+        205.0,
+        545,
+        246.2
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "bcd80fc8c21eb1edbe0d1f7aef68d05173c13c9eb4fc362b8db452dd1c75b994",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q23",
+      "year": 2024,
+      "qNumber": 23,
+      "sourcePage": 3,
+      "printedPage": 2,
+      "clip": [
+        30,
+        249.3,
+        545,
+        277.3
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "1943bd40133424aa5846d05b8040f798dd9fd16441a978d14725d4a7227c470d",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q24",
+      "year": 2024,
+      "qNumber": 24,
+      "sourcePage": 3,
+      "printedPage": 2,
+      "clip": [
+        30,
+        282.5,
+        545,
+        310.5
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "3db9d0532d000d1869a104ef259898d7be3f5b47bf4c55dd6bcf7502534ed610",
+      "officialAnswer": "×",
+      "answerFromAnswerPdf": "×",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q25",
+      "year": 2024,
+      "qNumber": 25,
+      "sourcePage": 3,
+      "printedPage": 2,
+      "clip": [
+        30,
+        315.8,
+        545,
+        357.0
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "9413bdfc7388a35f86f81711bd8ae225467dac6e6e2a5b69090b43557cf19115",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q26",
+      "year": 2024,
+      "qNumber": 26,
+      "sourcePage": 4,
+      "printedPage": 3,
+      "clip": [
+        30,
+        65.4,
+        545,
+        198.1
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "b3524788caacfee5931c0b0aa937b56594b211e86bdaea462a0a20af49b4d2e5",
+      "officialAnswer": "ア",
+      "answerFromAnswerPdf": "ア",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q27",
+      "year": 2024,
+      "qNumber": 27,
+      "sourcePage": 4,
+      "printedPage": 3,
+      "clip": [
+        30,
+        207.0,
+        545,
+        330.1
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "e5289305b74b8d8694f4db3e7aac1f2729b28c012d7683f6059118a6e9e98f10",
+      "officialAnswer": "ウ",
+      "answerFromAnswerPdf": "ウ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q28",
+      "year": 2024,
+      "qNumber": 28,
+      "sourcePage": 4,
+      "printedPage": 3,
+      "clip": [
+        30,
+        339.0,
+        545,
+        504.9
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "8b076da822ad20c3ebe91e89f2684e0e16e9fb93c79bcb699741ea81707dfb11",
+      "officialAnswer": "ア",
+      "answerFromAnswerPdf": "ア",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q29",
+      "year": 2024,
+      "qNumber": 29,
+      "sourcePage": 4,
+      "printedPage": 3,
+      "clip": [
+        30,
+        513.9,
+        545,
+        646.5
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "4a6b04407e1583c3718a279d4740f102581965d349dc7c679240c6624d13f61b",
+      "officialAnswer": "イ",
+      "answerFromAnswerPdf": "イ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q30",
+      "year": 2024,
+      "qNumber": 30,
+      "sourcePage": 5,
+      "printedPage": 4,
+      "clip": [
+        30,
+        65.4,
+        545,
+        228.3
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "4ff44a10a80ca406008e9e94fbe3509e863539819cdf015b311891f7184a2792",
+      "officialAnswer": "ア",
+      "answerFromAnswerPdf": "ア",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q31",
+      "year": 2024,
+      "qNumber": 31,
+      "sourcePage": 5,
+      "printedPage": 4,
+      "clip": [
+        30,
+        237.3,
+        545,
+        402.3
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "c1dfff6fd14fc608e8d6556691c08616ea8194324515541171376806ee49415c",
+      "officialAnswer": "エ",
+      "answerFromAnswerPdf": "エ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q32",
+      "year": 2024,
+      "qNumber": 32,
+      "sourcePage": 5,
+      "printedPage": 4,
+      "clip": [
+        30,
+        407.7,
+        545,
+        551.2
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "18c2dfbeafca307cd7fe7b4eb44068ddc40f75373e06b0333bce4719b31aa93c",
+      "officialAnswer": "ア",
+      "answerFromAnswerPdf": "ア",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q33",
+      "year": 2024,
+      "qNumber": 33,
+      "sourcePage": 5,
+      "printedPage": 4,
+      "clip": [
+        30,
+        556.6,
+        545,
+        679.6
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "5a267e834e7293679d0597591814c3509408999b4487a71dcfccb0f6df26aa4a",
+      "officialAnswer": "ウ",
+      "answerFromAnswerPdf": "ウ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q34",
+      "year": 2024,
+      "qNumber": 34,
+      "sourcePage": 6,
+      "printedPage": 5,
+      "clip": [
+        30,
+        65.4,
+        545,
+        188.5
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "22319e85194f1df23fd2e419f6bc8c8ab46a813c542368812e06d7742a3de97b",
+      "officialAnswer": "ウ",
+      "answerFromAnswerPdf": "ウ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q35",
+      "year": 2024,
+      "qNumber": 35,
+      "sourcePage": 6,
+      "printedPage": 5,
+      "clip": [
+        30,
+        197.4,
+        545,
+        377.4
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "5b2e9a627f81f777d25f5023e965baa5b452d607e0dce3beb90cd123075cd4ef",
+      "officialAnswer": "イ",
+      "answerFromAnswerPdf": "イ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q36",
+      "year": 2024,
+      "qNumber": 36,
+      "sourcePage": 6,
+      "printedPage": 5,
+      "clip": [
+        30,
+        386.3,
+        545,
+        509.4
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "e7862e38d3f458cc90e2ae187cdfc7fcc121c732179a00cedfdceb3af76c6970",
+      "officialAnswer": "エ",
+      "answerFromAnswerPdf": "エ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q37",
+      "year": 2024,
+      "qNumber": 37,
+      "sourcePage": 6,
+      "printedPage": 5,
+      "clip": [
+        30,
+        518.3,
+        545,
+        651.0
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "db86c992d5d852fbf5c5d703d82172f802ca8dd71d65ea2ef0dc3fbcf68b64b2",
+      "officialAnswer": "ア",
+      "answerFromAnswerPdf": "ア",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q38",
+      "year": 2024,
+      "qNumber": 38,
+      "sourcePage": 7,
+      "printedPage": 6,
+      "clip": [
+        30,
+        83.9,
+        545,
+        205.6
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "d923d755a33e486c790c065eeb864424ab8a7f225bf5bae41d608f82e9cf179d",
+      "officialAnswer": "エ",
+      "answerFromAnswerPdf": "エ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q39",
+      "year": 2024,
+      "qNumber": 39,
+      "sourcePage": 7,
+      "printedPage": 6,
+      "clip": [
+        30,
+        214.6,
+        545,
+        379.0
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "e006540a465ea1eab1025a13f4fc2eea2de3fadf03bab5c1e0323ef1b5bbfee6",
+      "officialAnswer": "エ",
+      "answerFromAnswerPdf": "エ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q40",
+      "year": 2024,
+      "qNumber": 40,
+      "sourcePage": 7,
+      "printedPage": 6,
+      "clip": [
+        30,
+        388.0,
+        545,
+        521.2
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "9e32d72baeef2d4d7231ef2812cf97d33d8b2d146755a47534cc07942ac5970a",
+      "officialAnswer": "エ",
+      "answerFromAnswerPdf": "エ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q41",
+      "year": 2024,
+      "qNumber": 41,
+      "sourcePage": 7,
+      "printedPage": 6,
+      "clip": [
+        30,
+        526.6,
+        545,
+        673.3
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "6b2612b9dd61155fe6acef94a55f0a05dc6a0887b93ea22191c9cf1ca3808676",
+      "officialAnswer": "ア",
+      "answerFromAnswerPdf": "ア",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q42",
+      "year": 2024,
+      "qNumber": 42,
+      "sourcePage": 8,
+      "printedPage": 7,
+      "clip": [
+        30,
+        83.9,
+        545,
+        249.8
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "b835f441d1535efd6de9044c00c2d1afb586f697b61610112699f016848c84bf",
+      "officialAnswer": "ウ",
+      "answerFromAnswerPdf": "ウ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q43",
+      "year": 2024,
+      "qNumber": 43,
+      "sourcePage": 8,
+      "printedPage": 7,
+      "clip": [
+        30,
+        258.8,
+        545,
+        381.8
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "a3cc81525fa1608119b0e8d1be73c047e17ca7f7c826bfcbe20c4bf8aa713313",
+      "officialAnswer": "イ",
+      "answerFromAnswerPdf": "イ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q44",
+      "year": 2024,
+      "qNumber": 44,
+      "sourcePage": 8,
+      "printedPage": 7,
+      "clip": [
+        30,
+        390.8,
+        545,
+        513.8
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "25632dbaadc52df34f9a8eb9a52f0000505fd4ea15825c070a4b2feaa3b06429",
+      "officialAnswer": "ウ",
+      "answerFromAnswerPdf": "ウ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q45",
+      "year": 2024,
+      "qNumber": 45,
+      "sourcePage": 8,
+      "printedPage": 7,
+      "clip": [
+        30,
+        522.8,
+        545,
+        674.6
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "9d923722b962f09368c2c7edd026a54dfc2f3e86f8395637238f1326b38ae7c3",
+      "officialAnswer": "エ",
+      "answerFromAnswerPdf": "エ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q46",
+      "year": 2024,
+      "qNumber": 46,
+      "sourcePage": 9,
+      "printedPage": 8,
+      "clip": [
+        30,
+        65.4,
+        545,
+        200.2
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "163a42af96029ec723ccd9c6d2d372253a1733c7a88ce5dd8fccfd6c032ac403",
+      "officialAnswer": "エ",
+      "answerFromAnswerPdf": "エ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q47",
+      "year": 2024,
+      "qNumber": 47,
+      "sourcePage": 9,
+      "printedPage": 8,
+      "clip": [
+        30,
+        209.2,
+        545,
+        477.8
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "4370f1848a9f6d44e1336b2378e342a4241ae486ef07898ffd096a20dc2be5b3",
+      "officialAnswer": "ア",
+      "answerFromAnswerPdf": "ア",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": {
+        "path": "images/2024-q47.webp",
+        "sha256": "c273ac7f6195657383fe7636167b80ba8c241289905e4d9bd2ecb15b0d2d8352",
+        "renderScale": 3,
+        "clip": [
+          30,
+          209.2,
+          545,
+          477.8
+        ]
+      }
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q48",
+      "year": 2024,
+      "qNumber": 48,
+      "sourcePage": 9,
+      "printedPage": 8,
+      "clip": [
+        30,
+        486.8,
+        545,
+        738.3
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "76063dfed5a6fa42a402b42f6717c140a846bbd85c7ea92b8720a688a0c9872b",
+      "officialAnswer": "エ",
+      "answerFromAnswerPdf": "エ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": {
+        "path": "images/2024-q48.webp",
+        "sha256": "4146e0bcb552cbd7fb60a9bf853a6f9245a3a9050988f6d493ef964f0ab784d8",
+        "renderScale": 3,
+        "clip": [
+          30,
+          486.8,
+          545,
+          738.3
+        ]
+      }
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q49",
+      "year": 2024,
+      "qNumber": 49,
+      "sourcePage": 10,
+      "printedPage": 9,
+      "clip": [
+        30,
+        65.4,
+        545,
+        198.8
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "35576cb427848c474235bc427acb84971e6c26de5af1a9a5f1beb231639a48f7",
+      "officialAnswer": "イ",
+      "answerFromAnswerPdf": "イ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2024-kikai2-gakka-q50",
+      "year": 2024,
+      "qNumber": 50,
+      "sourcePage": 10,
+      "printedPage": 9,
+      "clip": [
+        30,
+        207.8,
+        545,
+        418.0
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "b2b56146d3e8c287d6be63b00cda025b61ab169517d553991cc65ff54f2f1726",
+      "officialAnswer": "ア",
+      "answerFromAnswerPdf": "ア",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": {
+        "path": "images/2024-q50.webp",
+        "sha256": "4b127dfe2babea14c2da4b798c514e6c379ebec05a5135826b556410c3f5e046",
+        "renderScale": 3,
+        "clip": [
+          30,
+          207.8,
+          545,
+          418.0
+        ]
+      }
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q1",
+      "year": 2025,
+      "qNumber": 1,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        65.4,
+        545,
+        93.4
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "6590e6c4f4eb13aab360e324c4394f14ef247a50dbe8dcb0a3cd1f6c6942c20f",
+      "officialAnswer": "×",
+      "answerFromAnswerPdf": "×",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q2",
+      "year": 2025,
+      "qNumber": 2,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        97.4,
+        545,
+        138.6
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "9861cba895afe11d1048d16ccacb80732f67ad11e3a30ad7bbcd8bfc411a073f",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q3",
+      "year": 2025,
+      "qNumber": 3,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        145.5,
+        545,
+        283.9
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "d9559e46fda23b2700a3d6496a96589d456a71d83ccc8210a5538e622713eb3b",
+      "officialAnswer": "×",
+      "answerFromAnswerPdf": "×",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": {
+        "path": "images/2025-q03.webp",
+        "sha256": "0e7bfb90783963a9a7244f6bbf4777fb9c2647eaeccbc0edf14384349b871de0",
+        "renderScale": 3,
+        "clip": [
+          30,
+          145.5,
+          545,
+          283.9
+        ]
+      }
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q4",
+      "year": 2025,
+      "qNumber": 4,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        294.3,
+        545,
+        338.0
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [
+        "question"
+      ],
+      "sourceTextSha256": "5be1f8719c21170aceb1c4bfd853462d427f79388a1d7215eaad2e3f0861fb4b",
+      "officialAnswer": "×",
+      "answerFromAnswerPdf": "×",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q5",
+      "year": 2025,
+      "qNumber": 5,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        340.4,
+        545,
+        381.6
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "e459a7532ddd1717a747fc01494f90cbc5683745a4c70686fb9d42b2e0a39c58",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q6",
+      "year": 2025,
+      "qNumber": 6,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        388.8,
+        545,
+        430.0
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "a2f9d6d0759d555e8649b1e1a1eb060aef470069ce77b359dfa1f8e71513799a",
+      "officialAnswer": "×",
+      "answerFromAnswerPdf": "×",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q7",
+      "year": 2025,
+      "qNumber": 7,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        437.0,
+        545,
+        478.2
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "da897a777be85ce3352bfae2a4f44d9f9830e8ebf4409e561ac18864e2b9f612",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q8",
+      "year": 2025,
+      "qNumber": 8,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        485.1,
+        545,
+        513.1
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "930b648a5d434e4594739d3fa3163bad74a3185faea35804237d8604e27e7537",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q9",
+      "year": 2025,
+      "qNumber": 9,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        517.6,
+        545,
+        572.0
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "a6984880eb79cb8b52441fbc0a06d89133cbae29f9ffb24bd6d49eed7cf4937b",
+      "officialAnswer": "×",
+      "answerFromAnswerPdf": "×",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q10",
+      "year": 2025,
+      "qNumber": 10,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        582.2,
+        545,
+        623.4
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "5c5533c3401ea19b35d6958753223cd0766f1d0879313bed931cda462d9a43ec",
+      "officialAnswer": "×",
+      "answerFromAnswerPdf": "×",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q11",
+      "year": 2025,
+      "qNumber": 11,
+      "sourcePage": 2,
+      "printedPage": 1,
+      "clip": [
+        30,
+        630.3,
+        545,
+        658.3
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "f64e6bd3dc8a7e57b5d0c2fd45385a50132f9521557f686a0aee3d2fa068c9fd",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q12",
+      "year": 2025,
+      "qNumber": 12,
+      "sourcePage": 3,
+      "printedPage": 2,
+      "clip": [
+        30,
+        65.4,
+        545,
+        106.6
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "0a1fedbe5833b175ccc337b6d7941a87e5e33d25bd758902f3d51ee4fd717cdc",
+      "officialAnswer": "×",
+      "answerFromAnswerPdf": "×",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q13",
+      "year": 2025,
+      "qNumber": 13,
+      "sourcePage": 3,
+      "printedPage": 2,
+      "clip": [
+        30,
+        113.6,
+        545,
+        154.8
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "e11c3264cc6ffc75302960564665c77b13e803f1d100819c11062cfb236afbba",
+      "officialAnswer": "×",
+      "answerFromAnswerPdf": "×",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q14",
+      "year": 2025,
+      "qNumber": 14,
+      "sourcePage": 3,
+      "printedPage": 2,
+      "clip": [
+        30,
+        162.0,
+        545,
+        203.2
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "3f1e0d09422f7b004124cb8b6df874c9fd35aebb4d507554dffc71cbf1bc6701",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q15",
+      "year": 2025,
+      "qNumber": 15,
+      "sourcePage": 3,
+      "printedPage": 2,
+      "clip": [
+        30,
+        209.7,
+        545,
+        250.9
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "996adf06e10cb52df7e17d73d6b4c2ce040981559e7388f6ce36c239a495b083",
+      "officialAnswer": "×",
+      "answerFromAnswerPdf": "×",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q16",
+      "year": 2025,
+      "qNumber": 16,
+      "sourcePage": 3,
+      "printedPage": 2,
+      "clip": [
+        30,
+        257.8,
+        545,
+        285.8
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "4c49ee46253c0dedee3c322b54e1f925aa3b66fb7da8b439dbb3fa68cd63a102",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q17",
+      "year": 2025,
+      "qNumber": 17,
+      "sourcePage": 3,
+      "printedPage": 2,
+      "clip": [
+        30,
+        291.6,
+        545,
+        363.4
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [
+        "question"
+      ],
+      "sourceTextSha256": "8163995fa9584e2aa991b6e4954442e83e2b09a1e1a3ca475d536aeec071964e",
+      "officialAnswer": "×",
+      "answerFromAnswerPdf": "×",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": {
+        "path": "images/2025-q17.webp",
+        "sha256": "cadf5fc9ed7d0602a07136760177a6462145423b06987fdc745969b7e2eaf793",
+        "renderScale": 3,
+        "clip": [
+          30,
+          291.6,
+          545,
+          363.4
+        ]
+      }
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q18",
+      "year": 2025,
+      "qNumber": 18,
+      "sourcePage": 3,
+      "printedPage": 2,
+      "clip": [
+        30,
+        371.0,
+        545,
+        399.0
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "deaf7b7eda13cddf5f2377e1941d9ef41d8e9809c997760c8945a933b8be4a30",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q19",
+      "year": 2025,
+      "qNumber": 19,
+      "sourcePage": 3,
+      "printedPage": 2,
+      "clip": [
+        30,
+        404.8,
+        545,
+        432.8
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "a24dee6fa0c289ef6dfe550421bdc38bdf7874fb367bb49469e452cd5eadf7e9",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q20",
+      "year": 2025,
+      "qNumber": 20,
+      "sourcePage": 3,
+      "printedPage": 2,
+      "clip": [
+        30,
+        438.6,
+        545,
+        466.6
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "061f92f6d81451c47fea1632121e698123b0d138ff83686e7a9525a3bb6386ae",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q21",
+      "year": 2025,
+      "qNumber": 21,
+      "sourcePage": 3,
+      "printedPage": 2,
+      "clip": [
+        30,
+        472.5,
+        545,
+        513.7
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "4112675fe662b7907589960f951ae1ec0ce66bee722d642a80069f9ecce01a11",
+      "officialAnswer": "×",
+      "answerFromAnswerPdf": "×",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q22",
+      "year": 2025,
+      "qNumber": 22,
+      "sourcePage": 3,
+      "printedPage": 2,
+      "clip": [
+        30,
+        517.8,
+        545,
+        559.0
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "4a1a1c57b6ee20890e39a62d31a21dbc80f2376a6eb7e341b1ef47fde7fa2172",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q23",
+      "year": 2025,
+      "qNumber": 23,
+      "sourcePage": 3,
+      "printedPage": 2,
+      "clip": [
+        30,
+        570.2,
+        545,
+        611.4
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "5c32145a9554718d7a35d7c07373e716dce56efdfacfcb833cb5ce9e89049ff5",
+      "officialAnswer": "×",
+      "answerFromAnswerPdf": "×",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q24",
+      "year": 2025,
+      "qNumber": 24,
+      "sourcePage": 3,
+      "printedPage": 2,
+      "clip": [
+        30,
+        618.3,
+        545,
+        646.3
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "f05654ffd5ceca1181fb6f08230c68fa9e7e02ae7652dbe57a327a023d3879e7",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q25",
+      "year": 2025,
+      "qNumber": 25,
+      "sourcePage": 3,
+      "printedPage": 2,
+      "clip": [
+        30,
+        652.1,
+        545,
+        693.3
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "9413bdfc7388a35f86f81711bd8ae225467dac6e6e2a5b69090b43557cf19115",
+      "officialAnswer": "〇",
+      "answerFromAnswerPdf": "〇",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q26",
+      "year": 2025,
+      "qNumber": 26,
+      "sourcePage": 4,
+      "printedPage": 3,
+      "clip": [
+        30,
+        65.4,
+        545,
+        199.4
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "1fa458a34643ef6bca4f04ff226c50bf9c348e722482a49cb6ac3db43d69f6a6",
+      "officialAnswer": "ウ",
+      "answerFromAnswerPdf": "ウ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q27",
+      "year": 2025,
+      "qNumber": 27,
+      "sourcePage": 4,
+      "printedPage": 3,
+      "clip": [
+        30,
+        208.4,
+        545,
+        351.4
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [
+        "choices",
+        "question"
+      ],
+      "sourceTextSha256": "67cee33fdea42d34e0f2b87342b291ac7fbc14d8bddf495e2084c8c7a32b027e",
+      "officialAnswer": "イ",
+      "answerFromAnswerPdf": "イ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": {
+        "path": "images/2025-q27.webp",
+        "sha256": "9161457fa116a41c3423aa8192caac44ec5eff1a4895d9e06ad6b2b1871cefcd",
+        "renderScale": 3,
+        "clip": [
+          30,
+          208.4,
+          545,
+          351.4
+        ]
+      }
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q28",
+      "year": 2025,
+      "qNumber": 28,
+      "sourcePage": 4,
+      "printedPage": 3,
+      "clip": [
+        30,
+        358.1,
+        545,
+        527.6
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "727896213357e01f50a96bc6f36fefe82fb8b28b32cadb815b29115df9484182",
+      "officialAnswer": "ウ",
+      "answerFromAnswerPdf": "ウ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q29",
+      "year": 2025,
+      "qNumber": 29,
+      "sourcePage": 4,
+      "printedPage": 3,
+      "clip": [
+        30,
+        536.6,
+        545,
+        681.8
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [
+        "choices.ア"
+      ],
+      "sourceTextSha256": "e57dde0737c52503b156b5c0e7c5573cdeb536c7fc2ff52ba2b658b6f76735fd",
+      "officialAnswer": "エ",
+      "answerFromAnswerPdf": "エ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q30",
+      "year": 2025,
+      "qNumber": 30,
+      "sourcePage": 5,
+      "printedPage": 4,
+      "clip": [
+        30,
+        65.4,
+        545,
+        324.4
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "fb52e7225cc575897eb27197aa3f86b27288d02b0561a07355efe7227acb3255",
+      "officialAnswer": "ア",
+      "answerFromAnswerPdf": "ア",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": {
+        "path": "images/2025-q30.webp",
+        "sha256": "7e64b153cbd101652f3967bd248721e5aa0066595bbe5886aaa19491fb31521d",
+        "renderScale": 3,
+        "clip": [
+          30,
+          65.4,
+          545,
+          324.4
+        ]
+      }
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q31",
+      "year": 2025,
+      "qNumber": 31,
+      "sourcePage": 5,
+      "printedPage": 4,
+      "clip": [
+        30,
+        333.4,
+        545,
+        500.2
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "5595b4184331c3af9f0f04ab17c9425e5ad29963d686504f3c08a501479e4017",
+      "officialAnswer": "イ",
+      "answerFromAnswerPdf": "イ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q32",
+      "year": 2025,
+      "qNumber": 32,
+      "sourcePage": 5,
+      "printedPage": 4,
+      "clip": [
+        30,
+        505.8,
+        545,
+        655.9
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "ddc730e807e802961bf31b53d3effeb14dcf29922f8cf4f50eea7779d7010b60",
+      "officialAnswer": "ウ",
+      "answerFromAnswerPdf": "ウ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q33",
+      "year": 2025,
+      "qNumber": 33,
+      "sourcePage": 5,
+      "printedPage": 4,
+      "clip": [
+        30,
+        661.5,
+        545,
+        785.6
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "ca4d8be5e55b3e443620c44031adb6c45a65475368f98e5ae4b4b6c1ea6e3f67",
+      "officialAnswer": "エ",
+      "answerFromAnswerPdf": "エ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q34",
+      "year": 2025,
+      "qNumber": 34,
+      "sourcePage": 6,
+      "printedPage": 5,
+      "clip": [
+        30,
+        65.4,
+        545,
+        189.6
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "b6500dc759e78f3070d8bcfc936579ce71b262a1c1e33e8ebc07499b13524ff8",
+      "officialAnswer": "エ",
+      "answerFromAnswerPdf": "エ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q35",
+      "year": 2025,
+      "qNumber": 35,
+      "sourcePage": 6,
+      "printedPage": 5,
+      "clip": [
+        30,
+        198.5,
+        545,
+        382.6
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "5b2e9a627f81f777d25f5023e965baa5b452d607e0dce3beb90cd123075cd4ef",
+      "officialAnswer": "イ",
+      "answerFromAnswerPdf": "イ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q36",
+      "year": 2025,
+      "qNumber": 36,
+      "sourcePage": 6,
+      "printedPage": 5,
+      "clip": [
+        30,
+        391.6,
+        545,
+        571.8
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "3d60ac362de6c784e1355febb83e9466a45e42e672d1a672d76b57857799cadc",
+      "officialAnswer": "イ",
+      "answerFromAnswerPdf": "イ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q37",
+      "year": 2025,
+      "qNumber": 37,
+      "sourcePage": 6,
+      "printedPage": 5,
+      "clip": [
+        30,
+        581.8,
+        545,
+        756.4
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "5b8dbf245912fd6af6a97b2be09b24a5ae70da147692183ceac7bd61b1f13b93",
+      "officialAnswer": "ウ",
+      "answerFromAnswerPdf": "ウ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q38",
+      "year": 2025,
+      "qNumber": 38,
+      "sourcePage": 7,
+      "printedPage": 6,
+      "clip": [
+        30,
+        65.4,
+        545,
+        188.8
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "8ad2c2fcf2b470bf2b01191ea09a2432f025b877bc78b46bde0c29b282e1f1b1",
+      "officialAnswer": "ア",
+      "answerFromAnswerPdf": "ア",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q39",
+      "year": 2025,
+      "qNumber": 39,
+      "sourcePage": 7,
+      "printedPage": 6,
+      "clip": [
+        30,
+        197.8,
+        545,
+        365.7
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "06ed6c6ac4338fb9e8f429a59945787106b8ed0253b2ee7dc925c062e41b9a3d",
+      "officialAnswer": "エ",
+      "answerFromAnswerPdf": "エ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q40",
+      "year": 2025,
+      "qNumber": 40,
+      "sourcePage": 7,
+      "printedPage": 6,
+      "clip": [
+        30,
+        374.7,
+        545,
+        509.6
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "ff51ac246b3f0187c6a32789005ace9003c67e5207df20eddb8ff955140ccfd8",
+      "officialAnswer": "イ",
+      "answerFromAnswerPdf": "イ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q41",
+      "year": 2025,
+      "qNumber": 41,
+      "sourcePage": 7,
+      "printedPage": 6,
+      "clip": [
+        30,
+        515.2,
+        545,
+        664.2
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "2169f3b72a854a260eb0e9c195d66217c4aa3d0c2929ba8770292ff9c6a0892d",
+      "officialAnswer": "ア",
+      "answerFromAnswerPdf": "ア",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q42",
+      "year": 2025,
+      "qNumber": 42,
+      "sourcePage": 8,
+      "printedPage": 7,
+      "clip": [
+        30,
+        65.4,
+        545,
+        236.0
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "b39a427d0972038658a451c38856a6c556a74f9c097b6be934e18150e69b785f",
+      "officialAnswer": "エ",
+      "answerFromAnswerPdf": "エ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q43",
+      "year": 2025,
+      "qNumber": 43,
+      "sourcePage": 8,
+      "printedPage": 7,
+      "clip": [
+        30,
+        246.0,
+        545,
+        370.2
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "a3cc81525fa1608119b0e8d1be73c047e17ca7f7c826bfcbe20c4bf8aa713313",
+      "officialAnswer": "イ",
+      "answerFromAnswerPdf": "イ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q44",
+      "year": 2025,
+      "qNumber": 44,
+      "sourcePage": 8,
+      "printedPage": 7,
+      "clip": [
+        30,
+        379.1,
+        545,
+        503.2
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "ac74f942ef689c16f160a0a46fb98caa03a06e4d8fbc89c08a1d793d8ca830b1",
+      "officialAnswer": "ウ",
+      "answerFromAnswerPdf": "ウ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q45",
+      "year": 2025,
+      "qNumber": 45,
+      "sourcePage": 8,
+      "printedPage": 7,
+      "clip": [
+        30,
+        512.2,
+        545,
+        669.2
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "608be223f4b2c7145c2207f492be9473d214a7316547cdb6b11ed3c979b98c9d",
+      "officialAnswer": "イ",
+      "answerFromAnswerPdf": "イ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q46",
+      "year": 2025,
+      "qNumber": 46,
+      "sourcePage": 9,
+      "printedPage": 8,
+      "clip": [
+        30,
+        65.4,
+        545,
+        203.8
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "36c2fe1b4df83a6189d377f0be94a0b7354018906267f7e2495ff7570d37e4a2",
+      "officialAnswer": "ア",
+      "answerFromAnswerPdf": "ア",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q47",
+      "year": 2025,
+      "qNumber": 47,
+      "sourcePage": 9,
+      "printedPage": 8,
+      "clip": [
+        30,
+        212.8,
+        545,
+        453.3
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "960db85574778d7dd81eca25aed55df544ddc4e394017da76f486aaef14f6c7f",
+      "officialAnswer": "エ",
+      "answerFromAnswerPdf": "エ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": {
+        "path": "images/2025-q47.webp",
+        "sha256": "fbf53eed3f951e265a5ae876ec907b897b1d034cfa8df9b08086c5c5349c8a80",
+        "renderScale": 3,
+        "clip": [
+          30,
+          212.8,
+          545,
+          453.3
+        ]
+      }
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q48",
+      "year": 2025,
+      "qNumber": 48,
+      "sourcePage": 9,
+      "printedPage": 8,
+      "clip": [
+        30,
+        462.3,
+        545,
+        758.8
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "927c08b01ff7045c07d20275cfa2ba6af59940bec0563219650dae07daf54574",
+      "officialAnswer": "ア",
+      "answerFromAnswerPdf": "ア",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": {
+        "path": "images/2025-q48.webp",
+        "sha256": "24e37da0e54cda313fe613e1e12080642786f192497a7bd5e5ef2c7c526c9bea",
+        "renderScale": 3,
+        "clip": [
+          30,
+          462.3,
+          545,
+          758.8
+        ]
+      }
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q49",
+      "year": 2025,
+      "qNumber": 49,
+      "sourcePage": 10,
+      "printedPage": 9,
+      "clip": [
+        30,
+        65.4,
+        545,
+        201.1
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "35576cb427848c474235bc427acb84971e6c26de5af1a9a5f1beb231639a48f7",
+      "officialAnswer": "イ",
+      "answerFromAnswerPdf": "イ",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": null
+    },
+    {
+      "id": "kikai-hozen-2025-kikai2-gakka-q50",
+      "year": 2025,
+      "qNumber": 50,
+      "sourcePage": 10,
+      "printedPage": 9,
+      "clip": [
+        30,
+        210.0,
+        545,
+        419.7
+      ],
+      "textLayerReconstructed": true,
+      "manualOverride": [],
+      "sourceTextSha256": "b2b56146d3e8c287d6be63b00cda025b61ab169517d553991cc65ff54f2f1726",
+      "officialAnswer": "ア",
+      "answerFromAnswerPdf": "ア",
+      "answerMatch": true,
+      "renderedPageChecked": true,
+      "image": {
+        "path": "images/2025-q50.webp",
+        "sha256": "31c9f5634ad715ae37c31cc7df8f0c163ea65581284ccf289abfd318de254d9f",
+        "renderScale": 3,
+        "clip": [
+          30,
+          210.0,
+          545,
+          419.7
+        ]
+      }
+    }
+  ]
+}

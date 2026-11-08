@@ -11,6 +11,7 @@ import { fetchPracticeQuestion, PracticeRequestError } from "@/lib/billing/guest
 import type { PracticeAccess } from "@/lib/billing/practice-contract";
 import { posthogCapture } from "@/lib/posthog";
 import { nativeClient } from "@/mobile/shared/contracts";
+import { jstResetLabel } from "@/lib/billing/reset-time";
 import {shuffleChoices} from "@/lib/questions/filter";
 
 const MAX_POOL = 80;
@@ -34,10 +35,9 @@ async function fetchQuestion(id: string, shuffle: boolean, start: boolean, signa
 }
 
 function resetLabel(access: PracticeAccess | null) {
-  if (!access || !Number.isFinite(new Date(access.resetAt).getTime())) return null;
-  return new Intl.DateTimeFormat("ja-JP", {
-    timeZone: "Asia/Tokyo", month: "numeric", day: "numeric", hour: "numeric", minute: "2-digit", hourCycle: "h23",
-  }).format(new Date(access.resetAt)) + "（日本時間）";
+  if (!access) return null;
+  // The quota policy is "next 00:00 JST"; never display another time of day.
+  return jstResetLabel(access.resetAt);
 }
 
 export function QuizClient({

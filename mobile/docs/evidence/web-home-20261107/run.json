@@ -1,0 +1,97 @@
+{
+ "how": "Playwright WebKit, iPhone 15 Pro 393x852, Dynamic Island 59px / home bar 34px via --native-safe-*, native bridge as in builds 12/13 (TrackingTransparency unregistered), bundled shell -> local Next dev of this branch served as https://www.kakomon-ai.jp; quota stubbed (10 distinct, then daily_limit, resetAt next 00:00 JST)",
+ "steps": [
+  {
+   "file": "01-launch-web-home.png",
+   "note": "online launch opens the web home inside the app",
+   "url": "/",
+   "scrollWidth": 393,
+   "vw": 393
+  },
+  {
+   "file": "02-web-home-scrolled.png",
+   "note": "chihuahua illustrations / studying-now / pet entry",
+   "url": "/",
+   "scrollWidth": 393,
+   "vw": 393
+  },
+  {
+   "file": "03-qualification-years.png",
+   "note": "年度別 list on the qualification page",
+   "url": "/ip",
+   "scrollWidth": 393,
+   "vw": 393
+  },
+  {
+   "file": "04-year-page.png",
+   "note": "令和5年度 CBT page",
+   "url": "/ip/2023-cbt",
+   "scrollWidth": 393,
+   "vw": 393
+  },
+  {
+   "file": "05-year-question.png",
+   "note": "question appears directly, no 利用枠 message",
+   "url": "/quiz?mode=year&exam=ip&year=2023&season=cbt&session=am&order=1&returnTo=%2Fip%2F2023-cbt&question=ip-2023cbt-am-q1",
+   "scrollWidth": 393,
+   "vw": 393
+  },
+  {
+   "file": "06-answered.png",
+   "note": "answer + explanation",
+   "url": "/quiz?mode=year&exam=ip&year=2023&season=cbt&session=am&order=1&returnTo=%2Fip%2F2023-cbt&question=ip-2023cbt-am-q1",
+   "scrollWidth": 393,
+   "vw": 393
+  },
+  {
+   "file": "07-limit-screen.png",
+   "note": "after 10 free questions",
+   "url": "/quiz?mode=year&exam=ip&year=2023&season=cbt&session=am&order=1&returnTo=%2Fip%2F2023-cbt&question=ip-2023cbt-am-q11",
+   "scrollWidth": 393,
+   "vw": 393
+  },
+  {
+   "file": "08-plan-opens-in-app-purchase.png",
+   "note": "「月額980円で続ける」 → app's 会員・設定 (StoreKit) panel",
+   "url": "/quiz?mode=year&exam=ip&year=2023&season=cbt&session=am&order=1&returnTo=%2Fip%2F2023-cbt&question=ip-2023cbt-am-q11",
+   "scrollWidth": 393,
+   "vw": 393
+  },
+  {
+   "file": "09-settings-subscription.png",
+   "note": "subscription / restore / App Store management",
+   "url": "/quiz?mode=year&exam=ip&year=2023&season=cbt&session=am&order=1&returnTo=%2Fip%2F2023-cbt&question=ip-2023cbt-am-q11",
+   "scrollWidth": 393,
+   "vw": 393
+  },
+  {
+   "file": "10-settings-offline-reminder-delete.png",
+   "note": "offline study, reminders, account deletion",
+   "url": "/quiz?mode=year&exam=ip&year=2023&season=cbt&session=am&order=1&returnTo=%2Fip%2F2023-cbt&question=ip-2023cbt-am-q11",
+   "scrollWidth": 393,
+   "vw": 393
+  },
+  {
+   "file": "11-offline-launch-fallback.png",
+   "note": "offline launch stays in the bundled shell",
+   "url": "/index.html",
+   "scrollWidth": 393,
+   "vw": 393
+  }
+ ],
+ "home": {
+  "chihuahuaImages": 8,
+  "studyingNow": true,
+  "petEntry": true
+ },
+ "yearHref": "/quiz?mode=year&exam=ip&year=2023&season=cbt&session=am&order=1&returnTo=%2Fip%2F2023-cbt",
+ "planOpensInAppPanel": true,
+ "anonymous": {
+  "distinct": 10,
+  "limited": 1,
+  "signin": [],
+  "gateMessagesSeen": 0
+ },
+ "errors": [],
+ "offlineUrl": "https://www.kakomon-ai.jp/index.html"
+}

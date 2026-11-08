@@ -50,7 +50,7 @@ describe("FP1 May complete original applied scope", () => {
   });
   it("reports the actual fifty basic questions in official resources", () => {
     render(<ExamOfficialResources exam="fp1" />);
-    expect(screen.getByText(/サイト内でも.*全50問/)).toBeInTheDocument();
+    expect(screen.getByRole("link",{name:/2026年5月学科・基礎編の公式問題/})).toHaveAttribute("href","https://www.kinzai.or.jp/fp/news-fp/50260.html");
     expect(screen.queryByText(/25問/)).not.toBeInTheDocument();
   });
 });

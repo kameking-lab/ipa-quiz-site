@@ -50,13 +50,12 @@ test("Q05 explanation keeps the optional learning aid behind the reveal control"
   await answer.selectOption("");
 });
 
-test("registered difficulty stays qualified and the existing inline draft is retained", async ({ page }) => {
+test("unverified difficulty is not shown and the existing inline draft is retained", async ({ page }) => {
   await page.setViewportSize({ width: 320, height: 900 });
   await page.goto("/q/fe/2024-cbt/kamoku-a/q1");
-  const meaning = page.getByText("難度表示の意味", { exact: true });
-  await expect(meaning).toBeVisible();
-  await meaning.click();
-  await expect(page.getByText("難度は問題ごとの情報です。資格全体の難しさや合格の見込みを示すものではありません。", { exact: true })).toBeVisible();
+  // Stored difficulty has no verified basis, so the header shows nothing about it.
+  await expect(page.getByText("難度表示の意味", { exact: true })).toHaveCount(0);
+  await expect(page.getByText("根拠未確認")).toHaveCount(0);
   const editor = page.locator("textarea");
   await expect(editor).toHaveCount(1);
   await editor.fill("公開候補CI専用・送信しない下書き");

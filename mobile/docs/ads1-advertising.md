@@ -40,6 +40,10 @@ Codemagic の既存 environment group **`kakomon_ios`** に設定する。例は
 
 必須5値の一つでも不足・不正なら広告は無効。App ID を空にしてもビルドを通し、Google のサンプル ID に置き換えない。非空の不正 App ID は設定ミスとして生成を停止する。設定を削除して再生成すると古い App ID と広告値を消す。
 
+広告無効時は `configure-ios.rb` が Info.plist の `NSUserTrackingUsageDescription` と全 `GAD*` キーを削除する。生成する PrivacyInfo.xcprivacy は Tracking=false、TrackingDomains なし、各収集区分の Tracking=false とし、第三者広告目的と広告専用の Device ID / Advertising Data / Coarse Location 区分を除く。Required Reason API と学習・会員機能の収集区分は維持する。`ios-assets/PrivacyInfo.xcprivacy` は広告有効版の原本であり、直接コピーせず有効判定に応じて生成する。有効に戻すと原本の宣言を復元する。`mobile/ios/` は Git 管理外の生成物である。
+
+`ios-ads-config.rb` の同じ判定を Podfile 設定にも使用する。広告無効時は Google Mobile Ads / UMP の依存を削除してから `cap sync` / `pod install` を実行し、SDK の起動時 App ID 検査と付属の追跡 manifest も除く。Swift の SDK import と登録処理は `canImport(GoogleMobileAds)` で条件コンパイルする。広告有効時のバージョン固定・登録・同意ゲートは維持する。
+
 AdSense 管理画面で `www.kakomon-ai.jp` の承認と該当枠を確認し、Privacy & messaging で EU（EEA/英国/スイス）と米国州規制メッセージを公開する。EU の Consent Mode サポートを有効にし、広告・分析の4用途が未設定にならないようにする。Google 自身の vendor と必要な目的、拒否・撤回導線、米国の標準 opt-out リンク、GPC を確認する。CMP 単独ロードがこの publisher/サイトで機能することも確認する。未公開・応答しない・AdSense 未承認なら広告が出ないまま学習できる。
 
 この Web 側変更（layout / ContentEndAd / CMP / CSP / privacy）を本番へ反映し、アプリと版を揃える必要がある。本タスクでは push・デプロイ・管理画面変更は行わない。

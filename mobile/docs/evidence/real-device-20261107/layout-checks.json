@@ -1,0 +1,561 @@
+{
+ "note": "Playwright WebKit (rev 2287; rerun after merging origin/main 3e11e8070), full-screen app viewport, native bridge emulated (TrackingTransparency.prepare rejects PRIVACY_UNAVAILABLE as on build 12). Notch/home indicator emulated via --native-safe-top/bottom (the same path QualificationBridgeViewController publishes) plus a red overlay. production-before-* = current www.kakomon-ai.jp (old code, not yet deployed), env() is 0 in this emulator.",
+ "devices": {
+  "iPhone 13": [
+   {
+    "file": "i13-01-launch.png",
+    "url": "/index.html",
+    "scrollWidth": 390,
+    "viewportWidth": 390,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13-02-home-scrolled.png",
+    "url": "/index.html",
+    "scrollWidth": 390,
+    "viewportWidth": 390,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13-03-home-bottom.png",
+    "url": "/index.html",
+    "scrollWidth": 390,
+    "viewportWidth": 390,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13-04-search.png",
+    "url": "/index.html",
+    "scrollWidth": 390,
+    "viewportWidth": 390,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13-05-qualification.png",
+    "url": "/index.html",
+    "scrollWidth": 390,
+    "viewportWidth": 390,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13-06-qualification-saved.png",
+    "url": "/index.html",
+    "scrollWidth": 390,
+    "viewportWidth": 390,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13-07-quiz.png",
+    "url": "/index.html",
+    "scrollWidth": 390,
+    "viewportWidth": 390,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13-08-answered.png",
+    "url": "/index.html",
+    "scrollWidth": 390,
+    "viewportWidth": 390,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13-09-explanation-scrolled.png",
+    "url": "/index.html",
+    "scrollWidth": 390,
+    "viewportWidth": 390,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13-10-online-page-top.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 390,
+    "viewportWidth": 390,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13-11-online-page-scrolled.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 390,
+    "viewportWidth": 390,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13-12-settings.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 390,
+    "viewportWidth": 390,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13-13-settings-subscription.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 390,
+    "viewportWidth": 390,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13-14-settings-delete-account.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 390,
+    "viewportWidth": 390,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13-15-site-header-only.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 390,
+    "viewportWidth": 390,
+    "horizontalOverflow": [],
+    "smallTapTargets": [
+     "button「3行」 37x21",
+     "button「5行」 37x21",
+     "button「10行」 42x21"
+    ]
+   },
+   {
+    "file": "i13-16-site-header-only-scrolled.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 390,
+    "viewportWidth": 390,
+    "horizontalOverflow": [],
+    "smallTapTargets": [
+     "button「3行」 37x21",
+     "button「5行」 37x21",
+     "button「10行」 42x21"
+    ]
+   }
+  ],
+  "iPhone 15 Pro": [
+   {
+    "file": "i15pro-01-launch.png",
+    "url": "/index.html",
+    "scrollWidth": 393,
+    "viewportWidth": 393,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15pro-02-home-scrolled.png",
+    "url": "/index.html",
+    "scrollWidth": 393,
+    "viewportWidth": 393,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15pro-03-home-bottom.png",
+    "url": "/index.html",
+    "scrollWidth": 393,
+    "viewportWidth": 393,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15pro-04-search.png",
+    "url": "/index.html",
+    "scrollWidth": 393,
+    "viewportWidth": 393,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15pro-05-qualification.png",
+    "url": "/index.html",
+    "scrollWidth": 393,
+    "viewportWidth": 393,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15pro-06-qualification-saved.png",
+    "url": "/index.html",
+    "scrollWidth": 393,
+    "viewportWidth": 393,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15pro-07-quiz.png",
+    "url": "/index.html",
+    "scrollWidth": 393,
+    "viewportWidth": 393,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15pro-08-answered.png",
+    "url": "/index.html",
+    "scrollWidth": 393,
+    "viewportWidth": 393,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15pro-09-explanation-scrolled.png",
+    "url": "/index.html",
+    "scrollWidth": 393,
+    "viewportWidth": 393,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15pro-10-online-page-top.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 393,
+    "viewportWidth": 393,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15pro-11-online-page-scrolled.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 393,
+    "viewportWidth": 393,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15pro-12-settings.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 393,
+    "viewportWidth": 393,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15pro-13-settings-subscription.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 393,
+    "viewportWidth": 393,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15pro-14-settings-delete-account.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 393,
+    "viewportWidth": 393,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15pro-15-site-header-only.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 393,
+    "viewportWidth": 393,
+    "horizontalOverflow": [],
+    "smallTapTargets": [
+     "button「3行」 37x21",
+     "button「5行」 37x21",
+     "button「10行」 42x21"
+    ]
+   },
+   {
+    "file": "i15pro-16-site-header-only-scrolled.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 393,
+    "viewportWidth": 393,
+    "horizontalOverflow": [],
+    "smallTapTargets": [
+     "button「3行」 37x21",
+     "button「5行」 37x21",
+     "button「10行」 42x21"
+    ]
+   }
+  ],
+  "iPhone 13 Mini": [
+   {
+    "file": "i13mini-01-launch.png",
+    "url": "/index.html",
+    "scrollWidth": 375,
+    "viewportWidth": 375,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13mini-02-home-scrolled.png",
+    "url": "/index.html",
+    "scrollWidth": 375,
+    "viewportWidth": 375,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13mini-03-home-bottom.png",
+    "url": "/index.html",
+    "scrollWidth": 375,
+    "viewportWidth": 375,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13mini-04-search.png",
+    "url": "/index.html",
+    "scrollWidth": 375,
+    "viewportWidth": 375,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13mini-05-qualification.png",
+    "url": "/index.html",
+    "scrollWidth": 375,
+    "viewportWidth": 375,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13mini-06-qualification-saved.png",
+    "url": "/index.html",
+    "scrollWidth": 375,
+    "viewportWidth": 375,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13mini-07-quiz.png",
+    "url": "/index.html",
+    "scrollWidth": 375,
+    "viewportWidth": 375,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13mini-08-answered.png",
+    "url": "/index.html",
+    "scrollWidth": 375,
+    "viewportWidth": 375,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13mini-09-explanation-scrolled.png",
+    "url": "/index.html",
+    "scrollWidth": 375,
+    "viewportWidth": 375,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13mini-10-online-page-top.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 375,
+    "viewportWidth": 375,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13mini-11-online-page-scrolled.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 375,
+    "viewportWidth": 375,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13mini-12-settings.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 375,
+    "viewportWidth": 375,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13mini-13-settings-subscription.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 375,
+    "viewportWidth": 375,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13mini-14-settings-delete-account.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 375,
+    "viewportWidth": 375,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13mini-15-site-header-only.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 375,
+    "viewportWidth": 375,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i13mini-16-site-header-only-scrolled.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 375,
+    "viewportWidth": 375,
+    "horizontalOverflow": [],
+    "smallTapTargets": [
+     "button「3行」 37x21",
+     "button「5行」 37x21",
+     "button「10行」 42x21"
+    ]
+   }
+  ],
+  "iPhone 15 Pro Max": [
+   {
+    "file": "i15max-01-launch.png",
+    "url": "/index.html",
+    "scrollWidth": 430,
+    "viewportWidth": 430,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15max-02-home-scrolled.png",
+    "url": "/index.html",
+    "scrollWidth": 430,
+    "viewportWidth": 430,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15max-03-home-bottom.png",
+    "url": "/index.html",
+    "scrollWidth": 430,
+    "viewportWidth": 430,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15max-04-search.png",
+    "url": "/index.html",
+    "scrollWidth": 430,
+    "viewportWidth": 430,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15max-05-qualification.png",
+    "url": "/index.html",
+    "scrollWidth": 430,
+    "viewportWidth": 430,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15max-06-qualification-saved.png",
+    "url": "/index.html",
+    "scrollWidth": 430,
+    "viewportWidth": 430,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15max-07-quiz.png",
+    "url": "/index.html",
+    "scrollWidth": 430,
+    "viewportWidth": 430,
+    "horizontalOverflow": [],
+    "smallTapTargets": [
+     "button「3行」 37x21",
+     "button「5行」 37x21",
+     "button「10行」 42x21"
+    ]
+   },
+   {
+    "file": "i15max-08-answered.png",
+    "url": "/index.html",
+    "scrollWidth": 430,
+    "viewportWidth": 430,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15max-09-explanation-scrolled.png",
+    "url": "/index.html",
+    "scrollWidth": 430,
+    "viewportWidth": 430,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15max-10-online-page-top.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 430,
+    "viewportWidth": 430,
+    "horizontalOverflow": [],
+    "smallTapTargets": [
+     "button「3行」 37x21",
+     "button「5行」 37x21",
+     "button「10行」 42x21"
+    ]
+   },
+   {
+    "file": "i15max-11-online-page-scrolled.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 430,
+    "viewportWidth": 430,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15max-12-settings.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 430,
+    "viewportWidth": 430,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15max-13-settings-subscription.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 430,
+    "viewportWidth": 430,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15max-14-settings-delete-account.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 430,
+    "viewportWidth": 430,
+    "horizontalOverflow": [],
+    "smallTapTargets": []
+   },
+   {
+    "file": "i15max-15-site-header-only.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 430,
+    "viewportWidth": 430,
+    "horizontalOverflow": [],
+    "smallTapTargets": [
+     "button「3行」 37x21",
+     "button「5行」 37x21",
+     "button「10行」 42x21"
+    ]
+   },
+   {
+    "file": "i15max-16-site-header-only-scrolled.png",
+    "url": "/tests/e2e/harness.html",
+    "scrollWidth": 430,
+    "viewportWidth": 430,
+    "horizontalOverflow": [],
+    "smallTapTargets": [
+     "button「3行」 37x21",
+     "button「5行」 37x21",
+     "button「10行」 42x21"
+    ]
+   }
+  ]
+ }
+}

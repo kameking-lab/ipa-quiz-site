@@ -5,53 +5,111 @@ import { matchAliasGlossaryTerms } from "./aliases";
 const BM25_K1 = 1.2;
 const BM25_B = 0.75;
 
+/**
+ * BM25 用の転置インデックス。
+ *
+ * 14k+ 件 × 700 万ポスティング規模なので、ポスティング 1 件ごとに JS オブジェクトを
+ * 作ると冷えたサーバの初回リクエストで数秒〜十数秒かかり、ヒープも 1GB 超に膨らむ。
+ * そのためポスティングは型付き配列（CSR 形式）で持つ:
+ *   term id t のポスティングは postingDocs/postingTfs の [offsets[t], offsets[t+1]) 区間。
+ *   区間内の docIdx は昇順（= 旧実装の挿入順と同じ）で、スコアの加算順も変わらない。
+ */
 interface InvertedIndex {
-  /** term -> postings (doc index in docs, term frequency in that doc) */
-  postings: Map<string, Array<{ docIdx: number; tf: number }>>;
+  /** term -> term id（初出順） */
+  termIds: Map<string, number>;
+  /** term id -> ポスティング区間の開始位置。長さは term 数 + 1。 */
+  offsets: Uint32Array;
+  /** ポスティングの doc index（docs の添字）。 */
+  postingDocs: Uint32Array;
+  /** ポスティングの term frequency。 */
+  postingTfs: Uint32Array;
   /** doc index -> doc length (token count) */
-  docLen: number[];
+  docLen: Uint32Array;
   avgDocLen: number;
   docs: CorpusDoc[];
 }
 
+/** その語を含む文書数（BM25 の n）。未知語は 0。 */
+export function documentFrequency(index: InvertedIndex, term: string): number {
+  const id = index.termIds.get(term);
+  return id === undefined ? 0 : index.offsets[id + 1] - index.offsets[id];
+}
+
 /** BM25 用の転置インデックスを構築する。 */
 export function buildIndex(docs: CorpusDoc[]): InvertedIndex {
-  const postings = new Map<string, Map<number, number>>();
-  const docLen: number[] = new Array(docs.length);
+  const termIds = new Map<string, number>();
+  const docLen = new Uint32Array(docs.length);
+  let termFreqCounts: number[] = [];
+
+  // (term id, doc index, tf) の三つ組をいったん平たく貯めてから、term id で
+  // 安定な counting sort をかけて CSR に詰める。doc は昇順に処理するので、
+  // 各 term の区間内も docIdx 昇順になる。
+  let capacity = 1 << 16;
+  let tripleTerm: Uint32Array = new Uint32Array(capacity);
+  let tripleDoc: Uint32Array = new Uint32Array(capacity);
+  let tripleTf: Uint32Array = new Uint32Array(capacity);
+  let tripleCount = 0;
 
   let totalLen = 0;
+  const tfMap = new Map<number, number>();
   for (let i = 0; i < docs.length; i++) {
     const tokens = tokenize(docs[i].text);
     docLen[i] = tokens.length;
     totalLen += tokens.length;
-    const tfMap = new Map<string, number>();
+    tfMap.clear();
     for (const tok of tokens) {
-      tfMap.set(tok, (tfMap.get(tok) ?? 0) + 1);
-    }
-    for (const [tok, tf] of tfMap) {
-      let docMap = postings.get(tok);
-      if (!docMap) {
-        docMap = new Map();
-        postings.set(tok, docMap);
+      let id = termIds.get(tok);
+      if (id === undefined) {
+        id = termIds.size;
+        termIds.set(tok, id);
+        termFreqCounts.push(0);
       }
-      docMap.set(i, tf);
+      tfMap.set(id, (tfMap.get(id) ?? 0) + 1);
+    }
+    if (tripleCount + tfMap.size > capacity) {
+      while (tripleCount + tfMap.size > capacity) capacity *= 2;
+      tripleTerm = growUint32(tripleTerm, capacity);
+      tripleDoc = growUint32(tripleDoc, capacity);
+      tripleTf = growUint32(tripleTf, capacity);
+    }
+    for (const [id, tf] of tfMap) {
+      tripleTerm[tripleCount] = id;
+      tripleDoc[tripleCount] = i;
+      tripleTf[tripleCount] = tf;
+      tripleCount++;
+      termFreqCounts[id]++;
     }
   }
 
-  const flatPostings = new Map<string, Array<{ docIdx: number; tf: number }>>();
-  for (const [tok, docMap] of postings) {
-    flatPostings.set(
-      tok,
-      [...docMap.entries()].map(([docIdx, tf]) => ({ docIdx, tf })),
-    );
+  const termCount = termIds.size;
+  const offsets = new Uint32Array(termCount + 1);
+  for (let t = 0; t < termCount; t++) offsets[t + 1] = offsets[t] + termFreqCounts[t];
+  termFreqCounts = [];
+
+  const cursor = offsets.slice(0, termCount);
+  const postingDocs = new Uint32Array(tripleCount);
+  const postingTfs = new Uint32Array(tripleCount);
+  for (let k = 0; k < tripleCount; k++) {
+    const p = cursor[tripleTerm[k]]++;
+    postingDocs[p] = tripleDoc[k];
+    postingTfs[p] = tripleTf[k];
   }
 
   return {
-    postings: flatPostings,
+    termIds,
+    offsets,
+    postingDocs,
+    postingTfs,
     docLen,
     avgDocLen: docs.length === 0 ? 0 : totalLen / docs.length,
     docs,
   };
+}
+
+function growUint32(arr: Uint32Array, capacity: number): Uint32Array {
+  const next = new Uint32Array(capacity);
+  next.set(arr);
+  return next;
 }
 
 /**
@@ -67,12 +125,16 @@ export function scoreBM25(
   if (N === 0) return scores;
 
   for (const qt of queryTokens) {
-    const postings = index.postings.get(qt);
-    if (!postings) continue;
-    const n = postings.length;
+    const id = index.termIds.get(qt);
+    if (id === undefined) continue;
+    const start = index.offsets[id];
+    const end = index.offsets[id + 1];
+    const n = end - start;
     const idf = Math.log(1 + (N - n + 0.5) / (n + 0.5));
     if (idf <= 0) continue;
-    for (const { docIdx, tf } of postings) {
+    for (let p = start; p < end; p++) {
+      const docIdx = index.postingDocs[p];
+      const tf = index.postingTfs[p];
       const dl = index.docLen[docIdx];
       const denom =
         tf + BM25_K1 * (1 - BM25_B + (BM25_B * dl) / (index.avgDocLen || 1));
@@ -169,13 +231,12 @@ export function maxQueryIdf(index: InvertedIndex, query: string): number {
   const N = index.docs.length;
   let maxIdf = 0;
   for (const t of qTokens) {
-    const postings = index.postings.get(t);
-    if (!postings) {
+    const n = documentFrequency(index, t);
+    if (n === 0) {
       // 未知語: 全文書中 0 件。Robertson の式では非常に高い IDF を返すが、
       // 「文書に出現しない」ので結局スコアに寄与しない。スキップ。
       continue;
     }
-    const n = postings.length;
     const idf = Math.log(1 + (N - n + 0.5) / (n + 0.5));
     if (idf > maxIdf) maxIdf = idf;
   }
@@ -190,11 +251,17 @@ let CACHED_INDEX: InvertedIndex | null = null;
 
 /**
  * プロセス内でキャッシュされた index を取得（無ければ構築）。
+ * `loadPrebuilt` を渡すと、ビルド時に作った索引を先に試し、使えない（無い・
+ * コーパスと食い違う）ときだけ実行時に構築する。
  * テストで個別 index を使いたい場合は buildIndex を直接呼ぶ。
  */
-export function getCachedIndex(getDocs: () => CorpusDoc[]): InvertedIndex {
+export function getCachedIndex(
+  getDocs: () => CorpusDoc[],
+  loadPrebuilt?: (docs: CorpusDoc[]) => InvertedIndex | null,
+): InvertedIndex {
   if (CACHED_INDEX) return CACHED_INDEX;
-  CACHED_INDEX = buildIndex(getDocs());
+  const docs = getDocs();
+  CACHED_INDEX = loadPrebuilt?.(docs) ?? buildIndex(docs);
   return CACHED_INDEX;
 }
 

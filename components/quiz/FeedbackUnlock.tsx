@@ -4,6 +4,7 @@ import Link from "next/link";
 import { IMPROVEMENT_CHOICES, UnlockFeedbackSchema, type UnlockStatus } from "@/lib/feedback/unlock-contract";
 import { posthogCapture } from "@/lib/posthog";
 import { TurnstileWidget } from "@/components/TurnstileWidget";
+import { PrivacyNote } from "@/components/ui/privacy-note";
 
 const DRAFT_KEY = "feedback-unlock-draft:v1";
 const returnPath = () => window.location.pathname + window.location.search;
@@ -98,11 +99,10 @@ export function FeedbackUnlock({ onUnlocked }: { onUnlocked: () => void }) {
     } catch { /* Keep the draft visible on connection failure. */ }
   }
   return <div className="space-y-3 text-left">
-    {status?.requiresLogin && <Link href={`/auth/signin?callbackUrl=${encodeURIComponent(window.location.pathname + window.location.search + "#feedback-unlock")}`} onClick={saveDraft} className="inline-flex min-h-11 w-full items-center justify-center rounded-xl border border-border px-4 py-3 text-sm font-semibold">ログインして意見を送ると、さらに10問</Link>}
-    {status?.requiresLogin && <p className="text-xs text-muted-foreground">追加10問は1アカウントにつき1回限りです。</p>}
+    {status?.requiresLogin && <Link href={`/auth/signin?callbackUrl=${encodeURIComponent(window.location.pathname + window.location.search + "#feedback-unlock")}`} onClick={saveDraft} className="inline-flex min-h-11 w-full items-center justify-center rounded-xl border border-border px-4 py-3 text-sm font-semibold">意見を送ってあと10問</Link>}
     {status?.requiresLogin && open && <button type="button" onClick={checkLogin} className="min-h-11 px-3 text-sm underline">別タブでログインした後に再確認</button>}
-    {status?.eligible && <button type="button" className="min-h-11 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm font-semibold hover:bg-muted" onClick={() => setOpen(v => !v)} aria-expanded={open} aria-controls="feedback-unlock-form">意見を送って、さらに10問無料で解く</button>}
-    {status?.submitted && <div className="text-center text-sm"><p>意見による追加枠は受け取り済みです（残り{status.remaining}問）。</p>{status.remaining > 0 && <button type="button" onClick={onUnlocked} className="min-h-11 px-3 underline">追加枠で続きを解く</button>}</div>}
+    {status?.eligible && <button type="button" className="min-h-11 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm font-semibold hover:bg-muted" onClick={() => setOpen(v => !v)} aria-expanded={open} aria-controls="feedback-unlock-form">意見を送ってあと10問</button>}
+    {status?.submitted && status.remaining > 0 && <button type="button" onClick={onUnlocked} className="min-h-11 w-full rounded-xl border border-border px-4 py-3 text-sm font-semibold">追加の{status.remaining}問で続ける</button>}
     {error && <p role="alert" className="text-sm text-red-600 dark:text-red-400">{error}</p>}
     {open && <form id="feedback-unlock-form" onSubmit={submit} className="space-y-4 rounded-xl border border-border bg-background p-4">
       <fieldset disabled={busy} className="space-y-2"><legend className="mb-3 font-semibold">どんな改善を希望しますか？（複数選択可）</legend>
@@ -113,6 +113,7 @@ export function FeedbackUnlock({ onUnlocked }: { onUnlocked: () => void }) {
       <p className="text-xs text-muted-foreground">氏名・住所・メールアドレスなどの個人情報は入力しないでください。意見は運営の管理画面・noteダッシュボードで改善のために利用します。追加10問はログイン済みの1アカウントにつき1回限り。通常の無料枠を使い切った後に消費し、未使用分は翌日以降も残ります。AIへの質問回数は増えません。</p>
       {siteKey && <TurnstileWidget key={captchaAttempt} siteKey={siteKey} onToken={setToken} onError={() => { setToken(""); setError("確認を読み込めませんでした。時間をおいて再度お試しください。"); }} />}
       <button type="submit" disabled={busy || !!status?.requiresLogin || !!siteKey && !token} className="min-h-11 w-full rounded-lg border border-border px-4 py-3 font-semibold disabled:opacity-50">{busy ? "送信中…" : "意見を送信して10問追加"}</button>
+      <PrivacyNote variant="message" />
       <p role="status" aria-live="polite" className="sr-only">{busy ? "意見を送信しています" : ""}</p>
     </form>}
   </div>;

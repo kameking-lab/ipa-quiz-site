@@ -5,6 +5,8 @@ import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
 import { QuizResumeLinks } from "./QuizResumeLinks";
 import { ManageSubscriptionButton } from "./ManageSubscriptionButton";
 import { posthogCapture } from "@/lib/posthog";
+import { readQuizReturn } from "@/lib/billing/quiz-return";
+import { sendFunnelEvent } from "@/lib/billing/funnel-client";
 interface Status { feedbackSubmitted?: boolean; billingModel?: "subscription"; canManage?: boolean; subscription?: { status: string; periodEnd: string; cancelAtPeriodEnd: boolean }; entitled: boolean; expiresAt: string | null; purchase: { id: string; status: string; expiresAt: string | null } | null }
 export function PurchaseStatus({ order, canceled = false, testMode = true }: { order: string; canceled?: boolean; testMode?: boolean }) {
   const [status, setStatus] = useState<Status | null>(null);
@@ -62,6 +64,16 @@ export function PurchaseStatus({ order, canceled = false, testMode = true }: { o
     reported.current = true;
     posthogCapture("checkout_completed", { plan: status?.billingModel === "subscription" ? "monthly" : "pass", test_mode: testMode });
   }, [complete, status?.billingModel, testMode]);
+  useEffect(() => { if (canceled) sendFunnelEvent("checkout_canceled"); }, [canceled]);
+  // Paid: go straight back to the page the plan button was tapped on (no extra tap).
+  useEffect(() => {
+    if (!complete) return;
+    let back: string | null = null;
+    try { back = readQuizReturn(window.sessionStorage, Date.now(), order) ?? readQuizReturn(window.sessionStorage); } catch { /* Stay on the confirmation. */ }
+    if (!back) return;
+    sendFunnelEvent("purchase_returned");
+    location.replace(back);
+  }, [complete, order]);
   const pending = status?.purchase?.status === "pending";
   const labels: Record<string, string> = { failed: "支払いは成立していません。", suspended: "返金手続を確認中のため利用を一時停止しています。", refunded: "返金により、この購入の利用は停止しています。", expired: "利用期間が満了しました。無料の演習・履歴は引き続き使えます。" };
   const title = complete ? "購入が完了しました" : canceled ? "決済画面から戻りました" : pending ? "支払いを確認しています" : "購入状況の確認";

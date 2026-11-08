@@ -38,9 +38,9 @@ describe("answer to the same public explanation and feedback page", () => {
     { ...base, id: "denken3-test", exam: "denken3", session: "kikai", year: 2025, season: "second", qNumber: 15, part: "a" },
   ] as Question[])("$exam link appears only after answering and preserves the original part", (question) => {
     render(<QuizPlayer question={question} index={0} total={2} mode="year" onNext={() => {}} />);
-    expect(screen.queryByRole("link", { name: "公開解説・誤り報告を開く" })).not.toBeInTheDocument();
+    expect(screen.queryByRole("link", { name: "誤りを報告" })).not.toBeInTheDocument();
     fireEvent.keyDown(window, { key: "1" });
-    expect(screen.getByRole("link", { name: "公開解説・誤り報告を開く" })).toHaveAttribute("href", questionPagePath(question));
+    expect(screen.getByRole("link", { name: "誤りを報告" })).toHaveAttribute("href", `${questionPagePath(question)}#explanation`);
     expect(createHistoryStore().getAllEntries()).toHaveLength(1);
     expect(createHistoryStore().getAllEntries()[0]?.id).toBe(question.id);
   });

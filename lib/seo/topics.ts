@@ -82,6 +82,16 @@ export function findTopicByAnySlug(slug: string): TopicSummary | undefined {
 }
 
 /**
+ * /topics/[slug] が実際に配信するスラッグかを、正規スラッグとの完全一致で判定する。
+ * ページは初回アクセス時に生成する（dynamicParams=true）ため、到達できる URL の
+ * 集合を「getAllTopics() の slug」に限るのはこの判定の役目。別表記（空白区切りの
+ * タグ名など）は以前どおり 404 にし、同じ内容の URL を増やさない。
+ */
+export function findTopicBySlug(slug: string): TopicSummary | undefined {
+  return getAllTopics().find((t) => t.slug === slug);
+}
+
+/**
  * トピックタグのリンク先 URL を返す。
  * 専用ハブページ（/topics/{slug}）が存在するタグはそこへ、存在しないタグ
  * （用語集・特集記事の編集タグで、どの問題にも付与されていないもの）は

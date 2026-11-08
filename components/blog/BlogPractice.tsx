@@ -11,12 +11,14 @@ import { getSafePdfUrl, ipaSourceLabel } from "@/lib/exam-config";
 import { isAcceptedAnswer } from "@/lib/questions/answers";
 import { createHistoryStore } from "@/lib/storage/history";
 import { readSettings } from "@/lib/storage/settings";
-import { recordReview } from "@/lib/learning/spaced-repetition";
+import { usePetLearning } from "@/components/pet/usePetLearning";
+import { LearningPetCorner } from "@/components/pet/LearningPetCorner";
 import { posthogCapture } from "@/lib/posthog";
 import { writeLastQuestion } from "@/lib/storage/last-question";
 import { practiceSessionLabel } from "@/lib/questions/practice-session";
 
 export function BlogPractice({ question, reason, continueHref, slug, explanation }: { question: Question; reason: string; continueHref: string; slug: string; explanation: ReactNode }) {
+  const pet = usePetLearning();
   const [selected, setSelected] = useState<ChoiceKey | null>(null);
   const resultRef = useRef<HTMLDivElement>(null);
   const submitted = useRef(false);
@@ -28,9 +30,9 @@ export function BlogPractice({ question, reason, continueHref, slug, explanation
     const isCorrect = isAcceptedAnswer(question.answer, key);
     if (readSettings().recordHistory) {
       createHistoryStore().record({ id: question.id, selected: key, correct: isCorrect, at: Date.now() });
-      recordReview(question.id, isCorrect);
+      pet.record(question, { kind: "multiple-choice", selected: [key] }, isCorrect);
       writeLastQuestion({ exam: question.exam, year: question.year, season: question.season, session: question.session, qNumber: question.qNumber, part: question.part, answeredAt: Date.now() });
-    }
+    } else pet.submit({ source: "question", questionId: question.id, answer: { kind: "multiple-choice", selected: [key] } }, { source: "question", question });
     posthogCapture("blog_practice_answered", { slug, questionId: question.id, exam: question.exam, correct: isCorrect });
     requestAnimationFrame(() => {
       resultRef.current?.focus({ preventScroll: true });
@@ -60,6 +62,7 @@ export function BlogPractice({ question, reason, continueHref, slug, explanation
         </div>
       )}
       <a href="#article-body" className="mt-3 inline-flex min-h-11 items-center text-sm underline">記事の本文を読む</a>
+      <LearningPetCorner qualificationId={question.exam} questionId={question.id} />
     </section>
   );
 }

@@ -90,6 +90,14 @@ function installKv(settle: () => Promise<Response>) {
   }));
 }
 
+/** The copilot route adds a timing breakdown (durations only, no content); other routes omit it. */
+function serverTimingOf(call: unknown[] | undefined): { serverTiming?: string } {
+  const meta = call?.[1] as { serverTiming?: unknown } | undefined;
+  if (meta?.serverTiming === undefined) return {};
+  expect(meta.serverTiming).toMatch(/^pre;dur=\d+, rag;dur=\d+$/);
+  return { serverTiming: meta.serverTiming as string };
+}
+
 describe.each(routes)("$path completion evidence", route => {
   it.each(["recorded", "failed"] as const)("awaits settlement and logs %s without exposing content or cost values", async status => {
     let release!: () => void;
@@ -112,10 +120,13 @@ describe.each(routes)("$path completion evidence", route => {
     expect(console.info).not.toHaveBeenCalledWith(`${route.prefix} cost`, expect.anything());
     release();
     expect(await body).toContain("private-response-text");
-    expect(vi.mocked(console.info).mock.calls).toEqual([
+    // Only this route's evidence lines; the shared cost-guard logs its own amount-only line.
+    const routeCalls = vi.mocked(console.info).mock.calls.filter(([label]) => String(label).startsWith(`${route.prefix} `));
+    expect(routeCalls).toEqual([
       [`${route.prefix} completed`, {
         questionId: route.questionId, model: COPILOT_MODEL,
         finishReason: "STOP", promptTokens: 100, outputTokens: 20, thoughtsTokens: 5, totalTokens: 125,
+        ...serverTimingOf(routeCalls[0]),
       }],
       [`${route.prefix} cost`, { questionId: route.questionId, model: COPILOT_MODEL, status }],
     ]);
@@ -129,7 +140,9 @@ describe.each(routes)("$path completion evidence", route => {
     });
     const response = await request(route);
     expect(await response.text()).toContain("private-partial-response");
+    const completedCall = vi.mocked(console.info).mock.calls.find(([label]) => label === `${route.prefix} completed`);
     expect(console.info).toHaveBeenCalledWith(`${route.prefix} completed`, {
+      ...serverTimingOf(completedCall),
       questionId: route.questionId, model: COPILOT_MODEL,
       finishReason: undefined, promptTokens: undefined, outputTokens: undefined,
       thoughtsTokens: undefined, totalTokens: undefined,

@@ -22,6 +22,8 @@ function toSlim(q: Question): SlimMockQuestion {
     choices: q.choices ?? {},
     answer: q.answer,
     category: q.category,
+    petContext: { qualificationId: q.exam, eligible: q.type === "multiple-choice" && (q.requiredSelections ?? 1) === 1 && !q.acceptedAnswerCombinations,
+      contentVersion: q.publicationVersion ?? q.lastUpdated ?? "local-question-v1" },
   };
 }
 

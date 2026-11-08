@@ -38,11 +38,15 @@ export function readOwnership(userId: string): OwnershipState {
   }
 }
 
-export async function readSyncAccount(): Promise<SyncAccount | null> {
-  const response = await fetch("/api/auth/session", { cache: "no-store", credentials: "same-origin" });
+export async function readSyncAccount(signal?: AbortSignal): Promise<SyncAccount | null> {
+  const response = await fetch("/api/auth/session", { cache: "no-store", credentials: "same-origin", ...(signal ? { signal } : {}) });
   if (!response.ok) throw new Error("session_unavailable");
   const value: unknown = await response.json();
-  if (!value || typeof value !== "object") throw new Error("invalid_session");
+  // Auth.js answers a signed-out visitor with a literal `null` body. That is a
+  // guest, not a broken session: treating it as an error made every guest's
+  // chihuahua show 「育成の保存を確認できませんでした」 and stop growing.
+  if (value === null) return null;
+  if (typeof value !== "object") throw new Error("invalid_session");
   const user = (value as { user?: unknown }).user;
   if (!user) return null;
   if (typeof user !== "object") throw new Error("invalid_session");

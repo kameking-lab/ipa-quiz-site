@@ -8,13 +8,16 @@ export async function beginLogin(origin: string, returnTo = location.pathname+lo
   const verifier = b64(crypto.getRandomValues(new Uint8Array(32))), state = b64(crypto.getRandomValues(new Uint8Array(32)));
   const challenge = b64(new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(verifier))));
   if(!returnTo.startsWith("/")||returnTo.startsWith("//")||returnTo.startsWith("/\\"))returnTo="/";
-  await Preferences.set({ key: PENDING, value: JSON.stringify({ verifier, state, returnTo, createdAt: Date.now() }) });
   const callback = `/api/mobile/auth/complete?challenge=${challenge}&state=${state}`;
-  await Browser.open({ url: `${origin}/auth/signin?callbackUrl=${encodeURIComponent(callback)}` });
+  // Open the sign-in sheet at once; saving the verifier runs alongside (the
+  // return needs the user to finish signing in, long after this write).
+  const saving = Preferences.set({ key: PENDING, value: JSON.stringify({ verifier, state, returnTo, createdAt: Date.now() }) });
+  await Promise.all([saving, Browser.open({ url: `${origin}/auth/signin?callbackUrl=${encodeURIComponent(callback)}` })]);
 }
-export async function finishLogin(url: string, origin: string) {
+export async function finishLogin(url: string, origin: string, onStart?: () => void) {
   const parsed = new URL(url);
   if (parsed.protocol !== "kakomonai:" || parsed.hostname !== "auth") return false;
+  onStart?.();
   const raw = (await Preferences.get({ key: PENDING })).value;
   if (!raw) throw new Error("ログインをやり直してください。");
   const pending = JSON.parse(raw) as { verifier: string; state: string; returnTo?:string; createdAt: number };
@@ -35,9 +38,9 @@ export async function finishLogin(url: string, origin: string) {
   window.location.replace(destination);
   return true;
 }
-export async function observeLogin(origin: string, onError: (error: unknown)=>void) {
-  const handle = await App.addListener("appUrlOpen", event => { void finishLogin(event.url, origin).catch(onError); });
+export async function observeLogin(origin: string, onError: (error: unknown)=>void, onStart?: () => void) {
+  const handle = await App.addListener("appUrlOpen", event => { void finishLogin(event.url, origin, onStart).catch(onError); });
   const launch = await App.getLaunchUrl();
-  if (launch?.url) await finishLogin(launch.url, origin).catch(onError);
+  if (launch?.url) await finishLogin(launch.url, origin, onStart).catch(onError);
   return () => { void handle.remove(); };
 }

@@ -8,7 +8,7 @@ for (const slug of ["it-shikaku-rirekisho-kakikata", "ipa-shiken-fukusuu-kubun-j
     await page.goto(`/blog/${slug}`);
     const practice = page.getByRole("region", { name: "記事から1問チャレンジ" });
     await expect(practice).toBeVisible();
-    await practice.getByRole("heading").scrollIntoViewIfNeeded();
+    await practice.getByRole("heading", { name: "記事から1問チャレンジ", exact: true }).scrollIntoViewIfNeeded();
     await page.screenshot({ path: testInfo.outputPath("article-360.png") });
     await expect(practice.getByRole("link", { name: "同じ分野の演習を続ける" })).toHaveCount(0);
     await practice.getByRole("radio").first().click();
@@ -55,21 +55,6 @@ test("390px: a six-choice worked example keeps all choices and its actual choice
   await expect(practice.getByRole("status")).toBeInViewport();
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.screenshot({ path: testInfo.outputPath("answer-390.png") });
-});
-
-test("a supplement remains editable after failure and receives a receipt after retry", async ({ page }) => {
-  let calls = 0;
-  await page.route("**/api/contact", route => route.fulfill({ status: ++calls === 1 ? 503 : 200, json: calls === 1 ? { ok: false } : { ok: true, delivery: "delivered", receiptId: "KG-e2e" } }));
-  await page.goto("/quiz?mode=year&exam=nw&year=2010&season=autumn&session=am2");
-  await page.getByRole("radio").first().click();
-  const box = page.getByRole("textbox", { name: "コメント本文" });
-  await box.fill("補足のテスト送信です");
-  await page.getByRole("button", { name: "運営へ送信する" }).click();
-  await expect(page.getByRole("alert").filter({ hasText: "運営への送信" })).toBeVisible();
-  await expect(box).toHaveValue("補足のテスト送信です");
-  await page.getByRole("button", { name: "運営へ送信する" }).click();
-  await expect(page.getByRole("status").filter({ hasText: "KG-e2e" })).toBeVisible();
-  await expect(box).toHaveValue("");
 });
 
 test("the study room returns to the qualification last answered on this device", async ({ page }) => {

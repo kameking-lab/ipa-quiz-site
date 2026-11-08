@@ -45,10 +45,11 @@ for (const width of [390, 1280]) {
     // 各分野の資格カードと一覧ページへの導線。
     const main = page.locator("main");
     for (const href of ["/ip", "/sg", "/fe", "/ap", "/au", "/fp3", "/fp2", "/takken", "/denken3", "/denken2", "/denko2", "/denko1", "/civil1", "/civil2", "/kankoji2", "/zoen2", "/tsushin2", "/kaigo", "/shakai", "/seishin", "/tohan",
-      "/e-learning/exams/qualifications/dai-1-shu-eisei-kanrisha", "/ipa", "/e-learning/exams", "/qualifications",
-      "/operator"]) {
+      "/e-learning/exams/qualifications/dai-1-shu-eisei-kanrisha", "/ipa", "/e-learning/exams", "/qualifications"]) {
       await expect(main.locator(`a[href="${href}"]`).first(), href).toBeAttached();
     }
+    // Operator information stays reachable from the shared footer.
+    await expect(page.locator('footer a[href="/operator"]').first()).toBeAttached();
     // 問題数バッジは実数（0問のカードは出さない）。
     await expect(page.locator('#domain-it a[href="/ip"]')).toContainText(/[1-9][\d,]*問/);
     await expect(main.getByText(/^0問$/)).toHaveCount(0);

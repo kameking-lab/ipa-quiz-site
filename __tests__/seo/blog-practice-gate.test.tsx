@@ -7,14 +7,15 @@ afterEach(() => vi.unstubAllEnvs());
 const slug = "it-shikaku-rirekisho-kakikata";
 
 it("keeps the inline blog practice on public web deployments", async () => {
-  vi.stubEnv("MOBILE_IAP_ENABLED", "false");
+  vi.stubEnv("WEB_STRICT_CONTENT_GATE", "false");
+  vi.stubEnv("MOBILE_IAP_ENABLED", "true");
   const html = renderToStaticMarkup(await BlogArticlePage({ params: Promise.resolve({ slug }) }));
   expect(html).toContain('aria-label="チャレンジの選択肢"');
   expect(html).toContain("無料・登録不要です。");
 });
 
-it("never serializes the new practice question or explanation when the shared strict gate is enabled", async () => {
-  vi.stubEnv("MOBILE_IAP_ENABLED", "true");
+it("never serializes the new practice question or explanation when the web strict gate is enabled", async () => {
+  vi.stubEnv("WEB_STRICT_CONTENT_GATE", "true");
   const practice = getBlogPractice(slug)!;
   const html = renderToStaticMarkup(await BlogArticlePage({ params: Promise.resolve({ slug }) }));
   const practiceSection = html.split('id="article-practice"')[1].split("</section>")[0];

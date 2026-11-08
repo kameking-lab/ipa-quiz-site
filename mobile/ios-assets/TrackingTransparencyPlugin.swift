@@ -1,6 +1,8 @@
 import Capacitor
 import AppTrackingTransparency
+#if canImport(GoogleMobileAds)
 import GoogleMobileAds
+#endif
 import UIKit
 import WebKit
 
@@ -8,7 +10,7 @@ import WebKit
 public class TrackingTransparencyPlugin: CAPPlugin, CAPBridgedPlugin {
     public let identifier = "TrackingTransparencyPlugin"
     public let jsName = "TrackingTransparency"
-    public let pluginMethods = [
+    public let pluginMethods: [CAPPluginMethod] = [
         CAPPluginMethod(name: "prepare", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "status", returnType: CAPPluginReturnPromise),
         CAPPluginMethod(name: "requestPermission", returnType: CAPPluginReturnPromise),
@@ -21,7 +23,7 @@ public class TrackingTransparencyPlugin: CAPPlugin, CAPBridgedPlugin {
     private var adsAllowed = false
     private var observer: NSObjectProtocol?
 
-    private var configured: Bool { Bundle.main.object(forInfoDictionaryKey: "KakomonAdsEnabled") as? Bool == true }
+    private var configured: Bool { blockList != nil && !ASCCaptureGate.isActive && Bundle.main.object(forInfoDictionaryKey: "KakomonAdsEnabled") as? Bool == true }
     private var trustedPage: Bool {
         guard let url = bridge?.webView?.url else { return false }
         return url.scheme == "https" && url.host == "www.kakomon-ai.jp" && url.port == nil
@@ -44,13 +46,20 @@ public class TrackingTransparencyPlugin: CAPPlugin, CAPBridgedPlugin {
 
     @objc func prepare(_ call: CAPPluginCall) {
         DispatchQueue.main.async {
-            // Consent UI is separate from ad-serving hosts. The shell awaits
-            // this rule before any online navigation is possible.
-            let rules = #"[{"trigger":{"url-filter":"^https?://([^/]+\\.)?(googlesyndication\\.com|doubleclick\\.net|googleadservices\\.com|googletagservices\\.com|adtrafficquality\\.google)/"},"action":{"type":"block"}}]"#
-            WKContentRuleListStore.default().compileContentRuleList(forIdentifier: "kakomon-consent-gated-ads-v2", encodedContentRuleList: rules) { list, _ in
+            // Consent UI is separate from ad-serving hosts. WebKit content
+            // rules accept only a regex subset: no disjunction ("|"), so each
+            // host needs its own rule. A "|" here fails compilation on every
+            // device (TestFlight build 12 could not start because of it).
+            let rules = #"[{"trigger":{"url-filter":"^https?://([^/]+\\.)?googlesyndication\\.com/"},"action":{"type":"block"}},{"trigger":{"url-filter":"^https?://([^/]+\\.)?doubleclick\\.net/"},"action":{"type":"block"}},{"trigger":{"url-filter":"^https?://([^/]+\\.)?googleadservices\\.com/"},"action":{"type":"block"}},{"trigger":{"url-filter":"^https?://([^/]+\\.)?googletagservices\\.com/"},"action":{"type":"block"}},{"trigger":{"url-filter":"^https?://([^/]+\\.)?adtrafficquality\\.google/"},"action":{"type":"block"}}]"#
+            WKContentRuleListStore.default().compileContentRuleList(forIdentifier: "kakomon-consent-gated-ads-v3", encodedContentRuleList: rules) { list, error in
                 DispatchQueue.main.async {
                     guard let list = list, self.bridge?.webView != nil else {
-                        call.reject("広告のプライバシー設定を準備できません。", "PRIVACY_UNAVAILABLE"); return
+                        // Fail closed for ads, never for the app: without the
+                        // rule list `configured` is false, so ATT and
+                        // enableAds stay off, and learning keeps working.
+                        CAPLog.print("TrackingTransparency: ad blocking rules unavailable, ads stay disabled:", error?.localizedDescription ?? "web view missing")
+                        call.resolve(["enabled": false, "client": "", "slot": "", "cmpScriptUrl": "", "privacy": "unavailable"])
+                        return
                     }
                     self.blockList = list
                     self.blockAds()
@@ -109,6 +118,7 @@ public class TrackingTransparencyPlugin: CAPPlugin, CAPBridgedPlugin {
                 self.blockAds()
                 call.resolve(["enabled": false]); return
             }
+            #if canImport(GoogleMobileAds)
             if !self.registered {
                 // Actual Capacitor WKWebView, on main, before the first ad tag.
                 // WebView-only usage does not call MobileAds.shared.start.
@@ -118,6 +128,10 @@ public class TrackingTransparencyPlugin: CAPPlugin, CAPBridgedPlugin {
             webView.configuration.userContentController.remove(list)
             self.adsAllowed = true
             call.resolve(["enabled": true])
+            #else
+            self.blockAds()
+            call.resolve(["enabled": false])
+            #endif
         }
     }
     @objc func disableAds(_ call: CAPPluginCall) {

@@ -1,0 +1,6 @@
+{
+ "checkedAt": "2026-11-07",
+ "method": "scripts/build-moj-tanto-staging.py: stem・全記述・全選択肢・appendix が公式テキスト層の空白無視部分文字列であること、公式テキストに未転記の残りがないこと（網羅）、解答は sources の公式正解のみから生成、editorial の正誤判断と公式正解の整合を機械検査。予備試験の sameAs は司法試験と本文完全一致の問のみ。",
+ "result": "errors 0",
+ "independentReview": "reports/w3-review/*.json（RV1〜RV14）と reports/shiho-tanto-review.md"
+}
