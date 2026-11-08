@@ -9,7 +9,7 @@ import { Preferences } from "@capacitor/preferences";
 import Link from "next/link";
 import type { MobileConfiguration, MobileEntitlement, CatalogEntry } from "../shared/contracts";
 import { downloads, type DownloadIndex } from "./downloads";
-import { Membership, purchaseError, nativePublicSdkKey } from "./purchases";
+import { Membership, purchaseError, nativePublicSdkKey, describeStoreError, StoreError } from "./purchases";
 import { beginLogin, observeLogin } from "./login";
 import { observeReminderTap, setReminder } from "./platform";
 import { persistStudy, restoreStudy } from "./portable-storage";
@@ -27,13 +27,28 @@ export function noticeText(error: unknown): string { return error instanceof Err
 export const SITE_ORIGIN = "https://www.kakomon-ai.jp";
 // The bundled shell: offline study with saved questions (paid downloads).
 const localUrl = "capacitor://localhost/index.html?local=1";
-export function NativeTools({ membershipOnly = false, membership = defaultMembership }: { membershipOnly?: boolean; membership?:Membership }) {
+// 「登録」/「購入を復元」 tapped while signed out: sign in first, then carry on
+// automatically when the panel reopens after the sign-in return.
+const INTENT_KEY = "kakomon:purchase-intent:v1";
+type Intent = "buy" | "restore";
+const defaultSignIn = (returnTo: string) => beginLogin(SITE_ORIGIN, returnTo);
+/** Message for a failed action: our own sentences as-is, SDK failures with their code. */
+export function actionFailureText(error: unknown, step: string): string {
+  if (error instanceof StoreError) return error.message;
+  if (error instanceof Error && !("code" in error)) return error.message;
+  return describeStoreError(error, step);
+}
+export function NativeTools({ membershipOnly = false, membership = defaultMembership, signIn = defaultSignIn }: { membershipOnly?: boolean; membership?:Membership; signIn?: (returnTo: string)=>Promise<void> }) {
   const [open, setOpen] = useState(membershipOnly || (typeof location !== "undefined" && location.hash === "#app-settings")), [access, setAccess] = useState<MobileEntitlement | null>(null);
   const [config, setConfig] = useState<MobileConfiguration | null>(null), [offer, setOffer] = useState<PurchasesPackage | null>(null);
   const [catalog, setCatalog] = useState<CatalogEntry[]>([]), [saved, setSaved] = useState<DownloadIndex>({});
   const [notice, setNotice] = useState(""), [busy, setBusy] = useState(false), [time, setTime] = useState("20:00");
   const [signingIn, setSigningIn] = useState<"" | "opening" | "finishing">("");
   const [purchasePending,setPurchasePending]=useState(false);
+  // Why the price could not be shown. Kept apart from `notice`, which every
+  // later action clears, so the reason stays on screen until it is fixed.
+  const [offerError,setOfferError]=useState(""), [offerLoading,setOfferLoading]=useState(false);
+  const [resume,setResume]=useState<Intent|null>(null);
   // Bumped whenever something other than the 「会員・設定」 button opens the panel
   // (a /billing link, a blocked web checkout, returning from sign-in). The panel
   // sits above the site header, so without scrolling to it the tap looked dead.
@@ -79,7 +94,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     try { await fn(); } catch(error) {
       const {cancelled,pending,rejected}=purchaseError(error);
       if(rejected&&user.current){await Preferences.remove({key:`kakomon:pending-purchase:${user.current}`}).catch(()=>{});setPurchasePending(false);}
-      setNotice(cancelled?"購入をキャンセルしました。":pending?"購入の承認待ちです。再購入せず、承認後に権利を再確認してください。":error instanceof Error ? error.message : "処理を完了できませんでした。");
+      setNotice(cancelled?"購入をキャンセルしました。":pending?"購入の承認待ちです。再購入せず、承認後に権利を再確認してください。":actionFailureText(error,"処理を完了できませんでした"));
     }
     finally { running.current=false;setBusy(false); }
   }, []);
@@ -122,18 +137,69 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   },[inSite,refresh,run]);
   // Loading the panel's data must never hold the action lock: a tap on
   // 「ログイン」 while it loads used to be silently dropped by run().
+  const loadOffer = useCallback(async (r: { entitlement: MobileEntitlement; configuration: MobileConfiguration }, isCancelled: ()=>boolean = ()=>false) => {
+    if (r.entitlement.entitled) { setOffer(null); setOfferError(""); return null; }
+    setOfferLoading(true);
+    try {
+      // Price and the buy button are shown before sign-in (sign-in happens on tap).
+      const found = await membership.offer(r.configuration, r.entitlement);
+      if (!isCancelled()) { setOffer(found); setOfferError(""); }
+      return found;
+    } catch (error) {
+      if (!isCancelled()) { setOffer(null); setOfferError(actionFailureText(error, "App Storeから商品を取得できませんでした")); }
+      return null;
+    } finally { if (!isCancelled()) setOfferLoading(false); }
+  }, [membership]);
   useEffect(()=>{ if (!open || !inSite) return; let cancelled=false; void (async()=>{
-    const r = await refresh(true); if(cancelled)return; setOffer(null);
-    if (!r.entitlement.entitled && r.entitlement.userId && r.configuration.sdkKey) { const found=await membership.offer(r.configuration, r.entitlement); if(!cancelled)setOffer(found); }
+    const r = await refresh(true); if(cancelled)return;
+    await loadOffer(r, ()=>cancelled); if(cancelled)return;
+    if (r.entitlement.userId) {
+      const raw=(await Preferences.get({key:INTENT_KEY})).value;
+      if (raw) {
+        await Preferences.remove({key:INTENT_KEY});
+        const intent=JSON.parse(raw) as {action?:Intent;createdAt?:number};
+        if ((intent.action==="buy"||intent.action==="restore") && Date.now()-(intent.createdAt??0)<15*60000 && !cancelled) setResume(intent.action);
+      }
+    }
     const response = await fetch("/api/mobile/catalog", { cache:"no-store" });
     if (response.ok && !cancelled) setCatalog((await response.json() as { exams: CatalogEntry[] }).exams);
-  })().catch(error=>{ if(!cancelled)setNotice(error instanceof Error?error.message:"会員状態を確認できません。"); }); return ()=>{cancelled=true;}; },[open,inSite,refresh,membership]);
+  })().catch(error=>{ if(!cancelled)setNotice(error instanceof Error?error.message:"会員状態を確認できません。"); }); return ()=>{cancelled=true;}; },[open,inSite,refresh,loadOffer]);
   useEffect(()=>{
     if (!revealTick) return;
     const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches;
     window.scrollTo({ top: 0, behavior: reduced ? "auto" : "smooth" });
     heading.current?.focus({ preventScroll: true });
   },[revealTick]);
+  const returnHere = ()=>`${location.pathname}${location.search}#app-settings`;
+  const loginFor = async (action: Intent)=>{
+    await Preferences.set({key:INTENT_KEY,value:JSON.stringify({action,createdAt:Date.now()})});
+    setSigningIn("opening");
+    try { await signIn(returnHere()); } finally { setTimeout(()=>setSigningIn(s=>s==="opening"?"":s),1500); }
+    setNotice(action==="buy"?"ログインが終わると、そのまま購入画面に進みます。":"ログインが終わると、そのまま購入を復元します。");
+  };
+  const purchase = ()=>void run(async()=>{
+    const r=await refresh(true);
+    if(r.entitlement.entitled)throw new Error("すでに有料会員です。追加購入は不要です。");
+    if(!r.entitlement.userId){ await loginFor("buy"); return; }
+    await Preferences.remove({key:INTENT_KEY});
+    const selected=offer??await loadOffer(r);
+    if(!selected)throw new StoreError("商品情報を取得できないため購入を開始できません。表示中の理由をご確認ください。","no_offer");
+    await membership.buy(r.configuration,r.entitlement,selected,async()=>{
+      await Preferences.set({key:`kakomon:pending-purchase:${r.entitlement.userId}`,value:"true"});setPurchasePending(true);
+    });const confirmed=await refresh(true);
+    setNotice(confirmed.entitlement.entitled?"購入を確認しました。有料会員の機能を利用できます（ウェブでも同じ会員です）。":"購入内容の確認待ちです。再購入せず、購入復元または会員状態の再確認をご利用ください。");
+  });
+  const restore = ()=>void run(async()=>{
+    const r=await refresh(true);
+    if(!r.entitlement.userId){ await loginFor("restore"); return; }
+    await Preferences.remove({key:INTENT_KEY});
+    await membership.restore(r.configuration,r.entitlement); const confirmed=await refresh(true);
+    setNotice(confirmed.entitlement.entitled?"購入を復元し、サーバーで権利を確認しました。":"有効な購入をサーバーで確認できませんでした。購入に使用したApple IDとログイン中のアカウントをご確認ください。承認待ちの場合は、承認後に再確認してください。");
+  });
+  // Latest handlers for the resume effect below (effects run in order).
+  const actions=useRef({purchase,restore});
+  useEffect(()=>{ actions.current={purchase,restore}; });
+  useEffect(()=>{ if(!resume)return; setResume(null); if(resume==="buy")actions.current.purchase(); else actions.current.restore(); },[resume]);
   const startLogin = ()=>{
     // Instant feedback, then the system sign-in sheet; nothing else is awaited first.
     if (signingIn) return;
@@ -165,16 +231,9 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
           {access.source === "web" && <div className="space-y-2"><p className="text-sm">既存のウェブ契約の管理・解約を開きます。</p><ManageSubscriptionButton label="ウェブ契約の管理・解約"/></div>}
           {!access.userId && loginButton}
           {purchasePending&&<p role="status" className="text-sm">購入内容をサーバーで確認中です。再購入せず「購入を復元」または会員状態の再確認をご利用ください。</p>}
-          {offer && !access.entitled && <div className="space-y-3 rounded-xl border border-border p-4"><h3 className="font-bold">過去問AI 月額プラン</h3><p>{offer.product.priceString} / 1か月（税込・自動更新）</p><p className="text-sm">全資格の問題を無制限で演習、資格ごとの事前ダウンロード。購入確認時にApple IDへ請求されます。解約するまで自動更新され、更新前にApp Storeのサブスクリプション管理で解約できます。解約後も有効期間の末日までは利用できます。</p><button className={primary} disabled={busy||purchasePending} onClick={()=>void run(async()=>{
-            const r=await refresh(true);
-            if(r.entitlement.entitled)throw new Error("すでに有料会員です。追加購入は不要です。");
-            await membership.buy(r.configuration,r.entitlement,offer,async()=>{
-              await Preferences.set({key:`kakomon:pending-purchase:${r.entitlement.userId}`,value:"true"});setPurchasePending(true);
-            });const confirmed=await refresh(true);
-            setNotice(confirmed.entitlement.entitled?"購入を確認しました。有料会員の機能を利用できます。":"購入内容の確認待ちです。再購入せず、購入復元または会員状態の再確認をご利用ください。");
-          })}>{offer.product.priceString} / 月で登録</button><PrivacyNote variant="purchase" /></div>}
-          {!access.entitled && access.userId && !offer && <p className="text-sm">商品情報を取得できていません。設定と通信を確認してください。</p>}
-          <div className="grid gap-2 sm:grid-cols-2"><button className={secondary} disabled={busy || !access.userId || !config?.sdkKey} onClick={()=>void run(async()=>{ const r=await refresh(true); await membership.restore(r.configuration,r.entitlement); const confirmed=await refresh(true); setNotice(confirmed.entitlement.entitled?"購入を復元し、サーバーで権利を確認しました。":"有効な購入をサーバーで確認できませんでした。購入に使用したApple IDとログイン中のアカウントをご確認ください。承認待ちの場合は、承認後に再確認してください。"); })}>購入を復元</button>
+          {offer && !access.entitled && <div className="space-y-3 rounded-xl border border-border p-4"><h3 className="font-bold">過去問AI 月額プラン</h3><p>{offer.product.priceString} / 1か月（税込・自動更新）</p><p className="text-sm">全資格の問題を無制限で演習、資格ごとの事前ダウンロード。購入確認時にApple IDへ請求されます。解約するまで自動更新され、更新前にApp Storeのサブスクリプション管理で解約できます。解約後も有効期間の末日までは利用できます。</p>{!access.userId && <p className="text-sm">登録ボタンを押すとログイン画面が開き、ログイン後そのまま購入に進みます。ウェブと同じ会員になり、どちらでも有料機能を使えます。</p>}<button className={primary} disabled={busy||purchasePending||!!signingIn} onClick={purchase}>{offer.product.priceString} / 月で登録</button><PrivacyNote variant="purchase" /></div>}
+          {!access.entitled && !offer && (offerLoading ? <p className="text-sm">App Storeの価格を読み込んでいます…</p> : offerError && <div role="alert" className="space-y-2 rounded-xl border border-destructive/40 p-3 text-sm"><p className="break-words">{offerError}</p><button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await loadOffer(await refresh(true)); })}>商品情報を再読み込み</button></div>)}
+          <div className="grid gap-2 sm:grid-cols-2"><button className={secondary} disabled={busy || !config?.sdkKey || !!signingIn} onClick={restore}>購入を復元</button>
             <button className={secondary} onClick={()=>void Browser.open({ url:"https://apps.apple.com/account/subscriptions" })}>App Storeで管理・解約</button></div>
           <p className="text-sm"><Link className="underline underline-offset-4" href="/terms">利用規約</Link> · <Link className="underline underline-offset-4" href="/privacy">プライバシーポリシー</Link> · <a className="underline underline-offset-4" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple標準使用許諾契約</a></p>
           <details className="rounded-xl border border-border px-3"><summary className="flex min-h-11 cursor-pointer items-center font-semibold">資格ごとの事前ダウンロード（有料会員限定）</summary>

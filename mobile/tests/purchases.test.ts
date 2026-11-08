@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { Capacitor } from "@capacitor/core";
 import { Preferences } from "@capacitor/preferences";
-import { Membership,purchaseError } from "../src/purchases";
+import { Membership,purchaseError,describeStoreError,StoreError } from "../src/purchases";
 import { PACKAGE_TYPE, type PurchasesPackage } from "@revenuecat/purchases-capacitor";
 import type { MobileConfiguration, MobileEntitlement } from "../shared/contracts";
 vi.mock("@capacitor/preferences",()=>({Preferences:{get:vi.fn()}}));
@@ -9,26 +9,62 @@ const c:MobileConfiguration={sdkKey:"mock-public-sdk-key",productId:"mock.monthl
 const a:MobileEntitlement={userId:"u",appUserId:"opaque-server-identity",entitled:false,source:"free",expiresAt:null,checkedAt:"",lease:null};
 const product={identifier:"monthly",packageType:PACKAGE_TYPE.MONTHLY,product:{identifier:c.productId,price:980,priceString:"¥980",currencyCode:"JPY",subscriptionPeriod:"P1M"}} as PurchasesPackage;
 const sdk={isConfigured:vi.fn(),isAnonymous:vi.fn(),configure:vi.fn(),logIn:vi.fn(),logOut:vi.fn(),getOfferings:vi.fn(),purchasePackage:vi.fn(),restorePurchases:vi.fn()};
-beforeEach(()=>{vi.resetAllMocks();sdk.isConfigured.mockResolvedValue({isConfigured:false});sdk.isAnonymous.mockResolvedValue({isAnonymous:false});sdk.getOfferings.mockResolvedValue({all:{main:{availablePackages:[product]}}});});
+let configured=false;
+beforeEach(()=>{vi.resetAllMocks();configured=false;sdk.isConfigured.mockImplementation(async()=>({isConfigured:configured}));sdk.configure.mockImplementation(async()=>{configured=true;});sdk.isAnonymous.mockResolvedValue({isAnonymous:false});sdk.getOfferings.mockResolvedValue({all:{main:{availablePackages:[product]}}});});
 it("shows server web membership without calling StoreKit or buying twice",async()=>{
   await expect(new Membership(sdk).offer(c,{...a,entitled:true,source:"web"})).rejects.toThrow("追加購入は不要");expect(sdk.configure).not.toHaveBeenCalled();expect(sdk.purchasePackage).not.toHaveBeenCalled();
 });
-it("requires sign-in and server-derived identity",async()=>{
-  await expect(new Membership(sdk).offer(c,{...a,userId:null})).rejects.toThrow("ログイン");expect(sdk.configure).not.toHaveBeenCalled();
+it("shows the store price before sign-in with an anonymous SDK, but buys and restores only as the server identity",async()=>{
+  const guest={...a,userId:null,appUserId:null},m=new Membership(sdk);
+  await expect(m.offer(c,guest)).resolves.toBe(product);
+  expect(sdk.configure).toHaveBeenCalledWith({apiKey:c.sdkKey});
+  await expect(m.buy(c,guest,product)).rejects.toThrow("ログイン");
+  await expect(m.restore(c,guest)).rejects.toThrow("ログイン");
+  expect(sdk.purchasePackage).not.toHaveBeenCalled();expect(sdk.restorePurchases).not.toHaveBeenCalled();
+  // After sign-in the same SDK switches to the opaque server-derived identity.
+  await m.buy(c,a,product);
+  expect(sdk.logIn).toHaveBeenCalledWith({appUserID:a.appUserId});expect(sdk.purchasePackage).toHaveBeenCalledOnce();
 });
-it("buys only the configured one-month JPY product after rechecking price",async()=>{
+it("refuses a signed-in purchase without the server-derived RevenueCat identity",async()=>{
+  await expect(new Membership(sdk).offer(c,{...a,appUserId:null})).rejects.toThrow("app_user_id");expect(sdk.configure).not.toHaveBeenCalled();
+});
+it("buys the configured monthly product at the App Store's own price (no local price gate)",async()=>{
   const m=new Membership(sdk),offer=await m.offer(c,a);await m.buy(c,a,offer);
   expect(sdk.configure).toHaveBeenCalledWith({apiKey:c.sdkKey,appUserID:a.appUserId});expect(sdk.purchasePackage).toHaveBeenCalledWith({aPackage:product});
-  sdk.getOfferings.mockResolvedValue({all:{main:{availablePackages:[{...product,product:{...product.product,price:1200}}]}}});
-  await expect(m.buy(c,a,offer)).rejects.toThrow("価格");expect(sdk.purchasePackage).toHaveBeenCalledTimes(1);
+  // A different storefront price/currency is shown by StoreKit and Apple's sheet; it must not block buying.
+  const usd={...product,product:{...product.product,price:6.99,priceString:"$6.99",currencyCode:"USD"}} as PurchasesPackage;
+  sdk.getOfferings.mockResolvedValue({all:{main:{availablePackages:[usd]}}});
+  await m.buy(c,a,offer);expect(sdk.purchasePackage).toHaveBeenLastCalledWith({aPackage:usd});
+  sdk.getOfferings.mockResolvedValue({all:{main:{availablePackages:[{...product,product:{...product.product,identifier:"other.product"}}]}}});
+  await expect(m.buy(c,a,offer)).rejects.toThrow("other.product");expect(sdk.purchasePackage).toHaveBeenCalledTimes(2);
+});
+it("falls back to the current offering and names what the store actually returned",async()=>{
+  sdk.getOfferings.mockResolvedValue({all:{},current:{availablePackages:[product]}});
+  await expect(new Membership(sdk).offer(c,a)).resolves.toBe(product);
+  sdk.getOfferings.mockResolvedValue({all:{},current:null});
+  await expect(new Membership(sdk).offer(c,a)).rejects.toThrow("offering「main」なし");
+  sdk.getOfferings.mockResolvedValue({all:{main:{availablePackages:[]}}});
+  await expect(new Membership(sdk).offer(c,a)).rejects.toThrow("mock.monthly なし / 届いた商品: 0件");
+});
+it("reports the RevenueCat code when products cannot be fetched and when configure silently fails",async()=>{
+  sdk.getOfferings.mockRejectedValue(Object.assign(new Error("There is an issue with your configuration."),{code:"23",underlyingErrorMessage:"None of the products registered in the RevenueCat dashboard could be fetched from App Store Connect."}));
+  const error=await new Membership(sdk).offer(c,a).catch(e=>e);
+  expect(error).toBeInstanceOf(StoreError);expect(error.message).toContain("App Storeから商品を取得できませんでした（コード 23 CONFIGURATION_ERROR）");expect(error.message).toContain("None of the products");
+  configured=false;sdk.configure.mockImplementation(async()=>{});
+  await expect(new Membership(sdk).offer(c,a)).rejects.toThrow("configure 失敗");
+});
+it("describes a missing native plugin instead of a generic failure",()=>{
+  expect(describeStoreError(Object.assign(new Error('"Purchases.getOfferings()" is not implemented on ios'),{code:"UNIMPLEMENTED"}),"商品取得")).toContain("アプリの課金機能が読み込まれていません（UNIMPLEMENTED）");
+  expect(describeStoreError("Web not supported in this plugin.","商品取得")).toContain("UNIMPLEMENTED");
+  expect(describeStoreError({code:"10",message:"offline"},"購入")).toContain("コード 10 NETWORK_ERROR");
 });
 it("propagates cancellation, pending purchases and restore errors without granting local rights",async()=>{
   const m=new Membership(sdk);sdk.purchasePackage.mockRejectedValue({userCancelled:true});await expect(m.buy(c,a,product)).rejects.toMatchObject({userCancelled:true});
-  sdk.restorePurchases.mockRejectedValue(new Error("store unavailable"));await expect(m.restore(c,a)).rejects.toThrow("store unavailable");
+  sdk.restorePurchases.mockRejectedValue({code:"2",message:"store unavailable"});await expect(m.restore(c,a)).rejects.toThrow("購入を復元できませんでした（コード 2 STORE_PROBLEM_ERROR）");
   expect(a.entitled).toBe(false);
 });
 it("supports restore and disconnects the RevenueCat identity at sign-out",async()=>{
-  const m=new Membership(sdk);await m.restore(c,a);expect(sdk.restorePurchases).toHaveBeenCalledOnce();sdk.isConfigured.mockResolvedValue({isConfigured:true});await m.disconnect();expect(sdk.logOut).toHaveBeenCalledOnce();
+  const m=new Membership(sdk);await m.restore(c,a);expect(sdk.restorePurchases).toHaveBeenCalledOnce();await m.disconnect();expect(sdk.logOut).toHaveBeenCalledOnce();
 });
 it("does not leave a pending transaction when price or duration validation fails before StoreKit",async()=>{
   const beforePurchase=vi.fn();
@@ -50,7 +86,7 @@ it("distinguishes rejected transactions from pending or uncertain network/store 
   for(const code of ["0","2","6","10"])expect(purchaseError({code})).toMatchObject({rejected:false,pending:false});
 });
 it("does not log out an already anonymous SDK identity when switching from guest to member",async()=>{
-  sdk.isConfigured.mockResolvedValue({isConfigured:true});sdk.isAnonymous.mockResolvedValue({isAnonymous:true});
+  configured=true;sdk.isAnonymous.mockResolvedValue({isAnonymous:true});
   const m=new Membership(sdk);await m.disconnect();expect(sdk.logOut).not.toHaveBeenCalled();
   await m.offer(c,a);expect(sdk.logIn).toHaveBeenCalledWith({appUserID:a.appUserId});
 });
