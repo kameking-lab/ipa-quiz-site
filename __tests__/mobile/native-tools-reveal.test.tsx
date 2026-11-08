@@ -40,7 +40,10 @@ beforeEach(() => {
 afterEach(() => { vi.unstubAllGlobals(); document.body.innerHTML = ""; });
 
 it("scrolls the membership panel into view when a /billing link far down the page is tapped", async () => {
-  render(<><NativeTools /><main><a href="/billing/start?returnTo=%2Fq">月額980円で続ける</a></main></>);
+  render(<NativeTools />);
+  // The paywall CTA lives far below the panel, in the page body.
+  const cta = Object.assign(document.createElement("a"), { href: "/billing/start?returnTo=%2Fq", textContent: "月額980円で続ける" });
+  document.body.append(cta);
   await act(async () => {});
   expect(screen.queryByRole("heading", { name: "会員・設定" })).toBeNull();
   await act(async () => { fireEvent.click(screen.getByText("月額980円で続ける")); });
