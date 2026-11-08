@@ -84,3 +84,11 @@ export function qualificationMascot(exam: string, slot: SeatMascot): SeatMascot 
   const pair = (catalog.exams as Record<string, Pair>)[code] ?? (catalog.domains as Record<string, Pair>)[domain];
   return pair ? { ...seated, src: pair[state], stateLabel: state === "study" ? "勉強中" : `あるある：${pair.breakLabel}` } : seated;
 }
+
+/** The qualification's own studying chihuahua (its outfit, no headband) for cards outside the room. */
+export function qualificationStudyArt(exam: string): string {
+  const code = canonicalPresenceExam(exam) ?? exam;
+  const domain = (catalog.examDomains as Record<string, string>)[code];
+  const pair = (catalog.exams as Record<string, Pair>)[code] ?? (catalog.domains as Record<string, Pair>)[domain];
+  return pair?.study ?? "/images/home/study-room-mascots/generic-8.webp";
+}
