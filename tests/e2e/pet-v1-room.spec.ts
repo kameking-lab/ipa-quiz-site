@@ -20,7 +20,7 @@ for (const width of [320, 390]) test(`private room child and saved event survive
   const own = page.locator("section[data-own-pet-id]");
   await expect(own).toHaveAttribute("data-own-pet-id", '["guest","ap"]', { timeout: 15000 });
   await expect(own).toHaveAttribute("data-room-scene", "first-meeting");
-  await expect(own.getByRole("heading", { name: "応用情報技術者のこむぎ" })).toBeVisible();
+  await expect(own.getByRole("button", { name: "こむぎ・応用情報技術者（名前を変える）" })).toBeVisible();
   await expect(own.locator("img").first()).toHaveAttribute("src", petArtFor("ap", "partner", "slack"));
   await expect(own).toContainText("いつもの机");
   const before = await page.evaluate(key => localStorage.getItem(key), key), text = await own.textContent();

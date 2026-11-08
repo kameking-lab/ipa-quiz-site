@@ -110,7 +110,7 @@ test("VIS3E away dog occupies clear floor with an empty desk, stays fixed and re
       const dog = el.querySelector(".study-room-away")!;
       const box = dog.getBoundingClientRect();
       const desks = [...el.querySelectorAll(".study-room-seat")];
-      const front = desks.filter(desk => /(?:^|\s)study-seat-(?:1|3|7|11)(?:\s|$)/.test(desk.className)).map(desk => desk.getBoundingClientRect());
+      const front = desks.filter(desk => /(?:^|\s)study-seat-(?:1|2)(?:\s|$)/.test(desk.className)).map(desk => desk.getBoundingClientRect());
       return { top: box.top, bottom: box.bottom, sceneBottom: el.getBoundingClientRect().bottom,
         deskBottom: Math.max(...desks.map(desk => desk.getBoundingClientRect().bottom)),
         frontTop: Math.min(...front.map(desk => desk.top)),
@@ -139,7 +139,12 @@ test("VIS3E away dog occupies clear floor with an empty desk, stays fixed and re
   await show(page, await measured(page, { count: 49, exams: [{ exam: "ip", count: 49 }] }));
   await expect(away).toHaveCount(1);
   expect(await stable()).toEqual(initial);
+  // A quiet room (1-3 learners) shows everyone studying: no playing dog, no empty desk.
   await show(page, await measured(page, { count: 1, exams: [{ exam: "ip", count: 1 }] }));
+  await expect(away).toHaveCount(0);
+  await expect(vacant).toHaveCount(0);
+  await expect(scene.locator('[data-mascot-state="study"] img')).toHaveAttribute("alt", "ITパスポートのチワワ（勉強中）");
+  await show(page, await measured(page, { count: 4, exams: [{ exam: "ip", count: 4 }] }));
   await expect(away).toHaveCount(1);
   await expect(vacant).toHaveCount(1);
   await show(page, await measured(page, { count: 0, exams: [] }));

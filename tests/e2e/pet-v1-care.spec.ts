@@ -34,7 +34,7 @@ for (const width of [320, 390]) test(`care, reversible forms and backed-up resto
   await sheet.getByRole("button", { name: "精密", exact: true }).tap();
   await expect(sheet.getByRole("button", { name: "精密", exact: true })).toHaveAttribute("aria-pressed", "true");
   await sheet.getByLabel("名前", { exact: true }).fill("こむぎ"); await sheet.getByRole("button", { name: "名前を保存" }).tap();
-  await expect(sheet.getByText("応用情報技術者のこむぎ", { exact: true })).toBeVisible();
+  await expect(sheet.getByText("こむぎ・応用情報技術者", { exact: true })).toBeVisible();
   const beforeCare = await read();
   await sheet.getByRole("button", { name: "なでる", exact: true }).tap();
   expect(await read()).toEqual(beforeCare);
