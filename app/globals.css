@@ -628,6 +628,10 @@ html.native-app body::before {
   z-index: 60;
   pointer-events: none;
 }
+/* Reserved slot for the native bar (NativeTools: py-2 + one 44px row + border)
+   while its chunk loads, so content does not shift under the learner's finger. */
+.native-tools-placeholder { display: none; }
+html.native-app .native-tools-placeholder { display: block; height: calc(2.75rem + 1rem + 1px); border-bottom: 1px solid var(--border); }
 /* In the app the practice route is just the practice: no site-wide link grid. */
 html.native-app .native-app-hidden { display: none; }
 html.native-app .sticky.top-0 { top: var(--safe-top); }
