@@ -21,6 +21,18 @@ describe("guest route", () => {
     res = await POST(request("q11")); expect(res.status).toBe(429); expect((await res.json()).error).toBe("daily_limit");
     res = await POST(request()); expect(res.status).toBe(429); expect(res.headers.get("retry-after")).toBe("25"); expect((await res.json()).error).toBe("guest_rate_limited");
   });
+  it("passes the request so the network+device cap applies to guests only; signed-in users never touch it", async () => {
+    m.guest = "id"; m.guestGrant.mockResolvedValueOnce({ status: "ok", used: 1 });
+    const guestRequest = request();
+    expect((await POST(guestRequest)).status).toBe(200);
+    expect(m.guestGrant).toHaveBeenCalledWith("realm", "id", "q1", 10, expect.any(Number), guestRequest);
+    m.guestGrant.mockClear(); m.user = "alice";
+    expect((await POST(request("q2"))).status).toBe(200);
+    expect(m.guestGrant).not.toHaveBeenCalled();
+    m.status.mockResolvedValue({ entitled: true }); m.grant.mockResolvedValueOnce({ kind: "pass", remaining: null });
+    expect((await POST(request("q3"))).status).toBe(200);
+    expect(m.guestGrant).not.toHaveBeenCalled();
+  });
   it("does not downgrade auth exceptions or grant an already claimed guest", async () => {
     m.authFail = true; expect((await POST(request())).status).toBe(503); expect(m.guestGrant).not.toHaveBeenCalled();
     m.authFail = false; m.guest = "id"; m.guestGrant.mockResolvedValue({ status: "claimed" });
