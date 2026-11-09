@@ -1,0 +1,197 @@
+{
+  "updatedAt": "2026-10-11T07:45:51.217665+00:00",
+  "owner": "PT main 01a129c2-0017-7289-9986-2630110cc08f",
+  "helperThread": "01a12870-878a-734e-8caf-daa1d4cff08f",
+  "root": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\pt-unowned-20261011\\helper-pt61-01a12870",
+  "scope": [
+    "AM1",
+    "AM2",
+    "AM3",
+    "AM4",
+    "AM5",
+    "AM7",
+    "AM10",
+    "AM11",
+    "AM12",
+    "PM1",
+    "PM3",
+    "PM4",
+    "PM5",
+    "PM7",
+    "PM10",
+    "PM12",
+    "PM15",
+    "PM26",
+    "PM34"
+  ],
+  "completedReviewCoverage": {
+    "questions": 19,
+    "choices": 95
+  },
+  "allClinicalClaimsVerified": false,
+  "publicGo": 0,
+  "needsReview": true,
+  "oldDraftModified": false,
+  "oldOwnerHoldsCleared": false,
+  "originalRegeneration": 0,
+  "newPR": null,
+  "gitTouched": false,
+  "finiteCorrectionStatusCounts": {
+    "VERIFIED_FINITE_CORRECTION": 7,
+    "PROPOSED_PENDING_DIRECT_SOURCE": 3,
+    "VERIFIED_VISUAL_FINITE_CORRECTION": 1,
+    "VERIFIED_ARITHMETIC_FINITE_CORRECTION": 2
+  },
+  "choiceStatusCounts": {
+    "CORROBORATED_CORE": 43,
+    "HOLD_SOURCE": 28,
+    "HOLD_FIGURE": 6,
+    "VERIFIED_FINITE_CORRECTION": 4,
+    "VERIFIED_INSTRUMENT_PURPOSE": 4,
+    "CORRECTION_NEEDED": 3,
+    "VERIFIED_THRESHOLD": 1,
+    "VERIFIED_VISUAL_CORRECTION": 1,
+    "VERIFIED_ARITHMETIC": 5
+  },
+  "files": {
+    "REVIEW-NOTES.json": {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\pt-unowned-20261011\\helper-pt61-01a12870\\REVIEW-NOTES.json",
+      "sha256": "c2d0e92a1cbafdb54740ac5a851ad6dc9e270f49c2fdbe6ee031229a2c21e644"
+    },
+    "QA.json": {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\pt-unowned-20261011\\helper-pt61-01a12870\\QA.json",
+      "sha256": "07c5dbaabfb7c80496ad9c34a4aaeb16d1ce57e4a09300cba33cb0c5cc6b8170"
+    },
+    "FINITE-CORRECTIONS.json": {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\pt-unowned-20261011\\helper-pt61-01a12870\\FINITE-CORRECTIONS.json",
+      "sha256": "a7b0e1d115297079cb04f51303bc52f0d0531cebefb6093602ce10b96f8a826a"
+    },
+    "EXACT-HOLDS.json": {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\pt-unowned-20261011\\helper-pt61-01a12870\\EXACT-HOLDS.json",
+      "sha256": "f6277e26b4b4383bcdd4cf974e3bdb84c9056d5ab186900ba0368021352aa8ba"
+    },
+    "VALIDATION.json": {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\pt-unowned-20261011\\helper-pt61-01a12870\\VALIDATION.json",
+      "sha256": "de1f66d97cad20515b7e862de16982b73ee1262f3a97973ea17ad2a27c8d79f2"
+    },
+    "ASSET-MANIFEST.json": {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\pt-unowned-20261011\\helper-pt61-01a12870\\ASSET-MANIFEST.json",
+      "sha256": "5005f9b5acf6dbe77c056fa3b19c72956bb63b23ea02b4feefaaf2b2c21b95f4"
+    }
+  },
+  "remainingBlockers": "EXACT-HOLDS.jsonは旧HOLDの原文を保全し、各肢の直接資料不足/図未確定/指定版不足を別欄で明示。医学claimの全面検証・公開を完了したとは数えない。",
+  "accessStops": [
+    {
+      "id": "pusher",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/14640870/",
+      "retrievedAt": "2026-10-11T07:22:39.046746+00:00",
+      "authUsed": false,
+      "tlsVerification": true,
+      "status": 203,
+      "finalUrl": "https://pubmed.ncbi.nlm.nih.gov/14640870/",
+      "contentType": "text/html; charset=utf-8",
+      "hold": "HTTP failure; no bypass or alternate authenticated access"
+    },
+    {
+      "id": "boston",
+      "url": "https://www.bostonoandp.com/products/scoliosis-and-spine/boston-brace/",
+      "retrievedAt": "2026-10-11T07:22:39.612962+00:00",
+      "authUsed": false,
+      "tlsVerification": true,
+      "status": 403,
+      "finalUrl": "https://opsb.com/product/boston-brace-original/",
+      "contentType": "text/html",
+      "hold": "HTTP failure; no bypass or alternate authenticated access"
+    },
+    {
+      "id": "hipexam",
+      "url": "https://stanfordmedicine25.stanford.edu/the25/hip.html",
+      "retrievedAt": "2026-10-11T07:22:39.867526+00:00",
+      "authUsed": false,
+      "tlsVerification": true,
+      "status": 404,
+      "finalUrl": "https://stanfordmedicine25.stanford.edu/the25/hip.html",
+      "contentType": "text/html;charset=utf-8",
+      "hold": "HTTP failure; no bypass or alternate authenticated access"
+    },
+    {
+      "id": "preterm",
+      "url": "https://www.rch.org.au/rchcpg/hospital_clinical_guideline_index/Developmental_care_of_the_preterm_infant/",
+      "retrievedAt": "2026-10-11T07:22:40.211551+00:00",
+      "authUsed": false,
+      "tlsVerification": true,
+      "status": 404,
+      "finalUrl": "https://www.rch.org.au/rchcpg/hospital_clinical_guideline_index/Developmental_care_of_the_preterm_infant/",
+      "contentType": "text/html; charset=utf-8",
+      "hold": "HTTP failure; no bypass or alternate authenticated access"
+    },
+    {
+      "id": "newborn",
+      "url": "https://newborns.stanford.edu/NeuroReflexes.html",
+      "retrievedAt": "2026-10-11T07:22:40.370663+00:00",
+      "authUsed": false,
+      "tlsVerification": true,
+      "status": 404,
+      "finalUrl": "https://med.stanford.edu:443/newbornsNeuroReflexes.html",
+      "contentType": "text/html;charset=utf-8",
+      "hold": "HTTP failure; no bypass or alternate authenticated access"
+    },
+    {
+      "id": "spasticFoot",
+      "url": "https://medicaljournalssweden.se/jrm/article/download/10403/14123/44795",
+      "retrievedAt": "2026-10-11T07:34:33.329466+00:00",
+      "authUsed": false,
+      "tlsVerification": true,
+      "bypassUsed": false,
+      "hold": "('Connection aborted.', RemoteDisconnected('Remote end closed connection without response'))"
+    },
+    {
+      "id": "thaSunnybrook",
+      "url": "https://sunnybrook.ca/wp-content/uploads/2025/11/restricted-weight-bearing-hip-precautions-pr-99505_acc.pdf",
+      "retrievedAt": "2026-10-11T07:34:34.168907+00:00",
+      "authUsed": false,
+      "tlsVerification": true,
+      "bypassUsed": false,
+      "status": 403,
+      "finalUrl": "https://sunnybrook.ca/wp-content/uploads/2025/11/restricted-weight-bearing-hip-precautions-pr-99505_acc.pdf",
+      "contentType": "text/html; charset=iso-8859-1",
+      "hold": "HTTP failure; stopped without bypass"
+    },
+    {
+      "id": "dressingAttempt",
+      "url": "https://www.nth.nhs.uk/resources/dressing-techniques/",
+      "retrievedAt": "2026-10-11T07:36:41.423876+00:00",
+      "authUsed": false,
+      "tlsVerification": true,
+      "bypassUsed": false,
+      "status": 403,
+      "finalUrl": "https://www.nth.nhs.uk/resources/dressing-techniques/",
+      "contentType": "text/html",
+      "hold": "HTTP failure; stopped without bypass"
+    },
+    {
+      "id": "thomasAttempt",
+      "url": "https://peerj.com/articles/2325/",
+      "retrievedAt": "2026-10-11T07:36:41.423876+00:00",
+      "authUsed": false,
+      "tlsVerification": true,
+      "bypassUsed": false,
+      "status": 403,
+      "finalUrl": "https://peerj.com/articles/2325/",
+      "contentType": "text/html; charset=UTF-8",
+      "hold": "HTTP failure; stopped without bypass"
+    }
+  ],
+  "additionalWebAccessStop": {
+    "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3384944/",
+    "result": "reCAPTCHA browser checking displayed; stopped, no bypass"
+  },
+  "spasticFootFullTextWebReceipt": {
+    "url": "https://medicaljournalssweden.se/jrm/article/download/10403/14123/44795",
+    "status": "web PDF text read",
+    "journalPage": 464,
+    "physicalPage": 4,
+    "localSha256": null,
+    "localAcquisitionFailure": "RemoteDisconnected"
+  }
+}

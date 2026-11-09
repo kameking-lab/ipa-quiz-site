@@ -1,0 +1,3094 @@
+{
+  "baseCandidateCommit": "336fa09fc815d7dee2aca5c46b51c96345f5037a",
+  "scope": "existing 27-question complement of the unchanged 43 content-HOLD IDs",
+  "existingEvidenceOnly": true,
+  "newMedicalResearch": 0,
+  "regeneration": 0,
+  "manuscriptsChanged": 0,
+  "holdsCleared": 0,
+  "publicGo": false,
+  "counts": {
+    "C_EXPLANATION_REQUIREMENTS_REMAIN": 19,
+    "A_REVIEW_CANDIDATE_NO_NEW_SOURCE": 6,
+    "B_PRIOR_SOURCE_SCOPE_DECISION": 2
+  },
+  "originalContentHeldQuestionIdsUnchanged": [
+    "rigaku-ryohoshi-2025-annual-am-q15",
+    "rigaku-ryohoshi-2025-annual-am-q19",
+    "rigaku-ryohoshi-2025-annual-am-q84",
+    "rigaku-ryohoshi-2025-annual-am-q89",
+    "rigaku-ryohoshi-2025-annual-pm-q1",
+    "rigaku-ryohoshi-2025-annual-pm-q24",
+    "rigaku-ryohoshi-2025-annual-pm-q25",
+    "rigaku-ryohoshi-2025-annual-pm-q27",
+    "rigaku-ryohoshi-2025-annual-pm-q28",
+    "rigaku-ryohoshi-2025-annual-pm-q34",
+    "rigaku-ryohoshi-2025-annual-pm-q35",
+    "rigaku-ryohoshi-2025-annual-pm-q36",
+    "rigaku-ryohoshi-2025-annual-pm-q8",
+    "rigaku-ryohoshi-2026-annual-am-q1",
+    "rigaku-ryohoshi-2026-annual-am-q10",
+    "rigaku-ryohoshi-2026-annual-am-q12",
+    "rigaku-ryohoshi-2026-annual-am-q2",
+    "rigaku-ryohoshi-2026-annual-am-q3",
+    "rigaku-ryohoshi-2026-annual-am-q5",
+    "rigaku-ryohoshi-2026-annual-am-q7",
+    "rigaku-ryohoshi-2026-annual-am-q81",
+    "rigaku-ryohoshi-2026-annual-am-q83",
+    "rigaku-ryohoshi-2026-annual-am-q85",
+    "rigaku-ryohoshi-2026-annual-am-q89",
+    "rigaku-ryohoshi-2026-annual-am-q90",
+    "rigaku-ryohoshi-2026-annual-am-q94",
+    "rigaku-ryohoshi-2026-annual-am-q95",
+    "rigaku-ryohoshi-2026-annual-am-q96",
+    "rigaku-ryohoshi-2026-annual-pm-q1",
+    "rigaku-ryohoshi-2026-annual-pm-q10",
+    "rigaku-ryohoshi-2026-annual-pm-q12",
+    "rigaku-ryohoshi-2026-annual-pm-q15",
+    "rigaku-ryohoshi-2026-annual-pm-q21",
+    "rigaku-ryohoshi-2026-annual-pm-q22",
+    "rigaku-ryohoshi-2026-annual-pm-q23",
+    "rigaku-ryohoshi-2026-annual-pm-q25",
+    "rigaku-ryohoshi-2026-annual-pm-q3",
+    "rigaku-ryohoshi-2026-annual-pm-q33",
+    "rigaku-ryohoshi-2026-annual-pm-q34",
+    "rigaku-ryohoshi-2026-annual-pm-q36",
+    "rigaku-ryohoshi-2026-annual-pm-q4",
+    "rigaku-ryohoshi-2026-annual-pm-q5",
+    "rigaku-ryohoshi-2026-annual-pm-q7"
+  ],
+  "unchangedBaseJsonSha256": {
+    "applied-finite-corrections.json": "3b0661ec6152497a3ad5e9fed22b9f632a019c486014d84840b5135d16a2f1ac",
+    "candidates70.json": "de65f9bdd106398e06f6367bce0cf8d92f8bb0dcb34cd8768f1cb9663e695e83",
+    "latest-main-overlap.json": "0aefbfcf1d9bd031b91eda5ce55d1b15a9cf0a4caa175e0c257686b9954c84ad",
+    "manifest.json": "71e4bc6e0a4da109d6454a3cd3e52f64f307d789ccdcd5ac2f35841197290509",
+    "official-key-table400.json": "2a44aa724c3107dc840fb1bc26f9ba49d00fa2e9972cf787635fd6c4cd325221",
+    "ownership-and-gaps400.json": "912e088994dd5fcc475e88cb29a3eb0e9dedf7be1cc581d108d964744f361863",
+    "registered179-readonly-key-audit.json": "8a03b1cb70276481d8391433a2045c9400a42e282e38cda8d2224ed4a477b70d",
+    "review-summary.json": "5f686ed3798da49ac106d6596496e053ef3b0f20d9bc4283a742f63e945e7077",
+    "saved-baseline70.json": "d89b1b20573574e9239ea3e90df9cd486b156a90ee328697c15b90eb3f9fb82e",
+    "source-receipts70.json": "f817f199800204ef55683fa792b82e251853e345300f7fc83c8b1ae6f78cd641"
+  },
+  "commonUnresolvedRequirements": [
+    {
+      "id": "G1",
+      "requirement": "専門受入れと独立公開査読のreceiptは全27問で未取得。Aも受入れ判断の候補であり公開許可ではない。"
+    },
+    {
+      "id": "G2",
+      "requirement": "旧HOLD台帳は全て保持。統合担当がcanonical ID/試験回/AMPM・公式PNG・追加一次資料のreceiptを対応づけて個別受入れを記録する。"
+    },
+    {
+      "id": "G3",
+      "requirement": "図あり18問はレビューbundle相対URL。出題に採用する場合のpublic配置と登録は今回行わない。"
+    },
+    {
+      "id": "G4",
+      "requirement": "PR760は70問入りの候補bundle。AのIDだけを採用する判断は他の64問やHOLD43問の解除に連動させない。保存モデルreceiptは全て現状を保持する。"
+    }
+  ],
+  "rows": [
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q1",
+      "shortId": "60AM1",
+      "group": "C_EXPLANATION_REQUIREMENTS_REMAIN",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {},
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/figure-qa-2025.json",
+      "qaSha256": "3feba1f31836d25227b43e803f17b264f2f695d9b14f19f172c8a227e5ceacb4",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08a_01.pdf",
+          "evidence": "第60回理学療法士国家試験AM問1の原文・図・選択肢。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "evidence": "公式正答値表のAM問1: 4。",
+          "kind": "official-primary"
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-am-p07-33e12bd69bee.png",
+        "sha256": "33e12bd69bee54806e77ba67a657e870cfe7fd78534be851905d3dfda528d82c",
+        "year": 2025,
+        "role": "question",
+        "session": "am",
+        "physicalPage": 7,
+        "bytes": 81833,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": {
+        "path": "sources/2025-question-am-p07-33e12bd69bee.png",
+        "sha256": "33e12bd69bee54806e77ba67a657e870cfe7fd78534be851905d3dfda528d82c",
+        "year": 2025,
+        "role": "question",
+        "session": "am",
+        "physicalPage": 7,
+        "bytes": 81833,
+        "unchangedOriginalPage": true
+      },
+      "figureVisualAlreadyChecked": true,
+      "figureNote": "公式前問1の図は側臥位で下側の上肢を台端から下垂し、肩の軸まわりに前腕を動かす。保存稿の「腹臥位」は図と不一致。",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08a_01.pdf",
+          "sha256": "d28809a261e3315fcb3acdfdb749acb6cdf2c78510e59be6c92a8b4481f66238"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        },
+        {
+          "role": "officialSupplementPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08a_02.pdf",
+          "sha256": "3aa3da93a6723b5f9fa6e7c9f0a646ec2449dfdb10f895066f1b40f0187d9060"
+        }
+      ],
+      "remainingRequirement": "側臥位への図形態修正は確認済み。Daniels/MMT手技と5肢の運動方向・筋作用の個別専門根拠は未記録。",
+      "oldHoldReasonsRetained": [
+        "figure/supplement requires local original-page QA"
+      ],
+      "oldNeedsReviewReasonsRetained": [],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q7",
+      "shortId": "60AM7",
+      "group": "C_EXPLANATION_REQUIREMENTS_REMAIN",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {},
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/figure-qa-2025.json",
+      "qaSha256": "3feba1f31836d25227b43e803f17b264f2f695d9b14f19f172c8a227e5ceacb4",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08a_01.pdf",
+          "evidence": "第60回理学療法士国家試験AM問7の原文・図・選択肢。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "evidence": "公式正答値表のAM問7: 5。",
+          "kind": "official-primary"
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-am-p10-43024e093dc9.png",
+        "sha256": "43024e093dc9dfa418bc7b5d56d96cda70aa44a2b4ab80f4d2001cf6537ff3f7",
+        "year": 2025,
+        "role": "question",
+        "session": "am",
+        "physicalPage": 10,
+        "bytes": 139593,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": {
+        "path": "sources/2025-question-am-p10-43024e093dc9.png",
+        "sha256": "43024e093dc9dfa418bc7b5d56d96cda70aa44a2b4ab80f4d2001cf6537ff3f7",
+        "year": 2025,
+        "role": "question",
+        "session": "am",
+        "physicalPage": 10,
+        "bytes": 139593,
+        "unchangedOriginalPage": true
+      },
+      "figureVisualAlreadyChecked": true,
+      "figureNote": "公式前問7の図では仰臥位、肩外転・肘屈曲位で手首側を台端から下げる矢印。大円筋を伸長する外旋方向。",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08a_01.pdf",
+          "sha256": "d28809a261e3315fcb3acdfdb749acb6cdf2c78510e59be6c92a8b4481f66238"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        },
+        {
+          "role": "officialSupplementPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08a_02.pdf",
+          "sha256": "3aa3da93a6723b5f9fa6e7c9f0a646ec2449dfdb10f895066f1b40f0187d9060"
+        }
+      ],
+      "remainingRequirement": "図の肢位と外旋矢印は確認済み。選択肢各筋の伸長・作用の5肢専門根拠は未記録。",
+      "oldHoldReasonsRetained": [
+        "figure/supplement requires local original-page QA"
+      ],
+      "oldNeedsReviewReasonsRetained": [
+        "図は上肢を挙上した位置から前腕を下方へ倒す矢印を示している。肩関節の具体的な肢位(屈曲角度・外転角度)と回旋方向は画像上の判断であり、厳密な肢位の確認が必要。"
+      ],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q9",
+      "shortId": "60AM9",
+      "group": "C_EXPLANATION_REQUIREMENTS_REMAIN",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {},
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/figure-qa-2025.json",
+      "qaSha256": "3feba1f31836d25227b43e803f17b264f2f695d9b14f19f172c8a227e5ceacb4",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08a_01.pdf",
+          "evidence": "第60回理学療法士国家試験AM問9の原文・図・選択肢。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "evidence": "公式正答値表のAM問9: 4。",
+          "kind": "official-primary"
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-am-p12-63eeae559506.png",
+        "sha256": "63eeae559506a4883093bcb7493f74a27158c7145c09085e9c385586f88514dc",
+        "year": 2025,
+        "role": "question",
+        "session": "am",
+        "physicalPage": 12,
+        "bytes": 86476,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": {
+        "path": "sources/2025-question-am-p12-63eeae559506.png",
+        "sha256": "63eeae559506a4883093bcb7493f74a27158c7145c09085e9c385586f88514dc",
+        "year": 2025,
+        "role": "question",
+        "session": "am",
+        "physicalPage": 12,
+        "bytes": 86476,
+        "unchangedOriginalPage": true
+      },
+      "figureVisualAlreadyChecked": true,
+      "figureNote": "公式前問9では右手で壁を押したとき右肩甲骨の内側縁が胸郭から浮く。前鋸筋の翼状肩甲に合致。",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08a_01.pdf",
+          "sha256": "d28809a261e3315fcb3acdfdb749acb6cdf2c78510e59be6c92a8b4481f66238"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        },
+        {
+          "role": "officialSupplementPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08a_02.pdf",
+          "sha256": "3aa3da93a6723b5f9fa6e7c9f0a646ec2449dfdb10f895066f1b40f0187d9060"
+        }
+      ],
+      "remainingRequirement": "壁押しと肩甲骨内側縁の所見は確認済み。支配神経/他筋との鑑別を含む5肢専門根拠は未記録。",
+      "oldHoldReasonsRetained": [
+        "figure/supplement requires local original-page QA"
+      ],
+      "oldNeedsReviewReasonsRetained": [],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q82",
+      "shortId": "60AM82",
+      "group": "A_REVIEW_CANDIDATE_NO_NEW_SOURCE",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {},
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {
+        "ア": "primary-supported",
+        "イ": "primary-supported",
+        "ウ": "primary-supported",
+        "エ": "primary-supported",
+        "オ": "primary-supported"
+      },
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/source-qa-a.json",
+      "qaSha256": "b01a2a38e2491ad2e17c45f287544d45cbc8bb69d7343c651c61c36782bcd8ea",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://mn.gov/mnddc/parallels2/two/003.html",
+          "issuer": "Minnesota Governor's Council on Developmental Disabilities・歴史資料",
+          "evidence": "デンマークで1959年の法にnormalization原理が盛り込まれたと記す。",
+          "choices": [
+            "ア",
+            "イ",
+            "ウ",
+            "エ",
+            "オ"
+          ]
+        },
+        {
+          "url": "https://www.oregon.gov/odhs/agency/Committee-Documents/silc-history-philosophy.pdf",
+          "issuer": "Oregon State Independent Living Council・運動史",
+          "evidence": "バークレーの自立生活センターは1970年代前半に成立し、1975年にはカリフォルニア州知事が訪問。",
+          "choices": [
+            "ア",
+            "イ",
+            "ウ",
+            "エ",
+            "オ"
+          ]
+        },
+        {
+          "url": "https://www.un.org/development/desa/disabilities/the-international-year-of-disabled-persons-1981.html",
+          "issuer": "United Nations・International Year of Disabled Persons",
+          "evidence": "国連総会は1981年を国際障害者年と宣言した。",
+          "choices": [
+            "ア",
+            "イ",
+            "ウ",
+            "エ",
+            "オ"
+          ]
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-am-p40-66da8151dfa7.png",
+        "sha256": "66da8151dfa760f8547e6565e5bf2173f83f348dc33693a6b08b34ed91de6d45",
+        "year": 2025,
+        "role": "question",
+        "session": "am",
+        "physicalPage": 40,
+        "bytes": 68124,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": null,
+      "figureVisualAlreadyChecked": false,
+      "figureNote": "図不要",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08a_01.pdf",
+          "sha256": "d28809a261e3315fcb3acdfdb749acb6cdf2c78510e59be6c92a8b4481f66238"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        }
+      ],
+      "remainingRequirement": "年代順の5肢を州政府資料・国連資料で支持。個別の追加原典要求は記録なし。",
+      "oldHoldReasonsRetained": [
+        "source identity disagrees with official packet session"
+      ],
+      "oldNeedsReviewReasonsRetained": [
+        "回答ページPNGは提供されておらず、正答キーはSOURCE-PACKETの文字情報に依拠している。",
+        "各取り組みの開始年代(1950年代、1960~70年代、1981年)は一般的な知識に基づく記載であり、一次資料での確認は未実施。"
+      ],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-am-q94",
+      "shortId": "60AM94",
+      "group": "A_REVIEW_CANDIDATE_NO_NEW_SOURCE",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {},
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {
+        "ア": "primary-supported",
+        "イ": "primary-supported",
+        "ウ": "primary-supported",
+        "エ": "primary-supported",
+        "オ": "primary-supported"
+      },
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/source-qa-a.json",
+      "qaSha256": "b01a2a38e2491ad2e17c45f287544d45cbc8bb69d7343c651c61c36782bcd8ea",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.dermatol.or.jp/dermatol/wp-content/uploads/xoops/files/guideline/nessho2023.pdf",
+          "issuer": "日本皮膚科学会・熱傷診療ガイドライン第3版",
+          "evidence": "解説2.1は成人20% TBSA以上に輸液療法を行うと明記。15%以上は初期輸液を必要と考えるとの説明もある。",
+          "choices": [
+            "エ"
+          ]
+        },
+        {
+          "url": "https://www.dermatol.or.jp/dermatol/wp-content/uploads/xoops/files/guideline/1380006822_3.pdf",
+          "issuer": "日本皮膚科学会・熱傷診療ガイドライン2011",
+          "evidence": "成人15% TBSA程度以上の輸液療法を推奨。20%は両版の閾値を満たす。",
+          "choices": [
+            "エ"
+          ]
+        },
+        {
+          "url": "https://www.jsbi-burn.org/members/guideline/pdf/guideline3.pdf",
+          "issuer": "日本熱傷学会・熱傷診療ガイドライン第3版",
+          "evidence": "CQ8-3は化学損傷への可及的早期の洗浄を強く推奨。CQ5冒頭は広範囲熱傷の壊死組織の早期除去・創閉鎖を求める。",
+          "choices": [
+            "ア",
+            "オ"
+          ]
+        },
+        {
+          "url": "https://www.dermatol.or.jp/dermatol/wp-content/uploads/xoops/files/guideline/nessho2023.pdf",
+          "issuer": "日本皮膚科学会・熱傷診療ガイドライン第3版",
+          "evidence": "CQ2はⅡ度熱傷にドレッシング材の使用を提案。受傷後早期に一律不使用とはいえない。",
+          "choices": [
+            "ウ"
+          ]
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/34117171/",
+          "issuer": "Martini et al. 2021・重症熱傷成人の前向き観察研究",
+          "evidence": "重症熱傷成人の入院後早期の筋蛋白分解を観察し、重症熱傷による異化の亢進を報告。",
+          "choices": [
+            "イ"
+          ]
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-am-p44-ff880dedf26e.png",
+        "sha256": "ff880dedf26e396af85b54faf5bc8aac340df087bac7ad1e93007a3dd94197fe",
+        "year": 2025,
+        "role": "question",
+        "session": "am",
+        "physicalPage": 44,
+        "bytes": 93490,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": null,
+      "figureVisualAlreadyChecked": false,
+      "figureNote": "図不要",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08a_01.pdf",
+          "sha256": "d28809a261e3315fcb3acdfdb749acb6cdf2c78510e59be6c92a8b4481f66238"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        }
+      ],
+      "remainingRequirement": "5肢を熱傷学会/皮膚科学会指針・原著で支持。成人20%と旧15%閾値を区別した有限修正済み。",
+      "oldHoldReasonsRetained": [
+        "source identity disagrees with official packet session"
+      ],
+      "oldNeedsReviewReasonsRetained": [
+        "初期輸液の適応となる熱傷面積の閾値（成人でⅡ度以上、約15%）は専門的な数値のため、追加の一次文献（熱傷診療ガイドライン等）で確認が必要です。",
+        "創傷被覆材と早期手術に関する記述は、診療ガイドラインでの確認が必要です。",
+        "正答ページの画像は提供ファイルに含まれていないため、キーはパケット記載の公式キー文字列に依拠しています。"
+      ],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q2",
+      "shortId": "60PM2",
+      "group": "C_EXPLANATION_REQUIREMENTS_REMAIN",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {},
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/figure-qa-2025.json",
+      "qaSha256": "3feba1f31836d25227b43e803f17b264f2f695d9b14f19f172c8a227e5ceacb4",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "evidence": "第60回理学療法士国家試験PM問2の原文・図・選択肢。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "evidence": "公式正答値表のPM問2: 1。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_02.pdf",
+          "evidence": "公式後問2・3の共通ケース6歳男児。別冊No.1の右大腿骨頭骨端核は左と比べ扁平・不整。別冊物理5頁の見出しは「No.1（P問題2）」で、問3は同じ症例を継承。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/7360497/",
+          "evidence": "Perthes病の原著論文：大腿骨頭のcontainmentを治療上の重要因子として扱う。",
+          "kind": "original-study"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11388931/",
+          "evidence": "画像評価の原著論文：Perthes病は通常4〜8歳児の大腿骨頭骨端の無血管性壊死。",
+          "kind": "original-study"
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-pm-p08-f4d3be4a16fa.png",
+        "sha256": "f4d3be4a16fa1531cbbba93efec5b8aa4f3066af6ec94c4c73c1657e4ad73c08",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 8,
+        "bytes": 82144,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": {
+        "path": "sources/2025-supplement-pm-p05-6dae62d7fcd7.png",
+        "sha256": "6dae62d7fcd77e8d1d4b8d5329bbffb2514f48746f1a166271e8e36d47d8d27b",
+        "year": 2025,
+        "role": "supplement",
+        "session": "pm",
+        "physicalPage": 5,
+        "bytes": 204077,
+        "unchangedOriginalPage": true
+      },
+      "figureVisualAlreadyChecked": true,
+      "figureNote": "公式後問2・3の共通ケース6歳男児。別冊No.1の右大腿骨頭骨端核は左と比べ扁平・不整。別冊物理5頁の見出しは「No.1（P問題2）」で、問3は同じ症例を継承。",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        },
+        {
+          "role": "officialSupplementPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_02.pdf",
+          "sha256": "ed8967bc0c9524b26d571ff105d4cc993bff11e03f057734d5ef53a4c068f468"
+        }
+      ],
+      "remainingRequirement": "共通6歳症例・別冊No.1はPM3と一致。Perthes原著の補強はあるが他4疾患を含む5肢の誤答理由の個別確認は未記録。",
+      "oldHoldReasonsRetained": [
+        "figure/supplement requires local original-page QA"
+      ],
+      "oldNeedsReviewReasonsRetained": [],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q3",
+      "shortId": "60PM3",
+      "group": "C_EXPLANATION_REQUIREMENTS_REMAIN",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "3",
+        "5"
+      ],
+      "requiredSelections": 2,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {},
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/figure-qa-2025.json",
+      "qaSha256": "3feba1f31836d25227b43e803f17b264f2f695d9b14f19f172c8a227e5ceacb4",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "evidence": "第60回理学療法士国家試験PM問3の原文・図・選択肢。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "evidence": "公式正答値表のPM問3: 35。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_02.pdf",
+          "evidence": "公式後問2・3は共通ケース。問3自体に図はなく、問2が指定した別冊No.1の右股関節X線を臨床文脈として継承する。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/7360497/",
+          "evidence": "Perthes病の原著論文：大腿骨頭のcontainmentを治療上の重要因子として扱う。",
+          "kind": "original-study"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11388931/",
+          "evidence": "画像評価の原著論文：Perthes病は通常4〜8歳児の大腿骨頭骨端の無血管性壊死。",
+          "kind": "original-study"
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-pm-p08-f4d3be4a16fa.png",
+        "sha256": "f4d3be4a16fa1531cbbba93efec5b8aa4f3066af6ec94c4c73c1657e4ad73c08",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 8,
+        "bytes": 82144,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": {
+        "path": "sources/2025-supplement-pm-p05-6dae62d7fcd7.png",
+        "sha256": "6dae62d7fcd77e8d1d4b8d5329bbffb2514f48746f1a166271e8e36d47d8d27b",
+        "year": 2025,
+        "role": "supplement",
+        "session": "pm",
+        "physicalPage": 5,
+        "bytes": 204077,
+        "unchangedOriginalPage": true
+      },
+      "figureVisualAlreadyChecked": true,
+      "figureNote": "公式後問2・3は共通ケース。問3自体に図はなく、問2が指定した別冊No.1の右股関節X線を臨床文脈として継承する。",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        },
+        {
+          "role": "officialSupplementPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_02.pdf",
+          "sha256": "ed8967bc0c9524b26d571ff105d4cc993bff11e03f057734d5ef53a4c068f468"
+        }
+      ],
+      "remainingRequirement": "PM2の症例・別冊を継承。containment原著の補強はあるが保存/荷重/運動等の全5肢の治療理由の個別確認は未記録。",
+      "oldHoldReasonsRetained": [
+        "figure/supplement requires local original-page QA"
+      ],
+      "oldNeedsReviewReasonsRetained": [],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q5",
+      "shortId": "60PM5",
+      "group": "C_EXPLANATION_REQUIREMENTS_REMAIN",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {},
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/figure-qa-2025.json",
+      "qaSha256": "3feba1f31836d25227b43e803f17b264f2f695d9b14f19f172c8a227e5ceacb4",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "evidence": "第60回理学療法士国家試験PM問5の原文・図・選択肢。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "evidence": "公式正答値表のPM問5: 3。",
+          "kind": "official-primary"
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-pm-p10-dea648059844.png",
+        "sha256": "dea648059844de93776986531fb0c5bd87deeab57f7e323855d4f2e58526f7e3",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 10,
+        "bytes": 142011,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": {
+        "path": "sources/2025-question-pm-p10-dea648059844.png",
+        "sha256": "dea648059844de93776986531fb0c5bd87deeab57f7e323855d4f2e58526f7e3",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 10,
+        "bytes": 142011,
+        "unchangedOriginalPage": true
+      },
+      "figureVisualAlreadyChecked": true,
+      "figureNote": "公式後問5の右股関節図は左右表示があり、右下肢を対側へ正中線越しに動かす内転。左下肢を屈曲挙上して通路を作る。",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        },
+        {
+          "role": "officialSupplementPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_02.pdf",
+          "sha256": "ed8967bc0c9524b26d571ff105d4cc993bff11e03f057734d5ef53a4c068f468"
+        }
+      ],
+      "remainingRequirement": "右股関節の内転矢印を確認済み。MMT段階・代償等を含む5肢の手技根拠は未記録。",
+      "oldHoldReasonsRetained": [
+        "figure/supplement requires local original-page QA"
+      ],
+      "oldNeedsReviewReasonsRetained": [],
+      "savedModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q6",
+      "shortId": "60PM6",
+      "group": "C_EXPLANATION_REQUIREMENTS_REMAIN",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {},
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/figure-qa-2025.json",
+      "qaSha256": "3feba1f31836d25227b43e803f17b264f2f695d9b14f19f172c8a227e5ceacb4",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "evidence": "第60回理学療法士国家試験PM問6の原文・図・選択肢。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "evidence": "公式正答値表のPM問6: 5。",
+          "kind": "official-primary"
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-pm-p11-435f55721443.png",
+        "sha256": "435f557214435e930daef4aa77d8f89d3aae279e5257f7fb4545b4344fc952dd",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 11,
+        "bytes": 79754,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": {
+        "path": "sources/2025-question-pm-p11-435f55721443.png",
+        "sha256": "435f557214435e930daef4aa77d8f89d3aae279e5257f7fb4545b4344fc952dd",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 11,
+        "bytes": 79754,
+        "unchangedOriginalPage": true
+      },
+      "figureVisualAlreadyChecked": true,
+      "figureNote": "公式後問6は頭部回旋に伴い顔面側と後頭側の上下肢で異なる屈伸を描く。非対称性緊張性頸反射の肢位。",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        },
+        {
+          "role": "officialSupplementPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_02.pdf",
+          "sha256": "ed8967bc0c9524b26d571ff105d4cc993bff11e03f057734d5ef53a4c068f468"
+        }
+      ],
+      "remainingRequirement": "原図の頭部回旋と上下肢位は確認済み。各反射の特徴・発達条件等の5肢根拠は未記録。",
+      "oldHoldReasonsRetained": [
+        "figure/supplement requires local original-page QA"
+      ],
+      "oldNeedsReviewReasonsRetained": [],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q7",
+      "shortId": "60PM7",
+      "group": "C_EXPLANATION_REQUIREMENTS_REMAIN",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {},
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/figure-qa-2025.json",
+      "qaSha256": "3feba1f31836d25227b43e803f17b264f2f695d9b14f19f172c8a227e5ceacb4",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "evidence": "第60回理学療法士国家試験PM問7の原文・図・選択肢。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "evidence": "公式正答値表のPM問7: 2。",
+          "kind": "official-primary"
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-pm-p12-4744eddfe14a.png",
+        "sha256": "4744eddfe14a442919c3883a384864cdcb7e110a2c0e2b0824c0be39c8c5aad0",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 12,
+        "bytes": 143919,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": {
+        "path": "sources/2025-question-pm-p12-4744eddfe14a.png",
+        "sha256": "4744eddfe14a442919c3883a384864cdcb7e110a2c0e2b0824c0be39c8c5aad0",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 12,
+        "bytes": 143919,
+        "unchangedOriginalPage": true
+      },
+      "figureVisualAlreadyChecked": true,
+      "figureNote": "公式後問7は腹臥位で右肩を外転し、伸ばした上肢の手にダンベルを持って上方へ挙上。対象は棘下筋。問8の切断図は同じ頁の別図であり混同しない。",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        },
+        {
+          "role": "officialSupplementPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_02.pdf",
+          "sha256": "ed8967bc0c9524b26d571ff105d4cc993bff11e03f057734d5ef53a4c068f468"
+        }
+      ],
+      "remainingRequirement": "原図の肩肢位・抵抗方向は確認済み。各筋の作用と強化条件の5肢根拠は未記録。",
+      "oldHoldReasonsRetained": [
+        "figure/supplement requires local original-page QA"
+      ],
+      "oldNeedsReviewReasonsRetained": [],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q9",
+      "shortId": "60PM9",
+      "group": "C_EXPLANATION_REQUIREMENTS_REMAIN",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {},
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/figure-qa-2025.json",
+      "qaSha256": "3feba1f31836d25227b43e803f17b264f2f695d9b14f19f172c8a227e5ceacb4",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "evidence": "第60回理学療法士国家試験PM問9の原文・図・選択肢。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "evidence": "公式正答値表のPM問9: 2。",
+          "kind": "official-primary"
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-pm-p13-833cd54d24b6.png",
+        "sha256": "833cd54d24b6b0d9e187d5ed62194505bb68aafe6b3cbe73bd66fbbb96320af7",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 13,
+        "bytes": 94225,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": {
+        "path": "sources/2025-question-pm-p13-833cd54d24b6.png",
+        "sha256": "833cd54d24b6b0d9e187d5ed62194505bb68aafe6b3cbe73bd66fbbb96320af7",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 13,
+        "bytes": 94225,
+        "unchangedOriginalPage": true
+      },
+      "figureVisualAlreadyChecked": true,
+      "figureNote": "公式後問9では膝屈曲約90度、検者の力の矢印が脛骨近位部を後方へ向ける。PCL後方引き出し検査。",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        },
+        {
+          "role": "officialSupplementPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_02.pdf",
+          "sha256": "ed8967bc0c9524b26d571ff105d4cc993bff11e03f057734d5ef53a4c068f468"
+        }
+      ],
+      "remainingRequirement": "原図の後方矢印と肢位は確認済み。各特殊テスト/靱帯の全5肢根拠は未記録。",
+      "oldHoldReasonsRetained": [
+        "figure/supplement requires local original-page QA"
+      ],
+      "oldNeedsReviewReasonsRetained": [],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q13",
+      "shortId": "60PM13",
+      "group": "C_EXPLANATION_REQUIREMENTS_REMAIN",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {},
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/figure-qa-2025.json",
+      "qaSha256": "3feba1f31836d25227b43e803f17b264f2f695d9b14f19f172c8a227e5ceacb4",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "evidence": "第60回理学療法士国家試験PM問13の原文・図・選択肢。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "evidence": "公式正答値表のPM問13: 3。",
+          "kind": "official-primary"
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-pm-p16-affbf6547677.png",
+        "sha256": "affbf6547677629cfa90911cb87acb6e2ca2ff88512b2c12ec3ef1542cb35da1",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 16,
+        "bytes": 146964,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": {
+        "path": "sources/2025-question-pm-p16-affbf6547677.png",
+        "sha256": "affbf6547677629cfa90911cb87acb6e2ca2ff88512b2c12ec3ef1542cb35da1",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 16,
+        "bytes": 146964,
+        "unchangedOriginalPage": true
+      },
+      "figureVisualAlreadyChecked": true,
+      "figureNote": "公式後問13の装具は骨盤ガードルから頸部リングまで支柱が伸び、側弯矯正パッドを備える。Milwaukee装具に一致。",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        },
+        {
+          "role": "officialSupplementPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_02.pdf",
+          "sha256": "ed8967bc0c9524b26d571ff105d4cc993bff11e03f057734d5ef53a4c068f468"
+        }
+      ],
+      "remainingRequirement": "頸部リング・支柱・パッドの原図形態は確認済み。各装具の名称/適応の全5肢根拠は未記録。",
+      "oldHoldReasonsRetained": [
+        "figure/supplement requires local original-page QA"
+      ],
+      "oldNeedsReviewReasonsRetained": [],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q15",
+      "shortId": "60PM15",
+      "group": "C_EXPLANATION_REQUIREMENTS_REMAIN",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {},
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/figure-qa-2025.json",
+      "qaSha256": "3feba1f31836d25227b43e803f17b264f2f695d9b14f19f172c8a227e5ceacb4",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "evidence": "第60回理学療法士国家試験PM問15の原文・図・選択肢。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "evidence": "公式正答値表のPM問15: 3。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_02.pdf",
+          "evidence": "公式後問15の別冊No.2は正面・側面の脳血管造影。内頸動脈終末部付近の側副血管網を認める。正面像の左右表示は確認したが病変側は断定しない。",
+          "kind": "official-primary"
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-pm-p17-f62f46e08110.png",
+        "sha256": "f62f46e081106413a19494625f23cc4c46952d60905992f3d2d7149fe2fff37e",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 17,
+        "bytes": 122295,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": {
+        "path": "sources/2025-supplement-pm-p07-bb5e5caeccc3.png",
+        "sha256": "bb5e5caeccc3f4bb6eee056beb25be6613e6daa27ed3e60ee7b9aba3be3c7062",
+        "year": 2025,
+        "role": "supplement",
+        "session": "pm",
+        "physicalPage": 7,
+        "bytes": 314907,
+        "unchangedOriginalPage": true
+      },
+      "figureVisualAlreadyChecked": true,
+      "figureNote": "公式後問15の別冊No.2は正面・側面の脳血管造影。内頸動脈終末部付近の側副血管網を認める。正面像の左右表示は確認したが病変側は断定しない。",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        },
+        {
+          "role": "officialSupplementPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_02.pdf",
+          "sha256": "ed8967bc0c9524b26d571ff105d4cc993bff11e03f057734d5ef53a4c068f468"
+        }
+      ],
+      "remainingRequirement": "別冊脳血管造影の所属と所見は確認済み。病変側を断定せず、各疾患の鑑別理由の5肢根拠は未記録。",
+      "oldHoldReasonsRetained": [
+        "figure/supplement requires local original-page QA"
+      ],
+      "oldNeedsReviewReasonsRetained": [],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q17",
+      "shortId": "60PM17",
+      "group": "C_EXPLANATION_REQUIREMENTS_REMAIN",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {},
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/figure-qa-2025.json",
+      "qaSha256": "3feba1f31836d25227b43e803f17b264f2f695d9b14f19f172c8a227e5ceacb4",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "evidence": "第60回理学療法士国家試験PM問17の原文・図・選択肢。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "evidence": "公式正答値表のPM問17: 5。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://locomo-joa.jp/check/test/two-step",
+          "evidence": "日本整形外科学会公式：2ステップテストは歩幅からロコモ度を測定する。",
+          "kind": "society-primary"
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-pm-p19-b528ef3294ff.png",
+        "sha256": "b528ef3294ff03c1c0a2754918c9b3b2e722fe3a83052d2780ffb0b6bbbd148d",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 19,
+        "bytes": 113832,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": {
+        "path": "sources/2025-question-pm-p19-b528ef3294ff.png",
+        "sha256": "b528ef3294ff03c1c0a2754918c9b3b2e722fe3a83052d2780ffb0b6bbbd148d",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 19,
+        "bytes": 113832,
+        "unchangedOriginalPage": true
+      },
+      "figureVisualAlreadyChecked": true,
+      "figureNote": "公式後問17の図は「できるだけ大股で歩きます」と示し、2歩の歩幅を測る2ステップテスト。",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        },
+        {
+          "role": "officialSupplementPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_02.pdf",
+          "sha256": "ed8967bc0c9524b26d571ff105d4cc993bff11e03f057734d5ef53a4c068f468"
+        }
+      ],
+      "remainingRequirement": "学会の2ステップ手順と原図は確認済み。他の4検査の目的・手順を含む全5肢の個別根拠対応は未記録。",
+      "oldHoldReasonsRetained": [
+        "figure/supplement requires local original-page QA"
+      ],
+      "oldNeedsReviewReasonsRetained": [],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q20",
+      "shortId": "60PM20",
+      "group": "C_EXPLANATION_REQUIREMENTS_REMAIN",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {
+        "2": {
+          "status": "CLOSED_BY_OFFICIAL_PDF_RR_MEASUREMENT",
+          "confirmed": "Aの公式心電図は紙速25 mm/秒。R-R間隔は約4.15大マス（約20.7小マス）なので、300÷4.15≒72回/分であり、60回/分未満ではない。",
+          "unconfirmed": null,
+          "sources": [
+            "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_02.pdf",
+            "https://cvphysiology.com/arrhythmias/a020"
+          ],
+          "sourceAccessNote": "公式PDF物理9頁を288dpiで90度回転レンダリングし、R頂点のx座標と大マス線間隔を計測。独立した医学教育資料で25mm/秒のレート式を照合。"
+        },
+        "5": {
+          "status": "CLOSED_BY_OFFICIAL_PDF_RR_MEASUREMENT",
+          "confirmed": "Bの公式心電図は紙速25 mm/秒。R-R間隔は約2.77大マス（約13.8小マス）なので、300÷2.77≒108回/分であり、120回/分以上ではない。",
+          "unconfirmed": null,
+          "sources": [
+            "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_02.pdf",
+            "https://cvphysiology.com/arrhythmias/a020"
+          ],
+          "sourceAccessNote": "公式PDF物理9頁を288dpiで90度回転レンダリングし、R頂点のx座標と大マス線間隔を計測。独立した医学教育資料で25mm/秒のレート式を照合。"
+        }
+      },
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/figure-qa-2025.json",
+      "qaSha256": "3feba1f31836d25227b43e803f17b264f2f695d9b14f19f172c8a227e5ceacb4",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "evidence": "第60回理学療法士国家試験PM問20の原文・図・選択肢。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "evidence": "公式正答値表のPM問20: 4。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_02.pdf",
+          "evidence": "公式後問20の別冊No.3はV5誘導A・B、25mm/秒、1mV=10mm。BでQRS後のSTが基線より下がる。回転表示のままR-R間隔の精密値は断定しない。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://cvphysiology.com/arrhythmias/a020",
+          "evidence": "医学部生向けの著者作成資料。25mm/秒で心拍数=300/R-R大マス数=1500/R-R小マス数。",
+          "kind": "medical-school-faculty-primary-teaching"
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-pm-p21-bfa96e9e1be1.png",
+        "sha256": "bfa96e9e1be1cdc1ac1d1ee9e42f28b619a34d56d17ca6283ef68d3c7b46414a",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 21,
+        "bytes": 101867,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": {
+        "path": "sources/2025-supplement-pm-p09-cd69d250e4e8.png",
+        "sha256": "cd69d250e4e8867622058905cc739330317dfebe17359b6af913ac0d32783d00",
+        "year": 2025,
+        "role": "supplement",
+        "session": "pm",
+        "physicalPage": 9,
+        "bytes": 212567,
+        "unchangedOriginalPage": true
+      },
+      "figureVisualAlreadyChecked": true,
+      "figureNote": "公式後問20の別冊No.3はV5誘導A・B、25mm/秒、1mV=10mm。BでQRS後のSTが基線より下がる。回転表示のままR-R間隔の精密値は断定しない。 公式PDFを90度回転し288dpiで再描画した計測で、AのR-R約4.15大マス、BのR-R約2.77大マス。",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        },
+        {
+          "role": "officialSupplementPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_02.pdf",
+          "sha256": "ed8967bc0c9524b26d571ff105d4cc993bff11e03f057734d5ef53a4c068f468"
+        }
+      ],
+      "remainingRequirement": "肢2/5は公式R-R計測で確認済み。肢1/4は原図所見の確認。肢3のLown III定義と総合解説の虚血推論は全肢専門資料の受入れ未了。",
+      "oldHoldReasonsRetained": [
+        "figure/supplement requires local original-page QA"
+      ],
+      "oldNeedsReviewReasonsRetained": [
+        "別冊の心電図画像が90度回転していて、格子が細かく読み取りにくいです。そのため、AとBの心拍数を数値として厳密に計測していません。選択肢2と5は、正答4が確定していることと、おおよそのR-R間隔から消去しました。公開前に、元画像で心拍数を確認する必要があります。"
+      ],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q21",
+      "shortId": "60PM21",
+      "group": "A_REVIEW_CANDIDATE_NO_NEW_SOURCE",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {},
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "1",
+        "4"
+      ],
+      "requiredSelections": 2,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {
+        "ア": "primary-supported",
+        "イ": "primary-supported",
+        "ウ": "primary-supported",
+        "エ": "primary-supported",
+        "オ": "primary-supported"
+      },
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/source-qa-a.json",
+      "qaSha256": "b01a2a38e2491ad2e17c45f287544d45cbc8bb69d7343c651c61c36782bcd8ea",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.ncbi.nlm.nih.gov/books/NBK310947/",
+          "issuer": "WHO, Community-Based Rehabilitation: CBR Guidelines (2010), Management",
+          "evidence": "CBR matrixはHealth, Education, Livelihood, Social, Empowermentの5構成要素。残る3選択肢はこの列挙にない。",
+          "choices": [
+            "ア",
+            "イ",
+            "ウ",
+            "エ",
+            "オ"
+          ]
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-pm-p21-bfa96e9e1be1.png",
+        "sha256": "bfa96e9e1be1cdc1ac1d1ee9e42f28b619a34d56d17ca6283ef68d3c7b46414a",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 21,
+        "bytes": 101867,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": null,
+      "figureVisualAlreadyChecked": false,
+      "figureNote": "図不要",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        }
+      ],
+      "remainingRequirement": "WHOのCBR構成要素一覧で5肢を支持。",
+      "oldHoldReasonsRetained": [
+        "source identity disagrees with official packet session"
+      ],
+      "oldNeedsReviewReasonsRetained": [
+        "公式解答PDFの画像ページが供給されていないため、キーはパケット記載の公式キー文字列のみで確認した。",
+        "CBRマトリクスの構成要素（WHO CBRガイドライン）は、解説作成時に一次資料で再確認していない。"
+      ],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q22",
+      "shortId": "60PM22",
+      "group": "A_REVIEW_CANDIDATE_NO_NEW_SOURCE",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {},
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {
+        "ア": "primary-supported",
+        "イ": "primary-supported",
+        "ウ": "primary-supported",
+        "エ": "primary-supported",
+        "オ": "primary-supported"
+      },
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/source-qa-a.json",
+      "qaSha256": "b01a2a38e2491ad2e17c45f287544d45cbc8bb69d7343c651c61c36782bcd8ea",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.mhlw.go.jp/content/000764680.pdf",
+          "issuer": "厚生労働省・居宅サービス計画書標準様式及び記載要領",
+          "evidence": "第1表に総合的な援助の方針、第2表に生活全般の解決すべき課題、第3表に週間サービス計画、第4表にサービス担当者会議の要点、第5表に居宅介護支援経過。",
+          "choices": [
+            "ア",
+            "イ",
+            "ウ",
+            "エ",
+            "オ"
+          ]
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-pm-p21-bfa96e9e1be1.png",
+        "sha256": "bfa96e9e1be1cdc1ac1d1ee9e42f28b619a34d56d17ca6283ef68d3c7b46414a",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 21,
+        "bytes": 101867,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": null,
+      "figureVisualAlreadyChecked": false,
+      "figureNote": "図不要",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        }
+      ],
+      "remainingRequirement": "厚労省の標準様式第1〜5表で5肢を支持。",
+      "oldHoldReasonsRetained": [
+        "source identity disagrees with official packet session"
+      ],
+      "oldNeedsReviewReasonsRetained": [
+        "公式解答PDFの画像ページが供給されていないため、キーはパケット記載の公式キー文字列のみで確認した。",
+        "ケアプラン各表の記載項目（標準様式）は、解説作成時に一次資料で再確認していない。"
+      ],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q30",
+      "shortId": "60PM30",
+      "group": "A_REVIEW_CANDIDATE_NO_NEW_SOURCE",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {},
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {
+        "ア": "supported",
+        "イ": "supported",
+        "ウ": "supported",
+        "エ": "supported",
+        "オ": "supported"
+      },
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/source-qa-b.json",
+      "qaSha256": "1d4b1d619056e66ccdafeb9153be32e1d64cb7850dcb93f970b8abab57885890",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.qualitest.jp/qol/sf36.html",
+          "sourceEvidence": "日本語版尺度提供元の「SF-36の構成」は8尺度を列挙し、活力・体の痛み・社会生活機能・全体的健康感を含むが栄養状態を含まない。",
+          "choices": [
+            "ア",
+            "イ",
+            "ウ",
+            "エ",
+            "オ"
+          ]
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-pm-p24-fe674983eb45.png",
+        "sha256": "fe674983eb458cf4ccf12baf790cff8a66082d88bcd57db6dc56504fa532d966",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 24,
+        "bytes": 70228,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": null,
+      "figureVisualAlreadyChecked": false,
+      "figureNote": "図不要",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        }
+      ],
+      "remainingRequirement": "日本語版提供元の8下位尺度一覧で5肢を支持。原マニュアル全文の新規取得はしていない。",
+      "oldHoldReasonsRetained": [
+        "source identity disagrees with official packet session"
+      ],
+      "oldNeedsReviewReasonsRetained": [
+        "公式解答PNG（answer page PNG）は supplied files に含まれていない。key はパケットのリテラルに依拠している。",
+        "SF-36 の8下位尺度名は一般的な知識に基づいて記載した。一次資料（公式マニュアル）での確認は未実施。"
+      ],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q33",
+      "shortId": "60PM33",
+      "group": "B_PRIOR_SOURCE_SCOPE_DECISION",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {},
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {
+        "ア": "supported",
+        "イ": "supported",
+        "ウ": "supported",
+        "エ": "supported",
+        "オ": "supported"
+      },
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/source-qa-b.json",
+      "qaSha256": "1d4b1d619056e66ccdafeb9153be32e1d64cb7850dcb93f970b8abab57885890",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://jsbmr.umin.jp/guide/pdf/g-guideline.pdf",
+          "sourceEvidence": "日本骨代謝学会・日本骨粗鬆症学会合同委員会の2012年度改訂版、表2と注3。椎体・大腿骨近位部は独立の診断枝。その他の骨折は肋骨、骨盤、上腕骨近位部、橈骨遠位端、下腿骨でYAM80%未満を要する。",
+          "choices": [
+            "ア",
+            "イ",
+            "ウ",
+            "エ",
+            "オ"
+          ]
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-pm-p25-c41e32bcc177.png",
+        "sha256": "c41e32bcc177e33d8981d1b57ce3dbde891386ea72c02bb13312f58ac080015e",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 25,
+        "bytes": 67023,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": null,
+      "figureVisualAlreadyChecked": false,
+      "figureNote": "図不要",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        }
+      ],
+      "remainingRequirement": "5肢は2012改訂の学会合同診断基準で支持。旧要件「最新の公式ガイドライン」の照合はこの証拠だけでは完了と数えない。統合担当が試験時点の2012基準で足りるか判断。",
+      "oldHoldReasonsRetained": [
+        "source identity disagrees with official packet session"
+      ],
+      "oldNeedsReviewReasonsRetained": [
+        "公式解答PNG（answer page PNG）は supplied files に含まれていない。key はパケットのリテラルに依拠している。",
+        "診断基準（脆弱性骨折の部位と骨密度条件）は最新の公式ガイドラインで要確認。一次資料は未提供であり、確実性は断定しない。"
+      ],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q44",
+      "shortId": "60PM44",
+      "group": "C_EXPLANATION_REQUIREMENTS_REMAIN",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing official PNG visual QA; table-separator text extraction differs",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": false,
+        "2": false,
+        "3": false,
+        "4": false,
+        "5": false
+      },
+      "visualLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {},
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/figure-qa-2025.json",
+      "qaSha256": "3feba1f31836d25227b43e803f17b264f2f695d9b14f19f172c8a227e5ceacb4",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "evidence": "第60回理学療法士国家試験PM問44の原文・図・選択肢。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "evidence": "公式正答値表のPM問44: 3。",
+          "kind": "official-primary"
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-pm-p29-8b41de51a34a.png",
+        "sha256": "8b41de51a34ad413a9ad882e10853e8aa5deecfe921fbe3888996025c1b9fc80",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 29,
+        "bytes": 111124,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": null,
+      "figureVisualAlreadyChecked": false,
+      "figureNote": "公式後問44の頁は文字の組合せ問題で図はない。下の問45・46も問44の図ではない。figure HOLDは誤継承。",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        },
+        {
+          "role": "officialSupplementPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_02.pdf",
+          "sha256": "ed8967bc0c9524b26d571ff105d4cc993bff11e03f057734d5ef53a4c068f468"
+        }
+      ],
+      "remainingRequirement": "隣接問題由来の誤図cueを確認し図不要とした。疾患と治療の5組合せは公式問題/正答だけでは説明の検証にならず個別専門資料の確認が未了。",
+      "oldHoldReasonsRetained": [
+        "figure/supplement requires local original-page QA"
+      ],
+      "oldNeedsReviewReasonsRetained": [],
+      "savedModel": "claude-opus-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q56",
+      "shortId": "60PM56",
+      "group": "C_EXPLANATION_REQUIREMENTS_REMAIN",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "2",
+        "4"
+      ],
+      "requiredSelections": 2,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {},
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/figure-qa-2025.json",
+      "qaSha256": "3feba1f31836d25227b43e803f17b264f2f695d9b14f19f172c8a227e5ceacb4",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "evidence": "第60回理学療法士国家試験PM問56の原文・図・選択肢。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "evidence": "公式正答値表のPM問56: 24。",
+          "kind": "official-primary"
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-pm-p34-555b7707c262.png",
+        "sha256": "555b7707c2627dd082b3c5432825f66b6f7dcf91693ee42209e4e9caeb5eee5c",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 34,
+        "bytes": 133330,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": {
+        "path": "sources/2025-question-pm-p34-555b7707c262.png",
+        "sha256": "555b7707c2627dd082b3c5432825f66b6f7dcf91693ee42209e4e9caeb5eee5c",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 34,
+        "bytes": 133330,
+        "unchangedOriginalPage": true
+      },
+      "figureVisualAlreadyChecked": true,
+      "figureNote": "公式後問56では右手背橈側の母指基部で並走する2腱を矢印が指す。第1伸筋区画の短母指伸筋腱と長母指外転筋腱。",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        },
+        {
+          "role": "officialSupplementPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_02.pdf",
+          "sha256": "ed8967bc0c9524b26d571ff105d4cc993bff11e03f057734d5ef53a4c068f468"
+        }
+      ],
+      "remainingRequirement": "原図の右手橈側の2腱と矢印は確認済み。他腱の走行・停止を含む全5肢の解剖根拠は未記録。",
+      "oldHoldReasonsRetained": [
+        "figure/supplement requires local original-page QA"
+      ],
+      "oldNeedsReviewReasonsRetained": [],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q71",
+      "shortId": "60PM71",
+      "group": "C_EXPLANATION_REQUIREMENTS_REMAIN",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {},
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/figure-qa-2025.json",
+      "qaSha256": "3feba1f31836d25227b43e803f17b264f2f695d9b14f19f172c8a227e5ceacb4",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "evidence": "第60回理学療法士国家試験PM問71の原文・図・選択肢。",
+          "kind": "official-primary"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "evidence": "公式正答値表のPM問71: 3。",
+          "kind": "official-primary"
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2025-question-pm-p40-9edde25bc495.png",
+        "sha256": "9edde25bc4950e0cf6300767637e35d071b940beea6aa496150e27502f305c0b",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 40,
+        "bytes": 73141,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2025-answer-p01-6cac1557105f.png",
+        "sha256": "6cac1557105fc4fd2e65fa55f2cb4b4b8c6c2cb1f1acc32fc6d8dc86729c8c9d",
+        "year": 2025,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 284080,
+        "unchangedOriginalPage": true
+      },
+      "figure": {
+        "path": "sources/2025-question-pm-p40-9edde25bc495.png",
+        "sha256": "9edde25bc4950e0cf6300767637e35d071b940beea6aa496150e27502f305c0b",
+        "year": 2025,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 40,
+        "bytes": 73141,
+        "unchangedOriginalPage": true
+      },
+      "figureVisualAlreadyChecked": true,
+      "figureNote": "公式後問71は立位から体幹を後方へ伸展する前後2姿勢。椎体前面で伸張される前縦靱帯が制動する。",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+          "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+          "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+        },
+        {
+          "role": "officialSupplementPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_02.pdf",
+          "sha256": "ed8967bc0c9524b26d571ff105d4cc993bff11e03f057734d5ef53a4c068f468"
+        }
+      ],
+      "remainingRequirement": "原図の体幹伸展は確認済み。各靱帯の張力方向を含む全5肢の解剖根拠は未記録。",
+      "oldHoldReasonsRetained": [
+        "figure/supplement requires local original-page QA"
+      ],
+      "oldNeedsReviewReasonsRetained": [],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q4",
+      "shortId": "61AM4",
+      "group": "C_EXPLANATION_REQUIREMENTS_REMAIN",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {},
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {},
+      "helperChoiceChecksAsRecorded": [
+        {
+          "number": "1",
+          "status": "CORROBORATED_CORE",
+          "sourceIds": [
+            "scp"
+          ],
+          "note": "SCP原尺度ガイドの3項目に一致。"
+        },
+        {
+          "number": "2",
+          "status": "VERIFIED_INSTRUMENT_PURPOSE",
+          "sourceIds": [
+            "slta",
+            "scp"
+          ],
+          "note": "失語症評価を作成学会資料で確認。症例文に失語の記載がないことと、右病変から失語を絶対否定することを区別。"
+        },
+        {
+          "number": "3",
+          "status": "VERIFIED_INSTRUMENT_PURPOSE",
+          "sourceIds": [
+            "tmt",
+            "scp"
+          ],
+          "note": "注意・処理速度等を作成学会資料で確認。姿勢の押し出しはSCPの評価内容。"
+        },
+        {
+          "number": "4",
+          "status": "VERIFIED_INSTRUMENT_PURPOSE",
+          "sourceIds": [
+            "wais",
+            "scp"
+          ],
+          "note": "成人認知能力検査を原出版社資料で確認。"
+        },
+        {
+          "number": "5",
+          "status": "VERIFIED_INSTRUMENT_PURPOSE",
+          "sourceIds": [
+            "wcst",
+            "scp"
+          ],
+          "note": "遂行機能・保続・セット変換を原出版社資料で確認。"
+        }
+      ],
+      "qaPath": "qa/helper-pt61-review.json",
+      "qaSha256": "c2d0e92a1cbafdb54740ac5a851ad6dc9e270f49c2fdbe6ee031229a2c21e644",
+      "sourcesAsRecorded": [
+        {
+          "id": "scp",
+          "url": "https://www.sralab.org/rehabilitation-measures/scale-contraversive-pushing",
+          "type": "rehabilitation hospital original instrument guide",
+          "scope": "姿勢、非麻痺側上下肢の外転伸展、他動修正への抵抗を座位立位で評価。",
+          "localReceipts": [
+            {
+              "id": "scp",
+              "url": "https://www.sralab.org/rehabilitation-measures/scale-contraversive-pushing",
+              "retrievedAt": "2026-10-11T07:22:39.046746+00:00",
+              "authUsed": false,
+              "tlsVerification": true,
+              "status": 200,
+              "finalUrl": "https://www.sralab.org/rehabilitation-measures/scale-contraversive-pushing",
+              "contentType": "text/html; charset=UTF-8",
+              "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\pt-unowned-20261011\\helper-pt61-01a12870\\references\\scp.html",
+              "sha256": "1de9caa4ca57f8ad4f2b97ada170356868aa9cc6013f524cebb696719358d2b5"
+            }
+          ]
+        },
+        {
+          "id": "slta",
+          "url": "https://www.higherbrain.or.jp/publication/test/slta/",
+          "type": "検査作成学会の原ガイド",
+          "scope": "失語症評価の目的。",
+          "localReceipts": [
+            {
+              "id": "slta",
+              "url": "https://www.higherbrain.or.jp/publication/test/slta/",
+              "retrievedAt": "2026-10-11T07:36:40.835763+00:00",
+              "authUsed": false,
+              "tlsVerification": true,
+              "bypassUsed": false,
+              "status": 200,
+              "finalUrl": "https://www.higherbrain.or.jp/publication/test/slta/",
+              "contentType": "text/html; charset=UTF-8",
+              "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\pt-unowned-20261011\\helper-pt61-01a12870\\references\\slta.html",
+              "sha256": "c35958b6be88b1865b6f80da08debde8f930adaa099329a5b0c33cc9323428f4"
+            }
+          ]
+        },
+        {
+          "id": "tmt",
+          "url": "https://www.higherbrain.or.jp/publication/test/tmt-j/",
+          "type": "検査作成学会の原ガイド",
+          "scope": "視覚性・空間性注意、処理速度など。",
+          "localReceipts": [
+            {
+              "id": "tmt",
+              "url": "https://www.higherbrain.or.jp/publication/test/tmt-j/",
+              "retrievedAt": "2026-10-11T07:36:40.835763+00:00",
+              "authUsed": false,
+              "tlsVerification": true,
+              "bypassUsed": false,
+              "status": 200,
+              "finalUrl": "https://www.higherbrain.or.jp/publication/test/tmt-j/",
+              "contentType": "text/html; charset=UTF-8",
+              "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\pt-unowned-20261011\\helper-pt61-01a12870\\references\\tmt.html",
+              "sha256": "9f633e6c13c00eba4569fe232d44a4c893fe4fc5fdeb1d0171fffedd70b9b336"
+            }
+          ]
+        },
+        {
+          "id": "wais",
+          "url": "https://www.pearsonassessments.com/content/dam/school/global/clinical/us/assets/wais-iv/wais-iv-brochure.pdf",
+          "type": "原出版社発行資料",
+          "scope": "成人の認知能力・知能検査。米国版資料を日本版の全実施手順と数えない。",
+          "locator": "physical pages 2–3",
+          "localReceipts": [
+            {
+              "id": "wais",
+              "url": "https://www.pearsonassessments.com/content/dam/school/global/clinical/us/assets/wais-iv/wais-iv-brochure.pdf",
+              "retrievedAt": "2026-10-11T07:34:34.594744+00:00",
+              "authUsed": false,
+              "tlsVerification": true,
+              "bypassUsed": false,
+              "status": 200,
+              "finalUrl": "https://www.pearsonassessments.com/content/dam/school/global/clinical/us/assets/wais-iv/wais-iv-brochure.pdf",
+              "contentType": "application/pdf",
+              "pages": 6,
+              "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\pt-unowned-20261011\\helper-pt61-01a12870\\references\\wais.pdf",
+              "sha256": "d3aa1b64689ae953d4e555cff3638ddc159c1450f04e16ef2091345542613ee8"
+            }
+          ]
+        },
+        {
+          "id": "wcst",
+          "url": "https://www.parinc.com/products/WCST",
+          "type": "原出版社発行資料",
+          "scope": "保続、抽象推論、遂行機能・セット変換。",
+          "localReceipts": [
+            {
+              "id": "wcst",
+              "url": "https://www.parinc.com/products/WCST",
+              "retrievedAt": "2026-10-11T07:34:35.292350+00:00",
+              "authUsed": false,
+              "tlsVerification": true,
+              "bypassUsed": false,
+              "status": 200,
+              "finalUrl": "https://www.parinc.com/products/WCST",
+              "contentType": "text/html; charset=utf-8",
+              "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\pt-unowned-20261011\\helper-pt61-01a12870\\references\\wcst.html",
+              "sha256": "e94a9d99d45687b3b657889905d913ce710521e53a8c913791d2610d54aa930f"
+            }
+          ]
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2026-question-am-p10-d59634645a40.png",
+        "sha256": "d59634645a403d610e350d2baef6c2144115e20db145d15f71bf10ef2a0a718f",
+        "year": 2026,
+        "role": "question",
+        "session": "am",
+        "physicalPage": 10,
+        "bytes": 174401,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2026-answer-p01-81abb0786971.png",
+        "sha256": "81abb0786971ac334f6ed85d37adfa8aa35506f1e47c83203d455c7d66b874ff",
+        "year": 2026,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 287078,
+        "unchangedOriginalPage": true
+      },
+      "figure": {
+        "path": "sources/2026-question-am-p10-d59634645a40.png",
+        "sha256": "d59634645a403d610e350d2baef6c2144115e20db145d15f71bf10ef2a0a718f",
+        "year": 2026,
+        "role": "question",
+        "session": "am",
+        "physicalPage": 10,
+        "bytes": 174401,
+        "unchangedOriginalPage": true
+      },
+      "figureVisualAlreadyChecked": true,
+      "figureNote": "共通症例に右上下肢で押す、左傾斜、修正への抵抗が印刷される。SCPの3評価内容と対応。",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_01.pdf",
+          "sha256": "1ceb1e7d6a8f5f6c5c7fbadce400a14d2fac590ebc766a308bf59b87bcfd8ce4"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+          "sha256": "932e4c26a12b67a8b4cc745abfc6ab2fe191069a7e58bf472d2f0ba73da75904"
+        },
+        {
+          "role": "officialSupplementPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_02.pdf",
+          "sha256": "06bb8d5f729500efd573331ddefd70334aff53977072154d30c7f69943da0a31"
+        }
+      ],
+      "remainingRequirement": "SCPと各検査目的は5肢で個別補強済み。ただしCORE/検査目的の照合であり、優先順位を含む本文全claimの受入れ証跡はない。共通症例はAM5と共有するがAM5のHOLD解除に依存しない。",
+      "oldHoldReasonsRetained": [
+        "figure/supplement requires local original-page QA"
+      ],
+      "oldNeedsReviewReasonsRetained": [],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q11",
+      "shortId": "61AM11",
+      "group": "C_EXPLANATION_REQUIREMENTS_REMAIN",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {},
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "3",
+        "5"
+      ],
+      "requiredSelections": 2,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {},
+      "helperChoiceChecksAsRecorded": [
+        {
+          "number": "1",
+          "status": "VERIFIED_FINITE_CORRECTION",
+          "sourceIds": [
+            "neonatal"
+          ],
+          "note": "頭頸部過伸展を避ける。腹臥位は気道確保の回旋が必要で、完全な正中位を一律に指示しない。"
+        },
+        {
+          "number": "2",
+          "status": "CORROBORATED_CORE",
+          "sourceIds": [
+            "neonatal"
+          ],
+          "note": "生理的屈曲を保持する基準と照合。過伸展肢位を推奨しない。"
+        },
+        {
+          "number": "3",
+          "status": "CORROBORATED_CORE",
+          "sourceIds": [
+            "neonatal"
+          ],
+          "note": "肩を前方に丸め手を顔・正中へ近づける腹臥位手順を直接確認。"
+        },
+        {
+          "number": "4",
+          "status": "CORROBORATED_CORE",
+          "sourceIds": [
+            "neonatal"
+          ],
+          "note": "上肢内転・屈曲でW肢位を避ける手順を直接確認。"
+        },
+        {
+          "number": "5",
+          "status": "CORROBORATED_CORE",
+          "sourceIds": [
+            "neonatal"
+          ],
+          "note": "股・骨盤軽屈曲と下肢整列、過剰な外転外旋を防ぐ基準を確認。中間位の数値角度までは示さない。"
+        }
+      ],
+      "qaPath": "qa/helper-pt61-review.json",
+      "qaSha256": "c2d0e92a1cbafdb54740ac5a851ad6dc9e270f49c2fdbe6ee031229a2c21e644",
+      "sourcesAsRecorded": [
+        {
+          "id": "neonatal",
+          "url": "https://www.neonatalnetwork.co.uk/nwnodn/wp-content/uploads/2023/11/Positioning-and-Handling-Guideline-2023-Final-1.pdf",
+          "type": "NWNODN病院ネットワーク発行の臨床ガイド",
+          "scope": "NICU内の監視下での生理的屈曲・肩前方・四肢内転支持・腹臥位気道確保。家庭睡眠への適用をしない。",
+          "locator": "physical page 3 core principles / physical pages 10–11 prone guide",
+          "localReceipts": [
+            {
+              "id": "neonatal",
+              "url": "https://www.neonatalnetwork.co.uk/nwnodn/wp-content/uploads/2023/11/Positioning-and-Handling-Guideline-2023-Final-1.pdf",
+              "retrievedAt": "2026-10-11T07:34:33.630017+00:00",
+              "authUsed": false,
+              "tlsVerification": true,
+              "bypassUsed": false,
+              "status": 200,
+              "finalUrl": "https://www.neonatalnetwork.co.uk/nwnodn/wp-content/uploads/2023/11/Positioning-and-Handling-Guideline-2023-Final-1.pdf",
+              "contentType": "application/pdf",
+              "pages": 30,
+              "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\pt-unowned-20261011\\helper-pt61-01a12870\\references\\neonatal.pdf",
+              "sha256": "8ad8608080ce9f0b14c6a10b4a38c9739e7428914c6b23cf4531496460661d83"
+            }
+          ]
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2026-question-am-p15-9a30cdfd723d.png",
+        "sha256": "9a30cdfd723deaed6aa99af866f7ab083044613aca6fd66a1a8e2fa5618ab071",
+        "year": 2026,
+        "role": "question",
+        "session": "am",
+        "physicalPage": 15,
+        "bytes": 115396,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2026-answer-p01-81abb0786971.png",
+        "sha256": "81abb0786971ac334f6ed85d37adfa8aa35506f1e47c83203d455c7d66b874ff",
+        "year": 2026,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 287078,
+        "unchangedOriginalPage": true
+      },
+      "figure": {
+        "path": "sources/2026-question-am-p15-9a30cdfd723d.png",
+        "sha256": "9a30cdfd723deaed6aa99af866f7ab083044613aca6fd66a1a8e2fa5618ab071",
+        "year": 2026,
+        "role": "question",
+        "session": "am",
+        "physicalPage": 15,
+        "bytes": 115396,
+        "unchangedOriginalPage": true
+      },
+      "figureVisualAlreadyChecked": true,
+      "figureNote": "監視下NICU腹臥位の図と症例条件を保持。家庭での睡眠姿勢へ一般化しない。",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_01.pdf",
+          "sha256": "1ceb1e7d6a8f5f6c5c7fbadce400a14d2fac590ebc766a308bf59b87bcfd8ce4"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+          "sha256": "932e4c26a12b67a8b4cc745abfc6ab2fe191069a7e58bf472d2f0ba73da75904"
+        },
+        {
+          "role": "officialSupplementPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_02.pdf",
+          "sha256": "06bb8d5f729500efd573331ddefd70334aff53977072154d30c7f69943da0a31"
+        }
+      ],
+      "remainingRequirement": "肢1は気道確保の頭部回旋へ有限修正済みだが、総合解説には「頭部を正中か軽く屈曲」の旧断定が残る。総合解説と肢1の整合が未解消。家庭の睡眠姿勢へ一般化不可。",
+      "oldHoldReasonsRetained": [
+        "figure/supplement requires local original-page QA"
+      ],
+      "oldNeedsReviewReasonsRetained": [],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-am-q88",
+      "shortId": "61AM88",
+      "group": "B_PRIOR_SOURCE_SCOPE_DECISION",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {},
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {
+        "ア": "supported",
+        "イ": "supported",
+        "ウ": "supported",
+        "エ": "supported",
+        "オ": "supported"
+      },
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/source-qa-b.json",
+      "qaSha256": "1d4b1d619056e66ccdafeb9153be32e1d64cb7850dcb93f970b8abab57885890",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.resus.org.uk/professional-library/2025-resuscitation-guidelines/adult-basic-life-support-guidelines",
+          "sourceEvidence": "Resuscitation Council UK 2025 BLSのCheck→Call→CPR。接近安全と意識・反応を先に確認し、反応がなければ通報し、その後呼吸を評価。血圧・対光反射は初期手順にない。",
+          "choices": [
+            "ア",
+            "イ",
+            "ウ",
+            "エ",
+            "オ"
+          ]
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2026-question-am-p46-5929fb3ec73d.png",
+        "sha256": "5929fb3ec73d6972a56ef4f4d8f054211a1eae6cff6cf4d62451c82e7d0528e9",
+        "year": 2026,
+        "role": "question",
+        "session": "am",
+        "physicalPage": 46,
+        "bytes": 69175,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2026-answer-p01-81abb0786971.png",
+        "sha256": "81abb0786971ac334f6ed85d37adfa8aa35506f1e47c83203d455c7d66b874ff",
+        "year": 2026,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 287078,
+        "unchangedOriginalPage": true
+      },
+      "figure": null,
+      "figureVisualAlreadyChecked": false,
+      "figureNote": "図不要",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_01.pdf",
+          "sha256": "1ceb1e7d6a8f5f6c5c7fbadce400a14d2fac590ebc766a308bf59b87bcfd8ce4"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+          "sha256": "932e4c26a12b67a8b4cc745abfc6ab2fe191069a7e58bf472d2f0ba73da75904"
+        }
+      ],
+      "remainingRequirement": "5肢はRCUK 2025のBLSで支持。旧要件が名指したJRCの一次資料は未照合。統合担当が独立したRCUK資料を受入れ範囲として認めるか判断。",
+      "oldHoldReasonsRetained": [
+        "source identity disagrees with official packet session"
+      ],
+      "oldNeedsReviewReasonsRetained": [
+        "回答ページPNGが供給されていないため、正答はSOURCE-PACKETの公式キー記載値に依拠した。",
+        "BLSの手順（周囲の安全確認や脈拍確認の扱い）は、現行ガイドライン（JRC蘇生ガイドライン）の一次資料で未確認。"
+      ],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q26",
+      "shortId": "61PM26",
+      "group": "A_REVIEW_CANDIDATE_NO_NEW_SOURCE",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {},
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {},
+      "helperChoiceChecksAsRecorded": [
+        {
+          "number": "1",
+          "status": "VERIFIED_ARITHMETIC",
+          "sourceIds": [
+            "tableArithmetic"
+          ],
+          "note": "30/(30+70)=0.30は感度。LR+ではない。"
+        },
+        {
+          "number": "2",
+          "status": "VERIFIED_ARITHMETIC",
+          "sourceIds": [
+            "tableArithmetic"
+          ],
+          "note": "LR+算式からは0.42にならない。表からどの算式でも導けないという広すぎる旧表現は限定。"
+        },
+        {
+          "number": "3",
+          "status": "VERIFIED_ARITHMETIC",
+          "sourceIds": [
+            "tableArithmetic"
+          ],
+          "note": "LR+は0.75で0.50ではない。表の総数等から0.50を導けるため広い否定を限定。"
+        },
+        {
+          "number": "4",
+          "status": "VERIFIED_ARITHMETIC",
+          "sourceIds": [
+            "tableArithmetic"
+          ],
+          "note": "60/(40+60)=0.60は特異度。"
+        },
+        {
+          "number": "5",
+          "status": "VERIFIED_ARITHMETIC",
+          "sourceIds": [
+            "tableArithmetic"
+          ],
+          "note": "(30/100)/(40/100)=0.75。選択肢5・公式キー一致。"
+        }
+      ],
+      "qaPath": "qa/helper-pt61-review.json",
+      "qaSha256": "c2d0e92a1cbafdb54740ac5a851ad6dc9e270f49c2fdbe6ee031229a2c21e644",
+      "sourcesAsRecorded": [
+        {
+          "id": "tableArithmetic",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08b_01.pdf",
+          "type": "原表に基づく再計算",
+          "scope": "TP30/FP40/FN70/TN60、感度0.30、特異度0.60、LR+=0.75。",
+          "locator": "PM26 original official table"
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2026-question-pm-p22-173b5987b6b0.png",
+        "sha256": "173b5987b6b06a8b8e25582f45ad969ef1f566b6d9ee2784a1b2e82352df9dbc",
+        "year": 2026,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 22,
+        "bytes": 107773,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2026-answer-p01-81abb0786971.png",
+        "sha256": "81abb0786971ac334f6ed85d37adfa8aa35506f1e47c83203d455c7d66b874ff",
+        "year": 2026,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 287078,
+        "unchangedOriginalPage": true
+      },
+      "figure": {
+        "path": "sources/2026-question-pm-p22-173b5987b6b0.png",
+        "sha256": "173b5987b6b06a8b8e25582f45ad969ef1f566b6d9ee2784a1b2e82352df9dbc",
+        "year": 2026,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 22,
+        "bytes": 107773,
+        "unchangedOriginalPage": true
+      },
+      "figureVisualAlreadyChecked": true,
+      "figureNote": "原表の30/40/70/60をPNGと照合し、Pythonの有理数で独立再計算。",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08b_01.pdf",
+          "sha256": "3b9293fdaa366011c232f607e0b98d74d1a1f993814c0033c9c1fbc0c31dcaf3"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+          "sha256": "932e4c26a12b67a8b4cc745abfc6ab2fe191069a7e58bf472d2f0ba73da75904"
+        }
+      ],
+      "remainingRequirement": "原表30/40/70/60とLR+=0.75を5肢それぞれ再計算済み。肢2/3の否定を計算対象へ限定済み。",
+      "oldHoldReasonsRetained": [
+        "figure/supplement requires local original-page QA",
+        "source identity disagrees with official packet session"
+      ],
+      "oldNeedsReviewReasonsRetained": [
+        "解答PNGは供給されていません。"
+      ],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    },
+    {
+      "id": "rigaku-ryohoshi-2026-annual-pm-q35",
+      "shortId": "61PM35",
+      "group": "C_EXPLANATION_REQUIREMENTS_REMAIN",
+      "originalQuestionAndFiveChoiceLiteralsConfirmedByExistingReceipt": true,
+      "originalChoiceConfirmationMethod": "existing text receipt",
+      "textExtractionLiteralChecksAsRecorded": {
+        "1": true,
+        "2": true,
+        "3": true,
+        "4": true,
+        "5": true
+      },
+      "visualLiteralChecksAsRecorded": {},
+      "independentOfficialKeyConfirmed": true,
+      "acceptedChoices": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "fiveChoiceReasonsPresent": true,
+      "fiveChoiceFullAcceptanceGranted": false,
+      "choiceStatusesAsRecorded": {},
+      "helperChoiceChecksAsRecorded": [],
+      "qaPath": "qa/source-qa-c.json",
+      "qaSha256": "5f30d50310884721426413d91b27d1d3e70931ec312ebdbb96ad0a05caed2f17",
+      "sourcesAsRecorded": [
+        {
+          "url": "https://www.cancer.gov/about-cancer/treatment/side-effects/pain/pain-hp-pdq",
+          "evidence": "米国国立がん研究所PDQ。痛みは多因子で心理的苦痛を評価。発生は診断時を含み得る。予測可能なincident breakthrough painと薬剤選択の項目も記載。"
+        }
+      ],
+      "questionImage": {
+        "path": "sources/2026-question-pm-p25-f1de004de9fd.png",
+        "sha256": "f1de004de9fd1ed4345ce03395f012bdc96299ad73db94b3886f5a86aba8bdf1",
+        "year": 2026,
+        "role": "question",
+        "session": "pm",
+        "physicalPage": 25,
+        "bytes": 151294,
+        "unchangedOriginalPage": true
+      },
+      "answerImage": {
+        "path": "sources/2026-answer-p01-81abb0786971.png",
+        "sha256": "81abb0786971ac334f6ed85d37adfa8aa35506f1e47c83203d455c7d66b874ff",
+        "year": 2026,
+        "role": "answer",
+        "session": "am-and-pm",
+        "physicalPage": 1,
+        "bytes": 287078,
+        "unchangedOriginalPage": true
+      },
+      "figure": null,
+      "figureVisualAlreadyChecked": false,
+      "figureNote": "図不要",
+      "officialPdfs": [
+        {
+          "role": "officialQuestionPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08b_01.pdf",
+          "sha256": "3b9293fdaa366011c232f607e0b98d74d1a1f993814c0033c9c1fbc0c31dcaf3"
+        },
+        {
+          "role": "officialAnswerPdf",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+          "sha256": "932e4c26a12b67a8b4cc745abfc6ab2fe191069a7e58bf472d2f0ba73da75904"
+        }
+      ],
+      "remainingRequirement": "NCIのPDQで多因子性などの根拠はあるが、肢3は原問の「多くの場合」を本文の「常に単一とはいえない」で否定しており量化が一致しない。5肢の個別受入れ証跡もない。",
+      "oldHoldReasonsRetained": [
+        "source identity disagrees with official packet session"
+      ],
+      "oldNeedsReviewReasonsRetained": [
+        "正答番号は SOURCE-PACKET の公式正答欄リテラルによる。回答ページPNGは提供されておらず、PNG目視は未実施。",
+        "突出痛の予測可能性とオピオイドの使用方針(WHO方式、がん疼痛ガイドライン)は、一次資料での確認が必要。"
+      ],
+      "savedModel": "claude-sonnet-5-5",
+      "provider": "firstParty",
+      "publicGo": false,
+      "needsReview": true
+    }
+  ]
+}

@@ -1,0 +1,1186 @@
+[
+  {
+    "id": "rigaku-ryohoshi-2026-annual-am-q1",
+    "sourceModel": "claude-sonnet-5-5",
+    "sourceReceipt": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-am-q001-006-original-heading-first-draft\\receipt.json",
+    "regenerationCount": 0,
+    "officialAnswerNumbers": [
+      "5"
+    ],
+    "explanation": "図は背臥位で左股関節を屈曲した際に、反対側（右）の下肢が台から持ち上がっている状態である。これはトーマス（Thomas）テスト陽性と同じ所見である。左股関節を屈曲すると骨盤が後傾し、右股関節が伸展方向に引かれる。このとき右腸腰筋が短縮していると、右股関節が屈曲位をとって下肢が浮き上がる。したがって「右腸腰筋の短縮が疑われる」が正しい。疼痛の訴えはないため、疼痛による中断ではないことも整合する。",
+    "choiceExplanations": {
+      "ア": "誤り。股関節屈曲の測定では、骨盤や腰椎の代償動作（後傾など）が入らないよう骨盤を固定して測定する。骨盤を後傾させると屈曲角度が過大になる。",
+      "イ": "誤り。股関節屈曲の基本軸は体幹軸に平行な線である。移動軸は大腿骨（大転子と大腿骨外側顆の中心を結ぶ線）である。「大転子を通る水平線」ではない。",
+      "ウ": "誤り。股関節屈曲の参考可動域は125度である。150度ではない。",
+      "エ": "誤り。腸骨大腿靱帯は股関節の伸展を制限する靱帯である。屈曲の制限因子は、大腿前面と腹部の接触、殿筋群やハムストリングスの伸張性などである。",
+      "オ": "正しい。左股関節屈曲に伴って右下肢が浮き上がるのは、右股関節屈筋群である腸腰筋の短縮を示す。"
+    },
+    "directSources": [
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_01.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialQuestionPdf。問1の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      },
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialAnswerPdf。問1の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      }
+    ],
+    "visualEvidence": "左股関節を屈曲した図。伸展した対側下肢が台から浮く。右腸腰筋短縮を示唆する姿勢と一致。",
+    "sourceFigures": [
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q001-006-original-heading-first-draft\\question-physical-07.png",
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q001-006-original-heading-first-draft\\official-answer-physical-01.png"
+    ],
+    "exactHolds": [],
+    "verifiedOriginalChoices": {
+      "questionPageReviewed": true,
+      "answerPageReviewed": true,
+      "officialChoiceNumbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "savedDraftChoiceTexts": {
+        "ア": "骨盤を後傾させて測定する。",
+        "イ": "基本軸は大転子を通る水平線である。",
+        "ウ": "屈曲の参考可動域は150度である。",
+        "エ": "腸骨大腿靱帯が屈曲制限因子である。",
+        "オ": "右腸腰筋の短縮が疑われる。"
+      },
+      "originalChoiceForm": "printed text with figure where indicated",
+      "sourcePacketQuestionPage": 7,
+      "supplementReferences": []
+    },
+    "savedDraftPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-am-q001-006-original-heading-first-draft\\STRUCTURED-RESULT.json",
+    "sourcePacketPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q001-006-original-heading-first-draft\\SOURCE-PACKET.json",
+    "publicGo": 0,
+    "needsReview": true
+  },
+  {
+    "id": "rigaku-ryohoshi-2026-annual-am-q2",
+    "sourceModel": "claude-opus-5-5",
+    "sourceReceipt": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-am-q001-006-original-first-ten-opus-first-draft\\receipt.json",
+    "regenerationCount": 0,
+    "officialAnswerNumbers": [
+      "3"
+    ],
+    "explanation": "図では、検者が片手で前足部を支えています。もう一方の手の指は、足部外側の果部より遠位、つまり外果の後下方から第5中足骨底へ向かう部位に当てています。Danielsらの徒手筋力テストで足部外がえし（腓骨筋群）の段階1を調べるときは、腱の収縮を触知します。短腓骨筋なら、外果の遠位で第5中足骨底の近位にある腱を触れます。図の触知部位はこれに合うため、対象は短腓骨筋です。",
+    "choiceExplanations": {
+      "ア": "誤り。後脛骨筋の段階1では、内果の後方、または内果と舟状骨の間で腱を触知します。足部内側で行う検査なので、図の触知部位とは合いません。",
+      "イ": "誤り。前脛骨筋の段階1では、足関節前面の内側寄りで腱を触知するか、下腿前面で筋腹を触知します。図のように果部の遠位で後下方を触れる方法ではありません。",
+      "ウ": "正しい。短腓骨筋の段階1では、外果の遠位で第5中足骨底の近位にある腱を触知します。図の触知部位と一致します。",
+      "エ": "誤り。長母指屈筋の段階1では、母指基節骨の底側で腱を触知します。図の検者は足部の果部周囲を触知しているので、母趾の検査ではありません。",
+      "オ": "誤り。ヒラメ筋（下腿三頭筋）の段階1では、踵骨の近位でアキレス腱の緊張を触知するか、下腿後面で筋腹の収縮を触知します。図の触知部位とは異なります。"
+    },
+    "directSources": [
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_01.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialQuestionPdf。問2の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      },
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialAnswerPdf。問2の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      }
+    ],
+    "visualEvidence": "足関節外側付近を触診する線画。母趾や下腿後面を触診する図ではないが、内外側の細部は曖昧。",
+    "sourceFigures": [
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q001-006-original-first-ten-opus-first-draft\\question-physical-08.png",
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q001-006-original-first-ten-opus-first-draft\\official-answer-physical-01.png"
+    ],
+    "exactHolds": [
+      "選択肢3：触知部位の内外側を線画のみで完全に確定できない。短腓骨筋との対応は専門家照合待ち。"
+    ],
+    "verifiedOriginalChoices": {
+      "questionPageReviewed": true,
+      "answerPageReviewed": true,
+      "officialChoiceNumbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "savedDraftChoiceTexts": {
+        "ア": "後脛骨筋",
+        "イ": "前脛骨筋",
+        "ウ": "短腓骨筋",
+        "エ": "長母指屈筋",
+        "オ": "ヒラメ筋"
+      },
+      "originalChoiceForm": "printed text with figure where indicated",
+      "sourcePacketQuestionPage": 8,
+      "supplementReferences": []
+    },
+    "savedDraftPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-am-q001-006-original-first-ten-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+    "sourcePacketPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q001-006-original-first-ten-opus-first-draft\\SOURCE-PACKET.json",
+    "publicGo": 0,
+    "needsReview": true
+  },
+  {
+    "id": "rigaku-ryohoshi-2026-annual-am-q3",
+    "sourceModel": "claude-opus-5-5",
+    "sourceReceipt": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-am-q001-006-original-first-ten-opus-first-draft\\receipt.json",
+    "regenerationCount": 0,
+    "officialAnswerNumbers": [
+      "5"
+    ],
+    "explanation": "下腿義足で膝折れ（膝が過度に屈曲する現象）が起こるのは、床反力のベクトルが膝継手ではなく生体膝の後方を通り、膝屈曲モーメントが大きくなるときです。ソケットの初期屈曲角が大きすぎると、断端と下腿部は前傾しすぎます。その結果、膝が前方へ出て膝屈曲モーメントが増え、膝折れにつながります。ほかの選択肢は、反対に膝伸展（反張）方向の不具合をまねく要因です。",
+    "choiceExplanations": {
+      "ア": "誤り。前足部が硬すぎるとトウレバーが実質的に長くなり、立脚後期の膝屈曲が妨げられて、膝が伸展方向へ押されます。膝折れの原因になるのは、反対に前足部が柔らかすぎる場合です。",
+      "イ": "誤り。義足足部の設定より靴の踵が低いと、下腿部が後傾し、膝は伸展（反張）方向へ押されます。踵が高すぎる場合は下腿が前傾して膝折れの原因になります。",
+      "ウ": "誤り。足部が底屈しすぎるとトウレバーが長くなり、下腿部も後傾するので、膝は過伸展方向へ押されます。膝折れの原因になるのは、足部の背屈しすぎです。",
+      "エ": "誤り。ソケットが足部に対して後ろすぎると、足部が相対的に前方へ出てトウレバーが長くなり、膝は伸展方向へ押されます。膝折れにつながるのは、ソケットが足部に対して前すぎる場合です。",
+      "オ": "正しい。ソケットの初期屈曲角が大きすぎると、下腿部が前傾して膝屈曲モーメントが大きくなり、膝折れの原因になります。"
+    },
+    "directSources": [
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_01.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialQuestionPdf。問3の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      },
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialAnswerPdf。問3の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      }
+    ],
+    "visualEvidence": "下腿義足の側面図。ソケットに対する足部の配置を問題図で確認。",
+    "sourceFigures": [
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q001-006-original-first-ten-opus-first-draft\\question-physical-09.png",
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q001-006-original-first-ten-opus-first-draft\\official-answer-physical-01.png"
+    ],
+    "exactHolds": [],
+    "verifiedOriginalChoices": {
+      "questionPageReviewed": true,
+      "answerPageReviewed": true,
+      "officialChoiceNumbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "savedDraftChoiceTexts": {
+        "ア": "前足部が硬すぎる。",
+        "イ": "靴の踵が低すぎる。",
+        "ウ": "足部が底屈しすぎる。",
+        "エ": "ソケットが足部に対して後ろすぎる。",
+        "オ": "ソケットの初期屈曲角が大きすぎる。"
+      },
+      "originalChoiceForm": "printed text with figure where indicated",
+      "sourcePacketQuestionPage": 9,
+      "supplementReferences": []
+    },
+    "savedDraftPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-am-q001-006-original-first-ten-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+    "sourcePacketPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q001-006-original-first-ten-opus-first-draft\\SOURCE-PACKET.json",
+    "publicGo": 0,
+    "needsReview": true
+  },
+  {
+    "id": "rigaku-ryohoshi-2026-annual-am-q4",
+    "sourceModel": "claude-sonnet-5-5",
+    "sourceReceipt": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-am-q001-006-original-heading-first-draft\\receipt.json",
+    "regenerationCount": 0,
+    "officialAnswerNumbers": [
+      "1"
+    ],
+    "explanation": "症例は右脳出血による左片麻痺で、座位や立位で非麻痺側の右上下肢で面を押して麻痺側（左）へ傾き、正中位への修正に抵抗する。これはプッシャー症候群（pusher syndrome、contraversive pushing）の典型像である。この症状の有無と重症度を評価する検査はSCP（Scale for Contraversive Pushing）である。転倒の危険があり、立位保持にも介助を要するため、理学療法を進める上で最も優先される。",
+    "choiceExplanations": {
+      "ア": "正しい。SCPは、姿勢（対称性）、非麻痺側上下肢での押す動作、修正への抵抗を評価するプッシャー症候群の評価法である。",
+      "イ": "誤り。SLTA（標準失語症検査）は失語症の評価である。本症例は右脳出血であり、失語症の記載はない。姿勢の問題が優先される。",
+      "ウ": "誤り。TMT（Trail Making Test）は注意機能や遂行機能の検査である。押す動作と傾きの評価には直結せず、優先度は低い。",
+      "エ": "誤り。WAIS-Ⅳは成人の知能検査である。姿勢異常への対応としては優先度が低い。",
+      "オ": "誤り。WCST（ウィスコンシンカード分類検査）は前頭葉機能（遂行機能）の検査である。姿勢の修正抵抗の評価とは異なる。"
+    },
+    "directSources": [
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_01.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialQuestionPdf。問4の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      },
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialAnswerPdf。問4の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      }
+    ],
+    "visualEvidence": "直前の症例文と移乗時に麻痺側へ傾く挿絵は問4・5に共通。問4自身に独立図はない。",
+    "sourceFigures": [
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q001-006-original-heading-first-draft\\question-physical-10.png",
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q001-006-original-heading-first-draft\\official-answer-physical-01.png"
+    ],
+    "exactHolds": [],
+    "verifiedOriginalChoices": {
+      "questionPageReviewed": true,
+      "answerPageReviewed": true,
+      "officialChoiceNumbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "savedDraftChoiceTexts": {
+        "ア": "SCP",
+        "イ": "SLTA",
+        "ウ": "TMT",
+        "エ": "WAIS-Ⅳ",
+        "オ": "WCST"
+      },
+      "originalChoiceForm": "printed text with figure where indicated",
+      "sourcePacketQuestionPage": 10,
+      "supplementReferences": []
+    },
+    "savedDraftPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-am-q001-006-original-heading-first-draft\\STRUCTURED-RESULT.json",
+    "sourcePacketPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q001-006-original-heading-first-draft\\SOURCE-PACKET.json",
+    "publicGo": 0,
+    "needsReview": true
+  },
+  {
+    "id": "rigaku-ryohoshi-2026-annual-am-q5",
+    "sourceModel": "claude-sonnet-5-5",
+    "sourceReceipt": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-am-q001-006-original-heading-first-draft\\receipt.json",
+    "regenerationCount": 0,
+    "officialAnswerNumbers": [
+      "5"
+    ],
+    "explanation": "プッシャー症候群では、自分の身体が垂直であると感じる主観的垂直軸が麻痺側へ偏位している。そのため、非麻痺側で押して麻痺側に傾く。治療では、視覚情報（垂直な目印、鏡など）を利用して垂直軸を再学習させる。同時に、非麻痺側へのリーチ動作などで正中位を越える重心移動を促し、押す動作を減らす。この方針に合致するのは「リーチ動作を用いた非麻痺側への重心移動」である。",
+    "choiceExplanations": {
+      "ア": "誤り。プッシャー症候群では視覚が垂直軸の修正に有用な手がかりである。閉眼にすると視覚情報を失い、姿勢の修正がさらに困難になる。",
+      "イ": "誤り。右は非麻痺側であり、関節可動域の制限が問題なのではない。押す動作の原因は垂直軸の認知異常であり、関節可動域運動では改善しない。",
+      "ウ": "誤り。右は非麻痺側である。筋力が問題なのではなく、強い押し出しをむしろ助長しかねない。",
+      "エ": "誤り。手すりを引いたり押したりすると、非麻痺側上肢での押す動作が強まり、麻痺側への傾きが助長される。",
+      "オ": "正しい。リーチ動作を使って非麻痺側へ重心を移動させることで、正中位の感覚を学習させ、押す動作に頼らない移乗を目指せる。"
+    },
+    "directSources": [
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_01.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialQuestionPdf。問5の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      },
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialAnswerPdf。問5の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      }
+    ],
+    "visualEvidence": "問4と共通の症例文・挿絵が前ページにあり、問5はその続き。麻痺側への押し倒しの記載を確認。",
+    "sourceFigures": [
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q001-006-original-heading-first-draft\\question-physical-11.png",
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q001-006-original-heading-first-draft\\official-answer-physical-01.png"
+    ],
+    "exactHolds": [],
+    "verifiedOriginalChoices": {
+      "questionPageReviewed": true,
+      "answerPageReviewed": true,
+      "officialChoiceNumbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "savedDraftChoiceTexts": {
+        "ア": "閉眼での立位保持練習",
+        "イ": "右上下肢の関節可動域運動",
+        "ウ": "右大腿四頭筋の筋力増強運動",
+        "エ": "手すりを用いた立ち上がり練習",
+        "オ": "リーチ動作を用いた非麻痺側への重心移動"
+      },
+      "originalChoiceForm": "printed text with figure where indicated",
+      "sourcePacketQuestionPage": 11,
+      "supplementReferences": []
+    },
+    "savedDraftPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-am-q001-006-original-heading-first-draft\\STRUCTURED-RESULT.json",
+    "sourcePacketPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q001-006-original-heading-first-draft\\SOURCE-PACKET.json",
+    "publicGo": 0,
+    "needsReview": true
+  },
+  {
+    "id": "rigaku-ryohoshi-2026-annual-am-q7",
+    "sourceModel": "claude-opus-5-5",
+    "sourceReceipt": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-am-q007-009-original-first-ten-opus-first-draft\\receipt.json",
+    "regenerationCount": 0,
+    "officialAnswerNumbers": [
+      "4"
+    ],
+    "explanation": "別冊No. 1の心電図モニター波形（25 mm/sec、1 mV=10 mm）では、幅の狭いQRS波が一定のR-R間隔で規則正しく並んでいる。どのQRS波の前にもP波が1つずつあり、PR間隔も一定で、P波とQRS波は1対1で対応している。調律は洞調律で、R-R間隔は長め（心拍数はおおむね60/分以下）であるため、洞性徐脈と判断する。β遮断薬には陰性変時作用があり、内服中に洞性徐脈となることは臨床的にも理解しやすい。",
+    "choiceExplanations": {
+      "ア": "誤り。心室期外収縮では、予想されるタイミングより早く、先行するP波のない幅広く変形したQRS波が出現する。この波形では、すべてのQRS波が幅狭く同じ形で、等間隔に並んでいる。",
+      "イ": "誤り。心房細動ではP波が消えて基線に細動波（f波）がみられ、R-R間隔が完全に不規則になる。この波形では明らかなP波があり、R-R間隔は一定である。",
+      "ウ": "誤り。心房粗動では、基線にのこぎり歯状の粗動波（F波）が規則的に出現する。この波形にF波はなく、各QRS波の前に正常なP波が1つずつみられる。",
+      "エ": "正しい。P波とQRS波が1対1で対応し、PR間隔は一定、R-R間隔も規則的な洞調律である。心拍数が低下しているため洞性徐脈に当たる。β遮断薬の内服とも矛盾しない。",
+      "オ": "誤り。Ⅲ度（完全）房室ブロックでは、P波とQRS波がそれぞれ独立した周期で出現する（房室解離）。そのためPR間隔は一定にならず、QRS波と関係のないP波もみられる。この波形ではPR間隔が一定で、P波とQRS波が1対1に対応している。"
+    },
+    "directSources": [
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_01.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialQuestionPdf。問7の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      },
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialAnswerPdf。問7の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      }
+    ],
+    "visualEvidence": "別冊No.1は規則的なQRSと各QRSに先行するP波を示す。方眼から正確な心拍数を確定する記述は避ける。",
+    "sourceFigures": [
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q007-009-original-first-ten-opus-first-draft\\question-physical-12.png",
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q007-009-original-first-ten-opus-first-draft\\official-answer-physical-01.png",
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q007-009-original-first-ten-opus-first-draft\\supplement-physical-05.png"
+    ],
+    "exactHolds": [
+      "解説中の心拍数の具体値：別冊の方眼から厳密に測定できず、洞性徐脈は公式正答と波形の定性的所見による。"
+    ],
+    "verifiedOriginalChoices": {
+      "questionPageReviewed": true,
+      "answerPageReviewed": true,
+      "officialChoiceNumbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "savedDraftChoiceTexts": {
+        "ア": "心室期外収縮",
+        "イ": "心房細動",
+        "ウ": "心房粗動",
+        "エ": "洞性徐脈",
+        "オ": "Ⅲ度房室ブロック"
+      },
+      "originalChoiceForm": "printed text with figure where indicated",
+      "sourcePacketQuestionPage": 12,
+      "supplementReferences": [
+        "1"
+      ]
+    },
+    "savedDraftPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-am-q007-009-original-first-ten-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+    "sourcePacketPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q007-009-original-first-ten-opus-first-draft\\SOURCE-PACKET.json",
+    "publicGo": 0,
+    "needsReview": true
+  },
+  {
+    "id": "rigaku-ryohoshi-2026-annual-am-q10",
+    "sourceModel": "claude-sonnet-5-5",
+    "sourceReceipt": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-am-q007-012-remaining-source-isolated-uncreated\\receipt.json",
+    "regenerationCount": 0,
+    "officialAnswerNumbers": [
+      "3"
+    ],
+    "explanation": "12歳という好発年齢で、膝周囲(脛骨近位)に2か月続く安静時痛、腫脹、圧痛があります。外傷歴はなく、発熱もなく、炎症反応は正常で、ALPは上昇しています。別冊No.2の画像は脛骨近位の骨幹端部に境界不明瞭な硬化と透亮が混在する病変を示し、MRIでは骨髄内の異常信号と周囲への軟部組織進展を示唆する所見があります。以上から、骨形成性の悪性骨腫瘍である骨肉腫が最も考えられます。骨肉腫は10代の大腿骨遠位や脛骨近位に好発し、腫瘍が骨を作るためALPが上昇します。",
+    "choiceExplanations": {
+      "ア": "骨挫傷は外傷による骨髄内の出血や浮腫です。外傷歴がなく、2か月続く安静時痛と腫脹があり、ALPが上昇している本例には合いません。",
+      "イ": "骨髄炎は発熱、炎症反応(CRP、白血球)の上昇を伴うことが多いです。本例は発熱がなく炎症反応も正常で、全身状態も良好なので合いません。画像が似ることはありますが、血液所見が否定的です。",
+      "ウ": "正しい。10代の脛骨近位骨幹端部という好発部位で、外傷歴がなく、安静時痛と腫脹があり、炎症反応は正常でALPが上昇しています。骨形成性腫瘍の骨肉腫に合致します。",
+      "エ": "軟骨肉腫は中高年に多く、骨盤や大腿骨近位などに好発します。小児には稀で、ALP上昇も典型的ではないため考えにくいです。",
+      "オ": "疲労骨折は運動による反復負荷で生じ、運動に伴う痛みが典型的です。安静時痛や著明な腫脹、腫瘤様の軟部組織病変、ALP上昇は典型的ではありません。陸上部所属でも本例の画像と経過は腫瘍性病変を示唆します。"
+    },
+    "directSources": [
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_01.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialQuestionPdf。問10の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      },
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialAnswerPdf。問10の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      }
+    ],
+    "visualEvidence": "別冊No.2の下腿近位部X線・MRIに骨病変を認める。画像のみから組織診断を確定したとは扱わず症例・公式正答と合わせる。",
+    "sourceFigures": [
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q007-012-remaining-source-isolated-uncreated\\question-physical-14.png",
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q007-012-remaining-source-isolated-uncreated\\official-answer-physical-01.png",
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q007-012-remaining-source-isolated-uncreated\\supplement-physical-07.png"
+    ],
+    "exactHolds": [],
+    "verifiedOriginalChoices": {
+      "questionPageReviewed": true,
+      "answerPageReviewed": true,
+      "officialChoiceNumbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "savedDraftChoiceTexts": {
+        "ア": "骨挫傷",
+        "イ": "骨髄炎",
+        "ウ": "骨肉腫",
+        "エ": "軟骨肉腫",
+        "オ": "疲労骨折"
+      },
+      "originalChoiceForm": "printed text with figure where indicated",
+      "sourcePacketQuestionPage": 14,
+      "supplementReferences": [
+        "2"
+      ]
+    },
+    "savedDraftPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-am-q007-012-remaining-source-isolated-uncreated\\STRUCTURED-RESULT.json",
+    "sourcePacketPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q007-012-remaining-source-isolated-uncreated\\SOURCE-PACKET.json",
+    "publicGo": 0,
+    "needsReview": true
+  },
+  {
+    "id": "rigaku-ryohoshi-2026-annual-am-q11",
+    "sourceModel": "claude-sonnet-5-5",
+    "sourceReceipt": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-am-q007-012-remaining-source-isolated-uncreated\\receipt.json",
+    "regenerationCount": 0,
+    "officialAnswerNumbers": [
+      "3",
+      "5"
+    ],
+    "explanation": "NICUの低出生体重児のポジショニングでは、子宮内の姿勢に近い屈曲位と正中位を保ちます。これにより、低緊張や筋緊張の左右差、異常な伸展パターンを防ぎます。腹臥位では、頭部を正中か軽く屈曲させた位置に置き、体幹は屈曲位とします。肩甲帯は前方に突出させて肩を内側に入れ、上肢は体幹に近づけて屈曲させます。股関節は内外転中間位で軽く屈曲させ、下肢が開き切らないように支えます。したがって、肩甲帯前方突出位(3)と股関節内外転中間位(5)が適切です。",
+    "choiceExplanations": {
+      "ア": "頭部の伸展は、反り返りや肩甲帯の後退を助長します。正中位か軽い屈曲位で保持するのが適切なので不適切です。",
+      "イ": "体幹の伸展は、低出生体重児が陥りやすい反り返りの姿勢を強めます。体幹は屈曲位を保つのが適切なので不適切です。",
+      "ウ": "適切。肩甲帯を前方に突出させると、肩が後ろに引かれる姿勢(肩甲帯後退)を防げます。上肢を体幹に近づけた屈曲位にもなり、手を口や顔に持っていく自己鎮静行動を促せます。",
+      "エ": "肩関節を外転すると、いわゆる「W字」の姿勢で肩甲帯が後退し、上肢が体幹から離れます。内転・屈曲位が適切なので不適切です。",
+      "オ": "適切。股関節は内外転中間位で軽く屈曲させます。外転外旋位(カエル足)が過剰になるのを防ぎ、正中位を保てます。"
+    },
+    "directSources": [
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_01.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialQuestionPdf。問11の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      },
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialAnswerPdf。問11の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      }
+    ],
+    "visualEvidence": "腹臥位の早産児挿絵で頸部・肩甲帯・股関節の姿勢を確認。",
+    "sourceFigures": [
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q007-012-remaining-source-isolated-uncreated\\question-physical-15.png",
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q007-012-remaining-source-isolated-uncreated\\official-answer-physical-01.png"
+    ],
+    "exactHolds": [],
+    "verifiedOriginalChoices": {
+      "questionPageReviewed": true,
+      "answerPageReviewed": true,
+      "officialChoiceNumbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "savedDraftChoiceTexts": {
+        "ア": "頭部伸展位",
+        "イ": "体幹伸展位",
+        "ウ": "肩甲帯前方突出位",
+        "エ": "肩関節外転位",
+        "オ": "股関節内外転中間位"
+      },
+      "originalChoiceForm": "printed text with figure where indicated",
+      "sourcePacketQuestionPage": 15,
+      "supplementReferences": []
+    },
+    "savedDraftPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-am-q007-012-remaining-source-isolated-uncreated\\STRUCTURED-RESULT.json",
+    "sourcePacketPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q007-012-remaining-source-isolated-uncreated\\SOURCE-PACKET.json",
+    "publicGo": 0,
+    "needsReview": true
+  },
+  {
+    "id": "rigaku-ryohoshi-2026-annual-am-q12",
+    "sourceModel": "claude-opus-5-5",
+    "sourceReceipt": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-am-q012-typographic-original-v3-opus-first-draft\\receipt.json",
+    "regenerationCount": 0,
+    "officialAnswerNumbers": [
+      "1"
+    ],
+    "explanation": "各選択肢は、病的反射の名称と検査手技の図（白抜き矢印＝操作方向、黒矢印＝反応）の組み合わせです。正しいのは1です。Chaddock反射は、外果の下方を後ろから前へ、足背の外側縁に沿ってこすります。母趾が背屈すれば陽性です。図1は外果の下方から前方へこする操作と、母趾の背屈反応を示しており、手技と反応がどちらも合っています。ほかの選択肢は、図の手技または反応が反射名と合っていません。",
+    "choiceExplanations": {
+      "ア": "正解です。外果の下方を後ろから前へこすると、母趾が背屈（伸展）します。これはChaddock反射の手技と陽性反応そのもので、錐体路障害を示します。",
+      "イ": "図2の打腱器接触点を確定できない。Hoffmann反射としての手技との一致・不一致は図からの判断を保留する。",
+      "ウ": "誤りです。Oppenheim反射は、脛骨の前内側縁を上から下へ強くこすり、母趾の背屈を見る検査です。図3は足底の外側をかかとから前へこする手技で、Babinski反射の手技にあたります。また、反応として母趾の底屈（屈曲）が描かれており、病的反射の陽性反応（母趾背屈）でもありません。",
+      "エ": "誤りです。Trömner反射は、患者の中指の末節を掌側から叩く（はじき上げる）と、母指が屈曲すれば陽性です。図4は中指の末節を背側から下方へはじく操作で、Hoffmann反射の手技に近く、Trömner反射の手技とは異なります。",
+      "オ": "図5の操作方向と反応指が判読困難。Wartenberg反射の手技との一致・不一致は図からの判断を保留する。"
+    },
+    "directSources": [
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08a_01.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialQuestionPdf。問12の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      },
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialAnswerPdf。問12の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      }
+    ],
+    "visualEvidence": "5枚の反射手技図。図1の足背外側刺激と母趾反応は読める。図2打腱器の接触点、図5矢印と指の反応は断定不可。",
+    "sourceFigures": [
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q012-typographic-original-v3-opus-first-draft\\question-physical-16.png",
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q012-typographic-original-v3-opus-first-draft\\official-answer-physical-01.png"
+    ],
+    "exactHolds": [
+      "選択肢2：打腱器の接触部位が原図の画素から確定できない。",
+      "選択肢5：白矢印・黒矢印の操作方向と反応指を原図から確定できない。"
+    ],
+    "verifiedOriginalChoices": {
+      "questionPageReviewed": true,
+      "answerPageReviewed": true,
+      "officialChoiceNumbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "savedDraftChoiceTexts": {
+        "ア": "Chaddock 反射（図）",
+        "イ": "Hoffmann 反射（図）",
+        "ウ": "Oppenheim 反射（図）",
+        "エ": "Trömner 反射（図）",
+        "オ": "Wartenberg 反射（図）"
+      },
+      "originalChoiceForm": "printed text with figure where indicated",
+      "sourcePacketQuestionPage": 16,
+      "supplementReferences": []
+    },
+    "savedDraftPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-am-q012-typographic-original-v3-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+    "sourcePacketPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-am-q012-typographic-original-v3-opus-first-draft\\SOURCE-PACKET.json",
+    "publicGo": 0,
+    "needsReview": true
+  },
+  {
+    "id": "rigaku-ryohoshi-2026-annual-pm-q1",
+    "sourceModel": "claude-sonnet-5-5",
+    "sourceReceipt": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-pm-q001-006-original-heading-first-draft\\receipt.json",
+    "regenerationCount": 0,
+    "officialAnswerNumbers": [
+      "3"
+    ],
+    "explanation": "図は、上から見た被検者が上肢を前方に挙げ、体の内側へ水平に動かしている場面です。これは肩関節の水平屈曲（水平内転）の測定と判断しました。この測定では、上肢を前方へ動かすときに肩甲骨が前方へ突出して代償しやすくなります。そのため、肩甲骨の前方突出に注意します。したがって3が正しい選択肢です。水平屈曲の測定は座位で行います。基本軸は肩峰を通る矢状面への垂直線で、移動軸は上腕骨です。参考可動域は135度です。",
+    "choiceExplanations": {
+      "ア": "誤り。水平屈曲・水平伸展は座位で測定します。側臥位ではありません。",
+      "イ": "誤り。水平屈曲の参考可動域は135度です。150度ではありません。なお水平伸展は30度です。",
+      "ウ": "正しい。水平屈曲では、肩甲骨が前方へ突出して可動域が過大になる代償に注意します。",
+      "エ": "誤り。移動軸は上腕骨です。橈骨茎状突起と肩峰を結ぶ線は、移動軸として示される線ではありません。",
+      "オ": "誤り。基本軸は肩峰を通る矢状面への垂直線です。烏口突起は基準点になりません。"
+    },
+    "directSources": [
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08b_01.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialQuestionPdf。問1の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      },
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialAnswerPdf。問1の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      }
+    ],
+    "visualEvidence": "肩を頭側から見た挙上方向の図。前方突出の代償に注意する設問と一致。",
+    "sourceFigures": [
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q001-006-original-heading-first-draft\\question-physical-07.png",
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q001-006-original-heading-first-draft\\official-answer-physical-01.png"
+    ],
+    "exactHolds": [],
+    "verifiedOriginalChoices": {
+      "questionPageReviewed": true,
+      "answerPageReviewed": true,
+      "officialChoiceNumbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "savedDraftChoiceTexts": {
+        "ア": "検査肢位は側臥位である。",
+        "イ": "参考可動域は150 度である。",
+        "ウ": "肩甲骨の前方突出に注意する。",
+        "エ": "移動軸は橈骨茎状突起と肩峰を結ぶ線である。",
+        "オ": "基本軸は烏口突起を通る矢状面への垂直線である。"
+      },
+      "originalChoiceForm": "printed text with figure where indicated",
+      "sourcePacketQuestionPage": 7,
+      "supplementReferences": []
+    },
+    "savedDraftPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-pm-q001-006-original-heading-first-draft\\STRUCTURED-RESULT.json",
+    "sourcePacketPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q001-006-original-heading-first-draft\\SOURCE-PACKET.json",
+    "publicGo": 0,
+    "needsReview": true
+  },
+  {
+    "id": "rigaku-ryohoshi-2026-annual-pm-q3",
+    "sourceModel": "claude-opus-5-5",
+    "sourceReceipt": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-pm-q001-006-original-first-ten-opus-first-draft\\receipt.json",
+    "regenerationCount": 0,
+    "officialAnswerNumbers": [
+      "3"
+    ],
+    "explanation": "片麻痺の人の上衣は、麻痺側の上肢から先に袖を通し、脱ぐときは健側から脱ぐのが原則です（着患脱健）。図3では、端座位で健側の左手を使い、麻痺側の右上肢にまず袖を通しています。これは正しい指導です。この症例は右上肢がBrunnstromステージⅡで随意性がほとんどありません。さらに重度の感覚障害と右肩の亜脱臼があるため、麻痺側の肩に負担をかけたり無理に動かしたりせず、健側を活用する動作方法を選ぶ必要があります。",
+    "choiceExplanations": {
+      "ア": "図1の患側・健側の対応と実際の支持手順を確定できないため、この動作の適否は図からの判断を保留する。",
+      "イ": "図2の患側・健側の対応と実際の支持手順を確定できないため、この動作の適否は図からの判断を保留する。",
+      "ウ": "正しい。上衣は麻痺側の上肢から袖を通すのが原則です（着患脱健）。図では端座位で健側の手を使い、麻痺側の右上肢から袖を通しているので、適切な指導です。",
+      "エ": "図4の患側・健側の対応と実際の支持手順を確定できないため、この動作の適否は図からの判断を保留する。",
+      "オ": "図5の患側・健側の対応と実際の支持手順を確定できないため、この動作の適否は図からの判断を保留する。"
+    },
+    "directSources": [
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08b_01.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialQuestionPdf。問3の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      },
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialAnswerPdf。問3の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      }
+    ],
+    "visualEvidence": "ADL図5枚を確認。図3の更衣は読めるが図1・2・4・5は患健左右と荷重手順を絵だけから確定不可。",
+    "sourceFigures": [
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q001-006-original-first-ten-opus-first-draft\\question-physical-09.png",
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q001-006-original-first-ten-opus-first-draft\\official-answer-physical-01.png"
+    ],
+    "exactHolds": [
+      "選択肢1：図中の患健左右と動作手順を確定できず、誤答理由を図に即して断定できない。",
+      "選択肢2：図中の患健左右と動作手順を確定できず、誤答理由を図に即して断定できない。",
+      "選択肢4：図中の患健左右と動作手順を確定できず、誤答理由を図に即して断定できない。",
+      "選択肢5：図中の患健左右と動作手順を確定できず、誤答理由を図に即して断定できない。"
+    ],
+    "verifiedOriginalChoices": {
+      "questionPageReviewed": true,
+      "answerPageReviewed": true,
+      "officialChoiceNumbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "savedDraftChoiceTexts": {
+        "ア": "ベット上で起き上がる。（図）",
+        "イ": "浴槽に入る。（図）",
+        "ウ": "シャツを着る。（図）",
+        "エ": "床から立ち上がる。（図）",
+        "オ": "階段を上る。（図）"
+      },
+      "originalChoiceForm": "printed text with figure where indicated",
+      "sourcePacketQuestionPage": 9,
+      "supplementReferences": []
+    },
+    "savedDraftPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-pm-q001-006-original-first-ten-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+    "sourcePacketPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q001-006-original-first-ten-opus-first-draft\\SOURCE-PACKET.json",
+    "publicGo": 0,
+    "needsReview": true
+  },
+  {
+    "id": "rigaku-ryohoshi-2026-annual-pm-q4",
+    "sourceModel": "claude-sonnet-5-5",
+    "sourceReceipt": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-pm-q001-006-original-heading-first-draft\\receipt.json",
+    "regenerationCount": 0,
+    "officialAnswerNumbers": [
+      "4"
+    ],
+    "explanation": "図は、腹臥位で膝を屈曲していくと殿部が持ち上がる現象です。これは Ely テストの陽性所見です。大腿直筋は股関節をまたいで膝関節まで走る二関節筋です。短縮があると、膝を屈曲したときに骨盤が前傾し、股関節が屈曲して殿部が浮き上がります。したがって、短縮が疑われるのは大腿直筋です。",
+    "choiceExplanations": {
+      "ア": "誤り。大殿筋は股関節伸展筋で、膝をまたぎません。膝屈曲で殿部が浮く原因ではありません。",
+      "イ": "誤り。腸腰筋の短縮は Thomas テストで評価します。膝をまたがない単関節筋であり、この所見の原因にはなりません。",
+      "ウ": "誤り。梨状筋は股関節外旋筋で、膝をまたぎません。短縮しても、膝屈曲に伴う殿部挙上は起こりません。",
+      "エ": "正しい。膝屈曲で大腿直筋が伸張され、股関節屈曲による殿部挙上が起こります。Ely テスト陽性です。",
+      "オ": "誤り。大腿二頭筋は膝屈曲筋です。膝屈曲では弛緩するため、短縮していても膝屈曲を制限しません。"
+    },
+    "directSources": [
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08b_01.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialQuestionPdf。問4の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      },
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialAnswerPdf。問4の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      }
+    ],
+    "visualEvidence": "腹臥位膝屈曲で骨盤・殿部が持ち上がる図。大腿直筋短縮を疑うEly徴候と整合。",
+    "sourceFigures": [
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q001-006-original-heading-first-draft\\question-physical-10.png",
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q001-006-original-heading-first-draft\\official-answer-physical-01.png"
+    ],
+    "exactHolds": [],
+    "verifiedOriginalChoices": {
+      "questionPageReviewed": true,
+      "answerPageReviewed": true,
+      "officialChoiceNumbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "savedDraftChoiceTexts": {
+        "ア": "大殿筋",
+        "イ": "腸腰筋",
+        "ウ": "梨状筋",
+        "エ": "大腿直筋",
+        "オ": "大腿二頭筋"
+      },
+      "originalChoiceForm": "printed text with figure where indicated",
+      "sourcePacketQuestionPage": 10,
+      "supplementReferences": []
+    },
+    "savedDraftPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-pm-q001-006-original-heading-first-draft\\STRUCTURED-RESULT.json",
+    "sourcePacketPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q001-006-original-heading-first-draft\\SOURCE-PACKET.json",
+    "publicGo": 0,
+    "needsReview": true
+  },
+  {
+    "id": "rigaku-ryohoshi-2026-annual-pm-q5",
+    "sourceModel": "claude-opus-5-5",
+    "sourceReceipt": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-pm-q001-006-original-first-ten-opus-first-draft\\receipt.json",
+    "regenerationCount": 0,
+    "officialAnswerNumbers": [
+      "4"
+    ],
+    "explanation": "高位型の橈骨神経麻痺では、長橈側手根伸筋より遠位の橈骨神経支配筋（短橈側手根伸筋、総指伸筋、尺側手根伸筋、長母指外転筋、長母指伸筋・短母指伸筋など）が働かなくなります。その結果、手関節の背屈と手指MP関節・母指の伸展ができず、下垂手（drop hand）になります。手関節を背屈位に保ち、手指MP関節の伸展を補助する装具を使えば、手指屈筋の働きを生かして把持動作ができるようになります。図4は、ワイヤーフレームのばね力で手関節背屈とMP関節伸展を補助する動的装具で、橈骨神経麻痺に使う代表的な装具（オッペンハイマー型など）にあたるため、最も適切です。",
+    "choiceExplanations": {
+      "ア": "誤り。図1は肩関節や上肢全体を支えるスリング型の装具で、肩の亜脱臼予防や上肢の保護に使います。手関節背屈と手指伸展の障害である下垂手は補えません。",
+      "イ": "誤り。図2は上肢を吊り下げて支え、肩や肘の筋力が低下した人の食事動作などを補助する上肢懸垂型の支持具です。この症例は肩・肘の筋力が保たれており、問題は手関節・手指の伸展障害なので適応になりません。",
+      "ウ": "誤り。図3は母指を対立位に保つ対立装具型の装具で、主に正中神経麻痺（猿手）に使います。手指MP関節の伸展を補助する機能はなく、橈骨神経麻痺の下垂手には適しません。",
+      "エ": "正しい。手関節背屈と手指MP関節伸展を動的に補助する装具で、高位型の橈骨神経麻痺による下垂手に適応します。",
+      "オ": "誤り。図5は手指MP関節の屈曲を補助するナックルベンダー型の装具で、主に尺骨神経麻痺による鷲手（MP関節の過伸展）の矯正に使います。橈骨神経麻痺ではMP関節の伸展が障害されているので、目的が逆です。"
+    },
+    "directSources": [
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08b_01.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialQuestionPdf。問5の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      },
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialAnswerPdf。問5の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      }
+    ],
+    "visualEvidence": "装具5点は画像選択肢。図4は手関節背屈と指MP伸展を補助する形状を確認。保存稿の装具の固有名称は原図にないため断定しない。",
+    "sourceFigures": [
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q001-006-original-first-ten-opus-first-draft\\question-physical-11.png",
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q001-006-original-first-ten-opus-first-draft\\official-answer-physical-01.png"
+    ],
+    "exactHolds": [
+      "選択肢1〜5：図は確認したが、原図に装具名称の記載はない。保存稿の固有装具名は独立照合待ち。"
+    ],
+    "verifiedOriginalChoices": {
+      "questionPageReviewed": true,
+      "answerPageReviewed": true,
+      "officialChoiceNumbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "savedDraftChoiceTexts": {
+        "ア": "（図1：両上肢を胸の前で支える肩・上肢用のスリング型装具）",
+        "イ": "（図2：テーブルに固定した支柱から前腕を吊り下げて支える上肢懸垂型の支持具）",
+        "ウ": "（図3：前腕背側のバーと母指を支えるパーツからなる対立装具型の手関節・手装具）",
+        "エ": "（図4：前腕カフとワイヤーフレームで手関節背屈と手指MP関節伸展を補助する装具）",
+        "オ": "（図5：手背側のバーとゴムで手指MP関節屈曲を補助する装具）"
+      },
+      "originalChoiceForm": "image-only; saved draft descriptions are editorial, not original text",
+      "sourcePacketQuestionPage": 11,
+      "supplementReferences": []
+    },
+    "savedDraftPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-pm-q001-006-original-first-ten-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+    "sourcePacketPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q001-006-original-first-ten-opus-first-draft\\SOURCE-PACKET.json",
+    "publicGo": 0,
+    "needsReview": true
+  },
+  {
+    "id": "rigaku-ryohoshi-2026-annual-pm-q7",
+    "sourceModel": "claude-opus-5-5",
+    "sourceReceipt": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-pm-q007-009-original-first-ten-opus-first-draft\\receipt.json",
+    "regenerationCount": 0,
+    "officialAnswerNumbers": [
+      "3"
+    ],
+    "explanation": "別冊No. 1のX線写真では、左股関節に寛骨臼側カップ（スクリュー固定）と大腿骨ステムが入った人工股関節が写っています。人工股関節置換術（THA）の後は、深部静脈血栓症、筋力低下、廃用を防ぐため早期離床を進めます。術後翌日から、大腿四頭筋のセッティングや股関節外転筋の等尺性運動などの筋力増強運動を始めるのが一般的です。したがって3が正解です。後方進入法では、股関節の屈曲・内転・内旋の組み合わせで後方脱臼が起こりやすくなります。このため、日常生活動作ではこの肢位を避けるよう指導します。",
+    "choiceExplanations": {
+      "ア": "誤り。現在のTHAでは、多くの場合、術後早期から疼痛に応じた荷重（全荷重を含む）で歩行練習を始めます。術後3週間も免荷を続けると、筋力低下や廃用を招きます。",
+      "イ": "誤り。術後は翌日ごろから離床（端座位・立位・歩行練習）を進めるのが一般的です。3日間ベッド上で安静にすると、深部静脈血栓症、肺炎、廃用のリスクが高まります。",
+      "ウ": "正しい。術後翌日から、大腿四頭筋のセッティングや殿筋群の等尺性収縮などで筋力増強運動を始め、早期の機能回復を図ります。",
+      "エ": "誤り。後方進入法では、股関節の屈曲・内転・内旋が後方脱臼を起こしやすい肢位です。立ち上がり動作は内旋位を避け、中間位からやや外旋位で行うよう指導します。",
+      "オ": "誤り。後方進入法で注意するのは、深い屈曲（一般に90度を超える屈曲）と内転・内旋の組み合わせです。45度以上の屈曲まで禁止すると、座位や立ち上がりなど基本的なADLもできなくなり、制限として厳しすぎます。"
+    },
+    "directSources": [
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08b_01.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialQuestionPdf。問7の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      },
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialAnswerPdf。問7の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      }
+    ],
+    "visualEvidence": "別冊No.1に左人工股関節置換術後X線像。固定方法・許可荷重時期はX線だけで確定不可。",
+    "sourceFigures": [
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q007-009-original-first-ten-opus-first-draft\\question-physical-12.png",
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q007-009-original-first-ten-opus-first-draft\\official-answer-physical-01.png",
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q007-009-original-first-ten-opus-first-draft\\supplement-physical-05.png"
+    ],
+    "exactHolds": [
+      "選択肢1：X線像だけでは固定方法と荷重許可時期を確定できない。術式・術者指示に依存。"
+    ],
+    "verifiedOriginalChoices": {
+      "questionPageReviewed": true,
+      "answerPageReviewed": true,
+      "officialChoiceNumbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "savedDraftChoiceTexts": {
+        "ア": "術後 3 週は免荷とする。",
+        "イ": "術後 3 日はベッド上安静とする。",
+        "ウ": "術後翌日から筋力増強運動を開始する。",
+        "エ": "立ち上がり動作は股関節内旋位で行う。",
+        "オ": "術後 2 週は股関節を 45 度以上屈曲しない。"
+      },
+      "originalChoiceForm": "printed text with figure where indicated",
+      "sourcePacketQuestionPage": 12,
+      "supplementReferences": [
+        "1"
+      ]
+    },
+    "savedDraftPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-pm-q007-009-original-first-ten-opus-first-draft\\OFFLINE-STRUCTURED-RESULT.json",
+    "sourcePacketPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q007-009-original-first-ten-opus-first-draft\\SOURCE-PACKET.json",
+    "publicGo": 0,
+    "needsReview": true
+  },
+  {
+    "id": "rigaku-ryohoshi-2026-annual-pm-q10",
+    "sourceModel": "claude-sonnet-5-5",
+    "sourceReceipt": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-pm-q007-012-remaining-source-isolated-uncreated\\receipt.json",
+    "regenerationCount": 0,
+    "officialAnswerNumbers": [
+      "4"
+    ],
+    "explanation": "思春期特発性側弯症で Cobb 角 35 度の胸椎カーブは、装具療法の適応となる中等度の側弯である。別冊No. 2 の立位正面X線像では、胸椎の頂椎は中位〜下位胸椎にあり、高位胸椎カーブではない。このような症例には、腋窩から骨盤までを覆い、パッドで側方から矯正力をかける胸腰仙椎装具(TLSO)であるボストンブレースが標準的に用いられる。腋窩下装具であり、日常生活での装着もしやすい。",
+    "choiceExplanations": {
+      "ア": "Jewett 装具は three-point の原理で体幹の前屈を制限する装具である。胸腰椎移行部の圧迫骨折などで用いられ、側弯の矯正には用いない。誤り。",
+      "イ": "SOMI ブレースは頸胸椎装具で、主に頸椎の固定に用いる。側弯症の矯正装具ではない。誤り。",
+      "ウ": "軟性の胸腰仙椎装具(軟性コルセット)は腰痛などの支持を目的とする。側弯の進行を抑える矯正力は不十分である。誤り。",
+      "エ": "正しい。ボストンブレースは頂椎が中位〜下位胸椎(おおむね T7 以下)のカーブに用いる低位型の腋窩下装具である。Cobb 角 35 度の胸椎カーブに適する。",
+      "オ": "ミルウォーキーブレースは頸部のリングを備えた頸胸腰仙椎装具で、頂椎が高位の胸椎カーブに用いる。本例は頂椎が高位ではないため第一選択ではない。装着の負担も大きく、現在は使用が限られる。誤り。"
+    },
+    "directSources": [
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08b_01.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialQuestionPdf。問10の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      },
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialAnswerPdf。問10の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      }
+    ],
+    "visualEvidence": "別冊No.2に胸椎部の側弯X線像。頂椎位置の厳密な同定は画像の目視だけでは保留。",
+    "sourceFigures": [
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q007-012-remaining-source-isolated-uncreated\\question-physical-14.png",
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q007-012-remaining-source-isolated-uncreated\\official-answer-physical-01.png",
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q007-012-remaining-source-isolated-uncreated\\supplement-physical-07.png"
+    ],
+    "exactHolds": [
+      "別冊No.2の頂椎高位の厳密な同定は目視のみでは保留。装具選択の独立査読待ち。"
+    ],
+    "verifiedOriginalChoices": {
+      "questionPageReviewed": true,
+      "answerPageReviewed": true,
+      "officialChoiceNumbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "savedDraftChoiceTexts": {
+        "ア": "Jewett 装具",
+        "イ": "SOMI ブレース",
+        "ウ": "胸腰仙椎装具(軟性)",
+        "エ": "ボストンブレース",
+        "オ": "ミルウォーキーブレース"
+      },
+      "originalChoiceForm": "printed text with figure where indicated",
+      "sourcePacketQuestionPage": 14,
+      "supplementReferences": [
+        "2"
+      ]
+    },
+    "savedDraftPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-pm-q007-012-remaining-source-isolated-uncreated\\STRUCTURED-RESULT.json",
+    "sourcePacketPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q007-012-remaining-source-isolated-uncreated\\SOURCE-PACKET.json",
+    "publicGo": 0,
+    "needsReview": true
+  },
+  {
+    "id": "rigaku-ryohoshi-2026-annual-pm-q12",
+    "sourceModel": "claude-sonnet-5-5",
+    "sourceReceipt": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-pm-q007-012-remaining-source-isolated-uncreated\\receipt.json",
+    "regenerationCount": 0,
+    "officialAnswerNumbers": [
+      "3",
+      "4"
+    ],
+    "explanation": "図は、四つ這い位から座位に戻れる乳児で、生後 9〜10 か月頃の発達段階と考えられる。この時期には、側方パラシュート反応(生後 6 か月頃から出現し、生涯残る)が観察される。足底把握反射は生後 9〜12 か月頃まで残るため、この時期にも観察される。自動歩行と非対称性緊張性頸反射は、すでに消失している。背屈反応はまだ出現していない。",
+    "choiceExplanations": {
+      "ア": "自動歩行は新生児期の原始反射で、生後 2 か月頃までに消失する。この時期には観察されない。誤り。",
+      "イ": "背屈反応(足関節の背屈による立ち直りの反応)は、立位・歩行の獲得期である 1 歳半頃から出現する。この時期にはまだ観察されない。誤り。",
+      "ウ": "正しい。足底把握反射は生後 9〜12 か月頃に消失する原始反射で、生後 9〜10 か月頃の児にはまだ残っている。",
+      "エ": "正しい。側方パラシュート反応は生後 6 か月頃から出現し、座位での側方への転倒に対して手を出して身体を支える。四つ這い・座位に移行する時期には観察される。",
+      "オ": "非対称性緊張性頸反射は生後 4〜6 か月頃までに消失する。この時期には観察されない。誤り。"
+    },
+    "directSources": [
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08b_01.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialQuestionPdf。問12の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      },
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialAnswerPdf。問12の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      }
+    ],
+    "visualEvidence": "四つ這いから座位へ戻る乳児図。発達段階の推定に使うが月齢を絵のみから断定しない。",
+    "sourceFigures": [
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q007-012-remaining-source-isolated-uncreated\\question-physical-15.png",
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q007-012-remaining-source-isolated-uncreated\\official-answer-physical-01.png"
+    ],
+    "exactHolds": [
+      "姿勢反射の出現・消失月齢には資料差がある。選択肢3・4の月齢根拠は専門家照合待ち。"
+    ],
+    "verifiedOriginalChoices": {
+      "questionPageReviewed": true,
+      "answerPageReviewed": true,
+      "officialChoiceNumbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "savedDraftChoiceTexts": {
+        "ア": "自動歩行",
+        "イ": "背屈反応",
+        "ウ": "足底把握反射",
+        "エ": "側方パラシュート反応",
+        "オ": "非対称性緊張性頸反射"
+      },
+      "originalChoiceForm": "printed text with figure where indicated",
+      "sourcePacketQuestionPage": 15,
+      "supplementReferences": []
+    },
+    "savedDraftPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-pm-q007-012-remaining-source-isolated-uncreated\\STRUCTURED-RESULT.json",
+    "sourcePacketPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q007-012-remaining-source-isolated-uncreated\\SOURCE-PACKET.json",
+    "publicGo": 0,
+    "needsReview": true
+  },
+  {
+    "id": "rigaku-ryohoshi-2026-annual-pm-q15",
+    "sourceModel": "claude-sonnet-5-5",
+    "sourceReceipt": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-pm-q013-018-remaining-source-isolated-uncreated\\receipt.json",
+    "regenerationCount": 0,
+    "officialAnswerNumbers": [
+      "1"
+    ],
+    "explanation": "図は両下肢の立位を示す。画像では、一方の足部が内反尖足位(足部が内反し、足趾部が接地する)になっている。左被殻出血後の右片麻痺に伴う痙縮による尖足内反変形と考えられる。この変形の主因は、底屈・内反に働く筋の痙縮である。後脛骨筋は足関節を底屈・内反させるため、ボツリヌス療法の投与筋として適切である。実際には下腿三頭筋や長趾屈筋なども対象になりうる。",
+    "choiceExplanations": {
+      "ア": "正しい。後脛骨筋は足部の内反と底屈に作用する。内反尖足の原因筋であり、投与対象となる。",
+      "イ": "誤り。前脛骨筋は背屈と内反に作用する。内反には関与するが、尖足を悪化させる筋ではない。投与すると背屈力が低下し、尖足が悪化しかねない。",
+      "ウ": "誤り。短腓骨筋は足部の外反と底屈に作用する筋であり、内反を矯正する側の筋である。投与は不適切。",
+      "エ": "誤り。長腓骨筋は足部の外反と底屈に作用する。内反変形を抑える側の筋であり、投与は不適切。",
+      "オ": "誤り。長母趾伸筋は母趾の伸展と足の背屈に作用する。内反尖足の主因ではない。なお、選択肢の「長母指」は原文の表記どおりである。"
+    },
+    "directSources": [
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08b_01.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialQuestionPdf。問15の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      },
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialAnswerPdf。問15の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      }
+    ],
+    "visualEvidence": "立位図の麻痺側足部が底屈・内反傾向。後脛骨筋への着目は図と整合。",
+    "sourceFigures": [
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q013-018-remaining-source-isolated-uncreated\\question-physical-17.png",
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q013-018-remaining-source-isolated-uncreated\\official-answer-physical-01.png"
+    ],
+    "exactHolds": [],
+    "verifiedOriginalChoices": {
+      "questionPageReviewed": true,
+      "answerPageReviewed": true,
+      "officialChoiceNumbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "savedDraftChoiceTexts": {
+        "ア": "後脛骨筋",
+        "イ": "前脛骨筋",
+        "ウ": "短腓骨筋",
+        "エ": "長腓骨筋",
+        "オ": "長母指伸筋"
+      },
+      "originalChoiceForm": "printed text with figure where indicated",
+      "sourcePacketQuestionPage": 17,
+      "supplementReferences": []
+    },
+    "savedDraftPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-pm-q013-018-remaining-source-isolated-uncreated\\STRUCTURED-RESULT.json",
+    "sourcePacketPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q013-018-remaining-source-isolated-uncreated\\SOURCE-PACKET.json",
+    "publicGo": 0,
+    "needsReview": true
+  },
+  {
+    "id": "rigaku-ryohoshi-2026-annual-pm-q26",
+    "sourceModel": "claude-sonnet-5-5",
+    "sourceReceipt": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-pm-q021-028-new\\receipt.json",
+    "regenerationCount": 0,
+    "officialAnswerNumbers": [
+      "5"
+    ],
+    "explanation": "図(原本PNG確認済み)は、症状あり/症状なしの列と検査陽性/検査陰性の行からなる表です。数値は、症状あり・検査陽性が30人、症状なし・検査陽性が40人、症状あり・検査陰性が70人、症状なし・検査陰性が60人です。感度は30/(30+70)=0.30です。特異度は60/(40+60)=0.60なので、偽陽性率は1−0.60=0.40です。陽性尤度比は感度÷(1−特異度)で、0.30/0.40=0.75です。したがって5が正解です。",
+    "choiceExplanations": {
+      "ア": "誤り。0.30は感度で、尤度比ではありません。",
+      "イ": "誤り。0.42は、この表の数値からは導かれません。",
+      "ウ": "誤り。0.50は、この表の数値からは導かれません。",
+      "エ": "誤り。0.60は特異度です。",
+      "オ": "正しい。0.30/0.40=0.75です。"
+    },
+    "directSources": [
+      {
+        "url": "https://jeaweb.jp/files/about_epi_research/contest2016_1.pdf",
+        "evidence": "日本疫学会の感度・特異度の定義を使用。公式表の30/100と40/100から計算。",
+        "scope": "clinical-or-method"
+      },
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08b_01.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialQuestionPdf。問26の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      },
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialAnswerPdf。問26の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      }
+    ],
+    "visualEvidence": "表は陽性：症状あり30・なし40、陰性：症状あり70・なし60。LR+ = (30/100)/(40/100) = 0.75。下部の問27・28は別問。",
+    "sourceFigures": [
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q021-028-new\\question-physical-22.png",
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q021-028-new\\official-answer-physical-01.png"
+    ],
+    "exactHolds": [],
+    "verifiedOriginalChoices": {
+      "questionPageReviewed": true,
+      "answerPageReviewed": true,
+      "officialChoiceNumbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "savedDraftChoiceTexts": {
+        "ア": "0.30",
+        "イ": "0.42",
+        "ウ": "0.50",
+        "エ": "0.60",
+        "オ": "0.75"
+      },
+      "originalChoiceForm": "printed text with figure where indicated",
+      "sourcePacketQuestionPage": 22,
+      "supplementReferences": []
+    },
+    "savedDraftPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-pm-q021-028-new\\OFFLINE-STRUCTURED-RESULT.json",
+    "sourcePacketPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q021-028-new\\SOURCE-PACKET.json",
+    "publicGo": 0,
+    "needsReview": true
+  },
+  {
+    "id": "rigaku-ryohoshi-2026-annual-pm-q34",
+    "sourceModel": "claude-sonnet-5-5",
+    "sourceReceipt": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-pm-q029-036-new\\receipt.json",
+    "regenerationCount": 0,
+    "officialAnswerNumbers": [
+      "5"
+    ],
+    "explanation": "図は乳児が肩から吊るベルトと足部のベルトで、股関節と膝関節を屈曲・外転位に保持している様子を示している。これはリーメンビューゲル装具の形状である。この装具は発育性股関節形成不全(脱臼)の治療に用いる。正答は5。",
+    "choiceExplanations": {
+      "ア": "誤り。脳性麻痺では、痙縮や変形に応じて下肢装具や股関節外転装具などを使う。図のような股関節屈曲・外転位保持用のベルト装具が代表ではない。",
+      "イ": "誤り。Down症候群は染色体異常で、この装具が治療の対象となる疾患ではない。",
+      "ウ": "誤り。先天性内反足の治療には、矯正ギプスや足部外転装具(デニスブラウン型など)を用いる。図の装具とは異なる。",
+      "エ": "誤り。筋ジストロフィーでは、拘縮予防などで下肢・体幹装具を用いることがある。図の装具が適応となる疾患ではない。",
+      "オ": "正しい。図の装具は、股関節を屈曲・外転位に保つリーメンビューゲル装具である。発育性股関節形成不全の治療に用いる。"
+    },
+    "directSources": [
+      {
+        "url": "https://ousar.lib.okayama-u.ac.jp/files/public/1/15982/2016052721174983716/99_971.pdf",
+        "evidence": "岡山大学収録の原著論文にRiemenbügel法の先天股脱保存治療としての使用が記載。",
+        "scope": "clinical-or-method"
+      },
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08b_01.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialQuestionPdf。問34の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      },
+      {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-08seitou.pdf",
+        "evidence": "厚生労働省第61回理学療法士国家試験のofficialAnswerPdf。問34の原文・図・公式正答を照合。",
+        "scope": "original-or-key"
+      }
+    ],
+    "visualEvidence": "問34の乳児は体幹ハーネスと両下肢の屈曲外転保持具を装着。下部の問35は別問。",
+    "sourceFigures": [
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q029-036-new\\question-physical-25.png",
+      "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q029-036-new\\official-answer-physical-01.png"
+    ],
+    "exactHolds": [],
+    "verifiedOriginalChoices": {
+      "questionPageReviewed": true,
+      "answerPageReviewed": true,
+      "officialChoiceNumbers": [
+        "1",
+        "2",
+        "3",
+        "4",
+        "5"
+      ],
+      "savedDraftChoiceTexts": {
+        "ア": "脳性麻痺",
+        "イ": "Down 症候群",
+        "ウ": "先天性内反足",
+        "エ": "筋ジストロフィー",
+        "オ": "発育性股関節形成不全"
+      },
+      "originalChoiceForm": "printed text with figure where indicated",
+      "sourcePacketQuestionPage": 25,
+      "supplementReferences": []
+    },
+    "savedDraftPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\author-rigaku-61-pm-q029-036-new\\STRUCTURED-RESULT.json",
+    "sourcePacketPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\opus-controller-20261010\\readable-sources\\rigaku-61-pm-q029-036-new\\SOURCE-PACKET.json",
+    "publicGo": 0,
+    "needsReview": true
+  }
+]
