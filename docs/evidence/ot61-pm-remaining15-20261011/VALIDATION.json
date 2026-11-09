@@ -1,0 +1,48 @@
+{
+  "focusedTests": {
+    "command": "node node_modules/vitest/vitest.mjs run __tests__/questions/ot61-pm-remaining15-staging.test.ts --maxWorkers=1 --no-file-parallelism",
+    "passed": 19,
+    "failed": 0
+  },
+  "typecheck": {
+    "command": "node node_modules/typescript/bin/tsc --noEmit --incremental false",
+    "exitCode": 0
+  },
+  "lint": {
+    "scope": [
+      "data/qualification-staging/sagyo-ryohoshi/ot61-pm-remaining15",
+      "__tests__/questions/ot61-pm-remaining15-staging.test.ts"
+    ],
+    "exitCode": 0
+  },
+  "schema": {
+    "repositorySource": "scripts/validate-questions.ts",
+    "candidates": 14,
+    "passed": 14
+  },
+  "independentReview": {
+    "reviewer": "gpt-6-astra",
+    "method": "read-only original-page, answer-cell, medical explanation, figure and hash review",
+    "originalQuestionsReviewed": 15,
+    "choiceLabelsReviewed": 75,
+    "choiceExplanationsReviewed": 70,
+    "excludedReferenceExplanationsReviewed": 5,
+    "publicImagesReviewed": 26,
+    "sourceImagesReviewed": 30,
+    "scoringNoticesReviewed": 4,
+    "initialFinding": "Q1 complete figure and choice 5 labels clipped at bottom",
+    "repair": "Expanded lower boundaries to 811 and 808.451421101888, regenerated from original PDF, updated SHA256",
+    "repairReview": "PASS: full 膝伸展 label visible, original diagram correspondence, both new hashes verified",
+    "unresolvedContentFindings": []
+  },
+  "build": {
+    "localRun": false,
+    "destination": "Hosted E2E/browser CI"
+  },
+  "publication": {
+    "registrationDelta": 0,
+    "publicGo": 0,
+    "mergePerformed": false,
+    "deployPerformed": false
+  }
+}
