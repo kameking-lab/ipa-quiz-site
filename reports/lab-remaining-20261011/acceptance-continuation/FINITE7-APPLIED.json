@@ -1,0 +1,33 @@
+{
+  "observedUtc": "2026-10-11T10:34:40.461716+00:00",
+  "reviewReceipt": "reports/lab-remaining-20261011/acceptance-continuation/ASTRA-FACT7-DISPOSITION.json",
+  "targetFile": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+  "beforeRawSha256": "f628cbc3f9cb8219e78fb5a400bf5f5307c9afd6a9f09bbeaa9a598c772f3166",
+  "afterRawSha256": "d458ece190e4bf61df18166211aef4800b0d8897f5aea37e84c4b61ec874e84f",
+  "changedFields": 3,
+  "changedOriginals": 2,
+  "changes": [
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q41",
+      "field": "choiceExplanations.エ",
+      "beforeSha256": "2ff090b779c65aab617b6651ee53b6a51705f251a5fd2b2f5fbcb756544c3d29",
+      "afterSha256": "f7a89d9956afd9ce05dd7d4f17160a9d1c0aac909cff64754eeaee8e79ec35b8"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q46",
+      "field": "choiceExplanations.オ",
+      "beforeSha256": "e7dd4aa031f2fd5f1bf876d5955bde99a63236c7d34b3a174a08f1f96cdd1a07",
+      "afterSha256": "29d64f5d827d1a42091eb150560d0ba4ae362134c42bb8721f110e3ae501ccb4"
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q46",
+      "field": "choiceExplanations.エ",
+      "beforeSha256": "5e8f1f83bf26c8ba0febee7942f3ef75c6c5a5e5e66b152483c168ca55dd6113",
+      "afterSha256": "5c058bb80fc41c7433e60c1bb9a8095a4f2ee0f1bcf85b49380bbabd6a9aaffe"
+    }
+  ],
+  "all25CoreQuestionFieldsUnchanged": true,
+  "questionStemChoicesOfficialKeysImagesNeedsReviewChanged": false,
+  "regeneration": 0,
+  "publicGo": 0
+}

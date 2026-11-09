@@ -1,0 +1,542 @@
+{
+  "savedAt": "2026-10-11T07:51:24.834988+00:00",
+  "ownerThread": "01a12864-232c-7720-aa58-0909185760b1",
+  "assignedBy": "01a129c1-647a-75d3-9a04-ab5cc7e980b3",
+  "scopeIds": [
+    "rinsho-kensagishi-2025-annual-pm-q1",
+    "rinsho-kensagishi-2025-annual-pm-q12",
+    "rinsho-kensagishi-2025-annual-pm-q17",
+    "rinsho-kensagishi-2025-annual-pm-q18",
+    "rinsho-kensagishi-2025-annual-pm-q19",
+    "rinsho-kensagishi-2025-annual-pm-q22",
+    "rinsho-kensagishi-2025-annual-pm-q23",
+    "rinsho-kensagishi-2025-annual-pm-q80",
+    "rinsho-kensagishi-2025-annual-pm-q84",
+    "rinsho-kensagishi-2026-annual-am-q33"
+  ],
+  "assignmentKind": "READ_ONLY_MEDICAL_EVIDENCE_QA",
+  "newUnwrittenQuestionsAvailable": 0,
+  "newOriginalsGenerated": 0,
+  "originalManuscriptEdits": 0,
+  "branchEdits": 0,
+  "publicGo": 0,
+  "runtimeRegistrationAdded": false,
+  "publicationAcceptance": false,
+  "status": "COMPLETE_WITH_EXPLICIT_EVIDENCE_LIMITS",
+  "sourcePacketSha256": "a7f2e6b888085c5f4779d2dc4afea2bc41f1354fdd6972578033718c54ddb82c",
+  "preservedStops": [
+    "PMC6409397 reCAPTCHA",
+    "NCBI gene/341",
+    "Books NBK2261 reCAPTCHA",
+    "AASM restricted/robots",
+    "2026PM60-100 source STOP"
+  ],
+  "communicationStop": "Other-thread allocation request rejected by automatic review; no retry or alternative sending tool used; assignment subsequently received directly",
+  "firstFiveIds": [
+    "rinsho-kensagishi-2025-annual-pm-q1",
+    "rinsho-kensagishi-2025-annual-pm-q12",
+    "rinsho-kensagishi-2025-annual-pm-q17",
+    "rinsho-kensagishi-2025-annual-pm-q18",
+    "rinsho-kensagishi-2025-annual-pm-q19"
+  ],
+  "completedQuestions": 10,
+  "checkedChoices": 50,
+  "items": [
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q1",
+      "inputRowSha256": "f7263ff748b1aea637821619f7e99270981807b8ac268b936d35b001373608cb",
+      "assessmentComplete": true,
+      "choiceCountChecked": 5,
+      "decision": "VISUAL_KEY_CONSISTENT_WITH_EVIDENCE_LIMIT",
+      "patches": [],
+      "remainingGaps": [
+        "尿円柱5種類全ての定義・化学組成を独立一次研究で確認した扱いにはしない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q12",
+      "inputRowSha256": "a0e91117707161c686a50fab616f144cba4f42ff0f7f72edc7ec62c0d8d141c4",
+      "assessmentComplete": true,
+      "choiceCountChecked": 5,
+      "decision": "SCORING_CONFIRMED_MEDICAL_SUPPORT_PARTIAL",
+      "patches": [
+        {
+          "field": "explanation",
+          "operation": "APPEND_SENTENCE",
+          "expectedBefore": "公式の採点上は、4または5のどちらか1肢を選ぶと正解です。終夜睡眠ポリグラフィは確定診断と重症度評価に用いる検査で、スクリーニングと役割を区別します。成人の睡眠時無呼吸ではAHIが5未満という記述は一般的な診断基準に合いません。原問を2肢選択へ変更しません。",
+          "inputRowSha256": "a0e91117707161c686a50fab616f144cba4f42ff0f7f72edc7ec62c0d8d141c4",
+          "reason": "公式採点通知と医学的解釈を分け、過度な一般化を避ける。",
+          "sourceIds": [
+            "MHLW71PM12NOTICE",
+            "NHLBI_DIAGNOSIS"
+          ],
+          "ownerAdoptionRequired": true,
+          "autoApply": false,
+          "appendText": "公式通知は採点条件を示すものであり、終夜睡眠ポリグラフィをスクリーニングに絶対用いないという医学的断定の根拠にはしません。"
+        }
+      ],
+      "remainingGaps": [
+        "成人AHIの閾値と症状等の診断条件について独立した未停止の一次基準を追加すること。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q17",
+      "inputRowSha256": "9f6e1814fdba618f5687f49c2cb31836fbd4715dcf4c43640bbdb0a2752df23a",
+      "assessmentComplete": true,
+      "choiceCountChecked": 5,
+      "decision": "VISUAL_KEY_CONSISTENT_NO_PATCH",
+      "patches": [],
+      "remainingGaps": [
+        "図示値を全患者の正常値範囲として一般化しない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q18",
+      "inputRowSha256": "8079ecd7e6db60a6fd88937651465bd5fbfb6164ebb31ba096d948b277c0a691",
+      "assessmentComplete": true,
+      "choiceCountChecked": 5,
+      "decision": "VISUAL_KEY_AND_AUTHORED_REFERENCE_CONSISTENT",
+      "patches": [],
+      "remainingGaps": [
+        "照合した医学定義の外部資料は署名付き臨床参考資料。原著又は学会一次基準を全肢再照合した扱いにはしない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q19",
+      "inputRowSha256": "b64f9d95ccc757b8a66472926ec3f851a6593acd37032d902cf96f5b44afb6e5",
+      "assessmentComplete": true,
+      "choiceCountChecked": 5,
+      "decision": "SCORING_AND_PLOT_CONFIRMED_DEFINITION_SUPPORT_PARTIAL",
+      "patches": [
+        {
+          "field": "explanation",
+          "operation": "APPEND_SENTENCE",
+          "expectedBefore": "公式の採点上は②または④のどちらか1肢が正解です。日本で用いるV̇25は肺活量が25％残っている時点、すなわち75％を呼出した時点の呼気流量で④に当たります。一方、FEF25を25％呼出時の流量という定義で読むと②に当たります。公式も設問が不明確としています。両者を同一の定義として説明せず、原問の1肢選択を維持します。",
+          "inputRowSha256": "b64f9d95ccc757b8a66472926ec3f851a6593acd37032d902cf96f5b44afb6e5",
+          "reason": "採点通知にない発行者の意図を断定しない。",
+          "sourceIds": [
+            "MHLW71PM19NOTICE"
+          ],
+          "ownerAdoptionRequired": true,
+          "autoApply": false,
+          "appendText": "FEF25とV̇25の定義の違いは解説上の解釈であり、公式通知が不明確とした具体的理由まで公表した扱いにはしません。"
+        },
+        {
+          "field": "choiceExplanations.エ",
+          "operation": "REPLACE_PHRASE",
+          "expectedBefore": "④は75％を呼出し、肺活量が25％残った位置の呼気流量です。V̇25を残気量側から定義した場合の答えで、公式に独立した正答として認められています。",
+          "inputRowSha256": "b64f9d95ccc757b8a66472926ec3f851a6593acd37032d902cf96f5b44afb6e5",
+          "reason": "残気量RVと残りのFVC割合が混同されない表現にする。",
+          "sourceIds": [
+            "MHLW71SUP",
+            "MHLW71PM19NOTICE"
+          ],
+          "ownerAdoptionRequired": true,
+          "autoApply": false,
+          "find": "V̇25を残気量側から定義した場合",
+          "replacement": "V̇25を肺活量の25％が残る呼出点の流量として読む場合"
+        }
+      ],
+      "remainingGaps": [
+        "FEF25と日本のVdot25の定義を独立一次標準の条文で確認すること。",
+        "通知に記載のない設問不明確の具体的理由を発行者の説明として断定しない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q22",
+      "inputRowSha256": "4cf9e3ade56d290c12473754f823a326d8c7a1631e22267d2b720c61aa3dc719",
+      "assessmentComplete": true,
+      "choiceCountChecked": 5,
+      "decision": "VISUAL_AND_PRIMARY_GUIDELINE_CONSISTENT_WITH_SCOPE_PATCH",
+      "patches": [
+        {
+          "field": "choiceExplanations.イ",
+          "operation": "REPLACE_PHRASE",
+          "expectedBefore": "手根管症候群は正中神経の手関節部の局所的な絞扼です。遠位潜時延長は起こりますが、本図の近位刺激による著しい波形の分散を含めると広範な脱髄を考えます。",
+          "inputRowSha256": "4cf9e3ade56d290c12473754f823a326d8c7a1631e22267d2b720c61aa3dc719",
+          "reason": "単一正中神経の波形から分布が広範と確定しない。",
+          "sourceIds": [
+            "EAN_PNS2021"
+          ],
+          "ownerAdoptionRequired": true,
+          "autoApply": false,
+          "find": "広範な脱髄",
+          "replacement": "脱髄性神経障害"
+        },
+        {
+          "field": "choiceExplanations.オ",
+          "operation": "APPEND_SENTENCE",
+          "expectedBefore": "脱髄では神経線維間の伝導速度のばらつきが増し、時間的分散や潜時延長が生じます。手関節・肘窩刺激の提示波形に合うため、公式正答もこの疾患です。",
+          "inputRowSha256": "4cf9e3ade56d290c12473754f823a326d8c7a1631e22267d2b720c61aa3dc719",
+          "reason": "試験の最適肢選択とCIDP確定診断を区別する。",
+          "sourceIds": [
+            "EAN_PNS2021"
+          ],
+          "ownerAdoptionRequired": true,
+          "autoApply": false,
+          "appendText": "臨床診断には臨床経過や他神経を含む電気生理学的所見も併せて評価します。"
+        }
+      ],
+      "remainingGaps": [
+        "刺激距離・数値基準・他神経記録・臨床経過が図にないため、CIDP確定診断をこの記録だけで行わない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q23",
+      "inputRowSha256": "8f2bd4e8cb7750132fb2b221d23eeaaa093864695d0a7e37261111430c8b8f7e",
+      "assessmentComplete": true,
+      "choiceCountChecked": 5,
+      "decision": "VISUAL_AND_SOCIETY_REFERENCE_CONSISTENT",
+      "patches": [],
+      "remainingGaps": [
+        "三相波・棘徐波複合の形式定義は原著又は独立一次基準を全て追加照合した扱いにしない。",
+        "患者年齢・睡眠状態・発症経過がないため症候群の臨床診断はしない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q80",
+      "inputRowSha256": "c5993065374047168f318c8fb8e220a8763eb09fab13b02a829b760b2e4952d4",
+      "assessmentComplete": true,
+      "choiceCountChecked": 5,
+      "decision": "C1Q_HEAT_LABILITY_PRIMARY_SUPPORT_WITH_COMPONENT_LIMIT",
+      "patches": [],
+      "remainingGaps": [
+        "熱不安定性の新一次根拠はC1qに限定。C1r/C1s全てと他4肢との同条件加熱比較の直接根拠は未確認。",
+        "C3/C6/D因子の役割は今回独立一次根拠を全て再照合した扱いにはしない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q84",
+      "inputRowSha256": "007b0fbc07b9bb4fbcdda2012d8e0961ad2e0ca04dc902cc8c7e5557fcc64d0d",
+      "assessmentComplete": true,
+      "choiceCountChecked": 5,
+      "decision": "JAPANESE_GENE_FREQUENCY_AND_TAIWANESE_SEX_COUNTS_SUPPORTED",
+      "patches": [
+        {
+          "field": "choiceExplanations.ウ",
+          "operation": "APPEND_SENTENCE",
+          "expectedBefore": "日本人のDi（a+）頻度は本問では約10％として扱われ、この肢が公式正答です。頻度は対象集団によって異なり、全ての集団で一定ではありません。",
+          "inputRowSha256": "007b0fbc07b9bb4fbcdda2012d8e0961ad2e0ca04dc902cc8c7e5557fcc64d0d",
+          "reason": "日本人一次集団の遺伝子頻度に基づく計算。未目視の表1の実測割合とは区別する。",
+          "sourceIds": [
+            "NAKAJIMA1981"
+          ],
+          "ownerAdoptionRequired": true,
+          "autoApply": false,
+          "appendText": "東京・千葉の日本人2,397人を調べた原著のDi^a遺伝子頻度0.047・0.048から、Hardy-Weinberg平衡を仮定したDi(a+)頻度は約9.2～9.4％となり、約10％という概数に整合します。"
+        },
+        {
+          "field": "choiceExplanations.イ",
+          "operation": "APPEND_SENTENCE",
+          "expectedBefore": "Xg（a+）は一般に男性より女性で多いとされます。X染色体上の遺伝子と関連する血液型で、設問の男女の関係は逆です。",
+          "inputRowSha256": "007b0fbc07b9bb4fbcdda2012d8e0961ad2e0ca04dc902cc8c7e5557fcc64d0d",
+          "reason": "性差の新しい実測一次例を補強し、集団適用範囲を限定する。",
+          "sourceIds": [
+            "YEH2018"
+          ],
+          "ownerAdoptionRequired": true,
+          "autoApply": false,
+          "appendText": "台湾人78人の原著ではXg(a+)は女性41/47・男性19/31と女性が高率でしたが、この小標本の割合を全人口や日本人の固定頻度としては扱いません。"
+        }
+      ],
+      "remainingGaps": [
+        "日本人原著の表1にある実測Di(a+)人数・割合の目視照合は未完。HW推計値と実測表を区別。",
+        "Xg新一次値は台湾人小標本。日本人の男女別頻度、歴史的欧州系66%/89%の引用元Mann1962本文は未確認。",
+        "weak D/partial Dは教育資料の典型分類。全亜型の一次文献照合まではしていない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q33",
+      "inputRowSha256": "43332a50eb689a8da6c6348369608607137cdf1927689506ddc701e7631e0d85",
+      "assessmentComplete": true,
+      "choiceCountChecked": 5,
+      "decision": "OFFICIAL_AI_CI_WITH_APOE_CONFLICT_QUALIFIED",
+      "patches": [
+        {
+          "field": "choiceExplanations.ウ",
+          "operation": "APPEND_SENTENCE",
+          "expectedBefore": "本問ではアポCⅠがLCAT活性化因子として公式正答に含まれます。アポCⅡによるリポ蛋白リパーゼ活性化と区別します。",
+          "inputRowSha256": "43332a50eb689a8da6c6348369608607137cdf1927689506ddc701e7631e0d85",
+          "reason": "公式3以外の独立した生化学的根拠を追加する。",
+          "sourceIds": [
+            "SOUTAR1975"
+          ],
+          "ownerAdoptionRequired": true,
+          "autoApply": false,
+          "appendText": "アポCⅠによるLCAT活性化は、定義されたリン脂質・コレステロール小胞を基質に用いた原著実験でも報告されています。"
+        },
+        {
+          "field": "choiceExplanations.オ",
+          "operation": "APPEND_SENTENCE",
+          "expectedBefore": "アポEの代表的な役割はリポ蛋白受容体との結合・レムナントの取り込みです。公式正答では選びませんが、原著にはE2・E3によるLCAT活性化の報告もあり、無条件に活性化能を否定できません。",
+          "inputRowSha256": "43332a50eb689a8da6c6348369608607137cdf1927689506ddc701e7631e0d85",
+          "reason": "ApoE活性化を精製酵素だけの例外として過小化しない。",
+          "sourceIds": [
+            "CHEN_ALBERS1985"
+          ],
+          "ownerAdoptionRequired": true,
+          "autoApply": false,
+          "appendText": "この原著は定義されたリポソーム基質での活性化を示し、酵素源を血漿としても類似結果を報告しています。"
+        }
+      ],
+      "remainingGaps": [
+        "発行者が公式正答1/3のみを採用しEを除外した具体的根拠又は公式補足通知は未確認。",
+        "原著の全速度論・統計及び生体内の寄与定量は未読。主因子と条件依存活性化を区別する説明案は統合主担当の医学的受入れ待ち。",
+        "ApoE受容体・レムナント取込みの背景に新規Gene348を使わない。既存文の独立根拠確認は追加できていない。"
+      ]
+    }
+  ],
+  "remainingHolds": [
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q1",
+      "gaps": [
+        "尿円柱5種類全ての定義・化学組成を独立一次研究で確認した扱いにはしない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q12",
+      "gaps": [
+        "成人AHIの閾値と症状等の診断条件について独立した未停止の一次基準を追加すること。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q17",
+      "gaps": [
+        "図示値を全患者の正常値範囲として一般化しない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q18",
+      "gaps": [
+        "照合した医学定義の外部資料は署名付き臨床参考資料。原著又は学会一次基準を全肢再照合した扱いにはしない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q19",
+      "gaps": [
+        "FEF25と日本のVdot25の定義を独立一次標準の条文で確認すること。",
+        "通知に記載のない設問不明確の具体的理由を発行者の説明として断定しない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q22",
+      "gaps": [
+        "刺激距離・数値基準・他神経記録・臨床経過が図にないため、CIDP確定診断をこの記録だけで行わない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q23",
+      "gaps": [
+        "三相波・棘徐波複合の形式定義は原著又は独立一次基準を全て追加照合した扱いにしない。",
+        "患者年齢・睡眠状態・発症経過がないため症候群の臨床診断はしない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q80",
+      "gaps": [
+        "熱不安定性の新一次根拠はC1qに限定。C1r/C1s全てと他4肢との同条件加熱比較の直接根拠は未確認。",
+        "C3/C6/D因子の役割は今回独立一次根拠を全て再照合した扱いにはしない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q84",
+      "gaps": [
+        "日本人原著の表1にある実測Di(a+)人数・割合の目視照合は未完。HW推計値と実測表を区別。",
+        "Xg新一次値は台湾人小標本。日本人の男女別頻度、歴史的欧州系66%/89%の引用元Mann1962本文は未確認。",
+        "weak D/partial Dは教育資料の典型分類。全亜型の一次文献照合まではしていない。"
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q33",
+      "gaps": [
+        "発行者が公式正答1/3のみを採用しEを除外した具体的根拠又は公式補足通知は未確認。",
+        "原著の全速度論・統計及び生体内の寄与定量は未読。主因子と条件依存活性化を区別する説明案は統合主担当の医学的受入れ待ち。",
+        "ApoE受容体・レムナント取込みの背景に新規Gene348を使わない。既存文の独立根拠確認は追加できていない。"
+      ]
+    }
+  ],
+  "rejectedPeerFindings": [
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q17",
+      "finding": "既存選択肢オが右心房と断定している",
+      "reason": "実入力は低圧域の心房圧と記載。存在しない問題への修正提案のため不採用。"
+    }
+  ],
+  "excludedSources": [
+    {
+      "url": "https://pubmed.ncbi.nlm.nih.gov/28162150/",
+      "original": "AASM2017 diagnostic guideline",
+      "reason": "既停止AASM論文の同一内容を補助が別経路で閲覧していた。採用根拠から除外、追加取得停止。",
+      "retriesAfterDetection": 0
+    }
+  ],
+  "firstFiveSavedAt": "2026-10-11T07:43:16.438968+00:00",
+  "newStops": [
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC41160/",
+      "event": "reCAPTCHA",
+      "affected": "LOZADA1995 full text",
+      "previouslyReadEvidence": "Indexed author abstract",
+      "retryOrAlternateAcquisitionAfterStop": 0
+    },
+    {
+      "url": "https://www.ncbi.nlm.nih.gov/gene/348",
+      "event": "reCAPTCHA",
+      "affected": "ApoE receptor background",
+      "previouslyReadEvidence": null,
+      "retryOrAlternateAcquisitionAfterStop": 0
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6093725/",
+      "event": "reCAPTCHA",
+      "affected": "YEH2018 full text",
+      "previouslyReadEvidence": "Indexed author article text and Figure 1 caption",
+      "retryOrAlternateAcquisitionAfterStop": 0
+    },
+    {
+      "url": "https://www.jstage.jst.go.jp/article/ase1911/89/4/89_4_515/_pdf/-char/en",
+      "event": "LOCAL_NETWORK_CONNECTION_REFUSED_WINERROR10061",
+      "affected": "Local PDF acquisition / visual table inspection",
+      "previouslyReadEvidence": "Public web PDF text, abstract and methods",
+      "retryOrAlternateAcquisitionAfterStop": 0
+    },
+    {
+      "url": "https://www.genomes2people.org/wp-content/uploads/2018/11/20181228_Other_Transfusion_Lane_WGS_P1_Xga.pdf",
+      "event": "LOCAL_NETWORK_CONNECTION_REFUSED_WINERROR10061",
+      "affected": "Local PDF acquisition / page image inspection",
+      "previouslyReadEvidence": "Public web PDF text",
+      "retryOrAlternateAcquisitionAfterStop": 0
+    }
+  ],
+  "stopCompliance": {
+    "originalStopsPreserved": true,
+    "sameAasmOriginalAlternateReadByPeerDetected": true,
+    "aasmAlternateReadExcludedFromAdoptedEvidence": true,
+    "rootAasmAcquisitionAfterDetection": 0,
+    "newStopRetriesOrAlternateAcquisitions": 0
+  },
+  "medicalEvidenceAcceptance": "LIMITED_SCOPE_ONLY; NO_GLOBAL_MEDICAL_OR_PUBLICATION_PASS",
+  "firstFiveCompleted": true,
+  "questionRegenerationCount": 0,
+  "existingQuestionsReadOnly": true,
+  "reviewMethod": "Primary/public-source focused QA; split first-five, neurophysiology-two, LCAT-one plus root complement/blood-group-two. All proposals checked against exact existing text.",
+  "fullQuantityHighModelDoubleReviewPerformed": false,
+  "runtimeOrPublicationApproval": false,
+  "verification": {
+    "result": "PASS",
+    "scopeQuestions": 10,
+    "scopeChoices": 50,
+    "sourceFileHashesVerified": 26,
+    "sourcePacketUnchanged": true,
+    "targetRowsUnchanged": 10,
+    "rowResults": [
+      {
+        "id": "rinsho-kensagishi-2025-annual-pm-q1",
+        "expectedRowSha256": "f7263ff748b1aea637821619f7e99270981807b8ac268b936d35b001373608cb",
+        "currentRowSha256": "f7263ff748b1aea637821619f7e99270981807b8ac268b936d35b001373608cb",
+        "rowUnchanged": true,
+        "initialManuscriptFileSha256": "0898208f1fbad6cb011b5848fb3ee7f0a919df982e0b78e0e15ecf7b3a9dc379",
+        "currentManuscriptFileSha256": "0898208f1fbad6cb011b5848fb3ee7f0a919df982e0b78e0e15ecf7b3a9dc379",
+        "wholeManuscriptFileUnchanged": true
+      },
+      {
+        "id": "rinsho-kensagishi-2025-annual-pm-q12",
+        "expectedRowSha256": "a0e91117707161c686a50fab616f144cba4f42ff0f7f72edc7ec62c0d8d141c4",
+        "currentRowSha256": "a0e91117707161c686a50fab616f144cba4f42ff0f7f72edc7ec62c0d8d141c4",
+        "rowUnchanged": true,
+        "initialManuscriptFileSha256": "0898208f1fbad6cb011b5848fb3ee7f0a919df982e0b78e0e15ecf7b3a9dc379",
+        "currentManuscriptFileSha256": "0898208f1fbad6cb011b5848fb3ee7f0a919df982e0b78e0e15ecf7b3a9dc379",
+        "wholeManuscriptFileUnchanged": true
+      },
+      {
+        "id": "rinsho-kensagishi-2025-annual-pm-q17",
+        "expectedRowSha256": "9f6e1814fdba618f5687f49c2cb31836fbd4715dcf4c43640bbdb0a2752df23a",
+        "currentRowSha256": "9f6e1814fdba618f5687f49c2cb31836fbd4715dcf4c43640bbdb0a2752df23a",
+        "rowUnchanged": true,
+        "initialManuscriptFileSha256": "0898208f1fbad6cb011b5848fb3ee7f0a919df982e0b78e0e15ecf7b3a9dc379",
+        "currentManuscriptFileSha256": "0898208f1fbad6cb011b5848fb3ee7f0a919df982e0b78e0e15ecf7b3a9dc379",
+        "wholeManuscriptFileUnchanged": true
+      },
+      {
+        "id": "rinsho-kensagishi-2025-annual-pm-q18",
+        "expectedRowSha256": "8079ecd7e6db60a6fd88937651465bd5fbfb6164ebb31ba096d948b277c0a691",
+        "currentRowSha256": "8079ecd7e6db60a6fd88937651465bd5fbfb6164ebb31ba096d948b277c0a691",
+        "rowUnchanged": true,
+        "initialManuscriptFileSha256": "0898208f1fbad6cb011b5848fb3ee7f0a919df982e0b78e0e15ecf7b3a9dc379",
+        "currentManuscriptFileSha256": "0898208f1fbad6cb011b5848fb3ee7f0a919df982e0b78e0e15ecf7b3a9dc379",
+        "wholeManuscriptFileUnchanged": true
+      },
+      {
+        "id": "rinsho-kensagishi-2025-annual-pm-q19",
+        "expectedRowSha256": "b64f9d95ccc757b8a66472926ec3f851a6593acd37032d902cf96f5b44afb6e5",
+        "currentRowSha256": "b64f9d95ccc757b8a66472926ec3f851a6593acd37032d902cf96f5b44afb6e5",
+        "rowUnchanged": true,
+        "initialManuscriptFileSha256": "0898208f1fbad6cb011b5848fb3ee7f0a919df982e0b78e0e15ecf7b3a9dc379",
+        "currentManuscriptFileSha256": "0898208f1fbad6cb011b5848fb3ee7f0a919df982e0b78e0e15ecf7b3a9dc379",
+        "wholeManuscriptFileUnchanged": true
+      },
+      {
+        "id": "rinsho-kensagishi-2025-annual-pm-q22",
+        "expectedRowSha256": "4cf9e3ade56d290c12473754f823a326d8c7a1631e22267d2b720c61aa3dc719",
+        "currentRowSha256": "4cf9e3ade56d290c12473754f823a326d8c7a1631e22267d2b720c61aa3dc719",
+        "rowUnchanged": true,
+        "initialManuscriptFileSha256": "0898208f1fbad6cb011b5848fb3ee7f0a919df982e0b78e0e15ecf7b3a9dc379",
+        "currentManuscriptFileSha256": "0898208f1fbad6cb011b5848fb3ee7f0a919df982e0b78e0e15ecf7b3a9dc379",
+        "wholeManuscriptFileUnchanged": true
+      },
+      {
+        "id": "rinsho-kensagishi-2025-annual-pm-q23",
+        "expectedRowSha256": "8f2bd4e8cb7750132fb2b221d23eeaaa093864695d0a7e37261111430c8b8f7e",
+        "currentRowSha256": "8f2bd4e8cb7750132fb2b221d23eeaaa093864695d0a7e37261111430c8b8f7e",
+        "rowUnchanged": true,
+        "initialManuscriptFileSha256": "0898208f1fbad6cb011b5848fb3ee7f0a919df982e0b78e0e15ecf7b3a9dc379",
+        "currentManuscriptFileSha256": "0898208f1fbad6cb011b5848fb3ee7f0a919df982e0b78e0e15ecf7b3a9dc379",
+        "wholeManuscriptFileUnchanged": true
+      },
+      {
+        "id": "rinsho-kensagishi-2025-annual-pm-q80",
+        "expectedRowSha256": "c5993065374047168f318c8fb8e220a8763eb09fab13b02a829b760b2e4952d4",
+        "currentRowSha256": "c5993065374047168f318c8fb8e220a8763eb09fab13b02a829b760b2e4952d4",
+        "rowUnchanged": true,
+        "initialManuscriptFileSha256": "0898208f1fbad6cb011b5848fb3ee7f0a919df982e0b78e0e15ecf7b3a9dc379",
+        "currentManuscriptFileSha256": "0898208f1fbad6cb011b5848fb3ee7f0a919df982e0b78e0e15ecf7b3a9dc379",
+        "wholeManuscriptFileUnchanged": true
+      },
+      {
+        "id": "rinsho-kensagishi-2025-annual-pm-q84",
+        "expectedRowSha256": "007b0fbc07b9bb4fbcdda2012d8e0961ad2e0ca04dc902cc8c7e5557fcc64d0d",
+        "currentRowSha256": "007b0fbc07b9bb4fbcdda2012d8e0961ad2e0ca04dc902cc8c7e5557fcc64d0d",
+        "rowUnchanged": true,
+        "initialManuscriptFileSha256": "0898208f1fbad6cb011b5848fb3ee7f0a919df982e0b78e0e15ecf7b3a9dc379",
+        "currentManuscriptFileSha256": "0898208f1fbad6cb011b5848fb3ee7f0a919df982e0b78e0e15ecf7b3a9dc379",
+        "wholeManuscriptFileUnchanged": true
+      },
+      {
+        "id": "rinsho-kensagishi-2026-annual-am-q33",
+        "expectedRowSha256": "43332a50eb689a8da6c6348369608607137cdf1927689506ddc701e7631e0d85",
+        "currentRowSha256": "43332a50eb689a8da6c6348369608607137cdf1927689506ddc701e7631e0d85",
+        "rowUnchanged": true,
+        "initialManuscriptFileSha256": "c13f9a3c4963318830464e696acad72386d7eb12388f999cf08b585049460f01",
+        "currentManuscriptFileSha256": "09302e2d1c913b3a1e5cbbb88709ff5ffcb52b9300e30ae3c405f43f61f4794c",
+        "wholeManuscriptFileUnchanged": false
+      }
+    ],
+    "patchTargetValidation": "PASS",
+    "failures": [],
+    "wholeFileChangeNote": "The AM/PM manuscript file changed while its assigned AM33 row remained byte-equivalent under canonical JSON. Bind integration to row SHA and expectedBefore, not whole-file immutability.",
+    "evidenceLimitsAreNotValidationFailures": true,
+    "verificationTime": "2026-10-11T07:51:25.079237+00:00"
+  },
+  "patchProposalCount": 9,
+  "patchProposalQuestionCount": 5,
+  "integrationInstructions": [
+    "主担当のみがrowSha256とexpectedBeforeを再照合して採否を決定する。",
+    "原問・選択肢・公式正答・requiredSelections・図版・index/runtime/publicGOを変更する候補はない。",
+    "PM12/PM19の正答配列は複数許容パターンであり、1肢選択を維持。AM33は1/3の2肢選択を維持。",
+    "医学的資料の確認限界と未完根拠を継承し、QA保存完了を公開受入れPASSと扱わない。",
+    "既存STOPと今回のSTOPを保ち、AASM別経路抄録は根拠から除外した状態を維持する。"
+  ],
+  "factEvidenceFile": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\codex-takeover-20261011\\lab-third-assist10\\FACT-COMPLETION10.json",
+  "factEvidenceSha256": "62743f74a5d012a1a4d2ecfc182b14e811873838497972913c4804ef0ff151cc",
+  "sourceCatalogStoredIn": "FACT-COMPLETION10.json:sources"
+}

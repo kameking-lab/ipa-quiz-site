@@ -1,0 +1,108 @@
+{
+  "observedUtc": "2026-10-11T10:25:52.178816+00:00",
+  "sourceHead": "d6fcc3a5f36074ce0062dfc717bd2298231ea8f2",
+  "scope": "ONLY71PM12_AND19_FINITE_EVIDENCE_GAPS",
+  "rows": [
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q12",
+      "currentQuestionObjectSha256": "8740af119d63e37fced34c0ff05cd16b22e25881ad20495143415ba0e5852b69",
+      "originalStemChoicesKeyChanged": false,
+      "questionManuscriptChanged": false,
+      "requiredSelections": 1,
+      "acceptedAnswers": "4/5",
+      "recommendation": "FINITE_FACT_GAP_RESOLVED_PENDING_ASTRA_DISPOSITION",
+      "sources": [
+        {
+          "url": "https://www.jrs.or.jp/citizen/disease/i/i-05.html",
+          "title": "日本呼吸器学会 睡眠時無呼吸症候群",
+          "sourceKind": "PROFESSIONAL_SOCIETY_AUTHORED_PRIMARY_REFERENCE",
+          "readScope": "WEB_PAGE_DIAGNOSIS_AND_MECHANISM_PARAGRAPHS",
+          "verifiedClaims": [
+            "PSGによるAHIが5以上かつ記載症状を伴う診断条件。AHIのみで全例の診断を断定しない。",
+            "簡易検査又はPSGで睡眠中の呼吸状態を評価する。PSGがスクリーニングに絶対利用されないとは主張しない。",
+            "肥満と上気道狭窄の関係、肥満でない場合もSASがあり得る。"
+          ],
+          "existingOtherReasonsEvidenceReused": [
+            "NHLBI sleep apnea diagnosis/causes/treatment",
+            "official scoring notice accepts option4 OR option5 individually"
+          ],
+          "newManuscriptCorrectionNecessary": false
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q19",
+      "currentQuestionObjectSha256": "babad4e247de8df482e24626be29c056ba0a31cd478f8a2aa92626654a0651f9",
+      "originalStemChoicesKeyChanged": false,
+      "questionManuscriptChanged": false,
+      "requiredSelections": 1,
+      "acceptedAnswers": "2/4",
+      "recommendation": "FINITE_FACT_GAP_RESOLVED_PENDING_ASTRA_DISPOSITION",
+      "sources": [
+        {
+          "url": "https://www.mhlw.go.jp/shingi/2010/04/dl/s0420-6m_0003.pdf",
+          "title": "厚生労働省掲載 臨床呼吸機能検査 第7版 抜粋",
+          "sourceKind": "PRIMARY_PROFESSIONAL_RESPIRATORY_FUNCTION_MANUAL",
+          "readScope": "LOCAL_RENDERED_PHYSICAL_PAGES1_TO7; definition physical4/book30; peakflow physical7/book33",
+          "sha256": "79ef95faa8e1064e47539962d2f009fdd739210625f215790c05f2adfced461b",
+          "privateSavedPath": "C:/wt/kakomon-lab-remaining-owner-20261011/data/raw_pdfs/lab-remaining-20261011/jrs-flow-reference-201004.pdf",
+          "verifiedClaims": [
+            "Vdot50/Vdot25をそれぞれ肺活量50%/25%位の最大呼気流量として記載。",
+            "欧米表記でVdot50=MEF50、Vdot25=MEF75（原PDF表記）であると記載。この記号はFDA提出資料のMEF25と名称体系が異なるので同じMEFの語に統一しない。",
+            "図8のVdot25は呼出曲線の後半に描かれ、設問原図④の解釈と整合。"
+          ],
+          "limitedUse": "本書の表記体系を根拠とする。現稿にはMEFを新たに付加しない。出版社の設問不明確の理由と推定しない。"
+        },
+        {
+          "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf8/K083879.pdf",
+          "title": "Innovision Spirometry Option for Innocor 510(k) manufacturer submission 2008",
+          "sourceKind": "MANUFACTURER_PRIMARY_REGULATORY_SUBMISSION",
+          "readScope": "WEB_NATIVE_PDF_TEXT_PHYSICAL4_TO5",
+          "verifiedClaims": [
+            "メーカー提出資料のFEF25はFVC25%呼出済みの最大瞬時呼気流量。",
+            "同資料のMEF25はFVC25%をまだ呼出す必要がある点、同資料のFEF75に相当する。"
+          ],
+          "scopeLimit": "メーカーの用語定義であり規制当局の独立臨床推奨として扱わない。FDA資料のMEF表記体系と日本資料のMEF表記体系を混同しない。",
+          "screenshotRead": false
+        },
+        {
+          "preparedOriginalFigure": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no4.png",
+          "readScope": "ORIGINAL_FIGURE_VISUAL_INSPECTION",
+          "verifiedClaims": [
+            "全呼出量が四等分表示。①はPEF、②25%呼出、③50%呼出、④75%呼出/25%残存、⑤吸気側。"
+          ],
+          "whole84ImagesRereviewed": false
+        }
+      ]
+    }
+  ],
+  "newQuestionsGenerated": 0,
+  "manuscriptEdits": 0,
+  "newPublicRelease": 0,
+  "whole84ReauditPerformed": false,
+  "preservedStops": [
+    "AASM2017samecontentallroutes",
+    "72PM60-100",
+    "all existing captcha/provider/access STOPs"
+  ],
+  "newAccessStops": [
+    {
+      "url": "https://www.nice.org.uk/guidance/ng202/chapter/Recommendations",
+      "status": "403_FORBIDDEN_STOP",
+      "firstAttemptOnly": true,
+      "retryAttempts": 0,
+      "sameContentAlternateRouteAttempts": 0,
+      "evidenceUsed": false
+    }
+  ],
+  "toolLimitations": [
+    {
+      "url": "https://www.accessdata.fda.gov/cdrh_docs/pdf8/K083879.pdf",
+      "operation": "web screenshot",
+      "error": "unable to resolve screenshot PDF content type",
+      "textReadSucceeded": true,
+      "imageReadClaimed": false
+    }
+  ],
+  "pending": "Astra independent disposition of these2 exact current question objects and added source scopes"
+}

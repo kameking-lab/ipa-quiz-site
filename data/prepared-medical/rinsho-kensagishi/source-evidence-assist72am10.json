@@ -1,0 +1,778 @@
+{
+  "ownerThread": "01a1286f-b36d-77b0-9d75-57e69f63a082",
+  "integrationOwnerThread": "01a129c1-647a-75d3-9a04-ab5cc7e980b3",
+  "status": "AUTHOR10_COMPLETE_PENDING_OWNER_REVIEW",
+  "qualification": "rinsho-kensagishi",
+  "edition": 72,
+  "session": "am",
+  "assignedOriginals": 10,
+  "completedOriginals": 10,
+  "completedChoices": 50,
+  "questionIds": [
+    "rinsho-kensagishi-2026-annual-am-q54",
+    "rinsho-kensagishi-2026-annual-am-q58",
+    "rinsho-kensagishi-2026-annual-am-q62",
+    "rinsho-kensagishi-2026-annual-am-q63",
+    "rinsho-kensagishi-2026-annual-am-q66",
+    "rinsho-kensagishi-2026-annual-am-q69",
+    "rinsho-kensagishi-2026-annual-am-q78",
+    "rinsho-kensagishi-2026-annual-am-q84",
+    "rinsho-kensagishi-2026-annual-am-q86",
+    "rinsho-kensagishi-2026-annual-am-q98"
+  ],
+  "questionFile": "2026-annual-am-assist10.json",
+  "questionFileSha256": "02f746a19938aacefed9decbf2f1f517283c3e7f526575c1f68e3565ada40ca1",
+  "assignmentFileSha256": "ef7d8751b6b312254f1b6d98425a146b8162dd147c00502471c6e8acd103ccf0",
+  "questionSha256ById": {
+    "rinsho-kensagishi-2026-annual-am-q54": "b7890b3e147fcfc45482e755d239c72295b3b3c4618da6102563d9084e145dff",
+    "rinsho-kensagishi-2026-annual-am-q58": "82fd7bbfe86121be13650ba447df7cb185839b2f1df98218f3e96448e753e7a7",
+    "rinsho-kensagishi-2026-annual-am-q62": "9512d35e161caa8e073f6060567d328632e231591cbff1dfb9ea6165482f0ae7",
+    "rinsho-kensagishi-2026-annual-am-q63": "54b289dcc183e10eccfb7938b4e48f19f66bf6d62d53158e5046d71f970ac5f2",
+    "rinsho-kensagishi-2026-annual-am-q66": "9a23e81880c31f569513cdafefb17f86b249f6abe1251e508645937e0cd5d1d9",
+    "rinsho-kensagishi-2026-annual-am-q69": "57fde48e36e5ee23aa207bbacd1724867500cce2ef6a440c4eb2ad9bb71a1139",
+    "rinsho-kensagishi-2026-annual-am-q78": "ad400b7e30dfda429592da2234094f55c1bc15a8fb5ae1850c119acc8cf25235",
+    "rinsho-kensagishi-2026-annual-am-q84": "2b3c969f3d24c1dabe04600df86707722c4e20011e7d2fb592a1cdb69ceb99d5",
+    "rinsho-kensagishi-2026-annual-am-q86": "94091e42d41c3179e4581fb4858913787dd228e25de3b80660cb8588085dbec8",
+    "rinsho-kensagishi-2026-annual-am-q98": "47f57d622d6da6e005a6c9490d411eec1a1abd57a136d781626bdfbe8d8b646d"
+  },
+  "rootWorktreeReadOnly": true,
+  "sameBranchWrites": false,
+  "oldManuscriptsRegenerated": 0,
+  "needsReview": true,
+  "publicGo": 0,
+  "publicationAuthorized": false,
+  "stopsMaintained": [
+    "72PM60-100 provider content stop",
+    "PMC6409397 CAPTCHA",
+    "NCBI gene/341 CAPTCHA",
+    "Books NBK2261 CAPTCHA",
+    "AASM restricted"
+  ],
+  "newAccessStops": [
+    {
+      "url": "https://www.usa.philips.com/c-dam/corporate/symbols/Image_412.png",
+      "status": "STOP_DO_NOT_RETRY",
+      "reason": "<urlopen error [WinError 10061] 対象のコンピューターによって拒否されたため、接続できませんでした。>"
+    },
+    {
+      "url": "https://www.usa.philips.com/c-dam/corporate/symbols/class-2-symbol.png",
+      "status": "STOP_DO_NOT_RETRY",
+      "reason": "<urlopen error [WinError 10061] 対象のコンピューターによって拒否されたため、接続できませんでした。>"
+    },
+    {
+      "url": "https://www.usa.philips.com/c-dam/corporate/symbols/type-bf-symbol.png",
+      "status": "STOP_DO_NOT_RETRY",
+      "reason": "<urlopen error [WinError 10061] 対象のコンピューターによって拒否されたため、接続できませんでした。>"
+    },
+    {
+      "url": "https://www.usa.philips.com/c-dam/corporate/symbols/Image_155.png",
+      "status": "STOP_DO_NOT_RETRY",
+      "reason": "<urlopen error [WinError 10061] 対象のコンピューターによって拒否されたため、接続できませんでした。>"
+    },
+    {
+      "url": "https://www.mindray.com/content/dam/xpace/en_us/resource-library/patient-monitoring/technical-document/continuous-patient-monitoring/H-046-005013-00-Passport-17m12m-ops-manual-FDA-17.0.pdf",
+      "status": "STOP_DO_NOT_RETRY",
+      "reason": "web open returned 403 Forbidden; no retry or alternate copy attempted"
+    }
+  ],
+  "rows": [
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q54",
+      "sourceId": "rinsho-kensagishi-72-am-54",
+      "officialKeyCell": "A054",
+      "acceptedAnswerPatterns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\9ffdc4065b56abaaed.pdf",
+        "sha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0"
+      },
+      "officialAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\85e0c9f6d67a0849a0.pdf",
+        "sha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78"
+      },
+      "officialSupplementPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_02.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\50d066758ad49c0787.pdf",
+        "sha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+      },
+      "sourceImages": [
+        {
+          "path": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\originals\\rinsho-kensagishi-2026-annual-am-q54-p23.png",
+          "sha256": "313b8ee69f39ad99f2de818ff30c07459ec92d8e8f2a3636e708b1a09f0ab251",
+          "physicalPage": 23
+        }
+      ],
+      "preparedImages": [
+        {
+          "path": "./figures/72-am-no9.png",
+          "sha256": "cf9834d3bafbc956c639e4646efaffc7ca50b3a1bae06126fd28e6d14ba444bf",
+          "officialPdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_02.pdf",
+          "officialPhysicalPage": 13,
+          "referenceNumber": 9,
+          "copyOfSourcePath": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\supplements\\72-am-no9-p13.png",
+          "modified": false
+        }
+      ],
+      "originalVisualChecked": true,
+      "officialAnswerVisualChecked": true,
+      "visualObservation": "No.9/問題54を確認。筋線維と横紋が青紫色、線維間は淡赤色。スケール50µm。",
+      "primaryReferences": [
+        {
+          "url": "https://www.columbia.edu/itc/hs/medical/sbpm_histology_old/lab/lab04_skeletal.html",
+          "publisher": "Columbia University",
+          "supports": "PTAH染色標本で筋横紋を観察する大学の実習原資料。"
+        },
+        {
+          "url": "https://www.aladdinsci.com/us_es/faqs/mallory-phosphotungstic-acid-hematoxylin-method-for-staining-striated-muscle-cross-striations-en.html",
+          "publisher": "Aladdin Scientific",
+          "supports": "試薬メーカーのPTAH原手順。横紋・フィブリンは濃青色、膠原は赤褐色。"
+        }
+      ],
+      "primaryFactsCheckedAtUtc": "2026-10-11T07:49:19.191692+00:00",
+      "authorExplanationComplete": true,
+      "choiceExplanations": 5,
+      "independentAcceptanceComplete": false,
+      "needsReview": true,
+      "publicGo": 0,
+      "technicalHolds": []
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q58",
+      "sourceId": "rinsho-kensagishi-72-am-58",
+      "officialKeyCell": "A058",
+      "acceptedAnswerPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\9ffdc4065b56abaaed.pdf",
+        "sha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0"
+      },
+      "officialAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\85e0c9f6d67a0849a0.pdf",
+        "sha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78"
+      },
+      "officialSupplementPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_02.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\50d066758ad49c0787.pdf",
+        "sha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+      },
+      "sourceImages": [
+        {
+          "path": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\originals\\rinsho-kensagishi-2026-annual-am-q58-p24.png",
+          "sha256": "432b7f6d5ec61997ed84089b40d6a5080112f0ff86769fdb9a51268d3baef2ee",
+          "physicalPage": 24
+        },
+        {
+          "path": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\originals\\rinsho-kensagishi-2026-annual-am-q58-p25.png",
+          "sha256": "f8ea5a3c8d14da9d71dbc7b3d5db0ebceab7375500271e7472cad1a86a63383d",
+          "physicalPage": 25
+        }
+      ],
+      "preparedImages": [
+        {
+          "path": "./figures/72-am-no10.png",
+          "sha256": "354428011f91025af1ee2ee0956dc280752a0a3b6e1e5f034ca33494e7cf7bc9",
+          "officialPdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_02.pdf",
+          "officialPhysicalPage": 14,
+          "referenceNumber": 10,
+          "copyOfSourcePath": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\supplements\\72-am-no10-p14.png",
+          "modified": false
+        }
+      ],
+      "originalVisualChecked": true,
+      "officialAnswerVisualChecked": true,
+      "visualObservation": "No.10/問題58を確認。中央の集簇する細胞は濃染核と高いN/C比。周囲に細胞質の豊富な成熟扁平上皮細胞。",
+      "primaryReferences": [
+        {
+          "url": "https://screening.iarc.fr/atlascyto_list.php?cat=F1c2&lang=1",
+          "publisher": "WHO/IARC",
+          "supports": "原著デジタル細胞診アトラスのHSIL所見。"
+        },
+        {
+          "url": "https://screening.iarc.fr/atlascyto_list.php?cat=F1b&lang=1",
+          "publisher": "WHO/IARC",
+          "supports": "LSILの成熟細胞・コイロサイト所見との区別。"
+        },
+        {
+          "url": "https://screening.iarc.fr/atlascyto_list.php?cat=F1a1a&lang=1",
+          "publisher": "WHO/IARC",
+          "supports": "ASC-USの細胞診所見と病変区分。"
+        },
+        {
+          "url": "https://screening.iarc.fr/atlascyto_list.php?cat=F2c&lang=1",
+          "publisher": "WHO/IARC",
+          "supports": "腺癌の異型柱状細胞集団、柵状配列等。"
+        }
+      ],
+      "primaryFactsCheckedAtUtc": "2026-10-11T07:49:19.191692+00:00",
+      "authorExplanationComplete": true,
+      "choiceExplanations": 5,
+      "independentAcceptanceComplete": false,
+      "needsReview": true,
+      "publicGo": 0,
+      "technicalHolds": []
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q62",
+      "sourceId": "rinsho-kensagishi-72-am-62",
+      "officialKeyCell": "A062",
+      "acceptedAnswerPatterns": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\9ffdc4065b56abaaed.pdf",
+        "sha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0"
+      },
+      "officialAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\85e0c9f6d67a0849a0.pdf",
+        "sha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78"
+      },
+      "officialSupplementPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_02.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\50d066758ad49c0787.pdf",
+        "sha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+      },
+      "sourceImages": [
+        {
+          "path": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\originals\\rinsho-kensagishi-2026-annual-am-q62-p26.png",
+          "sha256": "22b82a32c55e2bd82f97f2430df6bb57f6c094b6f0e0f288c10afcd868a86bd5",
+          "physicalPage": 26
+        }
+      ],
+      "preparedImages": [
+        {
+          "path": "./figures/72-am-no11.png",
+          "sha256": "5fede0a1dbe3645be848b0fe22ffb5fac139c95e69b07bc3ce0f5ff9d1fa53ab",
+          "officialPdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_02.pdf",
+          "officialPhysicalPage": 15,
+          "referenceNumber": 11,
+          "copyOfSourcePath": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\supplements\\72-am-no11-p15.png",
+          "modified": false
+        }
+      ],
+      "originalVisualChecked": true,
+      "officialAnswerVisualChecked": true,
+      "visualObservation": "No.11/問題62を確認。矢印先の有核赤芽球で核周囲に青色顆粒が並ぶ。割合やSF3B1遺伝子型は原図から推定しない。",
+      "primaryReferences": [
+        {
+          "url": "https://imagebank.hematology.org/image/3131/ring-sideroblast--1",
+          "publisher": "American Society of Hematology",
+          "supports": "専門医の原著形態アトラス。核の周囲に環状に沈着する鉄の像。"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21995386/",
+          "publisher": "NLM / NEJM original research",
+          "supports": "骨髄異形成症候群と環状鉄芽球の関係を示す原著研究。診断割合や変異の推測には使用しない。"
+        }
+      ],
+      "primaryFactsCheckedAtUtc": "2026-10-11T07:49:19.191692+00:00",
+      "authorExplanationComplete": true,
+      "choiceExplanations": 5,
+      "independentAcceptanceComplete": false,
+      "needsReview": true,
+      "publicGo": 0,
+      "technicalHolds": []
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q63",
+      "sourceId": "rinsho-kensagishi-72-am-63",
+      "officialKeyCell": "A063",
+      "acceptedAnswerPatterns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\9ffdc4065b56abaaed.pdf",
+        "sha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0"
+      },
+      "officialAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\85e0c9f6d67a0849a0.pdf",
+        "sha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78"
+      },
+      "officialSupplementPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_02.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\50d066758ad49c0787.pdf",
+        "sha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+      },
+      "sourceImages": [
+        {
+          "path": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\originals\\rinsho-kensagishi-2026-annual-am-q63-p26.png",
+          "sha256": "266fd80a649e1bcc4a4e1996934ea1228330aeb471f43d77dd670f7c925034b2",
+          "physicalPage": 26
+        },
+        {
+          "path": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\originals\\rinsho-kensagishi-2026-annual-am-q63-p27.png",
+          "sha256": "f8ea5a3c8d14da9d71dbc7b3d5db0ebceab7375500271e7472cad1a86a63383d",
+          "physicalPage": 27
+        }
+      ],
+      "preparedImages": [
+        {
+          "path": "./figures/72-am-no12.png",
+          "sha256": "16375c394eefb3bdcfff68fd285a8fed67d9e70d88d0be0a0f39f4f4ecd6f8b4",
+          "officialPdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_02.pdf",
+          "officialPhysicalPage": 16,
+          "referenceNumber": 12,
+          "copyOfSourcePath": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\supplements\\72-am-no12-p16.png",
+          "modified": false
+        }
+      ],
+      "originalVisualChecked": true,
+      "officialAnswerVisualChecked": true,
+      "visualObservation": "No.12/問題63を確認。aは血漿内、bは最上部の薄い血球層、cは直下、d/eは大きな下方血球層。b/cの矢印を視覚照合。",
+      "primaryReferences": [
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/11054046/",
+          "publisher": "NLM / original transfusion research",
+          "supports": "血小板濃縮製剤をバフィーコートから作製した原著研究。図中bの最終判定は厚労省原図・公式正答による。"
+        }
+      ],
+      "primaryFactsCheckedAtUtc": "2026-10-11T07:49:19.191692+00:00",
+      "authorExplanationComplete": true,
+      "choiceExplanations": 5,
+      "independentAcceptanceComplete": false,
+      "needsReview": true,
+      "publicGo": 0,
+      "technicalHolds": []
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q66",
+      "sourceId": "rinsho-kensagishi-72-am-66",
+      "officialKeyCell": "A066",
+      "acceptedAnswerPatterns": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\9ffdc4065b56abaaed.pdf",
+        "sha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0"
+      },
+      "officialAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\85e0c9f6d67a0849a0.pdf",
+        "sha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78"
+      },
+      "officialSupplementPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_02.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\50d066758ad49c0787.pdf",
+        "sha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+      },
+      "sourceImages": [
+        {
+          "path": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\originals\\rinsho-kensagishi-2026-annual-am-q66-p27.png",
+          "sha256": "bc88339ea38c167253690a9943b5e0f1600fa1e87751a10e77facff772f540f5",
+          "physicalPage": 27
+        },
+        {
+          "path": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\originals\\rinsho-kensagishi-2026-annual-am-q66-p28.png",
+          "sha256": "f8ea5a3c8d14da9d71dbc7b3d5db0ebceab7375500271e7472cad1a86a63383d",
+          "physicalPage": 28
+        }
+      ],
+      "preparedImages": [
+        {
+          "path": "./figures/72-am-no13.png",
+          "sha256": "58dc80ff357f929be263dc6e8592114cfbb02f3727ab2f424857753c4423f084",
+          "officialPdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_02.pdf",
+          "officialPhysicalPage": 17,
+          "referenceNumber": 13,
+          "copyOfSourcePath": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\supplements\\72-am-no13-p17.png",
+          "modified": false
+        }
+      ],
+      "originalVisualChecked": true,
+      "officialAnswerVisualChecked": true,
+      "visualObservation": "No.13/問題66を確認。リストセチン1.25mg/mLは上昇、ADP5µMとコラーゲン5µg/mLはほぼ平坦。単位と各添加矢印を確認。",
+      "primaryReferences": [
+        {
+          "url": "https://imagebank.hematology.org/imageset/60218/glanzmann-thrombasthenia",
+          "publisher": "American Society of Hematology",
+          "supports": "専門医の原著症例でリストセチンのみ反応、ADP/コラーゲン反応なしとαIIbβ3異常を記録。"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/4201262/",
+          "publisher": "NLM / original platelet study",
+          "supports": "von Willebrand病でリストセチン反応が低下した原著研究。全病型で必ず低下するとの断定はしない。"
+        }
+      ],
+      "primaryFactsCheckedAtUtc": "2026-10-11T07:49:19.191692+00:00",
+      "authorExplanationComplete": true,
+      "choiceExplanations": 5,
+      "independentAcceptanceComplete": false,
+      "needsReview": true,
+      "publicGo": 0,
+      "technicalHolds": []
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q69",
+      "sourceId": "rinsho-kensagishi-72-am-69",
+      "officialKeyCell": "A069",
+      "acceptedAnswerPatterns": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\9ffdc4065b56abaaed.pdf",
+        "sha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0"
+      },
+      "officialAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\85e0c9f6d67a0849a0.pdf",
+        "sha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78"
+      },
+      "officialSupplementPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_02.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\50d066758ad49c0787.pdf",
+        "sha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+      },
+      "sourceImages": [
+        {
+          "path": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\originals\\rinsho-kensagishi-2026-annual-am-q69-p28.png",
+          "sha256": "d06dc0401a3cd9576c339c023938be9884f492b629a1ce4171f10ffe02983060",
+          "physicalPage": 28
+        },
+        {
+          "path": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\originals\\rinsho-kensagishi-2026-annual-am-q69-p29.png",
+          "sha256": "f8ea5a3c8d14da9d71dbc7b3d5db0ebceab7375500271e7472cad1a86a63383d",
+          "physicalPage": 29
+        }
+      ],
+      "preparedImages": [
+        {
+          "path": "./figures/72-am-no14.png",
+          "sha256": "b8fb2a872b4c8451b099da57df826a45cc153110779e368bc7b200c59f04cd56",
+          "officialPdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_02.pdf",
+          "officialPhysicalPage": 18,
+          "referenceNumber": 14,
+          "copyOfSourcePath": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\supplements\\72-am-no14-p18.png",
+          "modified": false
+        }
+      ],
+      "originalVisualChecked": true,
+      "officialAnswerVisualChecked": true,
+      "visualObservation": "No.14/問題69と原問p28を確認。炎症細胞の間に紫色の対になった小さな菌体。長い桿菌や大きなブドウ房状集塊を主所見としない。",
+      "primaryReferences": [
+        {
+          "url": "https://www.cdc.gov/pneumococcal/hcp/clinical-overview/index.html",
+          "publisher": "CDC",
+          "supports": "肺炎球菌のグラム陽性・ランセット状の形。公的臨床解説を閲覧。"
+        },
+        {
+          "url": "https://www.fda.gov/media/183341/download?attachment=",
+          "publisher": "FDA",
+          "supports": "BAM Chapter14（2020）p7の大きなグラム陽性桿菌という形態記載のみ参照。培養・毒素検査の手順は追加しない。"
+        },
+        {
+          "url": "https://iris.who.int/server/api/core/bitstreams/ad308d08-243a-4f04-9a05-254d97dcdfbf/content",
+          "publisher": "WHO",
+          "supports": "WHO laboratory manual（2021）のstraight/slightly club-shaped pleomorphic rodsの公開検索抜粋を照合。本文取得はInternal Errorで未取得。",
+          "evidenceMode": "public_indexed_excerpt_only"
+        },
+        {
+          "url": "https://cwoer.ccbcmd.edu/science/microbiology/lecture/unit3/bacpath/gpstaph.html",
+          "publisher": "CCBC / Gary E. Kaiser original photomicrograph",
+          "supports": "原撮影者のグラム染色像解説：黄色ブドウ球菌は紫色球菌の不規則な集塊。"
+        },
+        {
+          "url": "https://cwoer.ccbcmd.edu/science/microbiology/lecture/unit3/bacpath/diseases/spyogenes/spyogenes.html",
+          "publisher": "CCBC / Gary E. Kaiser",
+          "supports": "大学の独自教材にある化膿レンサ球菌の典型的な連鎖状配列。"
+        }
+      ],
+      "primaryFactsCheckedAtUtc": "2026-10-11T07:49:19.191692+00:00",
+      "authorExplanationComplete": true,
+      "choiceExplanations": 5,
+      "independentAcceptanceComplete": false,
+      "needsReview": true,
+      "publicGo": 0,
+      "technicalHolds": []
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q78",
+      "sourceId": "rinsho-kensagishi-72-am-78",
+      "officialKeyCell": "A078",
+      "acceptedAnswerPatterns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\9ffdc4065b56abaaed.pdf",
+        "sha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0"
+      },
+      "officialAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\85e0c9f6d67a0849a0.pdf",
+        "sha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78"
+      },
+      "officialSupplementPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_02.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\50d066758ad49c0787.pdf",
+        "sha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+      },
+      "sourceImages": [
+        {
+          "path": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\originals\\rinsho-kensagishi-2026-annual-am-q78-p31.png",
+          "sha256": "d815b04d60f8e1a46d0e5295273d9d6f6f0fafa1e8191b97c9656971e2b4b29e",
+          "physicalPage": 31
+        },
+        {
+          "path": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\originals\\rinsho-kensagishi-2026-annual-am-q78-p32.png",
+          "sha256": "f8ea5a3c8d14da9d71dbc7b3d5db0ebceab7375500271e7472cad1a86a63383d",
+          "physicalPage": 32
+        }
+      ],
+      "preparedImages": [
+        {
+          "path": "./figures/72-am-no15.png",
+          "sha256": "711aec6127772b9417ffad30a87ad73731e0012dd6bced136c48eab1ff8d2269",
+          "officialPdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_02.pdf",
+          "officialPhysicalPage": 19,
+          "referenceNumber": 15,
+          "copyOfSourcePath": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\supplements\\72-am-no15-p19.png",
+          "modified": false
+        }
+      ],
+      "originalVisualChecked": true,
+      "officialAnswerVisualChecked": true,
+      "visualObservation": "No.15/問題78と原問p31を確認。凡例1セフタジジム、2同剤+クラブラン酸、3セフォタキシム、4同剤+クラブラン酸。2/4の阻止円拡大を確認。径の数値は推測しない。",
+      "primaryReferences": [
+        {
+          "url": "https://www.eucast.org/fileadmin/eucast/pdf/eucast_guidelines/EUCAST_detection_of_resistance_mechanisms_170711.pdf",
+          "publisher": "EUCAST",
+          "supports": "公開ガイドラインp15–17のESBL確認原理、p21のAmpCとクラブラン酸の区別。手技の再現手順や測定値を解説へ追加しない。"
+        },
+        {
+          "url": "https://www.eucast.org/fileadmin/eucast/pdf/guidance_documents/Guidance_document_Confirmation_of_ESBL.pdf",
+          "publisher": "EUCAST",
+          "supports": "セフォタキシム/セフタジジム単独とクラブラン酸併用を比較するESBL確認という検出目的。"
+        }
+      ],
+      "primaryFactsCheckedAtUtc": "2026-10-11T07:49:19.191692+00:00",
+      "authorExplanationComplete": true,
+      "choiceExplanations": 5,
+      "independentAcceptanceComplete": false,
+      "needsReview": true,
+      "publicGo": 0,
+      "technicalHolds": []
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q84",
+      "sourceId": "rinsho-kensagishi-72-am-84",
+      "officialKeyCell": "A084",
+      "acceptedAnswerPatterns": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\9ffdc4065b56abaaed.pdf",
+        "sha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0"
+      },
+      "officialAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\85e0c9f6d67a0849a0.pdf",
+        "sha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78"
+      },
+      "officialSupplementPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_02.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\50d066758ad49c0787.pdf",
+        "sha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+      },
+      "sourceImages": [
+        {
+          "path": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\originals\\rinsho-kensagishi-2026-annual-am-q84-p33.png",
+          "sha256": "f18f2269bc0bc7975d8ab7a50341e1b7b378f3df0711618774a1853522018240",
+          "physicalPage": 33
+        },
+        {
+          "path": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\originals\\rinsho-kensagishi-2026-annual-am-q84-p34.png",
+          "sha256": "f8ea5a3c8d14da9d71dbc7b3d5db0ebceab7375500271e7472cad1a86a63383d",
+          "physicalPage": 34
+        }
+      ],
+      "preparedImages": [
+        {
+          "path": "./figures/72-am-no16.png",
+          "sha256": "1e17d8d8d9334dfaa553e58610380ab2083005df6aa94fa3909b2861c9264cfa",
+          "officialPdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_02.pdf",
+          "officialPhysicalPage": 20,
+          "referenceNumber": 16,
+          "copyOfSourcePath": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\supplements\\72-am-no16-p20.png",
+          "modified": false
+        }
+      ],
+      "originalVisualChecked": true,
+      "officialAnswerVisualChecked": true,
+      "visualObservation": "No.16/問題84と原問p33を確認。横向き原図を改変せず使用。eは遅れて立ち上がる破線、dは急性期から持続する曲線。軸と潜伏/急性/回復/治癒の表示を確認。",
+      "primaryReferences": [
+        {
+          "url": "https://www.cdc.gov/hepatitis-b/hcp/diagnosis-testing/index.html",
+          "publisher": "CDC",
+          "supports": "HBs抗体は回復・免疫、HBc抗体は急性期から出現して持続、IgM型HBc抗体は最近の感染の指標。"
+        },
+        {
+          "url": "https://www.cdc.gov/pinkbook/hcp/table-of-contents/chapter-10-hepatitis-b.html",
+          "publisher": "CDC",
+          "supports": "HBs抗原消失後のHBs抗体出現と、急性期に現れるHBc抗体の時期の区別。"
+        }
+      ],
+      "primaryFactsCheckedAtUtc": "2026-10-11T07:49:19.191692+00:00",
+      "authorExplanationComplete": true,
+      "choiceExplanations": 5,
+      "independentAcceptanceComplete": false,
+      "needsReview": true,
+      "publicGo": 0,
+      "technicalHolds": []
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q86",
+      "sourceId": "rinsho-kensagishi-72-am-86",
+      "officialKeyCell": "A086",
+      "acceptedAnswerPatterns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\9ffdc4065b56abaaed.pdf",
+        "sha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0"
+      },
+      "officialAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\85e0c9f6d67a0849a0.pdf",
+        "sha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78"
+      },
+      "officialSupplementPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_02.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\50d066758ad49c0787.pdf",
+        "sha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+      },
+      "sourceImages": [
+        {
+          "path": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\originals\\rinsho-kensagishi-2026-annual-am-q86-p34.png",
+          "sha256": "f1531e40285246a197eb16eed173c40f58f06491ee0c76ff794455505abaf0e7",
+          "physicalPage": 34
+        }
+      ],
+      "preparedImages": [
+        {
+          "path": "./figures/72-am-no17.png",
+          "sha256": "c6c987f5e11fbb3973400a7da20416452cc17580d9809c63d186e03dbcfdb9d0",
+          "officialPdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_02.pdf",
+          "officialPhysicalPage": 21,
+          "referenceNumber": 17,
+          "copyOfSourcePath": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\supplements\\72-am-no17-p21.png",
+          "modified": false
+        }
+      ],
+      "originalVisualChecked": true,
+      "officialAnswerVisualChecked": true,
+      "visualObservation": "No.17/問題86と原問p34を確認。Iは底部の赤血球沈殿、II/IIIは上部・ゲル中の赤血球凝集。厳密な凝集グレードと特定抗体名は未提示なので付加しない。",
+      "primaryReferences": [
+        {
+          "url": "https://commerce.bio-rad.com/webroot/web/pdf/inserts/CDG/en/B004044_50549_08.13_EN.pdf",
+          "publisher": "Bio-Rad / DiaMed original IFU",
+          "supports": "公開添付文書p2：ゲル中凝集/底部沈殿による陽性陰性、スクリーニング陽性と追加同定、フィブリン干渉。"
+        },
+        {
+          "url": "https://pubmed.ncbi.nlm.nih.gov/19654944/",
+          "publisher": "NLM / original clinical study",
+          "supports": "不規則赤血球抗体のスクリーニングと同定に用いるLISS/Coombsゲル法の原著。"
+        }
+      ],
+      "primaryFactsCheckedAtUtc": "2026-10-11T07:49:19.191692+00:00",
+      "authorExplanationComplete": true,
+      "choiceExplanations": 5,
+      "independentAcceptanceComplete": false,
+      "needsReview": true,
+      "publicGo": 0,
+      "technicalHolds": []
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q98",
+      "sourceId": "rinsho-kensagishi-72-am-98",
+      "officialKeyCell": "A098",
+      "acceptedAnswerPatterns": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "officialQuestionPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\9ffdc4065b56abaaed.pdf",
+        "sha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0"
+      },
+      "officialAnswerPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\85e0c9f6d67a0849a0.pdf",
+        "sha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78"
+      },
+      "officialSupplementPdf": {
+        "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_02.pdf",
+        "localPath": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\approved35\\medical\\sources\\two-round-cache\\50d066758ad49c0787.pdf",
+        "sha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+      },
+      "sourceImages": [
+        {
+          "path": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\originals\\rinsho-kensagishi-2026-annual-am-q98-p38.png",
+          "sha256": "18a8e4908d767a3b95c97b4311d3db91995fffa1ca1ded8bc5b76dd21573a532",
+          "physicalPage": 38
+        }
+      ],
+      "preparedImages": [
+        {
+          "path": "./figures/72-am-q98-original-options.png",
+          "sha256": "18a8e4908d767a3b95c97b4311d3db91995fffa1ca1ded8bc5b76dd21573a532",
+          "officialPdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+          "officialPhysicalPage": 38,
+          "referenceNumber": null,
+          "copyOfSourcePath": "C:\\wt\\kakomon-lab-remaining-owner-20261011\\data\\raw_pdfs\\lab-remaining-20261011\\originals\\rinsho-kensagishi-2026-annual-am-q98-p38.png",
+          "modified": false
+        }
+      ],
+      "originalVisualChecked": true,
+      "officialAnswerVisualChecked": true,
+      "visualObservation": "公式原問p38で全5記号を目視。1円内の接地、2二重四角、3円内逆三角形と感嘆符、4四角内人物、5四角内心臓と左右の付加記号。3を等電位化とは記載しない。元PNGを無改変添付。",
+      "primaryReferences": [
+        {
+          "url": "https://www.usa.philips.com/a-w/symbols/classification-and-identification-of-equipment.html",
+          "publisher": "Philips original device symbol glossary",
+          "supports": "公開記号表：IEC60417-5336耐除細動形CF、5172クラスII、5333BF。名称と定義を閲覧。外部PNGの取得成功とは扱わない。"
+        },
+        {
+          "url": "https://files.support.epson.com/docid/cpd5/cpd55716/source/notices/reference/safety_symbols_list_hc4010.html",
+          "publisher": "Epson original manufacturer glossary",
+          "supports": "公開メーカー記号表：IEC60417-5019保護接地の名称と用途。"
+        },
+        {
+          "url": "https://media.fluke.com/080bccab-5c8c-4480-8576-b10800bebaeb_original%20file.pdf",
+          "publisher": "Fluke original service manual",
+          "supports": "公開メーカー資料の注意記号と取扱説明書参照の概念。原問3について規格番号や細部を推測して付加しない。",
+          "evidenceMode": "public_indexed_excerpt_only"
+        }
+      ],
+      "primaryFactsCheckedAtUtc": "2026-10-11T07:49:19.191692+00:00",
+      "authorExplanationComplete": true,
+      "choiceExplanations": 5,
+      "independentAcceptanceComplete": false,
+      "needsReview": true,
+      "publicGo": 0,
+      "technicalHolds": []
+    }
+  ],
+  "updatedAtUtc": "2026-10-11T07:49:19.191692+00:00"
+}

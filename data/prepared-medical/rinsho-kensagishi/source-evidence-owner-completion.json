@@ -1,0 +1,2158 @@
+{
+  "observedUtc": "2026-10-11T10:35:42.356161+00:00",
+  "scopeOriginals": 84,
+  "scopeChoiceReasons": 420,
+  "runtimeRegistrationAdded": false,
+  "publicGo": 0,
+  "questionFiles": [
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-assist10.json",
+      "originals": 10,
+      "sha256": "12be26e54dcc433301944ac885e248c62852562366957369fa98c90850255271",
+      "gitNormalizedSha256": "12be26e54dcc433301944ac885e248c62852562366957369fa98c90850255271",
+      "lineEndingPolicy": "UTF-8; Git-normalized LF; original worktree payload SHA retained separately"
+    },
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved7.json",
+      "originals": 7,
+      "sha256": "bd3093065825d6028d7a010e0ed4b659e3af3771fa4c2e7972b88f48ab72c9fb",
+      "gitNormalizedSha256": "56e8bf860e2c243915186c1bb73d8cce802ea9c8f076704d3d09ac09e113eaf4",
+      "lineEndingPolicy": "UTF-8; Git-normalized LF; original worktree payload SHA retained separately"
+    },
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/2025-annual-am-unreserved9.json",
+      "originals": 9,
+      "sha256": "546950c63c23270a6f5f35b2f49647e4ddaf7adfcad4892713199fca49b73387",
+      "gitNormalizedSha256": "7b811e7c3eed0e40e97c0ebabbd7c8818682384cb9209870a138ec94f258bde4",
+      "lineEndingPolicy": "UTF-8; Git-normalized LF; original worktree payload SHA retained separately"
+    },
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/2025-annual-pm-unreserved23.json",
+      "originals": 23,
+      "sha256": "0a27f9b38a3b29a740c9a01ef72cbb9af22e80e3e3404338ace4f9d97de0a227",
+      "gitNormalizedSha256": "491fa3387442531079746f09f395a14e3efc13d9bfd4f6d9a74508564a870054",
+      "lineEndingPolicy": "UTF-8; Git-normalized LF; original worktree payload SHA retained separately"
+    },
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-assist10.json",
+      "originals": 10,
+      "sha256": "02f746a19938aacefed9decbf2f1f517283c3e7f526575c1f68e3565ada40ca1",
+      "gitNormalizedSha256": "37d36175d5dd29eb0ea534bf19b108c9f6705ca856131d6368ad0aa2a47f525f",
+      "lineEndingPolicy": "UTF-8; Git-normalized LF; original worktree payload SHA retained separately"
+    },
+    {
+      "path": "data/prepared-medical/rinsho-kensagishi/2026-annual-am-unreserved30-pm5.json",
+      "originals": 25,
+      "sha256": "d458ece190e4bf61df18166211aef4800b0d8897f5aea37e84c4b61ec874e84f",
+      "gitNormalizedSha256": "a23201f16f66d3b9ab1a71ef838856615fc25ddb1445300322a0678cdc4a4a18",
+      "lineEndingPolicy": "UTF-8; Git-normalized LF; original worktree payload SHA retained separately"
+    }
+  ],
+  "rows": [
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q9",
+      "rawOfficialQuestionTextBlock": " \n9 尿沈渣に認められた結晶（別冊No. 1）を別に示す。\n　考えられるのはどれか。\n 1．高尿酸血症\n 2．閉塞性黄疸\n 3．ネフローゼ症候群\n 4．先天性シスチン尿症\n 5．先天性アデニンホスホリボシルトランスフェラーゼ欠損症\n　　別　冊　　\nNo. 1\n\n",
+      "questionTextSha256": "957c5371777a58a2ddab39f1ea4121e3c63c1e1c2741061c0661a7c747d79be9",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 7,
+      "officialKeyCell": "A009",
+      "acceptedAnswerPatterns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        1
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no1.png",
+          "sha256": "3c0e3b2f083bd9842a6d2987a5b4d43ba4555224d99a757a4728f4494101ba77",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+          "sourceParentSupplementPdfSha256": "3952923bfed3346b6807b5ec5674d583cb3021a7d2d4a80eceb079cebb465165"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q17",
+      "rawOfficialQuestionTextBlock": " 17 標準12 誘導心電図（別冊No. 2）を別に示す。\n　所見はどれか。\n 1．心房細動\n 2．心房粗動\n 3．上室頻拍\n 4．心室細動\n 5．心室頻拍\n　　別　冊　　\nNo. 2\n\n",
+      "questionTextSha256": "76fd70abedec6ea6cccb7e5cc9f2c08101c3a741e8bc5746190dbd31a5eb0481",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 10,
+      "officialKeyCell": "A017",
+      "acceptedAnswerPatterns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        2
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no2.png",
+          "sha256": "294c96a8d0bc06bff13d8192a521da6db3e8ed2e232dcbf04bae45da7cff90c1",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+          "sourceParentSupplementPdfSha256": "3952923bfed3346b6807b5ec5674d583cb3021a7d2d4a80eceb079cebb465165"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q18",
+      "rawOfficialQuestionTextBlock": " 18 スパイログラム（別冊No. 3）を別に示す。\n　A が示すのはどれか。\n 1．肺活量\n 2．一回換気量\n 3．最大吸気量\n 4．予備吸気量\n 5．予備呼気量\n　　別　冊　　\nNo. 3\n",
+      "questionTextSha256": "b81fab1fa815a7f647f60773014197ae1d0da6d04e307ae1e11203d02d8a35f1",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 11,
+      "officialKeyCell": "A018",
+      "acceptedAnswerPatterns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        3
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no3.png",
+          "sha256": "a327a23d3ae99dae7143328769ee3d24884bdf81dda274f872618f3deda6e94a",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+          "sourceParentSupplementPdfSha256": "3952923bfed3346b6807b5ec5674d583cb3021a7d2d4a80eceb079cebb465165"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q23",
+      "rawOfficialQuestionTextBlock": " 23 健常成人の脳波（別冊No. 4）を別に示す。\n　睡眠段階はどれか。\n 1．Stage W\n 2．Stage N1\n 3．Stage N2\n 4．Stage N3\n 5．Stage R\n　　別　冊　　\nNo. 4\n\n",
+      "questionTextSha256": "0ecdd6b9c7f05712a9f87f131ff6d5681f9cedace599d2c81267479b329923c1",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 12,
+      "officialKeyCell": "A023",
+      "acceptedAnswerPatterns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        4
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no4.png",
+          "sha256": "6acc12a25956806893786d0cb6d598e336891fc2bafda7d8d86d270abd873582",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+          "sourceParentSupplementPdfSha256": "3952923bfed3346b6807b5ec5674d583cb3021a7d2d4a80eceb079cebb465165"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q24",
+      "rawOfficialQuestionTextBlock": " 24 脳波（別冊No. 5）を別に示す。\n　最も考えられるのはどれか。\n 1．West 症候群\n 2．欠神てんかん\n 3．Creutzfeldt-Jakob 病\n 4．ミオクロニーてんかん\n 5．Lennox-Gastaut 症候群\n　　別　冊　　\nNo. 5\n",
+      "questionTextSha256": "796f161e7245f8cefc807ccdc8d2a5892bb7cd89927f56f3742fd6338437523d",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 13,
+      "officialKeyCell": "A024",
+      "acceptedAnswerPatterns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        5
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no5.png",
+          "sha256": "a43a93f335de9ed9b0e4ee387c5197da5d6101b65bbef0ec3818708f455b4d71",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+          "sourceParentSupplementPdfSha256": "3952923bfed3346b6807b5ec5674d583cb3021a7d2d4a80eceb079cebb465165"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q27",
+      "rawOfficialQuestionTextBlock": " 27 健常者の右肋間走査の超音波像（別冊No. 6）を別に示す。\n　矢印で示すのはどれか。\n 1．門　脈\n 2．肝動脈\n 3．左肝静脈\n 4．中肝静脈\n 5．右肝静脈\n　　別　冊　　\nNo. 6\n",
+      "questionTextSha256": "a7dfc79b0d07e39ec59e404e35c5c3ee2aa3cc56c39ab0565aea33d4d58a5d79",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 14,
+      "officialKeyCell": "A027",
+      "acceptedAnswerPatterns": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        6
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no6.png",
+          "sha256": "051337565f81a1bbcd4ad72411afb15212f38fbfd6fadfdd0508647b88b5c163",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+          "sourceParentSupplementPdfSha256": "3952923bfed3346b6807b5ec5674d583cb3021a7d2d4a80eceb079cebb465165"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q28",
+      "rawOfficialQuestionTextBlock": " 28 乳房の超音波像（別冊No. 7）を別に示す。\n　乳腺実質はどれか。\n 1．①\n 2．②\n 3．③\n 4．④\n 5．⑤\n　　別　冊　　\nNo. 7\n\n",
+      "questionTextSha256": "47f9f7c6e7e1c0ce404746914bf62f63332639fa0c269871aa100629875bcc5d",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 14,
+      "officialKeyCell": "A028",
+      "acceptedAnswerPatterns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        7
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no7.png",
+          "sha256": "91fbf522f6ea512903284e69d02013ce27ea98c058675607a195b518b94d7729",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+          "sourceParentSupplementPdfSha256": "3952923bfed3346b6807b5ec5674d583cb3021a7d2d4a80eceb079cebb465165"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q47",
+      "rawOfficialQuestionTextBlock": " 47 喀痰のPapanicolaou 染色標本（別冊No. 8）を別に示す。\n　この細胞で判定するのはどれか。\n 1．感染の有無\n 2．腫瘍の組織型\n 3．病変の進行度\n 4．検査材料の適性\n 5．炭粉沈着の程度\n　　別　冊　　\nNo. 8\n",
+      "questionTextSha256": "36d8d4b3d233454857cfdb8e8c7b3e61751342beb51fe44bb2409f3f2ccc0e18",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 21,
+      "officialKeyCell": "A047",
+      "acceptedAnswerPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        8
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no8.png",
+          "sha256": "b12236a02caa483326e01a95240033ccf688a60a240540ac6238eca304092054",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+          "sourceParentSupplementPdfSha256": "3952923bfed3346b6807b5ec5674d583cb3021a7d2d4a80eceb079cebb465165"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q50",
+      "rawOfficialQuestionTextBlock": " 50 PAS 反応標本（別冊No. 9）を別に示す。\n　この臓器はどれか。\n 1．肝　臓\n 2．食　道\n 3．腎　臓\n 4．大　脳\n 5．脾　臓\n　　別　冊　　\nNo. 9\n",
+      "questionTextSha256": "c900be82629cf8dbd8bd0d54443be2e32a09654d00a4bdc66c33ba34b032110c",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 22,
+      "officialKeyCell": "A050",
+      "acceptedAnswerPatterns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        9
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no9.png",
+          "sha256": "5aea8d2d8cf447f74907fa926f0870404a3c4eefb284c75bfa59a016531a0771",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+          "sourceParentSupplementPdfSha256": "3952923bfed3346b6807b5ec5674d583cb3021a7d2d4a80eceb079cebb465165"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q51",
+      "rawOfficialQuestionTextBlock": " 51 FISH 法による乳癌HER2 検査の模式図（別冊No. 10）を示す。\n　HER2 とCEP17 のシグナル比（HER2/CEP17）で最も近いのはどれか。\n 1．0.5\n 2．1.0\n 3．3.0\n 4．10.0\n 5．50.0\n　　別　冊　　\nNo. 10\n\n",
+      "questionTextSha256": "a9d5207b1b5a54f2dc6ecafa62a1ab37c81f840cdadb1d42b3efc948d8a0e930",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 22,
+      "officialKeyCell": "A051",
+      "acceptedAnswerPatterns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        10
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no10.png",
+          "sha256": "3a336aa2a7360f5a9c730f2efc2e8cf668c4cb4e4b49e4c98bd89e36aa37b831",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+          "sourceParentSupplementPdfSha256": "3952923bfed3346b6807b5ec5674d583cb3021a7d2d4a80eceb079cebb465165"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q52",
+      "rawOfficialQuestionTextBlock": " 52 子宮頸部細胞診のPapanicoloau 染色標本の弱拡大写真（別冊No. 11Ａ）と強拡大\n写真（別冊No. 11Ｂ）を別に示す。\n　適切な判定はどれか。\n 1．NILM〈陰性〉\n 2．LSIL〈軽度扁平上皮内病変〉\n 3．HSIL〈高度扁平上皮内病変〉\n 4．SCC〈扁平上皮癌〉\n 5．Adenocarcinoma〈腺癌〉\n　　別　冊　　\nNo. 11　Ａ、Ｂ\n",
+      "questionTextSha256": "f8371c3bdd64a959e3da0485aafed3298c2ece9f33c2d8382242e03f6d5d9b2a",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 23,
+      "officialKeyCell": "A052",
+      "acceptedAnswerPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        11
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no11.png",
+          "sha256": "99faea8ef5cc107990fad67d01cd4b863dce4cd88bcc4ef3229916d2cabcb500",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+          "sourceParentSupplementPdfSha256": "3952923bfed3346b6807b5ec5674d583cb3021a7d2d4a80eceb079cebb465165"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q58",
+      "rawOfficialQuestionTextBlock": " 58 病理解剖時に摘出された臓器のホルマリン固定後の肉眼写真（別冊No. 12）を別に\n示す。\n　臓器はどれか。\n 1．肺\n 2．肝　臓\n 3．腎　臓\n 4．膵　臓\n 5．脾　臓\n　　別　冊　　\nNo. 12\n",
+      "questionTextSha256": "0001aaf0c6824d56f3f0e3e1a8749eef4cd28d994091f5ff74c32b7bab580ae0",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 25,
+      "officialKeyCell": "A058",
+      "acceptedAnswerPatterns": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        12
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no12.png",
+          "sha256": "535ad1f9f91fa999a2f3bb69e2037a4e815e38b0049b9cae1e056c64f734e868",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+          "sourceParentSupplementPdfSha256": "3952923bfed3346b6807b5ec5674d583cb3021a7d2d4a80eceb079cebb465165"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q63",
+      "rawOfficialQuestionTextBlock": " 63 血液細胞数測定の模式図（別冊No. 13）を別に示す。\n　この測定で正しいのはどれか。2 つ選べ。\n 1．交流電流を用いる。\n 2．破砕赤血球と血小板を区別できる。\n 3．パルス電圧は細胞の重量に比例する。\n 4．溶血処理した後に白血球を計測する。\n 5．細孔を通過するときの電気抵抗の変化を測定する。\n　　別　冊　　\nNo. 13\n\n",
+      "questionTextSha256": "537ebbd0dd437fbff155502fd1fb0bf530f6991b09cb0dfdd3520aa60161febd",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 26,
+      "officialKeyCell": "A063",
+      "acceptedAnswerPatterns": [
+        "45"
+      ],
+      "requiredSelections": 2,
+      "sourceReferences": [
+        13
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no13.png",
+          "sha256": "a4a478b30bff2c84d6f827944b0eb0258a98fcb7fbfd8e6b6e9e62f8fa9d8810",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+          "sourceParentSupplementPdfSha256": "3952923bfed3346b6807b5ec5674d583cb3021a7d2d4a80eceb079cebb465165"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q67",
+      "rawOfficialQuestionTextBlock": " 67 血小板数をBrecher-Cronkite 法にて目視した。用いた計算板（Burker-Turk）の\n区画（別冊No. 14）を別に示す。100 倍に希釈した血液を用いた図中オレンジ色枠内\nの任意の5 つの中区画のカウントは（14,16,13,12,15）であった。\n　血液1 μL 中の血小板数で正しいのはどれか。\n 1．\n3,500\n 2．\n7,000\n 3．70,000\n 4．350,000\n 5．700,000\n　　別　冊　　\nNo. 14\n",
+      "questionTextSha256": "60565cf4c53957036f2758fd3d7ada9746bcd684f1514eb3e8170bbaab332c59",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 28,
+      "officialKeyCell": "A067",
+      "acceptedAnswerPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        14
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no14.png",
+          "sha256": "d8e33046c5a1761448c8955c42b05cbdcde1d8b294c7cb7475570f152fc71ff3",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+          "sourceParentSupplementPdfSha256": "3952923bfed3346b6807b5ec5674d583cb3021a7d2d4a80eceb079cebb465165"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q74",
+      "rawOfficialQuestionTextBlock": " 74 血液培養にて検出された菌のGram 染色所見（別冊No. 15Ａ）とヒツジ血液寒天培\n地の集落（別冊No. 15Ｂ）を別に示す。本菌はCAMP テストおよび馬尿酸塩加水分\n解試験が陽性であった。\n　考えられるのはどれか。\n 1．Bacillus cereus\n 2．Clostridium perfringens\n 3．Enterococcus faecalis\n 4．Listeria monocytogenes\n 5．Streptococcus agalactiae\n　　別　冊　　\nNo. 15　Ａ、Ｂ\n",
+      "questionTextSha256": "2e1b67e808c648a8e848e861ebe22a2b6487cd43050acca4d36ec82cc8ee24cc",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 30,
+      "officialKeyCell": "A074",
+      "acceptedAnswerPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        15
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no15.png",
+          "sha256": "ee55dc586159bb072c90d6a20b046c22666be9547e5d5e71db836301fe4589b1",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+          "sourceParentSupplementPdfSha256": "3952923bfed3346b6807b5ec5674d583cb3021a7d2d4a80eceb079cebb465165"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q85",
+      "rawOfficialQuestionTextBlock": " 85 ABO 血液型検査の結果（別冊No. 16）に示す。\n　血液型はどれか。\n 1．A 型RhD 陰性\n 2．A 型RhD 陽性\n 3．B 型RhD 陰性\n 4．B 型RhD 陽性\n 5．ABO・RhD 判定保留\n　　別　冊　　\nNo. 16\n",
+      "questionTextSha256": "4bb12550d2a479de57a4509da799b310b49964c097d1d3e172ff0c680306652f",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 34,
+      "officialKeyCell": "A085",
+      "acceptedAnswerPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        16
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-no16.png",
+          "sha256": "5d1fa019b3aca471deb4b64daefb7fb1ae453e2848bfaba0e148eb6fc29e0ca6",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+          "sourceParentSupplementPdfSha256": "3952923bfed3346b6807b5ec5674d583cb3021a7d2d4a80eceb079cebb465165"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q95",
+      "rawOfficialQuestionTextBlock": " 95 図の回路で12 Ω の抵抗に流れる電流I［A］はどれか。\n 1．0.1\n 2．0.2\n 3．0.4\n 4．0.6\n 5．0.8\n\n",
+      "questionTextSha256": "edfa28b9653d103f601e1ea2ef0efa0c2108c214a65f44a62a582e4899c93923",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 37,
+      "officialKeyCell": "A095",
+      "acceptedAnswerPatterns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-am-q95-original.png",
+          "sha256": "aae297578b849afbc78c25d1117faf15c7b17f955e57091d53835813c8aad2ac",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+          "sourceParentSupplementPdfSha256": "3952923bfed3346b6807b5ec5674d583cb3021a7d2d4a80eceb079cebb465165"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q4",
+      "rawOfficialQuestionTextBlock": " \n4 虫卵で小蓋がないのはどれか。\n 1．回　虫\n 2．肝　蛭\n 3．肝吸虫\n 4．日本住血吸虫\n 5．日本海裂頭条虫\n",
+      "questionTextSha256": "2c57d543bdc38074f8c801d8d87e452b6cabf8c1939e58a1143601b3322e0937",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 6,
+      "officialKeyCell": "A004",
+      "acceptedAnswerPatterns": [
+        "1",
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q25",
+      "rawOfficialQuestionTextBlock": " 25 体表からの超音波検査で使用する探触子の周波数が最も低いのはどれか。\n 1．肝　臓\n 2．心　臓\n 3．膵　臓\n 4．乳　腺\n 5．頸動脈\n",
+      "questionTextSha256": "2613d3043bf1ffdd484b2ce59e63d0c50927d1f1b081f96870b99c714b37c245",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 13,
+      "officialKeyCell": "A025",
+      "acceptedAnswerPatterns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q26",
+      "rawOfficialQuestionTextBlock": " 26 心エコーで連続波ドプラ法を使用するのはどれか。\n 1．e′\n 2．E/A\n 3．左室駆出率\n 4．肺体血流比\n 5．右室収縮期圧\n\n",
+      "questionTextSha256": "50a44f08ba9e7c6985f07b3b0bc30b13a2fbe0fcf94ed84f4a676ead515c21d6",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 13,
+      "officialKeyCell": "A026",
+      "acceptedAnswerPatterns": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q29",
+      "rawOfficialQuestionTextBlock": " 29 無機質の動態で誤っているのはどれか。\n 1．腎不全により高マグネシウム血症をきたす。\n 2．副甲状腺機能低下症により高無機リン血症をきたす。\n 3．代謝性アルカローシスにより高カリウム血症をきたす。\n 4．異所性PTH 産生腫瘍により高カルシウム血症をきたす。\n 5．原発性アルドステロン症により高ナトリウム血症をきたす。\n",
+      "questionTextSha256": "37ec698c129393ea398c33f8de0d4b0544de45a20f09ba72b282d61afb88db41",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 15,
+      "officialKeyCell": "A029",
+      "acceptedAnswerPatterns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q30",
+      "rawOfficialQuestionTextBlock": " 30 蛋白で誤っているのはどれか。\n 1．セルロプラスミンは銅を運搬する。\n 2．フェリチンは肝臓に多く分布している。\n 3．トランスサイレチンはビタミンA の代謝に関与する。\n 4．レチノール結合蛋白の血中半減期は約12 時間である。\n 5．トランスフェリンは1 分子に約3,000 個の鉄原子を含有する。\n",
+      "questionTextSha256": "4aaf027f89b458ac13d0f06f2a3b3314bfd8d2daf9ea794af23773beb4253cf4",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 15,
+      "officialKeyCell": "A030",
+      "acceptedAnswerPatterns": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q35",
+      "rawOfficialQuestionTextBlock": " 35 血清クレアチニンが低下するのはどれか。\n 1．脱　水\n 2．妊　娠\n 3．腎不全\n 4．先端巨大症\n 5．うっ血性心不全\n",
+      "questionTextSha256": "ae677a7f08e14e78b676d8b087735f345cedfbc1c334bd95703852e9bb07412b",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 17,
+      "officialKeyCell": "A035",
+      "acceptedAnswerPatterns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q39",
+      "rawOfficialQuestionTextBlock": " 39 血清アルブミンで正しいのはどれか。\n 1．劇症肝炎で上昇する。\n 2．半減期は約7 日である。\n 3．座位よりも臥位での採血で低い。\n 4．総カルシウム濃度と負の相関がある。\n 5．健常人では1 日1 g 程度が尿中に排出される。\n",
+      "questionTextSha256": "607b84741a7b372b0d3b1d6251d67841edc534810633b3fcd0ebeea0dddf2323",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 18,
+      "officialKeyCell": "A039",
+      "acceptedAnswerPatterns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q43",
+      "rawOfficialQuestionTextBlock": " 43 経口ブドウ糖負荷試験で正しいのはどれか。\n 1．検体は血清を用いる。\n 2．妊娠糖尿病の診断に用いられる。\n 3．試験2 時間前まで飲食が可能である。\n 4．糖尿病と診断された患者に実施する。\n 5．病型診断に負荷後1 時間値が用いられる。\n\n",
+      "questionTextSha256": "2019c221fda9e0faec3e1e71e14ee3ce91cc78522f76b624a1e63eb9e98dbad1",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 19,
+      "officialKeyCell": "A043",
+      "acceptedAnswerPatterns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-am-q44",
+      "rawOfficialQuestionTextBlock": " 44 短期の栄養指標として用いられる血漿蛋白はどれか。2 つ選べ。\n 1．アルブミン\n 2．ハプトグロビン\n 3．セルロプラスミン\n 4．トランスフェリン\n 5．レチノール結合蛋白\n",
+      "questionTextSha256": "fa39812539461f14898db144dd7f2ae9a2fc041e68c401ce1d74bbbbcc32dfed",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sourcePdfSha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 20,
+      "officialKeyCell": "A044",
+      "acceptedAnswerPatterns": [
+        "45"
+      ],
+      "requiredSelections": 2,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q1",
+      "rawOfficialQuestionTextBlock": " \n1 尿沈渣無染色標本（別冊No. 1Ａ）とSternheimer 染色標本（別冊No. 1Ｂ）を別に示す。\n　この構造物はどれか。\n 1．硝子円柱\n 2．脂肪円柱\n 3．赤血球円柱\n 4．ろう様円柱\n 5．フィブリン円柱\n　　別　冊　　\nNo. 1　Ａ、Ｂ\n",
+      "questionTextSha256": "7959a409aa98f03fe510d4055ba54c1dd936f08bbdd2b7fc4b9de9f0685f0801",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourcePdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 5,
+      "officialKeyCell": "B001",
+      "acceptedAnswerPatterns": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        1
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no1.png",
+          "sha256": "f9af3d8a421d330e8d8bdfa3c99985d385022380fbacdf9a01985077b585f001",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+          "sourceParentSupplementPdfSha256": "2624ec534e5c0267ead4f7f8b472b73ee200c88589eff0c0562ba39355f7812e"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q12",
+      "rawOfficialQuestionTextBlock": " 12 睡眠時無呼吸症候群で誤っているのはどれか。\n 1．肥満に合併することが多い。\n 2．高血圧を合併することが多い。\n 3．無呼吸は仰臥位で起こりやすい。\n 4．終夜睡眠ポリグラフィはスクリーニングに有用である。\n 5．睡眠1 時間あたりの無呼吸・低呼吸指数〈AHI〉が5 未満を示す。\n\n",
+      "questionTextSha256": "6198367155b4b2003a272e551569003d3f91f5177e35fe7e6c25fb4976624516",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourcePdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 8,
+      "officialKeyCell": "B012",
+      "acceptedAnswerPatterns": [
+        "4",
+        "5"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q17",
+      "rawOfficialQuestionTextBlock": " 17 心周期現象の圧曲線模式図（別冊No. 2）を別に示す。\n　肺動脈圧曲線はどれか。\n 1．①\n 2．②\n 3．③\n 4．④\n 5．⑤\n　　別　冊　　\nNo. 2\n\n",
+      "questionTextSha256": "67d4e6c1806240132463e13310034c7106280a6224c386b36e503c6574ab9ec1",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourcePdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 10,
+      "officialKeyCell": "B017",
+      "acceptedAnswerPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        2
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no2.png",
+          "sha256": "72881e01bf342625b79b6e896f333065d4cba6b194725e205185a5c4675a3bfd",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+          "sourceParentSupplementPdfSha256": "2624ec534e5c0267ead4f7f8b472b73ee200c88589eff0c0562ba39355f7812e"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q18",
+      "rawOfficialQuestionTextBlock": " 18 肢誘導心電図（別冊No. 3）を別に示す。\n　所見はどれか。\n 1．洞房ブロック\n 2．Ⅰ度房室ブロック\n 3．Wenckebach 型Ⅱ度房室ブロック\n 4．MobitzⅡ型Ⅱ度房室ブロック\n 5．Ⅲ度房室ブロック\n　　別　冊　　\nNo. 3\n",
+      "questionTextSha256": "12b62a645ab79da325da2dea4e24a3c1b9d6c146d2aa757fa2ce79bf9c121f9d",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourcePdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 11,
+      "officialKeyCell": "B018",
+      "acceptedAnswerPatterns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        3
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no3.png",
+          "sha256": "290d67a97a36224785b29644e516e07ba221d0ed96e73249197149569a843652",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+          "sourceParentSupplementPdfSha256": "2624ec534e5c0267ead4f7f8b472b73ee200c88589eff0c0562ba39355f7812e"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q19",
+      "rawOfficialQuestionTextBlock": " 19 吸気および呼気ともに最大努力で得られたフローボリューム曲線（別冊No. 4）を\n別に示す。\n　　V\n・\n25〈FEF25〉はどれか。\n 1．①\n 2．②\n 3．③\n 4．④\n 5．⑤\n　　別　冊　　\nNo. 4\n\n",
+      "questionTextSha256": "0a391d49c7f57f1afbc7bb88d1677773a83635faba2e146ecfa4f78d9c139bd5",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourcePdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 11,
+      "officialKeyCell": "B019",
+      "acceptedAnswerPatterns": [
+        "2",
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        4
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no4.png",
+          "sha256": "b34a6081271c312645926d2a2cb576a283aeb6363f399b25c109fdb4ed080c02",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+          "sourceParentSupplementPdfSha256": "2624ec534e5c0267ead4f7f8b472b73ee200c88589eff0c0562ba39355f7812e"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q22",
+      "rawOfficialQuestionTextBlock": " 22 正中神経における運動神経伝導検査の記録波形（別冊No. 5）を別に示す。\n　最も考えられるのはどれか。\n 1．重症筋無力症\n 2．手根管症候群\n 3．筋萎縮性側索硬化症〈ALS〉\n 4．糖尿病性多発ニューロパチー\n 5．慢性炎症性脱髄性多発根神経炎\n　　別　冊　　\nNo. 5\n\n",
+      "questionTextSha256": "60a29bc0818839fb244925b1aac070b90691b161463194a44451eada819e8526",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourcePdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 12,
+      "officialKeyCell": "B022",
+      "acceptedAnswerPatterns": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        5
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no5.png",
+          "sha256": "a976d1b738bef1cd158f643862bd58cf1008595a62c1a2e0cdfb0b87f319df64",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+          "sourceParentSupplementPdfSha256": "2624ec534e5c0267ead4f7f8b472b73ee200c88589eff0c0562ba39355f7812e"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q23",
+      "rawOfficialQuestionTextBlock": " 23 脳波（別冊No. 6）を別に示す。\n　所見はどれか。\n 1．三相波\n 2．徐派群発\n 3．棘徐波複合\n 4．ヒプスアリスミア\n 5．トラセアルテルナン\n　　別　冊　　\nNo. 6\n",
+      "questionTextSha256": "3b1b63f9d638d5cab0dd744438d98f8238ec7610f4abe427a44b22105772db67",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourcePdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 13,
+      "officialKeyCell": "B023",
+      "acceptedAnswerPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        6
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no6.png",
+          "sha256": "554ec078e05f6ea1a03e9de60bb3b0fecf033ba3c21d7a27edd7cd5251986d90",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+          "sourceParentSupplementPdfSha256": "2624ec534e5c0267ead4f7f8b472b73ee200c88589eff0c0562ba39355f7812e"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q26",
+      "rawOfficialQuestionTextBlock": " 26 心エコーの傍胸骨長軸像（別冊No. 7）を別に示す。\n　矢印で示すのはどれか。\n 1．右　室\n 2．右　房\n 3．左　室\n 4．左　房\n 5．肺動脈\n　　別　冊　　\nNo. 7\n",
+      "questionTextSha256": "1dd623939c1ee61503580b21a2dead45f03277bdff98793213928c3152a5e827",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourcePdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 14,
+      "officialKeyCell": "B026",
+      "acceptedAnswerPatterns": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        7
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no7.png",
+          "sha256": "a78689e7a9aebafabd6c297add79f5f248514889059e787fae105714104d89cf",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+          "sourceParentSupplementPdfSha256": "2624ec534e5c0267ead4f7f8b472b73ee200c88589eff0c0562ba39355f7812e"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q46",
+      "rawOfficialQuestionTextBlock": " 46 膵臓の特殊染色（別冊No. 8）を別に示す。\n　染色法はどれか。\n 1．PAM 染色\n 2．Bodian 染色\n 3．Grimelius 染色\n 4．Warthin-Starry 染色\n 5．Masson-Fontana 染色\n　　別　冊　　\nNo. 8\n\n",
+      "questionTextSha256": "6c0f150be237db9d80e5c5d3f70e38e854029af0392df3c4c3c6c05a5a06e0aa",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourcePdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 20,
+      "officialKeyCell": "B046",
+      "acceptedAnswerPatterns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        8
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no8.png",
+          "sha256": "180f8b49ce7fee763d251376ea7a52a4dff2a19d02fe7e3ca550d647f4c954df",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+          "sourceParentSupplementPdfSha256": "2624ec534e5c0267ead4f7f8b472b73ee200c88589eff0c0562ba39355f7812e"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q47",
+      "rawOfficialQuestionTextBlock": " 47 子宮頸部細胞診のPapanicolaou 染色標本（別冊No. 9）を別に示す。\n　考えられる感染はどれか。\n 1．カンジダ\n 2．クラミジア\n 3．トリコモナス\n 4．ヘルペスウイルス\n 5．ヒトパピローマウイルス\n　　別　冊　　\nNo. 9\n",
+      "questionTextSha256": "8e104d53ed4a2bfcd17b4d7b58d555fb96e38c04934ac32abdf8a2a2ce532906",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourcePdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 21,
+      "officialKeyCell": "B047",
+      "acceptedAnswerPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        9
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no9.png",
+          "sha256": "040aa17fc1bae241d7f76c0d540264ddacce11e8f4d21951642bfe387812771f",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+          "sourceParentSupplementPdfSha256": "2624ec534e5c0267ead4f7f8b472b73ee200c88589eff0c0562ba39355f7812e"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q49",
+      "rawOfficialQuestionTextBlock": " 49 上腹部の単純CT 画像（第12 胸椎の高さの横断面）とその模式図（別冊No. 10）を\n別に示す。\n　矢印で示す臓器はどれか。\n 1．胃\n 2．肝　臓\n 3．心　臓\n 4．脾　臓\n 5．大動脈\n　　別　冊　　\nNo. 10\n",
+      "questionTextSha256": "a4a156c159795aba69f58ad947842c22f9dd2da9c72539771610e786c96e7dc4",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourcePdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 22,
+      "officialKeyCell": "B049",
+      "acceptedAnswerPatterns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        10
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no10.png",
+          "sha256": "67eca4fa5acf8dd21d304d78e5cae9f3acb529379f90e7f45e71320eba862916",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+          "sourceParentSupplementPdfSha256": "2624ec534e5c0267ead4f7f8b472b73ee200c88589eff0c0562ba39355f7812e"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q55",
+      "rawOfficialQuestionTextBlock": " 55 H-E 染色標本（別冊No. 11）を別に示す。\n　この臓器はどれか。\n 1．気　管\n 2．食　道\n 3．大　腸\n 4．皮　膚\n 5．膀　胱\n　　別　冊　　\nNo. 11\n",
+      "questionTextSha256": "41eb77d7735862ac00d76ff653212fbe8d619ba01376cfd805fd9f28cac75824",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourcePdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 24,
+      "officialKeyCell": "B055",
+      "acceptedAnswerPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        11
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no11.png",
+          "sha256": "41b429ec1edd47bf6fd6427e86c12d7cac1c116db2362bc966e2d018e6ef75a7",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+          "sourceParentSupplementPdfSha256": "2624ec534e5c0267ead4f7f8b472b73ee200c88589eff0c0562ba39355f7812e"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q61",
+      "rawOfficialQuestionTextBlock": " 61 APTT 延長を認めたため、APTT にてクロスミキシング試験を実施した。結果\nを表に示す。\n患者血漿 対 正常血漿\n　　　（混合比）\n10 対0\n8 対2\n5 対5\n2 対8\n0 対10\n混和直後［秒］\n88\n84\n72\n48\n26\n37 ℃・2 時間後［秒］\n92\n90\n74\n50\n27\n　考えられるのはどれか。\n 1．血友病B\n 2．von Willebrand 病\n 3．ビタミンK 欠乏症\n 4．抗リン脂質抗体症候群\n 5．播種性血管内凝固〈DIC〉\n",
+      "questionTextSha256": "6eaede7491528b89f30186a4052e677d1c2c597aeb44abcbd37a75888b855c7e",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourcePdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 26,
+      "officialKeyCell": "B061",
+      "acceptedAnswerPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-inline-q61.png",
+          "sha256": "52051a6c687dff21ddad73edb88d9a3cd5263e9db133078b9270be6b3842a599",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+          "sourceParentSupplementPdfSha256": "2624ec534e5c0267ead4f7f8b472b73ee200c88589eff0c0562ba39355f7812e"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q63",
+      "rawOfficialQuestionTextBlock": " 63 骨髄穿刺液のフローサイトメトリ法のCD45 ゲーティング（別冊No. 12）を別に示す。\n　黒い円で囲まれている部分の細胞はどれか。\n 1．単　球\n 2．顆粒球\n 3．赤芽球\n 4．骨髄芽球\n 5．リンパ球\n　　別　冊　　\nNo. 12\n",
+      "questionTextSha256": "c01474dd2a5d771672bb447fe47bf6ce4f78918ba05fa07cd7fdf3b01143bf27",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourcePdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 27,
+      "officialKeyCell": "B063",
+      "acceptedAnswerPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        12
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no12.png",
+          "sha256": "6b6a9ee0f8716e2739eef93da7eaff23ebba471bbd455e9232caed7717f76814",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+          "sourceParentSupplementPdfSha256": "2624ec534e5c0267ead4f7f8b472b73ee200c88589eff0c0562ba39355f7812e"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q64",
+      "rawOfficialQuestionTextBlock": " 64 28 歳の男性。血液検査で異常を指摘されたため来院した。血液所見：白血球\n199,000/μL、赤血球228 万/μL、Hb8.2 g/dL、血小板25.7 万/μL。末梢血の\nMay-Giemsa 染色標本の弱拡大写真（別冊No. 13Ａ）と強拡大写真（別冊No. 13Ｂ）を\n別に示す。\n　染色体検査で予想される所見はどれか。\n 1．t（8；21）\n 2．t（9；22）\n 3．t（12；21）\n 4．t（15；17）\n 5．inv（16）\n　　別　冊　　\nNo. 13　Ａ、Ｂ\n\n",
+      "questionTextSha256": "bf0dc8921c0958c15cbe6552c7256accd534c34dcb536703edc7c797b3985ba2",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourcePdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 27,
+      "officialKeyCell": "B064",
+      "acceptedAnswerPatterns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        13
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no13.png",
+          "sha256": "815297d437a4ff1d89c3aacb0740d15dcc439be8340979e1a9ca70627ca91712",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+          "sourceParentSupplementPdfSha256": "2624ec534e5c0267ead4f7f8b472b73ee200c88589eff0c0562ba39355f7812e"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q65",
+      "rawOfficialQuestionTextBlock": " 65 血清鉄と鉄結合能の関係（別冊No. 14）を別に示す。\n　この患者で考えられるのはどれか。\n 1．感染症\n 2．尿毒症\n 3．溶血性貧血\n 4．鉄欠乏性貧血\n 5．再生不良性貧血\n　　別　冊　　\nNo. 14\n",
+      "questionTextSha256": "9279fc1dcd084d7d1f359876bed13ab47ca5a82466fccb2fcd3b54059c3a34a4",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourcePdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 28,
+      "officialKeyCell": "B065",
+      "acceptedAnswerPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        14
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no14.png",
+          "sha256": "be904dc162ccbb57a6474415ff36c470a77b89c74f0124494942db5ca344a885",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+          "sourceParentSupplementPdfSha256": "2624ec534e5c0267ead4f7f8b472b73ee200c88589eff0c0562ba39355f7812e"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q69",
+      "rawOfficialQuestionTextBlock": " 69 市中肺炎が疑われた患者の喀痰のGram 染色標本（別冊No. 15）を別に示す。分離\n菌はヒツジ血液寒天培地に発育しなかった。\n　考えられるのはどれか。\n 1．Acinetobacter baumannii\n 2．Haemophilus influenzae\n 3．Klebsiella pneumoniae\n 4．Moraxella catarrhalis\n 5．Pseudomonas aeruginosa\n　　別　冊　　\nNo. 15\n",
+      "questionTextSha256": "187d90bfc4fecd5aa9cb54c5e8c20b58161336396a5a1bd7b9aa8fd816311339",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourcePdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 29,
+      "officialKeyCell": "B069",
+      "acceptedAnswerPatterns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        15
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no15.png",
+          "sha256": "0cd32ce2a77f3cf61364f0ed726f8651238b340d4cf37c5ef7564f246c248aa6",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+          "sourceParentSupplementPdfSha256": "2624ec534e5c0267ead4f7f8b472b73ee200c88589eff0c0562ba39355f7812e"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q80",
+      "rawOfficialQuestionTextBlock": " 80 血清の非働化により失活する補体成分はどれか。\n 1．C1\n 2．C3\n 3．C4\n 4．C6\n 5．D 因子\n",
+      "questionTextSha256": "867f1872b6933efade3f74d0fa274cc3ca0a544cf138fb049f681feb359edf3b",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourcePdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 33,
+      "officialKeyCell": "B080",
+      "acceptedAnswerPatterns": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q82",
+      "rawOfficialQuestionTextBlock": " 82 試験管内補体寒冷活性化現象〈コールドアクチベーション〉でみられる検査結果の\n組合せで正しいのはどれか。\n血清補体価\n血漿補体価\nC3 蛋白量\n①\n基準範囲内\n基準範囲内\n低値\n②\n基準範囲内\n低値\n基準範囲内\n③\n低値\n基準範囲内\n基準範囲内\n④\n低値\n基準範囲内\n低値\n⑤\n低値\n低値\n低値\n 1．①\n 2．②\n 3．③\n 4．④\n 5．⑤\n",
+      "questionTextSha256": "b90ebfc0fbaa10b3d8b5aa8ec6bfa2e5e7b13470606ab6b53044159c3d3aaee8",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourcePdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 34,
+      "officialKeyCell": "B082",
+      "acceptedAnswerPatterns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-inline-q82.png",
+          "sha256": "cc50d5b291e167e53d5bdca1fb670d5ef465b7fc6b74a15c2b593c245803f445",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+          "sourceParentSupplementPdfSha256": "2624ec534e5c0267ead4f7f8b472b73ee200c88589eff0c0562ba39355f7812e"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q84",
+      "rawOfficialQuestionTextBlock": " 84 血液型で正しいのはどれか。\n 1．Bombay 型はH 抗原を持つ。\n 2．Xg（a+）は女性より男性に多い。\n 3．Di（a+）の日本人は約10％である。\n 4．weak D はD 抗原のエピトープの一部が欠損している。\n 5．Fy（a+b+）は三日熱マラリア原虫の感染に抵抗性を示す。\n",
+      "questionTextSha256": "d082f81ed2a5157684603a794e70c2c3d05a2ab279df6aa62566617f64728e00",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourcePdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 35,
+      "officialKeyCell": "B084",
+      "acceptedAnswerPatterns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q86",
+      "rawOfficialQuestionTextBlock": " 86 不規則抗体同定検査結果（別冊No. 16Ａ）と使用した試薬の抗原表（別冊No. 16Ｂ）\nを別に示す。\n　可能性の高い不規則抗体はどれか。\n 1．抗D\n 2．抗C\n 3．抗E\n 4．抗c\n 5．抗e\n　　別　冊　　\nNo. 16　Ａ、Ｂ\n\n",
+      "questionTextSha256": "5e21e5515a845fd7b72b296b73f1d7ce88445e4ec703e311813723422c711540",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourcePdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 35,
+      "officialKeyCell": "B086",
+      "acceptedAnswerPatterns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        16
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no16.png",
+          "sha256": "e9c04be3904ce92acee861e555bfbeab57446561f4c2dae59b609f7ea1900793",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+          "sourceParentSupplementPdfSha256": "2624ec534e5c0267ead4f7f8b472b73ee200c88589eff0c0562ba39355f7812e"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q90",
+      "rawOfficialQuestionTextBlock": " 90 令和4（2022）年度における死亡数の年齢階級別死因順位をまとめた表（別冊\nNo. 17）を別に示す。\n　（　ア　）に該当するのはどれか。\n 1．自　殺\n 2．肺　炎\n 3．肝疾患\n 4．腎不全\n 5．インフルエンザ\n　　別　冊　　\nNo. 17\n",
+      "questionTextSha256": "c31d94e162b51847ed1f1a494eef760733865e3e24c598da09b8859d53cfbe2c",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourcePdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 37,
+      "officialKeyCell": "B090",
+      "acceptedAnswerPatterns": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        17
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-no17.png",
+          "sha256": "f74c08cb343262a003140584f02175f2cecad23a1f12b6515764b41e84b4451f",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+          "sourceParentSupplementPdfSha256": "2624ec534e5c0267ead4f7f8b472b73ee200c88589eff0c0562ba39355f7812e"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q98",
+      "rawOfficialQuestionTextBlock": " 98 A とB の論理演算を模式化した図を示す。\n　斜線部分を示すのはどれか。\n 1．OR\n 2．AND\n 3．NOR\n 4．NOT\n 5．NAND\n\n",
+      "questionTextSha256": "f08fd9807136a50738680fc514e49424e628a8eea5ab85d82f6c9ed387b1b4f1",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourcePdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sourceAnswerSha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "sourcePhysicalPage": 39,
+      "officialKeyCell": "B098",
+      "acceptedAnswerPatterns": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/71-pm-inline-q98.png",
+          "sha256": "2ffe47333af5f2c35b820c4b794e2d9088b31b0e24ed2d2e8936cc33a70a7891",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+          "sourceParentSupplementPdfSha256": "2624ec534e5c0267ead4f7f8b472b73ee200c88589eff0c0562ba39355f7812e"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q54",
+      "rawOfficialQuestionTextBlock": " 54 心筋の特殊染色標本（別冊No. 9）を別に示す。\n　染色法はどれか。\n 1．azan 染色\n 2．PTAH 染色\n 3．Berlin blue 染色\n 4．Victoria blue 染色\n 5．Klüver-Barrera 染色\n　　別　冊　　\nNo. 9\n",
+      "questionTextSha256": "604bfd23d32be140b87c88bd6d2e02504b48ab043cc542af1a9b2a20738d1754",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 23,
+      "officialKeyCell": "A054",
+      "acceptedAnswerPatterns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        9
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no9.png",
+          "sha256": "cf9834d3bafbc956c639e4646efaffc7ca50b3a1bae06126fd28e6d14ba444bf",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+          "sourceParentSupplementPdfSha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q58",
+      "rawOfficialQuestionTextBlock": " 58 子宮頸部細胞診のPapanicolaou 染色標本（別冊No. 10）を別に示す。\n　Bethesda システムによる判定はどれか。\n 1．NILM\n 2．ASC-US\n 3．LSIL\n 4．HSIL\n 5．Adenocarcinoma\n　　別　冊　　\nNo. 10\n\n",
+      "questionTextSha256": "9207d2391ee91883ef83dd46750f58da8bd0b766a66a41418dfb7e96bce7f36f",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 24,
+      "officialKeyCell": "A058",
+      "acceptedAnswerPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        10
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no10.png",
+          "sha256": "354428011f91025af1ee2ee0956dc280752a0a3b6e1e5f034ca33494e7cf7bc9",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+          "sourceParentSupplementPdfSha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q62",
+      "rawOfficialQuestionTextBlock": " 62 骨髄塗抹標本の鉄染色像（別冊No. 11）を別に示す。\n　考えられる疾患はどれか。\n 1．真性多血症\n 2．悪性リンパ腫\n 3．多発性骨髄腫\n 4．巨赤芽球性貧血\n 5．骨髄異形成症候群\n　　別　冊　　\nNo. 11\n",
+      "questionTextSha256": "66e093cb151c40497090d873b0f73b56b3a916d12938814fed24cadfbc193114",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 26,
+      "officialKeyCell": "A062",
+      "acceptedAnswerPatterns": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        11
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no11.png",
+          "sha256": "5fede0a1dbe3645be848b0fe22ffb5fac139c95e69b07bc3ce0f5ff9d1fa53ab",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+          "sourceParentSupplementPdfSha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q63",
+      "rawOfficialQuestionTextBlock": " 63 3.14％クエン酸ナトリウム溶液を用いて抗凝固した血液の遠心分離（1,500 G，15\n分間）後の状態（別冊No. 12）を別に示す。\n　血小板が存在するのは図中矢印のどの位置か。\n 1．a\n 2．b\n 3．c\n 4．d\n 5．e\n　　別　冊　　\nNo. 12\n\n",
+      "questionTextSha256": "09e585ad0afec5417afae7c26887e5bf9c491c6bac0b4da04681f2a743dd2a29",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 26,
+      "officialKeyCell": "A063",
+      "acceptedAnswerPatterns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        12
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no12.png",
+          "sha256": "16375c394eefb3bdcfff68fd285a8fed67d9e70d88d0be0a0f39f4f4ecd6f8b4",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+          "sourceParentSupplementPdfSha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q66",
+      "rawOfficialQuestionTextBlock": " 66 血小板凝集能検査所見（別冊No. 13）を別に示す（図中矢印は各アゴニスト添加を\n表す）。\n　考えられるのはどれか。\n 1．血小板無力症\n 2．抗血小板薬服用\n 3．Storage pool 病\n 4．von Willebrand 病\n 5．Bernard-Soulier 症候群\n　　別　冊　　\nNo. 13\n\n",
+      "questionTextSha256": "10c77c2d1e74399ebab558dff30b6b9e8c5595b5d22812ef3cbbfa53364b19c4",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 27,
+      "officialKeyCell": "A066",
+      "acceptedAnswerPatterns": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        13
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no13.png",
+          "sha256": "58dc80ff357f929be263dc6e8592114cfbb02f3727ab2f424857753c4423f084",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+          "sourceParentSupplementPdfSha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q69",
+      "rawOfficialQuestionTextBlock": " 69 喀痰のGram 染色標本（別冊No. 14）を別に示す。\n　考えられるのはどれか。\n 1．Bacillus cereus\n 2．Corynebacterium diphtheriae\n 3．Staphylococcus aureus\n 4．Streptococcus pyogenes\n 5．Streptococcus pneumoniae\n　　別　冊　　\nNo. 14\n\n",
+      "questionTextSha256": "6ccb70fb19729d03531de076655c3dbec7c62a37f88291a56f8f788f32c98f56",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 28,
+      "officialKeyCell": "A069",
+      "acceptedAnswerPatterns": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        14
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no14.png",
+          "sha256": "b8fb2a872b4c8451b099da57df826a45cc153110779e368bc7b200c59f04cd56",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+          "sourceParentSupplementPdfSha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q78",
+      "rawOfficialQuestionTextBlock": " 78 Escherichia coli を対象に実施した薬剤耐性の確認試験（別冊No. 15）を別に示す。\n　検出目的のβ-ラクタマーゼはどれか。\n 1．オキサシリナーゼ\n 2．基質拡張型β-ラクタマーゼ\n 3．セファロスポリナーゼ\n 4．ペニシリナーゼ\n 5．メタロ-β-ラクタマーゼ\n　　別　冊　　\nNo. 15\n\n",
+      "questionTextSha256": "9a88b48538041f3bb1c71bed53608de41c2e70646cbeab7fa07c80944659f66a",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 31,
+      "officialKeyCell": "A078",
+      "acceptedAnswerPatterns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        15
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no15.png",
+          "sha256": "711aec6127772b9417ffad30a87ad73731e0012dd6bced136c48eab1ff8d2269",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+          "sourceParentSupplementPdfSha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q84",
+      "rawOfficialQuestionTextBlock": " 84 急性B 型肝炎の自然経過における各マーカー相対量の推移（別冊No. 16）を別に\n示す。\n　HBs 抗体はどれか。\n 1．ａ\n 2．ｂ\n 3．ｃ\n 4．ｄ\n 5．ｅ\n　　別　冊　　\nNo. 16\n\n",
+      "questionTextSha256": "ee768e28540e1d63c3ed3bf1f3f702b36a39a09e44277104c83072c0174c7344",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 33,
+      "officialKeyCell": "A084",
+      "acceptedAnswerPatterns": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        16
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no16.png",
+          "sha256": "1e17d8d8d9334dfaa553e58610380ab2083005df6aa94fa3909b2861c9264cfa",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+          "sourceParentSupplementPdfSha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q86",
+      "rawOfficialQuestionTextBlock": " 86 間接抗グロブリン試験による不規則抗体スクリーニングのカラム凝集像（別冊\nNo. 17）を別に示す。\n　考えられるのはどれか。\n 1．連銭形成\n 2．寒冷凝集反応\n 3．不規則抗体を保有\n 4．フィブリンの析出\n 5．抗血小板抗体を保有\n　　別　冊　　\nNo. 17\n",
+      "questionTextSha256": "30ca1fddbf489ac0d8f65f78d1988c2b57b74c8351b7f048c60308bd07c6a457",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 34,
+      "officialKeyCell": "A086",
+      "acceptedAnswerPatterns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        17
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no17.png",
+          "sha256": "c6c987f5e11fbb3973400a7da20416452cc17580d9809c63d186e03dbcfdb9d0",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+          "sourceParentSupplementPdfSha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q98",
+      "rawOfficialQuestionTextBlock": " 98 ME 機器の耐除細動形CF 形装着部を表す図記号はどれか。\n 1．\n 2．\n 3．\n 4．\n 5．\n",
+      "questionTextSha256": "30d39cccec765a7b7a44a77299a714cb1d889c9bd0a73be9b60fa4272df1d31b",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 38,
+      "officialKeyCell": "A098",
+      "acceptedAnswerPatterns": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-q98-original-options.png",
+          "sha256": "18a8e4908d767a3b95c97b4311d3db91995fffa1ca1ded8bc5b76dd21573a532",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+          "sourceParentSupplementPdfSha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q3",
+      "rawOfficialQuestionTextBlock": " \n3 尿沈渣の無染色標本（別冊No. 1Ａ）及びSternheimer 染色標本（別冊No. 1Ｂ）を別\nに示す。\n　この構造物はどれか。\n 1．硝子円柱\n 2．顆粒円柱\n 3．上皮円柱\n 4．赤血球円柱\n 5．ろう様円柱\n　　別　冊　　\nNo. 1　Ａ、Ｂ\n\n",
+      "questionTextSha256": "c0c606d21a48ec081f5c9f40b5ca7d2b86c265d8b4a1cd9d495abf025acb9d7d",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 5,
+      "officialKeyCell": "A003",
+      "acceptedAnswerPatterns": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        1
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no1.png",
+          "sha256": "157bacf0ad4a7814d967c68db195010719430afabaf1be9241db1981720fc95d",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+          "sourceParentSupplementPdfSha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q6",
+      "rawOfficialQuestionTextBlock": " \n6 尿沈渣所見（別冊No. 2）を別に示す。\n　疑われる疾患はどれか。\n 1．シスチン尿症\n 2．ファブリー病\n 3．フェニルケトン尿症\n 4．α1-アンチトリプシン欠損症\n 5．アデニンホスホリボシルトランスフェラーゼ〈APRT〉欠損症\n　　別　冊　　\nNo. 2\n\n",
+      "questionTextSha256": "6c5034dc98eb57ba5fbf1d75fecee9100dd40bf76d15db8c638d89763379ac83",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 6,
+      "officialKeyCell": "A006",
+      "acceptedAnswerPatterns": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        2
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no2.png",
+          "sha256": "bdcf94e36656b723a4e0911c1b36e8a2246c6c73a36ce49efc6cc30b8b683c42",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+          "sourceParentSupplementPdfSha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q17",
+      "rawOfficialQuestionTextBlock": " 17 右肋骨弓下走査の超音波像（別冊No. 3）を別に示す。\n　適正な画像調整で正しいのはどれか。\n 1．ゲインを高くする。\n 2．ゼロシフトを行う。\n 3．スラント走査を行う。\n 4．ダイナミックレンジを広くする。\n 5．STC〈sensitivity time control〉を調整する。\n　　別　冊　　\nNo. 3\n",
+      "questionTextSha256": "1f985afbab2f0244adc58dd8c5de5c3a0ee64a81e09a961a117be1ffcc4ec426",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 10,
+      "officialKeyCell": "A017",
+      "acceptedAnswerPatterns": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        3
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no3.png",
+          "sha256": "fa2b6697e2c9c9c1f7d64abcc3439d490f7a3f6d2a6fc8d6d658126e8688cc1a",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+          "sourceParentSupplementPdfSha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q21",
+      "rawOfficialQuestionTextBlock": " 21 反復神経刺激検査の小指外転筋における記録波形（別冊No. 4）を別に示す。\n　この現象に関わるのはどれか。\n 1．Ca2＋\n 2．Cl-\n 3．K＋\n 4．Mg2＋\n 5．Na＋\n　　別　冊　　\nNo. 4\n\n",
+      "questionTextSha256": "bd7b55dbcf33c5b93b585aff174247ac791b92840baad89d0db46a1f8f636cb9",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 11,
+      "officialKeyCell": "A021",
+      "acceptedAnswerPatterns": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        4
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no4.png",
+          "sha256": "bc3ca9efb1fc587da9a321764f69944c0f0bd0ec66e9dce37ef17c60279d9b91",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+          "sourceParentSupplementPdfSha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q22",
+      "rawOfficialQuestionTextBlock": " 22 心電図所見で基準範囲内であるのはどれか。\n 1．P 波幅  \n 0.20 秒\n 2．PR 時間  \n 0.26 秒\n 3．QRS 時間  \n 0.16 秒\n 4．補正QT 時間〈QTc〉  \n 0.42 秒\n 5．R-R 間隔  \n 0.40 秒\n",
+      "questionTextSha256": "d4ea60404595848a641dc5724d3c59d627aeb0998fc0685ba71e7d412961f3ae",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 12,
+      "officialKeyCell": "A022",
+      "acceptedAnswerPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q24",
+      "rawOfficialQuestionTextBlock": " 24 ノーズクリップが必要な検査はどれか。2 つ選べ。\n 1．パルスオキシメータ\n 2．ピークフローメータ\n 3．一回呼吸法によるDLco 測定\n 4．呼気一酸化窒素濃度〈FeNO〉測定\n 5．オシロメトリー〈強制オシレーション法〉による呼吸抵抗測定\n\n",
+      "questionTextSha256": "5586971667636e9baed6c83cad1de962a59378e33b9b88d05c8950f5e4fa1778",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 12,
+      "officialKeyCell": "A024",
+      "acceptedAnswerPatterns": [
+        "35"
+      ],
+      "requiredSelections": 2,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q25",
+      "rawOfficialQuestionTextBlock": " 25 脳波（別冊No. 5）を別に示す。\n　認められるのはどれか。2 つ選べ。\n 1．α　波\n 2．瞬　目\n 3．紡錘波\n 4．徐波群発\n 5．高振幅速波\n　　別　冊　　\nNo. 5\n",
+      "questionTextSha256": "56d9817bb91aa7a3f498446327847fdf74fb53c70558477255e0bb86f88235bc",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 13,
+      "officialKeyCell": "A025",
+      "acceptedAnswerPatterns": [
+        "12"
+      ],
+      "requiredSelections": 2,
+      "sourceReferences": [
+        5
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no5.png",
+          "sha256": "67f57a5a89bb5ef6dc511e112b0f5f27664e5bac8b423f8957b75ad824fff06c",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+          "sourceParentSupplementPdfSha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q26",
+      "rawOfficialQuestionTextBlock": " 26 健常者の正中神経を手関節部で電気刺激したときに大脳皮質で最初に生じる反応\nはどれか。\n 1．N9\n 2．N13\n 3．N20\n 4．P31\n 5．P37\n\n",
+      "questionTextSha256": "d60a780a2ca069c70ba37cdc78ec93a55da806ba381075b4d75917ad65d01973",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 13,
+      "officialKeyCell": "A026",
+      "acceptedAnswerPatterns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q27",
+      "rawOfficialQuestionTextBlock": " 27 心筋梗塞の心電図（別冊No. 6）を別に示す。\n　推定される梗塞領域はどれか。\n 1．下壁と後壁\n 2．下壁と側壁\n 3．後壁と側壁\n 4．前壁中隔と下壁\n 5．前壁中隔と側壁\n　　別　冊　　\nNo. 6\n",
+      "questionTextSha256": "85c3763ca82799584909ea5bc25e6334e5469de9e8ad683e415c20eb6837be9e",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 14,
+      "officialKeyCell": "A027",
+      "acceptedAnswerPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        6
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no6.png",
+          "sha256": "e2bca67eb058b45007748fc389217e78751bccd0e5725fae025bcf372ce3b985",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+          "sourceParentSupplementPdfSha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q28",
+      "rawOfficialQuestionTextBlock": " 28 心電図（別冊No. 7）を別に示す。\n　心電図所見はどれか。2 つ選べ。\n 1．洞停止\n 2．心室頻拍\n 3．心房細動\n 4．洞不整脈\n 5．完全右脚ブロック\n　　別　冊　　\nNo. 7\n\n",
+      "questionTextSha256": "520050a6506c30cb50fa3972963bb0580a93823409b09410ac23070def0cb8ba",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 14,
+      "officialKeyCell": "A028",
+      "acceptedAnswerPatterns": [
+        "35"
+      ],
+      "requiredSelections": 2,
+      "sourceReferences": [
+        7
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no7.png",
+          "sha256": "7fffa51c8eeedd2733c93fe4223b09ae5e8837beedd1874e486dae29d8c7a56a",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+          "sourceParentSupplementPdfSha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q30",
+      "rawOfficialQuestionTextBlock": " 30 ビリルビンで誤っているのはどれか。\n 1．遊離型ビリルビンは水に不溶性である。\n 2．非抱合型ビリルビンは細胞毒性を有する。\n 3．ビリルビンは抗酸化物質として機能する。\n 4．間接ビリルビンはジアゾ反応に反応促進剤を必要とする。\n 5．抱合型ビリルビンはアルブミンと結合してシャントビリルビンとなる。\n",
+      "questionTextSha256": "6eacded89645970bb52a98ff5240b06201986879375c226d0f559da6859ee799",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 15,
+      "officialKeyCell": "A030",
+      "acceptedAnswerPatterns": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q31",
+      "rawOfficialQuestionTextBlock": " 31 日本臨床化学会〈JSCC〉勧告法で試薬に脱水素酵素が含まれるのはどれか。\n 1．ALP\n 2．AMY\n 3．CK\n 4．LD\n 5．γ-GT\n\n",
+      "questionTextSha256": "0e4a459624489eea669a6333b577b51c2303a635c32666d31fcde6824261cb71",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 15,
+      "officialKeyCell": "A031",
+      "acceptedAnswerPatterns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q32",
+      "rawOfficialQuestionTextBlock": " 32 血清総蛋白の検査で誤っているのはどれか。\n 1．脱水状態で上昇する。\n 2．蛋白質は280 nm に極大吸収を持つ。\n 3．座位の基準範囲は6.6～8.1 g/dL である。\n 4．血清の屈折率は総蛋白濃度に反比例する。\n 5．ビウレット反応はトリペプチドで起こる。\n",
+      "questionTextSha256": "2ae00fea0c1b4a4d7bb4e007e2110c6bedd1914b520722f89f0d52182edd08c4",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 16,
+      "officialKeyCell": "A032",
+      "acceptedAnswerPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q33",
+      "rawOfficialQuestionTextBlock": " 33 レシチンコレステロールアシルトランスフェラーゼ〈LCAT〉を活性化するのはど\nれか。2 つ選べ。\n 1．アポAⅠ\n 2．アポB48\n 3．アポCⅠ\n 4．アポCⅡ\n 5．アポE\n",
+      "questionTextSha256": "948cbf035103003dbcafd9929d217cc0d398623f4a519f80da7a10452190cc54",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 16,
+      "officialKeyCell": "A033",
+      "acceptedAnswerPatterns": [
+        "13"
+      ],
+      "requiredSelections": 2,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q38",
+      "rawOfficialQuestionTextBlock": " 38 グルコース測定におけるヘキソキナーゼ・グルコース-6-リン酸デヒドロゲナー\nゼ法で正しいのはどれか。\n 1．酵素電極法で使用される。\n 2．NAD＋の吸光度を測定する。\n 3．アスコルビン酸の影響を受ける。\n 4．試薬にはムタロターゼが必要である。\n 5．日本臨床化学会〈JSCC〉勧告法である。\n",
+      "questionTextSha256": "1bd8a61fdd343f76755a29ae450d7d754fd1e47d0dc5ca390edfba0230236e15",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 18,
+      "officialKeyCell": "A038",
+      "acceptedAnswerPatterns": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q41",
+      "rawOfficialQuestionTextBlock": " 41 アミラーゼで誤っているのはどれか。\n 1．Cl- で活性化される。\n 2．加水分解酵素である。\n 3．α-1,6-グリコシド結合を切断する。\n 4．唾液腺型は膵型より高分子量である。\n 5．腎不全では血清アミラーゼ値が上昇する。\n",
+      "questionTextSha256": "4134c3ad224881e5f6e68b08128babb90a59044bf7ee8be3cd5c3709b537125c",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 19,
+      "officialKeyCell": "A041",
+      "acceptedAnswerPatterns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q42",
+      "rawOfficialQuestionTextBlock": " 42 インドシアニングリーン〈ICG〉試験で正しいのはどれか。\n 1．早朝空腹時に行う。\n 2．ICG を経口投与する。\n 3．ICG は光に安定である。\n 4．肝合成能の評価に用いられる。\n 5．ICG 投与から1 時間後に採血を行う。\n",
+      "questionTextSha256": "683007ddcd5b8b3d0d4669c97c213d00d9cd1dc494dac4e712f56ab00dd64c4a",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 19,
+      "officialKeyCell": "A042",
+      "acceptedAnswerPatterns": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q45",
+      "rawOfficialQuestionTextBlock": " 45 組織標本作製用固定液で正しいのはどれか。\n 1．10％ホルマリンは中性脂肪を溶解する。\n 2．グルタルアルデヒドは組織への浸透力が強い。\n 3．4 ％パラホルムアルデヒドにはギ酸が含まれる。\n 4．10％中性緩衝ホルマリンは網羅的遺伝子解析に適する。\n 5．10％中性ホルマリンの作製には塩化ナトリウムを用いる。\n",
+      "questionTextSha256": "26362bc31a1182d6c4aa17ba91f2a188b22077964c79d6d506f921c05fa508ec",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 20,
+      "officialKeyCell": "A045",
+      "acceptedAnswerPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q46",
+      "rawOfficialQuestionTextBlock": " 46 ミクロトームで正しいのはどれか。2 つ選べ。\n 1．刃の先端角度〈刃角〉は2 °である。\n 2．ユング型ミクロトームの逃げ角は90 °である。\n 3．クリオスタットはミノー型ミクロトームである。\n 4．ミノー型ミクロトームの逃げ角は2 ～10 °である。\n 5．クロスローラーベアリング方式のミクロトームは回転式である。\n\n",
+      "questionTextSha256": "4eef0aa3a84b856890a06090aff79ea78c248526ed6fccfde59363031fb4097b",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 20,
+      "officialKeyCell": "A046",
+      "acceptedAnswerPatterns": [
+        "34"
+      ],
+      "requiredSelections": 2,
+      "sourceReferences": [],
+      "preparedImages": [],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q49",
+      "rawOfficialQuestionTextBlock": " 49 H-E 染色標本（別冊No. 8）を別に示す。\n　この組織はどれか。\n 1．汗　腺\n 2．胸　腺\n 3．乳　腺\n 4．甲状腺\n 5．唾液腺\n　　別　冊　　\nNo. 8\n\n",
+      "questionTextSha256": "801dd9677f6bbf4e78ba1e583439820eb5c7d5fa60222fe8e7640efb98797381",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourcePdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 21,
+      "officialKeyCell": "A049",
+      "acceptedAnswerPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        8
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-am-no8.png",
+          "sha256": "7f8ddcafc48d12b6447dd715f34cb04bc39b4e1c1db70b81ef2594e91c1b0561",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+          "sourceParentSupplementPdfSha256": "286b992e4390067beb9e3385b38ee6bab64c6b79af99ae0ab2407756145d1be8"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q21",
+      "rawOfficialQuestionTextBlock": " 21 健常者の尺骨神経で行った逆行性記録法による感覚神経伝導検査の記録波形（別\n冊No. 5）を別に示す。\n　感覚神経活動電位〈SNAP〉の振幅が刺激部位によって図示するように低下する機\n序はどれか。2 つ選べ。\n 1．不応期\n 2．位相相殺\n 3．逆行性伝導\n 4．伝導ブロック\n 5．生理的な時間的分散\n　　別　冊　　\nNo. 5\n",
+      "questionTextSha256": "8c28e8cfad9c0db5695ea8d8c9c9ba320b3170912563e5264a8c30b7aec934a8",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07b_01.pdf",
+      "sourcePdfSha256": "a4ef918d6e4acd77a97a0ffa2714f3f76397bac5464db5f931f0c3fff622ed0e",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 12,
+      "officialKeyCell": "B021",
+      "acceptedAnswerPatterns": [
+        "25"
+      ],
+      "requiredSelections": 2,
+      "sourceReferences": [
+        5
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-pm-no5.png",
+          "sha256": "f35dedf49f37667072fe949f62957dadd5d992f1bf143a5d45ae597764f5996a",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "a4ef918d6e4acd77a97a0ffa2714f3f76397bac5464db5f931f0c3fff622ed0e",
+          "sourceParentSupplementPdfSha256": "486afaaa28746bfdb16a5ce5db008557f23762fcaaf013ba8fca55beebd6e2de"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q49",
+      "rawOfficialQuestionTextBlock": " 49 喀痰のPapanicolaou 染色標本（別冊No. 9）を別に示す。\n　出現している細胞はどれか。\n 1．塵埃細胞\n 2．腺癌細胞\n 3．小細胞癌細胞\n 4．気管支上皮細胞\n 5．扁平上皮癌細胞\n　　別　冊　　\nNo. 9\n",
+      "questionTextSha256": "e4c01ef0a9350df884e5d8c1c790d04fdd81a8d792ec749ef01eb2b9f3f4fa40",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07b_01.pdf",
+      "sourcePdfSha256": "a4ef918d6e4acd77a97a0ffa2714f3f76397bac5464db5f931f0c3fff622ed0e",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 22,
+      "officialKeyCell": "B049",
+      "acceptedAnswerPatterns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        9
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-pm-no9.png",
+          "sha256": "54105fd44cee225414f8bffc3b951d6d4fa9ddd396335430f0acfc1c11d297cc",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "a4ef918d6e4acd77a97a0ffa2714f3f76397bac5464db5f931f0c3fff622ed0e",
+          "sourceParentSupplementPdfSha256": "486afaaa28746bfdb16a5ce5db008557f23762fcaaf013ba8fca55beebd6e2de"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q51",
+      "rawOfficialQuestionTextBlock": " 51 H-E 染色標本（別冊No. 10）を別に示す。\n　矢印で示すのはどれか。\n 1．神　経\n 2．動　脈\n 3．肺　胞\n 4．気管支\n 5．リンパ管\n　　別　冊　　\nNo. 10\n",
+      "questionTextSha256": "50d0200151aa5286b0438d821500203e4ed7d9d7d3c4c45dab56b05ee977a66a",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07b_01.pdf",
+      "sourcePdfSha256": "a4ef918d6e4acd77a97a0ffa2714f3f76397bac5464db5f931f0c3fff622ed0e",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 23,
+      "officialKeyCell": "B051",
+      "acceptedAnswerPatterns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        10
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-pm-no10.png",
+          "sha256": "84f9e34c3e6f7c7035250e6c2fd990863b500a2711d9ee13a5f7517bd163c988",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "a4ef918d6e4acd77a97a0ffa2714f3f76397bac5464db5f931f0c3fff622ed0e",
+          "sourceParentSupplementPdfSha256": "486afaaa28746bfdb16a5ce5db008557f23762fcaaf013ba8fca55beebd6e2de"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q52",
+      "rawOfficialQuestionTextBlock": " 52 甲状腺穿刺吸引細胞診のPapanicolaou 染色標本（別冊No. 11）を別に示す。\n　考えられるのはどれか。\n 1．正常甲状腺濾胞細胞\n 2．橋本病\n 3．亜急性甲状腺炎\n 4．乳頭癌\n 5．リンパ腫\n　　別　冊　　\nNo. 11\n\n",
+      "questionTextSha256": "6cee19ca22cc5c1fa894cba97fbf4d4243fbd8dbb57fa86fd21c0a5ec2f9728f",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07b_01.pdf",
+      "sourcePdfSha256": "a4ef918d6e4acd77a97a0ffa2714f3f76397bac5464db5f931f0c3fff622ed0e",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 23,
+      "officialKeyCell": "B052",
+      "acceptedAnswerPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        11
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-pm-no11.png",
+          "sha256": "de2643d55926e7e0042c70369d3ddb8ad556c967846f158ac9c519b8688bb9e8",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "a4ef918d6e4acd77a97a0ffa2714f3f76397bac5464db5f931f0c3fff622ed0e",
+          "sourceParentSupplementPdfSha256": "486afaaa28746bfdb16a5ce5db008557f23762fcaaf013ba8fca55beebd6e2de"
+        }
+      ],
+      "publicGo": 0
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q55",
+      "rawOfficialQuestionTextBlock": " 55 アメーバ赤痢が感染した大腸組織の染色標本（別冊No. 12）を別に示す。\n　用いられている染色法はどれか。\n 1．H-E 染色\n 2．PAS 反応\n 3．Grocott 染色\n 4．mucicarmine 染色\n 5．Warthin-Starry 染色\n　　別　冊　　\nNo. 12\n\n",
+      "questionTextSha256": "89f8f35b8ed001f95d5c2550ff50fe0329cb4025ab8307871ccda5600b069e87",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07b_01.pdf",
+      "sourcePdfSha256": "a4ef918d6e4acd77a97a0ffa2714f3f76397bac5464db5f931f0c3fff622ed0e",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sourceAnswerSha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "sourcePhysicalPage": 24,
+      "officialKeyCell": "B055",
+      "acceptedAnswerPatterns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "sourceReferences": [
+        12
+      ],
+      "preparedImages": [
+        {
+          "preparedPath": "data/prepared-medical/rinsho-kensagishi/figures/72-pm-no12.png",
+          "sha256": "0ce5e5edc2f9552c4f8b60ff06609ade241b1a36e55aba493336dbd11567e7b6",
+          "byteIdenticalToWholeOfficialRender": true,
+          "sourceParentQuestionPdfSha256": "a4ef918d6e4acd77a97a0ffa2714f3f76397bac5464db5f931f0c3fff622ed0e",
+          "sourceParentSupplementPdfSha256": "486afaaa28746bfdb16a5ce5db008557f23762fcaaf013ba8fca55beebd6e2de"
+        }
+      ],
+      "publicGo": 0
+    }
+  ]
+}

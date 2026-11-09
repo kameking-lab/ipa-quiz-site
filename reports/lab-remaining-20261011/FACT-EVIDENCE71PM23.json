@@ -1,0 +1,513 @@
+{
+  "observedUtc": "2026-10-11T07:30:08.369421+00:00",
+  "scope": "第71回臨床検査技師 午後 未予約23原問",
+  "sources": [
+    {
+      "key": "mhlw71pm",
+      "kind": "official_original_and_final_answer",
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "claims": "23問の問題文、選択肢、正答、別冊画像。医学解説の全ての補足説明を公式問題が直接述べているという意味ではない。",
+      "questionNumbers": [
+        1,
+        12,
+        17,
+        18,
+        19,
+        22,
+        23,
+        26,
+        46,
+        47,
+        49,
+        55,
+        61,
+        63,
+        64,
+        65,
+        69,
+        80,
+        82,
+        84,
+        86,
+        90,
+        98
+      ],
+      "read": "CACHED_PDF_SHA_AND_NATIVE_PNG"
+    },
+    {
+      "key": "mhlw71pm12",
+      "kind": "official_scoring_decision",
+      "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken07/dl/PM12.pdf",
+      "claims": "複数の選択肢を正解として採点。最終正答表4/5と照合し1肢選択を維持。",
+      "questionNumbers": [
+        12
+      ],
+      "read": "CACHED_OFFICIAL_DECISION_TEXT_SHA"
+    },
+    {
+      "key": "mhlw71pm19",
+      "kind": "official_scoring_decision",
+      "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken07/dl/PM19.pdf",
+      "claims": "設問が不明確で複数の選択肢が正解。最終正答表2/4と照合し1肢選択を維持。",
+      "questionNumbers": [
+        19
+      ],
+      "read": "CACHED_OFFICIAL_DECISION_TEXT_SHA"
+    },
+    {
+      "key": "nih_sleep",
+      "kind": "government_authored_reference",
+      "url": "https://medlineplus.gov/sleepapnea.html",
+      "claims": "閉塞性睡眠時無呼吸、肥満の危険因子、睡眠検査を含めた診断。",
+      "questionNumbers": [
+        12
+      ],
+      "read": "WEB_FULL_PAGE"
+    },
+    {
+      "key": "nhlbi_sleep",
+      "kind": "government_authored_reference",
+      "url": "https://www.nhlbi.nih.gov/health/sleep-apnea/diagnosis",
+      "claims": "睡眠検査で睡眠時無呼吸の型・重症度を診断する。診断域のAHI数字はこのページにはない。",
+      "questionNumbers": [
+        12
+      ],
+      "read": "WEB_FULL_PAGE"
+    },
+    {
+      "key": "msd_avblock",
+      "kind": "authored_professional_reference",
+      "url": "https://www.msdmanuals.com/professional/cardiovascular-disorders/specific-cardiac-arrhythmias/atrioventricular-block",
+      "claims": "Ⅰ度はPR>0.20秒かつ全P波の伝導、Wenckebach段階的延長と脱落、MobitzⅡ一定PRと脱落、Ⅲ度房室解離。",
+      "questionNumbers": [
+        18
+      ],
+      "read": "WEB_FULL_PAGE"
+    },
+    {
+      "key": "ilae_hyps",
+      "kind": "professional_society_authored_reference",
+      "url": "https://www.epilepsydiagnosis.org/syndrome/west-syndrome-eeg.html",
+      "claims": "ヒプスアリスミアは無秩序な高振幅不規則徐波と多焦点性棘波・多棘波の混在。",
+      "questionNumbers": [
+        23
+      ],
+      "read": "WEB_FULL_PAGE"
+    },
+    {
+      "key": "grimelius_author",
+      "kind": "original_author_commentary",
+      "url": "https://garfield.library.upenn.edu/classics1984/A1984SW51600001.pdf",
+      "claims": "Grimelius本人が膵A細胞の銀染色開発と内分泌腫瘍を区別する用途を記述。プロトコルを転記せず対象構造だけを参照。",
+      "questionNumbers": [
+        46
+      ],
+      "read": "WEB_PDF_INDEX_TEXT"
+    },
+    {
+      "key": "msd_cml",
+      "kind": "authored_professional_reference",
+      "url": "https://www.msdmanuals.com/professional/oncology/leukemias/chronic-myeloid-leukemia-cml?autoredirectid=37461",
+      "claims": "CMLとPhiladelphia染色体、BCR::ABL1の関係。",
+      "questionNumbers": [
+        64
+      ],
+      "read": "WEB_FULL_PAGE"
+    },
+    {
+      "key": "msd_iron",
+      "kind": "authored_professional_reference",
+      "url": "https://www.msdmanuals.com/professional/hematology/anemias-caused-by-deficient-erythropoiesis/iron-deficiency-anemia?autoredirectid=37881",
+      "claims": "鉄欠乏性貧血の低血清鉄、高総鉄結合能。",
+      "questionNumbers": [
+        65
+      ],
+      "read": "WEB_FULL_PAGE"
+    },
+    {
+      "key": "cold_original_1980",
+      "kind": "original_research_abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/7408259/",
+      "claims": "試験管内古典経路寒冷活性化による低血清CH50と正常血漿CH50の差。C3の活性低下は小さいという観測。C3蛋白量不変そのものをこの抄録の直接主張とはしない。",
+      "questionNumbers": [
+        82
+      ],
+      "read": "WEB_ABSTRACT"
+    },
+    {
+      "key": "cold_original_2001",
+      "kind": "original_research",
+      "url": "https://journals.sagepub.com/doi/pdf/10.1258/0004563011900902",
+      "claims": "冷却血清のCH50低下とEDTA血漿で保たれる活性。総C3等の免疫学的定量と補体活性を区別。",
+      "questionNumbers": [
+        82
+      ],
+      "read": "WEB_PDF_INDEX_TEXT"
+    },
+    {
+      "key": "bombay_original_2023",
+      "kind": "original_research",
+      "url": "https://www.nature.com/articles/s41598-023-44731-1",
+      "claims": "FUT1機能低下とBombay/para-Bombayの赤血球H抗原欠損または弱い発現。",
+      "questionNumbers": [
+        84
+      ],
+      "read": "WEB_SEARCH_INDEX_ABSTRACT"
+    },
+    {
+      "key": "isbt_partiald",
+      "kind": "professional_society_case_teaching",
+      "url": "https://www.isbtweb.org/asset/B3F6E373-7EC1-4BE8-9B2AAE31B4CC9795/",
+      "claims": "weak Dの量的発現低下とpartial Dの外側エピトープ欠損・質的変化を区別。",
+      "questionNumbers": [
+        84
+      ],
+      "read": "WEB_PDF_INDEX_TEXT"
+    },
+    {
+      "key": "duffy_original_1976",
+      "kind": "original_research_abstract",
+      "url": "https://pubmed.ncbi.nlm.nih.gov/778616/",
+      "claims": "Duffy陰性と三日熱マラリア感染抵抗性の古典的関連、陽性者との比較。現代の例外まで完全否定する説明にはしていない。",
+      "questionNumbers": [
+        84
+      ],
+      "read": "WEB_SEARCH_INDEX_ABSTRACT"
+    },
+    {
+      "key": "xg_original_2018",
+      "kind": "original_research_author_institution_abstract",
+      "url": "https://portal.research.lu.se/en/publications/disruption-of-a-gata1-binding-motif-upstream-ofi-xgiipbdxi-abolis/",
+      "claims": "XG遺伝子がX染色体に位置し、男女の発現差に関連する調節領域を研究。男女陽性率の具体値と比率は抄録だけでは確認完了としていない。",
+      "questionNumbers": [
+        84
+      ],
+      "read": "WEB_SEARCH_INDEX_ABSTRACT"
+    }
+  ],
+  "sourcesDirectlyReadOrIndexed": 16,
+  "checks": [
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q1",
+      "officialChoicesParsedFive": true,
+      "officialAnswerAcceptedPatterns": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfShaVerified": true,
+      "figureShaVerified": true,
+      "choiceExplanationCount": 5,
+      "medicalIndependentReview": "PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q12",
+      "officialChoicesParsedFive": true,
+      "officialAnswerAcceptedPatterns": [
+        "4",
+        "5"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfShaVerified": true,
+      "figureShaVerified": true,
+      "choiceExplanationCount": 5,
+      "medicalIndependentReview": "PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q17",
+      "officialChoicesParsedFive": true,
+      "officialAnswerAcceptedPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfShaVerified": true,
+      "figureShaVerified": true,
+      "choiceExplanationCount": 5,
+      "medicalIndependentReview": "PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q18",
+      "officialChoicesParsedFive": true,
+      "officialAnswerAcceptedPatterns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfShaVerified": true,
+      "figureShaVerified": true,
+      "choiceExplanationCount": 5,
+      "medicalIndependentReview": "PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q19",
+      "officialChoicesParsedFive": true,
+      "officialAnswerAcceptedPatterns": [
+        "2",
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfShaVerified": true,
+      "figureShaVerified": true,
+      "choiceExplanationCount": 5,
+      "medicalIndependentReview": "PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q22",
+      "officialChoicesParsedFive": true,
+      "officialAnswerAcceptedPatterns": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfShaVerified": true,
+      "figureShaVerified": true,
+      "choiceExplanationCount": 5,
+      "medicalIndependentReview": "PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q23",
+      "officialChoicesParsedFive": true,
+      "officialAnswerAcceptedPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfShaVerified": true,
+      "figureShaVerified": true,
+      "choiceExplanationCount": 5,
+      "medicalIndependentReview": "PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q26",
+      "officialChoicesParsedFive": true,
+      "officialAnswerAcceptedPatterns": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfShaVerified": true,
+      "figureShaVerified": true,
+      "choiceExplanationCount": 5,
+      "medicalIndependentReview": "PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q46",
+      "officialChoicesParsedFive": true,
+      "officialAnswerAcceptedPatterns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfShaVerified": true,
+      "figureShaVerified": true,
+      "choiceExplanationCount": 5,
+      "medicalIndependentReview": "PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q47",
+      "officialChoicesParsedFive": true,
+      "officialAnswerAcceptedPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfShaVerified": true,
+      "figureShaVerified": true,
+      "choiceExplanationCount": 5,
+      "medicalIndependentReview": "PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q49",
+      "officialChoicesParsedFive": true,
+      "officialAnswerAcceptedPatterns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfShaVerified": true,
+      "figureShaVerified": true,
+      "choiceExplanationCount": 5,
+      "medicalIndependentReview": "PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q55",
+      "officialChoicesParsedFive": true,
+      "officialAnswerAcceptedPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfShaVerified": true,
+      "figureShaVerified": true,
+      "choiceExplanationCount": 5,
+      "medicalIndependentReview": "PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q61",
+      "officialChoicesParsedFive": true,
+      "officialAnswerAcceptedPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfShaVerified": true,
+      "figureShaVerified": true,
+      "choiceExplanationCount": 5,
+      "medicalIndependentReview": "PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q63",
+      "officialChoicesParsedFive": true,
+      "officialAnswerAcceptedPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfShaVerified": true,
+      "figureShaVerified": true,
+      "choiceExplanationCount": 5,
+      "medicalIndependentReview": "PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q64",
+      "officialChoicesParsedFive": true,
+      "officialAnswerAcceptedPatterns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfShaVerified": true,
+      "figureShaVerified": true,
+      "choiceExplanationCount": 5,
+      "medicalIndependentReview": "PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q65",
+      "officialChoicesParsedFive": true,
+      "officialAnswerAcceptedPatterns": [
+        "4"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfShaVerified": true,
+      "figureShaVerified": true,
+      "choiceExplanationCount": 5,
+      "medicalIndependentReview": "PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q69",
+      "officialChoicesParsedFive": true,
+      "officialAnswerAcceptedPatterns": [
+        "2"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfShaVerified": true,
+      "figureShaVerified": true,
+      "choiceExplanationCount": 5,
+      "medicalIndependentReview": "PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q80",
+      "officialChoicesParsedFive": true,
+      "officialAnswerAcceptedPatterns": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfShaVerified": true,
+      "figureShaVerified": true,
+      "choiceExplanationCount": 5,
+      "medicalIndependentReview": "PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q82",
+      "officialChoicesParsedFive": true,
+      "officialAnswerAcceptedPatterns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfShaVerified": true,
+      "figureShaVerified": true,
+      "choiceExplanationCount": 5,
+      "medicalIndependentReview": "PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q84",
+      "officialChoicesParsedFive": true,
+      "officialAnswerAcceptedPatterns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfShaVerified": true,
+      "figureShaVerified": true,
+      "choiceExplanationCount": 5,
+      "medicalIndependentReview": "PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q86",
+      "officialChoicesParsedFive": true,
+      "officialAnswerAcceptedPatterns": [
+        "3"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfShaVerified": true,
+      "figureShaVerified": true,
+      "choiceExplanationCount": 5,
+      "medicalIndependentReview": "PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q90",
+      "officialChoicesParsedFive": true,
+      "officialAnswerAcceptedPatterns": [
+        "1"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfShaVerified": true,
+      "figureShaVerified": true,
+      "choiceExplanationCount": 5,
+      "medicalIndependentReview": "PENDING"
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q98",
+      "officialChoicesParsedFive": true,
+      "officialAnswerAcceptedPatterns": [
+        "5"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfShaVerified": true,
+      "figureShaVerified": true,
+      "choiceExplanationCount": 5,
+      "medicalIndependentReview": "PENDING"
+    }
+  ],
+  "sourceFigureVisualInspections": 20,
+  "questionSourcePdfShaChecks": 69,
+  "oldSavedManuscriptsRegenerated": 0,
+  "providerBlockedTailAuthored": 0,
+  "publicGo": 0,
+  "runtimeRegistered": false,
+  "blockedRetrievalsPreserved": [
+    {
+      "url": "https://www.ncbi.nlm.nih.gov/books/NBK2261/",
+      "status": "RECAPTCHA_STOP",
+      "sameSourceAlternateRouteAttempts": 0,
+      "retryAttempts": 0,
+      "reason": "Checking your browser - reCAPTCHAと表示されたため本書を取得せず、別経路で取得しない。"
+    },
+    {
+      "url": "https://aasm.org/resources/clinicalguidelines/diagnostic-testing-osa.pdf",
+      "status": "RESTRICTED_URL_STOP",
+      "sameSourceAlternateRouteAttempts": 0,
+      "retryAttempts": 0,
+      "reason": "Failed to fetch restricted URL。再要求・別経路取得を行わない。"
+    },
+    {
+      "url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6409397/",
+      "status": "PARENT_RECAPTCHA_STOP_PRESERVED",
+      "sameSourceAlternateRouteAttempts": 0,
+      "retryAttempts": 0,
+      "reason": "親担当の停止を引継ぎ、当担当では元論文の取得を試みない。"
+    }
+  ],
+  "independentReview": "PENDING",
+  "explicitFactFollowups": [
+    {
+      "numbers": [
+        80
+      ],
+      "detail": "補体C1の非働化の熱不安定性を直接述べる一次資料を追加確認。正答1は公式最終表で確認。"
+    },
+    {
+      "numbers": [
+        84
+      ],
+      "detail": "日本人Di(a+)の約10％とXg(a+)の男女頻度の一次集団資料の詳細確認を残す。正答3は公式最終表で確認。"
+    }
+  ]
+}
