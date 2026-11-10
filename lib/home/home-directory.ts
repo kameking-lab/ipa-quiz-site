@@ -208,7 +208,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "kikenbutsu-otsu1", name: "危険物取扱者 乙種第1類", sub: "2026年6月公表版・性質/消火の実出題抜粋10問", domain: "safety" },
   { code: "kikenbutsu-otsu2", name: "危険物取扱者 乙種第2類", sub: "2026年6月公表版・性質/消火の実出題抜粋10問", domain: "safety" },
   { code: "kikenbutsu-otsu6", name: "危険物取扱者 乙種第6類", sub: "2026年6月公表版・性質/消火の実出題抜粋10問", domain: "safety" },
-  { code: "riyoshi", name: "理容師", sub: "第54・53回の全110原問・全肢解説", domain: "welfare" },
+  { code: "riyoshi", name: "理容師", sub: "第52〜54回の全165原問・全肢解説", domain: "welfare" },
   { code: "hokenshi", name: "保健師", sub: "国家試験の確認済み原問を部分収録", domain: "welfare" },
   { code: "josanshi", name: "助産師", sub: "国家試験の確認済み原問を部分収録", domain: "welfare" },
   { code: "rigaku-ryohoshi", name: "理学療法士", sub: "第61・60回 午前・午後の確認済み原問を部分収録", domain: "welfare" },
