@@ -86,6 +86,12 @@ if (q.year === 2025 && q.season === "annual" &&
   if (q.season === "annual" && judoPaper?.[1] === "2025_33" && q.year === 2024) {
     return "第33回（令和6年度・2025年実施）";
   }
+  const gengoNotice = /^https:\/\/www\.mhlw\.go\.jp\/general\/sikaku\/successlist\/(2025|2026)\/siken21\/dl\/(27A40|28A(?:14|35|69|83))\.pdf(?:#page=[1-9]\d*)?$/.exec(q.sourcePdfUrl);
+  if (q.season === "annual" && gengoNotice &&
+      ((q.year === 2025 && gengoNotice[1] === "2025" && gengoNotice[2] === "27A40") ||
+       (q.year === 2026 && gengoNotice[1] === "2026" && gengoNotice[2]?.startsWith("28A")))) {
+    return `第${q.year === 2025 ? 27 : 28}回（${q.year}年実施）`;
+  }
   const medical2025 = /^https:\/\/www\.mhlw\.go\.jp\/seisakunitsuite\/bunya\/kenkou_iryou\/iryou\/topics\/dl\/tp250428-(06[ab]|07b)_01\.pdf(?:#page=\d+)?$/.exec(q.sourcePdfUrl);
   if (q.year === 2025 && q.season === "annual" && medical2025) {
     return `第${medical2025[1] === "07b" ? 71 : 77}回（2025年実施）`;

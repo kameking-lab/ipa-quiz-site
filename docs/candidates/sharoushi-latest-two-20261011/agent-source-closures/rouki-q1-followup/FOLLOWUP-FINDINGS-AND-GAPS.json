@@ -1,0 +1,143 @@
+{
+  "questionId": "sharoushi-2025-annual-gakka-q1",
+  "examBaseline": "2025-04-11",
+  "checkedAt": "2026-10-11T02:24:01.655267+00:00",
+  "scope": "親指定の追加確認1回。共有payload、既存HOLD、STOP、runtime、lock、repoを変更しない。全5肢未閉鎖なので不足と確認証拠だけを保存。",
+  "allFivePropositionsClosed": false,
+  "readyOriginalQuestionIncrement": 0,
+  "publishedIncrement": 0,
+  "historicalRepublicationFindings": {
+    "ア": {
+      "physicalPage": 1,
+      "historicalNoticeDate": "1948-03-02",
+      "historicalNoticeNumber": "基発381号",
+      "noticeNumberExplicitlyPrinted": true,
+      "sourceClassification": "officialHistoricalInterpretationRepublication",
+      "sourceEdition": "2026年3月更新",
+      "sourcePublishedAfterExamBaseline": true,
+      "excerpt": "「意思に反する労働の強制」とは、不当な手段によって、使用者が労働者の意思を抑圧し、その自由\nな発現を妨げ労働を強要することをいい、必ずしも労働者が現実に労働することを必要としない【昭\n23.3.2 基発381 号】。",
+      "rawNoticeObtained": false,
+      "administrativeEditionAvailableAt20250411Obtained": false
+    },
+    "イ": {
+      "physicalPage": 2,
+      "historicalNoticeDate": "1948-03-02",
+      "historicalNoticeNumber": "基発381号",
+      "noticeNumberExplicitlyPrinted": true,
+      "sourceClassification": "officialHistoricalInterpretationRepublication",
+      "sourceEdition": "2026年3月更新",
+      "sourcePublishedAfterExamBaseline": true,
+      "excerpt": "「業として」とは、営利を目的として反復継続して行うことであるが、1 回であっても、最初から\n反復して行う意図がある場合は「業」に当たると解されている【昭23.3.2 基発381 号】。",
+      "rawNoticeObtained": false,
+      "administrativeEditionAvailableAt20250411Obtained": false
+    }
+  },
+  "lawComparisonFile": "FIXED-LAW-COMPARISON.json",
+  "confirmedExtent": "第5条・第6条は2025-04-11/2026-04-10のeGov固定版本文が完全一致。厚労省の改正注記付き公開本文も該当文言が一致し、第5条・第6条の区間に改正注記はない。",
+  "historicalLimit": "改正注記の不存在は継続性の補助資料。1948年当時の法版本文及び1948年から2025年の全改正法を取得・照合しておらず、「当時から無改正を原本の全履歴で直接確認済み」とは書かない。2026年冊子は過去通達の行政再掲であり、条文だけからの法定推論とも2025年時点行政版本の直接取得とも区別する。",
+  "remainingSourceGaps": [
+    {
+      "propositions": [
+        "ア",
+        "イ"
+      ],
+      "gap": "昭23.3.2基発381号の該当解釈は公式2026年冊子に明記されるが、1948年当時の法5/6版本文とその後の全改正履歴の原本照合は未取得。2025-04-11基準で解釈の継続性を全履歴で直接確認したとの断定はできない。",
+      "factsAlreadyConfirmed": [
+        "通達日付・番号の明記",
+        "設問の該当解釈内容との一致",
+        "2025/2026固定法文の同一性",
+        "厚労省改正注記付き法文に5/6改正注記なし"
+      ],
+      "holdAction": "既存HOLDを維持。新たなHOLD解除・完成稿更新はしない。"
+    },
+    {
+      "propositions": [
+        "オ"
+      ],
+      "gap": "労働者自身を被保険者とする任意加入生命保険の企業による保険料補助について、福利厚生として使用者が負担する補助金が労基法11条の賃金に当たらないとする個別原典又は基準日までの公式再掲が未取得。昭63.3.14基発150号の該当個別例を確認できていない。",
+      "unsuitableSubstitutes": [
+        "企業が契約者となり保険料を全額負担する別の事実類型",
+        "労働保険料算定の賃金範囲表",
+        "法11条の一般定義のみ",
+        "公式正答Dからの逆算"
+      ],
+      "oneBoundedPrimaryCandidate": {
+        "url": "https://joseishugyo.mhlw.go.jp/history/data/10032.pdf",
+        "retrievedAt": "2026-10-11T02:22:48.228985+00:00",
+        "localFile": "wage-report-19790905.pdf",
+        "attempts": 1,
+        "status": 404,
+        "error": "HTTP Error 404: Not Found",
+        "doNotRetry": true,
+        "accessDeniedStop": false
+      },
+      "holdAction": "404候補は再試行せず、オのHOLDを維持。"
+    }
+  ],
+  "sourceFiles": [
+    {
+      "path": "../rouki-core-primary/osaka202603-contract-prohibitions.pdf",
+      "url": "https://www.pref.osaka.lg.jp/documents/6136/002.pdf",
+      "sha256": "aa07fef03074c2ea831d18db614a3fcd797e9e0de7c11d8e8d87d8733e4a422e"
+    },
+    {
+      "path": "../rouki-core-primary/rouki-asof20250411.json",
+      "sha256": "92e9cd6f0335f2f3df48a1fae6bd446d2b5429434f9733797532be17102c64bf",
+      "version": "322AC0000000049_20250401_506AC0000000042"
+    },
+    {
+      "path": "../rouki-core-primary/rouki-asof20260410.json",
+      "sha256": "7d261324b5af067c14d84d3e92d84265f013624f6daad9c5a2d1386736e5ad8f",
+      "version": "322AC0000000049_20250601_504AC0000000068"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=73022000&dataType=0&pageNo=1",
+      "retrievedAt": "2026-10-11T02:22:48.227983+00:00",
+      "localFile": "mhlw-current-annotated-law.html",
+      "attempts": 1,
+      "status": 200,
+      "finalUrl": "https://www.mhlw.go.jp/web/t_doc?dataId=73022000&dataType=0&pageNo=1",
+      "contentType": "text/html;charset=UTF-8",
+      "lastModified": null,
+      "sha256": "fcbc74e866f8a97d32968f788ac7aabb8127129733714de19a04ed340164ff12",
+      "size": 177420
+    }
+  ],
+  "unchangedExistingDeliverables": {
+    "rouki-asof20250411.json": {
+      "before": "92e9cd6f0335f2f3df48a1fae6bd446d2b5429434f9733797532be17102c64bf",
+      "after": "92e9cd6f0335f2f3df48a1fae6bd446d2b5429434f9733797532be17102c64bf",
+      "unchanged": true
+    },
+    "rouki-asof20260410.json": {
+      "before": "7d261324b5af067c14d84d3e92d84265f013624f6daad9c5a2d1386736e5ad8f",
+      "after": "7d261324b5af067c14d84d3e92d84265f013624f6daad9c5a2d1386736e5ad8f",
+      "unchanged": true
+    },
+    "osaka202603-contract-prohibitions.pdf": {
+      "before": "aa07fef03074c2ea831d18db614a3fcd797e9e0de7c11d8e8d87d8733e4a422e",
+      "after": "aa07fef03074c2ea831d18db614a3fcd797e9e0de7c11d8e8d87d8733e4a422e",
+      "unchanged": true
+    },
+    "EVIDENCE-DELTA.json": {
+      "before": "c23fd035547ca870fd58fc7f7ce3153369914a39589dd1a7bfa6be961bd3fca4",
+      "after": "c23fd035547ca870fd58fc7f7ce3153369914a39589dd1a7bfa6be961bd3fca4",
+      "unchanged": true
+    },
+    "HOLD-LOCAL-PATCH.json": {
+      "before": "063c591b091305d93c4dd2373c51221ab3cb87a309e0c58ce1972cc11a2cf225",
+      "after": "063c591b091305d93c4dd2373c51221ab3cb87a309e0c58ce1972cc11a2cf225",
+      "unchanged": true
+    },
+    "CORRECTED-SAVED-DRAFT.json": {
+      "before": "cb983251b7d2d9dd1ce904b674ce4090f974b46f83f011b5db5335c0ef9b0150",
+      "after": "cb983251b7d2d9dd1ce904b674ce4090f974b46f83f011b5db5335c0ef9b0150",
+      "unchanged": true
+    },
+    "INPUT-TWO-QUESTION-SNAPSHOT.json": {
+      "before": "5b3117385c511603549d5acda969dd9633ceaa7cbc925a15c7aafd548a389f7d",
+      "after": "5b3117385c511603549d5acda969dd9633ceaa7cbc925a15c7aafd548a389f7d",
+      "unchanged": true
+    }
+  }
+}

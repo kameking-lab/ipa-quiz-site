@@ -4,5 +4,7 @@ import batch2026 from "./2026-annual-pm-batch1.json";
 import partial75 from "./partial75-20261011.json";
 import publicText3 from "./public-text3-20261015.json";
 
+import remaining9 from "./pr759-remaining9.json";
+
 /** Ready-only accepted originals. Remaining source drafts stay outside runtime. */
-export const RINSHO_KENSAGISHI_QUESTIONS: Question[] = ([...batch1, ...batch2026, ...partial75, ...publicText3] as Question[]).filter(question => question.needsReview === false);
+export const RINSHO_KENSAGISHI_QUESTIONS: Question[] = ([...batch1, ...batch2026, ...partial75, ...publicText3, ...remaining9] as Question[]).filter(question => question.needsReview === false);

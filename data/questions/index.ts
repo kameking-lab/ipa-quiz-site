@@ -69,6 +69,7 @@ import { HOKENSHI_QUESTIONS } from "./hokenshi";
 import { JOSANSHI_QUESTIONS } from "./josanshi";
 import { RIGAKU_RYOHOUSHI_QUESTIONS } from "./rigaku-ryohoshi";
 import { SAGYO_RYOHOSHI_QUESTIONS } from "./sagyo-ryohoshi";
+import { GENGO_CHOKAKUSHI_QUESTIONS } from "./gengo-chokakushi";
 import { SHINO_KUNRENSHI_QUESTIONS } from "./shino-kunrenshi";
 import { RINSHO_KOGISHI_QUESTIONS } from "./rinsho-kogishi";
 import { JUDO_SEIFUKUSHI_QUESTIONS } from "./judo-seifukushi";
@@ -245,6 +246,7 @@ takken: TAKKEN_QUESTIONS,
 ...(isExamPublished("josanshi") ? { josanshi: JOSANSHI_QUESTIONS } : {}),
 ...(isExamPublished("rigaku-ryohoshi") ? { "rigaku-ryohoshi": RIGAKU_RYOHOUSHI_QUESTIONS } : {}),
 ...(isExamPublished("sagyo-ryohoshi") ? { "sagyo-ryohoshi": SAGYO_RYOHOSHI_QUESTIONS } : {}),
+  ...(isExamPublished("gengo-chokakushi") ? { "gengo-chokakushi": GENGO_CHOKAKUSHI_QUESTIONS } : {}),
 ...(isExamPublished("shino-kunrenshi") ? { "shino-kunrenshi": SHINO_KUNRENSHI_QUESTIONS } : {}),
 ...(isExamPublished("rinsho-kogishi") ? { "rinsho-kogishi": RINSHO_KOGISHI_QUESTIONS } : {}),
 ...(isExamPublished("judo-seifukushi") ? { "judo-seifukushi": JUDO_SEIFUKUSHI_QUESTIONS } : {}),

@@ -1,3 +1,4 @@
+import { OT61_PM_REMAINING14_QUESTIONS } from "@/data/qualification-staging/sagyo-ryohoshi/ot61-pm-remaining15";
 import { describe, expect, it } from "vitest";
 import { SAGYO_RYOHOSHI_QUESTIONS } from "@/data/questions/sagyo-ryohoshi";
 import { SHINO_KUNRENSHI_QUESTIONS } from "@/data/questions/shino-kunrenshi";
@@ -6,7 +7,7 @@ import pm from "@/docs/evidence/shino-sagyo-pm01-20-ready-20261010/INTEGRATION.j
 import ot13 from "@/docs/evidence/sagyo-ot13-recovered-20261011/INTEGRATION.json";
 import go34 from "@/data/questions/shino-kunrenshi/saved-go34-20261011.json";
 
-const restoredIds = new Set([...ot13.newIds, ...go34.map(question => question.id)]);
+const restoredIds = new Set([...OT61_PM_REMAINING14_QUESTIONS.map(q => q.id), ...ot13.newIds, ...go34.map(question => question.id)]);
 
 const keys = ["ア", "イ", "ウ", "エ", "オ"] as const;
 
@@ -42,7 +43,7 @@ describe("作業療法士・視能訓練士 午後1〜20の局所追加", () => 
     expect(pm.heldDrafts).toHaveLength(4);
     expect(pm.excludedBeforeDraft).toHaveLength(42);
     const all = [...SAGYO_RYOHOSHI_QUESTIONS, ...SHINO_KUNRENSHI_QUESTIONS];
-    expect(all).toHaveLength(530);
+    expect(all).toHaveLength(544);
     for (const record of [...pm.heldDrafts, ...pm.excludedBeforeDraft]) {
       const match = record.identity.match(/^(.+)-(\d+)-pm-(\d+)$/)!;
       const year = match[2] === "61" || match[2] === "56" ? 2025 : 2024;

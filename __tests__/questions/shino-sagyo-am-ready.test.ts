@@ -16,7 +16,7 @@ const choiceKeys = ["ア", "イ", "ウ", "エ", "オ"] as const;
 
 describe("作業療法士・視能訓練士 午前の部分収録", () => {
   it.each([
-    ["sagyo-ryohoshi", SAGYO_RYOHOSHI_QUESTIONS, 144, 310],
+    ["sagyo-ryohoshi", SAGYO_RYOHOSHI_QUESTIONS, 144, 324],
     ["shino-kunrenshi", SHINO_KUNRENSHI_QUESTIONS, 115, 220],
   ] as const)("%s は保存済み原本で確認した午前問だけ追加する", async (exam, questions, amCount, totalCount) => {
     const loaded = await getQuestionsForExam(exam);
@@ -41,7 +41,7 @@ describe("作業療法士・視能訓練士 午前の部分収録", () => {
 
   it("共有設例を保持し、原典回収で解消した保留だけを復帰する", () => {
     const all = [...SAGYO_RYOHOSHI_QUESTIONS, ...SHINO_KUNRENSHI_QUESTIONS];
-    expect(all).toHaveLength(530);
+    expect(all).toHaveLength(544);
     const ids = new Set(all.map(question => question.id));
     for (const original of [...integration.heldDrafts, ...integration.excludedBeforeDraft]) {
       const parts = original.identity.match(/^(.+)-(\d+)-am-(\d+)$/);

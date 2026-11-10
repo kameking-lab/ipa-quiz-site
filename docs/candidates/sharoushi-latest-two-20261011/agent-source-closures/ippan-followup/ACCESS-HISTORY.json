@@ -1,0 +1,57 @@
+{
+  "scope": "sharoushi-2025-annual-ippan-q4",
+  "priorManifestRow": {
+    "id": "sharoushi-2025-annual-ippan-q4",
+    "year": 2025,
+    "round": 57,
+    "format": "takuitu",
+    "subject": "ippan",
+    "questionNumber": 4,
+    "status": "HOLD_ALL_CHOICES_PRIMARY_OR_EXPLANATION_UNRESOLVED",
+    "officialAnswer": "D",
+    "remainingIssue": [
+      "A: original Supreme Court judgment on agreed job limitation and transfer authority is absent",
+      "B/C: original labor-contract-law enforcement notice is absent",
+      "D: original judgment on return order after secondment is absent; saved case name/date are memory only"
+    ],
+    "publicationReady": false,
+    "sourcePath": "sharoushi-ippan20-public/SOURCE-PACKET.json",
+    "sourceSha256": "41053f4240de1f4d249393b89776f21d24e7217d8b76e469c1f83f859df9727f",
+    "savedDraftPath": "sharoushi-ippan20-public/draft.json",
+    "savedDraftSha256": "b3a3cb2c9530224e5b636458ac27d3123c32aae8cc8730c9ca2668693a7cf810",
+    "recoveredPayload": true,
+    "choiceExplanationCount": 5,
+    "literalTranscriptionMatched": true
+  },
+  "priorManifestInputSha256": "53202ae637149d17187402700038319ef78ce5d321fca894aadb6c48f0ba75cd",
+  "q4ExplicitStopFound": false,
+  "boundedPriorRecord": {
+    "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\claude-capacity-20261010\\sharoushi-ippan20-public\\Q04-JUDGMENT-SOURCE-READ-20261010.json",
+    "sha256": "fca0f23600c516a724674c65825cc987a81f6d2fd4e202b4b06facfeebd66e65",
+    "legacyEntries": [
+      {
+        "question": "sharoushi-2026-ippan-q04",
+        "choice": "E",
+        "publisher": "Supreme Court of Japan",
+        "url": "https://www.courts.go.jp/hanrei/pdf/20061006163257.pdf",
+        "finding": "Legacy court PDF URL mentioned by a secondary page could not be opened; no direct judgment text was fixed.",
+        "sourceType": "court judgment original candidate",
+        "readStatus": "INACCESSIBLE_NO_RETRY"
+      }
+    ],
+    "legacyEntriesScope": "Earlier 2026 q4 E source, preserved for context; not an authorization or new retry for that source.",
+    "legacyHttpReason": "UNKNOWN_UNRECORDED",
+    "legacyUrlsRetried": false
+  },
+  "newRoute": "Current court public GET search -> returned case detail -> linked public original PDF. MHLW current official topic page -> linked public notice original. All acquired originals returned HTTP 200.",
+  "noRecorded403AuthDenialForTheseQ2025AOrDOriginals": true,
+  "limitation": "This statement is limited to saved q4 records and the prior manifest; it does not reclassify an unknown earlier failure as a 404.",
+  "actual403OrAuthDenialRetried": false,
+  "stopsPreserved": [
+    "2025 ippan q5:B",
+    "2026 ippan q5:B,C",
+    "2025 koyou q2:dated-manual",
+    "2026 kounen q4:E-period"
+  ],
+  "stopTargetsTouched": []
+}

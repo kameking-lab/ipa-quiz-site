@@ -1,0 +1,35 @@
+{
+  "savedAtUtc": "2026-10-11T03:34:31.029087+00:00",
+  "independentDecision": "CLEAR_Q69_CONTENT_REVIEW_AFTER_BOUNDED_EXPLANATION_UPDATE",
+  "originalTextChanged": false,
+  "officialAnswerChanged": false,
+  "practiceCandidates": 3,
+  "localAcademicHold": 2,
+  "manuscripts": 5,
+  "choiceExplanations": 25,
+  "missingOriginals": 393,
+  "publicIncrement": 0,
+  "publicationGo": false,
+  "visualSourceVerification": {
+    "file": "review69/mext-primary/page11.png",
+    "physicalPage": 11,
+    "heading": "URAWSS II",
+    "parentPixelInspection": true
+  },
+  "manuscriptSha256": "0e676c5322fe5a046a778dbf6daa2bddda68b875bbf1c3da7ac1db567205bdc5",
+  "tests": {
+    "command": "pnpm exec vitest run __tests__/questions/gengo-notice-ready.test.ts __tests__/lib/gengo-registration.test.ts --maxWorkers=1 --testTimeout=60000 --reporter=dot",
+    "exitCode": 0,
+    "passed": 11,
+    "files": 2
+  },
+  "schema": {
+    "command": "pnpm validate:questions --exam=gengo-chokakushi",
+    "exitCode": 0,
+    "ok": 3,
+    "fail": 0,
+    "warn": 0
+  },
+  "initialTestFailure": "A preexisting lexicographic-order expectation failed with the newly added third candidate. The test now explicitly checks the documented year-descending, question-number-ascending order and the manifest identity set. Corrected rerun passed.",
+  "localFullBuildExecuted": false
+}
