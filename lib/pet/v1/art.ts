@@ -37,3 +37,15 @@ export function petArtFor(qualificationId: string | null, stage: PetProfile["sel
   }
   return resting(pose) ? PET_GENERIC_ART.rest : PET_GENERIC_ART.study;
 }
+
+/** Reuse the existing joyful portrait so a chosen partner stays recognisable at 64px. */
+export function petPortraitFor(qualificationId: string | null, stage: PetProfile["selectedStage"], pose: PetPose): string {
+  if (qualificationId === "ip" && pose === "petted") return `${ROOM}idle/ip-wave.webp`;
+  return petArtFor(qualificationId, stage, stage === "partner" && pose === "study" ? "correct" : pose);
+}
+
+/** A short, character-specific lead-in, followed by its static happy reaction. */
+export function petGreetingLeadIn(qualificationId: string, stage: PetProfile["selectedStage"]): string {
+  if (qualificationId === "fp3") return `${ROOM}idle/fp3-book.webp`;
+  return petArtFor(qualificationId, stage, "study");
+}

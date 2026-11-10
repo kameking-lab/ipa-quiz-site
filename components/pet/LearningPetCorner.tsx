@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import Link from "next/link";
 import { examLabel } from "@/lib/utils";
 import { LS_KEYS } from "@/lib/storage/keys";
-import { petArtFor, petPathArtFor, type PetPose } from "@/lib/pet/v1/art";
+import { petArtFor, petPortraitFor, petPathArtFor, type PetPose } from "@/lib/pet/v1/art";
 import { PET_STAGE_LABELS, petFreshPresentation, petPartnerRemaining } from "@/lib/pet/v1/presentation";
 import { canonicalPetQualification } from "@/lib/pet/v1/qualification";
 import type { PetProfile, PetProfileDocument } from "@/lib/pet/v1/profile";
@@ -13,6 +13,7 @@ import { PetNameTitle } from "./PetNameTitle";
 import styles from "./LearningPetCorner.module.css";
 import { usePetAppearanceNotice } from "./usePetAppearanceNotice";
 import { usePetNextAction } from "./usePetNextAction";
+import { PetStageProgress } from "./PetStageProgress";
 const PetCareSheet = dynamic(() => import("./PetCareSheet"), { ssr: false });
 
 const IDLE_CAPTION = "いっしょに、一問ずつ。";
@@ -118,7 +119,7 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
   if (closed) return <button type="button" ref={reopenButton} className={styles.button} onClick={() => preferences(false, paused)}>チワワのひと休みを開く</button>;
   const stage = profile?.selectedStage ?? "puppy";
   const shownPose = pose === "study" ? idlePose : pose;
-  const src = petArtFor(selectedQualification ?? (roomSeat && view.status === "ready" ? "ip" : null), stage, shownPose);
+  const src = newStage && shownPose === "study" ? petArtFor(selectedQualification ?? null, newStage, "correct") : petPortraitFor(selectedQualification ?? (roomSeat && view.status === "ready" ? "ip" : null), stage, shownPose);
   const image = failed === src ? petArtFor(selectedQualification ?? null, stage, "study") : src;
   const moving = visible && !paused && !reduced && pose !== "study";
   const remaining = profile ? petPartnerRemaining(profile) : null;
@@ -130,7 +131,7 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={image} alt="" width={64} height={64} className={moving ? styles.gesture : undefined} onError={() => setFailed(image)} />
       <span className={styles.answerCopy}><strong id={title}>{profile?.name ?? "チワワ"}</strong><span>{newStage ? `${PET_STAGE_LABELS[newStage]}の姿が選べるよ` : caption ?? idleCaption ?? IDLE_CAPTION}</span>
-        {remaining !== null ? <span>相棒まで あと{remaining}問<meter aria-label="相棒までの進捗" min={0} max={5} value={5 - remaining} className={styles.progress} /></span> : <span>{nextAction?.label}</span>}
+        {remaining !== null ? <span>相棒まで あと{remaining}問<meter aria-label="相棒までの進捗" min={0} max={5} value={5 - remaining} className={styles.progress} /></span> : <><strong>{nextAction?.memory.earned?.detail}</strong><span>{nextAction?.label}</span><small><PetStageProgress progress={nextAction?.stageProgress ?? null} /></small></>}
       </span><span className={styles.answerOpen}>{newStage ? "新しい姿" : "お世話"} ›</span>
     </button> : <>
     <header className={styles.header}>
@@ -150,11 +151,11 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
         {pop && !pop.unlock && popText ? <span key={pop.key} className={`${styles.pop} ${!visible || paused || reduced ? "" : styles.popMove}`} aria-hidden="true">{popText}</span> : null}
       </div>
       <div className={styles.copy}>
-        <p className={styles.caption}>{caption ?? idleCaption ?? IDLE_CAPTION}</p>
+        <p className={styles.caption}>{roomSeat && remaining === null && nextAction?.memory.earned ? nextAction.memory.earned.detail : caption ?? idleCaption ?? IDLE_CAPTION}</p>
         {view.status === "unavailable" ? <p className={styles.small}>育成の保存を確認できませんでした。</p> : profile ? <>
           {remaining !== null ? <label className={styles.meter}><span>相棒まで あと{remaining}問</span>
             <meter className={styles.progress} min={0} max={5} value={5 - remaining} /></label> : null}
-          {remaining === null && nextAction ? <p className={styles.small}>{nextAction.label}</p> : null}
+          {remaining === null && nextAction ? <><p className={styles.invitation}>{nextAction.label}</p><p className={styles.small}><PetStageProgress progress={nextAction.stageProgress} /></p></> : null}
         </> : null}
       </div>
     </div>

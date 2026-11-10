@@ -1,8 +1,20 @@
 import type { PetProfile } from "./profile";
 import { PET_PATH_LABELS } from "./growth";
 import { PET_STAGE_LABELS } from "./presentation";
-import { PET_ROOM_STORIES } from "./room";
+import { PET_ROOM_SCENES, PET_ROOM_STORIES } from "./room";
 import { petArtFor } from "./art";
+import { petLearningDay } from "./learning";
+import type { PetProfileDocument } from "./profile";
+
+/** Preview saved memories without awarding or reconstructing a learning day. */
+export function petMemoryPreview(profile: PetProfile, doc: PetProfileDocument, now: number) {
+  const scene = PET_ROOM_SCENES.find(scene => !profile.roomEvents.some(event => event.scene === scene));
+  const today = petLearningDay(now, doc.timeZone);
+  return {
+    earned: petAlbumEntries(profile)[0] ?? null,
+    invitation: scene ? `${profile.roomEvents.some(event => event.day === today) ? "明日また1問で" : "今日の1問で"}「${PET_ROOM_STORIES[scene].title}」` : "今日も、いっしょに1問。",
+  };
+}
 
 export function petAlbumEntries(profile: PetProfile) {
   return [

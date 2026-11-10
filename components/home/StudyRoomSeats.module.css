@@ -20,3 +20,8 @@
 .listNumber { flex: none; width: 24px; height: 24px; border: 1px solid #a8b69f; font-size: 12px; }
 .room :global(.study-room-scroll) { max-height:220px; overflow-y:hidden; }
 .room :global(.study-room-scene) { transform:translateY(-80px); margin-bottom:-80px; }
+@media(min-width:768px) {
+  .room :global(.study-room-scroll) { max-height:none; }
+  .room :global(.study-room-scene) { height:54cqw; min-height:360px; transform:none; margin-bottom:0; background-size:140cqw 60cqw; }
+  .seatedArea { bottom:12cqw; }
+}

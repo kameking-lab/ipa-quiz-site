@@ -1,4 +1,4 @@
-import { petArtFor } from "@/lib/pet/v1/art";
+import { petArtFor, petPortraitFor } from "@/lib/pet/v1/art";
 import { cleanup, render, screen } from "@testing-library/react";
 import { afterEach, expect, it } from "vitest";
 import { emptyPetProfiles, newPetProfile, petLearningFactSchema, serializePetProfileDocument, parsePetProfileDocument } from "@/lib/pet/v1/profile";
@@ -42,7 +42,7 @@ it("renders the same private pet appearance and saved scene without a public-per
   pet.name = "こむぎ"; pet.unlockedStages.push("partner"); pet.selectedStage = "partner"; pet.unlockedPaths.push("memory"); pet.selectedPath = "memory";
   const before = serializePetProfileDocument(doc), view = render(<PetOwnStudySeat view={{ status: "ready", document: doc }} />);
   expect(view.container.querySelector("section")).toHaveAttribute("data-own-pet-id", pet.petId);
-  expect(view.container.querySelector("img")).toHaveAttribute("src", petArtFor("ap", "partner", "study"));
+  expect(view.container.querySelector("img")).toHaveAttribute("src", petPortraitFor("ap", "partner", "study"));
   expect(screen.getByRole("button", { name: "こむぎ・応用情報技術者（名前を変える）" })).toBeVisible(); expect(screen.queryByText(/いつもの机/)).toBeNull(); expect(screen.getByRole("button", { name: /育成を見る/ })).toBeEnabled();
   expect(view.container.querySelector("section")).toHaveAttribute("data-room-scene", "first-meeting");
   expect(serializePetProfileDocument(doc)).toBe(before);

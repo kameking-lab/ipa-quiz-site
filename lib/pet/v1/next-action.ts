@@ -2,6 +2,7 @@ import type { SrsCard } from "@/lib/learning/spaced-repetition";
 import type { PetProfile, PetProfileDocument } from "./profile";
 import { PET_STAGE_GOALS, petGrowthProgress } from "./growth";
 import { PET_REVIEW_INTERVAL_MS, petLearningDay } from "./learning";
+import { petMemoryPreview } from "./album";
 
 /** Advice from saved facts and the current SRS schedule; never grants progress. */
 export function petNextAction(profile: PetProfile, doc: PetProfileDocument, now: number, cards: readonly SrsCard[] = []) {
@@ -10,7 +11,7 @@ export function petNextAction(profile: PetProfile, doc: PetProfileDocument, now:
   if (!profile.unlockedStages.includes("partner")) return { label: `相棒まで あと${Math.max(0, PET_STAGE_GOALS.partner.questions - progress.uniqueQuestions)}問`, action: "新しい問題を解く", href: learn };
   if (profile.unlockedStages.includes("expert")) return { label: "今日も、いっしょに1問。", action: "学習を続ける", href: learn };
   const goal = PET_STAGE_GOALS.expert;
-  if (progress.uniqueQuestions < goal.questions) return { label: `専門家へ あと${goal.questions - progress.uniqueQuestions}問`, action: "新しい問題を解く", href: learn };
+  if (progress.uniqueQuestions < goal.questions) return { label: petMemoryPreview(profile, doc, now).invitation, action: "新しい問題を解く", href: learn };
   if (progress.delayedAnswers < goal.spaced) {
     const candidates = profile.questions.filter(q => q.lastRewardedAt !== null).map(q => {
       const card = cards.find(card => card.id === q.questionId);

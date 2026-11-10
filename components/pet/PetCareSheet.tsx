@@ -9,7 +9,7 @@ import { PET_PATHS, PET_PATH_LABELS, petGrowthProgress, petNextStageProgress, ty
 import { exportCurrentPetBackup, restoreCurrentPetBackup, savePetCare, writeCurrentPetBackup } from "@/lib/pet/v1/browser-care";
 import type { PetCareAction } from "@/lib/pet/v1/care";
 import { PET_ROOM_SCENES, PET_ROOM_STORIES } from "@/lib/pet/v1/room";
-import { petArtFor, petPathArtFor, type PetPose } from "@/lib/pet/v1/art";
+import { petPortraitFor, petGreetingLeadIn, petPathArtFor, type PetPose } from "@/lib/pet/v1/art";
 import { examLabel } from "@/lib/utils";
 import { normalizePetName, PET_DEFAULT_NAME, PET_NAME_MAX } from "@/lib/pet/v1/name";
 import { petDisplayName } from "./PetNameTitle";
@@ -17,6 +17,7 @@ import styles from "./PetCareSheet.module.css";
 import { usePetNextAction } from "./usePetNextAction";
 import { petAlbumEntries } from "@/lib/pet/v1/album";
 import { petLearningDay } from "@/lib/pet/v1/learning";
+import { PetStageProgress } from "./PetStageProgress";
 
 const STAGE_NAMES = { puppy: "こいぬ", partner: "学習の相棒", expert: "専門家" } as const;
 
@@ -30,24 +31,30 @@ export default function PetCareSheet({ document: doc, qualificationId, initialAp
   const [pending, setPending] = useState<{ raw: string; expected: PetProfileDocument; pets: number } | null>(null);
   const [savedPrevious, setSavedPrevious] = useState(false), [confirmed, setConfirmed] = useState(false);
   const [pose, setPose] = useState<PetPose>("study"), [hearts, setHearts] = useState(0);
+  const [lookChosen, setLookChosen] = useState(false), [preparing, setPreparing] = useState(false);
   const [sections, setSections] = useState({ appearance: initialAppearanceOpen, paths: false, memories: false, settings: false });
   const toggleSection = (section: keyof typeof sections, open: boolean) => setSections(current => current[section] === open ? current : { ...current, [section]: open });
   const timer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const greetingTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const heading = useRef<HTMLHeadingElement>(null);
   const mounted = useRef(true);
   const currentSelection = useRef({ owner: doc?.ownerScope, qualification: selected });
   useEffect(() => { currentSelection.current = { owner: doc?.ownerScope, qualification: selected }; }, [doc?.ownerScope, selected]);
   useEffect(() => {
     mounted.current = true;
-    const hide = () => { if (document.hidden) { if (timer.current) clearTimeout(timer.current); setPose("study"); setHearts(0); } };
+    const hide = () => { if (document.hidden) { if (timer.current) clearTimeout(timer.current); if (greetingTimer.current) clearTimeout(greetingTimer.current); setPreparing(false); setPose("study"); setHearts(0); } };
     document.addEventListener("visibilitychange", hide);
-    return () => { mounted.current = false; if (timer.current) clearTimeout(timer.current); document.removeEventListener("visibilitychange", hide); };
+    return () => { mounted.current = false; if (timer.current) clearTimeout(timer.current); if (greetingTimer.current) clearTimeout(greetingTimer.current); document.removeEventListener("visibilitychange", hide); };
   }, []);
   const showPose = (next: PetPose, caption: string) => {
     if (timer.current) clearTimeout(timer.current);
+    if (greetingTimer.current) clearTimeout(greetingTimer.current);
+    setPreparing(next === "petted" && allowMotion);
+    if (next === "petted" && allowMotion) greetingTimer.current = setTimeout(() => setPreparing(false), 700);
     setPose(next); if (profile) onPose(next, caption, profile.qualificationId); timer.current = setTimeout(() => { setPose("study"); setHearts(0); }, 6000);
   };
   const profile = selected ? doc?.profiles.find(item => item.qualificationId === selected) : doc?.profiles[0];
+  const shownStage = initialAppearanceOpen && sections.appearance && !lookChosen && pose === "study" ? profile?.unlockedStages.at(-1) ?? "puppy" : profile?.selectedStage ?? "puppy";
   const nextAction = usePetNextAction(profile, doc);
   const progress = profile ? petGrowthProgress(profile) : null;
   const next = profile ? petNextStageProgress(profile) : null;
@@ -66,6 +73,7 @@ export default function PetCareSheet({ document: doc, qualificationId, initialAp
       await savePetCare(doc, profile.qualificationId, action);
       if (!mounted.current || currentSelection.current.owner !== doc.ownerScope || (currentSelection.current.qualification ?? doc.profiles[0]?.qualificationId) !== profile.qualificationId) return;
       setMessage("保存しました。");
+      if (action.type === "stage") { setLookChosen(true); showPose("correct", ""); }
       if (action.type === "feed") showPose("meal", "もぐもぐ、ごちそうさま！");
     });
   };
@@ -81,24 +89,25 @@ export default function PetCareSheet({ document: doc, qualificationId, initialAp
       <DialogDescription>問題を解くほど育ちます。</DialogDescription>
       <div role="status" className={styles.message}>{message}</div>
       {!doc ? <p>読み込み中…</p> : <>
-        {doc.profiles.length > 1 || (selected && !profile && doc.profiles.length > 0) ? <label>資格<select value={profile?.qualificationId ?? ""} disabled={busy} onChange={event => { if (timer.current) clearTimeout(timer.current); setSelected(event.target.value); setPose("study"); setHearts(0); onPose("study", "", event.target.value); setMessage(""); setSections({ appearance: false, paths: false, memories: false, settings: false }); }}>
+        {doc.profiles.length > 1 || (selected && !profile && doc.profiles.length > 0) ? <label>資格<select value={profile?.qualificationId ?? ""} disabled={busy} onChange={event => { if (timer.current) clearTimeout(timer.current); if (greetingTimer.current) clearTimeout(greetingTimer.current); setPreparing(false); setLookChosen(true); setSelected(event.target.value); setPose("study"); setHearts(0); onPose("study", "", event.target.value); setMessage(""); setSections({ appearance: false, paths: false, memories: false, settings: false }); }}>
           {!profile ? <option value="">資格を選んでください</option> : null}
           {doc.profiles.map(item => <option key={item.petId} value={item.qualificationId}>{examLabel(item.qualificationId)}</option>)}
         </select></label> : null}
         {profile && progress && pathGoals ? <>
-          <div className={styles.hero}>
+          <div className={styles.hero} data-pet-pose={pose} data-greeting-step={preparing && allowMotion ? "looking-up" : "greeting"}>
             <div className={styles.heroArt}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={petArtFor(profile.qualificationId, profile.selectedStage, pose)} width={128} height={128} alt="" />
+              <img src={pose === "petted" && preparing && allowMotion ? petGreetingLeadIn(profile.qualificationId, shownStage) : petPortraitFor(profile.qualificationId, shownStage, pose)} width={128} height={128} alt="" />
               {/* eslint-disable-next-line @next/next/no-img-element */}
               {profile.selectedPath ? <img src={petPathArtFor(profile.selectedPath)} width={32} height={32} alt="" className={styles.heroBadge} /> : null}
               {hearts > 0 ? <span key={hearts} className={`${styles.heart} ${allowMotion ? "" : styles.stillHeart}`} aria-hidden="true">♥</span> : null}
             </div>
             <div className={styles.heroCopy}>
               <p className={styles.name}>{petDisplayName(examLabel(profile.qualificationId), profile.name)}</p>
-              <p className={styles.chips}><span className={styles.stageChip}>{STAGE_NAMES[profile.selectedStage]}</span>
+              <p className={styles.chips}><span className={styles.stageChip}>{STAGE_NAMES[shownStage]}</span>
                 {profile.selectedPath ? <span>{PET_PATH_LABELS[profile.selectedPath]}</span> : null}</p>
-              {nextAction ? <p className={styles.goal}>{nextAction.label}</p> : null}
+              {profile.unlockedStages.includes("partner") && album[0] ? <p className={styles.name}>{album[0].detail}</p> : null}
+              {nextAction ? <><p>{nextAction.label}</p><p className={styles.goal}><PetStageProgress progress={nextAction.stageProgress} /></p></> : null}
             </div>
           </div>
           <section aria-label="世話"><div className={styles.careRow}>
@@ -112,7 +121,7 @@ export default function PetCareSheet({ document: doc, qualificationId, initialAp
             <div className={styles.tiles}>{(["puppy", "partner", "expert"] as const).map(stage => { const open = profile.unlockedStages.includes(stage); return <button type="button" key={stage} className={styles.tile} disabled={busy || !open} aria-pressed={profile.selectedStage === stage} onClick={() => care({ type: "stage", stage })}>
               {open ? <>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={petArtFor(profile.qualificationId, stage, "study")} width={128} height={128} alt="" loading="lazy" decoding="async" />
+                <img src={petPortraitFor(profile.qualificationId, stage, "study")} width={128} height={128} alt="" loading="lazy" decoding="async" />
               </> : null}{STAGE_NAMES[stage]}<span className={styles.selection}>{profile.selectedStage === stage ? "選択中" : open ? "この姿にする" : "これから"}</span></button>; })}</div>
             {next ? <div className={styles.stageGoals}><p>{STAGE_NAMES[next.stage]}まで</p>{next.parts.map(part => <label key={part.unit} className={styles.meter}><span>{part.now}/{part.goal}{part.unit}</span><meter min={0} max={part.goal} value={part.now} /></label>)}</div> : null}
           </details>

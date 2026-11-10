@@ -2,6 +2,7 @@ import { expect, it } from "vitest";
 import { emptyPetProfiles, newPetProfile, petQuestionSchema } from "@/lib/pet/v1/profile";
 import { petNextAction } from "@/lib/pet/v1/next-action";
 import { petAlbumEntries } from "@/lib/pet/v1/album";
+import { petMemoryPreview } from "@/lib/pet/v1/album";
 import { PET_REVIEW_INTERVAL_MS as DAY } from "@/lib/pet/v1/learning";
 
 const at = Date.parse("2026-11-11T10:00:00+09:00");
@@ -13,7 +14,12 @@ function setup(count = 30) {
 }
 it("keeps a concrete next-question target after partner without changing growth", () => {
   const { doc, pet } = setup(5), before = JSON.stringify(doc);
-  expect(petNextAction(pet, doc, at)).toEqual({ label: "専門家へ あと25問", action: "新しい問題を解く", href: "/quiz?mode=unanswered&exam=ip" });
+  pet.roomEvents.push({ scene: "first-meeting", day: "2026-11-11", occurredAt: at });
+  const saved = JSON.stringify(doc);
+  expect(petNextAction(pet, doc, at)).toEqual({ label: "明日また1問で「小さなしおり」", action: "新しい問題を解く", href: "/quiz?mode=unanswered&exam=ip" });
+  expect(petMemoryPreview(pet, doc, at + DAY).invitation).toBe("今日の1問で「小さなしおり」");
+  expect(JSON.stringify(doc)).toBe(saved);
+  pet.roomEvents = [];
   expect(JSON.stringify(doc)).toBe(before);
 });
 it("waits for both 24h and the actual SRS due date, then links the exact question", () => {
