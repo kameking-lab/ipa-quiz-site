@@ -6,7 +6,8 @@ import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import overlay from "@/data/questions/au/choice-explanations-cx-k6au.json";
 import type { ChoiceKey } from "@/lib/questions/types";
 
-// Deliberately leave image-dependent questions and the disputed key untouched.
+// Leave image-dependent questions and one pending standards explanation untouched.
+// The official choices and answer of 2021 q23 were verified in k6au-review.
 const IMAGE_DEPENDENT = new Set([
   "au-2009h-am2-q15", "au-2009h-am2-q17",
   "au-2010h-am2-q5", "au-2010h-am2-q21",
@@ -14,7 +15,7 @@ const IMAGE_DEPENDENT = new Set([
   "au-2023a-am2-q23", "au-2023a-am2-q24",
   "au-2025a-am2-q21",
 ]);
-const DISPUTED_KEY = "au-2021a-am2-q23";
+const PENDING_STANDARD_EXPLANATION = "au-2021a-am2-q23";
 const entries: Record<string, Record<string, string>> = overlay;
 
 describe("AU morning II choice explanations", () => {
@@ -28,7 +29,7 @@ describe("AU morning II choice explanations", () => {
     expect(new Set(questions.map(q => q.year)).size).toBe(8);
     expect(Object.keys(entries)).toHaveLength(190);
     for (const question of questions) {
-      const skipped = IMAGE_DEPENDENT.has(question.id) || question.id === DISPUTED_KEY;
+      const skipped = IMAGE_DEPENDENT.has(question.id) || question.id === PENDING_STANDARD_EXPLANATION;
       expect(Boolean(entries[question.id]), question.id).toBe(!skipped);
     }
   });
