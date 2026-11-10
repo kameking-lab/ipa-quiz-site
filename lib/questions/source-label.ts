@@ -65,7 +65,7 @@ if (q.exam === "biyoshi" && q.year === 2026) {
     if (q.season === "second")
         return "第54回（2026年9月6日実施）";
 }
-if (q.exam?.startsWith("kikenbutsu-otsu") && q.season === "published")
+if ((q.exam?.startsWith("kikenbutsu-") || q.exam?.startsWith("shobo-setsubishi-")) && q.season === "published")
     return "2026年6月公表版（個別の出題年・回は非公表）";
 if (q.exam?.startsWith("jken-katsuyo")) {
     if (q.year === 2026 && q.season === "first" && /\/260621_mondaijk0[123]\.pdf$/.test(q.sourcePdfUrl))

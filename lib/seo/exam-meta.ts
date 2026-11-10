@@ -6,6 +6,14 @@ import { questionSourceEdition } from "@/lib/questions/source-label";
 import { examLabel } from "@/lib/utils";
 import { isIpaTop, ipaTopDescription } from "@/lib/seo/ipa-top";
 export const EXAM_DESCRIPTIONS: Partial<Record<ExamCode, string>> = {
+    "kikenbutsu-otsu4": "2026年6月公表版の抜粋35問。公式問題画像・正答と全肢解説を収録。",
+    "kikenbutsu-kou": "2026年6月公表版の抜粋45問。公式問題画像・正答と全肢解説を収録。",
+    "kikenbutsu-hei": "2026年6月公表版の抜粋25問。公式問題画像・正答と全肢解説を収録。",
+    "shobo-setsubishi-kou1": "2026年6月公表版の筆記19問・実技2大問（計26解答単位）。公式問題画像・正答と独自解説を収録。記述は解答例で自己確認できます。",
+    "shobo-setsubishi-kou4": "2026年6月公表版の筆記13問・実技2問。公式問題画像・正答と独自解説を収録。記述は解答例で自己確認できます。",
+    "shobo-setsubishi-otsu6": "2026年6月公表版の筆記14問・実技1大問（計16解答単位）。公式問題画像・正答と独自解説を収録。記述は解答例で自己確認できます。",
+    "unko-kanrisha-kamotsu": "2023・2024年度CBT出題例60原問・86解答単位。公式問題画像・正答と全肢解説を収録。",
+    "unko-kanrisha-ryokaku": "2023・2024年度CBT出題例60原問・92解答単位。公式問題画像・正答と全肢解説を収録。",
   "benrishi": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。",
   "sokuryoshi": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。午前56問・午後10大問。午後は必須1題と選択4題から2題。記述・作図は公式解答例で自己確認し、自動採点しません。",
   "dokugeki-chiba": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。一般・農業用品目・特定品目の各回各80解答欄、計480欄。原文の用語の疑義は注記します。",

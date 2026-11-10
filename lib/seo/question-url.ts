@@ -13,10 +13,11 @@ export function questionNumberSegment(qNumber: number, part?: QuestionPart): str
   return /^\d$/.test(part) ? `q${qNumber}-${part}` : `q${qNumber}${part}`;
 }
 
-/** 枝番(a)/(b)は電験三種、数字の枝番は電験一・二種・診断士の設問と司法試験・予備試験短答の解答欄に使用する。 */
+/** 枝番(a)/(b)と、数字の枝番で解答欄を分ける資格。 */
 const PART_EXAMS: Record<"letter" | "blank", readonly string[]> = {
   letter: ["denken3", "maritime4", "aviation-comm", "maritime3", "maritime2", "maritime1", "general3", "general2", "general1"],
-  blank: ["denken2", "denken1", "chusho-kigyo-shindanshi", "shiho-tanto", "yobi-tanto", "tsukanshi"],
+  blank: ["denken2", "denken1", "chusho-kigyo-shindanshi", "shiho-tanto", "yobi-tanto", "tsukanshi",
+    "unko-kanrisha-kamotsu", "unko-kanrisha-ryokaku", "shobo-setsubishi-kou1", "shobo-setsubishi-kou4", "shobo-setsubishi-otsu6"],
 };
 
 export function parseQuestionNumberSegment(exam: string, qnum: string): { qNumber: number; part?: QuestionPart } | null {

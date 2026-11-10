@@ -1,51 +1,105 @@
 import { describe, expect, it } from "vitest";
+import { createElement } from "react";
+import { renderToStaticMarkup } from "react-dom/server";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
-import { EXAM_CONFIGS } from "@/lib/exam-config";
+import { ALL_QUIZ_EXAM_CODES, EXAM_CONFIGS } from "@/lib/exam-config";
 import { getQualificationByExamCode, isExamPublished } from "@/lib/qualifications/catalog";
 import { getQuestionsForExam, getRegisteredExamCodes } from "@/lib/questions/get-questions";
 import { isPracticeReadyQuestion, shuffleChoices } from "@/lib/questions/filter";
 import { choiceDisplayLabel } from "@/lib/questions/display";
+import { questionSourceEdition } from "@/lib/questions/source-label";
+import { getHomeDirectory } from "@/lib/home/home-directory";
+import QualificationsPage from "@/app/qualifications/page";
+import { generateStaticParams, generateMetadata } from "@/app/[exam]/page";
+import { getAvailableExams, getQuestionsByExamStrict, groupByYearSeason } from "@/lib/seo/exam-meta";
+import { questionPagePath, findQuestionByRoute } from "@/lib/seo/question-url";
+import { renderExamsSitemapXml, renderQuestionsSitemapChunkXml } from "@/lib/seo/sitemap-xml";
+import { getSitemapChunkCount } from "@/lib/seo/sitemap-pagination";
+import { searchQuestions } from "@/lib/search/question-index";
 import { defaultPracticeSession, practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { ExamCode, Question } from "@/lib/questions/types";
 
 const exams: ExamCode[] = ["unko-kanrisha-ryokaku", "shobo-setsubishi-kou1", "kikenbutsu-kou", "kikenbutsu-hei", "shobo-setsubishi-kou4", "shobo-setsubishi-otsu6", "kikenbutsu-otsu4", "unko-kanrisha-kamotsu"];
 
-describe("k11 official-source candidates remain private", () => {
+describe("eight prepared qualifications are published", () => {
+  const counts: Record<string, number> = {
+    "kikenbutsu-otsu4": 35, "kikenbutsu-kou": 45, "kikenbutsu-hei": 25,
+    "shobo-setsubishi-kou1": 26, "shobo-setsubishi-kou4": 15, "shobo-setsubishi-otsu6": 16,
+    "unko-kanrisha-kamotsu": 86, "unko-kanrisha-ryokaku": 92,
+  };
+  const examSitemap = renderExamsSitemapXml();
+  const questionSitemap = Array.from({ length: getSitemapChunkCount() }, (_, i) => renderQuestionsSitemapChunkXml(i)).join("");
+
+  it("renders all eight qualification cards and includes each hub in static generation", async () => {
+    const doc = new DOMParser().parseFromString(renderToStaticMarkup(createElement(QualificationsPage)), "text/html");
+    const params = await generateStaticParams();
+    const directory = getHomeDirectory().flatMap(domain => [...domain.featured, ...domain.compact]);
+    for (const exam of exams) {
+      expect(params).toContainEqual({ exam });
+      expect(directory.find(item => item.key === exam)).toMatchObject({ href: `/${exam}`, questionCount: counts[exam] });
+      const card = [...doc.querySelectorAll("article")].find(article => article.querySelector(`a[href="/${exam}"]`));
+      expect(card?.textContent).toContain(`収録 ${counts[exam]}問`);
+      expect(card?.textContent).not.toMatch(/非公開で保管|許可待ち/);
+      const metadata = await generateMetadata({ params: Promise.resolve({ exam }) });
+      expect(metadata.alternates?.canonical).toBe(`/${exam}`);
+      expect(metadata.robots).toBeUndefined();
+    }
+  });
+
   for (const exam of exams) {
     const dir = join(process.cwd(), "data/questions", exam);
     const questions: Question[] = readdirSync(dir)
       .filter(name => /^(published-|20\d\d)/.test(name) && name.endsWith(".json"))
       .flatMap(name => JSON.parse(readFileSync(join(dir, name), "utf8")));
 
-    it(`${exam}: blocks eager and lazy publication, including discovery`, async () => {
-      expect(getQualificationByExamCode(exam)?.status).toBe("permission-required");
-      expect(isExamPublished(exam)).toBe(false);
-      expect(QUESTIONS_BY_EXAM[exam]).toBeUndefined();
-      expect(await getQuestionsForExam(exam)).toEqual([]);
-      expect(getRegisteredExamCodes()).not.toContain(exam);
-      expect(questions.length).toBeGreaterThan(0);
+    it(`${exam}: exposes the same complete corpus to lists, pages, search and practice`, async () => {
+      expect(getQualificationByExamCode(exam)?.status).toBe("live");
+      expect(isExamPublished(exam)).toBe(true);
+      expect(questions).toHaveLength(counts[exam]);
+      expect(QUESTIONS_BY_EXAM[exam]).toEqual(questions);
+      expect(await getQuestionsForExam(exam)).toEqual(questions);
+      expect(getQuestionsByExamStrict(exam)).toEqual(questions);
+      expect(getRegisteredExamCodes()).toContain(exam);
+      expect(ALL_QUIZ_EXAM_CODES).toContain(exam);
+      expect(getAvailableExams()).toContain(exam);
+      expect(examSitemap).toContain(`/${exam}</loc>`);
+      for (const group of groupByYearSeason(questions)) {
+        expect(examSitemap).toContain(`/${exam}/${group.key}</loc>`);
+      }
+      const hits = [];
+      for (let offset = 0; offset < questions.length; offset += 60) {
+        const result = await searchQuestions({ exam, offset, limit: 60 });
+        expect(result.total).toBe(questions.length);
+        hits.push(...result.hits);
+      }
+      expect(hits.map(hit => hit.id).sort()).toEqual(questions.map(q => q.id).sort());
+      for (const q of questions) {
+        const path = questionPagePath(q);
+        expect(questionSitemap, q.id).toContain(`${path}</loc>`);
+        const [, , exam, yearSeason, section, qnum] = path.split("/");
+        expect(findQuestionByRoute(questions, { exam, yearSeason, section, qnum })?.id).toBe(q.id);
+      }
     });
 
     it(`${exam}: preserves sources, images, all-choice explanations and printed numbering`, () => {
       expect(new Set(questions.map(q => q.id)).size).toBe(questions.length);
       for (const q of questions) {
-        expect(q.publicAllowed).toBe(false);
-        expect(isPracticeReadyQuestion(q)).toBe(false);
+        expect(q.publicAllowed).toBe(true);
+        expect(isPracticeReadyQuestion(q), q.id).toBe(true);
         expect(q.exam).toBe(exam);
         expect(q.sourceAnswerUrl).toMatch(/^https:\/\//);
         expect(q.sourcePdfUrl).toMatch(/^https:\/\//);
         expect(q.sourceAttribution).toContain("独自作成");
+        if (q.season === "published") expect(questionSourceEdition(q)).toContain("2026年6月公表版");
         expect(EXAM_CONFIGS[q.exam].seasons).toContain(q.season);
         expect(EXAM_CONFIGS[q.exam].sessions.find(s => s.session === q.session)?.categories).toContain(q.category);
         expect(defaultPracticeSession(q.exam)).toBe("gakka");
         expect(practiceSessionLabel(q.session, q.exam)).not.toContain("薬学");
         for (const url of [...(q.imageUrls ?? []), ...(q.answerImageUrls ?? [])]) {
-          // Neither direct static URLs nor the image optimizer's internal fetch
-          // may read staged assets. Keep the bytes outside the public root.
-          expect(existsSync(join(process.cwd(), "public", url))).toBe(false);
-          expect(existsSync(join(process.cwd(), "private-assets/k11", url))).toBe(true);
+          expect(existsSync(join(process.cwd(), "public", url)), url).toBe(true);
+          expect(existsSync(join(process.cwd(), "private-assets/k11", url))).toBe(false);
         }
         if (q.type === "descriptive") continue;
         const keys = Object.keys(q.choices!);
