@@ -3,6 +3,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { saveQuizReturn } from "@/lib/billing/quiz-return";
 import { posthogCapture } from "@/lib/posthog";
+import { flushJourney, observeJourney } from "@/lib/billing/journey-client";
 
 const MESSAGES: Record<string, string> = {
   sign_in_required: "ログインが切れました。もう一度お試しください。",
@@ -25,6 +26,8 @@ export function AutoCheckout({ terms, returnTo, fallback, testMode = false }: { 
         const body = value && typeof value === "object" ? value as { url?: unknown; orderId?: unknown; error?: unknown } : {};
         if (!response.ok || typeof body.url !== "string") throw new Error(typeof body.error === "string" ? MESSAGES[body.error] ?? "" : "");
         posthogCapture("checkout_started", { plan: "monthly", test_mode: testMode, source: "plan_button" });
+        observeJourney({ stage: "checkout" });
+        flushJourney();
         try {
           if (returnTo) {
             saveQuizReturn(window.sessionStorage, returnTo);

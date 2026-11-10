@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Lock, Shield, TrendingDown } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { fetchFunnelData, isFunnelConfigured } from "@/lib/admin/funnel/posthog";
@@ -48,6 +49,7 @@ export default async function AdminFunnelPage() {
         </div>
       </header>
 
+      <p className="mb-6"><Link href="/admin/funnel/journey" className="underline">課金前の平均解答数・案内ページ・最終到達点（KV集計）</Link></p>
       <FunnelDashboard initial={initial} />
     </main>
   );
