@@ -861,7 +861,7 @@ hokenshi: {
         { session: "pm", urlSlug: "pm", expectedQuestions: 55, label: "午後", categories: ["午後"] },
     ],
     seasons: ["annual"],
-    yearRange: { start: 2022, end: 2025 },
+    yearRange: { start: 2021, end: 2025 },
 },
 josanshi: {
     code: "josanshi",
@@ -870,7 +870,7 @@ josanshi: {
     level: "advanced",
     sessions: [{ session: "am", urlSlug: "am", expectedQuestions: 55, label: "午前", categories: ["午前"] }],
     seasons: ["annual"],
-    yearRange: { start: 2022, end: 2025 },
+    yearRange: { start: 2021, end: 2025 },
 },
 "sagyo-ryohoshi": {
     code: "sagyo-ryohoshi",
@@ -919,13 +919,13 @@ kangoshi: {
     nameFull: "看護師国家試験",
     urlSlug: "kangoshi",
     level: "basic",
-    // 収録は第115回・第114回の午前 問1〜50（第115回問32は採点除外のため未収録）。午前全体の問題数ではない。
+    // 直近2回の確認済み原問と、第113～111回の午前各10問を部分収録。expectedQuestionsは既存の表示設定。
     sessions: [{
             session: "am", urlSlug: "am", expectedQuestions: 50, label: "午前",
             categories: ["必修問題", "一般問題"],
         }],
     seasons: ["annual"],
-    yearRange: { start: 2022, end: 2025 },
+    yearRange: { start: 2021, end: 2025 },
 },
 "ahaki-anma": {
     code: "ahaki-anma",
