@@ -80,6 +80,6 @@ describe("immutable late six national-pension originals", () => {
     expect(catalog.reuseSummary).toContain("全156原問中146原問");
     expect(catalog.reuseSummary).toContain("国民年金法20原問");
     expect(catalog.reuseSummary).toContain("両年度各10原問が揃っています");
-    expect(catalog.remainingWork).toContain("未収録7原問（択一式のみ）の原典・正答・試験時点資料を確認");
+    expect(catalog.remainingWork).toContain("未収録10原問（択一式のみ）の原典・正答・試験時点資料を確認");
   });
 });
