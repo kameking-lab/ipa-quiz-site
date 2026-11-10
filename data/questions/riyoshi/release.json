@@ -167,5 +167,5 @@
     "riyoshi-2025-second-gakka-q54",
     "riyoshi-2025-second-gakka-q55"
   ],
-  "reason": "Integration acceptance of the 110 completed candidates: official question/answer and figure checks plus the existing independent content review. User production decision was relayed by the parent on 2026-10-11; this does not assert a provider license or a new Opus receipt. External merge and deployment remain subject to the execution approval review."
+  "reason": "Integration acceptance of the 110 completed candidates: official question/answer and figure checks plus the existing independent content review. User production decision was relayed by the parent on 2026-10-11; this does not assert a provider license or a new Opus receipt. External merge and deployment remain subject to the execution approval review. On 2026-11-10, 55 questions from the 52nd examination (2025 second sitting) were added, bringing the allowlist to 165 questions. The implementation checked the official PDF questions, marked answers and figures; the independent k10c-review at commit 3f12fb4f8 rechecked all 55 questions and answers against the official PDF and read all 220 choice explanations. That review reported no answer mismatch and a minor explanation-depth issue for questions 47 and 48 (N2). This addition records verification work, not a new production approval."
 }
