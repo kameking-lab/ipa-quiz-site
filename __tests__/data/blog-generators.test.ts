@@ -248,7 +248,9 @@ describe("blog 土台 科目B posts — FE 科目B exam-format facts are correct
     expect(post).toBeDefined();
     const body = post!.body;
     expect(body).toContain("150分");
-    expect(body).toContain("60点");
+    // The refreshed article focuses on A/B timing; scoring is covered separately.
+    expect(body).toContain("科目Aと科目B");
+    expect(body).toContain("公式が指定した配分ではありません");
     expect(body).toContain("(/ap)");
     // must not over-claim AP afternoon AI grading (mock data — HD-4)
     expect(body).not.toContain("/essay");
