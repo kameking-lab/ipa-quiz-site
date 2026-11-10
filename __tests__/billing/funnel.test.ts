@@ -1,12 +1,41 @@
 // @vitest-environment node
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { CLIENT_FUNNEL_EVENTS, FUNNEL_EVENTS, funnelKey, readFunnel, recordFunnel } from "@/lib/billing/funnel";
+import { CLIENT_FUNNEL_EVENTS, FUNNEL_EVENTS, funnelKey, readFunnel, recordFunnel, readFunnelSources, saveOrderAttribution, readOrderAttribution } from "@/lib/billing/funnel";
 
 const NOW = Date.parse("2026-11-07T15:30:00Z"); // 2026-11-08 00:30 JST
 beforeEach(() => { vi.stubEnv("KV_REST_API_URL", "https://kv.example.invalid/"); vi.stubEnv("KV_REST_API_TOKEN", "kv-token"); vi.stubEnv("AUTH_SECRET", "fixture-secret"); });
 afterEach(() => { vi.unstubAllEnvs(); vi.unstubAllGlobals(); });
 
 describe("purchase funnel counter (KV, per JST day, distinct visitors)", () => {
+  it("keeps global counts and adds daily source/content sets with the same de-duplicated member", async () => {
+    const fetcher = vi.fn(async () => Response.json([])); vi.stubGlobal("fetch", fetcher);
+    const touch = { utm_source: "tsugino_shikaku", utm_content: "sc.hero" };
+    await recordFunnel("free_limit_reached", "guest:private", NOW, touch);
+    const commands = JSON.parse(String((fetcher.mock.calls[0] as unknown as [string, RequestInit])[1].body));
+    expect(commands[2]).toEqual(["SADD", "funnel:v1:2026-11-08:free_limit_reached:source:tsugino_shikaku:sc.hero", commands[0][2]]);
+    expect(commands[4]).toEqual(["SADD", "funnel:v1:2026-11-08:sources", "tsugino_shikaku:sc.hero"]);
+    expect(JSON.stringify(commands)).not.toContain("private");
+  });
+  it("stores order attribution idempotently under a digest and reads it back", async () => {
+    const touch = { utm_source: "tsugino", utm_content: "sc" };
+    const fetcher = vi.fn(async () => Response.json([{ result: JSON.stringify(touch) }])); vi.stubGlobal("fetch", fetcher);
+    await saveOrderAttribution("private-order", touch);
+    expect(await readOrderAttribution("private-order")).toEqual(touch);
+    const calls = fetcher.mock.calls as unknown as [string, RequestInit][];
+    expect(String(calls[0][1].body)).not.toContain("private-order");
+    expect(JSON.parse(String(calls[0][1].body))[0]).toEqual(["SET", expect.stringMatching(/^funnel:v1:order-source:[a-f0-9]{32}$/), JSON.stringify(touch), "EX", String(95 * 86400), "NX"]);
+  });
+  it("reads source rows without conflating qualifications, dates or events", async () => {
+    vi.stubGlobal("fetch", vi.fn(async (_url: string, init?: RequestInit) => {
+      const commands = JSON.parse(String(init?.body)) as string[][];
+      return Response.json(commands.map(([command, key]) => ({ result: command === "SMEMBERS" ? ["tsugino:sc.hero", "tsugino:ap.hero"] : key.endsWith("sc.hero") && key.includes(":checkout_completed:") ? 2 : 0 })));
+    }));
+    const result = await readFunnelSources(2, NOW);
+    expect(result.available).toBe(true);
+    expect(result.days).toHaveLength(4);
+    expect(result.days.find(r => r.day === "2026-11-08" && r.utm_content === "sc.hero")?.counts.checkout_completed).toBe(2);
+    expect(result.days.find(r => r.utm_content === "ap.hero")?.counts.checkout_completed).toBe(0);
+  });
   it("adds the visitor's keyed hash to the JST day's set in one awaited pipeline, never the raw identifier", async () => {
     const fetcher = vi.fn<(url: string, init?: RequestInit) => Promise<Response>>(async () => Response.json([{ result: 1 }, { result: 1 }]));
     vi.stubGlobal("fetch", fetcher);

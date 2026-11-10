@@ -3,7 +3,9 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { monthlyStripeFixture } from "./monthly-stripe-fixture";
 const wiring = vi.hoisted(() => ({ runtime: null as unknown, user: "alice", email: undefined as string | undefined }));
 const record = vi.hoisted(() => vi.fn<(...args: unknown[]) => Promise<boolean>>(async () => true));
-vi.mock("@/lib/billing/funnel", () => ({ recordFunnel: record }));
+const saveSource = vi.hoisted(() => vi.fn(async () => {}));
+const readSource = vi.hoisted(() => vi.fn<(...args: unknown[]) => Promise<unknown>>(async () => null));
+vi.mock("@/lib/billing/funnel", () => ({ recordFunnel: record, saveOrderAttribution: saveSource, readOrderAttribution: readSource }));
 vi.mock("@/lib/billing/checkout-email", () => ({ checkoutEmail: async () => wiring.email }));
 vi.mock("@/lib/billing/subscription/runtime", () => ({ monthlyRuntime: () => wiring.runtime }));
 vi.mock("@/lib/billing/runtime", () => ({
@@ -23,13 +25,29 @@ function signed(event: unknown) {
 }
 const post = (body: unknown) => new Request("http://localhost:3338/api/billing/checkout", { method: "POST", headers: { origin: "http://localhost:3338" }, body: JSON.stringify(body) });
 beforeEach(() => {
-  record.mockClear(); wiring.user = "alice"; wiring.email = undefined;
+  record.mockClear(); saveSource.mockClear(); readSource.mockReset().mockResolvedValue(null); wiring.user = "alice"; wiring.email = undefined;
   vi.stubGlobal("fetch", () => { throw new Error("External fetch forbidden"); });
   for (const [key, value] of Object.entries({ BILLING_PRODUCT: "subscription", BILLING_WEBHOOK_MODE: "stripe-test", BILLING_SOURCE_INSTANCE: "monthly-fixture", BILLING_ORIGIN: "http://localhost:3338", BILLING_STRIPE_TEST_WEBHOOK_SECRET: secret })) vi.stubEnv(key, value);
 });
 afterEach(() => { vi.unstubAllEnvs(); vi.unstubAllGlobals(); });
 
 describe("server-confirmed funnel steps", () => {
+  it("links first-touch labels to the order and recovers them from the verified webhook", async () => {
+    const f = await monthlyStripeFixture(); wiring.runtime = f;
+    const touch = { utm_source: "tsugino_shikaku", utm_content: "sc" };
+    const request = post({ terms: monthlyTerms(f.config) });
+    request.headers.set("cookie", `funnel_first_touch=${encodeURIComponent(JSON.stringify(touch))}`);
+    const response = await checkout(request);
+    const result = await response.json();
+    expect(response.status).toBe(200);
+    expect(saveSource).toHaveBeenCalledWith(result.orderId, touch);
+    expect(record).toHaveBeenCalledWith("checkout_started", "user:alice", expect.any(Number), touch);
+    readSource.mockResolvedValueOnce(touch);
+    const completed = { id: "evt_source_done", type: "checkout.session.completed", livemode: false, data: { object: { ...f.session, status: "complete", mode: "subscription", client_reference_id: result.orderId } } };
+    expect((await webhook(signed(completed))).status).toBe(200);
+    expect(readSource).toHaveBeenCalledWith(result.orderId);
+    expect(record).toHaveBeenCalledWith("checkout_completed", `session:${f.session.id}`, expect.any(Number), touch);
+  });
   it("counts checkout_started per signed-in user only after a Checkout session exists", async () => {
     const f = await monthlyStripeFixture(); wiring.runtime = f;
     const response = await checkout(post({ terms: monthlyTerms(f.config) }));

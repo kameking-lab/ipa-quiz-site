@@ -4,7 +4,7 @@ import { eventDigest, verifyStripeEvent } from "@/lib/billing/signature";
 import { StripeCheckoutProvider } from "@/lib/billing/stripe";
 import { billingWebhookConfig } from "@/lib/billing/config";
 import { monthlyConfig, monthlySelected } from "@/lib/billing/subscription/config";
-import { recordFunnel } from "@/lib/billing/funnel";
+import { recordFunnel, readOrderAttribution } from "@/lib/billing/funnel";
 export const runtime = "nodejs";
 export async function POST(request: Request) {
   try {
@@ -20,7 +20,13 @@ export async function POST(request: Request) {
       const result = await service.receive(event as { id: string }, eventDigest(raw), provider);
       const session = completedSubscriptionSession(event);
       // Counted once per Checkout session (Stripe retries are de-duplicated), awaited before the 2xx.
-      if (session && result !== "ignored") await recordFunnel("checkout_completed", `session:${session}`);
+      if (session && result !== "ignored") {
+        const object = (event as { data?: { object?: { client_reference_id?: unknown } } }).data?.object;
+        const order = typeof object?.client_reference_id === "string" ? object.client_reference_id : "";
+        const attribution = order ? await readOrderAttribution(order) : null;
+        if (attribution) await recordFunnel("checkout_completed", `session:${session}`, Date.now(), attribution);
+        else await recordFunnel("checkout_completed", `session:${session}`);
+      }
       return json({ received: true, result });
     }
     const { service, provider } = billingWebhookRuntime();

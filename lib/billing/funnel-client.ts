@@ -1,4 +1,5 @@
 import type { ClientFunnelEvent } from "./funnel-events";
+import { firstTouch } from "@/lib/analytics/first-touch";
 
 const sent = new Set<string>();
 
@@ -13,6 +14,7 @@ export function sendFunnelEvent(event: ClientFunnelEvent) {
   if (typeof navigator === "undefined" || typeof navigator.sendBeacon !== "function" || sent.has(event)) return;
   sent.add(event);
   try {
+    firstTouch();
     navigator.sendBeacon("/api/funnel", new Blob([JSON.stringify({ event })], { type: "text/plain;charset=UTF-8" }));
   } catch { /* Counting never affects the page. */ }
 }

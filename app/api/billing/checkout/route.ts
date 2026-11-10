@@ -4,7 +4,8 @@ import { checkoutEmail } from "@/lib/billing/checkout-email";
 import { monthlySelected } from "@/lib/billing/subscription/config";
 import { revenueCatAccess } from "@/mobile/server/revenuecat";
 import { BillingError } from "@/lib/billing/domain";
-import { recordFunnel } from "@/lib/billing/funnel";
+import { recordFunnel, saveOrderAttribution } from "@/lib/billing/funnel";
+import { requestAttribution } from "@/lib/billing/attribution";
 export const runtime = "nodejs";
 export async function POST(request: Request) {
   try {
@@ -21,7 +22,11 @@ export async function POST(request: Request) {
       result = await service.checkout(userId, terms, provider);
     }
     // Awaited: the function is frozen once the response is sent.
-    await recordFunnel("checkout_started", `user:${userId}`);
+    const attribution = requestAttribution(request);
+    if (attribution) {
+      await saveOrderAttribution(result.orderId, attribution);
+      await recordFunnel("checkout_started", `user:${userId}`, Date.now(), attribution);
+    } else await recordFunnel("checkout_started", `user:${userId}`);
     return json(result);
   } catch (error) { return billingFailure(error); }
 }
