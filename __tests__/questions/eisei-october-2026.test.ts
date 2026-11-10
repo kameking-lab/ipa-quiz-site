@@ -1,4 +1,5 @@
 import { describe, expect, it } from "vitest";
+import { renderToStaticMarkup } from "react-dom/server";
 import { EISEI1_QUESTIONS } from "@/data/questions/eisei1";
 import { EISEI2_QUESTIONS } from "@/data/questions/eisei2";
 import source1 from "@/data/questions/eisei1/2026-october-source.json";
@@ -9,6 +10,7 @@ import { questionSourceEdition } from "@/lib/questions/source-label";
 import { questionPagePath, parseQuestionRoute } from "@/lib/seo/question-url";
 import { getQuestionsByExamStrict, groupByYearSeason } from "@/lib/seo/exam-meta";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
+import YearModePage from "@/app/modes/year/page";
 
 const KEYS = ["ア", "イ", "ウ", "エ", "オ"] as const;
 // Transcribed from the circled official answers in PDF pp.19–23 / pp.12–16.
@@ -59,6 +61,16 @@ describe("衛生管理者2026年10月公表版の労働生理", () => {
       expect(new Set(sync.map(questionPagePath)).size).toBe(sync.length);
       expect(questionPagePath(october[0])).toBe(`/q/${exam}/2026-october/gakka/q${first}`);
       expect(parseQuestionRoute({ exam, yearSeason: "2026-october", section: "gakka", qnum: `q${first}` })).not.toBeNull();
+    });
+
+    it(`${exam}: 年度別学習画面でも公表月と10問の範囲を表示する`, async () => {
+      const html = renderToStaticMarkup(await YearModePage({ searchParams: Promise.resolve({ exam }) }));
+      const doc = new DOMParser().parseFromString(html, "text/html");
+      const october = Array.from(doc.querySelectorAll("a")).find(a => a.href.includes("season=october"));
+      expect(october?.textContent).toContain("2026年10月公表問題");
+      expect(october?.textContent).toContain("収録 10 問");
+      expect(october?.textContent).not.toContain("10月試験");
+      expect(doc.body.textContent).toContain("2026年4月公表問題");
     });
   }
 });
