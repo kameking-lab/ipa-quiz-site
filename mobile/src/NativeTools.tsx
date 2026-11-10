@@ -55,6 +55,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   const [revealTick,setRevealTick]=useState(0);
   const heading=useRef<HTMLHeadingElement>(null);
   const [downloading,setDownloading]=useState(false);
+  const [downloadCode,setDownloadCode]=useState<string|null>(null), [downloadProgress,setDownloadProgress]=useState("");
   const abort = useRef<AbortController | null>(null), user = useRef<string | null>(null);
   const studyReady = useRef(false), accessSignature = useRef("");
   const running=useRef(false);
@@ -63,7 +64,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   const refresh = useCallback((fresh = false) => {
     const task=refreshing.current.then(async()=>{
     const response = await fetch("/api/mobile/entitlement", { method: fresh ? "POST" : "GET", cache: "no-store" });
-    if (!response.ok) { setAccess(null); setOffer(null); await downloads.invalidate(); throw new Error("会員状態を確認できません。購入・保存の前にオンラインで再確認してください。"); }
+    if (!response.ok) { setOffer(null); if([401,403].includes(response.status))await downloads.invalidate(); throw new Error("会員状態を確認できません。購入・保存の前にオンラインで再確認してください。"); }
     const result = await response.json() as { entitlement: MobileEntitlement; configuration: MobileConfiguration };
     result.configuration.sdkKey = await nativePublicSdkKey(result.configuration.sdkKey);
     if (studyReady.current && result.entitlement.userId !== user.current) {
@@ -80,7 +81,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     if(accessSignature.current!==signature) { accessSignature.current=signature;window.dispatchEvent(new Event("mobile:entitlement-changed")); }
     setAccess(result.entitlement); setConfig(result.configuration);
     if (result.entitlement.entitled && result.entitlement.lease) await downloads.updateRights(result.entitlement, result.configuration.leasePublicKey).catch(()=>{setNotice("オフライン用の検証キーは配布設定待ちです。オンラインの学習・会員権利は利用できます。");});
-    else await downloads.invalidate();
+    else if(!result.entitlement.entitled)await downloads.invalidate();
     setSaved(await downloads.list());
     return result;
     });
@@ -129,7 +130,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     const click = (e: MouseEvent)=>{
       const a = (e.target as Element)?.closest?.("a[href]"); if (!a) return;
       const url = new URL(a.getAttribute("href")!, location.href);
-      if (url.origin === SITE_ORIGIN && url.pathname.startsWith("/billing")) { e.preventDefault(); e.stopPropagation(); setOpen(true); setRevealTick(n=>n+1); }
+      if (url.origin === SITE_ORIGIN && ["/billing", "/billing/start"].includes(url.pathname.replace(/\/$/, ""))) { e.preventDefault(); e.stopPropagation(); setOpen(true); setRevealTick(n=>n+1); }
       else if (url.origin !== SITE_ORIGIN && url.protocol === "https:") { e.preventDefault(); e.stopPropagation(); void (isQualificationUrl(url.href) ? openQualificationUrl(url.href) : Browser.open({ url: url.href })).catch(()=>setNotice("リンクを開けませんでした。再度お試しください。")); }
     };
     document.addEventListener("click",click,true);
@@ -242,14 +243,14 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
               <span className="flex gap-2"><button className={secondary} disabled={busy} onClick={()=>void run(async()=>{
                 if (!access.entitled) { setNotice("事前ダウンロードは有料会員の特典です。無料でもオンラインで全資格から1日10問使えます。"); return; }
                 await refresh(true); abort.current=new AbortController();
-                setDownloading(true);
+                setDownloading(true);setDownloadCode(e.code);setDownloadProgress("準備中…");
                 const group=e.qualification?catalog.filter(item=>item.qualification===e.qualification):[e];
-                try { for(const part of group) await downloads.download(part.code,path=>fetch(path,{ cache:"no-store",signal:abort.current!.signal }), (n,total)=>setNotice(`${part.name}: ${n}/${total}問`),abort.current.signal); }
-                finally {setDownloading(false);abort.current=null;}
+                try { for(const part of group) await downloads.download(part.code,path=>fetch(path,{ cache:"no-store",signal:abort.current!.signal }), (n,total)=>setDownloadProgress(`${part.name}: ${n}/${total}問`),abort.current.signal); }
+                finally {setDownloading(false);setDownloadCode(null);abort.current=null;}
                 setSaved(await downloads.list()); setNotice(`${e.name}を保存しました。`);
               })}>{access.entitled ? "保存・更新" : "有料特典を見る"}</button>
-              {saved[e.code] && <button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await downloads.removeQualification(e.code); setSaved(await downloads.list()); })}>削除</button>}</span></div>)}
-            {downloading && <button className={secondary} onClick={()=>abort.current?.abort()}>ダウンロード中止</button>}</div>
+              {saved[e.code] && <button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await downloads.removeQualification(e.code); setSaved(await downloads.list()); })}>削除</button>}</span>{downloading && downloadCode===e.code && <div className="w-full space-y-2"><p role="status">{e.name}: {downloadProgress}</p><button className={secondary} onClick={()=>abort.current?.abort()}>ダウンロード中止</button></div>}</div>)}
+            </div>
           </details>
         </>}
       </section>

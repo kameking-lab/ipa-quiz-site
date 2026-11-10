@@ -16,6 +16,7 @@ import { persistStudy, restoreStudy, studyOwner } from "./portable-storage";
 import { isOnline, observeConnection, observeReminderTap, setReminder } from "./platform";
 import { observeLogin } from "./login";
 import { refreshDeviceRights } from "./refresh-rights";
+import { applyDeviceTheme } from "./theme";
 import { installLocalApi } from "./local-api";
 import { App as NativeApp } from "@capacitor/app";
 import { Capacitor } from "@capacitor/core";
@@ -232,6 +233,7 @@ async function openWebHome() {
 }
 async function start() {
   document.documentElement.classList.add("native-app");
+  applyDeviceTheme();
   // Install native ad-host blocking before any UI/deep-link can leave the shell.
   // Never rejects: on failure ads simply stay disabled.
   await step("privacy preparation",prepareTrackingPrivacy);
