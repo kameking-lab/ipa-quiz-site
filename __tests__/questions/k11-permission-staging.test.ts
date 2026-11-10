@@ -7,9 +7,10 @@ import { getQualificationByExamCode, isExamPublished } from "@/lib/qualification
 import { getQuestionsForExam, getRegisteredExamCodes } from "@/lib/questions/get-questions";
 import { isPracticeReadyQuestion, shuffleChoices } from "@/lib/questions/filter";
 import { choiceDisplayLabel } from "@/lib/questions/display";
+import { defaultPracticeSession, practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { ExamCode, Question } from "@/lib/questions/types";
 
-const exams: ExamCode[] = ["kikenbutsu-otsu4", "unko-kanrisha-kamotsu"];
+const exams: ExamCode[] = ["shobo-setsubishi-otsu6", "kikenbutsu-otsu4", "unko-kanrisha-kamotsu"];
 
 describe("k11 official-source candidates remain private", () => {
   for (const exam of exams) {
@@ -37,6 +38,9 @@ describe("k11 official-source candidates remain private", () => {
         expect(q.sourcePdfUrl).toMatch(/^https:\/\//);
         expect(q.sourceAttribution).toContain("独自作成");
         expect(EXAM_CONFIGS[q.exam].seasons).toContain(q.season);
+        expect(EXAM_CONFIGS[q.exam].sessions.find(s => s.session === q.session)?.categories).toContain(q.category);
+        expect(defaultPracticeSession(q.exam)).toBe("gakka");
+        expect(practiceSessionLabel(q.session, q.exam)).not.toContain("薬学");
         for (const url of [...(q.imageUrls ?? []), ...(q.answerImageUrls ?? [])]) {
           expect(existsSync(join(process.cwd(), "public", url))).toBe(true);
         }

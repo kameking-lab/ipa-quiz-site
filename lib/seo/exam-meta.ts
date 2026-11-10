@@ -245,6 +245,7 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
     return `${base}${examLabel(exam)}の過去問${questionCount}問を年度別・分野別に収録。AIコパイロット付きで効率的に学習。`;
 }
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+"shobo-setsubishi-otsu6": "消防設備士 乙種第6類",
 "unko-kanrisha-kamotsu": "運行管理者（貨物）",
 "kikenbutsu-otsu4": "危険物取扱者 乙種第4類",
   "benrishi": "弁理士（短答式）",
@@ -413,6 +414,7 @@ export function examFullName(exam: ExamCode): string {
     return EXAM_FULL_NAMES[exam];
 }
 const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number) => string> = {
+"shobo-setsubishi-otsu6": () => "消防設備士 乙種第6類の公式公表問題。",
 "unko-kanrisha-kamotsu": () => "運行管理者（貨物）の公式公表問題。",
 "kikenbutsu-otsu4": () => "危険物取扱者 乙種第4類の公式公表問題。",
   "benrishi": (count) => "弁理士（短答式）の公開演習" + count + "問。" + "2025・2026年の公式問題・正答・独自解説と原本図表を収録。",

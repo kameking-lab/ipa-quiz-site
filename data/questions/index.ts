@@ -1,5 +1,6 @@
 import { QUESTIONS as KIKENBUTSU_OTSU4 } from "./kikenbutsu-otsu4";
 import { QUESTIONS as UNKO_KANRISHA_KAMOTSU } from "./unko-kanrisha-kamotsu";
+import { QUESTIONS as SHOBO_SETSUBISHI_OTSU6 } from "./shobo-setsubishi-otsu6";
 import { QUESTIONS as BATCH3_0 } from "./benrishi";
 import { QUESTIONS as BATCH3_1 } from "./sokuryoshi";
 import { QUESTIONS as BATCH3_2 } from "./dokugeki-chiba";
@@ -144,6 +145,7 @@ import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
 import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+...(isExamPublished("shobo-setsubishi-otsu6") ? { "shobo-setsubishi-otsu6": SHOBO_SETSUBISHI_OTSU6.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("unko-kanrisha-kamotsu") ? { "unko-kanrisha-kamotsu": UNKO_KANRISHA_KAMOTSU.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("kikenbutsu-otsu4") ? { "kikenbutsu-otsu4": KIKENBUTSU_OTSU4.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("benrishi") ? { "benrishi": BATCH3_0.filter(isPracticeReadyQuestion) } : {}),
