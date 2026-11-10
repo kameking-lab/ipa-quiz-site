@@ -127,7 +127,7 @@ if (q.year === 2025 && q.season === "annual" &&
   }
   if (q.year === 2011 && /tokubetsu/.test(q.sourcePdfUrl)) return "2011年度 特別試験";
   if (q.year === 2020 && q.season === "autumn") return "令和2年度 10月試験";
-  if (q.season === "published") {
+  if (q.season === "published" || (q.season === "october" && (q.exam === "eisei1" || q.exam === "eisei2"))) {
     const officialUpload = /^https:\/\/www\.exam\.or\.jp\/wp-content\/uploads\/(20\d{2})\/(0[1-9]|1[0-2])\//.exec(q.sourcePdfUrl);
     if (officialUpload && Number(officialUpload[1]) === q.year) {
       return `${q.year}年${Number(officialUpload[2])}月公表問題`;

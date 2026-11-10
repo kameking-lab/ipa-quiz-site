@@ -735,7 +735,7 @@ eisei1: {
             session: "gakka", urlSlug: "gakka", expectedQuestions: 44, label: "試験問題",
             categories: ["関係法令", "労働衛生", "労働生理"],
         }],
-    seasons: ["published"],
+    seasons: ["published", "october"],
     yearRange: { start: 2025, end: 2026 },
 },
 eisei2: {
@@ -747,7 +747,7 @@ eisei2: {
             session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "試験問題",
             categories: ["関係法令", "労働衛生", "労働生理"],
         }],
-    seasons: ["published"],
+    seasons: ["published", "october"],
     yearRange: { start: 2025, end: 2026 },
 },
 soukan: {
