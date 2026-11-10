@@ -1,6 +1,7 @@
 import { createHmac } from "node:crypto";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { monthlyStripeFixture } from "./monthly-stripe-fixture";
+import { firstTouch } from "@/lib/analytics/first-touch";
 const wiring = vi.hoisted(() => ({ runtime: null as unknown, user: "alice", email: undefined as string | undefined }));
 const record = vi.hoisted(() => vi.fn<(...args: unknown[]) => Promise<boolean>>(async () => true));
 const saveSource = vi.hoisted(() => vi.fn(async () => {}));
@@ -32,11 +33,19 @@ beforeEach(() => {
 afterEach(() => { vi.unstubAllEnvs(); vi.unstubAllGlobals(); });
 
 describe("server-confirmed funnel steps", () => {
-  it("links first-touch labels to the order and recovers them from the verified webhook", async () => {
+  it.each([
+    ["ap_kakomon_detail_hero_ap", "ap.detail_hero.source-1"],
+    ["ap_kakomon_learning_ap", "ap.learning.source-1"],
+    ["boiler-1kyu_kakomon_detail_hero_lckohyo-一級ボイラー技士", "boiler-1kyu.detail_hero.source-1"],
+    ["work-environment-measurement-expert-first_kakomon_my_next_steps_sagyo-kankyo-sokuteishi", "work-environment-measurement-expert-first.my_next_steps.source-1"],
+  ])("links real sender label %s through the checkout and verified webhook", async (raw, content) => {
     const f = await monthlyStripeFixture(); wiring.runtime = f;
-    const touch = { utm_source: "tsugino_shikaku", utm_content: "sc" };
+    localStorage.clear();
+    window.history.replaceState({}, "", `/?utm_source=tsugino_shikaku&utm_content=${encodeURIComponent(raw)}`);
+    const touch = { utm_source: "tsugino_shikaku", utm_content: content };
+    expect(firstTouch()).toEqual(touch);
     const request = post({ terms: monthlyTerms(f.config) });
-    request.headers.set("cookie", `funnel_first_touch=${encodeURIComponent(JSON.stringify(touch))}`);
+    request.headers.set("cookie", document.cookie);
     const response = await checkout(request);
     const result = await response.json();
     expect(response.status).toBe(200);

@@ -407,11 +407,11 @@ export default async function ExamTopPage({
               <div className="grid gap-2 sm:grid-cols-2">
                 <Button asChild variant="gradient" size="lg" className="font-semibold">
                   <Link href={`/quiz?mode=random&exam=${exam}&session=am2`}>
-                    午前 II
+                    科目A-2（旧午前II）
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link href={`/quiz?mode=random&exam=${exam}&session=am1`}>午前 I</Link>
+                  <Link href={`/quiz?mode=random&exam=${exam}&session=am1`}>科目A-1（旧午前I）</Link>
                 </Button>
               </div>
             </div>

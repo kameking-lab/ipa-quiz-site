@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import { ExamTopBrowse } from "@/components/exam/ExamTopBrowse";
+import { FirstPracticeEntry } from "@/components/exam/FirstPracticeEntry";
+import { ExamTopGuide } from "@/components/exam/ExamTopGuide";
 import { EXAM_ENTRIES, type ExamEntryCode } from "@/lib/seo/exam-entry";
 import { examMetaDescription, examTopDescription, getQuestionsByExamStrict, groupByCategory, groupByYearSeason } from "@/lib/seo/exam-meta";
 import { getBlogPostBySlug } from "@/data/blog";
@@ -37,5 +39,13 @@ describe.each(Object.keys(EXAM_ENTRIES) as ExamEntryCode[])("%s search landing",
     const post = getBlogPostBySlug(EXAM_ENTRIES[exam].guide);
     expect(post).toBeDefined();
     expect([post!.exam, ...post!.tags.map(tag => tag.toLowerCase())]).toContain(exam);
+  });
+
+  it("names current subjects at the existing practice and guide links", () => {
+    const html = renderToStaticMarkup(<><FirstPracticeEntry exam={exam} /><ExamTopGuide exam={exam} /></>);
+    expect(html).toContain(exam === "ap" ? "科目A・旧午前" : "科目A-2・旧午前II");
+    expect(html).toContain(exam === "ap" || exam === "sc" ? "科目B対策" : "科目B-1・科目B-2対策");
+    expect(html).toContain(`href="/quiz?mode=random&amp;exam=${exam}${exam === "ap" ? "" : "&amp;session=am2"}"`);
+    expect(html).toContain(`href="/blog/${EXAM_ENTRIES[exam].guide}"`);
   });
 });

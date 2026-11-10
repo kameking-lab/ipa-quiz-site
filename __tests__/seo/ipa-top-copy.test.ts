@@ -16,6 +16,8 @@ describe.each(IPA_TOP_CODES)("%s top copy", exam => {
     if (exam === "sg") expect(description).not.toContain("科目B");
     if (exam === "fe") expect(description).toContain("科目B");
     if (exam === "ap") expect(description).toContain("科目Aの知識確認");
+    if (exam === "sc") expect(description).toContain("前身の情報セキュリティスペシャリスト試験を含む");
+    else expect(description).not.toContain("前身");
   });
 });
 it("updates the displayed year and count when the practice pool changes", () => {
@@ -23,4 +25,5 @@ it("updates the displayed year and count when the practice pool changes", () => 
   const description = ipaTopDescription("sc", "支援士", [{ ...q, year: 2024 }, { ...q, year: 2025 }]);
   expect(description).toContain("2024〜2025年度");
   expect(description).toContain("2問");
+  expect(description).not.toContain("前身");
 });

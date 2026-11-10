@@ -2,7 +2,7 @@ import "server-only";
 import { createHmac } from "node:crypto";
 import { jstDay } from "./domain";
 import { FUNNEL_EVENTS, type FunnelEvent } from "./funnel-events";
-import { normalizeAttribution, type FunnelAttribution } from "./attribution";
+import { attributionQualification, normalizeAttribution, type FunnelAttribution } from "./attribution";
 
 export { FUNNEL_EVENTS, CLIENT_FUNNEL_EVENTS, isClientFunnelEvent, type FunnelEvent } from "./funnel-events";
 
@@ -102,7 +102,7 @@ export async function readFunnelSources(days: number, now = Date.now()): Promise
         const [utm_source, utm_content, extra] = group.split(":");
         const touch = normalizeAttribution({ utm_source, utm_content });
         if (!touch || extra || touch.utm_content !== utm_content) continue;
-        rows.push({ day: list[i], ...touch, qualification_slug: touch.utm_content.split(".")[0], counts: Object.fromEntries(FUNNEL_EVENTS.map(e => [e, 0])) as FunnelCounts });
+        rows.push({ day: list[i], ...touch, qualification_slug: attributionQualification(touch), counts: Object.fromEntries(FUNNEL_EVENTS.map(e => [e, 0])) as FunnelCounts });
       }
     }
     if (!rows.length) return { available: true, truncated, days: rows };
