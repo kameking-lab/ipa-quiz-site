@@ -34,7 +34,7 @@ import { ExamTopBrowse } from "@/components/exam/ExamTopBrowse";
 import { ExamTopGuide } from "@/components/exam/ExamTopGuide";
 import { ExamPastQuestionGuide } from "@/components/exam/ExamPastQuestionGuide";
 import { ExamCbtSummary } from "@/components/exam/ExamCbtGuide";
-import { examEntrySummary, isExamEntryCode } from "@/lib/seo/exam-entry";
+import { isExamEntryCode } from "@/lib/seo/exam-entry";
 import { isIpaTop } from "@/lib/seo/ipa-top";
 import { KanriCoverageNote } from "@/components/exam/KanriCoverageNote";
 import { Tsushin1CoverageNote } from "@/components/exam/Tsushin1CoverageNote";
