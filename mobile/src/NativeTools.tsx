@@ -103,6 +103,10 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     setAccess(result.entitlement); setConfig(result.configuration);
     if (result.entitlement.entitled && result.entitlement.lease) await downloads.updateRights(result.entitlement, result.configuration.leasePublicKey).catch(()=>{setNotice("オフライン用の検証キーは配布設定待ちです。オンラインの学習・会員権利は利用できます。");});
     else if (!result.entitlement.entitled) await downloads.invalidate();
+    else {
+      const cached = await downloads.rights();
+      if (cached && cached.access.userId !== result.entitlement.userId) await downloads.invalidate();
+    }
     setSaved(await downloads.list());
     return result;
     });
