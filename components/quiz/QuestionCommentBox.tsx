@@ -6,7 +6,6 @@ import { MessageSquare, Send } from "lucide-react";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { cn } from "@/lib/utils";
 import { submitSupport } from "@/lib/feedback/submit";
-import { PrivacyNote } from "@/components/ui/privacy-note";
 import { readLocalFeedback } from "@/lib/feedback/local-data";
 
 export interface QuestionComment {
@@ -152,7 +151,6 @@ function QuestionCommentForm({ questionId }: { questionId: string }) {
           {sending ? "送信中..." : "運営へ送信する"}
         </button>
       </div>
-      <PrivacyNote variant="message" className="mt-2" />
       {receiptId && <p role="status" className="mt-3 break-all text-xs">運営の受付先に送信しました。受付番号: {receiptId}</p>}
       <Link href="/contact" className="inline-flex min-h-11 items-center text-xs underline">返信が必要なお問い合わせ</Link>
 

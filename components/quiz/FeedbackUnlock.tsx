@@ -4,7 +4,6 @@ import Link from "next/link";
 import { IMPROVEMENT_CHOICES, UnlockFeedbackSchema, type UnlockStatus } from "@/lib/feedback/unlock-contract";
 import { posthogCapture } from "@/lib/posthog";
 import { TurnstileWidget } from "@/components/TurnstileWidget";
-import { PrivacyNote } from "@/components/ui/privacy-note";
 
 const DRAFT_KEY = "feedback-unlock-draft:v1";
 const returnPath = () => window.location.pathname + window.location.search;
@@ -113,7 +112,6 @@ export function FeedbackUnlock({ onUnlocked }: { onUnlocked: () => void }) {
       <p className="text-xs text-muted-foreground">氏名・住所・メールアドレスなどの個人情報は入力しないでください。意見は運営の管理画面・noteダッシュボードで改善のために利用します。追加10問はログイン済みの1アカウントにつき1回限り。通常の無料枠を使い切った後に消費し、未使用分は翌日以降も残ります。AIへの質問回数は増えません。</p>
       {siteKey && <TurnstileWidget key={captchaAttempt} siteKey={siteKey} onToken={setToken} onError={() => { setToken(""); setError("確認を読み込めませんでした。時間をおいて再度お試しください。"); }} />}
       <button type="submit" disabled={busy || !!status?.requiresLogin || !!siteKey && !token} className="min-h-11 w-full rounded-lg border border-border px-4 py-3 font-semibold disabled:opacity-50">{busy ? "送信中…" : "意見を送信して10問追加"}</button>
-      <PrivacyNote variant="message" />
       <p role="status" aria-live="polite" className="sr-only">{busy ? "意見を送信しています" : ""}</p>
     </form>}
   </div>;
