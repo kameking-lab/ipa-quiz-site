@@ -245,6 +245,7 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
     return `${base}${examLabel(exam)}の過去問${questionCount}問を年度別・分野別に収録。AIコパイロット付きで効率的に学習。`;
 }
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+"kikenbutsu-kou": "危険物取扱者 甲種",
 "kikenbutsu-hei": "危険物取扱者 丙種",
 "shobo-setsubishi-kou4": "消防設備士 甲種第4類",
 "shobo-setsubishi-otsu6": "消防設備士 乙種第6類",
@@ -416,6 +417,7 @@ export function examFullName(exam: ExamCode): string {
     return EXAM_FULL_NAMES[exam];
 }
 const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number) => string> = {
+"kikenbutsu-kou": () => "危険物取扱者 甲種の公式公表問題。",
 "kikenbutsu-hei": () => "危険物取扱者 丙種の公式公表問題。",
 "shobo-setsubishi-kou4": () => "消防設備士 甲種第4類の公式公表問題。",
 "shobo-setsubishi-otsu6": () => "消防設備士 乙種第6類の公式公表問題。",

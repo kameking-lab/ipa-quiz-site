@@ -94,6 +94,7 @@ export function shuffleChoices(q: Question): Question {
   if (q.exam === "shobo-setsubishi-otsu6") return q;
   if (q.exam === "shobo-setsubishi-kou4") return q;
   if (q.exam === "kikenbutsu-hei") return q;
+  if (q.exam === "kikenbutsu-kou") return q;
   if (!q.choices) return q;
   // Labels in authored prose refer to the original choices. Reordering only the
   // answer map would silently contradict the explanation (for example AP 2017秋 問2).
