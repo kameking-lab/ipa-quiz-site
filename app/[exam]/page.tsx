@@ -32,7 +32,9 @@ import dynamic from "next/dynamic";
 import { FirstPracticeEntry, FIRST_PRACTICE_EXAMS } from "@/components/exam/FirstPracticeEntry";
 import { ExamTopBrowse } from "@/components/exam/ExamTopBrowse";
 import { ExamTopGuide } from "@/components/exam/ExamTopGuide";
-import { isExamEntryCode } from "@/lib/seo/exam-entry";
+import { ExamPastQuestionGuide } from "@/components/exam/ExamPastQuestionGuide";
+import { ExamCbtSummary } from "@/components/exam/ExamCbtGuide";
+import { examEntrySummary, isExamEntryCode } from "@/lib/seo/exam-entry";
 import { isIpaTop } from "@/lib/seo/ipa-top";
 import { KanriCoverageNote } from "@/components/exam/KanriCoverageNote";
 import { Tsushin1CoverageNote } from "@/components/exam/Tsushin1CoverageNote";
@@ -290,6 +292,7 @@ export default async function ExamTopPage({
             {examLabel(code)} {isIpaTop(code) ? "過去問・解説" : "過去問"}
           </h1>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{summary}</p>
+          {isExamEntryCode(code) && <ExamCbtSummary exam={code} />}
           {isExamEntryCode(code) && <FirstPracticeEntry exam={code} />}
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <Badge variant="outline">収録 {publishedOriginalCount} 問</Badge>
@@ -440,6 +443,7 @@ export default async function ExamTopPage({
         )}
 
         {/* Browse tabs */}
+        {isExamEntryCode(code) && <ExamPastQuestionGuide exam={code} questions={questions} />}
         {isExamEntryCode(code) ? <ExamTopBrowse exam={code} years={years} categories={categories} /> : <section aria-label="問題を探す" className="mb-8">
           {/* Deep-link targets for sitemap "年度別一覧 (#years)" / "分野別一覧 (#topics)".
               ExamBrowseTabs reads the hash to pre-select the matching tab. */}
