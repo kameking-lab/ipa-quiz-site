@@ -1,4 +1,4 @@
-﻿import { applyIpaCorrections } from "../corrections";
+import { applyIpaCorrections } from "../corrections";
 import { applyChoiceExplanationOverlay } from "@/lib/questions/apply-choice-explanations";
 import type { Question } from "@/lib/questions/types";
 import { BY_YEAR_QUESTIONS } from "./by-year";
