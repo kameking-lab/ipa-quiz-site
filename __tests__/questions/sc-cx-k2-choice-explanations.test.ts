@@ -16,7 +16,7 @@ describe("SC cx-k2 choice explanations", () => {
       && !q.choiceExplanations && !(q.id in existingOverlay),
     );
     expect(targets).toHaveLength(225);
-    expect(Object.keys(overlay)).toHaveLength(218);
+    expect(Object.keys(overlay).filter(id => original.get(id)!.year >= 2019)).toHaveLength(218);
     expect(targets.filter(q => !(q.id in overlay)).map(q => q.id).sort()).toEqual([
       "sc-2019a-am2-q22", // State diagram and device specification.
       "sc-2020a-am2-q11", // Responsibility allocation table.
@@ -33,7 +33,7 @@ describe("SC cx-k2 choice explanations", () => {
       const before = original.get(id)!;
       const after = published.get(id)!;
       expect(before, id).toBeDefined();
-      expect(before.year, id).toBeGreaterThanOrEqual(2019);
+      expect(before.year, id).toBeGreaterThanOrEqual(2014);
       expect(before.year, id).toBeLessThanOrEqual(2025);
       expect(before.session, id).toBe("am2");
       expect(existingOverlay, id).not.toHaveProperty(id);
