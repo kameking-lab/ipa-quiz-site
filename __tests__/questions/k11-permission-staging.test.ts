@@ -10,7 +10,7 @@ import { choiceDisplayLabel } from "@/lib/questions/display";
 import { defaultPracticeSession, practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { ExamCode, Question } from "@/lib/questions/types";
 
-const exams: ExamCode[] = ["shobo-setsubishi-otsu6", "kikenbutsu-otsu4", "unko-kanrisha-kamotsu"];
+const exams: ExamCode[] = ["shobo-setsubishi-kou4", "shobo-setsubishi-otsu6", "kikenbutsu-otsu4", "unko-kanrisha-kamotsu"];
 
 describe("k11 official-source candidates remain private", () => {
   for (const exam of exams) {
@@ -90,6 +90,30 @@ describe("k11 official-source candidates remain private", () => {
           const keys = Array.isArray(q.answer) ? q.answer : [q.answer];
           expect(keys.map(key => "アイウエオカキク".indexOf(key) + 1).join(",")).toBe(q.officialAnswerNumber);
         }
+      }
+    }
+  });
+
+  it("消防設備士 includes only the target class and common written questions, with practical answer images", () => {
+    for (const [exam, numbers, answers, practicalCount] of [
+      ["shobo-setsubishi-otsu6", [1,2,3,4,5,6,7,13,15,17,18,19,29,41], [3,1,2,4,1,4,2,2,2,3,2,4,3,3], 2],
+      ["shobo-setsubishi-kou4", [1,2,3,4,5,6,11,17,18,19,20,28,32], [4,4,4,3,3,2,4,2,2,2,2,1,2], 2],
+    ] as const) {
+      const questions: Question[] = JSON.parse(readFileSync(join(process.cwd(), `data/questions/${exam}/published-202606.json`), "utf8"));
+      const written = questions.filter(q => q.session === "gakka");
+      expect(written.map(q => q.qNumber)).toEqual(numbers);
+      expect(written.map(q => Number(q.officialAnswerNumber))).toEqual(answers);
+      const practical = questions.filter(q => q.session === "practical");
+      expect(practical).toHaveLength(practicalCount);
+      for (const q of practical.filter(q => q.type === "descriptive")) {
+        expect(q.modelAnswer!.length).toBeGreaterThan(5);
+        expect(q.scoringCriteria!.length).toBeGreaterThan(15);
+        expect(q.answerImageUrls?.length).toBeGreaterThan(0);
+      }
+      for (const q of questions) {
+        expect(q.sourceExamYear).toBeNull();
+        expect(q.publicationVersion).toBe("2026-06");
+        expect(q.officialQuestionLabel).toBeTruthy();
       }
     }
   });
