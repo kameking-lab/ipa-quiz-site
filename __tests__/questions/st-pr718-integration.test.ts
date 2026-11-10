@@ -1,7 +1,8 @@
 // @vitest-environment node
 import { createHash } from "node:crypto";
 import { describe, expect, it } from "vitest";
-import { ST_QUESTIONS, ST_PR718_ADOPTED_IDS } from "@/data/questions/st";
+import { ST_QUESTIONS, ST_PR718_ADOPTED_IDS, ST_PR757_ADOPTED_IDS } from "@/data/questions/st";
+import corrections from "@/docs/evidence/st-residual11-20261011/source-corrections.json";
 import receipt from "@/docs/evidence/st-all-choice-explanations-20261011/RECHECK-20261110.json";
 import official from "@/docs/evidence/st-all-choice-explanations-20261011/official-keys.json";
 
@@ -10,11 +11,18 @@ describe("PR718 gap-only adoption on current main", () => {
   it("preserves every original and all previously reviewed explanations", () => {
     expect(ST_QUESTIONS).toHaveLength(879);
     expect(new Set(ST_QUESTIONS.map(q => q.id)).size).toBe(879);
-    expect(hash(ST_QUESTIONS.map(({ id, type, question, choices, answer }) => ({ id, type, question, choices, answer })))).toBe(receipt.coreSha256);
+    const residual = new Set(ST_PR757_ADOPTED_IDS);
+    const previousCore = ST_QUESTIONS.map(q => {
+      const before = residual.has(q.id) ? corrections.find(row => row.id === q.id)?.before : undefined;
+      const original = { ...q, ...before };
+      const { id, type, question, choices, answer } = original;
+      return { id, type, question, choices, answer };
+    });
+    expect(hash(previousCore)).toBe(receipt.coreSha256);
     const adopted = new Set(ST_PR718_ADOPTED_IDS);
     expect(adopted.size).toBe(412);
     expect([...adopted].sort()).toEqual([...receipt.adoptedIds].sort());
-    expect(hash(ST_QUESTIONS.filter(q => !adopted.has(q.id) && q.choiceExplanations))).toBe(receipt.existingExplainedSha256);
+    expect(hash(ST_QUESTIONS.filter(q => !adopted.has(q.id) && !residual.has(q.id) && q.choiceExplanations))).toBe(receipt.existingExplainedSha256);
   });
   it("binds all adopted explanation targets to official keys", () => {
     for (const id of ST_PR718_ADOPTED_IDS) {
