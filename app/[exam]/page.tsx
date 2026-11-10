@@ -33,6 +33,7 @@ import { FirstPracticeEntry, FIRST_PRACTICE_EXAMS } from "@/components/exam/Firs
 import { ExamTopBrowse } from "@/components/exam/ExamTopBrowse";
 import { ExamTopGuide } from "@/components/exam/ExamTopGuide";
 import { ExamPastQuestionGuide } from "@/components/exam/ExamPastQuestionGuide";
+import { ExamCbtSummary } from "@/components/exam/ExamCbtGuide";
 import { examEntrySummary, isExamEntryCode } from "@/lib/seo/exam-entry";
 import { KanriCoverageNote } from "@/components/exam/KanriCoverageNote";
 import { Tsushin1CoverageNote } from "@/components/exam/Tsushin1CoverageNote";
@@ -290,6 +291,7 @@ export default async function ExamTopPage({
             {examLabel(code)} 過去問
           </h1>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{summary}</p>
+          {isExamEntryCode(code) && <ExamCbtSummary exam={code} />}
           {isExamEntryCode(code) && <FirstPracticeEntry exam={code} />}
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <Badge variant="outline">{isExamEntryCode(code) ? "午前の収録" : "収録"} {publishedOriginalCount} 問</Badge>

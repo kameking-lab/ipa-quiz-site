@@ -2,8 +2,9 @@ import Link from "next/link";
 import type { ExamEntryCode } from "@/lib/seo/exam-entry";
 import type { Question } from "@/lib/questions/types";
 import { groupByYearSeason } from "@/lib/seo/exam-meta";
+import { CBT_SOURCE, ExamCbtFaq } from "@/components/exam/ExamCbtGuide";
 
-const namingSource = "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc-cbt.html";
+const namingSource = CBT_SOURCE;
 const cancellationSource = "https://www.ipa.go.jp/shiken/mondai-kaiotu/2020r02.html";
 const sourceClass = "text-primary underline underline-offset-4";
 
@@ -34,7 +35,7 @@ export function ExamPastQuestionGuide({ exam, questions }: {
 
   return (
     <section aria-labelledby="past-question-guide-heading" className="mb-6 rounded-2xl border border-border bg-card p-4 sm:p-5">
-      <h2 id="past-question-guide-heading" className="text-base font-bold">過去問の科目と収録範囲</h2>
+      <h2 id="past-question-guide-heading" className="text-base font-bold">どの科目・年度の過去問を解けますか？</h2>
       <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
         {exam === "nw" ? "ネットワークスペシャリスト（ネスペ）の" : "このページの"}年度別・分野別一覧では、掲載済みの{isAp ? "午前" : "午前I・午前II"}問題を解けます。
         {isAp ? "科目Aの知識確認と科目Bの記述練習" : "共通知識・専門知識の確認と午後の練習"}を分けて進めましょう。
@@ -68,6 +69,7 @@ export function ExamPastQuestionGuide({ exam, questions }: {
         <summary className="min-h-11 cursor-pointer p-3 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">令和2年（2020年）のネスペ過去問が見つからないのは？</summary>
         <p className="px-3 pb-3 text-sm leading-relaxed">IPAは令和2年度春期試験を中止し、同春期の過去問題を掲載していません。<a href={cancellationSource} className={sourceClass} target="_blank" rel="noopener noreferrer">IPAの令和2年度資料</a>で確認できます。一覧にある別年度の「午前IIは未収録」は当サイトの収録範囲を示す表示です。</p>
       </details>}
+      <ExamCbtFaq exam={exam} />
     </section>
   );
 }
