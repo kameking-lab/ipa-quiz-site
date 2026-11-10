@@ -179,7 +179,7 @@ export default function AboutPage() {
       <h2 className="mb-2 text-lg font-semibold">料金について</h2>
       <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
         <p>
-          IPA Quiz は IPA 情報処理技術者試験の学習機会を広げることを目的とした
+          過去問AI は IPA 情報処理技術者試験の学習機会を広げることを目的とした
           <strong>教育貢献プロジェクト</strong>として運営されています。
           個別問題・原紙・保存済み履歴の閲覧と復習は無料です。連続演習はログインなしでも1日10問まで無料で、日本時間0時に更新されます。履歴の同期などは無料ログインで利用できます。
         </p>
