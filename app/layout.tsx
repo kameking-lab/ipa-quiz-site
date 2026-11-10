@@ -99,7 +99,7 @@ export const metadata: Metadata = {
   other: {
     "google-adsense-account": "ca-pub-8751260838396451",
   },
-  // Safari の Smart App Banner。NEXT_PUBLIC_APP_STORE_LIVE=true のときだけ出す（lib/app-store.ts）。
+  // Safari の Smart App Banner（WKWebView 内では表示されない）。
   itunes: appStoreItunesMetadata(),
 };
 
@@ -262,7 +262,7 @@ export default function RootLayout({
                   </div>
                 </div>
 
-                <AppStorePromo variant="footer" className="print:hidden mt-4" />
+                <AppStorePromo className="print:hidden mt-4" />
 
                 <SourceRelationshipFooter />
               </div>
