@@ -1,15 +1,18 @@
-import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { StudyRewardCorner } from "@/components/home/StudyRewardCorner";
 import { recordStudyReward } from "@/lib/study-reward";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { monthlyFixture } from "@/__tests__/billing/monthly-fixture";
+import { emptyPetProfiles, newPetProfile, petProfileStorageKey, serializePetProfileDocument } from "@/lib/pet/v1/profile";
+import * as ownership from "@/lib/sync/ownership";
 
 beforeEach(() => {
   localStorage.clear(); sessionStorage.clear();
+  vi.spyOn(ownership, "readSyncAccount").mockResolvedValue(null);
   vi.stubGlobal("matchMedia", vi.fn(() => ({ matches:false, addEventListener:vi.fn(), removeEventListener:vi.fn() })));
 });
-afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
+afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.restoreAllMocks(); });
 
 it.each(["trial", "paid", "refunded"] as const)("reward playback and dismissal preserve %s billing facts and server grant", async state => {
   const f = await monthlyFixture();
@@ -27,10 +30,15 @@ it.each(["trial", "paid", "refunded"] as const)("reward playback and dismissal p
   localStorage.setItem(LS_KEYS.premium, "true");
   localStorage.setItem(LS_KEYS.history, "preserved-history-sentinel");
   localStorage.setItem(LS_KEYS.petLearning, "preserved-legacy-pet-sentinel");
+  // Rest is available for an existing pet. Loading the view must preserve it byte-for-byte.
+  const doc = emptyPetProfiles("guest", "Asia/Tokyo");
+  doc.profiles.push(newPetProfile("guest", "fe"));
+  localStorage.setItem(petProfileStorageKey("guest"), serializePetProfileDocument(doc));
   const profiles = () => Object.keys(localStorage).filter(key => key.startsWith(LS_KEYS.petProfilesPrefix)).sort().map(key => [key, localStorage.getItem(key)]);
   const profilesBefore = profiles();
   const scope = "quiz:fe", questionId = `question-${state}`;
   render(<StudyRewardCorner scope={scope} questionId={questionId} />);
+  await waitFor(() => expect(screen.getByRole("button", {name:"ひと休み"})).toBeEnabled());
   act(() => { recordStudyReward({scope,questionId,exam:"fe",label:"基本情報技術者"}); });
   // Quiz scopes now render the v1 child; the legacy visual notification does
   // not manufacture learning progress or paid access in that child.

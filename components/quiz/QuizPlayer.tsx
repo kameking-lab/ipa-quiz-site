@@ -4,6 +4,7 @@ import { NativeQuestionGate } from "@/mobile/shared/NativeQuestionGate";
 
 import * as React from "react";
 import dynamic from "next/dynamic";
+import { LearningPetCorner } from "@/components/pet/LearningPetCorner";
 import { isReferenceOnlyQuestionId } from "@/lib/questions/assessment";
 import type { NativeBGrade } from "@/lib/questions/types";
 import { gradeNativeB, serializeNativeBSelections, formatNativeBAnswer, type NativeBSelections } from "@/lib/questions/native-b";
@@ -16,7 +17,6 @@ import type { Question, ChoiceKey, ExamCode } from "@/lib/questions/types";
 import { choiceDisplayLabel, choiceImageAlt, usesNumberedChoices } from "@/lib/questions/display";
 import { PracticeLoading } from "./PracticeTransition";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
-import { StudyRewardCorner } from "@/components/home/StudyRewardCorner";
 import { recordStudyReward } from "@/lib/study-reward";
 import { usePetLearning } from "@/components/pet/usePetLearning";
 import type { PetLearningSubmission } from "@/lib/pet/client/learning-submission-contracts";
@@ -652,7 +652,7 @@ function ScoredQuizPlayer({
             {showKeyboardHelp && (
               <KeyboardShortcutHelp onClose={() => setShowKeyboardHelp(false)} />
             )}
-            <StudyRewardCorner scope={`quiz:${question.exam}`} questionId={question.id} answered={revealed} />
+            {!revealed && <LearningPetCorner qualificationId={question.exam} questionId={question.id} compact appearanceOnly />}
           </div>
 
         </main>

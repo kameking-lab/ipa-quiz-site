@@ -369,7 +369,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
             <div className="mt-2 text-zinc-200"><QuestionBody text={question.explanation || "解説は準備中です。"} /></div>
           </div>
         )}
-        <LearningPetCorner qualificationId={question.exam} questionId={question.id} />
+        <LearningPetCorner qualificationId={question.exam} questionId={question.id} compact />
       </main>
 
       {revealed && (

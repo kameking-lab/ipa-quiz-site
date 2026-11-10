@@ -21,12 +21,12 @@ const seatList=()=>within(viewer()).queryByRole("group",{name:"自習室の席�
 const seats=()=>{const list=seatList();return list?within(list).getAllByRole("button"):[];};
 const emit=(detail:unknown,name=PRESENCE_STATE_EVENT)=>act(()=>window.dispatchEvent(new CustomEvent(name,{detail})));
 const measured=(value=zero)=>({mode:"measured",snapshot:measuredPresence(value,Date.now()),previous:null});
-function guidance(){expect(viewer()).toHaveAccessibleName("学習のご案内");expect(screen.getByRole("link",{name:"ほかの資格を探す"})).toHaveAttribute("href","#choose-qualification");}
+function guidance(){expect(viewer()).toHaveAccessibleName("学習のご案内");expect(within(viewer()).getByRole("link",{name:"資格を選んで1問始める"})).toHaveAttribute("href","/#choose-qualification");}
 afterEach(()=>{cleanup();vi.useRealTimers();vi.unstubAllGlobals();vi.restoreAllMocks();});
 
 describe("public qualification guidance preserved beside the independent answer reward",()=>{
  it("server-renders qualification guidance and rejects legacy/unverified counts",()=>{
-  const html=renderToString(<TotalAnswerCounter suggestions={suggestions}/>);expect(html).toContain("ほかの資格を探す");
+  const html=renderToString(<TotalAnswerCounter suggestions={suggestions}/>);expect(html).toContain("資格を選んで1問始める");expect(html).toContain('/#choose-qualification');
   render(<TotalAnswerCounter suggestions={suggestions}/>);const stable=viewer();
   for(const detail of [null,{mode:"measured",snapshot:positive},{mode:"demo",snapshot:positive}]){emit(detail);guidance();expect(viewer()).toBe(stable);}
   emit(positive,PRESENCE_EVENT);guidance();expect(document.querySelector(".study-room-total")).toBeNull();
@@ -44,7 +44,7 @@ describe("public qualification guidance preserved beside the independent answer 
  });
  it("keeps the directory link available without suggestions",()=>{
   render(<TotalAnswerCounter/>);
-  for(const detail of [null,measured(),{mode:"promotion",snapshot:null}]){emit(detail);expect(screen.getByRole("link",{name:detail?.mode==="measured"?"資格から問題を探す":"ほかの資格を探す"})).toHaveAttribute("href",detail?.mode==="measured"?"#home-directory-title":"#choose-qualification");}
+  for(const detail of [null,measured(),{mode:"promotion",snapshot:null}]){emit(detail);expect(screen.getByRole("link",{name:detail?.mode==="measured"?"資格から問題を探す":"資格を選んで1問始める"})).toHaveAttribute("href",detail?.mode==="measured"?"#home-directory-title":"/#choose-qualification");}
  });
  it("represents 25 historical learners in one expanded room with 12 illustrations and an exact remainder",()=>{
   render(<TotalAnswerCounter suggestions={suggestions}/>);

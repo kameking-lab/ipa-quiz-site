@@ -338,6 +338,7 @@ function ScoredQuestionAnswerCard({
               <span className="ml-1 font-normal text-foreground">：{answerText}</span>
             ))}
           </div>
+          {question ? <div className="mt-3"><LearningPetCorner qualificationId={question.exam} questionId={question.id} compact /></div> : null}
           <div className="mt-3 flex flex-wrap items-center gap-2">
             <a
               href="#explanation"
@@ -377,7 +378,6 @@ function ScoredQuestionAnswerCard({
           focusRequest={{ sequence: copilotRequest?.questionId === question.id ? copilotRequest.sequence : 0, prompt: copilotRequest?.prompt }}
         />
       )}
-      {question && <LearningPetCorner qualificationId={question.exam} questionId={question.id} />}
     </div>
   );
 }

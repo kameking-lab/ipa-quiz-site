@@ -113,13 +113,22 @@ export function StudyRoom({ snapshot, suggestions }: {
     seatListRef.current?.querySelector<HTMLButtonElement>('[aria-pressed="true"]')?.focus();
     setSelected(null);
   }
+  function selectSeat(seat: Seat) {
+    const key = selectionKey(seat);
+    setSelected(selected === key ? null : key);
+    // Keep the chosen character and its question link together, even after scrolling to a lower seat.
+    if (selected !== key && window.matchMedia?.("(min-width:768px)").matches) {
+      const top = scrollRef.current?.getBoundingClientRect().top;
+      if (top !== undefined && top < 80) window.scrollBy({ top: top - 80, behavior: "instant" });
+    }
+  }
 
   return <>
     <header className="study-room-heading">
       <h2 id="study-room-title"><span>それぞれの目標へ。</span><span>同じ空間で。</span></h2>
     </header>
     <div className="study-room-layout">
-      <div className="study-room-card">
+      <div className={`study-room-card ${styles.room}`}>
         <div className="study-room-toolbar"><h3>木もれびの自習室</h3></div>
         <div ref={scrollRef} className="study-room-scroll" tabIndex={0} aria-label="広がる自習室。横にスクロールできます"><div ref={sceneRef} data-stage={stage} data-motion-visible={motionVisible} data-bg-ready={backgroundReady} className="study-room-scene" role="group" aria-label={snapshot ? "前回取得時点の集計に基づくチワワの自習室" : "資格を紹介するイメージルーム"} onKeyDown={event => { if (event.key === "Escape") setSelected(null); }}>
           <span className="study-room-light" aria-hidden="true">木もれびの時間</span>
@@ -144,15 +153,20 @@ export function StudyRoom({ snapshot, suggestions }: {
           </span>}
           {snapshot?.count === 0 && <div className="study-room-empty"><p>静かな、自習室。</p></div>}
         </div></div>
+        <PetOwnStudySeat view={petView} />
+      </div>
+      <aside className="study-room-sidebar">
         {seats.length > 0 && <div ref={seatListRef} className={styles.list} role="group" aria-label="自習室の席を選ぶ" onKeyDown={event => { if (event.key === "Escape") setSelected(null); }}>
-          {seats.map(seat => <button key={selectionKey(seat)} type="button" className={styles.button} aria-controls="study-room-selection" aria-pressed={selected === selectionKey(seat)} onFocus={() => { focusedSeat.current = selectionKey(seat); }} onBlur={() => { focusedSeat.current = null; }} onClick={() => setSelected(value => value === selectionKey(seat) ? null : selectionKey(seat))}>
+          {seats.map(seat => <button key={selectionKey(seat)} type="button" className={styles.button} aria-controls="study-room-selection" aria-pressed={selected === selectionKey(seat)} onFocus={() => { focusedSeat.current = selectionKey(seat); }} onBlur={() => { focusedSeat.current = null; }} onClick={() => selectSeat(seat)}>
             <span className={styles.listNumber}>{seat.index + 1}</span><span>{seat.name}</span>
           </button>)}
         </div>}
-        <PetOwnStudySeat view={petView} />
 
-      </div>
-      <aside className="study-room-sidebar">
+        <div id="study-room-selection" className={`study-room-focus${!focus ? " study-room-focus-empty" : ""}`} aria-live="polite" aria-atomic="true">
+          {focus && <h3>{focus.name}</h3>}
+          {focus?.href && <a href={focus.href} className="study-text-link">{focus.name}の問題を見る<ArrowRight aria-hidden="true" /></a>}
+          {focus && <button type="button" className="study-text-link" onClick={clearSelection}>選択を戻す</button>}
+        </div>
         <StudyReturnLink />
         {snapshot && <div className="study-room-summary">
           <p className="study-kicker">直近5分の学習者</p>
@@ -165,12 +179,6 @@ export function StudyRoom({ snapshot, suggestions }: {
             <a href="#home-directory-title" className="study-text-link">資格から問題を探す<ArrowRight aria-hidden="true" /></a>
           </div>}
         </div>}
-        <div id="study-room-selection" className={`study-room-focus${snapshot && !focus ? " study-room-focus-empty" : ""}`} aria-live="polite" aria-atomic="true">
-          {focus && <h3>{focus.name}</h3>}
-          {focus?.href && <a href={focus.href} className="study-text-link">{focus.name}の問題を見る<ArrowRight aria-hidden="true" /></a>}
-          {!snapshot && !focus && <div className="study-room-guidance"><ul>{introductions.map(item => <li key={item.href}><a href={item.href}>{item.name}<ArrowRight aria-hidden="true" /></a></li>)}</ul><a href="#choose-qualification" className="study-text-link">ほかの資格を探す<ArrowRight aria-hidden="true" /></a></div>}
-          {focus && <button type="button" className="study-text-link" onClick={clearSelection}>選択を戻す</button>}
-        </div>
       </aside>
     </div>
   </>;

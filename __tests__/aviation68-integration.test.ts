@@ -86,6 +86,7 @@ describe('aviation communication68 local registration candidate',()=>{
   // IOS-FIX (PR #807) pins the opaque sticky header and the post-answer bar
   // without a second next button (the inline 「次の問題へ」 is the only one).
   // ktidy removes only the frozen X share link. Keep the historical INT8 pin.
+  // e-kako-pet moves reviewed pet presentation; the answer handler stays pinned below.
   expect(normalizedTextSha256(player)).toBe(releaseRuntimePins['components/quiz/QuizPlayer.tsx']);
   expect(player).not.toContain('twitter.com/intent/tweet');
   expect(player).toContain('NativeQuestionGate');
@@ -109,6 +110,8 @@ describe('aviation communication68 local registration candidate',()=>{
   const reviewedDisplayPins: Readonly<Record<string,string>> = {
     ...int8RuntimePins,
     'components/quiz/QuizPlayer.tsx': releaseRuntimePins['components/quiz/QuizPlayer.tsx'],
+    'components/quiz/QuestionAnswerCard.tsx': releaseRuntimePins['components/quiz/QuestionAnswerCard.tsx'],
+    'components/quiz/stream/StreamQuizPlayer.tsx': releaseRuntimePins['components/quiz/stream/StreamQuizPlayer.tsx'],
   };
   for(const pin of oracle.files)expect(repositoryTextSha256(pin.path),pin.path).toBe(reviewedDisplayPins[pin.path] ?? pin.sha256);
  });

@@ -90,6 +90,6 @@ for(const width of [320,390])test(`pet care stays readable at doubled text size 
   expect(motion.reduced).toBe(true);expect(motion.animation).toBe("none");
   const heights=await sheet.getByRole("button").evaluateAll(elements=>elements.map(el=>({name:el.textContent,height:el.getBoundingClientRect().height,min:getComputedStyle(el).minHeight})));expect(heights.every(item=>item.height>=44),JSON.stringify({motion,heights})).toBe(true);
   await page.screenshot({path:`test-results/pet-v1/${process.env.PET_EVIDENCE_PHASE??"regression"}-double-text-sheet-${width}-${browserName}.png`});
-  await sheet.getByRole("button",{name:"育成を閉じて学習に戻る"}).tap();await expect(sheet).toHaveCount(0);await expect(corner.getByRole("button",{name:"育成を見る"})).toBeFocused();
+  await sheet.getByRole("button",{name:"学習へ戻る"}).tap();await expect(sheet).toHaveCount(0);await expect(corner.getByRole("button",{name:"育成を見る"})).toBeFocused();
   expect(await page.evaluate(key=>localStorage.getItem(key),key)).toBe(serializePetProfileDocument(doc));
 });
