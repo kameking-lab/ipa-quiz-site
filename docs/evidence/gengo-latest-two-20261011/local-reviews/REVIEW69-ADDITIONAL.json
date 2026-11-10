@@ -1,0 +1,40 @@
+{
+  "questionId": "gengo-chokakushi-2026-annual-am-q69",
+  "reviewDate": "2026-10-11",
+  "scope": "Independent re-review of the additional evidence for choice A only, within private draft PR #733 content QC. Not publication, merge or deployment approval.",
+  "previousDecisionFile": "review.json",
+  "previousDecisionPreserved": true,
+  "decision": "CLEAR_Q69_CONTENT_REVIEW_AFTER_BOUNDED_EXPLANATION_UPDATE",
+  "needsReviewCanBeCleared": true,
+  "recommendedNeedsReviewAfterUpdate": false,
+  "changeFromPreviousDecision": "前回は制作元の一般目的である読み書き速度のみで、黙読か音読かを確定できなかった。今回の資料はURAWSS IIを明記した頁で読み課題の黙読手続を具体的に説明し、開発者本人の発言も黙読と音読検査を区別する。前回の解除不可の理由だったアの局所的根拠不足が補われたため判定を変更する。単なる断定削除だけで解除したのではない。",
+  "directSourceInspection": [
+    {
+      "url": "https://www.mext.go.jp/content/20210916-mxt_kyokasyo01-000024786_008.pdf#page=11",
+      "document": "近藤武夫・東京大学先端科学技術研究センター『学校現場におけるアセスメントと読み書き支援体制の整備』",
+      "sourceClassification": "文部科学省が配布する研究者の講義資料。検査手引き全文や公式採点理由ではない。",
+      "inspection": "WebでPDF抽出本文を直接閲覧。表紙の著者・所属、物理11頁（0-based 10）のURAWSS II見出しと課題記述を確認。Screenshotも要求したが、判定の記録上の根拠は実際に確認した抽出本文とする。",
+      "location": "物理11頁、抽出L124-L140（課題はL130-L136）",
+      "observations": ["URAWSS IIを見出しで明示する。", "読みは短文の一定時間の黙読後に理解問題へ回答する手続。", "指標として毎分の読む速度と内容理解の正答数を示す。"],
+      "provenanceLimit": "同頁にはatacLabショップを引用元として示す。研究者の公開説明として採用し、試験当局の見解とは表示しない。"
+    },
+    {
+      "url": "https://yomikaki.or.jp/%EF%BC%8326-1-aruyoselect200120/",
+      "document": "2020-01-20公開『URAWSS 河野俊寛氏に聴く』",
+      "sourceClassification": "検査著作者本人への公開インタビューの一次発言",
+      "inspection": "Web本文を直接閲覧。著作者の紹介と、STRAW-R等との違いを説明する節を確認。",
+      "location": "抽出L28、L93-L112、L160",
+      "observations": ["著作者はURAWSSの読む速度を黙読で測ると説明する。", "音読速度を調べる他の検査と明確に区別する。", "後続の書き速度の説明で現行版URAWSS IIへ言及する。"],
+      "versionLimit": "黙読の文自体はURAWSSという略称。対象版を確定する中心根拠は上記MEXT講義資料とし、インタビューは著作者による相補的裏付けとする。"
+    }
+  ],
+  "academicInference": "標準的な読み課題が黙読の速度・理解を評価するという具体的な手続と、開発者が音読検査と区別する説明を合わせると、『URAWSS II―音読の流暢性』は標準的な評価内容の対応として不適切と説明できる。この教育上の独自判断は、未公開の公式採点理由を再現したという主張ではない。",
+  "approvedChoiceAExplanation": "URAWSS IIの標準的な読み課題では、短文を黙読して内容理解の問いに答え、読み速度と理解の正答数を確認する。この評価内容を音読の流暢性とする組合せは不適切である。",
+  "editorialLimits": ["標準的な読み課題の説明に限定する。", "すべての任意課題・介入課題に音読が一切含まれないとは書かない。", "内容理解の正答数と音読時の読み誤り数を混同しない。", "黙読は流暢性と無関係だと一般化しない。今回の相違は音読という指定との不一致である。", "公式採点理由が資料から新たに判明したとは書かない。"],
+  "conditionsBeforeFlagChange": ["アの解説を上記の限定された説明へ更新し、新規根拠URLと頁位置を追跡可能にする。", "設問全体の解説に残る一次照合未了という旧記述を、実際の照合範囲に合わせて更新する。", "他4肢は既存独立レビューで認めた限定を保持する。特にWISC-Vのワーキングメモリーと短期記憶を同義と断定しない。", "answer=[ア,イ]、officialAnswerNumber=1または2、requiredSelections=1を維持する。"],
+  "privatePracticeImpact": { "reportedBefore": 2, "eligibleAfterQuestionUpdate": 3, "independentlyRecounted": false, "note": "内容QC上69を1件追加できる判断。実装への反映や全量集計を本審査で検証したものではない。" },
+  "unchangedQuestions": { "28AM35": { "needsReview": true }, "28AM83": { "needsReview": true } },
+  "accessStopsRespected": ["ST-Toolbox403", "PMC CAPTCHA", "Sage403", "MDPI429", "丸善robots拒否"],
+  "actions": { "worktreeEdited": false, "commitCreated": false, "buildPerformed": false, "productionAction": false },
+  "remainingBlockers": "69の当初のアの根拠不足は解消。解除は上記の限定付き解説更新後に可能。35/83の既存保留理由は未解消。"
+}

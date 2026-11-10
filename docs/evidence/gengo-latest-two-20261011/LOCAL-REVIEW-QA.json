@@ -1,0 +1,39 @@
+{
+  "savedAtUtc": "2026-10-11T03:22:33.378998+00:00",
+  "newQualificationIntakeStopped": true,
+  "independentLocalDecision": "KEEP_ALL_THREE_EXCLUDED",
+  "explainedManuscripts": 5,
+  "choiceExplanations": 25,
+  "practiceCandidates": 2,
+  "localAcademicHold": 3,
+  "officialExclusions": 2,
+  "missingOriginals": 393,
+  "publicIncrement": 0,
+  "publicationGo": false,
+  "manuscriptSha256": "f9eb7a2dd98c0f7f0a4300ee6b9f93f12001a31096456f7461ad967e81b47345",
+  "intakeSha256": "82084db8331c701fc334b39182290be2e2e2cb1f6f1fc77b2ab4878a231ac638",
+  "followUpTests": {
+    "command": "pnpm exec vitest run __tests__/questions/gengo-notice-ready.test.ts __tests__/lib/gengo-registration.test.ts --maxWorkers=1 --testTimeout=60000 --reporter=dot",
+    "exitCode": 0,
+    "passed": 11,
+    "files": 2
+  },
+  "followUpSchemaValidation": {
+    "command": "pnpm validate:questions --exam=gengo-chokakushi",
+    "exitCode": 0,
+    "count": 2,
+    "ok": 2,
+    "fail": 0,
+    "warn": 0
+  },
+  "baseCiHead": "d8eb0c54f56f31e91717f07e52e0fdce2fe7c890",
+  "baseCiBuild": "success",
+  "baseCiUnitTests": "success",
+  "localFullBuildExecuted": false,
+  "followUpTypeScriptLogicChanged": false,
+  "remainingIssues": {
+    "35": "Age-generalization unsupported",
+    "69": "URAWSS purpose alone cannot establish audio-reading mismatch",
+    "83": "Official grading and anatomical action conflict without stated rationale"
+  }
+}
