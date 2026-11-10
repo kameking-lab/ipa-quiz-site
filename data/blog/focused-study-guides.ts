@@ -6,6 +6,8 @@ const SQL_EXPRESSIONS = "https://www.postgresql.org/docs/current/sql-expressions
 const INSIDER_GUIDE = "https://www.ipa.go.jp/security/guide/insider.html";
 const INSIDER_PDF = "https://www.ipa.go.jp/security/guide/hjuojm00000055l0-att/ps6vr7000000jvcb.pdf";
 const DB_2015 = "https://www.ipa.go.jp/shiken/mondai-kaiotu/2015h27.html";
+const DB_2015_QUESTIONS = "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000f52-att/2015h27h_db_pm1_qs.pdf";
+const DB_2015_ANSWERS = "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000f52-att/2015h27h_db_pm1_ans.pdf";
 const FE_2019_QUESTIONS = "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_fe_am_qs.pdf";
 const FE_2019_ANSWERS = "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_fe_am_ans.pdf";
 
@@ -24,6 +26,7 @@ export const FOCUSED_STUDY_GUIDES: BlogPost[] = [
     editorialKind: "study-guide",
     sourceUrls: [INSIDER_GUIDE, INSIDER_PDF],
     relatedSlugs: ["sc-ronbun-taisaku", "sc-incident-response-storytelling"],
+    relatedQuestionIds: ["sc-2009h-am2-q24", "sc-2023h-am2-q21"],
     body: `# 情報処理安全確保支援士のアクセス権限管理
 
 アクセス権限管理の事例を読むときは、「誰が、どの情報に、何を、いつまでできるか」を先に書き出しましょう。最小権限という言葉だけでは、変更すべき設定を特定できません。権限を付ける場面から、不要になって外す場面までを一続きで追います。
@@ -41,6 +44,19 @@ export const FOCUSED_STUDY_GUIDES: BlogPost[] = [
 | 保守担当 | 保守対象システムの設定 | 承認された設定変更 | 保守作業の終了 |
 
 この表から、「全員に更新権限が要るか」「担当外の顧客も見えていないか」を確認します。利用者の範囲、操作の範囲、利用期間の三つを別々に絞るのが要点です。
+
+### 異動後に残った権限を説明する例
+
+営業担当の佐藤さんが集計担当へ異動し、顧客対応の兼務は終わったとします。新しい業務は、月末までに指定月の売上資料を読んで集計することです。ところが、旧部署の商談資料を閲覧・更新する権限も残っています。
+
+| 対象情報 | 現状の権限 | 現在の業務に必要な権限 | 変更後 |
+| --- | --- | --- | --- |
+| 旧部署の商談資料 | 閲覧・更新 | なし（顧客対応は終了） | 閲覧・更新を削除 |
+| 指定月の売上資料 | 閲覧 | 集計のための閲覧 | 月末の集計終了まで閲覧 |
+
+この条件から、不要な権限と、その理由を一文で書いてみてください。
+
+説明例：「佐藤さんは異動で顧客対応を終えたため、旧部署の商談資料の閲覧・更新権限を削除する。」売上資料の閲覧は新しい業務に必要なので、対象期間と月末の期限を付けて残します。異動時には旧権限を、集計終了時には一時権限を見直す、という二つの契機を区別できます。
 
 [IPAの内部不正防止ガイドライン第5版](${INSIDER_PDF})の項目（5）、冊子40〜41ページも、権限を持つ人・付与する権限・付与期間を必要な範囲に限定する考え方を示しています。
 
@@ -74,9 +90,15 @@ export const FOCUSED_STUDY_GUIDES: BlogPost[] = [
 
 ## 過去問で確認する順番
 
-まず対象の情報を囲み、必要な操作を列挙します。次に現状の権限と比べ、最後に異動や作業終了などの見直す契機を探します。特権IDがあれば、利用者と操作記録の対応も確認しましょう。
+次の五点を順にメモすると、必要な権限と現状との差を取り出せます。
 
-読み終えたら、「どの利用者の、どの操作が、いつから不要か」を一文で説明してみてください。根拠を拾って短く答える練習は、[支援士の記述問題の答え方](/blog/sc-ronbun-taisaku)でも整理できます。
+1. 対象情報：商談資料と指定月の売上資料を分ける。
+2. 必要操作：顧客対応は終了し、集計には閲覧だけが必要。
+3. 現状との差：商談資料の閲覧・更新が余分に残っている。
+4. 失効の契機：商談資料は異動時、売上資料は月末の集計終了時。
+5. 利用記録：誰が、いつ、どの情報に何をしたかを追えるか。特権IDでは作業者の識別も見る。
+
+根拠を拾って短く答える練習は、[支援士の記述問題の答え方](/blog/sc-ronbun-taisaku)でも整理できます。
 
 [支援士の過去問で確認する](/sc)
 
@@ -92,8 +114,9 @@ export const FOCUSED_STUDY_GUIDES: BlogPost[] = [
     publishedAt: "2026-11-11T00:00:00.000Z",
     editorialDates,
     editorialKind: "study-guide",
-    sourceUrls: [SQL_TABLES, SQL_AGGREGATES, SQL_EXPRESSIONS, DB_2015],
+    sourceUrls: [SQL_TABLES, SQL_AGGREGATES, SQL_EXPRESSIONS, DB_2015, DB_2015_QUESTIONS, DB_2015_ANSWERS],
     relatedSlugs: ["db-sql-taisaku", "db-er-design-practice"],
+    relatedQuestionIds: ["db-2024a-am2-q7", "db-2022a-am2-q8"],
     body: `# データベーススペシャリストのSQL集計
 
 JOINの後でSUMが想定より大きくなったら、足している列より先に、結合結果の一行を確認します。受注一件の金額が、明細の件数分だけ繰り返されているかもしれません。一方、対応する明細がない受注は、内部結合で消えることがあります。行が増える理由と消える理由を分けて追いましょう。
@@ -131,7 +154,15 @@ JOIN work_items AS w ON o.order_id = w.order_id
 ORDER BY o.order_id, w.item_id;
 \`\`\`
 
-結果は三行です。受注41の8,000円が二回、受注42の8,000円が一回現れます。ここでSUM(o.order_amount)を計算すると24,000円です。明細を持つ受注の受注額16,000円と比べると、受注41の8,000円を一回余分に数えています。
+結果は次の三行です。
+
+| 受注番号 | 受注額 | 明細番号 | 作業額 |
+| --- | ---: | --- | ---: |
+| 41 | 8,000 | 101 | 3,000 |
+| 41 | 8,000 | 102 | 5,000 |
+| 42 | 8,000 | 103 | 8,000 |
+
+受注41の8,000円が二回、受注42の8,000円が一回現れます。ここでSUM(o.order_amount)を計算すると24,000円です。明細を持つ受注の受注額16,000円と比べると、受注41の8,000円を一回余分に数えています。
 
 対してSUM(w.work_amount)は3,000＋5,000＋8,000＝16,000円です。同じ三行でも、どちらの列を足すかで意味が変わります。[PostgreSQL公式の結合の説明](${SQL_TABLES})では、内部結合は条件に一致した組合せごとに行を作ります。
 
@@ -140,6 +171,15 @@ ORDER BY o.order_id, w.item_id;
 受注43は内部結合の結果に現れません。このため、全受注の受注額21,000円と24,000円を単純に比べるだけでは、重複と欠落を同時に見てしまいます。全体の差額3,000円だけから原因を決めるのは危険です。
 
 LEFT JOINに変えると受注43も残り、右側の明細列にはNULLが入ります。ただし、受注41の二行はそのままです。SUM(o.order_amount)は29,000円となり、全受注の21,000円には戻りません。外部結合で直せるのは、この例では受注43の欠落です。
+
+先ほどのSQLのJOINをLEFT JOINに変えた結果は、次の四行です。
+
+| 受注番号 | 受注額 | 明細番号 | 作業額 |
+| --- | ---: | --- | ---: |
+| 41 | 8,000 | 101 | 3,000 |
+| 41 | 8,000 | 102 | 5,000 |
+| 42 | 8,000 | 103 | 8,000 |
+| 43 | 5,000 | NULL | NULL |
 
 結合を変えた後も、右側の列へのWHERE条件でNULLの行を除外していないか確認します。LEFT JOINと書かれているだけで、対象の受注が必ず最後まで残るとは判断できません。
 
@@ -156,7 +196,33 @@ WHERE EXISTS (
 );
 \`\`\`
 
-結果は16,000円です。明細が二件ある受注41も、外側では一件のままです。明細の金額も必要なら、明細を受注番号ごとに先に集計し、その結果を受注表へ結合する方法があります。どの書き方でも、要求された単位にそろえてから合計します。
+結果は16,000円です。明細が二件ある受注41も、外側では一件のままです。
+
+### 受注額と作業額を並べるなら、明細を先に集計する
+
+受注額と登録済み作業額を一緒に見る場合は、明細を受注番号ごとに集計してから結合します。
+
+\`\`\`sql
+SELECT o.order_id, o.order_amount,
+       COALESCE(w.work_total, 0) AS work_total
+FROM orders AS o
+LEFT JOIN (
+  SELECT order_id, SUM(work_amount) AS work_total
+  FROM work_items
+  GROUP BY order_id
+) AS w ON o.order_id = w.order_id
+ORDER BY o.order_id;
+\`\`\`
+
+内側のSELECTは受注41を8,000円、受注42を8,000円の一行ずつにまとめます。これを結合すると、外側も受注一件につき一行です。
+
+| 受注番号 | 受注額 | 登録済み作業額 |
+| --- | ---: | ---: |
+| 41 | 8,000 | 8,000 |
+| 42 | 8,000 | 8,000 |
+| 43 | 5,000 | 0 |
+
+この結果の受注額を合計すると21,000円、作業額を合計すると16,000円です。受注43には集計済みの明細行もないので、結合直後のw.work_totalはNULLです。外側のCOALESCEで表示を0にしています。0はこの例での表示方法であり、作業が完了して0円だったことまでは表しません。
 
 ## DISTINCTとNULLの置換で直るかを検算する
 
@@ -180,7 +246,7 @@ NULLの置換にも役割の違いがあります。左外部結合後に受注�
 
 確認先は、[IPAの2015年度問題・解答例](${DB_2015})にある春期DB午後I問2です。問題冊子16ページの図3は、案件の受注見込額と案件詳細の売上見込額を、それぞれの単位で集計しています。設問2（2）では、その合計が一致しない理由を業務条件から読み取ります。
 
-解答例と照合するときも、まず案件と案件詳細が作られる契機へ戻りましょう。合計が違うこと自体をSQLの誤りと決めず、何を集計したか、明細が存在しないのはどんな場合かを説明するのが練習になります。
+[問題冊子の16ページ](${DB_2015_QUESTIONS}#page=16)と[公式解答例の2ページ](${DB_2015_ANSWERS}#page=2)を照合しましょう。担当工事部がまだ決まっていない案件には、案件詳細が作られません。案件の登録と詳細の登録が同時とは限らないので、二つの合計は一致しない場合があります。独自例の受注43も、受注は存在する一方で明細がまだない、という対応です。合計の差をSQLの誤りと決める前に、行が存在する業務上の条件を確かめてください。
 
 SQLと設計全体の学習順は[DBのSQL・設計対策](/blog/db-sql-taisaku)へ。知識問題から復習する場合は、[DBの過去問でSQLの基礎を確認する](/db)へ進んでください。
 `,
@@ -194,8 +260,9 @@ SQLと設計全体の学習順は[DBのSQL・設計対策](/blog/db-sql-taisaku)
     publishedAt: "2026-11-11T00:00:00.000Z",
     editorialDates,
     editorialKind: "study-guide",
-    sourceUrls: [SQL_TABLES, FE_2019_QUESTIONS, FE_2019_ANSWERS],
+    sourceUrls: [SQL_TABLES, SQL_EXPRESSIONS, FE_2019_QUESTIONS, FE_2019_ANSWERS],
     relatedSlugs: ["fe-goukaku-benkyouhou", "db-join-sum-granularity"],
+    relatedQuestionIds: ["fe-2016a-am-q29"],
     body: `# 基本情報のSQL結合問題
 
 二つの表に同じ列名があるSQLでは、条件の「表名.列名」をひとまとまりで読みます。「住所が東京」のように列名だけを覚えると、社員の住所なのか部署の所在地なのかを取り違えます。出力列を見る前に、各条件が参照する表を確定しましょう。
@@ -203,6 +270,21 @@ SQLと設計全体の学習順は[DBのSQL・設計対策](/blog/db-sql-taisaku)
 ## SQLの条件に、表名まで書き添える
 
 SQLは、出力する列、表を対応付ける条件、行を絞る条件に分けて読みます。次は、社員表employeesと部署表departmentsを使う説明例です。部署表のdept_idは部署を一意に識別し、社員表のdept_idが所属部署を示すものとします。
+
+社員表employeesのlocationは社員の住所です。
+
+| 社員名 employee_name | 所属部署 dept_id | 住所 location |
+| --- | --- | --- |
+| 葵 | 10 | 大阪 |
+| 楓 | 20 | 東京 |
+| 凛 | 10 | 東京 |
+
+部署表departmentsのlocationは部署の所在地です。
+
+| 部署番号 dept_id | 所在地 location |
+| --- | --- |
+| 10 | 東京 |
+| 20 | 大阪 |
 
 \`\`\`sql
 SELECT e.employee_name
@@ -218,8 +300,6 @@ ORDER BY e.employee_name;
 
 AS eはemployeesの別名、AS dはdepartmentsの別名です。[PostgreSQL公式の表の別名の説明](${SQL_TABLES})を参考に、eが付いた列には「社員表」、dが付いた列には「部署表」と書き添えましょう。
 
-例の部署は、部署番号10が東京、部署番号20が大阪です。社員は、葵が部署10所属で大阪在住、楓が部署20所属で東京在住、凛が部署10所属で東京在住とします。社員表にも部署表にもlocation列を用意しますが、前者は住所、後者は部署の所在地を表します。
-
 このように同じ列名でも、指している対象は違います。e.locationという表記なら社員の住所、d.locationなら部署の所在地です。語の印象で判断せず、別名から元の表へ戻って確認します。
 
 ## 同じ列名でも条件の対象は違う
@@ -233,9 +313,15 @@ AS eはemployeesの別名、AS dはdepartmentsの別名です。[PostgreSQL公�
 
 元のSQLでは葵と凛が残ります。葵は大阪在住ですが、所属する部署10の所在地が東京なので対象です。楓は東京在住でも、部署20の所在地が大阪なので対象外です。
 
+| 社員名 | 社員住所 | 部署所在地 | 部署が東京か |
+| --- | --- | --- | --- |
+| 葵 | 大阪 | 東京 | 残す |
+| 楓 | 東京 | 大阪 | 除く |
+| 凛 | 東京 | 東京 | 残す |
+
 WHEREをe.location = '東京'へ変えると、残るのは楓と凛です。同じ東京という値でも、条件の左側が変わると答えが変わります。条件を文章にするときも、「所在地が東京」だけで止めず、誰の所在地かまで付けましょう。
 
-列名の前に表名や別名がないときは、その列を持つ表を調べます。複数の表に同名列がある状況で、無条件に左側の表の列だと読むのは避けましょう。修飾が必要かはSQLの記述と表の定義から確認します。
+このJOIN ... ONの例でWHERE location = '東京'とだけ書くと、両表にlocationがあるため参照先が曖昧です。社員住所ならe.location、部署所在地ならd.locationと指定します。一方、employee_nameは社員表だけにあるので、SELECT employee_nameと別名を省略しても参照先が一つに決まります。[PostgreSQL公式の列参照の説明](${SQL_EXPRESSIONS}#SQL-SYNTAX-COLUMN-REFERENCES)でも、別名を省略できるのは参照先が一意のときです。
 
 ## 残る行を確定してから出力列を見る
 
@@ -244,6 +330,20 @@ WHEREをe.location = '東京'へ変えると、残るのは楓と凛です。同
 JOINの条件は表同士の行の組合せを決め、WHEREはその結果を絞ります。これは結果を理解するための読み方です。SQLエンジンの内部の実行順を暗記する必要はありません。SELECTが先頭にあっても、最初から名前の一覧だけを眺めると条件の参照先を見落としやすくなります。
 
 最後にORDER BYがあれば、出力の並びを確認します。この例は社員名順を指定しています。行を残す条件と並べ替える条件は役割が別です。
+
+## カンマで表を並べたSQLも、二つの条件に分ける
+
+この例の内部結合は、次の形でも同じ社員を取り出せます。
+
+\`\`\`sql
+SELECT e.employee_name
+FROM employees AS e, departments AS d
+WHERE e.dept_id = d.dept_id
+  AND d.location = '東京'
+ORDER BY e.employee_name;
+\`\`\`
+
+FROMに並んだ二表を、WHEREのe.dept_id = d.dept_idで対応付けています。続くd.location = '東京'が部署の絞込み条件です。先のSQLのONにあった条件がWHEREに移っても、この二表の内部結合では役割を分けて読めます。[PostgreSQL公式のFROM・WHEREの説明](${SQL_TABLES})も参考にしてください。
 
 ## 公式問題を解き、基本情報の過去問へ進む
 
