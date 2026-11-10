@@ -9,7 +9,7 @@
   "scripts": {
     "dev": "vite --host 127.0.0.1",
     "typecheck": "tsc --noEmit",
-    "test": "vitest run && node --test scripts/asc_image_check.test.mjs scripts/asc_repository_check.test.mjs scripts/launch-screen.test.mjs",
+    "test": "vitest run && node --test scripts/asc_image_check.test.mjs scripts/asc_repository_check.test.mjs scripts/launch-screen.test.mjs scripts/next-build-number.test.mjs",
     "test:e2e": "node scripts/run-e2e.mjs",
     "catalog": "tsx --tsconfig tsconfig.scripts.json scripts/generate-catalog.ts",
     "build": "npm run catalog && npm run typecheck && vite build && node scripts/measure-bundle.mjs",
