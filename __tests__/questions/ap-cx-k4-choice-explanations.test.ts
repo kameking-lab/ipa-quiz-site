@@ -10,9 +10,9 @@ describe("AP cx-k4 choice explanation overlay", () => {
   it("preserves every corrected question and official answer", () => {
     expect(AP_QUESTIONS).toHaveLength(original.length);
     for (const [index, question] of AP_QUESTIONS.entries()) {
-      const { choiceExplanations: _after, ...after } = question;
-      const { choiceExplanations: _before, ...before } = original[index]!;
-      expect(after, question.id).toEqual(before);
+      expect({ ...question, choiceExplanations: undefined }, question.id).toEqual({
+        ...original[index]!, choiceExplanations: undefined,
+      });
     }
   });
 
