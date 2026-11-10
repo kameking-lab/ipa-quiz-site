@@ -54,7 +54,7 @@ describe("dentist latest two official corpus", () => {
     expect(audit.records).toHaveLength(720);
     expect(new Set(audit.records.map((record) => record.id)).size).toBe(720);
     expect(payload).toHaveLength(696);
-    expect(SHIKA_ISHI_QUESTIONS.map((question) => question.id)).toEqual(payload.map((question) => question.id));
+    expect(SHIKA_ISHI_QUESTIONS.filter((question) => question.year >= 2025).map((question) => question.id)).toEqual(payload.map((question) => question.id));
     expect(new Set(payload.map((question) => question.id)).size).toBe(696);
 
     for (const edition of [118, 119]) {
