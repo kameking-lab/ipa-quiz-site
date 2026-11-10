@@ -3,10 +3,14 @@ import { applyChoiceExplanationOverlay } from "@/lib/questions/apply-choice-expl
 import type { Question } from "@/lib/questions/types";
 import { BY_YEAR_QUESTIONS } from "./by-year";
 import choiceExplanations from "./choice-explanations-2024-2025.json";
+import cxK2ChoiceExplanations from "./choice-explanations-cx-k2.json";
 
 const RAW_SC_QUESTIONS: Question[] = BY_YEAR_QUESTIONS;
 
 export const SC_QUESTIONS: Question[] = applyChoiceExplanationOverlay(
-  applyIpaCorrections("sc", RAW_SC_QUESTIONS),
-  choiceExplanations,
+  applyChoiceExplanationOverlay(
+    applyIpaCorrections("sc", RAW_SC_QUESTIONS),
+    choiceExplanations,
+  ),
+  cxK2ChoiceExplanations,
 );
