@@ -9,6 +9,34 @@ const original = new Map(applyIpaCorrections("sc", BY_YEAR_QUESTIONS).map(q => [
 const published = new Map(SC_QUESTIONS.map(q => [q.id, q]));
 
 describe("SC cx-k2 choice explanations", () => {
+  it("covers 196 older questions except four missing diagrams or tables", () => {
+    const targets = [...original.values()].filter(q =>
+      q.year >= 2009 && q.year <= 2013 && q.session === "am2"
+      && q.type === "multiple-choice" && Object.keys(q.choices ?? {}).length === 4
+      && !q.choiceExplanations && !(q.id in existingOverlay),
+    );
+    expect(targets).toHaveLength(200);
+    expect(targets.filter(q => q.id in overlay)).toHaveLength(196);
+    expect(targets.filter(q => !(q.id in overlay)).map(q => q.id).sort()).toEqual([
+      "sc-2010h-am2-q18", // Missing topology locating the router and terminals.
+      "sc-2011a-am2-q10", // Missing access requirements for tables X and Y.
+      "sc-2013a-am2-q23", // Missing development policies for a–c, despite hasImage=false.
+      "sc-2013h-am2-q4", // Missing WAF installation positions a–d.
+    ]);
+  });
+
+  it("uses the original bandwidth and dates the patent exception explanations", () => {
+    const reason = overlay["sc-2010a-am2-q17"].イ;
+    expect(reason).toContain("0.08Mビット／秒");
+    expect(reason).toContain("100×0.5＝50Mビット／秒");
+    expect(reason).toContain("625台");
+    for (const id of ["sc-2009a-am2-q23", "sc-2012h-am2-q23"] as const) {
+      for (const explanation of Object.values(overlay[id])) {
+        expect(explanation).toContain("出題当時の特許制度");
+      }
+    }
+  });
+
   it("covers 2014–2018 except three absent figures and two inconsistent transcriptions", () => {
     const targets = [...original.values()].filter(q =>
       q.year >= 2014 && q.year <= 2018 && q.session === "am2"
