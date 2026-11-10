@@ -7,18 +7,56 @@ import { applyIpaCorrections } from "@/data/questions/corrections";
 import { applyChoiceExplanationOverlay } from "@/lib/questions/apply-choice-explanations";
 
 const skipped = [
+  "sc-2014a-am1-q3",
+  "sc-2014a-am1-q7",
+  "sc-2014h-am1-q2",
+  "sc-2014h-am1-q4",
+  "sc-2014h-am1-q7",
+  "sc-2014h-am1-q8",
+  "sc-2014h-am1-q9",
+  "sc-2015a-am1-q3",
+  "sc-2015a-am1-q7",
+  "sc-2015a-am1-q10",
+  "sc-2015a-am1-q11",
+  "sc-2015a-am1-q19",
+  "sc-2015a-am1-q29",
+  "sc-2015h-am1-q7",
+  "sc-2015h-am1-q14",
+  "sc-2015h-am1-q18",
+  "sc-2016a-am1-q1",
+  "sc-2016a-am1-q2",
+  "sc-2016a-am1-q10",
+  "sc-2016a-am1-q19",
+  "sc-2016a-am1-q20",
+  "sc-2016a-am1-q28",
+  "sc-2016a-am1-q29",
+  "sc-2016h-am1-q3",
+  "sc-2017h-am1-q1",
+  "sc-2017h-am1-q3",
+  "sc-2017h-am1-q6",
+  "sc-2017h-am1-q7",
+  "sc-2017h-am1-q8",
+  "sc-2017h-am1-q18",
+  "sc-2018a-am1-q3",
+  "sc-2018a-am1-q20",
+  "sc-2018a-am1-q28",
+  "sc-2018h-am1-q5",
+  "sc-2018h-am1-q7",
+  "sc-2018h-am1-q8",
+  "sc-2018h-am1-q28",
+
   "sc-2019h-am1-q7", "sc-2019h-am1-q11", "sc-2019h-am1-q19",
   "sc-2019a-am1-q1", "sc-2019a-am1-q19",
   "sc-2021h-am1-q19", "sc-2021h-am1-q26",
   "sc-2022h-am1-q16", "sc-2023h-am1-q2", "sc-2023h-am1-q6",
 ];
-const target = SC_QUESTIONS.filter(q => q.year >= 2019 && q.year <= 2025 && q.session === "am1");
+const target = SC_QUESTIONS.filter(q => q.year >= 2014 && q.year <= 2025 && q.session === "am1");
 
 describe("SC cx-k7 morning I choice explanations", () => {
-  it("covers all 390 target questions with 120 existing, 260 additions and 10 documented skips", () => {
-    expect(target).toHaveLength(390);
-    expect(Object.keys(overlay)).toHaveLength(260);
-    expect(target.filter(q => q.choiceExplanations)).toHaveLength(380);
+  it("covers all 690 target questions with 120 existing, 523 additions and 47 documented skips", () => {
+    expect(target).toHaveLength(690);
+    expect(Object.keys(overlay)).toHaveLength(523);
+    expect(target.filter(q => q.choiceExplanations)).toHaveLength(643);
     expect(target.filter(q => !q.choiceExplanations).map(q => q.id).sort()).toEqual(skipped.sort());
     expect(Object.keys(overlay).filter(id => id in existingOverlay)).toEqual([]);
   });
