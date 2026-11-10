@@ -4,6 +4,7 @@ const KEY = "ipa-quiz:purchase-journey:v1";
 const IDLE_MS = 30 * 60_000;
 interface State { updated: number; checkoutAt?: number; snapshots: JourneySnapshot[]; queued: JourneySnapshot[] }
 let timer: ReturnType<typeof setTimeout> | undefined;
+let pendingPurchaseOrder: string | undefined;
 function day(now: number) { return new Date(now + 9 * 3600_000).toISOString().slice(0, 10); }
 function read(): State {
   const now = Date.now();
@@ -25,11 +26,13 @@ export function flushJourney(purchaseOrder?: string) {
     const state = read();
     const changes = journeyChanges(state.queued, state.snapshots);
     if (!changes.length || typeof navigator.sendBeacon !== "function") return;
-    const body = JSON.stringify({ changes, ...(purchaseOrder ? { purchaseOrder } : {}) });
+    const order = changes.some(s => s.outcome === "purchased") ? purchaseOrder ?? pendingPurchaseOrder : undefined;
+    const body = JSON.stringify({ changes, ...(order ? { purchaseOrder: order } : {}) });
     if (navigator.sendBeacon("/api/funnel/journey", new Blob([body], { type: "text/plain;charset=UTF-8" }))) {
       // Beacon acceptance is best effort, not a delivery acknowledgement. Never retry blindly.
       state.queued = state.snapshots.map(s => ({ ...s }));
       write(state);
+      pendingPurchaseOrder = undefined;
     }
   } catch { /* Never affect an answer or a purchase. */ }
 }
@@ -69,10 +72,11 @@ export function purchaseJourney(order: string) {
   try {
     const state = read();
     if (!state.snapshots.length || state.snapshots.some(s => s.outcome === "purchased")) return;
-    state.snapshots.forEach(s => { s.outcome = "purchased"; s.stage = "purchased"; s.page = "billing_success"; });
+    state.snapshots.forEach(s => { s.outcome = "purchased"; s.stage = "purchased"; s.page = journeyPage(location.pathname); });
     state.updated = Date.now();
     write(state);
     clearTimeout(timer);
+    pendingPurchaseOrder = order;
     flushJourney(order);
   } catch { /* Optional measurement. */ }
 }

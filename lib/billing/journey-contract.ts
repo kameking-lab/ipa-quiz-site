@@ -1,10 +1,11 @@
 import { QUALIFICATION_HUBS } from "@/lib/exam-qualification-hubs";
+import { JOURNEY_EXAM_CODES } from "./journey-exam-codes";
 
 export const JOURNEY_PAGES = ["home", "quiz", "question", "exam_library", "qualification", "pricing", "signin", "billing", "billing_success", "billing_cancel", "other"] as const;
 export const JOURNEY_STAGES = ["learning", "offer", "plan_click", "signin", "billing", "checkout", "canceled", "purchased"] as const;
 export type JourneyPage = typeof JOURNEY_PAGES[number];
 export type JourneyStage = typeof JOURNEY_STAGES[number];
-export const JOURNEY_QUALIFICATIONS = ["unknown", "ip", "sg", "fe", "ap", "sc", "nw", "db", "pm", "sa", "st", "es", "sm", "au", ...QUALIFICATION_HUBS.map(h => h.slug)];
+export const JOURNEY_QUALIFICATIONS = ["unknown", ...JOURNEY_EXAM_CODES, ...QUALIFICATION_HUBS.map(h => h.slug)];
 export function journeyQualification(value: unknown): string {
   return typeof value === "string" && JOURNEY_QUALIFICATIONS.includes(value) ? value : "unknown";
 }

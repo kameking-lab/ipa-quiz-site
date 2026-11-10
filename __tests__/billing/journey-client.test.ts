@@ -2,6 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { Blob as NodeBlob } from "node:buffer";
 import { flushJourney, observeJourney, purchaseJourney } from "@/lib/billing/journey-client";
 import { journeyPage, journeyQualification, type JourneyChange } from "@/lib/billing/journey-contract";
+import { EXAM_CONFIGS } from "@/lib/exam-config";
 
 const beacon = vi.fn();
 beforeEach(() => {
@@ -26,6 +27,7 @@ describe("aggregate-only purchase learning journey", () => {
     window.history.replaceState({}, "", "/billing/start");
     observeJourney({ stage: "checkout" }); flushJourney();
     vi.advanceTimersByTime(40 * 60000); // same tab survives a slow checkout
+    window.history.replaceState({}, "", "/billing/success?order=fixture-order");
     purchaseJourney("fixture-order"); purchaseJourney("fixture-order"); flushJourney();
     observeJourney({ qualification: "ap", answer: true }); flushJourney();
     const bodies = await payloads();
@@ -67,5 +69,30 @@ describe("aggregate-only purchase learning journey", () => {
     expect(journeyPage("/auth/signin?email=private@example.test")).toBe("signin");
     expect(journeyQualification("private@example.test")).toBe("unknown");
     expect(journeyQualification("dai-1-shu-eisei-kanrisha")).toBe("dai-1-shu-eisei-kanrisha");
+    for (const code of Object.keys(EXAM_CONFIGS)) expect(journeyQualification(code), code).toBe(code);
+  });
+  it("keeps the original study day when checkout returns across midnight JST", async () => {
+    vi.setSystemTime(new Date("2026-11-11T14:55:00Z"));
+    observeJourney({ answer: true }); observeJourney({ stage: "checkout" }); flushJourney();
+    vi.setSystemTime(new Date("2026-11-11T15:05:00Z"));
+    observeJourney(); purchaseJourney("fixture-order");
+    const bodies = await payloads();
+    expect(bodies.at(-1)?.changes).toEqual(expect.arrayContaining([expect.objectContaining({ day: "2026-11-11", outcome: "purchased", answers: 1, delta: 1 })]));
+  });
+  it("expires a checkout cohort after 24 hours even if its page was revisited", async () => {
+    observeJourney({ stage: "checkout", answer: true }); flushJourney();
+    vi.setSystemTime(new Date("2026-11-12T02:00:00Z")); observeJourney(); flushJourney();
+    vi.setSystemTime(new Date("2026-11-12T03:01:00Z")); observeJourney(); flushJourney();
+    const last = (await payloads()).at(-1)!;
+    expect(last.changes).toEqual([expect.objectContaining({ day: "2026-11-12", answers: 0, delta: 1 })]);
+  });
+  it("can queue a verified purchase again on pagehide when the first queue attempt failed", async () => {
+    observeJourney({ answer: true }); flushJourney();
+    window.history.replaceState({}, "", "/billing/cancel?order=fixture-order");
+    beacon.mockReturnValueOnce(false); purchaseJourney("fixture-order"); flushJourney();
+    const bodies = await payloads();
+    expect(bodies.at(-1)?.purchaseOrder).toBe("fixture-order");
+    expect(bodies.at(-1)?.changes).toEqual(expect.arrayContaining([expect.objectContaining({ page: "billing_cancel", outcome: "purchased" })]));
+    expect(bodies.at(-1)).toEqual(bodies.at(-2));
   });
 });
