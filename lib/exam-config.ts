@@ -861,7 +861,7 @@ hokenshi: {
         { session: "pm", urlSlug: "pm", expectedQuestions: 55, label: "午後", categories: ["午後"] },
     ],
     seasons: ["annual"],
-    yearRange: { start: 2024, end: 2025 },
+    yearRange: { start: 2023, end: 2025 },
 },
 josanshi: {
     code: "josanshi",
@@ -870,7 +870,7 @@ josanshi: {
     level: "advanced",
     sessions: [{ session: "am", urlSlug: "am", expectedQuestions: 55, label: "午前", categories: ["午前"] }],
     seasons: ["annual"],
-    yearRange: { start: 2024, end: 2025 },
+    yearRange: { start: 2023, end: 2025 },
 },
 "sagyo-ryohoshi": {
     code: "sagyo-ryohoshi",
@@ -925,7 +925,7 @@ kangoshi: {
             categories: ["必修問題", "一般問題"],
         }],
     seasons: ["annual"],
-    yearRange: { start: 2024, end: 2025 },
+    yearRange: { start: 2023, end: 2025 },
 },
 "ahaki-anma": {
     code: "ahaki-anma",
