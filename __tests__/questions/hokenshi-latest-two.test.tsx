@@ -3,7 +3,9 @@ import { existsSync, readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
-import { HOKENSHI_QUESTIONS } from "@/data/questions/hokenshi";
+import { HOKENSHI_QUESTIONS as ALL_HOKENSHI_QUESTIONS } from "@/data/questions/hokenshi";
+// This frozen source-intake regression covers 2024/2025; medical-history.test.tsx covers older years.
+const HOKENSHI_QUESTIONS = ALL_HOKENSHI_QUESTIONS.filter(question => question.year >= 2024);
 import addition from "@/data/questions/hokenshi/latest-two-completion-20261011.json";
 import unchanged from "@/data/questions/hokenshi/medical34-live.json";
 import manifest from "@/docs/evidence/hokenshi-latest-two-20261011/manifest.json";

@@ -7,7 +7,9 @@ import { renderToStaticMarkup } from "react-dom/server";
 vi.mock("next/navigation", () => ({ useRouter: () => ({ push: vi.fn(), replace: vi.fn(), prefetch: vi.fn(), back: vi.fn() }) }));
 import YearPage from "@/app/[exam]/[yearSeason]/page";
 import { QuizPlayer } from "@/components/quiz/QuizPlayer";
-import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+import { KANGOSHI_QUESTIONS as ALL_KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+// This frozen source-intake regression covers 2024/2025; medical-history.test.tsx covers older years.
+const KANGOSHI_QUESTIONS = ALL_KANGOSHI_QUESTIONS.filter(question => question.year >= 2024);
 import { isAcceptedAnswer, isCompleteSelectionCorrect } from "@/lib/questions/answers";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { isNumericAnswerCorrect, numericQuestionIssue } from "@/lib/questions/numeric";

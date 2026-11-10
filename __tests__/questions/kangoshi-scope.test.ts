@@ -3,7 +3,9 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 
 import { ALL_QUESTIONS } from "@/data/questions";
-import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+import { KANGOSHI_QUESTIONS as ALL_KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+// This frozen source-intake regression covers 2024/2025; medical-history.test.tsx covers older years.
+const KANGOSHI_QUESTIONS = ALL_KANGOSHI_QUESTIONS.filter(question => question.year >= 2024);
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import { choiceDisplayLabel, usesNumberedChoices } from "@/lib/questions/display";
@@ -36,11 +38,11 @@ describe("看護師国家試験（第115回・第114回 午前 問1〜75。第11
     const keys = PREVIOUS_AM_QUESTIONS.map((q) => `${q.year}-${q.session}-${q.qNumber}`).sort();
     expect(keys).toEqual([2024, 2025].flatMap((y) => Array.from({ length: 75 }, (_, i) => `${y}-am-${i + 1}`)).filter((k) => k !== "2025-am-32").sort());
     expect(PREVIOUS_AM_QUESTIONS.reduce((sum, q) => sum + Object.keys(q.choices ?? {}).length, 0)).toBe(600);
-    expect(ALL_QUESTIONS.filter((q) => q.exam === "kangoshi" && q.session === "am" && q.qNumber <= 75)).toHaveLength(149);
+    expect(ALL_QUESTIONS.filter((q) => q.exam === "kangoshi" && q.year >= 2024 && q.session === "am" && q.qNumber <= 75)).toHaveLength(149);
     expect(new Set(PREVIOUS_AM_QUESTIONS.map((q) => q.id)).size).toBe(149);
     const fiveChoice = PREVIOUS_AM_QUESTIONS.filter((q) => Object.keys(q.choices ?? {}).length === 5).map((q) => q.id).sort();
     expect(fiveChoice).toEqual(["kangoshi-2025-annual-am-q24", "kangoshi-2025-annual-am-q25", "kangoshi-2025-annual-am-q74", "kangoshi-2025-annual-am-q75"]);
-    expect(EXAM_CONFIGS.kangoshi.yearRange).toEqual({ start: 2024, end: 2025 });
+    expect(EXAM_CONFIGS.kangoshi.yearRange).toEqual({ start: 2021, end: 2025 });
   });
 
   it("転記: 独立2転記（A・B）が本文・全肢・正答で一致し、公開文面はB稿と一致する", () => {

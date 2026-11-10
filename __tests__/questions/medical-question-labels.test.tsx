@@ -43,12 +43,13 @@ describe("medical question and quiz display names", () => {
 
   it("describes both complete scored midwife rounds and the official exclusion", async () => {
     const questions = getQuestionsByExamStrict("josanshi");
-    expect(questions).toHaveLength(219);
+    expect(questions).toHaveLength(249);
     const page = await ExamTopPage({ params: Promise.resolve({ exam: "josanshi" }) });
     const doc = new DOMParser().parseFromString(renderToStaticMarkup(page), "text/html");
     const summary = doc.querySelector("header > p")?.textContent ?? "";
     expect(summary).toContain("助産師国家試験");
-    expect(summary).toContain("採点対象219問を収録");
+    expect(summary).toContain("計249問を部分収録");
+    expect(summary).toContain("第107～105回の午前各10問");
     expect(summary).toContain("午後問31");
     expect(summary).toContain("採点対象から除外");
   });
