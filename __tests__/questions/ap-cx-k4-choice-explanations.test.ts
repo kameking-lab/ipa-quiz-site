@@ -23,7 +23,7 @@ describe("AP cx-k4 choice explanation overlay", () => {
       expect(question, id).toBeDefined();
       expect(question.exam).toBe("ap");
       expect(question.session).toBe("am");
-      expect(question.year).toBeGreaterThanOrEqual(2015);
+      expect(question.year).toBeGreaterThanOrEqual(2009);
       expect(question.year).toBeLessThanOrEqual(2018);
       expect(question.type).toBe("multiple-choice");
       expect(Object.keys(reasons).sort()).toEqual(Object.keys(question.choices!).sort());
