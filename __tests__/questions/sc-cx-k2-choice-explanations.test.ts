@@ -66,6 +66,37 @@ describe("SC cx-k2 choice explanations", () => {
     expect(reasons.エ).toContain("1バイト＝8ビット");
   });
 
+  it("preserves the direction and order of every arrow in the 2010 autumn Q20 diagram", () => {
+    // https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000004d6f-att/2010h22a_sc_am2_qs.pdf
+    // p.12: → means requester to responder; ← means responder to requester.
+    const question = published.get("sc-2010a-am2-q20")!;
+    const arrows = Object.fromEntries(Object.entries(question.choices!).map(([key, text]) => [
+      key,
+      text.split(" / ").map(message => {
+        const match = message.match(/^コネクション(要求元|要求先) (SYN\+ACK|SYN|ACK) -> コネクション(要求元|要求先)$/u);
+        expect(match, message).not.toBeNull();
+        expect(match![1], message).not.toBe(match![3]);
+        return `${match![1] === "要求元" ? "→" : "←"}${match![2]}`;
+      }),
+    ]));
+    expect(arrows).toEqual({
+      ア: ["→SYN", "←SYN+ACK", "→ACK"],
+      イ: ["→SYN", "←ACK", "←SYN", "→ACK", "→SYN", "←ACK"],
+      ウ: ["→SYN", "→SYN", "→SYN", "←ACK"],
+      エ: ["→SYN", "←ACK", "→SYN", "←ACK", "→SYN", "←ACK"],
+    });
+    expect(question.answer).toBe("ア");
+    const reasons = question.choiceExplanations!;
+    expect(reasons.イ).toContain("ACKとSYNを別々に返し");
+    expect(reasons.イ).toContain("計6メッセージ");
+    expect(reasons.イ).not.toContain("要求先からのSYNがなく");
+    expect(reasons.ウ).toContain("最後に要求先からACKが返っています");
+    expect(reasons.ウ).toContain("要求先からのSYNを含む応答");
+    expect(reasons.ウ).not.toContain("同じ方向へのSYNとACKしかなく");
+    expect(question.explanation).toContain("SYNを3回送信");
+    expect(question.explanation).not.toContain("SYNを2回送信");
+  });
+
   it("covers 2014–2018 except three absent figures and two inconsistent transcriptions", () => {
     const targets = [...original.values()].filter(q =>
       q.year >= 2014 && q.year <= 2018 && q.session === "am2"
