@@ -20,9 +20,8 @@ export function buildOrgNode() {
     name: SITE_NAME,
     url: SITE_BASE_URL,
     logo: SITE_LOGO_IMAGE,
-    sameAs: ["https://x.com/kakomon_ai_jp"],
     description:
-      "IPA情報処理技術者試験に加え、国家資格の公式公開過去問をAIコパイロット付きで無料提供する教育プラットフォーム。",
+      "IPA・FP・電気・医療・福祉などの資格の公開過去問と学習用解説を提供する教育プラットフォーム。",
   };
 }
 

@@ -79,10 +79,10 @@ export default function FeaturesIndexPage() {
           差別化機能
         </Badge>
         <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-          過去問AI の差別化機能
+          学習機能
         </h1>
         <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-          競合サービスにはない、AI ネイティブな学習体験を 3 つの機能で実現しています。
+          演習・復習・AI学習支援の使い方。
         </p>
       </header>
 

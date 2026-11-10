@@ -3,10 +3,7 @@
 import * as React from "react";
 import { Copy, Download, ExternalLink, Image as ImageIcon } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-  buildLineShareUrl,
-  buildXShareUrl,
-} from "@/lib/motivation/share";
+import { buildLineShareUrl } from "@/lib/motivation/share";
 
 interface Props {
   text: string;
@@ -57,12 +54,6 @@ export function SocialShare({ text, url, imageUrl, showImagePreview = true }: Pr
 
       <div className="grid grid-cols-2 gap-2">
         <Button asChild variant="outline" size="sm" className="gap-2">
-          <a href={buildXShareUrl(text, url)} target="_blank" rel="noopener noreferrer">
-            <ExternalLink className="h-3.5 w-3.5" />
-            X (Twitter) に投稿
-          </a>
-        </Button>
-        <Button asChild variant="outline" size="sm" className="gap-2">
           <a href={buildLineShareUrl(text, url)} target="_blank" rel="noopener noreferrer">
             <ExternalLink className="h-3.5 w-3.5" />
             LINE で送る
@@ -70,7 +61,7 @@ export function SocialShare({ text, url, imageUrl, showImagePreview = true }: Pr
         </Button>
         <Button variant="outline" size="sm" className="gap-2" onClick={handleCopy}>
           <Copy className="h-3.5 w-3.5" />
-          {copied ? "コピー済" : "テキストをコピー (Instagram/TikTok 用)"}
+          {copied ? "コピー済" : "テキストをコピー"}
         </Button>
         <Button variant="outline" size="sm" className="gap-2" onClick={handleDownload}>
           <Download className="h-3.5 w-3.5" />

@@ -592,10 +592,10 @@ export function examMetaDescription(exam: ExamCode, questionCount: number, mode?
     if (exam === "chosashi" || exam === "shika-ishi" || exam === "sharoushi" || exam === "rinsho-kensagishi" || exam === "shinryo-hoshasengishi")
         return EXAM_META_DESC_DIVERSE[exam](countFmt, yearCount, categoryCount);
     if (mode === "year") {
-        return `${name}の年度別過去問を${countFmt}問収録。AI コパイロットが選択肢ごとに即解説。全${yearCount}期分・${categoryCount}分野を完全無料公開。会員登録不要。`;
+        return `${name}の年度別過去問${countFmt}問・${yearCount}期分・${categoryCount}分野を収録。実施回を選んで、問題・出典・学習用解説を確認できます。`;
     }
     if (mode === "topic") {
-        return `${name}の分野別過去問を${countFmt}問収録。AI コパイロットが選択肢ごとに即解説。${categoryCount}分野・${yearCount}期分を完全無料公開。会員登録不要。`;
+        return `${name}の分野別過去問${countFmt}問・${categoryCount}分野・${yearCount}期分を収録。分野を選んで、問題・出典・学習用解説を確認できます。`;
     }
     return EXAM_META_DESC_DIVERSE[exam](countFmt, yearCount, categoryCount);
 }

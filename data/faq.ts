@@ -335,7 +335,7 @@ export const FAQS: FaqItem[] = [
     category: "tech",
     question: "問い合わせはどこから？",
     answer:
-      "/contact からお願いします。バグ報告・機能要望・問題の誤り報告などすべて受け付けています。X（旧 Twitter）@kakomon_ai_jp でも受付しています。",
+      "/contact から、バグ・機能要望・問題の誤りをご報告ください。",
   },
   {
     category: "tech",

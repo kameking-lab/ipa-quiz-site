@@ -86,8 +86,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@kakomon_ai_jp",
-    creator: "@kakomon_ai_jp",
     title: "過去問AI — AIネイティブ過去問学習",
     description: ROOT_DESCRIPTION,
     images: [`${BASE_URL}/opengraph-image`],
@@ -233,17 +231,6 @@ export default function RootLayout({
                       コミュニティ
                     </h3>
                     <ul className="space-y-0">
-                      <li>
-                        <a
-                          href="https://x.com/kakomon_ai_jp"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="X @kakomon_ai_jp をフォロー（新しいタブで開く）"
-                          className="block py-2.5 hover:text-foreground"
-                        >
-                          X @kakomon_ai_jp
-                        </a>
-                      </li>
                       <li><a href="https://tsugino-shikaku.jp/?utm_source=kakomon_ai&utm_medium=referral&utm_campaign=learning_network" target="_blank" rel="noopener noreferrer" className="block py-2.5 hover:text-foreground">日程・締切を探す・次の資格</a></li>
                       <li><a href="https://www.youtube.com/channel/UCrR65J1ZQ6Zzr0Gs70YPHNA?utm_source=kakomon_ai&utm_medium=referral&utm_campaign=learning_network" target="_blank" rel="noopener noreferrer" className="block py-2.5 hover:text-foreground">耳で復習・ミナト資格ラジオ</a></li>
 

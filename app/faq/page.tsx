@@ -119,7 +119,7 @@ export default function FaqPage() {
             </span>
           </h1>
           <p className="mt-4 max-w-2xl text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base">
-            過去問AI の使い方・AI 解説の精度・過去問の出典など、利用開始前によくいただく質問にまとめてお答えします（教育貢献プロジェクト・無料枠と月額プラン）。
+            使い方・料金・AI解説・出典について。
           </p>
         </header>
 

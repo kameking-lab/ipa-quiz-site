@@ -58,11 +58,11 @@ describe("QuizCompleteScreen — 検索演習の共有文脈", () => {
       />,
     );
 
-    const xShare = screen.getByRole("link", { name: /X でシェア/ });
-    expect(decodeURIComponent(xShare.getAttribute("href") ?? "")).toContain(
+    const lineShare = screen.getByRole("link", { name: /LINEで結果をシェア/ });
+    expect(decodeURIComponent(lineShare.getAttribute("href") ?? "")).toContain(
       "検索結果から選んだ問題の過去問",
     );
-    expect(decodeURIComponent(xShare.getAttribute("href") ?? "")).toContain(
+    expect(decodeURIComponent(lineShare.getAttribute("href") ?? "")).toContain(
       "/search?q=SQL&recent=1",
     );
 
