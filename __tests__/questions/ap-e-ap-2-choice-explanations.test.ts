@@ -41,7 +41,11 @@ describe("AP e-ap-2 choice explanations", () => {
     expect(ids.length).toBeGreaterThanOrEqual(50);
     expect(ids.length % 50).toBe(0);
     expect(ids.every(id => !(id in originalOverlay) && !(id in previousOverlay))).toBe(true);
-    expect(ids.filter(id => id.startsWith("ap-2017h-") && Number(id.split("q")[1]) <= 68)).toHaveLength(50);
+    const firstBatchNumbers = [
+      1, 2, 3, 5, 6, 9, 10, 11, 12, 13, 15, 16, 17, 18, 21, 22, 23, 25, 26, 28, 29, 32, 33, 35, 36,
+      37, 38, 40, 41, 43, 44, 45, 46, 47, 48, 49, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 63, 65, 67, 68,
+    ];
+    expect(firstBatchNumbers.every(number => `ap-2017h-am-q${number}` in overlay)).toBe(true);
   });
 
   it("loads the same data through the lazy exam loader", async () => {
