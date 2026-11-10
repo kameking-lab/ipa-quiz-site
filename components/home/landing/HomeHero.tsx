@@ -17,7 +17,7 @@ export function HomeHero({ domains, image }: { domains: readonly HomeDirectoryDo
         <p className="study-eyebrow">チワワと、こつこつ。資格の学びを。</p>
         <h1>過去問の勉強を、<br />ここひとつで。</h1>
         <div className="study-welcome-actions">
-          <Link href="/quiz?mode=random&exam=ip" className="study-primary w-full sm:w-auto">ログインなしで10問を始める<ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>
+          <Link href="/quiz?mode=random&exam=ip" className="study-primary w-full sm:w-auto">ITパスポートで10問を体験<ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>
           <a href="#choose-qualification" className="study-primary w-full sm:w-auto">資格を選んで始める<ArrowRight aria-hidden="true" className="h-4 w-4" /></a>
         </div>
         <a href="#study-room" className="study-text-link mt-4">自習室をのぞく<ArrowDown aria-hidden="true" className="h-4 w-4" /></a>

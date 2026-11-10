@@ -25,6 +25,7 @@ vi.mock("@/mobile/src/pet-support", () => ({ installNativePetSupport: () => () =
 vi.mock("@/app/billing/ManageSubscriptionButton", () => ({ ManageSubscriptionButton: () => null }));
 
 import { NativeTools, noticeText } from "@/mobile/src/NativeTools";
+import { downloads } from "@/mobile/src/downloads";
 
 const entitlement = { entitlement: { userId: null, entitled: false }, configuration: { sdkKey: "" } };
 let scrollTo: ReturnType<typeof vi.fn>;
@@ -67,4 +68,23 @@ it("does not scroll when the panel is opened from its own button at the top", as
 it("shows failures without the 'Error: ' prefix", () => {
   expect(noticeText(new Error("会員状態を確認できません。"))).toBe("会員状態を確認できません。");
   expect(noticeText("plain")).toBe("plain");
+});
+
+it("does not intercept the billing conditions link", async () => {
+  render(<NativeTools />); await act(async()=>{});
+  const link=Object.assign(document.createElement("a"),{href:"/billing/terms",textContent:"条件・返金"});
+  document.body.append(link);
+  // Cancel default navigation after the capture listener has had its turn.
+  let prevented=true;
+  link.addEventListener("click",e=>{prevented=e.defaultPrevented;e.preventDefault();});
+  await act(async()=>{fireEvent.click(link);});
+  expect(prevented).toBe(false);
+  expect(screen.queryByRole("heading",{name:"会員・設定"})).toBeNull();
+});
+
+it("does not erase signed offline rights merely because the status service fails", async () => {
+  vi.mocked(downloads.invalidate).mockClear();
+  vi.stubGlobal("fetch",vi.fn(async()=>new Response(null,{status:503})));
+  render(<NativeTools />);await act(async()=>{});
+  expect(downloads.invalidate).not.toHaveBeenCalled();
 });

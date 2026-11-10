@@ -25,6 +25,15 @@ it("opens the sign-in sheet without waiting for the verifier to be saved (tap fe
 });
 
 const SITE = "https://www.kakomon-ai.jp";
+it("requests fresh provider authentication for account deletion without changing ordinary login", async () => {
+  m.set.mockResolvedValue(undefined);m.open.mockResolvedValue(undefined);
+  const {beginLogin}=await import("../src/login");
+  await beginLogin(SITE,"/account/delete",true);
+  const url=new URL(m.open.mock.calls[0][0].url);
+  expect(url.searchParams.get("reauth")).toBe("1");
+  expect(new URL(url.searchParams.get("callbackUrl")!,SITE).searchParams.get("reauth")).toBe("1");
+  expect(JSON.parse(m.set.mock.calls[0][0].value).returnTo).toBe("/account/delete");
+});
 const code = "c".repeat(43), state = "s".repeat(43);
 async function pendingLogin(get: ReturnType<typeof vi.fn>) {
   get.mockResolvedValue({ value: JSON.stringify({ verifier: "v".repeat(43), state, returnTo: "/ap#app-settings", createdAt: Date.now() }) });

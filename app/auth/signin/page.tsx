@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-type SearchParams = { callbackUrl?: string; error?: string };
+type SearchParams = { callbackUrl?: string; error?: string; reauth?: string };
 
 const KNOWN_AUTH_ERRORS: Record<string, string> = {
   OAuthSignin: "外部プロバイダへの接続に失敗しました。",
@@ -56,7 +56,8 @@ export default async function SignInPage({
   const sp = await searchParams;
   const callbackUrl = safeAuthCallback(sp.callbackUrl);
   const session = await auth();
-  if (session?.user) redirect(callbackUrl);
+  const reauthenticate = sp.reauth === "1";
+  if (session?.user && !reauthenticate) redirect(callbackUrl);
 
   const errorMessage = sp.error ? friendlyAuthError(sp.error) : null;
   // On the way to Checkout: the provider buttons only, then straight on to payment.
@@ -115,6 +116,7 @@ export default async function SignInPage({
           {providerIds.size > 0 || appReviewConfig() ? (
             <>
               <SignInButtons
+                reauthenticate={reauthenticate}
                 callbackUrl={callbackUrl}
                 hasGoogle={providerIds.has("google") && (!nativeLogin || providerIds.has("apple"))}
                 hasGitHub={providerIds.has("github") && (!nativeLogin || providerIds.has("apple"))}
