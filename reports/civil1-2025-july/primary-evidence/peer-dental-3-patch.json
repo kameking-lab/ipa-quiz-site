@@ -1,0 +1,515 @@
+{
+  "status": "COMPLETE",
+  "updatedAt": "2026-10-11T04:25:56.938554+00:00",
+  "helperOwner": "01a1286f-b36d-77b0-9d75-57e69f63a082",
+  "sourceIds": [
+    "2025-A48",
+    "2025-A53",
+    "2025-A54"
+  ],
+  "manifestSha256": "788019123f86c73fda165b08ae352d3997dbc13c83b1bdf749d7458a04714983",
+  "inputSha256": "40884121f5d712ad3fd42baeedbc8edb7cc97881537fb55488c1770b5a3a9270",
+  "sourceIdentityVerified": false,
+  "publicAcceptance": false,
+  "independentAcceptance": false,
+  "stopsMustRemain": [
+    "Aomori HTTP403",
+    "Tokyo sewer HTTP503",
+    "Internet Archive CDX inaccessible",
+    "Claude cloud attach disabled"
+  ],
+  "items": [
+    {
+      "key": "2025-A48",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.jr-shikoku.co.jp/04_company/proximity-consultation/",
+              "pageOrSection": "線路近接工事に関する協議について・申込から工事着手まで",
+              "evidence": "重機・線路近接の事故リスクと事前協議、工事着手前の保安打合せを求める。",
+              "sourceType": "ORIGINAL_RAIL_OPERATOR_GUIDANCE"
+            },
+            {
+              "url": "https://www.mlit.go.jp/tec/content/001464734.pdf",
+              "pageOrSection": "PDF p.81（冊子 p.74）第11章第3節2・3",
+              "evidence": "作業時間、場所、人員、使用機械・資材等を検討した施工計画書を作成し、鉄道事業者と事前協議する。",
+              "sourceType": "ORIGINAL_GOVERNMENT_TECHNICAL_GUIDANCE"
+            },
+            {
+              "url": "https://www.osakametro.co.jp/contract/library/keiyaku/koumu_hyoujyun/07_%E5%96%B6%E6%A5%AD%E7%B7%9A%E5%86%85%E5%B7%A5%E4%BA%8B%E3%81%AB%E3%81%8A%E3%81%91%E3%82%8B%E5%8F%97%E6%B3%A8%E8%80%85%E3%81%AE%E5%AE%89%E5%85%A8%E4%BD%9C%E6%A5%AD%E5%BF%83%E5%BE%97%EF%BC%882019%E5%B9%B43%E6%9C%88%EF%BC%89.pdf",
+              "pageOrSection": "2019-03-16改訂、PDF p.7（本文 p.4）第6条2・第7条1/4/5",
+              "evidence": "工事施工の前に施工計画及び施工管理計画からなる工事計画書を監督員に提出し、緊急時連絡体制表を添付する。作業内容と具体的安全対策の周知、着手前の計画理解及び監督員と未協議の作業禁止も定める。設問の重機械使用時の現場全般の事故防止計画という固有条項までは記載しない。",
+              "sourceType": "ORIGINAL_RAIL_OPERATOR_STANDARD",
+              "documentDate": "2019-03-16"
+            }
+          ],
+          "remainingGap": "2019年Metro基準で工事計画書の監督員提出は補強。重機械使用時の現場全般について具体的事故防止対策を定めた施工計画書という設問固有の原条項は未取得。"
+        },
+        {
+          "choice": 2,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.jr-shikoku.co.jp/04_company/proximity-consultation/",
+              "pageOrSection": "よくあるお問合せQ2",
+              "evidence": "線路近接工事で列車見張員を配置する制度があることを示す。",
+              "sourceType": "ORIGINAL_RAIL_OPERATOR_GUIDANCE"
+            },
+            {
+              "url": "https://www.mlit.go.jp/tec/content/001464734.pdf",
+              "pageOrSection": "PDF p.81（冊子 p.74）第11章第3節7",
+              "evidence": "必要な作業では鉄道事業者指定の資格を有する列車見張員を作業前に配置すると定める。",
+              "sourceType": "ORIGINAL_GOVERNMENT_TECHNICAL_GUIDANCE"
+            }
+          ],
+          "remainingGap": "見張員の合図可能範囲・離隔条件の原文未確認。"
+        },
+        {
+          "choice": 3,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.jr-shikoku.co.jp/04_company/proximity-consultation/",
+              "pageOrSection": "本文・近接工事と電線防護の説明",
+              "evidence": "電線接触・感電の危険と事前の鉄道事業者との打合せを示す。",
+              "sourceType": "ORIGINAL_RAIL_OPERATOR_GUIDANCE"
+            },
+            {
+              "url": "https://www.mlit.go.jp/tec/content/001464734.pdf",
+              "pageOrSection": "PDF pp.80-81（冊子 pp.73-74）第11章第2節・第3節6",
+              "evidence": "鉄道事業者との事前協議、毎日の保安打合せを要求するが、き電停止の担当者・使用間合等の個別手続は記載しない。",
+              "sourceType": "ORIGINAL_GOVERNMENT_TECHNICAL_GUIDANCE"
+            }
+          ],
+          "remainingGap": "停電責任者、使用間合・時間・作業競合等の手続条項は未確認。"
+        },
+        {
+          "choice": 4,
+          "verdict": "CONTRADICTS_CHOICE",
+          "sources": [
+            {
+              "url": "https://www.jr-shikoku.co.jp/04_company/proximity-consultation/",
+              "pageOrSection": "本文・重機事故リスクと保安打合せ",
+              "evidence": "列車と作業員・重機の接触リスク、事前の保安調整の必要性を記述。",
+              "sourceType": "ORIGINAL_RAIL_OPERATOR_GUIDANCE"
+            },
+            {
+              "url": "https://www.mlit.go.jp/tec/content/001464734.pdf",
+              "pageOrSection": "PDF p.82（冊子 p.75）第11章第3節11 列車通過時の一時施工中止",
+              "evidence": "振動・風圧で不安定になるおそれがある工事は、列車接近時から通過するまで「一時施工を中止すること」と明記する。継続施工を認める肢4と逆。",
+              "sourceType": "ORIGINAL_GOVERNMENT_TECHNICAL_GUIDANCE"
+            }
+          ],
+          "remainingGap": null
+        }
+      ],
+      "explanationPatch": null,
+      "choiceExplanationPatches": [
+        {
+          "choice": 4,
+          "text": "不適当。列車の振動や風圧によって不安定・危険な状態になるおそれがある工事は、列車の接近時から通過するまで一時施工を中止する。工事用機械だけを止めて施工を続ける記述が誤りである。"
+        }
+      ],
+      "technicalRemaining": "肢4の一時施工中止は確認済み。肢1は監督員への計画書提出を2019年鉄道事業者基準で補強したが重機固有の事故防止計画条項、肢2は合図可能範囲と安全な離隔配置の原条項、肢3は停電責任者と使用間合/時間/範囲/競合作業の事前打合せの原条項が未取得。",
+      "questionPolarity": "SELECT_INAPPROPRIATE",
+      "workStatus": "COMPLETE",
+      "originalVerification": {
+        "sourcePdfSha256": "7252fba81325028a059f55b1b38c27d79b01cedecef3bbac74a21bceefd4ac2f",
+        "pdfPage": 23,
+        "officialHostIdentityVerified": false,
+        "figureRequired": false,
+        "visualCheck": "MATCH_INPUT",
+        "questionPolarityVerified": true,
+        "allFourChoicesChecked": true,
+        "coreMutation": false
+      },
+      "acquisitionAttempts": [
+        {
+          "url": "https://jtsb.mlit.go.jp/railway/rep-acci/RA2025-3-1.pdf",
+          "result": "web open Internal Error。本文取得不可、別経路・再試行なし。"
+        },
+        {
+          "url": "https://jtsb.mlit.go.jp/railway/rep-acci/RA2025-2-2.pdf",
+          "result": "web open Internal Error。本文取得不可、別経路・再試行なし。"
+        },
+        {
+          "url": "https://jtsb.mlit.go.jp/railway/rep-acci/RA2015-2-2.pdf",
+          "result": "web open Internal Error。本文取得不可、別経路・再試行なし。"
+        }
+      ],
+      "ownerIntegrationRequired": true
+    },
+    {
+      "key": "2025-A53",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "圧入方式での中断と管の締付けの関係を、2025年以前の発注者施工基準又は工法原著資料で確認できていない。"
+        },
+        {
+          "choice": 2,
+          "verdict": "PARTIALLY_SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.technica-goudou.co.jp/products/excavation/503.html",
+              "pageOrSection": "推進工事・粘土質対応薬剤、行110〜112",
+              "evidence": "粘土質地盤では水の注入掘削が可能で、粘着性を抑える対策が必要とするメーカー原資料。オーガ方式に固有の先端抵抗急増までは記していない。",
+              "sourceType": "ORIGINAL_MATERIAL_MANUFACTURER_GUIDANCE_UNDATED"
+            }
+          ],
+          "remainingGap": "オーガ方式に固有の粘性土での先端抵抗急増と注水による軟弱化を、工法原著で直接照合できていない。"
+        },
+        {
+          "choice": 3,
+          "verdict": "PARTIALLY_SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.pref.osaka.lg.jp/documents/2169/r060801_gesui_sisinkouji.pdf",
+              "pageOrSection": "2024年8月版PDF 105〜106ページ目（索引P104〜P105）図5-1-1と工法選定",
+              "evidence": "鋼管さや管のボーリング方式を分類し、工法選定は土質条件と地下水位で判定すると記すが、設問の砂質土・粘性土の正誤は直接示さない。",
+              "sourceType": "ORIGINAL_LOCAL_GOVERNMENT_TECHNICAL_GUIDANCE"
+            },
+            {
+              "url": "https://sanwa-spd.co.jp/wp-content/uploads/2022/06/KCCA_N.pdf",
+              "pageOrSection": "PDF 1ページ目（索引P0）表1・導入",
+              "evidence": "熊本県下水道担当者と施工者による原著論文。小口径推進で先導体の適用は土質、地下水、透水係数等で異なると記す。ただし高耐荷力方式の表であり設問の鋼管さや管ボーリング方式を直接扱わない。",
+              "sourceType": "ORIGINAL_AUTHOR_TECHNICAL_PAPER"
+            }
+          ],
+          "remainingGap": "開放型ボーリング方式の地下水位以下における砂質土と粘性土の適用条件を直接示す原著・発注者基準が未確認。二次試験解説の「砂質土へ訂正」は採用しない。"
+        },
+        {
+          "choice": 4,
+          "verdict": "PARTIALLY_SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.geox.jp/press/2086/",
+              "pageOrSection": "2024-06-14、泥水式推進工法の基礎知識「泥水に必要な性質」（行90〜105）",
+              "evidence": "泥水の比重は切羽安定に、粘性は逸泥防止に関係し、地山条件に応じ調整すると自社工法材料を扱う企業が説明。",
+              "sourceType": "ORIGINAL_MATERIAL_MANUFACTURER_TECHNICAL_ARTICLE"
+            },
+            {
+              "url": "https://www.technica-goudou.co.jp/products/excavation/503.html",
+              "pageOrSection": "推進工事・目詰材（行91〜105）",
+              "evidence": "メーカー原資料が目詰材を地山粒子間の目詰めによる逸泥防止用と明示。",
+              "sourceType": "ORIGINAL_MATERIAL_MANUFACTURER_GUIDANCE_UNDATED"
+            }
+          ],
+          "remainingGap": "高透水で緩い地盤という設問条件で、送泥水比重・粘性を高くする施工手順全体を一つの2025年以前の工法原著で直接確認できていない。"
+        }
+      ],
+      "explanationPatch": null,
+      "choiceExplanationPatches": [],
+      "technicalRemaining": "肢4の泥水調整・逸泥防止材料と肢2の粘性土への水注入の一般技術は原資料で補強したが、方式固有の肢1・2と、誤肢3の粘性土／砂質土の厳密な訂正が未確認。一次資料で確定できるまでHOLD。",
+      "acquisitionAttempts": [
+        {
+          "url": "https://www.envi-horizon.gr.jp/shiryou/env/env_all.pdf",
+          "result": "Web閲覧はファイル容量上限（16MB超）で本文取得不可。別経路・分割版への回避取得なし。"
+        },
+        {
+          "url": "https://www.atlas-method.com/sekisan_shiryo.pdf",
+          "result": "Web閲覧502。再試行・別経路取得なし。"
+        },
+        {
+          "url": "https://www.sokushin.co.jp/method/%E6%8E%A8%E9%80%B2%E5%B7%A5%E6%B3%95/",
+          "result": "Web閲覧502。再試行・別経路取得なし。"
+        },
+        {
+          "url": "https://www.pref.osaka.lg.jp/documents/2169/r060801_gesui_sisinkouji.pdf",
+          "result": "2024年原資料閲覧成功。ただし方式分類と土質・地下水に基づく選定までで、設問4肢の固有注意事項の直接記載なし。"
+        },
+        {
+          "url": "https://sekisanweb.com/pdf/2025_TP406050_sekkeisiryou.pdf",
+          "result": "web open 400 Content length is too large:11083476。別経路・分割版・再試行なし。"
+        },
+        {
+          "url": "https://www.unclemole.jp/download/H26sekisan_uncle.pdf",
+          "result": "web open 400 Timeout fetching。再試行・別経路取得なし。"
+        },
+        {
+          "url": "https://kouhounavi.com/navi/data/suisin/Speeder/speeder-gij.pdf",
+          "result": "web open Internal Error。再試行・別経路取得なし。"
+        },
+        {
+          "url": "https://lsweb.co.jp/parts/tachiyomi/2016/1611/1611_03.pdf",
+          "result": "web open Internal Error。再試行・別経路取得なし。"
+        }
+      ],
+      "sourceTimeNote": "ジオックス記事は2024-06-14。大阪府指針は2024-08-01。三和測量設計社掲載PDFは2002年頃の原著。テクニカ合同のWeb本文更新日は未確認のため2025当時の単独決定根拠とはしない。",
+      "workStatus": "COMPLETE",
+      "originalVerification": {
+        "sourcePdfSha256": "7252fba81325028a059f55b1b38c27d79b01cedecef3bbac74a21bceefd4ac2f",
+        "pdfPage": 25,
+        "officialHostIdentityVerified": false,
+        "figureRequired": false,
+        "visualCheck": "MATCH_INPUT",
+        "questionPolarityVerified": true,
+        "allFourChoicesChecked": true,
+        "coreMutation": false
+      },
+      "ownerIntegrationRequired": true
+    },
+    {
+      "key": "2025-A54",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "CONFIRMED_WITH_CORRECTION",
+          "sources": [
+            {
+              "url": "https://www.kkr.mlit.go.jp/plan/jigyousya/technical_information/gijutsukanri/hikkei_kouji/qgl8vl00000050p0-att/21.pdf",
+              "pageOrSection": "PDF 10ページ目（索引P9）、第4章4-2および4-3",
+              "evidence": "誤りという判定は一致。採水地点は注入箇所からおおむね10m以内に少なくとも数箇所で、観測井を設け、既存井戸も利用可能。工事終了後も一定期間採水する。原稿説明に『20mの一律義務』だけでなく正しい10mの基準を明記する必要がある。",
+              "sourceType": "ORIGINAL_GOVERNMENT_TECHNICAL_GUIDANCE"
+            },
+            {
+              "url": "https://www.ctfc2023.com/exhibitor/img/jga/document1.pdf",
+              "pageOrSection": "PDF pp.16-17「地下水の監視」",
+              "evidence": "おおむね10m以内に少なくとも数箇所を置く採水地点と、工事終了後半年までの監視を説明する。",
+              "sourceType": "ORIGINAL_TECHNICAL_ASSOCIATION_PRESENTATION",
+              "documentDate": "2018-10-25"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "CONFIRMED_WITH_WORDING_NOTE",
+          "sources": [
+            {
+              "url": "https://www.mlit.go.jp/common/001197595.pdf",
+              "pageOrSection": "PDF 7ページ目（索引P6）、⑥薬液の使用量",
+              "evidence": "500kL以上の大規模注入工事で『プラントのタンクからミキサー迄の間』に流量積算計を設け、薬液材料の日使用量等を管理することを確認。原稿の『原料タンクと調合槽』は出典の厳密な表現ではないため説明は原文に寄せるとよい。",
+              "sourceType": "ORIGINAL_GOVERNMENT_TECHNICAL_GUIDANCE"
+            },
+            {
+              "url": "https://www.ctfc2023.com/exhibitor/img/jga/document1.pdf",
+              "pageOrSection": "PDF p.13「②注入量の確認」",
+              "evidence": "500kL以上でプラントタンクからミキサまでの流量積算計を設置し、水ガラスの日使用量等を管理すると協会原著が明示する。",
+              "sourceType": "ORIGINAL_TECHNICAL_ASSOCIATION_PRESENTATION",
+              "documentDate": "2018-10-25"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "SUPPORTED_WITH_SELECTION_CRITERION_NOTE",
+          "sources": [
+            {
+              "url": "https://seiwarw.co.jp/business/foundation/chemical",
+              "pageOrSection": "薬液注入工・二重管ストレーナー工法／二重管ダブルパッカー工法、行40〜85",
+              "evidence": "原施工者は通常の二重管ストレーナーでボーリングマシンを、削孔深度25m以上やロータリーパーカッション削孔が必要な条件でダブルパッカー・パーカッションドリルを挙げる。両者の削孔精度の優劣は明示しない。",
+              "sourceType": "ORIGINAL_CONTRACTOR_TECHNICAL_GUIDANCE_UNDATED"
+            },
+            {
+              "url": "https://www.ctfc2023.com/exhibitor/img/jga/document1.pdf",
+              "pageOrSection": "PDF p.1（2018-10-25開催の原著日付）、PDF p.10右上「②工法選定の目安（P.23）」",
+              "evidence": "日本グラウト協会の選定図は、改良深度25m以内ではない条件、削孔精度が重要で1/100程度を確保する条件、ロータリー削孔が不可能でパーカッション削孔を用いる条件をダブルパッカ工法へ分岐する。二重管ストレーナ工法へは削孔精度が重要でない1/50程度確保の条件を分岐する。高精度・大深度条件でダブルパッカを選定する直接比較の根拠。数値は選定目安であり個別現場の精度保証値ではない。",
+              "sourceType": "ORIGINAL_TECHNICAL_ASSOCIATION_PRESENTATION",
+              "documentDate": "2018-10-25",
+              "localPdfSha256": "bea9e8064603bd83d4531cdeb2763ebc23436628f17042f71f00f578a46f0faf",
+              "visualEvidencePath": "C:/Users/kanet/AppData/Local/Temp/civil-peer-dental-qc/jga-page10-selection.png"
+            }
+          ],
+          "remainingGap": null,
+          "interpretationNote": "深度の原図分岐は「25m以内か」であり25m超をダブルパッカへ振る。設問の25m以上という境界は既存原施工者資料の記述と併読する。1/100・1/50は工法選定目安としてのみ扱い、全現場での無条件な実測精度差とはしない。"
+        },
+        {
+          "choice": 4,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "調合水の水道水原則・代替水pH5.8～8.6を同時に示す2025年以前の発注者基準又は原技術基準が未取得。地下水監視のpH基準を調合水へ流用しない。"
+        }
+      ],
+      "explanationPatch": null,
+      "choiceExplanationPatches": [
+        {
+          "choice": 1,
+          "text": "不適当。暫定指針では注入箇所からおおむね10m以内に少なくとも数箇所の採水地点を設ける。工事中だけでなく工事終了後も監視を続ける。既設の井戸を利用できる場合もあるため、20m以内に必ず新しい井戸を設けるという説明にしない。"
+        },
+        {
+          "choice": 2,
+          "text": "適当。500kL以上の大規模注入工事では、プラントのタンクからミキサーまでの間に流量積算計を設置し、水ガラスの日使用量等を管理する。"
+        },
+        {
+          "choice": 3,
+          "text": "適当。大深度の削孔や高い削孔精度が必要な条件では、ダブルパッカ工法でパーカッション削孔等を選定する。日本グラウト協会の工法選定図は、ダブルパッカ側を1/100程度、二重管ストレーナ側を1/50程度の精度確保の目安で区別している。これは工法選定の目安であり、個別現場の実測精度を一律に保証する数値ではない。"
+        }
+      ],
+      "technicalRemaining": "肢1・2は確認済み、肢3の直接精度比較・大深度/パーカッション選定は2018年協会原著の選定図で補強して解消。肢4の調合水の水道水原則と代替水pH5.8～8.6の原基準だけ未取得のためHOLDを保持する。",
+      "acquisitionAttempts": [
+        {
+          "url": "https://seiwarw.co.jp/business/foundation/chemical",
+          "result": "原施工者の工法説明を閲覧成功。深度25m以上でのダブルパッカー選定とパーカッション使用を確認、削孔精度比較なし。"
+        },
+        {
+          "url": "https://www.kkr.mlit.go.jp/plan/jigyousya/technical_information/gijutsukanri/hikkei_kouji/qgl8vl00000050p0-att/21.pdf",
+          "result": "暫定指針を閲覧成功。pHは地下水監視項目であり調合水のpH基準へ流用不可。"
+        },
+        {
+          "url": "https://www.chemico.co.jp/construction_term_cat/%E8%96%AC%E6%B6%B2%E6%B3%A8%E5%85%A5%E5%B7%A5%E6%B3%95/",
+          "result": "原施工者の工法種別一覧のみ確認。精度比較・調合水基準を記載せず。"
+        },
+        {
+          "url": "https://www.city.osaka.lg.jp/kensetsu/cmsfiles/contents/0000115/115402/082.pdf",
+          "result": "正規公開施工要綱22頁閲覧成功。調合水pH・削孔精度の直接記載なし。"
+        },
+        {
+          "url": "https://www.zenchiren.or.jp/sekisan/pdf/03.pdf",
+          "result": "Web閲覧正常、132頁の画像PDF。通常HTTPSでTempへ正規取得、SHA269507907b56a429d253fb332327bb163fd22538c3b60e11db2771ff1268f7e5。第1節概説・施工機械・材料（PDF pp.3-32）を縮小シートで範囲確認。調合水pH又は設問の精度比較の直接根拠はこの概説範囲に確認できず、決定根拠として採用しない。全文132頁の否定検索をしたとは扱わない。"
+        },
+        {
+          "url": "https://www.ctfc2023.com/exhibitor/img/jga/document1.pdf",
+          "result": "Web閲覧及び通常HTTPS取得正常。原著日付2018-10-25、PDF34頁。p.10工法選定図を高解像度で目視。2018年原著図の深度/精度/パーカッション分岐を肢3の直接比較補強として採用。"
+        },
+        {
+          "url": "https://jgs-chubu.org/wp-content/uploads/pdfupload/download/syn4/pdf/25/25_2_1.pdf",
+          "result": "施工者原著4頁閲覧成功。自在ボーリング併用ダブルパッカの実例精度±30cmを記すが、通常二重管ストレーナとの25m以上の直接比較ではないため設問の単独根拠に採用しない。"
+        },
+        {
+          "url": "https://jcmanet.or.jp/sympo-ronbun2020/ronbun24.pdf",
+          "result": "施工者2020年原著4頁閲覧成功。高圧噴射攪拌工法の改良機と比較する研究であり、薬液注入の二重管ストレーナとダブルパッカの直接比較ではないため数値を設問に転用しない。"
+        },
+        {
+          "url": "https://www.japan-grout.jp/publication/",
+          "result": "協会発行の薬液注入工施工資料2018改訂版・設計施工指針等の存在を確認。本文未取得、購入・会員登録・問い合わせ送信は行わず水質基準の推測引用なし。"
+        }
+      ],
+      "sourceTimeNote": "2018-10-25の協会原著説明会資料により肢1/2を独立補強し肢3の精度選定目安比較を追加。成和Web本文の版日は不明のため2025以前の単独決定根拠とせず、工法/機械補助に限る。",
+      "workStatus": "COMPLETE",
+      "originalVerification": {
+        "sourcePdfSha256": "7252fba81325028a059f55b1b38c27d79b01cedecef3bbac74a21bceefd4ac2f",
+        "pdfPage": 25,
+        "officialHostIdentityVerified": false,
+        "figureRequired": false,
+        "visualCheck": "MATCH_INPUT",
+        "questionPolarityVerified": true,
+        "allFourChoicesChecked": true,
+        "coreMutation": false
+      },
+      "ownerIntegrationRequired": true
+    }
+  ],
+  "progress": {
+    "originalsVisuallyChecked": 3,
+    "figuresRequired": 0,
+    "originalQuestionChoiceChanges": 0,
+    "existingRefusalsKept": true,
+    "currentFocus": "COMPLETE。3問HOLDの個別不足を固定し、A54肢3の新規一次図表根拠と限定patchを統合主担当へ引継ぐ。",
+    "newChoiceGapsClosed": 1,
+    "remainingQuestions": 3,
+    "remainingChoiceGaps": 8
+  },
+  "completedAt": "2026-10-11T04:23:26.137502+00:00",
+  "reviewScope": "A48/A53/A54の保存原問・正答を維持する12肢の局所一次根拠確認。原稿/予約/WT/Git変更なし。",
+  "statusMeaning": "専用helperレビューと成果保存の完了。全3問のTECHNICALLY_RESOLVED又は公開承認を意味しない。",
+  "integrationOwner": "01a12864-232c-7720-aa58-0909185760b1",
+  "globalHolds": [
+    "2025 official host identity unverified for101",
+    "Independent acceptance/publication false"
+  ],
+  "summary": {
+    "assignedQuestions": 3,
+    "assignedChoiceChecks": 12,
+    "originalsVisuallyMatched": 3,
+    "missingFigures": 0,
+    "technicalQuestionsResolved": 0,
+    "technicalQuestionsHeld": 3,
+    "choiceChecksWithoutRemainingGap": 4,
+    "choiceChecksWithRemainingGap": 8,
+    "newChoiceGapsSupported": 1,
+    "newPrimarySourcesAddedToChoiceChecks": 2,
+    "boundedChoiceExplanationPatches": 4,
+    "originalQuestionChoiceAnswerChanges": 0,
+    "repositoryEdits": 0,
+    "newPullRequests": 0,
+    "publishedIncrement": 0
+  },
+  "publicationAuthorized": false,
+  "ownerAcceptance": "PENDING_OWNER_INTEGRATION_REVIEW",
+  "nextNeededEvidence": [
+    {
+      "sourceId": "2025-A48",
+      "choices": [
+        1,
+        2,
+        3
+      ],
+      "need": "2025年以前の在来線営業線保安仕様原条項：重機の事故防止計画、合図範囲/離隔の見張位置、停電責任者による使用間合等事前打合せ。",
+      "possibleOriginalPublication": "日本鉄道施設協会扱いJR東日本営業線工事保安関係標準仕様書（在来線）。発行案内のみ確認、本文未取得。"
+    },
+    {
+      "sourceId": "2025-A53",
+      "choices": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "need": "小口径管の各方式に固有の中断締付け/粘性土先端抵抗注水/開放ボーリングの砂質土と地下水/高透水緩地盤の泥水調整の原条項。",
+      "noGuessedCorrection": true
+    },
+    {
+      "sourceId": "2025-A54",
+      "choices": [
+        4
+      ],
+      "need": "薬液注入材料の調合水を水道水原則とし代替水pH5.8～8.6を示す原技術基準又は発注者仕様。地下水監視項目との混同不可。"
+    }
+  ],
+  "scopeExclusionsKept": {
+    "reservedPeer12": true,
+    "meteor6": true,
+    "2026B7": true,
+    "allOtherQuestions": true
+  },
+  "sourceExclusions": [
+    "二次試験解説・まとめサイトの解釈を一次根拠に採用しない。",
+    "更新日不明のWeb本文を2025当時の単独決定根拠にしない。",
+    "深度/精度目安を全工事の実測精度保証へ拡大しない。",
+    "監視用地下水pHを薬液の調合水pHに転用しない。"
+  ],
+  "validation": {
+    "status": "PASS",
+    "checkedAt": "2026-10-11T04:25:56.938554+00:00",
+    "checks": [
+      "exact_assigned_three_source_ids",
+      "exact_four_choices_per_question",
+      "manifest_and_input_hashes_unchanged",
+      "saved_original_pdf_hash_unchanged",
+      "saved_official_answers_4_3_1_preserved",
+      "primary_source_locators_present_when_sources_available",
+      "bounded_patches_only_for_supported_choices",
+      "four_supported_eight_gaps_three_holds",
+      "publication_and_identity_gates_false",
+      "original_existing_stops_preserved",
+      "no_original_question_choices_answer_fields_in_patch",
+      "valid_unicode_without_replacement_characters"
+    ],
+    "supportedChoices": [
+      "2025-A48:4",
+      "2025-A54:1",
+      "2025-A54:2",
+      "2025-A54:3"
+    ],
+    "remainingChoiceGaps": [
+      "2025-A48:1",
+      "2025-A48:2",
+      "2025-A48:3",
+      "2025-A53:1",
+      "2025-A53:2",
+      "2025-A53:3",
+      "2025-A53:4",
+      "2025-A54:4"
+    ]
+  }
+}

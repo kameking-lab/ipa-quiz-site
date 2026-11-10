@@ -1,0 +1,79 @@
+{
+  "scope": "2025年1級土木施工管理第一次検定 A52・A53 の追加局所調査",
+  "status": "HOLD_NO_PUBLIC_ACCEPTANCE",
+  "constraints": "問題候補JSONは未編集。以前503だった東京都下水道局資料は再取得していない。公開PDFの取得失敗後に別経路で同一資料を取りに行っていない。検索結果や民間解説のみを公的一次根拠として採用しない。",
+  "questions": [
+    {
+      "paper": "A",
+      "number": 52,
+      "localStatus": "HOLD",
+      "choiceEvidence": [
+        {
+          "choiceNumber": 1,
+          "assessment": "UNVERIFIED_BY_PUBLIC_PRIMARY",
+          "sourceUrl": null,
+          "sourceLocation": null,
+          "explanationFit": "反転工法が樹脂含浸材を反転挿入するという分類は、閲覧できた自治体原資料から直接確認できなかった。"
+        },
+        {
+          "choiceNumber": 2,
+          "assessment": "PARTIAL_CONFIRMATION",
+          "sourceUrl": "https://dl.ndl.go.jp/view/prepareDownload?contentNo=1&itemId=info%3Andljp%2Fpid%2F10445469",
+          "sourceLocation": "PDF 3ページ目（索引P2、誌面18頁）『名古屋市における上下水道施設の更新事業への取組み』名古屋市上下水道局の施工状況",
+          "explanationFit": "同局のSPR工法事例は、硬質塩化ビニル製帯状材料をらせん状に嵌合して製管し、既設管との間に裏込材モルタルを注入する。選択肢2の記述は少なくともこの製管工法事例に該当し、形成工法という名称とは整合しない。ただし形成工法の積極的定義はこの文書にない。"
+        },
+        {
+          "choiceNumber": 3,
+          "assessment": "UNVERIFIED_BY_PUBLIC_PRIMARY",
+          "sourceUrl": null,
+          "sourceLocation": null,
+          "explanationFit": "工場製の小径管を挿入し間隙を充填することがさや管工法という定義を、閲覧できた自治体原資料から直接確認できなかった。"
+        },
+        {
+          "choiceNumber": 4,
+          "assessment": "PARTIAL_CONFIRMATION",
+          "sourceUrl": "https://dl.ndl.go.jp/view/prepareDownload?contentNo=1&itemId=info%3Andljp%2Fpid%2F10445469",
+          "sourceLocation": "PDF 3ページ目（索引P2、誌面18頁）『名古屋市における上下水道施設の更新事業への取組み』名古屋市上下水道局の施工状況",
+          "explanationFit": "自治体自身が報告した製管事例は帯状塩ビ材のらせん嵌合・モルタル裏込めであり、選択肢4の樹脂含浸材の加圧挿入・硬化とは一致しない。選択肢4の説明が反転工法であることの直接照合は未了。"
+        }
+      ],
+      "remainingIssue": "4工法を網羅する閲覧可能な自治体・国の一次定義が得られていない。青梅市公開マニュアルは https://www.city.ome.tokyo.jp/uploaded/life/125143_253244_misc.pdf だが、公開検索で存在を確認後の本文閲覧は容量制限エラーとなったため引用根拠にしていない。日本下水道管路管理業協会の技術Q&Aはサーバー502で本文閲覧できず、再試行していない。正答肢3の一次照合が必要。"
+    },
+    {
+      "paper": "A",
+      "number": 53,
+      "localStatus": "HOLD",
+      "choiceEvidence": [
+        {
+          "choiceNumber": 1,
+          "assessment": "UNVERIFIED_BY_PUBLIC_PRIMARY",
+          "sourceUrl": null,
+          "sourceLocation": null,
+          "explanationFit": "圧入方式の誘導管推進を中断した場合の締付け・到達不能という方式固有の記述を確認できなかった。"
+        },
+        {
+          "choiceNumber": 2,
+          "assessment": "UNVERIFIED_BY_PUBLIC_PRIMARY",
+          "sourceUrl": null,
+          "sourceLocation": null,
+          "explanationFit": "オーガ方式の粘性土での先端抵抗急増と注水対策を方式固有の公的原資料で確認できなかった。"
+        },
+        {
+          "choiceNumber": 3,
+          "assessment": "PARTIAL_GENERAL_PRINCIPLE_ONLY",
+          "sourceUrl": "https://www.city.sapporo.jp/suido/jigyosya/bid/kankoji/documents/07_suishin.pdf",
+          "sourceLocation": "PDF 3ページ目（索引P2、冊子63頁）、7・1・5施工管理と7・1・6小口径管推進",
+          "explanationFit": "札幌市水道局の推進工仕様書は、土質と地下水圧を把握して適切な掘進機を選ぶこと、掘進中断時は切羽安定措置を講じることを定める。ボーリング方式の前面開放と地下水位以下の粘性土・砂質土の比較は直接示さない。正確な訂正を『砂質土地盤』とする可能性はあるが、公的原資料で確定しておらず原稿へ反映しない。なお当該PDFは2026年版で2025年試験後の版。"
+        },
+        {
+          "choiceNumber": 4,
+          "assessment": "UNVERIFIED_BY_PUBLIC_PRIMARY",
+          "sourceUrl": null,
+          "sourceLocation": null,
+          "explanationFit": "泥水方式の高透水性地盤における比重・粘性調整、逸泥防止材の方式固有根拠を確認できなかった。"
+        }
+      ],
+      "remainingIssue": "札幌市資料は土質・地下水と切羽安定の一般原則に限られる。方式別の適用土質と肢3の『粘性土→砂質土』訂正を直接示す、2025年以前の公的一次技術資料は未確認。"
+    }
+  ]
+}

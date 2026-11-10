@@ -1,0 +1,646 @@
+{
+  "scope": "tunnel-marine-rail",
+  "sourceCheckpoint": "3fb49219bceb62cd365edacfb7dc5c351b5caedc",
+  "candidateEdited": false,
+  "publicAcceptance": "NOT_ASSESSED",
+  "items": [
+    {
+      "key": "A40",
+      "decision": "TECHNICALLY_RESOLVED",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "CONTRADICTS_CHOICE",
+          "sources": [
+            {
+              "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc2386&dataType=1&pageNo=1",
+              "pageOrSection": "山岳トンネル工事の切羽における肌落ち災害防止対策ガイドライン・ベンチカット工法",
+              "evidence": "上段と下段に分け、地山状態に応じ適切なベンチカット方法を検討する。"
+            },
+            {
+              "url": "https://www.obayashi.co.jp/tunnelworld/system/mountain/case/",
+              "pageOrSection": "飯山トンネル『膨圧との遭遇』",
+              "evidence": "施工者の事例原文。地山悪化・変位増大に伴いショートベンチからミニベンチへ変更し、早期閉合を図った。長くするという選択肢とは逆。"
+            }
+          ],
+          "remainingGap": null,
+          "scopeNote": "個別事例であり、ベンチ長を全地山で一律に短くする普遍規則ではない。"
+        },
+        {
+          "choice": 2,
+          "verdict": "CONTRADICTS_CHOICE",
+          "sources": [
+            {
+              "url": "https://www.jstage.jst.go.jp/article/jscejf/66/3/66_3_447/_pdf",
+              "pageOrSection": "PDF p.2（論文p.448）表-1、2章b)",
+              "evidence": "鉄道・運輸機構等の原著論文。全断面採用例を含む機械集約施工例について、想定外の地山への融通性が劣ると記載。"
+            }
+          ],
+          "remainingGap": null,
+          "scopeNote": "施工機械構成を含む事例評価であり、全断面工法単独の全条件における一般定理ではない。"
+        },
+        {
+          "choice": 3,
+          "verdict": "ALIGNED",
+          "sources": [
+            {
+              "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc2386&dataType=1&pageNo=1",
+              "pageOrSection": "同ガイドライン・ベンチカット工法末段",
+              "evidence": "早期の内空閉合が必要な場合は補助ベンチ付き全断面工法等を検討すると記す。"
+            },
+            {
+              "url": "https://k-keikaku.or.jp/%E3%83%88%E3%83%B3%E3%83%8D%E3%83%AB%E6%8A%80%E8%A1%93%E3%81%AE%E6%9C%80%E8%BF%91%E3%81%AE%E5%8B%95%E5%90%91%E3%81%A8%E8%AA%B2%E9%A1%8C/",
+              "pageOrSection": "独立行政法人土木研究所・真下英人『2.2施工技術(1)』",
+              "evidence": "原著記事は補助ベンチで切羽を安定させ全断面に近い施工をすること、悪い地山にも補助工法と組み合わせて用いる例を述べる。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "CONTRADICTS_CHOICE",
+          "sources": [
+            {
+              "url": "https://www.hrr.mlit.go.jp/gijyutu/kaitei/sekkei_r/02Split/10.PDF",
+              "pageOrSection": "PDF p.32（冊子 p.10-32）、第10章 トンネル、表10.22 注2",
+              "evidence": "坑口部では支持地盤の地耐力が小さい場合に側壁導坑先進工法等を用いると明記。選択肢4の「支持力が十分にある場合」は逆。"
+            }
+          ],
+          "remainingGap": null,
+          "scopeNote": "The Hokuriku table addresses portal/large-section design; verify general applicability if this regional scope matters. This contradiction is consistent with answer choice 3, not a conflict."
+        }
+      ],
+      "explanationPatch": null,
+      "choiceExplanationPatches": {},
+      "technicalRemaining": null,
+      "questionPolarity": "SELECT_APPROPRIATE"
+    },
+    {
+      "key": "A41",
+      "decision": "TECHNICALLY_RESOLVED",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "CONTRADICTS_CHOICE",
+          "sources": [
+            {
+              "url": "https://www.ejcm.or.jp/jcm/ronbun/12/pdf/12h-22.pdf",
+              "pageOrSection": "PDF p.1、3.従来工法の問題点",
+              "evidence": "原著の施工報告は内空変位が収束した箇所から覆工を施工するのが通常と記す。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "ALIGNED",
+          "sources": [
+            {
+              "url": "https://www.thr.mlit.go.jp/road/sesaku/tebiki/tonnelfukoukonkurito.pdf",
+              "pageOrSection": "PDF p.35（本文p.33）・打重ね線と締固めの対策、p.27『一体性のある覆工』",
+              "evidence": "打重ね線等を防ぐための十分な締固め、均質かつ密実で一体性のある覆工を要求。"
+            },
+            {
+              "url": "https://www.cgr.mlit.go.jp/ctc/pdf/technology/concrete/check.pdf",
+              "pageOrSection": "PDF pp.40-42（冊子 pp.37-39）7.1 打込み・7.2 締固め",
+              "evidence": "先打ちコンクリートの再振動可能時間内に上層を打ち重ねてコールドジョイントを防止し、内部振動機を下層中に約10 cm挿入して締固める。覆工固有の手引きは一体性のある覆工を要求する。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "ALIGNED",
+          "sources": [
+            {
+              "url": "https://www.thr.mlit.go.jp/road/sesaku/tebiki/tonnelfukoukonkurito.pdf",
+              "pageOrSection": "PDF p.37（本文p.35）4.2 養生による緻密性の向上",
+              "evidence": "坑内通風・貫通後の温湿度低下を抑える養生を必要に応じ行う。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "ALIGNED",
+          "sources": [
+            {
+              "url": "https://www.thr.mlit.go.jp/road/sesaku/tebiki/tonnelfukoukonkurito.pdf",
+              "pageOrSection": "PDF p.35（本文p.33）・はく離対策、PDF p.37（本文p.35）脱型時期",
+              "evidence": "必要脱型強度を満足しない場合は養生時間を長く取り、脱型を強度発現後に行う。"
+            }
+          ],
+          "remainingGap": null
+        }
+      ],
+      "explanationPatch": "正答は1。覆工は原則として内空変位の収束を確認した後に施工する。肢1の『収束前』は逆。締固めは一体性確保、養生は通風・温湿度への対応、脱型は必要強度の確認が要点である。",
+      "choiceExplanationPatches": {},
+      "technicalRemaining": null,
+      "questionPolarity": "SELECT_INAPPROPRIATE"
+    },
+    {
+      "key": "A42",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.pref.miyagi.jp/documents/11795/287159.pdf",
+              "pageOrSection": "PDF p.10（冊子8-9）8.3(2)断面形状",
+              "evidence": "捨石の敷幅2～5m・敷高1m以上とブロック天端2個並び以上を示すが、表層捨石3個並びや内外の石の大小は示さない。"
+            }
+          ],
+          "remainingGap": "表層3個並びおよび内側ほど小石とする一次資料がない。宮城県資料のブロック2個並び・2t型をこの設問の捨石へ転用しない。"
+        },
+        {
+          "choice": 2,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "Need coastal standard for shoreline placement, excavation/crest width and prevention of sand suction."
+        },
+        {
+          "choice": 3,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "Need primary standard for rubble/stone foundation under wave scour on sand ground."
+        },
+        {
+          "choice": 4,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "Need primary standard for small-gap stone bedding under irregular concrete root blocks."
+        }
+      ],
+      "explanationPatch": null,
+      "choiceExplanationPatches": {},
+      "technicalRemaining": "肢1の捨石『表層3個並び以上』『内部へ向かうほど大きな石』の訂正を直接示す一次資料がない。肢2～4も適用条件と構造を個別に確認する必要がある。",
+      "questionPolarity": "SELECT_INAPPROPRIATE"
+    },
+    {
+      "key": "A43",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "ALIGNED",
+          "sources": [
+            {
+              "url": "https://www.fudotetra.co.jp/wp-content/uploads/2019/04/tetrapod_fig07.pdf",
+              "pageOrSection": "2015年発行メーカー原著パンフレット PDF p.2（印刷1頁）『テトラポッドの特性』",
+              "evidence": "製品は適度な空隙率を有し消波機能が高いと明記。メーカー製品の事例であり一般設計基準とは区別。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "CONTRADICTS_CHOICE",
+          "sources": [
+            {
+              "url": "https://www.fudotetra.co.jp/solution/block/tetrapod/",
+              "pageOrSection": "メーカー原著製品ページ『優れた水理安定性』",
+              "evidence": "高い粗度と有効な空隙により流れのエネルギーを吸収・減衰させると明記。粗度を小さくして消波効果を高めるという肢と逆。"
+            }
+          ],
+          "remainingGap": "製品の技術説明であり、あらゆる消波工の定量的標準を示すものではない。"
+        },
+        {
+          "choice": 3,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.fudotetra.co.jp/wp-content/uploads/2019/04/tetrapod_fig07.pdf",
+              "pageOrSection": "PDF p.3（印刷2頁）『所要質量の算定』",
+              "evidence": "混成堤の全断面乱積み被覆に言及し、全断面をブロックで覆う構成を裏付ける。"
+            }
+          ],
+          "remainingGap": "中詰石上に数層の消波ブロックを置く構成の原著図面・仕様は未確認。"
+        },
+        {
+          "choice": 4,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "Need primary placement rule for interlocking top blocks, limits on unevenness, and reversed placement."
+        }
+      ],
+      "explanationPatch": null,
+      "choiceExplanationPatches": {},
+      "technicalRemaining": "メーカー原著で肢1・2と肢3の全断面形式を確認。肢3の中詰石形式および肢4の天端・反転据付け条件は一次原文未確認。",
+      "questionPolarity": "SELECT_INAPPROPRIATE"
+    },
+    {
+      "key": "A44",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "Original rule for doubled towing wire and attachment depth/center of buoyancy was not verified."
+        },
+        {
+          "choice": 2,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.city.kitakyushu.lg.jp/files/001134819.pdf",
+              "pageOrSection": "PDF p.26（冊子 p.307）、第4編 港湾・水産編 3-4-3 ケーソン進水据付工 7.据付（2）（3）",
+              "evidence": "気象・海象を調べ所定精度と安全に注意すること、各室の水位差を1m以内として注水することを規定。"
+            }
+          ],
+          "remainingGap": "この肢全体の技術的記述を同時代の一次資料で直接照合できていない。"
+        },
+        {
+          "choice": 3,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "Need original marine caisson construction rule for rubber tire buffers between caissons during setting."
+        },
+        {
+          "choice": 4,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.jstage.jst.go.jp/article/jscejoe/73/2/73_I_965/_pdf/-char/ja",
+              "pageOrSection": "PDF p.2（論文 p.I_966）、第2節 防波堤の築造工程、図-1・図-2の説明",
+              "evidence": "防波堤ケーソンの注水沈設を一旦中断し、動揺が小さくなるのを待って再開・着底させる施工過程を記述。選択肢4の「中断することなく」に反する。"
+            }
+          ],
+          "remainingGap": "この肢全体の技術的記述を同時代の一次資料で直接照合できていない。"
+        }
+      ],
+      "explanationPatch": "正答番号は4のまま。土木学会の原著施工例では、注水沈設を一旦中断し動揺を確認して再開した。したがって『開始後は必ず中断せず一気に着底』という一般化は支持できない。ただしこれは個別施工例であり、全現場の一律手順とはしない。",
+      "choiceExplanationPatches": {},
+      "technicalRemaining": "肢2の水位差管理と肢4の中断施工例は部分確認。肢1の二重回し・取付位置、肢3の緩衝材使用、肢4の一般的な施工条件は未確認。",
+      "questionPolarity": "SELECT_INAPPROPRIATE"
+    },
+    {
+      "key": "A45",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "Need primary dredging pre-survey specification connecting particle-size, specific-gravity and penetration tests to all listed soil properties."
+        },
+        {
+          "choice": 2,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "Need primary dredging water-quality rule for baseline/in-work turbidity sampling and separation of background from dredging effects."
+        },
+        {
+          "choice": 3,
+          "verdict": "ALIGNED",
+          "sources": [
+            {
+              "url": "https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/013/336/r2_jikitansakaisetsu.pdf",
+              "pageOrSection": "PDF p.34（本文p.28）3-4(2)確認探査3)",
+              "evidence": "不発弾等の危険物を確認した場合、移動せず立入禁止措置を設け、発注者・警察等へ直ちに連絡すると規定。"
+            },
+            {
+              "url": "https://www.city.osaka.lg.jp/port/cmsfiles/contents/0000364/364415/13.sokuryou-sennsuitannsa.pdf",
+              "pageOrSection": "PDF p.1（冊子Ⅱ-5-1）第5章潜水探査業務",
+              "evidence": "磁気異常物の確認と残存爆発物発見時の監督員・関係官公庁への通知を規定。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/013/336/r2_jikitansakaisetsu.pdf",
+              "pageOrSection": "PDF p.31～33（本文p.25～27）3-3経層探査",
+              "evidence": "必要深度まで層毎に掘削と水平探査を繰り返すと定義。"
+            }
+          ],
+          "remainingGap": "設問の『一回探査→掘削→もう一度探査』を一律2回と読まず、施工深度と探知距離に依存することを解説へ反映。"
+        }
+      ],
+      "explanationPatch": "正答は3。不発弾等の危険物を発見した場合は移動させず、立入禁止を設けて発注者・警察等関係機関へ直ちに連絡する。経層探査は安全を確認しながら必要深度まで掘削と探査を繰り返す。",
+      "choiceExplanationPatches": {
+        "4": "正答表上は正しい肢。探知可能深度を超える施工では、表層の探査と安全な層の掘削を段階的に行い、必要深度まで次の探査を続ける。探査回数は深度条件によって変わり、常に計2回とは限らない。"
+      },
+      "technicalRemaining": "肢1の土質試験の具体的組合せと肢2の浚渫前・施工中水質調査の原資料照合が未了。肢4の2回という表現は条件付きで解説修正提案。",
+      "questionPolarity": "SELECT_INAPPROPRIATE"
+    },
+    {
+      "key": "A46",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "Need source-specific railway concrete roadbed specification for 25 mm maximum coarse aggregate; do not borrow a different slab standard."
+        },
+        {
+          "choice": 2,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "Need railway roadbed concrete curing rule for cover/sprinkling/ponding and required temperature/humidity."
+        },
+        {
+          "choice": 3,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "Need railway roadbed construction requirement concerning settlement after embankment; current explanation has no direct primary citation."
+        },
+        {
+          "choice": 4,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "Need original railway roadbed prime-coat specification for 1-2 L/m2 and crushed-stone absorption; road pavement rate cannot be transferred."
+        }
+      ],
+      "explanationPatch": null,
+      "choiceExplanationPatches": {
+        "4": "取得正答表上は正しい肢。粒度調整砕石への吸水防止という目的は読み取れるが、鉄道コンクリート路盤で1～2L/m²を標準とする同時代の発注仕様は未確認。道路舗装の数値で代用しない。"
+      },
+      "technicalRemaining": "肢1の骨材25mm、肢3の盛土安定後施工、肢4の鉄道コンクリート路盤へのプライムコート1～2L/m²を鉄道発注元の同時代原資料で直接確認できていない。道路舗装の散布量は転用しない。",
+      "questionPolarity": "SELECT_INAPPROPRIATE"
+    },
+    {
+      "key": "A47",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.rtri.or.jp/rd/division/rd45/rd4520/rd45200105.html",
+              "pageOrSection": "HTML本文冒頭『スラブ軌道の維持管理』",
+              "evidence": "スラブ軌道は保守作業の省力化に貢献すると明記。軌道スラブ・てん充層の劣化には健全度評価や補修が重要とする。"
+            },
+            {
+              "url": "https://www.jrtt.go.jp/procurement/asset/05_kidou-shihousyo_202309.pdf",
+              "pageOrSection": "PDF 28ページ（本文22ページ）4-6『軌道スラブの調整』、PDF 29ページ（本文23ページ）4-7『セメントアスファルトモルタル注入』",
+              "evidence": "軌道スラブを前後5mm、左右±1～2mm、上下±1mm以内に調整し、てん充層の施工完了まで保持する。調整後の据付精度とCAモルタル注入厚を記録し、注入後はスラブ下面と路盤コンクリート間の厚さを確認する。"
+            }
+          ],
+          "remainingGap": "プレキャストスラブを高架橋等の堅固な路盤に据える範囲の一般性、完成後のスラブ位置修正の難易度を明言する原資料。"
+        },
+        {
+          "choice": 2,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.westjr.co.jp/company/info/issue/bsignal/06_vol_108/rail.html",
+              "pageOrSection": "HTML本文『紙やパソコンの上を走るのではない』",
+              "evidence": "レールは夏と冬の気温差で伸縮するため、継ぎ目に遊間というすき間を設けると記す。"
+            }
+          ],
+          "remainingGap": "遊間整正を夏期および冬期の前に行うのが適当とする原著の保線基準。"
+        },
+        {
+          "choice": 3,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.rtri.or.jp/rd/division/rd45/rd4520/rd45200129.html",
+              "pageOrSection": "HTML本文冒頭",
+              "evidence": "列車走行やつき固めの繰返しでバラストが破砕・細粒化し、軌道沈下や保守頻度が増す。噴泥を生じるような劣化箇所では新品バラストへの交換が必要と記す。"
+            }
+          ],
+          "remainingGap": "反復摩擦でバラストが丸みを帯びることと、その状態を一律に交換対象とする原資料。"
+        },
+        {
+          "choice": 4,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.jreast.co.jp/development/tech/pdf_17/Tech-17-13-18.pdf",
+              "pageOrSection": "PDF 2ページ（JR EAST Technical Review No.17、誌面14ページ）『レールに関わる背景』『レールの耐用期間の実態』",
+              "evidence": "レール交換要因として疲労、摩耗、損傷、腐食、電食を列挙。以前は先天的な欠陥による損傷もあったと記し、現在は後天的原因がほとんどとする。"
+            }
+          ],
+          "remainingGap": "取扱い不良、保守不良、複数原因の競合が一般的であるという原資料。"
+        }
+      ],
+      "explanationPatch": null,
+      "choiceExplanationPatches": {},
+      "technicalRemaining": "スラブ軌道の省力化と施工前の精密調整・てん充層固定は確認できたが、完成後の位置修正が容易でないという明文、他3肢の残る要素をすべて直接支持する原資料は未確認。A47のHOLD解除・正答確定・公開受入れは行わない。",
+      "questionPolarity": "SELECT_INAPPROPRIATE"
+    },
+    {
+      "key": "A48",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.jr-shikoku.co.jp/04_company/proximity-consultation/",
+              "pageOrSection": "線路近接工事に関する協議について・申込から工事着手まで",
+              "evidence": "重機・線路近接の事故リスクと事前協議、工事着手前の保安打合せを求める。"
+            },
+            {
+              "url": "https://www.mlit.go.jp/tec/content/001464734.pdf",
+              "pageOrSection": "PDF p.81（冊子 p.74）第11章第3節2・3",
+              "evidence": "作業時間、場所、人員、使用機械・資材等を検討した施工計画書を作成し、鉄道事業者と事前協議する。"
+            }
+          ],
+          "remainingGap": "監督員への提出先と工事用重機械の具体的事故防止対策を同一原本で確認できていない。"
+        },
+        {
+          "choice": 2,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.jr-shikoku.co.jp/04_company/proximity-consultation/",
+              "pageOrSection": "よくあるお問合せQ2",
+              "evidence": "線路近接工事で列車見張員を配置する制度があることを示す。"
+            },
+            {
+              "url": "https://www.mlit.go.jp/tec/content/001464734.pdf",
+              "pageOrSection": "PDF p.81（冊子 p.74）第11章第3節7",
+              "evidence": "必要な作業では鉄道事業者指定の資格を有する列車見張員を作業前に配置すると定める。"
+            }
+          ],
+          "remainingGap": "見張員の合図可能範囲・離隔条件の原文未確認。"
+        },
+        {
+          "choice": 3,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://www.jr-shikoku.co.jp/04_company/proximity-consultation/",
+              "pageOrSection": "本文・近接工事と電線防護の説明",
+              "evidence": "電線接触・感電の危険と事前の鉄道事業者との打合せを示す。"
+            },
+            {
+              "url": "https://www.mlit.go.jp/tec/content/001464734.pdf",
+              "pageOrSection": "PDF pp.80-81（冊子 pp.73-74）第11章第2節・第3節6",
+              "evidence": "鉄道事業者との事前協議、毎日の保安打合せを要求するが、き電停止の担当者・使用間合等の個別手続は記載しない。"
+            }
+          ],
+          "remainingGap": "停電責任者、使用間合・時間・作業競合等の手続条項は未確認。"
+        },
+        {
+          "choice": 4,
+          "verdict": "CONTRADICTS_CHOICE",
+          "sources": [
+            {
+              "url": "https://www.jr-shikoku.co.jp/04_company/proximity-consultation/",
+              "pageOrSection": "本文・重機事故リスクと保安打合せ",
+              "evidence": "列車と作業員・重機の接触リスク、事前の保安調整の必要性を記述。"
+            },
+            {
+              "url": "https://www.mlit.go.jp/tec/content/001464734.pdf",
+              "pageOrSection": "PDF p.82（冊子 p.75）第11章第3節11 列車通過時の一時施工中止",
+              "evidence": "振動・風圧で不安定になるおそれがある工事は、列車接近時から通過するまで「一時施工を中止すること」と明記する。継続施工を認める肢4と逆。"
+            }
+          ],
+          "remainingGap": null
+        }
+      ],
+      "explanationPatch": null,
+      "choiceExplanationPatches": {},
+      "technicalRemaining": "国交省安全施工指針で誤肢4の一時施工中止は確定。他の肢1は監督員提出、肢2は合図可能範囲と離隔、肢3は停電責任者・使用間合等の鉄道事業者固有条項が未確認。",
+      "questionPolarity": "SELECT_INAPPROPRIATE"
+    },
+    {
+      "key": "A49",
+      "decision": "HOLD",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "PARTIAL",
+          "sources": [
+            {
+              "url": "https://jcmanet.or.jp/kikaibukai/tunnel/b51.html",
+              "pageOrSection": "シールド用語集「姿勢制御装置」「シールドジャッキ」「ローリング」",
+              "evidence": "片側ジャッキによる推進は曲線施工・蛇行修正、ローリングは機軸回りの回転と区別される。"
+            },
+            {
+              "url": "https://shield-method.gr.jp/construction-method/cm_ol_dot/",
+              "pageOrSection": "工法のしくみ 2. ローリング修正",
+              "evidence": "DOT工法では円周方向に移動したローリング修正ジャッキとシールドジャッキの分力を利用する。方式依存である。"
+            }
+          ],
+          "remainingGap": "この肢全体の技術的記述を同時代の一次資料で直接照合できていない。"
+        },
+        {
+          "choice": 2,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "Need primary shield operation rule for soil cover, overexcavation, chamber blockage and face stability."
+        },
+        {
+          "choice": 3,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "Need original backfill grouting control standard for trial injection, quantity/pressure and feedback by section."
+        },
+        {
+          "choice": 4,
+          "verdict": "UNVERIFIED",
+          "sources": [],
+          "remainingGap": "Need primary segment-design/construction rule for shape-retaining equipment until grout reaches sufficient hardness."
+        }
+      ],
+      "explanationPatch": "正答番号は1のまま。シールドジャッキの片側操作による軸方向偏心推力は主に曲線施工や蛇行修正の説明であり、機軸回りのローリング修正とは区別する。ローリング修正機構は機種・工法により異なるため、一律の代替操作は断定しない。",
+      "choiceExplanationPatches": {},
+      "technicalRemaining": "肢1の軸方向偏心推力と機軸回りローリングの区別は一次技術資料で部分確認。ただし修正方式は機種依存。肢2～4の切羽安定、裏込め注入管理、形状保持装置の個別原資料がない。",
+      "questionPolarity": "SELECT_INAPPROPRIATE"
+    },
+    {
+      "key": "A50",
+      "decision": "TECHNICALLY_RESOLVED",
+      "choiceChecks": [
+        {
+          "choice": 1,
+          "verdict": "ALIGNED",
+          "sources": [
+            {
+              "url": "https://www.dnt.co.jp/products/industrial/print/upload_files/ctl_615.pdf",
+              "pageOrSection": "PDF p.5・金属塗装仕様、p.6標準使用方法",
+              "evidence": "主剤と硬化剤の混合、適切なシンナーでの希釈、十分な撹拌を示す。"
+            },
+            {
+              "url": "https://www.nipponpaint.co.jp/nippelab/term/23/",
+              "pageOrSection": "日本ペイント原著『攪拌』用語説明",
+              "evidence": "均一な塗装状態にするための攪拌は重要で、手工具およびモーター式攪拌機を用いると説明。"
+            },
+            {
+              "url": "https://asset.kansai.co.jp/uploads/products/heavyduty/pdf/391.pdf",
+              "pageOrSection": "関西ペイント原著『橋梁塗装』PDF p.24（印刷p.23）2-5 塗替え作業(11)1)",
+              "evidence": "無溶剤形変性エポキシ樹脂塗料の混合に動力攪拌機を用いると規定。PDF p.11（印刷p.10）2-3-5(3)は塗料を十分攪拌すると規定。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 2,
+          "verdict": "ALIGNED",
+          "sources": [
+            {
+              "url": "https://www.dnt.co.jp/products/industrial/print/upload_files/ctl_615.pdf",
+              "pageOrSection": "PDF p.6・4.可使時間",
+              "evidence": "硬化剤を混合すると反応が進行・ゲル化し、可使時間内に使い切るよう指示。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 3,
+          "verdict": "ALIGNED",
+          "sources": [
+            {
+              "url": "https://asset.kansai.co.jp/uploads/products/heavyduty/fm/pdf_jp/ESC101.pdf",
+              "pageOrSection": "PDF p.1・使用シンナー、希釈率、製品説明",
+              "evidence": "下塗塗料エスコの希釈剤はテクトEPシンナーと定める。下塗塗料（プライマー相当）は希釈剤と別。"
+            },
+            {
+              "url": "https://www.dnt.co.jp/products/industrial/print/upload_files/ctl_615.pdf",
+              "pageOrSection": "PDF p.5・プライマーとシンナーの製品別作業内容",
+              "evidence": "プライマーは下塗り材として列挙し、希釈にはエポニックスシンナーを指定。"
+            }
+          ],
+          "remainingGap": null
+        },
+        {
+          "choice": 4,
+          "verdict": "ALIGNED",
+          "sources": [
+            {
+              "url": "https://asset.kansai.co.jp/uploads/products/heavyduty/pdf/391.pdf",
+              "pageOrSection": "関西ペイント原著『橋梁塗装』PDF p.10（印刷p.9）2-3-2施工条件",
+              "evidence": "塗装作業所が屋内で温度・湿度を調節しているときは、屋外条件に関係なく塗装して差し支えないと明記。"
+            }
+          ],
+          "remainingGap": null
+        }
+      ],
+      "explanationPatch": "正答は3。塗料粘度を調整する際は製品に指定された希釈シンナーを用いる。プライマーは素地への下塗り材であり、希釈剤ではない。",
+      "choiceExplanationPatches": {},
+      "technicalRemaining": null,
+      "questionPolarity": "SELECT_INAPPROPRIATE"
+    }
+  ],
+  "researchNotes": [
+    "A40 is the only SELECT_APPROPRIATE item; choice 4 being contradicted is consistent with answer 3, not an answer conflict.",
+    "Manufacturer brochures are original product technical accounts, not public engineering standards.",
+    "No question, choice, or official answer number was changed. Official-original identity and independent acceptance are outside this technical decision.",
+    "For A41 and A48, verdict compares source to the choice text: the selected inappropriate choice is CONTRADICTS_CHOICE; technically resolved is not public acceptance."
+  ],
+  "attemptedUnverifiedSources": [
+    {
+      "url": "https://www.dc.ogb.go.jp/nakagusukuwankou/UserFiles/File/20191015/kouzi1.pdf",
+      "target": "A45 choice 2 baseline/in-work turbidity timing",
+      "result": "Search result located, direct open produced internal error. Not counted as inspected evidence and not retried."
+    },
+    {
+      "url": "https://jr-central.co.jp/news/release/nws002793.html",
+      "target": "A48 train watchman placement",
+      "result": "Search snippet existed, direct open exposed no relevant text; not cited as technical proof."
+    }
+  ]
+}

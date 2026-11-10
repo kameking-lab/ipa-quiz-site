@@ -39,3 +39,9 @@
 - `tsc --noEmit`: PASS
 - `validate-questions --exam=civil1`: 100件 ok、fail 0、warn 0。全体 15,848件 fail 0。
 - 対象Vitest（civil1・get-questions・question-jsonld・kankoji2）PASS。
+
+## 2026-10-11 B7 primary-law followup
+
+公式問題B PDF p.5（冊子p.4）の原図と4肢を再目視し、転記一致・公式正答1を確認した。試験日2026-07-05時点の安衛法31条（2026-04-01施行版）と安衛則644/655条（2026-07-01施行版）をe-Gov公式APIで取得し、本文・SHA・改正IDを `b7-primary-statutes.json` に保存した。原著法研究（三柴丈典、PDF40〜42）と独立局所審査も、注文者の設備義務・統括管理・個別事業者義務を区別した。
+
+肢1・4の請負鎖の説明は確認できるが、C持込移動式足場について肢2・3を同時に否定する使用供与・管理関係又は出題解釈は原問と一次資料のみで確定できない。HOLDは肢2・3の解説に限定して継続する。正答や原問を書き換えず、公開追加0、実体のないOpus受入れ記録は作成していない。独立結果は `b7-independent-law-review.json` を参照。

@@ -1,0 +1,383 @@
+{
+  "status": "COMPLETE",
+  "manifestSha256": "940be059da6cd73f15e17ecf114bdb274999a38a424633fa90d5614f5cf5e13d",
+  "inputSha256": "eeaadfca3ff1279bae7fb3b22d2d8edb398b3babe3e9d1a9d3776254787cae14",
+  "items": [
+    {
+      "key": "2025-A19",
+      "choiceUpdates": [
+        {
+          "choice": 1,
+          "verdict": "INCORRECT",
+          "sources": [
+            {
+              "url": "https://concom.jp/contents/countermeasure/vol028/",
+              "page": "web article, dated 2021-01-28",
+              "section": "原因と対処方法①②、および「同様の失敗をしないための事前検討・準備、施工時の留意事項等」",
+              "evidence": "The original all-casing field case says concrete must fill the casing-wall-thickness void on withdrawal, and explicitly warns that low-flowability concrete may fail to fill outside the reinforcement cage during casing withdrawal, causing pile-head dimensional deficiency (article paragraphs on cause and prevention).",
+              "sourceType": "industry-original-field-case-study-2021",
+              "publicationDate": "2021-01-28",
+              "scopeNote": "Directly refutes deliberate low-flowability selection in an all-casing example; the case does not establish a universal numerical top-drop allowance."
+            },
+            {
+              "url": "https://www.kisokyo.or.jp/activity/index/3",
+              "page": "web page, section オールケーシング工法",
+              "section": "工法の概要・施工順序",
+              "evidence": "The association explains that the casing tube is withdrawn progressively with concrete placement and lists cage uplift as a possible disadvantage. It does not quantify slump or the fall in concrete level.",
+              "sourceType": "specialist-association-original-technical-description",
+              "publicationDate": null,
+              "scopeNote": null
+            },
+            {
+              "url": "https://www.mlit.go.jp/common/001472794.pdf",
+              "page": "PDF physical p.27-28 (web PDF index 26-27) / printed p.20-21",
+              "section": "4.5.4(2)(o) and 4.5.5(3)(ku)",
+              "evidence": "The 2019 MLIT standard sets pile concrete slump to 18 cm absent a special specification, calls for a slump check on the first truck of each pile, and requires continuous tremie placement without mixing soil, groundwater or slime. It supports controlled workability, not deliberately low flowability; it does not itself quantify casing-withdrawal top drop.",
+              "sourceType": "MLIT-original-public-construction-standard-2019",
+              "publicationDate": null,
+              "scopeNote": null
+            },
+            {
+              "url": "https://patents.google.com/patent/JP2005273411A/ja",
+              "page": "published patent JP2005273411A (2005-10-06), paragraphs around lines 160-162 and Fig. 4(b)",
+              "section": "Detailed description, casing withdrawal and concrete overfill",
+              "evidence": "An original 2005 patent disclosure describes concrete from the overfill flowing into the annular space created when a casing is raised, lowering the overfill surface; the patent concerns a surface casing and is mechanistic support only, not an all-casing construction standard.",
+              "sourceType": "inventor-original-patent-disclosure-2005-third-party-mirror",
+              "publicationDate": null,
+              "scopeNote": null
+            },
+            {
+              "url": "https://www.nikkenren.com/sougou/10thaniv/pdf/07-05-10.pdf",
+              "page": "PDF physical pp.50-51 (0-based P49-50) / printed pp.45-46",
+              "section": "5.1.3(2) スランプについて、図5.1-28a,b",
+              "evidence": "Flowability loss can prevent concrete from reaching outside the reinforcement cage and create inner/outer top-level differences and poor pile-head filling; the authors discuss 18 cm versus 21 cm slump in a model placement.",
+              "sourceType": "Japan Federation of Construction Contractors original technical working-group report",
+              "publicationDate": "2017-06",
+              "scopeNote": "The report centers on earth-drilled piles and does not specify an all-casing withdrawal top-drop allowance."
+            }
+          ],
+          "remainingGap": null,
+          "proposedExplanation": "肢1は不適当。ケーシング引抜きに伴う空隙分を見込んで打上り高さを管理することと、流動性の低いコンクリートを選ぶことは別である。2021年のオールケーシング施工原著事例は、引抜き時に板厚相当の空隙へコンクリートが充填される必要と、流動性が低下したコンクリートでは鉄筋かご外側に充填されず杭頭不良となることを同じ事例内で明記する。2005年公開特許はケーシング上昇時に余盛りコンクリートが空隙へ流れ込み天端が下がる機構を別途説明する（表層ケーシングの例）。したがって「天端が下がるから低流動性を使用する」という結論が誤り。天端低下量の一般数値や全現場への一律のスランプ指定は主張しない。",
+          "technicalChoiceResolved": true
+        },
+        {
+          "choice": 3,
+          "verdict": "CORRECT_WITH_GAP",
+          "sources": [
+            {
+              "url": "https://www.kisokyo.or.jp/activity/index/3",
+              "page": "web page, section リバース工法",
+              "section": "工法の概要・メリット",
+              "evidence": "The specialist association states that reverse circulation commonly protects the bore with natural mud and pumps cuttings with borehole water, rather than relying on prepared viscous stabilizing fluid.",
+              "sourceType": "specialist-association-original-technical-description",
+              "publicationDate": null,
+              "scopeNote": null
+            },
+            {
+              "url": "https://www.daikenkiso.co.jp/pages/54/",
+              "page": "web page, glossary entry 一次孔底処理・リバース",
+              "section": "あ～お; 一次孔底処理・リバース",
+              "evidence": "A foundation contractor describes brief post-excavation circulation replacing dense near-bottom water with lighter water; its original account supports coarse-particle removal through primary bottom treatment.",
+              "sourceType": "foundation-contractor-original-technical-glossary",
+              "publicationDate": null,
+              "scopeNote": null
+            }
+          ],
+          "remainingGap": "Neither accessible primary passage directly establishes that almost all suspended slime is removed at the first bottom-treatment stage; a quantitative or normative primary passage is still needed.",
+          "proposedExplanation": "肢3は正しいとされる。リバース工法では孔内水を循環させ、孔底処理で掘削土砂を排出する。基礎工事業者の工法説明は一次処理後の沈降を述べるが、「泥水中のスライムはほとんど処理できる」という程度を直接裏付ける原著は未確認。"
+        },
+        {
+          "choice": 4,
+          "verdict": "CORRECT_WITH_GAP",
+          "sources": [
+            {
+              "url": "https://pr.www.ipros.com/ryokenkiso/product/detail/2000520490/",
+              "page": "manufacturer-authored web product page, 基本情報",
+              "section": "フロー",
+              "evidence": "The contractor's own construction sequence explicitly has standpipe driving, then hammer-grab excavation inside it, followed by reverse-circulation equipment installation and excavation. The hammer grab refers to initial excavation inside the standpipe, not the later reverse-circulation drilling method.",
+              "sourceType": "foundation-contractor-original-method-description",
+              "publicationDate": null,
+              "scopeNote": null
+            },
+            {
+              "url": "https://www.kisokyo.or.jp/activity/index/3",
+              "page": "web page, section リバース工法",
+              "section": "工法の概要",
+              "evidence": "The specialist association says the standpipe protects the surface part of the bore against collapse; deeper bore protection uses mudcake and water-head difference.",
+              "sourceType": "specialist-association-original-technical-description",
+              "publicationDate": null,
+              "scopeNote": null
+            },
+            {
+              "url": "https://www.tokyo-contech.co.jp/article/pile-foundation-cast-in-place-pile/",
+              "page": "contractor-authored article dated 2024-12-16, section Reverse Method",
+              "section": "Reverse-circulation pile construction sequence",
+              "evidence": "The contractor says the surface standpipe is installed to prevent collapse, hammer-grab excavation follows, and reverse drilling then proceeds. This dated pre-exam account supports the sequence and protection mechanism, but does not expressly document loosening or collapse when grab excavation runs ahead of the pipe.",
+              "sourceType": "foundation-contractor-original-method-description-2024",
+              "publicationDate": null,
+              "scopeNote": null
+            }
+          ],
+          "remainingGap": "Dated 2024 contractor-authored text corroborates standpipe-first, hammer-grab-next sequence and surface-collapse prevention, but no accessible primary passage directly states the consequence of grab excavation ahead of the pipe. The existing manufacturer page remains undated.",
+          "proposedExplanation": "肢4は正しいとされる。リバース工法では先にスタンドパイプを設置して孔口付近を保護し、その内部をハンマグラブで掘削する。施工業者の2024年説明はこの順序と崩壊防止の目的を支えるが、掘削がパイプより先行した場合の地盤の緩み・崩壊を明示した一次資料は未確認。"
+        }
+      ],
+      "questionTechnicallyResolved": false
+    },
+    {
+      "key": "2025-A28",
+      "choiceUpdates": [
+        {
+          "choice": 1,
+          "verdict": "PARTIALLY_SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.cbr.mlit.go.jp/kawatomizu/kouzou/pdf/20_01kasetsukou.pdf",
+              "page": "PDF p.102（index 101）／印刷 p.3-1-102",
+              "section": "1-3-4 3) 排水量の測定方法",
+              "evidence": "実排水時の排水量測定、外水位・内水位測定を明記。選択肢の排水量変化監視と関連するが、排水の濁りと鋼矢板変形の両方を監視する直接規定はこの箇所にはない。",
+              "sourceType": "official-government-regional-design-standard",
+              "publicationDate": null,
+              "scopeNote": null
+            }
+          ],
+          "remainingGap": "仮締切内の掘削時に排水の濁り・量の変化と鋼矢板の変形を併せて監視する、2025年以前の公的施工基準又は原著の該当頁を未確認。",
+          "proposedExplanation": "肢1は正しいとされる。中部地整の仮設工資料は仮締切内の排水量測定と内外水位の管理を説明する。掘削中の排水の濁り・量の変化と鋼矢板変形を同時に監視するという肢全体の一次施工基準は未確認。"
+        },
+        {
+          "choice": 3,
+          "verdict": "PARTIALLY_SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.cbr.mlit.go.jp/kawatomizu/kouzou/pdf/20_01kasetsukou.pdf",
+              "page": "PDF p.73（index 72）／印刷 p.3-1-73",
+              "section": "1-2-4(4)① パイピングの検討、図1-2-75",
+              "evidence": "パイピングを土留壁近傍など異質材との接触面に沿った局所ボイリングの進行と定義し、浸透路長・水位差・根入れ長を用いる照査を記載。直前のボイリング節は砂質地盤を主な適用地盤としている。",
+              "sourceType": "official-government-regional-design-standard",
+              "publicationDate": null,
+              "scopeNote": null
+            },
+            {
+              "url": "https://www.kkr.mlit.go.jp/plan/jigyousya/technical_information/gijutsukanri/hikkei_kouji/qgl8vl00000050p0-att/23-1.pdf",
+              "page": "PDF physical p.5 (0-based P4) / printed p.23-4",
+              "section": "仮締切堤設置基準(案) 4-4 天端幅",
+              "evidence": "For levee excavation with steel sheet-pile cofferdams, the standard gives approximate 5 m or 3 m minimum crest widths depending on river size and requires final width by stability calculation.",
+              "sourceType": "official-MLIT-Kinki-regional-cofferdam-standard",
+              "publicationDate": null,
+              "scopeNote": "Confirms width is designed by stability calculation; does not specify piping checks for both sandy and cohesive soils or tie its safety factor to wall width. Exact issue date was not independently verified."
+            }
+          ],
+          "remainingGap": "『砂質地盤、粘性土地盤ともに』パイピング検討を行う適用範囲、ならびに安全率から矢板根入れ長さ又は二重壁体幅を決めるという肢全体を直接支える2025年以前の一次資料の頁・節が未確認。中部地整資料の一般土留壁照査を二重仮締切の壁体幅設計へそのまま外挿しない。",
+          "proposedExplanation": "肢3は正しいとされる。中部地整の仮設工資料は掘削底面のパイピングについて浸透路長・水位差・矢板根入れ長を用いた検討を示す。ただし同資料は砂質地盤の浸透と粘性土のヒービングを区別しており、砂質・粘性土の双方に同じパイピング照査を適用し二重仮締切の壁体幅を決めるという肢全体の直接根拠にはならない。"
+        }
+      ],
+      "questionTechnicallyResolved": false
+    },
+    {
+      "key": "2025-A29",
+      "choiceUpdates": [
+        {
+          "choice": 2,
+          "verdict": "INCORRECT_WITH_SCOPE",
+          "sources": [
+            {
+              "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/04dobokuhyoujyun.pdf",
+              "page": "PDF physical p.183 (0-based P182), printed p.172",
+              "section": "東京都土木工事標準仕様書・令和4年4月版 4.6.5(1)エ",
+              "evidence": "基礎面の大転石の処理は監督員との協議事項と規定する。地中埋没が1/2以上と予想されるだけで無条件に存置する、という本肢の自動判断はこの仕様書の扱いと一致しない。一律除去の規定とも読まない。",
+              "sourceType": "official-prefectural-technical-specification",
+              "publicationDate": "2022-04",
+              "scopeNote": "東京都発注工事の仕様書。『1/2以上』という定量条件自体を定める資料ではない。"
+            }
+          ],
+          "remainingGap": "大転石の埋没割合1/2に対する存置・除去の2025年出題対象基準を直接示す一次資料は未確認。",
+          "proposedExplanation": "肢2は不適当。東京都2022年土木工事標準仕様書は、基礎面の大転石の処理を監督員との協議事項とする。「地下への埋没が1/2以上と予想されれば無条件で存置できる」とは導けない。ただし、出題対象基準における1/2という数値と撤去・存置判断の直接記述は未確認。"
+        },
+        {
+          "choice": 3,
+          "verdict": "PARTIALLY_SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.qsr.mlit.go.jp/s_top/h22doboku/kasen/2-05.pdf",
+              "page": "PDF physical p.45 (0-based P44), 河4-45",
+              "section": "九州地方整備局・第4章砂防施設 7-2 基礎処理／河川砂防[設計II] 2.6.2 基礎及び袖部の根入れ",
+              "evidence": "砂防ダム基礎の根入れを決める際、基礎の不均質性と風化速度を考慮すると述べる。露出岩盤の急速風化が施工上の論点であることの補助根拠に留まる。",
+              "sourceType": "official-national-regional-technical-standard",
+              "publicationDate": "PDF見出しは平成21年改訂版。引用の2.6.2には平成9年10月の表記がある。",
+              "scopeNote": "打込み直前の仕上げ、モルタル又はコンクリート吹付けの具体的方法はこの引用箇所にない。"
+            },
+            {
+              "url": "https://www.pref.gifu.lg.jp/uploaded/attachment/8146.pdf",
+              "page": "PDF physical p.74 (0-based P73), printed section 9-4/9-5",
+              "section": "Gifu Prefecture, Gakekuzure taisaku sekkei youryou (draft), chapter 9 rockfall prevention, item 3 spray works",
+              "evidence": "The published section identifies concrete/mortar spraying as a means to prevent weathering of rock on slopes. This is a partial mechanism analogy only; it does not establish the two specified foundation-construction alternatives.",
+              "sourceType": "official-prefectural-technical-design-manual",
+              "publicationDate": "undetermined, references 2016 common specifications",
+              "scopeNote": "Slope rockfall prevention rather than sabo-dam foundation construction; publication date and equivalence to 2025 exam standard not established."
+            }
+          ],
+          "remainingGap": "露出で急速に風化する岩盤の仕上げを打込み直前に行うか吹付けで保護する、という施工二択を直接示す一次資料未確認。",
+          "proposedExplanation": "肢3は正しいとされる。公的設計資料は、岩盤の風化が砂防堰堤基礎で考慮すべき条件であること、吹付けが別用途の斜面で風化防止に用いられることを支える。急速に風化する堰堤基礎を打込み直前に仕上げるかモルタル・コンクリートで吹き付けるという施工二択の直接根拠は未確認。"
+        },
+        {
+          "choice": 4,
+          "verdict": "PARTIALLY_SUPPORTED",
+          "sources": [
+            {
+              "url": "https://www.pref.gifu.lg.jp/uploaded/attachment/165697.pdf",
+              "page": "PDF physical p.4 (0-based P3), printed p.361",
+              "section": "岐阜県・第5編砂防編 1-8-2 作業土工(床掘り・埋戻し) 3.掘削作業",
+              "evidence": "コンクリート堰堤の基礎掘削に際し、基礎面をゆるめないよう施工する規定を確認。重機履帯が密実地盤を乱さないという目的の補助根拠となる。",
+              "sourceType": "official-prefectural-technical-specification",
+              "publicationDate": "2019頃の公開版（PDFのファイル見出しR01。発行年月は未確認）",
+              "scopeNote": "0.5m程度を人力掘削とする定量・施工方法は当該箇所に書かれていない。"
+            }
+          ],
+          "remainingGap": "砂礫基礎の仕上げ面付近0.5m程度を人力掘削とする一次施工基準の原文未確認。",
+          "proposedExplanation": "肢4は正しいとされる。岐阜県の砂防工事仕様は基礎面を乱さない施工を求める。一方、仕上げ面付近0.5 mを人力で掘削するという数量・方法を定める原文は未確認。"
+        }
+      ],
+      "questionTechnicallyResolved": false
+    }
+  ],
+  "stoppedOperations": [
+    "Aomori forest PDF HTTP403",
+    "Tokyo sewer PDF HTTP503",
+    "Internet Archive CDX inaccessible",
+    "Claude cloud attach disabled",
+    "JRTT R50401 civil specification PDF HTTP403",
+    "A28 JICE sheet-pile design manual proxy refusal",
+    "Nagano 2015 sabo design PDF original-host direct GET proxy refusal (no retry)"
+  ],
+  "validation": {
+    "sourcePdfSha256Verified": true,
+    "sourcePdfSha256": "7252fba81325028a059f55b1b38c27d79b01cedecef3bbac74a21bceefd4ac2f",
+    "onlyRequestedChoices": true,
+    "sourceHostIdentityVerified": false,
+    "independentAcceptance": false,
+    "publicAcceptance": false,
+    "newTechnicallyResolvedChoices": 1,
+    "newTechnicallyResolvedQuestions": 0,
+    "notes": "A19 choice 1 technically refuted by a 2021 original all-casing field case, with a separately scoped 2005 original patent mechanism and 2017 original flowability study; no quantitative generalization. Seven requested choice gaps remain. Search terms, examined URLs/pages, nonmatching scope and new Nagano proxy stop are logged. Global source-copy identity, independent acceptance and public acceptance remain false. media:status failed locally with spawnSync git EPERM."
+  },
+  "researchLog": [
+    {
+      "key": "2025-A19",
+      "choice": 1,
+      "queries": [
+        "オールケーシング コンクリート 天端 下がり量 流動性 施工 基準",
+        "オールケーシング工法 コンクリート 流動性 天端 低い ケーシング 引き抜き"
+      ],
+      "checked": [
+        {
+          "url": "https://concom.jp/contents/countermeasure/vol028/",
+          "location": "2021-01-28 web article, 原因と対処方法 and 事前検討・準備、施工時の留意事項",
+          "result": "direct all-casing construction case: withdrawal void must be filled and low flowability can cause cage-exterior unfilled concrete; sufficient to refute the low-flowability inference together with previously assessed patent mechanism."
+        },
+        {
+          "url": "https://www.nikkenren.com/sougou/10thaniv/pdf/07-05-10.pdf",
+          "location": "PDF physical pp.50-51 (0-based P49-50), printed pp.45-46, 5.1.3(2)",
+          "result": "independent original technical report supports flowability failure mechanism; mainly earth-drilled piles, so corroborative only."
+        }
+      ]
+    },
+    {
+      "key": "2025-A28",
+      "choice": 1,
+      "queries": [
+        "鋼矢板 仮締切 内 掘削 排水 濁り 量 変化 変形 点検 site:go.jp",
+        "仮締切工 掘削 漏水 濁り 排水量 変化 矢板 施工 PDF"
+      ],
+      "checked": [
+        {
+          "url": "https://www.kkr.mlit.go.jp/plan/jigyousya/technical_information/gijutsukanri/hikkei_kouji/qgl8vl00000050p0-att/23-1.pdf",
+          "location": "PDF physical pp.3-6 (0-based P2-5), printed pp.23-2 through 23-5",
+          "result": "river-levee cofferdam structure and stability criteria; no simultaneous excavation monitoring rule for discharge turbidity/volume and steel-sheet-pile deformation."
+        }
+      ]
+    },
+    {
+      "key": "2025-A28",
+      "choice": 3,
+      "queries": [
+        "二重仮締切 粘性土 パイピング 壁体幅 根入れ 安全率 PDF 国土交通省",
+        "仮締切 パイピング 砂質地盤 粘性土 壁体幅 堤防 PDF"
+      ],
+      "checked": [
+        {
+          "url": "https://www.kkr.mlit.go.jp/plan/jigyousya/technical_information/gijutsukanri/hikkei_kouji/qgl8vl00000050p0-att/23-1.pdf",
+          "location": "PDF physical p.5 (0-based P4), printed p.23-4, 4-4 天端幅",
+          "result": "steel-sheet-pile cofferdam width must be settled by stability calculation; no cohesive-soil piping scope or piping safety-factor equation."
+        },
+        {
+          "url": "https://www.cbr.mlit.go.jp/kawatomizu/kouzou/pdf/20_01kasetsukou.pdf",
+          "location": "PDF physical pp.71-73 (0-based P70-72), printed pp.3-1-71 through 3-1-73, 1-2-4(4)",
+          "result": "prior source revisited: piping model relates seepage path and embedment; text treats permeable sandy ground and separately cohesive-ground heave; not full choice scope."
+        }
+      ]
+    },
+    {
+      "key": "2025-A29",
+      "choice": 2,
+      "queries": [
+        "砂防堰堤 大転石 埋没 1/2 基礎 site:pref.*.jp",
+        "砂防 大転石 仕上げ filetype:pdf",
+        "転石 半分 取り除 砂防 -過去問"
+      ],
+      "checked": [
+        {
+          "url": "https://www.pref.nagano.lg.jp/gijukan/infra/kensetsu/gijutsu/documents/9-3sabo.pdf",
+          "location": "2015 design-chapter PDF, 133 pages; content page unavailable",
+          "result": "official 2015 regional design manual indexed, but web text inspection errored and direct original-host GET was proxy-refused; no claim taken from unread pages."
+        },
+        {
+          "url": "https://www.pref.shiga.lg.jp/ha04/1370.html",
+          "location": "2018 design-manual index page, 2023 partial revision; table of contents",
+          "result": "public design-manual index only; no construction passage on 1/2 buried boulder disposal was found."
+        }
+      ]
+    },
+    {
+      "key": "2025-A29",
+      "choice": 3,
+      "queries": [
+        "砂防堰堤 基礎 風化 直前 仕上げ 吹付け site:mlit.go.jp",
+        "砂防 風化 吹付け 基礎 filetype:pdf",
+        "風化が急速 基礎 吹付け -過去問"
+      ],
+      "checked": [
+        {
+          "url": "https://www.pref.nagano.lg.jp/gijukan/infra/kensetsu/gijutsu/documents/9-3sabo.pdf",
+          "location": "2015 design-chapter PDF, 133 pages; content page unavailable",
+          "result": "search index mentions weathering but original pages could not be inspected because web extraction errored and direct GET was proxy-refused; no direct finishing/spray procedure accepted."
+        },
+        {
+          "url": "https://www.pref.shiga.lg.jp/ha04/1370.html",
+          "location": "2018/2023 sand-control design-manual table of contents",
+          "result": "index has no exposed foundation finishing or spray passage; not direct evidence."
+        }
+      ]
+    },
+    {
+      "key": "2025-A29",
+      "choice": 4,
+      "queries": [
+        "砂防堰堤 基礎 掘削 仕上げ 50cm 人力 site:mlit.go.jp",
+        "砂防 仕上げ面 人力 掘削 令和5年 filetype:pdf site:pref.*.jp",
+        "砂礫基礎 人力 50cm -過去問"
+      ],
+      "checked": [
+        {
+          "url": "https://www.pref.nagano.lg.jp/gijukan/infra/kensetsu/gijutsu/documents/9-3sabo.pdf",
+          "location": "2015 design-chapter PDF, 133 pages; content page unavailable",
+          "result": "indexed manual does not expose relevant original pages in available browser extraction; direct GET proxy refused; no 0.5m rule accepted."
+        },
+        {
+          "url": "https://www.jstage.jst.go.jp/article/jagh1987/36/4/36_423/_pdf",
+          "location": "1994 original research PDF, 16 physical pages, search index and article abstract",
+          "result": "independent fill-dam field research discusses hand excavation and mechanical disturbance, but different structure and no sabo gravel-foundation 0.5m hand-finish rule; excluded as direct evidence."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,91 @@
+{
+  "scope": "2025年1級土木施工管理第一次検定 A52/A53/A54/A62/B2/B4/B5 の局所HOLD根拠調査",
+  "reviewStatus": "LOCAL_EVIDENCE_ONLY_HOLD",
+  "sourceGate": "2025年問題PDFの公式ホスト原本同一性と独立受入れは未完了。ここでの肢別照合は公開受入れを意味しない。",
+  "questions": [
+    {
+      "paper": "A",
+      "number": 52,
+      "localStatus": "HOLD",
+      "choiceEvidence": [
+        {"choiceNumber": 1, "assessment": "UNVERIFIED", "sourceUrl": null, "sourceLocation": null, "explanationFit": "反転工法と形成工法の区別を公的機関の閲覧可能な一次定義で照合できない。"},
+        {"choiceNumber": 2, "assessment": "UNVERIFIED", "sourceUrl": null, "sourceLocation": null, "explanationFit": "形成工法と製管工法の区別を公的機関の閲覧可能な一次定義で照合できない。"},
+        {"choiceNumber": 3, "assessment": "UNVERIFIED", "sourceUrl": null, "sourceLocation": null, "explanationFit": "さや管工法の工場製小径管・充填材という記述を公的機関の一次定義で照合できない。"},
+        {"choiceNumber": 4, "assessment": "UNVERIFIED", "sourceUrl": null, "sourceLocation": null, "explanationFit": "製管工法と反転工法の区別を公的機関の閲覧可能な一次定義で照合できない。"}
+      ],
+      "remainingIssue": "東京都下水道局『管きょ内面被覆（製管）工法 施工管理基準』は https://www.gesui.metro.tokyo.lg.jp/documents/d/gesui/r06naimenhihuku-sekoukanri-kijun%281%29 で発見したが、閲覧時に503となったため本文を根拠に使っていない。分類四種を示す公的な一次資料が必要。"
+    },
+    {
+      "paper": "A",
+      "number": 53,
+      "localStatus": "HOLD",
+      "choiceEvidence": [
+        {"choiceNumber": 1, "assessment": "UNVERIFIED", "sourceUrl": null, "sourceLocation": null, "explanationFit": "圧入方式を中断した場合の締付け・再始動不能を公的な施工資料で確認できない。"},
+        {"choiceNumber": 2, "assessment": "UNVERIFIED", "sourceUrl": null, "sourceLocation": null, "explanationFit": "粘性土地盤のオーガ方式での注水対策を公的な施工資料で確認できない。"},
+        {"choiceNumber": 3, "assessment": "UNVERIFIED", "sourceUrl": null, "sourceLocation": null, "explanationFit": "ボーリング方式の地下水位以下での対象土質と補助工法を一次資料で確認できず、原稿も訂正を特定できていない。"},
+        {"choiceNumber": 4, "assessment": "UNVERIFIED", "sourceUrl": null, "sourceLocation": null, "explanationFit": "高透水性の緩い地盤における泥水比重・粘性・逸泥防止材を公的な施工資料で確認できない。"}
+      ],
+      "remainingIssue": "選択肢3の正確な訂正文と四方式の適用土質を公的な一次技術資料で確認するまで保留。"
+    },
+    {
+      "paper": "A",
+      "number": 54,
+      "localStatus": "HOLD",
+      "choiceEvidence": [
+        {"choiceNumber": 1, "assessment": "CONFIRMED_WITH_CORRECTION", "sourceUrl": "https://www.kkr.mlit.go.jp/plan/jigyousya/technical_information/gijutsukanri/hikkei_kouji/qgl8vl00000050p0-att/21.pdf", "sourceLocation": "PDF 10ページ目（索引P9）、第4章4-2および4-3", "explanationFit": "誤りという判定は一致。採水地点は注入箇所からおおむね10m以内に少なくとも数箇所で、観測井を設け、既存井戸も利用可能。工事終了後も一定期間採水する。原稿説明に『20mの一律義務』だけでなく正しい10mの基準を明記する必要がある。"},
+        {"choiceNumber": 2, "assessment": "CONFIRMED_WITH_WORDING_NOTE", "sourceUrl": "https://www.mlit.go.jp/common/001197595.pdf", "sourceLocation": "PDF 7ページ目（索引P6）、⑥薬液の使用量", "explanationFit": "500kL以上の大規模注入工事で『プラントのタンクからミキサー迄の間』に流量積算計を設け、薬液材料の日使用量等を管理することを確認。原稿の『原料タンクと調合槽』は出典の厳密な表現ではないため説明は原文に寄せるとよい。"},
+        {"choiceNumber": 3, "assessment": "UNVERIFIED", "sourceUrl": null, "sourceLocation": null, "explanationFit": "25m以上での二重管ストレーナーとダブルパッカー・パーカッションドリルの削孔精度の優劣は確認できない。"},
+        {"choiceNumber": 4, "assessment": "UNVERIFIED", "sourceUrl": null, "sourceLocation": null, "explanationFit": "調合水の水道水原則と代替水pH5.8〜8.6を公的な一次技術資料で確認できない。地下水監視基準のpHを調合水基準へ流用しない。"}
+      ],
+      "remainingIssue": "選択肢3の比較と選択肢4の調合水基準が未確認。選択肢1説明には10m基準を明記する修正が必要。"
+    },
+    {
+      "paper": "A",
+      "number": 62,
+      "localStatus": "HOLD",
+      "choiceEvidence": [
+        {"choiceNumber": 1, "assessment": "PARTIAL", "sourceUrl": "https://www.kensetsu.metro.tokyo.lg.jp/documents/d/kensetsu/000007240", "sourceLocation": "PDF 25ページ目（索引P24）、第11第三号・法24条", "explanationFit": "河川区域内の土地占用は原則許可対象と確認。ただし権原に基づいて管理する土地は除外され、問題文は資材置場の土地権原を示さない。原稿の『排他的に使用するなら』という条件は重要。"},
+        {"choiceNumber": 2, "assessment": "QUALIFICATION_MISSING", "sourceUrl": "https://www.kensetsu.metro.tokyo.lg.jp/documents/d/kensetsu/000007240", "sourceLocation": "PDF 27ページ目（索引P26）、第14第五号・河川法施行令15条の4第2号", "explanationFit": "許可不要の土砂排除は『河川法26条1項の許可を受けて設置された取水施設又は排水施設』の機能維持に限る。問題文は単に『設置されている』と記すため、無条件に許可不要とした現行説明は過大。許可済施設との前提が問題から確定できず保留。"},
+        {"choiceNumber": 3, "assessment": "PARTIAL", "sourceUrl": "https://www.kensetsu.metro.tokyo.lg.jp/documents/d/kensetsu/000007240", "sourceLocation": "PDF 25ページ目（索引P24）、第11第三号・第五号、法24条・26条", "explanationFit": "土地占用と工作物の新築は許可対象と確認。ただし上空横断の電線・通信ケーブルをこの文書が直接例示していない。"},
+        {"choiceNumber": 4, "assessment": "CONFIRMED", "sourceUrl": "https://www.kensetsu.metro.tokyo.lg.jp/documents/d/kensetsu/000007240", "sourceLocation": "PDF 25ページ目（索引P24）、第11第六号・法27条；PDF 27ページ目（索引P26）、第14第三号", "explanationFit": "掘削・盛土等の土地形状変更は許可対象。権原に基づく土地使用の例外にも掘削等を除く旨が明示される。"}
+      ],
+      "remainingIssue": "設問選択肢2に『法26条1項許可を受けた』という例外要件が明示されず、単一正答として扱う前提を確定できない。法令の条件を落とした説明は要修正。"
+    },
+    {
+      "paper": "B",
+      "number": 2,
+      "localStatus": "HOLD",
+      "choiceEvidence": [
+        {"choiceNumber": 1, "assessment": "CONFIRMED_WITH_QUALIFICATION", "sourceUrl": "https://e-denshinyusatsu.pref.tokushima.lg.jp/wp-content/uploads/2025/04/fd297b65e433b49d7d92af56ad3e2423-1.pdf", "sourceLocation": "PDF 3ページ目（索引P2）、第18条1項(1)", "explanationFit": "設計図書間の不一致は通知・確認請求の対象。ただし約款は優先順位が定められている場合を除く。選択肢・説明はこの留保を省く。"},
+        {"choiceNumber": 2, "assessment": "CONFIRMED", "sourceUrl": "https://e-denshinyusatsu.pref.tokushima.lg.jp/wp-content/uploads/2025/04/fd297b65e433b49d7d92af56ad3e2423-1.pdf", "sourceLocation": "PDF 3ページ目（索引P2）、第18条1項(3)", "explanationFit": "設計図書の表示が明確でないことが列挙され、原稿説明と一致。"},
+        {"choiceNumber": 3, "assessment": "CONFIRMED", "sourceUrl": "https://e-denshinyusatsu.pref.tokushima.lg.jp/wp-content/uploads/2025/04/fd297b65e433b49d7d92af56ad3e2423-1.pdf", "sourceLocation": "PDF 1ページ目（索引P0）、第1条3項；PDF 3ページ目（索引P2）、第18条1項", "explanationFit": "特別の定めがない仮設・施工方法は受注者の責任で定める。第18条の列挙にも単なる不明示はなく、現行判定と説明は一致。"},
+        {"choiceNumber": 4, "assessment": "CONFIRMED", "sourceUrl": "https://e-denshinyusatsu.pref.tokushima.lg.jp/wp-content/uploads/2025/04/fd297b65e433b49d7d92af56ad3e2423-1.pdf", "sourceLocation": "PDF 3ページ目（索引P2）、第18条1項(4)", "explanationFit": "工事現場の形状・地質・湧水等が設計図書記載条件と違う場合が列挙され、原稿説明と一致。"}
+      ],
+      "remainingIssue": "徳島県の2025年4月公開の公共工事標準請負契約約款で四肢を照合。中央建設業審議会の現行掲載本文 https://www.mlit.go.jp/totikensangyo/const/content/001499463.pdf の第1条3項（PDF 3ページ）と第18条（PDF 14ページ）も同じ構造だが、同本文は2025年12月改正で試験後版のため試験当時版の単独根拠にはしない。選択肢1の優先順位例外を説明に補う余地がある。"
+    },
+    {
+      "paper": "B",
+      "number": 4,
+      "localStatus": "HOLD",
+      "choiceEvidence": [
+        {"choiceNumber": 1, "assessment": "PARTIAL", "sourceUrl": "https://www-1.kkr.mlit.go.jp/kingi/kensetsu/inf_support/bcu0ke0000002x3l-att/h3002-03.pdf", "sourceLocation": "PDF 3〜4ページ目（索引P2〜P3）、1.①・1.②", "explanationFit": "GNSS等の測位と設計データを使うMC/MGの具体例は確認。ただし『情報化施工』全般の定義・生産性品質効果をこの資料単独では完全には照合できない。"},
+        {"choiceNumber": 2, "assessment": "CONFIRMED", "sourceUrl": "https://www-1.kkr.mlit.go.jp/kingi/kensetsu/inf_support/bcu0ke0000002x3l-att/h3002-03.pdf", "sourceLocation": "PDF 3〜4ページ目（索引P2〜P3）、1.①MC・1.②MG", "explanationFit": "MCは設計・現地盤差分に基づく操作の半自動制御、MGは差分をオペレータに提供するシステム。選択肢2はMGの説明をMCとした誤りで、原稿説明と一致。"},
+        {"choiceNumber": 3, "assessment": "UNVERIFIED", "sourceUrl": null, "sourceLocation": null, "explanationFit": "ICT計測から出来形帳票の取りまとめまで一連で可能との記述を公的な一次要領で未確認。"},
+        {"choiceNumber": 4, "assessment": "UNVERIFIED", "sourceUrl": null, "sourceLocation": null, "explanationFit": "UAVのGNSS・慣性センサによる自律飛行と計測・点検利用を公的な一次資料で未確認。"}
+      ],
+      "remainingIssue": "選択肢2の正誤は直接裏付けられる。選択肢1・3・4の独立した公的根拠は不足。"
+    },
+    {
+      "paper": "B",
+      "number": 5,
+      "localStatus": "HOLD",
+      "choiceEvidence": [
+        {"choiceNumber": 1, "assessment": "PARTIAL", "sourceUrl": "https://www.kkr.mlit.go.jp/plan/jigyousya/technical_information/gijutsukanri/qgl8vl0000004zj9-att/manyuaru_kaitei202312.pdf", "sourceLocation": "PDF 15ページ目（索引P14）、1-1施工計画書の記載16項目", "explanationFit": "近畿地方整備局の記載項目に労務調達計画という項目はない。ただし同資料は契約書・設計図書・共通仕様書で指定された事項やその他の追記を要求するため、一覧にないことだけで全国一律の不存在を証明できない。原稿の『一般的な義務はない』はこの資料の範囲では整合。"},
+        {"choiceNumber": 2, "assessment": "PARTIAL", "sourceUrl": "https://www.kkr.mlit.go.jp/plan/jigyousya/technical_information/gijutsukanri/qgl8vl0000004zj9-att/manyuaru_kaitei202312.pdf", "sourceLocation": "PDF 18ページ目（索引P17）、施工方法の作業環境；PDF 24ページ目（索引P23）、(12)環境対策", "explanationFit": "周辺土地利用・自然環境・近接状況を施工方法に記し、生活環境保全のため騒音、振動、水質汚濁、粉じん、家屋調査等の計画を記す。選択肢の趣旨と概ね一致するが『工事影響は避けられない』との普遍命題まで直接支持しない。"},
+        {"choiceNumber": 3, "assessment": "UNVERIFIED", "sourceUrl": null, "sourceLocation": null, "explanationFit": "地質調査資料・原位置試験・土質試験方法の理解義務を一次の施工計画指針で照合できない。"},
+        {"choiceNumber": 4, "assessment": "PARTIAL", "sourceUrl": "https://www.kkr.mlit.go.jp/plan/jigyousya/technical_information/gijutsukanri/qgl8vl0000004zj9-att/manyuaru_kaitei202312.pdf", "sourceLocation": "PDF 22ページ目（索引P21）、(9)安全管理・第三者施設安全管理対策", "explanationFit": "架空線等上空施設について事前の現地調査を行い、種類・位置等を記す旨は確認。すべての工事で『契約後』に包括的現地調査を行うという時点・範囲は未確認。"}
+      ],
+      "remainingIssue": "近畿地方整備局の一次マニュアルで記載項目・周辺環境配慮を局所確認した。ただし全国一律の労務調達計画記載義務の不存在と選択肢3・4の断定は、この資料だけでは確定できないため保留。"
+    }
+  ]
+}

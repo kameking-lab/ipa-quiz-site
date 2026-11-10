@@ -1,0 +1,139 @@
+{
+  "kind": "machine-validation",
+  "notIndependentPublicationAcceptance": true,
+  "recordedAt": "2026-10-11T01:42:30Z",
+  "source": {
+    "repository": "kameking-lab/ipa-quiz-site",
+    "branch": "codex/civil1-latest-two-20261011",
+    "commit": "3173dfbd386d06bc928424697f0f233b361e320b",
+    "commitSubject": "Stage 101 civil1 2025 originals behind an acceptance gate",
+    "parent": "a9915090bf0c97dbc8a92084c33886424dcf8a96",
+    "provenance": "git fetch origin codex/civil1-latest-two-20261011 resolved to this commit; every command below ran on a clean working tree checked out at exactly this commit. This report is the only file added by the child commit, whose parent is this commit."
+  },
+  "environment": {
+    "host": "Claude Code cloud container (linux)",
+    "node": "v22.22.0",
+    "pnpm": "10.33.0",
+    "cpus": 4,
+    "memoryGiB": 15,
+    "accessedLocalRawPdfCaches": false,
+    "accessedBrowserSessions": false,
+    "networkFetchOfSourcePdfs": false,
+    "newCredentialsOrPaidApis": false,
+    "geminiApiKeySet": false
+  },
+  "commands": [
+    {
+      "command": "pnpm install --frozen-lockfile",
+      "exitCode": 0,
+      "seconds": 18,
+      "result": "Done in 17.3s; postinstall prisma generate succeeded. pnpm reported ignored dependency build scripts (sharp, esbuild, prisma engines, etc.); not approved."
+    },
+    {
+      "command": "pnpm typecheck",
+      "exitCode": 0,
+      "seconds": 47,
+      "result": "tsc --noEmit, no errors"
+    },
+    {
+      "command": "pnpm lint",
+      "exitCode": 0,
+      "seconds": 56,
+      "result": "0 errors, 1 warning: reports/civil2-2026-completion-20260926/parse-fenced-results.mjs 3:9 'base' is assigned a value but never used (pre-existing, not in this diff)"
+    },
+    {
+      "command": "pnpm exec vitest run __tests__/civil1-2025-staging.test.ts __tests__/civil1-source-reader.test.ts __tests__/civil1-2026-july.test.ts",
+      "exitCode": 0,
+      "seconds": 3,
+      "result": "3 files passed, 13 tests passed (civil1-source-reader 5, civil1-2025-staging 3, civil1-2026-july 5)"
+    },
+    {
+      "command": "pnpm validate:questions --exam=civil1",
+      "exitCode": 0,
+      "seconds": 8,
+      "result": "[filter] exam: civil1 -> 100; Validated 100 questions. ok=100 fail=0 warn=0"
+    },
+    {
+      "command": "pnpm test --maxWorkers=2",
+      "exitCode": 1,
+      "seconds": 409,
+      "result": "Test Files 1 failed | 515 passed (516); Tests 1 failed | 4768 passed (4769). No corpus-loading timeouts occurred.",
+      "failures": [
+        {
+          "test": "__tests__/api/cost-record-durability.test.ts > コスト計上はレスポンス完了前に永続化を終える > /api/copilot — ストリームが閉じる時点で recordAiCost が解決済み",
+          "error": "AssertionError: expected 503 to be 200 (cost-record-durability.test.ts:223:24)",
+          "isolatedRerun": {
+            "command": "pnpm exec vitest run __tests__/api/cost-record-durability.test.ts",
+            "exitCode": 1,
+            "result": "1 failed | 4 passed (5); same assertion"
+          },
+          "baseCommitRun": {
+            "commit": "a9915090bf0c97dbc8a92084c33886424dcf8a96",
+            "command": "vitest run __tests__/api/cost-record-durability.test.ts (temporary worktree, shared node_modules)",
+            "exitCode": 1,
+            "result": "1 failed | 4 passed (5); same failure"
+          },
+          "attribution": "Pre-existing on the parent commit; the source commit changes no copilot, cost or rate-limit code. Root cause not investigated in this validation."
+        }
+      ]
+    },
+    {
+      "command": "pnpm build",
+      "exitCode": 0,
+      "seconds": 290,
+      "result": "Next.js 16.2.6 (Turbopack). Compiled successfully in 74s; TypeScript finished in 41s; Generating static pages 11441/11441 in 2.8min; Finalizing page optimization completed. Warnings: middleware->proxy deprecation, edge runtime disables static generation for one page, recharts width/height(-1) during SSG.",
+      "postBuildChecks": {
+        "prerenderManifestRoutes": 11294,
+        "prerenderedRoutesContainingCivil1_2025": 0,
+        "filesUnderDotNextServerContainingCivil1_2025July": 0
+      }
+    }
+  ],
+  "dataChecks": {
+    "method": "Read-only Python recomputation from committed files at the source commit",
+    "candidateQuestions": 101,
+    "candidatePaperCounts": { "A": 66, "B": 35 },
+    "choiceExplanations": 404,
+    "candidateStatusCounts": { "DRAFT": 64, "HOLD": 37 },
+    "candidatesWithPublicAcceptanceTrue": 0,
+    "answerNumberMismatchesVsTranscribedAnswerTable": 0,
+    "answerNumberDiffsDraftJsonVsCandidates": 0,
+    "draftFiles": {
+      "2025-july-a.draft.json": { "publicationStatus": "held", "questions": 66, "choiceExplanations": 264 },
+      "2025-july-b.draft.json": { "publicationStatus": "held", "questions": 35, "choiceExplanations": 140 }
+    },
+    "runtimePublicPool": {
+      "2026-july-a.json": 66,
+      "2026-july-b.json": 34,
+      "total": 100,
+      "b7Present": false,
+      "runtimeImportOf2025": false
+    },
+    "figures": { "count": 9, "sha256AllMatch": true, "officialHostVerifiedAllFalse": true },
+    "ledgerChecksums": {
+      "originalDataLfSha256": "both 2026 files match",
+      "originalDataSha256": "both mismatch committed LF bytes; both match the same content converted to CRLF",
+      "newDraftCandidateSha256": "mismatches committed LF bytes; matches CRLF conversion",
+      "sourceTranscriptionSha256": "mismatches committed LF bytes; matches CRLF conversion",
+      "interpretation": "These raw-byte hashes were evidently computed on a CRLF (Windows) checkout. Content is consistent; the ledger fields are not byte hashes of the committed LF blobs."
+    },
+    "notVerified": [
+      "Acquired PDF SHA-256 values in source-acquisition.json (PDFs not fetched or accessed)",
+      "Official-host authenticity (source-acquisition.json records officialHostVerified=false)",
+      "Transcription fidelity to page images and technical correctness of explanations",
+      "Rights/permission receipts (copyrightPermissionReceipt=null) and model acceptance (firstPartyOpusAcceptanceReceipt=null)"
+    ]
+  },
+  "observations": [
+    "PROGRESS.md refers to verification.json for measured results, but no reports/civil1-2025-july/verification.json exists at the source commit.",
+    "Windows local test timeouts, the node_modules junction build failure and the interrupted webpack SSG run were not reproduced or re-run here; they are not claimed as successful."
+  ],
+  "scopeLimits": {
+    "manuscriptsGeneratedOrRewritten": false,
+    "answerNumbersChanged": false,
+    "heldQuestionsAccepted": false,
+    "runtimeRegistrationChanged": false,
+    "mergedOrDeployed": false,
+    "sourceBranchPushedOrForcePushed": false
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "schemaVersion": 1,
+  "reviewedAt": "2026-10-11T04:03:34.383382+00:00",
+  "reviewer": {
+    "agent": "/root/sokuryoshi_release_review",
+    "role": "independent non-implementer"
+  },
+  "scope": {
+    "year": 2025,
+    "questions": [
+      "A62",
+      "B2",
+      "B5"
+    ],
+    "reviewType": "限定解説の条件・例外と原問/正答との整合確認",
+    "excluded": [
+      "全37問の再QA",
+      "原問原本同一性審査",
+      "権利受領審査",
+      "公開受入れ",
+      "テスト・Git操作"
+    ]
+  },
+  "decision": "TECHNICALLY_CLEAR_AS_QUALIFIED",
+  "publicAcceptance": false,
+  "globalHoldMaintained": true,
+  "globalUnresolved": [
+    "権利",
+    "2025公式出題原本との同一性",
+    "公開受入れ"
+  ],
+  "inputFiles": [
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\civil1-latest-two-20261011\\hold-resolution\\utilities-law-management-patch.json",
+      "sha256": "bdc86133735d195cc6d27a0b5f07c4417e8e3877be45d6dc1ef1db467feb1ed4"
+    },
+    {
+      "path": "C:\\Users\\kanet\\20260522\\note-automation\\reports\\qualification-expansion-20261007\\civil1-latest-two-20261011\\hold-resolution\\utilities-law-management-input.json",
+      "sha256": "f5a524d19976155172a1610a0ac8bebd9671b2b5ba6478d86186fa7a97161d7d"
+    }
+  ],
+  "sourceChecks": [
+    {
+      "id": "tokyo-river",
+      "url": "https://www.kensetsu.metro.tokyo.lg.jp/documents/d/kensetsu/000007240",
+      "title": "東京都建設局 河川法に基づく許可等の手引き（令和3年4月）",
+      "independentlyRead": "Web取得本文 PDF27ページ・第14第五号（政令15条の4第2号）及び第三号",
+      "finding": "26条1項許可を受けた取排水施設、その機能維持、取排水口付近に積もった土砂等の排除という条件を確認。土地権原があっても掘削等は自由使用の扱いから除外。"
+    },
+    {
+      "id": "tokushima-contract",
+      "url": "https://e-denshinyusatsu.pref.tokushima.lg.jp/wp-content/uploads/2025/04/fd297b65e433b49d7d92af56ad3e2423-1.pdf",
+      "title": "徳島県公共工事標準請負契約約款",
+      "independentlyRead": "Web取得本文 PDF1ページ・第1条3項、PDF3ページ・第18条1項各号",
+      "finding": "特別の定めがない施工方法等は受注者責任。図書不一致には優先順位設定時の除外がある。表示不明確と現場条件相違は確認請求対象。"
+    },
+    {
+      "id": "kinki-manual",
+      "url": "https://www.kkr.mlit.go.jp/plan/jigyousya/technical_information/gijutsukanri/qgl8vl0000004zj9-att/manyuaru_kaitei202312.pdf",
+      "title": "近畿地方整備局 土木工事書類作成マニュアル（案）",
+      "independentlyRead": "Web取得本文 PDF15ページ・1-1施工計画書",
+      "finding": "16項目に労務調達計画という独立項目はない。契約図書の指定・共通仕様書等による義務事項・技術提案を反映し、監督職員の書面指示による詳細計画提出も規定。"
+    },
+    {
+      "id": "water-plan",
+      "url": "https://www.water.go.jp/honsya/honsya/keiyaku/service/kyoutu/pdf/doboku/H251003-1.pdf",
+      "title": "水資源機構 施工計画書作成例",
+      "independentlyRead": "Web取得本文 PDF1〜5ページ・目的、事前調査、施工計画、施工計画書作成の要点",
+      "finding": "労務調達及び管理計画は施工計画立案の検討事項。提出書面の14項目とは分けられ、契約図書の指定事項は記載する。地質・近隣環境・現地条件の事前調査も支持。"
+    }
+  ],
+  "questionReviews": [
+    {
+      "key": "A62",
+      "officialAnswerNumber": 2,
+      "decision": "TECHNICALLY_CLEAR_AS_QUALIFIED",
+      "choiceAlignment": {
+        "1": "一時的な資材置場も仮設であることだけでは占用許可を免れないという説明は原問と整合。",
+        "2": "26条1項許可済施設・機能維持・取水口付近の堆積土砂排除を明記しており、既設であるだけで無条件に不要と一般化していない。",
+        "3": "上空横断の電線等に関する占用・工作物設置の原則説明は原問と整合。",
+        "4": "民有地であるだけで河川区域内の掘削・盛土規制を免れないという説明は原問と整合。"
+      },
+      "reason": "原問肢2に明記されていない許可済条件を、事実として補造せず通常の出題解釈の前提として明示した。出題者意図の独立証明をしたという意味ではないが、条件付きで正答2を説明する教材文として妥当。",
+      "requiredQualification": "法26条1項の許可を受けた施設であるという条件と、その前提の下での結論である旨を、総合解説と肢2解説の両方に残す。",
+      "technicalRemaining": null
+    },
+    {
+      "key": "B2",
+      "officialAnswerNumber": 3,
+      "decision": "TECHNICALLY_CLEAR_AS_QUALIFIED",
+      "choiceAlignment": {
+        "1": "優先順位が定められている場合の除外を総合解説及び入力側肢別解説が保持。",
+        "2": "表示不明確は第18条1項3号と一致。",
+        "3": "特別の定めがない施工方法等は第1条3項により受注者責任。単なる明示欠如を確認請求事由としない区別は妥当。",
+        "4": "設計図書と現場の形状・地質・湧水等の差異は第18条1項4号と一致。"
+      },
+      "reason": "仮設・施工方法を自ら定める責任と、設計条件の不一致等を通知・確認する義務を正しく分けている。優先順位例外を省いた無条件な通知義務へ拡大していない。",
+      "requiredQualification": "肢1の優先順位例外と、肢3の契約書・設計図書に特別の定めがない条件を残す。",
+      "editorialNote": {
+        "severity": "non-blocking",
+        "text": "引用実物の正式名称は徳島県公共工事標準請負契約約款。提案冒頭の2025年4月公開の公共工事標準請負契約約款という書き方は、徳島県掲載版と明記すると出典範囲が正確。URL年月を施行日と同一視しない。",
+        "suggestedReplacement": "正答は3。参照した徳島県公共工事標準請負契約約款の第18条1項では、設計図書間の不一致（優先順位が定められている場合を除く）、表示の不明確、現場条件と設計図書の相違などが監督員への通知・確認請求の対象となる。"
+      },
+      "technicalRemaining": null
+    },
+    {
+      "key": "B5",
+      "officialAnswerNumber": 1,
+      "decision": "TECHNICALLY_CLEAR_AS_QUALIFIED",
+      "choiceAlignment": {
+        "1": "労務調達を計画する必要性と、提出用施工計画書に独立項目として必ず記載するという一律義務を区別。個別指定時の記載を留保している。",
+        "2": "周辺への影響調査を施工計画へ反映する原則は事前調査項目と環境保全計画に整合。",
+        "3": "地質資料・現地条件を理解して計画する一般原則として支持。個々の原位置試験手法の適否を新たに断定していない。",
+        "4": "現場説明に加え契約条件と現地の事前調査を踏まえて施工計画を作る流れは作成例と整合。"
+      },
+      "reason": "提出項目に名称がないことだけを根拠に労務検討不要とは述べておらず、内部計画と提出書面の区別を保つ。全発注者・全工事で労務情報が一切記載不要という意味に広げなければ妥当。",
+      "requiredQualification": "検討事項であること、一律独立記載義務とは別であること、個別の契約・仕様等の要求に従うことを保持。",
+      "editorialNote": {
+        "severity": "non-blocking",
+        "text": "近畿局資料は共通仕様書等の記載義務及び監督職員の書面による詳細施工計画追加指示も定める。個別仕様の留保にこれらも含むとさらに明確。",
+        "suggestedAddition": "ただし、契約書・設計図書・適用仕様書の定めや、契約に基づく監督職員の詳細計画提出指示がある場合は、それに従う。"
+      },
+      "technicalRemaining": null
+    }
+  ],
+  "reviewedProposedExplanations": {
+    "A62": {
+      "explanationPatch": "正答は2。河川区域内の土地占用、工作物設置、掘削・盛土などは原則として許可対象である。一方、河川法26条1項の許可を受けて設置された取水・排水施設の機能維持のため、取水口・排水口付近の堆積土砂等を除去する行為は、河川法施行令15条の4第2号により許可を要しない。設問の既設取水施設を適法に設置された施設と読む場合の結論であり、単に存在する全ての施設に無条件で例外が及ぶわけではない。",
+      "choiceExplanationPatches": {
+        "2": "誤り。法26条1項の許可を受けて設置された取水・排水施設の機能を維持するための、取水口・排水口付近の堆積土砂等の除去は、施行令15条の4第2号で許可不要とされる。設問の既設取水施設を適法な許可済施設として読む結論であり、無許可施設にも一律に当てはめない。"
+      }
+    },
+    "B2": {
+      "explanationPatch": "正答は3。徳島県公共工事標準請負契約約款（2025年4月公開）第18条1項では、設計図書間の不一致（優先順位が定められている場合を除く）、表示の不明確、現場条件と設計図書の相違などが監督員への通知・確認請求の対象となる。契約書・設計図書に特別の定めがない仮設や施工方法は第1条3項により受注者の責任で定めるため、単に明示がないことは第18条の確認請求事由ではない。",
+      "choiceExplanationPatches": {}
+    },
+    "B5": {
+      "explanationPatch": "誤りは1。労務調達計画は施工計画の立案時に検討すべき事項だが、発注者の施工計画書作成要領では独立した一律の記載事項としては挙げられていない。提出する施工計画書には契約書・設計図書又は監督職員の書面による追加指示で指定された事項を記載するため、個別仕様で要求される場合は別である。近隣環境・地質条件の調査と現地事前調査は施工計画立案の基本事項である。",
+      "choiceExplanationPatches": {
+        "1": "誤り。労務の調達や配置は施工計画で検討するが、労務調達計画を提出用の施工計画書に必ず独立して記載するという一般的な義務とは異なる。契約書・設計図書又は監督職員の書面による追加指示で個別指定がある場合はその内容を記載する。"
+      }
+    }
+  },
+  "limitations": [
+    "4肢の根拠記録と元問・正答を突き合わせ、今回指定された条件・例外を一次資料の必要箇所で独立確認した。全出典全ページの再査読ではない。",
+    "2025公式出題原本との同一性及び公式正答表の真正性を新たに認証したものではない。",
+    "今回の資料は試験前公開版を用いるが、全改正沿革を再検証したものではない。",
+    "報告書以外の原問・解説・公開ゲートは変更していない。"
+  ]
+}
