@@ -42,12 +42,12 @@ it("renders the same private pet appearance and saved scene without a public-per
   pet.name = "こむぎ"; pet.unlockedStages.push("partner"); pet.selectedStage = "partner"; pet.unlockedPaths.push("memory"); pet.selectedPath = "memory";
   const before = serializePetProfileDocument(doc), view = render(<PetOwnStudySeat view={{ status: "ready", document: doc }} />);
   expect(view.container.querySelector("section")).toHaveAttribute("data-own-pet-id", pet.petId);
-  expect(view.container.querySelector("img")).toHaveAttribute("src", petArtFor("ap", "partner", "slack"));
-  expect(screen.getByRole("button", { name: "こむぎ・応用情報技術者（名前を変える）" })).toBeVisible(); expect(screen.getByText(/いつもの机/)).toBeVisible(); expect(screen.getByRole("button", { name: "育成を見る" })).toBeEnabled();
+  expect(view.container.querySelector("img")).toHaveAttribute("src", petArtFor("ap", "partner", "study"));
+  expect(screen.getByRole("button", { name: "こむぎ・応用情報技術者（名前を変える）" })).toBeVisible(); expect(screen.queryByText(/いつもの机/)).toBeNull(); expect(screen.getByRole("button", { name: /育成を見る/ })).toBeEnabled();
   expect(view.container.querySelector("section")).toHaveAttribute("data-room-scene", "first-meeting");
   expect(serializePetProfileDocument(doc)).toBe(before);
   view.rerender(<PetOwnStudySeat view={{ status: "unavailable", document: null }} />);
-  expect(view.container.querySelector("img")).toHaveAttribute("src", "/images/home/study-room-mascots/generic-9.webp"); expect(screen.queryByText(/こむぎ/)).toBeNull();
+  expect(view.container.querySelector("img")).toHaveAttribute("src", petArtFor(null, "puppy", "study")); expect(screen.queryByText(/こむぎ/)).toBeNull();
 });
 it("uses an actual overcoming memory for continuity without inferring a failure from grades", () => {
   const doc = applyPetLearningFact(empty(), fact(0)).document, pet = doc.profiles[0];

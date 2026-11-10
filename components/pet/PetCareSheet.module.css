@@ -1,5 +1,9 @@
 .sheet { --pet-safe-top:env(safe-area-inset-top,0px); --pet-safe-bottom:env(safe-area-inset-bottom,0px); display:block; width:calc(100% - 16px); max-width:520px; top:calc(50% + (var(--pet-safe-top) - var(--pet-safe-bottom)) / 2); max-height:calc(100vh - var(--pet-safe-top) - var(--pet-safe-bottom) - 24px); max-height:calc(100dvh - var(--pet-safe-top) - var(--pet-safe-bottom) - 24px); overflow-y:auto; overscroll-behavior:contain; padding:20px 16px 16px; overflow-wrap:anywhere; }
 .sheet section { border-top:1px solid var(--border,#ccc); padding:12px 0; margin-top:8px; }
+.sheet details { border-top:1px solid var(--border,#ccc); margin-top:8px; padding-bottom:4px; }
+.sheet summary { min-height:44px; padding:12px 0; cursor:pointer; font-size:14px; font-weight:700; }
+.sheet summary:focus-visible { outline:3px solid #167c73; outline-offset:2px; border-radius:6px; }
+.stageGoals { display:grid; gap:6px; margin-top:12px; }
 .sheet h4 { font-weight:700; font-size:14px; margin-bottom:8px; }
 .sheet > h2,.sheet > h2 + p { padding-right:48px; }
 .sheet p,.sheet li,.sheet label { font-size:14px; line-height:1.6; }
@@ -11,6 +15,7 @@
 .sheet label { display:block; margin:8px 0; }
 .sheet label input:not([type=checkbox]),.sheet select { display:block; width:100%; }
 .message { min-height:20px; font-size:13px; margin-top:4px; color:#2f6f5e; }
+.message:empty { min-height:0; margin:0; }
 .hero { display:grid; grid-template-columns:128px minmax(0,1fr); gap:12px; align-items:center; margin:4px 0 8px; padding:8px; border-radius:16px; background:linear-gradient(135deg,#fbf8ee,#edf5ec); }
 .heroArt { position:relative; width:128px; height:128px; }
 .heroArt img { width:128px; height:128px; object-fit:contain; }
@@ -62,5 +67,6 @@
 :global(.dark) .chips .stageChip { background:#5a4310; color:#f6e2ae; }
 :global(.dark) .sheet .treat { background:#3a2e17; }
 .heart { position:absolute; top:8px; right:8px; color:#e25a6b; font-size:28px; font-weight:800; opacity:0; pointer-events:none; animation:pet-heart 1.2s ease-out both; }
+.stillHeart { animation:none; opacity:1; }
 @keyframes pet-heart { 0% { opacity:0; transform:translateY(8px) scale(.6); } 20% { opacity:1; transform:translateY(0) scale(1.15); } 100% { opacity:0; transform:translateY(-24px) scale(1); } }
-@media(prefers-reduced-motion:reduce) { .heart { display:none; } }
+@media(prefers-reduced-motion:reduce) { .heart { animation:none; opacity:1; } }
