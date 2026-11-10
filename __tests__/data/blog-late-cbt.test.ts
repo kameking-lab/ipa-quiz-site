@@ -46,10 +46,16 @@ describe("late CBT editorial refresh", () => {
     const ap = getBlogPostBySlug("ap-gogo-jikan-haibun")!.body;
     expect(ap).toContain("公式が指定した配分ではありません");
     expect(ap).toContain("3月3日〜15日");
+    expect(ap).toContain("[2025年度秋期のAP旧午前問題一覧](/ap/2025-autumn)は科目A対策");
+    expect(ap).toContain("科目B対策には、[IPA公式の2025年度問題・解答一覧](https://www.ipa.go.jp/shiken/mondai-kaiotu/2025r07.html)");
+    expect(ap).toContain("「応用情報技術者試験（AP）」→「午後」");
+    expect(ap).not.toContain("旧午前・午後を選び");
+    expect(getBlogPostBySlug("ap-gogo-jikan-haibun")!.sourceUrls).toContain("https://www.ipa.go.jp/shiken/mondai-kaiotu/2025r07.html");
     for (const exam of LATE_CBT_EXAMS) {
       const body = getBlogPostBySlug(`${exam}-hinnshutsu-ronten-toppu10`)!.body;
       expect(body).toContain("タグ未付与");
       expect(body).toContain("次回の出題確率は示していません");
+      expect(body).toContain("収録データには演習対象外の問題も含むため、この集計件数は問題一覧・演習の件数とは異なります");
     }
   });
 });

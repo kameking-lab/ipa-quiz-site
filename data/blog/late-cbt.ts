@@ -3,6 +3,7 @@ import counts from "./late-cbt-counts.json";
 import { EXAM_PROFILES } from "./exam-data";
 
 export const LATE_CBT_SOURCE = "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html";
+const apPastPaperSource = "https://www.ipa.go.jp/shiken/mondai-kaiotu/2025r07.html";
 const checked = "2026-11-10";
 type LateExam = keyof typeof counts;
 export const LATE_CBT_EXAMS = ["pm", "db", "es", "au", "ap", "sc"] as const;
@@ -31,7 +32,7 @@ export function withLateCbtStudyPlan(post: BlogPost): BlogPost {
 
 ### 収録データで見た分野別件数
 
-過去問AIの2023〜2025年度の${paper}を対象に、categoryとtopicTagsを集計しました。対象は**${data.total}問・${data.papers.length}実施回**です。年度・期別の内訳は${data.papers.map(p => `${p.name.replace("spring", "春期").replace("autumn", "秋期")} ${p.count}問`).join("、")}です。午前I・記述・論述はこの集計に含めていません。同じ内容の再出題も、年度・期が別なら別の一問として数えています。
+過去問AIの2023〜2025年度の${paper}を対象に、categoryとtopicTagsを集計しました。対象は**${data.total}問・${data.papers.length}実施回**です。年度・期別の内訳は${data.papers.map(p => `${p.name.replace("spring", "春期").replace("autumn", "秋期")} ${p.count}問`).join("、")}です。午前I・記述・論述はこの集計に含めていません。同じ内容の再出題も、年度・期が別なら別の一問として数えています。収録データには演習対象外の問題も含むため、この集計件数は問題一覧・演習の件数とは異なります。
 
 | 収録時の分野名（上位5分野まで） | 件数 |
 | --- | --- |
@@ -169,9 +170,11 @@ IPAは、後期申込開始前に前期の成績を照会可能とし、その�
 
 ## 過去問を使って配分を修正する
 
-[2025年度秋期のAP問題一覧](/ap/2025-autumn)で旧午前・午後を選び、まず時間を測って解きます。翌回は、時間が足りなかった工程だけに小さな目標を置きます。過去問の紙面と会場画面は異なるため、画面操作は公式説明でも確認してください。
+[2025年度秋期のAP旧午前問題一覧](/ap/2025-autumn)は科目A対策に使い、時間を測って解きます。科目B対策には、[IPA公式の2025年度問題・解答一覧](${apPastPaperSource})の「令和7年度秋期試験」→「応用情報技術者試験（AP）」→「午後」にある問題冊子を使って時間を測り、解答後に解答例・採点講評で見直します。
 
-[APの過去問一覧](/ap)から別の年度に進み、同じ配分で解けるかを試します。[後期CBTの日程・予約の注意](/blog/ipa-shiken-cbt-vs-pbt)も確認して、学習計画に両方の受験日を入れておきましょう。
+翌回は、時間が足りなかった工程だけに小さな目標を置きます。過去問の紙面と会場画面は異なるため、画面操作は公式説明でも確認してください。
+
+[APの過去問一覧](/ap)から別の年度の旧午前問題に進み、科目Aの配分を試します。[後期CBTの日程・予約の注意](/blog/ipa-shiken-cbt-vs-pbt)も確認して、学習計画に両方の受験日を入れておきましょう。
 
 ## よくある質問
 
@@ -190,7 +193,7 @@ export function buildLateCbtGeneralPost(slug: keyof typeof generalArticles): Blo
     tags: ["CBT", "後期試験", "受験計画"],
     publishedAt: "2026-11-10T00:00:00.000Z",
     editorialDates: { firstPublishedAt: null, lastEditedAt: checked },
-    editorialKind: "study-guide", sourceUrls: [LATE_CBT_SOURCE],
+    editorialKind: "study-guide", sourceUrls: [LATE_CBT_SOURCE, ...(slug === "ap-gogo-jikan-haibun" ? [apPastPaperSource] : [])],
     relatedSlugs: ["ipa-shiken-cbt-vs-pbt", "ipa-gozen1-menjo-jouken", "ap-gogo-jikan-haibun"].filter(s => s !== slug),
   };
 }
