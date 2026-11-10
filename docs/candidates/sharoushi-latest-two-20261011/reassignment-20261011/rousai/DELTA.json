@@ -1,0 +1,73 @@
+{
+  "scope": [
+    "sharoushi-2026-annual-rousai-q1",
+    "sharoushi-2025-annual-rousai-q2",
+    "sharoushi-2025-annual-rousai-q8"
+  ],
+  "gate": "Same-case administrative original for each unresolved case; for 2025 q8 runtime エ, 1965 基発901号 or a dated general official treatment applicable by 2025-04-11",
+  "newDirectOriginals": 0,
+  "newlyClosedQuestions": 0,
+  "publicationReadyByDirectOriginalGate": false,
+  "officialNotificationIndexCheck": {
+    "index": "厚生労働省法令等データベースサービス・通知検索・情報詳細検索",
+    "indexHome": "https://www.mhlw.go.jp/hourei/",
+    "formUrl": "https://www.mhlw.go.jp/web/t_itemsrch?type=1",
+    "resultEvidence": "mhlw-index-results.json",
+    "queryMethod": "Public GET form, exact Showa date, notification kind and issuance number, each locator queried once and response saved with URL and SHA-256",
+    "targetResultCounts": {"q1-a": 0, "q1-i": 0, "q1-u": 0, "q1-e": 0, "q2-i": 0, "q2-u": 0, "q2-e": 0, "q8-d": 0},
+    "positiveControl": "The same form with 1973-11-22 (昭和48年11月22日) 基発644号 returned HTTP 200 and one result; this notice already has an MHLW database text entry in the existing evidence.",
+    "interpretation": "The database says it indexes main ministry notifications, not every historical case response. Zero results prove only that the supplied locator strings have no entry under this exact search; they do not disprove the notices or verify their numbers/dates. No original text or official date-number confirmation was found for the eight targets.",
+    "nationalArchivesAttempt": "The first normal public opening of a National Archives fonds result mentioning 基収文書台帳 returned HTTP 403. No retry or alternate route was attempted, and no archival record text was obtained."
+  },
+  "newOfficialSource": {
+    "issuer": "兵庫労働局",
+    "title": "有期事業の一括",
+    "url": "https://jsite.mhlw.go.jp/hyogo-roudoukyoku/hourei_seido_tetsuzuki/roudou_hoken/tetsuzuki/kensetsugyo_ringyou/yukijigyo_ikkatsu.html",
+    "localFile": "hyogo-direct-bulk.html",
+    "receipt": "hyogo-direct-bulk.receipt.json",
+    "receivedSha256": "88050a09df586a7660c827988e74148db50b5fd218e0526c39e333a5fc430573",
+    "httpStatus": 200,
+    "versionDate": null,
+    "page": "HTML article, 有期事業の一括の要件 (3), note following the size threshold",
+    "proposition": "An initially eligible consolidated fixed-term project need not be excluded solely because a later design change raises premium, contract price, or projected timber volume above the thresholds.",
+    "cutoffAssessment": "Official present-day explanation of the proposition, but no issue or revision date and no Last-Modified header. The article contains a prospective statement about 2019 regional-rule abolition, which cannot prove the target paragraph remained unchanged through 2025-04-11. Not a dated 2025 direct original."
+  },
+  "questions": [
+    {
+      "id": "sharoushi-2026-annual-rousai-q1",
+      "lawReferenceDate": "2026-04-10",
+      "status": "HOLD_DIRECT_INDIVIDUAL_ORIGINALS",
+      "remaining": [
+        {"item": "ア", "case": "任意・自費の慰安旅行で艀へ乗換え", "locator": "1947-12-19 基発516号", "reason": "同一事例の行政原本未取得"},
+        {"item": "イ", "case": "自宅から出張先へ直接向かい駅まで自転車", "locator": "1959-07-15 基収2980号", "reason": "同一事例の行政原本未取得"},
+        {"item": "ウ", "case": "飛ばされた防寒帽を追った運転助手", "locator": "1950-05-08 基収1006号", "reason": "同一事例の行政原本未取得。既存RIC問6の被災者は運転手であり、本問の運転助手と同一事例と証明できない"},
+        {"item": "エ", "case": "骨移植後の医師指示による歩行練習中の再骨折", "locator": "1963-09-30 基収6714号", "reason": "同一事例の行政原本未取得"}
+      ]
+    },
+    {
+      "id": "sharoushi-2025-annual-rousai-q2",
+      "lawReferenceDate": "2025-04-11",
+      "status": "HOLD_DIRECT_INDIVIDUAL_ORIGINALS",
+      "remaining": [
+        {"item": "イ", "case": "休日に社宅への延焼を防止", "locator": "1949-12-15 基収4028号", "reason": "同一事例の行政原本未取得"},
+        {"item": "ウ", "case": "使用者の出張命令による技能検定の実技中", "locator": "1959-10-09 基発700号", "reason": "同一事例の行政原本未取得。既存の1959年技能検定制度通知は災害認定原本ではない"},
+        {"item": "エ", "case": "落雷回避のため山岳作業から避難", "locator": "1961-03-13 基収1844号", "reason": "同一事例の行政原本未取得。既存の地震一般通知とRICの建築中落雷事例は別の根拠"}
+      ]
+    },
+    {
+      "id": "sharoushi-2025-annual-rousai-q8",
+      "lawReferenceDate": "2025-04-11",
+      "status": "HOLD_DIRECT_GENERAL_TREATMENT_AT_CUTOFF",
+      "remaining": [
+        {"item": "D / runtime エ", "case": "一括された有期事業の規模変更後も一括継続", "locator": "1965-07-31 基発901号 記第1の2(3)ホまたは2025-04-11以前の適用を確定できる一般公式原本", "reason": "1965年本文未取得。2011年震災通知は同号を引用するが対象限定。北海道・兵庫の現行一般ページは版日を確定できず、2026改訂しおりは基準日後"}
+      ]
+    }
+  ],
+  "indexFindings": [
+    "新規に確認した労政時報の通達索引は複数の個別番号と題名を列挙するが、民間の有料抄録であり行政発行原本ではない。課金・ログインを行っていない。",
+    "2021-01-29基発0129第1号の既保存PDFは行政発行文書のWikimedia再掲であり、検査した一括制度の箇所には規模変更後据置の直接命題がない。公式ホストも未確認のため新たな直接原本に数えない。",
+    "既存の一般法令、2011年震災通知、北海道案内、2026改訂しおり、RIC解説からの推論は、指定された直接原本ゲートを解除しない。"
+  ],
+  "networkMethod": "Public-web indexing and one new official-page fetch through ordinary TLS. Previously recorded 401/403/STOP destinations were not retried or bypassed.",
+  "mutations": "Only files in rousai-direct-gap5 were created. Questions, answers, explanations, payload, runtime, STOP drafts, Git state, and production were not edited."
+}

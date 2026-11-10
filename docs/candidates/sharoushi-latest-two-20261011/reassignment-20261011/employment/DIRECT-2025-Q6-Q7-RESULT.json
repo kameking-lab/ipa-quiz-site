@@ -1,0 +1,67 @@
+{
+  "scope": [
+    "sharoushi-2025-annual-koyou-q6",
+    "sharoushi-2025-annual-koyou-q7"
+  ],
+  "lawAsOf": "2025-04-11",
+  "retrievedUtcDate": "2026-10-11",
+  "gate": "DIRECT_2025_ADMINISTRATIVE_ORIGINAL_HOLD",
+  "closedQuestionCount": 0,
+  "questions": {
+    "sharoushi-2025-annual-koyou-q6": {
+      "requiredManualSections": ["52152(2)ハ", "52152(2)ホ(ロ)", "52152(2)ホ(ハ)"],
+      "requiredAssertions": ["net pay below the stated basic-benefit benchmark", "unreasonably inferior local working hours", "temporary wage nonpayment cured at referral with reliable future payment"],
+      "direct2025OfficialOriginalObtained": false,
+      "reason": "The relevant pages are available locally only as historical 24.4 official text and later R8.4 official text. Their different nonpayment thresholds prove that endpoint agreement on other language cannot establish the 2025-04-11 version."
+    },
+    "sharoushi-2025-annual-koyou-q7": {
+      "requiredManualSections": ["53251(1)", "53253(3)", "53254(4)", "53255(5)", "53301(1)", "53302(2)"],
+      "requiredAssertions": ["wage-free settlement continuing employment", "retroactive provisional-order wages", "business closure preventing reinstatement", "insured-status choice after dual employment", "conditional benefit while contesting unfair-labor-practice dismissal"],
+      "direct2025OfficialOriginalObtained": false,
+      "reason": "The relevant pages are available locally only as historical 25.4 official text and later administrative text. The specific 2025-04-11 administrative wording remains unverified."
+    }
+  },
+  "existingEvidenceRead": [
+    "../employment-gap3/2025-Q6-Q7-REMAINING.json",
+    "../employment-gap3/2025-Q6-Q7-LIMITED-INFERENCE-REVIEW.json",
+    "../employment-gap3/DELTA-COMPLETE-2025-Q6.json",
+    "../employment-gap3/DELTA-COMPLETE-2025-Q7.json",
+    "../employment-gap2/RESULT.md"
+  ],
+  "newSearchFindings": [
+    {
+      "finding": "The ministry's manual had a 2025-04-01 edition, reported on 2025-04-02, but the announcement links to the ministry's mutable landing page rather than a preserved edition PDF.",
+      "discoveryUrl": "https://www.kaiketsu-j.com/environment/15087/",
+      "officialLandingUrl": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/koyouhoken/data/toriatsukai_youryou.html",
+      "evidenceType": "secondary publication announcement only; not a direct source for section wording"
+    },
+    {
+      "finding": "A 2025-02-25 edition was also publicly announced, but again only the mutable ministry landing URL survives in the announcement.",
+      "discoveryUrl": "https://www.psrn.jp/topics/detail.php?id=35669",
+      "evidenceType": "secondary publication announcement only; not a direct source for section wording"
+    },
+    {
+      "finding": "The current ministry landing page identifies itself as the 2026-08-01 edition; therefore it cannot prove the 2025 text.",
+      "officialLandingUrl": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/koyou/koyouhoken/data/toriatsukai_youryou.html",
+      "evidenceType": "official current index, later version"
+    }
+  ],
+  "searchQueries": [
+    "site:mhlw.go.jp 令和７年４月 雇用保険に関する業務取扱要領 52152",
+    "site:mhlw.go.jp 令和７年４月 雇用保険に関する業務取扱要領 53302",
+    "雇用保険に関する業務取扱要領 令和7年4月1日以降 第9 第12",
+    "雇用保険に関する業務取扱要領 令和7年4月1日以降 第17 第18",
+    "52152 R7.4 site:mhlw.go.jp filetype:pdf",
+    "53302 R7.4 site:mhlw.go.jp filetype:pdf",
+    "52152 改正 令和7 雇用保険",
+    "53302 改正 令和7 雇用保険"
+  ],
+  "newDirectOfficialDocuments": [],
+  "directSourceReceipt": null,
+  "versionDate": null,
+  "sha256": null,
+  "relevantPages": [],
+  "doNotInferGateReleaseFrom": ["2025 statute alone", "2013 and R8.4 endpoint agreement", "secondary exam commentary", "2025-edition publication announcement without the original text"],
+  "nextEvidenceNeeded": "A publicly accessible official copy of the general-insured jobseeker-benefit manual's chapters 9-12 and 17-18 effective by 2025-04-11, or an official dated amendment chain that directly establishes all target clauses at that cutoff.",
+  "excluded": "2025 employment q2 not examined; no original questions regenerated or shared payload edited"
+}
