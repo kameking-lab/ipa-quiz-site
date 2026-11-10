@@ -37,6 +37,35 @@ describe("SC cx-k2 choice explanations", () => {
     }
   });
 
+  it("uses the 2017 autumn question's actual traffic conditions, even when scaled inputs give the same answer", () => {
+    // IPA 2017h29a_sc_am2_qs.pdf p.10, Q19; official answer: イ (625).
+    const id = "sc-2017a-am2-q19";
+    const question = original.get(id)!;
+    const bandwidth = Number(question.question.match(/(\d+)Mビット\/秒のLAN/u)?.[1]);
+    const traffic = Number(question.question.match(/(\d+)kバイト/u)?.[1]);
+    const efficiency = Number(question.question.match(/伝送効率は(\d+)%/u)?.[1]);
+    expect([bandwidth, traffic, efficiency]).toEqual([100, 600, 50]);
+    const perClient = traffic * 1_000 * 8 / 60 / 1_000_000;
+    const usableBandwidth = bandwidth * efficiency / 100;
+    const clients = usableBandwidth / perClient;
+    expect([perClient, usableBandwidth, clients]).toEqual([0.08, 50, 625]);
+    expect(question.answer).toBe("イ");
+    expect(question.choices?.イ).toBe(String(clients));
+
+    const reasons = published.get(id)!.choiceExplanations!;
+    expect(reasons.イ).toContain("600kバイト／分");
+    expect(reasons.イ).toContain("600,000×8÷60＝80,000ビット／秒＝0.08Mビット／秒");
+    expect(reasons.イ).toContain("100×0.5＝50Mビット／秒");
+    expect(reasons.イ).toContain("50÷0.08＝625台");
+    for (const reason of Object.values(reasons)) {
+      expect(reason).toContain("50Mビット／秒");
+      expect(reason).toContain("625台");
+      expect(reason).not.toMatch(/[1１]Gビット|[6６]Mバイト|500Mビット|0\.8Mビット/u);
+    }
+    expect(reasons.ウ).toContain("伝送効率50％を無視");
+    expect(reasons.エ).toContain("1バイト＝8ビット");
+  });
+
   it("covers 2014–2018 except three absent figures and two inconsistent transcriptions", () => {
     const targets = [...original.values()].filter(q =>
       q.year >= 2014 && q.year <= 2018 && q.session === "am2"
