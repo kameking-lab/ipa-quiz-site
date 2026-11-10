@@ -9,6 +9,21 @@ export function questionSourceExam(q: Pick<Question, "exam" | "year" | "season" 
 
 /** 公式冊子の表紙で照合した回次・実施年。保存年や既存URLは年度/実施年が混在するため表示に使わない。 */
 const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string, string>>>> = {
+  tp220421: {
+    "02": "第115回（2022年実施）",
+    "06": "第74回（2022年実施）",
+    "08": "第57回（2022年実施）",
+  },
+  tp230524: {
+    "02": "第116回（2023年実施）",
+    "06": "第75回（2023年実施）",
+    "08": "第58回（2023年実施）",
+  },
+  tp240424: {
+    "02": "第117回（2024年実施）",
+    "06": "第76回（2024年実施）",
+    "08": "第59回（2024年実施）",
+  },
   tp250428: {
     "05": "第114回（2025年実施）",
     "06": "第77回（2025年実施）",
@@ -100,7 +115,7 @@ if (q.year === 2025 && q.season === "annual" &&
   if (q.year === 2026 && riyoshiPaper?.[1] === "03/53rhikki-1") return "第53回（2026年3月1日実施）";
   if (q.year === 2026 && riyoshiPaper?.[1] === "09/54rhikki") return "第54回（2026年9月6日実施）";
   if (q.season === "annual") {
-    const verifiedPaper = /^https:\/\/www\.mhlw\.go\.jp\/seisakunitsuite\/bunya\/kenkou_iryou\/iryou\/topics\/dl\/(tp250428|tp260424)-(05[abc]|(?:06[ab]|07b)|(?:08|09|10)[ab])_01\.pdf(?:#page=[1-9]\d*)?$/.exec(q.sourcePdfUrl);
+    const verifiedPaper = /^https:\/\/www\.mhlw\.go\.jp\/seisakunitsuite\/bunya\/kenkou_iryou\/iryou\/topics\/dl\/(tp220421|tp230524|tp240424|tp250428|tp260424)-(02a|05[abc]|(?:06[ab]|07b)|(?:08|09|10)[ab])_01\.pdf(?:#page=[1-9]\d*)?$/.exec(q.sourcePdfUrl);
     const edition = verifiedPaper
       ? VERIFIED_MEDICAL_EDITIONS[verifiedPaper[1] ?? ""]?.[verifiedPaper[2]?.slice(0, 2) ?? ""]
       : undefined;
