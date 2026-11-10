@@ -431,7 +431,7 @@ export const SA_QUESTIONS_2022_SPRING_AM2: Question[] = [
       "エ": "デジタル署名に公開鍵暗号方式が使用されることはなく、共通鍵暗号方式が使用される。"
     },
     "answer": "イ",
-    "explanation": "共通鍵暗号方式は、暗号化と復号の両方に同じ鍵を使用する暗号方式です。この鍵は、通信を行う両者間で秘密に共有される必要があります。",
+    "explanation": "共通鍵暗号方式では、暗号化と復号に同じ鍵を使うため、通信する双方がその鍵を秘密に共有します。AESはこの方式です。一方、RSAなどの公開鍵暗号方式では公開鍵と秘密鍵を対にして使い、内容を秘匿するときは受信者の公開鍵で暗号化し、受信者の秘密鍵で復号します。署名では秘密の生成鍵と対応する検証鍵を用います。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sa_am2_qs.pdf",
     "license": "IPA-public"

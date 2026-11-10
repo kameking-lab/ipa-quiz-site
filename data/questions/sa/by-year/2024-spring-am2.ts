@@ -359,7 +359,7 @@ export const SA_QUESTIONS_2024_SPRING_AM2: Question[] = [
       "エ": "ファブレスメーカー"
     },
     "answer": "ウ",
-    "explanation": "ファウンドリーとは、半導体設計を受託し、自社工場で半導体の製造のみを行う専門企業のことです。LSI設計を自社で行い、製造を外部に委託する場合、このファウンドリーが製造を請け負うことになります。",
+    "explanation": "ファウンドリーとは、他社が設計した半導体の製造を受託し、自社工場で製造する専門企業のことです。LSI設計を自社で行い、製造を外部に委託する場合、このファウンドリーが製造を請け負うことになります。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2024h06_1/2024h06h_sa_am2_qs.pdf",
     "license": "IPA-public"
