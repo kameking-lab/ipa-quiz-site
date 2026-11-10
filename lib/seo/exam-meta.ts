@@ -245,6 +245,14 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
     return `${base}${examLabel(exam)}の過去問${questionCount}問を年度別・分野別に収録。AIコパイロット付きで効率的に学習。`;
 }
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+"unko-kanrisha-ryokaku": "運行管理者（旅客）",
+"shobo-setsubishi-kou1": "消防設備士 甲種第1類",
+"kikenbutsu-kou": "危険物取扱者 甲種",
+"kikenbutsu-hei": "危険物取扱者 丙種",
+"shobo-setsubishi-kou4": "消防設備士 甲種第4類",
+"shobo-setsubishi-otsu6": "消防設備士 乙種第6類",
+"unko-kanrisha-kamotsu": "運行管理者（貨物）",
+"kikenbutsu-otsu4": "危険物取扱者 乙種第4類",
   "benrishi": "弁理士（短答式）",
   "sokuryoshi": "測量士",
   "dokugeki-chiba": "毒物劇物取扱者",
@@ -412,6 +420,14 @@ export function examFullName(exam: ExamCode): string {
     return EXAM_FULL_NAMES[exam];
 }
 const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number) => string> = {
+"unko-kanrisha-ryokaku": () => "運行管理者（旅客）の公式公表問題。",
+"shobo-setsubishi-kou1": () => "消防設備士 甲種第1類の公式公表問題。",
+"kikenbutsu-kou": () => "危険物取扱者 甲種の公式公表問題。",
+"kikenbutsu-hei": () => "危険物取扱者 丙種の公式公表問題。",
+"shobo-setsubishi-kou4": () => "消防設備士 甲種第4類の公式公表問題。",
+"shobo-setsubishi-otsu6": () => "消防設備士 乙種第6類の公式公表問題。",
+"unko-kanrisha-kamotsu": () => "運行管理者（貨物）の公式公表問題。",
+"kikenbutsu-otsu4": () => "危険物取扱者 乙種第4類の公式公表問題。",
   "benrishi": (count) => "弁理士（短答式）の公開演習" + count + "問。" + "2025・2026年の公式問題・正答・独自解説と原本図表を収録。",
   "sokuryoshi": (count) => "測量士の公開演習" + count + "問。" + "2025・2026年の公式問題・正答・独自解説と原本図表を収録。午前56問・午後10大問。午後は必須1題と選択4題から2題。記述・作図は公式解答例で自己確認し、自動採点しません。",
   "dokugeki-chiba": (count) => "毒物劇物取扱者の公開演習" + count + "問。" + "2025・2026年の公式問題・正答・独自解説と原本図表を収録。一般・農業用品目・特定品目の各回各80解答欄、計480欄。原文の用語の疑義は注記します。",
