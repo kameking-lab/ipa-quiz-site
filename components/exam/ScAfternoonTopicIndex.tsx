@@ -13,7 +13,7 @@ const topics = [
 export function ScAfternoonTopicIndex() {
   return <div className="mt-4 rounded-xl border border-border p-3">
     <h3 className="text-sm font-bold">支援士の午後過去問を題材から探す：2025年度秋期</h3>
-    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">まずは公式資料で照合した1回分の索引です。題材の整理と読む観点は当サイトの編集によるものです。全年度の一覧や独自の解答解説ではありません。</p>
+    <p className="mt-2 text-sm leading-relaxed text-muted-foreground">題材を選び、公式の問題冊子で該当する問を開いて練習できます。</p>
     <p className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-sm">
       <a href={`${officialBase}qs.pdf`} className={linkClass} target="_blank" rel="noopener noreferrer">公式の午後問題冊子（PDF）</a>
       <a href={`${officialBase}cmnt.pdf`} className={linkClass} target="_blank" rel="noopener noreferrer">公式の採点講評（PDF）</a>

@@ -77,5 +77,6 @@ it("connects the four SC afternoon topics to their official statement-of-purpose
   }
   expect(html).toContain("2025r07a_sc_pm_qs.pdf");
   expect(html).toContain("2025r07a_sc_pm_cmnt.pdf");
-  expect(html).toContain("全年度の一覧や独自の解答解説ではありません");
+  expect(html).toContain("2025年度（令和7年度）秋期・午後 問1〜4");
+  expect(html).toContain("2026年11月10日に確認");
 });
