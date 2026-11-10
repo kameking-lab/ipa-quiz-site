@@ -6,16 +6,9 @@ import {
 } from "@/data/blog";
 import { extractFaq } from "@/lib/blog/faq";
 
-// 午前I免除は高インテントの検索意図（「午前1 免除 条件 / 期間 / 申請」）だが、
-// 既存記事は全て「応用情報に合格すれば免除」とだけ述べ、IPA 公式の 3 ルート
-// （①応用情報合格 ②高度・支援士いずれか合格 ③午前I 基準点以上）と
-// 「申請が必須（自動ではない）」を網羅した専用ページが無かった。新記事
-// ipa-gozen1-menjo-jouken を追加した。この記事が
-// (1) 高度試験/午前I免除の記事として登録され、
-// (2) IPA 公式の核心事実（3 条件・2 年間・申請必須）を正しく述べ、
-// (3) 高度試験ハブ + 論文区分は旗艦 /essay へ「参考評価」明記で funnel し、
-// (4) 既存の免除言及記事から inbound を受け orphan 化せず、
-// (5) FAQPage 化でき blog サイトマップに掲載される、ことを pin する。
+// x1 updates the exemption article for the specific 2026 late CBT sitting.
+// Keep its verified eligible periods and practice links, rather than restoring
+// the older generic two-year wording or unrelated essay-grading funnel.
 
 const SLUG = "ipa-gozen1-menjo-jouken";
 const INBOUND_PARENTS = ["ipa-koudo-9kubun-chigai", "13-shikaku-osusume-jyun"];
@@ -28,27 +21,20 @@ describe("午前I免除の条件記事の事実性と funnel", () => {
     expect(post!.tags).toContain("高度試験");
   });
 
-  it("IPA 公式の核心事実（3 条件・2 年間・申請必須）を正しく述べている", () => {
+  it("後期CBTの対象回と科目A-1・A-2の免除を区別する", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
-    // 3 つの免除ルート
-    expect(body).toContain("応用情報技術者試験（AP）に合格");
-    expect(body).toContain("いずれかの高度試験");
-    expect(body).toContain("午前Iで基準点以上");
-    // 有効期間 2 年間
-    expect(body).toContain("2 年間");
-    expect(body).toContain("同時期試験");
-    // 申請が必須（自動ではない）= 最大の落とし穴
-    expect(body).toContain("一部免除申請番号");
-    expect(body).toContain("自動ではない");
+    expect(body).toContain("2024年度秋期・2025年度春期・2025年度秋期・2026年度前期のAP、高度、SCの合格");
+    expect(body).toContain("2026年度前期の高度、SCの科目A-1通過");
+    expect(body).toContain("2024年度春期は、この後期の対象一覧には含まれていません");
+    expect(body).toContain("免除の適用が確定するのは合格者の受験番号の官報公示日");
+    expect(body).toContain("AP合格を理由に科目A-2も省けると判断しない");
+    expect(body).toContain("https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html");
   });
 
-  it("論文区分は旗艦 /essay へ funnel しつつ「参考評価」を明記している（誇大回避）", () => {
+  it("対象区分の過去問へ進み、免除手順から論文採点へ誤誘導しない", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
-    expect(body).toContain("](/essay");
-    expect(body).toContain("参考評価");
-    expect(body).toContain("採点基準は非公開");
-    // 高度試験ハブへも導線
-    expect(body).toContain("](/ap");
+    for (const exam of ["pm", "db", "es", "au", "sc"]) expect(body).toContain(`](/${exam}/2025-autumn)`);
+    expect(body).not.toContain("](/essay");
   });
 
   it("既存の免除言及記事から inbound リンクがあり orphan 化しない", () => {
@@ -65,7 +51,10 @@ describe("午前I免除の条件記事の事実性と funnel", () => {
   it("FAQPage 化できる Q&A を持ち、blog サイトマップに掲載される", () => {
     const post = getBlogPostBySlug(SLUG)!;
     const faqs = extractFaq(post.body);
-    expect(faqs.length).toBeGreaterThanOrEqual(4);
+    expect(faqs.map(faq => faq.question)).toEqual([
+      "APの科目Aを通過すれば免除できますか？",
+      "2024年度春期の合格は後期の対象ですか？",
+    ]);
     for (const f of faqs) {
       expect(f.question).not.toContain("**");
       expect(f.answer).not.toMatch(/\]\(/);

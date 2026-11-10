@@ -28,7 +28,10 @@ describe("exam hub Course.provider resolves to a defined Organization node", () 
     expect(typeof org.name).toBe("string");
     expect((org.name as string).length).toBeGreaterThan(0);
     expect(org.logo).toBeTruthy();
-    expect(Array.isArray(org.sameAs)).toBe(true);
+    expect(org.name).toBe("過去問AI");
+    expect(org.url).toBe("https://www.kakomon-ai.jp");
+    // ktidy removes the frozen X account. sameAs is optional for the provider.
+    expect(org.sameAs).toBeUndefined();
   });
 
   it("includes the full Organization node in the exam hub @graph", () => {

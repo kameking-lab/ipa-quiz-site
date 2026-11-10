@@ -96,6 +96,8 @@ CBTは会場のパソコンで問題を読み、キーボードとマウスで�
 
 [AP](/ap/2025-autumn)・[PM](/pm/2025-autumn)・[DB](/db/2025-autumn)・[ES](/es/2025-autumn)・[AU](/au/2025-autumn)・[SC](/sc/2025-autumn)
 
+受付から試験終了までの準備は[CBT試験当日の流れ](/blog/cbt-shiken-toujitsu-nagare)で確認できます。
+
 ## よくある質問
 
 **Q. 2027年2月に科目Bも受けますか？**
@@ -137,6 +139,8 @@ IPAは、後期申込開始前に前期の成績を照会可能とし、その�
 
 専門分野の確認は、[PM](/pm/2025-autumn)・[DB](/db/2025-autumn)・[ES](/es/2025-autumn)・[AU](/au/2025-autumn)・[SC](/sc/2025-autumn)の2025年度秋期問題から始められます。免除対象でない場合の学習手順は[高度午前I対策](/blog/koudo-gozen1-taisaku)も参考にしてください。
 
+基準点と段階ごとの採点順は[高度試験の合格基準](/blog/koudo-goukaku-ten-ashikiri)で確認できます。
+
 ## よくある質問
 
 **Q. APの科目Aを通過すれば免除できますか？**
@@ -166,7 +170,7 @@ IPAは、後期申込開始前に前期の成績を照会可能とし、その�
 
 例えば、問題選択と全体確認に10分、解答作成に125分、入力と解答欄の確認に15分を確保する練習ができます。これも編集上の一例です。各大問の所要時間を別に記録し、読み取りで遅れたのか、根拠を探す段階で止まったのか、文章の入力で遅れたのかを確かめます。
 
-解答後は、設問で求められた対象と自分の答案の主語が一致しているか、条件や文字数の指定を落としていないかを見直します。一問の完成度を上げるために他の解答時間を使い切っていないかも確認してください。分野選びの考え方は[APの午後選択戦略](/blog/ap-gogo-sentaku)にまとめています。
+解答後は、設問で求められた対象と自分の答案の主語が一致しているか、条件や文字数の指定を落としていないかを見直します。一問の完成度を上げるために他の解答時間を使い切っていないかも確認してください。分野選びの考え方は[APの午後選択戦略](/blog/ap-gogo-sentaku)にまとめています。答案を短くまとめる練習には[午後の記述式答案の書き方](/blog/gogo-kijutsu-buhanten)も活用してください。
 
 ## 過去問を使って配分を修正する
 
@@ -190,7 +194,7 @@ export function buildLateCbtGeneralPost(slug: keyof typeof generalArticles): Blo
   return {
     slug, ...generalArticles[slug],
     exam: slug === "ap-gogo-jikan-haibun" ? "ap" : undefined,
-    tags: ["CBT", "後期試験", "受験計画"],
+    tags: ["CBT", "後期試験", "受験計画", ...(slug === "ipa-gozen1-menjo-jouken" ? ["午前I免除", "高度試験"] : [])],
     publishedAt: "2026-11-10T00:00:00.000Z",
     editorialDates: { firstPublishedAt: null, lastEditedAt: checked },
     editorialKind: "study-guide", sourceUrls: [LATE_CBT_SOURCE, ...(slug === "ap-gogo-jikan-haibun" ? [apPastPaperSource] : [])],

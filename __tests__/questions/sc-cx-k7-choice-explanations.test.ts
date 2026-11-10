@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import overlay from "@/data/questions/sc/choice-explanations-cx-k7.json";
 import existingOverlay from "@/data/questions/sc/choice-explanations-2024-2025.json";
+import morningIIOverlay from "@/data/questions/sc/choice-explanations-cx-k2.json";
 import { SC_QUESTIONS } from "@/data/questions/sc";
 import { BY_YEAR_QUESTIONS } from "@/data/questions/sc/by-year";
 import { applyIpaCorrections } from "@/data/questions/corrections";
@@ -112,7 +113,10 @@ describe("SC cx-k7 morning I choice explanations", () => {
   });
 
   it("keeps all existing question fields and overlays unchanged when applying the new layer", () => {
-    const baseline = applyChoiceExplanationOverlay(applyIpaCorrections("sc", BY_YEAR_QUESTIONS), existingOverlay);
+    const baseline = applyChoiceExplanationOverlay(
+      applyChoiceExplanationOverlay(applyIpaCorrections("sc", BY_YEAR_QUESTIONS), existingOverlay),
+      morningIIOverlay,
+    );
     const expected = applyChoiceExplanationOverlay(baseline, overlay);
     expect(SC_QUESTIONS).toEqual(expected);
     for (const [index, question] of SC_QUESTIONS.entries()) {
