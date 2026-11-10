@@ -5,6 +5,7 @@ import previousOverlay from "@/data/questions/ap/choice-explanations-cx-k3.json"
 import overlay from "@/data/questions/ap/choice-explanations-e-ap-1.json";
 import { applyIpaCorrections } from "@/data/questions/corrections";
 import { applyChoiceExplanationOverlay } from "@/lib/questions/apply-choice-explanations";
+import { getQuestionsForExam } from "@/lib/questions/get-questions";
 
 describe("AP e-ap-1 choice explanations", () => {
   it("adds complete reasons without altering any question, answer or previous explanation", () => {
@@ -32,7 +33,12 @@ describe("AP e-ap-1 choice explanations", () => {
 
   it("retains the first reviewed batch of 50 questions", () => {
     const ids = Object.keys(overlay);
+    expect(ids).toHaveLength(250);
     expect(ids.filter(id => id.startsWith("ap-2016h-") && Number(id.split("q")[1]) <= 52)).toHaveLength(50);
     expect(ids.every(id => !(id in previousOverlay))).toBe(true);
+  });
+
+  it("serves the same explanations through the lazy exam loader", async () => {
+    expect(await getQuestionsForExam("ap")).toEqual(AP_QUESTIONS);
   });
 });
