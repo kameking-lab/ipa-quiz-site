@@ -44,7 +44,7 @@ describe("SME consultant secondary latest-two source and example contract", () =
         expect(s.checkpoints.length).toBeGreaterThanOrEqual(2);
       }
     }
-    expect(INDEPENDENT_EXAMPLE_NOTICE).toContain("公式の模範解答や採点基準ではなく");
+    expect(INDEPENDENT_EXAMPLE_NOTICE).toContain("公式の模範解答や採点基準ではありません");
   });
   it("indexes all 42 paths and gives the native exam a working homepage link", () => {
     const paths=chushoSitemapPaths();
@@ -55,7 +55,7 @@ describe("SME consultant secondary latest-two source and example contract", () =
     expect(getHomeDirectory().flatMap(d=>[...d.featured,...d.compact]).find(p=>p.key==="chusho-secondary")).toMatchObject({href:"/chusho-secondary",questionCount:33});
     const html=renderToStaticMarkup(<Page />);
     expect(html).toContain("独自解答例");
-    expect(html).toContain("得点を保証するものではありません");
+    expect(html).toContain("公式の模範解答や採点基準ではありません");
   });
   it("distinguishes editorial secondary examples from official answer material in the qualification directory", () => {
     const html = renderToStaticMarkup(<QualificationsPage />);

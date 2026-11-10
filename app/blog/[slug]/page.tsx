@@ -296,7 +296,6 @@ export default async function BlogArticlePage({ params }: PageProps) {
             {dates.modified && <>{dates.published ? " / " : ""}本文編集: <time dateTime={dates.modified}>{dates.modified.slice(0, 10)}</time></>}
           </p>
         )}
-        {post.editorialKind === "study-guide" && <p className="mt-3 text-xs text-zinc-600 dark:text-zinc-400">編集上の学習ガイドです。受験者の実測調査・出題頻度ランキングではありません。</p>}
         {post.sourceUrls && <ul className="mt-3 space-y-1 text-xs">{post.sourceUrls.map((url, i) => <li key={url}><a href={url} className="underline" target="_blank" rel="noopener noreferrer">参照資料 {i + 1}（IPA）</a></li>)}</ul>}
       </header>
 
@@ -446,7 +445,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
 
       <section className="mt-10 text-xs text-zinc-500 dark:text-zinc-500">
         <p>
-          ※ 本記事は 過去問AI が独自にまとめた学習ガイドです。試験要項の最新情報は必ず{" "}
+          試験要項の最新情報は必ず{" "}
           <a
             href="https://www.ipa.go.jp/shiken/"
             target="_blank"

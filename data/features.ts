@@ -193,7 +193,7 @@ export const FEATURE_LANDING_PAGES: FeatureLandingPage[] = [
     benefits: [
       {
         title: "書き直す箇所を整理する",
-        body: "段落ごとの良い点と不足する説明を確認し、どこを修正するか決めます。処理時間や学習効果の数値は保証していません。",
+        body: "段落ごとの良い点と不足する説明を確認し、どこを修正するか決めます。",
       },
       {
         title: "見直しの観点を確認する",

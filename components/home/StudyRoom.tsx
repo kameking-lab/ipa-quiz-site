@@ -149,7 +149,6 @@ export function StudyRoom({ snapshot, suggestions }: {
             <span className={styles.listNumber}>{seat.index + 1}</span><span>{seat.name}</span>
           </button>)}
         </div>}
-        <p className="study-room-disclosure">周囲の席の服装は資格・分野のイメージです。「勉強中」「あるある」「席を立って遊ぶ」は室内の演出で、特定の学習者の行動を表すものではありません。</p>
         <PetOwnStudySeat view={petView} />
 
       </div>

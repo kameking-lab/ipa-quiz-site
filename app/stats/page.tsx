@@ -196,7 +196,7 @@ export default async function StatsPage() {
           <MetricCard label="ホーム掲載の公開問題" value={publishedTotal.toLocaleString("ja-JP")} sub="全公開資格・区分の合計" />
           <MetricCard label="ホーム掲載の資格・区分" value={publishedQualifications.toLocaleString("ja-JP")} sub="ホームと同じ対象範囲" />
         </div>
-        <p className="mb-3 text-xs leading-relaxed text-muted-foreground">以下は共通問題レジストリの登録件数です。解説準備中を含み、安全系などの別レジストリや専用の記述教材は含みません。原問・回答欄の単位は資格で異なるため、ホームの公開問題合計とは一致しません。人数や検索インデックス数を表すものではありません。</p>
+        <p className="mb-3 text-xs leading-relaxed text-muted-foreground">以下は共通問題レジストリの登録件数です。解説準備中を含み、安全系などの別レジストリや専用の記述教材は含みません。原問・回答欄の単位は資格で異なるため、ホームの公開問題合計とは一致しません。</p>
         <div className="mb-4 grid grid-cols-2 gap-3 sm:grid-cols-4">
           <MetricCard label="共通レジストリ登録件数" value={counts.total.toLocaleString("ja-JP")} sub="問題 + 午後 + 論文" />
           <MetricCard label="共通の問題データ" value={counts.morning.toLocaleString("ja-JP")} sub="四択・数値・並べ替え・記述等" />

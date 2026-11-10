@@ -300,9 +300,6 @@ export default function WhyKakomonAiPage() {
             </tbody>
           </table>
         </div>
-        <p className="mt-2 text-[11px] leading-relaxed text-muted-foreground">
-          ※比較は公開情報に基づく独自整理であり、各サービスを批判・代替するものではありません。
-        </p>
       </section>
 
       <section aria-label="競合サービスへの敬意" className="mb-12 rounded-2xl border border-border bg-muted/30 p-5 sm:p-6">
