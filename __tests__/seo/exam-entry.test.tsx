@@ -16,7 +16,8 @@ describe.each(Object.keys(EXAM_ENTRIES) as ExamEntryCode[])("%s search landing",
     const description = examMetaDescription(exam, questions.length);
     expect(description).toContain(questions.length.toLocaleString("ja-JP"));
     expect(description).toContain("午前");
-    expect(description).toContain("未対応");
+    expect(description).not.toContain("未対応");
+    expect(description).toContain("AIに質問");
     expect(examTopDescription(exam, questions.length)).toBe(description);
   });
 

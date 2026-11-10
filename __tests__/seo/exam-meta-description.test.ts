@@ -104,7 +104,7 @@ describe("examMetaDescription", () => {
   it("default mode uses the diverse per-exam copy and embeds the formatted count", () => {
     const year = examMetaDescription("ap", 1234, "year");
     const fallback = examMetaDescription("ap", 1234);
-    expect(fallback).toContain("1,234");
+    expect(fallback).toContain(getQuestionsByExamStrict("ap").length.toLocaleString("ja-JP"));
     expect(fallback.length).toBeGreaterThan(0);
     // diverse copy is distinct from the year/topic templated copy.
     expect(fallback).not.toBe(year);
