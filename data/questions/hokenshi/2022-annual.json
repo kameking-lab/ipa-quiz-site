@@ -256,12 +256,12 @@
     },
     "answer": "ウ",
     "requiredSelections": 1,
-    "explanation": "学校保健統計調査は、学校で実施する健康診断の結果に基づく調査です。調査資料の出所と調査の対象範囲を確認します。",
+    "explanation": "学校保健統計調査は標本調査で、学校で行う健康診断の結果から発育・健康状態を把握します。学校管理下の事故・災害の集計とは区別します。",
     "choiceExplanations": {
-      "ア": "誤り。すべての対象を調べる悉皆調査とする説明は誤りです。",
-      "イ": "誤り。毎年10月に行うという説明は、この調査の正しい説明ではありません。",
-      "ウ": "正しい。学校の健康診断の結果に基づいているという説明が適切です。",
-      "エ": "誤り。学校管理下の死亡数を集計する調査とする説明は誤りです。"
+      "ア": "誤り。全学校・全児童生徒を対象にする悉皆調査ではなく、抽出された学校・対象者について行う標本調査です。",
+      "イ": "誤り。学校の健康診断結果に基づく調査であり、毎年10月という固定時期の説明は適切ではありません。年度の特例もあるため、実施期間は当該年度の要項で確認します。",
+      "ウ": "正しい。学校保健安全法に基づいて学校で実施された健康診断の結果を用い、発育状態や健康状態を調べます。",
+      "エ": "誤り。調査の対象は児童生徒等の発育・健康状態です。学校管理下の死亡事故を集計する災害統計とは目的・調査事項が異なります。"
     },
     "explanationCoverage": "full",
     "hasImage": false,
@@ -269,7 +269,8 @@
     "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-03seitou.pdf#page=1",
     "sourceAttribution": "出典：厚生労働省「第109回保健師国家試験」午前 問11（問題PDF 10ページ・正答）。表示のため改行・字間・選択肢番号・組合せの区切りを調整し、英語のルビを省略しています（加工）。解説は過去問AIが独自に作成したもので、厚生労働省とは関係ありません。",
     "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html"
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+      "https://www.mext.go.jp/b_menu/toukei/chousa05/hoken/gaiyou/chousa/1268648.htm"
     ],
     "license": "MHLW-attributed",
     "needsReview": false,
@@ -394,12 +395,12 @@
     },
     "answer": "ア",
     "requiredSelections": 1,
-    "explanation": "感染症と病原体の宿主の対応として、アニサキス症と魚の組合せが正答です。感染症名と生物の対応を整理します。",
+    "explanation": "病原体が寄生・増殖する宿主と、病原体を運ぶ媒介生物を区別します。魚に寄生するアニサキス幼虫を生食などで摂取すると、人のアニサキス症につながります。",
     "choiceExplanations": {
-      "ア": "正しい。アニサキス症と魚の組合せが適切です。",
-      "イ": "誤り。ウエストナイル熱とダニの組合せは適切ではありません。",
-      "ウ": "誤り。エキノコックス症と蚊の組合せは適切ではありません。",
-      "エ": "誤り。トキソプラズマ症と貝の組合せは適切ではありません。"
+      "ア": "正しい。魚やイカには人への感染源となる幼虫が寄生します。成虫が寄生する終宿主は海産哺乳類であり、魚を終宿主とする意味ではありません。",
+      "イ": "誤り。ウエストナイルウイルスは主に鳥と蚊の間で維持され、人へは感染した蚊の刺咬で伝播します。ダニを組み合わせるのが誤りで、鳥の宿主としての役割と蚊の媒介を区別します。",
+      "ウ": "誤り。エキノコックスの終宿主には犬やキツネなどがおり、糞便中に排出された虫卵が感染源になります。蚊の刺咬による感染ではありません。",
+      "エ": "誤り。トキソプラズマの終宿主はネコ科動物で、多くの温血動物が中間宿主になります。貝を宿主とする組合せは適切ではなく、宿主と汚染食品を介する感染経路を区別します。"
     },
     "explanationCoverage": "full",
     "hasImage": false,
@@ -407,7 +408,11 @@
     "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-03seitou.pdf#page=1",
     "sourceAttribution": "出典：厚生労働省「第109回保健師国家試験」午前 問16（問題PDF 12ページ・正答）。表示のため改行・字間・選択肢番号・組合せの区切りを調整し、英語のルビを省略しています（加工）。解説は過去問AIが独自に作成したもので、厚生労働省とは関係ありません。",
     "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html"
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+      "https://www.cdc.gov/dpdx/anisakiasis/index.html",
+      "https://www.cdc.gov/west-nile-virus/causes/index.html",
+      "https://www.cdc.gov/dpdx/echinococcosis/index.html",
+      "https://www.cdc.gov/dpdx/toxoplasmosis/index.html"
     ],
     "license": "MHLW-attributed",
     "needsReview": false,

@@ -26,12 +26,12 @@
     },
     "answer": "エ",
     "requiredSelections": 1,
-    "explanation": "シックハウス症候群に関係する物質として、ホルムアルデヒドを選びます。環境による健康障害の名称と、関連物質を対応させる問題です。",
+    "explanation": "建材や家具から室内に放散するホルムアルデヒドと、石綿の吸入や放射性物質による被ばくとを区別します。シックハウス症候群では室内空気の化学物質が手掛かりです。",
     "choiceExplanations": {
-      "ア": "誤り。アスベストは、本問のシックハウス症候群の関連物質として選ぶ答えではありません。",
-      "イ": "誤り。ダイオキシン類を、シックハウス症候群に対応させるのは適切ではありません。",
-      "ウ": "誤り。放射性セシウムは、設問が問うシックハウス症候群の関連物質ではありません。",
-      "エ": "正しい。ホルムアルデヒドは、シックハウス症候群に関係する物質です。"
+      "ア": "誤り。石綿の繊維を吸い込むことは石綿肺・肺がん・中皮腫に関係します。室内に放散するホルムアルデヒドによる症状との混同です。",
+      "イ": "誤り。ダイオキシン類では長期ばく露による免疫系・内分泌系などへの影響が問題になります。建材等からのホルムアルデヒド放散とは異なる環境衛生上の問題です。",
+      "ウ": "誤り。放射性セシウムでは放射線による被ばくが問題になります。本問は放射線の影響ではなく、室内空気中の化学物質に関連する症状を問うています。",
+      "エ": "正しい。建材や家具などから放散し、室内空気を汚染します。目・鼻・のどの刺激や頭痛など、シックハウス症候群に関連する物質です。"
     },
     "explanationCoverage": "full",
     "hasImage": false,
@@ -39,7 +39,12 @@
     "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-05seitou.pdf#page=1",
     "sourceAttribution": "出典：厚生労働省「第111回看護師国家試験」午前 問3（問題PDF 7ページ・正答）。表示のため改行・字間・選択肢番号・組合せの区切りを調整し、英語のルビを省略しています（加工）。解説は過去問AIが独自に作成したもので、厚生労働省とは関係ありません。",
     "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html"
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html",
+      "https://www.mlit.go.jp/jutakukentiku/build/jutakukentiku_house_tk_000043.html",
+      "https://anzeninfo.mhlw.go.jp/horei/hor1-49/hor1-49-20-1-4.pdf",
+      "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/faq/faq_asbest.html",
+      "https://anzeninfo.mhlw.go.jp/anzen/gmsds/Dioxins.html",
+      "https://www.env.go.jp/chemi/rhm/current/03-05-01.html"
     ],
     "license": "MHLW-attributed",
     "needsReview": false,
@@ -256,12 +261,12 @@
     },
     "answer": "イ",
     "requiredSelections": 1,
-    "explanation": "有害物質を無毒化し排泄する働きをもつ臓器として肝臓を選びます。消化器の臓器名を、問われている機能と対応させます。",
+    "explanation": "肝臓は解毒と排泄を担います。食べ物の消化、消化酵素の分泌、便の形成という他の消化器の役割と区別します。",
     "choiceExplanations": {
-      "ア": "誤り。胃は、本問の無毒化し排泄する働きに対応する答えではありません。",
-      "イ": "正しい。肝臓は、有害物質を無毒化し排泄する働きを担います。",
-      "ウ": "誤り。膵臓は、本問で問われる機能を担う臓器としては選びません。",
-      "エ": "誤り。大腸を、本問の無毒化し排泄する機能に対応させるのは適切ではありません。"
+      "ア": "誤り。胃は食物を一時的に蓄え、胃液と混ぜて消化する臓器です。解毒・排泄を担う肝臓とは役割が異なります。",
+      "イ": "正しい。肝臓の機能には解毒と排泄が含まれます。胆汁の産生や栄養素の代謝だけを担う臓器ではありません。",
+      "ウ": "誤り。膵臓は消化酵素を含む膵液や、インスリン・グルカゴンを分泌します。消化と血糖調節の機能を解毒と混同しないようにします。",
+      "エ": "誤り。大腸は水分・電解質の吸収と便の形成・排出に関わります。便を排出することと、有害物質を無毒化する機能は別です。"
     },
     "explanationCoverage": "full",
     "hasImage": false,
@@ -269,7 +274,10 @@
     "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-05seitou.pdf#page=1",
     "sourceAttribution": "出典：厚生労働省「第111回看護師国家試験」午前 問12（問題PDF 11ページ・正答）。表示のため改行・字間・選択肢番号・組合せの区切りを調整し、英語のルビを省略しています（加工）。解説は過去問AIが独自に作成したもので、厚生労働省とは関係ありません。",
     "officialReferenceUrls": [
-      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html"
+      "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html",
+      "https://training.seer.cancer.gov/anatomy/digestive/regions/accessory.html",
+      "https://training.seer.cancer.gov/anatomy/digestive/regions/stomach.html",
+      "https://training.seer.cancer.gov/anatomy/digestive/regions/intestine.html"
     ],
     "license": "MHLW-attributed",
     "needsReview": false,
