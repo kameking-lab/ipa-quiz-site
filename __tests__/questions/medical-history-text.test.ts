@@ -3,7 +3,10 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
-import { EXAM_DESCRIPTIONS, examMetaDescription } from "@/lib/seo/exam-meta";
+import { questionSourceEdition } from "@/lib/questions/source-label";
+import { questionTitle } from "@/lib/seo/question-meta";
+import { questionBreadcrumbItems } from "@/lib/seo/question-jsonld";
+import { EXAM_DESCRIPTIONS, examMetaDescription, groupByYearSeason } from "@/lib/seo/exam-meta";
 import type { ExamCode, Question } from "@/lib/questions/types";
 
 type Receipt = { id: string; sourceQuestionNumber: number; physicalPages: number[]; officialKeyLiteral: string };
@@ -14,6 +17,11 @@ type Manifest = {
 };
 const exams: ExamCode[] = ["rigaku-ryohoshi", "shinryo-hoshasengishi", "shika-ishi"];
 const kana = Array.from("アイウエオ");
+const editions = {
+  "rigaku-ryohoshi": [57, 58, 59],
+  "shinryo-hoshasengishi": [74, 75, 76],
+  "shika-ishi": [115, 116, 117],
+} as const;
 
 describe("medical history: official text excerpts", () => {
   for (const exam of exams) {
@@ -30,6 +38,11 @@ describe("medical history: official text excerpts", () => {
     for (const file of readdirSync(directory).filter((f) => /^202[234]-annual-text.json$/.test(f))) {
       it(`${exam}/${file}: preserves keys, source identity, and practice registration`, async () => {
         const rows = JSON.parse(readFileSync(path.join(directory, file), "utf8")) as Question[];
+        const year = Number(file.slice(0, 4));
+        const label = `第${editions[exam as keyof typeof editions][year - 2022]}回（${year}年実施）`;
+        expect(groupByYearSeason(rows)).toEqual([
+          { key: `${year}-annual`, year, season: "annual", label, count: 10 },
+        ]);
         const manifest = JSON.parse(readFileSync(path.join(directory, file.replace(".json", "-sources.json")), "utf8")) as Manifest;
         expect(manifest.complete).toBe(false);
         expect(manifest.coverage).toBe("partial-text-only");
@@ -40,6 +53,10 @@ describe("medical history: official text excerpts", () => {
         const loaded = await getQuestionsForExam(exam);
         expect(new Set(loaded.map((q) => q.id)).size).toBe(loaded.length);
         for (const [i, q] of rows.entries()) {
+          expect(questionSourceEdition(q), q.id).toBe(label);
+          expect(questionSourceEdition({ ...q, sourcePdfUrl: `${q.sourcePdfUrl}#page=5` }), q.id).toBe(label);
+          expect(questionTitle(q), q.id).toContain(label);
+          expect(questionBreadcrumbItems(q)[2]?.name, q.id).toBe(label);
           const receipt = manifest.receipts[i];
           expect(loaded.find((r) => r.id === q.id)).toEqual(q);
           expect(q.year).toBe(manifest.year);
