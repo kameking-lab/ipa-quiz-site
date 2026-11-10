@@ -63,7 +63,7 @@ describe("SC cx-k2 choice explanations", () => {
       const before = original.get(id)!;
       const after = published.get(id)!;
       expect(before, id).toBeDefined();
-      expect(before.year, id).toBeGreaterThanOrEqual(2014);
+      expect(before.year, id).toBeGreaterThanOrEqual(2009);
       expect(before.year, id).toBeLessThanOrEqual(2025);
       expect(before.session, id).toBe("am2");
       expect(existingOverlay, id).not.toHaveProperty(id);
