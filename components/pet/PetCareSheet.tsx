@@ -20,7 +20,7 @@ export default function PetCareSheet({ document: doc, qualificationId, initialAp
   document: PetProfileDocument | null; qualificationId?: string; onClose(): void;
   initialAppearanceOpen?: boolean;
   allowMotion?: boolean;
-  returnFocus(): void; onPose(pose: PetPose, caption: string): void;
+  returnFocus(): void; onPose(pose: PetPose, caption: string, qualificationId: string): void;
 }) {
   const [selected, setSelected] = useState(qualificationId), [busy, setBusy] = useState(false), [message, setMessage] = useState("");
   const [pending, setPending] = useState<{ raw: string; expected: PetProfileDocument; pets: number } | null>(null);
@@ -41,7 +41,7 @@ export default function PetCareSheet({ document: doc, qualificationId, initialAp
   }, []);
   const showPose = (next: PetPose, caption: string) => {
     if (timer.current) clearTimeout(timer.current);
-    setPose(next); onPose(next, caption); timer.current = setTimeout(() => { setPose("study"); setHearts(0); }, 6000);
+    setPose(next); if (profile) onPose(next, caption, profile.qualificationId); timer.current = setTimeout(() => { setPose("study"); setHearts(0); }, 6000);
   };
   const profile = selected ? doc?.profiles.find(item => item.qualificationId === selected) : doc?.profiles[0];
   const progress = profile ? petGrowthProgress(profile) : null;
@@ -74,7 +74,7 @@ export default function PetCareSheet({ document: doc, qualificationId, initialAp
       <DialogDescription>問題を解くほど育ちます。</DialogDescription>
       <div role="status" className={styles.message}>{message}</div>
       {!doc ? <p>読み込み中…</p> : <>
-        {doc.profiles.length > 1 || (selected && !profile && doc.profiles.length > 0) ? <label>資格<select value={profile?.qualificationId ?? ""} disabled={busy} onChange={event => { if (timer.current) clearTimeout(timer.current); setSelected(event.target.value); setPose("study"); setHearts(0); setMessage(""); setSections({ appearance: false, paths: false, memories: false, settings: false }); }}>
+        {doc.profiles.length > 1 || (selected && !profile && doc.profiles.length > 0) ? <label>資格<select value={profile?.qualificationId ?? ""} disabled={busy} onChange={event => { if (timer.current) clearTimeout(timer.current); setSelected(event.target.value); setPose("study"); setHearts(0); onPose("study", "", event.target.value); setMessage(""); setSections({ appearance: false, paths: false, memories: false, settings: false }); }}>
           {!profile ? <option value="">資格を選んでください</option> : null}
           {doc.profiles.map(item => <option key={item.petId} value={item.qualificationId}>{examLabel(item.qualificationId)}</option>)}
         </select></label> : null}
@@ -111,7 +111,7 @@ export default function PetCareSheet({ document: doc, qualificationId, initialAp
               <button type="button" className={styles.tile} disabled={busy || !open} aria-pressed={profile.selectedPath === path} onClick={() => care({ type: "path", path: profile.selectedPath === path ? null : path })}>
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={petPathArtFor(path)} width={36} height={36} alt="" loading="lazy" decoding="async" className={open ? undefined : styles.locked} />{PET_PATH_LABELS[path]}</button>
-              {open ? null : path === "precision" ? <span className={styles.goal}>{goal.hint}<span>最近{profile.recentAnswers.length}/20問・正解{profile.recentAnswers.filter(answer => answer.correct).length}/16</span><span>復習{progress.delayedQuestions}/5問</span></span> : <span className={styles.goal}>{goal.hint} {Math.min(goal.now, goal.goal)}/{goal.goal}<meter min={0} max={goal.goal} value={Math.min(goal.now, goal.goal)} /></span>}
+              {path === "precision" ? <span className={styles.goal}>{goal.hint}<span>最近{profile.recentAnswers.length}/20問・正解{profile.recentAnswers.filter(answer => answer.correct).length}/16</span><span>復習{progress.delayedQuestions}/5問</span></span> : open ? null : <span className={styles.goal}>{goal.hint} {Math.min(goal.now, goal.goal)}/{goal.goal}<meter min={0} max={goal.goal} value={Math.min(goal.now, goal.goal)} /></span>}
             </div>; })}</div>
             {profile.selectedPath ? <button type="button" className={styles.plain} disabled={busy} onClick={() => care({ type: "path", path: null })}>系統なし</button> : null}
           </details>

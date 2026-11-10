@@ -10,10 +10,10 @@ export function petPartnerRemaining(profile: PetProfile) {
   return profile.unlockedStages.includes("partner") ? null : Math.max(0, PET_STAGE_GOALS.partner.questions - petGrowthProgress(profile).uniqueQuestions);
 }
 
-export function petFreshPresentation(result: PetLearningResult, qualification: string, occurredAt: number) {
+export function petFreshPresentation(result: PetLearningResult, qualification: string, occurredAt: number, previous?: Pick<PetProfile, "unlockedStages" | "unlockedPaths">) {
   const memories = result.document.profiles.find(item => item.qualificationId === qualification)?.memories.filter(memory => memory.occurredAt === occurredAt) ?? [];
-  const stage = (["expert", "partner"] as const).find(stage => memories.some(memory => memory.kind === "stage" && memory.stage === stage)) ?? null;
-  const path = PET_PATHS.find(path => memories.some(memory => memory.kind === "path" && memory.path === path));
+  const stage = (["expert", "partner"] as const).find(stage => !previous?.unlockedStages.includes(stage) && memories.some(memory => memory.kind === "stage" && memory.stage === stage)) ?? null;
+  const path = PET_PATHS.find(path => !previous?.unlockedPaths.includes(path) && memories.some(memory => memory.kind === "path" && memory.path === path));
   const caption = stage ? `${PET_STAGE_LABELS[stage]}の姿が選べるよ` : result.overcame ? "前に迷った問題を、克服！" : path ? `${PET_PATH_LABELS[path]}の特技を覚えた！` :
     result.comboMilestone ? `${result.comboMilestone}問つながった！` : result.reaction === "read" ? "いっしょに答えを確認。" : result.reaction === "incorrect" ? "だいじょうぶ。解説を読もう。" : "やった、正解！";
   return { stage, caption };

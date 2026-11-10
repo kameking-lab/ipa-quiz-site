@@ -6,6 +6,7 @@ import { LS_KEYS } from "@/lib/storage/keys";
 import { petArtFor, petPathArtFor, type PetPose } from "@/lib/pet/v1/art";
 import { PET_STAGE_LABELS, petFreshPresentation, petPartnerRemaining } from "@/lib/pet/v1/presentation";
 import { canonicalPetQualification } from "@/lib/pet/v1/qualification";
+import type { PetProfile, PetProfileDocument } from "@/lib/pet/v1/profile";
 import { usePetProfileView, type PetCommittedDetail, type PetProfileView } from "./usePetProfileView";
 import { PetNameTitle } from "./PetNameTitle";
 import styles from "./LearningPetCorner.module.css";
@@ -35,6 +36,10 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
   const toggleFocusRequested = useRef(false);
   const panel = useRef<HTMLElement>(null), timer = useRef<ReturnType<typeof setTimeout> | null>(null);
   const popTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const knownUnlocks = useRef<{ owner: string; profiles: Map<string, Pick<PetProfile, "unlockedStages" | "unlockedPaths">> } | null>(null);
+  const rememberUnlocks = useCallback((doc: PetProfileDocument) => {
+    knownUnlocks.current = { owner: doc.ownerScope, profiles: new Map(doc.profiles.map(profile => [profile.qualificationId, { unlockedStages: [...profile.unlockedStages], unlockedPaths: [...profile.unlockedPaths] }])) };
+  }, []);
   const visible = inView && pageVisible;
   const presentation = useRef({ closed, paused, visible, pageVisible });
   useEffect(() => { presentation.current = { closed, paused, visible, pageVisible }; }, [closed, paused, visible, pageVisible]);
@@ -44,19 +49,23 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
     if (!questionId || event.questionId !== questionId || (qualification && event.qualificationId !== qualification) || event.result.outcome !== "applied") return;
     const result = event.result;
     if (presentation.current.closed) return;
-    const fresh = petFreshPresentation(result, event.qualificationId, event.occurredAt);
-    setCaption(fresh.caption); setUnlockStage(fresh.stage); setAnnouncement(fresh.stage ? fresh.caption : "");
+    // Snapshot arrays: multiple facts can share a timestamp, but an old unlock must not replay.
+    const previous = knownUnlocks.current?.owner === event.ownerScope ? knownUnlocks.current.profiles.get(event.qualificationId) : undefined;
+    const fresh = petFreshPresentation(result, event.qualificationId, event.occurredAt, previous);
+    rememberUnlocks(result.document);
+    setCaption(fresh.caption); setUnlockStage(fresh.stage); setAnnouncement(fresh.stage && presentation.current.pageVisible ? fresh.caption : "");
     stop();
     if (popTimer.current) clearTimeout(popTimer.current);
     if (presentation.current.pageVisible && (fresh.stage || result.reward.growth > 0 || result.reward.bond > 0)) {
       setPop({ key: event.eventId, growth: result.reward.growth, bond: result.reward.bond, pose: result.reaction === "read" ? "revealed" : result.reaction ?? "study", unlock: fresh.stage ? fresh.caption : null });
       popTimer.current = setTimeout(() => setPop(null), 1600);
     } else setPop(null);
-    if (presentation.current.closed || presentation.current.paused || !presentation.current.visible) return;
+    if (!presentation.current.visible) return;
     setPose(result.reaction === "read" ? "revealed" : result.reaction ?? "study");
     timer.current = setTimeout(stop, 800);
-  }, [questionId, qualification, stop]);
+  }, [questionId, qualification, stop, rememberUnlocks]);
   const view = usePetProfileView(onFresh, suppliedView);
+  useEffect(() => { if (view.status === "ready" && view.document) rememberUnlocks(view.document); }, [view.status, view.document, rememberUnlocks]);
   useEffect(() => { if (view.status !== "ready") { stop(); setCaption(null); setUnlockStage(null); setPop(null); setAnnouncement(""); } }, [view.status, stop]);
   const selectedQualification = qualification ?? view.document?.events.at(-1)?.qualificationId ?? view.document?.profiles[0]?.qualificationId;
   const profile = view.document?.profiles.find(item => item.qualificationId === selectedQualification);
@@ -120,7 +129,7 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
         <img src={image} alt="" width={96} height={96} loading="lazy" decoding="async" className={`${styles.image} ${moving ? manual ? styles.rest : styles.gesture : ""}`} onError={() => setFailed(image)} />
         {/* eslint-disable-next-line @next/next/no-img-element */}
         {profile?.selectedPath ? <img src={petPathArtFor(profile.selectedPath)} width={28} height={28} alt="" className={styles.badge} loading="lazy" decoding="async" /> : null}
-        {pop && !pop.unlock && popText ? <span key={pop.key} className={`${styles.pop} ${paused || reduced ? "" : styles.popMove}`} aria-hidden="true">{popText}</span> : null}
+        {pop && !pop.unlock && popText ? <span key={pop.key} className={`${styles.pop} ${!visible || paused || reduced ? "" : styles.popMove}`} aria-hidden="true">{popText}</span> : null}
       </div>
       <div className={styles.copy}>
         <p className={styles.caption}>{caption ?? idleCaption ?? IDLE_CAPTION}</p>
@@ -130,7 +139,7 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
         </> : null}
       </div>
     </div>
-    <div className={styles.actions}><button type="button" className={styles.button} onClick={() => { stop(); setManual(true); setPose("rest"); setCaption("のんびり、ひと休み。"); timer.current = setTimeout(stop, 6000); }}>ひと休み</button>
+    <div className={styles.actions}><button type="button" className={styles.button} disabled={view.status !== "ready"} onClick={() => { stop(); setManual(true); setPose("rest"); setCaption("のんびり、ひと休み。"); timer.current = setTimeout(stop, 6000); }}>ひと休み</button>
       <button type="button" ref={detailsButton} className={`${styles.button} ${styles.primary}`} disabled={view.status !== "ready"} onClick={() => { stop(); setOpenAppearance(unlockStage !== null); setUnlockStage(null); setPop(null); setCaption(null); setDetailsOwner(view.document!.ownerScope); }}>{unlockStage ? `${PET_STAGE_LABELS[unlockStage]}の姿を見る` : <>育成を見る{profile && profile.unlockedStages.length > 1 ? <span className={styles.looks}>姿{profile.unlockedStages.length}種類</span> : null}</>}</button>
       <button type="button" className={styles.button} aria-pressed={paused} onClick={() => preferences(false, !paused)}>{paused ? "動きを許可" : "動きを止める"}</button></div>
     {/* Answer feedback that reaches the learner even when this panel is scrolled away. */}
@@ -140,6 +149,6 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
       <img src={petArtFor(selectedQualification ?? null, stage, pop.pose)} alt="" width={40} height={40} decoding="async" />
       <span>{pop.unlock ?? popText}</span>
     </div> : null}
-    {detailsOwner !== null ? <PetCareSheet key={`${detailsOwner}:${selectedQualification}`} document={view.document?.ownerScope === detailsOwner ? view.document : null} qualificationId={selectedQualification} initialAppearanceOpen={openAppearance} allowMotion={!paused && !reduced && pageVisible} returnFocus={() => detailsButton.current?.focus()} onClose={() => { setDetailsOwner(null); stop(); }} onPose={(nextPose, text) => { stop(); setManual(true); setPose(nextPose); setCaption(text); timer.current = setTimeout(stop, 6000); }} /> : null}
+    {detailsOwner !== null ? <PetCareSheet key={`${detailsOwner}:${selectedQualification}`} document={view.document?.ownerScope === detailsOwner ? view.document : null} qualificationId={selectedQualification} initialAppearanceOpen={openAppearance} allowMotion={!paused && !reduced && pageVisible} returnFocus={() => detailsButton.current?.focus()} onClose={() => { setDetailsOwner(null); stop(); }} onPose={(nextPose, text, careQualification) => { stop(); if (careQualification !== selectedQualification || !text) { setCaption(null); return; } setManual(true); setPose(nextPose); setCaption(text); timer.current = setTimeout(stop, 6000); }} /> : null}
   </section>;
 }

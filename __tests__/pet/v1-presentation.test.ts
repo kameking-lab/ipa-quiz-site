@@ -13,6 +13,7 @@ it("selects stage before overcome, paths, combo and grade, independent of memory
   expect(petFreshPresentation(result, "ap", 101).caption).toContain("克服");
   result.overcame = false; profile.memories = profile.memories.filter(memory => memory.kind === "path");
   expect(petFreshPresentation(result, "ap", 100).caption).toContain("探究");
+  expect(petFreshPresentation(result, "ap", 100, { unlockedStages: ["puppy", "partner"], unlockedPaths: ["exploration", "memory"] }).caption).toBe("5問つながった！");
   expect(petFreshPresentation(result, "ap", 101).caption).toBe("5問つながった！");
 });
 
