@@ -38,6 +38,8 @@ const EXPECTED_EXTERNAL_URLS = [
   "https://www.ipa.go.jp/shiken/goukaku/shinsei_01.html",
   "https://www.ipa.go.jp/shiken/jitecinquiry_handicapped.html",
   "https://www.ipa.go.jp/shiken/kubun/list.html",
+  // AP afternoon source checked by GET (HTTP 200, no redirect), 2026-11-10.
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/2025r07.html",
   "https://www.ipa.go.jp/shiken/mondai-kaiotu/index.html",
   // IPA source manifest and independent FE review, verified 2026-10-08.
   "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/2025r07.html",
