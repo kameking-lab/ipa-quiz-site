@@ -12,6 +12,7 @@ import manifest from "@/docs/candidates/sharoushi-latest-two-20261011/manifest.j
 import baseline from "@/docs/candidates/sharoushi-latest-two-20261011/baseline.json";
 import literalQa from "@/docs/candidates/sharoushi-latest-two-20261011/source-literal-qa.json";
 import official from "@/docs/candidates/sharoushi-latest-two-20261011/official-answer-tables.json";
+import held from "@/docs/candidates/sharoushi-latest-two-20261011/review-held-20261110.json";
 import ready from "@/data/questions/sharoushi/remaining-verified-20261011.json";
 
 const hash = (s: string) => createHash("sha256").update(s).digest("hex");
@@ -19,13 +20,14 @@ const kana = ["ア", "イ", "ウ", "エ", "オ"];
 
 describe("Sharoushi saved-original recovery", () => {
   it("adds source-verified originals without changing the baseline 123", () => {
-    expect(SHAROUSHI_QUESTIONS).toHaveLength(133);
+    expect(SHAROUSHI_QUESTIONS).toHaveLength(130);
     for (const file of baseline.publicFiles) {
       expect(hash(readFileSync(file.path, "utf8").replace(/\r\n/g, "\n")), file.path).toBe(file.sha256);
     }
     expect(hash(readFileSync("data/questions/sharoushi/sentaku/originals.json", "utf8").replace(/\r\n/g, "\n"))).toBe(baseline.native16FileSha256);
-    expect(ready.map(q => q.id)).toEqual(["sharoushi-2025-annual-gakka-q1", "sharoushi-2025-annual-gakka-q7", "sharoushi-2025-annual-ippan-q4", "sharoushi-2025-annual-ippan-q10", "sharoushi-2025-annual-kenpo-q2", "sharoushi-2025-annual-kounen-q6", "sharoushi-2025-annual-kounen-q8", "sharoushi-2025-annual-kounen-q9", "sharoushi-2025-annual-koyou-q1", "sharoushi-2025-annual-koyou-q5", "sharoushi-2025-annual-koyou-q6", "sharoushi-2025-annual-koyou-q7", "sharoushi-2025-annual-koyou-q10", "sharoushi-2025-annual-rousai-q1", "sharoushi-2025-annual-rousai-q2", "sharoushi-2025-annual-rousai-q8", "sharoushi-2026-annual-gakka-q2", "sharoushi-2026-annual-gakka-q7", "sharoushi-2026-annual-ippan-q4", "sharoushi-2026-annual-koyou-q1", "sharoushi-2026-annual-koyou-q3", "sharoushi-2026-annual-koyou-q4", "sharoushi-2026-annual-koyou-q10", "sharoushi-2026-annual-rousai-q1", "sharoushi-2026-annual-rousai-q6", "sharoushi-2026-annual-rousai-q7"]);
-    expect(ready.map(q => q.officialAnswerNumber)).toEqual(["D", "D", "D", "D", "B", "D", "E", "C", "B", "A", "A", "A", "D", "B", "C", "C", "C", "E", "D", "D", "B", "B", "C", "D", "C", "A"]);
+    expect([...ready, ...held].map(q => q.id).sort()).toEqual(["sharoushi-2025-annual-gakka-q1", "sharoushi-2025-annual-gakka-q7", "sharoushi-2025-annual-ippan-q4", "sharoushi-2025-annual-ippan-q10", "sharoushi-2025-annual-kenpo-q2", "sharoushi-2025-annual-kounen-q6", "sharoushi-2025-annual-kounen-q8", "sharoushi-2025-annual-kounen-q9", "sharoushi-2025-annual-koyou-q1", "sharoushi-2025-annual-koyou-q5", "sharoushi-2025-annual-koyou-q6", "sharoushi-2025-annual-koyou-q7", "sharoushi-2025-annual-koyou-q10", "sharoushi-2025-annual-rousai-q1", "sharoushi-2025-annual-rousai-q2", "sharoushi-2025-annual-rousai-q8", "sharoushi-2026-annual-gakka-q2", "sharoushi-2026-annual-gakka-q7", "sharoushi-2026-annual-ippan-q4", "sharoushi-2026-annual-koyou-q1", "sharoushi-2026-annual-koyou-q3", "sharoushi-2026-annual-koyou-q4", "sharoushi-2026-annual-koyou-q10", "sharoushi-2026-annual-rousai-q1", "sharoushi-2026-annual-rousai-q6", "sharoushi-2026-annual-rousai-q7"].sort());
+    expect(ready).toHaveLength(23);
+    expect(held).toHaveLength(3);
     for (const question of ready as Question[]) {
       const row = manifest.rows.find(row => row.id === question.id);
       expect(row?.status).toBe("READY_FOR_INDEPENDENT_REVIEW");
@@ -44,24 +46,32 @@ describe("Sharoushi saved-original recovery", () => {
   it("accounts for all 156 originals and excludes the separate PR 680", () => {
     expect(manifest.publicOriginalsAtBase + manifest.separatePendingPrOriginals + manifest.remainingOriginals).toBe(156);
     expect(manifest.newSourceVerifiedOriginals + manifest.remainingSourceHoldOriginals).toBe(30);
-    const newIds = [...ready, ...recovered].map(q => q.id);
+    const newIds = [...ready, ...recovered, ...held].map(q => q.id);
     expect(new Set(newIds).size).toBe(28);
     expect(newIds.every(id => !baseline.publicIds.includes(id) && !baseline.pendingPr.originals.includes(id))).toBe(true);
     const owned = manifest.rows.map(q => q.id);
     expect(new Set([...baseline.publicIds, ...baseline.pendingPr.originals, ...owned]).size).toBe(140);
   });
 
-  it("keeps the unresolved 2 and stopped two out of public routes and sitemap", () => {
+  it("keeps the unresolved 2, review-held 3 and stopped two out of public routes and sitemap", () => {
     expect(recovered).toHaveLength(2);
     const publicIds = new Set(ALL_QUESTIONS.map(q => q.id));
     const sitemapIds = new Set(getSitemapQuestions().map(q => q.id));
-    for (const question of recovered as Question[]) {
+    for (const question of [...recovered, ...held] as Question[]) {
       expect(question.needsReview).toBe(true);
       expect(isPracticeReadyQuestion(question)).toBe(false);
       expect(publicIds.has(question.id)).toBe(false);
       expect(sitemapIds.has(question.id)).toBe(false);
+      expect(findQuestionByRoute(ALL_QUESTIONS, {exam: "sharoushi", yearSeason: `${question.year}-annual`, section: question.session, qnum: `q${question.qNumber}`})).toBeUndefined();
       expect(Object.keys(question.choices ?? {})).toEqual(kana);
       expect(Object.keys(question.choiceExplanations ?? {})).toEqual(kana);
+    }
+    for (const question of held) {
+      const row = manifest.rows.find(row => row.id === question.id);
+      expect(row?.status).toBe("SOURCE_DATE_VERIFICATION_HOLD");
+      expect(row?.allChoicePrimaryVerified).toBe(false);
+      expect(row?.publicationReady).toBe(false);
+      expect(row?.remainingIssue.length).toBeGreaterThan(0);
     }
     const stopped = manifest.rows.filter(q => !q.recoveredPayload);
     expect(stopped.map(q => q.id).sort()).toEqual(["sharoushi-2025-annual-ippan-q5", "sharoushi-2026-annual-ippan-q5"]);
@@ -74,7 +84,7 @@ describe("Sharoushi saved-original recovery", () => {
   });
 
   it("pins the official answer of every recovered original and checks literal QA", () => {
-    for (const question of [...ready, ...recovered]) {
+    for (const question of [...ready, ...recovered, ...held]) {
       const table = official.tables[String(question.year) as "2025" | "2026"];
       const expected = table[question.session as keyof typeof table][question.qNumber - 1];
       expect(question.officialAnswerNumber, question.id).toBe(expected);

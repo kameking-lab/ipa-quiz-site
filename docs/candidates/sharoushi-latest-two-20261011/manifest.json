@@ -198,9 +198,11 @@
       "format": "takuitu",
       "subject": "rousai",
       "questionNumber": 8,
-      "status": "READY_FOR_INDEPENDENT_REVIEW",
+      "status": "SOURCE_DATE_VERIFICATION_HOLD",
       "officialAnswer": "C",
-      "remainingIssue": [],
+      "remainingIssue": [
+        "試験基準日時点の行政細則・通達原典を未確認"
+      ],
       "publicationReady": false,
       "sourcePath": "sharoushi-next30-public/rousai-2025-recovery/draft.json",
       "sourceSha256": "4c645e2559cfc3b4b138362bb2ef1a29c48437a10ae57d6df3232fa0afd378fa",
@@ -212,15 +214,16 @@
       "sourceConfirmedChoiceCount": 4,
       "sourceClosureEvidence": "agent-source-closures/limited-application-review/",
       "additionalPartialSourceClosureEvidence": "agent-source-closures/q8-partial/GUIDE-EVIDENCE.json",
-      "allChoicePrimaryVerified": true,
+      "allChoicePrimaryVerified": false,
       "partialSourceEvidence": "agent-source-closures/rousai-q8-followup/",
       "sourceConfirmedPropositions": [],
       "continuationEvidence": "agent-source-closures/q8-gap2/",
-      "independentReviewPending": true,
+      "independentReviewPending": false,
       "sourceProofMode": "PRIMARY_LAW_WITH_DISCLOSED_INDEPENDENTLY_REVIEWED_LIMITED_INFERENCE",
       "directIndividualOr2025GeneralCircularVerified": false,
       "directIndividualOrCutoffAdministrativeTextVerified": false,
-      "strictDirectOriginalGateCleared": false
+      "strictDirectOriginalGateCleared": false,
+      "reviewHoldPayload": "review-held-20261110.json"
     },
     {
       "id": "sharoushi-2026-annual-rousai-q1",
@@ -371,9 +374,11 @@
       "format": "takuitu",
       "subject": "koyou",
       "questionNumber": 6,
-      "status": "READY_FOR_INDEPENDENT_REVIEW",
+      "status": "SOURCE_DATE_VERIFICATION_HOLD",
       "officialAnswer": "A",
-      "remainingIssue": [],
+      "remainingIssue": [
+        "試験基準日時点の行政細則・通達原典を未確認"
+      ],
       "publicationReady": false,
       "sourcePath": "sharoushi-koyou20-public/SOURCE-PACKET.json",
       "sourceSha256": "5fc84b716b8f2c11ab3880ba64c85174b48c5a29877473d54ad7a65995168911",
@@ -382,15 +387,16 @@
       "recoveredPayload": true,
       "choiceExplanationCount": 5,
       "literalTranscriptionMatched": true,
-      "allChoicePrimaryVerified": true,
+      "allChoicePrimaryVerified": false,
       "partialSourceEvidence": "agent-source-closures/employment-followup/",
       "sourceConfirmedPropositions": [],
       "continuationEvidence": "agent-source-closures/employment-gap2/",
-      "independentReviewPending": true,
+      "independentReviewPending": false,
       "sourceClosureEvidence": "agent-source-closures/employment-gap3/",
       "sourceProofMode": "PRIMARY_LAW_WITH_DISCLOSED_INDEPENDENTLY_REVIEWED_LIMITED_INFERENCE",
       "directIndividualOrCutoffAdministrativeTextVerified": false,
-      "strictDirectOriginalGateCleared": false
+      "strictDirectOriginalGateCleared": false,
+      "reviewHoldPayload": "review-held-20261110.json"
     },
     {
       "id": "sharoushi-2025-annual-koyou-q7",
@@ -399,9 +405,11 @@
       "format": "takuitu",
       "subject": "koyou",
       "questionNumber": 7,
-      "status": "READY_FOR_INDEPENDENT_REVIEW",
+      "status": "SOURCE_DATE_VERIFICATION_HOLD",
       "officialAnswer": "A",
-      "remainingIssue": [],
+      "remainingIssue": [
+        "試験基準日時点の行政細則・通達原典を未確認"
+      ],
       "publicationReady": false,
       "sourcePath": "sharoushi-koyou20-public/SOURCE-PACKET.json",
       "sourceSha256": "5fc84b716b8f2c11ab3880ba64c85174b48c5a29877473d54ad7a65995168911",
@@ -410,15 +418,16 @@
       "recoveredPayload": true,
       "choiceExplanationCount": 5,
       "literalTranscriptionMatched": true,
-      "allChoicePrimaryVerified": true,
+      "allChoicePrimaryVerified": false,
       "partialSourceEvidence": "agent-source-closures/employment-followup/",
       "sourceConfirmedPropositions": [],
       "continuationEvidence": "agent-source-closures/employment-gap2/",
-      "independentReviewPending": true,
+      "independentReviewPending": false,
       "sourceClosureEvidence": "agent-source-closures/employment-gap3/",
       "sourceProofMode": "PRIMARY_LAW_WITH_DISCLOSED_INDEPENDENTLY_REVIEWED_LIMITED_INFERENCE",
       "directIndividualOrCutoffAdministrativeTextVerified": false,
-      "strictDirectOriginalGateCleared": false
+      "strictDirectOriginalGateCleared": false,
+      "reviewHoldPayload": "review-held-20261110.json"
     },
     {
       "id": "sharoushi-2025-annual-koyou-q10",
@@ -763,13 +772,13 @@
       "partialPrimaryAssessment": "1968 original covers the historical qualification/provider-claim definitions; 1986 original directly covers procedural agency and handling of withdrawal. No full exact-choice gate is cleared; individual external-send STOP and metadata-only payload stay in effect."
     }
   ],
-  "newSourceVerifiedOriginals": 26,
-  "newRuntimeCandidateOriginals": 26,
-  "remainingSourceHoldOriginals": 4,
-  "privateCandidateOriginals": 2,
-  "ordinaryManuscriptCandidatesCompleted": 26,
+  "newSourceVerifiedOriginals": 23,
+  "newRuntimeCandidateOriginals": 23,
+  "remainingSourceHoldOriginals": 7,
+  "privateCandidateOriginals": 5,
+  "ordinaryManuscriptCandidatesCompleted": 23,
   "preservedStoppedOriginals": 4,
-  "remainingOrdinaryManuscriptCandidates": 0,
+  "remainingOrdinaryManuscriptCandidates": 3,
   "productionIncrement": 0,
   "strictDirectOriginalGatesRemainFor": [
     "sharoushi-2025-annual-koyou-q6",
@@ -778,5 +787,11 @@
     "sharoushi-2025-annual-rousai-q8",
     "sharoushi-2026-annual-rousai-q1"
   ],
-  "latestNineGapAudit": "reassignment-20261011/SOURCE-GAP-MATRIX.json"
+  "latestNineGapAudit": "reassignment-20261011/SOURCE-GAP-MATRIX.json",
+  "reviewHoldOriginals": [
+    "sharoushi-2025-annual-koyou-q6",
+    "sharoushi-2025-annual-koyou-q7",
+    "sharoushi-2025-annual-rousai-q8"
+  ],
+  "reviewHoldPayload": "review-held-20261110.json"
 }
