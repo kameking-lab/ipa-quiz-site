@@ -17,10 +17,10 @@ const officialKeys = {
 } as const;
 describe("Riyoshi latest two official papers", () => {
   it("preserves all 55 originals and official keys for each sitting", () => {
-    expect(RIYOSHI_CANDIDATES).toHaveLength(110);
-    expect(new Set(RIYOSHI_CANDIDATES.map(q => [q.exam,q.year,q.season,q.session,q.qNumber].join("/"))).size).toBe(110);
+    expect(RIYOSHI_CANDIDATES.filter(q=>q.year===2026)).toHaveLength(110);
+    expect(new Set(RIYOSHI_CANDIDATES.filter(q=>q.year===2026).map(q => [q.exam,q.year,q.season,q.session,q.qNumber].join("/"))).size).toBe(110);
     for (const season of ["first", "second"] as const) {
-      const qs=RIYOSHI_CANDIDATES.filter(q=>q.season===season);
+      const qs=RIYOSHI_CANDIDATES.filter(q=>q.year===2026&&q.season===season);
       expect(qs.map(q=>q.qNumber)).toEqual(Array.from({length:55},(_,i)=>i+1));
       expect(qs.map(q=>Number(q.officialAnswerNumber))).toEqual(officialKeys[season]);
       for(const q of qs) {
@@ -36,7 +36,7 @@ describe("Riyoshi latest two official papers", () => {
       }
     }
   });
-  it("releases exactly the 110 reviewed originals in both public question readers", async () => {
+  it("releases the 165 reviewed originals in both public question readers", async () => {
     expect(isExamPublished("riyoshi")).toBe(true);
     expect(RIYOSHI_QUESTIONS).toEqual(RIYOSHI_CANDIDATES);
     expect(await getQuestionsForExam("riyoshi")).toEqual(RIYOSHI_CANDIDATES);
@@ -54,10 +54,10 @@ describe("Riyoshi latest two official papers", () => {
   });
   it("uses official edition and numbered options", () => {
     expect(usesNumberedChoices("riyoshi")).toBe(true);
-    for(const q of RIYOSHI_CANDIDATES)expect(questionSourceEdition(q)).toContain(q.season==="first"?"第53回":"第54回");
+    for(const q of RIYOSHI_CANDIDATES.filter(q=>q.year===2026))expect(questionSourceEdition(q)).toContain(q.season==="first"?"第53回":"第54回");
   });
   it("preserves seven exact figure crops, including all four diagram options", () => {
-    expect(RIYOSHI_CANDIDATES.filter(q=>q.hasImage)).toHaveLength(4);
+    expect(RIYOSHI_CANDIDATES.filter(q=>q.year===2026&&q.hasImage)).toHaveLength(4);
     expect(crops.images).toHaveLength(7);
     for(const image of crops.images) {
       const bytes=readFileSync(join(process.cwd(),"public",image.url));

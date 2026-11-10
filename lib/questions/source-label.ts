@@ -90,6 +90,10 @@ if (q.year === 2025 && q.season === "annual" &&
   if (q.year === 2025 && q.season === "annual" && medical2025) {
     return `第${medical2025[1] === "07b" ? 71 : 77}回（2025年実施）`;
   }
+  if (q.exam === "riyoshi" && q.year === 2025 && q.season === "second" &&
+      /^https:\/\/www\.rbc\.or\.jp\/wp-content\/uploads\/2025\/09\/52rhikki\.pdf(?:#page=[1-9]\d*)?$/.test(q.sourcePdfUrl)) {
+    return "第52回（2025年実施）";
+  }
   const riyoshiPaper = /^https:\/\/www\.rbc\.or\.jp\/wp-content\/uploads\/2026\/(03\/53rhikki-1|09\/54rhikki)\.pdf(?:#page=[1-9]\d*)?$/.exec(q.sourcePdfUrl);
   if (q.year === 2026 && riyoshiPaper?.[1] === "03/53rhikki-1") return "第53回（2026年3月1日実施）";
   if (q.year === 2026 && riyoshiPaper?.[1] === "09/54rhikki") return "第54回（2026年9月6日実施）";

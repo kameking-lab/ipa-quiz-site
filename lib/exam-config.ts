@@ -1208,7 +1208,7 @@ kangoshi: {
 riyoshi: {
     code: "riyoshi", nameFull: "理容師国家試験", urlSlug: "riyoshi", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 55, label: "筆記", categories: ["関係法規・制度", "運営管理", "公衆衛生・環境衛生", "感染症", "衛生管理技術", "人体の構造及び機能", "皮膚科学", "香粧品化学", "文化論及び理容技術理論"] }],
-    seasons: ["first", "second"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
 },
 "kenchiku-setsubishi": {
     code: "kenchiku-setsubishi", nameFull: "建築設備士試験（第一次試験）", urlSlug: "kenchiku-setsubishi", level: "specialist",

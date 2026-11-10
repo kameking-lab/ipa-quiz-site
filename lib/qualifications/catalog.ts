@@ -985,7 +985,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.rbc.or.jp/exam/past_question/",
     officialReuseTermsUrl: "https://www.rbc.or.jp/exam/past_question/",
     status: "live",
-    reuseSummary: "第53回（2026年3月1日）・第54回（2026年9月6日）の筆記各55問、計110問・440肢解説と原図を保存。問題と正答は公式PDF、解説は独自作成。掲載可否はオーナー担当で、許諾取得の記録はありません。原本照合は110問、内容準備済み110問、内容保留0問です。原本照合と内容検収を完了し、リリース対象110問を個別IDで指定しています。",
+    reuseSummary: "第52〜54回の筆記各55問、計165問・660肢解説と原図を保存。第52回は2025年、第53・54回は2026年実施。公式PDFの問題・正答を照合し、独自解説付きで収録しています。",
     attributionTemplate: "出典：公益財団法人理容師美容師試験研修センター 第○回理容師筆記試験 問○（問題・正答）。解説は独自作成。",
     remainingWork: [],
 },
