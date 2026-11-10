@@ -40,12 +40,14 @@ export function petArtFor(qualificationId: string | null, stage: PetProfile["sel
 
 /** Reuse the existing joyful portrait so a chosen partner stays recognisable at 64px. */
 export function petPortraitFor(qualificationId: string | null, stage: PetProfile["selectedStage"], pose: PetPose): string {
-  if (qualificationId === "ip" && pose === "petted") return `${ROOM}idle/ip-wave.webp`;
+  if (qualificationId === "ip" && stage === "puppy" && pose === "petted") return `${ROOM}idle/ip-wave.webp`;
   return petArtFor(qualificationId, stage, stage === "partner" && pose === "study" ? "correct" : pose);
 }
 
 /** A short, character-specific lead-in, followed by its static happy reaction. */
 export function petGreetingLeadIn(qualificationId: string, stage: PetProfile["selectedStage"]): string {
+  // A grown partner keeps the same desk, books and head scale through the greeting.
+  if (stage === "partner") return petPortraitFor(qualificationId, stage, "study");
   if (qualificationId === "fp3") return `${ROOM}idle/fp3-book.webp`;
   return petArtFor(qualificationId, stage, "study");
 }

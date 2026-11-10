@@ -91,3 +91,21 @@ it("uses the final static greeting when motion is disabled and returns to the ch
   expect(document.querySelector('img')).toHaveAttribute('src', petPortraitFor("ip", "partner", "petted"));
   act(() => vi.advanceTimersByTime(6000)); expect(document.querySelector('img')).toHaveAttribute('src', petPortraitFor("ip", "partner", "study"));
 });
+
+it("keeps the partner's desk through looking up, greeting and return without borrowing the puppy wave", () => {
+  vi.useFakeTimers();
+  const doc = emptyPetProfiles("guest", "Asia/Tokyo"), pet = newPetProfile("guest", "ip");
+  pet.unlockedStages.push("partner"); pet.selectedStage = "partner"; doc.profiles.push(pet);
+  const before = JSON.stringify(doc);
+  render(<PetCareSheet document={doc} qualificationId="ip" onClose={vi.fn()} returnFocus={vi.fn()} onPose={vi.fn()} />);
+  const portrait = petArtFor("ip", "partner", "correct");
+  expect(document.querySelector('img')).toHaveAttribute('src', portrait);
+  fireEvent.click(screen.getByRole("button", { name: "なでる" }));
+  expect(document.querySelector('img')).toHaveAttribute('src', portrait);
+  act(() => vi.advanceTimersByTime(700));
+  expect(document.querySelector('img')).toHaveAttribute('src', petArtFor("ip", "partner", "petted"));
+  expect(document.querySelector('img')).not.toHaveAttribute('src', "/images/home/study-room-mascots/idle/ip-wave.webp");
+  act(() => vi.advanceTimersByTime(5300));
+  expect(document.querySelector('img')).toHaveAttribute('src', portrait);
+  expect(JSON.stringify(doc)).toBe(before); expect(savePetCare).not.toHaveBeenCalled();
+});
