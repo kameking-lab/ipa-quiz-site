@@ -9,7 +9,7 @@ import { isPracticeReadyQuestion, shuffleChoices } from "@/lib/questions/filter"
 import { choiceDisplayLabel } from "@/lib/questions/display";
 import type { ExamCode, Question } from "@/lib/questions/types";
 
-const exams: ExamCode[] = ["kikenbutsu-otsu4"];
+const exams: ExamCode[] = ["kikenbutsu-otsu4", "unko-kanrisha-kamotsu"];
 
 describe("k11 official-source candidates remain private", () => {
   for (const exam of exams) {

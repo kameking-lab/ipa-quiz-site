@@ -1526,6 +1526,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
 {"slug":"kikenbutsu-otsu6","examCode":"kikenbutsu-otsu6","shortName":"危険物取扱者 乙種第6類","fullName":"危険物取扱者 乙種第6類","domain":"safety","administrator":"消防試験研究センター","officialQuestionsUrl":"https://www.shoubo-shiken.or.jp/","officialReuseTermsUrl":"https://www.shoubo-shiken.or.jp/","status":"live","reuseSummary":"公式公開の抜粋10問のみ。特定回の全問や2回分の全問を収録したものではありません。","remainingWork":[]}
 ,
 {"slug": "kikenbutsu-otsu4", "examCode": "kikenbutsu-otsu4", "shortName": "危険物取扱者 乙種第4類", "fullName": "危険物取扱者 乙種第4類", "domain": "safety", "administrator": "一般財団法人消防試験研究センター", "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html", "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html", "status": "permission-required", "stagingDataPath": "data/questions/kikenbutsu-otsu4", "reuseSummary": "35原問を非公開で保管。公式問題・正答、独自解説付き。2026年6月公表の抜粋であり、個別の出題年度・回は非公表。", "remainingWork": ["オーナーによる利用条件の確認・許可取得と公開判断"]}
+,
+{"slug": "unko-kanrisha-kamotsu", "examCode": "unko-kanrisha-kamotsu", "shortName": "運行管理者（貨物）", "fullName": "運行管理者（貨物）", "domain": "safety", "administrator": "公益財団法人運行管理者試験センター", "officialQuestionsUrl": "https://www.unkan.or.jp/past.html", "officialReuseTermsUrl": "https://www.unkan.or.jp/past.html", "status": "permission-required", "stagingDataPath": "data/questions/unko-kanrisha-kamotsu", "reuseSummary": "30原問を非公開で保管。公式問題・正答、独自解説付き。2023・2024年度CBT出題例。", "remainingWork": ["オーナーによる利用条件の確認・許可取得と公開判断"]}
 ] as const;
 
 export function getQualificationByExamCode(exam: ExamCode): QualificationCatalogEntry | undefined {

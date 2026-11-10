@@ -90,6 +90,7 @@ export function shuffleChoices(q: Question): Question {
   if (["chintai", "kyusui", "biru-kan", "gijutsushi1-kikai", "hoshasen-1", "hoshasen-2", "khk-kikai-kou", "khk-kikai-otsu", "energy-kanri", "reform-mgr", "shohi-sodan"].includes(q.exam)) return q;
   if (["denki1","kisho","kenchiku-setsubishi","chizai2","kanteishi","kaikeishi","judo-seifukushi","riku-toku-kokunai","kai-toku2","kai-toku3","koku-toku","land-special1","riku-tech1","maritime4","aviation-comm","amateur1","maritime-special1","riku-tech2","amateur2","maritime-radar","maritime3","maritime2","maritime1","general3","general2","general1","land-special2","land-special3","biyoshi","tsushin2","shuwa","shinrishi"].includes(q.exam) || q.exam.startsWith("kikenbutsu-otsu")) return q;
   if (q.exam === "kikenbutsu-otsu4") return q;
+  if (q.exam === "unko-kanrisha-kamotsu") return q;
   if (!q.choices) return q;
   // Labels in authored prose refer to the original choices. Reordering only the
   // answer map would silently contradict the explanation (for example AP 2017秋 問2).
