@@ -9,6 +9,36 @@ const original = new Map(applyIpaCorrections("sc", BY_YEAR_QUESTIONS).map(q => [
 const published = new Map(SC_QUESTIONS.map(q => [q.id, q]));
 
 describe("SC cx-k2 choice explanations", () => {
+  it("covers 2014–2018 except three absent figures and two inconsistent transcriptions", () => {
+    const targets = [...original.values()].filter(q =>
+      q.year >= 2014 && q.year <= 2018 && q.session === "am2"
+      && q.type === "multiple-choice" && Object.keys(q.choices ?? {}).length === 4
+      && !q.choiceExplanations && !(q.id in existingOverlay),
+    );
+    expect(targets).toHaveLength(250);
+    expect(targets.filter(q => q.id in overlay)).toHaveLength(245);
+    expect(targets.filter(q => !(q.id in overlay)).map(q => q.id).sort()).toEqual([
+      "sc-2014a-am2-q21", // Transcribed cycle is option ア, but the answer is イ.
+      "sc-2016h-am2-q21", // SQL and input parameter quotations are incomplete.
+      "sc-2018a-am2-q10", // Missing responsibility allocation table.
+      "sc-2018a-am2-q18", // All four choices are figure placeholders.
+      "sc-2018a-am2-q25", // Missing table of the three assurance parties.
+    ]);
+  });
+
+  it("explains the standard edition in the older paper rather than the reuse source", () => {
+    for (const id of ["sc-2014a-am2-q5", "sc-2017h-am2-q7", "sc-2018a-am2-q5"]) {
+      for (const reason of Object.values(overlay[id as keyof typeof overlay])) {
+        expect(reason, id).toContain("出題当時");
+        expect(reason, id).not.toContain("140-3");
+      }
+    }
+    for (const reason of Object.values(overlay["sc-2017a-am2-q12"])) {
+      expect(reason).toContain("JIS Q 27000:2014");
+      expect(reason).not.toContain("2019");
+    }
+  });
+
   it("covers all 225 previously unexplained questions except seven missing figures or tables", () => {
     const targets = [...original.values()].filter(q =>
       q.year >= 2019 && q.year <= 2025 && q.session === "am2"
