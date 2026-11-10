@@ -5,6 +5,22 @@ import overlay from "@/data/questions/ap/choice-explanations-cx-k3.json";
 import type { ChoiceKey } from "@/lib/questions/types";
 
 describe("AP 2022–2025 cx-k3 choice explanations", () => {
+  it("retains the reviewed coverage of all eight papers", () => {
+    const counts: Record<string, number> = {};
+    for (const question of AP_QUESTIONS) {
+      if (!(question.id in overlay)) continue;
+      const paper = `${question.year}/${question.season}`;
+      counts[paper] = (counts[paper] ?? 0) + 1;
+    }
+    expect(Object.keys(overlay)).toHaveLength(552);
+    expect(counts).toEqual({
+      "2022/spring": 74, "2022/autumn": 68,
+      "2023/spring": 70, "2023/autumn": 72,
+      "2024/spring": 68, "2024/autumn": 70,
+      "2025/spring": 62, "2025/autumn": 68,
+    });
+  });
+
   it("loads all overlay entries without changing official answers", () => {
     const originals = new Map(AP_BY_YEAR_QUESTIONS.map(q => [q.id, q]));
     const loaded = new Map(AP_QUESTIONS.map(q => [q.id, q]));
