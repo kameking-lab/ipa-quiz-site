@@ -37,8 +37,29 @@ describe.each(["sc", "nw", "sa", "ap"] as const)("%s past-question search guide"
     }
     expect(html).toContain("2025r07.html");
     expect(html).toContain("冊子冒頭の選択条件");
-    expect(html).toContain("解答例・採点講評");
+    expect(html).toContain("解答例・出題趣旨・採点講評");
   });
+});
+
+it("separates SA written answers from essays without promising an official model essay", () => {
+  const doc = new DOMParser().parseFromString(renderToStaticMarkup(<ExamTopGuide exam="sa" />), "text/html");
+  const steps = [...doc.querySelectorAll("#afternoon ol > li")].map(step => step.textContent);
+  expect(steps).toHaveLength(3);
+  expect(steps[1]).toContain("午後Iは解答例を見る前に、問題文の条件と根拠にした箇所を記録");
+  expect(steps[1]).toContain("午後IIは設問条件を読み、自分の経験・事例を整理して論述を書く");
+  expect(steps[2]).toContain("午後Iは公式の解答例・出題趣旨・採点講評");
+  expect(steps[2]).toContain("午後IIは出題趣旨・採点講評と設問条件を使い、自分の経験に基づく論述を点検");
+  expect(doc.querySelector("#afternoon")?.textContent).toContain("模範論述は掲載されていません");
+  expect(doc.querySelector('a[href="/essay"]')?.textContent).toContain("オリジナル論述教材でAI添削");
+});
+
+it.each(["sc", "ap", "nw"] as const)("keeps the evidence-based written-answer workflow for %s", exam => {
+  const doc = new DOMParser().parseFromString(renderToStaticMarkup(<ExamTopGuide exam={exam} />), "text/html");
+  const steps = [...doc.querySelectorAll("#afternoon ol > li")].map(step => step.textContent);
+  expect(steps).toHaveLength(3);
+  expect(steps[1]).toContain("解答例を見る前に、問題文の条件と根拠にした箇所を記録");
+  expect(steps[2]).toContain("公式の解答例・出題趣旨・採点講評");
+  expect(doc.querySelector("#afternoon")?.textContent).not.toContain("模範論述");
 });
 
 it("explains the cancelled 2020 spring separately on the NW page", () => {
