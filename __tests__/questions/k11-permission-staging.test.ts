@@ -10,7 +10,7 @@ import { choiceDisplayLabel } from "@/lib/questions/display";
 import { defaultPracticeSession, practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { ExamCode, Question } from "@/lib/questions/types";
 
-const exams: ExamCode[] = ["kikenbutsu-kou", "kikenbutsu-hei", "shobo-setsubishi-kou4", "shobo-setsubishi-otsu6", "kikenbutsu-otsu4", "unko-kanrisha-kamotsu"];
+const exams: ExamCode[] = ["shobo-setsubishi-kou1", "kikenbutsu-kou", "kikenbutsu-hei", "shobo-setsubishi-kou4", "shobo-setsubishi-otsu6", "kikenbutsu-otsu4", "unko-kanrisha-kamotsu"];
 
 describe("k11 official-source candidates remain private", () => {
   for (const exam of exams) {
@@ -76,6 +76,24 @@ describe("k11 official-source candidates remain private", () => {
       expect(q.sourceAnswerUrl).toContain("#page=24");
       expect(q.sourceExamYear).toBeNull();
       expect(q.publicationVersion).toBe("2026-06");
+    }
+  });
+
+  it("甲1 preserves the class-specific written range and all practical answer slots", () => {
+    const questions: Question[] = JSON.parse(readFileSync(join(process.cwd(), "data/questions/shobo-setsubishi-kou1/published-202606.json"), "utf8"));
+    const written = questions.filter(q => q.session === "gakka");
+    expect(written.map(q => q.qNumber)).toEqual([1,2,3,4,5,6,8,13,14,15,16,17,18,19,20,21,25,29,30]);
+    expect(written.map(q => Number(q.officialAnswerNumber))).toEqual([4,4,4,3,3,2,4,4,3,2,3,2,2,2,2,1,1,1,3]);
+    const heads = questions.filter(q => q.qNumber === 35);
+    expect(heads.map(q => q.officialAnswerNumber)).toEqual(["ア", "イ", "ウ", "エ"]);
+    expect(heads.map(q => q.part)).toEqual(["1", "2", "3", "4"]);
+    const calculation = questions.filter(q => q.qNumber === 36);
+    expect(calculation).toHaveLength(3);
+    for (const q of calculation) {
+      expect(q.type).toBe("descriptive");
+      expect(q.modelAnswer!.length).toBeGreaterThan(10);
+      expect(q.scoringCriteria!.length).toBeGreaterThan(15);
+      expect(q.answerImageUrls).toHaveLength(1);
     }
   });
 

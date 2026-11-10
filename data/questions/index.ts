@@ -4,6 +4,7 @@ import { QUESTIONS as SHOBO_SETSUBISHI_OTSU6 } from "./shobo-setsubishi-otsu6";
 import { QUESTIONS as SHOBO_SETSUBISHI_KOU4 } from "./shobo-setsubishi-kou4";
 import { QUESTIONS as KIKENBUTSU_HEI } from "./kikenbutsu-hei";
 import { QUESTIONS as KIKENBUTSU_KOU } from "./kikenbutsu-kou";
+import { QUESTIONS as SHOBO_SETSUBISHI_KOU1 } from "./shobo-setsubishi-kou1";
 import { QUESTIONS as BATCH3_0 } from "./benrishi";
 import { QUESTIONS as BATCH3_1 } from "./sokuryoshi";
 import { QUESTIONS as BATCH3_2 } from "./dokugeki-chiba";
@@ -148,6 +149,7 @@ import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
 import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+...(isExamPublished("shobo-setsubishi-kou1") ? { "shobo-setsubishi-kou1": SHOBO_SETSUBISHI_KOU1.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("kikenbutsu-kou") ? { "kikenbutsu-kou": KIKENBUTSU_KOU.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("kikenbutsu-hei") ? { "kikenbutsu-hei": KIKENBUTSU_HEI.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("shobo-setsubishi-kou4") ? { "shobo-setsubishi-kou4": SHOBO_SETSUBISHI_KOU4.filter(isPracticeReadyQuestion) } : {}),

@@ -3,6 +3,7 @@ import { QUESTIONS as K11_OTSU } from "@/data/questions/shobo-setsubishi-otsu6";
 import { QUESTIONS as K11_KOU } from "@/data/questions/shobo-setsubishi-kou4";
 import { QUESTIONS as K11_HEI } from "@/data/questions/kikenbutsu-hei";
 import { QUESTIONS as K11_KIKEN_KOU } from "@/data/questions/kikenbutsu-kou";
+import { QUESTIONS as K11_KOU1 } from "@/data/questions/shobo-setsubishi-kou1";
 import { QUESTIONS as K11_OTSU4 } from "@/data/questions/kikenbutsu-otsu4";
 import { SEKOU_1KENCHIKU_QUESTIONS } from "@/data/questions/sekou-1kenchiku";
 import { KENCHIKUSHI1_CANDIDATES } from "../data/qualification-staging/kenchikushi1";
@@ -57,7 +58,7 @@ import { validateKukakuSeiri } from "./validate-kukaku-seiri";
 // before their release gate can be lifted.
 const VALIDATION_QUESTIONS = [
   ...new Map(
-    [...ALL_QUESTIONS, ...K11_OTSU4, ...K11_KIKEN_KOU, ...K11_HEI, ...K11_KOU, ...K11_OTSU, ...K11_KAMOTSU, ...SEKOU_1KENCHIKU_QUESTIONS, ...KENCHIKUSHI1_CANDIDATES, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
+    [...ALL_QUESTIONS, ...K11_OTSU4, ...K11_KOU1, ...K11_KIKEN_KOU, ...K11_HEI, ...K11_KOU, ...K11_OTSU, ...K11_KAMOTSU, ...SEKOU_1KENCHIKU_QUESTIONS, ...KENCHIKUSHI1_CANDIDATES, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
   ).values(),
 ];
 
