@@ -8,13 +8,17 @@ import { applyChoiceExplanationOverlay } from "@/lib/questions/apply-choice-expl
 describe("ES cx-k6 choice explanations", () => {
   it("keeps the corrected questions and official answers intact", () => {
     const baseline = applyIpaCorrections("es", BY_YEAR_QUESTIONS);
-    expect(ES_QUESTIONS.map(({ choiceExplanations: _reasons, ...q }) => q))
-      .toEqual(baseline.map(({ choiceExplanations: _reasons, ...q }) => q));
+    const withoutReasons = (question: (typeof baseline)[number]) => {
+      const copy = { ...question };
+      delete copy.choiceExplanations;
+      return copy;
+    };
+    expect(ES_QUESTIONS.map(withoutReasons)).toEqual(baseline.map(withoutReasons));
   });
 
   it("covers all four displayed choices and labels only the official answer correct", () => {
     const ids = new Set(Object.keys(overlay));
-    expect(ids.size).toBeGreaterThanOrEqual(50);
+    expect(ids.size).toBe(187);
     for (const question of ES_QUESTIONS.filter(q => ids.has(q.id))) {
       expect(question.session, question.id).toBe("am2");
       expect(Object.keys(question.choices ?? {}), question.id).toHaveLength(4);
@@ -28,6 +32,50 @@ describe("ES cx-k6 choice explanations", () => {
         expect(text!.length, `${question.id}/${key}`).toBeLessThanOrEqual(180);
         expect(text!.startsWith(correct.has(key) ? "正しいです。" : "誤りです。"), `${question.id}/${key}`).toBe(true);
       }
+    }
+  });
+
+  it("accounts for every morning-II question and leaves incomplete inputs unannotated", () => {
+    // Diagram details (10), missing textual conditions (2), ambiguous choice text (1).
+    const skipped = [
+      "es-2010h-am2-q5", "es-2010h-am2-q12", "es-2010h-am2-q17", "es-2010h-am2-q22",
+      "es-2020a-am2-q8", "es-2021a-am2-q9",
+      "es-2023a-am2-q6", "es-2023a-am2-q11", "es-2023a-am2-q16",
+      "es-2023a-am2-q17", "es-2023a-am2-q19", "es-2024a-am2-q9", "es-2025a-am2-q6",
+    ];
+    const morningII = ES_QUESTIONS.filter(q => q.session === "am2");
+    expect(morningII).toHaveLength(200);
+    expect(morningII.filter(q => !Object.hasOwn(overlay, q.id)).map(q => q.id).sort())
+      .toEqual(skipped.sort());
+    for (const q of morningII.filter(q => skipped.includes(q.id))) {
+      expect(q.choiceExplanations, q.id).toBeUndefined();
+    }
+  });
+
+  it("preserves historical scope for legal, institutional and version-dependent questions", () => {
+    const ids = [
+      "es-2009h-am2-q6", "es-2010h-am2-q11", "es-2020a-am2-q18", "es-2020a-am2-q25",
+      "es-2021a-am2-q23", "es-2022a-am2-q3", "es-2022a-am2-q16", "es-2022a-am2-q17",
+      "es-2022a-am2-q23", "es-2023a-am2-q15", "es-2023a-am2-q25", "es-2024a-am2-q20",
+      "es-2024a-am2-q21", "es-2025a-am2-q12",
+    ];
+    for (const id of ids) {
+      for (const text of Object.values(ES_QUESTIONS.find(q => q.id === id)!.choiceExplanations!)) {
+        expect(text, id).toContain("出題当時の");
+        expect(text, id).toMatch(/に基づく解説です。$/u);
+      }
+    }
+  });
+
+  it("exposes the overlay in both eager and lazy exam loaders", async () => {
+    const [{ ALL_QUESTIONS }, { getQuestionsForExam }] = await Promise.all([
+      import("@/data/questions"), import("@/lib/questions/get-questions"),
+    ]);
+    const lazy = await getQuestionsForExam("es");
+    for (const questions of [ALL_QUESTIONS, lazy]) {
+      const reasons = Object.fromEntries(questions.filter(q => Object.hasOwn(overlay, q.id))
+        .map(q => [q.id, q.choiceExplanations]));
+      expect(reasons).toEqual(overlay);
     }
   });
 
