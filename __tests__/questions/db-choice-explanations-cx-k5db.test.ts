@@ -23,6 +23,9 @@ const withheld = [
 const baseline = applyIpaCorrections("db", BY_YEAR_QUESTIONS);
 const publishedById = new Map(DB_QUESTIONS.map((question) => [question.id, question]));
 const reasonsById: Record<string, Partial<Record<ChoiceKey, string>>> = overlay;
+const negativeQuestionIds = new Set([
+  "db-2009h-am2-q1", "db-2024a-am2-q2", "db-2025a-am2-q24",
+]);
 
 describe("DB morning II lane explanations", () => {
   it("accounts for all 200 questions and keeps withheld questions out of the overlay", () => {
@@ -44,11 +47,28 @@ describe("DB morning II lane explanations", () => {
       expect(question.choiceExplanations, id).toEqual(reasons);
       expect(new Set(Object.values(reasons)).size, id).toBe(4);
       for (const [key, reason] of Object.entries(reasons)) {
-        expect(reason!.startsWith(key === question.answer ? "正しいです。" : "誤りです。"), `${id}/${key}`).toBe(true);
+        const prefix = negativeQuestionIds.has(id)
+          ? (key === question.answer ? "解答としては正解です。" : "解答としては不正解です。")
+          : (key === question.answer ? "正しいです。" : "誤りです。");
+        expect(reason!.startsWith(prefix), `${id}/${key}`).toBe(true);
         expect(reason!.length, `${id}/${key}`).toBeGreaterThanOrEqual(60);
         expect(reason!.length, `${id}/${key}`).toBeLessThanOrEqual(180);
       }
     }
+  });
+
+  it("uses the official sales values for both repeated AVG questions", () => {
+    // IPA 2022/2024 DB morning II question 7, booklet page 7.
+    const amounts = [50, 250, 350, 450];
+    const aRankAmounts = amounts.slice(0, 2);
+    const mean = (values: number[]) => values.reduce((sum, value) => sum + value, 0) / values.length;
+    for (const id of ["db-2022a-am2-q7", "db-2024a-am2-q7"]) {
+      const reasons = reasonsById[id]!;
+      expect(reasons["ウ"], id).toContain(`(${aRankAmounts.join("＋")})÷2＝${mean(aRankAmounts)}`);
+      expect(reasons["ウ"], id).not.toContain("900");
+      expect(reasons["エ"], id).toContain(`(${amounts.join("＋")})÷4＝${mean(amounts)}`);
+    }
+    expect(reasonsById["db-2022a-am2-q7"]!["エ"]).toContain("ランク条件とグループ化をともに外した");
   });
 
   it("preserves corrected answers, source text, narrative explanations, and all morning I records", () => {
