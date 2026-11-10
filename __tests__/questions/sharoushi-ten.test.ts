@@ -39,11 +39,11 @@ describe("社会保険労務士試験 第58・57回 労働基準法及び労働�
   const gakka = SHAROUSHI_QUESTIONS.filter((q) => q.session === "gakka");
   const expected = manifest.sittings.flatMap((s) => s.questions.map((q) => ({ sitting: s, q })));
 
-  it("先行マニフェストの10問50肢を保持し、全体では16問80肢", () => {
+  it("先行マニフェストの10問50肢を保持し、全体では20問100肢", () => {
     expect(expected).toHaveLength(10);
     expect(gakka.map((q) => `${q.year}-${q.qNumber}`)).toEqual(expect.arrayContaining(expected.map(({ sitting, q }) => `${sitting.year}-${q.questionNumber}`)));
-    expect(gakka).toHaveLength(16);
-    expect(gakka.reduce((sum, q) => sum + Object.keys(q.choices ?? {}).length, 0)).toBe(80);
+    expect(gakka).toHaveLength(20);
+    expect(gakka.reduce((sum, q) => sum + Object.keys(q.choices ?? {}).length, 0)).toBe(100);
     expect(getQualificationByExamCode("sharoushi")?.status).toBe("live");
   });
 

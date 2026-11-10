@@ -783,7 +783,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-08_09.html",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
     status: "live",
-    reuseSummary: "第61・60回の午前・午後から、原文・正答・全肢解説を確認した310問を部分収録。原本図と全肢解説を確認した11問を追加し、公式採点除外の第60回午後98・第61回午前42は出題対象に含めません。図・専門根拠・代替正答の未確認問は未掲載。最新2回の午前と午後全体は未完備です。",
+    reuseSummary: "第61・60回の午前・午後から、原文・正答・全肢解説を確認した324問を部分収録。原本図と全肢解説を確認した11問を追加し、公式採点除外の第60回午後98・第61回午前42は出題対象に含めません。図・専門根拠・代替正答の未確認問は未掲載。最新2回の午前と午後全体は未完備です。",
     remainingWork: ["未収録問題の原本図・専門根拠・代替正答の局所確認", "最新2回の残る午前・午後問題"],
 },
   {
@@ -976,7 +976,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
     status: "live",
-    reuseSummary: "第71・72回（2025・2026年実施）の午前・午後から、原文・公式正答・全五肢の学習用解説と照合した106原問を部分収録。必要な公式原図も掲載しています。残りの未収録原問は出題対象外で、最新2回の全問は未完備です。解説は独自作成です。",
+    reuseSummary: "第71・72回（2025・2026年実施）の午前・午後から、原文・公式正答・全五肢の学習用解説と照合した115原問を部分収録。必要な公式原図も掲載しています。残りの未収録原問は出題対象外で、最新2回の全問は未完備です。解説は独自作成です。",
     remainingWork: ["未収録原問の原本・別冊図・専門根拠の個別照合", "最新2回の午前・午後の残問"],
 },
 {

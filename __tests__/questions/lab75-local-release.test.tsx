@@ -42,12 +42,12 @@ describe("clinical laboratory first75 local release payload", () => {
     expect(selected).toHaveLength(75);
     expect(EXAM_CONFIGS["rinsho-kensagishi"].sessions.map(session => session.session)).toEqual(["am", "pm"]);
     expect(new Set(selected.map(q => q.id))).toEqual(expectedIds);
-    expect(RINSHO_KENSAGISHI_QUESTIONS).toHaveLength(106);
-    expect(new Set(RINSHO_KENSAGISHI_QUESTIONS.map(q => q.id)).size).toBe(106);
+    expect(RINSHO_KENSAGISHI_QUESTIONS).toHaveLength(115);
+    expect(new Set(RINSHO_KENSAGISHI_QUESTIONS.map(q => q.id)).size).toBe(115);
     expect(getQuestionsByExam("rinsho-kensagishi")).toEqual(RINSHO_KENSAGISHI_QUESTIONS);
     expect(await getQuestionsForExam("rinsho-kensagishi")).toEqual(RINSHO_KENSAGISHI_QUESTIONS);
     expect(ALL_QUESTIONS.filter(q => q.exam === "rinsho-kensagishi")).toEqual(RINSHO_KENSAGISHI_QUESTIONS);
-    expect((await getQuestionCountsByExam())["rinsho-kensagishi"]).toBe(106);
+    expect((await getQuestionCountsByExam())["rinsho-kensagishi"]).toBe(115);
     for (const file of baseline.baselineFiles) {
       expect(sha256(readFileSync(path.resolve(file.path), "utf8").replace(/\r\n/g, "\n")), file.path).toBe(file.sha256);
       for (const id of file.ids) expect(expectedIds.has(id)).toBe(false);
@@ -102,11 +102,11 @@ describe("clinical laboratory first75 local release payload", () => {
     }
   });
 
-  it("adds75 usable canonical routes and exposes the exact106 partial count to SEO and hub metadata", async () => {
-    expect(getIndexableQuestions().filter(q => q.exam === "rinsho-kensagishi")).toHaveLength(106);
-    expect(getSitemapQuestions().filter(q => q.exam === "rinsho-kensagishi")).toHaveLength(106);
-    expect(getExamQuestionCount("rinsho-kensagishi")).toBe(106);
-    expect(countByExam("rinsho-kensagishi")).toBe(106);
+  it("adds75 usable canonical routes and exposes the exact115 partial count to SEO and hub metadata", async () => {
+    expect(getIndexableQuestions().filter(q => q.exam === "rinsho-kensagishi")).toHaveLength(115);
+    expect(getSitemapQuestions().filter(q => q.exam === "rinsho-kensagishi")).toHaveLength(115);
+    expect(getExamQuestionCount("rinsho-kensagishi")).toBe(115);
+    expect(countByExam("rinsho-kensagishi")).toBe(115);
     expect(dynamicParams).toBe(true);
     // Detail pages are not prerendered at build; every accepted URL resolves on demand.
     expect(await generateStaticParams()).toEqual([]);
@@ -118,12 +118,12 @@ describe("clinical laboratory first75 local release payload", () => {
       expect(findQuestionByRoute(ALL_QUESTIONS, route(q))).toEqual(q);
       expect(xml).toContain(questionPagePath(q));
     }
-    const description = examMetaDescription("rinsho-kensagishi", 106);
-    expect(description).toContain("106原問を部分収録");
+    const description = examMetaDescription("rinsho-kensagishi", 115);
+    expect(description).toContain("115原問を部分収録");
     expect(description).toContain("午前・午後");
     expect(description).toContain("全問は未完備");
     const hub = renderToStaticMarkup(await ExamTopPage({ params: Promise.resolve({ exam: "rinsho-kensagishi" }) }));
-    expect(hub).toContain("106原問を部分収録");
+    expect(hub).toContain("115原問を部分収録");
   });
 
   it("renders every native Next detail page with its official sources and full five reasons", async () => {
