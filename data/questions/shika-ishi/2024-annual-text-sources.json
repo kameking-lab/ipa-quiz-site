@@ -10,25 +10,31 @@
   "officialIndexUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-02.html",
   "license": "MHLW-attributed",
   "permissionStatus": "Owner to confirm reuse permission; attribution is not a permission grant.",
-  "termsUrl": "https://www.mhlw.go.jp/chosakuken/index.html",
+  "termsUrl": "https://www.mhlw.go.jp/chosakuken/",
   "sourceFiles": [
     {
       "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-02a_01.pdf",
       "file": "tp240424-02a_01.pdf",
       "sha256": "855160f374945aa521eb45673587582037ed1a008febf3cebf18faee0ff7691f",
-      "pages": 60
+      "pages": 60,
+      "bytes": 1190404,
+      "retrievedAtUtc": "2026-11-10T04:08:01.573549+00:00"
     },
     {
       "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-02seigohyou.pdf",
       "file": "tp240424-02seigohyou.pdf",
       "sha256": "39b1514f789baa9a34c9bfaf4a6d617c8777c40b9f1f85a418eb03c878eb860e",
-      "pages": 2
+      "pages": 2,
+      "bytes": 150753,
+      "retrievedAtUtc": "2026-11-10T04:08:03.608303+00:00"
     },
     {
       "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-02seitou.pdf",
       "file": "tp240424-02seitou.pdf",
       "sha256": "0e71adac14aa831a3854ad1b40e4182f141092d1b3b3cabb04cc753f2b4e2893",
-      "pages": 2
+      "pages": 2,
+      "bytes": 21893,
+      "retrievedAtUtc": "2026-11-10T04:08:05.002279+00:00"
     }
   ],
   "receipts": [
@@ -39,7 +45,11 @@
         13
       ],
       "officialKeyCell": "A3",
-      "officialKeyLiteral": "CD"
+      "officialKeyLiteral": "CD",
+      "transcriptionReview": {
+        "method": "Rendered official PDF compared with extracted text; whitespace and numeric/letter choice labels normalized.",
+        "manuallyRestoredFields": []
+      }
     },
     {
       "id": "shika-ishi-2024-annual-mondai-a-q4",
@@ -48,7 +58,11 @@
         14
       ],
       "officialKeyCell": "A4",
-      "officialKeyLiteral": "E"
+      "officialKeyLiteral": "E",
+      "transcriptionReview": {
+        "method": "Rendered official PDF compared with extracted text; whitespace and numeric/letter choice labels normalized.",
+        "manuallyRestoredFields": []
+      }
     },
     {
       "id": "shika-ishi-2024-annual-mondai-a-q5",
@@ -57,7 +71,11 @@
         14
       ],
       "officialKeyCell": "A5",
-      "officialKeyLiteral": "E"
+      "officialKeyLiteral": "E",
+      "transcriptionReview": {
+        "method": "Rendered official PDF compared with extracted text; whitespace and numeric/letter choice labels normalized.",
+        "manuallyRestoredFields": []
+      }
     },
     {
       "id": "shika-ishi-2024-annual-mondai-a-q8",
@@ -66,7 +84,11 @@
         15
       ],
       "officialKeyCell": "A8",
-      "officialKeyLiteral": "B"
+      "officialKeyLiteral": "B",
+      "transcriptionReview": {
+        "method": "Rendered official PDF compared with extracted text; whitespace and numeric/letter choice labels normalized.",
+        "manuallyRestoredFields": []
+      }
     },
     {
       "id": "shika-ishi-2024-annual-mondai-a-q13",
@@ -75,7 +97,11 @@
         17
       ],
       "officialKeyCell": "A13",
-      "officialKeyLiteral": "C"
+      "officialKeyLiteral": "C",
+      "transcriptionReview": {
+        "method": "Rendered official PDF compared with extracted text; whitespace and numeric/letter choice labels normalized.",
+        "manuallyRestoredFields": []
+      }
     },
     {
       "id": "shika-ishi-2024-annual-mondai-a-q14",
@@ -84,7 +110,11 @@
         17
       ],
       "officialKeyCell": "A14",
-      "officialKeyLiteral": "BE"
+      "officialKeyLiteral": "BE",
+      "transcriptionReview": {
+        "method": "Rendered official PDF compared with extracted text; whitespace and numeric/letter choice labels normalized.",
+        "manuallyRestoredFields": []
+      }
     },
     {
       "id": "shika-ishi-2024-annual-mondai-a-q15",
@@ -93,7 +123,11 @@
         17
       ],
       "officialKeyCell": "A15",
-      "officialKeyLiteral": "E"
+      "officialKeyLiteral": "E",
+      "transcriptionReview": {
+        "method": "Rendered official PDF compared with extracted text; whitespace and numeric/letter choice labels normalized.",
+        "manuallyRestoredFields": []
+      }
     },
     {
       "id": "shika-ishi-2024-annual-mondai-a-q16",
@@ -102,7 +136,11 @@
         18
       ],
       "officialKeyCell": "A16",
-      "officialKeyLiteral": "C"
+      "officialKeyLiteral": "C",
+      "transcriptionReview": {
+        "method": "Rendered official PDF compared with extracted text; whitespace and numeric/letter choice labels normalized.",
+        "manuallyRestoredFields": []
+      }
     },
     {
       "id": "shika-ishi-2024-annual-mondai-a-q19",
@@ -111,7 +149,11 @@
         19
       ],
       "officialKeyCell": "A19",
-      "officialKeyLiteral": "C"
+      "officialKeyLiteral": "C",
+      "transcriptionReview": {
+        "method": "Rendered official PDF compared with extracted text; whitespace and numeric/letter choice labels normalized.",
+        "manuallyRestoredFields": []
+      }
     },
     {
       "id": "shika-ishi-2024-annual-mondai-a-q23",
@@ -120,8 +162,15 @@
         21
       ],
       "officialKeyCell": "A23",
-      "officialKeyLiteral": "BE"
+      "officialKeyLiteral": "BE",
+      "transcriptionReview": {
+        "method": "Rendered official PDF compared with extracted text; whitespace and numeric/letter choice labels normalized.",
+        "manuallyRestoredFields": []
+      }
     }
   ],
-  "omittedScope": "Other questions are not imported: figures, other sessions, and text questions without completed explanation review. No claim that the full edition is available."
+  "omittedScope": "Other questions are not imported: figures, other sessions, and text questions without completed explanation review. No claim that the full edition is available.",
+  "termsExhibitUrl": "https://www.mhlw.go.jp/chosakuken/exhibit.html",
+  "termsSummary": "General MHLW terms refer to PDL 1.0 and require attribution and disclosure of edits. Target edition pages did not state different reuse terms. Third-party rights and any specific permission remain for the owner to confirm; MHLW-attributed is the existing repository label, not proof of clearance.",
+  "receiptsReviewed": 10
 }

@@ -3,6 +3,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
+import { EXAM_DESCRIPTIONS, examMetaDescription } from "@/lib/seo/exam-meta";
 import type { ExamCode, Question } from "@/lib/questions/types";
 
 type Receipt = { id: string; sourceQuestionNumber: number; physicalPages: number[]; officialKeyLiteral: string };
@@ -17,6 +18,15 @@ const kana = Array.from("アイウエオ");
 describe("medical history: official text excerpts", () => {
   for (const exam of exams) {
     const directory = path.join(process.cwd(), "data/questions", exam);
+    it(`${exam}: discloses all three partial editions`, async () => {
+      expect(readdirSync(directory).filter((f) => /^202[234]-annual-text.json$/.test(f)).sort())
+        .toEqual(["2022-annual-text.json", "2023-annual-text.json", "2024-annual-text.json"]);
+      const loaded = await getQuestionsForExam(exam);
+      expect(loaded.filter((q) => q.year >= 2022 && q.year <= 2024)).toHaveLength(30);
+      expect(EXAM_DESCRIPTIONS[exam]).toContain("2024〜2022年");
+      expect(EXAM_DESCRIPTIONS[exam]).toContain("各10問");
+      expect(examMetaDescription(exam, loaded.length)).toContain("部分収録");
+    });
     for (const file of readdirSync(directory).filter((f) => /^202[234]-annual-text.json$/.test(f))) {
       it(`${exam}/${file}: preserves keys, source identity, and practice registration`, async () => {
         const rows = JSON.parse(readFileSync(path.join(directory, file), "utf8")) as Question[];

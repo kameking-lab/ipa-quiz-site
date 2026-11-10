@@ -10,19 +10,23 @@
   "officialIndexUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-06.html",
   "license": "MHLW-attributed",
   "permissionStatus": "Owner to confirm reuse permission; attribution is not a permission grant.",
-  "termsUrl": "https://www.mhlw.go.jp/chosakuken/index.html",
+  "termsUrl": "https://www.mhlw.go.jp/chosakuken/",
   "sourceFiles": [
     {
       "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-06a_01.pdf",
       "file": "tp240424-06a_01.pdf",
       "sha256": "5c111c515367afd50464fa5e6cc4df5586ee86b4d61623d994630d5ed32d678c",
-      "pages": 52
+      "pages": 52,
+      "bytes": 1130100,
+      "retrievedAtUtc": "2026-11-10T04:07:57.351682+00:00"
     },
     {
       "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-06seitou.pdf",
       "file": "tp240424-06seitou.pdf",
       "sha256": "4da5cd3349b0194d0559eeb8994ad58acf76cb20b0bd830d5f8009ed8706d1fc",
-      "pages": 1
+      "pages": 1,
+      "bytes": 17031,
+      "retrievedAtUtc": "2026-11-10T04:07:58.615021+00:00"
     }
   ],
   "receipts": [
@@ -33,7 +37,11 @@
         5
       ],
       "officialKeyCell": "AM1",
-      "officialKeyLiteral": "2"
+      "officialKeyLiteral": "2",
+      "transcriptionReview": {
+        "method": "Rendered official PDF compared with extracted text; whitespace and numeric/letter choice labels normalized.",
+        "manuallyRestoredFields": []
+      }
     },
     {
       "id": "shinryo-hoshasengishi-2024-annual-am-q3",
@@ -42,7 +50,11 @@
         5
       ],
       "officialKeyCell": "AM3",
-      "officialKeyLiteral": "3"
+      "officialKeyLiteral": "3",
+      "transcriptionReview": {
+        "method": "Rendered official PDF compared with extracted text; whitespace and numeric/letter choice labels normalized.",
+        "manuallyRestoredFields": []
+      }
     },
     {
       "id": "shinryo-hoshasengishi-2024-annual-am-q4",
@@ -51,7 +63,11 @@
         6
       ],
       "officialKeyCell": "AM4",
-      "officialKeyLiteral": "1"
+      "officialKeyLiteral": "1",
+      "transcriptionReview": {
+        "method": "Rendered official PDF compared with extracted text; whitespace and numeric/letter choice labels normalized.",
+        "manuallyRestoredFields": []
+      }
     },
     {
       "id": "shinryo-hoshasengishi-2024-annual-am-q11",
@@ -60,7 +76,11 @@
         9
       ],
       "officialKeyCell": "AM11",
-      "officialKeyLiteral": "3"
+      "officialKeyLiteral": "3",
+      "transcriptionReview": {
+        "method": "Rendered official PDF compared with extracted text; whitespace and numeric/letter choice labels normalized.",
+        "manuallyRestoredFields": []
+      }
     },
     {
       "id": "shinryo-hoshasengishi-2024-annual-am-q12",
@@ -69,7 +89,11 @@
         9
       ],
       "officialKeyCell": "AM12",
-      "officialKeyLiteral": "2"
+      "officialKeyLiteral": "2",
+      "transcriptionReview": {
+        "method": "Rendered official PDF compared with extracted text; whitespace and numeric/letter choice labels normalized.",
+        "manuallyRestoredFields": []
+      }
     },
     {
       "id": "shinryo-hoshasengishi-2024-annual-am-q13",
@@ -78,7 +102,11 @@
         10
       ],
       "officialKeyCell": "AM13",
-      "officialKeyLiteral": "4"
+      "officialKeyLiteral": "4",
+      "transcriptionReview": {
+        "method": "Rendered official PDF compared with extracted text; whitespace and numeric/letter choice labels normalized.",
+        "manuallyRestoredFields": []
+      }
     },
     {
       "id": "shinryo-hoshasengishi-2024-annual-am-q15",
@@ -87,7 +115,11 @@
         10
       ],
       "officialKeyCell": "AM15",
-      "officialKeyLiteral": "2"
+      "officialKeyLiteral": "2",
+      "transcriptionReview": {
+        "method": "Rendered official PDF compared with extracted text; whitespace and numeric/letter choice labels normalized.",
+        "manuallyRestoredFields": []
+      }
     },
     {
       "id": "shinryo-hoshasengishi-2024-annual-am-q16",
@@ -96,7 +128,11 @@
         11
       ],
       "officialKeyCell": "AM16",
-      "officialKeyLiteral": "5"
+      "officialKeyLiteral": "5",
+      "transcriptionReview": {
+        "method": "Rendered official PDF compared with extracted text; whitespace and numeric/letter choice labels normalized.",
+        "manuallyRestoredFields": []
+      }
     },
     {
       "id": "shinryo-hoshasengishi-2024-annual-am-q17",
@@ -105,7 +141,11 @@
         11
       ],
       "officialKeyCell": "AM17",
-      "officialKeyLiteral": "2"
+      "officialKeyLiteral": "2",
+      "transcriptionReview": {
+        "method": "Rendered official PDF compared with extracted text; whitespace and numeric/letter choice labels normalized.",
+        "manuallyRestoredFields": []
+      }
     },
     {
       "id": "shinryo-hoshasengishi-2024-annual-am-q19",
@@ -114,8 +154,15 @@
         12
       ],
       "officialKeyCell": "AM19",
-      "officialKeyLiteral": "4"
+      "officialKeyLiteral": "4",
+      "transcriptionReview": {
+        "method": "Rendered official PDF compared with extracted text; whitespace and numeric/letter choice labels normalized.",
+        "manuallyRestoredFields": []
+      }
     }
   ],
-  "omittedScope": "Other questions are not imported: figures, other sessions, and text questions without completed explanation review. No claim that the full edition is available."
+  "omittedScope": "Other questions are not imported: figures, other sessions, and text questions without completed explanation review. No claim that the full edition is available.",
+  "termsExhibitUrl": "https://www.mhlw.go.jp/chosakuken/exhibit.html",
+  "termsSummary": "General MHLW terms refer to PDL 1.0 and require attribution and disclosure of edits. Target edition pages did not state different reuse terms. Third-party rights and any specific permission remain for the owner to confirm; MHLW-attributed is the existing repository label, not proof of clearance.",
+  "receiptsReviewed": 10
 }
