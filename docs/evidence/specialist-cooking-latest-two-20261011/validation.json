@@ -1,0 +1,58 @@
+{
+  "asOf": "2026-10-11",
+  "scope": "source handoff only; no original question acceptance",
+  "sourcePacketVerifier": {
+    "status": "pass",
+    "uniqueEditions": 12,
+    "uniqueDocuments": 24,
+    "inheritedDenialsPreserved": 12
+  },
+  "committedArchiveSha256": {
+    "matched": 2,
+    "total": 2
+  },
+  "typecheck": {
+    "exitCode": 0
+  },
+  "lint": {
+    "exitCode": 0,
+    "errors": 0,
+    "existingWarnings": 1,
+    "warningFile": "reports/civil2-2026-completion-20260926/parse-fenced-results.mjs"
+  },
+  "tests": {
+    "initial": {
+      "exitCode": 1,
+      "passed": 4756,
+      "failed": 5,
+      "failures": "15-second timeouts"
+    },
+    "boundedRerun": {
+      "workers": 2,
+      "files": 5,
+      "exitCode": 1,
+      "passed": 45,
+      "failed": 5,
+      "failedFiles": [
+        "__tests__/api/cost-record-durability.test.ts",
+        "__tests__/search/pool-server.test.ts",
+        "__tests__/search/search-route.test.ts"
+      ],
+      "failures": "15-second timeouts"
+    }
+  },
+  "build": {
+    "default": {
+      "exitCode": 1,
+      "reason": "Turbopack rejects the external node_modules junction"
+    },
+    "webpack": {
+      "status": "cancelled after compilation with warnings",
+      "complete": false
+    }
+  },
+  "diffCheck": "pass with archive CRLF attributes",
+  "contentReadyOriginals": 0,
+  "requiredOriginalCount": null,
+  "fullyValidated": false
+}
