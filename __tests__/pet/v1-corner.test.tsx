@@ -95,22 +95,29 @@ it("consumes a fresh stage CTA on opening and never promotes a chosen puppy agai
   fireEvent.click(screen.getByRole("button", { name: /育成を見る.*姿2種類/ }));
   expect(screen.getByTestId("care-sheet")).toHaveAttribute("data-appearance-open", "false");
 });
-it("drops a stage celebration when moving to another question or closing the corner", () => {
+it("keeps an unread appearance across questions and reloads without replaying celebrations", () => {
   const view = render(<LearningPetCorner qualificationId="ap" questionId="ap-q1" />);
   document.profiles[0].unlockedStages.push("partner"); document.profiles[0].memories.push({ kind: "stage", stage: "partner", occurredAt: Date.now() });
   act(() => notify(fresh()));
   view.rerender(<LearningPetCorner qualificationId="ap" questionId="ap-q2" />);
-  expect(screen.queryByRole("button", { name: "相棒の姿を見る" })).toBeNull();
+  expect(screen.getByRole("button", { name: "相棒の姿を見る" })).toBeEnabled();
   expect(view.container.querySelector('[aria-live="polite"]')).toBeEmptyDOMElement();
   // Two saved events can share the same millisecond. An older memory is not a new unlock.
   act(() => notify(fresh({ questionId: "ap-q2", eventId: "two" })));
-  expect(screen.queryByRole("button", { name: "相棒の姿を見る" })).toBeNull();
+  expect(screen.getByRole("button", { name: "相棒の姿を見る" })).toBeEnabled();
+  expect(view.container.querySelector('[aria-live="polite"]')).toBeEmptyDOMElement();
   document.profiles[0].unlockedStages.push("expert"); document.profiles[0].memories.push({ kind: "stage", stage: "expert", occurredAt: Date.now() });
   act(() => notify(fresh({ questionId: "ap-q2", eventId: "three" })));
   expect(screen.getByRole("button", { name: "専門家の姿を見る" })).toBeEnabled();
   fireEvent.click(screen.getByRole("button", { name: "チワワのひと休みを閉じる" }));
   fireEvent.click(screen.getByRole("button", { name: "チワワのひと休みを開く" }));
+  expect(screen.getByRole("button", { name: "専門家の姿を見る" })).toBeEnabled();
+  fireEvent.click(screen.getByRole("button", { name: "専門家の姿を見る" }));
+  fireEvent.click(screen.getByRole("button", { name: "シートを閉じる" }));
+  view.unmount();
+  const reloaded = render(<LearningPetCorner qualificationId="ap" questionId="ap-q2" />);
   expect(screen.queryByRole("button", { name: "専門家の姿を見る" })).toBeNull();
+  expect(reloaded.container.querySelector('[aria-live="polite"]')).toBeEmptyDOMElement();
 });
 it("stops gestures and removes transient feedback while the page is hidden, without replay on return", () => {
   const view = render(<LearningPetCorner qualificationId="ap" questionId="ap-q1" />);

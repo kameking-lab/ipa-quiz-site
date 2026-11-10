@@ -103,7 +103,7 @@ export default function PetCareSheet({ document: doc, qualificationId, initialAp
           <details open={sections.appearance} onToggle={event => toggleSection("appearance", event.currentTarget.open)}><summary>姿</summary>
             <div className={styles.tiles}>{(["puppy", "partner", "expert"] as const).map(stage => { const open = profile.unlockedStages.includes(stage); return <button type="button" key={stage} className={styles.tile} disabled={busy || !open} aria-pressed={profile.selectedStage === stage} onClick={() => care({ type: "stage", stage })}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={petArtFor(profile.qualificationId, stage, "study")} width={64} height={64} alt="" loading="lazy" decoding="async" className={open ? undefined : styles.locked} />{STAGE_NAMES[stage]}</button>; })}</div>
+              {open ? <>{/* eslint-disable-next-line @next/next/no-img-element */}<img src={petArtFor(profile.qualificationId, stage, "study")} width={128} height={128} alt="" loading="lazy" decoding="async" /></> : null}{STAGE_NAMES[stage]}<span className={styles.selection}>{profile.selectedStage === stage ? "選択中" : open ? "この姿にする" : "これから"}</span></button>; })}</div>
             {next ? <div className={styles.stageGoals}><p>{STAGE_NAMES[next.stage]}まで</p>{next.parts.map(part => <label key={part.unit} className={styles.meter}><span>{part.now}/{part.goal}{part.unit}</span><meter min={0} max={part.goal} value={part.now} /></label>)}</div> : null}
           </details>
           <details open={sections.paths} onToggle={event => toggleSection("paths", event.currentTarget.open)}><summary>特技</summary>

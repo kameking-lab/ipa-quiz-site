@@ -10,16 +10,17 @@ import type { PetProfile, PetProfileDocument } from "@/lib/pet/v1/profile";
 import { usePetProfileView, type PetCommittedDetail, type PetProfileView } from "./usePetProfileView";
 import { PetNameTitle } from "./PetNameTitle";
 import styles from "./LearningPetCorner.module.css";
+import { usePetAppearanceNotice } from "./usePetAppearanceNotice";
 const PetCareSheet = dynamic(() => import("./PetCareSheet"), { ssr: false });
 
 const IDLE_CAPTION = "いっしょに、一問ずつ。";
 export { PET_STAGE_LABELS } from "@/lib/pet/v1/presentation";
 interface Pop { key: string; growth: number; bond: number; pose: PetPose; unlock: string | null }
 
-export function LearningPetCorner({ qualificationId, questionId, suppliedView, idlePose = "study", idleCaption }: {
+export function LearningPetCorner({ qualificationId, questionId, suppliedView, idlePose = "study", idleCaption, compact = false, appearanceOnly = false }: {
   qualificationId?: string; questionId?: string; suppliedView?: PetProfileView;
   /** Qualification-specific study pose/caption for the learner's room seat. */
-  idlePose?: PetPose; idleCaption?: string;
+  idlePose?: PetPose; idleCaption?: string; compact?: boolean; appearanceOnly?: boolean;
 }) {
   const qualification = qualificationId === undefined ? undefined : canonicalPetQualification(qualificationId) ?? qualificationId;
   const [closed, setClosed] = useState(false), [paused, setPaused] = useState(false), [reduced, setReduced] = useState(true);
@@ -69,6 +70,8 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
   useEffect(() => { if (view.status !== "ready") { stop(); setCaption(null); setUnlockStage(null); setPop(null); setAnnouncement(""); } }, [view.status, stop]);
   const selectedQualification = qualification ?? view.document?.events.at(-1)?.qualificationId ?? view.document?.profiles[0]?.qualificationId;
   const profile = view.document?.profiles.find(item => item.qualificationId === selectedQualification);
+  const appearance = usePetAppearanceNotice(view.document?.ownerScope, profile);
+  const newStage = appearance.unseen ?? unlockStage;
   useEffect(() => { if (view.document && detailsOwner !== null && view.document.ownerScope !== detailsOwner) setDetailsOwner(null); }, [view.document, detailsOwner]);
   useEffect(() => { stop(); setCaption(null); setFailed(null); setPop(null); setUnlockStage(null); setAnnouncement(""); }, [selectedQualification, questionId, view.document?.ownerScope, stop]);
   useEffect(() => {
@@ -106,6 +109,7 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
     toggleFocusRequested.current = false;
     (closed ? reopenButton.current : closeButton.current)?.focus({ preventScroll: true });
   }, [closed]);
+  if (appearanceOnly && !newStage) return null;
   if (closed) return <button type="button" ref={reopenButton} className={styles.button} onClick={() => preferences(false, paused)}>チワワのひと休みを開く</button>;
   const stage = profile?.selectedStage ?? "puppy";
   const shownPose = pose === "study" ? idlePose : pose;
@@ -114,7 +118,15 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
   const moving = visible && !paused && !reduced && pose !== "study";
   const remaining = profile ? petPartnerRemaining(profile) : null;
   const popText = pop ? `${pop.growth > 0 ? `+${pop.growth}` : ""}${pop.bond > 0 ? ` ♥+${pop.bond}` : ""}`.trim() : "";
-  return <section ref={panel} className={styles.panel} aria-labelledby={title} data-pet-id={profile?.petId ?? ""} data-pet-pose={pose} data-moving={moving}>
+  const openCare = () => { stop(); setOpenAppearance(newStage !== null); appearance.acknowledge(); setUnlockStage(null); setPop(null); setCaption(null); setDetailsOwner(view.document!.ownerScope); };
+  return <section ref={panel} className={`${styles.panel} ${compact ? styles.compact : ""}`} aria-labelledby={title} data-pet-id={profile?.petId ?? ""} data-pet-pose={pose} data-moving={moving} data-pet-compact={compact}>
+    {compact ? <button type="button" ref={detailsButton} className={styles.answerPet} disabled={view.status !== "ready"} onClick={openCare} aria-label={newStage ? `${PET_STAGE_LABELS[newStage]}の姿を見る` : "チワワのお世話を開く"}>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={image} alt="" width={64} height={64} className={moving ? styles.gesture : undefined} onError={() => setFailed(image)} />
+      <span className={styles.answerCopy}><strong id={title}>{profile?.name ?? "チワワ"}</strong><span>{newStage ? `${PET_STAGE_LABELS[newStage]}の姿が選べるよ` : caption ?? idleCaption ?? IDLE_CAPTION}</span>
+        {remaining !== null ? <span>相棒まで あと{remaining}問<meter aria-label="相棒までの進捗" min={0} max={5} value={5 - remaining} className={styles.progress} /></span> : <span>{profile?.unlockedStages.includes("expert") ? "これからも、いっしょに。" : `専門家へ ${Math.min(profile?.questions.filter(q => q.lastRewardedAt !== null).length ?? 0, 30)}/30問`}</span>}
+      </span><span className={styles.answerOpen}>{newStage ? "新しい姿" : "お世話"} ›</span>
+    </button> : <>
     <header className={styles.header}>
       {selectedQualification ? <PetNameTitle id={title} qualificationLabel={examLabel(selectedQualification)} name={profile?.name}
         document={view.status === "ready" && profile ? view.document ?? null : null} qualificationId={profile?.qualificationId} />
@@ -140,8 +152,9 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
       </div>
     </div>
     <div className={styles.actions}><button type="button" className={styles.button} disabled={view.status !== "ready"} onClick={() => { stop(); setManual(true); setPose("rest"); setCaption("のんびり、ひと休み。"); timer.current = setTimeout(stop, 6000); }}>ひと休み</button>
-      <button type="button" ref={detailsButton} className={`${styles.button} ${styles.primary}`} disabled={view.status !== "ready"} onClick={() => { stop(); setOpenAppearance(unlockStage !== null); setUnlockStage(null); setPop(null); setCaption(null); setDetailsOwner(view.document!.ownerScope); }}>{unlockStage ? `${PET_STAGE_LABELS[unlockStage]}の姿を見る` : <>育成を見る{profile && profile.unlockedStages.length > 1 ? <span className={styles.looks}>姿{profile.unlockedStages.length}種類</span> : null}</>}</button>
+      <button type="button" ref={detailsButton} className={`${styles.button} ${styles.primary}`} disabled={view.status !== "ready"} onClick={openCare}>{newStage ? `${PET_STAGE_LABELS[newStage]}の姿を見る` : <>育成を見る{profile && profile.unlockedStages.length > 1 ? <span className={styles.looks}>姿{profile.unlockedStages.length}種類</span> : null}</>}</button>
       <button type="button" className={styles.button} aria-pressed={paused} onClick={() => preferences(false, !paused)}>{paused ? "動きを許可" : "動きを止める"}</button></div>
+    </>}
     {/* Answer feedback that reaches the learner even when this panel is scrolled away. */}
     <span className={styles.srOnly} aria-live="polite" aria-atomic="true">{announcement}</span>
     {pop && (popText || pop.unlock) && questionId && !inView && pageVisible ? <div key={`toast-${pop.key}`} className={`${styles.toast} ${paused || reduced ? "" : styles.toastMove}`} aria-hidden="true">

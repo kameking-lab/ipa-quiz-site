@@ -36,7 +36,9 @@
 .sheet .treat { background:#fff3dc; border-color:#e9b45a; font-weight:700; }
 .check { display:flex!important; align-items:center; gap:8px; min-height:44px; font-size:13px!important; }
 .check input { width:20px; height:20px; flex-shrink:0; }
-.tiles { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
+.tiles { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+.tiles img { width:128px; height:128px; max-width:100%; }
+.selection { font-size:11px; font-weight:500; }
 .sheet .tile { display:flex; flex-direction:column; align-items:center; gap:4px; width:100%; padding:8px 4px; font-size:13px; font-weight:600; }
 .tile img { object-fit:contain; }
 .locked { filter:grayscale(1) brightness(.85); opacity:.6; }
