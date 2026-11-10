@@ -58,13 +58,10 @@ workflows:
         script: |
           set -euo pipefail
           LATEST_BUILD_NUMBER=$(app-store-connect get-latest-testflight-build-number "$APP_STORE_APPLE_ID")
-          # An empty successful result means no builds yet. API failures stop here.
-          LATEST_BUILD_NUMBER=${LATEST_BUILD_NUMBER:-0}
-          if [[ ! "$LATEST_BUILD_NUMBER" =~ ^[0-9]+$ ]]; then
-            echo "Expected an integer TestFlight build number." >&2
-            exit 1
-          fi
-          echo "BUILD_NUMBER=$((10#$LATEST_BUILD_NUMBER + 1))" >> "$CM_ENV"
+          # API errors, empty/stale results and invalid numbers must stop here.
+          # The helper requires at least the historically recorded build 13.
+          BUILD_NUMBER=$(node "$CM_BUILD_DIR/mobile/scripts/next-build-number.mjs" "$LATEST_BUILD_NUMBER")
+          echo "BUILD_NUMBER=$BUILD_NUMBER" >> "$CM_ENV"
       # Optional MOBILE_ADS_* settings in kakomon_ios are consumed by ios:prepare.
       # Missing values produce a functioning app with ads disabled.
       - name: Generate native project, Ads SDK, privacy manifest and icon
