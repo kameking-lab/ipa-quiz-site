@@ -8,7 +8,7 @@ import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { filterQuestions, isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { questionSourceEdition } from "@/lib/questions/source-label";
 import { questionPagePath, parseQuestionRoute } from "@/lib/seo/question-url";
-import { getQuestionsByExamStrict, groupByYearSeason } from "@/lib/seo/exam-meta";
+import { EXAM_DESCRIPTIONS, examMetaDescription, getQuestionsByExamStrict, groupByYearSeason } from "@/lib/seo/exam-meta";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import YearModePage from "@/app/modes/year/page";
 
@@ -21,6 +21,15 @@ describe("衛生管理者2026年10月公表版の労働生理", () => {
     ["eisei1", EISEI1_QUESTIONS, source1, 35, 98],
     ["eisei2", EISEI2_QUESTIONS, source2, 21, 70],
   ] as const) {
+    it(`${exam}: 部分収録の案内と旧版の法令適用時点を併記する`, () => {
+      // https://www.exam.or.jp/lckohyo/ （2026-11-10確認）
+      for (const description of [EXAM_DESCRIPTIONS[exam], examMetaDescription(exam, total)]) {
+        expect(description).toContain("2026年10月公表版の労働生理10問を部分収録");
+        expect(description).toContain(`計${total}問`);
+        expect(description).toContain("2025年10月・2026年4月公表版の法令問題は2026年1月以降施行の法令には対応していません。");
+      }
+    });
+
     it(`${exam}: 原本・公式正答・全肢解説を保つ`, () => {
       const paper = all.filter(q => q.season === "october");
       expect(all).toHaveLength(total);
