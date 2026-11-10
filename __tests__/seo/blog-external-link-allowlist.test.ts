@@ -19,6 +19,15 @@ import { getAllBlogPosts } from "@/data/blog";
 //
 // Newly added URLs verified resolving (HEAD, HTTP 200, no redirect) on 2026-09-28:
 const EXPECTED_EXTERNAL_URLS = [
+  // Focused SC/DB/FE guides: GET 200, verified 2026-11-11.
+  "https://www.ipa.go.jp/security/guide/insider.html",
+  "https://www.ipa.go.jp/security/guide/hjuojm00000055l0-att/ps6vr7000000jvcb.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/2015h27.html",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_fe_am_qs.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_fe_am_ans.pdf",
+  "https://www.postgresql.org/docs/current/queries-table-expressions.html",
+  "https://www.postgresql.org/docs/current/functions-aggregate.html",
+  "https://www.postgresql.org/docs/current/sql-expressions.html",
   // AD2: original journal abstract checked 2026-11-05. The article explicitly
   // distinguishes the prose-recall experiment from this site's outcomes.
   "https://www.psychologicalscience.org/journals/psychological-science/j.1467-9280.2006.01693.x/",
@@ -86,6 +95,7 @@ const ALLOWED_HOSTS = new Set([
   "www3.jitec.ipa.go.jp",
   "cbt-s.com",
   "www.psychologicalscience.org",
+  "www.postgresql.org",
 ]);
 
 // In markdown link form `[text](url)`, the URL ends at the closing paren, so the
