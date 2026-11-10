@@ -10,7 +10,7 @@ import { choiceDisplayLabel } from "@/lib/questions/display";
 import { defaultPracticeSession, practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { ExamCode, Question } from "@/lib/questions/types";
 
-const exams: ExamCode[] = ["shobo-setsubishi-kou4", "shobo-setsubishi-otsu6", "kikenbutsu-otsu4", "unko-kanrisha-kamotsu"];
+const exams: ExamCode[] = ["kikenbutsu-hei", "shobo-setsubishi-kou4", "shobo-setsubishi-otsu6", "kikenbutsu-otsu4", "unko-kanrisha-kamotsu"];
 
 describe("k11 official-source candidates remain private", () => {
   for (const exam of exams) {
@@ -55,6 +55,17 @@ describe("k11 official-source candidates remain private", () => {
       }
     });
   }
+
+  it("丙種 keeps the 25 official answers and publication identity", () => {
+    const questions: Question[] = JSON.parse(readFileSync(join(process.cwd(), "data/questions/kikenbutsu-hei/published-202606.json"), "utf8"));
+    expect(questions.map(q => Number(q.officialAnswerNumber))).toEqual([2,4,4,2,3,3,1,3,4,2,4,3,3,1,1,2,4,3,3,1,4,4,4,3,2]);
+    expect(questions.map(q => q.qNumber)).toEqual(Array.from({ length: 25 }, (_, i) => i + 1));
+    for (const q of questions) {
+      expect(q.sourceExamYear).toBeNull();
+      expect(q.season).toBe("published");
+      expect(q.publicationVersion).toBe("2026-06");
+    }
+  });
 
   it("乙4 keeps all 35 official answers and excerpt identity", () => {
     const questions: Question[] = JSON.parse(readFileSync(join(process.cwd(), "data/questions/kikenbutsu-otsu4/published-202606.json"), "utf8"));
