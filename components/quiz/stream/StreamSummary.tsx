@@ -43,9 +43,6 @@ export function StreamSummary({
       ? `${window.location.origin}/quiz/stream`
       : "https://www.kakomon-ai.jp/quiz/stream";
 
-  const xUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(
-    shareText,
-  )}&url=${encodeURIComponent(shareUrl)}`;
   const lineUrl = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(
     shareUrl,
   )}&text=${encodeURIComponent(shareText)}`;
@@ -78,15 +75,7 @@ export function StreamSummary({
           {pattern}
         </div>
 
-        <div className="mb-3 grid grid-cols-2 gap-3">
-          <a
-            href={xUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 rounded-2xl bg-white py-3 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-200"
-          >
-            <Share2 className="h-4 w-4" /> Xでシェア
-          </a>
+        <div className="mb-3">
           <a
             href={lineUrl}
             target="_blank"

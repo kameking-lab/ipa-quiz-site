@@ -15,8 +15,8 @@ import { buildWebPageNode } from "@/lib/seo/structured-data";
 const TRANSPARENCY_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
   type: "default",
   title: "運営の透明性レポート",
-  subtitle: "月次更新",
-  body: "API コスト・収益構造・意思決定プロセスをすべてオープンに公開。教育貢献の証として。",
+  subtitle: "運営方針と公開指標",
+  body: "教材の確認範囲・取得できた運営指標・未確認事項を公開。",
 }).toString()}`;
 
 export const metadata: Metadata = {
@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "運営の透明性レポート | 過去問AI",
     description:
-      "API コスト・収益構造・意思決定プロセスをすべてオープンに公開。教育貢献プロジェクトとしての月次レポート。",
+      "教材の確認範囲・取得できた運営指標・未確認事項を公開しています。",
     url: `${SITE_BASE_URL}/transparency`,
     type: "website",
     siteName: SITE_NAME,
@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "運営の透明性レポート | 過去問AI",
     description:
-      "API コスト・収益構造・意思決定プロセスをすべてオープンに公開。教育貢献プロジェクトとしての月次レポート。",
+      "教材の確認範囲・取得できた運営指標・未確認事項を公開しています。",
     images: [TRANSPARENCY_OG_URL],
   },
 };

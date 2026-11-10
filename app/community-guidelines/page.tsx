@@ -90,15 +90,6 @@ export default function CommunityGuidelinesPage() {
         <Link href="/contact" className="underline hover:text-zinc-900 dark:hover:text-zinc-50">
           お問い合わせ
         </Link>{" "}
-        または X{" "}
-        <a
-          href="https://x.com/kakomon_ai_jp"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="underline hover:text-zinc-900 dark:hover:text-zinc-50"
-        >
-          @kakomon_ai_jp
-        </a>{" "}
         までどうぞ。
       </div>
     </main>

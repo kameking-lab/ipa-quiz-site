@@ -438,13 +438,6 @@ function ResultView({
   const weakCatParam = weakCats.map(([cat]) => cat).join(",");
   const reviewUrl = `/quiz?mode=random&exam=${config.exam}${weakCatParam ? `&categoryGroup=${encodeURIComponent(weakCatParam)}` : ""}`;
 
-  const tweetLines = [
-    `IPA ${config.label} 模試: ${result.scorePct}点【${verdict}】`,
-    `正答率 ${result.correct}/${result.totalQuestions}問`,
-    weakCats.length > 0 ? `苦手分野: ${weakCats[0][0]}` : null,
-    "#IPA過去問 #IPA試験",
-  ].filter((l): l is string => l !== null);
-  const tweetUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(tweetLines.join("\n"))}`;
 
   const displayWrong = wrongExpanded ? wrongQuestions : wrongQuestions.slice(0, 5);
 
@@ -679,18 +672,6 @@ function ResultView({
         <Button onClick={onClose} variant="primary" className="flex-1">
           模試一覧に戻る
         </Button>
-        <a
-          href={tweetUrl}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="flex flex-1 items-center justify-center gap-1.5 rounded-xl border border-zinc-200 px-4 py-2 text-sm font-medium text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-300 dark:hover:bg-zinc-900"
-          aria-label="結果をシェア（X / 新しいタブで開く）"
-        >
-          <svg aria-hidden="true" viewBox="0 0 24 24" className="h-4 w-4 fill-current">
-            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.732-8.855L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-          </svg>
-          結果をシェア
-        </a>
       </div>
     </main>
   );
