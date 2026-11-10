@@ -1,6 +1,7 @@
 "use client";
 import { useCallback, useEffect, useId, useLayoutEffect, useRef, useState } from "react";
 import dynamic from "next/dynamic";
+import Link from "next/link";
 import { examLabel } from "@/lib/utils";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { petArtFor, petPathArtFor, type PetPose } from "@/lib/pet/v1/art";
@@ -11,16 +12,17 @@ import { usePetProfileView, type PetCommittedDetail, type PetProfileView } from 
 import { PetNameTitle } from "./PetNameTitle";
 import styles from "./LearningPetCorner.module.css";
 import { usePetAppearanceNotice } from "./usePetAppearanceNotice";
+import { usePetNextAction } from "./usePetNextAction";
 const PetCareSheet = dynamic(() => import("./PetCareSheet"), { ssr: false });
 
 const IDLE_CAPTION = "いっしょに、一問ずつ。";
 export { PET_STAGE_LABELS } from "@/lib/pet/v1/presentation";
 interface Pop { key: string; growth: number; bond: number; pose: PetPose; unlock: string | null }
 
-export function LearningPetCorner({ qualificationId, questionId, suppliedView, idlePose = "study", idleCaption, compact = false, appearanceOnly = false }: {
+export function LearningPetCorner({ qualificationId, questionId, suppliedView, idlePose = "study", idleCaption, compact = false, appearanceOnly = false, roomSeat = false }: {
   qualificationId?: string; questionId?: string; suppliedView?: PetProfileView;
   /** Qualification-specific study pose/caption for the learner's room seat. */
-  idlePose?: PetPose; idleCaption?: string; compact?: boolean; appearanceOnly?: boolean;
+  idlePose?: PetPose; idleCaption?: string; compact?: boolean; appearanceOnly?: boolean; roomSeat?: boolean;
 }) {
   const qualification = qualificationId === undefined ? undefined : canonicalPetQualification(qualificationId) ?? qualificationId;
   const [closed, setClosed] = useState(false), [paused, setPaused] = useState(false), [reduced, setReduced] = useState(true);
@@ -31,8 +33,10 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
   const [unlockStage, setUnlockStage] = useState<"partner" | "expert" | null>(null);
   const [announcement, setAnnouncement] = useState("");
   const [openAppearance, setOpenAppearance] = useState(false);
+  const [noticeOpened, setNoticeOpened] = useState(false);
   const [detailsOwner, setDetailsOwner] = useState<string | null>(null);
   const detailsButton = useRef<HTMLButtonElement>(null);
+  const settingsSummary = useRef<HTMLElement>(null);
   const closeButton = useRef<HTMLButtonElement>(null), reopenButton = useRef<HTMLButtonElement>(null);
   const toggleFocusRequested = useRef(false);
   const panel = useRef<HTMLElement>(null), timer = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -71,9 +75,10 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
   const selectedQualification = qualification ?? view.document?.events.at(-1)?.qualificationId ?? view.document?.profiles[0]?.qualificationId;
   const profile = view.document?.profiles.find(item => item.qualificationId === selectedQualification);
   const appearance = usePetAppearanceNotice(view.document?.ownerScope, profile);
+  const nextAction = usePetNextAction(profile, view.document);
   const newStage = appearance.unseen ?? unlockStage;
   useEffect(() => { if (view.document && detailsOwner !== null && view.document.ownerScope !== detailsOwner) setDetailsOwner(null); }, [view.document, detailsOwner]);
-  useEffect(() => { stop(); setCaption(null); setFailed(null); setPop(null); setUnlockStage(null); setAnnouncement(""); }, [selectedQualification, questionId, view.document?.ownerScope, stop]);
+  useEffect(() => { stop(); setCaption(null); setFailed(null); setPop(null); setUnlockStage(null); setAnnouncement(""); setNoticeOpened(false); }, [selectedQualification, questionId, view.document?.ownerScope, stop]);
   useEffect(() => {
     const ownerChanged = () => { setDetailsOwner(null); setUnlockStage(null); setCaption(null); setPop(null); setAnnouncement(""); stop(); };
     window.addEventListener("pet-v1:owner-changed", ownerChanged);
@@ -107,24 +112,25 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
     // after that commit, but never focus on saved-preference loads or refreshes.
     if (!toggleFocusRequested.current) return;
     toggleFocusRequested.current = false;
-    (closed ? reopenButton.current : closeButton.current)?.focus({ preventScroll: true });
-  }, [closed]);
-  if (appearanceOnly && !newStage) return null;
+    (closed ? reopenButton.current : roomSeat ? settingsSummary.current : closeButton.current)?.focus({ preventScroll: true });
+  }, [closed, roomSeat]);
+  if (appearanceOnly && !newStage && !noticeOpened) return null;
   if (closed) return <button type="button" ref={reopenButton} className={styles.button} onClick={() => preferences(false, paused)}>チワワのひと休みを開く</button>;
   const stage = profile?.selectedStage ?? "puppy";
   const shownPose = pose === "study" ? idlePose : pose;
-  const src = petArtFor(selectedQualification ?? null, stage, shownPose);
+  const src = petArtFor(selectedQualification ?? (roomSeat && view.status === "ready" ? "ip" : null), stage, shownPose);
   const image = failed === src ? petArtFor(selectedQualification ?? null, stage, "study") : src;
   const moving = visible && !paused && !reduced && pose !== "study";
   const remaining = profile ? petPartnerRemaining(profile) : null;
   const popText = pop ? `${pop.growth > 0 ? `+${pop.growth}` : ""}${pop.bond > 0 ? ` ♥+${pop.bond}` : ""}`.trim() : "";
-  const openCare = () => { stop(); setOpenAppearance(newStage !== null); appearance.acknowledge(); setUnlockStage(null); setPop(null); setCaption(null); setDetailsOwner(view.document!.ownerScope); };
-  return <section ref={panel} className={`${styles.panel} ${compact ? styles.compact : ""}`} aria-labelledby={title} data-pet-id={profile?.petId ?? ""} data-pet-pose={pose} data-moving={moving} data-pet-compact={compact}>
-    {compact ? <button type="button" ref={detailsButton} className={styles.answerPet} disabled={view.status !== "ready"} onClick={openCare} aria-label={newStage ? `${PET_STAGE_LABELS[newStage]}の姿を見る` : "チワワのお世話を開く"}>
+  const openCare = () => { stop(); setNoticeOpened(true); setOpenAppearance(newStage !== null); appearance.acknowledge(); setUnlockStage(null); setPop(null); setCaption(null); setDetailsOwner(view.document!.ownerScope); };
+  const studyHref = `/quiz?mode=random&exam=${encodeURIComponent(selectedQualification ?? "ip")}`;
+  return <section ref={panel} className={`${styles.panel} ${compact ? styles.compact : ""} ${roomSeat ? styles.roomSeat : ""}`} aria-labelledby={title} data-pet-id={profile?.petId ?? ""} data-pet-pose={pose} data-moving={moving} data-pet-compact={compact}>
+    {compact ? <button type="button" ref={detailsButton} className={styles.answerPet} disabled={view.status !== "ready" || !profile} onClick={openCare} aria-label={newStage ? `${PET_STAGE_LABELS[newStage]}の姿を見る` : "チワワのお世話を開く"}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={image} alt="" width={64} height={64} className={moving ? styles.gesture : undefined} onError={() => setFailed(image)} />
       <span className={styles.answerCopy}><strong id={title}>{profile?.name ?? "チワワ"}</strong><span>{newStage ? `${PET_STAGE_LABELS[newStage]}の姿が選べるよ` : caption ?? idleCaption ?? IDLE_CAPTION}</span>
-        {remaining !== null ? <span>相棒まで あと{remaining}問<meter aria-label="相棒までの進捗" min={0} max={5} value={5 - remaining} className={styles.progress} /></span> : <span>{profile?.unlockedStages.includes("expert") ? "これからも、いっしょに。" : `専門家へ ${Math.min(profile?.questions.filter(q => q.lastRewardedAt !== null).length ?? 0, 30)}/30問`}</span>}
+        {remaining !== null ? <span>相棒まで あと{remaining}問<meter aria-label="相棒までの進捗" min={0} max={5} value={5 - remaining} className={styles.progress} /></span> : <span>{nextAction?.label}</span>}
       </span><span className={styles.answerOpen}>{newStage ? "新しい姿" : "お世話"} ›</span>
     </button> : <>
     <header className={styles.header}>
@@ -132,7 +138,7 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
         document={view.status === "ready" && profile ? view.document ?? null : null} qualificationId={profile?.qualificationId} />
         : <h3 id={title} className={styles.title}>あなたの{profile?.name ?? "チワワ"}</h3>}
       {profile ? <span className={styles.stage}>{PET_STAGE_LABELS[stage]}</span> : null}
-      <button type="button" ref={closeButton} className={styles.button} aria-label="チワワのひと休みを閉じる" onClick={() => preferences(true, paused)}>閉じる</button>
+      {roomSeat ? <details className={styles.settings}><summary ref={settingsSummary}>設定</summary><button type="button" ref={closeButton} className={styles.button} aria-label="チワワのひと休みを閉じる" onClick={() => preferences(true, paused)}>閉じる</button><button type="button" className={styles.button} aria-pressed={paused} onClick={() => preferences(false, !paused)}>{paused ? "動きを許可" : "動きを止める"}</button></details> : <button type="button" ref={closeButton} className={styles.button} aria-label="チワワのひと休みを閉じる" onClick={() => preferences(true, paused)}>閉じる</button>}
     </header>
     <div className={styles.body}>
       <div className={styles.art}>
@@ -148,12 +154,14 @@ export function LearningPetCorner({ qualificationId, questionId, suppliedView, i
         {view.status === "unavailable" ? <p className={styles.small}>育成の保存を確認できませんでした。</p> : profile ? <>
           {remaining !== null ? <label className={styles.meter}><span>相棒まで あと{remaining}問</span>
             <meter className={styles.progress} min={0} max={5} value={5 - remaining} /></label> : null}
+          {remaining === null && nextAction ? <p className={styles.small}>{nextAction.label}</p> : null}
         </> : null}
       </div>
     </div>
-    <div className={styles.actions}><button type="button" className={styles.button} disabled={view.status !== "ready"} onClick={() => { stop(); setManual(true); setPose("rest"); setCaption("のんびり、ひと休み。"); timer.current = setTimeout(stop, 6000); }}>ひと休み</button>
+    <div className={styles.actions}>{!profile && view.status === "ready" ? <><Link prefetch={false} className={`${styles.button} ${styles.primary}`} href={studyHref}>この子と始める</Link><Link prefetch={false} className={styles.button} href="/#choose-qualification">資格を選ぶ</Link></> : <>
+      {roomSeat ? <Link prefetch={false} className={`${styles.button} ${styles.primary}`} href={nextAction?.href ?? studyHref}>{nextAction?.action ?? "学習の続きを解く"}</Link> : <button type="button" className={styles.button} disabled={view.status !== "ready"} onClick={() => { stop(); setManual(true); setPose("rest"); setCaption("のんびり、ひと休み。"); timer.current = setTimeout(stop, 6000); }}>ひと休み</button>}
       <button type="button" ref={detailsButton} className={`${styles.button} ${styles.primary}`} disabled={view.status !== "ready"} onClick={openCare}>{newStage ? `${PET_STAGE_LABELS[newStage]}の姿を見る` : <>育成を見る{profile && profile.unlockedStages.length > 1 ? <span className={styles.looks}>姿{profile.unlockedStages.length}種類</span> : null}</>}</button>
-      <button type="button" className={styles.button} aria-pressed={paused} onClick={() => preferences(false, !paused)}>{paused ? "動きを許可" : "動きを止める"}</button></div>
+      {!roomSeat ? <button type="button" className={styles.button} aria-pressed={paused} onClick={() => preferences(false, !paused)}>{paused ? "動きを許可" : "動きを止める"}</button> : null}</>}</div>
     </>}
     {/* Answer feedback that reaches the learner even when this panel is scrolled away. */}
     <span className={styles.srOnly} aria-live="polite" aria-atomic="true">{announcement}</span>

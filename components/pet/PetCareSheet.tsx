@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
 import { Dialog, DialogContent, DialogDescription, DialogTitle } from "@/components/ui/dialog";
 import type { PetProfileDocument } from "@/lib/pet/v1/profile";
 import { PET_BACKUP_MAX_BYTES } from "@/lib/pet/v1/profile";
@@ -13,6 +14,9 @@ import { examLabel } from "@/lib/utils";
 import { normalizePetName, PET_DEFAULT_NAME, PET_NAME_MAX } from "@/lib/pet/v1/name";
 import { petDisplayName } from "./PetNameTitle";
 import styles from "./PetCareSheet.module.css";
+import { usePetNextAction } from "./usePetNextAction";
+import { petAlbumEntries } from "@/lib/pet/v1/album";
+import { petLearningDay } from "@/lib/pet/v1/learning";
 
 const STAGE_NAMES = { puppy: "こいぬ", partner: "学習の相棒", expert: "専門家" } as const;
 
@@ -44,9 +48,12 @@ export default function PetCareSheet({ document: doc, qualificationId, initialAp
     setPose(next); if (profile) onPose(next, caption, profile.qualificationId); timer.current = setTimeout(() => { setPose("study"); setHearts(0); }, 6000);
   };
   const profile = selected ? doc?.profiles.find(item => item.qualificationId === selected) : doc?.profiles[0];
+  const nextAction = usePetNextAction(profile, doc);
   const progress = profile ? petGrowthProgress(profile) : null;
   const next = profile ? petNextStageProgress(profile) : null;
   const meal = profile?.care.meals.find(item => item.consumedAt === null);
+  const album = profile ? petAlbumEntries(profile) : [];
+  const nextScene = profile ? PET_ROOM_SCENES.find(scene => !profile.roomEvents.some(event => event.scene === scene)) : null;
   const act = async (work: () => Promise<void>) => {
     if (busy) return;
     setBusy(true); setMessage("");
@@ -91,7 +98,7 @@ export default function PetCareSheet({ document: doc, qualificationId, initialAp
               <p className={styles.name}>{petDisplayName(examLabel(profile.qualificationId), profile.name)}</p>
               <p className={styles.chips}><span className={styles.stageChip}>{STAGE_NAMES[profile.selectedStage]}</span>
                 {profile.selectedPath ? <span>{PET_PATH_LABELS[profile.selectedPath]}</span> : null}</p>
-              {next ? <p className={styles.goal}>{next.stage === "partner" ? `相棒まで あと${Math.max(0, 5 - progress.uniqueQuestions)}問` : "次は、専門家の姿。"}</p> : null}
+              {nextAction ? <p className={styles.goal}>{nextAction.label}</p> : null}
             </div>
           </div>
           <section aria-label="世話"><div className={styles.careRow}>
@@ -100,10 +107,13 @@ export default function PetCareSheet({ document: doc, qualificationId, initialAp
             {meal ? <button type="button" className={styles.treat} disabled={busy} onClick={() => care({ type: "feed", rewardId: meal.rewardId })}><span aria-hidden="true" className={styles.emoji}>🍖</span>ごほうびごはんを食べる</button> : null}
           </div></section>
           <button type="button" className={styles.done} disabled={busy} onClick={onClose}>学習へ戻る</button>
+          {nextAction ? <Link prefetch={false} className={styles.nextAction} href={nextAction.href}>{nextAction.action} ›</Link> : null}
           <details open={sections.appearance} onToggle={event => toggleSection("appearance", event.currentTarget.open)}><summary>姿</summary>
             <div className={styles.tiles}>{(["puppy", "partner", "expert"] as const).map(stage => { const open = profile.unlockedStages.includes(stage); return <button type="button" key={stage} className={styles.tile} disabled={busy || !open} aria-pressed={profile.selectedStage === stage} onClick={() => care({ type: "stage", stage })}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              {open ? <>{/* eslint-disable-next-line @next/next/no-img-element */}<img src={petArtFor(profile.qualificationId, stage, "study")} width={128} height={128} alt="" loading="lazy" decoding="async" /></> : null}{STAGE_NAMES[stage]}<span className={styles.selection}>{profile.selectedStage === stage ? "選択中" : open ? "この姿にする" : "これから"}</span></button>; })}</div>
+              {open ? <>
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img src={petArtFor(profile.qualificationId, stage, "study")} width={128} height={128} alt="" loading="lazy" decoding="async" />
+              </> : null}{STAGE_NAMES[stage]}<span className={styles.selection}>{profile.selectedStage === stage ? "選択中" : open ? "この姿にする" : "これから"}</span></button>; })}</div>
             {next ? <div className={styles.stageGoals}><p>{STAGE_NAMES[next.stage]}まで</p>{next.parts.map(part => <label key={part.unit} className={styles.meter}><span>{part.now}/{part.goal}{part.unit}</span><meter min={0} max={part.goal} value={part.now} /></label>)}</div> : null}
           </details>
           <details open={sections.paths} onToggle={event => toggleSection("paths", event.currentTarget.open)}><summary>特技</summary>
@@ -118,13 +128,16 @@ export default function PetCareSheet({ document: doc, qualificationId, initialAp
           <details open={sections.memories} onToggle={event => toggleSection("memories", event.currentTarget.open)}><summary>思い出</summary>
             <p className={styles.chips}><span>成長 {profile.growth}</span><span>なつき {profile.bond}</span><span>いっしょに{progress.learningDays}日</span></p>
           <section><h4>自習室のアルバム</h4>
-            <ul className={styles.album}>{PET_ROOM_SCENES.map(scene => { const event = profile.roomEvents.find(item => item.scene === scene), story = PET_ROOM_STORIES[scene]; return event ? <li key={scene}>
+            {album[0] ? <figure className={styles.latestMemory}>
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={`/images/pet-v1/${story.art}.webp`} alt="" width={72} height={72} loading="lazy" decoding="async" /><strong>{story.title}</strong><p>{story.text}</p><time>{event.day}</time>
-            </li> : <li key={scene} className={styles.unseen} aria-label="まだ見ていない出来事"><span aria-hidden="true">？</span></li>; })}</ul></section>
-          {profile.memories.length ? <section><h4>思い出</h4><ol className={styles.memories}>{profile.memories.slice(-50).reverse().map((memory, index) => <li key={`${memory.kind}-${memory.occurredAt}-${index}`}>
-            <time>{new Intl.DateTimeFormat("ja", { timeZone: doc.timeZone, month: "numeric", day: "numeric" }).format(memory.occurredAt)}</time>{memory.kind === "overcome" ? "苦手な問題を克服" : memory.kind === "stage" ? `${STAGE_NAMES[memory.stage]}に成長` : `${PET_PATH_LABELS[memory.path]}の特技`}
-          </li>)}</ol></section> : null}
+              <img src={album[0].art} alt="" width={200} height={200} loading="lazy" decoding="async" />
+              <figcaption><time>{new Intl.DateTimeFormat("ja", { timeZone: doc.timeZone, month: "numeric", day: "numeric" }).format(album[0].at)}</time><strong>{album[0].title}</strong><p>{album[0].detail}</p></figcaption>
+            </figure> : null}
+            {nextScene ? <p className={styles.nextMemory}>次の1枚「{PET_ROOM_STORIES[nextScene].title}」<br />{profile.roomEvents.some(event => event.day === petLearningDay(Date.now(), doc.timeZone)) ? "明日また1問で。" : "今日の1問で。"}</p> : null}
+          </section>
+          {album.length > 1 ? <ol className={styles.memories}>{album.slice(1, 50).map((memory, index) => <li key={`${memory.title}-${memory.at}-${index}`}>
+            <time>{new Intl.DateTimeFormat("ja", { timeZone: doc.timeZone, month: "numeric", day: "numeric" }).format(memory.at)}</time>{memory.title}
+          </li>)}</ol> : null}
           </details>
         </> : <><p className={styles.empty}>1問解くと、この資格の子に会えます。</p><button type="button" className={styles.done} disabled={busy} onClick={onClose}>学習へ戻る</button></>}
         <details open={sections.settings} onToggle={event => toggleSection("settings", event.currentTarget.open)}><summary>設定</summary>

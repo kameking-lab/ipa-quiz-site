@@ -60,3 +60,13 @@
 .answerCopy strong { font-size:13px; }
 .answerCopy meter { margin-top:3px; height:6px; }
 .answerOpen { flex:none; font-size:11px; font-weight:700; }
+.roomSeat { max-width:none; min-height:0; background:linear-gradient(135deg,#fffaf0f5,#edf5ecf5); box-shadow:0 6px 20px #5f421920; }
+.roomSeat .body { grid-template-columns:144px minmax(0,1fr); min-height:144px; }
+.roomSeat .art,.roomSeat .image { width:144px; height:144px; }
+.roomSeat a.button { display:inline-flex; align-items:center; justify-content:center; }
+.settings { position:relative; flex:none; font-size:12px; }
+.settings summary { min-height:44px; display:flex; align-items:center; cursor:pointer; }
+.settings[open] { position:absolute; right:12px; top:12px; z-index:2; padding:0 8px 8px; border:1px solid #9daea1; border-radius:12px; background:var(--background,#fff); }
+.settings .button { display:block; margin:4px 0; }
+.roomSeat { position:relative; }
+@media(max-width:360px) { .roomSeat .body { grid-template-columns:120px minmax(0,1fr); } .roomSeat .art,.roomSeat .image { width:120px; height:120px; } }

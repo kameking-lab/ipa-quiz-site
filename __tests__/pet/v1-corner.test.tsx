@@ -134,3 +134,12 @@ it("stops gestures and removes transient feedback while the page is hidden, with
     expect(screen.queryByText("+3 ♥+1")).toBeNull();
   } finally { Reflect.deleteProperty(window.document, "hidden"); }
 });
+it("keeps the appearance-only sheet and its return-focus target mounted after acknowledgement", () => {
+  document.profiles[0].unlockedStages.push("partner");
+  document.profiles[0].memories.push({ kind: "stage", stage: "partner", occurredAt: Date.now() });
+  render(<LearningPetCorner qualificationId="ap" questionId="ap-q2" compact appearanceOnly />);
+  fireEvent.click(screen.getByRole("button", { name: "相棒の姿を見る" }));
+  expect(screen.getByTestId("care-sheet")).toBeInTheDocument();
+  fireEvent.click(screen.getByRole("button", { name: "シートを閉じる" }));
+  expect(screen.getByRole("button", { name: "チワワのお世話を開く" })).toBeEnabled();
+});

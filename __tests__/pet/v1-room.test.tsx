@@ -54,3 +54,9 @@ it("uses an actual overcoming memory for continuity without inferring a failure 
   expect(petRoomGag(pet)).toContain("図をつなぐ");
   pet.memories.push({ kind: "overcome", questionId: "prior", occurredAt: at }); expect(petRoomGag(pet)).toContain("前に迷ったノート");
 });
+it("starts learning directly from an empty seat without entering an empty care sheet", () => {
+  render(<PetOwnStudySeat view={{ status: "ready", document: empty() }} />);
+  expect(screen.getByRole("link", { name: "この子と始める" })).toHaveAttribute("href", "/quiz?mode=random&exam=ip");
+  expect(screen.queryByRole("button", { name: "育成を見る" })).toBeNull();
+  expect(screen.queryByRole("dialog")).toBeNull();
+});

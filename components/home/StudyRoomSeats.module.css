@@ -18,3 +18,5 @@
 .button[aria-pressed="true"] { background: #e3ecd9; border-color: #355b38; }
 .button:focus-visible { outline: 3px solid #355b38; outline-offset: 2px; }
 .listNumber { flex: none; width: 24px; height: 24px; border: 1px solid #a8b69f; font-size: 12px; }
+.room :global(.study-room-scroll) { max-height:220px; overflow-y:hidden; }
+.room :global(.study-room-scene) { transform:translateY(-80px); margin-bottom:-80px; }

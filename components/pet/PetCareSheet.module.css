@@ -46,12 +46,12 @@
 .path { display:grid; gap:4px; min-width:0; }
 .goal { display:grid; gap:2px; font-size:11px; line-height:1.4; opacity:.85; text-align:center; }
 .sheet .plain { margin-top:8px; font-size:13px; }
-.album { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:8px; }
-.album li { display:flex; flex-direction:column; align-items:center; gap:2px; min-width:0; padding:6px 4px; border-radius:12px; background:rgba(127,127,127,.08); text-align:center; font-size:11px!important; line-height:1.4!important; }
-.album img { width:72px; height:72px; object-fit:contain; }
-.album strong { font-size:12px; }
-.album time { opacity:.7; }
-.album .unseen { justify-content:center; min-height:104px; font-size:28px!important; font-weight:700; color:#9aa59c; border:2px dashed #cfd6cd; background:none; }
+.latestMemory { display:grid; justify-items:center; gap:8px; padding:12px; border-radius:16px; background:#f7f1df; color:#273c32; text-align:center; }
+.latestMemory img { width:200px; height:200px; max-width:100%; object-fit:contain; }
+.latestMemory figcaption { display:grid; gap:4px; }
+.latestMemory time { font-size:12px; }
+.latestMemory strong { font-size:18px; }
+.nextMemory { padding:12px 0; text-align:center; }
 .memories { display:grid; gap:4px; max-height:200px; overflow:auto; }
 .memories li { display:flex; gap:8px; font-size:13px!important; }
 .memories time { flex-shrink:0; min-width:3.5em; opacity:.7; }
@@ -61,6 +61,7 @@
 .empty { margin:16px 0; font-weight:600; }
 .restore { border:1px solid #9daea1; border-radius:12px; padding:12px; margin-top:12px; }
 .done { width:100%; margin-top:12px; }
+.nextAction { display:flex; align-items:center; justify-content:center; min-height:44px; margin-top:8px; padding:8px; border-radius:12px; background:#2f6f5e; color:white; font-size:14px; font-weight:700; }
 @media(max-width:360px) { .hero { grid-template-columns:96px minmax(0,1fr); } .heroArt,.heroArt img { width:96px; height:96px; } .album { grid-template-columns:repeat(2,minmax(0,1fr)); } }
 @media(prefers-reduced-motion:reduce) { .sheet { animation:none!important; } }
 :global(.dark) .hero { background:linear-gradient(135deg,#242b25,#1d2c29); }

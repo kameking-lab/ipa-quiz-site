@@ -119,7 +119,7 @@ export function StudyRoom({ snapshot, suggestions }: {
       <h2 id="study-room-title"><span>それぞれの目標へ。</span><span>同じ空間で。</span></h2>
     </header>
     <div className="study-room-layout">
-      <div className="study-room-card">
+      <div className={`study-room-card ${styles.room}`}>
         <div className="study-room-toolbar"><h3>木もれびの自習室</h3></div>
         <div ref={scrollRef} className="study-room-scroll" tabIndex={0} aria-label="広がる自習室。横にスクロールできます"><div ref={sceneRef} data-stage={stage} data-motion-visible={motionVisible} data-bg-ready={backgroundReady} className="study-room-scene" role="group" aria-label={snapshot ? "前回取得時点の集計に基づくチワワの自習室" : "資格を紹介するイメージルーム"} onKeyDown={event => { if (event.key === "Escape") setSelected(null); }}>
           <span className="study-room-light" aria-hidden="true">木もれびの時間</span>
@@ -144,12 +144,12 @@ export function StudyRoom({ snapshot, suggestions }: {
           </span>}
           {snapshot?.count === 0 && <div className="study-room-empty"><p>静かな、自習室。</p></div>}
         </div></div>
+        <PetOwnStudySeat view={petView} />
         {seats.length > 0 && <div ref={seatListRef} className={styles.list} role="group" aria-label="自習室の席を選ぶ" onKeyDown={event => { if (event.key === "Escape") setSelected(null); }}>
           {seats.map(seat => <button key={selectionKey(seat)} type="button" className={styles.button} aria-controls="study-room-selection" aria-pressed={selected === selectionKey(seat)} onFocus={() => { focusedSeat.current = selectionKey(seat); }} onBlur={() => { focusedSeat.current = null; }} onClick={() => setSelected(value => value === selectionKey(seat) ? null : selectionKey(seat))}>
             <span className={styles.listNumber}>{seat.index + 1}</span><span>{seat.name}</span>
           </button>)}
         </div>}
-        <PetOwnStudySeat view={petView} />
 
       </div>
       <aside className="study-room-sidebar">
