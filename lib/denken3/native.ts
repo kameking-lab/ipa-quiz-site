@@ -12,6 +12,8 @@ import followMachine2026 from "@/data/questions/denken3/native-2026-upper-machin
 import followTheory2025 from "@/data/questions/denken3/native-2025-lower-theory-follow.json";
 import followMachine2025 from "@/data/questions/denken3/native-2025-lower-machine-follow.json";
 import followPower2025 from "@/data/questions/denken3/native-2025-lower-power-follow.json";
+import completionLaw2025 from "@/data/questions/denken3/native-2025-lower-law-completion.json";
+import completionLaw2026 from "@/data/questions/denken3/native-2026-upper-law-completion.json";
 import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
 
 const nonempty = z.string().trim().min(1);
@@ -53,6 +55,8 @@ const expected = [
   { sitting: "2025-lower", subject: "theory", numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18], fields: 22, packet: "64bf57dd86f509f447bf6765d80ce832b50f6c87ce5f0b0ab96dc80888ade154" },
   { sitting: "2025-lower", subject: "machine", numbers: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18], fields: 22, packet: "64bf57dd86f509f447bf6765d80ce832b50f6c87ce5f0b0ab96dc80888ade154" },
   { sitting: "2025-lower", subject: "power", numbers: [9, 10, 11, 12, 13, 14, 15, 16, 17], fields: 12, packet: "a9980c1c7482214ddbf3522b604e6844787406d8518cb3d1305a1dcea0385b3f" },
+  { sitting: "2025-lower", subject: "law", numbers: [4, 6, 7, 9, 12], fields: 6, packet: "42043178c4f61db9e0cc5255fc2c8c80074983323ab52d77cce9db52b968236a" },
+  { sitting: "2026-upper", subject: "law", numbers: [4, 6, 7, 9], fields: 4, packet: "c67b5c60141f6a68c66163b864ca7f3cc6596c09a7a58a1d5bc656ec29bbf67c" },
 ] as const;
 function parsePart(raw: unknown, rule: (typeof expected)[number]) {
   const item = part.parse(raw);
@@ -88,10 +92,10 @@ function parsePart(raw: unknown, rule: (typeof expected)[number]) {
   if (item.questions.reduce((sum, q) => sum + q.slots.length, 0) !== rule.fields) throw new Error(`Denken3 source field count mismatch: ${rule.sitting}`);
   return item;
 }
-const raws: unknown[] = [theory2026, power2026, law2026, law2025, nextPower2026, nextMachine2026, nextLaw2026, nextLaw2025, nextPower2025, followMachine2026, followTheory2025, followMachine2025, followPower2025];
+const raws: unknown[] = [theory2026, power2026, law2026, law2025, nextPower2026, nextMachine2026, nextLaw2026, nextLaw2025, nextPower2025, followMachine2026, followTheory2025, followMachine2025, followPower2025, completionLaw2025, completionLaw2026];
 export const DENKEN3_NATIVE_PARTS = raws.map((raw, index) => parsePart(raw, expected[index]!));
 export const DENKEN3_NATIVE_QUESTIONS = DENKEN3_NATIVE_PARTS.flatMap(item => item.questions);
-if (DENKEN3_NATIVE_QUESTIONS.length !== 121 || new Set(DENKEN3_NATIVE_QUESTIONS.map(q => q.id)).size !== 121) throw new Error("Denken3 native original count mismatch");
+if (DENKEN3_NATIVE_QUESTIONS.length !== 130 || new Set(DENKEN3_NATIVE_QUESTIONS.map(q => q.id)).size !== 130) throw new Error("Denken3 native original count mismatch");
 const subjectMap: Record<string, string> = { riron: "theory", denryoku: "power", kikai: "machine", houki: "law" };
 const sittingMap: Record<string, string> = { first: "upper", second: "lower" };
 const identity = (year: number, sitting: string, subject: string, number: number, examDate: string) => `${year}:${sitting}:${subject}:${number}:${examDate}`;
@@ -104,7 +108,7 @@ const combined = new Set(old);
 for (const q of DENKEN3_NATIVE_QUESTIONS) combined.add(identity(q.year, q.sitting.split("-")[1]!, q.subject, q.number, q.examDate));
 export const DENKEN3_PUBLISHED_ORIGINAL_COUNT = combined.size;
 export const DENKEN3_NEW_ORIGINAL_COUNT = combined.size - old.size;
-if (combined.size !== 325 || DENKEN3_NEW_ORIGINAL_COUNT !== 61) throw new Error("Denken3 native/legacy overlap changed");
+if (combined.size !== 329 || DENKEN3_NEW_ORIGINAL_COUNT !== 65) throw new Error("Denken3 native/legacy overlap changed");
 export const DENKEN3_NATIVE_SUBJECTS = [...new Set(DENKEN3_NATIVE_PARTS.map(p => `${p.sitting}:${p.subject}`))].map(key => {
   const [sitting, subject] = key.split(":");
   return getDenken3NativePart(sitting!, subject)!;

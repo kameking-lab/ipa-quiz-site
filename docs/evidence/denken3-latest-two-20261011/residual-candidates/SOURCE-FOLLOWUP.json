@@ -1,0 +1,253 @@
+{
+  "state": "BOTH_EXISTING_SOURCE_HOLDS_RETAINED",
+  "q10": {
+    "verdict": "HOLD_APPLICABLE_JEAC_BODY_MISSING",
+    "newPrimaryEvidence": [
+      {
+        "sourceId": "JEMA-DS9217-2007",
+        "publisher": "一般社団法人日本電機工業会 (JEMA)",
+        "title": "受変電設備保守点検の要点（第3版）",
+        "metadataUrl": "https://www.jema-net.or.jp/publication/reports/DS9217.html",
+        "bodyUrl": "https://www.jema-net.or.jp/randb-archives/DS9217_200706.pdf",
+        "edition": "2007年6月・第3版",
+        "editionVerification": "Official publisher metadata states latest edition year 2007 and June 2007 third-edition publication; 94 PDF pages.",
+        "bodyReadMethod": "Public web PDF text layer read before local download failed. Page image verification not completed.",
+        "localPdfSaved": false,
+        "sha256": null,
+        "relevantLocations": [
+          {
+            "physicalPageOneBased": 6,
+            "printedPage": "2",
+            "section": "2.1 保守点検の内容 / 表2.1 / 注1",
+            "meaning": "精密点検は設備を停止し、巡視・普通点検の情報を踏まえて、全機能・性能の確認と回復のため分解整備、部品交換、測定・試験を行う。注1の周期は可動機器約6年、静止機器10～15年という機器別推奨である。",
+            "choiceMapping": [
+              3
+            ],
+            "supportLevel": "Partial support for detailed inspection content only; does not prove JEAC 2-to-5-year classification."
+          },
+          {
+            "physicalPageOneBased": 16,
+            "printedPage": "12",
+            "section": "6 保守点検結果の活用 (1)-(3)",
+            "meaning": "点検結果を異常箇所の整備・保守対応と保全計画へ反映する。点検は機能等の確認、整備は使用可能な状態を維持・修復する作業として区別し、修理・改修等を整備に含める。",
+            "choiceMapping": [
+              5
+            ],
+            "supportLevel": "Partial support for response after inspection; not JEAC maintenance definition."
+          },
+          {
+            "physicalPageOneBased": 17,
+            "printedPage": "13",
+            "section": "図6.1 点検結果の基本的処理形態",
+            "meaning": "異常の緊急性に応じ、メーカー連絡、使用者による原因究明・処置、監視強化、停止計画や保全計画への組込みを選ぶ。",
+            "choiceMapping": [
+              5
+            ],
+            "supportLevel": "General maintenance process only."
+          }
+        ],
+        "materialLimit": "分類が巡視点検・普通点検・精密点検・臨時点検の4区分で、Q10のJEAC日常巡視・日常点検・定期点検の区分と同一ではない。JEAC2025への継承関係も未確認。"
+      },
+      {
+        "sourceId": "MELSC-maintenance",
+        "publisher": "三菱電機システムサービス株式会社",
+        "title": "メンテナンス：フィールド総合ソリューション",
+        "url": "https://www.melsc.co.jp/business/onestop/maintenance/",
+        "edition": null,
+        "editionLimit": "Web page publication/update date and JEAC edition are not displayed in the obtained body.",
+        "location": "主要機器のメンテナンス周期と更新推奨時期の表・高圧配電盤行・表下の参考資料表示",
+        "meaning": "高圧配電盤の普通点検0.5～1年、精密（細密）点検2～5年を示す。参考資料はJEMA『高低圧電気機器保守点検のおすすめ』である。",
+        "choiceMapping": [
+          3
+        ],
+        "supportLevel": "Primary manufacturer service page confirms a 2-to-5-year example for high-voltage switchboards only.",
+        "materialLimit": "機器別サービスの推奨周期であり、JEAC8011-2025の精密点検一般定義ではない。分解・測定・試験のJEAC本文や2026-04-01適用版を証明しない。",
+        "localHtmlSaved": false,
+        "sha256": null
+      },
+      {
+        "sourceId": "JEA-Hokuriku-book",
+        "publisher": "一般社団法人日本電気協会 北陸支部",
+        "title": "図書・ビデオ等のご案内",
+        "url": "https://www.hokuriku-denkikyokai.jp/book.html",
+        "edition": "JEAC8011-2025・第5版1刷",
+        "location": "使用設備 > 高圧受電設備規程の欄",
+        "meaning": "2025年11月発行、JEAC8011-2025、478頁と第5版1刷正誤表へのリンクを表示。第1編第3章が保守・点検であり、2025改定で保守・点検の留意事項を追加したと案内する。",
+        "choiceMapping": [
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "supportLevel": "Edition/publication metadata corroboration only.",
+        "materialLimit": "本タスクでは定義本文は公開されていない。発行年月から基準日時点の入手可能性は示せるが、試験に適用する版や旧版定義の不変性は確定できない。",
+        "localHtmlSaved": false,
+        "sha256": null
+      },
+      {
+        "sourceId": "JEA-QA2025-product",
+        "publisher": "一般社団法人日本電気協会",
+        "title": "2025年版 高圧受電設備規程Q&A",
+        "url": "https://store.denki.or.jp/products/高圧受電設備規程ｑ-ａ-コピー",
+        "edition": "2025年版",
+        "location": "商品説明・目次PDFへの公開リンク",
+        "meaning": "JEAC8011-2025の第1編から第3編の質問・補足事項をまとめ、2025改定概要を付録に収録する旨を表示。",
+        "supportLevel": "Future source location lead only; no Q10 definition body.",
+        "publicTocUrl": "https://www.hokuriku-denkikyokai.jp/20251110_book_kouatsujyuden%20mokuji.pdf",
+        "tocPageCount": 4,
+        "tocTextAvailable": false,
+        "tocPageImageVerified": false,
+        "materialLimit": "公開目次は文字層を取得できず、in-app browserも空白表示だった。肢3・5本文、条番号・本文ページの断定には使わない。"
+      }
+    ],
+    "choiceEvidence": {
+      "1": {
+        "localCandidateDecision": "適切",
+        "newDirectApplicableSupport": false,
+        "state": "Existing Togami 2014 quotation support unchanged; JEAC2025 body still missing."
+      },
+      "2": {
+        "localCandidateDecision": "不適切・公式正答2",
+        "newDirectApplicableSupport": false,
+        "state": "Existing official key and Togami daily/periodic distinction unchanged; do not infer JEAC2025 body from key."
+      },
+      "3": {
+        "localCandidateDecision": "適切",
+        "newDirectApplicableSupport": false,
+        "newSupplementalSupport": [
+          "JEMA-DS9217-2007",
+          "MELSC-maintenance"
+        ],
+        "state": "General content and switchboard period example found; a dated applicable JEAC definition covering both content and 2-to-5-year period remains absent."
+      },
+      "4": {
+        "localCandidateDecision": "適切",
+        "newDirectApplicableSupport": false,
+        "state": "Existing Togami 2014 quotation support unchanged; JEAC2025 body still missing."
+      },
+      "5": {
+        "localCandidateDecision": "適切",
+        "newDirectApplicableSupport": false,
+        "newSupplementalSupport": [
+          "JEMA-DS9217-2007"
+        ],
+        "state": "General post-inspection maintenance process found; applicable JEAC maintenance definition remains absent."
+      }
+    },
+    "specificRemainingMaterial": [
+      "JEAC8011の2026-04-01基準日時点の適用版を確定できる一次資料。2025版の発行情報だけで適用を断定しない。",
+      "その版の点検分類本文（既存候補では1320節を参照するが、2025条番号・本文ページは未確認）。日常巡視、日常点検、定期点検、精密点検、臨時点検を直接確認する。",
+      "精密点検の2年から5年程度という周期と、必要に応じた分解・点検・測定・試験が一つの定義として示された直接本文。",
+      "各種点検の異常、修理・改修の必要に応じた措置という保守の直接本文。"
+    ],
+    "directJeac2025BodyObtained": false
+  },
+  "q01": {
+    "verdict": "HOLD",
+    "primarySources": [
+      {
+        "issuer": "中部電力",
+        "title": "発電方法の種類 - 水力発電のしくみ・特徴",
+        "url": "https://www.chuden.co.jp/energy/renew/ren_shikumi/wat_shikumi/wat_hatsuden/",
+        "physicalPdfPage": null,
+        "printedPage": null,
+        "section": "構造物による分類 / 水路式・ダム式・ダム水路式",
+        "access": "正規公開HTMLをweb openで直接確認",
+        "comparisonCondition": "各方式の構造による分類。共通の地形、規模、経済条件または統計母集団を設定した比較ではない。",
+        "finding": "水路式は上流のえん堤から長い水路で適当な落差が得られる場所へ導水する。ダム式はダムでせき止めた湖の落差を利用する。ダム水路式は両者を組み合わせる。",
+        "directSupportsTargetComparison": false,
+        "limit": "三方式の落差の得方を説明するが、水路式対ダム式の一般的な大小順位は記載しない。"
+      },
+      {
+        "issuer": "関西電力",
+        "title": "発電方法の種類 / 水力発電の概要",
+        "url": "https://www.kepco.co.jp/energy_supply/energy/newenergy/water/shikumi/method.html",
+        "physicalPdfPage": null,
+        "printedPage": null,
+        "section": "発電所形式 / ダム式・水路式・ダム水路式",
+        "access": "正規公開HTMLをweb openで直接確認",
+        "comparisonCondition": "発電所形式と運用方式を別項目で定義。共通の落差比較条件はない。",
+        "finding": "水路式は小さなえん堤から長い水路で適当な落差の場所へ導水し、川の水量に左右される。ダム式とダム水路式は貯水で水量を調整できる。",
+        "directSupportsTargetComparison": false,
+        "limit": "流量調整の比較は確認できるが、落差の一般比較には転用できない。"
+      },
+      {
+        "issuer": "JICA",
+        "title": "水力開発ガイドマニュアル 第1分冊 一般水力・揚水式水力発電",
+        "url": "https://openjicareport.jica.go.jp/pdf/0000256044_01.pdf",
+        "sha256": "d8e0afaf5a053797c729cc1fb3246e09d16856e8274d32c16e56828714484728",
+        "pdfPageCount": 402,
+        "physicalPdfPage": 17,
+        "printedPage": "3-4",
+        "section": "3.2.2 落差を得る方法による分類",
+        "additionalReadPages": [
+          {
+            "physicalPdfPage": 15,
+            "printedPage": "3-2",
+            "section": "3.2.1 発電所の運用上の特性による分類"
+          },
+          {
+            "physicalPdfPage": 65,
+            "printedPage": "5-23",
+            "section": "5.3.4 貯水池式の検討 / ダム位置・発電所位置・水路ルートの選定"
+          }
+        ],
+        "access": "指定された既存ローカルPDFを直接読了。p17は全文抽出と描画を直接確認。公開URLの新規取得・迂回取得は行っていない。",
+        "comparisonCondition": "p17では水路式は急勾配の上中流部に適し、ダム式の高いダムには狭い川幅と良好な地質を条件とする。p65は地形と工事費を踏まえた個別位置選定。",
+        "finding": "水路式は河川勾配と緩勾配水路の差で落差を得る。ダム式は主としてダム高による。ダム水路式は両方式を組み合わせる。位置選定では急な河川勾配と水路で大きな落差が得られる地形を利用する。",
+        "directSupportsTargetComparison": false,
+        "limit": "地形・地質の条件を明示した設計説明であり、水路式がダム式より一般的に低落差になるとは述べない。大規模と小規模の運用分類を、そのまま落差の比較に置き換えない。"
+      },
+      {
+        "issuer": "長野県 中小規模水力発電技術支援チーム",
+        "title": "中小水力発電導入の手引き (平成29年7月)",
+        "url": "https://www.pref.nagano.lg.jp/kigyo/documents/documents/guidebook2.pdf",
+        "physicalPdfPage": 4,
+        "printedPage": "3",
+        "section": "設置場所と発電規模の検討 / 発電所管理職員のコラム",
+        "additionalReadPages": [
+          {
+            "physicalPdfPage": 5,
+            "printedPage": "4",
+            "section": "発電規模の計算"
+          },
+          {
+            "physicalPdfPage": 6,
+            "printedPage": "5",
+            "section": "有効落差の把握"
+          }
+        ],
+        "access": "正規公開PDFをweb openで直接確認",
+        "comparisonCondition": "候補地点ごとに取水位・放水位の総落差と損失落差を把握して規模を求める手順。コラムは流量運用の比較。",
+        "finding": "水路式は河川流量に従う運用、ダム式は貯水による運用調整を説明する。有効落差は候補地点の取水位から放水位までの総落差と損失落差に基づき把握する。",
+        "directSupportsTargetComparison": false,
+        "limit": "個別地点の評価手順と流量運用の差は示すが、水路式対ダム式・ダム水路式の一般的な高落差の得やすさは比較しない。"
+      },
+      {
+        "issuer": "国土交通省 関東地方整備局 利根川水系砂防事務所",
+        "title": "烏川の資料 / 2章 郷土のくらし",
+        "url": "https://www.ktr.mlit.go.jp/tonesui/karasu/chapter2_2025karasugawa_05/publication-web-resources/html/publication-11.html",
+        "physicalPdfPage": null,
+        "printedPage": "78",
+        "section": "水路式・ダム式・ダム水路式の解説",
+        "access": "発行者の正規公開HTMLをweb openで直接確認",
+        "comparisonCondition": "各形式の説明。共通の設計条件または統計比較は設定しない。",
+        "finding": "水路式は水路で引いた水を落差のある場所で利用し、ダム式はダム水面と下の川の落差を利用する。ダム水路式は両方式を組み合わせ大きな落差を利用する。",
+        "directSupportsTargetComparison": false,
+        "limit": "ダム水路式で大きな落差を利用できる説明から、水路式対ダム式の一般比較は証明できない。"
+      }
+    ],
+    "directGeneralComparisonSourcesFound": 0,
+    "requiredToResolve": "水路式対ダム式の一般比較を直接説明し、落差の定義と地形・水路長・ダム高・規模等の比較条件を明示した発行者の一次技術本文、または共通条件と母集団をそろえた設計比較。"
+  },
+  "primaryReportSha256": {
+    "q10": "6da432bf47e2ee61d41ad687247afa5afea597e0056721acdb6e5734263f56ca",
+    "q01": "a605ab6aec0be0431ccb2be4c9ebdf6fec676278f216f1591970b402b06ccd9e"
+  },
+  "sourceReady": false,
+  "wholeQuestionGO": false,
+  "newPaidApiOrCredentials": false,
+  "refusedEndpointsRetriedOrBypassed": false,
+  "limitations": "JEMA equipment periods and classification are independent recommendations, not direct JEAC 8011-2025 clauses. Definitions of hydro plant structure do not establish a general ranking of head between waterway and dam types."
+}
