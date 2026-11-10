@@ -42,7 +42,10 @@ describe("k11 official-source candidates remain private", () => {
         expect(defaultPracticeSession(q.exam)).toBe("gakka");
         expect(practiceSessionLabel(q.session, q.exam)).not.toContain("薬学");
         for (const url of [...(q.imageUrls ?? []), ...(q.answerImageUrls ?? [])]) {
-          expect(existsSync(join(process.cwd(), "public", url))).toBe(true);
+          // Neither direct static URLs nor the image optimizer's internal fetch
+          // may read staged assets. Keep the bytes outside the public root.
+          expect(existsSync(join(process.cwd(), "public", url))).toBe(false);
+          expect(existsSync(join(process.cwd(), "private-assets/k11", url))).toBe(true);
         }
         if (q.type === "descriptive") continue;
         const keys = Object.keys(q.choices!);
