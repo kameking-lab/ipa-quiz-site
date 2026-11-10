@@ -562,9 +562,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.sssc.or.jp/kaigo/past_exam/index.html",
     officialReuseTermsUrl: "https://www.sssc.or.jp/pastissues/index.html",
     status: "live",
-    reuseSummary: "第38回（令和7年度）の全125問（総合問題・図の問題を含む）と全選択肢の解説を収録。",
+    reuseSummary: "第36〜38回（令和5〜7年度）の全375問（総合問題・図の問題を含む）と全選択肢の解説を収録。",
     attributionTemplate: "出典：公益財団法人社会福祉振興・試験センター 第○回介護福祉士国家試験 問題○",
-    remainingWork: ["第37回・第36回の追加", "法改正で成立しなくなった問題の失効管理"],
+    remainingWork: ["法改正で成立しなくなった問題の失効管理"],
 },
 {
     slug: "shakai",
