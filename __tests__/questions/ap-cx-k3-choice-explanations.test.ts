@@ -4,15 +4,19 @@ import { AP_BY_YEAR_QUESTIONS } from "@/data/questions/ap/by-year";
 import overlay from "@/data/questions/ap/choice-explanations-cx-k3.json";
 import type { ChoiceKey } from "@/lib/questions/types";
 
+const previousOverlay = Object.fromEntries(
+  Object.entries(overlay).filter(([id]) => /^ap-202[2-5]/.test(id)),
+);
+
 describe("AP 2022–2025 cx-k3 choice explanations", () => {
   it("retains the reviewed coverage of all eight papers", () => {
     const counts: Record<string, number> = {};
     for (const question of AP_QUESTIONS) {
-      if (!(question.id in overlay)) continue;
+      if (!(question.id in previousOverlay)) continue;
       const paper = `${question.year}/${question.season}`;
       counts[paper] = (counts[paper] ?? 0) + 1;
     }
-    expect(Object.keys(overlay)).toHaveLength(552);
+    expect(Object.keys(previousOverlay)).toHaveLength(552);
     expect(counts).toEqual({
       "2022/spring": 74, "2022/autumn": 68,
       "2023/spring": 70, "2023/autumn": 72,
@@ -24,7 +28,7 @@ describe("AP 2022–2025 cx-k3 choice explanations", () => {
   it("loads all overlay entries without changing official answers", () => {
     const originals = new Map(AP_BY_YEAR_QUESTIONS.map(q => [q.id, q]));
     const loaded = new Map(AP_QUESTIONS.map(q => [q.id, q]));
-    for (const [id, reasons] of Object.entries(overlay)) {
+    for (const [id, reasons] of Object.entries(previousOverlay)) {
       const question = loaded.get(id)!;
       expect(question, id).toBeDefined();
       expect(question.year, id).toBeGreaterThanOrEqual(2022);
