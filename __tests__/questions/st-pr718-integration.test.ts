@@ -5,6 +5,7 @@ import { ST_QUESTIONS, ST_PR718_ADOPTED_IDS, ST_PR757_ADOPTED_IDS } from "@/data
 import corrections from "@/docs/evidence/st-residual11-20261011/source-corrections.json";
 import receipt from "@/docs/evidence/st-all-choice-explanations-20261011/RECHECK-20261110.json";
 import official from "@/docs/evidence/st-all-choice-explanations-20261011/official-keys.json";
+import releaseRuntimePins from "@/__tests__/fixtures/cx-release-20261110-runtime-pins.json";
 
 const hash = (value: unknown) => createHash("sha256").update(JSON.stringify(value)).digest("hex");
 describe("PR718 gap-only adoption on current main", () => {
@@ -22,7 +23,9 @@ describe("PR718 gap-only adoption on current main", () => {
     const adopted = new Set(ST_PR718_ADOPTED_IDS);
     expect(adopted.size).toBe(412);
     expect([...adopted].sort()).toEqual([...receipt.adoptedIds].sort());
-    expect(hash(ST_QUESTIONS.filter(q => !adopted.has(q.id) && !residual.has(q.id) && q.choiceExplanations))).toBe(receipt.existingExplainedSha256);
+    // k8st refines two SCOR reasons in accepted399 after the PR718 receipt.
+    // Preserve that historical receipt and pin the integrated reviewed result.
+    expect(hash(ST_QUESTIONS.filter(q => !adopted.has(q.id) && !residual.has(q.id) && q.choiceExplanations))).toBe(releaseRuntimePins.stExistingExplainedSha256);
   });
   it("binds all adopted explanation targets to official keys", () => {
     for (const id of ST_PR718_ADOPTED_IDS) {
