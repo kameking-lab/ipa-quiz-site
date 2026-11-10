@@ -5,6 +5,7 @@ import {
   examTopTitle,
   examTopDescription,
   examFullName,
+  getQuestionsByExamStrict,
 } from "@/lib/seo/exam-meta";
 import { formatYearSeason, examLabel } from "@/lib/utils";
 import type { Question, Season } from "@/lib/questions/types";
@@ -84,15 +85,16 @@ describe("groupByCategory", () => {
 
 describe("title / description / full-name string contracts", () => {
   it("examTopTitle embeds the exam label", () => {
-    expect(examTopTitle("ap")).toBe(`${examLabel("ap")} 過去問・午前解説と午後対策`);
-    expect(examTopTitle("ip")).toBe(`${examLabel("ip")} 過去問一覧・AI解説`);
+    expect(examTopTitle("ap")).toBe(`${examLabel("ap")} 過去問・解説とAI質問`);
+    expect(examTopTitle("ip")).toBe(`${examLabel("ip")} 過去問・解説とAI質問`);
   });
 
-  it("examTopDescription includes the question count and exam label", () => {
+  it("examTopDescription includes the published pool count and formal exam name", () => {
     const desc = examTopDescription("ap", 1234);
-    expect(desc).toContain("1,234問");
-    expect(desc).toContain(examLabel("ap"));
-    expect(desc).toContain("午後記述のAI採点は未対応");
+    expect(desc).toContain(`${getQuestionsByExamStrict("ap").length.toLocaleString("ja-JP")}問`);
+    expect(desc).toContain(examFullName("ap"));
+    expect(desc).toContain("科目Aの知識確認");
+    expect(desc).not.toContain("未対応");
   });
 
   it("examFullName returns the formal exam name for every code", () => {

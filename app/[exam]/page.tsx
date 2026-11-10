@@ -32,7 +32,8 @@ import dynamic from "next/dynamic";
 import { FirstPracticeEntry, FIRST_PRACTICE_EXAMS } from "@/components/exam/FirstPracticeEntry";
 import { ExamTopBrowse } from "@/components/exam/ExamTopBrowse";
 import { ExamTopGuide } from "@/components/exam/ExamTopGuide";
-import { examEntrySummary, isExamEntryCode } from "@/lib/seo/exam-entry";
+import { isExamEntryCode } from "@/lib/seo/exam-entry";
+import { isIpaTop } from "@/lib/seo/ipa-top";
 import { KanriCoverageNote } from "@/components/exam/KanriCoverageNote";
 import { Tsushin1CoverageNote } from "@/components/exam/Tsushin1CoverageNote";
 const ExamBrowseTabs = dynamic(
@@ -242,7 +243,7 @@ export default async function ExamTopPage({
   const hasAm1 = questions.some((q) => q.session === "am1");
   const hasAm2 = questions.some((q) => q.session === "am2");
   const isHighLevel = code !== "kenchiku-setsubishi" && hasAm1 && hasAm2;
-  const summary = isExamEntryCode(code) ? examEntrySummary(code) : code === "hokenshi" || code === "josanshi" || code === "rinsho-kensagishi" || code === "shinryo-hoshasengishi" || code === "sagyo-ryohoshi"
+  const summary = isIpaTop(code) ? examTopDescription(code, publishedOriginalCount) : code === "hokenshi" || code === "josanshi" || code === "rinsho-kensagishi" || code === "shinryo-hoshasengishi" || code === "sagyo-ryohoshi"
     ? examMetaDescription(code, publishedOriginalCount)
     : EXAM_DESCRIPTIONS[code] ?? `${examLabel(code)}の過去問演習。`;
 
@@ -286,12 +287,12 @@ export default async function ExamTopPage({
             {examLabel(code)}
           </Badge>
           <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            {examLabel(code)} 過去問
+            {examLabel(code)} {isIpaTop(code) ? "過去問・解説" : "過去問"}
           </h1>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{summary}</p>
           {isExamEntryCode(code) && <FirstPracticeEntry exam={code} />}
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
-            <Badge variant="outline">{isExamEntryCode(code) ? "午前の収録" : "収録"} {publishedOriginalCount} 問</Badge>
+            <Badge variant="outline">収録 {publishedOriginalCount} 問</Badge>
             <Badge variant="outline">{years.length} 期分</Badge>
             <Badge variant="outline">{categories.length} 分野</Badge>
           </div>
@@ -406,11 +407,11 @@ export default async function ExamTopPage({
               <div className="grid gap-2 sm:grid-cols-2">
                 <Button asChild variant="gradient" size="lg" className="font-semibold">
                   <Link href={`/quiz?mode=random&exam=${exam}&session=am2`}>
-                    午前 II
+                    科目A-2（旧午前II）
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link href={`/quiz?mode=random&exam=${exam}&session=am1`}>午前 I</Link>
+                  <Link href={`/quiz?mode=random&exam=${exam}&session=am1`}>科目A-1（旧午前I）</Link>
                 </Button>
               </div>
             </div>

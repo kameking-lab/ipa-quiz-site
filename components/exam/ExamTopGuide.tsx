@@ -9,7 +9,7 @@ export function ExamTopGuide({ exam }: { exam: ExamEntryCode }) {
   return (
     <>
       <section id="afternoon" aria-labelledby="afternoon-heading" className="mb-6 scroll-mt-20 rounded-2xl border border-border bg-card p-4 sm:p-5">
-        <h2 id="afternoon-heading" className="text-base font-bold">午後対策：{entry.afternoon}</h2>
+        <h2 id="afternoon-heading" className="text-base font-bold">{exam === "ap" || exam === "sc" ? "科目B対策" : "科目B-1・科目B-2対策"}（旧{entry.afternoon}）</h2>
         <ul className="mt-2 space-y-1">
           <li><Link href={`/blog/${entry.guide}`} className={guideLink}>{entry.guideLabel} →</Link></li>
           {entry.aiEssay && <li><Link href="/essay" className={guideLink}>オリジナル論述教材でAI添削 →</Link></li>}
