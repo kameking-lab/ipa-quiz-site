@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { EXAM_ENTRIES, type ExamEntryCode } from "@/lib/seo/exam-entry";
 import { EXAM_OFFICIAL_LINKS } from "@/lib/seo/exam-resources";
+import { ScAfternoonTopicIndex } from "@/components/exam/ScAfternoonTopicIndex";
 
 const guideLink = "inline-flex min-h-11 items-center py-2 text-sm text-primary underline underline-offset-4 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring";
 
@@ -34,6 +35,7 @@ export function ExamTopGuide({ exam }: { exam: ExamEntryCode }) {
           </ol>
           <p className="mt-3 text-sm font-medium">公式資料で問題を探す</p>
           <a href="https://www.ipa.go.jp/shiken/mondai-kaiotu/2025r07.html" target="_blank" rel="noopener noreferrer" className={guideLink}>2025年度（令和7年度）の問題冊子・解答例・採点講評 →</a>
+          {exam === "sc" && <ScAfternoonTopicIndex />}
           <p className="mt-2 text-sm font-medium">目的別の学習ガイド</p>
         </>}
         <ul className="mt-2 space-y-1">

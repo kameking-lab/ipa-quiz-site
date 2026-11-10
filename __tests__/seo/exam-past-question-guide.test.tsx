@@ -47,3 +47,14 @@ it("explains the cancelled 2020 spring separately on the NW page", () => {
   expect(html).toContain("令和2年度春期試験を中止");
   expect(html).toContain("https://www.ipa.go.jp/shiken/mondai-kaiotu/2020r02.html");
 });
+
+it("connects the four SC afternoon topics to their official statement-of-purpose pages", () => {
+  const html = renderToStaticMarkup(<ExamTopGuide exam="sc" />);
+  for (const number of [1, 2, 3, 4]) {
+    expect(html).toContain(`2025r07a_sc_pm_ans.pdf#page=${number}`);
+    expect(html).toContain(`問${number}：`);
+  }
+  expect(html).toContain("2025r07a_sc_pm_qs.pdf");
+  expect(html).toContain("2025r07a_sc_pm_cmnt.pdf");
+  expect(html).toContain("全年度の一覧や独自の解答解説ではありません");
+});
