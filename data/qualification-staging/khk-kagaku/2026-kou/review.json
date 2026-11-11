@@ -1,0 +1,352 @@
+{
+  "checkedOn": "2026-11-12",
+  "method": "公式問題2冊の本文14ページ及び公式正答1ページを画像で目視確認。PyMuPDF転記を別のpdfplumber抽出によって本文35問・選択肢175件・共通設例13件・公式正答35件と全件照合。全角英数字等のNFKC正規化とPDFの空白・折返しを整形。AX問6の分数式は原本画像と照合しG = P × V / Cと等価表記。",
+  "counts": {
+    "sourceQuestions": 35,
+    "sourceChoices": 175,
+    "officialAnswers": 35,
+    "sharedCaseReferences": 13,
+    "sourceTables": 2,
+    "sourceFormulaCrops": 1,
+    "explanationChoices": 175,
+    "technicalReviewPending": 1
+  },
+  "questions": [
+    {
+      "id": "khk-kagaku-2026-annual-ax-q1",
+      "pdfPage": 2,
+      "sourceContentSha256": "b22457378a88de68bf790b11a41380d4af3107b0a99e7d3505a46eff73f226ff",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ax-q2",
+      "pdfPage": 2,
+      "sourceContentSha256": "f84f165c566803bcc37dc4af6efaa092b6eb3c55e91cf9cbbb0a0d7641c4cc6d",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ax-q3",
+      "pdfPage": 2,
+      "sourceContentSha256": "1d819ce248ababc6499d4379ee8237010b7857be5bd5a2357fb9150cd2aa2da2",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ax-q4",
+      "pdfPage": 3,
+      "sourceContentSha256": "8a1ed353be1f284aab716c04a3368b1ffc81ce754974159187d395684e17b543",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ax-q5",
+      "pdfPage": 3,
+      "sourceContentSha256": "c7a6fd7880644d802b23b3e47ca61a57793e8a8546f831ffd328bd34b50ffba1",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ax-q6",
+      "pdfPage": 3,
+      "sourceContentSha256": "3d7e8171c083ea2435a92a8ad870ed70a867ac9da36ac64c35d8b183aa7d4ee8",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ax-q7",
+      "pdfPage": 4,
+      "sourceContentSha256": "f518fe91beadc9112b459adb9d32665c57f9e87822a4421b6c89696d7da2a58e",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ax-q8",
+      "pdfPage": 4,
+      "sourceContentSha256": "479eb9bd5e92be23340cac1e9610f6b7fd565d7abfd5944ae107305bf376b459",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ax-q9",
+      "pdfPage": 5,
+      "sourceContentSha256": "41ebde46234cc1ef48cdc880146ce4a85556e2334c191be5bd4d609b5c7cc694",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ax-q10",
+      "pdfPage": 5,
+      "sourceContentSha256": "d189509bae53dee743551648dd84d502450848a6e2b9aaddd4b7eec69566bfa8",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ax-q11",
+      "pdfPage": 5,
+      "sourceContentSha256": "c6ab3e5b3e2daa6a43ee5e12a3f7a6b46e86c837c6232b257f7a42952d906349",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ax-q12",
+      "pdfPage": 5,
+      "sourceContentSha256": "1cf927207b70ad3e268c6b3a83ef4a9f1f371cc7ad81ce919ac1e359d23ce274",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ax-q13",
+      "pdfPage": 6,
+      "sourceContentSha256": "475d917dced535b6884eedeedf9894e43c2720d8dc90f9ceeb21634d23723885",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ax-q14",
+      "pdfPage": 6,
+      "sourceContentSha256": "b0ea6e98a7b9e85e2d938ad1539d51ed00352f6e2a8ecd225818f1b8c7a439c7",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ax-q15",
+      "pdfPage": 7,
+      "sourceContentSha256": "b77c7c415e1f202813d206ee7432333f2914ee60661bc36ebd0ac52158e3994a",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ax-q16",
+      "pdfPage": 7,
+      "sourceContentSha256": "9a3c19fea50f3903ffd6dca12d3a51bc433714f9c1f455d2c0a1e8ec07d86d55",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ax-q17",
+      "pdfPage": 7,
+      "sourceContentSha256": "91632e09d0ab838dd6949bfffab4ec0a5b767a2fffa4322d5f1e6aa651b713d1",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ax-q18",
+      "pdfPage": 8,
+      "sourceContentSha256": "ff2758aa9137aebd4e977cdce2e575e449babd7f2a8455da55c106497e76dbff",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ax-q19",
+      "pdfPage": 8,
+      "sourceContentSha256": "33c1191c5a18ccc0165208e2236378d8621ced1e397bf1add7f5064a048b14e2",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ax-q20",
+      "pdfPage": 8,
+      "sourceContentSha256": "1d089cfcf166c8cc0619971f5883098a46e7d888e6a8232331c90c1102382bca",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ay-q1",
+      "pdfPage": 2,
+      "sourceContentSha256": "fd6acc7d67d230ed84972417f91bb6b1e042147605bcfd85c177c507695bfed5",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ay-q2",
+      "pdfPage": 2,
+      "sourceContentSha256": "6b3e38101dafd512df47d08e6f60330102bd54a7d7a89abbb0ac044d4c5bd0be",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ay-q3",
+      "pdfPage": 2,
+      "sourceContentSha256": "f3d24669d18c924a953b51a2f2320f23183bea079bf69791b2773fad40aa8929",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ay-q4",
+      "pdfPage": 3,
+      "sourceContentSha256": "9817102bb77f784dbde62060864ab42d75ff0eacb8fb16b2f7000949773daac7",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ay-q5",
+      "pdfPage": 3,
+      "sourceContentSha256": "11d7d179f19373ce4cc1b885bce30ce1fa588f19a75dd294111ea4eb9c2ac5dd",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ay-q6",
+      "pdfPage": 3,
+      "sourceContentSha256": "5824828d756a5bbfa7e5ac5a5338653f827541c204743741059ee021bcb105aa",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ay-q7",
+      "pdfPage": 4,
+      "sourceContentSha256": "b6eca2527feb6ec91630d4d3005cd2c389a3fac0952e75bcd0ec9eab39c71892",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ay-q8",
+      "pdfPage": 4,
+      "sourceContentSha256": "8d793013c9d7b2ab5256dd675930fdebf795c54aa1c2f4f1c3d030155646a6e7",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ay-q9",
+      "pdfPage": 5,
+      "sourceContentSha256": "e4a0f765d7e095da59d7cc05552f14fe10d8fe92c33c4b77b265aee0835f5fa0",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": false
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ay-q10",
+      "pdfPage": 5,
+      "sourceContentSha256": "81dcb674d7f99406983a598eaab6f68f51a633ecee745f280ea7690058a776ea",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ay-q11",
+      "pdfPage": 6,
+      "sourceContentSha256": "5ebf485beaf1e62a5dea4fa84e609b025b6a01f5c30593b98912526981b32b45",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ay-q12",
+      "pdfPage": 6,
+      "sourceContentSha256": "395c208e33a7042a8967a7630bb69671f0c6e2419dbf4fd83b45ba95b86f6729",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ay-q13",
+      "pdfPage": 7,
+      "sourceContentSha256": "3556bd2c054de09c948646ace82585bec4bc38b08c0ca956d98f1f2f46c53a32",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ay-q14",
+      "pdfPage": 7,
+      "sourceContentSha256": "0869837d7a8c2d5b6f237939ae08303edaf2804ad20fe89e65323d293bfcca5d",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    },
+    {
+      "id": "khk-kagaku-2026-annual-ay-q15",
+      "pdfPage": 8,
+      "sourceContentSha256": "39888d621e2770d98f766f82dd27291c0a53babba275855e9e2b4679537570e1",
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true
+    }
+  ],
+  "assets": [
+    {
+      "file": "images/2026-AX-shared-1.png",
+      "sourcePdfUrl": "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8AX.pdf",
+      "pdfPage": 4,
+      "clipPoints": [
+        54,
+        286,
+        537,
+        527
+      ],
+      "scale": 2,
+      "sha256": "93dff20dabf38ed6b57730a99c1638a9046b587658184d6cbc4e3cc0a41a1d70",
+      "futureImageUrl": "/api/qualification-assets/khk-kagaku/2026-AX-shared-1.png",
+      "sourceSha256": "e2cab837dc221ec069a2eed38d94397087f9833dc741bec527b86eed375b49f8"
+    },
+    {
+      "file": "images/2026-AX-shared-2.png",
+      "sourcePdfUrl": "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8AX.pdf",
+      "pdfPage": 6,
+      "clipPoints": [
+        54,
+        60,
+        537,
+        368
+      ],
+      "scale": 2,
+      "sha256": "e7ba6758a4d95d5c5b664a5b1a3661f33d58410ee3c7084f002151abf5626728",
+      "futureImageUrl": "/api/qualification-assets/khk-kagaku/2026-AX-shared-2.png",
+      "sourceSha256": "e2cab837dc221ec069a2eed38d94397087f9833dc741bec527b86eed375b49f8"
+    },
+    {
+      "file": "images/2026-AX-q6-formula.png",
+      "sourcePdfUrl": "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8AX.pdf",
+      "pdfPage": 3,
+      "clipPoints": [
+        75,
+        551,
+        440,
+        675
+      ],
+      "scale": 2,
+      "sha256": "a9647944d6f368a55b8023e0b716bfbd6fe2404bd20cf950e3d79d469c575cd5",
+      "futureImageUrl": "/api/qualification-assets/khk-kagaku/2026-AX-q6-formula.png",
+      "sourceSha256": "e2cab837dc221ec069a2eed38d94397087f9833dc741bec527b86eed375b49f8"
+    }
+  ],
+  "technicalReviews": [
+    {
+      "questionId": "khk-kagaku-2026-annual-ay-q9",
+      "officialAnswerNumber": 1,
+      "status": "未確認",
+      "finding": "記述ニの4M分析・特性要因図の説明を公式正答の組合せに含めない技術的根拠は未確認。公式正答1（イ・ロ）は変更しない。原文・全肢・正答を保持しneedsReview=true。",
+      "sourceUrl": "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8AY.pdf"
+    }
+  ]
+}
