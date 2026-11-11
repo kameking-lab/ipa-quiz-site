@@ -27,7 +27,7 @@ describe("blog copy: AI quota claims derive from the SSOT, never a stale literal
     expect(post).toBeDefined();
     expect(post!.body).toContain("(/billing)");
     expect(post!.body).toContain("連続演習には無料枠と月額プランがあります");
-    expect(post!.body).toContain("利用停止中");
+    expect(post!.body).toContain("AIの残り回数と提供状態は利用画面で確認できます");
     expect(post!.body).not.toContain("初回 10 回");
     expect(post!.body).not.toContain("30 回");
   });

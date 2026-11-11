@@ -22,8 +22,8 @@ for (const width of [320, 390, 1440]) {
           await expect(page.locator(hash)).toBeInViewport();
         }
         await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", new RegExp(`/${exam}$`));
-        await expect(page).toHaveTitle(/過去問.*午後対策/);
-        const afternoon = page.getByRole("region", { name: /^午後対策：/ });
+        await expect(page).toHaveTitle(/過去問・解説とAI質問/);
+        const afternoon = page.getByRole("region", { name: /^科目B.*対策/ });
         // Only essay exams offer AI review, and it is labelled as original material.
         if (exam === "st" || exam === "sa") {
           await expect(afternoon.getByRole("link", { name: "オリジナル論述教材でAI添削 →", exact: true })).toHaveAttribute("href", "/essay");

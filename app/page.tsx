@@ -5,7 +5,6 @@ import { HomeDirectory } from "@/components/home/landing/HomeDirectory";
 import { HomeScheduleLink } from "@/components/home/landing/HomeScheduleLink";
 import { HomeHero } from "@/components/home/landing/HomeHero";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { AppStorePromo } from "@/components/app-store/AppStorePromo";
 import { getHomeDirectory } from "@/lib/home/home-directory";
 import { buildOrgNode, buildWebsiteNode } from "@/lib/seo/structured-data";
 
@@ -28,7 +27,6 @@ export default function HomePage() {
     <main className="study-home mx-auto w-full max-w-6xl flex-1 px-5 pb-12 pt-6 sm:px-10 sm:pt-12">
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [buildWebsiteNode(description), buildOrgNode()] }} />
       <HomeHero domains={domains} />
-      <AppStorePromo variant="card" className="my-6" />
       <TotalAnswerCounter suggestions={roomItems.filter(item => item.questionCount > 0)
         .map(({ name, href, key }) => ({ name, href, exam: key }))} />
       <HomeDirectory domains={domains} />

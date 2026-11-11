@@ -123,7 +123,7 @@ body:has(.study-home) { background:#f7f3e9; }
 .study-room-navigation svg { width:14px; height:14px; }
 .study-room-sidebar { display:grid; gap:14px; min-width:0; }.study-room-summary,.study-room-focus { padding:20px; }
 .study-room-total { display:flex; gap:7px; align-items:baseline; margin:9px 0; font-family:"Yu Mincho",serif; font-size:24px; }.study-room-total strong { font-family:Georgia,serif; font-weight:400; font-size:46px; }.study-room-total span { font:12px sans-serif; }
-.study-room-measurement,.study-room-disclosure { font-size:10px; color:var(--study-muted); line-height:1.9; }
+.study-room-measurement { font-size:10px; color:var(--study-muted); line-height:1.9; }
 .study-room-counts { max-height:220px; overflow-y:auto; overscroll-behavior:contain; margin:14px 0; font-size:11px; line-height:1.9; }.study-room-counts li { padding:8px 0; border-top:1px solid var(--study-line); }
 .study-room-guidance { font-size:11px; line-height:1.9; }.study-room-guidance>p { margin-bottom:10px; }.study-room-guidance li a { display:flex; align-items:center; justify-content:space-between; gap:8px; min-height:44px; border-top:1px solid var(--study-line); padding:7px 0; }.study-room-guidance svg { width:13px; height:13px; flex-shrink:0; }
 .study-room-focus { background:#e9eedf; }.dark .study-room-focus { background:#344331; }.study-room-focus h3 { font-family:"Yu Mincho",serif; font-size:20px; line-height:1.6; margin:10px 0; }.study-room-focus>p:not(.study-kicker) { font-size:11px; line-height:1.9; }

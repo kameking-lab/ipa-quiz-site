@@ -1,4 +1,6 @@
 import type { ClientFunnelEvent } from "./funnel-events";
+import { firstTouch } from "@/lib/analytics/first-touch";
+import { observeJourney } from "./journey-client";
 
 const sent = new Set<string>();
 
@@ -10,9 +12,13 @@ const sent = new Set<string>();
  * The body carries the event name only: no ID, URL or other personal data.
  */
 export function sendFunnelEvent(event: ClientFunnelEvent) {
+  // Independent of the older per-day event de-duplication and analytics SDKs.
+  const stages = { free_limit_reached: "offer", paywall_plan_click: "plan_click", purchase_signin_view: "signin", billing_page_view: "billing", checkout_canceled: "canceled" } as const;
+  if (event in stages) observeJourney({ stage: stages[event as keyof typeof stages], offer: event === "free_limit_reached" || event === "billing_page_view" });
   if (typeof navigator === "undefined" || typeof navigator.sendBeacon !== "function" || sent.has(event)) return;
   sent.add(event);
   try {
+    firstTouch();
     navigator.sendBeacon("/api/funnel", new Blob([JSON.stringify({ event })], { type: "text/plain;charset=UTF-8" }));
   } catch { /* Counting never affects the page. */ }
 }

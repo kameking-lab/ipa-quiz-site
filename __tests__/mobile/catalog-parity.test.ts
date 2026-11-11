@@ -23,6 +23,7 @@ it("includes exactly every web-published practice question, library paper and al
   }
   for(const entry of generated.exams){
     const rows=await examContent(entry.code);expect(rows?.length,entry.code).toBe(entry.count);expect(new Set(rows?.map(q=>q.id)).size,entry.code).toBe(entry.count);
+    expect(Buffer.byteLength(JSON.stringify(rows)),entry.code).toBe(entry.bytes);
     expect(createHash("sha256").update(JSON.stringify(rows)).digest("hex"),entry.code).toBe(entry.revision);
     expect(await examCatalog(entry.code)).toEqual(entry);
     expect(JSON.stringify(entry)).not.toContain('"question":');

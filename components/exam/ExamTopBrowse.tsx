@@ -48,8 +48,8 @@ export function ExamTopBrowse({ exam, years, categories }: {
       <section aria-labelledby="practice-heading">
         <h2 id="practice-heading" className="mb-3 text-base font-bold">模試・復習で続ける</h2>
         <ul className="grid gap-2 sm:grid-cols-2">
-          {isMockExamCode(exam) && <li><Link href={`/mock-exam?exam=${exam}`} className={linkClass}>{exam === "ap" ? "午前" : "午前II"}の模試で力試し →</Link></li>}
-          <li><Link href={`/quiz?mode=unanswered&exam=${exam}&session=${exam === "ap" ? "am" : "am2"}`} className={linkClass}>まだ解いていない{exam === "ap" ? "午前" : "午前II"}問題 →</Link></li>
+          {isMockExamCode(exam) && <li><Link href={`/mock-exam?exam=${exam}`} className={linkClass}>{exam === "ap" ? "科目A（旧午前）" : "科目A-2（旧午前II）"}の模試で力試し →</Link></li>}
+          <li><Link href={`/quiz?mode=unanswered&exam=${exam}&session=${exam === "ap" ? "am" : "am2"}`} className={linkClass}>まだ解いていない{exam === "ap" ? "科目A（旧午前）" : "科目A-2（旧午前II）"}問題 →</Link></li>
           <li><Link href={`/quiz?mode=review&exam=${exam}&scope=exam`} className={linkClass}>間違えた問題・ブックマークを復習 →</Link></li>
         </ul>
       </section>

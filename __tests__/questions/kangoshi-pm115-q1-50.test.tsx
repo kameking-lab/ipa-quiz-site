@@ -4,7 +4,9 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import YearPage from "@/app/[exam]/[yearSeason]/page";
-import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+import { KANGOSHI_QUESTIONS as ALL_KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+// This frozen source-intake regression covers 2024/2025; medical-history.test.tsx covers older years.
+const KANGOSHI_QUESTIONS = ALL_KANGOSHI_QUESTIONS.filter(question => question.year >= 2024);
 import { filterQuestions, isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { EXAM_DESCRIPTIONS, examMetaDescription, getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
@@ -72,7 +74,7 @@ describe("saved 115th afternoon Q1–50 registration", () => {
   it("reports the current partial originals without advertising two complete sittings", () => {
     const total = KANGOSHI_QUESTIONS.length;
     expect(new Set(KANGOSHI_QUESTIONS.map(q => q.id)).size).toBe(total);
-    expect(getQuestionsByExamStrict("kangoshi")).toHaveLength(total);
+    expect(getQuestionsByExamStrict("kangoshi").filter(q => q.year >= 2024)).toHaveLength(total);
     expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2024 && q.session === "am" && q.qNumber <= 90)).toHaveLength(90);
     expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2025 && q.session === "am" && q.qNumber <= 90)).toHaveLength(88);
     expect(KANGOSHI_QUESTIONS.filter(q => q.year === 2025 && q.session === "pm")).toHaveLength(115);

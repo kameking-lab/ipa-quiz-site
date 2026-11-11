@@ -9,6 +9,21 @@ export function questionSourceExam(q: Pick<Question, "exam" | "year" | "season" 
 
 /** 公式冊子の表紙で照合した回次・実施年。保存年や既存URLは年度/実施年が混在するため表示に使わない。 */
 const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string, string>>>> = {
+  tp220421: {
+    "02": "第115回（2022年実施）",
+    "06": "第74回（2022年実施）",
+    "08": "第57回（2022年実施）",
+  },
+  tp230524: {
+    "02": "第116回（2023年実施）",
+    "06": "第75回（2023年実施）",
+    "08": "第58回（2023年実施）",
+  },
+  tp240424: {
+    "02": "第117回（2024年実施）",
+    "06": "第76回（2024年実施）",
+    "08": "第59回（2024年実施）",
+  },
   tp250428: {
     "05": "第114回（2025年実施）",
     "06": "第77回（2025年実施）",
@@ -50,7 +65,7 @@ if (q.exam === "biyoshi" && q.year === 2026) {
     if (q.season === "second")
         return "第54回（2026年9月6日実施）";
 }
-if (q.exam?.startsWith("kikenbutsu-otsu") && q.season === "published")
+if ((q.exam?.startsWith("kikenbutsu-") || q.exam?.startsWith("shobo-setsubishi-")) && q.season === "published")
     return "2026年6月公表版（個別の出題年・回は非公表）";
 if (q.exam?.startsWith("jken-katsuyo")) {
     if (q.year === 2026 && q.season === "first" && /\/260621_mondaijk0[123]\.pdf$/.test(q.sourcePdfUrl))
@@ -86,15 +101,25 @@ if (q.year === 2025 && q.season === "annual" &&
   if (q.season === "annual" && judoPaper?.[1] === "2025_33" && q.year === 2024) {
     return "第33回（令和6年度・2025年実施）";
   }
+  const gengoNotice = /^https:\/\/www\.mhlw\.go\.jp\/general\/sikaku\/successlist\/(2025|2026)\/siken21\/dl\/(27A40|28A(?:14|35|69|83))\.pdf(?:#page=[1-9]\d*)?$/.exec(q.sourcePdfUrl);
+  if (q.season === "annual" && gengoNotice &&
+      ((q.year === 2025 && gengoNotice[1] === "2025" && gengoNotice[2] === "27A40") ||
+       (q.year === 2026 && gengoNotice[1] === "2026" && gengoNotice[2]?.startsWith("28A")))) {
+    return `第${q.year === 2025 ? 27 : 28}回（${q.year}年実施）`;
+  }
   const medical2025 = /^https:\/\/www\.mhlw\.go\.jp\/seisakunitsuite\/bunya\/kenkou_iryou\/iryou\/topics\/dl\/tp250428-(06[ab]|07b)_01\.pdf(?:#page=\d+)?$/.exec(q.sourcePdfUrl);
   if (q.year === 2025 && q.season === "annual" && medical2025) {
     return `第${medical2025[1] === "07b" ? 71 : 77}回（2025年実施）`;
+  }
+  if (q.exam === "riyoshi" && q.year === 2025 && q.season === "second" &&
+      /^https:\/\/www\.rbc\.or\.jp\/wp-content\/uploads\/2025\/09\/52rhikki\.pdf(?:#page=[1-9]\d*)?$/.test(q.sourcePdfUrl)) {
+    return "第52回（2025年実施）";
   }
   const riyoshiPaper = /^https:\/\/www\.rbc\.or\.jp\/wp-content\/uploads\/2026\/(03\/53rhikki-1|09\/54rhikki)\.pdf(?:#page=[1-9]\d*)?$/.exec(q.sourcePdfUrl);
   if (q.year === 2026 && riyoshiPaper?.[1] === "03/53rhikki-1") return "第53回（2026年3月1日実施）";
   if (q.year === 2026 && riyoshiPaper?.[1] === "09/54rhikki") return "第54回（2026年9月6日実施）";
   if (q.season === "annual") {
-    const verifiedPaper = /^https:\/\/www\.mhlw\.go\.jp\/seisakunitsuite\/bunya\/kenkou_iryou\/iryou\/topics\/dl\/(tp250428|tp260424)-(05[abc]|(?:06[ab]|07b)|(?:08|09|10)[ab])_01\.pdf(?:#page=[1-9]\d*)?$/.exec(q.sourcePdfUrl);
+    const verifiedPaper = /^https:\/\/www\.mhlw\.go\.jp\/seisakunitsuite\/bunya\/kenkou_iryou\/iryou\/topics\/dl\/(tp220421|tp230524|tp240424|tp250428|tp260424)-(02a|05[abc]|(?:06[ab]|07b)|(?:08|09|10)[ab])_01\.pdf(?:#page=[1-9]\d*)?$/.exec(q.sourcePdfUrl);
     const edition = verifiedPaper
       ? VERIFIED_MEDICAL_EDITIONS[verifiedPaper[1] ?? ""]?.[verifiedPaper[2]?.slice(0, 2) ?? ""]
       : undefined;
@@ -102,7 +127,7 @@ if (q.year === 2025 && q.season === "annual" &&
   }
   if (q.year === 2011 && /tokubetsu/.test(q.sourcePdfUrl)) return "2011年度 特別試験";
   if (q.year === 2020 && q.season === "autumn") return "令和2年度 10月試験";
-  if (q.season === "published") {
+  if (q.season === "published" || (q.season === "october" && (q.exam === "eisei1" || q.exam === "eisei2"))) {
     const officialUpload = /^https:\/\/www\.exam\.or\.jp\/wp-content\/uploads\/(20\d{2})\/(0[1-9]|1[0-2])\//.exec(q.sourcePdfUrl);
     if (officialUpload && Number(officialUpload[1]) === q.year) {
       return `${q.year}年${Number(officialUpload[2])}月公表問題`;

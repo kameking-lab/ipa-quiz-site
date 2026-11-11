@@ -14,6 +14,8 @@ import kokunen2025 from "./kokunen-2025-annual.json";
 import kokunen2026 from "./kokunen-2026-annual.json";
 import ippan2026 from "./ippan-2026-annual.json";
 
+import remainingVerified from "./remaining-verified-20261011.json";
+
 /**
  * 社会保険労務士試験 第58回（令和8年度）・第57回（令和7年度）
  * 択一式「労働基準法及び労働安全衛生法」の一部16問と
@@ -35,4 +37,5 @@ export const SHAROUSHI_QUESTIONS: Question[] = [
   ...(ippan2026 as Question[]),
   ...(kokunen2025 as Question[]),
   ...(kokunen2026 as Question[]),
+  ...(remainingVerified as Question[]),
 ].sort((a, b) => b.year - a.year || a.session.localeCompare(b.session) || a.qNumber - b.qNumber);

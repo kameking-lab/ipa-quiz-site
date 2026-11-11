@@ -13,8 +13,8 @@ describe("lab71 seven remaining safe saved originals", () => {
   it("preserves seven saved originals while both runtime loaders expose only PM35 and retain six holds", async () => {
     expect(batch2.map(q => q.qNumber)).toEqual([32, 35, 36, 39, 41, 44, 45]);
     expect(batch2.map(q => q.id)).toEqual(Object.keys(official).map(n => `rinsho-kensagishi-2025-annual-pm-q${n}`));
-    expect(lab2025).toHaveLength(59);
-    expect(new Set(lab2025.map(q => q.id)).size).toBe(59);
+    expect(lab2025).toHaveLength(61);
+    expect(new Set(lab2025.map(q => q.id)).size).toBe(61);
     const saved = new Set(batch2.map(q => q.id));
     const newlyAccepted = ["rinsho-kensagishi-2025-annual-pm-q35"];
     expect(RINSHO_KENSAGISHI_QUESTIONS.filter(q => saved.has(q.id)).map(q => q.id)).toEqual(newlyAccepted);

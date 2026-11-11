@@ -41,7 +41,7 @@ describe("worked guides and consolidated URLs", () => {
       expect(post.body).toContain("条件を変えて理解を確かめる");
       expect(isBlogAdEligible(post)).toBe(false);
     }
-    expect(getAllBlogSlugs()).toHaveLength(179);
+    expect(getAllBlogSlugs()).toHaveLength(182);
   });
   it("no article body or related rail retains a superseded analysis URL", () => {
     for (const post of getAllBlogPosts()) {

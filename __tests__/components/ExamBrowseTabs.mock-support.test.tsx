@@ -5,6 +5,7 @@ import { ExamBrowseTabs } from "@/components/exam/ExamBrowseTabs";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
 import { MOCK_EXAM_CONFIGS } from "@/lib/mock-exam/config";
 import type { ExamCode } from "@/lib/questions/types";
+import { EXAM_LABELS } from "@/lib/utils";
 
 const route = vi.hoisted(() => ({ pathname: "/denko2" }));
 vi.mock("next/navigation", () => ({ usePathname: () => route.pathname }));
@@ -23,7 +24,9 @@ describe("qualification mock eligibility from the question schema", () => {
       expect(screen.getByRole("link", { name: /ランダム短時間演習/ })).toHaveAttribute("href", `/quiz?mode=random&exam=${exam}`);
     }
   });
-  it.each(schemaExams)("%s mobile mock keeps the qualification or is absent", (exam) => {
+  // Publication-gated staging codes have no public label or qualification page.
+  // The generic 404 navigation is not that qualification's mobile navigation.
+  it.each(schemaExams.filter(exam => Object.hasOwn(EXAM_LABELS, exam)))("%s mobile mock keeps the qualification or is absent", (exam) => {
     route.pathname = `/${exam}`;
     render(<MobileBottomNav />);
     const link = screen.queryByRole("link", { name: "模試" });

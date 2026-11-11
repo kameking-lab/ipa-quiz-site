@@ -36,20 +36,6 @@ const INFO_ROWS: InfoRow[] = [
   { label: "サービス名", value: "過去問AI" },
   { label: "運営", value: "kameking-lab（公開運営ハンドル）" },
   {
-    label: "公式X",
-    value: (
-      <a
-        href="https://x.com/kakomon_ai_jp"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="inline-flex items-center gap-0.5 font-medium text-primary underline-offset-4 hover:underline"
-      >
-        @kakomon_ai_jp
-        <ExternalLink className="h-3 w-3" />
-      </a>
-    ),
-  },
-  {
     label: "GitHub",
     value: (
       <a
@@ -100,10 +86,7 @@ export default function OperatorPage() {
     name: OPERATOR_HANDLE,
     alternateName: "過去問AI 教育貢献プロジェクト 運営者",
     url: `${SITE_BASE_URL}/operator`,
-    sameAs: [
-      OPERATOR_GITHUB_URL,
-      "https://x.com/kakomon_ai_jp",
-    ],
+    sameAs: [OPERATOR_GITHUB_URL],
     jobTitle: "個人開発者・教育貢献プロジェクト運営",
     worksFor: {
       "@type": "EducationalOrganization",

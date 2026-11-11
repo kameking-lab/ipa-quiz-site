@@ -30,9 +30,23 @@ it("does not promise missing details or supplements for the published IP2009 que
   expect(container.querySelector(".selectable-content")?.textContent).toBe(q.explanation);
 });
 
-it("retains the three real sections and their readable bodies for the published AP2016 question", () => {
+it("renders the restored AP2016 explanation as its two complete paragraphs", () => {
   const q = applyIpaCorrections("ap", AP_QUESTIONS_2016_AUTUMN).find(q => q.id === "ap-2016a-am-q1")!;
   const { container } = render(<><ExplanationStructureLabel explanation={q.explanation} /><ExplanationLayers explanation={q.explanation} /></>);
+  expect(screen.getByText("結論 → 詳細 の 2 層構成")).toBeInTheDocument();
+  expect(screen.queryByText("補足")).not.toBeInTheDocument();
+  expect(container.querySelectorAll("article")).toHaveLength(2);
+  expect(container.querySelectorAll("details")).toHaveLength(1);
+  expect([...container.querySelectorAll(".selectable-content")].map(body => body.textContent))
+    .toEqual(q.explanation.split("\n\n"));
+  expect(container.textContent).toContain("(¬A)・X");
+  expect(container.textContent).toContain("エの(¬A)・Y");
+});
+
+it("retains three sections and readable bodies when the source has three paragraphs", () => {
+  const paragraphs = ["結論の本文です。", "詳細の本文です。", "補足の本文です。"];
+  const explanation = paragraphs.join("\n\n");
+  const { container } = render(<><ExplanationStructureLabel explanation={explanation} /><ExplanationLayers explanation={explanation} /></>);
   expect(screen.getByText("結論 → 詳細 → 補足 の 3 層構成")).toBeInTheDocument();
   expect(screen.getByText("結論")).toBeInTheDocument();
   expect(screen.getByText("詳細")).toBeInTheDocument();
@@ -41,10 +55,9 @@ it("retains the three real sections and their readable bodies for the published 
   const details = container.querySelectorAll("details");
   expect(details).toHaveLength(2);
   expect([...details].every(detail => detail.open)).toBe(true);
-  expect(details[0].textContent).toContain("上位4ビット");
-  expect(details[1].textContent).toContain("ア「A・X」");
+  expect([...container.querySelectorAll(".selectable-content")].map(body => body.textContent)).toEqual(paragraphs);
   fireEvent.click(details[0].querySelector("summary")!);
-  expect(container.textContent).toContain("下位4ビット");
+  expect(container.textContent).toContain(paragraphs[1]);
 });
 
 it("describes the existing sentence split as two sections rather than inventing a supplement", () => {

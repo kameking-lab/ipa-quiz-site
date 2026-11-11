@@ -1,0 +1,166 @@
+{
+  "pr": 759,
+  "date": "2026-11-10",
+  "scope": 84,
+  "alreadyInMain": 75,
+  "adopted": 9,
+  "baselineCount": 106,
+  "baselineSha256": "0fab6a2c10c15770c7a447c9d0ffb0a577765b4fb00f0133020b6c8435aa7bee",
+  "verification": "Official question/answer/supplement PDFs re-fetched and all pinned hashes matched. Nine question stems/options normalized against PDF; 71PM19 dotted V checked visually on original physical page11. Nine answer cells re-read. Original supplement 71PM No4 page8 and 72PM No12 page16 visually checked. Explanations preserved from PR; 72AM46 range is the official scoring statement, not an independently established universal operating range.",
+  "officialPdfs": [
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07a_01.pdf",
+      "sha256": "6e9fe0cdc924677f8d28f2a20d9c44c2c6f508bd5df22a375ab3e7e303da579b",
+      "bytes": 978303
+    },
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sha256": "867e4cac6cf2eb3e1346a4b441d6f8f4fac9cbb5f2a9f464fdf0e5e4ad0ca777",
+      "bytes": 995044
+    },
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "sha256": "bfaae7fed34ea6604b95e76887b0f4241a0fb09c25a7a5c152f9a7573bc0e56d",
+      "bytes": 17636
+    },
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sha256": "c0b59691ef98c148875bb5d4d278c1e11e6990b3fa024100831b3a43b7196fe0",
+      "bytes": 927995
+    },
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07b_01.pdf",
+      "sha256": "a4ef918d6e4acd77a97a0ffa2714f3f76397bac5464db5f931f0c3fff622ed0e",
+      "bytes": 857944
+    },
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "sha256": "2744d0ee6a126438c34aec2c0c82204d7f3f52f432d6015761d418afa9cd6e78",
+      "bytes": 17396
+    },
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_02.pdf",
+      "sha256": "2624ec534e5c0267ead4f7f8b472b73ee200c88589eff0c0562ba39355f7812e",
+      "bytes": 3420216
+    },
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07b_02.pdf",
+      "sha256": "486afaaa28746bfdb16a5ce5db008557f23762fcaaf013ba8fca55beebd6e2de",
+      "bytes": 51765944
+    }
+  ],
+  "rows": [
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q12",
+      "officialAnswerNumber": "4/5",
+      "answer": [
+        "エ",
+        "オ"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "originalSha256": "c8c24203d149e5dbad0e833f8992da4df744fb96e7dd909c35ea919c0d087cab",
+      "images": []
+    },
+    {
+      "id": "rinsho-kensagishi-2025-annual-pm-q19",
+      "officialAnswerNumber": "2/4",
+      "answer": [
+        "イ",
+        "エ"
+      ],
+      "requiredSelections": 1,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07b_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-07seitou.pdf",
+      "originalSha256": "8acff80b65a7f04cd1187cc333b6eae66771f6f363ad480fe76f30339aa14895",
+      "images": [
+        {
+          "url": "/questions/rinsho-kensagishi/pr759-remaining9/71-pm-no4.png",
+          "sha256": "b34a6081271c312645926d2a2cb576a283aeb6363f399b25c109fdb4ed080c02"
+        }
+      ]
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q24",
+      "officialAnswerNumber": "35",
+      "answer": [
+        "ウ",
+        "オ"
+      ],
+      "requiredSelections": 2,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "originalSha256": "6b456f060a7070ea0fb5551159394beb613891b556508354219d8a09fc079d1e",
+      "images": []
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q26",
+      "officialAnswerNumber": "3",
+      "answer": "ウ",
+      "requiredSelections": 1,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "originalSha256": "e930b396fb988687354ffbaea1617245373a31dd0e8350ae8b38a866530ae719",
+      "images": []
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q31",
+      "officialAnswerNumber": "3",
+      "answer": "ウ",
+      "requiredSelections": 1,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "originalSha256": "a0af17d59f84f3a166676c43872e1e611b2b04ba1e77a837593c391a14a2da1b",
+      "images": []
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q38",
+      "officialAnswerNumber": "5",
+      "answer": "オ",
+      "requiredSelections": 1,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "originalSha256": "dcb02f2412162a17766fa6e26e5b967eba45cf4f7fa86f8665c2914233cb05eb",
+      "images": []
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q41",
+      "officialAnswerNumber": "3",
+      "answer": "ウ",
+      "requiredSelections": 1,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "originalSha256": "246558176976d867d5ad36e95cdc859e42d7998e938867ebade4567235b2546e",
+      "images": []
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-am-q46",
+      "officialAnswerNumber": "34",
+      "answer": [
+        "ウ",
+        "エ"
+      ],
+      "requiredSelections": 2,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "originalSha256": "39cea0556932c814dcbac58c5912a2a09254a2cbf1965a3aac70b037b50864a7",
+      "images": []
+    },
+    {
+      "id": "rinsho-kensagishi-2026-annual-pm-q55",
+      "officialAnswerNumber": "2",
+      "answer": "イ",
+      "requiredSelections": 1,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07b_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07seitou.pdf",
+      "originalSha256": "8e7eb121f6cc5d3a80b2c148dba35c15020c0dc3acd6b8e771c315fb43ff59f8",
+      "images": [
+        {
+          "url": "/questions/rinsho-kensagishi/pr759-remaining9/72-pm-no12.png",
+          "sha256": "0ce5e5edc2f9552c4f8b60ff06609ade241b1a36e55aba493336dbd11567e7b6"
+        }
+      ]
+    }
+  ]
+}

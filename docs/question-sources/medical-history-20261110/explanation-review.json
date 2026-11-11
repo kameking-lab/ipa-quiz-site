@@ -1,0 +1,901 @@
+{
+  "date": "2026-11-10",
+  "reviewedQuestions": 90,
+  "reviewedChoices": 360,
+  "revisedQuestions": 57,
+  "revisedChoices": 228,
+  "retainedQuestions": 33,
+  "immutableQuestionRecords": 90,
+  "officialAnswerMatches": 90,
+  "officialPdfHashesMatched": 18,
+  "existingJsonUnchanged": 8,
+  "usedSupportingUrls": 114,
+  "directFetchLimitations": [
+    {
+      "url": "https://health.nih.gov/womens-health/menopause",
+      "httpStatus": 403,
+      "challenge": false,
+      "note": "ブラウズ検索結果・本文で確認。直接取得の失敗を本文確認成功と扱わない。"
+    },
+    {
+      "url": "https://iris.who.int/bitstream/10665/43593/5/9789241594981_eng.pdf",
+      "httpStatus": 403,
+      "challenge": false,
+      "note": "ブラウズ検索結果・本文で確認。直接取得の失敗を本文確認成功と扱わない。"
+    },
+    {
+      "url": "https://ncbi.nlm.nih.gov/books/NBK148970/",
+      "httpStatus": 200,
+      "challenge": true,
+      "note": "ブラウズ検索結果・本文で確認。直接取得の失敗を本文確認成功と扱わない。"
+    },
+    {
+      "url": "https://www.jaog.or.jp/note/%EF%BC%883%EF%BC%89gsm-%E3%81%AE%E6%B2%BB%E7%99%82/",
+      "httpStatus": 503,
+      "challenge": false,
+      "note": "ブラウズ検索結果・本文で確認。直接取得の失敗を本文確認成功と扱わない。"
+    },
+    {
+      "url": "https://www.jaog.or.jp/sep2012/JAPANESE/jigyo/JYOSEI/PILL/doctor/section_1.htm",
+      "httpStatus": 503,
+      "challenge": false,
+      "note": "ブラウズ検索結果・本文で確認。直接取得の失敗を本文確認成功と扱わない。"
+    },
+    {
+      "url": "https://www.michiganmedicine.org/health-lab/what-know-about-benign-liver-cyst-your-imaging-results",
+      "httpStatus": 403,
+      "challenge": false,
+      "note": "ブラウズ検索結果・本文で確認。直接取得の失敗を本文確認成功と扱わない。"
+    },
+    {
+      "url": "https://www.rcog.org.uk/media/z55dayvh/pi-placenta-praevia-placenta-accreta-and-vasa-praevia.pdf",
+      "httpStatus": 403,
+      "challenge": false,
+      "note": "ブラウズ検索結果・本文で確認。直接取得の失敗を本文確認成功と扱わない。"
+    }
+  ],
+  "questions": [
+    {
+      "id": "kangoshi-2021-annual-am-q3",
+      "decision": "revised",
+      "rationale": "建材や家具から室内に放散するホルムアルデヒドと、石綿の吸入や放射性物質による被ばくとを区別します。シックハウス症候群では室内空気の化学物質が手掛かりです。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html",
+        "https://www.mlit.go.jp/jutakukentiku/build/jutakukentiku_house_tk_000043.html",
+        "https://anzeninfo.mhlw.go.jp/horei/hor1-49/hor1-49-20-1-4.pdf",
+        "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/koyou_roudou/roudoukijun/faq/faq_asbest.html",
+        "https://anzeninfo.mhlw.go.jp/anzen/gmsds/Dioxins.html",
+        "https://www.env.go.jp/chemi/rhm/current/03-05-01.html"
+      ]
+    },
+    {
+      "id": "kangoshi-2021-annual-am-q5",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html"
+      ]
+    },
+    {
+      "id": "kangoshi-2021-annual-am-q7",
+      "decision": "revised",
+      "rationale": "胎児循環では、胎児から胎盤への血流が臍動脈、胎盤から胎児への血流が臍静脈です。動静脈の名称は心臓から出るか戻るかによるもので、酸素の多さだけでは決めません。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html",
+        "https://training.seer.cancer.gov/anatomy/cardiovascular/blood/classification.html",
+        "https://training.seer.cancer.gov/anatomy/cardiovascular/blood/pathways.html"
+      ]
+    },
+    {
+      "id": "kangoshi-2021-annual-am-q8",
+      "decision": "retained",
+      "rationale": "原問の数値と正答の大小・近さを説明しており、別の基準値や未確認の統計を追加しない。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html"
+      ]
+    },
+    {
+      "id": "kangoshi-2021-annual-am-q9",
+      "decision": "retained",
+      "rationale": "原問の数値と正答の大小・近さを説明しており、別の基準値や未確認の統計を追加しない。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html"
+      ]
+    },
+    {
+      "id": "kangoshi-2021-annual-am-q12",
+      "decision": "revised",
+      "rationale": "肝臓は解毒と排泄を担います。食べ物の消化、消化酵素の分泌、便の形成という他の消化器の役割と区別します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html",
+        "https://training.seer.cancer.gov/anatomy/digestive/regions/accessory.html",
+        "https://training.seer.cancer.gov/anatomy/digestive/regions/stomach.html",
+        "https://training.seer.cancer.gov/anatomy/digestive/regions/intestine.html"
+      ]
+    },
+    {
+      "id": "kangoshi-2021-annual-am-q13",
+      "decision": "revised",
+      "rationale": "黄疸はビリルビンの蓄積で皮膚や眼球結膜などが黄色くなる所見で、皮膚のかゆみを伴うことがあります。黄疸の患者に他の症状が起こり得ないという意味ではなく、随伴症状として適切なものを選びます。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html",
+        "https://www.nhs.uk/conditions/jaundice/"
+      ]
+    },
+    {
+      "id": "kangoshi-2021-annual-am-q14",
+      "decision": "revised",
+      "rationale": "狭心症では心筋への酸素供給不足により胸痛が生じ、頸部や上肢など離れた部位にも痛みを感じることがあります。臓器名だけでなく、痛みの出発点と広がりを比較します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html",
+        "https://www.nhlbi.nih.gov/health/angina/symptoms",
+        "https://www.nhlbi.nih.gov/health/angina",
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/peptic-ulcers-stomach-ulcers",
+        "https://www.niddk.nih.gov/health-information/digestive-diseases/gallstones/symptoms-causes",
+        "https://www.nhs.uk/conditions/kidney-stones/"
+      ]
+    },
+    {
+      "id": "kangoshi-2021-annual-am-q15",
+      "decision": "retained",
+      "rationale": "原問の数値と正答の大小・近さを説明しており、別の基準値や未確認の統計を追加しない。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html"
+      ]
+    },
+    {
+      "id": "kangoshi-2021-annual-am-q16",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html"
+      ]
+    },
+    {
+      "id": "kangoshi-2022-annual-am-q3",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html"
+      ]
+    },
+    {
+      "id": "kangoshi-2022-annual-am-q6",
+      "decision": "revised",
+      "rationale": "緩和ケアは身体的・心理社会的な苦痛などを和らげ、患者と家族のQOLを高めます。病気に対する治療と並行して行うこともでき、治癒・延命・入院期間だけを目的の指標にはしません。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://www.who.int/news-room/fact-sheets/detail/palliative-care"
+      ]
+    },
+    {
+      "id": "kangoshi-2022-annual-am-q8",
+      "decision": "revised",
+      "rationale": "成人期の生活を自分で営む課題として、経済的自立を選びます。子どもの時期の基礎技能や道徳の習得、加齢による衰退への適応とは段階が異なります。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://ch.u-tokyo.ac.jp/ocw-files/lecture_files/inter_01/4/notes/ja/geron_endou.pdf"
+      ]
+    },
+    {
+      "id": "kangoshi-2022-annual-am-q10",
+      "decision": "revised",
+      "rationale": "体性感覚は皮膚などからの触覚・痛覚や深部感覚を含みます。専用の感覚器で受け取る視覚・聴覚・平衡覚は特殊感覚に分類します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/14-1-sensory-perception"
+      ]
+    },
+    {
+      "id": "kangoshi-2022-annual-am-q11",
+      "decision": "revised",
+      "rationale": "健康な成人では好中球の割合が最も高く、次いでリンパ球が多くなります。年齢や感染・炎症によって分画は変わるため、設問の「健康な成人」という条件を確認します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://www.medlineplus.gov/ency/article/003657.htm"
+      ]
+    },
+    {
+      "id": "kangoshi-2022-annual-am-q12",
+      "decision": "revised",
+      "rationale": "視床下部は体内環境を一定に保つ調節に関わり、体温調節の中枢です。脳の位置だけではなく、それぞれの機能を対応させます。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://training.seer.cancer.gov/anatomy/nervous/organization/cns.html",
+        "https://medlineplus.gov/ency/article/002380.htm"
+      ]
+    },
+    {
+      "id": "kangoshi-2022-annual-am-q13",
+      "decision": "revised",
+      "rationale": "下血は消化管からの出血が便とともに排出される症状です。大腸癌の出血はこの経路に対応し、性器出血や血尿と区別します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://ganjoho.jp/public/cancer/colon/index.html",
+        "https://ganjoho.jp/public/cancer/corpus_uteri/index.html",
+        "https://ganjoho.jp/public/cancer/renal_cell/index.html",
+        "https://www.michiganmedicine.org/health-lab/what-know-about-benign-liver-cyst-your-imaging-results"
+      ]
+    },
+    {
+      "id": "kangoshi-2022-annual-am-q14",
+      "decision": "revised",
+      "rationale": "急性の代謝異常であるケトアシドーシスと、長期の血管障害などで進む慢性合併症を区別します。ケトアシドーシスではインスリン不足によりケトン体が増え、血液が酸性に傾きます。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://www.niddk.nih.gov/health-information/diabetes/overview/preventing-problems"
+      ]
+    },
+    {
+      "id": "kangoshi-2022-annual-am-q15",
+      "decision": "retained",
+      "rationale": "原問の数値と正答の大小・近さを説明しており、別の基準値や未確認の統計を追加しない。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html"
+      ]
+    },
+    {
+      "id": "kangoshi-2022-annual-am-q16",
+      "decision": "revised",
+      "rationale": "CRPは炎症に応じて肝臓で産生される蛋白質です。腫瘍マーカーや自己抗体を測定する検査と区別します。CRPだけで炎症の原因や部位までは特定できません。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://medlineplus.gov/lab-tests/ca-19-9-blood-test-pancreatic-cancer/",
+        "https://medlineplus.gov/lab-tests/ana-antinuclear-antibody-test/",
+        "https://medlineplus.gov/lab-tests/c-reactive-protein-crp-test/",
+        "https://medlineplus.gov/ency/article/003548.htm"
+      ]
+    },
+    {
+      "id": "kangoshi-2023-annual-am-q3",
+      "decision": "revised",
+      "rationale": "黄色ブドウ球菌は皮膚や化膿した創に存在し、食品へ移ると毒素による食中毒の原因になります。汚染源の違いを、魚介類や土壌などに関連する他の菌と比較します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html",
+        "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/shokuhin/syokuchu/saikin.html"
+      ]
+    },
+    {
+      "id": "kangoshi-2023-annual-am-q7",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html"
+      ]
+    },
+    {
+      "id": "kangoshi-2023-annual-am-q8",
+      "decision": "revised",
+      "rationale": "加齢に伴う男性ホルモンの変化としてテストステロンの減少を選びます。他の選択肢はそれぞれ卵巣機能、乳汁産生、水・電解質調節などと関わるホルモンです。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html",
+        "https://training.seer.cancer.gov/anatomy/endocrine/glands/gonads.html",
+        "https://training.seer.cancer.gov/anatomy/endocrine/glands/pituitary.html",
+        "https://training.seer.cancer.gov/anatomy/endocrine/glands/adrenal.html",
+        "https://medlineplus.gov/ency/article/004017.htm"
+      ]
+    },
+    {
+      "id": "kangoshi-2023-annual-am-q9",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html"
+      ]
+    },
+    {
+      "id": "kangoshi-2023-annual-am-q11",
+      "decision": "revised",
+      "rationale": "肘関節の伸展は肘を伸ばす運動で、主に上腕三頭筋が担います。肩関節を動かす筋や、肘を曲げる上腕二頭筋と区別します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html",
+        "https://training.seer.cancer.gov/anatomy/muscular/groups/upper.html"
+      ]
+    },
+    {
+      "id": "kangoshi-2023-annual-am-q12",
+      "decision": "revised",
+      "rationale": "脳幹は中脳・橋・延髄からなります。小脳や、内分泌機能を担う下垂体・松果体とは位置と区分が異なります。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html",
+        "https://training.seer.cancer.gov/anatomy/nervous/organization/cns.html",
+        "https://training.seer.cancer.gov/anatomy/endocrine/glands/pituitary.html"
+      ]
+    },
+    {
+      "id": "kangoshi-2023-annual-am-q13",
+      "decision": "revised",
+      "rationale": "白血球は感染防御などの免疫機能を担います。止血を担う血小板、酸素を運ぶ赤血球、その未成熟な段階の網赤血球を区別します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html",
+        "https://training.seer.cancer.gov/anatomy/cardiovascular/blood/",
+        "https://medlineplus.gov/lab-tests/reticulocyte-count/"
+      ]
+    },
+    {
+      "id": "kangoshi-2023-annual-am-q14",
+      "decision": "revised",
+      "rationale": "脳死では脳幹を含めた脳の機能が失われ、自発呼吸が消失します。瞳孔や脳波などの複数の所見を合わせて判断するもので、自発呼吸の停止だけで脳死と診断するわけではありません。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html",
+        "https://www.mhlw.go.jp/content/10900000/001492825.pdf"
+      ]
+    },
+    {
+      "id": "kangoshi-2023-annual-am-q15",
+      "decision": "revised",
+      "rationale": "A型肝炎は糞便で汚染された食品・水などから経口感染します。B・C・D型で問題となる血液などを介する感染経路との違いがポイントです。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html",
+        "https://www.cdc.gov/hepatitis/about/index.html"
+      ]
+    },
+    {
+      "id": "kangoshi-2023-annual-am-q16",
+      "decision": "revised",
+      "rationale": "抗菌薬は細菌に対して用いる薬です。投与経路だけで効果を否定したり、正常細菌叢への影響がないと考えたりせず、適正使用によって耐性菌を増やさないことが重要です。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html",
+        "https://www.cdc.gov/antibiotic-use/about/index.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2021-annual-am-q3",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2021-annual-am-q4",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2021-annual-am-q5",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2021-annual-am-q6",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2021-annual-am-q8",
+      "decision": "revised",
+      "rationale": "地域包括ケアは住み慣れた地域での生活を支えるため、医療・介護・予防・住まい・生活支援を一体化する仕組みです。地域の既存資源や不足を把握することが構築の出発点になります。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html",
+        "https://www.mhlw.go.jp/content/12300000/001225442.pdf"
+      ]
+    },
+    {
+      "id": "hokenshi-2021-annual-am-q10",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2021-annual-am-q18",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2021-annual-am-q20",
+      "decision": "revised",
+      "rationale": "管理の対象を確認します。個人情報は情報、人の配置は人事、個別事例へのサービスの評価は事例管理に対応します。地域の健康課題を捉える地域診断を、情報の保護・整理だけと同一視しないことがポイントです。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2021-annual-am-q21",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2021-annual-am-q22",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2022-annual-am-q2",
+      "decision": "revised",
+      "rationale": "自治会は同じ地域に住む人々の地縁に基づく組織です。一定区域での生活を基盤とすることと、学校区・年齢による一律の加入条件を区別します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://www.city.shimonoseki.lg.jp/soshiki/18/1363.html",
+        "https://www.city.yamaguchi.lg.jp/site/shiseijoho/117170.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2022-annual-am-q5",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2022-annual-am-q6",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2022-annual-am-q7",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2022-annual-am-q8",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2022-annual-am-q11",
+      "decision": "revised",
+      "rationale": "学校保健統計調査は標本調査で、学校で行う健康診断の結果から発育・健康状態を把握します。学校管理下の事故・災害の集計とは区別します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://www.mext.go.jp/b_menu/toukei/chousa05/hoken/gaiyou/chousa/1268648.htm"
+      ]
+    },
+    {
+      "id": "hokenshi-2022-annual-am-q14",
+      "decision": "revised",
+      "rationale": "コラボヘルスは事業主と健康保険組合などの保険者が連携して、従業員や家族の予防・健康づくりを進める取組です。一般的な地域連携や診療の委託とは区別します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://www.mhlw.go.jp/content/000962559.pdf"
+      ]
+    },
+    {
+      "id": "hokenshi-2022-annual-am-q15",
+      "decision": "revised",
+      "rationale": "復旧・復興期には生活の場が移り、従来の人間関係が途切れるため、社会的孤立への対応が重要です。栄養・治療・感染症への対応も継続し、時期に特徴的な課題との違いを考えます。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://www.mhlw.go.jp/content/10901000/000606178.pdf",
+        "https://sukoyaka21.cfa.go.jp/media/tools/s08_sai_manyu003.pdf"
+      ]
+    },
+    {
+      "id": "hokenshi-2022-annual-am-q16",
+      "decision": "revised",
+      "rationale": "病原体が寄生・増殖する宿主と、病原体を運ぶ媒介生物を区別します。魚に寄生するアニサキス幼虫を生食などで摂取すると、人のアニサキス症につながります。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://www.cdc.gov/dpdx/anisakiasis/index.html",
+        "https://www.cdc.gov/west-nile-virus/causes/index.html",
+        "https://www.cdc.gov/dpdx/echinococcosis/index.html",
+        "https://www.cdc.gov/dpdx/toxoplasmosis/index.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2022-annual-am-q17",
+      "decision": "revised",
+      "rationale": "プリセプターシップは、経験のある先輩が一定期間、新人の実践と主体的な学習を支える仕組みです。新人のペースに合わせて相談・実践の手本を提供することが、現場への適応につながります。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://www.mhlw.go.jp/file/05-Shingikai-10803000-Iseikyoku-Ijika/0000099641.pdf",
+        "https://www.mhlw.go.jp/hokenshiportal/guideline/pdf/1701.pdf"
+      ]
+    },
+    {
+      "id": "hokenshi-2023-annual-am-q1",
+      "decision": "revised",
+      "rationale": "プライマリヘルスケアは住民参加と地域の資源・技術を生かし、誰もが利用できる保健医療を目指します。オタワ憲章のヘルスプロモーションに示された行動領域・健康観との混同に注意します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html",
+        "https://www.who.int/teams/social-determinants-of-health/declaration-of-alma-ata",
+        "https://www.who.int/teams/health-promotion/enhanced-wellbeing/first-global-conference/health-education"
+      ]
+    },
+    {
+      "id": "hokenshi-2023-annual-am-q4",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2023-annual-am-q5",
+      "decision": "revised",
+      "rationale": "行動の目的に注目します。すでに必要となった治療への対処、病気の早期発見、普段の健康維持と、不調を解消して病気を避ける行動を区別します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2023-annual-am-q6",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2023-annual-am-q8",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2023-annual-am-q9",
+      "decision": "revised",
+      "rationale": "向老期では骨盤底の支持機能の低下が排尿障害に関係します。更年期症状は器質的病変で説明される症状とは区別し、ホルモン変化ではプロゲステロンとエストロゲンの役割を混同しないようにします。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html",
+        "https://www.mhlw.go.jp/content/001700810.pdf",
+        "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-control-problems/symptoms-causes",
+        "https://medlineplus.gov/menopause.html",
+        "https://ganjoho.jp/public/pre_scr/screening/cervix_uteri.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2023-annual-am-q11",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2023-annual-am-q12",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2023-annual-am-q13",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html"
+      ]
+    },
+    {
+      "id": "hokenshi-2023-annual-am-q14",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html"
+      ]
+    },
+    {
+      "id": "josanshi-2021-annual-am-q2",
+      "decision": "revised",
+      "rationale": "放射線の確定的影響は発達段階と線量に依存します。妊娠週数と受精後の週数を混同せず、着床前期は胚の死亡、器官形成期は形態異常、その後の中枢神経発達期は神経発達への影響という対応を押さえます。被ばくすれば必ず障害が起きるという意味ではありません。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html",
+        "https://www.env.go.jp/chemi/rhm/current/03-05-01.html",
+        "https://www.env.go.jp/chemi/rhm/current/03-05-02.html",
+        "https://www.j-sfp.org/pregnant/pregnant/"
+      ]
+    },
+    {
+      "id": "josanshi-2021-annual-am-q4",
+      "decision": "revised",
+      "rationale": "梅毒は妊娠初期に血清反応でスクリーニングします。非特異的検査とトレポネーマ特異的検査を組み合わせ、検査結果や治療歴を含めて感染の状態を評価します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html",
+        "https://www.mhlw.go.jp/file/05-Shingikai-10601000-Daijinkanboukouseikagakuka-Kouseikagakuka/0000203809.pdf",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=00tb9642&dataType=1",
+        "https://www.cdc.gov/std/treatment-guidelines/syphilis-pregnancy.htm"
+      ]
+    },
+    {
+      "id": "josanshi-2021-annual-am-q5",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html"
+      ]
+    },
+    {
+      "id": "josanshi-2021-annual-am-q6",
+      "decision": "revised",
+      "rationale": "着床は胚盤胞が子宮内膜に接着・侵入する過程で、受精後の第1週末に始まり第2週にも続きます。分泌期の内膜が受け入れに適し、妊娠初期のプロゲステロン産生は主に黄体が担います。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html",
+        "https://embryology.med.unsw.edu.au/embryology/index.php/Implantation",
+        "https://www.endotext.org/wp-content/uploads/pdfs/endocrinology-of-pregnancy.pdf"
+      ]
+    },
+    {
+      "id": "josanshi-2021-annual-am-q7",
+      "decision": "revised",
+      "rationale": "肺水は肺上皮からの分泌液で、羊水と同一の組成ではありません。気道の分枝、肺胞の形成、サーファクタントの成熟は段階的に進み、肺胞の発達は出生後も続きます。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html",
+        "https://embryology.med.unsw.edu.au/embryology/index.php/Respiratory_System_Development",
+        "https://pubmed.ncbi.nlm.nih.gov/1314041/"
+      ]
+    },
+    {
+      "id": "josanshi-2021-annual-am-q8",
+      "decision": "revised",
+      "rationale": "卵膜は胎児を包む膜で、胎児側の羊膜とその外側の絨毛膜、母体側の脱落膜という位置関係で捉えます。胎盤に接する基底脱落膜と、胎嚢を覆う被包脱落膜を区別します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html",
+        "https://openstax.org/books/maternal-newborn-nursing/pages/10-4-fetal-growth-and-development",
+        "https://embryology.med.unsw.edu.au/embryology/index.php/Placenta_Development",
+        "https://embryology.med.unsw.edu.au/embryology/index.php/ANAT2341_Lab_4_-_Decidua_and_Cord"
+      ]
+    },
+    {
+      "id": "josanshi-2021-annual-am-q10",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html"
+      ]
+    },
+    {
+      "id": "josanshi-2021-annual-am-q12",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html"
+      ]
+    },
+    {
+      "id": "josanshi-2021-annual-am-q13",
+      "decision": "revised",
+      "rationale": "乳汁分泌には全身のホルモンによる内分泌調節と、各乳房での局所調節があります。吸われない左乳房の分泌だけが低下した事例は、乳汁の除去量に応じたオートクリン調節に対応します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html",
+        "https://ncbi.nlm.nih.gov/books/NBK148970/",
+        "https://iris.who.int/bitstream/10665/43593/5/9789241594981_eng.pdf"
+      ]
+    },
+    {
+      "id": "josanshi-2021-annual-am-q16",
+      "decision": "revised",
+      "rationale": "新生児低血糖では振戦、活気低下、哺乳不良、筋緊張低下などがみられます。症状は非特異的で、振戦だけで低血糖の程度を確定するのではなく血糖測定で確認します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html",
+        "https://med.stanford.edu/newborns/clinical-guidelines/hypoglycemia.html"
+      ]
+    },
+    {
+      "id": "josanshi-2022-annual-am-q1",
+      "decision": "revised",
+      "rationale": "閉経に伴って卵巣機能が低下し、排卵・黄体形成が減るためプロゲステロンが低下します。卵巣からの負のフィードバックが弱まり、上位の調節系のLH・FSHは逆に上昇します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://health.nih.gov/womens-health/menopause",
+        "https://training.seer.cancer.gov/anatomy/reproductive/female/response.html"
+      ]
+    },
+    {
+      "id": "josanshi-2022-annual-am-q2",
+      "decision": "revised",
+      "rationale": "茶葉由来の紅茶・抹茶・ほうじ茶はカフェインを含みます。麦茶は大麦を原料とするため、茶葉から作る飲料と区別します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://www.mext.go.jp/a_menu/syokuhinseibun/mext_01110.html"
+      ]
+    },
+    {
+      "id": "josanshi-2022-annual-am-q3",
+      "decision": "revised",
+      "rationale": "骨盤の形、腔の広さ、計測する線、撮影方向を区別します。骨盤濶部は広い部分です。岬角から恥骨結合後面への最短距離は産科的真結合線に対応します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://www.med.kobe-u.ac.jp/journal/contents/70/E70.pdf",
+        "https://www.jstage.jst.go.jp/article/jsma1939/20/9/20_9_1091/_pdf",
+        "https://lifesciencedb.jp/bp3d/info/userGuide/releaseNotes/modelingNote-2.0.pdf",
+        "https://www.gmch.gov.in/sites/default/files/documents/Pelvis.pdf"
+      ]
+    },
+    {
+      "id": "josanshi-2022-annual-am-q4",
+      "decision": "revised",
+      "rationale": "本問の公式正答は4（エ：子宮内膜を萎縮させる）です。一方、PMDA掲載「ミレーナ52mg」の電子添文11.2「その他の副作用」には過多月経の記載があります。選択肢2（イ）が公式正答でないことを、「過多月経という副作用はない」という一般的な説明に置き換えてはいけません。出題側が2を採用しなかった理由、試験当時の添付文書との差分は確認できていません。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/630004_2529710X1027_1_09"
+      ]
+    },
+    {
+      "id": "josanshi-2022-annual-am-q5",
+      "decision": "revised",
+      "rationale": "梅毒は胎盤を介して胎児に感染します。妊娠初期から検査し、感染があれば早期に治療することが重要です。既往があっても再感染の有無や治療状況を確認します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://www.cdc.gov/std/treatment-guidelines/syphilis-pregnancy.htm",
+        "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/syphilis_qa.html"
+      ]
+    },
+    {
+      "id": "josanshi-2022-annual-am-q7",
+      "decision": "revised",
+      "rationale": "卵母細胞は胎児期に形成されて第一減数分裂の途中で停止し、思春期以降のLHサージで分裂が再開します。不均等な細胞質分裂により、1個の一次卵母細胞から機能する卵子は1個となり、他は極体になります。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://embryology.med.unsw.edu.au/embryology/index.php/Oocyte"
+      ]
+    },
+    {
+      "id": "josanshi-2022-annual-am-q8",
+      "decision": "revised",
+      "rationale": "妊娠後期は子宮の増大で横隔膜が挙上し、安静呼気の終わりに肺に残る機能的残気量が減少します。一方、1回換気量は増加するので、すべての肺気量が同じ方向に変化するわけではありません。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://www.jstage.jst.go.jp/article/jjsca/38/4/38_533/_pdf"
+      ]
+    },
+    {
+      "id": "josanshi-2022-annual-am-q9",
+      "decision": "revised",
+      "rationale": "酸素は分圧差に従って単純拡散します。一方、グルコースは担体を介する促進拡散、アミノ酸は能動輸送、IgGは受容体を介する輸送で胎盤を通過します。通過する事実と通過機構を分けて考えます。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://openstax.org/books/anatomy-and-physiology-2e/pages/28-2-embryonic-development",
+        "https://embryology.med.unsw.edu.au/embryology/index.php/Placenta_Development"
+      ]
+    },
+    {
+      "id": "josanshi-2022-annual-am-q10",
+      "decision": "revised",
+      "rationale": "新生児には嗅覚・痛覚・味覚があり、視覚も出生後に発達します。未熟であることと、感覚が存在しないことは違います。甘味の濃淡を識別できる選択肢が公式正答です。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://www.healthychildren.org/English/ages-stages/baby/pages/How-Your-Newborn-Behaves.aspx",
+        "https://www.chop.edu/pages/newborn-senses",
+        "https://neonatalnetworkssoutheast.nhs.uk/wp-content/uploads/2023/10/TVW-Pain-Assessment-guideline-ratified-Sept-22.pdf"
+      ]
+    },
+    {
+      "id": "josanshi-2022-annual-am-q13",
+      "decision": "revised",
+      "rationale": "アタッチメントは子どもから特定の養育者への情緒的なきずなです。養育者が応答し安心を与えるやり取りを通じて育ち、出生直後や周産期だけで完結するものではありません。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp230524-03_04_05.html",
+        "https://www.nhs.uk/best-start-in-life/baby/baby-basics/bonding-with-your-baby/building-a-close-relationship-with-your-baby/"
+      ]
+    },
+    {
+      "id": "josanshi-2023-annual-am-q2",
+      "decision": "revised",
+      "rationale": "子宮・腟の形成と卵巣の機能を区別します。Rokitansky症候群では子宮や腟の形成不全があっても卵巣は機能します。無月経だけから卵巣機能の欠如を判断しないことがポイントです。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html",
+        "https://medlineplus.gov/genetics/condition/androgen-insensitivity-syndrome/",
+        "https://medlineplus.gov/genetics/condition/turner-syndrome/",
+        "https://medlineplus.gov/genetics/condition/mayer-rokitansky-kuster-hauser-syndrome/",
+        "https://medlineplus.gov/genetics/condition/klinefelter-syndrome/"
+      ]
+    },
+    {
+      "id": "josanshi-2023-annual-am-q3",
+      "decision": "revised",
+      "rationale": "低用量経口避妊薬では定期的な服用を続けることが重要です。避妊効果、がんのリスク、血栓症のリスクは別の論点として比較し、血栓症リスクがないと理解してはいけません。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html",
+        "https://www.cancer.gov/about-cancer/causes-prevention/risk/hormones/oral-contraceptives-fact-sheet",
+        "https://www.jaog.or.jp/sep2012/JAPANESE/jigyo/JYOSEI/PILL/doctor/section_1.htm",
+        "https://www.mhlw.go.jp/stf/newpage_70871.html"
+      ]
+    },
+    {
+      "id": "josanshi-2023-annual-am-q5",
+      "decision": "revised",
+      "rationale": "妊娠初期のhCGは黄体に作用し、プロゲステロンの産生を維持して子宮内膜を保ちます。hCGが胎盤や下垂体などのホルモンすべてを一括して維持するわけではありません。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html",
+        "https://www.endotext.org/wp-content/uploads/pdfs/endocrinology-of-pregnancy.pdf",
+        "https://training.seer.cancer.gov/anatomy/endocrine/glands/pituitary.html",
+        "https://training.seer.cancer.gov/anatomy/endocrine/glands/adrenal.html"
+      ]
+    },
+    {
+      "id": "josanshi-2023-annual-am-q6",
+      "decision": "revised",
+      "rationale": "呻吟は呼気終末の肺胞虚脱を防ぐ反応、多呼吸は換気・ガス交換を補う反応です。新生児の柔らかい胸郭は吸気時の陰圧で陥凹しやすく、呼吸中枢の未熟性は無呼吸に関係します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html",
+        "https://newbornwhocc.org/pdf/Respiratory_System_2019.pdf"
+      ]
+    },
+    {
+      "id": "josanshi-2023-annual-am-q7",
+      "decision": "revised",
+      "rationale": "乳児は随意的な排尿の調節が未熟で、排尿は反射的です。腎血流量や尿濃縮能も出生後に発達するため、排尿の調節と腎臓自体の成熟を分けて理解します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html",
+        "https://www.niddk.nih.gov/health-information/urologic-diseases/bladder-control-problems-bedwetting-children/definition-facts",
+        "https://www.jstage.jst.go.jp/article/jjpn/38/0/38_sc.24-032/_pdf",
+        "https://www.osaka-ohtani.ac.jp/static/files/R4_jitsumumae_text_2022.pdf"
+      ]
+    },
+    {
+      "id": "josanshi-2023-annual-am-q8",
+      "decision": "revised",
+      "rationale": "閉経後はエストロゲン不足に伴い腟粘膜が萎縮して刺激に弱くなります。設問ではペッサリー接触部のびらんと出血があり、感染症や腫瘍ではなく粘膜の状態に作用するエストリオールを選びます。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html",
+        "https://www.pmda.go.jp/PmdaSearch/rdDetail/iyaku/2529701H1058_1?user=1",
+        "https://www.jaog.or.jp/note/%EF%BC%883%EF%BC%89gsm-%E3%81%AE%E6%B2%BB%E7%99%82/",
+        "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/670109_2521701H1068_1_02",
+        "https://nara.hosp.go.jp/img/section/yakuzai/pdf/yakuji_202312.pdf",
+        "https://pins.japic.or.jp/pdf/newPINS/00055306.pdf"
+      ]
+    },
+    {
+      "id": "josanshi-2023-annual-am-q9",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html"
+      ]
+    },
+    {
+      "id": "josanshi-2023-annual-am-q10",
+      "decision": "revised",
+      "rationale": "前置胎盤では内子宮口に対する胎盤の位置を超音波で評価します。妊娠中期から位置を確認し、低い場合は後期に再評価する流れと、症状に応じた治療を区別します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html",
+        "https://www.cuh.nhs.uk/patient-information/placenta-praevia-low-lying-placenta/",
+        "https://www.rcog.org.uk/media/z55dayvh/pi-placenta-praevia-placenta-accreta-and-vasa-praevia.pdf"
+      ]
+    },
+    {
+      "id": "josanshi-2023-annual-am-q11",
+      "decision": "revised",
+      "rationale": "歯周病と低出生体重児には関連が報告されていますが、単純な因果関係や、歯周病のある人が必ず低出生体重児を出産するという意味ではありません。他の肢も、運動・日光・カフェインの作用の方向を確認します。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html",
+        "https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2013/08/oral-health-care-during-pregnancy-and-through-the-lifespan",
+        "https://www.acog.org/womens-health/faqs/exercise-during-pregnancy",
+        "https://www.nhs.uk/pregnancy/keeping-well/pregnancy-vitamins-and-supplements/",
+        "https://www.nhs.uk/pregnancy/keeping-well/foods-to-avoid/"
+      ]
+    },
+    {
+      "id": "josanshi-2023-annual-am-q12",
+      "decision": "retained",
+      "rationale": "事例の条件、支援の目的・優先順位、用語の意味、回答範囲または構成の違いを肢別に説明済み。設問にない状況や診断を補わず維持。",
+      "references": [
+        "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-03_04_05.html"
+      ]
+    }
+  ]
+}

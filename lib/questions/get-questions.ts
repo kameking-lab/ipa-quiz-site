@@ -4,6 +4,14 @@ import { isExamPublished } from "@/lib/qualifications/catalog";
 // Bundler-friendly lazy loaders — each exam chunk is only loaded on demand.
 // To add a new exam: (1) create data/questions/{exam}/index.ts, (2) uncomment the loader.
 const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
+  "unko-kanrisha-ryokaku": async () => isExamPublished("unko-kanrisha-ryokaku") ? (await import("@/data/questions/unko-kanrisha-ryokaku")).QUESTIONS : [],
+  "shobo-setsubishi-kou1": async () => isExamPublished("shobo-setsubishi-kou1") ? (await import("@/data/questions/shobo-setsubishi-kou1")).QUESTIONS : [],
+  "kikenbutsu-kou": async () => isExamPublished("kikenbutsu-kou") ? (await import("@/data/questions/kikenbutsu-kou")).QUESTIONS : [],
+  "kikenbutsu-hei": async () => isExamPublished("kikenbutsu-hei") ? (await import("@/data/questions/kikenbutsu-hei")).QUESTIONS : [],
+  "shobo-setsubishi-kou4": async () => isExamPublished("shobo-setsubishi-kou4") ? (await import("@/data/questions/shobo-setsubishi-kou4")).QUESTIONS : [],
+  "shobo-setsubishi-otsu6": async () => isExamPublished("shobo-setsubishi-otsu6") ? (await import("@/data/questions/shobo-setsubishi-otsu6")).QUESTIONS : [],
+  "unko-kanrisha-kamotsu": async () => isExamPublished("unko-kanrisha-kamotsu") ? (await import("@/data/questions/unko-kanrisha-kamotsu")).QUESTIONS : [],
+  "kikenbutsu-otsu4": async () => isExamPublished("kikenbutsu-otsu4") ? (await import("@/data/questions/kikenbutsu-otsu4")).QUESTIONS : [],
   "sekou-1kenchiku": async () => isExamPublished("sekou-1kenchiku") ? (await import("@/data/questions/sekou-1kenchiku")).SEKOU_1KENCHIKU_QUESTIONS : [],
   "khk-kagaku": async () => isExamPublished("khk-kagaku") ? (await import("@/data/questions/khk-kagaku")).KHK_KAGAKU_QUESTIONS : [],
   "benrishi": async () => isExamPublished("benrishi") ? (await import("@/data/questions/benrishi")).QUESTIONS : [],
@@ -104,6 +112,7 @@ hokenshi: async () => isExamPublished("hokenshi") ? (await import("@/data/questi
 josanshi: async () => isExamPublished("josanshi") ? (await import("@/data/questions/josanshi")).JOSANSHI_QUESTIONS : [],
 "rigaku-ryohoshi": async () => isExamPublished("rigaku-ryohoshi") ? (await import("@/data/questions/rigaku-ryohoshi")).RIGAKU_RYOHOUSHI_QUESTIONS : [],
 "sagyo-ryohoshi": async () => isExamPublished("sagyo-ryohoshi") ? (await import("@/data/questions/sagyo-ryohoshi")).SAGYO_RYOHOSHI_QUESTIONS : [],
+  "gengo-chokakushi": async () => isExamPublished("gengo-chokakushi") ? (await import("@/data/questions/gengo-chokakushi")).GENGO_CHOKAKUSHI_QUESTIONS : [],
 "shino-kunrenshi": async () => isExamPublished("shino-kunrenshi") ? (await import("@/data/questions/shino-kunrenshi")).SHINO_KUNRENSHI_QUESTIONS : [],
 "rinsho-kogishi": async () => isExamPublished("rinsho-kogishi") ? (await import("@/data/questions/rinsho-kogishi")).RINSHO_KOGISHI_QUESTIONS : [],
 "judo-seifukushi": async () => isExamPublished("judo-seifukushi") ? (await import("@/data/questions/judo-seifukushi")).JUDO_SEIFUKUSHI_QUESTIONS : [],

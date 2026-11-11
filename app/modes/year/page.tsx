@@ -9,6 +9,7 @@ import { examLabel, formatYearSeason } from "@/lib/utils";
 import type { ExamCode, Season, Session } from "@/lib/questions/types";
 import { practiceSessionLabel } from "@/lib/questions/practice-session";
 import { countByExam, examMetaDescription } from "@/lib/seo/exam-meta";
+import { questionSourceEdition } from "@/lib/questions/source-label";
 
 const DEFAULT_EXAM: ExamCode = "ap";
 
@@ -70,6 +71,7 @@ interface YearGroup {
   season: Season;
   session: Session;
   count: number;
+  sourceLabel?: string;
 }
 
 export default async function YearModePage({
@@ -94,6 +96,7 @@ export default async function YearModePage({
         season: q.season,
         session: q.session,
         count: 1,
+        sourceLabel: exam === "eisei1" || exam === "eisei2" ? questionSourceEdition(q) : undefined,
       });
   }
   const items = [...groups.values()].sort(
@@ -164,7 +167,7 @@ export default async function YearModePage({
                       {label} {sessionLabel(item.session, exam)}
                     </div>
                     <div className="mt-1 text-lg font-bold text-primary">
-                      {exam === "riku-tech1" && item.season === "july" ? `${item.year}年7月試験` : formatYearSeason(item.year, item.season)}
+                      {item.sourceLabel ?? (exam === "riku-tech1" && item.season === "july" ? `${item.year}年7月試験` : formatYearSeason(item.year, item.season))}
                     </div>
                     <div className="mt-1 text-xs text-muted-foreground">
                       収録 {item.count} 問

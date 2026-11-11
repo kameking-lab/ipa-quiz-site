@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { emptyPetProfiles, newPetProfile, serializePetProfileDocument } from "../../lib/pet/v1/profile";
 import { allowLoopbackWebKit } from "./helpers/local-webkit";
-import { petArtFor } from "../../lib/pet/v1/art";
+import { petPortraitFor } from "../../lib/pet/v1/art";
 const key = "ipa-quiz:pet-profiles:v1:guest";
 function seed() {
   const doc = emptyPetProfiles("guest", "Asia/Tokyo"), pet = newPetProfile("guest", "ap");
@@ -21,8 +21,9 @@ for (const width of [320, 390]) test(`private room child and saved event survive
   await expect(own).toHaveAttribute("data-own-pet-id", '["guest","ap"]', { timeout: 15000 });
   await expect(own).toHaveAttribute("data-room-scene", "first-meeting");
   await expect(own.getByRole("button", { name: "こむぎ・応用情報技術者（名前を変える）" })).toBeVisible();
-  await expect(own.locator("img").first()).toHaveAttribute("src", petArtFor("ap", "partner", "slack"));
-  await expect(own).toContainText("いつもの机");
+  await expect(own.locator("img").first()).toHaveAttribute("src", petPortraitFor("ap", "partner", "study"));
+  await expect(own).toContainText("今日の1問で「小さなしおり」");
+  await expect(own.getByRole("link", { name: "新しい問題を解く", exact: true })).toHaveAttribute("href", "/quiz?mode=unanswered&exam=ap");
   const before = await page.evaluate(key => localStorage.getItem(key), key), text = await own.textContent();
   await own.scrollIntoViewIfNeeded();
   await expect.poll(()=>own.locator("img").first().evaluate(image=>(image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
@@ -33,12 +34,14 @@ for (const width of [320, 390]) test(`private room child and saved event survive
   expect(await own.textContent()).toBe(text); expect(await page.evaluate(key => localStorage.getItem(key), key)).toBe(before);
   const other = await context.newPage(); await allowLoopbackWebKit(other,browserName); await other.goto("/");
   await expect(other.locator("section[data-own-pet-id]")).toHaveAttribute("data-room-scene", "first-meeting", { timeout: 15000 }); await other.close();
-  await page.getByRole("button", { name: "育成を見る", exact: true }).tap();
+  await page.getByRole("button", { name: /育成を見る/ }).tap();
   const sheet = page.getByRole("dialog", { name: "チワワの育成" });
+  await sheet.locator("summary").filter({ hasText: /^思い出$/ }).tap();
   await expect(sheet.getByRole("heading", { name: "自習室のアルバム" })).toBeVisible();
-  await sheet.getByRole("button", { name: "こいぬ", exact: true }).tap();
-  await expect(sheet.getByRole("button", { name: "こいぬ", exact: true })).toHaveAttribute("aria-pressed", "true");
+  await sheet.locator("summary").filter({ hasText: /^姿$/ }).tap();
+  await sheet.getByRole("button", { name: /^こいぬ/ }).tap();
+  await expect(sheet.getByRole("button", { name: /^こいぬ/ })).toHaveAttribute("aria-pressed", "true");
   await page.keyboard.press("Escape");
-  await expect(own.locator("img").first()).toHaveAttribute("src", petArtFor("ap", "puppy", "slack"));
+  await expect(own.locator("img").first()).toHaveAttribute("src", petPortraitFor("ap", "puppy", "study"));
   await expect(own).toHaveAttribute("data-room-scene", "first-meeting");
 });

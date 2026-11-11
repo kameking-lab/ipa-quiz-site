@@ -153,7 +153,7 @@ export function CloudSyncPanel() {
         {result && result.overall === "unavailable" && (
           <p className="inline-flex items-center gap-1 text-xs text-amber-700 dark:text-amber-400">
             <AlertCircle className="h-3.5 w-3.5" aria-hidden="true" />
-            クラウド同期は現在準備中です。データはこの端末に安全に保存されています。
+            現在クラウド同期を利用できません。学習記録はこの端末に残っています。
           </p>
         )}
         {result && result.overall === "error" && (

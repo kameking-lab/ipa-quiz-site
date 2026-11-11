@@ -8,6 +8,7 @@ import { IPA_EXPLANATION_REPAIRS } from "./explanations-20260913";
 import { SC_TWO_YEAR_PUBLICATION_CORRECTIONS } from "./sc-two-year-publication-20260924";
 import sources from "./official-sources.json";
 import { ST_FIGURE_CORRECTIONS } from "./st-figures-20260924";
+import { AP_TRANSCRIPTION_RESTORATIONS } from "./ap-transcriptions-20261111";
 
 const sourceByPaper: Record<string, { question: string; answer: string }> = sources;
 
@@ -37,6 +38,7 @@ export function applyIpaCorrections(exam: ExamCode, questions: Question[]): Ques
       ...FE_2024_PUBLIC_SET_COMPLETIONS[q.id],
       ...SG_FE_PUBLIC_SET_COMPLETIONS[q.id],
       ...SG_FE_DISPLAY_FOLLOWUP[q.id],
+      ...AP_TRANSCRIPTION_RESTORATIONS[q.id],
       ...(selectedPublicSet ? {
         sourceAttribution: `出典：IPA「${q.year}年度公開問題」${q.exam === "sg" ? "情報セキュリティマネジメント" : "基本情報技術者"}試験 ${q.session === "kamoku-b" ? "科目B" : "科目A"} 問${q.qNumber}。Web掲載のため、改行・表記の整形や図表の文章・表への置換など、一部改変しています。解説は当サイトが独自に作成したもので、IPAの公式解説ではありません。`,
       } : {}),

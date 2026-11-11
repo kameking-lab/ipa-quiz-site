@@ -32,7 +32,10 @@ import dynamic from "next/dynamic";
 import { FirstPracticeEntry, FIRST_PRACTICE_EXAMS } from "@/components/exam/FirstPracticeEntry";
 import { ExamTopBrowse } from "@/components/exam/ExamTopBrowse";
 import { ExamTopGuide } from "@/components/exam/ExamTopGuide";
-import { examEntrySummary, isExamEntryCode } from "@/lib/seo/exam-entry";
+import { ExamPastQuestionGuide } from "@/components/exam/ExamPastQuestionGuide";
+import { ExamCbtSummary } from "@/components/exam/ExamCbtGuide";
+import { isExamEntryCode } from "@/lib/seo/exam-entry";
+import { isIpaTop } from "@/lib/seo/ipa-top";
 import { KanriCoverageNote } from "@/components/exam/KanriCoverageNote";
 import { Tsushin1CoverageNote } from "@/components/exam/Tsushin1CoverageNote";
 const ExamBrowseTabs = dynamic(
@@ -242,7 +245,7 @@ export default async function ExamTopPage({
   const hasAm1 = questions.some((q) => q.session === "am1");
   const hasAm2 = questions.some((q) => q.session === "am2");
   const isHighLevel = code !== "kenchiku-setsubishi" && hasAm1 && hasAm2;
-  const summary = isExamEntryCode(code) ? examEntrySummary(code) : code === "hokenshi" || code === "josanshi" || code === "rinsho-kensagishi" || code === "shinryo-hoshasengishi" || code === "sagyo-ryohoshi"
+  const summary = isIpaTop(code) ? examTopDescription(code, publishedOriginalCount) : code === "hokenshi" || code === "josanshi" || code === "rinsho-kensagishi" || code === "shinryo-hoshasengishi" || code === "sagyo-ryohoshi"
     ? examMetaDescription(code, publishedOriginalCount)
     : EXAM_DESCRIPTIONS[code] ?? `${examLabel(code)}の過去問演習。`;
 
@@ -286,12 +289,13 @@ export default async function ExamTopPage({
             {examLabel(code)}
           </Badge>
           <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            {examLabel(code)} 過去問
+            {examLabel(code)} {isIpaTop(code) ? "過去問・解説" : "過去問"}
           </h1>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{summary}</p>
+          {isExamEntryCode(code) && <ExamCbtSummary exam={code} />}
           {isExamEntryCode(code) && <FirstPracticeEntry exam={code} />}
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
-            <Badge variant="outline">{isExamEntryCode(code) ? "午前の収録" : "収録"} {publishedOriginalCount} 問</Badge>
+            <Badge variant="outline">収録 {publishedOriginalCount} 問</Badge>
             <Badge variant="outline">{years.length} 期分</Badge>
             <Badge variant="outline">{categories.length} 分野</Badge>
           </div>
@@ -306,7 +310,7 @@ export default async function ExamTopPage({
           {code === "denko1" && <p className="mt-3 text-sm text-muted-foreground">令和7年度下期の学科試験50問と、令和8年度上期CBT方式で試験センターが公表した出題例50問を収録しています。いずれも一般問題40問・配線図問題10問です。</p>}
           {code === "shakai" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第37回・第38回（令和6・7年度）社会福祉士国家試験の計255問（第38回129問、第37回は掲載保留3問を除く126問）を収録しています。「2つ選びなさい」の問題は2つ選ぶと採点します。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。</p>}
           {code === "seishin" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第27回・第28回（令和6・7年度）精神保健福祉士国家試験の専門科目（各48問）と、社会福祉士と同じ共通科目（第28回84問、第27回は掲載保留3問を除く81問）を収録しています。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。</p>}
-          {code === "kaigo" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第37回・第38回（令和6・7年度）介護福祉士国家試験の全250問（各125問、総合問題を含む）を収録しています。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。</p>}
+          {code === "kaigo" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第36回〜第38回（令和5〜7年度）介護福祉士国家試験の過去問を収録しています。出典は公益財団法人社会福祉振興・試験センター。解説は過去問AIが独自に作成したもので、同センターとは関係ありません。過去問題には、その後の法改正等により現時点では問題として成立していないものが含まれる場合があります。</p>}
           {code === "tohan" && <p className="mt-3 text-sm text-muted-foreground">令和6年度（2024年8月31日）・令和7年度（2025年8月23日）の試験を各120問、計240問収録しています。出典は関西広域連合の公式問題・正答です。解説は厚生労働省「試験問題の作成に関する手引き（令和7年4月）」に沿って作成しています。</p>}
           {code === "kanri" && <KanriCoverageNote questions={questions} />}
           {code === "civil2" && <p className="mt-3 text-sm text-muted-foreground">令和8年度前期と令和7年度10月実施分の第一次検定（土木）各全66問を収録。実試験ではNo.1〜5とNo.48〜66が必須、No.6〜16から9問、No.17〜36から6問、No.37〜47から6問を選びます。演習では全問を自由に解けます。</p>}
@@ -406,11 +410,11 @@ export default async function ExamTopPage({
               <div className="grid gap-2 sm:grid-cols-2">
                 <Button asChild variant="gradient" size="lg" className="font-semibold">
                   <Link href={`/quiz?mode=random&exam=${exam}&session=am2`}>
-                    午前 II
+                    科目A-2（旧午前II）
                   </Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link href={`/quiz?mode=random&exam=${exam}&session=am1`}>午前 I</Link>
+                  <Link href={`/quiz?mode=random&exam=${exam}&session=am1`}>科目A-1（旧午前I）</Link>
                 </Button>
               </div>
             </div>
@@ -439,6 +443,7 @@ export default async function ExamTopPage({
         )}
 
         {/* Browse tabs */}
+        {isExamEntryCode(code) && <ExamPastQuestionGuide exam={code} questions={questions} />}
         {isExamEntryCode(code) ? <ExamTopBrowse exam={code} years={years} categories={categories} /> : <section aria-label="問題を探す" className="mb-8">
           {/* Deep-link targets for sitemap "年度別一覧 (#years)" / "分野別一覧 (#topics)".
               ExamBrowseTabs reads the hash to pre-select the matching tab. */}

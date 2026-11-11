@@ -1,4 +1,5 @@
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+import source2023 from "./2023-annual.json";
 import source2024 from "./2024-annual.json";
 import source2025 from "./2025-annual.json";
 
@@ -28,6 +29,7 @@ type KaigoSource = {
   examDate: string;
   answerUrl: string;
   questionPdfs: Record<string, { url: string; sha256: string }>;
+  lastUpdated?: string;
   questions: KaigoSourceItem[];
 };
 
@@ -36,7 +38,7 @@ export const KAIGO_INDEPENDENCE_NOTICE = "解説は過去問AIが独自に作成
 
 function toQuestion(item: KaigoSourceItem, data: KaigoSource): Question {
   const answerKeys = item.officialAnswer.map((n) => keys[n - 1]);
-  if (item.choices.length !== 5 || item.choiceExplanations.length !== 5 || answerKeys.length !== 1 || !answerKeys[0]) {
+  if (item.choices.length !== 5 || item.choiceExplanations.length !== 5 || !answerKeys.length || answerKeys.some((key) => !key)) {
     throw new Error(`Invalid kaigo source record 問題${item.number}`);
   }
   const pdf = data.questionPdfs[item.pdfFile];
@@ -46,7 +48,7 @@ function toQuestion(item: KaigoSourceItem, data: KaigoSource): Question {
       ? `選択肢の図は公式問題PDF（${item.figureSource.printedPage}ページ）、選択肢の文は同センターの音声読み上げ用試験問題の説明文。`
       : `図は公式問題PDF（${item.figureSource.printedPage}ページ）から引用。`
     : "";
-  const lawNotice = `※出題時点（${data.fiscalYear === 2024 ? "令和7年1月" : "令和8年1月"}）の制度に基づく解説です。その後の法改正等で結論が変わる場合があります。`;
+  const lawNotice = `※出題時点（令和${data.fiscalYear - 2017}年1月）の制度に基づく解説です。その後の法改正等で結論が変わる場合があります。`;
   return {
     id: `kaigo-${data.fiscalYear}-annual-gakka-q${item.number}`,
     exam: "kaigo",
@@ -56,14 +58,15 @@ function toQuestion(item: KaigoSourceItem, data: KaigoSource): Question {
     qNumber: item.number,
     examDate: data.examDate,
     subject: item.subject,
-    officialAnswerNumber: String(item.officialAnswer[0]),
+    officialAnswerNumber: item.officialAnswer.join(","),
     type: "multiple-choice",
     category: item.subject,
     topicTags: [item.subject, data.fiscalYear === 2024 ? item.part : `${item.part}パート`],
     difficulty: 2,
     question: item.question,
     choices: Object.fromEntries(keys.map((key, index) => [key, item.choices[index]])),
-    answer: answerKeys[0],
+    // 複数正答は「いずれか1つで正解」。requiredSelectionsは付けない。
+    answer: answerKeys.length > 1 ? answerKeys : answerKeys[0],
     explanation: item.lawSensitive ? `${item.summary}\n${lawNotice}` : item.summary,
     choiceExplanations: Object.fromEntries(keys.map((key, index) => [key, item.choiceExplanations[index]])),
     explanationCoverage: "full",
@@ -76,7 +79,7 @@ function toQuestion(item: KaigoSourceItem, data: KaigoSource): Question {
     sourceAnswerUrl: data.answerUrl,
     sourceAttribution: `出典：公益財団法人社会福祉振興・試験センター ${data.title} 問題${item.number}。${figureNote}${KAIGO_INDEPENDENCE_NOTICE}`,
     license: "SSSC-reuse",
-    lastUpdated: data.fiscalYear === 2024 ? "2026-09-28" : "2026-09-26",
+    lastUpdated: data.lastUpdated ?? (data.fiscalYear === 2024 ? "2026-09-28" : "2026-09-26"),
   };
 }
 
@@ -86,4 +89,7 @@ export const KAIGO_2024_QUESTIONS: Question[] = (source2024 as KaigoSource).ques
 /** 第38回（令和7年度）介護福祉士国家試験 全125問。 */
 export const KAIGO_2025_QUESTIONS: Question[] = (source2025 as KaigoSource).questions.map((item) => toQuestion(item, source2025 as KaigoSource));
 
-export const KAIGO_QUESTIONS: Question[] = [...KAIGO_2025_QUESTIONS, ...KAIGO_2024_QUESTIONS];
+/** 第36回（令和5年度）介護福祉士国家試験 全125問。 */
+export const KAIGO_2023_QUESTIONS: Question[] = (source2023 as KaigoSource).questions.map((item) => toQuestion(item, source2023 as KaigoSource));
+
+export const KAIGO_QUESTIONS: Question[] = [...KAIGO_2025_QUESTIONS, ...KAIGO_2024_QUESTIONS, ...KAIGO_2023_QUESTIONS];

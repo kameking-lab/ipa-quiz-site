@@ -6,7 +6,6 @@ import { ThumbsUp, AlertCircle, Flag, Check } from "lucide-react";
 import { readQuestionReportContext, questionReportContextLines, type QuestionReportContext } from "@/lib/feedback/question-report-context";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { submitSupport } from "@/lib/feedback/submit";
-import { PrivacyNote } from "@/components/ui/privacy-note";
 import { readLocalFeedback } from "@/lib/feedback/local-data";
 
 type Rating = "helpful" | "unclear" | "report";
@@ -166,7 +165,6 @@ function QuestionFeedbackForm({ questionId, context }: { questionId: string; con
             <ul className="mt-1 space-y-1 break-words">
               {questionReportContextLines(context, questionId).map(line => <li key={line}>{line}</li>)}
             </ul>
-            <p className="mt-2 text-muted-foreground">表示中の教材から取得した報告情報です。更新日は版番号ではありません。</p>
           </div>
           <label
             htmlFor={`feedback-${questionId}`}
@@ -204,7 +202,6 @@ function QuestionFeedbackForm({ questionId, context }: { questionId: string; con
               コメントなしで送信
             </button>
           </div>
-          <PrivacyNote variant="message" />
         </div>
       )}
     </div>

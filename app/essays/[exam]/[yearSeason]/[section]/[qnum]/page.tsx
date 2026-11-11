@@ -163,7 +163,7 @@ export default async function EssayPm2DetailPage({
       <AiContentNotice
         className="mb-6"
         headline="AI生成の参考答案（架空）"
-        body="問題・答案ともに独自教材です。実際のIPA過去問・公式解答ではありません。年度・季節は教材の整理用ラベルです。論述構成を学ぶために過去問AIが生成した架空の参考例で、合格を保証するものではありません。論述の骨格・業種事例の参考としてご活用ください。"
+        body="問題・答案ともに独自教材です。実際のIPA過去問・公式解答ではありません。年度・季節は教材の整理用ラベルです。論述構成を学ぶためのAI生成の架空例です。論述の骨格・業種事例の参考としてご活用ください。"
       />
 
       <section className="mb-6 rounded-2xl border border-zinc-200 bg-zinc-50 p-5 dark:border-zinc-800 dark:bg-zinc-900/50">

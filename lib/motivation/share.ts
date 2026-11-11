@@ -22,13 +22,6 @@ export function buildOgImageUrl(params: ShareOgParams): string {
   return u.toString();
 }
 
-export function buildXShareUrl(text: string, url: string): string {
-  const u = new URL("https://twitter.com/intent/tweet");
-  u.searchParams.set("text", text);
-  u.searchParams.set("url", url);
-  return u.toString();
-}
-
 export function buildLineShareUrl(text: string, url: string): string {
   return `https://line.me/R/msg/text/?${encodeURIComponent(`${text}\n${url}`)}`;
 }

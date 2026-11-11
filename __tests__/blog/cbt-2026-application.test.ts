@@ -21,8 +21,10 @@ describe("2026 IPA CBT application guidance", () => {
 
   it("distinguishes period CBT from year-round CBT", () => {
     const text = body("ipa-shiken-cbt-vs-pbt");
-    expect(text).toContain("前期・後期の期間制");
-    expect(text).toContain("科目Aが10月28日〜11月10日");
+    expect(text).toContain("2026年度後期");
+    expect(text).toContain("通年実施の試験と同じつもりで予定を入れず");
+    expect(text).toContain("2月6日〜19日");
+    expect(text).toContain("3月3日〜15日");
     expect(text).not.toContain("移行はまだ「予定」段階");
     expect(text).not.toContain("CBT は通年実施");
   });

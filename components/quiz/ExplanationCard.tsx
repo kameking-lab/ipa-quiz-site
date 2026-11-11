@@ -16,6 +16,7 @@ import { BookmarkButton } from "@/components/BookmarkButton";
 import { QuestionBody } from "./QuestionBody";
 import { QuestionSourcePresentation } from "./QuestionSourcePresentation";
 import { RikuTech2CylinderGuide } from "./RikuTech2CylinderGuide";
+import { LearningPetCorner } from "@/components/pet/LearningPetCorner";
 
 function isPlaceholderExplanation(explanation: string): boolean {
   return /^正解は[アイウエ]です[。.]?$/.test(explanation.trim()) || explanation.trim() === "";
@@ -48,6 +49,7 @@ export function ExplanationCard({
 }: Props) {
   if (question.type === "native-b" && question.nativeB) return <div className="space-y-4" role="region" aria-label="五枠の解説">
     <NativeBFeedback data={question.nativeB} result={nativeBResult} />
+    <LearningPetCorner qualificationId={question.exam} questionId={question.id} compact />
     <QuestionBody text={displayQuestionExplanation(question.exam, question.explanation)} />
     <QuestionSourcePresentation question={question} phase="after" />
     <div className="flex gap-3">
@@ -123,12 +125,15 @@ export function ExplanationCard({
         </div>
       </div>
 
-      <div className="sticky top-24 z-20 -mx-4 mb-4 flex items-center justify-between gap-3 border-y border-border bg-background px-4 py-2 shadow-sm sm:static sm:mx-0 sm:rounded-xl sm:border sm:shadow-none">
+      <div className="sticky top-24 z-20 -mx-4 mb-4 space-y-2 border-y border-border bg-background px-4 py-2 shadow-sm sm:static sm:mx-0 sm:rounded-xl sm:border sm:shadow-none">
+        <LearningPetCorner qualificationId={question.exam} questionId={question.id} compact />
+        <div className="flex items-center justify-between gap-3">
         <span className="text-sm font-semibold">{isCorrect ? "正解です" : `正解は ${answerLabel}`}</span>
         <Button variant="primary" size="lg" onClick={onNext} className="min-h-11 shrink-0 font-semibold">
           {nextLabel}
           <ArrowRight className="h-4 w-4" />
         </Button>
+        </div>
       </div>
 
 

@@ -1,10 +1,10 @@
 import { test, expect } from "@playwright/test";
 
-test.describe("介護福祉士 第37回・第38回", () => {
-  test("exam hub shows 250 questions and each year shows 125 with the independence notice", async ({ page }) => {
+test.describe("介護福祉士 第36回〜第38回", () => {
+  test("exam hub shows 375 questions and each year shows 125 with the independence notice", async ({ page }) => {
     await page.goto("/kaigo");
     await expect(page.getByRole("heading", { level: 1 })).toContainText("介護福祉士");
-    await expect(page.getByText("収録 250 問")).toBeVisible();
+    await expect(page.getByText("収録 375 問")).toBeVisible();
     await expect(page.getByText(/同センターとは関係ありません/).filter({ visible: true }).first()).toBeVisible();
     await page.goto("/kaigo/2024-annual");
     await expect(page.getByText("125 問", { exact: true })).toBeVisible();
@@ -14,6 +14,11 @@ test.describe("介護福祉士 第37回・第38回", () => {
     await expect(page.getByText("125 問", { exact: true })).toBeVisible();
     await expect(page.getByText(/第38回（試験日 令和8年1月25日）の全125問/)).toBeVisible();
     await expect(page.getByText(/総合問題 問題114〜125/).first()).toBeVisible();
+    await page.goto("/kaigo/2023-annual");
+    await expect(page.getByText("125 問", { exact: true })).toBeVisible();
+    await expect(page.getByRole("heading", { level: 1 })).toContainText("令和5年度");
+    await expect(page.getByText("第36回の全125問です。", { exact: false })).toBeVisible();
+    await expect(page.getByText(/第38回（試験日/)).toHaveCount(0);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
 

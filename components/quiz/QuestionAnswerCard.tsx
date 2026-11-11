@@ -30,6 +30,7 @@ import { recordReview } from "@/lib/learning/spaced-repetition";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 import { readSettings } from "@/lib/storage/settings";
 import { posthogCapture } from "@/lib/posthog";
+import { observeJourney } from "@/lib/billing/journey-client";
 import type { ChoiceKey, ExamCode, Question, QuestionPart, Season, Session } from "@/lib/questions/types";
 import { choiceDisplayLabel, choiceImageAlt, usesNumberedChoices } from "@/lib/questions/display";
 
@@ -158,6 +159,7 @@ function ScoredQuestionAnswerCard({
       // /q/* の inline 回答は元々未計測だった。QuizPlayer と同じイベント名を使うことで、
       // admin/exam-usage の資格別回答数ランキングに自動的に合算される。
       posthogCapture("question_answered", { questionId, exam, correct });
+      observeJourney({ qualification: exam, answer: true });
     },
     [questionId, question, exam, year, season, session, qNumber, part, pet],
   );
@@ -338,6 +340,7 @@ function ScoredQuestionAnswerCard({
               <span className="ml-1 font-normal text-foreground">：{answerText}</span>
             ))}
           </div>
+          {question ? <div className="mt-3"><LearningPetCorner qualificationId={question.exam} questionId={question.id} compact /></div> : null}
           <div className="mt-3 flex flex-wrap items-center gap-2">
             <a
               href="#explanation"
@@ -377,7 +380,6 @@ function ScoredQuestionAnswerCard({
           focusRequest={{ sequence: copilotRequest?.questionId === question.id ? copilotRequest.sequence : 0, prompt: copilotRequest?.prompt }}
         />
       )}
-      {question && <LearningPetCorner qualificationId={question.exam} questionId={question.id} />}
     </div>
   );
 }

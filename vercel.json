@@ -1,8 +1,12 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
-  "buildCommand": "pnpm run build",
+  "installCommand": "npx --yes pnpm@10.33.0 install --frozen-lockfile",
+  "buildCommand": "npx --yes pnpm@10.33.0 run build",
   "git": {
     "deploymentEnabled": {
+      "cx/release-kako-20261110": false,
+      "feat/ios-app-*": false,
+      "cx/rel-kako-ios-20261110": false,
       "release/robots-collection-20261026": false,
       "release/billing-monthly-r6-20261028": false,
       "release/anonymous-free-practice-20261030": false

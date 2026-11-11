@@ -76,7 +76,6 @@ import { AiAccessNotice, useAiAccessNotice } from "@/components/ai/AiAccessNotic
 import { aiPolicyDenialMessage } from "@/lib/ai/access-client";
 import { copilotRestriction, type CopilotRestriction } from "./restriction-copy";
 import { usePinnedQuickActions } from "@/lib/copilot/pinned-actions";
-import { PrivacyNote } from "@/components/ui/privacy-note";
 
 interface Message {
   role: "user" | "assistant";
@@ -172,27 +171,6 @@ function buildShareUrl(question: Question, messages: Message[]): string {
   };
   const encoded = btoa(encodeURIComponent(JSON.stringify(payload)));
   return `${window.location.origin}/chat/share?d=${encoded}`;
-}
-
-function examHashtags(exam: string): string {
-  const tags = ["IPA試験", "過去問AI"];
-  const map: Record<string, string> = {
-    ap: "応用情報",
-    fe: "基本情報",
-    sg: "情報セキュリティマネジメント",
-    ip: "ITパスポート",
-    sc: "情報処理安全確保支援士",
-    nw: "ネットワークスペシャリスト",
-    db: "データベーススペシャリスト",
-    es: "エンベデッドシステムスペシャリスト",
-    st: "ITストラテジスト",
-    sa: "システムアーキテクト",
-    pm: "プロジェクトマネージャ",
-    sm: "ITサービスマネージャ",
-    au: "システム監査技術者",
-  };
-  if (map[exam]) tags.push(map[exam]);
-  return tags.join(",");
 }
 
 export function CopilotPanel({
@@ -790,9 +768,6 @@ export function CopilotPanel({
   );
 
   const hasMessages = messages.length > 0;
-  const twitterUrl = shareUrl
-    ? `https://twitter.com/intent/tweet?text=${encodeURIComponent("AIと一緒に解いたIPA過去問")}&hashtags=${encodeURIComponent(examHashtags(question.exam))}&url=${encodeURIComponent(shareUrl)}`
-    : "";
 
   const inputForm = (
     <>
@@ -894,7 +869,6 @@ export function CopilotPanel({
           </Button>
         )}
       </form>
-      <PrivacyNote variant="ai" className="px-3 pb-2" />
     </>
   );
 
@@ -1251,17 +1225,6 @@ export function CopilotPanel({
                 <span className="ml-1">{copiedShareUrl ? "コピー済み" : "コピー"}</span>
               </Button>
             </div>
-            <a
-              href={twitterUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex w-full items-center justify-center gap-2 rounded-xl border border-zinc-200 bg-white px-4 py-2.5 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800"
-            >
-              <svg className="h-4 w-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
-              X（Twitter）で共有
-            </a>
             <p className="text-[10px] text-zinc-400 dark:text-zinc-500">
               ※ URLには会話の内容が含まれます。個人情報は入力しないようにしてください。
             </p>

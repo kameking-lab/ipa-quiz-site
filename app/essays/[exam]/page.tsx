@@ -94,7 +94,7 @@ export default async function EssayExamPage({
         <AiContentNotice
           className="mb-4"
           headline="AI生成の参考答案（架空）"
-          body="問題・答案ともに独自教材です。実際のIPA過去問・公式解答ではありません。年度・季節は教材の整理用ラベルです。論述構成を学ぶために過去問AIが生成した架空の参考例で、合格を保証するものではありません。業種別シナリオも架空の事例であり、各業界の専門的助言・実務指南ではありません。"
+          body="問題・答案ともに独自教材です。実際のIPA過去問・公式解答ではありません。年度・季節は教材の整理用ラベルです。論述構成を学ぶためのAI生成の架空例です。"
         />
         <p className="max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
           独自の論述練習問題を業種別の具体的シナリオで解説した参考答案です。

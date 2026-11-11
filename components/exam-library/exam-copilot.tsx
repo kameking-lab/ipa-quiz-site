@@ -6,7 +6,6 @@ import { AiAccessNotice, useAiAccessNotice } from "@/components/ai/AiAccessNotic
 import { Sparkles } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Markdown } from "@/components/ui/markdown";
-import { PrivacyNote } from "@/components/ui/privacy-note";
 import { posthogCapture } from "@/lib/posthog";
 import { findExamEntry } from "@/lib/exam-library-catalog";
 import { qualificationHubForEntry } from "@/lib/exam-qualification-hubs";
@@ -119,7 +118,6 @@ export function ExamLibraryCopilot({ examId, questionId, selectedChoice }: {
             />
             {error ? <p role="alert" className="mt-2 text-sm text-red-700 dark:text-red-300">{error}</p> : null}
             <button type="submit" disabled={busy || !draft.trim()} className={`${buttonVariants({ variant: "primary", size: "lg" })} mt-2`}>{busy ? "回答中…" : "AIに聞く"}</button>
-            <PrivacyNote variant="ai" className="mt-2" />
           </form>
         </div>
       ) : null}

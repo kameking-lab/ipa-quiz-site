@@ -17,6 +17,14 @@ export default defineConfig({
     testTimeout: 30_000,
   },
   resolve: {
+    // npm ci in mobile creates a second copy beside the shared workspace.
+    // Tests and shared native code must observe the same Capacitor instance.
+    dedupe: [
+      "react", "react-dom", "@capacitor/core", "@capacitor/network",
+      "@capacitor/app", "@capacitor/browser", "@capacitor/filesystem",
+      "@capacitor/local-notifications", "@capacitor/preferences", "@capacitor/share",
+      "@revenuecat/purchases-capacitor",
+    ],
     alias: {
       "@": path.resolve(__dirname, "."),
       // `server-only` is a Next.js build-time token with no resolvable module on
