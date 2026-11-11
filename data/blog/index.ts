@@ -71,7 +71,12 @@ export function getRelatedPosts(slug: string, limit = 3): BlogPostSummary[] {
     (p) =>
       p.slug !== slug &&
       !explicit.some((e) => e.slug === p.slug) &&
-      (p.exam === target.exam || p.tags.some((t) => target.tags.includes(t))),
+      // Cross-qualification recommendations require an explicit editorial link.
+      // A broad tag such as 独学 is insufficient to switch the reader's subject.
+      (p.exam === target.exam || (
+        (!target.exam || EXAM_CODES.some(exam => exam === target.exam)) &&
+        !p.exam && p.tags.some((t) => target.tags.includes(t))
+      )),
   )
     .slice(0, limit - explicit.length)
     .map(toSummary);

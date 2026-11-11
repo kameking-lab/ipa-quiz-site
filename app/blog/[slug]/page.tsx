@@ -237,13 +237,13 @@ export default async function BlogArticlePage({ params }: PageProps) {
 
   const dates = publicBlogDates(post);
 
-  const practiceSection = (practice && (strictContentGateEnabled() ? (
-        <section id="article-practice" aria-label="記事から1問チャレンジ" className="mb-8 scroll-mt-24 rounded-2xl border border-border p-5">
-          <h2 className="text-lg font-bold">記事から1問チャレンジ</h2>
-          <p className="mt-2 text-sm text-muted-foreground">ウェブ・アプリ共通の演習枠を確認してから、問題と解説を表示します。</p>
-          <Link href={`${practice.continueHref}&question=${encodeURIComponent(practice.question.id)}`} className="mt-3 inline-flex min-h-12 items-center rounded-xl bg-primary px-4 font-semibold text-primary-foreground">利用枠を確認して1問解く</Link>
-        </section>
-      ) : <BlogPractice key={practice.question.id} {...practice} slug={slug} explanation={<Markdown>{practice.question.explanation}</Markdown>} />));
+  const practiceSection = practice && (strictContentGateEnabled() ? (
+    <section id="article-practice" aria-label="記事から1問チャレンジ" className="mb-8 scroll-mt-24 rounded-2xl border border-border p-5">
+      <h2 className="text-lg font-bold">記事から1問チャレンジ</h2>
+      <p className="mt-2 text-sm text-muted-foreground">ウェブ・アプリ共通の演習枠を確認してから、問題と解説を表示します。</p>
+      <Link href={`${practice.continueHref}&question=${encodeURIComponent(practice.question.id)}`} className="mt-3 inline-flex min-h-12 items-center rounded-xl bg-primary px-4 font-semibold text-primary-foreground">利用枠を確認して1問解く</Link>
+    </section>
+  ) : <BlogPractice key={practice.question.id} {...practice} slug={slug} explanation={<Markdown>{practice.question.explanation}</Markdown>} />);
 
   return (
     <main className="mx-auto w-full max-w-3xl px-4 py-6 sm:py-10">
@@ -317,7 +317,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
         <BlogMarkdown>{post.body}</BlogMarkdown>
       </article>
 
-      {post.practicePlacement === "after-body" && practiceSection}
+      {post.practicePlacement === "after-body" && <div className="mt-8">{practiceSection}</div>}
 
       {post.exam ? (
         <section className="print:hidden mt-10 rounded-2xl border border-sky-200 bg-sky-50/60 p-5 text-sm text-zinc-700 dark:border-sky-800 dark:bg-sky-950/30 dark:text-zinc-300">
@@ -330,11 +330,11 @@ export default async function BlogArticlePage({ params }: PageProps) {
           </p>
           <div className="flex flex-wrap items-center gap-2">
             <Link
-              href={`/quiz?mode=random&exam=${post.exam}`}
-              aria-label={`この試験を演習する（${examLabel(post.exam)}・${getExamQuestionCount(post.exam)}問）`}
+              href={post.practicePlacement === "none" ? `/${post.exam}` : `/quiz?mode=random&exam=${post.exam}`}
+              aria-label={post.practicePlacement === "none" ? `${examLabel(post.exam)}の受験区分・科目を選ぶ` : `この試験を演習する（${examLabel(post.exam)}・${getExamQuestionCount(post.exam)}問）`}
               className="inline-flex min-h-[48px] items-center gap-1.5 rounded-full bg-sky-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-sky-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              この試験を演習する（{getExamQuestionCount(post.exam).toLocaleString("ja-JP")}問）→
+              {post.practicePlacement === "none" ? "受験区分・科目を選ぶ" : <>この試験を演習する（{getExamQuestionCount(post.exam).toLocaleString("ja-JP")}問）</>}→
             </Link>
             <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2.5 py-1 text-[11px] font-medium text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300">
               <span aria-hidden="true">✓</span>問題・解説の閲覧は無料

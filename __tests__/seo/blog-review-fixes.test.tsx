@@ -2,8 +2,10 @@ import { describe, expect, it } from "vitest";
 import { renderToStaticMarkup } from "react-dom/server";
 import { BlogMarkdown } from "@/components/blog/BlogMarkdown";
 import BlogArticlePage from "@/app/blog/[slug]/page";
-import { getBlogPostBySlug } from "@/data/blog";
+import { getBlogPostBySlug, getRelatedPosts } from "@/data/blog";
 import { deriveSessionPool } from "@/lib/questions/session-pool";
+import { getBlogPractice } from "@/lib/blog/practice";
+import { getRelatedQuestionsForPost } from "@/lib/blog/related-questions";
 
 const post = (slug: string) => getBlogPostBySlug(slug)!;
 const doc = (html: string) => new DOMParser().parseFromString(html, "text/html");
@@ -64,5 +66,38 @@ describe("reviewed article corrections", () => {
     expect(body).not.toContain("](/quiz?mode=random)");
     expect(body).toContain("Aさんのアカウントを営業部グループから削除する");
     expect(body).not.toContain("採点者が探す部分点キーワード");
+  });
+
+  it("continues the lesson's actual topic rather than just matching its qualification", () => {
+    const care = getBlogPractice("hoikushi-kyoiku-yogo-study-notes")!;
+    expect(care.question.question).toContain("赤い鳥");
+    const refrigeration = getBlogPractice("khk-reito2-cycle-study")!;
+    expect(refrigeration.question.session).toBe("kogaku");
+    expect(refrigeration.question.question).toContain("比エンタルピー");
+    const fp = getBlogPractice("fp2-free-gakka-review-date")!;
+    expect(fp.question.id).toBe("fp2-202501-gakka-q2");
+    expect(fp.question.choices?.["ア"]).toContain("40歳以上65歳未満");
+  });
+
+  it("keeps curated source examples in related questions and never fills with another qualification", () => {
+    for (const slug of ["kangoshi-free-past-questions-review", "hoikushi-kyoiku-yogo-study-notes", "khk-reito2-cycle-study", "fp2-free-gakka-review-date"]) {
+      const guide = post(slug);
+      const questions = getRelatedQuestionsForPost(guide.exam, guide.tags, 3, guide.relatedQuestionIds);
+      expect(questions.length, slug).toBeGreaterThan(0);
+      expect(questions.map(q => q.id)).toEqual(guide.relatedQuestionIds);
+      for (const related of getRelatedPosts(slug, 4)) {
+        expect(!related.exam || related.exam === guide.exam, `${slug} -> ${related.slug}`).toBe(true);
+      }
+    }
+  });
+
+  it("separates the two KHK routes and supplies an in-article TTL check", async () => {
+    const guide = post("khk-hei-kagaku-free-question-selection");
+    const document = doc(renderToStaticMarkup(await BlogArticlePage({ params: Promise.resolve({ slug: guide.slug }) })));
+    expect(document.querySelector("#article-practice")).toBeNull();
+    expect(document.querySelector('#article-body a[href$="session=khk-cx"]')).not.toBeNull();
+    expect(document.querySelector('#article-body a[href$="session=khk-dx"]')).not.toBeNull();
+    expect(post("nw-dns-cache-timeline").body).toContain("答えは10:05");
+    expect(post("nw-dns-cache-timeline").body).toContain("期限は10:07");
   });
 });

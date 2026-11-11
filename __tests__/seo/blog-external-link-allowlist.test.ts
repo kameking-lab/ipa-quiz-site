@@ -19,6 +19,27 @@ import { getAllBlogPosts } from "@/data/blog";
 //
 // Newly added URLs verified resolving (HEAD, HTTP 200, no redirect) on 2026-09-28:
 const EXPECTED_EXTERNAL_URLS = [
+  // Article review corrections: official/primary links checked 2026-11-11.
+  "https://cbt-s.com/examinee/examination/fe/",
+  "https://cbt-s.com/examinee/examination/sg/",
+  "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8CX.pdf",
+  "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8CY.pdf",
+  "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8CZ.pdf",
+  "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8DX.pdf",
+  "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8DY.pdf",
+  "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8DZ.pdf",
+  "https://www.hoyokyo.or.jp/08AP2-1.pdf",
+  "https://www.hoyokyo.or.jp/08AP3-1.pdf",
+  "https://www.ipa.go.jp/jinzai/riss/index.html",
+  "https://www.ipa.go.jp/shiken/kubun/db.html",
+  "https://www.ipa.go.jp/shiken/kubun/fe.html",
+  "https://www.ipa.go.jp/shiken/kubun/nw.html",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/index.html",
+  "https://www.khk.or.jp/Portals/0/khk/exam/2025/1110/R7ACHZ-W.pdf",
+  "https://www.postgresql.org/docs/current/queries-union.html",
+  "https://www.rfc-editor.org/rfc/rfc5280.html",
+  "https://www3.jitec.ipa.go.jp/JitesCbt/html/examination/apply.html",
+  "https://www3.jitec.ipa.go.jp/JitesCbt/html/examination/confirmation.html",
   // Study guides 01–10: official documents / primary specifications, GET checked 2026-11-11.
   "https://csrc.nist.gov/pubs/fips/186-5/final",
   "https://www.rfc-editor.org/rfc/rfc8017.html",
@@ -57,7 +78,6 @@ const EXPECTED_EXTERNAL_URLS = [
   "https://www.ipa.go.jp/shiken/asia/itpe.html",
   "https://www.ipa.go.jp/shiken/about/koudo_menjo.html",
   "https://www.ipa.go.jp/shiken/about/menjo-fe.html",
-  "https://www.ipa.go.jp/shiken/goukaku/index.html",
   "https://www.ipa.go.jp/shiken/goukaku/happyobi.html",
   "https://www.ipa.go.jp/shiken/goukaku/hassou.html",
   "https://www.ipa.go.jp/shiken/goukaku/sg_fe_happyobi_2026.html",
@@ -116,6 +136,7 @@ const ALLOWED_HOSTS = new Set([
   "www.mhlw.go.jp",
   "www.hoyokyo.or.jp",
   "shiken.khk.or.jp",
+  "www.khk.or.jp",
   "www.jsrae.or.jp",
   "www.jafp.or.jp",
   "www.ipa.go.jp",

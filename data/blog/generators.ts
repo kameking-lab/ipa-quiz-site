@@ -12643,11 +12643,11 @@ Day30（基礎の到達度）・Day60（合格圏到達の確認）・Day75（�
 | [SG](/sg) | 総合評価点 | 受験者マイページの試験結果・スコアレポート |
 | [FE](/fe) | 科目A・科目Bそれぞれの評価点 | 受験者マイページの試験結果・スコアレポート |
 
-IPは[公式の試験結果案内](https://www3.jitec.ipa.go.jp/JitesCbt/html/examination/kekka.html)、SG・FEは運営事業者の[SG案内](https://cbt-s.com/examinee/examination/sg/)・[FE案内](https://cbt-s.com/examinee/examination/fe/)から確認できます。SGを科目A・Bそれぞれの評価点として読み替えないようにします。
+IPは[公式の試験結果レポート案内](https://www3.jitec.ipa.go.jp/JitesCbt/html/examination/confirmation.html)、SG・FEは運営事業者の[SG案内](https://cbt-s.com/examinee/examination/sg/)・[FE案内](https://cbt-s.com/examinee/examination/fe/)から確認できます。SGを科目A・Bそれぞれの評価点として読み替えないようにします。
 
 ## 正式発表日は受験月ごとに確認する
 
-SG・FEの[IPAの月別発表案内](https://www.ipa.go.jp/shiken/mousikomi/cbt_sg_fe.html)では、2026年10月受験は11月20日予定、11月受験は12月22日予定です（2026年11月11日確認）。毎月同じ日や固定の「中旬」とは限りません。自分の受験月の欄で発表日・発送日を確認します。IPは[IP公式の合格発表](https://www3.jitec.ipa.go.jp/JitesCbt/html/goukaku/happyou.html)へ進んでください。
+SG・FEの[IPAの月別発表案内](https://www.ipa.go.jp/shiken/mousikomi/cbt_sg_fe.html)では、2026年10月受験は11月20日予定、11月受験は12月22日予定です（2026年11月11日確認）。毎月同じ日や固定の「中旬」とは限りません。自分の受験月の欄で発表日・発送日を確認します。IPは[IPAの発表日案内](https://www.ipa.go.jp/shiken/goukaku/happyobi.html)にある「ITパスポート試験ウェブサイト 合格発表」へ進んでください。
 
 発表後は受験番号と合否を確認し、必要なら結果資料を保存します。履歴書への記載は[正式名称と合格年月の書き方](/blog/it-shikaku-rirekisho-kakikata)を参考にしてください。
 

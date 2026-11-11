@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 470" role="img" aria-labelledby="title desc">
+  <title id="title">冷凍サイクルの簡略p-h線図</title>
+  <desc id="desc">縦軸は圧力、横軸は比エンタルピー。点1から2へ圧縮、2から3へ凝縮、3から4へ膨張、4から1へ蒸発。点4は250、点1は400キロジュール毎キログラム。蒸発器の比エンタルピー差は150。</desc>
+  <defs><marker id="arrow" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto"><path d="M0 0L9 3.5L0 7" fill="#0369a1"/></marker></defs>
+  <rect width="740" height="470" rx="16" fill="#f0f9ff"/>
+  <g stroke="#334155" stroke-width="2" fill="none"><path d="M90 35V370H705"/></g>
+  <g stroke="#0369a1" stroke-width="3" fill="none" marker-end="url(#arrow)">
+    <path d="M510 310L620 105"/><path d="M620 105H235"/><path d="M235 105V310"/><path d="M235 310H510"/>
+  </g>
+  <g stroke="#64748b" stroke-dasharray="5 5"><path d="M235 320V370M510 320V370"/></g>
+  <g fill="#0c4a6e"><circle cx="235" cy="105" r="5"/><circle cx="620" cy="105" r="5"/><circle cx="235" cy="310" r="5"/><circle cx="510" cy="310" r="5"/></g>
+  <g font-family="sans-serif" fill="#0c4a6e" text-anchor="middle" font-size="20">
+    <text x="420" y="75">凝縮器：2 → 3</text><text x="615" y="210">圧縮機</text><text x="615" y="238">1 → 2</text>
+    <text x="152" y="210">膨張弁</text><text x="152" y="238">3 → 4</text><text x="375" y="345">蒸発器：4 → 1</text>
+    <text x="215" y="95">3</text><text x="640" y="95">2</text><text x="215" y="307">4</text><text x="530" y="322">1</text>
+    <text x="235" y="398">250</text><text x="510" y="398">400</text><text x="390" y="435">比エンタルピー h（kJ/kg）</text>
+    <text transform="translate(40 210) rotate(-90)">圧力 p</text><text x="410" y="35" font-size="17">独自の簡略図</text>
+  </g>
+</svg>
