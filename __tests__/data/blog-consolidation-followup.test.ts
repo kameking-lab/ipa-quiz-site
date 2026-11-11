@@ -57,10 +57,11 @@ describe("bounded study-content consolidation", () => {
     expect(post("nw-goukaku-benkyouhou").body).not.toContain("丸暗記で乗り切れる");
   });
 
-  it("uses the same 26-week calculation in the FE plan and FAQ", () => {
+  it("explains the FE planning assumption once and sends time details to its own guide", () => {
     const fe = post("fe-goukaku-benkyouhou").body;
-    expect(fe.match(/週約8〜12時間/g)).toHaveLength(2);
+    expect(fe.match(/週約8〜12時間/g)).toHaveLength(1);
     expect(fe).toContain("200÷26≒7.7、300÷26≒11.5");
     expect(fe).not.toContain("週 12〜20 時間");
+    expect(fe).toContain("/blog/fe-benkyou-jikan-meyasu");
   });
 });

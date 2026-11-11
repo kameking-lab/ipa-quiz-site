@@ -19,6 +19,8 @@ export interface BlogPost {
   sourceUrls?: string[];
   updatedAt?: string;
   body: string;
+  /** Place the selected exercise after its lesson, or omit it for reference articles. */
+  practicePlacement?: "before-body" | "after-body" | "none";
   relatedSlugs?: string[];
   /** Reviewed practice links, in reading order. Omit to use tag ranking. */
   relatedQuestionIds?: string[];

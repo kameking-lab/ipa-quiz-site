@@ -107,7 +107,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
   const url = `${SITE_BASE_URL}/blog/${slug}`;
   const isIpaArticle = !post.exam || ALL_EXAM_CODES.some(exam => exam === post.exam);
   const related = getRelatedPosts(slug, 4);
-  const practice = getBlogPractice(slug);
+  const practice = post.practicePlacement === "none" ? null : getBlogPractice(slug);
   const relatedQuestions = getRelatedQuestionsForPost(post.exam, post.tags, 3, post.relatedQuestionIds);
   const articleOgParams = new URLSearchParams({
     type: "blog",
@@ -237,6 +237,14 @@ export default async function BlogArticlePage({ params }: PageProps) {
 
   const dates = publicBlogDates(post);
 
+  const practiceSection = (practice && (strictContentGateEnabled() ? (
+        <section id="article-practice" aria-label="記事から1問チャレンジ" className="mb-8 scroll-mt-24 rounded-2xl border border-border p-5">
+          <h2 className="text-lg font-bold">記事から1問チャレンジ</h2>
+          <p className="mt-2 text-sm text-muted-foreground">ウェブ・アプリ共通の演習枠を確認してから、問題と解説を表示します。</p>
+          <Link href={`${practice.continueHref}&question=${encodeURIComponent(practice.question.id)}`} className="mt-3 inline-flex min-h-12 items-center rounded-xl bg-primary px-4 font-semibold text-primary-foreground">利用枠を確認して1問解く</Link>
+        </section>
+      ) : <BlogPractice key={practice.question.id} {...practice} slug={slug} explanation={<Markdown>{practice.question.explanation}</Markdown>} />));
+
   return (
     <main className="mx-auto w-full max-w-3xl px-4 py-6 sm:py-10">
       <ViewTracker event="blog_viewed" props={{ slug, exam: post.exam ?? null }} />
@@ -290,7 +298,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
         <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-3xl">
           {post.title}
         </h1>
-        {practice && <nav aria-label="記事と演習" className="mt-3 flex flex-wrap gap-x-4 text-sm"><a href="#article-practice" className="inline-flex min-h-11 items-center rounded-xl bg-primary px-4 font-semibold text-primary-foreground">まず1問解く</a><a href="#article-body" className="inline-flex min-h-11 items-center underline">本文から読む</a></nav>}
+        {practice && <nav aria-label="記事と演習" className="mt-3 flex flex-wrap gap-x-4 text-sm"><a href="#article-practice" className="inline-flex min-h-11 items-center rounded-xl bg-primary px-4 font-semibold text-primary-foreground">{post.practicePlacement === "after-body" ? "本文のあとに1問解く" : "まず1問解く"}</a><a href="#article-body" className="inline-flex min-h-11 items-center underline">本文から読む</a></nav>}
         <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
           {post.description}
         </p>
@@ -303,17 +311,13 @@ export default async function BlogArticlePage({ params }: PageProps) {
         {post.sourceUrls && <ul className="mt-3 space-y-1 text-xs">{post.sourceUrls.map((url, i) => <li key={url}><a href={url} className="underline" target="_blank" rel="noopener noreferrer">参照資料 {i + 1}</a></li>)}</ul>}
       </header>
 
-      {practice && (strictContentGateEnabled() ? (
-        <section id="article-practice" aria-label="記事から1問チャレンジ" className="mb-8 scroll-mt-24 rounded-2xl border border-border p-5">
-          <h2 className="text-lg font-bold">記事から1問チャレンジ</h2>
-          <p className="mt-2 text-sm text-muted-foreground">ウェブ・アプリ共通の演習枠を確認してから、問題と解説を表示します。</p>
-          <Link href={`${practice.continueHref}&question=${encodeURIComponent(practice.question.id)}`} className="mt-3 inline-flex min-h-12 items-center rounded-xl bg-primary px-4 font-semibold text-primary-foreground">利用枠を確認して1問解く</Link>
-        </section>
-      ) : <BlogPractice key={practice.question.id} {...practice} slug={slug} explanation={<Markdown>{practice.question.explanation}</Markdown>} />)}
+      {post.practicePlacement !== "after-body" && practiceSection}
 
       <article id="article-body" className="scroll-mt-24">
         <BlogMarkdown>{post.body}</BlogMarkdown>
       </article>
+
+      {post.practicePlacement === "after-body" && practiceSection}
 
       {post.exam ? (
         <section className="print:hidden mt-10 rounded-2xl border border-sky-200 bg-sky-50/60 p-5 text-sm text-zinc-700 dark:border-sky-800 dark:bg-sky-950/30 dark:text-zinc-300">
