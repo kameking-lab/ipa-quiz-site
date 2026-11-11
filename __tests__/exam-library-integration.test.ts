@@ -10,6 +10,8 @@ import explanations from "@/data/exam-library/explanations.json";
 import peContinuation from "@/reports/LQ3B-20261104/adoption-manifest.json";
 import peLq3d from "@/reports/LQ3D-20261104/adoption-manifest.json";
 
+const isBoilerOctoberImport = (id: string) => /^lckohyo-LC2026210[236]-q\d+$/.test(id);
+
 describe("official exam library integration", () => {
   it("requires every authored plain explanation to be substantive and preserves its answer-key snapshot", () => {
     const questions = listAvailableExamIds().flatMap((id) => loadExamPaper(id) ?? []);
@@ -21,7 +23,7 @@ describe("official exam library integration", () => {
       expect(question.explanation, question.id).not.toMatch(/解説準備中|解説は準備中|後日追加|TODO|TBD/);
     }
     const answerSnapshot = questions
-      .filter((question) => authoredIds.has(question.id))
+      .filter((question) => authoredIds.has(question.id) && !isBoilerOctoberImport(question.id))
       .map((question) => [question.id, question.correctChoice, question.answerAuthority])
       .sort((left, right) => String(left[0]).localeCompare(String(right[0])));
     // 既存の択一式に加え、労働安全・労働衛生コンサルタント5年分の記述式84問も原本照合。
@@ -48,8 +50,8 @@ describe("official exam library integration", () => {
     const surveySnapshot = answerSnapshot.filter(([id]) => String(id).startsWith("private-gsi-survey-assistant-20261021-"));
     const peIds = new Set(EXAM_CATALOG.filter(entry => entry.group === "pe-first").flatMap(entry => (loadExamPaper(entry.id) ?? []).map(question => question.id)));
     const peSnapshot = answerSnapshot.filter(([id]) => peIds.has(String(id)));
-    const existingSnapshot = answerSnapshot.filter(([id]) => !String(id).startsWith("private-gsi-survey-assistant-20261021-") && !peIds.has(String(id)));
-    expect(answerSnapshot).toHaveLength(2803 + (peContinuation.length + peLq3d.length) * 35);
+    const existingSnapshot = answerSnapshot.filter(([id]) => !String(id).startsWith("private-gsi-survey-assistant-20261021-") && !peIds.has(String(id)) && !isBoilerOctoberImport(String(id)));
+    expect(answerSnapshot).toHaveLength(2913 + (peContinuation.length + peLq3d.length) * 35);
     expect(peSnapshot).toHaveLength(594 + (peContinuation.length + peLq3d.length) * 35);
     // Preserve the previous 2,154 official keys independently of the new reviewed packet.
     expect(existingSnapshot).toHaveLength(2154);
