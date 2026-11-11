@@ -182,7 +182,7 @@ async function expectGuidance(page: Page) {
   await expect(selection.getByRole("link")).toHaveCount(0);
   await expect(guidance.getByRole("link", { name: "資格を選んで1問始める", exact: true })).toHaveCount(1);
   for (const link of await guidance.getByRole("link", { name: "資格を選んで1問始める", exact: true }).all()) await expect(link).toHaveAttribute("href", "/#choose-qualification");
-  await expect(guidance.getByRole("link")).toHaveCount(1);
+  await expect(guidance.locator(".study-room-sidebar").getByRole("link")).toHaveCount(1);
   await expect(guidance.getByText(/実際の学習人数では|利用者個人や実際の行動/)).toHaveCount(0);
   await expect(guidance.getByRole("list", { name: "資格別の学習人数" })).toHaveCount(0);
   await expect(guidance.locator("time")).toHaveCount(0);
@@ -225,7 +225,9 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
     await expect(emptyRoom.getByRole("button")).toHaveCount(0);
     await expect(emptyRoom.locator(".study-mascot")).toHaveCount(0);
     await expect(region.getByRole("group", { name: "自習室の席を選ぶ", exact: true })).toHaveCount(0);
-    await expect(region.getByRole("region", { name: "あなたの席", exact: true }).getByRole("button", { name: "チワワのひと休みを閉じる", exact: true })).toBeVisible();
+    // An empty measurement does not remove the learner's own seat. A fresh
+    // browser has no adopted pet yet; rest controls are covered by pet-v1-room.
+    await expect(region.getByRole("region", { name: "あなたの席", exact: true })).toBeVisible();
     await expect(region.getByRole("link", { name: "ほかの資格を探す", exact: true })).toHaveCount(0);
     await expect(region.getByRole("link", { name: "資格から問題を探す", exact: true })).toBeVisible();
     await expect(region.getByRole("link", { name: "資格から問題を探す", exact: true })).toHaveAttribute("href", "#home-directory-title");
@@ -234,7 +236,7 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
     await expect(suggestions).toHaveCount(6);
     for (const link of await suggestions.all()) await expect(link).toHaveAttribute("href", /^\/(?!\/)/);
     await expect(region.getByRole("link", { name: "資格を選んで1問始める", exact: true })).toHaveCount(1);
-    await expect(region.getByRole("link")).toHaveCount(8);
+    await expect(region.locator(".study-room-sidebar").getByRole("link")).toHaveCount(8);
     await expectBounded(page);
 
     await show(page, { mode: "stale", snapshot: null, previous: fresh.snapshot, reason: "unavailable" });
