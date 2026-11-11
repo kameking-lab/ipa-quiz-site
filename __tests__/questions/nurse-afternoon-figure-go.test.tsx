@@ -4,7 +4,9 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { describe, expect, it } from "vitest";
 import { historicalNurseHash } from "./nurse-pm-category-hash";
 import { QuestionFigures } from "@/components/quiz/QuestionFigures";
-import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+import { KANGOSHI_QUESTIONS as ALL_KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+// This frozen source-intake regression covers 2024/2025; medical-history.test.tsx covers older years.
+const KANGOSHI_QUESTIONS = ALL_KANGOSHI_QUESTIONS.filter(question => question.year >= 2024);
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import proof from "@/docs/evidence/nurse-afternoon-figure-go-20261010/INTEGRATION.json";
 

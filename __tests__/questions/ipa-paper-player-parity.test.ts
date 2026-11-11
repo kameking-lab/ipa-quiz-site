@@ -46,7 +46,14 @@ describe("IPA paper listing and quiz pool parity", () => {
     // ST A2 adds 200 ordinary IDs; Q23 moves to its non-scoring reader.
     expect(ipaQuestions).toHaveLength(14_611);
     expect(ipaQuestions.some((q) => q.id === "st-2009a-am2-q23")).toBe(false);
-    expect(legacyPrefixMatches).toHaveLength(1_455);
+    // AP transcription restoration adds three answer-prefixed explanations.
+    expect(legacyPrefixMatches).toHaveLength(1_466);
+    const restoredIds = [
+      "ap-2012a-am-q1", "ap-2013a-am-q4", "ap-2013h-am-q2", "ap-2013h-am-q28",
+      "ap-2016a-am-q1", "ap-2017a-am-q23", "ap-2017h-am-q4", "ap-2018a-am-q30",
+    ];
+    expect(legacyPrefixMatches.filter((q) => restoredIds.includes(q.id)).map((q) => q.id).sort())
+      .toEqual(restoredIds);
     expect(legacyPrefixMatches.every((q) => q.explanation.trim().length > 30)).toBe(true);
     expect(legacyPrefixMatches.every((q) => !isPlaceholderExplanation(q))).toBe(true);
     expect(legacyPrefixMatches.every((q) => q.explanation.trim() !== `正解は${q.answer}です。`)).toBe(true);

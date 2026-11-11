@@ -1,4 +1,4 @@
-import { readFileSync } from "node:fs";
+import { readFileSync, readdirSync } from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
@@ -13,7 +13,11 @@ import { questionSourceEdition } from "@/lib/questions/source-label";
 type AuditRow = { id: string; status: "COMPLETE" | "OFFICIAL_EXCLUDED" };
 const repo = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const audit = JSON.parse(readFileSync(path.join(repo, "data/questions/shika-ishi/official-audit.json"), "utf8")) as { records: AuditRow[] };
-const expectedIds = audit.records.filter((r) => r.status === "COMPLETE").map((r) => r.id).sort();
+const latestTwoIds = audit.records.filter((r) => r.status === "COMPLETE").map((r) => r.id);
+const historyDirectory = path.join(repo, "data/questions/shika-ishi");
+const historyIds = readdirSync(historyDirectory).filter((f) => /^202[234]-annual-text-sources.json$/.test(f))
+  .flatMap((f) => (JSON.parse(readFileSync(path.join(historyDirectory, f), "utf8")) as { receipts: AuditRow[] }).receipts.map((r) => r.id));
+const expectedIds = [...latestTwoIds, ...historyIds].sort();
 const excludedIds = audit.records.filter((r) => r.status === "OFFICIAL_EXCLUDED").map((r) => r.id);
 
 describe("dentist integration against the published registry", () => {
@@ -21,11 +25,11 @@ describe("dentist integration against the published registry", () => {
     const lazy = await getQuestionsForExam("shika-ishi");
     const eager = getQuestionsByExam("shika-ishi");
     expect(getRegisteredExamCodes()).toContain("shika-ishi");
-    expect(expectedIds).toHaveLength(696);
+    expect(latestTwoIds).toHaveLength(696);
     expect(lazy.map((q) => q.id).sort()).toEqual(expectedIds);
     expect(eager.map((q) => q.id).sort()).toEqual(expectedIds);
     const ids = new Set(expectedIds);
-    expect(getAllQuestions().filter((q) => ids.has(q.id))).toHaveLength(696);
+    expect(getAllQuestions().filter((q) => ids.has(q.id))).toHaveLength(expectedIds.length);
     for (const year of [2025, 2026]) {
       for (const paper of ["a", "b", "c", "d"]) {
         const q = lazy.find((r) => r.year === year && r.session === `mondai-${paper}`)!;
@@ -55,7 +59,7 @@ describe("dentist integration against the published registry", () => {
     expect(EXAM_DESCRIPTIONS["shika-ishi"]).toContain("\u7b2c118\u56de");
     expect(EXAM_DESCRIPTIONS["shika-ishi"]).toContain("\u63a1\u70b9\u9664\u591624\u554f");
     expect(EXAM_DESCRIPTIONS["shika-ishi"]).not.toContain("\u6574\u5099\u4e2d");
-    expect(description).toContain("696問");
+    expect(description).toContain(`${count.toLocaleString("ja-JP")}問`);
     expect(description).toContain("採点除外24問");
     expect(description).not.toMatch(/整備中|掲載範囲は確認/);
     expect(PRACTICE_SESSIONS).toEqual(expect.arrayContaining(["mondai-a", "mondai-b", "mondai-c", "mondai-d", "keizai", "zaimu", "kigyo", "unei", "keiei-houmu", "keiei-joho", "chusho-seisaku"]));

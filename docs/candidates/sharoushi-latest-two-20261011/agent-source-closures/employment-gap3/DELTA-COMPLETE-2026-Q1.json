@@ -1,0 +1,36 @@
+{
+  "canonicalId": "sharoushi-2026-annual-koyou-q1",
+  "savedId": "sharoushi-2026-koyou-q01",
+  "lawAsOf": "2026-04-10",
+  "status": "SOURCE_COMPLETE_LOCAL_REVIEW",
+  "officialAnswer": "D",
+  "completedQuestionIncrement": 1,
+  "confirmedChoiceCount": 5,
+  "remainingPrimaryGaps": [],
+  "changeScope": "E explanation and its evidence only; inherit A-D unchanged from 2026-q1-followup/question-deltas-hold.json",
+  "choiceExplanationsPatch": {
+    "E": "誤り。厚生労働省の雇用保険業務取扱要領20352(2)イ(イ)d(b)は、地方公務員法38条1項の任命権者による兼業許可を受け、出向に関する契約・協定・覚書等から出向元との雇用関係を継続したまま地方公務員の身分を併有していると確認できる場合、出向元事業主との雇用関係に係る被保険者資格を存続させると定める。設問はこの条件を満たすため、『被保険者とならない』が誤り。"
+  },
+  "explanationPatch": "E肢については、地方公務員法38条1項の兼業許可を受け、出向元との雇用関係を継続し地方公務員の身分を併有する場合、出向元の被保険者資格を存続させるとの基準日前の行政取扱いを確認した。",
+  "removePriorEHoldReviewFlags": true,
+  "removePriorELimitedReviewNeeded": true,
+  "evidenceByChoicePatch": {
+    "E": {
+      "status": "SOURCE_CONFIRMED_PRE_CUTOFF_OFFICIAL_DIRECT",
+      "sources": [
+        "narita-mhlw-application-manual-r5-4.pdf:physical22-23/printed22-23/20352(2)イ(イ)d(b)",
+        "mext-2024-05-27-local-public-secondment.pdf:physical1/20352(2) quotation",
+        "narita-soumu-2023-03-31-notice.pdf:physical1-2/local-public dual status under Article 38"
+      ],
+      "reason": "MHLW manual directly contradicts the E claim; MEXT quoted the same specific MHLW rule in 2024, well before 2026-04-10. MIC notice supplies the public employment/dual-status premise."
+    }
+  },
+  "integrationEligible": true,
+  "readyForDraftPr": true,
+  "independentFinalReviewRequired": true,
+  "runtimeChanged": false,
+  "publicationGo": false,
+  "stoppedQuestionTouched": false,
+  "sourceReceipt": "RECEIPTS.json",
+  "applicationLimit": "The R5.4 manual's other clauses have heterogeneous edition marks. Only 20352(2)イ(イ)d(b), visibly marked R5.4 and separately quoted by MEXT in 2024, is adopted here; do not extrapolate an uninterrupted revision history."
+}

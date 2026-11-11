@@ -12,6 +12,7 @@ import { applyPetLearningFact } from "./learning";
 import type { PetLearningResult } from "./learning";
 import { migrateLegacyPetProfiles } from "./migration";
 import { petLocalOwnerResolver } from "./platform";
+import { signalPetAccountOwner } from "./cloud-signal";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { getChoiceKeys, isAcceptedAnswer } from "@/lib/questions/answers";
 import { isReferenceOnlyQuestionId } from "@/lib/questions/assessment";
@@ -47,6 +48,8 @@ export async function preparePetOwner(isCurrent: () => boolean): Promise<PetOwne
     const ownerScope = account ? `user:${account.id}` : "guest";
     const current = () => isCurrent() && localStorage.getItem(LS_KEYS.syncLocalOwner) === token;
     if (!current()) return null;
+    // Members' pets are also saved to their account (lazy, layout-level sync).
+    if (account) signalPetAccountOwner(ownerScope);
     return { ownerScope, isCurrent: current, async revalidate() {
       try {
         if (!current()) return false;

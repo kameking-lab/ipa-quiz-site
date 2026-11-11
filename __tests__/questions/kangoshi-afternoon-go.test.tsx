@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { historicalNurseHash } from "./nurse-pm-category-hash";
-import { KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+import { KANGOSHI_QUESTIONS as ALL_KANGOSHI_QUESTIONS } from "@/data/questions/kangoshi";
+// This frozen source-intake regression covers 2024/2025; medical-history.test.tsx covers older years.
+const KANGOSHI_QUESTIONS = ALL_KANGOSHI_QUESTIONS.filter(question => question.year >= 2024);
 import go9 from "@/docs/evidence/nurse-pm-go9-20261010/INTEGRATION.json";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import proof from "@/docs/evidence/nurse-afternoon-go-20261010/INTEGRATION.json";

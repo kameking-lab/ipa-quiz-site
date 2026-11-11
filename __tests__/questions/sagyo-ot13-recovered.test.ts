@@ -111,10 +111,10 @@ describe("OT13 recovered originals and local integration candidates", () => {
   it("connects all 11 originals through static, lazy and SEO registries while exclusions remain unscored", async () => {
     const lazy = await getQuestionsForExam("sagyo-ryohoshi");
     const seo = getQuestionsByExamStrict("sagyo-ryohoshi");
-    expect(SAGYO_RYOHOSHI_QUESTIONS).toHaveLength(310);
+    expect(SAGYO_RYOHOSHI_QUESTIONS).toHaveLength(324);
     expect(SAGYO_RYOHOSHI_QUESTIONS.filter(question => question.session === "am")).toHaveLength(144);
-    expect(SAGYO_RYOHOSHI_QUESTIONS.filter(question => question.session === "pm")).toHaveLength(166);
-    expect(new Set(SAGYO_RYOHOSHI_QUESTIONS.map(question => question.id)).size).toBe(310);
+    expect(SAGYO_RYOHOSHI_QUESTIONS.filter(question => question.session === "pm")).toHaveLength(180);
+    expect(new Set(SAGYO_RYOHOSHI_QUESTIONS.map(question => question.id)).size).toBe(324);
     expect(lazy).toEqual(SAGYO_RYOHOSHI_QUESTIONS);
     expect(seo).toEqual(SAGYO_RYOHOSHI_QUESTIONS);
     for (const original of OT13_RECOVERED_QUESTIONS) {

@@ -27,14 +27,17 @@ for (const width of [320, 390]) test(`care, reversible forms and backed-up resto
   const original = await read();
   await corner.getByRole("button", { name: "育成を見る" }).tap();
   const sheet = page.getByRole("dialog", { name: "チワワの育成" }); await expect(sheet).toBeVisible();
+  await sheet.locator("summary").filter({ hasText: /^姿$/ }).tap();
   await expect(sheet.getByRole("button", { name: "学習の相棒", exact: true })).toBeEnabled();
   await sheet.getByRole("button", { name: "学習の相棒", exact: true }).tap();
   await expect(sheet.getByRole("status")).toHaveText("保存しました。");
   await expect(sheet.getByRole("button", { name: "学習の相棒", exact: true })).toHaveAttribute("aria-pressed", "true");
+  await sheet.locator("summary").filter({ hasText: /^特技$/ }).tap();
   await sheet.getByRole("button", { name: "精密", exact: true }).tap();
   await expect(sheet.getByRole("button", { name: "精密", exact: true })).toHaveAttribute("aria-pressed", "true");
+  await sheet.locator("summary").filter({ hasText: /^設定$/ }).tap();
   await sheet.getByLabel("名前", { exact: true }).fill("こむぎ"); await sheet.getByRole("button", { name: "名前を保存" }).tap();
-  await expect(sheet.getByText("応用情報技術者のこむぎ", { exact: true })).toBeVisible();
+  await expect(sheet.getByText("こむぎ・応用情報技術者", { exact: true })).toBeVisible();
   const beforeCare = await read();
   await sheet.getByRole("button", { name: "なでる", exact: true }).tap();
   expect(await read()).toEqual(beforeCare);
@@ -73,6 +76,7 @@ test("keyboard focus stays in the sheet and stale/other-owner restores leave sav
   await corner.getByRole("button", { name: "育成を見る" }).click();
   const sheet = page.getByRole("dialog", { name: "チワワの育成" });
   for (let i = 0; i < 16; i++) { await page.keyboard.press("Tab"); expect(await sheet.evaluate(el => el.contains(document.activeElement))).toBe(true); }
+  await sheet.locator("summary").filter({ hasText: /^設定$/ }).click();
   const original = await page.evaluate(key => localStorage.getItem(key)!, key);
   const other = JSON.parse(original); other.ownerScope = "user:other"; for (const profile of other.profiles) profile.petId = JSON.stringify(["user:other", profile.qualificationId]); for (const event of other.events) event.ownerScope = "user:other";
   await sheet.getByLabel("バックアップを読み込む").setInputFiles({ name: "other.json", mimeType: "application/json", buffer: Buffer.from(JSON.stringify({ format: "kakomon-pet-local", version: 1, document: other })) });
@@ -95,6 +99,7 @@ test("a pending safety copy cannot be downloaded after an unnoticed auth-owner c
   page.on("download", () => downloads++);
   await page.goto(quiz); await page.getByRole("button", { name: "育成を見る" }).click();
   const sheet = page.getByRole("dialog", { name: "チワワの育成" });
+  await sheet.locator("summary").filter({ hasText: /^設定$/ }).click();
   const original = await page.evaluate(key => localStorage.getItem(key)!, key);
   await sheet.getByLabel("バックアップを読み込む").setInputFiles({ name: "same.json", mimeType: "application/json", buffer: Buffer.from(JSON.stringify({ format: "kakomon-pet-local", version: 1, document: JSON.parse(original) })) });
   await expect(sheet.getByRole("button", { name: "復元前のデータを保存" })).toBeVisible();

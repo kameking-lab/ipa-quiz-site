@@ -6,20 +6,11 @@ import { Copy, Check, Share2 } from "lucide-react";
 interface Props {
   url: string;
   text: string;
-  hashtags?: string[];
   /**
-   * Compact mode renders an icon-only cluster (X / LINE / copy) suitable for a
+   * Compact mode renders an icon-only cluster (LINE / copy) suitable for a
    * page header. Tap targets are 36px — above the WCAG 2.5.8 (AA) 24px floor.
    */
   compact?: boolean;
-}
-
-function buildXUrl(url: string, text: string, hashtags?: string[]): string {
-  const params = new URLSearchParams();
-  params.set("text", text);
-  params.set("url", url);
-  if (hashtags && hashtags.length > 0) params.set("hashtags", hashtags.join(","));
-  return `https://x.com/intent/tweet?${params.toString()}`;
 }
 
 function buildLineUrl(url: string, text: string): string {
@@ -33,10 +24,10 @@ function buildFacebookUrl(url: string): string {
 /**
  * Single canonical share-buttons component (previously duplicated as
  * components/ShareButtons + components/seo/ShareButtons with divergent props and
- * platform coverage). Full mode: X / LINE / Facebook / copy / native share.
- * Compact mode: icon-only X / LINE / copy cluster for headers.
+ * platform coverage). Full mode: LINE / Facebook / copy / native share.
+ * Compact mode: icon-only LINE / copy cluster for headers.
  */
-export function ShareButtons({ url, text, hashtags, compact }: Props) {
+export function ShareButtons({ url, text, compact }: Props) {
   const [copied, setCopied] = React.useState(false);
   // SSR and the first client render must have the same tree.
   const [canNativeShare, setCanNativeShare] = React.useState(false);
@@ -69,17 +60,6 @@ export function ShareButtons({ url, text, hashtags, compact }: Props) {
 
     return (
       <div role="group" aria-label="この問題を共有" className="relative flex items-center gap-1">
-        <a
-          href={buildXUrl(url, text, hashtags)}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={iconBtn}
-          aria-label="X (Twitter) で共有"
-        >
-          <span aria-hidden="true" className="text-sm font-bold leading-none">
-            𝕏
-          </span>
-        </a>
         <a
           href={buildLineUrl(url, text)}
           target="_blank"
@@ -119,12 +99,6 @@ export function ShareButtons({ url, text, hashtags, compact }: Props) {
   }
 
   const items: Array<{ key: string; href: string; label: string; bg: string }> = [
-    {
-      key: "x",
-      href: buildXUrl(url, text, hashtags),
-      label: "X (Twitter)",
-      bg: "bg-zinc-900 text-white hover:bg-zinc-700 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-zinc-300",
-    },
     {
       key: "line",
       href: buildLineUrl(url, text),

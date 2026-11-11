@@ -93,6 +93,7 @@ const nextConfig: NextConfig = {
   // traced anyway and pushed /api/copilot past Vercel's 250MB function limit.
   outputFileTracingExcludes: {
     "/*": [
+      "./private-assets/**/*",
       "**/node_modules/@prisma/client/runtime/*.wasm-base64.js",
       "**/node_modules/@prisma/client/runtime/*.wasm-base64.mjs",
       "**/node_modules/@prisma/client/runtime/*.map",

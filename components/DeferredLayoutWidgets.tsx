@@ -22,6 +22,10 @@ const OfflineIndicator = dynamic(
   () => import("@/components/offline/OfflineIndicator").then((m) => m.OfflineIndicator),
   { ssr: false },
 );
+const PetCloudSync = dynamic(
+  () => import("@/components/pet/PetCloudSync").then((m) => m.PetCloudSync),
+  { ssr: false },
+);
 const CloudSyncAutoSync = dynamic(
   () => import("@/components/sync/CloudSyncAutoSync").then((m) => m.CloudSyncAutoSync),
   { ssr: false },
@@ -64,6 +68,7 @@ export function DeferredLayoutWidgets() {
       <BadgeTracker />
       <OfflineIndicator />
       <CloudSyncAutoSync />
+      <PetCloudSync />
     </>
   );
 }

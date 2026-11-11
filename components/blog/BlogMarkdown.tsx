@@ -5,6 +5,8 @@ import type { Element, RootContent } from "hast";
 
 // Match only the existing site-authored article notice; quotations retain their style.
 const articleNotices = new Set([
+  "試験要項の最新情報は必ず IPA 公式ページ で確認してください。",
+  "免除の正式な条件・申請手続き・最新情報は必ず IPA 公式ページ で確認してください。",
   "本記事は 過去問AI が独自にまとめた学習ガイドです。試験要項の最新情報は必ず IPA 公式ページ で確認してください。",
   "本記事は 過去問AI が独自にまとめた学習ガイドです。免除の正式な条件・申請手続き・最新情報は必ず IPA 公式ページ で確認してください。",
 ]);

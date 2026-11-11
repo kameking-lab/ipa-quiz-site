@@ -2,10 +2,10 @@ import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { readFileSync } from 'node:fs';
 import { test } from 'node:test';
-import { DB1_MIGRATIONS, MIG2_MIGRATIONS, directDatabaseUrl, isProductionBuild, pendingMigrations } from './vercel-migrate.mjs';
+import { DB1_MIGRATIONS, MIG2_MIGRATIONS, PET1_MIGRATIONS, directDatabaseUrl, isProductionBuild, pendingMigrations } from './vercel-migrate.mjs';
 
 const baseline = { name: '20260419000000_init', sql: 'SELECT 1;\n' };
-const files = [baseline, ...MIG2_MIGRATIONS.map(name => ({ name, sql: 'SELECT 2;\n' }))];
+const files = [baseline, ...[...MIG2_MIGRATIONS, ...PET1_MIGRATIONS].map(name => ({ name, sql: 'SELECT 2;\n' }))];
 const applied = file => ({ migration_name: file.name, checksum: createHash('sha256').update(file.sql).digest('hex'), finished_at: new Date(), rolled_back_at: null });
 const production = { VERCEL: '1', VERCEL_ENV: 'production', VERCEL_DEPLOYMENT_ID: 'dpl_synthetic' };
 
@@ -31,21 +31,22 @@ test('direct URL aliases and priority; no fallback to pooled DATABASE_URL', () =
     { DIRECT_URL: `${url}?pgbouncer=true` }]) assert.throws(() => directDatabaseUrl(env));
 });
 
-test('only exactly five MIG2, three DB1 or zero migrations in order are permitted', () => {
-  assert.deepEqual(pendingMigrations(files, [applied(baseline)]), MIG2_MIGRATIONS);
-  assert.deepEqual(pendingMigrations(files, files.slice(0, 3).map(applied)), DB1_MIGRATIONS);
+test('only MIG2+PET1, DB1+PET1, PET1 alone or zero migrations in order are permitted', () => {
+  assert.deepEqual(pendingMigrations(files, [applied(baseline)]), [...MIG2_MIGRATIONS, ...PET1_MIGRATIONS]);
+  assert.deepEqual(pendingMigrations(files, files.slice(0, 3).map(applied)), [...DB1_MIGRATIONS, ...PET1_MIGRATIONS]);
+  assert.deepEqual(pendingMigrations(files, files.slice(0, -1).map(applied)), PET1_MIGRATIONS);
   assert.deepEqual(pendingMigrations(files, files.map(applied)), []);
   // Every other subset (including feedback-only and partial applications) stops.
-  for (let mask = 0; mask < 32; mask++) {
+  for (let mask = 0; mask < 64; mask++) {
     const history = [applied(baseline), ...files.slice(1).filter((_, i) => mask & (1 << i)).map(applied)];
-    if ([0, 3, 31].includes(mask)) continue;
+    if ([0, 3, 31, 63].includes(mask)) continue;
     assert.throws(() => pendingMigrations(files, history), /Unexpected pending migrations:/);
   }
   const reversed = [baseline, ...files.slice(1).reverse()];
   assert.throws(() => pendingMigrations(reversed, [applied(baseline)]), /Unexpected pending/);
   assert.throws(() => pendingMigrations([baseline, ...files.slice(1, 3), ...files.slice(3).reverse()], files.slice(0, 3).map(applied)), /Unexpected pending/);
   assert.throws(() => pendingMigrations([...files, { name: 'extra', sql: 'SELECT 3;' }], [applied(baseline)]), error => {
-    for (const name of [...MIG2_MIGRATIONS, 'extra']) assert.ok(error.message.includes(name));
+    for (const name of [...MIG2_MIGRATIONS, ...PET1_MIGRATIONS, 'extra']) assert.ok(error.message.includes(name));
     return /no deploy attempted/.test(error.message);
   });
 });
@@ -61,7 +62,7 @@ test('missing baseline, failed, duplicate, modified and unknown histories stop',
 
 test('Prisma line ending checksum tolerance and resolved rollback records', () => {
   const row = applied({ ...baseline, sql: 'SELECT 1;\r\n' });
-  assert.deepEqual(pendingMigrations(files, [row, { ...row, finished_at: null, rolled_back_at: new Date() }]), MIG2_MIGRATIONS);
+  assert.deepEqual(pendingMigrations(files, [row, { ...row, finished_at: null, rolled_back_at: new Date() }]), [...MIG2_MIGRATIONS, ...PET1_MIGRATIONS]);
 });
 
 test('old feedback approval comment checksums remain valid; executable SQL changes stop', () => {
@@ -71,7 +72,7 @@ test('old feedback approval comment checksums remain valid; executable SQL chang
   assert.notEqual(oldSql, sql);
   const approvedFiles = files.map(file => file.name === name ? { name, sql } : file);
   for (const historicalSql of [sql, oldSql, oldSql.replace(/\r?\n/g, '\r\n')]) {
-    assert.deepEqual(pendingMigrations(approvedFiles, [applied(baseline), applied({ name, sql: historicalSql }), applied(files[2])]), DB1_MIGRATIONS);
+    assert.deepEqual(pendingMigrations(approvedFiles, [applied(baseline), applied({ name, sql: historicalSql }), applied(files[2])]), [...DB1_MIGRATIONS, ...PET1_MIGRATIONS]);
   }
   const history = [applied(baseline), applied({ name, sql: oldSql })];
   assert.throws(() => pendingMigrations(approvedFiles.map(file => file.name === name ? { ...file, sql: `${sql}\nSELECT 42;` } : file), history), /modified migration history/);

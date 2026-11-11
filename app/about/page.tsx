@@ -2,9 +2,6 @@ import { AI_ACCESS_DESCRIPTION, AI_ATTEMPT_DESCRIPTION, BROWSER_AUDIO_DESCRIPTIO
 import Link from "next/link";
 import type { Metadata } from "next";
 import { HISTORY_PRIVACY_COPY, AI_RATE_LIMIT_PRIVACY_COPY } from "@/lib/privacy/disclosure";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { ArrowLeft, Heart, BookOpen, MessageSquare, Share2, Users } from "lucide-react";
 import { ShareButtons } from "@/components/ShareButtons";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
@@ -75,12 +72,6 @@ export default function AboutPage() {
           </li>
         </ol>
       </nav>
-      <Button asChild variant="ghost" size="sm" className="mb-3">
-        <Link href="/">
-          <ArrowLeft className="h-4 w-4" />
-          戻る
-        </Link>
-      </Button>
       <h1 className="mb-4 text-2xl font-bold">過去問 AI プロジェクトについて</h1>
 
       <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
@@ -101,49 +92,6 @@ export default function AboutPage() {
           サーバー費用・AI利用料について確認できた情報と未確認事項は、
           <Link href="/transparency" className="underline">透明性レポート</Link>で区別して表示します。
         </p>
-        <p>
-          運営の透明性レポート・直近の活動状況は{" "}
-          <Link className="underline" href="/transparency">/transparency</Link>{" "}
-          / <Link className="underline" href="/transparency#metrics">公開メトリクス</Link>{" "}
-          で公開しています。
-        </p>
-      </section>
-
-      <h2 className="mb-2 text-lg font-semibold">私たちが大切にしていること</h2>
-      <section className="mb-8 grid gap-3 sm:grid-cols-2">
-        {[
-          {
-            icon: <BookOpen className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />,
-            title: "無料の学習機能と月額プラン",
-            text: "個別問題・原紙・保存済み履歴の閲覧と復習は無料です。連続演習の無料枠と月額プラン、AI機能の対応範囲は各案内で確認できます。",
-          },
-          {
-            icon: <MessageSquare className="h-4 w-4 text-sky-600 dark:text-sky-400" />,
-            title: "声を反映する",
-            text: "改善要望・不具合報告にすべて目を通し、継続的に改善します。フィードバックは公開ページにも掲載されます。",
-          },
-          {
-            icon: <Share2 className="h-4 w-4 text-amber-600 dark:text-amber-400" />,
-            title: "応援はシェアで",
-            text: "金銭的負担はお願いしません。SNS や所属コミュニティでのご紹介が、もっとも嬉しい応援です。",
-          },
-          {
-            icon: <Heart className="h-4 w-4 text-rose-600 dark:text-rose-400" />,
-            title: "持続可能性を保つ",
-            text: "AI コパイロットは無料で続けて質問できます。連続利用・大量送信を制限し、運営費を管理します。",
-          },
-        ].map((c) => (
-          <div
-            key={c.title}
-            className="rounded-2xl border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950"
-          >
-            <div className="mb-2 flex items-center gap-2">
-              {c.icon}
-              <h3 className="text-sm font-semibold text-zinc-900 dark:text-zinc-50">{c.title}</h3>
-            </div>
-            <p className="text-xs leading-relaxed text-zinc-600 dark:text-zinc-400">{c.text}</p>
-          </div>
-        ))}
       </section>
 
       <h2 id="attribution" className="mb-2 scroll-mt-20 text-lg font-semibold">出典・著作権</h2>
@@ -231,7 +179,7 @@ export default function AboutPage() {
       <h2 className="mb-2 text-lg font-semibold">料金について</h2>
       <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
         <p>
-          IPA Quiz は IPA 情報処理技術者試験の学習機会を広げることを目的とした
+          過去問AI は IPA 情報処理技術者試験の学習機会を広げることを目的とした
           <strong>教育貢献プロジェクト</strong>として運営されています。
           個別問題・原紙・保存済み履歴の閲覧と復習は無料です。連続演習はログインなしでも1日10問まで無料で、日本時間0時に更新されます。履歴の同期などは無料ログインで利用できます。
         </p>
@@ -282,87 +230,9 @@ export default function AboutPage() {
         ))}
       </section>
 
-      <h2 id="support" className="mb-4 mt-10 scroll-mt-20 text-lg font-semibold">
-        <Heart className="mr-2 inline-block h-5 w-5 text-rose-500" />
-        過去問 AI を応援する
-      </h2>
-      <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-        月額プランとは別の寄付や金銭的なご支援はお願いしていません。
-        かわりに、もっと届けたい人へつないでくださると、運営の励みになります。
-      </p>
-      <section className="mb-8 space-y-3">
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-base">
-              <Share2 className="h-4 w-4 text-sky-600 dark:text-sky-400" />
-              ① シェアする（一番うれしい応援）
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <p className="text-sm text-zinc-700 dark:text-zinc-300">
-              SNS や勉強仲間にこのサイトの URL をシェアしてください。
-              学習中のスクリーンショットを X や Instagram に投稿いただけると、教育貢献プロジェクトの存在が広がります。
-            </p>
-            <ShareButtons
-              url={`${SITE_BASE_URL}/`}
-              text="無料の学習機能と月額プランを提供する教育貢献プロジェクト「過去問 AI」を応援しています。"
-              hashtags={["過去問AI", "IPA試験", "応用情報"]}
-            />
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-base">
-              <MessageSquare className="h-4 w-4 text-emerald-600 dark:text-emerald-400" />
-              ② フィードバックを送る
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-3">
-            <p className="text-sm text-zinc-700 dark:text-zinc-300">
-              使い心地・解説の誤り・改善要望をお寄せください。すべての投稿に目を通し、
-              プロジェクトに反映していきます。
-            </p>
-            <Button asChild variant="primary">
-              <Link href="/contact">お問い合わせフォーム</Link>
-            </Button>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-base">
-              <BookOpen className="h-4 w-4 text-amber-600 dark:text-amber-400" />
-              ③ 学習仲間を巻き込む
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <ul className="space-y-2 text-sm text-zinc-700 dark:text-zinc-300">
-              <li>所属する勉強会・社内チャットで紹介する</li>
-              <li>note・ブログ・YouTube などで取り上げる</li>
-              <li>学校・専門学校・社内研修の補助教材として活用する（無料範囲・月額条件は各案内を確認）</li>
-            </ul>
-          </CardContent>
-        </Card>
-
-        <Card>
-          <CardHeader>
-            <CardTitle className="flex items-center gap-2 text-base">
-              <Users className="h-4 w-4 text-violet-600 dark:text-violet-400" />
-              ④ 教育機関・企業での活用
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <p className="text-sm text-zinc-700 dark:text-zinc-300">
-              学校・専門学校・社内研修でのご利用にも、各機能の無料範囲と月額プランの条件が適用されます。
-              活用事例の共有や、運用上のご相談がありましたら{" "}
-              <Link href="/contact" className="underline hover:text-zinc-900 dark:hover:text-zinc-50">
-                お問い合わせフォーム
-              </Link>
-              よりご連絡ください。
-            </p>
-          </CardContent>
-        </Card>
+      <h2 id="support" className="mb-3 mt-10 scroll-mt-20 text-lg font-semibold">サイトを紹介する</h2>
+      <section className="mb-8">
+        <ShareButtons url={`${SITE_BASE_URL}/`} text="資格の過去問を学べる「過去問AI」" />
       </section>
 
       <h2 className="mb-2 text-lg font-semibold">お問い合わせ</h2>

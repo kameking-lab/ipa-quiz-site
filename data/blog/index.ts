@@ -8,6 +8,7 @@ import {
 } from "./generators";
 import type { BlogPost, BlogPostSummary } from "./types";
 import { toSummary } from "./types";
+import { FOCUSED_STUDY_GUIDES } from "./focused-study-guides";
 import { BLOG_ARTICLE_ALIASES, canonicalBlogSlug } from "@/lib/blog/article-aliases";
 
 function buildAllPosts(): BlogPost[] {
@@ -19,6 +20,7 @@ function buildAllPosts(): BlogPost[] {
     if (!BLOG_ARTICLE_ALIASES[`${exam}-yoru-tokurensyu`]) posts.push(buildPracticePost(exam, i));
   });
   posts.push(...buildGeneralPosts());
+  posts.push(...FOCUSED_STUDY_GUIDES);
   return posts.map(post => ({
     ...post,
     relatedSlugs: [...new Set(post.relatedSlugs?.map(canonicalBlogSlug))].filter(slug => slug !== post.slug),

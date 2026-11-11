@@ -20,6 +20,8 @@ export interface BlogPost {
   updatedAt?: string;
   body: string;
   relatedSlugs?: string[];
+  /** Reviewed practice links, in reading order. Omit to use tag ranking. */
+  relatedQuestionIds?: string[];
   /**
    * exam を持たない general 記事のうち、書籍CTAを単一区分の
    * /recommended-books/{exam} へ精密送客したい場合のみ明示指定する。

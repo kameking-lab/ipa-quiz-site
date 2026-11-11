@@ -12,7 +12,7 @@ import {EssayEditor} from "@/components/essay/EssayEditor";
 import type {Material} from "../shared/material-types";
 function MaterialReaderBody({material:m}:{material:Material}) {
   switch(m.kind) {
-    case "essay-example": return <article className="space-y-5"><h1>{m.question.theme}</h1><p>独自練習・AI生成の参考答案（査読推奨）。公式解答ではありません。</p><p className="whitespace-pre-wrap">{m.question.context}</p>{m.question.industries.map(v=><details key={v.industryId}><summary>{v.industryName}の参考答案</summary>{[v.intro,v.body,v.conclusion].map((text,i)=><p className="whitespace-pre-wrap" key={i}>{text}</p>)}</details>)}</article>;
+    case "essay-example": return <article className="space-y-5"><h1>{m.question.theme}</h1><p>独自練習の参考答案です。公式解答ではありません。</p><p className="whitespace-pre-wrap">{m.question.context}</p>{m.question.industries.map(v=><details key={v.industryId}><summary>{v.industryName}の参考答案</summary>{[v.intro,v.body,v.conclusion].map((text,i)=><p className="whitespace-pre-wrap" key={i}>{text}</p>)}</details>)}</article>;
     case "denko2-skill": case "annotated-note": return <SupplementReader material={m}/>;
     case "native":return <NativeReaderView question={m.question} readerConfig={m.readerConfig}/>;
     case "secondary":return <SecondaryReader question={m.question}/>;

@@ -1,4 +1,5 @@
 export const LS_KEYS = {
+  funnelFirstTouch: "ipa-quiz:funnel-first-touch:v1",
   referral: "ipa-quiz:referral:v1",
   referralStages: "ipa-quiz:referral-stages:v1",
   referralVisited: "ipa-quiz:referral-visited:v1",
@@ -7,6 +8,10 @@ export const LS_KEYS = {
   petCommandOutbox: "ipa-quiz:pet-command-outbox:v1",
   petLearning: "ipa-quiz:pet-learning:v1",
   petProfilesPrefix: "ipa-quiz:pet-profiles:v1:",
+  /** Per-account cloud merge state (last server version, per-device counters). */
+  petCloudStatePrefix: "ipa-quiz:pet-cloud:v1:",
+  /** Random per-browser id used only as a growth-counter slot in the cloud copy. */
+  petCloudDevice: "ipa-quiz:pet-cloud-device:v1",
   studyReward: "ipa-quiz:study-reward:v1",
   studyRewardPreferences: "ipa-quiz:study-reward-preferences:v1",
   studyPresenceVisitor: "study-presence-visitor",

@@ -1,5 +1,6 @@
 import { isClientFunnelEvent, recordFunnel } from "@/lib/billing/funnel";
 import { getClientIp } from "@/lib/rate-limit/server";
+import { requestAttribution } from "@/lib/billing/attribution";
 
 export const runtime = "nodejs";
 export const dynamic = "force-dynamic";
@@ -50,6 +51,8 @@ export async function POST(request: Request) {
   if (!isClientFunnelEvent(event)) return new Response(null, { status: 400 });
   const guest = request.headers.get("cookie")?.split(";").map(x => x.trim()).find(x => x.startsWith("practice_guest="))?.slice(15).split(".")[0];
   const visitor = guest && /^[0-9a-f-]{36}$/.test(guest) ? `guest:${guest}` : `net:${ip}:${ua}`;
-  await recordFunnel(event, visitor, now);
+  const attribution = requestAttribution(request);
+  if (attribution) await recordFunnel(event, visitor, now, attribution);
+  else await recordFunnel(event, visitor, now);
   return done;
 }

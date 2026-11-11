@@ -4,6 +4,7 @@ import { NativeQuestionGate } from "@/mobile/shared/NativeQuestionGate";
 
 import * as React from "react";
 import dynamic from "next/dynamic";
+import { LearningPetCorner } from "@/components/pet/LearningPetCorner";
 import { isReferenceOnlyQuestionId } from "@/lib/questions/assessment";
 import type { NativeBGrade } from "@/lib/questions/types";
 import { gradeNativeB, serializeNativeBSelections, formatNativeBAnswer, type NativeBSelections } from "@/lib/questions/native-b";
@@ -16,7 +17,6 @@ import type { Question, ChoiceKey, ExamCode } from "@/lib/questions/types";
 import { choiceDisplayLabel, choiceImageAlt, usesNumberedChoices } from "@/lib/questions/display";
 import { PracticeLoading } from "./PracticeTransition";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
-import { StudyRewardCorner } from "@/components/home/StudyRewardCorner";
 import { recordStudyReward } from "@/lib/study-reward";
 import { usePetLearning } from "@/components/pet/usePetLearning";
 import type { PetLearningSubmission } from "@/lib/pet/client/learning-submission-contracts";
@@ -35,13 +35,14 @@ import { createHistoryStore } from "@/lib/storage/history";
 import { writeLastQuestion } from "@/lib/storage/last-question";
 
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Timer, Share2, Check, Copy, Sparkles, Star, BookOpen } from "lucide-react";
+import { ArrowLeft, Timer, Check, Copy, Sparkles, Star, BookOpen } from "lucide-react";
 import { examLabel } from "@/lib/utils";
 import { comboLevel, readMotivationSettings } from "@/lib/motivation/combo";
 import { playPiroro } from "@/lib/motivation/sound";
 import { recordSessionAnswer } from "@/lib/motivation/session";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 import { posthogCapture } from "@/lib/posthog";
+import { observeJourney } from "@/lib/billing/journey-client";
 import { readSettings } from "@/lib/storage/settings";
 import { evaluateAchievementsAfterAnswer } from "@/lib/gamification/achievements";
 import { tsuginoLearningUrl, tsuginoScheduleUrl } from "@/lib/tsugino-qualification";
@@ -222,6 +223,7 @@ function ScoredQuizPlayer({
         exam: question.exam,
         correct,
       });
+      observeJourney({ qualification: question.exam, answer: true });
       const now = Date.now();
       if (!nativeBResult || nativeBResult.slotResults.every(slot => Boolean(slot.selectedCandidateId))) {
         recordStudyReward({ scope: `quiz:${question.exam}`, questionId: question.id, exam: question.exam, label: examLabel(question.exam) });
@@ -652,7 +654,7 @@ function ScoredQuizPlayer({
             {showKeyboardHelp && (
               <KeyboardShortcutHelp onClose={() => setShowKeyboardHelp(false)} />
             )}
-            <StudyRewardCorner scope={`quiz:${question.exam}`} questionId={question.id} answered={revealed} />
+            {!revealed && <LearningPetCorner qualificationId={question.exam} questionId={question.id} compact appearanceOnly />}
           </div>
 
         </main>
@@ -788,7 +790,6 @@ export function QuizCompleteScreen({
     ? `${QUIZ_ORIGIN}${safeShareHref}`
     : `${QUIZ_ORIGIN}/quiz?mode=${encodeURIComponent(mode)}&exam=${encodeURIComponent(exam)}`;
   const shareText = `${label}の過去問で正答率${accuracy}%でした！ AIコパイロット付き無料学習 #過去問AI #IPA試験`;
-  const xUrl = `https://twitter.com/intent/tweet?text=${encodeURIComponent(shareText)}&url=${encodeURIComponent(shareUrl)}`;
   const lineUrl = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(`${shareUrl}\n${shareText}`)}`;
 
   const handleCopy = async () => {
@@ -832,9 +833,6 @@ export function QuizCompleteScreen({
         <div className="mb-6">
           <p className="mb-2 text-xs font-semibold text-zinc-500 dark:text-zinc-400">結果をシェアする</p>
           <div className="flex flex-wrap gap-2">
-            <a href={xUrl} target="_blank" rel="noopener noreferrer" aria-label="X でシェア（結果・新しいタブで開く）" className={btnClass}>
-              <Share2 className="h-4 w-4" aria-hidden="true" /> X でシェア
-            </a>
             <a href={lineUrl} target="_blank" rel="noopener noreferrer" aria-label="LINEで結果をシェア（新しいタブで開く）" className={btnClass}>
               LINE
             </a>

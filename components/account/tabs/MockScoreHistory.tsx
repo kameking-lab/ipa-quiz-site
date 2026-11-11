@@ -98,7 +98,7 @@ export function MockScoreHistory() {
             </p>
           )}
           <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
-            この端末に保存された模試結果です。全国順位や合格可能性を示すものではありません。
+            この端末に保存された模試結果です。
           </p>
         </CardContent>
       </Card>

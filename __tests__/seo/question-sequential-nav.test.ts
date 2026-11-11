@@ -30,7 +30,7 @@ function sessionPool(q: Question): Question[] {
         x.session === q.session &&
         isPracticeReadyQuestion(x),
     )
-    .sort((a, b) => a.qNumber - b.qNumber);
+    .sort((a, b) => a.qNumber - b.qNumber || (a.part ?? "").localeCompare(b.part ?? ""));
 }
 
 /** Delegates to the page's real selection function so the test can't drift. */
@@ -104,10 +104,11 @@ describe("/q 前後ナビ — 境界の正しさ (最初に前なし・最後に
     const ordered = sessionPool(seed as Question);
     const mid = ordered[1];
     const { prev, next } = siblings(mid);
-    expect(prev?.qNumber).toBe(ordered[0].qNumber);
-    expect(next?.qNumber).toBe(ordered[2].qNumber);
-    expect(prev!.qNumber).toBeLessThan(mid.qNumber);
-    expect(next!.qNumber).toBeGreaterThan(mid.qNumber);
+    expect(prev?.id).toBe(ordered[0].id);
+    expect(next?.id).toBe(ordered[2].id);
+    // Multipart papers can share a printed qNumber. Their part is the tie-breaker.
+    expect(prev!.qNumber).toBeLessThanOrEqual(mid.qNumber);
+    expect(next!.qNumber).toBeGreaterThanOrEqual(mid.qNumber);
   });
 });
 

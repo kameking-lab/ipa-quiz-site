@@ -62,7 +62,7 @@ export function BlogPractice({ question, reason, continueHref, slug, explanation
         </div>
       )}
       <a href="#article-body" className="mt-3 inline-flex min-h-11 items-center text-sm underline">記事の本文を読む</a>
-      <LearningPetCorner qualificationId={question.exam} questionId={question.id} />
+      <LearningPetCorner qualificationId={question.exam} questionId={question.id} compact />
     </section>
   );
 }

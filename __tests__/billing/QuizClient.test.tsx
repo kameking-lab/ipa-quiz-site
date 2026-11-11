@@ -34,7 +34,8 @@ describe("QuizClient authorization boundary", () => {
     const fetcher = vi.fn(async (url: string, opts?: RequestInit) => {
       if (!opts?.method) return Response.json({ id: "q2" });
       const { id } = JSON.parse(opts.body as string);
-      return id === "q2" ? Response.json({ error: "daily_limit", access: { ...access, remaining: 0 } }, { status: 429 }) : Response.json({ question: { id }, access });
+      // q1 is the last free question (remaining 0), so q2 must wait for its own grant.
+      return id === "q2" ? Response.json({ error: "daily_limit", access: { ...access, remaining: 0 } }, { status: 429 }) : Response.json({ question: { id }, access: { ...access, remaining: 0 } });
     });
     vi.stubGlobal("fetch", fetcher);
     render(<QuizClient billingGateEnabled poolIds={["q1", "q2"]} mode="year" backHref="/" />);
@@ -63,7 +64,8 @@ describe("QuizClient authorization boundary", () => {
       if (!options?.method) return Response.json({ id: new URL(url, window.location.origin).searchParams.get("id") });
       const { id } = JSON.parse(options.body as string);
       if (id === "q2") return new Promise<Response>((resolve) => { finish = resolve; });
-      return Response.json({ question: { id }, access });
+      // No free question left after q1: the next one is not shown before its grant.
+      return Response.json({ question: { id }, access: id === "q1" ? { ...access, remaining: 0 } : access });
     });
     vi.stubGlobal("fetch", fetcher);
     render(<QuizClient billingGateEnabled poolIds={["q1", "q2", "q3"]} mode="year" backHref="/" />);
@@ -86,5 +88,30 @@ describe("QuizClient authorization boundary", () => {
     fireEvent.click(screen.getByRole("button", { name: "next" }));
     await screen.findByText("q3");
     expect(screen.getByLabelText("3問目 / 3問")).toHaveFocus();
+  });
+  it("shows the prefetched next question at once while its grant is confirmed, and withdraws it if denied", async () => {
+    let finish: ((response: Response) => void) | undefined;
+    const pass = { ...access, kind: "pass", remaining: null };
+    const fetcher = vi.fn(async (url: string, options?: RequestInit) => {
+      if (!options?.method) { const id = new URL(url, window.location.origin).searchParams.get("id"); return Response.json({ id, copy: "prefetch" }); }
+      const { id } = JSON.parse(options.body as string);
+      if (id === "q2") return new Promise<Response>((resolve) => { finish = resolve; });
+      if (id === "q3") return Response.json({ error: "billing_unavailable", access: { ...access, kind: "unavailable", remaining: null } }, { status: 503 });
+      return Response.json({ question: { id }, access: pass });
+    });
+    vi.stubGlobal("fetch", fetcher);
+    render(<QuizClient billingGateEnabled poolIds={["q1", "q2", "q3"]} mode="year" backHref="/" />);
+    await screen.findByText("q1");
+    await waitFor(() => expect(fetcher.mock.calls.some(([u, o]) => String(u).includes("id=q2") && !o?.method)).toBe(true));
+    fireEvent.click(screen.getByRole("button", { name: "next" }));
+    // No loading screen between questions for a member: q2 is on screen before its grant returns.
+    expect(await screen.findByText("q2")).toBeInTheDocument();
+    expect(screen.queryByText("loading")).toBeNull();
+    await act(async () => { finish!(Response.json({ question: { id: "q2" }, access: pass })); });
+    expect(screen.getByText("q2")).toBeInTheDocument();
+    // A denied grant still replaces the optimistic question with the failure screen.
+    fireEvent.click(screen.getByRole("button", { name: "next" }));
+    await screen.findByText("問題を読み込めませんでした。少し待ってからもう一度お試しください。");
+    expect(screen.queryByText("q3")).toBeNull();
   });
 });

@@ -60,16 +60,16 @@ describe("home directory", () => {
   it("offers the dentist corpus with its actual published count", () => {
     const dentist = all.find((item) => item.key === "shika-ishi");
     expect(dentist?.href).toBe("/shika-ishi");
-    expect(dentist?.questionCount).toBe(696);
-    expect(dentist?.periodLabel).toBe("2期分");
+    expect(dentist?.questionCount).toBe(726);
+    expect(dentist?.periodLabel).toBe("5期分");
   });
 
-  it("links the complete two Riyoshi papers with the published question count", () => {
+  it("links the three Riyoshi papers with the published question count", () => {
     const item = all.find((entry) => entry.key === "riyoshi");
     expect(item?.href).toBe("/riyoshi");
-    expect(item?.questionCount).toBe(110);
-    expect(item?.periodLabel).toBe("2期分");
-    expect(item?.sub).toContain("全110原問・全肢解説");
+    expect(item?.questionCount).toBe(165);
+    expect(item?.periodLabel).toBe("3期分");
+    expect(item?.sub).toContain("全165原問・全肢解説");
   });
 
   it("never advertises an empty qualification and sums domain totals from cards", () => {
@@ -87,7 +87,7 @@ describe("home directory", () => {
   });
 
   it("shows the current partial OT and orthoptist counts in their cards", () => {
-    for (const [code, count] of [["sagyo-ryohoshi", 310], ["shino-kunrenshi", 220]] as const) {
+    for (const [code, count] of [["sagyo-ryohoshi", 324], ["shino-kunrenshi", 220]] as const) {
       const item = all.find((entry) => entry.key === code);
       expect(item?.questionCount).toBe(count);
       expect(item?.sub).toContain(`${count}原問`);

@@ -53,11 +53,11 @@ describe("registered OT source-backed routes and figures", () => {
     }
   });
 
-  it("shows the 310-question partial-coverage count in the qualification hub", async () => {
+  it("shows the 324-question partial-coverage count in the qualification hub", async () => {
     const page = await ExamTopPage({ params: Promise.resolve({ exam: "sagyo-ryohoshi" }) });
     const doc = new DOMParser().parseFromString(renderToStaticMarkup(page), "text/html");
     const summary = doc.querySelector("header > p")?.textContent ?? "";
-    expect(summary).toContain("310問を部分収録");
+    expect(summary).toContain("324問を部分収録");
     expect(summary).toContain("未収録");
   });
 });

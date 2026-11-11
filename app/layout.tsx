@@ -1,4 +1,5 @@
 import type { Metadata, Viewport } from "next";
+import { PurchaseJourney } from "@/components/analytics/PurchaseJourney";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import { SourceRelationshipFooter } from "@/components/question-provenance/SourceRelationshipFooter";
@@ -86,8 +87,6 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    site: "@kakomon_ai_jp",
-    creator: "@kakomon_ai_jp",
     title: "過去問AI — AIネイティブ過去問学習",
     description: ROOT_DESCRIPTION,
     images: [`${BASE_URL}/opengraph-image`],
@@ -101,7 +100,7 @@ export const metadata: Metadata = {
   other: {
     "google-adsense-account": "ca-pub-8751260838396451",
   },
-  // Safari の Smart App Banner。NEXT_PUBLIC_APP_STORE_LIVE=true のときだけ出す（lib/app-store.ts）。
+  // Safari の Smart App Banner（WKWebView 内では表示されない）。
   itunes: appStoreItunesMetadata(),
 };
 
@@ -137,6 +136,7 @@ export default function RootLayout({
         <ThemeProvider>
           <MobileInstallProvider>
           <StudyPresence />
+          <PurchaseJourney />
           {/* Skip link first in the DOM so a single Tab reaches it before any
               header/widget (WCAG 2.4.1 Bypass Blocks). Targets #main-content. */}
           <a
@@ -233,17 +233,6 @@ export default function RootLayout({
                       コミュニティ
                     </h3>
                     <ul className="space-y-0">
-                      <li>
-                        <a
-                          href="https://x.com/kakomon_ai_jp"
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          aria-label="X @kakomon_ai_jp をフォロー（新しいタブで開く）"
-                          className="block py-2.5 hover:text-foreground"
-                        >
-                          X @kakomon_ai_jp
-                        </a>
-                      </li>
                       <li><a href="https://tsugino-shikaku.jp/?utm_source=kakomon_ai&utm_medium=referral&utm_campaign=learning_network" target="_blank" rel="noopener noreferrer" className="block py-2.5 hover:text-foreground">日程・締切を探す・次の資格</a></li>
                       <li><a href="https://www.youtube.com/channel/UCrR65J1ZQ6Zzr0Gs70YPHNA?utm_source=kakomon_ai&utm_medium=referral&utm_campaign=learning_network" target="_blank" rel="noopener noreferrer" className="block py-2.5 hover:text-foreground">耳で復習・ミナト資格ラジオ</a></li>
 
@@ -275,7 +264,7 @@ export default function RootLayout({
                   </div>
                 </div>
 
-                <AppStorePromo variant="footer" className="print:hidden mt-4" />
+                <AppStorePromo className="print:hidden mt-4" />
 
                 <SourceRelationshipFooter />
               </div>

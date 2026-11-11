@@ -1,5 +1,6 @@
 import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import int8RuntimePins from "./fixtures/int8-runtime-pins.json";
+import releaseRuntimePins from "./fixtures/cx-release-20261110-runtime-pins.json";
 import kperfRuntimePins from "./fixtures/kperf1-runtime-pins.json";
 import petdevRuntimePins from "./fixtures/petdev1-runtime-pins.json";
 import { integrationOracle, runtimeFingerprint, normalizedTextSha256, repositoryTextSha256, sourceFilesUnder } from './fixtures/native-integration-oracle';
@@ -84,10 +85,17 @@ describe('aviation communication68 local registration candidate',()=>{
   // The historical pre-reward oracle remains unchanged as provenance.
   // IOS-FIX (PR #807) pins the opaque sticky header and the post-answer bar
   // without a second next button (the inline 「次の問題へ」 is the only one).
-  expect(normalizedTextSha256(player)).toBe(int8RuntimePins['components/quiz/QuizPlayer.tsx']);
+  // ktidy removes only the frozen X share link. Keep the historical INT8 pin.
+  // e-kako-pet moves reviewed pet presentation. e-kako-funnel adds one answer
+  // observation; removing that exact addition must retain the historical handler.
+  expect(normalizedTextSha256(player)).toBe(releaseRuntimePins['components/quiz/QuizPlayer.tsx']);
+  expect(player).not.toContain('twitter.com/intent/tweet');
   expect(player).toContain('NativeQuestionGate');
   expect(petdevRuntimePins.previousCommitAnswer).toBe(kperfRuntimePins.commitAnswer);
-  expect(normalizedTextSha256(player.slice(player.indexOf('  const commitAnswer ='), player.indexOf('  const onNativeBAnswer =')))).toBe(petdevRuntimePins.commitAnswer);
+  const answerHandler=player.slice(player.indexOf('  const commitAnswer ='), player.indexOf('  const onNativeBAnswer =')).replace(/\r\n/g,'\n');
+  const journeyObservation='      observeJourney({ qualification: question.exam, answer: true });\n';
+  expect(answerHandler.split(journeyObservation)).toHaveLength(2);
+  expect(normalizedTextSha256(answerHandler.replace(journeyObservation,''))).toBe(petdevRuntimePins.commitAnswer);
   expect(player).not.toContain('ExamNoteGuide');
   expect(player).not.toContain('GenerateSimilar');
   expect(player).not.toContain('/api/generate-question');
@@ -105,6 +113,9 @@ describe('aviation communication68 local registration candidate',()=>{
   // Every original-data/core pin and the 338-record runtime fingerprint above remain exact.
   const reviewedDisplayPins: Readonly<Record<string,string>> = {
     ...int8RuntimePins,
+    'components/quiz/QuizPlayer.tsx': releaseRuntimePins['components/quiz/QuizPlayer.tsx'],
+    'components/quiz/QuestionAnswerCard.tsx': releaseRuntimePins['components/quiz/QuestionAnswerCard.tsx'],
+    'components/quiz/stream/StreamQuizPlayer.tsx': releaseRuntimePins['components/quiz/stream/StreamQuizPlayer.tsx'],
   };
   for(const pin of oracle.files)expect(repositoryTextSha256(pin.path),pin.path).toBe(reviewedDisplayPins[pin.path] ?? pin.sha256);
  });

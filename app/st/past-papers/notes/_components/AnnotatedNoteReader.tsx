@@ -48,7 +48,6 @@ export function AnnotatedNoteReader({ id }: { id: string }) {
         </div>
         <h2 className="text-xl font-semibold">公式解答と解説</h2>
         <p>公式解答：<strong data-official-key={source.answer}>{source.answer}</strong>（<a className={styles.link} href={answerReference(note)}>公式解答表</a>）</p>
-        <p>公式記号の表示は、解説中の解釈や追加モデルまで数学的に一意とする意味ではありません。本文と注記を一緒に確認してください。</p>
         <div className={styles.verbatim} data-accepted-field="explanation">{source.explanation}</div>
         {source.choiceExplanations ? (
           <section aria-label="全選択肢の理由" className="space-y-4">

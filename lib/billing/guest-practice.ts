@@ -14,6 +14,75 @@ function secret() {
 function mac(label: string, value: string) {
   return createHmac("sha256", secret()).update(`practice:${label}:v1:${value}`).digest("hex");
 }
+
+// ---- Network + device bucket -------------------------------------------------
+// Clearing cookies, a private window or another browser issues a fresh guest
+// cookie. The daily free quota is therefore also counted per "network + device
+// class" bucket. The bucket is an HMAC whose key is rotated every JST day, so it
+// cannot be reversed to the client IP / User-Agent nor linked across days. The
+// raw IP and User-Agent are never stored, logged or sent to KV.
+
+/** Normalises a client address to its network: the IPv4 address, or the IPv6 /64 prefix. */
+export function clientNetwork(raw: string | null | undefined): string {
+  let value = (raw ?? "").trim().toLowerCase();
+  if (!value || value.length > 100) return "unknown";
+  if (value.startsWith("[")) {
+    const end = value.indexOf("]");
+    if (end < 0) return "unknown";
+    value = value.slice(1, end);
+  }
+  const v4 = /^(?:::ffff:)?(\d{1,3}(?:\.\d{1,3}){3})(?::\d{1,5})?$/.exec(value);
+  if (v4) return v4[1].split(".").every(x => Number(x) <= 255) ? `v4:${v4[1]}` : "unknown";
+  value = value.replace(/%.*$/, "");
+  if (!/^[0-9a-f:]+$/.test(value) || !value.includes(":")) return "unknown";
+  const halves = value.split("::");
+  if (halves.length > 2) return "unknown";
+  const head = halves[0] ? halves[0].split(":") : [];
+  const tail = halves.length === 2 && halves[1] ? halves[1].split(":") : [];
+  const missing = 8 - head.length - tail.length;
+  if (halves.length === 2 ? missing < 1 : missing !== 0) return "unknown";
+  const groups = [...head, ...Array<string>(halves.length === 2 ? missing : 0).fill("0"), ...tail];
+  if (!groups.every(g => /^[0-9a-f]{1,4}$/.test(g))) return "unknown";
+  // Privacy extensions rotate the interface ID freely; the /64 is the line.
+  return `v6:${groups.slice(0, 4).map(g => parseInt(g, 16).toString(16)).join(":")}`;
+}
+
+/** Device type, OS and browser from a User-Agent, keeping only major versions. */
+export function deviceClass(userAgent: string | null | undefined): string {
+  const ua = (userAgent ?? "").slice(0, 512);
+  const major = (re: RegExp) => re.exec(ua)?.[1] ?? "";
+  const type = /bot|crawl|spider|slurp|mediapartners/i.test(ua) ? "bot"
+    : /ipad|tablet|kindle|silk/i.test(ua) || (/android/i.test(ua) && !/mobile/i.test(ua)) ? "tablet"
+    : /mobi|iphone|ipod|android/i.test(ua) ? "mobile" : "desktop";
+  const os = /iphone|ipad|ipod/i.test(ua) ? `ios${major(/ OS (\d+)[_.]/i)}`
+    : /android/i.test(ua) ? `android${major(/android (\d+)/i)}`
+    : /windows/i.test(ua) ? "windows"
+    : /cros/i.test(ua) ? "chromeos"
+    : /macintosh|mac os x/i.test(ua) ? "macos"
+    : /linux/i.test(ua) ? "linux" : "other";
+  const browser = /edg(?:e|a|ios)?\//i.test(ua) ? `edge${major(/edg(?:e|a|ios)?\/(\d+)/i)}`
+    : /samsungbrowser\//i.test(ua) ? `samsung${major(/samsungbrowser\/(\d+)/i)}`
+    : /opr\/|opera/i.test(ua) ? `opera${major(/opr\/(\d+)/i)}`
+    : / line\//i.test(ua) ? "line"
+    : /fxios\/|firefox\//i.test(ua) ? `firefox${major(/(?:fxios|firefox)\/(\d+)/i)}`
+    : /crios\/|chrome\//i.test(ua) ? `chrome${major(/(?:crios|chrome)\/(\d+)/i)}`
+    : /version\/\d+.*safari\//i.test(ua) ? `safari${major(/version\/(\d+)/i)}`
+    : /applewebkit/i.test(ua) ? "webview" : "other";
+  return `${type}/${os}/${browser}`;
+}
+
+function requestNetwork(request: Request) {
+  // Vercel overwrites both headers with the connecting client's address.
+  const forwarded = request.headers.get("x-forwarded-for")?.split(",")[0];
+  return clientNetwork(forwarded?.trim() ? forwarded : request.headers.get("x-real-ip"));
+}
+
+/** Irreversible per-day bucket of (realm, network, device class). */
+export function guestDeviceKey(request: Request, realm: string, day: string): string {
+  const daySalt = createHmac("sha256", secret()).update(`practice:device-salt:v1:${day}`).digest();
+  return createHmac("sha256", daySalt)
+    .update(`${realm}\n${requestNetwork(request)}\n${deviceClass(request.headers.get("user-agent"))}`).digest("hex");
+}
 export function guestCookie(realm: string, now = Date.now()) {
   const data = `${randomUUID()}.${Math.floor(now / 1000)}`;
   return `${data}.${mac(`cookie:${realm}`, data)}`;
@@ -60,24 +129,45 @@ local count = redis.call('INCR', KEYS[3])
 if count == 1 then redis.call('EXPIRE', KEYS[3], 60) end
 if count > 60 then return cjson.encode({status='rate', retry=redis.call('TTL', KEYS[3])}) end
 local used = redis.call('SCARD', KEYS[2])
-if redis.call('SISMEMBER', KEYS[2], id) == 1 then return cjson.encode({status='ok', used=used}) end
+local device = KEYS[4]
+if redis.call('SISMEMBER', KEYS[2], id) == 1 then
+  local seen = used
+  if device then seen = math.max(used, redis.call('SCARD', device)) end
+  return cjson.encode({status='ok', used=seen})
+end
 if used >= limit then return cjson.encode({status='limit', used=used}) end
+-- The network+device bucket is shared by every guest cookie from the same line
+-- and device class. A question already seen from it is not counted again.
+local deviceUsed = 0
+if device then
+  local added = redis.call('SADD', device, id)
+  deviceUsed = redis.call('SCARD', device)
+  if added == 1 then
+    if deviceUsed > limit then
+      redis.call('SREM', device, id)
+      return cjson.encode({status='limit', used=limit})
+    end
+    if deviceUsed == 1 then redis.call('EXPIRE', device, ttl) end
+  end
+end
 redis.call('SADD', KEYS[2], id)
 redis.call('EXPIRE', KEYS[2], ttl)
-return cjson.encode({status='ok', used=used+1})
+return cjson.encode({status='ok', used=math.max(used+1, deviceUsed)})
 `;
 interface ScriptResult { status: "ok" | "limit" | "rate" | "claimed" | "other" | "none"; used?: number; retry?: number; ids?: string[] }
-async function run(realm: string, guest: string, day: string, action: "grant" | "claim" | "recover", id: string, owner: string, limit: number, now: number): Promise<ScriptResult> {
+async function run(realm: string, guest: string, day: string, action: "grant" | "claim" | "recover", id: string, owner: string, limit: number, now: number, device?: string): Promise<ScriptResult> {
   const url = process.env.KV_REST_API_URL?.replace(/\/$/, ""), token = process.env.KV_REST_API_TOKEN;
   if (!url || !token) throw new BillingError("billing_unavailable", 503);
   const base = `practice:v1:${mac("realm", realm)}:${day}:${mac("guest", guest)}`;
   // Retain each day's immutable snapshot for at least 24 hours after its JST end.
   const dayEnd = Date.parse(`${day}T00:00:00+09:00`) + DAY;
   const ttl = Math.max(1, Math.ceil((dayEnd + DAY - now) / 1000));
+  const keys = [`${base}:claim`, `${base}:ids`, `${base}:minute`];
+  if (device) keys.push(`practice:v1:${mac("realm", realm)}:${day}:device:${device}:ids`);
   let response: Response;
   try {
     response = await fetch(url, { method: "POST", headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-      body: JSON.stringify(["EVAL", GUEST_SCRIPT, "3", `${base}:claim`, `${base}:ids`, `${base}:minute`, action, id, owner, String(limit), String(ttl)]), signal: AbortSignal.timeout(1500), cache: "no-store" });
+      body: JSON.stringify(["EVAL", GUEST_SCRIPT, String(keys.length), ...keys, action, id, owner, String(limit), String(ttl)]), signal: AbortSignal.timeout(1500), cache: "no-store" });
     if (!response.ok) throw new Error("KV response");
     const payload: unknown = await response.json();
     if (!payload || typeof payload !== "object" || !("result" in payload) || typeof payload.result !== "string") throw new Error("KV result");
@@ -99,8 +189,10 @@ async function run(realm: string, guest: string, day: string, action: "grant" | 
     return r;
   } catch { throw new BillingError("billing_unavailable", 503); }
 }
-export async function guestGrant(realm: string, guest: string, id: string, limit: number, now: number) {
-  return run(realm, guest, jstDay(new Date(now)), "grant", id, "", limit, now);
+/** Counts the day's free quota per guest cookie and per network+device bucket; either reaching the limit stops. */
+export async function guestGrant(realm: string, guest: string, id: string, limit: number, now: number, request: Request) {
+  const day = jstDay(new Date(now));
+  return run(realm, guest, day, "grant", id, "", limit, now, guestDeviceKey(request, realm, day));
 }
 export async function guestClaim(realm: string, guest: string, user: string, limit: number, now: number): Promise<GuestSnapshot[]> {
   const owner = mac(`owner:${realm}`, user);

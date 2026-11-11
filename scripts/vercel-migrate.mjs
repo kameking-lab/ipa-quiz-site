@@ -21,6 +21,11 @@ export const MIG2_MIGRATIONS = Object.freeze([
   ...DB1_MIGRATIONS,
 ]);
 
+// Owner approved the chihuahua cloud-save table (PetProfile) on 2026-11-08.
+export const PET1_MIGRATIONS = Object.freeze([
+  '20261108000000_pet_cloud_profile',
+]);
+
 const feedbackApproval = '-- Owner approved production application with DB1: 2026-11-05 12:10 JST (MIG2).';
 const feedbackOriginalNote = '-- Branch-only migration: production application requires separate owner approval.';
 
@@ -73,12 +78,14 @@ export function pendingMigrations(files, history) {
     applied.add(row.migration_name);
   }
   const pending = files.filter(file => !applied.has(file.name)).map(file => file.name);
-  const allowed = [MIG2_MIGRATIONS, DB1_MIGRATIONS, []];
+  // PET1 is the newest approved migration, so it is pending together with
+  // any older approved group that a database has not received yet.
+  const allowed = [[...MIG2_MIGRATIONS, ...PET1_MIGRATIONS], [...DB1_MIGRATIONS, ...PET1_MIGRATIONS], [...PET1_MIGRATIONS], []];
   if (!allowed.some(group => pending.length === group.length
     && pending.every((name, index) => name === group[index]))) {
-    throw new MigrationGateError(`Unexpected pending migrations: ${pending.join(', ')} (only all five MIG2 migrations, all three DB1 migrations or zero are allowed); no deploy attempted.`);
+    throw new MigrationGateError(`Unexpected pending migrations: ${pending.join(', ')} (only MIG2+PET1, DB1+PET1, PET1 alone or zero are allowed); no deploy attempted.`);
   }
-  if (MIG2_MIGRATIONS.some(name => !files.some(file => file.name === name))) {
+  if ([...MIG2_MIGRATIONS, ...PET1_MIGRATIONS].some(name => !files.some(file => file.name === name))) {
     throw new MigrationGateError('Approved migration files are missing; no deploy attempted.');
   }
   return pending;
@@ -116,8 +123,9 @@ export async function migrateForVercel(env = process.env) {
       });
       const output = `${result.stdout ?? ''}\n${result.stderr ?? ''}`.replace(/\u001b\[[0-9;]*m/g, '');
       const expectedStatus = pending.length ? 1 : 0;
+      // Prisma prints "migration" (singular) when exactly one is pending.
       const statusOk = command !== 'status' || (result.status === expectedStatus
-        && (pending.length ? output.includes('Following migrations have not yet been applied:')
+        && (pending.length ? /Following migrations? have not yet been applied:/.test(output)
           && pending.every(name => output.includes(name)) : output.includes('Database schema is up to date!')));
       if (result.error || !statusOk || (command === 'deploy' && result.status !== 0)) {
         throw new MigrationGateError(`Prisma migrate ${command} failed; build stopped (database output withheld).`);

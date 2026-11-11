@@ -19,6 +19,15 @@ import { getAllBlogPosts } from "@/data/blog";
 //
 // Newly added URLs verified resolving (HEAD, HTTP 200, no redirect) on 2026-09-28:
 const EXPECTED_EXTERNAL_URLS = [
+  // Focused SC/DB/FE guides: GET 200, verified 2026-11-11.
+  "https://www.ipa.go.jp/security/guide/insider.html",
+  "https://www.ipa.go.jp/security/guide/hjuojm00000055l0-att/ps6vr7000000jvcb.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/2015h27.html",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_fe_am_qs.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_fe_am_ans.pdf",
+  "https://www.postgresql.org/docs/current/queries-table-expressions.html",
+  "https://www.postgresql.org/docs/current/functions-aggregate.html",
+  "https://www.postgresql.org/docs/current/sql-expressions.html",
   // AD2: original journal abstract checked 2026-11-05. The article explicitly
   // distinguishes the prose-recall experiment from this site's outcomes.
   "https://www.psychologicalscience.org/journals/psychological-science/j.1467-9280.2006.01693.x/",
@@ -38,6 +47,8 @@ const EXPECTED_EXTERNAL_URLS = [
   "https://www.ipa.go.jp/shiken/goukaku/shinsei_01.html",
   "https://www.ipa.go.jp/shiken/jitecinquiry_handicapped.html",
   "https://www.ipa.go.jp/shiken/kubun/list.html",
+  // AP afternoon source checked by GET (HTTP 200, no redirect), 2026-11-10.
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/2025r07.html",
   "https://www.ipa.go.jp/shiken/mondai-kaiotu/index.html",
   // IPA source manifest and independent FE review, verified 2026-10-08.
   "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/2025r07.html",
@@ -75,6 +86,9 @@ const EXPECTED_EXTERNAL_URLS = [
   "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_fe_kamoku_b_qs.pdf",
   "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_ans.pdf",
   "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/tbl5kb0000005r9r-att/2025r07_sg_qs.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000f52-att/2015h27h_db_pm1_qs.pdf#page=16",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000f52-att/2015h27h_db_pm1_ans.pdf#page=2",
+  "https://www.postgresql.org/docs/current/sql-expressions.html#SQL-SYNTAX-COLUMN-REFERENCES",
   "https://www3.jitec.ipa.go.jp/JitesCbt/html/openinfo/pdf/questions/2024r06_ip_ans.pdf",
   "https://www3.jitec.ipa.go.jp/JitesCbt/html/openinfo/pdf/questions/2024r06_ip_qs.pdf",
 ] as const;
@@ -84,6 +98,7 @@ const ALLOWED_HOSTS = new Set([
   "www3.jitec.ipa.go.jp",
   "cbt-s.com",
   "www.psychologicalscience.org",
+  "www.postgresql.org",
 ]);
 
 // In markdown link form `[text](url)`, the URL ends at the closing paren, so the

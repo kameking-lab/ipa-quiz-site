@@ -72,7 +72,7 @@ export async function POST(request: Request) {
             return response;
           }
           if (!userId && guest) {
-            const result = await guestGrant(realm, guest, question.id, config.freeDaily, now);
+            const result = await guestGrant(realm, guest, question.id, config.freeDaily, now, request);
             access.kind = "guest";
             if (result.status === "claimed") throw new BillingError("sign_in_required", 401);
             if (result.status === "rate") { access.retryAfter = result.retry ?? 60; throw new BillingError("guest_rate_limited", 429); }

@@ -2,6 +2,172 @@
   "schema": 2,
   "exams": [
     {
+      "code": "unko-kanrisha-ryokaku",
+      "qualification": "unko-kanrisha-ryokaku",
+      "name": "UNKO-KANRISHA-RYOKAKU",
+      "count": 92,
+      "years": [
+        2024,
+        2023
+      ],
+      "categories": [
+        "労働基準法",
+        "実務上の知識・能力",
+        "道路交通法",
+        "道路運送法",
+        "道路運送車両法"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 214419,
+      "revision": "fbf6c2be05572a1110b7e80966a409299e88cb566106a91d77c65d2c355ab64e"
+    },
+    {
+      "code": "shobo-setsubishi-kou1",
+      "qualification": "shobo-setsubishi-kou1",
+      "name": "SHOBO-SETSUBISHI-KOU1",
+      "count": 26,
+      "years": [
+        2026
+      ],
+      "categories": [
+        "実技・製図",
+        "実技・鑑別",
+        "構造・機能・工事・整備",
+        "機械の基礎知識",
+        "消防関係法令",
+        "電気の基礎知識"
+      ],
+      "sessions": [
+        "gakka",
+        "practical"
+      ],
+      "bytes": 62816,
+      "revision": "a5c45be06db55cf9108e77c5ba69a2434d8f0a5bd1afc5c65842ca4605ec4def"
+    },
+    {
+      "code": "kikenbutsu-kou",
+      "qualification": "kikenbutsu-kou",
+      "name": "KIKENBUTSU-KOU",
+      "count": 45,
+      "years": [
+        2026
+      ],
+      "categories": [
+        "危険物に関する法令",
+        "危険物の性質・火災予防・消火",
+        "物理学及び化学"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 119471,
+      "revision": "00886efe6af98ec7a725d50e017c27df9cd9a6e02562f66f9d33151da6e4629b"
+    },
+    {
+      "code": "kikenbutsu-hei",
+      "qualification": "kikenbutsu-hei",
+      "name": "KIKENBUTSU-HEI",
+      "count": 25,
+      "years": [
+        2026
+      ],
+      "categories": [
+        "危険物に関する法令",
+        "危険物の性質・火災予防・消火",
+        "燃焼及び消火に関する基礎知識"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 62121,
+      "revision": "0ddf9ab2a5fc59dcdf8cdd482324c77c55f2743c1935f17e5d05e49be4a07fe1"
+    },
+    {
+      "code": "shobo-setsubishi-kou4",
+      "qualification": "shobo-setsubishi-kou4",
+      "name": "SHOBO-SETSUBISHI-KOU4",
+      "count": 15,
+      "years": [
+        2026
+      ],
+      "categories": [
+        "実技",
+        "構造・機能・整備",
+        "消防関係法令",
+        "電気の基礎知識"
+      ],
+      "sessions": [
+        "gakka",
+        "practical"
+      ],
+      "bytes": 35708,
+      "revision": "577ff5e33883af899c020402dc28235d503c1aa4cff5bdd175762ed894ae5e7e"
+    },
+    {
+      "code": "shobo-setsubishi-otsu6",
+      "qualification": "shobo-setsubishi-otsu6",
+      "name": "SHOBO-SETSUBISHI-OTSU6",
+      "count": 16,
+      "years": [
+        2026
+      ],
+      "categories": [
+        "実技",
+        "構造・機能・整備",
+        "機械の基礎知識",
+        "消防関係法令"
+      ],
+      "sessions": [
+        "gakka",
+        "practical"
+      ],
+      "bytes": 37858,
+      "revision": "8dc56a4316e20bfe89bf527c407d09c135db422f187e50516351dad6cf0ca07c"
+    },
+    {
+      "code": "unko-kanrisha-kamotsu",
+      "qualification": "unko-kanrisha-kamotsu",
+      "name": "UNKO-KANRISHA-KAMOTSU",
+      "count": 86,
+      "years": [
+        2024,
+        2023
+      ],
+      "categories": [
+        "労働基準法",
+        "実務上の知識・能力",
+        "貨物自動車運送事業法",
+        "道路交通法",
+        "道路運送車両法"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 188815,
+      "revision": "4c85f11dd2ba308e219838b5d5e5d7864e2c1a8367c6bc2b2bca7792e2f8ec69"
+    },
+    {
+      "code": "kikenbutsu-otsu4",
+      "qualification": "kikenbutsu-otsu4",
+      "name": "KIKENBUTSU-OTSU4",
+      "count": 35,
+      "years": [
+        2026
+      ],
+      "categories": [
+        "危険物に関する法令",
+        "危険物の性質・火災予防・消火",
+        "基礎的な物理学・化学"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 84094,
+      "revision": "6c676d75b714d4bd16dc353202f44c6c10f881accdc8cc2df0e212b5f3f044ab"
+    },
+    {
       "code": "sekou-1kenchiku",
       "qualification": "sekou-1kenchiku",
       "name": "1級建築施工管理（第一次）",
@@ -1577,9 +1743,10 @@
       "code": "riyoshi",
       "qualification": "riyoshi",
       "name": "理容師",
-      "count": 110,
+      "count": 165,
       "years": [
-        2026
+        2026,
+        2025
       ],
       "categories": [
         "人体の構造及び機能",
@@ -1595,14 +1762,14 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 254752,
-      "revision": "3b96c68db6a96f85e0ff199eb94892dc2ff8c8219d485bf8afb43374c8e2f3fe"
+      "bytes": 379423,
+      "revision": "008ef9f4f6bc0d40f1e3716c9b8ef35062aba3cfe7f4c633479864611682088e"
     },
     {
       "code": "ap",
       "qualification": "ap",
       "name": "応用情報技術者",
-      "count": 2354,
+      "count": 2356,
       "years": [
         2025,
         2024,
@@ -1640,8 +1807,8 @@
       "sessions": [
         "am"
       ],
-      "bytes": 3307313,
-      "revision": "39560b55cd7da898e64aa9fd1ab7e33f628a4d09bbc2a0c9b0e2109bf780bc45"
+      "bytes": 5803510,
+      "revision": "d172da037697a0add5579b334045e056c7026531a27b32e0050f3babab3a84a8"
     },
     {
       "code": "ip",
@@ -1802,8 +1969,8 @@
         "am1",
         "am2"
       ],
-      "bytes": 2605294,
-      "revision": "f2dd9ab378ec4ca8aa88c613efca5be1c0e014e63e1940131526c4d34a38a471"
+      "bytes": 4017792,
+      "revision": "9d375c9ae7d4082d99ebeb245ce2c1e432e278b6df5e4a9c43f3b1e17158797c"
     },
     {
       "code": "nw",
@@ -1851,8 +2018,8 @@
         "am1",
         "am2"
       ],
-      "bytes": 844873,
-      "revision": "417b5788fff95c310ad63d5057339c47deaa3300f0f4aa93bfa60f609fd2636f"
+      "bytes": 1014864,
+      "revision": "168357f8504d73fb659a3040726fea07ce74937b8cdf00d766a0573ee2f8b162"
     },
     {
       "code": "db",
@@ -1902,14 +2069,14 @@
         "am1",
         "am2"
       ],
-      "bytes": 862524,
-      "revision": "a43aa3a6fdceec95e71e936379e2dbbc7928da974c28a4321f22f7ca5a53f2c1"
+      "bytes": 1031171,
+      "revision": "e169e03c1bd609fe08d3b6c8b61adb1256db84ebc48cabb930827d8dc3c10cdc"
     },
     {
       "code": "st",
       "qualification": "st",
       "name": "ITストラテジスト",
-      "count": 817,
+      "count": 823,
       "years": [
         2025,
         2024,
@@ -1959,8 +2126,8 @@
         "am1",
         "am2"
       ],
-      "bytes": 1564326,
-      "revision": "e4e02a1c453a9948a7e6bd85e7db4b8fe70a2f67180b5b6081e140366d272ddd"
+      "bytes": 1989015,
+      "revision": "d77aac6d7fc90e43536b5960896242e949e9953ec57c1c2a54dfa7fc4960e27b"
     },
     {
       "code": "sa",
@@ -2007,8 +2174,8 @@
         "am1",
         "am2"
       ],
-      "bytes": 875187,
-      "revision": "ac06efbf7f6d91c1ba9687cafb4d8fe5a8aecb8f93b90de374168ea6f696dd83"
+      "bytes": 1043868,
+      "revision": "57620d4bafefe8bc6d3e731685abdf92680574d2480422aef5e770794ff21d63"
     },
     {
       "code": "pm",
@@ -2107,8 +2274,8 @@
         "am1",
         "am2"
       ],
-      "bytes": 854297,
-      "revision": "6bea2cb657e29ef95786824d9dc91311d28754e1a53d2a592339ced676341d80"
+      "bytes": 1018729,
+      "revision": "b03ddecc42013932de0334cef8944639e7a4c245fb7c5121980035b77a8cde86"
     },
     {
       "code": "sm",
@@ -2158,8 +2325,8 @@
         "am1",
         "am2"
       ],
-      "bytes": 873650,
-      "revision": "792d9158239e9a19452a246620d5cf3af4da12f35cf210bff975c7789041a220"
+      "bytes": 1124484,
+      "revision": "8f75b13a3ac8fdd53837ae1622ecb00a35c8192d9c04486b12a7deca3f9f48be"
     },
     {
       "code": "au",
@@ -2207,8 +2374,8 @@
         "am1",
         "am2"
       ],
-      "bytes": 893403,
-      "revision": "cc681a398c9b04f901cd75126180584f8e568214c19943fd06e6af0042652dbc"
+      "bytes": 1112414,
+      "revision": "d2b66bf4570b19db9ed5607aa135193039e7f82796b6be734bf52af868eb6367"
     },
     {
       "code": "fp2",
@@ -2584,10 +2751,11 @@
       "code": "kaigo",
       "qualification": "kaigo",
       "name": "介護福祉士",
-      "count": 250,
+      "count": 375,
       "years": [
         2025,
-        2024
+        2024,
+        2023
       ],
       "categories": [
         "こころとからだのしくみ",
@@ -2607,8 +2775,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 739742,
-      "revision": "2f263d30efbeff005d8a3704f3128af1b11dca4a3dfa51b4cfdd1b8cbdd8ac48"
+      "bytes": 1068736,
+      "revision": "45d4ca3a1dd344d955ff04a3326c1d4eeb75c43c51c25e13389f0bf765f85637"
     },
     {
       "code": "civil1",
@@ -2785,7 +2953,7 @@
       "code": "eisei1",
       "qualification": "eisei1",
       "name": "第一種衛生管理者",
-      "count": 88,
+      "count": 98,
       "years": [
         2026,
         2025
@@ -2800,14 +2968,14 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 279367,
-      "revision": "d75cf85c889da454ade7fcfac2d7780a976c46d22b595eb02b285f2471a50e62"
+      "bytes": 307564,
+      "revision": "a79e02835e8829a5b59e0c0cf88477184415061e0fda1670a799a207b25d6fc0"
     },
     {
       "code": "eisei2",
       "qualification": "eisei2",
       "name": "第二種衛生管理者",
-      "count": 60,
+      "count": 70,
       "years": [
         2026,
         2025
@@ -2820,8 +2988,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 196794,
-      "revision": "2db6e3d64750f1b9574b84408e3873bec60caee05c3df8cff2f1442f695f02ed"
+      "bytes": 224991,
+      "revision": "9d9869742bbbec6fa8fd8ed1c9b1a4aa2b2fcd46e97d77985d04ddc938638155"
     },
     {
       "code": "soukan",
@@ -2929,7 +3097,7 @@
       "code": "sharoushi",
       "qualification": "sharoushi",
       "name": "社会保険労務士",
-      "count": 107,
+      "count": 130,
       "years": [
         2026,
         2025
@@ -2938,12 +3106,15 @@
         "健康保険法",
         "労働保険徴収法",
         "労働基準法",
+        "労働基準法及び労働安全衛生法",
         "労働安全衛生法",
         "労働者災害補償保険法",
+        "労働者災害補償保険法（労働保険徴収法を含む）",
         "労務管理その他の労働及び社会保険に関する一般常識",
         "厚生年金保険法",
         "国民年金法",
         "雇用保険法",
+        "雇用保険法（労働保険徴収法を含む）",
         "雇用保険法（徴収法を含む）"
       ],
       "sessions": [
@@ -2955,8 +3126,8 @@
         "koyou",
         "rousai"
       ],
-      "bytes": 671436,
-      "revision": "544ebec4fce1722d22bec7d6a34220f9b49fe9d9879d6058ba2a8ba36bb2518e"
+      "bytes": 842196,
+      "revision": "ebb5d488a35d18aa8dc1881de42510a0e67a9fce0bb27bf60d7be1feffa89da7"
     },
     {
       "code": "chusho-kigyo-shindanshi",
@@ -3130,10 +3301,13 @@
       "code": "kangoshi",
       "qualification": "kangoshi",
       "name": "看護師",
-      "count": 464,
+      "count": 494,
       "years": [
         2025,
-        2024
+        2024,
+        2023,
+        2022,
+        2021
       ],
       "categories": [
         "一般問題",
@@ -3144,8 +3318,8 @@
         "am",
         "pm"
       ],
-      "bytes": 1211424,
-      "revision": "4befb170ca844cdbba1752129f2163023c275ad6a0689f5412182b75aff8ec37"
+      "bytes": 1281890,
+      "revision": "0e1c08579aa021f079cb2739f9c9c8c1ea2109bc5923f0a886a0217a67616111"
     },
     {
       "code": "yakuzaishi",
@@ -3218,10 +3392,13 @@
       "code": "hokenshi",
       "qualification": "hokenshi",
       "name": "保健師",
-      "count": 202,
+      "count": 232,
       "years": [
         2025,
-        2024
+        2024,
+        2023,
+        2022,
+        2021
       ],
       "categories": [
         "午前",
@@ -3231,17 +3408,20 @@
         "am",
         "pm"
       ],
-      "bytes": 520148,
-      "revision": "adb150d7c068ba90d6a29a74f82064c2708643d1058126e45f148165f7ce78bf"
+      "bytes": 598476,
+      "revision": "fba0cf27da2909069d63cb82d5ba7db48cccdae50128f071d004b324ab095e24"
     },
     {
       "code": "josanshi",
       "qualification": "josanshi",
       "name": "助産師",
-      "count": 219,
+      "count": 249,
       "years": [
         2025,
-        2024
+        2024,
+        2023,
+        2022,
+        2021
       ],
       "categories": [
         "午前",
@@ -3251,17 +3431,20 @@
         "am",
         "pm"
       ],
-      "bytes": 505442,
-      "revision": "a2e2deaf03f06445092aa094c848c9d498216b36fa03a3e41642aa635af50916"
+      "bytes": 586913,
+      "revision": "b432d65e0222536acee28a7f66857f19890ddb9603ac9202c494e5fa7112c5de"
     },
     {
       "code": "rigaku-ryohoshi",
       "qualification": "rigaku-ryohoshi",
       "name": "理学療法士",
-      "count": 183,
+      "count": 213,
       "years": [
         2026,
-        2025
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "午前",
@@ -3271,28 +3454,34 @@
         "am",
         "pm"
       ],
-      "bytes": 400897,
-      "revision": "53c51003135cd34f82d1eddcb7a917ad1059376bd65956eb561ba5ae0402ecfb"
+      "bytes": 462063,
+      "revision": "fcfea86d2745c66ae2cb4f0a1a5e8269a3a96a994583700e8a9978b8cf2370cc"
     },
     {
       "code": "sagyo-ryohoshi",
       "qualification": "sagyo-ryohoshi",
       "name": "作業療法士",
-      "count": 310,
+      "count": 324,
       "years": [
         2025,
         2024
       ],
       "categories": [
+        "作業療法評価学",
         "午前",
-        "午後"
+        "午後",
+        "生理学",
+        "発達障害作業療法",
+        "臨床医学",
+        "解剖学",
+        "身体障害作業療法"
       ],
       "sessions": [
-        "am",
-        "pm"
+        "pm",
+        "am"
       ],
-      "bytes": 722088,
-      "revision": "7b5f17e0454bb85a909f255bfbceb2efa59215152112bfea3943219cce52abc5"
+      "bytes": 771817,
+      "revision": "2a3e9d2ab1168642e9ae7f94c7be9f7009086d055857967084f74ae4d5126043"
     },
     {
       "code": "shino-kunrenshi",
@@ -3440,7 +3629,7 @@
       "code": "rinsho-kensagishi",
       "qualification": "rinsho-kensagishi",
       "name": "臨床検査技師",
-      "count": 106,
+      "count": 115,
       "years": [
         2026,
         2025
@@ -3453,41 +3642,48 @@
         "pm",
         "am"
       ],
-      "bytes": 273830,
-      "revision": "0fab6a2c10c15770c7a447c9d0ffb0a577765b4fb00f0133020b6c8435aa7bee"
+      "bytes": 296227,
+      "revision": "795902de870badd02d9e547ffa9a77d1144e29afb7d9a3c618f8849e89c8e752"
     },
     {
       "code": "shinryo-hoshasengishi",
       "qualification": "shinryo-hoshasengishi",
       "name": "診療放射線技師",
-      "count": 398,
+      "count": 428,
       "years": [
         2026,
-        2025
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "午前",
         "午後"
       ],
       "sessions": [
-        "pm",
-        "am"
+        "am",
+        "pm"
       ],
-      "bytes": 894704,
-      "revision": "1184fb85cf29a7d35fef68070ce5ef1fbe28bc78d701b4597505acfdf856657d"
+      "bytes": 959104,
+      "revision": "0c6fd19c28365b4f47d248ba4a65fc1e381112ba2e90921b080fca9be21a36d2"
     },
     {
       "code": "shika-ishi",
       "qualification": "shika-ishi",
       "name": "歯科医師",
-      "count": 696,
+      "count": 726,
       "years": [
         2026,
-        2025
+        2025,
+        2024,
+        2023,
+        2022
       ],
       "categories": [
         "口腔外科学",
         "口腔衛生",
+        "問題A",
         "基礎歯学",
         "小児歯科",
         "歯科保存学",
@@ -3503,8 +3699,8 @@
         "mondai-c",
         "mondai-d"
       ],
-      "bytes": 1559793,
-      "revision": "75887e9ff1982c9974f5bc90224faf0e4e1fee63e72fff2ec491862b44a5638b"
+      "bytes": 1619058,
+      "revision": "c40e60da81b29e886fc575049b54430550c4234357feb8b12c5dd83dfc5e3508"
     },
     {
       "code": "kenchiku-setsubishi",

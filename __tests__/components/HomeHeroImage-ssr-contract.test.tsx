@@ -1,28 +1,16 @@
 import { renderToStaticMarkup } from "react-dom/server";
-import { describe, expect, it } from "vitest";
+import { expect, it } from "vitest";
 import { HomeHeroImage } from "@/components/home/landing/HomeHeroImage";
-import { DEFAULT_HERO } from "@/components/home/landing/heroVariants";
 
-// Independent review uses the real installed Next Image, not the worker mock.
-describe("hero installed Next SSR contract", () => {
-  it("preloads only the default asset with fixed size and matching alt", () => {
-    const html = renderToStaticMarkup(<HomeHeroImage />);
-    const root = document.createElement("div");
-    root.innerHTML = html;
-    const imgs = root.querySelectorAll("img");
-    expect(imgs).toHaveLength(1);
-    const encoded = encodeURIComponent(DEFAULT_HERO.src);
-    // Served through the image optimizer: resized to the viewport, not the 1402px original.
-    expect(imgs[0].getAttribute("src")).toContain(`/_next/image?url=${encoded}`);
-    expect(imgs[0].getAttribute("srcset")).toContain(`url=${encoded}&w=640`);
-    expect(imgs[0].getAttribute("sizes")).toBe("(max-width: 767px) 100vw, 55vw");
-    expect(imgs[0].getAttribute("alt")).toBe(DEFAULT_HERO.alt);
-    expect(imgs[0].getAttribute("width")).toBe("1402");
-    expect(imgs[0].getAttribute("height")).toBe("1122");
-    const preloads = root.querySelectorAll('link[rel="preload"][as="image"]');
-    expect(preloads).toHaveLength(1);
-    expect(preloads[0].getAttribute("imagesrcset")).toBe(imgs[0].getAttribute("srcset"));
-    expect(preloads[0].getAttribute("imagesizes")).toBe(imgs[0].getAttribute("sizes"));
-    expect(html).not.toContain("hero-variants");
-  });
+it("serves two bounded local study companions with accessible qualification names", () => {
+  const root = document.createElement("div"); root.innerHTML = renderToStaticMarkup(<HomeHeroImage />);
+  const images = [...root.querySelectorAll("img")];
+  expect(images).toHaveLength(2);
+  for (const image of images) {
+    expect(image.getAttribute("width")).toBe("256"); expect(image.getAttribute("height")).toBe("256");
+    expect(image.getAttribute("src")).toMatch(/^\/images\/(pet-v1|home\/study-room-mascots)\//);
+    expect(image.getAttribute("fetchPriority")).toBe("high");
+  }
+  expect(images[0].alt).toContain("ITパスポート"); expect(images[1].alt).toContain("FP3級");
+  expect(root.innerHTML).not.toContain("hero-variants"); expect(root.innerHTML).not.toContain("hero-small-success");
 });

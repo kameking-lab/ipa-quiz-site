@@ -18,7 +18,6 @@ import { NativePageQualificationActions } from "./QualificationActions";
 import { isQualificationUrl } from "../shared/qualification-schedules";
 import { openQualificationUrl } from "./qualification-platform";
 import { ManageSubscriptionButton } from "@/app/billing/ManageSubscriptionButton";
-import { PrivacyNote } from "@/components/ui/privacy-note";
 import { blocksNativeWebPurchase } from "../shared/native-billing-policy";
 import { installNativePetSupport, observePetStudyWrites, persistStudyAfterPets } from "./pet-support";
 const defaultMembership = new Membership();
@@ -236,7 +235,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
           {access.source === "web" && <div className="space-y-2"><p className="text-sm">既存のウェブ契約の管理・解約を開きます。</p><ManageSubscriptionButton label="ウェブ契約の管理・解約"/></div>}
           {!access.userId && loginButton}
           {purchasePending&&<p role="status" className="text-sm">購入内容をサーバーで確認中です。再購入せず「購入を復元」または会員状態の再確認をご利用ください。</p>}
-          {offer && !access.entitled && <div className="space-y-3 rounded-xl border border-border p-4"><h3 className="font-bold">過去問AI 月額プラン</h3><p>{offer.product.priceString} / 1か月（税込・自動更新）</p><p className="text-sm">全資格の問題を無制限で演習、資格ごとの事前ダウンロード。購入確認時にApple IDへ請求されます。解約するまで自動更新され、更新前にApp Storeのサブスクリプション管理で解約できます。解約後も有効期間の末日までは利用できます。</p>{!access.userId && <p className="text-sm">登録ボタンを押すとログイン画面が開き、ログイン後そのまま購入に進みます。ウェブと同じ会員になり、どちらでも有料機能を使えます。</p>}<button className={primary} disabled={busy||purchasePending||!!signingIn} onClick={purchase}>{offer.product.priceString} / 月で登録</button><PrivacyNote variant="purchase" /></div>}
+          {offer && !access.entitled && <div className="space-y-3 rounded-xl border border-border p-4"><h3 className="font-bold">過去問AI 月額プラン</h3><p>{offer.product.priceString} / 1か月（税込・自動更新）</p><p className="text-sm">全資格の問題を無制限で演習、資格ごとの事前ダウンロード。購入確認時にApple IDへ請求されます。解約するまで自動更新され、更新前にApp Storeのサブスクリプション管理で解約できます。解約後も有効期間の末日までは利用できます。</p>{!access.userId && <p className="text-sm">登録ボタンを押すとログイン画面が開き、ログイン後そのまま購入に進みます。ウェブと同じ会員になり、どちらでも有料機能を使えます。</p>}<button className={primary} disabled={busy||purchasePending||!!signingIn} onClick={purchase}>{offer.product.priceString} / 月で登録</button></div>}
           {!access.entitled && !offer && (offerLoading ? <p className="text-sm">App Storeの価格を読み込んでいます…</p> : offerError && <div role="alert" className="space-y-2 rounded-xl border border-destructive/40 p-3 text-sm"><p className="break-words">{offerError}</p><button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await loadOffer(await refresh(true)); })}>商品情報を再読み込み</button></div>)}
           <div className="grid gap-2 sm:grid-cols-2"><button className={secondary} disabled={busy || !config?.sdkKey || !!signingIn} onClick={restore}>購入を復元</button>
             <button className={secondary} onClick={()=>void Browser.open({ url:"https://apps.apple.com/account/subscriptions" })}>App Storeで管理・解約</button></div>

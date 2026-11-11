@@ -1,0 +1,94 @@
+{
+  "checkedAt": "2026-10-11T02:30:22.076532+00:00",
+  "sourceVerifiedOriginals": 18,
+  "choiceExplanations": 90,
+  "publicBaselineOriginals": 123,
+  "branchOriginals": 141,
+  "separatePr680Originals": 3,
+  "combinedCandidateOriginals": 144,
+  "requiredOriginals": 156,
+  "remainingOwnedHoldOriginals": 12,
+  "privateHoldOriginals": 10,
+  "individualStopMetadataOnlyOriginals": 2,
+  "productionPublishedIncrement": 0,
+  "productionMergePerformed": false,
+  "productionDeploymentPerformed": false,
+  "independentContentReviewPending": true,
+  "latestOriginMain": "52953d4e66389b492e13f5d9040fffbb581755a1",
+  "sourceBranch": "codex/sharoushi-latest-two-completion-20261011",
+  "runtimeJsonSha256Utf8Lf": "1c1d0c9fcadc97d0526da48c68187829146769310785ed1a3349c9cac842ab1d",
+  "checks": {
+    "vitest": {
+      "status": "PASS",
+      "files": 10,
+      "tests": 47,
+      "durationSeconds": 37.08,
+      "maxWorkers": 2
+    },
+    "typecheck": {
+      "status": "PASS",
+      "command": "pnpm typecheck"
+    },
+    "eslint": {
+      "status": "PASS",
+      "changedTypeScriptFiles": 10
+    },
+    "gitDiffCheck": {
+      "status": "PASS"
+    },
+    "frozenPublishedOriginals": {
+      "status": "PASS"
+    },
+    "originalQuestionLiteralQa": {
+      "status": "PASS",
+      "originals": 28,
+      "choices": 140
+    },
+    "officialAnswerTables": {
+      "status": "PASS",
+      "keys": 140
+    },
+    "canonicalIdDeduplication": {
+      "status": "PASS",
+      "excludesMainAndPr680": true
+    },
+    "heldRuntimeAndSitemapExclusion": {
+      "status": "PASS",
+      "originals": 12
+    }
+  },
+  "completedIds": [
+    "sharoushi-2025-annual-gakka-q7",
+    "sharoushi-2025-annual-ippan-q4",
+    "sharoushi-2025-annual-ippan-q10",
+    "sharoushi-2025-annual-kenpo-q2",
+    "sharoushi-2025-annual-kounen-q6",
+    "sharoushi-2025-annual-kounen-q8",
+    "sharoushi-2025-annual-kounen-q9",
+    "sharoushi-2025-annual-koyou-q1",
+    "sharoushi-2025-annual-koyou-q5",
+    "sharoushi-2025-annual-koyou-q10",
+    "sharoushi-2025-annual-rousai-q1",
+    "sharoushi-2026-annual-gakka-q7",
+    "sharoushi-2026-annual-ippan-q4",
+    "sharoushi-2026-annual-koyou-q3",
+    "sharoushi-2026-annual-koyou-q4",
+    "sharoushi-2026-annual-koyou-q10",
+    "sharoushi-2026-annual-rousai-q6",
+    "sharoushi-2026-annual-rousai-q7"
+  ],
+  "holdIds": [
+    "sharoushi-2025-annual-gakka-q1",
+    "sharoushi-2026-annual-gakka-q2",
+    "sharoushi-2025-annual-rousai-q2",
+    "sharoushi-2025-annual-rousai-q8",
+    "sharoushi-2026-annual-rousai-q1",
+    "sharoushi-2025-annual-koyou-q2",
+    "sharoushi-2025-annual-koyou-q6",
+    "sharoushi-2025-annual-koyou-q7",
+    "sharoushi-2026-annual-koyou-q1",
+    "sharoushi-2026-annual-kounen-q4",
+    "sharoushi-2025-annual-ippan-q5",
+    "sharoushi-2026-annual-ippan-q5"
+  ]
+}

@@ -7,6 +7,7 @@ import { ManageSubscriptionButton } from "./ManageSubscriptionButton";
 import { posthogCapture } from "@/lib/posthog";
 import { readQuizReturn } from "@/lib/billing/quiz-return";
 import { sendFunnelEvent } from "@/lib/billing/funnel-client";
+import { purchaseJourney } from "@/lib/billing/journey-client";
 interface Status { feedbackSubmitted?: boolean; billingModel?: "subscription"; canManage?: boolean; subscription?: { status: string; periodEnd: string; cancelAtPeriodEnd: boolean }; entitled: boolean; expiresAt: string | null; purchase: { id: string; status: string; expiresAt: string | null } | null }
 export function PurchaseStatus({ order, canceled = false, testMode = true }: { order: string; canceled?: boolean; testMode?: boolean }) {
   const [status, setStatus] = useState<Status | null>(null);
@@ -50,6 +51,7 @@ export function PurchaseStatus({ order, canceled = false, testMode = true }: { o
     return () => { disposed = true; clearTimeout(timer); request.current++; active.current = false; };
   }, [check, canceled]);
   const complete = status?.purchase?.id === order && status.purchase.status === "paid" && status.entitled;
+  useEffect(() => { if (complete) purchaseJourney(order); }, [complete, order]);
   useEffect(() => {
     if (!complete || !status?.feedbackSubmitted) return;
     // Confirmation views by customers with feedback history, not purchase conversions.

@@ -9,7 +9,9 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
  */
 
 const { posthogCapture } = vi.hoisted(() => ({ posthogCapture: vi.fn() }));
+const { observeJourney } = vi.hoisted(() => ({ observeJourney: vi.fn() }));
 vi.mock("@/lib/posthog", () => ({ posthogCapture }));
+vi.mock("@/lib/billing/journey-client", () => ({ observeJourney }));
 
 import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
 import { ExamQuestionPlayer } from "@/components/exam-library/exam-question-player";
@@ -36,6 +38,7 @@ function libraryQuestion(number: number): ExamQuestion {
 beforeEach(() => {
   cleanup();
   posthogCapture.mockClear();
+  observeJourney.mockClear();
   window.localStorage.clear();
   localStorage.setItem("kakomon:ai-consent:20261103", "allowed");
   window.sessionStorage.clear();
@@ -59,12 +62,14 @@ describe("QuestionAnswerCard (/q/*) — question_answered", () => {
     const calls = posthogCapture.mock.calls.filter(([name]) => name === "question_answered");
     expect(calls).toHaveLength(1);
     expect(calls[0]?.[1]).toEqual({ questionId: "ip-2024s-am-q1", exam: "ip", correct: true });
+    expect(observeJourney).toHaveBeenCalledExactlyOnceWith({ qualification: "ip", answer: true });
   });
 
   it("does NOT emit question_answered for the reveal-only (no answer) path", () => {
     render(<QuestionAnswerCard {...props} />);
     fireEvent.click(screen.getByRole("button", { name: /答えだけ見る/ }));
     expect(posthogCapture.mock.calls.some(([name]) => name === "question_answered")).toBe(false);
+    expect(observeJourney).not.toHaveBeenCalled();
   });
 });
 
@@ -83,6 +88,7 @@ describe("ExamQuestionPlayer — exam_library_answered", () => {
     const calls = posthogCapture.mock.calls.filter(([name]) => name === "exam_library_answered");
     expect(calls).toHaveLength(1);
     expect(calls[0]?.[1]).toEqual({ examId: EXAM_ID, hubSlug: HUB_SLUG });
+    expect(observeJourney).toHaveBeenCalledExactlyOnceWith({ qualification: HUB_SLUG, answer: true });
   });
 });
 
