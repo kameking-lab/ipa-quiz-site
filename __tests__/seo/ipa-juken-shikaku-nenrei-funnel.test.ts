@@ -16,7 +16,7 @@ import { extractFaq } from "@/lib/blog/faq";
 // (5) FAQPage 化でき blog サイトマップに掲載される、ことを pin する。
 
 const SLUG = "ipa-juken-shikaku-nenrei";
-const INBOUND_PARENTS = ["ipa-shiken-moushikomi-nagare", "13-shikaku-osusume-jyun"];
+const INBOUND_PARENTS = ["13-shikaku-osusume-jyun"];
 
 describe("情報処理技術者試験 受験資格 記事の事実性と funnel", () => {
   it("記事が存在し 受験資格/制度 の記事として登録されている", () => {

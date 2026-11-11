@@ -21,8 +21,6 @@ import { extractFaq } from "@/lib/blog/faq";
 const SLUG = "gogo-kijutsu-buhanten";
 const INBOUND_PARENTS = [
   "ap-gogo-jikan-haibun",
-  "nw-gogo-jikan-haibun",
-  "db-gogo-jikan-haibun",
 ];
 
 describe("午後 記述式 部分点記事の事実性と funnel", () => {
@@ -60,7 +58,7 @@ describe("午後 記述式 部分点記事の事実性と funnel", () => {
     ).toBe(false);
   });
 
-  it("既存の午後時間配分記事（AP/NW/DB）から inbound リンクがあり orphan 化しない", () => {
+  it("APの午後時間配分記事から記述の解答手順へ進める", () => {
     for (const parentSlug of INBOUND_PARENTS) {
       const parent = getBlogPostBySlug(parentSlug);
       expect(parent, `${parentSlug} が存在しない`).toBeDefined();

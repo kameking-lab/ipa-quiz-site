@@ -16,13 +16,21 @@ async function renderedQuestion(exam: ExamCode) {
 }
 
 describe("qualification study-guide promises", () => {
-  it.each(["kanri", "eisei1", "eisei2", "fp2", "denken3"] as const)("omits misleading IPA fallback guides on %s", async (exam) => {
+  it.each(["kanri", "eisei1", "eisei2", "denken3"] as const)("omits misleading IPA fallback guides on %s", async (exam) => {
     expect(blog.getAllBlogPosts().filter((post) => post.exam === exam)).toHaveLength(0);
     expect(getRelatedBlogPosts(exam, 4)).toEqual([]);
     const doc = await renderedQuestion(exam);
     expect(doc.querySelector('section[aria-label="この試験区分の学習ガイド"]')).toBeNull();
     expect(doc.querySelector("h1")?.textContent).toBeTruthy();
     expect(doc.querySelector(`a[href="/${exam}"]`)).not.toBeNull();
+  });
+
+  it("shows the released FP2 guide on FP2 questions without adding IPA guides", async () => {
+    const related = getRelatedBlogPosts("fp2", 4);
+    expect(related.map(post => post.slug)).toContain("fp2-free-gakka-review-date");
+    expect(related.every(post => post.exam === "fp2")).toBe(true);
+    const section = (await renderedQuestion("fp2")).querySelector('section[aria-label="この試験区分の学習ガイド"]');
+    expect(section?.querySelector('a[href="/blog/fp2-free-gakka-review-date"]')).not.toBeNull();
   });
 
   it("only returns exact-exam guides for every published non-IPA qualification", () => {

@@ -9,7 +9,7 @@ afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.unstubAllEnvs(); });
 it("puts the plan first and the feedback bonus second, accepts multiple choices, and resumes only after storage success", async () => {
   const resume = vi.fn();
   let finish: (r: Response) => void = () => {};
-  const fetcher = vi.fn(async (_url: string, init?: RequestInit) => init?.method === "POST" ? new Promise<Response>(resolve => { finish = resolve; }) : Response.json({ eligible: true, submitted: false, remaining: 0 }));
+  const fetcher = vi.fn(async (url: string, init?: RequestInit) => url === "/api/funnel" ? new Response(null, { status: 204 }) : init?.method === "POST" ? new Promise<Response>(resolve => { finish = resolve; }) : Response.json({ eligible: true, submitted: false, remaining: 0 }));
   vi.stubGlobal("fetch", fetcher);
   render(<PracticeDailyLimit reset={null} resumeHref="/quiz?mode=year&question=q1" backHref="/" onUnlocked={resume} />);
   const button = await screen.findByRole("button", { name: "意見を送ってあと10問" });
@@ -26,7 +26,7 @@ it("puts the plan first and the feedback bonus second, accepts multiple choices,
   fireEvent.click(screen.getByLabelText("スマホでの使いやすさ"));
   fireEvent.click(screen.getByRole("button", { name: "意見を送信して10問追加" }));
   expect(resume).not.toHaveBeenCalled();
-  const submitted = JSON.parse(fetcher.mock.calls.find(([, init]) => init?.method === "POST")![1]!.body as string);
+  const submitted = JSON.parse(fetcher.mock.calls.find(([url, init]) => url === "/api/feedback-unlock" && init?.method === "POST")![1]!.body as string);
   expect(submitted.choices).toEqual(["explanations", "mobile"]);
   await act(async () => finish(Response.json({ ok: true, remaining: 10 })));
   await waitFor(() => expect(resume).toHaveBeenCalledTimes(1));
