@@ -7,6 +7,7 @@ import cxK3ChoiceExplanations from "./choice-explanations-cx-k3.json";
 import eAp1ChoiceExplanations from "./choice-explanations-e-ap-1.json";
 import eAp2ChoiceExplanations from "./choice-explanations-e-ap-2.json";
 import eAp3ChoiceExplanations from "./choice-explanations-e-ap-3.json";
+import eAp4ChoiceExplanations from "./choice-explanations-e-ap-4.json";
 
 // Use real parsed data when available, fall back to curated samples.
 const RAW_AP_QUESTIONS: Question[] =
@@ -14,6 +15,7 @@ const RAW_AP_QUESTIONS: Question[] =
 
 const choiceExplanationOverlays: unknown[] = [
   cxK3ChoiceExplanations, eAp1ChoiceExplanations, eAp2ChoiceExplanations, eAp3ChoiceExplanations,
+  eAp4ChoiceExplanations,
 ];
 
 export const AP_QUESTIONS: Question[] = choiceExplanationOverlays.reduce<Question[]>(

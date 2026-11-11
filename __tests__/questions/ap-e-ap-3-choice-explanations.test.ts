@@ -5,13 +5,14 @@ import originalOverlay from "@/data/questions/ap/choice-explanations-cx-k3.json"
 import firstOverlay from "@/data/questions/ap/choice-explanations-e-ap-1.json";
 import secondOverlay from "@/data/questions/ap/choice-explanations-e-ap-2.json";
 import overlay from "@/data/questions/ap/choice-explanations-e-ap-3.json";
+import followingOverlay from "@/data/questions/ap/choice-explanations-e-ap-4.json";
 import { applyIpaCorrections } from "@/data/questions/corrections";
 import { applyChoiceExplanationOverlay } from "@/lib/questions/apply-choice-explanations";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 
 describe("AP e-ap-3 choice explanations", () => {
   it("adds four reasons without changing any existing data or completed explanation", () => {
-    const before = [originalOverlay, firstOverlay, secondOverlay].reduce(
+    const before = [originalOverlay, firstOverlay, secondOverlay, followingOverlay].reduce(
       (questions, previous) => applyChoiceExplanationOverlay(questions, previous),
       applyIpaCorrections("ap", AP_BY_YEAR_QUESTIONS),
     );
