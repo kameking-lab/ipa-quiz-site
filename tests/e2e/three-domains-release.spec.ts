@@ -74,13 +74,13 @@ test("updated CBT exemption article keeps its official source without the retire
   await expect(body).not.toContainText("独自にまとめた学習ガイドです");
 });
 
-test("existing FE article renders its concise official notice upright", async ({ page }) => {
+test("updated FE study guide links its official exam format without the retired notice", async ({ page }) => {
   await page.goto("/blog/fe-goukaku-benkyouhou");
   const body = page.locator("#article-body");
-  const notice = body.locator('blockquote[data-article-notice="true"]');
-  await expect(notice).toHaveCount(1);
-  await expect(notice).toHaveText("試験要項の最新情報は必ず IPA 公式ページ で確認してください。");
-  await expect(notice).toHaveCSS("font-style", "normal");
-  await expect(notice.getByRole("link", { name: "IPA 公式ページ" })).toHaveAttribute("href", "https://www.ipa.go.jp/shiken/");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("基本情報技術者試験の勉強法｜未経験からの学習順と到達確認");
+  const official = body.getByRole("link", { name: "IPAの基本情報技術者試験案内", exact: true });
+  await expect(official).toHaveAttribute("href", "https://www.ipa.go.jp/shiken/kubun/fe.html");
+  await expect(official).toHaveCSS("font-style", "normal");
+  await expect(body.locator('blockquote[data-article-notice="true"]')).toHaveCount(0);
   await expect(body).not.toContainText("独自にまとめた学習ガイドです");
 });

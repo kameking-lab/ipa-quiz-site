@@ -37,10 +37,22 @@ for (const source of ["search", "tsugino"]) {
       expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
     });
   }
-  for (const slug of ["it-shikaku-rirekisho-kakikata", "ipa-shiken-fukusuu-kubun-juken", "koudo-gozen1-taisaku", "nw-gogo-jikan-haibun"]) {
-    test(`${source} article ${slug}: one anchor tap and one answer tap`, async ({ page }) => {
+  test(`${source} reference article: choose a qualification before answering`, async ({ page }) => {
+    await page.goto(`/blog/it-shikaku-rirekisho-kakikata${query}`);
+    await expect(page.locator("#article-practice")).toHaveCount(0);
+    await page.locator('#article-body a[href="/fe"]').tap();
+    await page.getByRole("region", { name: "今すぐ解く" }).getByRole("link", { name: "今すぐ解く", exact: true }).tap();
+    const answer = page.getByRole("radio", { name: /^選択肢 / }).first();
+    await expect(answer).toBeEnabled();
+    await answer.tap();
+    await expect(page.getByRole("region", { name: /^(正解|不正解)の解説$/ })).toBeInViewport();
+    await expect(page.getByRole("dialog")).toHaveCount(0);
+    expect(await page.evaluate(() => JSON.parse(localStorage.getItem("ipa-quiz:history:v1")!).entries.length)).toBe(1);
+  });
+  for (const slug of ["ipa-shiken-fukusuu-kubun-juken", "koudo-gozen1-taisaku", "nw-gogo-jikan-haibun"]) {
+    test(`${source} article ${slug}: read the guide and jump to its practice`, async ({ page }) => {
       await page.goto(`/blog/${slug}${query}`);
-      const start = page.getByRole("link", { name: "まず1問解く", exact: true });
+      const start = page.getByRole("link", { name: "本文のあとに1問解く", exact: true });
       await expect(start).toBeInViewport();
       await start.tap();
       const url = page.url();

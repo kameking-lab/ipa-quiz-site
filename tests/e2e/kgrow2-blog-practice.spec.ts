@@ -1,7 +1,15 @@
 import { test, expect } from "@playwright/test";
 test.use({ viewport: { width: 360, height: 800 }, reducedMotion: "reduce" });
 
-for (const slug of ["it-shikaku-rirekisho-kakikata", "ipa-shiken-fukusuu-kubun-juken", "koudo-gozen1-taisaku", "nw-gogo-jikan-haibun"]) {
+test("the resume reference guide opens qualification choices without an unrelated practice", async ({ page }) => {
+  await page.goto("/blog/it-shikaku-rirekisho-kakikata");
+  await expect(page.locator("#article-practice")).toHaveCount(0);
+  await page.locator('#article-body a[href="/fe"]').click();
+  await expect(page).toHaveURL(/\/fe$/);
+  await expect(page.getByRole("region", { name: "今すぐ解く" })).toBeVisible();
+});
+
+for (const slug of ["ipa-shiken-fukusuu-kubun-juken", "koudo-gozen1-taisaku", "nw-gogo-jikan-haibun"]) {
   test(`${slug}: answer in the article and continue with the mapped exam and session`, async ({ page }, testInfo) => {
     let aiCalls = 0;
     await page.route("**/api/copilot**", route => { aiCalls++; return route.abort(); });
