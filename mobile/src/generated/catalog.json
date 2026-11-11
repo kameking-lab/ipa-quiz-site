@@ -2,6 +2,172 @@
   "schema": 2,
   "exams": [
     {
+      "code": "unko-kanrisha-ryokaku",
+      "qualification": "unko-kanrisha-ryokaku",
+      "name": "UNKO-KANRISHA-RYOKAKU",
+      "count": 92,
+      "years": [
+        2024,
+        2023
+      ],
+      "categories": [
+        "労働基準法",
+        "実務上の知識・能力",
+        "道路交通法",
+        "道路運送法",
+        "道路運送車両法"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 214419,
+      "revision": "fbf6c2be05572a1110b7e80966a409299e88cb566106a91d77c65d2c355ab64e"
+    },
+    {
+      "code": "shobo-setsubishi-kou1",
+      "qualification": "shobo-setsubishi-kou1",
+      "name": "SHOBO-SETSUBISHI-KOU1",
+      "count": 26,
+      "years": [
+        2026
+      ],
+      "categories": [
+        "実技・製図",
+        "実技・鑑別",
+        "構造・機能・工事・整備",
+        "機械の基礎知識",
+        "消防関係法令",
+        "電気の基礎知識"
+      ],
+      "sessions": [
+        "gakka",
+        "practical"
+      ],
+      "bytes": 62816,
+      "revision": "a5c45be06db55cf9108e77c5ba69a2434d8f0a5bd1afc5c65842ca4605ec4def"
+    },
+    {
+      "code": "kikenbutsu-kou",
+      "qualification": "kikenbutsu-kou",
+      "name": "KIKENBUTSU-KOU",
+      "count": 45,
+      "years": [
+        2026
+      ],
+      "categories": [
+        "危険物に関する法令",
+        "危険物の性質・火災予防・消火",
+        "物理学及び化学"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 119471,
+      "revision": "00886efe6af98ec7a725d50e017c27df9cd9a6e02562f66f9d33151da6e4629b"
+    },
+    {
+      "code": "kikenbutsu-hei",
+      "qualification": "kikenbutsu-hei",
+      "name": "KIKENBUTSU-HEI",
+      "count": 25,
+      "years": [
+        2026
+      ],
+      "categories": [
+        "危険物に関する法令",
+        "危険物の性質・火災予防・消火",
+        "燃焼及び消火に関する基礎知識"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 62121,
+      "revision": "0ddf9ab2a5fc59dcdf8cdd482324c77c55f2743c1935f17e5d05e49be4a07fe1"
+    },
+    {
+      "code": "shobo-setsubishi-kou4",
+      "qualification": "shobo-setsubishi-kou4",
+      "name": "SHOBO-SETSUBISHI-KOU4",
+      "count": 15,
+      "years": [
+        2026
+      ],
+      "categories": [
+        "実技",
+        "構造・機能・整備",
+        "消防関係法令",
+        "電気の基礎知識"
+      ],
+      "sessions": [
+        "gakka",
+        "practical"
+      ],
+      "bytes": 35708,
+      "revision": "577ff5e33883af899c020402dc28235d503c1aa4cff5bdd175762ed894ae5e7e"
+    },
+    {
+      "code": "shobo-setsubishi-otsu6",
+      "qualification": "shobo-setsubishi-otsu6",
+      "name": "SHOBO-SETSUBISHI-OTSU6",
+      "count": 16,
+      "years": [
+        2026
+      ],
+      "categories": [
+        "実技",
+        "構造・機能・整備",
+        "機械の基礎知識",
+        "消防関係法令"
+      ],
+      "sessions": [
+        "gakka",
+        "practical"
+      ],
+      "bytes": 37858,
+      "revision": "8dc56a4316e20bfe89bf527c407d09c135db422f187e50516351dad6cf0ca07c"
+    },
+    {
+      "code": "unko-kanrisha-kamotsu",
+      "qualification": "unko-kanrisha-kamotsu",
+      "name": "UNKO-KANRISHA-KAMOTSU",
+      "count": 86,
+      "years": [
+        2024,
+        2023
+      ],
+      "categories": [
+        "労働基準法",
+        "実務上の知識・能力",
+        "貨物自動車運送事業法",
+        "道路交通法",
+        "道路運送車両法"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 188815,
+      "revision": "4c85f11dd2ba308e219838b5d5e5d7864e2c1a8367c6bc2b2bca7792e2f8ec69"
+    },
+    {
+      "code": "kikenbutsu-otsu4",
+      "qualification": "kikenbutsu-otsu4",
+      "name": "KIKENBUTSU-OTSU4",
+      "count": 35,
+      "years": [
+        2026
+      ],
+      "categories": [
+        "危険物に関する法令",
+        "危険物の性質・火災予防・消火",
+        "基礎的な物理学・化学"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 84094,
+      "revision": "6c676d75b714d4bd16dc353202f44c6c10f881accdc8cc2df0e212b5f3f044ab"
+    },
+    {
       "code": "sekou-1kenchiku",
       "qualification": "sekou-1kenchiku",
       "name": "1級建築施工管理（第一次）",
@@ -1641,8 +1807,8 @@
       "sessions": [
         "am"
       ],
-      "bytes": 4527723,
-      "revision": "1b626ac8a181df75cb6859a133ba12e7c393a360f20ba6aac12c6907e2b1a597"
+      "bytes": 5789501,
+      "revision": "192942bd10ff3bf508809ca9bcd2b59ebe86568e877c6fdcc1ba0154de654c1c"
     },
     {
       "code": "ip",
