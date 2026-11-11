@@ -17,7 +17,7 @@ const specs = [
 const normalize = (text: string) => text.normalize("NFKC").replace(/\s|[○〇◯□]/gu, "");
 const reviewedLayouts = new Set([
   "LC20262102-6", "LC20262102-10", "LC20262102-20",
-  "LC20262106-20", "LC20262106-22", "LC20262106-25",
+  "LC20262106-22", "LC20262106-25",
 ]);
 
 describe("reviewed October 2026 boiler manuscripts", () => {
@@ -38,6 +38,7 @@ describe("reviewed October 2026 boiler manuscripts", () => {
       expect(pin.officialKeys).toEqual(source.map((item) => item.answer));
       expect(questions.map((q) => q.correctChoice)).toEqual(pin.officialKeys);
       expect(questions.map((q) => q.sourcePages)).toEqual(pin.sourcePages);
+      expect(questions.map((q) => q.sourcePages)).toEqual(source.map((item) => item.pages));
       expect(questions.map((q) => q.number)).toEqual(Array.from({ length: count }, (_, i) => i + 1));
       for (const [index, q] of questions.entries()) {
         const draft = drafts[index];
@@ -56,6 +57,10 @@ describe("reviewed October 2026 boiler manuscripts", () => {
           const bytes = readFileSync(join(process.cwd(), "public", image));
           expect(bytes.toString("ascii", 0, 4)).toBe("RIFF");
           expect(bytes.toString("ascii", 8, 12)).toBe("WEBP");
+        }
+        expect(q.images).toHaveLength(q.sourcePages!.length);
+        for (const [pageIndex, image] of q.images.entries()) {
+          expect(image).toContain(`-p${q.sourcePages![pageIndex]}-`);
         }
         if (!reviewedLayouts.has(`${code}-${q.number}`)) {
           const draftText = draft.question + Array.from("アイウエオ", (key, i) => `（${i + 1}）${draft.choices[key]}`).join("");
