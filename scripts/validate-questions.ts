@@ -24,6 +24,7 @@ import { NativeBDataSchema, nativeBQuestionIssue } from "../lib/questions/native
  *   pnpm validate:questions --staging=sokuryoshi # 非公開の測量士原本・解説
  *   pnpm validate:questions --staging=khk-kagaku-2026-hei-lpg # 非公開の丙種化学（液石）2026
  *   pnpm validate:questions --staging=khk-kagaku-2026-kou # 非公開の甲種化学2026
+ *   pnpm validate:questions --staging=khk-kagaku-2026-hei-special # 非公開の丙種化学（特別）2026
  *   pnpm validate:questions --report         # docs/QUESTION_QUALITY.md を生成
  *   pnpm validate:questions --fix            # 自動修正可能な問題のみ報告
  */
@@ -59,6 +60,7 @@ import { validateChiikiRyoko } from "./validate-chiiki-ryoko";
 import { validateKukakuSeiri } from "./validate-kukaku-seiri";
 import { KHK_2026_HEI_LPG_STAGING, validateKhk2026HeiLpgStaging } from "./lib/validate-khk-kagaku-2026-hei-lpg";
 import { KHK_2026_KOU_STAGING, validateKhk2026KouStaging } from "./lib/validate-khk-kagaku-2026-kou";
+import { KHK_2026_HEI_SPECIAL_STAGING, validateKhk2026HeiSpecialStaging } from "./lib/validate-khk-kagaku-2026-hei-special";
 
 // Publication-gated pilots still require the same schema and source validation
 // before their release gate can be lifted.
@@ -511,6 +513,13 @@ function reportFixes(questions: Question[]): void {
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 const opts = parseCliOptions();
+if (opts.staging === "khk-kagaku-2026-hei-special" && !opts.exams.length && !opts.fix && !opts.report) {
+  const errors = validateKhk2026HeiSpecialStaging();
+  for (const error of errors) console.error(`[FAIL] ${error}`);
+  const result = validate(KHK_2026_HEI_SPECIAL_STAGING);
+  console.log(`Validated ${KHK_2026_HEI_SPECIAL_STAGING.length} private KHK 2026 hei-special occurrences (56 stored + 4 references). fail=${errors.length + result.fail} publicAllowed=false`);
+  process.exit(errors.length || result.fail ? 1 : 0);
+}
 if (opts.staging === "khk-kagaku-2026-kou" && !opts.exams.length && !opts.fix && !opts.report) {
   const errors = validateKhk2026KouStaging();
   for (const error of errors) console.error(`[FAIL] ${error}`);
@@ -541,7 +550,7 @@ if (!opts.exams.length || opts.exams.includes("benrishi")) {
 
 if (opts.staging !== undefined) {
   if (opts.staging !== "sokuryoshi" || opts.exams.length || opts.fix || opts.report) {
-    console.error("Use --staging=sokuryoshi, --staging=khk-kagaku-2026-hei-lpg or --staging=khk-kagaku-2026-kou alone for private qualification validation.");
+    console.error("Use --staging=sokuryoshi, --staging=khk-kagaku-2026-hei-lpg, --staging=khk-kagaku-2026-hei-special or --staging=khk-kagaku-2026-kou alone for private qualification validation.");
     process.exit(1);
   }
   const result = validateSokuryoshiStaging();
