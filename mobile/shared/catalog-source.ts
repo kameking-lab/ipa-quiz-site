@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { getRegisteredExamCodes, getQuestionsForExam } from "@/lib/questions/get-questions";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { examLabel } from "@/lib/utils";
+import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import type { ExamCode } from "@/lib/questions/types";
 import type { CatalogEntry } from "./contracts";
 import { EXAM_CATALOG, findExamEntry } from "@/lib/exam-library-catalog";
@@ -29,7 +30,9 @@ export async function examCatalog(code: string): Promise<CatalogEntry | null> {
       bytes:Buffer.byteLength(json),revision:createHash("sha256").update(json).digest("hex"),paper,qualification:`library.${paper.group}.${paper.subject}` };
   }
   const questions=qs as import("@/lib/questions/types").Question[];
-  return { code,qualification:code, name: examLabel(code), count: questions.length, years: [...new Set(questions.map(q => q.year))].sort((a,b)=>b-a),
+  const label=examLabel(code);
+  const name=label===code.toUpperCase()?getQualificationByExamCode(code as ExamCode)?.shortName??label:label;
+  return { code,qualification:code, name, count: questions.length, years: [...new Set(questions.map(q => q.year))].sort((a,b)=>b-a),
     categories: [...new Set(questions.map(q=>q.category))].sort(), sessions: [...new Set(questions.map(q=>q.session))],
     bytes: Buffer.byteLength(json), revision: createHash("sha256").update(json).digest("hex") };
 }
