@@ -10,7 +10,7 @@ import explanations from "@/data/exam-library/explanations.json";
 import peContinuation from "@/reports/LQ3B-20261104/adoption-manifest.json";
 import peLq3d from "@/reports/LQ3D-20261104/adoption-manifest.json";
 
-const isReviewedOctoberImport = (id: string) => /^lckohyo-LC202621(?:0[236]|1[1279])-q\d+$/.test(id);
+const isReviewedOctoberImport = (id: string) => /^lckohyo-LC202621(?:0[23679]|1[01279])-q\d+$/.test(id);
 
 describe("official exam library integration", () => {
   it("requires every authored plain explanation to be substantive and preserves its answer-key snapshot", () => {
@@ -51,7 +51,7 @@ describe("official exam library integration", () => {
     const peIds = new Set(EXAM_CATALOG.filter(entry => entry.group === "pe-first").flatMap(entry => (loadExamPaper(entry.id) ?? []).map(question => question.id)));
     const peSnapshot = answerSnapshot.filter(([id]) => peIds.has(String(id)));
     const existingSnapshot = answerSnapshot.filter(([id]) => !String(id).startsWith("private-gsi-survey-assistant-20261021-") && !peIds.has(String(id)) && !isReviewedOctoberImport(String(id)));
-    expect(answerSnapshot).toHaveLength(3033 + (peContinuation.length + peLq3d.length) * 35);
+    expect(answerSnapshot).toHaveLength(3153 + (peContinuation.length + peLq3d.length) * 35);
     expect(peSnapshot).toHaveLength(594 + (peContinuation.length + peLq3d.length) * 35);
     // Preserve the previous 2,154 official keys independently of the new reviewed packet.
     expect(existingSnapshot).toHaveLength(2154);
