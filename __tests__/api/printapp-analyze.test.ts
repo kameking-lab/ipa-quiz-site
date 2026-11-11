@@ -5,6 +5,7 @@ import type { StreamChatParams } from "@/lib/ai/provider";
 import { createMockProvider } from "@/lib/ai/providers/mock";
 import { POST } from "@/app/api/printapp/analyze/route";
 import { MAX_BODY_BYTES, MAX_IMAGE_BYTES } from "@/lib/printapp/schema";
+import { COPILOT_MODEL } from "@/lib/copilot/model";
 
 const f = vi.hoisted(() => ({
   provider: vi.fn(), ip: vi.fn(), local: vi.fn(), cap: vi.fn(), cost: vi.fn(), stream: vi.fn(),
@@ -46,15 +47,44 @@ describe("printapp analysis API", () => {
     const pending = POST(request()).then((response) => { returned = true; return response; });
     await vi.waitFor(() => expect(f.cost).toHaveBeenCalledOnce());
     expect(returned).toBe(false);
-    expect(f.cost).toHaveBeenCalledWith(expect.objectContaining({ inputTokens: 1000, outputTokens: 250, label: "printapp-analyze", reservation: expect.any(Object) }));
+    expect(f.cost).toHaveBeenCalledWith(expect.objectContaining({ tier: "flash-3.8", inputTokens: 1000, outputTokens: 250, label: "printapp-analyze", reservation: expect.any(Object) }));
     release();
     const response = await pending;
     expect(response.status).toBe(200);
     expect(response.headers.get("cache-control")).toBe("no-store");
     expect(await response.json()).toEqual({ ...notice, analysisMode: "ai", finishReason: "STOP" });
-    expect(f.stream.mock.calls[0][0]).toMatchObject({ model: "gemini-2.5-flash-lite", messages: [{ images: [{ data: image.imageBase64, mimeType: image.mimeType }] }] });
+    expect(f.stream.mock.calls[0][0]).toMatchObject({ model: COPILOT_MODEL, messages: [{ images: [{ data: image.imageBase64, mimeType: image.mimeType }] }] });
     expect(f.ip).toHaveBeenCalledWith(expect.any(Request), "printapp-analyze", { requireKv: true });
-    expect(f.cap).toHaveBeenCalledWith("gemini", expect.objectContaining({ inputTokens: 1_048_576, outputTokens: 32_768 }));
+    expect(f.cap).toHaveBeenCalledWith("gemini", expect.objectContaining({ tier: "flash-3.8", inputTokens: 1_048_576, outputTokens: 32_768 }));
+  });
+
+  it("sends copilot's model with image, JSON and low thinking through the actual SDK", async () => {
+    vi.stubEnv("GEMINI_API_KEY", "synthetic-test-key");
+    // The copilot model is explicit; generic tier env settings must not override it.
+    vi.stubEnv("GEMINI_MODEL_FREE", "gemini-2.5-flash-lite");
+    const logger = vi.spyOn(console, "info").mockImplementation(() => {});
+    const event = { candidates: [{ content: { role: "model", parts: [{ text: JSON.stringify(notice) }] }, finishReason: "STOP" }],
+      usageMetadata: { promptTokenCount: 1000, candidatesTokenCount: 200, thoughtsTokenCount: 50, totalTokenCount: 1250 } };
+    const fetcher = vi.fn().mockResolvedValue(new Response(`data: ${JSON.stringify(event)}\n\n`, {
+      headers: { "Content-Type": "text/event-stream" },
+    }));
+    vi.stubGlobal("fetch", fetcher);
+    f.provider.mockResolvedValue(createGeminiProvider());
+    const response = await POST(request());
+    expect(response.status).toBe(200);
+    expect(await response.json()).toEqual({ ...notice, analysisMode: "ai", finishReason: "STOP" });
+    expect(fetcher).toHaveBeenCalledOnce();
+    const [url, options] = fetcher.mock.calls[0];
+    expect(url).toBe(`https://generativelanguage.googleapis.com/v1beta/models/${COPILOT_MODEL}:streamGenerateContent?alt=sse`);
+    expect(JSON.parse(options.body)).toMatchObject({
+      contents: [{ role: "user", parts: [{ text: expect.any(String) }, { inlineData: { mimeType: image.mimeType, data: image.imageBase64 } }] }],
+      generationConfig: { maxOutputTokens: 32_768, responseMimeType: "application/json", thinkingConfig: { thinkingLevel: "low" } },
+    });
+    expect(JSON.parse(options.body).generationConfig.thinkingConfig).not.toHaveProperty("thinkingBudget");
+    expect(f.cost).toHaveBeenCalledWith(expect.objectContaining({ tier: "flash-3.8", inputTokens: 1000, outputTokens: 250 }));
+    expect(logger).toHaveBeenCalledWith("[printapp-analyze] completion", expect.objectContaining({
+      model: COPILOT_MODEL, finishReason: "STOP", truncated: false, costKey: "ai_cost:2099-01",
+    }));
   });
 
   it("preserves problems, choices, image regions and redaction boxes", async () => {

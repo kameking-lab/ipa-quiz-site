@@ -2,6 +2,7 @@ import { getProvider, type ChatMessage, type StreamCompletion } from "@/lib/ai/p
 import { checkMonthlyCostCap, recordAiCost, textBudget } from "@/lib/ai/cost-guard";
 import { tierForModel } from "@/lib/ai/cost-tracker";
 import { providerErrorDiagnostic } from "@/lib/ai/provider-error";
+import { COPILOT_MODEL } from "@/lib/copilot/model";
 import { checkIpRateLimit } from "@/lib/rate-limit";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit/server";
 import { SYSTEM_PROMPT, TEXT_INPUT_SYSTEM } from "@/lib/printapp/prompts";
@@ -9,8 +10,8 @@ import { analysisInput, analysisResult, isImageData, MAX_BODY_BYTES, MAX_IMAGE_B
 
 export const runtime = "nodejs";
 export const maxDuration = 120;
-// A dedicated image-capable, priced model; existing default models stay unchanged.
-const MODEL = "gemini-2.5-flash-lite";
+// Use the same image-capable, priced model as the production question copilot.
+const MODEL = COPILOT_MODEL;
 const MAX_OUTPUT_TOKENS = 32_768;
 // Reserve the model's entire input context for images, whose tokens cannot be
 // bounded by base64 character counts. Settle using measured image+text usage.
@@ -117,7 +118,7 @@ export async function POST(req: Request): Promise<Response> {
     try {
       for await (const chunk of provider.streamChat({
         system, messages, model: MODEL, maxTokens: MAX_OUTPUT_TOKENS,
-        thinkingBudget: 0, responseMimeType: "application/json",
+        responseMimeType: "application/json",
         signal: AbortSignal.any([req.signal, AbortSignal.timeout(110_000)]),
         onComplete: (value) => { completion = value; },
       })) {
@@ -135,6 +136,7 @@ export async function POST(req: Request): Promise<Response> {
           outputTokens: billedOutput, reservation: cap.reservation });
       }
       console.info("[printapp-analyze] completion", { provider: provider.name, model: MODEL,
+        costKey: cap.reservation?.key,
         finishReason: completion?.finishReason, truncated: completion?.truncated,
         promptTokens: completion?.promptTokens, outputTokens: completion?.outputTokens,
         elapsedMs: Date.now() - started,
