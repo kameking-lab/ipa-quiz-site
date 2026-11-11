@@ -180,18 +180,17 @@ describe("worked guides never funnel to flagship /essay", () => {
 
 describe("blog per-exam generators — exam-scoped relatedSlugs round-trip (no 404)", () => {
   for (const exam of EXAMS) {
-    it(`${exam}: every exam-prefixed relatedSlug resolves to a sibling generator's slug`, () => {
-      const family = new Set(GENERATORS.map((g) => `${exam}-${g.suffix}`));
+    it(`${exam}: every exam-prefixed relatedSlug resolves to a published article`, () => {
       for (const g of GENERATORS) {
         const post = g.build(exam, 0);
         const examScoped = (post.relatedSlugs ?? []).filter((s) =>
           s.startsWith(`${exam}-`),
         );
-        // Each generator wires at least one intra-family relation, and all of
-        // them must resolve — otherwise the related-posts rail links to a 404.
+        // Detailed guides may sit outside the four generated series.
+        // Every exam-specific relation must still resolve to a live article.
         expect(examScoped.length).toBeGreaterThan(0);
         for (const s of examScoped) {
-          expect(family.has(canonicalBlogSlug(s))).toBe(true);
+          expect(getBlogPostBySlug(canonicalBlogSlug(s))).toBeDefined();
         }
       }
     });
@@ -637,13 +636,13 @@ describe("blog NW post — 午後 is 記述式, not 論述", () => {
 // 2026年度 AP は科目A/Bとも150分の期間制CBTで、別々の期間に予約する。
 // 旧来の全国一斉午前・午後時刻が紛れ込まないようにする。
 describe("blog 申込の流れ — 2026 AP 科目別実施期間", () => {
-  it("ipa-shiken-moushikomi-nagare shows 150-minute A/B exams without fixed nationwide windows", () => {
+  it("ipa-shiken-moushikomi-nagare shows separate upcoming A/B periods without fixed nationwide windows", () => {
     const post = getBlogPostBySlug("ipa-shiken-moushikomi-nagare");
     expect(post).toBeDefined();
     const body = post!.body;
-    expect(body).toContain("科目Aは150分、科目Bも150分");
-    expect(body).toContain("両科目を別々の実施期間に受けます");
-    expect(body).toContain("全国一斉の開始時刻はありません");
+    expect(body).toContain("2月6日〜19日");
+    expect(body).toContain("3月3日〜15日");
+    expect(body).toContain("科目A群とB群を同時に予約");
     expect(body).not.toContain("10:00〜12:30 午前試験");
     expect(body).not.toContain("13:30〜16:00 午後試験");
     expect(body).not.toContain("10:00〜11:30 午前試験");

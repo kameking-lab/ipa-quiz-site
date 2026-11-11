@@ -171,9 +171,11 @@ export function LiveMonitoringData() {
     apiUsage.costJpy24h >= 500 ? "red" : apiUsage.costJpy24h >= 200 ? "yellow" : undefined;
 
   // Effective page view: prefer Vercel if available, fall back to PostHog
-  const pvSource = vercel.configured && vercel.pageviews24h > 0 ? "Vercel" : "PostHog";
+  const pvSource = traffic.source === "kv" ? "KV" : vercel.configured && vercel.pageviews24h > 0 ? "Vercel" : "PostHog";
+  const trafficPeriod = traffic.source === "kv" ? "今日 JST" : "24h";
+  const trafficAvailable = traffic.available ?? traffic.posthogConfigured;
   const pvCount =
-    vercel.configured && vercel.pageviews24h > 0 ? vercel.pageviews24h : traffic.pageviews;
+    pvSource === "Vercel" ? vercel.pageviews24h : traffic.pageviews;
 
   const refreshLabel = lastRefreshed
     ? lastRefreshed.toLocaleTimeString("ja-JP", { hour: "2-digit", minute: "2-digit" })
@@ -188,9 +190,9 @@ export function LiveMonitoringData() {
           リアルタイム監視データ
         </h2>
         <div className="flex items-center gap-2">
-          {!traffic.posthogConfigured && (
+          {!trafficAvailable && (
             <Badge variant="default" className="text-xs">
-              PostHog 未設定 (モック)
+              アクセス集計は未取得
             </Badge>
           )}
           {refreshLabel && (
@@ -218,14 +220,14 @@ export function LiveMonitoringData() {
       {/* KPI grid */}
       <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-4">
         <KpiCard
-          label={`PV 24h (${pvSource})`}
-          value={fmtNum(pvCount)}
+          label={`PV ${trafficPeriod} (${pvSource})`}
+          value={trafficAvailable || pvSource === "Vercel" ? fmtNum(pvCount) : "—"}
           icon={<TrendingUp className="h-3.5 w-3.5" />}
         />
         <KpiCard
-          label="クイズ開始 24h"
-          value={fmtNum(traffic.quizStarts)}
-          sub={traffic.posthogConfigured ? undefined : "PostHog 未設定"}
+          label={`クイズ開始 ${trafficPeriod}`}
+          value={trafficAvailable ? fmtNum(traffic.quizStarts) : "—"}
+          sub={trafficAvailable ? undefined : "記録なし・取得不可"}
           icon={<BarChart2 className="h-3.5 w-3.5" />}
         />
         <KpiCard
@@ -240,8 +242,8 @@ export function LiveMonitoringData() {
           highlight={quizConvHighlight}
         />
         <KpiCard
-          label="AI クエリ 24h"
-          value={fmtNum(traffic.aiQueries)}
+          label={`AI クエリ ${trafficPeriod}`}
+          value={trafficAvailable ? fmtNum(traffic.aiQueries) : "—"}
           icon={<Zap className="h-3.5 w-3.5" />}
         />
         <KpiCard
@@ -264,8 +266,8 @@ export function LiveMonitoringData() {
           icon={<Search className="h-3.5 w-3.5" />}
         />
         <KpiCard
-          label="ブログ閲覧 24h"
-          value={fmtNum(traffic.blogViews)}
+          label={`ブログ閲覧 ${trafficPeriod}`}
+          value={trafficAvailable ? fmtNum(traffic.blogViews) : "—"}
           icon={<BarChart2 className="h-3.5 w-3.5" />}
         />
       </div>

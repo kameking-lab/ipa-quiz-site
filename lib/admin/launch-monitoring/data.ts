@@ -5,6 +5,8 @@
 import { fetchFunnelData } from "@/lib/admin/funnel/posthog";
 import { getApiUsageStats, getApiCallsHourlySeries, type ApiUsageStats } from "@/lib/rate-limit";
 import { fetchGsc30dTotals, isGscConfigured } from "@/lib/stats/gsc";
+import { readActivity } from "@/lib/analytics/activity";
+import { jstDay } from "@/lib/billing/domain";
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -15,6 +17,8 @@ export interface Alert {
 }
 
 export interface Traffic24h {
+  source?: "kv" | "posthog";
+  available?: boolean;
   posthogConfigured: boolean;
   pageviews: number;
   quizStarts: number;
@@ -61,8 +65,15 @@ export interface LaunchMonitoringData {
 
 async function fetchTraffic24h(): Promise<Traffic24h> {
   try {
+    const day = jstDay(new Date());
+    const activity = await readActivity(day, day);
+    if (activity.available) {
+      const count = (...events: string[]) => activity.rows.filter(r => events.includes(r.event)).reduce((n, r) => n + r.count, 0);
+      const quizStarts = count("quiz_started"), quizCompleted = count("quiz_completed");
+      return { source: "kv", available: activity.rows.length > 0, posthogConfigured: false, pageviews: count("page_view"), quizStarts, quizCompleted, aiQueries: count("ai_query_sent", "exam_library_ai_query"), blogViews: activity.rows.filter(r => r.event === "page_view" && r.page === "blog").reduce((n, r) => n + r.count, 0), quizConversionPct: quizStarts > 0 ? Math.round(quizCompleted / quizStarts * 100) : null };
+    }
     const data = await fetchFunnelData(1);
-    if (!data.configured) {
+    if (!data.configured || data.queryFailed) {
       return {
         posthogConfigured: false,
         pageviews: 0,
@@ -205,7 +216,7 @@ export function buildAlerts(
     });
   }
 
-  if (traffic.posthogConfigured && traffic.quizConversionPct !== null && traffic.quizConversionPct < 20) {
+  if ((traffic.posthogConfigured || traffic.source === "kv") && traffic.quizConversionPct !== null && traffic.quizConversionPct < 20) {
     alerts.push({
       level: "info",
       title: "クイズ完了率低下",
@@ -213,7 +224,7 @@ export function buildAlerts(
     });
   }
 
-  if (!traffic.posthogConfigured && !apiUsage.enabled && !gsc.configured) {
+  if (!traffic.posthogConfigured && traffic.source !== "kv" && !apiUsage.enabled && !gsc.configured) {
     alerts.push({
       level: "info",
       title: "観測基盤未設定",

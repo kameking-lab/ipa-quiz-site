@@ -36,6 +36,5 @@ export async function POST(request: Request) {
       if (!status.entitled || status.purchase?.id !== body.purchaseOrder || status.purchase.status !== "paid") return new Response(null, { status: 403 });
     } catch { return new Response(null, { status: 403 }); }
   }
-  await recordJourney(body, now);
-  return done();
+  return await recordJourney(body, now) ? done() : new Response(null, { status: 503, headers: { "Cache-Control": "no-store" } });
 }

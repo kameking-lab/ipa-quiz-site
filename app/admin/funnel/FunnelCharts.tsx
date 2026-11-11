@@ -102,7 +102,7 @@ export function FunnelDashboard({ initial }: Props) {
       </div>
 
       {/* Funnel charts */}
-      {data.configured ? (
+      {data.configured && !data.queryFailed ? (
         <>
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {data.funnels.map((f) => (
@@ -134,7 +134,7 @@ export function FunnelDashboard({ initial }: Props) {
         </>
       ) : (
         <div className="rounded-2xl border border-amber-200 bg-amber-50 p-5 text-sm text-amber-800 dark:border-amber-800 dark:bg-amber-950/20 dark:text-amber-300">
-          PostHog が未設定です。POSTHOG_API_KEY と POSTHOG_PROJECT_ID を設定してください。
+          {data.queryFailed ? "PostHogの集計取得に失敗しました。時間をおいて再読み込みしてください。" : "PostHogの追加分析は未設定です。アクセス・利用回数は上部のKV集計で確認できます。"}
         </div>
       )}
     </div>

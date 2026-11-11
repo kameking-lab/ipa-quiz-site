@@ -2,9 +2,16 @@ import { isPricedModel, tierForModel } from "@/lib/ai/cost-tracker";
 
 export type ChatRole = "system" | "user" | "assistant";
 
+export interface InlineImage {
+  mimeType: string;
+  data: string;
+}
+
 export interface ChatMessage {
   role: ChatRole;
   content: string;
+  /** Inline base64 images; never URLs or persisted uploads. */
+  images?: InlineImage[];
 }
 
 /**

@@ -8,7 +8,9 @@ import {
 } from "./generators";
 import type { BlogPost, BlogPostSummary } from "./types";
 import { toSummary } from "./types";
-import { FOCUSED_STUDY_GUIDES } from "./focused-study-guides";
+import { FOCUSED_STUDY_GUIDES, FOCUSED_GUIDE_INCOMING_LINKS } from "./focused-study-guides";
+import { TOPIC_STUDY_GUIDES, TOPIC_GUIDE_INCOMING_LINKS } from "./topic-study-guides";
+import { QUALIFICATION_STUDY_GUIDES } from "./qualification-study-guides";
 import { BLOG_ARTICLE_ALIASES, canonicalBlogSlug } from "@/lib/blog/article-aliases";
 
 function buildAllPosts(): BlogPost[] {
@@ -21,9 +23,15 @@ function buildAllPosts(): BlogPost[] {
   });
   posts.push(...buildGeneralPosts());
   posts.push(...FOCUSED_STUDY_GUIDES);
+  posts.push(...TOPIC_STUDY_GUIDES);
+  posts.push(...QUALIFICATION_STUDY_GUIDES);
   return posts.map(post => ({
     ...post,
-    relatedSlugs: [...new Set(post.relatedSlugs?.map(canonicalBlogSlug))].filter(slug => slug !== post.slug),
+    relatedSlugs: [...new Set([
+      ...(TOPIC_GUIDE_INCOMING_LINKS[post.slug] ?? []),
+      ...(FOCUSED_GUIDE_INCOMING_LINKS[post.slug] ?? []),
+      ...(post.relatedSlugs ?? []),
+    ].map(canonicalBlogSlug))].filter(slug => slug !== post.slug),
     body: Object.entries(BLOG_ARTICLE_ALIASES).reduce(
       (body, [alias, canonical]) => body.replaceAll(`/blog/${alias}`, `/blog/${canonical}`), post.body,
     ),
@@ -63,7 +71,12 @@ export function getRelatedPosts(slug: string, limit = 3): BlogPostSummary[] {
     (p) =>
       p.slug !== slug &&
       !explicit.some((e) => e.slug === p.slug) &&
-      (p.exam === target.exam || p.tags.some((t) => target.tags.includes(t))),
+      // Cross-qualification recommendations require an explicit editorial link.
+      // A broad tag such as 独学 is insufficient to switch the reader's subject.
+      (p.exam === target.exam || (
+        (!target.exam || EXAM_CODES.some(exam => exam === target.exam)) &&
+        !p.exam && p.tags.some((t) => target.tags.includes(t))
+      )),
   )
     .slice(0, limit - explicit.length)
     .map(toSummary);

@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
 import { getAllBlogPosts, getBlogPostBySlug } from "@/data/blog";
-import { ALL_EXAM_CODES } from "@/lib/exam-config";
+import { ALL_EXAM_CODES, ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import { getRecommendedBooks } from "@/data/recommended-books";
 
 // Regression guard for the blog → 演習 practice CTA in
@@ -62,7 +62,8 @@ describe("ブログ記事 → 演習 CTA — 両分岐が実在ルートを指�
 });
 
 describe("ブログ CTA — リンク先試験区分は実在ルートのみ (no 404)", () => {
-  const examRoutes = new Set<string>(ALL_EXAM_CODES);
+  // New study guides also cover published qualifications outside the IPA exams.
+  const examRoutes = new Set<string>(ALL_QUIZ_EXAM_CODES);
 
   it("exam を持つ全記事の exam は実在の試験区分コード（/quiz?exam=… と /{exam} が解決する）", () => {
     const posts = getAllBlogPosts();

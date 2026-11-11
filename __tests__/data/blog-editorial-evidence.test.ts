@@ -37,7 +37,7 @@ describe("editorial evidence", () => {
   });
   it("a verified exact-body review is required, not mere source links", () => {
     const post=buildOverviewPost("fe",0);
-    const evidence:ArticleReviewEvidence={slug:post.slug,bodySha256:createHash("sha256").update(post.body).digest("hex"),sourceUrls:["https://www.ipa.go.jp/shiken/"],contentComplete:true,claimsVerified:true,reviewedAt:"2026-10-08",reviewReceipt:"reports/article-specific-review.json"};
+    const evidence:ArticleReviewEvidence={slug:post.slug,bodySha256:createHash("sha256").update(post.body).digest("hex"),sourceUrls:["https://www.ipa.go.jp/shiken/kubun/fe.html"],contentComplete:true,claimsVerified:true,reviewedAt:"2026-11-11",reviewReceipt:"reports/article-specific-review.json"};
     expect(isBlogAdEligible(post)).toBe(false); expect(isBlogAdEligible(post,evidence)).toBe(true);
     expect(isBlogAdEligible({...post,body:post.body+"changed"},evidence)).toBe(false);
     expect(isBlogAdEligible(post,{...evidence,sourceUrls:[]})).toBe(false);

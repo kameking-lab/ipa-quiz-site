@@ -1,5 +1,5 @@
 import { GoogleGenerativeAI } from "@google/generative-ai";
-import type { GenerationConfig, UsageMetadata } from "@google/generative-ai";
+import type { GenerationConfig, UsageMetadata, Part } from "@google/generative-ai";
 import type { LLMProvider, StreamChatParams } from "../provider";
 
 /**
@@ -12,6 +12,10 @@ type GenerationConfigWithThinking = GenerationConfig & {
   thinkingConfig?: { thinkingBudget?: number; includeThoughts?: boolean; thinkingLevel?: "low" | "medium" | "high" };
 };
 type UsageMetadataWithThoughts = UsageMetadata & { thoughtsTokenCount?: number };
+
+function messageParts(message: StreamChatParams["messages"][number]): Part[] {
+  return [{ text: message.content }, ...(message.images ?? []).map((image) => ({ inlineData: image }))];
+}
 
 export function createGeminiProvider(): LLMProvider {
   const apiKey = process.env.GEMINI_API_KEY;
@@ -50,7 +54,7 @@ export function createGeminiProvider(): LLMProvider {
 
       const history = params.messages.slice(0, -1).map((m) => ({
         role: m.role === "assistant" ? "model" : "user",
-        parts: [{ text: m.content }],
+        parts: messageParts(m),
       }));
       const last = params.messages[params.messages.length - 1];
       if (!last || last.role !== "user") {
@@ -58,7 +62,10 @@ export function createGeminiProvider(): LLMProvider {
       }
 
       const chat = model.startChat({ history });
-      const stream = await chat.sendMessageStream(last.content);
+      const stream = await chat.sendMessageStream(
+        last.images?.length ? messageParts(last) : last.content,
+        { signal: params.signal },
+      );
       for await (const chunk of stream.stream) {
         if (params.signal?.aborted) {
           throw new DOMException("Aborted", "AbortError");

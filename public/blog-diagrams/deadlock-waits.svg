@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 240" role="img" aria-labelledby="title desc">
+  <title id="title">二つの処理が相手の資源を待つ</title>
+  <desc id="desc">T1はAを保持し、T2のBを待つ。T2はBを保持し、T1のAを待つ。待ちの矢印が循環する。</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0 0L10 4L0 8" fill="#0369a1"/></marker></defs>
+  <rect width="720" height="240" rx="16" fill="#f0f9ff"/>
+  <g fill="#fff" stroke="#0369a1" stroke-width="2"><rect x="30" y="80" width="220" height="90" rx="10"/><rect x="470" y="80" width="220" height="90" rx="10"/>
+    <path d="M250 100C320 45 400 45 470 100M470 150C400 205 320 205 250 150" fill="none" marker-end="url(#arrow)"/></g>
+  <g fill="#0c4a6e" font-family="sans-serif" text-anchor="middle" font-size="22"><text x="140" y="115">T1：Aを保持</text><text x="140" y="147">Bを要求</text><text x="580" y="115">T2：Bを保持</text><text x="580" y="147">Aを要求</text><text x="360" y="35" font-size="18">T2がBを解放するまで待つ</text><text x="360" y="225" font-size="18">T1がAを解放するまで待つ</text></g>
+</svg>

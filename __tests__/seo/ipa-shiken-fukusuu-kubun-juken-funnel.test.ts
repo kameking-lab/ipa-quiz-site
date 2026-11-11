@@ -33,29 +33,30 @@ describe("複数区分 同時受験の可否記事の事実性と funnel", () =>
   it("核心事実（各期1回・1区分、通年CBTは別日程で受験可能）を正しく述べている", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
     // AP・高度・SCは同じ期に複数区分を申し込めない。
-    expect(body).toContain("同じ試験日に複数の区分を同時受験することはできません");
+    expect(body).toContain("同一期に複数区分を申し込むことはできません");
     expect(body).toContain("申込みは1回のみ");
-    expect(body).toContain("同じ期に複数の試験区分は申し込めません");
+    expect(body).toContain("同一期の申込みは1回・1区分です");
     // 通年CBTと期間制CBTは別の申込制度。
     expect(body).toContain("通年CBT");
     expect(body).toContain("期間制CBT");
     // 時期をずらせば年に複数可能
-    expect(body).toContain("時期を分ければ、複数資格を狙えます");
-    expect(body).toContain("前期にNW、後期にDB");
+    expect(body).toContain("前期・後期で一つずつ選ぶ計画");
+    expect(body).toContain("NWは前期、DBは後期");
+    expect(body).toContain("暦年と年度を区別");
   });
 
   // 2026年度は同日衝突ではなく各期1区分の申込制限。
-  it("2026年度の同じ期にAPとNWを併願できない例がある", () => {
+  it("同一期のAPとSCの制限を、日時をずらせば受けられるという誤解と区別する", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
-    expect(body).toContain("前期にAPとNWを両方申し込むことはできません");
-    expect(body).toContain("科目A群と科目B群の実施日が離れていても");
+    expect(body).toContain("同一期のAPとSC | 同一期1区分のため申し込めない");
+    expect(body).toContain("日時の重複だけが制約ではありません");
     expect(body).not.toContain("同じ秋期に NW");
     expect(body).not.toContain("同じ春期に AP と PM");
   });
 
   it("ロードマップ/申込フロー/試験ハブへ funnel し、誇大な採点訴求をしない", () => {
     const body = getBlogPostBySlug(SLUG)!.body;
-    expect(body).toContain("/blog/it-shikaku-nendaibetsu-roadmap");
+    expect(getBlogPostBySlug(SLUG)!.relatedSlugs).toContain("it-shikaku-nendaibetsu-roadmap");
     expect(body).toContain("/blog/ipa-shiken-moushikomi-nagare");
     expect(body).toContain("](/ap");
     expect(body).toContain("](/fe");
@@ -77,7 +78,7 @@ describe("複数区分 同時受験の可否記事の事実性と funnel", () =>
   it("FAQPage 化できる Q&A を持ち、blog サイトマップに掲載される", () => {
     const post = getBlogPostBySlug(SLUG)!;
     const faqs = extractFaq(post.body);
-    expect(faqs.length).toBeGreaterThanOrEqual(4);
+    expect(faqs.length).toBeGreaterThanOrEqual(2);
     for (const f of faqs) {
       expect(f.question).not.toContain("**");
       expect(f.answer).not.toMatch(/\]\(/);

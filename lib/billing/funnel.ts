@@ -58,7 +58,9 @@ export async function recordFunnel(event: FunnelEvent, visitor: string, now = Da
         ["SADD", index, group], ["EXPIRE", index, String(RETENTION_SECONDS)]);
     }
     const response = await pipeline(store, commands, 1500);
-    return response.ok;
+    if (!response.ok) return false;
+    const payload: unknown = await response.json();
+    return Array.isArray(payload) && payload.length === commands.length && payload.every(row => row && typeof row === "object" && !row.error && Number.isSafeInteger(row.result) && row.result >= 0);
   } catch { return false; }
 }
 

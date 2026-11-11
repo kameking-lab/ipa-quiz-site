@@ -35,6 +35,7 @@ async function hogql(env: PosthogEnv, query: string): Promise<HogQlResult | null
       },
       body: JSON.stringify({ query: { kind: "HogQLQuery", query } }),
       cache: "no-store",
+      signal: AbortSignal.timeout(5000),
     });
     if (!res.ok) return null;
     return (await res.json()) as HogQlResult;
@@ -59,6 +60,7 @@ export interface FunnelData {
 
 export interface FunnelResponse {
   configured: boolean;
+  queryFailed?: boolean;
   range_days: RangeDays;
   funnels: FunnelData[];
   event_counts: Record<string, number>;
@@ -69,7 +71,7 @@ async function fetchEventCounts(
   env: PosthogEnv,
   events: string[],
   rangeDays: RangeDays,
-): Promise<Record<string, number>> {
+): Promise<Record<string, number> | null> {
   const eventList = events.map((e) => `'${e}'`).join(", ");
   const q = `
     SELECT event, count() AS cnt
@@ -81,10 +83,11 @@ async function fetchEventCounts(
   `;
   const data = await hogql(env, q);
   const counts: Record<string, number> = {};
-  if (!data?.results) return counts;
+  if (!Array.isArray(data?.results)) return null;
   for (const row of data.results) {
     const name = String(row[0] ?? "");
     const cnt = Number(row[1] ?? 0);
+    if (!Number.isSafeInteger(cnt) || cnt < 0) return null;
     if (name) counts[name] = cnt;
   }
   return counts;
@@ -150,6 +153,7 @@ export async function fetchFunnelData(rangeDays: RangeDays): Promise<FunnelRespo
   }
 
   const counts = await fetchEventCounts(env, ALL_EVENTS, rangeDays);
+  if (!counts) return { configured: true, queryFailed: true, range_days: rangeDays, funnels: [], event_counts: {}, cachedAt: new Date().toISOString() };
 
   const funnels: FunnelData[] = [
     {

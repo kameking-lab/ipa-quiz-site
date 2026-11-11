@@ -32,6 +32,7 @@ describe("QuizClient with the real player and local learning stores", () => {
     const started = new Set<string>();
     let cookie = false;
     const fetcher = vi.fn(async (url: string, options?: RequestInit) => {
+      if (url === "/api/funnel" || url === "/api/activity") return new Response(null, { status: 204 });
       if (url === "/api/auth/session") return Response.json({});
       if (url === "/api/questions/related") return Response.json({ questions: [] });
       if (url.startsWith("/api/questions/next?")) {
@@ -105,7 +106,7 @@ describe("QuizClient with the real player and local learning stores", () => {
     expect(sessionStorage.getItem(LS_KEYS.studyReward)).toBe(reward);
     expect(JSON.parse(localStorage.getItem(LS_KEYS.studyRewardPreferences)!)).toEqual({ closed: false, paused: true });
     expect(createHistoryStore().getAllEntries().some(entry => entry.id === fp[5].id)).toBe(false);
-    expect(fetcher.mock.calls.every(([url]) => url.startsWith("/api/questions/next?") || url === "/api/billing/question" || url === "/api/questions/related" || url === "/api/auth/session")).toBe(true);
+    expect(fetcher.mock.calls.every(([url]) => url.startsWith("/api/questions/next?") || url === "/api/billing/question" || url === "/api/questions/related" || url === "/api/auth/session" || url === "/api/funnel" || url === "/api/activity")).toBe(true);
     expect(capture.mock.calls.filter(call => call[0] === "referral_landed")).toHaveLength(1);
     const limits = capture.mock.calls.filter(call => call[0] === "practice_free_limit_reached");
     expect(limits).toHaveLength(1);
