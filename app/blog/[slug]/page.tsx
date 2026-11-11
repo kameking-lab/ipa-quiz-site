@@ -24,6 +24,7 @@ import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { ORG_ID, SITE_LOGO_IMAGE, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
 import { examLabel, formatYearSeason } from "@/lib/utils";
 import { ContentEndAd } from "@/components/ads/ContentEndAd";
+import { getRecommendedBooks } from "@/data/recommended-books";
 
 export async function generateStaticParams() {
   return getAllBlogSlugs().map((slug) => ({ slug }));
@@ -337,12 +338,12 @@ export default async function BlogArticlePage({ params }: PageProps) {
             >
               {examLabel(post.exam)} 過去問一覧へ
             </Link>
-            <Link
+            {getRecommendedBooks(post.exam).length > 0 && <Link
               href={`/recommended-books/${post.exam}`}
               className="inline-flex min-h-[48px] items-center rounded-full border border-amber-300 bg-white px-4 py-2 text-sm font-semibold text-amber-700 hover:bg-amber-50 dark:border-amber-800 dark:bg-zinc-950 dark:text-amber-300 dark:hover:bg-amber-950/40"
             >
               おすすめ書籍
-            </Link>
+            </Link>}
           </div>
         </section>
       ) : (

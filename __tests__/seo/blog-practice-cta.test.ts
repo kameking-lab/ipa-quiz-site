@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 
 import { getAllBlogPosts, getBlogPostBySlug } from "@/data/blog";
-import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
+import { ALL_EXAM_CODES, ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import { getRecommendedBooks } from "@/data/recommended-books";
 
 // Regression guard for the blog → 演習 practice CTA in
