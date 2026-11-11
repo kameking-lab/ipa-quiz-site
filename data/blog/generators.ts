@@ -107,6 +107,8 @@ ${cbt ? cbt.knowledge : "知識問題は過去問を反復し、誤答の理由�
 
 ${toItalicList(p.hardSpots)}
 
+${exam === "fe" ? "SQLで同名の列を読み違える場合は、[SQL結合問題の条件の読み方](/blog/fe-sql-join-column-reading)で、表の別名と条件の参照先を確認しましょう。" : ""}
+
 これらは AI コパイロットに「どう違うのか比較表で」と質問することで、理解の死角を素早く埋められます。
 
 ## ${exam === "ip" ? "四択の応用問題" : exam === "sg" ? "科目Bの事例問題" : exam === "fe" ? "科目Bのアルゴリズム問題" : "科目B（旧午後）の戦略"}
@@ -179,7 +181,7 @@ ${exam === "fe" ? `${feWeeklyPlan} 平日の朝晩に過去問演習、週末に
     publishedAt: publishedAtFor(idx),
     body,
     editorialKind: "study-guide",
-    editorialDates: { firstPublishedAt: null, lastEditedAt: exam === "fe" || exam === "nw" ? "2026-10-11" : "2026-10-08" },
+    editorialDates: { firstPublishedAt: null, lastEditedAt: exam === "fe" ? "2026-11-11" : exam === "nw" ? "2026-10-11" : "2026-10-08" },
     sourceUrls: ["https://www.ipa.go.jp/shiken/"],
     relatedSlugs: [
       `${exam}-yoru-tokurensyu`,
@@ -3772,6 +3774,7 @@ IPA疑似言語の配列は1始まりが多い。コードを読む最初に「�
 
   general.push({
     slug: "sc-ronbun-taisaku",
+    editorialDates: { firstPublishedAt: null, lastEditedAt: "2026-11-11" },
     title: "情報処理安全確保支援士 午後（記述式）対策｜記述問題の答え方と頻出テーマ",
     description:
       "情報処理安全確保支援士（SC）の午後は記述式（2023年秋から午後I・II統合で150分・4問中2問選択）。記述問題の答え方・頻出テーマ（インシデント対応・ゼロトラスト・クラウドセキュリティ）ごとの解答の組み立て方を紹介します。",
@@ -3818,6 +3821,8 @@ WAF・IDS/IPS・SIEM・EDR・MFA・ゼロトラスト等は正確な意味で使
 
 - 境界型セキュリティの限界、MFA・デバイス認証・マイクロセグメンテーションの効果を記述
 - 「この方式で防げる攻撃」「最小権限が必要な理由」を簡潔に説明する
+
+権限の付与・異動時の変更・退職時の削除を追う手順は、[支援士のアクセス権限管理](/blog/sc-access-rights-lifecycle)で整理しています。
 
 ### テーマ3：クラウドセキュリティの統制
 
@@ -4008,6 +4013,7 @@ TLSハンドシェイクのシーケンス・証明書の検証・SNIの仕組�
 
   general.push({
     slug: "db-sql-taisaku",
+    editorialDates: { firstPublishedAt: null, lastEditedAt: "2026-11-11" },
     title: "データベーススペシャリスト SQL・設計対策｜午後Iの頻出問題と解法",
     description:
       "データベーススペシャリスト（DB）試験の午後I頻出問題を解説。SELECT・結合・サブクエリ・トランザクション・ER設計・正規化の解法パターンを整理し、実践的な対策を紹介します。",
@@ -4027,6 +4033,8 @@ TLSハンドシェイクのシーケンス・証明書の検証・SNIの仕組�
 ## 頻出パターン1：SQL問題
 
 ### 複雑なSELECT文の穴埋め
+
+結合後に合計が合わない場合は、[JOINでSUMが増える理由と確認順](/blog/db-join-sum-granularity)で、一行の単位と集計対象を確認してください。
 
 「次のSQL文で●に入る語句を答えよ」形式で、結合・集計・サブクエリが組み合わさる問題が頻出です。
 

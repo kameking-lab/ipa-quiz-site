@@ -12,6 +12,7 @@ export function getRelatedQuestionsForPost(
   exam: ExamCode | undefined,
   tags: string[],
   limit = 3,
+  questionIds?: readonly string[],
 ): Question[] {
   if (!exam) return [];
   const tagSet = new Set(tags);
@@ -21,6 +22,15 @@ export function getRelatedQuestionsForPost(
       !!q.choices &&
       isPracticeReadyQuestion(q),
   );
+  // A focused guide must not fall back to unrelated questions when a curated
+  // question is unavailable. Keep the existing ranking for other articles.
+  if (questionIds !== undefined) {
+    const byId = new Map(pool.map((q) => [q.id, q]));
+    return [...new Set(questionIds)]
+      .map((id) => byId.get(id))
+      .filter((q): q is Question => q !== undefined)
+      .slice(0, limit);
+  }
   const scored = pool.map((q) => {
     let score = 0;
     if (tagSet.has(q.category)) score += 2;

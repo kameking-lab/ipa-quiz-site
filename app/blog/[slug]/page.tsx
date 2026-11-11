@@ -105,7 +105,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
   const url = `${SITE_BASE_URL}/blog/${slug}`;
   const related = getRelatedPosts(slug, 4);
   const practice = getBlogPractice(slug);
-  const relatedQuestions = getRelatedQuestionsForPost(post.exam, post.tags, 3);
+  const relatedQuestions = getRelatedQuestionsForPost(post.exam, post.tags, 3, post.relatedQuestionIds);
   const articleOgParams = new URLSearchParams({
     type: "blog",
     title: post.title,
@@ -296,7 +296,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
             {dates.modified && <>{dates.published ? " / " : ""}本文編集: <time dateTime={dates.modified}>{dates.modified.slice(0, 10)}</time></>}
           </p>
         )}
-        {post.sourceUrls && <ul className="mt-3 space-y-1 text-xs">{post.sourceUrls.map((url, i) => <li key={url}><a href={url} className="underline" target="_blank" rel="noopener noreferrer">参照資料 {i + 1}（IPA）</a></li>)}</ul>}
+        {post.sourceUrls && <ul className="mt-3 space-y-1 text-xs">{post.sourceUrls.map((url, i) => <li key={url}><a href={url} className="underline" target="_blank" rel="noopener noreferrer">参照資料 {i + 1}</a></li>)}</ul>}
       </header>
 
       {practice && (strictContentGateEnabled() ? (
