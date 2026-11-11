@@ -34,8 +34,8 @@ describe("safety text presentation", () => {
         if (question.choiceCount === 5) choiceCount += 1;
       }
     }
-    expect(count).toBe(2436);
-    expect(choiceCount).toBe(2264);
+    expect(count).toBe(2556);
+    expect(choiceCount).toBe(2384);
   });
 
   it("preserves the source's three distinct axes and deliberate wrong chemical structure", () => {
