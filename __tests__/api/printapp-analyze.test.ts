@@ -1,5 +1,6 @@
 // @vitest-environment node
-import { beforeEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { createGeminiProvider } from "@/lib/ai/providers/gemini";
 import type { StreamChatParams } from "@/lib/ai/provider";
 import { createMockProvider } from "@/lib/ai/providers/mock";
 import { POST } from "@/app/api/printapp/analyze/route";
@@ -35,6 +36,7 @@ beforeEach(() => {
     params.onComplete?.({ finishReason: "STOP", truncated: false, promptTokens: 1000, outputTokens: 200, thoughtsTokens: 50, totalTokens: 1250 });
   });
 });
+afterEach(() => { vi.unstubAllGlobals(); vi.unstubAllEnvs(); vi.restoreAllMocks(); });
 
 describe("printapp analysis API", () => {
   it("returns the existing notice JSON and awaits measured image cost settlement", async () => {
@@ -135,5 +137,22 @@ describe("printapp analysis API", () => {
     expect(f.cost).not.toHaveBeenCalled();
     f.stream.mockImplementation(async function* (params: StreamChatParams) { yield '{"type":"unknown"}'; params.onComplete?.({ finishReason: "STOP", truncated: false }); });
     expect((await POST(request())).status).toBe(502);
+  });
+
+  it("records the actual SDK HTTP error and stage while retaining the reservation", async () => {
+    vi.stubEnv("GEMINI_API_KEY", "synthetic-test-key");
+    const logger = vi.spyOn(console, "error").mockImplementation(() => {});
+    const fetcher = vi.fn().mockResolvedValue(Response.json({ error: { message: "The model is not found or is not supported for streamGenerateContent." } }, { status: 404 }));
+    vi.stubGlobal("fetch", fetcher);
+    f.provider.mockResolvedValue(createGeminiProvider());
+    const response = await POST(request());
+    expect(response.status).toBe(502);
+    expect(logger).toHaveBeenCalledWith("[printapp-analyze] failed", expect.objectContaining({
+      stage: "stream", kind: "google_http", status: 404,
+      googleMessage: "The model is not found or is not supported for streamGenerateContent.",
+    }));
+    expect(fetcher).toHaveBeenCalledOnce();
+    expect(f.cost).not.toHaveBeenCalled();
+    expect(await response.text()).not.toContain("model is not found");
   });
 });

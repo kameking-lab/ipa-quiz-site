@@ -66,30 +66,37 @@ export function createGeminiProvider(): LLMProvider {
         last.images?.length ? messageParts(last) : last.content,
         { signal: params.signal },
       );
-      for await (const chunk of stream.stream) {
-        if (params.signal?.aborted) {
-          throw new DOMException("Aborted", "AbortError");
+      // Attach the rejection handler immediately: the SDK aggregates a second
+      // response promise alongside its iterator, including when iteration fails.
+      const settled = stream.response.then(
+        (response) => ({ response }), (error: unknown) => ({ error }),
+      );
+      try {
+        for await (const chunk of stream.stream) {
+          if (params.signal?.aborted) {
+            throw new DOMException("Aborted", "AbortError");
+          }
+          const text = chunk.text();
+          if (text) yield text;
         }
-        const text = chunk.text();
-        if (text) yield text;
+      } finally {
+        const result = await settled;
+        if (params.onComplete && "response" in result) {
+          const final = result.response;
+          const usage = final.usageMetadata as UsageMetadataWithThoughts | undefined;
+          const finishReason = final.candidates?.[0]?.finishReason;
+          params.onComplete({
+            finishReason,
+            promptTokens: usage?.promptTokenCount,
+            outputTokens: usage?.candidatesTokenCount,
+            thoughtsTokens: usage?.thoughtsTokenCount,
+            totalTokens: usage?.totalTokenCount,
+            truncated: finishReason === "MAX_TOKENS",
+          });
+        }
       }
-
-      if (params.onComplete) {
-        // 集約レスポンスから finishReason と usageMetadata を取り出す。
-        // ここを捨てていたため、応答が MAX_TOKENS で切れても呼び出し側から
-        // 「JSON の解析に失敗した」としか見えなかった。
-        const final = await stream.response;
-        const usage = final.usageMetadata as UsageMetadataWithThoughts | undefined;
-        const finishReason = final.candidates?.[0]?.finishReason;
-        params.onComplete({
-          finishReason,
-          promptTokens: usage?.promptTokenCount,
-          outputTokens: usage?.candidatesTokenCount,
-          thoughtsTokens: usage?.thoughtsTokenCount,
-          totalTokens: usage?.totalTokenCount,
-          truncated: finishReason === "MAX_TOKENS",
-        });
-      }
+      const result = await settled;
+      if ("error" in result) throw result.error;
     },
   };
 }
