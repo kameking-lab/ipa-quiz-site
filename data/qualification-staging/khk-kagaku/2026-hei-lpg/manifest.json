@@ -1,0 +1,26 @@
+{
+  "examCode": "khk-kagaku",
+  "qualification": "丙種化学（液石）",
+  "year": 2026,
+  "season": "annual",
+  "status": "source-checked",
+  "publicAllowed": false,
+  "targetQuestionCount": 60,
+  "sessions": {
+    "khk-cx": 20,
+    "khk-cy": 20,
+    "khk-cz": 20
+  },
+  "publicationPolicy": "高圧ガス全区分が揃ってから一括公開。既存の公開データ・登録・配信ローダーへ追加しない。",
+  "sourceIndex": "sources.json",
+  "answerKeys": "official-answer-keys.json",
+  "duplicateCheck": {
+    "checkedAt": "2026-11-12T06:58:30.323636+09:00",
+    "main": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+    "ledgerKey": "khk-kagaku:hei-lpg|2026|annual",
+    "ledgerStatus": "未着手",
+    "mainQuestionCount": 0,
+    "matchingOpenPullRequests": [],
+    "existingBranchTargetQuestionCount": 0
+  }
+}
