@@ -10,7 +10,7 @@ build_number = ENV.fetch('BUILD_NUMBER', '1')
 raise 'Invalid build number' unless build_number.match?(/\A[1-9]\d*\z/)
 target.build_configurations.each do |configuration|
   configuration.build_settings['PRODUCT_BUNDLE_IDENTIFIER'] = bundle_id
-  configuration.build_settings['MARKETING_VERSION'] = '1.0.0'
+  configuration.build_settings['MARKETING_VERSION'] = '1.0.1'
   configuration.build_settings['CURRENT_PROJECT_VERSION'] = build_number
   configuration.build_settings['TARGETED_DEVICE_FAMILY'] = '1'
   configuration.build_settings['IPHONEOS_DEPLOYMENT_TARGET'] = '15.0'
