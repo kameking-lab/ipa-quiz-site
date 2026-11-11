@@ -22,7 +22,8 @@ for (const width of [320, 390]) test(`private room child and saved event survive
   await expect(own).toHaveAttribute("data-room-scene", "first-meeting");
   await expect(own.getByRole("button", { name: "こむぎ・応用情報技術者（名前を変える）" })).toBeVisible();
   await expect(own.locator("img").first()).toHaveAttribute("src", petPortraitFor("ap", "partner", "study"));
-  await expect(own).toContainText("図のつながりを、もう一度。");
+  await expect(own).toContainText("今日の1問で「小さなしおり」");
+  await expect(own.getByRole("link", { name: "新しい問題を解く", exact: true })).toHaveAttribute("href", "/quiz?mode=unanswered&exam=ap");
   const before = await page.evaluate(key => localStorage.getItem(key), key), text = await own.textContent();
   await own.scrollIntoViewIfNeeded();
   await expect.poll(()=>own.locator("img").first().evaluate(image=>(image as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
@@ -38,8 +39,8 @@ for (const width of [320, 390]) test(`private room child and saved event survive
   await sheet.locator("summary").filter({ hasText: /^思い出$/ }).tap();
   await expect(sheet.getByRole("heading", { name: "自習室のアルバム" })).toBeVisible();
   await sheet.locator("summary").filter({ hasText: /^姿$/ }).tap();
-  await sheet.getByRole("button", { name: "こいぬ", exact: true }).tap();
-  await expect(sheet.getByRole("button", { name: "こいぬ", exact: true })).toHaveAttribute("aria-pressed", "true");
+  await sheet.getByRole("button", { name: /^こいぬ/ }).tap();
+  await expect(sheet.getByRole("button", { name: /^こいぬ/ })).toHaveAttribute("aria-pressed", "true");
   await page.keyboard.press("Escape");
   await expect(own.locator("img").first()).toHaveAttribute("src", petPortraitFor("ap", "puppy", "study"));
   await expect(own).toHaveAttribute("data-room-scene", "first-meeting");

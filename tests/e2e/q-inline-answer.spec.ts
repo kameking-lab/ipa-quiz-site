@@ -79,12 +79,10 @@ test.describe("/q inline answer", () => {
     await page.goto(path);
     const choices = page.getByRole("checkbox");
     await expect(choices).toHaveCount(4);
-    const confirm = page.getByRole("button", { name: "回答を確定", exact: true });
     await choices.nth(1).click();
-    await expect(confirm).toBeDisabled();
+    await expect(choices.nth(1)).toBeChecked();
+    await expect(page.getByRole("link", { name: /解説を読む/ })).toHaveCount(0);
     await choices.nth(2).click();
-    await expect(confirm).toBeEnabled();
-    await confirm.click();
     await expect(page.getByRole("status").filter({ hasText: "正解です。下に解説があります。" })).toBeAttached();
     expect(new URL(page.url()).pathname).toBe(path);
   });

@@ -30,10 +30,10 @@ for (const width of [320, 390]) test(`care, reversible forms and backed-up resto
   await careButton(page).tap();
   const sheet = page.getByRole("dialog", { name: "チワワの育成" }); await expect(sheet).toBeVisible();
   await sheet.locator("summary").filter({ hasText: /^姿$/ }).tap();
-  await expect(sheet.getByRole("button", { name: "学習の相棒", exact: true })).toBeEnabled();
-  await sheet.getByRole("button", { name: "学習の相棒", exact: true }).tap();
+  await expect(sheet.getByRole("button", { name: /^学習の相棒/ })).toBeEnabled();
+  await sheet.getByRole("button", { name: /^学習の相棒/ }).tap();
   await expect(sheet.getByRole("status")).toHaveText("保存しました。");
-  await expect(sheet.getByRole("button", { name: "学習の相棒", exact: true })).toHaveAttribute("aria-pressed", "true");
+  await expect(sheet.getByRole("button", { name: /^学習の相棒/ })).toHaveAttribute("aria-pressed", "true");
   await sheet.locator("summary").filter({ hasText: /^特技$/ }).tap();
   await sheet.getByRole("button", { name: "精密", exact: true }).tap();
   await expect(sheet.getByRole("button", { name: "精密", exact: true })).toHaveAttribute("aria-pressed", "true");
@@ -46,8 +46,8 @@ for (const width of [320, 390]) test(`care, reversible forms and backed-up resto
   await sheet.getByRole("button", { name: "ごほうびごはんを食べる" }).tap();
   await expect(sheet.getByRole("button", { name: "ごほうびごはんを食べる" })).toHaveCount(0);
   const fed = await read(); expect(fed.profiles[0].growth).toBe(original.profiles[0].growth); expect(fed.profiles[0].bond).toBe(original.profiles[0].bond);
-  await sheet.getByRole("button", { name: "こいぬ", exact: true }).tap();
-  await expect(sheet.getByRole("button", { name: "こいぬ", exact: true })).toHaveAttribute("aria-pressed", "true");
+  await sheet.getByRole("button", { name: /^こいぬ/ }).tap();
+  await expect(sheet.getByRole("button", { name: /^こいぬ/ })).toHaveAttribute("aria-pressed", "true");
   const download = page.waitForEvent("download"); await sheet.getByRole("button", { name: "バックアップを保存", exact: true }).tap();
   expect((await download).suggestedFilename()).toBe("chihuahua-backup.json");
   const snapshot = await read(), raw = JSON.stringify({ format: "kakomon-pet-local", version: 1, document: snapshot });
