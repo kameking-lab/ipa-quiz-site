@@ -7,6 +7,12 @@ beforeEach(() => { vi.stubEnv("KV_REST_API_URL", "https://kv.example.invalid/");
 afterEach(() => { vi.unstubAllEnvs(); vi.unstubAllGlobals(); });
 
 describe("purchase funnel counter (KV, per JST day, distinct visitors)", () => {
+  it("does not mistake an HTTP 200 Redis command error for a recorded event", async () => {
+    vi.stubGlobal("fetch", vi.fn(async () => Response.json([{ error: "ERR fixture" }, { result: 1 }])));
+    expect(await recordFunnel("free_limit_reached", "fixture", NOW)).toBe(false);
+    vi.stubGlobal("fetch", vi.fn(async () => Response.json([])));
+    expect(await recordFunnel("free_limit_reached", "fixture", NOW)).toBe(false);
+  });
   it("keeps global counts and adds daily source/content sets with the same de-duplicated member", async () => {
     const fetcher = vi.fn(async () => Response.json([])); vi.stubGlobal("fetch", fetcher);
     const touch = { utm_source: "tsugino_shikaku", utm_content: "sc.hero" };

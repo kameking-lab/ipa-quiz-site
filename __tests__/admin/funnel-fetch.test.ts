@@ -11,7 +11,7 @@ import { fetchFunnelData, isFunnelConfigured } from "@/lib/admin/funnel/posthog"
  *      funnels, range_days echoed, and event_counts parsed from the probe;
  *   3. the HogQL row parser maps [event, count], coerces counts, and SKIPS
  *      rows with a blank event name;
- *   4. a failed probe (!ok) degrades to zero counts but still configured:true.
+ *   4. a failed query is explicitly unavailable, never a measured zero.
  */
 
 function setEnv(present: boolean) {
@@ -105,7 +105,7 @@ describe("fetchFunnelData", () => {
     expect(body.query.query).not.toContain("$pageview");
   });
 
-  it("degrades to zero counts but stays configured when the probe fails", async () => {
+  it("distinguishes a failed query from measured zero counts", async () => {
     setEnv(true);
     vi.stubGlobal(
       "fetch",
@@ -116,7 +116,7 @@ describe("fetchFunnelData", () => {
 
     expect(res.configured).toBe(true);
     expect(res.event_counts).toEqual({});
-    expect(res.funnels).toHaveLength(3);
-    expect(res.funnels[0].steps.every((s) => s.count === 0)).toBe(true);
+    expect(res.queryFailed).toBe(true);
+    expect(res.funnels).toEqual([]);
   });
 });

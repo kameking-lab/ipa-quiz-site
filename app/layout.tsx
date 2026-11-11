@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { PurchaseJourney } from "@/components/analytics/PurchaseJourney";
+import { ActivityTracker } from "@/components/analytics/ActivityTracker";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import { SourceRelationshipFooter } from "@/components/question-provenance/SourceRelationshipFooter";
@@ -137,6 +138,7 @@ export default function RootLayout({
           <MobileInstallProvider>
           <StudyPresence />
           <PurchaseJourney />
+          <ActivityTracker />
           {/* Skip link first in the DOM so a single Tab reaches it before any
               header/widget (WCAG 2.4.1 Bypass Blocks). Targets #main-content. */}
           <a

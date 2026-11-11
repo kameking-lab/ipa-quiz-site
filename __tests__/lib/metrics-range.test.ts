@@ -8,6 +8,12 @@ import { resolveRange, rangeSpanDays, dateSeries } from "@/lib/admin/metrics/ran
 const NOW = new Date("2026-05-15T12:00:00Z");
 
 describe("resolveRange", () => {
+  it("JST midnight changes today and month together with the event store", () => {
+    const before = resolveRange("today", undefined, undefined, new Date("2026-10-31T14:59:59Z"));
+    const after = resolveRange("mtd", undefined, undefined, new Date("2026-10-31T15:00:00Z"));
+    expect(before.from).toBe("2026-10-31");
+    expect([after.from, after.to]).toEqual(["2026-11-01", "2026-11-01"]);
+  });
   it("today: 当日のみ・比較は前日1日", () => {
     const m = resolveRange("today", undefined, undefined, NOW);
     expect([m.from, m.to]).toEqual(["2026-05-15", "2026-05-15"]);
@@ -42,6 +48,10 @@ describe("resolveRange", () => {
 
   it("custom: 不正な日付文字列は当日へフォールバックする", () => {
     const m = resolveRange("custom", "bad-date", undefined, NOW);
+    expect([m.from, m.to]).toEqual(["2026-05-15", "2026-05-15"]);
+  });
+  it.each(["2026-99-99", "2026-02-31"])("custom: invalid calendar date %s cannot break the metrics API", value => {
+    const m = resolveRange("custom", value, value, NOW);
     expect([m.from, m.to]).toEqual(["2026-05-15", "2026-05-15"]);
   });
 });
