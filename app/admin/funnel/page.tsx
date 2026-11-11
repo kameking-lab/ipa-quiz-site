@@ -4,6 +4,7 @@ import { Lock, Shield, TrendingDown } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { fetchFunnelData, isFunnelConfigured } from "@/lib/admin/funnel/posthog";
 import { FunnelDashboard } from "./FunnelCharts";
+import { ActivitySummary } from "@/components/admin/ActivitySummary";
 
 export const metadata: Metadata = {
   title: "ファネルダッシュボード（管理画面）",
@@ -50,6 +51,7 @@ export default async function AdminFunnelPage() {
       </header>
 
       <p className="mb-6"><Link href="/admin/funnel/journey" className="underline">課金前の平均解答数・案内ページ・最終到達点（KV集計）</Link></p>
+      <ActivitySummary />
       <FunnelDashboard initial={initial} />
     </main>
   );

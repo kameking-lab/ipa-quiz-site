@@ -12,7 +12,8 @@ export function resolveRange(
   customTo?: string,
   now: Date = new Date(),
 ): MetricsRangeMeta {
-  const today = new Date(Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate()));
+  const jst = new Date(now.getTime() + 9 * 60 * 60 * 1000);
+  const today = new Date(Date.UTC(jst.getUTCFullYear(), jst.getUTCMonth(), jst.getUTCDate()));
 
   let from: Date;
   let to: Date;

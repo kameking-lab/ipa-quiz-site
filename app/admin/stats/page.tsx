@@ -19,6 +19,7 @@ import { Badge } from "@/components/ui/badge";
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import type { ExamCode } from "@/lib/questions/types";
 import { examLabel } from "@/lib/utils";
+import { ActivitySummary } from "@/components/admin/ActivitySummary";
 
 export const metadata: Metadata = {
   title: "アナリティクス（管理画面）",
@@ -68,8 +69,7 @@ export default function AdminStatsPage() {
             アナリティクス
           </h1>
           <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-            Vercel Analytics で DAU / WAU / MAU、ページビュー、カスタムイベントを追跡します。
-            ここはコンテンツ収録と計測の概況サマリです。
+            直近30日の閲覧・利用回数とコンテンツ収録状況を確認します。
           </p>
           <div className="mt-4">
             <Link
@@ -83,6 +83,7 @@ export default function AdminStatsPage() {
         </div>
       </header>
 
+      <ActivitySummary days={30} />
       {/* KPI cards */}
       <section className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <KpiCard

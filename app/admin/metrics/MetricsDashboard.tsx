@@ -18,6 +18,7 @@ import {
 } from "recharts";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { ActivityReport } from "@/components/admin/ActivityReport";
 import { cn } from "@/lib/utils";
 import type {
   KpiValue,
@@ -154,7 +155,7 @@ export function MetricsDashboard({ initial }: { initial: MetricsResponse }) {
           <p className="mt-2">{data.reason}</p>
           <p className="mt-2">未取得の数値や比較・改善予測は表示しません。</p>
         </div>
-      ) : <>
+      ) : data.source === "kv" ? <ActivityReport data={data.activity} period={data.meta.label} /> : <>
       <Section1Summary data={data} />
       <Section2Features data={data} />
       <Section3Pages data={data} />
@@ -233,8 +234,8 @@ function RangeTabs({
         <span>
           {meta.from} 〜 {meta.to}（前期: {meta.comparedFrom} 〜 {meta.comparedTo}）
         </span>
-        <Badge variant={source === "posthog" ? "success" : "warn"}>
-          {source === "posthog" ? "PostHog" : source === "unavailable" ? "未取得" : "デモデータ"}
+        <Badge variant={source === "posthog" || source === "kv" ? "success" : "warn"}>
+          {source === "kv" ? "KV匿名集計" : source === "posthog" ? "PostHog" : source === "unavailable" ? "未取得" : "デモデータ"}
         </Badge>
         {cachedAt && (
           <span className="text-[10px]">

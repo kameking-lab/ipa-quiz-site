@@ -24,19 +24,11 @@ interface WeeklyCohort {
 }
 
 interface RetentionResult {
-  source: "posthog" | "demo";
+  source: "posthog" | "unavailable";
   weeks: WeeklyCohort[];
   fetchedAt: number;
   error?: string;
 }
-
-const DEMO_WEEKS: WeeklyCohort[] = [
-  { cohort: "W-5", cohortStart: "2026-03-23", cohortSize: 612, returned: 138, retention: 0.225 },
-  { cohort: "W-4", cohortStart: "2026-03-30", cohortSize: 814, returned: 199, retention: 0.244 },
-  { cohort: "W-3", cohortStart: "2026-04-06", cohortSize: 922, returned: 244, retention: 0.265 },
-  { cohort: "W-2", cohortStart: "2026-04-13", cohortSize: 1085, returned: 311, retention: 0.287 },
-  { cohort: "W-1", cohortStart: "2026-04-20", cohortSize: 1290, returned: 396, retention: 0.307 },
-];
 
 async function fetchPostHogRetention(): Promise<RetentionResult> {
   const apiKey = process.env.POSTHOG_API_KEY;
@@ -44,7 +36,7 @@ async function fetchPostHogRetention(): Promise<RetentionResult> {
   const host = process.env.POSTHOG_HOST ?? "https://us.posthog.com";
 
   if (!apiKey || !projectId) {
-    return { source: "demo", weeks: DEMO_WEEKS, fetchedAt: Date.now() };
+    return { source: "unavailable", weeks: [], fetchedAt: Date.now() };
   }
 
   try {
@@ -57,6 +49,7 @@ async function fetchPostHogRetention(): Promise<RetentionResult> {
     const res = await fetch(url, {
       headers: { Authorization: `Bearer ${apiKey}` },
       next: { revalidate: 0 },
+      signal: AbortSignal.timeout(5000),
     });
     if (!res.ok) throw new Error(`posthog ${res.status}`);
     const data = (await res.json()) as {
@@ -85,15 +78,15 @@ async function fetchPostHogRetention(): Promise<RetentionResult> {
       .slice(-6);
 
     if (weeks.length === 0) {
-      return { source: "demo", weeks: DEMO_WEEKS, fetchedAt: Date.now() };
+      return { source: "posthog", weeks: [], fetchedAt: Date.now() };
     }
     return { source: "posthog", weeks, fetchedAt: Date.now() };
-  } catch (err) {
+  } catch {
     return {
-      source: "demo",
-      weeks: DEMO_WEEKS,
+      source: "unavailable",
+      weeks: [],
       fetchedAt: Date.now(),
-      error: err instanceof Error ? err.message : String(err),
+      error: "PostHogの集計取得に失敗しました。",
     };
   }
 }
@@ -120,7 +113,7 @@ export default async function AdminRetentionPage() {
             管理画面
           </Badge>
           <Badge variant={result.source === "posthog" ? "success" : "outline"}>
-            {result.source === "posthog" ? "PostHog 実データ" : "デモデータ"}
+            {result.source === "posthog" ? "PostHog 実データ" : "未取得"}
           </Badge>
         </div>
         <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-3xl">
@@ -141,7 +134,7 @@ export default async function AdminRetentionPage() {
           </CardHeader>
           <CardContent>
             <p className="text-2xl font-bold tabular-nums">
-              {(latestRetention * 100).toFixed(1)}%
+              {latest ? `${(latestRetention * 100).toFixed(1)}%` : "—"}
             </p>
             <p className="text-xs text-zinc-500 dark:text-zinc-400">
               {latest?.cohort ?? "-"} / 開始 {latest?.cohortStart ?? "-"}
@@ -162,7 +155,7 @@ export default async function AdminRetentionPage() {
                   : "text-amber-600 dark:text-amber-400"
               }`}
             >
-              {reachedTarget ? "達成" : "未達"}
+              {latest ? reachedTarget ? "達成" : "未達" : "—"}
             </p>
             <p className="text-xs text-zinc-500 dark:text-zinc-400">
               目標 {(TARGET_RETENTION_RATIO * 100).toFixed(0)}%
@@ -177,7 +170,7 @@ export default async function AdminRetentionPage() {
           </CardHeader>
           <CardContent>
             <p className="text-2xl font-bold tabular-nums">
-              {(latest?.cohortSize ?? 0).toLocaleString("ja-JP")}
+              {latest ? latest.cohortSize.toLocaleString("ja-JP") : "—"}
             </p>
             <p className="text-xs text-zinc-500 dark:text-zinc-400">
               ユニーク回答者
@@ -251,7 +244,7 @@ export default async function AdminRetentionPage() {
           </div>
           {result.error && (
             <p className="mt-3 text-[11px] text-amber-600 dark:text-amber-400">
-              ※ PostHog 取得失敗 ({result.error}) — デモデータを表示しています。
+              {result.error}
             </p>
           )}
         </CardContent>
@@ -260,7 +253,7 @@ export default async function AdminRetentionPage() {
       <p className="mt-6 text-xs text-zinc-500 dark:text-zinc-400">
         集計仕様: 初回 question_answered の週を「コホート」として、その翌週に同じユーザーが
         question_answered を発火させた割合を「翌週リテンション」と定義。POSTHOG_API_KEY/PROJECT_ID
-        が未設定の場合はデモデータを表示します。
+        が未設定の場合は未取得と表示します。匿名の回数集計から翌週の同一利用者は判定できません。
       </p>
     </main>
   );
