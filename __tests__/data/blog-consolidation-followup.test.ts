@@ -25,7 +25,7 @@ describe("bounded study-content consolidation", () => {
   });
 
   it("moves both duplicate practice URLs to the qualification's completed worked guide", () => {
-    expect(getAllBlogPosts()).toHaveLength(182);
+    expect(getAllBlogPosts()).toHaveLength(192);
     for (const exam of ["nw", "db"]) {
       expect(getBlogPostBySlug(`${exam}-yoru-tokurensyu`)).toBeUndefined();
       expect(BLOG_ARTICLE_ALIASES[`${exam}-yoru-tokurensyu`]).toBe(`${exam}-hinnshutsu-ronten-toppu10`);

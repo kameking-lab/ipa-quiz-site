@@ -19,6 +19,23 @@ import { getAllBlogPosts } from "@/data/blog";
 //
 // Newly added URLs verified resolving (HEAD, HTTP 200, no redirect) on 2026-09-28:
 const EXPECTED_EXTERNAL_URLS = [
+  // Study guides 01–10: official documents / primary specifications, GET checked 2026-11-11.
+  "https://csrc.nist.gov/pubs/fips/186-5/final",
+  "https://www.rfc-editor.org/rfc/rfc8017.html",
+  "https://www.rfc-editor.org/rfc/rfc1035.html",
+  "https://www.ipa.go.jp/archive/digital/tools/ep/ep2.html",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_am_qs.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_ap_am_ans.pdf",
+  "https://www.postgresql.org/docs/current/explicit-locking.html",
+  "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-03_04_05.html",
+  "https://www.hoyokyo.or.jp/exam/pasttest/08-1.html",
+  "https://shiken.khk.or.jp/shiken.html",
+  "https://www.jsrae.or.jp/E-learning/saikuru/saikuru.html",
+  "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8HZ.pdf",
+  "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8fy_kaitou.pdf",
+  "https://www.jafp.or.jp/exam/mohan/",
+  "https://www.jafp.or.jp/exam/mohan/files/g2_202501_q.pdf",
+  "https://www.jafp.or.jp/exam/mohan/files/g2_202501_a.pdf",
   // Focused SC/DB/FE guides: GET 200, verified 2026-11-11.
   "https://www.ipa.go.jp/security/guide/insider.html",
   "https://www.ipa.go.jp/security/guide/hjuojm00000055l0-att/ps6vr7000000jvcb.pdf",
@@ -94,6 +111,13 @@ const EXPECTED_EXTERNAL_URLS = [
 ] as const;
 
 const ALLOWED_HOSTS = new Set([
+  "csrc.nist.gov",
+  "www.rfc-editor.org",
+  "www.mhlw.go.jp",
+  "www.hoyokyo.or.jp",
+  "shiken.khk.or.jp",
+  "www.jsrae.or.jp",
+  "www.jafp.or.jp",
   "www.ipa.go.jp",
   "www3.jitec.ipa.go.jp",
   "cbt-s.com",

@@ -9,6 +9,8 @@ import {
 import type { BlogPost, BlogPostSummary } from "./types";
 import { toSummary } from "./types";
 import { FOCUSED_STUDY_GUIDES } from "./focused-study-guides";
+import { TOPIC_STUDY_GUIDES, TOPIC_GUIDE_INCOMING_LINKS } from "./topic-study-guides";
+import { QUALIFICATION_STUDY_GUIDES } from "./qualification-study-guides";
 import { BLOG_ARTICLE_ALIASES, canonicalBlogSlug } from "@/lib/blog/article-aliases";
 
 function buildAllPosts(): BlogPost[] {
@@ -21,9 +23,14 @@ function buildAllPosts(): BlogPost[] {
   });
   posts.push(...buildGeneralPosts());
   posts.push(...FOCUSED_STUDY_GUIDES);
+  posts.push(...TOPIC_STUDY_GUIDES);
+  posts.push(...QUALIFICATION_STUDY_GUIDES);
   return posts.map(post => ({
     ...post,
-    relatedSlugs: [...new Set(post.relatedSlugs?.map(canonicalBlogSlug))].filter(slug => slug !== post.slug),
+    relatedSlugs: [...new Set([
+      ...(TOPIC_GUIDE_INCOMING_LINKS[post.slug] ?? []),
+      ...(post.relatedSlugs ?? []),
+    ].map(canonicalBlogSlug))].filter(slug => slug !== post.slug),
     body: Object.entries(BLOG_ARTICLE_ALIASES).reduce(
       (body, [alias, canonical]) => body.replaceAll(`/blog/${alias}`, `/blog/${canonical}`), post.body,
     ),
