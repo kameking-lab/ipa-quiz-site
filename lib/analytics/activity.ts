@@ -37,6 +37,7 @@ export async function readActivity(from: string, to: string): Promise<ActivityDa
   const unavailable: ActivityData = { available: false, rows: [] };
   const start = Date.parse(`${from}T00:00:00Z`), end = Date.parse(`${to}T00:00:00Z`);
   if (!/^\d{4}-\d{2}-\d{2}$/.test(from) || !/^\d{4}-\d{2}-\d{2}$/.test(to) || !Number.isFinite(start) || !Number.isFinite(end) || start > end || end - start >= 95 * 86400000) return unavailable;
+  if (new Date(start).toISOString().slice(0, 10) !== from || new Date(end).toISOString().slice(0, 10) !== to) return unavailable;
   const dates = Array.from({ length: (end - start) / 86400000 + 1 }, (_, i) => new Date(start + i * 86400000).toISOString().slice(0, 10));
   const payload = await pipeline(dates.map(day => ["HGETALL", key(day)]));
   if (!payload) return unavailable;

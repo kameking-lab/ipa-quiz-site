@@ -15,6 +15,10 @@ function beacon(body: unknown, headers: Record<string, string> = {}) {
 beforeEach(() => record.mockClear());
 
 describe("POST /api/funnel (anonymous beacon)", () => {
+  it("returns an observable storage failure instead of a success acknowledgement", async () => {
+    record.mockResolvedValueOnce(false);
+    expect((await POST(beacon({ event: "free_limit_reached" }))).status).toBe(503);
+  });
   it("counts a free limit by the first-touch source and qualification from the cookie", async () => {
     const touch = { utm_source: "tsugino_shikaku", utm_content: "sc.hero" };
     await POST(beacon({ event: "free_limit_reached" }, { cookie: `funnel_first_touch=${encodeURIComponent(JSON.stringify(touch))}` }));

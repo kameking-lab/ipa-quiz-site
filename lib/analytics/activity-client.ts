@@ -21,7 +21,9 @@ export function flushActivity(): void {
   pending = [];
   try {
     const body = JSON.stringify({ events });
-    if (typeof navigator.sendBeacon === "function" && navigator.sendBeacon("/api/activity", new Blob([body], { type: "text/plain;charset=UTF-8" }))) return;
+    try {
+      if (typeof navigator.sendBeacon === "function" && navigator.sendBeacon("/api/activity", new Blob([body], { type: "text/plain;charset=UTF-8" }))) return;
+    } catch { /* A browser policy may reject beacon; still try keepalive. */ }
     void fetch("/api/activity", { method: "POST", body, credentials: "omit", keepalive: true, headers: { "Content-Type": "text/plain;charset=UTF-8" } }).catch(() => {});
   } catch { /* Unsent counts are omitted, never retried as possible duplicates. */ }
 }

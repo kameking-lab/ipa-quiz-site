@@ -88,9 +88,9 @@ export default function AdminStatsPage() {
       <section className="mb-8 grid grid-cols-2 gap-3 sm:grid-cols-4">
         <KpiCard
           icon={<Gauge className="h-4 w-4" />}
-          label="DAU / WAU / MAU"
-          value="Vercel"
-          sub="Vercel Analytics で確認"
+          label="集計の単位"
+          value="回数"
+          sub="閲覧・解答などの操作回数"
           accent="primary"
         />
         <KpiCard
@@ -108,8 +108,8 @@ export default function AdminStatsPage() {
         <KpiCard
           icon={<Activity className="h-4 w-4" />}
           label="カスタムイベント"
-          value="9種"
-          sub="lib/analytics/events.ts"
+          value="閲覧・利用"
+          sub="既存KVに匿名集計"
         />
       </section>
 
@@ -200,7 +200,7 @@ export default function AdminStatsPage() {
             <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-primary-soft text-primary-soft-foreground">
               <Activity className="h-3.5 w-3.5" />
             </span>
-            トラッキング対象イベント
+            Vercel Analyticsの追加イベント
           </CardTitle>
           <CardDescription>
             <code className="rounded bg-muted px-1.5 py-0.5 font-mono text-[11px]">
@@ -258,7 +258,7 @@ export default function AdminStatsPage() {
             確認先
           </CardTitle>
           <CardDescription>
-            実数値・グラフは外部ダッシュボードで確認します。
+            アクセス・利用回数はこのページ上部に表示します。外部サービスの詳細は各ダッシュボードで確認できます。
           </CardDescription>
         </CardHeader>
         <CardContent>

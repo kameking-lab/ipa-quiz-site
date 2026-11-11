@@ -50,6 +50,10 @@ describe("resolveRange", () => {
     const m = resolveRange("custom", "bad-date", undefined, NOW);
     expect([m.from, m.to]).toEqual(["2026-05-15", "2026-05-15"]);
   });
+  it.each(["2026-99-99", "2026-02-31"])("custom: invalid calendar date %s cannot break the metrics API", value => {
+    const m = resolveRange("custom", value, value, NOW);
+    expect([m.from, m.to]).toEqual(["2026-05-15", "2026-05-15"]);
+  });
 });
 
 describe("rangeSpanDays", () => {

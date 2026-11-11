@@ -73,7 +73,7 @@ async function fetchTraffic24h(): Promise<Traffic24h> {
       return { source: "kv", available: activity.rows.length > 0, posthogConfigured: false, pageviews: count("page_view"), quizStarts, quizCompleted, aiQueries: count("ai_query_sent", "exam_library_ai_query"), blogViews: activity.rows.filter(r => r.event === "page_view" && r.page === "blog").reduce((n, r) => n + r.count, 0), quizConversionPct: quizStarts > 0 ? Math.round(quizCompleted / quizStarts * 100) : null };
     }
     const data = await fetchFunnelData(1);
-    if (!data.configured) {
+    if (!data.configured || data.queryFailed) {
       return {
         posthogConfigured: false,
         pageviews: 0,

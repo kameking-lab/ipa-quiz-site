@@ -8,8 +8,11 @@ import { GET } from "@/app/api/admin/metrics/route";
 import { ActivityReport } from "@/components/admin/ActivityReport";
 import { readActivity, recordActivity } from "@/lib/analytics/activity";
 import type { MetricsResponse } from "@/lib/admin/metrics/types";
+import { fetchLaunchMonitoringData } from "@/lib/admin/launch-monitoring/data";
 
 vi.mock("@/lib/rate-limit/server", () => ({ getClientIp: () => "local-fixture" }));
+vi.mock("@/lib/rate-limit", () => ({ getApiUsageStats: async () => { throw new Error("fixture: no API usage"); }, getApiCallsHourlySeries: async () => [] }));
+vi.mock("@/lib/stats/gsc", () => ({ isGscConfigured: () => false, fetchGsc30dTotals: async () => null }));
 const NOW = new Date("2026-11-10T15:30:00Z"); // Nov 11 in JST
 let server: Server;
 let commands: string[][];
@@ -18,7 +21,7 @@ let failCommand = false;
 
 beforeEach(async () => {
   commands = []; hashes = new Map(); failCommand = false;
-  vi.spyOn(Date, "now").mockReturnValue(NOW.getTime());
+  vi.useFakeTimers({ toFake: ["Date"] }); vi.setSystemTime(NOW);
   server = createServer(async (req, res) => {
     let raw = "";
     for await (const part of req) raw += part;
@@ -44,15 +47,31 @@ beforeEach(async () => {
   vi.stubEnv("KV_REST_API_URL", `http://127.0.0.1:${address.port}`);
   vi.stubEnv("KV_REST_API_TOKEN", "local-dummy-token");
   vi.stubEnv("POSTHOG_API_KEY", ""); vi.stubEnv("POSTHOG_PROJECT_ID", "");
+  vi.stubEnv("VERCEL_ACCESS_TOKEN", "");
 });
-afterEach(async () => { await new Promise<void>((resolve, reject) => server.close(err => err ? reject(err) : resolve())); vi.restoreAllMocks(); vi.unstubAllEnvs(); vi.unstubAllGlobals(); });
+afterEach(async () => { await new Promise<void>((resolve, reject) => server.close(err => err ? reject(err) : resolve())); vi.useRealTimers(); vi.restoreAllMocks(); vi.unstubAllEnvs(); vi.unstubAllGlobals(); });
 
 function request(body: unknown, extra: Record<string, string> = {}) {
   return new Request("http://localhost/api/activity", { method: "POST", headers: { "user-agent": "Mozilla/5.0", origin: "http://localhost", "sec-fetch-site": "same-origin", ...extra }, body: JSON.stringify(body) });
 }
 
 describe("local event → HTTP KV → admin aggregate → rendered dashboard", () => {
+  it("waits for the KV response before acknowledging the event", async () => {
+    let release!: (response: Response) => void;
+    let started!: () => void;
+    const writing = new Promise<Response>(resolve => { release = resolve; });
+    const entered = new Promise<void>(resolve => { started = resolve; });
+    vi.stubGlobal("fetch", vi.fn(() => { started(); return writing; }));
+    let finished = false;
+    const task = POST(request({ events: [{ event: "page_view", qualification: "sc", page: "question" }] })).then(response => { finished = true; return response; });
+    await entered;
+    expect(finished).toBe(false);
+    release(Response.json([{ result: 1 }, { result: 1 }]));
+    expect((await task).status).toBe(204);
+  });
   it("displays a page view, repeated answers and an offer with no PostHog configuration", async () => {
+    const empty = await GET(new Request("http://localhost/api/admin/metrics?range=custom&from=2026-11-11&to=2026-11-11"));
+    expect((await empty.json()).activity.rows).toEqual([]);
     const event = (event: string) => ({ event, qualification: "sc", page: "question" });
     const response = await POST(request({ events: [event("page_view"), ...Array.from({ length: 10 }, () => event("question_answered")), event("practice_limit_viewed")] }));
     expect(response.status).toBe(204);
@@ -62,12 +81,15 @@ describe("local event → HTTP KV → admin aggregate → rendered dashboard", (
     const admin = await GET(new Request("http://localhost/api/admin/metrics?range=custom&from=2026-11-11&to=2026-11-11"));
     const payload = await admin.json() as MetricsResponse;
     expect(payload.source).toBe("kv");
+    expect(admin.headers.get("cache-control")).toBe("no-store");
     if (payload.source !== "kv") throw new Error("aggregate unavailable");
     expect(payload.activity.rows).toEqual(expect.arrayContaining([expect.objectContaining({ event: "question_answered", count: 10, qualification: "sc", day: "2026-11-11" })]));
     const html = renderToStaticMarkup(<ActivityReport data={payload.activity} period="今日" />);
     expect(html).toContain("匿名アクセス集計"); expect(html).toContain("無料上限の案内表示"); expect(html).toContain("sc"); expect(html).toContain(">10<");
     const written = JSON.stringify(commands);
     for (const privateValue of ["Mozilla", "local-fixture", "local-dummy-token", "localhost", "email", "questionId", "userId"]) expect(written).not.toContain(privateValue);
+    const launch = await fetchLaunchMonitoringData();
+    expect(launch.traffic).toMatchObject({ source: "kv", available: true, pageviews: 1 });
   });
   it("keeps qualifiers separate and sums both standard and library answers", async () => {
     expect(await recordActivity([{ event: "question_answered", qualification: "ap", page: "quiz" }, { event: "exam_library_answered", qualification: "sagyo-kankyo-sokuteishi", page: "exam_library" }], NOW.getTime())).toBe(true);

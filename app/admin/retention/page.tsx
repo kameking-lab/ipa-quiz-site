@@ -125,6 +125,8 @@ export default async function AdminRetentionPage() {
         </p>
       </header>
 
+      {!latest && <p role="status" className="mb-6 rounded-xl border p-4 text-sm">{result.source === "unavailable" ? "継続率は未取得です。既存PostHogの接続設定・取得状況を確認してください。" : "この期間のコホート記録はありません。"}</p>}
+
       <section className="mb-6 grid gap-3 sm:grid-cols-3">
         <Card>
           <CardHeader>
