@@ -4,6 +4,7 @@ import { AP_BY_YEAR_QUESTIONS } from "@/data/questions/ap/by-year";
 import previousOverlay from "@/data/questions/ap/choice-explanations-cx-k3.json";
 import overlay from "@/data/questions/ap/choice-explanations-e-ap-1.json";
 import followingOverlay from "@/data/questions/ap/choice-explanations-e-ap-2.json";
+import latestOverlay from "@/data/questions/ap/choice-explanations-e-ap-3.json";
 import { applyIpaCorrections } from "@/data/questions/corrections";
 import { applyChoiceExplanationOverlay } from "@/lib/questions/apply-choice-explanations";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -11,7 +12,10 @@ import { getQuestionsForExam } from "@/lib/questions/get-questions";
 describe("AP e-ap-1 choice explanations", () => {
   it("adds complete reasons without altering any question, answer or previous explanation", () => {
     const before = applyChoiceExplanationOverlay(
-      applyChoiceExplanationOverlay(applyIpaCorrections("ap", AP_BY_YEAR_QUESTIONS), previousOverlay),
+      applyChoiceExplanationOverlay(
+        applyChoiceExplanationOverlay(applyIpaCorrections("ap", AP_BY_YEAR_QUESTIONS), previousOverlay),
+        latestOverlay,
+      ),
       followingOverlay,
     );
     expect(AP_QUESTIONS).toHaveLength(before.length);
