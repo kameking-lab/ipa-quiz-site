@@ -65,13 +65,22 @@ test("unverified difficulty is not shown and the existing inline draft is retain
   await editor.clear();
 });
 
-test("only the recognized article notice is upright on the existing article route", async ({ page }) => {
-  for (const route of ["/blog/ipa-gozen1-menjo-jouken", "/blog/fe-goukaku-benkyouhou"]) {
-    await page.goto(route);
-    const notice = page.locator('blockquote[data-article-notice="true"]');
-    await expect(notice).toHaveCount(1);
-    await expect(notice).toContainText("学習ガイド");
-    await expect(notice).toHaveCSS("font-style", "normal");
-    await expect(notice.getByRole("link", { name: "IPA 公式ページ" })).toHaveAttribute("href", /https:\/\/www\.ipa\.go\.jp\//);
-  }
+test("updated CBT exemption article keeps its official source without the retired notice", async ({ page }) => {
+  await page.goto("/blog/ipa-gozen1-menjo-jouken");
+  await expect(page.getByRole("heading", { level: 1 })).toHaveText("高度試験の午前I免除は後期CBTでも使える？科目A-1の対象回と確認手順");
+  const body = page.locator("#article-body");
+  await expect(body.getByRole("link", { name: "IPA公式の後期免除対象一覧", exact: true })).toHaveAttribute("href", "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html");
+  await expect(body.locator('blockquote[data-article-notice="true"]')).toHaveCount(0);
+  await expect(body).not.toContainText("独自にまとめた学習ガイドです");
+});
+
+test("existing FE article renders its concise official notice upright", async ({ page }) => {
+  await page.goto("/blog/fe-goukaku-benkyouhou");
+  const body = page.locator("#article-body");
+  const notice = body.locator('blockquote[data-article-notice="true"]');
+  await expect(notice).toHaveCount(1);
+  await expect(notice).toHaveText("試験要項の最新情報は必ず IPA 公式ページ で確認してください。");
+  await expect(notice).toHaveCSS("font-style", "normal");
+  await expect(notice.getByRole("link", { name: "IPA 公式ページ" })).toHaveAttribute("href", "https://www.ipa.go.jp/shiken/");
+  await expect(body).not.toContainText("独自にまとめた学習ガイドです");
 });

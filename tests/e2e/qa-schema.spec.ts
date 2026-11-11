@@ -8,9 +8,15 @@ async function pickQuestionUrl(request: APIRequestContext): Promise<string> {
   return new URL(recent ?? locs[0]).pathname;
 }
 
+interface AnswerNode {
+  "@type": string;
+  text?: string;
+  url?: string;
+}
+
 interface QuestionNode {
   "@type": string;
-  acceptedAnswer?: { "@type": string; text?: string; url?: string };
+  acceptedAnswer?: AnswerNode | AnswerNode[];
   suggestedAnswer?: unknown;
   answerCount?: number;
 }
@@ -44,13 +50,41 @@ test.describe("question structured-data semantics", () => {
 
     expect(question).not.toBeNull();
     expect(question?.["@type"]).toBe("Question");
-    expect(question?.acceptedAnswer).toMatchObject({
-      "@type": "Answer",
-      url: expect.stringMatching(/#explanation$/),
-    });
-    expect(question?.acceptedAnswer?.text).toBeTruthy();
+    expectEducationalAnswers(question, path);
     expect(question?.suggestedAnswer).toBeUndefined();
     expect(question?.answerCount).toBeUndefined();
     expect(html).not.toContain('"@type":"QAPage"');
   });
+
+  for (const { path, count } of [
+    { path: "/q/ap/2023-spring/am/q1", count: 1 },
+    { path: "/q/unko-kanrisha-ryokaku/2024-cbt/gakka/q1", count: 2 },
+  ]) {
+    test(`SSR preserves ${count === 1 ? "single-choice" : "multi-select"} accepted answers at ${path}`, async ({ request }) => {
+      const response = await request.get(path);
+      expect(response.status()).toBe(200);
+      const html = await response.text();
+      const question = findLearningQuestion(html);
+      const answers = expectEducationalAnswers(question, path);
+      expect(Array.isArray(question?.acceptedAnswer)).toBe(count > 1);
+      expect(answers).toHaveLength(count);
+      expect(new Set(answers.map(answer => answer.text)).size).toBe(count);
+      expect(question?.suggestedAnswer).toBeUndefined();
+      expect(question?.answerCount).toBeUndefined();
+      expect(html).not.toContain('"@type":"QAPage"');
+    });
+  }
 });
+
+function expectEducationalAnswers(question: QuestionNode | null, path: string): AnswerNode[] {
+  expect(question?.["@type"]).toBe("Question");
+  expect(question?.acceptedAnswer).toBeDefined();
+  const accepted = question!.acceptedAnswer!;
+  const answers = Array.isArray(accepted) ? accepted : [accepted];
+  expect(answers.length).toBeGreaterThan(0);
+  for (const answer of answers) {
+    expect(answer).toMatchObject({ "@type": "Answer", url: `https://www.kakomon-ai.jp${path}#explanation` });
+    expect(answer.text?.trim()).toBeTruthy();
+  }
+  return answers;
+}

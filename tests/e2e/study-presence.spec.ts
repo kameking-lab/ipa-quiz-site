@@ -166,13 +166,23 @@ async function expectBounded(page: Page) {
 }
 async function expectGuidance(page: Page) {
   const guidance = page.getByRole("region", { name: "学習のご案内" });
-  await expect(guidance.getByRole("link", { name: "ほかの資格を探す", exact: true })).toHaveAttribute("href", "#choose-qualification");
-  const suggestions = guidance.locator(".study-room-guidance li a");
-  await expect(suggestions).toHaveCount(6);
-  for (const link of await suggestions.all()) await expect(link).toHaveAttribute("href", /^\/(?!\/)/);
+  // Without a measurement, qualifications are discovered through the seat selector.
+  // The directory list is shown only after a real measurement with zero learners.
+  await expect(guidance.locator(".study-room-summary")).toHaveCount(0);
+  await expect(guidance.getByRole("link", { name: "ほかの資格を探す", exact: true })).toHaveCount(0);
+  const seats = guidance.getByRole("group", { name: "自習室の席を選ぶ", exact: true }).getByRole("button");
+  await expect(seats).toHaveCount(6);
+  await seats.first().click();
+  const selection = guidance.locator("#study-room-selection");
+  await expect(selection.getByRole("heading")).toBeVisible();
+  await expect(selection.getByRole("link", { name: /の問題を見る$/ })).toHaveAttribute("href", /^\/(?!\/)/);
+  await selection.getByRole("button", { name: "選択を戻す", exact: true }).click();
+  await expect(seats.first()).toBeFocused();
+  await expect(seats.first()).toHaveAttribute("aria-pressed", "false");
+  await expect(selection.getByRole("link")).toHaveCount(0);
   await expect(guidance.getByRole("link", { name: "資格を選んで1問始める", exact: true })).toHaveCount(1);
   for (const link of await guidance.getByRole("link", { name: "資格を選んで1問始める", exact: true }).all()) await expect(link).toHaveAttribute("href", "/#choose-qualification");
-  await expect(guidance.getByRole("link")).toHaveCount(8);
+  await expect(guidance.getByRole("link")).toHaveCount(1);
   await expect(guidance.getByText(/実際の学習人数では|利用者個人や実際の行動/)).toHaveCount(0);
   await expect(guidance.getByRole("list", { name: "資格別の学習人数" })).toHaveCount(0);
   await expect(guidance.locator("time")).toHaveCount(0);
@@ -218,6 +228,11 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
     await expect(region.getByRole("region", { name: "あなたの席", exact: true }).getByRole("button", { name: "チワワのひと休みを閉じる", exact: true })).toBeVisible();
     await expect(region.getByRole("link", { name: "ほかの資格を探す", exact: true })).toHaveCount(0);
     await expect(region.getByRole("link", { name: "資格から問題を探す", exact: true })).toBeVisible();
+    await expect(region.getByRole("link", { name: "資格から問題を探す", exact: true })).toHaveAttribute("href", "#home-directory-title");
+    await expect(page.locator("#home-directory-title")).toHaveCount(1);
+    const suggestions = region.locator(".study-room-guidance li a");
+    await expect(suggestions).toHaveCount(6);
+    for (const link of await suggestions.all()) await expect(link).toHaveAttribute("href", /^\/(?!\/)/);
     await expect(region.getByRole("link", { name: "資格を選んで1問始める", exact: true })).toHaveCount(1);
     await expect(region.getByRole("link")).toHaveCount(8);
     await expectBounded(page);
