@@ -86,12 +86,16 @@ describe('aviation communication68 local registration candidate',()=>{
   // IOS-FIX (PR #807) pins the opaque sticky header and the post-answer bar
   // without a second next button (the inline 「次の問題へ」 is the only one).
   // ktidy removes only the frozen X share link. Keep the historical INT8 pin.
-  // e-kako-pet moves reviewed pet presentation; the answer handler stays pinned below.
+  // e-kako-pet moves reviewed pet presentation. e-kako-funnel adds one answer
+  // observation; removing that exact addition must retain the historical handler.
   expect(normalizedTextSha256(player)).toBe(releaseRuntimePins['components/quiz/QuizPlayer.tsx']);
   expect(player).not.toContain('twitter.com/intent/tweet');
   expect(player).toContain('NativeQuestionGate');
   expect(petdevRuntimePins.previousCommitAnswer).toBe(kperfRuntimePins.commitAnswer);
-  expect(normalizedTextSha256(player.slice(player.indexOf('  const commitAnswer ='), player.indexOf('  const onNativeBAnswer =')))).toBe(petdevRuntimePins.commitAnswer);
+  const answerHandler=player.slice(player.indexOf('  const commitAnswer ='), player.indexOf('  const onNativeBAnswer =')).replace(/\r\n/g,'\n');
+  const journeyObservation='      observeJourney({ qualification: question.exam, answer: true });\n';
+  expect(answerHandler.split(journeyObservation)).toHaveLength(2);
+  expect(normalizedTextSha256(answerHandler.replace(journeyObservation,''))).toBe(petdevRuntimePins.commitAnswer);
   expect(player).not.toContain('ExamNoteGuide');
   expect(player).not.toContain('GenerateSimilar');
   expect(player).not.toContain('/api/generate-question');
