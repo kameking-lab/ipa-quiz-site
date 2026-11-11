@@ -1,0 +1,34 @@
+{
+  "exam": "biru-kan",
+  "year": 2026,
+  "round": 56,
+  "checkedAt": "2026-11-12",
+  "officialIndexUrl": "https://www.jahmec.or.jp/kokka/",
+  "documents": [
+    {
+      "kind": "questions-am",
+      "url": "https://www.jahmec.or.jp/kokka/shiken_pdf/2026/2026shiken_am.pdf",
+      "sha256": "61938c1b4fe34060a2564d4342f6c7aea154471e70b9dd8acdba34e2befe8384",
+      "bytes": 2083530,
+      "pages": 31
+    },
+    {
+      "kind": "official-answers",
+      "url": "https://www.jahmec.or.jp/kokka/shiken_pdf/2026/2026kizyun_seitou.pdf",
+      "sha256": "35c59c2742819e369e07f6250693a8cbbef224511aabf2c9740238c99ac23ead",
+      "bytes": 114745,
+      "pages": 1
+    }
+  ],
+  "duplicateCheck": {
+    "ledgerKey": "biru-kan|2026|annual",
+    "ledgerStatus": "未着手",
+    "originMainCommit": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+    "originMainYears": [
+      2024,
+      2025
+    ],
+    "matchingOpenPrCount": 0,
+    "target2026BranchCount": 0
+  }
+}
