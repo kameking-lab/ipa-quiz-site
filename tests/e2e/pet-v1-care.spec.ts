@@ -1,16 +1,18 @@
 import { expect, test } from "@playwright/test";
+import { roomPet, careButton } from "./helpers/pet-ui";
 import { allowLoopbackWebKit } from "./helpers/local-webkit";
 import { emptyPetProfiles, petLearningFactSchema, serializePetProfileDocument } from "../../lib/pet/v1/profile";
 import { applyPetLearningFact } from "../../lib/pet/v1/learning";
 import { applyPetCare } from "../../lib/pet/v1/care";
 const key = "ipa-quiz:pet-profiles:v1:guest";
-const quiz = "/quiz?mode=year&exam=ap&year=2023&season=spring&session=am";
+const quiz = "/";
 function prepared() {
   const at = Date.parse("2026-10-01T12:00:00+09:00"); let doc = emptyPetProfiles("guest", "Asia/Tokyo");
   const learn = (q: number, day: number) => { doc = applyPetLearningFact(doc, petLearningFactSchema.parse({ eventId: `q${q}-${day}`, ownerScope: "guest", qualificationId: "ap", canonicalQuestionId: `q${q}`, contentVersion: "v1", sessionId: `s-${day}`, attemptKind: "answer", grade: "correct", fieldId: `field-${q % 3}`, reviewCycleId: null, occurredAt: at + day * 86_400_000, policyVersion: 1 })).document; };
   for (let i = 0; i < 20; i++) learn(i, 0);
   for (const day of [2, 4, 6]) learn(0, day);
   applyPetCare(doc, "ap", { type: "autoFeed", enabled: false }, at + 6 * 86_400_000); learn(0, 8);
+  doc.profiles[0].selectedStage = "partner";
   return serializePetProfileDocument(doc);
 }
 test.use({ isMobile: true, hasTouch: true, viewport: { width: 390, height: 844 }, reducedMotion: "reduce", serviceWorkers: "block" });
@@ -21,11 +23,11 @@ for (const width of [320, 390]) test(`care, reversible forms and backed-up resto
   const errors: string[] = []; page.on("pageerror", error => errors.push(error.message));
   await page.addInitScript(({ key, raw }) => { if (!localStorage.getItem(key)) localStorage.setItem(key, raw); }, { key, raw: prepared() });
   await page.goto(quiz);
-  const corner = page.locator("section[data-pet-id]");
+  const corner = roomPet(page);
   await expect(corner).toHaveAttribute("data-pet-id", '["guest","ap"]', { timeout: 15000 });
   const read = () => page.evaluate(key => JSON.parse(localStorage.getItem(key)!), key);
   const original = await read();
-  await corner.getByRole("button", { name: "育成を見る" }).tap();
+  await careButton(page).tap();
   const sheet = page.getByRole("dialog", { name: "チワワの育成" }); await expect(sheet).toBeVisible();
   await sheet.locator("summary").filter({ hasText: /^姿$/ }).tap();
   await expect(sheet.getByRole("button", { name: "学習の相棒", exact: true })).toBeEnabled();
@@ -64,7 +66,7 @@ for (const width of [320, 390]) test(`care, reversible forms and backed-up resto
   await page.screenshot({ path: `test-results/pet-v1/${process.env.PET_EVIDENCE_PHASE ?? "regression"}-care-${width}-${browserName}.png` });
   const sheetBox = await sheet.boundingBox(); expect(sheetBox!.x).toBeGreaterThanOrEqual(0); expect(sheetBox!.x + sheetBox!.width).toBeLessThanOrEqual(width);
   expect(await sheet.evaluate(el => el.scrollWidth <= el.clientWidth)).toBe(true);
-  await page.keyboard.press("Escape"); await expect(sheet).toHaveCount(0); await expect(corner.getByRole("button", { name: "育成を見る" })).toBeFocused();
+  await page.keyboard.press("Escape"); await expect(sheet).toHaveCount(0); await expect(careButton(page)).toBeFocused();
   await page.reload(); await expect(corner.getByRole("heading")).toContainText("こむぎ"); await expect(corner).toHaveAttribute("data-pet-pose", "study");
   expect(errors).toEqual([]);
 });
@@ -72,8 +74,8 @@ for (const width of [320, 390]) test(`care, reversible forms and backed-up resto
 test("keyboard focus stays in the sheet and stale/other-owner restores leave saved pets intact", async ({ page }) => {
   await page.route("**/api/auth/session", route => route.fulfill({ json: {} }));
   await page.addInitScript(({ key, raw }) => localStorage.setItem(key, raw), { key, raw: prepared() });
-  await page.goto(quiz); const corner = page.locator("section[data-pet-id]");
-  await corner.getByRole("button", { name: "育成を見る" }).click();
+  await page.goto(quiz);
+  await careButton(page).click();
   const sheet = page.getByRole("dialog", { name: "チワワの育成" });
   for (let i = 0; i < 16; i++) { await page.keyboard.press("Tab"); expect(await sheet.evaluate(el => el.contains(document.activeElement))).toBe(true); }
   await sheet.locator("summary").filter({ hasText: /^設定$/ }).click();
@@ -97,7 +99,7 @@ test("a pending safety copy cannot be downloaded after an unnoticed auth-owner c
   await page.route("**/api/auth/session", route => route.fulfill({ json: switched ? { user: { id: "other" } } : {} }));
   await page.addInitScript(({ key, raw }) => localStorage.setItem(key, raw), { key, raw: prepared() });
   page.on("download", () => downloads++);
-  await page.goto(quiz); await page.getByRole("button", { name: "育成を見る" }).click();
+  await page.goto(quiz); await careButton(page).click();
   const sheet = page.getByRole("dialog", { name: "チワワの育成" });
   await sheet.locator("summary").filter({ hasText: /^設定$/ }).click();
   const original = await page.evaluate(key => localStorage.getItem(key)!, key);

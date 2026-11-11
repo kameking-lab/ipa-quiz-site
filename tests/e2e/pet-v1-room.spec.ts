@@ -1,7 +1,7 @@
 import { expect, test } from "@playwright/test";
 import { emptyPetProfiles, newPetProfile, serializePetProfileDocument } from "../../lib/pet/v1/profile";
 import { allowLoopbackWebKit } from "./helpers/local-webkit";
-import { petArtFor } from "../../lib/pet/v1/art";
+import { petPortraitFor } from "../../lib/pet/v1/art";
 const key = "ipa-quiz:pet-profiles:v1:guest";
 function seed() {
   const doc = emptyPetProfiles("guest", "Asia/Tokyo"), pet = newPetProfile("guest", "ap");
@@ -21,7 +21,7 @@ for (const width of [320, 390]) test(`private room child and saved event survive
   await expect(own).toHaveAttribute("data-own-pet-id", '["guest","ap"]', { timeout: 15000 });
   await expect(own).toHaveAttribute("data-room-scene", "first-meeting");
   await expect(own.getByRole("button", { name: "こむぎ・応用情報技術者（名前を変える）" })).toBeVisible();
-  await expect(own.locator("img").first()).toHaveAttribute("src", petArtFor("ap", "partner", "study"));
+  await expect(own.locator("img").first()).toHaveAttribute("src", petPortraitFor("ap", "partner", "study"));
   await expect(own).toContainText("図のつながりを、もう一度。");
   const before = await page.evaluate(key => localStorage.getItem(key), key), text = await own.textContent();
   await own.scrollIntoViewIfNeeded();
@@ -41,6 +41,6 @@ for (const width of [320, 390]) test(`private room child and saved event survive
   await sheet.getByRole("button", { name: "こいぬ", exact: true }).tap();
   await expect(sheet.getByRole("button", { name: "こいぬ", exact: true })).toHaveAttribute("aria-pressed", "true");
   await page.keyboard.press("Escape");
-  await expect(own.locator("img").first()).toHaveAttribute("src", petArtFor("ap", "puppy", "study"));
+  await expect(own.locator("img").first()).toHaveAttribute("src", petPortraitFor("ap", "puppy", "study"));
   await expect(own).toHaveAttribute("data-room-scene", "first-meeting");
 });

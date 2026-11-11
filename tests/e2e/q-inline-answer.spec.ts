@@ -1,4 +1,4 @@
-import { test, expect, type APIRequestContext } from "@playwright/test";
+import { test, expect } from "@playwright/test";
 
 /**
  * /q/* inline "solve in place" + SSR-preservation guard (致命傷⑤).
@@ -11,22 +11,15 @@ import { test, expect, type APIRequestContext } from "@playwright/test";
  *      reveals correct/incorrect and surfaces the explanation, no navigation.
  */
 
-/** Pick a real /q URL from the questions sitemap, preferring an SSG'd recent
- *  year so the page is prerendered (fast) rather than ISR-on-first-hit. */
-async function pickQuestionUrl(request: APIRequestContext): Promise<string> {
-  const xml = await (await request.get("/sitemap/questions/0.xml")).text();
-  const locs = [...xml.matchAll(/<loc>([^<]+\/q\/[^<]+)<\/loc>/g)].map((m) => m[1]);
-  expect(locs.length, "questions sitemap must list /q/ URLs").toBeGreaterThan(0);
-  const recent = locs.find((u) => /\/q\/[^/]+\/(202[4-9]|20[3-9]\d)-/.test(u));
-  const abs = recent ?? locs[0];
-  return new URL(abs).pathname; // baseURL-relative
-}
+// Keep the single-choice contract independent of sitemap ordering. New exams
+// can put multi-select, numeric or ordering questions at the start of a chunk.
+const singleChoicePath = "/q/ap/2023-spring/am/q1";
 
 test.describe("/q inline answer", () => {
   test("server-rendered HTML keeps the choices + honest JSON-LD (SEO/no-JS)", async ({
     request,
   }) => {
-    const path = await pickQuestionUrl(request);
+    const path = singleChoicePath;
     const res = await request.get(path);
     expect(res.status()).toBe(200);
     const html = await res.text();
@@ -44,9 +37,8 @@ test.describe("/q inline answer", () => {
 
   test("clicking a choice grades in place and reveals the explanation (no nav)", async ({
     page,
-    request,
   }) => {
-    const path = await pickQuestionUrl(request);
+    const path = singleChoicePath;
     await page.goto(path);
 
     const urlBefore = page.url();
@@ -66,14 +58,35 @@ test.describe("/q inline answer", () => {
 
   test("a choice is keyboard-operable (role=radio, Enter activates)", async ({
     page,
-    request,
   }) => {
-    const path = await pickQuestionUrl(request);
+    const path = singleChoicePath;
     await page.goto(path);
     const first = page.getByRole("radio").first();
     await first.focus();
     await page.keyboard.press("Enter");
     await expect(page.getByText(/正解|不正解/).first()).toBeVisible();
+  });
+
+  test("a multi-select image question keeps checkboxes in SSR and requires both choices before grading", async ({ page, request }) => {
+    const path = "/q/unko-kanrisha-ryokaku/2024-cbt/gakka/q1";
+    const response = await request.get(path);
+    expect(response.status()).toBe(200);
+    const html = await response.text();
+    expect(html).toContain('"@type":"LearningResource"');
+    expect(html).toContain('role="group"');
+    expect((html.match(/role="checkbox"/g) ?? []).length).toBe(4);
+    expect(html).toContain("/images/questions/unko-kanrisha-ryokaku/2024-page-01.png");
+    await page.goto(path);
+    const choices = page.getByRole("checkbox");
+    await expect(choices).toHaveCount(4);
+    const confirm = page.getByRole("button", { name: "回答を確定", exact: true });
+    await choices.nth(1).click();
+    await expect(confirm).toBeDisabled();
+    await choices.nth(2).click();
+    await expect(confirm).toBeEnabled();
+    await confirm.click();
+    await expect(page.getByRole("status").filter({ hasText: "正解です。下に解説があります。" })).toBeAttached();
+    expect(new URL(page.url()).pathname).toBe(path);
   });
 
   test("an anonymous learner can prepare and manually send an inline AI question about a wrong answer without navigation", async ({ page }) => {
