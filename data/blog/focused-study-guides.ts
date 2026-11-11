@@ -355,3 +355,11 @@ FROMに並んだ二表を、WHEREのe.dept_id = d.dept_idで対応付けてい�
 `,
   },
 ];
+
+export const FOCUSED_GUIDE_INCOMING_LINKS: Readonly<Record<string, string[]>> = {
+  "sc-ronbun-taisaku": ["sc-access-rights-lifecycle", "sc-incident-response-storytelling"],
+  "sc-incident-response-storytelling": ["sc-access-rights-lifecycle"],
+  "db-sql-taisaku": ["db-join-sum-granularity", "db-er-design-practice"],
+  "db-er-design-practice": ["db-join-sum-granularity"],
+  "fe-goukaku-benkyouhou": ["fe-sql-join-column-reading"],
+};

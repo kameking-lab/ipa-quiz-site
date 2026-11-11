@@ -23,6 +23,7 @@ import { questionPagePath } from "@/lib/seo/question-url";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { ORG_ID, SITE_LOGO_IMAGE, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
 import { examLabel, formatYearSeason } from "@/lib/utils";
+import { ALL_EXAM_CODES } from "@/lib/exam-config";
 import { ContentEndAd } from "@/components/ads/ContentEndAd";
 import { getRecommendedBooks } from "@/data/recommended-books";
 
@@ -104,6 +105,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
   if (!post) notFound();
 
   const url = `${SITE_BASE_URL}/blog/${slug}`;
+  const isIpaArticle = !post.exam || ALL_EXAM_CODES.some(exam => exam === post.exam);
   const related = getRelatedPosts(slug, 4);
   const practice = getBlogPractice(slug);
   const relatedQuestions = getRelatedQuestionsForPost(post.exam, post.tags, 3, post.relatedQuestionIds);
@@ -152,6 +154,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
         "@type": "WebPage",
         "@id": url,
       },
+      citation: post.sourceUrls,
     },
     {
       "@type": "LearningResource",
@@ -444,7 +447,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
         </section>
       ) : null}
 
-      <section className="mt-10 text-xs text-zinc-500 dark:text-zinc-500">
+      {isIpaArticle && <section className="mt-10 text-xs text-zinc-500 dark:text-zinc-500">
         <p>
           試験要項の最新情報は必ず{" "}
           <a
@@ -457,14 +460,14 @@ export default async function BlogArticlePage({ params }: PageProps) {
           </a>
           で確認してください。
         </p>
-      </section>
+      </section>}
 
       {isBlogAdEligible(post) && <ContentEndAd />}
 
       {/* Print-only attribution */}
       <div className="print-only hidden mt-8 border-t border-gray-300 pt-4 text-[10pt] text-gray-600">
         <p>過去問AI（https://www.kakomon-ai.jp/blog/{slug}）より印刷</p>
-        <p className="mt-1">出典: IPA 情報処理技術者試験（https://www.ipa.go.jp/shiken/）</p>
+        {post.sourceUrls?.length ? post.sourceUrls.map(source => <p key={source} className="mt-1">参照資料: {source}</p>) : isIpaArticle ? <p className="mt-1">出典: IPA 情報処理技術者試験（https://www.ipa.go.jp/shiken/）</p> : null}
       </div>
     </main>
   );
