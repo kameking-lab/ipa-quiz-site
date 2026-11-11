@@ -1,6 +1,7 @@
 import { getProvider, type ChatMessage, type StreamCompletion } from "@/lib/ai/provider";
 import { checkMonthlyCostCap, recordAiCost, textBudget } from "@/lib/ai/cost-guard";
 import { tierForModel } from "@/lib/ai/cost-tracker";
+import { providerErrorDiagnostic } from "@/lib/ai/provider-error";
 import { checkIpRateLimit } from "@/lib/rate-limit";
 import { checkRateLimit, getClientIp } from "@/lib/rate-limit/server";
 import { SYSTEM_PROMPT, TEXT_INPUT_SYSTEM } from "@/lib/printapp/prompts";
@@ -44,6 +45,9 @@ async function readBody(req: Request): Promise<unknown> {
 }
 
 export async function POST(req: Request): Promise<Response> {
+  const started = Date.now();
+  let stage = "provider";
+  let privateText: string[] = [];
   // Public client identification, not a secret or an authentication credential.
   // Shared rate limits and atomic budget admission remain mandatory for real AI.
   if (req.headers.get("x-printapp-client") !== "printapp-mobile-v1") {
@@ -60,6 +64,7 @@ export async function POST(req: Request): Promise<Response> {
   try {
     const provider = await getProvider("gemini");
     const mock = provider.name === "mock";
+    stage = "rate_limit";
     const ipLimit = await checkIpRateLimit(req, "printapp-analyze", { requireKv: !mock });
     if (!ipLimit.ok) {
       return reply({ error: ipLimit.reason === "unavailable" ? "現在解析を利用できません。" : "時間をおいてお試しください。" },
@@ -97,6 +102,9 @@ export async function POST(req: Request): Promise<Response> {
         : `【ユーザーが貼り付けたテキスト】\n\n${input.text}`,
       ...(hasImage ? { images: [{ mimeType: input.mimeType, data: input.imageBase64 }] } : {}),
     }];
+    privateText = [system, ...messages.map((message) => message.content),
+      ...(hasImage ? [input.imageBase64, input.userPrompt ?? ""] : [input.text])];
+    stage = "budget";
     const tier = tierForModel(MODEL);
     const budget = textBudget(tier, system, messages, MAX_OUTPUT_TOKENS);
     if (hasImage) budget.inputTokens = IMAGE_INPUT_TOKEN_BOUND;
@@ -105,6 +113,7 @@ export async function POST(req: Request): Promise<Response> {
 
     let completion: StreamCompletion | undefined;
     let output = "";
+    stage = "stream";
     try {
       for await (const chunk of provider.streamChat({
         system, messages, model: MODEL, maxTokens: MAX_OUTPUT_TOKENS,
@@ -127,9 +136,12 @@ export async function POST(req: Request): Promise<Response> {
       }
       console.info("[printapp-analyze] completion", { provider: provider.name, model: MODEL,
         finishReason: completion?.finishReason, truncated: completion?.truncated,
-        promptTokens: completion?.promptTokens, outputTokens: completion?.outputTokens });
+        promptTokens: completion?.promptTokens, outputTokens: completion?.outputTokens,
+        elapsedMs: Date.now() - started,
+        imageBytes: hasImage ? Buffer.byteLength(input.imageBase64, "base64") : 0 });
     }
     if (completion?.truncated || completion?.finishReason !== "STOP") {
+      console.error("[printapp-analyze] incomplete", { finishReason: completion?.finishReason ?? null });
       return reply({ error: "解析が完了しませんでした。もう一度お試しください。" }, 502);
     }
     try {
@@ -137,10 +149,13 @@ export async function POST(req: Request): Promise<Response> {
       const result = analysisResult.parse(JSON.parse(json));
       return reply({ ...result, analysisMode: mock ? "mock" : "ai", finishReason: completion.finishReason });
     } catch {
+      // JSON/Zod errors can contain the model output. Log only the category.
+      console.error("[printapp-analyze] invalid_result", { outputChars: output.length });
       return reply({ error: "解析結果を読み取れませんでした。" }, 502);
     }
-  } catch {
-    // Never log the request body, image, model output, SDK error or credentials.
+  } catch (error) {
+    console.error("[printapp-analyze] failed", { stage, elapsedMs: Date.now() - started,
+      ...providerErrorDiagnostic(error, privateText) });
     return reply({ error: "解析できませんでした。時間をおいてお試しください。" }, 502);
   }
 }
