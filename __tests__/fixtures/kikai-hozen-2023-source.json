@@ -1,0 +1,383 @@
+{
+  "paperUrl": "https://www.kikaihozenshi.jp/pdf/2023/2023_2kyu_kikai_mondai.pdf",
+  "answerUrl": "https://www.kikaihozenshi.jp/pdf/2023/2023_2kyu_kikai_kaitou.pdf",
+  "paperSha256": "72247222262a0b8b001df8e339448a8ccf439203a35e885fc0ea91d05fc53cfa",
+  "answerSha256": "4ab188d61d82efb8b1d1937b1273f5a7edd4a473af9de81e3b7edc38fd824416",
+  "checkedAt": "2026-11-12",
+  "examDate": "2023-12-17",
+  "method": "PyMuPDFの問番号座標で本文・選択肢を分割し、全9ページと正解表の描画画像を目視照合。全角英数字と改行・空白を整理。問4の指数と問17の上線を描画画像から復元。図表5点は原本を3倍描画して切り出したロスレスWebP。",
+  "sourceTextSha256Definition": "sha256(UTF-8(NFC(JSON.stringify({question, choices}))))",
+  "questions": [
+    {
+      "number": 1,
+      "page": 1,
+      "officialAnswer": "×",
+      "textSha256": "79095207875bb458db0ab1696cb784f003ce59d12e8cdd4f0951a9329759e195"
+    },
+    {
+      "number": 2,
+      "page": 1,
+      "officialAnswer": "〇",
+      "textSha256": "de8a5d7f589bffa4b475ce003f4d3120bd68a62f71f411fc5325ed2e4aab5829"
+    },
+    {
+      "number": 3,
+      "page": 1,
+      "officialAnswer": "〇",
+      "textSha256": "12e0354de0a22b7a709314c6bc27f42749d5a38b94a4202869938df2a27fe12a"
+    },
+    {
+      "number": 4,
+      "page": 1,
+      "officialAnswer": "〇",
+      "textSha256": "56672571656b11c49b0aafa4e582a46b6d5586e84519b48ec46e142a827407b1"
+    },
+    {
+      "number": 5,
+      "page": 1,
+      "officialAnswer": "〇",
+      "textSha256": "a611c57fed693e4d4a7614c2562369117cb3feb95c2b2573013bc92dc6315563"
+    },
+    {
+      "number": 6,
+      "page": 1,
+      "officialAnswer": "×",
+      "textSha256": "7e116fc94e655583970261e0e442246a85004789682bee64dff093d8ba129a58"
+    },
+    {
+      "number": 7,
+      "page": 1,
+      "officialAnswer": "〇",
+      "textSha256": "a54e3930c468e88357140546998604d048fe65d731c0d216623bfc58923a0040"
+    },
+    {
+      "number": 8,
+      "page": 1,
+      "officialAnswer": "×",
+      "textSha256": "b29a44dbe096fba701675ef6a8cf4e3784a91bd0c3db6e077ac4f5842467e144"
+    },
+    {
+      "number": 9,
+      "page": 1,
+      "officialAnswer": "×",
+      "textSha256": "70b7c8996be3e4c3c3bd35afb352502644bdd7121eb562b42b9e3d06b5d34553"
+    },
+    {
+      "number": 10,
+      "page": 1,
+      "officialAnswer": "〇",
+      "textSha256": "d2624433768f43a792cf71d536e4bfe305c31239ac3d650df206bae2a7a4d1e4"
+    },
+    {
+      "number": 11,
+      "page": 1,
+      "officialAnswer": "×",
+      "textSha256": "65797086581d4837f85a515b5c8210d5c64ac5b60ccffe97583ca02658db808b"
+    },
+    {
+      "number": 12,
+      "page": 1,
+      "officialAnswer": "〇",
+      "textSha256": "336b6cd5bd42742e80e5b54f734d1e628b9aea4e68ac7c3b36ad12754f096309"
+    },
+    {
+      "number": 13,
+      "page": 1,
+      "officialAnswer": "×",
+      "textSha256": "f794d61bff30dc4276edd71fb1077a137aa2d4e9bf67b10ea067ea4642a5a996"
+    },
+    {
+      "number": 14,
+      "page": 1,
+      "officialAnswer": "×",
+      "textSha256": "ce22f8366deef4a6bad3a8a8299ffba901d21ab916e681b765208e6e3bd23e2b"
+    },
+    {
+      "number": 15,
+      "page": 1,
+      "officialAnswer": "〇",
+      "textSha256": "bdd704a78f0bf3e333e3b614f04dcccf1f0def4fce7a0286c7cb76adf0348760"
+    },
+    {
+      "number": 16,
+      "page": 1,
+      "officialAnswer": "×",
+      "textSha256": "48e27b5b8c5d00d28824c582ade78f70f36295ba9d8198cbee2fb429c118e3bf"
+    },
+    {
+      "number": 17,
+      "page": 1,
+      "officialAnswer": "×",
+      "textSha256": "5223c825532ac375c1aade931234a17ee8e1d5e21267a85924af3012e092a495",
+      "figure": {
+        "path": "/images/questions/kikai-hozen/2023-q17.webp",
+        "sha256": "6e00b518843319b4b958952dff889fd422c02b9a928241424d087df5c7703289",
+        "clip": [
+          92,
+          697,
+          294,
+          731
+        ],
+        "width": 606,
+        "height": 102,
+        "alt": "表の項目n1、n2、n3、n4、n5に対し、値は順に10、9、11、8、12。"
+      }
+    },
+    {
+      "number": 18,
+      "page": 2,
+      "officialAnswer": "×",
+      "textSha256": "8f8471cdc4bc63b2ffc184853f4a3466e75dcc7d0bbb0725190d9bc9fb82d3e2"
+    },
+    {
+      "number": 19,
+      "page": 2,
+      "officialAnswer": "〇",
+      "textSha256": "a29ee868736a8a72ac15130243b694a06ea55d349e4e668384f75b34d73d77a9"
+    },
+    {
+      "number": 20,
+      "page": 2,
+      "officialAnswer": "×",
+      "textSha256": "d0cfd5e8cacf951574bc252a11899488609ce064920ecd26d5f2418a10058638"
+    },
+    {
+      "number": 21,
+      "page": 2,
+      "officialAnswer": "〇",
+      "textSha256": "3ddee5027e9bf139711cfdb134a2434e336b11059cc621b04557549ceb32e994"
+    },
+    {
+      "number": 22,
+      "page": 2,
+      "officialAnswer": "×",
+      "textSha256": "1737861c4c073e46976f0b1d58480fb9c128c61dfd292979277cc17b6f6f249a"
+    },
+    {
+      "number": 23,
+      "page": 2,
+      "officialAnswer": "〇",
+      "textSha256": "74e15f6c88844df7165c4c9e30235de0b281f6bc28b18e6e26353b2f8f81f992"
+    },
+    {
+      "number": 24,
+      "page": 2,
+      "officialAnswer": "〇",
+      "textSha256": "f7dcb509486dd15c7b70f41a0fe719a73b8d43f279d2639a313a3e281b1673c5"
+    },
+    {
+      "number": 25,
+      "page": 2,
+      "officialAnswer": "×",
+      "textSha256": "5df25bdef8b109d81afdd39b32294f432871462ef470ad9acd262c24cb825974"
+    },
+    {
+      "number": 26,
+      "page": 3,
+      "officialAnswer": "エ",
+      "textSha256": "4e224e3d149d2512e13192b4172955e1ce8af522e3b5b3e5ff0de2f4f72a8a30"
+    },
+    {
+      "number": 27,
+      "page": 3,
+      "officialAnswer": "イ",
+      "textSha256": "f26d133c697848ac80082fbfe5c4f5410a4a32c2111d2338829ead681137c56f"
+    },
+    {
+      "number": 28,
+      "page": 3,
+      "officialAnswer": "ウ",
+      "textSha256": "e997cee8677d18331905f86c402b437a622a486a333a4c846b6edf38edb3c516"
+    },
+    {
+      "number": 29,
+      "page": 3,
+      "officialAnswer": "エ",
+      "textSha256": "e1da8e0118989a00ad36f6db4d68bd2ff639a053b4486838b4eea44f93618143"
+    },
+    {
+      "number": 30,
+      "page": 4,
+      "officialAnswer": "ウ",
+      "textSha256": "16fd507b50b176179053099107c29ee8a09bbbe5ea98838c02967a7baecfb88c"
+    },
+    {
+      "number": 31,
+      "page": 4,
+      "officialAnswer": "エ",
+      "textSha256": "cdec263379bbf9e83f45b7173a98aafab1fdbabde5c0eaf06e0b58f77b80ae20"
+    },
+    {
+      "number": 32,
+      "page": 4,
+      "officialAnswer": "エ",
+      "textSha256": "c22f45524c5ab60da7ace6bfeb50f6c70b193d74eab987a95d3e20e61e384965"
+    },
+    {
+      "number": 33,
+      "page": 4,
+      "officialAnswer": "ア",
+      "textSha256": "b7b6cda8c23b03947a6968b06634e00887d7139eb4b9216edca2f24cb2d08027"
+    },
+    {
+      "number": 34,
+      "page": 5,
+      "officialAnswer": "エ",
+      "textSha256": "dd20a445bf0ab20d81fd0fe074547f07cda3aea07539e1a71d899e7e28b65831"
+    },
+    {
+      "number": 35,
+      "page": 5,
+      "officialAnswer": "イ",
+      "textSha256": "a32b03b59228633066fa473076809b3c1e07d178ae8caa53ccfe9ed864a09ab5"
+    },
+    {
+      "number": 36,
+      "page": 5,
+      "officialAnswer": "イ",
+      "textSha256": "3d60ac362de6c784e1355febb83e9466a45e42e672d1a672d76b57857799cadc"
+    },
+    {
+      "number": 37,
+      "page": 5,
+      "officialAnswer": "ウ",
+      "textSha256": "5b8dbf245912fd6af6a97b2be09b24a5ae70da147692183ceac7bd61b1f13b93"
+    },
+    {
+      "number": 38,
+      "page": 6,
+      "officialAnswer": "ア",
+      "textSha256": "cb100c792e06f82a339960ad95b9d2709c12fba99b2bd843db95c9000037cb91"
+    },
+    {
+      "number": 39,
+      "page": 6,
+      "officialAnswer": "エ",
+      "textSha256": "e006540a465ea1eab1025a13f4fc2eea2de3fadf03bab5c1e0323ef1b5bbfee6"
+    },
+    {
+      "number": 40,
+      "page": 6,
+      "officialAnswer": "ア",
+      "textSha256": "084f870fe799ec0b89e3981a0ea860bc221a8268900ff1fbddd38dd9c8d949ab"
+    },
+    {
+      "number": 41,
+      "page": 6,
+      "officialAnswer": "ア",
+      "textSha256": "7e0cc93fc4db77f27e6fe2b50af1f84cf268e32f5e3e728130b2bff3765f087e"
+    },
+    {
+      "number": 42,
+      "page": 7,
+      "officialAnswer": "イ",
+      "textSha256": "c73da1155258d8ab78b7fa5d81541b745b247c8d485e6db987dbb5595d05216e"
+    },
+    {
+      "number": 43,
+      "page": 7,
+      "officialAnswer": "ウ",
+      "textSha256": "3a2e5830d28dd4514f1518ab97e19ef14c57cdf7c95fecf0c24cdf6224532b43"
+    },
+    {
+      "number": 44,
+      "page": 7,
+      "officialAnswer": "イ",
+      "textSha256": "a777025418e8278bf44145402a9563cbd89413904510c4a15adefe13c43ad46f"
+    },
+    {
+      "number": 45,
+      "page": 7,
+      "officialAnswer": "ア",
+      "textSha256": "4c7d718e92341f7cd25f5c1b6a0860d84a0f3707e677bb0579c8a0ab07a1190b"
+    },
+    {
+      "number": 46,
+      "page": 8,
+      "officialAnswer": "エ",
+      "textSha256": "3dd0649bf3128f4d10202f913b1b9aa347cf33ef4975794f2d87bb7a729473f8"
+    },
+    {
+      "number": 47,
+      "page": 8,
+      "officialAnswer": "エ",
+      "textSha256": "960db85574778d7dd81eca25aed55df544ddc4e394017da76f486aaef14f6c7f",
+      "figure": {
+        "path": "/images/questions/kikai-hozen/2023-q47.webp",
+        "sha256": "8786c2b6601a4fbe890219fd8933d560f19014f93a4aaa6bf248df3801bd3839",
+        "clip": [
+          105,
+          252,
+          267,
+          341
+        ],
+        "width": 486,
+        "height": 267,
+        "alt": "両端支持はり。全長100cm、左支点Aから30cm、右支点Bから70cmの位置に下向きの集中荷重W=300Nが作用し、両支点の反力をRA、RBとする。"
+      }
+    },
+    {
+      "number": 48,
+      "page": 8,
+      "officialAnswer": "ウ",
+      "textSha256": "9c4afe0bd68f331b43ca4902c82bb38b451e22cd90e2bef94a450618d35ff25a",
+      "figure": {
+        "path": "/images/questions/kikai-hozen/2023-q48.webp",
+        "sha256": "a2adbd7c073b571bd77cccdc6bdd93399161b58a6bba1ef51aa76c35b6f1839d",
+        "clip": [
+          192,
+          473,
+          324,
+          605
+        ],
+        "width": 396,
+        "height": 396,
+        "alt": "応力とひずみの関係を示す線図。縦軸は応力、横軸はひずみ。曲線上にA、B、C、D、E、F、破線上にE′、F′が示されている。"
+      }
+    },
+    {
+      "number": 49,
+      "page": 9,
+      "officialAnswer": "ア",
+      "textSha256": "210522b53d03ea2024a953a4a6c5ff0b5081c90c1e9fa7c365fa4a546ef2c87b",
+      "figure": {
+        "path": "/images/questions/kikai-hozen/2023-q49.webp",
+        "sha256": "7929246aad08ff5d8ae8dc636aab67fdc7b927dbcf7c2f80b912b5f0e5ed8251",
+        "clip": [
+          137,
+          100,
+          307,
+          210
+        ],
+        "width": 510,
+        "height": 330,
+        "alt": "16個の直径18のキリ穴を等間隔で配置した板。隣り合う穴中心間は80、両端面から最寄りの穴中心までは各50で、板の全長が空欄。"
+      }
+    },
+    {
+      "number": 50,
+      "page": 9,
+      "officialAnswer": "イ",
+      "textSha256": "aa27baf4eab1b254f620915e0c374ca1d5559879fe1f4f7905b366d8573398a8",
+      "figure": {
+        "path": "/images/questions/kikai-hozen/2023-q50.webp",
+        "sha256": "44c937709a9c1f50c7a3d95d53f30a66a3b8e0d794b6e9c5d6f1a4da6d8aca84",
+        "clip": [
+          175,
+          343,
+          272,
+          428
+        ],
+        "width": 291,
+        "height": 255,
+        "alt": "頭部のない両端ねじのボルト。一端は下側の母材のねじ穴にねじ込まれ、他端は上側の部材を通ってナットで締め付けられている。"
+      }
+    }
+  ],
+  "extractors": [
+    "PyMuPDF 1.28.0 (coordinates)",
+    "pypdf 6.14.2 (layout)"
+  ],
+  "independentExtractionDifferences": [],
+  "comparisonNormalization": "Unicode NFKC + whitespace removal; min⁻¹ and X̄ restored from rendered source"
+}
