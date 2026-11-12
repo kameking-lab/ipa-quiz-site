@@ -424,6 +424,7 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
     "kikai-hozen": "機械保全技能検定 2級（機械系保全作業 学科）",
     "tobi2": "技能検定 2級とび（とび作業）学科試験",
     "tobi3": "技能検定 3級とび（とび作業）学科試験",
+    "kenchiku-daiku1": "技能検定 1級建築大工（大工工事作業）学科試験",
     "tsukanshi": "通関士試験"
 };
 export function examFullName(exam: ExamCode): string {
@@ -601,6 +602,7 @@ const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number)
     "kikai-hozen": (c, y, k) => `機械保全技能検定 2級 機械系保全作業 学科を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
     "tobi2": (c, y, k) => `技能検定 2級とび（とび作業）学科を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
     "tobi3": (c, y, k) => `技能検定 3級とび（とび作業）学科を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
+    "kenchiku-daiku1": (c, y, k) => `技能検定 1級建築大工（大工工事作業）学科を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
     "tsukanshi": (c) => `通関士試験の${c}。公式正答どおりに収録。`
 };
 function publishedYearRange(exam: ExamCode): string {

@@ -45,6 +45,19 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
 {
+  "slug": "kenchiku-daiku1",
+  "examCode": "kenchiku-daiku1",
+  "shortName": "建築大工技能士 1級",
+  "fullName": "技能検定 1級建築大工（大工工事作業）学科試験",
+  "domain": "safety",
+  "administrator": "中央職業能力開発協会",
+  "officialQuestionsUrl": "https://www.kentei.javada.or.jp/",
+  "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/",
+  "status": "live",
+  "reuseSummary": "2024年度後期の1級建築大工（大工工事作業）学科を収録。公式正答、全肢の独自解説、必要な原図を確認できます。",
+  "remainingWork": []
+},
+{
   "slug": "tobi3",
   "examCode": "tobi3",
   "shortName": "とび技能士 3級",
