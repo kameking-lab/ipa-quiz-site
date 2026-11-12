@@ -51,6 +51,40 @@ describe("Q4-109 フラワー装飾3級2024年度前期", () => {
   });
 });
 
+describe("Q4-111 フラワー装飾3級2023年度前期", () => {
+  const questions = FLOWER3_QUESTIONS.filter(q => q.year === 2023);
+  // 公式正答表の原本画像から独立して転記。問1から問30の順。
+  const answers = "○×○○○×○×××" + "××○××○○××○" + "×○○×○○○○×○";
+  it("30問の公式正答と原文・全肢解説を保持する", () => {
+    expect(questions).toHaveLength(30);
+    questions.forEach((q, i) => {
+      expect(q.id).toBe(`flower3-2023-early-gakka-${String(i + 1).padStart(3, "0")}`);
+      expect(q.officialAnswerNumber).toBe(answers[i]);
+      expect(formatQuestionAnswerForDisplay(q, q.answer)).toBe(answers[i]);
+      expect(questionNumberLabel(q)).toBe(String(i + 1));
+      expect(questionSourceEdition(q)).toBe("2023年度前期");
+      expect(q.sourcePdfUrl).toMatch(/#page=[23]$/);
+      expect(q.hasImage).toBe(false);
+      expect(Object.keys(q.choiceExplanations ?? {})).toEqual(["ア", "イ"]);
+      expect(EXAM_CONFIGS.flower3.sessions[0].categories).toContain(q.category);
+    });
+    expect(questions[5].question).toBe("無彩色は、色相、明度及び彩度を持っている。");
+    expect(questions[5].answer).toBe("イ");
+    expect(questions[26].question).toContain("アキザクラ");
+    expect(questions[26].answer).toBe("ア");
+  });
+  it("3級両年度60問を年度別URLで読み込む", async () => {
+    expect(FLOWER3_QUESTIONS).toHaveLength(60);
+    expect(EXAM_CONFIGS.flower3.yearRange).toEqual({ start: 2023, end: 2024 });
+    expect(await getQuestionsForExam("flower3")).toEqual(FLOWER3_QUESTIONS);
+    expect(new Set(FLOWER3_QUESTIONS.map(questionPagePath)).size).toBe(60);
+    questions.forEach(q => {
+      const [, , exam, yearSeason, section, qnum] = questionPagePath(q).split("/");
+      expect(findQuestionByRoute(FLOWER3_QUESTIONS, { exam, yearSeason, section, qnum })?.id).toBe(q.id);
+    });
+  });
+});
+
 describe("Q4-110 フラワー装飾1級2023年度前期", () => {
   const questions = FLOWER1_QUESTIONS.filter(q => q.year === 2023);
   // 公式正答表の原本画像から独立して転記。A群、B群の順。
