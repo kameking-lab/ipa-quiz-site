@@ -22,7 +22,7 @@ const ALPHABET_CHOICE_EXAMS: readonly ExamCode[] = ["sharoushi"];
 const ALPHABET_LABELS = ["A", "B", "C", "D", "E"] as const;
 
 export function choiceDisplayLabel(exam: ExamCode, key: ChoiceKey): string {
-  if (exam === "denshi-kiki-kumitate2" || exam === "kojo-bankin2" || exam === "kensetsu-kikai-seibi2" || exam === "hyoso2" || exam === "kikinzoku-soshin2") {
+  if (exam === "denshi-kiki-kumitate2" || exam === "kojo-bankin2" || exam === "kensetsu-kikai-seibi2" || exam === "hyoso2" || exam === "kikinzoku-soshin2" || exam === "shashin2") {
     const index = IROHA_CHOICE_KEYS.indexOf(key);
     return index >= 0 ? IROHA_LABELS[index] : key;
   }
@@ -63,7 +63,7 @@ export function formatQuestionAnswerForDisplay(question: Question, value: string
       choices.every(key => value.includes(key) && accepted.includes(key))) {
     return "全員正解";
   }
-  if ((question.exam === "denshi-kiki-kumitate2" || question.exam === "kojo-bankin2" || question.exam === "kensetsu-kikai-seibi2" || question.exam === "hyoso2" || question.exam === "kikinzoku-soshin2") && choices.length === 2) {
+  if ((question.exam === "denshi-kiki-kumitate2" || question.exam === "kojo-bankin2" || question.exam === "kensetsu-kikai-seibi2" || question.exam === "hyoso2" || question.exam === "kikinzoku-soshin2" || question.exam === "shashin2") && choices.length === 2) {
     const key = String(value);
     return key === "ア" ? "○" : key === "イ" ? "×" : key;
   }
@@ -84,5 +84,5 @@ export function choiceImageAlt(exam: ExamCode, key: ChoiceKey): string | undefin
 
 /** 選択肢を原本どおり番号（電験一種・二種は(イ)〜(ヨ)、社労士はA〜E）で表示する試験（ア〜エ表記ではない）。 */
 export function usesNumberedChoices(exam: ExamCode): boolean {
-  return exam === "denshi-kiki-kumitate2" || exam === "kojo-bankin2" || exam === "kensetsu-kikai-seibi2" || exam === "hyoso2" || exam === "kikinzoku-soshin2" || exam === "denken3" || exam === "denken2" || exam === "denken1" || exam === "tohan" || exam === "eisei1" || exam === "eisei2" || exam === "soukan" || exam === "hoikushi" || exam === "kashikin" || PLAIN_NUMBER_CHOICE_EXAMS.includes(exam) || ALPHABET_CHOICE_EXAMS.includes(exam);
+  return exam === "denshi-kiki-kumitate2" || exam === "kojo-bankin2" || exam === "kensetsu-kikai-seibi2" || exam === "hyoso2" || exam === "kikinzoku-soshin2" || exam === "shashin2" || exam === "denken3" || exam === "denken2" || exam === "denken1" || exam === "tohan" || exam === "eisei1" || exam === "eisei2" || exam === "soukan" || exam === "hoikushi" || exam === "kashikin" || PLAIN_NUMBER_CHOICE_EXAMS.includes(exam) || ALPHABET_CHOICE_EXAMS.includes(exam);
 }
