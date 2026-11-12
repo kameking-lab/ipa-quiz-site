@@ -18,7 +18,8 @@ import type { ChoiceKey } from "@/lib/questions/types";
 
 // Independently transcribed from the official answer tables, by printed column.
 const editions = [
- { exam: "engei-soshoku1" as const, year: 2025, rows: ENGEI_SOSHOKU1_QUESTIONS.filter(q => q.year === 2025), answers: "○×○○×××○○×○×○○××××××○○○○○ハニハロイハロハロイニロロロニロニハイロロイイニロ", figures: [] as number[], name: "園芸装飾" }
+ { exam: "engei-soshoku1" as const, year: 2025, rows: ENGEI_SOSHOKU1_QUESTIONS.filter(q => q.year === 2025), answers: "○×○○×××○○×○×○○××××××○○○○○ハニハロイハロハロイニロロロニロニハイロロイイニロ", figures: [] as number[], name: "園芸装飾" },
+ { exam: "engei-soshoku3" as const, year: 2025, rows: JSON.parse(readQuestions("data/questions/engei-soshoku3/2025-early.json", "utf8")) as Question[], answers: "○○○×○×××××○○×○○○○×○○××○×××○×○○", figures: [] as number[], name: "園芸装飾" }
 ];
 
 describe.each(editions)("技能検定 $exam $year 年度前期", ({ exam, year, rows, answers, figures, name }) => {
