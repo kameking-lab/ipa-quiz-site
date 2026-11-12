@@ -803,7 +803,7 @@ kashikin: {
             categories: ["法及び関係法令に関すること", "貸付け及び貸付けに付随する取引に関する法令及び実務に関すること", "資金需要者等の保護に関すること", "財務及び会計に関すること"],
         }],
     seasons: ["annual"],
-    yearRange: { start: 2024, end: 2025 },
+    yearRange: { start: 2023, end: 2025 },
 },
 "chusho-kigyo-shindanshi": {
     code: "chusho-kigyo-shindanshi",
@@ -1681,7 +1681,7 @@ caremanager: {
 "kikai-hozen": {
     code: "kikai-hozen", nameFull: "機械保全技能検定 2級（機械系保全作業 学科）", urlSlug: "kikai-hozen", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（真偽法25・四肢択一25）", categories: ["機械一般", "電気一般", "機械保全法一般", "材料一般", "安全衛生", "機械系保全法"] }],
-    seasons: ["annual"], yearRange: { start: 2024, end: 2025 },
+    seasons: ["annual"], yearRange: { start: 2023, end: 2025 },
 },
 tsukanshi: {
     code: "tsukanshi", nameFull: "通関士試験", urlSlug: "tsukanshi", level: "advanced",
