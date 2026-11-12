@@ -17,6 +17,7 @@ import type { ChoiceKey, ExamCode, Question } from "@/lib/questions/types";
 const editions: { exam: ExamCode; year: number; questions: Question[]; a: string; b: string; figures: string[] }[] = [
   { exam: "kyoka-plastic2", year: 2023, questions: KYOKA_PLASTIC2_QUESTIONS, a: "○××○○ ×○○○○ ××○×× ×○○○○ ×××○○", b: "ニロロロハ ニロニロニ ハハハニイ ハロロロニ イハイロニ", figures: ["B群 5", "B群 20"] },
   { exam: "kyoka-plastic1", year: 2025, questions: KYOKA_PLASTIC1_QUESTIONS, a: "○○○○× ××××× ×○×○× ○××○× ○×○○○", b: "ニロロハロ ニニニニハ ロロロイニ ロロイハロ ロハロロハ", figures: ["A群 7"] },
+  { exam: "kyoka-plastic1", year: 2024, questions: KYOKA_PLASTIC1_QUESTIONS, a: "○×○○× ×○×○○ ×○×○× ×××○○ ○○○○×", b: "ニイロイロ イニロロロ ロロイイハ ハニハハロ ニニニニロ", figures: ["B群 9"] },
 ];
 const keys: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
@@ -83,4 +84,32 @@ for (const edition of editions) {
     });
   });
 }
+
+it("retains the 2023 grade-2 dimensions, mass units and negative conditions", () => {
+  const questions = KYOKA_PLASTIC2_QUESTIONS;
+  expect(questions[5].question).toContain("φ36");
+  expect(questions[15].question).toContain("重ね位置をずらしてはならない");
+  expect(questions[26].choices?.イ).toBe("0.5～2.0%");
+  expect(questions[36].choices?.エ).toBe("質量は、300～900g／m²の範囲にある。");
+  expect(questions[44].question).toContain("オーバーレイアップ接合でない");
+});
+
+it("retains the 2025 grade-1 fiber content, stack and original false statements", () => {
+  const questions = KYOKA_PLASTIC1_QUESTIONS.filter(q => q.year === 2025);
+  expect(questions[8].question).toContain("70ppm");
+  expect(questions[27].question).toContain("30%(wt.%)");
+  expect(questions[37].choices?.イ).toBe("G＋M＋M");
+  expect(questions[38].choices?.ア).toBe("スプレーアップ成形法：HLU");
+  expect(questions[42].choices?.ウ).toContain("穴径の2.5～3倍以上");
+});
+
+it("retains the 2024 grade-1 exclusive condition, thresholds and chart definitions", () => {
+  const questions = KYOKA_PLASTIC1_QUESTIONS.filter(q => q.year === 2024);
+  expect(questions[7].question).toContain("－17.8℃");
+  expect(questions[24].question).toContain("場合のみである");
+  expect(questions[32].choices?.イ).toBe("20ppm");
+  expect(questions[34].choices?.イ).toBe("1.5mをこえる高さ");
+  expect(questions[44].choices?.イ).toContain("数mm以下");
+  expect(questions[49].choices?.イ).toBe("c管理図は、不良率の管理図を表す。");
+});
 
