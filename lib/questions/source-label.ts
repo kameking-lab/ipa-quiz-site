@@ -43,7 +43,7 @@ const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string,
 };
 
 export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl"> & Partial<Pick<Question, "exam" | "fiscalYear">>): string {
-  if ((q.exam === "flower2" || q.exam === "tetsudo-sharyo2") && q.year === 2025 && q.season === "early") {
+  if ((q.exam === "flower2" || q.exam === "tetsudo-sharyo2" || q.exam === "engei-soshoku2") && q.year === 2025 && q.season === "early") {
     return "2025年度前期（2025年9月7日実施）";
   }
   if (q.exam === "fujin-kodomofuku2" && q.year === 2025 && q.season === "early") {
