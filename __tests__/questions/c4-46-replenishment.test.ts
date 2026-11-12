@@ -15,6 +15,10 @@ import type { ChoiceKey } from "@/lib/questions/types";
 
 // 公式正答表を5問ずつ別途読み取り、内部キー・画面表示・構造化データを照合する。
 const editions = [
+  { exam: "kagaku-bunseki2" as const, year: 2023, rows: KAGAKU_BUNSEKI2_QUESTIONS.filter(q => q.year === 2023),
+    answers: "○○○×○" + "×○○○○" + "××○○×" + "○××○○" + "○×○××"
+      + "ニハロロロ" + "ロロロロニ" + "ハロハニハ" + "ハイロロハ" + "ニハイロロ",
+    pages: [...Array(16).fill(2), ...Array(9).fill(3), ...Array(5).fill(4), ...Array(6).fill(5), ...Array(6).fill(6), ...Array(6).fill(7), ...Array(2).fill(8)], figures: [] as number[] },
   { exam: "kagaku-bunseki2" as const, year: 2024, rows: KAGAKU_BUNSEKI2_QUESTIONS.filter(q => q.year === 2024),
     answers: "×○×○○" + "○○××○" + "○×○×○" + "○○×○○" + "×○××○"
       + "ロロロハロ" + "イニハニハ" + "イニニニイ" + "ロイイロロ" + "イハロハロ",
