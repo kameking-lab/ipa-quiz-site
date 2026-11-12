@@ -3,6 +3,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { DENSHI_KIKI_KUMITATE1_QUESTIONS } from "@/data/questions/denshi-kiki-kumitate1";
+import { DENSHI_KIKI_KUMITATE3_QUESTIONS } from "@/data/questions/denshi-kiki-kumitate3";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { choiceDisplayLabel, formatQuestionAnswerForDisplay } from "@/lib/questions/display";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
@@ -17,6 +18,10 @@ const sittings = [{
   answers: "○×○○×" + "×××○○" + "××○○○" + "×○○○×" + "○○×××"
     + "ニハロロロ" + "ハイハハニ" + "ニロロニイ" + "ロロイニハ" + "イハイハイ",
   figures: 16,
+}, {
+  exam: "denshi-kiki-kumitate3", season: "early", all: DENSHI_KIKI_KUMITATE3_QUESTIONS,
+  answers: "××○○○" + "×○○○○" + "○××○×" + "○××○○" + "××○×○" + "○××○○",
+  figures: 10,
 }] as const;
 
 describe("電子機器組立て2024年度の公式原本と学習経路", () => {
@@ -72,5 +77,14 @@ describe("電子機器組立て2024年度の公式原本と学習経路", () => 
     expect(byNumber(47).officialAnswerNumber).toBe("ハ");
     expect(byNumber(47).explanation).toContain("AlGaInPにも赤色");
     expect(["ア", "イ", "ウ", "エ"].map(k => choiceDisplayLabel("denshi-kiki-kumitate1", k as ChoiceKey))).toEqual(["イ", "ロ", "ハ", "ニ"]);
+  });
+  it("3級前期のLED電流・電力量・平均値とPNP記号を区別する", () => {
+    const byNumber = (n: number) => DENSHI_KIKI_KUMITATE3_QUESTIONS.find(q => q.year === 2024 && q.season === "early" && q.qNumber === n)!;
+    expect(byNumber(13).explanation).toContain("20 mA");
+    expect(byNumber(15).explanation).toContain("40 Wh");
+    expect(byNumber(24).explanation).toContain("3.0");
+    expect(byNumber(28).explanation).toContain("PNP");
+    expect(choiceDisplayLabel("denshi-kiki-kumitate3", "ア")).toBe("○");
+    expect(choiceDisplayLabel("denshi-kiki-kumitate3", "イ")).toBe("×");
   });
 });
