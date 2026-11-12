@@ -1725,6 +1725,40 @@ caremanager: {
     "end": 2024
   }
 },
+"kikai-hozen-setsubi1": {
+  "code": "kikai-hozen-setsubi1",
+  "nameFull": "機械保全技能検定 1級（設備診断作業 学科）",
+  "urlSlug": "kikai-hozen-setsubi1",
+  "level": "advanced",
+  "sessions": [
+    {
+      "session": "gakka",
+      "urlSlug": "gakka",
+      "expectedQuestions": 50,
+      "label": "学科（真偽法25問・四肢択一25問）",
+      "categories": [
+        "機械一般",
+        "電気一般",
+        "機械保全法一般",
+        "材料一般",
+        "安全衛生",
+        "機械診断",
+        "振動診断",
+        "非破壊検査",
+        "絶縁診断",
+        "ひずみ測定",
+        "設備保全"
+      ]
+    }
+  ],
+  "seasons": [
+    "round2"
+  ],
+  "yearRange": {
+    "start": 2024,
+    "end": 2024
+  }
+},
 "kikai-hozen3": {
   "code": "kikai-hozen3",
   "nameFull": "機械保全技能検定 3級（機械系保全作業 学科）",

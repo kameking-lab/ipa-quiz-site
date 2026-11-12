@@ -74,6 +74,9 @@ export function formatQuestionAnswerForDisplay(question: Question, value: string
       choices.every(key => value.includes(key) && accepted.includes(key))) {
     return "全員正解";
   }
+  if (question.exam === "kikai-hozen-setsubi1" && choices.length === 2) {
+    return value === "ア" ? "○" : value === "イ" ? "×" : String(value);
+  }
   const separator = question.type === "ordering" ? "→" : multiSeparator;
   const text = Array.isArray(value) ? value.join(separator) : String(value);
   return text.split(/([・→,]\s*)/).map((part) => {

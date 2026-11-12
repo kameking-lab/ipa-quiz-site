@@ -45,6 +45,19 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
 {
+  "slug": "kikai-hozen-setsubi1",
+  "examCode": "kikai-hozen-setsubi1",
+  "shortName": "機械保全技能士 1級（設備診断）",
+  "fullName": "機械保全技能検定 1級（設備診断作業 学科）",
+  "domain": "safety",
+  "administrator": "公益社団法人日本プラントメンテナンス協会",
+  "officialQuestionsUrl": "https://www.kikaihozenshi.jp/questions/",
+  "officialReuseTermsUrl": "https://www.kikaihozenshi.jp/questions/",
+  "status": "live",
+  "reuseSummary": "2024年度第2回の設備診断作業1級学科50問を収録。公式問題・正答、全肢の独自解説と原図で学べます。",
+  "remainingWork": []
+},
+{
   "slug": "kikai-hozen-denki3",
   "examCode": "kikai-hozen-denki3",
   "shortName": "機械保全技能士 3級（電気系）",
