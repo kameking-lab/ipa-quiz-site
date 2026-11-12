@@ -1,5 +1,6 @@
 "use client";
 import { SafetySiteHeader } from "@/components/SafetySiteHeader";
+import { AccountNavigationLink } from "@/components/account/AccountNavigation";
 
 import * as React from "react";
 import Link from "next/link";
@@ -135,6 +136,7 @@ function SiteHeaderContent({ search }: { search: Pick<URLSearchParams, "get"> | 
             className="hidden items-center gap-0.5 md:flex"
             aria-label="グローバルナビゲーション"
           >
+            <AccountNavigationLink className="rounded-md px-3 py-1.5 text-sm font-medium hover:bg-muted" />
             <Link href={PRICE_PAGE_LINK.href} className="rounded-md px-3 py-1.5 text-sm font-medium hover:bg-muted" aria-current={pathname === PRICE_PAGE_LINK.href ? "page" : undefined}>{PRICE_PAGE_LINK.label}</Link>
             {/* 問題を解く dropdown */}
             <div
@@ -284,6 +286,7 @@ function SiteHeaderContent({ search }: { search: Pick<URLSearchParams, "get"> | 
                 className="flex min-h-0 flex-1 flex-col gap-1 overflow-y-auto overscroll-contain"
                 aria-label="モバイルナビゲーション"
               >
+                <SheetClose asChild><AccountNavigationLink className="flex min-h-[44px] shrink-0 items-center rounded-lg px-3 py-2.5 text-sm font-medium hover:bg-muted" /></SheetClose>
                   <SheetClose asChild><Link href={PRICE_PAGE_LINK.href} className="rounded-lg px-3 py-3 text-sm font-medium hover:bg-muted">{PRICE_PAGE_LINK.label}</Link></SheetClose>
                 <p className="px-3 pb-1 pt-0.5 text-[10px] font-semibold uppercase tracking-widest text-muted-foreground">
                   問題演習

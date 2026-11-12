@@ -66,6 +66,18 @@ it("propagates cancellation, pending purchases and restore errors without granti
 it("supports restore and disconnects the RevenueCat identity at sign-out",async()=>{
   const m=new Membership(sdk);await m.restore(c,a);expect(sdk.restorePurchases).toHaveBeenCalledOnce();await m.disconnect();expect(sdk.logOut).toHaveBeenCalledOnce();
 });
+it("disconnect waits for a pending SDK login so the buyer cannot be reconnected after logout", async()=>{
+  configured=true;
+  let finish!:()=>void;
+  sdk.logIn.mockImplementationOnce(()=>new Promise<void>(resolve=>{finish=resolve;}));
+  const membership=new Membership(sdk);
+  const connecting=membership.connect(c,a);
+  await vi.waitFor(()=>expect(sdk.logIn).toHaveBeenCalledOnce());
+  const disconnecting=membership.disconnect();
+  expect(sdk.logOut).not.toHaveBeenCalled();
+  finish();await connecting;await disconnecting;
+  expect(sdk.logOut).toHaveBeenCalledOnce();
+});
 it("does not leave a pending transaction when price or duration validation fails before StoreKit",async()=>{
   const beforePurchase=vi.fn();
   sdk.getOfferings.mockResolvedValue({all:{main:{availablePackages:[{...product,product:{...product.product,subscriptionPeriod:"P1Y"}}]}}});

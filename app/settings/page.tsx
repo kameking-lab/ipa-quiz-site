@@ -38,6 +38,7 @@ import {
 } from "@/lib/motivation/combo";
 import { NotificationSettings } from "@/app/account/notifications/NotificationSettings";
 import { CloudSyncPanel } from "@/components/account/CloudSyncPanel";
+import { AccountNavigationLink } from "@/components/account/AccountNavigation";
 import { MobileInstallControl } from "@/components/pwa/MobileInstallControl";
 
 type Theme = "light" | "dark" | "system";
@@ -133,7 +134,6 @@ export default function SettingsPage() {
   const fileInputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-     
     setSettings(readSettings());
     setMotivation(readMotivationSettings());
     const store = createHistoryStore();
@@ -244,6 +244,7 @@ export default function SettingsPage() {
         </header>
 
         {/* Section nav (anchor links) */}
+        <AccountNavigationLink settings className="mb-6 flex min-h-11 items-center rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium hover:bg-muted" />
         <nav
           aria-label="セクション一覧"
           className="mb-6 flex flex-wrap gap-1.5 rounded-2xl border border-border bg-muted/30 p-2"
