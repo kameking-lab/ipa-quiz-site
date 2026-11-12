@@ -6,6 +6,7 @@ import { questionSourceEdition } from "@/lib/questions/source-label";
 import { examLabel } from "@/lib/utils";
 import { isIpaTop, ipaTopDescription } from "@/lib/seo/ipa-top";
 export const EXAM_DESCRIPTIONS: Partial<Record<ExamCode, string>> = {
+"toso2": "技能検定 2級塗装（建築塗装作業）学科試験。真偽法・多肢択一法の公式過去問を、全肢の独自解説と原図で学べます。",
 "kikai-hozen-denki1": "機械保全技能検定 1級（電気系保全作業 学科）。2023年度 第2回の50問を収録。公式正答と全肢の独自解説、原本図で学べます。",
     "kikenbutsu-otsu4": "2026年6月公表版の抜粋35問。公式問題画像・正答と全肢解説を収録。",
     "kikenbutsu-kou": "2026年6月公表版の抜粋45問。公式問題画像・正答と全肢解説を収録。",
@@ -424,6 +425,7 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
     "caremanager": "ケアマネ試験（介護支援専門員実務研修受講試験）",
     "kikai-hozen": "機械保全技能検定 2級（機械系保全作業 学科）",
     "tobi2": "技能検定 2級とび（とび作業）学科試験",
+    "toso2": "技能検定 2級塗装（建築塗装作業）学科試験",
     "kikai-hozen-denki1": "機械保全技能検定 1級（電気系保全作業 学科）",
     "kikai-hozen-setsubi1": "機械保全技能検定 1級（設備診断作業 学科）",
     "kikai-hozen3": "機械保全技能検定 3級（機械系保全作業 学科）",
@@ -607,6 +609,7 @@ const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number)
     "caremanager": (c, y, k) => `介護支援専門員実務研修受講試験（ケアマネ試験）を${c}問・${y}回分・${k}分野で収録。公式正答と全選択肢の解説で学べます。解説は過去問AIの独自作成です。`,
     "kikai-hozen": (c, y, k) => `機械保全技能検定 2級 機械系保全作業 学科を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
     "tobi2": (c, y, k) => `技能検定 2級とび（とび作業）学科を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
+    "toso2": (c, y, k) => `技能検定 2級塗装（建築塗装作業）学科試験を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
     "kikai-hozen-denki1": (c, y, k) => `機械保全技能検定 1級（電気系保全作業 学科）を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
     "kikai-hozen-setsubi1": (c, y, k) => `1級設備診断作業の学科を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
     "kikai-hozen3": (c, y, k) => `3級機械系保全作業の学科を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,

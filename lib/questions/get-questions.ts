@@ -174,6 +174,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 "caremanager": async () => isExamPublished("caremanager") ? (await import("@/data/questions/caremanager")).CAREMANAGER_QUESTIONS : [],
 "kikai-hozen": async () => isExamPublished("kikai-hozen") ? (await import("@/data/questions/kikai-hozen")).KIKAI_HOZEN_QUESTIONS : [],
 "tobi2": async () => isExamPublished("tobi2") ? (await import("@/data/questions/tobi2")).TOBI2_QUESTIONS : [],
+"toso2": async () => isExamPublished("toso2") ? (await import("@/data/questions/toso2")).TOSO2_QUESTIONS : [],
 "kikai-hozen-denki1": async () => isExamPublished("kikai-hozen-denki1") ? (await import("@/data/questions/kikai-hozen-denki1")).QUESTIONS : [],
 "kikai-hozen-setsubi1": async () => isExamPublished("kikai-hozen-setsubi1") ? (await import("@/data/questions/kikai-hozen-setsubi1")).QUESTIONS : [],
 "kikai-hozen3": async () => isExamPublished("kikai-hozen3") ? (await import("@/data/questions/kikai-hozen3")).KIKAI_HOZEN3_QUESTIONS : [],

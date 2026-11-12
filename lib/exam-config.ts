@@ -1725,6 +1725,7 @@ caremanager: {
     "end": 2024
   }
 },
+  "toso2": {"code": "toso2", "nameFull": "技能検定 2級塗装（建築塗装作業）学科試験", "urlSlug": "toso2", "level": "basic", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "学科（A群 真偽法・B群 多肢択一法）", "categories": ["塗装の目的", "塗装方法・工具", "色彩・測色", "塗料・乾燥", "塗膜試験・欠陥", "養生・施工", "素地調整・仕様", "溶剤・安全衛生", "研磨・材料", "建築材料・構造"]}], "seasons": ["early"], "yearRange": {"start": 2024, "end": 2024}},
   "kikai-hozen-denki1": { code: "kikai-hozen-denki1", nameFull: "機械保全技能検定 1級（電気系保全作業 学科）", urlSlug: "kikai-hozen-denki1", level: "advanced", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科", categories: ["機械一般", "電気一般", "機械保全法一般", "材料一般", "安全衛生", "電気系保全法"] }], seasons: ["round2"], yearRange: { start: 2023, end: 2023 } },
 "kikai-hozen-setsubi1": {
   "code": "kikai-hozen-setsubi1",

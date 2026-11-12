@@ -1,3 +1,4 @@
+import { TOSO2_QUESTIONS } from "./toso2";
 import { QUESTIONS as KIKAI_HOZEN_DENKI1_QUESTIONS } from "./kikai-hozen-denki1";
 import { QUESTIONS as KIKAI_HOZEN_SETSUBI1_QUESTIONS } from "./kikai-hozen-setsubi1";
 import { KIKAI_HOZEN_DENKI3_QUESTIONS } from "./kikai-hozen-denki3";
@@ -159,6 +160,7 @@ import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
 import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+...(isExamPublished("toso2") ? { "toso2": TOSO2_QUESTIONS } : {}),
 ...(isExamPublished("kikai-hozen-denki1") ? { "kikai-hozen-denki1": KIKAI_HOZEN_DENKI1_QUESTIONS } : {}),
 ...(isExamPublished("kikai-hozen-setsubi1") ? { "kikai-hozen-setsubi1": KIKAI_HOZEN_SETSUBI1_QUESTIONS } : {}),
 ...(isExamPublished("kikai-hozen-denki3") ? { "kikai-hozen-denki3": KIKAI_HOZEN_DENKI3_QUESTIONS } : {}),
