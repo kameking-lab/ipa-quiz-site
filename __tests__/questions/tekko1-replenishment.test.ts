@@ -9,6 +9,7 @@ import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
 import { questionSourceEdition } from "@/lib/questions/source-label";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
+import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
 import type { ChoiceKey } from "@/lib/questions/types";
 
 // Independently transcribed from the rendered official answer sheet, five per row.
@@ -16,6 +17,10 @@ const SITTINGS = [{
   year: 2024,
   answers: "○×○○×" + "○○○○○" + "×○×○○" + "×○×××" + "×○○×○"
     + "イハロニハ" + "ハロニハハ" + "ロイロハイ" + "ニニイニロ" + "イハニハハ",
+}, {
+  year: 2023,
+  answers: "○○×××" + "○××○×" + "○×○××" + "○○××○" + "××××○"
+    + "ハイイイハ" + "ニイロハロ" + "ハロニニロ" + "ハロイロロ" + "ハハロニハ",
 }];
 
 describe("鉄工1級の公式原本と学習経路", () => {
@@ -58,5 +63,17 @@ describe("鉄工1級の公式原本と学習経路", () => {
     expect(q.officialAnswerNumber).toBe("○");
     expect(q.explanation).toContain("床上操作式");
     expect(q.explanation).toContain("技能講習");
+  });
+  it("構造化データでも真偽法を○・×で表す", () => {
+    for (const q of TEKKO1_QUESTIONS.filter(q => q.qNumber <= 25)) {
+      const graph = buildQuestionJsonLd({ question: q, pageUrlAbs: `https://www.kakomon-ai.jp${questionPagePath(q)}`, title: q.id });
+      expect(JSON.stringify(graph)).toContain(`${q.officialAnswerNumber}: ${q.choices![q.answer as ChoiceKey]}`);
+    }
+  });
+  it("円すい展開の母線長と丸棒の断面積を使って計算する", () => {
+    const questions = TEKKO1_QUESTIONS.filter(q => q.year === 2023);
+    expect(questions.find(q => q.qNumber === 35)?.explanation).toContain("314 mm²");
+    expect(questions.find(q => q.qNumber === 47)?.explanation).toContain("150√2");
+    expect(questions.find(q => q.qNumber === 47)?.explanation).toContain("254.6°");
   });
 });
