@@ -173,6 +173,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 "sokuryoshiho": async () => isExamPublished("sokuryoshiho") ? (await import("@/data/questions/sokuryoshiho")).SOKURYOSHIHO_QUESTIONS : [],
 "caremanager": async () => isExamPublished("caremanager") ? (await import("@/data/questions/caremanager")).CAREMANAGER_QUESTIONS : [],
 "denshi-kiki-kumitate2": async () => isExamPublished("denshi-kiki-kumitate2") ? (await import("@/data/questions/denshi-kiki-kumitate2")).DENSHI_KIKI_KUMITATE2_QUESTIONS : [],
+"kojo-bankin2": async () => isExamPublished("kojo-bankin2") ? (await import("@/data/questions/kojo-bankin2")).KOJO_BANKIN2_QUESTIONS : [],
 "kikai-hozen": async () => isExamPublished("kikai-hozen") ? (await import("@/data/questions/kikai-hozen")).KIKAI_HOZEN_QUESTIONS : [],
 "tsukanshi": async () => isExamPublished("tsukanshi") ? (await import("@/data/questions/tsukanshi")).TSUKANSHI_QUESTIONS : []
 };
