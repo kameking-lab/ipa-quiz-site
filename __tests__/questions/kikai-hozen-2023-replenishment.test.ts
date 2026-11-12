@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { QUESTIONS as DENKI } from "@/data/questions/kikai-hozen-denki1";
+import { QUESTIONS as SETSUBI } from "@/data/questions/kikai-hozen-setsubi1";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { formatQuestionAnswerForDisplay } from "@/lib/questions/display";
@@ -14,6 +15,9 @@ import type { ChoiceKey } from "@/lib/questions/types";
 const SITTINGS = [{
   exam: "kikai-hozen-denki1", season: "round2", all: DENKI, figures: 7,
   answers: "○○○××××○○×" + "×○×○○×××××" + "×○○×○ウアウウエ" + "エウイイウアエアウイ" + "アウイウアイアイエエ",
+}, {
+  exam: "kikai-hozen-setsubi1", season: "round2", all: SETSUBI, figures: 3,
+  answers: "○○○××××○○×" + "×○×○○×××××" + "×○○×○ウエイウア" + "エイアエアイエエアイ" + "ウイアアアアイアエウ",
 }] as const;
 
 describe("機械保全2023年度の公式原本照合と配信", () => {
@@ -65,4 +69,16 @@ describe("機械保全2023年度の公式原本照合と配信", () => {
       }
     });
   }
+  it("1級の一般科目25問は両公式PDFで一致した本文・解説・2図を再利用する", () => {
+    const electrical = DENKI.filter(q => q.year === 2023 && q.qNumber <= 25);
+    const diagnostic = SETSUBI.filter(q => q.year === 2023 && q.qNumber <= 25);
+    expect(electrical).toHaveLength(25);
+    expect(diagnostic).toHaveLength(25);
+    for (let i = 0; i < 25; i++) {
+      expect(diagnostic[i]!.question).toBe(electrical[i]!.question);
+      expect(diagnostic[i]!.officialAnswerNumber).toBe(electrical[i]!.officialAnswerNumber);
+      expect(diagnostic[i]!.choiceExplanations).toEqual(electrical[i]!.choiceExplanations);
+      expect(diagnostic[i]!.imageUrls).toEqual(electrical[i]!.imageUrls);
+    }
+  });
 });

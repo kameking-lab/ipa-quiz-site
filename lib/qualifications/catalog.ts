@@ -67,7 +67,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   "officialQuestionsUrl": "https://www.kikaihozenshi.jp/questions/",
   "officialReuseTermsUrl": "https://www.kikaihozenshi.jp/questions/",
   "status": "live",
-  "reuseSummary": "2024年度第2回の設備診断作業1級学科50問を収録。公式問題・正答、全肢の独自解説と原図で学べます。",
+  "reuseSummary": "2023・2024年度第2回の設備診断作業1級学科100問を収録。公式問題・正答、全肢の独自解説と原図で学べます。",
   "remainingWork": []
 },
 {
