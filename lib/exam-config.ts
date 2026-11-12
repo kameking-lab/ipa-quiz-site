@@ -1736,7 +1736,7 @@ caremanager: {
   "flower2": {
     code: "flower2", nameFull: "技能検定 2級フラワー装飾（フラワー装飾作業）学科試験", urlSlug: "flower2", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["装飾の歴史・行事", "デザイン・色彩", "製作技法", "植物の分類・性質", "資材・工具", "水揚げ・品質管理", "安全・法規"] }],
-    seasons: ["early"], yearRange: { start: 2024, end: 2024 },
+    seasons: ["early"], yearRange: { start: 2023, end: 2024 },
 },
   "kagu3": {"code": "kagu3", "nameFull": "技能検定 3級家具製作（家具手加工作業）学科試験", "urlSlug": "kagu3", "level": "basic", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 30, "label": "学科（真偽法）", "categories": ["家具の種類・構造", "製図・測定", "電気・安全衛生", "木材・木質材料", "接合・組立て", "手工具", "木工機械・加工", "研磨・塗装"]}], "seasons": ["late"], "yearRange": {"start": 2023, "end": 2025}},
   "mekki1": {"code": "mekki1", "nameFull": "技能検定 1級めっき（電気めっき作業）学科試験", "urlSlug": "mekki1", "level": "advanced", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "学科（A群 真偽法・B群 多肢択一法）", "categories": ["前処理・研磨", "電気化学・薬品", "排水・環境", "品質管理・規格", "安全衛生", "めっき浴・皮膜", "設備・治具", "分析・試験", "材料・加工", "後処理・防食"]}], "seasons": ["early"], "yearRange": {"start": 2024, "end": 2024}},

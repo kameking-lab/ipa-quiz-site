@@ -8,6 +8,9 @@ import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { formatQuestionAnswerForDisplay, questionNumberLabel } from "@/lib/questions/display";
 import { questionPagePath, findQuestionByRoute } from "@/lib/seo/question-url";
+import { questionSourceEdition } from "@/lib/questions/source-label";
+import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
+import { examFullName, examTopDescription } from "@/lib/seo/exam-meta";
 
 describe("Q4-103 家具製作3級2023年度後期", () => {
   const questions = KAGU3_QUESTIONS.filter(q => q.year === 2023);
@@ -35,6 +38,43 @@ describe("Q4-103 家具製作3級2023年度後期", () => {
   });
 });
 
+describe("Q4-105 フラワー装飾2級2023年度前期", () => {
+  const questions = FLOWER2_QUESTIONS.filter(q => q.year === 2023);
+  // 公式正答表の画像から独立して転記。A群、B群の順。
+  const answers = "○○××○×××○×○×××○×○×○×○×○○○"
+    + "イロハハロロロニニハイロロロイロロイニニハニニニイ";
+  it("公式本文と50問の正答・全肢解説を保持する", () => {
+    expect(questions).toHaveLength(50);
+    questions.forEach((q, i) => {
+      expect(q.id).toBe(`flower2-2023-early-gakka-${i < 25 ? "a" : "b"}-${String(i % 25 + 1).padStart(3, "0")}`);
+      expect(q.officialAnswerNumber).toBe(answers[i]);
+      expect(formatQuestionAnswerForDisplay(q, q.answer)).toBe(answers[i]);
+      expect(questionSourceEdition(q)).toBe("2023年度前期");
+      expect(Object.keys(q.choiceExplanations ?? {})).toEqual(Object.keys(q.choices ?? {}));
+      expect(q.sourcePdfUrl).toMatch(/#page=[2-8]$/);
+      expect(q.sourceAttribution).toContain("令和5年度前期 2級フラワー装飾");
+    });
+    expect(questions[48].choices?.エ).toBe("りん酸肥料は、根の発育を促進する。");
+    expect(questions[32].choices?.イ).toBe("アンソーテッド");
+    expect(questions[48].officialAnswerNumber).toBe("ニ");
+    expect(questions[48].explanation).toContain("注：");
+    expect(questions[48].officialReferenceUrls).toContain("https://www.maff.go.jp/j/pr/aff/2312/spe1_04.html");
+  });
+  it("両年度100問のURL・資格名・構造化データを生成する", () => {
+    expect(FLOWER2_QUESTIONS).toHaveLength(100);
+    expect(new Set(FLOWER2_QUESTIONS.map(questionPagePath)).size).toBe(100);
+    expect(examFullName("flower2")).toContain("フラワー装飾");
+    expect(examTopDescription("flower2", 100)).toContain("フラワー装飾");
+    questions.forEach(q => {
+      const [, , exam, yearSeason, section, qnum] = questionPagePath(q).split("/");
+      expect(findQuestionByRoute(FLOWER2_QUESTIONS, { exam, yearSeason, section, qnum })?.id).toBe(q.id);
+    });
+    const jsonld = JSON.stringify(buildQuestionJsonLd({ question: questions[0], pageUrlAbs: `https://www.kakomon-ai.jp${questionPagePath(questions[0])}`, title: "フラワー装飾技能士2級", lastUpdatedISO: "2026-11-13" }));
+    expect(jsonld).toContain("中央職業能力開発協会");
+    expect(jsonld).toContain("○: 正しい（○）");
+  });
+});
+
 describe("Q4-104 フラワー装飾2級2024年度前期", () => {
   const questions = FLOWER2_QUESTIONS.filter(q => q.year === 2024);
   // 公式正答表の画像から独立して転記。A群、B群の順。
@@ -55,6 +95,7 @@ describe("Q4-104 フラワー装飾2級2024年度前期", () => {
     expect(QUESTIONS_BY_EXAM.flower2).toEqual(FLOWER2_QUESTIONS);
     expect(await getQuestionsForExam("flower2")).toEqual(FLOWER2_QUESTIONS);
     expect(getQualificationByExamCode("flower2")?.status).toBe("live");
+    expect(getQualificationByExamCode("flower2")?.reuseSummary).not.toContain("2025年度");
     questions.forEach(q => {
       const [, , exam, yearSeason, section, qnum] = questionPagePath(q).split("/");
       expect(findQuestionByRoute(FLOWER2_QUESTIONS, { exam, yearSeason, section, qnum })?.id).toBe(q.id);

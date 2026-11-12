@@ -4,6 +4,7 @@ export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
 }
 export const EXAM_LABELS: Record<string, string> = {
+  "flower2": "フラワー装飾技能士 2級",
   "fujin-kodomofuku2": "婦人子供服製造技能士 2級",
   "fujin-kodomofuku1": "婦人子供服製造技能士 1級",
   "toso1": "塗装技能士 1級",
