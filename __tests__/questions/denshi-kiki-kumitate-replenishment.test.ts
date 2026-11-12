@@ -27,6 +27,9 @@ const SITTINGS = [{
   exam: "denshi-kiki-kumitate1", year: 2023, season: "early", all: DENSHI_KIKI_KUMITATE1_QUESTIONS,
   answers: "××○○○" + "○○○×○" + "○○○○○" + "××××○" + "○○××○"
     + "イハイロハ" + "ロハハニイ" + "ハハニニニ" + "ニロニイロ" + "ニイニイニ",
+}, {
+  exam: "denshi-kiki-kumitate3", year: 2023, season: "early", all: DENSHI_KIKI_KUMITATE3_QUESTIONS,
+  answers: "×○○×××××××" + "○×××○××○○○" + "○○○○○×○××○",
 }] as const;
 
 describe("電子機器組立ての公式原本と学習経路", () => {
@@ -89,5 +92,11 @@ describe("電子機器組立ての公式原本と学習経路", () => {
     expect(byNumber(14).explanation).toContain("40 Wh");
     expect(byNumber(15).officialAnswerNumber).toBe("×");
     expect(byNumber(15).explanation).toContain("12 Ω");
+  });
+  it("2023年前期の原文R形と公式正答を保持し、P形との違いを解説する", () => {
+    const q = DENSHI_KIKI_KUMITATE3_QUESTIONS.find(q => q.year === 2023 && q.season === "early" && q.qNumber === 26)!;
+    expect(q.question).toContain("R形半導体");
+    expect(q.officialAnswerNumber).toBe("×");
+    expect(q.explanation).toContain("P形");
   });
 });
