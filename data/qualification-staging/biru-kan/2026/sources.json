@@ -18,6 +18,13 @@
       "sha256": "35c59c2742819e369e07f6250693a8cbbef224511aabf2c9740238c99ac23ead",
       "bytes": 114745,
       "pages": 1
+    },
+    {
+      "kind": "questions-pm",
+      "url": "https://www.jahmec.or.jp/kokka/shiken_pdf/2026/2026shiken_pm.pdf",
+      "sha256": "705ef6ceb43be03afc2aa2d4d0e28eb35a9d10e97b38346ddb55607ceb4db1a1",
+      "bytes": 2064872,
+      "pages": 30
     }
   ],
   "duplicateCheck": {
@@ -278,5 +285,18 @@
       "checkedAt": "2026-11-12",
       "documentTitle": "建築物における衛生的環境の確保に関する法律施行令"
     }
-  ]
+  ],
+  "afternoonDuplicateCheck": {
+    "checkedAt": "2026-11-12",
+    "ledgerKey": "biru-kan|2026|annual",
+    "ledgerStatus": "未着手",
+    "originMainCommit": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+    "originMainYears": [
+      2024,
+      2025
+    ],
+    "matchingOpenPrCount": 0,
+    "other2026AfternoonWorkCount": 0,
+    "previousStep": "q2-new-4 contains morning 1-90 only"
+  }
 }
