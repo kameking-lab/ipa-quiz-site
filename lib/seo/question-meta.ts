@@ -8,13 +8,9 @@ const DESCRIPTION_MAX = 158;
 
 /**
  * Soft ceiling for a source-first <title> (before layout appends
- * " | 過去問AI"). Measured across the corpus, every /q/* title truncated in the
- * SERP and 46% ran past 45 chars — the supplementary `category` word piled on
- * top of an already-long "{year} {exam} {session} 問N 解説" core. We trim only
- * the egregious cases: `category` is the safe drop because the visible <h1>
- * renders just the core (category has its own badge/link below it) and the meta
- * description still carries the category, so no identifying info is lost. The
- * core (year/exam/session/問N/解説) is never truncated — we never cut 問N or 解説.
+ * " | 過去問AI"). Only supplementary categories can be dropped. The source
+ * edition, exam, paper field, session and printed question number are required
+ * identifiers and survive even when the core exceeds this budget.
  * Short medical stem titles have a separate total limit in medicalStemTitle.
  */
 const TITLE_MAX = 40;
@@ -46,12 +42,26 @@ function truncate(s: string, n: number): string {
   return s.length > n ? `${s.slice(0, n - 1)}…` : s;
 }
 
+/** Source identity shared by the page heading and source-first title. */
+export function questionHeading(q: Question): string {
+  // The electrical and thermal papers reuse printed question/answer numbers.
+  const field = q.exam === "energy-kanri"
+    ? q.topicTags.find(tag => tag === "電気分野" || tag === "熱分野")
+    : undefined;
+  return [questionSourceEdition(q), questionSourceExam(q), field,
+    sessionLabel(q.session, q.exam), `問${questionNumberLabel(q)}`].filter(Boolean).join(" ");
+}
+
+function supplementaryCategory(q: Question): string {
+  return (q.category === "午前" || q.category === "午後") && q.category === sessionLabel(q.session, q.exam) ? "" : q.category;
+}
+
 /** Page <title> for a single question. */
 export function questionTitle(q: Question): string {
   const stemTitle = medicalStemTitle(q);
   if (stemTitle) return stemTitle;
-  const core = `${questionSourceEdition(q)} ${questionSourceExam(q)} ${sessionLabel(q.session, q.exam)} 問${questionNumberLabel(q)}`;
-  const withCategory = `${core} ${q.category} 解説`;
+  const core = questionHeading(q);
+  const withCategory = [core, supplementaryCategory(q), "解説"].filter(Boolean).join(" ");
   // Keep the category only while the whole title stays within budget; once it
   // would push the title past TITLE_MAX, drop it and fall back to the core.
   return withCategory.length <= TITLE_MAX ? withCategory : `${core} 解説`;
@@ -69,7 +79,8 @@ export function questionSnippet(q: Question): string {
   const examStr = questionSourceExam(q);
   const ys = questionSourceEdition(q);
   const ss = sessionLabel(q.session, q.exam);
-  const context = `${examStr} ${ys} ${ss} 問${questionNumberLabel(q)}・${q.category}`;
+  const category = supplementaryCategory(q);
+  const context = `${examStr} ${ys} ${ss} 問${questionNumberLabel(q)}${category ? `・${category}` : ""}`;
   const cta = q.exam === "khk-reito-1" && isSelfReviewedDescriptiveQuestion(q)
     ? "公式解答例と独自解説で、記述・作図を自己確認できます。"
     : q.explanationCoverage === "official-summary" ? "公式正答と一般解説を確認し、無料で演習できます。" : CTA;
