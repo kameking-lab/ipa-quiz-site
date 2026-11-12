@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import { KYOKA_PLASTIC1_QUESTIONS } from "@/data/questions/kyoka-plastic1";
 import { KYOKA_PLASTIC2_QUESTIONS } from "@/data/questions/kyoka-plastic2";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -15,6 +16,7 @@ import type { ChoiceKey, ExamCode, Question } from "@/lib/questions/types";
 // Official answer image transcribed separately in groups of five.
 const editions: { exam: ExamCode; year: number; questions: Question[]; a: string; b: string; figures: string[] }[] = [
   { exam: "kyoka-plastic2", year: 2023, questions: KYOKA_PLASTIC2_QUESTIONS, a: "○××○○ ×○○○○ ××○×× ×○○○○ ×××○○", b: "ニロロロハ ニロニロニ ハハハニイ ハロロロニ イハイロニ", figures: ["B群 5", "B群 20"] },
+  { exam: "kyoka-plastic1", year: 2025, questions: KYOKA_PLASTIC1_QUESTIONS, a: "○○○○× ××××× ×○×○× ○××○× ○×○○○", b: "ニロロハロ ニニニニハ ロロロイニ ロロイハロ ロハロロハ", figures: ["A群 7"] },
 ];
 const keys: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
