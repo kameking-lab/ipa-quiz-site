@@ -1,7 +1,8 @@
 import { describe, expect, it } from "vitest";
-import { readFileSync, statSync } from "node:fs";
+import { readFileSync } from "node:fs";
 import path from "node:path";
 import { KATAWAKU2_QUESTIONS } from "@/data/questions/katawaku2";
+import { TEKKIN3_QUESTIONS } from "@/data/questions/tekkin3";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
@@ -19,6 +20,10 @@ const editions = [
       + "ハニニハロ" + "ロニロハハ" + "イニニロニ" + "ニハハロロ" + "ニハロハニ",
     pages: [...Array(11).fill(2), ...Array(14).fill(3), ...Array(5).fill(4), ...Array(4).fill(5), ...Array(5).fill(6), ...Array(4).fill(7), ...Array(5).fill(8), ...Array(2).fill(9)],
     figures: [1, 21, 28, 31, 35, 41, 42, 43, 44, 46, 47, 50] },
+  { exam: "tekkin3" as const, rows: TEKKIN3_QUESTIONS,
+    answers: "×××○×" + "×○○×○" + "×○×○○" + "×○○×○" + "×○○×○" + "×○○○○",
+    pages: [...Array(10).fill(2), ...Array(10).fill(3), ...Array(10).fill(4)],
+    figures: [5, 7, 8, 11, 16, 23, 24] },
 ];
 
 describe.each(editions)("c4-54 $exam 2025年度後期", ({ exam, rows, answers, pages, figures }) => {
@@ -51,7 +56,12 @@ describe.each(editions)("c4-54 $exam 2025年度後期", ({ exam, rows, answers, 
       expect(q.hasImage, q.id).toBe(figures.includes(q.qNumber));
       if (q.hasImage) {
         expect(q.imageAltTexts).toHaveLength(q.imageUrls!.length);
-        for (const url of q.imageUrls!) expect(statSync(path.join(process.cwd(), "public", url)).size).toBeGreaterThan(1000);
+        for (const url of q.imageUrls!) {
+          const png = readFileSync(path.join(process.cwd(), "public", url));
+          expect(png.subarray(0, 8).toString("hex"), url).toBe("89504e470d0a1a0a");
+          expect(png.readUInt32BE(16), url).toBeGreaterThan(20);
+          expect(png.readUInt32BE(20), url).toBeGreaterThan(20);
+        }
       }
     }
   });
@@ -63,7 +73,11 @@ describe.each(editions)("c4-54 $exam 2025年度後期", ({ exam, rows, answers, 
     expect(EXAM_CONFIGS[exam].sessions[0].expectedQuestions).toBe(answers.length);
     expect(EXAM_CONFIGS[exam].yearRange).toEqual({ start: 2025, end: 2025 });
     expect(EXAM_CONFIGS[exam].seasons).toEqual(["late"]);
-    expect(["ア", "イ", "ウ", "エ"].map(k => choiceDisplayLabel(exam, k as ChoiceKey))).toEqual(["イ", "ロ", "ハ", "ニ"]);
+    if (answers.length === 30) {
+      expect(["ア", "イ"].map(k => choiceDisplayLabel(exam, k as ChoiceKey))).toEqual(["○", "×"]);
+    } else {
+      expect(["ア", "イ", "ウ", "エ"].map(k => choiceDisplayLabel(exam, k as ChoiceKey))).toEqual(["イ", "ロ", "ハ", "ニ"]);
+    }
   });
 });
 
