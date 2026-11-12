@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
+import { ENGEI_SOSHOKU2_QUESTIONS } from "@/data/questions/engei-soshoku2";
 import { INSATSU1_QUESTIONS } from "@/data/questions/insatsu1";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
@@ -17,6 +18,10 @@ import type { ChoiceKey } from "@/lib/questions/types";
 const editions = [
  { exam: "insatsu1" as const, year: 2023, rows: INSATSU1_QUESTIONS,
  answers: "○○○××○○○○××○×○○×○××○○○×○×" + "ニニイニハニロニハニハハイニロハロハイハイイロニハ", figures: [41], name: "印刷" },
+ { exam: "engei-soshoku2" as const, year: 2024, rows: ENGEI_SOSHOKU2_QUESTIONS.filter(q => q.year === 2024),
+ answers: "×○×○○×○××○○○×○××○×○○×○×○○" + "ロロイロイイニロロニハイロニイニハイイイニロハイイ", figures: [], name: "園芸装飾" },
+ { exam: "engei-soshoku2" as const, year: 2023, rows: ENGEI_SOSHOKU2_QUESTIONS.filter(q => q.year === 2023),
+ answers: "○○××××○×○×○○○×××○×○○○××○×" + "ハニニニロニイニハイニハロロニイイハロハロハニニイ", figures: [], name: "園芸装飾" },
 ];
 
 describe.each(editions)("技能検定 $exam $year 年度前期", ({ exam, year, rows, answers, figures, name }) => {

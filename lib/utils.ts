@@ -18,6 +18,7 @@ export const EXAM_LABELS: Record<string, string> = {
   "tetsudo-sharyo1": "鉄道車両製造・整備技能士 1級",
   "insatsu2": "印刷技能士 2級",
   "insatsu1": "印刷技能士 1級",
+  "engei-soshoku2": "園芸装飾技能士 2級",
   "kagu1": "家具製作技能士 1級",
   "kagu2": "家具製作技能士 2級",
   "mekki3": "めっき技能士 3級",

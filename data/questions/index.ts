@@ -10,6 +10,7 @@ import { DIECAST1_QUESTIONS } from "./diecast1";
 import { TETSUDO_SHARYO1_QUESTIONS } from "./tetsudo-sharyo1";
 import { INSATSU2_QUESTIONS } from "./insatsu2";
 import { INSATSU1_QUESTIONS } from "./insatsu1";
+import { ENGEI_SOSHOKU2_QUESTIONS } from "./engei-soshoku2";
 import { KAGU1_QUESTIONS } from "./kagu1";
 import { KAGU2_QUESTIONS } from "./kagu2";
 import { MEKKI3_QUESTIONS } from "./mekki3";
@@ -196,6 +197,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("tetsudo-sharyo1") ? { "tetsudo-sharyo1": TETSUDO_SHARYO1_QUESTIONS } : {}),
 ...(isExamPublished("insatsu2") ? { "insatsu2": INSATSU2_QUESTIONS } : {}),
 ...(isExamPublished("insatsu1") ? { "insatsu1": INSATSU1_QUESTIONS } : {}),
+...(isExamPublished("engei-soshoku2") ? { "engei-soshoku2": ENGEI_SOSHOKU2_QUESTIONS } : {}),
 ...(isExamPublished("kagu1") ? { "kagu1": KAGU1_QUESTIONS } : {}),
 ...(isExamPublished("kagu2") ? { "kagu2": KAGU2_QUESTIONS } : {}),
 ...(isExamPublished("mekki3") ? { "mekki3": MEKKI3_QUESTIONS } : {}),
