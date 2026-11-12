@@ -3,7 +3,7 @@
   "qualification": "築炉（築炉作業）1級",
   "fiscalYear": 2024,
   "period": "前期",
-  "checkedAt": "2026-11-12T22:37:08.833071+00:00",
+  "checkedAt": "2026-11-12T22:46:20.625517+00:00",
   "sources": [
     {
       "kind": "questions",
@@ -544,5 +544,50 @@
       "allChoicesChecked": true,
       "hasFigure": false
     }
+  ],
+  "supplementalSources": [
+    {
+      "name": "safety-scaffold",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=9",
+      "httpStatus": 200,
+      "sha256": "86595a58aeaffa3d43bccbfb13dd34e8d5f5be77d7f4c03c460c595f6c91b44d",
+      "terms": [
+        "第五百二十八条",
+        "第五百五十二条"
+      ],
+      "questions": [
+        "B群24"
+      ]
+    },
+    {
+      "name": "safety-dust-light",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=10",
+      "httpStatus": 200,
+      "sha256": "bcd889b4d92be13a3ed8c8aab8b1ad9104574c49afc741e22d8543c41d63e9e6",
+      "terms": [
+        "第五百六十三条",
+        "第五百八十二条",
+        "第六百四条"
+      ],
+      "questions": [
+        "A群24",
+        "A群25"
+      ]
+    },
+    {
+      "name": "crane-qualification",
+      "url": "https://anzeninfo.mhlw.go.jp/yougo/yougo46_1.html",
+      "httpStatus": 200,
+      "sha256": "aa334008cc5b213a531c638ff1ca307e746a9217e5d2b71f407932e454430986",
+      "terms": [
+        "床上操作式"
+      ],
+      "questions": [
+        "B群25"
+      ]
+    }
+  ],
+  "explanationNotes": [
+    "B群25：公式本文と公式正答イを保持。床上操作式クレーンには技能講習の区分があることを解説に注記。"
   ]
 }

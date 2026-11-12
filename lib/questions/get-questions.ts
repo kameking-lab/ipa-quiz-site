@@ -195,6 +195,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 "kagaku-bunseki3": async () => isExamPublished("kagaku-bunseki3") ? (await import("@/data/questions/kagaku-bunseki3")).KAGAKU_BUNSEKI3_QUESTIONS : [],
 "kagaku-bunseki1": async () => isExamPublished("kagaku-bunseki1") ? (await import("@/data/questions/kagaku-bunseki1")).KAGAKU_BUNSEKI1_QUESTIONS : [],
 "chikuro1": async () => isExamPublished("chikuro1") ? (await import("@/data/questions/chikuro1")).CHIKURO1_QUESTIONS : [],
+"futsu-senban1": async () => isExamPublished("futsu-senban1") ? (await import("@/data/questions/futsu-senban1")).FUTSU_SENBAN1_QUESTIONS : [],
 "kagaku-bunseki2": async () => isExamPublished("kagaku-bunseki2") ? (await import("@/data/questions/kagaku-bunseki2")).KAGAKU_BUNSEKI2_QUESTIONS : [],
 "engei-soshoku1": async () => isExamPublished("engei-soshoku1") ? (await import("@/data/questions/engei-soshoku1")).ENGEI_SOSHOKU1_QUESTIONS : [],
 "engei-soshoku3": async () => isExamPublished("engei-soshoku3") ? (await import("@/data/questions/engei-soshoku3")).ENGEI_SOSHOKU3_QUESTIONS : [],

@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { readFileSync, statSync } from "node:fs";
 import path from "node:path";
 import { CHIKURO1_QUESTIONS } from "@/data/questions/chikuro1";
+import { FUTSU_SENBAN1_QUESTIONS } from "@/data/questions/futsu-senban1";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
@@ -14,6 +15,11 @@ import type { ChoiceKey } from "@/lib/questions/types";
 
 // 公式正答表を原本画像から5問ずつ再読したキー。内部キーと分けて照合する。
 const editions = [
+  { exam: "futsu-senban1" as const, year: 2025, rows: FUTSU_SENBAN1_QUESTIONS,
+    answers: "○○××○" + "×○○○×" + "○××××" + "×○○○×" + "×○○×○"
+      + "ロハイイニ" + "イロハニイ" + "ハニロイハ" + "ロイイニニ" + "イロニハニ",
+    pages: [...Array(16).fill(2), ...Array(9).fill(3), ...Array(5).fill(4), ...Array(5).fill(5), ...Array(5).fill(6), ...Array(6).fill(7), ...Array(4).fill(8)],
+    figures: [30, 44, 45, 49] },
   { exam: "chikuro1" as const, year: 2023, rows: CHIKURO1_QUESTIONS.filter(q => q.year === 2023),
     answers: "×○×○×" + "×○○○×" + "×○×○×" + "○○○×○" + "×○××○"
       + "ロロハロハ" + "ハロニニロ" + "ハニイロイ" + "イハニイロ" + "ハハイニイ",
