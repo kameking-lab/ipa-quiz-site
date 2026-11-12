@@ -4,6 +4,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { QUESTIONS as SETSUBI } from "@/data/questions/kikai-hozen-setsubi1";
 import { KIKAI_HOZEN3_QUESTIONS as KIKAI } from "@/data/questions/kikai-hozen3";
+import { KIKAI_HOZEN_DENKI3_QUESTIONS as DENKI } from "@/data/questions/kikai-hozen-denki3";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { formatQuestionAnswerForDisplay } from "@/lib/questions/display";
@@ -18,6 +19,9 @@ const SITTINGS = [{
 }, {
   exam: "kikai-hozen3", season: "round1", all: KIKAI, figures: 4,
   answers: "○××○○○×○××" + "××○○○○×○×○" + "×○○○××××○○",
+}, {
+  exam: "kikai-hozen-denki3", season: "round1", all: DENKI, figures: 6,
+  answers: "○××○○○×○××" + "××○○○×○○××" + "×○×○○○○○○×",
 }] as const;
 
 describe("機械保全2024年度の原本照合と配信", () => {
@@ -66,4 +70,16 @@ describe("機械保全2024年度の原本照合と配信", () => {
       }
     });
   }
+  it("3級の共通15問は本文・解説・4図を再利用する", () => {
+    const mechanical = KIKAI.filter(q => q.year === 2024 && q.qNumber <= 15);
+    const electrical = DENKI.filter(q => q.year === 2024 && q.qNumber <= 15);
+    expect(mechanical).toHaveLength(15);
+    expect(electrical).toHaveLength(15);
+    for (let i = 0; i < 15; i++) {
+      expect(electrical[i]!.question).toBe(mechanical[i]!.question);
+      expect(electrical[i]!.officialAnswerNumber).toBe(mechanical[i]!.officialAnswerNumber);
+      expect(electrical[i]!.choiceExplanations).toEqual(mechanical[i]!.choiceExplanations);
+      expect(electrical[i]!.imageUrls).toEqual(mechanical[i]!.imageUrls);
+    }
+  });
 });
