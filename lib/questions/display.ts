@@ -22,7 +22,7 @@ const ALPHABET_CHOICE_EXAMS: readonly ExamCode[] = ["sharoushi"];
 const ALPHABET_LABELS = ["A", "B", "C", "D", "E"] as const;
 
 export function choiceDisplayLabel(exam: ExamCode, key: ChoiceKey): string {
-  if (exam === "fujin-kodomofuku2" || exam === "fujin-kodomofuku1" || exam === "toso1" || exam === "toso2" || exam === "tobi2") {
+  if (exam === "denshi-kiki-kumitate1" || exam === "fujin-kodomofuku2" || exam === "fujin-kodomofuku1" || exam === "toso1" || exam === "toso2" || exam === "tobi2") {
     const index = IROHA_CHOICE_KEYS.indexOf(key);
     return index >= 0 ? IROHA_LABELS[index] : key;
   }
@@ -74,7 +74,7 @@ export function formatQuestionAnswerForDisplay(question: Question, value: string
       choices.every(key => value.includes(key) && accepted.includes(key))) {
     return "全員正解";
   }
-  if ((question.exam === "fujin-kodomofuku2" || question.exam === "fujin-kodomofuku1" || question.exam === "toso1" || question.exam === "toso2" || question.exam === "kikai-hozen-denki1" || question.exam === "kikai-hozen-setsubi1") && choices.length === 2) {
+  if ((question.exam === "denshi-kiki-kumitate1" || question.exam === "fujin-kodomofuku2" || question.exam === "fujin-kodomofuku1" || question.exam === "toso1" || question.exam === "toso2" || question.exam === "kikai-hozen-denki1" || question.exam === "kikai-hozen-setsubi1") && choices.length === 2) {
     return value === "ア" ? "○" : value === "イ" ? "×" : String(value);
   }
   const separator = question.type === "ordering" ? "→" : multiSeparator;
@@ -93,5 +93,5 @@ export function choiceImageAlt(exam: ExamCode, key: ChoiceKey): string | undefin
 
 /** 選択肢を原本どおり番号（電験一種・二種は(イ)〜(ヨ)、社労士はA〜E）で表示する試験（ア〜エ表記ではない）。 */
 export function usesNumberedChoices(exam: ExamCode): boolean {
-  return exam === "fujin-kodomofuku2" || exam === "fujin-kodomofuku1" || exam === "toso1" || exam === "toso2" || exam === "kikai-hozen-denki1" || exam === "kikai-hozen3" || exam === "kikai-hozen-denki3" || exam === "kenchiku-daiku3" || exam === "kenchiku-daiku1" || exam === "tobi3" || exam === "tobi2" || exam === "denken3" || exam === "denken2" || exam === "denken1" || exam === "tohan" || exam === "eisei1" || exam === "eisei2" || exam === "soukan" || exam === "hoikushi" || exam === "kashikin" || PLAIN_NUMBER_CHOICE_EXAMS.includes(exam) || ALPHABET_CHOICE_EXAMS.includes(exam);
+  return exam === "denshi-kiki-kumitate1" || exam === "fujin-kodomofuku2" || exam === "fujin-kodomofuku1" || exam === "toso1" || exam === "toso2" || exam === "kikai-hozen-denki1" || exam === "kikai-hozen3" || exam === "kikai-hozen-denki3" || exam === "kenchiku-daiku3" || exam === "kenchiku-daiku1" || exam === "tobi3" || exam === "tobi2" || exam === "denken3" || exam === "denken2" || exam === "denken1" || exam === "tohan" || exam === "eisei1" || exam === "eisei2" || exam === "soukan" || exam === "hoikushi" || exam === "kashikin" || PLAIN_NUMBER_CHOICE_EXAMS.includes(exam) || ALPHABET_CHOICE_EXAMS.includes(exam);
 }
