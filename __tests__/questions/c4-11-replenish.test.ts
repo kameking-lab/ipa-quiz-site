@@ -10,6 +10,7 @@ import type { ExamCode } from "@/lib/questions/types";
 
 const sets: {code: ExamCode; year: number; count: number}[] = [
   {code: "kikai-hozen-denki3", year: 2025, count: 30},
+  {code: "kikai-hozen-kikai1", year: 2024, count: 49},
 ];
 
 describe.each(sets)("c4-11 $code $year round2", ({code, year, count}) => {
@@ -20,15 +21,16 @@ describe.each(sets)("c4-11 $code $year round2", ({code, year, count}) => {
     const loaded = (await getQuestionsForExam(code)).filter(q => q.year === year && q.season === "round2");
     expect(loaded).toEqual(questions);
     expect(questions).toHaveLength(count);
-    expect(questions.map(q => q.qNumber)).toEqual(Array.from({length: count}, (_, i) => i + 1));
+    const missing = new Set((source.missingQuestions ?? []).map((q: {qNumber: number}) => q.qNumber));
+    expect(questions.map(q => q.qNumber)).toEqual(Array.from({length: source.originalQuestionCount ?? count}, (_, i) => i + 1).filter(n => !missing.has(n)));
     expect(EXAM_CONFIGS[code].seasons).toContain("round2");
     expect(EXAM_CONFIGS[code].yearRange.start).toBeLessThanOrEqual(year);
     for (const q of questions) expect(isPracticeReadyQuestion(q), q.id).toBe(true);
   });
 
   it("keeps official answers, full option explanations and original figures intact", () => {
-    for (const [i, q] of questions.entries()) {
-      expect(q.officialAnswerNumber, q.id).toBe(source.officialAnswers[i]);
+    for (const q of questions) {
+      expect(q.officialAnswerNumber, q.id).toBe(source.officialAnswers[q.qNumber - 1]);
       const official = String(q.officialAnswerNumber);
       expect(q.answer, q.id).toBe(official === "○" ? "ア" : official === "×" ? "イ" : official);
       expect(Object.keys(q.choiceExplanations!), q.id).toEqual(Object.keys(q.choices!));
@@ -45,6 +47,15 @@ describe.each(sets)("c4-11 $code $year round2", ({code, year, count}) => {
       expect(questions.some(q => q.imageUrls?.includes(f.url))).toBe(true);
     }
   });
+});
+
+it("keeps the officially deleted question absent and preserves the remaining numbers", () => {
+  const rows = QUESTIONS_BY_EXAM["kikai-hozen-kikai1"]!;
+  expect(rows.some(q => q.qNumber === 40)).toBe(false);
+  expect(rows.find(q => q.qNumber === 46)?.answer).toBe("ウ");
+  expect(350 * 9.8 / 8).toBeCloseTo(429, 0);
+  expect(rows.find(q => q.qNumber === 48)?.answer).toBe("イ");
+  expect(Math.sqrt(2 * 6280 / (Math.PI * 10))).toBeCloseTo(20, 0);
 });
 
 it("keeps the series circuit calculation and PNP arrow consistent with the original", () => {

@@ -178,6 +178,7 @@ export const EXAM_LABELS: Record<string, string> = {
     "kikai-hozen-denki3": "機械保全技能士 3級（電気系）",
     "kikai-hozen-denki1": "機械保全技能士 1級（電気系）",
     "kikai-hozen-setsubi1": "機械保全技能士 1級（設備診断）",
+    "kikai-hozen-kikai1": "機械保全技能士 1級（機械系）",
     "kikai-hozen": "機械保全技能士 2級",
     "tsukanshi": "通関士"
 };
