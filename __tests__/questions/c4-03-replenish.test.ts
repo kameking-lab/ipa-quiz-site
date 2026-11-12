@@ -42,12 +42,15 @@ describe("Q4-007 とび3級2023年度前期", () => {
   });
 });
 
-describe("Q4-008 建築大工2級2024年度後期", () => {
-  const a = "○○××○×○○×○×○○×○○○○×○×○×○○";
-  const b = "ハイハロハニニイハハイハニイロロロイロイロニハロロ";
+for (const sitting of [
+  { year: 2024, a: "○○××○×○○×○×○○×○○○○×○×○×○○", b: "ハイハロハニニイハハイハニイロロロイロイロニハロロ", figures: ["A群 5", "A群 6", "A群 8", "A群 14", "A群 18", "A群 19", "B群 5", "B群 6", "B群 8", "B群 15", "B群 18", "B群 22"] },
+  { year: 2023, a: "○○○○×○×○×××××××○××××○○×○○", b: "ニロニロハハロニハイイハイイロロニロハニハイイイロ", figures: ["A群 5", "A群 6", "A群 7", "A群 14", "B群 6", "B群 9", "B群 13", "B群 15", "B群 18", "B群 22"] },
+]) {
+describe(`建築大工2級${sitting.year}年度後期`, () => {
+  const { year, a, b } = sitting;
   const keys: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
   const printed = ["イ", "ロ", "ハ", "ニ"];
-  const qs = KENCHIKU_DAIKU2_QUESTIONS.filter(q => q.year === 2024 && q.season === "late");
+  const qs = KENCHIKU_DAIKU2_QUESTIONS.filter(q => q.year === year && q.season === "late");
 
   it("A・B群各25問を原本どおり採点し、全肢解説と公開URLを利用できる", () => {
     expect(qs).toHaveLength(50);
@@ -57,7 +60,7 @@ describe("Q4-008 建築大工2級2024年度後期", () => {
       const tf = i < 25;
       const n = i % 25 + 1;
       const symbol = (tf ? a : b)[n - 1];
-      expect(q.id).toBe(`kenchiku-daiku2-2024-late-gakka-${tf ? "a" : "b"}-${String(n).padStart(3, "0")}`);
+      expect(q.id).toBe(`kenchiku-daiku2-${year}-late-gakka-${tf ? "a" : "b"}-${String(n).padStart(3, "0")}`);
       expect(q.qNumber).toBe(i + 1);
       expect(q.officialQuestionLabel).toBe(`${tf ? "A" : "B"}群 ${n}`);
       expect(q.officialAnswerNumber, q.id).toBe(symbol);
@@ -66,14 +69,14 @@ describe("Q4-008 建築大工2級2024年度後期", () => {
       expect(isPracticeReadyQuestion(q), q.id).toBe(true);
       expect(Object.keys(q.choiceExplanations!).sort()).toEqual(Object.keys(q.choices!).sort());
       expect(EXAM_CONFIGS["kenchiku-daiku2"].sessions[0].categories).toContain(q.category);
-      expect(findQuestionByRoute(qs, { exam: "kenchiku-daiku2", yearSeason: "2024-late", section: "gakka", qnum: `q${i + 1}` })).toBe(q);
+      expect(findQuestionByRoute(qs, { exam: "kenchiku-daiku2", yearSeason: `${year}-late`, section: "gakka", qnum: `q${i + 1}` })).toBe(q);
     });
     expect(new Set(qs.map(questionPagePath)).size).toBe(50);
   });
 
-  it("図と数式12点を出典の記録と一致させ、同期・遅延読込に接続する", async () => {
-    expect(qs.filter(q => q.hasImage).map(q => q.officialQuestionLabel)).toEqual(["A群 5", "A群 6", "A群 8", "A群 14", "A群 18", "A群 19", "B群 5", "B群 6", "B群 8", "B群 15", "B群 18", "B群 22"]);
-    const source = JSON.parse(readFileSync(join(process.cwd(), "data/questions/kenchiku-daiku2/sources-2024-late.json"), "utf8"));
+  it("全図と数式を出典の記録と一致させ、同期・遅延読込に接続する", async () => {
+    expect(qs.filter(q => q.hasImage).map(q => q.officialQuestionLabel)).toEqual(sitting.figures);
+    const source = JSON.parse(readFileSync(join(process.cwd(), `data/questions/kenchiku-daiku2/sources-${year}-late.json`), "utf8"));
     for (const f of source.figures) {
       const bytes = readFileSync(join(process.cwd(), "public", f.url));
       expect(bytes.subarray(8, 12).toString()).toBe("WEBP");
@@ -81,8 +84,15 @@ describe("Q4-008 建築大工2級2024年度後期", () => {
     }
     expect(QUESTIONS_BY_EXAM["kenchiku-daiku2"]).toEqual(KENCHIKU_DAIKU2_QUESTIONS);
     expect(await getQuestionsForExam("kenchiku-daiku2")).toEqual(KENCHIKU_DAIKU2_QUESTIONS);
-    expect(qs[22].explanation).toContain("ミリメートル");
-    expect(qs[47].answer).toBe("ウ");
-    expect(qs[48].explanation).toContain("23cm以下");
+    if (year === 2024) {
+      expect(qs[22].explanation).toContain("ミリメートル");
+      expect(qs[47].answer).toBe("ウ");
+      expect(qs[48].explanation).toContain("23cm以下");
+    } else {
+      expect(qs[42].question).toContain("ぎんなん面");
+      expect(qs[38].explanation).toContain("D13以上");
+      expect(qs[47].explanation).toContain("1/7以上");
+    }
   });
 });
+}

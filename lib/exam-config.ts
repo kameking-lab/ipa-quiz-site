@@ -1705,8 +1705,8 @@ caremanager: {
 },
 "kenchiku-daiku2": {
     code: "kenchiku-daiku2", nameFull: "技能検定 2級建築大工（大工工事作業）学科試験", urlSlug: "kenchiku-daiku2", level: "basic",
-    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["建築構造", "木造施工", "規矩術", "工具", "施工計画", "仮設工事", "測量", "基礎工事", "接合金物", "設備", "材料", "製図", "安全衛生", "関係法規", "力学", "仕上げ"] }],
-    seasons: ["late"], yearRange: { start: 2024, end: 2024 },
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["建築構造", "木造施工", "規矩術", "工具", "施工計画", "仮設工事", "測量", "基礎工事", "接合金物", "設備", "材料", "製図", "安全衛生", "関係法規", "力学", "仕上げ", "墨付け"] }],
+    seasons: ["late"], yearRange: { start: 2023, end: 2024 },
 },
 "shashin2": {
     code: "shashin2", nameFull: "技能検定 2級写真（肖像写真デジタル作業）学科試験", urlSlug: "shashin2", level: "basic",
