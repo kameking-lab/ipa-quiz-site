@@ -20,6 +20,11 @@ const editions = [
       + "ニロロイロ" + "ハロハハニ" + "ロロニロハ" + "ロニイニイ" + "イロロニロ",
     pages: [...Array(15).fill(2), ...Array(10).fill(3), ...Array(5).fill(4), ...Array(6).fill(5), ...Array(5).fill(6), ...Array(6).fill(7), ...Array(3).fill(8)],
     figureNumbers: [23, 24] },
+  { exam: "sasshi1" as const, year: 2023, rows: SASSHI1_QUESTIONS.filter(q => q.year === 2023),
+    answers: "○○○×○" + "××○××" + "×○○×○" + "×○×××" + "×○×××"
+      + "ロロハハロ" + "イハイハニ" + "ロニニロイ" + "ニイロロロ" + "ハハイロハ",
+    pages: [...Array(15).fill(2), ...Array(10).fill(3), ...Array(5).fill(4), ...Array(6).fill(5), ...Array(5).fill(6), ...Array(6).fill(7), ...Array(3).fill(8)],
+    figureNumbers: [23, 46, 48] },
 ];
 
 describe.each(editions)("c4-44 $exam $year 年度前期", ({ exam, year, rows, answers, pages, figureNumbers }) => {
