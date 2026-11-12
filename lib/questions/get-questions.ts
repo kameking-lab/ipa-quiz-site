@@ -12,6 +12,8 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "chikuro1": async () => isExamPublished("chikuro1") ? (await import("@/data/questions/chikuro1")).CHIKURO1_QUESTIONS : [],
   "kagaku-bunseki1": async () => isExamPublished("kagaku-bunseki1") ? (await import("@/data/questions/kagaku-bunseki1")).KAGAKU_BUNSEKI1_QUESTIONS : [],
   "kagaku-bunseki3": async () => isExamPublished("kagaku-bunseki3") ? (await import("@/data/questions/kagaku-bunseki3")).KAGAKU_BUNSEKI3_QUESTIONS : [],
+  "futsu-senban3": async () => isExamPublished("futsu-senban3") ? (await import("@/data/questions/futsu-senban3")).FUTSU_SENBAN3_QUESTIONS : [],
+  "shashutsu3": async () => isExamPublished("shashutsu3") ? (await import("@/data/questions/shashutsu3")).SHASHUTSU3_QUESTIONS : [],
   "kyoka-plastic1": async () => isExamPublished("kyoka-plastic1") ? (await import("@/data/questions/kyoka-plastic1")).KYOKA_PLASTIC1_QUESTIONS : [],
   "engei-soshoku1": async () => isExamPublished("engei-soshoku1") ? (await import("@/data/questions/engei-soshoku1")).ENGEI_SOSHOKU1_QUESTIONS : [],
   "flower3": async () => isExamPublished("flower3") ? (await import("@/data/questions/flower3")).FLOWER3_QUESTIONS : [],
