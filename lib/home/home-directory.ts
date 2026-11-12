@@ -126,6 +126,8 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   {"code": "kojo-bankin3", "name": "工場板金技能士 3級", "sub": "曲げ板金作業 学科（真偽法）", "domain": "construction"},
   {"code": "kojo-bankin2", "name": "工場板金技能士 2級", "sub": "曲げ板金作業 学科（A群 真偽法・B群 多肢択一法）", "domain": "construction"},
   {"code": "mekki2", "name": "めっき技能士 2級", "sub": "電気めっき作業 学科（A群 真偽法・B群 多肢択一法）", "domain": "construction"},
+  {"code": "kagu3", "name": "家具製作技能士 3級", "sub": "家具手加工作業 学科（真偽法）", "domain": "construction"},
+  {"code": "kagu1", "name": "家具製作技能士 1級", "sub": "家具手加工作業 学科（A群 真偽法・B群 多肢択一法）", "domain": "construction"},
   {"code": "kagu2", "name": "家具製作技能士 2級", "sub": "家具手加工作業 学科（A群 真偽法・B群 多肢択一法）", "domain": "construction"},
   {"code": "mekki3", "name": "めっき技能士 3級", "sub": "電気めっき 学科（真偽法）", "domain": "construction"},
   {"code": "mekki1", "name": "めっき技能士 1級", "sub": "電気めっき作業 学科（A群 真偽法・B群 多肢択一法）", "domain": "construction"},
