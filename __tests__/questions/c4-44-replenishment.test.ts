@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { existsSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { SASSHI1_QUESTIONS } from "@/data/questions/sasshi1";
+import { KYOKA_PLASTIC2_QUESTIONS } from "@/data/questions/kyoka-plastic2";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -25,6 +26,11 @@ const editions = [
       + "ロロハハロ" + "イハイハニ" + "ロニニロイ" + "ニイロロロ" + "ハハイロハ",
     pages: [...Array(15).fill(2), ...Array(10).fill(3), ...Array(5).fill(4), ...Array(6).fill(5), ...Array(5).fill(6), ...Array(6).fill(7), ...Array(3).fill(8)],
     figureNumbers: [23, 46, 48] },
+  { exam: "kyoka-plastic2" as const, year: 2024, rows: KYOKA_PLASTIC2_QUESTIONS,
+    answers: "○○×○×" + "×○××○" + "○○××○" + "×○○×○" + "○○×○×"
+      + "ロニニロニ" + "イロロハイ" + "ハニハロロ" + "ニロニイロ" + "ニニロニニ",
+    pages: [...Array(17).fill(2), ...Array(8).fill(3), ...Array(6).fill(4), ...Array(5).fill(5), ...Array(6).fill(6), ...Array(6).fill(7), ...Array(2).fill(8)],
+    figureNumbers: [50] },
 ];
 
 describe.each(editions)("c4-44 $exam $year 年度前期", ({ exam, year, rows, answers, pages, figureNumbers }) => {
