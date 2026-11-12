@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
-import { KOJO_BANKIN3_QUESTIONS as questions } from "@/data/questions/kojo-bankin3";
+import { KOJO_BANKIN3_QUESTIONS } from "@/data/questions/kojo-bankin3";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { choiceDisplayLabel, formatQuestionAnswerForDisplay, questionNumberLabel } from "@/lib/questions/display";
@@ -9,6 +9,7 @@ import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
 // 公式正解表を問題データとは独立に転記。
 const answers = "×○○○○×○○○×○○×○××××○○××○××○×○○×".split("");
+const questions = KOJO_BANKIN3_QUESTIONS.filter(q => q.year === 2025);
 describe("工場板金3級2025年度前期", () => {
   it("30問の公式番号・公式正答・全肢解説と○×表示を保持する", () => {
     expect(questions).toHaveLength(30);
@@ -36,7 +37,7 @@ describe("工場板金3級2025年度前期", () => {
     expect(questions[28].explanation).toContain("製品径をブランク径で割った値");
   });
   it("ローダー、資格一覧、公式出典の構造化データに接続する", async () => {
-    expect(await getQuestionsForExam("kojo-bankin3")).toEqual(questions);
+    expect(await getQuestionsForExam("kojo-bankin3")).toEqual(KOJO_BANKIN3_QUESTIONS);
     expect(getQualificationByExamCode("kojo-bankin3")?.status).toBe("live");
     expect(EXAM_CONFIGS["kojo-bankin3"].sessions[0].expectedQuestions).toBe(30);
     const jsonLd = buildQuestionJsonLd({ question: questions[0], pageUrlAbs: "https://www.kakomon-ai.jp/q/kojo-bankin3/2025-early/gakka/q1", title: "工場板金3級", lastUpdatedISO: "2026-11-13" });
