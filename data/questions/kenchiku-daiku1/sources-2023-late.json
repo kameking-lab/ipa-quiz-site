@@ -722,7 +722,16 @@
       "figureChecked": false
     }
   ],
-  "reusedManuscripts": [],
+  "reusedManuscripts": [
+    {
+      "id": "kenchiku-daiku1-2023-late-gakka-a-020",
+      "reusedFromId": "kenchiku-daiku1-2025-late-gakka-a-021",
+      "path": "data/questions/kenchiku-daiku1/2025-late.json",
+      "commit": "1ab9dc29556f9688465a1ab6bcf64c556f6615ce",
+      "statementAndAllChoicesMatched": true,
+      "officialAnswerMatched": true
+    }
+  ],
   "officialAnswers": {
     "a": "×○○○×○○×○××○○○×○○○○×○○○××",
     "b": "ニイイハロロイニハイロイハロイイロニハロロニイハニ"
@@ -739,6 +748,14 @@
     {
       "url": "https://laws.e-gov.go.jp/document?lawid=325CO0000000338_20240401_505CO0000000324",
       "use": "A24：地階の定義、第1条／B3：階段寸法、第23条"
+    },
+    {
+      "url": "https://www.zaimu.metro.tokyo.lg.jp/kentikuhozen/eizen/R5kentikuhyoujyun.pdf",
+      "use": "A20：釘の長さは板厚の2.5倍以上、第12章木工事"
+    },
+    {
+      "url": "https://www.mlit.go.jp/common/001215159.pdf",
+      "use": "A24：地階の定義、床面から地盤面までが天井高さの3分の1以上"
     }
   ]
 }

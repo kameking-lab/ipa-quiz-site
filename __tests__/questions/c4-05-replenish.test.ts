@@ -71,3 +71,15 @@ describe("Q4-014 建築大工3級2023年度前期", () => {
     expect(qs[29].explanation).toContain("60cm");
   });
 });
+
+describe("Q4-015 建築大工3級2023年度後期", () => {
+  const qs = KENCHIKU_DAIKU3_QUESTIONS.filter(q => q.year === 2023 && q.season === "late");
+  checkSitting("kenchiku-daiku3", "late", qs, "○×○×○××××○××○○○○○○○○○×○○○×○××○");
+
+  it("図の部材、勾配の分子分母と安全装置を説明する", () => {
+    expect(qs[1].explanation).toContain("根太");
+    expect(qs[7].explanation).toContain("勾／殳");
+    expect(qs[27].explanation).toContain("切妻");
+    expect(qs[28].explanation).toContain("省略");
+  });
+});
