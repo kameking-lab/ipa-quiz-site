@@ -22,7 +22,7 @@ const ALPHABET_CHOICE_EXAMS: readonly ExamCode[] = ["sharoushi"];
 const ALPHABET_LABELS = ["A", "B", "C", "D", "E"] as const;
 
 export function choiceDisplayLabel(exam: ExamCode, key: ChoiceKey): string {
-  if (exam === "tobi3" || exam === "kenchiku-daiku3" || exam === "kikai-hozen-denki3") return key === "ア" ? "○" : key === "イ" ? "×" : key;
+  if (exam === "tobi3" || exam === "kenchiku-daiku3" || exam === "kikai-hozen-denki3" || exam === "kikai-hozen3") return key === "ア" ? "○" : key === "イ" ? "×" : key;
   if (exam === "tobi1" || exam === "kenchiku-daiku1" || exam === "kenchiku-daiku2" || exam === "denshi-kiki-kumitate2" || exam === "kojo-bankin2" || exam === "kensetsu-kikai-seibi2" || exam === "hyoso2" || exam === "kikinzoku-soshin2" || exam === "shashin2") {
     const index = IROHA_CHOICE_KEYS.indexOf(key);
     return index >= 0 ? IROHA_LABELS[index] : key;
@@ -64,7 +64,7 @@ export function formatQuestionAnswerForDisplay(question: Question, value: string
       choices.every(key => value.includes(key) && accepted.includes(key))) {
     return "全員正解";
   }
-  if ((question.exam === "kikai-hozen-denki3" || question.exam === "kikai-hozen-denki1" || question.exam === "kikai-hozen-setsubi1" || question.exam === "tobi1" || question.exam === "tobi3" || question.exam === "kenchiku-daiku1" || question.exam === "kenchiku-daiku3" || question.exam === "kenchiku-daiku2" || question.exam === "denshi-kiki-kumitate2" || question.exam === "kojo-bankin2" || question.exam === "kensetsu-kikai-seibi2" || question.exam === "hyoso2" || question.exam === "kikinzoku-soshin2" || question.exam === "shashin2") && choices.length === 2) {
+  if ((question.exam === "kikai-hozen3" || question.exam === "kikai-hozen-denki3" || question.exam === "kikai-hozen-denki1" || question.exam === "kikai-hozen-setsubi1" || question.exam === "tobi1" || question.exam === "tobi3" || question.exam === "kenchiku-daiku1" || question.exam === "kenchiku-daiku3" || question.exam === "kenchiku-daiku2" || question.exam === "denshi-kiki-kumitate2" || question.exam === "kojo-bankin2" || question.exam === "kensetsu-kikai-seibi2" || question.exam === "hyoso2" || question.exam === "kikinzoku-soshin2" || question.exam === "shashin2") && choices.length === 2) {
     const key = String(value);
     return key === "ア" ? "○" : key === "イ" ? "×" : key;
   }

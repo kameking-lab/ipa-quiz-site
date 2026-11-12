@@ -1,0 +1,166 @@
+{
+  "candidate": "Q4-037",
+  "qualification": "機械保全技能検定 3級 機械系保全作業",
+  "year": 2024,
+  "season": "round2",
+  "examDate": "2025-01-12",
+  "questionCount": 30,
+  "officialSources": [
+    {
+      "url": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_kikai_mondai_2.pdf",
+      "sha256": "5545f4ff0b2ffdfe96e36a330064bacac6ad3cbef072680d9bb3aceff811ed06",
+      "size": 752542,
+      "pages": 5
+    },
+    {
+      "url": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_kikai_kaitou_2.pdf",
+      "sha256": "767ac4b52f6695886f8787fed44209f72765abc66e3ec4fe22f5baa314c9c013",
+      "size": 167159,
+      "pages": 1
+    }
+  ],
+  "officialAnswers": [
+    "×",
+    "○",
+    "×",
+    "×",
+    "×",
+    "○",
+    "×",
+    "○",
+    "×",
+    "○",
+    "○",
+    "×",
+    "×",
+    "○",
+    "○",
+    "○",
+    "○",
+    "×",
+    "×",
+    "×",
+    "×",
+    "○",
+    "×",
+    "○",
+    "○",
+    "○",
+    "○",
+    "×",
+    "×",
+    "×"
+  ],
+  "choiceMapping": {
+    "ア": "○",
+    "イ": "×"
+  },
+  "figures": [
+    {
+      "url": "/images/questions/kikai-hozen3/2024-round2-q01.webp",
+      "pdfPage": 2,
+      "cropPdfPoints": [
+        151,
+        93,
+        257,
+        169
+      ],
+      "sha256": "f780879cdf816a58b96e94fcbe057561c282ac000d0a5d1e664735bf30f2d4c9",
+      "alt": "旋盤の全体図"
+    },
+    {
+      "url": "/images/questions/kikai-hozen3/2024-round2-q03.webp",
+      "pdfPage": 2,
+      "cropPdfPoints": [
+        117,
+        231,
+        285,
+        328
+      ],
+      "sha256": "af277e4c2c9f7ac47dae7a2183993ed6ff9009429afd09634de05dd2468f34a2",
+      "alt": "20Ωと10Ωの直列抵抗、電流0.5Aおよび電源電圧Vを示す回路"
+    },
+    {
+      "url": "/images/questions/kikai-hozen3/2024-round2-q09.webp",
+      "pdfPage": 2,
+      "cropPdfPoints": [
+        129,
+        564,
+        256,
+        657
+      ],
+      "sha256": "5521e97f7dfe50cb6cc5099c68bb211b1f954e42ae9f0c2b578da2e04212447b",
+      "alt": "階級ごとの度数を柱で示すヒストグラム"
+    },
+    {
+      "url": "/images/questions/kikai-hozen3/2024-round2-q30.webp",
+      "pdfPage": 4,
+      "cropPdfPoints": [
+        180,
+        626,
+        277,
+        719
+      ],
+      "sha256": "a73d018f50f8e0f122ccf93823327d1dd83925d262f2af25a8c0530c0c21401d",
+      "alt": "穴の直径φ11とAが指す引出線を示した図面"
+    }
+  ],
+  "reusedQuestions": [
+    {
+      "qNumber": 2,
+      "sourceId": "kikai-hozen3-2025-round2-gakka-002",
+      "sourceBranch": "cx/qnew6-kako-20261112"
+    },
+    {
+      "qNumber": 6,
+      "sourceId": "kikai-hozen-denki3-2025-round1-gakka-006",
+      "sourceBranch": "cx/qnew6-kako-20261112"
+    },
+    {
+      "qNumber": 7,
+      "sourceId": "kikai-hozen-denki3-2026-round1-gakka-007",
+      "sourceBranch": "cx/qnew5-kako-20261112"
+    },
+    {
+      "qNumber": 8,
+      "sourceId": "kikai-hozen-denki3-2024-round1-gakka-008",
+      "sourceBranch": "cx/qnew6-kako-20261112"
+    },
+    {
+      "qNumber": 12,
+      "sourceId": "kikai-hozen-denki3-2025-round1-gakka-012",
+      "sourceBranch": "cx/qnew6-kako-20261112"
+    },
+    {
+      "qNumber": 14,
+      "sourceId": "kikai-hozen-denki3-2026-round1-gakka-014",
+      "sourceBranch": "cx/qnew5-kako-20261112"
+    },
+    {
+      "qNumber": 15,
+      "sourceId": "kikai-hozen3-2023-round1-gakka-015",
+      "sourceBranch": "cx/qnew6-kako-20261112"
+    },
+    {
+      "qNumber": 22,
+      "sourceId": "kikai-hozen3-2024-round1-gakka-022",
+      "sourceBranch": "cx/qnew6-kako-20261112"
+    },
+    {
+      "qNumber": 27,
+      "sourceId": "kikai-hozen3-2023-round1-gakka-027",
+      "sourceBranch": "cx/qnew6-kako-20261112"
+    },
+    {
+      "qNumber": 29,
+      "sourceId": "kikai-hozen3-2025-round2-gakka-029",
+      "sourceBranch": "cx/qnew6-kako-20261112"
+    }
+  ],
+  "explanationReferenceUrls": [
+    "https://www.nsk.com/jp-ja/tools-resources/abc-bearings/damage-and-countermeasures/"
+  ],
+  "transcriptionMethod": "公式PDFのテキスト層と全ページ描画を照合。改行を結合し全角英数字を正規化。同一本文かつ公式正答が一致する既存自前原稿10問を再利用。図付き問題は今回の原図を確認して作成。",
+  "answerVerification": "公式正解表30記号を描画画像で照合。",
+  "missingQuestions": []
+}
