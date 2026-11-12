@@ -12,6 +12,7 @@ import type { ExamCode } from "@/lib/questions/types";
 // Independently transcribed from the rendered official answer sheet.
 const sets: { code: ExamCode; year: number; answers: string }[] = [
   { code: "kikai-hozen3", year: 2024, answers: "×○×××○×○×○○××○○○○××××○×○○○○×××" },
+  { code: "kikai-hozen-denki3", year: 2024, answers: "×○×××○×○×○○××○○×○×○○××○×○○×○○×" },
 ];
 
 describe.each(sets)("c4-13 $code $year round2", ({ code, year, answers }) => {
@@ -64,4 +65,24 @@ it("distinguishes the lathe, histogram, series circuit and leader line from othe
   expect(questions[18].explanation).toContain("電食");
   expect(choiceDisplayLabel("kikai-hozen3", "ア")).toBe("○");
   expect(formatQuestionAnswerForDisplay(questions[0], questions[0].answer)).toBe("×");
+});
+
+it("shares the verified common 15 questions without losing the electrical source", () => {
+  const mechanical = QUESTIONS_BY_EXAM["kikai-hozen3"]!.filter(q => q.year === 2024 && q.qNumber <= 15);
+  const electrical = QUESTIONS_BY_EXAM["kikai-hozen-denki3"]!.filter(q => q.year === 2024 && q.qNumber <= 15);
+  expect(electrical).toHaveLength(15);
+  for (const [index, q] of electrical.entries()) {
+    expect(q.question).toBe(mechanical[index].question);
+    expect(q.choices).toBe(mechanical[index].choices);
+    expect(q.choiceExplanations).toBe(mechanical[index].choiceExplanations);
+    expect(q.imageUrls).toBe(mechanical[index].imageUrls);
+    expect(q.officialAnswerNumber).toBe(mechanical[index].officialAnswerNumber);
+    expect(q.sourcePdfUrl).toContain("2024_3kyu_denki_mondai_2.pdf");
+  }
+  const questions = QUESTIONS_BY_EXAM["kikai-hozen-denki3"]!.filter(q => q.year === 2024);
+  expect(questions[21].explanation).toContain("100W");
+  expect(questions[26].answer).toBe("イ");
+  expect(questions[26].explanation).toContain("平らな面同士");
+  expect(questions[29].answer).toBe("イ");
+  expect(questions[29].explanation).toContain("WL→YL→GL");
 });
