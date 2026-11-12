@@ -3,6 +3,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { DENSHI_KIKI_KUMITATE1_QUESTIONS } from "@/data/questions/denshi-kiki-kumitate1";
+import { DENSHI_KIKI_KUMITATE3_QUESTIONS } from "@/data/questions/denshi-kiki-kumitate3";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { formatQuestionAnswerForDisplay, usesNumberedChoices } from "@/lib/questions/display";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
@@ -16,6 +17,9 @@ const SITTINGS = [{
   exam: "denshi-kiki-kumitate1", season: "early", all: DENSHI_KIKI_KUMITATE1_QUESTIONS,
   answers: "○××××" + "××××○" + "○○○○○" + "○○××○" + "○○××○"
     + "ニニニハイ" + "ロハハロニ" + "イハハロロ" + "ロイロハハ" + "ニイハハハ",
+}, {
+  exam: "denshi-kiki-kumitate3", season: "early", all: DENSHI_KIKI_KUMITATE3_QUESTIONS,
+  answers: "○×○○○○×○×○" + "○○○×○×○○○○" + "○○×○○×××○×",
 }] as const;
 
 describe("電子機器組立ての公式原本と学習経路", () => {
@@ -64,5 +68,11 @@ describe("電子機器組立ての公式原本と学習経路", () => {
     expect(byNumber(19).officialAnswerNumber).toBe("×");
     expect(byNumber(19).explanation).toContain("0.6 Ω");
     expect(byNumber(44).explanation).toContain("159.98 mm");
+  });
+  it("3級前期の抵抗カラーコードを3.9 MΩと読み、公式正答×を保持する", () => {
+    const q = DENSHI_KIKI_KUMITATE3_QUESTIONS.find(q => q.season === "early" && q.qNumber === 16)!;
+    expect(q.question).toContain("39 MΩ");
+    expect(q.officialAnswerNumber).toBe("×");
+    expect(q.explanation).toContain("3.9 MΩ");
   });
 });

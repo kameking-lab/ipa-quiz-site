@@ -1,3 +1,4 @@
+import { DENSHI_KIKI_KUMITATE3_QUESTIONS } from "./denshi-kiki-kumitate3";
 import { DENSHI_KIKI_KUMITATE1_QUESTIONS } from "./denshi-kiki-kumitate1";
 import { FUJIN_KODOMOFUKU2_QUESTIONS } from "./fujin-kodomofuku2";
 import { FUJIN_KODOMOFUKU1_QUESTIONS } from "./fujin-kodomofuku1";
@@ -166,6 +167,7 @@ import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("fujin-kodomofuku2") ? { "fujin-kodomofuku2": FUJIN_KODOMOFUKU2_QUESTIONS } : {}),
 ...(isExamPublished("denshi-kiki-kumitate1") ? { "denshi-kiki-kumitate1": DENSHI_KIKI_KUMITATE1_QUESTIONS } : {}),
+...(isExamPublished("denshi-kiki-kumitate3") ? { "denshi-kiki-kumitate3": DENSHI_KIKI_KUMITATE3_QUESTIONS } : {}),
 ...(isExamPublished("fujin-kodomofuku1") ? { "fujin-kodomofuku1": FUJIN_KODOMOFUKU1_QUESTIONS } : {}),
 ...(isExamPublished("toso1") ? { "toso1": TOSO1_QUESTIONS } : {}),
 ...(isExamPublished("toso2") ? { "toso2": TOSO2_QUESTIONS } : {}),
