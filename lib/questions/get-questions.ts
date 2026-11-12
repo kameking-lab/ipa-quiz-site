@@ -182,6 +182,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 "denshi-kiki-kumitate2": async () => isExamPublished("denshi-kiki-kumitate2") ? (await import("@/data/questions/denshi-kiki-kumitate2")).DENSHI_KIKI_KUMITATE2_QUESTIONS : [],
 "kojo-bankin1": async () => isExamPublished("kojo-bankin1") ? (await import("@/data/questions/kojo-bankin1")).KOJO_BANKIN1_QUESTIONS : [],
 "kinzoku-netsushori2": async () => isExamPublished("kinzoku-netsushori2") ? (await import("@/data/questions/kinzoku-netsushori2")).KINZOKU_NETSUSHORI2_QUESTIONS : [],
+"kinzoku-netsushori3": async () => isExamPublished("kinzoku-netsushori3") ? (await import("@/data/questions/kinzoku-netsushori3")).KINZOKU_NETSUSHORI3_QUESTIONS : [],
 "kojo-bankin3": async () => isExamPublished("kojo-bankin3") ? (await import("@/data/questions/kojo-bankin3")).KOJO_BANKIN3_QUESTIONS : [],
 "kojo-bankin2": async () => isExamPublished("kojo-bankin2") ? (await import("@/data/questions/kojo-bankin2")).KOJO_BANKIN2_QUESTIONS : [],
 "kensetsu-kikai-seibi2": async () => isExamPublished("kensetsu-kikai-seibi2") ? (await import("@/data/questions/kensetsu-kikai-seibi2")).KENSETSU_KIKAI_SEIBI2_QUESTIONS : [],
