@@ -6,6 +6,7 @@ import { isExamPublished } from "@/lib/qualifications/catalog";
 const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "flower3": async () => isExamPublished("flower3") ? (await import("@/data/questions/flower3")).FLOWER3_QUESTIONS : [],
   "insatsu2": async () => isExamPublished("insatsu2") ? (await import("@/data/questions/insatsu2")).INSATSU2_QUESTIONS : [],
+  "insatsu1": async () => isExamPublished("insatsu1") ? (await import("@/data/questions/insatsu1")).INSATSU1_QUESTIONS : [],
   "flower1": async () => isExamPublished("flower1") ? (await import("@/data/questions/flower1")).FLOWER1_QUESTIONS : [],
   "flower2": async () => isExamPublished("flower2") ? (await import("@/data/questions/flower2")).FLOWER2_QUESTIONS : [],
   "tekko1": async () => isExamPublished("tekko1") ? (await import("@/data/questions/tekko1")).TEKKO1_QUESTIONS : [],

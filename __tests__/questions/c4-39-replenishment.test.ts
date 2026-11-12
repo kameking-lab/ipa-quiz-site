@@ -1,8 +1,10 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
+import { INSATSU1_QUESTIONS } from "@/data/questions/insatsu1";
 import { INSATSU2_QUESTIONS } from "@/data/questions/insatsu2";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
+import { EXAM_DESCRIPTIONS, examMetaDescription } from "@/lib/seo/exam-meta";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { formatQuestionAnswerForDisplay, usesNumberedChoices } from "@/lib/questions/display";
@@ -15,6 +17,10 @@ import type { ChoiceKey } from "@/lib/questions/types";
 
 // Independently transcribed from the official answer tables, by printed column.
 const editions = [
+ { exam: "insatsu1" as const, year: 2024, rows: INSATSU1_QUESTIONS.filter(q => q.year === 2024),
+ answers: "○×○○××○○○○××○××○×○○×○××××" + "ハハニハイイニイロニイロイニイニロイハロハロハイハ", figures: [37], name: "印刷" },
+ { exam: "insatsu1" as const, year: 2025, rows: INSATSU1_QUESTIONS.filter(q => q.year === 2025),
+ answers: "×○×○○○○×○×○○×○××○×○××○××○" + "ハロイハニロイイニハニロハニニロニニイロロニハハハ", figures: [16], name: "印刷" },
  { exam: "insatsu2" as const, year: 2023, rows: INSATSU2_QUESTIONS,
  answers: "×○×××○××○○×○××○××○××××○○○" + "ハハニロハハニイニイニハロハイニロハロハイロハハハ", figures: [], name: "印刷" },
 ];
@@ -44,6 +50,8 @@ describe.each(editions)("技能検定 $exam $year 年度前期", ({ exam, year, 
     expect(loaded.filter(q => q.year === year)).toEqual(rows);
     expect(QUESTIONS_BY_EXAM[exam]?.filter(q => q.year === year)).toEqual(rows);
     expect(EXAM_CONFIGS[exam].nameFull).toContain(name);
+    expect(EXAM_DESCRIPTIONS[exam]).toContain("印刷技能士" + exam.slice(-1) + "級（オフセット印刷作業）");
+    expect(examMetaDescription(exam, loaded.length)).toContain("印刷技能士" + exam.slice(-1) + "級（オフセット印刷作業）");
     expect(getQualificationByExamCode(exam)?.shortName).toContain(name+"技能士");
     expect(usesNumberedChoices(exam)).toBe(true);
     expect(rows.every(q => EXAM_CONFIGS[exam].sessions[0].categories.includes(q.category))).toBe(true);

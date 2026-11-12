@@ -355,7 +355,7 @@ export function buildQuestionJsonLd({
   // The accepted answer links to the in-page explanation anchor (#explanation).
   const acceptedAnswers = answerKeys.map(answerKey => ({
     "@type": "Answer",
-    text: q.type === "native-b" ? formatNativeBAnswer(q.nativeB!) : q.type === "ordering" ? formatOrderingAnswer(q.exam, q.answer as ChoiceKey[]) : q.type === "numeric" ? formatNumericAnswer(q, String(answerKey)) : q.choices?.[answerKey as ChoiceKey] ? `${(q.exam === "flower3" || q.exam === "insatsu2" || q.exam === "flower1" || q.exam === "flower2" || q.exam === "kagu2" || (q.exam === "kagu1" || (q.exam === "kagu3" || q.exam === "mekki1"))) ? formatQuestionAnswerForDisplay(q, answerKey) : choiceDisplayLabel(q.exam, answerKey as ChoiceKey)}: ${q.choices[answerKey as ChoiceKey]}` : String(answerKey),
+    text: q.type === "native-b" ? formatNativeBAnswer(q.nativeB!) : q.type === "ordering" ? formatOrderingAnswer(q.exam, q.answer as ChoiceKey[]) : q.type === "numeric" ? formatNumericAnswer(q, String(answerKey)) : q.choices?.[answerKey as ChoiceKey] ? `${(q.exam === "flower3" || q.exam === "insatsu2" || q.exam === "insatsu1" || q.exam === "flower1" || q.exam === "flower2" || q.exam === "kagu2" || (q.exam === "kagu1" || (q.exam === "kagu3" || q.exam === "mekki1"))) ? formatQuestionAnswerForDisplay(q, answerKey) : choiceDisplayLabel(q.exam, answerKey as ChoiceKey)}: ${q.choices[answerKey as ChoiceKey]}` : String(answerKey),
     inLanguage: "ja",
     url: `${pageUrlAbs}#explanation`,
     author: siteAuthor,

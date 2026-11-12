@@ -1,5 +1,6 @@
 import { FLOWER3_QUESTIONS } from "./flower3";
 import { INSATSU2_QUESTIONS } from "./insatsu2";
+import { INSATSU1_QUESTIONS } from "./insatsu1";
 import { FLOWER1_QUESTIONS } from "./flower1";
 import { FLOWER2_QUESTIONS } from "./flower2";
 import { KAGU3_QUESTIONS } from "./kagu3";
@@ -375,6 +376,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("kagu1") ? { "kagu1": KAGU1_QUESTIONS } : {}),
 ...(isExamPublished("flower3") ? { "flower3": FLOWER3_QUESTIONS } : {}),
 ...(isExamPublished("insatsu2") ? { "insatsu2": INSATSU2_QUESTIONS } : {}),
+...(isExamPublished("insatsu1") ? { "insatsu1": INSATSU1_QUESTIONS } : {}),
 ...(isExamPublished("flower1") ? { "flower1": FLOWER1_QUESTIONS } : {}),
 ...(isExamPublished("flower2") ? { "flower2": FLOWER2_QUESTIONS } : {}),
 ...(isExamPublished("kagu3") ? { "kagu3": KAGU3_QUESTIONS } : {}),

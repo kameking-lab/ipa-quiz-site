@@ -6,6 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 export const EXAM_LABELS: Record<string, string> = {
   "flower3": "フラワー装飾技能士 3級",
   "insatsu2": "印刷技能士 2級",
+  "insatsu1": "印刷技能士 1級",
   "flower1": "フラワー装飾技能士 1級",
   "flower2": "フラワー装飾技能士 2級",
   "fujin-kodomofuku2": "婦人子供服製造技能士 2級",
