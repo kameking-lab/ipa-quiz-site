@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import { KAGU2_QUESTIONS } from "@/data/questions/kagu2";
 import { KAGU1_QUESTIONS } from "@/data/questions/kagu1";
+import { KAGU3_QUESTIONS } from "@/data/questions/kagu3";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -22,6 +23,10 @@ const papers = [{
   answers: "×○×○×" + "×○○○×" + "××○××" + "××○○○" + "○×○××"
     + "ロハニニニ" + "イハロハニ" + "イイイイニ" + "ニロニニロ" + "ハニニニロ",
   figures: 4,
+}, {
+  exam: "kagu3" as const, year: 2025, season: "late", all: KAGU3_QUESTIONS,
+  answers: "×○××○○××○○" + "○○××××○○○○" + "○×○○○○××○×",
+  figures: 1,
 }];
 
 describe.each(papers)("$exam $year $season", ({ exam, year, season, all, answers, figures }) => {
@@ -32,10 +37,10 @@ describe.each(papers)("$exam $year $season", ({ exam, year, season, all, answers
     expect(new Set(questions.map(questionPagePath)).size).toBe(answers.length);
     questions.forEach((q, i) => {
       const group = i < 25 ? "a" : "b";
-      const number = i % 25 + 1;
-      expect(q.id).toBe(`${exam}-${year}-${season}-gakka-${group}-${String(number).padStart(3, "0")}`);
+      const number = exam === "kagu3" ? i + 1 : i % 25 + 1;
+      expect(q.id).toBe(`${exam}-${year}-${season}-gakka-${exam === "kagu3" ? "" : `${group}-`}${String(number).padStart(3, "0")}`);
       expect(q.qNumber).toBe(i + 1);
-      expect(questionNumberLabel(q)).toBe(`${group.toUpperCase()}群 ${number}`);
+      expect(questionNumberLabel(q)).toBe(exam === "kagu3" ? String(number) : `${group.toUpperCase()}群 ${number}`);
       expect(q.officialAnswerNumber).toBe(answers[i]);
       expect(formatQuestionAnswerForDisplay(q, q.answer)).toBe(answers[i]);
       expect(questionSourceEdition(q)).toBe(`${year}年度${season === "late" ? "後期" : "前期"}`);
@@ -54,7 +59,7 @@ describe.each(papers)("$exam $year $season", ({ exam, year, season, all, answers
     const jsonld = JSON.stringify(buildQuestionJsonLd({ question: questions[0], pageUrlAbs: `https://www.kakomon-ai.jp${questionPagePath(questions[0])}`, title: "家具製作技能士", lastUpdatedISO: "2026-11-13" }));
     expect(jsonld).toContain("中央職業能力開発協会");
     expect(jsonld).toContain(`${answers[0]}: ${questions[0].choices?.[questions[0].answer as "ア" | "イ"]}`);
-    expect(choiceDisplayLabel(exam, "ア")).toBe("イ");
+    expect(choiceDisplayLabel(exam, "ア")).toBe(exam === "kagu3" ? "○" : "イ");
   });
   it("必要な原図をPNGで保持する", () => {
     expect(questions.filter(q => q.hasImage)).toHaveLength(figures);
@@ -77,4 +82,12 @@ it("1級の寄貼りと接合図を原問番号に対応させる", () => {
   expect(KAGU1_QUESTIONS[44].question).toContain("二方胴付き");
   expect(KAGU1_QUESTIONS[46].choices?.エ).toBe("留め形隠し3枚接ぎ");
   expect(KAGU1_QUESTIONS[32].choices?.イ).toBe("3");
+});
+
+it("3級の年度と断面図を原本に対応させる", () => {
+  expect(KAGU3_QUESTIONS[23].question).toContain("ぼうず面");
+  expect(KAGU3_QUESTIONS[23].hasImage).toBe(true);
+  expect(KAGU3_QUESTIONS.every(q => q.sourceAttribution?.includes("令和7年度後期"))).toBe(true);
+  expect(KAGU3_QUESTIONS[13].question).toContain("結合水が残っている");
+  expect(KAGU3_QUESTIONS[13].answer).toBe("イ");
 });
