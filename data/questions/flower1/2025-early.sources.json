@@ -539,5 +539,39 @@
       "allChoicesChecked": true,
       "hasFigure": false
     }
-  ]
+  ],
+  "strictReview": {
+    "step": "c4r-B4",
+    "checkedAt": "2026-11-13",
+    "questionCount": 50,
+    "checks": [
+      "公式PDF全本文・全選択肢目視照合",
+      "公式正答・内部採点キー全件照合",
+      "掲載図と原本照合",
+      "解説・選択肢別解説照合",
+      "ID・問番号・出典ページ・重複確認"
+    ],
+    "officialAnswersChanged": 0,
+    "correctedQuestionIds": [
+      "flower1-2025-early-gakka-b-020",
+      "flower1-2025-early-gakka-b-024"
+    ],
+    "supplementarySources": [
+      {
+        "url": "https://www.mpstpc.pref.mie.lg.jp/pdf/101064.pdf#page=5",
+        "question": "B群 20",
+        "note": "サザンカも好酸性植物。公式ハを変更せず解説に補足。"
+      },
+      {
+        "url": "https://www.jstage.jst.go.jp/article/hrj/7/2/7_2_249/_pdf/-char/ja#page=1",
+        "question": "B群 24",
+        "note": "シネンシス系デルフィニウムの複総状花序を確認。"
+      },
+      {
+        "url": "https://hosho.ees.hokudai.ac.jp/tsuyu/top/dct/morph-j.html",
+        "question": "B群 24",
+        "note": "円錐花序と複総状花序の対応。"
+      }
+    ]
+  }
 }

@@ -596,5 +596,30 @@
         342
       ]
     }
-  ]
+  ],
+  "strictReview": {
+    "step": "c4r-B4",
+    "checkedAt": "2026-11-13",
+    "questionCount": 50,
+    "checks": [
+      "公式PDF全本文・全選択肢目視照合",
+      "公式正答・内部採点キー全件照合",
+      "掲載図と原本照合",
+      "解説・選択肢別解説照合",
+      "ID・問番号・出典ページ・重複確認"
+    ],
+    "officialAnswersChanged": 0,
+    "correctedQuestionIds": [
+      "kagu1-2024-early-gakka-a-018",
+      "kagu1-2024-early-gakka-a-019",
+      "kagu1-2024-early-gakka-b-022"
+    ],
+    "supplementarySources": [
+      {
+        "url": "https://www.noritake.co.jp/catalogType/download/23d815bb4dde6fa144bc6839d7aa956b.pdf",
+        "question": "A群 19",
+        "note": "砥石の自生作用は砥粒の破砕・脱落を含む。公式×を変更せず解説に補足。"
+      }
+    ]
+  }
 }

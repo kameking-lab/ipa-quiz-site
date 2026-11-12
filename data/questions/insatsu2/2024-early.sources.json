@@ -549,5 +549,34 @@
       "checkedAt": "2026-11-13",
       "scope": "B群9：海域以外の公共用水域のpH 5.8以上8.6以下、表の項目区分"
     }
-  ]
+  ],
+  "strictReview": {
+    "step": "c4r-B4",
+    "checkedAt": "2026-11-13",
+    "questionCount": 50,
+    "checks": [
+      "公式PDF全本文・全選択肢目視照合",
+      "公式正答・内部採点キー全件照合",
+      "掲載図と原本照合",
+      "解説・選択肢別解説照合",
+      "ID・問番号・出典ページ・重複確認"
+    ],
+    "officialAnswersChanged": 0,
+    "correctedQuestionIds": [
+      "insatsu2-2024-early-gakka-b-007",
+      "insatsu2-2024-early-gakka-b-009"
+    ],
+    "supplementarySources": [
+      {
+        "url": "https://www.jfpi.or.jp/webyogo/index.php?term=1873",
+        "question": "B群 7",
+        "note": "平綴じも針金綴じの一種。公式ニを変更せず解説に補足。"
+      },
+      {
+        "url": "https://www.env.go.jp/water/impure/haisui.html",
+        "question": "B群 9",
+        "note": "pHはその他の項目。原本の括弧書きを維持し、注記を簡潔化。"
+      }
+    ]
+  }
 }
