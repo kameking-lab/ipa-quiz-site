@@ -145,6 +145,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "shiho-tanto", name: "司法試験（短答）", sub: "憲法・民法・刑法の短答式", domain: "money" },
   { code: "yobi-tanto", name: "予備試験（短答）", sub: "法律基本科目7科目の短答式", domain: "money" },
   { code: "sokuryoshiho", name: "測量士補", sub: "国土地理院の公式問題・正答・独自解説", domain: "construction" },
+  { code: "kenchiku-daiku3", name: "建築大工技能士 3級", sub: "大工工事作業 学科（真偽法30問）", domain: "construction" },
   { code: "kenchiku-daiku1", name: "建築大工技能士 1級", sub: "大工工事作業 学科（真偽法・多肢択一法）", domain: "construction" },
   { code: "kenchiku-daiku2", name: "建築大工技能士 2級", sub: "大工工事作業 学科（真偽法・多肢択一法）", domain: "construction" },
   { code: "tobi1", name: "とび技能士 1級", sub: "とび作業 学科（真偽法・多肢択一法）", domain: "safety" },
