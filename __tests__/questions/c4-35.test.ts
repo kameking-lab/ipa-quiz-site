@@ -55,7 +55,7 @@ describe("Q4-105 フラワー装飾2級2023年度前期", () => {
       expect(q.sourceAttribution).toContain("令和5年度前期 2級フラワー装飾");
     });
     expect(questions[48].choices?.エ).toBe("りん酸肥料は、根の発育を促進する。");
-    expect(questions[32].choices?.イ).toBe("アンソーテッド");
+    expect(questions[32].choices?.イ).toBe("アソーテッド");
     expect(questions[48].officialAnswerNumber).toBe("ニ");
     expect(questions[48].explanation).toContain("注：");
     expect(questions[48].officialReferenceUrls).toContain("https://www.maff.go.jp/j/pr/aff/2312/spe1_04.html");
