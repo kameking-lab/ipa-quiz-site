@@ -1,9 +1,34 @@
 import { describe, expect, it } from "vitest";
 import engei from "@/data/questions/engei-soshoku1/2023-early.json";
 import plastic from "@/data/questions/kyoka-plastic2/2024-early.json";
+import plastic1 from "@/data/questions/kyoka-plastic1/2023-early.json";
+import chemistry1 from "@/data/questions/kagaku-bunseki1/2023-early.json";
+import chemistry2 from "@/data/questions/kagaku-bunseki2/2024-early.json";
 
 // Values re-read from JAVADA's original question PDFs, not the earlier manuscript.
 describe("c4r-B5 公式原本の選択肢", () => {
+  it("強化プラスチック1級2023 B8は硫化水素の臭いを問う", () => {
+    const q = plastic1.find(q => q.officialQuestionLabel === "B群 8")!;
+    expect(q.choices.エ).toBe("硫化水素は、無臭である。");
+    expect(q.officialAnswerNumber).toBe("ニ");
+    expect(q.choiceExplanations.エ).toContain("無臭ではありません");
+  });
+
+  it("化学分析2級2024 B11の試薬名を原本どおりに保持する", () => {
+    const q = chemistry2.find(q => q.officialQuestionLabel === "B群 11")!;
+    expect(q.choices.ウ).toContain("ベンゾイン");
+    expect(q.choices.ウ).not.toContain("ベンゾイル");
+  });
+
+  it("化学分析1級2023 B11の硫酸と揮散条件を逆転させない", () => {
+    const q = chemistry1.find(q => q.officialQuestionLabel === "B群 11")!;
+    expect(q.question).toContain("硫酸を加えないとふっ化物として揮散し");
+    expect(q.question).not.toContain("硝酸");
+    expect(q.officialAnswerNumber).toBe("イ");
+    expect(q.answer).toBe("ア");
+    expect(q.choiceExplanations.ア).toContain("硫酸を加えないと");
+  });
+
   it("園芸装飾1級2023 B18の水しろの割合を原本6ページの表どおりに保持する", () => {
     const q = engei.find(q => q.officialQuestionLabel === "B群 18")!;
     expect(Object.values(q.choices)).toEqual([

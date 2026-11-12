@@ -546,5 +546,29 @@
       "allChoicesChecked": true,
       "hasFigure": false
     }
-  ]
+  ],
+  "independentReview": {
+    "job": "c4r-B5",
+    "checkedAt": "2026-11-13T08:00:00.156593+09:00",
+    "questionCount": 50,
+    "officialAnswersMatched": 50,
+    "officialAnswersChanged": 0,
+    "figureCount": 2,
+    "duplicateIds": 0,
+    "method": "公式問題・正答PDFを再取得してSHA256を再確認。問題PDF全ページを画像で読み、本文・全選択肢・数式・掲載図と照合。独自解説を点検し、正答表は別途抽出して全問の公式記号・内部キーと照合。",
+    "corrections": [
+      {
+        "id": "sasshi1-2024-early-gakka-a-025",
+        "reason": "A群25:移動はしごの正しい幅30cmを法令確認して補足"
+      },
+      {
+        "id": "sasshi1-2024-early-gakka-b-016",
+        "reason": "B群16:防火設備を不要と誤読させる説明を、特定防火設備の要求性能の説明へ修正"
+      }
+    ],
+    "explanationReferences": [
+      "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=9",
+      "https://www.mlit.go.jp/jutakukentiku/house/content/001876987.pdf"
+    ]
+  }
 }

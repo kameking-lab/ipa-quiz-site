@@ -567,5 +567,25 @@
       "sha256": "dc773d253de15b60666495def54557f3537dda9212011f38207fe3432af87532",
       "checkedAt": "2026-11-13T07:21:35.963009+09:00"
     }
-  ]
+  ],
+  "independentReview": {
+    "job": "c4r-B5",
+    "checkedAt": "2026-11-13T08:00:00.667621+09:00",
+    "questionCount": 50,
+    "officialAnswersMatched": 50,
+    "officialAnswersChanged": 0,
+    "figureCount": 0,
+    "duplicateIds": 0,
+    "method": "公式問題・正答PDFを再取得してSHA256を再確認。問題PDF全ページを画像で読み、本文・全選択肢・数式・掲載図と照合。独自解説を点検し、正答表は別途抽出して全問の公式記号・内部キーと照合。",
+    "corrections": [
+      {
+        "id": "kagaku-bunseki1-2023-early-gakka-a-004",
+        "reason": "A群4:フェーリング溶液の溶を復元"
+      },
+      {
+        "id": "kagaku-bunseki1-2023-early-gakka-b-011",
+        "reason": "B群11:硫酸を加えないとふっ化物として揮散する原文へ復元し解説も修正"
+      }
+    ]
+  }
 }

@@ -589,5 +589,40 @@
   ],
   "explanationNotes": [
     "B群20：公式本文と公式正答ロを保持。海上技術安全研究所の一次研究・表2でA重油の窒素分を確認し、窒素を含まないと一般化できない旨を解説に注記。"
-  ]
+  ],
+  "independentReview": {
+    "job": "c4r-B5",
+    "checkedAt": "2026-11-13T08:00:00.804048+09:00",
+    "questionCount": 50,
+    "officialAnswersMatched": 50,
+    "officialAnswersChanged": 0,
+    "figureCount": 2,
+    "duplicateIds": 0,
+    "method": "公式問題・正答PDFを再取得してSHA256を再確認。問題PDF全ページを画像で読み、本文・全選択肢・数式・掲載図と照合。独自解説を点検し、正答表は別途抽出して全問の公式記号・内部キーと照合。",
+    "corrections": [
+      {
+        "id": "chikuro1-2023-early-gakka-a-024",
+        "reason": "法令名の労働安全衛生法の法を復元"
+      },
+      {
+        "id": "chikuro1-2023-early-gakka-a-025",
+        "reason": "法令名の労働安全衛生法の法を復元"
+      },
+      {
+        "id": "chikuro1-2023-early-gakka-b-025",
+        "reason": "法令名の労働安全衛生法の法を復元"
+      },
+      {
+        "id": "chikuro1-2023-early-gakka-b-004",
+        "reason": "B群4:遣り方の定義の末尾を公式原文へ復元"
+      },
+      {
+        "id": "chikuro1-2023-early-gakka-b-013",
+        "reason": "B群13:調合比の説明に容積比と重量比の違いを補足"
+      }
+    ],
+    "explanationReferences": [
+      "https://www.mext.go.jp/a_menu/shisetu/eizen/04032202/020/001.pdf"
+    ]
+  }
 }

@@ -546,5 +546,36 @@
       "allChoicesChecked": true,
       "hasFigure": false
     }
-  ]
+  ],
+  "independentReview": {
+    "job": "c4r-B5",
+    "checkedAt": "2026-11-13T08:00:00.291877+09:00",
+    "questionCount": 50,
+    "officialAnswersMatched": 50,
+    "officialAnswersChanged": 0,
+    "figureCount": 0,
+    "duplicateIds": 0,
+    "method": "公式問題・正答PDFを再取得してSHA256を再確認。問題PDF全ページを画像で読み、本文・全選択肢・数式・掲載図と照合。独自解説を点検し、正答表は別途抽出して全問の公式記号・内部キーと照合。",
+    "corrections": [
+      {
+        "id": "kyoka-plastic1-2023-early-gakka-a-024",
+        "reason": "A群24:重合禁止剤の剤を復元"
+      },
+      {
+        "id": "kyoka-plastic1-2023-early-gakka-b-008",
+        "reason": "B群8:無害を公式原文の無臭へ復元し解説を修正"
+      },
+      {
+        "id": "kyoka-plastic1-2023-early-gakka-b-009",
+        "reason": "B群9:ライン管理者等の等を復元"
+      },
+      {
+        "id": "kyoka-plastic1-2023-early-gakka-b-012",
+        "reason": "B群12:汚しを汚れへ修正"
+      }
+    ],
+    "explanationReferences": [
+      "https://anzeninfo.mhlw.go.jp/anzen/gmsds/7783-06-4.html"
+    ]
+  }
 }

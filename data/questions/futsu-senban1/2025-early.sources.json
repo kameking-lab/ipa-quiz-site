@@ -573,5 +573,16 @@
       ]
     }
   ],
-  "explanationNotes": []
+  "explanationNotes": [],
+  "independentReview": {
+    "job": "c4r-B5",
+    "checkedAt": "2026-11-13T08:00:00.833234+09:00",
+    "questionCount": 50,
+    "officialAnswersMatched": 50,
+    "officialAnswersChanged": 0,
+    "figureCount": 4,
+    "duplicateIds": 0,
+    "method": "公式問題・正答PDFを再取得してSHA256を再確認。問題PDF全ページを画像で読み、本文・全選択肢・数式・掲載図と照合。独自解説を点検し、正答表は別途抽出して全問の公式記号・内部キーと照合。",
+    "corrections": []
+  }
 }

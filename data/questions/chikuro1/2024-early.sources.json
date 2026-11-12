@@ -589,5 +589,33 @@
   ],
   "explanationNotes": [
     "B群25：公式本文と公式正答イを保持。床上操作式クレーンには技能講習の区分があることを解説に注記。"
-  ]
+  ],
+  "independentReview": {
+    "job": "c4r-B5",
+    "checkedAt": "2026-11-13T08:00:00.726962+09:00",
+    "questionCount": 50,
+    "officialAnswersMatched": 50,
+    "officialAnswersChanged": 0,
+    "figureCount": 2,
+    "duplicateIds": 0,
+    "method": "公式問題・正答PDFを再取得してSHA256を再確認。問題PDF全ページを画像で読み、本文・全選択肢・数式・掲載図と照合。独自解説を点検し、正答表は別途抽出して全問の公式記号・内部キーと照合。",
+    "corrections": [
+      {
+        "id": "chikuro1-2024-early-gakka-a-024",
+        "reason": "法令名の労働安全衛生法の法を復元"
+      },
+      {
+        "id": "chikuro1-2024-early-gakka-a-025",
+        "reason": "法令名の労働安全衛生法の法を復元"
+      },
+      {
+        "id": "chikuro1-2024-early-gakka-b-024",
+        "reason": "法令名の労働安全衛生法の法を復元"
+      },
+      {
+        "id": "chikuro1-2024-early-gakka-b-025",
+        "reason": "法令名の労働安全衛生法の法を復元"
+      }
+    ]
+  }
 }

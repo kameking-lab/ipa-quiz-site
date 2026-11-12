@@ -569,5 +569,29 @@
       ],
       "checkedAt": "2026-11-13"
     }
-  ]
+  ],
+  "independentReview": {
+    "job": "c4r-B5",
+    "checkedAt": "2026-11-13T08:00:00.094688+09:00",
+    "questionCount": 50,
+    "officialAnswersMatched": 50,
+    "officialAnswersChanged": 0,
+    "figureCount": 0,
+    "duplicateIds": 0,
+    "method": "公式問題・正答PDFを再取得してSHA256を再確認。問題PDF全ページを画像で読み、本文・全選択肢・数式・掲載図と照合。独自解説を点検し、正答表は別途抽出して全問の公式記号・内部キーと照合。",
+    "corrections": [
+      {
+        "id": "engei-soshoku1-2023-early-gakka-a-025",
+        "reason": "A群25:公式原文の「資格等」の等を復元"
+      },
+      {
+        "id": "engei-soshoku1-2023-early-gakka-b-018",
+        "reason": "B群18:ロとハの数値転記および解説を公式原本へ修正（正答ハは維持）"
+      },
+      {
+        "id": "engei-soshoku1-2023-early-gakka-b-021",
+        "reason": "B群21:ソテツ・カクタスを原本のハマナス・カタクリに復元し解説を修正"
+      }
+    ]
+  }
 }

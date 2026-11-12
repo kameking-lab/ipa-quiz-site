@@ -546,5 +546,25 @@
       "allChoicesChecked": true,
       "hasFigure": true
     }
-  ]
+  ],
+  "independentReview": {
+    "job": "c4r-B5",
+    "checkedAt": "2026-11-13T08:00:00.234028+09:00",
+    "questionCount": 50,
+    "officialAnswersMatched": 50,
+    "officialAnswersChanged": 0,
+    "figureCount": 1,
+    "duplicateIds": 0,
+    "method": "公式問題・正答PDFを再取得してSHA256を再確認。問題PDF全ページを画像で読み、本文・全選択肢・数式・掲載図と照合。独自解説を点検し、正答表は別途抽出して全問の公式記号・内部キーと照合。",
+    "corrections": [
+      {
+        "id": "kyoka-plastic2-2024-early-gakka-b-008",
+        "reason": "B群8:法令への導入句を公式原文どおり復元"
+      },
+      {
+        "id": "kyoka-plastic2-2024-early-gakka-b-017",
+        "reason": "B群17:欠落した硬化不良を復元し、変形・反りと層間はく離の順序と解説を修正（正答ロは維持）"
+      }
+    ]
+  }
 }
