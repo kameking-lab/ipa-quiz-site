@@ -1718,6 +1718,11 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["施工・墨出し", "工具・加工", "材料・シーリング", "安全衛生・法令", "ガラス・建具", "性能・規格", "建築構造", "製図"] }],
     seasons: ["early"], yearRange: { start: 2025, end: 2025 },
 },
+"kyoka-plastic2": {
+    code: "kyoka-plastic2", nameFull: "技能検定 2級強化プラスチック成形（手積み積層成形作業）学科試験", urlSlug: "kyoka-plastic2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["成形法", "材料・強化材", "樹脂・副資材", "積層・型・品質", "加工・接合", "規格・製図", "安全衛生・環境", "品質管理・測定"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
 "insatsu2": {
     code: "insatsu2", nameFull: "技能検定 2級印刷（オフセット印刷作業）学科試験", urlSlug: "insatsu2", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["印刷方式・製版", "印刷機・給排紙", "色彩・網点", "用紙・製本", "インキ・乾燥", "安全衛生・環境", "電気・計測", "湿し水・ローラ", "品質・トラブル"] }],

@@ -155,6 +155,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "tetsudo-sharyo2", name: "鉄道車両製造・整備技能士 2級", sub: "機器ぎ装作業 学科（真偽法・多肢択一法）", domain: "safety" },
   { code: "engei-soshoku2", name: "園芸装飾技能士 2級", sub: "室内園芸装飾作業 学科（真偽法・多肢択一法）", domain: "welfare" },
   { code: "sasshi2", name: "サッシ施工技能士 2級", sub: "ビル用サッシ施工作業 学科（真偽法・多肢択一法）", domain: "safety" },
+  { code: "kyoka-plastic2", name: "強化プラスチック成形技能士 2級", sub: "手積み積層成形作業 学科（真偽法・多肢択一法）", domain: "safety" },
   { code: "tekko2", name: "鉄工技能士 2級", sub: "製缶作業 学科（真偽法・多肢択一法）", domain: "safety" },
   { code: "kinzoku-netsushori2", name: "金属熱処理技能士 2級", sub: "一般熱処理作業 学科（真偽法・多肢択一法）", domain: "safety" },
   { code: "kikai-hozen", name: "機械保全技能士 2級", sub: "機械系保全作業 学科（真偽法・四肢択一）", domain: "safety" },
