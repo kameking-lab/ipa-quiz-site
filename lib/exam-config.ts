@@ -1678,6 +1678,11 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "試験問題", categories: ["介護支援分野", "保健医療サービスの知識等", "福祉サービスの知識等"] }],
     seasons: ["annual"], yearRange: { start: 2024, end: 2025 },
 },
+"mekki2": {
+    code: "mekki2", nameFull: "技能検定 2級めっき（電気めっき作業）学科試験", urlSlug: "mekki2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["基礎化学", "電気化学", "安全・環境", "排水処理", "品質・生産管理", "めっき試験", "めっき浴・めっき操作", "前処理", "研磨・機械加工", "浴管理・分析", "後処理", "材料", "腐食・防食", "設備・電気"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
 "kinzoku-netsushori2": {
     code: "kinzoku-netsushori2", nameFull: "技能検定 2級金属熱処理（一般熱処理作業）学科試験", urlSlug: "kinzoku-netsushori2", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["金属組織", "材料試験", "焼入れ", "焼なまし・焼ならし", "表面処理", "熱処理設備・温度制御", "機械工作", "鋼材・製図", "安全衛生", "雰囲気・冷却剤", "熱処理欠陥", "品質管理"] }],
