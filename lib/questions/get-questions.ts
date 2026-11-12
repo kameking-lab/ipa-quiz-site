@@ -179,6 +179,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 "kojo-bankin1": async () => isExamPublished("kojo-bankin1") ? (await import("@/data/questions/kojo-bankin1")).KOJO_BANKIN1_QUESTIONS : [],
 "kojo-bankin3": async () => isExamPublished("kojo-bankin3") ? (await import("@/data/questions/kojo-bankin3")).KOJO_BANKIN3_QUESTIONS : [],
 "kojo-bankin2": async () => isExamPublished("kojo-bankin2") ? (await import("@/data/questions/kojo-bankin2")).KOJO_BANKIN2_QUESTIONS : [],
+"kinzoku-netsushori1": async () => isExamPublished("kinzoku-netsushori1") ? (await import("@/data/questions/kinzoku-netsushori1")).KINZOKU_NETSUSHORI1_QUESTIONS : [],
 "tekko1": async () => isExamPublished("tekko1") ? (await import("@/data/questions/tekko1")).TEKKO1_QUESTIONS : [],
 "denshi-kiki-kumitate1": async () => isExamPublished("denshi-kiki-kumitate1") ? (await import("@/data/questions/denshi-kiki-kumitate1")).DENSHI_KIKI_KUMITATE1_QUESTIONS : [],
 "denshi-kiki-kumitate3": async () => isExamPublished("denshi-kiki-kumitate3") ? (await import("@/data/questions/denshi-kiki-kumitate3")).DENSHI_KIKI_KUMITATE3_QUESTIONS : [],

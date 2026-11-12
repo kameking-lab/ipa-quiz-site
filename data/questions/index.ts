@@ -1,6 +1,7 @@
 import { KOJO_BANKIN1_QUESTIONS } from "./kojo-bankin1";
 import { KOJO_BANKIN3_QUESTIONS } from "./kojo-bankin3";
 import { KOJO_BANKIN2_QUESTIONS } from "./kojo-bankin2";
+import { KINZOKU_NETSUSHORI1_QUESTIONS } from "./kinzoku-netsushori1";
 import { TEKKO1_QUESTIONS } from "./tekko1";
 import { DENSHI_KIKI_KUMITATE3_QUESTIONS } from "./denshi-kiki-kumitate3";
 import { DENSHI_KIKI_KUMITATE1_QUESTIONS } from "./denshi-kiki-kumitate1";
@@ -173,6 +174,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("kojo-bankin1") ? { "kojo-bankin1": KOJO_BANKIN1_QUESTIONS } : {}),
 ...(isExamPublished("kojo-bankin3") ? { "kojo-bankin3": KOJO_BANKIN3_QUESTIONS } : {}),
 ...(isExamPublished("kojo-bankin2") ? { "kojo-bankin2": KOJO_BANKIN2_QUESTIONS } : {}),
+...(isExamPublished("kinzoku-netsushori1") ? { "kinzoku-netsushori1": KINZOKU_NETSUSHORI1_QUESTIONS } : {}),
 ...(isExamPublished("tekko1") ? { "tekko1": TEKKO1_QUESTIONS } : {}),
 ...(isExamPublished("denshi-kiki-kumitate1") ? { "denshi-kiki-kumitate1": DENSHI_KIKI_KUMITATE1_QUESTIONS } : {}),
 ...(isExamPublished("denshi-kiki-kumitate3") ? { "denshi-kiki-kumitate3": DENSHI_KIKI_KUMITATE3_QUESTIONS } : {}),
