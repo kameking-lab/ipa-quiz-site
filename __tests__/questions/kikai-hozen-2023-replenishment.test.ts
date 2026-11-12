@@ -4,6 +4,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { QUESTIONS as DENKI } from "@/data/questions/kikai-hozen-denki1";
 import { QUESTIONS as SETSUBI } from "@/data/questions/kikai-hozen-setsubi1";
+import { KIKAI_HOZEN3_QUESTIONS as KIKAI } from "@/data/questions/kikai-hozen3";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { formatQuestionAnswerForDisplay } from "@/lib/questions/display";
@@ -18,6 +19,9 @@ const SITTINGS = [{
 }, {
   exam: "kikai-hozen-setsubi1", season: "round2", all: SETSUBI, figures: 3,
   answers: "○○○××××○○×" + "×○×○○×××××" + "×○○×○ウエイウア" + "エイアエアイエエアイ" + "ウイアアアアイアエウ",
+}, {
+  exam: "kikai-hozen3", season: "round1", all: KIKAI, figures: 3,
+  answers: "○×○××○×○○×" + "○○○×○××○×○" + "○○○×××○×○○",
 }] as const;
 
 describe("機械保全2023年度の公式原本照合と配信", () => {

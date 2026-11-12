@@ -93,7 +93,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   "officialQuestionsUrl": "https://www.kikaihozenshi.jp/questions/",
   "officialReuseTermsUrl": "https://www.kikaihozenshi.jp/questions/",
   "status": "live",
-  "reuseSummary": "2024・2025年度の3級機械系保全作業学科を収録。公式問題・正答、全肢の独自解説と原図で学べます。",
+  "reuseSummary": "2023〜2025年度の3級機械系保全作業学科を収録。公式問題・正答、全肢の独自解説と原図で学べます。",
   "remainingWork": []
 },
 {
