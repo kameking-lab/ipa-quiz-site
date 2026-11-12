@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
+import { FUJIN_KODOMOFUKU1_QUESTIONS } from "@/data/questions/fujin-kodomofuku1";
 import { FUJIN_KODOMOFUKU2_QUESTIONS } from "@/data/questions/fujin-kodomofuku2";
 
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -13,6 +14,10 @@ import type { ChoiceKey, Question } from "@/lib/questions/types";
 
 // Independently read from each rendered official answer sheet, five per row.
 const SITTINGS = [{
+  exam: "fujin-kodomofuku1", year: 2025, all: FUJIN_KODOMOFUKU1_QUESTIONS,
+  answers: "○○×○○" + "××○×○" + "○○○○×" + "○○○×○" + "×××○×"
+    + "ロイニハハ" + "イハイニハ" + "イロニイハ" + "ハロイハハ" + "ハハイロニ",
+}, {
   exam: "fujin-kodomofuku2", year: 2023, all: FUJIN_KODOMOFUKU2_QUESTIONS,
   answers: "○○×○○" + "××○×○" + "○×○○○" + "○×○○○" + "×○○○×"
     + "ニイハロロ" + "ニロハニロ" + "イハハイロ" + "ハハロロイ" + "ロロニハニ",

@@ -1,4 +1,5 @@
 import { FUJIN_KODOMOFUKU2_QUESTIONS } from "./fujin-kodomofuku2";
+import { FUJIN_KODOMOFUKU1_QUESTIONS } from "./fujin-kodomofuku1";
 import { TOSO1_QUESTIONS } from "./toso1";
 import { TOSO2_QUESTIONS } from "./toso2";
 import { QUESTIONS as KIKAI_HOZEN_DENKI1_QUESTIONS } from "./kikai-hozen-denki1";
@@ -163,6 +164,7 @@ import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("fujin-kodomofuku2") ? { "fujin-kodomofuku2": FUJIN_KODOMOFUKU2_QUESTIONS } : {}),
+...(isExamPublished("fujin-kodomofuku1") ? { "fujin-kodomofuku1": FUJIN_KODOMOFUKU1_QUESTIONS } : {}),
 ...(isExamPublished("toso1") ? { "toso1": TOSO1_QUESTIONS } : {}),
 ...(isExamPublished("toso2") ? { "toso2": TOSO2_QUESTIONS } : {}),
 ...(isExamPublished("kikai-hozen-denki1") ? { "kikai-hozen-denki1": KIKAI_HOZEN_DENKI1_QUESTIONS } : {}),
