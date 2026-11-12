@@ -14,6 +14,7 @@ import type { ExamCode } from "@/lib/questions/types";
 const sets: { code: ExamCode; year: number; a: string; b: string; figures: number }[] = [
   { code: "tekko2", year: 2024, a: "○○×××○××○×○○○○×○○○○○○○○○○", b: "ロロイハニハハロハニハニロニハロイハロロロハハロロ", figures: 4 },
   { code: "tekko2", year: 2023, a: "○○○×○○○×○×○○××○○×○○×○××××", b: "ハロハロロニニイイニハイハロハロロイハロニハイイハ", figures: 6 },
+  { code: "tekko1", year: 2025, a: "○×○××××○○○××○○×○○××○○×○○○", b: "ハハハハロロハイハハハハニイロロロイロイハロニロハ", figures: 6 },
 ];
 
 describe.each(sets)("c4-23 $code $year early", ({ code, year, a, b, figures }) => {

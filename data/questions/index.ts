@@ -1,3 +1,4 @@
+import { TEKKO1_QUESTIONS } from "./tekko1";
 import { TEKKO2_QUESTIONS } from "./tekko2";
 import { DENSHI_KIKI_KUMITATE3_QUESTIONS } from "./denshi-kiki-kumitate3";
 import { DENSHI_KIKI_KUMITATE1_QUESTIONS } from "./denshi-kiki-kumitate1";
@@ -350,6 +351,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("denshi-kiki-kumitate1") ? { "denshi-kiki-kumitate1": DENSHI_KIKI_KUMITATE1_QUESTIONS } : {}),
 ...(isExamPublished("denshi-kiki-kumitate3") ? { "denshi-kiki-kumitate3": DENSHI_KIKI_KUMITATE3_QUESTIONS } : {}),
 ...(isExamPublished("tekko2") ? { "tekko2": TEKKO2_QUESTIONS } : {}),
+...(isExamPublished("tekko1") ? { "tekko1": TEKKO1_QUESTIONS } : {}),
 ...(isExamPublished("denshi-kiki-kumitate2") ? { "denshi-kiki-kumitate2": DENSHI_KIKI_KUMITATE2_QUESTIONS } : {}),
 ...(isExamPublished("kojo-bankin2") ? { "kojo-bankin2": KOJO_BANKIN2_QUESTIONS } : {}),
 ...(isExamPublished("kensetsu-kikai-seibi2") ? { "kensetsu-kikai-seibi2": KENSETSU_KIKAI_SEIBI2_QUESTIONS } : {}),
