@@ -169,6 +169,7 @@ export const EXAM_LABELS: Record<string, string> = {
     "caremanager": "ケアマネ試験",
     "denshi-kiki-kumitate1": "電子機器組立て技能士 1級",
     "denshi-kiki-kumitate3": "電子機器組立て技能士 3級",
+    "tekko2": "鉄工技能士 2級",
     "denshi-kiki-kumitate2": "電子機器組立て技能士 2級",
     "kojo-bankin2": "工場板金技能士 2級",
     "kensetsu-kikai-seibi2": "建設機械整備技能士 2級",
