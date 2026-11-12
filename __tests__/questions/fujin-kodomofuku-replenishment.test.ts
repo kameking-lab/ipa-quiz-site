@@ -9,11 +9,16 @@ import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { formatQuestionAnswerForDisplay, usesNumberedChoices } from "@/lib/questions/display";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
+import { questionSourceEdition } from "@/lib/questions/source-label";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 
 // Independently read from each rendered official answer sheet, five per row.
 const SITTINGS = [{
+  exam: "fujin-kodomofuku1", year: 2024, all: FUJIN_KODOMOFUKU1_QUESTIONS,
+  answers: "×○○○×" + "×○×○○" + "××○○○" + "×○×○○" + "○××○×"
+    + "ニハロイイ" + "イロイロイ" + "ハロハニイ" + "イロニロイ" + "ロロロニハ",
+}, {
   exam: "fujin-kodomofuku1", year: 2025, all: FUJIN_KODOMOFUKU1_QUESTIONS,
   answers: "○○×○○" + "××○×○" + "○○○○×" + "○○○×○" + "×××○×"
     + "ロイニハハ" + "イハイニハ" + "イロニイハ" + "ハロイハハ" + "ハハイロニ",
@@ -37,6 +42,7 @@ describe("婦人子供服製造の補充原本と学習経路", () => {
         expect(formatQuestionAnswerForDisplay(q, q.answer as ChoiceKey), q.id).toBe(official);
         expect(Object.keys(q.choiceExplanations ?? {}), q.id).toEqual(Object.keys(q.choices!));
         expect(isPracticeReadyQuestion(q), q.id).toBe(true);
+        expect(questionSourceEdition(q), q.id).toBe(`${year}年度前期`);
       }
       expect(usesNumberedChoices(exam)).toBe(true);
     });
