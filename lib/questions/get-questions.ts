@@ -5,6 +5,7 @@ import { isExamPublished } from "@/lib/qualifications/catalog";
 // To add a new exam: (1) create data/questions/{exam}/index.ts, (2) uncomment the loader.
 const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "flower3": async () => isExamPublished("flower3") ? (await import("@/data/questions/flower3")).FLOWER3_QUESTIONS : [],
+  "flower1": async () => isExamPublished("flower1") ? (await import("@/data/questions/flower1")).FLOWER1_QUESTIONS : [],
   "flower2": async () => isExamPublished("flower2") ? (await import("@/data/questions/flower2")).FLOWER2_QUESTIONS : [],
   "tekko1": async () => isExamPublished("tekko1") ? (await import("@/data/questions/tekko1")).TEKKO1_QUESTIONS : [],
   "tekko2": async () => isExamPublished("tekko2") ? (await import("@/data/questions/tekko2")).TEKKO2_QUESTIONS : [],

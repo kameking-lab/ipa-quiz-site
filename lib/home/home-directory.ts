@@ -160,6 +160,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   {"code": "kagu2", "name": "家具製作技能士 2級", "sub": "家具手加工作業 学科", "domain": "construction"},
   {"code": "kagu1", "name": "家具製作技能士 1級", "sub": "家具手加工作業 学科", "domain": "construction"},
   {"code": "flower3", "name": "フラワー装飾技能士 3級", "sub": "フラワー装飾作業 学科", "domain": "welfare"},
+  {"code": "flower1", "name": "フラワー装飾技能士 1級", "sub": "フラワー装飾作業 学科", "domain": "welfare"},
   {"code": "kagu3", "name": "家具製作技能士 3級", "sub": "家具手加工作業 学科", "domain": "construction"},
   {"code": "mekki1", "name": "めっき技能士 1級", "sub": "電気めっき作業 学科（A群 真偽法・B群 多肢択一法）", "domain": "construction"},
   { code: "kinzoku-netsushori3", name: "金属熱処理技能士 3級", sub: "一般熱処理作業 学科（真偽法）", domain: "safety" },
