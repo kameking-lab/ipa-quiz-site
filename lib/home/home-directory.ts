@@ -120,6 +120,7 @@ interface OtherCardDef {
 }
 
 const OTHER_CARDS: readonly OtherCardDef[] = [
+  {"code": "fujin-kodomofuku2", "name": "婦人子供服製造技能士 2級", "sub": "婦人子供注文服製作作業 学科（真偽法・多肢択一法）", "domain": "welfare"},
   {"code": "toso1", "name": "塗装技能士 1級", "sub": "建築塗装作業 学科（真偽法・多肢択一法）", "domain": "construction"},
   {"code": "toso2", "name": "塗装技能士 2級", "sub": "建築塗装作業 学科（真偽法・多肢択一法）", "domain": "construction"},
   {"code": "kikai-hozen-denki1", "name": "機械保全技能士 1級（電気系）", "sub": "電気系保全作業 学科", "domain": "electrical"},

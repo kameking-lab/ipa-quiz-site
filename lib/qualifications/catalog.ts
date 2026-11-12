@@ -44,6 +44,7 @@ export interface QualificationCatalogEntry {
  * 「公式に問題と正答がある」だけでは live にせず、転載条件まで確認する。
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
+{"slug": "fujin-kodomofuku2", "examCode": "fujin-kodomofuku2", "shortName": "婦人子供服製造技能士 2級", "fullName": "技能検定 2級婦人子供服製造（婦人子供注文服製作作業）学科試験", "domain": "personal-services", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科のA群真偽法・B群多肢択一法を収録。公式正答、全肢の独自解説と原図で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
 {"slug": "toso2", "examCode": "toso2", "shortName": "塗装技能士 2級", "fullName": "技能検定 2級塗装（建築塗装作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2023・2024年度前期の学科100問。公式正答・独自解説・原図を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
 {"slug": "toso1", "examCode": "toso1", "shortName": "塗装技能士 1級", "fullName": "技能検定 1級塗装（建築塗装作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2025年度前期の学科50問。公式正答・独自解説・原図を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
 {
