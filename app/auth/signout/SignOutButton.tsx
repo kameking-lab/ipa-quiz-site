@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import { signOut } from "next-auth/react";
 import { Button } from "@/components/ui/button";
@@ -9,6 +8,11 @@ import { nativeClient } from "@/mobile/shared/contracts";
 export function SignOutButton() {
   const [busy, setBusy] = useState(false);
   const [error, setError] = useState(false);
+  function cancel() {
+    // Reload the native shell too: failed cleanup has stopped its membership refreshes.
+    // eslint-disable-next-line @next/next/no-location-assign-relative-destination
+    window.location.assign("/account");
+  }
   async function logout() {
     if (busy) return;
     setBusy(true);
@@ -34,8 +38,8 @@ export function SignOutButton() {
       >
         ログアウトする
       </Button>
-      <Button variant="ghost" size="lg" asChild className="w-full">
-        <Link href="/">キャンセル</Link>
+      <Button variant="ghost" size="lg" disabled={busy} className="w-full" onClick={cancel}>
+        キャンセル
       </Button>
     </div>
   );

@@ -81,6 +81,7 @@ export class Membership {
         // silent failure is reported here instead of as "no products".
         if (!(await this.sdk.isConfigured()).isConfigured) throw new StoreError("App Storeの課金機能を初期化できませんでした（configure 失敗）。", "configure_failed");
       } else if (appUserId) await this.sdk.logIn({ appUserID: appUserId });
+      else if (!(await this.sdk.isAnonymous()).isAnonymous) await this.sdk.logOut();
     } catch (error) {
       throw error instanceof StoreError ? error : new StoreError(describeStoreError(error, "App Storeの課金機能を準備できませんでした"), "connect");
     }

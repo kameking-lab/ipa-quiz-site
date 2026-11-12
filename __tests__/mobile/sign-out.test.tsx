@@ -22,6 +22,7 @@ it("waits for native identity and offline cleanup before redirecting", async () 
   await act(async () => { fireEvent.click(screen.getByRole("button", { name: "ログアウトする" })); });
   expect(mocks.signOut).not.toHaveBeenCalled();
   expect(screen.getByRole("button", { name: "ログアウトする" })).toBeDisabled();
+  expect(screen.getByRole("button", { name: "キャンセル" })).toBeDisabled();
   await act(async () => { finish(); });
   expect(mocks.signOut).toHaveBeenCalledOnce();
 });
@@ -31,6 +32,7 @@ it("keeps the screen retryable if native cleanup fails", async () => {
   await act(async () => { fireEvent.click(screen.getByRole("button", { name: "ログアウトする" })); });
   expect(mocks.signOut).not.toHaveBeenCalled();
   expect(screen.getByRole("alert")).toHaveTextContent("ログアウトできませんでした");
+  expect(screen.getByRole("button", { name: "キャンセル" })).toBeEnabled();
   await act(async () => { fireEvent.click(screen.getByRole("button", { name: "ログアウトする" })); });
   expect(mocks.signOut).toHaveBeenCalledOnce();
 });
