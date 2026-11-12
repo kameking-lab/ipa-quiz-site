@@ -3,6 +3,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { MEKKI2_QUESTIONS } from "@/data/questions/mekki2";
+import { MEKKI1_QUESTIONS } from "@/data/questions/mekki1";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { formatQuestionAnswerForDisplay, choiceDisplayLabel } from "@/lib/questions/display";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
@@ -20,11 +21,14 @@ const SITTINGS = [{ exam: "mekki2" as ExamCode, year: 2024,
 }, { exam: "mekki2" as ExamCode, year: 2023,
   answers: "○×○×○" + "○○○○○" + "○××○○" + "×○○○×" + "○○×○○"
     + "ハイニロニ" + "ニニニニイ" + "ロニロロハ" + "ハハイニハ" + "ニロロハイ",
+}, { exam: "mekki1" as ExamCode, year: 2025,
+  answers: "××○○×" + "○○×○×" + "○×○××" + "○×○○×" + "×○○○○"
+    + "ロイハハロ" + "ニロハロイ" + "イニロハロ" + "ロニハニニ" + "ニハイハイ",
 }];
 
 describe("電気めっきの公式正答・表示・演習経路", () => {
   for (const { exam, year, answers } of SITTINGS) {
-    const questions = MEKKI2_QUESTIONS.filter(q => q.exam === exam && q.year === year);
+    const questions = [...MEKKI2_QUESTIONS, ...MEKKI1_QUESTIONS].filter(q => q.exam === exam && q.year === year);
     it(`${exam} ${year}: 50問を原本の番号・正答で採点する`, () => {
       expect(questions).toHaveLength(50);
       expect(questions.map(q => q.qNumber)).toEqual(Array.from({ length: 50 }, (_, i) => i + 1));
@@ -60,6 +64,10 @@ describe("電気めっきの公式正答・表示・演習経路", () => {
     expect(getQualificationByExamCode("mekki2")?.status).toBe("live");
     expect(choiceDisplayLabel("mekki2", "ア")).toBe("イ");
     expect(choiceDisplayLabel("mekki2", "エ")).toBe("ニ");
+    expect(QUESTIONS_BY_EXAM.mekki1).toEqual(MEKKI1_QUESTIONS);
+    expect(await getQuestionsForExam("mekki1")).toEqual(MEKKI1_QUESTIONS);
+    expect(getQualificationByExamCode("mekki1")?.status).toBe("live");
+    expect(choiceDisplayLabel("mekki1", "エ")).toBe("ニ");
   });
   it("表面処理の本文を欠落した表と誤認せず、本当の表の欠落は検出する", () => {
     const q = MEKKI2_QUESTIONS.find(q => q.year === 2024 && q.qNumber === 46)!;
