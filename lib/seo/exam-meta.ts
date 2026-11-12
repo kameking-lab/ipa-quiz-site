@@ -6,6 +6,7 @@ import { questionSourceEdition } from "@/lib/questions/source-label";
 import { examLabel } from "@/lib/utils";
 import { isIpaTop, ipaTopDescription } from "@/lib/seo/ipa-top";
 export const EXAM_DESCRIPTIONS: Partial<Record<ExamCode, string>> = {
+"toso1": "技能検定 1級塗装（建築塗装作業）学科試験。公式過去問を全肢の独自解説で学べます。",
     "kikenbutsu-otsu4": "2026年6月公表版の抜粋35問。公式問題画像・正答と全肢解説を収録。",
     "kikenbutsu-kou": "2026年6月公表版の抜粋45問。公式問題画像・正答と全肢解説を収録。",
     "kikenbutsu-hei": "2026年6月公表版の抜粋25問。公式問題画像・正答と全肢解説を収録。",
@@ -269,6 +270,7 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
     return `${base}${examLabel(exam)}の過去問${questionCount}問を年度別・分野別に収録。AIコパイロット付きで効率的に学習。`;
 }
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+    "toso1": "技能検定 1級塗装（建築塗装作業）学科試験",
 "unko-kanrisha-ryokaku": "運行管理者（旅客）",
 "shobo-setsubishi-kou1": "消防設備士 甲種第1類",
 "kikenbutsu-kou": "危険物取扱者 甲種",
@@ -641,6 +643,7 @@ const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number)
     "shashin2": (c, y, k) => `写真技能士2級（肖像写真デジタル作業）学科を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
     "kikai-hozen3": (c, y, k) => `3級機械系保全作業の学科を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
     "kikai-hozen-denki3": (c, y, k) => `機械保全技能検定 3級（電気系保全作業 学科）を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
+    "toso1": (c, y, k) => `技能検定 1級塗装（建築塗装作業）学科試験を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
     "kikai-hozen-denki1": (c, y, k) => `機械保全技能検定 1級（電気系保全作業 学科）を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
     "kikai-hozen-setsubi1": (c, y, k) => `機械保全技能検定 1級（設備診断作業 学科）を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
     "kikai-hozen1": (c, y, k) => `機械保全技能検定 1級（機械系保全作業 学科）を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,

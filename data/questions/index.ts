@@ -1,3 +1,4 @@
+import { TOSO1_QUESTIONS } from "./toso1";
 import { DENSHI_KIKI_KUMITATE2_QUESTIONS } from "./denshi-kiki-kumitate2";
 import { KOJO_BANKIN2_QUESTIONS } from "./kojo-bankin2";
 import { KENSETSU_KIKAI_SEIBI2_QUESTIONS } from "./kensetsu-kikai-seibi2";
@@ -167,6 +168,7 @@ import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
 import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+...(isExamPublished("toso1") ? { "toso1": TOSO1_QUESTIONS } : {}),
 ...(isExamPublished("unko-kanrisha-ryokaku") ? { "unko-kanrisha-ryokaku": UNKO_KANRISHA_RYOKAKU.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("shobo-setsubishi-kou1") ? { "shobo-setsubishi-kou1": SHOBO_SETSUBISHI_KOU1.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("kikenbutsu-kou") ? { "kikenbutsu-kou": KIKENBUTSU_KOU.filter(isPracticeReadyQuestion) } : {}),

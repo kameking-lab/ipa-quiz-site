@@ -120,6 +120,7 @@ interface OtherCardDef {
 }
 
 const OTHER_CARDS: readonly OtherCardDef[] = [
+  {"code": "toso1", "name": "塗装技能士 1級", "sub": "建築塗装作業 学科（真偽法・多肢択一法）", "domain": "construction"},
   { code: "khk-kagaku", name: "高圧ガス化学", sub: "甲種・乙種・丙種（液石・特別）422原問", domain: "safety" },
   { code: "sekou-1kenchiku", name: "1級建築施工管理", sub: "第一次検定（令和7・8年度144問）", domain: "construction" },
   {"code": "benrishi", "name": "弁理士（短答式）", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "money"},
