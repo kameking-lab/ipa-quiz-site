@@ -2,6 +2,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { KENCHIKU_DAIKU1_QUESTIONS } from "@/data/questions/kenchiku-daiku1";
+import { KENCHIKU_DAIKU3_QUESTIONS } from "@/data/questions/kenchiku-daiku3";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { choiceDisplayLabel, questionNumberLabel } from "@/lib/questions/display";
@@ -49,5 +50,37 @@ describe("建築大工2024年度1級後期の原本と演習接続", () => {
     expect(QUESTIONS_BY_EXAM["kenchiku-daiku1"]).toEqual(KENCHIKU_DAIKU1_QUESTIONS);
     expect(await getQuestionsForExam("kenchiku-daiku1")).toEqual(KENCHIKU_DAIKU1_QUESTIONS);
     expect(["ア", "イ", "ウ", "エ"].map(k => choiceDisplayLabel("kenchiku-daiku1", k as "ア"))).toEqual(["イ", "ロ", "ハ", "ニ"]);
+  });
+});
+
+describe("建築大工3級2024年度前期の原本と演習接続", () => {
+  const questions = KENCHIKU_DAIKU3_QUESTIONS.filter(q => q.year === 2024 && q.season === "early");
+  const official = "○○○○×○×○○○×○×××○○××○××○×○○○××○";
+  it("真偽法30問を群なしの原問番号と公式正答で演習できる", async () => {
+    expect(questions).toHaveLength(30);
+    expect(official).toHaveLength(30);
+    questions.forEach((q, i) => {
+      expect(q.id).toBe(`kenchiku-daiku3-2024-early-gakka-${String(i + 1).padStart(3, "0")}`);
+      expect(q.qNumber).toBe(i + 1);
+      expect(questionNumberLabel(q)).toBe(String(i + 1));
+      expect(q.officialAnswerNumber, q.id).toBe(official[i]);
+      expect(q.answer, q.id).toBe(official[i] === "○" ? "ア" : "イ");
+      expect(Object.keys(q.choiceExplanations ?? {}).sort()).toEqual(["ア", "イ"]);
+      expect(isPracticeReadyQuestion(q), q.id).toBe(true);
+      expect(EXAM_CONFIGS[q.exam].sessions[0].categories).toContain(q.category);
+    });
+    expect(QUESTIONS_BY_EXAM["kenchiku-daiku3"]).toEqual(KENCHIKU_DAIKU3_QUESTIONS);
+    expect(await getQuestionsForExam("kenchiku-daiku3")).toEqual(KENCHIKU_DAIKU3_QUESTIONS);
+    expect(choiceDisplayLabel("kenchiku-daiku3", "ア")).toBe("○");
+    expect(choiceDisplayLabel("kenchiku-daiku3", "イ")).toBe("×");
+  });
+  it("図が必要な6問に原図と代替テキストを備える", () => {
+    expect(questions.filter(q => q.hasImage).map(q => q.qNumber)).toEqual([5, 8, 22, 26, 27, 28]);
+    for (const q of questions.filter(q => q.hasImage)) {
+      expect(q.imageAltTexts?.[0].length).toBeGreaterThan(10);
+      const path = join(process.cwd(), "public", q.imageUrls![0]);
+      expect(existsSync(path)).toBe(true);
+      expect(readFileSync(path).subarray(8, 12).toString()).toBe("WEBP");
+    }
   });
 });

@@ -1809,6 +1809,48 @@ caremanager: {
     "end": 2024
   }
 },
+"kenchiku-daiku3": {
+  "code": "kenchiku-daiku3",
+  "nameFull": "技能検定 3級建築大工（大工工事作業）学科試験",
+  "urlSlug": "kenchiku-daiku3",
+  "level": "basic",
+  "sessions": [
+    {
+      "session": "gakka",
+      "urlSlug": "gakka",
+      "expectedQuestions": 30,
+      "label": "学科（真偽法30問）",
+      "categories": [
+        "建築構造",
+        "力学",
+        "規矩術",
+        "工具",
+        "施工計画",
+        "仮設工事",
+        "測量",
+        "接合金物",
+        "木造施工",
+        "設備",
+        "養生",
+        "材料",
+        "関係法規",
+        "安全衛生",
+        "基礎工事",
+        "仕上げ",
+        "建具金物",
+        "製図",
+        "墨付け"
+      ]
+    }
+  ],
+  "seasons": [
+    "early"
+  ],
+  "yearRange": {
+    "start": 2024,
+    "end": 2024
+  }
+},
 tsukanshi: {
     code: "tsukanshi", nameFull: "通関士試験", urlSlug: "tsukanshi", level: "advanced",
     sessions: [
