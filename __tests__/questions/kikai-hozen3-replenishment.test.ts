@@ -20,7 +20,7 @@ const SITTINGS = [
 
 describe("機械保全3級の原問・正答・配信経路", () => {
   for (const { exam, season, answers, questions: all, figures } of SITTINGS) {
-    const questions = all.filter((q) => q.season === season);
+    const questions = all.filter((q) => q.year === 2025 && q.season === season);
     it(`${exam}2025年度${season}: 全30問を公式正答で採点できる`, () => {
       expect(questions).toHaveLength(30);
       expect(usesNumberedChoices(exam)).toBe(true);

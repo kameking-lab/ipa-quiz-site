@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { QUESTIONS as SETSUBI } from "@/data/questions/kikai-hozen-setsubi1";
+import { KIKAI_HOZEN3_QUESTIONS as KIKAI } from "@/data/questions/kikai-hozen3";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { formatQuestionAnswerForDisplay } from "@/lib/questions/display";
@@ -14,6 +15,9 @@ import type { ChoiceKey, Question } from "@/lib/questions/types";
 const SITTINGS = [{
   exam: "kikai-hozen-setsubi1", season: "round2", all: SETSUBI, figures: 3,
   answers: "○○○××○×○○○" + "○○○××○×○×○" + "○×○××アウウウエ" + "ウイアウエイアウアウ" + "アアアウエウイウアイ",
+}, {
+  exam: "kikai-hozen3", season: "round1", all: KIKAI, figures: 4,
+  answers: "○××○○○×○××" + "××○○○○×○×○" + "×○○○××××○○",
 }] as const;
 
 describe("機械保全2024年度の原本照合と配信", () => {
@@ -28,6 +32,7 @@ describe("機械保全2024年度の原本照合と配信", () => {
         expect(q.answer, q.id).toBe(official === "○" ? "ア" : official === "×" ? "イ" : official);
         expect(formatQuestionAnswerForDisplay(q, q.answer as ChoiceKey), q.id).toBe(official);
         expect(Object.keys(q.choiceExplanations ?? {}), q.id).toEqual(Object.keys(q.choices!));
+        expect(q.question, q.id).not.toMatch(/\?\?\?\?|学科試験問題/);
         expect(isPracticeReadyQuestion(q), q.id).toBe(true);
       }
     });

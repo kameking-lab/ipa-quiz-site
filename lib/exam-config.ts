@@ -1785,7 +1785,7 @@ caremanager: {
     "round2"
   ],
   "yearRange": {
-    "start": 2025,
+    "start": 2024,
     "end": 2025
   }
 },
