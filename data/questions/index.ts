@@ -13,6 +13,7 @@ import { INSATSU1_QUESTIONS } from "./insatsu1";
 import { ENGEI_SOSHOKU2_QUESTIONS } from "./engei-soshoku2";
 import { SASSHI1_QUESTIONS } from "./sasshi1";
 import { KYOKA_PLASTIC2_QUESTIONS } from "./kyoka-plastic2";
+import { KYOKA_PLASTIC1_QUESTIONS } from "./kyoka-plastic1";
 import { ENGEI_SOSHOKU1_QUESTIONS } from "./engei-soshoku1";
 import { ENGEI_SOSHOKU3_QUESTIONS } from "./engei-soshoku3";
 import { KAGU1_QUESTIONS } from "./kagu1";
@@ -204,6 +205,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("engei-soshoku2") ? { "engei-soshoku2": ENGEI_SOSHOKU2_QUESTIONS } : {}),
 ...(isExamPublished("sasshi1") ? { "sasshi1": SASSHI1_QUESTIONS } : {}),
 ...(isExamPublished("kyoka-plastic2") ? { "kyoka-plastic2": KYOKA_PLASTIC2_QUESTIONS } : {}),
+...(isExamPublished("kyoka-plastic1") ? { "kyoka-plastic1": KYOKA_PLASTIC1_QUESTIONS } : {}),
 ...(isExamPublished("engei-soshoku1") ? { "engei-soshoku1": ENGEI_SOSHOKU1_QUESTIONS } : {}),
 ...(isExamPublished("engei-soshoku3") ? { "engei-soshoku3": ENGEI_SOSHOKU3_QUESTIONS } : {}),
 ...(isExamPublished("kagu1") ? { "kagu1": KAGU1_QUESTIONS } : {}),

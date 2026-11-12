@@ -191,6 +191,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 "engei-soshoku2": async () => isExamPublished("engei-soshoku2") ? (await import("@/data/questions/engei-soshoku2")).ENGEI_SOSHOKU2_QUESTIONS : [],
 "sasshi1": async () => isExamPublished("sasshi1") ? (await import("@/data/questions/sasshi1")).SASSHI1_QUESTIONS : [],
 "kyoka-plastic2": async () => isExamPublished("kyoka-plastic2") ? (await import("@/data/questions/kyoka-plastic2")).KYOKA_PLASTIC2_QUESTIONS : [],
+"kyoka-plastic1": async () => isExamPublished("kyoka-plastic1") ? (await import("@/data/questions/kyoka-plastic1")).KYOKA_PLASTIC1_QUESTIONS : [],
 "engei-soshoku1": async () => isExamPublished("engei-soshoku1") ? (await import("@/data/questions/engei-soshoku1")).ENGEI_SOSHOKU1_QUESTIONS : [],
 "engei-soshoku3": async () => isExamPublished("engei-soshoku3") ? (await import("@/data/questions/engei-soshoku3")).ENGEI_SOSHOKU3_QUESTIONS : [],
 "kagu1": async () => isExamPublished("kagu1") ? (await import("@/data/questions/kagu1")).KAGU1_QUESTIONS : [],
