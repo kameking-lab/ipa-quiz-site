@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { TETSUDO_SHARYO1_QUESTIONS } from "@/data/questions/tetsudo-sharyo1";
+import { INSATSU2_QUESTIONS } from "@/data/questions/insatsu2";
 import { DIECAST1_QUESTIONS } from "@/data/questions/diecast1";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
@@ -22,6 +23,9 @@ const editions = [
   { exam: "tetsudo-sharyo1" as const, year: 2025, rows: TETSUDO_SHARYO1_QUESTIONS,
     answers: "○×○○×" + "×○×○○" + "××××○" + "×○○○×" + "○○×○×"
       + "ハニニイハ" + "ロロニハニ" + "ニハイニニ" + "イロロロロ" + "ロハハニイ", figures: [14, 25, 38, 40], name: "鉄道車両製造・整備" },
+  { exam: "insatsu2" as const, year: 2024, rows: INSATSU2_QUESTIONS,
+    answers: "○○×××" + "○×○○×" + "○××○○" + "○×××○" + "×○○○○"
+      + "ロロイニロ" + "ハニイハハ" + "イロニイイ" + "ハロイロニ" + "ロロロイロ", figures: [] as number[], name: "印刷" },
 ];
 
 describe.each(editions)("技能検定 $exam $year 年度前期", ({ exam, year, rows, answers, figures, name }) => {
@@ -41,6 +45,7 @@ describe.each(editions)("技能検定 $exam $year 年度前期", ({ exam, year, 
       expect(findQuestionByRoute(rows, { exam: routeExam, yearSeason, section, qnum })?.id).toBe(q.id);
       const graph = buildQuestionJsonLd({ question: q, pageUrlAbs: `https://www.kakomon-ai.jp${questionPagePath(q)}`, title: q.id });
       expect(JSON.stringify(graph), q.id).toContain(`${official}: ${q.choices![key]}`);
+      expect(graph["@graph"][0], q.id).toMatchObject({ creator: { name: "中央職業能力開発協会" } });
     }
   });
 
