@@ -13,6 +13,7 @@ import type { ExamCode } from "@/lib/questions/types";
 // Independently transcribed from the five rows of each official answer table.
 const sets: { code: ExamCode; year: number; a: string; b: string; figures: number }[] = [
   { code: "fujin-kodomofuku1", year: 2023, a: ["○×○○○", "×××○○", "○××○×", "○○×○○", "××○×○"].join(""), b: ["ロイハハニ", "ロハイロロ", "ハニロイハ", "ニハニニイ", "ロニニハロ"].join(""), figures: 2 },
+  { code: "denshi-kiki-kumitate2", year: 2024, a: ["×○○○×", "○○×××", "○×××○", "○○××○", "×××○×"].join(""), b: ["ニイハイイ", "ロハイハロ", "ロハニニロ", "ハロニニイ", "ニハロロイ"].join(""), figures: 12 },
 ];
 
 describe.each(sets)("c4-19 $code $year early", ({ code, year, a, b, figures }) => {

@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync, existsSync } from "node:fs";
 import path from "node:path";
-import { DENSHI_KIKI_KUMITATE2_QUESTIONS as questions } from "@/data/questions/denshi-kiki-kumitate2";
+import { DENSHI_KIKI_KUMITATE2_QUESTIONS as allQuestions } from "@/data/questions/denshi-kiki-kumitate2";
 import sources from "@/data/questions/denshi-kiki-kumitate2/sources.json";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
@@ -10,6 +10,7 @@ import { questionSourceEdition } from "@/lib/questions/source-label";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 
 const exam = "denshi-kiki-kumitate2";
+const questions = allQuestions.filter(q => q.year === 2025);
 // 中央職業能力開発協会の公式正解表（2025/08/31）の行を独立して転記。
 const officialA = ["○○○×○", "××○×○", "××○○○", "×○×○○", "○×○×○"].join("").split("");
 const officialB = ["ニハハハハ", "ハハイハロ", "イロハイニ", "ロハロハロ", "ロイロハハ"].join("").split("");
@@ -53,7 +54,7 @@ describe("電子機器組立て2級 2025年度前期", () => {
   });
 
   it("資格カタログ・遅延ローダー・50問の出題設定を接続する", async () => {
-    expect(await getQuestionsForExam(exam)).toEqual(questions);
+    expect((await getQuestionsForExam(exam)).filter(q => q.year === 2025)).toEqual(questions);
     expect(getQualificationByExamCode(exam)?.status).toBe("live");
     expect(EXAM_CONFIGS[exam].sessions[0].expectedQuestions).toBe(50);
     expect(["ア", "イ", "ウ", "エ"].map(k => choiceDisplayLabel(exam, k as "ア"))).toEqual(["イ", "ロ", "ハ", "ニ"]);

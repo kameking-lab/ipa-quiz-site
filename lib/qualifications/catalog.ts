@@ -1535,8 +1535,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     domain: "electrical", administrator: "中央職業能力開発協会",
     officialQuestionsUrl: "https://www.kentei.javada.or.jp/",
     officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
-    reuseSummary: "2025年度前期の学科50問（真偽法25問・多肢択一法25問）、公式正答と全肢の独自解説、原本図9点を収録。",
-    attributionTemplate: "出典：中央職業能力開発協会 令和7年度前期 2級電子機器組立て（電子機器組立て作業）学科試験。解説は過去問AIの独自作成。",
+    reuseSummary: "2024・2025年度前期の学科100問。公式正答と全肢の独自解説、原本図を収録。",
+    attributionTemplate: "出典：中央職業能力開発協会 前期 2級電子機器組立て（電子機器組立て作業）学科試験。解説は過去問AIの独自作成。",
     remainingWork: [],
 },
 {
