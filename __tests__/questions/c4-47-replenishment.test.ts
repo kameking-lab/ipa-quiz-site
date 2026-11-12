@@ -17,6 +17,7 @@ import type { ChoiceKey, ExamCode, Question } from "@/lib/questions/types";
 const editions: { exam: ExamCode; year: number; questions: Question[]; a: string; b: string }[] = [
   { exam: "kagaku-bunseki1", year: 2025, questions: KAGAKU_BUNSEKI1_QUESTIONS, a: "○○×○○ ×○×○○ ○××○× ×○○○○ ×○○×○", b: "イニニニニ ニニハハイ ニイロイハ ハハロハハ ニニニイロ" },
   { exam: "kagaku-bunseki3", year: 2025, questions: KAGAKU_BUNSEKI3_QUESTIONS, a: "○○○○× ××○○○ ×○××○ ○×○○× ○×○○× ×○×○○", b: "" },
+  { exam: "kagaku-bunseki1", year: 2024, questions: KAGAKU_BUNSEKI1_QUESTIONS, a: "○○××○ ×○××○ ○×××× ○○○×× ×○×○○", b: "ロロロハイ ハロニロイ ハロロイイ イニロニニ ロハハイハ" },
 ];
 const keys: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
@@ -96,4 +97,15 @@ it("preserves the 2025 grade-3 concentration ratio, significant figures and fals
   expect(KAGAKU_BUNSEKI3_QUESTIONS[16].explanation).toContain("2.0 mol");
   expect(KAGAKU_BUNSEKI3_QUESTIONS[19].question).toContain("強酸性");
   expect(KAGAKU_BUNSEKI3_QUESTIONS[27].question).toContain("溶解度が低い塩ほど大きくなる");
+});
+
+it("preserves the 2024 grade-1 underlines, temperatures and rounding conditions", () => {
+  const q = KAGAKU_BUNSEKI1_QUESTIONS.filter(q => q.year === 2024);
+  expect(q[18].question).toContain("およそ997個");
+  expect(q[29].question).toContain("（イ）濃塩酸");
+  expect(q[30].question).toContain("硫酸銅（Ⅱ）五水和物1 g");
+  expect(q[35].choices?.ウ).toContain("950 ℃ ― CaCO₃");
+  expect(q[44].choices?.エ).toContain("まず5.35と丸め");
+  expect(q[44].choiceExplanations?.エ).toContain("5.3である");
+  expect(q[49].choiceExplanations?.ウ).toContain("0.10×100=10 g");
 });
