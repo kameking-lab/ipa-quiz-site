@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import { KAGU2_QUESTIONS } from "@/data/questions/kagu2";
+import { KAGU1_QUESTIONS } from "@/data/questions/kagu1";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -16,6 +17,11 @@ const papers = [{
   answers: "○××○×" + "○○○×○" + "×○××○" + "○○××○" + "○○×○×"
     + "ロロハニロ" + "ロイロニイ" + "イニハニロ" + "ハロイロロ" + "ハイニロロ",
   figures: 2,
+}, {
+  exam: "kagu1" as const, year: 2025, season: "early", all: KAGU1_QUESTIONS,
+  answers: "×○×○×" + "×○○○×" + "××○××" + "××○○○" + "○×○××"
+    + "ロハニニニ" + "イハロハニ" + "イイイイニ" + "ニロニニロ" + "ハニニニロ",
+  figures: 4,
 }];
 
 describe.each(papers)("$exam $year $season", ({ exam, year, season, all, answers, figures }) => {
@@ -64,4 +70,11 @@ it("2級の図の選択肢と研磨粒度を原本どおり保持する", () => 
   expect(KAGU2_QUESTIONS[27].choices?.ウ).toBe("細い一点鎖線");
   expect(KAGU2_QUESTIONS[48 - 1].choices?.エ).toBe("P320");
   expect(KAGU2_QUESTIONS[28].hasImage).toBe(true);
+});
+
+it("1級の寄貼りと接合図を原問番号に対応させる", () => {
+  expect(KAGU1_QUESTIONS[26].choices?.ウ).toContain("ダイヤモンド貼り");
+  expect(KAGU1_QUESTIONS[44].question).toContain("二方胴付き");
+  expect(KAGU1_QUESTIONS[46].choices?.エ).toBe("留め形隠し3枚接ぎ");
+  expect(KAGU1_QUESTIONS[32].choices?.イ).toBe("3");
 });
