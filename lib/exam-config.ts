@@ -1713,6 +1713,11 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["園芸装飾・デザイン", "工具・資材", "植物の種類・形態", "植物生理・繁殖", "栽培管理", "用土・肥料", "病害虫", "施設・安全衛生"] }],
     seasons: ["early"], yearRange: { start: 2025, end: 2025 },
 },
+"sasshi2": {
+    code: "sasshi2", nameFull: "技能検定 2級サッシ施工（ビル用サッシ施工作業）学科試験", urlSlug: "sasshi2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["施工・墨出し", "工具・加工", "材料・シーリング", "安全衛生・法令", "ガラス・建具", "性能・規格", "建築構造", "製図"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
 "insatsu2": {
     code: "insatsu2", nameFull: "技能検定 2級印刷（オフセット印刷作業）学科試験", urlSlug: "insatsu2", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["印刷方式・製版", "印刷機・給排紙", "色彩・網点", "用紙・製本", "インキ・乾燥", "安全衛生・環境", "電気・計測", "湿し水・ローラ", "品質・トラブル"] }],
