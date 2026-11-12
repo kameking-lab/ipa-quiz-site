@@ -22,6 +22,10 @@ const sittings = [{
   exam: "denshi-kiki-kumitate3", season: "early", all: DENSHI_KIKI_KUMITATE3_QUESTIONS,
   answers: "××○○○" + "×○○○○" + "○××○×" + "○××○○" + "××○×○" + "○××○○",
   figures: 10,
+}, {
+  exam: "denshi-kiki-kumitate3", season: "late", all: DENSHI_KIKI_KUMITATE3_QUESTIONS,
+  answers: "○○○×○" + "○××××" + "×○×○×" + "××○×○" + "○○×○○" + "○×○○○",
+  figures: 6,
 }] as const;
 
 describe("電子機器組立て2024年度の公式原本と学習経路", () => {
@@ -86,5 +90,15 @@ describe("電子機器組立て2024年度の公式原本と学習経路", () => 
     expect(byNumber(28).explanation).toContain("PNP");
     expect(choiceDisplayLabel("denshi-kiki-kumitate3", "ア")).toBe("○");
     expect(choiceDisplayLabel("denshi-kiki-kumitate3", "イ")).toBe("×");
+  });
+  it("3級後期の半波整流・直列共振・金色帯・ノギスの読みを保持する", () => {
+    const byNumber = (n: number) => DENSHI_KIKI_KUMITATE3_QUESTIONS.find(q => q.year === 2024 && q.season === "late" && q.qNumber === n)!;
+    expect(byNumber(13).explanation).toContain("半波整流");
+    expect(byNumber(15).explanation).toContain("最大");
+    expect(byNumber(17).question).toContain("±10%");
+    expect(byNumber(17).explanation).toContain("±5%");
+    expect(byNumber(23).question).toContain("52.75 mm");
+    expect(byNumber(23).explanation).toContain("22.75 mm");
+    expect(byNumber(29).explanation).toContain("消防法第17条の3の3");
   });
 });
