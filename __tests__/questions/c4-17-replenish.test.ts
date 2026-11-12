@@ -12,6 +12,7 @@ import type { ExamCode } from "@/lib/questions/types";
 // Independently read from JAVADA's published answer table, five rows per group.
 const sets: { code: ExamCode; year: number; a: string; b: string }[] = [
   { code: "toso1", year: 2024, a: "○×○○×○××○×○××××○○××○○○○×○", b: "ニニニロハハハニロロイハロイハニニニイイイハロイロ" },
+  { code: "toso1", year: 2023, a: "○×××○×××○×○×○○××○○×○○○×○○", b: "イイロハニイハニハロイハロイハハニニニイイロロハニ" },
 ];
 
 describe.each(sets)("c4-17 $code $year early", ({ code, year, a, b }) => {
