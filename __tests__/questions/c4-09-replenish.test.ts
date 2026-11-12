@@ -9,6 +9,7 @@ import type { ExamCode } from "@/lib/questions/types";
 
 const sets: { code: ExamCode; year: number; season: string; count: number; figures: number }[] = [
   { code: "kikai-hozen-denki3", year: 2026, season: "round1", count: 30, figures: 5 },
+  { code: "kikai-hozen-denki1", year: 2025, season: "round2", count: 50, figures: 9 },
 ];
 
 describe.each(sets)("c4-09 $code", ({ code, year, season, count, figures }) => {
@@ -25,9 +26,13 @@ describe.each(sets)("c4-09 $code", ({ code, year, season, count, figures }) => {
 
   it("preserves every official answer and supplies explanations for all options", () => {
     for (const [i, q] of questions.entries()) {
+      if (typeof q.answer !== "string") throw new Error(`Expected a single official answer: ${q.id}`);
       expect(q.officialAnswerNumber, q.id).toBe(source.officialAnswers[i]);
-      expect(source.choiceMapping[q.answer], q.id).toBe(q.officialAnswerNumber);
-      expect(Object.keys(q.choiceExplanations!)).toEqual(Object.keys(q.choices));
+      const mapping = source.choiceMapping.trueFalse
+        ? (q.qNumber <= 25 ? source.choiceMapping.trueFalse : source.choiceMapping.multipleChoice)
+        : source.choiceMapping;
+      expect(mapping[q.answer], q.id).toBe(q.officialAnswerNumber);
+      expect(Object.keys(q.choiceExplanations!)).toEqual(Object.keys(q.choices!));
       expect(q.explanation).toContain(`公式正答は${q.officialAnswerNumber}です。`);
       for (const [key, explanation] of Object.entries(q.choiceExplanations!)) {
         expect(explanation!.length, `${q.id} ${key}`).toBeGreaterThan(30);

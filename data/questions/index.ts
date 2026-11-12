@@ -159,6 +159,7 @@ import { YOBI_TANTO_QUESTIONS } from "./yobi-tanto";
 import { SOKURYOSHIHO_QUESTIONS } from "./sokuryoshiho";
 import { CAREMANAGER_QUESTIONS } from "./caremanager";
 import { QUESTIONS as KIKAI_HOZEN_DENKI3_QUESTIONS } from "./kikai-hozen-denki3";
+import { QUESTIONS as KIKAI_HOZEN_DENKI1_QUESTIONS } from "./kikai-hozen-denki1";
 import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
 import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 
@@ -346,6 +347,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("kenchiku-daiku2") ? { "kenchiku-daiku2": KENCHIKU_DAIKU2_QUESTIONS } : {}),
 ...(isExamPublished("shashin2") ? { "shashin2": SHASHIN2_QUESTIONS } : {}),
 ...(isExamPublished("kikai-hozen-denki3") ? { "kikai-hozen-denki3": KIKAI_HOZEN_DENKI3_QUESTIONS } : {}),
+...(isExamPublished("kikai-hozen-denki1") ? { "kikai-hozen-denki1": KIKAI_HOZEN_DENKI1_QUESTIONS } : {}),
 ...(isExamPublished("kikai-hozen") ? { "kikai-hozen": KIKAI_HOZEN_QUESTIONS } : {}),
 ...(isExamPublished("tsukanshi") ? { "tsukanshi": TSUKANSHI_QUESTIONS } : {})
 };

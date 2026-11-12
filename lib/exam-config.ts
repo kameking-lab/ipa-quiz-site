@@ -1734,6 +1734,7 @@ caremanager: {
     seasons: ["early"], yearRange: { start: 2025, end: 2025 },
 },
   "kikai-hozen-denki3": { code: "kikai-hozen-denki3", nameFull: "機械保全技能検定 3級（電気系保全作業 学科）", urlSlug: "kikai-hozen-denki3", level: "basic", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科", categories: ["機械一般", "電気一般", "機械保全法一般", "材料一般", "安全衛生", "電気系保全法"] }], seasons: ["round1"], yearRange: { start: 2026, end: 2026 } },
+  "kikai-hozen-denki1": { code: "kikai-hozen-denki1", nameFull: "機械保全技能検定 1級（電気系保全作業 学科）", urlSlug: "kikai-hozen-denki1", level: "advanced", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科", categories: ["機械一般", "電気一般", "機械保全法一般", "材料一般", "安全衛生", "電気系保全法"] }], seasons: ["round2"], yearRange: { start: 2025, end: 2025 } },
 "kikai-hozen": {
     code: "kikai-hozen", nameFull: "機械保全技能検定 2級（機械系保全作業 学科）", urlSlug: "kikai-hozen", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（真偽法25・四肢択一25）", categories: ["機械一般", "電気一般", "機械保全法一般", "材料一般", "安全衛生", "機械系保全法"] }],
