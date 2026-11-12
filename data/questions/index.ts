@@ -1,3 +1,4 @@
+import { SASSHI1_QUESTIONS } from "./sasshi1";
 import { SASSHI2_QUESTIONS } from "./sasshi2";
 import { ENGEI_SOSHOKU3_QUESTIONS } from "./engei-soshoku3";
 import { ENGEI_SOSHOKU1_QUESTIONS } from "./engei-soshoku1";
@@ -378,6 +379,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("kagu2") ? { "kagu2": KAGU2_QUESTIONS } : {}),
 ...(isExamPublished("kagu1") ? { "kagu1": KAGU1_QUESTIONS } : {}),
 ...(isExamPublished("sasshi2") ? { "sasshi2": SASSHI2_QUESTIONS } : {}),
+...(isExamPublished("sasshi1") ? { "sasshi1": SASSHI1_QUESTIONS } : {}),
 ...(isExamPublished("engei-soshoku1") ? { "engei-soshoku1": ENGEI_SOSHOKU1_QUESTIONS } : {}),
 ...(isExamPublished("engei-soshoku3") ? { "engei-soshoku3": ENGEI_SOSHOKU3_QUESTIONS } : {}),
 ...(isExamPublished("flower3") ? { "flower3": FLOWER3_QUESTIONS } : {}),

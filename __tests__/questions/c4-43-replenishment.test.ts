@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { SASSHI2_QUESTIONS } from "@/data/questions/sasshi2";
+import { SASSHI1_QUESTIONS } from "@/data/questions/sasshi1";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { choiceDisplayLabel, formatQuestionAnswerForDisplay, questionNumberLabel } from "@/lib/questions/display";
@@ -16,6 +17,7 @@ import type { ChoiceKey, ExamCode, Question } from "@/lib/questions/types";
 const editions: { exam: ExamCode; year: number; questions: Question[]; a: string; b: string; figures: string[] }[] = [
   { exam: "sasshi2", year: 2024, questions: SASSHI2_QUESTIONS, a: "×○○×× ○×○×○ ×○×○○ ○×○○○ ××○○○", b: "ニロイハロ イロロニイ ロハニロロ ロイハイハ ロイロニイ", figures: ["B群 1", "B群 23"] },
   { exam: "sasshi2", year: 2023, questions: SASSHI2_QUESTIONS, a: "×○××× ○×○×○ ○×○○× ×○○×○ ○○○○○", b: "ニニロイニ ロイハハイ ロイニニハ ロハロイロ ニニロハニ", figures: ["A群 23", "B群 20", "B群 23"] },
+  { exam: "sasshi1", year: 2025, questions: SASSHI1_QUESTIONS, a: "○○××× ×○×○○ ×○○×× ××××○ ×××○×", b: "ロイニロハ ロイニニニ ロニロイハ ニハロハロ ロハロハハ", figures: ["A群 23", "B群 21", "B群 23"] },
 ];
 const keys: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
@@ -101,4 +103,14 @@ it("retains the 2023 units, paired definitions and negative conditions", () => {
   expect(questions[37].choices?.エ).toContain("現場取付けで、二重にした");
   expect(questions[40].choices?.イ).toBe("50N");
   expect(questions[48].choices?.ウ).toBe("5年");
+});
+
+it("retains the 2025 grade-1 ratios, ranges and false original statements", () => {
+  expect(SASSHI1_QUESTIONS[2].question).toContain("面内方向");
+  expect(SASSHI1_QUESTIONS[15].question).toContain("W-5よりもW-1");
+  expect(SASSHI1_QUESTIONS[24].question).toContain("1分間以上");
+  expect(SASSHI1_QUESTIONS[26].choices?.イ).toContain("30～50mm");
+  expect(SASSHI1_QUESTIONS[41].choices?.ウ).toBe("① 800　② 900");
+  expect(SASSHI1_QUESTIONS[46].choices?.ウ).toBe("① 内側（室内側）　② 内側（室内側）");
+  expect(SASSHI1_QUESTIONS[48].choices?.ウ).toBe("① 75　② 1.2");
 });

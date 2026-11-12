@@ -7,6 +7,7 @@ import { examLabel } from "@/lib/utils";
 import { isIpaTop, ipaTopDescription } from "@/lib/seo/ipa-top";
 export const EXAM_DESCRIPTIONS: Partial<Record<ExamCode, string>> = {
 "sasshi2": "技能検定 2級サッシ施工（ビル用サッシ施工作業）学科試験。公式過去問を全肢の独自解説で学べます。",
+"sasshi1": "技能検定 1級サッシ施工（ビル用サッシ施工作業）学科試験。公式過去問を全肢の独自解説で学べます。",
 "engei-soshoku1": "技能検定 1級園芸装飾（室内園芸装飾作業）学科試験。公式過去問を全肢の独自解説で学べます。",
 "engei-soshoku3": "技能検定 3級園芸装飾（室内園芸装飾作業）学科試験。公式過去問を全肢の独自解説で学べます。",
   "flower3": "フラワー装飾技能士3級（フラワー装飾作業）学科の公式過去問を全肢の独自解説で学べます。",
@@ -295,6 +296,7 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
 }
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
     "sasshi2": "技能検定 2級サッシ施工（ビル用サッシ施工作業）学科試験",
+    "sasshi1": "技能検定 1級サッシ施工（ビル用サッシ施工作業）学科試験",
     "engei-soshoku1": "技能検定 1級園芸装飾（室内園芸装飾作業）学科試験",
     "engei-soshoku3": "技能検定 3級園芸装飾（室内園芸装飾作業）学科試験",
   "flower3": "技能検定 3級フラワー装飾（フラワー装飾作業）学科試験",
@@ -511,6 +513,7 @@ export function examFullName(exam: ExamCode): string {
 }
 const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number) => string> = {
     "sasshi2": (c, y, k) => `技能検定 2級サッシ施工（ビル用サッシ施工作業）学科試験を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
+    "sasshi1": (c, y, k) => `技能検定 1級サッシ施工（ビル用サッシ施工作業）学科試験を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
     "engei-soshoku1": (c, y, k) => `技能検定 1級園芸装飾（室内園芸装飾作業）学科試験を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
     "engei-soshoku3": (c, y, k) => `技能検定 3級園芸装飾（室内園芸装飾作業）学科試験を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
   "flower3": (c, y, k) => `フラワー装飾技能士3級（フラワー装飾作業）学科を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
