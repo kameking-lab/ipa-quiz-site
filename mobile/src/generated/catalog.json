@@ -5286,7 +5286,7 @@
         "gakka"
       ],
       "bytes": 205200,
-      "revision": "9c6bd92e7676502b8b61da5433aac36408268a3270980b392ece660cad81a2d9"
+      "revision": "7c4d44d067ae09ccc39490895e028a2dfb109d339ef8d74d5bb168850500f3e4"
     },
     {
       "code": "tobi3",
@@ -5316,8 +5316,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 117091,
-      "revision": "d98d09cbccd3d82fa9d6564e7393fbafe2e8c485443dea41f32104fa1a432760"
+      "bytes": 117103,
+      "revision": "1b664a76de13d8ae05c12ed82994625339acf286f17ae9cdf871e0aa33c4e81c"
     },
     {
       "code": "kenchiku-daiku1",
@@ -5348,8 +5348,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 115523,
-      "revision": "798c29e7e443a39de014a6c52218edc495eec68ede9380a91461ea66ab6dc5c3"
+      "bytes": 115556,
+      "revision": "5a44fd863a9d4bb6d6b5742703dce9dcaa397904f42ebebda0f220d2e1b3e669"
     },
     {
       "code": "kenchiku-daiku3",
@@ -5377,8 +5377,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 121353,
-      "revision": "3438f0d29d401567bd12764361288297433fe737f18e011f3292a225993a204a"
+      "bytes": 121386,
+      "revision": "6b3382a9ee75826ef3d0ad8cbbac7bbb6bc0eac8874a84bcbb59908793e29b85"
     },
     {
       "code": "kenchiku-daiku2",
@@ -5411,8 +5411,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 217404,
-      "revision": "b2e2eb58c12b8b83c8f4192702d97819a81df416b15db3ac910ac320015bd4c9"
+      "bytes": 217455,
+      "revision": "cef2bac4b9e76b2711225e8825470047ab7e2749d2eb71c46dcfad56d6abb39d"
     },
     {
       "code": "shashin2",
@@ -5441,30 +5441,9 @@
       "code": "kikai-hozen-denki3",
       "qualification": "kikai-hozen-denki3",
       "name": "機械保全技能士 3級（電気系）",
-      "count": 30,
+      "count": 60,
       "years": [
-        2026
-      ],
-      "categories": [
-        "安全衛生",
-        "材料一般",
-        "機械一般",
-        "機械保全法一般",
-        "電気一般",
-        "電気系保全法"
-      ],
-      "sessions": [
-        "gakka"
-      ],
-      "bytes": 49940,
-      "revision": "e331407126663cd5ce7037eb68aaf5bac970b915945b31579a96526bc7b20608"
-    },
-    {
-      "code": "kikai-hozen-denki1",
-      "qualification": "kikai-hozen-denki1",
-      "name": "機械保全技能士 1級（電気系）",
-      "count": 50,
-      "years": [
+        2026,
         2025
       ],
       "categories": [
@@ -5478,8 +5457,41 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 96241,
-      "revision": "ec1cf837f315ab73e0ec5e16e0b26b372ff1397831d3f5a1f8c25f9c627101d5"
+      "bytes": 103784,
+      "revision": "1be5aceb8413233c18c32d1339246915b7a090d5ffe8de93b60901bf3ce95f8f"
+    },
+    {
+      "code": "kikai-hozen-denki1",
+      "qualification": "kikai-hozen-denki1",
+      "name": "機械保全技能士 1級（電気系）",
+      "count": 100,
+      "years": [
+        2025,
+        2024
+      ],
+      "categories": [
+        "PLC",
+        "半導体・電子回路",
+        "安全衛生",
+        "接地・配線",
+        "材料一般",
+        "機械一般",
+        "機械保全法一般",
+        "機械要素",
+        "油圧・空気圧",
+        "測定・診断",
+        "絶縁・配線",
+        "論理回路",
+        "開閉器・接点保護",
+        "電動機・変圧器",
+        "電気一般",
+        "電気系保全法"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 202324,
+      "revision": "198c7e8c919bbccad2d32c5e7c65a68b0a3345b655c0fed3a9c693580d6b3a88"
     },
     {
       "code": "kikai-hozen-setsubi1",
@@ -5507,6 +5519,35 @@
       ],
       "bytes": 98293,
       "revision": "278e41fc6fc004170a71ff557dd38f9a489f6e5737aecb4af3183e1d43c4641e"
+    },
+    {
+      "code": "kikai-hozen1",
+      "qualification": "kikai-hozen1",
+      "name": "機械保全技能士 1級（機械系）",
+      "count": 49,
+      "years": [
+        2024
+      ],
+      "categories": [
+        "安全衛生",
+        "工作・接合",
+        "材料・表面処理",
+        "材料一般",
+        "材料力学",
+        "機械一般",
+        "機械保全法一般",
+        "機械要素",
+        "油圧・空気圧",
+        "測定・診断",
+        "潤滑管理",
+        "製図",
+        "電気一般"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 103296,
+      "revision": "989916160b0641bb5104bdb2205273f70a1729994bf4fb488536fb76ef35045f"
     },
     {
       "code": "kikai-hozen",

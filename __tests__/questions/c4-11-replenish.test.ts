@@ -10,7 +10,8 @@ import type { ExamCode } from "@/lib/questions/types";
 
 const sets: {code: ExamCode; year: number; count: number}[] = [
   {code: "kikai-hozen-denki3", year: 2025, count: 30},
-  {code: "kikai-hozen-kikai1", year: 2024, count: 49},
+  {code: "kikai-hozen1", year: 2024, count: 49},
+  {code: "kikai-hozen-denki1", year: 2024, count: 50},
 ];
 
 describe.each(sets)("c4-11 $code $year round2", ({code, year, count}) => {
@@ -50,7 +51,7 @@ describe.each(sets)("c4-11 $code $year round2", ({code, year, count}) => {
 });
 
 it("keeps the officially deleted question absent and preserves the remaining numbers", () => {
-  const rows = QUESTIONS_BY_EXAM["kikai-hozen-kikai1"]!;
+  const rows = QUESTIONS_BY_EXAM["kikai-hozen1"]!;
   expect(rows.some(q => q.qNumber === 40)).toBe(false);
   expect(rows.find(q => q.qNumber === 46)?.answer).toBe("ウ");
   expect(350 * 9.8 / 8).toBeCloseTo(429, 0);
@@ -64,4 +65,39 @@ it("keeps the series circuit calculation and PNP arrow consistent with the origi
   expect(rows[2].answer).toBe("イ");
   expect(rows[29].answer).toBe("ア");
   expect(rows[29].explanation).toContain("PNP");
+});
+
+it("shares the 2024 common questions while preserving the electrical source URLs", () => {
+  const mechanical = QUESTIONS_BY_EXAM["kikai-hozen1"]!.filter(q => q.qNumber <= 25);
+  const electrical = QUESTIONS_BY_EXAM["kikai-hozen-denki1"]!.filter(q => q.year === 2024 && q.qNumber <= 25);
+  expect(electrical).toHaveLength(25);
+  for (const [i, q] of electrical.entries()) {
+    expect(q.question).toBe(mechanical[i].question);
+    expect(q.choices).toBe(mechanical[i].choices);
+    expect(q.choiceExplanations).toBe(mechanical[i].choiceExplanations);
+    expect(q.imageUrls).toBe(mechanical[i].imageUrls);
+    expect(q.sourcePdfUrl).toContain("2024_1kyu_denki_mondai.pdf");
+    expect(q.officialAnswerNumber).toBe(mechanical[i].officialAnswerNumber);
+  }
+});
+
+it("keeps the resistor multiplier, logic truth table and unit conversion correct", () => {
+  const rows = QUESTIONS_BY_EXAM["kikai-hozen-denki1"]!.filter(q => q.year === 2024);
+  expect(rows[34].answer).toBe("エ");
+  expect(300 * (30 + 45) / 30).toBe(750);
+  expect(rows[44].choices?.エ).toBe("R＝(4×10⁶×ρL)/(πD²) [Ω]");
+  for (const a of [0, 1]) for (const b of [0, 1]) {
+    const x = !(a && b);
+    const y = !(!(a && x) && !(b && x));
+    expect(Number(y)).toBe(a ^ b);
+  }
+  expect(rows[33].answer).toBe("ウ");
+  const motor2024 = rows[49];
+  const motor2025 = QUESTIONS_BY_EXAM["kikai-hozen-denki1"]!.find(q => q.year === 2025 && q.qNumber === 50)!;
+  expect(motor2024.officialAnswerNumber).toBe("イ");
+  expect(motor2025.officialAnswerNumber).toBe("エ");
+  expect(motor2024.imageUrls).not.toEqual(motor2025.imageUrls);
+  for (const n of [30, 31, 42, 46]) {
+    expect(rows[n - 1].choices?.エ, `question ${n}`).toMatch(/。$/);
+  }
 });
