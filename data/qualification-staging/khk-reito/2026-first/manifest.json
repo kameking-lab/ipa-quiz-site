@@ -3,11 +3,11 @@
   "qualification": "第一種冷凍機械",
   "year": 2026,
   "season": "annual",
-  "status": "source-verified-private",
+  "status": "reviewed-private",
   "publicAllowed": false,
   "targetQuestionCount": 35,
   "sessions": {
-    "hoki": 20,
+    "houki": 20,
     "hoan": 15
   },
   "publicationPolicy": "高圧ガス全区分が揃ってから一括公開。公開データ・登録・配信ローダーへ追加しない。",
@@ -20,5 +20,12 @@
     "matchingOpenPullRequests": [],
     "existingBranchTargetQuestionCount": 0,
     "evidence": "tools/hp-fill-2/duplicate-check.json"
-  }
+  },
+  "questionCount": 35,
+  "questionsPath": "questions.json",
+  "storedUniqueQuestionCount": 35,
+  "reusedQuestionCount": 0,
+  "sharedQuestionReferencesPath": "shared-question-references.json",
+  "technicalReviewPendingIds": [],
+  "reviewedQuestionCount": 35
 }
