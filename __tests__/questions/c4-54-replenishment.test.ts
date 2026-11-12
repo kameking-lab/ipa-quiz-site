@@ -91,6 +91,7 @@ it("型枠の使用長さ計算と否定形設問を原本に合わせる", () =
   expect(KATAWAKU2_QUESTIONS[30].choices?.イ).toBe("325mm");
   expect(KATAWAKU2_QUESTIONS[30].explanation).toContain("175＋175－25＝325mm");
   expect(KATAWAKU2_QUESTIONS[49].question).toContain("適切でない");
+  expect(KATAWAKU2_QUESTIONS[21].explanation).toContain("一点鎖線");
 });
 
 it("鉄筋組立ての力の計算・加工許容差・原本の否定形を保持する", () => {
@@ -98,4 +99,6 @@ it("鉄筋組立ての力の計算・加工許容差・原本の否定形を保�
   expect(TEKKIN2_QUESTIONS[32].question).toContain("±(　)mm");
   expect(TEKKIN2_QUESTIONS[41].question).toContain("誤っている");
   expect(TEKKIN3_QUESTIONS[23].officialAnswerNumber).toBe("×");
+  expect(TEKKIN3_QUESTIONS[23].question).toContain("引違い戸");
+  expect(TEKKIN3_QUESTIONS[23].explanation).toContain("引違い窓");
 });
