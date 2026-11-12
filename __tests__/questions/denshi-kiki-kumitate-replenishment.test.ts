@@ -14,21 +14,25 @@ import type { ChoiceKey, Question } from "@/lib/questions/types";
 
 // Read independently from the rendered official answer table, five per row.
 const SITTINGS = [{
-  exam: "denshi-kiki-kumitate1", season: "early", all: DENSHI_KIKI_KUMITATE1_QUESTIONS,
+  exam: "denshi-kiki-kumitate1", year: 2025, season: "early", all: DENSHI_KIKI_KUMITATE1_QUESTIONS,
   answers: "○××××" + "××××○" + "○○○○○" + "○○××○" + "○○××○"
     + "ニニニハイ" + "ロハハロニ" + "イハハロロ" + "ロイロハハ" + "ニイハハハ",
 }, {
-  exam: "denshi-kiki-kumitate3", season: "early", all: DENSHI_KIKI_KUMITATE3_QUESTIONS,
+  exam: "denshi-kiki-kumitate3", year: 2025, season: "early", all: DENSHI_KIKI_KUMITATE3_QUESTIONS,
   answers: "○×○○○○×○×○" + "○○○×○×○○○○" + "○○×○○×××○×",
 }, {
-  exam: "denshi-kiki-kumitate3", season: "late", all: DENSHI_KIKI_KUMITATE3_QUESTIONS,
+  exam: "denshi-kiki-kumitate3", year: 2025, season: "late", all: DENSHI_KIKI_KUMITATE3_QUESTIONS,
   answers: "○○○○××○○××" + "○××○××××○○" + "○○○○××××××",
+}, {
+  exam: "denshi-kiki-kumitate1", year: 2023, season: "early", all: DENSHI_KIKI_KUMITATE1_QUESTIONS,
+  answers: "××○○○" + "○○○×○" + "○○○○○" + "××××○" + "○○××○"
+    + "イハイロハ" + "ロハハニイ" + "ハハニニニ" + "ニロニイロ" + "ニイニイニ",
 }] as const;
 
 describe("電子機器組立ての公式原本と学習経路", () => {
-  for (const { exam, season, all, answers } of SITTINGS) {
-    const questions: Question[] = all.filter(q => q.season === season);
-    it(`${exam}/${season}: 公式正答を原本表記で表示して採点する`, () => {
+  for (const { exam, year, season, all, answers } of SITTINGS) {
+    const questions: Question[] = all.filter(q => q.year === year && q.season === season);
+    it(`${exam}/${year}/${season}: 公式正答を原本表記で表示して採点する`, () => {
       expect(questions).toHaveLength(answers.length);
       expect(questions.map(q => q.qNumber)).toEqual(Array.from({ length: answers.length }, (_, i) => i + 1));
       expect(questions.map(q => q.officialAnswerNumber).join("")).toBe(answers);
@@ -39,11 +43,11 @@ describe("電子機器組立ての公式原本と学習経路", () => {
         expect(formatQuestionAnswerForDisplay(q, q.answer as ChoiceKey), q.id).toBe(official);
         expect(Object.keys(q.choiceExplanations ?? {}), q.id).toEqual(Object.keys(q.choices!));
         expect(isPracticeReadyQuestion(q), q.id).toBe(true);
-        expect(questionSourceEdition(q), q.id).toBe(`2025年度${season === "early" ? "前期" : "後期"}`);
+        expect(questionSourceEdition(q), q.id).toBe(`${year}年度${season === "early" ? "前期" : "後期"}`);
       }
       expect(usesNumberedChoices(exam)).toBe(true);
     });
-    it(`${exam}/${season}: 同期・遅延読込と全問の個別URLが一致する`, async () => {
+    it(`${exam}/${year}/${season}: 同期・遅延読込と全問の個別URLが一致する`, async () => {
       expect(QUESTIONS_BY_EXAM[exam]).toEqual(all);
       expect(await getQuestionsForExam(exam)).toEqual(all);
       expect(getQualificationByExamCode(exam)?.status).toBe("live");
@@ -54,8 +58,8 @@ describe("電子機器組立ての公式原本と学習経路", () => {
         expect(findQuestionByRoute(all, { exam: routeExam, yearSeason, section, qnum })?.id, q.id).toBe(q.id);
       }
     });
-    it(`${exam}/${season}: 図問題に読み込める原図と代替文がある`, () => {
-      const source = JSON.parse(readFileSync(path.join(process.cwd(), `data/questions/${exam}/2025-${season}.sources.json`), "utf8"));
+    it(`${exam}/${year}/${season}: 図問題に読み込める原図と代替文がある`, () => {
+      const source = JSON.parse(readFileSync(path.join(process.cwd(), `data/questions/${exam}/${year}-${season}.sources.json`), "utf8"));
       expect(source.questions).toHaveLength(answers.length);
       for (const q of questions.filter(q => q.hasImage)) {
         expect(q.imageUrls, q.id).toHaveLength(1);
