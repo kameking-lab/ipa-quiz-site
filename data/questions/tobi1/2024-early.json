@@ -256,7 +256,10 @@
     "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-1-B58-%E3%81%A8%E3%81%B3%EF%BC%88%E3%81%A8%E3%81%B3%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
     "sourceAttribution": "出典：中央職業能力開発協会 令和6年度前期 1級とび（とび作業）学科試験 A群 7。解説は過去問AIの独自作成。",
     "license": "JAVADA-owner-authorized",
-    "lastUpdated": "2026-11-12"
+    "lastUpdated": "2026-11-12",
+    "officialReferenceUrls": [
+      "https://www.mlit.go.jp/tec/r08dobokukoujikyoutsuusiyousyo/honbun01_syo03_setsu07.html"
+    ]
   },
   {
     "id": "tobi1-2024-early-gakka-a-008",
@@ -356,10 +359,10 @@
       "イ": "誤り（×）"
     },
     "answer": "イ",
-    "explanation": "公式正答は×です。摩耗で公称径から10%細くなったロープを使用できる、という判断は誤りです。見た目だけで判断せず、径の減少を点検して使用可否を確認します。",
+    "explanation": "公式正答は×です。直径の減少が公称径の7%を超えるワイヤロープは使用できません。10%の減少はこの使用限度を超えているため、使用できるという記述は誤りです。",
     "choiceExplanations": {
-      "ア": "不正解。摩耗で公称径から10%細くなったロープを使用できる、という判断は誤りです。見た目だけで判断せず、径の減少を点検して使用可否を確認します。",
-      "イ": "正解。摩耗で公称径から10%細くなったロープを使用できる、という判断は誤りです。見た目だけで判断せず、径の減少を点検して使用可否を確認します。"
+      "ア": "不正解。直径の減少が公称径の7%を超えるワイヤロープは使用できません。10%の減少はこの使用限度を超えているため、使用できるという記述は誤りです。",
+      "イ": "正解。直径の減少が公称径の7%を超えるワイヤロープは使用できません。10%の減少はこの使用限度を超えているため、使用できるという記述は誤りです。"
     },
     "explanationCoverage": "full",
     "hasImage": false,
@@ -367,7 +370,10 @@
     "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-1-B58-%E3%81%A8%E3%81%B3%EF%BC%88%E3%81%A8%E3%81%B3%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
     "sourceAttribution": "出典：中央職業能力開発協会 令和6年度前期 1級とび（とび作業）学科試験 A群 10。解説は過去問AIの独自作成。",
     "license": "JAVADA-owner-authorized",
-    "lastUpdated": "2026-11-12"
+    "lastUpdated": "2026-11-12",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/web/t_doc?dataId=74020000&dataType=0&pageNo=2"
+    ]
   },
   {
     "id": "tobi1-2024-early-gakka-a-011",
@@ -1004,7 +1010,10 @@
     "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-1-B58-%E3%81%A8%E3%81%B3%EF%BC%88%E3%81%A8%E3%81%B3%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
     "sourceAttribution": "出典：中央職業能力開発協会 令和6年度前期 1級とび（とび作業）学科試験 B群 2。解説は過去問AIの独自作成。",
     "license": "JAVADA-owner-authorized",
-    "lastUpdated": "2026-11-12"
+    "lastUpdated": "2026-11-12",
+    "officialReferenceUrls": [
+      "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=10"
+    ]
   },
   {
     "id": "tobi1-2024-early-gakka-b-003",
@@ -1239,10 +1248,10 @@
     "answer": "ウ",
     "explanation": "公式正答はハです。張力の倍率は1/cos45°≒1.41です。1.75倍という値が不適切です。選択肢イは、1/cos15°≒1.04なので適切です。",
     "choiceExplanations": {
-      "ア": "不正解。1/cos15°≒1.04なので適切です。",
-      "イ": "不正解。1/cos30°≒1.15で、およそ1.16倍とする組合せは適切です。",
-      "ウ": "正解。張力の倍率は1/cos45°≒1.41です。1.75倍という値が不適切です。",
-      "エ": "不正解。1/cos60°＝2なので適切です。"
+      "ア": "1/cos15°≒1.04なので、つり角度30°の組合せは適切です。",
+      "イ": "1/cos30°≒1.15を安全側に丸めた1.16で、組合せは適切です。",
+      "ウ": "つり角度90°なら1/cos45°≒1.41です。1.75倍との組合せが不適切です。",
+      "エ": "1/cos60°＝2.00なので、つり角度120°の組合せは適切です。"
     },
     "explanationCoverage": "full",
     "hasImage": false,

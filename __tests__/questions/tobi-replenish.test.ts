@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { TOBI1_QUESTIONS } from "@/data/questions/tobi1";
+import { TOBI3_QUESTIONS } from "@/data/questions/tobi3";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
@@ -68,5 +69,52 @@ describe("とび技能士1級 追加年度の原本・採点・表示", () => {
     expect(qs[38].choices?.ウ).toBe("根太");
     expect(qs[38].answer).toBe("ウ");
     expect(qs[42].answer).toBe("エ");
+  });
+
+  it("2023年度は養生期間と温度を区別し、パイプサポートの正答を保つ", () => {
+    const qs = TOBI1_QUESTIONS.filter(q => q.year === 2023);
+    expect(qs[6].answer).toBe("イ");
+    expect(qs[6].explanation).toContain("打込み後5日間");
+    expect(qs[6].explanation).toContain("温度が2℃");
+    expect(qs[26].officialAnswerNumber).toBe("イ");
+    expect(qs[26].answer).toBe("ア");
+    expect(qs[26].choiceExplanations?.ア).toContain("高さ2m以内");
+  });
+});
+
+describe("とび技能士3級 2025年度前期 原本30問", () => {
+  const official = "×○××○○××○○×○×○○○×○×○○×○○○×××××";
+  const questions2025 = TOBI3_QUESTIONS.filter(q => q.year === 2025 && q.season === "early");
+
+  it("全30問の本文・番号・公式○×と内部採点キーを対応させる", () => {
+    expect(questions2025).toHaveLength(30);
+    expect(official).toHaveLength(30);
+    expect(new Set(questions2025.map(questionPagePath)).size).toBe(30);
+    questions2025.forEach((q, i) => {
+      const symbol = official[i];
+      const answer = symbol === "○" ? "ア" : "イ";
+      expect(q.id).toBe(`tobi3-2025-early-gakka-${String(i + 1).padStart(3, "0")}`);
+      expect(q.qNumber).toBe(i + 1);
+      expect(q.officialQuestionLabel).toBe(String(i + 1));
+      expect(q.officialAnswerNumber, q.id).toBe(symbol);
+      expect(q.answer, q.id).toBe(answer);
+      expect(formatQuestionAnswerForDisplay(q, answer)).toBe(symbol);
+      expect(q.choices).toEqual({ ア: "正しい（○）", イ: "誤り（×）" });
+      expect(Object.keys(q.choiceExplanations!).sort()).toEqual(["ア", "イ"]);
+      expect(isPracticeReadyQuestion(q), q.id).toBe(true);
+      expect(q.hasImage).toBe(false);
+      expect(q.sourcePdfUrl).toMatch(/R07-1-D20-.*#page=[23]$/);
+      expect(EXAM_CONFIGS.tobi3.sessions[0].categories).toContain(q.category);
+      expect(findQuestionByRoute(questions2025, { exam: "tobi3", yearSeason: "2025-early", section: "gakka", qnum: `q${i + 1}` })).toBe(q);
+    });
+  });
+
+  it("同期・遅延読込に全30問を接続し、1級とは混在させない", async () => {
+    expect(QUESTIONS_BY_EXAM.tobi3).toEqual(TOBI3_QUESTIONS);
+    expect(await getQuestionsForExam("tobi3")).toEqual(TOBI3_QUESTIONS);
+    expect(EXAM_CONFIGS.tobi3.sessions[0].expectedQuestions).toBe(30);
+    expect(TOBI3_QUESTIONS.every(q => q.exam === "tobi3")).toBe(true);
+    expect(TOBI1_QUESTIONS.every(q => q.exam === "tobi1")).toBe(true);
+    expect(["ア", "イ"].map(k => choiceDisplayLabel("tobi3", k as ChoiceKey))).toEqual(["○", "×"]);
   });
 });

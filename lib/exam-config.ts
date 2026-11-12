@@ -1698,6 +1698,11 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["仮設工事", "安全衛生", "基礎工事", "鉄骨工事", "コンクリート工事", "解体工事", "玉掛け", "揚重機", "製図", "力学", "材料", "関係法規", "工具", "建築構造", "建設機械"] }],
     seasons: ["early"], yearRange: { start: 2023, end: 2024 },
 },
+"tobi3": {
+    code: "tobi3", nameFull: "技能検定 3級とび（とび作業）学科試験", urlSlug: "tobi3", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科（真偽法）", categories: ["安全衛生", "仮設工事", "土工事", "木造工事", "コンクリート工事", "解体工事", "工具", "建設機械", "玉掛け", "材料", "建築構造", "関係法規"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
 "shashin2": {
     code: "shashin2", nameFull: "技能検定 2級写真（肖像写真デジタル作業）学科試験", urlSlug: "shashin2", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["写真史", "光・色彩", "レンズ・撮影機材", "照明・露出", "肖像・画像処理", "デジタル基礎", "関係法規・環境"] }],
