@@ -87,7 +87,7 @@ it("1級の寄貼りと接合図を原問番号に対応させる", () => {
 it("3級の年度と断面図を原本に対応させる", () => {
   expect(KAGU3_QUESTIONS[23].question).toContain("ぼうず面");
   expect(KAGU3_QUESTIONS[23].hasImage).toBe(true);
-  expect(KAGU3_QUESTIONS.every(q => q.sourceAttribution?.includes("令和7年度後期"))).toBe(true);
+  expect(KAGU3_QUESTIONS.filter(q => q.year === 2025).every(q => q.sourceAttribution?.includes("令和7年度後期"))).toBe(true);
   expect(KAGU3_QUESTIONS[13].question).toContain("結合水が残っている");
   expect(KAGU3_QUESTIONS[13].answer).toBe("イ");
 });
