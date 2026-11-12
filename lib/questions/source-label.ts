@@ -49,6 +49,27 @@ export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sou
   if ((q.exam === "kenchiku-daiku1" || q.exam === "kenchiku-daiku2") && q.year === 2025 && q.season === "late") {
     return "2025年度後期（2026年2月8日実施）";
   }
+  if ((q.exam === "chikuro2" || q.exam === "kagaku-bunseki2" || q.exam === "sasshi2") && q.year === 2025 && q.season === "early") {
+    return "2025年度前期（2025年8月24日実施）";
+  }
+  if ((q.exam === "kyoka-plastic2" || q.exam === "flower2" || q.exam === "tetsudo-sharyo2" || q.exam === "engei-soshoku2") && q.year === 2025 && q.season === "early") {
+    return "2025年度前期（2025年9月7日実施）";
+  }
+  if (q.exam === "fujin-kodomofuku2" && q.year === 2025 && q.season === "early") {
+    return "2025年度前期（2025年8月31日実施）";
+  }
+  if (q.exam === "toso2" && q.year === 2025 && q.season === "early") {
+    return "2025年度前期（2025年8月24日実施）";
+  }
+  if ((q.exam === "insatsu2" || q.exam === "diecast2" || q.exam === "kagu2" || q.exam === "tekko2") && q.year === 2025 && q.season === "early") {
+    return "2025年度前期（2025年8月31日実施）";
+  }
+  if (q.exam === "mekki2" && q.year === 2025 && q.season === "early") {
+    return "2025年度前期（2025年8月31日実施）";
+  }
+  if (q.exam === "kinzoku-netsushori2" && q.year === 2025 && q.season === "early") {
+    return "2025年度前期（2025年8月24日実施）";
+  }
   if (q.exam === "junkango-kansai") {
     return q.fiscalYear !== undefined
       ? `令和${q.fiscalYear - 2018}年度（${q.year}年実施）`

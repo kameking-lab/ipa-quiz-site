@@ -1698,6 +1698,81 @@ tobi1: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["安全衛生", "仮設工事", "土工事", "基礎工事", "鉄骨工事", "コンクリート工事", "重量物運搬", "曳き家工事", "玉掛け", "揚重機", "製図", "力学", "工具", "建築構造", "関係法規", "木造工事", "材料", "解体工事", "建設機械"] }],
     seasons: ["early"], yearRange: { start: 2025, end: 2025 },
 },
+"flower2": {
+    code: "flower2", nameFull: "技能検定 2級フラワー装飾（フラワー装飾作業）学科試験", urlSlug: "flower2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["装飾の歴史・行事", "デザイン・色彩", "製作技法", "植物の分類・性質", "資材・工具", "水揚げ・品質管理", "安全・法規"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
+"fujin-kodomofuku2": {
+    code: "fujin-kodomofuku2", nameFull: "技能検定 2級婦人子供服製造（婦人子供注文服製作作業）学科試験", urlSlug: "fujin-kodomofuku2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["服装の歴史・様式", "繊維・生地", "縫製・仕上げ", "糸・副資材", "デザイン・色彩", "安全衛生", "製図・採寸", "裁断・仮縫い"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
+"toso2": {
+    code: "toso2", nameFull: "技能検定 2級塗装（建築塗装作業）学科試験", urlSlug: "toso2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["塗料・乾燥", "塗装方法・工具", "色彩・測色", "塗膜試験・欠陥", "養生・施工", "研磨・材料", "溶剤・安全衛生", "建築材料・構造", "素地調整・仕様"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
+"kagu2": {
+    code: "kagu2", nameFull: "技能検定 2級家具製作（家具手加工作業）学科試験", urlSlug: "kagu2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["家具の種類・構造", "製図・測定", "電気・安全衛生", "法令・環境", "接合・組立て", "木材・木質材料", "手工具", "研磨・塗装", "木工機械・加工"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
+"diecast2": {
+    code: "diecast2", nameFull: "技能検定 2級ダイカスト（ホットチャンバダイカスト作業）学科試験", urlSlug: "diecast2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["鋳造機・油圧", "溶解・溶湯管理", "鋳造方案・充填", "金型・欠陥対策", "検査・品質管理", "材料・熱処理", "機械加工・製図", "電気・安全衛生", "温度測定"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
+"tetsudo-sharyo2": {
+    code: "tetsudo-sharyo2", nameFull: "技能検定 2級鉄道車両製造・整備（機器ぎ装作業）学科試験", urlSlug: "tetsudo-sharyo2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["鉄道車両・ぎ装", "材料・熱処理", "機械要素・材料力学", "電気基礎", "加工・測定・製図", "品質管理", "安全衛生・法令", "潤滑"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
+"engei-soshoku2": {
+    code: "engei-soshoku2", nameFull: "技能検定 2級園芸装飾（室内園芸装飾作業）学科試験", urlSlug: "engei-soshoku2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["園芸装飾・デザイン", "工具・資材", "植物の種類・形態", "植物生理・繁殖", "栽培管理", "用土・肥料", "病害虫", "施設・安全衛生"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
+"sasshi2": {
+    code: "sasshi2", nameFull: "技能検定 2級サッシ施工（ビル用サッシ施工作業）学科試験", urlSlug: "sasshi2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["施工・墨出し", "工具・加工", "材料・シーリング", "安全衛生・法令", "ガラス・建具", "性能・規格", "建築構造", "製図"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
+"chikuro2": {
+    code: "chikuro2", nameFull: "技能検定 2級築炉（築炉作業）学科試験", urlSlug: "chikuro2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["施工・工程", "工具・施工機械", "耐火材料", "炉・燃料・伝熱", "規格・製図", "安全衛生・法令"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
+"kagaku-bunseki2": {
+    code: "kagaku-bunseki2", nameFull: "技能検定 2級化学分析（化学分析作業）学科試験", urlSlug: "kagaku-bunseki2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["器具・基本操作", "前処理・試料採取", "容量分析", "基礎化学", "重量分析・定性分析", "機器分析", "品質管理・統計", "安全衛生・法令"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
+"kyoka-plastic2": {
+    code: "kyoka-plastic2", nameFull: "技能検定 2級強化プラスチック成形（手積み積層成形作業）学科試験", urlSlug: "kyoka-plastic2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["成形法", "材料・強化材", "樹脂・副資材", "積層・型・品質", "加工・接合", "規格・製図", "安全衛生・環境", "品質管理・測定"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
+"insatsu2": {
+    code: "insatsu2", nameFull: "技能検定 2級印刷（オフセット印刷作業）学科試験", urlSlug: "insatsu2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["印刷方式・製版", "印刷機・給排紙", "色彩・網点", "用紙・製本", "インキ・乾燥", "安全衛生・環境", "電気・計測", "湿し水・ローラ", "品質・トラブル"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
+"tekko2": {
+    code: "tekko2", nameFull: "技能検定 2級鉄工（製缶作業）学科試験", urlSlug: "tekko2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["測定・けがき", "曲げ・ひずみ矯正", "穴あけ・切断", "溶接", "材料・熱処理", "材料試験・品質管理", "工作機械・工具", "製図・展開", "安全衛生・法令", "製缶・ボイラー", "非破壊検査", "電気基礎"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
+"mekki2": {
+    code: "mekki2", nameFull: "技能検定 2級めっき（電気めっき作業）学科試験", urlSlug: "mekki2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["基礎化学", "電気化学", "安全・環境", "排水処理", "品質・生産管理", "めっき試験", "めっき浴・めっき操作", "前処理", "研磨・機械加工", "浴管理・分析", "後処理", "材料", "腐食・防食", "設備・電気"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
+"kinzoku-netsushori2": {
+    code: "kinzoku-netsushori2", nameFull: "技能検定 2級金属熱処理（一般熱処理作業）学科試験", urlSlug: "kinzoku-netsushori2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["金属組織", "材料試験", "焼入れ", "焼なまし・焼ならし", "表面処理", "熱処理設備・温度制御", "機械工作", "鋼材・製図", "安全衛生", "雰囲気・冷却剤", "熱処理欠陥", "品質管理"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
 "kikai-hozen": {
     code: "kikai-hozen", nameFull: "機械保全技能検定 2級（機械系保全作業 学科）", urlSlug: "kikai-hozen", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（真偽法25・四肢択一25）", categories: ["機械一般", "電気一般", "機械保全法一般", "材料一般", "安全衛生", "機械系保全法"] }],

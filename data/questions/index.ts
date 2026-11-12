@@ -151,6 +151,21 @@ import { SHIHO_TANTO_QUESTIONS } from "./shiho-tanto";
 import { YOBI_TANTO_QUESTIONS } from "./yobi-tanto";
 import { SOKURYOSHIHO_QUESTIONS } from "./sokuryoshiho";
 import { CAREMANAGER_QUESTIONS } from "./caremanager";
+import { FLOWER2_QUESTIONS } from "./flower2";
+import { FUJIN_KODOMOFUKU2_QUESTIONS } from "./fujin-kodomofuku2";
+import { TOSO2_QUESTIONS } from "./toso2";
+import { KAGU2_QUESTIONS } from "./kagu2";
+import { DIECAST2_QUESTIONS } from "./diecast2";
+import { INSATSU2_QUESTIONS } from "./insatsu2";
+import { TETSUDO_SHARYO2_QUESTIONS } from "./tetsudo-sharyo2";
+import { ENGEI_SOSHOKU2_QUESTIONS } from "./engei-soshoku2";
+import { SASSHI2_QUESTIONS } from "./sasshi2";
+import { KAGAKU_BUNSEKI2_QUESTIONS } from "./kagaku-bunseki2";
+import { CHIKURO2_QUESTIONS } from "./chikuro2";
+import { KYOKA_PLASTIC2_QUESTIONS } from "./kyoka-plastic2";
+import { TEKKO2_QUESTIONS } from "./tekko2";
+import { MEKKI2_QUESTIONS } from "./mekki2";
+import { KINZOKU_NETSUSHORI2_QUESTIONS } from "./kinzoku-netsushori2";
 import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
 import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 
@@ -330,6 +345,21 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("kenchiku-daiku1") ? { "kenchiku-daiku1": KENCHIKU_DAIKU1_QUESTIONS } : {}),
 ...(isExamPublished("kenchiku-daiku2") ? { "kenchiku-daiku2": KENCHIKU_DAIKU2_QUESTIONS } : {}),
 ...(isExamPublished("tobi1") ? { tobi1: TOBI1_QUESTIONS } : {}),
+...(isExamPublished("flower2") ? { "flower2": FLOWER2_QUESTIONS } : {}),
+...(isExamPublished("fujin-kodomofuku2") ? { "fujin-kodomofuku2": FUJIN_KODOMOFUKU2_QUESTIONS } : {}),
+...(isExamPublished("toso2") ? { "toso2": TOSO2_QUESTIONS } : {}),
+...(isExamPublished("kagu2") ? { "kagu2": KAGU2_QUESTIONS } : {}),
+...(isExamPublished("diecast2") ? { "diecast2": DIECAST2_QUESTIONS } : {}),
+...(isExamPublished("insatsu2") ? { "insatsu2": INSATSU2_QUESTIONS } : {}),
+...(isExamPublished("tetsudo-sharyo2") ? { "tetsudo-sharyo2": TETSUDO_SHARYO2_QUESTIONS } : {}),
+...(isExamPublished("engei-soshoku2") ? { "engei-soshoku2": ENGEI_SOSHOKU2_QUESTIONS } : {}),
+...(isExamPublished("sasshi2") ? { "sasshi2": SASSHI2_QUESTIONS } : {}),
+...(isExamPublished("kagaku-bunseki2") ? { "kagaku-bunseki2": KAGAKU_BUNSEKI2_QUESTIONS } : {}),
+...(isExamPublished("chikuro2") ? { "chikuro2": CHIKURO2_QUESTIONS } : {}),
+...(isExamPublished("kyoka-plastic2") ? { "kyoka-plastic2": KYOKA_PLASTIC2_QUESTIONS } : {}),
+...(isExamPublished("tekko2") ? { "tekko2": TEKKO2_QUESTIONS } : {}),
+...(isExamPublished("mekki2") ? { "mekki2": MEKKI2_QUESTIONS } : {}),
+...(isExamPublished("kinzoku-netsushori2") ? { "kinzoku-netsushori2": KINZOKU_NETSUSHORI2_QUESTIONS } : {}),
 ...(isExamPublished("kikai-hozen") ? { "kikai-hozen": KIKAI_HOZEN_QUESTIONS } : {}),
 ...(isExamPublished("tsukanshi") ? { "tsukanshi": TSUKANSHI_QUESTIONS } : {})
 };
