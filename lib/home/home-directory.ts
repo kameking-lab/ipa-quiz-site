@@ -120,6 +120,7 @@ interface OtherCardDef {
 }
 
 const OTHER_CARDS: readonly OtherCardDef[] = [
+  {"code": "kikai-hozen3", "name": "機械保全技能士 3級（機械系）", "sub": "機械系保全作業 学科（真偽法）", "domain": "safety"},
   { code: "tobi2", name: "とび技能士 2級", sub: "とび作業 学科（真偽法・多肢択一法）", domain: "safety" },
   { code: "tobi3", name: "とび技能士 3級", sub: "とび作業 学科（真偽法）", domain: "safety" },
   { code: "khk-kagaku", name: "高圧ガス化学", sub: "甲種・乙種・丙種（液石・特別）422原問", domain: "safety" },
