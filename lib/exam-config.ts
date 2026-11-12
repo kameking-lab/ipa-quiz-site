@@ -1683,6 +1683,11 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["装飾の歴史・行事", "デザイン・色彩", "製作技法", "植物の分類・性質", "資材・工具", "水揚げ・品質管理", "安全・法規"] }],
     seasons: ["early"], yearRange: { start: 2025, end: 2025 },
 },
+"toso2": {
+    code: "toso2", nameFull: "技能検定 2級塗装（建築塗装作業）学科試験", urlSlug: "toso2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["塗料・乾燥", "塗装方法・工具", "色彩・測色", "塗膜試験・欠陥", "養生・施工", "研磨・材料", "溶剤・安全衛生", "建築材料・構造", "素地調整・仕様"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
 "mekki2": {
     code: "mekki2", nameFull: "技能検定 2級めっき（電気めっき作業）学科試験", urlSlug: "mekki2", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["基礎化学", "電気化学", "安全・環境", "排水処理", "品質・生産管理", "めっき試験", "めっき浴・めっき操作", "前処理", "研磨・機械加工", "浴管理・分析", "後処理", "材料", "腐食・防食", "設備・電気"] }],
