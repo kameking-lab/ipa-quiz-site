@@ -32,7 +32,7 @@ describe("金属熱処理2級2024年度前期", () => {
     });
     expect(choiceDisplayLabel("kinzoku-netsushori2", "エ")).toBe("ニ");
   });
-  it("図3点と公式正答に疑義があるB群6の本文・正答を保持する", () => {
+  it("図3点と原本PDF4ページのB群6の選択肢・正答を保持する", () => {
     expect(questions.filter(q => q.hasImage).map(q => q.qNumber)).toEqual([41, 48, 49]);
     for (const q of questions) for (const url of q.imageUrls ?? []) {
       const bytes = readFileSync(`public${url}`);
@@ -40,8 +40,9 @@ describe("金属熱処理2級2024年度前期", () => {
       expect(bytes.subarray(8, 12).toString()).toBe("WEBP");
     }
     expect(questions[30].officialAnswerNumber).toBe("ハ");
-    expect(questions[30].choices?.エ).toBe("処理後、水冷によって硬化する。");
-    expect(questions[30].explanation).toContain("公式本文・公式正答を保持");
+    expect(questions[30].choices?.ウ).toBe("アルミニウムやクロムよりもニッケルやコバルトを含む鋼の方が硬化する。");
+    expect(questions[30].choices?.エ).toBe("窒化処理後、焼戻しを必要としない。");
+    expect(questions[30].answer).toBe("ウ");
   });
   it("同期・遅延ローダー、資格一覧と構造化データに接続する", async () => {
     expect(QUESTIONS_BY_EXAM["kinzoku-netsushori2"]).toEqual(KINZOKU_NETSUSHORI2_QUESTIONS);
