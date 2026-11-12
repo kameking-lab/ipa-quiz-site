@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { KATAWAKU2_QUESTIONS } from "@/data/questions/katawaku2";
 import { TEKKIN3_QUESTIONS } from "@/data/questions/tekkin3";
+import { TEKKIN2_QUESTIONS } from "@/data/questions/tekkin2";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
@@ -24,6 +25,11 @@ const editions = [
     answers: "×××○×" + "×○○×○" + "×○×○○" + "×○○×○" + "×○○×○" + "×○○○○",
     pages: [...Array(10).fill(2), ...Array(10).fill(3), ...Array(10).fill(4)],
     figures: [5, 7, 8, 11, 16, 23, 24] },
+  { exam: "tekkin2" as const, rows: TEKKIN2_QUESTIONS,
+    answers: "××○×○" + "○××××" + "×○×○○" + "××××○" + "○○××○"
+      + "ニイイロロ" + "ハハイニイ" + "ハハロイイ" + "ロイイニイ" + "ハイロハハ",
+    pages: [...Array(15).fill(2), ...Array(10).fill(3), ...Array(5).fill(4), ...Array(5).fill(5), ...Array(5).fill(6), ...Array(5).fill(7), ...Array(5).fill(8)],
+    figures: [7, 21, 29, 32, 39, 45, 46] },
 ];
 
 describe.each(editions)("c4-54 $exam 2025年度後期", ({ exam, rows, answers, pages, figures }) => {
@@ -85,4 +91,11 @@ it("型枠の使用長さ計算と否定形設問を原本に合わせる", () =
   expect(KATAWAKU2_QUESTIONS[30].choices?.イ).toBe("325mm");
   expect(KATAWAKU2_QUESTIONS[30].explanation).toContain("175＋175－25＝325mm");
   expect(KATAWAKU2_QUESTIONS[49].question).toContain("適切でない");
+});
+
+it("鉄筋組立ての力の計算・加工許容差・原本の否定形を保持する", () => {
+  expect(TEKKIN2_QUESTIONS[28].explanation).toContain("√(30²＋40²)＝50N");
+  expect(TEKKIN2_QUESTIONS[32].question).toContain("±(　)mm");
+  expect(TEKKIN2_QUESTIONS[41].question).toContain("誤っている");
+  expect(TEKKIN3_QUESTIONS[23].officialAnswerNumber).toBe("×");
 });
