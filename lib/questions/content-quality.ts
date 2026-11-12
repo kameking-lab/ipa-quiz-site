@@ -23,5 +23,5 @@ export function hasUnrenderableContent(q: Question): boolean {
   if (q.id === "gijutsushi1-kikai-2024-basis-I-1-5" && q.question.includes("原料A［kg］：1／2／12") && q.question.includes("利益［万円/kg］：300／200／適用なし")) return false;
   if (q.exam === "jken-system" && /^jken-system-260913-js01-q[24]-\d+$/.test(q.id) && q.question.includes("```text")) return false;
   if (q.hasImage) return true;
-  return /次の表|以下の表|下の表|表のように|表に示す|表のとおり|次の図(?!面)|以下の図(?!面)|下の図(?!面)|図のように|図に示す|図中の/.test(q.question);
+  return /次の表(?!面)|以下の表(?!面)|下の表(?!面)|表のように|表に示す|表のとおり|次の図(?!面)|以下の図(?!面)|下の図(?!面)|図のように|図に示す|図中の/.test(q.question);
 }
