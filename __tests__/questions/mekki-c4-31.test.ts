@@ -16,6 +16,9 @@ const papers = [{
   exam: "mekki3" as const, year: 2025, all: MEKKI3_QUESTIONS,
   answers: "×○××○○×○○○" + "×○○○×○×○○×" + "×××××○××○×",
 }, {
+  exam: "mekki3" as const, year: 2024, all: MEKKI3_QUESTIONS,
+  answers: "×○○○○○×○○○" + "××○○○×○×○×" + "○○×○○××○○×",
+}, {
   exam: "mekki1" as const, year: 2024, all: MEKKI1_QUESTIONS,
   answers: "○○○××" + "×○×××" + "○×○○○" + "×○○××" + "×○×○×"
     + "ハハロロイ" + "ハロハロロ" + "ハロハロハ" + "ロニイロイ" + "ハイイニハ",
@@ -62,6 +65,16 @@ it("1級の組合せ表と計算条件を保持する", () => {
   expect(byNumber(34).choices?.イ).toBe("500W");
   expect(byNumber(42).choices?.エ).toBe("15mm²");
   expect(MEKKI1_QUESTIONS.some(q => q.hasImage)).toBe(false);
+});
+
+it("2024年度3級の単位と薬品名を原本どおり保持する", () => {
+  const questions = MEKKI3_QUESTIONS.filter(q => q.year === 2024);
+  expect(questions[1].question).toContain("0.01mol/L");
+  expect(questions[9].question).toContain("6か月以内ごとに1回");
+  expect(questions[11].question).toContain("1kW");
+  expect(questions[11].explanation).toContain("10A");
+  expect(questions[21].question).toContain("酸化亜鉛（金属亜鉛）");
+  expect(questions.some(q => q.hasImage)).toBe(false);
 });
 
 it("2025年度3級の電流計算に必要な寸法図を保持する", () => {
