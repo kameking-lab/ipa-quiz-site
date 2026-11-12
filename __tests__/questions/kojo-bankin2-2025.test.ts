@@ -1,13 +1,15 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import { KOJO_BANKIN2_QUESTIONS as questions } from "@/data/questions/kojo-bankin2";
+import { KOJO_BANKIN2_QUESTIONS as allQuestions } from "@/data/questions/kojo-bankin2";
 import sources from "@/data/questions/kojo-bankin2/sources.json";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { choiceDisplayLabel, formatQuestionAnswerForDisplay, questionNumberLabel, usesNumberedChoices } from "@/lib/questions/display";
 import { questionSourceEdition } from "@/lib/questions/source-label";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
+
+const questions = allQuestions.filter(q => q.year === 2025);
 
 const exam = "kojo-bankin2";
 // 公式正解表（2025/09/07）の行を、問題データとは別に転記。
@@ -54,7 +56,7 @@ describe("工場板金技能士2級（曲げ板金作業）2025年度前期", ()
   });
 
   it("資格一覧・出題ローダー・原本のイロハニ表示に接続する", async () => {
-    expect(await getQuestionsForExam(exam)).toEqual(questions);
+    expect(await getQuestionsForExam(exam)).toEqual(allQuestions);
     expect(getQualificationByExamCode(exam)?.status).toBe("live");
     expect(EXAM_CONFIGS[exam].sessions[0].expectedQuestions).toBe(50);
     expect(questions.every(q => EXAM_CONFIGS[exam].sessions[0].categories?.includes(q.category))).toBe(true);
