@@ -9,7 +9,7 @@ import { Preferences } from "@capacitor/preferences";
 import Link from "next/link";
 import type { MobileConfiguration, MobileEntitlement, CatalogEntry } from "../shared/contracts";
 import { downloads, type DownloadIndex } from "./downloads";
-import { Membership, purchaseError, nativePublicSdkKey, describeStoreError, StoreError } from "./purchases";
+import { Membership, deviceMembership, purchaseError, nativePublicSdkKey, describeStoreError, StoreError } from "./purchases";
 import { beginLogin, observeLogin } from "./login";
 import { observeReminderTap, setReminder } from "./platform";
 import { persistStudy, restoreStudy } from "./portable-storage";
@@ -20,7 +20,7 @@ import { openQualificationUrl } from "./qualification-platform";
 import { ManageSubscriptionButton } from "@/app/billing/ManageSubscriptionButton";
 import { blocksNativeWebPurchase } from "../shared/native-billing-policy";
 import { installNativePetSupport, observePetStudyWrites, persistStudyAfterPets } from "./pet-support";
-const defaultMembership = new Membership();
+const defaultMembership = deviceMembership;
 /** User-facing text for a failure: the message, without the "Error: " prefix String(e) adds. */
 export function noticeText(error: unknown): string { return error instanceof Error ? error.message : String(error); }
 export const SITE_ORIGIN = "https://www.kakomon-ai.jp";
@@ -57,6 +57,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   const [downloadCode,setDownloadCode]=useState<string|null>(null), [downloadProgress,setDownloadProgress]=useState("");
   const abort = useRef<AbortController | null>(null), user = useRef<string | null>(null);
   const studyReady = useRef(false), accessSignature = useRef("");
+  const signingOut = useRef(false);
   const running=useRef(false);
   const refreshing=useRef<Promise<unknown>>(Promise.resolve());
   const inSite = typeof location !== "undefined" && location.origin === SITE_ORIGIN;
@@ -66,10 +67,15 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     if (!response.ok) { setOffer(null); if([401,403].includes(response.status))await downloads.invalidate(); throw new Error("会員状態を確認できません。購入・保存の前にオンラインで再確認してください。"); }
     const result = await response.json() as { entitlement: MobileEntitlement; configuration: MobileConfiguration };
     result.configuration.sdkKey = await nativePublicSdkKey(result.configuration.sdkKey);
+    if (signingOut.current) throw new StatusError("ログアウト中です。");
     if (studyReady.current && result.entitlement.userId !== user.current) {
       abort.current?.abort(); await downloads.invalidate(); await membership.disconnect(); studyReady.current=false;
     }
-    if (!studyReady.current) { await restoreStudy(result.entitlement.userId); studyReady.current=true; }
+    if (!studyReady.current) {
+      await restoreStudy(result.entitlement.userId);
+      if (signingOut.current) throw new StatusError("ログアウト中です。");
+      studyReady.current=true;
+    }
     user.current = result.entitlement.userId;
     if(result.entitlement.userId) {
       const key=`kakomon:pending-purchase:${result.entitlement.userId}`;
@@ -78,6 +84,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     }else setPurchasePending(false);
     const signature=JSON.stringify([result.entitlement.userId,result.entitlement.entitled]);
     if(accessSignature.current!==signature) { accessSignature.current=signature;window.dispatchEvent(new Event("mobile:entitlement-changed")); }
+    if (signingOut.current) throw new StatusError("ログアウト中です。");
     setAccess(result.entitlement); setConfig(result.configuration);
     if (result.entitlement.entitled && result.entitlement.lease) await downloads.updateRights(result.entitlement, result.configuration.leasePublicKey).catch(()=>{setNotice("オフライン用の検証キーは配布設定待ちです。オンラインの学習・会員権利は利用できます。");});
     else if(!result.entitlement.entitled)await downloads.invalidate();
@@ -92,7 +99,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     return task;
   }, [membership]);
   const run = useCallback(async (fn: ()=>Promise<void>)=>{
-    if(running.current)return;
+    if(running.current || signingOut.current)return;
     running.current=true;
     setBusy(true); setNotice("");
     try { await fn(); } catch(error) {
@@ -119,6 +126,8 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     const interval = window.setInterval(()=>{ void refresh().catch(e=>setNotice(noticeText(e))); },60000);
     const deleted=()=>{studyReady.current=false;user.current=null;abort.current?.abort();setAccess(null);setOffer(null);clearInterval(interval);};
     window.addEventListener("mobile:account-deleted",deleted);
+    const signingOutNow=()=>{signingOut.current=true;deleted();};
+    window.addEventListener("mobile:signing-out",signingOutNow);
     const mirror=window.setInterval(()=>{if(studyReady.current)void persistStudy(user.current).catch(e=>setNotice(noticeText(e)));},5000);
     const cacheVisibleImages=()=>document.querySelectorAll<HTMLImageElement>("img").forEach(img=>{if(img.complete && img.naturalWidth>0)void cachedImage(img.currentSrc||img.src);});
     const imageObserver=new MutationObserver(cacheVisibleImages); imageObserver.observe(document.body,{childList:true,subtree:true});
@@ -137,11 +146,12 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       else if (url.origin !== SITE_ORIGIN && url.protocol === "https:") { e.preventDefault(); e.stopPropagation(); void (isQualificationUrl(url.href) ? openQualificationUrl(url.href) : Browser.open({ url: url.href })).catch(()=>setNotice("リンクを開けませんでした。再度お試しください。")); }
     };
     document.addEventListener("click",click,true);
-    return ()=>{ window.removeEventListener("mobile:account-deleted",deleted);disposed=true; disposers.forEach(fn=>fn()); clearInterval(interval);clearInterval(mirror);imageObserver.disconnect();document.removeEventListener("load",cacheVisibleImages,true); window.fetch=original; document.removeEventListener("click",click,true); abort.current?.abort(); };
+    return ()=>{ window.removeEventListener("mobile:signing-out",signingOutNow);window.removeEventListener("mobile:account-deleted",deleted);disposed=true; disposers.forEach(fn=>fn()); clearInterval(interval);clearInterval(mirror);imageObserver.disconnect();document.removeEventListener("load",cacheVisibleImages,true); window.fetch=original; document.removeEventListener("click",click,true); abort.current?.abort(); };
   },[inSite,refresh,run]);
   // Loading the panel's data must never hold the action lock: a tap on
   // 「ログイン」 while it loads used to be silently dropped by run().
   const loadOffer = useCallback(async (r: { entitlement: MobileEntitlement; configuration: MobileConfiguration }, isCancelled: ()=>boolean = ()=>false) => {
+    if (signingOut.current) return null;
     if (r.entitlement.entitled) { setOffer(null); setOfferError(""); return null; }
     setOfferLoading(true);
     try {
@@ -265,6 +275,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       </section>
       <section aria-labelledby="native-account" className={card}>
         <h2 id="native-account" className="font-bold">アカウントとデータ</h2>
+        <p><Link className="inline-flex min-h-11 items-center font-medium underline underline-offset-4" href={access?.userId ? "/account" : "/auth/signin?callbackUrl=/account"}>{access?.userId ? "アカウント（ログアウト・削除）" : "ログイン"}</Link></p>
         <button className={secondary} onClick={()=>{localStorage.removeItem("kakomon:ai-consent:20261103");setNotice("AI送信の許可を取り消しました。次の送信前に再確認します。");}}>AI送信の許可を取り消す</button>
         <p><Link className="inline-flex min-h-11 items-center font-medium text-destructive underline underline-offset-4" href="/account/delete">アカウント・学習データを削除</Link></p>
       </section>

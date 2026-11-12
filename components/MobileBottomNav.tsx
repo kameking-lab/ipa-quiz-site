@@ -3,6 +3,7 @@
 import * as React from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { AccountNavigationLink } from "@/components/account/AccountNavigation";
 import {
   Sparkles,
   ClipboardList,
@@ -167,6 +168,7 @@ export function MobileBottomNav() {
             <SheetTitle>メニュー</SheetTitle>
           </SheetHeader>
           <nav aria-label="二次メニュー" className="flex flex-col gap-1 overflow-y-auto">
+            <SheetClose asChild><AccountNavigationLink className="flex min-h-[44px] shrink-0 items-center rounded-lg px-3 py-2.5 text-sm font-medium hover:bg-muted" /></SheetClose>
             {secondary.map((item) => {
               const Icon = item.icon;
               return (

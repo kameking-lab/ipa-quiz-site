@@ -118,5 +118,13 @@ export class Membership {
     try { await this.sdk.restorePurchases(); }
     catch (error) { throw new StoreError(describeStoreError(error, "購入を復元できませんでした"), "restore"); }
   }
-  async disconnect() { if ((await this.sdk.isConfigured()).isConfigured && !(await this.sdk.isAnonymous()).isAnonymous) await this.sdk.logOut(); }
+  disconnect(): Promise<void> {
+    const task = this.connecting.then(async () => {
+      if ((await this.sdk.isConfigured()).isConfigured && !(await this.sdk.isAnonymous()).isAnonymous) await this.sdk.logOut();
+    });
+    this.connecting = task.catch(() => {});
+    return task;
+  }
 }
+// The online shell and explicit sign-out share the SDK identity queue.
+export const deviceMembership = new Membership();
