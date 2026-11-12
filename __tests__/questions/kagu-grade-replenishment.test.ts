@@ -16,6 +16,9 @@ import type { ChoiceKey, Question } from "@/lib/questions/types";
 
 // Read independently from the official answer tables, in printed column order.
 const editions = [
+  { exam: "kagu1" as const, year: 2023, season: "early", rows: KAGU1_QUESTIONS.filter(q => q.year === 2023),
+    answers: "○×○×○" + "×××○○" + "○×○○×" + "×××××" + "○○○××"
+      + "ハハロニイ" + "ロイハロロ" + "ニロロロニ" + "ロニロハニ" + "ハニイニハ", figures: [3, 4, 11, 20, 28, 45], edition: "2023年度前期" },
   { exam: "kagu1" as const, year: 2024, season: "early", rows: KAGU1_QUESTIONS.filter(q => q.year === 2024),
     answers: "○××○×" + "○○×○○" + "×○○××" + "○○○×○" + "×××○○"
       + "イハロイイ" + "ニロイニロ" + "イイハハロ" + "ハハニハニ" + "イニイハハ", figures: [3, 4, 13, 28, 39], edition: "2024年度前期" },
