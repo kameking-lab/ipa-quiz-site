@@ -54,7 +54,7 @@ describe("写真技能士2級（肖像写真デジタル作業）2025年度前�
     expect(questions[38].question).toContain("45°");
     expect(questions[38].choices?.エ).toBe("1：5");
     expect(questions[42].choices?.ア).toBe("Joint Photographic Experts Group");
-    expect(questions[42].choices?.エ).toBe("Jointed Point Expand Genuin");
+    expect(questions[42].choices?.エ).toBe("Jointed Point Expanding Genuin");
     expect(questions[44].question).toContain("適切でない");
     expect(sources.audit).toHaveLength(50);
     expect(questions.every(q => !q.hasImage)).toBe(true);
