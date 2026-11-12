@@ -43,7 +43,7 @@ const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string,
 };
 
 export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl"> & Partial<Pick<Question, "exam" | "fiscalYear">>): string {
-  if (q.exam === "denshi-kiki-kumitate2" || q.exam === "kojo-bankin2") return `${q.fiscalYear ?? q.year}年度前期`;
+  if (q.exam === "denshi-kiki-kumitate2" || q.exam === "kojo-bankin2" || q.exam === "kensetsu-kikai-seibi2") return `${q.fiscalYear ?? q.year}年度前期`;
   if (q.exam === "junkango-kansai") {
     return q.fiscalYear !== undefined
       ? `令和${q.fiscalYear - 2018}年度（${q.year}年実施）`
