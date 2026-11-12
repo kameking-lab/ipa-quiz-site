@@ -1,4 +1,5 @@
 import { FUJIN_KODOMOFUKU2_QUESTIONS } from "./fujin-kodomofuku2";
+import { FUJIN_KODOMOFUKU1_QUESTIONS } from "./fujin-kodomofuku1";
 import { TOSO1_QUESTIONS } from "./toso1";
 import { DENSHI_KIKI_KUMITATE2_QUESTIONS } from "./denshi-kiki-kumitate2";
 import { KOJO_BANKIN2_QUESTIONS } from "./kojo-bankin2";
@@ -170,6 +171,7 @@ import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("fujin-kodomofuku2") ? { "fujin-kodomofuku2": FUJIN_KODOMOFUKU2_QUESTIONS } : {}),
+...(isExamPublished("fujin-kodomofuku1") ? { "fujin-kodomofuku1": FUJIN_KODOMOFUKU1_QUESTIONS } : {}),
 ...(isExamPublished("toso1") ? { "toso1": TOSO1_QUESTIONS } : {}),
 ...(isExamPublished("unko-kanrisha-ryokaku") ? { "unko-kanrisha-ryokaku": UNKO_KANRISHA_RYOKAKU.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("shobo-setsubishi-kou1") ? { "shobo-setsubishi-kou1": SHOBO_SETSUBISHI_KOU1.filter(isPracticeReadyQuestion) } : {}),
