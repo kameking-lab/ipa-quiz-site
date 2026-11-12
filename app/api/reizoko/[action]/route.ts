@@ -4,7 +4,7 @@ import { tierForModel } from "@/lib/ai/cost-tracker";
 import { providerErrorDiagnostic } from "@/lib/ai/provider-error";
 import { COPILOT_MODEL } from "@/lib/copilot/model";
 import { checkIpRateLimit } from "@/lib/rate-limit";
-import { imageMime, inputSchemas, isAction, MAX_BODY_BYTES, MAX_IMAGE_BYTES, outputSchemas } from "@/lib/reizoko/schema";
+import { imageMime, inputSchemas, isAction, MAX_BODY_BYTES, MAX_IMAGE_BYTES, MAX_TEXT_CHARS, outputSchemas } from "@/lib/reizoko/schema";
 import { systemPrompt } from "@/lib/reizoko/prompts";
 
 export const runtime = "nodejs";
@@ -17,14 +17,18 @@ function reply(body: unknown, status = 200, headers: Record<string, string> = {}
 }
 
 class BodyTooLarge extends Error {}
-async function readBody(req: Request): Promise<unknown> {
+async function readBody(req: Request, signal: AbortSignal): Promise<unknown> {
+  signal.throwIfAborted();
   if (!req.body) throw new Error("empty body");
   const reader = req.body.getReader();
   const chunks: Uint8Array[] = [];
   let size = 0;
+  const cancel = () => { void reader.cancel().catch(() => {}); };
+  signal.addEventListener("abort", cancel, { once: true });
   try {
     while (true) {
       const { done, value } = await reader.read();
+      signal.throwIfAborted();
       if (done) break;
       size += value.byteLength;
       if (size > MAX_BODY_BYTES) {
@@ -33,7 +37,10 @@ async function readBody(req: Request): Promise<unknown> {
       }
       chunks.push(value);
     }
-  } finally { reader.releaseLock(); }
+  } finally {
+    signal.removeEventListener("abort", cancel);
+    reader.releaseLock();
+  }
   return JSON.parse(Buffer.concat(chunks).toString("utf8"));
 }
 
@@ -54,6 +61,9 @@ export async function POST(req: Request, context: { params: Promise<{ action: st
     return reply({ error: "送信内容が大きすぎます。" }, 413);
   }
   try {
+    // Include admission and body reading in the client's 60-second time budget.
+    const signal = AbortSignal.any([req.signal, AbortSignal.timeout(Math.max(0, 55_000 - (Date.now() - started)))]);
+    signal.throwIfAborted();
     const provider = await getProvider("gemini");
     // Never present a fabricated meal as a real AI result when no key is configured.
     if (provider.name === "mock") return reply({ error: "現在シェフを利用できません。" }, 503);
@@ -64,8 +74,9 @@ export async function POST(req: Request, context: { params: Promise<{ action: st
       { "Retry-After": String(Math.max(1, Math.ceil((limit.resetAt - Date.now()) / 1000))) });
 
     let raw: unknown;
-    try { raw = await readBody(req); }
+    try { raw = await readBody(req, signal); }
     catch (error) {
+      signal.throwIfAborted();
       return reply({ error: error instanceof BodyTooLarge ? "送信内容が大きすぎます。" : "送信内容を確認してください。" }, error instanceof BodyTooLarge ? 413 : 400);
     }
     if (action === "analyze_ingredients_image" && raw && typeof raw === "object" && "image_base64" in raw
@@ -80,21 +91,25 @@ export async function POST(req: Request, context: { params: Promise<{ action: st
     const mime = image ? imageMime(image) : undefined;
     if (image && !mime) return reply({ error: "画像を確認してください。" }, 400);
     const system = systemPrompt(action);
+    const content = JSON.stringify("image_base64" in input ? { prompt: input.prompt } : input);
+    // Bound the whole text payload, including arbitrary nested original recipes.
+    // Per-field limits alone allow hundreds of large strings in a 3 MiB body.
+    if (content.length > MAX_TEXT_CHARS) return reply({ error: "送信内容が大きすぎます。" }, 413);
     const messages: ChatMessage[] = [{ role: "user",
-      content: JSON.stringify("image_base64" in input ? { prompt: input.prompt } : input),
+      content,
       ...(image && mime ? { images: [{ data: image, mimeType: mime }] } : {}),
     }];
     privateText = [system, ...messages.map((message) => message.content), ...(image ? [image] : [])];
     const tier = tierForModel(COPILOT_MODEL);
-    // One deadline covers both attempts and stays within the Flutter client's 60s timeout.
-    const signal = AbortSignal.any([req.signal, AbortSignal.timeout(55_000)]);
     for (let attempt = 0; attempt < 2; attempt++) {
+      signal.throwIfAborted();
       stage = "budget";
       const budget = textBudget(tier, system, messages, MAX_OUTPUT_TOKENS);
       if (image) budget.inputTokens = IMAGE_INPUT_TOKEN_BOUND;
       // Each retry needs its own atomic reservation. Never reuse a settled receipt.
       const cap = await checkMonthlyCostCap(provider.name, budget);
       if (!cap.allowed) return reply({ error: "現在シェフを利用できません。", code: cap.reason }, 503);
+      signal.throwIfAborted();
       let completion: StreamCompletion | undefined;
       let output = "";
       stage = "stream";
@@ -108,7 +123,9 @@ export async function POST(req: Request, context: { params: Promise<{ action: st
         }
       } finally {
         const valid = (n: unknown): n is number => typeof n === "number" && Number.isFinite(n) && n >= 0;
-        if (valid(completion?.promptTokens) && valid(completion?.outputTokens)) {
+        if (valid(completion?.promptTokens) && valid(completion?.outputTokens)
+          && (completion.thoughtsTokens === undefined || valid(completion.thoughtsTokens))
+          && (completion.totalTokens === undefined || valid(completion.totalTokens))) {
           const billedOutput = Math.max(completion.outputTokens + (completion.thoughtsTokens ?? 0),
             (completion.totalTokens ?? 0) - completion.promptTokens);
           await recordAiCost({ tier, label: `reizoko-${action}`, inputTokens: completion.promptTokens,
@@ -119,12 +136,20 @@ export async function POST(req: Request, context: { params: Promise<{ action: st
           costKey: cap.reservation?.key, finishReason: completion?.finishReason, truncated: completion?.truncated,
           promptTokens: completion?.promptTokens, outputTokens: completion?.outputTokens, elapsedMs: Date.now() - started });
       }
+      signal.throwIfAborted();
       if (completion?.truncated || completion?.finishReason !== "STOP") {
         return reply({ error: "料理データを取得できませんでした。もう一度お試しください。" }, 502);
       }
       try {
         const json = JSON.parse(output.trim().replace(/^```(?:json)?\s*([\s\S]*?)\s*```$/, "$1"));
         const result = outputSchemas[action].parse(json);
+        if ("target_categories" in input) {
+          const expected = new Set(input.target_categories);
+          const actual = Object.keys(result);
+          if (actual.length !== expected.size || actual.some((key) => !expected.has(key))) {
+            throw new Error("incomplete categories");
+          }
+        }
         // Arrays and category maps must remain unwrapped for existing Flutter readers.
         return reply(result, 200, { "X-Reizoko-Mode": "ai", "X-Reizoko-Finish-Reason": completion.finishReason });
       } catch {

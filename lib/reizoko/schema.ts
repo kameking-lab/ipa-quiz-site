@@ -1,8 +1,8 @@
 import { z } from "zod";
-import { isImageData, MAX_BODY_BYTES, MAX_IMAGE_BYTES } from "@/lib/printapp/schema";
+import { isImageData, MAX_BODY_BYTES, MAX_IMAGE_BYTES, MAX_TEXT_CHARS } from "@/lib/printapp/schema";
 
-export { MAX_BODY_BYTES, MAX_IMAGE_BYTES };
-const text = z.string().max(20_000);
+export { MAX_BODY_BYTES, MAX_IMAGE_BYTES, MAX_TEXT_CHARS };
+const text = z.string().max(MAX_TEXT_CHARS);
 const strings = z.array(text).max(200);
 const integer = z.number().int();
 const originalRecipe = z.record(z.string(), z.unknown());

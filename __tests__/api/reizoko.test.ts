@@ -4,7 +4,7 @@ import { POST } from "@/app/api/reizoko/[action]/route";
 import type { StreamChatParams } from "@/lib/ai/provider";
 import { createGeminiProvider } from "@/lib/ai/providers/gemini";
 import { COPILOT_MODEL } from "@/lib/copilot/model";
-import { inputSchemas, MAX_BODY_BYTES, MAX_IMAGE_BYTES, type Action } from "@/lib/reizoko/schema";
+import { inputSchemas, MAX_BODY_BYTES, MAX_IMAGE_BYTES, MAX_TEXT_CHARS, type Action } from "@/lib/reizoko/schema";
 
 const f = vi.hoisted(() => ({ provider: vi.fn(), ip: vi.fn(), cap: vi.fn(), cost: vi.fn(), stream: vi.fn() }));
 vi.mock("@/lib/ai/provider", () => ({ getProvider: f.provider }));
@@ -19,7 +19,7 @@ const recipe = { ingredients_basic: ["にんじん 1本"], ingredients_optional:
 const image = { image_base64: Buffer.from([137, 80, 78, 71, 13, 10, 26, 10, 0]).toString("base64"), prompt: "食材を読む" };
 const baseRecipe = { menu_title: "スープ", final_ingredients: ["にんじん"], people: 2, burners: 2, time_limit: "30分", allergies: ["卵", "乳"] };
 const cases: { label: string; action: Action; input: Record<string, unknown>; output: unknown; invalid: unknown }[] = [
-  { label: "献立", action: "generate_proposals", input: { fridge_pool: [], must_use: ["にんじん"], allergies: ["卵", "乳"] }, output: { メイン: [proposal] }, invalid: { fridge_pool: [] } },
+  { label: "献立", action: "generate_proposals", input: { fridge_pool: [], must_use: ["にんじん"], allergies: ["卵", "乳"] }, output: { メイン: [proposal], 副菜: [proposal] }, invalid: { fridge_pool: [] } },
   { label: "カテゴリ再提案", action: "regenerate_category", input: { category: "メイン", fridge_pool: [], must_use: ["にんじん"], people: 2, time_limit: "30分", allergies: ["卵", "乳"] }, output: [proposal], invalid: { category: "メイン" } },
   { label: "レシピ", action: "generate_recipe", input: baseRecipe, output: recipe, invalid: { ...baseRecipe, people: "2" } },
   { label: "詳細レシピ", action: "generate_detailed_recipe", input: { original_recipe_json: recipe, final_ingredients: recipe.ingredients_basic, allergies: ["卵", "乳"] }, output: recipe, invalid: { original_recipe_json: [] } },
@@ -90,6 +90,64 @@ describe.each(cases)("reizoko $label", ({ action, input, output, invalid }) => {
 });
 
 describe("reizoko shared safety and compatibility", () => {
+  it.each([{ メイン: [proposal] }, { メイン: [proposal], 副菜: [proposal], 不要: [proposal] }])("rejects incomplete or unsolicited categories even with STOP", async (output) => {
+    respond(output);
+    expect((await post("generate_proposals", cases[0].input)).status).toBe(502);
+    expect(f.stream).toHaveBeenCalledTimes(2);
+    expect(f.cost).toHaveBeenCalledTimes(2);
+  });
+  it("accepts the requested custom categories", async () => {
+    respond({ スープ: [proposal] });
+    expect((await post("generate_proposals", { ...cases[0].input, target_categories: ["スープ"] })).status).toBe(200);
+  });
+  it.each([
+    { ...baseRecipe, final_ingredients: ["x".repeat(11_000), "y".repeat(11_000)] },
+    { ...baseRecipe, original_recipe_json: { nested: { text: "x".repeat(MAX_TEXT_CHARS) } } },
+  ])("bounds combined text and nested original recipes before reserving spend", async (input) => {
+    expect((await post("generate_recipe", input)).status).toBe(413);
+    expect(f.cap).not.toHaveBeenCalled();
+    expect(f.stream).not.toHaveBeenCalled();
+  });
+  it.each([-100, NaN, Infinity])("retains the reservation for invalid thinking usage %s", async (thoughtsTokens) => {
+    f.stream.mockImplementation(async function* (p: StreamChatParams) {
+      yield JSON.stringify(recipe);
+      p.onComplete?.({ finishReason: "STOP", truncated: false, promptTokens: 100, outputTokens: 200, thoughtsTokens });
+    });
+    expect((await post("generate_recipe", baseRecipe)).status).toBe(200);
+    expect(f.cost).not.toHaveBeenCalled();
+  });
+  it("does not reserve or generate after admission exhausts the deadline", async () => {
+    const aborted = AbortSignal.abort(new DOMException("Timed out", "TimeoutError"));
+    const controller = new AbortController();
+    vi.spyOn(AbortSignal, "timeout").mockReturnValue(controller.signal);
+    f.ip.mockImplementation(async () => { controller.abort(aborted.reason); return { ok: true }; });
+    expect((await post("generate_recipe", baseRecipe)).status).toBe(502);
+    expect(f.cap).not.toHaveBeenCalled();
+    expect(f.stream).not.toHaveBeenCalled();
+  });
+  it("cancels a stalled request body when the deadline expires", async () => {
+    const controller = new AbortController();
+    vi.spyOn(AbortSignal, "timeout").mockReturnValue(controller.signal);
+    const cancel = vi.fn();
+    const body = new ReadableStream<Uint8Array>({ cancel });
+    const req = new Request("http://localhost", { method: "POST", duplex: "half", body,
+      headers: { "content-type": "application/json", "x-reizoko-client": "reizoko-chef-v1" } } as RequestInit);
+    const pending = POST(req, { params: Promise.resolve({ action: "generate_recipe" }) });
+    await vi.waitFor(() => expect(req.body?.locked).toBe(true));
+    controller.abort();
+    expect((await pending).status).toBe(502);
+    expect(cancel).toHaveBeenCalledOnce();
+    expect(f.cap).not.toHaveBeenCalled();
+  });
+  it("does not reserve a retry after client cancellation during settlement", async () => {
+    const controller = new AbortController();
+    respond("broken");
+    f.cost.mockImplementation(async () => { controller.abort(); });
+    const req = new Request(request("generate_recipe", baseRecipe), { signal: controller.signal });
+    expect((await POST(req, { params: Promise.resolve({ action: "generate_recipe" }) })).status).toBe(502);
+    expect(f.cap).toHaveBeenCalledOnce();
+    expect(f.stream).toHaveBeenCalledOnce();
+  });
   it("keeps the documented FastAPI defaults and required fields", () => {
     expect(inputSchemas.generate_proposals.parse({ fridge_pool: [], must_use: [] })).toMatchObject({ people: 2, burners: 2, tools: [], allergies: [], target_categories: ["メイン", "副菜"], time_limit: "指定なし", require_calorie_in_response: false });
     expect(inputSchemas.generate_recipe.safeParse({ ...baseRecipe, burners: undefined }).success).toBe(false);
