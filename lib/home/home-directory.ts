@@ -122,6 +122,7 @@ interface OtherCardDef {
 const OTHER_CARDS: readonly OtherCardDef[] = [
   {"code": "fujin-kodomofuku2", "name": "婦人子供服製造技能士 2級", "sub": "婦人子供注文服製作作業 学科（真偽法・多肢択一法）", "domain": "welfare"},
   {"code": "kojo-bankin1", "name": "工場板金技能士 1級", "sub": "曲げ板金作業 学科（A群 真偽法・B群 多肢択一法）", "domain": "construction"},
+  {"code": "kinzoku-netsushori3", "name": "金属熱処理技能士 3級", "sub": "一般熱処理作業 学科（真偽法）", "domain": "construction"},
   {"code": "kojo-bankin3", "name": "工場板金技能士 3級", "sub": "曲げ板金作業 学科（真偽法）", "domain": "construction"},
   {"code": "kojo-bankin2", "name": "工場板金技能士 2級", "sub": "曲げ板金作業 学科（A群 真偽法・B群 多肢択一法）", "domain": "construction"},
   {"code": "kinzoku-netsushori1", "name": "金属熱処理技能士 1級", "sub": "一般熱処理作業 学科（A群 真偽法・B群 多肢択一法）", "domain": "construction"},
