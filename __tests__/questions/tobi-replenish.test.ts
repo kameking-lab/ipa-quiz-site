@@ -14,6 +14,7 @@ import type { ChoiceKey } from "@/lib/questions/types";
 // Independently transcribed from the official answer sheet image, in printed order.
 const sittings = [
   { year: 2024, a: "×○○○○××○××○○××○○○×××○○×○○", b: "ハハイロイイハハイニロロニハイニロニロイイイニニロ", figures: ["B群 12", "B群 14", "B群 18"] },
+  { year: 2023, a: "○×○○×××○×○×○×○××○×○○×○○×○", b: "ニイイロハニイイハニハロハハロイロニイニニハハニロ", figures: ["A群 11", "A群 15", "A群 16", "B群 13"] },
 ];
 const keys: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 const printed = ["イ", "ロ", "ハ", "ニ"];

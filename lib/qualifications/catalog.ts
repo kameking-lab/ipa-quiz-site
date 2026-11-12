@@ -48,7 +48,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     slug: "tobi1", examCode: "tobi1", shortName: "とび技能士 1級", fullName: "技能検定 1級とび（とび作業）学科試験",
     domain: "safety", administrator: "中央職業能力開発協会",
     officialQuestionsUrl: "https://www.kentei.javada.or.jp/", officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
-    reuseSummary: "とび技能士1級（とび作業）学科の2024年度前期50問を収録。公式正答と全肢の独自解説、原本図で学べます。",
+    reuseSummary: "とび技能士1級（とび作業）学科の2023・2024年度前期100問を収録。公式正答と全肢の独自解説、原本図で学べます。",
     attributionTemplate: "出典：中央職業能力開発協会 技能検定 1級とび（とび作業）学科試験。解説は過去問AIの独自作成。",
     remainingWork: [],
   },
