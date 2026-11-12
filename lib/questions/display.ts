@@ -30,7 +30,7 @@ export function choiceDisplayLabel(exam: ExamCode, key: ChoiceKey): string {
     const index = DENKEN_CHOICE_KEYS.indexOf(key);
     return index >= 0 ? ALPHABET_LABELS[index] : key;
   }
-  if (exam === "fujin-kodomofuku2" || exam === "toso2" || exam === "flower2" || exam === "kinzoku-netsushori2" || exam === "tetsudo-sharyo2" || exam === "engei-soshoku2" || exam === "sasshi2" || exam === "kyoka-plastic2" || exam === "insatsu2" || exam === "diecast2" || exam === "kagu2" || exam === "tekko2" || exam === "mekki2") {
+  if (exam === "fujin-kodomofuku2" || exam === "toso2" || exam === "flower2" || exam === "kinzoku-netsushori2" || exam === "tetsudo-sharyo2" || exam === "engei-soshoku2" || exam === "sasshi2" || exam === "kagaku-bunseki2" || exam === "kyoka-plastic2" || exam === "insatsu2" || exam === "diecast2" || exam === "kagu2" || exam === "tekko2" || exam === "mekki2") {
     const index = IROHA_CHOICE_KEYS.indexOf(key);
     return index >= 0 ? IROHA_LABELS[index] : key;
   }
@@ -79,5 +79,5 @@ export function choiceImageAlt(exam: ExamCode, key: ChoiceKey): string | undefin
 
 /** 選択肢を原本どおり番号（電験一種・二種は(イ)〜(ヨ)、社労士はA〜E）で表示する試験（ア〜エ表記ではない）。 */
 export function usesNumberedChoices(exam: ExamCode): boolean {
-  return exam === "fujin-kodomofuku2" || exam === "toso2" || exam === "flower2" || exam === "tetsudo-sharyo2" || exam === "engei-soshoku2" || exam === "sasshi2" || exam === "kyoka-plastic2" || exam === "insatsu2" || exam === "diecast2" || exam === "kagu2" || exam === "tekko2" || exam === "mekki2" || exam === "kinzoku-netsushori2" || exam === "denken3" || exam === "denken2" || exam === "denken1" || exam === "tohan" || exam === "eisei1" || exam === "eisei2" || exam === "soukan" || exam === "hoikushi" || exam === "kashikin" || PLAIN_NUMBER_CHOICE_EXAMS.includes(exam) || ALPHABET_CHOICE_EXAMS.includes(exam);
+  return exam === "fujin-kodomofuku2" || exam === "toso2" || exam === "flower2" || exam === "tetsudo-sharyo2" || exam === "engei-soshoku2" || exam === "sasshi2" || exam === "kagaku-bunseki2" || exam === "kyoka-plastic2" || exam === "insatsu2" || exam === "diecast2" || exam === "kagu2" || exam === "tekko2" || exam === "mekki2" || exam === "kinzoku-netsushori2" || exam === "denken3" || exam === "denken2" || exam === "denken1" || exam === "tohan" || exam === "eisei1" || exam === "eisei2" || exam === "soukan" || exam === "hoikushi" || exam === "kashikin" || PLAIN_NUMBER_CHOICE_EXAMS.includes(exam) || ALPHABET_CHOICE_EXAMS.includes(exam);
 }
