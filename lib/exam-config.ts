@@ -1688,6 +1688,11 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["壁装", "建具", "工具", "建築", "材料", "色彩", "製図", "関係法規", "安全衛生", "屏風", "裏打ち", "襖", "掛軸", "保存・取扱い"] }],
     seasons: ["early"], yearRange: { start: 2025, end: 2025 },
 },
+"kikinzoku-soshin2": {
+    code: "kikinzoku-soshin2", nameFull: "技能検定 2級貴金属装身具製作（貴金属装身具製作作業）学科試験", urlSlug: "kikinzoku-soshin2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["装飾技法", "装身具", "工具", "研磨", "塑性加工", "ろう付", "鋳造", "表面処理", "金属材料", "宝石", "意匠", "製図", "電気", "安全衛生"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
 "kojo-bankin2": {
     code: "kojo-bankin2", nameFull: "技能検定 2級工場板金（曲げ板金作業）学科試験", urlSlug: "kojo-bankin2", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["せん断", "曲げ加工", "金型", "展開図", "板取り", "接合", "ひずみ取り", "製図", "工作機械", "研削", "測定", "表面処理", "電気", "安全衛生", "工具", "絞り加工", "品質管理", "レーザ加工", "材料"] }],
