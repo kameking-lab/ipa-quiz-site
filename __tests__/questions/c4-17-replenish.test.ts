@@ -1,4 +1,5 @@
 import { readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
 import { describe, expect, it } from "vitest";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
@@ -10,12 +11,13 @@ import { questionPagePath } from "@/lib/seo/question-url";
 import type { ExamCode } from "@/lib/questions/types";
 
 // Independently read from JAVADA's published answer table, five rows per group.
-const sets: { code: ExamCode; year: number; a: string; b: string }[] = [
-  { code: "toso1", year: 2024, a: "○×○○×○××○×○××××○○××○○○○×○", b: "ニニニロハハハニロロイハロイハニニニイイイハロイロ" },
-  { code: "toso1", year: 2023, a: "○×××○×××○×○×○○××○○×○○○×○○", b: "イイロハニイハニハロイハロイハハニニニイイロロハニ" },
+const sets: { code: ExamCode; year: number; a: string; b: string; figures: number }[] = [
+  { code: "toso1", year: 2024, a: "○×○○×○××○×○××××○○××○○○○×○", b: "ニニニロハハハニロロイハロイハニニニイイイハロイロ", figures: 0 },
+  { code: "toso1", year: 2023, a: "○×××○×××○×○×○○××○○×○○○×○○", b: "イイロハニイハニハロイハロイハハニニニイイロロハニ", figures: 0 },
+  { code: "fujin-kodomofuku2", year: 2024, a: "○○×○○××○○××○○×○○×××○○○○××", b: "ハニハニロロロイロハイハロイニロハイニニニロハニハ", figures: 1 },
 ];
 
-describe.each(sets)("c4-17 $code $year early", ({ code, year, a, b }) => {
+describe.each(sets)("c4-17 $code $year early", ({ code, year, a, b, figures }) => {
   const questions = QUESTIONS_BY_EXAM[code]!.filter(q => q.year === year && q.season === "early");
   const source = JSON.parse(readFileSync(`data/questions/${code}/${year}-early.sources.json`, "utf8"));
 
@@ -45,7 +47,13 @@ describe.each(sets)("c4-17 $code $year early", ({ code, year, a, b }) => {
   });
 
   it("keeps every question legible without missing figures or answer labels", () => {
-    expect(questions.every(q => !q.hasImage)).toBe(true);
+    expect(questions.filter(q => q.hasImage)).toHaveLength(figures);
+    expect(source.figures ?? []).toHaveLength(figures);
+    for (const figure of source.figures ?? []) {
+      const bytes = readFileSync(`public${figure.url}`);
+      expect(createHash("sha256").update(bytes).digest("hex")).toBe(figure.sha256);
+      expect(questions.find(q => q.id === figure.id)?.imageUrls).toContain(figure.url);
+    }
     expect(questions.every(q => q.question.trim().length > 0)).toBe(true);
     expect(questions.every(q => q.explanation.length >= 50)).toBe(true);
     expect(questions.slice(0, 25).every(q => Object.keys(q.choices!).length === 2)).toBe(true);
