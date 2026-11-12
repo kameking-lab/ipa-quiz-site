@@ -19,6 +19,10 @@ const SITTINGS = [{
   answers: "○○○○×" + "××○××" + "○××○○" + "○××○○" + "○×○××"
     + "ロハニイイ" + "ニハロロニ" + "イイハニイ" + "ハイロハハ" + "イニイロロ",
 }, {
+  exam: "kojo-bankin1" as const, year: 2023, data: KOJO_BANKIN1_QUESTIONS, figures: 7,
+  answers: "×○○○×" + "×○○○○" + "×××××" + "○××○○" + "○○×××"
+    + "ロハハハハ" + "ロロロニロ" + "ニイニハロ" + "イイニイロ" + "ロニニニイ",
+}, {
   exam: "kojo-bankin3" as const, year: 2024, data: KOJO_BANKIN3_QUESTIONS, figures: 1,
   answers: "××○○×○○×××" + "○○○○○○×××○" + "○×○○○○×○○×",
 }];
@@ -64,6 +68,7 @@ describe.each(SITTINGS)("$exam $year 公式原本と学習経路", ({ exam, year
     for (const q of questions) {
       const graph = buildQuestionJsonLd({ question: q, pageUrlAbs: `https://www.kakomon-ai.jp${questionPagePath(q)}`, title: q.id });
       expect(JSON.stringify(graph), q.id).toContain(`${q.officialAnswerNumber}: ${q.choices![q.answer as ChoiceKey]}`);
+      expect(JSON.stringify(graph), q.id).toContain("中央職業能力開発協会");
     }
   });
 });
