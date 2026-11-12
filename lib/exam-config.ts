@@ -1844,7 +1844,8 @@ caremanager: {
     }
   ],
   "seasons": [
-    "early"
+    "early",
+    "late"
   ],
   "yearRange": {
     "start": 2024,

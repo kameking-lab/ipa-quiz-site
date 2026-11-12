@@ -8,6 +8,7 @@ import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { choiceDisplayLabel, questionNumberLabel } from "@/lib/questions/display";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
+import type { ChoiceKey } from "@/lib/questions/types";
 
 // Independent transcription of the official 2024-late answer sheet, in group order.
 const tf = "○×○×○×○××○○×○○○○××××○○××○";
@@ -49,7 +50,38 @@ describe("建築大工2024年度1級後期の原本と演習接続", () => {
   it("同期と遅延取得で同じ問題を返し、イロハニで解答を表示する", async () => {
     expect(QUESTIONS_BY_EXAM["kenchiku-daiku1"]).toEqual(KENCHIKU_DAIKU1_QUESTIONS);
     expect(await getQuestionsForExam("kenchiku-daiku1")).toEqual(KENCHIKU_DAIKU1_QUESTIONS);
-    expect(["ア", "イ", "ウ", "エ"].map(k => choiceDisplayLabel("kenchiku-daiku1", k as "ア"))).toEqual(["イ", "ロ", "ハ", "ニ"]);
+    expect((["ア", "イ", "ウ", "エ"] as ChoiceKey[]).map(k => choiceDisplayLabel("kenchiku-daiku1", k))).toEqual(["イ", "ロ", "ハ", "ニ"]);
+  });
+});
+
+describe("建築大工3級2024年度後期の原本と前後期の区別", () => {
+  const questions = KENCHIKU_DAIKU3_QUESTIONS.filter(q => q.year === 2024 && q.season === "late");
+  const official = "○××○○×××××○○○○×○×○○○×××○××××○○";
+  it("後期30問を公式正答で採点し、前期と同じ番号でも区別する", () => {
+    expect(questions).toHaveLength(30);
+    expect(official).toHaveLength(30);
+    questions.forEach((q, i) => {
+      expect(q.id).toBe(`kenchiku-daiku3-2024-late-gakka-${String(i + 1).padStart(3, "0")}`);
+      expect(q.qNumber).toBe(i + 1);
+      expect(q.officialAnswerNumber, q.id).toBe(official[i]);
+      expect(q.answer, q.id).toBe(official[i] === "○" ? "ア" : "イ");
+      expect(Object.keys(q.choiceExplanations ?? {}).sort()).toEqual(["ア", "イ"]);
+      expect(isPracticeReadyQuestion(q), q.id).toBe(true);
+      expect(EXAM_CONFIGS[q.exam].sessions[0].categories).toContain(q.category);
+    });
+    const both = KENCHIKU_DAIKU3_QUESTIONS.filter(q => q.year === 2024);
+    expect(both).toHaveLength(60);
+    expect(new Set(both.map(q => q.id)).size).toBe(60);
+    expect(EXAM_CONFIGS["kenchiku-daiku3"].seasons).toEqual(["early", "late"]);
+  });
+  it("後期の図を必要とする9問に原図を持つ", () => {
+    expect(questions.filter(q => q.hasImage).map(q => q.qNumber)).toEqual([6, 7, 8, 9, 16, 17, 25, 27, 28]);
+    for (const q of questions.filter(q => q.hasImage)) {
+      expect(q.imageAltTexts?.[0].length).toBeGreaterThan(10);
+      const path = join(process.cwd(), "public", q.imageUrls![0]);
+      expect(existsSync(path)).toBe(true);
+      expect(readFileSync(path).subarray(8, 12).toString()).toBe("WEBP");
+    }
   });
 });
 

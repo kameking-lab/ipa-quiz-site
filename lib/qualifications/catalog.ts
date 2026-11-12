@@ -54,7 +54,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   "officialQuestionsUrl": "https://www.kentei.javada.or.jp/",
   "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/",
   "status": "live",
-  "reuseSummary": "2024年度前期の3級建築大工（大工工事作業）学科を収録。公式正答、全肢の独自解説、必要な原図を確認できます。",
+  "reuseSummary": "2024年度前期・後期の3級建築大工（大工工事作業）学科を収録。公式正答、全肢の独自解説、必要な原図を確認できます。",
   "remainingWork": []
 },
 {
