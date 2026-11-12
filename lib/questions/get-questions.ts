@@ -9,6 +9,7 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "engei-soshoku3": async () => isExamPublished("engei-soshoku3") ? (await import("@/data/questions/engei-soshoku3")).ENGEI_SOSHOKU3_QUESTIONS : [],
   "kyoka-plastic2": async () => isExamPublished("kyoka-plastic2") ? (await import("@/data/questions/kyoka-plastic2")).KYOKA_PLASTIC2_QUESTIONS : [],
   "chikuro2": async () => isExamPublished("chikuro2") ? (await import("@/data/questions/chikuro2")).CHIKURO2_QUESTIONS : [],
+  "chikuro1": async () => isExamPublished("chikuro1") ? (await import("@/data/questions/chikuro1")).CHIKURO1_QUESTIONS : [],
   "kagaku-bunseki1": async () => isExamPublished("kagaku-bunseki1") ? (await import("@/data/questions/kagaku-bunseki1")).KAGAKU_BUNSEKI1_QUESTIONS : [],
   "kagaku-bunseki3": async () => isExamPublished("kagaku-bunseki3") ? (await import("@/data/questions/kagaku-bunseki3")).KAGAKU_BUNSEKI3_QUESTIONS : [],
   "kyoka-plastic1": async () => isExamPublished("kyoka-plastic1") ? (await import("@/data/questions/kyoka-plastic1")).KYOKA_PLASTIC1_QUESTIONS : [],

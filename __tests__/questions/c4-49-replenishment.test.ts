@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import { CHIKURO1_QUESTIONS } from "@/data/questions/chikuro1";
 import { CHIKURO2_QUESTIONS } from "@/data/questions/chikuro2";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -16,6 +17,7 @@ import type { ChoiceKey, ExamCode, Question } from "@/lib/questions/types";
 const editions: { exam: ExamCode; year: number; questions: Question[]; a: string; b: string }[] = [
   { exam: "chikuro2", year: 2024, questions: CHIKURO2_QUESTIONS, a: "○×××○ ××○×× ×○○×○ ○○×○○ ××××○", b: "イニロニハ ハロハニハ ロハロロロ イロイニハ ニハニハロ" },
   { exam: "chikuro2", year: 2023, questions: CHIKURO2_QUESTIONS, a: "○×○○○ ○×○×○ ×○○×○ ○×○○○ ○○××○", b: "ロニイハニ ロニイニロ ハロイイニ ハニロニハ ロイイハイ" },
+  { exam: "chikuro1", year: 2025, questions: CHIKURO1_QUESTIONS, a: "×○××× ×○○○× ×○○○× ○○××× ○××××", b: "イハハロイ ニロハロニ ニニイイロ ニハロハハ イハイニハ" },
 ];
 const keys: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
@@ -62,7 +64,7 @@ for (const { exam, year, questions: all, a, b } of editions) {
       expect(questions.every(q => EXAM_CONFIGS[exam].sessions[0].categories.includes(q.category!))).toBe(true);
       expect(EXAM_CONFIGS[exam].yearRange.start).toBeLessThanOrEqual(year);
       expect(EXAM_CONFIGS[exam].yearRange.end).toBeGreaterThanOrEqual(year);
-      expect(questions.filter(q => q.hasImage)).toHaveLength(year === 2024 ? 2 : 3);
+      expect(questions.filter(q => q.hasImage)).toHaveLength(exam === "chikuro1" ? 1 : year === 2024 ? 2 : 3);
       const source = JSON.parse(readFileSync(join(process.cwd(), `data/questions/${exam}/${year}-early.sources.json`), "utf8"));
       expect(source.review).toHaveLength(questions.length);
       expect(source.sources.every((s: { httpStatus: number; sha256: string }) => s.httpStatus === 200 && s.sha256.length === 64)).toBe(true);
@@ -78,3 +80,10 @@ for (const { exam, year, questions: all, a, b } of editions) {
     });
   });
 }
+
+it("preserves the original brick name and pig-iron wording", () => {
+  const brick = CHIKURO2_QUESTIONS.find(q => q.year === 2023 && q.qNumber === 32)!;
+  expect(brick.question).toContain("胴付き抱きれんが");
+  const furnace = CHIKURO2_QUESTIONS.find(q => q.year === 2024 && q.qNumber === 44)!;
+  expect(furnace.choices?.ウ).toContain("銑鉄");
+});
