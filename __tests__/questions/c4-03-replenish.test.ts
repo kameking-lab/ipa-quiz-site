@@ -1,11 +1,16 @@
 import { describe, expect, it } from "vitest";
 import { TOBI3_QUESTIONS } from "@/data/questions/tobi3";
+import { KENCHIKU_DAIKU2_QUESTIONS } from "@/data/questions/kenchiku-daiku2";
+import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { formatQuestionAnswerForDisplay } from "@/lib/questions/display";
 import { questionPagePath, findQuestionByRoute } from "@/lib/seo/question-url";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
+import type { ChoiceKey } from "@/lib/questions/types";
 
 describe("Q4-007 とび3級2023年度前期", () => {
   // 公式正答表の画像を、印刷順に独立転記。
@@ -34,5 +39,50 @@ describe("Q4-007 とび3級2023年度前期", () => {
     expect(qs[5].explanation).toContain("大きくなり");
     expect(qs[21].explanation).toContain("SRC");
     expect(qs[28].explanation).toContain("技能講習");
+  });
+});
+
+describe("Q4-008 建築大工2級2024年度後期", () => {
+  const a = "○○××○×○○×○×○○×○○○○×○×○×○○";
+  const b = "ハイハロハニニイハハイハニイロロロイロイロニハロロ";
+  const keys: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
+  const printed = ["イ", "ロ", "ハ", "ニ"];
+  const qs = KENCHIKU_DAIKU2_QUESTIONS.filter(q => q.year === 2024 && q.season === "late");
+
+  it("A・B群各25問を原本どおり採点し、全肢解説と公開URLを利用できる", () => {
+    expect(qs).toHaveLength(50);
+    expect(a).toHaveLength(25);
+    expect(b).toHaveLength(25);
+    qs.forEach((q, i) => {
+      const tf = i < 25;
+      const n = i % 25 + 1;
+      const symbol = (tf ? a : b)[n - 1];
+      expect(q.id).toBe(`kenchiku-daiku2-2024-late-gakka-${tf ? "a" : "b"}-${String(n).padStart(3, "0")}`);
+      expect(q.qNumber).toBe(i + 1);
+      expect(q.officialQuestionLabel).toBe(`${tf ? "A" : "B"}群 ${n}`);
+      expect(q.officialAnswerNumber, q.id).toBe(symbol);
+      expect(q.answer, q.id).toBe(tf ? (symbol === "○" ? "ア" : "イ") : keys[printed.indexOf(symbol)]);
+      expect(formatQuestionAnswerForDisplay(q, q.answer!)).toBe(symbol);
+      expect(isPracticeReadyQuestion(q), q.id).toBe(true);
+      expect(Object.keys(q.choiceExplanations!).sort()).toEqual(Object.keys(q.choices!).sort());
+      expect(EXAM_CONFIGS["kenchiku-daiku2"].sessions[0].categories).toContain(q.category);
+      expect(findQuestionByRoute(qs, { exam: "kenchiku-daiku2", yearSeason: "2024-late", section: "gakka", qnum: `q${i + 1}` })).toBe(q);
+    });
+    expect(new Set(qs.map(questionPagePath)).size).toBe(50);
+  });
+
+  it("図と数式12点を出典の記録と一致させ、同期・遅延読込に接続する", async () => {
+    expect(qs.filter(q => q.hasImage).map(q => q.officialQuestionLabel)).toEqual(["A群 5", "A群 6", "A群 8", "A群 14", "A群 18", "A群 19", "B群 5", "B群 6", "B群 8", "B群 15", "B群 18", "B群 22"]);
+    const source = JSON.parse(readFileSync(join(process.cwd(), "data/questions/kenchiku-daiku2/sources-2024-late.json"), "utf8"));
+    for (const f of source.figures) {
+      const bytes = readFileSync(join(process.cwd(), "public", f.url));
+      expect(bytes.subarray(8, 12).toString()).toBe("WEBP");
+      expect(createHash("sha256").update(bytes).digest("hex")).toBe(f.sha256);
+    }
+    expect(QUESTIONS_BY_EXAM["kenchiku-daiku2"]).toEqual(KENCHIKU_DAIKU2_QUESTIONS);
+    expect(await getQuestionsForExam("kenchiku-daiku2")).toEqual(KENCHIKU_DAIKU2_QUESTIONS);
+    expect(qs[22].explanation).toContain("ミリメートル");
+    expect(qs[47].answer).toBe("ウ");
+    expect(qs[48].explanation).toContain("23cm以下");
   });
 });

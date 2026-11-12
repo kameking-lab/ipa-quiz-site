@@ -152,6 +152,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "kikinzoku-soshin2", name: "貴金属装身具製作技能士 2級", sub: "貴金属装身具製作作業 学科（真偽法・多肢択一）", domain: "safety" },
   { code: "tobi1", name: "とび技能士 1級", sub: "とび作業 学科（A群 真偽法・B群 多肢択一法）", domain: "safety" },
   { code: "tobi3", name: "とび技能士 3級", sub: "とび作業 学科（真偽法）", domain: "safety" },
+  { code: "kenchiku-daiku2", name: "建築大工技能士 2級", sub: "大工工事作業 学科（A群 真偽法・B群 多肢択一法）", domain: "safety" },
   { code: "shashin2", name: "写真技能士 2級", sub: "肖像写真デジタル作業 学科（真偽法・多肢択一）", domain: "safety" },
   { code: "kikai-hozen", name: "機械保全技能士 2級", sub: "機械系保全作業 学科（真偽法・四肢択一）", domain: "safety" },
   { code: "tsukanshi", name: "通関士", sub: "通関業法・関税法等・通関実務", domain: "money" },
