@@ -49,14 +49,20 @@ describe("2026 KHK kou private originals", () => {
     expect(loader).not.toContain("2026-AX-");
   });
 
-  it("preserves AY9 official scoring while retaining the unresolved technical review", () => {
+  it("preserves AY9 scoring and explains the diagram distinction using public evidence", () => {
     const pending = KHK_2026_KOU_STAGING.filter(q => q.needsReview);
     expect(pending.map(q => q.id)).toEqual(manifest.technicalReviewPendingIds);
-    expect(pending).toHaveLength(1);
-    expect(pending[0].officialAnswerNumber).toBe("1");
-    expect(pending[0].answer).toBe("ア");
-    expect(pending[0].choices!["ア"]).toBe("イ、ロ");
-    expect(pending[0].explanation).toContain("ニ：判定理由は確認中");
-    expect(review.questions.filter(q => q.explanationReviewed)).toHaveLength(34);
+    expect(pending).toHaveLength(0);
+    const q = KHK_2026_KOU_STAGING.find(q => q.id.endsWith("ay-q9"))!;
+    expect(q.officialAnswerNumber).toBe("1");
+    expect(q.answer).toBe("ア");
+    expect(q.choices!["ア"]).toBe("イ、ロ");
+    for (const text of [q.explanation, ...(["ウ", "エ", "オ"] as const).map(key => q.choiceExplanations![key])]) {
+      expect(text).toContain("4Mで人・機械・作業環境・管理に整理する点は適切");
+      expect(text).toContain("連関図との区別");
+      expect(text).not.toContain("確認中");
+    }
+    expect(q.officialReferenceUrls).toContain("https://www.mlit.go.jp/toshi/content/001484354.pdf#page=20");
+    expect(review.questions.filter(q => q.explanationReviewed)).toHaveLength(35);
   });
 });

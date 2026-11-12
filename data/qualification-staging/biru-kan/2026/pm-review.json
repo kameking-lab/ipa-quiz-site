@@ -369,7 +369,7 @@
       "transcriptionVerified": true,
       "officialAnswerVerified": true,
       "explanationReviewed": true,
-      "sourceContentSha256": "599200500eeb52b7a15b7620c1a55e265d65dd670373fd45406c278fdef52d6f"
+      "sourceContentSha256": "c482dead3d49a7a6796c95a64a3127408b7c66cf77194dede6540b9e411b886a"
     },
     {
       "id": "biru-kan-2026-pm-132",
@@ -396,7 +396,7 @@
       "transcriptionVerified": true,
       "officialAnswerVerified": true,
       "explanationReviewed": true,
-      "sourceContentSha256": "3b0e16aac7b450023b0f5191663185c836dfa8970362a84177b5843607a3cd84"
+      "sourceContentSha256": "fa3a67c2546e68aebf541b3105d0915eb6eb27a93a3f5254f020b161dac28a41"
     },
     {
       "id": "biru-kan-2026-pm-135",
@@ -849,5 +849,18 @@
       "nearestChoice": 7
     }
   ],
-  "technicalObservations": []
+  "technicalObservations": [],
+  "editorialCorrections": {
+    "step": "q2-fix",
+    "checkedOn": "2026-11-12",
+    "sourcePagesVisuallyRechecked": [
+      15,
+      16
+    ],
+    "correctedQuestionNumbers": [
+      131,
+      134
+    ],
+    "officialAnswersChanged": false
+  }
 }

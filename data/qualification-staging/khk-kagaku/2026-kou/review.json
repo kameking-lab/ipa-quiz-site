@@ -9,7 +9,7 @@
     "sourceTables": 2,
     "sourceFormulaCrops": 1,
     "explanationChoices": 175,
-    "technicalReviewPending": 1
+    "technicalReviewPending": 0
   },
   "questions": [
     {
@@ -242,7 +242,7 @@
       "sourceContentSha256": "e4a0f765d7e095da59d7cc05552f14fe10d8fe92c33c4b77b265aee0835f5fa0",
       "transcriptionVerified": true,
       "officialAnswerVerified": true,
-      "explanationReviewed": false
+      "explanationReviewed": true
     },
     {
       "id": "khk-kagaku-2026-annual-ay-q10",
@@ -344,9 +344,20 @@
     {
       "questionId": "khk-kagaku-2026-annual-ay-q9",
       "officialAnswerNumber": 1,
-      "status": "未確認",
-      "finding": "記述ニの4M分析・特性要因図の説明を公式正答の組合せに含めない技術的根拠は未確認。公式正答1（イ・ロ）は変更しない。原文・全肢・正答を保持しneedsReview=true。",
+      "status": "公的資料に基づく限定説明を採用・確認完了",
+      "finding": "4M分類と特性要因図・連関図の区別を国交省資料で確認。KHKの個別判定理由は断定せず、図の役割と公式採点を説明する案を主解説・肢別解説に採用。公式正答1（イ・ロ）と原文を保持しneedsReview=false。KHK自身の判定理由の公表は未確認。",
       "sourceUrl": "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8AY.pdf"
     }
-  ]
+  ],
+  "editorialCorrections": {
+    "step": "q2-fix",
+    "questionId": "khk-kagaku-2026-annual-ay-q9",
+    "resolution": "国交省資料で4M分類と特性要因図・連関図の役割を確認。両手法の区別を説明し、KHKの個別判定理由は断定しないレビュー案を採用。主解説とニを含む3肢を更新しneedsReviewを解除。",
+    "supportingUrls": [
+      "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8AY.pdf",
+      "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8fy_kaitou.pdf",
+      "https://www.mlit.go.jp/unyuanzen/content/001894802.pdf#page=65",
+      "https://www.mlit.go.jp/toshi/content/001484354.pdf#page=20"
+    ]
+  }
 }

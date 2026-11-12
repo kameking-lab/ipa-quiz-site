@@ -565,8 +565,19 @@
   "technicalReview": {
     "questionId": "khk-kagaku-2026-annual-cz-q20",
     "officialAnswerNumber": 4,
-    "status": "未確認（材料一般への耐寒性の一般化）",
-    "finding": "ロの「耐寒性に優れる」をフッ素ゴム全般の性質として一般化できるかは未確認。メーカー一次資料は耐寒性を改良した専用グレードを説明している。公式正答4（イ・ロ・ニ）、原文、選択肢は保持。解説は確認できる範囲に限定し、needsReview=true。",
+    "status": "未確認（KHKが想定した材料・条件とロの個別判定理由）",
+    "finding": "業界手引きでは一般的なFKMの耐寒性に制約があり、メーカー一次資料では低温特性を改良したグレードを確認。ロの耐寒性をフッ素ゴム全般に一般化しない説明へ修正。KHKが本問で想定した材料・条件とロの個別判定理由は未確認。公式正答4（イ・ロ・ニ）、原文、選択肢を保持しneedsReview=true。",
     "referenceUrl": "https://www.daikinchemicals.com/jp/solutions/products/dai-el-fluoroelastomers/low-temperature.html"
+  },
+  "editorialCorrections": {
+    "step": "q2-fix",
+    "questionId": "khk-kagaku-2026-annual-cz-q20",
+    "resolution": "公式採点とFKMの一般的な材料特性を区別する説明を主解説と全5肢に反映。KHKの材料・条件・個別判定理由は未確認のためneedsReviewを維持。",
+    "supportingUrls": [
+      "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8CZ.pdf",
+      "https://shiken.khk.or.jp/Portals/0/khk/exam/2026/1109/R8fy_kaitou.pdf",
+      "https://www.daikinchemicals.com/jp/solutions/products/dai-el-fluoroelastomers/low-temperature.html",
+      "https://j-valve.or.jp/cms/wp-content/uploads/2023/05/550d17d7ca94643564a38d270ff96eb8.pdf#page=15"
+    ]
   }
 }

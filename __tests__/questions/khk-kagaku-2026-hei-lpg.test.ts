@@ -67,6 +67,10 @@ describe("2026 KHK hei-lpg private source corpus", () => {
     expect(q.choices!["エ"]).toBe("イ、ロ、ニ");
     expect(q.originalContent!.body).toContain("耐寒性");
     expect(q.needsReview).toBe(true);
+    for (const text of [q.explanation, ...Object.values(q.choiceExplanations!)]) {
+      expect(text).toContain("一般的なFKMは耐寒性に制約");
+      expect(text).not.toContain("ロ：正しい。");
+    }
     expect(manifest.technicalReviewPendingIds).toEqual([q.id]);
     expect(KHK_2026_HEI_LPG_STAGING.filter(q => !q.needsReview)).toHaveLength(59);
   });

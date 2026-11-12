@@ -55,7 +55,9 @@ describe("2026 biru-kan morning source corpus", () => {
     expect(question(37).officialAnswerNumber).toBe(5);
     expect(question(37).choices!.ウ).toBe("地球磁場は時間によって変動しない。");
     expect(question(37).choiceFactTruth!.ウ).toBe(false);
-    expect(review.technicalObservations[0].status).toBe("report-only");
+    expect(question(37).explanation).toContain("肢3を正しい知識として覚えないでください");
+    expect(question(37).explanation).toContain("公式正答の（5）で採点");
+    expect(review.technicalObservations[0].status).toBe("explained-with-official-scoring");
   });
 
   it("leaves all staged IDs and 2026 originals out of synchronous and lazy serving pools", async () => {
