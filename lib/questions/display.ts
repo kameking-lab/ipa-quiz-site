@@ -22,6 +22,10 @@ const ALPHABET_CHOICE_EXAMS: readonly ExamCode[] = ["sharoushi"];
 const ALPHABET_LABELS = ["A", "B", "C", "D", "E"] as const;
 
 export function choiceDisplayLabel(exam: ExamCode, key: ChoiceKey): string {
+  if (exam === "denshi-kiki-kumitate2") {
+    const index = IROHA_CHOICE_KEYS.indexOf(key);
+    return index >= 0 ? IROHA_LABELS[index] : key;
+  }
   if (exam === "shika-ishi") {
     const index = IROHA_CHOICE_KEYS.indexOf(key);
     return index >= 0 ? String.fromCharCode(97 + index) : key;
@@ -59,6 +63,10 @@ export function formatQuestionAnswerForDisplay(question: Question, value: string
       choices.every(key => value.includes(key) && accepted.includes(key))) {
     return "全員正解";
   }
+  if (question.exam === "denshi-kiki-kumitate2" && choices.length === 2) {
+    const key = String(value);
+    return key === "ア" ? "○" : key === "イ" ? "×" : key;
+  }
   const separator = question.type === "ordering" ? "→" : multiSeparator;
   const text = Array.isArray(value) ? value.join(separator) : String(value);
   return text.split(/([・→,]\s*)/).map((part) => {
@@ -75,5 +83,5 @@ export function choiceImageAlt(exam: ExamCode, key: ChoiceKey): string | undefin
 
 /** 選択肢を原本どおり番号（電験一種・二種は(イ)〜(ヨ)、社労士はA〜E）で表示する試験（ア〜エ表記ではない）。 */
 export function usesNumberedChoices(exam: ExamCode): boolean {
-  return exam === "denken3" || exam === "denken2" || exam === "denken1" || exam === "tohan" || exam === "eisei1" || exam === "eisei2" || exam === "soukan" || exam === "hoikushi" || exam === "kashikin" || PLAIN_NUMBER_CHOICE_EXAMS.includes(exam) || ALPHABET_CHOICE_EXAMS.includes(exam);
+  return exam === "denshi-kiki-kumitate2" || exam === "denken3" || exam === "denken2" || exam === "denken1" || exam === "tohan" || exam === "eisei1" || exam === "eisei2" || exam === "soukan" || exam === "hoikushi" || exam === "kashikin" || PLAIN_NUMBER_CHOICE_EXAMS.includes(exam) || ALPHABET_CHOICE_EXAMS.includes(exam);
 }
