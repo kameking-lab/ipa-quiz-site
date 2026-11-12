@@ -156,6 +156,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "kinzoku-netsushori1", name: "金属熱処理技能士 1級", sub: "一般熱処理作業 学科（真偽法・多肢択一）", domain: "safety" },
   { code: "kojo-bankin1", name: "工場板金技能士 1級", sub: "曲げ板金作業 学科（真偽法・多肢択一）", domain: "safety" },
   { code: "kinzoku-netsushori2", name: "金属熱処理技能士 2級", sub: "一般熱処理作業 学科（真偽法・多肢択一法）", domain: "safety" },
+  {"code": "mekki3", "name": "めっき技能士 3級", "sub": "電気めっき 学科（真偽法）", "domain": "construction"},
   { code: "kinzoku-netsushori3", name: "金属熱処理技能士 3級", sub: "一般熱処理作業 学科（真偽法）", domain: "safety" },
   { code: "kojo-bankin3", name: "工場板金技能士 3級", sub: "曲げ板金作業 学科（真偽法）", domain: "safety" },
   { code: "kojo-bankin2", name: "工場板金技能士 2級", sub: "曲げ板金作業 学科（真偽法・多肢択一）", domain: "safety" },
