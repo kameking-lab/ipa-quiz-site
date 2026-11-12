@@ -3,7 +3,7 @@
   "qualification": "乙種化学",
   "year": 2026,
   "season": "annual",
-  "status": "source-verified-private",
+  "status": "reviewed-private",
   "publicAllowed": false,
   "targetQuestionCount": 50,
   "sessions": {
@@ -21,5 +21,12 @@
     "matchingOpenPullRequests": [],
     "existingBranchTargetQuestionCount": 0,
     "evidence": "tools/hp-fill-1/duplicate-check.json"
-  }
+  },
+  "questionCount": 50,
+  "questionsPath": "questions.json",
+  "storedUniqueQuestionCount": 35,
+  "reusedQuestionCount": 15,
+  "sharedQuestionReferencesPath": "shared-question-references.json",
+  "technicalReviewPendingIds": [],
+  "reviewedQuestionCount": 50
 }

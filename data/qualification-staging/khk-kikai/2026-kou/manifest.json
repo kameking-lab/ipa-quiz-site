@@ -3,7 +3,7 @@
   "qualification": "甲種機械",
   "year": 2026,
   "season": "annual",
-  "status": "source-verified-private",
+  "status": "reviewed-private",
   "publicAllowed": false,
   "targetQuestionCount": 35,
   "sessions": {
@@ -20,5 +20,12 @@
     "matchingOpenPullRequests": [],
     "existingBranchTargetQuestionCount": 0,
     "evidence": "tools/hp-fill-1/duplicate-check.json"
-  }
+  },
+  "questionCount": 35,
+  "questionsPath": "questions.json",
+  "storedUniqueQuestionCount": 1,
+  "reusedQuestionCount": 34,
+  "sharedQuestionReferencesPath": "shared-question-references.json",
+  "technicalReviewPendingIds": [],
+  "reviewedQuestionCount": 35
 }
