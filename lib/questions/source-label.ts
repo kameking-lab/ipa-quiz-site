@@ -43,7 +43,7 @@ const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string,
 };
 
 export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl"> & Partial<Pick<Question, "exam" | "fiscalYear">>): string {
-  if (q.exam === "kenchiku-daiku2" && q.year === 2025 && q.season === "late") {
+  if ((q.exam === "kenchiku-daiku1" || q.exam === "kenchiku-daiku2") && q.year === 2025 && q.season === "late") {
     return "2025年度後期（2026年2月8日実施）";
   }
   if (q.exam === "junkango-kansai") {

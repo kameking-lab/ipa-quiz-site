@@ -1678,6 +1678,11 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "試験問題", categories: ["介護支援分野", "保健医療サービスの知識等", "福祉サービスの知識等"] }],
     seasons: ["annual"], yearRange: { start: 2024, end: 2025 },
 },
+"kenchiku-daiku1": {
+    code: "kenchiku-daiku1", nameFull: "技能検定 1級建築大工（大工工事作業）学科試験", urlSlug: "kenchiku-daiku1", level: "advanced",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["建築構造", "力学", "規矩術", "工具", "施工計画", "仮設工事", "測量", "接合金物", "木造施工", "設備", "養生", "材料", "関係法規", "安全衛生", "基礎工事", "仕上げ", "建具金物", "製図"] }],
+    seasons: ["late"], yearRange: { start: 2025, end: 2025 },
+},
 "kenchiku-daiku2": {
     code: "kenchiku-daiku2", nameFull: "技能検定 2級建築大工（大工工事作業）学科試験", urlSlug: "kenchiku-daiku2", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["建築構造", "基礎工事", "規矩術", "工具", "施工計画", "仮設工事", "測量", "木造施工", "仕上げ", "材料", "安全衛生", "力学", "墨付け", "接合金物", "関係法規", "製図"] }],
