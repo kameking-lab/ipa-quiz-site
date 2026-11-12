@@ -184,6 +184,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 "flower1": async () => isExamPublished("flower1") ? (await import("@/data/questions/flower1")).FLOWER1_QUESTIONS : [],
 "flower3": async () => isExamPublished("flower3") ? (await import("@/data/questions/flower3")).FLOWER3_QUESTIONS : [],
 "kagu3": async () => isExamPublished("kagu3") ? (await import("@/data/questions/kagu3")).KAGU3_QUESTIONS : [],
+"diecast1": async () => isExamPublished("diecast1") ? (await import("@/data/questions/diecast1")).DIECAST1_QUESTIONS : [],
 "kagu1": async () => isExamPublished("kagu1") ? (await import("@/data/questions/kagu1")).KAGU1_QUESTIONS : [],
 "kagu2": async () => isExamPublished("kagu2") ? (await import("@/data/questions/kagu2")).KAGU2_QUESTIONS : [],
 "mekki3": async () => isExamPublished("mekki3") ? (await import("@/data/questions/mekki3")).MEKKI3_QUESTIONS : [],
