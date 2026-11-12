@@ -45,7 +45,7 @@ const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string,
 export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl"> & Partial<Pick<Question, "exam" | "fiscalYear">>): string {
   if (q.exam === "kagu2") return `${q.fiscalYear ?? q.year}年度${q.season === "late" ? "後期" : "前期"}`;
   if (q.exam === "kagu1") return `${q.fiscalYear ?? q.year}年度${q.season === "late" ? "後期" : "前期"}`;
-  if (q.exam === "engei-soshoku3" || q.exam === "flower3" || q.exam === "insatsu2" || q.exam === "sasshi2" || q.exam === "sasshi1" || q.exam === "kyoka-plastic2" || q.exam === "kagaku-bunseki1" || q.exam === "kyoka-plastic1" || q.exam === "engei-soshoku1" || q.exam === "insatsu1" || q.exam === "flower1" || q.exam === "flower2" || q.exam === "kagu3") return `${q.fiscalYear ?? q.year}年度${q.season === "late" ? "後期" : "前期"}`;
+  if (q.exam === "engei-soshoku3" || q.exam === "flower3" || q.exam === "insatsu2" || q.exam === "sasshi2" || q.exam === "sasshi1" || q.exam === "kyoka-plastic2" || q.exam === "kagaku-bunseki1" || q.exam === "kagaku-bunseki3" || q.exam === "kyoka-plastic1" || q.exam === "engei-soshoku1" || q.exam === "insatsu1" || q.exam === "flower1" || q.exam === "flower2" || q.exam === "kagu3") return `${q.fiscalYear ?? q.year}年度${q.season === "late" ? "後期" : "前期"}`;
   if (q.exam === "denshi-kiki-kumitate1") return `${q.fiscalYear ?? q.year}年度${q.season === "late" ? "後期" : "前期"}`;
   if (q.exam === "denshi-kiki-kumitate3") return `${q.fiscalYear ?? q.year}年度${q.season === "late" ? "後期" : "前期"}`;
   if (q.exam === "tekko2") return `${q.fiscalYear ?? q.year}年度前期`;

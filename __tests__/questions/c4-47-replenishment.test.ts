@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { KAGAKU_BUNSEKI1_QUESTIONS } from "@/data/questions/kagaku-bunseki1";
+import { KAGAKU_BUNSEKI3_QUESTIONS } from "@/data/questions/kagaku-bunseki3";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { choiceDisplayLabel, formatQuestionAnswerForDisplay, questionNumberLabel } from "@/lib/questions/display";
@@ -15,6 +16,7 @@ import type { ChoiceKey, ExamCode, Question } from "@/lib/questions/types";
 // Read independently from the official answer-table images, five answers per group.
 const editions: { exam: ExamCode; year: number; questions: Question[]; a: string; b: string }[] = [
   { exam: "kagaku-bunseki1", year: 2025, questions: KAGAKU_BUNSEKI1_QUESTIONS, a: "○○×○○ ×○×○○ ○××○× ×○○○○ ×○○×○", b: "イニニニニ ニニハハイ ニイロイハ ハハロハハ ニニニイロ" },
+  { exam: "kagaku-bunseki3", year: 2025, questions: KAGAKU_BUNSEKI3_QUESTIONS, a: "○○○○× ××○○○ ×○××○ ○×○○× ○×○○× ×○×○○", b: "" },
 ];
 const keys: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
@@ -86,4 +88,12 @@ it("preserves the 2025 grade-1 underlined alternatives, source wording and hydra
   expect(q[45].choices?.エ).toContain("下線：Cl₂");
   expect(q[49].question).toContain("CuSO₄=160");
   expect(q[49].choiceExplanations?.イ).toContain("121.6");
+});
+
+it("preserves the 2025 grade-3 concentration ratio, significant figures and false statements", () => {
+  expect(KAGAKU_BUNSEKI3_QUESTIONS[13].question).toContain("C_Fe²⁺ / C_Fe³⁺");
+  expect(KAGAKU_BUNSEKI3_QUESTIONS[16].question).toContain("1.9983 mol");
+  expect(KAGAKU_BUNSEKI3_QUESTIONS[16].explanation).toContain("2.0 mol");
+  expect(KAGAKU_BUNSEKI3_QUESTIONS[19].question).toContain("強酸性");
+  expect(KAGAKU_BUNSEKI3_QUESTIONS[27].question).toContain("溶解度が低い塩ほど大きくなる");
 });

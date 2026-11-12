@@ -3,6 +3,7 @@ import { SASSHI2_QUESTIONS } from "./sasshi2";
 import { ENGEI_SOSHOKU3_QUESTIONS } from "./engei-soshoku3";
 import { KYOKA_PLASTIC2_QUESTIONS } from "./kyoka-plastic2";
 import { KAGAKU_BUNSEKI1_QUESTIONS } from "./kagaku-bunseki1";
+import { KAGAKU_BUNSEKI3_QUESTIONS } from "./kagaku-bunseki3";
 import { KYOKA_PLASTIC1_QUESTIONS } from "./kyoka-plastic1";
 import { ENGEI_SOSHOKU1_QUESTIONS } from "./engei-soshoku1";
 import { FLOWER3_QUESTIONS } from "./flower3";
@@ -385,6 +386,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("sasshi1") ? { "sasshi1": SASSHI1_QUESTIONS } : {}),
 ...(isExamPublished("kyoka-plastic2") ? { "kyoka-plastic2": KYOKA_PLASTIC2_QUESTIONS } : {}),
 ...(isExamPublished("kagaku-bunseki1") ? { "kagaku-bunseki1": KAGAKU_BUNSEKI1_QUESTIONS } : {}),
+...(isExamPublished("kagaku-bunseki3") ? { "kagaku-bunseki3": KAGAKU_BUNSEKI3_QUESTIONS } : {}),
 ...(isExamPublished("kyoka-plastic1") ? { "kyoka-plastic1": KYOKA_PLASTIC1_QUESTIONS } : {}),
 ...(isExamPublished("engei-soshoku1") ? { "engei-soshoku1": ENGEI_SOSHOKU1_QUESTIONS } : {}),
 ...(isExamPublished("engei-soshoku3") ? { "engei-soshoku3": ENGEI_SOSHOKU3_QUESTIONS } : {}),
