@@ -30,6 +30,9 @@ const SITTINGS = [{
 }, {
   exam: "denshi-kiki-kumitate3", year: 2023, season: "early", all: DENSHI_KIKI_KUMITATE3_QUESTIONS,
   answers: "×○○×××××××" + "○×××○××○○○" + "○○○○○×○××○",
+}, {
+  exam: "denshi-kiki-kumitate3", year: 2023, season: "late", all: DENSHI_KIKI_KUMITATE3_QUESTIONS,
+  answers: "○○×○○○○○○×" + "○×○××○××××" + "○○××○×○××○",
 }] as const;
 
 describe("電子機器組立ての公式原本と学習経路", () => {
@@ -98,5 +101,14 @@ describe("電子機器組立ての公式原本と学習経路", () => {
     expect(q.question).toContain("R形半導体");
     expect(q.officialAnswerNumber).toBe("×");
     expect(q.explanation).toContain("P形");
+  });
+  it("2023年の回路計算と電力量を、単位と接続方法を含めて説明する", () => {
+    const q1 = DENSHI_KIKI_KUMITATE1_QUESTIONS.filter(q => q.year === 2023);
+    expect(q1.find(q => q.qNumber === 18)?.explanation).toContain("0.6 Ω");
+    expect(q1.find(q => q.qNumber === 35)?.explanation).toContain("69.3 A");
+    expect(q1.find(q => q.qNumber === 36)?.explanation).toContain("0.2");
+    const q3 = DENSHI_KIKI_KUMITATE3_QUESTIONS.filter(q => q.year === 2023);
+    expect(q3.find(q => q.season === "early" && q.qNumber === 15)?.explanation).toContain("40 Wh");
+    expect(q3.find(q => q.season === "late" && q.qNumber === 14)?.explanation).toContain("12 Ω");
   });
 });
