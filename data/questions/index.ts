@@ -14,6 +14,7 @@ import { ENGEI_SOSHOKU2_QUESTIONS } from "./engei-soshoku2";
 import { SASSHI1_QUESTIONS } from "./sasshi1";
 import { KYOKA_PLASTIC2_QUESTIONS } from "./kyoka-plastic2";
 import { KYOKA_PLASTIC1_QUESTIONS } from "./kyoka-plastic1";
+import { KAGAKU_BUNSEKI3_QUESTIONS } from "./kagaku-bunseki3";
 import { KAGAKU_BUNSEKI2_QUESTIONS } from "./kagaku-bunseki2";
 import { ENGEI_SOSHOKU1_QUESTIONS } from "./engei-soshoku1";
 import { ENGEI_SOSHOKU3_QUESTIONS } from "./engei-soshoku3";
@@ -207,6 +208,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("sasshi1") ? { "sasshi1": SASSHI1_QUESTIONS } : {}),
 ...(isExamPublished("kyoka-plastic2") ? { "kyoka-plastic2": KYOKA_PLASTIC2_QUESTIONS } : {}),
 ...(isExamPublished("kyoka-plastic1") ? { "kyoka-plastic1": KYOKA_PLASTIC1_QUESTIONS } : {}),
+...(isExamPublished("kagaku-bunseki3") ? { "kagaku-bunseki3": KAGAKU_BUNSEKI3_QUESTIONS } : {}),
 ...(isExamPublished("kagaku-bunseki2") ? { "kagaku-bunseki2": KAGAKU_BUNSEKI2_QUESTIONS } : {}),
 ...(isExamPublished("engei-soshoku1") ? { "engei-soshoku1": ENGEI_SOSHOKU1_QUESTIONS } : {}),
 ...(isExamPublished("engei-soshoku3") ? { "engei-soshoku3": ENGEI_SOSHOKU3_QUESTIONS } : {}),
