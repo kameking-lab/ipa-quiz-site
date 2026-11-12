@@ -64,7 +64,7 @@ export function formatQuestionAnswerForDisplay(question: Question, value: string
       choices.every(key => value.includes(key) && accepted.includes(key))) {
     return "全員正解";
   }
-  if ((question.exam === "kikai-hozen3" || question.exam === "kikai-hozen-denki3" || question.exam === "kikai-hozen-denki1" || question.exam === "kikai-hozen-setsubi1" || question.exam === "tobi1" || question.exam === "tobi3" || question.exam === "kenchiku-daiku1" || question.exam === "kenchiku-daiku3" || question.exam === "kenchiku-daiku2" || question.exam === "denshi-kiki-kumitate2" || question.exam === "kojo-bankin2" || question.exam === "kensetsu-kikai-seibi2" || question.exam === "hyoso2" || question.exam === "kikinzoku-soshin2" || question.exam === "shashin2") && choices.length === 2) {
+  if ((question.exam === "kikai-hozen1" || question.exam === "kikai-hozen3" || question.exam === "kikai-hozen-denki3" || question.exam === "kikai-hozen-denki1" || question.exam === "kikai-hozen-setsubi1" || question.exam === "tobi1" || question.exam === "tobi3" || question.exam === "kenchiku-daiku1" || question.exam === "kenchiku-daiku3" || question.exam === "kenchiku-daiku2" || question.exam === "denshi-kiki-kumitate2" || question.exam === "kojo-bankin2" || question.exam === "kensetsu-kikai-seibi2" || question.exam === "hyoso2" || question.exam === "kikinzoku-soshin2" || question.exam === "shashin2") && choices.length === 2) {
     const key = String(value);
     return key === "ア" ? "○" : key === "イ" ? "×" : key;
   }

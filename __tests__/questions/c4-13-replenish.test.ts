@@ -13,6 +13,7 @@ import type { ExamCode } from "@/lib/questions/types";
 const sets: { code: ExamCode; year: number; answers: string }[] = [
   { code: "kikai-hozen3", year: 2024, answers: "×○×××○×○×○○××○○○○××××○×○○○○×××" },
   { code: "kikai-hozen-denki3", year: 2024, answers: "×○×××○×○×○○××○○×○×○○××○×○○×○○×" },
+  { code: "kikai-hozen1", year: 2023, answers: "○○○××××○○××○×○○××××××○○×○アエエイエイウイアエウウエアアアイイイエイエアウエ" },
 ];
 
 describe.each(sets)("c4-13 $code $year round2", ({ code, year, answers }) => {
@@ -85,4 +86,28 @@ it("shares the verified common 15 questions without losing the electrical source
   expect(questions[26].explanation).toContain("平らな面同士");
   expect(questions[29].answer).toBe("イ");
   expect(questions[29].explanation).toContain("WL→YL→GL");
+});
+
+it("keeps the 2023 calculations, drawing labels and official wording intact", () => {
+  const questions = QUESTIONS_BY_EXAM["kikai-hozen1"]!.filter(q => q.year === 2023);
+  expect(questions[2].explanation).toContain("2A");
+  expect(questions[15].explanation).toContain("2g");
+  expect(questions[27].choices?.エ).toBe("16と48");
+  expect(5 * (16 + 48) / 2).toBe(160);
+  expect(48 / 16).toBe(3);
+  expect(questions[45].explanation).toContain("20.46kN");
+  expect(3600 * 9.8 * 1.16 / 2 / 1000).toBeCloseTo(20.4624);
+  expect(questions[46].explanation).toContain("5mm");
+  expect(questions[47].choices?.イ).toContain("線①");
+  expect(questions[47].choices?.イ).toContain("線②");
+  expect(questions[49].choices).toEqual({ ア: "原図のア", イ: "原図のイ", ウ: "原図のウ", エ: "原図のエ" });
+  expect(questions[49].answer).toBe("エ");
+  // Preserve potentially ambiguous original wording and the published answer.
+  expect(questions[32].question).toContain("高速回転");
+  expect(questions[32].question).toContain("反復式");
+  expect(questions[32].answer).toBe("イ");
+  expect(questions[36].choices?.イ).toContain("高温で溶ける");
+  expect(questions[36].answer).toBe("ウ");
+  expect(formatQuestionAnswerForDisplay(questions[0], questions[0].answer)).toBe("○");
+  expect(formatQuestionAnswerForDisplay(questions[27], questions[27].answer)).toBe("エ");
 });

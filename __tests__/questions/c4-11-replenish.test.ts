@@ -51,7 +51,7 @@ describe.each(sets)("c4-11 $code $year round2", ({code, year, count}) => {
 });
 
 it("keeps the officially deleted question absent and preserves the remaining numbers", () => {
-  const rows = QUESTIONS_BY_EXAM["kikai-hozen1"]!;
+  const rows = QUESTIONS_BY_EXAM["kikai-hozen1"]!.filter(q => q.year === 2024);
   expect(rows.some(q => q.qNumber === 40)).toBe(false);
   expect(rows.find(q => q.qNumber === 46)?.answer).toBe("ウ");
   expect(350 * 9.8 / 8).toBeCloseTo(429, 0);
@@ -68,7 +68,7 @@ it("keeps the series circuit calculation and PNP arrow consistent with the origi
 });
 
 it("shares the 2024 common questions while preserving the electrical source URLs", () => {
-  const mechanical = QUESTIONS_BY_EXAM["kikai-hozen1"]!.filter(q => q.qNumber <= 25);
+  const mechanical = QUESTIONS_BY_EXAM["kikai-hozen1"]!.filter(q => q.year === 2024 && q.qNumber <= 25);
   const electrical = QUESTIONS_BY_EXAM["kikai-hozen-denki1"]!.filter(q => q.year === 2024 && q.qNumber <= 25);
   expect(electrical).toHaveLength(25);
   for (const [i, q] of electrical.entries()) {
