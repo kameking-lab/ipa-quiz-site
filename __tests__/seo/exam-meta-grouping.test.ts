@@ -85,8 +85,8 @@ describe("groupByCategory", () => {
 
 describe("title / description / full-name string contracts", () => {
   it("examTopTitle embeds the exam label", () => {
-    expect(examTopTitle("ap")).toBe(`${examLabel("ap")} 過去問・解説とAI質問`);
-    expect(examTopTitle("ip")).toBe(`${examLabel("ip")} 過去問・解説とAI質問`);
+    expect(examTopTitle("ap")).toBe(`${examLabel("ap")} 過去問・解説｜年度別・分野別`);
+    expect(examTopTitle("ip")).toBe(`${examLabel("ip")} 過去問・解説｜年度別・分野別`);
   });
 
   it("examTopDescription includes the published pool count and formal exam name", () => {
