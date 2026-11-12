@@ -1,3 +1,4 @@
+import { KENCHIKU_DAIKU2_QUESTIONS } from "./kenchiku-daiku2";
 import { TOBI1_QUESTIONS } from "./tobi1";
 import { QUESTIONS as KIKENBUTSU_OTSU4 } from "./kikenbutsu-otsu4";
 import { QUESTIONS as UNKO_KANRISHA_KAMOTSU } from "./unko-kanrisha-kamotsu";
@@ -323,6 +324,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("yobi-tanto") ? { "yobi-tanto": YOBI_TANTO_QUESTIONS } : {}),
 ...(isExamPublished("sokuryoshiho") ? { "sokuryoshiho": SOKURYOSHIHO_QUESTIONS } : {}),
 ...(isExamPublished("caremanager") ? { "caremanager": CAREMANAGER_QUESTIONS } : {}),
+...(isExamPublished("kenchiku-daiku2") ? { "kenchiku-daiku2": KENCHIKU_DAIKU2_QUESTIONS } : {}),
 ...(isExamPublished("tobi1") ? { tobi1: TOBI1_QUESTIONS } : {}),
 ...(isExamPublished("kikai-hozen") ? { "kikai-hozen": KIKAI_HOZEN_QUESTIONS } : {}),
 ...(isExamPublished("tsukanshi") ? { "tsukanshi": TSUKANSHI_QUESTIONS } : {})

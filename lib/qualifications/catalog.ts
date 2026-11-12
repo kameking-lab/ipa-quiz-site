@@ -45,6 +45,16 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "kenchiku-daiku2", examCode: "kenchiku-daiku2", shortName: "建築大工技能士 2級", fullName: "技能検定 2級建築大工（大工工事作業）学科試験",
+    domain: "construction", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://kentei.javada.or.jp/list02.html?v1=%E4%BB%A4%E5%92%8C7%E5%B9%B4%E5%BA%A6&v2=%E5%BE%8C%E6%9C%9F&v3=B42&v4=%E5%BB%BA%E7%AF%89%E5%A4%A7%E5%B7%A5%EF%BC%88%E5%A4%A7%E5%B7%A5%E5%B7%A5%E4%BA%8B%E4%BD%9C%E6%A5%AD%EF%BC%89",
+    officialReuseTermsUrl: "https://kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2025年度後期の2級建築大工（大工工事作業）学科50問（A群真偽法25問・B群多肢択一法25問）。公式正答、全肢の独自解説と原本図13点を収録。",
+    attributionTemplate: "出典：中央職業能力開発協会 令和7年度後期 2級建築大工（大工工事作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
+
+  {
     slug: "tobi1", examCode: "tobi1", shortName: "とび技能士 1級", fullName: "技能検定 1級とび（とび作業）学科試験",
     domain: "safety", administrator: "中央職業能力開発協会",
     officialQuestionsUrl: "https://www.kentei.javada.or.jp/list02.html?v1=%E4%BB%A4%E5%92%8C7%E5%B9%B4%E5%BA%A6&v2=%E5%89%8D%E6%9C%9F&v3=B62&v4=%E3%81%A8%E3%81%B3%EF%BC%88%E3%81%A8%E3%81%B3%E4%BD%9C%E6%A5%AD%EF%BC%89",
