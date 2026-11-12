@@ -12,6 +12,10 @@ import type { ChoiceKey, Question } from "@/lib/questions/types";
 
 // Independently read from each rendered official answer sheet, five per row.
 const SITTINGS = [{
+  exam: "toso2", year: 2023, all: TOSO2_QUESTIONS,
+  answers: "○××××" + "○×××○" + "××○××" + "○○○○×" + "×○×○○"
+    + "ニニハロイ" + "ロロイハイ" + "ハロニニニ" + "イニロニロ" + "ロハイイロ",
+}, {
   exam: "toso2", year: 2024, all: TOSO2_QUESTIONS,
   answers: "○○××○" + "○××××" + "××○○×" + "○○○×○" + "×××○○"
     + "イニニニイ" + "ロハイロロ" + "ニイニハハ" + "ハニロロニ" + "イハロハイ",
