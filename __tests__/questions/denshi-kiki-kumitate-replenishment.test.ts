@@ -20,6 +20,9 @@ const SITTINGS = [{
 }, {
   exam: "denshi-kiki-kumitate3", season: "early", all: DENSHI_KIKI_KUMITATE3_QUESTIONS,
   answers: "○×○○○○×○×○" + "○○○×○×○○○○" + "○○×○○×××○×",
+}, {
+  exam: "denshi-kiki-kumitate3", season: "late", all: DENSHI_KIKI_KUMITATE3_QUESTIONS,
+  answers: "○○○○××○○××" + "○××○××××○○" + "○○○○××××××",
 }] as const;
 
 describe("電子機器組立ての公式原本と学習経路", () => {
@@ -74,5 +77,13 @@ describe("電子機器組立ての公式原本と学習経路", () => {
     expect(q.question).toContain("39 MΩ");
     expect(q.officialAnswerNumber).toBe("×");
     expect(q.explanation).toContain("3.9 MΩ");
+  });
+  it("3級後期の実効値、並列抵抗、電力量を区別して学べる", () => {
+    const byNumber = (n: number) => DENSHI_KIKI_KUMITATE3_QUESTIONS.find(q => q.season === "late" && q.qNumber === n)!;
+    expect(byNumber(9).explanation).toContain("141 V");
+    expect(byNumber(14).officialAnswerNumber).toBe("○");
+    expect(byNumber(14).explanation).toContain("40 Wh");
+    expect(byNumber(15).officialAnswerNumber).toBe("×");
+    expect(byNumber(15).explanation).toContain("12 Ω");
   });
 });
