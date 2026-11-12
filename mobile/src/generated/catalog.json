@@ -2,6 +2,355 @@
   "schema": 2,
   "exams": [
     {
+      "code": "engei-soshoku3",
+      "qualification": "engei-soshoku3",
+      "name": "園芸装飾技能士 3級",
+      "count": 30,
+      "years": [
+        2025
+      ],
+      "categories": [
+        "園芸装飾・デザイン",
+        "工具・資材",
+        "施設・安全衛生",
+        "栽培管理",
+        "植物の種類・形態",
+        "植物生理・繁殖",
+        "用土・肥料",
+        "病害虫"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 55261,
+      "revision": "a7accc8071a8ab1c044ff7a370ed9a71162aff6b8daafd6f64cfd48a0450ca71"
+    },
+    {
+      "code": "engei-soshoku1",
+      "qualification": "engei-soshoku1",
+      "name": "園芸装飾技能士 1級",
+      "count": 100,
+      "years": [
+        2025,
+        2024
+      ],
+      "categories": [
+        "園芸装飾・デザイン",
+        "工具・資材",
+        "施設・安全衛生",
+        "栽培管理",
+        "植物の種類・形態",
+        "植物生理・繁殖",
+        "用土・肥料",
+        "病害虫"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 195660,
+      "revision": "cdf700b03d982ed1ab684839f368f54e2c50a0de94daa77efac7043309529821"
+    },
+    {
+      "code": "flower3",
+      "qualification": "flower3",
+      "name": "フラワー装飾技能士 3級",
+      "count": 60,
+      "years": [
+        2024,
+        2023
+      ],
+      "categories": [
+        "デザイン・色彩",
+        "安全・法規",
+        "植物の分類・性質",
+        "水揚げ・品質管理",
+        "装飾の歴史・行事",
+        "製作技法",
+        "資材・工具"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 112214,
+      "revision": "5f9a20d85d0a6e6c4baded0a4cd4f948b16ac009c04144a535e0667a1eb63496"
+    },
+    {
+      "code": "insatsu2",
+      "qualification": "insatsu2",
+      "name": "印刷技能士 2級",
+      "count": 50,
+      "years": [
+        2023
+      ],
+      "categories": [
+        "インキ・乾燥",
+        "印刷方式・製版",
+        "印刷機・給排紙",
+        "品質・トラブル",
+        "安全衛生・環境",
+        "湿し水・ローラ",
+        "用紙・製本",
+        "色彩・網点",
+        "電気・計測"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 106580,
+      "revision": "66595fc590fc2aa8adea2bd99adae602bbffd1b230129de02e470663cc49c6d3"
+    },
+    {
+      "code": "insatsu1",
+      "qualification": "insatsu1",
+      "name": "印刷技能士 1級",
+      "count": 100,
+      "years": [
+        2025,
+        2024
+      ],
+      "categories": [
+        "インキ・乾燥",
+        "印刷方式・製版",
+        "印刷機・給排紙",
+        "品質・トラブル",
+        "安全衛生・環境",
+        "湿し水・ローラ",
+        "用紙・製本",
+        "色彩・網点",
+        "電気・計測"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 211292,
+      "revision": "3a177ef6b6c7c966de4e5e42737a0a99f58124a56031829d9ab18deee6f52323"
+    },
+    {
+      "code": "flower1",
+      "qualification": "flower1",
+      "name": "フラワー装飾技能士 1級",
+      "count": 50,
+      "years": [
+        2023
+      ],
+      "categories": [
+        "デザイン・色彩",
+        "植物の分類・性質",
+        "水揚げ・品質管理",
+        "装飾の歴史・行事",
+        "製作技法",
+        "資材・工具"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 109603,
+      "revision": "3483f119da3d0cb7a0fd1caf4dfc17eb77a44fc4b2195f4a99bbe7be6bf6e98e"
+    },
+    {
+      "code": "flower2",
+      "qualification": "flower2",
+      "name": "フラワー装飾技能士 2級",
+      "count": 100,
+      "years": [
+        2024,
+        2023
+      ],
+      "categories": [
+        "デザイン・色彩",
+        "安全・法規",
+        "植物の分類・性質",
+        "水揚げ・品質管理",
+        "装飾の歴史・行事",
+        "製作技法",
+        "資材・工具"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 211438,
+      "revision": "17ef2ae3eac077f0fd05677a24149a4ee3392fafd97e660598cd3450b769e6d4"
+    },
+    {
+      "code": "tekko1",
+      "qualification": "tekko1",
+      "name": "鉄工技能士 1級",
+      "count": 50,
+      "years": [
+        2025
+      ],
+      "categories": [
+        "安全衛生・法令",
+        "工作機械・工具",
+        "曲げ・ひずみ矯正",
+        "材料・熱処理",
+        "材料試験・品質管理",
+        "測定・けがき",
+        "溶接",
+        "穴あけ・切断",
+        "製図・展開",
+        "製缶・ボイラー",
+        "電気基礎",
+        "非破壊検査"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 100636,
+      "revision": "f1297ab6790f70b6efcb1a57a72b37a15549d2416fbcf25e6d6695d8ff1294ee"
+    },
+    {
+      "code": "tekko2",
+      "qualification": "tekko2",
+      "name": "鉄工技能士 2級",
+      "count": 100,
+      "years": [
+        2024,
+        2023
+      ],
+      "categories": [
+        "安全衛生・法令",
+        "工作機械・工具",
+        "曲げ・ひずみ矯正",
+        "材料・熱処理",
+        "材料試験・品質管理",
+        "測定・けがき",
+        "溶接",
+        "穴あけ・切断",
+        "製図・展開",
+        "製缶・ボイラー",
+        "電気基礎",
+        "非破壊検査"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 194337,
+      "revision": "ac69742a3163eea42b739ccf7d960df6efb499eaca21a15546ba47ebc51f7cf0"
+    },
+    {
+      "code": "denshi-kiki-kumitate3",
+      "qualification": "denshi-kiki-kumitate3",
+      "name": "電子機器組立て技能士 3級",
+      "count": 60,
+      "years": [
+        2024
+      ],
+      "categories": [
+        "品質管理",
+        "安全衛生",
+        "実装・接続",
+        "工作・測定",
+        "材料・製図",
+        "電子部品・回路",
+        "電気理論"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 130829,
+      "revision": "0f4b4e35119c1a6e04edd5f0e438076a4d8f952c0699440201e296181638b422"
+    },
+    {
+      "code": "denshi-kiki-kumitate1",
+      "qualification": "denshi-kiki-kumitate1",
+      "name": "電子機器組立て技能士 1級",
+      "count": 50,
+      "years": [
+        2024
+      ],
+      "categories": [
+        "品質管理",
+        "安全衛生",
+        "実装・接続",
+        "工作・測定",
+        "情報処理",
+        "材料・製図",
+        "電子部品・回路",
+        "電気理論"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 110774,
+      "revision": "8e705820bfff671322cdb81a46699839f20a13670757f6c2176ce1d7a1134e8d"
+    },
+    {
+      "code": "fujin-kodomofuku2",
+      "qualification": "fujin-kodomofuku2",
+      "name": "婦人子供服製造技能士 2級",
+      "count": 50,
+      "years": [
+        2024
+      ],
+      "categories": [
+        "デザイン・色彩",
+        "安全衛生",
+        "服装の歴史・様式",
+        "糸・副資材",
+        "縫製・仕上げ",
+        "繊維・生地",
+        "裁断・仮縫い",
+        "製図・採寸"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 119947,
+      "revision": "f903fcf905f109e28c49ff1a4785884790ff96a1462de594aae077b42183a184"
+    },
+    {
+      "code": "fujin-kodomofuku1",
+      "qualification": "fujin-kodomofuku1",
+      "name": "婦人子供服製造技能士 1級",
+      "count": 50,
+      "years": [
+        2023
+      ],
+      "categories": [
+        "デザイン・色彩",
+        "安全衛生",
+        "服装の歴史・様式",
+        "糸・副資材",
+        "縫製・仕上げ",
+        "繊維・生地",
+        "裁断・仮縫い",
+        "製図・採寸"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 117957,
+      "revision": "56a510e5521c326cdb0a692de721585f5d6f3c286f2a74e9218505d09e94d43c"
+    },
+    {
+      "code": "toso1",
+      "qualification": "toso1",
+      "name": "塗装技能士 1級",
+      "count": 100,
+      "years": [
+        2024,
+        2023
+      ],
+      "categories": [
+        "塗料・乾燥",
+        "塗膜試験・欠陥",
+        "塗装の目的",
+        "塗装方法・工具",
+        "建築材料・構造",
+        "溶剤・安全衛生",
+        "研磨・材料",
+        "素地調整・仕様",
+        "色彩・測色",
+        "養生・施工"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 211577,
+      "revision": "43d833544f404d6196353f4dbe396abac8af9443954b688c4941f90c7fdcc26b"
+    },
+    {
       "code": "unko-kanrisha-ryokaku",
       "qualification": "unko-kanrisha-ryokaku",
       "name": "UNKO-KANRISHA-RYOKAKU",
@@ -5099,9 +5448,11 @@
       "code": "denshi-kiki-kumitate2",
       "qualification": "denshi-kiki-kumitate2",
       "name": "電子機器組立て技能士 2級",
-      "count": 50,
+      "count": 150,
       "years": [
-        2025
+        2025,
+        2024,
+        2023
       ],
       "categories": [
         "はんだ付け",
@@ -5122,13 +5473,38 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 111568,
-      "revision": "4e88ceabfae899b760be656dd5b4858e8b0bece09966d7ecde33ab00e046b52c"
+      "bytes": 341483,
+      "revision": "eabe45647e8c2058c9d6fab44b38e87753ac186cfae3a3dd554b4e614318c50b"
     },
     {
-      "code": "kojo-bankin2",
-      "qualification": "kojo-bankin2",
-      "name": "工場板金技能士 2級",
+      "code": "kinzoku-netsushori1",
+      "qualification": "kinzoku-netsushori1",
+      "name": "金属熱処理技能士 1級",
+      "count": 50,
+      "years": [
+        2023
+      ],
+      "categories": [
+        "品質管理",
+        "安全衛生",
+        "材料・加工",
+        "材料試験",
+        "洗浄・表面硬化",
+        "炉・雰囲気",
+        "焼入れ・焼戻し",
+        "製図・電気",
+        "金属組織"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 115643,
+      "revision": "da433132f069ee837a0a0e59c008eb4eeb514410ea8936c319590f138c7e784d"
+    },
+    {
+      "code": "kojo-bankin1",
+      "qualification": "kojo-bankin1",
+      "name": "工場板金技能士 1級",
       "count": 50,
       "years": [
         2025
@@ -5136,18 +5512,19 @@
       "categories": [
         "せん断",
         "ひずみ取り",
-        "レーザ加工",
+        "切断",
         "品質管理",
         "安全衛生",
         "展開図",
         "工作機械",
         "工具",
+        "成形",
         "接合",
         "曲げ加工",
         "材料",
+        "材料試験",
         "板取り",
         "測定",
-        "研削",
         "絞り加工",
         "表面処理",
         "製図",
@@ -5157,8 +5534,268 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 106113,
-      "revision": "d066d8662d6cc40e087d276a81af9f72268af7aabfb6b926a09d4885cd3feb4f"
+      "bytes": 101677,
+      "revision": "44d637e967a6b0c816f5f5ffc3a2e2ecac5866aa6288d383677710b3e789c609"
+    },
+    {
+      "code": "kinzoku-netsushori2",
+      "qualification": "kinzoku-netsushori2",
+      "name": "金属熱処理技能士 2級",
+      "count": 100,
+      "years": [
+        2024,
+        2023
+      ],
+      "categories": [
+        "品質管理",
+        "安全衛生",
+        "材料試験",
+        "機械工作",
+        "焼なまし・焼ならし",
+        "焼入れ",
+        "熱処理欠陥",
+        "熱処理設備・温度制御",
+        "表面処理",
+        "金属組織",
+        "鋼材・製図",
+        "雰囲気・冷却剤"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 215455,
+      "revision": "7b82e9a5b44485dbc58e50aeda2b8d40810e4d4a662402bede059d14c36f2096"
+    },
+    {
+      "code": "mekki3",
+      "qualification": "mekki3",
+      "name": "めっき技能士 3級",
+      "count": 60,
+      "years": [
+        2025,
+        2024
+      ],
+      "categories": [
+        "めっき浴・皮膜",
+        "分析・試験",
+        "前処理・研磨",
+        "品質管理・規格",
+        "安全衛生",
+        "後処理・防食",
+        "排水・環境",
+        "材料・加工",
+        "設備・治具",
+        "電気化学・薬品"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 118989,
+      "revision": "c689e148b9510c3ed40eb096ee4b827842c05845588dee11a41e2db63acf2188"
+    },
+    {
+      "code": "kagu2",
+      "qualification": "kagu2",
+      "name": "KAGU2",
+      "count": 50,
+      "years": [
+        2023
+      ],
+      "categories": [
+        "家具の種類・構造",
+        "手工具",
+        "接合・組立て",
+        "木工機械・加工",
+        "木材・木質材料",
+        "法令・環境",
+        "研磨・塗装",
+        "製図・測定",
+        "電気・安全衛生"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 101774,
+      "revision": "22975c3d7d31949f0d6dd44f074a622332b58052cc472f8f00cacab8fbffe235"
+    },
+    {
+      "code": "kagu1",
+      "qualification": "kagu1",
+      "name": "KAGU1",
+      "count": 50,
+      "years": [
+        2025
+      ],
+      "categories": [
+        "家具の種類・構造",
+        "手工具",
+        "接合・組立て",
+        "木工機械・加工",
+        "木材・木質材料",
+        "法令・環境",
+        "研磨・塗装",
+        "製図・測定",
+        "電気・安全衛生"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 103392,
+      "revision": "35a8a7c355bcde2fab10a9c094873deb26065f3671e21df3c3ee5b64d62d8922"
+    },
+    {
+      "code": "kagu3",
+      "qualification": "kagu3",
+      "name": "KAGU3",
+      "count": 60,
+      "years": [
+        2025,
+        2023
+      ],
+      "categories": [
+        "家具の種類・構造",
+        "手工具",
+        "接合・組立て",
+        "木工機械・加工",
+        "木材・木質材料",
+        "研磨・塗装",
+        "製図・測定",
+        "電気・安全衛生"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 111913,
+      "revision": "6c791530b25ddd21954a6a777331c5aecccc249ef78b6710a6fc08d07038c8de"
+    },
+    {
+      "code": "mekki1",
+      "qualification": "mekki1",
+      "name": "めっき技能士 1級",
+      "count": 50,
+      "years": [
+        2024
+      ],
+      "categories": [
+        "めっき浴・皮膜",
+        "分析・試験",
+        "前処理・研磨",
+        "品質管理・規格",
+        "安全衛生",
+        "後処理・防食",
+        "排水・環境",
+        "材料・加工",
+        "設備・治具",
+        "電気化学・薬品"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 104379,
+      "revision": "6c2872abe11322bb7ee62b742dc8396d618774ddef6b80f76033ea777f4fdfff"
+    },
+    {
+      "code": "kinzoku-netsushori3",
+      "qualification": "kinzoku-netsushori3",
+      "name": "金属熱処理技能士 3級",
+      "count": 60,
+      "years": [
+        2024,
+        2023
+      ],
+      "categories": [
+        "品質管理",
+        "安全衛生",
+        "材料・加工",
+        "材料試験",
+        "洗浄・表面硬化",
+        "炉・雰囲気",
+        "焼入れ・焼戻し",
+        "製図・電気",
+        "金属組織"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 119343,
+      "revision": "1663311a110cf6d65afa1decb0b175e5e885e56dc0741e1e55b8ac58e03a1b51"
+    },
+    {
+      "code": "kojo-bankin3",
+      "qualification": "kojo-bankin3",
+      "name": "工場板金技能士 3級",
+      "count": 60,
+      "years": [
+        2025,
+        2023
+      ],
+      "categories": [
+        "せん断",
+        "ひずみ取り",
+        "品質管理",
+        "安全衛生",
+        "展開図",
+        "工作機械",
+        "工具",
+        "成形",
+        "接合",
+        "曲げ加工",
+        "材料",
+        "板取り",
+        "測定",
+        "絞り加工",
+        "表面処理",
+        "製図",
+        "金型",
+        "電気"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 116506,
+      "revision": "b90f4560aa418a22879040f5b4123fc24ff4e8cf38deb00f5004cd4be63a4b67"
+    },
+    {
+      "code": "kojo-bankin2",
+      "qualification": "kojo-bankin2",
+      "name": "工場板金技能士 2級",
+      "count": 100,
+      "years": [
+        2025,
+        2023
+      ],
+      "categories": [
+        "せん断",
+        "ひずみ取り",
+        "ひずみ矯正",
+        "プレス加工",
+        "レーザ加工",
+        "切断",
+        "品質管理",
+        "安全衛生",
+        "展開図",
+        "工作機械",
+        "工具",
+        "成形",
+        "接合",
+        "曲げ加工",
+        "材料",
+        "材料試験",
+        "板取り",
+        "測定",
+        "研削",
+        "絞り加工",
+        "表面処理",
+        "製図",
+        "製図・展開",
+        "金型",
+        "電気"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 206810,
+      "revision": "f1e74858be5d9b6e0187355fb74cc7d8aca3eb9657a51ad1d5c36d80c807cdd9"
     },
     {
       "code": "kensetsu-kikai-seibi2",
@@ -5441,10 +6078,12 @@
       "code": "kikai-hozen-denki3",
       "qualification": "kikai-hozen-denki3",
       "name": "機械保全技能士 3級（電気系）",
-      "count": 60,
+      "count": 150,
       "years": [
         2026,
-        2025
+        2025,
+        2024,
+        2023
       ],
       "categories": [
         "安全衛生",
@@ -5457,8 +6096,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 103784,
-      "revision": "1be5aceb8413233c18c32d1339246915b7a090d5ffe8de93b60901bf3ce95f8f"
+      "bytes": 265543,
+      "revision": "7645482aa014403d0b2f73b4ff87f73bf286391a4d2d300a8e078b0f21c6b8d3"
     },
     {
       "code": "kikai-hozen-denki1",
@@ -5521,12 +6160,36 @@
       "revision": "278e41fc6fc004170a71ff557dd38f9a489f6e5737aecb4af3183e1d43c4641e"
     },
     {
+      "code": "kikai-hozen3",
+      "qualification": "kikai-hozen3",
+      "name": "機械保全技能士 3級（機械系）",
+      "count": 60,
+      "years": [
+        2024,
+        2023
+      ],
+      "categories": [
+        "安全衛生",
+        "材料一般",
+        "機械一般",
+        "機械保全法一般",
+        "機械系保全法",
+        "電気一般"
+      ],
+      "sessions": [
+        "gakka"
+      ],
+      "bytes": 107012,
+      "revision": "55bfda7fe016796c3d4affefeff02a89280eec16d55a9d1f697aa4de7d0d0ec8"
+    },
+    {
       "code": "kikai-hozen1",
       "qualification": "kikai-hozen1",
       "name": "機械保全技能士 1級（機械系）",
-      "count": 49,
+      "count": 99,
       "years": [
-        2024
+        2024,
+        2023
       ],
       "categories": [
         "安全衛生",
@@ -5546,8 +6209,8 @@
       "sessions": [
         "gakka"
       ],
-      "bytes": 103296,
-      "revision": "989916160b0641bb5104bdb2205273f70a1729994bf4fb488536fb76ef35045f"
+      "bytes": 214059,
+      "revision": "76f4968f7994f6908544c1022d494645b048ec0f7de16b82d9fd0404233f99fd"
     },
     {
       "code": "kikai-hozen",
