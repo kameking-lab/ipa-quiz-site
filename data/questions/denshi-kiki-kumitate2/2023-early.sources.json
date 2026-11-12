@@ -633,5 +633,25 @@
       "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=10",
       "scope": "B群25 労働安全衛生規則第585条の立入り禁止場所"
     }
-  ]
+  ],
+  "strictReview": {
+    "step": "c4r-A2",
+    "reviewedAt": "2026-11-13",
+    "questionCount": 50,
+    "method": "公式問題・正答PDFを再取得して既存SHA-256と照合。本文・選択肢はPDFテキスト比較および原本画像で照合し、全問の解説・図・ID・重複を再検品。",
+    "officialAnswersMatched": 50,
+    "officialAnswersChanged": 0,
+    "newQuestions": 0,
+    "figureReferencesChecked": 12,
+    "correctedQuestionCount": 1,
+    "corrections": [
+      {
+        "id": "denshi-kiki-kumitate2-2023-early-gakka-a-023",
+        "qNumber": 23,
+        "detail": "動作時の開路を閉路とした転記を修正し、解説の誤った原文注記を訂正"
+      }
+    ],
+    "unavailableQuestionNumbers": [],
+    "publishableQuestionCount": 50
+  }
 }

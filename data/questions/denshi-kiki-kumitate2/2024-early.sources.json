@@ -633,5 +633,19 @@
       "url": "https://www.fdma.go.jp/relocation/e-college/senmon/bosai/main/all-hojyo.pdf",
       "scope": "A群25 消火器の適応火災の色（白・黄・青）"
     }
-  ]
+  ],
+  "strictReview": {
+    "step": "c4r-A2",
+    "reviewedAt": "2026-11-13",
+    "questionCount": 50,
+    "method": "公式問題・正答PDFを再取得して既存SHA-256と照合。本文・選択肢はPDFテキスト比較および原本画像で照合し、全問の解説・図・ID・重複を再検品。",
+    "officialAnswersMatched": 50,
+    "officialAnswersChanged": 0,
+    "newQuestions": 0,
+    "figureReferencesChecked": 12,
+    "correctedQuestionCount": 0,
+    "corrections": [],
+    "unavailableQuestionNumbers": [],
+    "publishableQuestionCount": 50
+  }
 }

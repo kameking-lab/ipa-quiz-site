@@ -232,5 +232,19 @@
   ],
   "transcriptionMethod": "公式PDFのテキスト層と全ページ描画を照合。共通15問は機械系原稿を参照し、電気系の出典へ切り替える。ほか7問の既存自前解説とリミットスイッチ記号1点を原本照合して再利用。",
   "answerVerification": "公式正解表30記号を描画画像で照合。",
-  "missingQuestions": []
+  "missingQuestions": [],
+  "strictReview": {
+    "step": "c4r-A2",
+    "reviewedAt": "2026-11-13",
+    "questionCount": 30,
+    "method": "公式問題・正答PDFを再取得して既存SHA-256と照合。本文・選択肢はPDFテキスト比較および原本画像で照合し、全問の解説・図・ID・重複を再検品。",
+    "officialAnswersMatched": 30,
+    "officialAnswersChanged": 0,
+    "newQuestions": 0,
+    "figureReferencesChecked": 6,
+    "correctedQuestionCount": 0,
+    "corrections": [],
+    "unavailableQuestionNumbers": [],
+    "publishableQuestionCount": 30
+  }
 }

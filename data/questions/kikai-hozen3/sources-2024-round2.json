@@ -162,5 +162,25 @@
   ],
   "transcriptionMethod": "公式PDFのテキスト層と全ページ描画を照合。改行を結合し全角英数字を正規化。同一本文かつ公式正答が一致する既存自前原稿10問を再利用。図付き問題は今回の原図を確認して作成。",
   "answerVerification": "公式正解表30記号を描画画像で照合。",
-  "missingQuestions": []
+  "missingQuestions": [],
+  "strictReview": {
+    "step": "c4r-A2",
+    "reviewedAt": "2026-11-13",
+    "questionCount": 30,
+    "method": "公式問題・正答PDFを再取得して既存SHA-256と照合。本文・選択肢はPDFテキスト比較および原本画像で照合し、全問の解説・図・ID・重複を再検品。",
+    "officialAnswersMatched": 30,
+    "officialAnswersChanged": 0,
+    "newQuestions": 0,
+    "figureReferencesChecked": 4,
+    "correctedQuestionCount": 1,
+    "corrections": [
+      {
+        "id": "kikai-hozen3-2024-round2-gakka-019",
+        "qNumber": 19,
+        "detail": "解説末尾の重複した正答表示を削除"
+      }
+    ],
+    "unavailableQuestionNumbers": [],
+    "publishableQuestionCount": 30
+  }
 }

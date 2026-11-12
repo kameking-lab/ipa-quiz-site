@@ -289,5 +289,21 @@
     }
   ],
   "transcriptionMethod": "共通25問はQ4-034完成原稿を機械系原本の全ページ・公式正答と照合して再利用。専門24問は文字抽出が壊れるため原本画像から転記して照合。問番号は40を欠番として保持。",
-  "answerVerification": "公式正答表50枠を描画画像およびテキスト層と照合。真偽の丸記号は既存形式の○に正規化。"
+  "answerVerification": "公式正答表50枠を描画画像およびテキスト層と照合。真偽の丸記号は既存形式の○に正規化。",
+  "strictReview": {
+    "step": "c4r-A2",
+    "reviewedAt": "2026-11-13",
+    "questionCount": 49,
+    "method": "公式問題・正答PDFを再取得して既存SHA-256と照合。本文・選択肢はPDFテキスト比較および原本画像で照合し、全問の解説・図・ID・重複を再検品。",
+    "officialAnswersMatched": 49,
+    "officialAnswersChanged": 0,
+    "newQuestions": 0,
+    "figureReferencesChecked": 6,
+    "correctedQuestionCount": 0,
+    "corrections": [],
+    "unavailableQuestionNumbers": [
+      40
+    ],
+    "publishableQuestionCount": 49
+  }
 }

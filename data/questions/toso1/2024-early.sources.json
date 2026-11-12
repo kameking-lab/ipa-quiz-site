@@ -478,5 +478,25 @@
       "bodyAndChoicesChecked": true
     }
   ],
-  "figures": []
+  "figures": [],
+  "strictReview": {
+    "step": "c4r-A2",
+    "reviewedAt": "2026-11-13",
+    "questionCount": 50,
+    "method": "公式問題・正答PDFを再取得して既存SHA-256と照合。本文・選択肢はPDFテキスト比較および原本画像で照合し、全問の解説・図・ID・重複を再検品。",
+    "officialAnswersMatched": 50,
+    "officialAnswersChanged": 0,
+    "newQuestions": 0,
+    "figureReferencesChecked": 0,
+    "correctedQuestionCount": 1,
+    "corrections": [
+      {
+        "id": "toso1-2024-early-gakka-b-020",
+        "qNumber": 45,
+        "detail": "B群20エの素地面を公式原本の素地全面へ修正"
+      }
+    ],
+    "unavailableQuestionNumbers": [],
+    "publishableQuestionCount": 50
+  }
 }

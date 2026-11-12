@@ -275,5 +275,34 @@
     "https://www.kawaju.co.jp/rd/chemistry/report/ferrography.html",
     "https://www.cosmo-lube.co.jp/Portals/0/images/product/tech/tech3544230.pdf",
     "https://www.system-i.co.jp/files_manual/product_manual_mark2.pdf"
-  ]
+  ],
+  "strictReview": {
+    "step": "c4r-A2",
+    "reviewedAt": "2026-11-13",
+    "questionCount": 50,
+    "method": "公式問題・正答PDFを再取得して既存SHA-256と照合。本文・選択肢はPDFテキスト比較および原本画像で照合し、全問の解説・図・ID・重複を再検品。",
+    "officialAnswersMatched": 50,
+    "officialAnswersChanged": 0,
+    "newQuestions": 0,
+    "figureReferencesChecked": 5,
+    "correctedQuestionCount": 2,
+    "corrections": [
+      {
+        "id": "kikai-hozen1-2023-round2-gakka-033",
+        "qNumber": 33,
+        "detail": "原文の高速回転と一般的な油浴法の使用域を区別する注記"
+      },
+      {
+        "id": "kikai-hozen1-2023-round2-gakka-037",
+        "qNumber": 37,
+        "detail": "原文の高温で溶けるという表現について脱ろうと鋳込みを区別する注記"
+      }
+    ],
+    "unavailableQuestionNumbers": [],
+    "publishableQuestionCount": 50,
+    "explanationReferenceUrls": [
+      "https://www.nsk.com/jp-ja/tools-resources/abc-bearings/oil-lubrication/",
+      "https://jukiaizu.co.jp/pages/32/"
+    ]
+  }
 }
