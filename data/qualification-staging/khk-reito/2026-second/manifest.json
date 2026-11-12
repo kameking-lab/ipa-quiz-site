@@ -3,7 +3,7 @@
   "qualification": "第二種冷凍機械",
   "year": 2026,
   "season": "annual",
-  "status": "source-verified-private",
+  "status": "reviewed-private",
   "publicAllowed": false,
   "targetQuestionCount": 40,
   "sessions": {
@@ -21,5 +21,12 @@
     "matchingOpenPullRequests": [],
     "existingBranchTargetQuestionCount": 0,
     "evidence": "tools/hp-fill-3/duplicate-check.json"
-  }
+  },
+  "questionCount": 40,
+  "questionsPath": "questions.json",
+  "storedUniqueQuestionCount": 30,
+  "reusedQuestionCount": 10,
+  "sharedQuestionReferencesPath": "shared-question-references.json",
+  "technicalReviewPendingIds": [],
+  "reviewedQuestionCount": 40
 }
