@@ -60,7 +60,7 @@ describe("貸金業務取扱主任者資格試験（令和7年度・令和6年�
       }
     }
     expect(new Set(KASHIKIN_QUESTIONS.map((q) => q.id)).size).toBe(KASHIKIN_QUESTIONS.length);
-    expect(EXAM_CONFIGS.kashikin.yearRange).toEqual({ start: 2024, end: 2025 });
+    expect(EXAM_CONFIGS.kashikin.yearRange).toEqual({ start: 2022, end: 2025 });
     expect(getQualificationByExamCode("kashikin")?.status).toBe("live");
   });
 
