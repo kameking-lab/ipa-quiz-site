@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
+import { TETSUDO_SHARYO1_QUESTIONS } from "@/data/questions/tetsudo-sharyo1";
 import { DIECAST1_QUESTIONS } from "@/data/questions/diecast1";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
@@ -18,6 +19,9 @@ const editions = [
   { exam: "diecast1" as const, year: 2025, rows: DIECAST1_QUESTIONS,
     answers: "×××××" + "×○○○×" + "××○○×" + "○×××○" + "×××○○"
       + "ロニロイハ" + "ロイニイハ" + "ハニロニハ" + "イハニロニ" + "イロニイロ", figures: [27, 49], name: "ダイカスト" },
+  { exam: "tetsudo-sharyo1" as const, year: 2025, rows: TETSUDO_SHARYO1_QUESTIONS,
+    answers: "○×○○×" + "×○×○○" + "××××○" + "×○○○×" + "○○×○×"
+      + "ハニニイハ" + "ロロニハニ" + "ニハイニニ" + "イロロロロ" + "ロハハニイ", figures: [14, 25, 38, 40], name: "鉄道車両製造・整備" },
 ];
 
 describe.each(editions)("技能検定 $exam $year 年度前期", ({ exam, year, rows, answers, figures, name }) => {

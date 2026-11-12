@@ -7,6 +7,7 @@ import { FLOWER1_QUESTIONS } from "./flower1";
 import { FLOWER3_QUESTIONS } from "./flower3";
 import { KAGU3_QUESTIONS } from "./kagu3";
 import { DIECAST1_QUESTIONS } from "./diecast1";
+import { TETSUDO_SHARYO1_QUESTIONS } from "./tetsudo-sharyo1";
 import { KAGU1_QUESTIONS } from "./kagu1";
 import { KAGU2_QUESTIONS } from "./kagu2";
 import { MEKKI3_QUESTIONS } from "./mekki3";
@@ -190,6 +191,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("flower3") ? { "flower3": FLOWER3_QUESTIONS } : {}),
 ...(isExamPublished("kagu3") ? { "kagu3": KAGU3_QUESTIONS } : {}),
 ...(isExamPublished("diecast1") ? { "diecast1": DIECAST1_QUESTIONS } : {}),
+...(isExamPublished("tetsudo-sharyo1") ? { "tetsudo-sharyo1": TETSUDO_SHARYO1_QUESTIONS } : {}),
 ...(isExamPublished("kagu1") ? { "kagu1": KAGU1_QUESTIONS } : {}),
 ...(isExamPublished("kagu2") ? { "kagu2": KAGU2_QUESTIONS } : {}),
 ...(isExamPublished("mekki3") ? { "mekki3": MEKKI3_QUESTIONS } : {}),
