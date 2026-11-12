@@ -3,6 +3,7 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { TOSO2_QUESTIONS } from "@/data/questions/toso2";
+import { TOSO1_QUESTIONS } from "@/data/questions/toso1";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { formatQuestionAnswerForDisplay, usesNumberedChoices } from "@/lib/questions/display";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
@@ -12,6 +13,10 @@ import type { ChoiceKey, Question } from "@/lib/questions/types";
 
 // Independently read from each rendered official answer sheet, five per row.
 const SITTINGS = [{
+  exam: "toso1", year: 2025, all: TOSO1_QUESTIONS,
+  answers: "××○××" + "○○××○" + "○○×○×" + "×○××○" + "○×○○×"
+    + "ロニイロロ" + "イニロイニ" + "イハニイハ" + "ハハハニロ" + "ニイイハイ",
+}, {
   exam: "toso2", year: 2023, all: TOSO2_QUESTIONS,
   answers: "○××××" + "○×××○" + "××○××" + "○○○○×" + "×○×○○"
     + "ニニハロイ" + "ロロイハイ" + "ハロニニニ" + "イニロニロ" + "ロハイイロ",
@@ -67,5 +72,15 @@ describe("建築塗装の補充原本と学習経路", () => {
       expect(q.question).toContain("適切なもの");
       expect(q.question).not.toContain("適切でない");
     }
+  });
+  it("1級2025年の圧力倍率とRB種の工程を取り違えない", () => {
+    const pressure = TOSO1_QUESTIONS.find(q => q.qNumber === 8)!;
+    expect(pressure.answer).toBe("イ");
+    expect(pressure.explanation).toContain("0.1×30＝3MPa");
+    const wood = TOSO1_QUESTIONS.find(q => q.qNumber === 46)!;
+    expect(wood.answer).toBe("エ");
+    expect(wood.choiceExplanations?.ウ).toContain("穴埋めを行いません");
+    expect(wood.choiceExplanations?.エ).toContain("節止めを行いません");
+    expect(wood.sourceAnswerUrl).toContain("R07-1-B87-");
   });
 });

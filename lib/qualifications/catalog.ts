@@ -45,6 +45,7 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
 {"slug": "toso2", "examCode": "toso2", "shortName": "塗装技能士 2級", "fullName": "技能検定 2級塗装（建築塗装作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2023・2024年度前期の学科100問。公式正答・独自解説・原図を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+{"slug": "toso1", "examCode": "toso1", "shortName": "塗装技能士 1級", "fullName": "技能検定 1級塗装（建築塗装作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2025年度前期の学科50問。公式正答・独自解説・原図を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
 {
   "slug": "kikai-hozen-denki1",
   "examCode": "kikai-hozen-denki1",
