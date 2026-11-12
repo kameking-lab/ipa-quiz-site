@@ -1723,13 +1723,14 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["写真史", "光・色彩", "レンズ・撮影機材", "照明・露出", "肖像・画像処理", "デジタル基礎", "関係法規・環境"] }],
     seasons: ["early"], yearRange: { start: 2025, end: 2025 },
 },
+  "kinzoku-netsushori1": {"code": "kinzoku-netsushori1", "nameFull": "技能検定 1級金属熱処理（一般熱処理作業）学科試験", "urlSlug": "kinzoku-netsushori1", "level": "advanced", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "学科（A群 真偽法・B群 多肢択一法）", "categories": ["品質管理", "安全衛生", "材料・加工", "材料試験", "洗浄・表面硬化", "炉・雰囲気", "焼入れ・焼戻し", "製図・電気", "金属組織"]}], "seasons": ["early"], "yearRange": {"start": 2023, "end": 2023}},
 "kojo-bankin1": {"code": "kojo-bankin1", "nameFull": "技能検定 1級工場板金（曲げ板金作業）学科試験", "urlSlug": "kojo-bankin1", "level": "advanced", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "学科（A群 真偽法・B群 多肢択一法）", "categories": ["せん断", "ひずみ取り", "切断", "品質管理", "安全衛生", "展開図", "工作機械", "工具", "成形", "接合", "曲げ加工", "材料", "材料試験", "板取り", "測定", "絞り加工", "表面処理", "製図", "金型", "電気"]}], "seasons": ["early"], "yearRange": {"start": 2025, "end": 2025}},
 "kinzoku-netsushori2": {
     code: "kinzoku-netsushori2", nameFull: "技能検定 2級金属熱処理（一般熱処理作業）学科試験", urlSlug: "kinzoku-netsushori2", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["金属組織", "材料試験", "焼入れ", "焼なまし・焼ならし", "表面処理", "熱処理設備・温度制御", "機械工作", "鋼材・製図", "安全衛生", "雰囲気・冷却剤", "熱処理欠陥", "品質管理"] }],
     seasons: ["early"], yearRange: { start: 2023, end: 2024 },
 },
-  "kinzoku-netsushori3": {"code": "kinzoku-netsushori3", "nameFull": "技能検定 3級金属熱処理（一般熱処理作業）学科試験", "urlSlug": "kinzoku-netsushori3", "level": "basic", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 30, "label": "学科（真偽法）", "categories": ["品質管理", "安全衛生", "材料・加工", "材料試験", "洗浄・表面硬化", "炉・雰囲気", "焼入れ・焼戻し", "金属組織"]}], "seasons": ["early"], "yearRange": {"start": 2024, "end": 2024}},
+  "kinzoku-netsushori3": {"code": "kinzoku-netsushori3", "nameFull": "技能検定 3級金属熱処理（一般熱処理作業）学科試験", "urlSlug": "kinzoku-netsushori3", "level": "basic", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 30, "label": "学科（真偽法）", "categories": ["品質管理", "安全衛生", "材料・加工", "材料試験", "洗浄・表面硬化", "炉・雰囲気", "焼入れ・焼戻し", "製図・電気", "金属組織"]}], "seasons": ["early"], "yearRange": {"start": 2023, "end": 2024}},
 "kojo-bankin3": {"code": "kojo-bankin3", "nameFull": "技能検定 3級工場板金（曲げ板金作業）学科試験", "urlSlug": "kojo-bankin3", "level": "basic", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 30, "label": "学科（真偽法）", "categories": ["せん断", "ひずみ取り", "品質管理", "安全衛生", "展開図", "工作機械", "工具", "成形", "接合", "曲げ加工", "材料", "板取り", "測定", "絞り加工", "表面処理", "製図", "金型", "電気"]}], "seasons": ["early"], "yearRange": {"start": 2023, "end": 2025}},
 "kojo-bankin2": {
     code: "kojo-bankin2", nameFull: "技能検定 2級工場板金（曲げ板金作業）学科試験", urlSlug: "kojo-bankin2", level: "basic",

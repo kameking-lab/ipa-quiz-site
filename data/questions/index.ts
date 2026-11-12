@@ -6,6 +6,7 @@ import { FUJIN_KODOMOFUKU2_QUESTIONS } from "./fujin-kodomofuku2";
 import { FUJIN_KODOMOFUKU1_QUESTIONS } from "./fujin-kodomofuku1";
 import { TOSO1_QUESTIONS } from "./toso1";
 import { DENSHI_KIKI_KUMITATE2_QUESTIONS } from "./denshi-kiki-kumitate2";
+import { KINZOKU_NETSUSHORI1_QUESTIONS } from "./kinzoku-netsushori1";
 import { KOJO_BANKIN1_QUESTIONS } from "./kojo-bankin1";
 import { KINZOKU_NETSUSHORI2_QUESTIONS } from "./kinzoku-netsushori2";
 import { KINZOKU_NETSUSHORI3_QUESTIONS } from "./kinzoku-netsushori3";
@@ -357,6 +358,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("tekko2") ? { "tekko2": TEKKO2_QUESTIONS } : {}),
 ...(isExamPublished("tekko1") ? { "tekko1": TEKKO1_QUESTIONS } : {}),
 ...(isExamPublished("denshi-kiki-kumitate2") ? { "denshi-kiki-kumitate2": DENSHI_KIKI_KUMITATE2_QUESTIONS } : {}),
+...(isExamPublished("kinzoku-netsushori1") ? { "kinzoku-netsushori1": KINZOKU_NETSUSHORI1_QUESTIONS } : {}),
 ...(isExamPublished("kojo-bankin1") ? { "kojo-bankin1": KOJO_BANKIN1_QUESTIONS } : {}),
 ...(isExamPublished("kinzoku-netsushori2") ? { "kinzoku-netsushori2": KINZOKU_NETSUSHORI2_QUESTIONS } : {}),
 ...(isExamPublished("kinzoku-netsushori3") ? { "kinzoku-netsushori3": KINZOKU_NETSUSHORI3_QUESTIONS } : {}),
