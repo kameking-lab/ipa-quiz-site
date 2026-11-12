@@ -421,7 +421,7 @@
       "pdfPage": 7,
       "officialAnswer": "ハ",
       "bodySha256": "a9261abf26523364421634d7e653b793d81b59edc7e082f066a931d491dfce17",
-      "choicesSha256": "64403cf5b161b304aa7b25abb3a6fc51c54849af4979e2800c841ba4941bd31c"
+      "choicesSha256": "51d8d7529ebad4853b1a64184d06cadaaa97f348a6bbaec79b5e5c92d770dd21"
     },
     {
       "id": "toso1-2025-early-gakka-b-018",
@@ -495,5 +495,39 @@
       "bodySha256": "b43a43b6c24dc74ec4df2e1f3b66a3cee8567f6e7a6f5b27bde9251153303268",
       "choicesSha256": "61d0151ce83ec95e4fb9c4804d8f239200b9a8dd7d6f813a5445bc0dccd0285e"
     }
-  ]
+  ],
+  "reviewNotes": {
+    "step": "c4r-B2",
+    "date": "2026-11-13",
+    "officialAnswersChanged": 0,
+    "changes": [
+      {
+        "id": "toso1-2025-early-gakka-a-015",
+        "candidate": "Q4-048",
+        "fields": [
+          "explanation",
+          "choiceExplanations",
+          "officialReferenceUrls"
+        ]
+      },
+      {
+        "id": "toso1-2025-early-gakka-a-016",
+        "candidate": "Q4-048",
+        "fields": [
+          "explanation",
+          "choiceExplanations",
+          "officialReferenceUrls"
+        ]
+      },
+      {
+        "id": "toso1-2025-early-gakka-b-017",
+        "candidate": "Q4-048",
+        "fields": [
+          "choices",
+          "explanation",
+          "choiceExplanations"
+        ]
+      }
+    ]
+  }
 }

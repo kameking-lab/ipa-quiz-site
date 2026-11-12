@@ -391,7 +391,7 @@
       "officialAnswer": "ウ",
       "internalAnswer": "ウ",
       "bodySha256": "17719e785fe58b8356863beb31ae44d26d0c109e2bacafb0b2c55a3dd9e0d253",
-      "choicesSha256": "407456ab96f535c2a643df33b17267b2cd89fd04e91cf9b00096fcd3d8460839"
+      "choicesSha256": "5146a648bb48e6f720a171790b4bb4aaeefb4b25f9ee2621af9986835ba3cb10"
     },
     {
       "id": "kikai-hozen-setsubi1-2023-round2-gakka-042",
@@ -430,7 +430,7 @@
       "pdfPage": 8,
       "officialAnswer": "ア",
       "internalAnswer": "ア",
-      "bodySha256": "7cdc1d90fc2e15e70e83eb56bb719ea7afb75b43b6665842fc6e709c171b7701",
+      "bodySha256": "380272a5cd96deee969999b0ddd944a6bc997d2a10d169887c7ac2289fb308ba",
       "choicesSha256": "85bb3ae7e779df0760a5b2f6e5d1dfa19f3bf0f63e1b1d409a07792342bf3589"
     },
     {
@@ -506,5 +506,41 @@
       "qNumber": 34,
       "note": "公式問題のエは「無現像法は、現像処理は行わずに傷の検出を行う。」で、公式正答はエ。設問の「適切でない」との関係は未確認。原文・公式正答を保持し、不適切とする理由は創作していない。"
     }
-  ]
+  ],
+  "reviewNotes": {
+    "step": "c4r-B2",
+    "date": "2026-11-13",
+    "officialAnswersChanged": 0,
+    "changes": [
+      {
+        "id": "kikai-hozen-setsubi1-2023-round2-gakka-028",
+        "candidate": "Q4-041",
+        "fields": [
+          "explanation"
+        ]
+      },
+      {
+        "id": "kikai-hozen-setsubi1-2023-round2-gakka-034",
+        "candidate": "Q4-041",
+        "fields": [
+          "explanation",
+          "choiceExplanations"
+        ]
+      },
+      {
+        "id": "kikai-hozen-setsubi1-2023-round2-gakka-041",
+        "candidate": "Q4-041",
+        "fields": [
+          "choices"
+        ]
+      },
+      {
+        "id": "kikai-hozen-setsubi1-2023-round2-gakka-046",
+        "candidate": "Q4-041",
+        "fields": [
+          "question"
+        ]
+      }
+    ]
+  }
 }
