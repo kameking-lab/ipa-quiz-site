@@ -31,6 +31,8 @@ import { NativeBDataSchema, nativeBQuestionIssue } from "../lib/questions/native
  *   pnpm validate:questions --staging=khk-reito-2026-first # 非公開の第一種冷凍機械2026
  *   pnpm validate:questions --staging=khk-reito-2026-second # 非公開の第二種冷凍機械2026
  *   pnpm validate:questions --staging=khk-reito-2026-third # 非公開の第三種冷凍機械2026
+ *   pnpm validate:questions --staging=khk-hanbai-2026-first # 非公開の第一種販売2026
+ *   pnpm validate:questions --staging=khk-hanbai-2026-second # 非公開の第二種販売2026
  *   pnpm validate:questions --staging=biru-kan-2026-am # 建築物環境衛生2026午前90問
  *   pnpm validate:questions --staging=biru-kan-2026-pm # 建築物環境衛生2026午後90問
  *   pnpm validate:questions --report         # docs/QUESTION_QUALITY.md を生成
@@ -73,6 +75,7 @@ import { BIRU_KAN_2026_AM_STAGING, BIRU_KAN_2026_PM_STAGING, validateBiruKan2026
 import { KHK_2026_OTSU_STAGING, KHK_2026_KIKAI_KOU_STAGING, validateKhk2026Fill } from "./lib/validate-khk-2026-fill";
 import { KHK_2026_KIKAI_OTSU_STAGING, KHK_2026_REITO_FIRST_STAGING, validateKhk2026Fill2 } from "./lib/validate-khk-2026-fill-2";
 import { KHK_2026_REITO_SECOND_STAGING, KHK_2026_REITO_THIRD_STAGING, validateKhk2026Fill3 } from "./lib/validate-khk-2026-fill-3";
+import { readKhk2026Sales, validateKhk2026Sales } from "./lib/validate-khk-2026-sales";
 
 // Publication-gated pilots still require the same schema and source validation
 // before their release gate can be lifted.
@@ -525,6 +528,13 @@ function reportFixes(questions: Question[]): void {
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 const opts = parseCliOptions();
+if (["khk-hanbai-2026-first", "khk-hanbai-2026-second"].includes(opts.staging ?? "") && !opts.exams.length && !opts.fix && !opts.report) {
+  const kind = opts.staging === "khk-hanbai-2026-first" ? "first" : "second";
+  const errors = validateKhk2026Sales(kind);
+  for (const error of errors) console.error(`[FAIL] ${error}`);
+  console.log(`Validated ${readKhk2026Sales(kind).length} private ${opts.staging} occurrences. fail=${errors.length} publicAllowed=false`);
+  process.exit(errors.length ? 1 : 0);
+}
 if (["khk-reito-2026-second", "khk-reito-2026-third"].includes(opts.staging ?? "") && !opts.exams.length && !opts.fix && !opts.report) {
   const isSecond = opts.staging === "khk-reito-2026-second";
   const questions = isSecond ? KHK_2026_REITO_SECOND_STAGING : KHK_2026_REITO_THIRD_STAGING;

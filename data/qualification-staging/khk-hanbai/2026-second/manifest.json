@@ -3,7 +3,7 @@
   "qualification": "第二種販売",
   "year": 2026,
   "season": "annual",
-  "status": "source-verified-private",
+  "status": "reviewed-private",
   "publicAllowed": false,
   "targetQuestionCount": 40,
   "sessions": {
@@ -20,5 +20,12 @@
     "matchingOpenPullRequests": [],
     "existingBranchTargetQuestionCount": 0,
     "evidence": "tools/hp-sales/duplicate-check.json"
-  }
+  },
+  "questionCount": 40,
+  "questionsPath": "questions.json",
+  "storedUniqueQuestionCount": 39,
+  "reusedQuestionCount": 1,
+  "sharedQuestionReferencesPath": "shared-question-references.json",
+  "reviewedQuestionCount": 40,
+  "technicalReviewPendingIds": []
 }
