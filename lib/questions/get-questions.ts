@@ -173,6 +173,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 "sokuryoshiho": async () => isExamPublished("sokuryoshiho") ? (await import("@/data/questions/sokuryoshiho")).SOKURYOSHIHO_QUESTIONS : [],
 "caremanager": async () => isExamPublished("caremanager") ? (await import("@/data/questions/caremanager")).CAREMANAGER_QUESTIONS : [],
 "flower2": async () => isExamPublished("flower2") ? (await import("@/data/questions/flower2")).FLOWER2_QUESTIONS : [],
+"fujin-kodomofuku2": async () => isExamPublished("fujin-kodomofuku2") ? (await import("@/data/questions/fujin-kodomofuku2")).FUJIN_KODOMOFUKU2_QUESTIONS : [],
 "toso2": async () => isExamPublished("toso2") ? (await import("@/data/questions/toso2")).TOSO2_QUESTIONS : [],
 "mekki2": async () => isExamPublished("mekki2") ? (await import("@/data/questions/mekki2")).MEKKI2_QUESTIONS : [],
 "kinzoku-netsushori2": async () => isExamPublished("kinzoku-netsushori2") ? (await import("@/data/questions/kinzoku-netsushori2")).KINZOKU_NETSUSHORI2_QUESTIONS : [],

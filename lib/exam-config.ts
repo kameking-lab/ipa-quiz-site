@@ -1683,6 +1683,11 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["装飾の歴史・行事", "デザイン・色彩", "製作技法", "植物の分類・性質", "資材・工具", "水揚げ・品質管理", "安全・法規"] }],
     seasons: ["early"], yearRange: { start: 2025, end: 2025 },
 },
+"fujin-kodomofuku2": {
+    code: "fujin-kodomofuku2", nameFull: "技能検定 2級婦人子供服製造（婦人子供注文服製作作業）学科試験", urlSlug: "fujin-kodomofuku2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["服装の歴史・様式", "繊維・生地", "縫製・仕上げ", "糸・副資材", "デザイン・色彩", "安全衛生", "製図・採寸", "裁断・仮縫い"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
 "toso2": {
     code: "toso2", nameFull: "技能検定 2級塗装（建築塗装作業）学科試験", urlSlug: "toso2", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["塗料・乾燥", "塗装方法・工具", "色彩・測色", "塗膜試験・欠陥", "養生・施工", "研磨・材料", "溶剤・安全衛生", "建築材料・構造", "素地調整・仕様"] }],

@@ -165,6 +165,7 @@ export const EXAM_LABELS: Record<string, string> = {
     "sokuryoshiho": "測量士補",
     "caremanager": "ケアマネ試験",
     "flower2": "フラワー装飾技能士 2級",
+    "fujin-kodomofuku2": "婦人子供服製造技能士 2級",
     "toso2": "塗装技能士 2級",
     "mekki2": "めっき技能士 2級",
     "kinzoku-netsushori2": "金属熱処理技能士 2級",

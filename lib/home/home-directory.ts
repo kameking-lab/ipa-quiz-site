@@ -146,6 +146,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "yobi-tanto", name: "予備試験（短答）", sub: "法律基本科目7科目の短答式", domain: "money" },
   { code: "sokuryoshiho", name: "測量士補", sub: "国土地理院の公式問題・正答・独自解説", domain: "construction" },
   { code: "flower2", name: "フラワー装飾技能士 2級", sub: "フラワー装飾作業 学科（真偽法・多肢択一法）", domain: "welfare" },
+  { code: "fujin-kodomofuku2", name: "婦人子供服製造技能士 2級", sub: "婦人子供注文服製作作業 学科（真偽法・多肢択一法）", domain: "welfare" },
   { code: "toso2", name: "塗装技能士 2級", sub: "建築塗装作業 学科（真偽法・多肢択一法）", domain: "construction" },
   { code: "mekki2", name: "めっき技能士 2級", sub: "電気めっき作業 学科（真偽法・多肢択一法）", domain: "safety" },
   { code: "kinzoku-netsushori2", name: "金属熱処理技能士 2級", sub: "一般熱処理作業 学科（真偽法・多肢択一法）", domain: "safety" },
