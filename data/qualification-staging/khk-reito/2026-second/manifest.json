@@ -1,0 +1,25 @@
+{
+  "examCode": "khk-reito-2",
+  "qualification": "第二種冷凍機械",
+  "year": 2026,
+  "season": "annual",
+  "status": "source-verified-private",
+  "publicAllowed": false,
+  "targetQuestionCount": 40,
+  "sessions": {
+    "houki": 20,
+    "hoan": 10,
+    "gakushiki": 10
+  },
+  "publicationPolicy": "高圧ガス全区分が揃ってから一括公開。公開データ・登録・配信ローダーへ追加しない。",
+  "sourceIndex": "sources.json",
+  "answerKeys": "official-answer-keys.json",
+  "duplicateCheck": {
+    "main": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+    "mainQuestionCount": 0,
+    "ledgerStatus": "2026対象行なし",
+    "matchingOpenPullRequests": [],
+    "existingBranchTargetQuestionCount": 0,
+    "evidence": "tools/hp-fill-3/duplicate-check.json"
+  }
+}
