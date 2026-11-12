@@ -1725,6 +1725,7 @@ caremanager: {
     "end": 2024
   }
 },
+  "kikai-hozen-denki1": { code: "kikai-hozen-denki1", nameFull: "機械保全技能検定 1級（電気系保全作業 学科）", urlSlug: "kikai-hozen-denki1", level: "advanced", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科", categories: ["機械一般", "電気一般", "機械保全法一般", "材料一般", "安全衛生", "電気系保全法"] }], seasons: ["round2"], yearRange: { start: 2023, end: 2023 } },
 "kikai-hozen-setsubi1": {
   "code": "kikai-hozen-setsubi1",
   "nameFull": "機械保全技能検定 1級（設備診断作業 学科）",

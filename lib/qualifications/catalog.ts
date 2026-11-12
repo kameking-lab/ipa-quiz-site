@@ -45,6 +45,19 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
 {
+  "slug": "kikai-hozen-denki1",
+  "examCode": "kikai-hozen-denki1",
+  "shortName": "機械保全技能士 1級（電気系）",
+  "fullName": "機械保全技能検定 1級（電気系保全作業 学科）",
+  "domain": "electrical",
+  "administrator": "公益社団法人日本プラントメンテナンス協会",
+  "officialQuestionsUrl": "https://www.kikaihozenshi.jp/questions/",
+  "officialReuseTermsUrl": "https://www.kikaihozenshi.jp/questions/",
+  "status": "live",
+  "reuseSummary": "2023年度第2回の電気系保全作業1級学科50問を収録。公式正答、全肢の独自解説と原図で学べます。",
+  "remainingWork": []
+},
+{
   "slug": "kikai-hozen-setsubi1",
   "examCode": "kikai-hozen-setsubi1",
   "shortName": "機械保全技能士 1級（設備診断）",

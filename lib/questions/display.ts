@@ -74,7 +74,7 @@ export function formatQuestionAnswerForDisplay(question: Question, value: string
       choices.every(key => value.includes(key) && accepted.includes(key))) {
     return "全員正解";
   }
-  if (question.exam === "kikai-hozen-setsubi1" && choices.length === 2) {
+  if ((question.exam === "kikai-hozen-denki1" || question.exam === "kikai-hozen-setsubi1") && choices.length === 2) {
     return value === "ア" ? "○" : value === "イ" ? "×" : String(value);
   }
   const separator = question.type === "ordering" ? "→" : multiSeparator;
@@ -93,5 +93,5 @@ export function choiceImageAlt(exam: ExamCode, key: ChoiceKey): string | undefin
 
 /** 選択肢を原本どおり番号（電験一種・二種は(イ)〜(ヨ)、社労士はA〜E）で表示する試験（ア〜エ表記ではない）。 */
 export function usesNumberedChoices(exam: ExamCode): boolean {
-  return exam === "kikai-hozen3" || exam === "kikai-hozen-denki3" || exam === "kenchiku-daiku3" || exam === "kenchiku-daiku1" || exam === "tobi3" || exam === "tobi2" || exam === "denken3" || exam === "denken2" || exam === "denken1" || exam === "tohan" || exam === "eisei1" || exam === "eisei2" || exam === "soukan" || exam === "hoikushi" || exam === "kashikin" || PLAIN_NUMBER_CHOICE_EXAMS.includes(exam) || ALPHABET_CHOICE_EXAMS.includes(exam);
+  return exam === "kikai-hozen-denki1" || exam === "kikai-hozen3" || exam === "kikai-hozen-denki3" || exam === "kenchiku-daiku3" || exam === "kenchiku-daiku1" || exam === "tobi3" || exam === "tobi2" || exam === "denken3" || exam === "denken2" || exam === "denken1" || exam === "tohan" || exam === "eisei1" || exam === "eisei2" || exam === "soukan" || exam === "hoikushi" || exam === "kashikin" || PLAIN_NUMBER_CHOICE_EXAMS.includes(exam) || ALPHABET_CHOICE_EXAMS.includes(exam);
 }
