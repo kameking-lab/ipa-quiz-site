@@ -9,7 +9,7 @@ import { formatNumericAnswer } from "@/lib/questions/numeric";
 import { formatOrderingAnswer } from "@/lib/questions/ordering";
 import { parsePracticeSession, practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { ChoiceKey, ExamCode, Question } from "@/lib/questions/types";
-import { choiceDisplayLabel, questionNumberLabel } from "@/lib/questions/display";
+import { choiceDisplayLabel, formatQuestionAnswerForDisplay, questionNumberLabel } from "@/lib/questions/display";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
 import { ORG_ID, SITE_ID, STUDENT_AUDIENCE } from "@/lib/seo/structured-data";
 
@@ -180,7 +180,7 @@ export function buildQuestionJsonLd({
 
   // The administering body authored the question; this site authored the
   // learning explanation. Keep the author inline so the node is self-contained.
-  const releaseSource = ["mekki3", "kinzoku-netsushori3", "kinzoku-netsushori1", "kinzoku-netsushori2", "kojo-bankin3", "kojo-bankin1", "fujin-kodomofuku1", "fujin-kodomofuku2", "toso1", "benrishi", "sokuryoshi", "dokugeki-chiba", "jokaso-setsubishi", "chiiki-ryoko", "junkango-kansai", "kukaku-seiri", "dojo-osen", "kenchikushi2", "mokuzo-kenchikushi", "kenchikushi1", "khk-kagaku", "sekou-1kenchiku", "chintai", "kyusui", "biru-kan", "gijutsushi1-kikai", "hoshasen-1", "hoshasen-2", "energy-kanri", "career-consultant", "kanri-eiyoshi", "sogo-ryoko", "shiho-tanto", "yobi-tanto", "sokuryoshiho", "caremanager", "kikai-hozen", "denshi-kiki-kumitate1", "denshi-kiki-kumitate3", "tekko2", "tekko1", "denshi-kiki-kumitate2", "kojo-bankin2", "kensetsu-kikai-seibi2", "hyoso2", "tobi1", "tobi3", "kenchiku-daiku1", "kenchiku-daiku3", "kenchiku-daiku2", "shashin2", "kikinzoku-soshin2", "tsukanshi"].includes(q.exam) ? getQualificationByExamCode(q.exam) : undefined;
+  const releaseSource = ["mekki1", "mekki3", "kinzoku-netsushori3", "kinzoku-netsushori1", "kinzoku-netsushori2", "kojo-bankin3", "kojo-bankin1", "fujin-kodomofuku1", "fujin-kodomofuku2", "toso1", "benrishi", "sokuryoshi", "dokugeki-chiba", "jokaso-setsubishi", "chiiki-ryoko", "junkango-kansai", "kukaku-seiri", "dojo-osen", "kenchikushi2", "mokuzo-kenchikushi", "kenchikushi1", "khk-kagaku", "sekou-1kenchiku", "chintai", "kyusui", "biru-kan", "gijutsushi1-kikai", "hoshasen-1", "hoshasen-2", "energy-kanri", "career-consultant", "kanri-eiyoshi", "sogo-ryoko", "shiho-tanto", "yobi-tanto", "sokuryoshiho", "caremanager", "kikai-hozen", "denshi-kiki-kumitate1", "denshi-kiki-kumitate3", "tekko2", "tekko1", "denshi-kiki-kumitate2", "kojo-bankin2", "kensetsu-kikai-seibi2", "hyoso2", "tobi1", "tobi3", "kenchiku-daiku1", "kenchiku-daiku3", "kenchiku-daiku2", "shashin2", "kikinzoku-soshin2", "tsukanshi"].includes(q.exam) ? getQualificationByExamCode(q.exam) : undefined;
   const questionAuthor = releaseSource
     ? { "@type": "Organization", name: releaseSource.administrator, url: new URL(releaseSource.officialQuestionsUrl).origin }
     : q.exam === "kisho"
@@ -355,7 +355,7 @@ export function buildQuestionJsonLd({
   // The accepted answer links to the in-page explanation anchor (#explanation).
   const acceptedAnswers = answerKeys.map(answerKey => ({
     "@type": "Answer",
-    text: q.type === "native-b" ? formatNativeBAnswer(q.nativeB!) : q.type === "ordering" ? formatOrderingAnswer(q.exam, q.answer as ChoiceKey[]) : q.type === "numeric" ? formatNumericAnswer(q, String(answerKey)) : q.choices?.[answerKey as ChoiceKey] ? `${choiceDisplayLabel(q.exam, answerKey as ChoiceKey)}: ${q.choices[answerKey as ChoiceKey]}` : String(answerKey),
+    text: q.type === "native-b" ? formatNativeBAnswer(q.nativeB!) : q.type === "ordering" ? formatOrderingAnswer(q.exam, q.answer as ChoiceKey[]) : q.type === "numeric" ? formatNumericAnswer(q, String(answerKey)) : q.choices?.[answerKey as ChoiceKey] ? `${q.exam === "mekki1" ? formatQuestionAnswerForDisplay(q, answerKey) : choiceDisplayLabel(q.exam, answerKey as ChoiceKey)}: ${q.choices[answerKey as ChoiceKey]}` : String(answerKey),
     inLanguage: "ja",
     url: `${pageUrlAbs}#explanation`,
     author: siteAuthor,
