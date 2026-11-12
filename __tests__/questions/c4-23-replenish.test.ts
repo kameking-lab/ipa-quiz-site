@@ -13,6 +13,7 @@ import type { ExamCode } from "@/lib/questions/types";
 // Independently read left/right answer-table rows, in original order.
 const sets: { code: ExamCode; year: number; a: string; b: string; figures: number }[] = [
   { code: "tekko2", year: 2024, a: "○○×××○××○×○○○○×○○○○○○○○○○", b: "ロロイハニハハロハニハニロニハロイハロロロハハロロ", figures: 4 },
+  { code: "tekko2", year: 2023, a: "○○○×○○○×○×○○××○○×○○×○××××", b: "ハロハロロニニイイニハイハロハロロイハロニハイイハ", figures: 6 },
 ];
 
 describe.each(sets)("c4-23 $code $year early", ({ code, year, a, b, figures }) => {
