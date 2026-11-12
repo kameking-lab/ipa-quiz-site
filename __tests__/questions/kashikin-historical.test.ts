@@ -5,6 +5,7 @@ import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 // 日本貸金業協会の各回正答PDFを問題番号順に転記。
 const officialAnswers: Record<number, string> = {
   2019: "22234143331122144111342343413243432213143244332412",
+  2018: "21432413331311244243134342231431432132414324211424",
 };
 
 describe("貸金業務取扱主任者の追加年度", () => {
