@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { readFileSync, existsSync } from "node:fs";
 import path from "node:path";
 import { KYOKA_PLASTIC1_QUESTIONS } from "@/data/questions/kyoka-plastic1";
+import { KAGAKU_BUNSEKI2_QUESTIONS } from "@/data/questions/kagaku-bunseki2";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
@@ -14,6 +15,10 @@ import type { ChoiceKey } from "@/lib/questions/types";
 
 // 公式正答表を5問ずつ別途読み取り、内部キー・画面表示・構造化データを照合する。
 const editions = [
+  { exam: "kagaku-bunseki2" as const, year: 2024, rows: KAGAKU_BUNSEKI2_QUESTIONS.filter(q => q.year === 2024),
+    answers: "×○×○○" + "○○××○" + "○×○×○" + "○○×○○" + "×○××○"
+      + "ロロロハロ" + "イニハニハ" + "イニニニイ" + "ロイイロロ" + "イハロハロ",
+    pages: [...Array(15).fill(2), ...Array(10).fill(3), ...Array(6).fill(4), ...Array(5).fill(5), ...Array(6).fill(6), ...Array(6).fill(7), ...Array(2).fill(8)], figures: [] as number[] },
   { exam: "kyoka-plastic1" as const, year: 2023, rows: KYOKA_PLASTIC1_QUESTIONS,
     answers: "○○○○×" + "○○○○○" + "×○××○" + "××○××" + "○××○○"
       + "イイロイハ" + "ニロニハニ" + "ロハニニハ" + "ロハイハハ" + "ニイロロロ",
