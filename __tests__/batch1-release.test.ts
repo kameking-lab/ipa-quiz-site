@@ -17,7 +17,10 @@ describe("batch 1 complete public registry", () => {
         ? report.pe.filter(paper => new Set<string>(row.nativePapers).has(paper.id)).reduce((sum, paper) => sum + paper.scored, 0)
         : row.codes.reduce((sum, code) => sum + Object.entries(report.rows.find(entry => entry.code === code)!.periodCounts)
           .filter(([period]) => !row.session || period.endsWith(`/${row.session}`)).reduce((count, [, value]) => count + value, 0), 0);
-      expect(actual, row.name).toBe(row.expected);
+      // 初回出荷の記録は保持し、今回の公開補充分を加算する。
+      const additions: Record<string, number> = { "biru-kan": 180, "yamaguchi-seika": 66 };
+      const replenished = row.codes.reduce((sum, code) => sum + (additions[code] ?? 0), 0);
+      expect(actual, row.name).toBe(row.expected + replenished);
       for (const code of row.codes) {
         for (const question of (QUESTIONS_BY_EXAM[code as ExamCode] ?? []).filter(isPracticeReadyQuestion)) {
           if (question.type === "multiple-choice") expect(getChoiceKeys(question.choices).length, question.id).toBe(Object.keys(question.choices ?? {}).length);
