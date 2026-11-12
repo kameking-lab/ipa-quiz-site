@@ -22,6 +22,8 @@ const ALPHABET_CHOICE_EXAMS: readonly ExamCode[] = ["sharoushi"];
 const ALPHABET_LABELS = ["A", "B", "C", "D", "E"] as const;
 
 export function choiceDisplayLabel(exam: ExamCode, key: ChoiceKey): string {
+  // 3級建築大工は全問が真偽法。正答表示も公式の○・×に合わせる。
+  if (exam === "kenchiku-daiku3") return key === "ア" ? "○" : key === "イ" ? "×" : key;
   if (exam === "shika-ishi") {
     const index = IROHA_CHOICE_KEYS.indexOf(key);
     return index >= 0 ? String.fromCharCode(97 + index) : key;
@@ -29,6 +31,10 @@ export function choiceDisplayLabel(exam: ExamCode, key: ChoiceKey): string {
   if (ALPHABET_CHOICE_EXAMS.includes(exam)) {
     const index = DENKEN_CHOICE_KEYS.indexOf(key);
     return index >= 0 ? ALPHABET_LABELS[index] : key;
+  }
+  if (exam === "tobi1" || exam === "kenchiku-daiku1" || exam === "kenchiku-daiku2") {
+    const index = IROHA_CHOICE_KEYS.indexOf(key);
+    return index >= 0 ? IROHA_LABELS[index] : key;
   }
   if (exam === "denken2" || exam === "denken1") {
     const index = IROHA_CHOICE_KEYS.indexOf(key);
@@ -75,5 +81,5 @@ export function choiceImageAlt(exam: ExamCode, key: ChoiceKey): string | undefin
 
 /** 選択肢を原本どおり番号（電験一種・二種は(イ)〜(ヨ)、社労士はA〜E）で表示する試験（ア〜エ表記ではない）。 */
 export function usesNumberedChoices(exam: ExamCode): boolean {
-  return exam === "denken3" || exam === "denken2" || exam === "denken1" || exam === "tohan" || exam === "eisei1" || exam === "eisei2" || exam === "soukan" || exam === "hoikushi" || exam === "kashikin" || PLAIN_NUMBER_CHOICE_EXAMS.includes(exam) || ALPHABET_CHOICE_EXAMS.includes(exam);
+  return exam === "kenchiku-daiku3" || exam === "kenchiku-daiku1" || exam === "kenchiku-daiku2" || exam === "tobi1" || exam === "denken3" || exam === "denken2" || exam === "denken1" || exam === "tohan" || exam === "eisei1" || exam === "eisei2" || exam === "soukan" || exam === "hoikushi" || exam === "kashikin" || PLAIN_NUMBER_CHOICE_EXAMS.includes(exam) || ALPHABET_CHOICE_EXAMS.includes(exam);
 }

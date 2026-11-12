@@ -164,6 +164,10 @@ export const EXAM_LABELS: Record<string, string> = {
     "yobi-tanto": "予備試験（短答）",
     "sokuryoshiho": "測量士補",
     "caremanager": "ケアマネ試験",
+    "kenchiku-daiku3": "建築大工技能士 3級",
+    "kenchiku-daiku1": "建築大工技能士 1級",
+    "kenchiku-daiku2": "建築大工技能士 2級",
+    tobi1: "とび技能士 1級",
     "kikai-hozen": "機械保全技能士 2級",
     "tsukanshi": "通関士"
 };

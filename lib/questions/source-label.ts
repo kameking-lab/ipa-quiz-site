@@ -43,6 +43,12 @@ const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string,
 };
 
 export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl"> & Partial<Pick<Question, "exam" | "fiscalYear">>): string {
+  if (q.exam === "kenchiku-daiku3" && q.year === 2025 && q.season === "early") {
+    return "2025年度前期（2025年7月13日実施）";
+  }
+  if ((q.exam === "kenchiku-daiku1" || q.exam === "kenchiku-daiku2") && q.year === 2025 && q.season === "late") {
+    return "2025年度後期（2026年2月8日実施）";
+  }
   if (q.exam === "junkango-kansai") {
     return q.fiscalYear !== undefined
       ? `令和${q.fiscalYear - 2018}年度（${q.year}年実施）`
