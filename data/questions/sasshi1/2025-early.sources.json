@@ -539,5 +539,39 @@
       "allChoicesChecked": true,
       "hasFigure": false
     }
-  ]
+  ],
+  "strictReview": {
+    "step": "c4r-A5",
+    "reviewedAt": "2026-11-13T08:35:52.304540+09:00",
+    "questionCount": 50,
+    "choiceExplanationCount": 150,
+    "officialPdfRefetched": true,
+    "officialPdfHashesUnchanged": true,
+    "officialAnswersMatched": 50,
+    "officialAnswersChanged": 0,
+    "figuresChecked": 3,
+    "idsAndNumberingChecked": true,
+    "corrections": [
+      {
+        "id": "sasshi1-2025-early-gakka-b-022",
+        "note": "原本PDF7頁：手前側の「側」脱落を復元"
+      },
+      {
+        "id": "sasshi1-2025-early-gakka-b-011",
+        "note": "公式本文・正答を維持し、ゴンドラ安全規則9・21・27条に基づき検査証と自主検査の期間を注記"
+      }
+    ],
+    "supplementalSources": [
+      {
+        "url": "https://www.mhlw.go.jp/content/11201250/001197196.pdf",
+        "section": "ゴンドラ安全規則第9・27条（PDF56・57頁）",
+        "questionId": "sasshi1-2025-early-gakka-b-011"
+      },
+      {
+        "url": "https://jsite.mhlw.go.jp/shizuoka-roudoukyoku/content/contents/002240385.pdf",
+        "section": "ゴンドラ定期自主検査（第21条）：月1回",
+        "questionId": "sasshi1-2025-early-gakka-b-011"
+      }
+    ]
+  }
 }

@@ -539,5 +539,38 @@
       "allChoicesChecked": true,
       "hasFigure": false
     }
-  ]
+  ],
+  "strictReview": {
+    "step": "c4r-A5",
+    "reviewedAt": "2026-11-13T08:35:52.228003+09:00",
+    "questionCount": 50,
+    "choiceExplanationCount": 150,
+    "officialPdfRefetched": true,
+    "officialPdfHashesUnchanged": true,
+    "officialAnswersMatched": 50,
+    "officialAnswersChanged": 0,
+    "figuresChecked": 2,
+    "idsAndNumberingChecked": true,
+    "corrections": [
+      {
+        "id": "sasshi2-2024-early-gakka-b-014",
+        "note": "原本PDF6頁：方向の内のり寸法の「の内」を復元（解説も同期）"
+      },
+      {
+        "id": "sasshi2-2024-early-gakka-a-005",
+        "note": "のこ刃の問題を枠を含む工具全長の問題とした解説を修正"
+      },
+      {
+        "id": "sasshi2-2024-early-gakka-b-025",
+        "note": "労働安全衛生規則528条を確認し、正答の反復だけだった解説に75度以下の根拠を補足"
+      }
+    ],
+    "supplementalSources": [
+      {
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=9",
+        "section": "労働安全衛生規則第528条",
+        "questionId": "sasshi2-2024-early-gakka-b-025"
+      }
+    ]
+  }
 }
