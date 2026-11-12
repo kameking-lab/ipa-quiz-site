@@ -1530,6 +1530,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：中央職業能力開発協会 令和7年度前期 2級工場板金（曲げ板金作業）学科試験。解説は過去問AIの独自作成。",
     remainingWork: [],
 },
+{"slug": "denshi-kiki-kumitate1", "examCode": "denshi-kiki-kumitate1", "shortName": "電子機器組立て技能士 1級", "fullName": "技能検定 1級電子機器組立て（電子機器組立て作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科（A群 真偽法・B群 多肢択一法）。公式正答、全肢の独自解説と原図を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
 {
     slug: "denshi-kiki-kumitate2", examCode: "denshi-kiki-kumitate2", shortName: "電子機器組立て技能士 2級", fullName: "技能検定 2級電子機器組立て（電子機器組立て作業）学科試験",
     domain: "electrical", administrator: "中央職業能力開発協会",

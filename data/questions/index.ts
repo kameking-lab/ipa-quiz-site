@@ -1,3 +1,4 @@
+import { DENSHI_KIKI_KUMITATE1_QUESTIONS } from "./denshi-kiki-kumitate1";
 import { FUJIN_KODOMOFUKU2_QUESTIONS } from "./fujin-kodomofuku2";
 import { FUJIN_KODOMOFUKU1_QUESTIONS } from "./fujin-kodomofuku1";
 import { TOSO1_QUESTIONS } from "./toso1";
@@ -344,6 +345,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("yobi-tanto") ? { "yobi-tanto": YOBI_TANTO_QUESTIONS } : {}),
 ...(isExamPublished("sokuryoshiho") ? { "sokuryoshiho": SOKURYOSHIHO_QUESTIONS } : {}),
 ...(isExamPublished("caremanager") ? { "caremanager": CAREMANAGER_QUESTIONS } : {}),
+...(isExamPublished("denshi-kiki-kumitate1") ? { "denshi-kiki-kumitate1": DENSHI_KIKI_KUMITATE1_QUESTIONS } : {}),
 ...(isExamPublished("denshi-kiki-kumitate2") ? { "denshi-kiki-kumitate2": DENSHI_KIKI_KUMITATE2_QUESTIONS } : {}),
 ...(isExamPublished("kojo-bankin2") ? { "kojo-bankin2": KOJO_BANKIN2_QUESTIONS } : {}),
 ...(isExamPublished("kensetsu-kikai-seibi2") ? { "kensetsu-kikai-seibi2": KENSETSU_KIKAI_SEIBI2_QUESTIONS } : {}),

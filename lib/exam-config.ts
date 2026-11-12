@@ -1728,6 +1728,7 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["せん断", "曲げ加工", "金型", "展開図", "板取り", "接合", "ひずみ取り", "製図", "工作機械", "研削", "測定", "表面処理", "電気", "安全衛生", "工具", "絞り加工", "品質管理", "レーザ加工", "材料"] }],
     seasons: ["early"], yearRange: { start: 2025, end: 2025 },
 },
+"denshi-kiki-kumitate1": {"code": "denshi-kiki-kumitate1", "nameFull": "技能検定 1級電子機器組立て（電子機器組立て作業）学科試験", "urlSlug": "denshi-kiki-kumitate1", "level": "advanced", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "学科（A群 真偽法・B群 多肢択一法）", "categories": ["電子部品・回路", "電気理論", "情報処理", "実装・接続", "工作・測定", "品質管理", "材料・製図", "安全衛生"]}], "seasons": ["early"], "yearRange": {"start": 2024, "end": 2024}},
 "denshi-kiki-kumitate2": {
     code: "denshi-kiki-kumitate2", nameFull: "技能検定 2級電子機器組立て（電子機器組立て作業）学科試験", urlSlug: "denshi-kiki-kumitate2", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["電子部品", "通信", "電子機器", "電気理論", "組立て作業", "はんだ付け", "工具", "測定", "材料", "製図", "安全衛生", "電子回路", "関係法規", "品質管理"] }],
