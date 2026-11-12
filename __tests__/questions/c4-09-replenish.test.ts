@@ -16,12 +16,13 @@ const sets: { code: ExamCode; year: number; season: string; count: number; figur
 ];
 
 describe.each(sets)("c4-09 $code", ({ code, year, season, count, figures }) => {
-  const questions = QUESTIONS_BY_EXAM[code]!;
+  const allQuestions = QUESTIONS_BY_EXAM[code]!;
+  const questions = allQuestions.filter(q => q.year === year && q.season === season);
   const source = JSON.parse(readFileSync(path.join(process.cwd(), `data/questions/${code}/sources-${year}-${season}.json`), "utf8"));
 
   it("loads the complete sitting through both application entry points", async () => {
     expect(questions).toHaveLength(count);
-    expect(await getQuestionsForExam(code)).toEqual(questions);
+    expect(await getQuestionsForExam(code)).toEqual(allQuestions);
     expect(EXAM_CONFIGS[code].sessions[0].expectedQuestions).toBe(count);
     expect(questions.map(q => q.qNumber)).toEqual(Array.from({ length: count }, (_, i) => i + 1));
     expect(new Set(questions.map(q => q.id)).size).toBe(count);
