@@ -18,6 +18,12 @@ vi.mock("@/components/pwa/MobileInstallControl", () => ({ MobileInstallControl: 
 beforeEach(() => { state.account = { id: "local-test" }; localStorage.clear(); });
 afterEach(cleanup);
 
+it("keeps the bottom menu off the logout confirmation", () => {
+  state.pathname = "/auth/signout";
+  render(<AccountNavigationProvider><MobileBottomNav /></AccountNavigationProvider>);
+  expect(screen.queryByRole("navigation", { name: "モバイル底タブ" })).not.toBeInTheDocument();
+});
+
 it.each(["/", "/search", "/e-learning/exams", "/quiz", "/q/ip/2024-cbt/am/q12"])("opens the account from %s with two taps", async pathname => {
   state.pathname = pathname;
   render(<AccountNavigationProvider><SiteHeader /></AccountNavigationProvider>);

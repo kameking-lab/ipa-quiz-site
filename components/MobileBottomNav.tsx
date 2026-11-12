@@ -107,7 +107,8 @@ export function MobileBottomNav() {
   // Hide the bottom tab bar inside focused learning flows (/quiz*, /q/*): those
   // render their own fixed bottom-0 CTA bar that this nav would overlap and
   // whose taps it would intercept on mobile (致命傷⑨). Hooks above run first.
-  if (isLearningFocusRoute(pathname)) return null;
+  // Keep the sign-out confirmation controls clear on short phone screens too.
+  if (isLearningFocusRoute(pathname) || pathname === "/auth/signout") return null;
 
   return (
     <>
