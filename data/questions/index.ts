@@ -1,3 +1,4 @@
+import { KIKAI_HOZEN_DENKI3_QUESTIONS } from "./kikai-hozen-denki3";
 import { KIKAI_HOZEN3_QUESTIONS } from "./kikai-hozen3";
 import { TOBI2_QUESTIONS } from "./tobi2";
 import { TOBI3_QUESTIONS } from "./tobi3";
@@ -156,6 +157,7 @@ import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
 import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+...(isExamPublished("kikai-hozen-denki3") ? { "kikai-hozen-denki3": KIKAI_HOZEN_DENKI3_QUESTIONS } : {}),
 ...(isExamPublished("kikai-hozen3") ? { "kikai-hozen3": KIKAI_HOZEN3_QUESTIONS } : {}),
 ...(isExamPublished("unko-kanrisha-ryokaku") ? { "unko-kanrisha-ryokaku": UNKO_KANRISHA_RYOKAKU.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("shobo-setsubishi-kou1") ? { "shobo-setsubishi-kou1": SHOBO_SETSUBISHI_KOU1.filter(isPracticeReadyQuestion) } : {}),

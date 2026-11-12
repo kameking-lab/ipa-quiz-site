@@ -1755,6 +1755,35 @@ caremanager: {
     "end": 2025
   }
 },
+"kikai-hozen-denki3": {
+  "code": "kikai-hozen-denki3",
+  "nameFull": "機械保全技能検定 3級（電気系保全作業 学科）",
+  "urlSlug": "kikai-hozen-denki3",
+  "level": "basic",
+  "sessions": [
+    {
+      "session": "gakka",
+      "urlSlug": "gakka",
+      "expectedQuestions": 30,
+      "label": "学科（真偽法30問）",
+      "categories": [
+        "機械一般",
+        "電気一般",
+        "機械保全法一般",
+        "材料一般",
+        "安全衛生",
+        "電気系保全法"
+      ]
+    }
+  ],
+  "seasons": [
+    "round1"
+  ],
+  "yearRange": {
+    "start": 2025,
+    "end": 2025
+  }
+},
 "tobi3": {
   "code": "tobi3",
   "nameFull": "技能検定 3級とび（とび作業）学科試験",

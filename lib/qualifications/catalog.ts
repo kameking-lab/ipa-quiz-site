@@ -45,6 +45,19 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
 {
+  "slug": "kikai-hozen-denki3",
+  "examCode": "kikai-hozen-denki3",
+  "shortName": "機械保全技能士 3級（電気系）",
+  "fullName": "機械保全技能検定 3級（電気系保全作業 学科）",
+  "domain": "safety",
+  "administrator": "公益社団法人日本プラントメンテナンス協会",
+  "officialQuestionsUrl": "https://www.kikaihozenshi.jp/questions/",
+  "officialReuseTermsUrl": "https://www.kikaihozenshi.jp/questions/",
+  "status": "live",
+  "reuseSummary": "2025年度の3級電気系保全作業学科を収録。公式問題・正答、全肢の独自解説と原図で学べます。",
+  "remainingWork": []
+},
+{
   "slug": "kikai-hozen3",
   "examCode": "kikai-hozen3",
   "shortName": "機械保全技能士 3級（機械系）",
