@@ -1725,6 +1725,48 @@ caremanager: {
     "end": 2024
   }
 },
+"tobi3": {
+  "code": "tobi3",
+  "nameFull": "技能検定 3級とび（とび作業）学科試験",
+  "urlSlug": "tobi3",
+  "level": "basic",
+  "sessions": [
+    {
+      "session": "gakka",
+      "urlSlug": "gakka",
+      "expectedQuestions": 30,
+      "label": "学科（真偽法30問）",
+      "categories": [
+        "安全衛生",
+        "仮設工事",
+        "土工事",
+        "基礎工事",
+        "鉄骨工事",
+        "コンクリート工事",
+        "重量物運搬",
+        "曳き家工事",
+        "玉掛け",
+        "揚重機",
+        "製図",
+        "力学",
+        "工具",
+        "建築構造",
+        "関係法規",
+        "木造工事",
+        "材料",
+        "解体工事",
+        "建設機械"
+      ]
+    }
+  ],
+  "seasons": [
+    "early"
+  ],
+  "yearRange": {
+    "start": 2024,
+    "end": 2024
+  }
+},
 tsukanshi: {
     code: "tsukanshi", nameFull: "通関士試験", urlSlug: "tsukanshi", level: "advanced",
     sessions: [

@@ -45,6 +45,19 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
 {
+  "slug": "tobi3",
+  "examCode": "tobi3",
+  "shortName": "とび技能士 3級",
+  "fullName": "技能検定 3級とび（とび作業）学科試験",
+  "domain": "safety",
+  "administrator": "中央職業能力開発協会",
+  "officialQuestionsUrl": "https://www.kentei.javada.or.jp/",
+  "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/",
+  "status": "live",
+  "reuseSummary": "2024年度前期の3級とび（とび作業）学科を収録。公式問題・正答、全肢の独自解説と必要な原図を確認できます。",
+  "remainingWork": []
+},
+{
   "slug": "tobi2",
   "examCode": "tobi2",
   "shortName": "とび技能士 2級",

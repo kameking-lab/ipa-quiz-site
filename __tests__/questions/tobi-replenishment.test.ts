@@ -2,6 +2,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { TOBI2_QUESTIONS } from "@/data/questions/tobi2";
+import { TOBI3_QUESTIONS } from "@/data/questions/tobi3";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { choiceDisplayLabel, questionNumberLabel } from "@/lib/questions/display";
@@ -68,5 +69,25 @@ describe("とび技能士 追加原本の採点・原図・演習接続", () => 
     expect(q.hasImage).toBe(false);
     expect(isPracticeReadyQuestion(q)).toBe(true);
     expect(isPracticeReadyQuestion({ ...q, question: "次の図に示すものはどれか。" })).toBe(false);
+  });
+  it("3級2024年度は群を作らず、真偽法30問の公式正答で採点する", async () => {
+    const official = "××○××○××○○○×○○○×○××××○×○○×○○×○";
+    expect(TOBI3_QUESTIONS).toHaveLength(30);
+    expect(official).toHaveLength(30);
+    TOBI3_QUESTIONS.forEach((q, i) => {
+      expect(q.qNumber).toBe(i + 1);
+      expect(q.officialQuestionLabel).toBe(String(i + 1));
+      expect(q.id).toBe(`tobi3-2024-early-gakka-${String(i + 1).padStart(3, "0")}`);
+      expect(q.officialAnswerNumber).toBe(official[i]);
+      expect(q.answer).toBe(official[i] === "○" ? "ア" : "イ");
+      expect(q.choices).toEqual({ ア: "正しい（○）", イ: "誤り（×）" });
+      expect(Object.keys(q.choiceExplanations ?? {})).toHaveLength(2);
+      expect(q.hasImage).toBe(false);
+      expect(isPracticeReadyQuestion(q)).toBe(true);
+    });
+    expect(QUESTIONS_BY_EXAM.tobi3).toEqual(TOBI3_QUESTIONS);
+    expect(await getQuestionsForExam("tobi3")).toEqual(TOBI3_QUESTIONS);
+    expect(EXAM_CONFIGS.tobi3.sessions[0].expectedQuestions).toBe(30);
+    expect(EXAM_CONFIGS.tobi3.sessions[0].label).toBe("学科（真偽法30問）");
   });
 });
