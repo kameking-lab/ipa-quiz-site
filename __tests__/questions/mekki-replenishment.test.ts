@@ -86,6 +86,14 @@ describe("電気めっきの公式正答・表示・演習経路", () => {
     expect(q.imageAltTexts?.[0]).toContain("100mm");
     expect(readFileSync(path.join(process.cwd(), "public", q.imageUrls![0])).length).toBeGreaterThan(1000);
   });
+  it("1級2023年度の素材名とスラッジ初期質量を原本どおり保持する", () => {
+    const questions = MEKKI1_QUESTIONS.filter(q => q.year === 2023);
+    expect(questions.find(q => q.qNumber === 26)?.choices?.イ).toContain("銅の防食");
+    const sludge = questions.find(q => q.qNumber === 30)!;
+    expect(sludge.question).toContain("スラッジ1t");
+    expect(sludge.explanation).toContain("100÷0.40＝250kg");
+    expect(sludge.officialAnswerNumber).toBe("ロ");
+  });
   it("表面処理の本文を欠落した表と誤認せず、本当の表の欠落は検出する", () => {
     const q = MEKKI2_QUESTIONS.find(q => q.year === 2024 && q.qNumber === 46)!;
     expect(q.question).toContain("次の表面処理");
