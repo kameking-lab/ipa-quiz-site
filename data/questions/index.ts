@@ -20,6 +20,7 @@ import { CHIKURO1_QUESTIONS } from "./chikuro1";
 import { FUTSU_SENBAN1_QUESTIONS } from "./futsu-senban1";
 import { SHASHUTSU1_QUESTIONS } from "./shashutsu1";
 import { SHASHUTSU2_QUESTIONS } from "./shashutsu2";
+import { KIKAI_KENSA3_QUESTIONS } from "./kikai-kensa3";
 import { KAGAKU_BUNSEKI2_QUESTIONS } from "./kagaku-bunseki2";
 import { ENGEI_SOSHOKU1_QUESTIONS } from "./engei-soshoku1";
 import { ENGEI_SOSHOKU3_QUESTIONS } from "./engei-soshoku3";
@@ -219,6 +220,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("futsu-senban1") ? { "futsu-senban1": FUTSU_SENBAN1_QUESTIONS } : {}),
 ...(isExamPublished("shashutsu1") ? { "shashutsu1": SHASHUTSU1_QUESTIONS } : {}),
 ...(isExamPublished("shashutsu2") ? { "shashutsu2": SHASHUTSU2_QUESTIONS } : {}),
+...(isExamPublished("kikai-kensa3") ? { "kikai-kensa3": KIKAI_KENSA3_QUESTIONS } : {}),
 ...(isExamPublished("kagaku-bunseki2") ? { "kagaku-bunseki2": KAGAKU_BUNSEKI2_QUESTIONS } : {}),
 ...(isExamPublished("engei-soshoku1") ? { "engei-soshoku1": ENGEI_SOSHOKU1_QUESTIONS } : {}),
 ...(isExamPublished("engei-soshoku3") ? { "engei-soshoku3": ENGEI_SOSHOKU3_QUESTIONS } : {}),
