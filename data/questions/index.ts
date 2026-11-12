@@ -3,6 +3,8 @@ import { KINZOKU_NETSUSHORI3_QUESTIONS } from "./kinzoku-netsushori3";
 import { KOJO_BANKIN3_QUESTIONS } from "./kojo-bankin3";
 import { KOJO_BANKIN2_QUESTIONS } from "./kojo-bankin2";
 import { MEKKI2_QUESTIONS } from "./mekki2";
+import { FLOWER1_QUESTIONS } from "./flower1";
+import { FLOWER3_QUESTIONS } from "./flower3";
 import { KAGU3_QUESTIONS } from "./kagu3";
 import { KAGU1_QUESTIONS } from "./kagu1";
 import { KAGU2_QUESTIONS } from "./kagu2";
@@ -183,6 +185,8 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("kojo-bankin3") ? { "kojo-bankin3": KOJO_BANKIN3_QUESTIONS } : {}),
 ...(isExamPublished("kojo-bankin2") ? { "kojo-bankin2": KOJO_BANKIN2_QUESTIONS } : {}),
 ...(isExamPublished("mekki2") ? { "mekki2": MEKKI2_QUESTIONS } : {}),
+...(isExamPublished("flower1") ? { "flower1": FLOWER1_QUESTIONS } : {}),
+...(isExamPublished("flower3") ? { "flower3": FLOWER3_QUESTIONS } : {}),
 ...(isExamPublished("kagu3") ? { "kagu3": KAGU3_QUESTIONS } : {}),
 ...(isExamPublished("kagu1") ? { "kagu1": KAGU1_QUESTIONS } : {}),
 ...(isExamPublished("kagu2") ? { "kagu2": KAGU2_QUESTIONS } : {}),
