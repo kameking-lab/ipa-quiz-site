@@ -52,7 +52,7 @@ export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sou
   if (q.exam === "toso2" && q.year === 2025 && q.season === "early") {
     return "2025年度前期（2025年8月24日実施）";
   }
-  if ((q.exam === "kagu2" || q.exam === "tekko2") && q.year === 2025 && q.season === "early") {
+  if ((q.exam === "diecast2" || q.exam === "kagu2" || q.exam === "tekko2") && q.year === 2025 && q.season === "early") {
     return "2025年度前期（2025年8月31日実施）";
   }
   if (q.exam === "mekki2" && q.year === 2025 && q.season === "early") {

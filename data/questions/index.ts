@@ -151,6 +151,7 @@ import { FLOWER2_QUESTIONS } from "./flower2";
 import { FUJIN_KODOMOFUKU2_QUESTIONS } from "./fujin-kodomofuku2";
 import { TOSO2_QUESTIONS } from "./toso2";
 import { KAGU2_QUESTIONS } from "./kagu2";
+import { DIECAST2_QUESTIONS } from "./diecast2";
 import { TEKKO2_QUESTIONS } from "./tekko2";
 import { MEKKI2_QUESTIONS } from "./mekki2";
 import { KINZOKU_NETSUSHORI2_QUESTIONS } from "./kinzoku-netsushori2";
@@ -333,6 +334,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("fujin-kodomofuku2") ? { "fujin-kodomofuku2": FUJIN_KODOMOFUKU2_QUESTIONS } : {}),
 ...(isExamPublished("toso2") ? { "toso2": TOSO2_QUESTIONS } : {}),
 ...(isExamPublished("kagu2") ? { "kagu2": KAGU2_QUESTIONS } : {}),
+...(isExamPublished("diecast2") ? { "diecast2": DIECAST2_QUESTIONS } : {}),
 ...(isExamPublished("tekko2") ? { "tekko2": TEKKO2_QUESTIONS } : {}),
 ...(isExamPublished("mekki2") ? { "mekki2": MEKKI2_QUESTIONS } : {}),
 ...(isExamPublished("kinzoku-netsushori2") ? { "kinzoku-netsushori2": KINZOKU_NETSUSHORI2_QUESTIONS } : {}),
