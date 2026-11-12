@@ -1693,6 +1693,11 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["塗料・乾燥", "塗装方法・工具", "色彩・測色", "塗膜試験・欠陥", "養生・施工", "研磨・材料", "溶剤・安全衛生", "建築材料・構造", "素地調整・仕様"] }],
     seasons: ["early"], yearRange: { start: 2025, end: 2025 },
 },
+"kagu2": {
+    code: "kagu2", nameFull: "技能検定 2級家具製作（家具手加工作業）学科試験", urlSlug: "kagu2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["家具の種類・構造", "製図・測定", "電気・安全衛生", "法令・環境", "接合・組立て", "木材・木質材料", "手工具", "研磨・塗装", "木工機械・加工"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
 "tekko2": {
     code: "tekko2", nameFull: "技能検定 2級鉄工（製缶作業）学科試験", urlSlug: "tekko2", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["測定・けがき", "曲げ・ひずみ矯正", "穴あけ・切断", "溶接", "材料・熱処理", "材料試験・品質管理", "工作機械・工具", "製図・展開", "安全衛生・法令", "製缶・ボイラー", "非破壊検査", "電気基礎"] }],
