@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import { createHash } from "node:crypto";
 import { KENCHIKU_DAIKU1_QUESTIONS } from "@/data/questions/kenchiku-daiku1";
+import { KENCHIKU_DAIKU3_QUESTIONS } from "@/data/questions/kenchiku-daiku3";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
@@ -57,5 +58,16 @@ describe("Q4-013 建築大工1級2023年度後期", () => {
     expect(qs[24].explanation).toContain("75度");
     expect(qs[38].choiceExplanations?.イ).toContain("作業床下");
     expect(qs[48].answer).toBe("ウ");
+  });
+});
+
+describe("Q4-014 建築大工3級2023年度前期", () => {
+  const qs = KENCHIKU_DAIKU3_QUESTIONS.filter(q => q.year === 2023 && q.season === "early");
+  checkSitting("kenchiku-daiku3", "early", qs, "××○○○×○○○○○○○○○○○×○×○×○××○×○××");
+
+  it("木口と縮尺、はしご道の数値を説明する", () => {
+    expect(qs[24].explanation).toContain("木口");
+    expect(qs[26].explanation).toContain("1/20");
+    expect(qs[29].explanation).toContain("60cm");
   });
 });

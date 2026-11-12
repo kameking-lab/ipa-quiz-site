@@ -1708,6 +1708,11 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["建築構造", "力学", "規矩術", "工具", "施工計画", "仮設工事", "測量", "接合金物", "木造施工", "設備", "養生", "材料", "関係法規", "安全衛生", "基礎工事", "仕上げ", "建具金物", "製図", "墨付け"] }],
     seasons: ["late"], yearRange: { start: 2023, end: 2023 },
 },
+"kenchiku-daiku3": {
+    code: "kenchiku-daiku3", nameFull: "技能検定 3級建築大工（大工工事作業）学科試験", urlSlug: "kenchiku-daiku3", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科（真偽法）", categories: ["建築構造", "力学", "規矩術", "工具", "施工計画", "仮設工事", "測量", "接合金物", "木造施工", "設備", "養生", "材料", "関係法規", "安全衛生", "基礎工事", "仕上げ", "建具金物", "製図", "墨付け"] }],
+    seasons: ["early", "late"], yearRange: { start: 2023, end: 2023 },
+},
 "kenchiku-daiku2": {
     code: "kenchiku-daiku2", nameFull: "技能検定 2級建築大工（大工工事作業）学科試験", urlSlug: "kenchiku-daiku2", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["建築構造", "木造施工", "規矩術", "工具", "施工計画", "仮設工事", "測量", "基礎工事", "接合金物", "設備", "材料", "製図", "安全衛生", "関係法規", "力学", "仕上げ", "墨付け"] }],

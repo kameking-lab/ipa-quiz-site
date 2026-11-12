@@ -53,6 +53,14 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
   },
   {
+    slug: "kenchiku-daiku3", examCode: "kenchiku-daiku3", shortName: "建築大工技能士 3級", fullName: "技能検定 3級建築大工（大工工事作業）学科試験",
+    domain: "safety", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/", officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "建築大工技能士3級（大工工事作業）学科の2023年度前期30問を収録。公式正答と全肢の独自解説、原本図で学べます。",
+    attributionTemplate: "出典：中央職業能力開発協会 技能検定 3級建築大工（大工工事作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
+  {
     slug: "kenchiku-daiku2", examCode: "kenchiku-daiku2", shortName: "建築大工技能士 2級", fullName: "技能検定 2級建築大工（大工工事作業）学科試験",
     domain: "safety", administrator: "中央職業能力開発協会",
     officialQuestionsUrl: "https://www.kentei.javada.or.jp/", officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",

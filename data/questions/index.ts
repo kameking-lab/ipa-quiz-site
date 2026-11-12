@@ -6,6 +6,7 @@ import { KIKINZOKU_SOSHIN2_QUESTIONS } from "./kikinzoku-soshin2";
 import { TOBI1_QUESTIONS } from "./tobi1";
 import { TOBI3_QUESTIONS } from "./tobi3";
 import { KENCHIKU_DAIKU1_QUESTIONS } from "./kenchiku-daiku1";
+import { KENCHIKU_DAIKU3_QUESTIONS } from "./kenchiku-daiku3";
 import { KENCHIKU_DAIKU2_QUESTIONS } from "./kenchiku-daiku2";
 import { SHASHIN2_QUESTIONS } from "./shashin2";
 import { QUESTIONS as KIKENBUTSU_OTSU4 } from "./kikenbutsu-otsu4";
@@ -340,6 +341,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("tobi1") ? { "tobi1": TOBI1_QUESTIONS } : {}),
 ...(isExamPublished("tobi3") ? { "tobi3": TOBI3_QUESTIONS } : {}),
 ...(isExamPublished("kenchiku-daiku1") ? { "kenchiku-daiku1": KENCHIKU_DAIKU1_QUESTIONS } : {}),
+...(isExamPublished("kenchiku-daiku3") ? { "kenchiku-daiku3": KENCHIKU_DAIKU3_QUESTIONS } : {}),
 ...(isExamPublished("kenchiku-daiku2") ? { "kenchiku-daiku2": KENCHIKU_DAIKU2_QUESTIONS } : {}),
 ...(isExamPublished("shashin2") ? { "shashin2": SHASHIN2_QUESTIONS } : {}),
 ...(isExamPublished("kikai-hozen") ? { "kikai-hozen": KIKAI_HOZEN_QUESTIONS } : {}),
