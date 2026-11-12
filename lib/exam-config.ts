@@ -1700,8 +1700,8 @@ caremanager: {
 },
 "tobi3": {
     code: "tobi3", nameFull: "技能検定 3級とび（とび作業）学科試験", urlSlug: "tobi3", level: "basic",
-    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科（真偽法）", categories: ["安全衛生", "仮設工事", "土工事", "木造工事", "コンクリート工事", "解体工事", "工具", "建設機械", "玉掛け", "材料", "建築構造", "関係法規"] }],
-    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科（真偽法）", categories: ["安全衛生", "仮設工事", "土工事", "木造工事", "コンクリート工事", "解体工事", "工具", "建設機械", "玉掛け", "材料", "建築構造", "関係法規", "鉄骨工事", "重量物運搬"] }],
+    seasons: ["early"], yearRange: { start: 2023, end: 2025 },
 },
 "shashin2": {
     code: "shashin2", nameFull: "技能検定 2級写真（肖像写真デジタル作業）学科試験", urlSlug: "shashin2", level: "basic",
