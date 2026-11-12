@@ -157,6 +157,7 @@ import { TETSUDO_SHARYO2_QUESTIONS } from "./tetsudo-sharyo2";
 import { ENGEI_SOSHOKU2_QUESTIONS } from "./engei-soshoku2";
 import { SASSHI2_QUESTIONS } from "./sasshi2";
 import { KAGAKU_BUNSEKI2_QUESTIONS } from "./kagaku-bunseki2";
+import { CHIKURO2_QUESTIONS } from "./chikuro2";
 import { KYOKA_PLASTIC2_QUESTIONS } from "./kyoka-plastic2";
 import { TEKKO2_QUESTIONS } from "./tekko2";
 import { MEKKI2_QUESTIONS } from "./mekki2";
@@ -346,6 +347,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("engei-soshoku2") ? { "engei-soshoku2": ENGEI_SOSHOKU2_QUESTIONS } : {}),
 ...(isExamPublished("sasshi2") ? { "sasshi2": SASSHI2_QUESTIONS } : {}),
 ...(isExamPublished("kagaku-bunseki2") ? { "kagaku-bunseki2": KAGAKU_BUNSEKI2_QUESTIONS } : {}),
+...(isExamPublished("chikuro2") ? { "chikuro2": CHIKURO2_QUESTIONS } : {}),
 ...(isExamPublished("kyoka-plastic2") ? { "kyoka-plastic2": KYOKA_PLASTIC2_QUESTIONS } : {}),
 ...(isExamPublished("tekko2") ? { "tekko2": TEKKO2_QUESTIONS } : {}),
 ...(isExamPublished("mekki2") ? { "mekki2": MEKKI2_QUESTIONS } : {}),

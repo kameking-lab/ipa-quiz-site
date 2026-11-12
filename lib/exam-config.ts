@@ -1718,6 +1718,11 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["施工・墨出し", "工具・加工", "材料・シーリング", "安全衛生・法令", "ガラス・建具", "性能・規格", "建築構造", "製図"] }],
     seasons: ["early"], yearRange: { start: 2025, end: 2025 },
 },
+"chikuro2": {
+    code: "chikuro2", nameFull: "技能検定 2級築炉（築炉作業）学科試験", urlSlug: "chikuro2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["施工・工程", "工具・施工機械", "耐火材料", "炉・燃料・伝熱", "規格・製図", "安全衛生・法令"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
 "kagaku-bunseki2": {
     code: "kagaku-bunseki2", nameFull: "技能検定 2級化学分析（化学分析作業）学科試験", urlSlug: "kagaku-bunseki2", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["器具・基本操作", "前処理・試料採取", "容量分析", "基礎化学", "重量分析・定性分析", "機器分析", "品質管理・統計", "安全衛生・法令"] }],
