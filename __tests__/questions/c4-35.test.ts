@@ -1,6 +1,10 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import { KAGU3_QUESTIONS } from "@/data/questions/kagu3";
+import { FLOWER2_QUESTIONS } from "@/data/questions/flower2";
+import { QUESTIONS_BY_EXAM } from "@/data/questions";
+import { EXAM_CONFIGS } from "@/lib/exam-config";
+import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { formatQuestionAnswerForDisplay, questionNumberLabel } from "@/lib/questions/display";
 import { questionPagePath, findQuestionByRoute } from "@/lib/seo/question-url";
@@ -28,5 +32,34 @@ describe("Q4-103 家具製作3級2023年度後期", () => {
       const [, , exam, yearSeason, section, qnum] = questionPagePath(q).split("/");
       expect(findQuestionByRoute(KAGU3_QUESTIONS, { exam, yearSeason, section, qnum })?.id).toBe(q.id);
     });
+  });
+});
+
+describe("Q4-104 フラワー装飾2級2024年度前期", () => {
+  const questions = FLOWER2_QUESTIONS.filter(q => q.year === 2024);
+  // 公式正答表の画像から独立して転記。A群、B群の順。
+  const answers = "○×○××××○○×○○×○○×○×○○○○×○×"
+    + "ニロニハロロロニハイロハイニロハイハロイロロイロハ";
+  it("全50問の公式正答・群別番号・全肢解説を保持する", () => {
+    expect(questions).toHaveLength(50);
+    questions.forEach((q, i) => {
+      expect(q.officialAnswerNumber).toBe(answers[i]);
+      expect(formatQuestionAnswerForDisplay(q, q.answer)).toBe(answers[i]);
+      expect(questionNumberLabel(q)).toBe(`${i < 25 ? "A" : "B"}群 ${i % 25 + 1}`);
+      expect(Object.keys(q.choiceExplanations ?? {})).toEqual(Object.keys(q.choices ?? {}));
+      expect(EXAM_CONFIGS.flower2.sessions[0].categories).toContain(q.category);
+      expect(q.hasImage).toBe(false);
+    });
+  });
+  it("同期・遅延ローダーと資格一覧に接続し、URLで原問を特定する", async () => {
+    expect(QUESTIONS_BY_EXAM.flower2).toEqual(FLOWER2_QUESTIONS);
+    expect(await getQuestionsForExam("flower2")).toEqual(FLOWER2_QUESTIONS);
+    expect(getQualificationByExamCode("flower2")?.status).toBe("live");
+    questions.forEach(q => {
+      const [, , exam, yearSeason, section, qnum] = questionPagePath(q).split("/");
+      expect(findQuestionByRoute(FLOWER2_QUESTIONS, { exam, yearSeason, section, qnum })?.id).toBe(q.id);
+    });
+    expect(questions[49].answer).toBe("ウ");
+    expect(questions[49].choices?.ウ).toBe("トリカブト");
   });
 });

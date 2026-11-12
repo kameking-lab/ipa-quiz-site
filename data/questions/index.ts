@@ -1,3 +1,4 @@
+import { FLOWER2_QUESTIONS } from "./flower2";
 import { KAGU3_QUESTIONS } from "./kagu3";
 import { KAGU1_QUESTIONS } from "./kagu1";
 import { KAGU2_QUESTIONS } from "./kagu2";
@@ -369,6 +370,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("mekki3") ? { "mekki3": MEKKI3_QUESTIONS } : {}),
 ...(isExamPublished("kagu2") ? { "kagu2": KAGU2_QUESTIONS } : {}),
 ...(isExamPublished("kagu1") ? { "kagu1": KAGU1_QUESTIONS } : {}),
+...(isExamPublished("flower2") ? { "flower2": FLOWER2_QUESTIONS } : {}),
 ...(isExamPublished("kagu3") ? { "kagu3": KAGU3_QUESTIONS } : {}),
 ...(isExamPublished("mekki1") ? { "mekki1": MEKKI1_QUESTIONS } : {}),
 ...(isExamPublished("kinzoku-netsushori3") ? { "kinzoku-netsushori3": KINZOKU_NETSUSHORI3_QUESTIONS } : {}),
