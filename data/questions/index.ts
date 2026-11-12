@@ -1,3 +1,4 @@
+import { KAGU2_QUESTIONS } from "./kagu2";
 import { MEKKI1_QUESTIONS } from "./mekki1";
 import { MEKKI3_QUESTIONS } from "./mekki3";
 import { TEKKO1_QUESTIONS } from "./tekko1";
@@ -364,6 +365,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("kojo-bankin1") ? { "kojo-bankin1": KOJO_BANKIN1_QUESTIONS } : {}),
 ...(isExamPublished("kinzoku-netsushori2") ? { "kinzoku-netsushori2": KINZOKU_NETSUSHORI2_QUESTIONS } : {}),
 ...(isExamPublished("mekki3") ? { "mekki3": MEKKI3_QUESTIONS } : {}),
+...(isExamPublished("kagu2") ? { "kagu2": KAGU2_QUESTIONS } : {}),
 ...(isExamPublished("mekki1") ? { "mekki1": MEKKI1_QUESTIONS } : {}),
 ...(isExamPublished("kinzoku-netsushori3") ? { "kinzoku-netsushori3": KINZOKU_NETSUSHORI3_QUESTIONS } : {}),
 ...(isExamPublished("kojo-bankin3") ? { "kojo-bankin3": KOJO_BANKIN3_QUESTIONS } : {}),
