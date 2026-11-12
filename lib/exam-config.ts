@@ -1703,6 +1703,11 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["鋳造機・油圧", "溶解・溶湯管理", "鋳造方案・充填", "金型・欠陥対策", "検査・品質管理", "材料・熱処理", "機械加工・製図", "電気・安全衛生", "温度測定"] }],
     seasons: ["early"], yearRange: { start: 2025, end: 2025 },
 },
+"tetsudo-sharyo2": {
+    code: "tetsudo-sharyo2", nameFull: "技能検定 2級鉄道車両製造・整備（機器ぎ装作業）学科試験", urlSlug: "tetsudo-sharyo2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["鉄道車両・ぎ装", "材料・熱処理", "機械要素・材料力学", "電気基礎", "加工・測定・製図", "品質管理", "安全衛生・法令", "潤滑"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
 "insatsu2": {
     code: "insatsu2", nameFull: "技能検定 2級印刷（オフセット印刷作業）学科試験", urlSlug: "insatsu2", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["印刷方式・製版", "印刷機・給排紙", "色彩・網点", "用紙・製本", "インキ・乾燥", "安全衛生・環境", "電気・計測", "湿し水・ローラ", "品質・トラブル"] }],

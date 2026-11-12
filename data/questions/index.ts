@@ -153,6 +153,7 @@ import { TOSO2_QUESTIONS } from "./toso2";
 import { KAGU2_QUESTIONS } from "./kagu2";
 import { DIECAST2_QUESTIONS } from "./diecast2";
 import { INSATSU2_QUESTIONS } from "./insatsu2";
+import { TETSUDO_SHARYO2_QUESTIONS } from "./tetsudo-sharyo2";
 import { TEKKO2_QUESTIONS } from "./tekko2";
 import { MEKKI2_QUESTIONS } from "./mekki2";
 import { KINZOKU_NETSUSHORI2_QUESTIONS } from "./kinzoku-netsushori2";
@@ -337,6 +338,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("kagu2") ? { "kagu2": KAGU2_QUESTIONS } : {}),
 ...(isExamPublished("diecast2") ? { "diecast2": DIECAST2_QUESTIONS } : {}),
 ...(isExamPublished("insatsu2") ? { "insatsu2": INSATSU2_QUESTIONS } : {}),
+...(isExamPublished("tetsudo-sharyo2") ? { "tetsudo-sharyo2": TETSUDO_SHARYO2_QUESTIONS } : {}),
 ...(isExamPublished("tekko2") ? { "tekko2": TEKKO2_QUESTIONS } : {}),
 ...(isExamPublished("mekki2") ? { "mekki2": MEKKI2_QUESTIONS } : {}),
 ...(isExamPublished("kinzoku-netsushori2") ? { "kinzoku-netsushori2": KINZOKU_NETSUSHORI2_QUESTIONS } : {}),
