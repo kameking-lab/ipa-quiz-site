@@ -22,7 +22,7 @@ const ALPHABET_CHOICE_EXAMS: readonly ExamCode[] = ["sharoushi"];
 const ALPHABET_LABELS = ["A", "B", "C", "D", "E"] as const;
 
 export function choiceDisplayLabel(exam: ExamCode, key: ChoiceKey): string {
-  if (exam === "denshi-kiki-kumitate2" || exam === "kojo-bankin2" || exam === "kensetsu-kikai-seibi2") {
+  if (exam === "denshi-kiki-kumitate2" || exam === "kojo-bankin2" || exam === "kensetsu-kikai-seibi2" || exam === "hyoso2") {
     const index = IROHA_CHOICE_KEYS.indexOf(key);
     return index >= 0 ? IROHA_LABELS[index] : key;
   }
@@ -63,7 +63,7 @@ export function formatQuestionAnswerForDisplay(question: Question, value: string
       choices.every(key => value.includes(key) && accepted.includes(key))) {
     return "全員正解";
   }
-  if ((question.exam === "denshi-kiki-kumitate2" || question.exam === "kojo-bankin2" || question.exam === "kensetsu-kikai-seibi2") && choices.length === 2) {
+  if ((question.exam === "denshi-kiki-kumitate2" || question.exam === "kojo-bankin2" || question.exam === "kensetsu-kikai-seibi2" || question.exam === "hyoso2") && choices.length === 2) {
     const key = String(value);
     return key === "ア" ? "○" : key === "イ" ? "×" : key;
   }
@@ -77,11 +77,12 @@ export function formatQuestionAnswerForDisplay(question: Question, value: string
 
 /** 図だけで示された選択肢の代替テキスト。既存の回路図問題は呼び出し側の既定文言を使う。 */
 export function choiceImageAlt(exam: ExamCode, key: ChoiceKey): string | undefined {
+  if (exam === "hyoso2") return `選択肢${choiceDisplayLabel(exam, key)}の図（公式問題PDFより）`;
   if (!PLAIN_NUMBER_CHOICE_EXAMS.includes(exam) && !ALPHABET_CHOICE_EXAMS.includes(exam) && exam !== "eisei1" && exam !== "eisei2" && exam !== "soukan" && exam !== "hoikushi" && exam !== "kashikin") return undefined;
   return `選択肢${choiceDisplayLabel(exam, key)}の図（公式問題PDFより）`;
 }
 
 /** 選択肢を原本どおり番号（電験一種・二種は(イ)〜(ヨ)、社労士はA〜E）で表示する試験（ア〜エ表記ではない）。 */
 export function usesNumberedChoices(exam: ExamCode): boolean {
-  return exam === "denshi-kiki-kumitate2" || exam === "kojo-bankin2" || exam === "kensetsu-kikai-seibi2" || exam === "denken3" || exam === "denken2" || exam === "denken1" || exam === "tohan" || exam === "eisei1" || exam === "eisei2" || exam === "soukan" || exam === "hoikushi" || exam === "kashikin" || PLAIN_NUMBER_CHOICE_EXAMS.includes(exam) || ALPHABET_CHOICE_EXAMS.includes(exam);
+  return exam === "denshi-kiki-kumitate2" || exam === "kojo-bankin2" || exam === "kensetsu-kikai-seibi2" || exam === "hyoso2" || exam === "denken3" || exam === "denken2" || exam === "denken1" || exam === "tohan" || exam === "eisei1" || exam === "eisei2" || exam === "soukan" || exam === "hoikushi" || exam === "kashikin" || PLAIN_NUMBER_CHOICE_EXAMS.includes(exam) || ALPHABET_CHOICE_EXAMS.includes(exam);
 }

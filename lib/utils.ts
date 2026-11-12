@@ -167,6 +167,7 @@ export const EXAM_LABELS: Record<string, string> = {
     "denshi-kiki-kumitate2": "電子機器組立て技能士 2級",
     "kojo-bankin2": "工場板金技能士 2級",
     "kensetsu-kikai-seibi2": "建設機械整備技能士 2級",
+    "hyoso2": "表装技能士 2級",
     "kikai-hozen": "機械保全技能士 2級",
     "tsukanshi": "通関士"
 };

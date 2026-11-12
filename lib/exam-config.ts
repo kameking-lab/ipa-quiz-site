@@ -1683,6 +1683,11 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["建設機械", "油圧装置", "エンジン", "検査", "加工", "動力伝達", "溶接", "整備", "走行装置", "材料", "電気", "機械要素", "燃料", "材料力学", "製図", "関係法規", "安全衛生", "測定", "表面処理", "潤滑"] }],
     seasons: ["early"], yearRange: { start: 2025, end: 2025 },
 },
+"hyoso2": {
+    code: "hyoso2", nameFull: "技能検定 2級表装（表具作業）学科試験", urlSlug: "hyoso2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["壁装", "建具", "工具", "建築", "材料", "色彩", "製図", "関係法規", "安全衛生", "屏風", "裏打ち", "襖", "掛軸", "保存・取扱い"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
 "kojo-bankin2": {
     code: "kojo-bankin2", nameFull: "技能検定 2級工場板金（曲げ板金作業）学科試験", urlSlug: "kojo-bankin2", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["せん断", "曲げ加工", "金型", "展開図", "板取り", "接合", "ひずみ取り", "製図", "工作機械", "研削", "測定", "表面処理", "電気", "安全衛生", "工具", "絞り加工", "品質管理", "レーザ加工", "材料"] }],
