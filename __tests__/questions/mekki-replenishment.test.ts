@@ -17,6 +17,9 @@ import type { ChoiceKey, ExamCode } from "@/lib/questions/types";
 const SITTINGS = [{ exam: "mekki2" as ExamCode, year: 2024,
   answers: "○○○×○" + "×○○○○" + "○○×○×" + "○×○×○" + "○○×○○"
     + "ニイニイニ" + "ロハハハハ" + "ロロハハニ" + "イロイロハ" + "ハニロロイ",
+}, { exam: "mekki2" as ExamCode, year: 2023,
+  answers: "○×○×○" + "○○○○○" + "○××○○" + "×○○○×" + "○○×○○"
+    + "ハイニロニ" + "ニニニニイ" + "ロニロロハ" + "ハハイニハ" + "ニロロハイ",
 }];
 
 describe("電気めっきの公式正答・表示・演習経路", () => {
