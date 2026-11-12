@@ -15,6 +15,7 @@ import type { ChoiceKey, ExamCode, Question } from "@/lib/questions/types";
 // Official answer image transcribed separately in groups of five.
 const editions: { exam: ExamCode; year: number; questions: Question[]; a: string; b: string; figures: string[] }[] = [
   { exam: "sasshi2", year: 2024, questions: SASSHI2_QUESTIONS, a: "×○○×× ○×○×○ ×○×○○ ○×○○○ ××○○○", b: "ニロイハロ イロロニイ ロハニロロ ロイハイハ ロイロニイ", figures: ["B群 1", "B群 23"] },
+  { exam: "sasshi2", year: 2023, questions: SASSHI2_QUESTIONS, a: "×○××× ○×○×○ ○×○○× ×○○×○ ○○○○○", b: "ニニロイニ ロイハハイ ロイニニハ ロハロイロ ニニロハニ", figures: ["A群 23", "B群 20", "B群 23"] },
 ];
 const keys: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
@@ -90,4 +91,14 @@ it("retains the 2024 original dimensions, negative conditions and order", () => 
   expect(questions[38].choices?.イ).toBe("1／70");
   expect(questions[40].question).toContain("掃き出し窓は除く");
   expect(questions[49].choices?.ア).toContain("85度以下");
+});
+
+it("retains the 2023 units, paired definitions and negative conditions", () => {
+  const questions = SASSHI2_QUESTIONS.filter(q => q.year === 2023);
+  expect(questions[1].question).toContain("0.5～1％");
+  expect(questions[7].question).toContain("75°");
+  expect(questions[28].choices?.イ).toContain("φ9mm");
+  expect(questions[37].choices?.エ).toContain("現場取付けで、二重にした");
+  expect(questions[40].choices?.イ).toBe("50N");
+  expect(questions[48].choices?.ウ).toBe("5年");
 });
