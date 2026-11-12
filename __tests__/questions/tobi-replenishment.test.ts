@@ -13,6 +13,12 @@ import type { ChoiceKey, Question } from "@/lib/questions/types";
 // Official answer sheets, independently transcribed in printed group order.
 const papers: { questions: Question[]; tf: string; mc: string; figures: string[] }[] = [
   {
+    questions: TOBI2_QUESTIONS.filter(q => q.year === 2023),
+    tf: "×○○○○×××○○○××○×××○○○×××○×",
+    mc: "ハハイロイハイニロロニハロイニハイロロハハイニニイ",
+    figures: ["B群 4", "B群 8", "B群 19"],
+  },
+  {
     questions: TOBI2_QUESTIONS.filter(q => q.year === 2024),
     tf: "○××○○×○○○○××○×○×××○×○××××",
     mc: "ハロロハハロロニハイイロニニロニイハイハロハロロハ",
@@ -58,10 +64,12 @@ describe("とび技能士 追加原本の採点・原図・演習接続", () => 
     });
   }
   it("同期と遅延ロードが同じ原本問題を返し、イロハニ表示で解ける", async () => {
+    expect(TOBI2_QUESTIONS).toHaveLength(100);
     expect(QUESTIONS_BY_EXAM.tobi2).toEqual(TOBI2_QUESTIONS);
     expect(await getQuestionsForExam("tobi2")).toEqual(TOBI2_QUESTIONS);
     expect(keys.map(k => choiceDisplayLabel("tobi2", k))).toEqual(printed);
     expect(TOBI2_QUESTIONS[0].choices).toEqual({ ア: "正しい（○）", イ: "誤り（×）" });
+    expect(EXAM_CONFIGS.tobi2.yearRange).toEqual({ start: 2023, end: 2024 });
   });
   it("図面の種類を問う文字問題を演習でき、実際の図参照には画像を要求する", () => {
     const q = TOBI2_QUESTIONS.find(q => q.year === 2024 && q.officialQuestionLabel === "B群 12")!;

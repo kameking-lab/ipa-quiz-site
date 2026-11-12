@@ -54,7 +54,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   "officialQuestionsUrl": "https://www.kentei.javada.or.jp/",
   "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/",
   "status": "live",
-  "reuseSummary": "2024年度前期の3級とび（とび作業）学科を収録。公式問題・正答、全肢の独自解説と必要な原図を確認できます。",
+  "reuseSummary": "2024年度前期の3級とび（とび作業）学科30問（真偽法）を収録。公式問題・正答と全肢の独自解説を確認できます。",
   "remainingWork": []
 },
 {
@@ -67,7 +67,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   "officialQuestionsUrl": "https://www.kentei.javada.or.jp/",
   "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/",
   "status": "live",
-  "reuseSummary": "2024年度前期の2級とび（とび作業）学科を収録。公式問題・正答、全肢の独自解説と必要な原図を確認できます。",
+  "reuseSummary": "2023・2024年度前期の2級とび（とび作業）学科100問（各年度A群25問・B群25問）を収録。公式問題・正答、全肢の独自解説と原図6点を確認できます。",
   "remainingWork": []
 },
 {"slug": "junkango-kansai", "examCode": "junkango-kansai", "shortName": "准看護師", "fullName": "准看護師", "domain": "welfare", "administrator": "関西広域連合", "officialQuestionsUrl": "https://www.kouiki-kansai.jp/koikirengo/jisijimu/shikakumenkyo/junan_top/jyunkangosisiken/9022.html", "officialReuseTermsUrl": "https://www.kouiki-kansai.jp/about_site.html", "status": "live", "stagingDataPath": "data/qualification-staging/junkango-kansai", "reuseSummary": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。300原問中、公式全員正解1問を除く299問を演習。2026年問139は2または4の単独選択を正解とします。問題・正答は公式原本、解説は過去問AIの独自作成です。", "remainingWork": []},
