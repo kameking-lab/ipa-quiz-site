@@ -1723,6 +1723,7 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["写真史", "光・色彩", "レンズ・撮影機材", "照明・露出", "肖像・画像処理", "デジタル基礎", "関係法規・環境"] }],
     seasons: ["early"], yearRange: { start: 2025, end: 2025 },
 },
+"kojo-bankin1": {"code": "kojo-bankin1", "nameFull": "技能検定 1級工場板金（曲げ板金作業）学科試験", "urlSlug": "kojo-bankin1", "level": "advanced", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "学科（A群 真偽法・B群 多肢択一法）", "categories": ["せん断", "ひずみ取り", "切断", "品質管理", "安全衛生", "展開図", "工作機械", "工具", "成形", "接合", "曲げ加工", "材料", "材料試験", "板取り", "測定", "絞り加工", "表面処理", "製図", "金型", "電気"]}], "seasons": ["early"], "yearRange": {"start": 2025, "end": 2025}},
 "kojo-bankin2": {
     code: "kojo-bankin2", nameFull: "技能検定 2級工場板金（曲げ板金作業）学科試験", urlSlug: "kojo-bankin2", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["せん断", "ひずみ取り", "ひずみ矯正", "プレス加工", "レーザ加工", "切断", "品質管理", "安全衛生", "展開図", "工作機械", "工具", "成形", "接合", "曲げ加工", "材料", "材料試験", "板取り", "測定", "研削", "絞り加工", "表面処理", "製図", "製図・展開", "金型", "電気"] }],

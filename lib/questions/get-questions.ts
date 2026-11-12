@@ -180,6 +180,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 "sokuryoshiho": async () => isExamPublished("sokuryoshiho") ? (await import("@/data/questions/sokuryoshiho")).SOKURYOSHIHO_QUESTIONS : [],
 "caremanager": async () => isExamPublished("caremanager") ? (await import("@/data/questions/caremanager")).CAREMANAGER_QUESTIONS : [],
 "denshi-kiki-kumitate2": async () => isExamPublished("denshi-kiki-kumitate2") ? (await import("@/data/questions/denshi-kiki-kumitate2")).DENSHI_KIKI_KUMITATE2_QUESTIONS : [],
+"kojo-bankin1": async () => isExamPublished("kojo-bankin1") ? (await import("@/data/questions/kojo-bankin1")).KOJO_BANKIN1_QUESTIONS : [],
 "kojo-bankin2": async () => isExamPublished("kojo-bankin2") ? (await import("@/data/questions/kojo-bankin2")).KOJO_BANKIN2_QUESTIONS : [],
 "kensetsu-kikai-seibi2": async () => isExamPublished("kensetsu-kikai-seibi2") ? (await import("@/data/questions/kensetsu-kikai-seibi2")).KENSETSU_KIKAI_SEIBI2_QUESTIONS : [],
 "hyoso2": async () => isExamPublished("hyoso2") ? (await import("@/data/questions/hyoso2")).HYOSO2_QUESTIONS : [],
