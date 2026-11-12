@@ -26,6 +26,7 @@ import { NativeBDataSchema, nativeBQuestionIssue } from "../lib/questions/native
  *   pnpm validate:questions --staging=khk-kagaku-2026-kou # 非公開の甲種化学2026
  *   pnpm validate:questions --staging=khk-kagaku-2026-hei-special # 非公開の丙種化学（特別）2026
  *   pnpm validate:questions --staging=biru-kan-2026-am # 建築物環境衛生2026午前90問
+ *   pnpm validate:questions --staging=biru-kan-2026-pm # 建築物環境衛生2026午後90問
  *   pnpm validate:questions --report         # docs/QUESTION_QUALITY.md を生成
  *   pnpm validate:questions --fix            # 自動修正可能な問題のみ報告
  */
@@ -62,7 +63,7 @@ import { validateKukakuSeiri } from "./validate-kukaku-seiri";
 import { KHK_2026_HEI_LPG_STAGING, validateKhk2026HeiLpgStaging } from "./lib/validate-khk-kagaku-2026-hei-lpg";
 import { KHK_2026_KOU_STAGING, validateKhk2026KouStaging } from "./lib/validate-khk-kagaku-2026-kou";
 import { KHK_2026_HEI_SPECIAL_STAGING, validateKhk2026HeiSpecialStaging } from "./lib/validate-khk-kagaku-2026-hei-special";
-import { BIRU_KAN_2026_AM_STAGING, validateBiruKan2026Am } from "./lib/validate-biru-kan-2026";
+import { BIRU_KAN_2026_AM_STAGING, BIRU_KAN_2026_PM_STAGING, validateBiruKan2026Am, validateBiruKan2026Pm } from "./lib/validate-biru-kan-2026";
 
 // Publication-gated pilots still require the same schema and source validation
 // before their release gate can be lifted.
@@ -515,6 +516,13 @@ function reportFixes(questions: Question[]): void {
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 const opts = parseCliOptions();
+if (opts.staging === "biru-kan-2026-pm" && !opts.exams.length && !opts.fix && !opts.report) {
+  const errors = validateBiruKan2026Pm();
+  for (const error of errors) console.error(`[FAIL] ${error}`);
+  const result = validate(BIRU_KAN_2026_PM_STAGING);
+  console.log(`Validated ${BIRU_KAN_2026_PM_STAGING.length} private biru-kan 2026 afternoon originals. fail=${errors.length + result.fail} publicAllowed=false`);
+  process.exit(errors.length || result.fail ? 1 : 0);
+}
 if (opts.staging === "biru-kan-2026-am" && !opts.exams.length && !opts.fix && !opts.report) {
   const errors = validateBiruKan2026Am();
   for (const error of errors) console.error(`[FAIL] ${error}`);
@@ -559,7 +567,7 @@ if (!opts.exams.length || opts.exams.includes("benrishi")) {
 
 if (opts.staging !== undefined) {
   if (opts.staging !== "sokuryoshi" || opts.exams.length || opts.fix || opts.report) {
-    console.error("Use --staging=sokuryoshi, --staging=biru-kan-2026-am, --staging=khk-kagaku-2026-hei-lpg, --staging=khk-kagaku-2026-hei-special or --staging=khk-kagaku-2026-kou alone for private qualification validation.");
+    console.error("Use --staging=sokuryoshi, --staging=biru-kan-2026-am, --staging=biru-kan-2026-pm, --staging=khk-kagaku-2026-hei-lpg, --staging=khk-kagaku-2026-hei-special or --staging=khk-kagaku-2026-kou alone for private qualification validation.");
     process.exit(1);
   }
   const result = validateSokuryoshiStaging();

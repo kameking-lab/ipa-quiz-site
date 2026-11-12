@@ -1,0 +1,853 @@
+{
+  "method": "Windows OCRの語座標を上下順に並べ、公式午後PDFの全問題掲載ページ（4～30ページ）を目視照合。本文90件・選択肢450件・空欄・単位・表を確認。公式正答90件をPyMuPDFとpypdfで独立抽出して一致。解説は独自作成。",
+  "reviewedBy": "q2-new-5 / single-agent source review",
+  "questions": [
+    {
+      "id": "biru-kan-2026-pm-091",
+      "sourcePage": 4,
+      "printedPage": 1,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "195e45f739670c48c1f04e24daa0748c960f334adacc66de1e0e635a7c009ebd"
+    },
+    {
+      "id": "biru-kan-2026-pm-092",
+      "sourcePage": 4,
+      "printedPage": 1,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "0a4a76703781f54ba692835044956674cfac046962f16c611d2b063714e22dd2"
+    },
+    {
+      "id": "biru-kan-2026-pm-093",
+      "sourcePage": 4,
+      "printedPage": 1,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "153b35cf23eeff0032b1862c5fe3ce3f1ad23707a7d15741ae4c7ad930521243"
+    },
+    {
+      "id": "biru-kan-2026-pm-094",
+      "sourcePage": 5,
+      "printedPage": 2,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "c5149121738d0d56b17f0b3c5feab7e6d341f7b82e5164670d85dced95ea228e"
+    },
+    {
+      "id": "biru-kan-2026-pm-095",
+      "sourcePage": 5,
+      "printedPage": 2,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "d6350a6b650c787dd2d174504b42b0fd26a4498f2a0c494896483f94f6c5dd31"
+    },
+    {
+      "id": "biru-kan-2026-pm-096",
+      "sourcePage": 5,
+      "printedPage": 2,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "ec561f01a8f9c6f0554d9b14e72a95ca58716f4a9d42450b827330b585c9ff31"
+    },
+    {
+      "id": "biru-kan-2026-pm-097",
+      "sourcePage": 5,
+      "printedPage": 2,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "beffea23be90b0c54a0ca4fad42078f2b0b6bee3e4fbb134beb26c55dfc65376"
+    },
+    {
+      "id": "biru-kan-2026-pm-098",
+      "sourcePage": 6,
+      "printedPage": 3,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "94d6dcbc107bf03500ed9963f1a90e50aac40a49817588bfc8bb79614ccadbb6"
+    },
+    {
+      "id": "biru-kan-2026-pm-099",
+      "sourcePage": 6,
+      "printedPage": 3,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "bdc02316d14bd200e4b85b067e5879cbdd8756b9cf1470f02310f5bd48030838"
+    },
+    {
+      "id": "biru-kan-2026-pm-100",
+      "sourcePage": 6,
+      "printedPage": 3,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "ffa8cdf71341d8a6590aa22f593b45e2d2df7d16a433d2c189744aa636deaaa9"
+    },
+    {
+      "id": "biru-kan-2026-pm-101",
+      "sourcePage": 7,
+      "printedPage": 4,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "e8ae7ce0df2d281d1261c647a86d764432e143a3c33034127d931e227f92d90e"
+    },
+    {
+      "id": "biru-kan-2026-pm-102",
+      "sourcePage": 7,
+      "printedPage": 4,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "a78818ec2b13e5b4f33f18312fc21fce5bbd106ac22e6cf9f54c52112484215a"
+    },
+    {
+      "id": "biru-kan-2026-pm-103",
+      "sourcePage": 7,
+      "printedPage": 4,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "f72577fb605cf90e687e98e60d4cab500dc0a3f42992ed980ac316646334cd70"
+    },
+    {
+      "id": "biru-kan-2026-pm-104",
+      "sourcePage": 8,
+      "printedPage": 5,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "b85d1a9c1752fa47609c633c7a6c24b89f5c25ddecfb3aea11067910d642923d"
+    },
+    {
+      "id": "biru-kan-2026-pm-105",
+      "sourcePage": 8,
+      "printedPage": 5,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "107cd78d5a9afe59dc63ad50483ad29948a9b4876aba8a6a1fbbdf0a664325f8"
+    },
+    {
+      "id": "biru-kan-2026-pm-106",
+      "sourcePage": 8,
+      "printedPage": 5,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "ee60de2a5e84bcc6ad09e2602f4432a9a6fa3aee6f183b397cb5e9e511e3e814"
+    },
+    {
+      "id": "biru-kan-2026-pm-107",
+      "sourcePage": 9,
+      "printedPage": 6,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "04f53129c9870249c2fd0ea9dd915b36d87b9d6fa8bf0f66d5e01b19bcb71983"
+    },
+    {
+      "id": "biru-kan-2026-pm-108",
+      "sourcePage": 9,
+      "printedPage": 6,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "382c6011b8f5962d0c7eb58c6acfe3113a9af7647c464d6e9dfd56b00ffec6c2"
+    },
+    {
+      "id": "biru-kan-2026-pm-109",
+      "sourcePage": 9,
+      "printedPage": 6,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "d3653d5ea6b45dfe4a81a27fd4abb7720d4e5c212918173cfeafc76f4b440100"
+    },
+    {
+      "id": "biru-kan-2026-pm-110",
+      "sourcePage": 10,
+      "printedPage": 7,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "34caec320968a12e7299576ccf9ddc30dc316981a1f67e4baae4bd4bd8297a22"
+    },
+    {
+      "id": "biru-kan-2026-pm-111",
+      "sourcePage": 10,
+      "printedPage": 7,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "1039268c6ddd5eddf4e8271a45e9fe107b85cd08afdc2d8fe07898696c0add47"
+    },
+    {
+      "id": "biru-kan-2026-pm-112",
+      "sourcePage": 10,
+      "printedPage": 7,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "0dc8eace6c43977c796e059c3e60631ac29e076c3ef432aeb98925f12a41b6cc"
+    },
+    {
+      "id": "biru-kan-2026-pm-113",
+      "sourcePage": 10,
+      "printedPage": 7,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "bef10c16505174a5f5506a318c7e1a167a585a71478032f2f6f7882d3df83d76"
+    },
+    {
+      "id": "biru-kan-2026-pm-114",
+      "sourcePage": 11,
+      "printedPage": 8,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "5c59bc72bd4fa16d609fd3f910a1907b250d4207a8c044a1b56816e05f7e09b1"
+    },
+    {
+      "id": "biru-kan-2026-pm-115",
+      "sourcePage": 11,
+      "printedPage": 8,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "5b8fde186126ad8ce49629c98fdc160c406c71c2de7a22efcc8e9cb2e87fe59e"
+    },
+    {
+      "id": "biru-kan-2026-pm-116",
+      "sourcePage": 11,
+      "printedPage": 8,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "090f22a48a0367daf59fc4d4230ce4a2a5127611100bdf77868dd7c0405db4b6"
+    },
+    {
+      "id": "biru-kan-2026-pm-117",
+      "sourcePage": 11,
+      "printedPage": 8,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "d9d4394edc6415424da4b01e23006b715198463b4ae156d81a8ea57e9d46a151"
+    },
+    {
+      "id": "biru-kan-2026-pm-118",
+      "sourcePage": 12,
+      "printedPage": 9,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "85188545640843d91b83e89bf358dd4ba27a994a67a6d7b964e5291789770e96"
+    },
+    {
+      "id": "biru-kan-2026-pm-119",
+      "sourcePage": 12,
+      "printedPage": 9,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "512d10f4a830d25ac86ce24f3f64a004e9b58ad9eb0d759fe4b6f2340e992944"
+    },
+    {
+      "id": "biru-kan-2026-pm-120",
+      "sourcePage": 12,
+      "printedPage": 9,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "fe00c10eb91e705bbf8c97ed09a5f66f68786f2c323daeb34d80697efe8c8a44"
+    },
+    {
+      "id": "biru-kan-2026-pm-121",
+      "sourcePage": 13,
+      "printedPage": 10,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "2fba93009f5e9647ac2459a03597969c90a845b73dc4ca9944c0b12faf8f0664"
+    },
+    {
+      "id": "biru-kan-2026-pm-122",
+      "sourcePage": 13,
+      "printedPage": 10,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "9b511e85794d099bf56ba008a38ed08c506c20d6e3855278a815860d5628c14f"
+    },
+    {
+      "id": "biru-kan-2026-pm-123",
+      "sourcePage": 13,
+      "printedPage": 10,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "fe5640d324a8665193d0bab98f5cc74356bfbf56ae8a7bdd188cfd7e15831b6b"
+    },
+    {
+      "id": "biru-kan-2026-pm-124",
+      "sourcePage": 13,
+      "printedPage": 10,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "8ff8e0758ac3a06cb36fb7add5c02113033912ca6a5bad3f9cc5208ca11c2d3f"
+    },
+    {
+      "id": "biru-kan-2026-pm-125",
+      "sourcePage": 14,
+      "printedPage": 11,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "001e2cd3eddf6e1c3f46656a52df42192f188b5f3828983ba7a86c534824d022"
+    },
+    {
+      "id": "biru-kan-2026-pm-126",
+      "sourcePage": 14,
+      "printedPage": 11,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "40fc8deb051b2afa48f45ef462818fa1d6cf14c353da525138f908f6e4a94a26"
+    },
+    {
+      "id": "biru-kan-2026-pm-127",
+      "sourcePage": 14,
+      "printedPage": 11,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "eeeb4823e077d5db98d3fccbab2f404f8ef675ee39065fe4926087ded66e7641"
+    },
+    {
+      "id": "biru-kan-2026-pm-128",
+      "sourcePage": 14,
+      "printedPage": 11,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "467780bdf9ebf6c9f9f6c2922107c411fc1a3d3e4fc7fa38dfa54d49b19be695"
+    },
+    {
+      "id": "biru-kan-2026-pm-129",
+      "sourcePage": 15,
+      "printedPage": 12,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "82e6a8461e6af231e4ebb689d9e172a82aa26f0f99f810b365e870c1569d079b"
+    },
+    {
+      "id": "biru-kan-2026-pm-130",
+      "sourcePage": 15,
+      "printedPage": 12,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "c7aef38139392bd8aa7cf517e49c466467cf34d64abdcfcc56de6933b68b8204"
+    },
+    {
+      "id": "biru-kan-2026-pm-131",
+      "sourcePage": 15,
+      "printedPage": 12,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "599200500eeb52b7a15b7620c1a55e265d65dd670373fd45406c278fdef52d6f"
+    },
+    {
+      "id": "biru-kan-2026-pm-132",
+      "sourcePage": 16,
+      "printedPage": 13,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "0557cba55bbd56241bf23657c66c0bb8848c0c725a6732477b190eacb8a5baa1"
+    },
+    {
+      "id": "biru-kan-2026-pm-133",
+      "sourcePage": 16,
+      "printedPage": 13,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "6ee5314d932dd17d0ea3c3f3a4d543c0ac167ed5309c22a2d0b14a0e014558af"
+    },
+    {
+      "id": "biru-kan-2026-pm-134",
+      "sourcePage": 16,
+      "printedPage": 13,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "3b0e16aac7b450023b0f5191663185c836dfa8970362a84177b5843607a3cd84"
+    },
+    {
+      "id": "biru-kan-2026-pm-135",
+      "sourcePage": 17,
+      "printedPage": 14,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "4ae3a6dd13805e8380d80d93642e5bd80f43407080a083fcb7f433df6a4117a9"
+    },
+    {
+      "id": "biru-kan-2026-pm-136",
+      "sourcePage": 17,
+      "printedPage": 14,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "64bb492d25651a586a5d9658507d85b0c0db734c0fe4633ffff1d924ca3b549c"
+    },
+    {
+      "id": "biru-kan-2026-pm-137",
+      "sourcePage": 17,
+      "printedPage": 14,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "f07e7f753150042ba3d21dd8f25619c607ff223c7abb4c7552f3576f9cc88b5d"
+    },
+    {
+      "id": "biru-kan-2026-pm-138",
+      "sourcePage": 17,
+      "printedPage": 14,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "1c923306fe4be1c3dfad7bb4f4cc440185755f502db8a9fbaa996ab18caeffea"
+    },
+    {
+      "id": "biru-kan-2026-pm-139",
+      "sourcePage": 18,
+      "printedPage": 15,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "1c32916ec5b18092119eebba2e6ca56355ed27e0453224321ed6efb215edbb7c"
+    },
+    {
+      "id": "biru-kan-2026-pm-140",
+      "sourcePage": 18,
+      "printedPage": 15,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "520e0f7adc337b8cfdf94756b191ada2c2f0f577656a9c4ffcaddefd14d691cf"
+    },
+    {
+      "id": "biru-kan-2026-pm-141",
+      "sourcePage": 18,
+      "printedPage": 15,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "dbc18a031f19e10ac95dc650c5536394f1ffdafffb55b2a881f81498711f675a"
+    },
+    {
+      "id": "biru-kan-2026-pm-142",
+      "sourcePage": 19,
+      "printedPage": 16,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "13506972fa23dd51f7abc400ef864bdd9ddbd6d3edb411541df5862087754a76"
+    },
+    {
+      "id": "biru-kan-2026-pm-143",
+      "sourcePage": 19,
+      "printedPage": 16,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "0fbeabc02a23560ef178efaffea36f631e76c6811ef669cb1b24709c1394b543"
+    },
+    {
+      "id": "biru-kan-2026-pm-144",
+      "sourcePage": 19,
+      "printedPage": 16,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "4ac0fbac09da6c0abffdebfd8a5d7885070a89dc01ef8b2fd18268aebcb3e5a9"
+    },
+    {
+      "id": "biru-kan-2026-pm-145",
+      "sourcePage": 20,
+      "printedPage": 17,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "07699d041d9ef6810985185e0d7821af6429a1c714d049d78da7d5b9c50ea940"
+    },
+    {
+      "id": "biru-kan-2026-pm-146",
+      "sourcePage": 20,
+      "printedPage": 17,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "82058206878d1c38b81b621e937d994b5de1286bfbcdadb3f713df0afff32bc2"
+    },
+    {
+      "id": "biru-kan-2026-pm-147",
+      "sourcePage": 20,
+      "printedPage": 17,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "f2c7aff7f202519dcb6ede3e7ff815482ea3d7dffe6898e0d92b9b8663306085"
+    },
+    {
+      "id": "biru-kan-2026-pm-148",
+      "sourcePage": 21,
+      "printedPage": 18,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "5ff5c581105ad605cc23b7a00eecde0ff2756bbb5c8d5d832ff8a5145576bda6"
+    },
+    {
+      "id": "biru-kan-2026-pm-149",
+      "sourcePage": 21,
+      "printedPage": 18,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "702d19733fba2eb96e72adf19687c2882eb5aa2611a90320e0e2f97f736fd3a0"
+    },
+    {
+      "id": "biru-kan-2026-pm-150",
+      "sourcePage": 21,
+      "printedPage": 18,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "951ba9f2aa75e8cf76991e0310297ff5818e57c343f41bd301e7f13cd27339ae"
+    },
+    {
+      "id": "biru-kan-2026-pm-151",
+      "sourcePage": 21,
+      "printedPage": 18,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "c693db03501789e71a85929debe55fbf73133bc8830cf0eeef69d77ac414f246"
+    },
+    {
+      "id": "biru-kan-2026-pm-152",
+      "sourcePage": 22,
+      "printedPage": 19,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "e540e8ab763f2e66da5aa9683dc9a7c57740d6def3fa40ae1b28d458e25215df"
+    },
+    {
+      "id": "biru-kan-2026-pm-153",
+      "sourcePage": 22,
+      "printedPage": 19,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "6a03f87e1d2aaaa5149540049d183524a57013e79f9fae7cff0b2d720f508359"
+    },
+    {
+      "id": "biru-kan-2026-pm-154",
+      "sourcePage": 22,
+      "printedPage": 19,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "a9d6e405b3503d37213cf73160d402b85184413d2c0e5b35659fa7e4c93196b1"
+    },
+    {
+      "id": "biru-kan-2026-pm-155",
+      "sourcePage": 22,
+      "printedPage": 19,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "503d0999202c9699f7fffc519a513eeb4c14f5fceb177b81d4d111b600f5d7dc"
+    },
+    {
+      "id": "biru-kan-2026-pm-156",
+      "sourcePage": 23,
+      "printedPage": 20,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "31bf6c7d30c268656e21670ec21a3bc832473ef073ccf503bc0232fdd5cec95a"
+    },
+    {
+      "id": "biru-kan-2026-pm-157",
+      "sourcePage": 23,
+      "printedPage": 20,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "4668a379f25aee4101fcc9ae6f631cb33746a9d9dbea96a527934cb5c28ad9ca"
+    },
+    {
+      "id": "biru-kan-2026-pm-158",
+      "sourcePage": 23,
+      "printedPage": 20,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "bbe0f3de2710061b3a0ea39ec4a3d13006d7ab891bceaa5e05bce04f166bb1cd"
+    },
+    {
+      "id": "biru-kan-2026-pm-159",
+      "sourcePage": 24,
+      "printedPage": 21,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "139a61ac22e1c9e7aa418634d50bd9b454ca6bcf964a94088d099f77fc7f4f82"
+    },
+    {
+      "id": "biru-kan-2026-pm-160",
+      "sourcePage": 24,
+      "printedPage": 21,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "42a6c9ae117fd66e0cacf58ce3bee67af982b3a378e2cc75aa501168b5ce2abd"
+    },
+    {
+      "id": "biru-kan-2026-pm-161",
+      "sourcePage": 24,
+      "printedPage": 21,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "22281eac215a712295030802c1bdcb5e0261a38aa300efe293137294f90653a9"
+    },
+    {
+      "id": "biru-kan-2026-pm-162",
+      "sourcePage": 25,
+      "printedPage": 22,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "414092613e3a7b313f764817364312456c5bcc72ebd8725442ed4264b14e983d"
+    },
+    {
+      "id": "biru-kan-2026-pm-163",
+      "sourcePage": 25,
+      "printedPage": 22,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "95b27d40e3f9d9f383a01c879b5f35adcd472308c29617370e30e1a71a8661de"
+    },
+    {
+      "id": "biru-kan-2026-pm-164",
+      "sourcePage": 25,
+      "printedPage": 22,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "080e13890e90b1afae5a8b71e4ec73b95ad3b93f8a6a36acc1471a16c88ad7b6"
+    },
+    {
+      "id": "biru-kan-2026-pm-165",
+      "sourcePage": 25,
+      "printedPage": 22,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "71229ab295322250afd27cedf01ab03b80cfca7cf3529a1d32847d6ee43b6985"
+    },
+    {
+      "id": "biru-kan-2026-pm-166",
+      "sourcePage": 26,
+      "printedPage": 23,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "ab08f6e5b3ffa487698ad835b86113428cf2f1dff27a598e52eb9ce058e704e9"
+    },
+    {
+      "id": "biru-kan-2026-pm-167",
+      "sourcePage": 26,
+      "printedPage": 23,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "6000544b8bfdc6693c91f6e59f619b06478c6b227c0e6d01c8b8647f44de1d63"
+    },
+    {
+      "id": "biru-kan-2026-pm-168",
+      "sourcePage": 26,
+      "printedPage": 23,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "e506d7d728db36cc7da59c5f111385e9a126ec132480f4646347431f04f1170e"
+    },
+    {
+      "id": "biru-kan-2026-pm-169",
+      "sourcePage": 26,
+      "printedPage": 23,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "4a12f5ee2be83a68251ff08e5ce9374a2c5e65dfb90e6e4cee62fd70ae0c49be"
+    },
+    {
+      "id": "biru-kan-2026-pm-170",
+      "sourcePage": 27,
+      "printedPage": 24,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "051eff6f36c50960e66e44507dc7075641dba39a8d9c9b580c76f5dd43c431df"
+    },
+    {
+      "id": "biru-kan-2026-pm-171",
+      "sourcePage": 27,
+      "printedPage": 24,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "d204170b6863487c3d60edeea3bbaa864018352bfd5e7e45215bf91f830b00dd"
+    },
+    {
+      "id": "biru-kan-2026-pm-172",
+      "sourcePage": 27,
+      "printedPage": 24,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "4128248538c36931d7baafe9313bd6ac18b878bd815afec2c03689ab6d7cf560"
+    },
+    {
+      "id": "biru-kan-2026-pm-173",
+      "sourcePage": 27,
+      "printedPage": 24,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "2dfe35ade94e95d88f54929b0b7c3d8c45b73776f277847bd02b0981fe0d112c"
+    },
+    {
+      "id": "biru-kan-2026-pm-174",
+      "sourcePage": 28,
+      "printedPage": 25,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "7c9780ae89d08887efd84651d39085f1ba038c58a470e7f7c8f74d02772f2c1d"
+    },
+    {
+      "id": "biru-kan-2026-pm-175",
+      "sourcePage": 28,
+      "printedPage": 25,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "170f51ee931914a564c5b840f003330934f10733bcefe163e8e2b41a8eb9204c"
+    },
+    {
+      "id": "biru-kan-2026-pm-176",
+      "sourcePage": 28,
+      "printedPage": 25,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "6113b2aad6d2d7f9529f3810a4c1b8e1fc0aee730508c0c70b5a0048883f7f32"
+    },
+    {
+      "id": "biru-kan-2026-pm-177",
+      "sourcePage": 29,
+      "printedPage": 26,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "6533596d92848e317be43c3f33c4c68c1b86f5bf882ca078d14dc40a0dc8473a"
+    },
+    {
+      "id": "biru-kan-2026-pm-178",
+      "sourcePage": 29,
+      "printedPage": 26,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "928c9519356a027008e9101f02d64524463907e4f6076f244a72c58a7b011bf0"
+    },
+    {
+      "id": "biru-kan-2026-pm-179",
+      "sourcePage": 29,
+      "printedPage": 26,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "4b2fd7b0d7dcdc39d584f86fb527064a970c904cae3dd9a17bc1c7a26adcedba"
+    },
+    {
+      "id": "biru-kan-2026-pm-180",
+      "sourcePage": 30,
+      "printedPage": 27,
+      "transcriptionVerified": true,
+      "officialAnswerVerified": true,
+      "explanationReviewed": true,
+      "sourceContentSha256": "220e5815960489b4aa99cf0f415155cf466902ea2fd01ad08b1057a3ea91b7f9"
+    }
+  ],
+  "assets": [],
+  "tableQuestionNumbers": [
+    106,
+    107,
+    108,
+    115,
+    116,
+    123,
+    125,
+    128,
+    130,
+    134,
+    137,
+    144,
+    159,
+    169,
+    173,
+    175,
+    177
+  ],
+  "calculations": [
+    {
+      "qNumber": 118,
+      "expression": "0.0143 * (100 * 40) / 5",
+      "result": 11.44,
+      "unit": "L/min",
+      "nearestChoice": 12
+    },
+    {
+      "qNumber": 157,
+      "expression": "(100 - 20 - 10) / 10",
+      "result": 7,
+      "unit": "ratio",
+      "nearestChoice": 7
+    }
+  ],
+  "technicalObservations": []
+}
