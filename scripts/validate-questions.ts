@@ -541,7 +541,7 @@ if (opts.staging === "khk-kagaku-2026-kou" && !opts.exams.length && !opts.fix &&
   const errors = validateKhk2026KouStaging();
   for (const error of errors) console.error(`[FAIL] ${error}`);
   const result = validate(KHK_2026_KOU_STAGING);
-  console.log(`Validated ${KHK_2026_KOU_STAGING.length} private KHK 2026 kou originals. fail=${errors.length + result.fail} publicAllowed=false`);
+  console.log(`Validated ${KHK_2026_KOU_STAGING.length} private KHK 2026 kou occurrences (34 stored + 1 reference). fail=${errors.length + result.fail} publicAllowed=false`);
   process.exit(errors.length || result.fail ? 1 : 0);
 }
 if (opts.staging === "khk-kagaku-2026-hei-lpg" && !opts.exams.length && !opts.fix && !opts.report) {

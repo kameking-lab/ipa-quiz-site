@@ -3,12 +3,16 @@ import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import manifest from "@/data/qualification-staging/khk-kagaku/2026-kou/manifest.json";
 import review from "@/data/qualification-staging/khk-kagaku/2026-kou/review.json";
+import storedQuestions from "@/data/qualification-staging/khk-kagaku/2026-kou/questions.json";
+import references from "@/data/qualification-staging/khk-kagaku/2026-kou/shared-question-references.json";
 import ready from "@/data/questions/khk-kagaku/ready.json";
 import publicQuestions from "@/data/questions/khk-kagaku/public-questions.json";
 import imageAllowlist from "@/data/questions/khk-kagaku/image-assets.json";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { KHK_2026_KOU_STAGING, validateKhk2026KouStaging } from "@/scripts/lib/validate-khk-kagaku-2026-kou";
+import { KHK_2026_HEI_LPG_STAGING } from "@/scripts/lib/validate-khk-kagaku-2026-hei-lpg";
+import { KHK_2026_HEI_SPECIAL_STAGING } from "@/scripts/lib/validate-khk-kagaku-2026-hei-special";
 
 describe("2026 KHK kou private originals", () => {
   it("retains 35 reviewed source transcriptions and exact official keys", () => {
@@ -33,6 +37,29 @@ describe("2026 KHK kou private originals", () => {
     expect(formula.answer).toBe("イ");
     expect(formula.choices!["イ"]).toBe("ロ");
     expect(formula.imageUrls![0]).toContain("q6-formula");
+  });
+
+  it("resolves AX7 and DX7 from CX7 while preserving all three official occurrences", () => {
+    const ax = KHK_2026_KOU_STAGING.find(q => q.id.endsWith("ax-q7"))!;
+    const cx = KHK_2026_HEI_LPG_STAGING.find(q => q.id.endsWith("cx-q7"))!;
+    const dx = KHK_2026_HEI_SPECIAL_STAGING.find(q => q.id.endsWith("dx-q7"))!;
+    expect(storedQuestions).toHaveLength(34);
+    expect(storedQuestions.some(q => q.id === ax.id)).toBe(false);
+    expect(references.map(ref => [ref.id, ref.existingQuestionId])).toEqual([[ax.id, cx.id]]);
+    expect(new Set([ax.id, cx.id, dx.id]).size).toBe(3);
+    expect(new Set([ax, cx, dx].map(q => q.sourcePdfUrl)).size).toBe(3);
+    expect([ax.subject, cx.subject, dx.subject]).toEqual(["甲種化学 法令", "丙種化学（液石） 法令", "丙種化学（特別） 法令"]);
+    for (const q of [ax, cx, dx]) {
+      expect(q.qNumber).toBe(7);
+      expect(q.originalContent).toEqual(cx.originalContent);
+      expect(q.choices).toEqual(cx.choices);
+      expect(q.explanation).toBe(cx.explanation);
+      expect(q.choiceExplanations).toEqual(cx.choiceExplanations);
+      expect(q.answer).toBe("エ");
+      expect(q.officialAnswerNumber).toBe("4");
+      expect(q.publicAllowed).toBe(false);
+    }
+    expect(KHK_2026_KOU_STAGING.length + KHK_2026_HEI_LPG_STAGING.length + KHK_2026_HEI_SPECIAL_STAGING.length).toBe(155);
   });
 
   it("keeps the corpus and its source images out of every serving pool", async () => {
