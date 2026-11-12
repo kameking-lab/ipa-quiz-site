@@ -803,7 +803,7 @@ kashikin: {
             categories: ["法及び関係法令に関すること", "貸付け及び貸付けに付随する取引に関する法令及び実務に関すること", "資金需要者等の保護に関すること", "財務及び会計に関すること"],
         }],
     seasons: ["annual"],
-    yearRange: { start: 2021, end: 2025 },
+    yearRange: { start: 2020, end: 2025 },
 },
 "chusho-kigyo-shindanshi": {
     code: "chusho-kigyo-shindanshi",
