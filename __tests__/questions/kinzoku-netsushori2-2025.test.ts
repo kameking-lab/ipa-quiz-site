@@ -3,6 +3,7 @@ import { KINZOKU_NETSUSHORI2_QUESTIONS as questions } from "@/data/questions/kin
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { choiceDisplayLabel, questionNumberLabel } from "@/lib/questions/display";
+import { displayQuestionExplanation } from "@/lib/questions/explanation-display";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
 import { questionSourceEdition } from "@/lib/questions/source-label";
@@ -61,6 +62,19 @@ describe("金属熱処理技能士2級 一般熱処理 2025年度前期", () => 
     expect(config.sessions[0].expectedQuestions).toBe(50);
     expect(config.seasons).toEqual(["early"]);
     expect(new Set(config.sessions[0].categories)).toEqual(new Set(questions.map(q => q.category)));
+  });
+
+  it("B群の総合解説が画面のイロハニと同じ順番で各肢を説明する", () => {
+    for (const q of questions.slice(25)) {
+      const text = displayQuestionExplanation(q.exam, q.explanation);
+      const labels = [...text.matchAll(/([アイウエロハニ])：/g)].map(match => match[1]);
+      expect(labels, q.id).toEqual(internalKeys.map(key => choiceDisplayLabel(q.exam, key)));
+    }
+    const transformation = questions[25];
+    expect(choiceDisplayLabel(transformation.exam, transformation.answer as ChoiceKey)).toBe("ハ");
+    expect(displayQuestionExplanation(transformation.exam, transformation.explanation)).toContain(
+      "ハ：Ac₁が加熱時にオーステナイトの生成が始まる温度です。",
+    );
   });
 
   it("否定設問でも公式正答を維持し、法令の根拠と数値を取り違えない", () => {
