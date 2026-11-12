@@ -1,4 +1,5 @@
 import type { Question } from "@/lib/questions/types";
+import round2023First from "./2023-round1.json";
 import round2026 from "./2026-round1.json";
 import round2025 from "./2025-round2.json";
 import specialist2024 from "./2024-round2.json";
@@ -15,4 +16,4 @@ const shared2024: Question[] = (common2024 as Question[]).filter(q => q.qNumber 
   sourceAttribution: q.sourceAttribution?.replace("機械系保全作業", "電気系保全作業"),
 }));
 
-export const QUESTIONS: Question[] = [...round2026 as Question[], ...round2025 as Question[], ...shared2024, ...specialist2024 as Question[]];
+export const QUESTIONS: Question[] = [...round2026 as Question[], ...round2025 as Question[], ...shared2024, ...specialist2024 as Question[], ...round2023First as Question[]];
