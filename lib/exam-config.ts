@@ -1683,6 +1683,48 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（真偽法25・四肢択一25）", categories: ["機械一般", "電気一般", "機械保全法一般", "材料一般", "安全衛生", "機械系保全法"] }],
     seasons: ["annual"], yearRange: { start: 2024, end: 2025 },
 },
+"tobi2": {
+  "code": "tobi2",
+  "nameFull": "技能検定 2級とび（とび作業）学科試験",
+  "urlSlug": "tobi2",
+  "level": "basic",
+  "sessions": [
+    {
+      "session": "gakka",
+      "urlSlug": "gakka",
+      "expectedQuestions": 50,
+      "label": "学科（A群 真偽法・B群 多肢択一法）",
+      "categories": [
+        "安全衛生",
+        "仮設工事",
+        "土工事",
+        "基礎工事",
+        "鉄骨工事",
+        "コンクリート工事",
+        "重量物運搬",
+        "曳き家工事",
+        "玉掛け",
+        "揚重機",
+        "製図",
+        "力学",
+        "工具",
+        "建築構造",
+        "関係法規",
+        "木造工事",
+        "材料",
+        "解体工事",
+        "建設機械"
+      ]
+    }
+  ],
+  "seasons": [
+    "early"
+  ],
+  "yearRange": {
+    "start": 2024,
+    "end": 2024
+  }
+},
 tsukanshi: {
     code: "tsukanshi", nameFull: "通関士試験", urlSlug: "tsukanshi", level: "advanced",
     sessions: [

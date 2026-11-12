@@ -422,6 +422,7 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
     "sokuryoshiho": "測量士補試験",
     "caremanager": "ケアマネ試験（介護支援専門員実務研修受講試験）",
     "kikai-hozen": "機械保全技能検定 2級（機械系保全作業 学科）",
+    "tobi2": "技能検定 2級とび（とび作業）学科試験",
     "tsukanshi": "通関士試験"
 };
 export function examFullName(exam: ExamCode): string {
@@ -597,6 +598,7 @@ const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number)
     "sokuryoshiho": (c, y, k) => `測量士補試験を${c}問・${y}回分・${k}分野で収録。国土地理院の公式正答と全肢の独自解説、必要な図と関数表で学べます。`,
     "caremanager": (c, y, k) => `介護支援専門員実務研修受講試験（ケアマネ試験）を${c}問・${y}回分・${k}分野で収録。公式正答と全選択肢の解説で学べます。解説は過去問AIの独自作成です。`,
     "kikai-hozen": (c, y, k) => `機械保全技能検定 2級 機械系保全作業 学科を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
+    "tobi2": (c, y, k) => `技能検定 2級とび（とび作業）学科を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
     "tsukanshi": (c) => `通関士試験の${c}。公式正答どおりに収録。`
 };
 function publishedYearRange(exam: ExamCode): string {
