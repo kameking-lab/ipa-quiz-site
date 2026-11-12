@@ -16,6 +16,9 @@ import type { ChoiceKey } from "@/lib/questions/types";
 
 // Independently transcribed from the official answer tables, by printed column.
 const editions = [
+  { exam: "flower1" as const, year: 2024, rows: FLOWER1_QUESTIONS.filter(q => q.year === 2024),
+    answers: "○○×○○" + "○○○○×" + "××○×○" + "○××○○" + "×○○○×"
+      + "ニハハロロ" + "ハイイニニ" + "ハロロニハ" + "ハロニハハ" + "ロハロハハ", figures: [42] },
   { exam: "flower1" as const, year: 2025, rows: FLOWER1_QUESTIONS.filter(q => q.year === 2025),
     answers: "○○○○×" + "○○○○○" + "×○○○○" + "○××○○" + "○××○×"
       + "イロロハロ" + "イニハニロ" + "ハイハニニ" + "ニニニハハ" + "ニニニロロ", figures: [] as number[] },
