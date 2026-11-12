@@ -14,6 +14,7 @@ import type { ChoiceKey, Question } from "@/lib/questions/types";
 // Independently read from the rendered official answer sheet, in printed order.
 const SITTINGS = [
   { exam: "kikai-hozen3", season: "round1", questions: KIKAI_HOZEN3_QUESTIONS, answers: "××○××○○×○×○×○××○××○○×○○×××○○○○", figures: 3 },
+  { exam: "kikai-hozen3", season: "round2", questions: KIKAI_HOZEN3_QUESTIONS, answers: "×○×○×○×○○×××○×○○××○×○×○××○○××○", figures: 4 },
   { exam: "kikai-hozen-denki3", season: "round1", questions: KIKAI_HOZEN_DENKI3_QUESTIONS, answers: "××○××○○×○×○×○××○×○○×○×○×××○×○○", figures: 6 },
 ] as const;
 
