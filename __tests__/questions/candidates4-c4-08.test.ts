@@ -8,6 +8,7 @@ import path from "node:path";
 const KASHIKIN_2016 = [1,3,2,2,4,4,3,2,3,4,1,3,4,1,2,1,4,2,3,1,4,3,1,4,2,1,3,2,4,4,1,3,1,3,2,3,1,2,1,4,3,2,2,4,4,3,2,3,1,4];
 // 山口県の問題・正答PDF p24。共通57問→和菓子3問→洋菓子3問→製パン3問。
 const SEIKA_2023 = [4,1,4,4,2,1,2,4,4,2,4,2,2,4,4,2,3,3,4,3,1,3,2,1,3,4,3,1,4,3,3,1,2,4,2,2,2,4,1,3,3,2,4,1,1,3,4,2,3,2,4,4,2,1,4,3,2,3,1,2,2,4,3,2,1,1];
+const SEIKA_2022 = [2,3,3,3,2,3,1,2,3,3,2,4,2,3,2,2,3,3,3,4,3,1,2,1,4,3,4,3,4,2,4,1,2,3,1,3,1,4,3,4,1,2,1,2,3,3,4,1,2,3,1,1,2,4,3,2,4,4,3,4,3,4,3,1,4,2];
 
 describe("CANDIDATES4 c4-08 公式原本", () => {
   it("貸金2016年度50問の公式番号・採点キーを保持する", () => {
@@ -35,16 +36,22 @@ describe("CANDIDATES4 c4-08 公式原本", () => {
     expect(JSON.stringify(paper)).not.toMatch(/[\u0000-\u0008\u000b-\u001f\ufffd]/u);
   });
 
-  it("製菓2023年度は科目別の66問と公式正答を保持する", () => {
-    const paper = YAMAGUCHI_SEIKA_QUESTIONS.filter((q) => q.year === 2023);
-    expect(paper.map((q) => Number(q.officialAnswerNumber))).toEqual(SEIKA_2023);
-    expect(paper.map((q) => q.answer)).toEqual(SEIKA_2023.map((n) => "アイウエ"[n - 1]));
+  it.each([2023, 2022])("製菓%i年度は科目別の66問と公式正答を保持する", (year) => {
+    const paper = YAMAGUCHI_SEIKA_QUESTIONS.filter((q) => q.year === year);
+    const answers = year === 2023 ? SEIKA_2023 : SEIKA_2022;
+    expect(paper.map((q) => Number(q.officialAnswerNumber))).toEqual(answers);
+    expect(paper.map((q) => q.answer)).toEqual(answers.map((n) => "アイウエ"[n - 1]));
     expect(new Set(paper.map((q) => q.id)).size).toBe(66);
     for (const session of ["wagashi", "yogashi", "seipan"]) {
       expect(paper.filter((q) => q.session === session).map((q) => q.qNumber)).toEqual([58, 59, 60]);
     }
     expect(paper.filter((q) => q.session === "gakka").map((q) => q.qNumber)).toEqual(Array.from({ length: 57 }, (_, i) => i + 1));
-    expect(paper.every((q) => q.examDate === "2023-08-19")).toBe(true);
+    expect(paper.every((q) => q.examDate === (year === 2023 ? "2023-08-19" : "2022-08-21"))).toBe(true);
+    for (const q of paper) {
+      expect(q.id).toBe(`yamaguchi-seika-${year}-annual-${q.session}-q${q.qNumber}`);
+      expect(q.sourceAnswerUrl).toBe(`https://www.pref.yamaguchi.lg.jp/uploaded/attachment/${year === 2023 ? 208498 : 208499}.pdf#page=24`);
+      expect(Object.keys(q.choiceExplanations ?? {})).toEqual(["ア", "イ", "ウ", "エ"]);
+    }
   });
 
   it("製菓2023年度の食品成分図を原図と代替テキストで保持する", () => {
