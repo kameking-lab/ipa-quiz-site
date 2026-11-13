@@ -1,7 +1,8 @@
-﻿import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vitest";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { KUUKIATSU_KUMITATE1_QUESTIONS } from "@/data/questions/kuukiatsu-kumitate1";
+import { KUUKIATSU_KUMITATE2_QUESTIONS } from "@/data/questions/kuukiatsu-kumitate2";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -15,6 +16,8 @@ import type { ChoiceKey } from "@/lib/questions/types";
 
 // 公式正答PDFを5問ずつ確認して固定。内部キーとの対応を独立して検証する。
 const editions = [
+  { exam: "kuukiatsu-kumitate2" as const, year: 2025, all: KUUKIATSU_KUMITATE2_QUESTIONS,
+    answers: "○○×××" + "×○○××" + "○×○○○" + "○○○××" + "×○×○○" + "ロイニロロ" + "ハロイニロ" + "イロハイニ" + "ニロハロロ" + "ニイロハハ", figures: 5 },
   { exam: "kuukiatsu-kumitate1" as const, year: 2025, all: KUUKIATSU_KUMITATE1_QUESTIONS,
     answers: "○○×××" + "○××○○" + "×○○×○" + "○○○○○" + "○××○○" + "ニロロハニ" + "ニロハハハ" + "イロイハニ" + "ハイニロハ" + "ハロイハハ", figures: 4 },
 ];
