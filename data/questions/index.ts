@@ -48,6 +48,7 @@ import { KOJO_BANKIN3_QUESTIONS } from "./kojo-bankin3";
 import { KOJO_BANKIN2_QUESTIONS } from "./kojo-bankin2";
 import { KENSETSU_KIKAI_SEIBI2_QUESTIONS } from "./kensetsu-kikai-seibi2";
 import { HYOSO1_QUESTIONS } from "./hyoso1";
+import { TAIRU2_QUESTIONS } from "./tairu2";
 import { HYOSO2_QUESTIONS } from "./hyoso2";
 import { KIKINZOKU_SOSHIN2_QUESTIONS } from "./kikinzoku-soshin2";
 import { TOBI1_QUESTIONS } from "./tobi1";
@@ -435,6 +436,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("kojo-bankin2") ? { "kojo-bankin2": KOJO_BANKIN2_QUESTIONS } : {}),
 ...(isExamPublished("kensetsu-kikai-seibi2") ? { "kensetsu-kikai-seibi2": KENSETSU_KIKAI_SEIBI2_QUESTIONS } : {}),
 ...(isExamPublished("hyoso1") ? { "hyoso1": HYOSO1_QUESTIONS } : {}),
+...(isExamPublished("tairu2") ? { "tairu2": TAIRU2_QUESTIONS } : {}),
 ...(isExamPublished("hyoso2") ? { "hyoso2": HYOSO2_QUESTIONS } : {}),
 ...(isExamPublished("kikinzoku-soshin2") ? { "kikinzoku-soshin2": KIKINZOKU_SOSHIN2_QUESTIONS } : {}),
 ...(isExamPublished("tobi1") ? { "tobi1": TOBI1_QUESTIONS } : {}),

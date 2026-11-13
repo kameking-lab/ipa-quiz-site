@@ -1714,6 +1714,11 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["保存・取扱い", "壁装", "安全衛生", "屏風", "工具", "巻物", "建具", "建築", "掛軸", "材料", "色彩", "裏打ち", "製図", "襖", "関係法規"] }],
     seasons: ["early"], yearRange: { start: 2025, end: 2025 },
 },
+"tairu2": {
+    code: "tairu2", nameFull: "技能検定 2級タイル張り（タイル張り作業）学科試験", urlSlug: "tairu2", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["下地", "仮設工事", "加工", "基礎工事", "墨出し", "安全衛生", "工具", "建築構造", "施工法", "材料", "測量", "白華", "目地", "積算", "色彩", "製図", "試験", "運搬", "関係法規", "養生"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
 "hyoso2": {
     code: "hyoso2", nameFull: "技能検定 2級表装（表具作業）学科試験", urlSlug: "hyoso2", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["壁装", "建具", "工具", "建築", "材料", "色彩", "製図", "関係法規", "安全衛生", "屏風", "裏打ち", "襖", "掛軸", "保存・取扱い"] }],
