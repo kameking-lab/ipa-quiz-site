@@ -570,5 +570,36 @@
       "method": "ブラウズ取得した公式PDFの第8章冒頭を確認。JISの標準温度20℃という記載を照合。",
       "localDownload": "接続タイムアウト。ローカルPDF・ハッシュ未保存。"
     }
-  ]
+  ],
+  "strictReview": {
+    "step": "c5r-B4",
+    "checkedAt": "2026-11-13T21:20:11.311344+09:00",
+    "questionCount": 50,
+    "choiceExplanationCount": 150,
+    "figuresChecked": 0,
+    "officialAnswersMatched": 50,
+    "answerChanges": 0,
+    "newQuestions": 0,
+    "missingQuestions": 0,
+    "duplicateIds": 0,
+    "duplicateSourceQuestions": 0,
+    "changedQuestionIds": [
+      "chuzo1-2024-early-gakka-b-016"
+    ],
+    "method": "公式PDF全問題ページを目視照合。全選択肢・解説・切出し原図を確認。公式正答表から独立抽出して全件照合。公式PDF30点の再取得SHA-256と既存原本が一致。",
+    "officialPdfChecks": [
+      {
+        "kind": "questions",
+        "url": "https://www.kentei.javada.or.jp/pdf/R06-1-B03-%E9%8B%B3%E9%80%A0%EF%BC%88%E9%8B%B3%E9%89%84%E9%8B%B3%E7%89%A9%E9%8B%B3%E9%80%A0%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+        "status": 200,
+        "sha256": "abd6e44f3d933b9583e51116131ed134ab0915b48c949a402860db7e0d698832"
+      },
+      {
+        "kind": "answers",
+        "url": "https://www.kentei.javada.or.jp/pdf/R06-1-B03-%E9%8B%B3%E9%80%A0%EF%BC%88%E9%8B%B3%E9%89%84%E9%8B%B3%E7%89%A9%E9%8B%B3%E9%80%A0%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+        "status": 200,
+        "sha256": "3eb59d880a59b618521c4e2e6f3e4aaeeaf6809a9717d000ab7c18f5b185fe77"
+      }
+    ]
+  }
 }

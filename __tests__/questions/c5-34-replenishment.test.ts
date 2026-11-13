@@ -68,7 +68,7 @@ it("原本で拡大確認した語句と3級13の公式訂正を残す", () => {
   expect(one[41].choices?.エ).toContain("生型には発生しにくい");
   expect(CHUZO2_QUESTIONS[11].question).toContain("抵抗を直列に接続");
   expect(CHUZO2_QUESTIONS[11].explanation).toContain("1Ω+2Ω=3Ω");
-  expect(CHUZO2_QUESTIONS[36].choices?.イ).toContain("鋳型の素材");
+  expect(CHUZO2_QUESTIONS[36].choices?.イ).toContain("鋳型の条件");
   const q13 = CHUZO3_QUESTIONS.find(q => q.year === 2024 && q.qNumber === 13)!;
   expect(q13.answer).toBe("ア");
   expect(q13.explanation).toContain("公式正答表では問13を○に訂正");

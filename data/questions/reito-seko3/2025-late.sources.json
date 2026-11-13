@@ -375,5 +375,42 @@
   "reviewNotes": [
     "公式正答表をPDFから独立に抽出して全問照合。正答判定の変更はない。正答表の全角Ｘは×として正規化。",
     "問題の全ページと切り出した全原図を画像で確認。図の選択肢にはイ・ロ・ハ・ニの参照文を付け、原図を併載。"
-  ]
+  ],
+  "strictReview": {
+    "step": "c5r-B4",
+    "checkedAt": "2026-11-13T21:20:11.311344+09:00",
+    "questionCount": 30,
+    "choiceExplanationCount": 60,
+    "figuresChecked": 2,
+    "officialAnswersMatched": 30,
+    "answerChanges": 0,
+    "newQuestions": 0,
+    "missingQuestions": 0,
+    "duplicateIds": 0,
+    "duplicateSourceQuestions": 0,
+    "changedQuestionIds": [],
+    "method": "公式PDF全問題ページを目視照合。全選択肢・解説・切出し原図を確認。公式正答表から独立抽出して全件照合。公式PDF30点の再取得SHA-256と既存原本が一致。",
+    "officialPdfChecks": [
+      {
+        "kind": "questions",
+        "url": "https://www.kentei.javada.or.jp/pdf/R07-2-D11-%E5%86%B7%E5%87%8D%E7%A9%BA%E6%B0%97%E8%AA%BF%E5%92%8C%E6%A9%9F%E5%99%A8%E6%96%BD%E5%B7%A5%EF%BC%88%E5%86%B7%E5%87%8D%E7%A9%BA%E6%B0%97%E8%AA%BF%E5%92%8C%E6%A9%9F%E5%99%A8%E6%96%BD%E5%B7%A5%E4%BD%9C%E6%A5%AD%EF%BC%89-3%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+        "status": 200,
+        "sha256": "0aaa959d4be586b6fd8f9efc055fa338002bbad281ed1587fd43391c6a472e56"
+      },
+      {
+        "kind": "answers",
+        "url": "https://www.kentei.javada.or.jp/pdf/R07-2-D11-%E5%86%B7%E5%87%8D%E7%A9%BA%E6%B0%97%E8%AA%BF%E5%92%8C%E6%A9%9F%E5%99%A8%E6%96%BD%E5%B7%A5%EF%BC%88%E5%86%B7%E5%87%8D%E7%A9%BA%E6%B0%97%E8%AA%BF%E5%92%8C%E6%A9%9F%E5%99%A8%E6%96%BD%E5%B7%A5%E4%BD%9C%E6%A5%AD%EF%BC%89-3%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+        "status": 200,
+        "sha256": "620ec51fa0db134406c83632e31705338afe53ca600377b48677c01b67257b9f"
+      }
+    ],
+    "supportingSources": [
+      {
+        "name": "safety",
+        "url": "https://laws.e-gov.go.jp/api/1/lawdata/347M50002000032",
+        "status": 200,
+        "sha256": "27970b8f0a113ae39a3480e35ffe0edcf3166218149110bbe7e9a3d8b9fb090f"
+      }
+    ]
+  }
 }

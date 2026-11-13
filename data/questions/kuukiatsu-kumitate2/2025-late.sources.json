@@ -569,5 +569,42 @@
       "url": "https://laws.e-gov.go.jp/law/347CO0000000318#Mp-At_1",
       "verified": "第1条第7号・第二種圧力容器の0.2MPa及び0.04m³"
     }
-  ]
+  ],
+  "strictReview": {
+    "step": "c5r-B4",
+    "checkedAt": "2026-11-13T21:20:11.311344+09:00",
+    "questionCount": 50,
+    "choiceExplanationCount": 150,
+    "figuresChecked": 5,
+    "officialAnswersMatched": 50,
+    "answerChanges": 0,
+    "newQuestions": 0,
+    "missingQuestions": 0,
+    "duplicateIds": 0,
+    "duplicateSourceQuestions": 0,
+    "changedQuestionIds": [],
+    "method": "公式PDF全問題ページを目視照合。全選択肢・解説・切出し原図を確認。公式正答表から独立抽出して全件照合。公式PDF30点の再取得SHA-256と既存原本が一致。",
+    "officialPdfChecks": [
+      {
+        "kind": "questions",
+        "url": "https://www.kentei.javada.or.jp/pdf/R07-2-B22-%E7%A9%BA%E6%B0%97%E5%9C%A7%E8%A3%85%E7%BD%AE%E7%B5%84%E7%AB%8B%E3%81%A6%EF%BC%88%E7%A9%BA%E6%B0%97%E5%9C%A7%E8%A3%85%E7%BD%AE%E7%B5%84%E7%AB%8B%E3%81%A6%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+        "status": 200,
+        "sha256": "ba3f923c8017d8f5ce1462da48c3257512c7d1686471a5fac1200132df2c84a6"
+      },
+      {
+        "kind": "answers",
+        "url": "https://www.kentei.javada.or.jp/pdf/R07-2-B22-%E7%A9%BA%E6%B0%97%E5%9C%A7%E8%A3%85%E7%BD%AE%E7%B5%84%E7%AB%8B%E3%81%A6%EF%BC%88%E7%A9%BA%E6%B0%97%E5%9C%A7%E8%A3%85%E7%BD%AE%E7%B5%84%E7%AB%8B%E3%81%A6%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+        "status": 200,
+        "sha256": "6820201d6ff89006044e9eda9f43d4b8a69b22b00434f1cbdaf388716e7ea3ef"
+      }
+    ],
+    "supportingSources": [
+      {
+        "name": "safety",
+        "url": "https://laws.e-gov.go.jp/api/1/lawdata/347M50002000032",
+        "status": 200,
+        "sha256": "27970b8f0a113ae39a3480e35ffe0edcf3166218149110bbe7e9a3d8b9fb090f"
+      }
+    ]
+  }
 }

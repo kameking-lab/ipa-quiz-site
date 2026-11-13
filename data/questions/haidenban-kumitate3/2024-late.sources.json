@@ -351,5 +351,36 @@
       "allChoicesChecked": true,
       "hasFigure": false
     }
-  ]
+  ],
+  "strictReview": {
+    "step": "c5r-B4",
+    "checkedAt": "2026-11-13T21:20:11.311344+09:00",
+    "questionCount": 30,
+    "choiceExplanationCount": 60,
+    "figuresChecked": 3,
+    "officialAnswersMatched": 30,
+    "answerChanges": 0,
+    "newQuestions": 0,
+    "missingQuestions": 0,
+    "duplicateIds": 0,
+    "duplicateSourceQuestions": 0,
+    "changedQuestionIds": [
+      "haidenban-kumitate3-2024-late-gakka-021"
+    ],
+    "method": "公式PDF全問題ページを目視照合。全選択肢・解説・切出し原図を確認。公式正答表から独立抽出して全件照合。公式PDF30点の再取得SHA-256と既存原本が一致。",
+    "officialPdfChecks": [
+      {
+        "kind": "questions",
+        "url": "https://www.kentei.javada.or.jp/pdf/R06-2-D05-3%E7%B4%9A%E3%80%80%E9%9B%BB%E6%B0%97%E6%A9%9F%E5%99%A8%E7%B5%84%E7%AB%8B%E3%81%A6%EF%BC%88%E9%85%8D%E9%9B%BB%E7%9B%A4%E3%83%BB%E5%88%B6%E5%BE%A1%E7%9B%A4%E7%B5%84%E7%AB%8B%E3%81%A6%E4%BD%9C%E6%A5%AD%EF%BC%89-3%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+        "status": 200,
+        "sha256": "7035995ada21e45cc75b2c2fcac910dc6cbbea970c615cdc76f4e2b672909723"
+      },
+      {
+        "kind": "answers",
+        "url": "https://www.kentei.javada.or.jp/pdf/R06-2-D05-%E9%9B%BB%E6%B0%97%E6%A9%9F%E5%99%A8%E7%B5%84%E7%AB%8B%E3%81%A6%EF%BC%88%E9%85%8D%E9%9B%BB%E7%9B%A4%E3%83%BB%E5%88%B6%E5%BE%A1%E7%9B%A4%E7%B5%84%E7%AB%8B%E3%81%A6%E4%BD%9C%E6%A5%AD%EF%BC%89-3%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+        "status": 200,
+        "sha256": "fbb526e5409531f0b2252d632cec42e5ba125e77608f230a66a27928a3690024"
+      }
+    ]
+  }
 }

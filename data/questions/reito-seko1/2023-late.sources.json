@@ -599,5 +599,60 @@
   "reviewNotes": [
     "公式正答表をPDFから独立抽出し、全問の原本正答と内部キーを照合。正答判定の変更はない。全角Ｘは×として表記正規化。",
     "全問題ページと切り出した全原図を画像で照合。問番号・本文・全選択肢の照合結果をreviewに記録。"
-  ]
+  ],
+  "strictReview": {
+    "step": "c5r-B4",
+    "checkedAt": "2026-11-13T21:20:11.311344+09:00",
+    "questionCount": 50,
+    "choiceExplanationCount": 150,
+    "figuresChecked": 4,
+    "officialAnswersMatched": 50,
+    "answerChanges": 0,
+    "newQuestions": 0,
+    "missingQuestions": 0,
+    "duplicateIds": 0,
+    "duplicateSourceQuestions": 0,
+    "changedQuestionIds": [],
+    "method": "公式PDF全問題ページを目視照合。全選択肢・解説・切出し原図を確認。公式正答表から独立抽出して全件照合。公式PDF30点の再取得SHA-256と既存原本が一致。",
+    "officialPdfChecks": [
+      {
+        "kind": "questions",
+        "url": "https://www.kentei.javada.or.jp/pdf/R05-2-B27-%E5%86%B7%E5%87%8D%E7%A9%BA%E6%B0%97%E8%AA%BF%E5%92%8C%E6%A9%9F%E5%99%A8%E6%96%BD%E5%B7%A5%EF%BC%88%E5%86%B7%E5%87%8D%E7%A9%BA%E6%B0%97%E8%AA%BF%E5%92%8C%E6%A9%9F%E5%99%A8%E6%96%BD%E5%B7%A5%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+        "status": 200,
+        "sha256": "62ce9d1b1406feb1e59f6e23c71c1a57e95f671cd3ecb7046730da5397724f51"
+      },
+      {
+        "kind": "answers",
+        "url": "https://www.kentei.javada.or.jp/pdf/R05-2-B27-%E5%86%B7%E5%87%8D%E7%A9%BA%E6%B0%97%E8%AA%BF%E5%92%8C%E6%A9%9F%E5%99%A8%E6%96%BD%E5%B7%A5%EF%BC%88%E5%86%B7%E5%87%8D%E7%A9%BA%E6%B0%97%E8%AA%BF%E5%92%8C%E6%A9%9F%E5%99%A8%E6%96%BD%E5%B7%A5%E4%BD%9C%E6%A5%AD%EF%BC%89-%EF%BC%91%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+        "status": 200,
+        "sha256": "7fed27815a289419c22eafbb3441390e1648a635d5840551a62df2dbff502d1c"
+      }
+    ],
+    "supportingSources": [
+      {
+        "name": "voltage",
+        "url": "https://laws.e-gov.go.jp/api/1/lawdata/409M50000400052",
+        "status": 200,
+        "sha256": "5df0475457af74465c899504c10544a19d08a21df224f581b89fe1e0d7cdfcc9"
+      },
+      {
+        "name": "gas",
+        "url": "https://laws.e-gov.go.jp/api/1/lawdata/326AC0000000204",
+        "status": 200,
+        "sha256": "aac22fa36d3a49af5a7453733a2b9177c4c7d59b7282bbbbbdbb1b6034683ead"
+      },
+      {
+        "name": "safety",
+        "url": "https://laws.e-gov.go.jp/api/1/lawdata/347M50002000032",
+        "status": 200,
+        "sha256": "27970b8f0a113ae39a3480e35ffe0edcf3166218149110bbe7e9a3d8b9fb090f"
+      },
+      {
+        "name": "glass",
+        "url": "https://www.env.go.jp/earth/ondanka/gel/ghg-guideline/search/pdf/01_159.pdf",
+        "status": 200,
+        "sha256": "ab6b9ee7e3e617096f6a678a04bc3c84fdd1cf9ec904f7c4b66a845c4ada4ad2"
+      }
+    ]
+  }
 }

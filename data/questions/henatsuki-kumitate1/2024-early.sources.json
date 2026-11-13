@@ -551,5 +551,41 @@
       "allChoicesChecked": true,
       "hasFigure": false
     }
-  ]
+  ],
+  "strictReview": {
+    "step": "c5r-B4",
+    "checkedAt": "2026-11-13T21:20:11.311344+09:00",
+    "questionCount": 50,
+    "choiceExplanationCount": 150,
+    "figuresChecked": 2,
+    "officialAnswersMatched": 50,
+    "answerChanges": 0,
+    "newQuestions": 0,
+    "missingQuestions": 0,
+    "duplicateIds": 0,
+    "duplicateSourceQuestions": 0,
+    "changedQuestionIds": [
+      "henatsuki-kumitate1-2024-early-gakka-a-010",
+      "henatsuki-kumitate1-2024-early-gakka-a-024",
+      "henatsuki-kumitate1-2024-early-gakka-b-003",
+      "henatsuki-kumitate1-2024-early-gakka-b-005",
+      "henatsuki-kumitate1-2024-early-gakka-b-014",
+      "henatsuki-kumitate1-2024-early-gakka-b-022"
+    ],
+    "method": "公式PDF全問題ページを目視照合。全選択肢・解説・切出し原図を確認。公式正答表から独立抽出して全件照合。公式PDF30点の再取得SHA-256と既存原本が一致。",
+    "officialPdfChecks": [
+      {
+        "kind": "questions",
+        "url": "https://www.kentei.javada.or.jp/pdf/R06-1-B37-%E9%9B%BB%E6%B0%97%E6%A9%9F%E5%99%A8%E7%B5%84%E7%AB%8B%E3%81%A6%EF%BC%88%E5%A4%89%E5%9C%A7%E5%99%A8%E7%B5%84%E7%AB%8B%E3%81%A6%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+        "status": 200,
+        "sha256": "d0c1c72b1622bd6375bc8b8da28c340e3294149eafe043922245eca319db113f"
+      },
+      {
+        "kind": "answers",
+        "url": "https://www.kentei.javada.or.jp/pdf/R06-1-B37-%E9%9B%BB%E6%B0%97%E6%A9%9F%E5%99%A8%E7%B5%84%E7%AB%8B%E3%81%A6%EF%BC%88%E5%A4%89%E5%9C%A7%E5%99%A8%E7%B5%84%E7%AB%8B%E3%81%A6%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+        "status": 200,
+        "sha256": "a0981da93b225799b545791a11621403150ae1a8b3e76558f7944ccfbac56f7b"
+      }
+    ]
+  }
 }
