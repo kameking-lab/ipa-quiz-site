@@ -26,7 +26,8 @@ const editions = [
     a: "×××○× ×○×○○ ×○○○○ ×○××○ ××××○ ×××○○", b: "", figures: [28] },
 ] as const;
 
-for (const { code, rows, a, b, figures } of editions) {
+for (const { code, rows: corpus, a, b, figures } of editions) {
+  const rows = corpus.filter(q => q.year === 2024 && q.season === "late");
   describe(`${code} 2024年度後期`, () => {
     const official = (a + b).replaceAll(" ", "");
     const tfCount = b ? 25 : 30;
@@ -57,15 +58,16 @@ for (const { code, rows, a, b, figures } of editions) {
       });
     });
     it("publishes the correct qualification name, configuration, web and mobile content", async () => {
-      expect(await getQuestionsForExam(code)).toEqual(rows);
-      expect(await examContent(code)).toEqual(rows);
+      expect(await getQuestionsForExam(code)).toEqual(corpus);
+      expect(await examContent(code)).toEqual(corpus);
       const catalog = JSON.parse(readFileSync("mobile/src/generated/catalog.json", "utf8"));
       expect(catalog.exams.find((entry: {code: string}) => entry.code === code)).toEqual(await examCatalog(code));
       expect(examLabel(code)).toBe(`冷凍空気調和機器施工技能士 ${code.at(-1)}級（冷凍空気調和機器施工作業）`);
       expect(getQualificationByExamCode(code)?.shortName).toBe(examLabel(code));
       expect(EXAM_CONFIGS[code].sessions[0].expectedQuestions).toBe(rows.length);
       expect(EXAM_CONFIGS[code].seasons).toEqual(["late"]);
-      expect(EXAM_CONFIGS[code].yearRange).toEqual({ start: 2024, end: 2024 });
+      expect(EXAM_CONFIGS[code].yearRange.start).toBeLessThanOrEqual(2024);
+      expect(EXAM_CONFIGS[code].yearRange.end).toBeGreaterThanOrEqual(2024);
       rows.forEach(q => {
         expect(EXAM_CONFIGS[code].sessions[0].categories).toContain(q.category);
         const graph = buildQuestionJsonLd({ question: q, pageUrlAbs: `https://www.kakomon-ai.jp${questionPagePath(q)}`, title: code })["@graph"][0];
@@ -94,10 +96,12 @@ for (const { code, rows, a, b, figures } of editions) {
 }
 
 it("retains the official statement even when it contains a false value", () => {
-  expect(REITO_SEKO3_QUESTIONS[1].question).toContain("約273K");
-  expect(REITO_SEKO3_QUESTIONS[1].explanation).toContain("約373K");
-  expect(REITO_SEKO3_QUESTIONS[25].question).toContain("100cm");
-  expect(REITO_SEKO3_QUESTIONS[25].explanation).toContain("1cm");
-  expect(REITO_SEKO2_QUESTIONS[42].choices?.["ア"]).toContain("酸素");
-  expect(REITO_SEKO2_QUESTIONS[42].officialAnswerNumber).toBe("イ");
+  const thirdGrade = REITO_SEKO3_QUESTIONS.filter(q => q.year === 2024 && q.season === "late");
+  const secondGrade = REITO_SEKO2_QUESTIONS.filter(q => q.year === 2024 && q.season === "late");
+  expect(thirdGrade[1].question).toContain("約273K");
+  expect(thirdGrade[1].explanation).toContain("約373K");
+  expect(thirdGrade[25].question).toContain("100cm");
+  expect(thirdGrade[25].explanation).toContain("1cm");
+  expect(secondGrade[42].choices?.["ア"]).toContain("酸素");
+  expect(secondGrade[42].officialAnswerNumber).toBe("イ");
 });

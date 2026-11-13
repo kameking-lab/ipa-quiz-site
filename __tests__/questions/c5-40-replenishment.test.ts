@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
+import { REITO_SEKO2_QUESTIONS } from "@/data/questions/reito-seko2";
+import { REITO_SEKO3_QUESTIONS } from "@/data/questions/reito-seko3";
 import { REITO_SEKO1_QUESTIONS } from "@/data/questions/reito-seko1";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
@@ -26,17 +28,17 @@ const editions = [
 describe.each(editions)("c5-40 $exam $year 後期", ({ exam, year, all, answers, figures }) => {
   const rows = all.filter(q => q.year === year && q.season === "late");
   it("全問の公式正答・原本記号・出典・図を保持し、全肢解説を配信する", () => {
-    expect(rows).toHaveLength(50);
+    expect(rows).toHaveLength(exam === "reito-seko3" ? 30 : 50);
     expect(new Set(rows.map(q => q.id)).size).toBe(rows.length);
     expect(rows.filter(q => q.hasImage)).toHaveLength(figures);
     for (const [i, q] of rows.entries()) {
       const official = answers[i];
-      const key = (i < 25 ? official === "○" ? "ア" : "イ" : "アイウエ"["イロハニ".indexOf(official)]) as ChoiceKey;
+      const key = ((exam === "reito-seko3" || i < 25) ? official === "○" ? "ア" : "イ" : "アイウエ"["イロハニ".indexOf(official)]) as ChoiceKey;
       expect(q.answer, q.id).toBe(key);
       expect(q.officialAnswerNumber, q.id).toBe(official);
       expect(formatQuestionAnswerForDisplay(q, key), q.id).toBe(official);
       expect(q.qNumber).toBe(i + 1);
-      expect(q.officialQuestionLabel).toBe(i < 25 ? `A群 ${i + 1}` : `B群 ${i - 24}`);
+      expect(q.officialQuestionLabel).toBe(exam === "reito-seko3" ? String(i + 1) : i < 25 ? `A群 ${i + 1}` : `B群 ${i - 24}`);
       expect(questionSourceEdition(q)).toBe(`${year}年度後期`);
       expect(isPracticeReadyQuestion(q)).toBe(true);
       expect(Object.keys(q.choiceExplanations!)).toEqual(Object.keys(q.choices!));
@@ -61,7 +63,7 @@ describe.each(editions)("c5-40 $exam $year 後期", ({ exam, year, all, answers,
     expect(EXAM_CONFIGS[exam].yearRange.end).toBeGreaterThanOrEqual(year);
     expect(getQualificationByExamCode(exam)?.status).toBe("live");
     expect(getQualificationByExamCode(exam)?.fullName).toContain("冷凍空気調和機器施工");
-    const keys: ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
-    expect(keys.map(k => choiceDisplayLabel(exam, k))).toEqual(["イ", "ロ", "ハ", "ニ"]);
+    const keys: ChoiceKey[] = exam === "reito-seko3" ? ["ア", "イ"] : ["ア", "イ", "ウ", "エ"];
+    expect(keys.map(k => choiceDisplayLabel(exam, k))).toEqual(exam === "reito-seko3" ? ["○", "×"] : ["イ", "ロ", "ハ", "ニ"]);
   });
 });

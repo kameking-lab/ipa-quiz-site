@@ -8,7 +8,9 @@ export const EXAM_CODE_ALIASES = {
 } as const satisfies Partial<Record<ExamCode, ExamCode>>;
 
 export function canonicalExamCode(exam: ExamCode): ExamCode {
-  return EXAM_CODE_ALIASES[exam as keyof typeof EXAM_CODE_ALIASES] ?? exam;
+  return Object.hasOwn(EXAM_CODE_ALIASES, exam)
+    ? EXAM_CODE_ALIASES[exam as keyof typeof EXAM_CODE_ALIASES]
+    : exam;
 }
 
 export function isCanonicalExamCode(exam: ExamCode): boolean {
