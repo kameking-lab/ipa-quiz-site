@@ -22,9 +22,11 @@ import { HAIDEN_SEIGYO3_QUESTIONS } from "./haiden-seigyo3";
 import { KENCHIKU_BANKIN2_QUESTIONS } from "./kenchiku-bankin2";
 import { KENSETSU_KIKAI_SEIBI1_QUESTIONS } from "./kensetsu-kikai-seibi1";
 import { SAKAN3_QUESTIONS } from "./sakan3";
+import { ZOEN_GINO3_QUESTIONS } from "./zoen-gino3";
 import { SAKAN2_QUESTIONS } from "./sakan2";
 import { SAKAN1_QUESTIONS } from "./sakan1";
 import { ZOEN_GINO1_QUESTIONS } from "./zoen-gino1";
+import { ZOEN_GINO2_QUESTIONS } from "./zoen-gino2";
 import { BOUSUI_URETHANE2_QUESTIONS } from "./bousui-urethane2";
 import { BOUSUI_FRP2_QUESTIONS } from "./bousui-frp2";
 import { PAN_SEIZO1_QUESTIONS } from "./pan-seizo1";
@@ -464,9 +466,11 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("kenchiku-bankin2") ? { "kenchiku-bankin2": KENCHIKU_BANKIN2_QUESTIONS } : {}),
 ...(isExamPublished("kensetsu-kikai-seibi1") ? { "kensetsu-kikai-seibi1": KENSETSU_KIKAI_SEIBI1_QUESTIONS } : {}),
 ...(isExamPublished("sakan3") ? { "sakan3": SAKAN3_QUESTIONS } : {}),
+...(isExamPublished("zoen-gino3") ? { "zoen-gino3": ZOEN_GINO3_QUESTIONS } : {}),
 ...(isExamPublished("sakan2") ? { "sakan2": SAKAN2_QUESTIONS } : {}),
 ...(isExamPublished("sakan1") ? { "sakan1": SAKAN1_QUESTIONS } : {}),
 ...(isExamPublished("zoen-gino1") ? { "zoen-gino1": ZOEN_GINO1_QUESTIONS } : {}),
+...(isExamPublished("zoen-gino2") ? { "zoen-gino2": ZOEN_GINO2_QUESTIONS } : {}),
 ...(isExamPublished("bousui-urethane2") ? { "bousui-urethane2": BOUSUI_URETHANE2_QUESTIONS } : {}),
 ...(isExamPublished("bousui-frp2") ? { "bousui-frp2": BOUSUI_FRP2_QUESTIONS } : {}),
 ...(isExamPublished("pan-seizo1") ? { "pan-seizo1": PAN_SEIZO1_QUESTIONS } : {}),
