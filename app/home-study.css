@@ -4,6 +4,8 @@
 body:has(.study-home) { background:#f7f3e9; }
 .dark .study-home { --study-paper:#1b241e; --study-ink:#edece1; --study-muted:#b4bfad; --study-line:#445146; --study-action:#b6cfaa; }
 .dark body:has(.study-home) { background:#1b241e; }
+body:has(.study-home) .mobile-bottom-nav { --primary:#355b47; border-color:#dedfcf; background:#fffdf7f2; }
+.dark body:has(.study-home) .mobile-bottom-nav { --primary:#b6cfaa; border-color:#445146; background:#1b241ef2; }
 .study-home :is(a,button,input,select,summary):focus-visible { outline:3px solid #a67c38; outline-offset:4px; }
 .study-home :is(a,button,input) { -webkit-tap-highlight-color:transparent; }
 .study-kicker,.study-eyebrow { color:var(--study-muted); font-size:11px; letter-spacing:.12em; line-height:1.8; }
@@ -82,8 +84,12 @@ body:has(.study-home) { background:#f7f3e9; }
 .study-directory-list a>span:first-child { flex:1; }
 .study-directory-list a:hover { color:var(--study-action); }
 .study-directory-count { text-align:right; white-space:nowrap; font-size:11px; color:var(--study-muted); font-variant-numeric:tabular-nums; }
-.study-context { margin-top:40px; border-top:1px solid var(--study-line); padding-top:8px; }
-.study-context>section { margin-top:24px; border:0; box-shadow:none; background:transparent; }
+.study-context { margin-top:28px; }
+.study-context>.study-schedule { @apply rounded-2xl border p-4 sm:p-5; border-color:var(--study-line); background:#fffdf7b3; }
+.dark .study-context>.study-schedule { background:#263229; }
+.study-schedule-action { color:var(--study-action); border-color:var(--study-line); background:var(--study-paper); }
+.study-schedule-action:hover { background:#e5ecdf; }
+.dark .study-schedule-action:hover { background:#344331; }
 .study-room-heading { display:flex; align-items:flex-end; justify-content:space-between; gap:22px; margin-bottom:23px; }
 .study-room-heading h2 { font-family:"Yu Mincho",serif; font-size:28px; font-weight:500; line-height:1.6; margin-top:9px; }
 .study-room-heading h2>span { display:inline-block; }
@@ -233,6 +239,7 @@ body:has(.study-home) { background:#f7f3e9; }
   .study-finder-home .study-directory { margin-top:12px; }
   .study-finder-home .study-section-head { margin-bottom:8px; }
   .study-domain-grid { grid-template-columns:repeat(2,minmax(0,1fr)); gap:6px; }
+  .study-domain:last-child:nth-child(odd) { grid-column:1 / -1; }
   .study-domain-heading { min-height:44px; padding:4px 8px; gap:6px; }
   .study-domain-icon { width:26px; height:26px; padding:5px; }
   .study-domain-heading>.study-domain-label { font-size:12px; }
@@ -243,4 +250,14 @@ body:has(.study-home) { background:#f7f3e9; }
   .study-featured-results .study-qualification-name { font-size:12px; line-height:1.4; }
   .study-featured-results .study-qualification-period { display:none; }
   .study-featured-results .study-card-mascot { width:60px; height:60px; right:14px; }
+}
+
+/* Give the companion and the qualification their own space on wide cards. */
+@media(min-width:1024px) {
+  .study-featured-results .study-qualification { min-height:148px; }
+  .study-featured-results .study-qualification>span:first-child { width:62%; }
+  .study-featured-results .study-qualification-name { min-height:3em; font-size:18px; line-height:1.5; text-wrap:balance; }
+  .study-featured-results .study-qualification-meta { font-size:12px; }
+  .study-featured-results .study-card-mascot { width:106px; height:106px; right:8px; bottom:10px; }
+  .study-featured-results .study-qualification>svg { left:18px; right:auto; bottom:12px; }
 }
