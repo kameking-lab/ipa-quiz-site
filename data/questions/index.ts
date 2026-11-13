@@ -19,9 +19,12 @@ import { KIKAI_KENSA2_QUESTIONS } from "./kikai-kensa2";
 import { KOGYO_HOSO2_QUESTIONS } from "./kogyo-hoso2";
 import { HAIDEN_SEIGYO1_QUESTIONS } from "./haiden-seigyo1";
 import { SEQUENCE1_QUESTIONS } from "./sequence1";
+import { CHUZO2_QUESTIONS } from "./chuzo2";
+import { CHUZO1_QUESTIONS } from "./chuzo1";
 import { KAITEN_DENKI2_QUESTIONS } from "./kaiten-denki2";
 import { KAITEN_DENKI1_QUESTIONS } from "./kaiten-denki1";
 import { SEQUENCE3_QUESTIONS } from "./sequence3";
+import { CHUZO3_QUESTIONS } from "./chuzo3";
 import { SEQUENCE2_QUESTIONS } from "./sequence2";
 import { HAIDEN_SEIGYO3_QUESTIONS } from "./haiden-seigyo3";
 import { KENCHIKU_BANKIN2_QUESTIONS } from "./kenchiku-bankin2";
@@ -472,9 +475,12 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("kogyo-hoso2") ? { "kogyo-hoso2": KOGYO_HOSO2_QUESTIONS } : {}),
 ...(isExamPublished("haiden-seigyo1") ? { "haiden-seigyo1": HAIDEN_SEIGYO1_QUESTIONS } : {}),
 ...(isExamPublished("sequence1") ? { "sequence1": SEQUENCE1_QUESTIONS } : {}),
+...(isExamPublished("chuzo2") ? { "chuzo2": CHUZO2_QUESTIONS } : {}),
+...(isExamPublished("chuzo1") ? { "chuzo1": CHUZO1_QUESTIONS } : {}),
 ...(isExamPublished("kaiten-denki2") ? { "kaiten-denki2": KAITEN_DENKI2_QUESTIONS } : {}),
 ...(isExamPublished("kaiten-denki1") ? { "kaiten-denki1": KAITEN_DENKI1_QUESTIONS } : {}),
 ...(isExamPublished("sequence3") ? { "sequence3": SEQUENCE3_QUESTIONS } : {}),
+...(isExamPublished("chuzo3") ? { "chuzo3": CHUZO3_QUESTIONS } : {}),
 ...(isExamPublished("sequence2") ? { "sequence2": SEQUENCE2_QUESTIONS } : {}),
 ...(isExamPublished("haiden-seigyo3") ? { "haiden-seigyo3": HAIDEN_SEIGYO3_QUESTIONS } : {}),
 ...(isExamPublished("kenchiku-bankin2") ? { "kenchiku-bankin2": KENCHIKU_BANKIN2_QUESTIONS } : {}),
