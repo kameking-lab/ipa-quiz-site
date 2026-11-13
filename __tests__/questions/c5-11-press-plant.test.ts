@@ -3,6 +3,7 @@ import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { KINZOKU_PRESS1_QUESTIONS } from "@/data/questions/kinzoku-press1";
 import { KINZOKU_PRESS2_QUESTIONS } from "@/data/questions/kinzoku-press2";
+import { PLANT_HAIKAN1_QUESTIONS } from "@/data/questions/plant-haikan1";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { choiceDisplayLabel, formatQuestionAnswerForDisplay, questionNumberLabel } from "@/lib/questions/display";
@@ -18,6 +19,7 @@ import type { ChoiceKey, Question } from "@/lib/questions/types";
 const editions = [
   { exam: "kinzoku-press1", year: 2023, season: "early", corpus: KINZOKU_PRESS1_QUESTIONS, a: "○○××○ ×○○×× ×○○○○ ○○×○× ××○○×", b: "ロハロニロ ハニロニロ ロニハハハ ハロロハニ ニハイニロ", figures: [22, 34, 44, 47] },
   { exam: "kinzoku-press2", year: 2023, season: "early", corpus: KINZOKU_PRESS2_QUESTIONS, a: "○×○×○ ×○○×○ ○○××○ ×○○×○ ○××××", b: "イニロロイ イハニロニ イロロハイ ハロニイイ ハハロニハ", figures: [23, 30, 32, 41, 46, 49] },
+  { exam: "plant-haikan1", year: 2025, season: "late", corpus: PLANT_HAIKAN1_QUESTIONS, a: "○○×○× ××○×○ ○××○× ○○○×○ ×○○×○", b: "ロニニロニ イイロイロ ハイハイハ ニニイニニ ニロイハハ", figures: [9, 10, 34] },
 ] as const;
 
 for (const { exam, year, season, corpus, a, b, figures } of editions) {
@@ -70,6 +72,10 @@ for (const { exam, year, season, corpus, a, b, figures } of editions) {
       expect(source.sources.every((s: { httpStatus: number; sha256: string }) => s.httpStatus === 200 && /^[a-f0-9]{64}$/.test(s.sha256))).toBe(true);
       expect(all.filter(q => q.hasImage).map(q => q.qNumber)).toEqual(figures);
       all.forEach((q, i) => {
+        const work = exam.startsWith("kinzoku-press") ? "金属プレス作業" : "プラント配管作業";
+        expect(q.sourceAttribution).toContain(work);
+        expect(q.sourceAttribution).toContain(`${year - 2018}年度${period}`);
+        expect(q.topicTags).toContain(work);
         expect(source.review[i].officialAnswer).toBe(official[i]);
         expect(source.review[i].internalAnswer).toBe(q.answer);
         expect(q.sourcePdfUrl).toMatch(/kentei\.javada\.or\.jp\/pdf\/.*#page=\d+$/);
@@ -97,4 +103,18 @@ it("explains extension and parallel resistance using independently calculated va
   expect(KINZOKU_PRESS1_QUESTIONS[39].answer).toBe("ウ");
   expect(100 + (30 * 20) / (30 + 20)).toBe(112);
   expect(KINZOKU_PRESS1_QUESTIONS[46].explanation).toContain("112Ω");
+  expect(100 / 20 + 100 / 30).toBeCloseTo(8.33333);
+  const current = KINZOKU_PRESS2_QUESTIONS.find(q => q.year === 2023 && q.qNumber === 49)!;
+  expect(current.answer).toBe("エ");
+  expect(current.explanation).toContain("8.3A");
+});
+
+it("preserves the tensile-guarantee suffix and the official qualified carbon-content answer", () => {
+  const steel = KINZOKU_PRESS2_QUESTIONS.find(q => q.year === 2023 && q.qNumber === 12)!;
+  expect(steel.question).toContain("SPCCT");
+  expect(steel.officialAnswerNumber).toBe("○");
+  const carbon = PLANT_HAIKAN1_QUESTIONS[41];
+  expect(carbon.officialAnswerNumber).toBe("ニ");
+  expect(carbon.choices?.エ).toBe("0.35");
+  expect(carbon.explanation).toContain("注：");
 });
