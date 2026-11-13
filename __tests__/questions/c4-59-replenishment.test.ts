@@ -20,7 +20,7 @@ const editions = [
 
 for (const edition of editions) describe(edition.exam, () => {
  const exam = edition.exam as ExamCode;
- const all = QUESTIONS_BY_EXAM[exam]!;
+ const all = QUESTIONS_BY_EXAM[exam]!.filter(q => q.year === 2025);
  const official = (edition.a+edition.b).replaceAll(" ", "");
  it("preserves printed numbers, every official key, and their scoring/display mapping", () => {
   expect(all).toHaveLength(official.length);
@@ -49,8 +49,8 @@ for (const edition of editions) describe(edition.exam, () => {
   });
  });
  it("delivers the full edition through web and mobile without stale catalog counts",async()=>{
-  expect(await getQuestionsForExam(exam)).toEqual(all);
-  expect(await examContent(exam)).toEqual(all);
+  expect((await getQuestionsForExam(exam)).filter(q => q.year === 2025)).toEqual(all);
+  expect((await examContent(exam))?.filter(q => "year" in q && q.year === 2025)).toEqual(all);
   const generated=JSON.parse(readFileSync("mobile/src/generated/catalog.json","utf8"));
   expect(generated.exams.find((e:{code:string})=>e.code===exam)).toEqual(await examCatalog(exam));
  });
@@ -84,7 +84,7 @@ it("preserves symbol distractors and their official key",()=>{
  expect(q.answer).toBe("エ");
  expect(q.choiceExplanations?.エ).toContain("U");
  expect(q.choiceExplanations?.ウ).toMatch(/^不正解。/);
- const dims=QUESTIONS_BY_EXAM["haiden-seigyo3"]![23];
+ const dims=QUESTIONS_BY_EXAM["haiden-seigyo3"]!.filter(q => q.year === 2025)[23];
  expect(dims.question).toContain("高さ：T");
  expect(dims.officialAnswerNumber).toBe("×");
 });
@@ -93,7 +93,7 @@ it("verifies the numerical explanations against the original circuit values",()=
  expect(QUESTIONS_BY_EXAM["haiden-seigyo1"]![28].answer).toBe("ア");
  expect(QUESTIONS_BY_EXAM["haiden-seigyo1"]![28].explanation).toContain("13A");
  expect(12/((4+2)/2)).toBe(4);
- expect(QUESTIONS_BY_EXAM["haiden-seigyo3"]![6].explanation).toContain("4A");
+ expect(QUESTIONS_BY_EXAM["haiden-seigyo3"]!.filter(q => q.year === 2025)[6].explanation).toContain("4A");
  expect(100*3.14+5*3).toBe(329);
  expect(QUESTIONS_BY_EXAM["kenchiku-bankin2"]![28].choices?.イ).toBe("329mm");
 });
