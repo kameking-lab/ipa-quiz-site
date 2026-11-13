@@ -25,6 +25,8 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "kogyo-hoso2": async () => isExamPublished("kogyo-hoso2") ? (await import("@/data/questions/kogyo-hoso2")).KOGYO_HOSO2_QUESTIONS : [],
   "haiden-seigyo1": async () => isExamPublished("haiden-seigyo1") ? (await import("@/data/questions/haiden-seigyo1")).HAIDEN_SEIGYO1_QUESTIONS : [],
   "sequence1": async () => isExamPublished("sequence1") ? (await import("@/data/questions/sequence1")).SEQUENCE1_QUESTIONS : [],
+  "kuukiatsu-kumitate1": async () => isExamPublished("kuukiatsu-kumitate1") ? (await import("@/data/questions/kuukiatsu-kumitate1")).KUUKIATSU_KUMITATE1_QUESTIONS : [],
+  "kuukiatsu-kumitate2": async () => isExamPublished("kuukiatsu-kumitate2") ? (await import("@/data/questions/kuukiatsu-kumitate2")).KUUKIATSU_KUMITATE2_QUESTIONS : [],
   "chuzo2": async () => isExamPublished("chuzo2") ? (await import("@/data/questions/chuzo2")).CHUZO2_QUESTIONS : [],
   "chuzo1": async () => isExamPublished("chuzo1") ? (await import("@/data/questions/chuzo1")).CHUZO1_QUESTIONS : [],
   "kaiten-denki2": async () => isExamPublished("kaiten-denki2") ? (await import("@/data/questions/kaiten-denki2")).KAITEN_DENKI2_QUESTIONS : [],
@@ -310,8 +312,8 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 
 "reito-seko2": async () => isExamPublished("reito-seko2") ? (await import("@/data/questions/reito-seko2")).REITO_SEKO2_QUESTIONS : [],
 "reito-seko1": async () => isExamPublished("reito-seko1") ? (await import("@/data/questions/reito-seko1")).REITO_SEKO1_QUESTIONS : [],
-"kuukiatsu-kumitate2": async () => isExamPublished("kuukiatsu-kumitate2") ? (await import("@/data/questions/kuukiatsu-kumitate2")).KUUKIATSU_KUMITATE2_QUESTIONS : [],
-"kuukiatsu-kumitate1": async () => isExamPublished("kuukiatsu-kumitate1") ? (await import("@/data/questions/kuukiatsu-kumitate1")).KUUKIATSU_KUMITATE1_QUESTIONS : [],
+
+
 "henatsuki-kumitate2": async () => isExamPublished("henatsuki-kumitate2") ? (await import("@/data/questions/henatsuki-kumitate2")).HENATSUKI_KUMITATE2_QUESTIONS : [],
 "henatsuki-kumitate1": async () => isExamPublished("henatsuki-kumitate1") ? (await import("@/data/questions/henatsuki-kumitate1")).HENATSUKI_KUMITATE1_QUESTIONS : [],
 
