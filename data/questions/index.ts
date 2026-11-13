@@ -26,6 +26,8 @@ import { PAN_SEIZO1_QUESTIONS } from "./pan-seizo1";
 import { PAN_SEIZO2_QUESTIONS } from "./pan-seizo2";
 import { KIKAI_SHIAGE1_QUESTIONS } from "./kikai-shiage1";
 import { KIKAI_SEIZU_TEGAKI1_QUESTIONS } from "./kikai-seizu-tegaki1";
+import { SEQUENCE3_QUESTIONS } from "./sequence3";
+import { SEQUENCE2_QUESTIONS } from "./sequence2";
 import { ZOEN_GINO1_QUESTIONS } from "./zoen-gino1";
 import { SAKAN1_QUESTIONS } from "./sakan1";
 import { SAKAN3_QUESTIONS } from "./sakan3";
@@ -275,6 +277,8 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("pan-seizo2") ? { "pan-seizo2": PAN_SEIZO2_QUESTIONS } : {}),
 ...(isExamPublished("kikai-shiage1") ? { "kikai-shiage1": KIKAI_SHIAGE1_QUESTIONS } : {}),
 ...(isExamPublished("kikai-seizu-tegaki1") ? { "kikai-seizu-tegaki1": KIKAI_SEIZU_TEGAKI1_QUESTIONS } : {}),
+...(isExamPublished("sequence3") ? { "sequence3": SEQUENCE3_QUESTIONS } : {}),
+...(isExamPublished("sequence2") ? { "sequence2": SEQUENCE2_QUESTIONS } : {}),
 ...(isExamPublished("zoen-gino1") ? { "zoen-gino1": ZOEN_GINO1_QUESTIONS } : {}),
 ...(isExamPublished("sakan1") ? { "sakan1": SAKAN1_QUESTIONS } : {}),
 ...(isExamPublished("sakan3") ? { "sakan3": SAKAN3_QUESTIONS } : {}),
