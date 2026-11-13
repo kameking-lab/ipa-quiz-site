@@ -76,20 +76,20 @@ describe("電子機器組立ての公式原本と学習経路", () => {
     });
   }
   it("単相3線の電力、内部抵抗、器差の符号を原本どおり扱う", () => {
-    const byNumber = (n: number) => DENSHI_KIKI_KUMITATE1_QUESTIONS.find(q => q.qNumber === n)!;
+    const byNumber = (n: number) => DENSHI_KIKI_KUMITATE1_QUESTIONS.find(q => q.year === 2025 && q.season === "early" && q.qNumber === n)!;
     expect(byNumber(10).explanation).toContain("10 A");
     expect(byNumber(19).officialAnswerNumber).toBe("×");
     expect(byNumber(19).explanation).toContain("0.6 Ω");
     expect(byNumber(44).explanation).toContain("159.98 mm");
   });
   it("3級前期の抵抗カラーコードを3.9 MΩと読み、公式正答×を保持する", () => {
-    const q = DENSHI_KIKI_KUMITATE3_QUESTIONS.find(q => q.season === "early" && q.qNumber === 16)!;
+    const q = DENSHI_KIKI_KUMITATE3_QUESTIONS.find(q => q.year === 2025 && q.season === "early" && q.qNumber === 16)!;
     expect(q.question).toContain("39 MΩ");
     expect(q.officialAnswerNumber).toBe("×");
     expect(q.explanation).toContain("3.9 MΩ");
   });
   it("3級後期の実効値、並列抵抗、電力量を区別して学べる", () => {
-    const byNumber = (n: number) => DENSHI_KIKI_KUMITATE3_QUESTIONS.find(q => q.season === "late" && q.qNumber === n)!;
+    const byNumber = (n: number) => DENSHI_KIKI_KUMITATE3_QUESTIONS.find(q => q.year === 2025 && q.season === "late" && q.qNumber === n)!;
     expect(byNumber(9).explanation).toContain("141 V");
     expect(byNumber(14).officialAnswerNumber).toBe("○");
     expect(byNumber(14).explanation).toContain("40 Wh");

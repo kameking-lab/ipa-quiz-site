@@ -71,8 +71,8 @@ describe("機械保全2024年度の原本照合と配信", () => {
     });
   }
   it("3級の共通15問は本文・解説・4図を再利用する", () => {
-    const mechanical = KIKAI.filter(q => q.year === 2024 && q.qNumber <= 15);
-    const electrical = DENKI.filter(q => q.year === 2024 && q.qNumber <= 15);
+    const mechanical = KIKAI.filter(q => q.year === 2024 && q.season === "round1" && q.qNumber <= 15);
+    const electrical = DENKI.filter(q => q.year === 2024 && q.season === "round1" && q.qNumber <= 15);
     expect(mechanical).toHaveLength(15);
     expect(electrical).toHaveLength(15);
     for (let i = 0; i < 15; i++) {

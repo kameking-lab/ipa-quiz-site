@@ -41,7 +41,8 @@ beforeEach(() => {
 // the star, so Ctrl/Cmd+R (reload) must NOT touch the star, while plain "r" does.
 describe("QuizPlayer — keyboard does not hijack browser shortcuts", () => {
   it("shows the official circle answer for a mixed-format mechanical-maintenance paper", () => {
-    render(<QuizPlayer question={KIKAI_HOZEN_DENKI1_QUESTIONS[0]!} index={0} total={50} mode="random" onNext={() => {}} />);
+    const mixedQuestion = KIKAI_HOZEN_DENKI1_QUESTIONS.find(q => q.officialAnswerNumber === "○" && Object.keys(q.choices ?? {}).length === 2)!;
+    render(<QuizPlayer question={mixedQuestion} index={0} total={50} mode="random" onNext={() => {}} />);
     fireEvent.keyDown(window, { key: "2" });
     expect(screen.getByText(/不正解です。正解は ○ です/)).toBeTruthy();
   });

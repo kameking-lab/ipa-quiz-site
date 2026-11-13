@@ -23,7 +23,7 @@ const editions = [
     answers: "×○×○○" + "○○××○" + "○×○×○" + "○○×○○" + "×○××○"
       + "ロロロハロ" + "イニハニハ" + "イニニニイ" + "ロイイロロ" + "イハロハロ",
     pages: [...Array(15).fill(2), ...Array(10).fill(3), ...Array(6).fill(4), ...Array(5).fill(5), ...Array(6).fill(6), ...Array(6).fill(7), ...Array(2).fill(8)], figures: [] as number[] },
-  { exam: "kyoka-plastic1" as const, year: 2023, rows: KYOKA_PLASTIC1_QUESTIONS,
+  { exam: "kyoka-plastic1" as const, year: 2023, rows: KYOKA_PLASTIC1_QUESTIONS.filter(q => q.year === 2023),
     answers: "○○○○×" + "○○○○○" + "×○××○" + "××○××" + "○××○○"
       + "イイロイハ" + "ニロニハニ" + "ロハニニハ" + "ロハイハハ" + "ニイロロロ",
     pages: [...Array(14).fill(2), ...Array(11).fill(3), ...Array(6).fill(4), ...Array(6).fill(5), ...Array(6).fill(6), ...Array(6).fill(7), 8], figures: [] as number[] },

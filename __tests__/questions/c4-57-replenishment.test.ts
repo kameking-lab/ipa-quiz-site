@@ -20,7 +20,8 @@ const editions = [
 
 for (const edition of editions) describe(edition.exam, () => {
  const exam = edition.exam as ExamCode;
- const all = QUESTIONS_BY_EXAM[exam]!;
+ const corpus = QUESTIONS_BY_EXAM[exam]!;
+ const all = corpus.filter(q => q.year === 2025 && q.season === "early");
  const official = (edition.a+edition.b).replaceAll(" ", "");
  it("preserves printed numbers, every official key, and their scoring/display mapping", () => {
   expect(all).toHaveLength(official.length);
@@ -49,8 +50,8 @@ for (const edition of editions) describe(edition.exam, () => {
   });
  });
  it("delivers the full edition through web and mobile without stale catalog counts",async()=>{
-  expect(await getQuestionsForExam(exam)).toEqual(all);
-  expect(await examContent(exam)).toEqual(all);
+  expect(await getQuestionsForExam(exam)).toEqual(corpus);
+  expect(await examContent(exam)).toEqual(corpus);
   const generated=JSON.parse(readFileSync("mobile/src/generated/catalog.json","utf8"));
   expect(generated.exams.find((e:{code:string})=>e.code===exam)).toEqual(await examCatalog(exam));
  });
@@ -79,12 +80,12 @@ for (const edition of editions) describe(edition.exam, () => {
 });
 
 it("distinguishes gypsum setting from its printed classification while retaining the official key",()=>{
- const q=QUESTIONS_BY_EXAM.sakan2![38];
+ const q=QUESTIONS_BY_EXAM.sakan2!.find(q => q.year === 2025 && q.season === "early" && q.qNumber === 39)!;
  expect(q.choices?.ウ).toBe("せっこうプラスターは、気硬性材料である。");
  expect(q.officialAnswerNumber).toBe("イ");
  expect(q.answer).toBe("ア");
  expect(q.choiceExplanations?.ウ).toContain("水との反応");
- expect(QUESTIONS_BY_EXAM.sakan3![19].officialAnswerNumber).toBe("○");
+ expect(QUESTIONS_BY_EXAM.sakan3!.find(q => q.year === 2025 && q.season === "early" && q.qNumber === 20)!.officialAnswerNumber).toBe("○");
 });
 
 it("calculates the shown circuit and keeps the existing 2級 edition intact",()=>{

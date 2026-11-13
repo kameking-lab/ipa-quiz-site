@@ -63,14 +63,15 @@ describe.each(papers)("$exam $year 年度前期", ({ exam, year, answers, questi
 });
 
 it("1級の原図2点を保持し、3級は文字だけで解答できる", () => {
-  expect(KINZOKU_NETSUSHORI1_QUESTIONS.filter(q => q.hasImage).map(q => q.qNumber)).toEqual([42, 48]);
-  expect(KINZOKU_NETSUSHORI3_QUESTIONS.some(q => q.hasImage)).toBe(false);
-  for (const q of KINZOKU_NETSUSHORI1_QUESTIONS.filter(q => q.hasImage)) {
+  const firstGrade2023 = KINZOKU_NETSUSHORI1_QUESTIONS.filter(q => q.year === 2023);
+  expect(firstGrade2023.filter(q => q.hasImage).map(q => q.qNumber)).toEqual([42, 48]);
+  expect(KINZOKU_NETSUSHORI3_QUESTIONS.filter(q => q.year <= 2024).some(q => q.hasImage)).toBe(false);
+  for (const q of firstGrade2023.filter(q => q.hasImage)) {
     expect(q.imageAltTexts?.[0]).toBeTruthy();
     const bytes = readFileSync(`public${q.imageUrls?.[0]}`);
     expect(bytes.subarray(0, 4).toString()).toBe("RIFF");
     expect(bytes.subarray(8, 12).toString()).toBe("WEBP");
   }
-  expect(KINZOKU_NETSUSHORI1_QUESTIONS[42].choices?.エ).toBe("10%");
+  expect(firstGrade2023[42].choices?.エ).toBe("10%");
   expect(KINZOKU_NETSUSHORI3_QUESTIONS.find(q => q.year === 2023 && q.qNumber === 19)?.question).toContain("1471N");
 });

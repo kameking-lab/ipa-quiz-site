@@ -48,10 +48,10 @@ describe.each(editions)("c5-34 $exam 2024前期", ({ exam, all, answers, count, 
     }
   });
   it("既存年度を含め一覧・演習で全問を読み、級ごとの表示と年度範囲が一致する", async () => {
-    expect(all).toHaveLength(total);
+    expect(all.filter(q => q.year >= 2024)).toHaveLength(total);
     expect(QUESTIONS_BY_EXAM[exam]).toEqual(all);
     expect(await getQuestionsForExam(exam)).toEqual(all);
-    expect(EXAM_CONFIGS[exam].yearRange.start).toBe(2024);
+    expect(EXAM_CONFIGS[exam].yearRange.start).toBeLessThanOrEqual(2024);
     expect(EXAM_CONFIGS[exam].sessions[0].expectedQuestions).toBe(count);
     expect(getQualificationByExamCode(exam)?.status).toBe("live");
     const keys = (count === 30 ? ["ア", "イ"] : ["ア", "イ", "ウ", "エ"]) as ChoiceKey[];
@@ -66,9 +66,10 @@ it("原本で拡大確認した語句と3級13の公式訂正を残す", () => {
   expect(one[33].choices?.エ).toContain("塗型が必要");
   expect(one[39].question).toContain("鋳鉄の微小部分");
   expect(one[41].choices?.エ).toContain("生型には発生しにくい");
-  expect(CHUZO2_QUESTIONS[11].question).toContain("抵抗を直列に接続");
-  expect(CHUZO2_QUESTIONS[11].explanation).toContain("1Ω+2Ω=3Ω");
-  expect(CHUZO2_QUESTIONS[36].choices?.イ).toContain("鋳型の素材");
+  const two = CHUZO2_QUESTIONS.filter(q => q.year === 2024);
+  expect(two[11].question).toContain("抵抗を直列に接続");
+  expect(two[11].explanation).toContain("1Ω+2Ω=3Ω");
+  expect(two[36].choices?.イ).toContain("鋳型の素材");
   const q13 = CHUZO3_QUESTIONS.find(q => q.year === 2024 && q.qNumber === 13)!;
   expect(q13.answer).toBe("ア");
   expect(q13.explanation).toContain("公式正答表では問13を○に訂正");

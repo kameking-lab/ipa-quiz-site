@@ -14,10 +14,10 @@ import type { ChoiceKey, ExamCode } from "@/lib/questions/types";
 
 // 公式正答表を直接読み取った値。配信データから期待値を生成しない。
 const editions = [
-  { exam: "pan-seizo1", year: 2023, season: "late", name: "パン製造", domain: "welfare",
+  { exam: "pan-seizo1", year: 2023, season: "late", name: "パン製造", domain: "personal-services",
     answers: "×○×○××××○×○○××○○○○○○○○○××" + "ハハロイロロハニハハイニイハハニハロイニイロロイニ",
     pages: [...Array(16).fill(2), ...Array(9).fill(3), ...Array(6).fill(4), ...Array(6).fill(5), ...Array(5).fill(6), ...Array(6).fill(7), ...Array(2).fill(8)], figures: [] as number[] },
-  { exam: "pan-seizo2", year: 2023, season: "late", name: "パン製造", domain: "welfare",
+  { exam: "pan-seizo2", year: 2023, season: "late", name: "パン製造", domain: "personal-services",
     answers: "○○×○○××○×××○○×○○×○○××○○×○" + "ロイハハロニハロニロニハニハハニロロニハイイハハロ",
     pages: [...Array(17).fill(2), ...Array(8).fill(3), ...Array(6).fill(4), ...Array(6).fill(5), ...Array(6).fill(6), ...Array(6).fill(7), 8], figures: [] as number[] },
   { exam: "kikai-shiage1", year: 2024, season: "early", name: "仕上げ", domain: "electrical",

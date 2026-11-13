@@ -17,13 +17,13 @@ import type { ChoiceKey } from "@/lib/questions/types";
 
 // Independently transcribed from the official answer tables, by printed column.
 const editions = [
-  { exam: "diecast1" as const, year: 2025, rows: DIECAST1_QUESTIONS,
+  { exam: "diecast1" as const, year: 2025, rows: DIECAST1_QUESTIONS.filter(q => q.year === 2025),
     answers: "×××××" + "×○○○×" + "××○○×" + "○×××○" + "×××○○"
       + "ロニロイハ" + "ロイニイハ" + "ハニロニハ" + "イハニロニ" + "イロニイロ", figures: [27, 49], name: "ダイカスト" },
-  { exam: "tetsudo-sharyo1" as const, year: 2025, rows: TETSUDO_SHARYO1_QUESTIONS,
+  { exam: "tetsudo-sharyo1" as const, year: 2025, rows: TETSUDO_SHARYO1_QUESTIONS.filter(q => q.year === 2025),
     answers: "○×○○×" + "×○×○○" + "××××○" + "×○○○×" + "○○×○×"
       + "ハニニイハ" + "ロロニハニ" + "ニハイニニ" + "イロロロロ" + "ロハハニイ", figures: [14, 25, 38, 40], name: "鉄道車両製造・整備" },
-  { exam: "insatsu2" as const, year: 2024, rows: INSATSU2_QUESTIONS,
+  { exam: "insatsu2" as const, year: 2024, rows: INSATSU2_QUESTIONS.filter(q => q.year === 2024),
     answers: "○○×××" + "○×○○×" + "○××○○" + "○×××○" + "×○○○○"
       + "ロロイニロ" + "ハニイハハ" + "イロニイイ" + "ハロイロニ" + "ロロロイロ", figures: [] as number[], name: "印刷" },
 ];

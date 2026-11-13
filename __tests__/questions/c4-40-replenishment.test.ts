@@ -16,7 +16,7 @@ import type { ChoiceKey } from "@/lib/questions/types";
 
 // Independently transcribed from the official answer tables, by printed column.
 const editions = [
- { exam: "insatsu1" as const, year: 2023, rows: INSATSU1_QUESTIONS,
+ { exam: "insatsu1" as const, year: 2023, rows: INSATSU1_QUESTIONS.filter(q => q.year === 2023),
  answers: "○○○××○○○○××○×○○×○××○○○×○×" + "ニニイニハニロニハニハハイニロハロハイハイイロニハ", figures: [41], name: "印刷" },
  { exam: "engei-soshoku2" as const, year: 2024, rows: ENGEI_SOSHOKU2_QUESTIONS.filter(q => q.year === 2024),
  answers: "×○×○○×○××○○○×○××○×○○×○×○○" + "ロロイロイイニロロニハイロニイニハイイイニロハイイ", figures: [], name: "園芸装飾" },

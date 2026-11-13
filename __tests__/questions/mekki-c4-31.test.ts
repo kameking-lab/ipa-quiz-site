@@ -83,6 +83,6 @@ it("2025年度3級の電流計算に必要な寸法図を保持する", () => {
   expect(q.imageAltTexts?.[0]).toContain("100mm");
   expect(q.imageAltTexts?.[0]).toContain("50mm");
   expect(readFileSync(`public${q.imageUrls?.[0]}`).subarray(1, 4).toString()).toBe("PNG");
-  expect(MEKKI3_QUESTIONS.filter(q => q.hasImage)).toHaveLength(1);
+  expect(MEKKI3_QUESTIONS.filter(q => q.year === 2025 && q.hasImage)).toHaveLength(1);
   expect(q.explanation).toContain("3A");
 });

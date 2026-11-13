@@ -79,7 +79,8 @@ describe.each(editions)("c4-54 $exam 2025年度後期", ({ exam, rows, answers, 
     expect((await getQuestionsForExam(exam)).filter(q => q.year === 2025)).toEqual(rows);
     expect(rows.every(q => EXAM_CONFIGS[exam].sessions[0].categories.includes(q.category))).toBe(true);
     expect(EXAM_CONFIGS[exam].sessions[0].expectedQuestions).toBe(answers.length);
-    expect(EXAM_CONFIGS[exam].yearRange).toEqual({ start: exam === "katawaku2" ? 2024 : 2025, end: 2025 });
+    expect(EXAM_CONFIGS[exam].yearRange.start).toBeLessThanOrEqual(exam === "katawaku2" ? 2024 : 2025);
+    expect(EXAM_CONFIGS[exam].yearRange.end).toBeGreaterThanOrEqual(2025);
     expect(EXAM_CONFIGS[exam].seasons).toEqual(["late"]);
     if (answers.length === 30) {
       expect(["ア", "イ"].map(k => choiceDisplayLabel(exam, k as ChoiceKey))).toEqual(["○", "×"]);

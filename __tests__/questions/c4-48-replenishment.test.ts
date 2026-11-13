@@ -21,7 +21,7 @@ const editions = [
   { exam: "kagaku-bunseki3" as const, year: 2023, rows: KAGAKU_BUNSEKI3_QUESTIONS.filter(q => q.year === 2023),
     answers: "×○×××××○○×" + "○×○××○×○×○" + "○××○×○××○○",
     pages: [...Array(17).fill(2), ...Array(13).fill(3)], choiceCount: 60 },
-  { exam: "kagaku-bunseki1" as const, year: 2023, rows: KAGAKU_BUNSEKI1_QUESTIONS,
+  { exam: "kagaku-bunseki1" as const, year: 2023, rows: KAGAKU_BUNSEKI1_QUESTIONS.filter(q => q.year === 2023),
     answers: "×○×○○" + "×××○×" + "○×○×○" + "○○×××" + "×○×××"
       + "ニハハニニ" + "ハハイニハ" + "イロニニハ" + "イハロロハ" + "ロイハロニ",
     pages: [...Array(15).fill(2), ...Array(10).fill(3), ...Array(6).fill(4), ...Array(6).fill(5), ...Array(6).fill(6), ...Array(6).fill(7), 8], choiceCount: 150 },

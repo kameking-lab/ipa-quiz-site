@@ -74,8 +74,8 @@ it("原本の線種と計算条件を取り違えない", () => {
   expect(rows.find(q => q.officialQuestionLabel === "A群 22")?.question).toContain("太い二点鎖線");
   expect(rows.find(q => q.officialQuestionLabel === "A群 8")?.explanation).toContain("97.5MPa");
   expect(rows.find(q => q.officialQuestionLabel === "A群 15")?.explanation).toContain("18180N");
-  expect(QUESTIONS_BY_EXAM["kikai-shiage2"]?.find(q => q.officialQuestionLabel === "A群 16")?.explanation).toContain("0.294MPa");
-  const tools = QUESTIONS_BY_EXAM["kikai-shiage2"]?.find(q => q.officialQuestionLabel === "B群 3");
+  expect(QUESTIONS_BY_EXAM["kikai-shiage2"]?.find(q => q.year === 2023 && q.season === "early" && q.officialQuestionLabel === "A群 16")?.explanation).toContain("0.294MPa");
+  const tools = QUESTIONS_BY_EXAM["kikai-shiage2"]?.find(q => q.year === 2023 && q.season === "early" && q.officialQuestionLabel === "B群 3");
   expect(tools?.choices?.エ).toContain("右ねじれドリル");
   expect(tools?.choices?.イ).toContain("もみつけ用");
 });

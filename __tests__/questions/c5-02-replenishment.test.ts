@@ -20,11 +20,11 @@ const editions = [
 describe.each(editions)("c5-02 $exam", ({ exam: code, count, split, answers, pages, figures }) => {
   const exam=code as ExamCode;
   it("公式正答・原本記号・出典ページ・図と配信ルートを保持する", async () => {
-    const rows=QUESTIONS_BY_EXAM[exam]!;
+    const rows=QUESTIONS_BY_EXAM[exam]!.filter(q => q.year === 2023 && q.season === "early");
     expect(rows).toHaveLength(count);
     expect(answers).toHaveLength(count);
     expect(new Set(rows.map(q=>q.id)).size).toBe(count);
-    expect(await getQuestionsForExam(exam)).toEqual(rows);
+    expect((await getQuestionsForExam(exam)).filter(q => q.year === 2023 && q.season === "early")).toEqual(rows);
     expect(EXAM_CONFIGS[exam].sessions[0].expectedQuestions).toBe(count);
     const evidence=JSON.parse(readFileSync(path.join(process.cwd(),`data/questions/${exam}/2023-early.sources.json`),"utf8"));
     expect(evidence.review).toHaveLength(count);
@@ -59,7 +59,7 @@ describe.each(editions)("c5-02 $exam", ({ exam: code, count, split, answers, pag
 });
 
 it("拡大原本で確認した用語・選択肢を保持する", () => {
-  const row = (exam: ExamCode, n: number) => QUESTIONS_BY_EXAM[exam]!.find(q => q.qNumber === n)!;
+  const row = (exam: ExamCode, n: number) => QUESTIONS_BY_EXAM[exam]!.find(q => q.year === 2023 && q.season === "early" && q.qNumber === n)!;
   expect(row("fraise1", 14).question).toContain("むく平フライス");
   expect(row("fraise1", 33).choices!.ア).toContain("X管理図");
   expect(row("fraise1", 37).choices!.エ).toContain("豆ジャッキ");

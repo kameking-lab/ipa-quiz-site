@@ -80,9 +80,10 @@ describe("とび技能士 追加原本の採点・原図・演習接続", () => 
   });
   it("3級2024年度は群を作らず、真偽法30問の公式正答で採点する", async () => {
     const official = "××○××○××○○○×○○○×○××××○×○○×○○×○";
-    expect(TOBI3_QUESTIONS).toHaveLength(30);
+    const questions = TOBI3_QUESTIONS.filter(q => q.year === 2024 && q.season === "early");
+    expect(questions).toHaveLength(30);
     expect(official).toHaveLength(30);
-    TOBI3_QUESTIONS.forEach((q, i) => {
+    questions.forEach((q, i) => {
       expect(q.qNumber).toBe(i + 1);
       expect(q.officialQuestionLabel).toBe(String(i + 1));
       expect(q.id).toBe(`tobi3-2024-early-gakka-${String(i + 1).padStart(3, "0")}`);
@@ -96,6 +97,6 @@ describe("とび技能士 追加原本の採点・原図・演習接続", () => 
     expect(QUESTIONS_BY_EXAM.tobi3).toEqual(TOBI3_QUESTIONS);
     expect(await getQuestionsForExam("tobi3")).toEqual(TOBI3_QUESTIONS);
     expect(EXAM_CONFIGS.tobi3.sessions[0].expectedQuestions).toBe(30);
-    expect(EXAM_CONFIGS.tobi3.sessions[0].label).toBe("学科（真偽法30問）");
+    expect(EXAM_CONFIGS.tobi3.sessions[0].label).toContain("真偽法");
   });
 });

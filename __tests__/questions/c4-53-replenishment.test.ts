@@ -98,7 +98,7 @@ for (const { exam, all: corpus, a, b, figures } of editions) {
 }
 
 it("retains the individual X chart and the official R-chart error in B14", () => {
-  const q = KIKAI_KENSA1_QUESTIONS[38];
+  const q = KIKAI_KENSA1_QUESTIONS.find(q => q.year === 2025 && q.season === "late" && q.qNumber === 39)!;
   expect(q.choices?.ア).toMatch(/^X管理図：/);
   expect(q.choiceExplanations?.ア).toContain("正しい");
   expect(q.choiceExplanations?.エ).toContain("範囲R");
@@ -112,7 +112,7 @@ it("checks the numeric reasoning against the given loads, dimensions and circuit
   expect(500 / (Math.PI * 40 ** 2 / 4)).toBeCloseTo(0.398, 3);
   const parallel = 12 / 2.4 - 4;
   expect(1 / (1 / parallel - 1 / 2)).toBe(2);
-  expect(KATAWAKU3_QUESTIONS[11].explanation).toContain("15日");
-  expect(KIKAI_KENSA1_QUESTIONS[46].explanation).toContain("0.398");
-  expect(KIKAI_KENSA1_QUESTIONS[48].explanation).toContain("Bは2 Ω");
+  expect(KATAWAKU3_QUESTIONS.find(q => q.year === 2025 && q.season === "late" && q.qNumber === 12)!.explanation).toContain("15日");
+  expect(KIKAI_KENSA1_QUESTIONS.find(q => q.year === 2025 && q.season === "late" && q.qNumber === 47)!.explanation).toContain("0.398");
+  expect(KIKAI_KENSA1_QUESTIONS.find(q => q.year === 2025 && q.season === "late" && q.qNumber === 49)!.explanation).toContain("Bは2 Ω");
 });

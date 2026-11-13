@@ -19,7 +19,8 @@ const editions = [
 ] as const;
 for (const edition of editions) describe(edition.exam, () => {
  const exam = edition.exam as ExamCode;
- const all = QUESTIONS_BY_EXAM[exam]!;
+ const corpus = QUESTIONS_BY_EXAM[exam]!;
+ const all = corpus.filter(q => q.year === 2025 && q.season === "early");
  const official = (edition.a+edition.b).replaceAll(" ", "");
  it("preserves all official answers and printed labels through routing and scoring", () => {
   expect(all).toHaveLength(50);
@@ -48,8 +49,8 @@ for (const edition of editions) describe(edition.exam, () => {
   });
  });
  it("delivers the complete edition through web and mobile loaders",async()=>{
-  expect(await getQuestionsForExam(exam)).toEqual(all);
-  expect(await examContent(exam)).toEqual(all);
+  expect(await getQuestionsForExam(exam)).toEqual(corpus);
+  expect(await examContent(exam)).toEqual(corpus);
   const generated=JSON.parse(readFileSync("mobile/src/generated/catalog.json","utf8"));
   expect(generated.exams.find((e:{code:string})=>e.code===exam)).toEqual(await examCatalog(exam));
  });
@@ -86,7 +87,7 @@ it("retains the different official scoring for the same printed building symbol"
  expect(bousui.explanation).toContain("そのまま採用");
 });
 it("checks the given quantities and distinguishes the original door diagrams", () => {
- const press=QUESTIONS_BY_EXAM["kinzoku-press2"]!;
+ const press=QUESTIONS_BY_EXAM["kinzoku-press2"]!.filter(q => q.year === 2025 && q.season === "early");
  const naiso=QUESTIONS_BY_EXAM["naiso-kosei2"]!;
  const bousui=QUESTIONS_BY_EXAM["bousui-urethane2"]!;
  expect(2+1/(1/2+1/2)).toBe(3);

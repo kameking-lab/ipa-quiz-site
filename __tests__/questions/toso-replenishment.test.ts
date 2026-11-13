@@ -74,10 +74,10 @@ describe("建築塗装の補充原本と学習経路", () => {
     }
   });
   it("1級2025年の圧力倍率とRB種の工程を取り違えない", () => {
-    const pressure = TOSO1_QUESTIONS.find(q => q.qNumber === 8)!;
+    const pressure = TOSO1_QUESTIONS.find(q => q.year === 2025 && q.qNumber === 8)!;
     expect(pressure.answer).toBe("イ");
     expect(pressure.explanation).toContain("0.1×30＝3MPa");
-    const wood = TOSO1_QUESTIONS.find(q => q.qNumber === 46)!;
+    const wood = TOSO1_QUESTIONS.find(q => q.year === 2025 && q.qNumber === 46)!;
     expect(wood.answer).toBe("エ");
     expect(wood.choiceExplanations?.ウ).toContain("穴埋めを行いません");
     expect(wood.choiceExplanations?.エ).toContain("節止めを行いません");

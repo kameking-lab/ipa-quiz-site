@@ -21,7 +21,7 @@ const editions = [
  answers: "○×○○××○○○○××○××○×○○×○××××" + "ハハニハイイニイロニイロイニイニロイハロハロハイハ", figures: [37], name: "印刷" },
  { exam: "insatsu1" as const, year: 2025, rows: INSATSU1_QUESTIONS.filter(q => q.year === 2025),
  answers: "×○×○○○○×○×○○×○××○×○××○××○" + "ハロイハニロイイニハニロハニニロニニイロロニハハハ", figures: [16], name: "印刷" },
- { exam: "insatsu2" as const, year: 2023, rows: INSATSU2_QUESTIONS,
+ { exam: "insatsu2" as const, year: 2023, rows: INSATSU2_QUESTIONS.filter(q => q.year === 2023),
  answers: "×○×××○××○○×○××○××○××××○○○" + "ハハニロハハニイニイニハロハイニロハロハイロハハハ", figures: [], name: "印刷" },
 ];
 

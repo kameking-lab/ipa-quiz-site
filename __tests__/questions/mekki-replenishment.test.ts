@@ -80,7 +80,7 @@ describe("電気めっきの公式正答・表示・演習経路", () => {
     expect(choiceDisplayLabel("mekki3", "イ")).toBe("×");
   });
   it("3級の面積図を原本の両面計算に使える", () => {
-    const q = MEKKI3_QUESTIONS[0];
+    const q = MEKKI3_QUESTIONS.find(q => q.year === 2023 && q.qNumber === 1)!;
     expect(q.explanation).toContain("3A");
     expect(q.hasImage).toBe(true);
     expect(q.imageAltTexts?.[0]).toContain("100mm");

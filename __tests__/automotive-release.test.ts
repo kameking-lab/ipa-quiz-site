@@ -50,8 +50,10 @@ describe("recovered automotive release", () => {
   it("connects all 11 separate qualifications through eager and lazy registries", async () => {
     expect(metadata).toHaveLength(11);
     const directory = getHomeDirectory().find((domain) => domain.id === "automotive")!;
-    expect(directory.qualificationCount).toBe(11);
-    expect(directory.totalQuestions).toBe(recovery.releaseOriginals + priorSittings.length);
+    const recoveredCodes = new Set(metadata.map(row => row.exam));
+    const recoveredCards = [...directory.featured, ...directory.compact].filter(card => recoveredCodes.has(card.key));
+    expect(recoveredCards).toHaveLength(11);
+    expect(recoveredCards.reduce((sum, card) => sum + card.questionCount, 0)).toBe(recovery.releaseOriginals + priorSittings.length);
     for (const row of metadata) {
       const exam = row.exam as AutomotiveExamCode;
       const questions = getAutomotiveQuestions(exam);

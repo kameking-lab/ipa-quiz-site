@@ -57,7 +57,7 @@ describe.each(sets)("c4-13 $code $year round2", ({ code, year, answers }) => {
 });
 
 it("distinguishes the lathe, histogram, series circuit and leader line from other sittings", () => {
-  const questions = QUESTIONS_BY_EXAM["kikai-hozen3"]!;
+  const questions = QUESTIONS_BY_EXAM["kikai-hozen3"]!.filter(q => q.year === 2024 && q.season === "round2");
   expect(questions[0].explanation).toContain("旋盤");
   expect(questions[2].explanation).toContain("15V");
   expect(questions[8].explanation).toContain("ヒストグラム");
@@ -69,8 +69,8 @@ it("distinguishes the lathe, histogram, series circuit and leader line from othe
 });
 
 it("shares the verified common 15 questions without losing the electrical source", () => {
-  const mechanical = QUESTIONS_BY_EXAM["kikai-hozen3"]!.filter(q => q.year === 2024 && q.qNumber <= 15);
-  const electrical = QUESTIONS_BY_EXAM["kikai-hozen-denki3"]!.filter(q => q.year === 2024 && q.qNumber <= 15);
+  const mechanical = QUESTIONS_BY_EXAM["kikai-hozen3"]!.filter(q => q.year === 2024 && q.season === "round2" && q.qNumber <= 15);
+  const electrical = QUESTIONS_BY_EXAM["kikai-hozen-denki3"]!.filter(q => q.year === 2024 && q.season === "round2" && q.qNumber <= 15);
   expect(electrical).toHaveLength(15);
   for (const [index, q] of electrical.entries()) {
     expect(q.question).toBe(mechanical[index].question);
@@ -80,7 +80,7 @@ it("shares the verified common 15 questions without losing the electrical source
     expect(q.officialAnswerNumber).toBe(mechanical[index].officialAnswerNumber);
     expect(q.sourcePdfUrl).toContain("2024_3kyu_denki_mondai_2.pdf");
   }
-  const questions = QUESTIONS_BY_EXAM["kikai-hozen-denki3"]!.filter(q => q.year === 2024);
+  const questions = QUESTIONS_BY_EXAM["kikai-hozen-denki3"]!.filter(q => q.year === 2024 && q.season === "round2");
   expect(questions[21].explanation).toContain("100W");
   expect(questions[26].answer).toBe("イ");
   expect(questions[26].explanation).toContain("平らな面同士");

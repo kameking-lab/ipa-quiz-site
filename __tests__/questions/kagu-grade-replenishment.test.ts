@@ -22,7 +22,7 @@ const editions = [
   { exam: "kagu1" as const, year: 2024, season: "early", rows: KAGU1_QUESTIONS.filter(q => q.year === 2024),
     answers: "○××○×" + "○○×○○" + "×○○××" + "○○○×○" + "×××○○"
       + "イハロイイ" + "ニロイニロ" + "イイハハロ" + "ハハニハニ" + "イニイハハ", figures: [3, 4, 13, 28, 39], edition: "2024年度前期" },
-  { exam: "kagu3" as const, year: 2024, season: "late", rows: KAGU3_QUESTIONS,
+  { exam: "kagu3" as const, year: 2024, season: "late", rows: KAGU3_QUESTIONS.filter(q => q.year === 2024),
     answers: "○○×○×○×○○○" + "○○○××××○○○" + "××○○×○○○○×", figures: [16, 25, 26, 28], edition: "2024年度後期" },
 ];
 

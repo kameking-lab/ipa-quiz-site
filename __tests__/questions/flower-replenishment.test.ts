@@ -22,7 +22,7 @@ const editions = [
   { exam: "flower1" as const, year: 2025, rows: FLOWER1_QUESTIONS.filter(q => q.year === 2025),
     answers: "○○○○×" + "○○○○○" + "×○○○○" + "○××○○" + "○××○×"
       + "イロロハロ" + "イニハニロ" + "ハイハニニ" + "ニニニハハ" + "ニニニロロ", figures: [] as number[] },
-  { exam: "flower3" as const, year: 2025, rows: FLOWER3_QUESTIONS,
+  { exam: "flower3" as const, year: 2025, rows: FLOWER3_QUESTIONS.filter(q => q.year === 2025),
     answers: "○××××○○×○×" + "×××××○××○○" + "×○×××○××○○", figures: [] as number[] },
 ];
 

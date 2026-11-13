@@ -30,7 +30,8 @@ describe("Q4-103 家具製作3級2023年度後期", () => {
   it("両年度を読み込み、年度別の問題URLで取り出せる", async () => {
     expect(await getQuestionsForExam("kagu3")).toEqual(KAGU3_QUESTIONS);
     expect(KAGU3_QUESTIONS.filter(q => q.year === 2025)).toHaveLength(30);
-    expect(new Set(KAGU3_QUESTIONS.map(questionPagePath)).size).toBe(60);
+    expect(KAGU3_QUESTIONS.filter(q => q.year === 2023 || q.year === 2025)).toHaveLength(60);
+    expect(new Set(KAGU3_QUESTIONS.map(questionPagePath)).size).toBe(KAGU3_QUESTIONS.length);
     questions.forEach(q => {
       const [, , exam, yearSeason, section, qnum] = questionPagePath(q).split("/");
       expect(findQuestionByRoute(KAGU3_QUESTIONS, { exam, yearSeason, section, qnum })?.id).toBe(q.id);

@@ -18,7 +18,7 @@ import type { ChoiceKey } from "@/lib/questions/types";
 const editions = [
   { exam: "engei-soshoku3" as const, year: 2024, rows: ENGEI_SOSHOKU3_QUESTIONS.filter(q => q.year === 2024),
     answers: "×○×○×××○○○" + "×○○×○××○○○" + "×○○○○○××××" },
-  { exam: "engei-soshoku1" as const, year: 2023, rows: ENGEI_SOSHOKU1_QUESTIONS,
+  { exam: "engei-soshoku1" as const, year: 2023, rows: ENGEI_SOSHOKU1_QUESTIONS.filter(q => q.year === 2023),
     answers: "○××○○" + "×○××○" + "○××××" + "×○○○○" + "○×××○"
       + "イニロイハ" + "ニハロロロ" + "ニハロハロ" + "イロハイロ" + "イハハイニ" },
   { exam: "engei-soshoku3" as const, year: 2023, rows: ENGEI_SOSHOKU3_QUESTIONS.filter(q => q.year === 2023),

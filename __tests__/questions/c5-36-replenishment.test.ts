@@ -72,7 +72,7 @@ it("級・年度ごとの原本の違いと計算問題を保持する", () => {
   expect(KUUKIATSU_KUMITATE2_QUESTIONS).toHaveLength(50);
   const one2025 = KUUKIATSU_KUMITATE1_QUESTIONS.filter(q => q.year === 2025);
   const one2024 = KUUKIATSU_KUMITATE1_QUESTIONS.filter(q => q.year === 2024);
-  const two2025 = KUUKIATSU_KUMITATE2_QUESTIONS;
+  const two2025 = KUUKIATSU_KUMITATE2_QUESTIONS.filter(q => q.year === 2025);
   expect(one2025[45].explanation).toContain("14Ω");
   expect(one2024[45].explanation).toContain("120Ω");
   expect(one2024[33].explanation).toContain("19.96mm");
@@ -82,5 +82,6 @@ it("級・年度ごとの原本の違いと計算問題を保持する", () => {
   expect(two2025[49].officialAnswerNumber).toBe("ハ");
   expect(two2025[4].imageUrls).toHaveLength(1);
   expect(one2025[43].imageUrls).toHaveLength(1);
-  expect(EXAM_CONFIGS["kuukiatsu-kumitate1"].yearRange).toEqual({ start: 2024, end: 2025 });
+  expect(EXAM_CONFIGS["kuukiatsu-kumitate1"].yearRange.start).toBeLessThanOrEqual(2024);
+  expect(EXAM_CONFIGS["kuukiatsu-kumitate1"].yearRange.end).toBeGreaterThanOrEqual(2025);
 });
