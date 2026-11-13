@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import { CHUZO3_QUESTIONS } from "@/data/questions/chuzo3";
-import { CHUZO1_QUESTIONS } from "@/data/questions/chuzo1";
+import { CHUZO3_QUESTIONS as CHUZO3_ALL } from "@/data/questions/chuzo3";
+import { CHUZO1_QUESTIONS as CHUZO1_ALL } from "@/data/questions/chuzo1";
 import { NETSUZETSUEN2_QUESTIONS } from "@/data/questions/netsuzetsuen2";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -14,6 +14,8 @@ import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import type { ChoiceKey } from "@/lib/questions/types";
 
+const CHUZO3_QUESTIONS = CHUZO3_ALL.filter(q => q.year === 2025);
+const CHUZO1_QUESTIONS = CHUZO1_ALL.filter(q => q.year === 2025);
 // 公式正答表の画像を5問ずつ読み取り固定した照合用の正答。
 const editions = [
   { exam: "chuzo3" as const, rows: CHUZO3_QUESTIONS, season: "early" as const, answers: "○○○×○×××○○○×××××○×○○××○××○×××○", pages: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3], figures: [] as number[] },
@@ -59,8 +61,8 @@ describe.each(editions)("c4-60 $exam", ({ exam, rows, season, answers, pages, fi
     }
   });
   it("一覧・演習の両ローダーで全問を配信し、級に応じて原本の記号を使う", async () => {
-    expect(QUESTIONS_BY_EXAM[exam]!.filter(q => q.season === season)).toEqual(rows);
-    expect((await getQuestionsForExam(exam)).filter(q => q.season === season)).toEqual(rows);
+    expect(QUESTIONS_BY_EXAM[exam]!.filter(q => q.year === 2025 && q.season === season)).toEqual(rows);
+    expect((await getQuestionsForExam(exam)).filter(q => q.year === 2025 && q.season === season)).toEqual(rows);
     expect(EXAM_CONFIGS[exam].sessions[0].expectedQuestions).toBe(rows.length);
     expect(EXAM_CONFIGS[exam].seasons).toContain(season);
     expect(rows.every(q => EXAM_CONFIGS[exam].sessions[0].categories.includes(q.category))).toBe(true);
