@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { CHUZO3_QUESTIONS } from "@/data/questions/chuzo3";
+import { CHUZO1_QUESTIONS } from "@/data/questions/chuzo1";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
@@ -14,7 +15,8 @@ import type { ChoiceKey } from "@/lib/questions/types";
 
 // 公式正答表の画像を5問ずつ読み取り固定した照合用の正答。
 const editions = [
-  { exam: "chuzo3" as const, rows: CHUZO3_QUESTIONS, season: "early" as const, answers: "○○○×○×××○○○×××××○×○○××○××○×××○", pages: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3], figures: [] as number[] }
+  { exam: "chuzo3" as const, rows: CHUZO3_QUESTIONS, season: "early" as const, answers: "○○○×○×××○○○×××××○×○○××○××○×××○", pages: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3], figures: [] as number[] },
+  { exam: "chuzo1" as const, rows: CHUZO1_QUESTIONS, season: "early" as const, answers: "○×○×○○××○○○××○×○○×××○××○○ロハニハイロイニイハニロロハハニニニニハイロロロロ", pages: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7], figures: [11] as number[] }
 ];
 
 describe.each(editions)("c4-60 $exam", ({ exam, rows, season, answers, pages, figures }) => {
