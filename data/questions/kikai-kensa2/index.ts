@@ -1,4 +1,5 @@
 import type { Question } from "@/lib/questions/types";
-import late2024 from "./2024-late.json";
+import questions0 from "./2024-late.json";
+import questions1 from "./2023-late.json";
 
-export const KIKAI_KENSA2_QUESTIONS: Question[] = late2024 as Question[];
+export const KIKAI_KENSA2_QUESTIONS: Question[] = [...questions0, ...questions1] as Question[];

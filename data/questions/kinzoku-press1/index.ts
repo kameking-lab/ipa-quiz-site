@@ -1,4 +1,5 @@
 import type { Question } from "@/lib/questions/types";
-import edition0 from "./2023-early.json";
+import questions0 from "./2023-early.json";
+import questions1 from "./2024-early.json";
 
-export const KINZOKU_PRESS1_QUESTIONS: Question[] = [...edition0] as Question[];
+export const KINZOKU_PRESS1_QUESTIONS: Question[] = [...questions0, ...questions1] as Question[];

@@ -74,6 +74,82 @@ export const EXAM_LABELS: Record<string, string> = {
   "fujin-kodomofuku2": "婦人子供服製造技能士 2級",
   "fujin-kodomofuku1": "婦人子供服製造技能士 1級",
   "toso1": "塗装技能士 1級",
+  "toso2": "塗装技能士 2級",
+
+  "kojo-bankin1": "工場板金技能士 1級",
+  "kenchiku-bankin1": "建築板金技能士 1級（ダクト板金作業）",
+  "kinzoku-netsushori3": "金属熱処理技能士 3級",
+  "kojo-bankin3": "工場板金技能士 3級",
+  "kojo-bankin2": "工場板金技能士 2級",
+  "mekki2": "めっき技能士 2級",
+
+  "kagu3": "家具製作技能士 3級",
+  "diecast1": "ダイカスト技能士 1級",
+  "tetsudo-sharyo1": "鉄道車両製造・整備技能士 1級",
+
+  "engei-soshoku2": "園芸装飾技能士 2級",
+
+  "futsu-senban1": "機械加工技能士 1級（普通旋盤作業）",
+  "shashutsu1": "プラスチック成形技能士 1級（射出成形作業）",
+
+  "tekkin3": "鉄筋施工技能士 3級（鉄筋組立て作業）",
+  "tekkin2": "鉄筋施工技能士 2級（鉄筋組立て作業）",
+
+  "kikai-seizu-tegaki1": "機械・プラント製図技能士 1級（機械製図手書き作業）",
+
+  "reito-seko2": "冷凍空気調和機器施工技能士 2級（冷凍空気調和機器施工作業）",
+  "reito-seko1": "冷凍空気調和機器施工技能士 1級（冷凍空気調和機器施工作業）",
+  "kuukiatsu-kumitate2": "空気圧装置組立て技能士 2級（空気圧装置組立て作業）",
+  "kuukiatsu-kumitate1": "空気圧装置組立て技能士 1級（空気圧装置組立て作業）",
+  "henatsuki-kumitate2": "電気機器組立て技能士 2級（変圧器組立て作業）",
+  "henatsuki-kumitate1": "電気機器組立て技能士 1級（変圧器組立て作業）",
+
+  "haidenban-kumitate3": "電気機器組立て技能士 3級（配電盤・制御盤組立て作業）",
+
+  "kikai-seizu-cad1": "機械・プラント製図技能士 1級（機械製図CAD作業）",
+
+  "plant-haikan-seizu2": "機械・プラント製図技能士 2級（プラント配管製図作業）",
+
+  "reito-seko3": "冷凍空気調和機器施工技能士 3級（冷凍空気調和機器施工作業）",
+
+  "netsuzetsuen2": "熱絶縁施工技能士 2級（保温保冷工事作業）",
+  "hiseshoku-jokyo1": "非接触除去加工技能士 1級（数値制御形彫り放電加工作業）",
+  "tategu1": "建具製作技能士 1級（木製建具手加工作業）",
+  "shohin-soshoku1": "商品装飾展示技能士 1級",
+  "kogaku-glass1": "光学機器製造技能士 1級（光学ガラス研磨作業）",
+  "sangyo-sharyo1": "産業車両整備技能士 1級",
+  "yogashi1": "菓子製造技能士 1級（洋菓子製造作業）",
+  "block-kenchiku3": "ブロック建築技能士 3級（コンクリートブロック工事作業）",
+  "block-kenchiku1": "ブロック建築技能士 1級（コンクリートブロック工事作業）",
+  "shuzo1": "酒造技能士 1級（清酒製造作業）",
+  "fraise1": "機械加工技能士 1級（フライス盤作業）",
+  "fraise2": "機械加工技能士 2級（フライス盤作業）",
+  "fraise3": "機械加工技能士 3級（フライス盤作業）",
+
+  "haikan-plant2": "配管技能士 2級（プラント配管作業）",
+
+  "bousui-frp1": "防水施工技能士 1級（FRP防水工事作業）",
+
+  "naiso-carpet1": "内装仕上げ施工技能士 1級（カーペット系床仕上げ工事作業）",
+  "haikan-plant1": "配管技能士 1級（プラント配管作業）",
+  "shashutsu2": "プラスチック成形技能士 2級（射出成形作業）",
+
+  "kagaku-bunseki2": "化学分析技能士 2級",
+
+  "kagu1": "家具製作技能士 1級",
+  "kagu2": "家具製作技能士 2級",
+  "mekki3": "めっき技能士 3級",
+  "mekki1": "めっき技能士 1級",
+  "kinzoku-netsushori1": "金属熱処理技能士 1級",
+  "tekko1": "鉄工技能士 1級",
+  "denshi-kiki-kumitate1": "電子機器組立て技能士 1級",
+  "denshi-kiki-kumitate3": "電子機器組立て技能士 3級",
+
+  "kikai-hozen-denki1": "機械保全技能士 1級（電気系）",
+  "kikai-hozen-denki3": "機械保全技能士 3級（電気系）",
+  "kikai-hozen3": "機械保全技能士 3級（機械系）",
+  tobi2: "とび技能士 2級",
+  tobi3: "とび技能士 3級",
   "benrishi": "弁理士（短答式）",
   "sokuryoshi": "測量士",
   "dokugeki-chiba": "毒物劇物取扱者",
@@ -234,21 +310,14 @@ export const EXAM_LABELS: Record<string, string> = {
     "yobi-tanto": "予備試験（短答）",
     "sokuryoshiho": "測量士補",
     "caremanager": "ケアマネ試験",
-    "denshi-kiki-kumitate1": "電子機器組立て技能士 1級",
-    "denshi-kiki-kumitate3": "電子機器組立て技能士 3級",
+
     "tekko2": "鉄工技能士 2級",
-    "tekko1": "鉄工技能士 1級",
+
     "denshi-kiki-kumitate2": "電子機器組立て技能士 2級",
-    "kinzoku-netsushori1": "金属熱処理技能士 1級",
-    "kojo-bankin1": "工場板金技能士 1級",
-    "kenchiku-bankin1": "建築板金技能士 1級（ダクト板金作業）",
+
     "kenchiku-bankin-duct2": "建築板金技能士 2級（ダクト板金作業）",
     "kinzoku-netsushori2": "金属熱処理技能士 2級",
-  "mekki3": "めっき技能士 3級",
-  "mekki1": "めっき技能士 1級",
-    "kinzoku-netsushori3": "金属熱処理技能士 3級",
-    "kojo-bankin3": "工場板金技能士 3級",
-    "kojo-bankin2": "工場板金技能士 2級",
+
     "kensetsu-kikai-seibi2": "建設機械整備技能士 2級",
     "hyoso1": "表装技能士 1級",
     "tairu2": "タイル張り技能士 2級",
@@ -258,9 +327,7 @@ export const EXAM_LABELS: Record<string, string> = {
     "shashin1": "写真技能士 1級",
     "sessaku-kensaku1": "切削工具研削技能士 1級",
     "tatami1": "畳製作技能士 1級",
-    "fraise1": "機械加工技能士 1級（フライス盤作業）",
-    "fraise2": "機械加工技能士 2級（フライス盤作業）",
-    "fraise3": "機械加工技能士 3級（フライス盤作業）",
+
     "funmatsu-yakin1": "粉末冶金技能士 1級",
     "nunohaku1": "布はく縫製技能士 1級",
     "kikinzoku-soshin1": "貴金属装身具製作技能士 1級",
@@ -268,15 +335,14 @@ export const EXAM_LABELS: Record<string, string> = {
     "kikinzoku-soshin3": "貴金属装身具製作技能士 3級",
     "kikinzoku-soshin2": "貴金属装身具製作技能士 2級",
     "tobi1": "とび技能士 1級",
-    "tobi3": "とび技能士 3級",
+
     "kenchiku-daiku1": "建築大工技能士 1級",
     "kenchiku-daiku3": "建築大工技能士 3級",
     "kenchiku-daiku2": "建築大工技能士 2級",
     "shashin2": "写真技能士 2級",
-    "kikai-hozen-denki3": "機械保全技能士 3級（電気系）",
-    "kikai-hozen-denki1": "機械保全技能士 1級（電気系）",
+
     "kikai-hozen-setsubi1": "機械保全技能士 1級（設備診断）",
-    "kikai-hozen3": "機械保全技能士 3級（機械系）",
+
     "kikai-hozen1": "機械保全技能士 1級（機械系）",
     "kikai-hozen": "機械保全技能士 2級",
     "tsukanshi": "通関士"

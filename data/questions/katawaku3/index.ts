@@ -1,5 +1,6 @@
 import type { Question } from "@/lib/questions/types";
-import late2024 from "./2024-late.json";
-import late2025 from "./2025-late.json";
+import questions0 from "./2024-late.json";
+import questions1 from "./2025-late.json";
+import questions2 from "./2023-late.json";
 
-export const KATAWAKU3_QUESTIONS: Question[] = [...late2025, ...late2024] as Question[];
+export const KATAWAKU3_QUESTIONS: Question[] = [...questions0, ...questions1, ...questions2] as Question[];

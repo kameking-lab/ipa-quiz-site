@@ -1,4 +1,5 @@
 import type { Question } from "@/lib/questions/types";
-import late2023 from "./2023-late.json";
+import questions0 from "./2023-late.json";
+import questions1 from "./2024-late.json";
 
-export const TEKKIN_ZUMEN1_QUESTIONS: Question[] = [...late2023] as Question[];
+export const TEKKIN_ZUMEN1_QUESTIONS: Question[] = [...questions0, ...questions1] as Question[];

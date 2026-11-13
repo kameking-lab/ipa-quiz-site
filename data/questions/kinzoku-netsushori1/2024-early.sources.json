@@ -1,0 +1,364 @@
+{
+  "candidateId": "Q4-084",
+  "qualification": "1級金属熱処理（一般熱処理作業） 2024年度 前期",
+  "questionCount": 50,
+  "officialSources": [
+    {
+      "url": "https://www.kentei.javada.or.jp/pdf/R06-1-B04-%E9%87%91%E5%B1%9E%E7%86%B1%E5%87%A6%E7%90%86%EF%BC%88%E4%B8%80%E8%88%AC%E7%86%B1%E5%87%A6%E7%90%86%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+      "httpStatus": 200,
+      "sha256": "65c94b2802f9adaf77f97a8a52a6eb8b4550fdd10690abb4749b3aa29f1352de",
+      "pages": 8
+    },
+    {
+      "url": "https://www.kentei.javada.or.jp/pdf/R06-1-B04-%E9%87%91%E5%B1%9E%E7%86%B1%E5%87%A6%E7%90%86%EF%BC%88%E4%B8%80%E8%88%AC%E7%86%B1%E5%87%A6%E7%90%86%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+      "httpStatus": 200,
+      "sha256": "e722384c030a4fbf6bc2c9197e806f3bf76097192aa3cd02c555dcb80cf5211f",
+      "pages": 1
+    }
+  ],
+  "transcriptionMethod": "公式PDFの全出題ページを画像化して目視転記・照合。改行と空白、数式の組版を整理。A群・B群各1〜25を内部通し番号1〜50に対応。",
+  "answerVerification": "公式正答表を画像・テキストで照合。原本のX・Ｘを表示用の×に統一。",
+  "choiceMapping": {
+    "A": {
+      "ア": "○",
+      "イ": "×"
+    },
+    "B": {
+      "ア": "イ",
+      "イ": "ロ",
+      "ウ": "ハ",
+      "エ": "ニ"
+    }
+  },
+  "figures": [
+    {
+      "qNumber": 41,
+      "pdfPage": 6,
+      "cropRect": [
+        80,
+        470,
+        505,
+        662
+      ],
+      "imageUrl": "/images/questions/kinzoku-netsushori1/2024-early-b-016.webp",
+      "alt": "樹木灌水時間が長いという結果に向けて、方法・作業者・設備などの要因を枝状に整理した図",
+      "sha256": "394ae2a785f0e6decb6af0bce8200a84c4180a6bb55e44bad161d0f2c2c11246"
+    },
+    {
+      "qNumber": 50,
+      "pdfPage": 8,
+      "cropRect": [
+        145,
+        325,
+        475,
+        470
+      ],
+      "imageUrl": "/images/questions/kinzoku-netsushori1/2024-early-b-025.webp",
+      "alt": "グラインダから発生する火花の根本・中央・先端と、中央付近の線を指す記号Aの図",
+      "sha256": "2e2585db9a6f435ea853e2e3f90d1211bf1ecc58355068ea355b527cac7c071b"
+    }
+  ],
+  "questions": [
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-001",
+      "pdfPage": 2,
+      "officialQuestionLabel": "A群 1",
+      "officialAnswer": "×"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-002",
+      "pdfPage": 2,
+      "officialQuestionLabel": "A群 2",
+      "officialAnswer": "×"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-003",
+      "pdfPage": 2,
+      "officialQuestionLabel": "A群 3",
+      "officialAnswer": "○"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-004",
+      "pdfPage": 2,
+      "officialQuestionLabel": "A群 4",
+      "officialAnswer": "○"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-005",
+      "pdfPage": 2,
+      "officialQuestionLabel": "A群 5",
+      "officialAnswer": "×"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-006",
+      "pdfPage": 2,
+      "officialQuestionLabel": "A群 6",
+      "officialAnswer": "○"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-007",
+      "pdfPage": 2,
+      "officialQuestionLabel": "A群 7",
+      "officialAnswer": "○"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-008",
+      "pdfPage": 2,
+      "officialQuestionLabel": "A群 8",
+      "officialAnswer": "○"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-009",
+      "pdfPage": 2,
+      "officialQuestionLabel": "A群 9",
+      "officialAnswer": "×"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-010",
+      "pdfPage": 2,
+      "officialQuestionLabel": "A群 10",
+      "officialAnswer": "×"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-011",
+      "pdfPage": 2,
+      "officialQuestionLabel": "A群 11",
+      "officialAnswer": "○"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-012",
+      "pdfPage": 2,
+      "officialQuestionLabel": "A群 12",
+      "officialAnswer": "○"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-013",
+      "pdfPage": 2,
+      "officialQuestionLabel": "A群 13",
+      "officialAnswer": "×"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-014",
+      "pdfPage": 2,
+      "officialQuestionLabel": "A群 14",
+      "officialAnswer": "○"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-015",
+      "pdfPage": 2,
+      "officialQuestionLabel": "A群 15",
+      "officialAnswer": "×"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-016",
+      "pdfPage": 3,
+      "officialQuestionLabel": "A群 16",
+      "officialAnswer": "×"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-017",
+      "pdfPage": 3,
+      "officialQuestionLabel": "A群 17",
+      "officialAnswer": "×"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-018",
+      "pdfPage": 3,
+      "officialQuestionLabel": "A群 18",
+      "officialAnswer": "○"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-019",
+      "pdfPage": 3,
+      "officialQuestionLabel": "A群 19",
+      "officialAnswer": "○"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-020",
+      "pdfPage": 3,
+      "officialQuestionLabel": "A群 20",
+      "officialAnswer": "○"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-021",
+      "pdfPage": 3,
+      "officialQuestionLabel": "A群 21",
+      "officialAnswer": "○"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-022",
+      "pdfPage": 3,
+      "officialQuestionLabel": "A群 22",
+      "officialAnswer": "×"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-023",
+      "pdfPage": 3,
+      "officialQuestionLabel": "A群 23",
+      "officialAnswer": "○"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-024",
+      "pdfPage": 3,
+      "officialQuestionLabel": "A群 24",
+      "officialAnswer": "×"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-a-025",
+      "pdfPage": 3,
+      "officialQuestionLabel": "A群 25",
+      "officialAnswer": "○"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-001",
+      "pdfPage": 4,
+      "officialQuestionLabel": "B群 1",
+      "officialAnswer": "ハ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-002",
+      "pdfPage": 4,
+      "officialQuestionLabel": "B群 2",
+      "officialAnswer": "ハ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-003",
+      "pdfPage": 4,
+      "officialQuestionLabel": "B群 3",
+      "officialAnswer": "ハ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-004",
+      "pdfPage": 4,
+      "officialQuestionLabel": "B群 4",
+      "officialAnswer": "ハ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-005",
+      "pdfPage": 4,
+      "officialQuestionLabel": "B群 5",
+      "officialAnswer": "ハ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-006",
+      "pdfPage": 4,
+      "officialQuestionLabel": "B群 6",
+      "officialAnswer": "ニ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-007",
+      "pdfPage": 5,
+      "officialQuestionLabel": "B群 7",
+      "officialAnswer": "ニ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-008",
+      "pdfPage": 5,
+      "officialQuestionLabel": "B群 8",
+      "officialAnswer": "ロ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-009",
+      "pdfPage": 5,
+      "officialQuestionLabel": "B群 9",
+      "officialAnswer": "ロ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-010",
+      "pdfPage": 5,
+      "officialQuestionLabel": "B群 10",
+      "officialAnswer": "ロ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-011",
+      "pdfPage": 5,
+      "officialQuestionLabel": "B群 11",
+      "officialAnswer": "イ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-012",
+      "pdfPage": 5,
+      "officialQuestionLabel": "B群 12",
+      "officialAnswer": "イ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-013",
+      "pdfPage": 6,
+      "officialQuestionLabel": "B群 13",
+      "officialAnswer": "ハ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-014",
+      "pdfPage": 6,
+      "officialQuestionLabel": "B群 14",
+      "officialAnswer": "ニ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-015",
+      "pdfPage": 6,
+      "officialQuestionLabel": "B群 15",
+      "officialAnswer": "ハ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-016",
+      "pdfPage": 6,
+      "officialQuestionLabel": "B群 16",
+      "officialAnswer": "ハ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-017",
+      "pdfPage": 7,
+      "officialQuestionLabel": "B群 17",
+      "officialAnswer": "イ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-018",
+      "pdfPage": 7,
+      "officialQuestionLabel": "B群 18",
+      "officialAnswer": "ロ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-019",
+      "pdfPage": 7,
+      "officialQuestionLabel": "B群 19",
+      "officialAnswer": "ロ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-020",
+      "pdfPage": 7,
+      "officialQuestionLabel": "B群 20",
+      "officialAnswer": "ニ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-021",
+      "pdfPage": 7,
+      "officialQuestionLabel": "B群 21",
+      "officialAnswer": "ロ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-022",
+      "pdfPage": 7,
+      "officialQuestionLabel": "B群 22",
+      "officialAnswer": "ロ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-023",
+      "pdfPage": 8,
+      "officialQuestionLabel": "B群 23",
+      "officialAnswer": "ハ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-024",
+      "pdfPage": 8,
+      "officialQuestionLabel": "B群 24",
+      "officialAnswer": "ハ"
+    },
+    {
+      "id": "kinzoku-netsushori1-2024-early-gakka-b-025",
+      "pdfPage": 8,
+      "officialQuestionLabel": "B群 25",
+      "officialAnswer": "ニ"
+    }
+  ],
+  "checkedAt": "2026-11-13"
+}

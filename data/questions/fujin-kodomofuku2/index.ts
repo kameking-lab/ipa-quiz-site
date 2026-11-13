@@ -1,5 +1,5 @@
 import type { Question } from "@/lib/questions/types";
-import questions2024 from "./2024-early.json";
+import questions0 from "./2024-early.json";
+import questions1 from "./2023-early.json";
 
-/** A群1〜25・B群1〜25を内部通し番号1〜50に対応。 */
-export const FUJIN_KODOMOFUKU2_QUESTIONS: Question[] = [...questions2024] as Question[];
+export const FUJIN_KODOMOFUKU2_QUESTIONS: Question[] = [...questions0, ...questions1] as Question[];

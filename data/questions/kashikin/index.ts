@@ -1,15 +1,13 @@
 import type { Question } from "@/lib/questions/types";
-import paper2025 from "./2025-annual.json";
-import paper2024 from "./2024-annual.json";
-import paper2019 from "./2019-annual.json";
-import paper2018 from "./2018-annual.json";
-import paper2017 from "./2017-annual.json";
+import questions0 from "./2025-annual.json";
+import questions1 from "./2024-annual.json";
+import questions2 from "./2019-annual.json";
+import questions3 from "./2018-annual.json";
+import questions4 from "./2017-annual.json";
+import questions5 from "./2022-annual.json";
+import questions6 from "./2021-annual.json";
+import questions7 from "./2020-annual.json";
+import questions8 from "./2016-annual.json";
 
-/** 貸金業務取扱主任者資格試験の公式公開問題。 */
-export const KASHIKIN_QUESTIONS: Question[] = [
-  ...(paper2025 as Question[]),
-  ...(paper2024 as Question[]),
-  ...(paper2019 as Question[]),
-  ...(paper2018 as Question[]),
-  ...(paper2017 as Question[]),
-].sort((a, b) => b.year - a.year || a.qNumber - b.qNumber);
+export const KASHIKIN_QUESTIONS: Question[] = [...questions0, ...questions1, ...questions2, ...questions3, ...questions4, ...questions5, ...questions6, ...questions7, ...questions8] as Question[];
+KASHIKIN_QUESTIONS.sort((a, b) => b.year - a.year || a.qNumber - b.qNumber);

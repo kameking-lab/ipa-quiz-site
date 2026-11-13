@@ -1,5 +1,7 @@
 import type { Question } from "@/lib/questions/types";
-import q0 from "./2023-early.json";
-import q1 from "./2023-late.json";
+import questions0 from "./2023-early.json";
+import questions1 from "./2023-late.json";
+import questions2 from "./2024-early.json";
+import questions3 from "./2024-late.json";
 
-export const KENCHIKU_DAIKU3_QUESTIONS: Question[] = [...q0, ...q1] as Question[];
+export const KENCHIKU_DAIKU3_QUESTIONS: Question[] = [...questions0, ...questions1, ...questions2, ...questions3] as Question[];

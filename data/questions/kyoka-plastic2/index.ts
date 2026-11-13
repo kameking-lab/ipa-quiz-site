@@ -1,4 +1,5 @@
 import type { Question } from "@/lib/questions/types";
-import questions2023 from "./2023-early.json";
+import questions0 from "./2023-early.json";
+import questions1 from "./2024-early.json";
 
-export const KYOKA_PLASTIC2_QUESTIONS: Question[] = [...questions2023] as Question[];
+export const KYOKA_PLASTIC2_QUESTIONS: Question[] = [...questions0, ...questions1] as Question[];
