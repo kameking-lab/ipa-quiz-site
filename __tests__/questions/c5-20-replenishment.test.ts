@@ -20,6 +20,9 @@ const editions = [
   { exam: "kikai-shiage3", year: 2023, season: "early", name: "仕上げ", domain: "electrical",
     answers: "○×○○×" + "○×○○×" + "××○×○" + "×○○×○" + "○×××○" + "×○○×○",
     pages: [...Array(14).fill(2), ...Array(16).fill(3)], figures: [10] },
+  { exam: "kikai-seizu-tegaki1", year: 2025, season: "late", name: "機械・プラント製図", domain: "electrical",
+    answers: "○×○○○" + "×○×○×" + "××○××" + "○××○○" + "○×○○×" + "イハイニロ" + "イイハロハ" + "イハハイロ" + "ハニニニロ" + "イニニロハ",
+    pages: [...Array(8).fill(2), ...Array(7).fill(3), ...Array(10).fill(4), ...Array(4).fill(5), ...Array(5).fill(6), ...Array(5).fill(7), ...Array(6).fill(8), ...Array(4).fill(9), 10], figures: [2, 4, 9, 10, 14, 22, 27, 29, 30, 32] },
 ];
 
 describe.each(editions)("c5-20 $exam $year", ({ exam: code, year, season, name, domain, answers, pages, figures }) => {
@@ -64,4 +67,15 @@ describe.each(editions)("c5-20 $exam $year", ({ exam: code, year, season, name, 
       }
     }
   });
+});
+
+it("原本の線種と計算条件を取り違えない", () => {
+  const rows = QUESTIONS_BY_EXAM["kikai-seizu-tegaki1"]!;
+  expect(rows.find(q => q.officialQuestionLabel === "A群 22")?.question).toContain("太い二点鎖線");
+  expect(rows.find(q => q.officialQuestionLabel === "A群 8")?.explanation).toContain("97.5MPa");
+  expect(rows.find(q => q.officialQuestionLabel === "A群 15")?.explanation).toContain("18180N");
+  expect(QUESTIONS_BY_EXAM["kikai-shiage2"]?.find(q => q.officialQuestionLabel === "A群 16")?.explanation).toContain("0.294MPa");
+  const tools = QUESTIONS_BY_EXAM["kikai-shiage2"]?.find(q => q.officialQuestionLabel === "B群 3");
+  expect(tools?.choices?.エ).toContain("右ねじれドリル");
+  expect(tools?.choices?.イ).toContain("もみつけ用");
 });
