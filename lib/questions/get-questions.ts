@@ -29,11 +29,14 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "kuukiatsu-kumitate1": async () => isExamPublished("kuukiatsu-kumitate1") ? (await import("@/data/questions/kuukiatsu-kumitate1")).KUUKIATSU_KUMITATE1_QUESTIONS : [],
   "kuukiatsu-kumitate2": async () => isExamPublished("kuukiatsu-kumitate2") ? (await import("@/data/questions/kuukiatsu-kumitate2")).KUUKIATSU_KUMITATE2_QUESTIONS : [],
   "chuzo2": async () => isExamPublished("chuzo2") ? (await import("@/data/questions/chuzo2")).CHUZO2_QUESTIONS : [],
+  "reito-seko2": async () => isExamPublished("reito-seko2") ? (await import("@/data/questions/reito-seko2")).REITO_SEKO2_QUESTIONS : [],
   "chuzo1": async () => isExamPublished("chuzo1") ? (await import("@/data/questions/chuzo1")).CHUZO1_QUESTIONS : [],
+  "reito-seko1": async () => isExamPublished("reito-seko1") ? (await import("@/data/questions/reito-seko1")).REITO_SEKO1_QUESTIONS : [],
   "kaiten-denki2": async () => isExamPublished("kaiten-denki2") ? (await import("@/data/questions/kaiten-denki2")).KAITEN_DENKI2_QUESTIONS : [],
   "kaiten-denki1": async () => isExamPublished("kaiten-denki1") ? (await import("@/data/questions/kaiten-denki1")).KAITEN_DENKI1_QUESTIONS : [],
   "sequence3": async () => isExamPublished("sequence3") ? (await import("@/data/questions/sequence3")).SEQUENCE3_QUESTIONS : [],
   "chuzo3": async () => isExamPublished("chuzo3") ? (await import("@/data/questions/chuzo3")).CHUZO3_QUESTIONS : [],
+  "reito-seko3": async () => isExamPublished("reito-seko3") ? (await import("@/data/questions/reito-seko3")).REITO_SEKO3_QUESTIONS : [],
   "sequence2": async () => isExamPublished("sequence2") ? (await import("@/data/questions/sequence2")).SEQUENCE2_QUESTIONS : [],
   "haiden-seigyo3": async () => isExamPublished("haiden-seigyo3") ? (await import("@/data/questions/haiden-seigyo3")).HAIDEN_SEIGYO3_QUESTIONS : [],
   "kenchiku-bankin2": async () => isExamPublished("kenchiku-bankin2") ? (await import("@/data/questions/kenchiku-bankin2")).KENCHIKU_BANKIN2_QUESTIONS : [],
@@ -311,8 +314,8 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 
 "kikai-seizu-tegaki1": async () => isExamPublished("kikai-seizu-tegaki1") ? (await import("@/data/questions/kikai-seizu-tegaki1")).KIKAI_SEIZU_TEGAKI1_QUESTIONS : [],
 
-"reito-seko2": async () => isExamPublished("reito-seko2") ? (await import("@/data/questions/reito-seko2")).REITO_SEKO2_QUESTIONS : [],
-"reito-seko1": async () => isExamPublished("reito-seko1") ? (await import("@/data/questions/reito-seko1")).REITO_SEKO1_QUESTIONS : [],
+
+
 
 "henatsuki-kumitate2": async () => isExamPublished("henatsuki-kumitate2") ? (await import("@/data/questions/henatsuki-kumitate2")).HENATSUKI_KUMITATE2_QUESTIONS : [],
 "henatsuki-kumitate1": async () => isExamPublished("henatsuki-kumitate1") ? (await import("@/data/questions/henatsuki-kumitate1")).HENATSUKI_KUMITATE1_QUESTIONS : [],
@@ -321,7 +324,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 
 "plant-haikan-seizu2": async () => isExamPublished("plant-haikan-seizu2") ? (await import("@/data/questions/plant-haikan-seizu2")).PLANT_HAIKAN_SEIZU2_QUESTIONS : [],
 
-"reito-seko3": async () => isExamPublished("reito-seko3") ? (await import("@/data/questions/reito-seko3")).REITO_SEKO3_QUESTIONS : [],
+
 
 "netsuzetsuen2": async () => isExamPublished("netsuzetsuen2") ? (await import("@/data/questions/netsuzetsuen2")).NETSUZETSUEN2_QUESTIONS : [],
 "hiseshoku-jokyo1": async () => isExamPublished("hiseshoku-jokyo1") ? (await import("@/data/questions/hiseshoku-jokyo1")).HISESHOKU_JOKYO1_QUESTIONS : [],

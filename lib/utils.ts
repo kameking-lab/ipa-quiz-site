@@ -28,11 +28,14 @@ export const EXAM_LABELS: Record<string, string> = {
   "kuukiatsu-kumitate1": "シーケンス制御技能士 1級",
   "kuukiatsu-kumitate2": "シーケンス制御技能士 1級",
   "chuzo2": "鋳造技能士 2級（鋳鉄鋳物鋳造作業）",
+  "reito-seko2": "冷凍空気調和機器施工技能士 2級（冷凍空気調和機器施工作業）",
   "chuzo1": "鋳造技能士 1級（鋳鉄鋳物鋳造作業）",
+  "reito-seko1": "冷凍空気調和機器施工技能士 1級（冷凍空気調和機器施工作業）",
   "kaiten-denki2": "電気機器組立て技能士 2級（回転電機巻線製作作業）",
   "kaiten-denki1": "電気機器組立て技能士 1級（回転電機巻線製作作業）",
   "sequence3": "シーケンス制御技能士 3級",
   "chuzo3": "鋳造技能士 3級（鋳鉄鋳物鋳造作業）",
+  "reito-seko3": "冷凍空気調和機器施工技能士 3級（冷凍空気調和機器施工作業）",
   "sequence2": "シーケンス制御技能士 2級",
   "haiden-seigyo3": "電気機器組立て技能士 3級",
   "kenchiku-bankin2": "建築板金技能士 2級",
@@ -99,8 +102,8 @@ export const EXAM_LABELS: Record<string, string> = {
 
   "kikai-seizu-tegaki1": "機械・プラント製図技能士 1級（機械製図手書き作業）",
 
-  "reito-seko2": "冷凍空気調和機器施工技能士 2級（冷凍空気調和機器施工作業）",
-  "reito-seko1": "冷凍空気調和機器施工技能士 1級（冷凍空気調和機器施工作業）",
+  
+  
   
   
   "henatsuki-kumitate2": "電気機器組立て技能士 2級（変圧器組立て作業）",
@@ -112,7 +115,7 @@ export const EXAM_LABELS: Record<string, string> = {
 
   "plant-haikan-seizu2": "機械・プラント製図技能士 2級（プラント配管製図作業）",
 
-  "reito-seko3": "冷凍空気調和機器施工技能士 3級（冷凍空気調和機器施工作業）",
+  
 
   "netsuzetsuen2": "熱絶縁施工技能士 2級（保温保冷工事作業）",
   "hiseshoku-jokyo1": "非接触除去加工技能士 1級（数値制御形彫り放電加工作業）",
