@@ -33,6 +33,21 @@ describe("home personalized pickup rows", () => {
     expect(onChoose).toHaveBeenCalledOnce();
     expect(localStorage.getItem(LS_KEYS.history)).toBe(saved);
   });
+  it.each(["pageshow", "popstate", "focus", "storage", "visibilitychange"])("refreshes the order on %s without waiting for the timer", (event) => {
+    history(["sc", "sc", "nw", "ap"]);
+    render(<HomeFeaturedExams items={items} onChoose={() => {}} />);
+    const hrefs = () => within(screen.getByRole("region", { name: "あなたの資格" })).getAllByRole("link").map(link => link.getAttribute("href"));
+    expect(hrefs()).toEqual(["/ap", "/nw", "/sc"]);
+    history(["sc", "sc", "nw", "ap", "nw"]);
+    const saved = localStorage.getItem(LS_KEYS.history);
+    if (event === "visibilitychange") {
+      vi.spyOn(document, "visibilityState", "get").mockReturnValue("visible");
+      fireEvent(document, new Event(event));
+    } else if (event === "storage") fireEvent(window, new StorageEvent(event, { key: LS_KEYS.history }));
+    else fireEvent(window, new Event(event));
+    expect(hrefs()).toEqual(["/nw", "/ap", "/sc"]);
+    expect(localStorage.getItem(LS_KEYS.history)).toBe(saved);
+  });
   it("removes the whole personal row when another tab clears history", () => {
     history(["sc"]);
     render(<HomeFeaturedExams items={items} onChoose={() => {}} />);

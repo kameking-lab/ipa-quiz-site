@@ -13,7 +13,7 @@ export type QualificationCardItem = HomeDirectoryItem & { domainId: HomeDomainId
 const shortDate = (date: string) => `${Number(date.slice(5, 7))}/${Number(date.slice(8))}`;
 export function QualificationCard({ item, onChoose, date }: { item: QualificationCardItem; onChoose: () => void; date?: FeaturedExamDate }) {
   return <a href={item.href} className={`study-qualification study-card-${item.domainId}`} onClick={onChoose}>
-    <span className="min-w-0"><span className="study-qualification-name">{item.name}</span><span className="study-qualification-meta">{item.questionCount.toLocaleString("ja-JP")}問{date ? <time className="study-qualification-date" dateTime={date.date} aria-label={`${date.date}${date.endDate ? `から${date.endDate}` : ""}${date.note ? `（${date.note}）` : " 試験"}`}> · {shortDate(date.date)}{date.endDate ? `〜${shortDate(date.endDate)}` : date.note ? `（${date.note}）` : " 試験"}</time> : <span className="study-qualification-period"> · {item.periodLabel}</span>}</span>
+    <span className="min-w-0"><span className={`study-qualification-name${/[\s・]/u.test(item.name) ? " study-qualification-name-separated" : ""}`}>{item.name}</span><span className="study-qualification-meta">{item.questionCount.toLocaleString("ja-JP")}問{date ? <time className="study-qualification-date" dateTime={date.date} aria-label={`${date.date}${date.endDate ? `から${date.endDate}` : ""}${date.note ? `（${date.note}）` : " 試験"}`}> · {shortDate(date.date)}{date.endDate ? `〜${shortDate(date.endDate)}` : date.note ? `（${date.note}）` : " 試験"}</time> : <span className="study-qualification-period"> · {item.periodLabel}</span>}</span>
     </span>
     {/* eslint-disable-next-line @next/next/no-img-element */}
     <img aria-hidden="true" alt="" className="study-mascot study-card-mascot" src={qualificationStudyArt(item.key)} width={256} height={256} loading="lazy" decoding="async" />
@@ -30,12 +30,23 @@ export function HomeFeaturedExams({ items, onChoose }: { items: readonly Qualifi
   useLayoutEffect(() => {
     const refresh = () => setSnapshot({ personal: frequentExamKeys(createHistoryStore().getAllEntries(), keys, aliases), now: new Date() });
     refresh();
-    // Re-evaluate on BFCache return, history sync in another tab and Japan midnight.
+    // Re-evaluate on history/BFCache return, tab activation and Japan midnight.
     const storage = (event: StorageEvent) => { if (event.key === null || event.key === LS_KEYS.history) refresh(); };
+    const visible = () => { if (document.visibilityState === "visible") refresh(); };
     window.addEventListener("pageshow", refresh);
+    window.addEventListener("popstate", refresh);
+    window.addEventListener("focus", refresh);
+    document.addEventListener("visibilitychange", visible);
     window.addEventListener("storage", storage);
     const timer = window.setInterval(refresh, 60_000);
-    return () => { window.removeEventListener("pageshow", refresh); window.removeEventListener("storage", storage); window.clearInterval(timer); };
+    return () => {
+      window.removeEventListener("pageshow", refresh);
+      window.removeEventListener("popstate", refresh);
+      window.removeEventListener("focus", refresh);
+      document.removeEventListener("visibilitychange", visible);
+      window.removeEventListener("storage", storage);
+      window.clearInterval(timer);
+    };
   }, [keys, aliases]);
   const personal = snapshot?.personal ?? [];
   const picks = upcomingExamPicks(keys, personal, snapshot?.now ?? new Date(0));

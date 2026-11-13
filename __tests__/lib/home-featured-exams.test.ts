@@ -22,8 +22,32 @@ describe("home pickup selection", () => {
   it("returns the one learned qualification without filling empty personal slots", () => {
     expect(frequentExamKeys([entry("sc")], keys)).toEqual(["sc"]);
   });
-  it("ranks five qualifications by attempts then latest answer and caps at three", () => {
-    expect(frequentExamKeys([entry("sc"), entry("sc"), entry("nw", 2), entry("nw", 4), entry("ap", 3), entry("fp1", 2), entry("khk-kagaku")], keys)).toEqual(["nw", "sc", "ap"]);
+  it("puts the latest qualification first even when it has only one attempt", () => {
+    expect(frequentExamKeys([entry("sc"), entry("sc", 2), entry("nw", 3)], keys)).toEqual(["nw", "sc"]);
+  });
+  it("chooses the two most frequent others, then orders them by recency", () => {
+    const entries = [entry("sc", 1), entry("sc", 2), entry("sc", 3), entry("nw", 4), entry("nw", 5), entry("ap", 6), entry("fp1", 7)];
+    // AP is newer than SC/NW but does not have enough attempts to be selected.
+    expect(frequentExamKeys(entries, keys)).toEqual(["fp1", "nw", "sc"]);
+  });
+  it("reorders all three cards after each newly learned qualification", () => {
+    const entries = [entry("sc", 1), entry("sc", 2), entry("nw", 3), entry("ap", 4)];
+    expect(frequentExamKeys(entries, keys)).toEqual(["ap", "nw", "sc"]);
+    entries.push(entry("sc", 5));
+    expect(frequentExamKeys(entries, keys)).toEqual(["sc", "ap", "nw"]);
+    entries.push(entry("nw", 6));
+    expect(frequentExamKeys(entries, keys)).toEqual(["nw", "sc", "ap"]);
+  });
+  it("keeps one card per qualification after consecutive reattempts", () => {
+    expect(frequentExamKeys([entry("sc", 1), entry("sc", 2)], keys)).toEqual(["sc"]);
+    expect(frequentExamKeys([entry("sc", 1), entry("nw", 2), entry("nw", 3)], keys)).toEqual(["nw", "sc"]);
+  });
+  it("uses recency to break frequency ties and key order for equal timestamps", () => {
+    expect(frequentExamKeys([entry("sc", 1), entry("nw", 2), entry("ap", 3), entry("fp1", 4)], keys)).toEqual(["fp1", "ap", "nw"]);
+    expect(frequentExamKeys([entry("sc", 1), entry("nw", 1), entry("ap", 1), entry("fp1", 1)], keys)).toEqual(["ap", "fp1", "nw"]);
+  });
+  it("reads timestamps rather than assuming the stored array is chronological", () => {
+    expect(frequentExamKeys([entry("ap", 3), entry("nw", 2), entry("sc", 1)], keys)).toEqual(["ap", "nw", "sc"]);
   });
   it("recognizes hyphenated qualification codes and automotive period-first IDs", () => {
     expect(frequentExamKeys([entry("khk-kagaku"), { id: "jidosha-2026-first-2-gasoline-q3", at: 3 }], [...keys, "khk", "jidosha-2-gasoline"])).toEqual(["jidosha-2-gasoline", "khk-kagaku"]);

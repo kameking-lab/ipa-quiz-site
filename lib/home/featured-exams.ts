@@ -11,8 +11,8 @@ export interface FeaturedCalendarExam {
 }
 export const HOME_EXAM_CALENDAR: readonly FeaturedCalendarExam[] = calendar.exams;
 
-/** Attempts, including reattempts; recency breaks ties. Self-contained so the
- * same reader can reserve the correct height before the first paint. */
+/** Latest qualification first; choose up to two others by attempts (including
+ * reattempts), then display those by recency. Self-contained for pre-paint sizing. */
 export function frequentExamKeys(entries: unknown, keys: readonly string[], aliases: Readonly<Record<string, string>> = {}, excludedIds: readonly string[] = []): string[] {
   if (!Array.isArray(entries)) return [];
   const longestFirst = [...keys].sort((a, b) => b.length - a.length);
@@ -25,11 +25,16 @@ export function frequentExamKeys(entries: unknown, keys: readonly string[], alia
     const key = alias ? aliases[alias] : automotive ? keys.find(key => key === `jidosha-${automotive[1]}`)
       : longestFirst.find(key => entry.id.startsWith(`${key}-`));
     if (!key || !keys.includes(key)) continue;
-    const previous = counts.get(key) ?? { count: 0, latest: 0 };
+    const previous = counts.get(key) ?? { count: 0, latest: -Infinity };
     counts.set(key, { count: previous.count + 1, latest: Math.max(previous.latest, entry.at) });
   }
-  return [...counts].sort(([a, x], [b, y]) => y.count - x.count || y.latest - x.latest || a.localeCompare(b, "en"))
-    .slice(0, 3).map(([key]) => key);
+  const byRecency = ([a, x]: [string, { latest: number }], [b, y]: [string, { latest: number }]) =>
+    y.latest - x.latest || a.localeCompare(b, "en");
+  const recent = [...counts].sort(byRecency);
+  if (recent.length === 0) return [];
+  const [latest, ...others] = recent;
+  const frequent = others.sort(([a, x], [b, y]) => y.count - x.count || byRecency([a, x], [b, y])).slice(0, 2);
+  return [latest, ...frequent.sort(byRecency)].map(([key]) => key);
 }
 
 export function japanDate(now: Date): string {

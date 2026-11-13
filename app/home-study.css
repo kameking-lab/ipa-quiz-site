@@ -49,7 +49,8 @@ body:has(.study-home) .mobile-bottom-nav { --primary:#355b47; border-color:#dedf
 .study-qualification:hover { transform:translateY(-2px); box-shadow:0 7px 20px #63562b12; }
 .study-qualification>span:first-child { align-self:flex-start; width:75%; position:relative; z-index:2; }
 .study-qualification>svg { width:17px; height:17px; position:relative; z-index:2; flex-shrink:0; }
-.study-qualification-name { display:block; font-size:17px; font-weight:600; line-height:1.5; overflow-wrap:anywhere; }
+.study-qualification-name { display:block; font-size:17px; font-weight:600; line-height:1.5; overflow-wrap:anywhere; text-wrap:balance; }
+.study-qualification-name-separated { word-break:keep-all; }
 .study-qualification-meta { display:block; margin-top:10px; font-size:11px; color:var(--study-muted); font-variant-numeric:tabular-nums; }
 .study-card-it { background:#eaf0ee; border-left-color:#a5bdbe; }
 .study-card-safety { background:#f0f1e2; border-left-color:#b8c598; }
