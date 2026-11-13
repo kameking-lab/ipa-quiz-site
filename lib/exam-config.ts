@@ -1739,6 +1739,11 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["デジタル基礎", "光・色彩", "写真史", "撮影機器", "照明・露出", "画像処理・出力", "肖像撮影", "関係法規・環境"] }],
     seasons: ["early"], yearRange: { start: 2025, end: 2025 },
 },
+"nunohaku1": {
+    code: "nunohaku1", nameFull: "技能検定 1級布はく縫製（ワイシャツ製造作業）学科試験", urlSlug: "nunohaku1", level: "advanced",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["仕上げ", "型紙・裁断", "安全衛生", "生産管理", "糸・繊維", "縫製", "縫製機器", "織物", "製品・規格", "関係法規", "電気"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
 "kikinzoku-soshin1": {
     code: "kikinzoku-soshin1", nameFull: "技能検定 1級貴金属装身具製作（貴金属装身具製作作業）学科試験", urlSlug: "kikinzoku-soshin1", level: "advanced",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["ろう付", "塑性加工", "安全衛生", "宝石", "工具", "意匠", "洗浄", "研磨", "表面処理", "装身具", "装飾技法", "製図", "金属材料", "鋳造", "電気"] }],
