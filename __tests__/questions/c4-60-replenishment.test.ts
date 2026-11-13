@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { CHUZO3_QUESTIONS } from "@/data/questions/chuzo3";
 import { CHUZO1_QUESTIONS } from "@/data/questions/chuzo1";
+import { NETSUZETSUEN2_QUESTIONS } from "@/data/questions/netsuzetsuen2";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
@@ -16,7 +17,8 @@ import type { ChoiceKey } from "@/lib/questions/types";
 // 公式正答表の画像を5問ずつ読み取り固定した照合用の正答。
 const editions = [
   { exam: "chuzo3" as const, rows: CHUZO3_QUESTIONS, season: "early" as const, answers: "○○○×○×××○○○×××××○×○○××○××○×××○", pages: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3], figures: [] as number[] },
-  { exam: "chuzo1" as const, rows: CHUZO1_QUESTIONS, season: "early" as const, answers: "○×○×○○××○○○××○×○○×××○××○○ロハニハイロイニイハニロロハハニニニニハイロロロロ", pages: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7], figures: [11] as number[] }
+  { exam: "chuzo1" as const, rows: CHUZO1_QUESTIONS, season: "early" as const, answers: "○×○×○○××○○○××○×○○×××○××○○ロハニハイロイニイハニロロハハニニニニハイロロロロ", pages: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7], figures: [11] as number[] },
+  { exam: "netsuzetsuen2" as const, rows: NETSUZETSUEN2_QUESTIONS, season: "early" as const, answers: "○×○○××○○××××○××○○○○○×○××○ロハニニハイハニイロロハイイロイハニハニイハロロニ", pages: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 8, 8, 8], figures: [9, 10, 34, 35] as number[] }
 ];
 
 describe.each(editions)("c4-60 $exam", ({ exam, rows, season, answers, pages, figures }) => {
@@ -65,5 +67,12 @@ describe.each(editions)("c4-60 $exam", ({ exam, rows, season, answers, pages, fi
     const labels = rows.length === 30 ? ["○", "×"] : ["イ", "ロ", "ハ", "ニ"];
     expect((rows.length === 30 ? ["ア", "イ"] : ["ア", "イ", "ウ", "エ"]).map(k => choiceDisplayLabel(exam, k as ChoiceKey))).toEqual(labels);
   });
+});
+
+it("原図で再照合した語句を公式本文どおりに残す", () => {
+  expect(CHUZO3_QUESTIONS[15].question).toContain("鋳枠と鋳型との空間");
+  expect(CHUZO1_QUESTIONS[1].question).toContain("エアレータ");
+  expect(CHUZO1_QUESTIONS[34].choices?.ウ).toContain("ブラストマシンへ投入する");
+  expect(NETSUZETSUEN2_QUESTIONS[48].choices?.ウ).toBe("変性シリコーン系 … SR");
 });
 
