@@ -11,6 +11,23 @@ const access = { kind: "trial", remaining: 9, freeDaily: 10, resetAt: "2026-10-3
 beforeEach(() => { window.history.replaceState({}, "", "/quiz?mode=year"); window.sessionStorage.clear(); });
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 describe("QuizClient authorization boundary", () => {
+  it("rechecks the current question after entitlement changes even while the limit screen replaces the player", async () => {
+    let paid = false;
+    const fetcher = vi.fn(async (url: string) => url === "/api/questions/related" ? Response.json({questions:[]}) : paid
+      ? Response.json({ question: { id: "q1" }, access: { ...access, kind: "pass", remaining: null } })
+      : Response.json({ error: "daily_limit", access: { ...access, remaining: 0 } }, { status: 429 }));
+    vi.stubGlobal("fetch", fetcher);
+    render(<QuizClient billingGateEnabled poolIds={["q1"]} mode="year" backHref="/" />);
+    await screen.findByText("今日の無料10問はここまで");
+    await act(async () => { window.dispatchEvent(new Event("mobile:entitlement-changed")); });
+    await screen.findByText("今日の無料10問はここまで");
+    expect(screen.queryByText("q1")).toBeNull();
+    paid = true;
+    await act(async () => { window.dispatchEvent(new Event("mobile:entitlement-changed")); });
+    await screen.findByText("q1");
+    expect(new URL(location.href).searchParams.get("question")).toBe("q1");
+    expect(fetcher.mock.calls.filter(([url])=>url==="/api/billing/question")).toHaveLength(3);
+  });
   it("off ignores malformed billing settings and keeps question GET/cache independent of billing", async () => {
     const c = billingConfig({ BILLING_MODE: "off", BILLING_ORIGIN: "%%%", BILLING_PRICE_YEN: "broken", BILLING_TRANSITION_STARTS_AT: "bad" });
     const fetcher = vi.fn(async (url: string) => {

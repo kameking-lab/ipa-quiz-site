@@ -1,6 +1,7 @@
 import {afterEach,expect,it,vi} from "vitest";
 import {cleanup,fireEvent,render,screen,waitFor} from "@testing-library/react";
 const opened=vi.hoisted(()=>vi.fn());
+vi.mock("next/navigation",()=>({useRouter:()=>({push:vi.fn()})}));
 vi.mock("@/mobile/shared/contracts",()=>({nativeClient:()=>true}));
 vi.mock("@/mobile/src/open-subscription-management",()=>({openSubscriptionManagement:opened}));
 import DeleteAccountPage from "@/app/account/delete/page";

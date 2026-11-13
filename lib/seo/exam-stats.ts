@@ -8,6 +8,9 @@ import type { ExamCode } from "@/lib/questions/types";
 export interface ExamStats {
   /** 直近の合格率レンジ (%)。例: "20-25" */
   passRateRecent: string;
+  passRatePeriod?: string;
+  passRateSourceUrl?: string;
+  passRateVerifiedAt?: string;
   /** 合格率の傾向トレンド説明 */
   passRateTrend: string;
   /** 推奨学習時間の目安 (時間) */
@@ -26,7 +29,10 @@ export const EXAM_STATS = {
     topicTrend: "テクノロジ系の出題が最も多く、ストラテジ系・マネジメント系が続く3分野構成。",
   },
   sg: {
-    passRateRecent: "50-55",
+    passRateRecent: "70.0",
+    passRatePeriod: "2025年度通年",
+    passRateSourceUrl: "https://www.ipa.go.jp/shiken/reports/ps6vr7000001lzik-att/202609_sg_toukei.pdf",
+    passRateVerifiedAt: "2026-11-10",
     passRateTrend: "情報セキュリティマネジメント全般が安定的に出題。",
     studyHoursLow: 150,
     studyHoursHigh: 220,

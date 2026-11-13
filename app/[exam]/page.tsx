@@ -474,7 +474,7 @@ export default async function ExamTopPage({
                 <div className="rounded-2xl border border-border bg-card p-4 shadow-sm">
                   <div className="mb-1 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
                     <TrendingUp className="h-3 w-3" />
-                    合格率（直近）
+                    合格率（{stats.passRatePeriod ?? "直近"}）
                   </div>
                   <p className="text-2xl font-bold text-foreground">
                     {stats.passRateRecent}
@@ -482,6 +482,7 @@ export default async function ExamTopPage({
                   </p>
                   <p className="mt-1 text-[11px] leading-relaxed text-muted-foreground">
                     {stats.passRateTrend}
+                    {stats.passRateSourceUrl && <><br /><a href={stats.passRateSourceUrl} className="underline">出典: IPA公式統計</a>（確認日: {stats.passRateVerifiedAt}）</>}
                   </p>
                 </div>
                 <div className="rounded-2xl border border-border bg-card p-4 shadow-sm">

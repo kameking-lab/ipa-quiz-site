@@ -9,7 +9,7 @@ vi.mock("@capacitor/browser", () => ({ Browser: { open: vi.fn(() => Promise.reso
 vi.mock("@capacitor/share", () => ({ Share: { share: vi.fn(() => Promise.resolve()) } }));
 vi.mock("@capacitor/preferences", () => ({ Preferences: { get: vi.fn(() => Promise.resolve({ value: null })), set: vi.fn(), remove: vi.fn(() => Promise.resolve()) } }));
 vi.mock("@revenuecat/purchases-capacitor", () => ({ Purchases: { addCustomerInfoUpdateListener: vi.fn(() => Promise.reject(new Error("unavailable"))), removeCustomerInfoUpdateListener: vi.fn() } }));
-vi.mock("@/mobile/src/downloads", () => ({ downloads: { invalidate: vi.fn(() => Promise.resolve()), list: vi.fn(() => Promise.resolve({})), updateRights: vi.fn(() => Promise.resolve()) } }));
+vi.mock("@/mobile/src/downloads", () => ({ downloads: { rights: vi.fn(() => Promise.resolve(null)), invalidate: vi.fn(() => Promise.resolve()), list: vi.fn(() => Promise.resolve({})), updateRights: vi.fn(() => Promise.resolve()) } }));
 vi.mock("@/mobile/src/purchases", () => ({
   Membership: class { disconnect() { return Promise.resolve(); } offer() { return Promise.resolve(null); } },
   deviceMembership: { disconnect: vi.fn(async () => {}), offer: vi.fn(async () => null) },
@@ -90,4 +90,33 @@ it("does not restore paid offline rights from a response arriving after logout b
     finish(Response.json({ ...entitlement, entitlement: { userId: "old-user", entitled: true, lease: "stale-response" } }));
   });
   expect(downloads.updateRights).not.toHaveBeenCalled();
+});
+
+it("does not intercept the billing conditions link", async () => {
+  render(<NativeTools />); await act(async()=>{});
+  const link=Object.assign(document.createElement("a"),{href:"/billing/terms",textContent:"条件・返金"});
+  document.body.append(link);
+  // Cancel default navigation after the capture listener has had its turn.
+  let prevented=true;
+  link.addEventListener("click",e=>{prevented=e.defaultPrevented;e.preventDefault();});
+  await act(async()=>{fireEvent.click(link);});
+  expect(prevented).toBe(false);
+  expect(screen.queryByRole("heading",{name:"会員・設定"})).toBeNull();
+});
+
+it("does not erase signed offline rights merely because the status service fails", async () => {
+  vi.mocked(downloads.invalidate).mockClear();
+  vi.stubGlobal("fetch",vi.fn(async()=>new Response(null,{status:503})));
+  render(<NativeTools />);await act(async()=>{});
+  expect(downloads.invalidate).not.toHaveBeenCalled();
+});
+
+it.each(["owner","other"])("checks the persisted lease owner on the first refresh when a paid response has no replacement lease: %s", async owner => {
+  vi.mocked(downloads.invalidate).mockClear();
+  vi.mocked(downloads.rights).mockResolvedValue({access:{userId:owner}} as Awaited<ReturnType<typeof downloads.rights>>);
+  vi.stubGlobal("fetch",vi.fn(async()=>Response.json({entitlement:{userId:"owner",entitled:true,lease:null},configuration:{sdkKey:""}})));
+  render(<NativeTools />);await act(async()=>{});
+  expect(downloads.rights).toHaveBeenCalled();
+  if(owner==="owner")expect(downloads.invalidate).not.toHaveBeenCalled();
+  else expect(downloads.invalidate).toHaveBeenCalled();
 });
