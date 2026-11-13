@@ -351,5 +351,34 @@
       "allChoicesChecked": true,
       "hasFigure": false
     }
-  ]
+  ],
+  "strictReview": {
+    "step": "c5r-B3",
+    "checkedAt": "2026-11-13T19:18:53.114020+09:00",
+    "questionCount": 30,
+    "choiceExplanationCount": 60,
+    "figuresChecked": 3,
+    "officialAnswersMatched": 30,
+    "answerChanges": 0,
+    "newQuestions": 0,
+    "missingQuestions": 0,
+    "duplicateIds": 0,
+    "duplicateSourceQuestions": 0,
+    "changedQuestionIds": [],
+    "method": "公式PDF全問題ページを目視照合。全選択肢・解説・切出し原図を確認。公式正答表から独立抽出して全件照合。公式PDF30点の再取得SHA-256と既存原本が一致。",
+    "officialPdfChecks": [
+      {
+        "kind": "questions",
+        "url": "https://www.kentei.javada.or.jp/pdf/R06-2-D23D24-3%E7%B4%9A%E3%80%80%E6%A9%9F%E6%A2%B0%E3%83%BB%E3%83%97%E3%83%A9%E3%83%B3%E3%83%88%E8%A3%BD%E5%9B%B3%EF%BC%88%E6%A9%9F%E6%A2%B0%E8%A3%BD%E5%9B%B3%E6%89%8B%E6%9B%B8%E3%81%8D%E4%BD%9C%E6%A5%AD%EF%BC%89%EF%BC%88%E6%A9%9F%E6%A2%B0%E8%A3%BD%E5%9B%B3%EF%BC%A3%EF%BC%A1%EF%BC%A4%E4%BD%9C%E6%A5%AD%EF%BC%89-3%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+        "status": 200,
+        "sha256": "70a179994cae7c6f147870f76ff3b6717c930240db44017aebc867be1765f578"
+      },
+      {
+        "kind": "answers",
+        "url": "https://www.kentei.javada.or.jp/pdf/R06-2-D24-%E6%A9%9F%E6%A2%B0%E3%83%BB%E3%83%97%E3%83%A9%E3%83%B3%E3%83%88%E8%A3%BD%E5%9B%B3%EF%BC%88%E6%A9%9F%E6%A2%B0%E8%A3%BD%E5%9B%B3%EF%BC%A3%EF%BC%A1%EF%BC%A4%E4%BD%9C%E6%A5%AD%EF%BC%89-3%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+        "status": 200,
+        "sha256": "ae69ae8147c835151fc95d0d3a21f66f73cffe9cafbdf06b29568a28e53b4879"
+      }
+    ]
+  }
 }

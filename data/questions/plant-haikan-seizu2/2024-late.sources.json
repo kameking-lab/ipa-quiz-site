@@ -551,5 +551,38 @@
       "allChoicesChecked": true,
       "hasFigure": false
     }
-  ]
+  ],
+  "strictReview": {
+    "step": "c5r-B3",
+    "checkedAt": "2026-11-13T19:18:53.114020+09:00",
+    "questionCount": 50,
+    "choiceExplanationCount": 150,
+    "figuresChecked": 7,
+    "officialAnswersMatched": 50,
+    "answerChanges": 0,
+    "newQuestions": 0,
+    "missingQuestions": 0,
+    "duplicateIds": 0,
+    "duplicateSourceQuestions": 0,
+    "changedQuestionIds": [
+      "plant-haikan-seizu2-2024-late-gakka-a-020",
+      "plant-haikan-seizu2-2024-late-gakka-b-010",
+      "plant-haikan-seizu2-2024-late-gakka-b-011"
+    ],
+    "method": "公式PDF全問題ページを目視照合。全選択肢・解説・切出し原図を確認。公式正答表から独立抽出して全件照合。公式PDF30点の再取得SHA-256と既存原本が一致。",
+    "officialPdfChecks": [
+      {
+        "kind": "questions",
+        "url": "https://www.kentei.javada.or.jp/pdf/R06-2-B61-%E6%A9%9F%E6%A2%B0%E3%83%BB%E3%83%97%E3%83%A9%E3%83%B3%E3%83%88%E8%A3%BD%E5%9B%B3%EF%BC%88%E3%83%97%E3%83%A9%E3%83%B3%E3%83%88%E9%85%8D%E7%AE%A1%E8%A3%BD%E5%9B%B3%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+        "status": 200,
+        "sha256": "8d0f4cf9b75b842ceea09afdb62e7ef44db40bc7695ef2a768a55098b4f91f86"
+      },
+      {
+        "kind": "answers",
+        "url": "https://www.kentei.javada.or.jp/pdf/R06-2-B61-%E6%A9%9F%E6%A2%B0%E3%83%BB%E3%83%97%E3%83%A9%E3%83%B3%E3%83%88%E8%A3%BD%E5%9B%B3%EF%BC%88%E3%83%97%E3%83%A9%E3%83%B3%E3%83%88%E9%85%8D%E7%AE%A1%E8%A3%BD%E5%9B%B3%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+        "status": 200,
+        "sha256": "a6a9b97216f6ae438c5e0c01922f70d165e55fb00940555f9cc2fe4d63aea49b"
+      }
+    ]
+  }
 }

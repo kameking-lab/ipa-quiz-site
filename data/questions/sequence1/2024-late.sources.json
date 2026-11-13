@@ -551,5 +551,55 @@
       "allChoicesChecked": true,
       "hasFigure": true
     }
-  ]
+  ],
+  "strictReview": {
+    "step": "c5r-B3",
+    "checkedAt": "2026-11-13T19:18:53.114020+09:00",
+    "questionCount": 50,
+    "choiceExplanationCount": 150,
+    "figuresChecked": 10,
+    "officialAnswersMatched": 50,
+    "answerChanges": 0,
+    "newQuestions": 0,
+    "missingQuestions": 0,
+    "duplicateIds": 0,
+    "duplicateSourceQuestions": 0,
+    "changedQuestionIds": [
+      "sequence1-2024-late-gakka-a-025",
+      "sequence1-2024-late-gakka-b-018"
+    ],
+    "method": "公式PDF全問題ページを目視照合。全選択肢・解説・切出し原図を確認。公式正答表から独立抽出して全件照合。公式PDF30点の再取得SHA-256と既存原本が一致。",
+    "officialPdfChecks": [
+      {
+        "kind": "questions",
+        "url": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+        "status": 200,
+        "sha256": "76d248cb183386f2fdb5b5f4a9d696deaa71bac0547ec693c25cb34c84b2aa74"
+      },
+      {
+        "kind": "answers",
+        "url": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+        "status": 200,
+        "sha256": "b09e6b644ae6aecb68bb732dd825a2019034a0a69180c8288cc7b1f903389cd4"
+      }
+    ],
+    "supportingSources": [
+      {
+        "name": "wrench",
+        "url": "https://sankyo-tools.co.jp/search/item.html?cd=315155",
+        "status": 200,
+        "sha256": "21fae01f31549ecd4cf2189a4ac96976647aa8dad9f6e9fcdfafe411a6cc705d",
+        "question": "B群18",
+        "basis": "メーカーJIS H級モンキレンチ：呼寸375mm"
+      },
+      {
+        "name": "safety9",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=9",
+        "status": 200,
+        "sha256": "86595a58aeaffa3d43bccbfb13dd34e8d5f5be77d7f4c03c460c595f6c91b44d",
+        "question": "A群25",
+        "basis": "労働安全衛生規則543条：機械間等の通路80cm以上"
+      }
+    ]
+  }
 }

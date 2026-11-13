@@ -551,5 +551,55 @@
       "allChoicesChecked": true,
       "hasFigure": false
     }
-  ]
+  ],
+  "strictReview": {
+    "step": "c5r-B3",
+    "checkedAt": "2026-11-13T19:18:53.114020+09:00",
+    "questionCount": 50,
+    "choiceExplanationCount": 150,
+    "figuresChecked": 0,
+    "officialAnswersMatched": 50,
+    "answerChanges": 0,
+    "newQuestions": 0,
+    "missingQuestions": 0,
+    "duplicateIds": 0,
+    "duplicateSourceQuestions": 0,
+    "changedQuestionIds": [
+      "zoen-gino2-2024-early-gakka-a-024",
+      "zoen-gino2-2024-early-gakka-b-013"
+    ],
+    "method": "公式PDF全問題ページを目視照合。全選択肢・解説・切出し原図を確認。公式正答表から独立抽出して全件照合。公式PDF30点の再取得SHA-256と既存原本が一致。",
+    "officialPdfChecks": [
+      {
+        "kind": "questions",
+        "url": "https://www.kentei.javada.or.jp/pdf/R06-1-B02-%E9%80%A0%E5%9C%92%EF%BC%88%E9%80%A0%E5%9C%92%E5%B7%A5%E4%BA%8B%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+        "status": 200,
+        "sha256": "bf9610426efbab5845c8c9e0ff48ab8942a5725c10c8877a9362bc1c7ab1cd40"
+      },
+      {
+        "kind": "answers",
+        "url": "https://www.kentei.javada.or.jp/pdf/R06-1-B02-%E9%80%A0%E5%9C%92%EF%BC%88%E9%80%A0%E5%9C%92%E5%B7%A5%E4%BA%8B%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+        "status": 200,
+        "sha256": "f5f15f18a79eca04f067398bb2dcbe264d7c6b52f2d8e431a1729e9448572e64"
+      }
+    ],
+    "supportingSources": [
+      {
+        "name": "tennis",
+        "url": "https://www.city.kure.lg.jp/soshiki/43/toto03.html",
+        "status": 200,
+        "sha256": "8cbde7ef27a2195d4e575a49bac8e6b2c36cd76ff17013821a97dda370976e68",
+        "question": "B群13",
+        "basis": "アスファルト面のハードコートの公式実例。公式正答イは保持"
+      },
+      {
+        "name": "safety9",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=9",
+        "status": 200,
+        "sha256": "86595a58aeaffa3d43bccbfb13dd34e8d5f5be77d7f4c03c460c595f6c91b44d",
+        "question": "A群24",
+        "basis": "労働安全衛生規則528条：脚と水平面の角度75度以下"
+      }
+    ]
+  }
 }
