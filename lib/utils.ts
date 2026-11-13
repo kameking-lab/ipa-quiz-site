@@ -34,6 +34,7 @@ export const EXAM_LABELS: Record<string, string> = {
   "pan-seizo2": "パン製造技能士 2級",
   "kikai-shiage1": "仕上げ技能士 1級（機械組立仕上げ作業）",
   "kikai-seizu-tegaki1": "機械・プラント製図技能士 1級（機械製図手書き作業）",
+  "sequence1": "シーケンス制御技能士 1級（シーケンス制御作業）",
   "sequence3": "シーケンス制御技能士 3級（シーケンス制御作業）",
   "sequence2": "シーケンス制御技能士 2級（シーケンス制御作業）",
   "zoen-gino1": "造園技能士 1級（造園工事作業）",
