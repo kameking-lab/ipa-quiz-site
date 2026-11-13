@@ -17,6 +17,11 @@ const editions = [
     answers: "○×○×○" + "○×○××" + "×○××○" + "×○○××" + "×○○○×" + "○×○○×",
     pages: [...Array(12).fill(2), ...Array(13).fill(3), ...Array(5).fill(4)],
     figures: [2, 4, 18, 25, 26] },
+  { exam: "tekkin-zumen1", year: 2024,
+    answers: "×××○×" + "○○×○×" + "○×○○○" + "×○×××" + "○×××○"
+      + "ロニハハイ" + "ニニロイロ" + "ニニロハハ" + "ニロロイニ" + "イハニロイ",
+    pages: [...Array(11).fill(2), ...Array(12).fill(3), ...Array(2).fill(4), ...Array(4).fill(5), ...Array(5).fill(6), ...Array(5).fill(7), ...Array(5).fill(8), ...Array(5).fill(9), 10],
+    figures: [6, 8, 12, 23, 24, 28, 29, 44] },
 ];
 
 describe.each(editions)("c5-08 $exam $year", ({ exam: code, year, answers, pages, figures }) => {
@@ -24,14 +29,14 @@ describe.each(editions)("c5-08 $exam $year", ({ exam: code, year, answers, pages
   it("公式正答と図・出典・通し番号を保持し配信経路から解ける", async () => {
     const rows = QUESTIONS_BY_EXAM[exam]!.filter(q => q.year === year && q.season === "late");
     expect(rows).toHaveLength(answers.length);
-    expect(answers).toHaveLength(30);
+    expect(answers.length).toBe(exam === "katawaku3" ? 30 : 50);
     expect(new Set(rows.map(q => q.id)).size).toBe(answers.length);
     expect((await getQuestionsForExam(exam)).filter(q => q.year === year && q.season === "late")).toEqual(rows);
     expect(EXAM_CONFIGS[exam].yearRange.start).toBeLessThanOrEqual(year);
     expect(EXAM_CONFIGS[exam].sessions[0].expectedQuestions).toBe(answers.length);
     const evidence = JSON.parse(readFileSync(path.join(process.cwd(), `data/questions/${exam}/${year}-late.sources.json`), "utf8"));
     expect(evidence.review).toHaveLength(answers.length);
-    expect(evidence.choiceExplanationCount).toBe(answers.length * 2);
+    expect(evidence.choiceExplanationCount).toBe(exam === "katawaku3" ? 60 : 150);
     expect(evidence.figureCount).toBe(figures.length);
     for (const [i, q] of rows.entries()) {
       const official = answers[i];
@@ -39,9 +44,9 @@ describe.each(editions)("c5-08 $exam $year", ({ exam: code, year, answers, pages
       expect(q.qNumber).toBe(i + 1);
       expect(q.officialAnswerNumber, q.id).toBe(official);
       expect(q.answer, q.id).toBe(key);
-      expect(q.officialQuestionLabel).toBe(String(i + 1));
+      expect(q.officialQuestionLabel).toBe(exam === "katawaku3" ? String(i + 1) : `${i < 25 ? "A" : "B"}群 ${i % 25 + 1}`);
       expect(formatQuestionAnswerForDisplay(q, key), q.id).toBe(official);
-      expect(choiceDisplayLabel(exam, key)).toBe(official);
+      expect(choiceDisplayLabel(exam, key)).toBe(exam === "katawaku3" ? official : "イロハニ"["アイウエ".indexOf(key)]);
       expect(questionSourceEdition(q)).toBe(`${year}年度後期`);
       expect(isPracticeReadyQuestion(q), q.id).toBe(true);
       expect(Object.keys(q.choiceExplanations ?? {})).toEqual(Object.keys(q.choices!));
