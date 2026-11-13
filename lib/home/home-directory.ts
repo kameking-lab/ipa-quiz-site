@@ -149,6 +149,8 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   {"code": "pan-seizo2", "name": "パン製造技能士 2級", "sub": "パン製造作業 学科", "domain": "welfare"},
   {"code": "kikai-shiage1", "name": "仕上げ技能士 1級（機械組立仕上げ作業）", "sub": "機械組立仕上げ作業 学科", "domain": "electrical"},
   {"code": "kikai-seizu-tegaki1", "name": "機械・プラント製図技能士 1級（機械製図手書き作業）", "sub": "機械製図手書き作業 学科", "domain": "electrical"},
+  {"code": "kikai-seizu-cad3", "name": "機械・プラント製図技能士 3級（機械製図CAD作業）", "sub": "機械製図CAD作業 学科", "domain": "electrical"},
+  {"code": "plant-haikan-seizu2", "name": "機械・プラント製図技能士 2級（プラント配管製図作業）", "sub": "プラント配管製図作業 学科", "domain": "electrical"},
   {"code": "kikai-shiage2", "name": "仕上げ技能士 2級（機械組立仕上げ作業）", "sub": "機械組立仕上げ作業 学科", "domain": "electrical"},
   {"code": "kikai-shiage3", "name": "仕上げ技能士 3級（機械組立仕上げ作業）", "sub": "機械組立仕上げ作業 学科", "domain": "electrical"},
   {"code": "zoen-gino2", "name": "造園技能士 2級（造園工事作業）", "sub": "造園工事作業 学科", "domain": "construction"},
