@@ -10,7 +10,8 @@ const IROHA_LABELS = ["イ", "ロ", "ハ", "ニ", "ホ", "ヘ", "ト", "チ", "�
 export function questionNumberLabel(q: Pick<Question, "qNumber" | "part" | "nativeB" | "officialQuestionLabel">): string {
   // Callers add the 問 prefix; keep this helper limited to the printed number.
   if (q.officialQuestionLabel) return q.officialQuestionLabel.replace(/^問題/, "");
-  if (q.nativeB?.officialLabel) return q.nativeB.officialLabel;
+  // A response-format label is not a printed question number (行政書士41〜43).
+  if (q.nativeB?.officialLabel && !/^多肢選択式[（(]/.test(q.nativeB.officialLabel)) return q.nativeB.officialLabel;
   return `${q.qNumber}${q.part ? `(${q.part})` : ""}`;
 }
 

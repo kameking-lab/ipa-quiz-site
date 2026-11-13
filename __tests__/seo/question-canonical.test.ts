@@ -37,6 +37,35 @@ function q(overrides: Partial<Question>): Question {
 }
 
 describe("morning-I canonical representative", () => {
+  it("treats absent and empty image lists as equivalent but preserves real image differences", () => {
+    const sc = q({ imageUrls: [] });
+    const pm = q({ id: "pm-no-images", exam: "pm" });
+    const imageA = q({ id: "pm-image-a", exam: "pm", hasImage: true, imageUrls: ["/a.png"] });
+    const imageB = q({ id: "pm-image-b", exam: "pm", hasImage: true, imageUrls: ["/b.png"] });
+    const pool = [pm, imageA, imageB, sc];
+    expect(getQuestionCanonicalRepresentative(pool, pm)).toBe(sc);
+    expect(getQuestionCanonicalRepresentative(pool, imageA)).toBe(imageA);
+    expect(getQuestionCanonicalRepresentative(pool, imageB)).toBe(imageB);
+  });
+
+  it.each([
+    ["sa", "2024-spring", "q29"],
+    ["pm", "2025-autumn", "q27"],
+  ])("canonicalizes the empty-image alias %s/%s/%s to SC and omits it from sitemaps", async (exam, yearSeason, qnum) => {
+    const params = { exam, yearSeason, section: "am1", qnum };
+    const alias = findQuestionByRoute(ALL_QUESTIONS, params)!;
+    const representative = getQuestionCanonicalRepresentative(ALL_QUESTIONS, alias);
+    expect(representative.exam).toBe("sc");
+    expect(representative.question).toBe(alias.question);
+    expect(representative.answer).toEqual(alias.answer);
+    const metadata = await generateMetadata({ params: Promise.resolve(params) });
+    expect(metadata.alternates?.canonical).toBe(`/q/sc/${yearSeason}/am1/${qnum}`);
+    expect(metadata.openGraph?.url).toBe(metadata.alternates?.canonical);
+    const sitemapIds = new Set(getSitemapQuestions().map(q => q.id));
+    expect(sitemapIds.has(alias.id)).toBe(false);
+    expect(sitemapIds.has(representative.id)).toBe(true);
+  });
+
   it("consolidates only identical source-question subgroups at the same coordinate", () => {
     const sc = q({});
     const pm = q({ id: "pm-2024a-am1-q1", exam: "pm", category: "経営戦略", explanation: "PM向けの解説です。" });

@@ -22,7 +22,7 @@ for (const width of [320, 390, 1440]) {
           await expect(page.locator(hash)).toBeInViewport();
         }
         await expect(page.locator('link[rel="canonical"]')).toHaveAttribute("href", new RegExp(`/${exam}$`));
-        await expect(page).toHaveTitle(/過去問・解説とAI質問/);
+        await expect(page).toHaveTitle(/過去問・解説｜年度別・分野別/);
         const afternoon = page.getByRole("region", { name: /^科目B.*対策/ });
         // Only essay exams offer AI review, and it is labelled as original material.
         if (exam === "st" || exam === "sa") {

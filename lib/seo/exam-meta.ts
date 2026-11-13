@@ -443,7 +443,7 @@ export function groupByCategory(questions: Question[]): {
         .sort((a, b) => b.count - a.count);
 }
 export function examTopTitle(exam: ExamCode): string {
-    if (isIpaTop(exam)) return `${examLabel(exam)} 過去問・解説とAI質問`;
+    if (isIpaTop(exam)) return `${examLabel(exam)} 過去問・解説｜年度別・分野別`;
     return `${examLabel(exam)} 過去問一覧・AI解説`;
 }
 export function examTopDescription(exam: ExamCode, questionCount: number): string {

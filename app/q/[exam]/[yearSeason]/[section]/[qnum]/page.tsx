@@ -49,7 +49,7 @@ import {
 } from "@/lib/seo/question-url";
 import { examTopicPageExists } from "@/lib/seo/exam-meta";
 import { buildQuestionJsonLd, questionBreadcrumbItems, sessionLabel, withQuotaPaywall } from "@/lib/seo/question-jsonld";
-import { questionSnippet, questionTitle } from "@/lib/seo/question-meta";
+import { questionHeading, questionSnippet, questionTitle } from "@/lib/seo/question-meta";
 import { CurrentLearningLinks } from "@/components/term-relations/CurrentLearningLinks";
 import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
 import { DescriptiveAnswerCard } from "@/components/quiz/DescriptiveAnswerCard";
@@ -331,8 +331,7 @@ export default async function QuestionPage({
 
         </div>
         <h1 className="text-balance text-2xl font-bold leading-tight tracking-tight text-foreground sm:text-3xl">
-          {questionSourceEdition(q)} {questionSourceExam(q)}{" "}
-          {sessionLabel(q.session, q.exam)} 問{questionNumberLabel(q)}
+          {questionHeading(q)}
         </h1>
         <div className="mt-2 flex flex-wrap items-center gap-1.5">
           {topicPageExists ? (
