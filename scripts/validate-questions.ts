@@ -22,6 +22,19 @@ import { NativeBDataSchema, nativeBQuestionIssue } from "../lib/questions/native
  *   pnpm validate:questions --exam=ap        # AP のみ
  *   pnpm validate:questions --exam=ap,fe     # AP + FE
  *   pnpm validate:questions --staging=sokuryoshi # 非公開の測量士原本・解説
+ *   pnpm validate:questions --staging=khk-kagaku-2026-hei-lpg # 非公開の丙種化学（液石）2026
+ *   pnpm validate:questions --staging=khk-kagaku-2026-kou # 非公開の甲種化学2026
+ *   pnpm validate:questions --staging=khk-kagaku-2026-hei-special # 非公開の丙種化学（特別）2026
+ *   pnpm validate:questions --staging=khk-kagaku-2026-otsu # 非公開の乙種化学2026
+ *   pnpm validate:questions --staging=khk-kikai-2026-kou # 非公開の甲種機械2026
+ *   pnpm validate:questions --staging=khk-kikai-2026-otsu # 非公開の乙種機械2026
+ *   pnpm validate:questions --staging=khk-reito-2026-first # 非公開の第一種冷凍機械2026
+ *   pnpm validate:questions --staging=khk-reito-2026-second # 非公開の第二種冷凍機械2026
+ *   pnpm validate:questions --staging=khk-reito-2026-third # 非公開の第三種冷凍機械2026
+ *   pnpm validate:questions --staging=khk-hanbai-2026-first # 非公開の第一種販売2026
+ *   pnpm validate:questions --staging=khk-hanbai-2026-second # 非公開の第二種販売2026
+ *   pnpm validate:questions --staging=biru-kan-2026-am # 建築物環境衛生2026午前90問
+ *   pnpm validate:questions --staging=biru-kan-2026-pm # 建築物環境衛生2026午後90問
  *   pnpm validate:questions --report         # docs/QUESTION_QUALITY.md を生成
  *   pnpm validate:questions --fix            # 自動修正可能な問題のみ報告
  */
@@ -55,6 +68,14 @@ import { validateSokuryoshiStaging } from "./qualification-ingestion/validate-so
 import { validateJokasoSetsubishiStaging } from "./lib/jokaso-setsubishi-staging";
 import { validateChiikiRyoko } from "./validate-chiiki-ryoko";
 import { validateKukakuSeiri } from "./validate-kukaku-seiri";
+import { KHK_2026_HEI_LPG_STAGING, validateKhk2026HeiLpgStaging } from "./lib/validate-khk-kagaku-2026-hei-lpg";
+import { KHK_2026_KOU_STAGING, validateKhk2026KouStaging } from "./lib/validate-khk-kagaku-2026-kou";
+import { KHK_2026_HEI_SPECIAL_STAGING, validateKhk2026HeiSpecialStaging } from "./lib/validate-khk-kagaku-2026-hei-special";
+import { BIRU_KAN_2026_AM_STAGING, BIRU_KAN_2026_PM_STAGING, validateBiruKan2026Am, validateBiruKan2026Pm } from "./lib/validate-biru-kan-2026";
+import { KHK_2026_OTSU_STAGING, KHK_2026_KIKAI_KOU_STAGING, validateKhk2026Fill } from "./lib/validate-khk-2026-fill";
+import { KHK_2026_KIKAI_OTSU_STAGING, KHK_2026_REITO_FIRST_STAGING, validateKhk2026Fill2 } from "./lib/validate-khk-2026-fill-2";
+import { KHK_2026_REITO_SECOND_STAGING, KHK_2026_REITO_THIRD_STAGING, validateKhk2026Fill3 } from "./lib/validate-khk-2026-fill-3";
+import { readKhk2026Sales, validateKhk2026Sales } from "./lib/validate-khk-2026-sales";
 
 import { BIRU_KAN_2026_AM_STAGING, BIRU_KAN_2026_PM_STAGING, validateBiruKan2026Am, validateBiruKan2026Pm } from "./lib/validate-biru-kan-2026";
 
@@ -509,6 +530,40 @@ function reportFixes(questions: Question[]): void {
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 const opts = parseCliOptions();
+if (["khk-hanbai-2026-first", "khk-hanbai-2026-second"].includes(opts.staging ?? "") && !opts.exams.length && !opts.fix && !opts.report) {
+  const kind = opts.staging === "khk-hanbai-2026-first" ? "first" : "second";
+  const errors = validateKhk2026Sales(kind);
+  for (const error of errors) console.error(`[FAIL] ${error}`);
+  console.log(`Validated ${readKhk2026Sales(kind).length} private ${opts.staging} occurrences. fail=${errors.length} publicAllowed=false`);
+  process.exit(errors.length ? 1 : 0);
+}
+if (["khk-reito-2026-second", "khk-reito-2026-third"].includes(opts.staging ?? "") && !opts.exams.length && !opts.fix && !opts.report) {
+  const isSecond = opts.staging === "khk-reito-2026-second";
+  const questions = isSecond ? KHK_2026_REITO_SECOND_STAGING : KHK_2026_REITO_THIRD_STAGING;
+  const errors = validateKhk2026Fill3(isSecond ? "reito-second" : "reito-third");
+  for (const error of errors) console.error(`[FAIL] ${error}`);
+  const result = validate(questions);
+  console.log(`Validated ${questions.length} private ${opts.staging} occurrences. fail=${errors.length + result.fail} publicAllowed=false`);
+  process.exit(errors.length || result.fail ? 1 : 0);
+}
+if (["khk-kikai-2026-otsu", "khk-reito-2026-first"].includes(opts.staging ?? "") && !opts.exams.length && !opts.fix && !opts.report) {
+  const isKikai = opts.staging === "khk-kikai-2026-otsu";
+  const questions = isKikai ? KHK_2026_KIKAI_OTSU_STAGING : KHK_2026_REITO_FIRST_STAGING;
+  const errors = validateKhk2026Fill2(isKikai ? "kikai-otsu" : "reito-first");
+  for (const error of errors) console.error(`[FAIL] ${error}`);
+  const result = validate(questions);
+  console.log(`Validated ${questions.length} private ${opts.staging} occurrences. fail=${errors.length + result.fail} publicAllowed=false`);
+  process.exit(errors.length || result.fail ? 1 : 0);
+}
+if (["khk-kagaku-2026-otsu", "khk-kikai-2026-kou"].includes(opts.staging ?? "") && !opts.exams.length && !opts.fix && !opts.report) {
+  const isOtsu = opts.staging === "khk-kagaku-2026-otsu";
+  const questions = isOtsu ? KHK_2026_OTSU_STAGING : KHK_2026_KIKAI_KOU_STAGING;
+  const errors = validateKhk2026Fill(isOtsu ? "otsu" : "kikai-kou");
+  for (const error of errors) console.error(`[FAIL] ${error}`);
+  const result = validate(questions);
+  console.log(`Validated ${questions.length} private ${opts.staging} occurrences. fail=${errors.length + result.fail} publicAllowed=false`);
+  process.exit(errors.length || result.fail ? 1 : 0);
+}
 if (opts.staging === "biru-kan-2026-pm" && !opts.exams.length && !opts.fix && !opts.report) {
   const errors = validateBiruKan2026Pm();
   for (const error of errors) console.error(`[FAIL] ${error}`);
@@ -523,7 +578,27 @@ if (opts.staging === "biru-kan-2026-am" && !opts.exams.length && !opts.fix && !o
   console.log(`Validated ${BIRU_KAN_2026_AM_STAGING.length} private biru-kan 2026 morning originals. fail=${errors.length + result.fail} publicAllowed=false`);
   process.exit(errors.length || result.fail ? 1 : 0);
 }
-
+if (opts.staging === "khk-kagaku-2026-hei-special" && !opts.exams.length && !opts.fix && !opts.report) {
+  const errors = validateKhk2026HeiSpecialStaging();
+  for (const error of errors) console.error(`[FAIL] ${error}`);
+  const result = validate(KHK_2026_HEI_SPECIAL_STAGING);
+  console.log(`Validated ${KHK_2026_HEI_SPECIAL_STAGING.length} private KHK 2026 hei-special occurrences (56 stored + 4 references). fail=${errors.length + result.fail} publicAllowed=false`);
+  process.exit(errors.length || result.fail ? 1 : 0);
+}
+if (opts.staging === "khk-kagaku-2026-kou" && !opts.exams.length && !opts.fix && !opts.report) {
+  const errors = validateKhk2026KouStaging();
+  for (const error of errors) console.error(`[FAIL] ${error}`);
+  const result = validate(KHK_2026_KOU_STAGING);
+  console.log(`Validated ${KHK_2026_KOU_STAGING.length} private KHK 2026 kou occurrences (34 stored + 1 reference). fail=${errors.length + result.fail} publicAllowed=false`);
+  process.exit(errors.length || result.fail ? 1 : 0);
+}
+if (opts.staging === "khk-kagaku-2026-hei-lpg" && !opts.exams.length && !opts.fix && !opts.report) {
+  const errors = validateKhk2026HeiLpgStaging();
+  for (const error of errors) console.error(`[FAIL] ${error}`);
+  const result = validate(KHK_2026_HEI_LPG_STAGING);
+  console.log(`Validated ${KHK_2026_HEI_LPG_STAGING.length} private KHK 2026 hei-lpg originals. fail=${errors.length + result.fail} publicAllowed=false`);
+  process.exit(errors.length || result.fail ? 1 : 0);
+}
 if (opts.exams.length === 0 || opts.exams.some(exam => ["khk-hanbai", "khk-hanbai2", "khk-setsubishi"].includes(exam))) {
   const staging = validateKhkHanbaiStaging();
   console.log(`[staging:khk-hanbai] ${staging.count} questions, ${staging.errors.length} errors; private`);
@@ -540,7 +615,7 @@ if (!opts.exams.length || opts.exams.includes("benrishi")) {
 
 if (opts.staging !== undefined) {
   if (opts.staging !== "sokuryoshi" || opts.exams.length || opts.fix || opts.report) {
-    console.error("Use --staging=sokuryoshi, --staging=biru-kan-2026-am or --staging=biru-kan-2026-pm alone for private qualification validation.");
+    console.error("Use --staging=sokuryoshi, --staging=biru-kan-2026-am, --staging=biru-kan-2026-pm, --staging=khk-kagaku-2026-hei-lpg, --staging=khk-kagaku-2026-hei-special, --staging=khk-kagaku-2026-kou, --staging=khk-kagaku-2026-otsu, --staging=khk-kikai-2026-kou, --staging=khk-kikai-2026-otsu or --staging=khk-reito-2026-first alone for private qualification validation.");
     process.exit(1);
   }
   const result = validateSokuryoshiStaging();
