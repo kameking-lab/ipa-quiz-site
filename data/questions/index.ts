@@ -28,6 +28,7 @@ import { PAN_SEIZO2_QUESTIONS } from "./pan-seizo2";
 import { KIKAI_SHIAGE1_QUESTIONS } from "./kikai-shiage1";
 import { KIKAI_SEIZU_TEGAKI1_QUESTIONS } from "./kikai-seizu-tegaki1";
 import { SEQUENCE1_QUESTIONS } from "./sequence1";
+import { HENATSUKI_KUMITATE1_QUESTIONS } from "./henatsuki-kumitate1";
 import { SEQUENCE3_QUESTIONS } from "./sequence3";
 import { SEQUENCE2_QUESTIONS } from "./sequence2";
 import { ZOEN_GINO1_QUESTIONS } from "./zoen-gino1";
@@ -281,6 +282,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("kikai-shiage1") ? { "kikai-shiage1": KIKAI_SHIAGE1_QUESTIONS } : {}),
 ...(isExamPublished("kikai-seizu-tegaki1") ? { "kikai-seizu-tegaki1": KIKAI_SEIZU_TEGAKI1_QUESTIONS } : {}),
 ...(isExamPublished("sequence1") ? { "sequence1": SEQUENCE1_QUESTIONS } : {}),
+...(isExamPublished("henatsuki-kumitate1") ? { "henatsuki-kumitate1": HENATSUKI_KUMITATE1_QUESTIONS } : {}),
 ...(isExamPublished("sequence3") ? { "sequence3": SEQUENCE3_QUESTIONS } : {}),
 ...(isExamPublished("sequence2") ? { "sequence2": SEQUENCE2_QUESTIONS } : {}),
 ...(isExamPublished("zoen-gino1") ? { "zoen-gino1": ZOEN_GINO1_QUESTIONS } : {}),
