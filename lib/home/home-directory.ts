@@ -200,6 +200,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "shohin-soshoku3", name: "商品装飾展示技能士 3級", sub: "商品装飾展示作業 学科（真偽法）", domain: "safety" },
   { code: "shashin1", name: "写真技能士 1級", sub: "肖像写真デジタル作業 学科（真偽法・多肢択一）", domain: "safety" },
   { code: "sessaku-kensaku1", name: "切削工具研削技能士 1級", sub: "工作機械用切削工具研削作業 学科（真偽法・多肢択一）", domain: "safety" },
+  { code: "tatami1", name: "畳製作技能士 1級", sub: "畳製作作業 学科（真偽法・多肢択一）", domain: "safety" },
   { code: "nunohaku1", name: "布はく縫製技能士 1級", sub: "ワイシャツ製造作業 学科（真偽法・多肢択一）", domain: "safety" },
   { code: "kikinzoku-soshin1", name: "貴金属装身具製作技能士 1級", sub: "貴金属装身具製作作業 学科（真偽法・多肢択一）", domain: "safety" },
   { code: "shashin3", name: "写真技能士 3級", sub: "肖像写真デジタル作業 学科（真偽法）", domain: "safety" },

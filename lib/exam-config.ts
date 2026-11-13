@@ -1744,6 +1744,11 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["ジグ", "仕上げ加工", "切削加工", "切削工具", "品質管理", "塑性加工", "安全衛生", "材料", "材料力学", "検査", "機械要素", "測定", "潤滑", "熱処理", "研削加工", "研削工具", "研削油剤", "表面処理", "製図", "試験", "電気"] }],
     seasons: ["early"], yearRange: { start: 2025, end: 2025 },
 },
+"tatami1": {
+    code: "tatami1", nameFull: "技能検定 1級畳製作（畳製作作業）学科試験", urlSlug: "tatami1", level: "advanced",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["安全衛生", "工具・機械", "建築", "意匠", "採寸", "敷込み", "材料・規格", "管理", "縫製", "製作・補修", "関係法規"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
 "nunohaku1": {
     code: "nunohaku1", nameFull: "技能検定 1級布はく縫製（ワイシャツ製造作業）学科試験", urlSlug: "nunohaku1", level: "advanced",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["仕上げ", "型紙・裁断", "安全衛生", "生産管理", "糸・繊維", "縫製", "縫製機器", "織物", "製品・規格", "関係法規", "電気"] }],
