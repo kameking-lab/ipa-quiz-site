@@ -16,6 +16,7 @@ import type { ChoiceKey, ExamCode } from "@/lib/questions/types";
 const editions: { exam: ExamCode; year: number; a: string; b: string; figures: number[] }[] = [
   { exam: "naiso-carpet2", year: 2024, a: "×○○×× ×○○×× ××○×× ××○○○ ×○×○×", b: "ロニニハイ イハニイハ イロハハハ ニイハニニ ロニニニイ", figures: [4, 6, 7, 30, 31, 32, 48] },
   { exam: "naiso-plastic1", year: 2023, a: "○○○○× ○×○×× ×××○○ ××○○× ××○×○", b: "イイニロハ ニロロハロ イイニハロ ニロニロロ ロイニニハ", figures: [5, 7, 29, 30, 31, 32, 47] },
+  { exam: "naiso-plastic2", year: 2023, a: "×××○○ ××○×○ ○○×○× ○×○×○ ×○×××", b: "ハニイイニ ロニイイハ ニニハハロ ハロイロイ ニニロハハ", figures: [4, 6, 7, 29, 30, 31, 32] },
 ];
 
 for (const { exam, year, a, b, figures } of editions) {
