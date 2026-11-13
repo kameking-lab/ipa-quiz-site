@@ -10,14 +10,16 @@
       "url": "https://www.kentei.javada.or.jp/pdf/R06-1-B10-%E6%A9%9F%E6%A2%B0%E5%8A%A0%E5%B7%A5%EF%BC%88%E3%83%95%E3%83%A9%E3%82%A4%E3%82%B9%E7%9B%A4%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
       "httpStatus": 200,
       "sha256": "938c94438c711666fc978073c6677c28a55405140704afadcb127a3dc5d2a8ca",
-      "pages": 8
+      "pages": 8,
+      "retrievedAt": "2026-11-13T12:52:37.127278+09:00"
     },
     {
       "kind": "answers",
       "url": "https://www.kentei.javada.or.jp/pdf/R06-1-B10-%E6%A9%9F%E6%A2%B0%E5%8A%A0%E5%B7%A5%EF%BC%88%E3%83%95%E3%83%A9%E3%82%A4%E3%82%B9%E7%9B%A4%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
       "httpStatus": 200,
       "sha256": "f18cbc6fe28fcb0c05e9680a681d1f4c85abd62b45e32d0adbbbe39caa2c7093",
-      "pages": 1
+      "pages": 1,
+      "retrievedAt": "2026-11-13T12:52:38.311413+09:00"
     }
   ],
   "questionCount": 50,
@@ -605,5 +607,15 @@
         0.42
       ]
     }
-  ]
+  ],
+  "supplementalOfficialSources": [
+    {
+      "question": "B群 25",
+      "topic": "手袋の使用禁止",
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=4",
+      "article": "労働安全衛生規則第111条",
+      "confirmed": "回転する刃物に手が巻き込まれるおそれがあるときは手袋を使用しない"
+    }
+  ],
+  "sourceCheckNote": "2026-11-13に公式問題・正答PDFを再取得しHTTP 200、PDF形式、調査時原本とのSHA-256一致を確認。"
 }

@@ -17,6 +17,7 @@ import type { ExamCode } from "@/lib/questions/types";
 const officialKeys = {
   fraise1: "○×○××○×○×○××××○××○○○○○○○○ハロハロニロハニニハイロロロハニロイイニロニロニロ",
   fraise2: "×○○○×××○×○×○×○○○×○○○×○××○ハイニハハハニニロニロニイニニニロニハロイイロハイ",
+  fraise3: "○×○○××○○××○○××○○×○○×××○○○×××○×",
 };
 for (const [code, key] of Object.entries(officialKeys)) {
   const exam = code as ExamCode;

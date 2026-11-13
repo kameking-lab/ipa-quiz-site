@@ -203,6 +203,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "tatami1", name: "畳製作技能士 1級", sub: "畳製作作業 学科（真偽法・多肢択一）", domain: "safety" },
   { code: "fraise1", name: "機械加工技能士 1級", sub: "フライス盤作業 学科", domain: "safety" },
   { code: "fraise2", name: "機械加工技能士 2級", sub: "フライス盤作業 学科", domain: "safety" },
+  { code: "fraise3", name: "機械加工技能士 3級", sub: "フライス盤作業 学科", domain: "safety" },
   { code: "funmatsu-yakin1", name: "粉末冶金技能士 1級", sub: "成形・再圧縮作業 学科（真偽法・多肢択一）", domain: "safety" },
   { code: "nunohaku1", name: "布はく縫製技能士 1級", sub: "ワイシャツ製造作業 学科（真偽法・多肢択一）", domain: "safety" },
   { code: "kikinzoku-soshin1", name: "貴金属装身具製作技能士 1級", sub: "貴金属装身具製作作業 学科（真偽法・多肢択一）", domain: "safety" },
