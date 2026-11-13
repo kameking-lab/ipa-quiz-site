@@ -23,6 +23,11 @@ const editions = [
     answers: "○○○×○" + "×○○○×" + "×××○○" + "○○○○×" + "○○○○×" + "○○×××",
     pages: [...Array(17).fill(2), ...Array(13).fill(3)],
     figures: [29, 30] },
+  { exam: "haikan-plant1", year: 2024,
+    answers: "××○○○" + "×○○○×" + "×○×○○" + "×××○×" + "○○○○×"
+      + "ハイハイニ" + "ロハニロハ" + "ロニハロニ" + "ニロハニニ" + "ハハハロロ",
+    pages: [...Array(14).fill(2), ...Array(11).fill(3), ...Array(5).fill(4), ...Array(5).fill(5), ...Array(5).fill(6), ...Array(6).fill(7), ...Array(4).fill(8)],
+    figures: [9, 10, 28, 34, 39] },
 ];
 
 describe.each(editions)("c5-12 $exam $year", ({ exam: code, year, answers, pages, figures }) => {
@@ -44,6 +49,7 @@ describe.each(editions)("c5-12 $exam $year", ({ exam: code, year, answers, pages
       const official = answers[i];
       const key = (official === "○" ? "ア" : official === "×" ? "イ" : "アイウエ"["イロハニ".indexOf(official)]) as ChoiceKey;
       expect(q.qNumber, q.id).toBe(i + 1);
+      expect(q.id).toBe(`${exam}-${year}-late-gakka-${answers.length === 30 ? "" : i < 25 ? "a-" : "b-"}${String(answers.length === 30 ? i + 1 : i % 25 + 1).padStart(3, "0")}`);
       expect(q.officialAnswerNumber, q.id).toBe(official);
       expect(q.answer, q.id).toBe(key);
       expect(q.officialQuestionLabel).toBe(answers.length === 30 ? String(i + 1) : `${i < 25 ? "A" : "B"}群 ${i % 25 + 1}`);
