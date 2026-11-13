@@ -22,7 +22,8 @@ const editions = [
   { exam: "katawaku3", all: KATAWAKU3_QUESTIONS, a: "○○○○○ ×○○×× ××○○× ○×○×○ ○××○○ ×○○××", b: "", figures: [2, 3, 12, 25, 26] },
 ] as const;
 
-for (const { exam, all, a, b, figures } of editions) {
+for (const { exam, all: corpus, a, b, figures } of editions) {
+  const all = corpus.filter(q => q.year === 2025 && q.season === "late");
   const official = (a + b).replaceAll(" ", "");
   describe(`${exam} 2025年度後期`, () => {
     it("keeps every official answer through scoring, labels and distinct A/B routes", () => {
@@ -54,9 +55,9 @@ for (const { exam, all, a, b, figures } of editions) {
     });
 
     it("serves the complete edition from synchronous, lazy and mobile loaders", async () => {
-      expect(QUESTIONS_BY_EXAM[exam]).toEqual(all);
-      expect(await getQuestionsForExam(exam)).toEqual(all);
-      expect(await examContent(exam)).toEqual(all as Question[]);
+      expect(QUESTIONS_BY_EXAM[exam]).toEqual(corpus);
+      expect(await getQuestionsForExam(exam)).toEqual(corpus);
+      expect(await examContent(exam)).toEqual(corpus as Question[]);
       const generated = JSON.parse(readFileSync(join(process.cwd(), "mobile/src/generated/catalog.json"), "utf8"));
       expect(generated.exams.find((e: { code: string }) => e.code === exam)).toEqual(await examCatalog(exam));
       expect(EXAM_CONFIGS[exam].sessions[0].expectedQuestions).toBe(all.length);
