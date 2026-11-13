@@ -33,6 +33,7 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "bousui-frp2": async () => isExamPublished("bousui-frp2") ? (await import("@/data/questions/bousui-frp2")).BOUSUI_FRP2_QUESTIONS : [],
   "pan-seizo1": async () => isExamPublished("pan-seizo1") ? (await import("@/data/questions/pan-seizo1")).PAN_SEIZO1_QUESTIONS : [],
   "pan-seizo2": async () => isExamPublished("pan-seizo2") ? (await import("@/data/questions/pan-seizo2")).PAN_SEIZO2_QUESTIONS : [],
+"kikai-shiage3": async () => isExamPublished("kikai-shiage3") ? (await import("@/data/questions/kikai-shiage3")).KIKAI_SHIAGE3_QUESTIONS : [],
 "kikai-shiage2": async () => isExamPublished("kikai-shiage2") ? (await import("@/data/questions/kikai-shiage2")).KIKAI_SHIAGE2_QUESTIONS : [],
   "naiso-carpet2": async () => isExamPublished("naiso-carpet2") ? (await import("@/data/questions/naiso-carpet2")).NAISO_CARPET2_QUESTIONS : [],
   "naiso-plastic1": async () => isExamPublished("naiso-plastic1") ? (await import("@/data/questions/naiso-plastic1")).NAISO_PLASTIC1_QUESTIONS : [],

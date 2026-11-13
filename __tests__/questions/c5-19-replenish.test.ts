@@ -15,6 +15,7 @@ import type { ChoiceKey, ExamCode } from "@/lib/questions/types";
 // Official answer-table images, independently read in groups of five.
 const editions: { exam: ExamCode; year: number; season: "early" | "late"; a: string; b: string; figures: number[] }[] = [
   { exam: "kikai-shiage2", year: 2024, season: "early", a: "○○××× ○×○×○ ×○×○× ××○×○ ○×××○", b: "ハイニイハ ニハニロロ ロイハイニ ロニイハハ ロハイニロ", figures: [17,23,29,39,41,43] },
+  { exam: "kikai-shiage3", year: 2024, season: "early", a: "×○×○○ ××○○× ××○×○ ×××○○ ○×○×○ ○○×○○", b: "", figures: [] },
 ];
 
 for (const { exam, year, season, a, b, figures } of editions) {
