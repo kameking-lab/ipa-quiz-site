@@ -1709,6 +1709,11 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["建設機械", "油圧装置", "エンジン", "検査", "加工", "動力伝達", "溶接", "整備", "走行装置", "材料", "電気", "機械要素", "燃料", "材料力学", "製図", "関係法規", "安全衛生", "測定", "表面処理", "潤滑"] }],
     seasons: ["early"], yearRange: { start: 2025, end: 2025 },
 },
+"hyoso1": {
+    code: "hyoso1", nameFull: "技能検定 1級表装（表具作業）学科試験", urlSlug: "hyoso1", level: "advanced",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["保存・取扱い", "壁装", "安全衛生", "屏風", "工具", "巻物", "建具", "建築", "掛軸", "材料", "色彩", "裏打ち", "製図", "襖", "関係法規"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
 "hyoso2": {
     code: "hyoso2", nameFull: "技能検定 2級表装（表具作業）学科試験", urlSlug: "hyoso2", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["壁装", "建具", "工具", "建築", "材料", "色彩", "製図", "関係法規", "安全衛生", "屏風", "裏打ち", "襖", "掛軸", "保存・取扱い"] }],

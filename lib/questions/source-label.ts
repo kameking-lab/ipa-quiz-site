@@ -51,7 +51,7 @@ export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sou
   if (q.exam === "tekko2") return `${q.fiscalYear ?? q.year}年度前期`;
   if (q.exam === "mekki3" || q.exam === "kinzoku-netsushori3" || q.exam === "mekki1" || q.exam === "kinzoku-netsushori1" || q.exam === "kinzoku-netsushori2" || q.exam === "kojo-bankin3" || q.exam === "kojo-bankin1" || q.exam === "tekko1") return `${q.fiscalYear ?? q.year}年度前期`;
   if (q.exam === "kenchiku-daiku1" || q.exam === "kenchiku-daiku3") return `${q.fiscalYear ?? q.year}年度${q.season === "late" ? "後期" : "前期"}`;
-  if (q.exam === "fujin-kodomofuku1" || q.exam === "fujin-kodomofuku2" || q.exam === "toso1" || q.exam === "denshi-kiki-kumitate2" || q.exam === "kojo-bankin2" || q.exam === "kensetsu-kikai-seibi2" || q.exam === "hyoso2" || q.exam === "kikinzoku-soshin2" || q.exam === "shashin2") return `${q.fiscalYear ?? q.year}年度前期`;
+  if (q.exam === "fujin-kodomofuku1" || q.exam === "fujin-kodomofuku2" || q.exam === "toso1" || q.exam === "denshi-kiki-kumitate2" || q.exam === "kojo-bankin2" || q.exam === "kensetsu-kikai-seibi2" || q.exam === "hyoso1" || q.exam === "hyoso2" || q.exam === "kikinzoku-soshin2" || q.exam === "shashin2") return `${q.fiscalYear ?? q.year}年度前期`;
   if (q.exam === "junkango-kansai") {
     return q.fiscalYear !== undefined
       ? `令和${q.fiscalYear - 2018}年度（${q.year}年実施）`
