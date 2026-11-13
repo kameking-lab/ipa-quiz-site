@@ -367,5 +367,47 @@
     }
   ],
   "reviewedAt": "2026-11-13",
-  "sourceFormat": "公式問題PDFの画像を全ページ確認。本文・選択肢は原文を転記し、空白・改行・数字の全半角を画面向けに整形。"
+  "sourceFormat": "公式問題PDFの画像を全ページ確認。本文・選択肢は原文を転記し、空白・改行・数字の全半角を画面向けに整形。",
+  "independentReview": {
+    "step": "c4r-A6",
+    "reviewedAt": "2026-11-13",
+    "questionCount": 50,
+    "figureCount": 7,
+    "choiceExplanationCount": 150,
+    "officialAnswersMatched": 50,
+    "officialAnswerChanges": 0,
+    "sourcePdfsRefetchedAndHashMatched": true,
+    "scope": "公式本文・選択肢・図・公式正答・独自解説・ID・試験回と問番号の重複を照合。本文と選択肢は原文を保持し、空白・改行・全半角は画面用に整形。",
+    "correctedQuestions": [
+      {
+        "id": "naiso-kosei2-2025-early-gakka-b-019",
+        "fields": [
+          "explanation",
+          "choiceExplanations"
+        ]
+      },
+      {
+        "id": "naiso-kosei2-2025-early-gakka-b-020",
+        "fields": [
+          "question",
+          "explanation",
+          "choiceExplanations"
+        ]
+      },
+      {
+        "id": "naiso-kosei2-2025-early-gakka-b-022",
+        "fields": [
+          "choices",
+          "explanation",
+          "choiceExplanations"
+        ]
+      },
+      {
+        "id": "naiso-kosei2-2025-early-gakka-a-005",
+        "fields": [
+          "question"
+        ]
+      }
+    ]
+  }
 }
