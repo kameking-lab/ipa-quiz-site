@@ -1,11 +1,12 @@
 import calendar from "./featured-calendar.generated.json";
 
-export interface FeaturedExamDate { date: string; sourceUrl: string; note?: string }
+export interface FeaturedExamDate { date: string; endDate?: string; sourceUrl: string; note?: string }
 export interface FeaturedCalendarExam {
   key: string;
   qualificationId: string;
   candidates: number | null;
   candidatesSourceUrl?: string;
+  scheduleMode?: string;
   dates: readonly FeaturedExamDate[];
 }
 export const HOME_EXAM_CALENDAR: readonly FeaturedCalendarExam[] = calendar.exams;
@@ -44,8 +45,8 @@ export function upcomingExamPicks(keys: readonly string[], excluded: readonly st
   const available = new Set(keys.filter(key => !excluded.includes(key)));
   const nextByKey = new Map<string, { key: string; candidates: number; next?: FeaturedExamDate }>();
   for (const row of rows) {
-    if (!available.has(row.key) || row.candidates === null || row.candidates <= 0) continue;
-    const next = [...row.dates].filter(item => item.date >= today).sort((a, b) => a.date.localeCompare(b.date))[0];
+    if (!available.has(row.key) || row.scheduleMode === "ondemand" || row.candidates === null || row.candidates <= 0) continue;
+    const next = [...row.dates].filter(item => (item.endDate ?? item.date) >= today).sort((a, b) => a.date.localeCompare(b.date))[0];
     const previous = nextByKey.get(row.key);
     if (!previous || (next && (!previous.next || next.date < previous.next.date))) {
       nextByKey.set(row.key, { key: row.key, candidates: row.candidates ?? 0, next });

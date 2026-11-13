@@ -10,12 +10,23 @@ import { ALL_EXAM_CODES } from "@/lib/exam-config";
 import { EXAM_CATALOG, EXAM_LIBRARY_PATH } from "@/lib/exam-library-catalog";
 import { getExamPaperStats } from "@/lib/exam-library-papers";
 import { qualificationHubForEntry } from "@/lib/exam-qualification-hubs";
-import { frequentExamKeys } from "@/lib/home/featured-exams";
+import { frequentExamKeys, HOME_EXAM_CALENDAR, upcomingExamPicks } from "@/lib/home/featured-exams";
 import { getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
 
 describe("home directory", () => {
   const domains = getHomeDirectory();
   const all = domains.flatMap((d) => [...d.featured, ...d.compact]);
+
+  it("covers at least forty published qualifications with official statistics and retains dynamic eligibility", () => {
+    const published = new Set(all.map(item => item.key));
+    const covered = HOME_EXAM_CALENDAR.filter(row => published.has(row.key) && row.candidates !== null);
+    expect(covered.length).toBeGreaterThanOrEqual(40);
+    for (const key of ["takken", "fp2", "fp3", "ip", "denko2", "dai-1-shu-eisei-kanrisha", "kanri", "kikenbutsu-otsu4"]) {
+      expect(covered.some(row => row.key === key), key).toBe(true);
+    }
+    expect(upcomingExamPicks([...published], [], new Date("2026-11-13T03:00:00Z")).map(row => row.key)).toEqual(["kikenbutsu-otsu4", "ap", "kaigo"]);
+    expect(all.some(item => item.key.startsWith("boki"))).toBe(false);
+  });
 
   it("resolves actual history IDs for every registered question exam, including legacy prefixes", () => {
     const aliases = Object.fromEntries(all.flatMap(item => (item.historyPrefixes ?? []).map(prefix => [prefix, item.key])));

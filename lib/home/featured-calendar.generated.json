@@ -2,31 +2,312 @@
   "sourceRepository": "calendar",
   "sourceRevision": "3773712ad192e288560a8c1cafa232605cd8b117",
   "mappingFile": "data/generated/kakomon-crosslink-audit.json",
+  "officialFile": "lib/home/featured-official.json",
+  "officialCheckedAt": "2026-11-13",
   "exams": [
+    {
+      "key": "ahaki-anma",
+      "qualificationId": "anma-massage-shiatsushi",
+      "candidates": null,
+      "candidatesPeriod": "令和7年度(第34回)",
+      "dates": [
+        {
+          "date": "2027-02-27",
+          "sourceUrl": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/anma/"
+        }
+      ],
+      "sourceFile": "data/entries/anma-massage-shiatsushi.json"
+    },
+    {
+      "key": "amateur1",
+      "qualificationId": "guide-2026-4c8fce478e1549b5",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/guide-2026-4c8fce478e1549b5.json"
+    },
+    {
+      "key": "amateur2",
+      "qualificationId": "guide-2026-4c8fce478e1549b5",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/guide-2026-4c8fce478e1549b5.json"
+    },
+    {
+      "key": "ap",
+      "qualificationId": "ap",
+      "candidates": 82668,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・受験者",
+      "dates": [
+        {
+          "date": "2026-10-28",
+          "endDate": "2026-11-10",
+          "note": "科目A",
+          "sourceUrl": "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html"
+        },
+        {
+          "date": "2026-11-24",
+          "endDate": "2026-12-06",
+          "note": "科目B",
+          "sourceUrl": "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html"
+        },
+        {
+          "date": "2027-02-06",
+          "endDate": "2027-02-19",
+          "note": "科目A",
+          "sourceUrl": "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html"
+        },
+        {
+          "date": "2027-03-03",
+          "endDate": "2027-03-15",
+          "note": "科目B",
+          "sourceUrl": "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html"
+        }
+      ],
+      "sourceFile": "data/entries/ap.json",
+      "name": "応用情報技術者",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.ipa.go.jp/shiken/reports/hjuojm000000ll0f-att/suii_hyo.pdf",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "au",
+      "qualificationId": "au",
+      "candidates": 2245,
+      "candidatesPeriod": "2025年度秋期",
+      "candidatesScope": "1回分・受験者",
+      "dates": [
+        {
+          "date": "2027-02-20",
+          "endDate": "2027-03-02",
+          "note": "科目A",
+          "sourceUrl": "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html"
+        },
+        {
+          "date": "2027-03-16",
+          "endDate": "2027-03-28",
+          "note": "科目B",
+          "sourceUrl": "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html"
+        }
+      ],
+      "sourceFile": "data/entries/au.json",
+      "name": "システム監査技術者",
+      "candidatesPeriodEnd": "2025-10-12",
+      "candidatesSourceUrl": "https://www.ipa.go.jp/shiken/reports/hjuojm000000ll0f-att/suii_hyo.pdf",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "aviation-comm",
+      "qualificationId": "radio-koku",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/radio-koku.json"
+    },
+    {
+      "key": "benrishi",
+      "qualificationId": "benrishi",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [],
+      "sourceFile": "data/entries/benrishi.json"
+    },
+    {
+      "key": "biru-kan",
+      "qualificationId": "biru-kanrishi",
+      "candidates": null,
+      "candidatesPeriod": "2025年度(令和7年度・第55回)",
+      "dates": [
+        {
+          "date": "2026-10-04",
+          "sourceUrl": "https://www.jahmec.or.jp/kokka/"
+        }
+      ],
+      "sourceFile": "data/entries/biru-kanrishi.json"
+    },
     {
       "key": "biyoshi",
       "qualificationId": "biyoushi",
-      "candidates": 19850,
+      "candidates": 4660,
       "candidatesSourceUrl": "https://www.rbc.or.jp/exam/about_result/",
-      "candidatesSourceFile": "data/entries/biyoushi.json",
-      "candidatesPeriod": "第53回(令和7年度・2026年3月実施)",
-      "candidatesScope": "第53回・全受験者",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "candidatesPeriod": "2026年度・第54回",
+      "candidatesScope": "1回分・全受験者",
       "dates": [
         {
           "date": "2027-03-07",
           "sourceUrl": "https://www.rbc.or.jp/wp-content/uploads/2026/10/第55回美容師国家試験受験案内.pdf"
         }
       ],
-      "sourceFile": "data/entries/biyoushi.json"
+      "sourceFile": "data/entries/biyoushi.json",
+      "name": "美容師",
+      "candidatesPeriodEnd": "2026-09-06",
+      "checkedAt": "2026-11-13"
+    },
+    {
+      "key": "boki1",
+      "qualificationId": "boki1",
+      "name": "日商簿記1級",
+      "candidates": 9806,
+      "candidatesPeriod": "2026年度・第173回（2026年6月14日）",
+      "candidatesPeriodEnd": "2026-06-14",
+      "candidatesScope": "1回分・統一試験・実受験者（ネット試験とは別）",
+      "candidatesSourceUrl": "https://www.kentei.ne.jp/bookkeeping/candidate-data",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "dates": [
+        {
+          "date": "2026-11-15",
+          "sourceUrl": "https://www.kentei.ne.jp/calendar_2026"
+        }
+      ]
+    },
+    {
+      "key": "boki2",
+      "qualificationId": "boki2",
+      "name": "日商簿記2級",
+      "candidates": 4821,
+      "candidatesPeriod": "2026年度・第173回（2026年6月14日）",
+      "candidatesPeriodEnd": "2026-06-14",
+      "candidatesScope": "1回分・統一試験・実受験者（ネット試験とは別）",
+      "candidatesSourceUrl": "https://www.kentei.ne.jp/bookkeeping/candidate-data",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "dates": [
+        {
+          "date": "2026-11-15",
+          "sourceUrl": "https://www.kentei.ne.jp/calendar_2026"
+        }
+      ]
+    },
+    {
+      "key": "boki3",
+      "qualificationId": "boki3",
+      "name": "日商簿記3級",
+      "candidates": 14359,
+      "candidatesPeriod": "2026年度・第173回（2026年6月14日）",
+      "candidatesPeriodEnd": "2026-06-14",
+      "candidatesScope": "1回分・統一試験・実受験者（ネット試験とは別）",
+      "candidatesSourceUrl": "https://www.kentei.ne.jp/bookkeeping/candidate-data",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "dates": [
+        {
+          "date": "2026-11-15",
+          "sourceUrl": "https://www.kentei.ne.jp/calendar_2026"
+        }
+      ]
+    },
+    {
+      "key": "career-consultant",
+      "qualificationId": "career-consultant",
+      "candidates": null,
+      "candidatesPeriod": "第31回(2026年3月実施、学科・実技同時受験合格率)",
+      "dates": [],
+      "sourceFile": "data/entries/career-consultant.json"
+    },
+    {
+      "key": "caremanager",
+      "qualificationId": "care-manager",
+      "candidates": null,
+      "candidatesPeriod": "令和7年度(第28回全国実績)",
+      "dates": [
+        {
+          "date": "2026-10-11",
+          "sourceUrl": "https://www.fukushi.metro.tokyo.lg.jp/kourei/hoken/kaigo_lib/care/shikenjyouhou",
+          "note": "東京"
+        }
+      ],
+      "sourceFile": "data/entries/care-manager.json"
+    },
+    {
+      "key": "chintai",
+      "qualificationId": "chintai-fudosan-keiei-kanrishi",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-11-15",
+          "sourceUrl": "https://www.chintaikanrishi.jp/exam/summary"
+        }
+      ],
+      "sourceFile": "data/entries/chintai-fudosan-keiei-kanrishi.json"
+    },
+    {
+      "key": "chizai2",
+      "qualificationId": "chizai-kanri-gino-2kyu",
+      "candidates": null,
+      "candidatesPeriod": "2025年度第52回(学科37.0%・実技37.4%の平均)",
+      "dates": [
+        {
+          "date": "2026-11-15",
+          "sourceUrl": "https://www.kentei-info-ip-edu.org/exam/schedule"
+        }
+      ],
+      "sourceFile": "data/entries/chizai-kanri-gino-2kyu.json"
+    },
+    {
+      "key": "chosashi",
+      "qualificationId": "tochi-kaoku-chosashi",
+      "candidates": null,
+      "candidatesPeriod": "2025年度(令和7年度)",
+      "dates": [],
+      "sourceFile": "data/entries/tochi-kaoku-chosashi.json"
+    },
+    {
+      "key": "chusho-kigyo-shindanshi",
+      "qualificationId": "chusho-kigyo-shindanshi",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [],
+      "sourceFile": "data/entries/chusho-kigyo-shindanshi.json"
+    },
+    {
+      "key": "chusho-secondary",
+      "qualificationId": "chusho-kigyo-shindanshi",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [],
+      "sourceFile": "data/entries/chusho-kigyo-shindanshi.json"
+    },
+    {
+      "key": "civil1",
+      "qualificationId": "doboku-sekou-1kyu-ho",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-07-05",
+          "sourceUrl": "https://www.jctc.jp/exam/doboku-1/"
+        }
+      ],
+      "sourceFile": "data/entries/doboku-sekou-1kyu-ho.json"
+    },
+    {
+      "key": "civil2",
+      "qualificationId": "doboku-sekou-2kyu",
+      "candidates": null,
+      "candidatesPeriod": "2026",
+      "dates": [
+        {
+          "date": "2026-06-07",
+          "sourceUrl": "https://www.jctc.jp/exam/doboku-2/"
+        }
+      ],
+      "sourceFile": "data/entries/doboku-sekou-2kyu.json"
     },
     {
       "key": "crane-derrick-unlimited",
       "qualificationId": "crane-derrick-untenshi",
       "candidates": 946,
       "candidatesSourceUrl": "https://www.exam.or.jp/h_gokakuritsu/",
-      "candidatesSourceFile": "data/entries/crane-derrick-untenshi.json",
-      "candidatesPeriod": "学科×実技の概算(令和7年度)",
-      "candidatesScope": "年度計・限定なし（限定解除を含む）学科",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全国・学科（限定なしは限定解除を含む）",
       "dates": [
         {
           "date": "2026-04-16",
@@ -89,43 +370,1264 @@
           "note": "関東"
         }
       ],
-      "sourceFile": "data/entries/crane-derrick-untenshi.json"
+      "sourceFile": "data/entries/crane-derrick-untenshi.json",
+      "name": "クレーン・デリック運転士（限定なし）",
+      "candidatesPeriodEnd": "2026-03-31",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://www.exam.or.jp/schedule/h_nittei250"
+    },
+    {
+      "key": "dai-1-shu-eisei-kanrisha",
+      "qualificationId": "eisei-kanrisha-1shu",
+      "candidates": 66401,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全国・学科",
+      "dates": [
+        {
+          "date": "2026-04-03",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-04-08",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-04-15",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-04-18",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-04-21",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-05-12",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-05-14",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-05-18",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-05-20",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-05-21",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-05-23",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-05-27",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-05-28",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-06-01",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-06-06",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-06-09",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-06-10",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-06-16",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-06-18",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-06-23",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-06-25",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-07-02",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-07-04",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-07-07",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-07-14",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-07-17",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-07-22",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-07-28",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-07-29",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-08-04",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-08-06",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-08-12",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-08-21",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-08-25",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-08-26",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-08-27",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-08-29",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-08-31",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-09-01",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-09-02",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-09-05",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-09-08",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-09-09",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-09-16",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-09-29",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-10-01",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-10-05",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-10-06",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-10-07",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-10-13",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-10-15",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-10-22",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-10-25",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-10-27",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-10-29",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-11-04",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-11-05",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-11-10",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-11-12",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-11-15",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-11-17",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-11-19",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-11-24",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-11-26",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-11-30",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-12-02",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-12-03",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-12-05",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-12-08",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-12-10",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-12-15",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-12-16",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-12-17",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-12-20",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-01-08",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-01-15",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-01-18",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-01-23",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-01-25",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-02-01",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-02-04",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-02-07",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-02-09",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-02-10",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-02-15",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-02-17",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-02-20",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-02-24",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-02-26",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-03-01",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-03-04",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-03-06",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-03-09",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-03-10",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-03-15",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-03-17",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-03-18",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-03-24",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-03-25",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-03-27",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        }
+      ],
+      "sourceFile": "data/entries/eisei-kanrisha-1shu.json",
+      "name": "第一種衛生管理者",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.exam.or.jp/h_gokakuritsu/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "dai-2-shu-eisei-kanrisha",
+      "qualificationId": "eisei-kanrisha-2shu",
+      "candidates": 40653,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全国・学科",
+      "dates": [
+        {
+          "date": "2026-04-03",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-04-08",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-04-15",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-04-18",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-04-21",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-05-12",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-05-14",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-05-18",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-05-20",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-05-21",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-05-23",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-05-27",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-05-28",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-06-01",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-06-06",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-06-09",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-06-10",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-06-16",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-06-18",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-06-23",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-06-25",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-07-02",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-07-04",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-07-07",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-07-14",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-07-17",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-07-22",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-07-28",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-07-29",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-08-04",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-08-06",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-08-12",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-08-21",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-08-25",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-08-26",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-08-27",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-08-29",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-08-31",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-09-01",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-09-02",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-09-05",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-09-08",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-09-09",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-09-16",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-09-29",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-10-01",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-10-05",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-10-06",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-10-07",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-10-13",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-10-15",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-10-22",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-10-25",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-10-27",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-10-29",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-11-04",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-11-05",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-11-10",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-11-12",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-11-15",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-11-17",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-11-19",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-11-24",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-11-26",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-11-30",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-12-02",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-12-03",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-12-05",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-12-08",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-12-10",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-12-15",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-12-16",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-12-17",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2026-12-20",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-01-08",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-01-15",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-01-18",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-01-23",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-01-25",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-02-01",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-02-04",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-02-07",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-02-09",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-02-10",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-02-15",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-02-17",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-02-20",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-02-24",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-02-26",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-03-01",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-03-04",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-03-06",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-03-09",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-03-10",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-03-15",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-03-17",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-03-18",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-03-24",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-03-25",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        },
+        {
+          "date": "2027-03-27",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+          "note": "東京"
+        }
+      ],
+      "sourceFile": "data/entries/eisei-kanrisha-2shu.json",
+      "name": "第二種衛生管理者",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.exam.or.jp/h_gokakuritsu/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://www.exam.or.jp/schedule/h_nittei502",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "db",
+      "qualificationId": "db",
+      "candidates": 9769,
+      "candidatesPeriod": "2025年度秋期",
+      "candidatesScope": "1回分・受験者",
+      "dates": [
+        {
+          "date": "2027-02-20",
+          "endDate": "2027-03-02",
+          "note": "科目A",
+          "sourceUrl": "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html"
+        },
+        {
+          "date": "2027-03-16",
+          "endDate": "2027-03-28",
+          "note": "科目B",
+          "sourceUrl": "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html"
+        }
+      ],
+      "sourceFile": "data/entries/db.json",
+      "name": "データベーススペシャリスト",
+      "candidatesPeriodEnd": "2025-10-12",
+      "candidatesSourceUrl": "https://www.ipa.go.jp/shiken/reports/hjuojm000000ll0f-att/suii_hyo.pdf",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "denken1",
+      "qualificationId": "denken-1shu",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-08-30",
+          "sourceUrl": "https://www.shiken.or.jp/chief/first/"
+        }
+      ],
+      "sourceFile": "data/entries/denken-1shu.json"
+    },
+    {
+      "key": "denken2",
+      "qualificationId": "denken-2shu",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-08-30",
+          "sourceUrl": "https://www.shiken.or.jp/chief/upload/20261511r8fsannai.pdf"
+        }
+      ],
+      "sourceFile": "data/entries/denken-2shu.json"
+    },
+    {
+      "key": "denken3",
+      "qualificationId": "denken-3shu",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-07-16",
+          "endDate": "2026-08-09",
+          "sourceUrl": "https://www.shiken.or.jp/chief/upload/20260511r8tannai0526.pdf"
+        },
+        {
+          "date": "2026-08-30",
+          "sourceUrl": "https://www.shiken.or.jp/chief/upload/20260511r8tannai0526.pdf"
+        },
+        {
+          "date": "2027-02-04",
+          "endDate": "2027-02-28",
+          "sourceUrl": "https://www.shiken.or.jp/chief/third/"
+        },
+        {
+          "date": "2027-03-21",
+          "sourceUrl": "https://www.shiken.or.jp/chief/third/"
+        }
+      ],
+      "sourceFile": "data/entries/denken-3shu.json"
+    },
+    {
+      "key": "denki1",
+      "qualificationId": "denki-sekou-1kyu",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-07-12",
+          "sourceUrl": "https://www.fcip-shiken.jp/den1/"
+        }
+      ],
+      "sourceFile": "data/entries/denki-sekou-1kyu.json"
+    },
+    {
+      "key": "denki2",
+      "qualificationId": "denki-sekou-2kyu",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-06-14",
+          "sourceUrl": "https://www.fcip-shiken.jp/den2/"
+        }
+      ],
+      "sourceFile": "data/entries/denki-sekou-2kyu.json"
+    },
+    {
+      "key": "denko1",
+      "qualificationId": "electrician-type1",
+      "candidates": 36154,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・学科（上期＋下期の公式「計」欄）",
+      "dates": [
+        {
+          "date": "2027-04-01",
+          "endDate": "2027-05-08",
+          "sourceUrl": "https://www.shiken.or.jp/ecee-overview/news/upload/R09denkounittei.pdf"
+        }
+      ],
+      "sourceFile": "data/entries/electrician-type1.json",
+      "name": "第一種電気工事士",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.shiken.or.jp/construction/first/result/",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "denko2",
+      "qualificationId": "denko2",
+      "candidates": 139087,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・学科（上期＋下期の公式「計」欄）",
+      "dates": [
+        {
+          "date": "2026-09-24",
+          "endDate": "2026-11-08",
+          "sourceUrl": "https://www.shiken.or.jp/construction/upload/leaflet_2605.pdf"
+        },
+        {
+          "date": "2026-10-25",
+          "sourceUrl": "https://www.shiken.or.jp/construction/upload/leaflet_2605.pdf"
+        }
+      ],
+      "sourceFile": "data/entries/denko2.json",
+      "name": "第二種電気工事士",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.shiken.or.jp/construction/second/result/",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
     },
     {
       "key": "energy-kanri",
       "qualificationId": "energy-kanrishi",
-      "candidates": 8300,
-      "candidatesSourceUrl": "https://www.eccj.or.jp/mgr1/",
-      "candidatesSourceFile": "data/entries/energy-kanrishi.json",
-      "candidatesPeriod": "2025",
-      "candidatesScope": "年度計・新規受験者",
+      "candidates": 8783,
+      "candidatesSourceUrl": "https://www.eccj.or.jp/mgr1/test/index.html",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "candidatesPeriod": "2026年度・第48回",
+      "candidatesScope": "1回分・新規受験者（課目免除受験者を含む。旧資格者17人とは別）",
       "dates": [
         {
           "date": "2026-08-02",
           "sourceUrl": "https://www.eccj.or.jp/mgr1/test_guide/chap_02.html"
         }
       ],
-      "sourceFile": "data/entries/energy-kanrishi.json"
+      "sourceFile": "data/entries/energy-kanrishi.json",
+      "name": "エネルギー管理士",
+      "candidatesPeriodEnd": "2026-08-02",
+      "checkedAt": "2026-11-13"
+    },
+    {
+      "key": "es",
+      "qualificationId": "es",
+      "candidates": 1156,
+      "candidatesPeriod": "2025年度秋期",
+      "candidatesScope": "1回分・受験者",
+      "dates": [
+        {
+          "date": "2027-02-20",
+          "endDate": "2027-03-02",
+          "note": "科目A",
+          "sourceUrl": "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html"
+        },
+        {
+          "date": "2027-03-16",
+          "endDate": "2027-03-28",
+          "note": "科目B",
+          "sourceUrl": "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html"
+        }
+      ],
+      "sourceFile": "data/entries/es.json",
+      "name": "エンベデッドシステムスペシャリスト",
+      "candidatesPeriodEnd": "2025-10-12",
+      "candidatesSourceUrl": "https://www.ipa.go.jp/shiken/reports/hjuojm000000ll0f-att/suii_hyo.pdf",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
     },
     {
       "key": "fe",
       "qualificationId": "kihon-joho",
-      "candidates": 133732,
-      "candidatesSourceUrl": "https://www.ipa.go.jp/shiken/reports/ps6vr70000016ew6-att/202503_fe_toukei.pdf",
-      "candidatesSourceFile": "data/calibration/difficulty-facts-20261103.json",
-      "candidatesPeriod": "2024",
+      "candidates": 147186,
+      "candidatesSourceUrl": "https://www.ipa.go.jp/shiken/reports/hjuojm000000ll0f-att/suii_hyo.pdf",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "candidatesPeriod": "2025年度（令和7年度）",
       "candidatesScope": "年度計・受験者",
       "dates": [],
-      "sourceFile": "data/entries/kihon-joho.json"
+      "sourceFile": "data/entries/kihon-joho.json",
+      "name": "基本情報技術者",
+      "candidatesPeriodEnd": "2026-03-31",
+      "checkedAt": "2026-11-13",
+      "scheduleMode": "ondemand",
+      "scheduleSourceUrl": "https://www.ipa.go.jp/shiken/2026/cbt-202701-yotei.html"
     },
     {
       "key": "fp1",
       "qualificationId": "fp1",
-      "candidates": 3764,
-      "candidatesSourceUrl": "https://www.kinzai.or.jp/fp/48802.html",
-      "candidatesSourceFile": "data/entries/fp1.json",
-      "candidatesPeriod": "2025年9月学科(きんざい実施分)",
-      "candidatesScope": "2025年9月・1級学科",
+      "candidates": 2996,
+      "candidatesSourceUrl": "https://products.kinzai.or.jp/news/fpexam20261027/",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "candidatesPeriod": "2026年9月13日",
+      "candidatesScope": "1回分・きんざい実施分・1級学科",
       "dates": [
         {
           "date": "2026-09-13",
@@ -136,7 +1638,512 @@
           "sourceUrl": "https://products.kinzai.or.jp/exam-fp/schedule/"
         }
       ],
-      "sourceFile": "data/entries/fp1.json"
+      "sourceFile": "data/entries/fp1.json",
+      "name": "FP1級",
+      "candidatesPeriodEnd": "2026-09-13",
+      "checkedAt": "2026-11-13"
+    },
+    {
+      "key": "fp2",
+      "qualificationId": "fp2",
+      "candidates": 24773,
+      "candidatesPeriod": "2026年度・2026年4月～8月",
+      "candidatesScope": "当該期間計・日本FP協会実施分・学科CBT",
+      "dates": [],
+      "sourceFile": "data/entries/fp2.json",
+      "name": "FP2級",
+      "candidatesPeriodEnd": "2026-08-31",
+      "candidatesSourceUrl": "https://www.jafp.or.jp/exam/syutoku/",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "scheduleMode": "ondemand",
+      "scheduleSourceUrl": "https://www.jafp.or.jp/exam/outline/"
+    },
+    {
+      "key": "fp3",
+      "qualificationId": "fp-3kyu",
+      "candidates": 41352,
+      "candidatesPeriod": "2026年度・2026年4月～8月",
+      "candidatesScope": "当該期間計・日本FP協会実施分・学科CBT",
+      "dates": [],
+      "sourceFile": "data/entries/fp-3kyu.json",
+      "name": "FP3級",
+      "candidatesPeriodEnd": "2026-08-31",
+      "candidatesSourceUrl": "https://www.jafp.or.jp/exam/syutoku/",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "scheduleMode": "ondemand",
+      "scheduleSourceUrl": "https://www.jafp.or.jp/exam/outline/"
+    },
+    {
+      "key": "gas-kou",
+      "qualificationId": "gas-shunin-kou",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-09-27",
+          "sourceUrl": "https://www.jia-page.or.jp/gas_examination/applicationform"
+        }
+      ],
+      "sourceFile": "data/entries/gas-shunin-kou.json"
+    },
+    {
+      "key": "general1",
+      "qualificationId": "radio-sogo-1",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/radio-sogo-1.json"
+    },
+    {
+      "key": "general2",
+      "qualificationId": "radio-sogo-2",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/radio-sogo-2.json"
+    },
+    {
+      "key": "general3",
+      "qualificationId": "radio-sogo-3",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/radio-sogo-3.json"
+    },
+    {
+      "key": "gijutsushi1-kikai",
+      "qualificationId": "gijutsushi-first",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2026-11-22",
+          "sourceUrl": "https://www.engineer.or.jp/c_topics/011/011423.html"
+        }
+      ],
+      "sourceFile": "data/entries/gijutsushi-first.json"
+    },
+    {
+      "key": "gyosei",
+      "qualificationId": "gyoseishoshi",
+      "candidates": 50163,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全受験者",
+      "dates": [
+        {
+          "date": "2026-11-08",
+          "sourceUrl": "https://www.gyosei-shiken.or.jp/doc/guide/guide.html"
+        }
+      ],
+      "sourceFile": "data/entries/gyoseishoshi.json",
+      "name": "行政書士",
+      "candidatesPeriodEnd": "2025-11-09",
+      "candidatesSourceUrl": "https://gyosei-shiken.or.jp/doc/exam/result/analytics.html",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "hoikushi",
+      "qualificationId": "hoikushi",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/hoikushi.json"
+    },
+    {
+      "key": "hokenshi",
+      "qualificationId": "hokenshi-kokka",
+      "candidates": 7467,
+      "candidatesPeriod": "2025年度・第112回",
+      "candidatesScope": "1回分・全受験者（新卒限定ではない）",
+      "dates": [
+        {
+          "date": "2026-02-13",
+          "sourceUrl": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/hokenshi/"
+        },
+        {
+          "date": "2027-02-12",
+          "sourceUrl": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/hokenshi/"
+        }
+      ],
+      "sourceFile": "data/entries/hokenshi-kokka.json",
+      "name": "保健師",
+      "candidatesPeriodEnd": "2026-02-13",
+      "candidatesSourceUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken03_04_05/about.html",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "hoshasen-1",
+      "qualificationId": "guide-2026-010f8f8e29b23dbd",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/guide-2026-010f8f8e29b23dbd.json"
+    },
+    {
+      "key": "hoshasen-2",
+      "qualificationId": "guide-2026-010f8f8e29b23dbd",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/guide-2026-010f8f8e29b23dbd.json"
+    },
+    {
+      "key": "iji-shuzen",
+      "qualificationId": "guide-2026-59beb414d3783cc1",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/guide-2026-59beb414d3783cc1.json"
+    },
+    {
+      "key": "ip",
+      "qualificationId": "itpassport",
+      "candidates": 271352,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・受験者",
+      "dates": [],
+      "sourceFile": "data/entries/itpassport.json",
+      "name": "ITパスポート",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.ipa.go.jp/shiken/reports/hjuojm000000ll0f-att/suii_hyo.pdf",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "scheduleMode": "ondemand",
+      "scheduleSourceUrl": "https://www.ipa.go.jp/shiken/2026/cbt-202701-yotei.html"
+    },
+    {
+      "key": "jidosha-1-small-written",
+      "qualificationId": "jidousha-seibi-1kyu-kogata",
+      "candidates": null,
+      "candidatesPeriod": "令和6年度第2回(学科筆記、2024-03-23実施)",
+      "dates": [],
+      "sourceFile": "data/entries/jidousha-seibi-1kyu-kogata.json"
+    },
+    {
+      "key": "jidosha-2-chassis",
+      "qualificationId": "jidousha-seibi-2kyu-chassis",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/jidousha-seibi-2kyu-chassis.json"
+    },
+    {
+      "key": "jidosha-2-diesel",
+      "qualificationId": "jidousha-seibi-2kyu-diesel",
+      "candidates": null,
+      "candidatesPeriod": "令和7年度第1回(学科、2025-10-05実施)",
+      "dates": [],
+      "sourceFile": "data/entries/jidousha-seibi-2kyu-diesel.json"
+    },
+    {
+      "key": "jidosha-2-gasoline",
+      "qualificationId": "jidousha-seibi-2kyu-gasoline",
+      "candidates": null,
+      "candidatesPeriod": "令和7年度第1回(学科、2025-10-05実施)",
+      "dates": [
+        {
+          "date": "2027-03-14",
+          "sourceUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/pdf/schedule_R08.pdf"
+        }
+      ],
+      "sourceFile": "data/entries/jidousha-seibi-2kyu-gasoline.json"
+    },
+    {
+      "key": "jidosha-2-motorcycle",
+      "qualificationId": "jidousha-seibi-2kyu-motorcycle",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/jidousha-seibi-2kyu-motorcycle.json"
+    },
+    {
+      "key": "jidosha-3-chassis",
+      "qualificationId": "jidousha-seibi-3kyu-chassis",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/jidousha-seibi-3kyu-chassis.json"
+    },
+    {
+      "key": "jidosha-3-diesel",
+      "qualificationId": "jidousha-seibi-3kyu-diesel",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/jidousha-seibi-3kyu-diesel.json"
+    },
+    {
+      "key": "jidosha-3-gasoline",
+      "qualificationId": "jidousha-seibi-3kyu-gasoline",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/jidousha-seibi-3kyu-gasoline.json"
+    },
+    {
+      "key": "jidosha-3-motorcycle",
+      "qualificationId": "jidousha-seibi-3kyu-motorcycle",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/jidousha-seibi-3kyu-motorcycle.json"
+    },
+    {
+      "key": "jidosha-body",
+      "qualificationId": "jidousha-seibi-body",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/jidousha-seibi-body.json"
+    },
+    {
+      "key": "jidosha-electrical",
+      "qualificationId": "jidousha-seibi-electrical",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/jidousha-seibi-electrical.json"
+    },
+    {
+      "key": "jken-katsuyo1",
+      "qualificationId": "jken-katsuyo-1kyu",
+      "candidates": null,
+      "candidatesPeriod": "令和7年度（2025年度）",
+      "dates": [
+        {
+          "date": "2026-12-20",
+          "sourceUrl": "https://jken.sgec.or.jp/information/juse/"
+        }
+      ],
+      "sourceFile": "data/entries/jken-katsuyo-1kyu.json"
+    },
+    {
+      "key": "jken-katsuyo2",
+      "qualificationId": "jken-katsuyo-2kyu",
+      "candidates": null,
+      "candidatesPeriod": "令和7年度（2025年度）",
+      "dates": [
+        {
+          "date": "2026-12-20",
+          "sourceUrl": "https://jken.sgec.or.jp/information/juse/"
+        }
+      ],
+      "sourceFile": "data/entries/jken-katsuyo-2kyu.json"
+    },
+    {
+      "key": "jken-katsuyo3",
+      "qualificationId": "jken-katsuyo-3kyu",
+      "candidates": null,
+      "candidatesPeriod": "令和7年度(2025年度)",
+      "dates": [
+        {
+          "date": "2026-12-20",
+          "sourceUrl": "https://jken.sgec.or.jp/information/juse/"
+        }
+      ],
+      "sourceFile": "data/entries/jken-katsuyo-3kyu.json"
+    },
+    {
+      "key": "jokaso",
+      "qualificationId": "guide-2026-338067e2b84c74c7",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/guide-2026-338067e2b84c74c7.json"
+    },
+    {
+      "key": "jokaso-setsubishi",
+      "qualificationId": "guide-2026-7954130d48d6e13d",
+      "candidates": null,
+      "candidatesPeriod": "2026年版掲載値",
+      "dates": [],
+      "sourceFile": "data/entries/guide-2026-7954130d48d6e13d.json"
+    },
+    {
+      "key": "josanshi",
+      "qualificationId": "josanshi-kokka",
+      "candidates": 2046,
+      "candidatesPeriod": "2025年度・第109回",
+      "candidatesScope": "1回分・全受験者（新卒限定ではない）",
+      "dates": [
+        {
+          "date": "2026-02-12",
+          "sourceUrl": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/josanpu/"
+        },
+        {
+          "date": "2027-02-11",
+          "sourceUrl": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/josanpu/"
+        }
+      ],
+      "sourceFile": "data/entries/josanshi-kokka.json",
+      "name": "助産師",
+      "candidatesPeriodEnd": "2026-02-12",
+      "candidatesSourceUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken03_04_05/about.html",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "judo-seifukushi",
+      "qualificationId": "judo-seifukushi",
+      "candidates": null,
+      "candidatesPeriod": "令和7年度(第34回)",
+      "dates": [
+        {
+          "date": "2027-03-07",
+          "sourceUrl": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/judouseihukushi/"
+        }
+      ],
+      "sourceFile": "data/entries/judo-seifukushi.json"
+    },
+    {
+      "key": "kai-toku2",
+      "qualificationId": "guide-2026-f0c4cb4ac642c68f",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/guide-2026-f0c4cb4ac642c68f.json"
+    },
+    {
+      "key": "kai-toku3",
+      "qualificationId": "guide-2026-f0c4cb4ac642c68f",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/guide-2026-f0c4cb4ac642c68f.json"
+    },
+    {
+      "key": "kaigo",
+      "qualificationId": "care-worker",
+      "candidates": 78469,
+      "candidatesPeriod": "2025年度・第38回（2026年1月25日）",
+      "candidatesScope": "1回分・全受験者",
+      "dates": [
+        {
+          "date": "2027-01-31",
+          "sourceUrl": "https://www.sssc.or.jp/kaigo/tetsuzuki.html"
+        }
+      ],
+      "sourceFile": "data/entries/care-worker.json",
+      "name": "介護福祉士",
+      "candidatesPeriodEnd": "2026-01-25",
+      "candidatesSourceUrl": "https://www.mhlw.go.jp/stf/newpage_71070.html",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "kaikeishi",
+      "qualificationId": "cpa",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-12-13",
+          "sourceUrl": "https://www.fsa.go.jp/cpaaob/kouninkaikeishi-shiken/r9shiken/r9schedule20260609.pdf"
+        },
+        {
+          "date": "2027-05-23",
+          "sourceUrl": "https://www.fsa.go.jp/cpaaob/kouninkaikeishi-shiken/r9shiken/r9schedule20260609.pdf"
+        }
+      ],
+      "sourceFile": "data/entries/cpa.json"
+    },
+    {
+      "key": "kangoshi",
+      "qualificationId": "kangoshi-kokka",
+      "candidates": 59614,
+      "candidatesPeriod": "2025年度・第115回",
+      "candidatesScope": "1回分・全受験者（新卒限定ではない）",
+      "dates": [
+        {
+          "date": "2026-02-15",
+          "sourceUrl": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/kangoshi/"
+        },
+        {
+          "date": "2027-02-14",
+          "sourceUrl": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/kangoshi/"
+        }
+      ],
+      "sourceFile": "data/entries/kangoshi-kokka.json",
+      "name": "看護師",
+      "candidatesPeriodEnd": "2026-02-15",
+      "candidatesSourceUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken03_04_05/about.html",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "kankoji1",
+      "qualificationId": "kankoji-sekou-1kyu",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-09-06",
+          "sourceUrl": "https://www.jctc.jp/exam/kankouji-1/"
+        }
+      ],
+      "sourceFile": "data/entries/kankoji-sekou-1kyu.json"
+    },
+    {
+      "key": "kankoji2",
+      "qualificationId": "kankoji-sekou-2kyu",
+      "candidates": null,
+      "candidatesPeriod": "2026",
+      "dates": [
+        {
+          "date": "2026-06-07",
+          "sourceUrl": "https://www.jctc.jp/exam/kankouji-2/"
+        }
+      ],
+      "sourceFile": "data/entries/kankoji-sekou-2kyu.json"
+    },
+    {
+      "key": "kanri",
+      "qualificationId": "kanri-gyomu-shuninsha",
+      "candidates": 14435,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全受験者",
+      "dates": [
+        {
+          "date": "2026-12-06",
+          "sourceUrl": "https://www.kanrikyo.or.jp/kanri/shiken_r08/pdf/gaiyou.pdf"
+        }
+      ],
+      "sourceFile": "data/entries/kanri-gyomu-shuninsha.json",
+      "name": "管理業務主任者",
+      "candidatesPeriodEnd": "2025-12-07",
+      "candidatesSourceUrl": "https://www.kanrikyo.or.jp/kanri/shiken_r07/pdf/goukakugaiyou.pdf",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "kanri-eiyoshi",
+      "qualificationId": "registered-dietitian",
+      "candidates": null,
+      "candidatesPeriod": "2025年度(第40回)",
+      "dates": [
+        {
+          "date": "2027-02-28",
+          "sourceUrl": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/kanrieiyoushi/index.html"
+        }
+      ],
+      "sourceFile": "data/entries/registered-dietitian.json"
+    },
+    {
+      "key": "kanteishi",
+      "qualificationId": "fudosan-kanteishi",
+      "candidates": null,
+      "candidatesPeriod": "2025年度(令和7年度)論文式(最終)",
+      "dates": [
+        {
+          "date": "2027-05-16",
+          "sourceUrl": "https://www.mlit.go.jp/totikensangyo/kanteishi/content/002028397.pdf"
+        }
+      ],
+      "sourceFile": "data/entries/fudosan-kanteishi.json"
     },
     {
       "key": "kashikin",
@@ -155,13 +2162,1125 @@
       "sourceFile": "data/entries/kashikin.json"
     },
     {
+      "key": "keiryoshi",
+      "qualificationId": "guide-2026-3e4d1fa10d1e062a",
+      "candidates": null,
+      "candidatesPeriod": "2026年版掲載値",
+      "dates": [],
+      "sourceFile": "data/entries/guide-2026-3e4d1fa10d1e062a.json"
+    },
+    {
+      "key": "keiryoshi-nodo",
+      "qualificationId": "kankyo-keiryoshi-noudo",
+      "candidates": null,
+      "candidatesPeriod": "令和7年度(第76回、濃度関係)",
+      "dates": [
+        {
+          "date": "2026-12-13",
+          "sourceUrl": "https://www.meti.go.jp/information/license/data/c260619aj.html"
+        }
+      ],
+      "sourceFile": "data/entries/kankyo-keiryoshi-noudo.json"
+    },
+    {
+      "key": "keiryoshi-soon",
+      "qualificationId": "guide-2026-a22ae15a9c3463d6",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/guide-2026-a22ae15a9c3463d6.json"
+    },
+    {
+      "key": "kenchiku-setsubishi",
+      "qualificationId": "kenchiku-setsubishi",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-06-21",
+          "sourceUrl": "https://www.jaeic.or.jp/shiken/bmee/2025-schedule.html"
+        }
+      ],
+      "sourceFile": "data/entries/kenchiku-setsubishi.json"
+    },
+    {
+      "key": "kenchikushi1",
+      "qualificationId": "kenchikushi-1kyu",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-07-26",
+          "sourceUrl": "https://www.jaeic.or.jp/shiken/1k/1k-data.html"
+        }
+      ],
+      "sourceFile": "data/entries/kenchikushi-1kyu.json"
+    },
+    {
+      "key": "kenchikushi2",
+      "qualificationId": "kenchikushi-2kyu",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-07-05",
+          "sourceUrl": "https://www.jaeic.or.jp/shiken/2k/2k-data.html"
+        }
+      ],
+      "sourceFile": "data/entries/kenchikushi-2kyu.json"
+    },
+    {
+      "key": "kenki1",
+      "qualificationId": "kikai-sekou-1kyu",
+      "candidates": null,
+      "candidatesPeriod": "2025年度第一次検定",
+      "dates": [
+        {
+          "date": "2026-06-21",
+          "sourceUrl": "https://jcmanet-shiken.jp/gijutsu-kentei-juken/"
+        }
+      ],
+      "sourceFile": "data/entries/kikai-sekou-1kyu.json"
+    },
+    {
+      "key": "kenki2",
+      "qualificationId": "kikai-sekou-2kyu",
+      "candidates": null,
+      "candidatesPeriod": "2025年度第一次検定",
+      "dates": [
+        {
+          "date": "2026-06-21",
+          "sourceUrl": "https://jcmanet-shiken.jp/gijutsu-kentei-juken/"
+        }
+      ],
+      "sourceFile": "data/entries/kikai-sekou-2kyu.json"
+    },
+    {
+      "key": "khk-kagaku-丙種化学（液石） 保安管理技術",
+      "qualificationId": "koatsugas-kagaku-hei",
+      "candidates": null,
+      "candidatesPeriod": "令和6年度",
+      "dates": [
+        {
+          "date": "2026-11-08",
+          "sourceUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2026/R8FY_exam_seizouhanbai_%20rev.pdf"
+        }
+      ],
+      "sourceFile": "data/entries/koatsugas-kagaku-hei.json"
+    },
+    {
+      "key": "khk-kagaku-丙種化学（液石） 学識",
+      "qualificationId": "koatsugas-kagaku-hei",
+      "candidates": null,
+      "candidatesPeriod": "令和6年度",
+      "dates": [
+        {
+          "date": "2026-11-08",
+          "sourceUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2026/R8FY_exam_seizouhanbai_%20rev.pdf"
+        }
+      ],
+      "sourceFile": "data/entries/koatsugas-kagaku-hei.json"
+    },
+    {
+      "key": "khk-kagaku-丙種化学（液石） 法令",
+      "qualificationId": "koatsugas-kagaku-hei",
+      "candidates": null,
+      "candidatesPeriod": "令和6年度",
+      "dates": [
+        {
+          "date": "2026-11-08",
+          "sourceUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2026/R8FY_exam_seizouhanbai_%20rev.pdf"
+        }
+      ],
+      "sourceFile": "data/entries/koatsugas-kagaku-hei.json"
+    },
+    {
+      "key": "khk-kagaku-乙種化学 保安管理技術",
+      "qualificationId": "koatsugas-kagaku-otsu",
+      "candidates": null,
+      "candidatesPeriod": "令和6年度",
+      "dates": [
+        {
+          "date": "2026-11-08",
+          "sourceUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2026/R8FY_exam_seizouhanbai_%20rev.pdf"
+        }
+      ],
+      "sourceFile": "data/entries/koatsugas-kagaku-otsu.json"
+    },
+    {
+      "key": "khk-kagaku-乙種化学 学識",
+      "qualificationId": "koatsugas-kagaku-otsu",
+      "candidates": null,
+      "candidatesPeriod": "令和6年度",
+      "dates": [
+        {
+          "date": "2026-11-08",
+          "sourceUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2026/R8FY_exam_seizouhanbai_%20rev.pdf"
+        }
+      ],
+      "sourceFile": "data/entries/koatsugas-kagaku-otsu.json"
+    },
+    {
+      "key": "khk-kagaku-乙種化学 法令",
+      "qualificationId": "koatsugas-kagaku-otsu",
+      "candidates": null,
+      "candidatesPeriod": "令和6年度",
+      "dates": [
+        {
+          "date": "2026-11-08",
+          "sourceUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2026/R8FY_exam_seizouhanbai_%20rev.pdf"
+        }
+      ],
+      "sourceFile": "data/entries/koatsugas-kagaku-otsu.json"
+    },
+    {
+      "key": "khk-kagaku-甲種化学 保安管理技術",
+      "qualificationId": "koatsugas-kagaku-kou",
+      "candidates": null,
+      "candidatesPeriod": "令和7年度",
+      "dates": [
+        {
+          "date": "2026-11-08",
+          "sourceUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2026/R8FY_exam_seizouhanbai_%20rev.pdf"
+        }
+      ],
+      "sourceFile": "data/entries/koatsugas-kagaku-kou.json"
+    },
+    {
+      "key": "khk-kagaku-甲種化学 学識",
+      "qualificationId": "koatsugas-kagaku-kou",
+      "candidates": null,
+      "candidatesPeriod": "令和7年度",
+      "dates": [
+        {
+          "date": "2026-11-08",
+          "sourceUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2026/R8FY_exam_seizouhanbai_%20rev.pdf"
+        }
+      ],
+      "sourceFile": "data/entries/koatsugas-kagaku-kou.json"
+    },
+    {
+      "key": "khk-kagaku-甲種化学 法令",
+      "qualificationId": "koatsugas-kagaku-kou",
+      "candidates": null,
+      "candidatesPeriod": "令和7年度",
+      "dates": [
+        {
+          "date": "2026-11-08",
+          "sourceUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2026/R8FY_exam_seizouhanbai_%20rev.pdf"
+        }
+      ],
+      "sourceFile": "data/entries/koatsugas-kagaku-kou.json"
+    },
+    {
+      "key": "khk-kikai-otsu",
+      "qualificationId": "kogasu-otsu-kikai",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-11-08",
+          "sourceUrl": "https://www.khk.or.jp/Portals/0/khk/exam/2026/R8FY_exam_seizouhanbai_%20rev.pdf"
+        }
+      ],
+      "sourceFile": "data/entries/kogasu-otsu-kikai.json"
+    },
+    {
+      "key": "kikai-hozen",
+      "qualificationId": "kikai-hozen-2kyu",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2026-12-13",
+          "sourceUrl": "https://www.kikaihozenshi.jp/pdf/2026_vol2_annai.pdf"
+        }
+      ],
+      "sourceFile": "data/entries/kikai-hozen-2kyu.json"
+    },
+    {
+      "key": "kikenbutsu-hei",
+      "qualificationId": "kikenbutsu-hei",
+      "name": "危険物取扱者 丙種",
+      "candidates": 19969,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesScope": "年度計・全国・当該種別の受験者",
+      "candidatesSourceUrl": "https://www.shoubo-shiken.or.jp/result/r07/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "dates": [
+        {
+          "date": "2026-05-24",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-06-20",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-07-10",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-08-01",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-10-18",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-11-21",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2027-01-31",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2027-02-27",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        }
+      ]
+    },
+    {
+      "key": "kikenbutsu-kou",
+      "qualificationId": "kikenbutsu-kou",
+      "name": "危険物取扱者 甲種",
+      "candidates": 20296,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesScope": "年度計・全国・当該種別の受験者",
+      "candidatesSourceUrl": "https://www.shoubo-shiken.or.jp/result/r07/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "dates": [
+        {
+          "date": "2026-05-17",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-07-05",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-09-05",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-11-28",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2027-02-07",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        }
+      ]
+    },
+    {
+      "key": "kikenbutsu-otsu1",
+      "qualificationId": "kikenbutsu-otsu1",
+      "candidates": 7931,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全国・当該種別の受験者",
+      "dates": [
+        {
+          "date": "2026-05-24",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-06-20",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-08-01",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-10-18",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-11-21",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2027-01-31",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2027-02-27",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        }
+      ],
+      "sourceFile": "data/entries/kikenbutsu-otsu1.json",
+      "name": "危険物取扱者 乙種第1類",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.shoubo-shiken.or.jp/result/r07/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "kikenbutsu-otsu2",
+      "qualificationId": "kikenbutsu-otsu2",
+      "name": "危険物取扱者 乙種第2類",
+      "candidates": 8840,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesScope": "年度計・全国・当該種別の受験者",
+      "candidatesSourceUrl": "https://www.shoubo-shiken.or.jp/result/r07/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "dates": [
+        {
+          "date": "2026-05-24",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-06-20",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-08-01",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-10-18",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-11-21",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2027-01-31",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2027-02-27",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        }
+      ]
+    },
+    {
+      "key": "kikenbutsu-otsu4",
+      "qualificationId": "kikenbutsu-otsu4",
+      "name": "危険物取扱者 乙種第4類",
+      "candidates": 222545,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesScope": "年度計・全国・当該種別の受験者",
+      "candidatesSourceUrl": "https://www.shoubo-shiken.or.jp/result/r07/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "dates": [
+        {
+          "date": "2026-04-04",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-04-11",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-04-26",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-05-03",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-05-10",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-05-16",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-05-23",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-05-30",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-06-07",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-06-21",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-06-28",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-07-04",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-07-11",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-07-20",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-08-08",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-08-15",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-08-29",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-09-06",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-09-20",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-09-27",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-10-03",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-10-10",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-10-17",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-10-25",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-11-03",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-11-23",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-11-29",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-12-08",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-12-13",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-12-20",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2027-01-09",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2027-01-17",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2027-01-24",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2027-01-30",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2027-02-04",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2027-02-21",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2027-03-06",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2027-03-14",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2027-03-20",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        }
+      ]
+    },
+    {
+      "key": "kikenbutsu-otsu6",
+      "qualificationId": "kikenbutsu-otsu6",
+      "name": "危険物取扱者 乙種第6類",
+      "candidates": 10402,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesScope": "年度計・全国・当該種別の受験者",
+      "candidatesSourceUrl": "https://www.shoubo-shiken.or.jp/result/r07/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "dates": [
+        {
+          "date": "2026-05-24",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-06-20",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-08-01",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-10-18",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2026-11-21",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2027-01-31",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        },
+        {
+          "date": "2027-02-27",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=1"
+        }
+      ]
+    },
+    {
+      "key": "kisho",
+      "qualificationId": "kishoyoho",
+      "candidates": null,
+      "candidatesPeriod": "2026(第65回)",
+      "dates": [
+        {
+          "date": "2026-08-23",
+          "sourceUrl": "https://www.jmbsc.or.jp/jp/examination/examination-2.html"
+        },
+        {
+          "date": "2027-01-31",
+          "sourceUrl": "https://www.jmbsc.or.jp/jp/examination/examination-3.html"
+        }
+      ],
+      "sourceFile": "data/entries/kishoyoho.json"
+    },
+    {
+      "key": "koku-toku",
+      "qualificationId": "guide-2026-0690f982ea63ecdf",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/guide-2026-0690f982ea63ecdf.json"
+    },
+    {
+      "key": "kukaku-seiri",
+      "qualificationId": "guide-2026-5688b3b23c42fb14",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/guide-2026-5688b3b23c42fb14.json"
+    },
+    {
+      "key": "kyusui",
+      "qualificationId": "guide-2026-66893d577ec79a5f",
+      "candidates": null,
+      "candidatesPeriod": "2026年版掲載値",
+      "dates": [],
+      "sourceFile": "data/entries/guide-2026-66893d577ec79a5f.json"
+    },
+    {
+      "key": "land-special1",
+      "qualificationId": "land-special-radio-operator-1",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2026-10-16",
+          "sourceUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/toku.pdf"
+        }
+      ],
+      "sourceFile": "data/entries/land-special-radio-operator-1.json"
+    },
+    {
+      "key": "land-special2",
+      "qualificationId": "land-special-radio-operator-2",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/land-special-radio-operator-2.json"
+    },
+    {
+      "key": "land-special3",
+      "qualificationId": "land-special-radio-operator-3",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/land-special-radio-operator-3.json"
+    },
+    {
+      "key": "lckohyo-エックス線作業主任者",
+      "qualificationId": "x-ray-work-supervisor",
+      "candidates": 6064,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全国・学科",
+      "dates": [
+        {
+          "date": "2026-05-19",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei701",
+          "note": "関東"
+        },
+        {
+          "date": "2026-07-08",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei701",
+          "note": "関東"
+        },
+        {
+          "date": "2026-09-15",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei701",
+          "note": "関東"
+        },
+        {
+          "date": "2026-11-20",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei701",
+          "note": "関東"
+        },
+        {
+          "date": "2027-01-19",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei701",
+          "note": "関東"
+        },
+        {
+          "date": "2027-03-03",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei701",
+          "note": "関東"
+        }
+      ],
+      "sourceFile": "data/entries/x-ray-work-supervisor.json",
+      "name": "エックス線作業主任者",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.exam.or.jp/h_gokakuritsu/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://www.exam.or.jp/schedule/h_nittei701",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "lckohyo-ガス溶接作業主任者",
+      "qualificationId": "gas-welding-work-supervisor",
+      "candidates": 1021,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全国・学科",
+      "dates": [
+        {
+          "date": "2026-12-03",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei302",
+          "note": "関東"
+        }
+      ],
+      "sourceFile": "data/entries/gas-welding-work-supervisor.json",
+      "name": "ガス溶接作業主任者",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.exam.or.jp/h_gokakuritsu/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://www.exam.or.jp/schedule/h_nittei302",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "lckohyo-ガンマ線透過写真撮影作業主任者",
+      "qualificationId": "gamma-ray-radiography-work-supervisor",
+      "candidates": 337,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全国・学科",
+      "dates": [
+        {
+          "date": "2026-05-13",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei710",
+          "note": "関東"
+        }
+      ],
+      "sourceFile": "data/entries/gamma-ray-radiography-work-supervisor.json",
+      "name": "ガンマ線透過写真撮影作業主任者",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.exam.or.jp/h_gokakuritsu/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://www.exam.or.jp/schedule/h_nittei710",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "lckohyo-クレーン・デリック運転士〔クレーン限定〕",
+      "qualificationId": "crane-derrick-crane-limited",
+      "candidates": 17550,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全国・学科",
+      "dates": [
+        {
+          "date": "2026-04-16",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei206",
+          "note": "関東"
+        },
+        {
+          "date": "2026-05-15",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei206",
+          "note": "関東"
+        },
+        {
+          "date": "2026-05-27",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei206",
+          "note": "関東"
+        },
+        {
+          "date": "2026-06-17",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei206",
+          "note": "関東"
+        },
+        {
+          "date": "2026-07-01",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei206",
+          "note": "関東"
+        },
+        {
+          "date": "2026-07-23",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei206",
+          "note": "関東"
+        },
+        {
+          "date": "2026-08-12",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei206",
+          "note": "関東"
+        },
+        {
+          "date": "2026-09-09",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei206",
+          "note": "関東"
+        },
+        {
+          "date": "2026-10-07",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei206",
+          "note": "関東"
+        },
+        {
+          "date": "2026-11-06",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei206",
+          "note": "関東"
+        },
+        {
+          "date": "2026-12-02",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei206",
+          "note": "関東"
+        },
+        {
+          "date": "2027-01-20",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei206",
+          "note": "関東"
+        },
+        {
+          "date": "2027-02-26",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei206",
+          "note": "関東"
+        },
+        {
+          "date": "2027-03-04",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei206",
+          "note": "関東"
+        }
+      ],
+      "sourceFile": "data/entries/crane-derrick-crane-limited.json",
+      "name": "クレーン・デリック運転士〔クレーン限定〕",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.exam.or.jp/h_gokakuritsu/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://www.exam.or.jp/schedule/h_nittei206",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "lckohyo-クレーン・デリック運転士〔床上限定〕",
+      "qualificationId": "lckohyo-クレーン・デリック運転士〔床上限定〕",
+      "name": "クレーン・デリック運転士〔床上限定〕",
+      "candidates": 79,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesScope": "年度計・全国・学科",
+      "candidatesSourceUrl": "https://www.exam.or.jp/h_gokakuritsu/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://www.exam.or.jp/schedule/h_nittei241",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "dates": [
+        {
+          "date": "2026-04-16",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei241",
+          "note": "関東"
+        },
+        {
+          "date": "2026-07-23",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei241",
+          "note": "関東"
+        },
+        {
+          "date": "2026-10-07",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei241",
+          "note": "関東"
+        }
+      ]
+    },
+    {
+      "key": "lckohyo-ボイラー整備士",
+      "qualificationId": "boiler-seibishi",
+      "candidates": 2730,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全国・学科",
+      "dates": [
+        {
+          "date": "2026-06-10",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei151",
+          "note": "関東"
+        },
+        {
+          "date": "2026-10-02",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei151",
+          "note": "関東"
+        },
+        {
+          "date": "2027-02-15",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei151",
+          "note": "関東"
+        }
+      ],
+      "sourceFile": "data/entries/boiler-seibishi.json",
+      "name": "ボイラー整備士",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.exam.or.jp/h_gokakuritsu/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://www.exam.or.jp/schedule/h_nittei151",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "lckohyo-一級ボイラー技士",
+      "qualificationId": "boiler-1kyu",
+      "candidates": 4372,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全国・学科",
+      "dates": [
+        {
+          "date": "2026-06-04",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei112",
+          "note": "関東"
+        },
+        {
+          "date": "2026-09-03",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei112",
+          "note": "関東"
+        },
+        {
+          "date": "2026-11-18",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei112",
+          "note": "関東"
+        },
+        {
+          "date": "2027-01-21",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei112",
+          "note": "関東"
+        },
+        {
+          "date": "2027-03-12",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei112",
+          "note": "関東"
+        }
+      ],
+      "sourceFile": "data/entries/boiler-1kyu.json",
+      "name": "一級ボイラー技士",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.exam.or.jp/h_gokakuritsu/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://www.exam.or.jp/schedule/h_nittei112",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "lckohyo-揚貨装置運転士",
+      "qualificationId": "cargo-lifting-appliance-operator",
+      "candidates": 557,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全国・学科",
+      "dates": [
+        {
+          "date": "2026-04-10",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei212",
+          "note": "関東"
+        },
+        {
+          "date": "2026-10-01",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei212",
+          "note": "関東"
+        }
+      ],
+      "sourceFile": "data/entries/cargo-lifting-appliance-operator.json",
+      "name": "揚貨装置運転士",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.exam.or.jp/h_gokakuritsu/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://www.exam.or.jp/schedule/h_nittei212",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "lckohyo-普通ボイラー溶接士",
+      "qualificationId": "guide-2026-10b384ea45c8ea54",
+      "candidates": 753,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全国・学科",
+      "dates": [
+        {
+          "date": "2026-08-25",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei142",
+          "note": "関東"
+        },
+        {
+          "date": "2027-01-22",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei142",
+          "note": "関東"
+        }
+      ],
+      "sourceFile": "data/entries/guide-2026-10b384ea45c8ea54.json",
+      "name": "普通ボイラー溶接士",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.exam.or.jp/h_gokakuritsu/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://www.exam.or.jp/schedule/h_nittei142",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "lckohyo-林業架線作業主任者",
+      "qualificationId": "forestry-cable-work-supervisor",
+      "candidates": 116,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全国・学科",
+      "dates": [
+        {
+          "date": "2026-12-03",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei314",
+          "note": "関東"
+        }
+      ],
+      "sourceFile": "data/entries/forestry-cable-work-supervisor.json",
+      "name": "林業架線作業主任者",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.exam.or.jp/h_gokakuritsu/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://www.exam.or.jp/schedule/h_nittei314",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
       "key": "lckohyo-潜水士",
       "qualificationId": "sensuishi",
       "candidates": 6891,
       "candidatesSourceUrl": "https://www.exam.or.jp/h_gokakuritsu/",
-      "candidatesSourceFile": "data/entries/sensuishi.json",
-      "candidatesPeriod": "2025年度(令和7年度)",
-      "candidatesScope": "年度計・学科",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全国・学科",
       "dates": [
         {
           "date": "2026-04-23",
@@ -194,16 +3313,88 @@
           "note": "関東"
         }
       ],
-      "sourceFile": "data/entries/sensuishi.json"
+      "sourceFile": "data/entries/sensuishi.json",
+      "name": "潜水士",
+      "candidatesPeriodEnd": "2026-03-31",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://www.exam.or.jp/schedule/h_nittei611"
+    },
+    {
+      "key": "lckohyo-特別ボイラー溶接士",
+      "qualificationId": "guide-2026-10b384ea45c8ea54",
+      "candidates": 154,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全国・学科",
+      "dates": [
+        {
+          "date": "2026-08-25",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei132",
+          "note": "関東"
+        },
+        {
+          "date": "2027-01-22",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei132",
+          "note": "関東"
+        }
+      ],
+      "sourceFile": "data/entries/guide-2026-10b384ea45c8ea54.json",
+      "name": "特別ボイラー溶接士",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.exam.or.jp/h_gokakuritsu/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://www.exam.or.jp/schedule/h_nittei132",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "lckohyo-特級ボイラー技士",
+      "qualificationId": "boiler-tokkyu",
+      "candidates": 377,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全国・学科",
+      "dates": [
+        {
+          "date": "2026-10-26",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei102",
+          "note": "関東"
+        }
+      ],
+      "sourceFile": "data/entries/boiler-tokkyu.json",
+      "name": "特級ボイラー技士",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.exam.or.jp/h_gokakuritsu/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://www.exam.or.jp/schedule/h_nittei102",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "lckohyo-発破技士",
+      "qualificationId": "blasting-technician",
+      "candidates": 357,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全国・学科",
+      "dates": [
+        {
+          "date": "2026-06-05",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei341",
+          "note": "関東"
+        }
+      ],
+      "sourceFile": "data/entries/blasting-technician.json",
+      "name": "発破技士",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.exam.or.jp/h_gokakuritsu/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://www.exam.or.jp/schedule/h_nittei341",
+      "candidatesSourceFile": "lib/home/featured-official.json"
     },
     {
       "key": "lckohyo-移動式クレーン運転士",
       "qualificationId": "idoshiki-crane-untenshi",
       "candidates": 4861,
       "candidatesSourceUrl": "https://www.exam.or.jp/h_gokakuritsu/",
-      "candidatesSourceFile": "data/entries/idoshiki-crane-untenshi.json",
-      "candidatesPeriod": "学科×実技の概算(令和7年度)",
-      "candidatesScope": "年度計・学科",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全国・学科",
       "dates": [
         {
           "date": "2026-05-21",
@@ -236,39 +3427,1302 @@
           "note": "関東"
         }
       ],
-      "sourceFile": "data/entries/idoshiki-crane-untenshi.json"
+      "sourceFile": "data/entries/idoshiki-crane-untenshi.json",
+      "name": "移動式クレーン運転士",
+      "candidatesPeriodEnd": "2026-03-31",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://www.exam.or.jp/schedule/h_nittei232"
+    },
+    {
+      "key": "lckohyo-高圧室内作業主任者",
+      "qualificationId": "kouatsu-shitsunai-shuninsha",
+      "candidates": 56,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全国・学科",
+      "dates": [
+        {
+          "date": "2026-05-13",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei601",
+          "note": "関東"
+        }
+      ],
+      "sourceFile": "data/entries/kouatsu-shitsunai-shuninsha.json",
+      "name": "高圧室内作業主任者",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.exam.or.jp/h_gokakuritsu/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://www.exam.or.jp/schedule/h_nittei601",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "mankan",
+      "qualificationId": "mansion-kanrishi",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-11-29",
+          "sourceUrl": "https://www.mankan.org/pdf/shikennonagare.pdf"
+        }
+      ],
+      "sourceFile": "data/entries/mansion-kanrishi.json"
+    },
+    {
+      "key": "maritime-radar",
+      "qualificationId": "guide-2026-f0c4cb4ac642c68f",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/guide-2026-f0c4cb4ac642c68f.json"
+    },
+    {
+      "key": "maritime-special1",
+      "qualificationId": "guide-2026-f0c4cb4ac642c68f",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/guide-2026-f0c4cb4ac642c68f.json"
+    },
+    {
+      "key": "maritime1",
+      "qualificationId": "radio-kaijo-1",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/radio-kaijo-1.json"
+    },
+    {
+      "key": "maritime2",
+      "qualificationId": "radio-kaijo-2",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/radio-kaijo-2.json"
+    },
+    {
+      "key": "maritime3",
+      "qualificationId": "radio-kaijo-3",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/radio-kaijo-3.json"
+    },
+    {
+      "key": "maritime4",
+      "qualificationId": "radio-kaijo-4",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/radio-kaijo-4.json"
+    },
+    {
+      "key": "mokuzo-kenchikushi",
+      "qualificationId": "kenchikushi-mokuzo",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-07-26",
+          "sourceUrl": "https://www.jaeic.or.jp/.assets/shikennittei-2kmk-2026.pdf"
+        }
+      ],
+      "sourceFile": "data/entries/kenchikushi-mokuzo.json"
+    },
+    {
+      "key": "ni-kyu-boiler-gishi",
+      "qualificationId": "boiler-2kyu",
+      "candidates": 21349,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全国・学科",
+      "dates": [
+        {
+          "date": "2026-04-09",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei122",
+          "note": "関東"
+        },
+        {
+          "date": "2026-05-26",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei122",
+          "note": "関東"
+        },
+        {
+          "date": "2026-06-11",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei122",
+          "note": "関東"
+        },
+        {
+          "date": "2026-07-09",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei122",
+          "note": "関東"
+        },
+        {
+          "date": "2026-07-21",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei122",
+          "note": "関東"
+        },
+        {
+          "date": "2026-08-05",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei122",
+          "note": "関東"
+        },
+        {
+          "date": "2026-09-28",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei122",
+          "note": "関東"
+        },
+        {
+          "date": "2026-10-14",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei122",
+          "note": "関東"
+        },
+        {
+          "date": "2026-11-11",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei122",
+          "note": "関東"
+        },
+        {
+          "date": "2026-12-09",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei122",
+          "note": "関東"
+        },
+        {
+          "date": "2027-01-12",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei122",
+          "note": "関東"
+        },
+        {
+          "date": "2027-02-02",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei122",
+          "note": "関東"
+        },
+        {
+          "date": "2027-02-25",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei122",
+          "note": "関東"
+        },
+        {
+          "date": "2027-03-05",
+          "sourceUrl": "https://www.exam.or.jp/schedule/h_nittei122",
+          "note": "関東"
+        }
+      ],
+      "sourceFile": "data/entries/boiler-2kyu.json",
+      "name": "二級ボイラー技士",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.exam.or.jp/h_gokakuritsu/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://www.exam.or.jp/schedule/h_nittei122",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "nw",
+      "qualificationId": "nw",
+      "candidates": 11948,
+      "candidatesPeriod": "2025年度春期",
+      "candidatesScope": "1回分・受験者",
+      "dates": [
+        {
+          "date": "2026-11-11",
+          "endDate": "2026-11-23",
+          "note": "科目B",
+          "sourceUrl": "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html"
+        }
+      ],
+      "sourceFile": "data/entries/nw.json",
+      "name": "ネットワークスペシャリスト",
+      "candidatesPeriodEnd": "2025-04-20",
+      "candidatesSourceUrl": "https://www.ipa.go.jp/shiken/reports/hjuojm000000ll0f-att/suii_hyo.pdf",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "pe-first-技術士第一次・上下水道",
+      "qualificationId": "gijutsushi-first",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2026-11-22",
+          "sourceUrl": "https://www.engineer.or.jp/c_topics/011/011423.html"
+        }
+      ],
+      "sourceFile": "data/entries/gijutsushi-first.json"
+    },
+    {
+      "key": "pe-first-技術士第一次・化学",
+      "qualificationId": "gijutsushi-first",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2026-11-22",
+          "sourceUrl": "https://www.engineer.or.jp/c_topics/011/011423.html"
+        }
+      ],
+      "sourceFile": "data/entries/gijutsushi-first.json"
+    },
+    {
+      "key": "pe-first-技術士第一次・原子力・放射線",
+      "qualificationId": "gijutsushi-first",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2026-11-22",
+          "sourceUrl": "https://www.engineer.or.jp/c_topics/011/011423.html"
+        }
+      ],
+      "sourceFile": "data/entries/gijutsushi-first.json"
+    },
+    {
+      "key": "pe-first-技術士第一次・応用理学",
+      "qualificationId": "gijutsushi-first",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2026-11-22",
+          "sourceUrl": "https://www.engineer.or.jp/c_topics/011/011423.html"
+        }
+      ],
+      "sourceFile": "data/entries/gijutsushi-first.json"
+    },
+    {
+      "key": "pe-first-技術士第一次・情報工学",
+      "qualificationId": "gijutsushi-first",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2026-11-22",
+          "sourceUrl": "https://www.engineer.or.jp/c_topics/011/011423.html"
+        }
+      ],
+      "sourceFile": "data/entries/gijutsushi-first.json"
+    },
+    {
+      "key": "pe-first-技術士第一次・森林",
+      "qualificationId": "gijutsushi-first",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2026-11-22",
+          "sourceUrl": "https://www.engineer.or.jp/c_topics/011/011423.html"
+        }
+      ],
+      "sourceFile": "data/entries/gijutsushi-first.json"
+    },
+    {
+      "key": "pe-first-技術士第一次・水産",
+      "qualificationId": "gijutsushi-first",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2026-11-22",
+          "sourceUrl": "https://www.engineer.or.jp/c_topics/011/011423.html"
+        }
+      ],
+      "sourceFile": "data/entries/gijutsushi-first.json"
+    },
+    {
+      "key": "pe-first-技術士第一次・環境",
+      "qualificationId": "gijutsushi-first",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2026-11-22",
+          "sourceUrl": "https://www.engineer.or.jp/c_topics/011/011423.html"
+        }
+      ],
+      "sourceFile": "data/entries/gijutsushi-first.json"
+    },
+    {
+      "key": "pe-first-技術士第一次・生物工学",
+      "qualificationId": "gijutsushi-first",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2026-11-22",
+          "sourceUrl": "https://www.engineer.or.jp/c_topics/011/011423.html"
+        }
+      ],
+      "sourceFile": "data/entries/gijutsushi-first.json"
+    },
+    {
+      "key": "pe-first-技術士第一次・経営工学",
+      "qualificationId": "gijutsushi-first",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2026-11-22",
+          "sourceUrl": "https://www.engineer.or.jp/c_topics/011/011423.html"
+        }
+      ],
+      "sourceFile": "data/entries/gijutsushi-first.json"
+    },
+    {
+      "key": "pe-first-技術士第一次・繊維",
+      "qualificationId": "gijutsushi-first",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2026-11-22",
+          "sourceUrl": "https://www.engineer.or.jp/c_topics/011/011423.html"
+        }
+      ],
+      "sourceFile": "data/entries/gijutsushi-first.json"
+    },
+    {
+      "key": "pe-first-技術士第一次・航空・宇宙",
+      "qualificationId": "gijutsushi-first",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2026-11-22",
+          "sourceUrl": "https://www.engineer.or.jp/c_topics/011/011423.html"
+        }
+      ],
+      "sourceFile": "data/entries/gijutsushi-first.json"
+    },
+    {
+      "key": "pe-first-技術士第一次・船舶・海洋",
+      "qualificationId": "gijutsushi-first",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2026-11-22",
+          "sourceUrl": "https://www.engineer.or.jp/c_topics/011/011423.html"
+        }
+      ],
+      "sourceFile": "data/entries/gijutsushi-first.json"
+    },
+    {
+      "key": "pe-first-技術士第一次・衛生工学",
+      "qualificationId": "gijutsushi-first",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2026-11-22",
+          "sourceUrl": "https://www.engineer.or.jp/c_topics/011/011423.html"
+        }
+      ],
+      "sourceFile": "data/entries/gijutsushi-first.json"
+    },
+    {
+      "key": "pe-first-技術士第一次・資源工学",
+      "qualificationId": "gijutsushi-first",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2026-11-22",
+          "sourceUrl": "https://www.engineer.or.jp/c_topics/011/011423.html"
+        }
+      ],
+      "sourceFile": "data/entries/gijutsushi-first.json"
+    },
+    {
+      "key": "pe-first-技術士第一次・農業",
+      "qualificationId": "gijutsushi-first",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2026-11-22",
+          "sourceUrl": "https://www.engineer.or.jp/c_topics/011/011423.html"
+        }
+      ],
+      "sourceFile": "data/entries/gijutsushi-first.json"
+    },
+    {
+      "key": "pe-first-技術士第一次・金属",
+      "qualificationId": "gijutsushi-first",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2026-11-22",
+          "sourceUrl": "https://www.engineer.or.jp/c_topics/011/011423.html"
+        }
+      ],
+      "sourceFile": "data/entries/gijutsushi-first.json"
+    },
+    {
+      "key": "pe-first-技術士第一次・電気電子",
+      "qualificationId": "gijutsushi-first",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2026-11-22",
+          "sourceUrl": "https://www.engineer.or.jp/c_topics/011/011423.html"
+        }
+      ],
+      "sourceFile": "data/entries/gijutsushi-first.json"
+    },
+    {
+      "key": "pm",
+      "qualificationId": "pm",
+      "candidates": 8511,
+      "candidatesPeriod": "2025年度秋期",
+      "candidatesScope": "1回分・受験者",
+      "dates": [
+        {
+          "date": "2027-02-20",
+          "endDate": "2027-03-02",
+          "note": "科目A",
+          "sourceUrl": "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html"
+        },
+        {
+          "date": "2027-03-16",
+          "endDate": "2027-03-28",
+          "note": "科目B",
+          "sourceUrl": "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html"
+        }
+      ],
+      "sourceFile": "data/entries/pm.json",
+      "name": "プロジェクトマネージャ",
+      "candidatesPeriodEnd": "2025-10-12",
+      "candidatesSourceUrl": "https://www.ipa.go.jp/shiken/reports/hjuojm000000ll0f-att/suii_hyo.pdf",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "reform-mgr",
+      "qualificationId": "guide-2026-9fdcb0703293f143",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/guide-2026-9fdcb0703293f143.json"
+    },
+    {
+      "key": "rigaku-ryohoshi",
+      "qualificationId": "rigaku-ryohoshi",
+      "candidates": null,
+      "candidatesPeriod": "令和7年度(第61回)",
+      "dates": [],
+      "sourceFile": "data/entries/rigaku-ryohoshi.json"
+    },
+    {
+      "key": "riku-tech1",
+      "qualificationId": "radio-riku-1",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/radio-riku-1.json"
+    },
+    {
+      "key": "riku-tech2",
+      "qualificationId": "radio-riku-2",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/radio-riku-2.json"
+    },
+    {
+      "key": "riku-toku-kokunai",
+      "qualificationId": "land-special-radio-operator-domestic-telegraph",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2026-10-15",
+          "sourceUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/toku.pdf"
+        }
+      ],
+      "sourceFile": "data/entries/land-special-radio-operator-domestic-telegraph.json"
+    },
+    {
+      "key": "rinsho-kensagishi",
+      "qualificationId": "rinsho-kensagishi",
+      "candidates": null,
+      "candidatesPeriod": "2026年（第72回）",
+      "dates": [
+        {
+          "date": "2026-02-18",
+          "sourceUrl": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/rinshoukensagishi/"
+        },
+        {
+          "date": "2027-02-17",
+          "sourceUrl": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/rinshoukensagishi/"
+        }
+      ],
+      "sourceFile": "data/entries/rinsho-kensagishi.json"
+    },
+    {
+      "key": "rinsho-kogishi",
+      "qualificationId": "clinical-engineer",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2027-03-07",
+          "sourceUrl": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/rinshoukougakugishi/"
+        }
+      ],
+      "sourceFile": "data/entries/clinical-engineer.json"
     },
     {
       "key": "riyoshi",
       "qualificationId": "riyoushi",
-      "candidates": 1431,
+      "candidates": 801,
       "candidatesSourceUrl": "https://www.rbc.or.jp/exam/about_result/",
-      "candidatesSourceFile": "data/entries/riyoushi.json",
-      "candidatesPeriod": "第53回(令和7年度・2026年3月実施)",
-      "candidatesScope": "第53回・全受験者",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "candidatesPeriod": "2026年度・第54回",
+      "candidatesScope": "1回分・全受験者",
       "dates": [
         {
           "date": "2027-03-07",
           "sourceUrl": "https://www.rbc.or.jp/wp-content/uploads/2026/10/第55回理容師国家試験受験案内.pdf"
         }
       ],
-      "sourceFile": "data/entries/riyoushi.json"
+      "sourceFile": "data/entries/riyoushi.json",
+      "name": "理容師",
+      "candidatesPeriodEnd": "2026-09-06",
+      "checkedAt": "2026-11-13"
+    },
+    {
+      "key": "rodo-anzen-consultant",
+      "qualificationId": "rodo-anzen-consultant",
+      "candidates": 1584,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・筆記",
+      "dates": [],
+      "sourceFile": "data/entries/rodo-anzen-consultant.json",
+      "name": "労働安全コンサルタント",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.exam.or.jp/h_gokakuritsu/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://www.exam.or.jp/schedule/h_nitteiconsul",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "rodo-eisei-consultant",
+      "qualificationId": "rodo-eisei-consultant",
+      "candidates": 943,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・筆記",
+      "dates": [],
+      "sourceFile": "data/entries/rodo-eisei-consultant.json",
+      "name": "労働衛生コンサルタント",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.exam.or.jp/h_gokakuritsu/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://www.exam.or.jp/schedule/h_nitteiconsul",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "sa",
+      "qualificationId": "sa",
+      "candidates": 3963,
+      "candidatesPeriod": "2025年度春期",
+      "candidatesScope": "1回分・受験者",
+      "dates": [
+        {
+          "date": "2026-11-11",
+          "endDate": "2026-11-23",
+          "note": "科目B",
+          "sourceUrl": "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html"
+        }
+      ],
+      "sourceFile": "data/entries/sa.json",
+      "name": "システムアーキテクト",
+      "candidatesPeriodEnd": "2025-04-20",
+      "candidatesSourceUrl": "https://www.ipa.go.jp/shiken/reports/hjuojm000000ll0f-att/suii_hyo.pdf",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "sagyo-kankyo-sokuteishi",
+      "qualificationId": "work-environment-measurement-expert-first",
+      "candidates": 2785,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・第一種953人＋第二種1,832人（公式の計欄）",
+      "dates": [],
+      "sourceFile": "data/entries/work-environment-measurement-expert-first.json",
+      "name": "作業環境測定士",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.exam.or.jp/h_gokakuritsu/",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "sagyo-ryohoshi",
+      "qualificationId": "sagyo-ryohoshi",
+      "candidates": null,
+      "candidatesPeriod": "令和7年度(第61回)",
+      "dates": [],
+      "sourceFile": "data/entries/sagyo-ryohoshi.json"
+    },
+    {
+      "key": "sc",
+      "qualificationId": "sc",
+      "candidates": 35342,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・受験者",
+      "dates": [
+        {
+          "date": "2026-11-11",
+          "endDate": "2026-11-23",
+          "note": "科目B",
+          "sourceUrl": "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html"
+        },
+        {
+          "date": "2027-02-20",
+          "endDate": "2027-03-02",
+          "note": "科目A",
+          "sourceUrl": "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html"
+        },
+        {
+          "date": "2027-03-16",
+          "endDate": "2027-03-28",
+          "note": "科目B",
+          "sourceUrl": "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html"
+        }
+      ],
+      "sourceFile": "data/entries/sc.json",
+      "name": "情報処理安全確保支援士",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.ipa.go.jp/shiken/reports/hjuojm000000ll0f-att/suii_hyo.pdf",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "seishin",
+      "qualificationId": "seishin-hoken-fukushishi",
+      "candidates": null,
+      "candidatesPeriod": "第28回(令和7年度)",
+      "dates": [],
+      "sourceFile": "data/entries/seishin-hoken-fukushishi.json"
+    },
+    {
+      "key": "sekou-1kenchiku",
+      "qualificationId": "kenchiku-sekou-1kyu-ho",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-07-19",
+          "sourceUrl": "https://www.fcip-shiken.jp/ken1/"
+        }
+      ],
+      "sourceFile": "data/entries/kenchiku-sekou-1kyu-ho.json"
+    },
+    {
+      "key": "sekou-kenchiku2",
+      "qualificationId": "sekokan-kenchiku2",
+      "candidates": null,
+      "candidatesPeriod": "一次×二次の概算",
+      "dates": [
+        {
+          "date": "2026-11-08",
+          "sourceUrl": "https://www.fcip-shiken.jp/ken2/"
+        }
+      ],
+      "sourceFile": "data/entries/sekokan-kenchiku2.json"
+    },
+    {
+      "key": "sg",
+      "qualificationId": "sg",
+      "candidates": 45924,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・受験者",
+      "dates": [],
+      "sourceFile": "data/entries/sg.json",
+      "name": "情報セキュリティマネジメント",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.ipa.go.jp/shiken/reports/hjuojm000000ll0f-att/suii_hyo.pdf",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "scheduleMode": "ondemand",
+      "scheduleSourceUrl": "https://www.ipa.go.jp/shiken/2026/cbt-202701-yotei.html"
+    },
+    {
+      "key": "shakai",
+      "qualificationId": "social-worker",
+      "candidates": 25430,
+      "candidatesPeriod": "2025年度・第38回（2026年2月1日）",
+      "candidatesScope": "1回分・全受験者",
+      "dates": [
+        {
+          "date": "2027-02-07",
+          "sourceUrl": "https://www.sssc.or.jp/shakai/tetsuzuki.html"
+        }
+      ],
+      "sourceFile": "data/entries/social-worker.json",
+      "name": "社会福祉士",
+      "candidatesPeriodEnd": "2026-02-01",
+      "candidatesSourceUrl": "https://www.sssc.or.jp/shakai/past_exam/pdf/no38/s_happyou.pdf",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "sharoushi",
+      "qualificationId": "sharoushi",
+      "candidates": 42510,
+      "candidatesPeriod": "2026年度・第58回",
+      "candidatesScope": "年度計・全受験者",
+      "dates": [
+        {
+          "date": "2026-08-23",
+          "sourceUrl": "https://www.sharosi-siken.or.jp/"
+        }
+      ],
+      "sourceFile": "data/entries/sharoushi.json",
+      "name": "社会保険労務士",
+      "candidatesPeriodEnd": "2026-08-23",
+      "candidatesSourceUrl": "https://www.mhlw.go.jp/stf/newpage_76425.html",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "shiho-tanto",
+      "qualificationId": "shihou-shiken",
+      "candidates": null,
+      "candidatesPeriod": "2025年度・最終合格（1,581人／採点対象者3,815人）",
+      "dates": [
+        {
+          "date": "2026-07-15",
+          "endDate": "2026-07-19",
+          "sourceUrl": "https://www.moj.go.jp/jinji/shihoushiken/jinji08_00272.html"
+        }
+      ],
+      "sourceFile": "data/entries/shihou-shiken.json"
+    },
+    {
+      "key": "shihoshoshi",
+      "qualificationId": "shihoshoshi",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [],
+      "sourceFile": "data/entries/shihoshoshi.json"
+    },
+    {
+      "key": "shika-ishi",
+      "qualificationId": "guide-2026-89baef7227f18d4b",
+      "candidates": null,
+      "candidatesPeriod": "2026年版掲載値",
+      "dates": [],
+      "sourceFile": "data/entries/guide-2026-89baef7227f18d4b.json"
+    },
+    {
+      "key": "shino-kunrenshi",
+      "qualificationId": "guide-2026-b86b350b54ba1126",
+      "candidates": null,
+      "candidatesPeriod": "2026年版掲載値",
+      "dates": [
+        {
+          "date": "2027-02-18",
+          "sourceUrl": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/shinoukunrenshi/"
+        }
+      ],
+      "sourceFile": "data/entries/guide-2026-b86b350b54ba1126.json"
+    },
+    {
+      "key": "shinrishi",
+      "qualificationId": "koninshinrishi",
+      "candidates": null,
+      "candidatesPeriod": "令和7年度(第9回、2026-03-01実施)",
+      "dates": [
+        {
+          "date": "2027-03-07",
+          "sourceUrl": "https://www.jccpp.or.jp/shiken/shiken-04.html"
+        }
+      ],
+      "sourceFile": "data/entries/koninshinrishi.json"
+    },
+    {
+      "key": "shinryo-hoshasengishi",
+      "qualificationId": "shinryo-hoshasengishi",
+      "candidates": null,
+      "candidatesPeriod": "2026年（第78回）",
+      "dates": [
+        {
+          "date": "2026-02-19",
+          "sourceUrl": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/shinryouhoushasengishi/"
+        },
+        {
+          "date": "2027-02-18",
+          "sourceUrl": "https://www.mhlw.go.jp/kouseiroudoushou/shikaku_shiken/shinryouhoushasengishi/"
+        }
+      ],
+      "sourceFile": "data/entries/shinryo-hoshasengishi.json"
+    },
+    {
+      "key": "shobo-setsubishi-kou1",
+      "qualificationId": "shobo-setsubishi-kou1",
+      "name": "消防設備士 甲種第1類",
+      "candidates": 12934,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesScope": "年度計・全国・当該種別の受験者",
+      "candidatesSourceUrl": "https://www.shoubo-shiken.or.jp/result/r07/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "dates": [
+        {
+          "date": "2026-04-25",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        },
+        {
+          "date": "2026-06-13",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        },
+        {
+          "date": "2026-09-19",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        },
+        {
+          "date": "2026-11-15",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        },
+        {
+          "date": "2027-01-23",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        },
+        {
+          "date": "2027-03-13",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        }
+      ]
+    },
+    {
+      "key": "shobo-setsubishi-kou4",
+      "qualificationId": "shobo-setsubishi-kou4",
+      "name": "消防設備士 甲種第4類",
+      "candidates": 21819,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesScope": "年度計・全国・当該種別の受験者",
+      "candidatesSourceUrl": "https://www.shoubo-shiken.or.jp/result/r07/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "dates": [
+        {
+          "date": "2026-05-09",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        },
+        {
+          "date": "2026-06-27",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        },
+        {
+          "date": "2026-07-18",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        },
+        {
+          "date": "2026-08-09",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        },
+        {
+          "date": "2026-09-26",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        },
+        {
+          "date": "2026-10-31",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        },
+        {
+          "date": "2026-12-19",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        },
+        {
+          "date": "2027-01-11",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        },
+        {
+          "date": "2027-02-14",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        },
+        {
+          "date": "2027-03-22",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        }
+      ]
+    },
+    {
+      "key": "shobo-setsubishi-otsu6",
+      "qualificationId": "shobo-setsubishi-otsu6",
+      "name": "消防設備士 乙種第6類",
+      "candidates": 32400,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesScope": "年度計・全国・当該種別の受験者",
+      "candidatesSourceUrl": "https://www.shoubo-shiken.or.jp/result/r07/",
+      "checkedAt": "2026-11-13",
+      "datesSourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "dates": [
+        {
+          "date": "2026-05-02",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        },
+        {
+          "date": "2026-06-14",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        },
+        {
+          "date": "2026-08-16",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        },
+        {
+          "date": "2026-09-08",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        },
+        {
+          "date": "2026-10-24",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        },
+        {
+          "date": "2026-11-14",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        },
+        {
+          "date": "2026-12-12",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        },
+        {
+          "date": "2027-02-11",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        },
+        {
+          "date": "2027-03-07",
+          "note": "東京",
+          "sourceUrl": "https://shinsei.shoubo-shiken.or.jp/shoubou_ia/iajs9001.do?shibu_cd=13&menjo_kbn=2"
+        }
+      ]
+    },
+    {
+      "key": "shuwa",
+      "qualificationId": "guide-2026-a409477fabd68d23",
+      "candidates": null,
+      "candidatesPeriod": "2026年版掲載値",
+      "dates": [],
+      "sourceFile": "data/entries/guide-2026-a409477fabd68d23.json"
+    },
+    {
+      "key": "sm",
+      "qualificationId": "sm",
+      "candidates": 2002,
+      "candidatesPeriod": "2025年度春期",
+      "candidatesScope": "1回分・受験者",
+      "dates": [
+        {
+          "date": "2026-11-11",
+          "endDate": "2026-11-23",
+          "note": "科目B",
+          "sourceUrl": "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html"
+        }
+      ],
+      "sourceFile": "data/entries/sm.json",
+      "name": "ITサービスマネージャ",
+      "candidatesPeriodEnd": "2025-04-20",
+      "candidatesSourceUrl": "https://www.ipa.go.jp/shiken/reports/hjuojm000000ll0f-att/suii_hyo.pdf",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "sogo-ryoko",
+      "qualificationId": "sogo-ryoko",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-10-25",
+          "sourceUrl": "https://static.jata-net.or.jp/wp/wp-content/uploads/2026/07/r8_examinationguideline.pdf"
+        }
+      ],
+      "sourceFile": "data/entries/sogo-ryoko.json"
+    },
+    {
+      "key": "sokuryoshi",
+      "qualificationId": "guide-2026-44f3a5f94b9c91c0",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [],
+      "sourceFile": "data/entries/guide-2026-44f3a5f94b9c91c0.json"
+    },
+    {
+      "key": "sokuryoshiho",
+      "qualificationId": "sokuryoshiho",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-05-17",
+          "sourceUrl": "https://web1.gsi.go.jp/LAW/SHIKEN/SHIKEN-top.htm"
+        }
+      ],
+      "sourceFile": "data/entries/sokuryoshiho.json"
+    },
+    {
+      "key": "soukan",
+      "qualificationId": "gijutsushi-second",
+      "candidates": null,
+      "candidatesPeriod": "2025（全21技術部門合計・対受験者）",
+      "dates": [],
+      "sourceFile": "data/entries/gijutsushi-second.json"
+    },
+    {
+      "key": "st",
+      "qualificationId": "st",
+      "candidates": 5586,
+      "candidatesPeriod": "2025年度春期",
+      "candidatesScope": "1回分・受験者",
+      "dates": [
+        {
+          "date": "2026-11-11",
+          "endDate": "2026-11-23",
+          "note": "科目B",
+          "sourceUrl": "https://www.ipa.go.jp/shiken/2026/ap_koudo_sc_kikan.html"
+        }
+      ],
+      "sourceFile": "data/entries/st.json",
+      "name": "ITストラテジスト",
+      "candidatesPeriodEnd": "2025-04-20",
+      "candidatesSourceUrl": "https://www.ipa.go.jp/shiken/reports/hjuojm000000ll0f-att/suii_hyo.pdf",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
+    },
+    {
+      "key": "survey-assistant",
+      "qualificationId": "sokuryoshiho",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-05-17",
+          "sourceUrl": "https://web1.gsi.go.jp/LAW/SHIKEN/SHIKEN-top.htm"
+        }
+      ],
+      "sourceFile": "data/entries/sokuryoshiho.json"
     },
     {
       "key": "takken",
       "qualificationId": "takken",
-      "candidates": 245462,
-      "candidatesSourceUrl": "https://goukaku.retio.or.jp/exam/pdf_2025_1_UWbaZCx6hm/2025result.pdf",
-      "candidatesSourceFile": "data/calibration/difficulty-facts-20261103.json",
-      "candidatesPeriod": "2025",
-      "candidatesScope": "年度計・受験者",
+      "candidates": 246422,
+      "candidatesSourceUrl": "https://www.retio.or.jp/wp-content/uploads/2026/10/★-R8-受験状況【速報】.pdf",
+      "candidatesSourceFile": "lib/home/featured-official.json",
+      "candidatesPeriod": "2026年度（令和8年度）速報",
+      "candidatesScope": "年度計・全受験者・2026年10月19日速報",
       "dates": [
         {
           "date": "2026-10-18",
           "sourceUrl": "https://www.retio.or.jp/exam/schedule/"
         }
       ],
-      "sourceFile": "data/entries/takken.json"
+      "sourceFile": "data/entries/takken.json",
+      "name": "宅建",
+      "candidatesPeriodEnd": "2026-10-18",
+      "checkedAt": "2026-11-13"
+    },
+    {
+      "key": "tohan",
+      "qualificationId": "touroku-hanbaisha",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-09-06",
+          "sourceUrl": "https://www.hokeniryo.metro.tokyo.lg.jp/anzen/iyaku/tourokushiken/r8shiken",
+          "note": "東京"
+        }
+      ],
+      "sourceFile": "data/entries/touroku-hanbaisha.json"
+    },
+    {
+      "key": "tsukanshi",
+      "qualificationId": "tsukanshi",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-10-04",
+          "sourceUrl": "https://www.customs.go.jp/tsukanshi/60_shiken.htm"
+        }
+      ],
+      "sourceFile": "data/entries/tsukanshi.json"
+    },
+    {
+      "key": "tsushin1",
+      "qualificationId": "dentsu-sekou-1kyu",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-09-06",
+          "sourceUrl": "https://www.jctc.jp/exam/dentsu-1/"
+        }
+      ],
+      "sourceFile": "data/entries/dentsu-sekou-1kyu.json"
+    },
+    {
+      "key": "tsushin2",
+      "qualificationId": "dentsu-sekou-2kyu",
+      "candidates": null,
+      "candidatesPeriod": "2026(前期第一次検定)",
+      "dates": [
+        {
+          "date": "2026-11-15",
+          "sourceUrl": "https://www.jctc.jp/exam/dentsu-2/"
+        }
+      ],
+      "sourceFile": "data/entries/dentsu-sekou-2kyu.json"
+    },
+    {
+      "key": "yakuzaishi",
+      "qualificationId": "yakuzaishi-kokka",
+      "candidates": null,
+      "candidatesPeriod": "令和7年度(第111回)",
+      "dates": [],
+      "sourceFile": "data/entries/yakuzaishi-kokka.json"
+    },
+    {
+      "key": "yamaguchi-chori",
+      "qualificationId": "chourishi",
+      "candidates": null,
+      "candidatesPeriod": "",
+      "dates": [
+        {
+          "date": "2026-10-31",
+          "sourceUrl": "https://www.hokeniryo.metro.tokyo.lg.jp/anzen/shikaku/csh_menkyo/chori_seika/chourishi/shiken_gokaku",
+          "note": "東京"
+        }
+      ],
+      "sourceFile": "data/entries/chourishi.json"
+    },
+    {
+      "key": "yamaguchi-seika",
+      "qualificationId": "seika-eiseishi",
+      "candidates": null,
+      "candidatesPeriod": "令和7年度(2025年度、東京都)",
+      "dates": [
+        {
+          "date": "2026-06-20",
+          "sourceUrl": "https://www.hokeniryo.metro.tokyo.lg.jp/anzen/shikaku/csh_menkyo/chori_seika/seika/shiken",
+          "note": "東京"
+        }
+      ],
+      "sourceFile": "data/entries/seika-eiseishi.json"
+    },
+    {
+      "key": "yobi-tanto",
+      "qualificationId": "shihou-shiken-yobi",
+      "candidates": null,
+      "candidatesPeriod": "2025年度・最終合格（452人／短答式受験者12,432人）",
+      "dates": [],
+      "sourceFile": "data/entries/shihou-shiken-yobi.json"
+    },
+    {
+      "key": "zoen1",
+      "qualificationId": "zouen-sekou-1kyu",
+      "candidates": null,
+      "candidatesPeriod": "2025",
+      "dates": [
+        {
+          "date": "2026-09-06",
+          "sourceUrl": "https://www.jctc.jp/exam/zouen-1/"
+        }
+      ],
+      "sourceFile": "data/entries/zouen-sekou-1kyu.json"
+    },
+    {
+      "key": "zoen2",
+      "qualificationId": "zouen-sekou-2kyu",
+      "candidates": null,
+      "candidatesPeriod": "2026(前期)",
+      "dates": [
+        {
+          "date": "2026-11-15",
+          "sourceUrl": "https://www.jctc.jp/exam/zouen-2/"
+        }
+      ],
+      "sourceFile": "data/entries/zouen-sekou-2kyu.json"
+    }
+  ],
+  "conflicts": [
+    {
+      "key": "biyoshi",
+      "calendarCandidates": 19850,
+      "calendarPeriod": "第53回(令和7年度・2026年3月実施)",
+      "officialCandidates": 4660,
+      "officialPeriod": "2026年度・第54回",
+      "selected": "official"
+    },
+    {
+      "key": "energy-kanri",
+      "calendarCandidates": 8300,
+      "calendarPeriod": "2025",
+      "officialCandidates": 8783,
+      "officialPeriod": "2026年度・第48回",
+      "selected": "official"
+    },
+    {
+      "key": "fe",
+      "calendarCandidates": 133732,
+      "calendarPeriod": "2024",
+      "officialCandidates": 147186,
+      "officialPeriod": "2025年度（令和7年度）",
+      "selected": "official"
+    },
+    {
+      "key": "fp1",
+      "calendarCandidates": 3764,
+      "calendarPeriod": "2025年9月学科(きんざい実施分)",
+      "officialCandidates": 2996,
+      "officialPeriod": "2026年9月13日",
+      "selected": "official"
+    },
+    {
+      "key": "riyoshi",
+      "calendarCandidates": 1431,
+      "calendarPeriod": "第53回(令和7年度・2026年3月実施)",
+      "officialCandidates": 801,
+      "officialPeriod": "2026年度・第54回",
+      "selected": "official"
+    },
+    {
+      "key": "takken",
+      "calendarCandidates": 245462,
+      "calendarPeriod": "2025",
+      "officialCandidates": 246422,
+      "officialPeriod": "2026年度（令和8年度）速報",
+      "selected": "official"
     }
   ]
 }

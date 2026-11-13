@@ -42,11 +42,11 @@ describe("home personalized pickup rows", () => {
     expect(document.querySelector(".study-pickups")).toHaveAttribute("data-personal", "false");
   });
   it("drops expired date badges after Japanese midnight while the page stays open", () => {
-    vi.setSystemTime(new Date("2026-11-15T14:59:40Z"));
+    vi.setSystemTime(new Date("2026-12-06T14:59:40Z"));
     render(<HomeFeaturedExams items={items} onChoose={() => {}} />);
-    expect(document.querySelector('time[datetime="2026-11-15"]')).toBeInTheDocument();
+    expect(document.querySelector('time[datetime="2026-11-24"]')).toHaveTextContent("11/24〜12/6（科目B）");
     act(() => vi.advanceTimersByTime(60_000));
-    expect(document.querySelector('time[datetime="2026-11-15"]')).not.toBeInTheDocument();
+    expect(document.querySelector('time[datetime="2026-11-24"]')).not.toBeInTheDocument();
   });
   it("tolerates denied storage and malformed stored history", () => {
     localStorage.setItem(LS_KEYS.history, "null");

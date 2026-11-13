@@ -1,7 +1,7 @@
 /** Offline snapshot of committed calendar origin/main, never its working tree.
  * node scripts/export-home-exam-calendar.mjs --calendar C:/path/to/calendar */
 import { execFileSync } from "node:child_process";
-import { writeFileSync } from "node:fs";
+import { readFileSync, writeFileSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { resolve } from "node:path";
 
@@ -10,10 +10,10 @@ export function calendarExamDates(entry) {
     // A range may mix practical/written stages or represent a CBT window.
     // Its first day is not necessarily the date of the practice exam.
     if (row.is_ondemand || !/^\d{4}-\d{2}-\d{2}$/.test(row.exam_date ?? "") || !row.source_url ||
-        (row.exam_date_end && row.exam_date_end !== row.exam_date) ||
-        /実技|口述|二次/.test(row.session_label ?? "") || row.date_evidence?.status === "unannounced") return [];
+        (row.exam_date_end && row.exam_date_end !== row.exam_date && !/CBT/i.test(row.session_label ?? "")) ||
+        /実技|技能|口述|二次|第二次/.test(row.session_label ?? "") || row.date_evidence?.status === "unannounced") return [];
     const note = /東京都|東京.*代表/.test(row.session_label) ? "東京" : /関東/.test(row.session_label) ? "関東" : undefined;
-    return [{ date: row.exam_date, sourceUrl: row.source_url, ...(note ? { note } : {}) }];
+    return [{ date: row.exam_date, ...(row.exam_date_end && row.exam_date_end !== row.exam_date ? { endDate: row.exam_date_end } : {}), sourceUrl: row.source_url, ...(note ? { note } : {}) }];
   });
   // These three calendar notes enumerate the Ichihara written-exam schedule.
   // Checked against their official tables on 2026-11-13. Parse only the
@@ -37,6 +37,40 @@ export function calendarExamDates(entry) {
   }
   return [...new Map(dates.map(row => [`${row.date}:${row.note ?? ""}`, row])).values()]
     .sort((a, b) => a.date.localeCompare(b.date));
+}
+
+// Compare reporting periods, not file modification times or the size of a count.
+// Fiscal-year totals sort at fiscal year end; a sitting keeps its stated month.
+export function statisticsOrder(row) {
+  if (row.candidatesPeriodEnd) return row.candidatesPeriodEnd.slice(0, 7);
+  const period = String(row.candidatesPeriod ?? "");
+  const month = /(20\d{2})年(\d{1,2})月/.exec(period);
+  if (month) return `${month[1]}-${month[2].padStart(2, "0")}`;
+  const western = /(20\d{2})(?:年度|$)/.exec(period);
+  const reiwa = /令和(\d+)年度/.exec(period);
+  const year = western ? Number(western[1]) : reiwa ? 2018 + Number(reiwa[1]) : null;
+  return year ? `${year + 1}-03` : "";
+}
+
+export function mergeOfficialExams(calendarRows, officialRows) {
+  const byKey = new Map(calendarRows.map(row => [row.key, row]));
+  const conflicts = [];
+  for (const official of officialRows) {
+    const previous = byKey.get(official.key);
+    const useOfficial = !previous || previous.candidates === null || statisticsOrder(official) >= statisticsOrder(previous);
+    const { dates, scheduleMode, scheduleSourceUrl, ...statistics } = official;
+    const merged = { ...previous, key: official.key, qualificationId: previous?.qualificationId ?? official.key,
+      ...(useOfficial ? { ...statistics, candidatesSourceFile: "lib/home/featured-official.json" } : {}),
+      // Schedule verification is independent of the statistical reporting period.
+      dates: dates ?? previous?.dates ?? [],
+      ...(scheduleMode ? { scheduleMode, scheduleSourceUrl } : {}) };
+    if (previous?.candidates !== null && previous?.candidates !== undefined && previous.candidates !== official.candidates) {
+      conflicts.push({ key: official.key, calendarCandidates: previous.candidates, calendarPeriod: previous.candidatesPeriod,
+        officialCandidates: official.candidates, officialPeriod: official.candidatesPeriod, selected: useOfficial ? "official" : "calendar" });
+    }
+    byKey.set(official.key, merged);
+  }
+  return { exams: [...byKey.values()].sort((a, b) => a.key.localeCompare(b.key, "en")), conflicts };
 }
 
 export function exportCalendar(repository) {
@@ -80,9 +114,8 @@ for (const mapping of mappings) {
   const notes = (entry.sessions ?? []).map(row => row.notes ?? "").join("\n");
   const count = noteSources[entry.id] ? /受[験検]者([\d,]+)(?:人|名)/.exec(notes)?.[1] : undefined;
   const candidates = fact?.candidates ?? (count ? Number(count.replaceAll(",", "")) : null);
-  // Unknown popularity is not zero popularity. Keep these out of the popular
-  // selection until calendar has a sourced test-taker count.
-  if (candidates === null) continue;
+  // Preserve blanks for researched or newly registered exams; the selector
+  // excludes null counts rather than inventing zero popularity.
   const dates = calendarExamDates(entry);
   exams.push({ key: mapping.sourceKey, qualificationId: entry.id, candidates,
     ...(candidates !== null ? { candidatesSourceUrl: fact?.officialUrls[0] ?? noteSources[entry.id], candidatesSourceFile: fact ? factsFile : path } : {}),
@@ -91,9 +124,13 @@ for (const mapping of mappings) {
     dates, sourceFile: path });
 }
 exams.sort((a, b) => a.key.localeCompare(b.key, "en") || a.qualificationId.localeCompare(b.qualificationId, "en"));
-const output = { sourceRepository: "calendar", sourceRevision: revision, mappingFile, exams };
+const officialFile = "lib/home/featured-official.json";
+const official = JSON.parse(readFileSync(fileURLToPath(new URL(`../${officialFile}`, import.meta.url)), "utf8"));
+const merged = mergeOfficialExams(exams, official.exams);
+const output = { sourceRepository: "calendar", sourceRevision: revision, mappingFile,
+  officialFile, officialCheckedAt: official.checkedAt, ...merged };
 writeFileSync(fileURLToPath(new URL("../lib/home/featured-calendar.generated.json", import.meta.url)), JSON.stringify(output, null, 2) + "\n");
-console.log(`Exported ${exams.length} rows (${exams.filter(row => row.candidates !== null).length} with sourced test-taker counts) from ${revision}`);
+console.log(`Exported ${merged.exams.length} rows (${merged.exams.filter(row => row.candidates !== null).length} with sourced test-taker counts) from ${revision}; ${merged.conflicts.length} count differences`);
 }
 
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

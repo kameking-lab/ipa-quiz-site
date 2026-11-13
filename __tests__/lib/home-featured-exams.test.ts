@@ -6,12 +6,12 @@ const keys = ["sc", "nw", "ap", "fp1", "khk-kagaku"];
 const entry = (key: string, at = 1) => ({ id: `${key}-2026-spring-am2-q1`, at });
 const row = (key: string, candidates: number, ...dates: string[]): FeaturedCalendarExam => ({ key, qualificationId: key, candidates, dates: dates.map(date => ({ date, sourceUrl: "https://example.go.jp/exams" })) });
 describe("home pickup selection", () => {
-  it("uses the next written session from the exported calendar, including reviewed note lists", () => {
+  it("selects major published exams by sourced counts, including bounded CBT", () => {
     const picks = upcomingExamPicks(HOME_EXAM_CALENDAR.map(row => row.key), [], now);
     expect(picks.map(pick => [pick.key, pick.next?.date, pick.candidates])).toEqual([
-      ["kashikin", "2026-11-15", 9878],
-      ["lckohyo-潜水士", "2026-12-14", 6891],
-      ["lckohyo-移動式クレーン運転士", "2027-01-15", 4861],
+      ["kikenbutsu-otsu4", "2026-11-23", 222545],
+      ["ap", "2026-11-24", 82668],
+      ["kaigo", "2027-01-31", 78469],
     ]);
   });
   it("returns no personal cards for zero history or invalid data", () => {
@@ -58,5 +58,19 @@ describe("home pickup selection", () => {
   it("does not invent popularity for an exam with an unknown test-taker count", () => {
     const unknown = { ...row("fp1", 100, "2026-11-14"), candidates: null };
     expect(upcomingExamPicks(keys, [], now, [unknown, row("sc", 20, "2027-03-01")]).map(pick => pick.key)).toEqual(["sc"]);
+  });
+  it("excludes on-demand CBT from dated and undated fallback candidates", () => {
+    const onDemand = { ...row("fp1", 99999, "2026-11-14"), scheduleMode: "ondemand" };
+    expect(upcomingExamPicks(keys, [], now, [onDemand, row("sc", 10)]).map(pick => pick.key)).toEqual(["sc"]);
+  });
+  it("keeps a bounded CBT window until its final day and then advances", () => {
+    const window = { ...row("ap", 100), dates: [
+      { date: "2026-11-11", endDate: "2026-11-23", sourceUrl: "https://www.ipa.go.jp/shiken/" },
+      { date: "2027-02-06", endDate: "2027-02-19", sourceUrl: "https://www.ipa.go.jp/shiken/" },
+    ] };
+    for (const day of ["2026-11-13", "2026-11-23"]) {
+      expect(upcomingExamPicks(keys, [], new Date(`${day}T12:00:00+09:00`), [window])[0].next?.endDate).toBe("2026-11-23");
+    }
+    expect(upcomingExamPicks(keys, [], new Date("2026-11-24T00:00:00+09:00"), [window])[0].next?.date).toBe("2027-02-06");
   });
 });
