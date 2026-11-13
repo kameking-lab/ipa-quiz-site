@@ -60,6 +60,16 @@ afterEach(() => {
   vi.restoreAllMocks();
 });
 
+describe("表面処理と表への参照の区別", () => {
+  it.each(["次の", "以下の", "下の"])("%s表面処理は画像なしでも出題できる", (prefix) => {
+    expect(isPracticeReadyQuestion(q({ question: `${prefix}表面処理のうち、最も膜厚が薄いものはどれか。` }))).toBe(true);
+  });
+
+  it.each(["次の", "以下の", "下の"])("%s表への参照は表がなければ出題しない", (prefix) => {
+    expect(isPracticeReadyQuestion(q({ question: `${prefix}表の数値から求めよ。` }))).toBe(false);
+  });
+});
+
 describe("isPlaceholderExplanation", () => {
   it("「正解はアです。」型と空文字をプレースホルダと判定する", () => {
     expect(isPlaceholderExplanation(q({ explanation: "正解はアです。" }))).toBe(true);

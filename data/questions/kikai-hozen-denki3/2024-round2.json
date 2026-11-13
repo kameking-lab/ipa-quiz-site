@@ -1,0 +1,560 @@
+[
+  {
+    "id": "kikai-hozen-denki3-2024-round2-gakka-016",
+    "exam": "kikai-hozen-denki3",
+    "session": "gakka",
+    "year": 2024,
+    "season": "round2",
+    "qNumber": 16,
+    "officialQuestionLabel": "16",
+    "subject": "学科（真偽法）",
+    "officialAnswerNumber": "×",
+    "type": "multiple-choice",
+    "category": "電気系保全法",
+    "topicTags": [
+      "電気系保全作業",
+      "電気系保全法"
+    ],
+    "difficulty": 2,
+    "question": "サーボモータに適した制御は、オープンループ方式である。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "イ",
+    "explanation": "公式正答は×です。サーボモータは、位置や速度などの目標に実際の動きを合わせるために使います。検出した値を目標値と比較して補正するフィードバック制御が適しており、オープンループ方式とする記述は誤りです。",
+    "choiceExplanations": {
+      "ア": "不正解。サーボモータは、位置や速度などの目標に実際の動きを合わせるために使います。検出した値を目標値と比較して補正するフィードバック制御が適しており、オープンループ方式とする記述は誤りです。",
+      "イ": "正解。サーボモータは、位置や速度などの目標に実際の動きを合わせるために使います。検出した値を目標値と比較して補正するフィードバック制御が適しており、オープンループ方式とする記述は誤りです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_mondai_2.pdf#page=4",
+    "sourceAnswerUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_kaitou_2.pdf",
+    "sourceAttribution": "出典：日本プラントメンテナンス協会 2024年度 第2回 機械保全技能検定 3級 電気系保全作業 学科 問16。解説は過去問AIの独自作成。",
+    "license": "JIPM-owner-decision",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "kikai-hozen-denki3-2024-round2-gakka-017",
+    "exam": "kikai-hozen-denki3",
+    "session": "gakka",
+    "year": 2024,
+    "season": "round2",
+    "qNumber": 17,
+    "officialQuestionLabel": "17",
+    "subject": "学科（真偽法）",
+    "officialAnswerNumber": "○",
+    "type": "multiple-choice",
+    "category": "電気系保全法",
+    "topicTags": [
+      "電気系保全作業",
+      "電気系保全法"
+    ],
+    "difficulty": 2,
+    "question": "インバータは、直流を交流に変換することができる。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "ア",
+    "explanation": "公式正答は○です。インバータは、直流電力を交流電力へ変換する装置です。交流電動機の速度制御では、出力する交流の周波数や電圧を調整して使います。",
+    "choiceExplanations": {
+      "ア": "正解。インバータは、直流電力を交流電力へ変換する装置です。交流電動機の速度制御では、出力する交流の周波数や電圧を調整して使います。",
+      "イ": "不正解。インバータは、直流電力を交流電力へ変換する装置です。交流電動機の速度制御では、出力する交流の周波数や電圧を調整して使います。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_mondai_2.pdf#page=4",
+    "sourceAnswerUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_kaitou_2.pdf",
+    "sourceAttribution": "出典：日本プラントメンテナンス協会 2024年度 第2回 機械保全技能検定 3級 電気系保全作業 学科 問17。解説は過去問AIの独自作成。",
+    "license": "JIPM-owner-decision",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "kikai-hozen-denki3-2024-round2-gakka-018",
+    "exam": "kikai-hozen-denki3",
+    "session": "gakka",
+    "year": 2024,
+    "season": "round2",
+    "qNumber": 18,
+    "officialQuestionLabel": "18",
+    "subject": "学科（真偽法）",
+    "officialAnswerNumber": "×",
+    "type": "multiple-choice",
+    "category": "電気系保全法",
+    "topicTags": [
+      "電気系保全作業",
+      "電気系保全法"
+    ],
+    "difficulty": 2,
+    "question": "予測制御とは、比例動作、積分動作および微分動作の3つの動作を含む制御方式である。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "イ",
+    "explanation": "公式正答は×です。比例P、積分I、微分Dの3つの動作を組み合わせるのはPID制御です。偏差の大きさ、蓄積、変化の速さを利用して操作量を調整する制御であり、予測制御の名称とは区別します。",
+    "choiceExplanations": {
+      "ア": "不正解。比例P、積分I、微分Dの3つの動作を組み合わせるのはPID制御です。偏差の大きさ、蓄積、変化の速さを利用して操作量を調整する制御であり、予測制御の名称とは区別します。",
+      "イ": "正解。比例P、積分I、微分Dの3つの動作を組み合わせるのはPID制御です。偏差の大きさ、蓄積、変化の速さを利用して操作量を調整する制御であり、予測制御の名称とは区別します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_mondai_2.pdf#page=4",
+    "sourceAnswerUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_kaitou_2.pdf",
+    "sourceAttribution": "出典：日本プラントメンテナンス協会 2024年度 第2回 機械保全技能検定 3級 電気系保全作業 学科 問18。解説は過去問AIの独自作成。",
+    "license": "JIPM-owner-decision",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "kikai-hozen-denki3-2024-round2-gakka-019",
+    "exam": "kikai-hozen-denki3",
+    "session": "gakka",
+    "year": 2024,
+    "season": "round2",
+    "qNumber": 19,
+    "officialQuestionLabel": "19",
+    "subject": "学科（真偽法）",
+    "officialAnswerNumber": "○",
+    "type": "multiple-choice",
+    "category": "電気系保全法",
+    "topicTags": [
+      "電気系保全作業",
+      "電気系保全法"
+    ],
+    "difficulty": 2,
+    "question": "温度センサの1つとして、熱電対が挙げられる。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "ア",
+    "explanation": "公式正答は○です。熱電対は、異なる金属を組み合わせ、接点間の温度差によって発生する熱起電力を温度測定に利用するセンサです。温度センサの一例として適切です。",
+    "choiceExplanations": {
+      "ア": "正解。熱電対は、異なる金属を組み合わせ、接点間の温度差によって発生する熱起電力を温度測定に利用するセンサです。温度センサの一例として適切です。",
+      "イ": "不正解。熱電対は、異なる金属を組み合わせ、接点間の温度差によって発生する熱起電力を温度測定に利用するセンサです。温度センサの一例として適切です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_mondai_2.pdf#page=4",
+    "sourceAnswerUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_kaitou_2.pdf",
+    "sourceAttribution": "出典：日本プラントメンテナンス協会 2024年度 第2回 機械保全技能検定 3級 電気系保全作業 学科 問19。解説は過去問AIの独自作成。",
+    "license": "JIPM-owner-decision",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "kikai-hozen-denki3-2024-round2-gakka-020",
+    "exam": "kikai-hozen-denki3",
+    "session": "gakka",
+    "year": 2024,
+    "season": "round2",
+    "qNumber": 20,
+    "officialQuestionLabel": "20",
+    "subject": "学科（真偽法）",
+    "officialAnswerNumber": "○",
+    "type": "multiple-choice",
+    "category": "電気系保全法",
+    "topicTags": [
+      "電気系保全作業",
+      "電気系保全法"
+    ],
+    "difficulty": 2,
+    "question": "ファラデーの電磁誘導の法則によると、コイルの巻数を多くすると起電力は大きくなる。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "ア",
+    "explanation": "公式正答は○です。同じ磁束変化を受ける場合、誘導起電力の大きさはコイルの巻数に比例します。ファラデーの法則は、起電力を巻数と磁束の時間変化の積で表します。",
+    "choiceExplanations": {
+      "ア": "正解。同じ磁束変化を受ける場合、誘導起電力の大きさはコイルの巻数に比例します。ファラデーの法則は、起電力を巻数と磁束の時間変化の積で表します。",
+      "イ": "不正解。同じ磁束変化を受ける場合、誘導起電力の大きさはコイルの巻数に比例します。ファラデーの法則は、起電力を巻数と磁束の時間変化の積で表します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_mondai_2.pdf#page=4",
+    "sourceAnswerUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_kaitou_2.pdf",
+    "sourceAttribution": "出典：日本プラントメンテナンス協会 2024年度 第2回 機械保全技能検定 3級 電気系保全作業 学科 問20。解説は過去問AIの独自作成。",
+    "license": "JIPM-owner-decision",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "kikai-hozen-denki3-2024-round2-gakka-021",
+    "exam": "kikai-hozen-denki3",
+    "session": "gakka",
+    "year": 2024,
+    "season": "round2",
+    "qNumber": 21,
+    "officialQuestionLabel": "21",
+    "subject": "学科（真偽法）",
+    "officialAnswerNumber": "×",
+    "type": "multiple-choice",
+    "category": "電気系保全法",
+    "topicTags": [
+      "電気系保全作業",
+      "電気系保全法"
+    ],
+    "difficulty": 2,
+    "question": "金属の表面に光を当てると電子が放出される現象を二次電子放出という。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "イ",
+    "explanation": "公式正答は×です。光を当てることで金属から電子が放出されるのは、光電効果による光電子放出です。二次電子放出は、電子などの粒子が物質に衝突して別の電子を放出させる現象なので、原因が異なります。",
+    "choiceExplanations": {
+      "ア": "不正解。光を当てることで金属から電子が放出されるのは、光電効果による光電子放出です。二次電子放出は、電子などの粒子が物質に衝突して別の電子を放出させる現象なので、原因が異なります。",
+      "イ": "正解。光を当てることで金属から電子が放出されるのは、光電効果による光電子放出です。二次電子放出は、電子などの粒子が物質に衝突して別の電子を放出させる現象なので、原因が異なります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_mondai_2.pdf#page=4",
+    "sourceAnswerUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_kaitou_2.pdf",
+    "sourceAttribution": "出典：日本プラントメンテナンス協会 2024年度 第2回 機械保全技能検定 3級 電気系保全作業 学科 問21。解説は過去問AIの独自作成。",
+    "license": "JIPM-owner-decision",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "kikai-hozen-denki3-2024-round2-gakka-022",
+    "exam": "kikai-hozen-denki3",
+    "session": "gakka",
+    "year": 2024,
+    "season": "round2",
+    "qNumber": 22,
+    "officialQuestionLabel": "22",
+    "subject": "学科（真偽法）",
+    "officialAnswerNumber": "×",
+    "type": "multiple-choice",
+    "category": "電気系保全法",
+    "topicTags": [
+      "電気系保全作業",
+      "電気系保全法"
+    ],
+    "difficulty": 2,
+    "question": "10Vの電圧で10Aの電流が流れたとき電力は、10Wである。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "イ",
+    "explanation": "公式正答は×です。電力Pは、電圧Vと電流Iの積P＝VIで求めます。10V×10A＝100Wとなるため、10Wという記述は誤りです。電圧の値だけを電力に置き換えないようにします。",
+    "choiceExplanations": {
+      "ア": "不正解。電力Pは、電圧Vと電流Iの積P＝VIで求めます。10V×10A＝100Wとなるため、10Wという記述は誤りです。電圧の値だけを電力に置き換えないようにします。",
+      "イ": "正解。電力Pは、電圧Vと電流Iの積P＝VIで求めます。10V×10A＝100Wとなるため、10Wという記述は誤りです。電圧の値だけを電力に置き換えないようにします。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_mondai_2.pdf#page=4",
+    "sourceAnswerUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_kaitou_2.pdf",
+    "sourceAttribution": "出典：日本プラントメンテナンス協会 2024年度 第2回 機械保全技能検定 3級 電気系保全作業 学科 問22。解説は過去問AIの独自作成。",
+    "license": "JIPM-owner-decision",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "kikai-hozen-denki3-2024-round2-gakka-023",
+    "exam": "kikai-hozen-denki3",
+    "session": "gakka",
+    "year": 2024,
+    "season": "round2",
+    "qNumber": 23,
+    "officialQuestionLabel": "23",
+    "subject": "学科（真偽法）",
+    "officialAnswerNumber": "○",
+    "type": "multiple-choice",
+    "category": "電気系保全法",
+    "topicTags": [
+      "電気系保全作業",
+      "電気系保全法"
+    ],
+    "difficulty": 2,
+    "question": "論理回路において、入力をA、Bとした場合、「OR」は、「A+B」である。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "ア",
+    "explanation": "公式正答は○です。論理式では、OR（論理和）を＋で表し、入力AとBの論理和はA＋Bと書きます。どちらか一方でも入力が1なら出力は1となり、通常の数値の足し算とは区別します。",
+    "choiceExplanations": {
+      "ア": "正解。論理式では、OR（論理和）を＋で表し、入力AとBの論理和はA＋Bと書きます。どちらか一方でも入力が1なら出力は1となり、通常の数値の足し算とは区別します。",
+      "イ": "不正解。論理式では、OR（論理和）を＋で表し、入力AとBの論理和はA＋Bと書きます。どちらか一方でも入力が1なら出力は1となり、通常の数値の足し算とは区別します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_mondai_2.pdf#page=4",
+    "sourceAnswerUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_kaitou_2.pdf",
+    "sourceAttribution": "出典：日本プラントメンテナンス協会 2024年度 第2回 機械保全技能検定 3級 電気系保全作業 学科 問23。解説は過去問AIの独自作成。",
+    "license": "JIPM-owner-decision",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "kikai-hozen-denki3-2024-round2-gakka-024",
+    "exam": "kikai-hozen-denki3",
+    "session": "gakka",
+    "year": 2024,
+    "season": "round2",
+    "qNumber": 24,
+    "officialQuestionLabel": "24",
+    "subject": "学科（真偽法）",
+    "officialAnswerNumber": "×",
+    "type": "multiple-choice",
+    "category": "電気系保全法",
+    "topicTags": [
+      "電気系保全作業",
+      "電気系保全法"
+    ],
+    "difficulty": 2,
+    "question": "絶縁抵抗計のL端子の極性は、+である。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "イ",
+    "explanation": "公式正答は×です。一般的な絶縁抵抗計では、L（ライン）端子の極性はマイナス、E（アース）端子はプラスです。L端子をプラスとする記述は、端子の極性を逆にしています。",
+    "choiceExplanations": {
+      "ア": "不正解。一般的な絶縁抵抗計では、L（ライン）端子の極性はマイナス、E（アース）端子はプラスです。L端子をプラスとする記述は、端子の極性を逆にしています。",
+      "イ": "正解。一般的な絶縁抵抗計では、L（ライン）端子の極性はマイナス、E（アース）端子はプラスです。L端子をプラスとする記述は、端子の極性を逆にしています。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_mondai_2.pdf#page=4",
+    "sourceAnswerUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_kaitou_2.pdf",
+    "sourceAttribution": "出典：日本プラントメンテナンス協会 2024年度 第2回 機械保全技能検定 3級 電気系保全作業 学科 問24。解説は過去問AIの独自作成。",
+    "license": "JIPM-owner-decision",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "kikai-hozen-denki3-2024-round2-gakka-025",
+    "exam": "kikai-hozen-denki3",
+    "session": "gakka",
+    "year": 2024,
+    "season": "round2",
+    "qNumber": 25,
+    "officialQuestionLabel": "25",
+    "subject": "学科（真偽法）",
+    "officialAnswerNumber": "○",
+    "type": "multiple-choice",
+    "category": "電気系保全法",
+    "topicTags": [
+      "電気系保全作業",
+      "電気系保全法"
+    ],
+    "difficulty": 2,
+    "question": "オシロスコープは、電圧の時間的変化を測定する計測器である。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "ア",
+    "explanation": "公式正答は○です。オシロスコープは、横軸に時間、縦軸に電圧をとって波形を表示する計測器です。電圧の大きさに加え、時間に伴う変化や周期なども調べられるので、記述は正しいと判断できます。",
+    "choiceExplanations": {
+      "ア": "正解。オシロスコープは、横軸に時間、縦軸に電圧をとって波形を表示する計測器です。電圧の大きさに加え、時間に伴う変化や周期なども調べられるので、記述は正しいと判断できます。",
+      "イ": "不正解。オシロスコープは、横軸に時間、縦軸に電圧をとって波形を表示する計測器です。電圧の大きさに加え、時間に伴う変化や周期なども調べられるので、記述は正しいと判断できます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_mondai_2.pdf#page=4",
+    "sourceAnswerUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_kaitou_2.pdf",
+    "sourceAttribution": "出典：日本プラントメンテナンス協会 2024年度 第2回 機械保全技能検定 3級 電気系保全作業 学科 問25。解説は過去問AIの独自作成。",
+    "license": "JIPM-owner-decision",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "kikai-hozen-denki3-2024-round2-gakka-026",
+    "exam": "kikai-hozen-denki3",
+    "session": "gakka",
+    "year": 2024,
+    "season": "round2",
+    "qNumber": 26,
+    "officialQuestionLabel": "26",
+    "subject": "学科（真偽法）",
+    "officialAnswerNumber": "○",
+    "type": "multiple-choice",
+    "category": "電気系保全法",
+    "topicTags": [
+      "電気系保全作業",
+      "電気系保全法"
+    ],
+    "difficulty": 2,
+    "question": "三相誘導電動機の軸受部が異常に高温となる原因として、潤滑剤の過不足が考えられる。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "ア",
+    "explanation": "公式正答は○です。軸受の潤滑剤が不足すると摩擦が増え、過剰でも攪拌抵抗が増えます。いずれも軸受部の温度上昇につながります。",
+    "choiceExplanations": {
+      "ア": "正解。軸受の潤滑剤が不足すると摩擦が増え、過剰でも攪拌抵抗が増えます。いずれも軸受部の温度上昇につながります。",
+      "イ": "不正解。軸受の潤滑剤が不足すると摩擦が増え、過剰でも攪拌抵抗が増えます。いずれも軸受部の温度上昇につながります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_mondai_2.pdf#page=4",
+    "sourceAnswerUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_kaitou_2.pdf",
+    "sourceAttribution": "出典：日本プラントメンテナンス協会 2024年度 第2回 機械保全技能検定 3級 電気系保全作業 学科 問26。解説は過去問AIの独自作成。",
+    "license": "JIPM-owner-decision",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "kikai-hozen-denki3-2024-round2-gakka-027",
+    "exam": "kikai-hozen-denki3",
+    "session": "gakka",
+    "year": 2024,
+    "season": "round2",
+    "qNumber": 27,
+    "officialQuestionLabel": "27",
+    "subject": "学科（真偽法）",
+    "officialAnswerNumber": "×",
+    "type": "multiple-choice",
+    "category": "電気系保全法",
+    "topicTags": [
+      "電気系保全作業",
+      "電気系保全法"
+    ],
+    "difficulty": 2,
+    "question": "下図のように圧着端子の面を規定した場合、2つの圧着端子を同一方向から1箇所にねじ止めするには、平らでない面が背中合わせになるようにする。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "イ",
+    "explanation": "公式正答は×です。同じ方向から2つの端子を重ねて取り付ける場合は、平らな面同士が向かい合うようにします。平らでない面を背中合わせにするという部分が逆であり、端子の形状と接触面を確認することが要点です。",
+    "choiceExplanations": {
+      "ア": "不正解。同じ方向から2つの端子を重ねて取り付ける場合は、平らな面同士が向かい合うようにします。平らでない面を背中合わせにするという部分が逆であり、端子の形状と接触面を確認することが要点です。",
+      "イ": "正解。同じ方向から2つの端子を重ねて取り付ける場合は、平らな面同士が向かい合うようにします。平らでない面を背中合わせにするという部分が逆であり、端子の形状と接触面を確認することが要点です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_mondai_2.pdf#page=4",
+    "sourceAnswerUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_kaitou_2.pdf",
+    "sourceAttribution": "出典：日本プラントメンテナンス協会 2024年度 第2回 機械保全技能検定 3級 電気系保全作業 学科 問27。解説は過去問AIの独自作成。",
+    "license": "JIPM-owner-decision",
+    "lastUpdated": "2026-11-13",
+    "imageUrls": [
+      "/images/questions/kikai-hozen-denki3/2024-round2-q27.webp"
+    ],
+    "imageAltTexts": [
+      "圧着端子の平らでない面と平らな面を示す図"
+    ]
+  },
+  {
+    "id": "kikai-hozen-denki3-2024-round2-gakka-028",
+    "exam": "kikai-hozen-denki3",
+    "session": "gakka",
+    "year": 2024,
+    "season": "round2",
+    "qNumber": 28,
+    "officialQuestionLabel": "28",
+    "subject": "学科（真偽法）",
+    "officialAnswerNumber": "○",
+    "type": "multiple-choice",
+    "category": "電気系保全法",
+    "topicTags": [
+      "電気系保全作業",
+      "電気系保全法"
+    ],
+    "difficulty": 2,
+    "question": "塩化ビニル樹脂は、絶縁材料である。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "ア",
+    "explanation": "公式正答は○です。塩化ビニル樹脂は電気を通しにくく、電線の被覆などに使われる絶縁材料です。電流を流す導体として使う銅やアルミニウムなどの金属とは役割が異なります。",
+    "choiceExplanations": {
+      "ア": "正解。塩化ビニル樹脂は電気を通しにくく、電線の被覆などに使われる絶縁材料です。電流を流す導体として使う銅やアルミニウムなどの金属とは役割が異なります。",
+      "イ": "不正解。塩化ビニル樹脂は電気を通しにくく、電線の被覆などに使われる絶縁材料です。電流を流す導体として使う銅やアルミニウムなどの金属とは役割が異なります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_mondai_2.pdf#page=4",
+    "sourceAnswerUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_kaitou_2.pdf",
+    "sourceAttribution": "出典：日本プラントメンテナンス協会 2024年度 第2回 機械保全技能検定 3級 電気系保全作業 学科 問28。解説は過去問AIの独自作成。",
+    "license": "JIPM-owner-decision",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "kikai-hozen-denki3-2024-round2-gakka-029",
+    "exam": "kikai-hozen-denki3",
+    "session": "gakka",
+    "year": 2024,
+    "season": "round2",
+    "qNumber": 29,
+    "officialQuestionLabel": "29",
+    "subject": "学科（真偽法）",
+    "officialAnswerNumber": "○",
+    "type": "multiple-choice",
+    "category": "電気系保全法",
+    "topicTags": [
+      "電気系保全作業",
+      "電気系保全法"
+    ],
+    "difficulty": 2,
+    "question": "JISにおいて、下図は「リミットスイッチにおけるメーク接点」の電気用図記号である。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "ア",
+    "explanation": "公式正答は○です。図は機械的操作で動くリミットスイッチのメーク接点です。メーク接点は操作により閉じ、回路を導通させます。",
+    "choiceExplanations": {
+      "ア": "正解。図は機械的操作で動くリミットスイッチのメーク接点です。メーク接点は操作により閉じ、回路を導通させます。",
+      "イ": "不正解。図は機械的操作で動くリミットスイッチのメーク接点です。メーク接点は操作により閉じ、回路を導通させます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_mondai_2.pdf#page=5",
+    "sourceAnswerUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_kaitou_2.pdf",
+    "sourceAttribution": "出典：日本プラントメンテナンス協会 2024年度 第2回 機械保全技能検定 3級 電気系保全作業 学科 問29。解説は過去問AIの独自作成。",
+    "license": "JIPM-owner-decision",
+    "lastUpdated": "2026-11-13",
+    "imageUrls": [
+      "/images/questions/kikai-hozen-denki3/2026-round1-q29.webp"
+    ],
+    "imageAltTexts": [
+      "リミットスイッチのメーク接点を表す電気用図記号"
+    ]
+  },
+  {
+    "id": "kikai-hozen-denki3-2024-round2-gakka-030",
+    "exam": "kikai-hozen-denki3",
+    "session": "gakka",
+    "year": 2024,
+    "season": "round2",
+    "qNumber": 30,
+    "officialQuestionLabel": "30",
+    "subject": "学科（真偽法）",
+    "officialAnswerNumber": "×",
+    "type": "multiple-choice",
+    "category": "電気系保全法",
+    "topicTags": [
+      "電気系保全作業",
+      "電気系保全法"
+    ],
+    "difficulty": 2,
+    "question": "下図に示すような有接点リレーシーケンス回路図において、「PBS-黒(押しボタンスイッチ-黒)」を押した場合、3番目に点灯するのは「YL(黄ランプ)」である。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "イ",
+    "explanation": "公式正答は×です。押しボタンを押すとCR1が励磁し、その接点を通じてWLが点灯するとともにCR2が励磁します。次にCR2の接点でYLが点灯し、T1の設定時間2秒が経過するとGLが点灯します。順番はWL→YL→GLで、3番目は黄ランプではなく緑ランプです。",
+    "choiceExplanations": {
+      "ア": "不正解。押しボタンを押すとCR1が励磁し、その接点を通じてWLが点灯するとともにCR2が励磁します。次にCR2の接点でYLが点灯し、T1の設定時間2秒が経過するとGLが点灯します。順番はWL→YL→GLで、3番目は黄ランプではなく緑ランプです。",
+      "イ": "正解。押しボタンを押すとCR1が励磁し、その接点を通じてWLが点灯するとともにCR2が励磁します。次にCR2の接点でYLが点灯し、T1の設定時間2秒が経過するとGLが点灯します。順番はWL→YL→GLで、3番目は黄ランプではなく緑ランプです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_mondai_2.pdf#page=5",
+    "sourceAnswerUrl": "https://www.kikaihozenshi.jp/pdf/2024/2024_3kyu_denki_kaitou_2.pdf",
+    "sourceAttribution": "出典：日本プラントメンテナンス協会 2024年度 第2回 機械保全技能検定 3級 電気系保全作業 学科 問30。解説は過去問AIの独自作成。",
+    "license": "JIPM-owner-decision",
+    "lastUpdated": "2026-11-13",
+    "imageUrls": [
+      "/images/questions/kikai-hozen-denki3/2024-round2-q30.webp"
+    ],
+    "imageAltTexts": [
+      "CR1、CR2、2秒タイマT1と白・黄・緑ランプを示すリレーシーケンス回路"
+    ]
+  }
+]

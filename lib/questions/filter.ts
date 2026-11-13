@@ -85,6 +85,7 @@ export function shuffle<T>(arr: T[]): T[] {
 }
 
 export function shuffleChoices(q: Question): Question {
+  if (q.exam === "bousui-frp2" || q.exam === "pan-seizo1" || q.exam === "pan-seizo2") return q;
   // Printed numbers and official answer fields refer to the original order.
   if (usesNumberedChoices(q.exam) || q.officialAnswerNumber !== undefined) return q;
   if (["chintai", "kyusui", "biru-kan", "gijutsushi1-kikai", "hoshasen-1", "hoshasen-2", "khk-kikai-kou", "khk-kikai-otsu", "energy-kanri", "reform-mgr", "shohi-sodan"].includes(q.exam)) return q;
