@@ -25,6 +25,8 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "kogyo-hoso2": async () => isExamPublished("kogyo-hoso2") ? (await import("@/data/questions/kogyo-hoso2")).KOGYO_HOSO2_QUESTIONS : [],
   "haiden-seigyo1": async () => isExamPublished("haiden-seigyo1") ? (await import("@/data/questions/haiden-seigyo1")).HAIDEN_SEIGYO1_QUESTIONS : [],
   "sequence1": async () => isExamPublished("sequence1") ? (await import("@/data/questions/sequence1")).SEQUENCE1_QUESTIONS : [],
+  "sequence3": async () => isExamPublished("sequence3") ? (await import("@/data/questions/sequence3")).SEQUENCE3_QUESTIONS : [],
+  "sequence2": async () => isExamPublished("sequence2") ? (await import("@/data/questions/sequence2")).SEQUENCE2_QUESTIONS : [],
   "haiden-seigyo3": async () => isExamPublished("haiden-seigyo3") ? (await import("@/data/questions/haiden-seigyo3")).HAIDEN_SEIGYO3_QUESTIONS : [],
   "kenchiku-bankin2": async () => isExamPublished("kenchiku-bankin2") ? (await import("@/data/questions/kenchiku-bankin2")).KENCHIKU_BANKIN2_QUESTIONS : [],
   "kensetsu-kikai-seibi1": async () => isExamPublished("kensetsu-kikai-seibi1") ? (await import("@/data/questions/kensetsu-kikai-seibi1")).KENSETSU_KIKAI_SEIBI1_QUESTIONS : [],

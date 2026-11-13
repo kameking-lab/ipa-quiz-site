@@ -1,0 +1,2006 @@
+[
+  {
+    "id": "sequence2-2024-late-gakka-a-001",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 1,
+    "officialQuestionLabel": "A群 1",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "○",
+    "type": "multiple-choice",
+    "category": "論理・プログラミング",
+    "topicTags": [
+      "シーケンス制御作業",
+      "論理・プログラミング",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "下図の論理回路の動作で入力1、2、3をそれぞれ次に示す場合、出力はTRUEである。\n入力1：TRUE\n入力2：FALSE\n入力3：TRUE",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "ア",
+    "explanation": "入力1と2のANDはFALSEですが、これと入力3のTRUEをORに通すため、最終出力はTRUEになります。",
+    "choiceExplanations": {
+      "ア": "正解。入力1と2のANDはFALSEですが、これと入力3のTRUEをORに通すため、最終出力はTRUEになります。",
+      "イ": "不正解。入力1と2のANDはFALSEですが、これと入力3のTRUEをORに通すため、最終出力はTRUEになります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=2",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 1。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13",
+    "imageUrls": [
+      "/images/questions/sequence2/sequence2-2024-late-001.png"
+    ],
+    "imageAltTexts": [
+      "入力1と入力2をANDに通し、入力3とのORを取る論理回路"
+    ]
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-002",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 2,
+    "officialQuestionLabel": "A群 2",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "○",
+    "type": "multiple-choice",
+    "category": "制御・PLC",
+    "topicTags": [
+      "シーケンス制御作業",
+      "制御・PLC",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "危険や異常動作を防止するため、ある動作に対して異常を生じる他の動作が起こらないように制御回路上防止する手段を、インタロックという。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "ア",
+    "explanation": "相反する動作を同時に行わせない仕組みがインタロックです。例えば正転中の逆転指令を回路で阻止します。出力間の禁止条件を確認します。",
+    "choiceExplanations": {
+      "ア": "正解。相反する動作を同時に行わせない仕組みがインタロックです。例えば正転中の逆転指令を回路で阻止します。出力間の禁止条件を確認します。",
+      "イ": "不正解。相反する動作を同時に行わせない仕組みがインタロックです。例えば正転中の逆転指令を回路で阻止します。出力間の禁止条件を確認します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=2",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 2。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-003",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 3,
+    "officialQuestionLabel": "A群 3",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "×",
+    "type": "multiple-choice",
+    "category": "制御・PLC",
+    "topicTags": [
+      "シーケンス制御作業",
+      "制御・PLC",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "順序制御、条件制御、計数制御の三つを合わせて、PID制御という。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "イ",
+    "explanation": "PIDは比例・積分・微分の三つの作用です。動作の順序や条件、計数による制御をまとめた名称ではありません。",
+    "choiceExplanations": {
+      "ア": "不正解。PIDは比例・積分・微分の三つの作用です。動作の順序や条件、計数による制御をまとめた名称ではありません。",
+      "イ": "正解。PIDは比例・積分・微分の三つの作用です。動作の順序や条件、計数による制御をまとめた名称ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=2",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 3。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-004",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 4,
+    "officialQuestionLabel": "A群 4",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "×",
+    "type": "multiple-choice",
+    "category": "製図・加工・材料",
+    "topicTags": [
+      "シーケンス制御作業",
+      "製図・加工・材料",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "品質保証の国際規格として定められたものはISO14000である。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "イ",
+    "explanation": "ISO14000シリーズは環境マネジメントに関する規格群です。品質マネジメントのISO9000シリーズと区別します。",
+    "choiceExplanations": {
+      "ア": "不正解。ISO14000シリーズは環境マネジメントに関する規格群です。品質マネジメントのISO9000シリーズと区別します。",
+      "イ": "正解。ISO14000シリーズは環境マネジメントに関する規格群です。品質マネジメントのISO9000シリーズと区別します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=2",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 4。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-005",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 5,
+    "officialQuestionLabel": "A群 5",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "○",
+    "type": "multiple-choice",
+    "category": "通信・入出力",
+    "topicTags": [
+      "シーケンス制御作業",
+      "通信・入出力",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "熱電対からの出力信号は、アナログ信号である。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "ア",
+    "explanation": "熱電対は温度差に応じた熱起電力を生じます。連続的に変化する電圧なのでアナログ信号として扱います。温度を二値のON・OFFだけで表すものではありません。",
+    "choiceExplanations": {
+      "ア": "正解。熱電対は温度差に応じた熱起電力を生じます。連続的に変化する電圧なのでアナログ信号として扱います。温度を二値のON・OFFだけで表すものではありません。",
+      "イ": "不正解。熱電対は温度差に応じた熱起電力を生じます。連続的に変化する電圧なのでアナログ信号として扱います。温度を二値のON・OFFだけで表すものではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=2",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 5。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-006",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 6,
+    "officialQuestionLabel": "A群 6",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "×",
+    "type": "multiple-choice",
+    "category": "制御・PLC",
+    "topicTags": [
+      "シーケンス制御作業",
+      "制御・PLC",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "制御機器の一つであるカウンタのうち、計数値がセットされた数値に達したときに制御出力が動作するカウンタをトータルカウンタという。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "イ",
+    "explanation": "設定した計数値で出力するのはプリセットカウンタです。トータルカウンタは入力回数の累計を表示する用途と区別します。",
+    "choiceExplanations": {
+      "ア": "不正解。設定した計数値で出力するのはプリセットカウンタです。トータルカウンタは入力回数の累計を表示する用途と区別します。",
+      "イ": "正解。設定した計数値で出力するのはプリセットカウンタです。トータルカウンタは入力回数の累計を表示する用途と区別します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=2",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 6。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-007",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 7,
+    "officialQuestionLabel": "A群 7",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "×",
+    "type": "multiple-choice",
+    "category": "論理・プログラミング",
+    "topicTags": [
+      "シーケンス制御作業",
+      "論理・プログラミング",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "SFC(シーケンシャル・ファンクション・チャート)では、並列処理はできない。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "イ",
+    "explanation": "SFCには並列分岐と結合の表現があります。複数の処理系列を同時に進める構造を記述できます。順次処理だけに限定した言語ではありません。",
+    "choiceExplanations": {
+      "ア": "不正解。SFCには並列分岐と結合の表現があります。複数の処理系列を同時に進める構造を記述できます。順次処理だけに限定した言語ではありません。",
+      "イ": "正解。SFCには並列分岐と結合の表現があります。複数の処理系列を同時に進める構造を記述できます。順次処理だけに限定した言語ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=2",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 7。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-008",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 8,
+    "officialQuestionLabel": "A群 8",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "○",
+    "type": "multiple-choice",
+    "category": "論理・プログラミング",
+    "topicTags": [
+      "シーケンス制御作業",
+      "論理・プログラミング",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "4ビットあれば、16通りのデータを表現することができる。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "ア",
+    "explanation": "各ビットは0と1の2通りです。4ビットでは2⁴＝16通りの組合せを表せます。最大値15と、表現できる通り数16を区別します。",
+    "choiceExplanations": {
+      "ア": "正解。各ビットは0と1の2通りです。4ビットでは2⁴＝16通りの組合せを表せます。最大値15と、表現できる通り数16を区別します。",
+      "イ": "不正解。各ビットは0と1の2通りです。4ビットでは2⁴＝16通りの組合せを表せます。最大値15と、表現できる通り数16を区別します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=2",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 8。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-009",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 9,
+    "officialQuestionLabel": "A群 9",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "×",
+    "type": "multiple-choice",
+    "category": "論理・プログラミング",
+    "topicTags": [
+      "シーケンス制御作業",
+      "論理・プログラミング",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "日本産業規格(JIS)によれば、ファンクションは、テキスト言語であるST言語では使用できない。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "イ",
+    "explanation": "STでもファンクションを呼び出して演算結果を利用できます。テキスト形式であることは使用を妨げません。",
+    "choiceExplanations": {
+      "ア": "不正解。STでもファンクションを呼び出して演算結果を利用できます。テキスト形式であることは使用を妨げません。",
+      "イ": "正解。STでもファンクションを呼び出して演算結果を利用できます。テキスト形式であることは使用を妨げません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=2",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 9。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-010",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 10,
+    "officialQuestionLabel": "A群 10",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "○",
+    "type": "multiple-choice",
+    "category": "制御・PLC",
+    "topicTags": [
+      "シーケンス制御作業",
+      "制御・PLC",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "ウォッチドッグタイマとは、プログラムのあらかじめ決められた実行時間を監視し、規定時間内に処理が完了しない場合に警報を出すためのタイマである。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "ア",
+    "explanation": "処理が規定時間を超えて停止・暴走していないかを監視する機能です。通常の動作用タイマと監視対象が異なります。",
+    "choiceExplanations": {
+      "ア": "正解。処理が規定時間を超えて停止・暴走していないかを監視する機能です。通常の動作用タイマと監視対象が異なります。",
+      "イ": "不正解。処理が規定時間を超えて停止・暴走していないかを監視する機能です。通常の動作用タイマと監視対象が異なります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=2",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 10。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-011",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 11,
+    "officialQuestionLabel": "A群 11",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "○",
+    "type": "multiple-choice",
+    "category": "通信・入出力",
+    "topicTags": [
+      "シーケンス制御作業",
+      "通信・入出力",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "入力モジュールの入力応答時間が短いほど、ノイズの影響を受けやすい。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "ア",
+    "explanation": "応答を速くすると短時間の変動も取り込みやすくなります。入力フィルタによるノイズ除去と応答速度は両立条件を考える必要があります。",
+    "choiceExplanations": {
+      "ア": "正解。応答を速くすると短時間の変動も取り込みやすくなります。入力フィルタによるノイズ除去と応答速度は両立条件を考える必要があります。",
+      "イ": "不正解。応答を速くすると短時間の変動も取り込みやすくなります。入力フィルタによるノイズ除去と応答速度は両立条件を考える必要があります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=2",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 11。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-012",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 12,
+    "officialQuestionLabel": "A群 12",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "○",
+    "type": "multiple-choice",
+    "category": "電気・電子基礎",
+    "topicTags": [
+      "シーケンス制御作業",
+      "電気・電子基礎",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "直流ソレノイドに逆並列に接続されたダイオードは、サージ吸収の効果がある。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "ア",
+    "explanation": "コイルを遮断したときの電流をダイオード経由で還流させ、逆起電力による高電圧を抑えます。通常の通電時には逆方向となる向きに接続します。",
+    "choiceExplanations": {
+      "ア": "正解。コイルを遮断したときの電流をダイオード経由で還流させ、逆起電力による高電圧を抑えます。通常の通電時には逆方向となる向きに接続します。",
+      "イ": "不正解。コイルを遮断したときの電流をダイオード経由で還流させ、逆起電力による高電圧を抑えます。通常の通電時には逆方向となる向きに接続します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=2",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 12。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-013",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 13,
+    "officialQuestionLabel": "A群 13",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "×",
+    "type": "multiple-choice",
+    "category": "通信・入出力",
+    "topicTags": [
+      "シーケンス制御作業",
+      "通信・入出力",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "電気機械器具の外郭による保護等級(IPxx)において、例えばIP67の場合の6は、水の侵入に対する保護の程度を示している。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "イ",
+    "explanation": "IPの第1数字は固形物・じんあいに対する保護、第2数字は水に対する保護です。IP67の6は水の等級ではありません。",
+    "choiceExplanations": {
+      "ア": "不正解。IPの第1数字は固形物・じんあいに対する保護、第2数字は水に対する保護です。IP67の6は水の等級ではありません。",
+      "イ": "正解。IPの第1数字は固形物・じんあいに対する保護、第2数字は水に対する保護です。IP67の6は水の等級ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=2",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 13。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-014",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 14,
+    "officialQuestionLabel": "A群 14",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "×",
+    "type": "multiple-choice",
+    "category": "制御・PLC",
+    "topicTags": [
+      "シーケンス制御作業",
+      "制御・PLC",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "PLCの自己診断機能で、システムすべての異常を検出できる。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "イ",
+    "explanation": "自己診断が対象とする異常には範囲があります。外部機器や配線、動作仕様の誤りまで、すべて検出できるわけではありません。",
+    "choiceExplanations": {
+      "ア": "不正解。自己診断が対象とする異常には範囲があります。外部機器や配線、動作仕様の誤りまで、すべて検出できるわけではありません。",
+      "イ": "正解。自己診断が対象とする異常には範囲があります。外部機器や配線、動作仕様の誤りまで、すべて検出できるわけではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=2",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 14。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-015",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 15,
+    "officialQuestionLabel": "A群 15",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "○",
+    "type": "multiple-choice",
+    "category": "制御・PLC",
+    "topicTags": [
+      "シーケンス制御作業",
+      "制御・PLC",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "プログラマブル表示器は、グラフィカルなヒューマンマシンインタフェースとして、システム保全にも用いられる。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "ア",
+    "explanation": "運転状態や警報履歴などを画面で示し、異常箇所の確認や保全作業にも利用できます。操作盤としての役割と保全情報の表示を兼ねます。",
+    "choiceExplanations": {
+      "ア": "正解。運転状態や警報履歴などを画面で示し、異常箇所の確認や保全作業にも利用できます。操作盤としての役割と保全情報の表示を兼ねます。",
+      "イ": "不正解。運転状態や警報履歴などを画面で示し、異常箇所の確認や保全作業にも利用できます。操作盤としての役割と保全情報の表示を兼ねます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=3",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 15。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-016",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 16,
+    "officialQuestionLabel": "A群 16",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "○",
+    "type": "multiple-choice",
+    "category": "電気・電子基礎",
+    "topicTags": [
+      "シーケンス制御作業",
+      "電気・電子基礎",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "変圧器の一次電圧と二次電圧の比は、巻数比に等しい。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "ア",
+    "explanation": "基本関係はV₁/V₂＝N₁/N₂です。巻数を変えることで交流電圧を変換します。ここでは変圧器の基本的な電圧比を問います。",
+    "choiceExplanations": {
+      "ア": "正解。基本関係はV₁/V₂＝N₁/N₂です。巻数を変えることで交流電圧を変換します。ここでは変圧器の基本的な電圧比を問います。",
+      "イ": "不正解。基本関係はV₁/V₂＝N₁/N₂です。巻数を変えることで交流電圧を変換します。ここでは変圧器の基本的な電圧比を問います。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=3",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 16。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-017",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 17,
+    "officialQuestionLabel": "A群 17",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "×",
+    "type": "multiple-choice",
+    "category": "通信・入出力",
+    "topicTags": [
+      "シーケンス制御作業",
+      "通信・入出力",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "拡散反射式光電スイッチは、検出体表面での拡散反射光を検出するが、検出体の材質(表面状態)により動作距離は変化しない。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "イ",
+    "explanation": "反射光量は色、材質、表面の光沢などで変わります。拡散反射式の検出距離は対象物の表面条件の影響を受けます。",
+    "choiceExplanations": {
+      "ア": "不正解。反射光量は色、材質、表面の光沢などで変わります。拡散反射式の検出距離は対象物の表面条件の影響を受けます。",
+      "イ": "正解。反射光量は色、材質、表面の光沢などで変わります。拡散反射式の検出距離は対象物の表面条件の影響を受けます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=3",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 17。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-018",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 18,
+    "officialQuestionLabel": "A群 18",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "×",
+    "type": "multiple-choice",
+    "category": "電気・電子基礎",
+    "topicTags": [
+      "シーケンス制御作業",
+      "電気・電子基礎",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "三相線路の負荷電流をクランプメータで測定する場合、2本の線をクランプ鉄心の中に通す。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "イ",
+    "explanation": "各相の負荷電流は測りたい1本の導体を挟んで測定します。複数線を一緒に通すと電流の磁界が合成され、1相の値にはなりません。",
+    "choiceExplanations": {
+      "ア": "不正解。各相の負荷電流は測りたい1本の導体を挟んで測定します。複数線を一緒に通すと電流の磁界が合成され、1相の値にはなりません。",
+      "イ": "正解。各相の負荷電流は測りたい1本の導体を挟んで測定します。複数線を一緒に通すと電流の磁界が合成され、1相の値にはなりません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=3",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 18。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-019",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 19,
+    "officialQuestionLabel": "A群 19",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "○",
+    "type": "multiple-choice",
+    "category": "電気・電子基礎",
+    "topicTags": [
+      "シーケンス制御作業",
+      "電気・電子基礎",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "指示電気計器の階級が0.5級である場合、その最大目盛値に対する許容差は、±0.5%である。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "ア",
+    "explanation": "本問では階級の数値を最大目盛値に対する百分率として扱います。0.5級なら最大目盛値の±0.5%です。",
+    "choiceExplanations": {
+      "ア": "正解。本問では階級の数値を最大目盛値に対する百分率として扱います。0.5級なら最大目盛値の±0.5%です。",
+      "イ": "不正解。本問では階級の数値を最大目盛値に対する百分率として扱います。0.5級なら最大目盛値の±0.5%です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=3",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 19。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-020",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 20,
+    "officialQuestionLabel": "A群 20",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "○",
+    "type": "multiple-choice",
+    "category": "電気・電子基礎",
+    "topicTags": [
+      "シーケンス制御作業",
+      "電気・電子基礎",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "単相交流の有効電力は、皮相電力と力率の積である。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "ア",
+    "explanation": "皮相電力VIに力率cosφを掛けると有効電力P＝VIcosφになります。力率が1なら両者は一致します。",
+    "choiceExplanations": {
+      "ア": "正解。皮相電力VIに力率cosφを掛けると有効電力P＝VIcosφになります。力率が1なら両者は一致します。",
+      "イ": "不正解。皮相電力VIに力率cosφを掛けると有効電力P＝VIcosφになります。力率が1なら両者は一致します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=3",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 20。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-021",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 21,
+    "officialQuestionLabel": "A群 21",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "×",
+    "type": "multiple-choice",
+    "category": "電気・電子基礎",
+    "topicTags": [
+      "シーケンス制御作業",
+      "電気・電子基礎",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "交流正弦波の波高値(Vp)と実効値(Ve)は、次の式で表される。\nVp＝√3×Ve",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "イ",
+    "explanation": "正弦波の波高値は実効値の√2倍です。√3は三相交流の線間・相電圧などで現れる係数と区別します。波高値と実効値の換算係数を確認します。",
+    "choiceExplanations": {
+      "ア": "不正解。正弦波の波高値は実効値の√2倍です。√3は三相交流の線間・相電圧などで現れる係数と区別します。波高値と実効値の換算係数を確認します。",
+      "イ": "正解。正弦波の波高値は実効値の√2倍です。√3は三相交流の線間・相電圧などで現れる係数と区別します。波高値と実効値の換算係数を確認します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=3",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 21。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-022",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 22,
+    "officialQuestionLabel": "A群 22",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "○",
+    "type": "multiple-choice",
+    "category": "制御・PLC",
+    "topicTags": [
+      "シーケンス制御作業",
+      "制御・PLC",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "一般に、シーケンス制御用展開接続図に用いる文字符号 OVR は、過電圧継電器を表す。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "ア",
+    "explanation": "OVRはOver Voltage Relay、すなわち過電圧継電器を表します。電圧が設定値を超えたときの保護に使います。",
+    "choiceExplanations": {
+      "ア": "正解。OVRはOver Voltage Relay、すなわち過電圧継電器を表します。電圧が設定値を超えたときの保護に使います。",
+      "イ": "不正解。OVRはOver Voltage Relay、すなわち過電圧継電器を表します。電圧が設定値を超えたときの保護に使います。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=3",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 22。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-023",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 23,
+    "officialQuestionLabel": "A群 23",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "×",
+    "type": "multiple-choice",
+    "category": "製図・加工・材料",
+    "topicTags": [
+      "シーケンス制御作業",
+      "製図・加工・材料",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "下図の(1)に示す見取図を第三角法で投影した図として、(2)の投影図は正しい。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "イ",
+    "explanation": "見取図の斜面が上面図に正しく反映されていません。第三角法の配置だけでなく、各方向から見える斜面と稜線も対応させます。",
+    "choiceExplanations": {
+      "ア": "不正解。見取図の斜面が上面図に正しく反映されていません。第三角法の配置だけでなく、各方向から見える斜面と稜線も対応させます。",
+      "イ": "正解。見取図の斜面が上面図に正しく反映されていません。第三角法の配置だけでなく、各方向から見える斜面と稜線も対応させます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=3",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 23。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13",
+    "imageUrls": [
+      "/images/questions/sequence2/sequence2-2024-late-023.png"
+    ],
+    "imageAltTexts": [
+      "第三角法の正誤を判定する見取図と三つの投影図"
+    ]
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-024",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 24,
+    "officialQuestionLabel": "A群 24",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "○",
+    "type": "multiple-choice",
+    "category": "製図・加工・材料",
+    "topicTags": [
+      "シーケンス制御作業",
+      "製図・加工・材料",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "軸受は、軸と軸受の接触状態によって分類すると、すべり軸受ところがり軸受に分類される。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "ア",
+    "explanation": "面の滑りで支えるものがすべり軸受、玉やころの転がりで支えるものが転がり軸受です。転動体の有無が分類の手掛かりです。",
+    "choiceExplanations": {
+      "ア": "正解。面の滑りで支えるものがすべり軸受、玉やころの転がりで支えるものが転がり軸受です。転動体の有無が分類の手掛かりです。",
+      "イ": "不正解。面の滑りで支えるものがすべり軸受、玉やころの転がりで支えるものが転がり軸受です。転動体の有無が分類の手掛かりです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=3",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 24。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-a-025",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 25,
+    "officialQuestionLabel": "A群 25",
+    "subject": "A群（真偽法）",
+    "officialAnswerNumber": "×",
+    "type": "multiple-choice",
+    "category": "法規・安全衛生",
+    "topicTags": [
+      "シーケンス制御作業",
+      "法規・安全衛生",
+      "真偽法"
+    ],
+    "difficulty": 3,
+    "question": "労働安全衛生規則によれば、作業環境における作業面の明るさは、精密作業で250ルクス以上が必要と規定されている。",
+    "choices": {
+      "ア": "正しい（○）",
+      "イ": "誤り（×）"
+    },
+    "answer": "イ",
+    "explanation": "この出題の精密作業の基準は300ルクス以上で、250ルクスではありません。出題時の作業区分と数値を対応させます。",
+    "choiceExplanations": {
+      "ア": "不正解。この出題の精密作業の基準は300ルクス以上で、250ルクスではありません。出題時の作業区分と数値を対応させます。",
+      "イ": "正解。この出題の精密作業の基準は300ルクス以上で、250ルクスではありません。出題時の作業区分と数値を対応させます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=3",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問A群 25。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-001",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 26,
+    "officialQuestionLabel": "B群 1",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "ハ",
+    "type": "multiple-choice",
+    "category": "論理・プログラミング",
+    "topicTags": [
+      "シーケンス制御作業",
+      "論理・プログラミング",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "日本産業規格(JIS)によれば、次のうち、フローチャート(流れ図)の記号と名称の組合せとして誤っているものはどれか。",
+    "choices": {
+      "ア": "図イ：データ",
+      "イ": "図ロ：処理",
+      "ウ": "図ハ：分岐",
+      "エ": "図ニ：端子"
+    },
+    "answer": "ウ",
+    "explanation": "正答はハです。\nイ：平行四辺形はデータを表す記号です。\nロ：長方形は処理を表す記号です。\nハ：ひし形は判断を表す記号です。本問では「分岐」とした名称の対応が誤りです。\nニ：丸みのある端子記号は開始・終了などを示します。",
+    "choiceExplanations": {
+      "ア": "不正解。平行四辺形はデータを表す記号です。",
+      "イ": "不正解。長方形は処理を表す記号です。",
+      "ウ": "正解。ひし形は判断を表す記号です。本問では「分岐」とした名称の対応が誤りです。",
+      "エ": "不正解。丸みのある端子記号は開始・終了などを示します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=4",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 1。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13",
+    "imageUrls": [
+      "/images/questions/sequence2/sequence2-2024-late-026.png"
+    ],
+    "imageAltTexts": [
+      "フローチャート記号と名称の四つの組合せ。イ、ロ、ハ、ニの順"
+    ]
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-002",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 27,
+    "officialQuestionLabel": "B群 2",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "ハ",
+    "type": "multiple-choice",
+    "category": "制御・PLC",
+    "topicTags": [
+      "シーケンス制御作業",
+      "制御・PLC",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "図に示すPLC各部の基本構成に関する組合せとして、正しいものはどれか。",
+    "choices": {
+      "ア": "A：入力部、B：メモリ部、C：CPU演算部、D：出力部",
+      "イ": "A：入力部、B：CPU演算部、C：メモリ部、D：出力部",
+      "ウ": "A：入力部、B：CPU演算部、C：出力部、D：メモリ部",
+      "エ": "A：出力部、B：CPU演算部、C：入力部、D：メモリ部"
+    },
+    "answer": "ウ",
+    "explanation": "正答はハです。\nイ：信号の中央で処理するBはCPUであり、メモリではありません。\nロ：Cはソレノイドに信号を送る出力部、DはCPUと情報をやり取りするメモリ部です。\nハ：入力機器からA、CPUのB、出力部のCへ進み、DのメモリをCPUが利用する構成です。\nニ：リミットスイッチ側のAが入力、ソレノイド側のCが出力です。",
+    "choiceExplanations": {
+      "ア": "不正解。信号の中央で処理するBはCPUであり、メモリではありません。",
+      "イ": "不正解。Cはソレノイドに信号を送る出力部、DはCPUと情報をやり取りするメモリ部です。",
+      "ウ": "正解。入力機器からA、CPUのB、出力部のCへ進み、DのメモリをCPUが利用する構成です。",
+      "エ": "不正解。リミットスイッチ側のAが入力、ソレノイド側のCが出力です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=4",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 2。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13",
+    "imageUrls": [
+      "/images/questions/sequence2/sequence2-2024-late-027.png"
+    ],
+    "imageAltTexts": [
+      "PLCの入力から出力までのA、B、Cと、Bに接続するDの基本構成"
+    ]
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-003",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 28,
+    "officialQuestionLabel": "B群 3",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "ニ",
+    "type": "multiple-choice",
+    "category": "制御・PLC",
+    "topicTags": [
+      "シーケンス制御作業",
+      "制御・PLC",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "タイムチャートの説明として、誤っているものはどれか。",
+    "choices": {
+      "ア": "一般的に入力機器、出力機器は、すべてあげて作成するのが効果的である。",
+      "イ": "アクチュエータの動作時間が分かる。",
+      "ウ": "動作タイミングの同期が見やすい。",
+      "エ": "制御システムの状態遷移を記述できる。"
+    },
+    "answer": "エ",
+    "explanation": "正答はニです。\nイ：必要な入出力を対応させて示すと、動作関係を追いやすくなります。\nロ：横軸の時間と動作区間から動作時間を読み取れます。\nハ：同じ時間軸上の信号を比較して同期関係を確認できます。\nニ：状態と移行条件を中心に記述するものは状態遷移図などです。タイムチャートの基本的な説明とは異なります。",
+    "choiceExplanations": {
+      "ア": "不正解。必要な入出力を対応させて示すと、動作関係を追いやすくなります。",
+      "イ": "不正解。横軸の時間と動作区間から動作時間を読み取れます。",
+      "ウ": "不正解。同じ時間軸上の信号を比較して同期関係を確認できます。",
+      "エ": "正解。状態と移行条件を中心に記述するものは状態遷移図などです。タイムチャートの基本的な説明とは異なります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=4",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 3。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-004",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 29,
+    "officialQuestionLabel": "B群 4",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "イ",
+    "type": "multiple-choice",
+    "category": "通信・入出力",
+    "topicTags": [
+      "シーケンス制御作業",
+      "通信・入出力",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "アナログ入出力モジュールの仕様を表す用語として、正しいものはどれか。",
+    "choices": {
+      "ア": "デジタル分解能",
+      "イ": "計数速度",
+      "ウ": "速度指令",
+      "エ": "通信速度"
+    },
+    "answer": "ア",
+    "explanation": "正答はイです。\nイ：アナログ量を何段階の数値として扱えるかを示すデジタル分解能は、変換の細かさに関する仕様です。\nロ：計数速度は主にカウンタの入力パルス処理能力を示します。\nハ：速度指令は制御対象に与える指令の内容です。\nニ：通信速度は通信路のデータ転送の仕様です。",
+    "choiceExplanations": {
+      "ア": "正解。アナログ量を何段階の数値として扱えるかを示すデジタル分解能は、変換の細かさに関する仕様です。",
+      "イ": "不正解。計数速度は主にカウンタの入力パルス処理能力を示します。",
+      "ウ": "不正解。速度指令は制御対象に与える指令の内容です。",
+      "エ": "不正解。通信速度は通信路のデータ転送の仕様です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=4",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 4。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-005",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 30,
+    "officialQuestionLabel": "B群 5",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "ロ",
+    "type": "multiple-choice",
+    "category": "制御・PLC",
+    "topicTags": [
+      "シーケンス制御作業",
+      "制御・PLC",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "PLCにおけるRAS機能のRASを表したものはどれか。",
+    "choices": {
+      "ア": "Relay Automatic System",
+      "イ": "Reliability Availability Serviceability",
+      "ウ": "Redundancy Automatic System",
+      "エ": "Recycle Availability Serviceability"
+    },
+    "answer": "イ",
+    "explanation": "正答はロです。\nイ：Relay Automatic Systemを略したものではありません。\nロ：信頼性、可用性、保守性を意味する三つの語の頭文字です。\nハ：Redundancyは冗長性を意味しますが、本問のRASの展開ではありません。\nニ：RはRecycleではなくReliabilityです。",
+    "choiceExplanations": {
+      "ア": "不正解。Relay Automatic Systemを略したものではありません。",
+      "イ": "正解。信頼性、可用性、保守性を意味する三つの語の頭文字です。",
+      "ウ": "不正解。Redundancyは冗長性を意味しますが、本問のRASの展開ではありません。",
+      "エ": "不正解。RはRecycleではなくReliabilityです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=5",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 5。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-006",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 31,
+    "officialQuestionLabel": "B群 6",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "ハ",
+    "type": "multiple-choice",
+    "category": "制御・PLC",
+    "topicTags": [
+      "シーケンス制御作業",
+      "制御・PLC",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "システム仕様において、PLCのスキャンタイムが(演算処理時間＋入出力処理時間＋PADT接続サービス時間＋高機能モジュールサービス時間)で表されるとき、システムのスキャン時間として、正しいものはどれか。\n「システム仕様」\n(1) 演算処理時間：5.5ms\n(2) I/O点数：400点\n(3) PADT：接続あり\n(4) 高機能モジュール：2台\nただし、入出力処理時間：I/O点数×0.05μs\nPADT接続サービス時間：接続ありのとき1ms、接続なしのとき0ms\n高機能モジュールサービス時間：高機能モジュール数×0.5ms",
+    "choices": {
+      "ア": "6.02ms",
+      "イ": "6.52ms",
+      "ウ": "7.52ms",
+      "エ": "7.70ms"
+    },
+    "answer": "ウ",
+    "explanation": "正答はハです。\nイ：入出力0.02ms、PADT1ms、モジュール1msの加算が必要です。\nロ：高機能モジュール2台のサービス時間1msが不足しています。\nハ：400×0.05μs＝0.02ms、2×0.5＝1msなので、5.5＋0.02＋1＋1＝7.52msです。\nニ：入出力処理時間の単位はμsです。msに直すと0.02msになります。",
+    "choiceExplanations": {
+      "ア": "不正解。入出力0.02ms、PADT1ms、モジュール1msの加算が必要です。",
+      "イ": "不正解。高機能モジュール2台のサービス時間1msが不足しています。",
+      "ウ": "正解。400×0.05μs＝0.02ms、2×0.5＝1msなので、5.5＋0.02＋1＋1＝7.52msです。",
+      "エ": "不正解。入出力処理時間の単位はμsです。msに直すと0.02msになります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=5",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 6。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-007",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 32,
+    "officialQuestionLabel": "B群 7",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "ニ",
+    "type": "multiple-choice",
+    "category": "論理・プログラミング",
+    "topicTags": [
+      "シーケンス制御作業",
+      "論理・プログラミング",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "日本産業規格(JIS)によれば、LD言語における[コイル記号]と、その[意味]の組合せとして、誤っているものはどれか。",
+    "choices": {
+      "ア": "図イ：コイル",
+      "イ": "図ロ：セット(ラッチ)コイル",
+      "ウ": "図ハ：否定コイル",
+      "エ": "図ニ：立下り検出コイル"
+    },
+    "answer": "エ",
+    "explanation": "正答はニです。\nイ：括弧だけの記号は通常のコイルです。\nロ：Sはセットを表します。\nハ：括弧内の斜線は否定コイルを示します。\nニ：Rはリセット(ラッチ解除)コイルです。立下り検出という意味ではありません。",
+    "choiceExplanations": {
+      "ア": "不正解。括弧だけの記号は通常のコイルです。",
+      "イ": "不正解。Sはセットを表します。",
+      "ウ": "不正解。括弧内の斜線は否定コイルを示します。",
+      "エ": "正解。Rはリセット(ラッチ解除)コイルです。立下り検出という意味ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=5",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 7。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13",
+    "imageUrls": [
+      "/images/questions/sequence2/sequence2-2024-late-032.png"
+    ],
+    "imageAltTexts": [
+      "LD言語の通常、S、斜線、Rのコイル記号と意味の組合せ"
+    ]
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-008",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 33,
+    "officialQuestionLabel": "B群 8",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "ニ",
+    "type": "multiple-choice",
+    "category": "論理・プログラミング",
+    "topicTags": [
+      "シーケンス制御作業",
+      "論理・プログラミング",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "日本産業規格(JIS)によれば、下図のタイムチャートが動作を表しているファンクションブロックとして、正しいものはどれか。",
+    "choices": {
+      "ア": "オン・ディレイタイマ(TON)",
+      "イ": "パルス(TP)",
+      "ウ": "アップカウンタ(CT)",
+      "エ": "オフ・ディレイタイマ(TOF)"
+    },
+    "answer": "エ",
+    "explanation": "正答はニです。\nイ：TONは入力の立上りから設定時間を待って出力します。図は入力の立下り後に遅延しています。\nロ：TPは立上りをきっかけに一定幅のパルスを出力するブロックです。\nハ：CTは入力の回数を数えるもので、図の時間遅延とは異なります。\nニ：入力がONの間はQがONで、入力がOFFになってもPTが経過するまでQを保持するTOFです。",
+    "choiceExplanations": {
+      "ア": "不正解。TONは入力の立上りから設定時間を待って出力します。図は入力の立下り後に遅延しています。",
+      "イ": "不正解。TPは立上りをきっかけに一定幅のパルスを出力するブロックです。",
+      "ウ": "不正解。CTは入力の回数を数えるもので、図の時間遅延とは異なります。",
+      "エ": "正解。入力がONの間はQがONで、入力がOFFになってもPTが経過するまでQを保持するTOFです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=6",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 8。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13",
+    "imageUrls": [
+      "/images/questions/sequence2/sequence2-2024-late-033.png"
+    ],
+    "imageAltTexts": [
+      "ファンクションブロックのIN、PT、Q、ETと入出力のタイムチャート"
+    ]
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-009",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 34,
+    "officialQuestionLabel": "B群 9",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "ロ",
+    "type": "multiple-choice",
+    "category": "論理・プログラミング",
+    "topicTags": [
+      "シーケンス制御作業",
+      "論理・プログラミング",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "日本産業規格(JIS)によれば、「32ビット整数」データ型の予約語はどれか。",
+    "choices": {
+      "ア": "SINT",
+      "イ": "DINT",
+      "ウ": "LINT",
+      "エ": "UINT"
+    },
+    "answer": "イ",
+    "explanation": "正答はロです。\nイ：SINTは8ビット符号付き整数です。\nロ：DINTは32ビット符号付き整数です。\nハ：LINTは64ビット符号付き整数です。\nニ：UINTは16ビット符号なし整数です。",
+    "choiceExplanations": {
+      "ア": "不正解。SINTは8ビット符号付き整数です。",
+      "イ": "正解。DINTは32ビット符号付き整数です。",
+      "ウ": "不正解。LINTは64ビット符号付き整数です。",
+      "エ": "不正解。UINTは16ビット符号なし整数です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=6",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 9。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-010",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 35,
+    "officialQuestionLabel": "B群 10",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "ハ",
+    "type": "multiple-choice",
+    "category": "制御・PLC",
+    "topicTags": [
+      "シーケンス制御作業",
+      "制御・PLC",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "PADTの機能として、適切でないものはどれか。",
+    "choices": {
+      "ア": "プログラムのアップロード/ダウンロード",
+      "イ": "プログラムのシミュレーション",
+      "ウ": "PLCのノイズシミュレーション",
+      "エ": "PLCのオンラインモニタ"
+    },
+    "answer": "ウ",
+    "explanation": "正答はハです。\nイ：プログラムをPLCとやり取りする機能です。\nロ：制御プログラムの動作を確認する機能です。\nハ：電磁的なノイズ環境を模擬することは、PADTの標準的なプログラミング・診断機能には含めません。\nニ：実機のデバイスやプログラム状態を監視する機能です。",
+    "choiceExplanations": {
+      "ア": "不正解。プログラムをPLCとやり取りする機能です。",
+      "イ": "不正解。制御プログラムの動作を確認する機能です。",
+      "ウ": "正解。電磁的なノイズ環境を模擬することは、PADTの標準的なプログラミング・診断機能には含めません。",
+      "エ": "不正解。実機のデバイスやプログラム状態を監視する機能です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=6",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 10。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-011",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 36,
+    "officialQuestionLabel": "B群 11",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "イ",
+    "type": "multiple-choice",
+    "category": "通信・入出力",
+    "topicTags": [
+      "シーケンス制御作業",
+      "通信・入出力",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "制御盤内の機器として、ノイズを発生しないものはどれか。",
+    "choices": {
+      "ア": "バリスタ",
+      "イ": "リレーのコイル",
+      "ウ": "インバータ",
+      "エ": "電磁開閉器"
+    },
+    "answer": "ア",
+    "explanation": "正答はイです。\nイ：バリスタは過電圧を抑える素子で、本問ではノイズを発生しない機器として選びます。\nロ：コイル電流の遮断時にサージが生じます。\nハ：半導体の高速スイッチングがノイズ源になります。\nニ：コイルや接点の開閉に伴うノイズが生じます。",
+    "choiceExplanations": {
+      "ア": "正解。バリスタは過電圧を抑える素子で、本問ではノイズを発生しない機器として選びます。",
+      "イ": "不正解。コイル電流の遮断時にサージが生じます。",
+      "ウ": "不正解。半導体の高速スイッチングがノイズ源になります。",
+      "エ": "不正解。コイルや接点の開閉に伴うノイズが生じます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=6",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 11。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-012",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 37,
+    "officialQuestionLabel": "B群 12",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "イ",
+    "type": "multiple-choice",
+    "category": "法規・安全衛生",
+    "topicTags": [
+      "シーケンス制御作業",
+      "法規・安全衛生",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "原則として、300V以下の低圧の機器等に施される「D種接地工事」の接地抵抗値として適切なものはどれか。",
+    "choices": {
+      "ア": "100Ω以下",
+      "イ": "200Ω以下",
+      "ウ": "300Ω以下",
+      "エ": "400Ω以下"
+    },
+    "answer": "ア",
+    "explanation": "正答はイです。\nイ：本問が問う原則の値は100Ω以下です。例外条件を設けていない問題なので、この値を選びます。\nロ：原則の100Ω以下を満たす上限ではありません。\nハ：原則の上限を超えています。\nニ：原則の上限を超えています。",
+    "choiceExplanations": {
+      "ア": "正解。本問が問う原則の値は100Ω以下です。例外条件を設けていない問題なので、この値を選びます。",
+      "イ": "不正解。原則の100Ω以下を満たす上限ではありません。",
+      "ウ": "不正解。原則の上限を超えています。",
+      "エ": "不正解。原則の上限を超えています。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=7",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 12。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-013",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 38,
+    "officialQuestionLabel": "B群 13",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "ニ",
+    "type": "multiple-choice",
+    "category": "制御・PLC",
+    "topicTags": [
+      "シーケンス制御作業",
+      "制御・PLC",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "文中の( )内に当てはまる値として、適切なものはどれか。\n日本産業規格(JIS)によれば、PLCは標高( )mまでの動作に適していなければならない。",
+    "choices": {
+      "ア": "500",
+      "イ": "1000",
+      "ウ": "1500",
+      "エ": "2000"
+    },
+    "answer": "エ",
+    "explanation": "正答はニです。\nイ：本問の通常の動作条件の上限より低い値です。\nロ：本問の通常の動作条件の上限より低い値です。\nハ：本問の通常の動作条件の上限より低い値です。\nニ：公式正答は2000mです。標高が高い場所では冷却や絶縁の条件も変わるため、使用条件を確認します。",
+    "choiceExplanations": {
+      "ア": "不正解。本問の通常の動作条件の上限より低い値です。",
+      "イ": "不正解。本問の通常の動作条件の上限より低い値です。",
+      "ウ": "不正解。本問の通常の動作条件の上限より低い値です。",
+      "エ": "正解。公式正答は2000mです。標高が高い場所では冷却や絶縁の条件も変わるため、使用条件を確認します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=7",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 13。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-014",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 39,
+    "officialQuestionLabel": "B群 14",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "イ",
+    "type": "multiple-choice",
+    "category": "制御・PLC",
+    "topicTags": [
+      "シーケンス制御作業",
+      "制御・PLC",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "PLCの定期点検の内容として、誤っているものはどれか。",
+    "choices": {
+      "ア": "PLC周辺の湿度は、測定しなくてもよい。",
+      "イ": "AC電源電圧の電圧範囲やひずみ率が、規定範囲内かどうか確認する。",
+      "ウ": "電池(バッテリ)の電圧低下の警報は出力されていないが、交換期限を過ぎているので電池を交換する。",
+      "エ": "端子ネジの緩みがあるので、増し締めする。"
+    },
+    "answer": "ア",
+    "explanation": "正答はイです。\nイ：湿度は結露や絶縁低下に関係するため点検対象です。測定不要とはいえません。\nロ：電源の電圧や波形が仕様範囲にあるかを確認します。\nハ：警報だけに頼らず、交換期限に従う予防保全です。\nニ：端子の緩みは接触不良や発熱につながるため、適切な締付け状態にします。",
+    "choiceExplanations": {
+      "ア": "正解。湿度は結露や絶縁低下に関係するため点検対象です。測定不要とはいえません。",
+      "イ": "不正解。電源の電圧や波形が仕様範囲にあるかを確認します。",
+      "ウ": "不正解。警報だけに頼らず、交換期限に従う予防保全です。",
+      "エ": "不正解。端子の緩みは接触不良や発熱につながるため、適切な締付け状態にします。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=7",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 14。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-015",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 40,
+    "officialQuestionLabel": "B群 15",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "ニ",
+    "type": "multiple-choice",
+    "category": "電気・電子基礎",
+    "topicTags": [
+      "シーケンス制御作業",
+      "電気・電子基礎",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "次のうち、突入電流の定格電流に対する比が最も小さいものはどれか。",
+    "choices": {
+      "ア": "ソレノイド",
+      "イ": "モータ",
+      "ウ": "白熱電球",
+      "エ": "抵抗器"
+    },
+    "answer": "エ",
+    "explanation": "正答はニです。\nイ：電磁機器では励磁時に大きな電流が流れることがあります。\nロ：始動時の電流は定格運転時より大きくなります。\nハ：冷えたフィラメントの抵抗が小さく、大きな突入電流が流れます。\nニ：抵抗器はこれらの負荷に比べて、投入時と定常時の電流比が小さい負荷です。",
+    "choiceExplanations": {
+      "ア": "不正解。電磁機器では励磁時に大きな電流が流れることがあります。",
+      "イ": "不正解。始動時の電流は定格運転時より大きくなります。",
+      "ウ": "不正解。冷えたフィラメントの抵抗が小さく、大きな突入電流が流れます。",
+      "エ": "正解。抵抗器はこれらの負荷に比べて、投入時と定常時の電流比が小さい負荷です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=7",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 15。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-016",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 41,
+    "officialQuestionLabel": "B群 16",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "イ",
+    "type": "multiple-choice",
+    "category": "製図・加工・材料",
+    "topicTags": [
+      "シーケンス制御作業",
+      "製図・加工・材料",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "日本電機工業会規格(JEM)に規定されている制御盤の扉構造として、誤っているものはどれか。",
+    "choices": {
+      "ア": "扉の開きは、原則として右開きとする。",
+      "イ": "扉のヒンジは、金属製とする。",
+      "ウ": "前面扉は、原則として扉周辺をL型等に加工する。",
+      "エ": "自立形屋外盤の扉は、原則として開位置を保持するストッパを設ける。"
+    },
+    "answer": "ア",
+    "explanation": "正答はイです。\nイ：本問では「原則として右開き」とした点が誤りです。原則の開き方向を逆にしています。\nロ：扉を支持するヒンジに金属を用いる組合せは適切です。\nハ：周辺を曲げ加工する構造は剛性などの確保に用いられます。\nニ：屋外で開いた扉を保持するストッパは、風などによる不意の閉鎖を防ぎます。",
+    "choiceExplanations": {
+      "ア": "正解。本問では「原則として右開き」とした点が誤りです。原則の開き方向を逆にしています。",
+      "イ": "不正解。扉を支持するヒンジに金属を用いる組合せは適切です。",
+      "ウ": "不正解。周辺を曲げ加工する構造は剛性などの確保に用いられます。",
+      "エ": "不正解。屋外で開いた扉を保持するストッパは、風などによる不意の閉鎖を防ぎます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=7",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 16。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-017",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 42,
+    "officialQuestionLabel": "B群 17",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "ロ",
+    "type": "multiple-choice",
+    "category": "電気・電子基礎",
+    "topicTags": [
+      "シーケンス制御作業",
+      "電気・電子基礎",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "単相誘導電動機の始動トルクに関する記述として、誤っているものはどれか。",
+    "choices": {
+      "ア": "コンデンサ始動型は、始動電流は小さいが、始動トルクは大きい。",
+      "イ": "くま取りコイル型は、構造が簡単であるが、始動トルクは大きい。",
+      "ウ": "分相始動型は、始動電流の値に比べ、始動トルクが小さい。",
+      "エ": "反発始動型は、始動トルクが非常に大きい。"
+    },
+    "answer": "イ",
+    "explanation": "正答はロです。\nイ：コンデンサで位相差を作り、大きな始動トルクを得る方式です。\nロ：くま取りコイル型は構造が簡単ですが、始動トルクは小さい方式です。「大きい」が誤りです。\nハ：分相始動型は始動電流に対して始動トルクが小さい特性です。\nニ：反発作用を利用して大きな始動トルクを得る方式です。",
+    "choiceExplanations": {
+      "ア": "不正解。コンデンサで位相差を作り、大きな始動トルクを得る方式です。",
+      "イ": "正解。くま取りコイル型は構造が簡単ですが、始動トルクは小さい方式です。「大きい」が誤りです。",
+      "ウ": "不正解。分相始動型は始動電流に対して始動トルクが小さい特性です。",
+      "エ": "不正解。反発作用を利用して大きな始動トルクを得る方式です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=7",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 17。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-018",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 43,
+    "officialQuestionLabel": "B群 18",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "イ",
+    "type": "multiple-choice",
+    "category": "製図・加工・材料",
+    "topicTags": [
+      "シーケンス制御作業",
+      "製図・加工・材料",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "日本産業規格(JIS)における十字ねじ回しの呼び番号と下図の基準寸法の組合せとして、誤っているものはどれか。",
+    "choices": {
+      "ア": "1番：4mm",
+      "イ": "2番：6mm",
+      "ウ": "3番：8mm",
+      "エ": "4番：9mm"
+    },
+    "answer": "ア",
+    "explanation": "正答はイです。\nイ：本問の1番と4mmの対応は適切です。\nロ：本問の2番と6mmの対応は適切です。\nハ：本問の3番と8mmの対応は適切です。\nニ：4番の基準寸法は10mmで、9mmとの組合せが誤りです。",
+    "choiceExplanations": {
+      "ア": "正解。本問の1番と4mmの対応は適切です。",
+      "イ": "不正解。本問の2番と6mmの対応は適切です。",
+      "ウ": "不正解。本問の3番と8mmの対応は適切です。",
+      "エ": "不正解。4番の基準寸法は10mmで、9mmとの組合せが誤りです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=8",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 18。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13",
+    "imageUrls": [
+      "/images/questions/sequence2/sequence2-2024-late-043.png"
+    ],
+    "imageAltTexts": [
+      "十字ねじ回しの軸に示された基準寸法の測定位置"
+    ]
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-019",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 44,
+    "officialQuestionLabel": "B群 19",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "ニ",
+    "type": "multiple-choice",
+    "category": "製図・加工・材料",
+    "topicTags": [
+      "シーケンス制御作業",
+      "製図・加工・材料",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "工程能力の維持に欠かせない品質管理における4Mとして、誤っているものはどれか。",
+    "choices": {
+      "ア": "機械",
+      "イ": "材料",
+      "ウ": "方法",
+      "エ": "価格"
+    },
+    "answer": "エ",
+    "explanation": "正答はニです。\nイ：Machineは4Mの一つです。\nロ：Materialは4Mの一つです。\nハ：Methodは4Mの一つです。\nニ：4Mは人、機械、材料、方法です。価格はこの四要素に含めません。",
+    "choiceExplanations": {
+      "ア": "不正解。Machineは4Mの一つです。",
+      "イ": "不正解。Materialは4Mの一つです。",
+      "ウ": "不正解。Methodは4Mの一つです。",
+      "エ": "正解。4Mは人、機械、材料、方法です。価格はこの四要素に含めません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=8",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 19。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-020",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 45,
+    "officialQuestionLabel": "B群 20",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "ニ",
+    "type": "multiple-choice",
+    "category": "製図・加工・材料",
+    "topicTags": [
+      "シーケンス制御作業",
+      "製図・加工・材料",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "正規分布において、母集団の平均値をA、標準偏差をσとすると、次のA±3σの範囲で正しいものはどれか。",
+    "choices": {
+      "ア": "全体の約96.7%",
+      "イ": "全体の約97.7%",
+      "ウ": "全体の約98.7%",
+      "エ": "全体の約99.7%"
+    },
+    "answer": "エ",
+    "explanation": "正答はニです。\nイ：平均±3標準偏差に含まれる割合としては小さい値です。\nロ：平均±3標準偏差の割合ではありません。\nハ：平均±3標準偏差の割合ではありません。\nニ：正規分布の平均±3σには、全体のおよそ99.7%が入ります。",
+    "choiceExplanations": {
+      "ア": "不正解。平均±3標準偏差に含まれる割合としては小さい値です。",
+      "イ": "不正解。平均±3標準偏差の割合ではありません。",
+      "ウ": "不正解。平均±3標準偏差の割合ではありません。",
+      "エ": "正解。正規分布の平均±3σには、全体のおよそ99.7%が入ります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=8",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 20。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-021",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 46,
+    "officialQuestionLabel": "B群 21",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "ロ",
+    "type": "multiple-choice",
+    "category": "電気・電子基礎",
+    "topicTags": [
+      "シーケンス制御作業",
+      "電気・電子基礎",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "下図の回路に、100V、50Hzの交流電圧をかけた場合に流れる電流(A)として、正しいものはどれか。",
+    "choices": {
+      "ア": "約0.0064",
+      "イ": "約0.064",
+      "ウ": "約0.64",
+      "エ": "約6.4"
+    },
+    "answer": "イ",
+    "explanation": "正答はロです。\nイ：インダクタンス5Hのリアクタンスは約1571Ωです。電流はこの値の約10倍になります。\nロ：XL＝2πfL＝2π×50×5≒1571Ω、I＝100/1571≒0.064Aです。\nハ：リアクタンスの計算で周波数とインダクタンスの積、桁を確認します。\nニ：100Vを約1571Ωで割るので、数Aにはなりません。",
+    "choiceExplanations": {
+      "ア": "不正解。インダクタンス5Hのリアクタンスは約1571Ωです。電流はこの値の約10倍になります。",
+      "イ": "正解。XL＝2πfL＝2π×50×5≒1571Ω、I＝100/1571≒0.064Aです。",
+      "ウ": "不正解。リアクタンスの計算で周波数とインダクタンスの積、桁を確認します。",
+      "エ": "不正解。100Vを約1571Ωで割るので、数Aにはなりません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=8",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 21。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13",
+    "imageUrls": [
+      "/images/questions/sequence2/sequence2-2024-late-046.png"
+    ],
+    "imageAltTexts": [
+      "実効値100V、50Hzの電源とインダクタンス5Hの直列回路"
+    ]
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-022",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 47,
+    "officialQuestionLabel": "B群 22",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "ロ",
+    "type": "multiple-choice",
+    "category": "電気・電子基礎",
+    "topicTags": [
+      "シーケンス制御作業",
+      "電気・電子基礎",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "静電容量がC₁[F]、C₂[F]、C₃[F]のコンデンサを直列に接続した場合の合成静電容量C[F]を表す式として、正しいものはどれか。",
+    "choices": {
+      "ア": "C＝1/(C₁＋C₂＋C₃) [F]",
+      "イ": "C＝1/(1/C₁＋1/C₂＋1/C₃) [F]",
+      "ウ": "C＝1/C₁＋1/C₂＋1/C₃ [F]",
+      "エ": "C＝C₁＋C₂＋C₃ [F]"
+    },
+    "answer": "イ",
+    "explanation": "正答はロです。\nイ：直列では容量そのものの和を逆数にするのではありません。\nロ：直列では1/C＝1/C₁＋1/C₂＋1/C₃です。両辺の逆数を取った式です。\nハ：右辺は合成容量の逆数1/Cに相当します。\nニ：これは並列接続の合成容量です。",
+    "choiceExplanations": {
+      "ア": "不正解。直列では容量そのものの和を逆数にするのではありません。",
+      "イ": "正解。直列では1/C＝1/C₁＋1/C₂＋1/C₃です。両辺の逆数を取った式です。",
+      "ウ": "不正解。右辺は合成容量の逆数1/Cに相当します。",
+      "エ": "不正解。これは並列接続の合成容量です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=9",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 22。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-023",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 48,
+    "officialQuestionLabel": "B群 23",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "ハ",
+    "type": "multiple-choice",
+    "category": "製図・加工・材料",
+    "topicTags": [
+      "シーケンス制御作業",
+      "製図・加工・材料",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "日本産業規格(JIS)によれば、寸法線の記入方法として、誤っているものはどれか。",
+    "choices": {
+      "ア": "図イ：辺の長さ寸法",
+      "イ": "図ロ：弦の長さ寸法",
+      "ウ": "図ハ：弧の長さ寸法",
+      "エ": "図ニ：角度寸法"
+    },
+    "answer": "ウ",
+    "explanation": "正答はハです。\nイ：直線の長さを直線の寸法線で示しています。\nロ：両端を結ぶ弦の長さを直線の寸法線で示しています。\nハ：弧の長さには弧に沿う寸法線を用います。図ハは直線の寸法線としているため誤りです。\nニ：中心をもつ円弧状の寸法線で角度を示しています。",
+    "choiceExplanations": {
+      "ア": "不正解。直線の長さを直線の寸法線で示しています。",
+      "イ": "不正解。両端を結ぶ弦の長さを直線の寸法線で示しています。",
+      "ウ": "正解。弧の長さには弧に沿う寸法線を用います。図ハは直線の寸法線としているため誤りです。",
+      "エ": "不正解。中心をもつ円弧状の寸法線で角度を示しています。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=9",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 23。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13",
+    "imageUrls": [
+      "/images/questions/sequence2/sequence2-2024-late-048.png"
+    ],
+    "imageAltTexts": [
+      "辺、弦、弧の長さと角度の寸法線を示す四つの選択図"
+    ]
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-024",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 49,
+    "officialQuestionLabel": "B群 24",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "イ",
+    "type": "multiple-choice",
+    "category": "製図・加工・材料",
+    "topicTags": [
+      "シーケンス制御作業",
+      "製図・加工・材料",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "歯数12の歯車Aと歯数48の歯車Bからなる歯車機構において、歯車Aを200min⁻¹で回転させたとき、歯車Bの回転数として、適切なものはどれか。",
+    "choices": {
+      "ア": "50min⁻¹",
+      "イ": "80min⁻¹",
+      "ウ": "500min⁻¹",
+      "エ": "800min⁻¹"
+    },
+    "answer": "ア",
+    "explanation": "正答はイです。\nイ：かみ合う歯車の回転数は歯数に反比例します。200×12/48＝50min⁻¹です。\nロ：歯数比12/48＝1/4を200に掛けると50になります。\nハ：歯数が多いBの回転数はAより小さくなります。\nニ：歯数比を逆にして4倍した値です。",
+    "choiceExplanations": {
+      "ア": "正解。かみ合う歯車の回転数は歯数に反比例します。200×12/48＝50min⁻¹です。",
+      "イ": "不正解。歯数比12/48＝1/4を200に掛けると50になります。",
+      "ウ": "不正解。歯数が多いBの回転数はAより小さくなります。",
+      "エ": "不正解。歯数比を逆にして4倍した値です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=9",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 24。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  },
+  {
+    "id": "sequence2-2024-late-gakka-b-025",
+    "exam": "sequence2",
+    "session": "gakka",
+    "year": 2024,
+    "season": "late",
+    "qNumber": 50,
+    "officialQuestionLabel": "B群 25",
+    "subject": "B群（多肢択一法）",
+    "officialAnswerNumber": "ニ",
+    "type": "multiple-choice",
+    "category": "製図・加工・材料",
+    "topicTags": [
+      "シーケンス制御作業",
+      "製図・加工・材料",
+      "多肢択一法"
+    ],
+    "difficulty": 3,
+    "question": "NC工作機械の送り機構などで、精密で滑らかな運動を必要とする箇所に用いるねじはどれか。",
+    "choices": {
+      "ア": "丸ねじ",
+      "イ": "のこ歯ねじ",
+      "ウ": "角ねじ",
+      "エ": "ボールねじ"
+    },
+    "answer": "エ",
+    "explanation": "正答はニです。\nイ：丸みのある山形のねじですが、精密送りの代表としては選びません。\nロ：一方向の大きな力を受ける用途に適した形です。\nハ：動力伝達に使うねじですが、転がりを用いた精密送りとは異なります。\nニ：ねじとナットの間をボールが転がり、摩擦が小さく精密で滑らかな送りを得られます。",
+    "choiceExplanations": {
+      "ア": "不正解。丸みのある山形のねじですが、精密送りの代表としては選びません。",
+      "イ": "不正解。一方向の大きな力を受ける用途に適した形です。",
+      "ウ": "不正解。動力伝達に使うねじですが、転がりを用いた精密送りとは異なります。",
+      "エ": "正解。ねじとナットの間をボールが転がり、摩擦が小さく精密で滑らかな送りを得られます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=10",
+    "sourceAnswerUrl": "https://www.kentei.javada.or.jp/pdf/R06-2-B12-%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%EF%BC%88%E3%82%B7%E3%83%BC%E3%82%B1%E3%83%B3%E3%82%B9%E5%88%B6%E5%BE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+    "sourceAttribution": "出典：中央職業能力開発協会 令和6年度後期 2級シーケンス制御（シーケンス制御作業）学科試験 問B群 25。解説は過去問AIの独自作成。",
+    "license": "JAVADA-owner-authorized",
+    "lastUpdated": "2026-11-13"
+  }
+]
