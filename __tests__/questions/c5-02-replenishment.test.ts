@@ -15,6 +15,7 @@ import type { ChoiceKey, ExamCode } from "@/lib/questions/types";
 const editions = [
   { exam: "fraise1", count: 50, split: 25, answers: "×○○○○×○×○○○×○○○○○××××○○××"+"ロロイイニイニハハロニニイハイイイイニニニロニロニ", pages: [...Array(16).fill(2),...Array(9).fill(3),...Array(5).fill(4),...Array(5).fill(5),...Array(5).fill(6),...Array(5).fill(7),...Array(5).fill(8)], figures: [22,30,44,45,46] },
   { exam: "fraise2", count: 50, split: 25, answers: "○×××××○×○○×○××○○×○○○○××○×"+"ハハハハロハロロイイイハニニハハニハニロハハハニイ", pages: [...Array(17).fill(2),...Array(8).fill(3),...Array(6).fill(4),...Array(3).fill(5),...Array(5).fill(6),...Array(6).fill(7),...Array(5).fill(8)], figures: [20,33] },
+  { exam: "fraise3", count: 30, split: 30, answers: "○××○○×○○×○○○××○××××○○××○××○○××", pages: [...Array(15).fill(2),...Array(14).fill(3),4], figures: [18] },
 ];
 describe.each(editions)("c5-02 $exam", ({ exam: code, count, split, answers, pages, figures }) => {
   const exam=code as ExamCode;
@@ -55,4 +56,16 @@ describe.each(editions)("c5-02 $exam", ({ exam: code, count, split, answers, pag
       }
     }
   });
+});
+
+it("拡大原本で確認した用語・選択肢を保持する", () => {
+  const row = (exam: ExamCode, n: number) => QUESTIONS_BY_EXAM[exam]!.find(q => q.qNumber === n)!;
+  expect(row("fraise1", 14).question).toContain("むく平フライス");
+  expect(row("fraise1", 33).choices!.ア).toContain("X管理図");
+  expect(row("fraise1", 37).choices!.エ).toContain("豆ジャッキ");
+  expect(row("fraise1", 43).choices!.ア).toContain("上降伏点");
+  expect(row("fraise2", 31).choices!.エ).toBe("生爪スクロールチャックは、精度の必要な加工に適している。");
+  expect(row("fraise2", 38).choices!.ウ).toContain("かぎきさげ");
+  expect(row("fraise3", 16).question).toContain("安全率＝許容応力／引張強さ");
+  expect(row("fraise3", 30).question).toContain("刃先には特に影響");
 });
