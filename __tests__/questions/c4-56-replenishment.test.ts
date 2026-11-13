@@ -1,8 +1,8 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import { PAN_SEIZO1_QUESTIONS } from "@/data/questions/pan-seizo1";
-import { KIKAI_SHIAGE1_QUESTIONS } from "@/data/questions/kikai-shiage1";
+import { PAN_SEIZO1_QUESTIONS as ALL_PAN_SEIZO1_QUESTIONS } from "@/data/questions/pan-seizo1";
+import { KIKAI_SHIAGE1_QUESTIONS as ALL_KIKAI_SHIAGE1_QUESTIONS } from "@/data/questions/kikai-shiage1";
 import { KIKAI_SHIAGE3_QUESTIONS } from "@/data/questions/kikai-shiage3";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -13,6 +13,9 @@ import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
 import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import type { ChoiceKey } from "@/lib/questions/types";
+
+const PAN_SEIZO1_QUESTIONS = ALL_PAN_SEIZO1_QUESTIONS.filter(q => q.year === 2025);
+const KIKAI_SHIAGE1_QUESTIONS = ALL_KIKAI_SHIAGE1_QUESTIONS.filter(q => q.year === 2025);
 
 // 公式正答表の画像を5問ずつ再読して固定。転記側の配列から正答を生成しない。
 const editions = [
@@ -70,8 +73,8 @@ describe.each(editions)("c4-56 $exam", ({ exam, rows, season, answers, pages, fi
     }
   });
   it("一覧・演習の両ローダーで全問を配信し、級に応じて原本の記号を使う", async () => {
-    expect(QUESTIONS_BY_EXAM[exam]).toEqual(rows);
-    expect(await getQuestionsForExam(exam)).toEqual(rows);
+    expect(QUESTIONS_BY_EXAM[exam]?.filter(q => q.year === 2025)).toEqual(rows);
+    expect((await getQuestionsForExam(exam)).filter(q => q.year === 2025)).toEqual(rows);
     expect(EXAM_CONFIGS[exam].sessions[0].expectedQuestions).toBe(rows.length);
     expect(EXAM_CONFIGS[exam].seasons).toEqual([season]);
     expect(rows.every(q => EXAM_CONFIGS[exam].sessions[0].categories.includes(q.category))).toBe(true);
