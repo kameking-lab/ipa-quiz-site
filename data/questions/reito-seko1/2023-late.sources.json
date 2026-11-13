@@ -56,7 +56,9 @@
     ],
     "refsChecked": 1418,
     "blobsChecked": 6384,
-    "hits": []
+    "hits": [],
+    "matchingOpenPRs": [],
+    "openPRsChecked": 55
   },
   "review": [
     {
@@ -566,32 +568,36 @@
         "A群20"
       ],
       "url": "https://laws.e-gov.go.jp/law/409M50000400052#Mp-At_2",
-      "verified": "低圧の電圧区分"
+      "verified": "低圧の電圧区分",
+      "checkedAt": "2026-11-13T21:04:57.758542+09:00"
     },
     {
       "questions": [
         "A群25"
       ],
       "url": "https://laws.e-gov.go.jp/law/347M50002000034#Mp-At_68",
-      "verified": "1t以上5t未満の小型移動式クレーンの就業制限"
+      "verified": "1t以上5t未満の小型移動式クレーンの就業制限",
+      "checkedAt": "2026-11-13T21:04:57.758542+09:00"
     },
     {
       "questions": [
         "B群24"
       ],
       "url": "https://laws.e-gov.go.jp/law/326AC0000000204#Mp-At_2",
-      "verified": "液化ガス0.2MPa・35℃"
+      "verified": "液化ガス0.2MPa・35℃",
+      "checkedAt": "2026-11-13T21:04:57.758542+09:00"
     },
     {
       "questions": [
         "B群25"
       ],
       "url": "https://laws.e-gov.go.jp/law/347M50002000032#Mp-At_526",
-      "verified": "高さ又は深さ1.5mを超える作業の昇降設備"
+      "verified": "高さ又は深さ1.5mを超える作業の昇降設備",
+      "checkedAt": "2026-11-13T21:04:57.758542+09:00"
     }
   ],
   "reviewNotes": [
-    "公式本文・公式正答を保持。問題全7ページと原図4点を画像で照合。",
-    "正答表の全角Ｘを×と表記正規化し、真偽法・多肢択一法の記号を既存の内部キーに対応。"
+    "公式正答表をPDFから独立抽出し、全問の原本正答と内部キーを照合。正答判定の変更はない。全角Ｘは×として表記正規化。",
+    "全問題ページと切り出した全原図を画像で照合。問番号・本文・全選択肢の照合結果をreviewに記録。"
   ]
 }
