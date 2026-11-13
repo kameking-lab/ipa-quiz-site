@@ -16,6 +16,7 @@ import type { ExamCode } from "@/lib/questions/types";
 // 公式正答表の画像から独立に読んだ印字順。データのanswerから作らない。
 const editions: { exam: ExamCode; season: "early" | "late"; key: string; figures: number[] }[] = [
   { exam: "kikai-kensa1", season: "late", key: "×××○× ○○×○○ ×××○○ ○○○×○ ○×○×○ ニイハイニ ロロハハロ ニハニハニ ハハニニイ ロロイロニ", figures: [49] },
+  { exam: "kikai-kensa2", season: "late", key: "○×○○○ ○○××○ ○○××× ○○×○× ××××× ハロニハロ イハニロハ ロロイイハ ハロロイイ ニハハハニ", figures: [48, 49] },
 ];
 for (const { exam, season, key, figures } of editions) {
   const code = exam as ExamCode;
