@@ -15,6 +15,7 @@ import type { ChoiceKey, ExamCode } from "@/lib/questions/types";
 const editions = [
   { exam: "block-kenchiku3", count: 30, split: 30, answers: "××○○○×○○×○"+"×××○○○○×○×"+"××○○×○×○○○", pages: [...Array(14).fill(2),...Array(11).fill(3),...Array(5).fill(4)], figures: [5,6,21,24,25] },
   { exam: "block-kenchiku1", count: 50, split: 25, answers: "×○○××"+"○○×××"+"○×××○"+"○○×××"+"×××○×"+"ロロハイロ"+"ハロイロニ"+"ニロニイニ"+"ニイハニロ"+"イロハイハ", pages: [...Array(9).fill(2),...Array(12).fill(3),...Array(4).fill(4),...Array(5).fill(5),...Array(5).fill(6),...Array(5).fill(7),...Array(3).fill(8),...Array(6).fill(9),10], figures: [5,8,22,29,30,32,41,43,46] },
+  { exam: "shuzo1", count: 50, split: 25, answers: "×○○○×"+"×○×××"+"×○○××"+"○××○○"+"○○○○○"+"ニロイイニ"+"ニイハロハ"+"ハロニハロ"+"ニハハハニ"+"ハイハロハ", pages: [...Array(17).fill(2),...Array(8).fill(3),...Array(6).fill(4),...Array(6).fill(5),...Array(6).fill(6),...Array(5).fill(7),...Array(2).fill(8)], figures: [] as number[] },
 ];
 describe.each(editions)("c4-66 $exam", ({ exam: code, count, split, answers, pages, figures }) => {
   const exam=code as ExamCode;
