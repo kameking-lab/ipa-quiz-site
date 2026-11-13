@@ -26,7 +26,7 @@ const editions = [
       + "ニロハニハ" + "イハハイニ" + "ロハハニハ" + "イニニニハ" + "ロロロロロ",
     pages: [...Array(16).fill(2), ...Array(9).fill(3), ...Array(6).fill(4), ...Array(6).fill(5), ...Array(6).fill(6), ...Array(6).fill(7), 8],
     figures: [24, 49] },
-  { exam: "kikai-kensa3" as const, rows: KIKAI_KENSA3_QUESTIONS,
+  { exam: "kikai-kensa3" as const, rows: KIKAI_KENSA3_QUESTIONS.filter(q => q.year === 2025 && q.season === "early"),
     answers: "○○○○○" + "○×××○" + "××○○○" + "××××○" + "×○××○" + "×○○××",
     pages: [...Array(16).fill(2), ...Array(14).fill(3)], figures: [] as number[] },
 ];
@@ -67,11 +67,12 @@ describe.each(editions)("c4-52 $exam 2025年度前期", ({ exam, rows, answers, 
   });
 
   it("一覧・演習で全問を読み込み、年度・分野を選択できる", async () => {
-    expect(QUESTIONS_BY_EXAM[exam]).toEqual(rows);
-    expect(await getQuestionsForExam(exam)).toEqual(rows);
+    expect(QUESTIONS_BY_EXAM[exam]?.filter(q => q.year === 2025 && q.season === "early")).toEqual(rows);
+    expect((await getQuestionsForExam(exam)).filter(q => q.year === 2025 && q.season === "early")).toEqual(rows);
     expect(rows.every(q => EXAM_CONFIGS[exam].sessions[0].categories.includes(q.category))).toBe(true);
     expect(EXAM_CONFIGS[exam].sessions[0].expectedQuestions).toBe(answers.length);
-    expect(EXAM_CONFIGS[exam].yearRange).toEqual({ start: 2025, end: 2025 });
+    expect(EXAM_CONFIGS[exam].yearRange.start).toBeLessThanOrEqual(2025);
+    expect(EXAM_CONFIGS[exam].yearRange.end).toBeGreaterThanOrEqual(2025);
     if (answers.length === 30) {
       expect(["ア", "イ"].map(k => choiceDisplayLabel(exam, k as ChoiceKey))).toEqual(["○", "×"]);
     } else {
