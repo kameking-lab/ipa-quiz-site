@@ -12,6 +12,7 @@ import { KIKAI_KENSA3_QUESTIONS } from "./kikai-kensa3";
 import { KIKAI_KENSA1_QUESTIONS } from "./kikai-kensa1";
 import { TEKKIN_ZUMEN1_QUESTIONS } from "./tekkin-zumen1";
 import { KATAWAKU1_QUESTIONS } from "./katawaku1";
+import { TEKKIN_ZUMEN2_QUESTIONS } from "./tekkin-zumen2";
 import { KATAWAKU2_QUESTIONS } from "./katawaku2";
 import { KOGYO_HOSO1_QUESTIONS } from "./kogyo-hoso1";
 import { KIKAI_KENSA2_QUESTIONS } from "./kikai-kensa2";
@@ -433,6 +434,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("kikai-kensa1") ? { "kikai-kensa1": KIKAI_KENSA1_QUESTIONS } : {}),
 ...(isExamPublished("tekkin-zumen1") ? { "tekkin-zumen1": TEKKIN_ZUMEN1_QUESTIONS } : {}),
 ...(isExamPublished("katawaku1") ? { "katawaku1": KATAWAKU1_QUESTIONS } : {}),
+...(isExamPublished("tekkin-zumen2") ? { "tekkin-zumen2": TEKKIN_ZUMEN2_QUESTIONS } : {}),
 ...(isExamPublished("katawaku2") ? { "katawaku2": KATAWAKU2_QUESTIONS } : {}),
 ...(isExamPublished("kogyo-hoso1") ? { "kogyo-hoso1": KOGYO_HOSO1_QUESTIONS } : {}),
 ...(isExamPublished("kikai-kensa2") ? { "kikai-kensa2": KIKAI_KENSA2_QUESTIONS } : {}),
