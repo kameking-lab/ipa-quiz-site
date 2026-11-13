@@ -170,6 +170,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   {"code": "shashutsu3", "name": "プラスチック成形技能士 3級（射出成形作業）", "sub": "射出成形作業 学科（真偽法）", "domain": "electrical"},
   {"code": "kikai-kensa3", "name": "機械検査技能士 3級", "sub": "機械検査作業 学科（真偽法）", "domain": "electrical"},
   {"code": "kikai-kensa1", "name": "機械検査技能士 1級", "sub": "機械検査作業 学科", "domain": "electrical"},
+  {"code": "naiso-kosei2", "name": "内装仕上げ施工技能士 2級（鋼製下地）", "sub": "鋼製下地工事作業 学科", "domain": "construction"},
   {"code": "kinzoku-press2", "name": "金属プレス加工技能士 2級", "sub": "金属プレス作業 学科", "domain": "electrical"},
   {"code": "katawaku3", "name": "型枠施工技能士 3級", "sub": "型枠工事作業 学科（真偽法）", "domain": "construction"},
   {"code": "kyoka-plastic1", "name": "強化プラスチック成形技能士 1級", "sub": "手積み積層成形作業 学科", "domain": "construction"},

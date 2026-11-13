@@ -1,4 +1,4 @@
-﻿import { readFileSync, existsSync } from "node:fs";
+import { readFileSync, existsSync } from "node:fs";
 import { describe, expect, it } from "vitest";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -14,6 +14,7 @@ import type { ChoiceKey, ExamCode } from "@/lib/questions/types";
 // Transcribed independently from the official answer tables, five answers per block.
 const editions = [
  { exam: "kinzoku-press2", a: "×○×○× ○×○×× ○×○×○ ○×○×× ○○××○", b: "イニニロニ ロハハイイ ロイハハロ ロニハハニ イロハロハ", figures: [23,28,31,45,46,49] },
+ { exam: "naiso-kosei2", a: "○○○×○ ×○○○○ ○××○× ○××○○ ××○×○", b: "ハイイロハ ニハハイハ ハイハニハ ロハハロニ ハハロイニ", figures: [6,7,29,30,31,32,44] },
 ] as const;
 for (const edition of editions) describe(edition.exam, () => {
  const exam = edition.exam as ExamCode;
