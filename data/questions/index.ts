@@ -10,6 +10,7 @@ import { FUTSU_SENBAN3_QUESTIONS } from "./futsu-senban3";
 import { SHASHUTSU3_QUESTIONS } from "./shashutsu3";
 import { KIKAI_KENSA3_QUESTIONS } from "./kikai-kensa3";
 import { KIKAI_KENSA1_QUESTIONS } from "./kikai-kensa1";
+import { KATAWAKU1_QUESTIONS } from "./katawaku1";
 import { KOGYO_HOSO1_QUESTIONS } from "./kogyo-hoso1";
 import { KIKAI_KENSA2_QUESTIONS } from "./kikai-kensa2";
 import { KOGYO_HOSO2_QUESTIONS } from "./kogyo-hoso2";
@@ -427,6 +428,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("shashutsu3") ? { "shashutsu3": SHASHUTSU3_QUESTIONS } : {}),
 ...(isExamPublished("kikai-kensa3") ? { "kikai-kensa3": KIKAI_KENSA3_QUESTIONS } : {}),
 ...(isExamPublished("kikai-kensa1") ? { "kikai-kensa1": KIKAI_KENSA1_QUESTIONS } : {}),
+...(isExamPublished("katawaku1") ? { "katawaku1": KATAWAKU1_QUESTIONS } : {}),
 ...(isExamPublished("kogyo-hoso1") ? { "kogyo-hoso1": KOGYO_HOSO1_QUESTIONS } : {}),
 ...(isExamPublished("kikai-kensa2") ? { "kikai-kensa2": KIKAI_KENSA2_QUESTIONS } : {}),
 ...(isExamPublished("kogyo-hoso2") ? { "kogyo-hoso2": KOGYO_HOSO2_QUESTIONS } : {}),

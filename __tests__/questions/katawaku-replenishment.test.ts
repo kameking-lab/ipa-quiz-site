@@ -1,6 +1,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import { KATAWAKU1_QUESTIONS } from "@/data/questions/katawaku1";
 import { KATAWAKU3_QUESTIONS } from "@/data/questions/katawaku3";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -15,6 +16,7 @@ import type { ChoiceKey, Question } from "@/lib/questions/types";
 
 // Read independently from the three official answer-table images (five per group).
 const editions = [
+  { exam: "katawaku1", year: 2023, corpus: KATAWAKU1_QUESTIONS, a: "○×○×× ××○×○ ○××○× ○×○○○ ×○×○○", b: "ロイニニハ ハニロハハ イニニニハ ハイイロロ ロハロハニ", figures: [21, 22, 43, 44, 45, 46] },
   { exam: "katawaku3", year: 2024, corpus: KATAWAKU3_QUESTIONS, a: "○○○○○ ○○×○× ○○○○× ××××× ××○○○ ××○×○", b: "", figures: [26] },
 ] as const;
 
