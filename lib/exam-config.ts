@@ -1749,6 +1749,11 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["安全衛生", "工具・機械", "建築", "意匠", "採寸", "敷込み", "材料・規格", "管理", "縫製", "製作・補修", "関係法規"] }],
     seasons: ["early"], yearRange: { start: 2025, end: 2025 },
 },
+"fraise1": {
+    code: "fraise1", nameFull: "技能検定 1級機械加工（フライス盤作業）学科試験", urlSlug: "fraise1", level: "advanced",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["切削工具", "切削条件", "切削油・潤滑", "切削現象", "取付け・ジグ", "品質管理", "安全衛生", "工具・機械", "手仕上げ", "数値制御", "材料・熱処理", "材料力学", "材料試験", "機械要素", "油圧", "測定", "製図", "電気"] }],
+    seasons: ["early"], yearRange: { start: 2024, end: 2024 },
+},
 "funmatsu-yakin1": {
     code: "funmatsu-yakin1", nameFull: "技能検定 1級粉末冶金（成形・再圧縮作業）学科試験", urlSlug: "funmatsu-yakin1", level: "advanced",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["サイジング", "原料粉末", "品質管理", "安全衛生", "後処理", "成形", "材料", "潤滑", "焼結", "焼結含油軸受", "熱処理", "粉末冶金基礎", "製図", "製造工程", "試験・測定", "金型"] }],

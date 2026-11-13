@@ -44,7 +44,7 @@ const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string,
 
 export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl"> & Partial<Pick<Question, "exam" | "fiscalYear">>): string {
   if (q.exam === "shohin-soshoku3") return `${q.fiscalYear ?? q.year}年度${q.season === "late" ? "後期" : "前期"}`;
-  if (q.exam === "shashin1" || q.exam === "sessaku-kensaku1" || q.exam === "tatami1" || q.exam === "funmatsu-yakin1" || q.exam === "nunohaku1" || q.exam === "kikinzoku-soshin1") return `${q.fiscalYear ?? q.year}年度${q.season === "late" ? "後期" : "前期"}`;
+  if (q.exam === "shashin1" || q.exam === "sessaku-kensaku1" || q.exam === "tatami1" || q.exam === "fraise1" || q.exam === "funmatsu-yakin1" || q.exam === "nunohaku1" || q.exam === "kikinzoku-soshin1") return `${q.fiscalYear ?? q.year}年度${q.season === "late" ? "後期" : "前期"}`;
   if (q.exam === "shashin3" || q.exam === "kikinzoku-soshin3") return `${q.fiscalYear ?? q.year}年度${q.season === "late" ? "後期" : "前期"}`;
   if (q.exam === "kagu2") return `${q.fiscalYear ?? q.year}年度${q.season === "late" ? "後期" : "前期"}`;
   if (q.exam === "kagu1") return `${q.fiscalYear ?? q.year}年度${q.season === "late" ? "後期" : "前期"}`;

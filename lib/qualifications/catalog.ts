@@ -1592,6 +1592,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：中央職業能力開発協会 令和7年度前期 1級畳製作（畳製作作業）学科試験。解説は過去問AIの独自作成。",
     remainingWork: [],
 },
+  {
+      slug: "fraise1", examCode: "fraise1", shortName: "機械加工技能士 1級（フライス盤作業）", fullName: "技能検定 1級機械加工（フライス盤作業）学科試験",
+      domain: "safety", administrator: "中央職業能力開発協会",
+      officialQuestionsUrl: "https://www.kentei.javada.or.jp/",
+      officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+      reuseSummary: "2024年度前期の学科50問、公式正答と全肢の独自解説を収録。",
+      attributionTemplate: "出典：中央職業能力開発協会 令和6年度前期 1級機械加工（フライス盤作業）学科試験。解説は過去問AIの独自作成。",
+      remainingWork: [],
+  },
 {
     slug: "funmatsu-yakin1", examCode: "funmatsu-yakin1", shortName: "粉末冶金技能士 1級", fullName: "技能検定 1級粉末冶金（成形・再圧縮作業）学科試験",
     domain: "safety", administrator: "中央職業能力開発協会",
