@@ -55,6 +55,7 @@ import { SHOHIN_SOSHOKU3_QUESTIONS } from "./shohin-soshoku3";
 import { SHASHIN1_QUESTIONS } from "./shashin1";
 import { SESSAKU_KENSAKU1_QUESTIONS } from "./sessaku-kensaku1";
 import { TATAMI1_QUESTIONS } from "./tatami1";
+import { FUNMATSU_YAKIN1_QUESTIONS } from "./funmatsu-yakin1";
 import { NUNOHAKU1_QUESTIONS } from "./nunohaku1";
 import { KIKINZOKU_SOSHIN1_QUESTIONS } from "./kikinzoku-soshin1";
 import { SHASHIN3_QUESTIONS } from "./shashin3";
@@ -452,6 +453,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("shashin1") ? { "shashin1": SHASHIN1_QUESTIONS } : {}),
 ...(isExamPublished("sessaku-kensaku1") ? { "sessaku-kensaku1": SESSAKU_KENSAKU1_QUESTIONS } : {}),
 ...(isExamPublished("tatami1") ? { "tatami1": TATAMI1_QUESTIONS } : {}),
+...(isExamPublished("funmatsu-yakin1") ? { "funmatsu-yakin1": FUNMATSU_YAKIN1_QUESTIONS } : {}),
 ...(isExamPublished("nunohaku1") ? { "nunohaku1": NUNOHAKU1_QUESTIONS } : {}),
 ...(isExamPublished("kikinzoku-soshin1") ? { "kikinzoku-soshin1": KIKINZOKU_SOSHIN1_QUESTIONS } : {}),
 ...(isExamPublished("shashin3") ? { "shashin3": SHASHIN3_QUESTIONS } : {}),
