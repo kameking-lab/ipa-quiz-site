@@ -1739,6 +1739,11 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["デジタル基礎", "光・色彩", "写真史", "撮影機器", "照明・露出", "画像処理・出力", "肖像撮影", "関係法規・環境"] }],
     seasons: ["early"], yearRange: { start: 2025, end: 2025 },
 },
+"sessaku-kensaku1": {
+    code: "sessaku-kensaku1", nameFull: "技能検定 1級切削工具研削（工作機械用切削工具研削作業）学科試験", urlSlug: "sessaku-kensaku1", level: "advanced",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["ジグ", "仕上げ加工", "切削加工", "切削工具", "品質管理", "塑性加工", "安全衛生", "材料", "材料力学", "検査", "機械要素", "測定", "潤滑", "熱処理", "研削加工", "研削工具", "研削油剤", "表面処理", "製図", "試験", "電気"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
 "nunohaku1": {
     code: "nunohaku1", nameFull: "技能検定 1級布はく縫製（ワイシャツ製造作業）学科試験", urlSlug: "nunohaku1", level: "advanced",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["仕上げ", "型紙・裁断", "安全衛生", "生産管理", "糸・繊維", "縫製", "縫製機器", "織物", "製品・規格", "関係法規", "電気"] }],
