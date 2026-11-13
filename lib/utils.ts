@@ -33,6 +33,7 @@ export const EXAM_LABELS: Record<string, string> = {
   "bousui-frp2": "防水施工技能士 2級（FRP防水工事作業）",
   "pan-seizo1": "パン製造技能士 1級",
   "pan-seizo2": "パン製造技能士 2級",
+  "kikai-shiage1": "仕上げ技能士 1級（機械組立仕上げ作業）",
   "kikai-shiage3": "仕上げ技能士 3級（機械組立仕上げ作業）",
   "kikai-shiage2": "仕上げ技能士 2級（機械組立仕上げ作業）",
   "naiso-carpet2": "内装仕上げ施工技能士 2級（カーペット系床）",
