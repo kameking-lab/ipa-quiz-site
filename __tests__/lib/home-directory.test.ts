@@ -7,6 +7,9 @@ import { getHomeDirectory } from "@/lib/home/home-directory";
 import { QUALIFICATION_HUBS, qualificationHubPath } from "@/lib/exam-qualification-hubs";
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
 import { ALL_EXAM_CODES } from "@/lib/exam-config";
+import { EXAM_CATALOG, EXAM_LIBRARY_PATH } from "@/lib/exam-library-catalog";
+import { getExamPaperStats } from "@/lib/exam-library-papers";
+import { qualificationHubForEntry } from "@/lib/exam-qualification-hubs";
 
 describe("home directory", () => {
   const domains = getHomeDirectory();
@@ -93,6 +96,24 @@ describe("home directory", () => {
   it("uses unique keys and in-site hrefs", () => {
     expect(new Set(all.map((i) => i.href)).size).toBe(all.length);
     for (const item of all) expect(item.href.startsWith("/")).toBe(true);
+  });
+
+  it("covers every published exam and library subject exactly once", () => {
+    const hrefs = all.map(item => item.href);
+    const hygieneHubs = { eisei1: "dai-1-shu-eisei-kanrisha", eisei2: "dai-2-shu-eisei-kanrisha" };
+    for (const [code, count] of Object.entries(EXAM_QUESTION_COUNTS)) {
+      if (!count) continue;
+      const hub = hygieneHubs[code as keyof typeof hygieneHubs];
+      const href = hub ? qualificationHubPath(hub) : `/${code}`;
+      expect(hrefs.filter(value => value === href), code).toHaveLength(1);
+    }
+    for (const entry of EXAM_CATALOG) {
+      if (!getExamPaperStats(entry.id)) continue;
+      const hub = qualificationHubForEntry(entry);
+      const href = hub ? qualificationHubPath(hub.slug)
+        : `${EXAM_LIBRARY_PATH}?group=${entry.group}&subject=${encodeURIComponent(entry.subject)}`;
+      expect(hrefs.filter(value => value === href), entry.id).toHaveLength(1);
+    }
   });
 
   it("shows the current partial OT and orthoptist counts in their cards", () => {
