@@ -75,6 +75,8 @@ import { TOSO1_QUESTIONS } from "./toso1";
 import { DENSHI_KIKI_KUMITATE2_QUESTIONS } from "./denshi-kiki-kumitate2";
 import { KINZOKU_NETSUSHORI1_QUESTIONS } from "./kinzoku-netsushori1";
 import { KOJO_BANKIN1_QUESTIONS } from "./kojo-bankin1";
+import { KENCHIKU_BANKIN1_QUESTIONS } from "./kenchiku-bankin1";
+import { KENCHIKU_BANKIN_DUCT2_QUESTIONS } from "./kenchiku-bankin-duct2";
 import { KINZOKU_NETSUSHORI2_QUESTIONS } from "./kinzoku-netsushori2";
 import { KINZOKU_NETSUSHORI3_QUESTIONS } from "./kinzoku-netsushori3";
 import { KOJO_BANKIN3_QUESTIONS } from "./kojo-bankin3";
@@ -442,6 +444,8 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("denshi-kiki-kumitate2") ? { "denshi-kiki-kumitate2": DENSHI_KIKI_KUMITATE2_QUESTIONS } : {}),
 ...(isExamPublished("kinzoku-netsushori1") ? { "kinzoku-netsushori1": KINZOKU_NETSUSHORI1_QUESTIONS } : {}),
 ...(isExamPublished("kojo-bankin1") ? { "kojo-bankin1": KOJO_BANKIN1_QUESTIONS } : {}),
+...(isExamPublished("kenchiku-bankin1") ? { "kenchiku-bankin1": KENCHIKU_BANKIN1_QUESTIONS } : {}),
+...(isExamPublished("kenchiku-bankin-duct2") ? { "kenchiku-bankin-duct2": KENCHIKU_BANKIN_DUCT2_QUESTIONS } : {}),
 ...(isExamPublished("kinzoku-netsushori2") ? { "kinzoku-netsushori2": KINZOKU_NETSUSHORI2_QUESTIONS } : {}),
 ...(isExamPublished("mekki3") ? { "mekki3": MEKKI3_QUESTIONS } : {}),
 ...(isExamPublished("kagu2") ? { "kagu2": KAGU2_QUESTIONS } : {}),

@@ -157,6 +157,8 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "denshi-kiki-kumitate2", name: "電子機器組立て技能士 2級", sub: "電子機器組立て作業 学科（真偽法・多肢択一）", domain: "electrical" },
   { code: "kinzoku-netsushori1", name: "金属熱処理技能士 1級", sub: "一般熱処理作業 学科（真偽法・多肢択一）", domain: "safety" },
   { code: "kojo-bankin1", name: "工場板金技能士 1級", sub: "曲げ板金作業 学科（真偽法・多肢択一）", domain: "safety" },
+  { code: "kenchiku-bankin1", name: "建築板金技能士 1級（ダクト板金作業）", sub: "ダクト板金作業 学科（真偽法・多肢択一）", domain: "construction" },
+  { code: "kenchiku-bankin-duct2", name: "建築板金技能士 2級（ダクト板金作業）", sub: "ダクト板金作業 学科（真偽法・多肢択一）", domain: "construction" },
   { code: "kinzoku-netsushori2", name: "金属熱処理技能士 2級", sub: "一般熱処理作業 学科（真偽法・多肢択一法）", domain: "safety" },
   {"code": "mekki3", "name": "めっき技能士 3級", "sub": "電気めっき 学科（真偽法）", "domain": "construction"},
   {"code": "kagu2", "name": "家具製作技能士 2級", "sub": "家具手加工作業 学科", "domain": "construction"},
