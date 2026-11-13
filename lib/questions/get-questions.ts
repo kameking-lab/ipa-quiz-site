@@ -25,6 +25,7 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "kogyo-hoso2": async () => isExamPublished("kogyo-hoso2") ? (await import("@/data/questions/kogyo-hoso2")).KOGYO_HOSO2_QUESTIONS : [],
   "haiden-seigyo1": async () => isExamPublished("haiden-seigyo1") ? (await import("@/data/questions/haiden-seigyo1")).HAIDEN_SEIGYO1_QUESTIONS : [],
   "sequence1": async () => isExamPublished("sequence1") ? (await import("@/data/questions/sequence1")).SEQUENCE1_QUESTIONS : [],
+  "kaiten-denki1": async () => isExamPublished("kaiten-denki1") ? (await import("@/data/questions/kaiten-denki1")).KAITEN_DENKI1_QUESTIONS : [],
   "sequence3": async () => isExamPublished("sequence3") ? (await import("@/data/questions/sequence3")).SEQUENCE3_QUESTIONS : [],
   "sequence2": async () => isExamPublished("sequence2") ? (await import("@/data/questions/sequence2")).SEQUENCE2_QUESTIONS : [],
   "haiden-seigyo3": async () => isExamPublished("haiden-seigyo3") ? (await import("@/data/questions/haiden-seigyo3")).HAIDEN_SEIGYO3_QUESTIONS : [],
