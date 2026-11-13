@@ -47,6 +47,36 @@ test("calendar dates use the date year, not fiscal year, and retain regional sco
   assert.deepEqual(dates, [{ date: "2027-02-08", sourceUrl: "https://www.exam.or.jp/schedule/h_nittei611", note: "関東" }]);
 });
 
+test("statistics from later in the same month win in either source", () => {
+  const calendar = [{ key: "fp1", candidates: 5000, candidatesPeriod: "2026年9月27日", dates: [] }];
+  const official = [{ key: "fp1", candidates: 2996, candidatesPeriodEnd: "2026-09-13", dates: [] }];
+  assert.equal(mergeOfficialExams(calendar, official).exams[0].candidates, 5000);
+  calendar[0].candidatesPeriod = "2026年9月1日";
+  assert.equal(mergeOfficialExams(calendar, official).exams[0].candidates, 2996);
+});
+
+test("reviewed schedules retain future calendar sessions without reviving replaced dates", () => {
+  const sourceUrl = "https://example.go.jp/exams";
+  const calendar = [{ key: "ap", candidates: 1, dates: [
+    { date: "2026-11-01", sourceUrl },
+    { date: "2027-03-10", sourceUrl },
+    { date: "2027-10-01", sourceUrl },
+  ] }];
+  const official = [{ key: "ap", candidates: 1, dates: [
+    { date: "2026-11-24", endDate: "2026-12-06", sourceUrl },
+    { date: "2027-03-03", endDate: "2027-03-15", sourceUrl },
+  ] }];
+  assert.deepEqual(mergeOfficialExams(calendar, official).exams[0].dates.map(row => row.date),
+    ["2026-11-24", "2027-03-03", "2027-10-01"]);
+  official[0].dates = [{ date: "2026-05-13", sourceUrl }];
+  official[0].checkedAt = "2026-11-13";
+  assert.deepEqual(mergeOfficialExams(calendar, official).exams[0].dates.map(row => row.date),
+    ["2026-05-13", "2027-03-10", "2027-10-01"]);
+  official[0].scheduleMode = "ondemand";
+  official[0].dates = [];
+  assert.deepEqual(mergeOfficialExams(calendar, official).exams[0].dates, []);
+});
+
 test("reviewed calendar note lists retain December and resolve January in the next calendar year", () => {
   const diver = { id: "sensuishi", sessions: [{ fiscal_year: 2026, source_url: "https://www.exam.or.jp/schedule/h_nittei611", notes: "令和8年度は関東センター(市原・東京)で4/23,6/3,7/16,9/24,12/14,2/8の6回実施" }] };
   assert.deepEqual(calendarExamDates(diver).slice(-2).map(row => row.date), ["2026-12-14", "2027-02-08"]);

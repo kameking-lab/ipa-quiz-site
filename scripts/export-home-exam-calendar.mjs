@@ -40,16 +40,31 @@ export function calendarExamDates(entry) {
 }
 
 // Compare reporting periods, not file modification times or the size of a count.
-// Fiscal-year totals sort at fiscal year end; a sitting keeps its stated month.
+// Fiscal-year totals sort at fiscal year end; a sitting keeps its stated day.
 export function statisticsOrder(row) {
-  if (row.candidatesPeriodEnd) return row.candidatesPeriodEnd.slice(0, 7);
+  if (row.candidatesPeriodEnd) return row.candidatesPeriodEnd;
   const period = String(row.candidatesPeriod ?? "");
-  const month = /(20\d{2})年(\d{1,2})月/.exec(period);
-  if (month) return `${month[1]}-${month[2].padStart(2, "0")}`;
+  const month = /(20\d{2})年(\d{1,2})月(?:(\d{1,2})日)?/.exec(period);
+  if (month) {
+    const day = month[3] ?? new Date(Date.UTC(Number(month[1]), Number(month[2]), 0)).getUTCDate();
+    return `${month[1]}-${month[2].padStart(2, "0")}-${String(day).padStart(2, "0")}`;
+  }
   const western = /(20\d{2})(?:年度|$)/.exec(period);
   const reiwa = /令和(\d+)年度/.exec(period);
   const year = western ? Number(western[1]) : reiwa ? 2018 + Number(reiwa[1]) : null;
-  return year ? `${year + 1}-03` : "";
+  return year ? `${year + 1}-03-31` : "";
+}
+
+function mergeExamDates(previous, official) {
+  if (!official.dates) return previous?.dates ?? [];
+  if (official.scheduleMode === "ondemand" || official.dates.length === 0) return official.dates;
+  // The reviewed snapshot replaces the covered period (including corrected
+  // dates/stages), at least through its check date. Keep later calendar sessions
+  // when the next year is added; do not revive past dates deliberately removed.
+  const through = official.dates.reduce((latest, date) =>
+    (date.endDate ?? date.date) > latest ? (date.endDate ?? date.date) : latest, official.checkedAt ?? "");
+  return [...official.dates, ...(previous?.dates ?? []).filter(date => date.date > through)]
+    .sort((a, b) => a.date.localeCompare(b.date));
 }
 
 export function mergeOfficialExams(calendarRows, officialRows) {
@@ -62,7 +77,7 @@ export function mergeOfficialExams(calendarRows, officialRows) {
     const merged = { ...previous, key: official.key, qualificationId: previous?.qualificationId ?? official.key,
       ...(useOfficial ? { ...statistics, candidatesSourceFile: "lib/home/featured-official.json" } : {}),
       // Schedule verification is independent of the statistical reporting period.
-      dates: dates ?? previous?.dates ?? [],
+      dates: mergeExamDates(previous, { dates, scheduleMode, checkedAt: official.checkedAt }),
       ...(scheduleMode ? { scheduleMode, scheduleSourceUrl } : {}) };
     if (previous?.candidates !== null && previous?.candidates !== undefined && previous.candidates !== official.candidates) {
       conflicts.push({ key: official.key, calendarCandidates: previous.candidates, calendarPeriod: previous.candidatesPeriod,
