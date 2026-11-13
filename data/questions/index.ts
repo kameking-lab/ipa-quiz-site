@@ -54,6 +54,7 @@ import { KINZOKU_PRESS1_QUESTIONS } from "./kinzoku-press1";
 import { KINZOKU_PRESS2_QUESTIONS } from "./kinzoku-press2";
 import { HAIKAN_PLANT2_QUESTIONS } from "./haikan-plant2";
 import { HAIKAN_KENCHIKU3_QUESTIONS } from "./haikan-kenchiku3";
+import { BOUSUI_FRP1_QUESTIONS } from "./bousui-frp1";
 import { NAISO_CARPET1_QUESTIONS } from "./naiso-carpet1";
 import { HAIKAN_PLANT1_QUESTIONS } from "./haikan-plant1";
 import { SHASHUTSU2_QUESTIONS } from "./shashutsu2";
@@ -291,6 +292,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("kinzoku-press2") ? { "kinzoku-press2": KINZOKU_PRESS2_QUESTIONS } : {}),
 ...(isExamPublished("haikan-plant2") ? { "haikan-plant2": HAIKAN_PLANT2_QUESTIONS } : {}),
 ...(isExamPublished("haikan-kenchiku3") ? { "haikan-kenchiku3": HAIKAN_KENCHIKU3_QUESTIONS } : {}),
+...(isExamPublished("bousui-frp1") ? { "bousui-frp1": BOUSUI_FRP1_QUESTIONS } : {}),
 ...(isExamPublished("naiso-carpet1") ? { "naiso-carpet1": NAISO_CARPET1_QUESTIONS } : {}),
 ...(isExamPublished("haikan-plant1") ? { "haikan-plant1": HAIKAN_PLANT1_QUESTIONS } : {}),
 ...(isExamPublished("shashutsu2") ? { "shashutsu2": SHASHUTSU2_QUESTIONS } : {}),
