@@ -13,7 +13,7 @@ import {
 } from "@/lib/exam-qualification-hubs";
 import { FP2_PRACTICAL_EDITIONS, getPracticalEdition as getFp2PracticalEdition } from "@/lib/fp2/practical";
 import { FP3_PRACTICAL_EDITIONS, getPracticalEdition as getFp3PracticalEdition } from "@/lib/fp3/practical";
-import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
+import { QUALIFICATION_CATALOG, type QualificationDomain } from "@/lib/qualifications/catalog";
 import type { ExamCode } from "@/lib/questions/types";
 import { getQuestionsByExamStrict, groupByYearSeason } from "@/lib/seo/exam-meta";
 
@@ -25,10 +25,12 @@ import { getQuestionsByExamStrict, groupByYearSeason } from "@/lib/seo/exam-meta
  *  - 安全衛生: 各資格ハブと同じ getExamPaperStats の合計
  */
 
-export type HomeDomainId = "it" | "safety" | "electrical" | "construction" | "money" | "welfare" | "automotive";
+export type HomeDomainId = "it" | "safety" | "electrical" | "construction" | "money" | "real-estate" | "legal" | "welfare" | "automotive";
 
 export interface HomeDirectoryItem {
   key: string;
+  /** Existing question IDs whose prefix differs from the registered exam code. */
+  historyPrefixes?: string[];
   href: string;
   /** カード見出し（略称を含む短い名前） */
   name: string;
@@ -91,9 +93,17 @@ function examPeriodCount(code: ExamCode): number {
   return groupByYearSeason(getQuestionsByExamStrict(code)).length;
 }
 
+function historyPrefixes(code: ExamCode): string[] | undefined {
+  const prefixes = [...new Set(getQuestionsByExamStrict(code)
+    .filter(question => !question.id.startsWith(`${code}-`))
+    .map(question => question.id.replace(/-q\d+.*$/, "-q")))];
+  return prefixes.length ? prefixes : undefined;
+}
+
 function ipaItem(def: IpaCardDef): HomeDirectoryItem {
   return {
     key: def.code,
+    historyPrefixes: historyPrefixes(def.code),
     href: `/${def.code}`,
     name: def.name,
     abbr: def.abbr,
@@ -120,6 +130,116 @@ interface OtherCardDef {
 }
 
 const OTHER_CARDS: readonly OtherCardDef[] = [
+  { code: "sasshi1", name: "サッシ施工技能士 1級", sub: "ビル用サッシ施工作業 学科", domain: "safety" },
+  { code: "sasshi2", name: "サッシ施工技能士 2級", sub: "ビル用サッシ施工作業 学科", domain: "safety" },
+  {"code": "fujin-kodomofuku2", "name": "婦人子供服製造技能士 2級", "sub": "婦人子供注文服製作作業 学科（真偽法・多肢択一法）", "domain": "welfare"},
+  {"code": "fujin-kodomofuku1", "name": "婦人子供服製造技能士 1級", "sub": "婦人子供注文服製作作業 学科（真偽法・多肢択一法）", "domain": "welfare"},
+  {"code": "toso1", "name": "塗装技能士 1級", "sub": "建築塗装作業 学科（真偽法・多肢択一法）", "domain": "construction"},
+
+  {"code": "kojo-bankin1", "name": "工場板金技能士 1級", "sub": "曲げ板金作業 学科（A群 真偽法・B群 多肢択一法）", "domain": "construction"},
+  {"code": "kenchiku-bankin1", "name": "建築板金技能士 1級（ダクト板金作業）", "sub": "ダクト板金作業 学科（A群 真偽法・B群 多肢択一法）", "domain": "construction"},
+  {"code": "kinzoku-netsushori3", "name": "金属熱処理技能士 3級", "sub": "一般熱処理作業 学科（真偽法）", "domain": "construction"},
+  {"code": "kojo-bankin3", "name": "工場板金技能士 3級", "sub": "曲げ板金作業 学科（真偽法）", "domain": "construction"},
+  {"code": "kojo-bankin2", "name": "工場板金技能士 2級", "sub": "曲げ板金作業 学科（A群 真偽法・B群 多肢択一法）", "domain": "construction"},
+  {"code": "mekki2", "name": "めっき技能士 2級", "sub": "電気めっき作業 学科（A群 真偽法・B群 多肢択一法）", "domain": "construction"},
+  {"code": "flower1", "name": "フラワー装飾技能士 1級", "sub": "フラワー装飾作業 学科（A群 真偽法・B群 多肢択一法）", "domain": "welfare"},
+  {"code": "flower3", "name": "フラワー装飾技能士 3級", "sub": "フラワー装飾作業 学科（真偽法）", "domain": "welfare"},
+  {"code": "kagu3", "name": "家具製作技能士 3級", "sub": "家具手加工作業 学科（真偽法）", "domain": "construction"},
+  {"code": "diecast1", "name": "ダイカスト技能士 1級", "sub": "ホットチャンバダイカスト作業 学科", "domain": "safety"},
+  {"code": "tetsudo-sharyo1", "name": "鉄道車両製造・整備技能士 1級", "sub": "機器ぎ装作業 学科", "domain": "safety"},
+  {"code": "insatsu2", "name": "印刷技能士 2級", "sub": "オフセット印刷作業 学科", "domain": "safety"},
+  {"code": "insatsu1", "name": "印刷技能士 1級", "sub": "オフセット印刷作業 学科", "domain": "safety"},
+  {"code": "engei-soshoku2", "name": "園芸装飾技能士 2級", "sub": "室内園芸装飾作業 学科", "domain": "welfare"},
+
+  {"code": "kyoka-plastic2", "name": "強化プラスチック成形技能士 2級", "sub": "手積み積層成形作業 学科", "domain": "construction"},
+  {"code": "kyoka-plastic1", "name": "強化プラスチック成形技能士 1級", "sub": "手積み積層成形作業 学科", "domain": "construction"},
+  {"code": "kagaku-bunseki3", "name": "化学分析技能士 3級", "sub": "化学分析作業 学科", "domain": "safety"},
+  {"code": "kagaku-bunseki1", "name": "化学分析技能士 1級", "sub": "化学分析作業 学科", "domain": "safety"},
+  {"code": "chikuro1", "name": "築炉技能士 1級", "sub": "築炉作業 学科", "domain": "construction"},
+  {"code": "futsu-senban1", "name": "機械加工技能士 1級（普通旋盤作業）", "sub": "普通旋盤作業 学科", "domain": "electrical"},
+  {"code": "shashutsu1", "name": "プラスチック成形技能士 1級（射出成形作業）", "sub": "射出成形作業 学科", "domain": "electrical"},
+  {"code": "katawaku2", "name": "型枠施工技能士 2級", "sub": "型枠工事作業 学科", "domain": "construction"},
+  {"code": "tekkin3", "name": "鉄筋施工技能士 3級（鉄筋組立て作業）", "sub": "鉄筋組立て作業 学科", "domain": "construction"},
+  {"code": "tekkin2", "name": "鉄筋施工技能士 2級（鉄筋組立て作業）", "sub": "鉄筋組立て作業 学科", "domain": "construction"},
+  {"code": "pan-seizo1", "name": "パン製造技能士 1級", "sub": "パン製造作業 学科", "domain": "welfare"},
+  {"code": "pan-seizo2", "name": "パン製造技能士 2級", "sub": "パン製造作業 学科", "domain": "welfare"},
+  {"code": "kikai-shiage1", "name": "仕上げ技能士 1級（機械組立仕上げ作業）", "sub": "機械組立仕上げ作業 学科", "domain": "electrical"},
+  {"code": "kikai-seizu-tegaki1", "name": "機械・プラント製図技能士 1級（機械製図手書き作業）", "sub": "機械製図手書き作業 学科", "domain": "electrical"},
+  {"code": "sequence1", "name": "シーケンス制御技能士 1級（シーケンス制御作業）", "sub": "シーケンス制御作業 学科", "domain": "electrical"},
+  {"code": "reito-seko2", "name": "冷凍空気調和機器施工技能士 2級（冷凍空気調和機器施工作業）", "sub": "冷凍空気調和機器施工作業 学科", "domain": "construction"},
+  {"code": "reito-seko1", "name": "冷凍空気調和機器施工技能士 1級（冷凍空気調和機器施工作業）", "sub": "冷凍空気調和機器施工作業 学科", "domain": "construction"},
+  {"code": "kuukiatsu-kumitate2", "name": "空気圧装置組立て技能士 2級（空気圧装置組立て作業）", "sub": "空気圧装置組立て作業 学科", "domain": "construction"},
+  {"code": "kuukiatsu-kumitate1", "name": "空気圧装置組立て技能士 1級（空気圧装置組立て作業）", "sub": "空気圧装置組立て作業 学科", "domain": "construction"},
+  {"code": "henatsuki-kumitate2", "name": "電気機器組立て技能士 2級（変圧器組立て作業）", "sub": "変圧器組立て作業 学科", "domain": "electrical"},
+  {"code": "henatsuki-kumitate1", "name": "電気機器組立て技能士 1級（変圧器組立て作業）", "sub": "変圧器組立て作業 学科", "domain": "electrical"},
+  {"code": "sequence3", "name": "シーケンス制御技能士 3級（シーケンス制御作業）", "sub": "シーケンス制御作業 学科", "domain": "electrical"},
+  {"code": "haidenban-kumitate3", "name": "電気機器組立て技能士 3級（配電盤・制御盤組立て作業）", "sub": "配電盤・制御盤組立て作業 学科", "domain": "electrical"},
+  {"code": "sequence2", "name": "シーケンス制御技能士 2級（シーケンス制御作業）", "sub": "シーケンス制御作業 学科", "domain": "electrical"},
+  {"code": "zoen-gino1", "name": "造園技能士 1級（造園工事作業）", "sub": "造園工事作業 学科", "domain": "construction"},
+  {"code": "sakan1", "name": "左官技能士 1級（左官作業）", "sub": "左官作業 学科", "domain": "construction"},
+  {"code": "sakan3", "name": "左官技能士 3級（左官作業）", "sub": "左官作業 学科", "domain": "construction"},
+  {"code": "sakan2", "name": "左官技能士 2級（左官作業）", "sub": "左官作業 学科", "domain": "construction"},
+  {"code": "kikai-seizu-cad1", "name": "機械・プラント製図技能士 1級（機械製図CAD作業）", "sub": "機械製図CAD作業 学科", "domain": "electrical"},
+  {"code": "kikai-seizu-cad3", "name": "機械・プラント製図技能士 3級（機械製図CAD作業）", "sub": "機械製図CAD作業 学科", "domain": "electrical"},
+  {"code": "plant-haikan-seizu2", "name": "機械・プラント製図技能士 2級（プラント配管製図作業）", "sub": "プラント配管製図作業 学科", "domain": "electrical"},
+  {"code": "kikai-shiage2", "name": "仕上げ技能士 2級（機械組立仕上げ作業）", "sub": "機械組立仕上げ作業 学科", "domain": "electrical"},
+  {"code": "kikai-shiage3", "name": "仕上げ技能士 3級（機械組立仕上げ作業）", "sub": "機械組立仕上げ作業 学科", "domain": "electrical"},
+  {"code": "zoen-gino2", "name": "造園技能士 2級（造園工事作業）", "sub": "造園工事作業 学科", "domain": "construction"},
+  {"code": "zoen-gino3", "name": "造園技能士 3級（造園工事作業）", "sub": "造園工事作業 学科", "domain": "construction"},
+  {"code": "chuzo3", "name": "鋳造技能士 3級（鋳鉄鋳物鋳造作業）", "sub": "鋳鉄鋳物鋳造作業 学科", "domain": "construction"},
+  {"code": "reito-seko3", "name": "冷凍空気調和機器施工技能士 3級（冷凍空気調和機器施工作業）", "sub": "冷凍空気調和機器施工作業 学科", "domain": "construction"},
+  {"code": "chuzo2", "name": "鋳造技能士 2級（鋳鉄鋳物鋳造作業）", "sub": "鋳鉄鋳物鋳造作業 学科", "domain": "construction"},
+  {"code": "chuzo1", "name": "鋳造技能士 1級（鋳鉄鋳物鋳造作業）", "sub": "鋳鉄鋳物鋳造作業 学科", "domain": "construction"},
+  {"code": "netsuzetsuen2", "name": "熱絶縁施工技能士 2級（保温保冷工事作業）", "sub": "保温保冷工事作業 学科", "domain": "construction"},
+  {"code": "hiseshoku-jokyo1", "name": "非接触除去加工技能士 1級（数値制御形彫り放電加工作業）", "sub": "数値制御形彫り放電加工作業 学科", "domain": "electrical"},
+  {"code": "tategu1", "name": "建具製作技能士 1級（木製建具手加工作業）", "sub": "木製建具手加工作業 学科", "domain": "construction"},
+  {"code": "shohin-soshoku1", "name": "商品装飾展示技能士 1級", "sub": "商品装飾展示作業 学科", "domain": "welfare"},
+  {"code": "kogaku-glass1", "name": "光学機器製造技能士 1級（光学ガラス研磨作業）", "sub": "光学ガラス研磨作業 学科", "domain": "electrical"},
+  {"code": "sangyo-sharyo1", "name": "産業車両整備技能士 1級", "sub": "産業車両整備作業 学科", "domain": "automotive"},
+  {"code": "yogashi1", "name": "菓子製造技能士 1級（洋菓子製造作業）", "sub": "洋菓子製造作業 学科", "domain": "welfare"},
+  {"code": "block-kenchiku3", "name": "ブロック建築技能士 3級（コンクリートブロック工事作業）", "sub": "コンクリートブロック工事作業 学科", "domain": "construction"},
+  {"code": "block-kenchiku1", "name": "ブロック建築技能士 1級（コンクリートブロック工事作業）", "sub": "コンクリートブロック工事作業 学科", "domain": "construction"},
+  {"code": "shuzo1", "name": "酒造技能士 1級（清酒製造作業）", "sub": "清酒製造作業 学科", "domain": "welfare"},
+  {"code": "fraise1", "name": "機械加工技能士 1級（フライス盤作業）", "sub": "フライス盤作業 学科", "domain": "electrical"},
+  {"code": "fraise2", "name": "機械加工技能士 2級（フライス盤作業）", "sub": "フライス盤作業 学科", "domain": "electrical"},
+  {"code": "fraise3", "name": "機械加工技能士 3級（フライス盤作業）", "sub": "フライス盤作業 学科", "domain": "electrical"},
+  {"code": "kikai-kensa1", "name": "機械検査技能士 1級", "sub": "機械検査作業 学科", "domain": "electrical"},
+  {"code": "kikai-kensa2", "name": "機械検査技能士 2級", "sub": "機械検査作業 学科", "domain": "electrical"},
+  {"code": "kogyo-hoso2", "name": "工業包装技能士 2級", "sub": "工業包装作業 学科", "domain": "electrical"},
+  {"code": "katawaku1", "name": "型枠施工技能士 1級", "sub": "型枠工事作業 学科", "domain": "construction"},
+  {"code": "katawaku3", "name": "型枠施工技能士 3級", "sub": "型枠工事作業 学科", "domain": "construction"},
+  {"code": "tekkin-zumen1", "name": "鉄筋施工技能士 1級（鉄筋施工図作成作業）", "sub": "鉄筋施工図作成作業 学科", "domain": "construction"},
+  {"code": "tekkin-zumen2", "name": "鉄筋施工技能士 2級（鉄筋施工図作成作業）", "sub": "鉄筋施工図作成作業 学科", "domain": "construction"},
+  {"code": "tekkin-zumen3", "name": "鉄筋施工技能士 3級（鉄筋施工図作成作業）", "sub": "鉄筋施工図作成作業 学科", "domain": "construction"},
+  {"code": "kinzoku-press1", "name": "金属プレス加工技能士 1級", "sub": "金属プレス作業 学科", "domain": "electrical"},
+  {"code": "kinzoku-press2", "name": "金属プレス加工技能士 2級", "sub": "金属プレス作業 学科", "domain": "electrical"},
+  {"code": "haikan-plant2", "name": "配管技能士 2級（プラント配管作業）", "sub": "プラント配管作業 学科", "domain": "construction"},
+  {"code": "haikan-kenchiku3", "name": "配管技能士 3級（建築配管作業）", "sub": "建築配管作業 学科", "domain": "construction"},
+  {"code": "bousui-frp1", "name": "防水施工技能士 1級（FRP防水工事作業）", "sub": "FRP防水工事作業 学科", "domain": "construction"},
+  {"code": "bousui-frp2", "name": "防水施工技能士 2級（FRP防水工事作業）", "sub": "FRP防水工事作業 学科", "domain": "construction"},
+  {"code": "naiso-carpet1", "name": "内装仕上げ施工技能士 1級（カーペット系床仕上げ工事作業）", "sub": "カーペット系床仕上げ工事作業 学科", "domain": "construction"},
+  {"code": "haikan-plant1", "name": "配管技能士 1級（プラント配管作業）", "sub": "プラント配管作業 学科", "domain": "construction"},
+  {"code": "shashutsu2", "name": "プラスチック成形技能士 2級（射出成形作業）", "sub": "射出成形作業 学科", "domain": "electrical"},
+  {"code": "kikai-kensa3", "name": "機械検査技能士 3級", "sub": "機械検査作業 学科", "domain": "electrical"},
+  {"code": "kagaku-bunseki2", "name": "化学分析技能士 2級", "sub": "化学分析作業 学科", "domain": "safety"},
+  {"code": "engei-soshoku1", "name": "園芸装飾技能士 1級", "sub": "室内園芸装飾作業 学科", "domain": "welfare"},
+  {"code": "engei-soshoku3", "name": "園芸装飾技能士 3級", "sub": "室内園芸装飾作業 学科", "domain": "welfare"},
+  {"code": "kagu1", "name": "家具製作技能士 1級", "sub": "家具手加工作業 学科（A群 真偽法・B群 多肢択一法）", "domain": "construction"},
+  {"code": "kagu2", "name": "家具製作技能士 2級", "sub": "家具手加工作業 学科（A群 真偽法・B群 多肢択一法）", "domain": "construction"},
+  {"code": "mekki3", "name": "めっき技能士 3級", "sub": "電気めっき 学科（真偽法）", "domain": "construction"},
+  {"code": "mekki1", "name": "めっき技能士 1級", "sub": "電気めっき作業 学科（A群 真偽法・B群 多肢択一法）", "domain": "construction"},
+  {"code": "kinzoku-netsushori1", "name": "金属熱処理技能士 1級", "sub": "一般熱処理作業 学科（A群 真偽法・B群 多肢択一法）", "domain": "construction"},
+  {"code": "tekko1", "name": "鉄工技能士 1級", "sub": "製缶作業 学科（A群 真偽法・B群 多肢択一法）", "domain": "construction"},
+  {"code": "denshi-kiki-kumitate1", "name": "電子機器組立て技能士 1級", "sub": "電子機器組立て作業 学科（A群 真偽法・B群 多肢択一法）", "domain": "electrical"},
+  {"code": "denshi-kiki-kumitate3", "name": "電子機器組立て技能士 3級", "sub": "電子機器組立て作業 学科（真偽法）", "domain": "electrical"},
+
+  {"code": "toso2", "name": "塗装技能士 2級", "sub": "建築塗装作業 学科（真偽法・多肢択一法）", "domain": "construction"},
+  {"code": "kikai-hozen-denki1", "name": "機械保全技能士 1級（電気系）", "sub": "電気系保全作業 学科", "domain": "electrical"},
+  {"code": "kikai-hozen-setsubi1", "name": "機械保全技能士 1級（設備診断）", "sub": "設備診断作業 学科", "domain": "safety"},
+  {"code": "kikai-hozen-denki3", "name": "機械保全技能士 3級（電気系）", "sub": "電気系保全作業 学科（真偽法）", "domain": "safety"},
+  {"code": "kikai-hozen3", "name": "機械保全技能士 3級（機械系）", "sub": "機械系保全作業 学科（真偽法）", "domain": "safety"},
+  { code: "tobi2", name: "とび技能士 2級", sub: "とび作業 学科（真偽法・多肢択一法）", domain: "safety" },
+  { code: "tobi3", name: "とび技能士 3級", sub: "とび作業 学科（真偽法）", domain: "safety" },
   { code: "khk-kagaku", name: "高圧ガス化学", sub: "甲種・乙種・丙種（液石・特別）422原問", domain: "safety" },
   { code: "sekou-1kenchiku", name: "1級建築施工管理", sub: "第一次検定（令和7・8年度144問）", domain: "construction" },
   {"code": "benrishi", "name": "弁理士（短答式）", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "money"},
@@ -145,6 +265,88 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "shiho-tanto", name: "司法試験（短答）", sub: "憲法・民法・刑法の短答式", domain: "money" },
   { code: "yobi-tanto", name: "予備試験（短答）", sub: "法律基本科目7科目の短答式", domain: "money" },
   { code: "sokuryoshiho", name: "測量士補", sub: "国土地理院の公式問題・正答・独自解説", domain: "construction" },
+
+  { code: "tekko2", name: "鉄工技能士 2級", sub: "製缶作業 学科（A群 真偽法・B群 多肢択一法）", domain: "construction" },
+
+  { code: "denshi-kiki-kumitate2", name: "電子機器組立て技能士 2級", sub: "電子機器組立て作業 学科（真偽法・多肢択一）", domain: "electrical" },
+
+  { code: "kenchiku-bankin-duct2", name: "建築板金技能士 2級（ダクト板金作業）", sub: "ダクト板金作業 学科（真偽法・多肢択一）", domain: "construction" },
+  { code: "kinzoku-netsushori2", name: "金属熱処理技能士 2級", sub: "一般熱処理作業 学科（真偽法・多肢択一法）", domain: "safety" },
+
+  {"code": "chikuro2", "name": "築炉技能士 2級", "sub": "築炉作業 学科", "domain": "construction"},
+
+  {"code": "futsu-senban3", "name": "機械加工技能士 3級（普通旋盤作業）", "sub": "普通旋盤作業 学科（真偽法）", "domain": "electrical"},
+  {"code": "shashutsu3", "name": "プラスチック成形技能士 3級（射出成形作業）", "sub": "射出成形作業 学科（真偽法）", "domain": "electrical"},
+
+  {"code": "kogyo-hoso1", "name": "工業包装技能士 1級", "sub": "工業包装作業 学科", "domain": "electrical"},
+
+  {"code": "haiden-seigyo1", "name": "電気機器組立て技能士 1級", "sub": "配電盤・制御盤組立て 学科", "domain": "electrical"},
+
+  {"code": "kaiten-denki2", "name": "電気機器組立て技能士 2級（回転電機巻線製作作業）", "sub": "回転電機巻線製作作業 学科", "domain": "electrical"},
+  {"code": "kaiten-denki1", "name": "電気機器組立て技能士 1級（回転電機巻線製作作業）", "sub": "回転電機巻線製作作業 学科", "domain": "electrical"},
+
+  {"code": "haiden-seigyo3", "name": "電気機器組立て技能士 3級", "sub": "配電盤・制御盤組立て 学科", "domain": "electrical"},
+  {"code": "kenchiku-bankin2", "name": "建築板金技能士 2級", "sub": "内外装板金作業 学科", "domain": "construction"},
+  {"code": "kensetsu-kikai-seibi1", "name": "建設機械整備技能士 1級", "sub": "建設機械整備作業 学科", "domain": "construction"},
+
+  {"code": "bousui-urethane2", "name": "防水施工技能士 2級（ウレタン）", "sub": "ウレタンゴム系塗膜防水工事作業 学科", "domain": "construction"},
+
+  {"code": "plant-haikan-seizu1", "name": "機械・プラント製図技能士 1級（プラント配管製図作業）", "sub": "プラント配管製図作業 学科", "domain": "electrical"},
+  {"code": "kikai-seizu3", "name": "機械・プラント製図技能士 3級（機械製図手書き作業）", "sub": "機械製図手書き作業 学科", "domain": "electrical"},
+
+  {"code": "kikai-seizu2", "name": "機械・プラント製図技能士 2級（機械製図手書き作業）", "sub": "機械製図手書き作業 学科", "domain": "electrical"},
+  {"code": "kikai-seizu-cad2", "name": "機械・プラント製図技能士 2級（機械製図CAD作業）", "sub": "機械製図CAD作業 学科", "domain": "electrical"},
+
+  {"code": "naiso-carpet2", "name": "内装仕上げ施工技能士 2級（カーペット系床）", "sub": "カーペット系床仕上げ工事作業 学科", "domain": "construction"},
+  {"code": "naiso-plastic1", "name": "内装仕上げ施工技能士 1級（プラスチック系床）", "sub": "プラスチック系床仕上げ工事作業 学科", "domain": "construction"},
+  {"code": "naiso-plastic2", "name": "内装仕上げ施工技能士 2級（プラスチック系床）", "sub": "プラスチック系床仕上げ工事作業 学科", "domain": "construction"},
+  {"code": "naiso-kosei2", "name": "内装仕上げ施工技能士 2級（鋼製下地）", "sub": "鋼製下地工事作業 学科", "domain": "construction"},
+
+  {"code": "plant-haikan2", "name": "配管技能士 2級（プラント配管作業）", "sub": "プラント配管作業 学科", "domain": "construction"},
+
+  {"code": "plant-haikan1", "name": "配管技能士 1級（プラント配管作業）", "sub": "プラント配管作業 学科", "domain": "construction"},
+
+  { code: "kensetsu-kikai-seibi2", name: "建設機械整備技能士 2級", sub: "建設機械整備作業 学科（真偽法・多肢択一）", domain: "construction" },
+  { code: "hyoso1", name: "表装技能士 1級", sub: "表具作業 学科（真偽法・多肢択一）", domain: "construction" },
+  { code: "tairu2", name: "タイル張り技能士 2級", sub: "タイル張り作業 学科（真偽法・多肢択一）", domain: "construction" },
+  { code: "sekizai1", name: "石材施工技能士 1級", sub: "石張り作業 学科（真偽法・多肢択一）", domain: "construction" },
+  { code: "hyoso2", name: "表装技能士 2級", sub: "表具作業 学科（真偽法・多肢択一）", domain: "construction" },
+  { code: "shohin-soshoku3", name: "商品装飾展示技能士 3級", sub: "商品装飾展示作業 学科（真偽法）", domain: "safety" },
+  { code: "shashin1", name: "写真技能士 1級", sub: "肖像写真デジタル作業 学科（真偽法・多肢択一）", domain: "safety" },
+  { code: "sessaku-kensaku1", name: "切削工具研削技能士 1級", sub: "工作機械用切削工具研削作業 学科（真偽法・多肢択一）", domain: "safety" },
+  { code: "tatami1", name: "畳製作技能士 1級", sub: "畳製作作業 学科（真偽法・多肢択一）", domain: "safety" },
+
+  { code: "funmatsu-yakin1", name: "粉末冶金技能士 1級", sub: "成形・再圧縮作業 学科（真偽法・多肢択一）", domain: "safety" },
+  { code: "nunohaku1", name: "布はく縫製技能士 1級", sub: "ワイシャツ製造作業 学科（真偽法・多肢択一）", domain: "safety" },
+  { code: "kikinzoku-soshin1", name: "貴金属装身具製作技能士 1級", sub: "貴金属装身具製作作業 学科（真偽法・多肢択一）", domain: "safety" },
+  { code: "shashin3", name: "写真技能士 3級", sub: "肖像写真デジタル作業 学科（真偽法）", domain: "safety" },
+  { code: "kikinzoku-soshin3", name: "貴金属装身具製作技能士 3級", sub: "貴金属装身具製作作業 学科（真偽法）", domain: "safety" },
+  { code: "kikinzoku-soshin2", name: "貴金属装身具製作技能士 2級", sub: "貴金属装身具製作作業 学科（真偽法・多肢択一）", domain: "safety" },
+  { code: "tobi1", name: "とび技能士 1級", sub: "とび作業 学科（A群 真偽法・B群 多肢択一法）", domain: "safety" },
+
+  { code: "kenchiku-daiku1", name: "建築大工技能士 1級", sub: "大工工事作業 学科（A群 真偽法・B群 多肢択一法）", domain: "safety" },
+  { code: "kenchiku-daiku3", name: "建築大工技能士 3級", sub: "大工工事作業 学科（真偽法）", domain: "safety" },
+  { code: "kenchiku-daiku2", name: "建築大工技能士 2級", sub: "大工工事作業 学科（A群 真偽法・B群 多肢択一法）", domain: "safety" },
+  { code: "shashin2", name: "写真技能士 2級", sub: "肖像写真デジタル作業 学科（真偽法・多肢択一）", domain: "safety" },
+
+
+
+
+  { code: "flower2", name: "フラワー装飾技能士 2級", sub: "フラワー装飾作業 学科（真偽法・多肢択一法）", domain: "welfare" },
+
+
+
+
+  { code: "diecast2", name: "ダイカスト技能士 2級", sub: "ホットチャンバダイカスト作業 学科（真偽法・多肢択一法）", domain: "safety" },
+
+  { code: "tetsudo-sharyo2", name: "鉄道車両製造・整備技能士 2級", sub: "機器ぎ装作業 学科（真偽法・多肢択一法）", domain: "safety" },
+
+
+
+
+
+
+
   { code: "kikai-hozen", name: "機械保全技能士 2級", sub: "機械系保全作業 学科（真偽法・四肢択一）", domain: "safety" },
   { code: "tsukanshi", name: "通関士", sub: "通関業法・関税法等・通関実務", domain: "money" },
   { code: "kanteishi", name: "不動産鑑定士", sub: "令和7・8年度 短答式160問・全肢解説", domain: "money" },
@@ -201,7 +403,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "soukan", name: "技術士 総合技術監理部門", sub: "第二次試験 択一式（令和7・8年度）", domain: "construction" },
   { code: "hoikushi", name: "保育士試験", sub: "筆記9科目（令和8年度前期・154問）", domain: "welfare" },
   { code: "mankan", name: "マンション管理士", sub: "令和6・7年度公式問題（100問）", domain: "money" },
-  { code: "kashikin", name: "貸金業務取扱主任者", sub: "第20回・第19回公式問題（100問）", domain: "money" },
+  { code: "kashikin", name: "貸金業務取扱主任者", sub: "第18〜20回公式問題（150問）", domain: "money" },
   { code: "sharoushi", name: "社会保険労務士", sub: "第58・57回 択一式・選択式を部分収録", domain: "welfare" },
   { code: "kangoshi", name: "看護師", sub: "第115・114回 午前・午後の確認済み原問を部分収録", domain: "welfare" },
   { code: "biyoshi", name: "美容師", sub: "第53・54回の確認済み106問（4問保留）", domain: "welfare" },
@@ -235,6 +437,7 @@ function otherItem(def: OtherCardDef): HomeDirectoryItem {
   const practical = def.code === "fp2" ? fp2PracticalCount() : def.code === "fp3" ? fp3PracticalCount() : 0;
   return {
     key: def.code,
+    historyPrefixes: historyPrefixes(def.code),
     href: `/${def.code}`,
     name: def.name,
     sub: def.sub,
@@ -306,17 +509,32 @@ function domain(
 }
 
 export function getHomeDirectory(): HomeDirectoryDomain[] {
-  const catalogDomains: Record<string, OtherCardDef["domain"]> = {
-    "information-technology": "it", finance: "money", "real-estate": "money", accounting: "money",
-    electrical: "electrical", construction: "construction", safety: "safety", legal: "money",
+  const catalogDomains: Record<QualificationDomain, HomeDomainId> = {
+    "information-technology": "it", finance: "money", "real-estate": "real-estate", accounting: "money",
+    electrical: "electrical", construction: "construction", safety: "safety", legal: "legal", automotive: "automotive",
     welfare: "welfare", pharmacy: "welfare", "personal-services": "welfare",
   };
   const additionalCards: OtherCardDef[] = QUALIFICATION_CATALOG.flatMap((entry) => {
     if (entry.status !== "live" || !entry.examCode || entry.domain === "automotive" || OTHER_CARDS.some((card) => card.code === entry.examCode)) return [];
-    return [{ code: entry.examCode, name: entry.shortName, sub: entry.reuseSummary, domain: catalogDomains[entry.domain] ?? "safety" }];
+    return [{ code: entry.examCode, name: entry.shortName, sub: entry.reuseSummary, domain: catalogDomains[entry.domain] }];
   });
-  const others = [...OTHER_CARDS, ...additionalCards].filter((def) => isLiveExam(def.code)).map((def) => ({ def, item: otherItem(def) }));
+  // The registration catalog owns the category, including older hand-written cards.
+  const others = [...OTHER_CARDS, ...additionalCards].filter((def) => isLiveExam(def.code)).map((def) => {
+    const entry = QUALIFICATION_CATALOG.find((entry) => entry.examCode === def.code);
+    const classified = { ...def, domain: entry ? catalogDomains[entry.domain] : def.domain };
+    return { def: classified, item: otherItem(classified) };
+  });
   const byDomain = (id: OtherCardDef["domain"]) => others.filter(({ def }) => def.domain === id).map(({ item }) => item);
+  const libraryItems = safetyOtherItems();
+  const libraryDomain = (item: HomeDirectoryItem): HomeDomainId => {
+    if (item.key === "survey-assistant") return "construction";
+    if (!item.key.startsWith("pe-first-")) return "safety";
+    if (item.name.includes("情報工学")) return "it";
+    if (item.name.includes("電気電子")) return "electrical";
+    return "construction";
+  };
+  const libraryByDomain = (id: HomeDomainId) => libraryItems.filter(item => libraryDomain(item) === id);
+  const hubItems = safetyItems();
 
   const domains = [
     domain(
@@ -335,7 +553,7 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
         allLabel: "IPAの試験をすべて見る",
       },
       [...IPA_FEATURED.map(ipaItem), ...byDomain("it")],
-      IPA_ADVANCED.map(ipaItem),
+      [...IPA_ADVANCED.map(ipaItem), ...libraryByDomain("it")],
     ),
     domain(
       {
@@ -345,33 +563,33 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
         allHref: "/e-learning/exams",
         allLabel: "安全衛生の試験をすべて見る",
       },
-      [...byDomain("safety").filter((item) => item.key !== "eisei1" && item.key !== "eisei2"), ...safetyItems()],
-      safetyOtherItems(),
+      [...byDomain("safety").filter((item) => item.key !== "eisei1" && item.key !== "eisei2"), ...hubItems.filter(item => libraryDomain(item) === "safety")],
+      libraryByDomain("safety"),
     ),
     domain(
       {
         id: "electrical",
-        title: "電気",
-        lead: "電験三種と第二種電気工事士の公式公開問題。",
+        title: "電気・無線",
+        lead: "電気主任技術者・電気工事士・無線など。",
         allHref: "/qualifications",
         allLabel: "その他資格の一覧",
       },
-      byDomain("electrical"),
+      byDomain("electrical"), libraryByDomain("electrical"),
     ),
     domain(
       {
         id: "construction",
-        title: "建設・施工管理",
-        lead: "1級・2級土木と2級管工事施工管理技術検定の第一次検定。",
+        title: "建設・技術",
+        lead: "建築・施工管理・測量・技術士など。",
         allHref: "/qualifications",
         allLabel: "その他資格の一覧",
       },
-      byDomain("construction"),
+      [...byDomain("construction"), ...hubItems.filter(item => libraryDomain(item) === "construction")], libraryByDomain("construction"),
     ),
     domain(
       {
         id: "money",
-        title: "お金・不動産・経営",
+        title: "お金・ビジネス",
         lead: "FP技能検定（学科・実技）、宅建、中小企業診断士など。",
         allHref: "/qualifications",
         allLabel: "その他資格の一覧",
@@ -381,7 +599,7 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
     domain(
       {
         id: "welfare",
-        title: "医療・福祉",
+        title: "医療・福祉・生活",
         lead: "医療・福祉の国家試験と登録販売者試験。",
         allHref: "/qualifications",
         allLabel: "その他資格の一覧",
@@ -389,5 +607,10 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
       byDomain("welfare"),
     ),
   ];
-  return domains.filter((d) => d.qualificationCount > 0);
+  domains.push(
+    domain({ id: "real-estate", title: "不動産", lead: "宅建・マンション管理など。", allHref: "/qualifications", allLabel: "その他資格の一覧" }, byDomain("real-estate")),
+    domain({ id: "legal", title: "法律・労務", lead: "法律・知的財産・社会保険など。", allHref: "/qualifications", allLabel: "その他資格の一覧" }, byDomain("legal")),
+  );
+  const order: HomeDomainId[] = ["it", "money", "real-estate", "legal", "electrical", "construction", "safety", "welfare", "automotive"];
+  return domains.filter((d) => d.qualificationCount > 0).sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
 }

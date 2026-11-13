@@ -27,14 +27,15 @@ describe("questionSnippet", () => {
   it("does not reveal the answer (no 正解は / answer key front-load)", () => {
     const snippet = questionSnippet(baseQuestion);
     expect(snippet).not.toContain("正解は");
-    // The bare answer key must not appear as the leading reveal.
-    expect(snippet.startsWith("【")).toBe(true);
+    expect(snippet.startsWith(baseQuestion.question)).toBe(true);
   });
 
-  it("leads with exam context and the question stem", () => {
+  it("leads with the searched stem and retains exam context", () => {
     const snippet = questionSnippet(baseQuestion);
     expect(snippet).toContain("基礎理論");
     expect(snippet).toContain("可変長符号化");
+    expect(snippet.indexOf("可変長符号化")).toBeLessThan(snippet.indexOf("基礎理論"));
+    expect(snippet).not.toMatch(/無料で即|AIが.*無料/);
   });
 
   it("ends with the AI CTA and never exceeds 158 chars", () => {
@@ -52,9 +53,39 @@ describe("questionSnippet", () => {
     expect(snippet.length).toBeLessThanOrEqual(158);
     expect(snippet).toContain("AI");
   });
+
+  it("keeps source context and the CTA within budget for a long category", () => {
+    const snippet = questionSnippet({ ...baseQuestion, category: "あ".repeat(200) });
+    expect(snippet.length).toBeLessThanOrEqual(158);
+    expect(snippet.startsWith("可変長符号化")).toBe(true);
+    expect(snippet.endsWith("疑問はAIに質問できます。")).toBe(true);
+  });
 });
 
 describe("questionTitle", () => {
+  it("leads with a short medical stem and identifies the source question", () => {
+    const title = questionTitle({ ...baseQuestion, exam: "kangoshi", question: "痛みの伝導で正しいのはどれか。" });
+    expect(title.startsWith("痛みの伝導で正しいのはどれか。｜")).toBe(true);
+    expect(title).toContain("看護師");
+    expect(title).toContain("問1");
+    expect(title).toContain("解説");
+  });
+
+  it("preserves the instruction to select two answers", () => {
+    const question = "疼痛を伝達する神経線維はどれか。2 つ選べ。";
+    expect(questionTitle({ ...baseQuestion, exam: "rigaku-ryohoshi", question }).startsWith(`${question}｜`)).toBe(true);
+  });
+
+  it.each([
+    { question: "痛みの伝導で正しいのはどれか。", hasImage: true },
+    { question: "図の説明で正しいのはどれか。" },
+    { question: "次の説明で正しいのはどれか。" },
+    { question: "あ".repeat(80) + "どれか。" },
+  ])("keeps the source-first title when the stem needs context: %s", overrides => {
+    const q: Question = { ...baseQuestion, exam: "kangoshi", ...overrides };
+    expect(questionTitle(q).startsWith("令和6年度 春期")).toBe(true);
+    expect(questionTitle(q)).toContain("問1");
+  });
   it("includes year, exam, session, question number and category when within budget", () => {
     const title = questionTitle(baseQuestion);
     expect(title).toContain("問1");

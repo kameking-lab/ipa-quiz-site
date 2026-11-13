@@ -1,0 +1,769 @@
+{
+  "qualification": "建築大工（大工工事作業）2級｜2023年度後期｜学科",
+  "year": 2023,
+  "season": "late",
+  "questionCount": 50,
+  "checkedAt": "2026-11-12T22:17:45.745861+09:00",
+  "officialSources": [
+    {
+      "file": "questions.pdf",
+      "url": "https://www.kentei.javada.or.jp/pdf/R05-2-B44-%E5%BB%BA%E7%AF%89%E5%A4%A7%E5%B7%A5%EF%BC%88%E5%A4%A7%E5%B7%A5%E5%B7%A5%E4%BA%8B%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+      "sha256": "f59a32f7810cfa9c70d138aa0d4700edc89ffd919dd017745109640f1f2acd6c",
+      "size": 511775,
+      "pages": 10
+    },
+    {
+      "file": "answers.pdf",
+      "url": "https://www.kentei.javada.or.jp/pdf/R05-2-B44-%E5%BB%BA%E7%AF%89%E5%A4%A7%E5%B7%A5%EF%BC%88%E5%A4%A7%E5%B7%A5%E5%B7%A5%E4%BA%8B%E4%BD%9C%E6%A5%AD%EF%BC%89-%EF%BC%92%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+      "sha256": "ce277397eba686ef87fb81283c39627ee4da553ac228e3e467b41de599b0e21d",
+      "size": 58988,
+      "pages": 1
+    }
+  ],
+  "officialAnswers": {
+    "A": [
+      "○",
+      "○",
+      "○",
+      "○",
+      "×",
+      "○",
+      "×",
+      "○",
+      "×",
+      "×",
+      "×",
+      "×",
+      "×",
+      "×",
+      "×",
+      "○",
+      "×",
+      "×",
+      "×",
+      "×",
+      "○",
+      "○",
+      "×",
+      "○",
+      "○"
+    ],
+    "B": [
+      "ニ",
+      "ロ",
+      "ニ",
+      "ロ",
+      "ハ",
+      "ハ",
+      "ロ",
+      "ニ",
+      "ハ",
+      "イ",
+      "イ",
+      "ハ",
+      "イ",
+      "イ",
+      "ロ",
+      "ロ",
+      "ニ",
+      "ロ",
+      "ハ",
+      "ニ",
+      "ハ",
+      "イ",
+      "イ",
+      "イ",
+      "ロ"
+    ]
+  },
+  "transcriptionMethod": "公式問題PDFの全設問ページ画像から本文・選択肢を転記し、全問目視照合。改行、空白、全角英数字を整形し、ふりがなを省略。必要な原図を切り出し。",
+  "answerVerification": "公式正答表の全問を画像で確認し、PDFテキストの記号を座標順で独立抽出。officialAnswerNumberと採点キーの全件照合。",
+  "numbering": "原本の群と番号をofficialQuestionLabel・IDに保持。1・2級のqNumberはA群1〜25、B群26〜50。3級は1〜30。",
+  "choiceMapping": {
+    "trueFalse": {
+      "ア": "○",
+      "イ": "×"
+    },
+    "multipleChoice": {
+      "ア": "イ",
+      "イ": "ロ",
+      "ウ": "ハ",
+      "エ": "ニ"
+    }
+  },
+  "figures": [
+    {
+      "url": "/images/questions/kenchiku-daiku2/2023-late-a05.webp",
+      "sha256": "e32b9d6fce865c47c8fd466e4898740f5b664524fd90215dd9b0e032fdcc72e7",
+      "originalQuestion": "A群 5",
+      "pdfPage": 2,
+      "cropPdfPoints": [
+        108,
+        273,
+        295,
+        418
+      ]
+    },
+    {
+      "url": "/images/questions/kenchiku-daiku2/2023-late-a06.webp",
+      "sha256": "77b23cece9ee86cc90863a7ed1d29cf2110d19f77714851e7dc4f732e24ba8f2",
+      "originalQuestion": "A群 6",
+      "pdfPage": 2,
+      "cropPdfPoints": [
+        86,
+        458,
+        335,
+        594
+      ]
+    },
+    {
+      "url": "/images/questions/kenchiku-daiku2/2023-late-a07.webp",
+      "sha256": "266cac1695e20996de160ac6d05bfa17c5ddd91adcef00b29c4a7f4a41f28d52",
+      "originalQuestion": "A群 7",
+      "pdfPage": 3,
+      "cropPdfPoints": [
+        94,
+        117,
+        317,
+        276
+      ]
+    },
+    {
+      "url": "/images/questions/kenchiku-daiku2/2023-late-a14.webp",
+      "sha256": "8c218981bd943e00df28d62328d99776c45e478c574fc8991e04dc2f96bbe7eb",
+      "originalQuestion": "A群 14",
+      "pdfPage": 3,
+      "cropPdfPoints": [
+        180,
+        531,
+        249,
+        609
+      ]
+    },
+    {
+      "url": "/images/questions/kenchiku-daiku2/2023-late-b06.webp",
+      "sha256": "700cc7da4fbb69c9c7d3acc62d97cdec72abcf902e018a77dcae08893394dee8",
+      "originalQuestion": "B群 6",
+      "pdfPage": 6,
+      "cropPdfPoints": [
+        159,
+        110,
+        397,
+        349
+      ]
+    },
+    {
+      "url": "/images/questions/kenchiku-daiku2/2023-late-b09.webp",
+      "sha256": "90f2d8ce31891595198af2d474a100377c9d794d57b228b16f5f885cc175f6af",
+      "originalQuestion": "B群 9",
+      "pdfPage": 7,
+      "cropPdfPoints": [
+        91,
+        122,
+        458,
+        315
+      ]
+    },
+    {
+      "url": "/images/questions/kenchiku-daiku2/2023-late-b13.webp",
+      "sha256": "e04409fc9463c344af0f0bc7bc7c15f6056392b8b862fd6b67345d66cc6a8525",
+      "originalQuestion": "B群 13",
+      "pdfPage": 7,
+      "cropPdfPoints": [
+        111,
+        663,
+        464,
+        758
+      ]
+    },
+    {
+      "url": "/images/questions/kenchiku-daiku2/2023-late-b15.webp",
+      "sha256": "e7ad601702513a62affe0a629a5fedfdb528dfc9bcd623f9aa401c32b86ac82f",
+      "originalQuestion": "B群 15",
+      "pdfPage": 8,
+      "cropPdfPoints": [
+        86,
+        217,
+        475,
+        268
+      ]
+    },
+    {
+      "url": "/images/questions/kenchiku-daiku2/2023-late-b18.webp",
+      "sha256": "1633dbca2fa052701d887366835b41e8b65fa4811441eb5d057e519a60cefee1",
+      "originalQuestion": "B群 18",
+      "pdfPage": 8,
+      "cropPdfPoints": [
+        90,
+        529,
+        472,
+        597
+      ]
+    },
+    {
+      "url": "/images/questions/kenchiku-daiku2/2023-late-b22.webp",
+      "sha256": "c9c51597836b9d7c5c9b5afb20f0ba651bda8e087603cdcc2ae03776fa720f78",
+      "originalQuestion": "B群 22",
+      "pdfPage": 9,
+      "cropPdfPoints": [
+        316,
+        339,
+        421,
+        376
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-001",
+      "group": "A",
+      "originalNumber": 1,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-002",
+      "group": "A",
+      "originalNumber": 2,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-003",
+      "group": "A",
+      "originalNumber": 3,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-004",
+      "group": "A",
+      "originalNumber": 4,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-005",
+      "group": "A",
+      "originalNumber": 5,
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": true
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-006",
+      "group": "A",
+      "originalNumber": 6,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": true
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-007",
+      "group": "A",
+      "originalNumber": 7,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": true
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-008",
+      "group": "A",
+      "originalNumber": 8,
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-009",
+      "group": "A",
+      "originalNumber": 9,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-010",
+      "group": "A",
+      "originalNumber": 10,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-011",
+      "group": "A",
+      "originalNumber": 11,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-012",
+      "group": "A",
+      "originalNumber": 12,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-013",
+      "group": "A",
+      "originalNumber": 13,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-014",
+      "group": "A",
+      "originalNumber": 14,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": true
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-015",
+      "group": "A",
+      "originalNumber": 15,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-016",
+      "group": "A",
+      "originalNumber": 16,
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-017",
+      "group": "A",
+      "originalNumber": 17,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-018",
+      "group": "A",
+      "originalNumber": 18,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-019",
+      "group": "A",
+      "originalNumber": 19,
+      "pdfPage": 4,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-020",
+      "group": "A",
+      "originalNumber": 20,
+      "pdfPage": 4,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-021",
+      "group": "A",
+      "originalNumber": 21,
+      "pdfPage": 4,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-022",
+      "group": "A",
+      "originalNumber": 22,
+      "pdfPage": 4,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-023",
+      "group": "A",
+      "originalNumber": 23,
+      "pdfPage": 4,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-024",
+      "group": "A",
+      "originalNumber": 24,
+      "pdfPage": 4,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-a-025",
+      "group": "A",
+      "originalNumber": 25,
+      "pdfPage": 4,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-001",
+      "group": "B",
+      "originalNumber": 1,
+      "pdfPage": 5,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-002",
+      "group": "B",
+      "originalNumber": 2,
+      "pdfPage": 5,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-003",
+      "group": "B",
+      "originalNumber": 3,
+      "pdfPage": 5,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-004",
+      "group": "B",
+      "originalNumber": 4,
+      "pdfPage": 5,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-005",
+      "group": "B",
+      "originalNumber": 5,
+      "pdfPage": 5,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-006",
+      "group": "B",
+      "originalNumber": 6,
+      "pdfPage": 6,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": true
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-007",
+      "group": "B",
+      "originalNumber": 7,
+      "pdfPage": 6,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-008",
+      "group": "B",
+      "originalNumber": 8,
+      "pdfPage": 6,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-009",
+      "group": "B",
+      "originalNumber": 9,
+      "pdfPage": 7,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": true
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-010",
+      "group": "B",
+      "originalNumber": 10,
+      "pdfPage": 7,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-011",
+      "group": "B",
+      "originalNumber": 11,
+      "pdfPage": 7,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-012",
+      "group": "B",
+      "originalNumber": 12,
+      "pdfPage": 7,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-013",
+      "group": "B",
+      "originalNumber": 13,
+      "pdfPage": 7,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": true
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-014",
+      "group": "B",
+      "originalNumber": 14,
+      "pdfPage": 8,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-015",
+      "group": "B",
+      "originalNumber": 15,
+      "pdfPage": 8,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": true
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-016",
+      "group": "B",
+      "originalNumber": 16,
+      "pdfPage": 8,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-017",
+      "group": "B",
+      "originalNumber": 17,
+      "pdfPage": 8,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-018",
+      "group": "B",
+      "originalNumber": 18,
+      "pdfPage": 8,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": true
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-019",
+      "group": "B",
+      "originalNumber": 19,
+      "pdfPage": 8,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-020",
+      "group": "B",
+      "originalNumber": 20,
+      "pdfPage": 9,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-021",
+      "group": "B",
+      "originalNumber": 21,
+      "pdfPage": 9,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-022",
+      "group": "B",
+      "originalNumber": 22,
+      "pdfPage": 9,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": true
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-023",
+      "group": "B",
+      "originalNumber": 23,
+      "pdfPage": 9,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-024",
+      "group": "B",
+      "originalNumber": 24,
+      "pdfPage": 9,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    },
+    {
+      "id": "kenchiku-daiku2-2023-late-gakka-b-025",
+      "group": "B",
+      "originalNumber": 25,
+      "pdfPage": 10,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "figureChecked": false
+    }
+  ],
+  "reusedManuscripts": []
+}

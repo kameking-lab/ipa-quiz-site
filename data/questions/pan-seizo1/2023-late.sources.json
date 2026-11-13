@@ -1,0 +1,630 @@
+{
+  "candidateId": "Q5-052",
+  "qualification": "パン製造（パン製造作業）1級",
+  "fiscalYear": 2023,
+  "period": "後期",
+  "checkedAt": "2026-11-13T15:58:54.303883+09:00",
+  "sources": [
+    {
+      "kind": "questions",
+      "url": "https://www.kentei.javada.or.jp/pdf/R05-2-B39-%E3%83%91%E3%83%B3%E8%A3%BD%E9%80%A0%EF%BC%88%E3%83%91%E3%83%B3%E8%A3%BD%E9%80%A0%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+      "httpStatus": 200,
+      "sha256": "0b3aba0e3c13c9c14b7b210a826438cd706975d3edc5f99b864dad74dd48912a",
+      "pages": 8,
+      "checkedAt": "2026-11-13T15:54:56.207091+09:00"
+    },
+    {
+      "kind": "answers",
+      "url": "https://www.kentei.javada.or.jp/pdf/R05-2-B39-%E3%83%91%E3%83%B3%E8%A3%BD%E9%80%A0%EF%BC%88%E3%83%91%E3%83%B3%E8%A3%BD%E9%80%A0%E4%BD%9C%E6%A5%AD%EF%BC%89-%EF%BC%91%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+      "httpStatus": 200,
+      "sha256": "465f84010504e75ad548b12156f25edc49963ee6520f54a2b9fb3e6ff0a6aee2",
+      "pages": 1,
+      "checkedAt": "2026-11-13T15:54:57.523948+09:00"
+    }
+  ],
+  "questionCount": 50,
+  "trueFalseCount": 25,
+  "multipleChoiceCount": 25,
+  "choiceExplanationCount": 150,
+  "figureCount": 0,
+  "transcription": "公式問題PDFの全問題ページを原本画像で確認し、問番号・本文・全選択肢・公式正答表を照合。字間・改行・英数字幅を正規化。図は公式原図を切り出し保持。",
+  "answerMapping": {
+    "trueFalse": {
+      "○": "ア",
+      "×": "イ"
+    },
+    "multipleChoice": {
+      "イ": "ア",
+      "ロ": "イ",
+      "ハ": "ウ",
+      "ニ": "エ"
+    }
+  },
+  "duplicateCheck": {
+    "checkedAt": "2026-11-13T15:54:54.265886+09:00",
+    "main": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+    "ledgerMatches": [],
+    "mainRelevantFiles": [],
+    "progressMatches": [
+      {
+        "qual": "パン製造（パン製造作業） 1級 2023年度 後期",
+        "job": "c5-18",
+        "where": "cx/qnew6-kako-20261112",
+        "status": "作業中",
+        "updated": "2026-11-13T15:53:49.960033+09:00"
+      }
+    ],
+    "refsChecked": 1417,
+    "blobsChecked": 6200,
+    "hits": []
+  },
+  "review": [
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-001",
+      "originalNumber": "A群 1",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-002",
+      "originalNumber": "A群 2",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-003",
+      "originalNumber": "A群 3",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-004",
+      "originalNumber": "A群 4",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-005",
+      "originalNumber": "A群 5",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-006",
+      "originalNumber": "A群 6",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-007",
+      "originalNumber": "A群 7",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-008",
+      "originalNumber": "A群 8",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-009",
+      "originalNumber": "A群 9",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-010",
+      "originalNumber": "A群 10",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-011",
+      "originalNumber": "A群 11",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-012",
+      "originalNumber": "A群 12",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-013",
+      "originalNumber": "A群 13",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-014",
+      "originalNumber": "A群 14",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-015",
+      "originalNumber": "A群 15",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-016",
+      "originalNumber": "A群 16",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-017",
+      "originalNumber": "A群 17",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-018",
+      "originalNumber": "A群 18",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-019",
+      "originalNumber": "A群 19",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-020",
+      "originalNumber": "A群 20",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-021",
+      "originalNumber": "A群 21",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-022",
+      "originalNumber": "A群 22",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-023",
+      "originalNumber": "A群 23",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-024",
+      "originalNumber": "A群 24",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-a-025",
+      "originalNumber": "A群 25",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-001",
+      "originalNumber": "B群 1",
+      "pdfPage": 4,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-002",
+      "originalNumber": "B群 2",
+      "pdfPage": 4,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-003",
+      "originalNumber": "B群 3",
+      "pdfPage": 4,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-004",
+      "originalNumber": "B群 4",
+      "pdfPage": 4,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-005",
+      "originalNumber": "B群 5",
+      "pdfPage": 4,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-006",
+      "originalNumber": "B群 6",
+      "pdfPage": 4,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-007",
+      "originalNumber": "B群 7",
+      "pdfPage": 5,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-008",
+      "originalNumber": "B群 8",
+      "pdfPage": 5,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-009",
+      "originalNumber": "B群 9",
+      "pdfPage": 5,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-010",
+      "originalNumber": "B群 10",
+      "pdfPage": 5,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-011",
+      "originalNumber": "B群 11",
+      "pdfPage": 5,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-012",
+      "originalNumber": "B群 12",
+      "pdfPage": 5,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-013",
+      "originalNumber": "B群 13",
+      "pdfPage": 6,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-014",
+      "originalNumber": "B群 14",
+      "pdfPage": 6,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-015",
+      "originalNumber": "B群 15",
+      "pdfPage": 6,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-016",
+      "originalNumber": "B群 16",
+      "pdfPage": 6,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-017",
+      "originalNumber": "B群 17",
+      "pdfPage": 6,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-018",
+      "originalNumber": "B群 18",
+      "pdfPage": 7,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-019",
+      "originalNumber": "B群 19",
+      "pdfPage": 7,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-020",
+      "originalNumber": "B群 20",
+      "pdfPage": 7,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-021",
+      "originalNumber": "B群 21",
+      "pdfPage": 7,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-022",
+      "originalNumber": "B群 22",
+      "pdfPage": 7,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-023",
+      "originalNumber": "B群 23",
+      "pdfPage": 7,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-024",
+      "originalNumber": "B群 24",
+      "pdfPage": 8,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "pan-seizo1-2023-late-gakka-b-025",
+      "originalNumber": "B群 25",
+      "pdfPage": 8,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    }
+  ],
+  "independentReview": {
+    "step": "c5r-B2",
+    "checkedAt": "2026-11-13T16:56:17.824355+09:00",
+    "questionCount": 50,
+    "officialAnswersMatched": 50,
+    "officialAnswersUnchanged": true,
+    "allStatementsAndChoicesVisuallyChecked": true,
+    "allExplanationsReviewed": true,
+    "allFiguresVisuallyChecked": true,
+    "questionPagesReviewed": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "figureCount": 0,
+    "dataSha256": "a28444d689568f4c66896582a98ffeb4ac93952a128b4a0e5165e74ff247782b",
+    "officialSourceRechecks": [
+      {
+        "candidateId": "Q5-052",
+        "kind": "questions",
+        "url": "https://www.kentei.javada.or.jp/pdf/R05-2-B39-%E3%83%91%E3%83%B3%E8%A3%BD%E9%80%A0%EF%BC%88%E3%83%91%E3%83%B3%E8%A3%BD%E9%80%A0%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+        "status": 200,
+        "sha256": "0b3aba0e3c13c9c14b7b210a826438cd706975d3edc5f99b864dad74dd48912a",
+        "matchesCached": true,
+        "checkedAt": "2026-11-13T16:45:06.484238+09:00"
+      },
+      {
+        "candidateId": "Q5-052",
+        "kind": "answers",
+        "url": "https://www.kentei.javada.or.jp/pdf/R05-2-B39-%E3%83%91%E3%83%B3%E8%A3%BD%E9%80%A0%EF%BC%88%E3%83%91%E3%83%B3%E8%A3%BD%E9%80%A0%E4%BD%9C%E6%A5%AD%EF%BC%89-%EF%BC%91%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+        "status": 200,
+        "sha256": "465f84010504e75ad548b12156f25edc49963ee6520f54a2b9fb3e6ff0a6aee2",
+        "matchesCached": true,
+        "checkedAt": "2026-11-13T16:45:07.647534+09:00"
+      }
+    ],
+    "duplicateCheck": {
+      "main": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+      "refsChecked": 1417,
+      "blobsChecked": 6236,
+      "result": "当ブランチの既存原稿のみ。他の収録・作業との重複なし。新規生成なし。"
+    },
+    "corrections": [
+      {
+        "candidateId": "Q5-052",
+        "id": "pan-seizo1-2023-late-gakka-b-019",
+        "kind": "explanation",
+        "detail": "本問ではこの組合せが正答です。パンの焼成に伴う香りと褐変生成物を関連づけます。 → 公式正答はこの組合せです。ただし、メラノイジンは褐色物質であり、香りの成分と焼き色を生む物質は区別します。\n参考：https://www.maff.go.jp/j/heya/annai/tusin/pdf/tusin_0903.pdf",
+        "sources": [
+          "https://www.maff.go.jp/j/heya/annai/tusin/pdf/tusin_0903.pdf"
+        ]
+      },
+      {
+        "candidateId": "Q5-052",
+        "id": "pan-seizo1-2023-late-gakka-b-025",
+        "kind": "explanation",
+        "detail": "本問の公式正答はニです。設備の保全・生産効率に重点を置くTPMと、他の三つの直接的な安全確認活動を区別する出題です。 → 公式正答はニです。ただし、TPMにも安全・衛生・環境の活動が含まれるため、労働災害防止と無関係な活動とは捉えないでください。\n参考：https://info-jipm.jp/f/pas1918/",
+        "sources": [
+          "https://info-jipm.jp/f/pas1918/"
+        ]
+      }
+    ]
+  }
+}

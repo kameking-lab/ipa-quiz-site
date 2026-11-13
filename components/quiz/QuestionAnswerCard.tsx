@@ -32,7 +32,7 @@ import { readSettings } from "@/lib/storage/settings";
 import { posthogCapture } from "@/lib/posthog";
 import { observeJourney } from "@/lib/billing/journey-client";
 import type { ChoiceKey, ExamCode, Question, QuestionPart, Season, Session } from "@/lib/questions/types";
-import { choiceDisplayLabel, choiceImageAlt, usesNumberedChoices } from "@/lib/questions/display";
+import { choiceDisplayLabel, choiceImageAlt, formatQuestionAnswerForDisplay, usesNumberedChoices } from "@/lib/questions/display";
 
 const CopilotInline = dynamic(
   () => import("@/components/copilot/CopilotPanel").then((module) => module.CopilotInline),
@@ -245,7 +245,8 @@ function ScoredQuestionAnswerCard({
   const answered = native ? nativeBResult !== undefined : ordering ? orderedSelected !== undefined : numeric ? numericSelected !== undefined : multiSelect ? (question?.acceptedAnswerCombinations ? revealed : picked.length === requiredSelections) : selected !== undefined;
   const isCorrect = native ? nativeBResult?.isCorrect === true : ordering ? isOrderingAnswerCorrect(question!, orderedSelected ?? []) : numeric ? isNumericAnswerCorrect(question!, numericSelected ?? "") : multiSelect ? isCompleteSelectionCorrect(answerKey, picked, requiredSelections, question?.acceptedAnswerCombinations) : isAcceptedAnswer(answerKey, selected);
   const answerLabel = native ? formatNativeBAnswer(question!.nativeB!) : ordering ? formatOrderingAnswer(exam, answerKey as ChoiceKey[]) : numeric ? formatNumericAnswer(question!) : usesNumberedChoices(exam)
-    ? (Array.isArray(answerKey) ? answerKey : [answerKey]).map((key) => choiceDisplayLabel(exam, key as ChoiceKey)).join("・")
+    ? question ? formatQuestionAnswerForDisplay(question, answerKey as ChoiceKey | ChoiceKey[])
+      : (Array.isArray(answerKey) ? answerKey : [answerKey]).map((key) => choiceDisplayLabel(exam, key as ChoiceKey)).join("・")
     : formatAcceptedAnswers(answerKey);
 
   return (

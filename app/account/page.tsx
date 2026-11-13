@@ -13,7 +13,7 @@ import {
   ShieldCheck,
 } from "lucide-react";
 
-import { auth, isAuthConfigured } from "@/lib/auth";
+import { auth } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { HistorySyncPanel } from "./HistorySyncPanel";
@@ -44,7 +44,12 @@ export default async function AccountPage() {
 
   return (
     <main className="relative mx-auto w-full max-w-4xl flex-1 px-4 pb-20 pt-8 sm:px-6 sm:pt-12">
-      <p className="mb-4"><Link href="/account/delete">アカウントとデータを削除</Link></p>
+      <nav aria-label="アカウント操作" className="mb-6 flex flex-wrap items-center gap-2">
+        <Button asChild variant="outline" size="lg">
+          <Link href="/auth/signout"><LogOut className="h-4 w-4" />ログアウト</Link>
+        </Button>
+        <Link href="/account/delete" className="inline-flex min-h-11 items-center px-3 text-sm text-muted-foreground underline underline-offset-4">アカウントとデータを削除</Link>
+      </nav>
       {/* Spotlight background */}
       <div
         aria-hidden="true"
@@ -78,11 +83,11 @@ export default async function AccountPage() {
             アカウント
           </div>
         </div>
-        <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+        <h1 className="break-words text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           ようこそ、{session.user.name ?? session.user.email?.split("@")[0] ?? "ゲスト"} さん
         </h1>
         <p className="mt-2 max-w-xl text-sm leading-relaxed text-muted-foreground">
-          プロフィール / 学習履歴のクラウド同期 / セッション管理。
+          プロフィールと学習履歴を確認できます。
         </p>
       </header>
 
@@ -149,7 +154,7 @@ export default async function AccountPage() {
         </CardHeader>
         <CardContent>
           <dl className="grid gap-3 sm:grid-cols-2">
-            <div className="rounded-xl border border-border bg-muted/30 p-3.5">
+            <div className="min-w-0 rounded-xl border border-border bg-muted/30 p-3.5">
               <dt className="flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
                 <UserIcon className="h-3 w-3" />
                 名前
@@ -158,7 +163,7 @@ export default async function AccountPage() {
                 {session.user.name ?? "—"}
               </dd>
             </div>
-            <div className="rounded-xl border border-border bg-muted/30 p-3.5">
+            <div className="min-w-0 rounded-xl border border-border bg-muted/30 p-3.5">
               <dt className="flex items-center gap-1.5 text-[11px] font-medium uppercase tracking-wider text-muted-foreground">
                 <Mail className="h-3 w-3" />
                 メール
@@ -223,8 +228,8 @@ export default async function AccountPage() {
           </CardTitle>
           <CardDescription>
             {dbReady
-              ? "ブラウザの localStorage と クラウド DB を双方向マージします。"
-              : "クラウド同期は未設定です（サーバー側 DB 未接続）。"}
+              ? "この端末の学習履歴を、ほかの端末でも使えるように同期します。"
+              : "学習履歴はこの端末に保存されます。"}
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -232,38 +237,12 @@ export default async function AccountPage() {
             <HistorySyncPanel />
           ) : (
             <p className="text-xs text-muted-foreground">
-              現在、履歴はこのブラウザの localStorage にのみ保存されています。
+              学習履歴は、この端末のダッシュボードで確認できます。
             </p>
           )}
         </CardContent>
       </Card>
 
-      {/* Session */}
-      <Card>
-        <CardHeader>
-          <CardTitle className="flex items-center gap-2 text-base">
-            <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-primary-soft text-primary-soft-foreground">
-              <LogOut className="h-3.5 w-3.5" />
-            </span>
-            セッション
-          </CardTitle>
-          <CardDescription>このブラウザの認証セッションを終了します。</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <Button asChild variant="outline" size="md">
-            <Link href="/auth/signout">
-              <LogOut className="h-4 w-4" />
-              ログアウト
-            </Link>
-          </Button>
-        </CardContent>
-      </Card>
-
-      {!isAuthConfigured && (
-        <p className="mt-6 text-xs text-muted-foreground">
-          注意: 認証プロバイダが未設定です。
-        </p>
-      )}
     </main>
   );
 }

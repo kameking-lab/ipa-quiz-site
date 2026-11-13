@@ -1,0 +1,31 @@
+{
+  "examCode": "khk-hanbai2",
+  "qualification": "第二種販売",
+  "year": 2026,
+  "season": "annual",
+  "status": "reviewed-private",
+  "publicAllowed": false,
+  "targetQuestionCount": 40,
+  "sessions": {
+    "houki": 20,
+    "gas-technology": 20
+  },
+  "publicationPolicy": "高圧ガス2026年度の既存ステージングに合わせ非公開保存。公開データ・登録・配信ローダーへ追加しない。",
+  "sourceIndex": "sources.json",
+  "answerKeys": "official-answer-keys.json",
+  "duplicateCheck": {
+    "main": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+    "mainQuestionCount": 0,
+    "ledgerStatus": "2026対象行なし",
+    "matchingOpenPullRequests": [],
+    "existingBranchTargetQuestionCount": 0,
+    "evidence": "tools/hp-sales/duplicate-check.json"
+  },
+  "questionCount": 40,
+  "questionsPath": "questions.json",
+  "storedUniqueQuestionCount": 39,
+  "reusedQuestionCount": 1,
+  "sharedQuestionReferencesPath": "shared-question-references.json",
+  "reviewedQuestionCount": 40,
+  "technicalReviewPendingIds": []
+}

@@ -7,6 +7,7 @@ import {
 } from "@/lib/questions/get-questions";
 import type { ExamCode } from "@/lib/questions/types";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
+import { isCanonicalExamCode } from "@/lib/questions/exam-aliases";
 import { isExamPublished } from "@/lib/qualifications/catalog";
 
 /**
@@ -98,7 +99,7 @@ describe("getRegisteredExamCodes", () => {
     expect(codes).toContain("gas-kou");
     expect(codes).toContain("gas-otsu");
     expect(codes).toContain("gas-hei");
-    const configuredPublishedCodes = (Object.keys(EXAM_CONFIGS) as ExamCode[]).filter(isExamPublished);
+    const configuredPublishedCodes = (Object.keys(EXAM_CONFIGS) as ExamCode[]).filter(code => isCanonicalExamCode(code) && isExamPublished(code));
     expect([...codes].sort()).toEqual(configuredPublishedCodes.sort());
     expect(codes).toContain("ahaki-anma");
     expect(codes).toContain("ahaki-hari-kyu");

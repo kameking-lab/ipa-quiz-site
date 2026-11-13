@@ -1,3 +1,4 @@
+import cxK4ChoiceExplanations from "./choice-explanations-cx-k4.json";
 import { applyIpaCorrections } from "../corrections";
 import { applyChoiceExplanationOverlay } from "@/lib/questions/apply-choice-explanations";
 import type { Question } from "@/lib/questions/types";
@@ -14,6 +15,7 @@ const RAW_AP_QUESTIONS: Question[] =
   AP_BY_YEAR_QUESTIONS.length > 0 ? AP_BY_YEAR_QUESTIONS : AP_SAMPLE_QUESTIONS;
 
 const choiceExplanationOverlays: unknown[] = [
+  cxK4ChoiceExplanations,
   cxK3ChoiceExplanations, eAp1ChoiceExplanations, eAp2ChoiceExplanations, eAp3ChoiceExplanations,
   eAp4ChoiceExplanations,
 ];

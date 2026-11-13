@@ -12,7 +12,8 @@ describe.each(IPA_TOP_CODES)("%s top copy", exam => {
     expect(description).toContain("AIに質問");
     expect(description).not.toMatch(/未対応|完全無料|AI採点|全肢解説/);
     expect(examTopDescription(exam, pool.length)).toBe(description);
-    expect(examTopTitle(exam)).toContain("過去問・解説とAI質問");
+    expect(examTopTitle(exam)).toContain("過去問・解説｜年度別・分野別");
+    expect(description.indexOf("AIに質問")).toBeLessThan(description.indexOf("掲載済み"));
     if (exam === "sg") expect(description).not.toContain("科目B");
     if (exam === "fe") expect(description).toContain("科目B");
     if (exam === "ap") expect(description).toContain("科目Aの知識確認");

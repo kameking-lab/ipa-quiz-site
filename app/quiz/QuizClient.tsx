@@ -87,6 +87,14 @@ export function QuizClient({
   const [access, setAccess] = React.useState<PracticeAccess | null>(null);
   const [invalidQuestionId, setInvalidQuestionId] = React.useState(false);
   const [retryCount, setRetryCount] = React.useState(0);
+  React.useEffect(() => {
+    // The limit screen unmounts QuizPlayer and its native gate. Recheck the
+    // same question on the server when purchase/restore changes membership.
+    if (accessError !== "daily_limit") return;
+    const recheck = () => setRetryCount(n => n + 1);
+    window.addEventListener("mobile:entitlement-changed", recheck);
+    return () => window.removeEventListener("mobile:entitlement-changed", recheck);
+  }, [accessError]);
   const [related, setRelated] = React.useState<{ id: string; questions: Question[] } | null>(null);
   const transitionHost = React.useRef<HTMLDivElement>(null);
   const navigating = React.useRef(false);

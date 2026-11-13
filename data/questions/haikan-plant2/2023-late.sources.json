@@ -1,0 +1,650 @@
+{
+  "candidateId": "Q5-040",
+  "qualification": "配管（プラント配管作業）2級",
+  "fiscalYear": 2023,
+  "period": "後期",
+  "checkedAt": "2026-11-13T15:17:12.760109+09:00",
+  "sources": [
+    {
+      "kind": "questions",
+      "url": "https://www.kentei.javada.or.jp/pdf/R05-2-B47-%E9%85%8D%E7%AE%A1%EF%BC%88%E3%83%97%E3%83%A9%E3%83%B3%E3%83%88%E9%85%8D%E7%AE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+      "httpStatus": 200,
+      "sha256": "f1e42bd63ac3e7f56389ac4955c4fb2b39403bba4e1c2dc6b41409bd724daafa",
+      "pages": 8,
+      "checkedAt": "2026-11-13T15:07:41.785255+09:00"
+    },
+    {
+      "kind": "answers",
+      "url": "https://www.kentei.javada.or.jp/pdf/R05-2-B47-%E9%85%8D%E7%AE%A1%EF%BC%88%E3%83%97%E3%83%A9%E3%83%B3%E3%83%88%E9%85%8D%E7%AE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-%EF%BC%92%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+      "httpStatus": 200,
+      "sha256": "38a73dd393c20045e5de5bfb3aeddc5d0af6b8a46532657adcc78c066c4fc16e",
+      "pages": 1,
+      "checkedAt": "2026-11-13T15:07:43.074070+09:00"
+    }
+  ],
+  "questionCount": 50,
+  "trueFalseCount": 25,
+  "multipleChoiceCount": 25,
+  "choiceExplanationCount": 150,
+  "figureCount": 4,
+  "transcription": "公式問題PDFの全問題ページを原本画像で確認し、問番号・本文・全選択肢・公式正答表を照合。字間・改行・英数字幅を正規化。図は公式原図を切り出し保持。",
+  "answerMapping": {
+    "trueFalse": {
+      "○": "ア",
+      "×": "イ"
+    },
+    "multipleChoice": {
+      "イ": "ア",
+      "ロ": "イ",
+      "ハ": "ウ",
+      "ニ": "エ"
+    }
+  },
+  "duplicateCheck": {
+    "checkedAt": "2026-11-13T15:07:40.346755+09:00",
+    "main": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+    "ledgerMatches": [],
+    "mainRelevantFiles": [],
+    "progressMatches": [
+      {
+        "qual": "配管（プラント配管作業） 2級 2025年度 後期",
+        "job": "c5-12",
+        "where": "cx/qnew6-kako-20261112",
+        "status": "完了（50問・全肢独自解説・原図4点・不足0・公式正答全件一致・型チェック/問題検証/関連61テスト/lint成功・04b95dd23/3523b3cc8・未push）",
+        "updated": "2026-11-13T15:04:52.529264+09:00"
+      },
+      {
+        "qual": "配管（プラント配管作業） 1級 2024年度 後期",
+        "job": "c5-12",
+        "where": "cx/qnew6-kako-20261112",
+        "status": "完了（50問・全肢独自解説・原図5点・不足0・公式正答全件一致・型チェック/問題検証/関連61テスト/lint成功・04b95dd23/3523b3cc8・未push）",
+        "updated": "2026-11-13T15:04:52.529264+09:00"
+      },
+      {
+        "qual": "配管（プラント配管作業） 1級 2025年度 後期",
+        "job": "c5-11",
+        "where": "cx/qnew5-kako-20261112",
+        "status": "作業中",
+        "updated": "2026-11-13T15:04:53.136251+09:00"
+      }
+    ],
+    "sameEditionProgressMatches": [],
+    "refsChecked": 1417,
+    "blobsChecked": 6166,
+    "hits": []
+  },
+  "review": [
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-001",
+      "originalNumber": "A群 1",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-002",
+      "originalNumber": "A群 2",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-003",
+      "originalNumber": "A群 3",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-004",
+      "originalNumber": "A群 4",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-005",
+      "originalNumber": "A群 5",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-006",
+      "originalNumber": "A群 6",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-007",
+      "originalNumber": "A群 7",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-008",
+      "originalNumber": "A群 8",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-009",
+      "originalNumber": "A群 9",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": true
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-010",
+      "originalNumber": "A群 10",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-011",
+      "originalNumber": "A群 11",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-012",
+      "originalNumber": "A群 12",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-013",
+      "originalNumber": "A群 13",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-014",
+      "originalNumber": "A群 14",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-015",
+      "originalNumber": "A群 15",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-016",
+      "originalNumber": "A群 16",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-017",
+      "originalNumber": "A群 17",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-018",
+      "originalNumber": "A群 18",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-019",
+      "originalNumber": "A群 19",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-020",
+      "originalNumber": "A群 20",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-021",
+      "originalNumber": "A群 21",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-022",
+      "originalNumber": "A群 22",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": true
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-023",
+      "originalNumber": "A群 23",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-024",
+      "originalNumber": "A群 24",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-a-025",
+      "originalNumber": "A群 25",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-001",
+      "originalNumber": "B群 1",
+      "pdfPage": 4,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-002",
+      "originalNumber": "B群 2",
+      "pdfPage": 4,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-003",
+      "originalNumber": "B群 3",
+      "pdfPage": 4,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-004",
+      "originalNumber": "B群 4",
+      "pdfPage": 4,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-005",
+      "originalNumber": "B群 5",
+      "pdfPage": 4,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-006",
+      "originalNumber": "B群 6",
+      "pdfPage": 4,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-007",
+      "originalNumber": "B群 7",
+      "pdfPage": 5,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-008",
+      "originalNumber": "B群 8",
+      "pdfPage": 5,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-009",
+      "originalNumber": "B群 9",
+      "pdfPage": 5,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": true
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-010",
+      "originalNumber": "B群 10",
+      "pdfPage": 5,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-011",
+      "originalNumber": "B群 11",
+      "pdfPage": 5,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-012",
+      "originalNumber": "B群 12",
+      "pdfPage": 6,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-013",
+      "originalNumber": "B群 13",
+      "pdfPage": 6,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": true
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-014",
+      "originalNumber": "B群 14",
+      "pdfPage": 6,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-015",
+      "originalNumber": "B群 15",
+      "pdfPage": 6,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-016",
+      "originalNumber": "B群 16",
+      "pdfPage": 6,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-017",
+      "originalNumber": "B群 17",
+      "pdfPage": 6,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-018",
+      "originalNumber": "B群 18",
+      "pdfPage": 7,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-019",
+      "originalNumber": "B群 19",
+      "pdfPage": 7,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-020",
+      "originalNumber": "B群 20",
+      "pdfPage": 7,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-021",
+      "originalNumber": "B群 21",
+      "pdfPage": 7,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-022",
+      "originalNumber": "B群 22",
+      "pdfPage": 7,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-023",
+      "originalNumber": "B群 23",
+      "pdfPage": 7,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-024",
+      "originalNumber": "B群 24",
+      "pdfPage": 8,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "haikan-plant2-2023-late-gakka-b-025",
+      "originalNumber": "B群 25",
+      "pdfPage": 8,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    }
+  ],
+  "independentReview": {
+    "step": "c5r-B2",
+    "checkedAt": "2026-11-13T16:56:17.824355+09:00",
+    "questionCount": 50,
+    "officialAnswersMatched": 50,
+    "officialAnswersUnchanged": true,
+    "allStatementsAndChoicesVisuallyChecked": true,
+    "allExplanationsReviewed": true,
+    "allFiguresVisuallyChecked": true,
+    "questionPagesReviewed": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "figureCount": 4,
+    "dataSha256": "3032c52a8e853832d893eb6e63358ae8557c6dd5e36893da136b568f0f003496",
+    "officialSourceRechecks": [
+      {
+        "candidateId": "Q5-040",
+        "kind": "questions",
+        "url": "https://www.kentei.javada.or.jp/pdf/R05-2-B47-%E9%85%8D%E7%AE%A1%EF%BC%88%E3%83%97%E3%83%A9%E3%83%B3%E3%83%88%E9%85%8D%E7%AE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+        "status": 200,
+        "sha256": "f1e42bd63ac3e7f56389ac4955c4fb2b39403bba4e1c2dc6b41409bd724daafa",
+        "matchesCached": true,
+        "checkedAt": "2026-11-13T16:44:52.013833+09:00"
+      },
+      {
+        "candidateId": "Q5-040",
+        "kind": "answers",
+        "url": "https://www.kentei.javada.or.jp/pdf/R05-2-B47-%E9%85%8D%E7%AE%A1%EF%BC%88%E3%83%97%E3%83%A9%E3%83%B3%E3%83%88%E9%85%8D%E7%AE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-%EF%BC%92%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+        "status": 200,
+        "sha256": "38a73dd393c20045e5de5bfb3aeddc5d0af6b8a46532657adcc78c066c4fc16e",
+        "matchesCached": true,
+        "checkedAt": "2026-11-13T16:44:53.196905+09:00"
+      }
+    ],
+    "duplicateCheck": {
+      "main": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+      "refsChecked": 1417,
+      "blobsChecked": 6236,
+      "result": "当ブランチの既存原稿のみ。他の収録・作業との重複なし。新規生成なし。"
+    },
+    "corrections": [
+      {
+        "id": "haikan-plant2-2023-late-gakka-a-015",
+        "candidateId": "Q5-040",
+        "changes": [
+          "question: ローラーハンガ→ローラーバンド（公式PDF 2ページ）"
+        ]
+      },
+      {
+        "id": "haikan-plant2-2023-late-gakka-a-022",
+        "candidateId": "Q5-040",
+        "changes": [
+          "explanation/choiceExplanations: 公式正答自体が誤りと読める表現を解消"
+        ]
+      },
+      {
+        "candidateId": "Q5-040",
+        "id": "haikan-plant2-2023-late-gakka-a-007",
+        "kind": "explanation",
+        "detail": "一般の配管用炭素鋼鋼管はSGPです。STPGは圧力配管用炭素鋼鋼管を表すため、用途と記号の対応が誤っています。",
+        "sources": [
+          "https://www.kentei.javada.or.jp/pdf/R06-2-B45-%E9%85%8D%E7%AE%A1%EF%BC%88%E3%83%97%E3%83%A9%E3%83%B3%E3%83%88%E9%85%8D%E7%AE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=7"
+        ]
+      }
+    ]
+  }
+}

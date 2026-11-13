@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
-import { render, fireEvent, cleanup } from "@testing-library/react";
+import { render, fireEvent, cleanup, screen } from "@testing-library/react";
 
 // QuizPlayer uses next/navigation's useRouter; stub it so it renders in jsdom.
 vi.mock("next/navigation", () => ({
@@ -8,6 +8,7 @@ vi.mock("next/navigation", () => ({
 
 import { QuizPlayer } from "@/components/quiz/QuizPlayer";
 import { createHistoryStore } from "@/lib/storage/history";
+import { QUESTIONS as KIKAI_HOZEN_DENKI1_QUESTIONS } from "@/data/questions/kikai-hozen-denki1";
 import type { Question } from "@/lib/questions/types";
 
 const question: Question = {
@@ -39,6 +40,12 @@ beforeEach(() => {
 // The global keydown handler must not hijack browser/OS shortcuts. "r" toggles
 // the star, so Ctrl/Cmd+R (reload) must NOT touch the star, while plain "r" does.
 describe("QuizPlayer — keyboard does not hijack browser shortcuts", () => {
+  it("shows the official circle answer for a mixed-format mechanical-maintenance paper", () => {
+    const mixedQuestion = KIKAI_HOZEN_DENKI1_QUESTIONS.find(q => q.officialAnswerNumber === "○" && Object.keys(q.choices ?? {}).length === 2)!;
+    render(<QuizPlayer question={mixedQuestion} index={0} total={50} mode="random" onNext={() => {}} />);
+    fireEvent.keyDown(window, { key: "2" });
+    expect(screen.getByText(/不正解です。正解は ○ です/)).toBeTruthy();
+  });
   it("accepts the second official key and records a correct answer", () => {
     render(<QuizPlayer question={{ ...question, answer: ["ア", "イ"] }} index={0} total={10} mode="random" onNext={() => {}} />);
     fireEvent.keyDown(window, { key: "2" });

@@ -1,3 +1,178 @@
+import { SASSHI1_QUESTIONS } from "./sasshi1";
+import { EXAM_CODE_ALIASES } from "@/lib/questions/exam-aliases";
+import { SASSHI2_QUESTIONS } from "./sasshi2";
+import { ENGEI_SOSHOKU3_QUESTIONS } from "./engei-soshoku3";
+import { KYOKA_PLASTIC2_QUESTIONS } from "./kyoka-plastic2";
+import { CHIKURO2_QUESTIONS } from "./chikuro2";
+import { CHIKURO1_QUESTIONS } from "./chikuro1";
+import { KAGAKU_BUNSEKI1_QUESTIONS } from "./kagaku-bunseki1";
+import { KAGAKU_BUNSEKI3_QUESTIONS } from "./kagaku-bunseki3";
+import { FUTSU_SENBAN3_QUESTIONS } from "./futsu-senban3";
+import { SHASHUTSU3_QUESTIONS } from "./shashutsu3";
+import { KIKAI_KENSA3_QUESTIONS } from "./kikai-kensa3";
+import { KIKAI_KENSA1_QUESTIONS } from "./kikai-kensa1";
+import { TEKKIN_ZUMEN1_QUESTIONS } from "./tekkin-zumen1";
+import { KATAWAKU1_QUESTIONS } from "./katawaku1";
+import { TEKKIN_ZUMEN2_QUESTIONS } from "./tekkin-zumen2";
+import { KATAWAKU2_QUESTIONS } from "./katawaku2";
+import { KOGYO_HOSO1_QUESTIONS } from "./kogyo-hoso1";
+import { KIKAI_KENSA2_QUESTIONS } from "./kikai-kensa2";
+import { KOGYO_HOSO2_QUESTIONS } from "./kogyo-hoso2";
+import { HAIDEN_SEIGYO1_QUESTIONS } from "./haiden-seigyo1";
+import { SEQUENCE1_QUESTIONS } from "./sequence1";
+import { CHUZO2_QUESTIONS } from "./chuzo2";
+import { CHUZO1_QUESTIONS } from "./chuzo1";
+import { KAITEN_DENKI2_QUESTIONS } from "./kaiten-denki2";
+import { KAITEN_DENKI1_QUESTIONS } from "./kaiten-denki1";
+import { SEQUENCE3_QUESTIONS } from "./sequence3";
+import { CHUZO3_QUESTIONS } from "./chuzo3";
+import { SEQUENCE2_QUESTIONS } from "./sequence2";
+import { HAIDEN_SEIGYO3_QUESTIONS } from "./haiden-seigyo3";
+import { KENCHIKU_BANKIN2_QUESTIONS } from "./kenchiku-bankin2";
+import { KENSETSU_KIKAI_SEIBI1_QUESTIONS } from "./kensetsu-kikai-seibi1";
+import { SAKAN3_QUESTIONS } from "./sakan3";
+import { ZOEN_GINO3_QUESTIONS } from "./zoen-gino3";
+import { SAKAN2_QUESTIONS } from "./sakan2";
+import { SAKAN1_QUESTIONS } from "./sakan1";
+import { ZOEN_GINO1_QUESTIONS } from "./zoen-gino1";
+import { ZOEN_GINO2_QUESTIONS } from "./zoen-gino2";
+import { BOUSUI_URETHANE2_QUESTIONS } from "./bousui-urethane2";
+import { BOUSUI_FRP2_QUESTIONS } from "./bousui-frp2";
+import { PAN_SEIZO1_QUESTIONS } from "./pan-seizo1";
+import { PAN_SEIZO2_QUESTIONS } from "./pan-seizo2";
+import { KIKAI_SHIAGE1_QUESTIONS } from "./kikai-shiage1";
+import { PLANT_HAIKAN_SEIZU1_QUESTIONS } from "./plant-haikan-seizu1";
+import { KIKAI_SEIZU3_QUESTIONS } from "./kikai-seizu3";
+import { KIKAI_SEIZU_CAD3_QUESTIONS } from "./kikai-seizu-cad3";
+import { KIKAI_SEIZU2_QUESTIONS } from "./kikai-seizu2";
+import { KIKAI_SEIZU_CAD2_QUESTIONS } from "./kikai-seizu-cad2";
+import { KIKAI_SHIAGE3_QUESTIONS } from "./kikai-shiage3";
+import { KIKAI_SHIAGE2_QUESTIONS } from "./kikai-shiage2";
+import { NAISO_CARPET2_QUESTIONS } from "./naiso-carpet2";
+import { NAISO_PLASTIC1_QUESTIONS } from "./naiso-plastic1";
+import { NAISO_PLASTIC2_QUESTIONS } from "./naiso-plastic2";
+import { NAISO_KOSEI2_QUESTIONS } from "./naiso-kosei2";
+import { KINZOKU_PRESS1_QUESTIONS } from "./kinzoku-press1";
+import { PLANT_HAIKAN2_QUESTIONS } from "./plant-haikan2";
+import { HAIKAN_KENCHIKU3_QUESTIONS } from "./haikan-kenchiku3";
+import { PLANT_HAIKAN1_QUESTIONS } from "./plant-haikan1";
+import { KINZOKU_PRESS2_QUESTIONS } from "./kinzoku-press2";
+import { TEKKIN_ZUMEN3_QUESTIONS } from "./tekkin-zumen3";
+import { KATAWAKU3_QUESTIONS } from "./katawaku3";
+import { KYOKA_PLASTIC1_QUESTIONS } from "./kyoka-plastic1";
+import { ENGEI_SOSHOKU1_QUESTIONS } from "./engei-soshoku1";
+import { FLOWER3_QUESTIONS } from "./flower3";
+import { INSATSU2_QUESTIONS } from "./insatsu2";
+import { INSATSU1_QUESTIONS } from "./insatsu1";
+import { FLOWER1_QUESTIONS } from "./flower1";
+import { FLOWER2_QUESTIONS } from "./flower2";
+import { KAGU3_QUESTIONS } from "./kagu3";
+import { KAGU1_QUESTIONS } from "./kagu1";
+import { KAGU2_QUESTIONS } from "./kagu2";
+import { MEKKI1_QUESTIONS } from "./mekki1";
+import { MEKKI3_QUESTIONS } from "./mekki3";
+import { TEKKO1_QUESTIONS } from "./tekko1";
+import { TEKKO2_QUESTIONS } from "./tekko2";
+import { KOJO_BANKIN1_QUESTIONS } from "./kojo-bankin1";
+import { KENCHIKU_BANKIN1_QUESTIONS } from "./kenchiku-bankin1";
+import { KINZOKU_NETSUSHORI3_QUESTIONS } from "./kinzoku-netsushori3";
+import { KOJO_BANKIN3_QUESTIONS } from "./kojo-bankin3";
+import { KOJO_BANKIN2_QUESTIONS } from "./kojo-bankin2";
+import { MEKKI2_QUESTIONS } from "./mekki2";
+
+import { DIECAST1_QUESTIONS } from "./diecast1";
+import { TETSUDO_SHARYO1_QUESTIONS } from "./tetsudo-sharyo1";
+
+import { ENGEI_SOSHOKU2_QUESTIONS } from "./engei-soshoku2";
+
+import { FUTSU_SENBAN1_QUESTIONS } from "./futsu-senban1";
+import { SHASHUTSU1_QUESTIONS } from "./shashutsu1";
+
+import { TEKKIN3_QUESTIONS } from "./tekkin3";
+import { TEKKIN2_QUESTIONS } from "./tekkin2";
+
+import { KIKAI_SEIZU_TEGAKI1_QUESTIONS } from "./kikai-seizu-tegaki1";
+
+import { REITO_SEKO2_QUESTIONS } from "./reito-seko2";
+import { REITO_SEKO1_QUESTIONS } from "./reito-seko1";
+import { KUUKIATSU_KUMITATE2_QUESTIONS } from "./kuukiatsu-kumitate2";
+import { KUUKIATSU_KUMITATE1_QUESTIONS } from "./kuukiatsu-kumitate1";
+import { HENATSUKI_KUMITATE2_QUESTIONS } from "./henatsuki-kumitate2";
+import { HENATSUKI_KUMITATE1_QUESTIONS } from "./henatsuki-kumitate1";
+
+import { KIKAI_SEIZU_CAD1_QUESTIONS } from "./kikai-seizu-cad1";
+
+import { PLANT_HAIKAN_SEIZU2_QUESTIONS } from "./plant-haikan-seizu2";
+
+import { REITO_SEKO3_QUESTIONS } from "./reito-seko3";
+
+import { NETSUZETSUEN2_QUESTIONS } from "./netsuzetsuen2";
+import { HISESHOKU_JOKYO1_QUESTIONS } from "./hiseshoku-jokyo1";
+import { TATEGU1_QUESTIONS } from "./tategu1";
+import { SHOHIN_SOSHOKU1_QUESTIONS } from "./shohin-soshoku1";
+import { KOGAKU_GLASS1_QUESTIONS } from "./kogaku-glass1";
+import { SANGYO_SHARYO1_QUESTIONS } from "./sangyo-sharyo1";
+import { YOGASHI1_QUESTIONS } from "./yogashi1";
+import { BLOCK_KENCHIKU3_QUESTIONS } from "./block-kenchiku3";
+import { BLOCK_KENCHIKU1_QUESTIONS } from "./block-kenchiku1";
+import { SHUZO1_QUESTIONS } from "./shuzo1";
+import { FRAISE1_QUESTIONS } from "./fraise1";
+import { FRAISE2_QUESTIONS } from "./fraise2";
+import { FRAISE3_QUESTIONS } from "./fraise3";
+
+import { BOUSUI_FRP1_QUESTIONS } from "./bousui-frp1";
+
+import { NAISO_CARPET1_QUESTIONS } from "./naiso-carpet1";
+
+import { SHASHUTSU2_QUESTIONS } from "./shashutsu2";
+
+import { KAGAKU_BUNSEKI2_QUESTIONS } from "./kagaku-bunseki2";
+
+import { KINZOKU_NETSUSHORI1_QUESTIONS } from "./kinzoku-netsushori1";
+
+import { DENSHI_KIKI_KUMITATE3_QUESTIONS } from "./denshi-kiki-kumitate3";
+import { DENSHI_KIKI_KUMITATE1_QUESTIONS } from "./denshi-kiki-kumitate1";
+import { FUJIN_KODOMOFUKU2_QUESTIONS } from "./fujin-kodomofuku2";
+import { FUJIN_KODOMOFUKU1_QUESTIONS } from "./fujin-kodomofuku1";
+import { TOSO1_QUESTIONS } from "./toso1";
+import { DENSHI_KIKI_KUMITATE2_QUESTIONS } from "./denshi-kiki-kumitate2";
+
+import { KENCHIKU_BANKIN_DUCT2_QUESTIONS } from "./kenchiku-bankin-duct2";
+import { KINZOKU_NETSUSHORI2_QUESTIONS } from "./kinzoku-netsushori2";
+
+import { KENSETSU_KIKAI_SEIBI2_QUESTIONS } from "./kensetsu-kikai-seibi2";
+import { HYOSO1_QUESTIONS } from "./hyoso1";
+import { TAIRU2_QUESTIONS } from "./tairu2";
+import { SEKIZAI1_QUESTIONS } from "./sekizai1";
+import { HYOSO2_QUESTIONS } from "./hyoso2";
+import { SHOHIN_SOSHOKU3_QUESTIONS } from "./shohin-soshoku3";
+import { SHASHIN1_QUESTIONS } from "./shashin1";
+import { SESSAKU_KENSAKU1_QUESTIONS } from "./sessaku-kensaku1";
+import { TATAMI1_QUESTIONS } from "./tatami1";
+
+import { FUNMATSU_YAKIN1_QUESTIONS } from "./funmatsu-yakin1";
+import { NUNOHAKU1_QUESTIONS } from "./nunohaku1";
+import { KIKINZOKU_SOSHIN1_QUESTIONS } from "./kikinzoku-soshin1";
+import { SHASHIN3_QUESTIONS } from "./shashin3";
+import { KIKINZOKU_SOSHIN3_QUESTIONS } from "./kikinzoku-soshin3";
+import { KIKINZOKU_SOSHIN2_QUESTIONS } from "./kikinzoku-soshin2";
+import { TOBI1_QUESTIONS } from "./tobi1";
+import { TOBI3_QUESTIONS } from "./tobi3";
+import { KENCHIKU_DAIKU1_QUESTIONS } from "./kenchiku-daiku1";
+import { KENCHIKU_DAIKU3_QUESTIONS } from "./kenchiku-daiku3";
+import { KENCHIKU_DAIKU2_QUESTIONS } from "./kenchiku-daiku2";
+import { SHASHIN2_QUESTIONS } from "./shashin2";
+import { TOSO2_QUESTIONS } from "./toso2";
+import { QUESTIONS as KIKAI_HOZEN_DENKI1_QUESTIONS } from "./kikai-hozen-denki1";
+import { QUESTIONS as KIKAI_HOZEN_SETSUBI1_QUESTIONS } from "./kikai-hozen-setsubi1";
+import { KIKAI_HOZEN_DENKI3_QUESTIONS } from "./kikai-hozen-denki3";
+import { KIKAI_HOZEN3_QUESTIONS } from "./kikai-hozen3";
+import { TOBI2_QUESTIONS } from "./tobi2";
+
+
+
+
+
 import { QUESTIONS as KIKENBUTSU_OTSU4 } from "./kikenbutsu-otsu4";
 import { QUESTIONS as UNKO_KANRISHA_KAMOTSU } from "./unko-kanrisha-kamotsu";
 import { QUESTIONS as SHOBO_SETSUBISHI_OTSU6 } from "./shobo-setsubishi-otsu6";
@@ -147,10 +322,132 @@ import { SHIHO_TANTO_QUESTIONS } from "./shiho-tanto";
 import { YOBI_TANTO_QUESTIONS } from "./yobi-tanto";
 import { SOKURYOSHIHO_QUESTIONS } from "./sokuryoshiho";
 import { CAREMANAGER_QUESTIONS } from "./caremanager";
+
+import { QUESTIONS as KIKAI_HOZEN1_QUESTIONS } from "./kikai-hozen1";
+
+
+
+
+import { DIECAST2_QUESTIONS } from "./diecast2";
+
+import { TETSUDO_SHARYO2_QUESTIONS } from "./tetsudo-sharyo2";
+
+
+
+
+
+
+
+
 import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
 import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+...(isExamPublished("fujin-kodomofuku2") ? { "fujin-kodomofuku2": FUJIN_KODOMOFUKU2_QUESTIONS } : {}),
+...(isExamPublished("fujin-kodomofuku1") ? { "fujin-kodomofuku1": FUJIN_KODOMOFUKU1_QUESTIONS } : {}),
+...(isExamPublished("toso1") ? { "toso1": TOSO1_QUESTIONS } : {}),
+...(isExamPublished("kojo-bankin1") ? { "kojo-bankin1": KOJO_BANKIN1_QUESTIONS } : {}),
+...(isExamPublished("kenchiku-bankin1") ? { "kenchiku-bankin1": KENCHIKU_BANKIN1_QUESTIONS } : {}),
+...(isExamPublished("kinzoku-netsushori3") ? { "kinzoku-netsushori3": KINZOKU_NETSUSHORI3_QUESTIONS } : {}),
+...(isExamPublished("kojo-bankin3") ? { "kojo-bankin3": KOJO_BANKIN3_QUESTIONS } : {}),
+...(isExamPublished("kojo-bankin2") ? { "kojo-bankin2": KOJO_BANKIN2_QUESTIONS } : {}),
+...(isExamPublished("mekki2") ? { "mekki2": MEKKI2_QUESTIONS } : {}),
+...(isExamPublished("flower1") ? { "flower1": FLOWER1_QUESTIONS } : {}),
+...(isExamPublished("flower3") ? { "flower3": FLOWER3_QUESTIONS } : {}),
+...(isExamPublished("kagu3") ? { "kagu3": KAGU3_QUESTIONS } : {}),
+...(isExamPublished("diecast1") ? { "diecast1": DIECAST1_QUESTIONS } : {}),
+...(isExamPublished("tetsudo-sharyo1") ? { "tetsudo-sharyo1": TETSUDO_SHARYO1_QUESTIONS } : {}),
+...(isExamPublished("insatsu2") ? { "insatsu2": INSATSU2_QUESTIONS } : {}),
+...(isExamPublished("insatsu1") ? { "insatsu1": INSATSU1_QUESTIONS } : {}),
+...(isExamPublished("engei-soshoku2") ? { "engei-soshoku2": ENGEI_SOSHOKU2_QUESTIONS } : {}),
+...(isExamPublished("sasshi1") ? { "sasshi1": SASSHI1_QUESTIONS } : {}),
+...(isExamPublished("kyoka-plastic2") ? { "kyoka-plastic2": KYOKA_PLASTIC2_QUESTIONS } : {}),
+...(isExamPublished("kyoka-plastic1") ? { "kyoka-plastic1": KYOKA_PLASTIC1_QUESTIONS } : {}),
+...(isExamPublished("kagaku-bunseki3") ? { "kagaku-bunseki3": KAGAKU_BUNSEKI3_QUESTIONS } : {}),
+...(isExamPublished("kagaku-bunseki1") ? { "kagaku-bunseki1": KAGAKU_BUNSEKI1_QUESTIONS } : {}),
+...(isExamPublished("chikuro1") ? { "chikuro1": CHIKURO1_QUESTIONS } : {}),
+...(isExamPublished("futsu-senban1") ? { "futsu-senban1": FUTSU_SENBAN1_QUESTIONS } : {}),
+...(isExamPublished("shashutsu1") ? { "shashutsu1": SHASHUTSU1_QUESTIONS } : {}),
+...(isExamPublished("katawaku2") ? { "katawaku2": KATAWAKU2_QUESTIONS } : {}),
+...(isExamPublished("tekkin3") ? { "tekkin3": TEKKIN3_QUESTIONS } : {}),
+...(isExamPublished("tekkin2") ? { "tekkin2": TEKKIN2_QUESTIONS } : {}),
+...(isExamPublished("pan-seizo1") ? { "pan-seizo1": PAN_SEIZO1_QUESTIONS } : {}),
+...(isExamPublished("pan-seizo2") ? { "pan-seizo2": PAN_SEIZO2_QUESTIONS } : {}),
+...(isExamPublished("kikai-shiage1") ? { "kikai-shiage1": KIKAI_SHIAGE1_QUESTIONS } : {}),
+...(isExamPublished("kikai-seizu-tegaki1") ? { "kikai-seizu-tegaki1": KIKAI_SEIZU_TEGAKI1_QUESTIONS } : {}),
+...(isExamPublished("sequence1") ? { "sequence1": SEQUENCE1_QUESTIONS } : {}),
+...(isExamPublished("reito-seko2") ? { "reito-seko2": REITO_SEKO2_QUESTIONS } : {}),
+...(isExamPublished("reito-seko1") ? { "reito-seko1": REITO_SEKO1_QUESTIONS } : {}),
+...(isExamPublished("kuukiatsu-kumitate2") ? { "kuukiatsu-kumitate2": KUUKIATSU_KUMITATE2_QUESTIONS } : {}),
+...(isExamPublished("kuukiatsu-kumitate1") ? { "kuukiatsu-kumitate1": KUUKIATSU_KUMITATE1_QUESTIONS } : {}),
+...(isExamPublished("henatsuki-kumitate2") ? { "henatsuki-kumitate2": HENATSUKI_KUMITATE2_QUESTIONS } : {}),
+...(isExamPublished("henatsuki-kumitate1") ? { "henatsuki-kumitate1": HENATSUKI_KUMITATE1_QUESTIONS } : {}),
+...(isExamPublished("sequence3") ? { "sequence3": SEQUENCE3_QUESTIONS } : {}),
+
+...(isExamPublished("sequence2") ? { "sequence2": SEQUENCE2_QUESTIONS } : {}),
+...(isExamPublished("zoen-gino1") ? { "zoen-gino1": ZOEN_GINO1_QUESTIONS } : {}),
+...(isExamPublished("sakan1") ? { "sakan1": SAKAN1_QUESTIONS } : {}),
+...(isExamPublished("sakan3") ? { "sakan3": SAKAN3_QUESTIONS } : {}),
+...(isExamPublished("sakan2") ? { "sakan2": SAKAN2_QUESTIONS } : {}),
+...(isExamPublished("kikai-seizu-cad1") ? { "kikai-seizu-cad1": KIKAI_SEIZU_CAD1_QUESTIONS } : {}),
+...(isExamPublished("kikai-seizu-cad3") ? { "kikai-seizu-cad3": KIKAI_SEIZU_CAD3_QUESTIONS } : {}),
+...(isExamPublished("plant-haikan-seizu2") ? { "plant-haikan-seizu2": PLANT_HAIKAN_SEIZU2_QUESTIONS } : {}),
+...(isExamPublished("kikai-shiage2") ? { "kikai-shiage2": KIKAI_SHIAGE2_QUESTIONS } : {}),
+...(isExamPublished("kikai-shiage3") ? { "kikai-shiage3": KIKAI_SHIAGE3_QUESTIONS } : {}),
+...(isExamPublished("zoen-gino2") ? { "zoen-gino2": ZOEN_GINO2_QUESTIONS } : {}),
+...(isExamPublished("zoen-gino3") ? { "zoen-gino3": ZOEN_GINO3_QUESTIONS } : {}),
+...(isExamPublished("chuzo3") ? { "chuzo3": CHUZO3_QUESTIONS } : {}),
+...(isExamPublished("reito-seko3") ? { "reito-seko3": REITO_SEKO3_QUESTIONS } : {}),
+...(isExamPublished("chuzo2") ? { "chuzo2": CHUZO2_QUESTIONS } : {}),
+...(isExamPublished("chuzo1") ? { "chuzo1": CHUZO1_QUESTIONS } : {}),
+...(isExamPublished("netsuzetsuen2") ? { "netsuzetsuen2": NETSUZETSUEN2_QUESTIONS } : {}),
+...(isExamPublished("hiseshoku-jokyo1") ? { "hiseshoku-jokyo1": HISESHOKU_JOKYO1_QUESTIONS } : {}),
+...(isExamPublished("tategu1") ? { "tategu1": TATEGU1_QUESTIONS } : {}),
+...(isExamPublished("shohin-soshoku1") ? { "shohin-soshoku1": SHOHIN_SOSHOKU1_QUESTIONS } : {}),
+...(isExamPublished("kogaku-glass1") ? { "kogaku-glass1": KOGAKU_GLASS1_QUESTIONS } : {}),
+...(isExamPublished("sangyo-sharyo1") ? { "sangyo-sharyo1": SANGYO_SHARYO1_QUESTIONS } : {}),
+...(isExamPublished("yogashi1") ? { "yogashi1": YOGASHI1_QUESTIONS } : {}),
+...(isExamPublished("block-kenchiku3") ? { "block-kenchiku3": BLOCK_KENCHIKU3_QUESTIONS } : {}),
+...(isExamPublished("block-kenchiku1") ? { "block-kenchiku1": BLOCK_KENCHIKU1_QUESTIONS } : {}),
+...(isExamPublished("shuzo1") ? { "shuzo1": SHUZO1_QUESTIONS } : {}),
+...(isExamPublished("fraise1") ? { "fraise1": FRAISE1_QUESTIONS } : {}),
+...(isExamPublished("fraise2") ? { "fraise2": FRAISE2_QUESTIONS } : {}),
+...(isExamPublished("fraise3") ? { "fraise3": FRAISE3_QUESTIONS } : {}),
+...(isExamPublished("kikai-kensa1") ? { "kikai-kensa1": KIKAI_KENSA1_QUESTIONS } : {}),
+...(isExamPublished("kikai-kensa2") ? { "kikai-kensa2": KIKAI_KENSA2_QUESTIONS } : {}),
+...(isExamPublished("kogyo-hoso2") ? { "kogyo-hoso2": KOGYO_HOSO2_QUESTIONS } : {}),
+...(isExamPublished("katawaku1") ? { "katawaku1": KATAWAKU1_QUESTIONS } : {}),
+...(isExamPublished("katawaku3") ? { "katawaku3": KATAWAKU3_QUESTIONS } : {}),
+...(isExamPublished("tekkin-zumen1") ? { "tekkin-zumen1": TEKKIN_ZUMEN1_QUESTIONS } : {}),
+...(isExamPublished("tekkin-zumen2") ? { "tekkin-zumen2": TEKKIN_ZUMEN2_QUESTIONS } : {}),
+...(isExamPublished("tekkin-zumen3") ? { "tekkin-zumen3": TEKKIN_ZUMEN3_QUESTIONS } : {}),
+...(isExamPublished("kinzoku-press1") ? { "kinzoku-press1": KINZOKU_PRESS1_QUESTIONS } : {}),
+...(isExamPublished("kinzoku-press2") ? { "kinzoku-press2": KINZOKU_PRESS2_QUESTIONS } : {}),
+
+...(isExamPublished("haikan-kenchiku3") ? { "haikan-kenchiku3": HAIKAN_KENCHIKU3_QUESTIONS } : {}),
+...(isExamPublished("bousui-frp1") ? { "bousui-frp1": BOUSUI_FRP1_QUESTIONS } : {}),
+...(isExamPublished("bousui-frp2") ? { "bousui-frp2": BOUSUI_FRP2_QUESTIONS } : {}),
+...(isExamPublished("naiso-carpet1") ? { "naiso-carpet1": NAISO_CARPET1_QUESTIONS } : {}),
+
+...(isExamPublished("shashutsu2") ? { "shashutsu2": SHASHUTSU2_QUESTIONS } : {}),
+...(isExamPublished("kikai-kensa3") ? { "kikai-kensa3": KIKAI_KENSA3_QUESTIONS } : {}),
+...(isExamPublished("kagaku-bunseki2") ? { "kagaku-bunseki2": KAGAKU_BUNSEKI2_QUESTIONS } : {}),
+...(isExamPublished("engei-soshoku1") ? { "engei-soshoku1": ENGEI_SOSHOKU1_QUESTIONS } : {}),
+...(isExamPublished("engei-soshoku3") ? { "engei-soshoku3": ENGEI_SOSHOKU3_QUESTIONS } : {}),
+...(isExamPublished("kagu1") ? { "kagu1": KAGU1_QUESTIONS } : {}),
+...(isExamPublished("kagu2") ? { "kagu2": KAGU2_QUESTIONS } : {}),
+...(isExamPublished("mekki3") ? { "mekki3": MEKKI3_QUESTIONS } : {}),
+...(isExamPublished("mekki1") ? { "mekki1": MEKKI1_QUESTIONS } : {}),
+...(isExamPublished("kinzoku-netsushori1") ? { "kinzoku-netsushori1": KINZOKU_NETSUSHORI1_QUESTIONS } : {}),
+...(isExamPublished("tekko1") ? { "tekko1": TEKKO1_QUESTIONS } : {}),
+...(isExamPublished("denshi-kiki-kumitate1") ? { "denshi-kiki-kumitate1": DENSHI_KIKI_KUMITATE1_QUESTIONS } : {}),
+...(isExamPublished("denshi-kiki-kumitate3") ? { "denshi-kiki-kumitate3": DENSHI_KIKI_KUMITATE3_QUESTIONS } : {}),
+
+...(isExamPublished("toso2") ? { "toso2": TOSO2_QUESTIONS } : {}),
+...(isExamPublished("kikai-hozen-denki1") ? { "kikai-hozen-denki1": KIKAI_HOZEN_DENKI1_QUESTIONS } : {}),
+...(isExamPublished("kikai-hozen-setsubi1") ? { "kikai-hozen-setsubi1": KIKAI_HOZEN_SETSUBI1_QUESTIONS } : {}),
+...(isExamPublished("kikai-hozen-denki3") ? { "kikai-hozen-denki3": KIKAI_HOZEN_DENKI3_QUESTIONS } : {}),
+...(isExamPublished("kikai-hozen3") ? { "kikai-hozen3": KIKAI_HOZEN3_QUESTIONS } : {}),
 ...(isExamPublished("unko-kanrisha-ryokaku") ? { "unko-kanrisha-ryokaku": UNKO_KANRISHA_RYOKAKU.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("shobo-setsubishi-kou1") ? { "shobo-setsubishi-kou1": SHOBO_SETSUBISHI_KOU1.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("kikenbutsu-kou") ? { "kikenbutsu-kou": KIKENBUTSU_KOU.filter(isPracticeReadyQuestion) } : {}),
@@ -322,9 +619,107 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("yobi-tanto") ? { "yobi-tanto": YOBI_TANTO_QUESTIONS } : {}),
 ...(isExamPublished("sokuryoshiho") ? { "sokuryoshiho": SOKURYOSHIHO_QUESTIONS } : {}),
 ...(isExamPublished("caremanager") ? { "caremanager": CAREMANAGER_QUESTIONS } : {}),
+
+...(isExamPublished("tekko2") ? { "tekko2": TEKKO2_QUESTIONS } : {}),
+
+...(isExamPublished("denshi-kiki-kumitate2") ? { "denshi-kiki-kumitate2": DENSHI_KIKI_KUMITATE2_QUESTIONS } : {}),
+
+...(isExamPublished("kenchiku-bankin-duct2") ? { "kenchiku-bankin-duct2": KENCHIKU_BANKIN_DUCT2_QUESTIONS } : {}),
+...(isExamPublished("kinzoku-netsushori2") ? { "kinzoku-netsushori2": KINZOKU_NETSUSHORI2_QUESTIONS } : {}),
+
+...(isExamPublished("sasshi2") ? { "sasshi2": SASSHI2_QUESTIONS } : {}),
+
+...(isExamPublished("chikuro2") ? { "chikuro2": CHIKURO2_QUESTIONS } : {}),
+
+...(isExamPublished("futsu-senban3") ? { "futsu-senban3": FUTSU_SENBAN3_QUESTIONS } : {}),
+...(isExamPublished("shashutsu3") ? { "shashutsu3": SHASHUTSU3_QUESTIONS } : {}),
+
+...(isExamPublished("kogyo-hoso1") ? { "kogyo-hoso1": KOGYO_HOSO1_QUESTIONS } : {}),
+
+...(isExamPublished("haiden-seigyo1") ? { "haiden-seigyo1": HAIDEN_SEIGYO1_QUESTIONS } : {}),
+
+...(isExamPublished("kaiten-denki2") ? { "kaiten-denki2": KAITEN_DENKI2_QUESTIONS } : {}),
+...(isExamPublished("kaiten-denki1") ? { "kaiten-denki1": KAITEN_DENKI1_QUESTIONS } : {}),
+
+...(isExamPublished("haiden-seigyo3") ? { "haiden-seigyo3": HAIDEN_SEIGYO3_QUESTIONS } : {}),
+...(isExamPublished("kenchiku-bankin2") ? { "kenchiku-bankin2": KENCHIKU_BANKIN2_QUESTIONS } : {}),
+...(isExamPublished("kensetsu-kikai-seibi1") ? { "kensetsu-kikai-seibi1": KENSETSU_KIKAI_SEIBI1_QUESTIONS } : {}),
+
+...(isExamPublished("bousui-urethane2") ? { "bousui-urethane2": BOUSUI_URETHANE2_QUESTIONS } : {}),
+
+...(isExamPublished("plant-haikan-seizu1") ? { "plant-haikan-seizu1": PLANT_HAIKAN_SEIZU1_QUESTIONS } : {}),
+...(isExamPublished("kikai-seizu3") ? { "kikai-seizu3": KIKAI_SEIZU3_QUESTIONS } : {}),
+
+...(isExamPublished("kikai-seizu2") ? { "kikai-seizu2": KIKAI_SEIZU2_QUESTIONS } : {}),
+...(isExamPublished("kikai-seizu-cad2") ? { "kikai-seizu-cad2": KIKAI_SEIZU_CAD2_QUESTIONS } : {}),
+
+...(isExamPublished("naiso-carpet2") ? { "naiso-carpet2": NAISO_CARPET2_QUESTIONS } : {}),
+...(isExamPublished("naiso-plastic1") ? { "naiso-plastic1": NAISO_PLASTIC1_QUESTIONS } : {}),
+...(isExamPublished("naiso-plastic2") ? { "naiso-plastic2": NAISO_PLASTIC2_QUESTIONS } : {}),
+...(isExamPublished("naiso-kosei2") ? { "naiso-kosei2": NAISO_KOSEI2_QUESTIONS } : {}),
+
+...(isExamPublished("plant-haikan2") ? { "plant-haikan2": PLANT_HAIKAN2_QUESTIONS } : {}),
+
+...(isExamPublished("plant-haikan1") ? { "plant-haikan1": PLANT_HAIKAN1_QUESTIONS } : {}),
+
+...(isExamPublished("flower2") ? { "flower2": FLOWER2_QUESTIONS } : {}),
+
+...(isExamPublished("kensetsu-kikai-seibi2") ? { "kensetsu-kikai-seibi2": KENSETSU_KIKAI_SEIBI2_QUESTIONS } : {}),
+...(isExamPublished("hyoso1") ? { "hyoso1": HYOSO1_QUESTIONS } : {}),
+...(isExamPublished("tairu2") ? { "tairu2": TAIRU2_QUESTIONS } : {}),
+...(isExamPublished("sekizai1") ? { "sekizai1": SEKIZAI1_QUESTIONS } : {}),
+...(isExamPublished("hyoso2") ? { "hyoso2": HYOSO2_QUESTIONS } : {}),
+...(isExamPublished("shohin-soshoku3") ? { "shohin-soshoku3": SHOHIN_SOSHOKU3_QUESTIONS } : {}),
+...(isExamPublished("shashin1") ? { "shashin1": SHASHIN1_QUESTIONS } : {}),
+...(isExamPublished("sessaku-kensaku1") ? { "sessaku-kensaku1": SESSAKU_KENSAKU1_QUESTIONS } : {}),
+...(isExamPublished("tatami1") ? { "tatami1": TATAMI1_QUESTIONS } : {}),
+
+...(isExamPublished("funmatsu-yakin1") ? { "funmatsu-yakin1": FUNMATSU_YAKIN1_QUESTIONS } : {}),
+...(isExamPublished("nunohaku1") ? { "nunohaku1": NUNOHAKU1_QUESTIONS } : {}),
+...(isExamPublished("kikinzoku-soshin1") ? { "kikinzoku-soshin1": KIKINZOKU_SOSHIN1_QUESTIONS } : {}),
+...(isExamPublished("shashin3") ? { "shashin3": SHASHIN3_QUESTIONS } : {}),
+...(isExamPublished("kikinzoku-soshin3") ? { "kikinzoku-soshin3": KIKINZOKU_SOSHIN3_QUESTIONS } : {}),
+...(isExamPublished("kikinzoku-soshin2") ? { "kikinzoku-soshin2": KIKINZOKU_SOSHIN2_QUESTIONS } : {}),
+...(isExamPublished("tobi1") ? { "tobi1": TOBI1_QUESTIONS } : {}),
+...(isExamPublished("tobi3") ? { "tobi3": TOBI3_QUESTIONS } : {}),
+...(isExamPublished("kenchiku-daiku1") ? { "kenchiku-daiku1": KENCHIKU_DAIKU1_QUESTIONS } : {}),
+...(isExamPublished("kenchiku-daiku3") ? { "kenchiku-daiku3": KENCHIKU_DAIKU3_QUESTIONS } : {}),
+...(isExamPublished("kenchiku-daiku2") ? { "kenchiku-daiku2": KENCHIKU_DAIKU2_QUESTIONS } : {}),
+...(isExamPublished("shashin2") ? { "shashin2": SHASHIN2_QUESTIONS } : {}),
+
+...(isExamPublished("kikai-hozen1") ? { "kikai-hozen1": KIKAI_HOZEN1_QUESTIONS } : {}),
+
+
+
+
+
+
+
+
+...(isExamPublished("diecast2") ? { "diecast2": DIECAST2_QUESTIONS } : {}),
+
+...(isExamPublished("tetsudo-sharyo2") ? { "tetsudo-sharyo2": TETSUDO_SHARYO2_QUESTIONS } : {}),
+
+
+
+
+
+
+
+
 ...(isExamPublished("kikai-hozen") ? { "kikai-hozen": KIKAI_HOZEN_QUESTIONS } : {}),
+...(isExamPublished("tobi2") ? { "tobi2": TOBI2_QUESTIONS } : {}),
+
 ...(isExamPublished("tsukanshi") ? { "tsukanshi": TSUKANSHI_QUESTIONS } : {})
 };
+
+// Compatibility lookups do not add a second copy to the enumerable registry.
+for (const [alias, canonical] of Object.entries(EXAM_CODE_ALIASES)) {
+  Object.defineProperty(QUESTIONS_BY_EXAM, alias, {
+    enumerable: false,
+    get: () => QUESTIONS_BY_EXAM[canonical],
+  });
+}
 
 export const ALL_QUESTIONS: Question[] = (
   Object.values(QUESTIONS_BY_EXAM) as Question[][]

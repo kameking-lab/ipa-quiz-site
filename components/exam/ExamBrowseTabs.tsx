@@ -62,15 +62,15 @@ export function ExamBrowseTabs({ exam, years, categories }: Props) {
   return (
     <Tabs value={tab} onValueChange={setTab}>
       <TabsList className="mb-4 w-full">
-        <TabsTrigger value="year" className="flex-1">
+        <TabsTrigger value="year" className="min-h-11 flex-1">
           <Calendar className="mr-1 h-3.5 w-3.5 inline" />
           年度別
         </TabsTrigger>
-        <TabsTrigger value="topic" className="flex-1">
+        <TabsTrigger value="topic" className="min-h-11 flex-1">
           <Tags className="mr-1 h-3.5 w-3.5 inline" />
           分野別
         </TabsTrigger>
-        <TabsTrigger value="mock" className="flex-1">
+        <TabsTrigger value="mock" className="min-h-11 flex-1">
           <Trophy className="mr-1 h-3.5 w-3.5 inline" />
           {!supportsMockExam || exam === "sg" ? "演習" : "模試"}
         </TabsTrigger>

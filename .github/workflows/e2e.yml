@@ -11,10 +11,14 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.event_name }}-${{ github.event.pull_request.number || github.run_id }}
   cancel-in-progress: ${{ github.event_name == 'pull_request' }}
 
+# 55k+ question JSON imports exceed Node's default heap in tsc and next build.
+env:
+  NODE_OPTIONS: --max-old-space-size=8192
+
 jobs:
   quality:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 40
 
     env:
       ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}

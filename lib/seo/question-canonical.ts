@@ -5,7 +5,8 @@ const CHOICE_KEYS = ["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "�
 
 /**
  * The advanced exams reuse one common morning-I paper across several exam
- * contexts.  Only byte-for-byte equivalent source questions are consolidated:
+ * contexts. Only equivalent source questions are consolidated (an absent
+ * image list and an empty one both mean no image URLs):
  * editorial fields such as the category and explanation deliberately do not
  * participate, so each requested exam page can keep its own learning context.
  */
@@ -16,7 +17,7 @@ function sourceQuestionFingerprint(q: Question): string {
     choices: [...CHOICE_KEYS.map((key) => q.choices?.[key] ?? null), ...(q.choices?.タ !== undefined ? [q.choices.タ] : [])],
     answer: q.answer,
     hasImage: q.hasImage,
-    imageUrls: q.imageUrls ?? null,
+    imageUrls: q.imageUrls ?? [],
   });
 }
 

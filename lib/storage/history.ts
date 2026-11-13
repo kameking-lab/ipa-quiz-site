@@ -69,7 +69,7 @@ export function createHistoryStore(): HistoryStore {
   // Public assessment reads are projected; mutations always start from raw data.
   const snapshot = (): HistoryData => {
     const raw = readRaw();
-    return { entries: raw.entries.filter(entry => !isReferenceOnlyQuestionId(entry.id)),
+    return { entries: raw.entries.filter(entry => entry && typeof entry.id === "string" && !isReferenceOnlyQuestionId(entry.id)),
       starredIds: raw.starredIds.filter(id => !isReferenceOnlyQuestionId(id)) };
   };
   return {

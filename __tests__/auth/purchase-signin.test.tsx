@@ -2,13 +2,23 @@
 import { renderToStaticMarkup } from "react-dom/server";
 import { expect, it, vi } from "vitest";
 vi.mock("next/navigation", () => ({ redirect: vi.fn(() => { throw new Error("redirect"); }) }));
-vi.mock("@/lib/auth", () => ({ auth: async () => null }));
+const m = vi.hoisted(() => ({auth:vi.fn(async ():Promise<unknown> => null)}));
+vi.mock("@/lib/auth", () => ({ auth: m.auth }));
 // Production configures Apple and Google (AUTH_APPLE_ID/SECRET, AUTH_GOOGLE_ID/SECRET) plus email.
 vi.mock("@/lib/auth/config", () => ({ authConfig: { providers: [{ id: "apple" }, { id: "google" }, { id: "nodemailer" }] } }));
 vi.mock("@/lib/auth/app-review-config", () => ({ appReviewConfig: () => null }));
 import SignInPage from "@/app/auth/signin/page";
 
 const text = (html: string) => html.replace(/<[^>]*>/g, "");
+
+it("shows provider authentication for an existing session only when explicit reauthentication is requested", async () => {
+  m.auth.mockResolvedValue({user:{id:"owner"},authenticatedAt:Date.now()-600000});
+  try {
+    await expect(SignInPage({searchParams:Promise.resolve({callbackUrl:"/account/delete"})})).rejects.toThrow("redirect");
+    const html=renderToStaticMarkup(await SignInPage({searchParams:Promise.resolve({callbackUrl:"/account/delete",reauth:"1"})}));
+    expect(text(html)).toContain("Appleでサインイン");
+  } finally {m.auth.mockResolvedValue(null);}
+});
 
 it("on the way to Checkout shows only the title, the provider buttons (Apple and Google) and one-line notes", async () => {
   const html = renderToStaticMarkup(await SignInPage({ searchParams: Promise.resolve({ callbackUrl: "/billing/start?returnTo=%2Fq%2Fap%2F2023-spring%2Fam%2Fq12" }) }));

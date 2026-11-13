@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 import { resolve } from "node:path";
 import { BLOG_ARTICLE_ALIASES } from "./lib/blog/article-aliases";
+import { EXAM_CODE_ALIASES } from "./lib/questions/exam-aliases";
 
 const isDev = process.env.NODE_ENV === "development";
 
@@ -115,6 +116,10 @@ const nextConfig: NextConfig = {
   },
   async redirects() {
     return [
+      ...Object.entries(EXAM_CODE_ALIASES).flatMap(([alias, canonical]) => [
+        { source: `/${alias}/:path*`, destination: `/${canonical}/:path*`, permanent: true },
+        { source: `/q/${alias}/:path*`, destination: `/q/${canonical}/:path*`, permanent: true },
+      ]),
       ...Object.entries(BLOG_ARTICLE_ALIASES).map(([alias, canonical]) => ({
         source: `/blog/${alias}`,
         destination: `/blog/${canonical}`,

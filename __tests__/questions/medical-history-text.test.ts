@@ -4,7 +4,7 @@ import { describe, expect, it } from "vitest";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { questionSourceEdition } from "@/lib/questions/source-label";
-import { questionTitle } from "@/lib/seo/question-meta";
+import { questionHeading, questionTitle } from "@/lib/seo/question-meta";
 import { questionBreadcrumbItems } from "@/lib/seo/question-jsonld";
 import { EXAM_DESCRIPTIONS, examMetaDescription, groupByYearSeason } from "@/lib/seo/exam-meta";
 import type { ExamCode, Question } from "@/lib/questions/types";
@@ -55,7 +55,8 @@ describe("medical history: official text excerpts", () => {
         for (const [i, q] of rows.entries()) {
           expect(questionSourceEdition(q), q.id).toBe(label);
           expect(questionSourceEdition({ ...q, sourcePdfUrl: `${q.sourcePdfUrl}#page=5` }), q.id).toBe(label);
-          expect(questionTitle(q), q.id).toContain(label);
+          expect(questionHeading(q), q.id).toContain(label);
+          expect(questionTitle(q), q.id).toContain(label.replace(/（[^）]*）$/, ""));
           expect(questionBreadcrumbItems(q)[2]?.name, q.id).toBe(label);
           const receipt = manifest.receipts[i];
           expect(loaded.find((r) => r.id === q.id)).toEqual(q);

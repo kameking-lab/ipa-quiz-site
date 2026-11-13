@@ -9,7 +9,7 @@ import { Preferences } from "@capacitor/preferences";
 import Link from "next/link";
 import type { MobileConfiguration, MobileEntitlement, CatalogEntry } from "../shared/contracts";
 import { downloads, type DownloadIndex } from "./downloads";
-import { Membership, purchaseError, nativePublicSdkKey, describeStoreError, StoreError } from "./purchases";
+import { Membership, deviceMembership, purchaseError, nativePublicSdkKey, describeStoreError, StoreError } from "./purchases";
 import { beginLogin, observeLogin } from "./login";
 import { observeReminderTap, setReminder } from "./platform";
 import { persistStudy, restoreStudy } from "./portable-storage";
@@ -20,7 +20,7 @@ import { openQualificationUrl } from "./qualification-platform";
 import { ManageSubscriptionButton } from "@/app/billing/ManageSubscriptionButton";
 import { blocksNativeWebPurchase } from "../shared/native-billing-policy";
 import { installNativePetSupport, observePetStudyWrites, persistStudyAfterPets } from "./pet-support";
-const defaultMembership = new Membership();
+const defaultMembership = deviceMembership;
 /** User-facing text for a failure: the message, without the "Error: " prefix String(e) adds. */
 export function noticeText(error: unknown): string { return error instanceof Error ? error.message : String(error); }
 export const SITE_ORIGIN = "https://www.kakomon-ai.jp";
@@ -65,8 +65,10 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   const [revealTick,setRevealTick]=useState(0);
   const heading=useRef<HTMLHeadingElement>(null);
   const [downloading,setDownloading]=useState(false);
+  const [downloadCode,setDownloadCode]=useState<string|null>(null), [downloadProgress,setDownloadProgress]=useState("");
   const abort = useRef<AbortController | null>(null), user = useRef<string | null>(null);
   const studyReady = useRef(false), accessSignature = useRef("");
+  const signingOut = useRef(false);
   const running=useRef(false);
   const refreshing=useRef<Promise<unknown>>(Promise.resolve());
   const inSite = typeof location !== "undefined" && location.origin === SITE_ORIGIN;
@@ -76,17 +78,25 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     if (!response?.ok) {
       // Keep what we last knew (signed in / member): replacing it with a login
       // button made a signed-in buyer look signed out right after paying.
-      setOffer(null); await downloads.invalidate();
+      setOffer(null);
+      // A failed request proves no revocation. Existing offline leases still
+      // go through signature, owner and expiry checks when opened.
+      if (response && [401, 403].includes(response.status)) await downloads.invalidate();
       const message=await statusFailureText(response);
       setStatusError(message); throw new StatusError(message);
     }
     setStatusError("");
     const result = await response.json() as { entitlement: MobileEntitlement; configuration: MobileConfiguration };
     result.configuration.sdkKey = await nativePublicSdkKey(result.configuration.sdkKey);
+    if (signingOut.current) throw new StatusError("ログアウト中です。");
     if (studyReady.current && result.entitlement.userId !== user.current) {
       abort.current?.abort(); await downloads.invalidate(); await membership.disconnect(); studyReady.current=false;
     }
-    if (!studyReady.current) { await restoreStudy(result.entitlement.userId); studyReady.current=true; }
+    if (!studyReady.current) {
+      await restoreStudy(result.entitlement.userId);
+      if (signingOut.current) throw new StatusError("ログアウト中です。");
+      studyReady.current=true;
+    }
     user.current = result.entitlement.userId;
     if(result.entitlement.userId) {
       const key=`kakomon:pending-purchase:${result.entitlement.userId}`;
@@ -95,9 +105,14 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     }else setPurchasePending(false);
     const signature=JSON.stringify([result.entitlement.userId,result.entitlement.entitled]);
     if(accessSignature.current!==signature) { accessSignature.current=signature;window.dispatchEvent(new Event("mobile:entitlement-changed")); }
+    if (signingOut.current) throw new StatusError("ログアウト中です。");
     setAccess(result.entitlement); setConfig(result.configuration);
     if (result.entitlement.entitled && result.entitlement.lease) await downloads.updateRights(result.entitlement, result.configuration.leasePublicKey).catch(()=>{setNotice("オフライン用の検証キーは配布設定待ちです。オンラインの学習・会員権利は利用できます。");});
-    else await downloads.invalidate();
+    else if (!result.entitlement.entitled) await downloads.invalidate();
+    else {
+      const cached = await downloads.rights();
+      if (cached && cached.access.userId !== result.entitlement.userId) await downloads.invalidate();
+    }
     setSaved(await downloads.list());
     return result;
     });
@@ -105,7 +120,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     return task;
   }, [membership]);
   const run = useCallback(async (fn: ()=>Promise<void>)=>{
-    if(running.current)return;
+    if(running.current || signingOut.current)return;
     running.current=true;
     setBusy(true); setNotice("");
     try { await fn(); } catch(error) {
@@ -134,6 +149,8 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     const interval = window.setInterval(()=>{ void refresh().catch(report); },60000);
     const deleted=()=>{studyReady.current=false;user.current=null;abort.current?.abort();setAccess(null);setOffer(null);clearInterval(interval);};
     window.addEventListener("mobile:account-deleted",deleted);
+    const signingOutNow=()=>{signingOut.current=true;deleted();};
+    window.addEventListener("mobile:signing-out",signingOutNow);
     const mirror=window.setInterval(()=>{if(studyReady.current)void persistStudy(user.current).catch(e=>setNotice(noticeText(e)));},5000);
     const cacheVisibleImages=()=>document.querySelectorAll<HTMLImageElement>("img").forEach(img=>{if(img.complete && img.naturalWidth>0)void cachedImage(img.currentSrc||img.src);});
     const imageObserver=new MutationObserver(cacheVisibleImages); imageObserver.observe(document.body,{childList:true,subtree:true});
@@ -148,15 +165,16 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     const click = (e: MouseEvent)=>{
       const a = (e.target as Element)?.closest?.("a[href]"); if (!a) return;
       const url = new URL(a.getAttribute("href")!, location.href);
-      if (url.origin === SITE_ORIGIN && url.pathname.startsWith("/billing")) { e.preventDefault(); e.stopPropagation(); setOpen(true); setRevealTick(n=>n+1); }
+      if (url.origin === SITE_ORIGIN && ["/billing", "/billing/start"].includes(url.pathname.replace(/\/$/, ""))) { e.preventDefault(); e.stopPropagation(); setOpen(true); setRevealTick(n=>n+1); }
       else if (url.origin !== SITE_ORIGIN && url.protocol === "https:") { e.preventDefault(); e.stopPropagation(); void (isQualificationUrl(url.href) ? openQualificationUrl(url.href) : Browser.open({ url: url.href })).catch(()=>setNotice("リンクを開けませんでした。再度お試しください。")); }
     };
     document.addEventListener("click",click,true);
-    return ()=>{ window.removeEventListener("mobile:account-deleted",deleted);disposed=true; disposers.forEach(fn=>fn()); clearInterval(interval);clearInterval(mirror);imageObserver.disconnect();document.removeEventListener("load",cacheVisibleImages,true); window.fetch=original; document.removeEventListener("click",click,true); abort.current?.abort(); };
+    return ()=>{ window.removeEventListener("mobile:signing-out",signingOutNow);window.removeEventListener("mobile:account-deleted",deleted);disposed=true; disposers.forEach(fn=>fn()); clearInterval(interval);clearInterval(mirror);imageObserver.disconnect();document.removeEventListener("load",cacheVisibleImages,true); window.fetch=original; document.removeEventListener("click",click,true); abort.current?.abort(); };
   },[inSite,refresh,run]);
   // Loading the panel's data must never hold the action lock: a tap on
   // 「ログイン」 while it loads used to be silently dropped by run().
   const loadOffer = useCallback(async (r: { entitlement: MobileEntitlement; configuration: MobileConfiguration }, isCancelled: ()=>boolean = ()=>false) => {
+    if (signingOut.current) return null;
     if (r.entitlement.entitled) { setOffer(null); setOfferError(""); return null; }
     setOfferLoading(true);
     try {
@@ -271,14 +289,14 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
               <span className="flex gap-2"><button className={secondary} disabled={busy} onClick={()=>void run(async()=>{
                 if (!access.entitled) { setNotice("事前ダウンロードは有料会員の特典です。無料でもオンラインで全資格から1日10問使えます。"); return; }
                 await refresh(true); abort.current=new AbortController();
-                setDownloading(true);
+                setDownloading(true);setDownloadCode(e.code);setDownloadProgress("準備中…");
                 const group=e.qualification?catalog.filter(item=>item.qualification===e.qualification):[e];
-                try { for(const part of group) await downloads.download(part.code,path=>fetch(path,{ cache:"no-store",signal:abort.current!.signal }), (n,total)=>setNotice(`${part.name}: ${n}/${total}問`),abort.current.signal); }
-                finally {setDownloading(false);abort.current=null;}
+                try { for(const part of group) await downloads.download(part.code,path=>fetch(path,{ cache:"no-store",signal:abort.current!.signal }), (n,total)=>setDownloadProgress(`${part.name}: ${n}/${total}問`),abort.current.signal); }
+                finally {setDownloading(false);setDownloadCode(null);abort.current=null;}
                 setSaved(await downloads.list()); setNotice(`${e.name}を保存しました。`);
               })}>{access.entitled ? "保存・更新" : "有料特典を見る"}</button>
-              {saved[e.code] && <button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await downloads.removeQualification(e.code); setSaved(await downloads.list()); })}>削除</button>}</span></div>)}
-            {downloading && <button className={secondary} onClick={()=>abort.current?.abort()}>ダウンロード中止</button>}</div>
+              {saved[e.code] && <button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await downloads.removeQualification(e.code); setSaved(await downloads.list()); })}>削除</button>}</span>{downloading && downloadCode===e.code && <div className="w-full space-y-2"><p role="status">{e.name}: {downloadProgress}</p><button className={secondary} onClick={()=>abort.current?.abort()}>ダウンロード中止</button></div>}</div>)}
+            </div>
           </details>
         </>}
       </section>
@@ -290,6 +308,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       </section>
       <section aria-labelledby="native-account" className={card}>
         <h2 id="native-account" className="font-bold">アカウントとデータ</h2>
+        <p><Link className="inline-flex min-h-11 items-center font-medium underline underline-offset-4" href={access?.userId ? "/account" : "/auth/signin?callbackUrl=/account"}>{access?.userId ? "アカウント（ログアウト・削除）" : "ログイン"}</Link></p>
         <button className={secondary} onClick={()=>{localStorage.removeItem("kakomon:ai-consent:20261103");setNotice("AI送信の許可を取り消しました。次の送信前に再確認します。");}}>AI送信の許可を取り消す</button>
         <p><Link className="inline-flex min-h-11 items-center font-medium text-destructive underline underline-offset-4" href="/account/delete">アカウント・学習データを削除</Link></p>
       </section>

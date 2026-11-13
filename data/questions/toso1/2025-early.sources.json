@@ -1,0 +1,533 @@
+{
+  "candidateId": "Q4-048",
+  "qualification": "塗装（建築塗装作業）1級 2025年度 前期",
+  "questionCount": 50,
+  "officialSources": [
+    {
+      "url": "https://www.kentei.javada.or.jp/pdf/R07-1-B87-%E5%A1%97%E8%A3%85%EF%BC%88%E5%BB%BA%E7%AF%89%E5%A1%97%E8%A3%85%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+      "httpStatus": 200,
+      "sha256": "7cc20630370a528b35a38f90443bfda32e693adbbc65394e7aa8b8d32c214181",
+      "pages": 8
+    },
+    {
+      "url": "https://www.kentei.javada.or.jp/pdf/R07-1-B87-%E5%A1%97%E8%A3%85%EF%BC%88%E5%BB%BA%E7%AF%89%E5%A1%97%E8%A3%85%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+      "httpStatus": 200,
+      "sha256": "7c5b13b82a6506b41aa4d60b2e4a2e279895f5d80fbc3582cf55ec532f21c465",
+      "pages": 1
+    }
+  ],
+  "transcriptionMethod": "公式画像PDFを全ページ目視転記し、本文・全選択肢・図と正答を照合。改行・空白を整理。A群1〜25とB群1〜25を内部番号1〜50に対応。",
+  "answerVerification": "公式正答表を描画し、A群25問とB群25問の正答を独立に目視確認。",
+  "choiceMapping": {
+    "A": {
+      "ア": "○",
+      "イ": "×"
+    },
+    "B": {
+      "ア": "イ",
+      "イ": "ロ",
+      "ウ": "ハ",
+      "エ": "ニ"
+    }
+  },
+  "figures": [
+    {
+      "qNumber": 50,
+      "pdfPage": 8,
+      "path": "public/images/questions/toso1/2025-early-b25.webp",
+      "cropRect": [
+        240,
+        500,
+        350,
+        690
+      ],
+      "sha256": "8198a1681a45f00db89a4422fe997c4457f6f02a2d6b7610072e42cd46d4ca46"
+    }
+  ],
+  "questions": [
+    {
+      "id": "toso1-2025-early-gakka-a-001",
+      "group": "A",
+      "originalNumber": 1,
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "bodySha256": "85ac372252336cb741fb073a9dc1680e943d10453316e9cf3bd96d84f011c6af",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-002",
+      "group": "A",
+      "originalNumber": 2,
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "bodySha256": "4cf6b53ea47a9450e9a96d30014523617767aa8513a13a300d20219d2c21f4eb",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-003",
+      "group": "A",
+      "originalNumber": 3,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "bodySha256": "a6359861b74c412e7443472cada80ddb7a8d137d44f3e963d9e4eb32098b476c",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-004",
+      "group": "A",
+      "originalNumber": 4,
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "bodySha256": "dd46eb1f0c55c285dd2b4fb2dbb962ba90f3223cd4d99e20588c18c8f017e38a",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-005",
+      "group": "A",
+      "originalNumber": 5,
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "bodySha256": "be640d2fa8e72e4a5a0190b6b20d0c19954cd6f9a6bb03a2db5943895d9086a6",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-006",
+      "group": "A",
+      "originalNumber": 6,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "bodySha256": "5a8dd305a4f292c45c1ffb22088f1916848bcfb575c56f6a9be18ca6380acff1",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-007",
+      "group": "A",
+      "originalNumber": 7,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "bodySha256": "7adf981d3b0343f4b2dbf57ffc74ffcfb6fa31dfd173e2641f7a3c4f52debd14",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-008",
+      "group": "A",
+      "originalNumber": 8,
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "bodySha256": "c7f0c9f279b14cd2d82889ce9bbceafb6ff17c207f0e03ddabfaec0b91a5e7df",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-009",
+      "group": "A",
+      "originalNumber": 9,
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "bodySha256": "2498fcf1b1a9ad30527b519efb981b766730c23134aa943277e0d160ae4d9bab",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-010",
+      "group": "A",
+      "originalNumber": 10,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "bodySha256": "15d6bd0dd0012ca8c89173a889e0af68250bf1e21d720f7083e575a72fabfbad",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-011",
+      "group": "A",
+      "originalNumber": 11,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "bodySha256": "bb1a44dd5ff20a489ba90ec7fbec33a451da6b0b41ea85049d584f66e1a453c4",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-012",
+      "group": "A",
+      "originalNumber": 12,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "bodySha256": "15bf0d9c048cfbde574ff11891bcaf6d2a00645d1e46820f929398cf5e580696",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-013",
+      "group": "A",
+      "originalNumber": 13,
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "bodySha256": "5bf4c5cf5f808e5bbd93f862266ac5116a8d6556cf0bfb4299021aa4904abc07",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-014",
+      "group": "A",
+      "originalNumber": 14,
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "bodySha256": "238185656a0b8d6c5740bc9f70fdd3b97bad5f240b697f2ddb3a706c3473d5d8",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-015",
+      "group": "A",
+      "originalNumber": 15,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "bodySha256": "3fb4e40727f6a48c7aac9b59084ea232dab1cb971620b747cc40c2571c5b4764",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-016",
+      "group": "A",
+      "originalNumber": 16,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "bodySha256": "2a944f113b3f3b4fab2850750098159953dcfe58fdc5944480d130d35cda5f15",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-017",
+      "group": "A",
+      "originalNumber": 17,
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "bodySha256": "7fbd8a6ae51327f9ea9f47771828b07a49651ac14aad570405c75c6b899fd42f",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-018",
+      "group": "A",
+      "originalNumber": 18,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "bodySha256": "21351d0690f656f32b89052074f4445a3dddb26fb837a2c1974367654db44707",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-019",
+      "group": "A",
+      "originalNumber": 19,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "bodySha256": "a7e42e5196de3074a0b3ad5f2aa61e0afab2b0ba40fc2f3c89fee90b1448a55c",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-020",
+      "group": "A",
+      "originalNumber": 20,
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "bodySha256": "cc14258a018b2c43614e5ee3c846bffd6b9309cacf2465df7e594f3984a2f621",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-021",
+      "group": "A",
+      "originalNumber": 21,
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "bodySha256": "82f9234e5fe3f47bd5a13bf945e76645c9bf33f4f6ec5c84692fa9309d523d36",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-022",
+      "group": "A",
+      "originalNumber": 22,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "bodySha256": "58696197fe8e0433a617f859f1daf23b8079428c2430ae9d6112bf485b8e3ee3",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-023",
+      "group": "A",
+      "originalNumber": 23,
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "bodySha256": "9b835d8023d6306cb0ac932ef3ec19d3de69d03e4961d44de1291c0ff94d17ae",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-024",
+      "group": "A",
+      "originalNumber": 24,
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "bodySha256": "41e0b1490376a49b80a1a43a2427ddf2e3b948e06b92bcf2329bf0b40b9286a8",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-a-025",
+      "group": "A",
+      "originalNumber": 25,
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "bodySha256": "54ba3e3e9389e1e2839c5db4f860479cb7567d4d7b339f395abb13a139f5e284",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-001",
+      "group": "B",
+      "originalNumber": 1,
+      "pdfPage": 4,
+      "officialAnswer": "ロ",
+      "bodySha256": "ebffad2cbcafa066ffb16a5c957f916778c7bf55f06204c7020b1fcbc6dde280",
+      "choicesSha256": "ae0b5d47ed06ed754947fc3aed49c91f99ccddf3e0945ed752a0760d7201cc30"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-002",
+      "group": "B",
+      "originalNumber": 2,
+      "pdfPage": 4,
+      "officialAnswer": "ニ",
+      "bodySha256": "4c39cec1c97502fdeacc6b7940c544594c0bc57ea37f0c0cb2b180a7d7768d6d",
+      "choicesSha256": "8d45131dc5dff95826692aa22ad53ae8da4690179e3ffb41f498a1d269acef85"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-003",
+      "group": "B",
+      "originalNumber": 3,
+      "pdfPage": 4,
+      "officialAnswer": "イ",
+      "bodySha256": "8f7b67fbbcbf1b3ab934c0fa88a8991748302ee371355c014a0dbf0392ea9931",
+      "choicesSha256": "d247442b3db75ec05d5d76d497432d1d3245b8de5cb513a521fc59169205bcdd"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-004",
+      "group": "B",
+      "originalNumber": 4,
+      "pdfPage": 4,
+      "officialAnswer": "ロ",
+      "bodySha256": "9795d22f1596cfe5e9342a516a78344d72c5ca7a8cda3e4991745e311906e7fa",
+      "choicesSha256": "cca7c45489a6c953547050ba5228f29e8ea2866af11fa8218519cfa1724b29f3"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-005",
+      "group": "B",
+      "originalNumber": 5,
+      "pdfPage": 4,
+      "officialAnswer": "ロ",
+      "bodySha256": "6234355d32cc98935eb8a1d1cb61f91a414e9f5741d39480274ff5bd621f0d4c",
+      "choicesSha256": "5aa6ca592d7518cb971b50cfeb5f89b9349a4a87464e856b7965df42795fe7f0"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-006",
+      "group": "B",
+      "originalNumber": 6,
+      "pdfPage": 5,
+      "officialAnswer": "イ",
+      "bodySha256": "cddd40c663d0e1e9b8e04086cf8e9e70c6d09155970a2af68e103850cd25636e",
+      "choicesSha256": "1404c37ffffc70193604de9f948b783f314ea630c1ac4d28158d5aab93defc1a"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-007",
+      "group": "B",
+      "originalNumber": 7,
+      "pdfPage": 5,
+      "officialAnswer": "ニ",
+      "bodySha256": "b22811c5fe6ea414162400e95b29f3f2f71d6d80db1ecb8ec711c3b5c5264c29",
+      "choicesSha256": "b1b97df2df1c29f85ee85fed8568369b8f0aa284f9eac6a1db344cfd94f41f13"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-008",
+      "group": "B",
+      "originalNumber": 8,
+      "pdfPage": 5,
+      "officialAnswer": "ロ",
+      "bodySha256": "b806dc4da37da69e53eaff59d1c7a40decfa3592f823caa93317e9dbe5f66e21",
+      "choicesSha256": "a158790907f118857be527da308215d28088489d24f86be87ca778cd578097dd"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-009",
+      "group": "B",
+      "originalNumber": 9,
+      "pdfPage": 5,
+      "officialAnswer": "イ",
+      "bodySha256": "53a64df58f57c68499356cd7768e771d6166049b01cf6307db9a4e0e16c1bff5",
+      "choicesSha256": "4ffcfd02ba0d78f3d223d6a80cbc6f52e6767a810c63cab25bd96b75af42950d"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-010",
+      "group": "B",
+      "originalNumber": 10,
+      "pdfPage": 5,
+      "officialAnswer": "ニ",
+      "bodySha256": "8f835683bdeff6a0fc5221f53e26c64ba591fbc67b1b1667beb092e02beb7326",
+      "choicesSha256": "e7ef058dd30787a236667dac7a3a2199ab79c321aff590d81830c87f22b0aee0"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-011",
+      "group": "B",
+      "originalNumber": 11,
+      "pdfPage": 6,
+      "officialAnswer": "イ",
+      "bodySha256": "095efcf2deeb91d0a7f40fb629c475848e0fe8204962abbf219538d608929ede",
+      "choicesSha256": "3433faa1c9cd415ef74111a428e9877323178379f5ee8f0452b62c04e6ff360c"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-012",
+      "group": "B",
+      "originalNumber": 12,
+      "pdfPage": 6,
+      "officialAnswer": "ハ",
+      "bodySha256": "a6fd0bff0de2437595f83a49876c72ae0d208603fdfe2bed7e213a3ff6053795",
+      "choicesSha256": "ee8cbdfc98144e5cf8860d97bfbc809a4a736c8eb05d2114a129fa9d182f9b64"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-013",
+      "group": "B",
+      "originalNumber": 13,
+      "pdfPage": 6,
+      "officialAnswer": "ニ",
+      "bodySha256": "df59483d537d50a6f2d4be5a0d204b526929dc7027b5ca969d3816c7b01ab04d",
+      "choicesSha256": "6eed7c3884e70d29eacfef1cfd1fc6993f98eb7493b9acfb3546af6ab09bf206"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-014",
+      "group": "B",
+      "originalNumber": 14,
+      "pdfPage": 6,
+      "officialAnswer": "イ",
+      "bodySha256": "dc471732a0750453754e1c460610e3e17e31174fa03bf3fb8fcc18957a3cd5c6",
+      "choicesSha256": "7d32f92d4d6702396434a70436842dcb360878a7f10818334976c3ac289edfaf"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-015",
+      "group": "B",
+      "originalNumber": 15,
+      "pdfPage": 6,
+      "officialAnswer": "ハ",
+      "bodySha256": "bee78ad1a29f3fde6f18bd70b635c751cb7841005ef392a9d7d7fea8d16339e3",
+      "choicesSha256": "6d8b6e8c1082804634f4937b535abf68c6fbdc03df382f121257b27f3d104abb"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-016",
+      "group": "B",
+      "originalNumber": 16,
+      "pdfPage": 7,
+      "officialAnswer": "ハ",
+      "bodySha256": "676cad75f897b6b618a69c1e563988f6982878ee6c1923da921ce989dacaaba4",
+      "choicesSha256": "c117d1363a308825541876e4bee7e01e6dcfbd0b910c5ca91e2b0aaa2558526d"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-017",
+      "group": "B",
+      "originalNumber": 17,
+      "pdfPage": 7,
+      "officialAnswer": "ハ",
+      "bodySha256": "a9261abf26523364421634d7e653b793d81b59edc7e082f066a931d491dfce17",
+      "choicesSha256": "51d8d7529ebad4853b1a64184d06cadaaa97f348a6bbaec79b5e5c92d770dd21"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-018",
+      "group": "B",
+      "originalNumber": 18,
+      "pdfPage": 7,
+      "officialAnswer": "ハ",
+      "bodySha256": "4afcafd76e80bd9372a2fbd017cd77240330e5586c9b6ba7119f290d67fb9c85",
+      "choicesSha256": "3e1a2c5e5918280ce1ecd54a1b4fe822eca64ba78404db359cca449a535f2f97"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-019",
+      "group": "B",
+      "originalNumber": 19,
+      "pdfPage": 7,
+      "officialAnswer": "ニ",
+      "bodySha256": "e853794dfac618ab0f74b8b859a788ac39971a38b980eba58af1d4bf6bc01c62",
+      "choicesSha256": "bd9cc907d2240d7c5c14aa2e70a2dba055e3ea10c3d11e8fb2f0c90ae9a17698"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-020",
+      "group": "B",
+      "originalNumber": 20,
+      "pdfPage": 7,
+      "officialAnswer": "ロ",
+      "bodySha256": "52abeab353962d53c831ddfaa0a8b9387a85a44db3296e63255b8210a856a6a2",
+      "choicesSha256": "2344ad317ff7295b518f564071a38ab7fde137e7af05fcac667ec54b750a677d"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-021",
+      "group": "B",
+      "originalNumber": 21,
+      "pdfPage": 7,
+      "officialAnswer": "ニ",
+      "bodySha256": "e250497a34898bbb0302d02821fb617c45f2a3680b029d6bb6e9222f606220e1",
+      "choicesSha256": "03c546763cbf8276cff17f3b581969f95abdc8700e7b04b4efff35cfe80651f0"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-022",
+      "group": "B",
+      "originalNumber": 22,
+      "pdfPage": 8,
+      "officialAnswer": "イ",
+      "bodySha256": "84992a4e3d60ef89e1a6b67865f1bda4c854648e6b71f2efb27db1a547a7e526",
+      "choicesSha256": "dca733bec84758359b63a4260c6d7cf653d1357a35ad0f9fc3b657978c284140"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-023",
+      "group": "B",
+      "originalNumber": 23,
+      "pdfPage": 8,
+      "officialAnswer": "イ",
+      "bodySha256": "fabb8438e8a470b084f4817f824ccea5522437065a036527a36557c5c8d425a6",
+      "choicesSha256": "3c66bbbc30aadac4945497b7ce32edd0445bc8bb54eb4d69e9a284f15c2d02e5"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-024",
+      "group": "B",
+      "originalNumber": 24,
+      "pdfPage": 8,
+      "officialAnswer": "ハ",
+      "bodySha256": "0c21e3937a56967e51450e7ca336b25e59ef694071fb1f079f8c4f04c15992f8",
+      "choicesSha256": "990dda06ca45a75825c7339c03ef3eb2219f95a1f025c2c81c1936c4b65de5f8"
+    },
+    {
+      "id": "toso1-2025-early-gakka-b-025",
+      "group": "B",
+      "originalNumber": 25,
+      "pdfPage": 8,
+      "officialAnswer": "イ",
+      "bodySha256": "b43a43b6c24dc74ec4df2e1f3b66a3cee8567f6e7a6f5b27bde9251153303268",
+      "choicesSha256": "61d0151ce83ec95e4fb9c4804d8f239200b9a8dd7d6f813a5445bc0dccd0285e"
+    }
+  ],
+  "reviewNotes": {
+    "step": "c4r-B2",
+    "date": "2026-11-13",
+    "officialAnswersChanged": 0,
+    "changes": [
+      {
+        "id": "toso1-2025-early-gakka-a-015",
+        "candidate": "Q4-048",
+        "fields": [
+          "explanation",
+          "choiceExplanations",
+          "officialReferenceUrls"
+        ]
+      },
+      {
+        "id": "toso1-2025-early-gakka-a-016",
+        "candidate": "Q4-048",
+        "fields": [
+          "explanation",
+          "choiceExplanations",
+          "officialReferenceUrls"
+        ]
+      },
+      {
+        "id": "toso1-2025-early-gakka-b-017",
+        "candidate": "Q4-048",
+        "fields": [
+          "choices",
+          "explanation",
+          "choiceExplanations"
+        ]
+      }
+    ]
+  }
+}

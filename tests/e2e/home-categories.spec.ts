@@ -29,18 +29,20 @@ for (const width of [390, 1280]) {
     await page.setViewportSize({ width, height: 900 });
     await page.goto("/");
     await expect(page.getByRole("heading", { level: 1 })).toBeVisible();
-    await page.getByRole("link", { name: "資格を選んで始める", exact: true }).click();
-
     const finder = page.locator("#choose-qualification");
+    await finder.getByRole("searchbox", { name: "資格名・略称で検索" }).scrollIntoViewIfNeeded();
     await expect(finder.getByRole("searchbox", { name: "資格名・略称で検索" })).toBeInViewport();
-    await expect(finder.getByRole("link", { name: /^ITパスポート/ })).toBeInViewport();
-    const filters = finder.locator(".study-filters").getByRole("button", { pressed: false });
-    // Automotive discovery adds a seventh domain; all remain unselected initially.
-    await expect(filters).toHaveText([
-      "自動車整備", "IT・情報処理", "安全衛生", "電気",
-      "建設・施工管理", "お金・不動産・経営", "医療・福祉",
+    const filter = finder.getByRole("combobox", { name: "資格の分野で絞り込む" });
+    await expect(filter).toHaveValue("");
+    await expect(filter.getByRole("option")).toHaveText([
+      "全分野", "IT・情報処理", "お金・ビジネス", "不動産", "法律・労務",
+      "電気・無線", "建設・技術", "安全衛生", "医療・福祉・生活", "自動車整備",
     ]);
-    await expect(finder.getByRole("button", { name: "すべて", exact: true })).toHaveAttribute("aria-pressed", "true");
+    const domains = finder.locator("details.study-domain");
+    await expect(domains).toHaveCount(9);
+    await expect(finder.locator("details.study-domain[open]")).toHaveCount(0);
+    await expect(finder.getByRole("region", { name: "試験が近い資格", exact: true }).getByRole("link")).toHaveCount(3);
+    await expect(finder.getByRole("region", { name: "あなたの資格", exact: true })).toHaveCount(0);
 
     // 各分野の資格カードと一覧ページへの導線。
     const main = page.locator("main");
@@ -54,10 +56,13 @@ for (const width of [390, 1280]) {
     await expect(page.locator('#domain-it a[href="/ip"]')).toContainText(/[1-9][\d,]*問/);
     await expect(main.getByText(/^0問$/)).toHaveCount(0);
 
-    // Genre links are visible on initial load without opening a disclosure.
+    // Every domain starts collapsed; its links become usable by opening it.
+    await expect(page.locator('#domain-it a[href="/ip"]')).not.toBeVisible();
+    await page.locator("#domain-it > summary").click();
+    await expect(page.locator("#domain-it")).toHaveAttribute("open", "");
     await expect(page.locator('#domain-it a[href="/ip"]')).toBeVisible();
 
-    await main.locator('a[href="/ipa"]').first().click();
+    await page.locator('#domain-it a[href="/ipa"]').click();
     await expect(page).toHaveURL(/\/ipa$/, { timeout: 30_000 });
     await expect(page.locator('main a[href="/ip"]').first()).toBeInViewport();
     await expect(page.getByRole("tablist")).toHaveCount(0);
@@ -67,8 +72,9 @@ for (const width of [390, 1280]) {
     await page.getByRole("link", { name: "← IPA・安全を選び直す", exact: true }).click();
     await expect(page).toHaveURL(/\/$/, { timeout: 30_000 });
 
+    await page.locator("#domain-safety > summary").click();
     await expect(page.locator('#domain-safety a[href="/e-learning/exams"]')).toBeVisible();
-    await main.locator('a[href="/e-learning/exams"]').first().click();
+    await page.locator('#domain-safety a[href="/e-learning/exams"]').click();
     await expect(page).toHaveURL(/\/e-learning\/exams$/, { timeout: 30_000 });
     await expect(page.getByRole("link", { name: /^第一種衛生管理者/ })).toBeVisible();
     const safetyConsultant = page.getByRole("region", { name: "労働安全コンサルタント", exact: true });
@@ -79,8 +85,9 @@ for (const width of [390, 1280]) {
     await page.getByRole("link", { name: "← IPA・安全を選び直す", exact: true }).click();
     await expect(finder).toBeVisible();
 
+    await page.locator("#domain-electrical > summary").click();
     await expect(page.locator('#domain-electrical a[href="/qualifications"]')).toBeVisible();
-    await main.locator('a[href="/qualifications"]').first().click();
+    await page.locator('#domain-electrical a[href="/qualifications"]').click();
     await expect(page).toHaveURL(/\/qualifications$/, { timeout: 30_000 });
     await page.locator("#qualification-coverage > summary").click();
     const coverage = page.locator("#qualification-coverage");

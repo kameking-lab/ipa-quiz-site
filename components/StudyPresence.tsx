@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
+import { nativeClient } from "@/mobile/shared/contracts";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { canonicalPresenceExam, isActiveStudyTab, isPresenceBot, PRESENCE_EVENT, PRESENCE_EXAM_ATTRIBUTE, PRESENCE_VIEWER_ATTRIBUTE, PRESENCE_REFRESH_MS, PRESENCE_IDLE_MS } from "@/lib/study-presence";
 import { PRESENCE_STATE_EVENT, presenceFallback, presenceViewState, presenceRetryDelay, presenceRetryAfterMs, type MeasuredPresence, type PresenceViewState } from "@/lib/study-presence-contract";
@@ -24,7 +25,7 @@ function visitorId(canRotate: boolean): BrowserIdentifier | null {
 /** Questions expose only their qualification, including mixed-exam quiz pools. */
 export function StudyPresence() {
   useEffect(() => {
-    if (navigator.webdriver || isPresenceBot(navigator.userAgent)) return;
+    if (nativeClient() || navigator.webdriver || isPresenceBot(navigator.userAgent)) return;
     let disposed = false;
     let busy = false;
     let lastActivity = Date.now();

@@ -1,2 +1,2 @@
 .seat { position:relative; z-index:12; margin:-64px 12px 12px; overflow-wrap:anywhere; }
-@media(min-width:768px) { .seat { width:min(440px,calc(100% - 24px)); margin:0 12px 12px auto; } }
+@media(min-width:768px) { .seat { width:calc(100% - 24px); margin:12px; } }

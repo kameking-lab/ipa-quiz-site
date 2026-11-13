@@ -9,6 +9,7 @@ import "./globals.css";
 import { ThemeProvider, THEME_BOOTSTRAP_SCRIPT } from "@/components/theme-provider";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { SiteHeader } from "@/components/SiteHeader";
+import { AccountNavigationProvider } from "@/components/account/AccountNavigation";
 import { NativeAppHost } from "@/components/NativeAppHost";
 import { NATIVE_APP_BOOTSTRAP_SCRIPT } from "@/lib/native-app-bootstrap";
 import { NativeAdPrivacy } from "@/components/ads/NativeAdPrivacy";
@@ -156,6 +157,7 @@ export default function RootLayout({
             <OnboardingTour />
           </div>
           <VercelAnalyticsWithPrivacy />
+          <AccountNavigationProvider>
           <div className="flex min-h-[100dvh] flex-col overflow-x-clip">
             <EmergencyBanner />
             <div className="print:hidden">
@@ -273,6 +275,7 @@ export default function RootLayout({
             </footer>
           </div>
           <MobileBottomNav />
+          </AccountNavigationProvider>
           </MobileInstallProvider>
         </ThemeProvider>
       </body>

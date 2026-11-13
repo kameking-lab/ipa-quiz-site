@@ -5,6 +5,7 @@ import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
 import { createHistoryStore } from "@/lib/storage/history";
 import { readLastQuestion } from "@/lib/storage/last-question";
 import { DENKEN3_QUESTIONS } from "@/data/questions/denken3";
+import { QUESTIONS as KIKAI_HOZEN_DENKI1_QUESTIONS } from "@/data/questions/kikai-hozen-denki1";
 import type { ChoiceKey } from "@/lib/questions/types";
 
 const baseProps = {
@@ -29,6 +30,12 @@ beforeEach(() => {
 });
 
 describe("QuestionAnswerCard — solve in place", () => {
+  it("shows the official circle answer for a mixed-format mechanical-maintenance paper", () => {
+    const q = KIKAI_HOZEN_DENKI1_QUESTIONS.find(q => q.officialAnswerNumber === "○" && Object.keys(q.choices ?? {}).length === 2)!;
+    render(<QuestionAnswerCard {...baseProps} question={q} questionId={q.id} choices={q.choices!} answerKey={q.answer as ChoiceKey} exam={q.exam} year={q.year} season={q.season} session={q.session} qNumber={q.qNumber} />);
+    fireEvent.click(screen.getByRole("button", { name: /答えだけ見る/ }));
+    expect(screen.getByText("正解は ○")).toBeTruthy();
+  });
   it("answers a public five-choice Denken3 question with official labels and keyboard 5", () => {
     const q = DENKEN3_QUESTIONS[0]!;
     render(

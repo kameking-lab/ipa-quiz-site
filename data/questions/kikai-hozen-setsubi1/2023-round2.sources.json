@@ -1,0 +1,546 @@
+{
+  "candidateId": "Q4-041",
+  "qualification": "機械保全（設備診断作業）1級 2023年度 第2回",
+  "year": 2023,
+  "season": "round2",
+  "questionCount": 50,
+  "officialSources": [
+    {
+      "url": "https://www.kikaihozenshi.jp/pdf/2023/2023__1kyu_setubi_mondai.pdf",
+      "httpStatus": 200,
+      "sha256": "e9f96b450daae1b79ac088bdb322c758e2a4929bc39e25e32c17f08991903c78",
+      "bytes": 439747,
+      "pages": 9
+    },
+    {
+      "url": "https://www.kikaihozenshi.jp/pdf/2023/2023__1kyu_setubi_kaitou.pdf",
+      "httpStatus": 200,
+      "sha256": "d09449bcfa6e9e24bc256c67bb8f2c8fea6c53637c12c775a601bbeb1c2bcd15",
+      "bytes": 172160,
+      "pages": 1
+    }
+  ],
+  "choiceMapping": {
+    "ア": "○",
+    "イ": "×"
+  },
+  "transcriptionMethod": "公式PDFのテキスト層を表示位置順で抽出し、全問題・全選択肢・数式・表を描画ページで照合。改行・空白を整理。分数式は描画と照合した1行式で表現。",
+  "answerVerification": "公式正答表の描画を全50問確認し、テキスト層の正答列とも独立照合。",
+  "figures": [
+    {
+      "qNumber": 3,
+      "pdfPage": 1,
+      "path": "public/images/questions/kikai-hozen-denki1/2023-round2-q03.webp",
+      "cropRect": [
+        121,
+        167,
+        315,
+        297
+      ],
+      "sha256": "0d1e1d80c4a803a210df658a05b1644c9106714c2897f5a4c322cd987aff78df"
+    },
+    {
+      "qNumber": 15,
+      "pdfPage": 2,
+      "path": "public/images/questions/kikai-hozen-denki1/2023-round2-q15.webp",
+      "cropRect": [
+        155,
+        89,
+        293,
+        186
+      ],
+      "sha256": "c5aa1267dba7eaca57dafc8b355e6ea50cc21de744b0244fde6bd57734a5a01b"
+    },
+    {
+      "qNumber": 43,
+      "pdfPage": 7,
+      "path": "public/images/questions/kikai-hozen-setsubi1/2023-round2-q43.webp",
+      "cropRect": [
+        130,
+        259,
+        358,
+        394
+      ],
+      "sha256": "148ae6ee776bae412c5b9218d630aafa576a8e050aac2d7154b13d6fbc3719ef"
+    }
+  ],
+  "questions": [
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-001",
+      "pdfPage": 1,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "bodySha256": "ed2328a7fe26ad7f38d0c18253eb660b2a7581b2260a08edb6350358683d879f",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-002",
+      "pdfPage": 1,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "bodySha256": "c6e0f9881982c79ca7000d57ccc84361a65b48c37c6661a760cacffa633b7272",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-003",
+      "pdfPage": 1,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "bodySha256": "25396801d9f915181cc5fe7588f8f37d1e202feb0f15b60639dce064e43fc924",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-004",
+      "pdfPage": 1,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "bodySha256": "53280334ca6d979aad316ae879524fca74703f20a77d0120ae1c7b6fdd5b21cb",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-005",
+      "pdfPage": 1,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "bodySha256": "1eca6404bc082a5390bf53a7da4c6139b28cd9518d65aef9877ba285812b44a6",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-006",
+      "pdfPage": 1,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "bodySha256": "f3c44d926fd238778c392f5c6a8ff5715b3b56a9350cf7a131122c67d28db91a",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-007",
+      "pdfPage": 1,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "bodySha256": "457b853f35bd237d86674da3f309fd69e50cbc4d1c33f94fbef7f4f7f4e9353f",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-008",
+      "pdfPage": 1,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "bodySha256": "5afd1d3928797a66a4ffabe824e3e0a831b6ccf30acd83f5720ba493d84493de",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-009",
+      "pdfPage": 1,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "bodySha256": "6af1e2d3696993501a5607a6f6d3ee290809752ad00ad33e710fa0db81527775",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-010",
+      "pdfPage": 1,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "bodySha256": "1d70736fee3bc1c0d83d6c73ad07f46232668d2a16d84c82ee77f9e1055870fa",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-011",
+      "pdfPage": 1,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "bodySha256": "1392a84a7242e186b56b95399dba643c312f84d785396ee89870c186921aa9a1",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-012",
+      "pdfPage": 1,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "bodySha256": "b9467c64b338e81ce263b998ae84434a6b6e7f4741c263e8830fc8a52da6ac72",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-013",
+      "pdfPage": 1,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "bodySha256": "468e34a7912cc539a84427a6b3372294b5c997bc95e38bbcefc91f521e370569",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-014",
+      "pdfPage": 1,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "bodySha256": "01d3652b463d334a5e353ca14df3f16c9d0e95e5f04e92362730f467ad5c2e40",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-015",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "bodySha256": "5e4558d4d68e3384e5181715f9691c14ad48815bcee6964a647fd9f83bde7df5",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-016",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "bodySha256": "3960f42e1cf354dc4a321cfea5a95045434c9725993dce05363296cfc7681a3e",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-017",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "bodySha256": "335efa88a8e2b433eff6f5d2ce52f59337506561d9bf56c5ee9be45d44f395ba",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-018",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "bodySha256": "b16ba759a8860e4a22dd3b60d383f445d1bed96d5cd1f001b7cd13dd54bf86e3",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-019",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "bodySha256": "f840724edd6bb04f110a7feb4b16120e11d32aa41c4c62df6f0bdfb3bc9a0739",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-020",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "bodySha256": "60b52aa9d9e7e9a7ada194741a6abf54ca7b694d25580e9e702e4dbc55d13247",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-021",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "bodySha256": "68bd99295883c89cfbb1ba9f14b173a3036dc6899944020a339c9828f5b51932",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-022",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "bodySha256": "3cae2ece6b015f99e7e7095062121d2af955abc143ba3c795c91814fc207c431",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-023",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "bodySha256": "43f0bc631c85a74cef117e9b8a51a087acdba25a75a22f5bbb46d28268e156e1",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-024",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "bodySha256": "6100c84c3038e074cd1fcb3944423c5cac396d4c230cfc5f8c1b50e682844686",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-025",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "bodySha256": "6723d38d0d0eec19ad415ad08e3710744af0d6efae403d22c5767ff5775c90bc",
+      "choicesSha256": "884020f44aa6760c6cce3e9fab04cb79d484abe22185b433d6a88bd61e8b3682"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-026",
+      "pdfPage": 3,
+      "officialAnswer": "ウ",
+      "internalAnswer": "ウ",
+      "bodySha256": "bbe517e340faa08e08aa3fd675cdb1aa9faddec0f307bff198f38f1da26c3e0f",
+      "choicesSha256": "1fe8cc425cd8474cc7d39eb49c9360324aae98b1036ae9f8dc407906bc9dfbcd"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-027",
+      "pdfPage": 3,
+      "officialAnswer": "エ",
+      "internalAnswer": "エ",
+      "bodySha256": "0c9aaea1424499c46274cff43c748a80cf9e7759ba8186d73ed50058d26c1570",
+      "choicesSha256": "5ffd45a8abfe86013b08817d50353ebba0fed0b330f3b36d7cd1cc2e39f040d4"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-028",
+      "pdfPage": 3,
+      "officialAnswer": "イ",
+      "internalAnswer": "イ",
+      "bodySha256": "302a5a26b3f20946501eadce562b498d6cae669081611d73cd4a9193a24340af",
+      "choicesSha256": "d33a192f4bdc9a236307d96aade342f370c8cd091126b57921e7914b3ebe488b"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-029",
+      "pdfPage": 3,
+      "officialAnswer": "ウ",
+      "internalAnswer": "ウ",
+      "bodySha256": "8eb33a332598166ba9a929c345584b3de92175da22aed3c2f9b99be9a458681b",
+      "choicesSha256": "9d8a74c5b9e83ae4e02359f2583d4f2f29164f07bf73b63ffb4e6f6ecdb38edc"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-030",
+      "pdfPage": 4,
+      "officialAnswer": "ア",
+      "internalAnswer": "ア",
+      "bodySha256": "967a9a56a1ab22db5eb9add4e98292a917f87ff257f0f0cadb52f7b0a98f2c2b",
+      "choicesSha256": "7dc53be7faff056c0d7aeb2ab80a9158ecd0c96a39dd19c383e8c2d5772ccdf3"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-031",
+      "pdfPage": 4,
+      "officialAnswer": "エ",
+      "internalAnswer": "エ",
+      "bodySha256": "500b47a1ab75eabc32d9e2af60cc7ec99fc9b7546107e06b3d1f69bd19503767",
+      "choicesSha256": "f6be5d7fe2a2065b3af457fc9a0c797489921946990c671c34724013dc9bbb36"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-032",
+      "pdfPage": 4,
+      "officialAnswer": "イ",
+      "internalAnswer": "イ",
+      "bodySha256": "2de91eef93925bfd00453e7bc55f079f9ce78d5df8de93987f3f7a47deab7cef",
+      "choicesSha256": "180f642465cd6781d494a4de50a4f0454559a1c4e55d532fb38b877f617263cb"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-033",
+      "pdfPage": 4,
+      "officialAnswer": "ア",
+      "internalAnswer": "ア",
+      "bodySha256": "c64a5856e52174bd91037819bc6dee2db551134bf1545060290be6db44936a13",
+      "choicesSha256": "3c581d6afb84d53a25db9c9909d9e027c50d94d2fec48dff124b1c667a3c8a9c"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-034",
+      "pdfPage": 5,
+      "officialAnswer": "エ",
+      "internalAnswer": "エ",
+      "bodySha256": "6016fe5a9cf6860f19e7d73d2cd2e58a28bd37c91ee6833e796aa070b5c66500",
+      "choicesSha256": "f53aa71744706a35ee1e84c38404a3b57476ecc6cd5e3c0f21090dcfdc5c4ba1"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-035",
+      "pdfPage": 5,
+      "officialAnswer": "ア",
+      "internalAnswer": "ア",
+      "bodySha256": "93e8be15774c1a69451b8db4c3333c722363d8a769f9de4c202807f66397b57f",
+      "choicesSha256": "3bde92d2e9ea7e876dba72f1259d5336c5ec80117705fe04f2b441149d3c1ac8"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-036",
+      "pdfPage": 5,
+      "officialAnswer": "イ",
+      "internalAnswer": "イ",
+      "bodySha256": "67ca56ff0524b0c0dd2fad9f9d0777c93f1420f7d16d1c29825177d573404fe0",
+      "choicesSha256": "cc4b41386ba23a3b596a4262ead8c6e4cc6e9a9619ede3623446781bc454d8ec"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-037",
+      "pdfPage": 5,
+      "officialAnswer": "エ",
+      "internalAnswer": "エ",
+      "bodySha256": "ce0bfadc485665e9abfb8ba8683dc351c4dd0de90014173ba2d3563fefe5d4a0",
+      "choicesSha256": "daf42714697e8fa2af0e7921b0fa7f485d210296f8fae87b0e1c18c81f866b3a"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-038",
+      "pdfPage": 6,
+      "officialAnswer": "エ",
+      "internalAnswer": "エ",
+      "bodySha256": "a47d76cfc9d5076818e0d69430fb63bd6d98507f9b82c2e2ca66e18bcb334254",
+      "choicesSha256": "7b03cbdc04a08beee6251d2b4e5deeb46fb8360d722ac25994974646ebf92a52"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-039",
+      "pdfPage": 6,
+      "officialAnswer": "ア",
+      "internalAnswer": "ア",
+      "bodySha256": "57923f3d77665ff236d5d4ebae60cd0c6189fd6ef14cb1871c29b83e8143f885",
+      "choicesSha256": "62b6ee28a2e8d5063022bef34392ce57c5d3775d855294876f98c81dd13fc879"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-040",
+      "pdfPage": 6,
+      "officialAnswer": "イ",
+      "internalAnswer": "イ",
+      "bodySha256": "a6fc3c9d033da97c0a506c8c28463d76befd7a1864db989206444846a5cc9e52",
+      "choicesSha256": "67f150f488334ebc2167f64f8feebe5559c6165fce60fc54b3906255823e3a05"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-041",
+      "pdfPage": 6,
+      "officialAnswer": "ウ",
+      "internalAnswer": "ウ",
+      "bodySha256": "17719e785fe58b8356863beb31ae44d26d0c109e2bacafb0b2c55a3dd9e0d253",
+      "choicesSha256": "5146a648bb48e6f720a171790b4bb4aaeefb4b25f9ee2621af9986835ba3cb10"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-042",
+      "pdfPage": 7,
+      "officialAnswer": "イ",
+      "internalAnswer": "イ",
+      "bodySha256": "7024b2e09bae3b2e2b08e714eb3ec5cec6df8f2bc2e95e6b69eeece2ebe5680b",
+      "choicesSha256": "627096c5847f267660e259fc0d4074b6322cac5487ffb0f6afd9593163e445a4"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-043",
+      "pdfPage": 7,
+      "officialAnswer": "ア",
+      "internalAnswer": "ア",
+      "bodySha256": "c20fc54505e0df75e6ea62b8237203b4a00eeb151053ea32bf9dafb9254c1553",
+      "choicesSha256": "008aaec745c5a7399e8c03a6dbc807d747a65d9e71ecd79c0be871c19903d623"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-044",
+      "pdfPage": 7,
+      "officialAnswer": "ア",
+      "internalAnswer": "ア",
+      "bodySha256": "82411b8e43b3919835683f8adb439aa19b6a9443189d47b3fd1bdbfcf1ffd707",
+      "choicesSha256": "6f4a0fb024785e5e030c890d0066faf898acd3abb37fdddf328ee90a082c84c6"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-045",
+      "pdfPage": 8,
+      "officialAnswer": "ア",
+      "internalAnswer": "ア",
+      "bodySha256": "649343284a9cda024bff444a53b4dbb456a92183013df1f5d7669166a68df405",
+      "choicesSha256": "8e119d639e2aa86355673d856cc813ac1b7a806ab99c85201f8bc93ced09801d"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-046",
+      "pdfPage": 8,
+      "officialAnswer": "ア",
+      "internalAnswer": "ア",
+      "bodySha256": "380272a5cd96deee969999b0ddd944a6bc997d2a10d169887c7ac2289fb308ba",
+      "choicesSha256": "85bb3ae7e779df0760a5b2f6e5d1dfa19f3bf0f63e1b1d409a07792342bf3589"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-047",
+      "pdfPage": 8,
+      "officialAnswer": "イ",
+      "internalAnswer": "イ",
+      "bodySha256": "5290c8cd3a852e28f58e57d0e50d6b70b4e43a36f5491f3cc900caf67f61a636",
+      "choicesSha256": "c2bcf0a55359159cbe7caf2ea6d626544fef75e55501fd0824ac08fe9803e471"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-048",
+      "pdfPage": 9,
+      "officialAnswer": "ア",
+      "internalAnswer": "ア",
+      "bodySha256": "b07b4fbbf0908b676801a33a3f50766f52061e2be3914f99f1e89f02d8552215",
+      "choicesSha256": "93f2539366ae8f4cc6072469242b801ae288f9183cf37dc0856d6c961d7d582f"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-049",
+      "pdfPage": 9,
+      "officialAnswer": "エ",
+      "internalAnswer": "エ",
+      "bodySha256": "bb368cca456d0102104aebfdf370560ab43d10b86be95480edef1b1a004bc7e8",
+      "choicesSha256": "a4cf6124648ad72fb4356a8c43f82a680da7b5a18ad8e18b73dcab0e1198ff15"
+    },
+    {
+      "id": "kikai-hozen-setsubi1-2023-round2-gakka-050",
+      "pdfPage": 9,
+      "officialAnswer": "ウ",
+      "internalAnswer": "ウ",
+      "bodySha256": "b1aeaaf048973303ff65c5f4c5a6fa8ab93a40f487a54e1b3ac523dbb62a3740",
+      "choicesSha256": "ece3475a874e015aeece00205cdf134a3bcf70084f08caf79bc2b3d2b8ffcba6"
+    }
+  ],
+  "reuse": {
+    "from": "kikai-hozen-denki1/2023-round2.json",
+    "questionNumbers": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25
+    ],
+    "verification": "両公式PDFで共通25問の本文・選択肢・正答を照合。共通2図はPDF埋込画像の画素MD5が一致することを確認して再利用。"
+  },
+  "sourceNotes": [
+    {
+      "qNumber": 28,
+      "note": "原本の4肢はすべてhf≧の表記。公式正答はイ。原文・正答を保持。等号などの誤植意図は未確認。"
+    },
+    {
+      "qNumber": 34,
+      "note": "公式問題のエは「無現像法は、現像処理は行わずに傷の検出を行う。」で、公式正答はエ。設問の「適切でない」との関係は未確認。原文・公式正答を保持し、不適切とする理由は創作していない。"
+    }
+  ],
+  "reviewNotes": {
+    "step": "c4r-B2",
+    "date": "2026-11-13",
+    "officialAnswersChanged": 0,
+    "changes": [
+      {
+        "id": "kikai-hozen-setsubi1-2023-round2-gakka-028",
+        "candidate": "Q4-041",
+        "fields": [
+          "explanation"
+        ]
+      },
+      {
+        "id": "kikai-hozen-setsubi1-2023-round2-gakka-034",
+        "candidate": "Q4-041",
+        "fields": [
+          "explanation",
+          "choiceExplanations"
+        ]
+      },
+      {
+        "id": "kikai-hozen-setsubi1-2023-round2-gakka-041",
+        "candidate": "Q4-041",
+        "fields": [
+          "choices"
+        ]
+      },
+      {
+        "id": "kikai-hozen-setsubi1-2023-round2-gakka-046",
+        "candidate": "Q4-041",
+        "fields": [
+          "question"
+        ]
+      }
+    ]
+  }
+}

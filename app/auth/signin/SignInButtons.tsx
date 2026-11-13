@@ -10,18 +10,23 @@ interface Props {
   hasGoogle: boolean;
   hasGitHub: boolean;
   hasApple?: boolean;
+  reauthenticate?: boolean;
 }
 
-export function SignInButtons({ callbackUrl, hasGoogle, hasGitHub, hasApple = false }: Props) {
+export function SignInButtons({ callbackUrl, hasGoogle, hasGitHub, hasApple = false, reauthenticate = false }: Props) {
   const redirectTo = callbackUrl || "/";
 
   function start(provider: "google" | "github" | "apple") {
     if (nativeClient()) {
       if (!hasApple && provider !== "apple") return;
-      return import("@/mobile/src/login").then(m=>m.beginLogin(window.location.origin,redirectTo));
+      return import("@/mobile/src/login").then(m=>m.beginLogin(window.location.origin,redirectTo,reauthenticate));
     }
     trackEvent({ name: "signin_started", provider, source: redirectTo });
-    return signIn(provider, { callbackUrl: redirectTo });
+    // Google and GitHub document account selection; Apple uses its standard
+    // authorization flow and does not document prompt/max_age parameters.
+    // Only the completed server-side sign-in renews authenticatedAt.
+    const authorizationParams = reauthenticate && provider !== "apple" ? { prompt: "select_account" } : undefined;
+    return signIn(provider, { callbackUrl: redirectTo }, authorizationParams);
   }
 
   return (

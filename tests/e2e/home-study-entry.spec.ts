@@ -5,27 +5,25 @@ test.beforeEach(async ({ page }) => { await page.route("https://**", (route) => 
 
 test.setTimeout(90_000);
 for (const width of [390, 1280]) {
-  test(`hero reaches the finder, then qualification reaches its question in two actions and restores filters at ${width}px`, async ({ page }) => {
+  test(`home search reaches a question in two activations and restores filters at ${width}px`, async ({ page }, testInfo) => {
     await page.setViewportSize({ width, height: 844 });
     await page.goto("/");
     const finder = page.locator("#choose-qualification");
-    const choose = page.getByRole("link", { name: "資格を選んで始める", exact: true });
-    await expect(choose).toBeInViewport();
-    await expect(choose).toHaveAttribute("href", "#choose-qualification");
-    await choose.focus();
-    await page.keyboard.press("Enter");
-    await expect(page).toHaveURL(/\/#choose-qualification$/);
-    await expect(finder.getByRole("searchbox")).toBeInViewport();
+    const search = finder.getByRole("searchbox", { name: "資格名・略称で検索" });
+    await search.scrollIntoViewIfNeeded();
+    await expect(search).toBeInViewport();
     await expect(page.locator('main a[href="/challenge"]')).toHaveCount(0);
     if (width < 768) await expect(page.locator('nav[aria-label="モバイルタブ"] a[href="/mock-exam"]:visible')).toHaveCount(0);
     await expect(page.locator(".study-resume")).toHaveCount(0);
-    await finder.getByRole("searchbox").fill("ｆｅ");
-    await finder.getByRole("button", { name: /^IT・/ }).click();
+    await search.fill("ｆｅ");
+    const filter = finder.getByRole("combobox", { name: "資格の分野で絞り込む" });
+    await filter.selectOption({ label: "IT・情報処理" });
     await expect(finder.getByRole("status")).toHaveText("1資格・区分");
-    await expect(finder.getByRole("button", { name: /^IT・/ })).toHaveAttribute("aria-pressed", "true");
+    await expect(filter).toHaveValue("it");
     const row = finder.getByRole("link", { name: /^基本情報技術者/ });
     await expect(row).toHaveAttribute("href", "/fe");
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+    // After entering the search/filter, only two link activations reach a question.
     await row.focus();
     await page.keyboard.press("Enter");
     await expect(page).toHaveURL(/\/fe$/, { timeout: 30_000 });
@@ -35,11 +33,19 @@ for (const width of [390, 1280]) {
     await page.goBack();
     await expect(page).toHaveURL(/\/fe$/, { timeout: 30_000 });
     await page.goBack();
+    await expect.poll(() => new URL(page.url()).pathname).toBe("/");
+    expect(new URL(page.url()).searchParams.get("q")).toBe("ｆｅ");
+    expect(new URL(page.url()).searchParams.get("domain")).toBe("it");
     await expect(finder.getByRole("searchbox")).toHaveValue("ｆｅ");
-    await expect(finder.getByRole("button", { name: /^IT・/ })).toHaveAttribute("aria-pressed", "true");
+    await expect(filter).toHaveValue("it");
+    await expect(finder.getByRole("status")).toHaveText("1資格・区分");
     await expect(finder.getByRole("link", { name: /^基本情報技術者/ })).toHaveAttribute("href", "/fe");
-    await expect(page.getByRole("link", { name: /収録している全資格/ })).toBeVisible();
-    await page.screenshot({ path: `reports/home-redesign/direct-${width}.png`, fullPage: true });
+    // Clearing both controls returns to the complete nine-domain directory.
+    await finder.getByRole("button", { name: "検索をクリア", exact: true }).click();
+    await filter.selectOption("");
+    await expect(finder.getByRole("heading", { name: "分野から探す", exact: true })).toBeVisible();
+    await expect(finder.locator("details.study-domain")).toHaveCount(9);
+    await page.screenshot({ path: testInfo.outputPath(`direct-${width}.png`), fullPage: true });
   });
 }
 

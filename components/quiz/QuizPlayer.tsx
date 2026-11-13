@@ -14,7 +14,7 @@ import { questionPagePath } from "@/lib/seo/question-url";
 import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys, requiredSelectionCount, isCompleteSelectionCorrect, formatSelection, selectionInstruction } from "@/lib/questions/answers";
 import { useRouter } from "next/navigation";
 import type { Question, ChoiceKey, ExamCode } from "@/lib/questions/types";
-import { choiceDisplayLabel, choiceImageAlt, usesNumberedChoices } from "@/lib/questions/display";
+import { choiceDisplayLabel, choiceImageAlt, formatQuestionAnswerForDisplay, usesNumberedChoices } from "@/lib/questions/display";
 import { PracticeLoading } from "./PracticeTransition";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
 import { recordStudyReward } from "@/lib/study-reward";
@@ -472,7 +472,7 @@ function ScoredQuizPlayer({
   const numeric = question.type === "numeric";
   const ordering = question.type === "ordering";
   const answerKey = native ? formatNativeBAnswer(question.nativeB!) : ordering ? formatOrderingAnswer(question.exam, question.answer as ChoiceKey[]) : numeric ? formatNumericAnswer(question) : usesNumberedChoices(question.exam)
-    ? (Array.isArray(question.answer) ? question.answer : [question.answer]).map((key) => choiceDisplayLabel(question.exam, key as ChoiceKey)).join("・")
+    ? formatQuestionAnswerForDisplay(question, question.answer as ChoiceKey | ChoiceKey[])
     : formatAcceptedAnswers(question.answer);
   const requiredSelections = requiredSelectionCount(question);
   const multiSelect = !ordering && requiredSelections > 1;

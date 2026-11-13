@@ -15,17 +15,17 @@ export const AP_QUESTIONS_2025_SPRING: Question[] = [
     "category": "基礎理論",
     "topicTags": [],
     "difficulty": 3,
-    "question": "論理式P, Qがいずれも真であるとき, 論理式Rの真偽にかかわらず真になる式はどれか。ここで、“一”は否定を、“V”は論理和を、“∧”は論理積を、“→”は含意(“真→ 偽”となるときに限り偽となる演算)を表す。",
+    "question": "論理式P, Qがいずれも真であるとき、論理式Rの真偽にかかわらず真になる式はどれか。ここで、¬は否定（公式原本では上線）、∨は論理和、∧は論理積、→は含意（真→偽となるときに限り偽となる演算）を表す。",
     "choices": {
-      "ア": "((P→Q)∧(Q→P))→(R→Q)",
-      "イ": "((P→Q)∧(Q→P))→(Q→R)",
-      "ウ": "((P→Q)V(Q→P))→(R→Q)",
-      "エ": "((P→Q)V(Q→P))→(Q→R)"
+      "ア": "((P→Q)∧(Q→P))→(R→¬Q)",
+      "イ": "((P→Q)∧¬(Q→¬P))→(Q→R)",
+      "ウ": "((P→¬Q)∨(Q→P))→(R→¬Q)",
+      "エ": "((P→¬Q)∨(Q→¬P))→(Q→R)"
     },
     "answer": "エ",
-    "explanation": "本問は論理式の含意(→)の性質を問う問題で、IPA 公式の正解はエです。P, Q がいずれも真のとき各選択肢の前件は真となり、式全体の真偽は後件で決まります。なお、本サイトの問題文・選択肢は IPA 公式 PDF からの自動抽出のため、否定記号(¬)など一部の記号が正しく表示されていない場合があります。正確な論理式と解答の根拠は、解説末尾の出典 PDF をご確認ください。",
+    "explanation": "PとQが真なら、¬Pと¬Qは偽です。エの前件は「真→偽」同士の論理和なので偽になり、偽を前件とする含意は後件によらず真です。したがってRの真偽にかかわらずエは真になります。アとウはRが真のとき後件R→¬Qが偽となるため、式全体も偽です。イの前件は真∧¬偽で真となり、Rが偽なら後件Q→Rが偽になるので条件を満たしません。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_ap_am_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -855,7 +855,7 @@ export const AP_QUESTIONS_2025_SPRING: Question[] = [
     "category": "セキュリティ",
     "topicTags": [],
     "difficulty": 3,
-    "question": "Web サーバのログを分析したところ、Web サーバへの攻撃と思われる HTTP リクエストヘッダーが記録されていた。次の HTTP リクエストヘッダーから推測できる、攻撃者が悪用しようとしていた可能性が高い脆弱性はどれか。ここで、HTTP リクエストヘッダー中の“%20”は空白を意味する。",
+    "question": "Web サーバのログを分析したところ、Web サーバへの攻撃と思われる HTTP リクエストヘッダーが記録されていた。次の HTTP リクエストヘッダーから推測できる、攻撃者が悪用しようとしていた可能性が高い脆弱性はどれか。ここで、HTTP リクエストヘッダー中の“%20”は空白を意味する。\n\n〔HTTPリクエストヘッダーの一部〕\n```text\nGET /cgi-bin/submit.cgi?user=;cat%20/etc/passwd HTTP/1.1\nAccept: */*\nAccept-Language: ja\nUA-CPU: x86\nAccept-Encoding: gzip, deflate\nUser-Agent: （省略）\nHost: test.example.com\nConnection: Keep-Alive\n```",
     "choices": {
       "ア": "HTTP ヘッダーインジェクション (HTTP Response Splitting)",
       "イ": "OS コマンドインジェクション",
@@ -863,9 +863,9 @@ export const AP_QUESTIONS_2025_SPRING: Question[] = [
       "エ": "クロスサイトスクリプティング"
     },
     "answer": "イ",
-    "explanation": "HTTPリクエストヘッダーの「cmd=cat%20/etc/passwd」は、OSのコマンド（cat /etc/passwd）が注入されようとしていることを示唆しています。これは、Webアプリケーションがユーザー入力を適切に検証せず、直接OSコマンドとして実行してしまうOSコマンドインジェクション攻撃の可能性が高い脆弱性です。",
+    "explanation": "userパラメータには「;cat%20/etc/passwd」が含まれています。%20を空白として読むと、セミコロンに続くcat /etc/passwdというOSコマンドになります。入力をシェルのコマンド文字列に連結する実装では、区切り記号を使って別のコマンドを実行されるおそれがあります。したがって狙われているのはイのOSコマンドインジェクションです。SQL文への挿入やブラウザーでのスクリプト実行、HTTPレスポンスヘッダーの分割を示す内容ではありません。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_ap_am_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -1239,7 +1239,7 @@ export const AP_QUESTIONS_2025_SPRING: Question[] = [
     "category": "プロジェクトマネジメント",
     "topicTags": [],
     "difficulty": 3,
-    "question": "EVM を使用してマネジメントをしているプロジェクトで、進捗に関する指標値は次のとおりであった。このプロジェクトに対する適切な評価と対策はどれか。",
+    "question": "EVM を使用してマネジメントをしているプロジェクトで、進捗に関する指標値は次のとおりであった。このプロジェクトに対する適切な評価と対策はどれか。\n\n〔進捗に関する指標値〕\n- CPI（コスト効率指数）：0.9\n- SPI（スケジュール効率指数）：1.1\n- BAC（完成時総予算）に基づくTCPI（残作業効率指数）：1.2",
     "choices": {
       "ア": "コストが予算を超えているが、スケジュールには余裕があり、残作業のコスト効率を計画よりも上げる必要はないので、CPI に基づいて完成までに必要なコストを予測する。",
       "イ": "コストが予算を超えているので、完成時総予算を超過するおそれがあるが、スケジュールには余裕があるので、残作業のコスト効率を上げる対策を検討するか、コンティンジェンシー予備費の使用を検討する。",
@@ -1247,9 +1247,9 @@ export const AP_QUESTIONS_2025_SPRING: Question[] = [
       "エ": "コストには余裕があるので、残作業のコスト効率を計画よりも上げる必要はないが、スケジュールが予定より遅れているので、クラッシングなどを用いたスケジュール短縮を検討する。"
     },
     "answer": "イ",
-    "explanation": "EVMの指標値は与えられていませんが、正解の選択肢から「コストが予算を超えているが、スケジュールには余裕がある」状況と判断できます。この場合、コスト効率指標（CPI）は1.0未満、スケジュール効率指標（SPI）は1.0以上であり、コスト超過への対策としてコスト効率向上やコンティンジェンシー予備費の使用を検討するのが適切です。",
+    "explanation": "CPI=0.9は、実コストに対する出来高の割合が1未満で、コスト効率が計画を下回ることを示します。SPI=1.1は出来高が計画価値を上回り、進捗に余裕がある状態です。一方、BACに基づくTCPI=1.2なので、完成時総予算内に収めるには残作業のコスト効率を計画より高める必要があります。コスト効率を改善する対策又は予備費の使用を検討するイが適切です。アは必要な効率向上を否定し、ウとエはコスト・進捗の評価が逆です。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_ap_am_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
     "license": "IPA-public"
   },
   {
@@ -1527,7 +1527,7 @@ export const AP_QUESTIONS_2025_SPRING: Question[] = [
     "category": "経営戦略",
     "topicTags": [],
     "difficulty": 3,
-    "question": "製品Xと製品を販売している企業が、見積作成と提案書作成に掛かる業務時間を,それぞれ 20%削減できるシステムの構築を検討している。Activity-Based Costingを用いて、次の条件が洗い出された。本システム構築による製品Xの見積作成と製品Xの提案書作成に関する月間総人件費削減効果は幾らか。",
+    "question": "製品Xと製品Yを販売している企業が、見積作成と提案書作成に掛かる業務時間を,それぞれ 20%削減できるシステムの構築を検討している。Activity-Based Costingを用いて、次の条件が洗い出された。本システム構築による製品Xの見積作成と製品Xの提案書作成に関する月間総人件費削減効果は幾らか。\n\n〔条件〕\n- 製品Xの見積作成に掛かる月間業務時間は50時間\n- 製品Xの提案書作成に掛かる月間業務時間は50時間\n- 製品Yの見積作成に掛かる月間業務時間は100時間\n- 製品Yの提案書作成に掛かる月間業務時間は400時間\n- 製品Xと製品Yの見積作成に掛かる月間総人件費は60万円\n- 製品Xと製品Yの提案書作成に掛かる月間総人件費は360万円\n- 見積作成と提案書作成は、それぞれ人件費単価が異なる部門が担っている\n- 製品Xと製品Yの見積作成に掛かる人件費単価は同じ\n- 製品Xと製品Yの提案書作成に掛かる人件費単価は同じ",
     "choices": {
       "ア": "4万円",
       "イ": "8万円",
@@ -1535,9 +1535,9 @@ export const AP_QUESTIONS_2025_SPRING: Question[] = [
       "エ": "14万円"
     },
     "answer": "ウ",
-    "explanation": "問題文に具体的な月間総人件費が与えられていませんが、システム構築により製品Xの見積作成と提案書作成に関する業務時間がそれぞれ20%削減されることから、これらの業務にかかる月間総人件費も20%削減されます。正解が12万円であることから、削減対象となる製品Xのこれらの業務の合計月間人件費は、12万円 ÷ 0.2 = 60万円であったと推測できます。",
+    "explanation": "業務ごとの単価を、XとYを合わせた費用と時間から求めます。見積作成は60万円÷（50＋100）時間＝0.4万円/時間、提案書作成は360万円÷（50＋400）時間＝0.8万円/時間です。製品Xでは各業務が50時間の20%、すなわち10時間ずつ減ります。削減額は10×0.4＋10×0.8＝12万円なのでウです。部門ごとに単価が異なるため、全業務を一つの平均単価で計算してはいけません。",
     "hasImage": false,
-    "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_ap_am_qs.pdf",
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_am_qs.pdf",
     "license": "IPA-public"
   },
   {

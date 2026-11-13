@@ -1,5 +1,6 @@
 import khkPublication from "@/data/qualification-staging/khk-kagaku/manifest.json";
 import type { ExamCode } from "@/lib/questions/types";
+import { canonicalExamCode } from "@/lib/questions/exam-aliases";
 
 export type QualificationDomain =
   | "information-technology"
@@ -44,8 +45,185 @@ export interface QualificationCatalogEntry {
  * 「公式に問題と正答がある」だけでは live にせず、転載条件まで確認する。
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
-{"slug": "junkango-kansai", "examCode": "junkango-kansai", "shortName": "准看護師", "fullName": "准看護師", "domain": "welfare", "administrator": "関西広域連合", "officialQuestionsUrl": "https://www.kouiki-kansai.jp/koikirengo/jisijimu/shikakumenkyo/junan_top/jyunkangosisiken/9022.html", "officialReuseTermsUrl": "https://www.kouiki-kansai.jp/about_site.html", "status": "live", "stagingDataPath": "data/qualification-staging/junkango-kansai", "reuseSummary": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。300原問中、公式全員正解1問を除く299問を演習。2026年問139は2または4の単独選択を正解とします。問題・正答は公式原本、解説は過去問AIの独自作成です。", "remainingWork": []},
-{"slug": "sokuryoshi", "examCode": "sokuryoshi", "shortName": "測量士", "fullName": "測量士", "domain": "construction", "administrator": "国土地理院", "officialQuestionsUrl": "https://www.gsi.go.jp/LAW/SHIKEN/past.html", "officialReuseTermsUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html", "status": "live", "stagingDataPath": "data/qualification-staging/sokuryoshi", "reuseSummary": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。午前56問・午後10大問。午後は必須1題と選択4題から2題。記述・作図は公式解答例で自己確認し、自動採点しません。問題・正答は公式原本、解説は過去問AIの独自作成です。", "remainingWork": []},
+  {"slug": "sasshi1", "examCode": "sasshi1", "shortName": "サッシ施工技能士 1級", "fullName": "技能検定 1級サッシ施工（ビル用サッシ施工作業）学科試験", "domain": "safety", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "sasshi2", "examCode": "sasshi2", "shortName": "サッシ施工技能士 2級", "fullName": "技能検定 2級サッシ施工（ビル用サッシ施工作業）学科試験", "domain": "safety", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2023・2024・2025年度の学科150問を収録。公式問題・正答と全肢の独自解説で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kyoka-plastic2", "examCode": "kyoka-plastic2", "shortName": "強化プラスチック成形技能士 2級", "fullName": "技能検定 2級強化プラスチック成形（手積み積層成形作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2023・2024・2025年度の学科150問を収録。公式問題・正答と全肢の独自解説で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "chikuro2", "examCode": "chikuro2", "shortName": "築炉技能士 2級", "fullName": "技能検定 2級築炉（築炉作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2023・2024・2025年度の学科150問を収録。公式問題・正答と全肢の独自解説で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "chikuro1", "examCode": "chikuro1", "shortName": "築炉技能士 1級", "fullName": "技能検定 1級築炉（築炉作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kagaku-bunseki1", "examCode": "kagaku-bunseki1", "shortName": "化学分析技能士 1級", "fullName": "技能検定 1級化学分析（化学分析作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kagaku-bunseki3", "examCode": "kagaku-bunseki3", "shortName": "化学分析技能士 3級", "fullName": "技能検定 3級化学分析（化学分析作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "futsu-senban3", "examCode": "futsu-senban3", "shortName": "機械加工技能士 3級（普通旋盤作業）", "fullName": "技能検定 3級機械加工（普通旋盤作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期・後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "shashutsu3", "examCode": "shashutsu3", "shortName": "プラスチック成形技能士 3級（射出成形作業）", "fullName": "技能検定 3級プラスチック成形（射出成形作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kikai-kensa3", "examCode": "kikai-kensa3", "shortName": "機械検査技能士 3級", "fullName": "技能検定 3級機械検査（機械検査作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kikai-kensa1", "examCode": "kikai-kensa1", "shortName": "機械検査技能士 1級", "fullName": "技能検定 1級機械検査（機械検査作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "tekkin-zumen1", "examCode": "tekkin-zumen1", "shortName": "鉄筋施工技能士 1級（鉄筋施工図作成作業）", "fullName": "技能検定 1級鉄筋施工（鉄筋施工図作成作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "katawaku1", "examCode": "katawaku1", "shortName": "型枠施工技能士 1級", "fullName": "技能検定 1級型枠施工（型枠工事作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "tekkin-zumen2", "examCode": "tekkin-zumen2", "shortName": "鉄筋施工技能士 2級（鉄筋施工図作成作業）", "fullName": "技能検定 2級鉄筋施工（鉄筋施工図作成作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "katawaku2", "examCode": "katawaku2", "shortName": "型枠施工技能士 2級", "fullName": "技能検定 2級型枠施工（型枠工事作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kogyo-hoso1", "examCode": "kogyo-hoso1", "shortName": "工業包装技能士 1級", "fullName": "技能検定 1級工業包装（工業包装作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kikai-kensa2", "examCode": "kikai-kensa2", "shortName": "機械検査技能士 2級", "fullName": "技能検定 2級機械検査（機械検査作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kogyo-hoso2", "examCode": "kogyo-hoso2", "shortName": "工業包装技能士 2級", "fullName": "技能検定 2級工業包装（工業包装作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "haiden-seigyo1", "examCode": "haiden-seigyo1", "shortName": "電気機器組立て技能士 1級", "fullName": "技能検定 1級電気機器組立て（配電盤・制御盤組立て作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "sequence1", "examCode": "sequence1", "shortName": "シーケンス制御技能士 1級", "fullName": "技能検定 1級シーケンス制御（シーケンス制御作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kuukiatsu-kumitate1", "examCode": "kuukiatsu-kumitate1", "shortName": "シーケンス制御技能士 1級", "fullName": "技能検定 1級空気圧装置組立て（空気圧装置組立て作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kuukiatsu-kumitate2", "examCode": "kuukiatsu-kumitate2", "shortName": "シーケンス制御技能士 1級", "fullName": "技能検定 2級空気圧装置組立て（空気圧装置組立て作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "chuzo2", "examCode": "chuzo2", "shortName": "鋳造技能士 2級（鋳鉄鋳物鋳造作業）", "fullName": "技能検定 2級鋳造（鋳鉄鋳物鋳造作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "reito-seko2", "examCode": "reito-seko2", "shortName": "冷凍空気調和機器施工技能士 2級（冷凍空気調和機器施工作業）", "fullName": "技能検定 2級冷凍空気調和機器施工（冷凍空気調和機器施工作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "chuzo1", "examCode": "chuzo1", "shortName": "鋳造技能士 1級（鋳鉄鋳物鋳造作業）", "fullName": "技能検定 1級鋳造（鋳鉄鋳物鋳造作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "reito-seko1", "examCode": "reito-seko1", "shortName": "冷凍空気調和機器施工技能士 1級（冷凍空気調和機器施工作業）", "fullName": "技能検定 1級冷凍空気調和機器施工（冷凍空気調和機器施工作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kaiten-denki2", "examCode": "kaiten-denki2", "shortName": "電気機器組立て技能士 2級（回転電機巻線製作作業）", "fullName": "技能検定 2級電気機器組立て（回転電機巻線製作作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kaiten-denki1", "examCode": "kaiten-denki1", "shortName": "電気機器組立て技能士 1級（回転電機巻線製作作業）", "fullName": "技能検定 1級電気機器組立て（回転電機巻線製作作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "sequence3", "examCode": "sequence3", "shortName": "シーケンス制御技能士 3級", "fullName": "技能検定 3級シーケンス制御（シーケンス制御作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "chuzo3", "examCode": "chuzo3", "shortName": "鋳造技能士 3級（鋳鉄鋳物鋳造作業）", "fullName": "技能検定 3級鋳造（鋳鉄鋳物鋳造作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "reito-seko3", "examCode": "reito-seko3", "shortName": "冷凍空気調和機器施工技能士 3級（冷凍空気調和機器施工作業）", "fullName": "技能検定 3級冷凍空気調和機器施工（冷凍空気調和機器施工作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "sequence2", "examCode": "sequence2", "shortName": "シーケンス制御技能士 2級", "fullName": "技能検定 2級シーケンス制御（シーケンス制御作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "haiden-seigyo3", "examCode": "haiden-seigyo3", "shortName": "電気機器組立て技能士 3級", "fullName": "技能検定 3級電気機器組立て（配電盤・制御盤組立て作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kenchiku-bankin2", "examCode": "kenchiku-bankin2", "shortName": "建築板金技能士 2級", "fullName": "技能検定 2級建築板金（内外装板金作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kensetsu-kikai-seibi1", "examCode": "kensetsu-kikai-seibi1", "shortName": "建設機械整備技能士 1級", "fullName": "技能検定 1級建設機械整備（建設機械整備作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "sakan3", "examCode": "sakan3", "shortName": "左官技能士 3級", "fullName": "技能検定 3級左官（左官作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "zoen-gino3", "examCode": "zoen-gino3", "shortName": "造園技能士 3級", "fullName": "技能検定 3級造園（造園工事作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "sakan2", "examCode": "sakan2", "shortName": "左官技能士 2級", "fullName": "技能検定 2級左官（左官作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "sakan1", "examCode": "sakan1", "shortName": "左官技能士 1級", "fullName": "技能検定 1級左官（左官作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "zoen-gino1", "examCode": "zoen-gino1", "shortName": "造園技能士 1級", "fullName": "技能検定 1級造園（造園工事作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "zoen-gino2", "examCode": "zoen-gino2", "shortName": "造園技能士 2級", "fullName": "技能検定 2級造園（造園工事作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "bousui-urethane2", "examCode": "bousui-urethane2", "shortName": "防水施工技能士 2級（ウレタン）", "fullName": "技能検定 2級防水施工（ウレタンゴム系塗膜防水工事作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "bousui-frp2", "examCode": "bousui-frp2", "shortName": "防水施工技能士 2級（FRP防水工事作業）", "fullName": "技能検定 2級防水施工（FRP防水工事作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "pan-seizo1", "examCode": "pan-seizo1", "shortName": "パン製造技能士 1級", "fullName": "技能検定 1級パン製造（パン製造作業）学科試験", "domain": "personal-services", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "pan-seizo2", "examCode": "pan-seizo2", "shortName": "パン製造技能士 2級", "fullName": "技能検定 2級パン製造（パン製造作業）学科試験", "domain": "personal-services", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kikai-shiage1", "examCode": "kikai-shiage1", "shortName": "仕上げ技能士 1級（機械組立仕上げ作業）", "fullName": "技能検定 1級仕上げ（機械組立仕上げ作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "plant-haikan-seizu1", "examCode": "plant-haikan-seizu1", "shortName": "機械・プラント製図技能士 1級（プラント配管製図作業）", "fullName": "技能検定 1級機械・プラント製図（プラント配管製図作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kikai-seizu3", "examCode": "kikai-seizu3", "shortName": "機械・プラント製図技能士 3級（機械製図手書き作業）", "fullName": "技能検定 3級機械・プラント製図（機械製図手書き作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kikai-seizu-cad3", "examCode": "kikai-seizu-cad3", "shortName": "機械・プラント製図技能士 3級（機械製図CAD作業）", "fullName": "技能検定 3級機械・プラント製図（機械製図CAD作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kikai-seizu2", "examCode": "kikai-seizu2", "shortName": "機械・プラント製図技能士 2級（機械製図手書き作業）", "fullName": "技能検定 2級機械・プラント製図（機械製図手書き作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kikai-seizu-cad2", "examCode": "kikai-seizu-cad2", "shortName": "機械・プラント製図技能士 2級（機械製図CAD作業）", "fullName": "技能検定 2級機械・プラント製図（機械製図CAD作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kikai-shiage3", "examCode": "kikai-shiage3", "shortName": "仕上げ技能士 3級（機械組立仕上げ作業）", "fullName": "技能検定 3級仕上げ（機械組立仕上げ作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kikai-shiage2", "examCode": "kikai-shiage2", "shortName": "仕上げ技能士 2級（機械組立仕上げ作業）", "fullName": "技能検定 2級仕上げ（機械組立仕上げ作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "naiso-carpet2", "examCode": "naiso-carpet2", "shortName": "内装仕上げ施工技能士 2級（カーペット系床）", "fullName": "技能検定 2級内装仕上げ施工（カーペット系床仕上げ工事作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "naiso-plastic1", "examCode": "naiso-plastic1", "shortName": "内装仕上げ施工技能士 1級（プラスチック系床）", "fullName": "技能検定 1級内装仕上げ施工（プラスチック系床仕上げ工事作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "naiso-plastic2", "examCode": "naiso-plastic2", "shortName": "内装仕上げ施工技能士 2級（プラスチック系床）", "fullName": "技能検定 2級内装仕上げ施工（プラスチック系床仕上げ工事作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "naiso-kosei2", "examCode": "naiso-kosei2", "shortName": "内装仕上げ施工技能士 2級（鋼製下地）", "fullName": "技能検定 2級内装仕上げ施工（鋼製下地工事作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kinzoku-press1", "examCode": "kinzoku-press1", "shortName": "金属プレス加工技能士 1級", "fullName": "技能検定 1級金属プレス加工（金属プレス作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "plant-haikan2", "examCode": "plant-haikan2", "shortName": "配管技能士 2級（プラント配管作業）", "fullName": "技能検定 2級配管（プラント配管作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "haikan-kenchiku3", "examCode": "haikan-kenchiku3", "shortName": "配管技能士 3級（建築配管作業）", "fullName": "技能検定 3級配管（建築配管作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "plant-haikan1", "examCode": "plant-haikan1", "shortName": "配管技能士 1級（プラント配管作業）", "fullName": "技能検定 1級配管（プラント配管作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kinzoku-press2", "examCode": "kinzoku-press2", "shortName": "金属プレス加工技能士 2級", "fullName": "技能検定 2級金属プレス加工（金属プレス作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "tekkin-zumen3", "examCode": "tekkin-zumen3", "shortName": "鉄筋施工技能士 3級（鉄筋施工図作成作業）", "fullName": "技能検定 3級鉄筋施工（鉄筋施工図作成作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "katawaku3", "examCode": "katawaku3", "shortName": "型枠施工技能士 3級", "fullName": "技能検定 3級型枠施工（型枠工事作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kyoka-plastic1", "examCode": "kyoka-plastic1", "shortName": "強化プラスチック成形技能士 1級", "fullName": "技能検定 1級強化プラスチック成形（手積み積層成形作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "engei-soshoku2", "examCode": "engei-soshoku2", "shortName": "園芸装飾技能士 2級", "fullName": "技能検定 2級園芸装飾（室内園芸装飾作業）学科試験", "domain": "welfare", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2023・2024・2025年度の学科150問を収録。公式問題・正答と全肢の独自解説で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "futsu-senban1", "examCode": "futsu-senban1", "shortName": "機械加工技能士 1級（普通旋盤作業）", "fullName": "技能検定 1級機械加工（普通旋盤作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "shashutsu1", "examCode": "shashutsu1", "shortName": "プラスチック成形技能士 1級（射出成形作業）", "fullName": "技能検定 1級プラスチック成形（射出成形作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "tekkin3", "examCode": "tekkin3", "shortName": "鉄筋施工技能士 3級（鉄筋組立て作業）", "fullName": "技能検定 3級鉄筋施工（鉄筋組立て作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "tekkin2", "examCode": "tekkin2", "shortName": "鉄筋施工技能士 2級（鉄筋組立て作業）", "fullName": "技能検定 2級鉄筋施工（鉄筋組立て作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kikai-seizu-tegaki1", "examCode": "kikai-seizu-tegaki1", "shortName": "機械・プラント製図技能士 1級（機械製図手書き作業）", "fullName": "技能検定 1級機械・プラント製図（機械製図手書き作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "henatsuki-kumitate2", "examCode": "henatsuki-kumitate2", "shortName": "電気機器組立て技能士 2級（変圧器組立て作業）", "fullName": "技能検定 2級電気機器組立て（変圧器組立て作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "henatsuki-kumitate1", "examCode": "henatsuki-kumitate1", "shortName": "電気機器組立て技能士 1級（変圧器組立て作業）", "fullName": "技能検定 1級電気機器組立て（変圧器組立て作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kikai-seizu-cad1", "examCode": "kikai-seizu-cad1", "shortName": "機械・プラント製図技能士 1級（機械製図CAD作業）", "fullName": "技能検定 1級機械・プラント製図（機械製図CAD作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "plant-haikan-seizu2", "examCode": "plant-haikan-seizu2", "shortName": "機械・プラント製図技能士 2級（プラント配管製図作業）", "fullName": "技能検定 2級機械・プラント製図（プラント配管製図作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "netsuzetsuen2", "examCode": "netsuzetsuen2", "shortName": "熱絶縁施工技能士 2級（保温保冷工事作業）", "fullName": "技能検定 2級熱絶縁施工（保温保冷工事作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "hiseshoku-jokyo1", "examCode": "hiseshoku-jokyo1", "shortName": "非接触除去加工技能士 1級（数値制御形彫り放電加工作業）", "fullName": "技能検定 1級非接触除去加工（数値制御形彫り放電加工作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "tategu1", "examCode": "tategu1", "shortName": "建具製作技能士 1級（木製建具手加工作業）", "fullName": "技能検定 1級建具製作（木製建具手加工作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "shohin-soshoku1", "examCode": "shohin-soshoku1", "shortName": "商品装飾展示技能士 1級", "fullName": "技能検定 1級商品装飾展示（商品装飾展示作業）学科試験", "domain": "welfare", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kogaku-glass1", "examCode": "kogaku-glass1", "shortName": "光学機器製造技能士 1級（光学ガラス研磨作業）", "fullName": "技能検定 1級光学機器製造（光学ガラス研磨作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "sangyo-sharyo1", "examCode": "sangyo-sharyo1", "shortName": "産業車両整備技能士 1級", "fullName": "技能検定 1級産業車両整備（産業車両整備作業）学科試験", "domain": "automotive", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "yogashi1", "examCode": "yogashi1", "shortName": "菓子製造技能士 1級（洋菓子製造作業）", "fullName": "技能検定 1級菓子製造（洋菓子製造作業）学科試験", "domain": "welfare", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "block-kenchiku3", "examCode": "block-kenchiku3", "shortName": "ブロック建築技能士 3級（コンクリートブロック工事作業）", "fullName": "技能検定 3級ブロック建築（コンクリートブロック工事作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "block-kenchiku1", "examCode": "block-kenchiku1", "shortName": "ブロック建築技能士 1級（コンクリートブロック工事作業）", "fullName": "技能検定 1級ブロック建築（コンクリートブロック工事作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "shuzo1", "examCode": "shuzo1", "shortName": "酒造技能士 1級（清酒製造作業）", "fullName": "技能検定 1級酒造（清酒製造作業）学科試験", "domain": "personal-services", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "fraise1", "examCode": "fraise1", "shortName": "機械加工技能士 1級（フライス盤作業）", "fullName": "技能検定 1級機械加工（フライス盤作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "fraise2", "examCode": "fraise2", "shortName": "機械加工技能士 2級（フライス盤作業）", "fullName": "技能検定 2級機械加工（フライス盤作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "fraise3", "examCode": "fraise3", "shortName": "機械加工技能士 3級（フライス盤作業）", "fullName": "技能検定 3級機械加工（フライス盤作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "bousui-frp1", "examCode": "bousui-frp1", "shortName": "防水施工技能士 1級（FRP防水工事作業）", "fullName": "技能検定 1級防水施工（FRP防水工事作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "naiso-carpet1", "examCode": "naiso-carpet1", "shortName": "内装仕上げ施工技能士 1級（カーペット系床仕上げ工事作業）", "fullName": "技能検定 1級内装仕上げ施工（カーペット系床仕上げ工事作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "shashutsu2", "examCode": "shashutsu2", "shortName": "プラスチック成形技能士 2級（射出成形作業）", "fullName": "技能検定 2級プラスチック成形（射出成形作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kagaku-bunseki2", "examCode": "kagaku-bunseki2", "shortName": "化学分析技能士 2級", "fullName": "技能検定 2級化学分析（化学分析作業）学科試験", "domain": "safety", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2023・2024・2025年度の学科150問を収録。公式問題・正答と全肢の独自解説で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "engei-soshoku1", "examCode": "engei-soshoku1", "shortName": "園芸装飾技能士 1級", "fullName": "技能検定 1級園芸装飾（室内園芸装飾作業）学科試験", "domain": "welfare", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "engei-soshoku3", "examCode": "engei-soshoku3", "shortName": "園芸装飾技能士 3級", "fullName": "技能検定 3級園芸装飾（室内園芸装飾作業）学科試験", "domain": "welfare", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "insatsu1", "examCode": "insatsu1", "shortName": "印刷技能士 1級", "fullName": "技能検定 1級印刷（オフセット印刷作業）学科試験", "domain": "safety", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "insatsu2", "examCode": "insatsu2", "shortName": "印刷技能士 2級", "fullName": "技能検定 2級印刷（オフセット印刷作業）学科試験", "domain": "safety", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2023・2024・2025年度の学科150問を収録。公式問題・正答と全肢の独自解説で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "fujin-kodomofuku2", "examCode": "fujin-kodomofuku2", "shortName": "婦人子供服製造技能士 2級", "fullName": "技能検定 2級婦人子供服製造（婦人子供注文服製作作業）学科試験", "domain": "welfare", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2023・2024・2025年度の学科150問を収録。公式問題・正答と全肢の独自解説で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "fujin-kodomofuku1", "examCode": "fujin-kodomofuku1", "shortName": "婦人子供服製造技能士 1級", "fullName": "技能検定 1級婦人子供服製造（婦人子供注文服製作作業）学科試験", "domain": "welfare", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科のA群真偽法・B群多肢択一法を収録。公式正答、全肢の独自解説と原図で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "toso1", "examCode": "toso1", "shortName": "塗装技能士 1級", "fullName": "技能検定 1級塗装（建築塗装作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2023・2024年度前期の学科100問。公式正答・全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kikai-hozen3", "examCode": "kikai-hozen3", "shortName": "機械保全技能士 3級（機械系）", "fullName": "機械保全技能検定 3級（機械系保全作業 学科）", "domain": "safety", "administrator": "公益社団法人日本プラントメンテナンス協会", "officialQuestionsUrl": "https://www.kikaihozenshi.jp/questions/", "officialReuseTermsUrl": "https://www.kikaihozenshi.jp/questions/", "status": "live", "reuseSummary": "2023年度・2024年度 第2回の計60問を収録。公式正答と全肢の独自解説、原本図で学べます。", "attributionTemplate": "出典：日本プラントメンテナンス協会 機械保全技能検定 3級（機械系保全作業 学科）。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kikai-hozen1", "examCode": "kikai-hozen1", "shortName": "機械保全技能士 1級（機械系）", "fullName": "機械保全技能検定 1級（機械系保全作業 学科）", "domain": "safety", "administrator": "公益社団法人日本プラントメンテナンス協会", "officialQuestionsUrl": "https://www.kikaihozenshi.jp/questions/", "officialReuseTermsUrl": "https://www.kikaihozenshi.jp/questions/", "status": "live", "reuseSummary": "2023年度 第2回50問・2024年度 第2回49問の計99問を収録。公式正答と全肢の独自解説、原本図で学べます。", "attributionTemplate": "出典：日本プラントメンテナンス協会 機械保全技能検定 1級（機械系保全作業 学科）。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kikai-hozen-setsubi1", "examCode": "kikai-hozen-setsubi1", "shortName": "機械保全技能士 1級（設備診断）", "fullName": "機械保全技能検定 1級（設備診断作業 学科）", "domain": "safety", "administrator": "公益社団法人日本プラントメンテナンス協会", "officialQuestionsUrl": "https://www.kikaihozenshi.jp/questions/", "officialReuseTermsUrl": "https://www.kikaihozenshi.jp/questions/", "status": "live", "reuseSummary": "2025年度 第2回の50問を収録。公式正答と全肢の独自解説、原本図で学べます。", "attributionTemplate": "出典：日本プラントメンテナンス協会 機械保全技能検定 1級（設備診断作業 学科）。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kikai-hozen-denki1", "examCode": "kikai-hozen-denki1", "shortName": "機械保全技能士 1級（電気系）", "fullName": "機械保全技能検定 1級（電気系保全作業 学科）", "domain": "electrical", "administrator": "公益社団法人日本プラントメンテナンス協会", "officialQuestionsUrl": "https://www.kikaihozenshi.jp/questions/", "officialReuseTermsUrl": "https://www.kikaihozenshi.jp/questions/", "status": "live", "reuseSummary": "2024年度・2025年度 第2回の計100問を収録。公式正答と全肢の独自解説、原本図で学べます。", "attributionTemplate": "出典：日本プラントメンテナンス協会 機械保全技能検定 1級（電気系保全作業 学科）。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kikai-hozen-denki3", "examCode": "kikai-hozen-denki3", "shortName": "機械保全技能士 3級（電気系）", "fullName": "機械保全技能検定 3級（電気系保全作業 学科）", "domain": "electrical", "administrator": "公益社団法人日本プラントメンテナンス協会", "officialQuestionsUrl": "https://www.kikaihozenshi.jp/questions/", "officialReuseTermsUrl": "https://www.kikaihozenshi.jp/questions/", "status": "live", "reuseSummary": "2023年度 第1回・第2回、2024年度・2025年度 第2回、2026年度 第1回の計150問を収録。公式正答と全肢の独自解説、原本図で学べます。", "attributionTemplate": "出典：日本プラントメンテナンス協会 機械保全技能検定 3級（電気系保全作業 学科）。解説は過去問AIの独自作成。", "remainingWork": []},
+  {
+    slug: "kenchiku-daiku1", examCode: "kenchiku-daiku1", shortName: "建築大工技能士 1級", fullName: "技能検定 1級建築大工（大工工事作業）学科試験",
+    domain: "safety", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/", officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2023・2024・2025年度の学科150問を収録。公式問題・正答と全肢の独自解説で学べます。",
+    attributionTemplate: "出典：中央職業能力開発協会 技能検定 1級建築大工（大工工事作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
+  {
+    slug: "kenchiku-daiku3", examCode: "kenchiku-daiku3", shortName: "建築大工技能士 3級", fullName: "技能検定 3級建築大工（大工工事作業）学科試験",
+    domain: "safety", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/", officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2023・2024・2025年度の学科150問を収録。公式問題・正答と全肢の独自解説で学べます。",
+    attributionTemplate: "出典：中央職業能力開発協会 技能検定 3級建築大工（大工工事作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
+  {
+    slug: "kenchiku-daiku2", examCode: "kenchiku-daiku2", shortName: "建築大工技能士 2級", fullName: "技能検定 2級建築大工（大工工事作業）学科試験",
+    domain: "safety", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/", officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2023・2024・2025年度の学科150問を収録。公式問題・正答と全肢の独自解説で学べます。",
+    attributionTemplate: "出典：中央職業能力開発協会 技能検定 2級建築大工（大工工事作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
+  {
+    slug: "tobi3", examCode: "tobi3", shortName: "とび技能士 3級", fullName: "技能検定 3級とび（とび作業）学科試験",
+    domain: "safety", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/", officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "とび技能士3級（とび作業）学科の2023・2025年度前期60問を収録。公式正答と全肢の独自解説で学べます。",
+    attributionTemplate: "出典：中央職業能力開発協会 技能検定 3級とび（とび作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
+  {
+    slug: "tobi1", examCode: "tobi1", shortName: "とび技能士 1級", fullName: "技能検定 1級とび（とび作業）学科試験",
+    domain: "safety", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/", officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2023・2024・2025年度の学科150問を収録。公式問題・正答と全肢の独自解説で学べます。",
+    attributionTemplate: "出典：中央職業能力開発協会 技能検定 1級とび（とび作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
+  {"slug": "tetsudo-sharyo1", "examCode": "tetsudo-sharyo1", "shortName": "鉄道車両製造・整備技能士 1級", "fullName": "技能検定 1級鉄道車両製造・整備（機器ぎ装作業）学科試験", "domain": "safety", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "diecast1", "examCode": "diecast1", "shortName": "ダイカスト技能士 1級", "fullName": "技能検定 1級ダイカスト（ホットチャンバダイカスト作業）学科試験", "domain": "safety", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "flower3", "examCode": "flower3", "shortName": "フラワー装飾技能士 3級", "fullName": "技能検定 3級フラワー装飾（フラワー装飾作業）学科試験", "domain": "welfare", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "flower1", "examCode": "flower1", "shortName": "フラワー装飾技能士 1級", "fullName": "技能検定 1級フラワー装飾（フラワー装飾作業）学科試験", "domain": "welfare", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kojo-bankin1", "examCode": "kojo-bankin1", "shortName": "工場板金技能士 1級", "fullName": "技能検定 1級工場板金（曲げ板金作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科のA群真偽法・B群多肢択一法を収録。公式正答、全肢の独自解説と原図で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kenchiku-bankin1", "examCode": "kenchiku-bankin1", "shortName": "建築板金技能士 1級（ダクト板金作業）", "fullName": "技能検定 1級建築板金（ダクト板金作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科のA群真偽法・B群多肢択一法を収録。公式正答、全肢の独自解説と原図で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kinzoku-netsushori3", "examCode": "kinzoku-netsushori3", "shortName": "金属熱処理技能士 3級", "fullName": "技能検定 3級金属熱処理（一般熱処理作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の真偽法を収録。公式正答、全肢の独自解説と原図で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kojo-bankin3", "examCode": "kojo-bankin3", "shortName": "工場板金技能士 3級", "fullName": "技能検定 3級工場板金（曲げ板金作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の真偽法を収録。公式正答、全肢の独自解説と原図で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kojo-bankin2", "examCode": "kojo-bankin2", "shortName": "工場板金技能士 2級", "fullName": "技能検定 2級工場板金（曲げ板金作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科のA群真偽法・B群多肢択一法を収録。公式正答、全肢の独自解説と原図で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "mekki2", "examCode": "mekki2", "shortName": "めっき技能士 2級", "fullName": "技能検定 2級めっき（電気めっき作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2023・2024・2025年度の学科150問を収録。公式問題・正答と全肢の独自解説で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kagu3", "examCode": "kagu3", "shortName": "家具製作技能士 3級", "fullName": "技能検定 3級家具製作（家具手加工作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kagu1", "examCode": "kagu1", "shortName": "家具製作技能士 1級", "fullName": "技能検定 1級家具製作（家具手加工作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kagu2", "examCode": "kagu2", "shortName": "家具製作技能士 2級", "fullName": "技能検定 2級家具製作（家具手加工作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2023・2024・2025年度の学科150問を収録。公式問題・正答と全肢の独自解説で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "mekki3", "examCode": "mekki3", "shortName": "めっき技能士 3級", "fullName": "技能検定 3級めっき（電気めっき作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "mekki1", "examCode": "mekki1", "shortName": "めっき技能士 1級", "fullName": "技能検定 1級めっき（電気めっき作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科のA群真偽法・B群多肢択一法を収録。公式正答、全肢の独自解説で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kinzoku-netsushori1", "examCode": "kinzoku-netsushori1", "shortName": "金属熱処理技能士 1級", "fullName": "技能検定 1級金属熱処理（一般熱処理作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科のA群真偽法・B群多肢択一法を収録。公式正答、全肢の独自解説と原図で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "tekko1", "examCode": "tekko1", "shortName": "鉄工技能士 1級", "fullName": "技能検定 1級鉄工（製缶作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科のA群真偽法・B群多肢択一法を収録。公式正答、全肢の独自解説と原図で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "denshi-kiki-kumitate1", "examCode": "denshi-kiki-kumitate1", "shortName": "電子機器組立て技能士 1級", "fullName": "技能検定 1級電子機器組立て（電子機器組立て作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科（A群 真偽法・B群 多肢択一法）。公式過去問を全肢の独自解説と原図で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "denshi-kiki-kumitate3", "examCode": "denshi-kiki-kumitate3", "shortName": "電子機器組立て技能士 3級", "fullName": "技能検定 3級電子機器組立て（電子機器組立て作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科（真偽法）。公式過去問を全肢の独自解説と原図で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "toso2", "examCode": "toso2", "shortName": "塗装技能士 2級", "fullName": "技能検定 2級塗装（建築塗装作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2023・2024・2025年度の学科150問を収録。公式問題・正答と全肢の独自解説で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {
+  "slug": "tobi2",
+  "examCode": "tobi2",
+  "shortName": "とび技能士 2級",
+  "fullName": "技能検定 2級とび（とび作業）学科試験",
+  "domain": "safety",
+  "administrator": "中央職業能力開発協会",
+  "officialQuestionsUrl": "https://www.kentei.javada.or.jp/",
+  "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/",
+  "status": "live",
+  "reuseSummary": "2023・2024年度前期の2級とび（とび作業）学科100問（各年度A群25問・B群25問）を収録。公式問題・正答、全肢の独自解説と原図6点を確認できます。",
+  "remainingWork": []
+},
+  {"slug": "junkango-kansai", "examCode": "junkango-kansai", "shortName": "准看護師", "fullName": "准看護師", "domain": "welfare", "administrator": "関西広域連合", "officialQuestionsUrl": "https://www.kouiki-kansai.jp/koikirengo/jisijimu/shikakumenkyo/junan_top/jyunkangosisiken/9022.html", "officialReuseTermsUrl": "https://www.kouiki-kansai.jp/about_site.html", "status": "live", "stagingDataPath": "data/qualification-staging/junkango-kansai", "reuseSummary": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。300原問中、公式全員正解1問を除く299問を演習。2026年問139は2または4の単独選択を正解とします。問題・正答は公式原本、解説は過去問AIの独自作成です。", "remainingWork": []},
+  {"slug": "sokuryoshi", "examCode": "sokuryoshi", "shortName": "測量士", "fullName": "測量士", "domain": "construction", "administrator": "国土地理院", "officialQuestionsUrl": "https://www.gsi.go.jp/LAW/SHIKEN/past.html", "officialReuseTermsUrl": "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html", "status": "live", "stagingDataPath": "data/qualification-staging/sokuryoshi", "reuseSummary": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。午前56問・午後10大問。午後は必須1題と選択4題から2題。記述・作図は公式解答例で自己確認し、自動採点しません。問題・正答は公式原本、解説は過去問AIの独自作成です。", "remainingWork": []},
   {
     slug: "khk-kagaku",
     examCode: "khk-kagaku",
@@ -60,7 +238,6 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：高圧ガス保安協会 高圧ガス製造保安責任者試験 ○年度 ○種化学 ○科目 問○（問題・正答）。解説は過去問AIが独自作成。",
     remainingWork: [],
   },
-
   {
     slug: "kenchikushi1", examCode: "kenchikushi1", shortName: "一級建築士（学科）", fullName: "一級建築士試験（学科の試験）",
     domain: "construction", administrator: "公益財団法人建築技術教育普及センター",
@@ -70,8 +247,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和7・8年の学科5科目250原問のうち、全員加点1問を除く249問。公式最終正答・独自全肢解説・必要図を収録。設計製図は対象外。",
     remainingWork: [],
   },
-
-{
+  {
     slug: "benrishi", examCode: "benrishi", shortName: "弁理士（短答式）", fullName: "弁理士試験 短答式筆記試験（特許庁）",
     domain: "legal", administrator: "特許庁",
     officialQuestionsUrl: "https://www.jpo.go.jp/news/benrishi/shiken-mondai/2026tanto.html",
@@ -81,7 +257,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：特許庁 弁理士試験短答式筆記試験。過去問AIがテキスト化・整形。解説は過去問AI独自作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "dokugeki-chiba", examCode: "dokugeki-chiba", shortName: "毒物劇物取扱者", fullName: "毒物劇物取扱者試験 一般・農業用品目・特定品目",
     domain: "pharmacy", administrator: "千葉県",
     officialQuestionsUrl: "https://www.pref.chiba.lg.jp/yakumu/dokugeki/r8shikenzissikekka.html",
@@ -91,7 +267,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：千葉県 毒物劇物取扱者試験 問題・正答。解説は過去問AIの独自作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "jokaso-setsubishi", examCode: "jokaso-setsubishi", shortName: "浄化槽設備士（学科）", fullName: "浄化槽設備士試験（学科）",
     domain: "construction", administrator: "公益財団法人日本環境整備教育センター",
     officialQuestionsUrl: "https://www.jeces.or.jp/pages/27/",
@@ -101,7 +277,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人日本環境整備教育センター 浄化槽設備士試験（学科）問題・正答。解説は過去問AIの独自作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "chiiki-ryoko", examCode: "chiiki-ryoko", shortName: "地域限定旅行業務取扱管理者", fullName: "地域限定旅行業務取扱管理者試験",
     domain: "personal-services", administrator: "観光庁",
     officialQuestionsUrl: "https://www.mlit.go.jp/kankocho/seisaku_seido/ryokogyoho/chiikigenteikanrisha.html",
@@ -111,7 +287,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：観光庁 地域限定旅行業務取扱管理者試験（全科目）問題・正解及び配点。原本画像化・文章整形・独自解説の追加は過去問AIによる加工。",
     remainingWork: [],
 },
-{
+  {
     slug: "kukaku-seiri", examCode: "kukaku-seiri", shortName: "土地区画整理士（学科）", fullName: "土地区画整理士技術検定（学科試験）",
     domain: "construction", administrator: "一般財団法人全国建設研修センター",
     officialQuestionsUrl: "https://www.jctc.jp/mondai/", officialReuseTermsUrl: "https://www.jctc.jp/mondai/",
@@ -120,7 +296,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：一般財団法人全国建設研修センター 令和○年度土地区画整理士技術検定 学科 No.○。解説は過去問AIの独自作成。",
     remainingWork: ["2025年度問題本文は未収録"],
 },
-{
+  {
     slug: "dojo-osen", examCode: "dojo-osen", shortName: "土壌汚染調査技術管理者", fullName: "土壌汚染調査技術管理者試験",
     domain: "construction", administrator: "環境省",
     officialQuestionsUrl: "https://www.env.go.jp/water/dojo/kanri.html",
@@ -130,11 +306,10 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：環境省 令和○年度土壌汚染調査技術管理者試験 ○科目 問○。原問題画像は公式PDFの切出し。解説は過去問AIの独自作成。",
     remainingWork: [],
 },
-{"slug":"keiryoshi","examCode":"keiryoshi","shortName":"一般計量士","fullName":"一般計量士","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},
-{"slug":"keiryoshi-nodo","examCode":"keiryoshi-nodo","shortName":"環境計量士（濃度関係）","fullName":"環境計量士（濃度関係）","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},
-{"slug":"keiryoshi-soon","examCode":"keiryoshi-soon","shortName":"環境計量士（騒音・振動関係）","fullName":"環境計量士（騒音・振動関係）","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},
-
-{
+  {"slug":"keiryoshi","examCode":"keiryoshi","shortName":"一般計量士","fullName":"一般計量士","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},
+  {"slug":"keiryoshi-nodo","examCode":"keiryoshi-nodo","shortName":"環境計量士（濃度関係）","fullName":"環境計量士（濃度関係）","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},
+  {"slug":"keiryoshi-soon","examCode":"keiryoshi-soon","shortName":"環境計量士（騒音・振動関係）","fullName":"環境計量士（騒音・振動関係）","domain":"construction","administrator":"経済産業省","officialQuestionsUrl":"https://www.meti.go.jp/policy/economy/hyojun/techno_infra/keiryoshi.html","officialReuseTermsUrl":"https://www.meti.go.jp/main/rules.html","status":"live","reuseSummary":"第76回（令和7年実施）のみ100問を収録。第75回は未収録で、2回分の全問収録ではありません。出題時点の法令・基準に基づく全肢解説を確認できます。","remainingWork":["第75回は未収録"]},
+  {
     slug: "kanteishi", examCode: "kanteishi", shortName: "不動産鑑定士", fullName: "不動産鑑定士試験（短答式）",
     domain: "real-estate", administrator: "国土交通省",
     officialQuestionsUrl: "https://www.mlit.go.jp/totikensangyo/kanteishi/content/002001126.pdf",
@@ -143,7 +318,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：国土交通省 不動産鑑定士試験（短答式）問題・正答。公共データ利用規約に基づき過去問AIが加工。解説は過去問AIの独自作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "kaikeishi", examCode: "kaikeishi", shortName: "公認会計士", fullName: "公認会計士試験（短答式）",
     domain: "accounting", administrator: "公認会計士・監査審査会",
     officialQuestionsUrl: "https://www.fsa.go.jp/cpaaob/kouninkaikeishi-shiken/r8shiken/01.pdf",
@@ -152,7 +327,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公認会計士・監査審査会 令和8年公認会計士試験短答式問題・正答。公共データ利用規約に基づき過去問AIが加工。解説は過去問AIの独自作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "riku-tech2", examCode: "riku-tech2", shortName: "第二級陸上無線技術士", fullName: "第二級陸上無線技術士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
     officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
@@ -160,7 +335,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人日本無線協会 第二級陸上無線技術士試験 公表過去問（日本語・非英語部分）。解説は過去問AI作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "amateur2", examCode: "amateur2", shortName: "第二級アマチュア無線技士", fullName: "第二級アマチュア無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
     officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
@@ -168,7 +343,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人日本無線協会 第二級アマチュア無線技士試験 公表過去問（日本語・非英語部分）。解説は過去問AI作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "maritime-radar", examCode: "maritime-radar", shortName: "レーダー級海上特殊無線技士", fullName: "レーダー級海上特殊無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
     officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
@@ -176,7 +351,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人日本無線協会 レーダー級海上特殊無線技士試験 公表過去問（日本語・非英語部分）。解説は過去問AI作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "amateur1", examCode: "amateur1", shortName: "第一級アマチュア無線技士", fullName: "第一級アマチュア無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
     officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
@@ -184,7 +359,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 公表過去問（日本語・非英語部分）。解説は過去問AI作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "maritime-special1", examCode: "maritime-special1", shortName: "第一級海上特殊無線技士", fullName: "第一級海上特殊無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
     officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
@@ -192,7 +367,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人日本無線協会 第一級海上特殊無線技士試験 公表過去問（日本語・非英語部分）。解説は過去問AI作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "aviation-comm", examCode: "aviation-comm",
     shortName: "航空無線通信士", fullName: "航空無線通信士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -201,7 +376,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人日本無線協会 航空無線通信士試験 ○年○月 法規・無線工学 A/B問○（問題・正答）。原問題画像の切出しと解説は過去問AIが作成・加工。",
     remainingWork: [],
 },
-{
+  {
     slug: "maritime2", examCode: "maritime2",
     shortName: "第二級海上無線通信士", fullName: "第二級海上無線通信士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -210,7 +385,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人日本無線協会 第二級海上無線通信士試験 ○年○月 ○科目 A/B問○（問題・正答）。解説と原図の切出しは過去問AIが作成・加工。",
     remainingWork: ["英語・通信術は未収録", "現行法令との違いを学習時に確認"],
 },
-{
+  {
     slug: "maritime1", examCode: "maritime1",
     shortName: "第一級海上無線通信士", fullName: "第一級海上無線通信士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -219,7 +394,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人日本無線協会 第一級海上無線通信士試験 科目別過去問。解説は過去問AIが作成・校閲。",
     remainingWork: ["英語・通信術は未収録"],
 },
-{
+  {
     slug: "general1", examCode: "general1",
     shortName: "第一級総合無線通信士", fullName: "第一級総合無線通信士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -228,7 +403,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人日本無線協会 第一級総合無線通信士試験 ○年○月 無線工学の基礎・無線工学A・無線工学B・法規・地理 A/B問○（問題・正答）。原問題画像の切出しと解説は過去問AIが作成・加工。",
     remainingWork: ["英語の筆記・通信術（実技）は未収録", "現行法令との差を学習時に確認"],
 },
-{
+  {
     slug: "general2", examCode: "general2",
     shortName: "第二級総合無線通信士", fullName: "第二級総合無線通信士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -237,7 +412,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人日本無線協会 第二級総合無線通信士試験 ○年○月 無線工学の基礎・無線工学A・無線工学B・法規・地理 A/B問○（問題・正答）。原問題画像の切出しと解説は過去問AIが作成・加工。",
     remainingWork: ["英語の筆記・通信術（実技）は未収録", "現行法令との差を学習時に確認"],
 },
-{
+  {
     slug: "general3", examCode: "general3",
     shortName: "第三級総合無線通信士", fullName: "第三級総合無線通信士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -246,7 +421,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人日本無線協会 第三級総合無線通信士試験 ○年○月 無線工学の基礎・無線工学・法規 A/B問○（問題・正答）。原問題画像の切出しと解説は過去問AIが作成・加工。",
     remainingWork: ["英語の筆記・通信術は未収録", "現行法令との差を学習時に確認"],
 },
-{
+  {
     slug: "maritime3", examCode: "maritime3",
     shortName: "第三級海上無線通信士", fullName: "第三級海上無線通信士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -255,7 +430,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人日本無線協会 第三級海上無線通信士試験 ○年○月 ○科目 問○（問題・正答）。解説と原図の切出しは過去問AIが作成・加工。",
     remainingWork: ["英語・通信術は未収録", "現行法令との差を学習時に確認"],
 },
-{
+  {
     slug: "land-special2", examCode: "land-special2",
     shortName: "第二級陸上特殊無線技士", fullName: "第二級陸上特殊無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -264,7 +439,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人日本無線協会 第二級陸上特殊無線技士試験 ○年○月 ○科目 問○（問題・正答）。解説と原図の切出しは過去問AIが作成・加工。",
     remainingWork: ["現在のCBT例題は未収録", "現行法令との差を学習時に確認"],
 },
-{
+  {
     slug: "land-special3", examCode: "land-special3",
     shortName: "第三級陸上特殊無線技士", fullName: "第三級陸上特殊無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -273,7 +448,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人日本無線協会 第三級陸上特殊無線技士試験 ○年○月 ○科目 問○（問題・正答）。解説と原図の切出しは過去問AIが作成・加工。",
     remainingWork: ["現在のCBT例題は未収録", "現行法令との差を学習時に確認"],
 },
-{
+  {
     slug: "riku-toku-kokunai", examCode: "riku-toku-kokunai",
     shortName: "国内電信級陸上特殊無線技士", fullName: "国内電信級陸上特殊無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -282,7 +457,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人日本無線協会 国内電信級陸上特殊無線技士試験 ○年○月 法規 問○（問題・正答）。解説は過去問AIが独自作成。",
     remainingWork: ["現行法令との違いを学習時に確認"],
 },
-{
+  {
     slug: "riku-tech1", examCode: "riku-tech1",
     shortName: "第一級陸上無線技術士", fullName: "第一級陸上無線技術士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -291,7 +466,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 ○年○月 ○科目 問○（問題・正答）。解説と原図の切出しは過去問AIが作成・加工。",
     remainingWork: ["現行法令との差を学習時に確認"],
 },
-{
+  {
     slug: "maritime4", examCode: "maritime4",
     shortName: "第四級海上無線通信士", fullName: "第四級海上無線通信士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -300,7 +475,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人日本無線協会 第四級海上無線通信士試験 ○年○月 法規・無線工学 問○（問題・正答）。解説と原図の切出しは過去問AIが作成・加工。",
     remainingWork: ["現行法令との差を学習時に確認"],
 },
-{
+  {
     slug: "land-special1", examCode: "land-special1",
     shortName: "第一級陸上特殊無線技士", fullName: "第一級陸上特殊無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -309,7 +484,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人日本無線協会 第一級陸上特殊無線技士試験 ○年○月09:30 A版 法規・無線工学 問○（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
     remainingWork: ["2026年2月・6月13:30 B版は未収録の別実施回", "現行法令との差を学習時に確認"],
 },
-{
+  {
     slug: "koku-toku", examCode: "koku-toku",
     shortName: "航空特殊無線技士", fullName: "航空特殊無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -318,7 +493,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人日本無線協会 航空特殊無線技士試験 ○年○月 法規・無線工学 問○（問題・正答）。解説と図の切出しは過去問AIが作成・加工。",
     remainingWork: ["現行法令との違いを学習時に確認"],
 },
-{
+  {
     slug: "kai-toku2", examCode: "kai-toku2",
     shortName: "第二級海上特殊無線技士", fullName: "第二級海上特殊無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -327,7 +502,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人日本無線協会 第二級海上特殊無線技士試験 ○年○月 法規・無線工学 問○（問題・正答）。解説は過去問AIが独自作成。",
     remainingWork: ["現行法令との違いを学習時に確認"],
 },
-{
+  {
     slug: "kai-toku3", examCode: "kai-toku3",
     shortName: "第三級海上特殊無線技士", fullName: "第三級海上特殊無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
@@ -336,7 +511,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人日本無線協会 第三級海上特殊無線技士試験 ○年○月 法規・無線工学 問○（問題・正答）。解説は過去問AIが独自作成。",
     remainingWork: ["現行法令との違いを学習時に確認"],
 },
-{
+  {
     slug: "chosashi",
     examCode: "chosashi",
     shortName: "土地家屋調査士",
@@ -350,13 +525,13 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：法務省 令和○年度土地家屋調査士試験 午前・午後 第○問。解説・記述解答例は過去問AIが独自作成。",
     remainingWork: ["法令改正の継続確認", "第三者権利等の例外条件は掲載者が確認"],
 },
-{
+  {
     slug: "chusho-secondary", shortName: "中小企業診断士二次", fullName: "中小企業診断士第2次試験", domain: "accounting", administrator: "一般社団法人 日本中小企業診断士協会連合会",
     officialQuestionsUrl: "https://www.jf-cmca.jp/contents/010_c_/shikenmondai.html", officialReuseTermsUrl: "https://www.jf-cmca.jp/contents/017_houtekijikou.html", status: "live",
     reuseSummary: "2025・2024年度の全8事例・33原問・54解答例を収録。公式問題・出題趣旨と、当サイトが作成した独自解答例・計算過程を確認できます。",
     attributionTemplate: "出典：日本中小企業診断士協会連合会 2025・2024年度 中小企業診断士第2次試験", remainingWork: ["次年度公開資料の確認"],
 },
-{
+  {
     slug: "fp1",
     examCode: "fp1",
     shortName: "FP1級",
@@ -370,7 +545,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：一般社団法人金融財政事情研究会 ファイナンシャル・プランニング技能検定1級 学科試験 基礎編（2026年5月・9月）",
     remainingWork: ["法令改正内容の継続確認"],
 },
-{
+  {
     slug: "fp3",
     examCode: "fp3",
     shortName: "FP3級",
@@ -384,7 +559,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：日本FP協会 3級ファイナンシャル・プランニング技能検定 学科試験（公表年月）",
     remainingWork: ["2026年公表問題の追加", "法改正影響を受ける問題の失効管理"],
 },
-{
+  {
     slug: "fp2",
     examCode: "fp2",
     shortName: "FP2級",
@@ -398,7 +573,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：日本FP協会 2級ファイナンシャル・プランニング技能検定（公表年月）",
     remainingWork: ["次回公表分の追加", "法改正影響の継続確認"],
 },
-{
+  {
     slug: "denken3",
     examCode: "denken3",
     shortName: "電験三種",
@@ -412,7 +587,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：令和○年度○期第三種電気主任技術者試験 ○○科目",
     remainingWork: ["2026年度上期の未掲載原問と法規の保留問を一次根拠で確認", "数式・図のアクセシビリティを継続改善"],
 },
-{
+  {
     slug: "denken1",
     examCode: "denken1",
     shortName: "電験一種",
@@ -426,7 +601,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：令和○年度第一種電気主任技術者一次試験○○科目A問題問○",
     remainingWork: ["両年度の未収録原問（個別HOLDを含む）", "二次試験"],
 },
-{
+  {
     slug: "denken2",
     examCode: "denken2",
     shortName: "電験二種",
@@ -440,7 +615,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：令和○年度第二種電気主任技術者一次試験○○科目○問題問○",
     remainingWork: ["2025年度法規の未収録3原問と2024年度以前の未収録原問の追加", "二次試験の追加"],
 },
-{
+  {
     slug: "denko2",
     examCode: "denko2",
     shortName: "第二種電気工事士",
@@ -454,7 +629,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：令和○年度○期第二種電気工事士学科試験",
     remainingWork: [],
 },
-{
+  {
     slug: "denko1",
     examCode: "denko1",
     shortName: "第一種電気工事士",
@@ -468,7 +643,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：令和○年度第一種電気工事士○期学科試験",
     remainingWork: ["令和7年度下期など過去の学科試験の追加", "技能試験(候補問題・欠陥判断基準)の掲載検討"],
 },
-{
+  {
     slug: "sekou-doboku2",
     examCode: "civil2",
     shortName: "2級土木施工管理",
@@ -482,7 +657,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：全国建設研修センター ○年度2級土木施工管理技術検定 第一次検定（土木）",
     remainingWork: ["他年度・後期の追加", "工事仕様書の改定に伴う解説更新"],
 },
-{
+  {
     slug: "sekou-kankoji2",
     examCode: "kankoji2",
     shortName: "2級管工事施工管理",
@@ -496,7 +671,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：全国建設研修センター ○年度2級管工事施工管理技術検定 第一次検定（前期／後期）",
     remainingWork: ["他年度の追加", "公共建築工事標準仕様書の改定に伴う解説更新"],
 },
-{
+  {
     slug: "sekou-zoen2",
     examCode: "zoen2",
     shortName: "2級造園施工管理",
@@ -510,7 +685,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：全国建設研修センター ○年度2級造園施工管理技術検定 第一次検定（前期／後期）",
     remainingWork: ["他年度の追加"],
 },
-{
+  {
     slug: "sekou-zoen1",
     examCode: "zoen1",
     shortName: "1級造園施工管理",
@@ -524,7 +699,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：全国建設研修センター 令和8年度1級造園施工管理技術検定 第一次検定 試験問題A／B",
     remainingWork: ["令和7年度以前は公式問題PDFが公開終了（正答肢のみ残存）のため、令和9年度試験の公表後に2回目を追加"],
 },
-{
+  {
     slug: "sekou-tsushin2",
     examCode: "tsushin2",
     shortName: "2級電気通信工事施工管理",
@@ -538,7 +713,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：全国建設研修センター 令和7年度後期・令和8年度前期 2級電気通信工事施工管理技術検定 第一次検定",
     remainingWork: ["第二次検定は未収録"],
 },
-{
+  {
     slug: "sekou-tsushin1",
     examCode: "tsushin1",
     shortName: "1級電気通信工事施工管理",
@@ -552,7 +727,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：全国建設研修センター 令和○年度1級電気通信工事施工管理技術検定 第一次検定 試験問題A／B",
     remainingWork: [],
 },
-{
+  {
     slug: "kaigo",
     examCode: "kaigo",
     shortName: "介護福祉士",
@@ -566,7 +741,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人社会福祉振興・試験センター 第○回介護福祉士国家試験 問題○",
     remainingWork: ["法改正で成立しなくなった問題の失効管理"],
 },
-{
+  {
     slug: "shakai",
     examCode: "shakai",
     shortName: "社会福祉士",
@@ -580,7 +755,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人社会福祉振興・試験センター 第○回社会福祉士国家試験 問題○",
     remainingWork: ["第37回 共通科目 問題4・69・76（一次資料で5肢を確定できず保留）", "第36回は旧カリキュラムのため対象外", "法改正で成立しなくなった問題の失効管理"],
 },
-{
+  {
     slug: "seishin",
     examCode: "seishin",
     shortName: "精神保健福祉士",
@@ -594,7 +769,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人社会福祉振興・試験センター 第○回精神保健福祉士国家試験 問題○",
     remainingWork: ["第27回共通科目の保留3問（問題4・69・76）の原典照合", "第26回以前は旧カリキュラムのため収録方針の決定", "法改正で成立しなくなった問題の失効管理"],
 },
-{
+  {
     slug: "sekou-kenchiku1", examCode: "sekou-1kenchiku",
     shortName: "1級建築施工管理",
     fullName: "1級建築施工管理技術検定",
@@ -606,7 +781,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和7・8年度の第一次検定各72問、計144問。全肢解説と必要図を収録。令和7年度No.57は公式訂正に従い3・4いずれも正答。RS1Kの独立再レビューPASSを確認。第二次検定は対象外。",
     remainingWork: [],
 },
-{
+  {
     slug: "sekou-doboku1",
     examCode: "civil1",
     shortName: "1級土木施工管理",
@@ -620,7 +795,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：全国建設研修センター ○年度1級土木施工管理技術検定 第一次検定 試験問題A／B",
     remainingWork: ["試験問題B No.7の解説確定と追加", "令和7年度分の追加"],
 },
-{
+  {
     slug: "takken",
     examCode: "takken",
     shortName: "宅建",
@@ -633,7 +808,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "2024・2025年度の公式問題・正解番号表を掲載し、各年度の解説に法令基準日を表示。",
     remainingWork: [],
 },
-{
+  {
     slug: "tohan-kansai",
     examCode: "tohan",
     shortName: "登録販売者",
@@ -647,7 +822,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：関西広域連合 令和○年度 登録販売者試験（前半／後半）問○",
     remainingWork: ["令和8年度は公式の「正答(例)」のみで確定正答の公表待ち", "他の年度（令和元〜5年度）の追加", "東京都・神奈川県など他ブロックは個別に確認"],
 },
-{
+  {
     slug: "kanri",
     examCode: "kanri",
     shortName: "管理業務主任者",
@@ -661,7 +836,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：令和○年度 管理業務主任者試験問題 問○",
     remainingWork: ["令和7年度の残る34問を公式正答・一次根拠と照合", "令和8年度試験の公表後に法令基準日を確認して追加"],
 },
-{
+  {
     slug: "eisei1",
     examCode: "eisei1",
     shortName: "第一種衛生管理者",
@@ -675,7 +850,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：安全衛生技術試験協会 令和8年4月公表 第一種衛生管理者免許試験",
     remainingWork: ["2026年1月以降に施行された法令を扱う問題は別途更新確認"],
 },
-{
+  {
     slug: "eisei2",
     examCode: "eisei2",
     shortName: "第二種衛生管理者",
@@ -689,7 +864,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：安全衛生技術試験協会 令和○年○月公表 第二種衛生管理者免許試験",
     remainingWork: ["2026年1月以降に施行された法令を扱う問題は別途更新確認"],
 },
-{
+  {
     slug: "gijutsushi-soukan",
     examCode: "soukan",
     shortName: "技術士 総合技術監理部門",
@@ -703,7 +878,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益社団法人日本技術士会 令和○年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－○",
     remainingWork: ["各年度の問題冊子が示す法令基準日（4月1日）より後の改正は別途更新確認", "記述式（Ⅰ－2）は模範解答が非公開のため収録しない"],
 },
-{
+  {
     slug: "hoikushi",
     examCode: "hoikushi",
     shortName: "保育士試験",
@@ -717,7 +892,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：一般社団法人全国保育士養成協議会 令和○年度○期保育士試験 筆記試験「○○」問○",
     remainingWork: ["問題転載の許諾根拠を再確認", "令和7年度後期の残5科目・全肢解説・独立査読を準備", "法改正・指針改定の継続確認", "第三者の楽譜・図版の権利と再現性を設問単位で確認"],
 },
-{
+  {
     slug: "mankan",
     examCode: "mankan",
     shortName: "マンション管理士",
@@ -731,7 +906,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：令和○年度 マンション管理士試験 問○（公益財団法人マンション管理センター）",
     remainingWork: ["令和6年度問40（建築物省エネ法の増築届出基準）は公式正解の法的根拠に一次資料で到達できず保留", "令和8年度試験の公表後に追加を検討"],
 },
-{
+  {
     slug: "kashikin",
     examCode: "kashikin",
     shortName: "貸金業務取扱主任者",
@@ -745,7 +920,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：一般社団法人日本貸金業協会 令和○年度（第○回）貸金業務取扱主任者資格試験問題（問題・正答）問○",
     remainingWork: ["各回の問題冊子が示す基準日（試験実施日）より後の法改正は別途更新確認"],
 },
-{
+  {
     slug: "chusho-kigyo-shindanshi",
     examCode: "chusho-kigyo-shindanshi",
     shortName: "中小企業診断士",
@@ -773,7 +948,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：全国社会保険労務士会連合会 試験センター 第○回（令和○年度）社会保険労務士試験 択一式・選択式（加工・解説）",
     remainingWork: ["未収録10原問（択一式のみ）の原典・正答・試験時点資料を確認", "一般掲載の可否はオーナー確認"],
   },
-{
+  {
     slug: "sagyo-ryohoshi",
     examCode: "sagyo-ryohoshi",
     shortName: "作業療法士",
@@ -799,7 +974,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第27・28回の公式通知7原問を確認し、除外2問を分離。5原問に全肢解説を保存し、2原問は学術的な局所確認待ち。出題候補3問を保持するが公開は保留。400原問の公式正答は確保し、393原問の本冊・図表は未取得です。",
     remainingWork: ["公式問題本冊の原文・図表と正答の照合", "転載条件・表示出典の確認", "難問の局所確認と統合担当の公開判断"],
   },
-{
+  {
     slug: "shino-kunrenshi",
     examCode: "shino-kunrenshi",
     shortName: "視能訓練士",
@@ -812,7 +987,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第56・55回の午前・午後から、原文・正答・全肢解説を確認した220問を部分収録。別冊図・専門根拠の未確認問は未掲載。最新2回の午前と午後全体は未完備です。",
     remainingWork: ["未収録問題の別冊図と専門根拠の局所確認", "最新2回の残る午前・午後問題"],
 },
-{
+  {
     slug: "rinsho-kogishi",
     examCode: "rinsho-kogishi",
     shortName: "臨床工学技士",
@@ -825,7 +1000,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第39回（令和7年度）・第38回（令和6年度）の午前・午後から、原本・正答・全肢解説を確認した220問を部分収録。全360問は未収録。問題と正答の出典は医療機器センター、解説は独自作成です。",
     remainingWork: ["午前・午後の未収録問題と専門根拠・図の局所確認", "両回の未収録問題", "掲載可否はオーナー確認"],
 },
-{
+  {
     slug: "hokenshi",
     examCode: "hokenshi",
     shortName: "保健師",
@@ -838,7 +1013,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第110～108回の午前から各10問、計30問を追加。過年度は部分収録です。第112・111回の午前・午後220問のうち、原文・正答・全肢解説を確認した202問を部分収録。第112回午前18問は未収録です。",
     remainingWork: ["過年度の未収録問題は原文・正答・全肢解説・必要図の確認待ち", "第112回午前の未収録18問の公開に関する既存の停止条件を解消"],
 },
-{
+  {
     slug: "josanshi",
     examCode: "josanshi",
     shortName: "助産師",
@@ -852,7 +1027,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：厚生労働省「第○回助産師国家試験」午前・午後 問○（問題・正答）。解説は独自作成です。",
     remainingWork: ["過年度の未収録問題は原文・正答・全肢解説・必要図の確認待ち", "第109回午後問31（採点除外）の未採点表示は未実装"],
 },
-{
+  {
     slug: "rigaku-ryohoshi",
     examCode: "rigaku-ryohoshi",
     shortName: "理学療法士",
@@ -866,7 +1041,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：厚生労働省「第○回理学療法士国家試験」午前・午後 問○（問題・正答）。解説は独自作成です。",
     remainingWork: ["未収録問の原文・公式正答・図表・説明根拠の確認", "第61回午後問30・第60回午後問31の公式代替正答の採点形式確認"],
 },
-{
+  {
     slug: "kangoshi",
     examCode: "kangoshi",
     shortName: "看護師",
@@ -880,7 +1055,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：厚生労働省「第○回看護師国家試験」午前 問○（問題・正答）",
     remainingWork: ["過年度の未収録問題は原文・正答・全肢解説・必要図の確認待ち", "一般掲載可否のオーナー確認", "第115回午前 問79は根拠確認中", "第115回午前4問・第114回午前7問は根拠確認中", "第115回午後14問・第114回午後23問は根拠・図の確認中", "第115回午前 問32（採点除外）は未採点表示の実装まで未収録"],
 },
-{
+  {
     slug: "yakuzaishi",
     examCode: "yakuzaishi",
     shortName: "薬剤師",
@@ -894,7 +1069,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：厚生労働省「第○回薬剤師国家試験」問○（問題・最終正答）",
     remainingWork: ["一般掲載可否のオーナー確認", "未収録問題の出典・図表・共通症例・計算の確認", "後着10問の根拠・解説差分を保持"],
 },
-{
+  {
     slug: "ahaki-anma",
     examCode: "ahaki-anma",
     shortName: "あん摩マッサージ指圧師",
@@ -908,7 +1083,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人東洋療法研修試験財団 第○回あん摩マッサージ指圧師国家試験 午前・午後 問○（問題・正答）",
     remainingWork: ["第34・33回の未掲載2原問の説明を個別確認"],
 },
-{
+  {
     slug: "ahaki-hari-kyu",
     examCode: "ahaki-hari-kyu",
     shortName: "はり師・きゅう師",
@@ -922,7 +1097,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人東洋療法研修試験財団 第○回はり師・きゅう師国家試験 午前・午後 問○（問題・正答）",
     remainingWork: [],
 },
-{
+  {
     slug: "shika-ishi",
     examCode: "shika-ishi",
     shortName: "歯科医師",
@@ -936,7 +1111,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：厚生労働省『第○回歯科医師国家試験』問題・正答。解説は当サイトの独自作成です。",
     remainingWork: ["次回公表分の追加", "公式訂正・診療指針改訂の継続確認"],
 },
-{
+  {
     slug: "gas-kou", examCode: "gas-kou", shortName: "ガス主任技術者 甲種", fullName: "ガス主任技術者試験（甲種）",
     domain: "safety", administrator: "一般財団法人日本ガス機器検査協会",
     officialQuestionsUrl: "https://www.jia-page.or.jp/exam/examination/answer/",
@@ -946,7 +1121,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：一般財団法人日本ガス機器検査協会 ガス主任技術者試験（甲種、年度・科目・問番号）",
     remainingWork: ["法令改正に伴う解説の継続確認"],
 },
-{
+  {
     slug: "gas-otsu", examCode: "gas-otsu", shortName: "ガス主任技術者 乙種", fullName: "ガス主任技術者試験（乙種）",
     domain: "safety", administrator: "一般財団法人日本ガス機器検査協会",
     officialQuestionsUrl: "https://www.jia-page.or.jp/exam/examination/answer/",
@@ -956,7 +1131,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：一般財団法人日本ガス機器検査協会 ガス主任技術者試験（乙種、年度・科目・問番号）",
     remainingWork: ["法令改正に伴う解説の継続確認"],
 },
-{
+  {
     slug: "gas-hei", examCode: "gas-hei", shortName: "ガス主任技術者 丙種", fullName: "ガス主任技術者試験（丙種）",
     domain: "safety", administrator: "一般財団法人日本ガス機器検査協会",
     officialQuestionsUrl: "https://www.jia-page.or.jp/exam/examination/answer/",
@@ -966,7 +1141,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：一般財団法人日本ガス機器検査協会 ガス主任技術者試験（丙種、年度・科目・問番号）",
     remainingWork: ["法令改正に伴う解説の継続確認"],
 },
-{
+  {
     slug: "rinsho-kensagishi",
     examCode: "rinsho-kensagishi",
     shortName: "臨床検査技師",
@@ -979,7 +1154,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第71・72回（2025・2026年実施）の午前・午後から、原文・公式正答・全五肢の学習用解説と照合した115原問を部分収録。必要な公式原図も掲載しています。残りの未収録原問は出題対象外で、最新2回の全問は未完備です。解説は独自作成です。",
     remainingWork: ["未収録原問の原本・別冊図・専門根拠の個別照合", "最新2回の午前・午後の残問"],
 },
-{
+  {
     slug: "shinryo-hoshasengishi",
     examCode: "shinryo-hoshasengishi",
     shortName: "診療放射線技師",
@@ -992,7 +1167,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "第77・78回（2025・2026年実施）の午前・午後から、原文・公式正答・全五肢解説・必要図版を照合した398原問を収録。第77回は午前100・午後100問、第78回は午前98・午後100問です。第78回午前23は公式に採点除外、午前15は公式別冊図が省略されているため出題対象に含めていません。解説は独自作成です。",
     remainingWork: ["第78回午前15の正規図版取得", "採点除外の第78回午前23は公式通知と原文を別保存"],
 },
-{
+  {
     slug: "riyoshi", examCode: "riyoshi", shortName: "理容師", fullName: "理容師国家試験", domain: "personal-services",
     administrator: "公益財団法人理容師美容師試験研修センター",
     officialQuestionsUrl: "https://www.rbc.or.jp/exam/past_question/",
@@ -1002,7 +1177,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人理容師美容師試験研修センター 第○回理容師筆記試験 問○（問題・正答）。解説は独自作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "judo-seifukushi",
     examCode: "judo-seifukushi",
     shortName: "柔道整復師",
@@ -1052,14 +1227,14 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "過去問は非公開。サンプル問題も無断転載・無断営利利用を禁止。",
     remainingWork: ["利用許諾を取得できない限り問題本文を収録しない"],
 },
-{ slug: "kisho", examCode: "kisho", shortName: "気象予報士", fullName: "気象予報士試験",
+  { slug: "kisho", examCode: "kisho", shortName: "気象予報士", fullName: "気象予報士試験",
     domain: "safety", administrator: "一般財団法人 気象業務支援センター",
     officialQuestionsUrl: "https://www.jmbsc.or.jp/jp/examination/examination-7.html",
     officialReuseTermsUrl: "https://www.jmbsc.or.jp/jp/examination/examination-7.html", status: "live",
     reuseSummary: "第65・66回の学科60問・全肢解説、実技18問・237回答欄を収録。実技は公式解答例・作図との手動照合です。",
     attributionTemplate: "出典：一般財団法人 気象業務支援センター 気象予報士試験問題・解答例。画像化・表記整理、解説は過去問AI作成。",
     remainingWork: [] },
-{
+  {
     slug: "kenchiku-setsubishi", examCode: "kenchiku-setsubishi", shortName: "建築設備士", fullName: "建築設備士試験（第一次試験）",
     domain: "construction", administrator: "公益財団法人建築技術教育普及センター",
     officialQuestionsUrl: "https://www.jaeic.or.jp/shiken/bmee/bmee-mondai.html",
@@ -1068,7 +1243,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人建築技術教育普及センター 建築設備士第一次試験（年度・科目・問番号）。解説は当サイト独自作成。",
     remainingWork: ["令和8年建築法規問18の出題機関による訂正又は直接解釈の確認", "第二次試験は未収録"],
 },
-{
+  {
     slug: "chizai2", examCode: "chizai2", shortName: "知的財産管理技能検定2級", fullName: "知的財産管理技能検定2級",
     domain: "legal", administrator: "知的財産教育協会",
     officialQuestionsUrl: "https://www.kentei-info-ip-edu.org/gakushujoho/kakomon.html",
@@ -1078,7 +1253,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：知的財産教育協会 第○回 知的財産管理技能検定2級 学科・実技 問○（問題・正答）。解説は過去問AI独自作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "jidosha-1-small-written", examCode: "jidosha-1-small-written", shortName: "一級小型自動車整備士（筆記）", fullName: "一級小型自動車整備士（筆記）", domain: "automotive",
     administrator: "一般社団法人日本自動車整備振興会連合会",
     officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
@@ -1086,7 +1261,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "jidosha-2-gasoline", examCode: "jidosha-2-gasoline", shortName: "二級ガソリン自動車整備士", fullName: "二級ガソリン自動車整備士", domain: "automotive",
     administrator: "一般社団法人日本自動車整備振興会連合会",
     officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
@@ -1094,7 +1269,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
     remainingWork: ["公式全員正解1原問は通常採点対象外"],
 },
-{
+  {
     slug: "jidosha-2-diesel", examCode: "jidosha-2-diesel", shortName: "二級ジーゼル自動車整備士", fullName: "二級ジーゼル自動車整備士", domain: "automotive",
     administrator: "一般社団法人日本自動車整備振興会連合会",
     officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
@@ -1102,7 +1277,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "jidosha-2-chassis", examCode: "jidosha-2-chassis", shortName: "二級自動車シャシ整備士", fullName: "二級自動車シャシ整備士", domain: "automotive",
     administrator: "一般社団法人日本自動車整備振興会連合会",
     officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
@@ -1110,7 +1285,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "jidosha-2-motorcycle", examCode: "jidosha-2-motorcycle", shortName: "二級二輪自動車整備士", fullName: "二級二輪自動車整備士", domain: "automotive",
     administrator: "一般社団法人日本自動車整備振興会連合会",
     officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
@@ -1118,7 +1293,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "jidosha-3-chassis", examCode: "jidosha-3-chassis", shortName: "三級自動車シャシ整備士", fullName: "三級自動車シャシ整備士", domain: "automotive",
     administrator: "一般社団法人日本自動車整備振興会連合会",
     officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
@@ -1126,7 +1301,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "jidosha-3-gasoline", examCode: "jidosha-3-gasoline", shortName: "三級自動車ガソリン・エンジン整備士", fullName: "三級自動車ガソリン・エンジン整備士", domain: "automotive",
     administrator: "一般社団法人日本自動車整備振興会連合会",
     officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
@@ -1134,7 +1309,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "jidosha-3-diesel", examCode: "jidosha-3-diesel", shortName: "三級自動車ジーゼル・エンジン整備士", fullName: "三級自動車ジーゼル・エンジン整備士", domain: "automotive",
     administrator: "一般社団法人日本自動車整備振興会連合会",
     officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
@@ -1142,7 +1317,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "jidosha-3-motorcycle", examCode: "jidosha-3-motorcycle", shortName: "三級二輪自動車整備士", fullName: "三級二輪自動車整備士", domain: "automotive",
     administrator: "一般社団法人日本自動車整備振興会連合会",
     officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
@@ -1150,7 +1325,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "jidosha-body", examCode: "jidosha-body", shortName: "自動車車体整備士", fullName: "自動車車体整備士", domain: "automotive",
     administrator: "一般社団法人日本自動車整備振興会連合会",
     officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
@@ -1158,7 +1333,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
     remainingWork: ["未収録1原問の内容照合"],
 },
-{
+  {
     slug: "jidosha-electrical", examCode: "jidosha-electrical", shortName: "自動車電気装置整備士", fullName: "自動車電気装置整備士", domain: "automotive",
     administrator: "一般社団法人日本自動車整備振興会連合会",
     officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
@@ -1166,7 +1341,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "jokaso", examCode: "jokaso", shortName: "浄化槽管理士", fullName: "浄化槽管理士試験",
     domain: "construction", administrator: "公益財団法人日本環境整備教育センター",
     officialQuestionsUrl: "https://www.jeces.or.jp/pages/27/",
@@ -1175,7 +1350,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人日本環境整備教育センター 浄化槽管理士試験 問題・正答。解説は過去問AI作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "iji-shuzen", examCode: "iji-shuzen",
     shortName: "マンション維持修繕技術者", fullName: "マンション維持修繕技術者試験",
     domain: "real-estate", administrator: "一般社団法人マンション管理業協会",
@@ -1186,7 +1361,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：一般社団法人マンション管理業協会 マンション維持修繕技術者試験 問題・正答。解説は過去問AIの独自作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "sekou-1denki", examCode: "denki1",
     shortName: "1級電気工事施工管理", fullName: "1級電気工事施工管理技術検定（第一次検定）",
     domain: "construction", administrator: "一般財団法人建設業振興基金",
@@ -1197,7 +1372,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：一般財団法人建設業振興基金 1級電気工事施工管理技術検定 第一次検定。解説は過去問AI作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "shuwa", examCode: "shuwa", shortName: "手話通訳士", fullName: "手話通訳士（学科試験）",
     domain: "welfare", administrator: "社会福祉法人聴力障害者情報文化センター",
     officialQuestionsUrl: "https://www.jyoubun-center.or.jp/slit/exam/past-exam/",
@@ -1207,7 +1382,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：社会福祉法人聴力障害者情報文化センター 手話通訳技能認定試験（手話通訳士試験）学科試験問題・正答。解説は過去問AIの独自作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "jken-katsuyo3", examCode: "jken-katsuyo3", shortName: "J検 情報活用3級", fullName: "情報検定（J検）情報活用3級",
     domain: "information-technology", administrator: "一般財団法人職業教育・キャリア教育財団",
     officialQuestionsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",
@@ -1217,7 +1392,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用試験。問題・正答は公式公表資料、解説は過去問AI作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "jken-katsuyo2", examCode: "jken-katsuyo2", shortName: "J検 情報活用2級", fullName: "情報検定（J検）情報活用2級",
     domain: "information-technology", administrator: "一般財団法人職業教育・キャリア教育財団",
     officialQuestionsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",
@@ -1227,7 +1402,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用試験。問題・正答は公式公表資料、解説は過去問AI作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "jken-katsuyo1", examCode: "jken-katsuyo1", shortName: "J検 情報活用1級", fullName: "情報検定（J検）情報活用1級",
     domain: "information-technology", administrator: "一般財団法人職業教育・キャリア教育財団",
     officialQuestionsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",
@@ -1237,7 +1412,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用試験。問題・正答は公式公表資料、解説は過去問AI作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "jken-system", examCode: "jken-system", shortName: "J検 情報システム",
     fullName: "情報検定（J検）情報システム 基本スキル・プログラミングスキル・システムデザインスキル",
     domain: "information-technology", administrator: "一般財団法人職業教育・キャリア教育財団",
@@ -1248,7 +1423,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：一般財団法人職業教育・キャリア教育財団 情報検定 情報システム試験（実施回・スキル・大問・解答欄）。解説は独自作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "shinrishi", examCode: "shinrishi", shortName: "公認心理師", fullName: "公認心理師試験",
     domain: "welfare", administrator: "一般財団法人公認心理師試験研修センター",
     officialQuestionsUrl: "https://www.jccpp.or.jp/shiken/shikenjoho/",
@@ -1257,7 +1432,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：一般財団法人公認心理師試験研修センター 公認心理師試験。解説は過去問AI独自作成。",
     remainingWork: [],
 },
-{
+  {
     slug: "hoshasen",
     shortName: "放射線取扱主任者（第一種・第二種）",
     fullName: "第一種・第二種放射線取扱主任者試験",
@@ -1270,7 +1445,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：公益財団法人原子力安全技術センター 令和○年度 第○種放射線取扱主任者試験（科目・問番号）。問題・正答は公式PDF、解説は独自作成。",
     remainingWork: ["第二種令和8年度化学問9は公式正答5を維持して保留。公式訂正又は肢1を排除できる十分な一次根拠が得られた場合のみ解除", "公開用の試験区分・科目設定とローダーへの接続（別途公開指示が必要）"],
 },
-{
+  {
     slug: "khk-reito", shortName: "高圧ガス 冷凍機械", fullName: "高圧ガス製造保安責任者 第一種冷凍機械・第二種冷凍機械・第三種冷凍機械",
     domain: "safety", administrator: "高圧ガス保安協会 試験センター",
     officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html",
@@ -1278,7 +1453,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "3資格の親slug。令和7・6年度の国家試験を対象に、資格別の未公開データとして準備する。転載・複製禁止文言は監査記録に保存し、2026-11-04のオーナー判断に基づき収録する。",
     remainingWork: ["資格別ステージングの公開切替（本タスクでは公開しない）"],
 },
-{
+  {
     slug: "khk-reito-1", examCode: "khk-reito-1", shortName: "第一種冷凍機械",
     fullName: "高圧ガス製造保安責任者試験（第一種冷凍機械）", domain: "safety",
     administrator: "高圧ガス保安協会 試験センター",
@@ -1289,7 +1464,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：高圧ガス保安協会 令和○年度 第一種冷凍機械 ○科目 問○。解説は過去問AI独自作成。法令は出題時点。",
     remainingWork: [],
 },
-{
+  {
     slug: "khk-reito-2", examCode: "khk-reito-2", shortName: "第二種冷凍機械",
     fullName: "高圧ガス製造保安責任者試験（第二種冷凍機械）", domain: "safety",
     administrator: "高圧ガス保安協会 試験センター",
@@ -1300,7 +1475,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：高圧ガス保安協会 令和○年度 第二種冷凍機械 ○科目 問○。解説は過去問AI独自作成。法令は出題時点。",
     remainingWork: [],
 },
-{
+  {
     slug: "khk-reito-3", examCode: "khk-reito-3", shortName: "第三種冷凍機械",
     fullName: "高圧ガス製造保安責任者試験（第三種冷凍機械）", domain: "safety",
     administrator: "高圧ガス保安協会 試験センター",
@@ -1311,7 +1486,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：高圧ガス保安協会 令和○年度 第三種冷凍機械 ○科目 問○。解説は過去問AI独自作成。法令は出題時点。",
     remainingWork: [],
 },
-{
+  {
     slug: "sekou-kenchiku2",
     examCode: "sekou-kenchiku2",
     shortName: "2級建築施工管理（第一次検定）",
@@ -1325,7 +1500,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：一般財団法人建設業振興基金 2級建築施工管理技術検定（第一次検定）令和○年度（前期／後期）No.○。解説は本サイト作成。",
     remainingWork: ["監督役による独立レビューと指摘対応後に公開判定（現在は未公開ステージング）"],
 },
-{
+  {
     slug: "sekou-2denki", examCode: "denki2",
     shortName: "2級電気工事施工管理", fullName: "2級電気工事施工管理技術検定（第一次検定）",
     domain: "construction", administrator: "一般財団法人建設業振興基金",
@@ -1336,7 +1511,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：一般財団法人建設業振興基金 2級電気工事施工管理技術検定 第一次検定。解説は過去問AI作成。",
     remainingWork: ["監督役による独立レビュー", "依存パッケージ導入後のpnpm検証", "公開判定"],
 },
-{
+  {
     slug: "sekou-1kankoji", examCode: "kankoji1",
     shortName: "1級管工事施工管理", fullName: "1級管工事施工管理技術検定（第一次検定）",
     domain: "construction", administrator: "一般財団法人全国建設研修センター",
@@ -1346,7 +1521,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：一般財団法人全国建設研修センター 令和8年度1級管工事施工管理技術検定 第一次検定 問題A／B。解説は過去問AI作成。",
     remainingWork: ["監督役による独立レビューと公開判断"],
 },
-{
+  {
     slug: "yamaguchi-fugu", examCode: "yamaguchi-fugu", shortName: "ふぐ処理師（学科）", fullName: "ふぐ処理師（学科）",
     domain: "personal-services", administrator: "山口県 生活衛生課",
     officialQuestionsUrl: "https://www.pref.yamaguchi.lg.jp/site/syoku-anshin/320296.html",
@@ -1356,7 +1531,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：山口県 生活衛生課 ふぐ処理師（学科） 問題・正答。テキスト整形・図の切出し・解説は過去問AIが作成。",
     remainingWork: ["監督役による独立レビューと公開判断"],
 },
-{
+  {
     slug: "yamaguchi-seika", examCode: "yamaguchi-seika", shortName: "製菓衛生師", fullName: "製菓衛生師",
     domain: "personal-services", administrator: "山口県 生活衛生課",
     officialQuestionsUrl: "https://www.pref.yamaguchi.lg.jp/site/syoku-anshin/320296.html",
@@ -1366,7 +1541,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：山口県 生活衛生課 製菓衛生師 問題・正答。テキスト整形・図の切出し・解説は過去問AIが作成。",
     remainingWork: ["監督役による独立レビューと公開判断"],
 },
-{
+  {
     slug: "yamaguchi-chori", examCode: "yamaguchi-chori", shortName: "調理師", fullName: "調理師",
     domain: "personal-services", administrator: "山口県 生活衛生課",
     officialQuestionsUrl: "https://www.pref.yamaguchi.lg.jp/site/syoku-anshin/320296.html",
@@ -1376,7 +1551,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：山口県 生活衛生課 調理師 問題・正答。テキスト整形・図の切出し・解説は過去問AIが作成。",
     remainingWork: ["監督役による独立レビューと公開判断"],
 },
-{
+  {
     slug: "kenki2", examCode: "kenki2", shortName: "2級建設機械施工管理",
     fullName: "2級建設機械施工管理技術検定（第一次検定）", domain: "construction",
     administrator: "一般社団法人日本建設機械施工協会",
@@ -1385,7 +1560,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和8・7年度の共通各32問・第1〜6種各20問、計304問を非公開で準備。公式正答・全肢解説・必要図を保存。法規は出題時点の法令。",
     remainingWork: ["監督側による独立レビューと指摘修正後の合格確認"],
 },
-{
+  {
     slug: "kenki1", examCode: "kenki1", shortName: "1級建設機械施工管理",
     fullName: "1級建設機械施工管理技術検定（第一次検定）", domain: "construction",
     administrator: "一般社団法人日本建設機械施工協会",
@@ -1394,7 +1569,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和8・7年度の第一次検定各56問、計112問を非公開で準備。公式問題・正答と全肢解説・必要図を保存。法規は出題時点の法令。",
     remainingWork: ["監督側による独立レビューと指摘修正後の合格確認"],
 },
-{
+  {
     slug: "gyosei", examCode: "gyosei", shortName: "行政書士", fullName: "行政書士試験",
     domain: "legal", administrator: "一般財団法人行政書士試験研究センター",
     officialQuestionsUrl: "https://gyosei-shiken.or.jp/doc/exam/",
@@ -1403,7 +1578,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和7・6年度の公式公開112問を収録。択一は全肢解説、多肢選択は全語群解説、記述式は公式正解例で自己確認。問1・58〜60は公式非掲載のため対象外。",
     remainingWork: [],
 },
-{
+  {
     slug: "shihoshoshi", examCode: "shihoshoshi", shortName: "司法書士", fullName: "司法書士試験（午前・午後の多肢択一式）",
     domain: "legal", administrator: "法務省",
     officialQuestionsUrl: "https://www.moj.go.jp/shikaku_saiyo_index3.html",
@@ -1413,7 +1588,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：法務省 令和○年度司法書士試験 午前・午後 第○問。解説は過去問AIが独自作成。",
     remainingWork: ["バッチ1対象外の保留10問の公開範囲を別途判断", "令和7年度の公式法令基準日の確認（問題PDFは403で取得不能）", "公式PDFと問題文・図表の公開前最終照合", "独立レビューのFAIL指摘への修正内容の再レビュー合格", "指定の質問検証・型検査・関連テストの完了"],
 },
-{
+  {
     slug: "khk-hanbai", shortName: "第一種販売主任者", fullName: "高圧ガス販売主任者 第一種",
     domain: "safety", administrator: "高圧ガス保安協会",
     officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html", officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",
@@ -1421,7 +1596,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和7・6年度80問を未公開stagingに保存。公式の転載禁止文言を記録済み。",
     remainingWork: ["publicAllowed=falseで維持", "公開する場合は別途統合・公開判断が必要"],
 },
-{
+  {
     slug: "khk-hanbai2", shortName: "第二種販売主任者", fullName: "高圧ガス販売主任者 第二種",
     domain: "safety", administrator: "高圧ガス保安協会",
     officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html", officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",
@@ -1429,7 +1604,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和7・6年度80問を未公開stagingに保存。",
     remainingWork: ["publicAllowed=falseで維持", "公開する場合は別途統合・公開判断が必要"],
 },
-{
+  {
     slug: "khk-setsubishi", shortName: "液化石油ガス設備士（学科）", fullName: "液化石油ガス設備士試験（学科）",
     domain: "safety", administrator: "高圧ガス保安協会",
     officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html", officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",
@@ -1437,7 +1612,164 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     reuseSummary: "令和7・6年度の法令30問・配管理論等40問、計70問を未公開stagingに保存。",
     remainingWork: ["publicAllowed=falseで維持", "公開する場合は別途統合・公開判断が必要（配管理論等は図・早見表の画像表示が必要）"],
 },
-{
+  {
+    slug: "kensetsu-kikai-seibi2", examCode: "kensetsu-kikai-seibi2", shortName: "建設機械整備技能士 2級", fullName: "技能検定 2級建設機械整備（建設機械整備作業）学科試験",
+    domain: "construction", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/",
+    officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2025年度前期の学科50問（真偽法25問・多肢択一法25問）、公式正答と全肢の独自解説、図5問の原本画像11点を収録。",
+    attributionTemplate: "出典：中央職業能力開発協会 令和7年度前期 2級建設機械整備（建設機械整備作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
+  {
+    slug: "hyoso1", examCode: "hyoso1", shortName: "表装技能士 1級", fullName: "技能検定 1級表装（表具作業）学科試験",
+    domain: "construction", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/",
+    officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2025年度前期の学科50問（真偽法25問・多肢択一法25問）、公式正答と全肢の独自解説、図3問の原本画像3点を収録。",
+    attributionTemplate: "出典：中央職業能力開発協会 令和7年度前期 1級表装（表具作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
+  {
+    slug: "tairu2", examCode: "tairu2", shortName: "タイル張り技能士 2級", fullName: "技能検定 2級タイル張り（タイル張り作業）学科試験",
+    domain: "construction", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/",
+    officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2025年度前期の学科50問（真偽法25問・多肢択一法25問）、公式正答と全肢の独自解説、図5問の原本画像5点を収録。",
+    attributionTemplate: "出典：中央職業能力開発協会 令和7年度前期 2級タイル張り（タイル張り作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
+  {
+    slug: "sekizai1", examCode: "sekizai1", shortName: "石材施工技能士 1級", fullName: "技能検定 1級石材施工（石張り作業）学科試験",
+    domain: "construction", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/",
+    officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2025年度前期の学科50問（真偽法25問・多肢択一法25問）、公式正答と全肢の独自解説、図4問の原本画像4点を収録。",
+    attributionTemplate: "出典：中央職業能力開発協会 令和7年度前期 1級石材施工（石張り作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
+  {
+    slug: "hyoso2", examCode: "hyoso2", shortName: "表装技能士 2級", fullName: "技能検定 2級表装（表具作業）学科試験",
+    domain: "construction", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/",
+    officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2025年度前期の学科50問（真偽法25問・多肢択一法25問）、公式正答と全肢の独自解説、図6問の原本画像12点を収録。",
+    attributionTemplate: "出典：中央職業能力開発協会 令和7年度前期 2級表装（表具作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
+  {
+    slug: "shohin-soshoku3", examCode: "shohin-soshoku3", shortName: "商品装飾展示技能士 3級", fullName: "技能検定 3級商品装飾展示（商品装飾展示作業）学科試験",
+    domain: "safety", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/",
+    officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2025年度前期の学科30問（真偽法30問）、公式正答と全肢の独自解説を収録。",
+    attributionTemplate: "出典：中央職業能力開発協会 令和7年度前期 3級商品装飾展示（商品装飾展示作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
+  {
+    slug: "shashin1", examCode: "shashin1", shortName: "写真技能士 1級", fullName: "技能検定 1級写真（肖像写真デジタル作業）学科試験",
+    domain: "safety", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/",
+    officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2025年度前期の学科50問（真偽法25問・多肢択一法25問）、公式正答と全肢の独自解説を収録。",
+    attributionTemplate: "出典：中央職業能力開発協会 令和7年度前期 1級写真（肖像写真デジタル作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
+  {
+    slug: "sessaku-kensaku1", examCode: "sessaku-kensaku1", shortName: "切削工具研削技能士 1級", fullName: "技能検定 1級切削工具研削（工作機械用切削工具研削作業）学科試験",
+    domain: "safety", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/",
+    officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2025年度前期の学科50問（真偽法25問・多肢択一法25問）、公式正答と全肢の独自解説を収録。",
+    attributionTemplate: "出典：中央職業能力開発協会 令和7年度前期 1級切削工具研削（工作機械用切削工具研削作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
+  {
+    slug: "tatami1", examCode: "tatami1", shortName: "畳製作技能士 1級", fullName: "技能検定 1級畳製作（畳製作作業）学科試験",
+    domain: "safety", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/",
+    officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2025年度前期の学科50問（真偽法25問・多肢択一法25問）、公式正答と全肢の独自解説を収録。",
+    attributionTemplate: "出典：中央職業能力開発協会 令和7年度前期 1級畳製作（畳製作作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
+  {
+    slug: "funmatsu-yakin1", examCode: "funmatsu-yakin1", shortName: "粉末冶金技能士 1級", fullName: "技能検定 1級粉末冶金（成形・再圧縮作業）学科試験",
+    domain: "safety", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/",
+    officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2025年度前期の学科50問（真偽法25問・多肢択一法25問）、公式正答と全肢の独自解説を収録。",
+    attributionTemplate: "出典：中央職業能力開発協会 令和7年度前期 1級粉末冶金（成形・再圧縮作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
+  {
+    slug: "nunohaku1", examCode: "nunohaku1", shortName: "布はく縫製技能士 1級", fullName: "技能検定 1級布はく縫製（ワイシャツ製造作業）学科試験",
+    domain: "safety", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/",
+    officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2025年度前期の学科50問（真偽法25問・多肢択一法25問）、公式正答と全肢の独自解説を収録。",
+    attributionTemplate: "出典：中央職業能力開発協会 令和7年度前期 1級布はく縫製（ワイシャツ製造作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
+  {
+    slug: "kikinzoku-soshin1", examCode: "kikinzoku-soshin1", shortName: "貴金属装身具製作技能士 1級", fullName: "技能検定 1級貴金属装身具製作（貴金属装身具製作作業）学科試験",
+    domain: "safety", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/",
+    officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2025年度前期の学科50問（真偽法25問・多肢択一法25問）、公式正答と全肢の独自解説を収録。",
+    attributionTemplate: "出典：中央職業能力開発協会 令和7年度前期 1級貴金属装身具製作（貴金属装身具製作作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
+  {
+    slug: "shashin3", examCode: "shashin3", shortName: "写真技能士 3級", fullName: "技能検定 3級写真（肖像写真デジタル作業）学科試験",
+    domain: "safety", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/",
+    officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2025年度後期の学科30問（真偽法30問）、公式正答と全肢の独自解説を収録。",
+    attributionTemplate: "出典：中央職業能力開発協会 令和7年度後期 3級写真（肖像写真デジタル作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
+  {
+    slug: "kikinzoku-soshin3", examCode: "kikinzoku-soshin3", shortName: "貴金属装身具製作技能士 3級", fullName: "技能検定 3級貴金属装身具製作（貴金属装身具製作作業）学科試験",
+    domain: "safety", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/",
+    officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2025年度後期の学科30問（真偽法30問）、公式正答と全肢の独自解説を収録。",
+    attributionTemplate: "出典：中央職業能力開発協会 令和7年度後期 3級貴金属装身具製作（貴金属装身具製作作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
+  {
+    slug: "kikinzoku-soshin2", examCode: "kikinzoku-soshin2", shortName: "貴金属装身具製作技能士 2級", fullName: "技能検定 2級貴金属装身具製作（貴金属装身具製作作業）学科試験",
+    domain: "safety", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/",
+    officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2025年度前期の学科50問（真偽法25問・多肢択一法25問）、公式正答と全肢の独自解説を収録。",
+    attributionTemplate: "出典：中央職業能力開発協会 令和7年度前期 2級貴金属装身具製作（貴金属装身具製作作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
+  {
+    slug: "shashin2", examCode: "shashin2", shortName: "写真技能士 2級", fullName: "技能検定 2級写真（肖像写真デジタル作業）学科試験",
+    domain: "safety", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/",
+    officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2025年度前期の学科50問（真偽法25問・多肢択一法25問）、公式正答と全肢の独自解説を収録。",
+    attributionTemplate: "出典：中央職業能力開発協会 令和7年度前期 2級写真（肖像写真デジタル作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
+  {"slug": "kenchiku-bankin-duct2", "examCode": "kenchiku-bankin-duct2", "shortName": "建築板金技能士 2級（ダクト板金作業）", "fullName": "技能検定 2級建築板金（ダクト板金作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問、公式正答、全肢の独自解説と原図を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "kinzoku-netsushori2", "examCode": "kinzoku-netsushori2", "shortName": "金属熱処理技能士 2級", "fullName": "技能検定 2級金属熱処理（一般熱処理作業）学科試験", "domain": "safety", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2023・2024・2025年度の学科150問を収録。公式問題・正答と全肢の独自解説で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "flower2", "examCode": "flower2", "shortName": "フラワー装飾技能士 2級", "fullName": "技能検定 2級フラワー装飾（フラワー装飾作業）学科試験", "domain": "personal-services", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2023・2024・2025年度の学科150問を収録。公式問題・正答と全肢の独自解説で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "tekko2", "examCode": "tekko2", "shortName": "鉄工技能士 2級", "fullName": "技能検定 2級鉄工（製缶作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2023・2024・2025年度の学科150問を収録。公式問題・正答と全肢の独自解説で学べます。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {
+    slug: "denshi-kiki-kumitate2", examCode: "denshi-kiki-kumitate2", shortName: "電子機器組立て技能士 2級", fullName: "技能検定 2級電子機器組立て（電子機器組立て作業）学科試験",
+    domain: "electrical", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/",
+    officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2023〜2025年度前期の学科150問。公式正答と全肢の独自解説、原本図を収録。",
+    attributionTemplate: "出典：中央職業能力開発協会 前期 2級電子機器組立て（電子機器組立て作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
+  {
     slug: "kikai-hozen", examCode: "kikai-hozen", shortName: "機械保全技能士 2級（機械系）", fullName: "機械保全技能検定 2級 機械系保全作業 学科",
     domain: "safety", administrator: "公益社団法人日本プラントメンテナンス協会",
     officialQuestionsUrl: "https://www.kikaihozenshi.jp/questions/",
@@ -1446,7 +1778,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：JIPM 機械保全技能検定 ○年度 2級 機械系保全作業 学科 No.○。解説は過去問AIの独自作成。",
     remainingWork: ["1級・電気系・設備診断作業の追加"],
 },
-{
+  {
     slug: "tsukanshi", examCode: "tsukanshi", shortName: "通関士", fullName: "通関士試験",
     domain: "legal", administrator: "財務省関税局・税関",
     officialQuestionsUrl: "https://www.customs.go.jp/tsukanshi/",
@@ -1456,7 +1788,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：税関 第○回通関士試験（○年）科目 第○問・同正答及び配点。解説は過去問AIの独自作成で税関とは関係ありません。",
     remainingWork: ["第60回の公式正答（2026-11-10以降）を確認して解答・解説を追加"],
 },
-{
+  {
     slug: "career-consultant", examCode: "career-consultant", shortName: "キャリアコンサルタント（学科）", fullName: "国家資格キャリアコンサルタント試験 学科試験",
     domain: "welfare", administrator: "特定非営利活動法人キャリアコンサルティング協議会・特定非営利活動法人日本キャリア開発協会",
     officialQuestionsUrl: "https://www.career-shiken.org/about/learninfo/",
@@ -1465,7 +1797,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：キャリアコンサルティング協議会・日本キャリア開発協会 2026年度第○回国家資格キャリアコンサルタント試験 学科試験 問○。解説は過去問AIの独自作成。",
     remainingWork: ["実技（論述・面接）は対象外"],
 },
-{
+  {
     slug: "kanri-eiyoshi", examCode: "kanri-eiyoshi", shortName: "管理栄養士", fullName: "管理栄養士国家試験",
     domain: "welfare", administrator: "厚生労働省",
     officialQuestionsUrl: "https://www.mhlw.go.jp/stf/newpage_17056.html",
@@ -1474,7 +1806,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：厚生労働省 第40回管理栄養士国家試験 午前／午後 問○。解説は過去問AIの独自作成。",
     remainingWork: ["第39回：問題PDFが公式で404。保存コピー利用はオーナー判断待ち"],
 },
-{
+  {
     slug: "sogo-ryoko", examCode: "sogo-ryoko", shortName: "総合旅行業務取扱管理者", fullName: "総合旅行業務取扱管理者試験",
     domain: "personal-services", administrator: "一般社団法人日本旅行業協会",
     officialQuestionsUrl: "https://www.jata-net.or.jp/seminar/page-41637/exam_xaminationquestion/",
@@ -1483,7 +1815,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：一般社団法人日本旅行業協会 令和○年度総合旅行業務取扱管理者試験 科目 問○。解説は過去問AIの独自作成。",
     remainingWork: ["国内旅行実務（各年32問）・海外旅行実務（各年52問）の転記・解説"],
 },
-{
+  {
     slug: "shiho-tanto", examCode: "shiho-tanto", shortName: "司法試験（短答）", fullName: "司法試験 短答式（憲法・民法・刑法）",
     domain: "legal", administrator: "法務省",
     officialQuestionsUrl: "https://www.moj.go.jp/jinji/shihoushiken/jinji08_00295.html",
@@ -1493,7 +1825,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：法務省 令和○年司法試験 短答式試験問題（科目）第○問・同正解及び配点。解説は過去問AIが独自作成。",
     remainingWork: ["部分点（2問正解で1点等）の表示方針の決定"],
 },
-{
+  {
     slug: "yobi-tanto", examCode: "yobi-tanto", shortName: "予備試験（短答）", fullName: "司法試験予備試験 短答式（法律基本科目）",
     domain: "legal", administrator: "法務省",
     officialQuestionsUrl: "https://www.moj.go.jp/jinji/shihoushiken/jinji07_00317.html",
@@ -1503,7 +1835,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：法務省 令和○年司法試験予備試験 短答式試験問題（科目）第○問・同正解及び配点。解説は過去問AIが独自作成。",
     remainingWork: ["一般教養科目（各年44問中20問選択）の収録可否"],
 },
-{
+  {
     slug: "sokuryoshiho", examCode: "sokuryoshiho", shortName: "測量士補", fullName: "測量士補",
     domain: "construction", administrator: "国土地理院",
     officialQuestionsUrl: "https://www.gsi.go.jp/LAW/SHIKEN/past.html",
@@ -1512,7 +1844,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：国土地理院 令和○年測量士補試験 No.○。解説は過去問AIの独自作成。",
     remainingWork: ["No.21の地形図（電子地形図25000）の測量法上の複製承認要否の確認"],
 },
-{
+  {
     slug: "caremanager", examCode: "caremanager", shortName: "ケアマネ", fullName: "介護支援専門員実務研修受講試験",
     domain: "welfare", administrator: "都道府県（全国共通問題）",
     officialQuestionsUrl: "https://www.fukushi.metro.tokyo.lg.jp/kourei/shikaku/r7_seitoukijyun",
@@ -1522,33 +1854,35 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：第○回介護支援専門員実務研修受講試験 問題○（○○掲載）",
     remainingWork: ["第29回（2026-10-11）は正答公表（合格発表 2026-11-24 予定）後に追加", "法改正・報酬改定で成立しなくなった問題の失効管理"],
 },
-{"slug":"chintai","examCode":"chintai","shortName":"賃貸不動産経営管理士","fullName":"賃貸不動産経営管理士","domain":"real-estate","administrator":"賃貸不動産経営管理士協議会","officialQuestionsUrl":"https://www.chintaikanrishi.jp/exam/past","officialReuseTermsUrl":"https://www.chintaikanrishi.jp/exam/past","status":"live","reuseSummary":"2024・2025年度100原問を保存。通常演習99問。2025年問9は公式全員正解のため通常採点対象外です。","remainingWork":[]},
-{"slug":"kyusui","examCode":"kyusui","shortName":"給水装置工事主任技術者","fullName":"給水装置工事主任技術者","domain":"construction","administrator":"給水工事技術振興財団","officialQuestionsUrl":"https://www.kyuukou.or.jp/shiken/jyuken-kakomon.html","officialReuseTermsUrl":"https://www.kyuukou.or.jp/shiken/jyuken-kakomon.html","status":"live","reuseSummary":"2025・2026年度120原問を保存。通常演習119問。2025年問18は公式全員正解のため通常採点対象外です。","remainingWork":[]},
-{"slug":"biru-kan","examCode":"biru-kan","shortName":"建築物環境衛生管理技術者","fullName":"建築物環境衛生管理技術者","domain":"construction","administrator":"日本建築衛生管理教育センター","officialQuestionsUrl":"https://www.jahmec.or.jp/kokka/","officialReuseTermsUrl":"https://www.jahmec.or.jp/kokka/","status":"live","reuseSummary":"第54・55回（2024・2025年度）360問。公式問題・公式正答・全肢解説・必要図を収録しています。","remainingWork":[]},
-{"slug":"gijutsushi1-kikai","examCode":"gijutsushi1-kikai","shortName":"技術士第一次試験・機械部門","fullName":"技術士第一次試験・機械部門","domain":"construction","administrator":"日本技術士会","officialQuestionsUrl":"https://www.engineer.or.jp/c_categories/index02021.html","officialReuseTermsUrl":"https://www.engineer.or.jp/c_categories/index02021.html","status":"live","reuseSummary":"2024・2025年度の基礎・適性・機械専門160原問を保存。公式全員正解の専門2問は通常採点対象外、158問を演習できます。","remainingWork":[]},
-{"slug":"hoshasen-1","examCode":"hoshasen-1","shortName":"第一種放射線取扱主任者","fullName":"第一種放射線取扱主任者","domain":"safety","administrator":"原子力安全技術センター","officialQuestionsUrl":"https://www.nustec.or.jp/syunin/","officialReuseTermsUrl":"https://www.nustec.or.jp/syunin/","status":"live","reuseSummary":"2025・2026年の受入済み原問を解答欄単位で演習。複数の解答欄を含む原問は全文を保持して欄ごとに表示します。公式全員正解1欄は通常採点対象外。","remainingWork":[]},
-{"slug":"hoshasen-2","examCode":"hoshasen-2","shortName":"第二種放射線取扱主任者","fullName":"第二種放射線取扱主任者","domain":"safety","administrator":"原子力安全技術センター","officialQuestionsUrl":"https://www.nustec.or.jp/syunin/","officialReuseTermsUrl":"https://www.nustec.or.jp/syunin/","status":"live","reuseSummary":"2025・2026年の受入済み原問を解答欄単位で演習。根拠不足の2026年化学問9は保留のまま公開しません。","remainingWork":[]},
-{"slug":"khk-kikai-kou","examCode":"khk-kikai-kou","shortName":"高圧ガス製造保安責任者 甲種機械","fullName":"高圧ガス製造保安責任者 甲種機械","domain":"safety","administrator":"高圧ガス保安協会","officialQuestionsUrl":"https://www.khk.or.jp/qualification/","officialReuseTermsUrl":"https://www.khk.or.jp/qualification/","status":"live","reuseSummary":"2024・2025年度80問。法令・保安管理技術は選択式、学識10問は公式解答例との手動照合です。記述答案は自動採点しません。","remainingWork":[]},
-{"slug":"khk-kikai-otsu","examCode":"khk-kikai-otsu","shortName":"高圧ガス製造保安責任者 乙種機械","fullName":"高圧ガス製造保安責任者 乙種機械","domain":"safety","administrator":"高圧ガス保安協会","officialQuestionsUrl":"https://www.khk.or.jp/qualification/","officialReuseTermsUrl":"https://www.khk.or.jp/qualification/","status":"live","reuseSummary":"2024・2025年度100問。公式正答・全肢解説・必要図を収録。","remainingWork":[]},
-{"slug":"energy-kanri","examCode":"energy-kanri","shortName":"エネルギー管理士","fullName":"エネルギー管理士","domain":"electrical","administrator":"省エネルギーセンター","officialQuestionsUrl":"https://www.eccj.or.jp/mgr1/test_past/","officialReuseTermsUrl":"https://www.eccj.or.jp/mgr1/test_past/","status":"live","reuseSummary":"第47・48回62原問・842公式解答欄を保存し、837設問を演習できます。順序不問4ペアは各1設問、全員正解1欄は通常採点対象外。","remainingWork":[]},
-{"slug":"reform-mgr","examCode":"reform-mgr","shortName":"マンションリフォームマネジャー","fullName":"マンションリフォームマネジャー","domain":"construction","administrator":"住宅リフォーム・紛争処理支援センター","officialQuestionsUrl":"https://www.chord.or.jp/","officialReuseTermsUrl":"https://www.chord.or.jp/","status":"live","reuseSummary":"2025・2026年度の学科100問を収録。設計製図試験は対象外。","remainingWork":[]},
-{"slug":"shohi-sodan","examCode":"shohi-sodan","shortName":"消費生活相談員","fullName":"消費生活相談員","domain":"legal","administrator":"国民生活センター","officialQuestionsUrl":"https://www.kokusen.go.jp/","officialReuseTermsUrl":"https://www.kokusen.go.jp/","status":"live","reuseSummary":"2024・2025年度のマークシート320小問を収録。原問番号・小問番号は出典に表示します。","remainingWork":[]},
-{"slug":"biyoshi","examCode":"biyoshi","shortName":"美容師","fullName":"美容師","domain":"personal-services","administrator":"理容師美容師試験研修センター","officialQuestionsUrl":"https://www.rbc.or.jp/exam/past_question/","officialReuseTermsUrl":"https://www.rbc.or.jp/exam/past_question/","status":"live","reuseSummary":"第53・54回各53問、106問を演習できます。図等の確認待ち4原問は保留のまま。","remainingWork":[]},
-{"slug":"kikenbutsu-otsu1","examCode":"kikenbutsu-otsu1","shortName":"危険物取扱者 乙種第1類","fullName":"危険物取扱者 乙種第1類","domain":"safety","administrator":"消防試験研究センター","officialQuestionsUrl":"https://www.shoubo-shiken.or.jp/","officialReuseTermsUrl":"https://www.shoubo-shiken.or.jp/","status":"live","reuseSummary":"公式公開の抜粋10問のみ。特定回の全問や2回分の全問を収録したものではありません。","remainingWork":[]},
-{"slug":"kikenbutsu-otsu2","examCode":"kikenbutsu-otsu2","shortName":"危険物取扱者 乙種第2類","fullName":"危険物取扱者 乙種第2類","domain":"safety","administrator":"消防試験研究センター","officialQuestionsUrl":"https://www.shoubo-shiken.or.jp/","officialReuseTermsUrl":"https://www.shoubo-shiken.or.jp/","status":"live","reuseSummary":"公式公開の抜粋10問のみ。特定回の全問や2回分の全問を収録したものではありません。","remainingWork":[]},
-{"slug":"kikenbutsu-otsu6","examCode":"kikenbutsu-otsu6","shortName":"危険物取扱者 乙種第6類","fullName":"危険物取扱者 乙種第6類","domain":"safety","administrator":"消防試験研究センター","officialQuestionsUrl":"https://www.shoubo-shiken.or.jp/","officialReuseTermsUrl":"https://www.shoubo-shiken.or.jp/","status":"live","reuseSummary":"公式公開の抜粋10問のみ。特定回の全問や2回分の全問を収録したものではありません。","remainingWork":[]},
-{"slug": "kikenbutsu-otsu4", "examCode": "kikenbutsu-otsu4", "shortName": "危険物取扱者 乙種第4類", "fullName": "危険物取扱者 乙種第4類", "domain": "safety", "administrator": "一般財団法人消防試験研究センター", "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html", "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html", "status": "live", "stagingDataPath": "data/questions/kikenbutsu-otsu4", "reuseSummary": "2026年6月公表版の抜粋35問。公式問題画像・正答と全肢解説を収録。", "remainingWork": []},
-{"slug": "unko-kanrisha-kamotsu", "examCode": "unko-kanrisha-kamotsu", "shortName": "運行管理者（貨物）", "fullName": "運行管理者（貨物）", "domain": "safety", "administrator": "公益財団法人運行管理者試験センター", "officialQuestionsUrl": "https://www.unkan.or.jp/past.html", "officialReuseTermsUrl": "https://www.unkan.or.jp/past.html", "status": "live", "stagingDataPath": "data/questions/unko-kanrisha-kamotsu", "reuseSummary": "2023・2024年度CBT出題例60原問・86解答単位。公式問題画像・正答と全肢解説を収録。", "remainingWork": []},
-{"slug": "shobo-setsubishi-otsu6", "examCode": "shobo-setsubishi-otsu6", "shortName": "消防設備士 乙種第6類", "fullName": "消防設備士 乙種第6類", "domain": "safety", "administrator": "一般財団法人消防試験研究センター", "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", "status": "live", "stagingDataPath": "data/questions/shobo-setsubishi-otsu6", "reuseSummary": "2026年6月公表版の筆記14問・実技1大問（計16解答単位）。公式問題画像・正答と独自解説を収録。記述は解答例で自己確認できます。", "remainingWork": []},
-{"slug": "shobo-setsubishi-kou4", "examCode": "shobo-setsubishi-kou4", "shortName": "消防設備士 甲種第4類", "fullName": "消防設備士 甲種第4類", "domain": "safety", "administrator": "一般財団法人消防試験研究センター", "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", "status": "live", "stagingDataPath": "data/questions/shobo-setsubishi-kou4", "reuseSummary": "2026年6月公表版の筆記13問・実技2問。公式問題画像・正答と独自解説を収録。記述は解答例で自己確認できます。", "remainingWork": []},
-{"slug": "kikenbutsu-hei", "examCode": "kikenbutsu-hei", "shortName": "危険物取扱者 丙種", "fullName": "危険物取扱者 丙種", "domain": "safety", "administrator": "一般財団法人消防試験研究センター", "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html", "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html", "status": "live", "stagingDataPath": "data/questions/kikenbutsu-hei", "reuseSummary": "2026年6月公表版の抜粋25問。公式問題画像・正答と全肢解説を収録。", "remainingWork": []},
-{"slug": "kikenbutsu-kou", "examCode": "kikenbutsu-kou", "shortName": "危険物取扱者 甲種", "fullName": "危険物取扱者 甲種", "domain": "safety", "administrator": "一般財団法人消防試験研究センター", "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html", "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html", "status": "live", "stagingDataPath": "data/questions/kikenbutsu-kou", "reuseSummary": "2026年6月公表版の抜粋45問。公式問題画像・正答と全肢解説を収録。", "remainingWork": []},
-{"slug": "shobo-setsubishi-kou1", "examCode": "shobo-setsubishi-kou1", "shortName": "消防設備士 甲種第1類", "fullName": "消防設備士 甲種第1類", "domain": "safety", "administrator": "一般財団法人消防試験研究センター", "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", "status": "live", "stagingDataPath": "data/questions/shobo-setsubishi-kou1", "reuseSummary": "2026年6月公表版の筆記19問・実技2大問（計26解答単位）。公式問題画像・正答と独自解説を収録。記述は解答例で自己確認できます。", "remainingWork": []},
-{"slug": "unko-kanrisha-ryokaku", "examCode": "unko-kanrisha-ryokaku", "shortName": "運行管理者（旅客）", "fullName": "運行管理者（旅客）", "domain": "safety", "administrator": "公益財団法人運行管理者試験センター", "officialQuestionsUrl": "https://www.unkan.or.jp/past.html", "officialReuseTermsUrl": "https://www.unkan.or.jp/past.html", "status": "live", "stagingDataPath": "data/questions/unko-kanrisha-ryokaku", "reuseSummary": "2023・2024年度CBT出題例60原問・92解答単位。公式問題画像・正答と全肢解説を収録。", "remainingWork": []}
+  {"slug":"chintai","examCode":"chintai","shortName":"賃貸不動産経営管理士","fullName":"賃貸不動産経営管理士","domain":"real-estate","administrator":"賃貸不動産経営管理士協議会","officialQuestionsUrl":"https://www.chintaikanrishi.jp/exam/past","officialReuseTermsUrl":"https://www.chintaikanrishi.jp/exam/past","status":"live","reuseSummary":"2024・2025年度100原問を保存。通常演習99問。2025年問9は公式全員正解のため通常採点対象外です。","remainingWork":[]},
+  {"slug":"kyusui","examCode":"kyusui","shortName":"給水装置工事主任技術者","fullName":"給水装置工事主任技術者","domain":"construction","administrator":"給水工事技術振興財団","officialQuestionsUrl":"https://www.kyuukou.or.jp/shiken/jyuken-kakomon.html","officialReuseTermsUrl":"https://www.kyuukou.or.jp/shiken/jyuken-kakomon.html","status":"live","reuseSummary":"2025・2026年度120原問を保存。通常演習119問。2025年問18は公式全員正解のため通常採点対象外です。","remainingWork":[]},
+  {"slug":"biru-kan","examCode":"biru-kan","shortName":"建築物環境衛生管理技術者","fullName":"建築物環境衛生管理技術者","domain":"construction","administrator":"日本建築衛生管理教育センター","officialQuestionsUrl":"https://www.jahmec.or.jp/kokka/","officialReuseTermsUrl":"https://www.jahmec.or.jp/kokka/","status":"live","reuseSummary":"第54〜56回（2024〜2026年度）540問。公式問題・公式正答・全肢解説・必要図を収録しています。","remainingWork":[]},
+  {"slug":"gijutsushi1-kikai","examCode":"gijutsushi1-kikai","shortName":"技術士第一次試験・機械部門","fullName":"技術士第一次試験・機械部門","domain":"construction","administrator":"日本技術士会","officialQuestionsUrl":"https://www.engineer.or.jp/c_categories/index02021.html","officialReuseTermsUrl":"https://www.engineer.or.jp/c_categories/index02021.html","status":"live","reuseSummary":"2024・2025年度の基礎・適性・機械専門160原問を保存。公式全員正解の専門2問は通常採点対象外、158問を演習できます。","remainingWork":[]},
+  {"slug":"hoshasen-1","examCode":"hoshasen-1","shortName":"第一種放射線取扱主任者","fullName":"第一種放射線取扱主任者","domain":"safety","administrator":"原子力安全技術センター","officialQuestionsUrl":"https://www.nustec.or.jp/syunin/","officialReuseTermsUrl":"https://www.nustec.or.jp/syunin/","status":"live","reuseSummary":"2025・2026年の受入済み原問を解答欄単位で演習。複数の解答欄を含む原問は全文を保持して欄ごとに表示します。公式全員正解1欄は通常採点対象外。","remainingWork":[]},
+  {"slug":"hoshasen-2","examCode":"hoshasen-2","shortName":"第二種放射線取扱主任者","fullName":"第二種放射線取扱主任者","domain":"safety","administrator":"原子力安全技術センター","officialQuestionsUrl":"https://www.nustec.or.jp/syunin/","officialReuseTermsUrl":"https://www.nustec.or.jp/syunin/","status":"live","reuseSummary":"2025・2026年の受入済み原問を解答欄単位で演習。根拠不足の2026年化学問9は保留のまま公開しません。","remainingWork":[]},
+  {"slug":"khk-kikai-kou","examCode":"khk-kikai-kou","shortName":"高圧ガス製造保安責任者 甲種機械","fullName":"高圧ガス製造保安責任者 甲種機械","domain":"safety","administrator":"高圧ガス保安協会","officialQuestionsUrl":"https://www.khk.or.jp/qualification/","officialReuseTermsUrl":"https://www.khk.or.jp/qualification/","status":"live","reuseSummary":"2024・2025年度80問。法令・保安管理技術は選択式、学識10問は公式解答例との手動照合です。記述答案は自動採点しません。","remainingWork":[]},
+  {"slug":"khk-kikai-otsu","examCode":"khk-kikai-otsu","shortName":"高圧ガス製造保安責任者 乙種機械","fullName":"高圧ガス製造保安責任者 乙種機械","domain":"safety","administrator":"高圧ガス保安協会","officialQuestionsUrl":"https://www.khk.or.jp/qualification/","officialReuseTermsUrl":"https://www.khk.or.jp/qualification/","status":"live","reuseSummary":"2024・2025年度100問。公式正答・全肢解説・必要図を収録。","remainingWork":[]},
+  {"slug":"energy-kanri","examCode":"energy-kanri","shortName":"エネルギー管理士","fullName":"エネルギー管理士","domain":"electrical","administrator":"省エネルギーセンター","officialQuestionsUrl":"https://www.eccj.or.jp/mgr1/test_past/","officialReuseTermsUrl":"https://www.eccj.or.jp/mgr1/test_past/","status":"live","reuseSummary":"第47・48回62原問・842公式解答欄を保存し、837設問を演習できます。順序不問4ペアは各1設問、全員正解1欄は通常採点対象外。","remainingWork":[]},
+  {"slug":"reform-mgr","examCode":"reform-mgr","shortName":"マンションリフォームマネジャー","fullName":"マンションリフォームマネジャー","domain":"construction","administrator":"住宅リフォーム・紛争処理支援センター","officialQuestionsUrl":"https://www.chord.or.jp/","officialReuseTermsUrl":"https://www.chord.or.jp/","status":"live","reuseSummary":"2025・2026年度の学科100問を収録。設計製図試験は対象外。","remainingWork":[]},
+  {"slug":"shohi-sodan","examCode":"shohi-sodan","shortName":"消費生活相談員","fullName":"消費生活相談員","domain":"legal","administrator":"国民生活センター","officialQuestionsUrl":"https://www.kokusen.go.jp/","officialReuseTermsUrl":"https://www.kokusen.go.jp/","status":"live","reuseSummary":"2024・2025年度のマークシート320小問を収録。原問番号・小問番号は出典に表示します。","remainingWork":[]},
+  {"slug":"biyoshi","examCode":"biyoshi","shortName":"美容師","fullName":"美容師","domain":"personal-services","administrator":"理容師美容師試験研修センター","officialQuestionsUrl":"https://www.rbc.or.jp/exam/past_question/","officialReuseTermsUrl":"https://www.rbc.or.jp/exam/past_question/","status":"live","reuseSummary":"第53・54回各53問、106問を演習できます。図等の確認待ち4原問は保留のまま。","remainingWork":[]},
+  {"slug":"kikenbutsu-otsu1","examCode":"kikenbutsu-otsu1","shortName":"危険物取扱者 乙種第1類","fullName":"危険物取扱者 乙種第1類","domain":"safety","administrator":"消防試験研究センター","officialQuestionsUrl":"https://www.shoubo-shiken.or.jp/","officialReuseTermsUrl":"https://www.shoubo-shiken.or.jp/","status":"live","reuseSummary":"公式公開の抜粋10問のみ。特定回の全問や2回分の全問を収録したものではありません。","remainingWork":[]},
+  {"slug":"kikenbutsu-otsu2","examCode":"kikenbutsu-otsu2","shortName":"危険物取扱者 乙種第2類","fullName":"危険物取扱者 乙種第2類","domain":"safety","administrator":"消防試験研究センター","officialQuestionsUrl":"https://www.shoubo-shiken.or.jp/","officialReuseTermsUrl":"https://www.shoubo-shiken.or.jp/","status":"live","reuseSummary":"公式公開の抜粋10問のみ。特定回の全問や2回分の全問を収録したものではありません。","remainingWork":[]},
+  {"slug":"kikenbutsu-otsu6","examCode":"kikenbutsu-otsu6","shortName":"危険物取扱者 乙種第6類","fullName":"危険物取扱者 乙種第6類","domain":"safety","administrator":"消防試験研究センター","officialQuestionsUrl":"https://www.shoubo-shiken.or.jp/","officialReuseTermsUrl":"https://www.shoubo-shiken.or.jp/","status":"live","reuseSummary":"公式公開の抜粋10問のみ。特定回の全問や2回分の全問を収録したものではありません。","remainingWork":[]},
+  {"slug": "kikenbutsu-otsu4", "examCode": "kikenbutsu-otsu4", "shortName": "危険物取扱者 乙種第4類", "fullName": "危険物取扱者 乙種第4類", "domain": "safety", "administrator": "一般財団法人消防試験研究センター", "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html", "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html", "status": "live", "stagingDataPath": "data/questions/kikenbutsu-otsu4", "reuseSummary": "2026年6月公表版の抜粋35問。公式問題画像・正答と全肢解説を収録。", "remainingWork": []},
+  {"slug": "unko-kanrisha-kamotsu", "examCode": "unko-kanrisha-kamotsu", "shortName": "運行管理者（貨物）", "fullName": "運行管理者（貨物）", "domain": "safety", "administrator": "公益財団法人運行管理者試験センター", "officialQuestionsUrl": "https://www.unkan.or.jp/past.html", "officialReuseTermsUrl": "https://www.unkan.or.jp/past.html", "status": "live", "stagingDataPath": "data/questions/unko-kanrisha-kamotsu", "reuseSummary": "2023・2024年度CBT出題例60原問・86解答単位。公式問題画像・正答と全肢解説を収録。", "remainingWork": []},
+  {"slug": "shobo-setsubishi-otsu6", "examCode": "shobo-setsubishi-otsu6", "shortName": "消防設備士 乙種第6類", "fullName": "消防設備士 乙種第6類", "domain": "safety", "administrator": "一般財団法人消防試験研究センター", "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", "status": "live", "stagingDataPath": "data/questions/shobo-setsubishi-otsu6", "reuseSummary": "2026年6月公表版の筆記14問・実技1大問（計16解答単位）。公式問題画像・正答と独自解説を収録。記述は解答例で自己確認できます。", "remainingWork": []},
+  {"slug": "shobo-setsubishi-kou4", "examCode": "shobo-setsubishi-kou4", "shortName": "消防設備士 甲種第4類", "fullName": "消防設備士 甲種第4類", "domain": "safety", "administrator": "一般財団法人消防試験研究センター", "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", "status": "live", "stagingDataPath": "data/questions/shobo-setsubishi-kou4", "reuseSummary": "2026年6月公表版の筆記13問・実技2問。公式問題画像・正答と独自解説を収録。記述は解答例で自己確認できます。", "remainingWork": []},
+  {"slug": "kikenbutsu-hei", "examCode": "kikenbutsu-hei", "shortName": "危険物取扱者 丙種", "fullName": "危険物取扱者 丙種", "domain": "safety", "administrator": "一般財団法人消防試験研究センター", "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html", "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html", "status": "live", "stagingDataPath": "data/questions/kikenbutsu-hei", "reuseSummary": "2026年6月公表版の抜粋25問。公式問題画像・正答と全肢解説を収録。", "remainingWork": []},
+  {"slug": "kikenbutsu-kou", "examCode": "kikenbutsu-kou", "shortName": "危険物取扱者 甲種", "fullName": "危険物取扱者 甲種", "domain": "safety", "administrator": "一般財団法人消防試験研究センター", "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html", "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html", "status": "live", "stagingDataPath": "data/questions/kikenbutsu-kou", "reuseSummary": "2026年6月公表版の抜粋45問。公式問題画像・正答と全肢解説を収録。", "remainingWork": []},
+  {"slug": "shobo-setsubishi-kou1", "examCode": "shobo-setsubishi-kou1", "shortName": "消防設備士 甲種第1類", "fullName": "消防設備士 甲種第1類", "domain": "safety", "administrator": "一般財団法人消防試験研究センター", "officialQuestionsUrl": "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", "officialReuseTermsUrl": "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", "status": "live", "stagingDataPath": "data/questions/shobo-setsubishi-kou1", "reuseSummary": "2026年6月公表版の筆記19問・実技2大問（計26解答単位）。公式問題画像・正答と独自解説を収録。記述は解答例で自己確認できます。", "remainingWork": []},
+  {"slug": "unko-kanrisha-ryokaku", "examCode": "unko-kanrisha-ryokaku", "shortName": "運行管理者（旅客）", "fullName": "運行管理者（旅客）", "domain": "safety", "administrator": "公益財団法人運行管理者試験センター", "officialQuestionsUrl": "https://www.unkan.or.jp/past.html", "officialReuseTermsUrl": "https://www.unkan.or.jp/past.html", "status": "live", "stagingDataPath": "data/questions/unko-kanrisha-ryokaku", "reuseSummary": "2023・2024年度CBT出題例60原問・92解答単位。公式問題画像・正答と全肢解説を収録。", "remainingWork": []},
+  {"slug": "diecast2", "examCode": "diecast2", "shortName": "ダイカスト技能士 2級", "fullName": "技能検定 2級ダイカスト（ホットチャンバダイカスト作業）学科試験", "domain": "safety", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/list02.html?v1=%E4%BB%A4%E5%92%8C7%E5%B9%B4%E5%BA%A6&v2=%E5%89%8D%E6%9C%9F&v3=B34&v4=%E3%83%80%E3%82%A4%E3%82%AB%E3%82%B9%E3%83%88%EF%BC%88%E3%83%9B%E3%83%83%E3%83%88%E3%83%81%E3%83%A3%E3%83%B3%E3%83%90%E3%83%80%E3%82%A4%E3%82%AB%E3%82%B9%E3%83%88%E4%BD%9C%E6%A5%AD%EF%BC%89", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2025年度の学科50問を収録。公式問題・正答と全肢の独自解説で学べます。", "attributionTemplate": "出典：中央職業能力開発協会 令和7年度前期 2級ダイカスト（ホットチャンバダイカスト作業）学科試験。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "tetsudo-sharyo2", "examCode": "tetsudo-sharyo2", "shortName": "鉄道車両製造・整備技能士 2級", "fullName": "技能検定 2級鉄道車両製造・整備（機器ぎ装作業）学科試験", "domain": "safety", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/list02.html?v1=%E4%BB%A4%E5%92%8C7%E5%B9%B4%E5%BA%A6&v2=%E5%89%8D%E6%9C%9F&v3=B43&v4=%E9%89%84%E9%81%93%E8%BB%8A%E4%B8%A1%E8%A3%BD%E9%80%A0%E3%83%BB%E6%95%B4%E5%82%99%EF%BC%88%E6%A9%9F%E5%99%A8%E3%81%8E%E8%A3%85%E4%BD%9C%E6%A5%AD%EF%BC%89", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2025年度の学科50問を収録。公式問題・正答と全肢の独自解説で学べます。", "attributionTemplate": "出典：中央職業能力開発協会 令和7年度前期 2級鉄道車両製造・整備（機器ぎ装作業）学科試験。解説は過去問AIの独自作成。", "remainingWork": []}
 ] as const;
 
 export function getQualificationByExamCode(exam: ExamCode): QualificationCatalogEntry | undefined {
-  return QUALIFICATION_CATALOG.find((item) => item.examCode === exam);
+  return QUALIFICATION_CATALOG.find((item) => item.examCode === canonicalExamCode(exam));
 }
 
 /** Public routes and question registries must call this gate before exposing external data. */
