@@ -39,6 +39,7 @@ import { YOGASHI1_QUESTIONS } from "./yogashi1";
 import { BLOCK_KENCHIKU3_QUESTIONS } from "./block-kenchiku3";
 import { BLOCK_KENCHIKU1_QUESTIONS } from "./block-kenchiku1";
 import { SHUZO1_QUESTIONS } from "./shuzo1";
+import { FRAISE1_QUESTIONS } from "./fraise1";
 import { SHASHUTSU2_QUESTIONS } from "./shashutsu2";
 import { KIKAI_KENSA3_QUESTIONS } from "./kikai-kensa3";
 import { KAGAKU_BUNSEKI2_QUESTIONS } from "./kagaku-bunseki2";
@@ -259,6 +260,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("block-kenchiku3") ? { "block-kenchiku3": BLOCK_KENCHIKU3_QUESTIONS } : {}),
 ...(isExamPublished("block-kenchiku1") ? { "block-kenchiku1": BLOCK_KENCHIKU1_QUESTIONS } : {}),
 ...(isExamPublished("shuzo1") ? { "shuzo1": SHUZO1_QUESTIONS } : {}),
+...(isExamPublished("fraise1") ? { "fraise1": FRAISE1_QUESTIONS } : {}),
 ...(isExamPublished("shashutsu2") ? { "shashutsu2": SHASHUTSU2_QUESTIONS } : {}),
 ...(isExamPublished("kikai-kensa3") ? { "kikai-kensa3": KIKAI_KENSA3_QUESTIONS } : {}),
 ...(isExamPublished("kagaku-bunseki2") ? { "kagaku-bunseki2": KAGAKU_BUNSEKI2_QUESTIONS } : {}),
