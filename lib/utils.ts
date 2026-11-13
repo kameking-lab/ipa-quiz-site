@@ -30,6 +30,7 @@ export const EXAM_LABELS: Record<string, string> = {
   "sakan3": "左官技能士 3級",
   "sakan2": "左官技能士 2級",
   "sakan1": "左官技能士 1級",
+  "zoen-gino1": "造園技能士 1級",
   "bousui-urethane2": "防水施工技能士 2級（ウレタン）",
   "bousui-frp2": "防水施工技能士 2級（FRP防水工事作業）",
   "pan-seizo1": "パン製造技能士 1級",

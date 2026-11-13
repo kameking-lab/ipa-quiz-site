@@ -15,6 +15,7 @@ import type { ChoiceKey } from "@/lib/questions/types";
 const editions = [
   { code: "sakan2", year: 2023, season: "early", a: "××××○ ×○×○× ××××× ○○×○× ○○×○×", b: "ニニニハハ ハロロハイ ニニイイロ ロロロニニ ハハイハニ", figures: [23,27,47,48] },
   { code: "sakan3", year: 2023, season: "early", a: "○○×○○ ○×○×○ ××××× ○○○○○ ○×○○○ ○○×○×", b: "", figures: [2,28] },
+  { code: "zoen-gino1", year: 2024, season: "early", a: "×○○×○ ○×○×○ ××○×○ ×○○×○ ××○○○", b: "ロハニハニ ロロニロロ イロニニイ イハイハロ イロニロイ", figures: [] },
 ] as const;
 
 for (const { code, year, season, a, b, figures } of editions) {
