@@ -25,6 +25,7 @@ import { SAKAN3_QUESTIONS } from "./sakan3";
 import { SAKAN2_QUESTIONS } from "./sakan2";
 import { BOUSUI_URETHANE2_QUESTIONS } from "./bousui-urethane2";
 import { BOUSUI_FRP2_QUESTIONS } from "./bousui-frp2";
+import { PAN_SEIZO1_QUESTIONS } from "./pan-seizo1";
 import { NAISO_CARPET2_QUESTIONS } from "./naiso-carpet2";
 import { NAISO_PLASTIC1_QUESTIONS } from "./naiso-plastic1";
 import { NAISO_PLASTIC2_QUESTIONS } from "./naiso-plastic2";
@@ -455,6 +456,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("sakan2") ? { "sakan2": SAKAN2_QUESTIONS } : {}),
 ...(isExamPublished("bousui-urethane2") ? { "bousui-urethane2": BOUSUI_URETHANE2_QUESTIONS } : {}),
 ...(isExamPublished("bousui-frp2") ? { "bousui-frp2": BOUSUI_FRP2_QUESTIONS } : {}),
+...(isExamPublished("pan-seizo1") ? { "pan-seizo1": PAN_SEIZO1_QUESTIONS } : {}),
 ...(isExamPublished("naiso-carpet2") ? { "naiso-carpet2": NAISO_CARPET2_QUESTIONS } : {}),
 ...(isExamPublished("naiso-plastic1") ? { "naiso-plastic1": NAISO_PLASTIC1_QUESTIONS } : {}),
 ...(isExamPublished("naiso-plastic2") ? { "naiso-plastic2": NAISO_PLASTIC2_QUESTIONS } : {}),
