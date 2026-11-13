@@ -82,7 +82,7 @@ export function HomeQualificationFinder({ domains, directoryHref = "#home-direct
       <label htmlFor="qualification-search" className="sr-only">資格名・略称で検索</label>
       <div className="study-search-row"><div className="study-search">
         <Search aria-hidden="true" className="h-5 w-5 shrink-0" />
-        <input ref={searchRef} id="qualification-search" type="search" value={query} aria-describedby="qualification-result-count" aria-controls="qualification-results" onChange={(event) => setQuery(event.target.value)} placeholder="資格名・略称（例：宅建、FP3級、電験三種）" />
+        <input ref={searchRef} id="qualification-search" type="search" value={query} aria-describedby="qualification-result-count" aria-controls="qualification-results" onChange={(event) => setQuery(event.target.value)} placeholder={homeDirectory ? "資格名・略称で検索" : "資格名・略称（例：宅建、FP3級、電験三種）"} />
         {query && <button type="button" aria-label="検索をクリア" onClick={() => clearSearch()}><X aria-hidden="true" className="h-4 w-4" /></button>}
       </div>
       {homeDirectory && <select aria-label="資格の分野で絞り込む" value={domainId ?? ""} onChange={event => setDomainId(domains.find(domain => domain.id === event.target.value)?.id ?? null)}>
@@ -96,7 +96,7 @@ export function HomeQualificationFinder({ domains, directoryHref = "#home-direct
       <p id="qualification-result-count" role="status" aria-live="polite" className="study-results-label">{browsing ? homeDirectory ? "ピックアップ" : "まずは、ここから" : `${matching.length}資格・区分`}</p>
       {visible.length > 0 ? <ul id="qualification-results" className={`study-results${homeDirectory && browsing ? " study-featured-results" : ""}`}>
         {visible.map((item) => <li key={item.key}><a href={item.href} className={`study-qualification study-card-${item.domainId}`} onClick={() => rememberFilters(query, domainId)}>
-          <span className="min-w-0"><span className="study-qualification-name">{item.name}</span><span className="study-qualification-meta">{item.questionCount.toLocaleString("ja-JP")}問 · {item.periodLabel}</span></span>
+          <span className="min-w-0"><span className="study-qualification-name">{item.name}</span><span className="study-qualification-meta">{item.questionCount.toLocaleString("ja-JP")}問<span className="study-qualification-period"> · {item.periodLabel}</span></span></span>
           {/* The qualification's own study-room chihuahua (never the old headband atlas poses). */}
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img aria-hidden="true" alt="" className="study-mascot study-card-mascot" src={qualificationStudyArt(item.key)} width={256} height={256} loading="lazy" decoding="async" />

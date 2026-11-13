@@ -5,6 +5,7 @@ import { ArrowDown, ArrowRight } from "lucide-react";
 import { HomeQualificationFinder } from "./HomeQualificationFinder";
 import { HomeResume } from "./HomeResume";
 import { HomeDirectory } from "./HomeDirectory";
+import { buttonVariants } from "@/components/ui/button";
 
 export function HomeHero({ domains, image }: { domains: readonly HomeDirectoryDomain[]; image?: ReactNode }) {
   const questions = domains.reduce((sum, domain) => sum + domain.totalQuestions, 0);
@@ -16,7 +17,7 @@ export function HomeHero({ domains, image }: { domains: readonly HomeDirectoryDo
         <p className="study-eyebrow">チワワと、こつこつ。資格の学びを。</p>
         <h1>今日も、ひと問ずつ。</h1>
         <div className="study-welcome-actions">
-          <Link href="/quiz?mode=random&exam=ip" className="study-primary w-full sm:w-auto">ログインなしで10問を始める<ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>
+          <Link href="/quiz?mode=random&exam=ip" className={buttonVariants({ className: "study-primary w-full sm:w-auto", size: "lg" })}>ログインなしで10問を始める<ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>
         </div>
       </div>
       {image && <div className="study-welcome-art">{image}</div>}
@@ -24,11 +25,11 @@ export function HomeHero({ domains, image }: { domains: readonly HomeDirectoryDo
     <dl role="group" aria-label="公開収録数" className="flex flex-wrap gap-x-6 gap-y-1 text-sm text-muted-foreground">
       <div className="flex items-baseline gap-1.5">
         <dt>公開中の問題数</dt>
-        <dd className="font-semibold tabular-nums text-foreground">{questions.toLocaleString("ja-JP")}</dd>
+        <dd className="font-semibold tabular-nums text-[var(--study-ink)]">{questions.toLocaleString("ja-JP")}</dd>
       </div>
       <div className="flex items-baseline gap-1.5">
         <dt>資格・区分</dt>
-        <dd className="font-semibold tabular-nums text-foreground">{qualifications.toLocaleString("ja-JP")}</dd>
+        <dd className="font-semibold tabular-nums text-[var(--study-ink)]">{qualifications.toLocaleString("ja-JP")}</dd>
       </div>
     </dl>
     <HomeResume domains={domains} />
