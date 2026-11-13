@@ -8,6 +8,10 @@ import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import { formatQuestionAnswerForDisplay, choiceDisplayLabel } from "@/lib/questions/display";
 import { questionSourceEdition } from "@/lib/questions/source-label";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
+import { shuffleChoices } from "@/lib/questions/filter";
+import { questionPagePath, findQuestionByRoute } from "@/lib/seo/question-url";
+import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
+import { examContent, examCatalog } from "@/mobile/shared/catalog-source";
 import { TAIRU2_QUESTIONS as rows } from "@/data/questions/tairu2";
 import evidence from "@/data/questions/tairu2/2025-early.sources.json";
 const exam = "tairu2";
@@ -34,6 +38,14 @@ describe("tairu2 2025年度前期の公式50問", () => {
       expect(Object.keys(q.choiceExplanations!)).toEqual(Object.keys(q.choices!));
       expect(EXAM_CONFIGS[exam].sessions[0].categories).toContain(q.category);
       expect(questionSourceEdition(q)).toBe("2025年度前期");
+      expect(shuffleChoices(q)).toBe(q);
+      const [, , routeExam,yearSeason,section,qnum]=questionPagePath(q).split("/");
+      expect(findQuestionByRoute(rows,{exam:routeExam,yearSeason,section,qnum})?.id).toBe(q.id);
+      const graph=buildQuestionJsonLd({question:q,pageUrlAbs:`https://www.kakomon-ai.jp${questionPagePath(q)}`,title:exam})["@graph"][0];
+      if(!("hasPart" in graph)||!("acceptedAnswer" in graph.hasPart)||Array.isArray(graph.hasPart.acceptedAnswer))throw new Error("Missing answer");
+      expect(graph.hasPart.author.name).toBe("中央職業能力開発協会");
+      expect(graph.hasPart.acceptedAnswer.text).toContain(key[i]);
+      expect(q.sourceAttribution).toContain(getQualificationByExamCode(exam)!.fullName.replace("技能検定 ",""));
     });
     expect(["ア","イ","ウ","エ"].map(k => choiceDisplayLabel(exam,k as "ア"))).toEqual(["イ","ロ","ハ","ニ"]);
   });
@@ -48,5 +60,10 @@ describe("tairu2 2025年度前期の公式50問", () => {
       expect(q.imageUrls?.length).toBe(q.imageAltTexts?.length);
       q.imageUrls?.forEach(u=>expect(evidence.figures.some(f=>f.file===u)).toBe(true));
     });
+  });
+  it("mobileの件数・本文・リビジョンがWebと一致する",async()=>{
+    expect(await examContent(exam)).toEqual(rows);
+    const catalog=JSON.parse(readFileSync("mobile/src/generated/catalog.json","utf8"));
+    expect(catalog.exams.find((e:{code:string})=>e.code===exam)).toEqual(await examCatalog(exam));
   });
 });

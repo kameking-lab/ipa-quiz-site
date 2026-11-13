@@ -1719,6 +1719,11 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["下地", "仮設工事", "加工", "基礎工事", "墨出し", "安全衛生", "工具", "建築構造", "施工法", "材料", "測量", "白華", "目地", "積算", "色彩", "製図", "試験", "運搬", "関係法規", "養生"] }],
     seasons: ["early"], yearRange: { start: 2025, end: 2025 },
 },
+"sekizai1": {
+    code: "sekizai1", nameFull: "技能検定 1級石材施工（石張り作業）学科試験", urlSlug: "sekizai1", level: "advanced",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["コンクリート", "下地", "加工", "取付金物", "品質管理", "墨出し", "安全衛生", "工具", "採石", "接着剤", "施工法", "材料", "清掃", "目地", "製図", "関係法規"] }],
+    seasons: ["early"], yearRange: { start: 2025, end: 2025 },
+},
 "hyoso2": {
     code: "hyoso2", nameFull: "技能検定 2級表装（表具作業）学科試験", urlSlug: "hyoso2", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["壁装", "建具", "工具", "建築", "材料", "色彩", "製図", "関係法規", "安全衛生", "屏風", "裏打ち", "襖", "掛軸", "保存・取扱い"] }],
