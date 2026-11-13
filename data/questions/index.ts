@@ -26,6 +26,8 @@ import { SAKAN2_QUESTIONS } from "./sakan2";
 import { BOUSUI_URETHANE2_QUESTIONS } from "./bousui-urethane2";
 import { NAISO_KOSEI2_QUESTIONS } from "./naiso-kosei2";
 import { KINZOKU_PRESS1_QUESTIONS } from "./kinzoku-press1";
+import { PLANT_HAIKAN2_QUESTIONS } from "./plant-haikan2";
+import { HAIKAN_KENCHIKU3_QUESTIONS } from "./haikan-kenchiku3";
 import { PLANT_HAIKAN1_QUESTIONS } from "./plant-haikan1";
 import { KINZOKU_PRESS2_QUESTIONS } from "./kinzoku-press2";
 import { TEKKIN_ZUMEN3_QUESTIONS } from "./tekkin-zumen3";
@@ -450,6 +452,8 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("bousui-urethane2") ? { "bousui-urethane2": BOUSUI_URETHANE2_QUESTIONS } : {}),
 ...(isExamPublished("naiso-kosei2") ? { "naiso-kosei2": NAISO_KOSEI2_QUESTIONS } : {}),
 ...(isExamPublished("kinzoku-press1") ? { "kinzoku-press1": KINZOKU_PRESS1_QUESTIONS } : {}),
+...(isExamPublished("plant-haikan2") ? { "plant-haikan2": PLANT_HAIKAN2_QUESTIONS } : {}),
+...(isExamPublished("haikan-kenchiku3") ? { "haikan-kenchiku3": HAIKAN_KENCHIKU3_QUESTIONS } : {}),
 ...(isExamPublished("plant-haikan1") ? { "plant-haikan1": PLANT_HAIKAN1_QUESTIONS } : {}),
 ...(isExamPublished("kinzoku-press2") ? { "kinzoku-press2": KINZOKU_PRESS2_QUESTIONS } : {}),
 ...(isExamPublished("tekkin-zumen3") ? { "tekkin-zumen3": TEKKIN_ZUMEN3_QUESTIONS } : {}),

@@ -32,6 +32,8 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "bousui-urethane2": async () => isExamPublished("bousui-urethane2") ? (await import("@/data/questions/bousui-urethane2")).BOUSUI_URETHANE2_QUESTIONS : [],
   "naiso-kosei2": async () => isExamPublished("naiso-kosei2") ? (await import("@/data/questions/naiso-kosei2")).NAISO_KOSEI2_QUESTIONS : [],
   "kinzoku-press1": async () => isExamPublished("kinzoku-press1") ? (await import("@/data/questions/kinzoku-press1")).KINZOKU_PRESS1_QUESTIONS : [],
+  "plant-haikan2": async () => isExamPublished("plant-haikan2") ? (await import("@/data/questions/plant-haikan2")).PLANT_HAIKAN2_QUESTIONS : [],
+  "haikan-kenchiku3": async () => isExamPublished("haikan-kenchiku3") ? (await import("@/data/questions/haikan-kenchiku3")).HAIKAN_KENCHIKU3_QUESTIONS : [],
   "plant-haikan1": async () => isExamPublished("plant-haikan1") ? (await import("@/data/questions/plant-haikan1")).PLANT_HAIKAN1_QUESTIONS : [],
   "kinzoku-press2": async () => isExamPublished("kinzoku-press2") ? (await import("@/data/questions/kinzoku-press2")).KINZOKU_PRESS2_QUESTIONS : [],
   "tekkin-zumen3": async () => isExamPublished("tekkin-zumen3") ? (await import("@/data/questions/tekkin-zumen3")).TEKKIN_ZUMEN3_QUESTIONS : [],
