@@ -172,6 +172,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   {"code": "zoen-gino2", "name": "造園技能士 2級（造園工事作業）", "sub": "造園工事作業 学科", "domain": "construction"},
   {"code": "zoen-gino3", "name": "造園技能士 3級（造園工事作業）", "sub": "造園工事作業 学科", "domain": "construction"},
   {"code": "chuzo3", "name": "鋳造技能士 3級（鋳鉄鋳物鋳造作業）", "sub": "鋳鉄鋳物鋳造作業 学科", "domain": "construction"},
+  {"code": "reito-seko3", "name": "冷凍空気調和機器施工技能士 3級（冷凍空気調和機器施工作業）", "sub": "冷凍空気調和機器施工作業 学科", "domain": "construction"},
   {"code": "chuzo2", "name": "鋳造技能士 2級（鋳鉄鋳物鋳造作業）", "sub": "鋳鉄鋳物鋳造作業 学科", "domain": "construction"},
   {"code": "chuzo1", "name": "鋳造技能士 1級（鋳鉄鋳物鋳造作業）", "sub": "鋳鉄鋳物鋳造作業 学科", "domain": "construction"},
   {"code": "netsuzetsuen2", "name": "熱絶縁施工技能士 2級（保温保冷工事作業）", "sub": "保温保冷工事作業 学科", "domain": "construction"},

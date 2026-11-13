@@ -227,6 +227,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 "zoen-gino2": async () => isExamPublished("zoen-gino2") ? (await import("@/data/questions/zoen-gino2")).ZOEN_GINO2_QUESTIONS : [],
 "zoen-gino3": async () => isExamPublished("zoen-gino3") ? (await import("@/data/questions/zoen-gino3")).ZOEN_GINO3_QUESTIONS : [],
 "chuzo3": async () => isExamPublished("chuzo3") ? (await import("@/data/questions/chuzo3")).CHUZO3_QUESTIONS : [],
+"reito-seko3": async () => isExamPublished("reito-seko3") ? (await import("@/data/questions/reito-seko3")).REITO_SEKO3_QUESTIONS : [],
 "chuzo2": async () => isExamPublished("chuzo2") ? (await import("@/data/questions/chuzo2")).CHUZO2_QUESTIONS : [],
 "chuzo1": async () => isExamPublished("chuzo1") ? (await import("@/data/questions/chuzo1")).CHUZO1_QUESTIONS : [],
 "netsuzetsuen2": async () => isExamPublished("netsuzetsuen2") ? (await import("@/data/questions/netsuzetsuen2")).NETSUZETSUEN2_QUESTIONS : [],
