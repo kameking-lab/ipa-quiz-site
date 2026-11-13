@@ -20,6 +20,9 @@ const editions = [
   { exam: "sakan3", year: 2024, season: "early", name: "左官", domain: "construction",
     answers: "○○○××" + "○○×○×" + "○○××○" + "○○○×○" + "○××○×" + "○○×○○",
     pages: [...Array(16).fill(2), ...Array(14).fill(3)], figures: [2, 28] },
+  { exam: "sakan1", year: 2023, season: "early", name: "左官", domain: "construction",
+    answers: "×○×○○" + "××○○○" + "○○×○○" + "○×○○○" + "×○×××" + "ハロイハハ" + "ロニニハニ" + "ロロニハニ" + "イロロハハ" + "ロニイニロ",
+    pages: [...Array(18).fill(2), ...Array(7).fill(3), ...Array(6).fill(4), ...Array(6).fill(5), ...Array(6).fill(6), ...Array(5).fill(7), ...Array(2).fill(8)], figures: [22, 24, 46, 48] },
 ];
 
 describe.each(editions)("c5-24 $exam $year", ({ exam: code, year, season, name, domain, answers, pages, figures }) => {

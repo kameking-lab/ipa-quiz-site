@@ -204,6 +204,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 "pan-seizo2": async () => isExamPublished("pan-seizo2") ? (await import("@/data/questions/pan-seizo2")).PAN_SEIZO2_QUESTIONS : [],
 "kikai-shiage1": async () => isExamPublished("kikai-shiage1") ? (await import("@/data/questions/kikai-shiage1")).KIKAI_SHIAGE1_QUESTIONS : [],
 "kikai-seizu-tegaki1": async () => isExamPublished("kikai-seizu-tegaki1") ? (await import("@/data/questions/kikai-seizu-tegaki1")).KIKAI_SEIZU_TEGAKI1_QUESTIONS : [],
+"sakan1": async () => isExamPublished("sakan1") ? (await import("@/data/questions/sakan1")).SAKAN1_QUESTIONS : [],
 "sakan3": async () => isExamPublished("sakan3") ? (await import("@/data/questions/sakan3")).SAKAN3_QUESTIONS : [],
 "sakan2": async () => isExamPublished("sakan2") ? (await import("@/data/questions/sakan2")).SAKAN2_QUESTIONS : [],
 "kikai-seizu-cad1": async () => isExamPublished("kikai-seizu-cad1") ? (await import("@/data/questions/kikai-seizu-cad1")).KIKAI_SEIZU_CAD1_QUESTIONS : [],
