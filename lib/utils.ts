@@ -40,6 +40,7 @@ export const EXAM_LABELS: Record<string, string> = {
   "netsuzetsuen2": "熱絶縁施工技能士 2級（保温保冷工事作業）",
   "hiseshoku-jokyo1": "非接触除去加工技能士 1級（数値制御形彫り放電加工作業）",
   "tategu1": "建具製作技能士 1級（木製建具手加工作業）",
+  "shohin-soshoku1": "商品装飾展示技能士 1級",
   "shashutsu2": "プラスチック成形技能士 2級（射出成形作業）",
   "kikai-kensa3": "機械検査技能士 3級",
   "kagaku-bunseki2": "化学分析技能士 2級",

@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import path from "node:path";
+import { SHOHIN_SOSHOKU1_QUESTIONS } from "@/data/questions/shohin-soshoku1";
 import { TATEGU1_QUESTIONS } from "@/data/questions/tategu1";
 import { HISESHOKU_JOKYO1_QUESTIONS } from "@/data/questions/hiseshoku-jokyo1";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
@@ -16,7 +17,8 @@ import type { ChoiceKey } from "@/lib/questions/types";
 // 公式正答表の画像を5問ずつ読み取り固定した照合用の正答。
 const editions = [
   { exam: "hiseshoku-jokyo1" as const, rows: HISESHOKU_JOKYO1_QUESTIONS, season: "early" as const, answers: "○○×○○○××○○×○××××○×××○×○○○ニニイニニイロハイハロニイイロニイロイハロロイハイ", pages: [2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,5,5,5,6,6,6,6,6,7,7,7,7,8,8,8,8,8,9,9,9,9,9,10,10,10], figures: [8,23,28,33,34,36,48] as number[] },
-  { exam: "tategu1" as const, rows: TATEGU1_QUESTIONS, season: "early" as const, answers: "×××○×○○××○○××○○○○○×××××○×ロイイハイロハニロイロハニニニイニハロハロイイニハ", pages: [2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,5,5,5,5,5,6,6,6,6,6,6,7,7,7,7,7,7,8,8,8], figures: [7,8,21,22,26,32,44,45] as number[] }
+  { exam: "tategu1" as const, rows: TATEGU1_QUESTIONS, season: "early" as const, answers: "×××○×○○××○○××○○○○○×××××○×ロイイハイロハニロイロハニニニイニハロハロイイニハ", pages: [2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,5,5,5,5,5,6,6,6,6,6,6,7,7,7,7,7,7,8,8,8], figures: [7,8,21,22,26,32,44,45] as number[] },
+  { exam: "shohin-soshoku1" as const, rows: SHOHIN_SOSHOKU1_QUESTIONS, season: "early" as const, answers: "○××○×○○×××××○○○○○××○○○×××ロニイハロニニロロハロハハロハニニロハハロロハイハ", pages: [2,2,2,2,2,2,2,2,3,3,3,3,3,4,4,4,4,4,5,5,5,5,5,5,5,6,6,6,6,6,7,7,7,7,8,8,8,9,9,9,9,10,10,10,10,10,11,11,11,11], figures: [8,9,13,14,18,19,36,40] as number[] }
 ];
 
 describe.each(editions)("c4-62 $exam", ({ exam, rows, season, answers, pages, figures }) => {
