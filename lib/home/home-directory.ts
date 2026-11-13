@@ -151,6 +151,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   {"code": "kikai-shiage1", "name": "仕上げ技能士 1級（機械組立仕上げ作業）", "sub": "機械組立仕上げ作業 学科", "domain": "electrical"},
   {"code": "kikai-seizu-tegaki1", "name": "機械・プラント製図技能士 1級（機械製図手書き作業）", "sub": "機械製図手書き作業 学科", "domain": "electrical"},
   {"code": "sequence1", "name": "シーケンス制御技能士 1級（シーケンス制御作業）", "sub": "シーケンス制御作業 学科", "domain": "electrical"},
+  {"code": "reito-seko1", "name": "冷凍空気調和機器施工技能士 1級（冷凍空気調和機器施工作業）", "sub": "冷凍空気調和機器施工作業 学科", "domain": "construction"},
   {"code": "kuukiatsu-kumitate2", "name": "空気圧装置組立て技能士 2級（空気圧装置組立て作業）", "sub": "空気圧装置組立て作業 学科", "domain": "construction"},
   {"code": "kuukiatsu-kumitate1", "name": "空気圧装置組立て技能士 1級（空気圧装置組立て作業）", "sub": "空気圧装置組立て作業 学科", "domain": "construction"},
   {"code": "henatsuki-kumitate2", "name": "電気機器組立て技能士 2級（変圧器組立て作業）", "sub": "変圧器組立て作業 学科", "domain": "electrical"},
