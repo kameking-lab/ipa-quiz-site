@@ -95,12 +95,26 @@ describe("home directory", () => {
     }
   });
 
-  it("renders every live qualification link in the initial HTML without disclosure controls", () => {
+  it("keeps every qualification in the initial HTML inside collapsed category disclosures", () => {
     const html = renderToStaticMarkup(createElement(HomeDirectory, { domains }));
-    expect(html).not.toContain("<details");
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    expect(doc.querySelectorAll("details")).toHaveLength(domains.length);
+    expect(doc.querySelectorAll("details[open]")).toHaveLength(0);
     const hrefs = [...html.matchAll(/href="([^"]+)"/g)].map((match) => match[1]?.replaceAll("&amp;", "&"));
     for (const item of all) expect(hrefs.filter((href) => href === item.href)).toHaveLength(1);
     expect(hrefs.length).toBe(all.length + domains.length);
+  });
+
+  it("classifies registered qualifications by the catalog, including older cards", () => {
+    const findDomain = (key: string) => domains.find(domain => [...domain.featured, ...domain.compact].some(item => item.key === key))?.id;
+    for (const key of ["takken", "mankan", "kanri", "kanteishi"]) expect(findDomain(key)).toBe("real-estate");
+    for (const key of ["gyosei", "sharoushi", "benrishi", "chizai2", "tsukanshi"]) expect(findDomain(key)).toBe("legal");
+    expect(findDomain("fp3")).toBe("money");
+    // The same catalog-domain mapping used for new qualifications covers every registered live exam.
+    const expected = { "information-technology": "it", finance: "money", accounting: "money", "real-estate": "real-estate", legal: "legal", construction: "construction", electrical: "electrical", safety: "safety", welfare: "welfare", pharmacy: "welfare", "personal-services": "welfare", automotive: "automotive" };
+    for (const entry of QUALIFICATION_CATALOG.filter(entry => entry.status === "live" && entry.examCode && !["eisei1", "eisei2"].includes(entry.examCode))) {
+      expect(findDomain(entry.examCode!), entry.examCode).toBe(expected[entry.domain]);
+    }
   });
 });
 

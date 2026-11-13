@@ -1,7 +1,6 @@
 import "./home-study.css";
 import type { Metadata } from "next";
 import { TotalAnswerCounter } from "@/components/home/TotalAnswerCounter";
-import { HomeDirectory } from "@/components/home/landing/HomeDirectory";
 import { HomeScheduleLink } from "@/components/home/landing/HomeScheduleLink";
 import { HomeHero } from "@/components/home/landing/HomeHero";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -24,12 +23,11 @@ export default function HomePage() {
   roomItems.push(...domains.flatMap(domain => [...domain.featured, ...domain.compact]).filter(item => !roomKeys.has(item.key)));
 
   return (
-    <main className="study-home mx-auto w-full max-w-6xl flex-1 px-5 pb-12 pt-6 sm:px-10 sm:pt-12">
+    <main className="study-home mx-auto w-full max-w-6xl flex-1 px-5 pb-12 pt-4 sm:px-10 sm:pt-7">
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [buildWebsiteNode(description), buildOrgNode()] }} />
       <HomeHero domains={domains} />
       <TotalAnswerCounter suggestions={roomItems.filter(item => item.questionCount > 0)
         .map(({ name, href, key }) => ({ name, href, exam: key }))} />
-      <HomeDirectory domains={domains} />
       <div className="study-context">
       <HomeScheduleLink />
       </div>

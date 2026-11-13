@@ -13,7 +13,7 @@ import {
 } from "@/lib/exam-qualification-hubs";
 import { FP2_PRACTICAL_EDITIONS, getPracticalEdition as getFp2PracticalEdition } from "@/lib/fp2/practical";
 import { FP3_PRACTICAL_EDITIONS, getPracticalEdition as getFp3PracticalEdition } from "@/lib/fp3/practical";
-import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
+import { QUALIFICATION_CATALOG, type QualificationDomain } from "@/lib/qualifications/catalog";
 import type { ExamCode } from "@/lib/questions/types";
 import { getQuestionsByExamStrict, groupByYearSeason } from "@/lib/seo/exam-meta";
 
@@ -25,7 +25,7 @@ import { getQuestionsByExamStrict, groupByYearSeason } from "@/lib/seo/exam-meta
  *  - 安全衛生: 各資格ハブと同じ getExamPaperStats の合計
  */
 
-export type HomeDomainId = "it" | "safety" | "electrical" | "construction" | "money" | "welfare" | "automotive";
+export type HomeDomainId = "it" | "safety" | "electrical" | "construction" | "money" | "real-estate" | "legal" | "welfare" | "automotive";
 
 export interface HomeDirectoryItem {
   key: string;
@@ -306,16 +306,21 @@ function domain(
 }
 
 export function getHomeDirectory(): HomeDirectoryDomain[] {
-  const catalogDomains: Record<string, OtherCardDef["domain"]> = {
-    "information-technology": "it", finance: "money", "real-estate": "money", accounting: "money",
-    electrical: "electrical", construction: "construction", safety: "safety", legal: "money",
+  const catalogDomains: Record<QualificationDomain, HomeDomainId> = {
+    "information-technology": "it", finance: "money", "real-estate": "real-estate", accounting: "money",
+    electrical: "electrical", construction: "construction", safety: "safety", legal: "legal", automotive: "automotive",
     welfare: "welfare", pharmacy: "welfare", "personal-services": "welfare",
   };
   const additionalCards: OtherCardDef[] = QUALIFICATION_CATALOG.flatMap((entry) => {
     if (entry.status !== "live" || !entry.examCode || entry.domain === "automotive" || OTHER_CARDS.some((card) => card.code === entry.examCode)) return [];
-    return [{ code: entry.examCode, name: entry.shortName, sub: entry.reuseSummary, domain: catalogDomains[entry.domain] ?? "safety" }];
+    return [{ code: entry.examCode, name: entry.shortName, sub: entry.reuseSummary, domain: catalogDomains[entry.domain] }];
   });
-  const others = [...OTHER_CARDS, ...additionalCards].filter((def) => isLiveExam(def.code)).map((def) => ({ def, item: otherItem(def) }));
+  // The registration catalog owns the category, including older hand-written cards.
+  const others = [...OTHER_CARDS, ...additionalCards].filter((def) => isLiveExam(def.code)).map((def) => {
+    const entry = QUALIFICATION_CATALOG.find((entry) => entry.examCode === def.code);
+    const classified = { ...def, domain: entry ? catalogDomains[entry.domain] : def.domain };
+    return { def: classified, item: otherItem(classified) };
+  });
   const byDomain = (id: OtherCardDef["domain"]) => others.filter(({ def }) => def.domain === id).map(({ item }) => item);
 
   const domains = [
@@ -351,7 +356,7 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
     domain(
       {
         id: "electrical",
-        title: "電気",
+        title: "電気・無線",
         lead: "電験三種と第二種電気工事士の公式公開問題。",
         allHref: "/qualifications",
         allLabel: "その他資格の一覧",
@@ -361,7 +366,7 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
     domain(
       {
         id: "construction",
-        title: "建設・施工管理",
+        title: "建築・土木",
         lead: "1級・2級土木と2級管工事施工管理技術検定の第一次検定。",
         allHref: "/qualifications",
         allLabel: "その他資格の一覧",
@@ -371,7 +376,7 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
     domain(
       {
         id: "money",
-        title: "お金・不動産・経営",
+        title: "お金・ビジネス",
         lead: "FP技能検定（学科・実技）、宅建、中小企業診断士など。",
         allHref: "/qualifications",
         allLabel: "その他資格の一覧",
@@ -381,7 +386,7 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
     domain(
       {
         id: "welfare",
-        title: "医療・福祉",
+        title: "医療・福祉・生活",
         lead: "医療・福祉の国家試験と登録販売者試験。",
         allHref: "/qualifications",
         allLabel: "その他資格の一覧",
@@ -389,5 +394,10 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
       byDomain("welfare"),
     ),
   ];
-  return domains.filter((d) => d.qualificationCount > 0);
+  domains.push(
+    domain({ id: "real-estate", title: "不動産", lead: "宅建・マンション管理など。", allHref: "/qualifications", allLabel: "その他資格の一覧" }, byDomain("real-estate")),
+    domain({ id: "legal", title: "法律・労務", lead: "法律・知的財産・社会保険など。", allHref: "/qualifications", allLabel: "その他資格の一覧" }, byDomain("legal")),
+  );
+  const order: HomeDomainId[] = ["it", "money", "real-estate", "legal", "electrical", "construction", "safety", "welfare", "automotive"];
+  return domains.filter((d) => d.qualificationCount > 0).sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
 }

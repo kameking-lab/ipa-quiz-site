@@ -4,9 +4,35 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { HomeQualificationFinder } from "@/components/home/landing/HomeQualificationFinder";
 import { HomeDirectory } from "@/components/home/landing/HomeDirectory";
 import { getHomeDirectory } from "@/lib/home/home-directory";
+import { HOME_FEATURED_EXAM_CODES } from "@/lib/home/featured-exams";
 const domains = getHomeDirectory();
 beforeEach(() => { cleanup(); window.history.replaceState(null, "", "/"); });
 describe("qualification discovery", () => {
+  it("shows exactly the configured three home cards and keeps all other qualifications searchable", () => {
+    render(<HomeQualificationFinder domains={domains} homeDirectory={<HomeDirectory domains={domains} />} />);
+    const results = document.getElementById("qualification-results")!;
+    expect([...results.querySelectorAll("a")].map(a => a.getAttribute("href"))).toEqual(HOME_FEATURED_EXAM_CODES.map(code => `/${code}`));
+    expect(document.querySelectorAll("details[open]")).toHaveLength(0);
+    fireEvent.change(screen.getByRole("searchbox"), { target: { value: "宅建" } });
+    expect(screen.getByRole("link", { name: /^宅建/ })).toHaveAttribute("href", "/takken");
+    fireEvent.click(screen.getByRole("button", { name: "検索をクリア" }));
+    expect(screen.getByText("分野から探す")).toBeVisible();
+  });
+  it("filters the home by the new categories and restores filters after navigation", () => {
+    const view = render(<HomeQualificationFinder domains={domains} homeDirectory={<HomeDirectory domains={domains} />} />);
+    fireEvent.change(screen.getByRole("combobox", { name: "資格の分野で絞り込む" }), { target: { value: "legal" } });
+    fireEvent.change(screen.getByRole("searchbox"), { target: { value: "社労" } });
+    // Search also includes each registered card's description and full name.
+    fireEvent.change(screen.getByRole("searchbox"), { target: { value: "社会保険労務士" } });
+    const row = screen.getByRole("link", { name: /社会保険労務士/ });
+    row.addEventListener("click", event => event.preventDefault());
+    fireEvent.click(row);
+    view.unmount();
+    render(<HomeQualificationFinder domains={domains} homeDirectory={<HomeDirectory domains={domains} />} />);
+    expect(screen.getByRole("searchbox")).toHaveValue("社会保険労務士");
+    expect(screen.getByRole("combobox")).toHaveValue("legal");
+    expect(screen.getByRole("link", { name: /社会保険労務士/ })).toHaveAttribute("href", "/sharoushi");
+  });
   it("searches normalized abbreviations and starts only the selected qualification", () => {
     render(<HomeQualificationFinder domains={domains} />);
     fireEvent.change(screen.getByRole("searchbox", { name: "資格名・略称で検索" }), { target: { value: "ｓｃ" } });
@@ -17,8 +43,8 @@ describe("qualification discovery", () => {
   });
   it("filters a domain, reports empty searches and resets filters", () => {
     render(<HomeQualificationFinder domains={domains} />);
-    fireEvent.click(screen.getByRole("button", { name: "電気" }));
-    expect(screen.getByRole("button", { name: "電気" })).toHaveAttribute("aria-pressed", "true");
+    fireEvent.click(screen.getByRole("button", { name: "電気・無線" }));
+    expect(screen.getByRole("button", { name: "電気・無線" })).toHaveAttribute("aria-pressed", "true");
     expect(screen.getByRole("link", { name: /第二種電気工事士/ })).toHaveAttribute("href", "/denko2");
     fireEvent.change(screen.getByRole("searchbox"), { target: { value: "該当しない資格" } });
     expect(screen.getByText("該当する資格が見つかりませんでした。")).toBeInTheDocument();
@@ -58,13 +84,13 @@ describe("qualification discovery", () => {
     window.history.replaceState({ routerMarker: "kept", homeQualificationFinder: { query: "ＦＰ3", domainId: "money" } }, "");
     fireEvent(window, new Event(eventName));
     expect(screen.getByRole("searchbox")).toHaveValue("ＦＰ3");
-    expect(screen.getByRole("button", { name: "お金・不動産・経営" })).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByRole("button", { name: "お金・ビジネス" })).toHaveAttribute("aria-pressed", "true");
     expect(window.history.state.routerMarker).toBe("kept");
   });
   it("restores home filters from the URL even before custom history state is available", () => {
     window.history.replaceState({ routerMarker: "kept" }, "", "/?source=kept#choose-qualification");
     const view = render(<HomeQualificationFinder domains={domains} />);
-    fireEvent.click(screen.getByRole("button", { name: "お金・不動産・経営" }));
+    fireEvent.click(screen.getByRole("button", { name: "お金・ビジネス" }));
     fireEvent.change(screen.getByRole("searchbox"), { target: { value: "ＦＰ3" } });
     const card = screen.getByRole("link", { name: /^FP3級/ });
     card.addEventListener("click", event => event.preventDefault());
@@ -79,7 +105,7 @@ describe("qualification discovery", () => {
     window.history.replaceState(null, "");
     render(<HomeQualificationFinder domains={domains} />);
     expect(screen.getByRole("searchbox")).toHaveValue("ＦＰ3");
-    expect(screen.getByRole("button", { name: "お金・不動産・経営" })).toHaveAttribute("aria-pressed", "true");
+    expect(screen.getByRole("button", { name: "お金・ビジネス" })).toHaveAttribute("aria-pressed", "true");
     fireEvent.click(screen.getByRole("button", { name: "検索をクリア" }));
     expect(new URL(window.location.href).searchParams.has("q")).toBe(false);
   });
@@ -130,12 +156,12 @@ describe("qualification discovery", () => {
     expect((document.getElementById("qualification-coverage") as HTMLDetailsElement).open).toBe(false);
     expect(click.defaultPrevented).toBe(false);
   });
-  it("keeps every real qualification href in visible server-rendered genres", () => {
+  it("keeps every real qualification href in server-rendered collapsed genres", () => {
     const doc = new DOMParser().parseFromString(renderToStaticMarkup(<HomeDirectory domains={domains} />), "text/html");
     const hrefs = new Set(Array.from(doc.querySelectorAll("a")).map((a) => a.getAttribute("href")));
     for (const item of domains.flatMap((d) => [...d.featured, ...d.compact])) expect(hrefs).toContain(item.href);
-    expect(doc.querySelectorAll("section[id^=domain-]")).toHaveLength(domains.length);
-    expect(doc.querySelectorAll("details[id^=domain-]")).toHaveLength(0);
+    expect(doc.querySelectorAll("details[id^=domain-]")).toHaveLength(domains.length);
+    expect(doc.querySelectorAll("details[open]")).toHaveLength(0);
   });
   it("lists each hygiene qualification once using its official paper hub", () => {
     const items = domains.flatMap((d) => [...d.featured, ...d.compact]);
