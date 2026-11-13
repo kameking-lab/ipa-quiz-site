@@ -1,7 +1,8 @@
-﻿import { describe, expect, it } from "vitest";
+import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { KOGAKU_GLASS1_QUESTIONS } from "@/data/questions/kogaku-glass1";
+import { SANGYO_SHARYO1_QUESTIONS } from "@/data/questions/sangyo-sharyo1";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
@@ -14,7 +15,8 @@ import type { ChoiceKey } from "@/lib/questions/types";
 
 // 公式正答表を画像でも確認した固定値。原本のA/B群各25問と照合する。
 const editions = [
-  { exam: "kogaku-glass1" as const, rows: KOGAKU_GLASS1_QUESTIONS, season: "early" as const, answers: "×○○×××××○×○×○○○×○×××××○○×ハハロロニハロハニハハイイニハニロニハロハニイイロ", pages: [...Array(17).fill(2),...Array(8).fill(3),...Array(6).fill(4),...Array(5).fill(5),...Array(5).fill(6),...Array(6).fill(7),...Array(3).fill(8)], figures: [39] }
+  { exam: "kogaku-glass1" as const, rows: KOGAKU_GLASS1_QUESTIONS, season: "early" as const, answers: "×○○×××××○×○×○○○×○×××××○○×ハハロロニハロハニハハイイニハニロニハロハニイイロ", pages: [...Array(17).fill(2),...Array(8).fill(3),...Array(6).fill(4),...Array(5).fill(5),...Array(5).fill(6),...Array(6).fill(7),...Array(3).fill(8)], figures: [39] },
+  { exam: "sangyo-sharyo1" as const, rows: SANGYO_SHARYO1_QUESTIONS, season: "early" as const, answers: "○××××○○○×××××○×○○×○○○××××ハハニイイニロハハハニニイイロロイハロニハニニイロ", pages: [...Array(12).fill(2),...Array(10).fill(3),...Array(3).fill(4),...Array(5).fill(5),...Array(5).fill(6),...Array(3).fill(7),...Array(5).fill(8),...Array(4).fill(9),...Array(3).fill(10)], figures: [19,21,44,45,46] }
 ];
 
 describe.each(editions)("c4-64 $exam", ({ exam, rows, season, answers, pages, figures }) => {
@@ -56,6 +58,8 @@ describe.each(editions)("c4-64 $exam", ({ exam, rows, season, answers, pages, fi
   it("一覧・演習で50問を配信し、原本の選択肢記号を保持する", async () => {
     expect(QUESTIONS_BY_EXAM[exam]).toEqual(rows);
     expect(await getQuestionsForExam(exam)).toEqual(rows);
+    expect(EXAM_CONFIGS[exam].nameFull).toContain("技能検定 1級");
+    expect(EXAM_CONFIGS[exam].nameFull).not.toContain("?");
     expect(EXAM_CONFIGS[exam].sessions[0].expectedQuestions).toBe(50);
     expect(EXAM_CONFIGS[exam].seasons).toContain(season);
     expect(rows.every(q=>EXAM_CONFIGS[exam].sessions[0].categories.includes(q.category))).toBe(true);

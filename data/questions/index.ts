@@ -34,6 +34,7 @@ import { HISESHOKU_JOKYO1_QUESTIONS } from "./hiseshoku-jokyo1";
 import { TATEGU1_QUESTIONS } from "./tategu1";
 import { SHOHIN_SOSHOKU1_QUESTIONS } from "./shohin-soshoku1";
 import { KOGAKU_GLASS1_QUESTIONS } from "./kogaku-glass1";
+import { SANGYO_SHARYO1_QUESTIONS } from "./sangyo-sharyo1";
 import { SHASHUTSU2_QUESTIONS } from "./shashutsu2";
 import { KIKAI_KENSA3_QUESTIONS } from "./kikai-kensa3";
 import { KAGAKU_BUNSEKI2_QUESTIONS } from "./kagaku-bunseki2";
@@ -249,6 +250,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("tategu1") ? { "tategu1": TATEGU1_QUESTIONS } : {}),
 ...(isExamPublished("shohin-soshoku1") ? { "shohin-soshoku1": SHOHIN_SOSHOKU1_QUESTIONS } : {}),
 ...(isExamPublished("kogaku-glass1") ? { "kogaku-glass1": KOGAKU_GLASS1_QUESTIONS } : {}),
+...(isExamPublished("sangyo-sharyo1") ? { "sangyo-sharyo1": SANGYO_SHARYO1_QUESTIONS } : {}),
 ...(isExamPublished("shashutsu2") ? { "shashutsu2": SHASHUTSU2_QUESTIONS } : {}),
 ...(isExamPublished("kikai-kensa3") ? { "kikai-kensa3": KIKAI_KENSA3_QUESTIONS } : {}),
 ...(isExamPublished("kagaku-bunseki2") ? { "kagaku-bunseki2": KAGAKU_BUNSEKI2_QUESTIONS } : {}),
