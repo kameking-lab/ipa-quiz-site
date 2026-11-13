@@ -44,6 +44,8 @@ import { FRAISE2_QUESTIONS } from "./fraise2";
 import { FRAISE3_QUESTIONS } from "./fraise3";
 import { KIKAI_KENSA1_QUESTIONS } from "./kikai-kensa1";
 import { KIKAI_KENSA2_QUESTIONS } from "./kikai-kensa2";
+import { KOGYO_HOSO2_QUESTIONS } from "./kogyo-hoso2";
+import { KATAWAKU1_QUESTIONS } from "./katawaku1";
 import { SHASHUTSU2_QUESTIONS } from "./shashutsu2";
 import { KIKAI_KENSA3_QUESTIONS } from "./kikai-kensa3";
 import { KAGAKU_BUNSEKI2_QUESTIONS } from "./kagaku-bunseki2";
@@ -269,6 +271,8 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("fraise3") ? { "fraise3": FRAISE3_QUESTIONS } : {}),
 ...(isExamPublished("kikai-kensa1") ? { "kikai-kensa1": KIKAI_KENSA1_QUESTIONS } : {}),
 ...(isExamPublished("kikai-kensa2") ? { "kikai-kensa2": KIKAI_KENSA2_QUESTIONS } : {}),
+...(isExamPublished("kogyo-hoso2") ? { "kogyo-hoso2": KOGYO_HOSO2_QUESTIONS } : {}),
+...(isExamPublished("katawaku1") ? { "katawaku1": KATAWAKU1_QUESTIONS } : {}),
 ...(isExamPublished("shashutsu2") ? { "shashutsu2": SHASHUTSU2_QUESTIONS } : {}),
 ...(isExamPublished("kikai-kensa3") ? { "kikai-kensa3": KIKAI_KENSA3_QUESTIONS } : {}),
 ...(isExamPublished("kagaku-bunseki2") ? { "kagaku-bunseki2": KAGAKU_BUNSEKI2_QUESTIONS } : {}),

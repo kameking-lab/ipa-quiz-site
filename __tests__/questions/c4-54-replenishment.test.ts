@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import path from "node:path";
-import { KATAWAKU2_QUESTIONS } from "@/data/questions/katawaku2";
+import { KATAWAKU2_QUESTIONS as ALL_KATAWAKU2_QUESTIONS } from "@/data/questions/katawaku2";
 import { TEKKIN3_QUESTIONS } from "@/data/questions/tekkin3";
 import { TEKKIN2_QUESTIONS } from "@/data/questions/tekkin2";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
@@ -13,6 +13,8 @@ import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
 import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import type { ChoiceKey } from "@/lib/questions/types";
+
+const KATAWAKU2_QUESTIONS = ALL_KATAWAKU2_QUESTIONS.filter(q => q.year === 2025);
 
 // 公式正答表の画像を5問ずつ再読し、転記した文字列とは別に照合する。
 const editions = [
@@ -73,11 +75,11 @@ describe.each(editions)("c4-54 $exam 2025年度後期", ({ exam, rows, answers, 
   });
 
   it("一覧と演習で全問を読み込み、年度・分野・原本の選択肢記号を表示する", async () => {
-    expect(QUESTIONS_BY_EXAM[exam]).toEqual(rows);
-    expect(await getQuestionsForExam(exam)).toEqual(rows);
+    expect(QUESTIONS_BY_EXAM[exam]!.filter(q => q.year === 2025)).toEqual(rows);
+    expect((await getQuestionsForExam(exam)).filter(q => q.year === 2025)).toEqual(rows);
     expect(rows.every(q => EXAM_CONFIGS[exam].sessions[0].categories.includes(q.category))).toBe(true);
     expect(EXAM_CONFIGS[exam].sessions[0].expectedQuestions).toBe(answers.length);
-    expect(EXAM_CONFIGS[exam].yearRange).toEqual({ start: 2025, end: 2025 });
+    expect(EXAM_CONFIGS[exam].yearRange).toEqual({ start: exam === "katawaku2" ? 2024 : 2025, end: 2025 });
     expect(EXAM_CONFIGS[exam].seasons).toEqual(["late"]);
     if (answers.length === 30) {
       expect(["ア", "イ"].map(k => choiceDisplayLabel(exam, k as ChoiceKey))).toEqual(["○", "×"]);
