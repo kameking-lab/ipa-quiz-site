@@ -68,8 +68,8 @@ describe.each(editions)("c5-36 $exam $year 後期", ({ exam, year, all, answers,
 
 
 it("級・年度ごとの原本の違いと計算問題を保持する", () => {
-  expect(KUUKIATSU_KUMITATE1_QUESTIONS).toHaveLength(100);
-  expect(KUUKIATSU_KUMITATE2_QUESTIONS).toHaveLength(50);
+  expect(KUUKIATSU_KUMITATE1_QUESTIONS.filter(q => q.year === 2024 || q.year === 2025)).toHaveLength(100);
+  expect(KUUKIATSU_KUMITATE2_QUESTIONS.filter(q => q.year === 2025)).toHaveLength(50);
   const one2025 = KUUKIATSU_KUMITATE1_QUESTIONS.filter(q => q.year === 2025);
   const one2024 = KUUKIATSU_KUMITATE1_QUESTIONS.filter(q => q.year === 2024);
   const two2025 = KUUKIATSU_KUMITATE2_QUESTIONS.filter(q => q.year === 2025);

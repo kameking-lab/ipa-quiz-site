@@ -1,7 +1,7 @@
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { KAGU2_QUESTIONS } from "@/data/questions/kagu2";
+import { KAGU2_QUESTIONS as ALL_KAGU2_QUESTIONS } from "@/data/questions/kagu2";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -16,6 +16,7 @@ import type { ChoiceKey } from "@/lib/questions/types";
 // The official table has separate true/false and multiple-choice columns.
 const ANSWERS = "○×○○×" + "○×○○○" + "××○○×" + "○×○×○" + "××○×○"
   + "ハロロハハ" + "ニニニハイ" + "ハハニイロ" + "イニニロニ" + "イイハイハ";
+const KAGU2_QUESTIONS = ALL_KAGU2_QUESTIONS.filter(q => q.year === 2024 && q.season === "early");
 
 describe("家具手加工作業2級2024年度の原本正答・図・演習経路", () => {
   it("50問を公式正答と公式の記号で採点できる", () => {
@@ -37,11 +38,11 @@ describe("家具手加工作業2級2024年度の原本正答・図・演習経�
     }
   });
   it("一覧・非同期読込み・分野から50問に到達する", async () => {
-    expect(QUESTIONS_BY_EXAM.kagu2).toEqual(KAGU2_QUESTIONS);
-    expect(await getQuestionsForExam("kagu2")).toEqual(KAGU2_QUESTIONS);
+    expect(QUESTIONS_BY_EXAM.kagu2).toEqual(ALL_KAGU2_QUESTIONS);
+    expect(await getQuestionsForExam("kagu2")).toEqual(ALL_KAGU2_QUESTIONS);
     expect(getQualificationByExamCode("kagu2")?.status).toBe("live");
     const config = EXAM_CONFIGS.kagu2;
-    expect(config.yearRange.start).toBe(2024);
+    expect(config.yearRange.start).toBeLessThanOrEqual(2024);
     expect(KAGU2_QUESTIONS.every(q => config.sessions[0].categories!.includes(q.category))).toBe(true);
     expect(choiceDisplayLabel("kagu2", "エ")).toBe("ニ");
   });

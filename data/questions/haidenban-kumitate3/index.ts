@@ -1,4 +1,1 @@
-import type { Question } from "@/lib/questions/types";
-import questions0 from "./2024-late.json";
-
-export const HAIDENBAN_KUMITATE3_QUESTIONS: Question[] = [...questions0] as Question[];
+export { HAIDEN_SEIGYO3_QUESTIONS as HAIDENBAN_KUMITATE3_QUESTIONS } from "../haiden-seigyo3";

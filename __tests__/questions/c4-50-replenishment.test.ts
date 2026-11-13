@@ -15,7 +15,7 @@ import type { ChoiceKey } from "@/lib/questions/types";
 
 // 公式正答表を原本画像から5問ずつ再読したキー。内部キーと分けて照合する。
 const editions = [
-  { exam: "futsu-senban1" as const, year: 2025, rows: FUTSU_SENBAN1_QUESTIONS,
+  { exam: "futsu-senban1" as const, year: 2025, rows: FUTSU_SENBAN1_QUESTIONS.filter(q => q.year === 2025),
     answers: "○○××○" + "×○○○×" + "○××××" + "×○○○×" + "×○○×○"
       + "ロハイイニ" + "イロハニイ" + "ハニロイハ" + "ロイイニニ" + "イロニハニ",
     pages: [...Array(16).fill(2), ...Array(9).fill(3), ...Array(5).fill(4), ...Array(5).fill(5), ...Array(5).fill(6), ...Array(6).fill(7), ...Array(4).fill(8)],

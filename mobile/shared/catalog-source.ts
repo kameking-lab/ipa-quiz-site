@@ -3,6 +3,7 @@ import { getRegisteredExamCodes, getQuestionsForExam } from "@/lib/questions/get
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
+import { canonicalExamCode } from "@/lib/questions/exam-aliases";
 import type { CatalogEntry } from "./contracts";
 import { EXAM_CATALOG, findExamEntry } from "@/lib/exam-library-catalog";
 import { loadExamPaper } from "@/lib/exam-library-papers";
@@ -12,7 +13,7 @@ export function catalogCodes() { return [...getRegisteredExamCodes(), ...EXAM_CA
 export async function examContent(code: string) {
   if(code.startsWith("material."))return materialGroups().find(g=>g.code===code)?.items??null;
   if (code.startsWith("library.")) return (loadExamPaper(code.slice(8)) ?? []).map(withLearningAssets);
-  if (!getRegisteredExamCodes().includes(code as ExamCode)) return null;
+  if (!getRegisteredExamCodes().includes(canonicalExamCode(code as ExamCode))) return null;
   return (await getQuestionsForExam(code as ExamCode)).filter(isPracticeReadyQuestion);
 }
 export async function examCatalog(code: string): Promise<CatalogEntry | null> {

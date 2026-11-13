@@ -1,4 +1,5 @@
 import { SASSHI1_QUESTIONS } from "./sasshi1";
+import { EXAM_CODE_ALIASES } from "@/lib/questions/exam-aliases";
 import { SASSHI2_QUESTIONS } from "./sasshi2";
 import { ENGEI_SOSHOKU3_QUESTIONS } from "./engei-soshoku3";
 import { KYOKA_PLASTIC2_QUESTIONS } from "./kyoka-plastic2";
@@ -99,8 +100,6 @@ import { KUUKIATSU_KUMITATE1_QUESTIONS } from "./kuukiatsu-kumitate1";
 import { HENATSUKI_KUMITATE2_QUESTIONS } from "./henatsuki-kumitate2";
 import { HENATSUKI_KUMITATE1_QUESTIONS } from "./henatsuki-kumitate1";
 
-import { HAIDENBAN_KUMITATE3_QUESTIONS } from "./haidenban-kumitate3";
-
 import { KIKAI_SEIZU_CAD1_QUESTIONS } from "./kikai-seizu-cad1";
 
 import { PLANT_HAIKAN_SEIZU2_QUESTIONS } from "./plant-haikan-seizu2";
@@ -121,12 +120,10 @@ import { FRAISE1_QUESTIONS } from "./fraise1";
 import { FRAISE2_QUESTIONS } from "./fraise2";
 import { FRAISE3_QUESTIONS } from "./fraise3";
 
-import { HAIKAN_PLANT2_QUESTIONS } from "./haikan-plant2";
-
 import { BOUSUI_FRP1_QUESTIONS } from "./bousui-frp1";
 
 import { NAISO_CARPET1_QUESTIONS } from "./naiso-carpet1";
-import { HAIKAN_PLANT1_QUESTIONS } from "./haikan-plant1";
+
 import { SHASHUTSU2_QUESTIONS } from "./shashutsu2";
 
 import { KAGAKU_BUNSEKI2_QUESTIONS } from "./kagaku-bunseki2";
@@ -367,7 +364,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("henatsuki-kumitate2") ? { "henatsuki-kumitate2": HENATSUKI_KUMITATE2_QUESTIONS } : {}),
 ...(isExamPublished("henatsuki-kumitate1") ? { "henatsuki-kumitate1": HENATSUKI_KUMITATE1_QUESTIONS } : {}),
 ...(isExamPublished("sequence3") ? { "sequence3": SEQUENCE3_QUESTIONS } : {}),
-...(isExamPublished("haidenban-kumitate3") ? { "haidenban-kumitate3": HAIDENBAN_KUMITATE3_QUESTIONS } : {}),
+
 ...(isExamPublished("sequence2") ? { "sequence2": SEQUENCE2_QUESTIONS } : {}),
 ...(isExamPublished("zoen-gino1") ? { "zoen-gino1": ZOEN_GINO1_QUESTIONS } : {}),
 ...(isExamPublished("sakan1") ? { "sakan1": SAKAN1_QUESTIONS } : {}),
@@ -407,12 +404,12 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("tekkin-zumen3") ? { "tekkin-zumen3": TEKKIN_ZUMEN3_QUESTIONS } : {}),
 ...(isExamPublished("kinzoku-press1") ? { "kinzoku-press1": KINZOKU_PRESS1_QUESTIONS } : {}),
 ...(isExamPublished("kinzoku-press2") ? { "kinzoku-press2": KINZOKU_PRESS2_QUESTIONS } : {}),
-...(isExamPublished("haikan-plant2") ? { "haikan-plant2": HAIKAN_PLANT2_QUESTIONS } : {}),
+
 ...(isExamPublished("haikan-kenchiku3") ? { "haikan-kenchiku3": HAIKAN_KENCHIKU3_QUESTIONS } : {}),
 ...(isExamPublished("bousui-frp1") ? { "bousui-frp1": BOUSUI_FRP1_QUESTIONS } : {}),
 ...(isExamPublished("bousui-frp2") ? { "bousui-frp2": BOUSUI_FRP2_QUESTIONS } : {}),
 ...(isExamPublished("naiso-carpet1") ? { "naiso-carpet1": NAISO_CARPET1_QUESTIONS } : {}),
-...(isExamPublished("haikan-plant1") ? { "haikan-plant1": HAIKAN_PLANT1_QUESTIONS } : {}),
+
 ...(isExamPublished("shashutsu2") ? { "shashutsu2": SHASHUTSU2_QUESTIONS } : {}),
 ...(isExamPublished("kikai-kensa3") ? { "kikai-kensa3": KIKAI_KENSA3_QUESTIONS } : {}),
 ...(isExamPublished("kagaku-bunseki2") ? { "kagaku-bunseki2": KAGAKU_BUNSEKI2_QUESTIONS } : {}),
@@ -677,6 +674,14 @@ biyoshi: BIYOSHI_QUESTIONS,
 
 ...(isExamPublished("tsukanshi") ? { "tsukanshi": TSUKANSHI_QUESTIONS } : {})
 };
+
+// Compatibility lookups do not add a second copy to the enumerable registry.
+for (const [alias, canonical] of Object.entries(EXAM_CODE_ALIASES)) {
+  Object.defineProperty(QUESTIONS_BY_EXAM, alias, {
+    enumerable: false,
+    get: () => QUESTIONS_BY_EXAM[canonical],
+  });
+}
 
 export const ALL_QUESTIONS: Question[] = (
   Object.values(QUESTIONS_BY_EXAM) as Question[][]

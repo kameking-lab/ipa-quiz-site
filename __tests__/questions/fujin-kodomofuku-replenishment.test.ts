@@ -70,7 +70,7 @@ describe("婦人子供服製造の補充原本と学習経路", () => {
     });
   }
   it("合糸は原本110デニールと70デニールを加算する", () => {
-    const q = FUJIN_KODOMOFUKU2_QUESTIONS.find(q => q.qNumber === 31)!;
+    const q = FUJIN_KODOMOFUKU2_QUESTIONS.find(q => q.year === 2023 && q.qNumber === 31)!;
     expect(q.question).toContain("110デニール1本と70デニール1本");
     expect(q.officialAnswerNumber).toBe("ニ");
     expect(q.explanation).toContain("110＋70＝180");

@@ -64,9 +64,11 @@ describe("機械保全3級の原問・正答・配信経路", () => {
   });
 
   it("第1回の共通15問は検品済み原稿を再利用する", () => {
+    const mechanicalSitting = KIKAI_HOZEN3_QUESTIONS.filter(q => q.year === 2025 && q.season === "round1");
+    const electricalSitting = KIKAI_HOZEN_DENKI3_QUESTIONS.filter(q => q.year === 2025 && q.season === "round1");
     for (let i = 0; i < 15; i++) {
-      const mechanical = KIKAI_HOZEN3_QUESTIONS[i]!;
-      const electrical = KIKAI_HOZEN_DENKI3_QUESTIONS[i]!;
+      const mechanical = mechanicalSitting[i]!;
+      const electrical = electricalSitting[i]!;
       expect(electrical.question).toBe(mechanical.question);
       expect(electrical.officialAnswerNumber).toBe(mechanical.officialAnswerNumber);
       expect(electrical.choiceExplanations).toEqual(mechanical.choiceExplanations);

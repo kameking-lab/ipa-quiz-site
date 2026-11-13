@@ -24,10 +24,10 @@ for (const [code, key] of Object.entries(officialKeys)) {
   const evidence = JSON.parse(readFileSync(`data/questions/${exam}/2024-early.sources.json`, "utf8"));
   describe(`${exam} 2024年度前期の公式原本との対応`, () => {
     it("全問が出題・詳細ページ・公式正答表示につながる", async () => {
-      const rows = await getQuestionsForExam(exam);
+      const rows = (await getQuestionsForExam(exam)).filter(q => q.year === 2024 && q.season === "early");
       expect(rows).toHaveLength(key.length);
       expect(new Set(rows.map(q => q.id)).size).toBe(key.length);
-      expect(QUESTIONS_BY_EXAM[exam]).toEqual(rows);
+      expect(QUESTIONS_BY_EXAM[exam]!.filter(q => q.year === 2024 && q.season === "early")).toEqual(rows);
       expect(rows.filter(isPracticeReadyQuestion)).toHaveLength(key.length);
       expect(EXAM_CONFIGS[exam].sessions[0].expectedQuestions).toBe(key.length);
       expect(getQualificationByExamCode(exam)?.status).toBe("live");
@@ -52,7 +52,7 @@ for (const [code, key] of Object.entries(officialKeys)) {
       if (!code.endsWith("3")) expect(["ア", "イ", "ウ", "エ"].map(k => choiceDisplayLabel(exam, k as "ア"))).toEqual(["イ", "ロ", "ハ", "ニ"]);
     });
     it("必要な原図が存在しハッシュと参照が一致する", async () => {
-      const rows = await getQuestionsForExam(exam);
+      const rows = (await getQuestionsForExam(exam)).filter(q => q.year === 2024 && q.season === "early");
       expect(rows.filter(q => q.hasImage)).toHaveLength(evidence.figureCount);
       evidence.figures.forEach((f: { qNumber: number; file: string; sha256: string }) => {
         const q = rows.find(q => q.qNumber === f.qNumber)!;

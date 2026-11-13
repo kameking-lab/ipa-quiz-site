@@ -1,4 +1,5 @@
 import type { ExamCode, Question } from "./types";
+import { canonicalExamCode } from "./exam-aliases";
 import { isExamPublished } from "@/lib/qualifications/catalog";
 
 // Bundler-friendly lazy loaders — each exam chunk is only loaded on demand.
@@ -313,11 +314,8 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 "reito-seko2": async () => isExamPublished("reito-seko2") ? (await import("@/data/questions/reito-seko2")).REITO_SEKO2_QUESTIONS : [],
 "reito-seko1": async () => isExamPublished("reito-seko1") ? (await import("@/data/questions/reito-seko1")).REITO_SEKO1_QUESTIONS : [],
 
-
 "henatsuki-kumitate2": async () => isExamPublished("henatsuki-kumitate2") ? (await import("@/data/questions/henatsuki-kumitate2")).HENATSUKI_KUMITATE2_QUESTIONS : [],
 "henatsuki-kumitate1": async () => isExamPublished("henatsuki-kumitate1") ? (await import("@/data/questions/henatsuki-kumitate1")).HENATSUKI_KUMITATE1_QUESTIONS : [],
-
-"haidenban-kumitate3": async () => isExamPublished("haidenban-kumitate3") ? (await import("@/data/questions/haidenban-kumitate3")).HAIDENBAN_KUMITATE3_QUESTIONS : [],
 
 "kikai-seizu-cad1": async () => isExamPublished("kikai-seizu-cad1") ? (await import("@/data/questions/kikai-seizu-cad1")).KIKAI_SEIZU_CAD1_QUESTIONS : [],
 
@@ -336,12 +334,10 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 "block-kenchiku1": async () => isExamPublished("block-kenchiku1") ? (await import("@/data/questions/block-kenchiku1")).BLOCK_KENCHIKU1_QUESTIONS : [],
 "shuzo1": async () => isExamPublished("shuzo1") ? (await import("@/data/questions/shuzo1")).SHUZO1_QUESTIONS : [],
 
-"haikan-plant2": async () => isExamPublished("haikan-plant2") ? (await import("@/data/questions/haikan-plant2")).HAIKAN_PLANT2_QUESTIONS : [],
-
 "bousui-frp1": async () => isExamPublished("bousui-frp1") ? (await import("@/data/questions/bousui-frp1")).BOUSUI_FRP1_QUESTIONS : [],
 
 "naiso-carpet1": async () => isExamPublished("naiso-carpet1") ? (await import("@/data/questions/naiso-carpet1")).NAISO_CARPET1_QUESTIONS : [],
-"haikan-plant1": async () => isExamPublished("haikan-plant1") ? (await import("@/data/questions/haikan-plant1")).HAIKAN_PLANT1_QUESTIONS : [],
+
 "shashutsu2": async () => isExamPublished("shashutsu2") ? (await import("@/data/questions/shashutsu2")).SHASHUTSU2_QUESTIONS : [],
 
 "kagaku-bunseki2": async () => isExamPublished("kagaku-bunseki2") ? (await import("@/data/questions/kagaku-bunseki2")).KAGAKU_BUNSEKI2_QUESTIONS : [],
@@ -351,7 +347,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 
 /** Load questions for one exam (lazy — only loads the requested exam's chunk). */
 export async function getQuestionsForExam(exam: ExamCode): Promise<Question[]> {
-  const loader = EXAM_LOADERS[exam];
+  const loader = EXAM_LOADERS[canonicalExamCode(exam)];
   return loader ? loader() : [];
 }
 

@@ -1,5 +1,6 @@
 import khkPublication from "@/data/qualification-staging/khk-kagaku/manifest.json";
 import type { ExamCode } from "@/lib/questions/types";
+import { canonicalExamCode } from "@/lib/questions/exam-aliases";
 
 export type QualificationDomain =
   | "information-technology"
@@ -119,11 +120,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
 {"slug": "reito-seko2", "examCode": "reito-seko2", "shortName": "冷凍空気調和機器施工技能士 2級（冷凍空気調和機器施工作業）", "fullName": "技能検定 2級冷凍空気調和機器施工（冷凍空気調和機器施工作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
 {"slug": "reito-seko1", "examCode": "reito-seko1", "shortName": "冷凍空気調和機器施工技能士 1級（冷凍空気調和機器施工作業）", "fullName": "技能検定 1級冷凍空気調和機器施工（冷凍空気調和機器施工作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
 
-
 {"slug": "henatsuki-kumitate2", "examCode": "henatsuki-kumitate2", "shortName": "電気機器組立て技能士 2級（変圧器組立て作業）", "fullName": "技能検定 2級電気機器組立て（変圧器組立て作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
 {"slug": "henatsuki-kumitate1", "examCode": "henatsuki-kumitate1", "shortName": "電気機器組立て技能士 1級（変圧器組立て作業）", "fullName": "技能検定 1級電気機器組立て（変圧器組立て作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
-
-{"slug": "haidenban-kumitate3", "examCode": "haidenban-kumitate3", "shortName": "電気機器組立て技能士 3級（配電盤・制御盤組立て作業）", "fullName": "技能検定 3級電気機器組立て（配電盤・制御盤組立て作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
 
 {"slug": "kikai-seizu-cad1", "examCode": "kikai-seizu-cad1", "shortName": "機械・プラント製図技能士 1級（機械製図CAD作業）", "fullName": "技能検定 1級機械・プラント製図（機械製図CAD作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
 
@@ -145,12 +143,10 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
 {"slug": "fraise2", "examCode": "fraise2", "shortName": "機械加工技能士 2級（フライス盤作業）", "fullName": "技能検定 2級機械加工（フライス盤作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
 {"slug": "fraise3", "examCode": "fraise3", "shortName": "機械加工技能士 3級（フライス盤作業）", "fullName": "技能検定 3級機械加工（フライス盤作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
 
-{"slug": "haikan-plant2", "examCode": "haikan-plant2", "shortName": "配管技能士 2級（プラント配管作業）", "fullName": "技能検定 2級配管（プラント配管作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
-
 {"slug": "bousui-frp1", "examCode": "bousui-frp1", "shortName": "防水施工技能士 1級（FRP防水工事作業）", "fullName": "技能検定 1級防水施工（FRP防水工事作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
 
 {"slug": "naiso-carpet1", "examCode": "naiso-carpet1", "shortName": "内装仕上げ施工技能士 1級（カーペット系床仕上げ工事作業）", "fullName": "技能検定 1級内装仕上げ施工（カーペット系床仕上げ工事作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
-{"slug": "haikan-plant1", "examCode": "haikan-plant1", "shortName": "配管技能士 1級（プラント配管作業）", "fullName": "技能検定 1級配管（プラント配管作業）学科試験", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "後期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
+
 {"slug": "shashutsu2", "examCode": "shashutsu2", "shortName": "プラスチック成形技能士 2級（射出成形作業）", "fullName": "技能検定 2級プラスチック成形（射出成形作業）学科試験", "domain": "electrical", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
 
 {"slug": "kagaku-bunseki2", "examCode": "kagaku-bunseki2", "shortName": "化学分析技能士 2級", "fullName": "技能検定 2級化学分析（化学分析作業）学科試験", "domain": "safety", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "前期学科の公式過去問・公式正答と全肢の独自解説を収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
@@ -1907,7 +1903,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
 ] as const;
 
 export function getQualificationByExamCode(exam: ExamCode): QualificationCatalogEntry | undefined {
-  return QUALIFICATION_CATALOG.find((item) => item.examCode === exam);
+  return QUALIFICATION_CATALOG.find((item) => item.examCode === canonicalExamCode(exam));
 }
 
 /** Public routes and question registries must call this gate before exposing external data. */

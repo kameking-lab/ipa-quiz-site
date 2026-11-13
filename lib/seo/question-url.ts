@@ -1,4 +1,5 @@
 import type { Question, QuestionPart, Season, Session, ExamCode } from "@/lib/questions/types";
+import { canonicalExamCode } from "@/lib/questions/exam-aliases";
 
 export interface QuestionRouteParams {
   exam: string;
@@ -30,7 +31,7 @@ export function parseQuestionNumberSegment(exam: string, qnum: string): { qNumbe
 }
 
 export function questionPagePath(q: Pick<Question, "exam" | "year" | "season" | "session" | "qNumber"> & Partial<Pick<Question, "part">>): string {
-  return `/q/${q.exam}/${q.year}-${q.season}/${q.session}/${questionNumberSegment(q.qNumber, q.part)}`;
+  return `/q/${canonicalExamCode(q.exam)}/${q.year}-${q.season}/${q.session}/${questionNumberSegment(q.qNumber, q.part)}`;
 }
 
 export function parseQuestionRoute(params: QuestionRouteParams): {
@@ -51,7 +52,7 @@ export function parseQuestionRoute(params: QuestionRouteParams): {
   const { qNumber, part } = segment;
 
   return {
-    exam: params.exam as ExamCode,
+    exam: canonicalExamCode(params.exam as ExamCode),
     year,
     season,
     session: params.section as Session,
