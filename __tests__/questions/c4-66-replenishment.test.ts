@@ -14,6 +14,7 @@ import type { ChoiceKey, ExamCode } from "@/lib/questions/types";
 // 公式正答表を原本画像で確認した固定値。群内番号と配信用の通し番号の対応も検査する。
 const editions = [
   { exam: "block-kenchiku3", count: 30, split: 30, answers: "××○○○×○○×○"+"×××○○○○×○×"+"××○○×○×○○○", pages: [...Array(14).fill(2),...Array(11).fill(3),...Array(5).fill(4)], figures: [5,6,21,24,25] },
+  { exam: "block-kenchiku1", count: 50, split: 25, answers: "×○○××"+"○○×××"+"○×××○"+"○○×××"+"×××○×"+"ロロハイロ"+"ハロイロニ"+"ニロニイニ"+"ニイハニロ"+"イロハイハ", pages: [...Array(9).fill(2),...Array(12).fill(3),...Array(4).fill(4),...Array(5).fill(5),...Array(5).fill(6),...Array(5).fill(7),...Array(3).fill(8),...Array(6).fill(9),10], figures: [5,8,22,29,30,32,41,43,46] },
 ];
 describe.each(editions)("c4-66 $exam", ({ exam: code, count, split, answers, pages, figures }) => {
   const exam=code as ExamCode;
