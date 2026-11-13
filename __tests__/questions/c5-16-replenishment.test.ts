@@ -19,6 +19,16 @@ const editions = [
       + "ニイイロハ" + "ニイニハイ" + "ロハイイイ" + "イハニハロ" + "ロハハニイ",
     pages: [...Array(14).fill(2), ...Array(11).fill(3), ...Array(6).fill(4), ...Array(5).fill(5), ...Array(6).fill(6), ...Array(6).fill(7), ...Array(2).fill(8)],
     figures: [2, 25, 28] },
+  { exam: "bousui-frp2", year: 2024, season: "early", name: "防水施工",
+    answers: "○○×○×" + "×○×○○" + "○××○×" + "○×○○×" + "○○○××"
+      + "ハニロハハ" + "イロロハイ" + "ロロロニイ" + "ハニイハニ" + "ニハロニロ",
+    pages: [...Array(15).fill(2), ...Array(10).fill(3), ...Array(6).fill(4), ...Array(5).fill(5), ...Array(6).fill(6), ...Array(6).fill(7), ...Array(2).fill(8)],
+    figures: [3, 26, 28] },
+  { exam: "bousui-frp1", year: 2023, season: "early", name: "防水施工",
+    answers: "××○×○" + "××○○×" + "○○×○×" + "×○○××" + "○○×○○"
+      + "ハニイイロ" + "ニロイロハ" + "ニハハハロ" + "ニニイハハ" + "ハロロハイ",
+    pages: [...Array(15).fill(2), ...Array(10).fill(3), ...Array(5).fill(4), ...Array(6).fill(5), ...Array(5).fill(6), ...Array(6).fill(7), ...Array(3).fill(8)],
+    figures: [26, 28] },
 ];
 
 describe.each(editions)("c5-16 $exam $year", ({ exam: code, year, season, name, answers, pages, figures }) => {

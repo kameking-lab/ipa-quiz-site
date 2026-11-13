@@ -63,6 +63,7 @@ export const EXAM_LABELS: Record<string, string> = {
   "haikan-plant2": "配管技能士 2級（プラント配管作業）",
   "haikan-kenchiku3": "配管技能士 3級（建築配管作業）",
   "bousui-frp1": "防水施工技能士 1級（FRP防水工事作業）",
+  "bousui-frp2": "防水施工技能士 2級（FRP防水工事作業）",
   "naiso-carpet1": "内装仕上げ施工技能士 1級（カーペット系床仕上げ工事作業）",
   "haikan-plant1": "配管技能士 1級（プラント配管作業）",
   "shashutsu2": "プラスチック成形技能士 2級（射出成形作業）",
