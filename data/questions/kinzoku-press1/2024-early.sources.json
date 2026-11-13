@@ -551,5 +551,52 @@
       "allChoicesChecked": true,
       "hasFigure": false
     }
-  ]
+  ],
+  "strictReview": {
+    "step": "c5r-B1",
+    "checkedAt": "2026-11-13",
+    "questionCount": 50,
+    "choiceExplanationCount": 150,
+    "figureCount": 3,
+    "method": "公式問題PDF全ページと全設問・全選択肢・解説を照合。公式正答PDFを独立抽出して全問照合。掲載用図の全点目視。公式問題・正答URL計30件を再取得しSHA-256一致を確認。",
+    "officialAnswersChanged": 0,
+    "missingQuestions": 0,
+    "sameOfficialQuestionDuplicates": 0,
+    "correctedQuestions": [
+      {
+        "id": "kinzoku-press1-2024-early-gakka-a-008",
+        "qNumber": 8,
+        "officialLabel": "A群 8",
+        "fields": [
+          "question"
+        ]
+      },
+      {
+        "id": "kinzoku-press1-2024-early-gakka-b-006",
+        "qNumber": 31,
+        "officialLabel": "B群 6",
+        "fields": [
+          "choices",
+          "explanation",
+          "choiceExplanations"
+        ]
+      },
+      {
+        "id": "kinzoku-press1-2024-early-gakka-b-018",
+        "qNumber": 43,
+        "officialLabel": "B群 18",
+        "fields": [
+          "question"
+        ]
+      },
+      {
+        "id": "kinzoku-press1-2024-early-gakka-b-022",
+        "qNumber": 47,
+        "officialLabel": "B群 22",
+        "fields": [
+          "choices"
+        ]
+      }
+    ]
+  }
 }

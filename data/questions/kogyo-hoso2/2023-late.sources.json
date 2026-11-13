@@ -551,5 +551,39 @@
       "allChoicesChecked": true,
       "hasFigure": false
     }
-  ]
+  ],
+  "strictReview": {
+    "step": "c5r-B1",
+    "checkedAt": "2026-11-13",
+    "questionCount": 50,
+    "choiceExplanationCount": 150,
+    "figureCount": 6,
+    "method": "公式問題PDF全ページと全設問・全選択肢・解説を照合。公式正答PDFを独立抽出して全問照合。掲載用図の全点目視。公式問題・正答URL計30件を再取得しSHA-256一致を確認。",
+    "officialAnswersChanged": 0,
+    "missingQuestions": 0,
+    "sameOfficialQuestionDuplicates": 0,
+    "correctedQuestions": [
+      {
+        "id": "kogyo-hoso2-2023-late-gakka-a-016",
+        "qNumber": 16,
+        "officialLabel": "A群 16",
+        "fields": [
+          "question"
+        ]
+      },
+      {
+        "id": "kogyo-hoso2-2023-late-gakka-a-020",
+        "qNumber": 20,
+        "officialLabel": "A群 20",
+        "fields": [
+          "explanation",
+          "choiceExplanations",
+          "imageAltTexts"
+        ]
+      }
+    ],
+    "explanationReferences": [
+      "https://www.javada.or.jp/jigyou/gino/business/r05l062b01x.pdf#page=3"
+    ]
+  }
 }

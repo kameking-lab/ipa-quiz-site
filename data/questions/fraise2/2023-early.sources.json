@@ -551,5 +551,17 @@
       "hasFigure": false
     }
   ],
-  "finalReview": "公式問題の全設問・全肢を拡大原本と照合し、ローカルOCRを照合補助に使用。公式正答表全問を画像と固定値テストで再確認。公式本文・公式正答の変更なし。"
+  "finalReview": "公式問題の全設問・全肢を拡大原本と照合し、ローカルOCRを照合補助に使用。公式正答表全問を画像と固定値テストで再確認。公式本文・公式正答の変更なし。",
+  "strictReview": {
+    "step": "c5r-B1",
+    "checkedAt": "2026-11-13",
+    "questionCount": 50,
+    "choiceExplanationCount": 150,
+    "figureCount": 2,
+    "method": "公式問題PDF全ページと全設問・全選択肢・解説を照合。公式正答PDFを独立抽出して全問照合。掲載用図の全点目視。公式問題・正答URL計30件を再取得しSHA-256一致を確認。",
+    "officialAnswersChanged": 0,
+    "missingQuestions": 0,
+    "sameOfficialQuestionDuplicates": 0,
+    "correctedQuestions": []
+  }
 }

@@ -552,5 +552,50 @@
       "hasFigure": false
     }
   ],
-  "existingQuestionMatches": []
+  "existingQuestionMatches": [],
+  "strictReview": {
+    "step": "c5r-B1",
+    "checkedAt": "2026-11-13",
+    "questionCount": 50,
+    "choiceExplanationCount": 150,
+    "figureCount": 8,
+    "method": "公式問題PDF全ページと全設問・全選択肢・解説を照合。公式正答PDFを独立抽出して全問照合。掲載用図の全点目視。公式問題・正答URL計30件を再取得しSHA-256一致を確認。",
+    "officialAnswersChanged": 0,
+    "missingQuestions": 0,
+    "sameOfficialQuestionDuplicates": 0,
+    "correctedQuestions": [
+      {
+        "id": "tekkin-zumen1-2024-late-gakka-a-019",
+        "qNumber": 19,
+        "officialLabel": "A群 19",
+        "fields": [
+          "question"
+        ]
+      },
+      {
+        "id": "tekkin-zumen1-2024-late-gakka-b-003",
+        "qNumber": 28,
+        "officialLabel": "B群 3",
+        "fields": [
+          "imageCrop"
+        ]
+      },
+      {
+        "id": "tekkin-zumen1-2024-late-gakka-b-008",
+        "qNumber": 33,
+        "officialLabel": "B群 8",
+        "fields": [
+          "choices"
+        ]
+      },
+      {
+        "id": "tekkin-zumen1-2024-late-gakka-b-021",
+        "qNumber": 46,
+        "officialLabel": "B群 21",
+        "fields": [
+          "choices"
+        ]
+      }
+    ]
+  }
 }
