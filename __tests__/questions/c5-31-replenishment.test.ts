@@ -13,6 +13,8 @@ import type { Question } from "@/lib/questions/types";
 
 // 問題データとは別に公式正解表の各行を転記。
 const editions: { code: Question["exam"]; year: number; answers: string; figures: number[]; all: Question[] }[] = [
+  { code: "kenchiku-bankin-duct2", year: 2023, all: KENCHIKU_BANKIN_DUCT2_QUESTIONS,
+    answers: "○○××○" + "○×○××" + "××○○×" + "×○×○×" + "○×××○" + "ニロニロハ" + "イイロイイ" + "ハニロハハ" + "ハハニイロ" + "ニハニイロ", figures: [10, 22, 28, 29, 31, 37, 38, 44] },
   { code: "kenchiku-bankin-duct2", year: 2024, all: KENCHIKU_BANKIN_DUCT2_QUESTIONS,
     answers: "○×○○×" + "××○×○" + "○××○○" + "○×○××" + "○×○××" + "ハイロハロ" + "ニハニハイ" + "ニロイイイ" + "ハロロハイ" + "ニロハロロ", figures: [3, 22, 28, 29, 34, 37, 38] },
   { code: "kenchiku-bankin1", year: 2023, all: KENCHIKU_BANKIN1_QUESTIONS,
