@@ -23,6 +23,7 @@ import { KATAWAKU2_QUESTIONS } from "./katawaku2";
 import { TEKKIN3_QUESTIONS } from "./tekkin3";
 import { TEKKIN2_QUESTIONS } from "./tekkin2";
 import { PAN_SEIZO1_QUESTIONS } from "./pan-seizo1";
+import { KIKAI_SHIAGE1_QUESTIONS } from "./kikai-shiage1";
 import { SHASHUTSU2_QUESTIONS } from "./shashutsu2";
 import { KIKAI_KENSA3_QUESTIONS } from "./kikai-kensa3";
 import { KAGAKU_BUNSEKI2_QUESTIONS } from "./kagaku-bunseki2";
@@ -227,6 +228,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("tekkin3") ? { "tekkin3": TEKKIN3_QUESTIONS } : {}),
 ...(isExamPublished("tekkin2") ? { "tekkin2": TEKKIN2_QUESTIONS } : {}),
 ...(isExamPublished("pan-seizo1") ? { "pan-seizo1": PAN_SEIZO1_QUESTIONS } : {}),
+...(isExamPublished("kikai-shiage1") ? { "kikai-shiage1": KIKAI_SHIAGE1_QUESTIONS } : {}),
 ...(isExamPublished("shashutsu2") ? { "shashutsu2": SHASHUTSU2_QUESTIONS } : {}),
 ...(isExamPublished("kikai-kensa3") ? { "kikai-kensa3": KIKAI_KENSA3_QUESTIONS } : {}),
 ...(isExamPublished("kagaku-bunseki2") ? { "kagaku-bunseki2": KAGAKU_BUNSEKI2_QUESTIONS } : {}),

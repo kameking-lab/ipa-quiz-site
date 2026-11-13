@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { PAN_SEIZO1_QUESTIONS } from "@/data/questions/pan-seizo1";
+import { KIKAI_SHIAGE1_QUESTIONS } from "@/data/questions/kikai-shiage1";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
@@ -19,6 +20,11 @@ const editions = [
       + "ニハニイニ" + "ニロハイハ" + "ロニニハハ" + "ロロハロロ" + "ニイニハイ",
     pages: [...Array(16).fill(2), ...Array(9).fill(3), ...Array(6).fill(4), ...Array(6).fill(5), ...Array(6).fill(6), ...Array(6).fill(7), 8],
     figures: [] as number[] },
+  { exam: "kikai-shiage1" as const, rows: KIKAI_SHIAGE1_QUESTIONS, season: "early" as const,
+    answers: "×○○○○" + "×○×○○" + "○××○×" + "○○○○×" + "○××○○"
+      + "イハイニハ" + "ロニイロニ" + "ロロイハハ" + "ハロニイロ" + "ニイイロハ",
+    pages: [...Array(16).fill(2), ...Array(9).fill(3), ...Array(6).fill(4), ...Array(6).fill(5), ...Array(5).fill(6), ...Array(6).fill(7), ...Array(2).fill(8)],
+    figures: [41] },
 ];
 
 describe.each(editions)("c4-56 $exam", ({ exam, rows, season, answers, pages, figures }) => {
@@ -74,4 +80,11 @@ it("パン製造の生産計算と、確認した表示基準を解説に反映�
   expect(PAN_SEIZO1_QUESTIONS[48].explanation).toContain("蜂蜜は4%以上");
   expect(PAN_SEIZO1_QUESTIONS[27].question).toContain("クリスマス用");
   expect(PAN_SEIZO1_QUESTIONS[27].explanation).toContain("復活祭");
+});
+
+it("機械組立仕上げ1級の単位換算・誤った電力式・抜き加工図の対応を保持する", () => {
+  expect(KIKAI_SHIAGE1_QUESTIONS[15].explanation).toContain("4500÷150＝30N/mm²＝30MPa");
+  expect(KIKAI_SHIAGE1_QUESTIONS[43].choices?.ア).toBe("P＝I²/R");
+  expect(KIKAI_SHIAGE1_QUESTIONS[43].officialAnswerNumber).toBe("イ");
+  expect(KIKAI_SHIAGE1_QUESTIONS[40].choices?.ウ).toBe("①だれ面　②せん断面　③破断面　④バリ");
 });
