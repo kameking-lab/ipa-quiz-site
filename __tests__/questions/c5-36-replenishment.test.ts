@@ -16,6 +16,8 @@ import type { ChoiceKey } from "@/lib/questions/types";
 
 // 公式正答PDFを5問ずつ確認して固定。内部キーとの対応を独立して検証する。
 const editions = [
+  { exam: "kuukiatsu-kumitate1" as const, year: 2024, all: KUUKIATSU_KUMITATE1_QUESTIONS,
+    answers: "○×○××" + "○○○×○" + "○○○○○" + "××○○×" + "○××○×" + "ロイロイハ" + "ニロイイハ" + "ロイイロハ" + "ニハイイロ" + "ニニロニロ", figures: 6 },
   { exam: "kuukiatsu-kumitate2" as const, year: 2025, all: KUUKIATSU_KUMITATE2_QUESTIONS,
     answers: "○○×××" + "×○○××" + "○×○○○" + "○○○××" + "×○×○○" + "ロイニロロ" + "ハロイニロ" + "イロハイニ" + "ニロハロロ" + "ニイロハハ", figures: 5 },
   { exam: "kuukiatsu-kumitate1" as const, year: 2025, all: KUUKIATSU_KUMITATE1_QUESTIONS,
@@ -62,4 +64,23 @@ describe.each(editions)("c5-36 $exam $year 後期", ({ exam, year, all, answers,
     expect(getQualificationByExamCode(exam)?.fullName).toContain("空気圧装置組立て");
     expect((["ア", "イ", "ウ", "エ"] as ChoiceKey[]).map(k => choiceDisplayLabel(exam, k))).toEqual(["イ", "ロ", "ハ", "ニ"]);
   });
+});
+
+
+it("級・年度ごとの原本の違いと計算問題を保持する", () => {
+  expect(KUUKIATSU_KUMITATE1_QUESTIONS).toHaveLength(100);
+  expect(KUUKIATSU_KUMITATE2_QUESTIONS).toHaveLength(50);
+  const one2025 = KUUKIATSU_KUMITATE1_QUESTIONS.filter(q => q.year === 2025);
+  const one2024 = KUUKIATSU_KUMITATE1_QUESTIONS.filter(q => q.year === 2024);
+  const two2025 = KUUKIATSU_KUMITATE2_QUESTIONS;
+  expect(one2025[45].explanation).toContain("14Ω");
+  expect(one2024[45].explanation).toContain("120Ω");
+  expect(one2024[33].explanation).toContain("19.96mm");
+  expect(one2024[32].question).toContain("公称ろ過度精度");
+  expect(one2024[32].explanation).toContain("原文どおり");
+  expect(two2025[49].question).toContain("第二種圧力容器");
+  expect(two2025[49].officialAnswerNumber).toBe("ハ");
+  expect(two2025[4].imageUrls).toHaveLength(1);
+  expect(one2025[43].imageUrls).toHaveLength(1);
+  expect(EXAM_CONFIGS["kuukiatsu-kumitate1"].yearRange).toEqual({ start: 2024, end: 2025 });
 });

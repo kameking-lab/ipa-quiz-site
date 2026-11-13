@@ -48,7 +48,9 @@
     "progressMatches": [],
     "refsChecked": 1417,
     "blobsChecked": 6346,
-    "hits": []
+    "hits": [],
+    "matchingOpenPRs": [],
+    "openPRsChecked": 55
   },
   "review": [
     {
@@ -550,6 +552,22 @@
       "statementChecked": true,
       "allChoicesChecked": true,
       "hasFigure": false
+    }
+  ],
+  "reviewNotes": [
+    "正答表の全角Ｘと本文データの×は同じ真偽として正規化。公式の正答判定は変更していない。",
+    "全問題ページと切り出した全原図を画像で確認。問番号・本文・全選択肢・図中の記号を原本に照合。"
+  ],
+  "supplementaryOfficialReferences": [
+    {
+      "question": "A群 25",
+      "url": "https://laws.e-gov.go.jp/law/347M50002000032#Mp-At_543",
+      "verified": "第543条・機械間等の通路80cm以上"
+    },
+    {
+      "question": "B群 25",
+      "url": "https://laws.e-gov.go.jp/law/347CO0000000318#Mp-At_1",
+      "verified": "第1条第7号・第二種圧力容器の0.2MPa及び0.04m³"
     }
   ]
 }
