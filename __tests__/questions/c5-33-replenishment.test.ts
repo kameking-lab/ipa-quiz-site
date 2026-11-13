@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
+import { KAITEN_DENKI2_QUESTIONS } from "@/data/questions/kaiten-denki2";
 import { KAITEN_DENKI1_QUESTIONS } from "@/data/questions/kaiten-denki1";
 import { ALL_QUESTIONS } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -13,6 +14,7 @@ import type { Question } from "@/lib/questions/types";
 // 問題データとは別に公式正解表の各行を転記。
 const editions: { code: Question["exam"]; year: number; answers: string; figures: number[]; all: Question[] }[] = [
  { code: "kaiten-denki1", year: 2023, all: KAITEN_DENKI1_QUESTIONS, answers: "×××○×○××××○××○×○○×○×○○×××" + "ニハハニロロニイニニニハハハイイニイロニハニハニニ", figures: [26,28,31] },
+ { code: "kaiten-denki2", year: 2023, all: KAITEN_DENKI2_QUESTIONS, answers: "×○×××××××○○○×○○○○×××○○×○×" + "イイロハイハハハイロロイイイニイニロロイニニハニハ", figures: [3,27,30,32,34] },
 ];
 
 describe.each(editions)("$code $year 年度前期", ({ code, year, answers, figures, all }) => {
