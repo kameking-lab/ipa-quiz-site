@@ -1,4 +1,5 @@
 import { KOJO_BANKIN1_QUESTIONS } from "./kojo-bankin1";
+import { KENCHIKU_BANKIN1_QUESTIONS } from "./kenchiku-bankin1";
 import { KINZOKU_NETSUSHORI3_QUESTIONS } from "./kinzoku-netsushori3";
 import { KOJO_BANKIN3_QUESTIONS } from "./kojo-bankin3";
 import { KOJO_BANKIN2_QUESTIONS } from "./kojo-bankin2";
@@ -251,6 +252,7 @@ import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("fujin-kodomofuku2") ? { "fujin-kodomofuku2": FUJIN_KODOMOFUKU2_QUESTIONS } : {}),
 ...(isExamPublished("kojo-bankin1") ? { "kojo-bankin1": KOJO_BANKIN1_QUESTIONS } : {}),
+...(isExamPublished("kenchiku-bankin1") ? { "kenchiku-bankin1": KENCHIKU_BANKIN1_QUESTIONS } : {}),
 ...(isExamPublished("kinzoku-netsushori3") ? { "kinzoku-netsushori3": KINZOKU_NETSUSHORI3_QUESTIONS } : {}),
 ...(isExamPublished("kojo-bankin3") ? { "kojo-bankin3": KOJO_BANKIN3_QUESTIONS } : {}),
 ...(isExamPublished("kojo-bankin2") ? { "kojo-bankin2": KOJO_BANKIN2_QUESTIONS } : {}),
