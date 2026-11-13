@@ -17,6 +17,7 @@ import type { ExamCode } from "@/lib/questions/types";
 const editions: { exam: ExamCode; season: "early" | "late"; key: string; figures: number[] }[] = [
   { exam: "kikai-kensa1", season: "late", key: "×××○× ○○×○○ ×××○○ ○○○×○ ○×○×○ ニイハイニ ロロハハロ ニハニハニ ハハニニイ ロロイロニ", figures: [49] },
   { exam: "kikai-kensa2", season: "late", key: "○×○○○ ○○××○ ○○××× ○○×○× ××××× ハロニハロ イハニロハ ロロイイハ ハロロイイ ニハハハニ", figures: [48, 49] },
+  { exam: "kikai-kensa3", season: "early", key: "○○××○ ××○○× ×○×○× ○×○×× ○××○○ ××○×○", figures: [] },
 ];
 for (const { exam, season, key, figures } of editions) {
   const code = exam as ExamCode;
