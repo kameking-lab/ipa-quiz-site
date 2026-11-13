@@ -5,9 +5,15 @@ import { EXAM_CODE_ALIASES } from "./lib/questions/exam-aliases";
 
 const isDev = process.env.NODE_ENV === "development";
 const useQuestionCorpus = process.env.NODE_ENV === "production";
-const questionAliases = useQuestionCorpus ? {
+const questionAliases: Record<string, string> = useQuestionCorpus ? {
   "@/data/questions": "./lib/questions/runtime-registry.ts",
   "@/lib/questions/get-questions": "./lib/questions/runtime-loaders.ts",
+} : {};
+const gatedAliases: Record<string, string> = process.env.WEB_STRICT_CONTENT_GATE === "true" ? {
+  "@/lib/kisho-study": "./mobile/shared/gated-kisho-study.ts",
+  "./kisho-study": "./mobile/shared/gated-kisho-study.ts",
+  "@/lib/exam-library/survey-assistant-grading-index": "./mobile/shared/granted-paper-grading.ts",
+  "@/lib/exam-library/reference-aware-grading-index": "./mobile/shared/granted-paper-grading.ts",
 } : {};
 
 const cspDirectives = [
@@ -71,6 +77,17 @@ const nextConfig: NextConfig = {
     for (const [source, target] of Object.entries(questionAliases)) {
       config.resolve.alias[`${source}$`] = resolve(process.cwd(), target);
     }
+    if (useQuestionCorpus) {
+      // Also cover imports already resolved by Next's TypeScript path plugin.
+      config.plugins.push(new webpack.NormalModuleReplacementPlugin(
+        /[\\/]data[\\/]questions[\\/]index\.ts$/,
+        resolve(process.cwd(), "lib/questions/runtime-registry.ts"),
+      ));
+      config.plugins.push(new webpack.NormalModuleReplacementPlugin(
+        /[\\/]lib[\\/]questions[\\/]get-questions\.ts$/,
+        resolve(process.cwd(), "lib/questions/runtime-loaders.ts"),
+      ));
+    }
     if (process.env.WEB_STRICT_CONTENT_GATE === "true") {
       config.resolve.alias["@/lib/kisho-study$"] = resolve(process.cwd(), "mobile/shared/gated-kisho-study.ts");
       config.plugins.push(new webpack.NormalModuleReplacementPlugin(
@@ -91,12 +108,7 @@ const nextConfig: NextConfig = {
   turbopack: {
     resolveAlias: {
       ...questionAliases,
-      ...(process.env.WEB_STRICT_CONTENT_GATE === "true" ? {
-        "@/lib/kisho-study": "./mobile/shared/gated-kisho-study.ts",
-        "./kisho-study": "./mobile/shared/gated-kisho-study.ts",
-        "@/lib/exam-library/survey-assistant-grading-index": "./mobile/shared/granted-paper-grading.ts",
-        "@/lib/exam-library/reference-aware-grading-index": "./mobile/shared/granted-paper-grading.ts",
-      } : {}),
+      ...gatedAliases,
     },
   },
   // Prisma uses the Node-API library engine here (engineType "library"), which loads
@@ -208,6 +220,10 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   productionBrowserSourceMaps: false,
   experimental: {
+    // Restoring Turbopack's old corpus graph can retain several GB even after
+    // its imports have been replaced. Compile the small runtime graph fresh;
+    // development caching and the application's ISR caches remain enabled.
+    turbopackFileSystemCacheForBuild: false,
     // Keep two page workers alongside the compiler on the 8 GB build machine.
     // /q already uses on-demand ISR; this limits the other prerendered routes.
     cpus: 2,

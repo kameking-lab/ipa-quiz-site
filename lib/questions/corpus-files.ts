@@ -8,6 +8,7 @@ export interface QuestionCorpusManifest {
   version: 1;
   staticExams: Partial<Record<ExamCode, { file: string; count: number }>>;
   lazyExams: Partial<Record<ExamCode, { file: string; count: number }>>;
+  staticCorpus?: { file: string; count: number };
 }
 
 export function openQuestionCorpus(root = process.cwd()) {
@@ -17,6 +18,7 @@ export function openQuestionCorpus(root = process.cwd()) {
     throw new Error("Invalid question corpus; run pnpm questions:write");
   }
   const files = new Map<string, Question[]>();
+  let staticPools: Partial<Record<ExamCode, Question[]>> | undefined;
   function read(entry: { file: string; count: number } | undefined): Question[] {
     if (!entry) return [];
     if (!/^[a-f0-9]{64}\.json\.gz$/.test(entry.file)) throw new Error("Invalid question corpus filename");
@@ -27,10 +29,37 @@ export function openQuestionCorpus(root = process.cwd()) {
     files.set(entry.file, questions);
     return questions;
   }
+  function staticExam(exam: ExamCode): Question[] {
+    if (!manifest.staticExams[exam]) return [];
+    if (!manifest.staticCorpus) return read(manifest.staticExams[exam]);
+    if (!staticPools) {
+      // A static registry always needs the entire corpus. One read avoids
+      // hundreds of synchronous file opens on a cold question-page request.
+      const all = read(manifest.staticCorpus);
+      const pools: Partial<Record<ExamCode, Question[]>> = {};
+      let offset = 0;
+      for (const code of Object.keys(manifest.staticExams) as ExamCode[]) {
+        const entry = manifest.staticExams[code]!;
+        if (!/^[a-f0-9]{64}\.json\.gz$/.test(entry.file) || !Number.isSafeInteger(entry.count) || entry.count < 0) {
+          throw new Error("Invalid question corpus entry");
+        }
+        const pool = files.get(entry.file) ?? all.slice(offset, offset + entry.count);
+        if (pool.length !== entry.count) throw new Error("Question corpus count mismatch");
+        // Preserve shared object identity when an exam was loaded lazily first.
+        for (let i = 0; i < pool.length; i++) all[offset + i] = pool[i];
+        files.set(entry.file, pool);
+        pools[code] = pool;
+        offset += entry.count;
+      }
+      if (offset !== all.length) throw new Error("Question corpus count mismatch");
+      staticPools = pools;
+    }
+    return staticPools[exam] ?? [];
+  }
   return {
     staticCodes: () => Object.keys(manifest.staticExams) as ExamCode[],
     lazyCodes: () => Object.keys(manifest.lazyExams) as ExamCode[],
-    staticExam: (exam: ExamCode) => read(manifest.staticExams[exam]),
+    staticExam,
     lazyExam: (exam: ExamCode) => read(manifest.lazyExams[exam]),
     lazyCount: (exam: ExamCode) => manifest.lazyExams[exam]?.count ?? 0,
   };

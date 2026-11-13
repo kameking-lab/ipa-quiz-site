@@ -11,10 +11,9 @@ export default defineConfig({
     // Let Vite resolve Next.js extensionless imports used by the real Auth.js wrapper.
     server: { deps: { inline: ["next-auth"] } },
     include: ["__tests__/**/*.{test,spec}.{ts,tsx}"],
-    // The copilot RAG corpus load takes a few seconds on first hit. Allow
-    // headroom so tests that exercise it (rag, copilot route) are not flaky
-    // when run in parallel with siblings that also touch the corpus.
-    testTimeout: 30_000,
+    // Cold question/index checks now initialize a 55k+ corpus. Keep enough time
+    // for correctness checks on constrained CI workers sharing that setup.
+    testTimeout: 120_000,
   },
   resolve: {
     // npm ci in mobile creates a second copy beside the shared workspace.

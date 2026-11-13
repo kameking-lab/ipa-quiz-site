@@ -35,7 +35,7 @@ function fixture() {
   };
   const save = () => writeFileSync(join(dir, "manifest.json"), JSON.stringify(manifest));
   save();
-  return { root, dir, first, question, manifest, save };
+  return { root, dir, first, question, manifest, save, entry };
 }
 
 describe("prebuilt question corpus", () => {
@@ -65,6 +65,18 @@ describe("prebuilt question corpus", () => {
     const all = await loaders.getAllQuestionsLazy();
     all.reverse();
     expect((await loaders.getAllQuestionsLazy()).map(q => q.id)).toEqual([f.question.id, "second", f.question.id]);
+  });
+
+  it("opens the static corpus once and shares objects with lazy exam pools", () => {
+    const f = fixture();
+    f.manifest.staticCorpus = f.entry([f.question, { ...f.question, id: "second" }, f.question]);
+    f.save();
+    const corpus = openQuestionCorpus(f.root);
+    const lazy = corpus.lazyExam("denken3");
+    rmSync(join(f.dir, f.first.file));
+    expect(corpus.staticExam("haiden-seigyo3")).toBe(lazy);
+    expect(corpus.staticExam("denken3").map(q => q.id)).toEqual(["second", f.question.id]);
+    expect(corpus.lazyExam("haiden-seigyo3")).toBe(corpus.staticExam("denken3"));
   });
 
   it("rejects invalid versions, paths, and question counts", () => {

@@ -1,7 +1,7 @@
 import { createHash } from "node:crypto";
-import { existsSync, lstatSync, mkdirSync, rmSync, writeFileSync } from "node:fs";
+import { existsSync, lstatSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
-import { gzipSync } from "node:zlib";
+import { gunzipSync, gzipSync } from "node:zlib";
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getAllQuestionsLazy, getQuestionsForExam, getRegisteredExamCodes } from "@/lib/questions/get-questions";
 import { openQuestionCorpus, QUESTION_CORPUS_DIR, type QuestionCorpusManifest } from "@/lib/questions/corpus-files";
@@ -24,6 +24,9 @@ async function main() {
     if (!written.has(file)) {
       const compressed = gzipSync(json, { level: 6 });
       writeFileSync(join(dir, file), compressed);
+      if (gunzipSync(readFileSync(join(dir, file))).toString("utf8") !== json) {
+        throw new Error(`Question corpus write mismatch: ${file}`);
+      }
       bytes += compressed.length;
       written.add(file);
     }
@@ -32,6 +35,7 @@ async function main() {
   for (const [exam, questions] of Object.entries(QUESTIONS_BY_EXAM)) {
     manifest.staticExams[exam as ExamCode] = store(questions);
   }
+  manifest.staticCorpus = store(ALL_QUESTIONS);
   const lazy = new Map<ExamCode, Question[]>();
   for (const exam of getRegisteredExamCodes()) {
     const questions = await getQuestionsForExam(exam);
