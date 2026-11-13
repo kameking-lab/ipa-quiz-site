@@ -81,6 +81,7 @@ export class Membership {
         // silent failure is reported here instead of as "no products".
         if (!(await this.sdk.isConfigured()).isConfigured) throw new StoreError("App Storeの課金機能を初期化できませんでした（configure 失敗）。", "configure_failed");
       } else if (appUserId) await this.sdk.logIn({ appUserID: appUserId });
+      else if (!(await this.sdk.isAnonymous()).isAnonymous) await this.sdk.logOut();
     } catch (error) {
       throw error instanceof StoreError ? error : new StoreError(describeStoreError(error, "App Storeの課金機能を準備できませんでした"), "connect");
     }
@@ -118,5 +119,13 @@ export class Membership {
     try { await this.sdk.restorePurchases(); }
     catch (error) { throw new StoreError(describeStoreError(error, "購入を復元できませんでした"), "restore"); }
   }
-  async disconnect() { if ((await this.sdk.isConfigured()).isConfigured && !(await this.sdk.isAnonymous()).isAnonymous) await this.sdk.logOut(); }
+  disconnect(): Promise<void> {
+    const task = this.connecting.then(async () => {
+      if ((await this.sdk.isConfigured()).isConfigured && !(await this.sdk.isAnonymous()).isAnonymous) await this.sdk.logOut();
+    });
+    this.connecting = task.catch(() => {});
+    return task;
+  }
 }
+// The online shell and explicit sign-out share the SDK identity queue.
+export const deviceMembership = new Membership();

@@ -13,7 +13,7 @@ import {
 } from "@/lib/exam-qualification-hubs";
 import { FP2_PRACTICAL_EDITIONS, getPracticalEdition as getFp2PracticalEdition } from "@/lib/fp2/practical";
 import { FP3_PRACTICAL_EDITIONS, getPracticalEdition as getFp3PracticalEdition } from "@/lib/fp3/practical";
-import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
+import { QUALIFICATION_CATALOG, type QualificationDomain } from "@/lib/qualifications/catalog";
 import type { ExamCode } from "@/lib/questions/types";
 import { getQuestionsByExamStrict, groupByYearSeason } from "@/lib/seo/exam-meta";
 
@@ -25,10 +25,12 @@ import { getQuestionsByExamStrict, groupByYearSeason } from "@/lib/seo/exam-meta
  *  - 安全衛生: 各資格ハブと同じ getExamPaperStats の合計
  */
 
-export type HomeDomainId = "it" | "safety" | "electrical" | "construction" | "money" | "welfare" | "automotive";
+export type HomeDomainId = "it" | "safety" | "electrical" | "construction" | "money" | "real-estate" | "legal" | "welfare" | "automotive";
 
 export interface HomeDirectoryItem {
   key: string;
+  /** Existing question IDs whose prefix differs from the registered exam code. */
+  historyPrefixes?: string[];
   href: string;
   /** カード見出し（略称を含む短い名前） */
   name: string;
@@ -91,9 +93,17 @@ function examPeriodCount(code: ExamCode): number {
   return groupByYearSeason(getQuestionsByExamStrict(code)).length;
 }
 
+function historyPrefixes(code: ExamCode): string[] | undefined {
+  const prefixes = [...new Set(getQuestionsByExamStrict(code)
+    .filter(question => !question.id.startsWith(`${code}-`))
+    .map(question => question.id.replace(/-q\d+.*$/, "-q")))];
+  return prefixes.length ? prefixes : undefined;
+}
+
 function ipaItem(def: IpaCardDef): HomeDirectoryItem {
   return {
     key: def.code,
+    historyPrefixes: historyPrefixes(def.code),
     href: `/${def.code}`,
     name: def.name,
     abbr: def.abbr,
@@ -235,6 +245,7 @@ function otherItem(def: OtherCardDef): HomeDirectoryItem {
   const practical = def.code === "fp2" ? fp2PracticalCount() : def.code === "fp3" ? fp3PracticalCount() : 0;
   return {
     key: def.code,
+    historyPrefixes: historyPrefixes(def.code),
     href: `/${def.code}`,
     name: def.name,
     sub: def.sub,
@@ -306,17 +317,32 @@ function domain(
 }
 
 export function getHomeDirectory(): HomeDirectoryDomain[] {
-  const catalogDomains: Record<string, OtherCardDef["domain"]> = {
-    "information-technology": "it", finance: "money", "real-estate": "money", accounting: "money",
-    electrical: "electrical", construction: "construction", safety: "safety", legal: "money",
+  const catalogDomains: Record<QualificationDomain, HomeDomainId> = {
+    "information-technology": "it", finance: "money", "real-estate": "real-estate", accounting: "money",
+    electrical: "electrical", construction: "construction", safety: "safety", legal: "legal", automotive: "automotive",
     welfare: "welfare", pharmacy: "welfare", "personal-services": "welfare",
   };
   const additionalCards: OtherCardDef[] = QUALIFICATION_CATALOG.flatMap((entry) => {
     if (entry.status !== "live" || !entry.examCode || entry.domain === "automotive" || OTHER_CARDS.some((card) => card.code === entry.examCode)) return [];
-    return [{ code: entry.examCode, name: entry.shortName, sub: entry.reuseSummary, domain: catalogDomains[entry.domain] ?? "safety" }];
+    return [{ code: entry.examCode, name: entry.shortName, sub: entry.reuseSummary, domain: catalogDomains[entry.domain] }];
   });
-  const others = [...OTHER_CARDS, ...additionalCards].filter((def) => isLiveExam(def.code)).map((def) => ({ def, item: otherItem(def) }));
+  // The registration catalog owns the category, including older hand-written cards.
+  const others = [...OTHER_CARDS, ...additionalCards].filter((def) => isLiveExam(def.code)).map((def) => {
+    const entry = QUALIFICATION_CATALOG.find((entry) => entry.examCode === def.code);
+    const classified = { ...def, domain: entry ? catalogDomains[entry.domain] : def.domain };
+    return { def: classified, item: otherItem(classified) };
+  });
   const byDomain = (id: OtherCardDef["domain"]) => others.filter(({ def }) => def.domain === id).map(({ item }) => item);
+  const libraryItems = safetyOtherItems();
+  const libraryDomain = (item: HomeDirectoryItem): HomeDomainId => {
+    if (item.key === "survey-assistant") return "construction";
+    if (!item.key.startsWith("pe-first-")) return "safety";
+    if (item.name.includes("情報工学")) return "it";
+    if (item.name.includes("電気電子")) return "electrical";
+    return "construction";
+  };
+  const libraryByDomain = (id: HomeDomainId) => libraryItems.filter(item => libraryDomain(item) === id);
+  const hubItems = safetyItems();
 
   const domains = [
     domain(
@@ -335,7 +361,7 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
         allLabel: "IPAの試験をすべて見る",
       },
       [...IPA_FEATURED.map(ipaItem), ...byDomain("it")],
-      IPA_ADVANCED.map(ipaItem),
+      [...IPA_ADVANCED.map(ipaItem), ...libraryByDomain("it")],
     ),
     domain(
       {
@@ -345,33 +371,33 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
         allHref: "/e-learning/exams",
         allLabel: "安全衛生の試験をすべて見る",
       },
-      [...byDomain("safety").filter((item) => item.key !== "eisei1" && item.key !== "eisei2"), ...safetyItems()],
-      safetyOtherItems(),
+      [...byDomain("safety").filter((item) => item.key !== "eisei1" && item.key !== "eisei2"), ...hubItems.filter(item => libraryDomain(item) === "safety")],
+      libraryByDomain("safety"),
     ),
     domain(
       {
         id: "electrical",
-        title: "電気",
-        lead: "電験三種と第二種電気工事士の公式公開問題。",
+        title: "電気・無線",
+        lead: "電気主任技術者・電気工事士・無線など。",
         allHref: "/qualifications",
         allLabel: "その他資格の一覧",
       },
-      byDomain("electrical"),
+      byDomain("electrical"), libraryByDomain("electrical"),
     ),
     domain(
       {
         id: "construction",
-        title: "建設・施工管理",
-        lead: "1級・2級土木と2級管工事施工管理技術検定の第一次検定。",
+        title: "建設・技術",
+        lead: "建築・施工管理・測量・技術士など。",
         allHref: "/qualifications",
         allLabel: "その他資格の一覧",
       },
-      byDomain("construction"),
+      [...byDomain("construction"), ...hubItems.filter(item => libraryDomain(item) === "construction")], libraryByDomain("construction"),
     ),
     domain(
       {
         id: "money",
-        title: "お金・不動産・経営",
+        title: "お金・ビジネス",
         lead: "FP技能検定（学科・実技）、宅建、中小企業診断士など。",
         allHref: "/qualifications",
         allLabel: "その他資格の一覧",
@@ -381,7 +407,7 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
     domain(
       {
         id: "welfare",
-        title: "医療・福祉",
+        title: "医療・福祉・生活",
         lead: "医療・福祉の国家試験と登録販売者試験。",
         allHref: "/qualifications",
         allLabel: "その他資格の一覧",
@@ -389,5 +415,10 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
       byDomain("welfare"),
     ),
   ];
-  return domains.filter((d) => d.qualificationCount > 0);
+  domains.push(
+    domain({ id: "real-estate", title: "不動産", lead: "宅建・マンション管理など。", allHref: "/qualifications", allLabel: "その他資格の一覧" }, byDomain("real-estate")),
+    domain({ id: "legal", title: "法律・労務", lead: "法律・知的財産・社会保険など。", allHref: "/qualifications", allLabel: "その他資格の一覧" }, byDomain("legal")),
+  );
+  const order: HomeDomainId[] = ["it", "money", "real-estate", "legal", "electrical", "construction", "safety", "welfare", "automotive"];
+  return domains.filter((d) => d.qualificationCount > 0).sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
 }

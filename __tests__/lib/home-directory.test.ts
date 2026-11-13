@@ -7,10 +7,37 @@ import { getHomeDirectory } from "@/lib/home/home-directory";
 import { QUALIFICATION_HUBS, qualificationHubPath } from "@/lib/exam-qualification-hubs";
 import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
 import { ALL_EXAM_CODES } from "@/lib/exam-config";
+import { EXAM_CATALOG, EXAM_LIBRARY_PATH } from "@/lib/exam-library-catalog";
+import { getExamPaperStats } from "@/lib/exam-library-papers";
+import { qualificationHubForEntry } from "@/lib/exam-qualification-hubs";
+import { frequentExamKeys, HOME_EXAM_CALENDAR, upcomingExamPicks } from "@/lib/home/featured-exams";
+import { getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
 
 describe("home directory", () => {
   const domains = getHomeDirectory();
   const all = domains.flatMap((d) => [...d.featured, ...d.compact]);
+
+  it("covers at least forty published qualifications with official statistics and retains dynamic eligibility", () => {
+    const published = new Set(all.map(item => item.key));
+    const covered = HOME_EXAM_CALENDAR.filter(row => published.has(row.key) && row.candidates !== null);
+    expect(covered.length).toBeGreaterThanOrEqual(40);
+    for (const key of ["takken", "fp2", "fp3", "ip", "denko2", "denken3", "chintai", "tohan", "caremanager", "dai-1-shu-eisei-kanrisha", "kanri", "kikenbutsu-otsu4"]) {
+      expect(covered.some(row => row.key === key), key).toBe(true);
+    }
+    expect(upcomingExamPicks([...published], [], new Date("2026-11-13T03:00:00Z")).map(row => row.key)).toEqual(["kikenbutsu-otsu4", "ap", "kaigo"]);
+    expect(all.some(item => item.key.startsWith("boki"))).toBe(false);
+  });
+
+  it("resolves actual history IDs for every registered question exam, including legacy prefixes", () => {
+    const aliases = Object.fromEntries(all.flatMap(item => (item.historyPrefixes ?? []).map(prefix => [prefix, item.key])));
+    for (const code of Object.keys(EXAM_QUESTION_COUNTS)) {
+      const item = all.find(item => item.key === code);
+      if (!item) continue; // Hygiene's canonical library hubs are tested below.
+      const question = getQuestionsByExamStrict(code as keyof typeof EXAM_QUESTION_COUNTS)[0];
+      if (!question) continue;
+      expect(frequentExamKeys([{ id: question.id, at: 1 }], all.map(item => item.key), aliases), code).toEqual([item.key]);
+    }
+  });
 
   it("keeps the primary category routes reachable", () => {
     const hrefs = new Set(domains.map((d) => d.allHref));
@@ -31,12 +58,13 @@ describe("home directory", () => {
     }
   });
 
-  it("links every safety qualification hub", () => {
+  it("links every official-paper hub in its field and keeps hygiene hubs unique", () => {
     const safety = domains.find((d) => d.id === "safety");
     const featured = safety?.featured ?? [];
     const hrefs = featured.map((item) => item.href);
     for (const hub of QUALIFICATION_HUBS) {
-      expect(hrefs.filter((href) => href === qualificationHubPath(hub.slug))).toHaveLength(1);
+      const group = domains.find(domain => domain.id === (hub.slug === "survey-assistant" ? "construction" : "safety"))!;
+      expect(group.featured.filter(item => item.href === qualificationHubPath(hub.slug))).toHaveLength(1);
     }
     expect(hrefs).not.toContain("/eisei1");
     expect(hrefs).not.toContain("/eisei2");
@@ -64,6 +92,14 @@ describe("home directory", () => {
     expect(dentist?.periodLabel).toBe("5期分");
   });
 
+  it("places engineering first-stage library subjects in their field instead of safety", () => {
+    const library = domains.flatMap(domain => domain.compact.map(item => ({ domain: domain.id, item }))).filter(({ item }) => item.key.startsWith("pe-first-"));
+    expect(library.length).toBeGreaterThan(0);
+    for (const { domain, item } of library) {
+      expect(domain).toBe(item.name.includes("情報工学") ? "it" : item.name.includes("電気電子") ? "electrical" : "construction");
+    }
+  });
+
   it("links the three Riyoshi papers with the published question count", () => {
     const item = all.find((entry) => entry.key === "riyoshi");
     expect(item?.href).toBe("/riyoshi");
@@ -86,6 +122,24 @@ describe("home directory", () => {
     for (const item of all) expect(item.href.startsWith("/")).toBe(true);
   });
 
+  it("covers every published exam and library subject exactly once", () => {
+    const hrefs = all.map(item => item.href);
+    const hygieneHubs = { eisei1: "dai-1-shu-eisei-kanrisha", eisei2: "dai-2-shu-eisei-kanrisha" };
+    for (const [code, count] of Object.entries(EXAM_QUESTION_COUNTS)) {
+      if (!count) continue;
+      const hub = hygieneHubs[code as keyof typeof hygieneHubs];
+      const href = hub ? qualificationHubPath(hub) : `/${code}`;
+      expect(hrefs.filter(value => value === href), code).toHaveLength(1);
+    }
+    for (const entry of EXAM_CATALOG) {
+      if (!getExamPaperStats(entry.id)) continue;
+      const hub = qualificationHubForEntry(entry);
+      const href = hub ? qualificationHubPath(hub.slug)
+        : `${EXAM_LIBRARY_PATH}?group=${entry.group}&subject=${encodeURIComponent(entry.subject)}`;
+      expect(hrefs.filter(value => value === href), entry.id).toHaveLength(1);
+    }
+  });
+
   it("shows the current partial OT and orthoptist counts in their cards", () => {
     for (const [code, count] of [["sagyo-ryohoshi", 324], ["shino-kunrenshi", 220]] as const) {
       const item = all.find((entry) => entry.key === code);
@@ -95,12 +149,26 @@ describe("home directory", () => {
     }
   });
 
-  it("renders every live qualification link in the initial HTML without disclosure controls", () => {
+  it("keeps every qualification in the initial HTML inside collapsed category disclosures", () => {
     const html = renderToStaticMarkup(createElement(HomeDirectory, { domains }));
-    expect(html).not.toContain("<details");
+    const doc = new DOMParser().parseFromString(html, "text/html");
+    expect(doc.querySelectorAll("details")).toHaveLength(domains.length);
+    expect(doc.querySelectorAll("details[open]")).toHaveLength(0);
     const hrefs = [...html.matchAll(/href="([^"]+)"/g)].map((match) => match[1]?.replaceAll("&amp;", "&"));
     for (const item of all) expect(hrefs.filter((href) => href === item.href)).toHaveLength(1);
     expect(hrefs.length).toBe(all.length + domains.length);
+  });
+
+  it("classifies registered qualifications by the catalog, including older cards", () => {
+    const findDomain = (key: string) => domains.find(domain => [...domain.featured, ...domain.compact].some(item => item.key === key))?.id;
+    for (const key of ["takken", "mankan", "kanri", "kanteishi"]) expect(findDomain(key)).toBe("real-estate");
+    for (const key of ["gyosei", "sharoushi", "benrishi", "chizai2", "tsukanshi"]) expect(findDomain(key)).toBe("legal");
+    expect(findDomain("fp3")).toBe("money");
+    // The same catalog-domain mapping used for new qualifications covers every registered live exam.
+    const expected = { "information-technology": "it", finance: "money", accounting: "money", "real-estate": "real-estate", legal: "legal", construction: "construction", electrical: "electrical", safety: "safety", welfare: "welfare", pharmacy: "welfare", "personal-services": "welfare", automotive: "automotive" };
+    for (const entry of QUALIFICATION_CATALOG.filter(entry => entry.status === "live" && entry.examCode && !["eisei1", "eisei2"].includes(entry.examCode))) {
+      expect(findDomain(entry.examCode!), entry.examCode).toBe(expected[entry.domain]);
+    }
   });
 });
 

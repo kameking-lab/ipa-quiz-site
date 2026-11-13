@@ -28,6 +28,19 @@ it("shows the store price before sign-in with an anonymous SDK, but buys and res
 it("refuses a signed-in purchase without the server-derived RevenueCat identity",async()=>{
   await expect(new Membership(sdk).offer(c,{...a,appUserId:null})).rejects.toThrow("app_user_id");expect(sdk.configure).not.toHaveBeenCalled();
 });
+it("clears a previous buyer when a fresh guest screen reuses the configured SDK",async()=>{
+  configured=true;
+  const m=new Membership(sdk);
+  await m.offer(c,{...a,userId:null,appUserId:null});
+  expect(sdk.logOut).toHaveBeenCalledOnce();
+  expect(sdk.logIn).not.toHaveBeenCalled();
+  expect(sdk.logOut.mock.invocationCallOrder[0]).toBeLessThan(sdk.getOfferings.mock.invocationCallOrder[0]);
+});
+it("does not replace an existing anonymous customer on a guest refresh",async()=>{
+  configured=true;sdk.isAnonymous.mockResolvedValue({isAnonymous:true});
+  await new Membership(sdk).offer(c,{...a,userId:null,appUserId:null});
+  expect(sdk.logOut).not.toHaveBeenCalled();
+});
 it("buys the configured monthly product at the App Store's own price (no local price gate)",async()=>{
   const m=new Membership(sdk),offer=await m.offer(c,a);await m.buy(c,a,offer);
   expect(sdk.configure).toHaveBeenCalledWith({apiKey:c.sdkKey,appUserID:a.appUserId});expect(sdk.purchasePackage).toHaveBeenCalledWith({aPackage:product});
@@ -65,6 +78,18 @@ it("propagates cancellation, pending purchases and restore errors without granti
 });
 it("supports restore and disconnects the RevenueCat identity at sign-out",async()=>{
   const m=new Membership(sdk);await m.restore(c,a);expect(sdk.restorePurchases).toHaveBeenCalledOnce();await m.disconnect();expect(sdk.logOut).toHaveBeenCalledOnce();
+});
+it("disconnect waits for a pending SDK login so the buyer cannot be reconnected after logout", async()=>{
+  configured=true;
+  let finish!:()=>void;
+  sdk.logIn.mockImplementationOnce(()=>new Promise<void>(resolve=>{finish=resolve;}));
+  const membership=new Membership(sdk);
+  const connecting=membership.connect(c,a);
+  await vi.waitFor(()=>expect(sdk.logIn).toHaveBeenCalledOnce());
+  const disconnecting=membership.disconnect();
+  expect(sdk.logOut).not.toHaveBeenCalled();
+  finish();await connecting;await disconnecting;
+  expect(sdk.logOut).toHaveBeenCalledOnce();
 });
 it("does not leave a pending transaction when price or duration validation fails before StoreKit",async()=>{
   const beforePurchase=vi.fn();
