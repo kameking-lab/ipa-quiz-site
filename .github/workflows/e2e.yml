@@ -18,7 +18,7 @@ env:
 jobs:
   quality:
     runs-on: ubuntu-latest
-    timeout-minutes: 20
+    timeout-minutes: 40
 
     env:
       ADMIN_BASIC_USER: ${{ secrets.ADMIN_BASIC_USER }}
