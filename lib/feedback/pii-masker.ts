@@ -23,6 +23,15 @@ interface Rule {
 // 順序が重要: 長く特異性が高いものを先に当てる（メール → 電話 → 数字列 → 名前）
 const RULES: Rule[] = [
   {
+    name: "name-label",
+    // Explicitly labelled names without an honorific (one line, up to punctuation).
+    pattern: /(?:氏名|名前|お名前|本名|姓名|name)\s*[:：=]\s*[^\n\r、。 ,;；]+(?:[ \t　]+[^\n\r、。 ,;；]+)?/gi,
+  },
+  {
+    name: "personal-id",
+    pattern: /(?:\b(?:user[ _-]?)?id|ユーザーID|ユーザID|アカウントID|会員(?:ID|番号)|学籍番号|社員番号)\s*[:：=]\s*[^\s、。 ,;；]+|\b[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}\b|<@[A-Z0-9]+(?:\|[^>]+)?>/gi,
+  },
+  {
     name: "email",
     pattern: /[\w.+-]+@[\w-]+(?:\.[\w-]+)+/g,
   },
