@@ -551,5 +551,72 @@
       "allChoicesChecked": true,
       "hasFigure": false
     }
-  ]
+  ],
+  "independentReview": {
+    "step": "c5r-B2",
+    "checkedAt": "2026-11-13T16:56:17.824355+09:00",
+    "questionCount": 50,
+    "officialAnswersMatched": 50,
+    "officialAnswersUnchanged": true,
+    "allStatementsAndChoicesVisuallyChecked": true,
+    "allExplanationsReviewed": true,
+    "allFiguresVisuallyChecked": true,
+    "questionPagesReviewed": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "figureCount": 4,
+    "dataSha256": "9f2229532dd5a1c27fa3830afc1f3f5285a723fc9b010c8bf433a4e3c6007924",
+    "officialSourceRechecks": [
+      {
+        "candidateId": "Q5-034",
+        "kind": "questions",
+        "url": "https://www.kentei.javada.or.jp/pdf/R07-2-B45-%E9%85%8D%E7%AE%A1%EF%BC%88%E3%83%97%E3%83%A9%E3%83%B3%E3%83%88%E9%85%8D%E7%AE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+        "status": 200,
+        "sha256": "46f75a10f2de9b069afb7a02fadde3fb4597a4dbb6acb30113a025fb96e14231",
+        "matchesCached": true,
+        "checkedAt": "2026-11-13T16:44:44.776891+09:00"
+      },
+      {
+        "candidateId": "Q5-034",
+        "kind": "answers",
+        "url": "https://www.kentei.javada.or.jp/pdf/R07-2-B45-%E9%85%8D%E7%AE%A1%EF%BC%88%E3%83%97%E3%83%A9%E3%83%B3%E3%83%88%E9%85%8D%E7%AE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+        "status": 200,
+        "sha256": "7ababc885f963e7e0537cd475c7c2775f697308513221274fc1a62afba8fde43",
+        "matchesCached": true,
+        "checkedAt": "2026-11-13T16:44:45.954958+09:00"
+      }
+    ],
+    "duplicateCheck": {
+      "main": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+      "refsChecked": 1417,
+      "blobsChecked": 6236,
+      "result": "当ブランチの既存原稿のみ。他の収録・作業との重複なし。新規生成なし。"
+    },
+    "corrections": [
+      {
+        "candidateId": "Q5-034",
+        "id": "haikan-plant2-2025-late-gakka-a-016",
+        "kind": "explanation",
+        "detail": "被覆アーク溶接の記号はAです。Tを被覆アーク溶接に対応させた点が誤りです。",
+        "sources": [
+          "https://www.kentei.javada.or.jp/pdf/R05-2-B47-%E9%85%8D%E7%AE%A1%EF%BC%88%E3%83%97%E3%83%A9%E3%83%B3%E3%83%88%E9%85%8D%E7%AE%A1%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=3"
+        ]
+      },
+      {
+        "candidateId": "Q5-034",
+        "id": "haikan-plant2-2025-late-gakka-b-011",
+        "kind": "explanation",
+        "detail": "80°以下とする記述が公式正答の誤りです。角度の上限を取り違えないようにします。 → 脚と水平面との角度は75°以下とするため、80°以下という条件は適切ではありません。",
+        "sources": [
+          "https://www.kentei.javada.or.jp/pdf/R06-1-B68-%E9%98%B2%E6%B0%B4%E6%96%BD%E5%B7%A5%EF%BC%88FRP%E9%98%B2%E6%B0%B4%E5%B7%A5%E4%BA%8B%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=4"
+        ]
+      }
+    ]
+  }
 }

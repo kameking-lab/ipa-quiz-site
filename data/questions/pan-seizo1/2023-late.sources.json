@@ -559,5 +559,72 @@
       "allChoicesChecked": true,
       "hasFigure": false
     }
-  ]
+  ],
+  "independentReview": {
+    "step": "c5r-B2",
+    "checkedAt": "2026-11-13T16:56:17.824355+09:00",
+    "questionCount": 50,
+    "officialAnswersMatched": 50,
+    "officialAnswersUnchanged": true,
+    "allStatementsAndChoicesVisuallyChecked": true,
+    "allExplanationsReviewed": true,
+    "allFiguresVisuallyChecked": true,
+    "questionPagesReviewed": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "figureCount": 0,
+    "dataSha256": "a28444d689568f4c66896582a98ffeb4ac93952a128b4a0e5165e74ff247782b",
+    "officialSourceRechecks": [
+      {
+        "candidateId": "Q5-052",
+        "kind": "questions",
+        "url": "https://www.kentei.javada.or.jp/pdf/R05-2-B39-%E3%83%91%E3%83%B3%E8%A3%BD%E9%80%A0%EF%BC%88%E3%83%91%E3%83%B3%E8%A3%BD%E9%80%A0%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+        "status": 200,
+        "sha256": "0b3aba0e3c13c9c14b7b210a826438cd706975d3edc5f99b864dad74dd48912a",
+        "matchesCached": true,
+        "checkedAt": "2026-11-13T16:45:06.484238+09:00"
+      },
+      {
+        "candidateId": "Q5-052",
+        "kind": "answers",
+        "url": "https://www.kentei.javada.or.jp/pdf/R05-2-B39-%E3%83%91%E3%83%B3%E8%A3%BD%E9%80%A0%EF%BC%88%E3%83%91%E3%83%B3%E8%A3%BD%E9%80%A0%E4%BD%9C%E6%A5%AD%EF%BC%89-%EF%BC%91%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+        "status": 200,
+        "sha256": "465f84010504e75ad548b12156f25edc49963ee6520f54a2b9fb3e6ff0a6aee2",
+        "matchesCached": true,
+        "checkedAt": "2026-11-13T16:45:07.647534+09:00"
+      }
+    ],
+    "duplicateCheck": {
+      "main": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+      "refsChecked": 1417,
+      "blobsChecked": 6236,
+      "result": "当ブランチの既存原稿のみ。他の収録・作業との重複なし。新規生成なし。"
+    },
+    "corrections": [
+      {
+        "candidateId": "Q5-052",
+        "id": "pan-seizo1-2023-late-gakka-b-019",
+        "kind": "explanation",
+        "detail": "本問ではこの組合せが正答です。パンの焼成に伴う香りと褐変生成物を関連づけます。 → 公式正答はこの組合せです。ただし、メラノイジンは褐色物質であり、香りの成分と焼き色を生む物質は区別します。\n参考：https://www.maff.go.jp/j/heya/annai/tusin/pdf/tusin_0903.pdf",
+        "sources": [
+          "https://www.maff.go.jp/j/heya/annai/tusin/pdf/tusin_0903.pdf"
+        ]
+      },
+      {
+        "candidateId": "Q5-052",
+        "id": "pan-seizo1-2023-late-gakka-b-025",
+        "kind": "explanation",
+        "detail": "本問の公式正答はニです。設備の保全・生産効率に重点を置くTPMと、他の三つの直接的な安全確認活動を区別する出題です。 → 公式正答はニです。ただし、TPMにも安全・衛生・環境の活動が含まれるため、労働災害防止と無関係な活動とは捉えないでください。\n参考：https://info-jipm.jp/f/pas1918/",
+        "sources": [
+          "https://info-jipm.jp/f/pas1918/"
+        ]
+      }
+    ]
+  }
 }

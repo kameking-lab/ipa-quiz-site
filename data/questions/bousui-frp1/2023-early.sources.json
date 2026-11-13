@@ -551,5 +551,81 @@
       "allChoicesChecked": true,
       "hasFigure": false
     }
-  ]
+  ],
+  "independentReview": {
+    "step": "c5r-B2",
+    "checkedAt": "2026-11-13T16:56:17.824355+09:00",
+    "questionCount": 50,
+    "officialAnswersMatched": 50,
+    "officialAnswersUnchanged": true,
+    "allStatementsAndChoicesVisuallyChecked": true,
+    "allExplanationsReviewed": true,
+    "allFiguresVisuallyChecked": true,
+    "questionPagesReviewed": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "figureCount": 2,
+    "dataSha256": "9501ef1b9b07b3fab79c07abab7975038e3ac3ff4ecd94af9245004a38f6e174",
+    "officialSourceRechecks": [
+      {
+        "candidateId": "Q5-048",
+        "kind": "questions",
+        "url": "https://www.kentei.javada.or.jp/pdf/R05-1-B70-%E9%98%B2%E6%B0%B4%E6%96%BD%E5%B7%A5%EF%BC%88FRP%E9%98%B2%E6%B0%B4%E5%B7%A5%E4%BA%8B%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+        "status": 200,
+        "sha256": "8ffca8bf2cc6c227630bfb9ab6202422ccb0a9813285ebc3ac80df094db39f42",
+        "matchesCached": true,
+        "checkedAt": "2026-11-13T16:45:04.060897+09:00"
+      },
+      {
+        "candidateId": "Q5-048",
+        "kind": "answers",
+        "url": "https://www.kentei.javada.or.jp/pdf/R05-1-B70-%E9%98%B2%E6%B0%B4%E6%96%BD%E5%B7%A5%EF%BC%88FRP%E9%98%B2%E6%B0%B4%E5%B7%A5%E4%BA%8B%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+        "status": 200,
+        "sha256": "fca5a99e06fd14265f652cd0eace24b13c1e8b7beb006f754474eda8c29cf106",
+        "matchesCached": true,
+        "checkedAt": "2026-11-13T16:45:05.241815+09:00"
+      }
+    ],
+    "duplicateCheck": {
+      "main": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+      "refsChecked": 1417,
+      "blobsChecked": 6236,
+      "result": "当ブランチの既存原稿のみ。他の収録・作業との重複なし。新規生成なし。"
+    },
+    "corrections": [
+      {
+        "candidateId": "Q5-048",
+        "id": "bousui-frp1-2023-early-gakka-a-015",
+        "kind": "explanation",
+        "detail": "硬化剤の添加量は、一般に0.8～2%程度の範囲です。気温に応じて調整しますが、夏季を0.3%とする記述は少な過ぎます。",
+        "sources": [
+          "https://www.kentei.javada.or.jp/pdf/R06-1-B68-%E9%98%B2%E6%B0%B4%E6%96%BD%E5%B7%A5%EF%BC%88FRP%E9%98%B2%E6%B0%B4%E5%B7%A5%E4%BA%8B%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=3"
+        ]
+      },
+      {
+        "candidateId": "Q5-048",
+        "id": "bousui-frp1-2023-early-gakka-b-012",
+        "kind": "explanation",
+        "detail": "ルーフドレン回りの重ね幅を30mm以上とする点が不適切です。 → ルーフドレン回りの防水用ガラスマットの重ね幅は50mm以上です。30mm以上では不足します。",
+        "sources": [
+          "https://www.kentei.javada.or.jp/pdf/R06-1-B68-%E9%98%B2%E6%B0%B4%E6%96%BD%E5%B7%A5%EF%BC%88FRP%E9%98%B2%E6%B0%B4%E5%B7%A5%E4%BA%8B%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=5"
+        ]
+      },
+      {
+        "candidateId": "Q5-048",
+        "id": "bousui-frp1-2023-early-gakka-b-018",
+        "kind": "explanation",
+        "detail": "冬期の下地乾燥を2週間程度とする計画は、この設問では不十分です。 → 冬季のコンクリート下地の乾燥期間は、4週間程度以上が目安です。2週間程度という記述では不足します。",
+        "sources": [
+          "https://www.kentei.javada.or.jp/pdf/R06-1-B68-%E9%98%B2%E6%B0%B4%E6%96%BD%E5%B7%A5%EF%BC%88FRP%E9%98%B2%E6%B0%B4%E5%B7%A5%E4%BA%8B%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=6"
+        ]
+      }
+    ]
+  }
 }

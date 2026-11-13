@@ -551,5 +551,108 @@
       "allChoicesChecked": true,
       "hasFigure": false
     }
-  ]
+  ],
+  "independentReview": {
+    "step": "c5r-B2",
+    "checkedAt": "2026-11-13T16:56:17.824355+09:00",
+    "questionCount": 50,
+    "officialAnswersMatched": 50,
+    "officialAnswersUnchanged": true,
+    "allStatementsAndChoicesVisuallyChecked": true,
+    "allExplanationsReviewed": true,
+    "allFiguresVisuallyChecked": true,
+    "questionPagesReviewed": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "figureCount": 3,
+    "dataSha256": "64fa47a4b0dae2d5a9595d9ac6b4f63843c66dbd46632fb38426cdf4f0cff167",
+    "officialSourceRechecks": [
+      {
+        "candidateId": "Q5-054",
+        "kind": "questions",
+        "url": "https://www.kentei.javada.or.jp/pdf/R06-1-B32-%E4%BB%95%E4%B8%8A%E3%81%92%EF%BC%88%E6%A9%9F%E6%A2%B0%E7%B5%84%E7%AB%8B%E4%BB%95%E4%B8%8A%E3%81%92%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+        "status": 200,
+        "sha256": "d6ce5fc311ca45cefb889dd529f776f35353d87029952f9c0e9f3407c6f75c33",
+        "matchesCached": true,
+        "checkedAt": "2026-11-13T16:45:11.299080+09:00"
+      },
+      {
+        "candidateId": "Q5-054",
+        "kind": "answers",
+        "url": "https://www.kentei.javada.or.jp/pdf/R06-1-B32-%E4%BB%95%E4%B8%8A%E3%81%92%EF%BC%88%E6%A9%9F%E6%A2%B0%E7%B5%84%E7%AB%8B%E4%BB%95%E4%B8%8A%E3%81%92%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+        "status": 200,
+        "sha256": "99c748ab1aa91fe1fc8cb3e5169edadd1129e1bf25c9d8d710bffaa0fe05c088",
+        "matchesCached": true,
+        "checkedAt": "2026-11-13T16:45:12.465652+09:00"
+      }
+    ],
+    "duplicateCheck": {
+      "main": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+      "refsChecked": 1417,
+      "blobsChecked": 6236,
+      "result": "当ブランチの既存原稿のみ。他の収録・作業との重複なし。新規生成なし。"
+    },
+    "corrections": [
+      {
+        "candidateId": "Q5-054",
+        "id": "kikai-shiage1-2024-early-gakka-b-001",
+        "kind": "transcription",
+        "detail": "question: すり合わせ面積度 → すり合わせ面精度",
+        "sources": [
+          "https://www.kentei.javada.or.jp/pdf/R06-1-B32-%E4%BB%95%E4%B8%8A%E3%81%92%EF%BC%88%E6%A9%9F%E6%A2%B0%E7%B5%84%E7%AB%8B%E4%BB%95%E4%B8%8A%E3%81%92%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=4"
+        ]
+      },
+      {
+        "candidateId": "Q5-054",
+        "id": "kikai-shiage1-2024-early-gakka-b-001",
+        "kind": "explanation",
+        "detail": "面積度 → 面精度",
+        "sources": [
+          "https://www.kentei.javada.or.jp/pdf/R06-1-B32-%E4%BB%95%E4%B8%8A%E3%81%92%EF%BC%88%E6%A9%9F%E6%A2%B0%E7%B5%84%E7%AB%8B%E4%BB%95%E4%B8%8A%E3%81%92%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=4"
+        ]
+      },
+      {
+        "candidateId": "Q5-054",
+        "id": "kikai-shiage1-2024-early-gakka-b-003",
+        "kind": "transcription",
+        "detail": "ウ: 不等間隔刃リーマは、等間隔刃リーマ → 不等間隔偶数刃リーマは、等間隔偶数刃リーマ",
+        "sources": [
+          "https://www.kentei.javada.or.jp/pdf/R06-1-B32-%E4%BB%95%E4%B8%8A%E3%81%92%EF%BC%88%E6%A9%9F%E6%A2%B0%E7%B5%84%E7%AB%8B%E4%BB%95%E4%B8%8A%E3%81%92%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=4"
+        ]
+      },
+      {
+        "candidateId": "Q5-054",
+        "id": "kikai-shiage1-2024-early-gakka-b-003",
+        "kind": "explanation",
+        "detail": "不等間隔刃は → 不等間隔偶数刃は",
+        "sources": [
+          "https://www.kentei.javada.or.jp/pdf/R06-1-B32-%E4%BB%95%E4%B8%8A%E3%81%92%EF%BC%88%E6%A9%9F%E6%A2%B0%E7%B5%84%E7%AB%8B%E4%BB%95%E4%B8%8A%E3%81%92%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=4"
+        ]
+      },
+      {
+        "candidateId": "Q5-054",
+        "id": "kikai-shiage1-2024-early-gakka-b-021",
+        "kind": "transcription",
+        "detail": "question: 偏気 → 偏差",
+        "sources": [
+          "https://www.kentei.javada.or.jp/pdf/R06-1-B32-%E4%BB%95%E4%B8%8A%E3%81%92%EF%BC%88%E6%A9%9F%E6%A2%B0%E7%B5%84%E7%AB%8B%E4%BB%95%E4%B8%8A%E3%81%92%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=7"
+        ]
+      },
+      {
+        "candidateId": "Q5-054",
+        "id": "kikai-shiage1-2024-early-gakka-b-021",
+        "kind": "explanation",
+        "detail": "偏気 → 偏差",
+        "sources": [
+          "https://www.kentei.javada.or.jp/pdf/R06-1-B32-%E4%BB%95%E4%B8%8A%E3%81%92%EF%BC%88%E6%A9%9F%E6%A2%B0%E7%B5%84%E7%AB%8B%E4%BB%95%E4%B8%8A%E3%81%92%E4%BD%9C%E6%A5%AD%EF%BC%89-1%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf#page=7"
+        ]
+      }
+    ]
+  }
 }
