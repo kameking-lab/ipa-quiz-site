@@ -25,6 +25,7 @@ import { TEKKIN2_QUESTIONS } from "./tekkin2";
 import { PAN_SEIZO1_QUESTIONS } from "./pan-seizo1";
 import { PAN_SEIZO2_QUESTIONS } from "./pan-seizo2";
 import { KIKAI_SHIAGE1_QUESTIONS } from "./kikai-shiage1";
+import { KIKAI_SHIAGE2_QUESTIONS } from "./kikai-shiage2";
 import { KIKAI_SHIAGE3_QUESTIONS } from "./kikai-shiage3";
 import { ZOEN_GINO2_QUESTIONS } from "./zoen-gino2";
 import { ZOEN_GINO3_QUESTIONS } from "./zoen-gino3";
@@ -265,6 +266,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("pan-seizo1") ? { "pan-seizo1": PAN_SEIZO1_QUESTIONS } : {}),
 ...(isExamPublished("pan-seizo2") ? { "pan-seizo2": PAN_SEIZO2_QUESTIONS } : {}),
 ...(isExamPublished("kikai-shiage1") ? { "kikai-shiage1": KIKAI_SHIAGE1_QUESTIONS } : {}),
+...(isExamPublished("kikai-shiage2") ? { "kikai-shiage2": KIKAI_SHIAGE2_QUESTIONS } : {}),
 ...(isExamPublished("kikai-shiage3") ? { "kikai-shiage3": KIKAI_SHIAGE3_QUESTIONS } : {}),
 ...(isExamPublished("zoen-gino2") ? { "zoen-gino2": ZOEN_GINO2_QUESTIONS } : {}),
 ...(isExamPublished("zoen-gino3") ? { "zoen-gino3": ZOEN_GINO3_QUESTIONS } : {}),
