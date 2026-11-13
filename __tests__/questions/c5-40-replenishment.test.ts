@@ -17,6 +17,10 @@ import type { ChoiceKey } from "@/lib/questions/types";
 const editions = [
   { exam: "reito-seko1" as const, year: 2023, all: REITO_SEKO1_QUESTIONS,
     answers: "××××○" + "×○×××" + "○○○○×" + "○○××○" + "○○○×○" + "ハイロニハ" + "イイロイイ" + "ハイハイロ" + "ハニハニハ" + "ニイニイロ", figures: 4 },
+  { exam: "reito-seko2" as const, year: 2023, all: REITO_SEKO2_QUESTIONS,
+    answers: "○○○○○" + "×××○○" + "×××○○" + "○○×○×" + "○○×○×" + "イニロハロ" + "ロロイロロ" + "イニハハハ" + "ロイイニニ" + "ニロハニロ", figures: 3 },
+  { exam: "reito-seko3" as const, year: 2023, all: REITO_SEKO3_QUESTIONS,
+    answers: "○×○○×" + "×○×○○" + "×○○○○" + "×××××" + "○××○○" + "○××○×", figures: 2 },
 ];
 
 describe.each(editions)("c5-40 $exam $year 後期", ({ exam, year, all, answers, figures }) => {
@@ -61,4 +65,3 @@ describe.each(editions)("c5-40 $exam $year 後期", ({ exam, year, all, answers,
     expect(keys.map(k => choiceDisplayLabel(exam, k))).toEqual(["イ", "ロ", "ハ", "ニ"]);
   });
 });
-

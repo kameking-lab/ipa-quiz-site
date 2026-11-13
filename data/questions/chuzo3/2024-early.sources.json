@@ -355,5 +355,34 @@
   "reviewNotes": [
     "正答表のＸと×、〇と○は同じ真偽として正規化。公式の正答判定は変更していない。",
     "公式正答表2024/11/27版の問13の訂正後正答〇を採用し、解説にも訂正を注記。"
-  ]
+  ],
+  "strictReview": {
+    "step": "c5r-B4",
+    "checkedAt": "2026-11-13T21:20:11.311344+09:00",
+    "questionCount": 30,
+    "choiceExplanationCount": 60,
+    "figuresChecked": 0,
+    "officialAnswersMatched": 30,
+    "answerChanges": 0,
+    "newQuestions": 0,
+    "missingQuestions": 0,
+    "duplicateIds": 0,
+    "duplicateSourceQuestions": 0,
+    "changedQuestionIds": [],
+    "method": "公式PDF全問題ページを目視照合。全選択肢・解説・切出し原図を確認。公式正答表から独立抽出して全件照合。公式PDF30点の再取得SHA-256と既存原本が一致。",
+    "officialPdfChecks": [
+      {
+        "kind": "questions",
+        "url": "https://www.kentei.javada.or.jp/pdf/R06-1-D03-%E9%8B%B3%E9%80%A0%EF%BC%88%E9%8B%B3%E9%89%84%E9%8B%B3%E7%89%A9%E9%8B%B3%E9%80%A0%E4%BD%9C%E6%A5%AD%EF%BC%89-3%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+        "status": 200,
+        "sha256": "7e04be51200ae6603127fc6833013a9e82d828614d838f8ee4772d40b5b995d8"
+      },
+      {
+        "kind": "answers",
+        "url": "https://www.kentei.javada.or.jp/pdf/R06-1-D03-%E9%8B%B3%E9%80%A0%EF%BC%88%E9%8B%B3%E9%89%84%E9%8B%B3%E7%89%A9%E9%8B%B3%E9%80%A0%E4%BD%9C%E6%A5%AD%EF%BC%89-3%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+        "status": 200,
+        "sha256": "f04701b415b6bc5f1cccb2c23ea71fa6e4292bcd9b7ee7a63f3827a82ab35187"
+      }
+    ]
+  }
 }
