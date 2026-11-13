@@ -585,5 +585,29 @@
       ]
     }
   ],
-  "supplementalReview": "法令の数値・材料分類について、公式問題と正答に加えてe-Gov法令APIの本文も照合。取得XMLと該当条文の抜粋は作業フォルダtools/c5-23に保存。"
+  "supplementalReview": "法令の数値・材料分類について、公式問題と正答に加えてe-Gov法令APIの本文も照合。取得XMLと該当条文の抜粋は作業フォルダtools/c5-23に保存。",
+  "independentReview": {
+    "step": "c5r-A3",
+    "checkedAt": "2026-11-13T19:35:48.750508+09:00",
+    "baselineCommit": "cfddb2449",
+    "questionCount": 50,
+    "figureCount": 5,
+    "officialQuestionAndAnswerPdfsRefetched": true,
+    "officialPdfHashesUnchanged": true,
+    "allQuestionPagesVisuallyCompared": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "allQuestionChoicesExplanationsAndFiguresReviewed": true,
+    "allOfficialAnswersMatch": true,
+    "answerAndIdChanges": 0,
+    "missingQuestions": 0,
+    "withinEditionDuplicates": 0,
+    "correctedQuestions": []
+  }
 }
