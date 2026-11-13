@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { existsSync } from "node:fs";
 import { join } from "node:path";
+import { REITO_SEKO2_QUESTIONS } from "@/data/questions/reito-seko2";
 import { REITO_SEKO1_QUESTIONS } from "@/data/questions/reito-seko1";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
@@ -15,6 +16,8 @@ import type { ChoiceKey } from "@/lib/questions/types";
 
 // 公式正答PDFを5問ずつ確認して固定。内部キーとの対応を独立して検証する。
 const editions = [
+  { exam: "reito-seko2" as const, year: 2025, all: REITO_SEKO2_QUESTIONS,
+    answers: "×○○○○" + "×××○×" + "××○○○" + "×○○○×" + "○○×○○" + "ニニイニロ" + "ロイイイロ" + "ニイイロイ" + "ハロハハニ" + "ロロイロロ", figures: 5 },
   { exam: "reito-seko1" as const, year: 2025, all: REITO_SEKO1_QUESTIONS,
     answers: "○×○×○" + "××××○" + "○××○×" + "○○×××" + "○○×○○" + "イハイニハ" + "イイロイイ" + "ニロニハニ" + "ニニニニロ" + "イイニニニ", figures: 4 },
 ];

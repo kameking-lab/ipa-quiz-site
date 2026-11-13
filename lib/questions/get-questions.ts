@@ -206,6 +206,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 "kikai-shiage1": async () => isExamPublished("kikai-shiage1") ? (await import("@/data/questions/kikai-shiage1")).KIKAI_SHIAGE1_QUESTIONS : [],
 "kikai-seizu-tegaki1": async () => isExamPublished("kikai-seizu-tegaki1") ? (await import("@/data/questions/kikai-seizu-tegaki1")).KIKAI_SEIZU_TEGAKI1_QUESTIONS : [],
 "sequence1": async () => isExamPublished("sequence1") ? (await import("@/data/questions/sequence1")).SEQUENCE1_QUESTIONS : [],
+"reito-seko2": async () => isExamPublished("reito-seko2") ? (await import("@/data/questions/reito-seko2")).REITO_SEKO2_QUESTIONS : [],
 "reito-seko1": async () => isExamPublished("reito-seko1") ? (await import("@/data/questions/reito-seko1")).REITO_SEKO1_QUESTIONS : [],
 "kuukiatsu-kumitate2": async () => isExamPublished("kuukiatsu-kumitate2") ? (await import("@/data/questions/kuukiatsu-kumitate2")).KUUKIATSU_KUMITATE2_QUESTIONS : [],
 "kuukiatsu-kumitate1": async () => isExamPublished("kuukiatsu-kumitate1") ? (await import("@/data/questions/kuukiatsu-kumitate1")).KUUKIATSU_KUMITATE1_QUESTIONS : [],
