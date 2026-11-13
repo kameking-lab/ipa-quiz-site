@@ -25,6 +25,7 @@ export const EXAM_LABELS: Record<string, string> = {
   "kogyo-hoso2": "工業包装技能士 2級",
   "haiden-seigyo1": "電気機器組立て技能士 1級",
   "sequence1": "シーケンス制御技能士 1級",
+  "kuukiatsu-kumitate1": "シーケンス制御技能士 1級",
   "kuukiatsu-kumitate2": "シーケンス制御技能士 1級",
   "chuzo2": "鋳造技能士 2級（鋳鉄鋳物鋳造作業）",
   "chuzo1": "鋳造技能士 1級（鋳鉄鋳物鋳造作業）",

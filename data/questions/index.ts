@@ -19,6 +19,7 @@ import { KIKAI_KENSA2_QUESTIONS } from "./kikai-kensa2";
 import { KOGYO_HOSO2_QUESTIONS } from "./kogyo-hoso2";
 import { HAIDEN_SEIGYO1_QUESTIONS } from "./haiden-seigyo1";
 import { SEQUENCE1_QUESTIONS } from "./sequence1";
+import { KUUKIATSU_KUMITATE1_QUESTIONS } from "./kuukiatsu-kumitate1";
 import { KUUKIATSU_KUMITATE2_QUESTIONS } from "./kuukiatsu-kumitate2";
 import { CHUZO2_QUESTIONS } from "./chuzo2";
 import { CHUZO1_QUESTIONS } from "./chuzo1";
@@ -476,6 +477,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("kogyo-hoso2") ? { "kogyo-hoso2": KOGYO_HOSO2_QUESTIONS } : {}),
 ...(isExamPublished("haiden-seigyo1") ? { "haiden-seigyo1": HAIDEN_SEIGYO1_QUESTIONS } : {}),
 ...(isExamPublished("sequence1") ? { "sequence1": SEQUENCE1_QUESTIONS } : {}),
+...(isExamPublished("kuukiatsu-kumitate1") ? { "kuukiatsu-kumitate1": KUUKIATSU_KUMITATE1_QUESTIONS } : {}),
 ...(isExamPublished("kuukiatsu-kumitate2") ? { "kuukiatsu-kumitate2": KUUKIATSU_KUMITATE2_QUESTIONS } : {}),
 ...(isExamPublished("chuzo2") ? { "chuzo2": CHUZO2_QUESTIONS } : {}),
 ...(isExamPublished("chuzo1") ? { "chuzo1": CHUZO1_QUESTIONS } : {}),
