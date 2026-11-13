@@ -1,6 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import path from "node:path";
+import { TATEGU1_QUESTIONS } from "@/data/questions/tategu1";
 import { HISESHOKU_JOKYO1_QUESTIONS } from "@/data/questions/hiseshoku-jokyo1";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
@@ -14,7 +15,8 @@ import type { ChoiceKey } from "@/lib/questions/types";
 
 // 公式正答表の画像を5問ずつ読み取り固定した照合用の正答。
 const editions = [
-  { exam: "hiseshoku-jokyo1" as const, rows: HISESHOKU_JOKYO1_QUESTIONS, season: "early" as const, answers: "○○×○○○××○○×○××××○×××○×○○○ニニイニニイロハイハロニイイロニイロイハロロイハイ", pages: [2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,5,5,5,6,6,6,6,6,7,7,7,7,8,8,8,8,8,9,9,9,9,9,10,10,10], figures: [8,23,28,33,34,36,48] as number[] }
+  { exam: "hiseshoku-jokyo1" as const, rows: HISESHOKU_JOKYO1_QUESTIONS, season: "early" as const, answers: "○○×○○○××○○×○××××○×××○×○○○ニニイニニイロハイハロニイイロニイロイハロロイハイ", pages: [2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,3,3,4,4,4,5,5,5,6,6,6,6,6,7,7,7,7,8,8,8,8,8,9,9,9,9,9,10,10,10], figures: [8,23,28,33,34,36,48] as number[] },
+  { exam: "tategu1" as const, rows: TATEGU1_QUESTIONS, season: "early" as const, answers: "×××○×○○××○○××○○○○○×××××○×ロイイハイロハニロイロハニニニイニハロハロイイニハ", pages: [2,2,2,2,2,2,2,2,2,2,2,2,2,2,3,3,3,3,3,3,3,3,3,3,3,4,4,4,4,4,5,5,5,5,5,6,6,6,6,6,6,7,7,7,7,7,7,8,8,8], figures: [7,8,21,22,26,32,44,45] as number[] }
 ];
 
 describe.each(editions)("c4-62 $exam", ({ exam, rows, season, answers, pages, figures }) => {
@@ -63,4 +65,10 @@ describe.each(editions)("c4-62 $exam", ({ exam, rows, season, answers, pages, fi
     const labels = rows.length === 30 ? ["○", "×"] : ["イ", "ロ", "ハ", "ニ"];
     expect((rows.length === 30 ? ["ア", "イ"] : ["ア", "イ", "ウ", "エ"]).map(k => choiceDisplayLabel(exam, k as ChoiceKey))).toEqual(labels);
   });
+});
+
+it("短い原文と公式正答をそのまま保持する", () => {
+  expect(TATEGU1_QUESTIONS[36].question).toBe("広葉樹はどれか。");
+  expect(TATEGU1_QUESTIONS[47].choices?.エ).toBe("打当ては、組み立てる建具材よりも硬い材料がよい。");
+  expect(TATEGU1_QUESTIONS[47].officialAnswerNumber).toBe("イ");
 });
