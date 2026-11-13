@@ -1,6 +1,7 @@
 import { existsSync, readFileSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
+import { KATAWAKU2_QUESTIONS } from "@/data/questions/katawaku2";
 import { KATAWAKU1_QUESTIONS } from "@/data/questions/katawaku1";
 import { KATAWAKU3_QUESTIONS } from "@/data/questions/katawaku3";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
@@ -16,6 +17,7 @@ import type { ChoiceKey, Question } from "@/lib/questions/types";
 
 // Read independently from the three official answer-table images (five per group).
 const editions = [
+  { exam: "katawaku2", year: 2023, corpus: KATAWAKU2_QUESTIONS, a: "×○×○○ ○×○×× ○○×○× ××××○ ○×○○○", b: "ニロハロハ ニロニイニ イニロイロ ニロロイハ イハハハハ", figures: [1, 21, 22, 32, 35, 41, 42, 43, 45, 46, 47, 49] },
   { exam: "katawaku1", year: 2023, corpus: KATAWAKU1_QUESTIONS, a: "○×○×× ××○×○ ○××○× ○×○○○ ×○×○○", b: "ロイニニハ ハニロハハ イニニニハ ハイイロロ ロハロハニ", figures: [21, 22, 43, 44, 45, 46] },
   { exam: "katawaku3", year: 2024, corpus: KATAWAKU3_QUESTIONS, a: "○○○○○ ○○×○× ○○○○× ××××× ××○○○ ××○×○", b: "", figures: [26] },
 ] as const;
@@ -95,3 +97,15 @@ for (const { exam, year, corpus, a, b, figures } of editions) {
   });
 }
 
+it("checks the load, steel-pipe mass, separator length and bending explanations", () => {
+  const tension = (weight: number, degrees: number) => weight / (2 * Math.cos(degrees * Math.PI / 360));
+  expect(tension(100, 120)).toBeCloseTo(100);
+  expect(tension(100, 60)).toBeCloseTo(57.735);
+  expect(2 ** 4).toBe(16);
+  expect(40 * 0.6 * 0.6).toBeCloseTo(14.4);
+  expect(Math.PI * (48.6 ** 2 - 44 ** 2) / 4 * 0.00785).toBeCloseTo(2.626);
+  expect(225 + 175 - 25).toBe(375);
+  expect(KATAWAKU2_QUESTIONS[0].answer).toBe("イ");
+  expect(KATAWAKU2_QUESTIONS[31].explanation).toContain("375");
+  expect(KATAWAKU1_QUESTIONS[20].explanation).toContain("16");
+});

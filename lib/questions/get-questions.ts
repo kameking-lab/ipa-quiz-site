@@ -17,6 +17,7 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "kikai-kensa3": async () => isExamPublished("kikai-kensa3") ? (await import("@/data/questions/kikai-kensa3")).KIKAI_KENSA3_QUESTIONS : [],
   "kikai-kensa1": async () => isExamPublished("kikai-kensa1") ? (await import("@/data/questions/kikai-kensa1")).KIKAI_KENSA1_QUESTIONS : [],
   "katawaku1": async () => isExamPublished("katawaku1") ? (await import("@/data/questions/katawaku1")).KATAWAKU1_QUESTIONS : [],
+  "katawaku2": async () => isExamPublished("katawaku2") ? (await import("@/data/questions/katawaku2")).KATAWAKU2_QUESTIONS : [],
   "kogyo-hoso1": async () => isExamPublished("kogyo-hoso1") ? (await import("@/data/questions/kogyo-hoso1")).KOGYO_HOSO1_QUESTIONS : [],
   "kikai-kensa2": async () => isExamPublished("kikai-kensa2") ? (await import("@/data/questions/kikai-kensa2")).KIKAI_KENSA2_QUESTIONS : [],
   "kogyo-hoso2": async () => isExamPublished("kogyo-hoso2") ? (await import("@/data/questions/kogyo-hoso2")).KOGYO_HOSO2_QUESTIONS : [],
