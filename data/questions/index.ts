@@ -25,6 +25,7 @@ import { SAKAN3_QUESTIONS } from "./sakan3";
 import { SAKAN2_QUESTIONS } from "./sakan2";
 import { BOUSUI_URETHANE2_QUESTIONS } from "./bousui-urethane2";
 import { NAISO_KOSEI2_QUESTIONS } from "./naiso-kosei2";
+import { KINZOKU_PRESS1_QUESTIONS } from "./kinzoku-press1";
 import { KINZOKU_PRESS2_QUESTIONS } from "./kinzoku-press2";
 import { TEKKIN_ZUMEN3_QUESTIONS } from "./tekkin-zumen3";
 import { KATAWAKU3_QUESTIONS } from "./katawaku3";
@@ -447,6 +448,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("sakan2") ? { "sakan2": SAKAN2_QUESTIONS } : {}),
 ...(isExamPublished("bousui-urethane2") ? { "bousui-urethane2": BOUSUI_URETHANE2_QUESTIONS } : {}),
 ...(isExamPublished("naiso-kosei2") ? { "naiso-kosei2": NAISO_KOSEI2_QUESTIONS } : {}),
+...(isExamPublished("kinzoku-press1") ? { "kinzoku-press1": KINZOKU_PRESS1_QUESTIONS } : {}),
 ...(isExamPublished("kinzoku-press2") ? { "kinzoku-press2": KINZOKU_PRESS2_QUESTIONS } : {}),
 ...(isExamPublished("tekkin-zumen3") ? { "tekkin-zumen3": TEKKIN_ZUMEN3_QUESTIONS } : {}),
 ...(isExamPublished("katawaku3") ? { "katawaku3": KATAWAKU3_QUESTIONS } : {}),
