@@ -30,6 +30,7 @@ import { ZOEN_GINO3_QUESTIONS } from "./zoen-gino3";
 import { CHUZO3_QUESTIONS } from "./chuzo3";
 import { CHUZO1_QUESTIONS } from "./chuzo1";
 import { NETSUZETSUEN2_QUESTIONS } from "./netsuzetsuen2";
+import { HISESHOKU_JOKYO1_QUESTIONS } from "./hiseshoku-jokyo1";
 import { SHASHUTSU2_QUESTIONS } from "./shashutsu2";
 import { KIKAI_KENSA3_QUESTIONS } from "./kikai-kensa3";
 import { KAGAKU_BUNSEKI2_QUESTIONS } from "./kagaku-bunseki2";
@@ -241,6 +242,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("chuzo3") ? { "chuzo3": CHUZO3_QUESTIONS } : {}),
 ...(isExamPublished("chuzo1") ? { "chuzo1": CHUZO1_QUESTIONS } : {}),
 ...(isExamPublished("netsuzetsuen2") ? { "netsuzetsuen2": NETSUZETSUEN2_QUESTIONS } : {}),
+...(isExamPublished("hiseshoku-jokyo1") ? { "hiseshoku-jokyo1": HISESHOKU_JOKYO1_QUESTIONS } : {}),
 ...(isExamPublished("shashutsu2") ? { "shashutsu2": SHASHUTSU2_QUESTIONS } : {}),
 ...(isExamPublished("kikai-kensa3") ? { "kikai-kensa3": KIKAI_KENSA3_QUESTIONS } : {}),
 ...(isExamPublished("kagaku-bunseki2") ? { "kagaku-bunseki2": KAGAKU_BUNSEKI2_QUESTIONS } : {}),
