@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
-import { KOJO_BANKIN1_QUESTIONS as questions } from "@/data/questions/kojo-bankin1";
+import { KOJO_BANKIN1_QUESTIONS as allQuestions } from "@/data/questions/kojo-bankin1";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { choiceDisplayLabel, formatQuestionAnswerForDisplay, questionNumberLabel, usesNumberedChoices } from "@/lib/questions/display";
@@ -9,6 +9,7 @@ import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
 // 公式正解表を問題データとは独立に転記。
 const answers = ("○××○×○○××××○×××○○×○○××○○×" + "ニイロイニハロイイニハニロハハハハハハロイハロイイ").split("");
+const questions = allQuestions.filter(q => q.year === 2025 && q.season === "early");
 describe("工場板金1級2025年度前期", () => {
   it("50問の公式番号、公式正答、全肢解説を保持する", () => {
     expect(questions).toHaveLength(50);
@@ -34,7 +35,7 @@ describe("工場板金1級2025年度前期", () => {
     expect(questions[43].choices?.[questions[43].answer as "ウ"]).toBe("ローラレベラ");
   });
   it("ローダー、資格一覧、原本のイロハニ表示に接続する", async () => {
-    expect(await getQuestionsForExam("kojo-bankin1")).toEqual(questions);
+    expect(await getQuestionsForExam("kojo-bankin1")).toEqual(allQuestions);
     expect(getQualificationByExamCode("kojo-bankin1")?.status).toBe("live");
     expect(EXAM_CONFIGS["kojo-bankin1"].sessions[0].expectedQuestions).toBe(50);
     const jsonLd = buildQuestionJsonLd({ question: questions[0], pageUrlAbs: "https://www.kakomon-ai.jp/q/kojo-bankin1/2025-early/gakka/q1", title: "工場板金1級", lastUpdatedISO: "2026-11-13" });

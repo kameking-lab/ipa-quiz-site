@@ -4,6 +4,8 @@ import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import { getHomeDirectory } from "@/lib/home/home-directory";
 import { QUALIFICATION_CATALOG, getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import { getQuestionsForExam, getRegisteredExamCodes } from "@/lib/questions/get-questions";
+import { filterQuestions } from "@/lib/questions/filter";
+import { getPoolIds } from "@/lib/questions/pool-server";
 import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
 
 const groups = [
@@ -44,5 +46,16 @@ describe.each(groups)("release qualification consolidation: $canonical", ({ alia
       expect(findQuestionByRoute(questions, { exam: alias, yearSeason, section, qnum })?.id).toBe(q.id);
       expect(findQuestionByRoute(questions, { exam, yearSeason, section, qnum })?.id).toBe(q.id);
     }
+  });
+
+  it("keeps legacy quiz filters usable and counts a mixed-code group once", async () => {
+    const expected = new Set(questions.map(q => q.id));
+    expect(new Set(filterQuestions(ALL_QUESTIONS, { exam: alias, mode: "random" }).map(q => q.id))).toEqual(expected);
+    const group = { examGroup: [alias, canonical], mode: "random" as const };
+    const local = filterQuestions(ALL_QUESTIONS, group);
+    const remote = await getPoolIds(group);
+    expect(local).toHaveLength(count);
+    expect(remote).toHaveLength(count);
+    expect(new Set(remote)).toEqual(expected);
   });
 });

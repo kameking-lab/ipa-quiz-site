@@ -1,6 +1,7 @@
 import "server-only";
 
 import type { ExamCode, Question, QuizFilter } from "./types";
+import { canonicalExamCode } from "./exam-aliases";
 import { getAllQuestionsLazy, getQuestionsForExam } from "./get-questions";
 import { isPracticeReadyQuestion } from "./filter";
 import { selectExplicitPoolIds } from "./explicit-pool";
@@ -15,7 +16,7 @@ async function loadServerPool(filter: QuizFilter): Promise<Question[]> {
   let pool: Question[];
   if (filter.examGroup && filter.examGroup.length > 0) {
     const chunks = await Promise.all(
-      filter.examGroup.map((e) => getQuestionsForExam(e)),
+      [...new Set(filter.examGroup.map(canonicalExamCode))].map((e) => getQuestionsForExam(e)),
     );
     pool = chunks.flat();
   } else if (filter.exam) {
