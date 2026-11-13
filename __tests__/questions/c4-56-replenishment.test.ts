@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { PAN_SEIZO1_QUESTIONS } from "@/data/questions/pan-seizo1";
 import { KIKAI_SHIAGE1_QUESTIONS } from "@/data/questions/kikai-shiage1";
+import { KIKAI_SHIAGE3_QUESTIONS } from "@/data/questions/kikai-shiage3";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
@@ -25,6 +26,10 @@ const editions = [
       + "イハイニハ" + "ロニイロニ" + "ロロイハハ" + "ハロニイロ" + "ニイイロハ",
     pages: [...Array(16).fill(2), ...Array(9).fill(3), ...Array(6).fill(4), ...Array(6).fill(5), ...Array(5).fill(6), ...Array(6).fill(7), ...Array(2).fill(8)],
     figures: [41] },
+  { exam: "kikai-shiage3" as const, rows: KIKAI_SHIAGE3_QUESTIONS, season: "early" as const,
+    answers: "○×○○×" + "×○○×○" + "○×○○○" + "○×○○×" + "○○××○" + "××××○",
+    pages: [...Array(11).fill(2), ...Array(15).fill(3), ...Array(4).fill(4)],
+    figures: [7, 10, 22] },
 ];
 
 describe.each(editions)("c4-56 $exam", ({ exam, rows, season, answers, pages, figures }) => {
@@ -87,4 +92,12 @@ it("機械組立仕上げ1級の単位換算・誤った電力式・抜き加工
   expect(KIKAI_SHIAGE1_QUESTIONS[43].choices?.ア).toBe("P＝I²/R");
   expect(KIKAI_SHIAGE1_QUESTIONS[43].officialAnswerNumber).toBe("イ");
   expect(KIKAI_SHIAGE1_QUESTIONS[40].choices?.ウ).toBe("①だれ面　②せん断面　③破断面　④バリ");
+});
+
+it("3級の図と用語の取り違えを原本どおりに保持する", () => {
+  expect(KIKAI_SHIAGE3_QUESTIONS[6].question).toContain("サインバー");
+  expect(KIKAI_SHIAGE3_QUESTIONS[9].hasImage).toBe(true);
+  expect(KIKAI_SHIAGE3_QUESTIONS[21].explanation).toContain("弦の長さ");
+  expect(KIKAI_SHIAGE3_QUESTIONS[26].explanation).toContain("N・m");
+  expect(KIKAI_SHIAGE3_QUESTIONS[27].explanation).toContain("バックラッシ");
 });
