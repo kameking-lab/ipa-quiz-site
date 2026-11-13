@@ -1566,6 +1566,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
 },
 {
+    slug: "shashin1", examCode: "shashin1", shortName: "写真技能士 1級", fullName: "技能検定 1級写真（肖像写真デジタル作業）学科試験",
+    domain: "safety", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/",
+    officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2025年度前期の学科50問（真偽法25問・多肢択一法25問）、公式正答と全肢の独自解説を収録。",
+    attributionTemplate: "出典：中央職業能力開発協会 令和7年度前期 1級写真（肖像写真デジタル作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
+{
     slug: "kikinzoku-soshin1", examCode: "kikinzoku-soshin1", shortName: "貴金属装身具製作技能士 1級", fullName: "技能検定 1級貴金属装身具製作（貴金属装身具製作作業）学科試験",
     domain: "safety", administrator: "中央職業能力開発協会",
     officialQuestionsUrl: "https://www.kentei.javada.or.jp/",
