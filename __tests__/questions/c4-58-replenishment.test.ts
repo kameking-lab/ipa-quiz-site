@@ -15,16 +15,16 @@ import type { ChoiceKey } from "@/lib/questions/types";
 
 // 公式正答表の画像を5問ずつ読み取り固定した照合用の正答。
 const editions = [
-  { exam: "zoen-gino2" as const, rows: ZOEN_GINO2_QUESTIONS, season: "early" as const,
+  { exam: "zoen-gino2" as const, rows: ZOEN_GINO2_QUESTIONS.filter(q => q.year === 2025), season: "early" as const,
     answers: "×○×○×" + "○××○×" + "×××○○" + "○×○××" + "○×○×○"
       + "ハニロニロ" + "イイロイロ" + "ハハニロハ" + "ニイロイニ" + "ニイハロイ",
     pages: [...Array(18).fill(2), ...Array(7).fill(3), ...Array(6).fill(4), ...Array(6).fill(5), ...Array(6).fill(6), ...Array(6).fill(7), 8],
     figures: [] as number[] },
-  { exam: "zoen-gino3" as const, rows: ZOEN_GINO3_QUESTIONS.filter(q => q.season === "early"), season: "early" as const,
+  { exam: "zoen-gino3" as const, rows: ZOEN_GINO3_QUESTIONS.filter(q => q.year === 2025 && q.season === "early"), season: "early" as const,
     answers: "○××○○" + "×○×○×" + "○×○○×" + "○○×○○" + "××○○×" + "×○×○×",
     pages: [...Array(17).fill(2), ...Array(13).fill(3)],
     figures: [] as number[] },
-  { exam: "zoen-gino3" as const, rows: ZOEN_GINO3_QUESTIONS.filter(q => q.season === "late"), season: "late" as const,
+  { exam: "zoen-gino3" as const, rows: ZOEN_GINO3_QUESTIONS.filter(q => q.year === 2025 && q.season === "late"), season: "late" as const,
     answers: "××○○○" + "○××○○" + "×××○○" + "×○○××" + "×○×○×" + "○○○××",
     pages: [...Array(19).fill(2), ...Array(11).fill(3)],
     figures: [] as number[] },
@@ -68,8 +68,8 @@ describe.each(editions)("c4-58 $exam", ({ exam, rows, season, answers, pages, fi
     }
   });
   it("一覧・演習の両ローダーで全問を配信し、級に応じて原本の記号を使う", async () => {
-    expect(QUESTIONS_BY_EXAM[exam]!.filter(q => q.season === season)).toEqual(rows);
-    expect((await getQuestionsForExam(exam)).filter(q => q.season === season)).toEqual(rows);
+    expect(QUESTIONS_BY_EXAM[exam]!.filter(q => q.year === 2025 && q.season === season)).toEqual(rows);
+    expect((await getQuestionsForExam(exam)).filter(q => q.year === 2025 && q.season === season)).toEqual(rows);
     expect(EXAM_CONFIGS[exam].sessions[0].expectedQuestions).toBe(rows.length);
     expect(EXAM_CONFIGS[exam].seasons).toContain(season);
     expect(rows.every(q => EXAM_CONFIGS[exam].sessions[0].categories.includes(q.category))).toBe(true);
