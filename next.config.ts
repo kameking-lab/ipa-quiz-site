@@ -62,7 +62,15 @@ const longCacheImmutable = {
 };
 
 const nextConfig: NextConfig = {
-  webpack(config, { webpack }) {
+  webpack(config, { webpack, nextRuntime }) {
+    if (nextRuntime === "nodejs") {
+      config.module.rules.push({
+        test: /\.json$/,
+        include: resolve(process.cwd(), "data/questions"),
+        type: "javascript/auto",
+        use: [resolve(process.cwd(), "scripts/question-json-loader.cjs")],
+      });
+    }
     if (process.env.WEB_STRICT_CONTENT_GATE === "true") {
       config.resolve.alias["@/lib/kisho-study$"] = resolve(process.cwd(), "mobile/shared/gated-kisho-study.ts");
       config.plugins.push(new webpack.NormalModuleReplacementPlugin(
@@ -81,6 +89,13 @@ const nextConfig: NextConfig = {
     return config;
   },
   turbopack: {
+    rules: {
+      "*.json": {
+        condition: { all: [{ path: /^data\/questions\// }, { not: "browser" }, { not: "edge-light" }] },
+        loaders: ["./scripts/question-json-loader.cjs"],
+        as: "*.js",
+      },
+    },
     resolveAlias: process.env.WEB_STRICT_CONTENT_GATE === "true" ? {
       "@/lib/kisho-study": "./mobile/shared/gated-kisho-study.ts",
       "./kisho-study": "./mobile/shared/gated-kisho-study.ts",
@@ -196,9 +211,9 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   productionBrowserSourceMaps: false,
   experimental: {
-    // Large static question corpus: bound prerender workers so Windows CI does
-    // not exhaust memory while generating thousands of /q pages.
-    cpus: 4,
+    // Keep two page workers alongside the compiler on the 8 GB build machine.
+    // /q already uses on-demand ISR; this limits the other prerendered routes.
+    cpus: 2,
     optimizePackageImports: [
       "lucide-react",
       "@radix-ui/react-dialog",
