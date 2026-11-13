@@ -226,6 +226,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 "katawaku1": async () => isExamPublished("katawaku1") ? (await import("@/data/questions/katawaku1")).KATAWAKU1_QUESTIONS : [],
 "katawaku3": async () => isExamPublished("katawaku3") ? (await import("@/data/questions/katawaku3")).KATAWAKU3_QUESTIONS : [],
 "tekkin-zumen1": async () => isExamPublished("tekkin-zumen1") ? (await import("@/data/questions/tekkin-zumen1")).TEKKIN_ZUMEN1_QUESTIONS : [],
+"tekkin-zumen2": async () => isExamPublished("tekkin-zumen2") ? (await import("@/data/questions/tekkin-zumen2")).TEKKIN_ZUMEN2_QUESTIONS : [],
 "shashutsu2": async () => isExamPublished("shashutsu2") ? (await import("@/data/questions/shashutsu2")).SHASHUTSU2_QUESTIONS : [],
 "kikai-kensa3": async () => isExamPublished("kikai-kensa3") ? (await import("@/data/questions/kikai-kensa3")).KIKAI_KENSA3_QUESTIONS : [],
 "kagaku-bunseki2": async () => isExamPublished("kagaku-bunseki2") ? (await import("@/data/questions/kagaku-bunseki2")).KAGAKU_BUNSEKI2_QUESTIONS : [],

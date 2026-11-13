@@ -3,6 +3,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
+import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { choiceDisplayLabel, formatQuestionAnswerForDisplay } from "@/lib/questions/display";
 import { questionSourceEdition } from "@/lib/questions/source-label";
@@ -22,6 +23,11 @@ const editions = [
       + "ロニハハイ" + "ニニロイロ" + "ニニロハハ" + "ニロロイニ" + "イハニロイ",
     pages: [...Array(11).fill(2), ...Array(12).fill(3), ...Array(2).fill(4), ...Array(4).fill(5), ...Array(5).fill(6), ...Array(5).fill(7), ...Array(5).fill(8), ...Array(5).fill(9), 10],
     figures: [6, 8, 12, 23, 24, 28, 29, 44] },
+  { exam: "tekkin-zumen2", year: 2024,
+    answers: "○○○○×" + "○××××" + "×○×○○" + "○○○○×" + "××○××"
+      + "ハロニニハ" + "ロイハロニ" + "ニロイロハ" + "イハイイイ" + "ロニハニニ",
+    pages: [...Array(10).fill(2), ...Array(11).fill(3), ...Array(4).fill(4), ...Array(4).fill(5), ...Array(4).fill(6), ...Array(5).fill(7), ...Array(5).fill(8), ...Array(4).fill(9), ...Array(3).fill(10)],
+    figures: [7, 9, 15, 20, 21, 27, 29, 30, 33, 39, 45, 46] },
 ];
 
 describe.each(editions)("c5-08 $exam $year", ({ exam: code, year, answers, pages, figures }) => {
@@ -32,6 +38,8 @@ describe.each(editions)("c5-08 $exam $year", ({ exam: code, year, answers, pages
     expect(answers.length).toBe(exam === "katawaku3" ? 30 : 50);
     expect(new Set(rows.map(q => q.id)).size).toBe(answers.length);
     expect((await getQuestionsForExam(exam)).filter(q => q.year === year && q.season === "late")).toEqual(rows);
+    expect(getQualificationByExamCode(exam)?.domain).toBe("construction");
+    expect(getQualificationByExamCode(exam)?.fullName).toContain(exam === "katawaku3" ? "型枠工事作業" : "鉄筋施工図作成作業");
     expect(EXAM_CONFIGS[exam].yearRange.start).toBeLessThanOrEqual(year);
     expect(EXAM_CONFIGS[exam].sessions[0].expectedQuestions).toBe(answers.length);
     const evidence = JSON.parse(readFileSync(path.join(process.cwd(), `data/questions/${exam}/${year}-late.sources.json`), "utf8"));
