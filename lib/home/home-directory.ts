@@ -322,6 +322,16 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
     return { def: classified, item: otherItem(classified) };
   });
   const byDomain = (id: OtherCardDef["domain"]) => others.filter(({ def }) => def.domain === id).map(({ item }) => item);
+  const libraryItems = safetyOtherItems();
+  const libraryDomain = (item: HomeDirectoryItem): HomeDomainId => {
+    if (item.key === "survey-assistant") return "construction";
+    if (!item.key.startsWith("pe-first-")) return "safety";
+    if (item.name.includes("情報工学")) return "it";
+    if (item.name.includes("電気電子")) return "electrical";
+    return "construction";
+  };
+  const libraryByDomain = (id: HomeDomainId) => libraryItems.filter(item => libraryDomain(item) === id);
+  const hubItems = safetyItems();
 
   const domains = [
     domain(
@@ -340,7 +350,7 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
         allLabel: "IPAの試験をすべて見る",
       },
       [...IPA_FEATURED.map(ipaItem), ...byDomain("it")],
-      IPA_ADVANCED.map(ipaItem),
+      [...IPA_ADVANCED.map(ipaItem), ...libraryByDomain("it")],
     ),
     domain(
       {
@@ -350,28 +360,28 @@ export function getHomeDirectory(): HomeDirectoryDomain[] {
         allHref: "/e-learning/exams",
         allLabel: "安全衛生の試験をすべて見る",
       },
-      [...byDomain("safety").filter((item) => item.key !== "eisei1" && item.key !== "eisei2"), ...safetyItems()],
-      safetyOtherItems(),
+      [...byDomain("safety").filter((item) => item.key !== "eisei1" && item.key !== "eisei2"), ...hubItems.filter(item => libraryDomain(item) === "safety")],
+      libraryByDomain("safety"),
     ),
     domain(
       {
         id: "electrical",
         title: "電気・無線",
-        lead: "電験三種と第二種電気工事士の公式公開問題。",
+        lead: "電気主任技術者・電気工事士・無線など。",
         allHref: "/qualifications",
         allLabel: "その他資格の一覧",
       },
-      byDomain("electrical"),
+      byDomain("electrical"), libraryByDomain("electrical"),
     ),
     domain(
       {
         id: "construction",
-        title: "建築・土木",
-        lead: "1級・2級土木と2級管工事施工管理技術検定の第一次検定。",
+        title: "建設・技術",
+        lead: "建築・施工管理・測量・技術士など。",
         allHref: "/qualifications",
         allLabel: "その他資格の一覧",
       },
-      byDomain("construction"),
+      [...byDomain("construction"), ...hubItems.filter(item => libraryDomain(item) === "construction")], libraryByDomain("construction"),
     ),
     domain(
       {

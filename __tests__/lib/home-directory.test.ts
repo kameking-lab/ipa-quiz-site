@@ -31,12 +31,13 @@ describe("home directory", () => {
     }
   });
 
-  it("links every safety qualification hub", () => {
+  it("links every official-paper hub in its field and keeps hygiene hubs unique", () => {
     const safety = domains.find((d) => d.id === "safety");
     const featured = safety?.featured ?? [];
     const hrefs = featured.map((item) => item.href);
     for (const hub of QUALIFICATION_HUBS) {
-      expect(hrefs.filter((href) => href === qualificationHubPath(hub.slug))).toHaveLength(1);
+      const group = domains.find(domain => domain.id === (hub.slug === "survey-assistant" ? "construction" : "safety"))!;
+      expect(group.featured.filter(item => item.href === qualificationHubPath(hub.slug))).toHaveLength(1);
     }
     expect(hrefs).not.toContain("/eisei1");
     expect(hrefs).not.toContain("/eisei2");
@@ -62,6 +63,14 @@ describe("home directory", () => {
     expect(dentist?.href).toBe("/shika-ishi");
     expect(dentist?.questionCount).toBe(726);
     expect(dentist?.periodLabel).toBe("5期分");
+  });
+
+  it("places engineering first-stage library subjects in their field instead of safety", () => {
+    const library = domains.flatMap(domain => domain.compact.map(item => ({ domain: domain.id, item }))).filter(({ item }) => item.key.startsWith("pe-first-"));
+    expect(library.length).toBeGreaterThan(0);
+    for (const { domain, item } of library) {
+      expect(domain).toBe(item.name.includes("情報工学") ? "it" : item.name.includes("電気電子") ? "electrical" : "construction");
+    }
   });
 
   it("links the three Riyoshi papers with the published question count", () => {
