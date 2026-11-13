@@ -328,6 +328,25 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "kenchiku-daiku3", name: "建築大工技能士 3級", sub: "大工工事作業 学科（真偽法）", domain: "safety" },
   { code: "kenchiku-daiku2", name: "建築大工技能士 2級", sub: "大工工事作業 学科（A群 真偽法・B群 多肢択一法）", domain: "safety" },
   { code: "shashin2", name: "写真技能士 2級", sub: "肖像写真デジタル作業 学科（真偽法・多肢択一）", domain: "safety" },
+
+
+
+
+  { code: "flower2", name: "フラワー装飾技能士 2級", sub: "フラワー装飾作業 学科（真偽法・多肢択一法）", domain: "welfare" },
+
+
+
+
+  { code: "diecast2", name: "ダイカスト技能士 2級", sub: "ホットチャンバダイカスト作業 学科（真偽法・多肢択一法）", domain: "safety" },
+
+  { code: "tetsudo-sharyo2", name: "鉄道車両製造・整備技能士 2級", sub: "機器ぎ装作業 学科（真偽法・多肢択一法）", domain: "safety" },
+
+
+
+
+
+
+
   { code: "kikai-hozen", name: "機械保全技能士 2級", sub: "機械系保全作業 学科（真偽法・四肢択一）", domain: "safety" },
   { code: "tsukanshi", name: "通関士", sub: "通関業法・関税法等・通関実務", domain: "money" },
   { code: "kanteishi", name: "不動産鑑定士", sub: "令和7・8年度 短答式160問・全肢解説", domain: "money" },
@@ -384,7 +403,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "soukan", name: "技術士 総合技術監理部門", sub: "第二次試験 択一式（令和7・8年度）", domain: "construction" },
   { code: "hoikushi", name: "保育士試験", sub: "筆記9科目（令和8年度前期・154問）", domain: "welfare" },
   { code: "mankan", name: "マンション管理士", sub: "令和6・7年度公式問題（100問）", domain: "money" },
-  { code: "kashikin", name: "貸金業務取扱主任者", sub: "第20回・第19回公式問題（100問）", domain: "money" },
+  { code: "kashikin", name: "貸金業務取扱主任者", sub: "第18〜20回公式問題（150問）", domain: "money" },
   { code: "sharoushi", name: "社会保険労務士", sub: "第58・57回 択一式・選択式を部分収録", domain: "welfare" },
   { code: "kangoshi", name: "看護師", sub: "第115・114回 午前・午後の確認済み原問を部分収録", domain: "welfare" },
   { code: "biyoshi", name: "美容師", sub: "第53・54回の確認済み106問（4問保留）", domain: "welfare" },

@@ -109,7 +109,7 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "shohi-sodan": async () => (await import("@/data/questions/shohi-sodan")).SHOHI_SODAN_QUESTIONS,
 "chintai": async () => isExamPublished("chintai") ? (await import("@/data/questions/batch1/chintai.json")).default as Question[] : [],
 "kyusui": async () => isExamPublished("kyusui") ? (await import("@/data/questions/batch1/kyusui.json")).default as Question[] : [],
-"biru-kan": async () => isExamPublished("biru-kan") ? (await import("@/data/questions/batch1/biru-kan.json")).default as Question[] : [],
+"biru-kan": async () => isExamPublished("biru-kan") ? (await import("@/data/questions/biru-kan")).BIRU_KAN_QUESTIONS : [],
 "gijutsushi1-kikai": async () => isExamPublished("gijutsushi1-kikai") ? (await import("@/data/questions/batch1/gijutsushi1-kikai.json")).default as Question[] : [],
 "hoshasen-1": async () => isExamPublished("hoshasen-1") ? (await import("@/data/questions/batch1/hoshasen-1.json")).default as Question[] : [],
 "hoshasen-2": async () => isExamPublished("hoshasen-2") ? (await import("@/data/questions/batch1/hoshasen-2.json")).default as Question[] : [],
@@ -295,16 +295,35 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 "kikai-hozen-setsubi1": async () => isExamPublished("kikai-hozen-setsubi1") ? (await import("@/data/questions/kikai-hozen-setsubi1")).QUESTIONS : [],
 "kikai-hozen3": async () => isExamPublished("kikai-hozen3") ? (await import("@/data/questions/kikai-hozen3")).QUESTIONS : [],
 "kikai-hozen1": async () => isExamPublished("kikai-hozen1") ? (await import("@/data/questions/kikai-hozen1")).QUESTIONS : [],
+
+
+
+
+
+
+"toso2": async () => isExamPublished("toso2") ? (await import("@/data/questions/toso2")).TOSO2_QUESTIONS : [],
+"mekki2": async () => isExamPublished("mekki2") ? (await import("@/data/questions/mekki2")).MEKKI2_QUESTIONS : [],
+
+"diecast2": async () => isExamPublished("diecast2") ? (await import("@/data/questions/diecast2")).DIECAST2_QUESTIONS : [],
+
+"tetsudo-sharyo2": async () => isExamPublished("tetsudo-sharyo2") ? (await import("@/data/questions/tetsudo-sharyo2")).TETSUDO_SHARYO2_QUESTIONS : [],
+"engei-soshoku2": async () => isExamPublished("engei-soshoku2") ? (await import("@/data/questions/engei-soshoku2")).ENGEI_SOSHOKU2_QUESTIONS : [],
+
+"kagaku-bunseki2": async () => isExamPublished("kagaku-bunseki2") ? (await import("@/data/questions/kagaku-bunseki2")).KAGAKU_BUNSEKI2_QUESTIONS : [],
+
+
+
+
 "kikai-hozen": async () => isExamPublished("kikai-hozen") ? (await import("@/data/questions/kikai-hozen")).KIKAI_HOZEN_QUESTIONS : [],
 "tobi2": async () => isExamPublished("tobi2") ? (await import("@/data/questions/tobi2")).TOBI2_QUESTIONS : [],
-"toso2": async () => isExamPublished("toso2") ? (await import("@/data/questions/toso2")).TOSO2_QUESTIONS : [],
 
-"mekki2": async () => isExamPublished("mekki2") ? (await import("@/data/questions/mekki2")).MEKKI2_QUESTIONS : [],
+
+
 
 "diecast1": async () => isExamPublished("diecast1") ? (await import("@/data/questions/diecast1")).DIECAST1_QUESTIONS : [],
 "tetsudo-sharyo1": async () => isExamPublished("tetsudo-sharyo1") ? (await import("@/data/questions/tetsudo-sharyo1")).TETSUDO_SHARYO1_QUESTIONS : [],
 
-"engei-soshoku2": async () => isExamPublished("engei-soshoku2") ? (await import("@/data/questions/engei-soshoku2")).ENGEI_SOSHOKU2_QUESTIONS : [],
+
 
 "futsu-senban1": async () => isExamPublished("futsu-senban1") ? (await import("@/data/questions/futsu-senban1")).FUTSU_SENBAN1_QUESTIONS : [],
 "shashutsu1": async () => isExamPublished("shashutsu1") ? (await import("@/data/questions/shashutsu1")).SHASHUTSU1_QUESTIONS : [],
@@ -343,7 +362,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 
 "shashutsu2": async () => isExamPublished("shashutsu2") ? (await import("@/data/questions/shashutsu2")).SHASHUTSU2_QUESTIONS : [],
 
-"kagaku-bunseki2": async () => isExamPublished("kagaku-bunseki2") ? (await import("@/data/questions/kagaku-bunseki2")).KAGAKU_BUNSEKI2_QUESTIONS : [],
+
 
 "tsukanshi": async () => isExamPublished("tsukanshi") ? (await import("@/data/questions/tsukanshi")).TSUKANSHI_QUESTIONS : []
 };

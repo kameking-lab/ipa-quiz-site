@@ -102,10 +102,10 @@ export const EXAM_LABELS: Record<string, string> = {
 
   "kikai-seizu-tegaki1": "機械・プラント製図技能士 1級（機械製図手書き作業）",
 
-  
-  
-  
-  
+
+
+
+
   "henatsuki-kumitate2": "電気機器組立て技能士 2級（変圧器組立て作業）",
   "henatsuki-kumitate1": "電気機器組立て技能士 1級（変圧器組立て作業）",
 
@@ -115,7 +115,7 @@ export const EXAM_LABELS: Record<string, string> = {
 
   "plant-haikan-seizu2": "機械・プラント製図技能士 2級（プラント配管製図作業）",
 
-  
+
 
   "netsuzetsuen2": "熱絶縁施工技能士 2級（保温保冷工事作業）",
   "hiseshoku-jokyo1": "非接触除去加工技能士 1級（数値制御形彫り放電加工作業）",
@@ -349,6 +349,25 @@ export const EXAM_LABELS: Record<string, string> = {
     "kikai-hozen-setsubi1": "機械保全技能士 1級（設備診断）",
 
     "kikai-hozen1": "機械保全技能士 1級（機械系）",
+
+
+
+
+
+
+
+
+
+    "diecast2": "ダイカスト技能士 2級",
+
+    "tetsudo-sharyo2": "鉄道車両製造・整備技能士 2級",
+
+
+
+
+
+
+
     "kikai-hozen": "機械保全技能士 2級",
     "tsukanshi": "通関士"
 };

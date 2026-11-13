@@ -169,6 +169,10 @@ import { KIKAI_HOZEN_DENKI3_QUESTIONS } from "./kikai-hozen-denki3";
 import { KIKAI_HOZEN3_QUESTIONS } from "./kikai-hozen3";
 import { TOBI2_QUESTIONS } from "./tobi2";
 
+
+
+
+
 import { QUESTIONS as KIKENBUTSU_OTSU4 } from "./kikenbutsu-otsu4";
 import { QUESTIONS as UNKO_KANRISHA_KAMOTSU } from "./unko-kanrisha-kamotsu";
 import { QUESTIONS as SHOBO_SETSUBISHI_OTSU6 } from "./shobo-setsubishi-otsu6";
@@ -320,6 +324,21 @@ import { SOKURYOSHIHO_QUESTIONS } from "./sokuryoshiho";
 import { CAREMANAGER_QUESTIONS } from "./caremanager";
 
 import { QUESTIONS as KIKAI_HOZEN1_QUESTIONS } from "./kikai-hozen1";
+
+
+
+
+import { DIECAST2_QUESTIONS } from "./diecast2";
+
+import { TETSUDO_SHARYO2_QUESTIONS } from "./tetsudo-sharyo2";
+
+
+
+
+
+
+
+
 import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
 import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 
@@ -669,6 +688,25 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("shashin2") ? { "shashin2": SHASHIN2_QUESTIONS } : {}),
 
 ...(isExamPublished("kikai-hozen1") ? { "kikai-hozen1": KIKAI_HOZEN1_QUESTIONS } : {}),
+
+
+
+
+
+
+
+
+...(isExamPublished("diecast2") ? { "diecast2": DIECAST2_QUESTIONS } : {}),
+
+...(isExamPublished("tetsudo-sharyo2") ? { "tetsudo-sharyo2": TETSUDO_SHARYO2_QUESTIONS } : {}),
+
+
+
+
+
+
+
+
 ...(isExamPublished("kikai-hozen") ? { "kikai-hozen": KIKAI_HOZEN_QUESTIONS } : {}),
 ...(isExamPublished("tobi2") ? { "tobi2": TOBI2_QUESTIONS } : {}),
 

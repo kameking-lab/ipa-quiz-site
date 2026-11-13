@@ -38,22 +38,35 @@ describe("山口県食品資格のステージング", () => {
 
 describe("製菓衛生師: 全選択科目と公式正答", () => {
   const answers: Record<number, string> = {
+    2024: "421314132132342424122414412424221213413433142213113231433213423343",
     2025: "412141123342222324323442433443234232121422142441314132134411122321",
     2026: "433131233344132134332333224331134212324232214342213114334321114124",
   };
-  for (const year of [2025, 2026]) it(`${year}: 共通57問＋選択3科目各3問`, () => {
+  for (const year of [2024, 2025, 2026]) it(`${year}: 共通57問＋選択3科目各3問`, () => {
     const qs = YAMAGUCHI_SEIKA_QUESTIONS.filter(q => q.year === year);
     expect(qs).toHaveLength(66);
+    expect(qs.filter(q => q.session === "gakka").map(q => q.qNumber)).toEqual(Array.from({ length: 57 }, (_, i) => i + 1));
     expect(qs.map(q => q.officialAnswerNumber).join("")).toBe(answers[year]);
     expect(new Set(qs.map(q => q.id)).size).toBe(66);
     for (const session of ["wagashi", "yogashi", "seipan"]) {
       expect(qs.filter(q => q.session === session).map(q => q.qNumber)).toEqual([58, 59, 60]);
     }
     for (const q of qs) {
+      expect(q.id).toBe(`yamaguchi-seika-${year}-annual-${q.session}-q${q.qNumber}`);
       expect(q.answer).toBe("アイウエ"[Number(q.officialAnswerNumber) - 1]);
       expect(Object.keys(q.choiceExplanations ?? {})).toEqual(Object.keys(q.choices ?? {}));
       if (q.hasImage) for (const image of q.imageUrls ?? []) expect(existsSync(`public${image}`)).toBe(true);
     }
+  });
+  it("2024: ビタミンの結合セルと下付き数字を欠落させない", () => {
+    const q = YAMAGUCHI_SEIKA_QUESTIONS.find(q => q.id === "yamaguchi-seika-2024-annual-gakka-q17")!;
+    expect(q.question).toContain("| 脂溶性 | （ Ａ ） | 緑黄色野菜、海藻、納豆等 | 血液凝固遅延 |");
+    expect(q.question).toContain("| 脂溶性 | （ Ｂ ） | レバー、チーズ、卵黄等 | 夜盲症など視覚機能の異常 |");
+    expect(q.question).toContain("| 水溶性 | （ Ｃ ） | 野菜類、果実類、茶（玉露）等 | 壊血病 |");
+    expect(q.question).toContain("| 水溶性 | （ Ｄ ） | 豚肉、胚芽、玄米等 | 脚気 |");
+    for (const choice of Object.values(q.choices ?? {})) expect(choice).toContain("ビタミンＢ１");
+    expect(q.sourcePdfUrl).toMatch(/208554\.pdf#page=7$/);
+    expect(q.sourceAnswerUrl).toMatch(/208554\.pdf#page=25$/);
   });
   it("batch1公開後: 公開ゲートを維持する", async () => {
     expect(isExamPublished("yamaguchi-seika")).toBe(true);

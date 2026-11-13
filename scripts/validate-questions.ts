@@ -56,6 +56,8 @@ import { validateJokasoSetsubishiStaging } from "./lib/jokaso-setsubishi-staging
 import { validateChiikiRyoko } from "./validate-chiiki-ryoko";
 import { validateKukakuSeiri } from "./validate-kukaku-seiri";
 
+import { BIRU_KAN_2026_AM_STAGING, BIRU_KAN_2026_PM_STAGING, validateBiruKan2026Am, validateBiruKan2026Pm } from "./lib/validate-biru-kan-2026";
+
 // Publication-gated pilots still require the same schema and source validation
 // before their release gate can be lifted.
 const VALIDATION_QUESTIONS = [
@@ -507,6 +509,21 @@ function reportFixes(questions: Question[]): void {
 // ─── Main ────────────────────────────────────────────────────────────────────
 
 const opts = parseCliOptions();
+if (opts.staging === "biru-kan-2026-pm" && !opts.exams.length && !opts.fix && !opts.report) {
+  const errors = validateBiruKan2026Pm();
+  for (const error of errors) console.error(`[FAIL] ${error}`);
+  const result = validate(BIRU_KAN_2026_PM_STAGING);
+  console.log(`Validated ${BIRU_KAN_2026_PM_STAGING.length} private biru-kan 2026 afternoon originals. fail=${errors.length + result.fail} publicAllowed=false`);
+  process.exit(errors.length || result.fail ? 1 : 0);
+}
+if (opts.staging === "biru-kan-2026-am" && !opts.exams.length && !opts.fix && !opts.report) {
+  const errors = validateBiruKan2026Am();
+  for (const error of errors) console.error(`[FAIL] ${error}`);
+  const result = validate(BIRU_KAN_2026_AM_STAGING);
+  console.log(`Validated ${BIRU_KAN_2026_AM_STAGING.length} private biru-kan 2026 morning originals. fail=${errors.length + result.fail} publicAllowed=false`);
+  process.exit(errors.length || result.fail ? 1 : 0);
+}
+
 if (opts.exams.length === 0 || opts.exams.some(exam => ["khk-hanbai", "khk-hanbai2", "khk-setsubishi"].includes(exam))) {
   const staging = validateKhkHanbaiStaging();
   console.log(`[staging:khk-hanbai] ${staging.count} questions, ${staging.errors.length} errors; private`);
@@ -523,7 +540,7 @@ if (!opts.exams.length || opts.exams.includes("benrishi")) {
 
 if (opts.staging !== undefined) {
   if (opts.staging !== "sokuryoshi" || opts.exams.length || opts.fix || opts.report) {
-    console.error("Use --staging=sokuryoshi alone for private qualification validation.");
+    console.error("Use --staging=sokuryoshi, --staging=biru-kan-2026-am or --staging=biru-kan-2026-pm alone for private qualification validation.");
     process.exit(1);
   }
   const result = validateSokuryoshiStaging();
