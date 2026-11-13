@@ -16,6 +16,7 @@ import type { ExamCode } from "@/lib/questions/types";
 // 公式正答表の印字順。JSONのanswerから期待値を作らない。
 const officialKeys = {
   fraise1: "○×○××○×○×○××××○××○○○○○○○○ハロハロニロハニニハイロロロハニロイイニロニロニロ",
+  fraise2: "×○○○×××○×○×○×○○○×○○○×○××○ハイニハハハニニロニロニイニニニロニハロイイロハイ",
 };
 for (const [code, key] of Object.entries(officialKeys)) {
   const exam = code as ExamCode;
