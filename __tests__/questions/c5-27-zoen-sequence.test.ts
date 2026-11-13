@@ -15,6 +15,7 @@ import type { ChoiceKey } from "@/lib/questions/types";
 const editions = [
   { code: "zoen-gino2", year: 2023, season: "early", a: "××××○ ×○××○ ○×××× ○○××○ ×○○○○", b: "ハロロニイ イハニロイ ロニニイロ ロイハニロ ロハロハイ", figures: [47] },
   { code: "zoen-gino3", year: 2023, season: "early", a: "○○○×○ ×○××× ○×××○ ××○○× ○○×○○ ×○○××", b: "", figures: [] },
+  { code: "sequence1", year: 2025, season: "late", a: "×○××○ ××××× ○×○○○ ○○○×○ ○○×○○", b: "ロイニハニ ハイハイニ ロハニニイ イニニロイ ハイロハニ", figures: [3,10,26,32,35,40,44,45,46,48,50] },
 ] as const;
 
 for (const { code, year, season, a, b, figures } of editions) {
@@ -33,7 +34,7 @@ for (const { code, year, season, a, b, figures } of editions) {
         expect(q.answer).toBe(isTf ? (official[i] === "○" ? "ア" : "イ") : "アイウエ"["イロハニ".indexOf(official[i])]);
         expect(formatQuestionAnswerForDisplay(q, q.answer)).toBe(official[i]);
         expect(questionNumberLabel(q)).toBe(b ? `${isTf ? "A" : "B"}群 ${isTf ? i + 1 : i - 24}` : String(i + 1));
-        expect(questionSourceEdition(q)).toBe(`${year}年度前期`);
+        expect(questionSourceEdition(q)).toBe(`${year}年度${season === "late" ? "後期" : "前期"}`);
         expect(isPracticeReadyQuestion(q)).toBe(true);
         expect(shuffleChoices(q)).toBe(q);
         for (const key of Object.keys(q.choices ?? {}) as ChoiceKey[]) {

@@ -18,6 +18,7 @@ import { KOGYO_HOSO1_QUESTIONS } from "./kogyo-hoso1";
 import { KIKAI_KENSA2_QUESTIONS } from "./kikai-kensa2";
 import { KOGYO_HOSO2_QUESTIONS } from "./kogyo-hoso2";
 import { HAIDEN_SEIGYO1_QUESTIONS } from "./haiden-seigyo1";
+import { SEQUENCE1_QUESTIONS } from "./sequence1";
 import { HAIDEN_SEIGYO3_QUESTIONS } from "./haiden-seigyo3";
 import { KENCHIKU_BANKIN2_QUESTIONS } from "./kenchiku-bankin2";
 import { KENSETSU_KIKAI_SEIBI1_QUESTIONS } from "./kensetsu-kikai-seibi1";
@@ -462,6 +463,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("kikai-kensa2") ? { "kikai-kensa2": KIKAI_KENSA2_QUESTIONS } : {}),
 ...(isExamPublished("kogyo-hoso2") ? { "kogyo-hoso2": KOGYO_HOSO2_QUESTIONS } : {}),
 ...(isExamPublished("haiden-seigyo1") ? { "haiden-seigyo1": HAIDEN_SEIGYO1_QUESTIONS } : {}),
+...(isExamPublished("sequence1") ? { "sequence1": SEQUENCE1_QUESTIONS } : {}),
 ...(isExamPublished("haiden-seigyo3") ? { "haiden-seigyo3": HAIDEN_SEIGYO3_QUESTIONS } : {}),
 ...(isExamPublished("kenchiku-bankin2") ? { "kenchiku-bankin2": KENCHIKU_BANKIN2_QUESTIONS } : {}),
 ...(isExamPublished("kensetsu-kikai-seibi1") ? { "kensetsu-kikai-seibi1": KENSETSU_KIKAI_SEIBI1_QUESTIONS } : {}),
