@@ -10,10 +10,23 @@ import { ALL_EXAM_CODES } from "@/lib/exam-config";
 import { EXAM_CATALOG, EXAM_LIBRARY_PATH } from "@/lib/exam-library-catalog";
 import { getExamPaperStats } from "@/lib/exam-library-papers";
 import { qualificationHubForEntry } from "@/lib/exam-qualification-hubs";
+import { frequentExamKeys } from "@/lib/home/featured-exams";
+import { getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
 
 describe("home directory", () => {
   const domains = getHomeDirectory();
   const all = domains.flatMap((d) => [...d.featured, ...d.compact]);
+
+  it("resolves actual history IDs for every registered question exam, including legacy prefixes", () => {
+    const aliases = Object.fromEntries(all.flatMap(item => (item.historyPrefixes ?? []).map(prefix => [prefix, item.key])));
+    for (const code of Object.keys(EXAM_QUESTION_COUNTS)) {
+      const item = all.find(item => item.key === code);
+      if (!item) continue; // Hygiene's canonical library hubs are tested below.
+      const question = getQuestionsByExamStrict(code as keyof typeof EXAM_QUESTION_COUNTS)[0];
+      if (!question) continue;
+      expect(frequentExamKeys([{ id: question.id, at: 1 }], all.map(item => item.key), aliases), code).toEqual([item.key]);
+    }
+  });
 
   it("keeps the primary category routes reachable", () => {
     const hrefs = new Set(domains.map((d) => d.allHref));

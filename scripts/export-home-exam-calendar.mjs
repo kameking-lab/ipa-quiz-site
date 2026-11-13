@@ -34,6 +34,9 @@ for (const mapping of mappings) {
   const notes = (entry.sessions ?? []).map(row => row.notes ?? "").join("\n");
   const count = noteSources[entry.id] ? /受[験検]者([\d,]+)(?:人|名)/.exec(notes)?.[1] : undefined;
   const candidates = fact?.candidates ?? (count ? Number(count.replaceAll(",", "")) : null);
+  // Unknown popularity is not zero popularity. Keep these out of the popular
+  // selection until calendar has a sourced test-taker count.
+  if (candidates === null) continue;
   const dates = (entry.sessions ?? []).flatMap(row => {
     // Never infer dates from prose, annual recurrence, tbd, on-demand windows
     // or range ends. Practical/oral dates do not represent written practice.
@@ -42,7 +45,6 @@ for (const mapping of mappings) {
     const note = /東京都|東京.*代表/.test(row.session_label) ? "東京" : /関東/.test(row.session_label) ? "関東" : undefined;
     return [{ date: row.exam_date, sourceUrl: row.source_url, ...(note ? { note } : {}) }];
   });
-  if (!dates.length && candidates === null) continue;
   exams.push({ key: mapping.sourceKey, qualificationId: entry.id, candidates,
     ...(candidates !== null ? { candidatesSourceUrl: fact?.officialUrls[0] ?? noteSources[entry.id], candidatesSourceFile: fact ? factsFile : path } : {}),
     dates, sourceFile: path });

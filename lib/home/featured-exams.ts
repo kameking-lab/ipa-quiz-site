@@ -12,16 +12,18 @@ export const HOME_EXAM_CALENDAR: readonly FeaturedCalendarExam[] = calendar.exam
 
 /** Attempts, including reattempts; recency breaks ties. Self-contained so the
  * same reader can reserve the correct height before the first paint. */
-export function frequentExamKeys(entries: unknown, keys: readonly string[]): string[] {
+export function frequentExamKeys(entries: unknown, keys: readonly string[], aliases: Readonly<Record<string, string>> = {}): string[] {
   if (!Array.isArray(entries)) return [];
   const longestFirst = [...keys].sort((a, b) => b.length - a.length);
+  const aliasPrefixes = Object.keys(aliases).sort((a, b) => b.length - a.length);
   const counts = new Map<string, { count: number; latest: number }>();
   for (const entry of entries) {
     if (!entry || typeof entry.id !== "string" || !Number.isFinite(entry.at)) continue;
     const automotive = /^jidosha-20\d{2}-(?:first|second)-(.+)-q\d+$/.exec(entry.id);
-    const key = automotive ? keys.find(key => key === `jidosha-${automotive[1]}`)
+    const alias = aliasPrefixes.find(prefix => entry.id.startsWith(prefix));
+    const key = alias ? aliases[alias] : automotive ? keys.find(key => key === `jidosha-${automotive[1]}`)
       : longestFirst.find(key => entry.id.startsWith(`${key}-`));
-    if (!key) continue;
+    if (!key || !keys.includes(key)) continue;
     const previous = counts.get(key) ?? { count: 0, latest: 0 };
     counts.set(key, { count: previous.count + 1, latest: Math.max(previous.latest, entry.at) });
   }
@@ -42,7 +44,7 @@ export function upcomingExamPicks(keys: readonly string[], excluded: readonly st
   const available = new Set(keys.filter(key => !excluded.includes(key)));
   const nextByKey = new Map<string, { key: string; candidates: number; next?: FeaturedExamDate }>();
   for (const row of rows) {
-    if (!available.has(row.key)) continue;
+    if (!available.has(row.key) || row.candidates === null || row.candidates <= 0) continue;
     const next = [...row.dates].filter(item => item.date >= today).sort((a, b) => a.date.localeCompare(b.date))[0];
     const previous = nextByKey.get(row.key);
     if (!previous || (next && (!previous.next || next.date < previous.next.date))) {

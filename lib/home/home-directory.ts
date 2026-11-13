@@ -29,6 +29,8 @@ export type HomeDomainId = "it" | "safety" | "electrical" | "construction" | "mo
 
 export interface HomeDirectoryItem {
   key: string;
+  /** Existing question IDs whose prefix differs from the registered exam code. */
+  historyPrefixes?: string[];
   href: string;
   /** カード見出し（略称を含む短い名前） */
   name: string;
@@ -91,9 +93,17 @@ function examPeriodCount(code: ExamCode): number {
   return groupByYearSeason(getQuestionsByExamStrict(code)).length;
 }
 
+function historyPrefixes(code: ExamCode): string[] | undefined {
+  const prefixes = [...new Set(getQuestionsByExamStrict(code)
+    .filter(question => !question.id.startsWith(`${code}-`))
+    .map(question => question.id.replace(/-q\d+.*$/, "-q")))];
+  return prefixes.length ? prefixes : undefined;
+}
+
 function ipaItem(def: IpaCardDef): HomeDirectoryItem {
   return {
     key: def.code,
+    historyPrefixes: historyPrefixes(def.code),
     href: `/${def.code}`,
     name: def.name,
     abbr: def.abbr,
@@ -235,6 +245,7 @@ function otherItem(def: OtherCardDef): HomeDirectoryItem {
   const practical = def.code === "fp2" ? fp2PracticalCount() : def.code === "fp3" ? fp3PracticalCount() : 0;
   return {
     key: def.code,
+    historyPrefixes: historyPrefixes(def.code),
     href: `/${def.code}`,
     name: def.name,
     sub: def.sub,

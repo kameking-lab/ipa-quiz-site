@@ -22,9 +22,11 @@ export function QualificationCard({ item, onChoose, date }: { item: Qualificatio
 export function HomeFeaturedExams({ items, onChoose }: { items: readonly QualificationCardItem[]; onChoose: () => void }) {
   const id = useId();
   const keys = useMemo(() => items.filter(item => item.questionCount > 0).map(item => item.key), [items]);
+  const aliases = useMemo(() => Object.fromEntries(items.flatMap(item =>
+    (item.historyPrefixes ?? []).map(prefix => [prefix, item.key]))), [items]);
   const [snapshot, setSnapshot] = useState<{ personal: string[]; now: Date } | null>(null);
   useLayoutEffect(() => {
-    const refresh = () => setSnapshot({ personal: frequentExamKeys(createHistoryStore().getAllEntries(), keys), now: new Date() });
+    const refresh = () => setSnapshot({ personal: frequentExamKeys(createHistoryStore().getAllEntries(), keys, aliases), now: new Date() });
     refresh();
     // Re-evaluate on BFCache return, history sync in another tab and Japan midnight.
     const storage = (event: StorageEvent) => { if (event.key === null || event.key === LS_KEYS.history) refresh(); };
@@ -32,13 +34,13 @@ export function HomeFeaturedExams({ items, onChoose }: { items: readonly Qualifi
     window.addEventListener("storage", storage);
     const timer = window.setInterval(refresh, 60_000);
     return () => { window.removeEventListener("pageshow", refresh); window.removeEventListener("storage", storage); window.clearInterval(timer); };
-  }, [keys]);
+  }, [keys, aliases]);
   const personal = snapshot?.personal ?? [];
   const picks = upcomingExamPicks(keys, personal, snapshot?.now ?? new Date(0));
   const byKey = new Map(items.map(item => [item.key, item]));
   // The browser reserves exactly one or two rows while parsing, before paint.
   // No personal data enters HTML, URL, API, analytics or a new storage key.
-  const reservation = `try{const e=document.getElementById(${JSON.stringify(id)});const h=JSON.parse(localStorage.getItem(${JSON.stringify(LS_KEYS.history)})||"null");e.dataset.personal=String((${frequentExamKeys.toString()})(h?.entries,${JSON.stringify(keys)}).length>0)}catch{}`.replaceAll("<", "\\u003c");
+  const reservation = `try{const e=document.getElementById(${JSON.stringify(id)});const h=JSON.parse(localStorage.getItem(${JSON.stringify(LS_KEYS.history)})||"null");e.dataset.personal=String((${frequentExamKeys.toString()})(h?.entries,${JSON.stringify(keys)},${JSON.stringify(aliases)}).length>0)}catch{}`.replaceAll("<", "\\u003c");
   return <>
     <div id={id} className="study-pickups" data-ready={snapshot !== null} data-personal={personal.length > 0} suppressHydrationWarning>
       {personal.length > 0 && <section aria-labelledby={`${id}-personal`}><h3 id={`${id}-personal`} className="study-results-label">あなたの資格</h3>

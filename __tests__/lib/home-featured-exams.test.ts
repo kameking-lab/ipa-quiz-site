@@ -20,6 +20,9 @@ describe("home pickup selection", () => {
   it("recognizes hyphenated qualification codes and automotive period-first IDs", () => {
     expect(frequentExamKeys([entry("khk-kagaku"), { id: "jidosha-2026-first-2-gasoline-q3", at: 3 }], [...keys, "khk", "jidosha-2-gasoline"])).toEqual(["jidosha-2-gasoline", "khk-kagaku"]);
   });
+  it("resolves registered question-prefix aliases without treating a legacy prefix as a qualification", () => {
+    expect(frequentExamKeys([{ id: "radio21-riku-tech2-2026-01-kogaku-b-q25", at: 3 }], ["riku-tech2"], { "radio21-riku-tech2-2026-01-kogaku-b-q": "riku-tech2" })).toEqual(["riku-tech2"]);
+  });
   it("uses Japanese midnight regardless of the browser time zone", () => {
     expect(japanDate(new Date("2026-11-13T14:59:59Z"))).toBe("2026-11-13");
     expect(japanDate(new Date("2026-11-13T15:00:00Z"))).toBe("2026-11-14");
@@ -43,5 +46,9 @@ describe("home pickup selection", () => {
     const picks = upcomingExamPicks(keys, [], now, rows);
     expect(picks.map(pick => pick.key)).toEqual(["nw", "fp1", "ap"]);
     expect(picks.every(pick => !pick.next)).toBe(true);
+  });
+  it("does not invent popularity for an exam with an unknown test-taker count", () => {
+    const unknown = { ...row("fp1", 100, "2026-11-14"), candidates: null };
+    expect(upcomingExamPicks(keys, [], now, [unknown, row("sc", 20, "2027-03-01")]).map(pick => pick.key)).toEqual(["sc"]);
   });
 });
