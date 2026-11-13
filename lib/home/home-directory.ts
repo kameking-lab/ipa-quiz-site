@@ -169,6 +169,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   {"code": "kikai-kensa2", "name": "機械検査技能士 2級", "sub": "機械検査作業 学科", "domain": "electrical"},
   {"code": "kogyo-hoso2", "name": "工業包装技能士 2級", "sub": "工業包装作業 学科", "domain": "electrical"},
   {"code": "katawaku1", "name": "型枠施工技能士 1級", "sub": "型枠工事作業 学科", "domain": "construction"},
+  {"code": "katawaku3", "name": "型枠施工技能士 3級", "sub": "型枠工事作業 学科", "domain": "electrical"},
   {"code": "shashutsu2", "name": "プラスチック成形技能士 2級（射出成形作業）", "sub": "射出成形作業 学科", "domain": "electrical"},
   {"code": "kikai-kensa3", "name": "機械検査技能士 3級", "sub": "機械検査作業 学科", "domain": "electrical"},
   {"code": "kagaku-bunseki2", "name": "化学分析技能士 2級", "sub": "化学分析作業 学科", "domain": "safety"},
