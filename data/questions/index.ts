@@ -54,6 +54,7 @@ import { HYOSO2_QUESTIONS } from "./hyoso2";
 import { SHOHIN_SOSHOKU3_QUESTIONS } from "./shohin-soshoku3";
 import { SHASHIN1_QUESTIONS } from "./shashin1";
 import { KIKINZOKU_SOSHIN1_QUESTIONS } from "./kikinzoku-soshin1";
+import { SHASHIN3_QUESTIONS } from "./shashin3";
 import { KIKINZOKU_SOSHIN3_QUESTIONS } from "./kikinzoku-soshin3";
 import { KIKINZOKU_SOSHIN2_QUESTIONS } from "./kikinzoku-soshin2";
 import { TOBI1_QUESTIONS } from "./tobi1";
@@ -447,6 +448,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("shohin-soshoku3") ? { "shohin-soshoku3": SHOHIN_SOSHOKU3_QUESTIONS } : {}),
 ...(isExamPublished("shashin1") ? { "shashin1": SHASHIN1_QUESTIONS } : {}),
 ...(isExamPublished("kikinzoku-soshin1") ? { "kikinzoku-soshin1": KIKINZOKU_SOSHIN1_QUESTIONS } : {}),
+...(isExamPublished("shashin3") ? { "shashin3": SHASHIN3_QUESTIONS } : {}),
 ...(isExamPublished("kikinzoku-soshin3") ? { "kikinzoku-soshin3": KIKINZOKU_SOSHIN3_QUESTIONS } : {}),
 ...(isExamPublished("kikinzoku-soshin2") ? { "kikinzoku-soshin2": KIKINZOKU_SOSHIN2_QUESTIONS } : {}),
 ...(isExamPublished("tobi1") ? { "tobi1": TOBI1_QUESTIONS } : {}),

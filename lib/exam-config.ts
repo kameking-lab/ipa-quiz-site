@@ -1744,6 +1744,11 @@ caremanager: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（A群 真偽法・B群 多肢択一法）", categories: ["ろう付", "塑性加工", "安全衛生", "宝石", "工具", "意匠", "洗浄", "研磨", "表面処理", "装身具", "装飾技法", "製図", "金属材料", "鋳造", "電気"] }],
     seasons: ["early"], yearRange: { start: 2025, end: 2025 },
 },
+"shashin3": {
+    code: "shashin3", nameFull: "技能検定 3級写真（肖像写真デジタル作業）学科試験", urlSlug: "shashin3", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科（真偽法）", categories: ["デジタル基礎", "光・色彩", "写真史", "撮影機器", "照明・露出", "画像処理・出力", "肖像撮影", "関係法規"] }],
+    seasons: ["late"], yearRange: { start: 2025, end: 2025 },
+},
 "kikinzoku-soshin3": {
     code: "kikinzoku-soshin3", nameFull: "技能検定 3級貴金属装身具製作（貴金属装身具製作作業）学科試験", urlSlug: "kikinzoku-soshin3", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科（真偽法）", categories: ["ろう付", "化学", "塑性加工", "安全衛生", "宝石", "工具", "意匠", "洗浄", "研磨", "装身具", "装飾技法", "製図", "金属材料", "鋳造", "電気"] }],
