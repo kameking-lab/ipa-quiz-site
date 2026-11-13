@@ -18,11 +18,16 @@ const editions = [
     answers: "×○×○×" + "○×○○○" + "○××××" + "○×○×○" + "×○××○" + "×○○○○",
     pages: [...Array(11).fill(2), ...Array(10).fill(3), ...Array(9).fill(4)],
     figures: [5, 7, 9, 12, 18, 23, 24] },
-  { exam: "kinzoku-press1", year: 2024, season: "early", domain: "manufacturing",
+  { exam: "kinzoku-press1", year: 2024, season: "early", domain: "electrical",
     answers: "○○○○○" + "○×○○×" + "○×○×○" + "○○○×○" + "○×○○×"
       + "ハロイハイ" + "イニハニニ" + "ニロハイロ" + "ハイニロロ" + "ロニハハハ",
     pages: [...Array(16).fill(2), ...Array(9).fill(3), ...Array(6).fill(4), ...Array(5).fill(5), ...Array(5).fill(6), ...Array(6).fill(7), ...Array(3).fill(8)],
     figures: [33, 46, 48] },
+  { exam: "kinzoku-press2", year: 2024, season: "early", domain: "electrical",
+    answers: "×××○×" + "○○○○○" + "○○○○×" + "×○×○○" + "×○○×○"
+      + "イニニイイ" + "ハハハハハ" + "ハロロイニ" + "ハハハロハ" + "ハイロイロ",
+    pages: [...Array(16).fill(2), ...Array(9).fill(3), ...Array(5).fill(4), ...Array(5).fill(5), ...Array(5).fill(6), ...Array(5).fill(7), ...Array(5).fill(8)],
+    figures: [31, 35, 36, 46, 49] },
 ];
 
 describe.each(editions)("c5-10 $exam $year", ({ exam: code, year, season, domain, answers, pages, figures }) => {
