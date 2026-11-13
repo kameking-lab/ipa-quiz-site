@@ -1557,6 +1557,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
 },
 {
+    slug: "shohin-soshoku3", examCode: "shohin-soshoku3", shortName: "商品装飾展示技能士 3級", fullName: "技能検定 3級商品装飾展示（商品装飾展示作業）学科試験",
+    domain: "safety", administrator: "中央職業能力開発協会",
+    officialQuestionsUrl: "https://www.kentei.javada.or.jp/",
+    officialReuseTermsUrl: "https://www.kentei.javada.or.jp/", status: "live",
+    reuseSummary: "2025年度前期の学科30問（真偽法30問）、公式正答と全肢の独自解説を収録。",
+    attributionTemplate: "出典：中央職業能力開発協会 令和7年度前期 3級商品装飾展示（商品装飾展示作業）学科試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+},
+{
     slug: "kikinzoku-soshin2", examCode: "kikinzoku-soshin2", shortName: "貴金属装身具製作技能士 2級", fullName: "技能検定 2級貴金属装身具製作（貴金属装身具製作作業）学科試験",
     domain: "safety", administrator: "中央職業能力開発協会",
     officialQuestionsUrl: "https://www.kentei.javada.or.jp/",
