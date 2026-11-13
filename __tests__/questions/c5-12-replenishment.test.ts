@@ -33,13 +33,14 @@ const editions = [
 describe.each(editions)("c5-12 $exam $year", ({ exam: code, year, answers, pages, figures }) => {
   const exam = code as ExamCode;
   it("公式正答・出典・図を保持し配信経路から解ける", async () => {
-    const rows = QUESTIONS_BY_EXAM[exam]!;
+    const allRows = QUESTIONS_BY_EXAM[exam]!;
+    const rows = allRows.filter(q => q.year === year);
     expect(rows).toHaveLength(answers.length);
     expect(new Set(rows.map(q => q.id)).size).toBe(answers.length);
-    expect(await getQuestionsForExam(exam)).toEqual(rows);
+    expect(await getQuestionsForExam(exam)).toEqual(allRows);
     expect(getQualificationByExamCode(exam)?.domain).toBe("construction");
     expect(getQualificationByExamCode(exam)?.fullName).toContain("配管");
-    expect(EXAM_CONFIGS[exam].yearRange).toEqual({ start: year, end: year });
+    expect(EXAM_CONFIGS[exam].yearRange).toEqual({ start: Math.min(...allRows.map(q => q.year)), end: Math.max(...allRows.map(q => q.year)) });
     expect(EXAM_CONFIGS[exam].sessions[0].expectedQuestions).toBe(answers.length);
     const evidence = JSON.parse(readFileSync(path.join(process.cwd(), `data/questions/${exam}/${year}-late.sources.json`), "utf8"));
     expect(evidence.review).toHaveLength(answers.length);
