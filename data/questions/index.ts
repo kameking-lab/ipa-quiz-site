@@ -30,7 +30,9 @@ import { PAN_SEIZO2_QUESTIONS } from "./pan-seizo2";
 import { KIKAI_SHIAGE1_QUESTIONS } from "./kikai-shiage1";
 import { PLANT_HAIKAN_SEIZU1_QUESTIONS } from "./plant-haikan-seizu1";
 import { KIKAI_SEIZU3_QUESTIONS } from "./kikai-seizu3";
+import { KIKAI_SEIZU_CAD3_QUESTIONS } from "./kikai-seizu-cad3";
 import { KIKAI_SEIZU2_QUESTIONS } from "./kikai-seizu2";
+import { KIKAI_SEIZU_CAD2_QUESTIONS } from "./kikai-seizu-cad2";
 import { KIKAI_SHIAGE3_QUESTIONS } from "./kikai-shiage3";
 import { KIKAI_SHIAGE2_QUESTIONS } from "./kikai-shiage2";
 import { NAISO_CARPET2_QUESTIONS } from "./naiso-carpet2";
@@ -468,7 +470,9 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("kikai-shiage1") ? { "kikai-shiage1": KIKAI_SHIAGE1_QUESTIONS } : {}),
 ...(isExamPublished("plant-haikan-seizu1") ? { "plant-haikan-seizu1": PLANT_HAIKAN_SEIZU1_QUESTIONS } : {}),
 ...(isExamPublished("kikai-seizu3") ? { "kikai-seizu3": KIKAI_SEIZU3_QUESTIONS } : {}),
+...(isExamPublished("kikai-seizu-cad3") ? { "kikai-seizu-cad3": KIKAI_SEIZU_CAD3_QUESTIONS } : {}),
 ...(isExamPublished("kikai-seizu2") ? { "kikai-seizu2": KIKAI_SEIZU2_QUESTIONS } : {}),
+...(isExamPublished("kikai-seizu-cad2") ? { "kikai-seizu-cad2": KIKAI_SEIZU_CAD2_QUESTIONS } : {}),
 ...(isExamPublished("kikai-shiage3") ? { "kikai-shiage3": KIKAI_SHIAGE3_QUESTIONS } : {}),
 ...(isExamPublished("kikai-shiage2") ? { "kikai-shiage2": KIKAI_SHIAGE2_QUESTIONS } : {}),
 ...(isExamPublished("naiso-carpet2") ? { "naiso-carpet2": NAISO_CARPET2_QUESTIONS } : {}),
