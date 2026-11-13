@@ -204,6 +204,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 "pan-seizo2": async () => isExamPublished("pan-seizo2") ? (await import("@/data/questions/pan-seizo2")).PAN_SEIZO2_QUESTIONS : [],
 "kikai-shiage1": async () => isExamPublished("kikai-shiage1") ? (await import("@/data/questions/kikai-shiage1")).KIKAI_SHIAGE1_QUESTIONS : [],
 "kikai-seizu-tegaki1": async () => isExamPublished("kikai-seizu-tegaki1") ? (await import("@/data/questions/kikai-seizu-tegaki1")).KIKAI_SEIZU_TEGAKI1_QUESTIONS : [],
+"kikai-seizu-cad1": async () => isExamPublished("kikai-seizu-cad1") ? (await import("@/data/questions/kikai-seizu-cad1")).KIKAI_SEIZU_CAD1_QUESTIONS : [],
 "kikai-seizu-cad3": async () => isExamPublished("kikai-seizu-cad3") ? (await import("@/data/questions/kikai-seizu-cad3")).KIKAI_SEIZU_CAD3_QUESTIONS : [],
 "plant-haikan-seizu2": async () => isExamPublished("plant-haikan-seizu2") ? (await import("@/data/questions/plant-haikan-seizu2")).PLANT_HAIKAN_SEIZU2_QUESTIONS : [],
 "kikai-shiage2": async () => isExamPublished("kikai-shiage2") ? (await import("@/data/questions/kikai-shiage2")).KIKAI_SHIAGE2_QUESTIONS : [],

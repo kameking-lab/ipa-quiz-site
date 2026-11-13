@@ -26,6 +26,7 @@ import { PAN_SEIZO1_QUESTIONS } from "./pan-seizo1";
 import { PAN_SEIZO2_QUESTIONS } from "./pan-seizo2";
 import { KIKAI_SHIAGE1_QUESTIONS } from "./kikai-shiage1";
 import { KIKAI_SEIZU_TEGAKI1_QUESTIONS } from "./kikai-seizu-tegaki1";
+import { KIKAI_SEIZU_CAD1_QUESTIONS } from "./kikai-seizu-cad1";
 import { KIKAI_SEIZU_CAD3_QUESTIONS } from "./kikai-seizu-cad3";
 import { PLANT_HAIKAN_SEIZU2_QUESTIONS } from "./plant-haikan-seizu2";
 import { KIKAI_SHIAGE2_QUESTIONS } from "./kikai-shiage2";
@@ -270,6 +271,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("pan-seizo2") ? { "pan-seizo2": PAN_SEIZO2_QUESTIONS } : {}),
 ...(isExamPublished("kikai-shiage1") ? { "kikai-shiage1": KIKAI_SHIAGE1_QUESTIONS } : {}),
 ...(isExamPublished("kikai-seizu-tegaki1") ? { "kikai-seizu-tegaki1": KIKAI_SEIZU_TEGAKI1_QUESTIONS } : {}),
+...(isExamPublished("kikai-seizu-cad1") ? { "kikai-seizu-cad1": KIKAI_SEIZU_CAD1_QUESTIONS } : {}),
 ...(isExamPublished("kikai-seizu-cad3") ? { "kikai-seizu-cad3": KIKAI_SEIZU_CAD3_QUESTIONS } : {}),
 ...(isExamPublished("plant-haikan-seizu2") ? { "plant-haikan-seizu2": PLANT_HAIKAN_SEIZU2_QUESTIONS } : {}),
 ...(isExamPublished("kikai-shiage2") ? { "kikai-shiage2": KIKAI_SHIAGE2_QUESTIONS } : {}),
