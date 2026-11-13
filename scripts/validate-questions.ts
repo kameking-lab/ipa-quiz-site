@@ -77,7 +77,6 @@ import { KHK_2026_KIKAI_OTSU_STAGING, KHK_2026_REITO_FIRST_STAGING, validateKhk2
 import { KHK_2026_REITO_SECOND_STAGING, KHK_2026_REITO_THIRD_STAGING, validateKhk2026Fill3 } from "./lib/validate-khk-2026-fill-3";
 import { readKhk2026Sales, validateKhk2026Sales } from "./lib/validate-khk-2026-sales";
 
-import { BIRU_KAN_2026_AM_STAGING, BIRU_KAN_2026_PM_STAGING, validateBiruKan2026Am, validateBiruKan2026Pm } from "./lib/validate-biru-kan-2026";
 
 // Publication-gated pilots still require the same schema and source validation
 // before their release gate can be lifted.

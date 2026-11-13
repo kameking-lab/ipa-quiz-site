@@ -61,11 +61,11 @@ describe("Q4-105 フラワー装飾2級2023年度前期", () => {
     expect(questions[48].explanation).toContain("注：");
     expect(questions[48].officialReferenceUrls).toContain("https://www.maff.go.jp/j/pr/aff/2312/spe1_04.html");
   });
-  it("両年度100問のURL・資格名・構造化データを生成する", () => {
-    expect(FLOWER2_QUESTIONS).toHaveLength(100);
-    expect(new Set(FLOWER2_QUESTIONS.map(questionPagePath)).size).toBe(100);
+  it("3年度150問のURL・資格名・構造化データを生成する", () => {
+    expect(FLOWER2_QUESTIONS).toHaveLength(150);
+    expect(new Set(FLOWER2_QUESTIONS.map(questionPagePath)).size).toBe(150);
     expect(examFullName("flower2")).toContain("フラワー装飾");
-    expect(examTopDescription("flower2", 100)).toContain("フラワー装飾");
+    expect(examTopDescription("flower2", 150)).toContain("フラワー装飾");
     questions.forEach(q => {
       const [, , exam, yearSeason, section, qnum] = questionPagePath(q).split("/");
       expect(findQuestionByRoute(FLOWER2_QUESTIONS, { exam, yearSeason, section, qnum })?.id).toBe(q.id);
@@ -96,7 +96,7 @@ describe("Q4-104 フラワー装飾2級2024年度前期", () => {
     expect(QUESTIONS_BY_EXAM.flower2).toEqual(FLOWER2_QUESTIONS);
     expect(await getQuestionsForExam("flower2")).toEqual(FLOWER2_QUESTIONS);
     expect(getQualificationByExamCode("flower2")?.status).toBe("live");
-    expect(getQualificationByExamCode("flower2")?.reuseSummary).not.toContain("2025年度");
+    expect(getQualificationByExamCode("flower2")?.reuseSummary).toContain("2025年度");
     questions.forEach(q => {
       const [, , exam, yearSeason, section, qnum] = questionPagePath(q).split("/");
       expect(findQuestionByRoute(FLOWER2_QUESTIONS, { exam, yearSeason, section, qnum })?.id).toBe(q.id);

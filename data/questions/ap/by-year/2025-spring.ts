@@ -19,7 +19,7 @@ export const AP_QUESTIONS_2025_SPRING: Question[] = [
     "choices": {
       "ア": "((P→Q)∧(Q→P))→(R→¬Q)",
       "イ": "((P→Q)∧¬(Q→¬P))→(Q→R)",
-      "ウ": "((P→Q)∨(Q→P))→(R→¬Q)",
+      "ウ": "((P→¬Q)∨(Q→P))→(R→¬Q)",
       "エ": "((P→¬Q)∨(Q→¬P))→(Q→R)"
     },
     "answer": "エ",

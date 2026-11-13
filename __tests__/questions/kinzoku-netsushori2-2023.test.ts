@@ -35,10 +35,10 @@ describe("金属熱処理2級2023年度前期", () => {
     expect(questions[48].choices?.ア).toContain("29.42N");
     expect(questions[48].explanation).toContain("98.07N");
   });
-  it("2024年度と併せて100問を取得できる", async () => {
-    expect(KINZOKU_NETSUSHORI2_QUESTIONS).toHaveLength(100);
-    expect(new Set(KINZOKU_NETSUSHORI2_QUESTIONS.map(questionPagePath)).size).toBe(100);
+  it("2024・2025年度と併せて150問を取得できる", async () => {
+    expect(KINZOKU_NETSUSHORI2_QUESTIONS).toHaveLength(150);
+    expect(new Set(KINZOKU_NETSUSHORI2_QUESTIONS.map(questionPagePath)).size).toBe(150);
     expect(await getQuestionsForExam("kinzoku-netsushori2")).toEqual(KINZOKU_NETSUSHORI2_QUESTIONS);
-    expect(EXAM_CONFIGS["kinzoku-netsushori2"].yearRange).toEqual({ start: 2023, end: 2024 });
+    expect(EXAM_CONFIGS["kinzoku-netsushori2"].yearRange).toEqual({ start: 2023, end: 2025 });
   });
 });

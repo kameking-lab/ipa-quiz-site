@@ -1,3 +1,4 @@
+import parallelOverlay from "@/data/questions/ap/choice-explanations-cx-k4.json";
 import { describe, expect, it } from "vitest";
 import { AP_QUESTIONS } from "@/data/questions/ap";
 import { AP_BY_YEAR_QUESTIONS } from "@/data/questions/ap/by-year";
@@ -12,7 +13,7 @@ import { getQuestionsForExam } from "@/lib/questions/get-questions";
 
 describe("AP e-ap-3 choice explanations", () => {
   it("adds four reasons without changing any existing data or completed explanation", () => {
-    const before = [originalOverlay, firstOverlay, secondOverlay, followingOverlay].reduce(
+    const before = [parallelOverlay, originalOverlay, firstOverlay, secondOverlay, followingOverlay].reduce(
       (questions, previous) => applyChoiceExplanationOverlay(questions, previous),
       applyIpaCorrections("ap", AP_BY_YEAR_QUESTIONS),
     );

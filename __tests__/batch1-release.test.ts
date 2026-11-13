@@ -16,8 +16,8 @@ describe("batch 1 complete public registry", () => {
       const actual = row.nativePapers.length
         ? report.pe.filter(paper => new Set<string>(row.nativePapers).has(paper.id)).reduce((sum, paper) => sum + paper.scored, 0)
         : row.codes.reduce((sum, code) => sum + Object.entries(report.rows.find(entry => entry.code === code)!.periodCounts)
-          // This release receipt covers R08/R07; earlier sittings may be added later.
-          .filter(([period]) => code !== "yamaguchi-seika" || /^(2025|2026)-/.test(period))
+          // This release includes R06 in addition to the original R08/R07 receipt.
+          .filter(([period]) => code !== "yamaguchi-seika" || /^(2024|2025|2026)-/.test(period))
           .filter(([period]) => !row.session || period.endsWith(`/${row.session}`)).reduce((count, [, value]) => count + value, 0), 0);
       // 初回出荷の記録は保持し、今回の公開補充分を加算する。
       const additions: Record<string, number> = { "biru-kan": 180, "yamaguchi-seika": 66 };

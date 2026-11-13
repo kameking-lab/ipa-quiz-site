@@ -5,7 +5,7 @@ const implies=(a:boolean,b:boolean)=>!a||b;
 it("preserves the official answer and negation scopes for AP2025 spring q1",()=>{
   const q=question(1);
   expect(q.answer).toBe("エ");
-  expect(q.choices).toEqual({ア:"((P→Q)∧(Q→P))→(R→¬Q)",イ:"((P→Q)∧¬(Q→¬P))→(Q→R)",ウ:"((P→Q)∨(Q→P))→(R→¬Q)",エ:"((P→¬Q)∨(Q→¬P))→(Q→R)"});
+  expect(q.choices).toEqual({ア:"((P→Q)∧(Q→P))→(R→¬Q)",イ:"((P→Q)∧¬(Q→¬P))→(Q→R)",ウ:"((P→¬Q)∨(Q→P))→(R→¬Q)",エ:"((P→¬Q)∨(Q→¬P))→(Q→R)"});
   const P=true,Q=true;
   for(const R of [true,false])expect(implies(implies(P,!Q)||implies(Q,!P),implies(Q,R))).toBe(true);
   expect(implies(implies(P,Q)&&implies(Q,P),implies(true,!Q))).toBe(false);

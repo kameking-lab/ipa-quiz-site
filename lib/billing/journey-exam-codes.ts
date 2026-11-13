@@ -67,5 +67,5 @@ export const JOURNEY_EXAM_CODES = [
   "kojo-bankin3", "kojo-bankin2", "denshi-kiki-kumitate1", "denshi-kiki-kumitate3", "tekko2",
   "tekko1", "denshi-kiki-kumitate2", "kikai-hozen3", "kikai-hozen-denki3", "toso1",
   "fujin-kodomofuku2", "fujin-kodomofuku1", "kikai-hozen-denki1", "kikai-hozen-setsubi1", "kikai-hozen1",
-  "tobi2", "toso2", "mekki2",
+  "tobi2", "toso2", "mekki2", "diecast2", "tetsudo-sharyo2",
 ] as const satisfies readonly ExamCode[];

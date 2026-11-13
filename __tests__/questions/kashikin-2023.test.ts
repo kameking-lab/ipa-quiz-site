@@ -20,8 +20,8 @@ const textHash = (text: string) => createHash("sha256")
 describe("貸金業務取扱主任者 2023年度（第18回）", () => {
   it("公式50問を一意なIDで出題データと年度選択に接続する", () => {
     expect(paper.map((q) => q.qNumber)).toEqual(Array.from({ length: 50 }, (_, i) => i + 1));
-    expect(new Set(KASHIKIN_QUESTIONS.map((q) => q.id)).size).toBe(150);
-    expect(EXAM_CONFIGS.kashikin.yearRange).toEqual({ start: 2023, end: 2025 });
+    expect(new Set(KASHIKIN_QUESTIONS.map((q) => q.id)).size).toBe(500);
+    expect(EXAM_CONFIGS.kashikin.yearRange).toEqual({ start: 2016, end: 2025 });
     expect((QUESTIONS_BY_EXAM.kashikin ?? []).filter((q) => q.year === 2023)).toEqual(paper);
     for (const q of paper) {
       expect(q.id).toBe(`kashikin-2023-annual-gakka-q${q.qNumber}`);
