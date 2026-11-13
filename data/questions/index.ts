@@ -27,6 +27,7 @@ import { KIKAI_SHIAGE1_QUESTIONS } from "./kikai-shiage1";
 import { KIKAI_SHIAGE3_QUESTIONS } from "./kikai-shiage3";
 import { ZOEN_GINO2_QUESTIONS } from "./zoen-gino2";
 import { ZOEN_GINO3_QUESTIONS } from "./zoen-gino3";
+import { CHUZO3_QUESTIONS } from "./chuzo3";
 import { SHASHUTSU2_QUESTIONS } from "./shashutsu2";
 import { KIKAI_KENSA3_QUESTIONS } from "./kikai-kensa3";
 import { KAGAKU_BUNSEKI2_QUESTIONS } from "./kagaku-bunseki2";
@@ -235,6 +236,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("kikai-shiage3") ? { "kikai-shiage3": KIKAI_SHIAGE3_QUESTIONS } : {}),
 ...(isExamPublished("zoen-gino2") ? { "zoen-gino2": ZOEN_GINO2_QUESTIONS } : {}),
 ...(isExamPublished("zoen-gino3") ? { "zoen-gino3": ZOEN_GINO3_QUESTIONS } : {}),
+...(isExamPublished("chuzo3") ? { "chuzo3": CHUZO3_QUESTIONS } : {}),
 ...(isExamPublished("shashutsu2") ? { "shashutsu2": SHASHUTSU2_QUESTIONS } : {}),
 ...(isExamPublished("kikai-kensa3") ? { "kikai-kensa3": KIKAI_KENSA3_QUESTIONS } : {}),
 ...(isExamPublished("kagaku-bunseki2") ? { "kagaku-bunseki2": KAGAKU_BUNSEKI2_QUESTIONS } : {}),
