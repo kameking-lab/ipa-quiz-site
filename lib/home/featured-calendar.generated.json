@@ -213,8 +213,9 @@
     {
       "key": "caremanager",
       "qualificationId": "care-manager",
-      "candidates": null,
-      "candidatesPeriod": "令和7年度(第28回全国実績)",
+      "candidates": 50601,
+      "candidatesPeriod": "2025年度・第28回",
+      "candidatesScope": "年度計・全国・全受験者",
       "dates": [
         {
           "date": "2026-10-11",
@@ -222,20 +223,31 @@
           "note": "東京"
         }
       ],
-      "sourceFile": "data/entries/care-manager.json"
+      "sourceFile": "data/entries/care-manager.json",
+      "name": "介護支援専門員",
+      "candidatesPeriodEnd": "2025-10-12",
+      "candidatesSourceUrl": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000187425_00013.html",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
     },
     {
       "key": "chintai",
       "qualificationId": "chintai-fudosan-keiei-kanrishi",
-      "candidates": null,
-      "candidatesPeriod": "2025",
+      "candidates": 31792,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全受験者（一般＋5問免除）",
       "dates": [
         {
           "date": "2026-11-15",
-          "sourceUrl": "https://www.chintaikanrishi.jp/exam/summary"
+          "sourceUrl": "https://www.chintaikanrishi.jp/exam/summary/"
         }
       ],
-      "sourceFile": "data/entries/chintai-fudosan-keiei-kanrishi.json"
+      "sourceFile": "data/entries/chintai-fudosan-keiei-kanrishi.json",
+      "name": "賃貸不動産経営管理士",
+      "candidatesPeriodEnd": "2025-11-16",
+      "candidatesSourceUrl": "https://www.chintaikanrishi.jp/assets/common/else/examination---summary_2025_1.pdf",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
     },
     {
       "key": "chizai2",
@@ -1464,29 +1476,27 @@
     {
       "key": "denken3",
       "qualificationId": "denken-3shu",
-      "candidates": null,
-      "candidatesPeriod": "2025",
+      "candidates": 48942,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・1科目でも出席した受験者（上期＋下期の公式合計）",
       "dates": [
-        {
-          "date": "2026-07-16",
-          "endDate": "2026-08-09",
-          "sourceUrl": "https://www.shiken.or.jp/chief/upload/20260511r8tannai0526.pdf"
-        },
-        {
-          "date": "2026-08-30",
-          "sourceUrl": "https://www.shiken.or.jp/chief/upload/20260511r8tannai0526.pdf"
-        },
         {
           "date": "2027-02-04",
           "endDate": "2027-02-28",
-          "sourceUrl": "https://www.shiken.or.jp/chief/third/"
+          "note": "CBT",
+          "sourceUrl": "https://www.shiken.or.jp/chief/upload/r08_T2_Examination_Guide1102.pdf"
         },
         {
           "date": "2027-03-21",
-          "sourceUrl": "https://www.shiken.or.jp/chief/third/"
+          "sourceUrl": "https://www.shiken.or.jp/chief/upload/r08_T2_Examination_Guide1102.pdf"
         }
       ],
-      "sourceFile": "data/entries/denken-3shu.json"
+      "sourceFile": "data/entries/denken-3shu.json",
+      "name": "電験三種",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.shiken.or.jp/chief/third/result/",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
     },
     {
       "key": "denki1",
@@ -3099,9 +3109,9 @@
       "candidatesSourceFile": "lib/home/featured-official.json"
     },
     {
-      "key": "lckohyo-クレーン・デリック運転士〔床上限定〕",
-      "qualificationId": "lckohyo-クレーン・デリック運転士〔床上限定〕",
-      "name": "クレーン・デリック運転士〔床上限定〕",
+      "key": "lckohyo-クレーン・デリック運転士〔床上運転式クレーン限定〕",
+      "qualificationId": "lckohyo-クレーン・デリック運転士〔床上運転式クレーン限定〕",
+      "name": "クレーン・デリック運転士〔床上運転式クレーン限定〕",
       "candidates": 79,
       "candidatesPeriod": "2025年度（令和7年度）",
       "candidatesPeriodEnd": "2026-03-31",
@@ -4554,8 +4564,9 @@
     {
       "key": "tohan",
       "qualificationId": "touroku-hanbaisha",
-      "candidates": null,
-      "candidatesPeriod": "2025",
+      "candidates": 58996,
+      "candidatesPeriod": "2025年度（令和7年度）",
+      "candidatesScope": "年度計・全国延べ受験者（複数地域受験の重複を含む）",
       "dates": [
         {
           "date": "2026-09-06",
@@ -4563,7 +4574,12 @@
           "note": "東京"
         }
       ],
-      "sourceFile": "data/entries/touroku-hanbaisha.json"
+      "sourceFile": "data/entries/touroku-hanbaisha.json",
+      "name": "登録販売者",
+      "candidatesPeriodEnd": "2026-03-31",
+      "candidatesSourceUrl": "https://www.mhlw.go.jp/content/11121000/001738109.pdf",
+      "checkedAt": "2026-11-13",
+      "candidatesSourceFile": "lib/home/featured-official.json"
     },
     {
       "key": "tsukanshi",

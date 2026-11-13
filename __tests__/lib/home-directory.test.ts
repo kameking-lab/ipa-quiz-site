@@ -21,7 +21,7 @@ describe("home directory", () => {
     const published = new Set(all.map(item => item.key));
     const covered = HOME_EXAM_CALENDAR.filter(row => published.has(row.key) && row.candidates !== null);
     expect(covered.length).toBeGreaterThanOrEqual(40);
-    for (const key of ["takken", "fp2", "fp3", "ip", "denko2", "dai-1-shu-eisei-kanrisha", "kanri", "kikenbutsu-otsu4"]) {
+    for (const key of ["takken", "fp2", "fp3", "ip", "denko2", "denken3", "chintai", "tohan", "caremanager", "dai-1-shu-eisei-kanrisha", "kanri", "kikenbutsu-otsu4"]) {
       expect(covered.some(row => row.key === key), key).toBe(true);
     }
     expect(upcomingExamPicks([...published], [], new Date("2026-11-13T03:00:00Z")).map(row => row.key)).toEqual(["kikenbutsu-otsu4", "ap", "kaigo"]);

@@ -44,7 +44,8 @@ describe("home personalized pickup rows", () => {
   it("drops expired date badges after Japanese midnight while the page stays open", () => {
     vi.setSystemTime(new Date("2026-12-06T14:59:40Z"));
     render(<HomeFeaturedExams items={items} onChoose={() => {}} />);
-    expect(document.querySelector('time[datetime="2026-11-24"]')).toHaveTextContent("11/24〜12/6（科目B）");
+    expect(document.querySelector('time[datetime="2026-11-24"]')).toHaveTextContent("11/24〜12/6");
+    expect(document.querySelector('time[datetime="2026-11-24"]')).toHaveAccessibleName("2026-11-24から2026-12-06（科目B）");
     act(() => vi.advanceTimersByTime(60_000));
     expect(document.querySelector('time[datetime="2026-11-24"]')).not.toBeInTheDocument();
   });
