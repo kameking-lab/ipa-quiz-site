@@ -51,6 +51,7 @@ export const EXAM_LABELS: Record<string, string> = {
   "fraise2": "機械加工技能士 2級（フライス盤作業）",
   "fraise3": "機械加工技能士 3級（フライス盤作業）",
   "kikai-kensa1": "機械検査技能士 1級",
+  "kikai-kensa2": "機械検査技能士 2級",
   "shashutsu2": "プラスチック成形技能士 2級（射出成形作業）",
   "kikai-kensa3": "機械検査技能士 3級",
   "kagaku-bunseki2": "化学分析技能士 2級",

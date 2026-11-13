@@ -14,6 +14,7 @@ import type { ChoiceKey, ExamCode } from "@/lib/questions/types";
 // 公式正答表を原本画像で確認した固定値。群内番号と配信用の通し番号の対応も検査する。
 const editions = [
   { exam: "kikai-kensa1", season: "late", count: 50, split: 25, answers: "○××××○○×○×○×○○○○×○××○×○○○イロロロニニハイハハロロハイニニハハハロイロニイハ", pages: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 8, 8, 8, 8, 9], figures: [6, 49] },
+  { exam: "kikai-kensa2", season: "late", count: 50, split: 25, answers: "××○○○×××○○××○××××○○○××○○○イロイイハロイロロイロニハイロニロロロロハロハハロ", pages: [2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3, 3, 3, 3, 4, 4, 4, 4, 4, 5, 5, 5, 5, 5, 6, 6, 6, 6, 6, 6, 7, 7, 7, 7, 7, 7, 8, 8, 8], figures: [48] },
 ];
 describe.each(editions)("c5-04 $exam", ({ exam: code, count, split, answers, pages, figures, season }) => {
   const exam=code as ExamCode;
