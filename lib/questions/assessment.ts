@@ -1,7 +1,7 @@
 /** These exact originals are reference material, including legacy records that
  * carry no assessment metadata. Never infer this status from an exam or prefix.
  */
-const REFERENCE_ONLY_QUESTION_IDS = new Set([
+export const REFERENCE_ONLY_QUESTION_IDS: ReadonlySet<string> = new Set([
   "tsushin2-2025-late-gakka-q21",
   "kenchiku-setsubishi-2026-annual-am2-q18",
   "radio21-amateur1-2026-05-kogaku-q19",

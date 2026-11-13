@@ -252,7 +252,7 @@ body:has(.study-home) .mobile-bottom-nav { --primary:#355b47; border-color:#dedf
   .study-finder-home .study-search-row { gap:6px; }
   .study-finder-home .study-search { padding:0 10px; gap:6px; }
   .study-finder-home .study-search input::placeholder { font-size:12px; }
-  .study-finder-home select { min-width:78px; max-width:100px; font-size:11px; }
+  .study-finder-home select { width:100px; flex:0 0 100px; font-size:11px; }
   .study-featured-results { gap:7px; }
   .study-featured-results .study-qualification { min-height:144px; padding:9px 8px; }
   .study-featured-results .study-qualification-name { min-height:2.9em; font-size:13px; line-height:1.45; text-wrap:balance; }

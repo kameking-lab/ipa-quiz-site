@@ -1,4 +1,4 @@
-import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { HomeFeaturedExams, type QualificationCardItem } from "@/components/home/landing/HomeFeaturedExams";
@@ -33,6 +33,21 @@ describe("home personalized pickup rows", () => {
     expect(onChoose).toHaveBeenCalledOnce();
     expect(localStorage.getItem(LS_KEYS.history)).toBe(saved);
   });
+  it("removes the whole personal row when another tab clears history", () => {
+    history(["sc"]);
+    render(<HomeFeaturedExams items={items} onChoose={() => {}} />);
+    localStorage.removeItem(LS_KEYS.history);
+    fireEvent(window, new StorageEvent("storage", { key: LS_KEYS.history }));
+    expect(screen.queryByRole("region", { name: "あなたの資格" })).not.toBeInTheDocument();
+    expect(document.querySelector(".study-pickups")).toHaveAttribute("data-personal", "false");
+  });
+  it("drops expired date badges after Japanese midnight while the page stays open", () => {
+    vi.setSystemTime(new Date("2026-11-15T14:59:40Z"));
+    render(<HomeFeaturedExams items={items} onChoose={() => {}} />);
+    expect(document.querySelector('time[datetime="2026-11-15"]')).toBeInTheDocument();
+    act(() => vi.advanceTimersByTime(60_000));
+    expect(document.querySelector('time[datetime="2026-11-15"]')).not.toBeInTheDocument();
+  });
   it("tolerates denied storage and malformed stored history", () => {
     localStorage.setItem(LS_KEYS.history, "null");
     vi.spyOn(Storage.prototype, "getItem").mockImplementation(() => { throw new Error("denied"); });
@@ -51,5 +66,24 @@ describe("home personalized pickup rows", () => {
     localStorage.clear(); window.eval(code);
     expect(host.querySelector(".study-pickups")).toHaveAttribute("data-personal", "false");
     host.remove();
+  });
+  it("does not reserve a personal row for legacy reference-only answers", () => {
+    const referenceItems: QualificationCardItem[] = [...items, { key: "tsushin2", name: "電気通信", href: "/tsushin2", domainId: "construction", questionCount: 100, periodLabel: "2期分" }];
+    localStorage.setItem(LS_KEYS.history, JSON.stringify({ entries: [{ id: "tsushin2-2025-late-gakka-q21", at: 1, selected: "1", correct: true }], starredIds: [] }));
+    const host = document.createElement("div");
+    host.innerHTML = renderToStaticMarkup(<HomeFeaturedExams items={referenceItems} onChoose={() => {}} />);
+    document.body.append(host);
+    window.eval(host.querySelector("script")!.textContent!);
+    expect(host.querySelector(".study-pickups")).toHaveAttribute("data-personal", "false");
+    host.remove();
+    render(<HomeFeaturedExams items={referenceItems} onChoose={() => {}} />);
+    expect(screen.queryByRole("region", { name: "あなたの資格" })).not.toBeInTheDocument();
+  });
+  it("keeps valid personal history when a stored array contains broken entries", () => {
+    localStorage.setItem(LS_KEYS.history, JSON.stringify({ entries: [null, {}, { id: "sc-2026-q1", at: 1, selected: "1", correct: true }], starredIds: [] }));
+    const saved = localStorage.getItem(LS_KEYS.history);
+    render(<HomeFeaturedExams items={items} onChoose={() => {}} />);
+    expect(within(screen.getByRole("region", { name: "あなたの資格" })).getAllByRole("link")).toHaveLength(1);
+    expect(localStorage.getItem(LS_KEYS.history)).toBe(saved);
   });
 });

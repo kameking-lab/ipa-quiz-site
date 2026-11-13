@@ -1,11 +1,19 @@
 import { describe, expect, it } from "vitest";
-import { frequentExamKeys, japanDate, upcomingExamPicks, type FeaturedCalendarExam } from "@/lib/home/featured-exams";
+import { HOME_EXAM_CALENDAR, frequentExamKeys, japanDate, upcomingExamPicks, type FeaturedCalendarExam } from "@/lib/home/featured-exams";
 
 const now = new Date("2026-11-13T12:00:00+09:00");
 const keys = ["sc", "nw", "ap", "fp1", "khk-kagaku"];
 const entry = (key: string, at = 1) => ({ id: `${key}-2026-spring-am2-q1`, at });
 const row = (key: string, candidates: number, ...dates: string[]): FeaturedCalendarExam => ({ key, qualificationId: key, candidates, dates: dates.map(date => ({ date, sourceUrl: "https://example.go.jp/exams" })) });
 describe("home pickup selection", () => {
+  it("uses the next written session from the exported calendar, including reviewed note lists", () => {
+    const picks = upcomingExamPicks(HOME_EXAM_CALENDAR.map(row => row.key), [], now);
+    expect(picks.map(pick => [pick.key, pick.next?.date, pick.candidates])).toEqual([
+      ["kashikin", "2026-11-15", 9878],
+      ["lckohyo-潜水士", "2026-12-14", 6891],
+      ["lckohyo-移動式クレーン運転士", "2027-01-15", 4861],
+    ]);
+  });
   it("returns no personal cards for zero history or invalid data", () => {
     expect(frequentExamKeys([], keys)).toEqual([]);
     expect(frequentExamKeys(null, keys)).toEqual([]);

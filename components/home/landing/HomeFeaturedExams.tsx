@@ -7,6 +7,7 @@ import { frequentExamKeys, upcomingExamPicks, type FeaturedExamDate } from "@/li
 import { createHistoryStore } from "@/lib/storage/history";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { qualificationStudyArt } from "@/lib/home/study-room";
+import { REFERENCE_ONLY_QUESTION_IDS } from "@/lib/questions/assessment";
 
 export type QualificationCardItem = HomeDirectoryItem & { domainId: HomeDomainId };
 export function QualificationCard({ item, onChoose, date }: { item: QualificationCardItem; onChoose: () => void; date?: FeaturedExamDate }) {
@@ -40,7 +41,7 @@ export function HomeFeaturedExams({ items, onChoose }: { items: readonly Qualifi
   const byKey = new Map(items.map(item => [item.key, item]));
   // The browser reserves exactly one or two rows while parsing, before paint.
   // No personal data enters HTML, URL, API, analytics or a new storage key.
-  const reservation = `try{const e=document.getElementById(${JSON.stringify(id)});const h=JSON.parse(localStorage.getItem(${JSON.stringify(LS_KEYS.history)})||"null");e.dataset.personal=String((${frequentExamKeys.toString()})(h?.entries,${JSON.stringify(keys)},${JSON.stringify(aliases)}).length>0)}catch{}`.replaceAll("<", "\\u003c");
+  const reservation = `try{const e=document.getElementById(${JSON.stringify(id)});const h=JSON.parse(localStorage.getItem(${JSON.stringify(LS_KEYS.history)})||"null");e.dataset.personal=String((${frequentExamKeys.toString()})(h?.entries,${JSON.stringify(keys)},${JSON.stringify(aliases)},${JSON.stringify([...REFERENCE_ONLY_QUESTION_IDS])}).length>0)}catch{}`.replaceAll("<", "\\u003c");
   return <>
     <div id={id} className="study-pickups" data-ready={snapshot !== null} data-personal={personal.length > 0} suppressHydrationWarning>
       {personal.length > 0 && <section aria-labelledby={`${id}-personal`}><h3 id={`${id}-personal`} className="study-results-label">あなたの資格</h3>
