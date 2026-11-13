@@ -2,6 +2,7 @@ import { createHash } from "node:crypto";
 import { existsSync, lstatSync, mkdirSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { dirname, join, resolve } from "node:path";
 import { gunzipSync, gzipSync } from "node:zlib";
+import { serialize } from "node:v8";
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getAllQuestionsLazy, getQuestionsForExam, getRegisteredExamCodes } from "@/lib/questions/get-questions";
 import { openQuestionCorpus, QUESTION_CORPUS_DIR, type QuestionCorpusManifest } from "@/lib/questions/corpus-files";
@@ -19,12 +20,14 @@ async function main() {
   const written = new Set<string>();
   let bytes = 0;
   function store(questions: Question[]) {
-    const json = JSON.stringify(questions);
-    const file = `${createHash("sha256").update(json).digest("hex")}.json.gz`;
+    // Build and runtime both use Node 22. The standard V8 wire format avoids
+    // allocating a corpus-sized UTF-16 JSON string on a cold server.
+    const payload = serialize(questions);
+    const file = `${createHash("sha256").update(payload).digest("hex")}.v8.gz`;
     if (!written.has(file)) {
-      const compressed = gzipSync(json, { level: 6 });
+      const compressed = gzipSync(payload, { level: 6 });
       writeFileSync(join(dir, file), compressed);
-      if (gunzipSync(readFileSync(join(dir, file))).toString("utf8") !== json) {
+      if (!gunzipSync(readFileSync(join(dir, file))).equals(payload)) {
         throw new Error(`Question corpus write mismatch: ${file}`);
       }
       bytes += compressed.length;

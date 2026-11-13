@@ -3,6 +3,7 @@ import { createHash } from "node:crypto";
 import { mkdirSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from "node:fs";
 import { join, resolve } from "node:path";
 import { gzipSync } from "node:zlib";
+import { serialize } from "node:v8";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { openQuestionCorpus, QUESTION_CORPUS_DIR, type QuestionCorpusManifest } from "@/lib/questions/corpus-files";
 import type { Question } from "@/lib/questions/types";
@@ -20,10 +21,10 @@ function fixture() {
   const dir = join(root, QUESTION_CORPUS_DIR);
   mkdirSync(dir, { recursive: true });
   const question = JSON.parse(readFileSync(resolve("data/questions/denken3/launch.json"), "utf8"))[0] as Question;
-  function entry(rows: Question[]) {
-    const json = JSON.stringify(rows);
-    const file = `${createHash("sha256").update(json).digest("hex")}.json.gz`;
-    writeFileSync(join(dir, file), gzipSync(json));
+  function entry(rows: Question[], encoding = "json") {
+    const bytes = encoding === "v8" ? serialize(rows) : Buffer.from(JSON.stringify(rows));
+    const file = `${createHash("sha256").update(bytes).digest("hex")}.${encoding}.gz`;
+    writeFileSync(join(dir, file), gzipSync(bytes));
     return { file, count: rows.length };
   }
   const first = entry([question]);
@@ -39,6 +40,13 @@ function fixture() {
 }
 
 describe("prebuilt question corpus", () => {
+  it("restores the binary format without losing optional undefined properties", () => {
+    const f = fixture();
+    const rows = [{ ...f.question, explanationSections: undefined }];
+    f.manifest.lazyExams.denken3 = f.entry(rows, "v8");
+    f.save();
+    expect(openQuestionCorpus(f.root).lazyExam("denken3")).toStrictEqual(rows);
+  });
   it("retains separate static/lazy pools and loads only requested files once", () => {
     const f = fixture();
     const corpus = openQuestionCorpus(f.root);

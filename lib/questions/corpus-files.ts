@@ -1,6 +1,7 @@
 import { readFileSync } from "node:fs";
 import { join } from "node:path";
 import { gunzipSync } from "node:zlib";
+import { deserialize } from "node:v8";
 import type { ExamCode, Question } from "./types";
 
 export const QUESTION_CORPUS_DIR = "generated/question-corpus";
@@ -21,10 +22,11 @@ export function openQuestionCorpus(root = process.cwd()) {
   let staticPools: Partial<Record<ExamCode, Question[]>> | undefined;
   function read(entry: { file: string; count: number } | undefined): Question[] {
     if (!entry) return [];
-    if (!/^[a-f0-9]{64}\.json\.gz$/.test(entry.file)) throw new Error("Invalid question corpus filename");
+    if (!/^[a-f0-9]{64}\.(json|v8)\.gz$/.test(entry.file)) throw new Error("Invalid question corpus filename");
     const cached = files.get(entry.file);
     if (cached) return cached;
-    const questions = JSON.parse(gunzipSync(readFileSync(join(dir, entry.file))).toString("utf8")) as Question[];
+    const bytes = gunzipSync(readFileSync(join(dir, entry.file)));
+    const questions = (entry.file.endsWith(".v8.gz") ? deserialize(bytes) : JSON.parse(bytes.toString("utf8"))) as Question[];
     if (!Array.isArray(questions) || questions.length !== entry.count) throw new Error("Question corpus count mismatch");
     files.set(entry.file, questions);
     return questions;
@@ -40,7 +42,7 @@ export function openQuestionCorpus(root = process.cwd()) {
       let offset = 0;
       for (const code of Object.keys(manifest.staticExams) as ExamCode[]) {
         const entry = manifest.staticExams[code]!;
-        if (!/^[a-f0-9]{64}\.json\.gz$/.test(entry.file) || !Number.isSafeInteger(entry.count) || entry.count < 0) {
+        if (!/^[a-f0-9]{64}\.(json|v8)\.gz$/.test(entry.file) || !Number.isSafeInteger(entry.count) || entry.count < 0) {
           throw new Error("Invalid question corpus entry");
         }
         const pool = files.get(entry.file) ?? all.slice(offset, offset + entry.count);
