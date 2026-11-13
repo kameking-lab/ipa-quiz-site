@@ -29,6 +29,7 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "kensetsu-kikai-seibi1": async () => isExamPublished("kensetsu-kikai-seibi1") ? (await import("@/data/questions/kensetsu-kikai-seibi1")).KENSETSU_KIKAI_SEIBI1_QUESTIONS : [],
   "sakan3": async () => isExamPublished("sakan3") ? (await import("@/data/questions/sakan3")).SAKAN3_QUESTIONS : [],
   "sakan2": async () => isExamPublished("sakan2") ? (await import("@/data/questions/sakan2")).SAKAN2_QUESTIONS : [],
+  "sakan1": async () => isExamPublished("sakan1") ? (await import("@/data/questions/sakan1")).SAKAN1_QUESTIONS : [],
   "bousui-urethane2": async () => isExamPublished("bousui-urethane2") ? (await import("@/data/questions/bousui-urethane2")).BOUSUI_URETHANE2_QUESTIONS : [],
   "bousui-frp2": async () => isExamPublished("bousui-frp2") ? (await import("@/data/questions/bousui-frp2")).BOUSUI_FRP2_QUESTIONS : [],
   "pan-seizo1": async () => isExamPublished("pan-seizo1") ? (await import("@/data/questions/pan-seizo1")).PAN_SEIZO1_QUESTIONS : [],

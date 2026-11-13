@@ -15,11 +15,13 @@ import type { ChoiceKey } from "@/lib/questions/types";
 const editions = [
   { code: "kikai-seizu-cad2", year: 2023, season: "late", a: "××○○× ×○○○○ ××××× ○○○○○ ○○○×○", b: "ロニニニハ イニニイイ イハイロニ イニハハニ ニハハロイ", figures: [4,9,10,14,22,33,36] },
   { code: "kikai-seizu-cad3", year: 2023, season: "late", a: "○×××× ×○×○× ×○×○○ ×○○○○ ×○○×× ○○×××", b: "", figures: [2,8,11] },
+  { code: "sakan1", year: 2024, season: "early", a: "×○○×× ××○○× ○×××○ ○○○○× ○×○○×", b: "ハイロロハ ハイロニイ ハニハイイ ロイロハロ ロロロニニ", figures: [20,22,24,47,48] },
 ] as const;
 
 for (const { code, year, season, a, b, figures } of editions) {
   describe(`${code} ${year}年度${season}`, () => {
-    const rows = QUESTIONS_BY_EXAM[code]!;
+    const allRows = QUESTIONS_BY_EXAM[code]!;
+    const rows = allRows.filter(q => q.year === year && q.season === season);
     const official = (a + b).replaceAll(" ", "");
     const tfCount = b ? 25 : 30;
     it("keeps every official answer, printed group number and fixed choice order", () => {
@@ -44,13 +46,14 @@ for (const { code, year, season, a, b, figures } of editions) {
       });
     });
     it("delivers the edition through web and mobile and attributes its structured data", async () => {
-      expect(await getQuestionsForExam(code)).toEqual(rows);
-      expect(await examContent(code)).toEqual(rows);
+      expect(await getQuestionsForExam(code)).toEqual(allRows);
+      expect(await examContent(code)).toEqual(allRows);
       const catalog = JSON.parse(readFileSync("mobile/src/generated/catalog.json", "utf8"));
       expect(catalog.exams.find((entry: {code: string}) => entry.code === code)).toEqual(await examCatalog(code));
       expect(EXAM_CONFIGS[code].sessions[0].expectedQuestions).toBe(rows.length);
       expect(EXAM_CONFIGS[code].seasons).toContain(season);
-      expect(EXAM_CONFIGS[code].yearRange.start).toBe(year);
+      expect(EXAM_CONFIGS[code].yearRange.start).toBeLessThanOrEqual(year);
+      expect(EXAM_CONFIGS[code].yearRange.end).toBeGreaterThanOrEqual(year);
       rows.forEach(q => {
         expect(EXAM_CONFIGS[code].sessions[0].categories).toContain(q.category);
         const graph = buildQuestionJsonLd({ question: q, pageUrlAbs: `https://www.kakomon-ai.jp${questionPagePath(q)}`, title: code })["@graph"][0];
@@ -78,7 +81,7 @@ for (const { code, year, season, a, b, figures } of editions) {
 }
 
 it("derives the lifting force, gear diameters and synchronous speed from the question values", () => {
-  const rows = QUESTIONS_BY_EXAM["kikai-seizu-cad2"]!;
+  const rows = QUESTIONS_BY_EXAM["kikai-seizu-cad2"]!.filter(q => q.year === 2023 && q.season === "late");
   expect(100 * (9.8 + 0.2)).toBe(1000);
   expect(rows[14].explanation).toContain("1000N");
   expect([1 * (60 + 2), 2 * (30 + 2), 3 * (20 + 2), 4 * (15 + 2)]).toEqual([62,64,66,68]);

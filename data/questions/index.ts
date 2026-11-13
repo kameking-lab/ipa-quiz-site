@@ -23,6 +23,7 @@ import { KENCHIKU_BANKIN2_QUESTIONS } from "./kenchiku-bankin2";
 import { KENSETSU_KIKAI_SEIBI1_QUESTIONS } from "./kensetsu-kikai-seibi1";
 import { SAKAN3_QUESTIONS } from "./sakan3";
 import { SAKAN2_QUESTIONS } from "./sakan2";
+import { SAKAN1_QUESTIONS } from "./sakan1";
 import { BOUSUI_URETHANE2_QUESTIONS } from "./bousui-urethane2";
 import { BOUSUI_FRP2_QUESTIONS } from "./bousui-frp2";
 import { PAN_SEIZO1_QUESTIONS } from "./pan-seizo1";
@@ -463,6 +464,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("kensetsu-kikai-seibi1") ? { "kensetsu-kikai-seibi1": KENSETSU_KIKAI_SEIBI1_QUESTIONS } : {}),
 ...(isExamPublished("sakan3") ? { "sakan3": SAKAN3_QUESTIONS } : {}),
 ...(isExamPublished("sakan2") ? { "sakan2": SAKAN2_QUESTIONS } : {}),
+...(isExamPublished("sakan1") ? { "sakan1": SAKAN1_QUESTIONS } : {}),
 ...(isExamPublished("bousui-urethane2") ? { "bousui-urethane2": BOUSUI_URETHANE2_QUESTIONS } : {}),
 ...(isExamPublished("bousui-frp2") ? { "bousui-frp2": BOUSUI_FRP2_QUESTIONS } : {}),
 ...(isExamPublished("pan-seizo1") ? { "pan-seizo1": PAN_SEIZO1_QUESTIONS } : {}),
