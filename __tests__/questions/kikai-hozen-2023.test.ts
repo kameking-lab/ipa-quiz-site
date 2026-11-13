@@ -7,6 +7,7 @@ import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { KIKAI_HOZEN_QUESTIONS } from "@/data/questions/kikai-hozen";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
+import { formatQuestionAnswerForDisplay } from "@/lib/questions/display";
 import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
 
 const paper = KIKAI_HOZEN_QUESTIONS.filter((q) => q.year === 2023);
@@ -36,6 +37,7 @@ describe("機械保全技能検定 2023年度 第2回 2級 機械系保全作業
     expect(evidence.questions.map((q) => q.officialAnswer)).toEqual(answers);
     for (const q of paper) {
       const symbol = answers[q.qNumber - 1];
+      expect(formatQuestionAnswerForDisplay(q, q.answer), q.id).toBe(symbol.replace("〇", "○"));
       if (q.qNumber <= 25) {
         expect(q.choices).toEqual({ ア: "正しい（〇）", イ: "誤り（×）" });
         expect(q.answer).toBe(symbol === "〇" ? "ア" : "イ");
