@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 import { readFileSync } from "node:fs";
 import path from "node:path";
 import { ZOEN_GINO2_QUESTIONS } from "@/data/questions/zoen-gino2";
+import { ZOEN_GINO3_QUESTIONS } from "@/data/questions/zoen-gino3";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
@@ -19,6 +20,10 @@ const editions = [
       + "ハニロニロ" + "イイロイロ" + "ハハニロハ" + "ニイロイニ" + "ニイハロイ",
     pages: [...Array(18).fill(2), ...Array(7).fill(3), ...Array(6).fill(4), ...Array(6).fill(5), ...Array(6).fill(6), ...Array(6).fill(7), 8],
     figures: [] as number[] },
+  { exam: "zoen-gino3" as const, rows: ZOEN_GINO3_QUESTIONS.filter(q => q.season === "early"), season: "early" as const,
+    answers: "○××○○" + "×○×○×" + "○×○○×" + "○○×○○" + "××○○×" + "×○×○×",
+    pages: [...Array(17).fill(2), ...Array(13).fill(3)],
+    figures: [] as number[] },
 ];
 
 describe.each(editions)("c4-58 $exam", ({ exam, rows, season, answers, pages, figures }) => {
@@ -35,7 +40,7 @@ describe.each(editions)("c4-58 $exam", ({ exam, rows, season, answers, pages, fi
       expect(q.officialAnswerNumber, q.id).toBe(official);
       expect(q.answer, q.id).toBe(key);
       expect(formatQuestionAnswerForDisplay(q, key), q.id).toBe(official);
-      expect(questionSourceEdition(q), q.id).toBe(`2025年度${season === "late" ? "後期" : "前期"}`);
+      expect(questionSourceEdition(q), q.id).toBe(`2025年度${String(season) === "late" ? "後期" : "前期"}`);
       expect(isPracticeReadyQuestion(q), q.id).toBe(true);
       expect(Object.keys(q.choiceExplanations ?? {}), q.id).toEqual(Object.keys(q.choices!));
       expect(q.sourcePdfUrl, q.id).toBe(`${evidence.sources[0].url}#page=${pages[i]}`);
