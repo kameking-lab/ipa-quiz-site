@@ -10,6 +10,7 @@ import { FUTSU_SENBAN3_QUESTIONS } from "./futsu-senban3";
 import { SHASHUTSU3_QUESTIONS } from "./shashutsu3";
 import { KIKAI_KENSA3_QUESTIONS } from "./kikai-kensa3";
 import { KIKAI_KENSA1_QUESTIONS } from "./kikai-kensa1";
+import { KINZOKU_PRESS2_QUESTIONS } from "./kinzoku-press2";
 import { KATAWAKU3_QUESTIONS } from "./katawaku3";
 import { KYOKA_PLASTIC1_QUESTIONS } from "./kyoka-plastic1";
 import { ENGEI_SOSHOKU1_QUESTIONS } from "./engei-soshoku1";
@@ -400,6 +401,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("shashutsu3") ? { "shashutsu3": SHASHUTSU3_QUESTIONS } : {}),
 ...(isExamPublished("kikai-kensa3") ? { "kikai-kensa3": KIKAI_KENSA3_QUESTIONS } : {}),
 ...(isExamPublished("kikai-kensa1") ? { "kikai-kensa1": KIKAI_KENSA1_QUESTIONS } : {}),
+...(isExamPublished("kinzoku-press2") ? { "kinzoku-press2": KINZOKU_PRESS2_QUESTIONS } : {}),
 ...(isExamPublished("katawaku3") ? { "katawaku3": KATAWAKU3_QUESTIONS } : {}),
 ...(isExamPublished("kyoka-plastic1") ? { "kyoka-plastic1": KYOKA_PLASTIC1_QUESTIONS } : {}),
 ...(isExamPublished("engei-soshoku1") ? { "engei-soshoku1": ENGEI_SOSHOKU1_QUESTIONS } : {}),
