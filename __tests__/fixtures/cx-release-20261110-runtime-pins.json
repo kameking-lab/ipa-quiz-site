@@ -1,7 +1,8 @@
 {
   "review": "ktidy: remove the X share link only; k8st: scope two SCOR explanations to the model used by st-2023h-am2-q1; e-kako-pet: reviewed pet presentation placement in QuizPlayer, QuestionAnswerCard and StreamQuizPlayer. Historical receipts remain unchanged. e-kako-funnel (9dceb7ad5): each of QuizPlayer and QuestionAnswerCard adds only an observeJourney import and one answer observation; removing those exact additions reproduces the preceding reviewed source byte for byte.",
-  "components/quiz/QuizPlayer.tsx": "351e415a40a7421b1d8ec67baacd630863bbafb0b249fcc2f3762187ddf4ee02",
-  "components/quiz/QuestionAnswerCard.tsx": "32104dee33b750e2491ce35f95b1959a84911a4529010847e906103559bcb46e",
+  "questionAnswerDisplayReview": "f7e30a049: QuizPlayer and QuestionAnswerCard render mixed true/false and multiple-choice papers through formatQuestionAnswerForDisplay. Only the display helper import and answer-label expression changed; scoring, persistence and the commitAnswer handler remain unchanged.",
+  "components/quiz/QuizPlayer.tsx": "73bc72512882be3fad5fed70e4c62d9e3688e32254e644c908d17e1438f353db",
+  "components/quiz/QuestionAnswerCard.tsx": "fd2f5910b818b22b78f40a0ac92786846a876cb136b65586c8f9f3f532571849",
   "components/quiz/stream/StreamQuizPlayer.tsx": "194fcf63c123ccd0090f5fe33513502c764ec44ed73fb0d91fe0a09ff10451f5",
   "stExistingExplainedSha256": "0cd6a86106156ec244446522cf77e57e66d08185550105f2f50af61c7b890070"
 }

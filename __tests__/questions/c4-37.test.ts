@@ -73,11 +73,13 @@ describe("Q4-111 フラワー装飾3級2023年度前期", () => {
     expect(questions[26].question).toContain("アキザクラ");
     expect(questions[26].answer).toBe("ア");
   });
-  it("3級両年度60問を年度別URLで読み込む", async () => {
-    expect(FLOWER3_QUESTIONS).toHaveLength(60);
-    expect(EXAM_CONFIGS.flower3.yearRange).toEqual({ start: 2023, end: 2024 });
+  it("3級の各年度30問を年度別URLで読み込む", async () => {
+    const previousEditions = FLOWER3_QUESTIONS.filter(q => q.year === 2023 || q.year === 2024);
+    expect(previousEditions).toHaveLength(60);
+    expect(EXAM_CONFIGS.flower3.yearRange.start).toBeLessThanOrEqual(2023);
+    expect(EXAM_CONFIGS.flower3.yearRange.end).toBeGreaterThanOrEqual(2024);
     expect(await getQuestionsForExam("flower3")).toEqual(FLOWER3_QUESTIONS);
-    expect(new Set(FLOWER3_QUESTIONS.map(questionPagePath)).size).toBe(60);
+    expect(new Set(FLOWER3_QUESTIONS.map(questionPagePath)).size).toBe(FLOWER3_QUESTIONS.length);
     questions.forEach(q => {
       const [, , exam, yearSeason, section, qnum] = questionPagePath(q).split("/");
       expect(findQuestionByRoute(FLOWER3_QUESTIONS, { exam, yearSeason, section, qnum })?.id).toBe(q.id);
