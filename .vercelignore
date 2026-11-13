@@ -18,6 +18,9 @@ scripts/*
 !scripts/vercel-migrate.mjs
 # Builds the copilot BM25 index before next build (see package.json "build").
 !scripts/build-copilot-index.ts
+# Writes the verified question corpus before next build (package.json "questions:write").
+!scripts/build-question-corpus.ts
+!scripts/tsconfig.question-corpus.json
 
 # Internal docs (markdown; not imported by the app)
 docs/
