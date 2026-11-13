@@ -357,5 +357,26 @@
         24
       ]
     }
-  ]
+  ],
+  "independentReview": {
+    "step": "c4r-B6",
+    "checkedAt": "2026-11-13T10:19:19.384979+09:00",
+    "baselineCommit": "1535b60bb",
+    "questionCount": 30,
+    "officialAnswersMatched": 30,
+    "figuresChecked": 7,
+    "method": "公式PDF再取得・SHA256一致、本文全ページ画像とOCR差分の照合、公式正答表との採点キー照合、全解説と掲載図の確認。",
+    "correctedQuestions": [
+      {
+        "id": "tekkin3-2025-late-gakka-008",
+        "fields": [
+          "question",
+          "explanation",
+          "choiceExplanations"
+        ]
+      }
+    ],
+    "answersChanged": 0,
+    "missingQuestions": 0
+  }
 }

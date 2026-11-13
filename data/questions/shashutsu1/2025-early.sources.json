@@ -557,5 +557,24 @@
       "verification": "原料樹脂・耐熱温度・容量の表示",
       "checkedAt": "2026-11-12T23:21:02.798798+00:00"
     }
-  ]
+  ],
+  "independentReview": {
+    "step": "c4r-B6",
+    "checkedAt": "2026-11-13T10:19:19.262429+09:00",
+    "baselineCommit": "1535b60bb",
+    "questionCount": 50,
+    "officialAnswersMatched": 50,
+    "figuresChecked": 4,
+    "method": "公式PDF再取得・SHA256一致、本文全ページ画像とOCR差分の照合、公式正答表との採点キー照合、全解説と掲載図の確認。",
+    "correctedQuestions": [
+      {
+        "id": "shashutsu1-2025-early-gakka-b-008",
+        "fields": [
+          "choices"
+        ]
+      }
+    ],
+    "answersChanged": 0,
+    "missingQuestions": 0
+  }
 }

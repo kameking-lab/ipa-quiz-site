@@ -556,5 +556,35 @@
       "verification": "特定施設一覧の合成樹脂用射出成型機",
       "checkedAt": "2026-11-12T23:21:04.623194+00:00"
     }
-  ]
+  ],
+  "independentReview": {
+    "step": "c4r-B6",
+    "checkedAt": "2026-11-13T10:19:19.285453+09:00",
+    "baselineCommit": "1535b60bb",
+    "questionCount": 50,
+    "officialAnswersMatched": 50,
+    "figuresChecked": 2,
+    "method": "公式PDF再取得・SHA256一致、本文全ページ画像とOCR差分の照合、公式正答表との採点キー照合、全解説と掲載図の確認。",
+    "correctedQuestions": [
+      {
+        "id": "shashutsu2-2025-early-gakka-a-024",
+        "fields": [
+          "question",
+          "explanation",
+          "choiceExplanations"
+        ]
+      }
+    ],
+    "answersChanged": 0,
+    "missingQuestions": 0,
+    "explanationReferences": [
+      {
+        "questionNumber": 24,
+        "url": "https://www.ecs.shimane-u.ac.jp/~shutingli/MDD1.pdf#page=24",
+        "title": "島根大学 機械製図教材 投影法の記号",
+        "sha256": "f977cc1d4334f729c4c4b7592143105f4cd430a616f77d5215cba559728862f1",
+        "note": "第一角法・第三角法の記号を原本図と照合。"
+      }
+    ]
+  }
 }
