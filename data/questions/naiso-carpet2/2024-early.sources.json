@@ -1,0 +1,586 @@
+{
+  "candidateId": "Q5-043",
+  "qualification": "内装仕上げ施工（カーペット系床仕上げ工事作業） 2級",
+  "fiscalYear": 2024,
+  "period": "前期",
+  "checkedAt": "2026-11-13T15:49:12.782620+09:00",
+  "sources": [
+    {
+      "kind": "questions",
+      "url": "https://www.kentei.javada.or.jp/pdf/R06-1-B70-%E5%86%85%E8%A3%85%E4%BB%95%E4%B8%8A%E3%81%92%E6%96%BD%E5%B7%A5%EF%BC%88%E3%82%AB%E3%83%BC%E3%83%9A%E3%83%83%E3%83%88%E7%B3%BB%E5%BA%8A%E4%BB%95%E4%B8%8A%E3%81%92%E5%B7%A5%E4%BA%8B%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E5%95%8F%E9%A1%8C.pdf",
+      "httpStatus": 200,
+      "sha256": "42ca64527a94a386bdaa62c169b67dafd7180b92c1bfda4cd0be6bd31a922308",
+      "pages": 8,
+      "checkedAt": "2026-11-13T15:42:13.139677+09:00"
+    },
+    {
+      "kind": "answers",
+      "url": "https://www.kentei.javada.or.jp/pdf/R06-1-B70-%E5%86%85%E8%A3%85%E4%BB%95%E4%B8%8A%E3%81%92%E6%96%BD%E5%B7%A5%EF%BC%88%E3%82%AB%E3%83%BC%E3%83%9A%E3%83%83%E3%83%88%E7%B3%BB%E5%BA%8A%E4%BB%95%E4%B8%8A%E3%81%92%E5%B7%A5%E4%BA%8B%E4%BD%9C%E6%A5%AD%EF%BC%89-2%E7%B4%9A-%E5%AD%A6%E7%A7%91%E8%A9%A6%E9%A8%93%E6%AD%A3%E8%A7%A3%E8%A1%A8.pdf",
+      "httpStatus": 200,
+      "sha256": "50ea3b585635cbd970ff5a11470bf1355ddb2f010568076cf28031fd3100ed42",
+      "pages": 1,
+      "checkedAt": "2026-11-13T15:42:14.475819+09:00"
+    }
+  ],
+  "questionCount": 50,
+  "trueFalseCount": 25,
+  "multipleChoiceCount": 25,
+  "choiceExplanationCount": 150,
+  "figureCount": 7,
+  "transcription": "公式問題PDFの全問題ページを原本画像で確認し、問番号・本文・全選択肢・公式正答表を照合。字間・改行・英数字幅を正規化。図は公式原図を切り出し保持。",
+  "answerMapping": {
+    "trueFalse": {
+      "○": "ア",
+      "×": "イ"
+    },
+    "multipleChoice": {
+      "イ": "ア",
+      "ロ": "イ",
+      "ハ": "ウ",
+      "ニ": "エ"
+    }
+  },
+  "duplicateCheck": {
+    "checkedAt": "2026-11-13T15:42:11.015312+09:00",
+    "main": "53b983fe72f617a396ec2045efc4c6e4a9c72f51",
+    "ledgerMatches": [],
+    "mainRelevantFiles": [],
+    "progressMatches": [
+      {
+        "qual": "内装仕上げ施工（鋼製下地工事作業） 2級 2025年度前期",
+        "job": "c4-55",
+        "where": "cx/qnew5-kako-20261112",
+        "status": "完成（公式原本照合・50問・全肢解説）",
+        "updated": "2026-11-13T09:41:05.889927+09:00"
+      },
+      {
+        "qual": "内装仕上げ施工（カーペット系床仕上げ工事作業） 1級 2024年度 前期",
+        "job": "c5-14",
+        "where": "cx/qnew6-kako-20261112",
+        "status": "完了（50問・全肢独自解説・原図7点・不足0・公式正答全件一致・Node22型チェック/問題検証/関連64テスト/lint成功・e00cd5821・未push）",
+        "updated": "2026-11-13T15:26:31.606229+09:00"
+      }
+    ],
+    "allRefs": {
+      "refsChecked": 1417,
+      "blobsChecked": 6197,
+      "officialSourceMatches": 0
+    }
+  },
+  "review": [
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-001",
+      "originalNumber": "A群 1",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-002",
+      "originalNumber": "A群 2",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-003",
+      "originalNumber": "A群 3",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-004",
+      "originalNumber": "A群 4",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": true
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-005",
+      "originalNumber": "A群 5",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-006",
+      "originalNumber": "A群 6",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": true
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-007",
+      "originalNumber": "A群 7",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": true
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-008",
+      "originalNumber": "A群 8",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-009",
+      "originalNumber": "A群 9",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-010",
+      "originalNumber": "A群 10",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-011",
+      "originalNumber": "A群 11",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-012",
+      "originalNumber": "A群 12",
+      "pdfPage": 2,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-013",
+      "originalNumber": "A群 13",
+      "pdfPage": 2,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-014",
+      "originalNumber": "A群 14",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-015",
+      "originalNumber": "A群 15",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-016",
+      "originalNumber": "A群 16",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-017",
+      "originalNumber": "A群 17",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-018",
+      "originalNumber": "A群 18",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-019",
+      "originalNumber": "A群 19",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-020",
+      "originalNumber": "A群 20",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-021",
+      "originalNumber": "A群 21",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-022",
+      "originalNumber": "A群 22",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-023",
+      "originalNumber": "A群 23",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-024",
+      "originalNumber": "A群 24",
+      "pdfPage": 3,
+      "officialAnswer": "○",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-a-025",
+      "originalNumber": "A群 25",
+      "pdfPage": 3,
+      "officialAnswer": "×",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-001",
+      "originalNumber": "B群 1",
+      "pdfPage": 4,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-002",
+      "originalNumber": "B群 2",
+      "pdfPage": 4,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-003",
+      "originalNumber": "B群 3",
+      "pdfPage": 4,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-004",
+      "originalNumber": "B群 4",
+      "pdfPage": 4,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-005",
+      "originalNumber": "B群 5",
+      "pdfPage": 4,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": true
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-006",
+      "originalNumber": "B群 6",
+      "pdfPage": 4,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": true
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-007",
+      "originalNumber": "B群 7",
+      "pdfPage": 5,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": true
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-008",
+      "originalNumber": "B群 8",
+      "pdfPage": 5,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-009",
+      "originalNumber": "B群 9",
+      "pdfPage": 5,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-010",
+      "originalNumber": "B群 10",
+      "pdfPage": 5,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-011",
+      "originalNumber": "B群 11",
+      "pdfPage": 5,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-012",
+      "originalNumber": "B群 12",
+      "pdfPage": 6,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-013",
+      "originalNumber": "B群 13",
+      "pdfPage": 6,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-014",
+      "originalNumber": "B群 14",
+      "pdfPage": 6,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-015",
+      "originalNumber": "B群 15",
+      "pdfPage": 6,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-016",
+      "originalNumber": "B群 16",
+      "pdfPage": 6,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-017",
+      "originalNumber": "B群 17",
+      "pdfPage": 6,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-018",
+      "originalNumber": "B群 18",
+      "pdfPage": 7,
+      "officialAnswer": "ハ",
+      "internalAnswer": "ウ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-019",
+      "originalNumber": "B群 19",
+      "pdfPage": 7,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-020",
+      "originalNumber": "B群 20",
+      "pdfPage": 7,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-021",
+      "originalNumber": "B群 21",
+      "pdfPage": 7,
+      "officialAnswer": "ロ",
+      "internalAnswer": "イ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-022",
+      "originalNumber": "B群 22",
+      "pdfPage": 7,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-023",
+      "originalNumber": "B群 23",
+      "pdfPage": 8,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": true
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-024",
+      "originalNumber": "B群 24",
+      "pdfPage": 8,
+      "officialAnswer": "ニ",
+      "internalAnswer": "エ",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    },
+    {
+      "id": "naiso-carpet2-2024-early-gakka-b-025",
+      "originalNumber": "B群 25",
+      "pdfPage": 8,
+      "officialAnswer": "イ",
+      "internalAnswer": "ア",
+      "statementChecked": true,
+      "allChoicesChecked": true,
+      "hasFigure": false
+    }
+  ],
+  "supplementalSources": [
+    {
+      "url": "https://laws.e-gov.go.jp/law/325CO0000000338/20250401_506CO0000000001",
+      "note": "第21条・居室天井高さ2.1m以上。A群9解説の補足根拠。"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=9",
+      "note": "労働安全衛生規則第527条・移動はしごの幅30cm以上。A群10解説の補足根拠。"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/file/06-Seisakujouhou-11300000-Roudoukijunkyokuanzeneiseibu/syougyou2.pdf",
+      "note": "労働安全衛生規則第528条・脚立の脚と水平面との角度75度以下。A群11解説の補足根拠。"
+    }
+  ]
+}
