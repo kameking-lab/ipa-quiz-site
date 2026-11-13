@@ -24,6 +24,10 @@ const editions = [
     answers: "○××○○" + "×○×○×" + "○×○○×" + "○○×○○" + "××○○×" + "×○×○×",
     pages: [...Array(17).fill(2), ...Array(13).fill(3)],
     figures: [] as number[] },
+  { exam: "zoen-gino3" as const, rows: ZOEN_GINO3_QUESTIONS.filter(q => q.season === "late"), season: "late" as const,
+    answers: "××○○○" + "○××○○" + "×××○○" + "×○○××" + "×○×○×" + "○○○××",
+    pages: [...Array(19).fill(2), ...Array(11).fill(3)],
+    figures: [] as number[] },
 ];
 
 describe.each(editions)("c4-58 $exam", ({ exam, rows, season, answers, pages, figures }) => {
