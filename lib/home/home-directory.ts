@@ -186,6 +186,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   {"code": "bousui-urethane2", "name": "防水施工技能士 2級（ウレタン）", "sub": "ウレタンゴム系塗膜防水工事作業 学科", "domain": "construction"},
   {"code": "bousui-frp2", "name": "防水施工技能士 2級（FRP防水工事作業）", "sub": "FRP防水工事作業 学科", "domain": "construction"},
   {"code": "pan-seizo1", "name": "パン製造技能士 1級", "sub": "パン製造作業 学科", "domain": "welfare"},
+  {"code": "pan-seizo2", "name": "パン製造技能士 2級", "sub": "パン製造作業 学科", "domain": "welfare"},
   {"code": "naiso-carpet2", "name": "内装仕上げ施工技能士 2級（カーペット系床）", "sub": "カーペット系床仕上げ工事作業 学科", "domain": "construction"},
   {"code": "naiso-plastic1", "name": "内装仕上げ施工技能士 1級（プラスチック系床）", "sub": "プラスチック系床仕上げ工事作業 学科", "domain": "construction"},
   {"code": "naiso-plastic2", "name": "内装仕上げ施工技能士 2級（プラスチック系床）", "sub": "プラスチック系床仕上げ工事作業 学科", "domain": "construction"},
