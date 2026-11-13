@@ -209,6 +209,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 "henatsuki-kumitate2": async () => isExamPublished("henatsuki-kumitate2") ? (await import("@/data/questions/henatsuki-kumitate2")).HENATSUKI_KUMITATE2_QUESTIONS : [],
 "henatsuki-kumitate1": async () => isExamPublished("henatsuki-kumitate1") ? (await import("@/data/questions/henatsuki-kumitate1")).HENATSUKI_KUMITATE1_QUESTIONS : [],
 "sequence3": async () => isExamPublished("sequence3") ? (await import("@/data/questions/sequence3")).SEQUENCE3_QUESTIONS : [],
+"haidenban-kumitate3": async () => isExamPublished("haidenban-kumitate3") ? (await import("@/data/questions/haidenban-kumitate3")).HAIDENBAN_KUMITATE3_QUESTIONS : [],
 "sequence2": async () => isExamPublished("sequence2") ? (await import("@/data/questions/sequence2")).SEQUENCE2_QUESTIONS : [],
 "zoen-gino1": async () => isExamPublished("zoen-gino1") ? (await import("@/data/questions/zoen-gino1")).ZOEN_GINO1_QUESTIONS : [],
 "sakan1": async () => isExamPublished("sakan1") ? (await import("@/data/questions/sakan1")).SAKAN1_QUESTIONS : [],

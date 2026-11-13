@@ -31,6 +31,7 @@ import { SEQUENCE1_QUESTIONS } from "./sequence1";
 import { HENATSUKI_KUMITATE2_QUESTIONS } from "./henatsuki-kumitate2";
 import { HENATSUKI_KUMITATE1_QUESTIONS } from "./henatsuki-kumitate1";
 import { SEQUENCE3_QUESTIONS } from "./sequence3";
+import { HAIDENBAN_KUMITATE3_QUESTIONS } from "./haidenban-kumitate3";
 import { SEQUENCE2_QUESTIONS } from "./sequence2";
 import { ZOEN_GINO1_QUESTIONS } from "./zoen-gino1";
 import { SAKAN1_QUESTIONS } from "./sakan1";
@@ -286,6 +287,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("henatsuki-kumitate2") ? { "henatsuki-kumitate2": HENATSUKI_KUMITATE2_QUESTIONS } : {}),
 ...(isExamPublished("henatsuki-kumitate1") ? { "henatsuki-kumitate1": HENATSUKI_KUMITATE1_QUESTIONS } : {}),
 ...(isExamPublished("sequence3") ? { "sequence3": SEQUENCE3_QUESTIONS } : {}),
+...(isExamPublished("haidenban-kumitate3") ? { "haidenban-kumitate3": HAIDENBAN_KUMITATE3_QUESTIONS } : {}),
 ...(isExamPublished("sequence2") ? { "sequence2": SEQUENCE2_QUESTIONS } : {}),
 ...(isExamPublished("zoen-gino1") ? { "zoen-gino1": ZOEN_GINO1_QUESTIONS } : {}),
 ...(isExamPublished("sakan1") ? { "sakan1": SAKAN1_QUESTIONS } : {}),

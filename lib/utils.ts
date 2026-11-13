@@ -39,6 +39,7 @@ export const EXAM_LABELS: Record<string, string> = {
   "henatsuki-kumitate2": "電気機器組立て技能士 2級（変圧器組立て作業）",
   "henatsuki-kumitate1": "電気機器組立て技能士 1級（変圧器組立て作業）",
   "sequence3": "シーケンス制御技能士 3級（シーケンス制御作業）",
+  "haidenban-kumitate3": "電気機器組立て技能士 3級（配電盤・制御盤組立て作業）",
   "sequence2": "シーケンス制御技能士 2級（シーケンス制御作業）",
   "zoen-gino1": "造園技能士 1級（造園工事作業）",
   "sakan1": "左官技能士 1級（左官作業）",
