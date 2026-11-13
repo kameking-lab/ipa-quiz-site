@@ -4,14 +4,15 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { HomeQualificationFinder } from "@/components/home/landing/HomeQualificationFinder";
 import { HomeDirectory } from "@/components/home/landing/HomeDirectory";
 import { getHomeDirectory } from "@/lib/home/home-directory";
-import { HOME_FEATURED_EXAM_CODES } from "@/lib/home/featured-exams";
+import { upcomingExamPicks } from "@/lib/home/featured-exams";
 const domains = getHomeDirectory();
-beforeEach(() => { cleanup(); window.history.replaceState(null, "", "/"); });
+beforeEach(() => { cleanup(); localStorage.clear(); window.history.replaceState(null, "", "/"); });
 describe("qualification discovery", () => {
-  it("shows exactly the configured three home cards and keeps all other qualifications searchable", () => {
+  it("shows three upcoming home cards and keeps all other qualifications searchable", () => {
     render(<HomeQualificationFinder domains={domains} homeDirectory={<HomeDirectory domains={domains} />} />);
     const results = document.getElementById("qualification-results")!;
-    expect([...results.querySelectorAll("a")].map(a => a.getAttribute("href"))).toEqual(HOME_FEATURED_EXAM_CODES.map(code => `/${code}`));
+    const items = domains.flatMap(domain => [...domain.featured, ...domain.compact]);
+    expect([...results.querySelectorAll("a")].map(a => a.getAttribute("href"))).toEqual(upcomingExamPicks(items.map(item => item.key), [], new Date()).map(pick => items.find(item => item.key === pick.key)!.href));
     expect(document.querySelectorAll("details[open]")).toHaveLength(0);
     fireEvent.change(screen.getByRole("searchbox"), { target: { value: "宅建" } });
     expect(screen.getByRole("link", { name: /^宅建/ })).toHaveAttribute("href", "/takken");

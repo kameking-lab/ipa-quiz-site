@@ -179,6 +179,11 @@ body:has(.study-home) .mobile-bottom-nav { --primary:#355b47; border-color:#dedf
 .study-finder-home .study-results-label { @apply flex items-center gap-2 font-semibold; margin:12px 0 8px; font-size:12px; color:var(--study-ink); }
 .study-finder-home .study-results-label::before { @apply h-1 w-4 rounded-full; content:""; background:var(--study-action); }
 .study-featured-results { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.study-pickups { --pickup-row-height:202px; display:grid; gap:12px; padding-top:12px; align-content:start; min-height:var(--pickup-row-height); }
+.study-pickups[data-personal="true"] { min-height:calc(var(--pickup-row-height) * 2); }
+.study-pickups[data-ready="false"]>section { visibility:hidden; }
+.study-pickups .study-results-label { margin:0 0 8px; font-size:12px; font-weight:600; }
+.study-qualification-date { color:var(--study-action); }
 .study-featured-results .study-qualification { @apply rounded-2xl border shadow-xs; min-height:164px; padding:18px; background:linear-gradient(140deg,#f3f7ee,#dce8d5); border-color:#c4d2bd; }
 .study-featured-results>li:nth-child(2) .study-qualification { background:linear-gradient(140deg,#f0f6f7,#dae7ec); border-color:#c3d3d9; }
 .study-featured-results>li:nth-child(3) .study-qualification { background:linear-gradient(140deg,#fbf5e9,#eee0c4); border-color:#dfcfb0; }
@@ -232,6 +237,10 @@ body:has(.study-home) .mobile-bottom-nav { --primary:#355b47; border-color:#dedf
   .study-featured-results .study-card-mascot { width:80px; height:80px; }
 }
 @media(max-width:767px) {
+  .study-pickups { --pickup-row-height:186px; }
+  .study-pickups .study-featured-results { display:flex; gap:8px; overflow-x:auto; scroll-snap-type:x proximity; padding:0 2px 4px; margin:0 -2px; }
+  .study-pickups .study-featured-results>li { flex:0 0 44%; scroll-snap-align:start; }
+  .study-pickups .study-qualification-date { font-size:10px; }
   .study-opening-compact .study-welcome { margin-bottom:8px; }
   .study-opening-compact .study-welcome-copy { display:block; }
   .study-opening-compact .study-eyebrow { display:none; }
@@ -272,6 +281,7 @@ body:has(.study-home) .mobile-bottom-nav { --primary:#355b47; border-color:#dedf
 
 /* Give the companion and the qualification their own space on wide cards. */
 @media(min-width:1024px) {
+  .study-pickups { --pickup-row-height:186px; }
   .study-featured-results .study-qualification { min-height:148px; }
   .study-featured-results .study-qualification>span:first-child { width:62%; }
   .study-featured-results .study-qualification-name { min-height:3em; font-size:18px; line-height:1.5; text-wrap:balance; }

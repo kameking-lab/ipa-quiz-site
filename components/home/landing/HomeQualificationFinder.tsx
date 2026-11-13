@@ -4,8 +4,7 @@ import { useEffect, useMemo, useRef, useState, type MouseEvent, type ReactNode }
 
 import { ArrowRight, Search, X } from "lucide-react";
 import type { HomeDirectoryDomain, HomeDomainId } from "@/lib/home/home-directory";
-import { qualificationStudyArt } from "@/lib/home/study-room";
-import { HOME_FEATURED_EXAM_CODES } from "@/lib/home/featured-exams";
+import { HomeFeaturedExams, QualificationCard } from "./HomeFeaturedExams";
 
 function normalize(value: string): string {
   return value.normalize("NFKC").toLowerCase().replace(/\s/g, "");
@@ -67,9 +66,7 @@ export function HomeQualificationFinder({ domains, directoryHref = "#home-direct
   const matching = items.filter((item) => (!domainId || item.domainId === domainId) &&
     (!term || normalize([item.name, item.abbr, item.sub, item.domainTitle].join(" ")).includes(term)));
   const browsing = !term && !domainId;
-  const visible = browsing ? homeDirectory
-    ? HOME_FEATURED_EXAM_CODES.flatMap(code => items.filter(item => item.key === code))
-    : items.filter((item) => ["ip", "fe", "denko2", "fp3"].includes(item.key)) : matching;
+  const visible = browsing ? items.filter((item) => ["ip", "fe", "denko2", "fp3"].includes(item.key)) : matching;
 
   return (
     <section id="choose-qualification" tabIndex={-1} aria-labelledby="qualification-search-title" className={`study-finder scroll-mt-24${homeDirectory ? " study-finder-home" : ""}`}>
@@ -93,15 +90,9 @@ export function HomeQualificationFinder({ domains, directoryHref = "#home-direct
         <button type="button" aria-pressed={!domainId} onClick={() => setDomainId(null)}>すべて</button>
         {domains.map((domain) => <button key={domain.id} type="button" aria-pressed={domainId === domain.id} onClick={() => setDomainId(domain.id)}>{domain.title}</button>)}
       </div>}
-      <p id="qualification-result-count" role="status" aria-live="polite" className="study-results-label">{browsing ? homeDirectory ? "ピックアップ" : "まずは、ここから" : `${matching.length}資格・区分`}</p>
-      {visible.length > 0 ? <ul id="qualification-results" className={`study-results${homeDirectory && browsing ? " study-featured-results" : ""}`}>
-        {visible.map((item) => <li key={item.key}><a href={item.href} className={`study-qualification study-card-${item.domainId}`} onClick={() => rememberFilters(query, domainId)}>
-          <span className="min-w-0"><span className="study-qualification-name">{item.name}</span><span className="study-qualification-meta">{item.questionCount.toLocaleString("ja-JP")}問<span className="study-qualification-period"> · {item.periodLabel}</span></span></span>
-          {/* The qualification's own study-room chihuahua (never the old headband atlas poses). */}
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img aria-hidden="true" alt="" className="study-mascot study-card-mascot" src={qualificationStudyArt(item.key)} width={256} height={256} loading="lazy" decoding="async" />
-          <ArrowRight aria-hidden="true" className="h-5 w-5 shrink-0" />
-        </a></li>)}
+      <p id="qualification-result-count" role="status" aria-live="polite" className={homeDirectory && browsing ? "sr-only" : "study-results-label"}>{browsing ? homeDirectory ? "資格を選ぶ" : "まずは、ここから" : `${matching.length}資格・区分`}</p>
+      {homeDirectory && browsing ? <div id="qualification-results"><HomeFeaturedExams items={items} onChoose={() => rememberFilters(query, domainId)} /></div> : visible.length > 0 ? <ul id="qualification-results" className="study-results">
+        {visible.map((item) => <li key={item.key}><QualificationCard item={item} onChoose={() => rememberFilters(query, domainId)} /></li>)}
       </ul> : <div id="qualification-results" className="study-empty"><p>該当する資格が見つかりませんでした。</p><button type="button" onClick={() => clearSearch(true)} className="min-h-11 underline underline-offset-4">検索をクリアして選び直す</button></div>}
       {homeDirectory ? <div hidden={!browsing}>{homeDirectory}</div> : <a href={directoryHref} onClick={openDirectory} className="study-text-link">収録している全資格・区分を見る<ArrowRight aria-hidden="true" className="h-4 w-4" /></a>}
       </div>
