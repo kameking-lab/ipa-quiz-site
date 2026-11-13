@@ -31,6 +31,8 @@ const localUrl = "capacitor://localhost/index.html?local=1";
 const INTENT_KEY = "kakomon:purchase-intent:v1";
 type Intent = "buy" | "restore";
 const defaultSignIn = (returnTo: string) => beginLogin(SITE_ORIGIN, returnTo);
+/** Thrown when sign-out interrupts a refresh; its message is shown as-is. */
+export class StatusError extends Error {}
 /** Message for a failed action: our own sentences as-is, SDK failures with their code. */
 export function actionFailureText(error: unknown, step: string): string {
   if (error instanceof StoreError) return error.message;
