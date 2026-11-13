@@ -29,6 +29,8 @@ describe.each(editions)("c4-64 $exam", ({ exam, rows, season, answers, pages, fi
     const evidence = JSON.parse(readFileSync(path.join(process.cwd(), `data/questions/${exam}/2025-${season}.sources.json`), "utf8"));
     expect(evidence.review).toHaveLength(50);
     expect(evidence.figureCount).toBe(figures.length);
+    expect(evidence.fiscalYear).toBe(rows[0].year);
+    expect(evidence.period).toBe(season === "late" ? "後期" : "前期");
     for (const [i,q] of rows.entries()) {
       const official=answers[i];
       const key=(official === "○" ? "ア" : official === "×" ? "イ" : "アイウエ"["イロハニ".indexOf(official)]) as ChoiceKey;
