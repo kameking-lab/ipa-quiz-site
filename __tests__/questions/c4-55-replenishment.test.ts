@@ -15,6 +15,7 @@ import type { ChoiceKey, ExamCode } from "@/lib/questions/types";
 const editions = [
  { exam: "kinzoku-press2", a: "×○×○× ○×○×× ○×○×○ ○×○×× ○○××○", b: "イニニロニ ロハハイイ ロイハハロ ロニハハニ イロハロハ", figures: [23,28,31,45,46,49] },
  { exam: "naiso-kosei2", a: "○○○×○ ×○○○○ ○××○× ○××○○ ××○×○", b: "ハイイロハ ニハハイハ ハイハニハ ロハハロニ ハハロイニ", figures: [6,7,29,30,31,32,44] },
+ { exam: "bousui-urethane2", a: "×○○○○ ××○○○ ○×××× ○○○×× ○○○○○", b: "ニハハハロ イニニイニ ハロイロニ ニハイロロ ニロニハハ", figures: [3,27,28] },
 ] as const;
 for (const edition of editions) describe(edition.exam, () => {
  const exam = edition.exam as ExamCode;
@@ -74,4 +75,24 @@ for (const edition of editions) describe(edition.exam, () => {
    }
   });
  });
+});
+
+it("retains the different official scoring for the same printed building symbol", () => {
+ const naiso=QUESTIONS_BY_EXAM["naiso-kosei2"]![5];
+ const bousui=QUESTIONS_BY_EXAM["bousui-urethane2"]![2];
+ expect(naiso.officialAnswerNumber).toBe("×"); expect(naiso.answer).toBe("イ");
+ expect(bousui.officialAnswerNumber).toBe("○"); expect(bousui.answer).toBe("ア");
+ expect(naiso.explanation).toContain("そのまま採用");
+ expect(bousui.explanation).toContain("そのまま採用");
+});
+it("checks the given quantities and distinguishes the original door diagrams", () => {
+ const press=QUESTIONS_BY_EXAM["kinzoku-press2"]!;
+ const naiso=QUESTIONS_BY_EXAM["naiso-kosei2"]!;
+ const bousui=QUESTIONS_BY_EXAM["bousui-urethane2"]!;
+ expect(2+1/(1/2+1/2)).toBe(3);
+ expect(press[48].explanation).toContain("3 Ω");
+ expect(1*0.002*1000*1.2).toBe(2.4);
+ expect(bousui[46].choices?.イ).toBe("2.4");
+ expect(naiso[30].choiceExplanations?.ウ).toContain("片開き");
+ expect(naiso[30].choiceExplanations?.エ).toContain("両開き");
 });
