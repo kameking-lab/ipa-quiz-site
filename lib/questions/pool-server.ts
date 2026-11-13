@@ -2,7 +2,7 @@ import "server-only";
 
 import type { ExamCode, Question, QuizFilter } from "./types";
 import { canonicalExamCode } from "./exam-aliases";
-import { getAllQuestionsLazy, getQuestionsForExam } from "./get-questions";
+import { getAllQuestionsLazy, getQuestionsForExam } from "@/lib/questions/get-questions";
 import { isPracticeReadyQuestion } from "./filter";
 import { selectExplicitPoolIds } from "./explicit-pool";
 

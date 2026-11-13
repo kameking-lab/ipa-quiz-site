@@ -4,6 +4,11 @@ import { BLOG_ARTICLE_ALIASES } from "./lib/blog/article-aliases";
 import { EXAM_CODE_ALIASES } from "./lib/questions/exam-aliases";
 
 const isDev = process.env.NODE_ENV === "development";
+const useQuestionCorpus = process.env.NODE_ENV === "production";
+const questionAliases = useQuestionCorpus ? {
+  "@/data/questions": "./lib/questions/runtime-registry.ts",
+  "@/lib/questions/get-questions": "./lib/questions/runtime-loaders.ts",
+} : {};
 
 const cspDirectives = [
   "default-src 'self'",
@@ -62,14 +67,9 @@ const longCacheImmutable = {
 };
 
 const nextConfig: NextConfig = {
-  webpack(config, { webpack, nextRuntime }) {
-    if (nextRuntime === "nodejs") {
-      config.module.rules.push({
-        test: /\.json$/,
-        include: resolve(process.cwd(), "data/questions"),
-        type: "javascript/auto",
-        use: [resolve(process.cwd(), "scripts/question-json-loader.cjs")],
-      });
+  webpack(config, { webpack }) {
+    for (const [source, target] of Object.entries(questionAliases)) {
+      config.resolve.alias[`${source}$`] = resolve(process.cwd(), target);
     }
     if (process.env.WEB_STRICT_CONTENT_GATE === "true") {
       config.resolve.alias["@/lib/kisho-study$"] = resolve(process.cwd(), "mobile/shared/gated-kisho-study.ts");
@@ -89,19 +89,15 @@ const nextConfig: NextConfig = {
     return config;
   },
   turbopack: {
-    rules: {
-      "*.json": {
-        condition: { all: [{ path: /^data\/questions\// }, { not: "browser" }, { not: "edge-light" }] },
-        loaders: ["./scripts/question-json-loader.cjs"],
-        as: "*.js",
-      },
+    resolveAlias: {
+      ...questionAliases,
+      ...(process.env.WEB_STRICT_CONTENT_GATE === "true" ? {
+        "@/lib/kisho-study": "./mobile/shared/gated-kisho-study.ts",
+        "./kisho-study": "./mobile/shared/gated-kisho-study.ts",
+        "@/lib/exam-library/survey-assistant-grading-index": "./mobile/shared/granted-paper-grading.ts",
+        "@/lib/exam-library/reference-aware-grading-index": "./mobile/shared/granted-paper-grading.ts",
+      } : {}),
     },
-    resolveAlias: process.env.WEB_STRICT_CONTENT_GATE === "true" ? {
-      "@/lib/kisho-study": "./mobile/shared/gated-kisho-study.ts",
-      "./kisho-study": "./mobile/shared/gated-kisho-study.ts",
-      "@/lib/exam-library/survey-assistant-grading-index": "./mobile/shared/granted-paper-grading.ts",
-      "@/lib/exam-library/reference-aware-grading-index": "./mobile/shared/granted-paper-grading.ts",
-    } : {},
   },
   // Prisma uses the Node-API library engine here (engineType "library"), which loads
   // runtime/library.js + the native .so engine. The per-database WASM query engines /
@@ -116,6 +112,7 @@ const nextConfig: NextConfig = {
     ],
   },
   outputFileTracingIncludes: {
+    "/*": ["./generated/question-corpus/**/*"],
     "/e-learning/exams": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json", "./data/exam-library/pe-first/*.json"],
     "/api/home/resume": ["./data/exam-library/pe-first/*.json"],
     // Prebuilt copilot index, search docs and sharded questions (pnpm copilot:index:write,
