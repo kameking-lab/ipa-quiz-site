@@ -122,16 +122,59 @@ describe("foreground PWA updates", () => {
     expect(reload).toHaveBeenCalledOnce();
   });
 
-  it("unregisters the native web worker and clears only PWA caches before safe reload", async () => {
+  it("unregisters only its native web worker and keeps caches while still controlled", async () => {
     const unregister = vi.fn(async () => true);
-    sw.getRegistrations.mockResolvedValue([{ unregister }]);
+    const other = vi.fn();
+    sw.getRegistrations.mockResolvedValue([
+      { scope: `${location.origin}/`, active: { scriptURL: `${location.origin}/sw.js` }, unregister },
+      { scope: `${location.origin}/other/`, active: { scriptURL: `${location.origin}/other/sw.js` }, unregister: other },
+    ]);
     const remove = vi.fn(async () => true);
     vi.stubGlobal("caches", { keys: async () => ["ipa-quiz-pages-old", "native-signed-study"], delete: remove });
     start(true);
     for (let i = 0; i < 10; i++) await tick();
     expect(sw.register).not.toHaveBeenCalled();
     expect(unregister).toHaveBeenCalledOnce();
-    expect(remove).toHaveBeenCalledExactlyOnceWith("ipa-quiz-pages-old");
+    expect(other).not.toHaveBeenCalled();
+    expect(remove).not.toHaveBeenCalled();
+    expect(reload).toHaveBeenCalledOnce();
+  });
+
+  it("cleans only known PWA cache families on an uncontrolled native opening", async () => {
+    sw.controller = null;
+    const remove = vi.fn(async (name: string) => name.length > 0);
+    vi.stubGlobal("caches", { keys: async () => ["ipa-quiz-pages-old", "ipa-quiz-content-old", "ipa-quiz-static-old", "ipa-quiz-native-study", "another-app"], delete: remove });
+    start(true);
+    for (let i = 0; i < 10; i++) await tick();
+    expect(remove.mock.calls.map(([name]) => name)).toEqual(["ipa-quiz-pages-old", "ipa-quiz-content-old", "ipa-quiz-static-old"]);
+    expect(reload).not.toHaveBeenCalled();
+  });
+
+  it.each(["pointerdown", "keydown", "click", "submit"])("protects transactions started with %s until navigation", async event => {
+    start();
+    await tick();
+    document.dispatchEvent(new Event(event, { bubbles: true }));
+    version = "build-2";
+    sw.dispatchEvent(new Event("controllerchange"));
+    vi.advanceTimersByTime(3000);
+    expect(reload).not.toHaveBeenCalled();
+    window.history.replaceState({}, "", "/about");
+    vi.advanceTimersByTime(1000);
+    expect(reload).toHaveBeenCalledOnce();
+  });
+
+  it.each(['<input autofocus>', '<div role="dialog"></div>', '<div aria-busy="true"></div>'])("keeps a blocked update pending even after the busy UI disappears: %s", async html => {
+    start();
+    await tick();
+    document.body.innerHTML = html;
+    document.querySelector("input")?.focus();
+    version = "build-2";
+    sw.dispatchEvent(new Event("controllerchange"));
+    document.body.innerHTML = "";
+    vi.advanceTimersByTime(3000);
+    expect(reload).not.toHaveBeenCalled();
+    window.history.replaceState({}, "", "/about");
+    vi.advanceTimersByTime(1000);
     expect(reload).toHaveBeenCalledOnce();
   });
 

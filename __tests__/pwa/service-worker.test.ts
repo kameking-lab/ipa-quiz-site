@@ -57,16 +57,52 @@ describe("build-versioned service worker", () => {
       await (await w.caches.open(`ipa-quiz-${cache}-legacy`)).put(path, new Response("visited"));
     }
     await w.caches.open("another-app");
+    await w.caches.open("ipa-quiz-native-study");
     await w.lifecycle("install");
     expect(w.self.skipWaiting).toHaveBeenCalledOnce();
     await w.lifecycle("activate");
     expect(w.self.clients.claim).toHaveBeenCalledOnce();
-    expect(await w.caches.keys()).toEqual(expect.arrayContaining(["another-app", "ipa-quiz-content-build-2"]));
+    expect(await w.caches.keys()).toEqual(expect.arrayContaining(["another-app", "ipa-quiz-native-study", "ipa-quiz-content-build-2"]));
     expect((await w.caches.keys()).some(name => name.endsWith("legacy"))).toBe(false);
     w.fetch.mockRejectedValue(new Error("offline"));
     expect(await (await w.request("/q/ip/visited"))?.text()).toBe("visited");
     expect(await (await w.request("/_next/static/old.js", "cors"))?.text()).toBe("visited");
     expect(await (await w.request("/not-visited"))?.text()).toBe("new HTML"); // /offline
+  });
+
+  it("does not trim previously visited pages or chunks during a version change", async () => {
+    const w = worker();
+    for (const [group, count, path] of [["pages", 51, "/ip/"], ["content", 101, "/q/ip/"], ["static", 201, "/_next/static/"]] as const) {
+      const old = await w.caches.open(`ipa-quiz-${group}-old`);
+      for (let i = 0; i < count; i++) await old.put(`${path}${i}`, new Response(`saved-${i}`));
+    }
+    await w.lifecycle("install");
+    await w.lifecycle("activate");
+    w.fetch.mockRejectedValue(new Error("offline"));
+    for (const path of ["/ip/0", "/q/ip/0", "/_next/static/0"]) {
+      expect(await (await w.request(path))?.text()).toBe("saved-0");
+    }
+  });
+
+  it.each(["static", "pages", "content"])("keeps old caches and serves their pages/chunks if %s migration runs out of quota", async group => {
+    const w = worker();
+    for (const [group, path] of [["pages", "/ip"], ["content", "/q/ip/one"], ["static", "/_next/static/one.js"]]) {
+      await (await w.caches.open(`ipa-quiz-${group}-old`)).put(path, new Response("saved"));
+    }
+    await w.lifecycle("install");
+    const open = w.caches.open;
+    vi.spyOn(w.caches, "open").mockImplementation(async name => {
+      const cache = await open(name);
+      if (name === `ipa-quiz-${group}-build-2`) cache.put = async () => { throw new Error("quota"); };
+      return cache;
+    });
+    await w.lifecycle("activate");
+    expect(w.caches.delete).not.toHaveBeenCalled();
+    expect(w.self.clients.claim).toHaveBeenCalledOnce();
+    w.fetch.mockRejectedValue(new Error("offline"));
+    for (const path of ["/ip", "/q/ip/one", "/_next/static/one.js"]) {
+      expect(await (await w.request(path))?.text()).toBe("saved");
+    }
   });
 
   it.each(["/", "/q/ip/one", "/essays/ap/one", "/blog/article", "/q/ip/one?_rsc=v2"])("revalidates %s online and uses its saved response offline", async path => {
@@ -87,6 +123,8 @@ describe("build-versioned service worker", () => {
     w.fetch.mockRejectedValue(new Error("offline"));
     expect((await w.request("/q/ip/one?_rsc=new", "cors"))?.type).toBe("error");
     expect(await w.request("/api/auth/session")).toBeUndefined();
+    expect(await w.request("/api/billing/status")).toBeUndefined();
+    expect(await w.request("/api/mobile/session")).toBeUndefined();
     expect(await w.request("/sw.js")).toBeUndefined();
     expect(await w.request("/manifest.webmanifest")).toBeUndefined();
   });

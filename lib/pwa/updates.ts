@@ -17,16 +17,22 @@ export function startPwaUpdates(options: { buildId: string; native: boolean; rel
   let edited = false;
   let registration: ServiceWorkerRegistration | undefined;
   let updateInFlight = false;
-  let editPath = window.location.pathname;
+  const route = () => window.location.pathname + window.location.search;
+  let editPath = route();
   const channels = new Set<MessagePort>();
 
   const maybeReload = () => {
-    if (editPath !== window.location.pathname) {
+    if (editPath !== route()) {
       edited = false;
-      editPath = window.location.pathname;
+      editPath = route();
     }
     if (cancelled || reloading || !pending || !navigator.onLine || document.visibilityState !== "visible") return;
-    if (!canReloadForUpdate(window.location.pathname, edited, document)) return;
+    if (!canReloadForUpdate(window.location.pathname, edited, document)) {
+      // Once a form, explanation or transaction has blocked an update, keep
+      // waiting until navigation/reopening, even after blur or dialog close.
+      edited = true;
+      return;
+    }
     // Also guard across document reloads if a CDN/offline document is still old.
     const reloadKey = "ipa-quiz-sw-reloaded";
     try {
@@ -63,7 +69,7 @@ export function startPwaUpdates(options: { buildId: string; native: boolean; rel
     finally { updateInFlight = false; }
   };
   const onVisibility = () => { if (document.visibilityState === "visible") void update(); };
-  const onEdit = () => { edited = true; editPath = window.location.pathname; };
+  const onEdit = () => { edited = true; editPath = route(); };
   const onControllerChange = () => {
     if (cancelled) return;
     if (options.native) { pending = true; maybeReload(); }
@@ -73,6 +79,10 @@ export function startPwaUpdates(options: { buildId: string; native: boolean; rel
   document.addEventListener("visibilitychange", onVisibility);
   document.addEventListener("input", onEdit, true);
   document.addEventListener("change", onEdit, true);
+  // Purchase/login/answer buttons need protection before their async work or
+  // native sheet starts, including keyboard and programmatic form submission.
+  const interactions = ["pointerdown", "keydown", "click", "submit"];
+  interactions.forEach(event => document.addEventListener(event, onEdit, true));
   window.addEventListener("online", update);
   window.addEventListener("pageshow", update);
   // A protected quiz may return home through a client-side navigation.
@@ -85,10 +95,16 @@ export function startPwaUpdates(options: { buildId: string; native: boolean; rel
       try {
         const controlled = !!sw.controller;
         const registrations = await sw.getRegistrations();
-        await Promise.all(registrations.map(r => r.unregister()));
-        if (typeof caches !== "undefined") {
+        const script = new URL("/sw.js", window.location.origin).href;
+        await Promise.all(registrations.filter(r => r.scope === `${window.location.origin}/`
+          && [r.active, r.waiting, r.installing].some(worker => worker?.scriptURL === script))
+          .map(r => r.unregister()));
+        // The old controller still serves this document after unregister().
+        // Retain its offline pages/chunks until a later uncontrolled opening.
+        if (!controlled && typeof caches !== "undefined") {
           const names = await caches.keys();
-          await Promise.all(names.filter(n => n.startsWith("ipa-quiz-")).map(n => caches.delete(n)));
+          await Promise.all(names.filter(n => /^ipa-quiz-(static|pages|content)-.+$/.test(n))
+            .map(n => caches.delete(n)));
         }
         if (controlled) { pending = true; maybeReload(); }
       } catch { /* WebKit may disable service worker/storage support. */ }
@@ -112,6 +128,7 @@ export function startPwaUpdates(options: { buildId: string; native: boolean; rel
     document.removeEventListener("visibilitychange", onVisibility);
     document.removeEventListener("input", onEdit, true);
     document.removeEventListener("change", onEdit, true);
+    interactions.forEach(event => document.removeEventListener(event, onEdit, true));
     window.removeEventListener("online", update);
     window.removeEventListener("pageshow", update);
     window.clearInterval(timer);
