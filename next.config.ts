@@ -1,9 +1,12 @@
 import type { NextConfig } from "next";
 import { resolve } from "node:path";
+import { randomUUID } from "node:crypto";
 import { BLOG_ARTICLE_ALIASES } from "./lib/blog/article-aliases";
 import { EXAM_CODE_ALIASES } from "./lib/questions/exam-aliases";
 
 const isDev = process.env.NODE_ENV === "development";
+// Inlined into both the client and the prerendered worker on every build.
+const pwaBuildId = randomUUID();
 const useQuestionCorpus = process.env.NODE_ENV === "production";
 const questionAliases: Record<string, string> = useQuestionCorpus ? {
   "@/data/questions": "./lib/questions/runtime-registry.ts",
@@ -73,6 +76,7 @@ const longCacheImmutable = {
 };
 
 const nextConfig: NextConfig = {
+  env: { NEXT_PUBLIC_PWA_BUILD_ID: pwaBuildId },
   webpack(config, { webpack }) {
     for (const [source, target] of Object.entries(questionAliases)) {
       config.resolve.alias[`${source}$`] = resolve(process.cwd(), target);
@@ -124,6 +128,7 @@ const nextConfig: NextConfig = {
     ],
   },
   outputFileTracingIncludes: {
+    "/sw.js": ["./lib/pwa/sw.js"],
     "/*": ["./generated/question-corpus/**/*"],
     "/e-learning/exams": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json", "./data/exam-library/pe-first/*.json"],
     "/api/home/resume": ["./data/exam-library/pe-first/*.json"],
@@ -266,7 +271,7 @@ const nextConfig: NextConfig = {
       {
         source: "/sw.js",
         headers: [
-          { key: "Cache-Control", value: "public, max-age=0, must-revalidate" },
+          { key: "Cache-Control", value: "no-cache, max-age=0, must-revalidate" },
           { key: "Service-Worker-Allowed", value: "/" },
         ],
       },
