@@ -97,6 +97,15 @@ describe("build-versioned service worker", () => {
     expect(await (await w.request("/"))?.text()).toBe("new HTML");
   });
 
+  it("bounds RSC variants of the home page while retaining the offline shell", async () => {
+    const w = worker();
+    await w.lifecycle("install");
+    for (let i = 0; i < 55; i++) await w.request(`/?_rsc=${i}`, "cors");
+    const pages = await w.caches.open("ipa-quiz-pages-build-2");
+    expect(await pages.keys()).toHaveLength(50);
+    expect(await pages.match("/offline")).toBeDefined();
+  });
+
   it("answers with the build version, stable across worker restarts", () => {
     const reply = vi.fn();
     worker().listeners.message({ data: { type: "GET_VERSION" }, ports: [{ postMessage: reply }] });
