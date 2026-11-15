@@ -39,7 +39,7 @@ test("quota UI fixture: ten uninterrupted answers, then free exits before the op
   await expect(page.getByRole("heading", { name: "今日の無料10問はここまで" })).toBeVisible();
   expect(granted.size).toBe(10);
   expect(await page.evaluate(() => JSON.parse(localStorage.getItem("ipa-quiz:history:v1")!).entries.length)).toBe(10);
-  const plan = page.getByRole("link", { name: "月額980円で続ける", exact: true });
+  const plan = page.getByRole("link", { name: "7日間無料で試す", exact: true });
   await expect(plan).toHaveAttribute("href", /returnTo=/);
   await expect(page.getByText("明日また10問", { exact: true })).toBeVisible();
   await expect(page.getByRole("dialog")).toHaveCount(0);

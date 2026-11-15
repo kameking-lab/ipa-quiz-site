@@ -5,12 +5,13 @@ import { MONTHLY_PUBLIC_OFFER, monthlySellerDisclosure } from "@/lib/billing/sub
 import { SellerDisclosureLine } from "@/components/billing/SellerDisclosureLine";
 
 export default function BillingTermsPage() {
-  const { priceYen: price, freeDaily: free } = MONTHLY_PUBLIC_OFFER;
+  const { priceYen: price, freeDaily: free, trialDays } = MONTHLY_PUBLIC_OFFER;
   const seller = monthlySellerDisclosure();
   return <>
     <h1 className="text-3xl font-bold">月額プランの条件・特定商取引法に基づく表示</h1>
     <dl className="space-y-3 rounded-xl border p-5">
       <div><dt>販売価格</dt><dd>月額{price.toLocaleString("ja-JP")}円（税込）。毎月自動更新。</dd></div>
+      {trialDays > 0 && <div><dt>無料期間</dt><dd>ウェブで初めて契約する方は、最初の{trialDays}日間が無料です（1アカウント1回）。申込時にカードの登録が必要です。無料期間が終わる日に月額{price.toLocaleString("ja-JP")}円を請求し、以後毎月自動更新します。無料期間中に契約管理から解約すれば請求はありません（解約後も無料期間の終わりまで利用できます）。無料期間は1枚のカードにつき1回で、以前に無料期間を使ったカードで申し込んだ場合は無料期間なしで直ちに請求します。無料期間の終了日は決済画面と契約管理で確認できます。iPhoneアプリ内の購入（App Store）は対象外です。</dd></div>}
       <div><dt>内容</dt><dd>収録済みの演習が回数制限なく使えます。無料はログインなしでも1日{free}問（ウェブ・アプリ共通、日本時間0時に更新、同じ日に同じ問題を開き直しても追加消費しません）。{aiAccessClaimsEnabled() ? AI_ACCESS_DESCRIPTION : "AI応答の利用条件は提供準備中です。"} 対応端末・ブラウザーの読み上げは無料です。</dd></div>
       <div><dt>支払・提供期間</dt><dd>初回と毎月の更新日に決済画面で示す方法で請求します。支払確認後、確認済みの請求対象期間をご利用いただけます。次回請求と期限は契約管理で確認できます。月額の1か月は一律30日ではありません。</dd></div>
       <div><dt>解約</dt><dd>契約管理から次回更新を停止できます。期間末解約では支払済みの期間末まで利用できます。解約予約の撤回も契約管理で行えます。購入画面から戻るだけでは既存契約は解約されません。</dd></div>

@@ -26,7 +26,7 @@ describe("individual question pages count toward the shared daily free 10", () =
     render(<QuestionPracticeGate id="ap-2023h-am-q1" enabled><p>問題文テキスト</p></QuestionPracticeGate>);
     expect(await screen.findByRole("heading", { name: "今日の無料10問はここまで" })).toBeTruthy();
     expect(screen.getByText("問題文テキスト").closest(".paywalled-question")).toHaveAttribute("hidden");
-    expect(screen.getByRole("link", { name: "月額980円で続ける" })).toHaveAttribute("href", "/billing/start?returnTo=" + encodeURIComponent("/q/ap/2023-spring/am/1"));
+    expect(screen.getByRole("link", { name: /7日間無料で試す/ })).toHaveAttribute("href", "/billing/start?returnTo=" + encodeURIComponent("/q/ap/2023-spring/am/1"));
     expect(fetcher).toHaveBeenCalledWith("/api/billing/question", expect.objectContaining({ method: "POST", body: JSON.stringify({ id: "ap-2023h-am-q1", shuffle: false }) }));
     await waitFor(() => expect(beacon).toHaveBeenCalledTimes(1));
     expect(await events()[0].text()).toBe(JSON.stringify({ event: "free_limit_reached" }));

@@ -19,7 +19,7 @@ export default async function MonthlyPage({ returnTo }: { returnTo?: string } = 
       canManage = state.canManage; hasContract = !!state.subscription && !["canceled", "incomplete_expired"].includes(state.subscription.status);
     }
   } catch { /* Signed out or storage unavailable: the plan button signs in first. */ }
-  const { priceYen: price, freeDaily: free } = MONTHLY_PUBLIC_OFFER;
+  const { priceYen: price, freeDaily: free, trialDays } = MONTHLY_PUBLIC_OFFER;
   return <>
     <BillingPageBeacon />
     <section aria-labelledby="monthly-price" className="mx-auto max-w-md space-y-4 text-center">
@@ -27,8 +27,8 @@ export default async function MonthlyPage({ returnTo }: { returnTo?: string } = 
       <p>無料は1日{free}問。月額プランは回数無制限。</p>
       {hasContract ? <div className="space-y-3"><p role="status">契約済みです（支払確認中を含む）。追加購入は不要です。</p>{canManage && <ManageSubscriptionButton />}</div>
         : !config?.enabled ? <p role="status">現在、新規申込を受け付けていません。既存契約は自動解約されません。</p>
-        : <a href={planStartHref(returnTo ?? "")} aria-describedby="monthly-terms" className="flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-4 py-3 text-lg font-bold text-primary-foreground hover:bg-primary/90">月額{price.toLocaleString("ja-JP")}円で続ける</a>}
-      <p id="monthly-terms" className="text-xs text-muted-foreground">月額{price.toLocaleString("ja-JP")}円（税込）・毎月自動更新・いつでも解約可（期間末まで利用可）・日割返金なし <Link className="underline underline-offset-2" href="/billing/terms">条件・特商法表示</Link></p>
+        : <a href={planStartHref(returnTo ?? "")} aria-describedby="monthly-terms" className="flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-4 py-3 text-lg font-bold text-primary-foreground hover:bg-primary/90">{trialDays > 0 ? <><span className="[.native-app_&]:hidden">{trialDays}日間無料で試す</span><span className="hidden [.native-app_&]:inline">月額{price.toLocaleString("ja-JP")}円で続ける</span></> : `月額${price.toLocaleString("ja-JP")}円で続ける`}</a>}
+      <p id="monthly-terms" className="text-xs text-muted-foreground">{trialDays > 0 && <span className="[.native-app_&]:hidden">初回{trialDays}日間無料（期間中に解約すれば請求なし）・その後 </span>}月額{price.toLocaleString("ja-JP")}円（税込）・毎月自動更新・いつでも解約可（期間末まで利用可）・日割返金なし <Link className="underline underline-offset-2" href="/billing/terms">条件・特商法表示</Link></p>
       <p className="text-xs text-muted-foreground">購入済みの方は、購入したときと同じ方法（Google / Apple）でログインしてください。</p>
       {!hasContract && canManage && <ManageSubscriptionButton />}
       <SellerDisclosureLine className="text-xs text-muted-foreground" />

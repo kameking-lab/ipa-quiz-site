@@ -4,8 +4,8 @@ import { MonthlyService, monthlyTerms } from "@/lib/billing/subscription/service
 import { MonthlyMemoryStore, monthlyFixtureConfig } from "./monthly-fixture";
 
 /** Public API-shaped fixture; no credential, network, Stripe account or database is used. */
-export async function monthlyStripeFixture() {
-  const config = structuredClone(monthlyFixtureConfig), store = new MonthlyMemoryStore();
+export async function monthlyStripeFixture(options: { trialDays?: number } = {}) {
+  const config = { ...structuredClone(monthlyFixtureConfig), ...(options.trialDays ? { trialDays: options.trialDays } : {}) }, store = new MonthlyMemoryStore();
   const price = { id: config.priceId, active: true, livemode: false, unit_amount: 980, currency: "jpy", recurring: { interval: "month", interval_count: 1, usage_type: "licensed" }, billing_scheme: "per_unit", tax_behavior: "unspecified" };
   const start = Date.parse("2026-01-31T00:00:00Z") / 1000, end = Date.parse("2026-02-28T00:00:00Z") / 1000;
   const meta = { signup_id: "00000000-0000-4000-8000-000000000001", source_instance: config.sourceInstance, terms_hash: monthlyTerms(config) };
@@ -32,6 +32,7 @@ export async function monthlyStripeFixture() {
     subscription_cancel: { enabled: true, mode: "at_period_end", proration_behavior: "none", retention: null },
   } };
   let visible = false, failPath = "";
+  const card = { fingerprint: "fp_fixture_card" }, trialEnds: URLSearchParams[] = [];
   let allocationsVisible: boolean | undefined;
   const list = (data: unknown[]) => ({ data, has_more: false });
   const fetcher = vi.fn(async (input: string | URL | Request, options?: RequestInit) => {
@@ -47,9 +48,13 @@ export async function monthlyStripeFixture() {
     if (path === "billing_portal/configurations/bpc_fixture") return Response.json(portalConfiguration);
     if (path === "subscriptions") return Response.json(list(visible ? [sub] : []));
     if (path === "subscriptions/sub_monthly") {
-      if (options?.method === "POST") sub.cancel_at_period_end = true;
+      if (options?.method === "POST") {
+        const body = options.body as URLSearchParams;
+        if (body.get("trial_end") === "now") trialEnds.push(body); else sub.cancel_at_period_end = true;
+      }
       return Response.json(sub);
     }
+    if (path === "payment_methods/pm_trial") return Response.json({ id: "pm_trial", livemode: false, card: { fingerprint: card.fingerprint } });
     if (path === `prices/${price.id}`) return Response.json(price);
     if (path === `checkout/sessions/${session.id}`) return Response.json(session);
     if (path === "invoices/in_monthly") return Response.json(invoice);
@@ -67,7 +72,7 @@ export async function monthlyStripeFixture() {
   const result = await service.checkout("alice", monthlyTerms(config), provider); visible = true;
   const event = (type = "invoice.paid", objectId = invoice.id, eventId = "evt_monthly") => ({ id: eventId, type, livemode: false,
     data: { object: { ...(type.startsWith("refund.") ? refundDetails.get(objectId) ?? refunds.find(r => r.id === objectId) : {}), id: objectId, payment_intent: payment.id } } });
-  return { config, store, provider, service, result, fetcher, price, sub, session, invoice, line, allocation, payment, refunds, disputes, portalConfiguration, event,
+  return { card, trialEnds, config, store, provider, service, result, fetcher, price, sub, session, invoice, line, allocation, payment, refunds, disputes, portalConfiguration, event,
     refundDetails, allocationsVisible: (value: boolean) => allocationsVisible = value,
     fail: (path: string) => failPath = path, visible: (value: boolean) => visible = value };
 }

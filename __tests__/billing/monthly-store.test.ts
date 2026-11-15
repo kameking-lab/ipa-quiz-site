@@ -13,6 +13,17 @@ function dbFixture(conflict = false) {
   return { query, transaction, db: { query, transaction } as unknown as SqlDatabase };
 }
 describe("Postgres monthly adapter SQL boundary (no database)", () => {
+  it("looks up a trial card on the open transaction's connection, parameterized", async () => {
+    const f = dbFixture(), store = new PostgresMonthlyStore(f.db, "fixture");
+    const inner = vi.fn(async (...args: [string, unknown[]]) => args.length ? [{ user_id: "bob" }] : []);
+    f.transaction.mockImplementationOnce(async (fn: (sql: { query: typeof f.query }) => Promise<unknown>) =>
+      fn({ query: (async (sql: string, values: unknown[]) => sql.includes("trialCards") ? inner(sql, values) : f.query(sql, values)) as typeof f.query }));
+    const owner = await store.transaction("alice", "stripe-test", "fixture", async () => store.trialCardOwner("hash'--", "stripe-test", "alice"), true);
+    expect(owner).toBe("bob");
+    expect(inner).toHaveBeenCalledTimes(1);
+    const [sql, values] = inner.mock.calls[0] as unknown as [string, unknown[]];
+    expect(sql).not.toContain("hash'--"); expect(values).toEqual(["fixture", "stripe-test", "alice", "hash'--"]);
+  });
   it("read-only status transaction does not save account or provider bindings", async () => {
     const f = dbFixture(), store = new PostgresMonthlyStore(f.db, "fixture");
     await store.transaction("alice", "stripe-test", "fixture", async a => a.userId, true);

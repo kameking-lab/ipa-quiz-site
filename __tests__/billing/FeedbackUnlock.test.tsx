@@ -13,14 +13,14 @@ it("puts the plan first and the feedback bonus second, accepts multiple choices,
   vi.stubGlobal("fetch", fetcher);
   render(<PracticeDailyLimit reset={null} resumeHref="/quiz?mode=year&question=q1" backHref="/" onUnlocked={resume} />);
   const button = await screen.findByRole("button", { name: "意見を送ってあと10問" });
-  const purchase = screen.getByRole("link", { name: "月額980円で続ける" });
+  const purchase = screen.getByRole("link", { name: /7日間無料で試す/ });
   expect(purchase).toHaveAttribute("href", "/billing/start?returnTo=" + encodeURIComponent("/quiz?mode=year&question=q1"));
   expect(purchase.compareDocumentPosition(button) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
   expect(screen.getByRole("heading", { name: "今日の無料10問はここまで" })).toBeTruthy();
   expect(screen.getByText("明日また10問")).toBeTruthy();
   expect(purchase.classList.contains("bg-primary")).toBe(true);
   // Only the plan button and the one-line terms link; nothing else to tap.
-  expect(screen.getAllByRole("link").map(link => link.textContent)).toEqual(["月額980円で続ける", "条件・返金"]);
+  expect(screen.getAllByRole("link").map(link => link.textContent)).toEqual([expect.stringContaining("7日間無料で試す"), "条件・返金"]);
   fireEvent.click(button);
   fireEvent.click(screen.getByLabelText("解説をもっと詳しく"));
   fireEvent.click(screen.getByLabelText("スマホでの使いやすさ"));
@@ -145,6 +145,6 @@ it("offers only the plan once the feedback bonus is used", async () => {
   await waitFor(() => expect(fetcher).toHaveBeenCalled());
   await act(async () => {});
   expect(screen.queryByText(/受け取り済み/)).toBeNull();
-  expect(screen.getByRole("link", { name: "月額980円で続ける" }).getAttribute("href")).toMatch(/^\/billing/);
+  expect(screen.getByRole("link", { name: /7日間無料で試す/ }).getAttribute("href")).toMatch(/^\/billing/);
   expect(screen.queryByRole("button", { name: "意見を送ってあと10問" })).toBeNull();
 });
