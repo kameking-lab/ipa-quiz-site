@@ -1,6 +1,8 @@
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { monthlyStripeFixture } from "./monthly-stripe-fixture";
+import { createHash } from "node:crypto";
 import { monthlyTerms } from "@/lib/billing/subscription/service";
+import { emptyAccount } from "@/lib/billing/subscription/domain";
 
 beforeEach(() => vi.stubGlobal("fetch", () => { throw new Error("External fetch forbidden"); }));
 afterEach(() => vi.unstubAllGlobals());
@@ -51,6 +53,45 @@ describe("monthly Checkout seller name and first-contract free trial", () => {
     expect(account.invoices).toEqual({});
     expect(account.payments).toEqual({});
     expect(await f.service.grant("alice", "any-question")).toEqual({ kind: "pass", remaining: null });
+  });
+
+  it("remembers the trial's card only as an irreversible hash", async () => {
+    const f = await monthlyStripeFixture({ trialDays: 7 });
+    startTrial(f); Object.assign(f.sub, { default_payment_method: "pm_trial" });
+    await f.service.receive(f.event(), "invoice", f.provider);
+    const cards = f.store.accounts.get("stripe-test:alice")!.trialCards!;
+    expect(Object.values(cards)).toEqual(["sub_monthly"]);
+    expect(JSON.stringify(cards)).not.toContain("fp_fixture_card");
+    expect((await f.service.status("alice")).entitled).toBe(true);
+    expect(f.trialEnds).toHaveLength(0);
+  });
+
+  it("gives no second trial to a card that already had one on another account and charges now", async () => {
+    const f = await monthlyStripeFixture({ trialDays: 7 });
+    const hash = createHash("sha256").update("kakomon-trial-card:v1:fp_fixture_card").digest("hex");
+    f.store.accounts.set("stripe-test:bob", { ...emptyAccount("bob", "stripe-test", f.config.sourceInstance), trialCards: { [hash]: "sub_old" } });
+    startTrial(f); Object.assign(f.sub, { default_payment_method: "pm_trial" });
+    await f.service.receive(f.event(), "invoice", f.provider);
+    const account = f.store.accounts.get("stripe-test:alice")!;
+    expect(account.contracts.sub_monthly.trialRevoked).toBe(true);
+    expect(account.trialCards ?? {}).toEqual({});
+    expect(account.trialEndJobs ?? {}).toEqual({});
+    expect(f.trialEnds).toHaveLength(1);
+    expect(f.trialEnds[0].get("proration_behavior")).toBe("none");
+    expect((await f.service.status("alice")).entitled).toBe(false);
+    // A later observation of the same trial keeps it revoked and does not end it twice.
+    await f.service.receive(f.event("customer.subscription.updated", f.sub.id, "evt_updated"), "updated", f.provider);
+    expect(f.store.accounts.get("stripe-test:alice")!.contracts.sub_monthly.trialRevoked).toBe(true);
+    expect(f.trialEnds).toHaveLength(1);
+  });
+
+  it("lets a card used for a trial on the same account keep that trial", async () => {
+    const f = await monthlyStripeFixture({ trialDays: 7 });
+    startTrial(f); Object.assign(f.sub, { default_payment_method: "pm_trial" });
+    await f.service.receive(f.event(), "first", f.provider);
+    await f.service.receive(f.event("customer.subscription.updated", f.sub.id, "evt_updated"), "again", f.provider);
+    expect((await f.service.status("alice")).entitled).toBe(true);
+    expect(f.trialEnds).toHaveLength(0);
   });
 
   it("rejects a trial longer than the one offered", async () => {

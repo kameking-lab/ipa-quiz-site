@@ -5,6 +5,9 @@ import { MonthlyService, monthlyTerms } from "@/lib/billing/subscription/service
 export class MonthlyMemoryStore implements MonthlyStore {
   accounts = new Map<string, Account>(); fail = false; private queue = Promise.resolve();
   async owner(customerId: string, mode: Realm) { return [...this.accounts.values()].find(a => a.mode === mode && a.customer?.id === customerId)?.userId ?? null; }
+  async trialCardOwner(cardHash: string, mode: Realm, exceptUserId: string) {
+    return [...this.accounts.values()].find(a => a.mode === mode && a.userId !== exceptUserId && a.trialCards?.[cardHash])?.userId ?? null;
+  }
   async transaction<T>(userId: string, mode: Realm, source: string, fn: (a: Account) => Promise<T>, readOnly = false) {
     const before = this.queue; let done!: () => void; this.queue = new Promise(resolve => done = resolve); await before;
     try {
@@ -27,7 +30,7 @@ export async function monthlyFixture() {
   const provider: MonthlyProvider = {
     customer: vi.fn(async () => "cus_alice"), checkout: vi.fn(async () => ({ id: "cs_test_monthly", url: "https://checkout.stripe.com/c/pay/monthly" })),
     portal: vi.fn(async () => "https://billing.stripe.com/p/session/fixture"), resolve: vi.fn(async () => ({ customerId: "cus_alice", subscriptionIds: ["sub_monthly"], invoiceIds: [] })),
-    observe: vi.fn(async () => structuredClone(observation)), stopRenewal: vi.fn(async () => undefined),
+    observe: vi.fn(async () => structuredClone(observation)), stopRenewal: vi.fn(async () => undefined), endTrial: vi.fn(async () => undefined),
     expireCheckout: vi.fn(async () => undefined),
   };
   const checkout = await service.checkout("alice", monthlyTerms(config), provider);

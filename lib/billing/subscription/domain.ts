@@ -24,6 +24,8 @@ export interface Contract {
   renewalBlocked: boolean;
   /** Missing on legacy flags: requires explicit reconciliation before provider writes. */
   renewalBlockReason?: "dispute";
+  /** The card already had a free trial on another account: no trial access, the trial is ended at Stripe. */
+  trialRevoked?: true;
 }
 export interface Refund { id: string; amount: number; state: RefundState }
 export interface Payment {
@@ -43,10 +45,16 @@ export interface Account {
   invoices: Record<string, Invoice>; payments: Record<string, Payment>;
   renewalStopJobs: Record<string, { token: string; reason?: "dispute" }>;
   events: Record<string, string>; grants: Record<string, string[]>;
+  /** Hashed card fingerprints that started a free trial on this account -> subscription. Missing on older accounts. */
+  trialCards?: Record<string, string>;
+  /** Trials to end at Stripe because the card was already used for a trial (subscription -> event token). */
+  trialEndJobs?: Record<string, string>;
 }
 export interface MonthlyStore {
   owner(customerId: string, mode: Realm): Promise<string | null>;
   transaction<T>(userId: string, mode: Realm, sourceInstance: string, fn: (account: Account) => Promise<T>, readOnly?: boolean): Promise<T>;
+  /** Another account (if any) that already started a free trial with this hashed card. */
+  trialCardOwner(cardHash: string, mode: Realm, exceptUserId: string): Promise<string | null>;
 }
 export interface Target { customerId: string; subscriptionIds: string[]; invoiceIds: string[]; sessionId?: string;
   /** A verified refund/PI may be stored before its paid invoice allocation is visible. */
@@ -54,7 +62,9 @@ export interface Target { customerId: string; subscriptionIds: string[]; invoice
   risk?: { kind: "refund" | "dispute"; id: string; paymentId: string; signed?: { amount?: number; state: string } };
 }
 export interface Observation {
-  contracts: (Omit<Contract, "renewalBlocked" | "renewalBlockReason"> & { sourceInstance: string; terms: string })[];
+  contracts: (Omit<Contract, "renewalBlocked" | "renewalBlockReason" | "trialRevoked"> & { sourceInstance: string; terms: string;
+    /** Hashed fingerprint of the trial's card; null when Stripe shows no card. Only on trialing contracts. */
+    trialCard?: string | null })[];
   invoices: Invoice[]; payments: Payment[];
   session?: { id: string; signupId: string; customerId: string; terms: string; state: "open" | "complete" | "expired"; subscriptionId: string | null };
 }
@@ -67,6 +77,8 @@ export interface MonthlyProvider {
   resolve(event: unknown): Promise<Target | null>;
   observe(target: Target): Promise<Observation>;
   stopRenewal(subscriptionId: string, eventId: string): Promise<void>;
+  /** End a trial now so Stripe charges the first month immediately. */
+  endTrial(subscriptionId: string, eventId: string): Promise<void>;
 }
 export const terminal = (status: ContractStatus) => status === "canceled" || status === "incomplete_expired";
 export const emptyAccount = (userId: string, mode: Realm, sourceInstance: string): Account => ({

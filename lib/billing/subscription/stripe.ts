@@ -19,7 +19,7 @@ const metadata = z.object({ signup_id: z.string().uuid(), source_instance: z.str
 const priceSchema = z.object({ id, livemode: z.boolean(), currency: z.literal("jpy"), unit_amount: money,
   recurring: z.object({ interval: z.literal("month"), interval_count: z.literal(1), usage_type: z.literal("licensed") }),
   billing_scheme: z.literal("per_unit"), tax_behavior: z.enum(["inclusive", "unspecified"]) });
-const subscriptionSchema = z.object({ id, livemode: z.boolean(), customer: ref, metadata,
+const subscriptionSchema = z.object({ id, livemode: z.boolean(), customer: ref, metadata, default_payment_method: ref.nullable().optional(),
   automatic_tax: automaticTaxOff, default_tax_rates: nullableNoTaxEntries.optional(),
   status: z.enum(["incomplete", "incomplete_expired", "trialing", "active", "past_due", "unpaid", "canceled", "paused"]),
   cancel_at_period_end: z.boolean(), cancel_at: seconds.nullable().optional(), latest_invoice: ref.nullable(), trial_end: seconds.nullable().optional(),
@@ -92,7 +92,7 @@ export class StripeMonthlyProvider implements MonthlyProvider {
       locale: "ja", "branding_settings[display_name]": "過去問AI",
       // One line of required terms next to Stripe's pay button (price, renewal, cancellation, refund, terms link).
       "custom_text[submit][message]": trialDays
-        ? `初回${trialDays}日間無料。無料期間が終わる日に月額${signup.amount}円（税込）を請求し、以後毎月自動更新。無料期間中に契約管理から解約すれば請求はありません。${this.c.seller.refund} [利用条件](${this.c.origin}/billing/terms)`
+        ? `初回${trialDays}日間無料。無料期間が終わる日に月額${signup.amount}円（税込）を請求し、以後毎月自動更新。無料期間中に契約管理から解約すれば請求はありません。以前に無料期間を使ったカードでは無料期間はなく、すぐに請求します。${this.c.seller.refund} [利用条件](${this.c.origin}/billing/terms)`
         : `月額${signup.amount}円（税込）・毎月自動更新・いつでも解約可（期間末まで利用可）。${this.c.seller.refund} [利用条件](${this.c.origin}/billing/terms)` };
     if (trialDays) body["subscription_data[trial_period_days]"] = String(trialDays);
     for (const prefix of ["metadata", "subscription_data[metadata]"]) {
@@ -269,6 +269,7 @@ export class StripeMonthlyProvider implements MonthlyProvider {
         status: s.status as ContractStatus, periodStart: item.current_period_start, periodEnd: item.current_period_end,
         cancelAtPeriodEnd: s.cancel_at_period_end || s.cancel_at === item.current_period_end,
         sourceInstance: s.metadata.source_instance, terms: s.metadata.terms_hash,
+        ...(s.status === "trialing" ? { trialCard: await this.cardHash(s.default_payment_method ?? null) } : {}),
         ...(s.default_tax_rates === undefined ? { subscriptionTaxState: "unknown" as const } : {}) });
       if (s.latest_invoice) invoiceIds.add(s.latest_invoice);
     }
@@ -308,6 +309,19 @@ export class StripeMonthlyProvider implements MonthlyProvider {
       observedPayments.set(target.risk.paymentId, await this.payment(target.risk.paymentId, target.customerId, target.risk));
     }
     result.payments = [...observedPayments.values()]; return result;
+  }
+  /** Irreversible per-card key for the one-trial-per-card rule; the raw fingerprint is never stored. */
+  private async cardHash(paymentMethodId: string | null) {
+    if (!paymentMethodId) return null;
+    const pm = z.object({ id, livemode: z.boolean(), card: z.object({ fingerprint: z.string().min(1) }).nullable().optional() })
+      .parse(await this.api(`payment_methods/${encodeURIComponent(paymentMethodId)}`)); this.mode(pm);
+    if (pm.id !== paymentMethodId) throw new BillingError("payment_method_mismatch", 503);
+    return pm.card ? createHash("sha256").update(`kakomon-trial-card:v1:${pm.card.fingerprint}`).digest("hex") : null;
+  }
+  async endTrial(subscriptionId: string, eventId: string) {
+    const s = z.object({ id, livemode: z.boolean(), status: z.string() }).parse(await this.api(`subscriptions/${encodeURIComponent(subscriptionId)}`,
+      { trial_end: "now", proration_behavior: "none" }, `${this.c.sourceInstance}:trial-end:${eventId}:${subscriptionId}`)); this.mode(s);
+    if (s.id !== subscriptionId) throw new BillingError("subscription_mismatch", 503);
   }
   async stopRenewal(subscriptionId: string, eventId: string) {
     const s = z.object({ id, livemode: z.boolean(), cancel_at_period_end: z.literal(true) }).parse(await this.api(`subscriptions/${encodeURIComponent(subscriptionId)}`,

@@ -43,7 +43,7 @@ function held(a: Account, invoice: Invoice) {
 function trialAccess(a: Account, now: number) {
   return Object.values(a.contracts).filter(sub => {
     const offered = a.signups[sub.signupId]?.trialDays ?? 0;
-    return sub.status === "trialing" && offered > 0 && !sub.renewalBlocked && !disputeHold(a, sub.id)
+    return sub.status === "trialing" && offered > 0 && !sub.trialRevoked && !sub.renewalBlocked && !disputeHold(a, sub.id)
       && sub.periodEnd - sub.periodStart <= offered * 86400 + 3600 && within(sub.periodStart, sub.periodEnd, now);
   }).map(sub => ({ subscriptionId: sub.id, periodEnd: sub.periodEnd }))[0] ?? null;
 }
@@ -136,8 +136,15 @@ export class MonthlyService {
         if (old && (old.customerId !== current.customerId || old.signupId !== current.signupId)) problem("subscription_identity_conflict");
         // Cancellation is terminal. A late observation never resurrects an old contract.
         if (old && terminal(old.status) && !terminal(current.status)) problem("terminal_subscription_conflict");
-        a.contracts[current.id] = { ...current, renewalBlocked: old?.renewalBlocked ?? false,
-          ...(old?.renewalBlockReason ? { renewalBlockReason: old.renewalBlockReason } : {}) };
+        const { trialCard, ...facts } = current;
+        a.contracts[current.id] = { ...facts, renewalBlocked: old?.renewalBlocked ?? false,
+          ...(old?.renewalBlockReason ? { renewalBlockReason: old.renewalBlockReason } : {}), ...(old?.trialRevoked ? { trialRevoked: true as const } : {}) };
+        // One free trial per card: a card that already started a trial on another account is charged now.
+        if (current.status === "trialing" && trialCard && !old?.trialRevoked) {
+          if (await this.store.trialCardOwner(trialCard, this.config.mode, a.userId)) {
+            a.contracts[current.id].trialRevoked = true; (a.trialEndJobs ??= {})[current.id] ??= event.id;
+          } else (a.trialCards ??= {})[trialCard] ??= current.id;
+        }
         signup.subscriptionId = current.id; signup.state = "attached";
       }
       const session = observation.session;
@@ -203,7 +210,15 @@ export class MonthlyService {
     });
     // Dispute revocation is durable BEFORE the provider write. Refunds create no stop intent.
     await this.flushRenewalStops(userId, provider);
+    await this.flushTrialEnds(userId, provider);
     return result;
+  }
+  async flushTrialEnds(userId: string, provider: MonthlyProvider) {
+    const jobs = await this.tx(userId, async a => structuredClone(a.trialEndJobs ?? {}), true);
+    for (const [subId, token] of Object.entries(jobs)) {
+      await provider.endTrial(subId, token);
+      await this.tx(userId, async a => { if (a.trialEndJobs?.[subId] === token) delete a.trialEndJobs[subId]; });
+    }
   }
   async flushRenewalStops(userId: string, provider: MonthlyProvider) {
     const jobs = await this.tx(userId, async a => { assertPolicyReady(a); return structuredClone(a.renewalStopJobs); }, true);

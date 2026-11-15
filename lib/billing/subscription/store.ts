@@ -1,14 +1,22 @@
 import "server-only";
+import { AsyncLocalStorage } from "node:async_hooks";
 import { BillingError } from "../domain";
-import type { SqlDatabase } from "../postgres-store";
+import type { SqlDatabase, SqlSession } from "../postgres-store";
 import { emptyAccount, type Account, type MonthlyStore, type Realm } from "./domain";
 
 /** One account aggregate under the existing Auth User lock; provider IDs have cross-user unique bindings. */
 export class PostgresMonthlyStore implements MonthlyStore {
+  /** The open transaction's connection, so lookups inside it never wait for a second pooled connection. */
+  private session = new AsyncLocalStorage<SqlSession>();
   constructor(private db: SqlDatabase, private source: string) {}
   async owner(customerId: string, mode: Realm) {
     return (await this.db.query<{ user_id: string }>(`SELECT user_id FROM billing_subscription_identity
       WHERE source_instance=$1 AND mode=$2 AND kind='customer' AND provider_id=$3`, [this.source, mode, customerId]))[0]?.user_id ?? null;
+  }
+  async trialCardOwner(cardHash: string, mode: Realm, exceptUserId: string) {
+    return (await (this.session.getStore() ?? this.db).query<{ user_id: string }>(`SELECT user_id FROM billing_subscription_account
+      WHERE source_instance=$1 AND mode=$2 AND user_id<>$3 AND jsonb_exists(COALESCE(payload->'trialCards','{}'::jsonb), $4) LIMIT 1`,
+      [this.source, mode, exceptUserId, cardHash]))[0]?.user_id ?? null;
   }
   transaction<T>(userId: string, mode: Realm, source: string, fn: (a: Account) => Promise<T>, readOnly = false) {
     if (source !== this.source) throw new BillingError("source_instance_mismatch", 503);
@@ -19,7 +27,7 @@ export class PostgresMonthlyStore implements MonthlyStore {
         WHERE user_id=$1 AND mode=$2`, [userId, mode]))[0];
       const a = row?.payload ?? emptyAccount(userId, mode, source);
       if (a.userId !== userId || a.mode !== mode || a.sourceInstance !== source) throw new BillingError("subscription_account_mismatch", 503);
-      const result = await fn(a);
+      const result = await this.session.run(sql, () => fn(a));
       if (readOnly) return result;
       const ids: [string, string][] = [
         ...(a.customer?.id ? [["customer", a.customer.id] as [string, string]] : []),
