@@ -133,7 +133,8 @@ export default async function SignInPage({
                   <EmailSignInForm callbackUrl={callbackUrl} />
                 </>
               )}
-              {appReviewConfig() && <AppReviewSignInForm callbackUrl={callbackUrl} />}
+              {/* Review access is for App Review inside the iOS app only; ordinary web visitors never see it. */}
+              {appReviewConfig() && <div className={nativeLogin ? undefined : "hidden [.native-app_&]:block"}><AppReviewSignInForm callbackUrl={callbackUrl} /></div>}
             </>
           ) : (
             <div className="rounded-xl border border-dashed border-border bg-muted/40 px-4 py-6 text-center text-sm text-muted-foreground">

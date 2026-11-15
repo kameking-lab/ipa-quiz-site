@@ -17,7 +17,7 @@ export class MonthlyMemoryStore implements MonthlyStore {
   }
 }
 export const monthlyFixtureConfig: MonthlyConfig = { mode: "stripe-test", sourceInstance: "monthly-fixture", origin: "http://localhost:3338", enabled: true,
-  priceId: "price_monthly", priceYen: 980, freeDaily: 10, portalConfigurationId: "bpc_fixture", termsVersion: "monthly-draft-v1",
+  priceId: "price_monthly", priceYen: 980, freeDaily: 10, trialDays: 0, portalConfigurationId: "bpc_fixture", termsVersion: "monthly-draft-v1",
   seller: { name: "架空", address: "架空", phone: "000", support: "test@example.invalid", refund: "架空テスト条件" } };
 export async function monthlyFixture() {
   const config = structuredClone(monthlyFixtureConfig), store = new MonthlyMemoryStore();

@@ -43,7 +43,7 @@ const paymentSchema = z.object({ id, livemode: z.boolean(), customer: ref, statu
 const allocationSchema = z.object({ id, livemode: z.boolean(), invoice: ref, amount_paid: money, currency: z.literal("jpy"), status: z.literal("paid"),
   payment: z.object({ type: z.literal("payment_intent"), payment_intent: ref }) });
 
-/** Fixed-price, one-item monthly subscription adapter. Unsupported credits/trials/proration fail closed. */
+/** Fixed-price, one-item monthly subscription adapter. Only the first-contract free trial is supported; other credits/trials/proration fail closed. */
 export class StripeMonthlyProvider implements MonthlyProvider {
   constructor(private c: MonthlyConfig, private key: string, private fetcher: typeof fetch = fetch) {
     if (!(c.mode === "stripe-live" ? /^rk_live_/ : /^rk_test_/).test(key)) throw new BillingError("payment_mode_key_mismatch", 503);
@@ -83,20 +83,25 @@ export class StripeMonthlyProvider implements MonthlyProvider {
     // Also detect contracts created outside this server, or a successful Checkout whose response/event was lost.
     const existing = await this.list("subscriptions", { customer: customerId, status: "all" });
     if (existing.some(raw => { const s = z.object({ status: z.string() }).parse(raw); return !["canceled", "incomplete_expired"].includes(s.status); })) throw new BillingError("subscription_exists");
+    // First contract only: any earlier subscription at Stripe (even canceled) means no trial.
+    const trialDays = signup.trialDays && signup.trialDays === this.c.trialDays && !existing.length ? signup.trialDays : 0;
     const suffix = [...createHash("sha256").update(signup.id).digest().subarray(0, 8)].map(v => String.fromCharCode(97 + v % 26)).join("");
     const body: Record<string, string> = { mode: "subscription", integration_identifier: `kakomon-monthly-${suffix}`, customer: customerId, client_reference_id: signup.id,
       "line_items[0][price]": signup.priceId, "line_items[0][quantity]": "1", "adaptive_pricing[enabled]": "false", "automatic_tax[enabled]": "false",
       success_url: `${this.c.origin}/billing/success?order=${signup.id}`, cancel_url: `${this.c.origin}/billing/cancel?order=${signup.id}`,
-      locale: "ja",
+      locale: "ja", "branding_settings[display_name]": "過去問AI",
       // One line of required terms next to Stripe's pay button (price, renewal, cancellation, refund, terms link).
-      "custom_text[submit][message]": `月額${signup.amount}円（税込）・毎月自動更新・いつでも解約可（期間末まで利用可）。${this.c.seller.refund} [利用条件](${this.c.origin}/billing/terms)` };
+      "custom_text[submit][message]": trialDays
+        ? `初回${trialDays}日間無料。無料期間が終わる日に月額${signup.amount}円（税込）を請求し、以後毎月自動更新。無料期間中に契約管理から解約すれば請求はありません。${this.c.seller.refund} [利用条件](${this.c.origin}/billing/terms)`
+        : `月額${signup.amount}円（税込）・毎月自動更新・いつでも解約可（期間末まで利用可）。${this.c.seller.refund} [利用条件](${this.c.origin}/billing/terms)` };
+    if (trialDays) body["subscription_data[trial_period_days]"] = String(trialDays);
     for (const prefix of ["metadata", "subscription_data[metadata]"]) {
       body[`${prefix}[signup_id]`] = signup.id; body[`${prefix}[source_instance]`] = this.c.sourceInstance; body[`${prefix}[terms_hash]`] = signup.terms;
     }
     const result = sessionSchema.extend({ url: z.string().url() }).parse(await this.api("checkout/sessions", body, `${this.c.sourceInstance}:signup:${signup.id}`)); this.mode(result);
     if (result.customer !== customerId || result.client_reference_id !== signup.id || result.metadata.signup_id !== signup.id
       || result.metadata.source_instance !== this.c.sourceInstance || result.metadata.terms_hash !== signup.terms
-      || result.amount_subtotal !== signup.amount || result.amount_total !== signup.amount) throw new BillingError("checkout_total_or_owner_mismatch", 503);
+      || ![signup.amount, ...(trialDays ? [0] : [])].includes(result.amount_total) || result.amount_subtotal !== result.amount_total) throw new BillingError("checkout_total_or_owner_mismatch", 503);
     if (!result.id.startsWith(this.c.mode === "stripe-live" ? "cs_live_" : "cs_test_") || new URL(result.url).origin !== "https://checkout.stripe.com") throw new BillingError("invalid_checkout_url", 503);
     return { id: result.id, url: result.url };
   }
@@ -127,7 +132,15 @@ export class StripeMonthlyProvider implements MonthlyProvider {
   }
   private async subscription(subId: string) {
     const sub = subscriptionSchema.parse(await this.api(`subscriptions/${encodeURIComponent(subId)}`)); this.mode(sub); this.mode(sub.items.data[0].price);
-    if (sub.id !== subId || sub.metadata.source_instance !== this.c.sourceInstance || sub.trial_end || sub.pause_collection) throw new BillingError("unsupported_subscription", 503);
+    if (sub.id !== subId || sub.metadata.source_instance !== this.c.sourceInstance || sub.pause_collection) throw new BillingError("unsupported_subscription", 503);
+    if (sub.trial_end) {
+      // Only the first-contract trial: it ends exactly at the trial period's end and is never longer than offered.
+      const item = sub.items.data[0];
+      // Either the period is the trial itself (trialing, or ended/canceled during it), or the trial lies before the period.
+      const trialPeriod = item.current_period_end === sub.trial_end && item.current_period_end - item.current_period_start <= this.c.trialDays * 86400 + 3600;
+      const ok = this.c.trialDays > 0 && (sub.status === "trialing" ? trialPeriod : trialPeriod || sub.trial_end <= item.current_period_start);
+      if (!ok) throw new BillingError("unsupported_subscription", 503);
+    }
     return sub;
   }
   private async invoice(invoiceId: string) {
@@ -137,7 +150,8 @@ export class StripeMonthlyProvider implements MonthlyProvider {
   private async session(sessionId: string) {
     const s = sessionSchema.parse(await this.api(`checkout/sessions/${encodeURIComponent(sessionId)}`)); this.mode(s);
     if (s.id !== sessionId || s.client_reference_id !== s.metadata.signup_id || s.metadata.source_instance !== this.c.sourceInstance) throw new BillingError("checkout_owner_mismatch", 503);
-    if (s.amount_subtotal !== this.c.priceYen || s.amount_total !== this.c.priceYen) throw new BillingError("checkout_total_mismatch", 503);
+    // A trial Checkout charges nothing today; the first invoice after the trial is verified separately.
+    if (s.amount_subtotal !== s.amount_total || ![this.c.priceYen, ...(this.c.trialDays > 0 ? [0] : [])].includes(s.amount_total)) throw new BillingError("checkout_total_mismatch", 503);
     return s;
   }
   async resolve(raw: unknown): Promise<Target | null> {
@@ -262,6 +276,8 @@ export class StripeMonthlyProvider implements MonthlyProvider {
     for (const invoiceId of invoiceIds) {
       const i = await this.invoice(invoiceId), subId = i.parent.subscription_details.subscription;
       if (i.customer !== target.customerId || !subscriptionIds.has(subId)) throw new BillingError("invoice_owner_mismatch", 503);
+      // The zero-yen invoice that opens a trial is not a payment and grants nothing; trial access comes from the contract.
+      if (this.c.trialDays > 0 && i.billing_reason === "subscription_create" && i.total === 0 && i.amount_due === 0 && i.amount_paid === 0) continue;
       const lines = (await this.list(`invoices/${encodeURIComponent(i.id)}/lines`, {})).map(l => lineSchema.parse(l));
       if (lines.length !== 1 || lines[0].parent.subscription_item_details.subscription !== subId || lines[0].amount !== i.total
         || i.amount_due !== i.total || i.total < 1) throw new BillingError("unsupported_invoice", 503);

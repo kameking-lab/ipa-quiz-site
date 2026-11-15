@@ -48,6 +48,6 @@ export function monthlyConfig(env: Readonly<Record<string, string | undefined>> 
       && !!env.DATABASE_URL && /^rk_live_/.test(env.BILLING_STRIPE_LIVE_SECRET_KEY ?? "")
       && /^whsec_\S+$/.test(env.BILLING_STRIPE_LIVE_WEBHOOK_SECRET ?? ""));
   return { mode: mode as Realm, sourceInstance, origin, enabled, priceId, portalConfigurationId,
-    priceYen, freeDaily,
+    priceYen, freeDaily, trialDays: MONTHLY_PUBLIC_OFFER.trialDays,
     termsVersion: env.BILLING_SUBSCRIPTION_TERMS_VERSION ?? "monthly-draft-v1", seller };
 }

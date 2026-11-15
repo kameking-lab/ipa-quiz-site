@@ -7,7 +7,8 @@ import { terminal, type Account, type MonthlyConfig, type MonthlyProvider, type 
 export function monthlyTerms(c: MonthlyConfig) {
   return createHash("sha256").update(JSON.stringify({ version: c.termsVersion, price: c.priceYen, priceId: c.priceId,
     freeDaily: c.freeDaily, interval: "month", autoRenew: true, cancel: "period-end", unpaidGraceDays: 0,
-    refund: "partial-preserves-access;full-invoice-only;cancel-separate-v2", seller: c.seller })).digest("hex");
+    refund: "partial-preserves-access;full-invoice-only;cancel-separate-v2", seller: c.seller,
+    ...(c.trialDays > 0 ? { trialDays: c.trialDays, trial: "first-contract;card-required;cancel-before-end-no-charge" } : {}) })).digest("hex");
 }
 function problem(code: string): never { throw new BillingError(code, 503); }
 const within = (start: number, end: number, now: number) => start <= now && now < end;
@@ -38,13 +39,21 @@ function held(a: Account, invoice: Invoice) {
       || Object.values(facts.disputes).some(d => d !== "won");
   });
 }
-export function access(a: Account, now: number) {
+/** A trial grants access only inside the provider's trial period, never longer than the signup offered. */
+function trialAccess(a: Account, now: number) {
+  return Object.values(a.contracts).filter(sub => {
+    const offered = a.signups[sub.signupId]?.trialDays ?? 0;
+    return sub.status === "trialing" && offered > 0 && !sub.renewalBlocked && !disputeHold(a, sub.id)
+      && sub.periodEnd - sub.periodStart <= offered * 86400 + 3600 && within(sub.periodStart, sub.periodEnd, now);
+  }).map(sub => ({ subscriptionId: sub.id, periodEnd: sub.periodEnd }))[0] ?? null;
+}
+export function access(a: Account, now: number): { subscriptionId: string; periodEnd: number } | null {
   assertPolicyReady(a);
   return Object.values(a.invoices).filter(i => {
     const sub = a.contracts[i.subscriptionId];
     return sub && ["active", "past_due"].includes(sub.status) && i.paid && !held(a, i) && !fullyRefunded(a, i) && !disputeHold(a, sub.id)
       && within(i.periodStart, i.periodEnd, now);
-  }).sort((a, b) => b.periodEnd - a.periodEnd)[0] ?? null;
+  }).sort((a, b) => b.periodEnd - a.periodEnd)[0] ?? trialAccess(a, now);
 }
 /** No legacy-account grace. Existing Auth and history records are neither deleted nor rewritten. */
 export class MonthlyService {
@@ -66,8 +75,11 @@ export class MonthlyService {
         const now = this.clock();
         let s = Object.values(a.signups).find(s => s.state === "pending");
         if (s && (now.getTime() - Date.parse(s.createdAt) >= 23 * 3600000 || s.terms !== terms)) return structuredClone({ stale: s });
+        // The free trial is for an account's first contract only.
+        const firstContract = !Object.keys(a.contracts).length && !Object.values(a.signups).some(v => v.state === "attached");
         if (!s) { s = { id: randomUUID(), createdAt: now.toISOString(), terms, amount: this.config.priceYen, priceId: this.config.priceId,
-          state: "pending", sessionId: null, url: null, subscriptionId: null }; a.signups[s.id] = s; }
+          state: "pending", sessionId: null, url: null, subscriptionId: null,
+          ...(firstContract && this.config.trialDays > 0 ? { trialDays: this.config.trialDays } : {}) }; a.signups[s.id] = s; }
         // An unconfirmed customer attempt past the idempotency window starts over (at worst an unused Stripe customer).
         if (!a.customer || !a.customer.id && now.getTime() - Date.parse(a.customer.createdAt) >= 23 * 3600000) a.customer = { attemptId: randomUUID(), createdAt: now.toISOString(), id: null };
         return structuredClone({ signup: s, customer: a.customer });

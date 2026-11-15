@@ -90,7 +90,7 @@ describe("QuizClient with the real player and local learning stores", () => {
     fireEvent.click(screen.getByRole("button", { name: "次の問題へ" }));
     const limit = await screen.findByRole("region", { name: "今日の無料10問はここまで" });
     // Purchase first, one line of terms, the feedback bonus, a tiny "tomorrow" line: nothing else.
-    const plan = screen.getByRole("link", { name: "月額980円で続ける" });
+    const plan = screen.getByRole("link", { name: /7日間無料で試す/ });
     const start = new URL(plan.getAttribute("href")!, window.location.origin);
     expect(start.pathname).toBe("/billing/start");
     const resume = start.searchParams.get("returnTo");
@@ -112,7 +112,7 @@ describe("QuizClient with the real player and local learning stores", () => {
     expect(limits).toHaveLength(1);
     expect(limits[0][1]).toMatchObject({ utm_source: "tsugino_shikaku", utm_content: "fe.hero", reason: "last_free_question", free_daily: 10 });
     expect(capture.mock.calls.some(call => call[0] === "quiz_started" && call[1].utm_content === "fe.hero")).toBe(true);
-    const upgrade = screen.getByRole("link", { name: "月額980円で続ける" });
+    const upgrade = screen.getByRole("link", { name: /7日間無料で試す/ });
     upgrade.addEventListener("click", event => event.preventDefault());
     fireEvent.click(upgrade);
     expect(capture.mock.calls.some(call => call[0] === "practice_upgrade_clicked" && call[1].utm_content === "fe.hero")).toBe(true);

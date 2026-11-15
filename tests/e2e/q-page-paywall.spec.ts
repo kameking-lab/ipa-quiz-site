@@ -76,7 +76,7 @@ test("/q pages share the free 10; plan → sign-in → Checkout → back to the 
 
   // The 11th question: the limit screen replaces the question for a person.
   await page.goto(url);
-  const plan = page.getByRole("link", { name: "月額980円で続ける" });
+  const plan = page.getByRole("link", { name: "7日間無料で試す" });
   await expect(page.getByRole("heading", { name: "今日の無料10問はここまで" })).toBeVisible({ timeout: 60_000 });
   await expect(page.getByRole("region", { name: "問題文" })).toBeHidden();
   await expect(plan).toHaveAttribute("href", `/billing/start?returnTo=${encodeURIComponent(url)}`);

@@ -4,8 +4,8 @@ import { MonthlyService, monthlyTerms } from "@/lib/billing/subscription/service
 import { MonthlyMemoryStore, monthlyFixtureConfig } from "./monthly-fixture";
 
 /** Public API-shaped fixture; no credential, network, Stripe account or database is used. */
-export async function monthlyStripeFixture() {
-  const config = structuredClone(monthlyFixtureConfig), store = new MonthlyMemoryStore();
+export async function monthlyStripeFixture(options: { trialDays?: number } = {}) {
+  const config = { ...structuredClone(monthlyFixtureConfig), ...(options.trialDays ? { trialDays: options.trialDays } : {}) }, store = new MonthlyMemoryStore();
   const price = { id: config.priceId, active: true, livemode: false, unit_amount: 980, currency: "jpy", recurring: { interval: "month", interval_count: 1, usage_type: "licensed" }, billing_scheme: "per_unit", tax_behavior: "unspecified" };
   const start = Date.parse("2026-01-31T00:00:00Z") / 1000, end = Date.parse("2026-02-28T00:00:00Z") / 1000;
   const meta = { signup_id: "00000000-0000-4000-8000-000000000001", source_instance: config.sourceInstance, terms_hash: monthlyTerms(config) };

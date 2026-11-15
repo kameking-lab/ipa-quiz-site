@@ -5,11 +5,15 @@ export type ContractStatus = "incomplete" | "incomplete_expired" | "trialing" | 
 export interface MonthlyConfig {
   mode: Realm; sourceInstance: string; origin: string; enabled: boolean;
   priceId: string; priceYen: number; freeDaily: number; portalConfigurationId: string;
+  /** Free days on the first contract of an account; 0 disables the trial. */
+  trialDays: number;
   termsVersion: string; seller: { name: string; address: string; phone: string; support: string; refund: string };
 }
 export interface Signup {
   id: string; createdAt: string; terms: string; amount: number; priceId: string;
   state: "pending" | "expired" | "attached"; sessionId: string | null; url: string | null; subscriptionId: string | null;
+  /** Trial offered with this signup (first contract only). Missing on older signups = no trial. */
+  trialDays?: number;
 }
 export interface Contract {
   id: string; customerId: string; signupId: string; priceId: string; amount: number;
