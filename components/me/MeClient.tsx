@@ -22,6 +22,7 @@ interface Snapshot { history: HistoryEntry[]; days: Record<string, number>; exam
 export function MeClient() {
   const [snapshot, setSnapshot] = useState<Snapshot | null>(null);
   const [metadata, setMetadata] = useState<Record<string, string>>({});
+  const [questionLabels, setQuestionLabels] = useState<Record<string, string>>({});
   const [selected, setSelected] = useState<{ date: string; exam?: string | null } | null>(null);
   const [showAll, setShowAll] = useState(false);
   useEffect(() => {
@@ -32,7 +33,7 @@ export function MeClient() {
       const history = createHistoryStore().getAllEntries();
       let plans: unknown = [];
       try { plans = JSON.parse(localStorage.getItem(LS_KEYS.studyPlans) ?? "[]"); } catch { /* no plan */ }
-      setSelected(null); setMetadata({});
+      setSelected(null); setMetadata({}); setQuestionLabels({});
       setSnapshot({ history, days: getHeatmapMap(), exam: readLastQuestion()?.exam ?? null,
         goal: readDailyGoalTarget(), passed: passedPlanExams(plans), now: new Date() });
       const ids = [...new Set(history.map(entry => entry.id))].filter(id => id.length > 0 && id.length <= 120).slice(-2000);
@@ -43,9 +44,11 @@ export function MeClient() {
         if (!response.ok) return;
         const body: unknown = await response.json();
         if (!body || typeof body !== "object" || !("meta" in body) || !Array.isArray(body.meta) || epoch !== generation) return;
-        const found: Record<string, string> = {};
-        for (const row of body.meta) if (row && typeof row.id === "string" && typeof row.exam === "string") found[row.id] = row.exam;
-        setMetadata(found);
+        const found: Record<string, string> = {}, labels: Record<string, string> = {};
+        for (const row of body.meta) if (row && typeof row.id === "string" && typeof row.exam === "string") {
+          found[row.id] = row.exam; if (typeof row.label === "string") labels[row.id] = row.label;
+        }
+        setMetadata(found); setQuestionLabels(labels);
       }).catch(() => { /* saved IDs remain reviewable while offline */ }).finally(() => controllers.delete(controller));
     };
     refresh();
@@ -80,7 +83,7 @@ export function MeClient() {
     </section>
     <nav aria-label="わたしのメニュー" className="flex flex-wrap gap-x-5 gap-y-1 border-t border-border pt-3 text-sm text-muted-foreground"><Link className="inline-flex min-h-11 items-center" href="/account/dashboard">アカウント</Link><Link className="inline-flex min-h-11 items-center" href="/settings">設定</Link><Link className="inline-flex min-h-11 items-center" href="/#home-directory-title">収録資格</Link><Link className="inline-flex min-h-11 items-center" href="/transparency">出典・運営</Link></nav>
     <Dialog open={selected !== null} onOpenChange={open => { if (!open) setSelected(null); }}><DialogContent aria-describedby={undefined} className="max-h-[85dvh] overflow-y-auto"><DialogTitle>{selected ? `${shortDate(selected.date)}の記録` : "学習の記録"}</DialogTitle>
-      {opened.map(record => <section key={record.exam ?? "unknown"}><h3 className="text-sm font-semibold">{record.exam ? examLabel(record.exam) : "その他"}</h3><ul className="mt-2 divide-y divide-border">{[...record.entries].reverse().map((entry, index) => <li key={`${entry.id}:${entry.at}:${index}`}><Link prefetch={false} href={`/me/review/${encodeURIComponent(entry.id)}`} className="flex min-h-12 items-center gap-3 py-2 text-sm"><span className={entry.correct ? "text-emerald-700 dark:text-emerald-400" : "text-rose-600 dark:text-rose-400"}>{entry.correct ? "正解" : "不正解"}</span><span className="min-w-0 flex-1 break-all">{entry.id}</span><ChevronRight className="size-4 shrink-0" /></Link></li>)}</ul></section>)}
+      {opened.map(record => <section key={record.exam ?? "unknown"}><h3 className="text-sm font-semibold">{record.exam ? examLabel(record.exam) : "その他"}</h3><ul className="mt-2 divide-y divide-border">{[...record.entries].reverse().map((entry, index) => <li key={`${entry.id}:${entry.at}:${index}`}><Link prefetch={false} href={`/me/review/${encodeURIComponent(entry.id)}`} className="flex min-h-12 items-center gap-3 py-2 text-sm"><span className={entry.correct ? "text-emerald-700 dark:text-emerald-400" : "text-rose-600 dark:text-rose-400"}>{entry.correct ? "正解" : "不正解"}</span><span className="min-w-0 flex-1">{questionLabels[entry.id] ?? `問題${record.entries.length - index}`}</span><ChevronRight className="size-4 shrink-0" /></Link></li>)}</ul></section>)}
     </DialogContent></Dialog>
   </div>;
 }

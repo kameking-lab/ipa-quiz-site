@@ -29,3 +29,10 @@ it("keeps optional room clothes in the existing backup and a commutative cloud m
   expect(mergePetCloudEnvelopes(a, b).document.profiles[0].care.appearance?.accessory).toBe("star");
   expect(mergePetCloudEnvelopes(a, b)).toEqual(mergePetCloudEnvelopes(b, a));
 });
+it("counts same-day practice toward the configured goal without awarding growth again", () => {
+  let doc = applyPetLearningFact(emptyPetProfiles("guest", "Asia/Tokyo"), fact(1), 10).document;
+  const growth = doc.profiles[0].growth;
+  doc = applyPetLearningFact(doc, { ...fact(1), eventId: "practice-again" }, { target: 10, answeredToday: 10 }).document;
+  expect(doc.profiles[0].care.meals).toHaveLength(1);
+  expect(doc.profiles[0].growth).toBe(growth);
+});

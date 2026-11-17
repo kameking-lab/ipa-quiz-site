@@ -10,6 +10,7 @@ import { PetProfileStore } from "./profile-store";
 import type { PetOwnerContext } from "./profile-store";
 import { applyPetLearningFact } from "./learning";
 import { readDailyGoalTarget } from "@/lib/motivation/daily-goal";
+import { dateForEntry, getHeatmapMap } from "@/lib/motivation/heatmap";
 import type { PetLearningResult } from "./learning";
 import { migrateLegacyPetProfiles } from "./migration";
 import { petLocalOwnerResolver } from "./platform";
@@ -96,7 +97,8 @@ export async function persistPetAttempt(options: {
   let applied: PetLearningResult | undefined;
   const saved = await store.update({ ...owner, verifyCurrent: () => owner.revalidate() }, timeZone, previous => {
     const migrated = owner.ownerScope === "guest" ? migrateLegacyPetProfiles(previous, options.legacyRaw(), attempt.occurredAt) : previous;
-    applied = applyPetLearningFact(migrated, fact.data, readDailyGoalTarget());
+    applied = applyPetLearningFact(migrated, fact.data, { target: readDailyGoalTarget(),
+      answeredToday: getHeatmapMap()[dateForEntry(attempt.occurredAt)] ?? 0 });
     return applied.document;
   });
   if (saved.status !== "ready") return saved.status;

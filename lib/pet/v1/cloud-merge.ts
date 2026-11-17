@@ -237,8 +237,8 @@ function mergeProfile(ownerScope: string, local: PetProfile, localMeta: PetCloud
     recentAnswers: lastActivity(local) > lastActivity(remote) ? local.recentAnswers : remote.recentAnswers,
     care: { autoFeed: autoFeed.value, meals: [...meals.values()],
       ...((local.care.appearance || remote.care.appearance) ? { appearance: lastWriter(
-        { value: local.care.appearance, at: local.care.appearance?.updatedAt ?? 0 },
-        { value: remote.care.appearance, at: remote.care.appearance?.updatedAt ?? 0 }).value } : {}) },
+        { value: local.care.appearance ?? null, at: local.care.appearance?.updatedAt ?? 0 },
+        { value: remote.care.appearance ?? null, at: remote.care.appearance?.updatedAt ?? 0 }, value => value !== null).value ?? undefined } : {}) },
     combo: local.combo, memories: [...memories.values()],
   };
   // Union may cross a threshold neither side reached alone (e.g. 3 + 3 distinct
