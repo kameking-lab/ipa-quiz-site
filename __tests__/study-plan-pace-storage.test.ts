@@ -1,6 +1,6 @@
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { LS_KEYS } from "@/lib/storage/keys";
-import { createPacePlan } from "@/lib/study-plan/pace";
+import { createPacePlan, mastery } from "@/lib/study-plan/pace";
 import { dailyLearningPoints } from "@/lib/study-plan/activity";
 import { deletePacePlan, getLearningActions, getPaceAttempts, getPaceSyncEntries, listPacePlans, mergePaceSyncEntries, recordLearningAction, savePacePlan } from "@/lib/study-plan/pace-storage";
 
@@ -11,6 +11,18 @@ describe("guest persistence and JSON StudyPlan sync", () => {
     expect(savePacePlan(plan())).toBe(true);
     expect(listPacePlans()).toEqual([plan()]);
     expect(getPaceSyncEntries()[0]).toMatchObject({ id: "p", payload: plan() });
+  });
+  it("keeps repeat attempts for mastery without awarding repeat points on reload", () => {
+    const answer = { questionId: "ip-q1", exam: "ip", kind: "answer" as const, activeMs: 6000,
+      at: Date.parse("2026-11-17T12:00:00+09:00"), correct: true };
+    recordLearningAction({ ...answer, id: "first" });
+    recordLearningAction({ ...answer, id: "after-reload", at: answer.at + 60000 });
+    expect(mastery(["ip-q1", "ip-q2"], getPaceAttempts()).percent).toBe(50);
+    expect(dailyLearningPoints(getLearningActions())[0]).toMatchObject({ minutes: 3, answers: 1 });
+    recordLearningAction({ ...answer, id: "failed-confirmation", correct: false, at: answer.at + 120000 });
+    expect(mastery(["ip-q1", "ip-q2"], getPaceAttempts()).percent).toBe(0);
+    expect(dailyLearningPoints(getLearningActions())[0]).toMatchObject({ minutes: 3, answers: 1 });
+    expect(getLearningActions()).toHaveLength(3);
   });
   it("uses updatedAt instead of createdAt for plan edits", () => {
     savePacePlan(plan());

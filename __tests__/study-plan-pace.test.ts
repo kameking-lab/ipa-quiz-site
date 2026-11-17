@@ -149,6 +149,18 @@ describe("action-based learning points", () => {
     expect(japanDate(Date.parse("2026-11-17T14:59:59Z"))).toBe("2026-11-17");
     expect(dailyLearningPoints([value], "fe")).toEqual([]);
   });
+  it("awards an answer once per question/JST day across reloads and merged devices", () => {
+    const entries = [action("answer", "rapid", { activeMs: 4999 }),
+      action("answer", "first", { activeMs: 5000 }),
+      action("answer", "reload", { activeMs: 8000, correct: false }),
+      action("answer", "device", { activeMs: 6000 }),
+      action("answer", "next-day", { activeMs: 6000, at: Date.parse("2026-11-17T15:00:00Z") })];
+    expect(dailyLearningPoints(mergeLearningActions(entries, entries))).toEqual([
+      { date: "2026-11-17", minutes: 3, answers: 1, aiQuestions: 0, explanations: 0 },
+      { date: "2026-11-18", minutes: 3, answers: 1, aiQuestions: 0, explanations: 0 },
+    ]);
+    expect(dailyLearningPoints([...entries, action("answer", "other", { questionId: "other", activeMs: 5000 })])[0].minutes).toBe(6);
+  });
   it("counts foreground time only without awarding anything itself", () => {
     let now = 0;
     const clock = createActiveClock(() => now, true);

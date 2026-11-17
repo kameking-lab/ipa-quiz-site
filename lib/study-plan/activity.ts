@@ -32,13 +32,18 @@ export interface DailyLearningPoints { date: string; minutes: number; answers: n
 export function dailyLearningPoints(actions: readonly LearningAction[], exam?: string): DailyLearningPoints[] {
   const days = new Map<string, DailyLearningPoints>();
   const aiCounts = new Map<string, number>();
+  const answers = new Set<string>();
   const explanations = new Set<string>();
   for (const action of mergeLearningActions(actions)) {
     if (exam && action.exam !== exam) continue;
     const date = japanDate(action.at);
     let minutes = 0;
     if (action.kind === "answer" && Number.isFinite(action.activeMs) && action.activeMs! >= 5000) {
-      minutes = STANDARD_ANSWER_MINUTES[action.questionType ?? "multiple-choice"] ?? 3;
+      // Reloading/re-answering one problem cannot farm minutes that day.
+      // Keep every attempt separately: a failed confirmation must still lower mastery.
+      const key = `${date}:${action.exam}:${action.questionId}`;
+      if (!answers.has(key)) minutes = STANDARD_ANSWER_MINUTES[action.questionType ?? "multiple-choice"] ?? 3;
+      answers.add(key);
     } else if (action.kind === "ai-question") {
       const count = aiCounts.get(action.questionId) ?? 0;
       aiCounts.set(action.questionId, count + 1);

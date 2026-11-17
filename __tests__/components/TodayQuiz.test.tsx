@@ -1,4 +1,4 @@
-import { cleanup, render, screen, waitFor } from "@testing-library/react";
+import { fireEvent, cleanup, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { TodayQuiz } from "@/app/quiz/today/TodayQuiz";
 import { createPacePlan } from "@/lib/study-plan/pace";
@@ -45,13 +45,31 @@ it("uses the confirmed paid entitlement for the full target", async () => {
 it("does not start another question after the free day's allowance", async () => {
   localStorage.setItem(LS_KEYS.history, JSON.stringify({ entries: Array.from({ length: 10 }, (_, i) => ({ id: `ap-q${i}`, correct: false, at: Date.now() + i * 1000 })), starredIds: [] }));
   render(<TodayQuiz planId="p" billingGateEnabled />);
+  await screen.findByRole("heading", { name: "今日の無料10問はここまで" });
+  expect(screen.getByRole("link", { name: /7日間無料で試す/ })).toHaveAttribute("href", expect.stringContaining("returnTo="));
+  expect(captured.props).toBeNull();
+});
+it("shows completion rather than an offer after the day's target is met", async () => {
+  localStorage.setItem(LS_KEYS.history, JSON.stringify({ entries: catalog.map((q, i) => ({ id: q.id, correct: true,
+    at: i < 190 ? Date.parse("2026-11-16T12:00:00+09:00") : Date.now() + i * 1000 })), starredIds: [] }));
+  render(<TodayQuiz planId="p" billingGateEnabled />);
   await screen.findByRole("heading", { name: "今日も、おつかれさまでした" });
+  expect(screen.queryByRole("heading", { name: "今日の無料10問はここまで" })).not.toBeInTheDocument();
   expect(captured.props).toBeNull();
 });
 it("reports a missing plan without starting a fallback qualification", async () => {
   render(<TodayQuiz planId="missing" billingGateEnabled />);
   await waitFor(() => expect(screen.getByRole("alert")).toHaveTextContent("学習計画が見つかりませんでした"));
   expect(captured.props).toBeNull();
+});
+it("rechecks App Store entitlement when purchase or restore completes", async () => {
+  localStorage.setItem(LS_KEYS.history, JSON.stringify({ entries: Array.from({ length: 10 }, (_, i) => ({ id: `ap-q${i}`, correct: false, at: Date.now() + i * 1000 })), starredIds: [] }));
+  render(<TodayQuiz planId="p" billingGateEnabled />);
+  await screen.findByRole("heading", { name: "今日の無料10問はここまで" });
+  vi.mocked(fetch).mockImplementation(async () => new Response(JSON.stringify({ entitled: true })));
+  fireEvent(window, new Event("mobile:entitlement-changed"));
+  await screen.findByText("player");
+  expect(captured.props?.poolIds).toHaveLength(67);
 });
 it("keeps the selected pool after reload even when its current question became correct", async () => {
   window.history.replaceState({}, "", `/quiz/today?plan=p&question=${catalog[0].id}`);
