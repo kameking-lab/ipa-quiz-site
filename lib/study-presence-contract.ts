@@ -1,6 +1,8 @@
 import { parseStudyPresence, PRESENCE_POLL_MS, PRESENCE_WINDOW_MS, type StudyPresenceSnapshot } from "@/lib/study-presence";
 
 export const PRESENCE_STATE_EVENT = "study-presence-state";
+/** A newly mounted room/summary asks the existing publisher to replay its state without fetching. */
+export const PRESENCE_REPLAY_EVENT = "study-presence-replay";
 export const PRESENCE_RETRY_MS = [90_000, 180_000, 300_000, 900_000] as const;
 export const presenceRetryDelay = (failures: number) => PRESENCE_RETRY_MS[Math.min(Math.max(failures - 1, 0), PRESENCE_RETRY_MS.length - 1)];
 

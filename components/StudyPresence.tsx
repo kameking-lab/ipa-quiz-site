@@ -4,7 +4,7 @@ import { useEffect } from "react";
 import { nativeClient } from "@/mobile/shared/contracts";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { canonicalPresenceExam, isActiveStudyTab, isPresenceBot, PRESENCE_EVENT, PRESENCE_EXAM_ATTRIBUTE, PRESENCE_VIEWER_ATTRIBUTE, PRESENCE_REFRESH_MS, PRESENCE_IDLE_MS } from "@/lib/study-presence";
-import { PRESENCE_STATE_EVENT, presenceFallback, presenceViewState, presenceRetryDelay, presenceRetryAfterMs, type MeasuredPresence, type PresenceViewState } from "@/lib/study-presence-contract";
+import { PRESENCE_STATE_EVENT, PRESENCE_REPLAY_EVENT, presenceFallback, presenceViewState, presenceRetryDelay, presenceRetryAfterMs, type MeasuredPresence, type PresenceViewState } from "@/lib/study-presence-contract";
 
 interface BrowserIdentifier { id: string; previousVisitorId?: string; stored: string }
 function visitorId(canRotate: boolean): BrowserIdentifier | null {
@@ -36,7 +36,9 @@ export function StudyPresence() {
     let timer: ReturnType<typeof setTimeout> | undefined;
     let idleTimer: ReturnType<typeof setTimeout> | undefined;
     let expiryTimer: ReturnType<typeof setTimeout> | undefined;
+    let latestState: PresenceViewState = presenceFallback(null, "initial");
     const emit = (state: PresenceViewState) => {
+      latestState = state;
       clearTimeout(expiryTimer);
       window.dispatchEvent(new CustomEvent(PRESENCE_STATE_EVENT, { detail: state }));
       // Legacy consumers label a two-minute window. Keep that event neutral;
@@ -46,6 +48,11 @@ export function StudyPresence() {
         if (!disposed) emit(presenceFallback(previous, "expired"));
       }, Math.max(0, Date.parse(state.snapshot.validUntil) - Date.now()));
     };
+    const replay = () => window.dispatchEvent(new CustomEvent(PRESENCE_STATE_EVENT, { detail:
+      latestState.mode === "measured" && Date.parse(latestState.snapshot.validUntil) <= Date.now()
+        ? presenceFallback(latestState.snapshot, "expired") : latestState,
+    }));
+    window.addEventListener(PRESENCE_REPLAY_EVENT, replay);
     const currentExam = () => {
       const code = document.querySelector(`[${PRESENCE_EXAM_ATTRIBUTE}]`)?.getAttribute(PRESENCE_EXAM_ATTRIBUTE);
       return code ? canonicalPresenceExam(code) : null;
@@ -142,6 +149,7 @@ export function StudyPresence() {
       disposed = true; controller?.abort(); observer.disconnect(); clearTimeout(timer); clearTimeout(idleTimer); clearTimeout(expiryTimer);
       events.forEach(event => window.removeEventListener(event, activity));
       document.removeEventListener("visibilitychange", visibility);
+      window.removeEventListener(PRESENCE_REPLAY_EVENT, replay);
     };
   }, []);
   return null;
