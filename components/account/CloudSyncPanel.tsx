@@ -28,7 +28,7 @@ function formatRelative(ts: number): string {
 
 export function CloudSyncPanel() {
   const identity = useSyncIdentity();
-  const auth = identity.checking ? "checking" : identity.account ? "in" : "out";
+  const auth = identity.checking || identity.unavailable ? "checking" : identity.account ? "in" : "out";
   const [busy, setBusy] = React.useState(false);
   const [result, setResult] = React.useState<SyncAllResult | null>(null);
   const [lastSyncedAt, setLastSyncedAt] = React.useState(0);

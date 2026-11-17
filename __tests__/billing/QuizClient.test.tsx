@@ -20,6 +20,7 @@ describe("QuizClient authorization boundary", () => {
     render(<QuizClient billingGateEnabled poolIds={["q1"]} mode="year" backHref="/" />);
     await screen.findByText("今日の無料10問はここまで");
     await act(async () => { window.dispatchEvent(new Event("mobile:entitlement-changed")); });
+    await waitFor(() => expect(fetcher.mock.calls.filter(([url]) => url === "/api/billing/question")).toHaveLength(2));
     await screen.findByText("今日の無料10問はここまで");
     expect(screen.queryByText("q1")).toBeNull();
     paid = true;

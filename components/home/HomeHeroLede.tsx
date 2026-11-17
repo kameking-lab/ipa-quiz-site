@@ -3,6 +3,7 @@
 import * as React from "react";
 import { readUserContext } from "@/lib/storage/user-context";
 import { readLastQuestion } from "@/lib/storage/last-question";
+import { SignedOutOnly } from "@/components/account/AccountNavigation";
 
 // First-time hero lede ("どの試験を受けますか?"). Returning users instead get
 // the prominent "続きから" hero (HomeReturningHeader), so this retracts for
@@ -46,7 +47,7 @@ export function HomeHeroLede({ totalQuestions }: { totalQuestions: number }) {
         </li>
       </ul>
       <p className="mb-4 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
-        IPA試験対策の個別問題・原紙・保存済み履歴の閲覧と復習は無料です。連続演習はログインなしでも1日10問まで無料で、履歴の同期などは無料ログインで利用できます。回数制限なく進める月額980円（税込・毎月自動更新）のプランもあります。
+        IPA試験対策の個別問題・原紙・保存済み履歴の閲覧と復習は無料です。連続演習は1日10問まで無料です。<SignedOutOnly>履歴の同期などは無料ログインで利用できます。</SignedOutOnly>回数制限なく進める月額980円（税込・毎月自動更新）のプランもあります。
       </p>
     </>
   );

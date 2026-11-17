@@ -88,7 +88,7 @@ it("preserves all inputs through 401, login navigation and remount, requiring a 
   fireEvent.change(screen.getByRole("textbox", { name: /自由記述/ }), { target: { value: "入力を保つ" } });
   fireEvent.click(screen.getByRole("button", { name: "意見を送信して10問追加" }));
   const link = await screen.findByRole("link", { name: "意見を送ってあと10問" });
-  expect(screen.getByRole("alert")).toHaveTextContent("有効期限");
+  expect(screen.getByRole("alert")).toHaveTextContent("入力はこの画面に残しています");
   expect(screen.getByRole("button", { name: "意見を送信して10問追加" })).toBeDisabled();
   expect(link.getAttribute("href")).not.toContain("行政書士");
   // Prevent jsdom navigation while still exercising the component click handler.
@@ -118,7 +118,7 @@ it("keeps inputs when storage is blocked and can continue after login in another
   const link = await screen.findByRole("link", { name: "意見を送ってあと10問" });
   const storage = vi.spyOn(Storage.prototype, "setItem").mockImplementation(() => { throw new Error("blocked"); });
   fireEvent.click(link);
-  expect(screen.getByRole("alert")).toHaveTextContent("別のタブ");
+  expect(screen.getByRole("alert")).toHaveTextContent("この画面を残して");
   expect(screen.getByRole("textbox", { name: /自由記述/ })).toHaveValue("下書き");
   fireEvent.click(screen.getByRole("button", { name: "別タブでログインした後に再確認" }));
   await waitFor(() => expect(screen.getByRole("button", { name: "意見を送信して10問追加" })).toBeEnabled());

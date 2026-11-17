@@ -7,6 +7,7 @@ import { planStartHref } from "@/lib/billing/quiz-return";
 import { SellerDisclosureLine } from "@/components/billing/SellerDisclosureLine";
 import { ManageSubscriptionButton } from "./ManageSubscriptionButton";
 import { BillingPageBeacon } from "./BillingPageBeacon";
+import { SignedOutOnly } from "@/components/account/AccountNavigation";
 
 /** One button and one line of terms; the full conditions live on /billing/terms. */
 export default async function MonthlyPage({ returnTo }: { returnTo?: string } = {}) {
@@ -29,7 +30,7 @@ export default async function MonthlyPage({ returnTo }: { returnTo?: string } = 
         : !config?.enabled ? <p role="status">現在、新規申込を受け付けていません。既存契約は自動解約されません。</p>
         : <a href={planStartHref(returnTo ?? "")} aria-describedby="monthly-terms" className="flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-4 py-3 text-lg font-bold text-primary-foreground hover:bg-primary/90">{trialDays > 0 ? <><span className="[.native-app_&]:hidden">{trialDays}日間無料で試す</span><span className="hidden [.native-app_&]:inline">月額{price.toLocaleString("ja-JP")}円で続ける</span></> : `月額${price.toLocaleString("ja-JP")}円で続ける`}</a>}
       <p id="monthly-terms" className="text-xs text-muted-foreground">{trialDays > 0 && <span className="[.native-app_&]:hidden">初回{trialDays}日間無料（期間中に解約すれば請求なし）・その後 </span>}月額{price.toLocaleString("ja-JP")}円（税込）・毎月自動更新・いつでも解約可（期間末まで利用可）・日割返金なし <Link className="underline underline-offset-2" href="/billing/terms">条件・特商法表示</Link></p>
-      <p className="text-xs text-muted-foreground">購入済みの方は、購入したときと同じ方法（Google / Apple）でログインしてください。</p>
+      <SignedOutOnly><p className="text-xs text-muted-foreground">購入済みの方は、購入したときと同じ方法（Google / Apple）でログインしてください。</p></SignedOutOnly>
       {!hasContract && canManage && <ManageSubscriptionButton />}
       <SellerDisclosureLine className="text-xs text-muted-foreground" />
     </section>

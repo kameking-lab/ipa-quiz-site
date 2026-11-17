@@ -25,7 +25,7 @@ export function PurchaseStatus({ order, canceled = false, testMode = true }: { o
       const res = await fetch(`/api/billing/status?order=${encodeURIComponent(order)}`, { cache: "no-store" });
       if (id !== request.current) return null;
       setNeedsLogin(res.status === 401);
-      if (!res.ok) throw new Error(res.status === 401 ? "購入したアカウントでログインしてください。" : "購入状況を確認できません。再購入せず、もう一度確認してください。");
+      if (!res.ok) throw new Error("購入状況を確認できません。再購入せず、もう一度確認してください。");
       const next: Status = await res.json();
       if (id !== request.current) return null;
       setStatus(next); setError("");

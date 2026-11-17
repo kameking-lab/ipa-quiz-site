@@ -38,7 +38,7 @@ for (const width of [390, 1280]) {
   test(`home primary CTA starts a question without login with a real click at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 844 });
     await page.goto("/");
-    const start = page.getByRole("link", { name: "ログインなしで10問を始める", exact: true });
+    const start = page.getByRole("link", { name: "10問を始める", exact: true });
     await expect(start).toBeInViewport();
     await expect(start).toHaveAttribute("href", "/quiz?mode=random&exam=ip");
     await start.click({ trial: true });

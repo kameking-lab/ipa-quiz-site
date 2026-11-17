@@ -475,7 +475,7 @@ export default function SettingsPage() {
             <SectionTitle
               id="cloud-sync"
               icon={<Cloud className="h-5 w-5" />}
-              description="機種変・ブラウザ切替でも履歴を引き継ぐ（任意・サインインが必要）"
+              description="機種変・ブラウザ切替でも履歴を引き継ぐ（任意）"
             >
               クラウド同期
             </SectionTitle>
