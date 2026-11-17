@@ -6,12 +6,14 @@ const HOZEN_GUIDE = "https://www.kikaihozenshi.jp/points/";
 const HOZEN_PAPER = "https://www.kikaihozenshi.jp/pdf/2025/2025_2kyu_kikai_mondai.pdf";
 const RADIO_INDEX = "https://www.nichimu.or.jp/kshiken/siken/index.html";
 const AVIATION_PAPER = "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf";
-const AVIATION_RULES = "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf";
+const AVIATION_RULES = "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf";
 const RADIO_GUIDE = "https://www.nichimu.or.jp/vc-files/kshiken/pdf/R81001_toku.pdf";
 const RADIO_CBT = "https://cbt-s.com/examinee/examination/nichimu.html";
 const SEA_PAPER = "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-2-kogaku.pdf";
+const SEA_RULES = "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/kai-toku-2-hoki.pdf";
 const LAB_INDEX = "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-07.html";
 const LAB_PAPER = "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf";
+const LAB_PM = "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07b_01.pdf";
 const editorialDates = { firstPublishedAt: null, lastEditedAt: "2026-11-17" } as const;
 
 export const NON_IT_STUDY_GUIDES: BlogPost[] = [
@@ -142,7 +144,7 @@ export const NON_IT_STUDY_GUIDES: BlogPost[] = [
 
 ## 出題傾向：法規は条件、工学は計算と装置を分ける
 
-[日本無線協会の公式公開ページ](${RADIO_INDEX})から、航空特殊無線技士の問題と解答を同じ期でそろえます。[法規の問題冊子](${AVIATION_RULES})では、法規12問・無線工学12問、合計24問で1時間の構成を確認できます。
+[日本無線協会の公式公開ページ](${RADIO_INDEX})から、航空特殊無線技士の問題と解答を同じ期でそろえます。[2026年6月期の法規の問題冊子](${AVIATION_RULES})では、法規12問・無線工学12問、合計24問で1時間の構成を確認できます。
 
 法規の復習は「誰が」「何をする」「どんな場合か」の三欄にします。免許人と無線従事者、原則と例外を一緒に覚えず、設問の対象を一つに絞って比較しましょう。
 
@@ -183,7 +185,7 @@ export const NON_IT_STUDY_GUIDES: BlogPost[] = [
     editorialDates,
     editorialKind: "study-guide",
     practicePlacement: "after-body",
-    sourceUrls: [RADIO_INDEX, RADIO_CBT, SEA_PAPER],
+    sourceUrls: [RADIO_INDEX, RADIO_CBT, SEA_PAPER, SEA_RULES],
     relatedQuestionIds: ["radio21-sea2-2022-10-hoki-q01"],
     body: `# 二海特の過去問とCBT例題の使い方
 
@@ -213,7 +215,7 @@ export const NON_IT_STUDY_GUIDES: BlogPost[] = [
 
 ## 過去問の解き方：旧問題も時点を残して復習する
 
-記事内の一問は2022年10月の法規問1です。変更工事後の手続を読む練習として、誰が何を確認する話かを整理してから選びます。古い問題は出題時点の条件に沿って正答を確認し、受験する回の制度・方式は現在の公式案内で確かめましょう。
+記事内の一問は[公式の法規問題冊子の問1](${SEA_RULES})です。変更工事後の手続を読む練習として、誰が何を確認する話かを整理してから選びます。古い問題は出題時点の条件に沿って正答を確認し、受験する回の制度・方式は現在の公式案内で確かめましょう。
 
 工学の誤答では、「式を知らない」「単位を取り違えた」「図の読み違い」を分けます。正解でも根拠を言えなければ印を残し、次回は答えを隠して説明します。科目ごとに、正答数と理由を説明できた数の両方を記録すると復習範囲を絞れます。
 
@@ -232,7 +234,7 @@ export const NON_IT_STUDY_GUIDES: BlogPost[] = [
     editorialDates,
     editorialKind: "study-guide",
     practicePlacement: "after-body",
-    sourceUrls: [LAB_INDEX, LAB_PAPER],
+    sourceUrls: [LAB_INDEX, LAB_PAPER, LAB_PM],
     relatedQuestionIds: ["rinsho-kensagishi-2026-annual-pm-q1"],
     body: `# 臨床検査技師の過去問を条件と画像から解く
 
@@ -271,7 +273,7 @@ export const NON_IT_STUDY_GUIDES: BlogPost[] = [
 | 自分の判断 | 最後まで迷った二肢と、その差 |
 | 次の復習 | 知識の確認か、条件・単位・画像の読み直しか |
 
-記事内の一問は第72回午後問1で、採血時の動作と検査値の関係を問います。午前の通し練習とは分け、ノートに「第72回・午後・問1」と書いてから、どの条件が結果に関係する問題かを整理します。
+記事内の一問は[第72回の午後問1](${LAB_PM})で、採血時の動作と検査値の関係を問います。午前の通し練習とは分け、ノートに「第72回・午後・問1」と書いてから、どの条件が結果に関係する問題かを整理します。
 
 ## 一問ずつ復習し、通し練習は公式冊子で行う
 
