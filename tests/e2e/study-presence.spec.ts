@@ -34,6 +34,12 @@ for (const [count, stage, name] of [[1, 0, "one"], [5, 0, "small"], [12, 1, "cla
     await page.goto("/study-room");
     await show(page, { count, exams: [{ exam: "ip", count }] });
     const scene = page.getByTestId("study-room-scene");
+    if (count === 12) {
+      const action = await page.getByRole("link", { name: "席について解く" }).boundingBox();
+      const nav = await page.locator(".mobile-bottom-nav").boundingBox();
+      expect(action!.height).toBeGreaterThanOrEqual(44);
+      expect(action!.y + action!.height).toBeLessThanOrEqual(nav!.y);
+    }
     await expect(scene).toHaveAttribute("data-stage", String(stage));
     await expect(scene.locator(".study-mascot")).toHaveCount(Math.min(count, 120));
     await expect(page.getByTestId("study-room-seat")).toHaveCount(Math.min(count, 120));

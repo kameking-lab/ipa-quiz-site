@@ -129,7 +129,7 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
     ? `/quiz?mode=random&exam=${encodeURIComponent(selectedExam)}` : suggestion?.href ?? "/#choose-qualification";
 
   const Heading = standalone ? "h1" : "h2";
-  return <div className="mx-auto w-full min-w-0 max-w-4xl space-y-4">
+  return <div className="mx-auto w-full min-w-0 max-w-4xl space-y-3 sm:space-y-4">
     <header className="flex min-w-0 items-center justify-between gap-2">
       <Heading id="study-room-title" className="text-xl font-bold tracking-tight">自習室</Heading>
       {filtered && <p data-testid="study-room-total" className="whitespace-nowrap text-sm tabular-nums text-muted-foreground">{current ? "いま" : "前回"}<strong className="ml-1 text-foreground">{filtered.count.toLocaleString("ja-JP")}</strong>人</p>}
