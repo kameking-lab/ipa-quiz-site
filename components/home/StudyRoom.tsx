@@ -14,11 +14,12 @@ import { StudyRoomSeat, type StudyRoomSeatDetail } from "./StudyRoomSeat";
 interface Suggestion { name: string; href: string; exam?: string }
 const EMPTY_DETAILS: readonly StudyRoomSeatDetail[] = [];
 
-export function StudyRoom({ snapshot, suggestions, current = false, exam, seatDetails = EMPTY_DETAILS, onCheer }: {
+export function StudyRoom({ snapshot, suggestions, current = false, exam, standalone = false, seatDetails = EMPTY_DETAILS, onCheer }: {
   snapshot: MeasuredPresence | null;
   suggestions: readonly Suggestion[];
   current?: boolean;
   exam?: string;
+  standalone?: boolean;
   /** Integration slot for anonymous metadata from a server; the current aggregate supplies none. */
   seatDetails?: readonly StudyRoomSeatDetail[];
   /** Integration slot for delivery; without it the paw is a local encouragement animation. */
@@ -127,9 +128,10 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, seatDe
   const href = selectedExam && Object.hasOwn(EXAM_CONFIGS, selectedExam)
     ? `/quiz?mode=random&exam=${encodeURIComponent(selectedExam)}` : suggestion?.href ?? "/#choose-qualification";
 
+  const Heading = standalone ? "h1" : "h2";
   return <div className="mx-auto w-full min-w-0 max-w-3xl space-y-4">
     <header className="flex min-w-0 items-center justify-between gap-2">
-      <h2 id="study-room-title" className="text-xl font-bold tracking-tight">自習室</h2>
+      <Heading id="study-room-title" className="text-xl font-bold tracking-tight">自習室</Heading>
       {filtered && <p data-testid="study-room-total" className="whitespace-nowrap text-sm tabular-nums text-muted-foreground">{current ? "いま" : "前回"}<strong className="ml-1 text-foreground">{filtered.count.toLocaleString("ja-JP")}</strong>人</p>}
     </header>
     <div className="flex min-w-0 items-center justify-between gap-2">
