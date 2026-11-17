@@ -62,36 +62,26 @@ export default async function SignInPage({
 
   return (
     <NativeSignInBoundary returnTo={callbackUrl}>
-    <main className="relative flex flex-1 items-center justify-center px-4 py-10 sm:py-16">
-      {/* Decorative background */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-radial-spotlight"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-grid opacity-30 [mask-image:radial-gradient(60%_50%_at_50%_0%,#000_30%,transparent_70%)]"
-      />
+    <main className="relative flex flex-1 items-center justify-center px-4 py-8 sm:py-12">
 
       <div className="relative w-full max-w-md">
         {/* Hero */}
         <div className="mb-8 text-center">
           {forPurchase && <><PurchaseSignInBeacon /><span data-purchase-focus hidden /></>}
-          <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            {forPurchase ? "ログインして決済へ" : "過去問AIにログイン"}
+          <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            {forPurchase ? "ログインして決済へ" : reauthenticate ? "もう一度ログイン" : "過去問AIにログイン"}
           </h1>
 
         </div>
 
         {/* Card */}
-        <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-lg sm:p-7">
+        <div className="relative overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm sm:p-7">
           {errorMessage && (
-            <div className="mb-4 flex items-start gap-2.5 rounded-xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">
+            <div role="alert" className="mb-4 flex items-start gap-2.5 rounded-xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-sm text-destructive">
               <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" />
               <div>
-                <p className="font-semibold">ログインに失敗しました</p>
-                <p className="mt-0.5 text-xs opacity-90">
-                  {errorMessage} 時間をおいて再度お試しください。
+                <p className="text-sm leading-relaxed">
+                  {errorMessage}
                 </p>
               </div>
             </div>
@@ -125,15 +115,12 @@ export default async function SignInPage({
             <div className="rounded-xl border border-dashed border-border bg-muted/40 px-4 py-6 text-center text-sm text-muted-foreground">
               <p className="mb-1">
                 <strong className="font-semibold text-foreground">
-                  ログインの準備中です
+                  現在ログインを利用できません
                 </strong>
-              </p>
-              <p className="text-xs">
-                ログインを利用できません。
               </p>
               <Link
                 href="/about"
-                className="mt-4 inline-flex items-center gap-1 text-xs font-medium text-primary underline-offset-4 hover:underline"
+                className="mt-4 inline-flex min-h-11 items-center gap-1 text-xs font-medium text-primary underline-offset-4 hover:underline"
               >
                 プロジェクトについて →
               </Link>
@@ -142,11 +129,11 @@ export default async function SignInPage({
         </div>
 
         {/* Legal */}
-        <p className="mt-6 text-center text-[11px] leading-relaxed text-muted-foreground">
+        <p className="mt-5 text-center text-xs leading-6 text-muted-foreground">
           続行すると{" "}
           <Link
             href="/terms"
-            className="underline decoration-border underline-offset-2 hover:text-foreground"
+            className="rounded-sm underline underline-offset-4 hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-ring"
           >
             利用規約
           </Link>{" "}

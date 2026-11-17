@@ -39,6 +39,7 @@ export function AccountDeletionClient() {
       await clearDevice();
       setNotice("アカウントとこの端末のデータを削除しました。");
       setComplete(true);
+      window.dispatchEvent(new Event("mobile:entitlement-changed"));
     } catch {
       setNotice(serverDeleted ? "サーバーの削除は完了しています。端末データの消去を再試行してください。" : "削除結果を確認できませんでした。もう一度お試しください。");
     } finally { setBusy(false); }

@@ -4,7 +4,6 @@ import { useState, useEffect, useRef, useId, cloneElement, isValidElement } from
 import Link from "next/link";
 import {
   AlertCircle,
-  ArrowLeft,
   ArrowRight,
   Bell,
   CalendarClock,
@@ -130,6 +129,8 @@ export default function SettingsPage() {
   const [stats, setStats] = useState({ total: 0, correct: 0, accuracy: 0, uniqueAnswered: 0 });
   const [toast, setToast] = useState<{ type: "ok" | "err"; msg: string } | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => () => { if (toastTimer.current) clearTimeout(toastTimer.current); }, []);
 
   useEffect(() => {
     setSettings(readSettings());
@@ -148,8 +149,9 @@ export default function SettingsPage() {
   }
 
   function showToast(type: "ok" | "err", msg: string) {
+    if (toastTimer.current) clearTimeout(toastTimer.current);
     setToast({ type, msg });
-    setTimeout(() => setToast(null), 3000);
+    toastTimer.current = setTimeout(() => setToast(null), 3000);
   }
 
   function updateSetting<K extends keyof AppSettings>(key: K, value: AppSettings[K]) {
@@ -217,20 +219,9 @@ export default function SettingsPage() {
 
   return (
     <main className="relative flex-1">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-radial-spotlight"
-      />
 
       <div className="relative mx-auto w-full max-w-2xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
-        <Button asChild variant="ghost" size="sm" className="mb-4 min-h-11">
-          <Link href="/">
-            <ArrowLeft className="h-4 w-4" />
-            戻る
-          </Link>
-        </Button>
-
-        <header className="mb-6 animate-fade-in">
+        <header className="mb-6">
           <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
             設定
           </h1>
@@ -333,7 +324,7 @@ export default function SettingsPage() {
               </SettingRow>
               <SettingRow
                 label="正解音"
-                description="3 連続以上で「ピロロロ」が鳴ります"
+                description="3問以上続けて正解すると音を鳴らします"
               >
                 <Switch
                   checked={motivation.soundEnabled}
@@ -342,7 +333,7 @@ export default function SettingsPage() {
               </SettingRow>
               <SettingRow
                 label="アニメーションを抑える"
-                description="花火やパーティクルを無効化（軽量モード）"
+                description="花火などの動きを抑えます"
               >
                 <Switch
                   checked={motivation.reduceMotion}
@@ -468,7 +459,7 @@ export default function SettingsPage() {
             </SectionTitle>
             <Link
               href="/settings/api-keys"
-              className="group flex items-center justify-between rounded-2xl border border-border bg-card p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+              className="group flex items-center justify-between rounded-2xl border border-border bg-card p-5 shadow-sm transition-colors hover:border-primary/40 hover:bg-muted"
             >
               <div>
                 <p className="text-sm font-medium text-foreground">API キー管理</p>
@@ -494,14 +485,14 @@ export default function SettingsPage() {
               </div>
               <Link
                 href="/about"
-                className="flex items-center justify-between px-5 py-4 text-sm transition-colors hover:bg-muted"
+                className="flex min-h-12 items-center justify-between gap-3 px-5 py-4 text-sm transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring"
               >
                 <span className="text-foreground">著作権・利用条件</span>
                 <span className="text-primary">→</span>
               </Link>
               <Link
                 href="/privacy"
-                className="flex items-center justify-between px-5 py-4 text-sm transition-colors hover:bg-muted"
+                className="flex min-h-12 items-center justify-between gap-3 px-5 py-4 text-sm transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring"
               >
                 <span className="text-foreground">プライバシーポリシー</span>
                 <span className="text-primary">→</span>
@@ -516,12 +507,12 @@ export default function SettingsPage() {
         <div
           role="status"
           aria-live="polite"
-          className="pointer-events-none fixed bottom-6 left-1/2 z-50 -translate-x-1/2"
+          className="pointer-events-none fixed bottom-[calc(5rem+env(safe-area-inset-bottom))] left-1/2 z-50 w-[calc(100%-2rem)] max-w-md -translate-x-1/2 sm:bottom-6"
         >
           {toast && (
             <div
-              className={`flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium text-white shadow-xl animate-slide-up ${
-                toast.type === "ok" ? "bg-success" : "bg-destructive"
+              className={`flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium shadow-xl animate-slide-up ${
+                toast.type === "ok" ? "bg-success text-success-foreground" : "bg-destructive text-destructive-foreground"
               }`}
             >
               {toast.type === "ok" ? (

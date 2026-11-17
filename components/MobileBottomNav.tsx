@@ -107,7 +107,7 @@ export function MobileBottomNav() {
   // render their own fixed bottom-0 CTA bar that this nav would overlap and
   // whose taps it would intercept on mobile (致命傷⑨). Hooks above run first.
   // Keep the sign-out confirmation controls clear on short phone screens too.
-  if (isLearningFocusRoute(pathname) || pathname === "/auth/signout") return null;
+  if (isLearningFocusRoute(pathname) || pathname?.startsWith("/auth/") || pathname === "/account/delete") return null;
 
   return (
     <>

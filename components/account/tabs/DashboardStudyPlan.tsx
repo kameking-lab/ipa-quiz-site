@@ -27,8 +27,7 @@ export function DashboardStudyPlan() {
   const plan = plans.find((item) => item.id === selectedId);
   if (!plan) return <section className="rounded-2xl border border-border bg-card p-5">
     <h2 className="text-lg font-semibold">今日の学習計画</h2>
-    <p className="my-3 text-sm text-muted-foreground">期間と学習時間から、毎日の演習・復習を計算します。</p>
-    <Button asChild><Link href="/study-plan">学習計画を作成する</Link></Button>
+    <Button asChild size="lg" className="mt-4"><Link href="/study-plan">学習計画を作成する</Link></Button>
   </section>;
   const day = plan.daily.find((item) => item.date === today);
   const stats = computeCompletionStats(plan, progress);
@@ -49,6 +48,5 @@ export function DashboardStudyPlan() {
       <Link className="inline-flex min-h-11 items-center text-primary underline" href={`/study-plan/result/${plan.id}`}>この計画の全日程を見る</Link>
       <Link className="inline-flex min-h-11 items-center text-primary underline" href="/study-plan">学習計画を作成・見直す</Link>
     </div>
-    <p className="text-xs text-muted-foreground">タスクの完了チェックは全日程の表示と共通です。</p>
   </section>;
 }

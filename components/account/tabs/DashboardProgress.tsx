@@ -85,6 +85,8 @@ export function DashboardProgress() {
     return <div className="h-64 animate-pulse rounded-2xl bg-zinc-100 dark:bg-zinc-900" />;
   }
 
+  if (data.totalAnswered === 0) return <div className="rounded-2xl border border-border bg-card p-5 text-sm text-muted-foreground">まだ学習履歴がありません。問題を解くと表示されます。</div>;
+
   const overallAccuracy = data.totalAnswered > 0
     ? Math.round((data.correctCount / data.totalAnswered) * 100)
     : 0;
@@ -144,7 +146,7 @@ export function DashboardProgress() {
           </div>
           {data.categoryStats.length === 0 && (
             <p className="mt-2 text-center text-xs text-zinc-500 dark:text-zinc-400">
-              まだ学習履歴がありません。問題を解くと表示されます。
+              分野別の記録を読み込めませんでした。
             </p>
           )}
         </div>
@@ -156,21 +158,18 @@ export function DashboardProgress() {
         </div>
       </section>
 
-      <section className="rounded-2xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-950">
+      {data.examProbs.some(prob => prob.answered > 0) && <section className="rounded-2xl border border-zinc-200 bg-white p-5 dark:border-zinc-800 dark:bg-zinc-950">
         <h2 className="mb-3 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
-          試験別 記録の正答率（13区分）
+          試験別 記録の正答率
         </h2>
         <div className="grid grid-cols-1 gap-2 sm:grid-cols-2 lg:grid-cols-3">
-          {[...data.examProbs]
+          {data.examProbs.filter(prob => prob.answered > 0)
             .sort((a, b) => b.answered - a.answered || b.accuracy - a.accuracy)
             .map((p) => (
               <ExamRow key={p.exam} prob={p} />
             ))}
         </div>
-        <p className="mt-3 text-[11px] text-zinc-500 dark:text-zinc-400">
-          この練習記録での正答率です。未回答の試験は「—」で表示します。
-        </p>
-      </section>
+      </section>}
     </div>
   );
 }

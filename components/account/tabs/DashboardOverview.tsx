@@ -114,7 +114,7 @@ export function DashboardOverview() {
           value={data.examTopProb ? `${Math.round(data.examTopProb.accuracy * 100)}%` : "—"}
           sub={data.examTopProb
             ? `${examLabel(data.examTopProb.exam)} · ${data.examTopProb.answered}問の記録`
-            : "まだ回答記録がありません"}
+            : data.totalAnswered > 0 ? "正答率を読み込めませんでした" : "まだ回答記録がありません"}
         />
       </section>
 

@@ -21,6 +21,8 @@ export function ApiKeysClient() {
   const [revealId, setRevealId] = React.useState<string | null>(null);
   const [copiedId, setCopiedId] = React.useState<string | null>(null);
   const [copyError, setCopyError] = React.useState(false);
+  const copyTimer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+  React.useEffect(() => () => { if (copyTimer.current) clearTimeout(copyTimer.current); }, []);
 
   React.useEffect(() => {
     setKeys(readApiKeys());
@@ -41,11 +43,12 @@ export function ApiKeysClient() {
   }
 
   async function handleCopy(id: string, secret: string) {
+    if (copyTimer.current) clearTimeout(copyTimer.current);
     setCopyError(false);
     try {
       await navigator.clipboard.writeText(secret);
       setCopiedId(id);
-      setTimeout(() => setCopiedId(null), 1500);
+      copyTimer.current = setTimeout(() => setCopiedId(null), 1500);
     } catch {
       setCopiedId(null);
       setCopyError(true);
@@ -90,7 +93,7 @@ export function ApiKeysClient() {
               <span className="font-medium text-foreground">キー名（任意）</span>
               <input
                 type="text"
-                className="min-h-11 min-w-0 rounded-xl border border-border bg-background px-3 text-sm"
+                className="min-h-11 min-w-0 rounded-xl border border-border bg-background px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 placeholder="例: 社内研修ボット"
                 value={showName}
                 maxLength={60}
@@ -145,7 +148,7 @@ export function ApiKeysClient() {
                         type="button"
                         aria-label={`「${k.name}」を削除`}
                         onClick={() => handleDelete(k.id)}
-                        className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-lg border border-border bg-background px-2 py-1 text-xs text-destructive hover:bg-muted"
+                        className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-lg border border-border bg-background px-2 py-1 text-xs text-destructive hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                       >
                         <Trash2 className="h-3 w-3" />
                         削除
@@ -160,7 +163,7 @@ export function ApiKeysClient() {
                         type="button"
                         aria-label={`「${k.name}」を${revealed ? "隠す" : "表示"}`}
                         onClick={() => setRevealId(revealed ? null : k.id)}
-                        className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-lg border border-border bg-background px-2 py-1 text-xs text-foreground hover:bg-muted"
+                        className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-lg border border-border bg-background px-2 py-1 text-xs text-foreground hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                       >
                         {revealed ? (
                           <>
@@ -178,7 +181,7 @@ export function ApiKeysClient() {
                         type="button"
                         aria-label={`「${k.name}」をコピー`}
                         onClick={() => handleCopy(k.id, k.secret)}
-                        className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-lg border border-border bg-background px-2 py-1 text-xs text-foreground hover:bg-muted"
+                        className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-lg border border-border bg-background px-2 py-1 text-xs text-foreground hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                       >
                         <Copy className="h-3 w-3" />
                         {copiedId === k.id ? "コピー済" : "コピー"}
@@ -200,7 +203,7 @@ export function ApiKeysClient() {
 
       {/* コピー成功はボタン文言が「コピー済」へ変わるだけでは SR に告知され
           ない(WCAG 4.1.3)。polite live region で告知する。 */}
-      <span role="status" aria-live="polite" className={copyError ? "mt-4 text-sm text-destructive" : "sr-only"}>
+      <span role="status" aria-live="polite" className={copyError ? "mt-4 block text-sm text-destructive" : "sr-only"}>
         {copyError ? "コピーできませんでした。キーを表示してコピーしてください。" : copiedId ? "API キーをコピーしました" : ""}
       </span>
     </section>

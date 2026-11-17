@@ -18,8 +18,8 @@ vi.mock("@/components/pwa/MobileInstallControl", () => ({ MobileInstallControl: 
 beforeEach(() => { state.account = { id: "local-test" }; localStorage.clear(); });
 afterEach(cleanup);
 
-it("keeps the bottom menu off the logout confirmation", () => {
-  state.pathname = "/auth/signout";
+it.each(["/auth/signout", "/auth/signin", "/auth/verify-request", "/account/delete"])("keeps the bottom menu off %s", pathname => {
+  state.pathname = pathname;
   render(<AccountNavigationProvider><MobileBottomNav /></AccountNavigationProvider>);
   expect(screen.queryByRole("navigation", { name: "モバイル底タブ" })).not.toBeInTheDocument();
 });
