@@ -36,7 +36,7 @@ async function screenshot(page: Page, name: string, width: number) {
     await Promise.all([...document.querySelectorAll<HTMLImageElement>("header img, main img")].map(img => img.decode()));
     await new Promise(requestAnimationFrame); await new Promise(requestAnimationFrame);
   });
-  await page.screenshot({ path: `${dir}/${name}-${width}.png`, fullPage: true, animations: "disabled" });
+  await page.screenshot({ path: `${dir}/${name}-${width}.png`, fullPage: process.env.PACE_SCREENSHOT_VIEWPORT !== "1", animations: "disabled" });
 }
 for (const width of [390, 1280]) {
   test.describe(`home pace ${width}px`, () => {
