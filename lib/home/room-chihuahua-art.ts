@@ -1,5 +1,5 @@
 import { roomIdentitySeed } from "./study-room-scatter";
-import { randomFor } from "./study-room";
+import { randomFor, idleArt, qualificationStudyArt } from "./study-room";
 import type { SeatMascot } from "./study-room";
 
 const ROOT = "/images/home/room-chihuahuas";
@@ -23,4 +23,24 @@ export function scatteredChihuahuaArt(key: string): SeatMascot {
   const [file, stateLabel] = STUDY_ROOM_POSES[index];
   return { src: `${ROOT}/study/${file}.png`, state: index < 6 || index === 10 ? "break" : "away",
     stateLabel, mirrored: random() < .5 };
+}
+
+/** Stable anonymous identities choose their moments; exact quotas keep even small rooms studying. */
+export function seatedRoomMascots(keys: readonly string[]): Map<string, SeatMascot> {
+  const ranked = [...keys].sort((a, b) => roomIdentitySeed(`moment:${a}`) - roomIdentitySeed(`moment:${b}`) || a.localeCompare(b));
+  const away = Math.min(3, Math.floor(keys.length * .07));
+  const naps = Math.round(keys.length * .15);
+  return new Map(ranked.map((key, index) => {
+    const exam = key.slice(0, key.lastIndexOf(":"));
+    const seed = roomIdentitySeed(key);
+    if (index < away) {
+      const [file, stateLabel] = STUDY_ROOM_POSES[[0, 1, 2, 8, 9][seed % 5]];
+      return [key, { src: `${ROOT}/study/${file}.png`, state: "away", stateLabel, mirrored: seed % 2 === 0 }];
+    }
+    const sleeping = index < away + naps;
+    const variant = sleeping ? "nap" : seed % 4 === 0 ? "book" : null;
+    const src = variant && idleArt(exam, variant);
+    return [key, { src: src || qualificationStudyArt(exam), state: sleeping && src ? "break" : "study",
+      stateLabel: sleeping && src ? "机でうたた寝" : variant === "book" && src ? "本で勉強中" : "ノートで勉強中", mirrored: seed % 2 === 0 }];
+  }));
 }
