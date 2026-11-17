@@ -9,6 +9,7 @@ import { readQuizReturn } from "@/lib/billing/quiz-return";
 import { sendFunnelEvent } from "@/lib/billing/funnel-client";
 import { purchaseJourney } from "@/lib/billing/journey-client";
 import { useAccountStatus } from "@/components/account/AccountNavigation";
+import { sendConversion } from "@/lib/billing/conversion-client";
 interface Status { feedbackSubmitted?: boolean; billingModel?: "subscription"; canManage?: boolean; subscription?: { status: string; periodEnd: string; cancelAtPeriodEnd: boolean }; entitled: boolean; expiresAt: string | null; purchase: { id: string; status: string; expiresAt: string | null } | null }
 export function PurchaseStatus({ order, canceled = false, testMode = true }: { order: string; canceled?: boolean; testMode?: boolean }) {
   const [status, setStatus] = useState<Status | null>(null);
@@ -63,6 +64,8 @@ export function PurchaseStatus({ order, canceled = false, testMode = true }: { o
     posthogCapture("practice_feedback_customer_confirmation_viewed", { billingModel: status?.billingModel ?? "pass" });
   }, [complete, order, status?.billingModel, status?.feedbackSubmitted]);
   const reported = useRef(false);
+  const cancellationReported = useRef(false);
+  useEffect(() => { if (canceled && !cancellationReported.current) { cancellationReported.current = true; sendConversion("checkout_canceled"); } }, [canceled]);
   useEffect(() => {
     if (!complete || reported.current) return;
     reported.current = true;

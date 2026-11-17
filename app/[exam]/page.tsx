@@ -284,18 +284,8 @@ export default async function ExamTopPage({
         </nav>
 
         <header className="mb-6">
-<<<<<<< HEAD
           <h1 className="text-balance text-2xl font-bold leading-snug tracking-tight text-foreground sm:text-3xl">
             {examLabel(code)} {isIpaTop(code) ? "過去問・解説" : "過去問"}
-=======
-          <Badge variant="soft" className="mb-3">
-            <Sparkles className="h-3 w-3" />
-            {examLabel(code)}
-          </Badge>
-          <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            <span className="inline-block max-w-full">{examLabel(code)}</span>{" "}
-            <span className="inline-block">{isIpaTop(code) ? "過去問・解説" : "過去問"}</span>
->>>>>>> cx/kako-lp-20261117
           </h1>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">無料・登録なしで1日{PLAN_OFFER.freeDaily}問</p>
           {isExamEntryCode(code) && <FirstPracticeEntry exam={code} />}
@@ -303,10 +293,10 @@ export default async function ExamTopPage({
         {!FIRST_PRACTICE_EXAMS.some((entry) => entry === code) && <section aria-label="今すぐ解く" className="mt-4">
           {code === "fp2" || code === "fp3" ? (
             <div className="grid gap-3 sm:grid-cols-2">
-              <Button asChild variant="gradient" size="lg" className="w-full font-semibold">
+              <Button asChild variant="gradient" size="lg" className="w-full font-semibold min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
                 <Link href={`/quiz?mode=random&exam=${code}&session=gakka`}>学科を解く</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="w-full font-semibold">
+              <Button asChild variant="outline" size="lg" className="w-full font-semibold min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
                 <Link href={`/${code}/practical`}>
                   実技の問題と模範解答（{code === "fp2" ? fp2PracticalCount : fp3PracticalCount}問）
                 </Link>
@@ -317,7 +307,7 @@ export default async function ExamTopPage({
               <h2 className="mb-3 text-sm font-semibold text-foreground">出題する科目を選択</h2>
               <div className="grid gap-2 sm:grid-cols-3">
                 {(["am1", "am2", "pm"] as const).map(session => (
-                  <Button key={session} asChild variant="outline" size="lg">
+                  <Button className="min-h-12 min-w-11 h-auto whitespace-normal py-2.5" key={session} asChild variant="outline" size="lg">
                     <Link href={`/quiz?mode=random&exam=${code}&session=${session}`}>
                       {practiceSessionLabel(session, code)}
                     </Link>
@@ -331,12 +321,12 @@ export default async function ExamTopPage({
                 ランダム出題の範囲を選択
               </h2>
               <div className="grid gap-2 sm:grid-cols-2">
-                <Button asChild variant="gradient" size="lg" className="font-semibold">
+                <Button asChild variant="gradient" size="lg" className="font-semibold min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
                   <Link href={`/quiz?mode=random&exam=${exam}&session=am2`}>
                     科目A-2（旧午前II）
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg">
+                <Button className="min-h-12 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="outline" size="lg">
                   <Link href={`/quiz?mode=random&exam=${exam}&session=am1`}>科目A-1（旧午前I）</Link>
                 </Button>
               </div>
@@ -346,7 +336,7 @@ export default async function ExamTopPage({
               asChild
               variant="gradient"
               size="xl"
-              className="w-full font-semibold shadow-md hover:shadow-lg"
+              className="w-full font-semibold shadow-md hover:shadow-lg min-h-14 min-w-11 h-auto whitespace-normal py-2.5"
             >
               <Link href={`/quiz?mode=random&exam=${exam}`}>
                 今すぐ解く
@@ -438,66 +428,7 @@ export default async function ExamTopPage({
           </section>
         )}
 
-<<<<<<< HEAD
-        {/* Big CTA */}
-        {!FIRST_PRACTICE_EXAMS.some((entry) => entry === code) && <section aria-label="今すぐ解く" className="mb-8">
-          {code === "fp2" || code === "fp3" ? (
-            <div className="grid gap-3 sm:grid-cols-2">
-              <Button asChild variant="gradient" size="lg" className="w-full font-semibold min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
-                <Link href={`/quiz?mode=random&exam=${code}&session=gakka`}>学科を解く</Link>
-              </Button>
-              <Button asChild variant="outline" size="lg" className="w-full font-semibold min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
-                <Link href={`/${code}/practical`}>
-                  実技の問題と模範解答（{code === "fp2" ? fp2PracticalCount : fp3PracticalCount}問）
-                </Link>
-              </Button>
-            </div>
-          ) : code === "kenchiku-setsubishi" ? (
-            <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
-              <h2 className="mb-3 text-sm font-semibold text-foreground">出題する科目を選択</h2>
-              <div className="grid gap-2 sm:grid-cols-3">
-                {(["am1", "am2", "pm"] as const).map(session => (
-                  <Button className="min-h-12 min-w-11 h-auto whitespace-normal py-2.5" key={session} asChild variant="outline" size="lg">
-                    <Link href={`/quiz?mode=random&exam=${code}&session=${session}`}>
-                      {practiceSessionLabel(session, code)}
-                    </Link>
-                  </Button>
-                ))}
-              </div>
-            </div>
-          ) : isHighLevel ? (
-            <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
-              <h2 className="mb-3 text-sm font-semibold text-foreground">
-                ランダム出題の範囲を選択
-              </h2>
-              <div className="grid gap-2 sm:grid-cols-2">
-                <Button asChild variant="gradient" size="lg" className="font-semibold min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
-                  <Link href={`/quiz?mode=random&exam=${exam}&session=am2`}>
-                    科目A-2（旧午前II）
-                  </Link>
-                </Button>
-                <Button className="min-h-12 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="outline" size="lg">
-                  <Link href={`/quiz?mode=random&exam=${exam}&session=am1`}>科目A-1（旧午前I）</Link>
-                </Button>
-              </div>
-            </div>
-          ) : (
-            <Button
-              asChild
-              variant="gradient"
-              size="xl"
-              className="w-full font-semibold shadow-md hover:shadow-lg min-h-14 min-w-11 h-auto whitespace-normal py-2.5"
-            >
-              <Link href={`/quiz?mode=random&exam=${exam}`}>
-                今すぐ解く
-                <ChevronRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          )}
-        </section>}
-=======
 
->>>>>>> cx/kako-lp-20261117
 
         {code === "denko2" && (
           <section aria-label="技能試験" className="mb-8 rounded-2xl border border-blue-200 bg-blue-50 p-5">

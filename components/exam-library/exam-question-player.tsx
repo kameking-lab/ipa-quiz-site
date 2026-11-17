@@ -27,6 +27,7 @@ import {
 import { isExamReferenceOnly, excludeSurveyAssistantReferenceAnswers } from "@/lib/exam-library/survey-assistant-reference-policy";
 import { SurveyAssistantReferencePanel } from "@/components/exam-library/survey-assistant-reference-panel";
 import { posthogCapture } from "@/lib/posthog";
+import { sendConversion } from "@/lib/billing/conversion-client";
 import { observeJourney } from "@/lib/billing/journey-client";
 import { findExamEntry } from "@/lib/exam-library-catalog";
 import { qualificationHubForEntry } from "@/lib/exam-qualification-hubs";
@@ -380,6 +381,7 @@ export function ExamQuestionPlayer({
         [current.id]: { choice, memo: currentAnswer?.memo ?? "", submitted: true, reviewProof: (current as ExamQuestion & {reviewProof?:string}).reviewProof },
       }, current.id);
       posthogCapture("exam_library_answered", { examId, hubSlug: hubSlug ?? undefined });
+      sendConversion("guest_answered");
       observeJourney({ qualification: hubSlug ?? undefined, answer: true });
       focusLater(feedbackRef);
     },
@@ -414,6 +416,7 @@ export function ExamQuestionPlayer({
       current.id,
     );
     posthogCapture("exam_library_answered", { examId, hubSlug: hubSlug ?? undefined });
+    if (current.choiceCount > 0 || currentAnswer?.memo?.trim()) sendConversion("guest_answered");
     observeJourney({ qualification: hubSlug ?? undefined, answer: true });
     focusLater(feedbackRef);
   }, [answers, commit, current, currentAnswer?.memo, draftChoice, examId, hubSlug, submitted, contentPending, paceSession, recordPaceAnswer]);

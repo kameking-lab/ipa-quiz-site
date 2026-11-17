@@ -12,7 +12,8 @@ import type { ChoiceKey } from "@/lib/questions/types";
 beforeEach(() => { cleanup(); localStorage.clear(); });
 afterEach(() => { vi.unstubAllGlobals(); cleanup(); });
 function useRealReadApi() {
-  const fetchMock = vi.fn(async (_url: string, init?: RequestInit) => POST(new Request("http://localhost/api/review/due", init)));
+  const fetchMock = vi.fn(async (url: string, init?: RequestInit) => url === "/api/funnel/conversion"
+    ? new Response(null, { status: 204 }) : POST(new Request("http://localhost/api/review/due", init)));
   vi.stubGlobal("fetch", fetchMock);
   return fetchMock;
 }
@@ -28,7 +29,7 @@ describe("existing answer history → real review lookup", () => {
     unmount(); render(<ReviewClient />);
     await screen.findByText(q.question);
     expect(screen.queryByText("復習キューはまだ空です")).not.toBeInTheDocument();
-    const payload = JSON.parse(fetchMock.mock.calls[0]![1]!.body as string);
+    const payload = JSON.parse(fetchMock.mock.calls.find(([url]) => url === "/api/review/due")![1]!.body as string);
     expect(payload.historyIds).toEqual([q.id]);
     expect(localStorage.getItem(LS_KEYS.history)).toBe(before);
     expect(history.getStarredIds()).toEqual([q.id]);
@@ -63,7 +64,7 @@ describe("existing answer history → real review lookup", () => {
     const fetchMock = useRealReadApi(); const history = createHistoryStore();
     history.record({ id: q.id, selected: "ア", correct: false, at: 1 }); history.record({ id: q.id, selected: "ウ", correct: true, at: 2 });
     render(<ReviewClient />); await waitFor(() => expect(fetchMock).toHaveBeenCalled());
-    const payload = JSON.parse(fetchMock.mock.calls[0]![1]!.body as string);
+    const payload = JSON.parse(fetchMock.mock.calls.find(([url]) => url === "/api/review/due")![1]!.body as string);
     expect(payload.historyIds).toEqual([q.id]); expect(history.getAllEntries()).toHaveLength(2);
   });
 });

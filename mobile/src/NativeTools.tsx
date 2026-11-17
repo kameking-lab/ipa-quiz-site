@@ -11,6 +11,7 @@ import type { MobileConfiguration, MobileEntitlement, CatalogEntry } from "../sh
 import { downloads, type DownloadIndex } from "./downloads";
 import { Membership, deviceMembership, purchaseError, nativePublicSdkKey, describeStoreError, StoreError } from "./purchases";
 import { beginLogin, observeLogin } from "./login";
+import { sendConversion } from "@/lib/billing/conversion-client";
 import { observeReminderTap, setReminder } from "./platform";
 import { persistStudy, restoreStudy } from "./portable-storage";
 import { cachedImage } from "./images";
@@ -165,7 +166,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     const click = (e: MouseEvent)=>{
       const a = (e.target as Element)?.closest?.("a[href]"); if (!a) return;
       const url = new URL(a.getAttribute("href")!, location.href);
-      if (url.origin === SITE_ORIGIN && ["/billing", "/billing/start"].includes(url.pathname.replace(/\/$/, ""))) { e.preventDefault(); e.stopPropagation(); setOpen(true); setRevealTick(n=>n+1); }
+      if (url.origin === SITE_ORIGIN && ["/billing", "/billing/start"].includes(url.pathname.replace(/\/$/, ""))) { if (a.hasAttribute("data-monthly-plan")) sendConversion("plan_clicked"); e.preventDefault(); e.stopPropagation(); setOpen(true); setRevealTick(n=>n+1); }
       else if (url.origin !== SITE_ORIGIN && url.protocol === "https:") { e.preventDefault(); e.stopPropagation(); void (isQualificationUrl(url.href) ? openQualificationUrl(url.href) : Browser.open({ url: url.href })).catch(()=>setNotice("リンクを開けませんでした。再度お試しください。")); }
     };
     document.addEventListener("click",click,true);
@@ -208,7 +209,14 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     heading.current?.focus({ preventScroll: true });
   },[revealTick]);
   const returnHere = ()=>`${location.pathname}${location.search}#app-settings`;
+  const offerVisible = open && !!offer && !!access && !access.entitled;
+  const offerWasVisible = useRef(false);
+  useEffect(() => {
+    if (offerVisible && !offerWasVisible.current) sendConversion("offer_viewed");
+    offerWasVisible.current = offerVisible;
+  }, [offerVisible]);
   const loginFor = async (action: Intent)=>{
+    if (action === "buy") sendConversion("signin_viewed");
     await Preferences.set({key:INTENT_KEY,value:JSON.stringify({action,createdAt:Date.now()})});
     setSigningIn("opening");
     try { await signIn(returnHere()); } finally { setTimeout(()=>setSigningIn(s=>s==="opening"?"":s),1500); }
@@ -277,7 +285,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
           {access.source === "web" && <div className="space-y-2"><p className="text-sm">既存のウェブ契約の管理・解約を開きます。</p><ManageSubscriptionButton label="ウェブ契約の管理・解約"/></div>}
           {!access.userId && loginButton}
           {purchasePending&&<p role="status" className="text-sm">購入内容をサーバーで確認中です。再購入せず「購入を復元」または会員状態の再確認をご利用ください。</p>}
-          {offer && !access.entitled && <div className="space-y-3 rounded-xl border border-border p-4"><h3 className="font-bold">過去問AI 月額プラン</h3><p>{offer.product.priceString} / 1か月（税込・自動更新）</p><p className="text-sm">全資格の問題を無制限で演習、資格ごとの事前ダウンロード。購入確認時にApple IDへ請求されます。解約するまで自動更新され、更新前にApp Storeのサブスクリプション管理で解約できます。解約後も有効期間の末日までは利用できます。</p>{!access.userId && <p className="text-sm">登録ボタンを押すとログイン画面が開き、ログイン後そのまま購入に進みます。ウェブと同じ会員になり、どちらでも有料機能を使えます。</p>}<button className={primary} disabled={busy||purchasePending||!!signingIn} onClick={purchase}>{offer.product.priceString} / 月で登録</button>{!access.userId && <p className="text-xs text-muted-foreground">購入済みの方は、購入したときと同じ方法（Google / Apple）でログインしてください。</p>}</div>}
+          {offer && !access.entitled && <div className="space-y-3 rounded-xl border border-border p-4"><h3 className="font-bold">過去問AI 月額プラン</h3><p>{offer.product.priceString} / 1か月（税込・自動更新）</p><p className="text-sm">全資格の問題を無制限で演習、資格ごとの事前ダウンロード。購入確認時にApple IDへ請求されます。解約するまで自動更新され、更新前にApp Storeのサブスクリプション管理で解約できます。解約後も有効期間の末日までは利用できます。</p>{!access.userId && <p className="text-sm">登録ボタンを押すとログイン画面が開き、ログイン後そのまま購入に進みます。ウェブと同じ会員になり、どちらでも有料機能を使えます。</p>}<button className={primary} disabled={busy||purchasePending||!!signingIn} onClick={()=>{sendConversion("plan_clicked");purchase();}}>{offer.product.priceString} / 月で登録</button>{!access.userId && <p className="text-xs text-muted-foreground">購入済みの方は、購入したときと同じ方法（Google / Apple）でログインしてください。</p>}</div>}
           {!access.entitled && !offer && (offerLoading ? <p className="text-sm">App Storeの価格を読み込んでいます…</p> : offerError && <div role="alert" className="space-y-2 rounded-xl border border-destructive/40 p-3 text-sm"><p className="break-words">{offerError}</p><button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await loadOffer(await refresh(true)); })}>商品情報を再読み込み</button></div>)}
           <div className="grid gap-2 sm:grid-cols-2"><button className={secondary} disabled={busy || !config?.sdkKey || !!signingIn} onClick={restore}>購入を復元</button>
             <button className={secondary} onClick={()=>void Browser.open({ url:"https://apps.apple.com/account/subscriptions" })}>App Storeで管理・解約</button></div>

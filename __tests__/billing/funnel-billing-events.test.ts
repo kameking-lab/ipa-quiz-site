@@ -6,6 +6,8 @@ const wiring = vi.hoisted(() => ({ runtime: null as unknown, user: "alice", emai
 const record = vi.hoisted(() => vi.fn<(...args: unknown[]) => Promise<boolean>>(async () => true));
 const saveSource = vi.hoisted(() => vi.fn(async () => {}));
 const readSource = vi.hoisted(() => vi.fn<(...args: unknown[]) => Promise<unknown>>(async () => null));
+const conversion = vi.hoisted(() => ({ record: vi.fn<(...args: unknown[]) => Promise<boolean>>(async () => false), save: vi.fn<(...args: unknown[]) => Promise<void>>(async () => {}), channel: vi.fn<(...args: unknown[]) => Promise<string>>(async () => "web") }));
+vi.mock("@/lib/billing/conversion", () => ({ recordConversion: conversion.record, saveConversionChannel: conversion.save, readConversionChannel: conversion.channel, conversionChannel: (r: Request) => r.headers.get("X-Kakomon-Native") === "ios" ? "ios" : "web" }));
 vi.mock("@/lib/billing/funnel", () => ({ recordFunnel: record, saveOrderAttribution: saveSource, readOrderAttribution: readSource }));
 vi.mock("@/lib/billing/checkout-email", () => ({ checkoutEmail: async () => wiring.email }));
 vi.mock("@/lib/billing/subscription/runtime", () => ({ monthlyRuntime: () => wiring.runtime }));
@@ -26,6 +28,7 @@ function signed(event: unknown) {
 }
 const post = (body: unknown) => new Request("http://localhost:3338/api/billing/checkout", { method: "POST", headers: { origin: "http://localhost:3338" }, body: JSON.stringify(body) });
 beforeEach(() => {
+  conversion.record.mockClear(); conversion.save.mockClear(); conversion.channel.mockClear();
   record.mockClear(); saveSource.mockClear(); readSource.mockReset().mockResolvedValue(null); wiring.user = "alice"; wiring.email = undefined;
   vi.stubGlobal("fetch", () => { throw new Error("External fetch forbidden"); });
   for (const [key, value] of Object.entries({ BILLING_PRODUCT: "subscription", BILLING_WEBHOOK_MODE: "stripe-test", BILLING_SOURCE_INSTANCE: "monthly-fixture", BILLING_ORIGIN: "http://localhost:3338", BILLING_STRIPE_TEST_WEBHOOK_SECRET: secret })) vi.stubEnv(key, value);
@@ -62,9 +65,23 @@ describe("server-confirmed funnel steps", () => {
     const response = await checkout(post({ terms: monthlyTerms(f.config) }));
     expect(response.status).toBe(200);
     expect(record).toHaveBeenCalledWith("checkout_started", "user:alice");
+    // The fixture already created its pending session: retrieving its URL is not a creation.
+    expect(conversion.record).not.toHaveBeenCalled();
     record.mockClear();
     expect((await checkout(post({ terms: "0".repeat(64) }))).status).not.toBe(200);
     expect(record).not.toHaveBeenCalled();
+  });
+  it("counts a newly created session after commit and leaves Checkout usable when measurement fails", async () => {
+    const f = await monthlyStripeFixture(); wiring.runtime = f; f.visible(false);
+    await f.store.transaction("alice", f.config.mode, f.config.sourceInstance, async account => {
+      for (const signup of Object.values(account.signups)) { signup.sessionId = null; signup.url = null; }
+    });
+    const response = await checkout(post({ terms: monthlyTerms(f.config) }));
+    expect(response.status).toBe(200);
+    expect(conversion.record).toHaveBeenCalledExactlyOnceWith("checkout_created", "web", f.result.orderId);
+    expect(conversion.save).toHaveBeenCalledWith(f.result.orderId, "web");
+    expect((await checkout(post({ terms: monthlyTerms(f.config) }))).status).toBe(200);
+    expect(conversion.record).toHaveBeenCalledTimes(1);
   });
   it("counts checkout_completed once per Stripe session from the verified webhook, not for other events", async () => {
     const f = await monthlyStripeFixture(); wiring.runtime = f;
@@ -73,6 +90,19 @@ describe("server-confirmed funnel steps", () => {
     const completed = { id: "evt_session_done", type: "checkout.session.completed", livemode: false, data: { object: { ...f.session, id: f.session.id, status: "complete", mode: "subscription" } } };
     expect((await webhook(signed(completed))).status).toBe(200);
     expect(record).toHaveBeenCalledWith("checkout_completed", `session:${f.session.id}`);
+  });
+  it("measures paid subscription sessions only after webhook fulfillment, including async success and original event day", async () => {
+    const f = await monthlyStripeFixture(); wiring.runtime = f;
+    const created = Math.floor(Date.now() / 1000) - 86400;
+    for (const [index, type] of ["checkout.session.completed", "checkout.session.async_payment_succeeded"].entries()) {
+      const event = { id: `evt_paid_${index}`, type, created, livemode: false, data: { object: { ...f.session, status: "complete", mode: "subscription", payment_status: "paid", client_reference_id: "order_fixture" } } };
+      expect((await webhook(signed(event))).status).toBe(200);
+      expect(conversion.record).toHaveBeenLastCalledWith("payment_completed", "web", f.session.id, created * 1000);
+    }
+    conversion.record.mockClear();
+    const unpaid = { id: "evt_unpaid", type: "checkout.session.completed", livemode: false, data: { object: { ...f.session, status: "complete", mode: "subscription", payment_status: "unpaid" } } };
+    expect((await webhook(signed(unpaid))).status).toBe(200);
+    expect(conversion.record).not.toHaveBeenCalled();
   });
 });
 
