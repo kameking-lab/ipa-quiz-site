@@ -6,12 +6,23 @@ import { getAllBlogPosts } from "@/data/blog";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getExamQuestionCount } from "@/lib/constants/exam-question-counts";
 import { examSearchMetadata } from "@/lib/seo/exam-search-metadata";
-import { examMetaDescription, getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
+import { examMetaDescription, getAvailableExams, getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
 import { questionSnippet, questionTitle } from "@/lib/seo/question-meta";
 
 const entries = ["kankoji2", "nw", "sa", "ap", "kikai-hozen", "kai-toku2", "tsushin2", "sc", "st"] as const;
 
 describe("search entry metadata", () => {
+  it("keeps every qualification title distinct, including both pneumatic assembly grades", () => {
+    const exams = getAvailableExams();
+    const titles = exams.map(exam => examSearchMetadata(exam, getQuestionsByExamStrict(exam).length).title);
+    expect(new Set(titles).size).toBe(exams.length);
+    for (const [exam, grade] of [["kuukiatsu-kumitate1", "1級"], ["kuukiatsu-kumitate2", "2級"]] as const) {
+      const title = examSearchMetadata(exam, getQuestionsByExamStrict(exam).length).title;
+      expect(title).toContain(`空気圧装置組立て技能士 ${grade}`);
+      expect(title).not.toContain("シーケンス");
+    }
+  });
+
   it.each(entries)("%s advertises its usable count, free explanations and year browsing", async exam => {
     const count = getQuestionsByExamStrict(exam).length;
     const metadata = await generateMetadata({ params: Promise.resolve({ exam }) });
