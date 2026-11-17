@@ -37,6 +37,7 @@ import { ExamPastQuestionGuide } from "@/components/exam/ExamPastQuestionGuide";
 import { ExamCbtSummary } from "@/components/exam/ExamCbtGuide";
 import { isExamEntryCode } from "@/lib/seo/exam-entry";
 import { isIpaTop } from "@/lib/seo/ipa-top";
+import { examSearchMetadata } from "@/lib/seo/exam-search-metadata";
 import { KanriCoverageNote } from "@/components/exam/KanriCoverageNote";
 import { Tsushin1CoverageNote } from "@/components/exam/Tsushin1CoverageNote";
 const ExamBrowseTabs = dynamic(
@@ -95,10 +96,10 @@ export async function generateMetadata({
   }
   const code = exam as ExamCode;
   const count = getQuestionsByExamStrict(code).length;
-  const title = examTopTitle(code);
-  const description = code === "sharoushi"
+  const coverageDescription = code === "sharoushi"
     ? `第58・57回の全156原問から、択一式${count}原問と選択式${PUBLISHED_SENTAKU.length}原問、計${count + PUBLISHED_SENTAKU.length}原問を部分収録。選択式は1原問5空欄の原形で、公式正答と解説を確認できます。`
     : examMetaDescription(code, count);
+  const { title, description } = examSearchMetadata(code, count + (code === "sharoushi" ? PUBLISHED_SENTAKU.length : 0), coverageDescription);
   const ogParams = new URLSearchParams({
     type: "exam",
     title: examLabel(code),
