@@ -64,7 +64,7 @@ describe("管理業務主任者 hub metadata matches the playable two-paper cove
     expect(description).not.toContain("2025年度公式50問から");
     expect(metadata.openGraph?.description).toBe(description);
     expect(metadata.twitter?.description).toBe(description);
-    expect(metadata.title).toBe("管理業務主任者 過去問一覧・AI解説");
+    expect(metadata.title).toBe("管理業務主任者 過去問一覧・解説");
     expect(metadata.alternates?.canonical).toBe("/kanri");
     expect(metadata.robots).toBeUndefined();
   });
@@ -86,7 +86,7 @@ describe("zoen2 hub metadata describes both complete official papers", () => {
     expect(description).not.toContain("令和8年度前期第一次検定から37問");
     expect(metadata.openGraph?.description).toBe(description);
     expect(metadata.twitter?.description).toBe(description);
-    expect(metadata.title).toBe("2級造園施工管理技士 過去問一覧・AI解説");
+    expect(metadata.title).toBe("2級造園施工管理技士 過去問一覧・解説");
     expect(metadata.alternates?.canonical).toBe("/zoen2");
     expect(metadata.robots).toBeUndefined();
   });

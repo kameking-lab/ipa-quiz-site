@@ -132,7 +132,7 @@ test("unconfirmed dates have no add button and an installed target app avoids br
   await expect(page.getByRole("status")).toHaveText("保存をキャンセルしました。");
 });
 
-test("server denial never renders the eleventh question and AI refusal sends nothing",async({page,context})=>{
+test("server denial never renders the eleventh question",async({page,context})=>{
   await routeLocal(context);const used=new Set<string>();
   await context.route("**/api/billing/question",async route=>{
     const body=route.request().postDataJSON() as {id:string};
