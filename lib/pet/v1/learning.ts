@@ -25,7 +25,7 @@ export function petLearningDay(occurredAt: number, timeZone: string): string {
 }
 /** P03/P04 pure learning policy, including pre-answer SRS snapshots.
  * Explicit facts only: no display/load/history replay calls this function. */
-export function applyPetLearningFact(document: PetProfileDocument, input: unknown): PetLearningResult {
+export function applyPetLearningFact(document: PetProfileDocument, input: unknown, dailyGoal = 1): PetLearningResult {
   const unchanged = (outcome: PetLearningResult["outcome"]): PetLearningResult => ({
     outcome, document, reward: { growth: 0, bond: 0 }, reaction: null, comboMilestone: null, overcame: false,
   });
@@ -91,7 +91,9 @@ export function applyPetLearningFact(document: PetProfileDocument, input: unknow
         // A missing category in old facts remains unknown; never infer from IDs.
         if (event.fieldId !== null) question.fieldId = event.fieldId;
       }
-      if (!profile.care.meals.some(meal => meal.rewardId === day)) {
+      const answersToday = next.profiles.reduce((total, item) => total + item.questions.filter(question =>
+        question.lastRewardedAt !== null && petLearningDay(question.lastRewardedAt, next.timeZone) === day).length, 0);
+      if (answersToday >= Math.max(1, dailyGoal) && !next.profiles.some(item => item.care.meals.some(meal => meal.rewardId === day))) {
         // Forgotten treats are enjoyed automatically on the next learning day.
         for (const meal of profile.care.meals) if (meal.consumedAt === null && meal.rewardId < day)
           meal.consumedAt = Math.max(event.occurredAt, meal.earnedAt);
