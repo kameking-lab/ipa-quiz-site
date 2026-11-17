@@ -2,6 +2,7 @@ import { createHmac } from "node:crypto";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { monthlyStripeFixture } from "./monthly-stripe-fixture";
 import { firstTouch } from "@/lib/analytics/first-touch";
+vi.mock("@/lib/billing/duplicate-purchase-runtime", () => ({ assertNoDuplicatePurchase: async () => {} }));
 const wiring = vi.hoisted(() => ({ runtime: null as unknown, user: "alice", email: undefined as string | undefined }));
 const record = vi.hoisted(() => vi.fn<(...args: unknown[]) => Promise<boolean>>(async () => true));
 const saveSource = vi.hoisted(() => vi.fn(async () => {}));

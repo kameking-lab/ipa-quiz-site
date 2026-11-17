@@ -6,6 +6,7 @@ import { monthlyConfig } from "./config";
 import { MonthlyService } from "./service";
 import { PostgresMonthlyStore } from "./store";
 import { StripeMonthlyProvider } from "./stripe";
+import { auditDuplicatePurchases } from "../duplicate-purchase-runtime";
 
 export function monthlyRuntime(requireSales = false) {
   const config = monthlyConfig();
@@ -15,5 +16,5 @@ export function monthlyRuntime(requireSales = false) {
     transaction: fn => prisma.$transaction(tx => fn(session(tx)), { maxWait: 5000, timeout: 60000 }),
   }, config.sourceInstance);
   const key = (config.mode === "stripe-live" ? process.env.BILLING_STRIPE_LIVE_SECRET_KEY : process.env.BILLING_STRIPE_TEST_SECRET_KEY) ?? "";
-  return { config, store, service: new MonthlyService(store, config), provider: new StripeMonthlyProvider(config, key) };
+  return { config, store, service: new MonthlyService(store, config, undefined, auditDuplicatePurchases), provider: new StripeMonthlyProvider(config, key) };
 }

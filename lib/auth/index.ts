@@ -12,6 +12,7 @@ import { PrismaAdapter } from "@auth/prisma-adapter";
 import { authConfig, isAuthConfigured } from "./config";
 import { prisma } from "@/lib/db/prisma";
 import { reviewSessionClaims, reviewSessionValid } from "./app-review";
+import { rememberVerifiedPurchaseEmail } from "./purchase-email";
 
 const adapter = process.env.DATABASE_URL ? PrismaAdapter(prisma) : undefined;
 // Auth.js may link a new OAuth account to the currently signed-in user.
@@ -33,6 +34,10 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
     async jwt(args) {
       const token = await authConfig.callbacks!.jwt!(args);
       if (!token) return null;
+      if (adapter && args.user && args.account && args.profile) {
+        await rememberVerifiedPurchaseEmail(args.user, args.account, args.profile, (id, email) =>
+          prisma.user.updateMany({ where: { id, email }, data: { emailVerified: new Date() } }));
+      }
       if (args.user?.id) Object.assign(token, await reviewSessionClaims(args.user.id));
       if (!await reviewSessionValid(token)) return null;
       // Deletion revokes every JWT, including devices retaining an old cookie.

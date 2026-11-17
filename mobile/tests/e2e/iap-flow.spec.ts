@@ -7,7 +7,7 @@ import type {MobileEntitlement} from "../../shared/contracts";
 // and, for the iPhone check, with playwright.webkit.config.ts (iPhone 15 Pro,
 // 59px status bar / Dynamic Island inset).
 const ORIGIN="https://www.kakomon-ai.jp";
-interface Server { user: string|null; entitledAfterPurchase: boolean; requests: string[]; failAfterPurchase?: boolean }
+interface Server { user: string|null; entitledAfterPurchase: boolean; requests: string[]; failAfterPurchase?: boolean; purchaseError?: string }
 const free=(user:string|null):MobileEntitlement=>({userId:user,appUserId:user?"kakomon_opaque":null,entitled:false,source:"free",expiresAt:null,checkedAt:new Date().toISOString(),lease:null});
 async function serve(context:BrowserContext,page:Page,server:Server){
   await context.route("**/*",async route=>{
@@ -22,6 +22,7 @@ async function serve(context:BrowserContext,page:Page,server:Server){
       await route.fulfill({json:{entitlement,configuration:{sdkKey:"appl_mock_public_key",productId:"mock.monthly",offeringId:"main",entitlement:"kakomon_pro",expectedPriceYen:980,leasePublicKey:""}}});return;
     }
     if(url.pathname==="/api/mobile/catalog"){await route.fulfill({json:{exams:[]}});return;}
+    if(url.pathname==="/api/mobile/purchase-check"){await route.fulfill(server.purchaseError?{status:409,json:{error:server.purchaseError}}:{json:{allowed:true}});return;}
     if(url.pathname.startsWith("/api/")){await route.fulfill({status:503,json:{error:"mock_offline"}});return;}
     const path=fileURLToPath(new URL(`../../dist${url.pathname==="/"?"/index.html":url.pathname}`,import.meta.url));
     try {await stat(path);await route.fulfill({path});}catch{await route.abort();}
@@ -34,6 +35,18 @@ async function open(page:Page,scenario:Parameters<Window["mobileTest"]["mockStor
     document.documentElement.classList.add("native-app");document.documentElement.style.setProperty("--native-safe-top","59px");
     window.mobileTest.mockStore(scenario);window.mobileTest.showMembership();
   },scenario);
+}
+for(const [code,provider] of [["duplicate_purchase_google","Google"],["duplicate_purchase_apple","Apple"]]) {
+  test(`another ${provider} account already paid: shows the login method and never opens StoreKit`,async({page,context})=>{
+    const server:Server={user:"free-user",entitledAfterPurchase:false,requests:[],purchaseError:code};await serve(context,page,server);
+    await open(page,"success");
+    await expect(page.getByText("ウェブで購入済みの方は、購入したときと同じ方法（Google / Apple）でログインしてください。",{exact:true})).toBeVisible();
+    await page.getByRole("button",{name:"¥980 / 月で登録",exact:true}).click();
+    await expect(page.getByRole("status")).toContainText(`このメールアドレスの別のアカウント（${provider}）で購入済みです。そちらでログインしてください。`);
+    expect((await page.evaluate(()=>window.mobileTest.storeCalls())).purchases).toBe(0);
+    expect(server.requests).toContain("/api/mobile/purchase-check");
+    await expect(page.getByText("購入内容をサーバーで確認中です。",{exact:false})).toHaveCount(0);
+  });
 }
 test("signed out: price is visible, 登録 opens sign-in, and the purchase continues by itself after returning",async({page,context},info)=>{
   const server:Server={user:null,entitledAfterPurchase:true,requests:[]};await serve(context,page,server);
