@@ -21,8 +21,8 @@ const accessories: readonly { id: Accessory; label: string; level: number; paid?
   { id: "star", label: "星のブローチ", level: 0, paid: true },
 ];
 
-export function MePetRoom({ exam, minutes, todayCount, todayExamCount, goal, passedExams }: {
-  exam: string; minutes: number; todayCount: number; todayExamCount: number; goal: number; passedExams: string[];
+export function MePetRoom({ exam, minutes, todayCount, todayExamCount, goal, passedExams, paceBehind }: {
+  exam: string; minutes: number; todayCount: number; todayExamCount: number; goal: number; passedExams: string[]; paceBehind?: boolean;
 }) {
   const view = usePetProfileView(() => {});
   const [pose, setPose] = useState<PetPose | null>(null), [message, setMessage] = useState("");
@@ -38,11 +38,11 @@ export function MePetRoom({ exam, minutes, todayCount, todayExamCount, goal, pas
   const artExam = qualification ?? profile?.qualificationId ?? exam;
   const stage = lifetimePetStage(doc, minutes);
   const level = ROOM_STAGES.indexOf(stage);
-  const entitled = paid?.owner === owner && paid.value;
+  const entitled = paid !== null && paid.owner === owner && paid.value;
   const appearance = profile?.care.appearance;
   const accessory = appearance?.accessory === "star" && !entitled ? "none" : appearance?.accessory ?? "none";
   const formal = entitled && appearance?.costume === "formal";
-  const sleepy = todayExamCount < goal;
+  const sleepy = paceBehind ?? todayExamCount < goal;
   const shownPose = pose ?? (sleepy ? "slack" : "study");
   const image = formal ? petArtFor(artExam, stage, shownPose === "study" ? "correct" : shownPose) : petPortraitFor(artExam, stage, shownPose);
   const mealOwner = doc?.profiles.find(item => item.care.meals.some(meal => meal.consumedAt === null));
@@ -95,8 +95,8 @@ export function MePetRoom({ exam, minutes, todayCount, todayExamCount, goal, pas
       <button type="button" aria-label="チワワをなでる" disabled={!enabled} onClick={() => react("petted", "なでなで、うれしそう。")} className={`absolute bottom-11 left-1/2 h-52 w-52 -translate-x-1/2 rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary ${pose && !paused ? "motion-safe:animate-pulse" : ""}`}>
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={image} alt={`${ROOM_STAGE_LABELS[stage]}のチワワ`} width={208} height={208} className={`h-full w-full object-contain ${formal ? "rounded-full border-2 border-amber-400 bg-amber-50/40" : ""}`} />
-        {formal ? <svg aria-hidden="true" viewBox="0 0 100 70" width="92" height="64" className="pointer-events-none absolute bottom-7 left-1/2 -translate-x-1/2 drop-shadow-sm"><path d="m22 9 28 10L78 9l17 48-25 7H30L5 57z" fill="#d7a34b" stroke="#a77927" strokeWidth="2" /><path d="m22 9 28 10-12 22-13-15zM78 9 50 19l12 22 13-15z" fill="#fff0c7" /><path d="M50 23v39" stroke="#b38537" strokeWidth="2" /><circle cx="54" cy="44" r="2" fill="#fff5d5" /><circle cx="54" cy="54" r="2" fill="#fff5d5" /></svg> : null}
-        {accessory !== "none" ? <span aria-hidden="true" className={`absolute bottom-12 left-1/2 -translate-x-1/2 ${accessory === "star" ? "text-amber-500" : "text-rose-500"}`}><AccessoryArtwork accessory={accessory} /></span> : null}
+        {formal ? <svg aria-hidden="true" viewBox="0 0 100 70" width="54" height="38" className="pointer-events-none absolute bottom-[88px] left-[45%] -translate-x-1/2 drop-shadow-sm"><path d="m22 9 28 10L78 9l17 48-25 7H30L5 57z" fill="#d7a34b" stroke="#a77927" strokeWidth="2" /><path d="m22 9 28 10-12 22-13-15zM78 9 50 19l12 22 13-15z" fill="#fff0c7" /><path d="M50 23v39" stroke="#b38537" strokeWidth="2" /><circle cx="54" cy="44" r="2" fill="#fff5d5" /><circle cx="54" cy="54" r="2" fill="#fff5d5" /></svg> : null}
+        {accessory !== "none" ? <span aria-hidden="true" className={`absolute bottom-24 left-[45%] -translate-x-1/2 ${accessory === "star" ? "text-amber-500" : "text-rose-500"}`}><AccessoryArtwork accessory={accessory} /></span> : null}
         {pose === "petted" ? <Heart aria-hidden="true" className="absolute right-2 top-3 size-7 fill-rose-300 text-rose-300" /> : null}
         {formal ? <Sparkles aria-hidden="true" className="absolute right-0 top-5 size-6 text-amber-500" /> : null}
       </button>

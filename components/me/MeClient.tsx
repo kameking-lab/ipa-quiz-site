@@ -9,7 +9,7 @@ import { getHeatmapMap, intensityLevel } from "@/lib/motivation/heatmap";
 import { readDailyGoalTarget } from "@/lib/motivation/daily-goal";
 import { readLastQuestion } from "@/lib/storage/last-question";
 import { LS_KEYS } from "@/lib/storage/keys";
-import { buildMeRecords, type StudyRecord } from "@/lib/me/records";
+import { buildMeRecords, plannedPaceBehind, type StudyRecord } from "@/lib/me/records";
 import { passedPlanExams } from "@/lib/me/pet";
 import { examLabel } from "@/lib/utils";
 import { MePetRoom } from "./MePetRoom";
@@ -17,7 +17,7 @@ import { MePetRoom } from "./MePetRoom";
 const intensity = ["bg-stone-100 dark:bg-stone-800", "bg-emerald-100 dark:bg-emerald-950", "bg-emerald-300 dark:bg-emerald-800", "bg-emerald-500 dark:bg-emerald-600", "bg-emerald-700 dark:bg-emerald-400"] as const;
 const number = new Intl.NumberFormat("ja-JP", { maximumFractionDigits: 1 });
 const shortDate = (date: string) => `${Number(date.slice(5, 7))}/${Number(date.slice(8))}`;
-interface Snapshot { history: HistoryEntry[]; days: Record<string, number>; exam: string | null; goal: number; passed: string[]; now: Date }
+interface Snapshot { history: HistoryEntry[]; days: Record<string, number>; exam: string | null; goal: number; passed: string[]; plans: unknown; now: Date }
 
 export function MeClient() {
   const [snapshot, setSnapshot] = useState<Snapshot | null>(null);
@@ -35,7 +35,7 @@ export function MeClient() {
       try { plans = JSON.parse(localStorage.getItem(LS_KEYS.studyPlans) ?? "[]"); } catch { /* no plan */ }
       setSelected(null); setMetadata({}); setQuestionLabels({});
       setSnapshot({ history, days: getHeatmapMap(), exam: readLastQuestion()?.exam ?? null,
-        goal: readDailyGoalTarget(), passed: passedPlanExams(plans), now: new Date() });
+        goal: readDailyGoalTarget(), passed: passedPlanExams(plans), plans, now: new Date() });
       const ids = [...new Set(history.map(entry => entry.id))].filter(id => id.length > 0 && id.length <= 120).slice(-2000);
       if (!ids.length) return;
       const controller = new AbortController(); controllers.add(controller);
@@ -65,7 +65,7 @@ export function MeClient() {
   const todayExamCount = records?.records.find(record => record.date === today?.date && record.exam === exam)?.entries.length ?? 0;
   const opened = selected ? records?.records.filter(record => record.date === selected.date && (selected.exam === undefined || selected.exam === record.exam)) ?? [] : [];
   return <div className="space-y-7 pb-10">
-    <MePetRoom exam={exam} minutes={records?.minutes ?? 0} todayCount={today?.count ?? 0} todayExamCount={todayExamCount} goal={snapshot?.goal ?? 10} passedExams={snapshot?.passed ?? []} />
+    <MePetRoom exam={exam} minutes={records?.minutes ?? 0} todayCount={today?.count ?? 0} todayExamCount={todayExamCount} goal={snapshot?.goal ?? 10} passedExams={snapshot?.passed ?? []} paceBehind={snapshot ? plannedPaceBehind(snapshot.plans, snapshot.history, exam, snapshot.now, metadata) : undefined} />
     <dl aria-label="学習の数字" className="grid grid-cols-2 gap-y-5 rounded-2xl border border-border bg-card px-3 py-5 sm:grid-cols-4">
       {([
         ["連続日数", records?.streak, "日"], ["1日平均の問題数", records?.averageQuestions, "問"],

@@ -56,7 +56,7 @@ for (const width of [390, 1280]) test(`records, room and day review at ${width}p
   const before = await read();
   await room.getByRole("button", { name: "チワワをなでる" }).click();
   await expect(room.getByRole("status")).toHaveText("なでなで、うれしそう。"); expect(await read()).toBe(before);
-  await page.screenshot({ path: `${evidence}/me-${width}.png`, fullPage: true });
+  await page.screenshot({ path: `${evidence}/me-${width}.png`, fullPage: true, animations: "disabled" });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.getByRole("button", { name: `${data.today} 30問`, exact: true }).click();
   const review = page.getByRole("dialog", { name: /の記録$/ });
@@ -71,8 +71,8 @@ for (const width of [390, 1280]) test(`records, room and day review at ${width}p
   await clothes.getByRole("button", { name: "マフラー", exact: true }).click();
   await expect(clothes.getByRole("button", { name: "マフラー", exact: true })).toHaveAttribute("aria-pressed", "true");
   await clothes.getByLabel("資格の服").selectOption("fp2");
-  await expect(room).toHaveAttribute("data-pet-stage", "expert");
   await page.keyboard.press("Escape");
+  await expect(room).toHaveAttribute("data-pet-stage", "expert");
   await expect(room.getByRole("button", { name: "着がえ", exact: true })).toBeFocused();
   expect(errors).toEqual([]);
 });
@@ -98,7 +98,7 @@ test("settings keep name, motion, backup and guarded restore together", async ({
   await sheet.getByRole("checkbox", { name: "退避ファイルを保存したことを確認し、置き換えます" }).check();
   await sheet.getByRole("button", { name: "確認したデータを復元" }).click(); await expect(sheet.getByRole("status")).toHaveText("復元しました。");
   await expect(sheet.getByLabel("名前", { exact: true })).toHaveValue("こむぎ");
-  await page.screenshot({ path: `${evidence}/me-settings-390.png` });
+  await page.screenshot({ path: `${evidence}/me-settings-390.png`, animations: "disabled" });
   await page.keyboard.press("Escape"); await expect(room.getByRole("button", { name: "こむぎ", exact: true })).toBeFocused();
   await page.reload(); await expect(room.getByRole("button", { name: "こむぎ", exact: true })).toBeVisible();
 });
@@ -108,11 +108,15 @@ test("paid clothes use the existing server entitlement and survive reload", asyn
   await page.getByRole("button", { name: "着がえ", exact: true }).click();
   const sheet = page.getByRole("dialog", { name: "着がえ", exact: true });
   await sheet.getByRole("button", { name: /金の晴れ着/ }).click();
+  await expect(sheet.getByRole("button", { name: /金の晴れ着/ })).toHaveAttribute("aria-pressed", "true");
   await sheet.getByRole("button", { name: /星のブローチ/ }).click();
+  await expect(sheet.getByRole("button", { name: /星のブローチ/ })).toHaveAttribute("aria-pressed", "true");
   await page.reload(); await page.getByRole("button", { name: "着がえ", exact: true }).click();
   await expect(sheet.getByRole("button", { name: /金の晴れ着/ })).toHaveAttribute("aria-pressed", "true");
   await expect(sheet.getByRole("button", { name: /星のブローチ/ })).toHaveAttribute("aria-pressed", "true");
-  await page.screenshot({ path: `${evidence}/me-paid-clothes.png` });
+  await page.screenshot({ path: `${evidence}/me-paid-clothes.png`, animations: "disabled" });
+  await page.keyboard.press("Escape");
+  await page.screenshot({ path: `${evidence}/me-paid-room-390.png`, animations: "disabled" });
 });
 
 test("an empty first visit never creates a pet or fabricates a certificate", async ({ page }) => {

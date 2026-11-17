@@ -31,6 +31,28 @@ export interface StudyRecord {
   correct: number;
 }
 
+/** Existing date-based planner fallback until kp's meter is integrated. A plan
+ * without a dated question schedule does not invent a pace verdict. */
+export function plannedPaceBehind(plans: unknown, entries: HistoryEntry[], exam: string, now: Date, metadata: Readonly<Record<string, string>> = {}): boolean | undefined {
+  if (!Array.isArray(plans)) return undefined;
+  const today = jstDateString(now);
+  const candidates = plans.filter((plan: unknown): plan is { createdAt: string; input: { exam: string }; daily: unknown[] } => {
+    if (!plan || typeof plan !== "object" || !("createdAt" in plan) || typeof plan.createdAt !== "string" || !("daily" in plan) || !Array.isArray(plan.daily) || !("input" in plan)) return false;
+    return !!plan.input && typeof plan.input === "object" && "exam" in plan.input && plan.input.exam === exam && Number.isFinite(Date.parse(plan.createdAt));
+  }).sort((a, b) => b.createdAt.localeCompare(a.createdAt));
+  const plan = candidates[0];
+  if (!plan) return undefined;
+  let expected = 0;
+  for (const day of plan.daily) {
+    if (!day || typeof day !== "object" || !("date" in day) || typeof day.date !== "string" || day.date > today || !("tasks" in day) || !Array.isArray(day.tasks)) continue;
+    for (const task of day.tasks) if (task && typeof task === "object" && "kind" in task && ["questions", "review", "mock"].includes(String(task.kind)) && "estimatedMinutes" in task && typeof task.estimatedMinutes === "number" && Number.isFinite(task.estimatedMinutes)) expected += Math.max(0, task.estimatedMinutes);
+  }
+  if (expected === 0) return undefined;
+  const started = Date.parse(plan.createdAt);
+  const actual = studyMinutesFromHistory(entries.filter(entry => entry.at >= started && entry.at <= now.getTime() && (metadata[entry.id] ?? recordExam(entry.id)) === exam));
+  return actual < expected * 0.95;
+}
+
 export function buildMeRecords(history: HistoryEntry[], savedDays: Record<string, number>, now = new Date(), metadata: Readonly<Record<string, string>> = {}) {
   const today = jstDateString(now);
   const entries = history.filter(entry => Number.isFinite(entry.at) && entry.at >= 0 && entry.at <= now.getTime());

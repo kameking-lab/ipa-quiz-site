@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildMeRecords, recordExam, studyMinutesFromHistory } from "@/lib/me/records";
+import { buildMeRecords, plannedPaceBehind, recordExam, studyMinutesFromHistory } from "@/lib/me/records";
 import { lifetimePetStage, passedPlanExams } from "@/lib/me/pet";
 import { emptyPetProfiles, newPetProfile } from "@/lib/pet/v1/profile";
 import type { HistoryEntry } from "@/lib/storage/history";
@@ -37,6 +37,17 @@ describe("わたしの記録", () => {
     expect(recordExam("jidosha-2025-first-2-gasoline-q1")).toBe("jidosha-2-gasoline");
     expect(recordExam("chusho-kigyo-shindanshi-2024-am-q1")).toBe("chusho-kigyo-shindanshi");
     expect(buildMeRecords([entry("legacy-q1", "2026-11-16T18:00:00+09:00")], {}, now, { "legacy-q1": "ap" }).records[0].exam).toBe("ap");
+  });
+  it("uses the current qualification's dated plan for the expression, independent of lifetime growth", () => {
+    const plans = [{ createdAt: "2026-11-15T00:00:00+09:00", input: { exam: "ap" }, daily: [{ date: "2026-11-16", tasks: [{ kind: "questions", estimatedMinutes: 6 }] }] }];
+    const answers = [entry("ap-q1", "2026-11-16T18:00:00+09:00"), entry("ap-q2", "2026-11-16T18:01:00+09:00")];
+    expect(plannedPaceBehind(plans, answers, "ap", now)).toBe(false);
+    expect(plannedPaceBehind(plans, answers.slice(0, 1), "ap", now)).toBe(true);
+    expect(plannedPaceBehind(plans, answers, "fp2", now)).toBeUndefined();
+  });
+  it("does not infer a plan pace from malformed or undated result records", () => {
+    expect(plannedPaceBehind([{ input: { exam: "ap" }, result: "passed" }], [], "ap", now)).toBeUndefined();
+    expect(plannedPaceBehind(null, [], "ap", now)).toBeUndefined();
   });
 });
 describe("累計のチワワ", () => {
