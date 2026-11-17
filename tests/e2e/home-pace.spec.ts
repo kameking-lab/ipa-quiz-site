@@ -24,7 +24,19 @@ async function layout(page: Page) {
 }
 async function screenshot(page: Page, name: string, width: number) {
   const dir = process.env.KP2_SCREENSHOTS;
-  if (dir) await page.screenshot({ path: `${dir}/${name}-${width}.png`, fullPage: true, animations: "disabled" });
+  if (!dir) return;
+  await page.waitForFunction(async () => {
+    if (![...document.querySelectorAll<HTMLImageElement>("header img, main img")].every(img => img.complete && img.naturalWidth > 0)) return false;
+    const images = [...document.querySelectorAll<SVGImageElement>("main svg image")];
+    return (await Promise.all(images.map(element => new Promise<boolean>(resolve => {
+      const img = new Image(); img.onload = () => resolve(true); img.onerror = () => resolve(false); img.src = element.href.baseVal;
+    })))).every(Boolean);
+  });
+  await page.evaluate(async () => {
+    await Promise.all([...document.querySelectorAll<HTMLImageElement>("header img, main img")].map(img => img.decode()));
+    await new Promise(requestAnimationFrame); await new Promise(requestAnimationFrame);
+  });
+  await page.screenshot({ path: `${dir}/${name}-${width}.png`, fullPage: true, animations: "disabled" });
 }
 for (const width of [390, 1280]) {
   test.describe(`home pace ${width}px`, () => {
@@ -82,6 +94,55 @@ for (const width of [390, 1280]) {
       await page.getByRole("button", { name: "合格", exact: true }).click();
       await expect(page.getByRole("heading", { name: "合格おめでとう！" })).toBeVisible();
       await expect(page.locator("main").getByRole("link", { name: /次は/ })).toHaveCount(1);
+    });
+    test("today uses real questions in review/resume order and survives reload", async ({ page, request }) => {
+      const response = await request.get("/api/study-plan/catalog/ip");
+      expect(response.ok()).toBe(true);
+      const real = (await response.json()).questions.slice(0, 20) as typeof catalog;
+      const due = real[4], confirmation = real[8];
+      const p = createPacePlan({ id: "real-today", exam: "ip", sessionId: null, examDate: "2026-11-20", startDate: "2026-11-01" }, real, "2026-11-17T00:00:00+09:00");
+      await page.clock.setFixedTime(new Date(`${today}T12:00:00+09:00`));
+      await page.route("**/api/billing/status", r => r.fulfill({ json: { entitled: false } }));
+      await page.addInitScript(({ keys, p, real, due, confirmation }) => {
+        localStorage.setItem(keys.pacePlans, JSON.stringify([p]));
+        localStorage.setItem(keys.history, JSON.stringify({ entries: [{ id: due.id, correct: false, selected: "ア", at: Date.parse("2026-11-16T12:00:00+09:00") }, { id: confirmation.id, correct: true, selected: "ア", at: Date.parse("2026-11-16T12:00:00+09:00") }], starredIds: [] }));
+        localStorage.setItem(keys.spacedRepetition, JSON.stringify({ cards: { [due.id]: { id: due.id, dueAt: 1 } } }));
+        localStorage.setItem(keys.lastQuestion, JSON.stringify({ ...real[0], answeredAt: Date.parse("2026-11-16T12:00:00+09:00") }));
+      }, { keys: LS_KEYS, p, real, due, confirmation });
+      await page.goto("/quiz/today?plan=real-today");
+      await expect(page.getByRole("radio").first()).toBeVisible();
+      expect(new URL(page.url()).searchParams.get("question")).toBe(due.id);
+      await expect(page.getByRole("heading", { name: "今日の問題 · 7問" })).toBeVisible();
+      await page.getByRole("radio").first().click();
+      await page.reload();
+      await expect(page.getByRole("radio").first()).toBeVisible();
+      expect(new URL(page.url()).searchParams.get("question")).toBe(due.id);
+      await page.getByRole("radio").first().click();
+      await page.getByRole("button", { name: "次の問題へ", exact: true }).first().click();
+      await expect.poll(() => new URL(page.url()).searchParams.get("question")).toBe(real[1].id);
+    });
+    test("library today uses the existing paper grant and records the official result", async ({ page }) => {
+      const library = [{ id: "lckohyo-TEST-q1", exam: "dai-1-shu-eisei-kanrisha", year: 2026, season: "published", session: "テスト", qNumber: 1,
+        paperId: "lckohyo-TEST", paperTitle: "テスト回", number: 1, choiceCount: 4, answerAuthority: "official", scorable: true,
+        pdfUrl: "https://www.exam.or.jp/", indexUrl: "https://www.exam.or.jp/" }];
+      const p = createPacePlan({ id: "library-today", exam: library[0].exam, sessionId: null, examDate: "2026-11-18", startDate: today }, library, `${today}T00:00:00+09:00`);
+      await page.clock.setFixedTime(new Date(`${today}T12:00:00+09:00`));
+      await page.route("**/api/billing/status", r => r.fulfill({ json: { entitled: false } }));
+      await page.route("**/api/study-plan/catalog/dai-1-shu-eisei-kanrisha", r => r.fulfill({ json: { questions: library } }));
+      let grants = 0;
+      await page.route("**/api/billing/question", r => {
+        expect(r.request().headers()["x-kakomon-paper"]).toBe("lckohyo-TEST"); grants++;
+        return r.fulfill({ json: { question: { id: library[0].id, number: 1, text: "テスト用の問い", images: [], correctChoice: 3, choiceCount: 4, answerAuthority: "official", explanation: "テスト用の解説" },
+          access: { kind: "guest", remaining: 9, freeDaily: 10, resetAt: "2026-11-18T00:00:00+09:00", retryAfter: null } } });
+      });
+      await page.addInitScript(({ key, p }) => localStorage.setItem(key, JSON.stringify([p])), { key: LS_KEYS.pacePlans, p });
+      await page.goto("/quiz/today?plan=library-today");
+      await page.getByRole("radio", { name: /^選択肢 3:/ }).click();
+      await expect(page.getByRole("heading", { name: "正解", exact: true })).toBeVisible();
+      expect(grants).toBeGreaterThan(0);
+      expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!).actions.at(-1).correct, LS_KEYS.learningActivity)).toBe(true);
+      await page.getByRole("button", { name: /次の問題|結果を見る/ }).first().click();
+      await expect(page.getByRole("heading", { name: "今日も、おつかれさまでした" })).toBeVisible();
     });
   });
 }

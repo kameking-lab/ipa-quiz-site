@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 
 import { useEffect, useRef, useState } from "react";
 import { ArrowRight } from "lucide-react";
@@ -176,7 +177,7 @@ export function StudyRoom({ snapshot, suggestions }: {
             {snapshot.exams.map(row => <li key={row.exam}>{presenceExamName(row.exam)} <strong>{row.count.toLocaleString("ja-JP")}</strong>人</li>)}
           </ul> : <div className="study-room-guidance">
             {introductions.length > 0 && <ul>{introductions.map(item => <li key={item.href}><a href={item.href}>{item.name}<ArrowRight aria-hidden="true" /></a></li>)}</ul>}
-            <a href="/search#home-directory-title" className="study-text-link">資格から問題を探す<ArrowRight aria-hidden="true" /></a>
+            <Link href="/search#home-directory-title" className="study-text-link">資格から問題を探す<ArrowRight aria-hidden="true" /></Link>
           </div>}
         </div>}
       </aside>
