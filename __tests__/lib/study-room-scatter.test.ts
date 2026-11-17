@@ -3,12 +3,28 @@ import { assignRoomPoints } from "@/lib/home/study-room-scatter";
 import { STUDY_ROOM_SCENES, studyRoomScene } from "@/lib/home/study-room-scenes";
 import { RELAXED_ROOM_ART, STUDY_ROOM_POSES, scatteredChihuahuaArt } from "@/lib/home/room-chihuahua-art";
 
-it("keeps every room's dogs apart, including their square tap areas", () => {
+it("keeps every dog inside the floor and leaves its face clear of neighbouring faces", () => {
   for (const scene of STUDY_ROOM_SCENES) for (const [i, point] of scene.seats.entries()) {
     expect(point.x - point.width / 2).toBeGreaterThanOrEqual(0);
     expect(point.y + point.width / 2).toBeLessThanOrEqual(scene.height);
     for (const other of scene.seats.slice(i + 1)) {
-      expect(Math.max(Math.abs(point.x - other.x), Math.abs(point.y - other.y))).toBeGreaterThan((point.width + other.width) / 2);
+      // The integrated art's transparent corners can overlap in a dense hall.
+      // Reserve the central half-width for the dog's head, rather than its square padding.
+      expect(Math.max(Math.abs(point.x - other.x), Math.abs(point.y - other.y))).toBeGreaterThan((point.width + other.width) / 4);
+    }
+  }
+});
+
+it("frames every stage in landscape and distributes large groups across the floor", () => {
+  for (const scene of STUDY_ROOM_SCENES) {
+    expect(scene.width / scene.height).toBeCloseTo(1.5);
+    expect(scene.minWidth).toBe(0);
+    if (scene.seats.length < 24) continue;
+    const quadrants = [0, 0, 0, 0];
+    for (const seat of scene.seats) quadrants[Number(seat.x > scene.width / 2) + 2 * Number(seat.y > scene.height * .55)]++;
+    for (const occupied of quadrants) {
+      expect(occupied / scene.seats.length).toBeGreaterThanOrEqual(.15);
+      expect(occupied / scene.seats.length).toBeLessThanOrEqual(.35);
     }
   }
 });

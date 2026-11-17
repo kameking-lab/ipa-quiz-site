@@ -25,7 +25,7 @@ it.each([1, 5, 12, 24, 48, 120, 130])("seats most of %i learners at desks with t
     expect(button.querySelectorAll('img')).toHaveLength(3);
     expect(button.querySelectorAll('[data-layer="desktop"], [data-layer="forepaws"]')).toHaveLength(0);
     expect(button.querySelectorAll('[data-layer="furniture-back"], [data-layer="character"], [data-layer="furniture-front"]')).toHaveLength(3);
-    expect(button.querySelector('img')).toHaveAttribute('src', expect.stringContaining('/study-room-mascots/'));
+    expect(button.querySelector('img')).toHaveAttribute('src', button.getAttribute('data-mascot-state') === 'away' ? '/away.webp' : expect.stringContaining('/study-room-mascots/'));
   }
   // Furniture and character reuse the same qualification's matching coordinates.
   expect(container.querySelectorAll('img[src="/vacant.webp"]')).toHaveLength(0);

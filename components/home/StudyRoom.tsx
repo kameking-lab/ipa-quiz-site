@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from "react";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import Link from "next/link";
 import { canonicalPresenceExam, presenceExamName } from "@/lib/study-presence";
 import type { MeasuredPresence } from "@/lib/study-presence-contract";
@@ -60,17 +60,6 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
   const scene = studyRoomScene(renderedStage);
   const sceneHeight = scene.height;
   const sceneRef = useRef<HTMLDivElement>(null);
-  const viewportRef = useRef<HTMLDivElement>(null);
-  useLayoutEffect(() => {
-    const viewport = viewportRef.current;
-    if (!viewport) return;
-    // Start with the foreground in view, including in a tall or expanded hall.
-    // Fresh presence samples do not reset someone's chosen scroll position.
-    const frameFloor = () => { viewport.scrollTop = viewport.scrollHeight - viewport.clientHeight; };
-    frameFloor();
-    window.addEventListener("resize", frameFloor);
-    return () => window.removeEventListener("resize", frameFloor);
-  }, [renderedStage]);
   const [backgroundReady, setBackgroundReady] = useState(false);
   const [motionVisible, setMotionVisible] = useState(false);
   const [visibleSeats, setVisibleSeats] = useState<Set<string>>(new Set());
@@ -147,7 +136,9 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
     ? `/quiz?mode=random&exam=${encodeURIComponent(selectedExam)}` : suggestion?.href ?? "/#choose-qualification";
 
   const Heading = standalone ? "h1" : "h2";
-  return <div className="mx-auto w-full min-w-0 max-w-4xl space-y-3 sm:space-y-4">
+  const inspectedSeat = seats.find(seat => `${seat.exam}:${seat.index}` === inspected);
+  const inspectedMascot = inspected && mascots.get(inspected);
+  return <div className="mx-auto w-full min-w-0 max-w-[800px] space-y-3 sm:space-y-4">
     <header className="flex min-w-0 items-center justify-between gap-2">
       <Heading id="study-room-title" className="text-xl font-bold tracking-tight">自習室</Heading>
       {filtered && <p data-testid="study-room-total" className="whitespace-nowrap text-sm tabular-nums text-muted-foreground">{current ? "いま" : "前回"}<strong className="ml-1 text-foreground">{filtered.count.toLocaleString("ja-JP")}</strong>人</p>}
@@ -159,27 +150,28 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
       </div>
       <span className="min-w-0 text-right text-xs leading-relaxed text-muted-foreground">{filtered ? scene.name : ""}</span>
     </div>
-    <div ref={viewportRef} role="region" aria-label="自習室の席" tabIndex={0} className="max-h-[min(56svh,520px)] overflow-auto rounded-2xl outline-offset-2 focus-visible:outline-2 focus-visible:outline-primary">
+    <div role="region" aria-label="自習室の席" className="rounded-2xl">
     <div ref={sceneRef} data-testid="study-room-scene" data-stage={renderedStage} data-motion-visible={motionVisible} data-art-status={scene.background ? "ready" : "pending"}
       role="group" aria-label="チワワの自習室" tabIndex={-1}
       className="relative isolate w-full min-w-0 overflow-hidden rounded-2xl border border-stone-200 bg-stone-50 outline-offset-2 focus-visible:outline-2 focus-visible:outline-primary dark:border-stone-700 dark:bg-stone-900"
-      style={{ aspectRatio: `${scene.width} / ${sceneHeight}`, minWidth: scene.minWidth }}>
+      style={{ aspectRatio: `${scene.width} / ${sceneHeight}` }}>
       {scene.background && backgroundReady && <>
-        {/* Extra halls retain the source image's aspect ratio instead of stretching it. */}
+        {/* Crop the production artwork to the floor; the back wall occupies about 15%. */}
         {Array.from({ length: scene.columns ?? 1 }, (_, column) =>
           // eslint-disable-next-line @next/next/no-img-element
-          <img key={column} src={scene.background!} alt="" width={scene.width / (scene.columns ?? 1)} height={scene.height} loading="lazy" decoding="async"
-            className="pointer-events-none absolute top-0 h-full" style={{ left: `${column * 100 / (scene.columns ?? 1)}%`, width: `${100 / (scene.columns ?? 1)}%` }} />)}
+          <img key={column} src={scene.background!} alt="" width={1536} height={858} loading="lazy" decoding="async"
+            className="pointer-events-none absolute bottom-0 h-[127%] object-cover opacity-85 saturate-[.7] contrast-[.85] brightness-105" style={{ left: `${column * 100 / (scene.columns ?? 1)}%`, width: `${100 / (scene.columns ?? 1)}%` }} />)}
       </>}
       {seats.map((seat) => {
         const key = `${seat.exam}:${seat.index}`;
         const point = scene.seats[points.get(key)!];
         const mascot = mascots.get(key)!;
         // A stable identity picks the point and visual variation; membership changes do not reflow survivors.
-        const coordinates = { "--seat-x": `${point.x / scene.width * 100}%`, "--seat-y": `${point.y / sceneHeight * 100}%`, "--seat-width": `${point.width / scene.width * 100}%`, zIndex: Math.round(point.floorY) } as CSSProperties;
+        const solo = seats.length === 1 && renderedStage === 0;
+        const coordinates = { "--seat-x": `${solo ? 50 : point.x / scene.width * 100}%`, "--seat-y": `${solo ? 55 : point.y / sceneHeight * 100}%`, "--seat-width": `${solo ? 52 : point.width / scene.width * 100}%`, zIndex: Math.round(point.floorY) } as CSSProperties;
         return <div key={key} data-testid="study-room-seat" data-seat-key={key} data-animate={motionVisible && visibleSeats.has(key)}
           onFocus={() => { focusedSeat.current = key; }} onBlur={() => { focusedSeat.current = null; }} style={coordinates}
-          className="group/seat absolute left-[var(--seat-x)] top-[var(--seat-y)] aspect-square w-[var(--seat-width)] -translate-x-1/2 -translate-y-1/2 focus-within:!z-[2000]">
+          className="group/seat absolute left-[var(--seat-x)] top-[var(--seat-y)] aspect-square w-[var(--seat-width)] -translate-x-1/2 -translate-y-1/2 focus-within:!z-[10000]">
           <StudyRoomSeat name={presenceExamName(seat.exam)!} index={seat.index} mascot={mascot} detail={seat.detail} inspected={inspected === key} cheering={cheer === key} onCheer={() => cheerSeat(seat)}
             art={mascot.art} />
         </div>;
@@ -188,6 +180,12 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
       {measured && measured.hidden > 0 && <span aria-label={`ほか${measured.hidden}人が勉強中`} className="absolute bottom-3 right-3 rounded-full border border-border bg-background px-3 py-1.5 text-sm font-semibold tabular-nums shadow-sm">+{measured.hidden}</span>}
     </div>
     </div>
+    {inspectedSeat && inspectedMascot && <div className="flex min-w-0 items-center gap-3 rounded-xl bg-muted/60 px-3 py-2" aria-live="polite" data-testid="study-room-inspected">
+      {/* The existing seat tap also makes a crowded hall's outfit and tools readable. */}
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src={inspectedMascot.src} alt="" width={112} height={112} loading="lazy" decoding="async" className="size-28 shrink-0 object-contain" />
+      <div className="min-w-0 text-sm"><p className="font-semibold">{presenceExamName(inspectedSeat.exam)}</p><p className="mt-1 text-xs text-muted-foreground">{inspectedMascot.stateLabel}</p></div>
+    </div>}
     {snapshot && !current && <p className="text-right text-xs text-muted-foreground"><time dateTime={snapshot.measuredAt}>{new Date(snapshot.measuredAt).toLocaleString("ja-JP", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Tokyo" })}</time> 時点</p>}
     <Link href={href} className="flex min-h-12 items-center justify-center rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground outline-offset-2 hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-primary">席について解く</Link>
   </div>;

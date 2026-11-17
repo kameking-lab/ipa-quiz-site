@@ -37,7 +37,7 @@ it("samples bounded floor coordinates with depth-scaled sizes instead of rows", 
   expect(STUDY_ROOM_SCENES.map(scene => scene.seats.length)).toEqual([5, 12, 24, 48, 120]);
   let previous = Infinity;
   for (const scene of STUDY_ROOM_SCENES) {
-    const largest = Math.max(...scene.seats.map(point => point.width));
+    const largest = Math.max(...scene.seats.map(point => point.width / scene.width));
     expect(largest).toBeLessThan(previous); previous = largest;
     expect(new Set(scene.seats.map(point => `${point.x},${point.y}`)).size).toBe(scene.seats.length);
     for (const seat of scene.seats) {
@@ -50,8 +50,10 @@ it("samples bounded floor coordinates with depth-scaled sizes instead of rows", 
     expect(new Set(scene.seats.map(seat => seat.floorY)).size).toBe(scene.seats.length);
     const byDepth = [...scene.seats].sort((a, b) => a.floorY - b.floorY);
     for (let i = 1; i < byDepth.length; i++) expect(byDepth[i].width).toBeGreaterThan(byDepth[i - 1].width);
-    expect(scene.background).toMatch(/^\/images\/home\/study-room-v3\/R\d\.webp$/);
+    expect(scene.background).toBe("/images/home/study-room-white.webp");
     const smallest = Math.min(...scene.seats.map(point => point.width));
-    expect(smallest * (scene.minWidth ?? 358) / scene.width).toBeGreaterThanOrEqual(44);
+    // Full-room overview, including 120 learners, fits the phone without scrolling.
+    // A seat tap exposes a full-size portrait below the frame.
+    expect(smallest * 358 / scene.width).toBeGreaterThanOrEqual(22);
   }
 });

@@ -20,8 +20,9 @@ it("keeps exact headcounts and whole-person study/nap/rest quotas at all stages"
     const mascots = furnitureRoomMascots(keys, points, scene.seats);
     expect(mascots.size).toBe(count);
     const states = [...mascots.values()].map(m => m.state);
-    expect(states.filter(s => s === "break")).toHaveLength(Math.round(count * .14) + Math.floor(count * .07));
-    expect(states.filter(s => s === "away")).toHaveLength(0);
+    const resting = states.filter(s => s !== "study");
+    expect(resting).toHaveLength(Math.round(count * .2));
+    expect(states.filter(s => s === "away")).toHaveLength(count >= 10 ? Math.max(1, Math.round(count * .06)) : 0);
     expect(states.filter(s => s === "study").length / count).toBeGreaterThanOrEqual(.78);
     expect(furnitureRoomMascots([...keys].reverse(), points, scene.seats)).toEqual(mascots);
     for (const [key, mascot] of mascots) {
@@ -57,10 +58,19 @@ it("keeps shared qualifications' props instead of substituting a field idle pose
   for (const mascot of mascots) expect(mascot.src).toMatch(/\/shared-kisho-(study|break)\.webp$/);
 });
 
-it("does not overlap any reserved furniture boxes, including ground shadows", () => {
+it("keeps the heads separated even where transparent sprite corners share space", () => {
   for (const scene of STUDY_ROOM_SCENES) for (const [i, point] of scene.seats.entries()) {
     for (const other of scene.seats.slice(i + 1)) expect(
-      Math.max(Math.abs(point.x - other.x), Math.abs(point.y - other.y)) - (point.width + other.width) / 2,
-    ).toBeGreaterThanOrEqual(8);
+      Math.max(Math.abs(point.x - other.x), Math.abs(point.y - other.y)) - (point.width + other.width) / 4,
+    ).toBeGreaterThan(0);
   }
+});
+
+it("shows an actual sleeping dog and a qualification-specific playing dog among twelve", () => {
+  const keys = Array.from({ length: 12 }, (_, i) => `fe:${i}`);
+  const scene = STUDY_ROOM_SCENES[1];
+  const mascots = [...furnitureRoomMascots(keys, assignRoomPoints(keys, scene.seats.length), scene.seats).values()];
+  expect(mascots.filter(m => m.state === "study")).toHaveLength(10);
+  expect(mascots.filter(m => m.src.endsWith("/idle/fe-nap.webp"))).toHaveLength(1);
+  expect(mascots.filter(m => m.src.endsWith("/away-exam-fe.webp"))).toHaveLength(1);
 });

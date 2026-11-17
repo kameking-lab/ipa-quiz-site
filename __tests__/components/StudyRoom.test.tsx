@@ -75,8 +75,11 @@ it("keeps premium dogs in place and reveals supplied daily answers only on tap",
   expect(screen.queryByText("今日17問")).not.toBeInTheDocument();
   fireEvent.click(seats[2].querySelector("button")!);
   expect(screen.getByText("今日17問")).toBeInTheDocument();
+  expect(screen.getByTestId("study-room-inspected")).toHaveTextContent("基本情報技術者");
+  expect(screen.getByTestId("study-room-inspected").querySelector("img")).toHaveAttribute("width", "112");
   fireEvent.click(seats[2].querySelector("button")!);
   expect(screen.queryByText("今日17問")).not.toBeInTheDocument();
+  expect(screen.queryByTestId("study-room-inspected")).not.toBeInTheDocument();
   expect(screen.queryByText("今日0問")).not.toBeInTheDocument();
 });
 
