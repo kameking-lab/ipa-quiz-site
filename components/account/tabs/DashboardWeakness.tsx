@@ -1,6 +1,5 @@
 import * as React from "react";
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { WeaknessHeatmapClient } from "@/app/account/weakness/WeaknessHeatmapClient";
@@ -28,7 +27,7 @@ export function DashboardWeakness({ categoryById }: Props) {
         <CardContent className="flex flex-col items-start gap-3 p-5 sm:flex-row sm:items-center sm:justify-between">
           <div>
             <p className="mb-1 inline-flex items-center gap-1 rounded-full bg-rose-100 px-2 py-0.5 text-[11px] font-semibold uppercase tracking-wider text-rose-800 dark:bg-rose-900/60 dark:text-rose-100">
-              <Sparkles className="h-3 w-3" /> 推奨アクション
+              推奨アクション
             </p>
             <h3 className="text-base font-bold text-rose-900 dark:text-rose-100">
               弱点克服モード

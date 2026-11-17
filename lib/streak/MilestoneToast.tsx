@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { Flame, Sparkles, Trophy, X } from "lucide-react";
+import { Flame, Trophy, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { StreakMilestone } from "./core";
 
@@ -67,7 +67,7 @@ export function MilestoneToast({
           </div>
           <div className="flex-1">
             <div className="mb-0.5 flex items-center gap-1 text-xs font-semibold text-amber-700 dark:text-amber-200">
-              <Sparkles className="h-3 w-3" aria-hidden="true" />
+              <Trophy className="h-3 w-3" aria-hidden="true" />
               <span>マイルストーン達成</span>
             </div>
             <div className="text-sm font-bold text-zinc-900 dark:text-zinc-50">

@@ -1,11 +1,11 @@
 "use client";
 
-import { requestAiConsent } from "@/lib/ai/consent";
+import { AiProcessingNotice } from "@/components/ai/AiProcessingNotice";
 
 import * as React from "react";
 import dynamic from "next/dynamic";
 import {
-  Sparkles,
+  MessageCircle,
   Send,
   Loader2,
   Square,
@@ -350,7 +350,6 @@ export function CopilotPanel({
       }
       const trimmed = text.trim();
       if (!trimmed && !quickAction) return;
-      if (!requestAiConsent()) return;
 
       setErrorState(null);
       setRestriction(null);
@@ -869,6 +868,7 @@ export function CopilotPanel({
           </Button>
         )}
       </form>
+      <AiProcessingNotice />
     </>
   );
 
@@ -877,11 +877,8 @@ export function CopilotPanel({
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-zinc-200 px-4 py-3 dark:border-zinc-800">
         <div className="flex items-center gap-2">
-          <Sparkles className="h-4 w-4 text-sky-600 dark:text-sky-400" />
-          <span className="text-sm font-semibold">{inline ? "この問題をAIに質問" : "AI コパイロット"}</span>
-          <span className="ml-2 rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-medium text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300" title="短時間の連続利用などには適正利用制限があります">
-            無料で質問
-          </span>
+          <MessageCircle className="h-4 w-4 text-sky-600 dark:text-sky-400" />
+          <span className="text-sm font-semibold">この問題をAIに質問</span>
         </div>
         <div className="flex items-center gap-1">
           {hasMessages && (
@@ -1345,7 +1342,7 @@ export function CopilotMobileSheet({
           onClick={() => setOpen(true)}
           className="my-4 inline-flex min-h-11 items-center gap-2 rounded-full border border-primary/30 bg-card px-5 py-3 text-sm font-semibold text-primary hover:bg-primary-soft sm:hidden"
         >
-          <Sparkles className="h-4 w-4" />
+          <MessageCircle className="h-4 w-4" />
           AIに聞く
         </button>
       )}
@@ -1477,7 +1474,7 @@ export function CopilotDesktopFloating({
           aria-expanded={open}
           className="bottom-safe fixed right-6 z-40 hidden h-14 items-center gap-2 rounded-full bg-sky-600 pl-4 pr-5 text-sm font-semibold text-white shadow-xl transition hover:bg-sky-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:inline-flex"
         >
-          <Sparkles className="h-4 w-4" aria-hidden="true" />
+          <MessageCircle className="h-4 w-4" aria-hidden="true" />
           AIに聞く
         </button>
       )}

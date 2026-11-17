@@ -35,7 +35,7 @@ import { createHistoryStore } from "@/lib/storage/history";
 import { writeLastQuestion } from "@/lib/storage/last-question";
 
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Timer, Check, Copy, Sparkles, Star, BookOpen } from "lucide-react";
+import { ArrowLeft, Timer, Check, Copy, MessageCircle, Star, BookOpen } from "lucide-react";
 import { examLabel } from "@/lib/utils";
 import { comboLevel, readMotivationSettings } from "@/lib/motivation/combo";
 import { playPiroro } from "@/lib/motivation/sound";
@@ -789,7 +789,7 @@ export function QuizCompleteScreen({
   const shareUrl = safeShareHref
     ? `${QUIZ_ORIGIN}${safeShareHref}`
     : `${QUIZ_ORIGIN}/quiz?mode=${encodeURIComponent(mode)}&exam=${encodeURIComponent(exam)}`;
-  const shareText = `${label}の過去問で正答率${accuracy}%でした！ AIコパイロット付き無料学習 #過去問AI #IPA試験`;
+  const shareText = `${label}の過去問で正答率${accuracy}%でした！ #過去問AI #IPA試験`;
   const lineUrl = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(`${shareUrl}\n${shareText}`)}`;
 
   const handleCopy = async () => {
@@ -851,7 +851,7 @@ export function QuizCompleteScreen({
         <div className="flex flex-col gap-2">
           {onReviewLast ? (
             <Button variant="outline" onClick={onReviewLast} className="w-full">
-              <Sparkles className="h-4 w-4" aria-hidden="true" />
+              <MessageCircle className="h-4 w-4" aria-hidden="true" />
               最後の問題をAIに質問
             </Button>
           ) : null}

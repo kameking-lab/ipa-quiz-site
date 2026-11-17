@@ -5,7 +5,7 @@ import { practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, ChevronRight, Clock, Code2, PenLine, Sparkles, TrendingUp } from "lucide-react";
+import { ArrowRight, ChevronRight, Clock, Code2, PenLine, TrendingUp } from "lucide-react";
 
 import type { ExamCode } from "@/lib/questions/types";
 import { examLabel } from "@/lib/utils";
@@ -285,7 +285,6 @@ export default async function ExamTopPage({
 
         <header className="mb-6">
           <Badge variant="soft" className="mb-3">
-            <Sparkles className="h-3 w-3" />
             {examLabel(code)}
           </Badge>
           <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
@@ -497,7 +496,6 @@ export default async function ExamTopPage({
                 </div>
                 <div className="rounded-2xl border border-border bg-card p-4 shadow-sm">
                   <div className="mb-1 flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-                    <Sparkles className="h-3 w-3" />
                     出題傾向
                   </div>
                   <p className="text-[13px] leading-relaxed text-foreground">

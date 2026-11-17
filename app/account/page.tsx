@@ -3,7 +3,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import {
-  Sparkles,
   ArrowRight,
   Heart,
   Mail,
@@ -181,8 +180,7 @@ export default async function AccountPage() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2 text-base">
             <span className="inline-flex h-7 w-7 items-center justify-center rounded-lg bg-primary-soft text-primary-soft-foreground">
-              <Sparkles className="h-3.5 w-3.5" />
-            </span>
+              </span>
             学習科学ツール
           </CardTitle>
           <CardDescription>合格戦略を最適化するツール（全ユーザー利用可能）。</CardDescription>

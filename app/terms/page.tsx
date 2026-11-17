@@ -14,7 +14,7 @@ import {
   MessageSquare,
   Quote,
   RefreshCw,
-  Sparkles,
+  BookOpen,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -72,7 +72,7 @@ export default function TermsPage() {
         <div className="space-y-5">
           <Section
             number="1"
-            icon={<Sparkles className="h-5 w-5" />}
+            icon={<BookOpen className="h-5 w-5" />}
             title="サービスの概要"
           >
             <p>

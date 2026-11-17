@@ -6,7 +6,7 @@ import { questionReferenceLabel } from "@/lib/questions/reference-label";
 import * as React from "react";
 import type { NativeBGrade } from "@/lib/questions/types";
 import { NativeBFeedback } from "./NativeBAnswer";
-import { Star, Sparkles, ArrowRight, AlertCircle, CheckCircle2, FileText } from "lucide-react";
+import { Star, MessageCircle, ArrowRight, AlertCircle, CheckCircle2, FileText } from "lucide-react";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { choiceDisplayLabel, formatQuestionAnswerForDisplay } from "@/lib/questions/display";
 import { Button } from "@/components/ui/button";
@@ -198,7 +198,7 @@ export function ExplanationCard({
           onClick={onAskAI}
           className="sm:flex-1"
         >
-          <Sparkles className="h-4 w-4" />
+          <MessageCircle className="h-4 w-4" />
           この問題をAIに質問
         </Button>
       </div>

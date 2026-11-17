@@ -1,6 +1,5 @@
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { cleanup, fireEvent, render, screen } from "@testing-library/react";
-import { QuestionCommentBox } from "@/components/quiz/QuestionCommentBox";
 import { QuestionFeedback } from "@/components/quiz/QuestionFeedback";
 import { ContactForm } from "@/app/contact/ContactForm";
 import { LS_KEYS } from "@/lib/storage/keys";
@@ -8,24 +7,6 @@ vi.mock("@/lib/posthog", () => ({ posthogCapture: vi.fn() }));
 beforeEach(() => localStorage.clear());
 afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
 const receipt = () => Response.json({ ok: true, delivery: "delivered", receiptId: "KG-confirmed" });
-it("retains an unsent supplement on HTTP failure and saves a confirmed receipt only after retry", async () => {
-  const legacy = JSON.stringify([{ id: "old", questionId: "q", body: "以前のメモ", createdAt: 1, status: "visible" }]);
-  localStorage.setItem(LS_KEYS.questionFeedback, legacy);
-  const fetcher = vi.fn().mockResolvedValueOnce(Response.json({ ok: false }, { status: 503 })).mockResolvedValueOnce(receipt());
-  vi.stubGlobal("fetch", fetcher);
-  render(<QuestionCommentBox questionId="q" />);
-  expect(screen.getByText(/以前の端末内メモ/)).toBeVisible();
-  fireEvent.change(screen.getByRole("textbox"), { target: { value: "補足を送信します" } });
-  fireEvent.click(screen.getByRole("button", { name: "運営へ送信する" }));
-  expect(await screen.findByRole("alert")).toHaveTextContent("送信を確認できませんでした");
-  expect(screen.getByRole("textbox")).toHaveValue("補足を送信します");
-  expect(localStorage.getItem(LS_KEYS.questionComments)).toBeNull();
-  fireEvent.click(screen.getByRole("button", { name: "運営へ送信する" }));
-  expect(await screen.findByRole("status")).toHaveTextContent("KG-confirmed");
-  expect(screen.getByRole("textbox")).toHaveValue("");
-  expect(localStorage.getItem(LS_KEYS.questionFeedback)).toBe(legacy);
-  expect(JSON.parse(localStorage.getItem(LS_KEYS.questionComments)!)[0].receiptId).toBe("KG-confirmed");
-});
 it("does not acknowledge or persist an error report until delivery succeeds", async () => {
   const fetcher = vi.fn().mockRejectedValueOnce(new Error("offline")).mockResolvedValueOnce(receipt());
   vi.stubGlobal("fetch", fetcher);
@@ -49,18 +30,6 @@ it("keeps a contact body when a 200 response lacks delivery confirmation", async
   await screen.findByRole("alert");
   expect(body).toHaveValue("問い合わせ内容です");
   expect(screen.queryByRole("status")).toBeNull();
-});
-it("preserves new supplement receipts when the legacy key is corrupt", async () => {
-  localStorage.setItem(LS_KEYS.questionFeedback, "{broken");
-  localStorage.setItem(LS_KEYS.questionComments, JSON.stringify([{ id: "saved", questionId: "q", body: "保存済みの補足", createdAt: 1, status: "visible", receiptId: "KG-old" }]));
-  vi.stubGlobal("fetch", vi.fn().mockResolvedValue(receipt()));
-  render(<QuestionCommentBox questionId="q" />);
-  expect(screen.getByText("保存済みの補足")).toBeVisible();
-  fireEvent.change(screen.getByRole("textbox"), { target: { value: "新しい補足です" } });
-  fireEvent.click(screen.getByRole("button", { name: "運営へ送信する" }));
-  await screen.findByRole("status");
-  expect(JSON.parse(localStorage.getItem(LS_KEYS.questionComments)!)).toHaveLength(2);
-  expect(localStorage.getItem(LS_KEYS.questionFeedback)).toBe("{broken");
 });
 it("preserves new ratings and acknowledgement when the legacy key is corrupt", async () => {
   localStorage.setItem(LS_KEYS.questionFeedback, "{broken");

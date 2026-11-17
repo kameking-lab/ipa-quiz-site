@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowRight, Sparkles, ExternalLink } from "lucide-react";
+import { ArrowRight, ExternalLink } from "lucide-react";
 
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
@@ -131,7 +131,6 @@ export default async function FeatureLandingPage({
 
       <header className="mb-8">
         <Badge variant="soft" className="mb-3">
-          <Sparkles className="h-3 w-3" />
           {page.hero.badge}
         </Badge>
         <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">

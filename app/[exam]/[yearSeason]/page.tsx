@@ -4,7 +4,7 @@ import { practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronRight, Sparkles } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 import type { ExamCode, Season } from "@/lib/questions/types";
 import { examLabelAt } from "@/lib/exam-naming/history";
@@ -290,7 +290,6 @@ export default async function ExamYearSeasonPage({
 
         <header className="mb-8 animate-fade-in">
           <Badge variant="soft" className="mb-3">
-            <Sparkles className="h-3 w-3" />
             {histLabel}
           </Badge>
           <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
@@ -300,7 +299,7 @@ export default async function ExamYearSeasonPage({
             {histLabel}
           </h1>
           <p className="mt-3 text-sm text-muted-foreground">
-            過去問一覧 — AI 解説付きで効率的に学習を進められます。
+            過去問一覧 — 問題と解説を確認して学習を進められます。
           </p>
           {code === "shakai" && (
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">

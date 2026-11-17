@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, BookOpenCheck, CheckCircle2, Lightbulb, Sparkles, XCircle } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookOpenCheck, CheckCircle2, Lightbulb, XCircle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -127,7 +127,7 @@ export default function EssayGradingDemoPage() {
       <header className="mb-8">
         <div className="mb-3 flex flex-wrap items-center gap-2">
           <Badge variant="success">
-            <Sparkles className="h-3 w-3" /> 編集部作成の練習例
+            編集部作成の練習例
           </Badge>
           <Badge variant="outline">見直しの観点と改善例</Badge>
         </div>

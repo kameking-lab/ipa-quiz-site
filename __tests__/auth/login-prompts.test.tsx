@@ -25,7 +25,6 @@ import { QuizResumeLinks } from "@/app/billing/QuizResumeLinks";
 import { QuizClient } from "@/app/quiz/QuizClient";
 import { AuthorizedContent } from "@/mobile/shared/AuthorizedContent";
 import { ExamQuestionPlayer } from "@/components/exam-library/exam-question-player";
-import { HomeHeroLede } from "@/components/home/HomeHeroLede";
 import MonthlyPage from "@/app/billing/MonthlyPage";
 import { PurchaseStatus } from "@/app/billing/PurchaseStatus";
 
@@ -84,10 +83,6 @@ for (const state of ["authenticated", "loading", "unauthenticated"] as const) {
     it("guards cloud sync login", () => {
       render(<CloudSyncPanel />);
       expect(screen.queryByRole("link", { name: "サインインして同期" }) !== null).toBe(guest);
-    });
-    it("guards the legacy home sync advice", () => {
-      render(<HomeHeroLede totalQuestions={1} />);
-      expect(screen.queryByText(/無料ログインで利用できます/) !== null).toBe(guest);
     });
     it("guards monthly purchase advice while retaining the same plan link", async () => {
       const { container } = render(await MonthlyPage({ returnTo: "/quiz?question=q1" }));

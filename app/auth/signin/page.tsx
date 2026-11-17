@@ -9,7 +9,6 @@ import {
   AlertCircle,
   Cloud,
   ShieldCheck,
-  Sparkles,
 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { SignInButtons } from "./SignInButtons";
@@ -163,7 +162,7 @@ export default async function SignInPage({
             label="履歴クラウド同期"
           />
           <BenefitPill
-            icon={<Sparkles className="h-3.5 w-3.5" />}
+            icon={<Cloud className="h-3.5 w-3.5" />}
             label="無料枠と月額プランをご用意"
           />
           <BenefitPill

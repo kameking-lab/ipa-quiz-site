@@ -83,8 +83,6 @@ test("products that App Store does not return: the reason and code stay on scree
   await expect(page.getByRole("button",{name:/月で登録/})).toHaveCount(0);
   await page.screenshot({path:info.outputPath("3-no-products.png")});
   // Another action sets its own notice; the store reason must not be overwritten.
-  await page.getByRole("button",{name:"AI送信の許可を取り消す"}).click();
-  await expect(page.getByRole("status").first()).toContainText("AI送信の許可を取り消しました");
   await expect(alert).toContainText("コード 23 CONFIGURATION_ERROR");
   // Fixing the store side and retrying brings the price back without restarting.
   await page.evaluate(()=>window.mobileTest.mockStore("success"));

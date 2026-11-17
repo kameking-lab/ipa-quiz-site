@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Sparkles, FileText, History, AlertTriangle } from "lucide-react";
+import { FileText, History, AlertTriangle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -166,7 +166,7 @@ export default function EssayHomePage() {
       <section className="mb-8 text-center">
         <div className="mb-3 flex justify-center">
           <Badge variant="success">
-            <Sparkles className="h-3 w-3" /> Premium / β中は月3回まで無料
+            Premium / β中は月3回まで無料
           </Badge>
         </div>
         <h1 className="mb-3 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">

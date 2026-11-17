@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { AccountNavigationLink } from "@/components/account/AccountNavigation";
 import {
-  Sparkles,
   ClipboardList,
   Search,
   LineChart,
@@ -37,7 +36,7 @@ interface TabItem {
 }
 
 const TABS: TabItem[] = [
-  { href: "/", label: "問題", icon: Sparkles, match: ["/quiz", "/q/"] },
+  { href: "/", label: "問題", icon: BookOpen, match: ["/quiz", "/q/"] },
   { href: "/mock-exam", label: "模試", icon: ClipboardList, match: ["/mock-exam"] },
   { href: "/search", label: "検索", icon: Search, match: ["/search"] },
   {
@@ -54,7 +53,7 @@ const SECONDARY_NAV: { href: string; label: string; icon: React.ComponentType<{ 
   { href: "/bookmarks", label: "ブックマーク", icon: Bookmark },
   { href: "/study-plan", label: "学習計画", icon: CalendarRange },
   { href: "/why-kakomon-ai", label: "過去問AIを選ぶ理由", icon: HelpCircle },
-  { href: "/features", label: "機能特集", icon: Sparkles },
+  { href: "/features", label: "機能特集", icon: BookOpen },
   { href: "/essays", label: "論述例", icon: FileText },
   { href: "/recommended-books", label: "推薦書籍", icon: BookOpen },
   { href: "/settings", label: "設定", icon: Settings },

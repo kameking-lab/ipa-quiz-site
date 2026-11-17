@@ -142,7 +142,6 @@ test("server denial never renders the eleventh question and AI refusal sends not
   await page.goto(ORIGIN+"/tests/e2e/harness.html");await page.waitForFunction(()=>!!window.mobileTest);await page.evaluate(()=>window.mobileTest.showContent());
   for(let i=1;i<=10;i++){await page.getByLabel("問題を選択").selectOption(`mock-${i}`);await expect(page.getByRole("radiogroup")).toBeVisible();}
   await page.getByLabel("問題を選択").selectOption("mock-11");await expect(page.getByRole("alert")).toContainText("無料10問");await expect(page.getByRole("radiogroup")).toHaveCount(0);expect(used.size).toBe(10);
-  page.once("dialog",dialog=>dialog.dismiss());expect(await page.evaluate(()=>window.mobileTest.aiConsent())).toBe(false);
 });
 test("unviewed diagram survives save, restart and airplane mode",async({page,context})=>{
   await routeLocal(context);

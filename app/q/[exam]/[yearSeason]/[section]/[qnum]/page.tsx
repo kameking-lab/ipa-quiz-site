@@ -17,7 +17,6 @@ import {
   ChevronRight,
   ChevronDown,
   ExternalLink,
-  Sparkles,
   AlertTriangle,
   ArrowRight,
   BookOpenCheck,
@@ -546,36 +545,6 @@ export default async function QuestionPage({
       <div className="print:hidden">
         <KamokuBStudyHint exam={q.exam} session={q.session} />
       </div>
-
-      {/* AI Copilot CTA — gradient panel */}
-      <section
-        aria-label="AI コパイロット"
-        className="print:hidden relative mt-6 overflow-hidden rounded-2xl border border-primary/30 bg-gradient-to-br from-primary-soft via-card to-card p-5 shadow-md sm:p-6"
-      >
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute -right-12 -top-12 h-40 w-40 rounded-full bg-primary/15 blur-2xl"
-        />
-        <div className="relative flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <div>
-            <div className="mb-1.5 inline-flex items-center gap-1.5 rounded-full bg-primary-soft px-2.5 py-0.5 text-[11px] font-semibold text-primary-soft-foreground">
-              <Sparkles className="h-3 w-3" />
-              AI コパイロット
-            </div>
-            <h2 className="text-base font-bold tracking-tight text-foreground sm:text-lg">
-              この問題を AI と深掘りする
-            </h2>
-          </div>
-          <Button asChild variant="gradient" size="lg" className="w-full shrink-0 sm:w-auto">
-            <Link
-              href={`/quiz?mode=year&exam=${q.exam}&year=${q.year}&season=${q.season}&session=${q.session}&question=${encodeURIComponent(q.id)}&returnTo=${encodeURIComponent(questionPagePath(q))}`}
-            >
-              クイズモードで開く
-              <ArrowRight className="h-4 w-4" />
-            </Link>
-          </Button>
-        </div>
-      </section>
 
       {/* Sharing remains a single compact group after the explanation follow-up links. */}
 

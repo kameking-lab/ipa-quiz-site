@@ -1,9 +1,8 @@
 "use client";
-import { requestAiConsent } from "@/lib/ai/consent";
+import { AiProcessingNotice } from "@/components/ai/AiProcessingNotice";
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { AiAccessNotice, useAiAccessNotice } from "@/components/ai/AiAccessNotice";
-import { Sparkles } from "lucide-react";
 import { buttonVariants } from "@/components/ui/button";
 import { Markdown } from "@/components/ui/markdown";
 import { posthogCapture } from "@/lib/posthog";
@@ -34,7 +33,6 @@ export function ExamLibraryCopilot({ examId, questionId, selectedChoice }: {
   async function ask() {
     const question = draft.trim();
     if (!question || busy) return;
-    if (!requestAiConsent()) return;
     const history = [...messages, { role: "user" as const, content: question }].slice(-12);
     setMessages([...history, { role: "assistant", content: "" }]);
     setDraft("");
@@ -88,12 +86,10 @@ export function ExamLibraryCopilot({ examId, questionId, selectedChoice }: {
   return (
     <div className="mt-4 border-t border-current/25 pt-3">
       <button type="button" onClick={() => setOpen(!open)} aria-expanded={open} className={buttonVariants({ variant: "outline", size: "lg" })}>
-        <Sparkles className="h-5 w-5" aria-hidden="true" />
         この問題をAIに質問
       </button>
       {open ? (
         <div className="mt-3 rounded-xl border border-sky-300 bg-white p-3 text-slate-950 dark:border-sky-700 dark:bg-slate-950 dark:text-white">
-          <p className="text-sm leading-6">問題と公表元の資料を参照して回答します。AIの説明は公式見解ではありません。</p>
           {messages.length > 0 ? (
             <ol aria-label="AIとの対話" className="mt-3 space-y-3">
               {messages.map((message, index) => (
@@ -118,6 +114,7 @@ export function ExamLibraryCopilot({ examId, questionId, selectedChoice }: {
             />
             {error ? <p role="alert" className="mt-2 text-sm text-red-700 dark:text-red-300">{error}</p> : null}
             <button type="submit" disabled={busy || !draft.trim()} className={`${buttonVariants({ variant: "primary", size: "lg" })} mt-2`}>{busy ? "回答中…" : "AIに聞く"}</button>
+            <AiProcessingNotice />
           </form>
         </div>
       ) : null}

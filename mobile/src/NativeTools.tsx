@@ -309,7 +309,6 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       <section aria-labelledby="native-account" className={card}>
         <h2 id="native-account" className="font-bold">アカウントとデータ</h2>
         {access && <p><Link className="inline-flex min-h-11 items-center font-medium underline underline-offset-4" href={access.userId ? "/account" : "/auth/signin?callbackUrl=/account"}>{access.userId ? "アカウント（ログアウト・削除）" : "ログイン"}</Link></p>}
-        <button className={secondary} onClick={()=>{localStorage.removeItem("kakomon:ai-consent:20261103");setNotice("AI送信の許可を取り消しました。次の送信前に再確認します。");}}>AI送信の許可を取り消す</button>
         <p><Link className="inline-flex min-h-11 items-center font-medium text-destructive underline underline-offset-4" href="/account/delete">アカウント・学習データを削除</Link></p>
       </section>
     </section>}

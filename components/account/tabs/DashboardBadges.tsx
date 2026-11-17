@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Sparkles } from "lucide-react";
 import { BadgeWall } from "@/app/account/badges/BadgeWall";
 import { readXp, xpProgress, type XpProgress } from "@/lib/gamification/xp";
 
@@ -23,7 +22,7 @@ export function DashboardBadges() {
         <div className="flex items-center justify-between gap-4">
           <div className="min-w-0">
             <p className="mb-1 inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-violet-700 dark:text-violet-300">
-              <Sparkles className="h-3 w-3" /> レベル
+              レベル
             </p>
             <p className="text-3xl font-bold text-violet-950 dark:text-violet-50 sm:text-4xl">
               Lv. {xp?.level ?? "—"}
