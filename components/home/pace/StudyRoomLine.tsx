@@ -16,5 +16,5 @@ export function StudyRoomLine() {
     window.addEventListener(PRESENCE_STATE_EVENT, update);
     return () => { window.removeEventListener(PRESENCE_STATE_EVENT, update); window.clearInterval(timer); };
   }, []);
-  return <div data-study-presence-viewer className="py-6 text-center"><Link href="/study-room" className="inline-flex min-h-11 items-center gap-2 text-sm text-muted-foreground hover:text-foreground"><span className="h-2 w-2 rounded-full bg-emerald-500" />{count === null ? "自習室をのぞく" : `いま${count}人が自習室で勉強中`}<span aria-hidden="true">›</span></Link></div>;
+  return <div data-study-presence-viewer className="py-3 text-center"><Link href="/study-room" className="inline-flex min-h-11 items-center gap-2 rounded-lg px-3 text-sm text-muted-foreground hover:text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"><span aria-hidden="true" className="h-2 w-2 rounded-full bg-emerald-500" />{count === null ? "自習室をのぞく" : `いま${count}人が自習室で勉強中`}<span aria-hidden="true">›</span></Link></div>;
 }
