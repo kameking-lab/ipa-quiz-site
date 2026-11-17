@@ -19,7 +19,7 @@
 
 ## 行動・同期
 
-- 日別の分換算は `dailyLearningPoints(getLearningActions())`、保存先は `LS_KEYS.learningPoints`。解答5秒未満は0、通常3分、記述15分、論述30分、五枠6分。これはサービス内のポイント重みであり、公式試験時間ではない。AI質問2分は同じ問題で累計2回まで、解説読了1分は同じ問題で1日1回まで。
+- 日別の分換算は `dailyLearningPoints(getLearningActions())`、保存先は `LS_KEYS.learningPoints`。同一問題の解答加点は1日1回。解答5秒未満は0、通常3分、記述15分、論述30分、五枠6分。これはサービス内のポイント重みであり、公式試験時間ではない。AI質問2分は同じ問題で累計2回まで、解説読了1分は同じ問題で1日1回まで。
 - 通常・ストリームのクイズは `useQuestionActivity` で前面表示中の時間だけ計測する。解説末尾の可視状態と5秒以上の閲覧後の操作を合わせて記録する。タイマー・表示・IntersectionObserver単独では加点しない。AI質問は既存コパイロットで正常な応答を受け取ったとき記録する。
 - 他の問題形式の画面には `recordLearningAction({ id: uniqueActionId, questionId, exam, kind, at, activeMs, questionType, correct? })` を使える。記述の自己照合は正解を推測しない。採点されない問題に `correct: true` を渡さない。
 - `CloudSyncAutoSync` から新しい計画・行動だけを自動同期。未ログインは端末のみ。既存の `/api/account/study-plan-sync` と `StudyPlan.payload/progress` のJSONを使用。従来計画には混ぜない。学習行動は不変IDで和集合を取り、複数端末の重複を排除する。共有端末で別アカウントのデータは引き継がない。

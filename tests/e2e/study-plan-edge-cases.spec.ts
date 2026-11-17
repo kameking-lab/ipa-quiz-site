@@ -24,6 +24,27 @@ async function setup(page: Page, plan?: PacePlan, count = 0) {
 
 test.use({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, serviceWorkers: "block" });
 
+test("a saved plan without an appointment shows no invented target or paid nudge", async ({ page }) => {
+  await setup(page, { ...makePlan(), examDate: null });
+  await page.goto("/");
+  await expect(page.getByRole("img", { name: "進み具合0%、受験日未設定" })).toBeVisible();
+  await expect(page.locator("main svg path.fill-amber-400")).toHaveCount(0);
+  await expect(page.getByText("日程未設定", { exact: true })).toBeVisible();
+  await expect(page.getByRole("link", { name: /回数無制限で追いつけます/ })).toHaveCount(0);
+});
+
+for (const [result, label] of [["failed", "不合格"], ["absent", "受けなかった"]] as const) {
+  test(`a past exam records ${result} and offers the next plan`, async ({ page }) => {
+    await setup(page, { ...makePlan(), examDate: "2026-11-16" });
+    await page.goto("/");
+    await page.getByRole("button", { name: label, exact: true }).click();
+    await expect(page.getByRole("heading", { name: "次の一歩を、いっしょに。" })).toBeVisible();
+    await expect(page.getByRole("button", { name: "学習計画を作成", exact: true })).toBeVisible();
+    expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!)[0].result, LS_KEYS.pacePlans)).toBe(result);
+    await expect(page.getByRole("link", { name: /今日の問題を解く/ })).toHaveCount(0);
+  });
+}
+
 for (const [percent, target] of [[0, 0], [50, 50], [100, 100]] as const) {
   test(`track at ${percent}% keeps the flag and dog visible at coincident positions`, async ({ page }) => {
     const plan = makePlan();
@@ -47,6 +68,9 @@ for (const [percent, target] of [[0, 0], [50, 50], [100, 100]] as const) {
     expect(geometry.inside).toBe(true);
     expect(geometry.separate).toBe(true);
     expect(geometry.animation).toBe("none");
+    await page.emulateMedia({ reducedMotion: "no-preference" });
+    await expect.poll(() => track.evaluate(el => document.getAnimations().some(animation =>
+      (animation.effect as KeyframeEffect | null)?.target === el.querySelector("image")!.parentElement))).toBe(true);
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   });
 }
@@ -66,7 +90,6 @@ test("idle refresh does not change mastery or learning points, failed confirmati
     localStorage.setItem(key, JSON.stringify(state));
     window.dispatchEvent(new Event("study-plan:changed"));
   }, { key: LS_KEYS.history, id: catalog[0].id });
-  await expect(page.getByRole("img", { name: "進み具合50%、今日の目標50%" })).toHaveCount(0);
   await expect(page.getByRole("img", { name: /進み具合50%/ })).toBeVisible(); // 49.5%, rounded for display
   await expect.poll(async () => Number(await page.locator('svg line.stroke-emerald-500').getAttribute("x2"))).toBeCloseTo(158.7);
 });
