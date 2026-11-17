@@ -56,8 +56,8 @@ async function loadJapaneseFont(origin: string): Promise<ArrayBuffer | null> {
 const TYPE_META: Record<string, TypeStyle> = {
   home: {
     gradient: "linear-gradient(135deg, #0c4a6e 0%, #0284c7 55%, #0369a1 100%)",
-    emoji: "🤖",
-    subtitle: "AIネイティブ過去問学習",
+    emoji: "📚",
+    subtitle: "資格の過去問演習",
   },
   exam: {
     gradient: "linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #06b6d4 100%)",
@@ -131,7 +131,7 @@ const TYPE_META: Record<string, TypeStyle> = {
   },
   default: {
     gradient: "linear-gradient(135deg, #0c4a6e 0%, #0284c7 55%, #0369a1 100%)",
-    emoji: "✨",
+    emoji: "📚",
     subtitle: "過去問AI",
   },
 };

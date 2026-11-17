@@ -165,7 +165,7 @@ export function ExplanationLayers({ explanation }: { explanation: string }) {
           >
             {collapsible ? (
               <details open className="group/layer">
-                <summary className="mb-2.5 flex cursor-pointer list-none items-center justify-between gap-2 [&::-webkit-details-marker]:hidden">
+                <summary className="mb-2.5 flex min-h-11 cursor-pointer list-none items-center justify-between gap-2 rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary [&::-webkit-details-marker]:hidden">
                   <div className="flex items-center gap-2">
                     <span
                       className={`inline-flex items-center gap-1 rounded-full px-2 py-0.5 text-[11px] font-semibold tracking-wide ${tone.chip}`}

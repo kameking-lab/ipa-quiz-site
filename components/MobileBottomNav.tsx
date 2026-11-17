@@ -7,7 +7,7 @@ import { cn } from "@/lib/utils";
 const tabs = [{ href: "/", label: "ホーム", icon: Home }, { href: "/search", label: "さがす", icon: Search }, { href: "/me", label: "わたし", icon: UserRound }];
 export function MobileBottomNav() {
   const pathname = usePathname();
-  if (isLearningFocusRoute(pathname) || pathname === "/auth/signout") return null;
+  if (isLearningFocusRoute(pathname) || pathname?.startsWith("/auth/") || pathname === "/account/delete") return null;
   return <nav aria-label="モバイル底タブ" className="mobile-bottom-nav pb-safe fixed inset-x-0 bottom-0 z-30 border-t border-border bg-background/95 backdrop-blur md:hidden print:hidden"><ul className="mx-auto flex max-w-[640px]">{tabs.map(tab => {
     const active = tab.href === "/" ? pathname === "/" : pathname?.startsWith(tab.href) || tab.href === "/me" && pathname?.startsWith("/account");
     const Icon = tab.icon;

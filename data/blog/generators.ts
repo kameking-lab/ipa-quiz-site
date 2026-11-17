@@ -11023,7 +11023,7 @@ ${CURRENT_YEAR} 年時点では、Gemini や GPT 系の大規模言語モデル�
 - 過去問AI は RAG 引用と誤答タグ集計を実装済み、マルチモーダルは順次拡大
 - AI は学習効率の道具であり、本番演習量を置き換えるものではない
 
-具体的な使い方は [AI コパイロットの仕組み](/features/copilot) と [AI 解説で過去問を学ぶ](/features/ai-explanation) を参照してください。
+具体的な使い方は [問題への質問の使い方](/features/copilot) を参照してください。
 `,
     relatedSlugs: [
       "ipa-shiken-ai-katsuyou-benkyouhou",

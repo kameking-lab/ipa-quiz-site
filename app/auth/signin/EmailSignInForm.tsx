@@ -51,7 +51,7 @@ export function EmailSignInForm({ callbackUrl }: { callbackUrl?: string }) {
         className="rounded-xl border border-primary/30 bg-primary-soft px-4 py-4 text-sm text-primary-soft-foreground"
       >
         <p className="font-semibold">メールを送信しました</p>
-        <p className="mt-1 text-xs leading-relaxed opacity-90">
+        <p className="mt-1 break-all text-sm leading-relaxed">
           {email} 宛のリンクからログインしてください。迷惑メールフォルダもご確認ください。
         </p>
       </div>
@@ -61,7 +61,7 @@ export function EmailSignInForm({ callbackUrl }: { callbackUrl?: string }) {
   return (
     <form onSubmit={onSubmit} className="flex flex-col gap-2">
       <label htmlFor="email" className="text-xs font-medium text-muted-foreground">
-        メールアドレスでログイン（Magic Link）
+        メールアドレスでログイン
       </label>
       <input
         id="email"
@@ -85,7 +85,7 @@ export function EmailSignInForm({ callbackUrl }: { callbackUrl?: string }) {
       )}
       <Button
         type="submit"
-        variant="gradient"
+        variant="primary"
         size="lg"
         disabled={loading || !email}
         className="w-full"

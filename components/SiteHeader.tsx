@@ -15,7 +15,6 @@ import {
   Bookmark,
   ClipboardList,
   CalendarRange,
-  Sparkles,
   HelpCircle,
   FileText,
   BookOpen,
@@ -297,10 +296,6 @@ function SiteHeaderContent({ search }: { search: Pick<URLSearchParams, "get"> | 
                       href={m.href}
                       className="flex min-h-[44px] items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
                     >
-                      <Sparkles
-                        className="h-4 w-4 text-muted-foreground"
-                        aria-hidden="true"
-                      />
                       {m.label}
                     </Link>
                   </SheetClose>
@@ -393,10 +388,6 @@ function SiteHeaderContent({ search }: { search: Pick<URLSearchParams, "get"> | 
                     href="/features"
                     className="flex min-h-[44px] items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
                   >
-                    <Sparkles
-                      className="h-4 w-4 text-muted-foreground"
-                      aria-hidden="true"
-                    />
                     機能特集
                   </Link>
                 </SheetClose>

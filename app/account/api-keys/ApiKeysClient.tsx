@@ -2,11 +2,10 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Copy, ExternalLink, Eye, EyeOff, Key, Plus, Trash2 } from "lucide-react";
+import { Copy, ExternalLink, Eye, EyeOff, Plus, Trash2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import {
   appendApiKey,
   deleteApiKey,
@@ -21,6 +20,9 @@ export function ApiKeysClient() {
   const [showName, setShowName] = React.useState("");
   const [revealId, setRevealId] = React.useState<string | null>(null);
   const [copiedId, setCopiedId] = React.useState<string | null>(null);
+  const [copyError, setCopyError] = React.useState(false);
+  const copyTimer = React.useRef<ReturnType<typeof setTimeout> | null>(null);
+  React.useEffect(() => () => { if (copyTimer.current) clearTimeout(copyTimer.current); }, []);
 
   React.useEffect(() => {
     setKeys(readApiKeys());
@@ -41,34 +43,29 @@ export function ApiKeysClient() {
   }
 
   async function handleCopy(id: string, secret: string) {
+    if (copyTimer.current) clearTimeout(copyTimer.current);
+    setCopyError(false);
     try {
       await navigator.clipboard.writeText(secret);
       setCopiedId(id);
-      setTimeout(() => setCopiedId(null), 1500);
+      copyTimer.current = setTimeout(() => setCopiedId(null), 1500);
     } catch {
-      // ignore
+      setCopiedId(null);
+      setCopyError(true);
     }
   }
 
   return (
-    <main className="mx-auto w-full max-w-4xl flex-1 px-4 pb-16 pt-8 sm:px-6 sm:pt-10">
+    <section aria-labelledby="api-keys-title">
       <header className="mb-8">
-        <div className="mb-3 flex items-center gap-1.5">
-          <Badge variant="primary">
-            <Key className="mr-1 h-3 w-3" />
-            API キー管理
-          </Badge>
-        </div>
-        <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+        <h1 id="api-keys-title" className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
           API キー
         </h1>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          過去問AI Public API（β）で利用するキーを発行・管理できます。
-          現在 β のためキーはお使いのブラウザにのみ保存され、サーバー側で署名検証は行われません。
-          キーは Bearer トークンとしてレート制限の識別子に使われ、IP 単位ではなくキー単位の上限が適用されます。
+          β版のキーはこのブラウザに保存され、レート制限の識別に使われます。サーバーでの署名検証は行われません。
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
-          <Button asChild variant="outline" size="sm">
+          <Button asChild variant="outline" size="lg">
             <Link href="/api-docs">
               API ドキュメント
               <ExternalLink className="h-4 w-4" />
@@ -84,7 +81,7 @@ export function ApiKeysClient() {
             新しいキーを発行
           </CardTitle>
           <CardDescription>
-            キー名は識別用のメモです（例: 「社内研修ボット」「教材自動生成」）。最大 5 件まで保存できます。
+            最大5件まで保存できます。
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -96,7 +93,7 @@ export function ApiKeysClient() {
               <span className="font-medium text-foreground">キー名（任意）</span>
               <input
                 type="text"
-                className="h-10 rounded-lg border border-border bg-background px-3 text-sm"
+                className="min-h-11 min-w-0 rounded-xl border border-border bg-background px-3 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                 placeholder="例: 社内研修ボット"
                 value={showName}
                 maxLength={60}
@@ -106,7 +103,7 @@ export function ApiKeysClient() {
             <Button
               type="submit"
               variant="primary"
-              size="md"
+              size="lg"
               disabled={keys.length >= 5}
             >
               <Plus className="h-4 w-4" />
@@ -128,7 +125,7 @@ export function ApiKeysClient() {
       {keys.length === 0 ? (
         <Card>
           <CardContent className="p-8 text-center text-sm text-muted-foreground">
-            まだキーが登録されていません。上のフォームから発行してください。
+            登録済みのキーはありません。
           </CardContent>
         </Card>
       ) : (
@@ -141,16 +138,17 @@ export function ApiKeysClient() {
                 <Card>
                   <CardContent className="p-5">
                     <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-                      <div className="min-w-0">
-                        <div className="text-base font-semibold text-foreground">{k.name}</div>
+                      <div className="min-w-0 flex-1">
+                        <div className="break-words text-base font-semibold text-foreground">{k.name}</div>
                         <div className="text-xs text-muted-foreground">
                           発行: {formatDate(k.createdAt)}
                         </div>
                       </div>
                       <button
                         type="button"
+                        aria-label={`「${k.name}」を削除`}
                         onClick={() => handleDelete(k.id)}
-                        className="inline-flex items-center gap-1 rounded-md border border-border bg-background px-2 py-1 text-xs text-destructive hover:bg-muted"
+                        className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-lg border border-border bg-background px-2 py-1 text-xs text-destructive hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                       >
                         <Trash2 className="h-3 w-3" />
                         削除
@@ -163,8 +161,9 @@ export function ApiKeysClient() {
                       </code>
                       <button
                         type="button"
+                        aria-label={`「${k.name}」を${revealed ? "隠す" : "表示"}`}
                         onClick={() => setRevealId(revealed ? null : k.id)}
-                        className="inline-flex items-center gap-1 rounded-md border border-border bg-background px-2 py-1 text-xs text-foreground hover:bg-muted"
+                        className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-lg border border-border bg-background px-2 py-1 text-xs text-foreground hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                       >
                         {revealed ? (
                           <>
@@ -180,8 +179,9 @@ export function ApiKeysClient() {
                       </button>
                       <button
                         type="button"
+                        aria-label={`「${k.name}」をコピー`}
                         onClick={() => handleCopy(k.id, k.secret)}
-                        className="inline-flex items-center gap-1 rounded-md border border-border bg-background px-2 py-1 text-xs text-foreground hover:bg-muted"
+                        className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-lg border border-border bg-background px-2 py-1 text-xs text-foreground hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
                       >
                         <Copy className="h-3 w-3" />
                         {copiedId === k.id ? "コピー済" : "コピー"}
@@ -200,17 +200,13 @@ export function ApiKeysClient() {
         </ul>
       )}
 
-      <p className="mt-10 text-xs text-muted-foreground">
-        ※ β 版のため、キーはブラウザ localStorage に保存されます。端末を切り替える際は再発行してください。
-        将来的にはアカウント連携（Google/GitHub ログイン）でクラウド保存に対応予定です。
-      </p>
 
       {/* コピー成功はボタン文言が「コピー済」へ変わるだけでは SR に告知され
           ない(WCAG 4.1.3)。polite live region で告知する。 */}
-      <span role="status" aria-live="polite" className="sr-only">
-        {copiedId ? "API キーをコピーしました" : ""}
+      <span role="status" aria-live="polite" className={copyError ? "mt-4 block text-sm text-destructive" : "sr-only"}>
+        {copyError ? "コピーできませんでした。キーを表示してコピーしてください。" : copiedId ? "API キーをコピーしました" : ""}
       </span>
-    </main>
+    </section>
   );
 }
 

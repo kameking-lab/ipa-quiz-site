@@ -31,13 +31,14 @@ interface Props {
   days?: number;
   compact?: boolean;
   showStats?: boolean;
+  interactive?: boolean;
 }
 
 function formatTooltip(date: string, count: number): string {
   return count > 0 ? `${date}: ${count}問` : `${date}: 学習なし`;
 }
 
-export function LearningHeatmap({ days = 365, compact = false, showStats = true }: Props) {
+export function LearningHeatmap({ days = 365, compact = false, showStats = true, interactive = true }: Props) {
   const [byDate, setByDate] = React.useState<Record<string, number> | null>(null);
   const [hovered, setHovered] = React.useState<{ date: string; count: number } | null>(null);
 
@@ -66,8 +67,9 @@ export function LearningHeatmap({ days = 365, compact = false, showStats = true 
     );
   }
 
-  const studyDays = totalStudyDays(byDate);
-  const answered = totalAnswered(byDate);
+  const visibleDates = Object.fromEntries(dates.map(date => [date, byDate[date] ?? 0]));
+  const studyDays = totalStudyDays(visibleDates);
+  const answered = totalAnswered(visibleDates);
 
   // 53 weeks max (371 days padded so first column starts on Sunday-ish row)
   const cells = dates.map((date) => ({
@@ -76,7 +78,7 @@ export function LearningHeatmap({ days = 365, compact = false, showStats = true 
   }));
 
   // Pad start to align week rows: Sunday = 0, Monday = 1, ... in JST.
-  const firstDow = new Date(`${dates[0]}T00:00:00+09:00`).getUTCDay(); // JST midnight UTC+9, so use UTC day
+  const firstDow = new Date(`${dates[0]}T12:00:00+09:00`).getUTCDay();
   const pad = firstDow;
   const padded: ({ date: string; count: number } | null)[] = Array(pad).fill(null).concat(cells);
   // Fill end to multiple of 7
@@ -111,7 +113,7 @@ export function LearningHeatmap({ days = 365, compact = false, showStats = true 
           )}
         </div>
 
-        <div className="overflow-x-auto pb-1" role="group" aria-label="過去365日の学習ヒートマップ">
+        <div className="overflow-x-auto pb-1" role="group" aria-label={`過去${days}日の学習ヒートマップ`}>
           <div className="inline-flex gap-[3px]">
             {weeks.map((week, wi) => (
               <div key={wi} className="flex flex-col gap-[3px]">
@@ -120,12 +122,13 @@ export function LearningHeatmap({ days = 365, compact = false, showStats = true 
                     return (
                       <div
                         key={di}
-                        className={cn(CELL_BASE, "bg-transparent")}
+                        className={cn(CELL_BASE, !interactive && "h-4 w-4", "bg-transparent")}
                         aria-hidden="true"
                       />
                     );
                   }
                   const lvl = intensityLevel(cell.count);
+                  if (!interactive) return <span key={di} role="img" title={formatTooltip(cell.date, cell.count)} aria-label={formatTooltip(cell.date, cell.count)} className={cn(CELL_BASE, "h-4 w-4", LEVEL_COLOR[lvl])} />;
                   return (
                     <button
                       key={di}
@@ -151,7 +154,7 @@ export function LearningHeatmap({ days = 365, compact = false, showStats = true 
               ? formatTooltip(hovered.date, hovered.count)
               : compact
                 ? "今日の学習で草が育ちます"
-                : "ホバーで日別の問題数を確認"}
+                : `${dates[0]} — ${dates.at(-1)}`}
           </span>
           <div className="flex items-center gap-1">
             <span>少</span>

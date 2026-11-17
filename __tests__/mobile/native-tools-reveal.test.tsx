@@ -27,6 +27,7 @@ vi.mock("@/app/billing/ManageSubscriptionButton", () => ({ ManageSubscriptionBut
 
 import { NativeTools, noticeText } from "@/mobile/src/NativeTools";
 import { downloads } from "@/mobile/src/downloads";
+import { deviceMembership } from "@/mobile/src/purchases";
 
 const entitlement = { entitlement: { userId: null, entitled: false }, configuration: { sdkKey: "" } };
 let scrollTo: ReturnType<typeof vi.fn>;
@@ -78,6 +79,37 @@ it.each([true, false])("links native settings to the account or login (signed in
   await act(async () => {});
   expect(screen.getByRole("link", { name: signedIn ? "アカウント（ログアウト・削除）" : "ログイン" }))
     .toHaveAttribute("href", signedIn ? "/account" : "/auth/signin?callbackUrl=/account");
+});
+
+it.each([true, false])("shows the native purchase login hint only for confirmed guests (signed in: %s)", async signedIn => {
+  vi.mocked(deviceMembership.offer).mockResolvedValue({ product: { priceString: "¥980" } } as Awaited<ReturnType<typeof deviceMembership.offer>>);
+  vi.stubGlobal("fetch", vi.fn(async input => String(input).includes("/api/mobile/catalog") ? Response.json({ exams: [] }) : Response.json({ ...entitlement, entitlement: { userId: signedIn ? "native-user" : null, entitled: false } })));
+  const { container } = render(<NativeTools membershipOnly />);
+  await screen.findByRole("button", { name: "¥980 / 月で登録" });
+  expect(screen.queryByText(/購入したときと同じ方法/) !== null).toBe(!signedIn);
+  if (signedIn) expect(container.querySelector('a[href*="/auth/signin"]')).toBeNull();
+  vi.mocked(deviceMembership.offer).mockResolvedValue(null as unknown as Awaited<ReturnType<typeof deviceMembership.offer>>);
+});
+
+it("does not show login while the native session is still loading", async () => {
+  let finish!: (response: Response) => void;
+  vi.stubGlobal("fetch", vi.fn(() => new Promise<Response>(resolve => { finish = resolve; })));
+  const { container } = render(<NativeTools membershipOnly />);
+  await act(async () => {});
+  expect(screen.queryByRole("button", { name: "ログイン" })).toBeNull();
+  expect(container.querySelector('a[href*="/auth/signin"]')).toBeNull();
+  await act(async () => finish(Response.json({ ...entitlement, entitlement: { userId: "native-user", entitled: false } })));
+  expect(screen.getByRole("link", { name: "アカウント（ログアウト・削除）" })).toBeVisible();
+  expect(screen.queryByRole("button", { name: "ログイン" })).toBeNull();
+});
+
+it("does not infer a signed-out native session from a failed membership request", async () => {
+  vi.stubGlobal("fetch", vi.fn(async () => new Response(null, { status: 503 })));
+  const { container } = render(<NativeTools membershipOnly />);
+  await act(async () => {});
+  expect(screen.queryByRole("button", { name: "ログイン" })).toBeNull();
+  expect(container.querySelector('a[href*="/auth/signin"]')).toBeNull();
+  expect(screen.getByRole("button", { name: "会員状態を再確認" })).toBeVisible();
 });
 
 it("does not restore paid offline rights from a response arriving after logout begins", async () => {

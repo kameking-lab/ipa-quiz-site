@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Sparkles, FileText, History, AlertTriangle } from "lucide-react";
+import { FileText, History, AlertTriangle } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -166,14 +166,14 @@ export default function EssayHomePage() {
       <section className="mb-8 text-center">
         <div className="mb-3 flex justify-center">
           <Badge variant="success">
-            <Sparkles className="h-3 w-3" /> Premium / β中は月3回まで無料
+            Premium / β中は月3回まで無料
           </Badge>
         </div>
         <h1 className="mb-3 text-3xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-4xl">
           AI 論述添削 <span className="text-sky-600 dark:text-sky-400">（午後II）</span>
         </h1>
         <p className="mx-auto max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-base">
-          高度試験の合否を分ける論述を、AI が学習用の「適合度／論理性／具体性／業種事例」の 4 観点で評価。
+          書いた論述を、学習用の「適合度／論理性／具体性／業種事例」の 4 観点で評価。
           設問ア・イ・ウそれぞれに、良かった点・改善点・足りなかった要素を提示します。
         </p>
         <p className="mx-auto mt-2 max-w-2xl text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">

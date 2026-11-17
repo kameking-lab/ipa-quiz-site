@@ -48,7 +48,7 @@ const ROOT_DESCRIPTION = `IPA・FP・電気・医療・福祉・不動産等の�
 
 export const metadata: Metadata = {
   title: {
-    default: "過去問AI — AIネイティブ過去問学習",
+    default: "過去問AI — 資格の過去問演習",
     template: "%s | 過去問AI",
   },
   description: ROOT_DESCRIPTION,
@@ -73,7 +73,7 @@ export const metadata: Metadata = {
     ],
   },
   openGraph: {
-    title: "過去問AI — AIネイティブ過去問学習",
+    title: "過去問AI — 資格の過去問演習",
     description: ROOT_DESCRIPTION,
     type: "website",
     locale: "ja_JP",
@@ -84,13 +84,13 @@ export const metadata: Metadata = {
         url: `${BASE_URL}/opengraph-image`,
         width: 1200,
         height: 630,
-        alt: "過去問AI — AIネイティブ過去問学習",
+        alt: "過去問AI — 資格の過去問演習",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "過去問AI — AIネイティブ過去問学習",
+    title: "過去問AI — 資格の過去問演習",
     description: ROOT_DESCRIPTION,
     images: [`${BASE_URL}/opengraph-image`],
   },

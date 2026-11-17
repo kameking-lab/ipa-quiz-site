@@ -4,7 +4,7 @@ import { practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ChevronRight, Sparkles } from "lucide-react";
+import { ChevronRight } from "lucide-react";
 
 import type { ExamCode, Season } from "@/lib/questions/types";
 import { examLabelAt } from "@/lib/exam-naming/history";
@@ -268,7 +268,7 @@ export default async function ExamYearSeasonPage({
         >
           <ol className="flex flex-wrap items-center gap-1.5">
             <li>
-              <Link href="/" className="inline-block py-1.5 hover:text-foreground hover:underline">
+              <Link href="/" className="inline-flex min-h-11 min-w-11 items-center py-1.5 hover:text-foreground hover:underline">
                 ホーム
               </Link>
             </li>
@@ -276,7 +276,7 @@ export default async function ExamYearSeasonPage({
             <li>
               <Link
                 href={`/${exam}`}
-                className="inline-block py-1.5 hover:text-foreground hover:underline"
+                className="inline-flex min-h-11 min-w-11 items-center py-1.5 hover:text-foreground hover:underline"
               >
                 {examLabel(code)}
               </Link>
@@ -288,19 +288,18 @@ export default async function ExamYearSeasonPage({
           </ol>
         </nav>
 
-        <header className="mb-8 animate-fade-in">
+        <header className="mb-6">
           <Badge variant="soft" className="mb-3">
-            <Sparkles className="h-3 w-3" />
             {histLabel}
           </Badge>
           <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            <span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
+            <span className="text-primary">
               {label}
             </span>{" "}
             {histLabel}
           </h1>
           <p className="mt-3 text-sm text-muted-foreground">
-            過去問一覧 — AI 解説付きで効率的に学習を進められます。
+            過去問一覧 — 問題と解説を確認して学習を進められます。
           </p>
           {code === "shakai" && (
             <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
@@ -366,7 +365,7 @@ export default async function ExamYearSeasonPage({
         <section aria-label="クイズを始める" className="mb-8">
           <div className="grid gap-2 sm:grid-cols-2">
             {[...sessionMap.entries()].filter(([, items]) => items.some((q) => (q.type === "multiple-choice" || q.type === "numeric"))).map(([session]) => (
-              <Button key={session} asChild variant="gradient" size="lg" className="w-full">
+              <Button key={session} asChild variant="gradient" size="lg" className="w-full min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
                 <Link href={`/quiz?mode=year&exam=${exam}&year=${parsed.year}&season=${parsed.season}&session=${session}&order=1&returnTo=${encodeURIComponent(`/${exam}/${yearSeason}`)}`}>
                   {practiceSessionLabel(session as typeof pool[number]["session"], code)}を解く
                   <ChevronRight className="h-4 w-4" />
@@ -380,7 +379,7 @@ export default async function ExamYearSeasonPage({
           <aside aria-label="午前Ⅱ 問23の別教材" className="mb-8 rounded-2xl border border-border bg-card px-4 py-3 text-sm">
             <Link
               href="/st/past-papers/notes/st-2009a-am2-q23"
-              className="inline-flex min-h-11 items-center font-medium text-primary underline underline-offset-4"
+              className="inline-flex min-h-11 min-w-11 items-center font-medium text-primary underline underline-offset-4"
             >
               午前Ⅱ 問23：注記付き・非採点教材
             </Link>

@@ -55,6 +55,8 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   const [reviewing, setReviewing] = React.useState(false);
   const advancingRef = React.useRef(false);
   const descriptiveStartRef = React.useRef<HTMLDivElement>(null);
+  const questionStartRef = React.useRef<HTMLDivElement>(null);
+  const explanationRef = React.useRef<HTMLDivElement>(null);
   // The review trigger unmounts while the overlay is open (canReview === false),
   // so restore focus to it when the overlay closes — otherwise keyboard users
   // are stranded at document.body (WCAG 2.4.3).
@@ -70,6 +72,12 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   const question = questions[index];
   const { recordAnswer, recordExplanation, endRef } = useQuestionActivity(question, revealed);
   const nativePermission = useNativeQuestionGrant(question?.id);
+  React.useEffect(() => {
+    if (!nativePermission.allowed || showSummary || prevReviewingRef.current) return;
+    const target = revealed ? explanationRef.current : questionStartRef.current;
+    target?.focus({ preventScroll: true });
+    if (target && revealed) target.closest("main")?.scrollTo?.({ top: target.offsetTop - 16, behavior: "instant" });
+  }, [index, revealed, nativePermission.allowed, showSummary]);
   React.useEffect(() => {
     if (isSelfReviewedDescriptiveQuestion(question)) {
       descriptiveStartRef.current?.focus({ preventScroll: true });
@@ -260,18 +268,18 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   return (
     <div
       data-study-presence-exam={question.exam}
-      className="relative flex h-[100dvh] min-h-[100dvh] flex-col overflow-hidden bg-gradient-to-b from-zinc-950 via-zinc-900 to-black text-zinc-50 select-none"
+      className="relative flex h-[calc(100dvh-3.5rem)] min-h-[calc(100dvh-3.5rem)] flex-col overflow-hidden bg-background text-foreground select-none"
     >
       <header className="relative z-20 flex items-center justify-between px-4 pt-4 pb-2">
         <Link
           href={backHref}
-          className="rounded-full bg-white/10 p-2 backdrop-blur hover:bg-white/20"
+          className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full bg-muted p-2 backdrop-blur hover:bg-muted/80"
           aria-label="戻る"
         >
           <ArrowLeft className="h-4 w-4" />
         </Link>
         <div className="flex items-center gap-3 text-xs">
-          <span className="rounded-full bg-white/10 px-3 py-1 backdrop-blur">
+          <span className="rounded-full bg-muted px-3 py-1 backdrop-blur">
             {index + 1} / {questions.length}
           </span>
           {canReview && (
@@ -279,7 +287,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
               ref={reviewTriggerRef}
               type="button"
               onClick={() => setReviewing(true)}
-              className="flex items-center gap-1 rounded-full bg-white/10 px-3 py-1 text-zinc-200 backdrop-blur transition-colors hover:bg-white/20"
+              className="flex min-h-11 items-center gap-1 rounded-full bg-muted px-3 py-1 text-foreground/85 backdrop-blur transition-colors hover:bg-muted/80"
               aria-label="直前に解いた問題に戻る"
             >
               <ChevronDown className="h-3 w-3" />
@@ -301,19 +309,19 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         }`}
         key={question.id}
       >
-        <div className="mb-3 flex flex-wrap gap-2 text-[10px] text-zinc-300">
-          <span className="rounded-full bg-white/5 px-2 py-0.5 ring-1 ring-white/10">
+        <div className="mb-3 flex flex-wrap gap-2 text-xs text-muted-foreground">
+          <span className="rounded-full bg-card px-2 py-0.5 ring-1 ring-border">
             {questionSourceExam(question)} {questionSourceEdition(question)}
           </span>
-          <span className="rounded-full bg-white/5 px-2 py-0.5 ring-1 ring-white/10">
+          <span className="rounded-full bg-card px-2 py-0.5 ring-1 ring-border">
             問{questionNumberLabel(question)}
           </span>
-          <span className="rounded-full bg-sky-500/20 px-2 py-0.5 text-sky-200 ring-1 ring-sky-400/30">
+          <span className="rounded-full bg-primary-soft px-2 py-1 text-primary-soft-foreground">
             {question.category}
           </span>
         </div>
 
-        <div className="mb-4 shrink-0 rounded-2xl bg-white/5 p-5 text-[15px] leading-relaxed ring-1 ring-white/10 backdrop-blur">
+        <div ref={questionStartRef} tabIndex={-1} role="region" aria-label="ストリームの問題" className="mb-4 shrink-0 rounded-2xl outline-none bg-card p-5 text-[15px] leading-relaxed ring-1 ring-border backdrop-blur">
           <QuestionBody text={question.question} />
           <QuestionFigures question={question} />
         </div>
@@ -324,11 +332,11 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
               const isCorrect = isAcceptedAnswer(question.answer, key);
               const isSelected = selected === key;
               let cls =
-                "border-white/10 bg-white/5 text-zinc-100 hover:bg-white/10 active:bg-white/15";
+                "border-border bg-card text-foreground hover:bg-muted active:bg-muted/80";
               if (revealed) {
-                if (isCorrect) cls = "border-emerald-400 bg-emerald-500/20 text-emerald-50";
-                else if (isSelected) cls = "border-red-400 bg-red-500/20 text-red-50";
-                else cls = "border-white/5 bg-white/5 text-zinc-400 opacity-60";
+                if (isCorrect) cls = "border-emerald-500 bg-emerald-50 text-emerald-950 dark:border-emerald-400 dark:bg-emerald-950/50 dark:text-emerald-100";
+                else if (isSelected) cls = "border-red-500 bg-red-50 text-red-950 dark:border-red-400 dark:bg-red-950/50 dark:text-red-100";
+                else cls = "border-border bg-muted/40 text-muted-foreground";
               } else if (isSelected) {
                 cls = "border-sky-400 bg-sky-500/20 text-sky-50";
               }
@@ -337,24 +345,24 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
                   key={key}
                   onClick={() => onSelect(key)}
                   disabled={revealed}
-                  className={`flex w-full items-start gap-3 rounded-2xl border-2 px-4 py-3 text-left text-sm leading-snug backdrop-blur transition-all ${cls}`}
+                  className={`flex w-full items-start gap-3 min-h-14 rounded-2xl border-2 px-4 py-3 text-left text-sm leading-snug backdrop-blur transition-all ${cls}`}
                 >
                   <span
                     className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
                       revealed && isCorrect
-                        ? "bg-emerald-500 text-white"
+                        ? "bg-emerald-700 text-white dark:bg-emerald-400 dark:text-emerald-950"
                         : revealed && isSelected
-                          ? "bg-red-500 text-white"
+                          ? "bg-red-700 text-white dark:bg-red-400 dark:text-red-950"
                           : isSelected
                             ? "bg-sky-500 text-white"
-                            : "bg-white/10"
+                            : "bg-muted"
                     }`}
                   >
                     {choiceDisplayLabel(question.exam, key)}
                   </span>
                   <span className="flex-1 pt-0.5">{question.choices![key]}</span>
                   {revealed && isCorrect && (
-                    <Check className="h-4 w-4 shrink-0 text-emerald-300" />
+                    <Check className="h-4 w-4 shrink-0 text-emerald-700 dark:text-emerald-300" />
                   )}
                   {revealed && isSelected && !isCorrect && (
                     <X className="h-4 w-4 shrink-0 text-red-300" />
@@ -365,15 +373,15 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         </div>
 
         {revealed && (
-          <div className="animate-in slide-in-from-bottom-4 mt-4 rounded-2xl bg-white/5 p-4 text-sm ring-1 ring-white/10 backdrop-blur">
+          <div ref={explanationRef} tabIndex={-1} role="region" aria-label="ストリームの解説" className="motion-safe:animate-in motion-safe:slide-in-from-bottom-4 mt-4 rounded-2xl outline-none bg-card p-4 text-sm ring-1 ring-border backdrop-blur">
             {question.type === "native-b" && <NativeBFeedback data={question.nativeB!} result={nativeBResult} />}
             <div className="mb-1 flex items-center justify-between text-xs">
-              <span className="font-semibold text-emerald-300">
+              <span className="font-semibold text-emerald-700 dark:text-emerald-300">
                 正解: {answerKey}
               </span>
-              <span className="text-zinc-400">読んだら次の問題へ</span>
+              <span className="text-muted-foreground">読んだら次の問題へ</span>
             </div>
-            <div className="mt-2 text-zinc-200"><QuestionBody text={question.explanation || "解説は準備中です。"} /></div>
+            <div className="mt-2 text-foreground/85"><QuestionBody text={question.explanation || "解説は準備中です。"} /></div>
             <span ref={endRef} aria-hidden="true" className="block h-px" />
           </div>
         )}
@@ -383,9 +391,9 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
       {revealed && (
         <button
           onClick={goNext}
-          className="pb-safe absolute inset-x-0 bottom-0 z-20 flex items-center justify-center gap-2 bg-gradient-to-t from-black/80 to-transparent py-4 text-xs text-zinc-300 hover:text-white"
+          className="pb-safe absolute inset-x-0 bottom-0 z-20 flex items-center justify-center gap-2 border-t border-border bg-primary py-4 text-sm font-semibold text-primary-foreground hover:bg-primary-hover"
         >
-          <ChevronUp className="h-4 w-4 animate-bounce" />
+          <ChevronUp className="h-4 w-4 motion-safe:animate-bounce" />
           次の問題へ
         </button>
       )}
@@ -456,7 +464,7 @@ function ReviewOverlay({
   return (
     <div
       ref={dialogRef}
-      className="fixed inset-0 z-50 flex flex-col bg-zinc-950/95 backdrop-blur"
+      className="fixed inset-0 z-50 flex flex-col bg-background/95 backdrop-blur"
       role="dialog"
       aria-modal="true"
       aria-label="直前に解いた問題の復習"
@@ -466,53 +474,53 @@ function ReviewOverlay({
         <button
           type="button"
           onClick={onClose}
-          className="rounded-full bg-white/10 p-2 text-zinc-100 hover:bg-white/20"
+          className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full bg-muted p-2 text-foreground hover:bg-muted/80"
           aria-label="閉じる"
         >
           <ChevronUp className="h-4 w-4" />
         </button>
-        <span className="rounded-full bg-white/10 px-3 py-1 text-xs text-zinc-200">
+        <span className="rounded-full bg-muted px-3 py-1 text-xs text-foreground/85">
           直前の問題（復習）
         </span>
         <span className="w-9" aria-hidden="true" />
       </header>
 
       <div className="flex-1 overflow-y-auto px-5 pb-8">
-        <div className="mb-3 flex flex-wrap gap-2 text-[10px] text-zinc-300">
-          <span className="rounded-full bg-white/5 px-2 py-0.5 ring-1 ring-white/10">
+        <div className="mb-3 flex flex-wrap gap-2 text-xs text-muted-foreground">
+          <span className="rounded-full bg-card px-2 py-0.5 ring-1 ring-border">
             {questionSourceExam(question)} {questionSourceEdition(question)}
           </span>
-          <span className="rounded-full bg-white/5 px-2 py-0.5 ring-1 ring-white/10">
+          <span className="rounded-full bg-card px-2 py-0.5 ring-1 ring-border">
             問{questionNumberLabel(question)}
           </span>
-          <span className="rounded-full bg-sky-500/20 px-2 py-0.5 text-sky-200 ring-1 ring-sky-400/30">
+          <span className="rounded-full bg-primary-soft px-2 py-1 text-primary-soft-foreground">
             {question.category}
           </span>
         </div>
 
-        <div className="mb-4 rounded-2xl bg-white/5 p-5 text-[15px] leading-relaxed text-zinc-100 ring-1 ring-white/10">
+        <div className="mb-4 rounded-2xl bg-card p-5 text-[15px] leading-relaxed text-foreground ring-1 ring-border">
           <QuestionBody text={question.question} />
           <QuestionFigures question={question} />
         </div>
 
         <div className="mb-4 space-y-2">
-          {question.type === "native-b" ? <NativeBFeedback data={question.nativeB!} result={answer.nativeBResult} /> : question.type === "ordering" ? <div className="rounded-xl border border-white/10 p-4 text-sm">あなたの回答: {answer.selected ?? "—"}</div> : question.choices &&
+          {question.type === "native-b" ? <NativeBFeedback data={question.nativeB!} result={answer.nativeBResult} /> : question.type === "ordering" ? <div className="rounded-xl border border-border p-4 text-sm">あなたの回答: {answer.selected ?? "—"}</div> : question.choices &&
             getChoiceKeys(question.choices).map((key) => {
               const isCorrect = isAcceptedAnswer(question.answer, key);
               const isSelected = answer.selected === key;
-              let cls = "border-white/10 bg-white/5 text-zinc-300 opacity-70";
-              if (isCorrect) cls = "border-emerald-400 bg-emerald-500/20 text-emerald-50";
-              else if (isSelected) cls = "border-red-400 bg-red-500/20 text-red-50";
+              let cls = "border-border bg-muted/40 text-muted-foreground";
+              if (isCorrect) cls = "border-emerald-500 bg-emerald-50 text-emerald-950 dark:border-emerald-400 dark:bg-emerald-950/50 dark:text-emerald-100";
+              else if (isSelected) cls = "border-red-500 bg-red-50 text-red-950 dark:border-red-400 dark:bg-red-950/50 dark:text-red-100";
               return (
                 <div
                   key={key}
                   className={`flex w-full items-start gap-3 rounded-2xl border-2 px-4 py-3 text-left text-sm leading-snug ${cls}`}
                 >
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-white/10 text-xs font-bold">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-muted text-xs font-bold">
                     {choiceDisplayLabel(question.exam, key)}
                   </span>
                   <span className="flex-1 pt-0.5">{question.choices![key]}</span>
-                  {isCorrect && <Check className="h-4 w-4 shrink-0 text-emerald-300" />}
+                  {isCorrect && <Check className="h-4 w-4 shrink-0 text-emerald-700 dark:text-emerald-300" />}
                   {isSelected && !isCorrect && (
                     <X className="h-4 w-4 shrink-0 text-red-300" />
                   )}
@@ -521,14 +529,14 @@ function ReviewOverlay({
             })}
         </div>
 
-        <div className="rounded-2xl bg-white/5 p-4 text-sm text-zinc-100 ring-1 ring-white/10">
-          <div className="mb-2 flex items-center justify-between text-xs">
-            <span className="font-semibold text-emerald-300">正解: {answerKey}</span>
-            <span className={answer.correct ? "text-emerald-300" : "text-red-300"}>
+        <div className="rounded-2xl bg-card p-4 text-sm text-foreground ring-1 ring-border">
+          <div className="mb-2 flex flex-wrap items-start justify-between gap-2 text-xs">
+            <span className="font-semibold text-emerald-700 dark:text-emerald-300">正解: {answerKey}</span>
+            <span className={answer.correct ? "text-emerald-700 dark:text-emerald-300" : "text-red-700 dark:text-red-300"}>
               あなたの回答: {question.type === "native-b" ? `正答枠数 ${answer.nativeBResult?.correctSlots ?? 0}/5` : answer.selected ?? "—"} / {answer.correct ? "正解" : "不正解"}
             </span>
           </div>
-          <div className="whitespace-pre-wrap leading-relaxed text-zinc-200">
+          <div className="whitespace-pre-wrap leading-relaxed text-foreground/85">
             <QuestionBody text={question.explanation || "解説は準備中です。"} />
           </div>
         </div>
@@ -537,7 +545,7 @@ function ReviewOverlay({
       <button
         type="button"
         onClick={onClose}
-        className="pb-safe absolute inset-x-0 bottom-0 z-20 flex items-center justify-center gap-2 bg-gradient-to-t from-black/90 to-transparent py-4 text-xs text-zinc-200 hover:text-white"
+        className="pb-safe absolute inset-x-0 bottom-0 z-20 flex items-center justify-center gap-2 min-h-12 border-t border-border bg-primary py-4 text-sm font-semibold text-primary-foreground hover:bg-primary-hover"
       >
         <ChevronUp className="h-4 w-4" />
         現在の問題に戻る

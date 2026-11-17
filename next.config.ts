@@ -162,6 +162,10 @@ const nextConfig: NextConfig = {
         destination: "/",
         permanent: true,
       },
+      { source: "/features/ai-explanation", destination: "/features/copilot", statusCode: 301 },
+      // Retired duplicate entry points; query values are preserved by Next.
+      { source: "/account/study-plan", destination: "/study-plan", statusCode: 301 },
+      { source: "/quiz/review", destination: "/review", statusCode: 301 },
       // Consolidated account sub-pages → dashboard
       // (no query string in destination; tabs default to 'overview' and the dashboard's
       // hashchange listener handles deep linking via #tab=...)

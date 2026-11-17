@@ -36,15 +36,11 @@ const fp3PracticalCount = FP3_PRACTICAL_EDITIONS.reduce(
 export default function QualificationsPage() {
   return (
     <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-16 pt-6 sm:px-6 sm:pt-10">
-      <Button asChild variant="ghost" size="sm" className="mb-4">
+      <Button asChild variant="ghost" size="sm" className="mb-4 min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
         <Link href="/"><ArrowLeft className="h-4 w-4" />分野選択へ戻る</Link>
       </Button>
       <header className="mb-6">
-        <Badge variant="soft" className="mb-3">公式公開資料から収録</Badge>
         <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">その他資格の過去問</h1>
-        <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-          資格名で検索し、年度と科目から学習を始められます。収録範囲と公式資料は下の一覧で確認できます。
-        </p>
       </header>
 
       <div className={styles.finder}>
@@ -72,11 +68,11 @@ export default function QualificationsPage() {
             <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{item.fullName}。{item.reuseSummary}</p>
             {item.slug === "fp2" && <><p className="text-sm text-muted-foreground">2024・2025年の学科240問と2026年5月公表の学科{fp2May2026CoverageLabel()}、実技は2024～2026年の{FP2_PRACTICAL_EDITIONS.length}セット{fp2PracticalCount}問を収録。</p></>}
             {item.slug === "fp3" && <p className="mb-4 text-sm text-muted-foreground">2024～2026年の学科180問・実技60問を収録。各年の公式問題と正答を確認できます。</p>}
-            <Button asChild variant="primary" className="w-full">
+            <Button asChild variant="primary" className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
               <Link href={`/${item.examCode ?? item.slug}`}>年度・科目を選ぶ<ArrowRight className="h-4 w-4" /></Link>
             </Button>
             <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-xs">
-              <a href={item.officialQuestionsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 underline">
+              <a href={item.officialQuestionsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-1 underline underline-offset-4">
                 {item.slug === "chusho-secondary" ? "公式問題" : "公式問題・正答"}<ExternalLink className="h-3 w-3" />
               </a>
             </div>

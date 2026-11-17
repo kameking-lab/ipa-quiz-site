@@ -10,7 +10,6 @@ import {
   LineChart,
   ListChecks,
   Lock,
-  Sparkles,
   TrendingUp,
 } from "lucide-react";
 
@@ -57,7 +56,6 @@ export default function AdminStatsPage() {
         <div className="min-w-0">
           <div className="mb-3 flex flex-wrap items-center gap-1.5">
             <Badge variant="primary">
-              <Sparkles className="mr-1 h-3 w-3" />
               管理画面
             </Badge>
             <Badge variant="success">

@@ -18,11 +18,8 @@ export function HomeFlagshipEssay() {
             <FileEdit className="h-5 w-5" aria-hidden="true" />
           </span>
           <div className="min-w-0 flex-1">
-            <p className="text-xs font-semibold uppercase tracking-wider text-sky-700 dark:text-sky-300">
-              高度試験の合否は午後で決まる
-            </p>
             <h2 className="mt-0.5 text-lg font-bold text-zinc-900 dark:text-zinc-50">
-              あなたの午後論述を AI が採点
+              午後論述を練習する
             </h2>
             <p className="mt-1.5 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
               ST・SA・PM・SM・AU の午後 II 論述を、学習用に定めた

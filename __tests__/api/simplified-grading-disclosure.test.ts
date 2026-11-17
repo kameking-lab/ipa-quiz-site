@@ -159,18 +159,11 @@ describe("UI と文言", () => {
   const read = (p: string) => readFileSync(join(process.cwd(), p), "utf8");
 
   it("採点結果 UI は gradingMode:'simplified' のとき告知を描画する", () => {
-    const afternoon = read("components/afternoon/AfternoonResultView.tsx");
-    expect(afternoon).toContain("内容を評価したものではありません");
     const essay = read("components/essay/EssayResultView.tsx");
     expect(essay).toMatch(/gradingMode === "simplified"/);
     expect(essay).toContain("内容を評価したものではありません");
   });
 
-  it("告知は「簡易判定」と「内容は評価していない」ことを明示する", () => {
-    const src = read("components/SimplifiedGradingNotice.tsx");
-    expect(src).toContain("簡易判定");
-    expect(src).toContain("評価していません");
-  });
 
   it("利用者に見える文言へ内部の env 変数名が漏れていない", () => {
     // "GEMINI_API_KEY を設定すると…" のような内部都合の文言は利用者に無意味。

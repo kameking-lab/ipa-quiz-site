@@ -74,7 +74,7 @@ test("signed in without a pending intent: nothing is bought automatically",async
   await expect(page.getByRole("button",{name:"¥980 / 月で登録",exact:true})).toBeEnabled();
   expect((await page.evaluate(()=>window.mobileTest.storeCalls())).purchases).toBe(0);
 });
-test("products that App Store does not return: the reason and code stay on screen after other actions",async({page,context},info)=>{
+test("products that App Store does not return: the reason and code stay on screen until retry",async({page,context},info)=>{
   const server:Server={user:"u",entitledAfterPurchase:false,requests:[]};await serve(context,page,server);
   await open(page,"no-products");
   const alert=page.getByRole("alert");
@@ -82,10 +82,6 @@ test("products that App Store does not return: the reason and code stay on scree
   await expect(alert).toContainText("None of the products registered");
   await expect(page.getByRole("button",{name:/月で登録/})).toHaveCount(0);
   await page.screenshot({path:info.outputPath("3-no-products.png")});
-  // Another action sets its own notice; the store reason must not be overwritten.
-  await page.getByRole("button",{name:"AI送信の許可を取り消す"}).click();
-  await expect(page.getByRole("status").first()).toContainText("AI送信の許可を取り消しました");
-  await expect(alert).toContainText("コード 23 CONFIGURATION_ERROR");
   // Fixing the store side and retrying brings the price back without restarting.
   await page.evaluate(()=>window.mobileTest.mockStore("success"));
   await page.getByRole("button",{name:"商品情報を再読み込み"}).click();

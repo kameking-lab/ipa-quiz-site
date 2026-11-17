@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { CheckCircle2, AlertTriangle, XCircle, Sparkles, MinusCircle, ArrowRight } from "lucide-react";
+import { CheckCircle2, AlertTriangle, XCircle, MinusCircle, ArrowRight } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 
@@ -104,7 +104,7 @@ export function EssayResultView({ result, question }: Props) {
           {result.overallAdvice && (
             <div className="mt-5 rounded-xl border border-zinc-200 bg-zinc-50 p-4 text-sm leading-relaxed text-zinc-700 dark:border-zinc-800 dark:bg-zinc-900/60 dark:text-zinc-200">
               <p className="mb-2 flex items-center gap-1 text-xs font-semibold uppercase tracking-wide text-zinc-500 dark:text-zinc-400">
-                <Sparkles className="h-3 w-3" /> 全体的な改善アドバイス
+                全体的な改善アドバイス
               </p>
               {result.overallAdvice}
             </div>
@@ -141,7 +141,6 @@ export function EssayResultView({ result, question }: Props) {
         <Card>
           <CardHeader>
             <CardTitle className="flex items-center gap-2 text-base">
-              <Sparkles className="h-4 w-4 text-sky-500" />
               改善版論述例（設問アの冒頭）
             </CardTitle>
           </CardHeader>

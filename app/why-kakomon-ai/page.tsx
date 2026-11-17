@@ -3,7 +3,7 @@ import { MONTHLY_PUBLIC_OFFER } from "@/lib/billing/subscription/public-offer";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
-import { ArrowRight, Check, ExternalLink, Sparkles } from "lucide-react";
+import { ArrowRight, Check, ExternalLink } from "lucide-react";
 
 import { JsonLd } from "@/components/seo/JsonLd";
 import { Badge } from "@/components/ui/badge";
@@ -98,7 +98,7 @@ const COMPARISON_ROWS: ComparisonRow[] = [
 
 const STRENGTH_CARDS = [
   {
-    title: "AI コパイロットが常駐",
+    title: "問題の解き方を質問",
     body: "Google Gemini に IPA 公式問題・解答を入力し、引用元つきで回答。誤答理由の可視化・用語解説をワンタップで呼び出せる。",
     href: "/features/copilot",
     label: "コパイロットの仕組み",
@@ -138,7 +138,7 @@ const STRENGTH_CARDS = [
 const RESPECT_POINTS = [
   "過去問道場（siken.com 系）は 10 年以上にわたって IPA 受験者を支えてきた歴史があります。人力解説の蓄積は容易に再現できない財産です。",
   "予備校・通信講座は午後添削や講師フィードバックなど、AI ではまだ届かない深さを提供しています。学習目的によっては予備校の併用が最適です。",
-  "過去問AI は、競合の良さを置き換えるのではなく、AI ネイティブな学習体験で『隙間時間 × 即時フィードバック』の新しい使い分けを提案します。",
+  "過去問AIでは、問題を解きながら疑問点を質問し、解説を確認できます。",
 ];
 
 const FAQS = [
@@ -219,7 +219,6 @@ export default function WhyKakomonAiPage() {
 
       <header className="mb-8">
         <Badge variant="soft" className="mb-3">
-          <Sparkles className="h-3 w-3" />
           サービス比較
         </Badge>
         <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">

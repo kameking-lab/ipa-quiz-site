@@ -40,7 +40,6 @@ beforeEach(() => {
   posthogCapture.mockClear();
   observeJourney.mockClear();
   window.localStorage.clear();
-  localStorage.setItem("kakomon:ai-consent:20261103", "allowed");
   window.sessionStorage.clear();
 });
 

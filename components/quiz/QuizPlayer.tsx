@@ -35,7 +35,7 @@ import { createHistoryStore } from "@/lib/storage/history";
 import { writeLastQuestion } from "@/lib/storage/last-question";
 
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Timer, Check, Copy, Sparkles, Star, BookOpen } from "lucide-react";
+import { ArrowLeft, Timer, Check, Copy, MessageCircle } from "lucide-react";
 import { examLabel } from "@/lib/utils";
 import { comboLevel, readMotivationSettings } from "@/lib/motivation/combo";
 import { playPiroro } from "@/lib/motivation/sound";
@@ -401,7 +401,7 @@ function ScoredQuizPlayer({
           <p className="mb-4 text-zinc-600 dark:text-zinc-400">
             該当する問題がありませんでした。
           </p>
-          <Button variant="outline" onClick={() => router.push(backHref)}>
+          <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" variant="outline" onClick={() => router.push(backHref)}>
             <ArrowLeft className="h-4 w-4" /> {backLabel}
           </Button>
         </div>
@@ -414,7 +414,7 @@ function ScoredQuizPlayer({
       <main className="mx-auto max-w-3xl space-y-5 px-4 py-6">
         <h1 className="text-xl font-semibold">記述の確認を終えました</h1>
         <p>記述答案は自動採点していません。独自解答例とご自身の答案を照らして確認してください。</p>
-        <Button variant="outline" onClick={() => router.push(backHref)}>{backLabel}</Button>
+        <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" variant="outline" onClick={() => router.push(backHref)}>{backLabel}</Button>
       </main>
     );
   }
@@ -457,7 +457,7 @@ function ScoredQuizPlayer({
   if (isSelfReviewedDescriptiveQuestion(question)) {
     return (
       <main className="mx-auto max-w-3xl space-y-5 px-4 py-6">
-        <Button variant="outline" onClick={() => router.push(backHref)}>{backLabel}</Button>
+        <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" variant="outline" onClick={() => router.push(backHref)}>{backLabel}</Button>
         <div ref={questionStartRef} tabIndex={-1} className="scroll-mt-24 outline-none">
           <QuestionCard question={question} progress={{ current: index, total }} />
         </div>
@@ -486,7 +486,7 @@ function ScoredQuizPlayer({
   const selectionLabel = native ? nativeBResult?.slotResults.map((slot) => `${slot.label}: ${slot.selectedCandidateId ?? "未回答"}`).join(" / ") : ordering ? (orderedSelected ? formatOrderingAnswer(question.exam, orderedSelected) : undefined) : numeric ? numericSelected : multiSelect ? (picked.length > 0 ? formatSelection(picked) : undefined) : selected;
 
   return (
-    <div className="flex min-h-[100dvh] flex-col bg-zinc-50 dark:bg-zinc-950">
+    <div className="flex min-h-[calc(100dvh-3.5rem)] flex-col bg-zinc-50 dark:bg-zinc-950">
       <div role="region" aria-label="クイズナビゲーション" className="sticky top-0 z-20 flex flex-col border-b border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
         <div className="flex items-center gap-2 px-3 py-2 sm:py-2.5">
           <Button
@@ -494,7 +494,7 @@ function ScoredQuizPlayer({
             size="icon"
             onClick={() => router.push(backHref)}
             aria-label={backLabel}
-            className="hover:bg-zinc-100 dark:hover:bg-zinc-800"
+            className="hover:bg-zinc-100 dark:hover:bg-zinc-800 min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
           >
             <ArrowLeft aria-hidden="true" className="h-5 w-5" />
           </Button>
@@ -544,8 +544,8 @@ function ScoredQuizPlayer({
       </div>
 
       <div className="flex flex-1">
-        <main
-          className="min-w-0 w-full flex-1 px-3 pb-32 pt-4 sm:px-6"
+        <main aria-label="問題と解説"
+          className="min-w-0 w-full flex-1 px-3 pb-12 pt-4 sm:px-6"
           onTouchStart={onTouchStart}
           onTouchEnd={onTouchEnd}
         >
@@ -556,7 +556,7 @@ function ScoredQuizPlayer({
             />
 
             {question.acceptedAnswerCombinations && !revealed && (
-              <Button disabled={picked.length < 1 || picked.length > requiredSelections}
+              <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" disabled={picked.length < 1 || picked.length > requiredSelections}
                 onClick={() => commitAnswer(formatSelection(picked), isCompleteSelectionCorrect(question.answer, picked, requiredSelections, question.acceptedAnswerCombinations), { kind: "multiple-choice", selected: [...picked] })}>
                 回答を確定
               </Button>
@@ -617,7 +617,7 @@ function ScoredQuizPlayer({
                 it invisible, out of flow and inert until the explicit answer. */}
             {(revealed || preparedExplanationId === question.id) && (
               <div key={`explanation:${question.id}`} ref={answerResultRef} tabIndex={-1} aria-hidden={!revealed} inert={!revealed}
-                className={`scroll-mt-80 space-y-4 outline-none${revealed ? "" : " invisible pointer-events-none absolute inset-x-0 top-0 h-0 overflow-hidden"}`} aria-label="解答結果">
+                className={`scroll-mt-24 space-y-4 outline-none${revealed ? "" : " invisible pointer-events-none absolute inset-x-0 top-0 h-0 overflow-hidden"}`} aria-label="解答結果">
                 <ExplanationCard
                   question={question}
                   nativeBResult={nativeBResult}
@@ -666,17 +666,6 @@ function ScoredQuizPlayer({
 
       </div>
 
-      {revealed && (
-        <nav aria-label="解答後の学習操作" className="fixed inset-x-0 bottom-0 z-30 border-t border-border bg-background px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 shadow-lg">
-          <div className="mx-auto grid max-w-2xl grid-cols-2 gap-2">
-            <Button variant="outline" className="min-h-12 px-2 text-xs sm:text-sm" disabled={!onRelated} onClick={() => {
-              setShowRelated(true);
-              requestAnimationFrame(() => { relatedRef.current?.focus({ preventScroll: true }); relatedRef.current?.scrollIntoView({ block: "center", behavior: "instant" }); });
-            }}><BookOpen className="h-4 w-4" aria-hidden="true" />関連問題</Button>
-            <Button variant="outline" className="min-h-12 px-2 text-xs sm:text-sm" aria-pressed={starred} onClick={toggleStar}><Star className="h-4 w-4" aria-hidden="true" fill={starred ? "currentColor" : "none"} />{starred ? "復習登録済み" : "復習に登録"}</Button>
-          </div>
-        </nav>
-      )}
 
       {!quiet && burst && <FireworksBurst
         active
@@ -711,7 +700,7 @@ function KeyboardShortcutHelp({ onClose }: { onClose: () => void }) {
           type="button"
           onClick={onClose}
           aria-label="ショートカット一覧を閉じる"
-          className="rounded p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
+          className="inline-flex min-h-11 min-w-11 items-center justify-center rounded text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
         >
           ✕
         </button>
@@ -775,6 +764,9 @@ export function QuizCompleteScreen({
   onReviewLast?: () => void;
 }) {
   const [copied, setCopied] = React.useState(false);
+  const [copyError, setCopyError] = React.useState(false);
+  const resultHeadingRef = React.useRef<HTMLHeadingElement>(null);
+  React.useEffect(() => { resultHeadingRef.current?.focus({ preventScroll: true }); resultHeadingRef.current?.scrollIntoView?.({ block: "center", behavior: "instant" }); }, []);
   const accuracy = stats.answered > 0 ? Math.round((stats.correct / stats.answered) * 100) : 0;
 
   React.useEffect(() => {
@@ -794,47 +786,65 @@ export function QuizCompleteScreen({
   const shareUrl = safeShareHref
     ? `${QUIZ_ORIGIN}${safeShareHref}`
     : `${QUIZ_ORIGIN}/quiz?mode=${encodeURIComponent(mode)}&exam=${encodeURIComponent(exam)}`;
-  const shareText = `${label}の過去問で正答率${accuracy}%でした！ AIコパイロット付き無料学習 #過去問AI #IPA試験`;
+  const shareText = `${label}の過去問で正答率${accuracy}%でした！ #過去問AI #IPA試験`;
   const lineUrl = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(`${shareUrl}\n${shareText}`)}`;
 
   const handleCopy = async () => {
+    setCopyError(false);
+    setCopied(false);
     try {
       await navigator.clipboard.writeText(shareUrl);
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
-    } catch { /* ignore */ }
+    } catch { setCopyError(true); }
   };
 
 
   const btnClass =
-    "inline-flex items-center gap-1.5 rounded-full border border-zinc-300 bg-white px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800";
+    "inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800";
 
   return (
-    <div className="flex min-h-[100dvh] flex-col items-center justify-center bg-zinc-50 px-4 py-12 dark:bg-zinc-950">
-      <div className="w-full max-w-md rounded-3xl border border-zinc-200 bg-white p-8 shadow-lg dark:border-zinc-800 dark:bg-zinc-900">
+    <main className="flex flex-1 flex-col items-center justify-center bg-zinc-50 px-4 py-12 dark:bg-zinc-950">
+      <div className="w-full max-w-md rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-8 dark:border-zinc-800 dark:bg-zinc-900">
         <div className="mb-6 text-center">
           <ChihuahuaMascot pose="celebrate" size={100} className="mx-auto mb-2" />
-          <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">クイズ完了！</h1>
+          <h1 ref={resultHeadingRef} tabIndex={-1} className="text-2xl font-bold text-zinc-900 outline-none dark:text-zinc-50">クイズ完了！</h1>
           <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
             {accuracy >= 80 ? "素晴らしい！" : accuracy >= 60 ? "いい調子です！" : "次は満点を狙おう！"}
           </p>
         </div>
 
-        <div className="mb-6 grid grid-cols-3 gap-3 text-center">
+        <div className="mb-6 grid grid-cols-3 gap-2 text-center sm:gap-3">
           <div className="rounded-2xl bg-sky-50 p-3 dark:bg-sky-950/30">
-            <div className="text-2xl font-bold text-sky-600 dark:text-sky-400">{accuracy}%</div>
+            <div className="text-2xl font-bold tabular-nums text-sky-600 dark:text-sky-400">{accuracy}%</div>
             <div className="text-xs text-zinc-500 dark:text-zinc-400">正答率</div>
           </div>
           <div className="rounded-2xl bg-zinc-100 p-3 dark:bg-zinc-800">
-            <div className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">{stats.correct}/{stats.answered}</div>
+            <div className="text-xl font-bold tabular-nums text-zinc-800 sm:text-2xl dark:text-zinc-100">{stats.correct}/{stats.answered}</div>
             <div className="text-xs text-zinc-500 dark:text-zinc-400">正解数</div>
           </div>
           <div className="rounded-2xl bg-zinc-100 p-3 dark:bg-zinc-800">
-            <div className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">{`${Math.floor(elapsed / 60)}:${String(elapsed % 60).padStart(2, "0")}`}</div>
+            <div className="text-xl font-bold tabular-nums text-zinc-800 sm:text-2xl dark:text-zinc-100">{`${Math.floor(elapsed / 60)}:${String(elapsed % 60).padStart(2, "0")}`}</div>
             <div className="text-xs text-zinc-500 dark:text-zinc-400">経過時間</div>
           </div>
         </div>
 
+        <div className="flex flex-col gap-2">
+          <Button variant="primary" onClick={onRetry} className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
+            もう一度挑戦
+          </Button>
+          {onReviewLast ? (
+            <Button variant="outline" onClick={onReviewLast} className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
+              <MessageCircle className="h-4 w-4" aria-hidden="true" />
+              最後の問題をAIに質問
+            </Button>
+          ) : null}
+          <Button variant="outline" onClick={onBack} className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
+            <ArrowLeft className="h-4 w-4" /> {backLabel}
+          </Button>
+        </div>
+
+        <section className="mt-6 border-t border-border pt-5">
         <div className="mb-6">
           <p className="mb-2 text-xs font-semibold text-zinc-500 dark:text-zinc-400">結果をシェアする</p>
           <div className="flex flex-wrap gap-2">
@@ -848,35 +858,22 @@ export function QuizCompleteScreen({
           </div>
           {/* コピー成功はボタン文言変更だけでは SR に告知されない(WCAG 4.1.3)。
               polite live region で告知する。 */}
-          <span role="status" aria-live="polite" className="sr-only">
-            {copied ? "結果 URL をコピーしました" : ""}
+          <span role="status" aria-live="polite" className={copyError ? "mt-2 block text-sm text-destructive" : "sr-only"}>
+            {copyError ? "コピーできませんでした。もう一度お試しください。" : copied ? "結果 URL をコピーしました" : ""}
           </span>
         </div>
 
-        <div className="flex flex-col gap-2">
-          {onReviewLast ? (
-            <Button variant="outline" onClick={onReviewLast} className="w-full">
-              <Sparkles className="h-4 w-4" aria-hidden="true" />
-              最後の問題をAIに質問
-            </Button>
-          ) : null}
-          <Button variant="primary" onClick={onRetry} className="w-full">
-            もう一度挑戦
-          </Button>
-          <Button variant="outline" onClick={onBack} className="w-full">
-            <ArrowLeft className="h-4 w-4" /> {backLabel}
-          </Button>
-        </div>
+        </section>
 
         {scheduleUrl ? (
           <nav aria-label="次の資格で日程と学習先を確認" className="mt-5 rounded-2xl border border-sky-200 bg-sky-50 p-4 text-sm dark:border-sky-900 dark:bg-sky-950/30">
             <p className="font-semibold text-sky-950 dark:text-sky-100">この資格の次の一歩</p>
             <div className="mt-2 flex flex-col gap-2">
-              <a href={scheduleUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-sky-800 underline underline-offset-2 dark:text-sky-200">
+              <a href={scheduleUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center font-semibold text-sky-800 underline underline-offset-2 dark:text-sky-200">
                 試験日・申込締切を次の資格で確認 ↗
               </a>
               {learningUrl ? (
-                <a href={learningUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-sky-800 underline underline-offset-2 dark:text-sky-200">
+                <a href={learningUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center font-semibold text-sky-800 underline underline-offset-2 dark:text-sky-200">
                   対応する学習・教材を次の資格で選ぶ ↗
                 </a>
               ) : null}
@@ -889,6 +886,6 @@ export function QuizCompleteScreen({
             ゲートは AfternoonEssayHint 内の ESSAY_EXAM_CODES 単一情報源。 */}
         <AfternoonEssayHint exam={exam as ExamCode} />
       </div>
-    </div>
+    </main>
   );
 }

@@ -4,7 +4,6 @@ import { useState, useEffect, useRef, useId, cloneElement, isValidElement } from
 import Link from "next/link";
 import {
   AlertCircle,
-  ArrowLeft,
   ArrowRight,
   Bell,
   CalendarClock,
@@ -16,15 +15,13 @@ import {
   Moon,
   Palette,
   RotateCcw,
-  Settings as SettingsIcon,
   Sliders,
   Sun,
   TrendingUp,
   Upload,
 } from "lucide-react";
-import { Switch } from "@/components/ui/switch";
+import { SettingsSwitch as Switch } from "@/components/account/SettingsSwitch";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { useTheme } from "@/components/theme-provider";
 import { useRovingRadioGroup } from "@/lib/a11y/use-roving-radio";
 import { readSettings, writeSettings, type AppSettings } from "@/lib/storage/settings";
@@ -50,14 +47,14 @@ const THEME_OPTIONS: { value: Theme; label: string; icon: React.ReactNode }[] = 
 ];
 
 const SECTIONS = [
-  { id: "home-screen", label: "ホーム画面に追加", icon: <Download className="h-3.5 w-3.5" /> },
   { id: "appearance", label: "外観", icon: <Palette className="h-3.5 w-3.5" /> },
-  { id: "quiz-options", label: "クイズオプション", icon: <Sliders className="h-3.5 w-3.5" /> },
+  { id: "quiz-options", label: "出題・演出", icon: <Sliders className="h-3.5 w-3.5" /> },
   { id: "notifications", label: "通知設定", icon: <Bell className="h-3.5 w-3.5" /> },
   { id: "exam-schedule", label: "試験予定", icon: <CalendarClock className="h-3.5 w-3.5" /> },
-  { id: "history", label: "学習履歴管理", icon: <TrendingUp className="h-3.5 w-3.5" /> },
+  { id: "history", label: "学習履歴", icon: <TrendingUp className="h-3.5 w-3.5" /> },
   { id: "cloud-sync", label: "クラウド同期", icon: <Cloud className="h-3.5 w-3.5" /> },
   { id: "api-keys", label: "APIキー管理", icon: <KeyRound className="h-3.5 w-3.5" /> },
+  { id: "home-screen", label: "ホーム画面に追加", icon: <Download className="h-3.5 w-3.5" /> },
 ] as const;
 
 function SectionTitle({
@@ -132,6 +129,8 @@ export default function SettingsPage() {
   const [stats, setStats] = useState({ total: 0, correct: 0, accuracy: 0, uniqueAnswered: 0 });
   const [toast, setToast] = useState<{ type: "ok" | "err"; msg: string } | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
+  const toastTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  useEffect(() => () => { if (toastTimer.current) clearTimeout(toastTimer.current); }, []);
 
   useEffect(() => {
     setSettings(readSettings());
@@ -150,8 +149,9 @@ export default function SettingsPage() {
   }
 
   function showToast(type: "ok" | "err", msg: string) {
+    if (toastTimer.current) clearTimeout(toastTimer.current);
     setToast({ type, msg });
-    setTimeout(() => setToast(null), 3000);
+    toastTimer.current = setTimeout(() => setToast(null), 3000);
   }
 
   function updateSetting<K extends keyof AppSettings>(key: K, value: AppSettings[K]) {
@@ -189,6 +189,8 @@ export default function SettingsPage() {
         showToast("err", "インポートに失敗しました（ファイル形式エラー）");
       }
     };
+    reader.onerror = () => showToast("err", "ファイルを読み込めませんでした");
+    reader.onabort = () => showToast("err", "ファイルの読み込みを中止しました");
     reader.readAsText(file);
     e.target.value = "";
   }
@@ -217,30 +219,12 @@ export default function SettingsPage() {
 
   return (
     <main className="relative flex-1">
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-radial-spotlight"
-      />
 
       <div className="relative mx-auto w-full max-w-2xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
-        <Button asChild variant="ghost" size="sm" className="mb-4">
-          <Link href="/">
-            <ArrowLeft className="h-4 w-4" />
-            戻る
-          </Link>
-        </Button>
-
-        <header className="mb-6 animate-fade-in">
-          <Badge variant="soft" className="mb-3">
-            <SettingsIcon className="h-3 w-3" />
-            設定
-          </Badge>
+        <header className="mb-6">
           <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            設定とプリファレンス
+            設定
           </h1>
-          <p className="mt-2 text-sm text-muted-foreground">
-            {SECTIONS.length} つのセクションで全機能を一元管理できます。
-          </p>
         </header>
 
         {/* Section nav (anchor links) */}
@@ -253,7 +237,7 @@ export default function SettingsPage() {
             <a
               key={s.id}
               href={`#${s.id}`}
-              className="inline-flex items-center gap-1 rounded-lg bg-background px-2.5 py-1.5 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="inline-flex min-h-11 items-center gap-1.5 rounded-lg bg-background px-3 py-2 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               {s.icon}
               {s.label}
@@ -262,20 +246,11 @@ export default function SettingsPage() {
         </nav>
 
         <div className="space-y-6">
-          <section aria-labelledby="home-screen">
-            <SectionTitle id="home-screen" icon={<Download className="h-5 w-5" />}>
-              ホーム画面に追加
-            </SectionTitle>
-            <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
-              <MobileInstallControl />
-            </div>
-          </section>
           {/* Appearance */}
           <section>
             <SectionTitle
               id="appearance"
               icon={<Palette className="h-5 w-5" />}
-              description="アプリ全体の表示テーマ"
             >
               外観
             </SectionTitle>
@@ -316,9 +291,8 @@ export default function SettingsPage() {
             <SectionTitle
               id="quiz-options"
               icon={<Sliders className="h-5 w-5" />}
-              description="出題ロジックと演出のカスタマイズ"
             >
-              クイズオプション
+              出題・演出
             </SectionTitle>
             <div className="divide-y divide-border rounded-2xl border border-border bg-card shadow-sm">
               <SettingRow
@@ -341,7 +315,7 @@ export default function SettingsPage() {
               </SettingRow>
               <SettingRow
                 label="計算問題のみ"
-                description="isCalculation フラグが付いた問題だけ出題"
+                description="計算が必要な問題だけを出題します"
               >
                 <Switch
                   checked={settings.calculationOnly}
@@ -350,7 +324,7 @@ export default function SettingsPage() {
               </SettingRow>
               <SettingRow
                 label="正解音"
-                description="3 連続以上で「ピロロロ」が鳴ります"
+                description="3問以上続けて正解すると音を鳴らします"
               >
                 <Switch
                   checked={motivation.soundEnabled}
@@ -359,7 +333,7 @@ export default function SettingsPage() {
               </SettingRow>
               <SettingRow
                 label="アニメーションを抑える"
-                description="花火やパーティクルを無効化（軽量モード）"
+                description="花火などの動きを抑えます"
               >
                 <Switch
                   checked={motivation.reduceMotion}
@@ -374,7 +348,6 @@ export default function SettingsPage() {
             <SectionTitle
               id="notifications"
               icon={<Bell className="h-5 w-5" />}
-              description="メール / プッシュ通知の管理"
             >
               通知設定
             </SectionTitle>
@@ -386,15 +359,11 @@ export default function SettingsPage() {
             <SectionTitle
               id="exam-schedule"
               icon={<CalendarClock className="h-5 w-5" />}
-              description="試験日・申込締切は次の資格で確認"
             >
               試験予定
             </SectionTitle>
             <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
-              <p className="mt-2 text-xs text-muted-foreground">
-                資格ごとの試験日と申込締切を確認できます。
-              </p>
-              <a href="https://tsugino-shikaku.jp/calendar" target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-sm font-semibold text-primary underline underline-offset-4">次の資格で日程を見る ↗</a>
+              <a href="https://tsugino-shikaku.jp/calendar" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center text-sm font-semibold text-primary underline underline-offset-4">次の資格で日程を見る ↗</a>
             </div>
           </section>
 
@@ -403,14 +372,13 @@ export default function SettingsPage() {
             <SectionTitle
               id="history"
               icon={<TrendingUp className="h-5 w-5" />}
-              description="ブラウザに保存された履歴の管理"
             >
-              学習履歴管理
+              学習履歴
             </SectionTitle>
             <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
               <SettingRow
                 label="学習履歴を記録する"
-                description="OFF にすると回答を localStorage に保存しません（プライバシー重視の方向け）"
+                description="この端末に回答を保存します"
               >
                 <Switch
                   checked={settings.recordHistory}
@@ -427,14 +395,14 @@ export default function SettingsPage() {
                 />
               </div>
               <div className="grid gap-2 p-4 sm:grid-cols-3">
-                <Button variant="outline" size="sm" className="gap-2" onClick={handleExport}>
+                <Button variant="outline" size="sm" className="min-h-11 gap-2" onClick={handleExport}>
                   <Download className="h-4 w-4" />
                   エクスポート
                 </Button>
                 <Button
                   variant="outline"
                   size="sm"
-                  className="gap-2"
+                  className="min-h-11 gap-2"
                   onClick={() => fileInputRef.current?.click()}
                 >
                   <Upload className="h-4 w-4" />
@@ -443,7 +411,7 @@ export default function SettingsPage() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="gap-2 border-destructive/30 text-destructive hover:bg-destructive/10 hover:text-destructive"
+                  className="min-h-11 gap-2 border-destructive/30 text-destructive hover:bg-destructive/10 hover:text-destructive"
                   onClick={handleReset}
                 >
                   <RotateCcw className="h-4 w-4" />
@@ -452,7 +420,7 @@ export default function SettingsPage() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="gap-2"
+                  className="min-h-11 gap-2"
                   onClick={handlePersonalContextReset}
                   title="訪問回数 / 続きから情報 / おすすめ問題のシードを初期化"
                 >
@@ -475,7 +443,6 @@ export default function SettingsPage() {
             <SectionTitle
               id="cloud-sync"
               icon={<Cloud className="h-5 w-5" />}
-              description="機種変・ブラウザ切替でも履歴を引き継ぐ（任意・サインインが必要）"
             >
               クラウド同期
             </SectionTitle>
@@ -487,24 +454,28 @@ export default function SettingsPage() {
             <SectionTitle
               id="api-keys"
               icon={<KeyRound className="h-5 w-5" />}
-              description="過去問AI Public API（β）のキーを発行・管理"
             >
               API キー管理
             </SectionTitle>
             <Link
               href="/settings/api-keys"
-              className="group flex items-center justify-between rounded-2xl border border-border bg-card p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+              className="group flex items-center justify-between rounded-2xl border border-border bg-card p-5 shadow-sm transition-colors hover:border-primary/40 hover:bg-muted"
             >
               <div>
-                <p className="text-sm font-medium text-foreground">API キー管理ページを開く</p>
-                <p className="mt-0.5 text-xs text-muted-foreground">
-                  キーの発行・コピー・無効化が可能です
-                </p>
+                <p className="text-sm font-medium text-foreground">API キー管理</p>
               </div>
               <ArrowRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
             </Link>
           </section>
 
+          <section aria-labelledby="home-screen">
+            <SectionTitle id="home-screen" icon={<Download className="h-5 w-5" />}>
+              ホーム画面に追加
+            </SectionTitle>
+            <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+              <MobileInstallControl />
+            </div>
+          </section>
           {/* About / footer info */}
           <section>
             <div className="divide-y divide-border rounded-2xl border border-border bg-card shadow-sm">
@@ -514,14 +485,14 @@ export default function SettingsPage() {
               </div>
               <Link
                 href="/about"
-                className="flex items-center justify-between px-5 py-4 text-sm transition-colors hover:bg-muted"
+                className="flex min-h-12 items-center justify-between gap-3 px-5 py-4 text-sm transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring"
               >
                 <span className="text-foreground">著作権・利用条件</span>
                 <span className="text-primary">→</span>
               </Link>
               <Link
                 href="/privacy"
-                className="flex items-center justify-between px-5 py-4 text-sm transition-colors hover:bg-muted"
+                className="flex min-h-12 items-center justify-between gap-3 px-5 py-4 text-sm transition-colors hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-ring"
               >
                 <span className="text-foreground">プライバシーポリシー</span>
                 <span className="text-primary">→</span>
@@ -536,12 +507,12 @@ export default function SettingsPage() {
         <div
           role="status"
           aria-live="polite"
-          className="pointer-events-none fixed bottom-6 left-1/2 z-50 -translate-x-1/2"
+          className="pointer-events-none fixed bottom-[calc(5rem+env(safe-area-inset-bottom))] left-1/2 z-50 w-[calc(100%-2rem)] max-w-md -translate-x-1/2 sm:bottom-6"
         >
           {toast && (
             <div
-              className={`flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-medium text-white shadow-xl animate-slide-up ${
-                toast.type === "ok" ? "bg-success" : "bg-destructive"
+              className={`flex items-center gap-2 rounded-xl px-4 py-3 text-sm font-medium shadow-xl animate-slide-up ${
+                toast.type === "ok" ? "bg-success text-success-foreground" : "bg-destructive text-destructive-foreground"
               }`}
             >
               {toast.type === "ok" ? (

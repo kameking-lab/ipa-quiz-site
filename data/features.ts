@@ -2,7 +2,6 @@
  * 競合との差別化を狙った機能特集 LP。
  * 検索流入の多い差別化キーワードに対する受け皿。
  */
-import { APPROX_QUESTION_COUNT_LABEL } from "@/lib/constants/question-counts";
 
 export interface FeatureLandingPage {
   slug: string;
@@ -28,82 +27,6 @@ export interface FeatureLandingPage {
 
 export const FEATURE_LANDING_PAGES: FeatureLandingPage[] = [
   {
-    slug: "ai-explanation",
-    title: "AI 解説で過去問を学ぶ ── 過去問AI",
-    description:
-      "Google Gemini を活用した AI 解説で、IPA 情報処理技術者試験の過去問を効率的に学習。選択肢の違い・用語解説・類題生成・覚え方を対話形式で深掘りできます。",
-    hero: {
-      badge: "差別化機能",
-      headline: "AI 解説で過去問を解き直す",
-      subhead:
-        "選択肢の違い・用語解説・類題生成を対話で。静的な解説では届かない深さを、Gemini が即座に提供。",
-    },
-    benefits: [
-      {
-        title: "用語をその場で噛み砕く",
-        body: "『中学生でも分かるように』『SQL の例で』など、自分の理解レベルに合わせた解説を瞬時に取得。読むだけでは飛ばしがちな抽象用語が、対話で腹落ちする。",
-      },
-      {
-        title: "誤答した理由を可視化",
-        body: "選んだ選択肢ごとに『なぜ違うか』を AI が個別に解説。消去法を機械的にやるのではなく、『各選択肢が何を意味するか』を理解した上で正解を選べるようになる。",
-      },
-      {
-        title: "類題を 1 問だけ即生成",
-        body: "同じ論点で別パターンの問題を AI に作らせて、即座に応用力を確認できる。インプット → アウトプットのサイクルが極めて短い。",
-      },
-    ],
-    howItWorks: [
-      {
-        step: "01",
-        title: "問題を選ぶ",
-        body: `全 13 試験区分・${APPROX_QUESTION_COUNT_LABEL} 問超から、年度別 / 分野別 / トピック別に選択。`,
-      },
-      {
-        step: "02",
-        title: "AI コパイロットを呼び出す",
-        body: "PC は右ペイン、モバイルは下からシートが立ち上がる。クイックアクション or 自由テキストで質問。",
-      },
-      {
-        step: "03",
-        title: "対話で深掘りする",
-        body: "解説 → 類題 → 別観点で再質問、というサイクルで一問を多角的に学べる。1 日 10 問でも理解の解像度が大きく変わる。",
-      },
-    ],
-    primaryCta: { href: "/ap", label: "応用情報の問題で AI 解説を試す" },
-    relatedLinks: [
-      {
-        href: "/transparency",
-        label: "AI 解説の透明性レポート",
-        description: "どのモデル・どの入力で生成しているかを公開。",
-      },
-      {
-        href: "/keywords/ai-copilot-how-to-use",
-        label: "AI コパイロットの効果的な使い方",
-        description: "10 個の質問テンプレートで活用幅を広げる。",
-      },
-      {
-        href: "/glossary",
-        label: "IT 用語集",
-        description: "用語ごとの定義と関連トピックハブへの導線。",
-      },
-    ],
-    faqs: [
-      {
-        q: "AI 解説は無料で使えますか？",
-        a: "公開済みの解説とAIの新規生成では利用条件が異なります。無料範囲・月額プラン・提供状態は料金ページと利用画面で確認してください。",
-      },
-      {
-        q: "AI 解説の精度は信頼できますか？",
-        a: "Google Gemini に IPA 公式問題と公式解答を入力に生成しています。一般的には有用ですが、稀に誤りを含む可能性があるため、各問題ページから IPA 公式 PDF にもアクセスできます。",
-      },
-      {
-        q: "対話履歴は保存されますか？",
-        a: "ログイン時はクラウドに保存され、複数端末から続きを参照できます。未ログイン時はブラウザの localStorage に保存されます。",
-      },
-    ],
-  },
-
-  {
     slug: "industry-essays",
     title: "業種別 論述事例集 ── ST/SA/PM/SM/AU",
     description:
@@ -112,7 +35,7 @@ export const FEATURE_LANDING_PAGES: FeatureLandingPage[] = [
       badge: "差別化機能",
       headline: "業種別 論述事例集",
       subhead:
-        "金融・製造・小売・公共・医療・エネルギーなど業種別の業務事例を AI が起点として提案。論文の『そもそも何を書くか』に悩まない。",
+        "業種別の参考答案から、論述の題材と構成を確認できます。",
     },
     benefits: [
       {
@@ -142,7 +65,7 @@ export const FEATURE_LANDING_PAGES: FeatureLandingPage[] = [
       {
         step: "03",
         title: "骨子を生成して加筆",
-        body: "AI が論文骨子（背景 → 課題 → 施策 → 効果）を業種特有の論点込みで生成。あなた自身の業務事例で肉付け。",
+        body: "背景・課題・施策・効果の構成を参考に、自分の業務事例を整理します。",
       },
     ],
     primaryCta: { href: "/essay", label: "論文事例を見る" },
@@ -160,7 +83,7 @@ export const FEATURE_LANDING_PAGES: FeatureLandingPage[] = [
       {
         href: "/features/essay-grading",
         label: "AI 論述添削",
-        description: "書いた論文を AI が即座に添削する別機能。",
+        description: "自分で書いた答案を見直す機能。",
       },
     ],
     faqs: [
@@ -262,34 +185,34 @@ export const FEATURE_LANDING_PAGES: FeatureLandingPage[] = [
 
   {
     slug: "copilot",
-    title: "AI コパイロット ── RAG 引用つき対話で過去問を深掘る",
+    title: "AIに質問する ── 問題画面で解き方を確認",
     description:
-      "過去問AI の AI コパイロットは、Google Gemini に IPA 公式問題と解説を入力し、引用元つきで回答を生成。誤答分析・類題生成・用語解説をワンタップで呼び出せます。",
+      "問題の選択肢の違いや分からない用語を、その場で質問できます。問題と解説を確認しながら学習を進められます。",
     hero: {
       badge: "中核機能",
-      headline: "AI コパイロットの仕組みと使い方",
+      headline: "問題への質問の使い方",
       subhead:
-        "問題ごとに常駐する AI が、引用元つきで解説。クイックアクションで「選択肢を比較」「類題を 1 問」「中学生でも分かるように」を即実行。",
+        "選択肢の比較や用語の意味を、問題画面から質問できます。",
     },
     benefits: [
       {
-        title: "RAG 引用つきで根拠が見える",
+        title: "引用元を確認する",
         body: "回答には IPA 公式問題・解答・用語集の参照箇所が引用カードとして並ぶ。AI の生成内容と一次情報を 1 タップで照合できる。",
       },
       {
-        title: "クイックアクションで質問が止まらない",
-        body: "「選択肢の違いを比較」「類題を 1 問」「中学生でも分かるように」など、用途別ボタンが常時表示。自由テキストに戻る必要がない。",
+        title: "聞きたい内容を選ぶ",
+        body: "選択肢の比較や用語解説など、聞きたい内容を選んで質問できます。",
       },
       {
         title: "関連質問のレコメンド",
-        body: "1 回答ごとに「次に聞くと良い質問」を 3 つ提案。理解の縦深を維持したまま、対話が自走する。",
+        body: "回答を読んでから、続けて質問できます。",
       },
     ],
     howItWorks: [
       {
         step: "01",
-        title: "問題ページで AI コパイロットを開く",
-        body: "PC は右ペイン、モバイルは下からのボトムシート。常時起動・呼び出しゼロタップ。",
+        title: "質問欄を開く",
+        body: "問題画面の「この問題をAIに質問」を押します。",
       },
       {
         step: "02",
@@ -305,11 +228,6 @@ export const FEATURE_LANDING_PAGES: FeatureLandingPage[] = [
     primaryCta: { href: "/ap", label: "応用情報の問題で AI コパイロットを試す" },
     relatedLinks: [
       {
-        href: "/features/ai-explanation",
-        label: "AI 解説の全体像",
-        description: "コパイロットを含む AI 解説機能の俯瞰。",
-      },
-      {
         href: "/transparency",
         label: "AI 出力の透明性レポート",
         description: "どのモデル・どの入力で生成しているかを公開。",
@@ -323,7 +241,7 @@ export const FEATURE_LANDING_PAGES: FeatureLandingPage[] = [
     faqs: [
       {
         q: "コパイロットはどのモデルを使っていますか？",
-        a: "Google Gemini を使用しています。プロバイダは lib/ai/provider.ts の抽象レイヤ経由で実装されており、変更時は公開記録（更新履歴）に明示します。",
+        a: "Google Geminiを使用しています。送信する情報はプライバシーポリシーで確認できます。",
       },
       {
         q: "引用カードの情報はどこから来ていますか？",
@@ -358,7 +276,7 @@ export const FEATURE_LANDING_PAGES: FeatureLandingPage[] = [
       },
       {
         title: "復習動線が 1 タップ",
-        body: "誤答問題は AI コパイロット呼び出し・類題演習・公式 PDF 参照が、結果画面からそのままタップで開ける。",
+        body: "解き終えた問題の解説や公式資料を確認して復習できます。",
       },
     ],
     howItWorks: [
@@ -416,7 +334,7 @@ export const FEATURE_LANDING_PAGES: FeatureLandingPage[] = [
     slug: "study-plan",
     title: "学習計画 ── 受験日から逆算した週次タスク自動生成",
     description:
-      "受験日と現在の学習レベルを入力すると、週次のタスクと進捗マイルストーンを自動生成する学習計画機能。過去問演習・参考書読み込み・模試の配分を AI が提案します。",
+      "受験日と現在の学習レベルを入力すると、週次のタスクと進捗マイルストーンを自動生成する学習計画機能。過去問演習・参考書・模試の配分を確認できます。",
     hero: {
       badge: "計画支援",
       headline: "学習計画の組み立て方",
@@ -429,7 +347,7 @@ export const FEATURE_LANDING_PAGES: FeatureLandingPage[] = [
         body: "「あと 90 日」「あと 30 日」など、残り日数を入れるだけで週次タスクに分解。1 週間ごとに『今やるべきこと』が決まる。",
       },
       {
-        title: "分野配分を AI が提案",
+        title: "分野ごとの配分を確認",
         body: "模試結果や演習履歴を参照し、苦手分野に時間を寄せた配分を提案。漫然と過去問を流すのではなく、戦略的に時間を投じられる。",
       },
       {
@@ -451,7 +369,7 @@ export const FEATURE_LANDING_PAGES: FeatureLandingPage[] = [
       {
         step: "03",
         title: "週次レビューで調整",
-        body: "毎週日曜などにレビューを行い、達成率に応じて翌週のタスクを AI に再生成させる。",
+        body: "タスクの達成状況を確認し、学習を続けます。",
       },
     ],
     primaryCta: { href: "/study-plan", label: "学習計画を作成する" },
@@ -483,7 +401,7 @@ export const FEATURE_LANDING_PAGES: FeatureLandingPage[] = [
       },
       {
         q: "計画通りに進まない場合は？",
-        a: "達成率を正直に入力すれば、AI が現実的に到達可能な範囲で再配分します。完璧な遂行を求めるのではなく、継続を重視した設計です。",
+        a: "達成したタスクを確認し、次に取り組む内容を選びます。",
       },
     ],
   },

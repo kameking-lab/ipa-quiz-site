@@ -9,11 +9,9 @@ import { getHomeDirectory } from "@/lib/home/home-directory";
 // billing fixtures for the interactive home without requesting external services.
 vi.mock("next/navigation", () => ({ useRouter: () => ({ replace: vi.fn() }) }));
 vi.mock("@/components/ChihuahuaMascot", () => ({ ChihuahuaMascot: () => null }));
-vi.mock("@/components/home/landing/HomeQuestionPreview", () => ({ HomeQuestionPreview: () => null }));
 vi.mock("@/components/home/landing/HomeQualificationFinder", () => ({ HomeQualificationFinder: () => null }));
 vi.mock("@/components/home/landing/HomeDirectory", () => ({ HomeDirectory: () => null }));
 vi.mock("@/components/home/landing/HomeScheduleLink", () => ({ HomeScheduleLink: () => null }));
-vi.mock("@/components/home/landing/HomeStudyModes", () => ({ HomeStudyModes: () => null }));
 vi.mock("@/components/home/TotalAnswerCounter", () => ({ TotalAnswerCounter: () => null }));
 
 describe("transparency published counts", () => {

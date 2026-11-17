@@ -24,14 +24,11 @@ export function AfternoonEssayHint({ exam }: { exam: ExamCode }) {
         <FileText className="h-4 w-4" />
       </span>
       <div className="min-w-0 flex-1">
-        <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-          この区分は午後IIで論述が出ます
-        </p>
         <p className="mt-1 text-sm font-medium text-foreground">
-          {examLabel(exam)} の合否を分ける午後II論述を AI が採点
+          {examLabel(exam)} の午後II論述を練習する
         </p>
         <p className="mt-1 text-xs leading-relaxed text-muted-foreground">
-          書いた論述を AI が「適合度・論理性・具体性・業種事例」の 4
+          書いた論述を「適合度・論理性・具体性・業種事例」の 4
           軸でフィードバック。※AI 採点は参考評価です。
         </p>
         <Link

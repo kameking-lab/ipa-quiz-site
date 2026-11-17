@@ -41,6 +41,7 @@ export function AutoCheckout({ terms, returnTo, fallback, testMode = false }: { 
     })();
   }, [terms, returnTo, testMode]);
   return <div className="mx-auto max-w-md space-y-4 py-10 text-center" aria-live="polite">
+    <h1 className="sr-only">決済へ移動</h1>
     {error ? <>
       <p role="alert" className="font-semibold">{error}</p>
       <Link href={fallback} className="inline-flex min-h-11 items-center justify-center rounded-xl border border-border px-5 font-semibold">料金・契約の画面へ</Link>

@@ -8,6 +8,7 @@ import { sendFunnelEvent } from "@/lib/billing/funnel-client";
 import { useEffect, useState } from "react";
 import { posthogCapture } from "@/lib/posthog";
 import dynamic from "next/dynamic";
+import { SignedOutOnly } from "@/components/account/AccountNavigation";
 const FeedbackUnlock = dynamic(() => import("./FeedbackUnlock").then(m => m.FeedbackUnlock), { ssr: false });
 
 export function PracticeLoading({ index = 0, total = 0 }: { index?: number; total?: number }) {
@@ -47,7 +48,7 @@ export function PracticeDailyLimit({ resumeHref, freeDaily, onUnlocked }: { rese
     <div className="space-y-3">
       <a href={planStartHref(resumeHref)} onClick={start} aria-describedby="plan-terms" className="flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-4 py-3 text-lg font-bold text-primary-foreground hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">{PLAN_OFFER.trialDays > 0 ? <><span className="[.native-app_&]:hidden">{PLAN_OFFER.trialDays}日間無料で試す</span><span className="hidden [.native-app_&]:inline">月額{PLAN_OFFER.priceYen}円で続ける</span></> : `月額${PLAN_OFFER.priceYen}円で続ける`}</a>
       <p id="plan-terms" className="text-xs text-muted-foreground">{PLAN_OFFER.trialDays > 0 && <span className="[.native-app_&]:hidden">初回{PLAN_OFFER.trialDays}日間無料・その後 月額{PLAN_OFFER.priceYen}円・期間中の解約なら請求なし・</span>}税込・毎月自動更新・いつでも解約可 <Link href="/billing/terms" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">条件・返金</Link></p>
-      <p className="text-xs text-muted-foreground">購入済みの方は、購入したときと同じ方法（Google / Apple）でログインしてください。</p>
+      <SignedOutOnly><p className="text-xs text-muted-foreground">購入済みの方は、購入したときと同じ方法（Google / Apple）でログインしてください。</p></SignedOutOnly>
       <FeedbackUnlock onUnlocked={onUnlocked ?? (() => window.location.reload())} />
     </div>
     <p className="text-xs text-muted-foreground">明日また{free}問</p>
