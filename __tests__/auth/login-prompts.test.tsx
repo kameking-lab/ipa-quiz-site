@@ -13,6 +13,9 @@ vi.mock("@/components/quiz/QuizPlayer", () => ({ QuizPlayer: () => <p>問題本�
 vi.mock("@/lib/sync", () => ({ readSyncMeta: () => ({ lastSyncedAt: 0 }), syncAll: vi.fn() }));
 vi.mock("@/lib/posthog", () => ({ posthogCapture: vi.fn() }));
 vi.mock("@/lib/billing/funnel-client", () => ({ sendFunnelEvent: vi.fn() }));
+vi.mock("@/lib/billing/runtime", () => ({ billingIdentity: vi.fn(async () => ({})) }));
+vi.mock("@/lib/billing/subscription/config", () => ({ monthlyConfig: () => ({ enabled: true }) }));
+vi.mock("@/lib/billing/subscription/runtime", () => ({ monthlyRuntime: () => ({ service: { status: async () => ({ canManage: false, subscription: null }) } }) }));
 
 import { AccountNavigationLink, AccountNavigationProvider } from "@/components/account/AccountNavigation";
 import { CloudSyncPanel } from "@/components/account/CloudSyncPanel";
@@ -22,6 +25,9 @@ import { QuizResumeLinks } from "@/app/billing/QuizResumeLinks";
 import { QuizClient } from "@/app/quiz/QuizClient";
 import { AuthorizedContent } from "@/mobile/shared/AuthorizedContent";
 import { ExamQuestionPlayer } from "@/components/exam-library/exam-question-player";
+import { HomeHeroLede } from "@/components/home/HomeHeroLede";
+import MonthlyPage from "@/app/billing/MonthlyPage";
+import { PurchaseStatus } from "@/app/billing/PurchaseStatus";
 
 beforeEach(() => {
   localStorage.clear(); sessionStorage.clear();
@@ -63,6 +69,21 @@ for (const state of ["authenticated", "loading", "unauthenticated"] as const) {
     it("guards cloud sync login", () => {
       render(<CloudSyncPanel />);
       expect(screen.queryByRole("link", { name: "サインインして同期" }) !== null).toBe(guest);
+    });
+    it("guards the legacy home sync advice", () => {
+      render(<HomeHeroLede totalQuestions={1} />);
+      expect(screen.queryByText(/無料ログインで利用できます/) !== null).toBe(guest);
+    });
+    it("guards monthly purchase advice while retaining the same plan link", async () => {
+      const { container } = render(await MonthlyPage({ returnTo: "/quiz?question=q1" }));
+      expect(container.querySelector('a[href^="/billing/start?"]')).toBeVisible();
+      expect(screen.queryByText(/購入したときと同じ方法/) !== null).toBe(guest);
+    });
+    it("does not turn a stale purchase 401 into login advice for a signed-in user", async () => {
+      const { container } = render(<PurchaseStatus order="ux-order" />);
+      await screen.findByText("購入状況を確認できません。再購入せず、もう一度確認してください。");
+      expect(container.querySelector('a[href*="/auth/signin"]') !== null).toBe(guest);
+      if (!guest) expect(container.textContent).not.toContain("ログイン");
     });
     it("guards quiz failure login without changing the return path", async () => {
       const { container } = render(<QuizClient poolIds={["q1"]} initialQuestionId="q1" billingGateEnabled mode="year" backHref="/" />);
