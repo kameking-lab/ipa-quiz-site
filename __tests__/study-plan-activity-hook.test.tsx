@@ -20,6 +20,7 @@ let observerCallback: IntersectionObserverCallback;
 beforeEach(() => {
   localStorage.clear(); now = 0;
   vi.spyOn(performance, "now").mockImplementation(() => now);
+  vi.spyOn(document, "hasFocus").mockReturnValue(true);
   vi.stubGlobal("IntersectionObserver", class {
     constructor(callback: IntersectionObserverCallback) { observerCallback = callback; }
     observe() {} disconnect() {}
@@ -56,5 +57,13 @@ describe("existing quiz instrumentation", () => {
     localStorage.setItem(LS_KEYS.settings, JSON.stringify({ recordHistory: false }));
     render(<Harness />); now = 10000; fireEvent.click(screen.getByText("解答"));
     expect(getLearningActions()).toEqual([]);
+  });
+  it("excludes time in another focused window even if the tab stays visible", () => {
+    render(<Harness />); now = 1000;
+    vi.mocked(document.hasFocus).mockReturnValue(false); fireEvent.blur(window);
+    now = 600000;
+    vi.mocked(document.hasFocus).mockReturnValue(true); fireEvent.focus(window); now += 3000;
+    fireEvent.click(screen.getByText("解答"));
+    expect(dailyLearningPoints(getLearningActions())).toEqual([]);
   });
 });

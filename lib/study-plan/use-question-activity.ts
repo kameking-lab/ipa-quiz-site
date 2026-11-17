@@ -18,21 +18,25 @@ export function useQuestionActivity(question: Question | null | undefined, revea
   const questionId = question?.id;
   useEffect(() => {
     if (!questionId) return;
-    const clock = createActiveClock(() => performance.now(), document.visibilityState === "visible");
+    const foreground = () => document.visibilityState === "visible" && document.hasFocus();
+    const clock = createActiveClock(() => performance.now(), foreground());
     const current = { questionId, attemptId: crypto.randomUUID(), answered: false, explanationRead: false,
       answerClock: clock, explanationClock: null as ReturnType<typeof createActiveClock> | null };
     session.current = current;
     const visibility = () => {
-      current.answerClock.setVisible(document.visibilityState === "visible");
-      current.explanationClock?.setVisible(document.visibilityState === "visible");
+      current.answerClock.setVisible(foreground());
+      current.explanationClock?.setVisible(foreground());
     };
     document.addEventListener("visibilitychange", visibility);
-    return () => { document.removeEventListener("visibilitychange", visibility); session.current = null; };
+    window.addEventListener("focus", visibility);
+    window.addEventListener("blur", visibility);
+    return () => { document.removeEventListener("visibilitychange", visibility);
+      window.removeEventListener("focus", visibility); window.removeEventListener("blur", visibility); session.current = null; };
   }, [questionId]);
   const recordExplanation = useCallback(() => {
     const current = session.current;
     if (!question || !current || current.questionId !== question.id || !current.answered || current.explanationRead ||
-      !atEnd.current || document.visibilityState !== "visible" || (current.explanationClock?.milliseconds() ?? 0) < 5000 ||
+      !atEnd.current || document.visibilityState !== "visible" || !document.hasFocus() || (current.explanationClock?.milliseconds() ?? 0) < 5000 ||
       !readSettings().recordHistory || isReferenceOnlyQuestionId(question.id)) return;
     current.explanationRead = true;
     recordLearningAction({ id: `${current.attemptId}:explanation`, questionId: question.id, exam: question.exam,
@@ -53,7 +57,7 @@ export function useQuestionActivity(question: Question | null | undefined, revea
     if (!question || !current || current.questionId !== question.id || current.answered ||
       !readSettings().recordHistory || isReferenceOnlyQuestionId(question.id)) return;
     current.answered = true;
-    current.explanationClock = createActiveClock(() => performance.now(), document.visibilityState === "visible");
+    current.explanationClock = createActiveClock(() => performance.now(), document.visibilityState === "visible" && document.hasFocus());
     recordLearningAction({ id: `${current.attemptId}:answer`, questionId: question.id, exam: question.exam, at: Date.now(),
       kind: "answer", activeMs: current.answerClock.milliseconds(), questionType: question.type, correct });
   }, [question]);

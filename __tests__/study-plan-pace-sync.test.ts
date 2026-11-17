@@ -24,7 +24,7 @@ describe("automatic StudyPlan-only sync", () => {
     const fetcher = vi.fn().mockImplementation(async () => Response.json({ entries: [], merged: 0, total: 0 })); vi.stubGlobal("fetch", fetcher);
     expect(await syncPacePlans()).toBe("ok");
     const bodies = fetcher.mock.calls.map(call => JSON.parse(call[1].body));
-    expect(bodies[0]).toEqual({ entries: [], expectedUserId: "A" });
+    expect(bodies[0]).toEqual({ entries: [], expectedUserId: "A", includePace: true });
     expect(bodies[1].entries[0].payload).toEqual(plan);
     expect(localStorage.getItem(LS_KEYS.syncLocalOwner)).toBeNull();
     expect(localStorage.getItem(LS_KEYS.paceSyncOwner)).toBe("A");

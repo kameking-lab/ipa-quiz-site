@@ -56,9 +56,11 @@ export function createPacePlan(
 export function refreshThinRange(plan: PacePlan, questions: readonly PlanQuestion[], today: string): PacePlan {
   const week = weekStart(today);
   if (plan.range.initialCount >= 200 || week <= plan.range.lastExpansionWeek) return plan;
-  const ids = [...new Set([...plan.range.questionIds, ...recommendedRange(questions, plan.exam).map(q => q.id)])];
+  const additions = recommendedRange(questions, plan.exam);
+  const ids = [...new Set([...plan.range.questionIds, ...additions.map(q => q.id)])];
   const added = ids.length > plan.range.questionIds.length;
   return { ...plan, updatedAt: `${today}T00:00:00+09:00`, range: { ...plan.range, questionIds: ids,
+    years: [...new Set([...plan.range.years, ...additions.map(q => q.year)])].sort((a, b) => b - a),
     lastExpansionWeek: week, graceUntil: added ? new Date((dayNumber(week)! + 7) * DAY).toISOString().slice(0, 10) : plan.range.graceUntil } };
 }
 export function latestAnswers(attempts: readonly AnswerAttempt[], before = Infinity): Map<string, AnswerAttempt> {

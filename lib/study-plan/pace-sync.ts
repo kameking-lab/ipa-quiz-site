@@ -17,7 +17,7 @@ export async function syncPacePlans(): Promise<"ok" | "local-only" | "retry"> {
       (await readSyncAccount())?.id === account.id;
     async function exchange(entries: StudyPlanSyncEntry[]): Promise<StudyPlanSyncEntry[]> {
       const response = await fetch("/api/account/study-plan-sync", { method: "POST", credentials: "same-origin",
-        headers: { "Content-Type": "application/json" }, body: JSON.stringify({ entries, expectedUserId: account!.id }) });
+        headers: { "Content-Type": "application/json" }, body: JSON.stringify({ entries, expectedUserId: account!.id, includePace: true }) });
       if (!response.ok) throw new Error("sync_unavailable");
       const body: unknown = await response.json();
       if (!body || typeof body !== "object" || !("entries" in body) || !Array.isArray(body.entries)) throw new Error("invalid_sync");

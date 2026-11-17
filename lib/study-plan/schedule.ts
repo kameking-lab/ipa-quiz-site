@@ -10,10 +10,11 @@ const sessionSchema = z.object({
   id: z.string(), label: z.string(), fiscalYear: z.string().optional(), applicationStart: nullableDate,
   applicationDeadline: nullableDate, examDate: nullableDate, examDateEnd: nullableDate, resultDate: nullableDate,
   examPhaseWindows: z.array(phaseSchema).optional().default([]),
-  scheduleStatus: z.enum(["official", "tentative", "ondemand"]), sourceUrl: sourceUrl.nullable(),
+  scheduleStatus: z.enum(["official", "tentative", "ondemand", "missing"]), sourceUrl: sourceUrl.nullable(),
   verifiedDate: nullableDate, datePrecision: z.string().nullable().optional(),
   applicationEstimated: z.boolean().optional().default(false), estimateLabel: z.string().nullable().optional(),
-});
+}).transform(session => ({ ...session, scheduleStatus: session.scheduleStatus === "missing" ? "tentative" as const : session.scheduleStatus,
+  unannounced: session.scheduleStatus === "missing" }));
 export type ExamScheduleSession = z.infer<typeof sessionSchema> & { qualificationId: string | null };
 const registrationSchema = z.object({ id: z.string(), sessions: z.array(sessionSchema) });
 export interface ExamSchedule {
@@ -37,15 +38,22 @@ export function parseRegistration(value: unknown, qualificationId: string): Exam
 }
 export interface OfficialFallback {
   checkedAt: string;
-  exams: readonly { key: string; checkedAt?: string; dates?: readonly { date: string; endDate?: string; note?: string; sourceUrl: string }[] }[];
+  exams: readonly { key: string; checkedAt?: string; scheduleMode?: string; scheduleSourceUrl?: string;
+    dates?: readonly { date: string; endDate?: string; note?: string; sourceUrl: string }[] }[];
 }
 export function fallbackSessions(exam: string, fallback: OfficialFallback): ExamScheduleSession[] {
   const entry = fallback.exams.find(item => item.key === exam);
+  if (entry?.scheduleMode === "ondemand" && sourceUrl.safeParse(entry.scheduleSourceUrl).success) {
+    return [{ id: `fallback-${exam}-ondemand`, label: "随時受験", qualificationId: null,
+      applicationStart: null, applicationDeadline: null, examDate: null, examDateEnd: null, resultDate: null,
+      examPhaseWindows: [], scheduleStatus: "ondemand", sourceUrl: entry.scheduleSourceUrl!,
+      verifiedDate: entry.checkedAt ?? fallback.checkedAt, applicationEstimated: false, unannounced: false }];
+  }
   return (entry?.dates ?? []).flatMap((item, i) => {
     if (dayNumber(item.date) === null || !sourceUrl.safeParse(item.sourceUrl).success) return [];
     return [{ id: `fallback-${exam}-${i}`, label: item.note ?? item.date, qualificationId: null,
       applicationStart: null, applicationDeadline: null, examDate: item.date, examDateEnd: item.endDate ?? null,
       resultDate: null, examPhaseWindows: [], scheduleStatus: "official" as const, sourceUrl: item.sourceUrl,
-      verifiedDate: entry?.checkedAt ?? fallback.checkedAt, applicationEstimated: false }];
+      verifiedDate: entry?.checkedAt ?? fallback.checkedAt, applicationEstimated: false, unannounced: false }];
   });
 }

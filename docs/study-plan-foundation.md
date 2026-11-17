@@ -23,13 +23,14 @@
 - 通常・ストリームのクイズは `useQuestionActivity` で前面表示中の時間だけ計測する。解説末尾の可視状態と5秒以上の閲覧後の操作を合わせて記録する。タイマー・表示・IntersectionObserver単独では加点しない。AI質問は既存コパイロットで正常な応答を受け取ったとき記録する。
 - 他の問題形式の画面には `recordLearningAction({ id: uniqueActionId, questionId, exam, kind, at, activeMs, questionType, correct? })` を使える。記述の自己照合は正解を推測しない。採点されない問題に `correct: true` を渡さない。
 - `CloudSyncAutoSync` から新しい計画・行動だけを自動同期。未ログインは端末のみ。既存の `/api/account/study-plan-sync` と `StudyPlan.payload/progress` のJSONを使用。従来計画には混ぜない。学習行動は不変IDで和集合を取り、複数端末の重複を排除する。共有端末で別アカウントのデータは引き継がない。
+- 同期リクエストに `includePace: true` がある新しいクライアントだけに、新形式のJSONを返す。従来のクライアントには従来の計画のみを返し、古い画面の互換性を保つ。
 - 保存更新イベントは `study-plan:changed`。クラウドマージ時には再送ループを避けて発火しない。ポイント・計画の表示を再取得するタイミングは画面側で管理する。
 
 ## 日程
 
 `GET /api/exam-schedule/{exam}` → `{ exam, qualificationIds, source, sessions, unavailableQualificationIds }`。
 
-各回は `id/label/qualificationId/applicationStart/applicationDeadline/examDate/examDateEnd/examPhaseWindows/resultDate/scheduleStatus/sourceUrl/verifiedDate/datePrecision/applicationEstimated/estimateLabel`。未確認日付は `null`。`tentative` と `applicationEstimated` の予定情報を表示側に渡す。`ondemand` は予約日を入力する。`source: manual` の場合も手入力で計画作成できる。
+各回は `id/label/qualificationId/applicationStart/applicationDeadline/examDate/examDateEnd/examPhaseWindows/resultDate/scheduleStatus/sourceUrl/verifiedDate/datePrecision/applicationEstimated/estimateLabel/unannounced`。未確認日付は `null`。`tentative` と `applicationEstimated` の予定情報を表示側に渡す。上流の `missing` は日付を補わず `tentative, unannounced: true` として返す。`ondemand` は予約日を入力する。`source: manual` の場合も手入力で計画作成できる。
 
 中継は固定オリジン＋対応表にあるIDだけを使用し、5秒で打ち切る。上流は1時間キャッシュ。障害・不正JSON・対応なしでは既存の公式日程へ切り替え、申込期間・合格発表は補完しない。代替も無ければ空配列。障害時の応答キャッシュは60秒。
 

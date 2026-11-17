@@ -67,4 +67,16 @@ describe("schedule mapping and API contract", () => {
   it("rejects dated upstream sessions with no source", () => {
     expect(() => parseRegistration({ id: "ap", sessions: [{ ...session, sourceUrl: null }] }, "ap")).toThrow("missing_schedule_source");
   });
+  it("retains sourced on-demand fallback metadata with no invented dates", async () => {
+    const result = await getExamSchedule("ip", vi.fn<typeof fetch>().mockRejectedValue(new Error("offline")));
+    expect(result.source).toBe("fallback");
+    expect(result.sessions[0]).toMatchObject({ scheduleStatus: "ondemand", examDate: null, applicationDeadline: null });
+  });
+  it("retains valid sessions when the upstream also contains an unannounced next year", () => {
+    const parsed = parseRegistration({ id: "ap", sessions: [session, { ...session, id: "unannounced", scheduleStatus: "missing",
+      examDate: null, examDateEnd: null, applicationStart: null, applicationDeadline: null, resultDate: null, examPhaseWindows: [] }] }, "ap");
+    expect(parsed).toHaveLength(2);
+    expect(parsed[0].scheduleStatus).toBe("official");
+    expect(parsed[1]).toMatchObject({ scheduleStatus: "tentative", unannounced: true, examDate: null });
+  });
 });

@@ -31,6 +31,7 @@ export async function syncStudyPlans(context: SyncContext): Promise<SyncStatus> 
     "/api/account/study-plan-sync",
     [...entries, ...(includePace ? getPaceSyncEntries() : [])],
     context,
+    { includePace },
   );
 
   if (status.state === "ok") {

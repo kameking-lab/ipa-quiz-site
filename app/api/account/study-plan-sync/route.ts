@@ -36,7 +36,7 @@ export async function POST(req: Request) {
   }
   const userId = session.user.id;
 
-  const body = (await req.json().catch(() => null)) as { entries?: unknown; expectedUserId?: unknown } | null;
+  const body = (await req.json().catch(() => null)) as { entries?: unknown; expectedUserId?: unknown; includePace?: unknown } | null;
   if (!body || typeof body.expectedUserId !== "string" || !body.expectedUserId) {
     return NextResponse.json({ error: "expected_user_required" }, { status: 400 });
   }
@@ -102,7 +102,11 @@ export async function POST(req: Request) {
     where: { userId },
     orderBy: { updatedAt: "desc" },
   });
-  const entries: StudyPlanSyncEntry[] = all.map(
+  // Older clients cast every returned payload to the original task planner.
+  // Only clients explicitly supporting tagged pace/activity JSON receive it.
+  const visible = all.filter((row: { payload: unknown }) => body.includePace === true ||
+    !row.payload || typeof row.payload !== "object" || !("kind" in row.payload));
+  const entries: StudyPlanSyncEntry[] = visible.map(
     (r: { id: string; payload: unknown; progress: unknown; createdAt: Date; updatedAt: Date }) => ({
       id: r.id,
       payload: r.payload,
@@ -112,5 +116,5 @@ export async function POST(req: Request) {
     }),
   );
 
-  return NextResponse.json({ entries, merged, total: all.length });
+  return NextResponse.json({ entries, merged, total: visible.length });
 }
