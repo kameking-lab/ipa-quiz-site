@@ -624,13 +624,13 @@ function ScoredQuizPlayer({
                   onToggleStar={toggleStar}
                   onNext={goNext}
                   nextLabel={index + 1 >= total ? "結果を見る" : "次の問題へ"}
+                  afterNavigation={revealed ? <MobileInstallNudge placement="answer" answered={stats.answered} /> : undefined}
                   onAskAI={() => { setCopilotQuery("open"); setCopilotRequest((value) => ({ questionId: question!.id, sequence: (value?.sequence ?? 0) + 1 })); }}
                   onAnalyzeWrong={
                     !isCorrect ? () => { setCopilotQuery("why-wrong"); setCopilotRequest((value) => ({ questionId: question!.id, sequence: (value?.sequence ?? 0) + 1, prompt: "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" })); } : undefined
                   }
                 />
                 {revealed && <>
-                <MobileInstallNudge placement="answer" answered={stats.answered} />
                 {onRelated && (
                   <section ref={relatedRef} tabIndex={-1} aria-label="同じ科目の関連問題" className="scroll-mt-28 rounded-2xl border border-border bg-background p-4 outline-none">
                     <button type="button" onClick={() => setShowRelated((value) => !value)} aria-expanded={showRelated} className="flex min-h-11 w-full items-center justify-between text-left font-semibold">

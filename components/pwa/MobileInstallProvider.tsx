@@ -116,10 +116,15 @@ export function MobileInstallProvider({ children }: { children: ReactNode }) {
     window.addEventListener("appinstalled", onInstalled);
     displayMode.addEventListener("change", onDisplayMode);
     const onStorage = (event: StorageEvent) => {
+      if (event.storageArea && event.storageArea !== localStorage) return;
       if (event.key === LS_KEYS.mobileInstalled && event.newValue === "1") onInstalled();
       if (event.key === LS_KEYS.mobileInstallNudge || event.key === null) {
-        owner.current = null;
-        setNudgeOwner(null);
+        const record = readInstallNudge();
+        // Another tab checking writable storage has not shown or dismissed it.
+        if (!record || !canShowInstallNudge(record, Date.now())) {
+          owner.current = null;
+          setNudgeOwner(null);
+        }
       }
     };
     window.addEventListener("storage", onStorage);
@@ -189,6 +194,7 @@ export function MobileInstallProvider({ children }: { children: ReactNode }) {
       await event.prompt();
       const choice = await event.userChoice;
       if (!mounted.current || request !== generation.current) return "stale";
+      if (choice.outcome === "dismissed") dismissNudge();
       setPhase(choice.outcome); // Acceptance is not installation completion.
       return choice.outcome;
     } catch {
@@ -199,7 +205,7 @@ export function MobileInstallProvider({ children }: { children: ReactNode }) {
       if (mounted.current && request === generation.current) pending.current = false;
       // Do not clear a new event received while the old prompt was pending.
     }
-  }, []);
+  }, [dismissNudge]);
 
   const value = useMemo(() => ({
     ready, os, standalone, available, phase, install, beforeCompletion,

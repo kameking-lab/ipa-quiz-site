@@ -3,6 +3,7 @@ import { act, cleanup, fireEvent, render, screen } from "@testing-library/react"
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { MobileInstallProvider } from "@/components/pwa/MobileInstallProvider";
 import { MobileInstallNudge } from "@/components/pwa/MobileInstallNudge";
+import { MobileInstallControl } from "@/components/pwa/MobileInstallControl";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { canShowInstallNudge, INSTALL_DISMISS_MS, installDay } from "@/lib/pwa/install-nudge";
 
@@ -123,6 +124,66 @@ describe("install invitation timing", () => {
   it("allows the next day after a seen invitation", () => {
     localStorage.setItem(LS_KEYS.mobileInstallNudge, JSON.stringify({ shownDay: installDay(now - 86400000) }));
     render(app()); event(); expect(add()).toBeVisible();
+  });
+  it("remembers cancellation from settings when practice opens the next day", async () => {
+    const view = render(<MobileInstallProvider><MobileInstallControl /></MobileInstallProvider>);
+    event();
+    await act(async () => { fireEvent.click(add()!); });
+    view.unmount();
+    vi.mocked(Date.now).mockReturnValue(now + 86400000);
+    render(app()); event();
+    expect(add()).toBeNull();
+    expect(JSON.parse(localStorage.getItem(LS_KEYS.mobileInstallNudge)!)).toMatchObject({ dismissedAt: now });
+  });
+  it.each([1, 29, 30])("keeps a close across remounts until day 30: day %s", (days) => {
+    const view = render(app()); event();
+    fireEvent.click(screen.getByRole("button", { name: /30日間閉じる/ }));
+    view.unmount();
+    vi.mocked(Date.now).mockReturnValue(now + days * 86400000);
+    render(app()); event();
+    if (days < 30) expect(add()).toBeNull();
+    else expect(add()).toBeVisible();
+  });
+  it("waits for an uninstalled result even if the prompt event arrives first", async () => {
+    let resolve!: (apps: []) => void;
+    Object.defineProperty(navigator, "getInstalledRelatedApps", { configurable: true,
+      value: () => new Promise<[]>((done) => { resolve = done; }) });
+    render(<MobileInstallProvider><MobileInstallNudge placement="answer" answered={3} /></MobileInstallProvider>);
+    event(); expect(add()).toBeNull();
+    expect(localStorage.getItem(LS_KEYS.mobileInstallNudge)).toBeNull();
+    await act(async () => resolve([]));
+    expect(add()).toBeVisible();
+  });
+  it("keeps an unseen invitation when another tab only checks storage availability", () => {
+    render(app()); event();
+    act(() => window.dispatchEvent(new StorageEvent("storage", {
+      key: LS_KEYS.mobileInstallNudge, newValue: "{}", storageArea: localStorage,
+    })));
+    expect(add()).toBeVisible();
+    act(() => visible());
+    expect(JSON.parse(localStorage.getItem(LS_KEYS.mobileInstallNudge)!)).toMatchObject({ shownDay: installDay(now) });
+  });
+  it("ignores a session-storage event with the same key", () => {
+    render(app()); event(); act(() => visible());
+    act(() => window.dispatchEvent(new StorageEvent("storage", {
+      key: LS_KEYS.mobileInstallNudge, storageArea: sessionStorage,
+    })));
+    expect(add()).toBeVisible();
+  });
+  it("hides immediately after installation in another tab", () => {
+    render(app()); event(); expect(add()).toBeVisible();
+    act(() => window.dispatchEvent(new StorageEvent("storage", {
+      key: LS_KEYS.mobileInstalled, newValue: "1", storageArea: localStorage,
+    })));
+    expect(add()).toBeNull();
+  });
+  it("hides when another tab has already seen the invitation", () => {
+    render(app()); event();
+    act(() => {
+      localStorage.setItem(LS_KEYS.mobileInstallNudge, JSON.stringify({ shownDay: installDay(now) }));
+      window.dispatchEvent(new StorageEvent("storage", { key: LS_KEYS.mobileInstallNudge, storageArea: localStorage }));
+    });
+    expect(add()).toBeNull();
   });
 });
 

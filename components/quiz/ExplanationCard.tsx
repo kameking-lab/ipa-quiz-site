@@ -31,6 +31,7 @@ interface Props {
   onToggleStar: () => void;
   onNext: () => void;
   nextLabel?: string;
+  afterNavigation?: React.ReactNode;
   onAskAI: () => void;
   /** Accepted for existing callers; the copilot's 「なぜ間違えた？分析」 chip is the single entry point now. */
   onAnalyzeWrong?: () => void;
@@ -45,6 +46,7 @@ export function ExplanationCard({
   onToggleStar,
   onNext,
   nextLabel = "次の問題へ",
+  afterNavigation,
   onAskAI,
 }: Props) {
   if (question.type === "native-b" && question.nativeB) return <div className="space-y-4" role="region" aria-label="五枠の解説">
@@ -56,6 +58,7 @@ export function ExplanationCard({
       <Button onClick={onNext}>{nextLabel}<ArrowRight className="h-4 w-4" /></Button>
       <Button variant="subtle" onClick={onToggleStar} aria-pressed={starred}>{starred ? "復習から外す" : "あとで復習"}</Button>
     </div>
+    {afterNavigation}
     <p className="text-sm"><a href={getSafePdfUrl(question.sourcePdfUrl)} target="_blank" rel="noopener noreferrer" className="underline">公式問題</a> / <a href={getOfficialAnswerPdfUrl(question.sourcePdfUrl, question.sourceAnswerUrl)} target="_blank" rel="noopener noreferrer" className="underline">公式正答</a></p>
     {question.sourceAttribution && <p className="text-xs">{question.sourceAttribution}</p>}
   </div>;
@@ -136,6 +139,7 @@ export function ExplanationCard({
         </div>
       </div>
 
+      {afterNavigation}
 
       {isPlaceholderExplanation(question.explanation) ? (
         <div className="selectable-content mb-4 rounded-xl bg-amber-50 p-3 text-sm text-amber-800 dark:bg-amber-950/30 dark:text-amber-200">
