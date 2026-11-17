@@ -21,6 +21,10 @@ it("filters bots and cross-site requests, but accepts native local-shell request
   expect(mock.record).not.toHaveBeenCalled();
   expect((await POST(request({ event: "offer_viewed" }, { origin: "capacitor://localhost", "X-Kakomon-Native": "ios" }))).status).toBe(204);
   expect(mock.record).toHaveBeenCalledWith("offer_viewed", "ios", undefined, expect.any(Number));
+  const local = request({ event: "offer_viewed" }, { origin: "capacitor://localhost", "X-Kakomon-Native": "ios" });
+  local.headers.delete("user-agent");
+  expect((await POST(local)).status).toBe(204);
+  expect(mock.record).toHaveBeenCalledTimes(2);
 });
 it("counts answers only for authenticated guest cookies while signed-out, excluding auth failures", async () => {
   expect((await POST(request({ event: "guest_answered" }))).status).toBe(204);

@@ -10,6 +10,6 @@ export function sendConversion(event: ClientConversion): void {
     if (!nativeClient() && typeof navigator.sendBeacon === "function") {
       try { if (navigator.sendBeacon("/api/funnel/conversion", new Blob([body], { type: "text/plain;charset=UTF-8" }))) return; } catch { /* fetch fallback */ }
     }
-    void fetch("/api/funnel/conversion", { method: "POST", body, keepalive: true, credentials: "same-origin", headers: { "Content-Type": "text/plain;charset=UTF-8", ...(nativeClient() ? { [NATIVE_HEADER]: "ios" } : {}) } }).catch(() => {});
+    void fetch("/api/funnel/conversion", { method: "POST", body, keepalive: true, credentials: "same-origin", headers: { "Content-Type": "application/json", ...(nativeClient() ? { [NATIVE_HEADER]: "ios" } : {}) } }).catch(() => {});
   } catch { /* Measurement never affects navigation or answers. */ }
 }

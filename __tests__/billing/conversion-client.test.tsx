@@ -16,7 +16,7 @@ it("counts repeated clicks as occurrences, sending only an event name", () => {
 it("uses a native-header fetch for iOS instead of an unmarked beacon", () => {
   platform.native = true; sendConversion("offer_viewed");
   expect(navigator.sendBeacon).not.toHaveBeenCalled();
-  expect(fetch).toHaveBeenCalledWith("/api/funnel/conversion", expect.objectContaining({ body: '{"event":"offer_viewed"}', headers: expect.objectContaining({ "X-Kakomon-Native": "ios" }), keepalive: true }));
+  expect(fetch).toHaveBeenCalledWith("/api/funnel/conversion", expect.objectContaining({ body: '{"event":"offer_viewed"}', headers: expect.objectContaining({ "X-Kakomon-Native": "ios", "Content-Type": "application/json" }), keepalive: true }));
 });
 it("falls back when the beacon cannot queue, and never throws on a transport failure", async () => {
   Object.defineProperty(navigator, "sendBeacon", { configurable: true, value: () => { throw Error("blocked"); } });

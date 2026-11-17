@@ -33,7 +33,7 @@
 
 | イベント | 画面・ファイル | 条件・単位／抜け・重複 |
 |---|---|---|
-| practice_free_limit_reached | `app/quiz/QuizClient.tsx` | 最後の無料問題取得でremaining=0、またはdaily_limit。resetAtごとにrefで1回。**回答済み10問でも初回429でもない**。`/q`・公表問題単独プレイヤーには同名送信なし |
+| practice_free_limit_reached | `app/quiz/QuizClient.tsx` | 最後の無料問題取得でremaining=0、またはdaily_limit。マウント中はresetAtごとにrefで1回。送客referral_idのない再マウントでは再送し得る。**回答済み10問でも初回429でもない**。`/q`・公表問題単独プレイヤーには同名送信なし |
 | practice_limit_viewed | `components/quiz/PracticeTransition.tsx` | 上限画面のeffect。再マウントで再送、freeDaily変更でも再送。ゲスト／ログイン済みの区別なし |
 | practice_upgrade_clicked | 同上 | 無料上限の月額ボタン。`/billing` の月額ボタンとiOS captureによる遷移は旧計測で抜ける |
 | practice_feedback_submitted | `components/quiz/FeedbackUnlock.tsx` | feedback-unlock POST成功後。送信成功であり、+10の消費ではない |
@@ -64,4 +64,4 @@
 | book_click | `components/analytics/TrackedBookLink.tsx` | 書籍リンク押下。月額購入と混同しない |
 | copilot_question_example_clicked | `lib/posthog.ts` の型定義のみ | 呼び出し元なし。定義があっても数字は出ない |
 
-既存KV `funnel:v1` は無料上限の**画面表示**をfree_limit_reachedと命名しており、サーバーでの429とは異なる。ブラウザ側とKV側で日別に重複抑止するため、表示回数／押下回数の延べ数には使えない。checkout_startedは利用者単位、checkout_completedはsession単位で単位も異なる。新指標は旧指標と足さず、別系列として読む。
+既存KV `funnel:v1` は無料上限の**画面表示**をfree_limit_reachedと命名しており、サーバーでの429とは異なる。ブラウザ側とKV側で日別に重複抑止するため、表示回数／押下回数の延べ数には使えない。checkout_startedは利用者単位、checkout_completedはsession単位で単位も異なる。旧KVのcheckout_completedはsubscriptionのstatus=completeを条件とし、payment_status=paidの条件がない。新⑦はpaidを要求する。新指標は旧指標と足さず、別系列として読む。

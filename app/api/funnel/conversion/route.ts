@@ -13,7 +13,7 @@ const buckets = new Map<string, { count: number; reset: number }>();
 const reply = (status: number) => new Response(null, { status, headers: { "Cache-Control": "no-store" } });
 export async function POST(request: Request) {
   const ua = request.headers.get("user-agent");
-  if (!ua || bots.test(ua)) return reply(204);
+  if ((!ua && conversionChannel(request) !== "ios") || (ua && bots.test(ua))) return reply(204);
   const site = request.headers.get("sec-fetch-site"), origin = request.headers.get("origin");
   const nativeOrigin = conversionChannel(request) === "ios" && origin === "capacitor://localhost";
   if (!nativeOrigin && ((site && site !== "same-origin") || (origin && origin !== new URL(request.url).origin))) return reply(403);
