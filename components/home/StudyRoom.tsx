@@ -168,6 +168,6 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
     </div>
     </div>
     {snapshot && !current && <p className="text-right text-xs text-muted-foreground"><time dateTime={snapshot.measuredAt}>{new Date(snapshot.measuredAt).toLocaleString("ja-JP", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Tokyo" })}</time> 時点</p>}
-    <Link href={href} className="sticky bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-20 flex min-h-12 items-center justify-center rounded-xl bg-primary shadow-md md:bottom-4 px-4 py-3 text-sm font-semibold text-primary-foreground outline-offset-2 hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-primary">席について解く</Link>
+    <Link href={href} className="flex min-h-12 items-center justify-center rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground outline-offset-2 hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-primary">席について解く</Link>
   </div>;
 }
