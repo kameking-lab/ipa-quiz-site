@@ -163,7 +163,7 @@ export function withItPastQuestionGuide(post: BlogPost): BlogPost {
     : "";
   const body = `${guide.introduction}
 
-知識問題は[この資格の過去問一覧](/${post.exam})で年度・科目を選んで解けます。記述${post.exam === "sa" || post.exam === "pm" ? "・論述" : ""}の演習には、[IPAの2025年度問題・解答一覧](https://www.ipa.go.jp/shiken/mondai-kaiotu/2025r07.html)から該当区分の${post.exam === "ap" || post.exam === "sc" ? "「午後」" : "「午後Ⅰ」「午後Ⅱ」"}の問題冊子・解答例を開いて使います。旧科目名は、次の対応で読み替えてください。
+知識問題は[この資格の過去問一覧](/${post.exam})で年度・科目を選んで解けます。記述${post.exam === "sa" || post.exam === "pm" ? "・論述" : ""}の演習には、[IPAの2025年度問題・解答一覧](https://www.ipa.go.jp/shiken/mondai-kaiotu/2025r07.html)から該当区分の${post.exam === "ap" || post.exam === "sc" ? "「午後」" : "「午後Ⅰ」「午後Ⅱ」"}の問題冊子・解答例を開いて使います。${post.exam === "sa" || post.exam === "pm" ? "論述問題の「解答例」PDFに載っているのは出題趣旨です。答案の振り返りには出題趣旨と採点講評を使います。" : ""}旧科目名は、次の対応で読み替えてください。
 
 ## 2026年度の科目構成と過去問の対応
 
@@ -171,7 +171,7 @@ ${guide.format}
 
 ${post.exam === "ap" ? "旧午前は科目A、旧午後は科目B" : post.exam === "sc" ? "旧午前Ⅰは科目A-1、旧午前Ⅱは科目A-2、旧午後は科目B" : "旧午前Ⅰ・Ⅱは科目A-1・A-2、旧午後Ⅰ・Ⅱは科目B-1・B-2"}に対応します。形式・時間・解答数は[IPAの区分別案内](${examSource})、科目名の対応は[2026年度の実施案内](${CBT_SOURCE})で確認できます。2027年度以降の制度は、受験する年度の公式案内を確認してください。
 
-## 出題傾向：公式採点講評で確認する着眼点
+## 出題例：公式採点講評で確認する着眼点
 
 ${guide.focus}
 
@@ -183,11 +183,11 @@ ${guide.focus}
 
 ${guide.timing}
 
-## 過去問の解き方
+## 過去問の解き方：練習の目安
 
 ${guide.method}
 
-## 二周目に確認すること
+## 二周目に確認すること：練習の目安
 
 ${guide.review}${essayLink}
 
