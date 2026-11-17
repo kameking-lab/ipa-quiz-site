@@ -54,7 +54,7 @@ test("home, question, result, personal records and settings remain connected", a
   await shot("records");
   await page.getByRole("button", { name: "メニューを開く" }).first().click();
   await page.getByRole("dialog").getByRole("link", { name: "設定", exact: true }).click();
-  await expect(page.getByRole("heading", { name: "設定", exact: true })).toBeVisible({ timeout: 90_000 });
+  await expect(page.getByRole("heading", { name: "設定とプリファレンス", exact: true })).toBeVisible({ timeout: 90_000 });
   await shot("settings");
 });
 

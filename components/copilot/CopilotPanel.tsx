@@ -868,7 +868,7 @@ export function CopilotPanel({
           </Button>
         )}
       </form>
-      <AiProcessingNotice />
+      <div className="px-3 pb-2"><AiProcessingNotice /></div>
     </>
   );
 
