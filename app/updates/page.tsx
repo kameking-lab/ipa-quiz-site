@@ -41,7 +41,7 @@ const UPDATES: { date: string; label: string; items: string[] }[] = [
 export default function UpdatesPage() {
   return (
     <main className="mx-auto w-full max-w-2xl flex-1 px-4 pb-12 pt-6 sm:px-6">
-      <Button asChild variant="ghost" size="sm" className="mb-3">
+      <Button asChild variant="ghost" size="sm" className="mb-3 min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
         <Link href="/">
           <ArrowLeft className="h-4 w-4" />
           戻る

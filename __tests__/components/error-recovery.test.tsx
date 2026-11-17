@@ -11,6 +11,7 @@ describe("error recovery for the installed Next.js boundary contract", () => {
     const retry = vi.fn();
     render(<ErrorPage error={error} retry={retry} />);
     expect(screen.queryByText("private error")).not.toBeInTheDocument();
+    expect(screen.getByRole("heading", { level: 1 })).toHaveFocus();
     fireEvent.click(screen.getByRole("button", { name: "もう一度試す" }));
     expect(retry).toHaveBeenCalledOnce();
   });

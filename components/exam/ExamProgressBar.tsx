@@ -78,7 +78,7 @@ export function ExamProgressBar({ exam, totalQuestions }: Props) {
       <div className="mt-3 flex justify-end">
         <Link
           href="/account/dashboard"
-          className="inline-flex items-center gap-1 text-xs text-sky-600 hover:underline dark:text-sky-400"
+          className="inline-flex min-h-11 items-center gap-1 text-xs text-sky-600 hover:underline dark:text-sky-400"
         >
           ダッシュボードで詳細を見る
           <ArrowRight className="h-3 w-3" />

@@ -53,6 +53,7 @@ export function StreamSummary({
   React.useEffect(() => { headingRef.current?.focus({ preventScroll: true }); }, []);
   const onCopy = async () => {
     setCopyError(false);
+    setCopied(false);
     try {
       await navigator.clipboard.writeText(`${shareText}\n${shareUrl}`);
       setCopied(true);
@@ -63,7 +64,7 @@ export function StreamSummary({
   };
 
   return (
-    <div className="flex min-h-[calc(100dvh-3.5rem)] flex-col items-center justify-center bg-background px-6 py-10 text-foreground">
+    <main className="flex min-h-[calc(100dvh-3.5rem)] flex-col items-center justify-center bg-background px-6 py-10 text-foreground">
       <div className="w-full max-w-md">
         <div className="mb-2 text-center text-xs uppercase tracking-widest text-muted-foreground">
           今回の結果
@@ -75,8 +76,12 @@ export function StreamSummary({
           正答率 {accuracy}% ・ 累計 {totalAnswered} 問
         </p>
 
-        <div role="img" aria-label={recentAnswers.map(a => a.selected == null ? "未回答" : a.correct ? "正解" : "不正解").join("、")} className="mb-6 rounded-2xl bg-card p-6 text-center text-2xl tracking-[0.4em] ring-1 ring-border">
-          {pattern}
+        <div role="img" aria-label={recentAnswers.map(a => a.selected == null ? "未回答" : a.correct ? "正解" : "不正解").join("、")} className="mb-6 grid grid-cols-10 justify-items-center gap-1 rounded-2xl bg-card px-4 py-6 text-xl ring-1 ring-border">
+          {recentAnswers.map((answer, index) => (
+            <span key={`${answer.questionId}-${index}`} aria-hidden="true">
+              {answer.selected == null ? SQ_SKIP : answer.correct ? SQ_CORRECT : SQ_WRONG}
+            </span>
+          ))}
         </div>
 
         <div className="grid grid-cols-2 gap-3">
@@ -89,14 +94,14 @@ export function StreamSummary({
           {canContinue ? (
             <button
               onClick={onContinue}
-              className="flex min-h-11 items-center justify-center gap-2 rounded-2xl bg-sky-500 py-3 text-sm font-semibold text-white transition hover:bg-sky-600"
+              className="flex min-h-11 items-center justify-center gap-2 rounded-2xl bg-sky-700 py-3 text-sm font-semibold text-white transition hover:bg-sky-800 dark:bg-sky-400 dark:text-sky-950 dark:hover:bg-sky-300"
             >
               <RotateCw className="h-4 w-4" /> もう10問
             </button>
           ) : (
             <Link
               href={typeof window !== "undefined" ? window.location.pathname + window.location.search : "/quiz/stream"}
-              className="flex min-h-11 items-center justify-center gap-2 rounded-2xl bg-sky-500 py-3 text-sm font-semibold text-white transition hover:bg-sky-600"
+              className="flex min-h-11 items-center justify-center gap-2 rounded-2xl bg-sky-700 py-3 text-sm font-semibold text-white transition hover:bg-sky-800 dark:bg-sky-400 dark:text-sky-950 dark:hover:bg-sky-300"
             >
               <RotateCw className="h-4 w-4" /> もう一度
             </Link>
@@ -108,7 +113,7 @@ export function StreamSummary({
             href={lineUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex min-h-11 items-center justify-center gap-2 rounded-2xl bg-emerald-500 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600"
+            className="flex min-h-11 items-center justify-center gap-2 rounded-2xl bg-emerald-700 py-3 text-sm font-semibold text-white transition hover:bg-emerald-800 dark:bg-emerald-400 dark:text-emerald-950 dark:hover:bg-emerald-300"
           >
             <Share2 className="h-4 w-4" /> LINEでシェア
           </a>
@@ -121,12 +126,12 @@ export function StreamSummary({
         </button>
         {/* コピー成功はボタン文言変更だけでは SR に告知されない(WCAG 4.1.3)。
             polite live region で告知する。 */}
-        <span role="status" aria-live="polite" className={copyError ? "mb-4 block text-sm text-red-300" : "sr-only"}>
+        <span role="status" aria-live="polite" className={copyError ? "mb-4 block text-sm text-red-700 dark:text-red-300" : "sr-only"}>
           {copyError ? "コピーできませんでした。もう一度お試しください。" : copied ? "テキストをコピーしました" : ""}
         </span>
 
         </div>
       </div>
-    </div>
+    </main>
   );
 }

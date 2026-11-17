@@ -482,7 +482,7 @@ function ScoredQuizPlayer({
   const selectionLabel = native ? nativeBResult?.slotResults.map((slot) => `${slot.label}: ${slot.selectedCandidateId ?? "未回答"}`).join(" / ") : ordering ? (orderedSelected ? formatOrderingAnswer(question.exam, orderedSelected) : undefined) : numeric ? numericSelected : multiSelect ? (picked.length > 0 ? formatSelection(picked) : undefined) : selected;
 
   return (
-    <div className="flex min-h-[100dvh] flex-col bg-zinc-50 dark:bg-zinc-950">
+    <div className="flex min-h-[calc(100dvh-3.5rem)] flex-col bg-zinc-50 dark:bg-zinc-950">
       <div role="region" aria-label="クイズナビゲーション" className="sticky top-0 z-20 flex flex-col border-b border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
         <div className="flex items-center gap-2 px-3 py-2 sm:py-2.5">
           <Button
@@ -540,8 +540,8 @@ function ScoredQuizPlayer({
       </div>
 
       <div className="flex flex-1">
-        <main
-          className="min-w-0 w-full flex-1 px-3 pb-32 pt-4 sm:px-6"
+        <main aria-label="問題と解説"
+          className="min-w-0 w-full flex-1 px-3 pb-12 pt-4 sm:px-6"
           onTouchStart={onTouchStart}
           onTouchEnd={onTouchEnd}
         >
@@ -613,7 +613,7 @@ function ScoredQuizPlayer({
                 it invisible, out of flow and inert until the explicit answer. */}
             {(revealed || preparedExplanationId === question.id) && (
               <div key={`explanation:${question.id}`} ref={answerResultRef} tabIndex={-1} aria-hidden={!revealed} inert={!revealed}
-                className={`scroll-mt-80 space-y-4 outline-none${revealed ? "" : " invisible pointer-events-none absolute inset-x-0 top-0 h-0 overflow-hidden"}`} aria-label="解答結果">
+                className={`scroll-mt-24 space-y-4 outline-none${revealed ? "" : " invisible pointer-events-none absolute inset-x-0 top-0 h-0 overflow-hidden"}`} aria-label="解答結果">
                 <ExplanationCard
                   question={question}
                   nativeBResult={nativeBResult}
@@ -786,6 +786,7 @@ export function QuizCompleteScreen({
 
   const handleCopy = async () => {
     setCopyError(false);
+    setCopied(false);
     try {
       await navigator.clipboard.writeText(shareUrl);
       setCopied(true);
@@ -799,7 +800,7 @@ export function QuizCompleteScreen({
 
   return (
     <main className="flex flex-1 flex-col items-center justify-center bg-zinc-50 px-4 py-12 dark:bg-zinc-950">
-      <div className="w-full max-w-md rounded-3xl border border-zinc-200 bg-white p-8 shadow-lg dark:border-zinc-800 dark:bg-zinc-900">
+      <div className="w-full max-w-md rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-8 dark:border-zinc-800 dark:bg-zinc-900">
         <div className="mb-6 text-center">
           <ChihuahuaMascot pose="celebrate" size={100} className="mx-auto mb-2" />
           <h1 ref={resultHeadingRef} tabIndex={-1} className="text-2xl font-bold text-zinc-900 outline-none dark:text-zinc-50">クイズ完了！</h1>
@@ -808,21 +809,37 @@ export function QuizCompleteScreen({
           </p>
         </div>
 
-        <div className="mb-6 grid grid-cols-3 gap-3 text-center">
+        <div className="mb-6 grid grid-cols-3 gap-2 text-center sm:gap-3">
           <div className="rounded-2xl bg-sky-50 p-3 dark:bg-sky-950/30">
-            <div className="text-2xl font-bold text-sky-600 dark:text-sky-400">{accuracy}%</div>
+            <div className="text-2xl font-bold tabular-nums text-sky-600 dark:text-sky-400">{accuracy}%</div>
             <div className="text-xs text-zinc-500 dark:text-zinc-400">正答率</div>
           </div>
           <div className="rounded-2xl bg-zinc-100 p-3 dark:bg-zinc-800">
-            <div className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">{stats.correct}/{stats.answered}</div>
+            <div className="text-xl font-bold tabular-nums text-zinc-800 sm:text-2xl dark:text-zinc-100">{stats.correct}/{stats.answered}</div>
             <div className="text-xs text-zinc-500 dark:text-zinc-400">正解数</div>
           </div>
           <div className="rounded-2xl bg-zinc-100 p-3 dark:bg-zinc-800">
-            <div className="text-2xl font-bold text-zinc-800 dark:text-zinc-100">{`${Math.floor(elapsed / 60)}:${String(elapsed % 60).padStart(2, "0")}`}</div>
+            <div className="text-xl font-bold tabular-nums text-zinc-800 sm:text-2xl dark:text-zinc-100">{`${Math.floor(elapsed / 60)}:${String(elapsed % 60).padStart(2, "0")}`}</div>
             <div className="text-xs text-zinc-500 dark:text-zinc-400">経過時間</div>
           </div>
         </div>
 
+        <div className="flex flex-col gap-2">
+          <Button variant="primary" onClick={onRetry} className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
+            もう一度挑戦
+          </Button>
+          {onReviewLast ? (
+            <Button variant="outline" onClick={onReviewLast} className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
+              <MessageCircle className="h-4 w-4" aria-hidden="true" />
+              最後の問題をAIに質問
+            </Button>
+          ) : null}
+          <Button variant="outline" onClick={onBack} className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
+            <ArrowLeft className="h-4 w-4" /> {backLabel}
+          </Button>
+        </div>
+
+        <section className="mt-6 border-t border-border pt-5">
         <div className="mb-6">
           <p className="mb-2 text-xs font-semibold text-zinc-500 dark:text-zinc-400">結果をシェアする</p>
           <div className="flex flex-wrap gap-2">
@@ -841,20 +858,7 @@ export function QuizCompleteScreen({
           </span>
         </div>
 
-        <div className="flex flex-col gap-2">
-          {onReviewLast ? (
-            <Button variant="outline" onClick={onReviewLast} className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
-              <MessageCircle className="h-4 w-4" aria-hidden="true" />
-              最後の問題をAIに質問
-            </Button>
-          ) : null}
-          <Button variant="primary" onClick={onRetry} className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
-            もう一度挑戦
-          </Button>
-          <Button variant="outline" onClick={onBack} className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
-            <ArrowLeft className="h-4 w-4" /> {backLabel}
-          </Button>
-        </div>
+        </section>
 
         {scheduleUrl ? (
           <nav aria-label="次の資格で日程と学習先を確認" className="mt-5 rounded-2xl border border-sky-200 bg-sky-50 p-4 text-sm dark:border-sky-900 dark:bg-sky-950/30">

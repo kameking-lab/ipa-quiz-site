@@ -263,7 +263,7 @@ export default async function ExamTopPage({
         <nav aria-label="パンくずリスト" className="mb-4 text-xs text-muted-foreground">
           <ol className="flex flex-wrap items-center gap-1.5">
             <li>
-              <Link href="/" className="inline-block py-1.5 hover:text-foreground hover:underline">
+              <Link href="/" className="inline-flex min-h-11 min-w-11 items-center py-1.5 hover:text-foreground hover:underline">
                 ホーム
               </Link>
             </li>
@@ -271,7 +271,7 @@ export default async function ExamTopPage({
             <li>
               <Link
                 href={externalQualification ? "/qualifications" : "/ipa"}
-                className="inline-flex min-h-11 items-center py-1.5 hover:underline"
+                className="inline-flex min-h-11 min-w-11 items-center py-1.5 hover:underline"
               >
                 {externalQualification ? "その他資格" : "IPA"}
               </Link>
@@ -351,7 +351,7 @@ export default async function ExamTopPage({
               href="https://tsugino-shikaku.jp/shikaku/gijutsushi-second?utm_source=kakomon_ai&utm_medium=referral&utm_campaign=soukan_two_rounds"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-flex min-h-11 items-center font-medium text-primary underline-offset-4 hover:underline"
+              className="mt-3 inline-flex min-h-11 min-w-11 items-center font-medium text-primary underline-offset-4 hover:underline"
             >
               次の資格で技術士第二次試験の日程を見る ↗
             </a>
@@ -365,7 +365,7 @@ export default async function ExamTopPage({
               href="https://tsugino-shikaku.jp/shikaku/eisei-kanrisha-2shu?utm_source=kakomon_ai&utm_medium=referral&utm_campaign=eisei2_two_editions"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-3 inline-flex min-h-11 items-center font-medium text-primary underline-offset-4 hover:underline"
+              className="mt-3 inline-flex min-h-11 min-w-11 items-center font-medium text-primary underline-offset-4 hover:underline"
             >
               次の資格で第二種衛生管理者の日程を見る ↗
             </a>
@@ -376,10 +376,10 @@ export default async function ExamTopPage({
         {!FIRST_PRACTICE_EXAMS.some((entry) => entry === code) && <section aria-label="今すぐ解く" className="mb-8">
           {code === "fp2" || code === "fp3" ? (
             <div className="grid gap-3 sm:grid-cols-2">
-              <Button asChild variant="gradient" size="lg" className="w-full font-semibold">
+              <Button asChild variant="gradient" size="lg" className="w-full font-semibold min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
                 <Link href={`/quiz?mode=random&exam=${code}&session=gakka`}>学科を解く</Link>
               </Button>
-              <Button asChild variant="outline" size="lg" className="w-full font-semibold">
+              <Button asChild variant="outline" size="lg" className="w-full font-semibold min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
                 <Link href={`/${code}/practical`}>
                   実技の問題と模範解答（{code === "fp2" ? fp2PracticalCount : fp3PracticalCount}問）
                 </Link>
@@ -390,7 +390,7 @@ export default async function ExamTopPage({
               <h2 className="mb-3 text-sm font-semibold text-foreground">出題する科目を選択</h2>
               <div className="grid gap-2 sm:grid-cols-3">
                 {(["am1", "am2", "pm"] as const).map(session => (
-                  <Button key={session} asChild variant="outline" size="lg">
+                  <Button className="min-h-12 min-w-11 h-auto whitespace-normal py-2.5" key={session} asChild variant="outline" size="lg">
                     <Link href={`/quiz?mode=random&exam=${code}&session=${session}`}>
                       {practiceSessionLabel(session, code)}
                     </Link>
@@ -404,12 +404,12 @@ export default async function ExamTopPage({
                 ランダム出題の範囲を選択
               </h2>
               <div className="grid gap-2 sm:grid-cols-2">
-                <Button asChild variant="gradient" size="lg" className="font-semibold">
+                <Button asChild variant="gradient" size="lg" className="font-semibold min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
                   <Link href={`/quiz?mode=random&exam=${exam}&session=am2`}>
                     科目A-2（旧午前II）
                   </Link>
                 </Button>
-                <Button asChild variant="outline" size="lg">
+                <Button className="min-h-12 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="outline" size="lg">
                   <Link href={`/quiz?mode=random&exam=${exam}&session=am1`}>科目A-1（旧午前I）</Link>
                 </Button>
               </div>
@@ -419,7 +419,7 @@ export default async function ExamTopPage({
               asChild
               variant="gradient"
               size="xl"
-              className="w-full font-semibold shadow-md hover:shadow-lg"
+              className="w-full font-semibold shadow-md hover:shadow-lg min-h-14 min-w-11 h-auto whitespace-normal py-2.5"
             >
               <Link href={`/quiz?mode=random&exam=${exam}`}>
                 今すぐ解く
@@ -432,7 +432,7 @@ export default async function ExamTopPage({
         {code === "denko2" && (
           <section aria-label="技能試験" className="mb-8 rounded-2xl border border-blue-200 bg-blue-50 p-5">
             <h2 className="text-lg font-bold text-slate-950">技能試験の問題図・完成例</h2>
-            <Button asChild variant="outline" className="mt-4 bg-white">
+            <Button asChild variant="outline" className="mt-4 bg-white min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
               <Link href="/denko2/skill">技能試験を探す <ChevronRight className="h-4 w-4" /></Link>
             </Button>
           </section>
@@ -539,13 +539,13 @@ export default async function ExamTopPage({
               オリジナル論述教材で午後II対策
             </h2>
             <div className="mt-3 flex flex-wrap gap-2">
-              <Button asChild variant="primary" size="sm">
+              <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="primary" size="sm">
                 <Link href="/essay">
                   オリジナル論述教材で AI 添削
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="sm">
+              <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="outline" size="sm">
                 {/* 業種別サンプルは複数形 /essays/[exam] (200・noindex)。 */}
                 <Link href={`/essays/${code}`}>業種別 練習答案サンプル</Link>
               </Button>
@@ -570,13 +570,13 @@ export default async function ExamTopPage({
               科目B（擬似言語）を AI と体系的に攻略
             </h2>
             <div className="mt-3 flex flex-wrap gap-2">
-              <Button asChild variant="primary" size="sm">
+              <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="primary" size="sm">
                 <Link href="/blog/fe-kamoku-b-taisaku">
                   科目B 完全対策を読む
                   <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
               </Button>
-              <Button asChild variant="outline" size="sm">
+              <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="outline" size="sm">
                 <Link href="/fe/topic/アルゴリズムとプログラミング">
                   アルゴリズム問題で演習
                 </Link>

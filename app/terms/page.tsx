@@ -30,7 +30,7 @@ export default function TermsPage() {
     <main className="relative flex-1">
 
       <div className="relative mx-auto w-full max-w-2xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
-        <Button asChild variant="ghost" size="sm" className="mb-4 min-h-11 min-w-11">
+        <Button asChild variant="ghost" size="sm" className="mb-4 min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
           <Link href="/">
             <ArrowLeft className="h-4 w-4" />
             戻る
@@ -38,6 +38,7 @@ export default function TermsPage() {
         </Button>
 
         <Breadcrumbs
+          className="[&_a]:inline-flex [&_a]:min-h-11 [&_a]:min-w-11 [&_a]:items-center"
           items={[
             { name: "ホーム", href: "/" },
             { name: "利用規約", href: "/terms" },
@@ -264,10 +265,10 @@ export default function TermsPage() {
         </div>
 
         <div className="mt-10 flex flex-wrap justify-center gap-3">
-          <Button asChild variant="primary" size="lg" className="w-full sm:w-auto">
+          <Button asChild variant="primary" size="lg" className="w-full sm:w-auto min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
             <Link href="/">ホームに戻る</Link>
           </Button>
-          <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
+          <Button asChild variant="outline" size="lg" className="w-full sm:w-auto min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
             <Link href="/privacy">プライバシーポリシー</Link>
           </Button>
         </div>

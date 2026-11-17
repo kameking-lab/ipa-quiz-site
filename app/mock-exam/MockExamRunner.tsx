@@ -231,14 +231,14 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
     <main data-study-presence-exam={q ? config.exam : undefined} className="mx-auto w-full max-w-3xl flex-1 px-4 pb-24 pt-4 sm:px-6">
       <div className="sticky top-0 z-10 -mx-4 mb-4 border-b border-zinc-200 bg-white/95 px-4 py-3 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/95 sm:-mx-6 sm:px-6">
         <div className="flex items-center justify-between gap-3">
-          <div>
-            <div className="text-[11px] text-zinc-500">{config.label}</div>
+          <div className="min-w-0 flex-1">
+            <h1 className="text-sm font-semibold leading-snug text-muted-foreground">{config.label}</h1>
             <div className="text-xs font-medium">
               {index + 1}/{questions.length} ・ 解答済 {answered}
             </div>
           </div>
           <div
-            className={`tabular-nums text-2xl font-bold ${
+            className={`shrink-0 tabular-nums text-2xl font-bold ${
               danger
                 ? "animate-pulse text-rose-600 dark:text-rose-400"
                 : warn
@@ -503,9 +503,9 @@ function ResultView({
               const isWeak = acc < 0.6;
               return (
                 <li key={cat}>
-                  <div className="mb-1 flex justify-between text-xs">
+                  <div className="mb-1 flex items-start justify-between gap-3 text-xs">
                     <span
-                      className={`flex items-center gap-1 truncate ${
+                      className={`min-w-0 break-words ${
                         isWeak ? "font-semibold text-rose-600 dark:text-rose-400" : ""
                       }`}
                     >
@@ -513,7 +513,7 @@ function ResultView({
                       {cat}
                     </span>
                     <span
-                      className={`tabular-nums ${
+                      className={`shrink-0 tabular-nums ${
                         isWeak ? "text-rose-600 dark:text-rose-400" : ""
                       }`}
                     >
@@ -559,7 +559,7 @@ function ResultView({
               </ul>
               <a
                 href={reviewUrl}
-                className="flex w-full items-center justify-center rounded-lg bg-rose-600 px-3 py-2 text-center text-xs font-semibold text-white hover:bg-rose-700 dark:bg-rose-700 dark:hover:bg-rose-600"
+                className="flex min-h-11 w-full items-center justify-center rounded-lg bg-rose-600 px-3 py-2 text-center text-xs font-semibold text-white hover:bg-rose-700 dark:bg-rose-700 dark:hover:bg-rose-600"
                 aria-label="苦手分野を集中練習する"
               >
                 苦手分野を集中練習 →
@@ -620,7 +620,7 @@ function ResultView({
               {wrongQuestions.length > 5 && (
                 <button
                   onClick={() => setWrongExpanded((v) => !v)}
-                  className="text-[11px] text-sky-600 hover:underline dark:text-sky-400"
+                  className="inline-flex min-h-11 items-center text-xs text-sky-600 hover:underline dark:text-sky-400"
                   aria-expanded={wrongExpanded}
                   aria-controls="wrong-list"
                 >
@@ -670,7 +670,7 @@ function ResultView({
             {!wrongExpanded && wrongQuestions.length > 5 && (
               <button
                 onClick={() => setWrongExpanded(true)}
-                className="mt-3 w-full rounded-lg border border-zinc-200 py-2 text-xs text-zinc-600 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-900"
+                className="mt-3 min-h-11 w-full rounded-lg border border-zinc-200 py-2 text-xs text-zinc-600 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-900"
               >
                 残り {wrongQuestions.length - 5} 問を表示
               </button>

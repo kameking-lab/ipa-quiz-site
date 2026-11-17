@@ -515,7 +515,7 @@ function SearchForm({ inputText, onInputChange, onSubmit, onClear }: SearchFormP
             type="search"
             inputMode="search"
             placeholder="キーワード"
-            className="h-11 w-full rounded-xl border border-border bg-background pl-9 pr-12 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 sm:h-12"
+            className="h-11 w-full rounded-xl border border-border bg-background pl-9 pr-12 text-base text-foreground sm:text-sm placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 sm:h-12 [&::-webkit-search-cancel-button]:appearance-none"
             value={inputText}
             onChange={(e) => onInputChange(e.target.value)}
             enterKeyHint="search"
@@ -535,7 +535,7 @@ function SearchForm({ inputText, onInputChange, onSubmit, onClear }: SearchFormP
           <Button type="submit" variant="primary" size="md" className="flex-1 sm:flex-none min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
             検索
           </Button>
-          <Button type="button" variant="ghost" size="sm" className="min-h-11 min-w-11" onClick={onClear} aria-label="すべての条件をクリア">クリア</Button>
+          <Button type="button" variant="ghost" size="sm" className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" onClick={onClear} aria-label="すべての条件をクリア">クリア</Button>
         </div>
       </div>
 
@@ -764,7 +764,7 @@ function FacetPanel({ facets, query, onChange }: FacetPanelProps) {
       <div className="grid grid-cols-2 gap-3 md:grid-cols-1">
         {fields.filter(field => field.options.length > 0 || query[field.key]).map(field => <label key={field.key} className="min-w-0 text-xs font-medium text-muted-foreground">
           {field.label}
-          <select value={query[field.key]} onChange={e => onChange({[field.key]:e.target.value})} className="mt-1 block min-h-11 w-full min-w-0 rounded-lg border border-border bg-background px-2 text-sm text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+          <select value={query[field.key]} onChange={e => onChange({[field.key]:e.target.value})} className="mt-1 block min-h-11 w-full min-w-0 rounded-lg border border-border bg-background px-2 text-base text-foreground sm:text-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
             <option value="">すべて</option>
             {query[field.key] && !field.options.some(([v]) => v === query[field.key]) && <option value={query[field.key]}>{query[field.key]}</option>}
             {field.options.map(([value,label,count]) => <option key={String(value)} value={value}>{label} ({count})</option>)}

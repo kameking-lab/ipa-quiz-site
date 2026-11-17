@@ -62,7 +62,7 @@ export default function AboutPage() {
       <nav aria-label="パンくずリスト" className="mb-4 text-xs text-muted-foreground">
         <ol className="flex flex-wrap items-center gap-1.5">
           <li>
-            <Link href="/" className="inline-flex min-h-11 items-center py-1.5 hover:text-foreground hover:underline">
+            <Link href="/" className="inline-flex min-h-11 min-w-11 items-center py-1.5 hover:text-foreground hover:underline">
               ホーム
             </Link>
           </li>

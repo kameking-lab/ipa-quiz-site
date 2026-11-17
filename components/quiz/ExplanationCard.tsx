@@ -63,6 +63,13 @@ export function ExplanationCard({
     ? displayQuestionExplanation(question.exam, question.choiceExplanations?.[selected as ChoiceKey])
     : undefined;
   const answerLabel = formatQuestionAnswerForDisplay(question, question.answer);
+  const questionSourceUrl = getSafePdfUrl(question.sourcePdfUrl);
+  const answerSourceUrl = getOfficialAnswerPdfUrl(question.sourcePdfUrl, question.sourceAnswerUrl);
+  const hasDistinctAnswerSource = questionSourceUrl !== answerSourceUrl
+    || ipaSourceLabel(questionSourceUrl, "question") !== ipaSourceLabel(answerSourceUrl, "answer");
+  const remainingChoiceExplanations = Object.entries(question.choiceExplanations ?? {}).filter(([key]) =>
+    !(!isCorrect && selectedChoiceExplanation && key === selected),
+  );
 
   return (
     <div
@@ -70,10 +77,7 @@ export function ExplanationCard({
       aria-label={isCorrect ? "正解の解説" : "不正解の解説"}
       className={cn(
         "motion-safe:animate-in motion-safe:slide-in-from-bottom-4 motion-safe:duration-200",
-        "rounded-2xl border-2 p-4 sm:p-5",
-        isCorrect
-          ? "border-emerald-400 bg-emerald-50/60 dark:border-emerald-700 dark:bg-emerald-950/30"
-          : "border-red-400 bg-red-50/30 dark:border-red-800 dark:bg-red-950/20",
+        "rounded-2xl border border-border bg-card p-4 sm:p-5",
       )}
     >
       <div className="mb-4 flex items-start justify-between gap-3">
@@ -126,9 +130,8 @@ export function ExplanationCard({
       </div>
 
       <div className="mb-5 space-y-3">
-        <LearningPetCorner qualificationId={question.exam} questionId={question.id} compact />
         <div className="flex justify-end">
-        <Button variant="primary" size="lg" onClick={onNext} className="min-h-11 shrink-0 font-semibold min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
+        <Button variant="primary" size="lg" onClick={onNext} className="shrink-0 font-semibold min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
           {nextLabel}
           <ArrowRight className="h-4 w-4" />
         </Button>
@@ -165,13 +168,13 @@ export function ExplanationCard({
         </section>
       )}
 
-      {question.choiceExplanations && (
+      {remainingChoiceExplanations.length > 0 && (
         <section aria-label="選択肢ごとの解説" className="mb-4 rounded-xl border border-zinc-200 bg-white/70 p-3 dark:border-zinc-700 dark:bg-zinc-950/40">
           <h3 className="mb-2 text-sm font-semibold text-zinc-900 dark:text-zinc-50">
-            選択肢ごとの解説
+            {!isCorrect && selectedChoiceExplanation ? "ほかの選択肢" : "選択肢ごとの解説"}
           </h3>
           <dl className="space-y-2 text-sm leading-relaxed">
-            {Object.entries(question.choiceExplanations).map(([key, explanation]) => (
+            {remainingChoiceExplanations.map(([key, explanation]) => (
               <div
                 key={key}
                 data-selected-choice={key === selected ? "true" : undefined}
@@ -190,12 +193,14 @@ export function ExplanationCard({
         </section>
       )}
 
-      <div className="flex flex-col gap-2 sm:flex-row">
+      <LearningPetCorner qualificationId={question.exam} questionId={question.id} compact />
+
+      <div className="mt-4 flex flex-col gap-2 sm:flex-row">
         <Button
           variant="subtle"
           size="lg"
           onClick={onAskAI}
-          className="sm:flex-1 min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
+          className="sm:flex-1 min-h-12 min-w-11 h-auto whitespace-normal py-2.5"
         >
           <MessageCircle className="h-4 w-4" />
           この問題をAIに質問
@@ -205,23 +210,23 @@ export function ExplanationCard({
       <div className="mt-3 space-y-2">
         <div className="flex flex-wrap gap-1.5">
           <a
-            href={getSafePdfUrl(question.sourcePdfUrl)}
+            href={questionSourceUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex min-h-11 items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-xs text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
           >
             <FileText className="h-3 w-3 flex-shrink-0" />
-            {ipaSourceLabel(getSafePdfUrl(question.sourcePdfUrl), "question")}
+            {ipaSourceLabel(questionSourceUrl, "question")}
           </a>
-          <a
-            href={getOfficialAnswerPdfUrl(question.sourcePdfUrl, question.sourceAnswerUrl)}
+          {hasDistinctAnswerSource && <a
+            href={answerSourceUrl}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex min-h-11 items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-xs text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
           >
             <FileText className="h-3 w-3 flex-shrink-0" />
-            {ipaSourceLabel(getOfficialAnswerPdfUrl(question.sourcePdfUrl, question.sourceAnswerUrl), "answer")}
-          </a>
+            {ipaSourceLabel(answerSourceUrl, "answer")}
+          </a>}
           {question.officialReferenceUrls?.map((url) => (
             <a
               key={url}

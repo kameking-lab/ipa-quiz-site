@@ -172,7 +172,7 @@ export function TTSButton({ text, lang = "ja-JP", className, label = "読み上�
             value={rate}
             onChange={(e) => updateRate(Number(e.target.value))}
             aria-label="読み上げ速度"
-            className="w-32"
+            className="min-h-11 w-32"
           />
           <div className="flex justify-between text-[9px] text-zinc-400">
             <span>0.5×</span>

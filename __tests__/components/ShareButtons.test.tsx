@@ -43,3 +43,18 @@ describe("ShareButtons — コピー成功の SR 通知", () => {
     });
   });
 });
+
+describe("ShareButtons — コピー失敗からの復帰", () => {
+  it.each([false, true])("compact=%s: 失敗を通知し、同じ操作で再試行する", async (compact) => {
+    const writeText = vi.fn().mockRejectedValueOnce(new Error("clipboard denied")).mockResolvedValueOnce(undefined);
+    Object.assign(navigator, { clipboard: { writeText } });
+    render(<ShareButtons url="https://example.com/q" text="共有テスト" compact={compact} />);
+    const copy = screen.getByRole("button", { name: compact ? "リンクをコピー" : "URL コピー" });
+    fireEvent.click(copy);
+    await waitFor(() => expect(screen.getByRole("status")).toHaveTextContent("コピーできませんでした"));
+    fireEvent.click(copy);
+    await waitFor(() => expect(screen.getByRole("status")).not.toHaveTextContent("コピーできませんでした"));
+    await waitFor(() => expect(screen.getByRole("status")).toHaveTextContent("コピーしました"));
+    expect(writeText).toHaveBeenCalledTimes(2);
+  });
+});

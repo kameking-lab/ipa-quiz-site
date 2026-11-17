@@ -81,11 +81,13 @@ export default function BookmarksPage() {
   }
 
   function handleTagsChange(questionId: string, tags: string[]) {
+    setImportStatus(null);
     updateBookmarkTags(questionId, tags);
     setBookmarks(getAllBookmarks());
   }
 
   function handleRemoveBookmark(entry: BookmarkEntry) {
+    setImportStatus(null);
     // Build a minimal Question-shaped object to satisfy toggleBookmark
     const stub = {
       id: entry.questionId,
@@ -110,6 +112,7 @@ export default function BookmarksPage() {
   return (
     <main className="container mx-auto max-w-2xl px-4 py-8">
       <Breadcrumbs
+          className="[&_a]:inline-flex [&_a]:min-h-11 [&_a]:min-w-11 [&_a]:items-center"
         items={[
           { name: "ホーム", href: "/" },
           { name: "ブックマーク", href: "/bookmarks" },
@@ -218,7 +221,7 @@ export default function BookmarksPage() {
           </p>
           <Link
             href="/ipa"
-            className="mt-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-700"
+            className="mt-2 inline-flex min-h-11 items-center rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-700"
           >
             問題を解く
           </Link>

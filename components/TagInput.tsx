@@ -43,13 +43,13 @@ export function TagInput({ tags, onChange, maxTags = 5, className }: TagInputPro
       {tags.map((tag) => (
         <span
           key={tag}
-          className="inline-flex min-h-11 items-center gap-1 rounded-xl bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200"
+          className="inline-flex min-h-11 max-w-full items-center gap-1 break-all rounded-xl bg-blue-100 px-2.5 py-0.5 text-xs font-medium text-blue-800 dark:bg-blue-900/40 dark:text-blue-200"
         >
           {tag}
           <button
             type="button"
             onClick={() => removeTag(tag)}
-            className="ml-0.5 inline-flex min-h-11 min-w-11 items-center justify-center rounded-full hover:bg-blue-200 dark:hover:bg-blue-800"
+            className="ml-0.5 inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-full hover:bg-blue-200 dark:hover:bg-blue-800"
             aria-label={`タグ「${tag}」を削除`}
           >
             <X className="h-3.5 w-3.5" />
@@ -67,7 +67,7 @@ export function TagInput({ tags, onChange, maxTags = 5, className }: TagInputPro
             placeholder={tags.length === 0 ? "タグを追加…" : "追加"}
             maxLength={20}
             className={cn(
-              "min-h-11 w-28 rounded-lg border border-zinc-300 bg-transparent px-2 py-0.5 text-xs",
+              "min-h-11 w-28 rounded-lg border border-zinc-300 bg-transparent px-2 py-0.5 text-base sm:text-sm",
               "outline-none focus:border-blue-400 dark:border-zinc-600 dark:focus:border-blue-500",
               "placeholder:text-zinc-400 dark:placeholder:text-zinc-500",
             )}

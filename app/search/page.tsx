@@ -36,6 +36,7 @@ export default function SearchPage() {
 
       <div className="relative mx-auto w-full max-w-4xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
         <Breadcrumbs
+          className="[&_a]:inline-flex [&_a]:min-h-11 [&_a]:min-w-11 [&_a]:items-center"
           items={[
             { name: "ホーム", href: "/" },
             { name: "問題検索", href: "/search" },

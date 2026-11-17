@@ -269,7 +269,7 @@ function SupportedMockExamLanding({ initialExam, returnTo, countFromQuery }: { i
               onClick={startMock}
               variant="primary"
               size="lg"
-              className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
+              className="w-full min-h-12 min-w-11 h-auto whitespace-normal py-2.5"
               disabled={loading}
             >
               {loading ? (

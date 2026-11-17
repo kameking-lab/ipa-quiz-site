@@ -116,7 +116,7 @@ export default function BlogIndexPage() {
       >
         <ol className="flex flex-wrap items-center gap-1.5">
           <li>
-            <Link href="/" className="inline-flex min-h-11 items-center hover:underline">
+            <Link href="/" className="inline-flex min-h-11 min-w-11 items-center hover:underline">
               ホーム
             </Link>
           </li>
@@ -136,7 +136,7 @@ export default function BlogIndexPage() {
         </p>
         <a
           href="/feed.xml"
-          className="mt-3 inline-flex min-h-11 items-center gap-1.5 text-xs font-medium text-sky-600 hover:underline dark:text-sky-400"
+          className="mt-3 inline-flex min-h-11 min-w-11 items-center gap-1.5 text-xs font-medium text-sky-600 hover:underline dark:text-sky-400"
         >
           <Rss className="h-3.5 w-3.5" aria-hidden="true" />
           RSS フィードで購読
@@ -205,7 +205,7 @@ export default function BlogIndexPage() {
             <Link
               key={e}
               href={`/${e}`}
-              className="inline-flex min-h-11 items-center rounded-xl border border-sky-300 bg-white px-3 py-2 text-xs font-medium text-sky-700 hover:bg-sky-100 dark:border-sky-700 dark:bg-zinc-900 dark:text-sky-300 dark:hover:bg-sky-900/40"
+              className="inline-flex min-h-11 min-w-11 items-center rounded-xl border border-sky-300 bg-white px-3 py-2 text-xs font-medium text-sky-700 hover:bg-sky-100 dark:border-sky-700 dark:bg-zinc-900 dark:text-sky-300 dark:hover:bg-sky-900/40"
             >
               {examLabel(e)}
             </Link>

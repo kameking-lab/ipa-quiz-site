@@ -343,9 +343,9 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
                   <span
                     className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
                       revealed && isCorrect
-                        ? "bg-emerald-500 text-white"
+                        ? "bg-emerald-700 text-white dark:bg-emerald-400 dark:text-emerald-950"
                         : revealed && isSelected
-                          ? "bg-red-500 text-white"
+                          ? "bg-red-700 text-white dark:bg-red-400 dark:text-red-950"
                           : isSelected
                             ? "bg-sky-500 text-white"
                             : "bg-muted"
@@ -522,9 +522,9 @@ function ReviewOverlay({
         </div>
 
         <div className="rounded-2xl bg-card p-4 text-sm text-foreground ring-1 ring-border">
-          <div className="mb-2 flex items-center justify-between text-xs">
+          <div className="mb-2 flex flex-wrap items-start justify-between gap-2 text-xs">
             <span className="font-semibold text-emerald-700 dark:text-emerald-300">正解: {answerKey}</span>
-            <span className={answer.correct ? "text-emerald-700 dark:text-emerald-300" : "text-red-300"}>
+            <span className={answer.correct ? "text-emerald-700 dark:text-emerald-300" : "text-red-700 dark:text-red-300"}>
               あなたの回答: {question.type === "native-b" ? `正答枠数 ${answer.nativeBResult?.correctSlots ?? 0}/5` : answer.selected ?? "—"} / {answer.correct ? "正解" : "不正解"}
             </span>
           </div>
@@ -537,7 +537,7 @@ function ReviewOverlay({
       <button
         type="button"
         onClick={onClose}
-        className="pb-safe absolute inset-x-0 bottom-0 z-20 flex items-center justify-center gap-2 bg-gradient-to-t from-black/90 to-transparent py-4 text-xs text-foreground/85 hover:text-white"
+        className="pb-safe absolute inset-x-0 bottom-0 z-20 flex items-center justify-center gap-2 min-h-12 border-t border-border bg-primary py-4 text-sm font-semibold text-primary-foreground hover:bg-primary-hover"
       >
         <ChevronUp className="h-4 w-4" />
         現在の問題に戻る

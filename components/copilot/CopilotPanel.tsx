@@ -831,6 +831,7 @@ export function CopilotPanel({
                   : "音声で質問"
             }
             className={cn(
+              "min-h-11 min-w-11 h-auto whitespace-normal py-2.5",
               voiceState === "listening" && "animate-pulse",
               voiceState === "denied" && "opacity-50",
             )}
@@ -852,12 +853,12 @@ export function CopilotPanel({
             onClick={handleStop}
             aria-label="生成を停止"
             title="生成を停止"
-            className="bg-red-600 hover:bg-red-700 focus-visible:ring-red-500"
+            className="bg-red-600 hover:bg-red-700 focus-visible:ring-red-500 min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
           >
             <Square className="h-4 w-4 fill-current" />
           </Button>
         ) : (
-          <Button
+          <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
             type="submit"
             variant="primary"
             size="icon"
@@ -886,7 +887,7 @@ export function CopilotPanel({
               <button
                 onClick={() => setActionsOpen((v) => !v)}
                 title="その他の操作"
-                className="flex h-9 w-9 items-center justify-center rounded-lg text-zinc-400 transition-colors hover:bg-zinc-100 hover:text-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
+                className="flex h-11 w-11 items-center justify-center rounded-lg text-zinc-400 transition-colors hover:bg-zinc-100 hover:text-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
                 aria-label="その他の操作"
                 aria-expanded={actionsOpen}
                 aria-controls="copilot-actions-popup"
@@ -940,7 +941,7 @@ export function CopilotPanel({
           )}
           {headerRight}
           {onClose && (
-            <Button variant="ghost" size="icon" onClick={onClose} aria-label="閉じる">
+            <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" variant="ghost" size="icon" onClick={onClose} aria-label="閉じる">
               <X className="h-4 w-4" />
             </Button>
           )}
@@ -962,7 +963,7 @@ export function CopilotPanel({
                 onClick={() => handleLengthChange(len)}
                 aria-pressed={responseLength === len}
                 className={cn(
-                  "px-2.5 py-0.5 text-[11px] font-medium transition-colors",
+                  "min-h-11 min-w-11 px-3 py-2 text-xs font-medium transition-colors",
                   responseLength === len
                     ? "bg-sky-600 text-white"
                     : "bg-white text-zinc-600 hover:bg-zinc-100 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800",
@@ -1211,7 +1212,7 @@ export function CopilotPanel({
                 variant="outline"
                 size="sm"
                 onClick={handleCopyShareUrl}
-                className="shrink-0"
+                className="shrink-0 min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
                 aria-label="URLをコピー"
               >
                 {copiedShareUrl ? (

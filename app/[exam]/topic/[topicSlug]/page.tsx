@@ -143,7 +143,7 @@ export default async function ExamTopicPage({
         >
           <ol className="flex flex-wrap items-center gap-1.5">
             <li>
-              <Link href="/" className="inline-flex min-h-11 items-center py-1.5 hover:text-foreground hover:underline">
+              <Link href="/" className="inline-flex min-h-11 min-w-11 items-center py-1.5 hover:text-foreground hover:underline">
                 ホーム
               </Link>
             </li>
@@ -151,7 +151,7 @@ export default async function ExamTopicPage({
             <li>
               <Link
                 href={`/${exam}`}
-                className="inline-flex min-h-11 items-center py-1.5 hover:text-foreground hover:underline"
+                className="inline-flex min-h-11 min-w-11 items-center py-1.5 hover:text-foreground hover:underline"
               >
                 {examLabel(code)}
               </Link>
@@ -178,7 +178,7 @@ export default async function ExamTopicPage({
         <section aria-label="クイズを始める" className="mb-8">
           <div className="flex flex-wrap gap-2">
             {[...new Set(pool.filter((q) => q.type === "multiple-choice").map((q) => q.session))].map((session) => (
-              <Button key={session} asChild variant="gradient" size="lg">
+              <Button className="min-h-12 min-w-11 h-auto whitespace-normal py-2.5" key={session} asChild variant="gradient" size="lg">
                 <Link href={`/quiz?mode=topic&exam=${exam}&category=${encodeURIComponent(category)}&session=${session}&returnTo=${encodeURIComponent(`/${exam}/topic/${topicSlug}`)}`}>
                   {practiceSessionLabel(session, exam as ExamCode)}・この分野を解く<ChevronRight className="h-4 w-4" />
                 </Link>

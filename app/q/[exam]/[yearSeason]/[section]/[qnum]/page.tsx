@@ -276,7 +276,7 @@ export default async function QuestionPage({
             <Link
               href={breadcrumbItems[0].href}
               prefetch={false}
-              className="underline underline-offset-4 transition hover:text-foreground"
+              className="inline-flex min-h-11 min-w-11 items-center underline underline-offset-4 transition hover:text-foreground"
             >
               {breadcrumbItems[0].name}
             </Link>
@@ -288,7 +288,7 @@ export default async function QuestionPage({
             <Link
               href={breadcrumbItems[1].href}
               prefetch={false}
-              className="underline underline-offset-4 transition hover:text-foreground"
+              className="inline-flex min-h-11 min-w-11 items-center underline underline-offset-4 transition hover:text-foreground"
             >
               {breadcrumbItems[1].name}
             </Link>
@@ -300,7 +300,7 @@ export default async function QuestionPage({
             <Link
               href={breadcrumbItems[2].href}
               prefetch={false}
-              className="underline underline-offset-4 transition hover:text-foreground"
+              className="inline-flex min-h-11 min-w-11 items-center underline underline-offset-4 transition hover:text-foreground"
             >
               {breadcrumbItems[2].name}
             </Link>
@@ -316,19 +316,12 @@ export default async function QuestionPage({
 
       {/* Header */}
       <header className="mb-4">
-        <div className="mb-2 flex flex-wrap items-start justify-between gap-2">
-          <div className="flex flex-wrap items-center gap-1.5 text-xs">
-            <Badge variant="primary">
-              {questionSourceExam(q)}
-            </Badge>
-            <Badge variant="soft">{questionSourceEdition(q)}</Badge>
-            <Badge variant="outline">{sessionLabel(q.session, q.exam)}</Badge>
-            <Badge variant="outline">問 {questionNumberLabel(q)}</Badge>
+        {(q.explanationCoverage === "official-summary" || q.isCalculation) && (
+          <div className="mb-3 flex flex-wrap gap-2 text-xs">
             {q.explanationCoverage === "official-summary" && <Badge variant="outline">公式正答と一般解説</Badge>}
             {q.isCalculation && <Badge variant="warn">計算</Badge>}
           </div>
-
-        </div>
+        )}
         <h1 className="text-balance text-2xl font-bold leading-tight tracking-tight text-foreground sm:text-3xl">
           {questionHeading(q)}
         </h1>
@@ -336,7 +329,7 @@ export default async function QuestionPage({
           {topicPageExists ? (
             <Link
               href={`/${q.exam}/topic/${encodeURIComponent(q.category)}`}
-              className="text-sm font-medium text-muted-foreground underline underline-offset-4 transition hover:text-primary"
+              className="inline-flex min-h-11 items-center text-sm font-medium text-muted-foreground underline underline-offset-4 transition hover:text-primary"
             >
               {q.category}
             </Link>
@@ -349,7 +342,7 @@ export default async function QuestionPage({
             <Link
               key={t}
               href={`/topics/${encodeURIComponent(topicTagToSlug(t))}`}
-              className="inline-flex items-center rounded-full border border-border bg-card px-2 py-0.5 text-[10px] text-muted-foreground transition hover:border-primary/40 hover:text-primary"
+              className="inline-flex min-h-11 items-center rounded-xl border border-border bg-card px-3 py-2 text-xs text-muted-foreground transition hover:border-primary/40 hover:text-primary"
             >
               #{t}
             </Link>
@@ -436,7 +429,7 @@ export default async function QuestionPage({
       {/* Explanation — label follows the available source layers */}
       <section id="explanation" aria-label="解説" className="mt-8 scroll-mt-20">
         <details open className="group">
-          <summary className="mb-3 flex cursor-pointer items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
+          <summary className="mb-3 flex min-h-11 cursor-pointer items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
             <div className="flex items-center gap-2.5">
               <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-violet-500 text-primary-foreground shadow-sm">
                 <BookOpenCheck className="h-4 w-4" />
@@ -554,21 +547,22 @@ export default async function QuestionPage({
         className="print:hidden mt-8 hidden grid-cols-2 gap-3 sm:grid"
       >
         {prev ? (
-          <Link href={questionPagePath(prev)} className="block">
-            <Button
-              variant="outline"
-              size="lg"
-              className="h-auto w-full justify-start gap-3 py-3 text-left"
-            >
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="w-full justify-start gap-3 text-left min-h-12 min-w-11 h-auto whitespace-normal py-2.5"
+          >
+            <Link href={questionPagePath(prev)}>
               <ChevronLeft className="h-4 w-4 shrink-0" />
               <span className="flex min-w-0 flex-col items-start leading-tight">
                 <span className="text-[10px] font-normal uppercase tracking-wider text-muted-foreground">
                   前の問題
                 </span>
-                      <span className="truncate">問 {questionNumberLabel(prev)}</span>
+                <span className="truncate">問 {questionNumberLabel(prev)}</span>
               </span>
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         ) : (
           <span className="flex flex-col items-start gap-0.5 rounded-xl border border-dashed border-border px-4 py-3 text-left">
             <span className="text-[10px] font-normal uppercase tracking-wider text-muted-foreground">
@@ -578,21 +572,22 @@ export default async function QuestionPage({
           </span>
         )}
         {next ? (
-          <Link href={questionPagePath(next)} className="block">
-            <Button
-              variant="outline"
-              size="lg"
-              className="h-auto w-full justify-end gap-3 py-3 text-right"
-            >
+          <Button
+            asChild
+            variant="outline"
+            size="lg"
+            className="w-full justify-end gap-3 text-right min-h-12 min-w-11 h-auto whitespace-normal py-2.5"
+          >
+            <Link href={questionPagePath(next)}>
               <span className="flex min-w-0 flex-col items-end leading-tight">
                 <span className="text-[10px] font-normal uppercase tracking-wider text-muted-foreground">
                   次の問題
                 </span>
-                      <span className="truncate">問 {questionNumberLabel(next)}</span>
+                <span className="truncate">問 {questionNumberLabel(next)}</span>
               </span>
               <ChevronRight className="h-4 w-4 shrink-0" />
-            </Button>
-          </Link>
+            </Link>
+          </Button>
         ) : (
           <span className="flex flex-col items-end gap-0.5 rounded-xl border border-dashed border-border px-4 py-3 text-right">
             <span className="text-[10px] font-normal uppercase tracking-wider text-muted-foreground">
@@ -761,24 +756,24 @@ export default async function QuestionPage({
       >
         <div className="grid grid-cols-2 gap-2">
           {prev ? (
-            <Link href={questionPagePath(prev)} className="block">
-              <Button variant="outline" size="md" className="w-full">
+            <Button asChild variant="outline" size="md" className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
+              <Link href={questionPagePath(prev)}>
                 <ChevronLeft className="h-4 w-4" />
                 <span className="text-xs">問 {questionNumberLabel(prev)}</span>
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           ) : (
             <span className="flex h-10 items-center justify-center rounded-xl border border-dashed border-border text-[11px] text-muted-foreground">
               最初の問題
             </span>
           )}
           {next ? (
-            <Link href={questionPagePath(next)} className="block">
-              <Button variant="primary" size="md" className="w-full">
+            <Button asChild variant="primary" size="md" className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
+              <Link href={questionPagePath(next)}>
                 <span className="text-xs">問 {questionNumberLabel(next)}</span>
                 <ChevronRight className="h-4 w-4" />
-              </Button>
-            </Link>
+              </Link>
+            </Button>
           ) : (
             <span className="flex h-10 items-center justify-center rounded-xl border border-dashed border-border text-[11px] text-muted-foreground">
               最後の問題

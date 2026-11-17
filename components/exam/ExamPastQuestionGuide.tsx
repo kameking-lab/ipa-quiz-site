@@ -46,8 +46,8 @@ export function ExamPastQuestionGuide({ exam, questions }: {
           <caption className="pb-2 text-left font-medium">過去問の表記とCBT移行後の科目名</caption>
           <thead><tr className="border-b"><th scope="col" className="p-2">過去問の表記</th><th scope="col" className="p-2">移行後</th><th scope="col" className="p-2">このサイトでの入口</th></tr></thead>
           <tbody>
-            {columns.map(column => <tr key={column.session} className="border-b"><th scope="row" className="p-2 font-medium">{column.old}</th><td className="p-2">{column.current}</td><td className="p-2"><Link href={`#subject-coverage`} className={sourceClass}>{column.purpose}：収録年度を見る</Link></td></tr>)}
-            {afternoon.map(column => <tr key={column.old} className="border-b"><th scope="row" className="p-2 font-medium">{column.old}</th><td className="p-2">{column.current}</td><td className="p-2"><Link href="#afternoon" className={sourceClass}>対策記事・公式問題で練習する</Link></td></tr>)}
+            {columns.map(column => <tr key={column.session} className="border-b"><th scope="row" className="p-2 font-medium">{column.old}</th><td className="p-2">{column.current}</td><td className="p-2"><Link href={`#subject-coverage`} className={`inline-flex min-h-11 items-center ${sourceClass}`}>{column.purpose}：収録年度を見る</Link></td></tr>)}
+            {afternoon.map(column => <tr key={column.old} className="border-b"><th scope="row" className="p-2 font-medium">{column.old}</th><td className="p-2">{column.current}</td><td className="p-2"><Link href="#afternoon" className={`inline-flex min-h-11 items-center ${sourceClass}`}>対策記事・公式問題で練習する</Link></td></tr>)}
           </tbody>
         </table>
       </div>
@@ -58,7 +58,7 @@ export function ExamPastQuestionGuide({ exam, questions }: {
           <table className="w-full text-left text-sm">
             <caption className="pb-2 text-left text-xs text-muted-foreground">掲載済み問題データの集計。「未収録」は当サイトの掲載状況で、試験の未実施を意味しません。</caption>
             <thead><tr className="border-b"><th scope="col" className="p-2">年度・期</th>{columns.map(column => <th key={column.session} scope="col" className="p-2">{column.old}</th>)}</tr></thead>
-            <tbody>{years.map(year => <tr key={year.key} className="border-b"><th scope="row" className="p-2 font-medium"><Link href={`/${exam}/${year.key}`} className={sourceClass}>{year.label}</Link></th>{columns.map(column => {
+            <tbody>{years.map(year => <tr key={year.key} className="border-b"><th scope="row" className="p-2 font-medium"><Link href={`/${exam}/${year.key}`} className={`inline-flex min-h-11 items-center ${sourceClass}`}>{year.label}</Link></th>{columns.map(column => {
               const count = counts.get(year.key)?.get(column.session) ?? 0;
               return <td key={column.session} className="p-2">{count > 0 ? `${count}問` : "未収録"}</td>;
             })}</tr>)}</tbody>
