@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { HomePace } from "@/components/home/pace/HomePace";
+import { planCatalogKeys } from "@/lib/study-plan/catalog-keys";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getHomeDirectory } from "@/lib/home/home-directory";
 import { buildOrgNode, buildWebsiteNode } from "@/lib/seo/structured-data";
@@ -19,7 +20,7 @@ export default function HomePage() {
   return (
     <main className="mx-auto w-full max-w-[640px] flex-1 px-4 pb-6 pt-6 sm:px-6 sm:pt-10">
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [buildWebsiteNode(description), buildOrgNode()] }} />
-      <HomePace domains={domains} planExamKeys={domains.flatMap(d => [...d.featured, ...d.compact]).filter(i => i.questionCount > 0).map(i => i.key)} />
+      <HomePace domains={domains} planExamKeys={planCatalogKeys()} />
     </main>
   );
 }
