@@ -6,6 +6,7 @@ import { revenueCatAccess } from "@/mobile/server/revenuecat";
 import { BillingError } from "@/lib/billing/domain";
 import { recordFunnel, saveOrderAttribution } from "@/lib/billing/funnel";
 import { requestAttribution } from "@/lib/billing/attribution";
+import { conversionChannel, recordConversion, saveConversionChannel } from "@/lib/billing/conversion";
 export const runtime = "nodejs";
 export async function POST(request: Request) {
   try {
@@ -16,7 +17,11 @@ export async function POST(request: Request) {
     let result: { orderId: string; url: string };
     if (monthlySelected()) {
       const { service, provider } = (await import("@/lib/billing/subscription/runtime")).monthlyRuntime(true);
-      result = await service.checkout(userId, terms, provider, await checkoutEmail());
+      result = await service.checkout(userId, terms, provider, await checkoutEmail(), async orderId => {
+        const channel = conversionChannel(request);
+        await saveConversionChannel(orderId, channel);
+        await recordConversion("checkout_created", channel, orderId);
+      });
     } else {
       const { service, provider } = billingRuntime();
       result = await service.checkout(userId, terms, provider);

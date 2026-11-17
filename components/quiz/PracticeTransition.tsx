@@ -5,7 +5,8 @@ import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
 import { planStartHref, saveQuizReturn } from "@/lib/billing/quiz-return";
 import { PLAN_OFFER } from "@/lib/billing/plan-offer";
 import { sendFunnelEvent } from "@/lib/billing/funnel-client";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { sendConversion } from "@/lib/billing/conversion-client";
 import { posthogCapture } from "@/lib/posthog";
 import dynamic from "next/dynamic";
 const FeedbackUnlock = dynamic(() => import("./FeedbackUnlock").then(m => m.FeedbackUnlock), { ssr: false });
@@ -33,9 +34,12 @@ export function PracticeLoading({ index = 0, total = 0 }: { index?: number; tota
  */
 export function PracticeDailyLimit({ resumeHref, freeDaily, onUnlocked }: { reset?: string | null; resumeHref: string; backHref?: string; freeDaily?: number; onUnlocked?: () => void }) {
   const free = Number.isFinite(freeDaily) && freeDaily! > 0 ? freeDaily! : PLAN_OFFER.freeDaily;
+  const measured = useRef(false);
+  useEffect(() => { if (!measured.current) { measured.current = true; sendConversion("offer_viewed"); } }, []);
   // The KV funnel count goes first: it must not depend on the analytics SDK.
   useEffect(() => { sendFunnelEvent("free_limit_reached"); posthogCapture("practice_limit_viewed", { freeDaily: free }); }, [free]);
   const start = () => {
+    sendConversion("plan_clicked");
     sendFunnelEvent("paywall_plan_click");
     posthogCapture("practice_upgrade_clicked", { source: "daily_limit" });
     try { saveQuizReturn(window.sessionStorage, resumeHref); } catch { /* The link itself carries the return path. */ }
@@ -45,7 +49,7 @@ export function PracticeDailyLimit({ resumeHref, freeDaily, onUnlocked }: { rese
     <div className="flex justify-center"><ChihuahuaMascot pose="celebrate" size={96} /></div>
     <h2 id="practice-limit-title" className="text-2xl font-bold leading-snug">今日の無料{free}問はここまで</h2>
     <div className="space-y-3">
-      <a href={planStartHref(resumeHref)} onClick={start} aria-describedby="plan-terms" className="flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-4 py-3 text-lg font-bold text-primary-foreground hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">月額{PLAN_OFFER.priceYen}円で続ける</a>
+      <a data-monthly-plan href={planStartHref(resumeHref)} onClick={start} aria-describedby="plan-terms" className="flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-4 py-3 text-lg font-bold text-primary-foreground hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">月額{PLAN_OFFER.priceYen}円で続ける</a>
       <p id="plan-terms" className="text-xs text-muted-foreground">税込・毎月自動更新・いつでも解約可 <Link href="/billing/terms" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">条件・返金</Link></p>
       <FeedbackUnlock onUnlocked={onUnlocked ?? (() => window.location.reload())} />
     </div>

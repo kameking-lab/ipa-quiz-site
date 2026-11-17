@@ -29,6 +29,7 @@ export const metadata: Metadata = {
 };
 
 const TOOLS: { href: string; title: string; desc: string; icon: typeof Activity }[] = [
+  { href: "/admin/conversion", title: "課金までの流れ", desc: "直近14日の回答・上限・月額申込（Web／iOS）", icon: TrendingUp },
   { href: "/admin/feedback", title: "改善の意見", desc: "追加10問の意見・希望資格・選択肢集計", icon: Users },
   { href: "/admin/launch-monitoring", title: "ローンチ監視", desc: "稼働状況・初日監視ハブ", icon: Rocket },
   { href: "/admin/metrics", title: "メトリクス", desc: "主要 KPI ダッシュボード", icon: BarChart3 },

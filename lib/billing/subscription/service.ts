@@ -50,7 +50,7 @@ export function access(a: Account, now: number) {
 export class MonthlyService {
   constructor(private store: MonthlyStore, readonly config: MonthlyConfig, private clock = () => new Date()) {}
   private tx<T>(id: string, fn: (a: Account) => Promise<T>, readOnly = false) { return this.store.transaction(id, this.config.mode, this.config.sourceInstance, fn, readOnly); }
-  async checkout(userId: string, terms: string, provider: MonthlyProvider, email?: string) {
+  async checkout(userId: string, terms: string, provider: MonthlyProvider, email?: string, onCreated?: (orderId: string) => Promise<void>) {
     if (!this.config.enabled) throw new BillingError("billing_unavailable", 503);
     if (terms !== monthlyTerms(this.config)) throw new BillingError("terms_changed");
     // A stale (23h+, near Stripe's 24h session/idempotency limit) or outdated pending
@@ -85,13 +85,19 @@ export class MonthlyService {
     });
     const result = reservation.signup.sessionId && reservation.signup.url
       ? { id: reservation.signup.sessionId, url: reservation.signup.url } : await provider.checkout(customerId, reservation.signup, email);
-    return this.tx(userId, async a => {
+    const checkout = await this.tx(userId, async a => {
       const current = a.signups[reservation.signup.id];
       if (!current || current.sessionId && current.sessionId !== result.id) problem("checkout_conflict");
       // Webhook may have attached the contract already. Never overwrite its state.
       current.sessionId = result.id; current.url = result.url;
       return { orderId: current.id, url: result.url };
     });
+    // Observe only new sessions after commit, never a cached Checkout URL.
+    // Optional measurement cannot roll back or fail the successful purchase action.
+    if (!reservation.signup.sessionId && onCreated) {
+      try { await onCreated(checkout.orderId); } catch { /* measurement only */ }
+    }
+    return checkout;
   }
   async portal(userId: string, provider: MonthlyProvider) {
     const customerId = await this.tx(userId, async a => a.customer?.id ?? null, true);
