@@ -34,6 +34,49 @@ export type IpRateLimitResult =
 
 type KvPipelineEntry = { result: unknown } | { error: string };
 
+// These keys include the time bucket. Their existing TTLs cover the whole
+// bucket plus the dashboard's lookback, so later calls need not extend them.
+// Upstash bills EVAL and its inner commands: grouping the increments avoids
+// replacing every saved EXPIRE with a separate EVAL/TTL command.
+const IP_COUNTER_SCRIPT = `
+local counts = {}
+for i = 1, 4 do
+  local count = redis.pcall('INCR', KEYS[i])
+  if type(count) == 'number' then
+    counts[i] = count
+    if count == 1 then redis.pcall('EXPIRE', KEYS[i], ARGV[i]) end
+  else
+    counts[i] = false
+  end
+end
+local score = redis.pcall('ZINCRBY', KEYS[5], 1, ARGV[5])
+-- A first member also covers recovery after the initial sorted-set write failed.
+-- Do not leave a newly created top-IP set without retention when stats failed.
+local firstMember = (type(score) == 'string' or type(score) == 'number') and tonumber(score) == 1
+if counts[4] == 1 or firstMember then redis.pcall('EXPIRE', KEYS[5], ARGV[4]) end
+return counts
+`;
+
+const GLOBAL_COUNTER_SCRIPT = `
+local counts = {}
+for i = 1, 2 do
+  local count = redis.pcall('INCR', KEYS[i])
+  if type(count) == 'number' then
+    counts[i] = count
+    if count == 1 then redis.pcall('EXPIRE', KEYS[i], ARGV[i]) end
+  else
+    counts[i] = false
+  end
+end
+return counts
+`;
+
+function scriptCounts(result: unknown): unknown[] {
+  // Lua false is a null bulk reply in Redis; also reject a JSON boolean from
+  // adapters rather than interpreting it as a zero count.
+  return Array.isArray(result) ? result.map((count) => count === false ? null : count) : [];
+}
+
 async function kvPipeline(commands: unknown[][]): Promise<unknown[]> {
   if (!KV_ENABLED) return commands.map(() => null);
   try {
@@ -80,24 +123,17 @@ export async function checkIpRateLimit(
   const statsKey = `rl:stats:${endpoint}:h:${hrBucket}`;
   const topIpKey = `rl:topips:h:${hrBucket}`;
 
-  const results = await kvPipeline([
-    ["INCR", minKey],
-    ["EXPIRE", minKey, 120],
-    ["INCR", hrKey],
-    ["EXPIRE", hrKey, 7200],
-    ["INCR", dayKey],
-    ["EXPIRE", dayKey, 172800],
-    ["INCR", statsKey],
-    ["EXPIRE", statsKey, 90_000],
-    ["ZINCRBY", topIpKey, 1, ip],
-    ["EXPIRE", topIpKey, 90_000],
+  const [result] = await kvPipeline([
+    ["EVAL", IP_COUNTER_SCRIPT, 5, minKey, hrKey, dayKey, statsKey, topIpKey,
+      120, 7200, 172800, 90_000, ip],
   ]);
+  const results = scriptCounts(result);
 
   const minCount = Number(results[0] ?? 0);
-  const hrCount = Number(results[2] ?? 0);
-  const dayCount = Number(results[4] ?? 0);
+  const hrCount = Number(results[1] ?? 0);
+  const dayCount = Number(results[2] ?? 0);
 
-  if (options.requireKv && [results[0], results[2], results[4]].some((value) => value == null || !Number.isFinite(Number(value)))) {
+  if (options.requireKv && [results[0], results[1], results[2]].some((value) => value == null || !Number.isFinite(Number(value)))) {
     return { ok: false, reason: "unavailable", resetAt: now + 60_000 };
   }
 
@@ -116,19 +152,17 @@ export async function checkIpRateLimit(
   if (endpoint === "copilot") {
     const globalHourKey = `rl:global:copilot:h:${hrBucket}`;
     const globalDayKey = `rl:global:copilot:d:${dayBucket}`;
-    const global = await kvPipeline([
-      ["INCR", globalHourKey],
-      ["EXPIRE", globalHourKey, 7200],
-      ["INCR", globalDayKey],
-      ["EXPIRE", globalDayKey, 172800],
+    const [globalResult] = await kvPipeline([
+      ["EVAL", GLOBAL_COUNTER_SCRIPT, 2, globalHourKey, globalDayKey, 7200, 172800],
     ]);
-    if (options.requireKv && [global[0], global[2]].some((value) => value == null || !Number.isFinite(Number(value)))) {
+    const global = scriptCounts(globalResult);
+    if (options.requireKv && [global[0], global[1]].some((value) => value == null || !Number.isFinite(Number(value)))) {
       return { ok: false, reason: "unavailable", resetAt: now + 60_000 };
     }
     if (Number(global[0] ?? 0) > COPILOT_GLOBAL_LIMITS.hour) {
       return { ok: false, reason: "hour", resetAt: (hrBucket + 1) * 3_600_000 };
     }
-    if (Number(global[2] ?? 0) > COPILOT_GLOBAL_LIMITS.day) {
+    if (Number(global[1] ?? 0) > COPILOT_GLOBAL_LIMITS.day) {
       return { ok: false, reason: "daily", resetAt: (dayBucket + 1) * 86_400_000 };
     }
   }
@@ -161,6 +195,45 @@ export interface ApiUsageStats {
   estimatedCostJpy: { last1h: number; last24h: number };
 }
 
+interface UsageSnapshot {
+  hour: number;
+  generatedAt: number;
+  counts: unknown[];
+  topIps: unknown[];
+}
+
+// Dashboard reads only. Never use this cache for admission or AI accounting.
+// One bounded entry per process; concurrent dashboard readers share the same load.
+let usageSnapshot: UsageSnapshot | undefined;
+let usageLoad: { hour: number; promise: Promise<UsageSnapshot> } | undefined;
+const USAGE_CACHE_MS = 60_000;
+
+async function readUsageSnapshot(hour: number): Promise<UsageSnapshot> {
+  const now = Date.now();
+  if (usageSnapshot?.hour === hour && now - usageSnapshot.generatedAt < USAGE_CACHE_MS) return usageSnapshot;
+  if (usageLoad?.hour === hour) return usageLoad.promise;
+  const promise = (async () => {
+    const keys = TRACKED_ENDPOINTS.flatMap(endpoint =>
+      Array.from({ length: 24 }, (_, i) => `rl:stats:${endpoint}:h:${hour - i}`));
+    const results = await kvPipeline([
+      ["MGET", ...keys],
+      ["ZREVRANGE", `rl:topips:h:${hour}`, 0, 19, "WITHSCORES"],
+      ["ZREVRANGE", `rl:topips:h:${hour - 1}`, 0, 19, "WITHSCORES"],
+    ]);
+    const validCounts = Array.isArray(results[0]) && results[0].length === keys.length;
+    const valid = validCounts && Array.isArray(results[1]) && Array.isArray(results[2]);
+    const snapshot: UsageSnapshot = { hour, generatedAt: now,
+      counts: validCounts ? results[0] as unknown[] : keys.map(() => null),
+      topIps: results.slice(1).map(value => Array.isArray(value) ? value : []) };
+    // A failed load must not hide recovery for a full cache period.
+    if (valid) usageSnapshot = snapshot;
+    return snapshot;
+  })();
+  usageLoad = { hour, promise };
+  try { return await promise; }
+  finally { if (usageLoad?.promise === promise) usageLoad = undefined; }
+}
+
 export async function getApiUsageStats(): Promise<ApiUsageStats> {
   const now = Date.now();
   const currentHrBucket = Math.floor(now / 3_600_000);
@@ -181,18 +254,8 @@ export async function getApiUsageStats(): Promise<ApiUsageStats> {
 
   if (!KV_ENABLED) return empty;
 
-  // Build pipeline: last 24 hourly buckets per endpoint + top-IP sorted sets
-  const commands: unknown[][] = [];
-  for (const endpoint of TRACKED_ENDPOINTS) {
-    for (let i = 0; i < 24; i++) {
-      commands.push(["GET", `rl:stats:${endpoint}:h:${currentHrBucket - i}`]);
-    }
-  }
-  // Top IPs from current + previous hour bucket (ZREVRANGE with scores)
-  commands.push(["ZREVRANGE", `rl:topips:h:${currentHrBucket}`, 0, 19, "WITHSCORES"]);
-  commands.push(["ZREVRANGE", `rl:topips:h:${currentHrBucket - 1}`, 0, 19, "WITHSCORES"]);
-
-  const results = await kvPipeline(commands);
+  const snapshot = await readUsageSnapshot(currentHrBucket);
+  const results = [...snapshot.counts, ...snapshot.topIps];
 
   const byEndpoint = { ...emptyEndpoints };
   let idx = 0;
@@ -235,7 +298,7 @@ export async function getApiUsageStats(): Promise<ApiUsageStats> {
 
   return {
     enabled: true,
-    generatedAt: new Date(now).toISOString(),
+    generatedAt: new Date(snapshot.generatedAt).toISOString(),
     totalLast1h,
     totalLast24h,
     byEndpoint,
@@ -258,20 +321,13 @@ export async function getApiCallsHourlySeries(): Promise<number[]> {
   const now = Date.now();
   const currentHrBucket = Math.floor(now / 3_600_000);
 
-  const commands: unknown[][] = [];
-  for (let i = 0; i < 24; i++) {
-    for (const endpoint of TRACKED_ENDPOINTS) {
-      commands.push(["GET", `rl:stats:${endpoint}:h:${currentHrBucket - i}`]);
-    }
-  }
-
-  const results = await kvPipeline(commands);
+  const { counts } = await readUsageSnapshot(currentHrBucket);
   const series: number[] = [];
 
   for (let i = 0; i < 24; i++) {
     let hourTotal = 0;
     for (let j = 0; j < TRACKED_ENDPOINTS.length; j++) {
-      hourTotal += Number(results[i * TRACKED_ENDPOINTS.length + j] ?? 0);
+      hourTotal += Number(counts[j * 24 + i] ?? 0);
     }
     series.push(hourTotal);
   }

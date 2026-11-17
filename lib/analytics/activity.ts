@@ -3,6 +3,9 @@ import { z } from "zod";
 import { jstDay } from "@/lib/billing/domain";
 import { JOURNEY_QUALIFICATIONS } from "@/lib/billing/journey-contract";
 import { ACTIVITY_EVENTS, ACTIVITY_PAGES, type ActivityData, type ActivityEvent, type ActivityRow } from "./activity-contract";
+import { retentionCache } from "@/lib/kv/retention";
+
+const retention = retentionCache();
 
 const eventSchema = z.object({ event: z.enum(ACTIVITY_EVENTS), qualification: z.string().refine(v => JOURNEY_QUALIFICATIONS.includes(v)), page: z.enum(ACTIVITY_PAGES) }).strict();
 export const activityBody = z.object({ events: z.array(eventSchema).min(1).max(32) }).strict();
@@ -28,10 +31,17 @@ export async function recordActivity(events: ActivityEvent[], now = Date.now()):
   const counts = new Map<string, number>();
   for (const event of parsed.data.events) counts.set(field(event), (counts.get(field(event)) ?? 0) + 1);
   const dayKey = key(jstDay(new Date(now)));
+  const kv = store();
+  if (!kv) return false;
+  const cacheKey = `${kv.url}|${dayKey}`;
+  const refresh = retention.needsRefresh(cacheKey);
   const commands = [...counts].map(([f, count]) => ["HINCRBY", dayKey, f, String(count)]);
-  commands.push(["EXPIRE", dayKey, String(95 * 86400)]);
+  if (refresh) commands.push(["EXPIRE", dayKey, String(95 * 86400)]);
   // Await every write and validate Redis command errors, even on HTTP 200.
-  return (await pipeline(commands)) !== null;
+  const result = await pipeline(commands);
+  if (!result) return false;
+  if (refresh && (result.at(-1) as { result: unknown }).result === 1) retention.confirm(cacheKey);
+  return true;
 }
 export async function readActivity(from: string, to: string): Promise<ActivityData> {
   const unavailable: ActivityData = { available: false, rows: [] };

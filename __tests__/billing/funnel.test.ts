@@ -1,12 +1,50 @@
 // @vitest-environment node
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { CLIENT_FUNNEL_EVENTS, FUNNEL_EVENTS, funnelKey, readFunnel, recordFunnel, readFunnelSources, saveOrderAttribution, readOrderAttribution } from "@/lib/billing/funnel";
+import { CLIENT_FUNNEL_EVENTS, FUNNEL_EVENTS, funnelKey, readFunnel, readFunnelSources, saveOrderAttribution, readOrderAttribution } from "@/lib/billing/funnel";
+let recordFunnel: typeof import("@/lib/billing/funnel").recordFunnel;
 
 const NOW = Date.parse("2026-11-07T15:30:00Z"); // 2026-11-08 00:30 JST
-beforeEach(() => { vi.stubEnv("KV_REST_API_URL", "https://kv.example.invalid/"); vi.stubEnv("KV_REST_API_TOKEN", "kv-token"); vi.stubEnv("AUTH_SECRET", "fixture-secret"); });
+beforeEach(async () => { vi.resetModules(); recordFunnel = (await import("@/lib/billing/funnel")).recordFunnel; vi.stubEnv("KV_REST_API_URL", "https://kv.example.invalid/"); vi.stubEnv("KV_REST_API_TOKEN", "kv-token"); vi.stubEnv("AUTH_SECRET", "fixture-secret"); });
 afterEach(() => { vi.unstubAllEnvs(); vi.unstubAllGlobals(); });
 
 describe("purchase funnel counter (KV, per JST day, distinct visitors)", () => {
+  it("skips repeated retention writes only after confirmation and refreshes them after five minutes", async () => {
+    const clock = vi.spyOn(Date, "now").mockReturnValue(NOW);
+    const batches: string[][][] = [];
+    vi.stubGlobal("fetch", vi.fn(async (_url: string, init?: RequestInit) => {
+      const commands = JSON.parse(String(init?.body)) as string[][];
+      batches.push(commands);
+      return Response.json(commands.map(() => ({ result: 1 })));
+    }));
+    const touch = { utm_source: "tsugino_shikaku", utm_content: "sc.hero" };
+    expect(await recordFunnel("free_limit_reached", "guest:one", NOW, touch)).toBe(true);
+    expect(await recordFunnel("free_limit_reached", "guest:two", NOW, touch)).toBe(true);
+    expect(batches.map(batch => batch.length)).toEqual([6, 3]);
+    expect(batches[1].every(command => command[0] === "SADD")).toBe(true);
+    clock.mockReturnValue(NOW + 5 * 60_000);
+    expect(await recordFunnel("free_limit_reached", "guest:three", NOW, touch)).toBe(true);
+    expect(batches[2]).toHaveLength(6);
+    clock.mockRestore();
+  });
+  it("retries expiry after an unconfirmed write, and concurrent first events each await their own writes", async () => {
+    const pending: ((response: Response) => void)[] = [];
+    const bodies: string[][][] = [];
+    vi.stubGlobal("fetch", vi.fn((_url: string, init?: RequestInit) => {
+      bodies.push(JSON.parse(String(init?.body)) as string[][]);
+      return new Promise<Response>(resolve => pending.push(resolve));
+    }));
+    const first = recordFunnel("free_limit_reached", "guest:one", NOW);
+    const second = recordFunnel("free_limit_reached", "guest:two", NOW);
+    expect(bodies.map(body => body.length)).toEqual([2, 2]);
+    pending[0](Response.json([{ result: 1 }, { error: "expiry failed" }]));
+    pending[1](Response.json([{ result: 1 }, { result: 0 }]));
+    expect(await first).toBe(false);
+    expect(await second).toBe(true);
+    const third = recordFunnel("free_limit_reached", "guest:three", NOW);
+    expect(bodies[2]).toHaveLength(2);
+    pending[2](Response.json([{ result: 1 }, { result: 1 }]));
+    expect(await third).toBe(true);
+  });
   it("does not mistake an HTTP 200 Redis command error for a recorded event", async () => {
     vi.stubGlobal("fetch", vi.fn(async () => Response.json([{ error: "ERR fixture" }, { result: 1 }])));
     expect(await recordFunnel("free_limit_reached", "fixture", NOW)).toBe(false);
