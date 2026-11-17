@@ -41,6 +41,7 @@ import { comboLevel, readMotivationSettings } from "@/lib/motivation/combo";
 import { playPiroro } from "@/lib/motivation/sound";
 import { recordSessionAnswer } from "@/lib/motivation/session";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
+import { useQuestionActivity } from "@/lib/study-plan/use-question-activity";
 import { posthogCapture } from "@/lib/posthog";
 import { observeJourney } from "@/lib/billing/journey-client";
 import { readSettings } from "@/lib/storage/settings";
@@ -114,6 +115,7 @@ function ScoredQuizPlayer({
   const [orderedSelected, setOrderedSelected] = React.useState<ChoiceKey[] | undefined>(undefined);
   const [nativeBResult, setNativeBResult] = React.useState<NativeBGrade | undefined>();
   const [revealed, setRevealed] = React.useState(false);
+  const { recordAnswer: recordActivityAnswer, recordExplanation, endRef: explanationEndRef } = useQuestionActivity(question, revealed);
   const [preparedExplanationId, setPreparedExplanationId] = React.useState<string | null>(null);
   const [completed, setCompleted] = React.useState(false);
   const questionStartRef = React.useRef<HTMLDivElement>(null);
@@ -201,6 +203,7 @@ function ScoredQuizPlayer({
   );
 
   const goNext = React.useCallback(() => {
+    recordExplanation();
     setCopilotQuery(null);
     if (index + 1 >= total) {
       setCompleted(true);
@@ -208,12 +211,13 @@ function ScoredQuizPlayer({
       return;
     }
     onNext();
-  }, [index, total, onNext]);
+  }, [index, total, onNext, recordExplanation]);
 
   const commitAnswer = React.useCallback(
     (selection: string, correct: boolean, petAnswer: Extract<PetLearningSubmission, { source: "question" }>["answer"], nativeBResult?: NativeBGrade) => {
       if (!question || isReferenceOnlyQuestionId(question.id)) return;
       setRevealed(true);
+      recordActivityAnswer(correct);
       requestAnimationFrame(() => {
         answerResultRef.current?.focus({ preventScroll: true });
         answerResultRef.current?.scrollIntoView({ block: "start", behavior: "instant" });
@@ -275,7 +279,7 @@ function ScoredQuizPlayer({
         }
       }
     },
-    [question, history, combo, pendingAchievement, pet],
+    [question, history, combo, pendingAchievement, pet, recordActivityAnswer],
   );
 
   const onNativeBAnswer = React.useCallback((selections: NativeBSelections) => {
@@ -628,6 +632,7 @@ function ScoredQuizPlayer({
                     !isCorrect ? () => { setCopilotQuery("why-wrong"); setCopilotRequest((value) => ({ questionId: question!.id, sequence: (value?.sequence ?? 0) + 1, prompt: "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" })); } : undefined
                   }
                 />
+                <span ref={explanationEndRef} aria-hidden="true" className="block h-px" />
                 {revealed && <>
                 {onRelated && (
                   <section ref={relatedRef} tabIndex={-1} aria-label="同じ科目の関連問題" className="scroll-mt-28 rounded-2xl border border-border bg-background p-4 outline-none">

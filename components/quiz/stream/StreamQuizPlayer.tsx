@@ -28,6 +28,7 @@ import { FOCUSABLE_SELECTOR, trapTabTarget } from "@/lib/a11y/focus-trap";
 import { ArrowLeft, ChevronUp, ChevronDown, Check, X, Flame } from "lucide-react";
 import { StreamSummary } from "./StreamSummary";
 import { ComboFireworks } from "./ComboFireworks";
+import { useQuestionActivity } from "@/lib/study-plan/use-question-activity";
 
 const SUMMARY_AT = 10;
 
@@ -67,6 +68,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   }, [reviewing]);
 
   const question = questions[index];
+  const { recordAnswer, recordExplanation, endRef } = useQuestionActivity(question, revealed);
   const nativePermission = useNativeQuestionGrant(question?.id);
   React.useEffect(() => {
     if (isSelfReviewedDescriptiveQuestion(question)) {
@@ -84,6 +86,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
 
   const goNext = React.useCallback(() => {
     if (advancingRef.current) return;
+    recordExplanation();
     advancingRef.current = true;
     setTransitioning("out");
     window.setTimeout(() => {
@@ -105,11 +108,12 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         return next;
       });
     }, 280);
-  }, [questions.length]);
+  }, [questions.length, recordExplanation]);
 
   const onNativeBAnswer = React.useCallback((selections: NativeBSelections) => {
     if (!question?.nativeB || question.type !== "native-b" || revealed) return;
     const result = gradeNativeB(question.nativeB, selections);
+    recordAnswer(result.isCorrect);
     const selection = serializeNativeBSelections(question.nativeB, selections);
     setNativeBResult(result);
     setRevealed(true);
@@ -118,12 +122,13 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     pet.answer(question, { kind: "native-b", selections: Object.fromEntries(Object.entries(selections).filter((pair): pair is [string, string] => typeof pair[1] === "string")) });
     if (result.isCorrect) setCombo((previous) => previous + 1);
     else setCombo(0);
-  }, [question, revealed, history, pet]);
+  }, [question, revealed, history, pet, recordAnswer]);
 
   const onSelect = React.useCallback(
     (key: ChoiceKey) => {
       if (!question || revealed || question.type === "ordering" || question.type === "numeric") return;
       const correct = isAcceptedAnswer(question.answer, key);
+      recordAnswer(correct);
       setSelected(key);
       setRevealed(true);
       setAnswers((prev) => [
@@ -145,12 +150,13 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         setCombo(0);
       }
     },
-    [question, revealed, history, pet],
+    [question, revealed, history, pet, recordAnswer],
   );
 
   const onOrderingAnswer = React.useCallback((value: ChoiceKey[]) => {
     if (!question || question.type !== "ordering" || revealed) return;
     const correct = isOrderingAnswerCorrect(question, value);
+    recordAnswer(correct);
     const display = formatOrderingAnswer(question.exam, value);
     setRevealed(true);
     setAnswers((previous) => [...previous, { questionId: question.id, selected: display, correct }]);
@@ -166,18 +172,19 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         return next;
       });
     } else setCombo(0);
-  }, [question, revealed, history, pet]);
+  }, [question, revealed, history, pet, recordAnswer]);
 
   const onNumericAnswer = React.useCallback((value: string) => {
     if (!question || question.type !== "numeric" || revealed) return;
     const correct = isNumericAnswerCorrect(question, value);
+    recordAnswer(correct);
     setRevealed(true);
     setAnswers(previous => [...previous, { questionId: question.id, selected: value, correct }]);
     history.record({ id: question.id, selected: value, correct, at: Date.now() });
     pet.answer(question, { kind: "numeric", value });
     if (correct) setCombo(previous => previous + 1);
     else setCombo(0);
-  }, [question, revealed, history, pet]);
+  }, [question, revealed, history, pet, recordAnswer]);
 
   React.useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -367,6 +374,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
               <span className="text-zinc-400">読んだら次の問題へ</span>
             </div>
             <div className="mt-2 text-zinc-200"><QuestionBody text={question.explanation || "解説は準備中です。"} /></div>
+            <span ref={endRef} aria-hidden="true" className="block h-px" />
           </div>
         )}
         <LearningPetCorner qualificationId={question.exam} questionId={question.id} compact />
