@@ -209,7 +209,17 @@ const placements = [
   { placement: "answer", answered: 3 },
   { placement: "daily-limit", answered: 0 },
 ] as const;
-const combinations = [];
+interface InvitationCase {
+  os: "android" | "iphone" | "desktop";
+  native: boolean;
+  standalone: boolean;
+  installed: boolean;
+  installable: boolean;
+  history: (typeof histories)[number];
+  placement: "answer" | "daily-limit";
+  answered: number;
+}
+const combinations: InvitationCase[] = [];
 for (const os of ["android", "iphone", "desktop"] as const)
   for (const native of [false, true])
     for (const standalone of [false, true])
