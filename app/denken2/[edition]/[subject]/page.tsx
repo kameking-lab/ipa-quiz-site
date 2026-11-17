@@ -1,3 +1,4 @@
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -21,11 +22,11 @@ function resolve(edition: string, subject: string): { year: number; subject: Nat
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const parsed = resolve((await params).edition, (await params).subject);
   const questions = parsed ? getNativeSubjectQuestions(parsed.year, parsed.subject) : [];
-  return parsed ? {
+  return parsed ? withCanonicalSocialMetadata({
     title: `電験二種 ${parsed.year}年度 一次試験 ${subjectLabel(parsed.subject)} 過去問${questions.length}原問`,
     description: `公式問題の${subjectLabel(parsed.subject)}${questions.length}原問を掲載。公式正答、全欄解説、原本の図と解答群を確認できます。`,
     alternates: { canonical: nativeSubjectPath(parsed.year, parsed.subject) },
-  } : { title: "問題が見つかりません", robots: { index: false } };
+  }) : { title: "問題が見つかりません", robots: { index: false } };
 }
 export default async function Page({ params }: Props) {
   const parsed = resolve((await params).edition, (await params).subject);

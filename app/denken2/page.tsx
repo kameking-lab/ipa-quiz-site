@@ -1,3 +1,4 @@
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
 import { referralPracticeHref } from "@/lib/questions/referral-practice";
 import type { Metadata } from "next";
@@ -9,11 +10,11 @@ import { ExamYearArchiveLinks } from "@/components/seo/ExamYearArchiveLinks";
 import type { Session } from "@/lib/questions/types";
 import { NATIVE_EDITIONS, NATIVE_QUESTIONS, getNativeSubjectQuestions, nativeSubjectPath } from "@/lib/denken2/native";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalSocialMetadata({
   title: "電験二種の過去問｜一次2026・2025年度、二次2025・2024年度",
   description: "電験二種の一次2026年度30原問・2025年度27原問と、二次2025・2024年度全20原問。公式の図・数式・標準解答、全小問の解説で学べます。",
   alternates: { canonical: "/denken2" },
-};
+});
 
 const YEAR = 2026;
 const SEASON = "primary";

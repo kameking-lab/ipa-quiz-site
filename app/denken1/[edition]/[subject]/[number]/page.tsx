@@ -1,3 +1,4 @@
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import { strictContentGateEnabled } from "@/lib/billing/content-policy";
 import { ContentPage } from "@/mobile/server/ContentPage";
 import type { Metadata } from "next";
@@ -18,11 +19,11 @@ function resolve(edition: string, subject: string, number: string) {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { edition, subject, number } = await params;
   const q = resolve(edition, subject, number);
-  return q ? {
+  return q ? withCanonicalSocialMetadata({
     title: `電験一種 ${q.year}年度 一次試験 ${q.subject} 問${q.number}｜公式原問`,
     description: `原問1件・${q.slots.length}回答欄。公式問題の図・数式・解答群、各欄の正答と解説を掲載。`,
     alternates: { canonical: denken1NativeQuestionPath(q.year, q.subject, q.number) },
-  } : { title: "問題が見つかりません", robots: { index: false } };
+  }) : { title: "問題が見つかりません", robots: { index: false } };
 }
 export default async function Page({ params }: Props) {
   if (strictContentGateEnabled()) { const gatedParams=await params; return <ContentPage path={`/denken1/${gatedParams.edition}/${gatedParams.subject}/${gatedParams.number}`}/>; }

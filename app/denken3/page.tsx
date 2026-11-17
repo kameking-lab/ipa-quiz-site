@@ -1,3 +1,4 @@
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
 import { referralPracticeHref } from "@/lib/questions/referral-practice";
 import type { Metadata } from "next";
@@ -8,11 +9,11 @@ import { ExamYearArchiveLinks } from "@/components/seo/ExamYearArchiveLinks";
 import type { Session } from "@/lib/questions/types";
 import { DENKEN3_NATIVE_SUBJECTS, DENKEN3_NEW_ORIGINAL_COUNT, DENKEN3_PUBLISHED_ORIGINAL_COUNT, denken3NativeSubjectPath } from "@/lib/denken3/native";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalSocialMetadata({
   title: "電験三種 過去問｜理論・電力・機械・法規",
   description: "電験三種の確認済み325原問を収録。2026年度上期の理論・電力・機械・法規と2025年度下期の理論・電力・機械・法規は、原本画像と5肢の解説を原問単位で確認できます。",
   alternates: { canonical: "/denken3" },
-};
+});
 
 const SUBJECTS: { session: Session; name: string; description: string }[] = [
   { session: "riron", name: "理論", description: "電気・電子の基礎と計測" },

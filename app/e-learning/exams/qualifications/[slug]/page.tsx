@@ -1,3 +1,4 @@
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
 import { filterReferralPapers } from "@/lib/analytics/referral-query";
 import type { Metadata } from "next";
@@ -61,12 +62,12 @@ export async function generateMetadata({ params }: QualificationHubPageProps): P
   const hub = findQualificationHub(slug);
   if (!hub) return {};
   const papers = getHubPapers(hub);
-  return {
+  return withCanonicalSocialMetadata({
     title: `${hub.name}の過去問｜公表問題を無料で演習`,
     description: hubDescription(hub, papers),
     alternates: { canonical: qualificationHubPath(hub.slug) },
     robots: { index: true, follow: true },
-  };
+  });
 }
 
 export default async function QualificationHubPage({ params, searchParams }: QualificationHubPageProps) {

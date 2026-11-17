@@ -1,3 +1,4 @@
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import Link from "next/link";
 import { referralRedirectHref } from "@/lib/analytics/referral-query";
 import type { Metadata } from "next";
@@ -46,12 +47,12 @@ function firstValue(value: string | string[] | undefined): string | undefined {
 export async function generateMetadata({ searchParams }: ExamLibraryPageProps): Promise<Metadata> {
   const params = await searchParams;
   const hasFilter = Boolean(firstValue(params.group) || firstValue(params.subject));
-  return {
+  return withCanonicalSocialMetadata({
     title: TITLE,
     description: DESCRIPTION,
     alternates: { canonical: EXAM_LIBRARY_PATH },
     robots: { index: !hasFilter, follow: true },
-  };
+  });
 }
 
 function buildItems(): ExamCatalogItem[] {

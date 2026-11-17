@@ -1,3 +1,4 @@
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import { strictContentGateEnabled } from "@/lib/billing/content-policy";
 import { ContentPage } from "@/mobile/server/ContentPage";
 import type { Metadata } from "next";
@@ -16,11 +17,11 @@ function resolve(edition: string, subject: string, number: string) {
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { edition, subject, number } = await params;
   const q = resolve(edition, subject, number);
-  return q ? {
+  return q ? withCanonicalSocialMetadata({
     title: `電験三種 ${q.sitting === "2026-upper" ? "2026年度上期" : "2025年度下期"} ${names[q.subject]} 問${q.number}｜公式問題と解説`,
     description: `原問1題・${q.slots.length}回答欄。公式問題の図・表と5選択肢の理由を確認できます。`,
     alternates: { canonical: denken3NativeQuestionPath(q.sitting, q.subject, q.number) },
-  } : { title: "問題が見つかりません", robots: { index: false } };
+  }) : { title: "問題が見つかりません", robots: { index: false } };
 }
 export default async function Page({ params }: Props) {
   if (strictContentGateEnabled()) { const gatedParams=await params; return <ContentPage path={`/denken3/${gatedParams.edition}/${gatedParams.subject}/${gatedParams.number}`}/>; }
