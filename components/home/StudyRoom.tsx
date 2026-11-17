@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
+import { useEffect, useLayoutEffect, useMemo, useRef, useState, type CSSProperties } from "react";
 import Link from "next/link";
 import { canonicalPresenceExam, presenceExamName } from "@/lib/study-presence";
 import type { MeasuredPresence } from "@/lib/study-presence-contract";
@@ -60,6 +60,17 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
   const scene = studyRoomScene(renderedStage);
   const sceneHeight = scene.height;
   const sceneRef = useRef<HTMLDivElement>(null);
+  const viewportRef = useRef<HTMLDivElement>(null);
+  useLayoutEffect(() => {
+    const viewport = viewportRef.current;
+    if (!viewport) return;
+    // Start with the foreground in view, including in a tall or expanded hall.
+    // Fresh presence samples do not reset someone's chosen scroll position.
+    const frameFloor = () => { viewport.scrollTop = viewport.scrollHeight - viewport.clientHeight; };
+    frameFloor();
+    window.addEventListener("resize", frameFloor);
+    return () => window.removeEventListener("resize", frameFloor);
+  }, [renderedStage]);
   const [backgroundReady, setBackgroundReady] = useState(false);
   const [motionVisible, setMotionVisible] = useState(false);
   const [visibleSeats, setVisibleSeats] = useState<Set<string>>(new Set());
@@ -148,7 +159,7 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
       </div>
       <span className="min-w-0 text-right text-xs leading-relaxed text-muted-foreground">{filtered ? scene.name : ""}</span>
     </div>
-    <div role="region" aria-label="自習室の席" tabIndex={0} className="overflow-x-auto rounded-2xl outline-offset-2 focus-visible:outline-2 focus-visible:outline-primary">
+    <div ref={viewportRef} role="region" aria-label="自習室の席" tabIndex={0} className="max-h-[min(56svh,520px)] overflow-auto rounded-2xl outline-offset-2 focus-visible:outline-2 focus-visible:outline-primary">
     <div ref={sceneRef} data-testid="study-room-scene" data-stage={renderedStage} data-motion-visible={motionVisible} data-art-status={scene.background ? "ready" : "pending"}
       role="group" aria-label="チワワの自習室" tabIndex={-1}
       className="relative isolate w-full min-w-0 overflow-hidden rounded-2xl border border-stone-200 bg-stone-50 outline-offset-2 focus-visible:outline-2 focus-visible:outline-primary dark:border-stone-700 dark:bg-stone-900"

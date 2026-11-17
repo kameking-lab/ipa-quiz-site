@@ -1,4 +1,4 @@
-import { scatteredRoomPoints } from "./study-room-scatter";
+import layouts from "./study-room-layouts.json";
 
 /** Source pixels: y is the reserved square centre; floorY is its contact with the floor. */
 export interface RoomSeatPosition { x: number; y: number; width: number; floorY: number }
@@ -12,22 +12,13 @@ export interface StudyRoomScene {
   seats: readonly RoomSeatPosition[];
 }
 
-// ar-4 floors.json: calibrated floor trapezoids and vanishing points, not seat coordinates.
-const floors = [
-  { backY: 825, backLeft: 120, backRight: 904, vanishingY: 400 },
-  { backY: 700, backLeft: 260, backRight: 764, vanishingY: 375 },
-  { backY: 682, backLeft: 280, backRight: 744, vanishingY: 360 },
-  { backY: 692, backLeft: 228, backRight: 796, vanishingY: 340 },
-  { backY: 700, backLeft: 245, backRight: 779, vanishingY: 350 },
-];
-const counts = [5, 12, 24, 48, 120];
+// Continuous floor sampling is done offline: importing the room never runs a packing search.
 const names = ["小さな自習室", "教室", "広い教室", "大教室", "ホール"];
-const headWidths = [85, 52, 38, 26, 14.8];
-export const STUDY_ROOM_SCENES: readonly StudyRoomScene[] = counts.map((count, index) => {
+export const STUDY_ROOM_SCENES: readonly StudyRoomScene[] = names.map((name, index) => {
   const width = 1024, height = 1536;
-  const seats = scatteredRoomPoints(count, width, height, headWidths[index], floors[index]);
-  return { name: names[index], background: `/images/home/study-room-v3/R${index + 1}.webp`, width, height,
-    minWidth: Math.max(358, Math.ceil(width * 44 / Math.min(...seats.map(seat => seat.width))) + 2), seats };
+  const seats = layouts[index];
+  return { name, background: `/images/home/study-room-v3/R${index + 1}.webp`, width, height,
+    minWidth: [358, 358, 650, 950, 1500][index], seats };
 });
 
 const extendedHalls = new Map<number, StudyRoomScene>();

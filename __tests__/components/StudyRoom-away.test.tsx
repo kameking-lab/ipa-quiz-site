@@ -22,11 +22,12 @@ it.each([1, 5, 12, 24, 48, 120, 130])("seats most of %i learners at desks with t
   for (const button of buttons) {
     expect(button.querySelectorAll('.study-mascot')).toHaveLength(1);
     expect(button.querySelectorAll('[data-furniture-art]')).toHaveLength(1);
-    expect(button.querySelectorAll('img')).toHaveLength(1);
+    expect(button.querySelectorAll('img')).toHaveLength(3);
     expect(button.querySelectorAll('[data-layer="desktop"], [data-layer="forepaws"]')).toHaveLength(0);
-    expect(button.querySelector('img')).toHaveAttribute('src', expect.stringContaining('/study-room-v3/'));
+    expect(button.querySelectorAll('[data-layer="furniture-back"], [data-layer="character"], [data-layer="furniture-front"]')).toHaveLength(3);
+    expect(button.querySelector('img')).toHaveAttribute('src', expect.stringContaining('/study-room-mascots/'));
   }
-  // All furniture belongs to the integrated cutout, never a second overlay.
+  // Furniture and character reuse the same qualification's matching coordinates.
   expect(container.querySelectorAll('img[src="/vacant.webp"]')).toHaveLength(0);
   expect(screen.getByTestId("study-room-scene")).toHaveAttribute("data-art-status", "ready");
 });

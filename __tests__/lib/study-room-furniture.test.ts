@@ -20,8 +20,8 @@ it("keeps exact headcounts and whole-person study/nap/rest quotas at all stages"
     const mascots = furnitureRoomMascots(keys, points, scene.seats);
     expect(mascots.size).toBe(count);
     const states = [...mascots.values()].map(m => m.state);
-    expect(states.filter(s => s === "break")).toHaveLength(Math.round(count * .14));
-    expect(states.filter(s => s === "away")).toHaveLength(Math.floor(count * .07));
+    expect(states.filter(s => s === "break")).toHaveLength(Math.round(count * .14) + Math.floor(count * .07));
+    expect(states.filter(s => s === "away")).toHaveLength(0);
     expect(states.filter(s => s === "study").length / count).toBeGreaterThanOrEqual(.78);
     expect(furnitureRoomMascots([...keys].reverse(), points, scene.seats)).toEqual(mascots);
     for (const [key, mascot] of mascots) {
@@ -33,6 +33,28 @@ it("keeps exact headcounts and whole-person study/nap/rest quotas at all stages"
       if (nearest) expect(`${mascot.art.pose}:${mascot.art.direction}`).not.toBe(`${nearest.art.pose}:${nearest.art.direction}`);
     }
   }
+});
+
+it("preserves each qualification's outfit and tools, reserving ar-4 for unselected guests", () => {
+  const keys = ["ap:0", "fe:0", "fp2:0", "denken3:0", "kisho:0", "guest:0"];
+  const scene = STUDY_ROOM_SCENES[1];
+  const mascots = furnitureRoomMascots(keys, assignRoomPoints(keys, scene.seats.length), scene.seats);
+  for (const key of keys.slice(0, -1)) {
+    const mascot = mascots.get(key)!;
+    expect(mascot.qualification).toBe(true);
+    expect(mascot.src).toContain("/study-room-mascots/");
+    expect(mascot.src).toContain(key.split(":")[0]);
+  }
+  expect(mascots.get("guest:0")).toMatchObject({ qualification: false, src: expect.stringContaining("/study-room-v3/") });
+});
+
+it("keeps shared qualifications' props instead of substituting a field idle pose", () => {
+  const keys = Array.from({ length: 12 }, (_, i) => `kisho:${i}`);
+  const scene = STUDY_ROOM_SCENES[1];
+  const mascots = [...furnitureRoomMascots(keys, assignRoomPoints(keys, scene.seats.length), scene.seats).values()];
+  expect(mascots.filter(m => m.state === "study")).toHaveLength(10);
+  expect(mascots.filter(m => m.state === "break")).toHaveLength(2);
+  for (const mascot of mascots) expect(mascot.src).toMatch(/\/shared-kisho-(study|break)\.webp$/);
 });
 
 it("does not overlap any reserved furniture boxes, including ground shadows", () => {
