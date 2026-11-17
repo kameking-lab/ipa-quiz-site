@@ -8,11 +8,13 @@ import { posthogCapture } from "@/lib/posthog";
 import { readQuizReturn } from "@/lib/billing/quiz-return";
 import { sendFunnelEvent } from "@/lib/billing/funnel-client";
 import { purchaseJourney } from "@/lib/billing/journey-client";
+import { useAccountStatus } from "@/components/account/AccountNavigation";
 interface Status { feedbackSubmitted?: boolean; billingModel?: "subscription"; canManage?: boolean; subscription?: { status: string; periodEnd: string; cancelAtPeriodEnd: boolean }; entitled: boolean; expiresAt: string | null; purchase: { id: string; status: string; expiresAt: string | null } | null }
 export function PurchaseStatus({ order, canceled = false, testMode = true }: { order: string; canceled?: boolean; testMode?: boolean }) {
   const [status, setStatus] = useState<Status | null>(null);
   const [error, setError] = useState("");
   const [needsLogin, setNeedsLogin] = useState(false);
+  const accountStatus = useAccountStatus(needsLogin);
   const [busy, setBusy] = useState(false);
   const request = useRef(0);
   const active = useRef(false);
@@ -83,7 +85,7 @@ export function PurchaseStatus({ order, canceled = false, testMode = true }: { o
     <h1 className="text-2xl font-bold">{title}</h1>
     <p role="status" aria-live="polite">{!order ? "注文番号を確認できません。料金ページから契約管理をご確認ください。" : error || (complete ? "プランをご利用いただけます。学習を続けましょう。" : pending ? "確認が反映されるまで少しお待ちください。再購入は不要です。" : status?.purchase ? labels[status.purchase.status] ?? "この注文の利用状況を確認できません。再購入せずお問い合わせください。" : status ? "この注文の購入情報を確認できません。" : "購入状況を確認しています…")}</p>
     {complete && <QuizResumeLinks order={order} primary />}
-    {!complete && order && !needsLogin && <button type="button" disabled={busy} className="min-h-11 rounded-lg border px-4 disabled:opacity-50" onClick={() => void check()}>{busy ? "確認中…" : "購入状況を再確認"}</button>}
+    {!complete && order && (!needsLogin || accountStatus !== "unauthenticated") && <button type="button" disabled={busy} className="min-h-11 rounded-lg border px-4 disabled:opacity-50" onClick={() => void check()}>{busy ? "確認中…" : "購入状況を再確認"}</button>}
     {!complete && <QuizResumeLinks order={order} showLogin={needsLogin} />}
     {canceled && <p className="text-sm">画面から戻るだけで新しい請求や解約は行いません。別のタブで支払済みの場合は、上の購入状況をご確認ください。</p>}
     {order && <details className="rounded-xl border border-border p-4">

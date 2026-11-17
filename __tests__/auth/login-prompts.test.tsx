@@ -1,4 +1,4 @@
-import { act, cleanup, render, screen } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 
 const identity = vi.hoisted(() => ({
@@ -33,11 +33,12 @@ beforeEach(() => {
   localStorage.clear(); sessionStorage.clear();
   window.history.replaceState({}, "", "/quiz?mode=year&question=q1");
   identity.account = null; identity.checking = false; identity.unavailable = false;
+  vi.stubEnv("NEXT_PUBLIC_TURNSTILE_SITE_KEY", "");
   vi.stubGlobal("fetch", vi.fn(async (url: string) => url === "/api/feedback-unlock"
     ? Response.json({ requiresLogin: true, eligible: false })
     : Response.json({ error: "sign_in_required" }, { status: 401 })));
 });
-afterEach(() => { cleanup(); vi.unstubAllGlobals(); });
+afterEach(() => { cleanup(); vi.unstubAllGlobals(); vi.unstubAllEnvs(); });
 
 for (const state of ["authenticated", "loading", "unauthenticated"] as const) {
   describe(state, () => {
@@ -62,6 +63,20 @@ for (const state of ["authenticated", "loading", "unauthenticated"] as const) {
       await act(async () => {});
       expect(container.querySelector('a[href*="/auth/signin"]') !== null).toBe(guest);
     });
+    it("retains the feedback recheck action after a 401 without prompting signed-in users to log in", async () => {
+      vi.stubGlobal("fetch", vi.fn(async (_url: string, init?: RequestInit) => init?.method === "POST"
+        ? Response.json({}, { status: 401 }) : Response.json({ eligible: true })));
+      const { container } = render(<FeedbackUnlock onUnlocked={vi.fn()} />);
+      fireEvent.click(await screen.findByRole("button", { name: "意見を送ってあと10問" }));
+      fireEvent.change(screen.getByRole("textbox", { name: /自由記述/ }), { target: { value: "改善希望" } });
+      fireEvent.click(screen.getByRole("button", { name: "意見を送信して10問追加" }));
+      await screen.findByRole("alert");
+      expect(container.querySelector('a[href*="/auth/signin"]') !== null).toBe(guest);
+      const recheck = screen.getByRole("button", { name: guest ? "別タブでログインした後に再確認" : "利用状態を再確認" });
+      fireEvent.click(recheck);
+      await act(async () => {});
+      expect(screen.getByRole("button", { name: "意見を送信して10問追加" })).toBeEnabled();
+    });
     it.each([false, true])("guards purchase resume login (loginOnly=%s)", loginOnly => {
       const { container } = render(<QuizResumeLinks showLogin loginOnly={loginOnly} />);
       expect(container.querySelector('a[href*="/auth/signin"]') !== null).toBe(guest);
@@ -83,7 +98,10 @@ for (const state of ["authenticated", "loading", "unauthenticated"] as const) {
       const { container } = render(<PurchaseStatus order="ux-order" />);
       await screen.findByText("購入状況を確認できません。再購入せず、もう一度確認してください。");
       expect(container.querySelector('a[href*="/auth/signin"]') !== null).toBe(guest);
-      if (!guest) expect(container.textContent).not.toContain("ログイン");
+      if (!guest) {
+        expect(container.textContent).not.toContain("ログイン");
+        expect(screen.getByRole("button", { name: "購入状況を再確認" })).toBeEnabled();
+      }
     });
     it("guards quiz failure login without changing the return path", async () => {
       const { container } = render(<QuizClient poolIds={["q1"]} initialQuestionId="q1" billingGateEnabled mode="year" backHref="/" />);

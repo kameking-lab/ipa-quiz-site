@@ -4,13 +4,14 @@ import Link from "next/link";
 import { IMPROVEMENT_CHOICES, UnlockFeedbackSchema, type UnlockStatus } from "@/lib/feedback/unlock-contract";
 import { posthogCapture } from "@/lib/posthog";
 import { TurnstileWidget } from "@/components/TurnstileWidget";
-import { SignedOutOnly } from "@/components/account/AccountNavigation";
+import { useAccountStatus } from "@/components/account/AccountNavigation";
 
 const DRAFT_KEY = "feedback-unlock-draft:v1";
 const returnPath = () => window.location.pathname + window.location.search;
 
 export function FeedbackUnlock({ onUnlocked }: { onUnlocked: () => void }) {
   const [status, setStatus] = useState<UnlockStatus | null>(null);
+  const accountStatus = useAccountStatus(!!status?.requiresLogin);
   const [open, setOpen] = useState(false);
   const [choices, setChoices] = useState<string[]>([]);
   const [qualifications, setQualifications] = useState("");
@@ -99,8 +100,8 @@ export function FeedbackUnlock({ onUnlocked }: { onUnlocked: () => void }) {
     } catch { /* Keep the draft visible on connection failure. */ }
   }
   return <div className="space-y-3 text-left">
-    {status?.requiresLogin && <SignedOutOnly><Link href={`/auth/signin?callbackUrl=${encodeURIComponent(window.location.pathname + window.location.search + "#feedback-unlock")}`} onClick={saveDraft} className="inline-flex min-h-11 w-full items-center justify-center rounded-xl border border-border px-4 py-3 text-sm font-semibold">意見を送ってあと10問</Link></SignedOutOnly>}
-    {status?.requiresLogin && open && <SignedOutOnly><button type="button" onClick={checkLogin} className="min-h-11 px-3 text-sm underline">別タブでログインした後に再確認</button></SignedOutOnly>}
+    {status?.requiresLogin && accountStatus === "unauthenticated" && <Link href={`/auth/signin?callbackUrl=${encodeURIComponent(window.location.pathname + window.location.search + "#feedback-unlock")}`} onClick={saveDraft} className="inline-flex min-h-11 w-full items-center justify-center rounded-xl border border-border px-4 py-3 text-sm font-semibold">意見を送ってあと10問</Link>}
+    {status?.requiresLogin && open && <button type="button" onClick={checkLogin} className="min-h-11 px-3 text-sm underline">{accountStatus === "unauthenticated" ? "別タブでログインした後に再確認" : "利用状態を再確認"}</button>}
     {status?.eligible && <button type="button" className="min-h-11 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm font-semibold hover:bg-muted" onClick={() => setOpen(v => !v)} aria-expanded={open} aria-controls="feedback-unlock-form">意見を送ってあと10問</button>}
     {status?.submitted && status.remaining > 0 && <button type="button" onClick={onUnlocked} className="min-h-11 w-full rounded-xl border border-border px-4 py-3 text-sm font-semibold">追加の{status.remaining}問で続ける</button>}
     {error && <p role="alert" className="text-sm text-red-600 dark:text-red-400">{error}</p>}
