@@ -176,7 +176,7 @@ export function StudyRoom({ snapshot, suggestions }: {
             {snapshot.exams.map(row => <li key={row.exam}>{presenceExamName(row.exam)} <strong>{row.count.toLocaleString("ja-JP")}</strong>人</li>)}
           </ul> : <div className="study-room-guidance">
             {introductions.length > 0 && <ul>{introductions.map(item => <li key={item.href}><a href={item.href}>{item.name}<ArrowRight aria-hidden="true" /></a></li>)}</ul>}
-            <a href="#home-directory-title" className="study-text-link">資格から問題を探す<ArrowRight aria-hidden="true" /></a>
+            <a href="/search#home-directory-title" className="study-text-link">資格から問題を探す<ArrowRight aria-hidden="true" /></a>
           </div>}
         </div>}
       </aside>

@@ -94,7 +94,7 @@ describe("global footer / bottom-nav static internal links resolve", () => {
 
   it("every static MobileBottomNav href maps to an existing route (no 404 in bottom nav)", () => {
     const hrefs = staticHrefs("components/MobileBottomNav.tsx");
-    expect(hrefs.length).toBeGreaterThanOrEqual(5);
+    expect(hrefs.sort()).toEqual(["/", "/me", "/search"]);
     expect(deadLinks("components/MobileBottomNav.tsx")).toEqual([]);
   });
 });

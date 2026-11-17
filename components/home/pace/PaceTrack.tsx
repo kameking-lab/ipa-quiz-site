@@ -18,7 +18,7 @@ export function PaceTrack({ plan, percent, target, onOpen }: { plan: PacePlan; p
       <line x1="30" y1="85" x2={x(percent)} y2="85" strokeWidth="5" strokeLinecap="round" className="stroke-emerald-500" />
       {!passing.isDefault && passing.sourceUrl && <g><line x1={x(passing.percent)} x2={x(passing.percent)} y1="80" y2="92" className="stroke-muted-foreground" /><text x={x(passing.percent)} y="106" fontSize="9" textAnchor="middle" className="fill-muted-foreground">{passing.conditions?.includes("IRT") ? "基準点" : "合格ライン"}</text></g>}
       {target !== null && <g><line x1={x(target)} x2={x(target)} y1="39" y2="82" className="stroke-amber-500" /><path d={`M${x(target)} 39 l17 0 -4 7 4 7 -17 0z`} className="fill-amber-400" /><text x={Math.max(58, Math.min(262, x(target)))} y="35" textAnchor="middle" fontSize="10" className="fill-muted-foreground">今日の目標</text></g>}
-      <g className="motion-safe:animate-[bounce_1.8s_infinite] motion-reduce:animate-none"><image href={qualificationStudyArt(plan.exam)} x={x(percent) - 27} y="38" width="54" height="54" /></g>
+      <g className="motion-safe:animate-[bounce_1.8s_infinite] motion-reduce:animate-none"><image href={qualificationStudyArt(plan.exam)} onError={e => { if (e.currentTarget.getAttribute("href") !== "/mascot/chihuahua-study.webp") e.currentTarget.setAttribute("href", "/mascot/chihuahua-study.webp"); }} x={x(percent) - 27} y="38" width="54" height="54" /></g>
       <circle cx="290" cy="85" r="5" className="fill-emerald-600" />
       <text x="30" y="125" fontSize="10" className="fill-muted-foreground">スタート</text><text x="290" y="125" textAnchor="end" fontSize="10" className="fill-muted-foreground">試験日</text>
     </svg>

@@ -8,7 +8,7 @@ import { createActiveClock } from "./activity";
 import { recordLearningAction } from "./pace-storage";
 
 /** Invisible instrumentation; mounting/timers alone never award learning points. */
-export function useQuestionActivity(question: Question | null | undefined, revealed: boolean) {
+export function useQuestionActivity(question: { id: string; exam: string; type: Question["type"] } | null | undefined, revealed: boolean) {
   const session = useRef<{
     questionId: string; attemptId: string; answered: boolean; explanationRead: boolean;
     answerClock: ReturnType<typeof createActiveClock>; explanationClock: ReturnType<typeof createActiveClock> | null;

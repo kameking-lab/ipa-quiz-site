@@ -21,6 +21,8 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
   const [saving, setSaving] = useState(false);
   const [error, setError] = useState("");
   const [scheduleFailed, setScheduleFailed] = useState(false);
+  const [weekday, setWeekday] = useState(30);
+  const [holiday, setHoliday] = useState(60);
   useEffect(() => { if (open) setExam(initialExam); }, [open, initialExam]);
   useEffect(() => {
     if (!open) return;
@@ -51,6 +53,7 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
       const now = new Date();
       const plan = createPacePlan({ id: crypto.randomUUID(), exam, sessionId: session?.id ?? null, examDate,
         startDate: japanDate(now) }, catalog, now.toISOString());
+      plan.studyMinutes = { weekday, holiday };
       if (session) plan.registration = { label: session.label, start: session.applicationStart, deadline: session.applicationDeadline,
         resultDate: session.resultDate, sourceUrl: session.sourceUrl, estimated: session.applicationEstimated || session.scheduleStatus === "tentative" };
       if (!savePacePlan(plan)) throw new Error("保存できませんでした。端末の保存設定を確認してください。");
@@ -73,8 +76,9 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
           {manual && <label className="block text-sm font-medium">{session?.scheduleStatus === "ondemand" ? "予約した日・受けたい日" : "受験日"}<input type="date" min={japanDate(new Date())} value={date} onChange={e => setDate(e.target.value)} className="mt-2 min-h-12 w-full min-w-0 rounded-xl border border-border bg-background px-3" /></label>}
           {!manual && <p className="text-sm font-medium">受験日　<time dateTime={examDate}>{examDate}</time>{session?.scheduleStatus === "tentative" ? "（予定）" : ""}</p>}
         </>}
+        <fieldset className="grid grid-cols-2 gap-3"><legend className="mb-2 text-sm font-medium">1日の勉強時間</legend><label className="text-xs text-muted-foreground">平日（分）<input type="number" min={1} max={1440} value={weekday} onChange={e => setWeekday(Number(e.target.value))} className="mt-1 min-h-11 w-full rounded-xl border border-border bg-background px-3 text-base text-foreground" /></label><label className="text-xs text-muted-foreground">休日（分）<input type="number" min={1} max={1440} value={holiday} onChange={e => setHoliday(Number(e.target.value))} className="mt-1 min-h-11 w-full rounded-xl border border-border bg-background px-3 text-base text-foreground" /></label></fieldset>
         {error && <p role="alert" className="text-sm text-destructive">{error}</p>}
-        <Button className="min-h-12 w-full rounded-xl" disabled={loading || saving || !examDate || examDate < japanDate(new Date())} onClick={() => void create()}>{saving ? "作成中…" : "この回で作成"}</Button>
+        <Button className="min-h-12 w-full rounded-xl" disabled={loading || saving || !examDate || examDate < japanDate(new Date()) || !Number.isInteger(weekday) || weekday < 1 || weekday > 1440 || !Number.isInteger(holiday) || holiday < 1 || holiday > 1440} onClick={() => void create()}>{saving ? "作成中…" : "この回で作成"}</Button>
       </div>
     </SheetContent>
   </Sheet>;

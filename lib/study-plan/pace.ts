@@ -22,6 +22,7 @@ export interface PacePlan {
   registration?: { label: string; start: string | null; deadline: string | null; resultDate: string | null; sourceUrl: string | null; estimated: boolean };
   registered?: boolean;
   result?: "passed" | "failed" | "absent";
+  studyMinutes?: { weekday: number; holiday: number };
 }
 const DAY = 86_400_000;
 export function dayNumber(date: string): number | null {
@@ -118,7 +119,8 @@ export function selectTodayQuestions(plan: PacePlan, catalog: readonly PlanQuest
   const latest = latestAnswers(attempts);
   const solved = ids.filter(id => latest.get(id)?.correct);
   const unsolved = new Set(ids.filter(id => !latest.get(id)?.correct));
-  const work = [...new Set([...dueIds, ...(resumeId ? [resumeId] : []), ...ids])].filter(id => unsolved.has(id));
+  const fresh = ids.filter(id => !latest.has(id));
+  const work = [...new Set([...dueIds, ...(resumeId ? [resumeId] : []), ...fresh, ...ids])].filter(id => unsolved.has(id));
   // Keep the batch full for all-correct banks, while preserving the 10% mix when work remains.
   const confirmations = Math.min(solved.length, Math.max(Math.round(count / 10), count - work.length));
   const checks = solved.sort((a, b) => (latest.get(a)?.at ?? 0) - (latest.get(b)?.at ?? 0)).slice(0, confirmations);

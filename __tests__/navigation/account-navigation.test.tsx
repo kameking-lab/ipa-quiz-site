@@ -24,7 +24,7 @@ it("keeps the bottom menu off the logout confirmation", () => {
   expect(screen.queryByRole("navigation", { name: "モバイル底タブ" })).not.toBeInTheDocument();
 });
 
-it.each(["/", "/search", "/e-learning/exams", "/quiz", "/q/ip/2024-cbt/am/q12"])("opens the account from %s with two taps", async pathname => {
+it.each(["/search", "/e-learning/exams", "/quiz", "/q/ip/2024-cbt/am/q12"])("opens the account from %s with two taps", async pathname => {
   state.pathname = pathname;
   render(<AccountNavigationProvider><SiteHeader /></AccountNavigationProvider>);
   fireEvent.click(screen.getByRole("button", { name: "メニューを開く" }));
@@ -35,7 +35,7 @@ it.each(["/", "/search", "/e-learning/exams", "/quiz", "/q/ip/2024-cbt/am/q12"])
   expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
 });
 
-it.each(["/", "/search", "/e-learning/exams"])("offers login to a guest from %s", pathname => {
+it.each(["/search", "/e-learning/exams"])("offers login to a guest from %s", pathname => {
   state.pathname = pathname; state.account = null;
   render(<AccountNavigationProvider><SiteHeader /></AccountNavigationProvider>);
   fireEvent.click(screen.getByRole("button", { name: "メニューを開く" }));
@@ -43,11 +43,16 @@ it.each(["/", "/search", "/e-learning/exams"])("offers login to a guest from %s"
   expect(screen.getByRole("dialog").querySelector('a[href="/account"]')).toBeNull();
 });
 
-it.each(["/", "/search", "/e-learning/exams"])("also exposes account in the bottom menu on %s", pathname => {
+it.each(["/", "/search", "/e-learning/exams"])("opens the personal page from the three bottom tabs on %s", pathname => {
   state.pathname = pathname;
   render(<AccountNavigationProvider><MobileBottomNav /></AccountNavigationProvider>);
-  fireEvent.click(screen.getByRole("button", { name: "メニューを開く" }));
-  expect(screen.getByRole("link", { name: "アカウント" })).toHaveAttribute("href", "/account");
+  expect(screen.getByRole("link", { name: "わたし" })).toHaveAttribute("href", "/me");
+  expect(screen.getByRole("navigation", { name: "モバイル底タブ" }).querySelectorAll("a")).toHaveLength(3);
+});
+it("opens the personal page from the home account icon", () => {
+  state.pathname = "/";
+  render(<AccountNavigationProvider><SiteHeader /></AccountNavigationProvider>);
+  expect(screen.getByRole("link", { name: "わたし・アカウント" })).toHaveAttribute("href", "/me");
 });
 
 it.each([true, false])("has one settings row (signed in: %s)", signedIn => {

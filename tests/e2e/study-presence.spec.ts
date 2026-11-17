@@ -26,7 +26,7 @@ test("VIS3C qualification mascots stay fixed, bounded and lazy on mobile", async
     if (pathname.endsWith("/study-mascots-atlas.webp")) atlasRequests++;
     if (pathname.includes("/study-room-mascots/")) requested.add(pathname);
   });
-  await page.goto("/");
+  await page.goto("/study-room");
   const state = await measured(page, { count: 12, exams: ["ip", "ap", "civil2", "fp3", "takken", "yakuzaishi"].map(exam => ({ exam, count: 2 })) });
   await show(page, state);
   const scene = page.locator(".study-room-scene");
@@ -83,7 +83,7 @@ test("VIS3E away dog occupies clear floor with an empty desk, stays fixed and re
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.addInitScript(() => sessionStorage.setItem("study-room-mascot-visit:v1", "2"));
-  await page.goto("/");
+  await page.goto("/study-room");
   const state = await measured(page, { count: 12, exams: [{ exam: "ip", count: 12 }] });
   await show(page, state);
   const scene = page.locator(".study-room-scene");
@@ -192,7 +192,7 @@ async function expectGuidance(page: Page) {
 }
 test("qualification presence is compact on desktop and mobile and distinguishes zero/failure", async ({ page }) => {
   await page.clock.install();
-  await page.goto("/");
+  await page.goto("/study-room");
   await expectGuidance(page);
   const data = { count: 4, exams: [{ exam: "fe", count: 3 }, { exam: "denko2", count: 1 }] };
   for (const width of [1280, 390, 320]) {
@@ -230,8 +230,8 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
     await expect(region.getByRole("region", { name: "あなたの席", exact: true })).toBeVisible();
     await expect(region.getByRole("link", { name: "ほかの資格を探す", exact: true })).toHaveCount(0);
     await expect(region.getByRole("link", { name: "資格から問題を探す", exact: true })).toBeVisible();
-    await expect(region.getByRole("link", { name: "資格から問題を探す", exact: true })).toHaveAttribute("href", "#home-directory-title");
-    await expect(page.locator("#home-directory-title")).toHaveCount(1);
+    await expect(region.getByRole("link", { name: "資格から問題を探す", exact: true })).toHaveAttribute("href", "/search#home-directory-title");
+    await expect(page.locator("#home-directory-title")).toHaveCount(0);
     const suggestions = region.locator(".study-room-guidance li a");
     await expect(suggestions).toHaveCount(6);
     for (const link of await suggestions.all()) await expect(link).toHaveAttribute("href", /^\/(?!\/)/);
@@ -265,7 +265,7 @@ test("qualification presence is compact on desktop and mobile and distinguishes 
   await expectGuidance(page);
 });
 test("many qualifications stay within a keyboard-scrollable small list", async ({ page }) => {
-  await page.setViewportSize({ width: 320, height: 720 }); await page.goto("/");
+  await page.setViewportSize({ width: 320, height: 720 }); await page.goto("/study-room");
   const codes = ["ip", "sg", "fe", "ap", "st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au", "denko2", "denken3"];
   // parseStudyPresence orders by count descending, then canonical code in English locale.
   // All fixture counts are one: this explicit oracle must not depend on the unsorted input order.

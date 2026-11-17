@@ -15,6 +15,7 @@ export const pacePlanSchema = z.object({
     capturedOn: date, lastExpansionWeek: date, graceUntil: date.nullable() }),
   registration: z.object({ label: z.string(), start: date.nullable(), deadline: date.nullable(), resultDate: date.nullable(), sourceUrl: z.string().url().nullable(), estimated: z.boolean() }).optional(),
   registered: z.boolean().optional(), result: z.enum(["passed", "failed", "absent"]).optional(),
+  studyMinutes: z.object({ weekday: z.number().int().min(1).max(1440), holiday: z.number().int().min(1).max(1440) }).optional(),
 });
 const actionSchema = z.object({ id: z.string().min(1), questionId: z.string().min(1), exam: z.string().min(1), at: z.number().finite(),
   kind: z.enum(["answer", "ai-question", "explanation-read"]), activeMs: z.number().finite().nonnegative().optional(),

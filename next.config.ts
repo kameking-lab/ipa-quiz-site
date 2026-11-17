@@ -132,6 +132,7 @@ const nextConfig: NextConfig = {
     "/*": ["./generated/question-corpus/**/*"],
     "/e-learning/exams": ["./data/exam-library/papers/*.json", "./data/exam-library/presentation/*.json", "./data/exam-library/pe-first/*.json"],
     "/api/home/resume": ["./data/exam-library/pe-first/*.json"],
+    "/api/study-plan/catalog/*": ["./data/exam-library/papers/*.json", "./data/exam-library/pe-first/*.json", "./data/exam-library/presentation/*.json"],
     // Prebuilt copilot index, search docs and sharded questions (pnpm copilot:index:write,
     // run by pnpm build). /api/copilot reads only these in production, not data/questions.
     "/api/copilot": ["./generated/copilot/**/*"],
