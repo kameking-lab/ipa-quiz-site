@@ -129,11 +129,11 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, seatDe
 
   return <div className="mx-auto w-full min-w-0 max-w-3xl space-y-4">
     <header className="flex min-w-0 items-center justify-between gap-2">
-      <h2 id="study-room-title" className="text-xl font-semibold">自習室</h2>
+      <h2 id="study-room-title" className="text-xl font-bold tracking-tight">自習室</h2>
       {filtered && <p data-testid="study-room-total" className="whitespace-nowrap text-sm tabular-nums text-muted-foreground">{current ? "いま" : "前回"}<strong className="ml-1 text-foreground">{filtered.count.toLocaleString("ja-JP")}</strong>人</p>}
     </header>
     <div className="flex min-w-0 items-center justify-between gap-2">
-      <div role="group" aria-label="自習室の資格" className="inline-flex rounded-full bg-muted p-1 text-xs">
+      <div role="group" aria-label="自習室の資格" className="inline-flex rounded-full bg-muted p-1 text-sm font-medium">
         <button type="button" aria-pressed={sameExam} disabled={!selectedExam} onClick={() => setSameExam(true)} className="min-h-11 rounded-full px-3 aria-pressed:bg-background aria-pressed:shadow-sm disabled:opacity-40">同じ資格</button>
         <button type="button" aria-pressed={!sameExam} onClick={() => setSameExam(false)} className="min-h-11 rounded-full px-3 aria-pressed:bg-background aria-pressed:shadow-sm">みんな</button>
       </div>
@@ -141,7 +141,7 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, seatDe
     </div>
     <div ref={sceneRef} data-testid="study-room-scene" data-stage={renderedStage} data-motion-visible={motionVisible} data-art-status={scene.background ? "ready" : "pending"}
       role="group" aria-label="チワワの自習室" tabIndex={-1}
-      className="relative isolate w-full min-w-0 overflow-hidden rounded-2xl border border-border/70 outline-offset-2 focus-visible:outline-2 focus-visible:outline-primary"
+      className="relative isolate w-full min-w-0 overflow-hidden rounded-2xl border border-stone-200 bg-stone-50 outline-offset-2 focus-visible:outline-2 focus-visible:outline-primary dark:border-stone-700 dark:bg-stone-900"
       style={{ aspectRatio: `${scene.width} / ${sceneHeight}` }}>
       {scene.background && backgroundReady && <>
         {/* The approved ar-2 source image and seat coordinates share exactly the same aspect ratio. */}

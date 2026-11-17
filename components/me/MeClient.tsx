@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
@@ -25,6 +25,12 @@ export function MeClient() {
   const [questionLabels, setQuestionLabels] = useState<Record<string, string>>({});
   const [selected, setSelected] = useState<{ date: string; exam?: string | null } | null>(null);
   const [showAll, setShowAll] = useState(false);
+  const calendarScroll = useRef<HTMLDivElement>(null);
+  const calendarEnd = snapshot ? snapshot.now.toDateString() : null;
+  useEffect(() => {
+    const element = calendarScroll.current;
+    if (element) element.scrollLeft = element.scrollWidth;
+  }, [calendarEnd]);
   useEffect(() => {
     let generation = 0;
     const controllers = new Set<AbortController>();
@@ -64,24 +70,26 @@ export function MeClient() {
   const today = records?.calendar.at(-1);
   const todayExamCount = records?.records.find(record => record.date === today?.date && record.exam === exam)?.entries.length ?? 0;
   const opened = selected ? records?.records.filter(record => record.date === selected.date && (selected.exam === undefined || selected.exam === record.exam)) ?? [] : [];
-  return <div className="space-y-7 pb-10">
+  return <div className="space-y-8 pb-10">
     <MePetRoom exam={exam} minutes={records?.minutes ?? 0} todayCount={today?.count ?? 0} todayExamCount={todayExamCount} goal={snapshot?.goal ?? 10} passedExams={snapshot?.passed ?? []} paceBehind={snapshot ? plannedPaceBehind(snapshot.plans, snapshot.history, exam, snapshot.now, metadata) : undefined} />
-    <dl aria-label="学習の数字" className="grid grid-cols-2 gap-y-5 rounded-2xl border border-border bg-card px-3 py-5 sm:grid-cols-4">
+    <dl aria-label="学習の数字" className="grid grid-cols-2 gap-y-6 rounded-2xl border border-border bg-card px-4 py-6 sm:grid-cols-4">
       {([
         ["連続日数", records?.streak, "日"], ["1日平均の問題数", records?.averageQuestions, "問"],
         ["1日平均の分数", records?.averageMinutes, "分"], ["これまでの問題数", records?.total, "問"],
       ] as const).map(([label, value, unit]) => <div key={label} className="text-center"><dt className="mb-1 text-xs text-muted-foreground">{label}</dt><dd className="text-2xl font-bold tabular-nums">{value === undefined ? "—" : number.format(value)}<span className="ml-1 text-xs font-normal text-muted-foreground">{unit}</span></dd></div>)}
     </dl>
     <section aria-labelledby="me-calendar"><div className="mb-3 flex items-center justify-between"><h2 id="me-calendar" className="font-bold">12週間のカレンダー</h2><span className="text-xs tabular-nums text-muted-foreground">{records ? `${shortDate(records.calendar[0].date)}–${shortDate(records.calendar[83].date)}` : ""}</span></div>
-      <div className="flex gap-2"><div aria-hidden="true" className="grid grid-rows-7 gap-1 py-1 text-[10px] leading-none text-muted-foreground">{records?.calendar.slice(0, 7).map(day => <span key={day.date} className="flex items-center">{new Intl.DateTimeFormat("ja", { weekday: "narrow", timeZone: "Asia/Tokyo" }).format(new Date(`${day.date}T12:00:00+09:00`))}</span>)}</div>
-        <div aria-label="日別の学習量" className="grid min-h-32 flex-1 grid-flow-col grid-cols-12 grid-rows-7 gap-1">{records?.calendar.map(day => <button key={day.date} type="button" aria-label={`${day.date} ${day.count}問`} title={`${shortDate(day.date)} · ${day.count}問`} disabled={!records.records.some(record => record.date === day.date)} className={`min-w-0 rounded-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary disabled:cursor-default ${intensity[intensityLevel(day.count)]}`} onClick={() => setSelected({ date: day.date })} />)}</div></div>
+      <div className="flex gap-2"><div aria-hidden="true" className="grid grid-rows-7 gap-1 pb-2 text-xs leading-none text-muted-foreground">{records?.calendar.slice(0, 7).map(day => <span key={day.date} className="flex h-11 items-center">{new Intl.DateTimeFormat("ja", { weekday: "narrow", timeZone: "Asia/Tokyo" }).format(new Date(`${day.date}T12:00:00+09:00`))}</span>)}</div>
+        <div ref={calendarScroll} role="region" aria-label="日別の学習量" tabIndex={0} className="min-w-0 flex-1 overflow-x-auto rounded-lg pb-2 outline-offset-2 focus-visible:outline-2 focus-visible:outline-primary">
+          <div className="grid min-w-[572px] grid-flow-col grid-cols-12 grid-rows-7 gap-1">{records?.calendar.map(day => <button key={day.date} type="button" aria-label={`${day.date} ${day.count}問`} title={`${shortDate(day.date)} · ${day.count}問`} disabled={!records.records.some(record => record.date === day.date)} className={`h-11 min-w-11 rounded-md focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-primary disabled:cursor-default ${intensity[intensityLevel(day.count)]}`} onClick={() => setSelected({ date: day.date })} />)}</div>
+        </div></div>
       <div aria-hidden="true" className="mt-2 flex items-center justify-end gap-1 text-[10px] text-muted-foreground"><span>少</span>{intensity.map(color => <span key={color} className={`size-2.5 rounded-sm ${color}`} />)}<span>多</span></div>
     </section>
     <section aria-labelledby="me-recent"><h2 id="me-recent" className="mb-2 font-bold">最近の記録</h2>
       {records?.records.length === 0 ? <p className="py-5 text-sm text-muted-foreground">まだ記録がありません</p> : <ul className="divide-y divide-border">{(showAll ? records?.records : records?.records.slice(0, 10))?.map(record => <li key={`${record.date}:${record.exam}`}><RecordRow record={record} open={() => setSelected({ date: record.date, exam: record.exam })} /></li>)}</ul>}
       {(records?.records.length ?? 0) > 10 && !showAll ? <button type="button" className="mt-3 min-h-11 w-full rounded-xl text-sm text-muted-foreground hover:bg-muted" onClick={() => setShowAll(true)}>もっと見る</button> : null}
     </section>
-    <nav aria-label="わたしのメニュー" className="flex flex-wrap gap-x-5 gap-y-1 border-t border-border pt-3 text-sm text-muted-foreground"><Link className="inline-flex min-h-11 items-center" href="/account/dashboard">アカウント</Link><Link className="inline-flex min-h-11 items-center" href="/settings">設定</Link><Link className="inline-flex min-h-11 items-center" href="/#home-directory-title">収録資格</Link><Link className="inline-flex min-h-11 items-center" href="/transparency">出典・運営</Link></nav>
+    <nav aria-label="わたしのメニュー" className="flex flex-wrap gap-x-3 gap-y-1 border-t border-border pt-3 text-sm text-muted-foreground"><Link className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg px-2" href="/account/dashboard">アカウント</Link><Link className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg px-2" href="/settings">設定</Link><Link className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg px-2" href="/#home-directory-title">収録資格</Link><Link className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg px-2" href="/transparency">出典・運営</Link></nav>
     <Dialog open={selected !== null} onOpenChange={open => { if (!open) setSelected(null); }}><DialogContent aria-describedby={undefined} className="max-h-[85dvh] overflow-y-auto"><DialogTitle>{selected ? `${shortDate(selected.date)}の記録` : "学習の記録"}</DialogTitle>
       {opened.map(record => <section key={record.exam ?? "unknown"}><h3 className="text-sm font-semibold">{record.exam ? examLabel(record.exam) : "その他"}</h3><ul className="mt-2 divide-y divide-border">{[...record.entries].reverse().map((entry, index) => <li key={`${entry.id}:${entry.at}:${index}`}><Link prefetch={false} href={`/me/review/${encodeURIComponent(entry.id)}`} className="flex min-h-12 items-center gap-3 py-2 text-sm"><span className={entry.correct ? "text-emerald-700 dark:text-emerald-400" : "text-rose-600 dark:text-rose-400"}>{entry.correct ? "正解" : "不正解"}</span><span className="min-w-0 flex-1">{questionLabels[entry.id] ?? `問題${record.entries.length - index}`}</span><ChevronRight className="size-4 shrink-0" /></Link></li>)}</ul></section>)}
     </DialogContent></Dialog>
