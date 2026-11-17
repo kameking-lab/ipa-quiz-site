@@ -58,30 +58,6 @@ export function CloudSyncPanel() {
   return (
     <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
       <div className="space-y-3 p-4 text-sm text-muted-foreground">
-        <p>
-          機種変で履歴が消える心配を、クラウド同期で解決できます。学習履歴・ブックマーク・
-          カスタムタグ・学習計画をバックアップし、別の端末でも同じ状態で続けられます。
-        </p>
-        <ul className="space-y-1 text-xs">
-          <li className="flex items-start gap-1.5">
-            <span aria-hidden="true" className="text-emerald-600 dark:text-emerald-400">✓</span>
-            機種変・買い替えでもデータを引き継げる
-          </li>
-          <li className="flex items-start gap-1.5">
-            <span aria-hidden="true" className="text-emerald-600 dark:text-emerald-400">✓</span>
-            スマホ・PC など複数端末で同じ進捗
-          </li>
-          <li className="flex items-start gap-1.5">
-            <span aria-hidden="true" className="text-emerald-600 dark:text-emerald-400">✓</span>
-            履歴削除やブラウザ初期化に備えたバックアップ
-          </li>
-        </ul>
-        <p className="text-xs">
-          同期は<strong className="text-foreground">任意</strong>です。
-          <strong className="text-foreground">同期しない選択も完全に有効</strong>で、
-          サインインしなくても無料演習と端末内の記録を利用できます。
-        </p>
-
         <ul className="flex flex-wrap gap-1.5">
           {Object.entries(DATA_LABELS).map(([key, label]) => {
             const st = result?.byType[key as keyof typeof result.byType];
@@ -112,9 +88,6 @@ export function CloudSyncPanel() {
 
         {auth === "out" ? (
           <div className="flex flex-col gap-2">
-            <p className="text-xs">
-              クラウド同期にはサインインが必要です（メールのマジックリンク等）。
-            </p>
             <Button asChild variant="primary" size="sm" className="w-fit gap-2">
               <Link href="/auth/signin?callbackUrl=/settings">
                 <LogIn className="h-4 w-4" aria-hidden="true" />

@@ -16,7 +16,6 @@ import {
   Moon,
   Palette,
   RotateCcw,
-  Settings as SettingsIcon,
   Sliders,
   Sun,
   TrendingUp,
@@ -24,7 +23,6 @@ import {
 } from "lucide-react";
 import { Switch } from "@/components/ui/switch";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { useTheme } from "@/components/theme-provider";
 import { useRovingRadioGroup } from "@/lib/a11y/use-roving-radio";
 import { readSettings, writeSettings, type AppSettings } from "@/lib/storage/settings";
@@ -52,10 +50,10 @@ const THEME_OPTIONS: { value: Theme; label: string; icon: React.ReactNode }[] = 
 const SECTIONS = [
   { id: "home-screen", label: "ホーム画面に追加", icon: <Download className="h-3.5 w-3.5" /> },
   { id: "appearance", label: "外観", icon: <Palette className="h-3.5 w-3.5" /> },
-  { id: "quiz-options", label: "クイズオプション", icon: <Sliders className="h-3.5 w-3.5" /> },
+  { id: "quiz-options", label: "出題・演出", icon: <Sliders className="h-3.5 w-3.5" /> },
   { id: "notifications", label: "通知設定", icon: <Bell className="h-3.5 w-3.5" /> },
   { id: "exam-schedule", label: "試験予定", icon: <CalendarClock className="h-3.5 w-3.5" /> },
-  { id: "history", label: "学習履歴管理", icon: <TrendingUp className="h-3.5 w-3.5" /> },
+  { id: "history", label: "学習履歴", icon: <TrendingUp className="h-3.5 w-3.5" /> },
   { id: "cloud-sync", label: "クラウド同期", icon: <Cloud className="h-3.5 w-3.5" /> },
   { id: "api-keys", label: "APIキー管理", icon: <KeyRound className="h-3.5 w-3.5" /> },
 ] as const;
@@ -231,16 +229,9 @@ export default function SettingsPage() {
         </Button>
 
         <header className="mb-6 animate-fade-in">
-          <Badge variant="soft" className="mb-3">
-            <SettingsIcon className="h-3 w-3" />
-            設定
-          </Badge>
           <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            設定とプリファレンス
+            設定
           </h1>
-          <p className="mt-2 text-sm text-muted-foreground">
-            {SECTIONS.length} つのセクションで全機能を一元管理できます。
-          </p>
         </header>
 
         {/* Section nav (anchor links) */}
@@ -275,7 +266,6 @@ export default function SettingsPage() {
             <SectionTitle
               id="appearance"
               icon={<Palette className="h-5 w-5" />}
-              description="アプリ全体の表示テーマ"
             >
               外観
             </SectionTitle>
@@ -316,7 +306,6 @@ export default function SettingsPage() {
             <SectionTitle
               id="quiz-options"
               icon={<Sliders className="h-5 w-5" />}
-              description="出題ロジックと演出のカスタマイズ"
             >
               クイズオプション
             </SectionTitle>
@@ -341,7 +330,7 @@ export default function SettingsPage() {
               </SettingRow>
               <SettingRow
                 label="計算問題のみ"
-                description="isCalculation フラグが付いた問題だけ出題"
+                description="計算が必要な問題だけを出題します"
               >
                 <Switch
                   checked={settings.calculationOnly}
@@ -374,7 +363,6 @@ export default function SettingsPage() {
             <SectionTitle
               id="notifications"
               icon={<Bell className="h-5 w-5" />}
-              description="メール / プッシュ通知の管理"
             >
               通知設定
             </SectionTitle>
@@ -386,14 +374,10 @@ export default function SettingsPage() {
             <SectionTitle
               id="exam-schedule"
               icon={<CalendarClock className="h-5 w-5" />}
-              description="試験日・申込締切は次の資格で確認"
             >
               試験予定
             </SectionTitle>
             <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
-              <p className="mt-2 text-xs text-muted-foreground">
-                資格ごとの試験日と申込締切を確認できます。
-              </p>
               <a href="https://tsugino-shikaku.jp/calendar" target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-sm font-semibold text-primary underline underline-offset-4">次の資格で日程を見る ↗</a>
             </div>
           </section>
@@ -403,14 +387,13 @@ export default function SettingsPage() {
             <SectionTitle
               id="history"
               icon={<TrendingUp className="h-5 w-5" />}
-              description="ブラウザに保存された履歴の管理"
             >
               学習履歴管理
             </SectionTitle>
             <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
               <SettingRow
                 label="学習履歴を記録する"
-                description="OFF にすると回答を localStorage に保存しません（プライバシー重視の方向け）"
+                description="この端末に回答を保存します"
               >
                 <Switch
                   checked={settings.recordHistory}
@@ -475,7 +458,6 @@ export default function SettingsPage() {
             <SectionTitle
               id="cloud-sync"
               icon={<Cloud className="h-5 w-5" />}
-              description="機種変・ブラウザ切替でも履歴を引き継ぐ（任意）"
             >
               クラウド同期
             </SectionTitle>
@@ -487,7 +469,6 @@ export default function SettingsPage() {
             <SectionTitle
               id="api-keys"
               icon={<KeyRound className="h-5 w-5" />}
-              description="過去問AI Public API（β）のキーを発行・管理"
             >
               API キー管理
             </SectionTitle>
@@ -496,10 +477,7 @@ export default function SettingsPage() {
               className="group flex items-center justify-between rounded-2xl border border-border bg-card p-5 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
             >
               <div>
-                <p className="text-sm font-medium text-foreground">API キー管理ページを開く</p>
-                <p className="mt-0.5 text-xs text-muted-foreground">
-                  キーの発行・コピー・無効化が可能です
-                </p>
+                <p className="text-sm font-medium text-foreground">API キー管理</p>
               </div>
               <ArrowRight className="h-4 w-4 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
             </Link>

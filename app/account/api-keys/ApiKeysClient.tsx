@@ -2,11 +2,10 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Copy, ExternalLink, Eye, EyeOff, Key, Plus, Trash2 } from "lucide-react";
+import { Copy, ExternalLink, Eye, EyeOff, Plus, Trash2 } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import {
   appendApiKey,
   deleteApiKey,
@@ -51,21 +50,13 @@ export function ApiKeysClient() {
   }
 
   return (
-    <main className="mx-auto w-full max-w-4xl flex-1 px-4 pb-16 pt-8 sm:px-6 sm:pt-10">
+    <section aria-labelledby="api-keys-title">
       <header className="mb-8">
-        <div className="mb-3 flex items-center gap-1.5">
-          <Badge variant="primary">
-            <Key className="mr-1 h-3 w-3" />
-            API キー管理
-          </Badge>
-        </div>
-        <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+        <h1 id="api-keys-title" className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
           API キー
         </h1>
         <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground">
-          過去問AI Public API（β）で利用するキーを発行・管理できます。
-          現在 β のためキーはお使いのブラウザにのみ保存され、サーバー側で署名検証は行われません。
-          キーは Bearer トークンとしてレート制限の識別子に使われ、IP 単位ではなくキー単位の上限が適用されます。
+          β版のキーはこのブラウザに保存され、レート制限の識別に使われます。サーバーでの署名検証は行われません。
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
           <Button asChild variant="outline" size="sm">
@@ -84,7 +75,7 @@ export function ApiKeysClient() {
             新しいキーを発行
           </CardTitle>
           <CardDescription>
-            キー名は識別用のメモです（例: 「社内研修ボット」「教材自動生成」）。最大 5 件まで保存できます。
+            最大5件まで保存できます。
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -128,7 +119,7 @@ export function ApiKeysClient() {
       {keys.length === 0 ? (
         <Card>
           <CardContent className="p-8 text-center text-sm text-muted-foreground">
-            まだキーが登録されていません。上のフォームから発行してください。
+            登録済みのキーはありません。
           </CardContent>
         </Card>
       ) : (
@@ -200,17 +191,13 @@ export function ApiKeysClient() {
         </ul>
       )}
 
-      <p className="mt-10 text-xs text-muted-foreground">
-        ※ β 版のため、キーはブラウザ localStorage に保存されます。端末を切り替える際は再発行してください。
-        将来的にはアカウント連携（Google/GitHub ログイン）でクラウド保存に対応予定です。
-      </p>
 
       {/* コピー成功はボタン文言が「コピー済」へ変わるだけでは SR に告知され
           ない(WCAG 4.1.3)。polite live region で告知する。 */}
       <span role="status" aria-live="polite" className="sr-only">
         {copiedId ? "API キーをコピーしました" : ""}
       </span>
-    </main>
+    </section>
   );
 }
 

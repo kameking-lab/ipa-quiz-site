@@ -3,14 +3,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { auth } from "@/lib/auth";
 import { authConfig } from "@/lib/auth/config";
-import { MONTHLY_PUBLIC_OFFER } from "@/lib/billing/subscription/public-offer";
 import { redirect } from "next/navigation";
-import {
-  AlertCircle,
-  Cloud,
-  ShieldCheck,
-} from "lucide-react";
-import { Badge } from "@/components/ui/badge";
+import { AlertCircle } from "lucide-react";
 import { SignInButtons } from "./SignInButtons";
 import { EmailSignInForm } from "./EmailSignInForm";
 import { AppReviewSignInForm } from "./AppReviewSignInForm";
@@ -82,19 +76,11 @@ export default async function SignInPage({
       <div className="relative w-full max-w-md">
         {/* Hero */}
         <div className="mb-8 text-center">
-          {forPurchase ? <><PurchaseSignInBeacon /><span data-purchase-focus hidden /></> : <Badge variant="success" className="mb-4">
-            無料の学習機能と月額プラン
-          </Badge>}
+          {forPurchase && <><PurchaseSignInBeacon /><span data-purchase-focus hidden /></>}
           <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-            {forPurchase ? "ログインして決済へ" : <><span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
-              過去問AI
-            </span>
-            {" "}にログイン</>}
+            {forPurchase ? "ログインして決済へ" : "過去問AIにログイン"}
           </h1>
-          {!forPurchase && <p className="mx-auto mt-3 max-w-sm text-pretty text-sm leading-relaxed text-muted-foreground">
-            <>無料の連続演習はログインなしでも1日{MONTHLY_PUBLIC_OFFER.freeDaily}問まで利用できます。履歴のクラウド同期などにはログインをご利用ください。
-            月額{MONTHLY_PUBLIC_OFFER.priceYen}円（税込）の有料会員プランにもログインが必要です。</>
-          </p>}
+
         </div>
 
         {/* Card */}
@@ -143,7 +129,7 @@ export default async function SignInPage({
                 </strong>
               </p>
               <p className="text-xs">
-                現在、月額プランの購入は開始していません。
+                ログインを利用できません。
               </p>
               <Link
                 href="/about"
@@ -154,22 +140,6 @@ export default async function SignInPage({
             </div>
           )}
         </div>
-
-        {/* Benefit pills */}
-        {!forPurchase && <div className="mt-6 grid grid-cols-1 gap-2 text-xs sm:grid-cols-3">
-          <BenefitPill
-            icon={<Cloud className="h-3.5 w-3.5" />}
-            label="履歴クラウド同期"
-          />
-          <BenefitPill
-            icon={<Cloud className="h-3.5 w-3.5" />}
-            label="無料枠と月額プランをご用意"
-          />
-          <BenefitPill
-            icon={<ShieldCheck className="h-3.5 w-3.5" />}
-            label="アカウントで学習を管理"
-          />
-        </div>}
 
         {/* Legal */}
         <p className="mt-6 text-center text-[11px] leading-relaxed text-muted-foreground">
@@ -191,20 +161,5 @@ export default async function SignInPage({
         </p>
       </div>
     </main></NativeSignInBoundary>
-  );
-}
-
-function BenefitPill({
-  icon,
-  label,
-}: {
-  icon: React.ReactNode;
-  label: string;
-}) {
-  return (
-    <div className="flex items-center justify-center gap-1.5 rounded-full border border-border bg-card px-3 py-1.5 text-muted-foreground shadow-sm">
-      <span className="text-primary">{icon}</span>
-      <span>{label}</span>
-    </div>
   );
 }
