@@ -8,6 +8,7 @@ import { createPacePlan } from "@/lib/study-plan/pace";
 import { savePacePlan } from "@/lib/study-plan/pace-storage";
 import { loadPlanCatalog } from "@/lib/study-plan/client";
 import { japanDate } from "@/lib/home/featured-exams";
+import styles from "./HomePace.module.css";
 
 export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCreated }: {
   open: boolean; onOpenChange: (open: boolean) => void; items: readonly HomeDirectoryItem[];
@@ -62,7 +63,7 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
     finally { setSaving(false); }
   }
   return <Sheet open={open} onOpenChange={onOpenChange}>
-    <SheetContent side="bottom" aria-describedby={undefined} className="mx-auto max-h-[min(90dvh,calc(100dvh-var(--safe-top)-1rem))] max-w-[640px] overflow-y-auto pb-[max(1.5rem,var(--safe-bottom))]">
+    <SheetContent side="bottom" aria-describedby={undefined} className={`${styles.sheet} mx-auto max-h-[min(90dvh,calc(100dvh-var(--safe-top)-1rem))] max-w-[640px] overflow-y-auto pb-[max(1.5rem,var(--safe-bottom))]`}>
       <SheetHeader><SheetTitle>学習計画を作成</SheetTitle></SheetHeader>
       <div className="mt-6 space-y-5">
         <label className="block text-sm font-medium">受ける資格<select className="mt-2 min-h-12 w-full rounded-xl border border-border bg-background px-3" value={exam} onChange={e => setExam(e.target.value)}>{items.map(item => <option key={item.key} value={item.key}>{item.name}</option>)}</select></label>
