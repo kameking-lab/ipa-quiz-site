@@ -90,7 +90,7 @@ describe("EssayEditor evaluation side effects", () => {
     fireEvent.click(screen.getByRole("button", { name: "AI に採点してもらう" }));
     await waitFor(() => expect(fetcher).toHaveBeenCalled());
     expect(confirm).not.toHaveBeenCalled();
-    await screen.findByRole("alert");
+    await screen.findByText("採点に失敗しました（HTTP 503）");
     vi.restoreAllMocks(); vi.unstubAllGlobals();
   });
 

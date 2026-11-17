@@ -26,6 +26,7 @@ test("home, question, result, personal records and settings remain connected", a
   // A single question keeps this test independent of the random session order.
   await start.click();
   await expect(page.getByRole("radio").first()).toBeVisible({ timeout: 120_000 });
+  await page.evaluate(() => localStorage.clear());
   await page.goto("/");
   await expect(start).toBeVisible();
   await shot("home");
@@ -62,6 +63,7 @@ test("retired entry URLs redirect permanently and preserve exam context", async 
     ["/account/study-plan", "/study-plan"],
     ["/quiz/review", "/review"],
     ["/demo/afternoon", "/demo/essay-grading"],
+    ["/features/ai-explanation", "/features/copilot"],
   ]) {
     const query = "?exam=ip&returnTo=%2Fip";
     const response = await request.get(source + query, { maxRedirects: 0 });

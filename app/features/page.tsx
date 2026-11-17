@@ -17,7 +17,7 @@ const FEATURES_DESCRIPTION =
 const FEATURES_OG_URL = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
   type: "feature",
   title: "機能特集",
-  body: "AIコパイロット・午後採点・模試・学習計画など独自機能を一望。",
+  body: "問題への質問・論述の見直し・模試・学習計画の使い方。",
 }).toString()}`;
 
 export const metadata: Metadata = {
@@ -74,9 +74,6 @@ export default function FeaturesIndexPage() {
       </nav>
 
       <header className="mb-8">
-        <Badge variant="soft" className="mb-3">
-          差別化機能
-        </Badge>
         <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
           学習機能
         </h1>

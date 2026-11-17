@@ -173,7 +173,7 @@ export default function EssayHomePage() {
           AI 論述添削 <span className="text-sky-600 dark:text-sky-400">（午後II）</span>
         </h1>
         <p className="mx-auto max-w-2xl text-sm leading-relaxed text-zinc-600 dark:text-zinc-400 sm:text-base">
-          高度試験の合否を分ける論述を、AI が学習用の「適合度／論理性／具体性／業種事例」の 4 観点で評価。
+          書いた論述を、学習用の「適合度／論理性／具体性／業種事例」の 4 観点で評価。
           設問ア・イ・ウそれぞれに、良かった点・改善点・足りなかった要素を提示します。
         </p>
         <p className="mx-auto mt-2 max-w-2xl text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">

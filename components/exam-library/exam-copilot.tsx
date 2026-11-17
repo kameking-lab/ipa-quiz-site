@@ -90,6 +90,7 @@ export function ExamLibraryCopilot({ examId, questionId, selectedChoice }: {
       </button>
       {open ? (
         <div className="mt-3 rounded-xl border border-sky-300 bg-white p-3 text-slate-950 dark:border-sky-700 dark:bg-slate-950 dark:text-white">
+          <p className="text-sm leading-6">問題と公表元の資料を参照して回答します。AIの説明は公式見解ではありません。</p>
           {messages.length > 0 ? (
             <ol aria-label="AIとの対話" className="mt-3 space-y-3">
               {messages.map((message, index) => (

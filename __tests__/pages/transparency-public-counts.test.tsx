@@ -8,7 +8,6 @@ import { getHomeDirectory } from "@/lib/home/home-directory";
 // Keep the real pages, HomeHero and published directory. Unrelated interactive
 // widgets are omitted so this server-page regression needs no browser services.
 vi.mock("@/components/ChihuahuaMascot", () => ({ ChihuahuaMascot: () => null }));
-vi.mock("@/components/home/landing/HomeQuestionPreview", () => ({ HomeQuestionPreview: () => null }));
 vi.mock("@/components/home/landing/HomeQualificationFinder", () => ({ HomeQualificationFinder: () => null }));
 vi.mock("@/components/home/landing/HomeDirectory", () => ({ HomeDirectory: () => null }));
 vi.mock("@/components/home/landing/HomeScheduleLink", () => ({ HomeScheduleLink: () => null }));
