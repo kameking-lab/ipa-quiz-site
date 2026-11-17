@@ -256,14 +256,14 @@ function FilterButton({
       aria-pressed={active}
       onClick={onClick}
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium transition-colors",
+        "inline-flex min-h-11 items-center gap-1.5 rounded-xl border px-3 py-2 text-sm font-medium transition-colors",
         active
           ? "border-primary/40 bg-primary-soft text-primary-soft-foreground"
           : "border-border bg-card text-muted-foreground hover:border-primary/30 hover:bg-muted",
       )}
     >
       <span>{label}</span>
-      <span className="text-[10px] tabular-nums opacity-70">{count}</span>
+      <span className="text-xs tabular-nums">{count}</span>
     </button>
   );
 }

@@ -117,7 +117,7 @@ export default function BookmarksPage() {
       />
       {/* Header */}
       <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <h1 className="flex items-center gap-2 text-xl font-bold text-zinc-900 dark:text-zinc-50">
+        <h1 className="flex items-center gap-2 text-2xl font-bold leading-snug text-zinc-900 dark:text-zinc-50">
           <Bookmark
             aria-hidden="true"
             className="h-5 w-5 text-blue-600 dark:text-blue-400"
@@ -260,7 +260,7 @@ function BookmarkCard({ entry, onTagsChange, onRemove }: BookmarkCardProps) {
   });
 
   return (
-    <div className="rounded-2xl border border-zinc-200 bg-white p-4 dark:border-zinc-700 dark:bg-zinc-900">
+    <div className="rounded-2xl border border-zinc-200 bg-white p-4 sm:p-5 dark:border-zinc-700 dark:bg-zinc-900">
       <div className="mb-2 flex items-start justify-between gap-2">
         <div className="flex flex-wrap items-center gap-1.5 text-xs text-zinc-500 dark:text-zinc-400">
           <span className="rounded-full bg-zinc-100 px-2 py-0.5 font-medium dark:bg-zinc-800">
@@ -273,7 +273,7 @@ function BookmarkCard({ entry, onTagsChange, onRemove }: BookmarkCardProps) {
               {entry.category}
             </span>
           )}
-          <span className="ml-auto text-[10px] text-zinc-400">{date}</span>
+          <span className="ml-auto text-xs text-zinc-500 dark:text-zinc-400">{date}</span>
         </div>
         <button
           type="button"

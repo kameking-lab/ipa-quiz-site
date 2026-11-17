@@ -271,7 +271,7 @@ export default async function ExamTopPage({
             <li>
               <Link
                 href={externalQualification ? "/qualifications" : "/ipa"}
-                className="inline-block py-1.5 hover:underline"
+                className="inline-flex min-h-11 items-center py-1.5 hover:underline"
               >
                 {externalQualification ? "その他資格" : "IPA"}
               </Link>
@@ -284,10 +284,7 @@ export default async function ExamTopPage({
         </nav>
 
         <header className="mb-6">
-          <Badge variant="soft" className="mb-3">
-            {examLabel(code)}
-          </Badge>
-          <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+          <h1 className="text-balance text-2xl font-bold leading-snug tracking-tight text-foreground sm:text-3xl">
             {examLabel(code)} {isIpaTop(code) ? "過去問・解説" : "過去問"}
           </h1>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{summary}</p>
@@ -335,7 +332,7 @@ export default async function ExamTopPage({
           {code === "ahaki-hari-kyu" && <p className="mt-3 text-sm leading-relaxed text-muted-foreground">第34・33回の全360原問から、原文と公式正答を照合した{questions.length}原問を部分収録しています（第34回180問・第33回179問）。午後問161〜170ははり師専用、問171〜180はきゅう師専用で、共通問題とともに一冊の原問として数え、二つの試験へ重複計上していません。未収録1原問は原文の字形または解説の根拠を確認中です。出典：公益財団法人東洋療法研修試験財団。解説は過去問AIの独自作成です。</p>}
           {(code === "ahaki-anma" || code === "ahaki-hari-kyu") && (
             <details className="mt-3 rounded-xl border border-border p-3 text-sm text-muted-foreground">
-              <summary className="cursor-pointer text-foreground">未収録の原問番号</summary>
+              <summary className="min-h-11 cursor-pointer py-2 text-foreground">未収録の原問番号</summary>
               <ul className="mt-2 space-y-1">
                 {ahakiCoverage.sections.filter((section) => section.exam === code).map((section) => (
                   <li key={`${section.exam}-${section.year}-${section.session}`}>

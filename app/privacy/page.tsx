@@ -15,7 +15,6 @@ import {
   ShoppingBag,
   Trash2,
 } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { JsonLd } from "@/components/seo/JsonLd";
@@ -65,17 +64,9 @@ export default function PrivacyPage() {
   return (
     <main className="relative flex-1">
       <JsonLd data={jsonLd} />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 bg-radial-spotlight"
-      />
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-x-0 top-0 h-[420px] bg-grid opacity-30 [mask-image:radial-gradient(60%_50%_at_50%_0%,#000_30%,transparent_70%)]"
-      />
 
-      <div className="relative mx-auto w-full max-w-3xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
-        <Button asChild variant="ghost" size="sm" className="mb-4">
+      <div className="relative mx-auto w-full max-w-2xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
+        <Button asChild variant="ghost" size="sm" className="mb-4 min-h-11 min-w-11">
           <Link href="/">
             <ArrowLeft className="h-4 w-4" />
             戻る
@@ -89,12 +80,8 @@ export default function PrivacyPage() {
           ]}
         />
 
-        <header className="mb-10 animate-fade-in">
-          <Badge variant="soft" className="mb-4">
-            <ShieldCheck className="h-3 w-3" />
-            プライバシー
-          </Badge>
-          <h1 className="text-balance text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+        <header className="mb-8">
+          <h1 className="text-balance text-2xl font-bold leading-snug tracking-tight text-foreground sm:text-3xl">
             プライバシーポリシー
           </h1>
           <p className="mt-3 text-xs text-muted-foreground">最終更新: 2026年11月17日</p>
@@ -104,7 +91,7 @@ export default function PrivacyPage() {
           </p>
         </header>
 
-        <div className="space-y-5">
+        <div className="space-y-0">
           <section
             id="security"
             aria-labelledby="security-heading"
@@ -398,10 +385,10 @@ export default function PrivacyPage() {
         </div>
 
         <div className="mt-10 flex flex-wrap justify-center gap-3">
-          <Button asChild variant="gradient" size="lg">
+          <Button asChild variant="primary" size="lg" className="w-full sm:w-auto">
             <Link href="/">ホームに戻る</Link>
           </Button>
-          <Button asChild variant="outline" size="lg">
+          <Button asChild variant="outline" size="lg" className="w-full sm:w-auto">
             <Link href="/terms">利用規約</Link>
           </Button>
         </div>
@@ -422,19 +409,19 @@ function Section({
   children: React.ReactNode;
 }) {
   return (
-    <section id={number} className="relative scroll-mt-20 overflow-hidden rounded-2xl border border-border bg-card p-6 shadow-sm transition-shadow hover:shadow-md sm:p-7">
+    <section id={number} className="scroll-mt-24 border-b border-border py-6 first:pt-0 last:border-b-0">
       <div className="mb-4 flex items-center gap-3">
         <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-primary-soft text-primary-soft-foreground">
           {icon}
         </span>
         <div className="min-w-0 flex-1">
           <p className="text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-            Section {number}
+            {number}
           </p>
           <h2 className="text-lg font-semibold text-foreground">{title}</h2>
         </div>
       </div>
-      <div className="space-y-3 text-sm leading-relaxed text-muted-foreground">
+      <div className="space-y-4 text-sm leading-7 text-foreground/85 [overflow-wrap:anywhere]">
         {children}
       </div>
     </section>

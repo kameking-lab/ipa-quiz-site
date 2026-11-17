@@ -268,7 +268,7 @@ export default async function ExamYearSeasonPage({
         >
           <ol className="flex flex-wrap items-center gap-1.5">
             <li>
-              <Link href="/" className="inline-block py-1.5 hover:text-foreground hover:underline">
+              <Link href="/" className="inline-flex min-h-11 items-center py-1.5 hover:text-foreground hover:underline">
                 ホーム
               </Link>
             </li>
@@ -276,7 +276,7 @@ export default async function ExamYearSeasonPage({
             <li>
               <Link
                 href={`/${exam}`}
-                className="inline-block py-1.5 hover:text-foreground hover:underline"
+                className="inline-flex min-h-11 items-center py-1.5 hover:text-foreground hover:underline"
               >
                 {examLabel(code)}
               </Link>
@@ -288,12 +288,12 @@ export default async function ExamYearSeasonPage({
           </ol>
         </nav>
 
-        <header className="mb-8 animate-fade-in">
+        <header className="mb-6">
           <Badge variant="soft" className="mb-3">
             {histLabel}
           </Badge>
           <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            <span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
+            <span className="text-primary">
               {label}
             </span>{" "}
             {histLabel}

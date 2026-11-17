@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 
 export const metadata: Metadata = {
   title: "更新履歴",
@@ -49,7 +48,6 @@ export default function UpdatesPage() {
         </Link>
       </Button>
 
-      <Badge variant="success" className="mb-3">教育貢献プロジェクト</Badge>
       <h1 className="mb-2 text-2xl font-bold">更新履歴</h1>
       <p className="mb-8 text-sm text-zinc-600 dark:text-zinc-400">
         過去問 AI の主な更新・改善履歴です。詳細な活動状況は{" "}
@@ -59,17 +57,17 @@ export default function UpdatesPage() {
         をご覧ください。
       </p>
 
-      <div className="space-y-8">
+      <div className="space-y-8 border-l border-border pl-5">
         {UPDATES.map((update) => (
           <section key={update.date}>
-            <div className="mb-3 flex items-baseline gap-3">
+            <div className="mb-3 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-3">
               <span className="text-xs font-medium text-zinc-500 dark:text-zinc-400">{update.date}</span>
               <h2 className="text-sm font-semibold text-zinc-900 dark:text-zinc-100">{update.label}</h2>
             </div>
-            <ul className="space-y-1 text-sm text-zinc-700 dark:text-zinc-300">
+            <ul className="space-y-2 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
               {update.items.map((item) => (
                 <li key={item} className="flex gap-2">
-                  <span className="mt-0.5 shrink-0 text-zinc-400">·</span>
+                  <span aria-hidden="true" className="mt-0.5 shrink-0 text-zinc-400">·</span>
                   <span>{item}</span>
                 </li>
               ))}

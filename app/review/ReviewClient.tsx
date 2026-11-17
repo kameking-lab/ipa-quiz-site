@@ -373,11 +373,11 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
               <div ref={answerFocusRef} tabIndex={-1} className="mb-2 scroll-mt-24 font-semibold text-emerald-800 outline-none dark:text-emerald-300">
                 正解: {correctAnswer}
               </div>
-              <p className="text-sm leading-relaxed text-emerald-700 dark:text-emerald-400">
+              <p className="text-sm leading-7 text-foreground">
                 {displayQuestionExplanation(q.exam, q.explanation)}
               </p>
               {nextInterval && (
-                <p className="mt-2 text-xs text-emerald-600 dark:text-emerald-500">
+                <p className="mt-2 text-xs text-muted-foreground">
                   正解すると次回は {nextInterval} 日後
                 </p>
               )}
