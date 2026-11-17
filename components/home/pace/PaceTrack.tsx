@@ -12,14 +12,14 @@ export function PaceTrack({ plan, percent, target, onOpen }: { plan: PacePlan; p
   const at = (date: string) => span > 0 ? Math.max(0, Math.min(100, (Date.parse(date) - Date.parse(plan.startDate)) * 100 / span)) : 0;
   const bandStart = start ? at(start) : 0, bandEnd = deadline ? at(deadline) : 0;
   return <button type="button" onClick={onOpen} aria-label="学習計画の詳細を開く" className="block w-full rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-    <svg viewBox="0 0 320 152" className="w-full overflow-visible" role="img" aria-label={`進み具合${Math.round(percent)}%、${target === null ? "受験日未設定" : `今日の目標${Math.round(target)}%`}`}>
+    <svg viewBox="0 0 320 166" className="mx-auto h-[174px] w-full overflow-visible sm:h-[192px]" role="img" aria-label={`進み具合${Math.round(percent)}%、${target === null ? "受験日未設定" : `今日の目標${Math.round(target)}%`}`}>
       {deadline && bandEnd > bandStart && <g><rect x={x(bandStart)} y="12" width={x(bandEnd) - x(bandStart)} height="15" rx="7" className="fill-amber-100 dark:fill-amber-900" /><text x={(x(bandStart) + x(bandEnd)) / 2} y="23" textAnchor="middle" fontSize="9" className="fill-amber-800 dark:fill-amber-200">申込{plan.registration?.estimated ? "（予定）" : "期間"}</text></g>}
       <line x1="30" y1="105" x2="290" y2="105" strokeWidth="5" strokeLinecap="round" className="stroke-muted" />
-      <line x1="30" y1="105" x2={x(percent)} y2="105" strokeWidth="5" strokeLinecap="round" className="stroke-emerald-500" />
+      <line x1="30" y1="105" x2={x(percent)} y2="105" strokeWidth="5" strokeLinecap="round" className="stroke-primary" />
       {!passing.isDefault && passing.sourceUrl && <g><line x1={x(passing.percent)} x2={x(passing.percent)} y1="100" y2="112" className="stroke-muted-foreground" /><text x={x(passing.percent)} y="126" fontSize="9" textAnchor="middle" className="fill-muted-foreground">{passing.conditions?.includes("IRT") ? "基準点" : "合格ライン"}</text></g>}
       {target !== null && <g><line x1={x(target)} x2={x(target)} y1="39" y2="102" className="stroke-amber-500" /><path d={`M${x(target)} 39 l17 0 -4 7 4 7 -17 0z`} className="fill-amber-400" /><text x={Math.max(58, Math.min(262, x(target)))} y="35" textAnchor="middle" fontSize="10" className="fill-muted-foreground">今日の目標</text></g>}
-      <g className="origin-center [transform-box:fill-box] motion-safe:animate-[reward-rest_1.8s_ease-in-out_infinite] motion-reduce:animate-none"><image href={qualificationStudyArt(plan.exam)} onError={e => { if (e.currentTarget.getAttribute("href") !== "/mascot/chihuahua-study.webp") e.currentTarget.setAttribute("href", "/mascot/chihuahua-study.webp"); }} x={x(percent) - 27} y="58" width="54" height="54" /></g>
-      <circle cx="290" cy="105" r="5" className="fill-emerald-600" />
+      <g className="origin-center [transform-box:fill-box] motion-safe:animate-[reward-rest_1.8s_ease-in-out_infinite] motion-reduce:animate-none"><image href={qualificationStudyArt(plan.exam)} onError={e => { if (e.currentTarget.getAttribute("href") !== "/mascot/chihuahua-study.webp") e.currentTarget.setAttribute("href", "/mascot/chihuahua-study.webp"); }} x={x(percent) - 42} y="28" width="84" height="84" /></g>
+      <path d="M290 105V77m0 0c6-5 12 5 18 0v14c-6 5-12-5-18 0" fill="none" strokeWidth="2" className="stroke-primary" />
       <text x="30" y="145" fontSize="10" className="fill-muted-foreground">スタート</text><text x="290" y="145" textAnchor="end" fontSize="10" className="fill-muted-foreground">試験日</text>
     </svg>
   </button>;

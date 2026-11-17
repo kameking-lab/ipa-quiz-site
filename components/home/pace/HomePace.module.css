@@ -1,0 +1,31 @@
+.card {
+  border-radius: 28px;
+  box-shadow: 0 8px 32px #18181b04;
+}
+.content { padding: 24px; }
+.countdown {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-top: 20px;
+  color: var(--muted-foreground);
+  font-size: 14px;
+}
+.countdown > span {
+  color: var(--foreground);
+  font-size: 56px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -.05em;
+  font-variant-numeric: tabular-nums;
+}
+.primary {
+  min-height: 56px;
+  border-radius: 16px;
+  background: var(--primary);
+  color: var(--primary-foreground);
+  font-weight: 600;
+  box-shadow: 0 5px 16px #4f46e51a;
+}
+.primary:hover { background: var(--primary-hover); }
+@media (min-width: 640px) { .content { padding: 32px; } }
