@@ -3,7 +3,7 @@ import { defaultPracticeSession, parsePracticeSession, PRACTICE_SESSIONS } from 
 import { PracticeSessionTabs } from "@/components/quiz/PracticeSessionTabs";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Tags } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { ALL_QUESTIONS } from "@/data/questions";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -97,22 +97,9 @@ export default async function TopicModePage({
 
         {exam !== "ap" && <PracticeSessionTabs sessions={[...sessions]} selected={session} />}
         <header className="mb-8 animate-fade-in">
-          <Badge variant="soft" className="mb-3">
-            <Tags className="h-3 w-3" />
-            分野別 / {label}
-          </Badge>
           <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            <span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
-              {label} 分野別出題
-            </span>
+            {label} 分野別出題
           </h1>
-          <p className="mt-3 max-w-xl text-pretty text-sm text-muted-foreground sm:text-base">
-            {isApPool
-              ? "応用情報の出題範囲を AP・FE・IP・SG から横断学習できます。同じ知識領域を異なる難度・出題形式で攻略。"
-              : exam === "kenchiku-setsubishi"
-              ? "建築一般知識・建築法規・建築設備から科目を選んで過去問を学習できます。"
-              : `セキュリティ・ネットワーク・データベース・経営戦略など、分野を絞って${label}の過去問を学習できます。`}
-          </p>
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <Badge variant="outline">{categoryCount} 分野</Badge>
             <Badge variant="outline">合計 {total.toLocaleString("ja-JP")} 問</Badge>

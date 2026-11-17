@@ -1,7 +1,7 @@
 import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, ArrowRight, Calendar } from "lucide-react";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 import { ALL_QUESTIONS } from "@/data/questions";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -127,18 +127,9 @@ export default async function YearModePage({
         </Button>
 
         <header className="mb-8 animate-fade-in">
-          <Badge variant="soft" className="mb-3">
-            <Calendar className="h-3 w-3" />
-            年度別 / {label}
-          </Badge>
           <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            <span className="bg-gradient-to-r from-primary via-violet-500 to-fuchsia-500 bg-clip-text text-transparent">
-              {label} 年度別出題
-            </span>
+            {label} 年度別出題
           </h1>
-          <p className="mt-3 max-w-xl text-pretty text-sm text-muted-foreground sm:text-base">
-            {label}の過去問を年度・科目ごとに選んで学習できます。
-          </p>
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <Badge variant="outline">{items.length} 期分</Badge>
             <Badge variant="outline">合計 {total.toLocaleString("ja-JP")} 問</Badge>

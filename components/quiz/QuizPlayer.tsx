@@ -35,7 +35,7 @@ import { createHistoryStore } from "@/lib/storage/history";
 import { writeLastQuestion } from "@/lib/storage/last-question";
 
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Timer, Check, Copy, MessageCircle, Star, BookOpen } from "lucide-react";
+import { ArrowLeft, Timer, Check, Copy, MessageCircle } from "lucide-react";
 import { examLabel } from "@/lib/utils";
 import { comboLevel, readMotivationSettings } from "@/lib/motivation/combo";
 import { playPiroro } from "@/lib/motivation/sound";
@@ -661,17 +661,6 @@ function ScoredQuizPlayer({
 
       </div>
 
-      {revealed && (
-        <nav aria-label="解答後の学習操作" className="fixed inset-x-0 bottom-0 z-30 border-t border-border bg-background px-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] pt-3 shadow-lg">
-          <div className="mx-auto grid max-w-2xl grid-cols-2 gap-2">
-            <Button variant="outline" className="min-h-12 px-2 text-xs sm:text-sm" disabled={!onRelated} onClick={() => {
-              setShowRelated(true);
-              requestAnimationFrame(() => { relatedRef.current?.focus({ preventScroll: true }); relatedRef.current?.scrollIntoView({ block: "center", behavior: "instant" }); });
-            }}><BookOpen className="h-4 w-4" aria-hidden="true" />関連問題</Button>
-            <Button variant="outline" className="min-h-12 px-2 text-xs sm:text-sm" aria-pressed={starred} onClick={toggleStar}><Star className="h-4 w-4" aria-hidden="true" fill={starred ? "currentColor" : "none"} />{starred ? "復習登録済み" : "復習に登録"}</Button>
-          </div>
-        </nav>
-      )}
 
       {!quiet && burst && <FireworksBurst
         active
@@ -805,7 +794,7 @@ export function QuizCompleteScreen({
     "inline-flex items-center gap-1.5 rounded-full border border-zinc-300 bg-white px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800";
 
   return (
-    <div className="flex min-h-[100dvh] flex-col items-center justify-center bg-zinc-50 px-4 py-12 dark:bg-zinc-950">
+    <div className="flex flex-1 flex-col items-center justify-center bg-zinc-50 px-4 py-12 dark:bg-zinc-950">
       <div className="w-full max-w-md rounded-3xl border border-zinc-200 bg-white p-8 shadow-lg dark:border-zinc-800 dark:bg-zinc-900">
         <div className="mb-6 text-center">
           <ChihuahuaMascot pose="celebrate" size={100} className="mx-auto mb-2" />

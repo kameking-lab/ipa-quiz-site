@@ -13,10 +13,7 @@ export default async function ReviewPage({ searchParams }: { searchParams: Promi
   return (
     <main className="mx-auto w-full max-w-2xl px-4 py-10">
       <div className="mb-6">
-        <h1 className="text-2xl font-bold tracking-tight">間隔反復学習</h1>
-        <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
-          エビングハウスの忘却曲線に基づいて、今日復習すべき問題を自動表示します。
-        </p>
+        <h1 className="text-2xl font-bold tracking-tight">今日の復習</h1>
       </div>
       <ReviewClient key={sp.exam ?? "all"} examFromQuery={sp.exam} returnTo={sp.returnTo} />
     </main>

@@ -125,10 +125,9 @@ export function ExplanationCard({
         </div>
       </div>
 
-      <div className="sticky top-24 z-20 -mx-4 mb-4 space-y-2 border-y border-border bg-background px-4 py-2 shadow-sm sm:static sm:mx-0 sm:rounded-xl sm:border sm:shadow-none">
+      <div className="mb-5 space-y-3">
         <LearningPetCorner qualificationId={question.exam} questionId={question.id} compact />
-        <div className="flex items-center justify-between gap-3">
-        <span className="text-sm font-semibold">{isCorrect ? "正解です" : `正解は ${answerLabel}`}</span>
+        <div className="flex justify-end">
         <Button variant="primary" size="lg" onClick={onNext} className="min-h-11 shrink-0 font-semibold">
           {nextLabel}
           <ArrowRight className="h-4 w-4" />

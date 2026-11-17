@@ -215,7 +215,7 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
             <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
               {isFreshUser
                 ? "問題を解くと自動で復習スケジュールに追加されます。"
-                : "良いペースです。次回までゆっくり休みましょう。"}
+                : null}
             </p>
 
             {!isFreshUser && (
@@ -242,14 +242,6 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
             )}
           </CardContent>
         </Card>
-
-        <div className="rounded-xl border border-sky-200 bg-sky-50 p-4 text-sm dark:border-sky-900 dark:bg-sky-950/30">
-          <p className="font-medium text-sky-800 dark:text-sky-300">間隔反復学習とは</p>
-          <p className="mt-1 text-sky-700 dark:text-sky-400">
-            エビングハウスの忘却曲線に基づき、1日→3日→7日→14日→30日と
-            復習間隔を伸ばすことで、効率的に長期記憶に定着させます。
-          </p>
-        </div>
 
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <Button asChild variant="primary" className="w-full">

@@ -21,7 +21,7 @@ import { Badge } from "@/components/ui/badge";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { examLabel, EXAM_LABELS } from "@/lib/utils";
 import { useRovingRadioGroup } from "@/lib/a11y/use-roving-radio";
-import { Loader2, Timer, ChevronDown, BarChart3 } from "lucide-react";
+import { Loader2, Timer, ChevronDown } from "lucide-react";
 import { MockExamRunner } from "./MockExamRunner";
 
 const AVAILABLE_EXAMS = Object.keys(MOCK_EXAM_CONFIGS) as MockExamCode[];
@@ -162,7 +162,7 @@ function SupportedMockExamLanding({ initialExam, returnTo, countFromQuery }: { i
           <Timer className="h-5 w-5 text-sky-500" />
           <Badge variant="outline">{exam === "sg" ? "科目Aの収録問題で演習" : "本番形式"}</Badge>
         </div>
-        <h1 className="text-2xl font-bold">{exam === "sg" ? "科目A 演習 — 収録問題で実力チェック" : "模試モード — 本番形式で実力チェック"}</h1>
+        <h1 className="text-2xl font-bold">{exam === "sg" ? "科目Aの演習" : "模試"}</h1>
         <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
           {exam === "sg" ? "演習対象の科目A 37問で練習します。科目Bは含みません。制限時間120分・正答率60%はこの演習の設定で、本試験全体の再現や合否判定ではありません。" : "本番と同じ問題数・時間配分で挑戦。終了後に学習の目安と分野別分析を表示します。"}
         </p>
@@ -263,7 +263,6 @@ function SupportedMockExamLanding({ initialExam, returnTo, countFromQuery }: { i
             </div>
           </div>
 
-          <ResultPreviewHint />
 
           <div className="mt-5">
             <Button
@@ -502,28 +501,6 @@ function ExamSelector({ exams, current, defaultExam, onSelect }: ExamSelectorPro
             </button>
           );
         })}
-      </div>
-    </div>
-  );
-}
-
-function ResultPreviewHint() {
-  return (
-    <div
-      className="mt-5 flex items-start gap-3 rounded-xl border border-sky-200 bg-sky-50/60 p-3 text-xs text-sky-900 dark:border-sky-900/60 dark:bg-sky-950/30 dark:text-sky-100"
-      aria-label="模試完了後に得られる結果分析の予告"
-    >
-      <BarChart3
-        className="mt-0.5 h-4 w-4 shrink-0 text-sky-500 dark:text-sky-400"
-        aria-hidden="true"
-      />
-      <div className="space-y-1.5">
-        <p className="font-semibold">模試後の結果分析でわかること</p>
-        <ul className="list-disc space-y-0.5 pl-4 leading-relaxed text-sky-800/90 dark:text-sky-200/90">
-          <li>合否判定（合格基準クリアか）</li>
-          <li>分野別正答率・弱点分野の可視化</li>
-          <li>過去の模試結果との成績推移グラフ</li>
-        </ul>
       </div>
     </div>
   );
