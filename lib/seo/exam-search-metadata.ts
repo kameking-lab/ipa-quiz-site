@@ -9,7 +9,8 @@ export function examSearchMetadata(exam: ExamCode, count: number, coverageDescri
   // Preserve scope qualifications rather than implying complete official papers.
   const preserveCoverage = /(?:部分|一部)収録/.test(coverageDescription) || exam === "chosashi";
   const title = `${examLabel(exam)} 過去問 ${preserveCoverage ? "収録" : "全"}${countLabel}問｜無料・解説つき`;
-  if (preserveCoverage) {
+  // These complete papers also carry edition and legal-date scope in their existing summary.
+  if (preserveCoverage || exam === "kanri" || exam === "zoen2") {
     return { title, description: `問題と解説を無料で確認。${coverageDescription}` };
   }
   const years = getQuestionsByExamStrict(exam).map(q => q.year);

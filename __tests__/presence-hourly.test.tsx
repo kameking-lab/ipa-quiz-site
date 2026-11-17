@@ -59,8 +59,9 @@ it("stops while idle and resumes without a catch-up request before the hourly bo
 it("labels a retained historical sample with its original timestamp and never clears learning data",async()=>{
   localStorage.setItem(LS_KEYS.history,"existing-history");render(<TotalAnswerCounter/>);
   const snapshot=measuredPresence(data,Date.now());emit({mode:"measured",snapshot,previous:null});
-  expect(screen.getByLabelText("前回取得時点の学習状況")).toBeInTheDocument();expect(screen.getByTestId("study-room-total")).toHaveTextContent("3人");
+  expect(screen.getByLabelText("いまの学習状況")).toBeInTheDocument();expect(screen.getByTestId("study-room-total")).toHaveTextContent("3人");
   await advance(PRESENCE_REFRESH_MS);emit({mode:"stale",snapshot:null,previous:snapshot,reason:"unavailable"});
+  expect(screen.getByLabelText("前回取得時点の学習状況")).toBeInTheDocument();
   expect(document.querySelector("time")?.getAttribute("datetime")).toBe(snapshot.measuredAt);expect(screen.getByText(/時点/)).toBeInTheDocument();expect(localStorage.getItem(LS_KEYS.history)).toBe("existing-history");
 });
 it("preserves a measured zero but refuses unvalidated error-body counts",()=>{

@@ -19,3 +19,10 @@ export function withoutStudyPlanInstrumentation(source: string): string {
     .replace('                <span ref={explanationEndRef} aria-hidden="true" className="block h-px" />\n', "")
     .replace('            <span ref={endRef} aria-hidden="true" className="block h-px" />\n', "");
 }
+
+/** Strip only LP's separately tested optional installation invitation. */
+export function withoutInstallInvitation(source: string): string {
+  return source.replace(/\r\n/g, "\n")
+    .replace('import { MobileInstallNudge } from "@/components/pwa/MobileInstallNudge";\n', "")
+    .replace('                  afterNavigation={revealed ? <MobileInstallNudge placement="answer" answered={stats.answered} /> : undefined}\n', "");
+}
