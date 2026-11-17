@@ -285,7 +285,8 @@ export default async function ExamTopPage({
 
         <header className="mb-6">
           <h1 className="text-balance text-2xl font-bold leading-snug tracking-tight text-foreground sm:text-3xl">
-            {examLabel(code)} {isIpaTop(code) ? "過去問・解説" : "過去問"}
+            <span className="inline-block max-w-full">{examLabel(code)}</span>{" "}
+            <span className="inline-block">{isIpaTop(code) ? "過去問・解説" : "過去問"}</span>
           </h1>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">無料・登録なしで1日{PLAN_OFFER.freeDaily}問</p>
           {isExamEntryCode(code) && <FirstPracticeEntry exam={code} />}

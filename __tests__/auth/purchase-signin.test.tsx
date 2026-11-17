@@ -3,9 +3,10 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { expect, it, vi } from "vitest";
 vi.mock("next/navigation", () => ({ redirect: vi.fn(() => { throw new Error("redirect"); }) }));
 const m = vi.hoisted(() => ({auth:vi.fn(async ():Promise<unknown> => null)}));
+const providers = vi.hoisted(() => [{ id: "apple" }, { id: "google" }, { id: "nodemailer" }]);
 vi.mock("@/lib/auth", () => ({ auth: m.auth }));
 // Production configures Apple and Google (AUTH_APPLE_ID/SECRET, AUTH_GOOGLE_ID/SECRET) plus email.
-vi.mock("@/lib/auth/config", () => ({ authConfig: { providers: [{ id: "apple" }, { id: "google" }, { id: "nodemailer" }] } }));
+vi.mock("@/lib/auth/config", () => ({ authConfig: { providers } }));
 vi.mock("@/lib/auth/app-review-config", () => ({ appReviewConfig: () => null }));
 import SignInPage from "@/app/auth/signin/page";
 
@@ -34,4 +35,14 @@ it("keeps the ordinary sign-in page (with email and the site footer) for other d
   expect(text(html)).toContain("Appleでサインイン");
   expect(html).not.toContain("data-purchase-focus");
   expect(text(html)).toContain("または");
+});
+
+it("shows the unavailable state when only the hidden review credentials provider is present", async () => {
+  const original = providers.splice(0, providers.length, { id: "credentials" });
+  try {
+    const html = renderToStaticMarkup(await SignInPage({ searchParams: Promise.resolve({ callbackUrl: "/account" }) }));
+    expect(text(html)).toContain("現在ログインを利用できません");
+    expect(text(html)).not.toContain("Google でログイン");
+    expect(text(html)).not.toContain("App Review");
+  } finally { providers.splice(0, providers.length, ...original); }
 });

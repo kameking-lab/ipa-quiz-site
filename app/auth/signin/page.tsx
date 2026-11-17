@@ -57,7 +57,8 @@ export default async function SignInPage({
   const nativeLogin=callbackUrl.startsWith("/api/mobile/auth/complete?");
 
   const providerIds = new Set(
-    authConfig.providers.map((p) => (typeof p === "function" ? p().id : p.id)).filter(id => id !== "app-review"),
+    authConfig.providers.map((p) => (typeof p === "function" ? p().id : p.id))
+      .filter(id => id !== "app-review" && id !== "credentials"),
   );
 
   return (
