@@ -25,7 +25,7 @@ it("allows a different email, expired memberships and the current account withou
 it("normalizes only whitespace/case and uses a parameterized lookup", async () => {
   const f = fixture([]); f.current.email = "  Owner+tag@Example.Invalid  ";
   await f.guard.assertCanPurchase("current");
-  expect(f.query.mock.calls[1][1]).toEqual(["owner+tag@example.invalid"]);
+  expect(f.query.mock.calls[1][1][0]).toBe("owner+tag@example.invalid");
   expect(f.query.mock.calls[1][0]).not.toContain("owner+tag");
 });
 it("excludes Apple relay addresses before verification or a cross-account lookup", async () => {

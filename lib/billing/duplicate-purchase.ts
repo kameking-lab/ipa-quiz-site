@@ -1,7 +1,7 @@
 import "server-only";
 import { BillingError } from "./domain";
 import type { SqlSession } from "./postgres-store";
-import { normalizedPurchaseEmail, privateRelayEmail } from "@/lib/auth/purchase-email";
+import { normalizedPurchaseEmail, privateRelayEmail, PURCHASE_EMAIL_WHITESPACE } from "@/lib/auth/purchase-email";
 
 type Member = { id: string; email: string | null; emailVerified: Date | null; providers: string[] };
 type Rights = { stripe: boolean; appStore: boolean };
@@ -20,7 +20,7 @@ export class DuplicatePurchaseGuard {
     }
     return this.db.query<Member>(`SELECT u.id,u.email,u."emailVerified",
       ARRAY(SELECT a.provider FROM "Account" a WHERE a."userId"=u.id AND a.provider IN ('google','apple') ORDER BY a.provider) AS providers
-      FROM "User" u WHERE lower(btrim(u.email))=$1 ORDER BY u.id`, [normalizedPurchaseEmail(current.email)]);
+      FROM "User" u WHERE lower(btrim(u.email,$2))=$1 ORDER BY u.id`, [normalizedPurchaseEmail(current.email), PURCHASE_EMAIL_WHITESPACE]);
   }
 
   async assertCanPurchase(userId: string) {

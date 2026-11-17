@@ -64,6 +64,10 @@ it.each(["stripe", "appStore"])("matches trim/case differences and blocks a diff
   if (source === "stripe") await stripePaid(); else await appPaid();
   await expect(guard.assertCanPurchase("alice")).rejects.toMatchObject({ code: "duplicate_purchase_google" });
 });
+it("normalizes tabs, newlines and Unicode whitespace on the candidate account too",async()=>{
+  await appPaid();await pg.query('UPDATE "User" SET email=$1 WHERE id=$2',["\t\n\u3000owner@EXAMPLE.invalid\u00a0\r", "bob"]);
+  await expect(guard.assertCanPurchase("alice")).rejects.toMatchObject({code:"duplicate_purchase_google"});
+});
 it("allows nonmatching email and expired App Store access", async () => {
   await appPaid(); await pg.query('UPDATE "User" SET email=$1 WHERE id=$2', ["other@example.invalid", "bob"]);
   await expect(guard.assertCanPurchase("alice")).resolves.toBeUndefined();

@@ -7,13 +7,13 @@ import { DuplicatePurchaseGuard } from "./duplicate-purchase";
 import { monthlyConfig } from "./subscription/config";
 
 const db = { query: <T,>(sql: string, values: unknown[]) => prisma.$queryRawUnsafe<T[]>(sql, ...values) };
-export async function assertNoDuplicatePurchase(userId: string) {
-  return new DuplicatePurchaseGuard(db, async id => ({
-    stripe: (await webEntitlement(id)).entitled,
-    appStore: !!await revenueCatAccess(id, true),
-  })).assertCanPurchase(userId);
+export async function assertNoDuplicatePurchase(userId: string): Promise<void> {
+  return new DuplicatePurchaseGuard(db, async id => {
+    const stripe = (await webEntitlement(id)).entitled;
+    return { stripe, appStore: !stripe && !!await revenueCatAccess(id, true) };
+  }).assertCanPurchase(userId);
 }
-export async function auditDuplicatePurchases(userId: string) {
+export async function auditDuplicatePurchases(userId: string): Promise<void> {
   return new DuplicatePurchaseGuard(db, async id => {
     const stripe = (await webEntitlement(id)).entitled;
     // Read the committed verified snapshot: never trigger a refresh from its own audit.
