@@ -18,13 +18,15 @@ it.each([1, 5, 12, 24, 48, 120, 130])("seats most of %i learners at desks with t
   const floor = buttons.filter(button => button.getAttribute('data-mascot-state') === 'away');
   const study = buttons.filter(button => button.getAttribute('data-mascot-state') === 'study');
   expect(study.length / count).toBeGreaterThanOrEqual(.78);
-  expect(floor.length).toBeLessThanOrEqual(Math.min(3, Math.floor(count * .1)));
+  expect(floor.length).toBeLessThanOrEqual(Math.floor(count * .1));
   for (const button of buttons) {
     expect(button.querySelectorAll('.study-mascot')).toHaveLength(1);
-    expect(button.querySelectorAll('[data-study-tools]')).toHaveLength(floor.includes(button) ? 0 : 1);
-    expect(button.querySelectorAll('[data-layer="desktop"]')).toHaveLength(floor.includes(button) ? 0 : 1);
+    expect(button.querySelectorAll('[data-furniture-art]')).toHaveLength(1);
+    expect(button.querySelectorAll('img')).toHaveLength(1);
+    expect(button.querySelectorAll('[data-layer="desktop"], [data-layer="forepaws"]')).toHaveLength(0);
+    expect(button.querySelector('img')).toHaveAttribute('src', expect.stringContaining('/study-room-v3/'));
   }
-  // The room artwork supplies the vacant desk; never draw a second desk over it.
+  // All furniture belongs to the integrated cutout, never a second overlay.
   expect(container.querySelectorAll('img[src="/vacant.webp"]')).toHaveLength(0);
   expect(screen.getByTestId("study-room-scene")).toHaveAttribute("data-art-status", "ready");
 });

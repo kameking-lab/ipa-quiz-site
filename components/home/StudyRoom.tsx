@@ -5,9 +5,9 @@ import Link from "next/link";
 import { canonicalPresenceExam, presenceExamName } from "@/lib/study-presence";
 import type { MeasuredPresence } from "@/lib/study-presence-contract";
 import { measuredRoom, roomStage } from "@/lib/home/study-room";
-import { studyRoomHeight, studyRoomScene } from "@/lib/home/study-room-scenes";
-import { assignRoomPoints, roomIdentitySeed } from "@/lib/home/study-room-scatter";
-import { seatedRoomMascots } from "@/lib/home/room-chihuahua-art";
+import { studyRoomScene } from "@/lib/home/study-room-scenes";
+import { assignRoomPoints } from "@/lib/home/study-room-scatter";
+import { furnitureRoomMascots } from "@/lib/home/study-room-furniture";
 import { readLastQuestion } from "@/lib/storage/last-question";
 import { listExamLearningSummaries } from "@/lib/exam-library-session";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
@@ -58,19 +58,18 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
   }, [targetStage, stage, hasSnapshot]);
   const renderedStage = Math.max(stage, targetStage);
   const scene = studyRoomScene(renderedStage);
-  const sceneHeight = studyRoomHeight(scene, filtered?.count ?? 0);
+  const sceneHeight = scene.height;
   const sceneRef = useRef<HTMLDivElement>(null);
   const [backgroundReady, setBackgroundReady] = useState(false);
   const [motionVisible, setMotionVisible] = useState(false);
   const [visibleSeats, setVisibleSeats] = useState<Set<string>>(new Set());
   const seatKey = seats.map(seat => `${seat.exam}:${seat.index}`).join("|");
-  const mascots = useMemo(() => seatedRoomMascots(seatKey ? seatKey.split("|") : []), [seatKey]);
-  const awayKeys = [...mascots].filter(([, mascot]) => mascot.state === "away").map(([key]) => key);
   const [placement, setPlacement] = useState<{ stage: number; keys: string; points: Map<string, number> }>({ stage: -1, keys: "", points: new Map() });
   const points = placement.stage === renderedStage && placement.keys === seatKey ? placement.points
     : assignRoomPoints(seats.map(seat => `${seat.exam}:${seat.index}`), scene.seats.length,
       placement.stage === renderedStage || (placement.stage >= 4 && renderedStage >= 4) ? placement.points : undefined);
   if (placement.stage !== renderedStage || placement.keys !== seatKey) setPlacement({ stage: renderedStage, keys: seatKey, points });
+  const mascots = useMemo(() => furnitureRoomMascots(seatKey ? seatKey.split("|") : [], points, scene.seats), [seatKey, points, scene]);
   const [inspected, setInspected] = useState<string | null>(null);
   const focusedSeat = useRef<string | null>(null);
   useEffect(() => {
@@ -163,20 +162,15 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
       </>}
       {seats.map((seat) => {
         const key = `${seat.exam}:${seat.index}`;
-        const deskPoint = scene.seats[points.get(key)!];
+        const point = scene.seats[points.get(key)!];
         const mascot = mascots.get(key)!;
-        const seed = roomIdentitySeed(key);
-        const columnWidth = scene.width / (scene.columns ?? 1);
-        const floorWidth = Math.max(62, scene.width * 44 / ((scene.minWidth ?? 358) - 2));
-        const point = mascot.state === "away" ? { x: columnWidth * (.25 + awayKeys.indexOf(key) * .25),
-          y: scene.height - floorWidth / 2 - 8, width: floorWidth } : deskPoint;
         // A stable identity picks the point and visual variation; membership changes do not reflow survivors.
-        const coordinates = { "--seat-x": `${point.x / scene.width * 100}%`, "--seat-y": `${point.y / sceneHeight * 100}%`, "--seat-width": `${point.width / scene.width * 100}%`, "--dog-turn": `${(seed % 25) - 12}deg`, "--dog-scale": ".95" } as CSSProperties;
+        const coordinates = { "--seat-x": `${point.x / scene.width * 100}%`, "--seat-y": `${point.y / sceneHeight * 100}%`, "--seat-width": `${point.width / scene.width * 100}%`, zIndex: Math.round(point.floorY) } as CSSProperties;
         return <div key={key} data-testid="study-room-seat" data-seat-key={key} data-animate={motionVisible && visibleSeats.has(key)}
           onFocus={() => { focusedSeat.current = key; }} onBlur={() => { focusedSeat.current = null; }} style={coordinates}
-          className="group/seat absolute left-[var(--seat-x)] top-[var(--seat-y)] aspect-square w-[var(--seat-width)] -translate-x-1/2 -translate-y-1/2 [&[data-animate=true]_.study-mascot]:motion-safe:animate-[pulse_3.6s_ease-in-out_infinite]">
+          className="group/seat absolute left-[var(--seat-x)] top-[var(--seat-y)] aspect-square w-[var(--seat-width)] -translate-x-1/2 -translate-y-1/2 focus-within:!z-[2000]">
           <StudyRoomSeat name={presenceExamName(seat.exam)!} index={seat.index} mascot={mascot} detail={seat.detail} inspected={inspected === key} cheering={cheer === key} onCheer={() => cheerSeat(seat)}
-            desk={mascot.state === "away" ? undefined : { point: deskPoint, scene, seed }} />
+            art={mascot.art} />
         </div>;
       })}
       {!seats.length && <p className="absolute inset-0 grid place-items-center px-4 text-sm text-stone-600 dark:text-stone-300"><span className="rounded-full bg-background/95 px-4 py-2 shadow-sm">{filtered ? "静かな、自習室。" : "自習室"}</span></p>}

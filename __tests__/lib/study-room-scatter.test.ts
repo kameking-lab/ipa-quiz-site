@@ -26,6 +26,15 @@ it("keeps survivors fixed when arrivals collide, departures happen, or input ord
   expect(assignRoomPoints(keys, 24)).toEqual(assignRoomPoints(keys.slice().reverse(), 24));
 });
 
+it("starts sparse rooms in the foreground without moving survivors as people arrive", () => {
+  const scene = STUDY_ROOM_SCENES[0];
+  const first = assignRoomPoints(["fe:0"], scene.seats.length);
+  expect(first.get("fe:0")).toBe(0);
+  expect(scene.seats[0].floorY).toBe(Math.max(...scene.seats.map(p => p.floorY)));
+  const next = assignRoomPoints(["fe:0", "fe:1"], scene.seats.length, first);
+  expect(next.get("fe:0")).toBe(first.get("fe:0"));
+});
+
 it("uses single-dog ar-3 cutouts and stable poses, with no study pose in the private room", () => {
   expect(STUDY_ROOM_POSES).toHaveLength(11);
   expect(STUDY_ROOM_POSES.some(([file]) => file.includes("pair"))).toBe(false);

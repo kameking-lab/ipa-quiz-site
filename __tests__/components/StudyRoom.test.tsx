@@ -85,7 +85,7 @@ it("reuses shared pose images, preserves identity poses, and loads only occupied
   const { container, rerender, unmount } = render(<StudyRoom snapshot={snapshot(120)} suggestions={[]} />);
   const sources = () => [...container.querySelectorAll<HTMLImageElement>(".study-mascot img")].map(img => img.getAttribute("src"));
   const initial = sources();
-  expect(new Set(initial).size).toBeLessThanOrEqual(11);
+  expect(new Set(initial).size).toBeLessThanOrEqual(72);
   container.querySelectorAll("img").forEach(img => { expect(img).toHaveAttribute("loading", "lazy"); expect(img).toHaveAttribute("decoding", "async"); });
   rerender(<StudyRoom snapshot={snapshot(120)} suggestions={[]} />);
   expect(sources()).toEqual(initial);

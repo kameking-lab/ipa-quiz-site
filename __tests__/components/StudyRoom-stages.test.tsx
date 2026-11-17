@@ -2,7 +2,7 @@ import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, expect, it } from "vitest";
 import { StudyRoom } from "@/components/home/StudyRoom";
 import { measuredPresence } from "@/lib/study-presence-contract";
-import { STUDY_ROOM_SCENES, studyRoomHeight, studyRoomScene } from "@/lib/home/study-room-scenes";
+import { STUDY_ROOM_SCENES, studyRoomScene } from "@/lib/home/study-room-scenes";
 
 afterEach(() => { cleanup(); sessionStorage.clear(); localStorage.clear(); });
 
@@ -33,25 +33,25 @@ it("filters the same qualification before counting, allocating seats, and choosi
   expect(screen.getAllByTestId("study-room-seat")).toHaveLength(25);
 });
 
-it("has one bounded coordinate for every illustrated seat with decreasing sizes", () => {
+it("samples bounded floor coordinates with depth-scaled sizes instead of rows", () => {
   expect(STUDY_ROOM_SCENES.map(scene => scene.seats.length)).toEqual([5, 12, 24, 48, 120]);
   let previous = Infinity;
   for (const scene of STUDY_ROOM_SCENES) {
-    expect(scene.seats[0].width).toBeLessThan(previous); previous = scene.seats[0].width;
+    const largest = Math.max(...scene.seats.map(point => point.width));
+    expect(largest).toBeLessThan(previous); previous = largest;
     expect(new Set(scene.seats.map(point => `${point.x},${point.y}`)).size).toBe(scene.seats.length);
     for (const seat of scene.seats) {
       expect(seat.x - seat.width / 2).toBeGreaterThanOrEqual(0);
       expect(seat.x + seat.width / 2).toBeLessThanOrEqual(scene.width);
-      expect(seat.y - seat.width * 1.15 / 2).toBeGreaterThanOrEqual(0);
-      expect(seat.y + seat.width * 1.15 / 2).toBeLessThanOrEqual(scene.height);
+      expect(seat.y - seat.width / 2).toBeGreaterThanOrEqual(0);
+      expect(seat.floorY).toBeLessThanOrEqual(scene.height);
+      expect(seat.y + seat.width / 2).toBeCloseTo(seat.floorY);
     }
-    expect(scene.background).toMatch(/^\/images\/home\/study-room-scenes\/room-\d-(nordic|sunlit)\.webp$/);
+    expect(new Set(scene.seats.map(seat => seat.floorY)).size).toBe(scene.seats.length);
+    const byDepth = [...scene.seats].sort((a, b) => a.floorY - b.floorY);
+    for (let i = 1; i < byDepth.length; i++) expect(byDepth[i].width).toBeGreaterThan(byDepth[i - 1].width);
+    expect(scene.background).toMatch(/^\/images\/home\/study-room-v3\/R\d\.webp$/);
     const smallest = Math.min(...scene.seats.map(point => point.width));
     expect(smallest * (scene.minWidth ?? 358) / scene.width).toBeGreaterThanOrEqual(44);
   }
-});
-
-it("preserves illustrated room coordinates at all occupancies", () => {
-  const hall = STUDY_ROOM_SCENES[4];
-  for (const count of [1, 5, 12, 24, 48, 120, 130]) expect(studyRoomHeight(hall, count)).toBe(hall.height);
 });
