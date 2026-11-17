@@ -47,7 +47,7 @@ export function MobileInstallNudge({ placement, answered = 0 }: {
 
   if (!eligible || !owns || !context) return null;
   return <div ref={root} data-install-nudge={placement} className="flex min-h-11 items-center justify-center gap-1 text-sm text-muted-foreground">
-    <Button type="button" variant="link" className="min-h-11 px-2 font-normal text-muted-foreground underline hover:text-foreground"
+    <Button type="button" variant="link" className="h-auto min-h-11 min-w-0 whitespace-normal px-2 font-normal text-muted-foreground underline hover:text-foreground"
       onClick={async () => {
         // A click is also proof of visibility if it precedes the observer callback.
         if (!shown.current) shown.current = context.markNudgeShown(id);
@@ -56,7 +56,7 @@ export function MobileInstallNudge({ placement, answered = 0 }: {
         setFinished(true);
       }}>ホーム画面に追加</Button>
     <Button type="button" variant="ghost" size="icon" aria-label="ホーム画面への追加案内を30日間閉じる"
-      className="min-h-11 min-w-11"
+      className="min-h-11 min-w-11 shrink-0"
       onClick={() => { context.dismissNudge(); setFinished(true); }}><X className="h-4 w-4" aria-hidden="true" /></Button>
   </div>;
 }

@@ -74,6 +74,8 @@ export function ExplanationCard({
       className={cn(
         "motion-safe:animate-in motion-safe:slide-in-from-bottom-4 motion-safe:duration-200",
         "rounded-2xl border-2 p-4 sm:p-5",
+        // A visible invitation stays reachable when text is enlarged or scrolled.
+        "[&:has(>[data-install-nudge=answer])>div.sticky]:static",
         isCorrect
           ? "border-emerald-400 bg-emerald-50/60 dark:border-emerald-700 dark:bg-emerald-950/30"
           : "border-red-400 bg-red-50/30 dark:border-red-800 dark:bg-red-950/20",
