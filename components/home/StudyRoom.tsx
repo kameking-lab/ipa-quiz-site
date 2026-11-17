@@ -5,9 +5,10 @@ import Link from "next/link";
 import { canonicalPresenceExam, presenceExamName } from "@/lib/study-presence";
 import type { MeasuredPresence } from "@/lib/study-presence-contract";
 import { mascotVisitSeed, measuredRoom, qualificationMascot, quietRoomMascots, roomMascots, roomStage } from "@/lib/home/study-room";
-import { studyRoomScene } from "@/lib/home/study-room-scenes";
+import { studyRoomHeight, studyRoomScene } from "@/lib/home/study-room-scenes";
 import { readLastQuestion } from "@/lib/storage/last-question";
 import { listExamLearningSummaries } from "@/lib/exam-library-session";
+import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { StudyRoomSeat, type StudyRoomSeatDetail } from "./StudyRoomSeat";
 
 interface Suggestion { name: string; href: string; exam?: string }
@@ -57,6 +58,7 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, seatDe
   }, [targetStage, stage, hasSnapshot]);
   const renderedStage = Math.max(stage, targetStage);
   const scene = studyRoomScene(renderedStage);
+  const sceneHeight = studyRoomHeight(scene, filtered?.count ?? 0);
   const sceneRef = useRef<HTMLDivElement>(null);
   const [backgroundReady, setBackgroundReady] = useState(false);
   const [motionVisible, setMotionVisible] = useState(false);
@@ -121,7 +123,9 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, seatDe
     setCheer(key);
     onCheer?.(seat);
   }
-  const href = selectedExam ? suggestions.find(item => item.exam === selectedExam)?.href ?? `/quiz?mode=random&exam=${encodeURIComponent(selectedExam)}` : "/#choose-qualification";
+  const suggestion = suggestions.find(item => item.exam && canonicalPresenceExam(item.exam) === selectedExam);
+  const href = selectedExam && Object.hasOwn(EXAM_CONFIGS, selectedExam)
+    ? `/quiz?mode=random&exam=${encodeURIComponent(selectedExam)}` : suggestion?.href ?? "/#choose-qualification";
 
   return <div className="mx-auto w-full min-w-0 max-w-3xl space-y-4">
     <header className="flex min-w-0 items-center justify-between gap-2">
@@ -138,7 +142,7 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, seatDe
     <div ref={sceneRef} data-testid="study-room-scene" data-stage={renderedStage} data-motion-visible={motionVisible} data-art-status={scene.background ? "ready" : "pending"}
       role="group" aria-label="チワワの自習室" tabIndex={-1}
       className="relative isolate w-full min-w-0 overflow-hidden rounded-2xl border border-border/70 outline-offset-2 focus-visible:outline-2 focus-visible:outline-primary"
-      style={{ aspectRatio: `${scene.width} / ${scene.height}` }}>
+      style={{ aspectRatio: `${scene.width} / ${sceneHeight}` }}>
       {scene.background && backgroundReady && <>
         {/* The approved ar-2 source image and seat coordinates share exactly the same aspect ratio. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -149,7 +153,7 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, seatDe
         const point = scene.seats[position];
         const mascot = mascots && qualificationMascot(seat.exam, mascots[position]);
         // Pixel coordinates come from the room illustration manifest.
-        const coordinates = { "--seat-x": `${point.x / scene.width * 100}%`, "--seat-y": `${point.y / scene.height * 100}%`, "--seat-width": `${point.width / scene.width * 100}%` } as CSSProperties;
+        const coordinates = { "--seat-x": `${point.x / scene.width * 100}%`, "--seat-y": `${point.y / sceneHeight * 100}%`, "--seat-width": `${point.width / scene.width * 100}%` } as CSSProperties;
         return <div key={key} data-testid="study-room-seat" data-seat-key={key} data-animate={motionVisible && visibleSeats.has(key)}
           onFocus={() => { focusedSeat.current = key; }} onBlur={() => { focusedSeat.current = null; }} style={coordinates}
           className="group/seat absolute left-[var(--seat-x)] top-[var(--seat-y)] aspect-[1/1.15] w-[var(--seat-width)] -translate-x-1/2 -translate-y-1/2 [&[data-animate=true]_.study-mascot]:motion-safe:animate-[pulse_3.6s_ease-in-out_infinite]">

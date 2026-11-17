@@ -50,6 +50,22 @@ it("throttles cheers per seat and across seats without adding explanation or ext
   expect(screen.getByRole("link", { name: "席について解く" })).toHaveAttribute("href", "/#choose-qualification");
 });
 
+it("restores focus to the room when the currently focused seat disappears", () => {
+  const { rerender } = render(<StudyRoom snapshot={snapshot(3)} suggestions={[]} />);
+  screen.getAllByRole("button", { name: /のチワワを応援$/ })[2].focus();
+  rerender(<StudyRoom snapshot={snapshot(1)} suggestions={[]} />);
+  expect(screen.getByTestId("study-room-scene")).toHaveFocus();
+});
+
+it("starts a supported quiz directly and resolves library qualification aliases to their existing hub", () => {
+  const { rerender } = render(<StudyRoom snapshot={snapshot(3)} suggestions={[{ exam: "fe", name: "基本情報技術者", href: "/fe" }]} exam="fe" />);
+  expect(screen.getByRole("link", { name: "席について解く" })).toHaveAttribute("href", "/quiz?mode=random&exam=fe");
+  rerender(<StudyRoom snapshot={snapshot(3)} suggestions={[{ exam: "dai-1-shu-eisei-kanrisha", name: "第一種衛生管理者", href: "/qualifications/dai-1-shu-eisei-kanrisha" }]} exam="eisei1" />);
+  expect(screen.getByRole("link", { name: "席について解く" })).toHaveAttribute("href", "/quiz?mode=random&exam=eisei1");
+  rerender(<StudyRoom snapshot={snapshot(3)} suggestions={[{ exam: "ni-kyu-boiler-gishi", name: "二級ボイラー技士", href: "/e-learning/exams/qualifications/ni-kyu-boiler-gishi" }]} exam="ni-kyu-boiler-gishi" />);
+  expect(screen.getByRole("link", { name: "席について解く" })).toHaveAttribute("href", "/e-learning/exams/qualifications/ni-kyu-boiler-gishi");
+});
+
 it("puts server-supplied premium seats first and displays only supplied daily answers", () => {
   render(<StudyRoom snapshot={snapshot(3)} suggestions={[]} seatDetails={[{ exam: "fe", index: 2, premium: true, todayAnswers: 17 }]} />);
   const seats = screen.getAllByTestId("study-room-seat");
@@ -75,7 +91,7 @@ it("reuses the same qualification images, preserves visit poses, and loads only 
 });
 
 it("observes each seat so a tall hall does not animate offscreen dogs or hidden documents", () => {
-  const callbacks: Array<{ callback: IntersectionObserverCallback; elements: Element[]; disconnect: ReturnType<typeof vi.fn> }> = [];
+  const callbacks: Array<{ callback: IntersectionObserverCallback; elements: Element[]; disconnect: () => void }> = [];
   vi.stubGlobal("IntersectionObserver", class {
     record: typeof callbacks[number];
     constructor(callback: IntersectionObserverCallback) { this.record = { callback, elements: [], disconnect: vi.fn() }; callbacks.push(this.record); }

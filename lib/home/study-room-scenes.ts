@@ -33,3 +33,11 @@ export const STUDY_ROOM_SCENES: readonly StudyRoomScene[] = [
 ];
 
 export function studyRoomScene(stage: number) { return STUDY_ROOM_SCENES[stage]; }
+
+/** Until the illustrated room arrives, keep its unused rows from pushing the one action away.
+ * Approved backgrounds always retain their original coordinate system and full aspect ratio. */
+export function studyRoomHeight(scene: StudyRoomScene, count: number): number {
+  if (scene.background) return scene.height;
+  const footer = count > 120 ? 150 : 80;
+  return Math.max(480, ...scene.seats.slice(0, count).map(seat => seat.y + seat.width * 1.15 / 2 + footer));
+}

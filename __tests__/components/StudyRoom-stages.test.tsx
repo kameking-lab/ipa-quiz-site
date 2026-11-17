@@ -2,7 +2,7 @@ import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, expect, it } from "vitest";
 import { StudyRoom } from "@/components/home/StudyRoom";
 import { measuredPresence } from "@/lib/study-presence-contract";
-import { STUDY_ROOM_SCENES } from "@/lib/home/study-room-scenes";
+import { STUDY_ROOM_SCENES, studyRoomHeight } from "@/lib/home/study-room-scenes";
 
 afterEach(() => { cleanup(); sessionStorage.clear(); localStorage.clear(); });
 
@@ -48,4 +48,13 @@ it("has one bounded coordinate for every seat, decreasing sizes, and no substitu
     }
     expect(scene.background).toBeNull(); // ar-2 approved artwork has not arrived.
   }
+});
+
+it("uses only occupied rows while art is pending and preserves the approved background ratio", () => {
+  const hall = STUDY_ROOM_SCENES[4];
+  expect(studyRoomHeight(hall, 60)).toBeLessThan(studyRoomHeight(hall, 120));
+  expect(studyRoomHeight(hall, 130)).toBeGreaterThan(studyRoomHeight(hall, 120));
+  const approved = { ...hall, background: "/approved-hall.webp" };
+  expect(studyRoomHeight(approved, 3)).toBe(hall.height);
+  expect(studyRoomHeight(approved, 130)).toBe(hall.height);
 });
