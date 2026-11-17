@@ -39,8 +39,8 @@ export function MockExamLanding({ examFromQuery, returnTo, countFromQuery }: { e
         <h1 className="text-2xl font-bold">この資格の模試は未対応です</h1>
         <p className="mt-3 text-sm text-muted-foreground">{knownExam ? `${examLabel(examFromQuery)}の` : "指定された資格の"}本番形式の模試は提供していません。</p>
         <div className="mt-6 flex flex-wrap gap-3">
-          <Button asChild variant="primary"><Link href={knownExam ? quizBackHref({ exam: examFromQuery, returnTo }) : "/#choose-qualification"}>{knownExam ? `${examLabel(examFromQuery)}に戻る` : "資格を選ぶ"}</Link></Button>
-          <Button asChild variant="outline"><Link href="/mock-exam">対応している資格の模試を選ぶ</Link></Button>
+          <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="primary"><Link href={knownExam ? quizBackHref({ exam: examFromQuery, returnTo }) : "/#choose-qualification"}>{knownExam ? `${examLabel(examFromQuery)}に戻る` : "資格を選ぶ"}</Link></Button>
+          <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="outline"><Link href="/mock-exam">対応している資格の模試を選ぶ</Link></Button>
         </div>
       </main>
     );
@@ -189,14 +189,14 @@ function SupportedMockExamLanding({ initialExam, returnTo, countFromQuery }: { i
               {savedSession.questions.length}問解答済）。
             </p>
             <div className="mt-3 flex gap-2">
-              <Button
+              <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
                 variant="primary"
                 size="sm"
                 onClick={() => resumeMock(savedSession)}
               >
                 再開する
               </Button>
-              <Button
+              <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
                 variant="ghost"
                 size="sm"
                 onClick={discardSavedSession}
@@ -269,7 +269,7 @@ function SupportedMockExamLanding({ initialExam, returnTo, countFromQuery }: { i
               onClick={startMock}
               variant="primary"
               size="lg"
-              className="w-full"
+              className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
               disabled={loading}
             >
               {loading ? (

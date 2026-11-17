@@ -88,7 +88,7 @@ export default async function TopicModePage({
       />
 
       <div className="relative mx-auto w-full max-w-3xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
-        <Button asChild variant="ghost" size="sm" className="mb-4">
+        <Button asChild variant="ghost" size="sm" className="mb-4 min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
           <Link href={`/${exam}`}>
             <ArrowLeft className="h-4 w-4" />
             試験ページに戻る

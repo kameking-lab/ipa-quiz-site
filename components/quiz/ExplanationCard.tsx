@@ -52,9 +52,9 @@ export function ExplanationCard({
     <LearningPetCorner qualificationId={question.exam} questionId={question.id} compact />
     <QuestionBody text={displayQuestionExplanation(question.exam, question.explanation)} />
     <QuestionSourcePresentation question={question} phase="after" />
-    <div className="flex gap-3">
-      <Button onClick={onNext}>{nextLabel}<ArrowRight className="h-4 w-4" /></Button>
-      <Button variant="subtle" onClick={onToggleStar} aria-pressed={starred}>{starred ? "復習から外す" : "あとで復習"}</Button>
+    <div className="flex flex-col gap-3 sm:flex-row">
+      <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" onClick={onNext}>{nextLabel}<ArrowRight className="h-4 w-4" /></Button>
+      <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" variant="subtle" onClick={onToggleStar} aria-pressed={starred}>{starred ? "復習から外す" : "あとで復習"}</Button>
     </div>
     <p className="text-sm"><a href={getSafePdfUrl(question.sourcePdfUrl)} target="_blank" rel="noopener noreferrer" className="underline">公式問題</a> / <a href={getOfficialAnswerPdfUrl(question.sourcePdfUrl, question.sourceAnswerUrl)} target="_blank" rel="noopener noreferrer" className="underline">公式正答</a></p>
     {question.sourceAttribution && <p className="text-xs">{question.sourceAttribution}</p>}
@@ -76,8 +76,8 @@ export function ExplanationCard({
           : "border-red-400 bg-red-50/30 dark:border-red-800 dark:bg-red-950/20",
       )}
     >
-      <div className="mb-3 flex items-center justify-between">
-        <div className="flex items-center gap-2">
+      <div className="mb-4 flex items-start justify-between gap-3">
+        <div className="flex min-w-0 flex-wrap items-center gap-2">
           {isCorrect ? (
             <CheckCircle2
               aria-hidden="true"
@@ -99,12 +99,12 @@ export function ExplanationCard({
           >
             {isCorrect ? "正解!" : "不正解"}
           </span>
-          <span className="text-xs text-zinc-700 dark:text-zinc-300">
+          <span className="basis-full break-words text-sm text-zinc-700 dark:text-zinc-300">
             正解: {answerLabel}
             {selected ? ` / あなた: ${formatQuestionAnswerForDisplay(question, selected)}` : ""}
           </span>
         </div>
-        <div className="flex items-start gap-1.5">
+        <div className="flex shrink-0 items-start gap-1.5">
           <button
             onClick={onToggleStar}
             aria-pressed={starred}
@@ -128,7 +128,7 @@ export function ExplanationCard({
       <div className="mb-5 space-y-3">
         <LearningPetCorner qualificationId={question.exam} questionId={question.id} compact />
         <div className="flex justify-end">
-        <Button variant="primary" size="lg" onClick={onNext} className="min-h-11 shrink-0 font-semibold">
+        <Button variant="primary" size="lg" onClick={onNext} className="min-h-11 shrink-0 font-semibold min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
           {nextLabel}
           <ArrowRight className="h-4 w-4" />
         </Button>
@@ -195,7 +195,7 @@ export function ExplanationCard({
           variant="subtle"
           size="lg"
           onClick={onAskAI}
-          className="sm:flex-1"
+          className="sm:flex-1 min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
         >
           <MessageCircle className="h-4 w-4" />
           この問題をAIに質問
@@ -236,7 +236,7 @@ export function ExplanationCard({
           ))}
         </div>
         {question.sourceAttribution && (
-          <p className="text-[11px] text-zinc-500 dark:text-zinc-400">
+          <p className="text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
             {question.sourceAttribution}
           </p>
         )}

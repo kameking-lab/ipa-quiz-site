@@ -55,13 +55,13 @@ export default function ErrorPage({
             <Button
               variant="primary"
               size="lg"
-              className="flex-1"
+              className="flex-1 min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
               onClick={reset}
             >
               <RefreshCw className="h-4 w-4" />
               もう一度試す
             </Button>
-            <Button asChild variant="outline" size="lg" className="flex-1">
+            <Button asChild variant="outline" size="lg" className="flex-1 min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
               <Link href="/">
                 <HomeIcon className="h-4 w-4" />
                 トップへ戻る
@@ -73,7 +73,7 @@ export default function ErrorPage({
         <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
           <Link
             href="/contact"
-            className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground"
+            className="inline-flex min-h-11 items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"
           >
             <MessageSquare className="h-3.5 w-3.5" />
             問題を報告する
@@ -82,7 +82,7 @@ export default function ErrorPage({
             href="https://github.com/kameking-lab/ipa-quiz-site/issues"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-1.5 text-xs text-muted-foreground hover:text-foreground"
+            className="inline-flex min-h-11 items-center gap-1.5 text-sm text-muted-foreground hover:text-foreground"
           >
             <ExternalLink className="h-3.5 w-3.5" />
             GitHub Issues

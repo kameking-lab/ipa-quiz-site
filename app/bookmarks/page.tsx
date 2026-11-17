@@ -111,7 +111,7 @@ export default function BookmarksPage() {
         ]}
       />
       {/* Header */}
-      <div className="mb-6 flex items-center justify-between">
+      <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
         <h1 className="flex items-center gap-2 text-xl font-bold text-zinc-900 dark:text-zinc-50">
           <Bookmark
             aria-hidden="true"
@@ -123,19 +123,19 @@ export default function BookmarksPage() {
             ({bookmarks.length}件)
           </span>
         </h1>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <button
             type="button"
             onClick={handleExport}
             disabled={bookmarks.length === 0}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-zinc-300 bg-white px-3 py-1.5 text-xs font-medium text-zinc-700 transition hover:bg-zinc-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
+            className="inline-flex min-h-11 min-w-11 items-center gap-1.5 rounded-lg border border-zinc-300 bg-white px-3 py-1.5 text-xs font-medium text-zinc-700 transition hover:bg-zinc-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
             title="JSONでエクスポート"
           >
             <Download className="h-3.5 w-3.5" />
             エクスポート
           </button>
           <label
-            className="inline-flex cursor-pointer items-center gap-1.5 rounded-lg border border-zinc-300 bg-white px-3 py-1.5 text-xs font-medium text-zinc-700 transition hover:bg-zinc-50 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
+            className="inline-flex min-h-11 min-w-11 cursor-pointer items-center gap-1.5 rounded-lg focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-primary border border-zinc-300 bg-white px-3 py-1.5 text-xs font-medium text-zinc-700 transition hover:bg-zinc-50 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
             title="JSONからインポート"
           >
             <Upload className="h-3.5 w-3.5" />
@@ -152,7 +152,7 @@ export default function BookmarksPage() {
             <button
               type="button"
               onClick={handleClearAll}
-              className="inline-flex items-center gap-1.5 rounded-lg border border-red-200 bg-white px-3 py-1.5 text-xs font-medium text-red-600 transition hover:bg-red-50 dark:border-red-800 dark:bg-zinc-800 dark:text-red-400 dark:hover:bg-red-950/30"
+              className="inline-flex min-h-11 min-w-11 items-center gap-1.5 rounded-lg border border-red-200 bg-white px-3 py-1.5 text-xs font-medium text-red-600 transition hover:bg-red-50 dark:border-red-800 dark:bg-zinc-800 dark:text-red-400 dark:hover:bg-red-950/30"
               title="全て削除"
             >
               <Trash2 className="h-3.5 w-3.5" />
@@ -169,7 +169,7 @@ export default function BookmarksPage() {
             type="button"
             onClick={() => setActiveTag(null)}
             className={cn(
-              "rounded-full px-3 py-1 text-xs font-medium transition",
+              "inline-flex min-h-11 items-center rounded-xl px-3 py-2 text-sm font-medium transition",
               !activeTag
                 ? "bg-blue-600 text-white"
                 : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700",
@@ -185,7 +185,7 @@ export default function BookmarksPage() {
                 type="button"
                 onClick={() => setActiveTag(activeTag === tag ? null : tag)}
                 className={cn(
-                  "rounded-full px-3 py-1 text-xs font-medium transition",
+                  "inline-flex min-h-11 items-center rounded-xl px-3 py-2 text-sm font-medium transition",
                   activeTag === tag
                     ? "bg-blue-600 text-white"
                     : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700",
@@ -269,7 +269,7 @@ function BookmarkCard({ entry, onTagsChange, onRemove }: BookmarkCardProps) {
         <button
           type="button"
           onClick={onRemove}
-          className="shrink-0 rounded-full p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
+          className="shrink-0 inline-flex min-h-11 min-w-11 items-center justify-center rounded-full p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
           aria-label="ブックマークから外す"
         >
           <X className="h-3.5 w-3.5" />

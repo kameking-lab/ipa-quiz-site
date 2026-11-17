@@ -285,13 +285,13 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
                     key={k}
                     onClick={() => updateAnswer(k)}
                     aria-pressed={selected}
-                    className={`block w-full rounded-xl border px-4 py-3 text-left text-sm transition ${
+                    className={`flex min-h-14 w-full items-start gap-3 rounded-xl border px-4 py-3 text-left text-sm leading-relaxed transition ${
                       selected
                         ? "border-sky-500 bg-sky-50 dark:border-sky-400 dark:bg-sky-950/40"
                         : "border-zinc-200 bg-white hover:border-sky-300 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-sky-700"
                     }`}
                   >
-                    <span className="mr-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold dark:bg-zinc-800">
+                    <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold dark:bg-zinc-800">
                       {k}
                     </span>
                     {text}
@@ -304,7 +304,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
       </Card>
 
       <div className="mb-4 flex items-center justify-between gap-2">
-        <Button
+        <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
           variant="outline"
           onClick={() => setIndex((i) => Math.max(0, i - 1))}
           disabled={index === 0}
@@ -312,14 +312,14 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
           前へ
         </Button>
         <div className="flex items-center gap-2">
-          <Button
+          <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
             variant="ghost"
             onClick={() => updateAnswer(undefined)}
           >
             クリア
           </Button>
           {index === questions.length - 1 ? (
-            <Button
+            <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
               variant="primary"
               onClick={() => {
                 if (
@@ -336,7 +336,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
               提出する
             </Button>
           ) : (
-            <Button
+            <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
               variant="primary"
               onClick={() => setIndex((i) => Math.min(questions.length - 1, i + 1))}
             >
@@ -351,7 +351,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
           <div className="mb-2 text-[11px] font-semibold text-zinc-500">
             回答状況（クリックで移動）
           </div>
-          <div className="grid grid-cols-10 gap-1.5 sm:grid-cols-12">
+          <div className="grid grid-cols-6 gap-2 sm:grid-cols-10">
             {questions.map((_, i) => {
               const ans = answers[i];
               const cur = i === index;
@@ -359,8 +359,9 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
                 <button
                   key={i}
                   onClick={() => setIndex(i)}
+                  aria-current={cur ? "step" : undefined}
                   aria-label={`問${i + 1}へ移動${ans !== undefined ? "（解答済）" : ""}`}
-                  className={`h-7 rounded text-[10px] font-medium ${
+                  className={`min-h-11 min-w-11 rounded-lg text-sm font-medium ${
                     cur
                       ? "bg-sky-600 text-white"
                       : ans !== undefined
@@ -474,9 +475,9 @@ function ResultView({
 
       {/* 分野別正答率 */}
       <nav aria-label="模試後の学習" className="mb-4 grid gap-2 sm:grid-cols-3">
-        {result.wrongQuestionIds?.length ? <Button asChild><Link href={mockReviewHref(result)}>今回の間違い・未回答を復習</Link></Button> : <p className="self-center text-sm font-semibold">全問正解です</p>}
-        <Button asChild variant="outline"><Link href="/account/dashboard#mock-scores">進捗で模試記録を見る</Link></Button>
-        <Button asChild variant="outline"><Link href="/account/dashboard#weakness">弱点を確認</Link></Button>
+        {result.wrongQuestionIds?.length ? <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" asChild><Link href={mockReviewHref(result)}>今回の間違い・未回答を復習</Link></Button> : <p className="self-center text-sm font-semibold">全問正解です</p>}
+        <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="outline"><Link href="/account/dashboard#mock-scores">進捗で模試記録を見る</Link></Button>
+        <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="outline"><Link href="/account/dashboard#weakness">弱点を確認</Link></Button>
       </nav>
       <p className="mb-4 text-xs text-muted-foreground">模試結果を端末に保存しました。{readSettings().recordHistory ? "未回答を含む採点結果は進捗・弱点にも反映されます。" : "回答履歴の記録がオフのため、進捗・弱点への回答追加は行いません。"}</p>
       <Card className="mb-4">
@@ -669,7 +670,7 @@ function ResultView({
 
       {/* アクションボタン */}
       <div className="flex flex-col gap-2 sm:flex-row">
-        <Button onClick={onClose} variant="primary" className="flex-1">
+        <Button onClick={onClose} variant="primary" className="flex-1 min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
           模試一覧に戻る
         </Button>
       </div>

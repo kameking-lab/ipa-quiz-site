@@ -397,7 +397,7 @@ function ScoredQuizPlayer({
           <p className="mb-4 text-zinc-600 dark:text-zinc-400">
             該当する問題がありませんでした。
           </p>
-          <Button variant="outline" onClick={() => router.push(backHref)}>
+          <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" variant="outline" onClick={() => router.push(backHref)}>
             <ArrowLeft className="h-4 w-4" /> {backLabel}
           </Button>
         </div>
@@ -410,7 +410,7 @@ function ScoredQuizPlayer({
       <main className="mx-auto max-w-3xl space-y-5 px-4 py-6">
         <h1 className="text-xl font-semibold">記述の確認を終えました</h1>
         <p>記述答案は自動採点していません。独自解答例とご自身の答案を照らして確認してください。</p>
-        <Button variant="outline" onClick={() => router.push(backHref)}>{backLabel}</Button>
+        <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" variant="outline" onClick={() => router.push(backHref)}>{backLabel}</Button>
       </main>
     );
   }
@@ -453,7 +453,7 @@ function ScoredQuizPlayer({
   if (isSelfReviewedDescriptiveQuestion(question)) {
     return (
       <main className="mx-auto max-w-3xl space-y-5 px-4 py-6">
-        <Button variant="outline" onClick={() => router.push(backHref)}>{backLabel}</Button>
+        <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" variant="outline" onClick={() => router.push(backHref)}>{backLabel}</Button>
         <div ref={questionStartRef} tabIndex={-1} className="scroll-mt-24 outline-none">
           <QuestionCard question={question} progress={{ current: index, total }} />
         </div>
@@ -490,7 +490,7 @@ function ScoredQuizPlayer({
             size="icon"
             onClick={() => router.push(backHref)}
             aria-label={backLabel}
-            className="hover:bg-zinc-100 dark:hover:bg-zinc-800"
+            className="hover:bg-zinc-100 dark:hover:bg-zinc-800 min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
           >
             <ArrowLeft aria-hidden="true" className="h-5 w-5" />
           </Button>
@@ -552,7 +552,7 @@ function ScoredQuizPlayer({
             />
 
             {question.acceptedAnswerCombinations && !revealed && (
-              <Button disabled={picked.length < 1 || picked.length > requiredSelections}
+              <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" disabled={picked.length < 1 || picked.length > requiredSelections}
                 onClick={() => commitAnswer(formatSelection(picked), isCompleteSelectionCorrect(question.answer, picked, requiredSelections, question.acceptedAnswerCombinations), { kind: "multiple-choice", selected: [...picked] })}>
                 回答を確定
               </Button>
@@ -695,7 +695,7 @@ function KeyboardShortcutHelp({ onClose }: { onClose: () => void }) {
           type="button"
           onClick={onClose}
           aria-label="ショートカット一覧を閉じる"
-          className="rounded p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
+          className="inline-flex min-h-11 min-w-11 items-center justify-center rounded text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
         >
           ✕
         </button>
@@ -791,7 +791,7 @@ export function QuizCompleteScreen({
 
 
   const btnClass =
-    "inline-flex items-center gap-1.5 rounded-full border border-zinc-300 bg-white px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800";
+    "inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800";
 
   return (
     <div className="flex flex-1 flex-col items-center justify-center bg-zinc-50 px-4 py-12 dark:bg-zinc-950">
@@ -839,15 +839,15 @@ export function QuizCompleteScreen({
 
         <div className="flex flex-col gap-2">
           {onReviewLast ? (
-            <Button variant="outline" onClick={onReviewLast} className="w-full">
+            <Button variant="outline" onClick={onReviewLast} className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
               <MessageCircle className="h-4 w-4" aria-hidden="true" />
               最後の問題をAIに質問
             </Button>
           ) : null}
-          <Button variant="primary" onClick={onRetry} className="w-full">
+          <Button variant="primary" onClick={onRetry} className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
             もう一度挑戦
           </Button>
-          <Button variant="outline" onClick={onBack} className="w-full">
+          <Button variant="outline" onClick={onBack} className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
             <ArrowLeft className="h-4 w-4" /> {backLabel}
           </Button>
         </div>
@@ -856,11 +856,11 @@ export function QuizCompleteScreen({
           <nav aria-label="次の資格で日程と学習先を確認" className="mt-5 rounded-2xl border border-sky-200 bg-sky-50 p-4 text-sm dark:border-sky-900 dark:bg-sky-950/30">
             <p className="font-semibold text-sky-950 dark:text-sky-100">この資格の次の一歩</p>
             <div className="mt-2 flex flex-col gap-2">
-              <a href={scheduleUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-sky-800 underline underline-offset-2 dark:text-sky-200">
+              <a href={scheduleUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center font-semibold text-sky-800 underline underline-offset-2 dark:text-sky-200">
                 試験日・申込締切を次の資格で確認 ↗
               </a>
               {learningUrl ? (
-                <a href={learningUrl} target="_blank" rel="noopener noreferrer" className="font-semibold text-sky-800 underline underline-offset-2 dark:text-sky-200">
+                <a href={learningUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center font-semibold text-sky-800 underline underline-offset-2 dark:text-sky-200">
                   対応する学習・教材を次の資格で選ぶ ↗
                 </a>
               ) : null}

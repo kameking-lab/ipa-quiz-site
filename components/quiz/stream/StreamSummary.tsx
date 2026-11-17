@@ -59,7 +59,7 @@ export function StreamSummary({
   };
 
   return (
-    <div className="flex min-h-[100dvh] flex-col items-center justify-center bg-gradient-to-b from-zinc-950 via-zinc-900 to-black px-6 py-10 text-zinc-50">
+    <div className="flex min-h-[calc(100dvh-3.5rem)] flex-col items-center justify-center bg-gradient-to-b from-zinc-950 via-zinc-900 to-black px-6 py-10 text-zinc-50">
       <div className="w-full max-w-md">
         <div className="mb-2 text-center text-xs uppercase tracking-widest text-zinc-400">
           Stream Summary
@@ -80,14 +80,14 @@ export function StreamSummary({
             href={lineUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2 rounded-2xl bg-emerald-500 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600"
+            className="flex min-h-11 items-center justify-center gap-2 rounded-2xl bg-emerald-500 py-3 text-sm font-semibold text-white transition hover:bg-emerald-600"
           >
             <Share2 className="h-4 w-4" /> LINEでシェア
           </a>
         </div>
         <button
           onClick={onCopy}
-          className="mb-6 w-full rounded-2xl bg-white/10 py-2.5 text-xs text-zinc-200 transition hover:bg-white/15"
+          className="mb-6 min-h-11 w-full rounded-2xl bg-white/10 py-2.5 text-xs text-zinc-200 transition hover:bg-white/15"
         >
           {copied ? "コピーしました ✓" : "テキストをコピー"}
         </button>
@@ -100,21 +100,21 @@ export function StreamSummary({
         <div className="grid grid-cols-2 gap-3">
           <Link
             href={backHref}
-            className="flex items-center justify-center gap-2 rounded-2xl bg-white/5 py-3 text-sm text-zinc-200 ring-1 ring-white/10 transition hover:bg-white/10"
+            className="flex min-h-11 items-center justify-center gap-2 rounded-2xl bg-white/5 py-3 text-sm text-zinc-200 ring-1 ring-white/10 transition hover:bg-white/10"
           >
             <Home className="h-4 w-4" /> ホーム
           </Link>
           {canContinue ? (
             <button
               onClick={onContinue}
-              className="flex items-center justify-center gap-2 rounded-2xl bg-sky-500 py-3 text-sm font-semibold text-white transition hover:bg-sky-600"
+              className="flex min-h-11 items-center justify-center gap-2 rounded-2xl bg-sky-500 py-3 text-sm font-semibold text-white transition hover:bg-sky-600"
             >
               <RotateCw className="h-4 w-4" /> もう10問
             </button>
           ) : (
             <Link
               href={typeof window !== "undefined" ? window.location.pathname + window.location.search : "/quiz/stream"}
-              className="flex items-center justify-center gap-2 rounded-2xl bg-sky-500 py-3 text-sm font-semibold text-white transition hover:bg-sky-600"
+              className="flex min-h-11 items-center justify-center gap-2 rounded-2xl bg-sky-500 py-3 text-sm font-semibold text-white transition hover:bg-sky-600"
             >
               <RotateCw className="h-4 w-4" /> もう一度
             </Link>

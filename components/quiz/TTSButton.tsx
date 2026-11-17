@@ -123,7 +123,7 @@ export function TTSButton({ text, lang = "ja-JP", className, label = "読み上�
       <button
         type="button"
         disabled
-        className={cn("inline-flex items-center gap-1 rounded-md px-2 py-1 text-xs text-zinc-400", className)}
+        className={cn("inline-flex min-h-11 items-center gap-1 rounded-md px-2 py-1 text-xs text-zinc-400", className)}
       >
         <Loader2 className="h-3.5 w-3.5 animate-spin" />
         {label}
@@ -135,14 +135,14 @@ export function TTSButton({ text, lang = "ja-JP", className, label = "読み上�
   if (!supported) return null;
 
   return (
-    <div className={cn("inline-flex items-center gap-1", className)}>
+    <div className={cn("relative inline-flex items-center gap-1", className)}>
       <button
         type="button"
         onClick={handleClick}
         aria-pressed={speaking}
         aria-label={speaking ? "読み上げを停止" : label}
         className={cn(
-          "inline-flex items-center gap-1 rounded-md border px-2 py-1 text-xs font-medium transition",
+          "inline-flex min-h-11 items-center gap-1 rounded-md border px-2 py-1 text-xs font-medium transition",
           speaking
             ? "border-sky-400 bg-sky-50 text-sky-700 dark:border-sky-700 dark:bg-sky-950/40 dark:text-sky-200"
             : "border-zinc-200 bg-white text-zinc-700 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800",
@@ -156,13 +156,13 @@ export function TTSButton({ text, lang = "ja-JP", className, label = "読み上�
         onClick={() => setShowRate((v) => !v)}
         aria-expanded={showRate}
         aria-label="読み上げ速度設定"
-        className="rounded-md border border-zinc-200 bg-white px-1.5 py-1 text-[10px] text-zinc-600 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800"
+        className="min-h-11 min-w-11 rounded-md border border-zinc-200 bg-white px-1.5 py-1 text-[10px] text-zinc-600 hover:bg-zinc-50 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800"
       >
         ×{rate.toFixed(2)}
       </button>
       {error && <span role="status" className="text-xs text-red-700 dark:text-red-300">{error}</span>}
       {showRate && (
-        <div className="absolute z-30 mt-8 flex flex-col gap-1 rounded-lg border border-zinc-200 bg-white p-2 shadow-lg dark:border-zinc-700 dark:bg-zinc-900">
+        <div className="absolute right-0 top-full z-30 mt-2 flex flex-col gap-1 rounded-lg border border-zinc-200 bg-white p-2 shadow-lg dark:border-zinc-700 dark:bg-zinc-900">
           <span className="text-[10px] text-zinc-500">速度</span>
           <input
             type="range"

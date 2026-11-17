@@ -29,13 +29,13 @@ export default function NotFound() {
           </div>
 
           <div className="mt-6 flex flex-col gap-2 sm:flex-row">
-            <Button asChild variant="primary" size="lg" className="flex-1">
+            <Button asChild variant="primary" size="lg" className="flex-1 min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
               <Link href="/">
                 <HomeIcon className="h-4 w-4" />
                 トップへ戻る
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="flex-1">
+            <Button asChild variant="outline" size="lg" className="flex-1 min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
               <Link href="/search">
                 <Search className="h-4 w-4" />
                 問題をさがす
@@ -46,14 +46,14 @@ export default function NotFound() {
           <div className="mt-5 flex flex-wrap items-center justify-center gap-4 border-t border-border pt-5">
             <Link
               href="/essay"
-              className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground"
+              className="inline-flex min-h-11 items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
             >
               <FileCheck className="h-3.5 w-3.5" />
               午後論述のAI採点
             </Link>
             <Link
               href="/faq"
-              className="flex items-center gap-1 text-xs text-muted-foreground hover:text-foreground"
+              className="inline-flex min-h-11 items-center gap-1 text-sm text-muted-foreground hover:text-foreground"
             >
               <HelpCircle className="h-3.5 w-3.5" />
               よくある質問

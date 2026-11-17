@@ -191,7 +191,7 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
     );
   }
 
-  if (loadError) return <div>{context}<Card><CardContent className="py-8 text-center"><p role="alert" className="font-semibold">復習問題を読み込めませんでした</p><p className="mt-2 text-sm text-muted-foreground">学習履歴はこの端末に残っています。通信状態を確認して、もう一度お試しください。</p><Button onClick={() => window.location.reload()} className="mt-4">もう一度読み込む</Button></CardContent></Card></div>;
+  if (loadError) return <div>{context}<Card><CardContent className="py-8 text-center"><p role="alert" className="font-semibold">復習問題を読み込めませんでした</p><p className="mt-2 text-sm text-muted-foreground">学習履歴はこの端末に残っています。通信状態を確認して、もう一度お試しください。</p><Button onClick={() => window.location.reload()} className="mt-4 min-h-11 min-w-11 h-auto whitespace-normal py-2.5">もう一度読み込む</Button></CardContent></Card></div>;
 
   if (dueQuestions.length === 0) {
     const isFreshUser = emptyMeta.seenCount === 0;
@@ -244,10 +244,10 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
         </Card>
 
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
-          <Button asChild variant="primary" className="w-full">
+          <Button asChild variant="primary" className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
             <Link href={exam ? `/${exam}` : lastExam ? `/${lastExam}` : "/#choose-qualification"}>{exam || lastExam ? `${examLabel(exam || lastExam!)}の問題を解く` : isFreshUser ? "問題を解き始める" : "新しい問題を解く"}</Link>
           </Button>
-          <Button asChild variant="outline" className="w-full">
+          <Button asChild variant="outline" className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
             <Link href="/#choose-qualification">別の資格を選ぶ</Link>
           </Button>
         </div>
@@ -280,11 +280,11 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
           <Button
             variant="primary"
             onClick={() => { setCurrentIndex(0); setShowAnswer(false); setDone(false); setSessionStats({ correct: 0, incorrect: 0 }); }}
-            className="flex-1"
+            className="flex-1 min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
           >
             もう一度
           </Button>
-          <Button asChild variant="outline" className="flex-1">
+          <Button asChild variant="outline" className="flex-1 min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
             <Link href={backHref}>{exam ? `${examLabel(exam)}に戻る` : "試験選択に戻る"}</Link>
           </Button>
         </div>
@@ -349,7 +349,7 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
       )}
 
       {!showAnswer && Object.keys(q.choices ?? {}).length === 0 && (
-        <Button onClick={() => setShowAnswer(true)} className="w-full">解答・解説を見る</Button>
+        <Button onClick={() => setShowAnswer(true)} className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">解答・解説を見る</Button>
       )}
 
       {showAnswer && (
@@ -374,14 +374,14 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
             <Button
               variant="outline"
               onClick={() => handleAnswer(false)}
-              className="border-rose-300 text-rose-700 hover:bg-rose-50 dark:border-rose-700 dark:text-rose-400 dark:hover:bg-rose-950/30"
+              className="border-rose-300 text-rose-700 hover:bg-rose-50 dark:border-rose-700 dark:text-rose-400 dark:hover:bg-rose-950/30 min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
             >
               ✗ 間違えた
             </Button>
             <Button
               variant="outline"
               onClick={() => handleAnswer(true)}
-              className="border-emerald-300 text-emerald-700 hover:bg-emerald-50 dark:border-emerald-700 dark:text-emerald-400 dark:hover:bg-emerald-950/30"
+              className="border-emerald-300 text-emerald-700 hover:bg-emerald-50 dark:border-emerald-700 dark:text-emerald-400 dark:hover:bg-emerald-950/30 min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
             >
               ✓ 正解した
             </Button>

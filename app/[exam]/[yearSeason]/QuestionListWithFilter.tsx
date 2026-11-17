@@ -161,7 +161,7 @@ export function QuestionListWithFilter({ groups, exam, showSectionNavigation = f
                       href={q.href}
                       aria-label={`${q.officialQuestionLabel ?? `問${q.qNumber}`}を解く`}
                       className={cn(
-                        "group flex items-start gap-3 rounded-2xl border p-4 transition-all hover:-translate-y-0.5 hover:shadow-md",
+                        "group flex min-h-16 items-start gap-3 rounded-2xl border p-4 transition-all hover:-translate-y-0.5 hover:shadow-md",
                         status
                           ? status.correct
                             ? "border-emerald-300/70 bg-emerald-50/50 hover:border-emerald-400 dark:border-emerald-900/60 dark:bg-emerald-950/20"

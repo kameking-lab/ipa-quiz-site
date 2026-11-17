@@ -253,12 +253,12 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   return (
     <div
       data-study-presence-exam={question.exam}
-      className="relative flex h-[100dvh] min-h-[100dvh] flex-col overflow-hidden bg-gradient-to-b from-zinc-950 via-zinc-900 to-black text-zinc-50 select-none"
+      className="relative flex h-[calc(100dvh-3.5rem)] min-h-[calc(100dvh-3.5rem)] flex-col overflow-hidden bg-gradient-to-b from-zinc-950 via-zinc-900 to-black text-zinc-50 select-none"
     >
       <header className="relative z-20 flex items-center justify-between px-4 pt-4 pb-2">
         <Link
           href={backHref}
-          className="rounded-full bg-white/10 p-2 backdrop-blur hover:bg-white/20"
+          className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full bg-white/10 p-2 backdrop-blur hover:bg-white/20"
           aria-label="戻る"
         >
           <ArrowLeft className="h-4 w-4" />
@@ -272,7 +272,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
               ref={reviewTriggerRef}
               type="button"
               onClick={() => setReviewing(true)}
-              className="flex items-center gap-1 rounded-full bg-white/10 px-3 py-1 text-zinc-200 backdrop-blur transition-colors hover:bg-white/20"
+              className="flex min-h-11 items-center gap-1 rounded-full bg-white/10 px-3 py-1 text-zinc-200 backdrop-blur transition-colors hover:bg-white/20"
               aria-label="直前に解いた問題に戻る"
             >
               <ChevronDown className="h-3 w-3" />
@@ -330,7 +330,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
                   key={key}
                   onClick={() => onSelect(key)}
                   disabled={revealed}
-                  className={`flex w-full items-start gap-3 rounded-2xl border-2 px-4 py-3 text-left text-sm leading-snug backdrop-blur transition-all ${cls}`}
+                  className={`flex w-full items-start gap-3 min-h-14 rounded-2xl border-2 px-4 py-3 text-left text-sm leading-snug backdrop-blur transition-all ${cls}`}
                 >
                   <span
                     className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-full text-xs font-bold ${
@@ -377,7 +377,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
           onClick={goNext}
           className="pb-safe absolute inset-x-0 bottom-0 z-20 flex items-center justify-center gap-2 bg-gradient-to-t from-black/80 to-transparent py-4 text-xs text-zinc-300 hover:text-white"
         >
-          <ChevronUp className="h-4 w-4 animate-bounce" />
+          <ChevronUp className="h-4 w-4 motion-safe:animate-bounce" />
           次の問題へ
         </button>
       )}
@@ -458,7 +458,7 @@ function ReviewOverlay({
         <button
           type="button"
           onClick={onClose}
-          className="rounded-full bg-white/10 p-2 text-zinc-100 hover:bg-white/20"
+          className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-full bg-white/10 p-2 text-zinc-100 hover:bg-white/20"
           aria-label="閉じる"
         >
           <ChevronUp className="h-4 w-4" />
