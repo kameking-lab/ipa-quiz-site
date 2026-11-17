@@ -19,6 +19,20 @@ import { getAllBlogPosts } from "@/data/blog";
 //
 // Newly added URLs verified resolving (HEAD, HTTP 200, no redirect) on 2026-09-28:
 const EXPECTED_EXTERNAL_URLS = [
+  // Non-IT study guides: official pages / PDFs opened and checked 2026-11-17.
+  "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/06/20260608k_mondai.pdf",
+  "https://www.jctc.jp/kentei/themes/tebiki_2k01_08.pdf",
+  "https://www.kikaihozenshi.jp/points/",
+  "https://www.kikaihozenshi.jp/pdf/2025/2025_2kyu_kikai_mondai.pdf",
+  "https://www.nichimu.or.jp/kshiken/siken/index.html",
+  "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-kogaku.pdf",
+  "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/koku-toku-hoki.pdf",
+  "https://www.nichimu.or.jp/vc-files/kshiken/pdf/R81001_toku.pdf",
+  "https://cbt-s.com/examinee/examination/nichimu.html",
+  "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-2-kogaku.pdf",
+  "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-07.html",
+  "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf",
+  "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05c_01.pdf",
   // Article review corrections: official/primary links checked 2026-11-11.
   "https://cbt-s.com/examinee/examination/fe/",
   "https://cbt-s.com/examinee/examination/sg/",
@@ -131,6 +145,9 @@ const EXPECTED_EXTERNAL_URLS = [
 ] as const;
 
 const ALLOWED_HOSTS = new Set([
+  "www.jctc.jp",
+  "www.kikaihozenshi.jp",
+  "www.nichimu.or.jp",
   "csrc.nist.gov",
   "www.rfc-editor.org",
   "www.mhlw.go.jp",
