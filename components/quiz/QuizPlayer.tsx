@@ -759,6 +759,9 @@ export function QuizCompleteScreen({
   onReviewLast?: () => void;
 }) {
   const [copied, setCopied] = React.useState(false);
+  const [copyError, setCopyError] = React.useState(false);
+  const resultHeadingRef = React.useRef<HTMLHeadingElement>(null);
+  React.useEffect(() => { resultHeadingRef.current?.focus({ preventScroll: true }); resultHeadingRef.current?.scrollIntoView?.({ block: "center", behavior: "instant" }); }, []);
   const accuracy = stats.answered > 0 ? Math.round((stats.correct / stats.answered) * 100) : 0;
 
   React.useEffect(() => {
@@ -782,11 +785,12 @@ export function QuizCompleteScreen({
   const lineUrl = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(`${shareUrl}\n${shareText}`)}`;
 
   const handleCopy = async () => {
+    setCopyError(false);
     try {
       await navigator.clipboard.writeText(shareUrl);
       setCopied(true);
       setTimeout(() => setCopied(false), 1500);
-    } catch { /* ignore */ }
+    } catch { setCopyError(true); }
   };
 
 
@@ -794,11 +798,11 @@ export function QuizCompleteScreen({
     "inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800";
 
   return (
-    <div className="flex flex-1 flex-col items-center justify-center bg-zinc-50 px-4 py-12 dark:bg-zinc-950">
+    <main className="flex flex-1 flex-col items-center justify-center bg-zinc-50 px-4 py-12 dark:bg-zinc-950">
       <div className="w-full max-w-md rounded-3xl border border-zinc-200 bg-white p-8 shadow-lg dark:border-zinc-800 dark:bg-zinc-900">
         <div className="mb-6 text-center">
           <ChihuahuaMascot pose="celebrate" size={100} className="mx-auto mb-2" />
-          <h1 className="text-2xl font-bold text-zinc-900 dark:text-zinc-50">クイズ完了！</h1>
+          <h1 ref={resultHeadingRef} tabIndex={-1} className="text-2xl font-bold text-zinc-900 outline-none dark:text-zinc-50">クイズ完了！</h1>
           <p className="mt-1 text-sm text-zinc-500 dark:text-zinc-400">
             {accuracy >= 80 ? "素晴らしい！" : accuracy >= 60 ? "いい調子です！" : "次は満点を狙おう！"}
           </p>
@@ -832,8 +836,8 @@ export function QuizCompleteScreen({
           </div>
           {/* コピー成功はボタン文言変更だけでは SR に告知されない(WCAG 4.1.3)。
               polite live region で告知する。 */}
-          <span role="status" aria-live="polite" className="sr-only">
-            {copied ? "結果 URL をコピーしました" : ""}
+          <span role="status" aria-live="polite" className={copyError ? "mt-2 block text-sm text-destructive" : "sr-only"}>
+            {copyError ? "コピーできませんでした。もう一度お試しください。" : copied ? "結果 URL をコピーしました" : ""}
           </span>
         </div>
 
@@ -873,6 +877,6 @@ export function QuizCompleteScreen({
             ゲートは AfternoonEssayHint 内の ESSAY_EXAM_CODES 単一情報源。 */}
         <AfternoonEssayHint exam={exam as ExamCode} />
       </div>
-    </div>
+    </main>
   );
 }

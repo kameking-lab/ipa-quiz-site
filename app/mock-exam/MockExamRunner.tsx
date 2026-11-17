@@ -38,6 +38,11 @@ interface Props {
 
 type Phase = "running" | "submitted";
 
+function warningTimeLabel(seconds: number): string {
+  const minutes = Math.floor(seconds / 60), rest = seconds % 60;
+  return `${minutes ? `${minutes}分` : ""}${rest ? `${rest}秒` : ""}` || "0秒";
+}
+
 function getVerdict(scorePct: number, passThreshold: number): "合格圏内" | "あと一歩" | "要対策" {
   const threshold = passThreshold * 100;
   if (scorePct >= threshold + 10) return "合格圏内";
@@ -47,6 +52,7 @@ function getVerdict(scorePct: number, passThreshold: number): "合格圏内" | "
 
 export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Props) {
   const pet = usePetLearning();
+  const questionRef = React.useRef<HTMLDivElement>(null);
   const totalSec = config.minutes * 60;
   const [startedAt] = React.useState(() => resumeFrom?.startedAt ?? Date.now());
   const [remaining, setRemaining] = React.useState(() =>
@@ -60,6 +66,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
       ? resumeFrom.answers.map((answer) => answer ?? undefined)
       : Array(questions.length).fill(undefined),
   );
+  React.useEffect(() => { questionRef.current?.focus({ preventScroll: true }); questionRef.current?.scrollIntoView?.({ block: "start", behavior: "instant" }); }, [index]);
   const answersRef = React.useRef(answers);
   const [phase, setPhase] = React.useState<Phase>("running");
   const nativePermission = useNativeQuestionGrant(phase === "running" ? questions[index]?.id : undefined);
@@ -215,8 +222,10 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
   const answered = answers.filter((a) => a !== undefined).length;
   const m = Math.floor(remaining / 60);
   const s = remaining % 60;
-  const danger = remaining <= 600;
-  const warn = remaining <= 1800 && !danger;
+  const dangerAt = Math.min(600, Math.ceil(totalSec * 0.1));
+  const warnAt = Math.min(1800, Math.ceil(totalSec * 0.2));
+  const danger = remaining <= dangerAt;
+  const warn = remaining <= warnAt && !danger;
 
   return (
     <main data-study-presence-exam={q ? config.exam : undefined} className="mx-auto w-full max-w-3xl flex-1 px-4 pb-24 pt-4 sm:px-6">
@@ -260,14 +269,14 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
           role="alert"
         >
           {danger
-            ? "残り10分です。未回答の問題を埋めましょう。"
-            : "残り30分です。ペース配分を確認してください。"}
+            ? `残り${warningTimeLabel(dangerAt)}です。未回答を確認しましょう。`
+            : `残り${warningTimeLabel(warnAt)}です。ペース配分を確認してください。`}
         </div>
       )}
 
       <Card className="mb-4">
         <CardContent className="pt-5">
-          <div className="mb-2 flex items-center gap-2">
+          <div ref={questionRef} tabIndex={-1} className="mb-2 flex scroll-mt-28 items-center gap-2 outline-none" role="group" aria-label={`問${index + 1} ${q.category}`}>
             <Badge variant="outline">問{index + 1}</Badge>
             <Badge variant="default">{q.category}</Badge>
           </div>
@@ -394,6 +403,8 @@ function ResultView({
   onClose: () => void;
 }) {
   const [wrongExpanded, setWrongExpanded] = React.useState(false);
+  const headingRef = React.useRef<HTMLHeadingElement>(null);
+  React.useEffect(() => { headingRef.current?.focus({ preventScroll: true }); headingRef.current?.scrollIntoView?.({ block: "center", behavior: "instant" }); }, []);
 
   const verdict = getVerdict(result.scorePct, config.passThreshold);
 
@@ -447,9 +458,9 @@ function ResultView({
       {/* スコアヘッダー */}
       <Card className="mb-4 overflow-hidden">
         <div className={`p-6 text-center ${vc.bg}`}>
-          <div className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
+          <h1 ref={headingRef} tabIndex={-1} className="text-base font-semibold text-zinc-700 outline-none dark:text-zinc-200">
             {config.label} 結果
-          </div>
+          </h1>
           <div className="my-2 text-7xl font-extrabold tabular-nums">
             <span className={vc.score}>{result.scorePct}</span>
             <span className="text-2xl text-zinc-400">%</span>

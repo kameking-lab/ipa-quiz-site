@@ -5,7 +5,7 @@ import { QuestionFigures } from "@/components/quiz/QuestionFigures";
 import { choiceDisplayLabel, choiceImageAlt, formatQuestionAnswerForDisplay } from "@/lib/questions/display";
 import { displayQuestionExplanation } from "@/lib/questions/explanation-display";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import Link from "next/link";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -60,6 +60,20 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
   const [initialized, setInitialized] = useState(false);
   const [loadError, setLoadError] = useState(false);
   const [lastExam, setLastExam] = useState<string | null>(null);
+  const questionFocusRef = useRef<HTMLDivElement>(null);
+  const answerFocusRef = useRef<HTMLDivElement>(null);
+  const resultFocusRef = useRef<HTMLDivElement>(null);
+  const previousStep = useRef<string | null>(null);
+  useEffect(() => {
+    if (!initialized) return;
+    const step = `${currentIndex}:${showAnswer}:${done}`;
+    if (previousStep.current !== null && previousStep.current !== step) {
+      const target = done ? resultFocusRef.current : showAnswer ? answerFocusRef.current : questionFocusRef.current;
+      target?.focus({ preventScroll: true });
+      target?.scrollIntoView?.({ block: "start", behavior: "instant" });
+    }
+    previousStep.current = step;
+  }, [initialized, currentIndex, showAnswer, done]);
   const [emptyMeta, setEmptyMeta] = useState<{
     seenCount: number;
     scheduledCount: number;
@@ -260,7 +274,7 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
     const score = total > 0 ? Math.round((sessionStats.correct / total) * 100) : 0;
 
     return (
-      <div className="space-y-6">
+      <div ref={resultFocusRef} tabIndex={-1} role="region" aria-label="復習結果" className="scroll-mt-24 space-y-6 outline-none">
         {context}
         <Card>
           <CardContent className="py-8 text-center">
@@ -303,9 +317,9 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
       {/* プログレス */}
       <div className="flex items-center justify-between text-sm text-zinc-500 dark:text-zinc-400">
         <span>{currentIndex + 1} / {dueQuestions.length}</span>
-        <span>✓ {sessionStats.correct} ✗ {sessionStats.incorrect}</span>
+        <span aria-label={`正解 ${sessionStats.correct}問、不正解 ${sessionStats.incorrect}問`}>✓ {sessionStats.correct} ✗ {sessionStats.incorrect}</span>
       </div>
-      <div className="h-1.5 overflow-hidden rounded-full bg-zinc-200 dark:bg-zinc-700">
+      <div role="progressbar" aria-label="復習の進捗" aria-valuemin={0} aria-valuemax={dueQuestions.length} aria-valuenow={currentIndex} className="h-1.5 overflow-hidden rounded-full bg-zinc-200 dark:bg-zinc-700">
         <div
           className="h-full bg-emerald-500 transition-all duration-300"
           style={{ width: `${((currentIndex) / dueQuestions.length) * 100}%` }}
@@ -315,7 +329,7 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
       {/* 問題 */}
       <Card>
         <CardContent className="p-5">
-          <div className="mb-3 flex gap-2">
+          <div ref={questionFocusRef} tabIndex={-1} role="group" aria-label={`復習問題 ${currentIndex + 1} / ${dueQuestions.length}`} className="mb-3 flex scroll-mt-24 flex-wrap gap-2 outline-none">
             <Badge variant="outline" className="text-xs">{examLabel(q.exam)}</Badge>
             <Badge variant="outline" className="text-xs">{q.category}</Badge>
             {record && (
@@ -356,7 +370,7 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
         <>
           <Card className="border-emerald-300 bg-emerald-50 dark:border-emerald-800 dark:bg-emerald-950/30">
             <CardContent className="p-4">
-              <div className="mb-2 font-medium text-emerald-800 dark:text-emerald-300">
+              <div ref={answerFocusRef} tabIndex={-1} className="mb-2 scroll-mt-24 font-semibold text-emerald-800 outline-none dark:text-emerald-300">
                 正解: {correctAnswer}
               </div>
               <p className="text-sm leading-relaxed text-emerald-700 dark:text-emerald-400">

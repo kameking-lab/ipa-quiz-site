@@ -282,8 +282,8 @@ export function SearchClient() {
       setResult(data);
       setResultQueryKey(queryKey);
     } catch (err) {
-      if ((err as Error).name === "AbortError") return;
-      setError("検索に失敗しました。時間をおいて再度お試しください。");
+      if (abortRef.current !== ctrl || (err as Error).name === "AbortError") return;
+      setError("検索に失敗しました。もう一度「検索」を押してください。");
       setResult(null);
       setResultQueryKey(null);
     } finally {
@@ -428,10 +428,9 @@ export function SearchClient() {
       {/* Search Form (full-width on every viewport) */}
       <SearchForm
         inputText={inputText}
-        query={query}
         onInputChange={setInputText}
-        onSubmit={() => updateQuery({ q: inputText })}
-        onFilterChange={updateQuery}
+        onSubmit={() => { if (inputText === query.q) void fetchResults(query); else updateQuery({ q: inputText }); }}
+        onClear={clearAll}
       />
 
       {/* History & Saved quick access */}
@@ -447,16 +446,13 @@ export function SearchClient() {
         onDeleteSaved={deleteSavedSearch}
       />
 
-      {/* PC: facet panel sits in a left rail (≈18rem) while the right */}
-      {/* column carries toolbar + results; mobile keeps the prior stacked */}
-      {/* layout so the chip row never competes with vertical real-estate. */}
+      {/* Keep the filter labels visible in two columns on mobile. */}
       <div className="md:grid md:grid-cols-[14rem_minmax(0,1fr)] md:gap-6 md:items-start">
         <div className="md:sticky md:top-20">
           <FacetPanel
             facets={result?.facets}
             query={query}
             onChange={updateQuery}
-            onClear={clearAll}
           />
         </div>
         <div className="mt-4 md:mt-0">
@@ -491,13 +487,12 @@ export function SearchClient() {
 
 interface SearchFormProps {
   inputText: string;
-  query: ActiveQuery;
   onInputChange: (text: string) => void;
   onSubmit: () => void;
-  onFilterChange: (patch: Partial<ActiveQuery>) => void;
+  onClear: () => void;
 }
 
-function SearchForm({ inputText, query, onInputChange, onSubmit, onFilterChange }: SearchFormProps) {
+function SearchForm({ inputText, onInputChange, onSubmit, onClear }: SearchFormProps) {
   return (
     <form
       role="search"
@@ -519,7 +514,7 @@ function SearchForm({ inputText, query, onInputChange, onSubmit, onFilterChange 
             id="search-input"
             type="search"
             inputMode="search"
-            placeholder="例) TCP/IP、正規化、SQLインジェクション"
+            placeholder="キーワード"
             className="h-11 w-full rounded-xl border border-border bg-background pl-9 pr-12 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 sm:h-12"
             value={inputText}
             onChange={(e) => onInputChange(e.target.value)}
@@ -540,20 +535,10 @@ function SearchForm({ inputText, query, onInputChange, onSubmit, onFilterChange 
           <Button type="submit" variant="primary" size="md" className="flex-1 sm:flex-none min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
             検索
           </Button>
+          <Button type="button" variant="ghost" size="sm" className="min-h-11 min-w-11" onClick={onClear} aria-label="すべての条件をクリア">クリア</Button>
         </div>
       </div>
 
-      <div className="mt-3 flex items-center gap-2">
-        <label className="flex min-h-11 cursor-pointer items-center gap-2 text-sm text-muted-foreground">
-          <input
-            type="checkbox"
-            checked={query.calculationOnly}
-            onChange={(e) => onFilterChange({ calculationOnly: e.target.checked })}
-            className="h-4 w-4 rounded border-border accent-primary"
-          />
-          計算問題のみ
-        </label>
-      </div>
     </form>
   );
 }
@@ -764,10 +749,9 @@ interface FacetPanelProps {
   facets: FacetCounts | undefined;
   query: ActiveQuery;
   onChange: (patch: Partial<ActiveQuery>) => void;
-  onClear: () => void;
 }
 
-function FacetPanel({ facets, query, onChange, onClear }: FacetPanelProps) {
+function FacetPanel({ facets, query, onChange }: FacetPanelProps) {
   const fields = [
     {key: "exam", label: "資格", options: EXAM_OPTIONS.filter(code => (facets?.exam[code] ?? 0) > 0 || query.exam === code).map(code => [code, examLabel(code), facets?.exam[code] ?? 0])},
     {key: "year", label: "年度", options: Object.entries(facets?.year ?? {}).sort((a,b) => Number(b[0])-Number(a[0])).map(([v,n]) => [v, v+"年", n])},
@@ -777,9 +761,8 @@ function FacetPanel({ facets, query, onChange, onClear }: FacetPanelProps) {
   ] as const;
   return (
     <section aria-label="絞り込み" className="rounded-2xl border border-border bg-card p-4">
-      <div className="mb-3 flex items-center justify-between gap-2"><h2 className="text-sm font-semibold">絞り込み</h2><Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" type="button" variant="ghost" size="sm" onClick={onClear} aria-label="すべての条件をクリア">クリア</Button></div>
       <div className="grid grid-cols-2 gap-3 md:grid-cols-1">
-        {fields.map(field => <label key={field.key} className="min-w-0 text-xs font-medium text-muted-foreground">
+        {fields.filter(field => field.options.length > 0 || query[field.key]).map(field => <label key={field.key} className="min-w-0 text-xs font-medium text-muted-foreground">
           {field.label}
           <select value={query[field.key]} onChange={e => onChange({[field.key]:e.target.value})} className="mt-1 block min-h-11 w-full min-w-0 rounded-lg border border-border bg-background px-2 text-sm text-foreground focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
             <option value="">すべて</option>
@@ -787,6 +770,10 @@ function FacetPanel({ facets, query, onChange, onClear }: FacetPanelProps) {
             {field.options.map(([value,label,count]) => <option key={String(value)} value={value}>{label} ({count})</option>)}
           </select>
         </label>)}
+        <label className="flex min-h-11 cursor-pointer items-center gap-2 self-end text-sm text-foreground">
+          <input type="checkbox" checked={query.calculationOnly} onChange={e => onChange({calculationOnly:e.target.checked})} className="h-4 w-4 rounded border-border accent-primary" />
+          計算問題のみ
+        </label>
       </div>
     </section>
   );

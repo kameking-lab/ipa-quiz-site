@@ -8,18 +8,19 @@ import { captureException } from "@/lib/monitoring/sentry";
 
 export default function ErrorPage({
   error,
-  reset,
+  retry,
 }: {
-  error: Error & { digest?: string };
-  reset: () => void;
+  error: unknown;
+  retry: () => void;
 }) {
+  const digest = error instanceof Error && "digest" in error && typeof error.digest === "string" ? error.digest : undefined;
   React.useEffect(() => {
     console.error(error);
     void captureException(error, {
       route: "app/error.tsx",
-      extra: { digest: error.digest },
+      extra: { digest: digest },
     });
-  }, [error]);
+  }, [error, digest]);
 
   return (
     <main className="relative flex flex-1 items-center justify-center px-4 py-16">
@@ -44,10 +45,10 @@ export default function ErrorPage({
             一時的な問題が発生しました。再試行するか、
             トップページから学習を再開してください。
           </p>
-          {error.digest && (
+          {digest && (
             <p className="mt-3 inline-flex items-center gap-1.5 rounded-full bg-muted px-3 py-1 font-mono text-[11px] text-muted-foreground">
               <span className="text-foreground/70">エラーID:</span>
-              <span>{error.digest}</span>
+              <span>{digest}</span>
             </p>
           )}
 
@@ -56,7 +57,7 @@ export default function ErrorPage({
               variant="primary"
               size="lg"
               className="flex-1 min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
-              onClick={reset}
+              onClick={retry}
             >
               <RefreshCw className="h-4 w-4" />
               もう一度試す

@@ -6,18 +6,19 @@ import { captureException } from "@/lib/monitoring/sentry";
 
 export default function GlobalError({
   error,
-  reset,
+  retry,
 }: {
-  error: Error & { digest?: string };
-  reset: () => void;
+  error: unknown;
+  retry: () => void;
 }) {
+  const digest = error instanceof Error && "digest" in error && typeof error.digest === "string" ? error.digest : undefined;
   React.useEffect(() => {
     console.error(error);
     void captureException(error, {
       route: "app/global-error.tsx",
-      extra: { digest: error.digest },
+      extra: { digest: digest },
     });
-  }, [error]);
+  }, [error, digest]);
 
   return (
     <html lang="ja">
@@ -32,14 +33,14 @@ export default function GlobalError({
           アプリの読み込みに失敗しました。
           再読み込みしても解決しない場合はトップページへ移動してください。
         </p>
-        {error.digest && (
+        {digest && (
           <p className="mb-4 rounded-full bg-zinc-100 px-3 py-1 font-mono text-xs text-zinc-500 dark:bg-zinc-800 dark:text-zinc-400">
-            エラーID: {error.digest}
+            エラーID: {digest}
           </p>
         )}
         <div className="flex flex-col gap-2 sm:flex-row">
           <button
-            onClick={reset}
+            onClick={retry}
             className="flex items-center gap-2 rounded-xl bg-sky-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-sky-700"
           >
             <RefreshCw className="h-4 w-4" />

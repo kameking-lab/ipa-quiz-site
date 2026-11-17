@@ -54,6 +54,8 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
   const [reviewing, setReviewing] = React.useState(false);
   const advancingRef = React.useRef(false);
   const descriptiveStartRef = React.useRef<HTMLDivElement>(null);
+  const questionStartRef = React.useRef<HTMLDivElement>(null);
+  const explanationRef = React.useRef<HTMLDivElement>(null);
   // The review trigger unmounts while the overlay is open (canReview === false),
   // so restore focus to it when the overlay closes — otherwise keyboard users
   // are stranded at document.body (WCAG 2.4.3).
@@ -68,6 +70,12 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
 
   const question = questions[index];
   const nativePermission = useNativeQuestionGrant(question?.id);
+  React.useEffect(() => {
+    if (!nativePermission.allowed || showSummary || prevReviewingRef.current) return;
+    const target = revealed ? explanationRef.current : questionStartRef.current;
+    target?.focus({ preventScroll: true });
+    if (target && revealed) target.closest("main")?.scrollTo?.({ top: target.offsetTop - 16, behavior: "instant" });
+  }, [index, revealed, nativePermission.allowed, showSummary]);
   React.useEffect(() => {
     if (isSelfReviewedDescriptiveQuestion(question)) {
       descriptiveStartRef.current?.focus({ preventScroll: true });
@@ -306,7 +314,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
           </span>
         </div>
 
-        <div className="mb-4 shrink-0 rounded-2xl bg-white/5 p-5 text-[15px] leading-relaxed ring-1 ring-white/10 backdrop-blur">
+        <div ref={questionStartRef} tabIndex={-1} role="region" aria-label="ストリームの問題" className="mb-4 shrink-0 rounded-2xl outline-none bg-white/5 p-5 text-[15px] leading-relaxed ring-1 ring-white/10 backdrop-blur">
           <QuestionBody text={question.question} />
           <QuestionFigures question={question} />
         </div>
@@ -358,7 +366,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
         </div>
 
         {revealed && (
-          <div className="animate-in slide-in-from-bottom-4 mt-4 rounded-2xl bg-white/5 p-4 text-sm ring-1 ring-white/10 backdrop-blur">
+          <div ref={explanationRef} tabIndex={-1} role="region" aria-label="ストリームの解説" className="motion-safe:animate-in motion-safe:slide-in-from-bottom-4 mt-4 rounded-2xl outline-none bg-white/5 p-4 text-sm ring-1 ring-white/10 backdrop-blur">
             {question.type === "native-b" && <NativeBFeedback data={question.nativeB!} result={nativeBResult} />}
             <div className="mb-1 flex items-center justify-between text-xs">
               <span className="font-semibold text-emerald-300">

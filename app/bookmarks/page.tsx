@@ -36,14 +36,16 @@ function questionUrl(entry: BookmarkEntry): string {
 
 export default function BookmarksPage() {
   const [bookmarks, setBookmarks] = React.useState<BookmarkEntry[]>([]);
-  const [activeTag, setActiveTag] = React.useState<string | null>(null);
+  const [tagFilter, setActiveTag] = React.useState<string | null>(null);
   const importRef = React.useRef<HTMLInputElement>(null);
+  const [importStatus, setImportStatus] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setBookmarks(getAllBookmarks());
   }, []);
 
   const allTags = [...new Set(bookmarks.flatMap((b) => b.tags))].sort();
+  const activeTag = tagFilter && allTags.includes(tagFilter) ? tagFilter : null;
   const filtered = activeTag
     ? bookmarks.filter((b) => b.tags.includes(activeTag))
     : bookmarks;
@@ -62,15 +64,18 @@ export default function BookmarksPage() {
   function handleImport(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
     if (!file) return;
+    setImportStatus(null);
     const reader = new FileReader();
     reader.onload = (ev) => {
       const ok = importBookmarks(ev.target?.result as string);
       if (ok) {
         setBookmarks(getAllBookmarks());
+        setImportStatus("ブックマークを読み込みました。");
       } else {
-        alert("ファイルの読み込みに失敗しました。正しいJSONファイルか確認してください。");
+        setImportStatus("読み込めませんでした。ブックマークのJSONファイルを選んでください。");
       }
     };
+    reader.onerror = () => setImportStatus("ファイルを読み込めませんでした。");
     reader.readAsText(file);
     e.target.value = "";
   }
@@ -162,11 +167,14 @@ export default function BookmarksPage() {
         </div>
       </div>
 
+      <p role="status" aria-live="polite" className="mb-4 text-sm text-muted-foreground">{importStatus}</p>
+
       {/* Tag filter chips */}
       {allTags.length > 0 && (
         <div className="mb-4 flex flex-wrap gap-2">
           <button
             type="button"
+            aria-pressed={!activeTag}
             onClick={() => setActiveTag(null)}
             className={cn(
               "inline-flex min-h-11 items-center rounded-xl px-3 py-2 text-sm font-medium transition",
@@ -183,6 +191,7 @@ export default function BookmarksPage() {
               <button
                 key={tag}
                 type="button"
+                aria-pressed={activeTag === tag}
                 onClick={() => setActiveTag(activeTag === tag ? null : tag)}
                 className={cn(
                   "inline-flex min-h-11 items-center rounded-xl px-3 py-2 text-sm font-medium transition",
