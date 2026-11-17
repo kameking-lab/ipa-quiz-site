@@ -20,6 +20,7 @@ export function ApiKeysClient() {
   const [showName, setShowName] = React.useState("");
   const [revealId, setRevealId] = React.useState<string | null>(null);
   const [copiedId, setCopiedId] = React.useState<string | null>(null);
+  const [copyError, setCopyError] = React.useState(false);
 
   React.useEffect(() => {
     setKeys(readApiKeys());
@@ -40,12 +41,14 @@ export function ApiKeysClient() {
   }
 
   async function handleCopy(id: string, secret: string) {
+    setCopyError(false);
     try {
       await navigator.clipboard.writeText(secret);
       setCopiedId(id);
       setTimeout(() => setCopiedId(null), 1500);
     } catch {
-      // ignore
+      setCopiedId(null);
+      setCopyError(true);
     }
   }
 
@@ -197,8 +200,8 @@ export function ApiKeysClient() {
 
       {/* コピー成功はボタン文言が「コピー済」へ変わるだけでは SR に告知され
           ない(WCAG 4.1.3)。polite live region で告知する。 */}
-      <span role="status" aria-live="polite" className="sr-only">
-        {copiedId ? "API キーをコピーしました" : ""}
+      <span role="status" aria-live="polite" className={copyError ? "mt-4 text-sm text-destructive" : "sr-only"}>
+        {copyError ? "コピーできませんでした。キーを表示してコピーしてください。" : copiedId ? "API キーをコピーしました" : ""}
       </span>
     </section>
   );

@@ -187,6 +187,8 @@ export default function SettingsPage() {
         showToast("err", "インポートに失敗しました（ファイル形式エラー）");
       }
     };
+    reader.onerror = () => showToast("err", "ファイルを読み込めませんでした");
+    reader.onabort = () => showToast("err", "ファイルの読み込みを中止しました");
     reader.readAsText(file);
     e.target.value = "";
   }
