@@ -1,4 +1,4 @@
-import { fireEvent, cleanup, render, screen, waitFor } from "@testing-library/react";
+import { cleanup, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { TodayQuiz } from "@/app/quiz/today/TodayQuiz";
 import { createPacePlan } from "@/lib/study-plan/pace";
@@ -42,12 +42,12 @@ it("uses the confirmed paid entitlement for the full target", async () => {
   render(<TodayQuiz planId="p" billingGateEnabled />);
   await screen.findByText("player"); expect(captured.props?.poolIds).toHaveLength(67);
 });
-it("does not start another question after the free day's allowance", async () => {
+it("delegates the exhausted local allowance to the existing server gate", async () => {
   localStorage.setItem(LS_KEYS.history, JSON.stringify({ entries: Array.from({ length: 10 }, (_, i) => ({ id: `ap-q${i}`, correct: false, at: Date.now() + i * 1000 })), starredIds: [] }));
   render(<TodayQuiz planId="p" billingGateEnabled />);
-  await screen.findByRole("heading", { name: "今日の無料10問はここまで" });
-  expect(screen.getByRole("link", { name: /7日間無料で試す/ })).toHaveAttribute("href", expect.stringContaining("returnTo="));
-  expect(captured.props).toBeNull();
+  await screen.findByText("player");
+  expect(captured.props?.poolIds).toHaveLength(10);
+  expect(captured.props?.billingGateEnabled).toBe(true);
 });
 it("shows completion rather than an offer after the day's target is met", async () => {
   localStorage.setItem(LS_KEYS.history, JSON.stringify({ entries: catalog.map((q, i) => ({ id: q.id, correct: true,
@@ -62,14 +62,13 @@ it("reports a missing plan without starting a fallback qualification", async () 
   await waitFor(() => expect(screen.getByRole("alert")).toHaveTextContent("学習計画が見つかりませんでした"));
   expect(captured.props).toBeNull();
 });
-it("rechecks App Store entitlement when purchase or restore completes", async () => {
+it("still uses the server gate when the entitlement status is temporarily unavailable", async () => {
   localStorage.setItem(LS_KEYS.history, JSON.stringify({ entries: Array.from({ length: 10 }, (_, i) => ({ id: `ap-q${i}`, correct: false, at: Date.now() + i * 1000 })), starredIds: [] }));
+  vi.mocked(fetch).mockRejectedValue(new Error("offline"));
   render(<TodayQuiz planId="p" billingGateEnabled />);
-  await screen.findByRole("heading", { name: "今日の無料10問はここまで" });
-  vi.mocked(fetch).mockImplementation(async () => new Response(JSON.stringify({ entitled: true })));
-  fireEvent(window, new Event("mobile:entitlement-changed"));
   await screen.findByText("player");
-  expect(captured.props?.poolIds).toHaveLength(67);
+  expect(captured.props?.poolIds).toHaveLength(10);
+  expect(captured.props?.billingGateEnabled).toBe(true);
 });
 it("keeps the selected pool after reload even when its current question became correct", async () => {
   window.history.replaceState({}, "", `/quiz/today?plan=p&question=${catalog[0].id}`);

@@ -165,12 +165,27 @@ for (const native of [false, true]) {
       await route.fulfill({ response, body: html.replaceAll(marker, marker.replace("false", "true")) });
     });
     let grants = 0;
-    await page.route("**/api/billing/question", r => { grants++; return r.fulfill({ status: 429, json: { error: "daily_limit" } }); });
+    let restored = false;
+    await page.route("**/api/billing/question", r => {
+      grants++;
+      const access = { kind: restored ? "pass" : "guest", remaining: restored ? null : 0, freeDaily: 10,
+        resetAt: "2026-11-18T00:00:00+09:00", retryAfter: null };
+      if (!restored) return r.fulfill({ status: 429, json: { error: "daily_limit", access } });
+      const { id } = r.request().postDataJSON() as { id: string };
+      return r.fulfill({ json: { access, question: { id, exam: "ip", year: 2026,
+        season: "spring", session: "am", qNumber: 1, type: "multiple-choice", difficulty: 1, category: "テクノロジ系",
+        topicTags: [], question: "復元後の確認問題", choices: { ア: "選択肢A", イ: "選択肢B", ウ: "選択肢C", エ: "選択肢D" },
+        answer: "ア", explanation: "動作確認用の解説", sourcePdfUrl: "https://www.ipa.go.jp/shiken/", license: "IPA-public" } } });
+    });
     await page.goto("/quiz/today?plan=edge-plan");
     await expect(page.getByRole("heading", { name: "今日の無料10問はここまで" })).toBeVisible();
     await expect(page.getByRole("link", { name: native ? "月額980円で続ける" : "7日間無料で試す", exact: true })).toHaveAttribute("href", /returnTo=/);
     await expect(page.getByRole("radio")).toHaveCount(0);
-    expect(grants).toBe(0);
+    expect(grants).toBeGreaterThan(0);
     await expect(page.getByText("明日また10問", { exact: true })).toBeVisible();
+    restored = true;
+    await page.evaluate(() => window.dispatchEvent(new Event("mobile:entitlement-changed")));
+    await expect(page.getByRole("radio").first()).toBeVisible();
+    await expect(page.getByRole("heading", { name: "今日の無料10問はここまで" })).toHaveCount(0);
   });
 }
