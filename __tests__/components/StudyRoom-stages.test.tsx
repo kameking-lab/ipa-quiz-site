@@ -2,22 +2,21 @@ import { cleanup, fireEvent, render, screen } from "@testing-library/react";
 import { afterEach, expect, it } from "vitest";
 import { StudyRoom } from "@/components/home/StudyRoom";
 import { measuredPresence } from "@/lib/study-presence-contract";
-import { STUDY_ROOM_SCENES, studyRoomHeight } from "@/lib/home/study-room-scenes";
+import { STUDY_ROOM_SCENES, studyRoomHeight, studyRoomScene } from "@/lib/home/study-room-scenes";
 
 afterEach(() => { cleanup(); sessionStorage.clear(); localStorage.clear(); });
 
-it.each([[0, 0], [3, 0], [5, 0], [6, 1], [12, 1], [13, 2], [24, 2], [25, 3], [48, 3], [60, 4], [130, 4]])(
-  "%i learners draw exactly their chihuahuas at stage %i (up to 120)", (count, stage) => {
+it.each([[0, 0], [3, 0], [5, 0], [6, 1], [12, 1], [13, 2], [24, 2], [25, 3], [48, 3], [60, 4], [130, 5]])(
+  "%i learners draw exactly their chihuahuas at stage %i (including expanded halls)", (count, stage) => {
     const snapshot = measuredPresence({ count, exams: count ? [{ exam: "fe", count }] : [] }, Date.now());
     const { container } = render(<StudyRoom snapshot={snapshot} suggestions={[]} current />);
     const scene = screen.getByTestId("study-room-scene");
     expect(scene).toHaveAttribute("data-stage", String(stage));
-    expect(screen.queryAllByTestId("study-room-seat")).toHaveLength(Math.min(count, 120));
-    expect(container.querySelectorAll(".study-mascot")).toHaveLength(Math.min(count, 120));
+    expect(screen.queryAllByTestId("study-room-seat")).toHaveLength(count);
+    expect(container.querySelectorAll(".study-mascot")).toHaveLength(count);
     expect(screen.getByTestId("study-room-total")).toHaveTextContent(`いま${count}人`);
-    if (count > 120) expect(screen.getByLabelText("ほか10人が勉強中")).toHaveTextContent("+10");
-    else expect(screen.queryByText(/^\+/)).not.toBeInTheDocument();
-    expect(screen.getByText(STUDY_ROOM_SCENES[stage].name)).toBeInTheDocument();
+    expect(screen.queryByText(/^\+/)).not.toBeInTheDocument();
+    expect(screen.getByText(studyRoomScene(stage).name)).toBeInTheDocument();
   },
 );
 

@@ -5,14 +5,14 @@ import variety from "./study-room-variety.json";
 /** Maximum illustrations, not a room capacity. */
 export const STUDY_ROOM_VISIBLE_LIMIT = 120;
 export function roomStage(count: number) {
-  return count >= 49 ? 4 : count >= 25 ? 3 : count >= 13 ? 2 : count >= 6 ? 1 : 0;
+  return count >= 49 ? 3 + Math.ceil(count / 120) : count >= 25 ? 3 : count >= 13 ? 2 : count >= 6 ? 1 : 0;
 }
-export function measuredRoom(snapshot: StudyPresenceSnapshot) {
+export function measuredRoom(snapshot: StudyPresenceSnapshot, visibleLimit = STUDY_ROOM_VISIBLE_LIMIT) {
   const seats: { exam: string; index: number }[] = [];
   for (const row of snapshot.exams) {
-    const remaining = Math.min(row.count, STUDY_ROOM_VISIBLE_LIMIT - seats.length);
+    const remaining = Math.min(row.count, visibleLimit - seats.length);
     for (let i = 0; i < remaining; i++) seats.push({ exam: row.exam, index: i });
-    if (seats.length === STUDY_ROOM_VISIBLE_LIMIT) break;
+    if (seats.length === visibleLimit) break;
   }
   return { seats, hidden: Math.max(0, snapshot.count - seats.length), stage: roomStage(snapshot.count) };
 }

@@ -27,7 +27,7 @@ async function show(page: Page, snapshot: StudyPresenceSnapshot) {
   }).toBe(`いま${snapshot.count}人`);
 }
 
-for (const [count, stage, name] of [[1, 0, "one"], [5, 0, "small"], [12, 1, "classroom"], [24, 2, "wide"], [48, 3, "large"], [120, 4, "hall"], [130, 4, "overflow"]] as const) {
+for (const [count, stage, name] of [[1, 0, "one"], [5, 0, "small"], [12, 1, "classroom"], [24, 2, "wide"], [48, 3, "large"], [120, 4, "hall"], [130, 5, "overflow"]] as const) {
   test(`${count} learners have matching chihuahuas and no horizontal scroll at 390px`, async ({ page }) => {
     const errors: string[] = []; page.on("pageerror", error => errors.push(error.message));
     await page.setViewportSize({ width: 390, height: 844 });
@@ -41,10 +41,9 @@ for (const [count, stage, name] of [[1, 0, "one"], [5, 0, "small"], [12, 1, "cla
       expect(action!.y + action!.height).toBeLessThanOrEqual(nav!.y);
     }
     await expect(scene).toHaveAttribute("data-stage", String(stage));
-    await expect(scene.locator(".study-mascot")).toHaveCount(Math.min(count, 120));
-    await expect(page.getByTestId("study-room-seat")).toHaveCount(Math.min(count, 120));
-    if (count > 120) await expect(page.getByLabel("ほか10人が勉強中")).toHaveText("+10");
-    else await expect(page.getByText(/^\+/)).toHaveCount(0);
+    await expect(scene.locator(".study-mascot")).toHaveCount(count);
+    await expect(page.getByTestId("study-room-seat")).toHaveCount(count);
+    await expect(page.getByText(/^\+/)).toHaveCount(0);
     // Visit every row so native lazy images can be decoded before the evidence capture.
     for (const image of await scene.locator(".study-mascot img").all()) {
       await image.scrollIntoViewIfNeeded();

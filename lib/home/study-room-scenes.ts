@@ -8,6 +8,7 @@ export interface StudyRoomScene {
   width: number;
   height: number;
   minWidth?: number;
+  columns?: number;
   seats: readonly RoomSeatPosition[];
 }
 
@@ -22,7 +23,17 @@ export const STUDY_ROOM_SCENES: readonly StudyRoomScene[] = counts.map((count, i
     seats: scatteredRoomPoints(count, width, height, sizes[index]) };
 });
 
-export function studyRoomScene(stage: number) { return STUDY_ROOM_SCENES[stage]; }
+const extendedHalls = new Map<number, StudyRoomScene>();
+export function studyRoomScene(stage: number): StudyRoomScene {
+  if (stage < STUDY_ROOM_SCENES.length) return STUDY_ROOM_SCENES[stage];
+  const cached = extendedHalls.get(stage);
+  if (cached) return cached;
+  const hall = STUDY_ROOM_SCENES[4], columns = stage - 3;
+  const scene = { ...hall, columns, width: hall.width * columns, minWidth: (hall.minWidth! - 2) * columns + 2,
+    seats: Array.from({ length: columns }, (_, column) => hall.seats.map(point => ({ ...point, x: point.x + column * hall.width }))).flat() };
+  extendedHalls.set(stage, scene);
+  return scene;
+}
 
 /** Illustrated backgrounds retain their original coordinates and full aspect ratio.
  * The unillustrated fallback uses only occupied rows. */

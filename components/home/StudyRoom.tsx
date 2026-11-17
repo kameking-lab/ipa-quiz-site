@@ -42,7 +42,7 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
     const count = exams.reduce((sum, row) => sum + row.count, 0);
     return { ...snapshot, count, total: count, exams };
   }, [snapshot, sameExam, selectedExam]);
-  const measured = useMemo(() => filtered ? measuredRoom(filtered) : null, [filtered]);
+  const measured = useMemo(() => filtered ? measuredRoom(filtered, filtered.count) : null, [filtered]);
   const seats = useMemo(() => (measured?.seats ?? []).map(seat => ({ ...seat,
     detail: seatDetails.find(item => item.exam === seat.exam && item.index === seat.index),
   })), [measured, seatDetails]);
@@ -66,7 +66,8 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
   const seatKey = seats.map(seat => `${seat.exam}:${seat.index}`).join("|");
   const [placement, setPlacement] = useState<{ stage: number; keys: string; points: Map<string, number> }>({ stage: -1, keys: "", points: new Map() });
   const points = placement.stage === renderedStage && placement.keys === seatKey ? placement.points
-    : assignRoomPoints(seats.map(seat => `${seat.exam}:${seat.index}`), scene.seats.length, placement.stage === renderedStage ? placement.points : undefined);
+    : assignRoomPoints(seats.map(seat => `${seat.exam}:${seat.index}`), scene.seats.length,
+      placement.stage === renderedStage || (placement.stage >= 4 && renderedStage >= 4) ? placement.points : undefined);
   if (placement.stage !== renderedStage || placement.keys !== seatKey) setPlacement({ stage: renderedStage, keys: seatKey, points });
   const [inspected, setInspected] = useState<string | null>(null);
   const focusedSeat = useRef<string | null>(null);
@@ -152,9 +153,11 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
       className="relative isolate w-full min-w-0 overflow-hidden rounded-2xl border border-stone-200 bg-stone-50 outline-offset-2 focus-visible:outline-2 focus-visible:outline-primary dark:border-stone-700 dark:bg-stone-900"
       style={{ aspectRatio: `${scene.width} / ${sceneHeight}`, minWidth: scene.minWidth }}>
       {scene.background && backgroundReady && <>
-        {/* The approved ar-2 source image and seat coordinates share exactly the same aspect ratio. */}
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={scene.background} alt="" width={scene.width} height={scene.height} loading="lazy" decoding="async" className="pointer-events-none absolute inset-0 size-full" />
+        {/* Extra halls retain the source image's aspect ratio instead of stretching it. */}
+        {Array.from({ length: scene.columns ?? 1 }, (_, column) =>
+          // eslint-disable-next-line @next/next/no-img-element
+          <img key={column} src={scene.background!} alt="" width={scene.width / (scene.columns ?? 1)} height={scene.height} loading="lazy" decoding="async"
+            className="pointer-events-none absolute top-0 h-full" style={{ left: `${column * 100 / (scene.columns ?? 1)}%`, width: `${100 / (scene.columns ?? 1)}%` }} />)}
       </>}
       {seats.map((seat) => {
         const key = `${seat.exam}:${seat.index}`;

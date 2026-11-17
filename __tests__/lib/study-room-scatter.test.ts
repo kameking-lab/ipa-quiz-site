@@ -1,6 +1,6 @@
 import { expect, it } from "vitest";
 import { assignRoomPoints } from "@/lib/home/study-room-scatter";
-import { STUDY_ROOM_SCENES } from "@/lib/home/study-room-scenes";
+import { STUDY_ROOM_SCENES, studyRoomScene } from "@/lib/home/study-room-scenes";
 import { RELAXED_ROOM_ART, STUDY_ROOM_POSES, scatteredChihuahuaArt } from "@/lib/home/room-chihuahua-art";
 
 it("keeps every room's dogs apart, including their square tap areas", () => {
@@ -35,4 +35,13 @@ it("uses single-dog ar-3 cutouts and stable poses, with no study pose in the pri
     const poses = Array.from({ length: 12 }, (_, index) => scatteredChihuahuaArt(`${exam}:${index}`).src);
     expect(new Set(poses).size).toBeGreaterThanOrEqual(5);
   }
+});
+
+it("extends halls without changing existing points or image aspect ratios", () => {
+  const first = studyRoomScene(4), second = studyRoomScene(5), third = studyRoomScene(6);
+  expect(second.seats).toHaveLength(240);
+  expect(third.seats).toHaveLength(360);
+  expect(second.seats.slice(0, 120)).toEqual(first.seats);
+  expect(second.width / second.columns! / second.height).toBe(first.width / first.height);
+  expect(second.seats[120].x).toBe(first.seats[0].x + first.width);
 });
