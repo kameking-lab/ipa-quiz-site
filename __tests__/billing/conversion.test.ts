@@ -63,6 +63,13 @@ it("does not count reused checkout orders or retried payment sessions again, inc
   expect(bodies.join()).not.toContain("private-order");
   expect(bodies.join()).not.toContain("private-session");
 });
+it("expires each order marker independently so later purchases cannot extend old retention", async () => {
+  await recordConversion("checkout_created", "web", "first-order", now);
+  await recordConversion("checkout_created", "web", "second-order", now + 86400000);
+  const markers = [...ttl].filter(([key]) => key.includes(":seen:order:"));
+  expect(markers).toHaveLength(2);
+  expect(markers.every(([, seconds]) => seconds === 95 * 86400)).toBe(true);
+});
 it("keeps first order channel, reports unknown for old orders and separates test/live", async () => {
   await saveConversionChannel("private-order", "ios"); await saveConversionChannel("private-order", "web");
   expect(await readConversionChannel("private-order")).toBe("ios");

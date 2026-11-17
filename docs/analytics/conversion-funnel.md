@@ -6,7 +6,7 @@
 
 | 指標 | 記録する場所・条件 | 単位・重複の扱い |
 |---|---|---|
-| ①回答ゲスト数 | `posthogCapture` の `question_answered` / `exam_library_answered` / `blog_practice_answered` → `/api/funnel/conversion`。未ログインで署名付きpractice_guestを検証できる場合のみ | JST日・Web/iOS・ゲストcookieごと1。取得やquiz_startedでは増えない。署名付きcookieのないお試し回答・オフライン回答は対象外 |
+| ①回答ゲスト数 | `posthogCapture` の `question_answered` / `blog_practice_answered` と、公表問題プレイヤーの選択回答・下書き付き記述の確定 → `/api/funnel/conversion`。未ログインで署名付きpractice_guestを検証できる場合のみ | JST日・Web/iOS・ゲストcookieごと1。取得、quiz_started、下書きなしの模範解答表示では増えない。署名付きcookieのないお試し回答・オフライン回答は対象外 |
 | ②上限429ゲスト数 | `/api/billing/question` のゲストgrantが `limit` を返した場合 | JST日・Web/iOS・ゲストcookieごと1。10問目取得、短時間429、ログイン済みの上限は除く |
 | ③月額案内表示 | `PracticeDailyLimit`、`BillingPageBeacon`、iOS会員画面の購入可能な月額案内が表示されたとき | 延べ表示。React StrictModeのeffect再実行は除外。別画面・再マウント・再表示は別回 |
 | ④月額ボタン押下 | 無料上限ボタン、`MonthlyPage` の月額ボタン、iOSの月額リンク捕捉と登録ボタン | 延べ押下。同じ人の再タップも別回。iOSでリンク→登録ボタンと進む場合は2つの月額ボタンを数える |
@@ -21,8 +21,10 @@
 - `conversion:v1:{環境}:{決済モード}:{JST日}:{web|ios|unknown}` のHASHに数値だけ保存。95日保持。テスト／本番は別キー。
 - 人数の重複除外は日付・チャネルを含むHMACのSET（2日で失効）。生のcookie、IP、UA、メール、ユーザーID、問題ID、URL、回答本文はKVへ保存しない。
 - Checkout重複除外のHMACと申込→経路のHMACキーは95日保持。経路不明の既存申込／記録失敗は `unknown`。Webと推測しない。HMACは既存サーバー設定で作る。
+- Checkoutの重複除外キーは申込ごとに分け、後日の別申込で過去のキーの保持期限を延ばさない。
 - 書き込みはLuaで重複除外と加算を原子的に実行し、すべてawait。失敗はfalseで終了。新しいKV通信は1回最大1秒、申込作成時は経路保存と加算で最大2秒追加。追加のDBクエリは購入・問題取得処理へ入れていない。ゲスト回答の別リクエストでは既存Authを確認する。
 - ブラウザ通知はBeacon（iOSはヘッダー付きkeepalive fetch）。受信サーバーはawaitするが、広告ブロック・オフライン・通信失敗時は欠測する。自動再送は延べ回数の水増しを避けるため行わない。
+- 公開直後は旧クライアントが①③④⑤⑧を送らず、②⑥⑦のサーバー指標だけが増える場合がある。初日の比率は特に欠測を含む。
 - 新APIはイベント名だけを受け付け、サーバー確定4指標のクライアント申告を拒否。bot/別origin/過大bodyを除外し、IPごとの短時間上限とメモリ保持数上限を設ける。IPはメモリ内のみ。
 - 人数は自然人の厳密な人数ではなくゲストcookie単位。cookieの再発行や端末変更は別人数。①②はログイン済み無料会員を除き、③以降は会員を含む。
 - 管理画面は直近14日の3経路×9指標と①→②→③→④→⑥→⑦の隣接比を表示。これは異なる単位の日別集計の比率であり、同一コホートの転換率ではない。100%超もそのまま表示し、分母0は「—」。過去データは復元しない。

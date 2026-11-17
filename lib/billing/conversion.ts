@@ -38,7 +38,9 @@ export async function recordConversion(metric: ConversionMetric, channel: Conver
     const day = jstDay(new Date(now)), base = prefix();
     const order = metric === "checkout_created" || metric === "payment_completed";
     const member = unique ? digest(`${order ? "order" : `${day}:${channel}`}:${unique}`) : "";
-    const seen = `${base}:seen:${order ? "orders" : day}:${metric}`;
+    // A shared order set with a refreshed TTL would retain old members forever
+    // under steady traffic. Each order gets its own fixed-lifetime marker.
+    const seen = order ? `${base}:seen:order:${metric}:${member}` : `${base}:seen:${day}:${metric}`;
     const result = await pipeline([["EVAL", CONVERSION_UPDATE, "2", `${base}:${day}:${channel}`, seen, metric, member, String(RETENTION), String(order ? RETENTION : 2 * 86400)]]);
     return result?.[0]?.result === 0 || result?.[0]?.result === 1;
   } catch { return false; }

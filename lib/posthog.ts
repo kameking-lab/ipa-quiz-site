@@ -106,7 +106,7 @@ export function getPostHogClient(): PostHog | null {
 
 /** Configured clients buffer hydration events until the lazy SDK is ready. */
 export function posthogCapture(name: PostHogEventName, props?: PostHogEventProps): void {
-  if (name === "question_answered" || name === "exam_library_answered" || name === "blog_practice_answered") sendConversion("guest_answered");
+  if (name === "question_answered" || name === "blog_practice_answered") sendConversion("guest_answered");
   // Page views have an independent root tracker, so SDK readiness cannot lose or double them.
   if (name !== "page_view") captureActivity(name, props);
   if (!posthogClient && !isPostHogConfigured) return;

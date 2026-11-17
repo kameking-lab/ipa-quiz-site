@@ -1,5 +1,7 @@
 import { act, fireEvent, render, screen, within } from "@testing-library/react";
-import { beforeEach, describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
+const conversion = vi.hoisted(() => vi.fn());
+vi.mock("@/lib/billing/conversion-client", () => ({ sendConversion: conversion }));
 import type { ExamQuestion } from "@/lib/exam-library-model";
 import { examProgressKey } from "@/lib/exam-library-progress";
 import { ExamQuestionPlayer } from "@/components/exam-library/exam-question-player";
@@ -50,6 +52,7 @@ function next() {
 
 describe("ExamQuestionPlayer", () => {
   beforeEach(() => {
+    conversion.mockClear();
     window.localStorage.clear();
     window.sessionStorage.clear();
   });
@@ -57,9 +60,21 @@ describe("ExamQuestionPlayer", () => {
   it("shows local explanations and official sources without article CTAs after answering", () => {
     const { container } = renderPlayer();
     answer(3);
+    expect(conversion).toHaveBeenCalledExactlyOnceWith("guest_answered");
     expect(screen.getByText("問1の解説本文")).toBeInTheDocument();
     expect(container.querySelector('a[href^="https://note.com/"]')).toBeNull();
     expect(container.querySelector('a[href*="tsugino-shikaku.jp/articles"]')).toBeNull();
+  });
+  it("does not count opening a model answer as solving, but counts a submitted descriptive draft", () => {
+    const item = question(4, { correctChoice: null, choiceCount: 0, answerAuthority: "descriptive" });
+    const view = renderPlayer([item]);
+    fireEvent.click(screen.getByRole("button", { name: "模範解答を見る" }));
+    expect(conversion).not.toHaveBeenCalled();
+    view.unmount();
+    renderPlayer([question(5, { correctChoice: null, choiceCount: 0, answerAuthority: "descriptive" })]);
+    fireEvent.change(screen.getByLabelText("解答メモ（下書き・任意）"), { target: { value: "自分で考えた解答" } });
+    fireEvent.click(screen.getByRole("button", { name: "模範解答を見る" }));
+    expect(conversion).toHaveBeenCalledExactlyOnceWith("guest_answered");
   });
 
   it("offers contextual AI questions only after the answer is revealed", () => {
