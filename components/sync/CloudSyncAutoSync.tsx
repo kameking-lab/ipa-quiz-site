@@ -7,6 +7,7 @@ import { syncAll } from "@/lib/sync";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { readOwnership, readSyncAccount } from "@/lib/sync/ownership";
 import {nativeClient} from "@/mobile/shared/contracts";
+import { startPaceAutoSync } from "@/lib/study-plan/pace-sync";
 
 type Phase = "idle" | "syncing" | "done";
 interface Toast { message: string; tone: "info" | "success" }
@@ -16,6 +17,7 @@ export function CloudSyncAutoSync() {
   const pathname = usePathname();
   const [phase, setPhase] = React.useState<Phase>("idle");
   const [toast, setToast] = React.useState<Toast | null>(null);
+  React.useEffect(() => startPaceAutoSync(), []);
 
   React.useEffect(() => {
     let cancelled = false;

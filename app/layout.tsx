@@ -4,6 +4,7 @@ import { ActivityTracker } from "@/components/analytics/ActivityTracker";
 import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import { SourceRelationshipFooter } from "@/components/question-provenance/SourceRelationshipFooter";
+import { HomeFooterNavigation } from "@/components/HomeFooterNavigation";
 import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
 import "./globals.css";
 import { ThemeProvider, THEME_BOOTSTRAP_SCRIPT } from "@/components/theme-provider";
@@ -173,6 +174,7 @@ export default function RootLayout({
             </div>
             <footer className="site-footer mobile-bottom-nav-footer-reserve mt-auto border-t border-border bg-background/60 px-4 pt-8 text-xs text-muted-foreground">
               <div className="mx-auto max-w-5xl">
+                <HomeFooterNavigation>
                 <div className="native-app-hidden print:hidden grid grid-cols-2 gap-6 sm:grid-cols-3 lg:grid-cols-6">
                   <nav aria-labelledby="footer-nav-exams">
                     <h3 id="footer-nav-exams" className="mb-2.5 text-[11px] font-semibold uppercase tracking-wide text-foreground">
@@ -269,6 +271,7 @@ export default function RootLayout({
                 </div>
 
                 <AppStorePromo className="print:hidden mt-4" />
+                </HomeFooterNavigation>
 
                 <SourceRelationshipFooter />
               </div>

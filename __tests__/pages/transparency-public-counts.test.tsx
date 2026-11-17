@@ -5,8 +5,9 @@ import HomePage from "@/app/page";
 import TransparencyPage from "@/app/transparency/page";
 import { getHomeDirectory } from "@/lib/home/home-directory";
 
-// Keep the real pages, HomeHero and published directory. Unrelated interactive
-// widgets are omitted so this server-page regression needs no browser services.
+// Keep both real pages and the published directory. Provide browser routing and
+// billing fixtures for the interactive home without requesting external services.
+vi.mock("next/navigation", () => ({ useRouter: () => ({ replace: vi.fn() }) }));
 vi.mock("@/components/ChihuahuaMascot", () => ({ ChihuahuaMascot: () => null }));
 vi.mock("@/components/home/landing/HomeQuestionPreview", () => ({ HomeQuestionPreview: () => null }));
 vi.mock("@/components/home/landing/HomeQualificationFinder", () => ({ HomeQualificationFinder: () => null }));
@@ -17,6 +18,8 @@ vi.mock("@/components/home/TotalAnswerCounter", () => ({ TotalAnswerCounter: () 
 
 describe("transparency published counts", () => {
   beforeEach(() => {
+    localStorage.clear(); sessionStorage.clear();
+    vi.stubGlobal("fetch", vi.fn(async () => Response.json({ entitled: false })));
     // Never request analytics while rendering this server page.
     vi.stubEnv("POSTHOG_API_KEY", "");
     vi.stubEnv("POSTHOG_PROJECT_ID", "");
@@ -24,6 +27,7 @@ describe("transparency published counts", () => {
   afterEach(() => {
     cleanup();
     vi.unstubAllEnvs();
+    vi.unstubAllGlobals();
   });
 
   it("renders the same published counts as the actual home page", async () => {
@@ -35,17 +39,13 @@ describe("transparency published counts", () => {
     expect(qualifications).toBeGreaterThan(13);
 
     const home = render(<HomePage />);
-    const published = within(home.container).getByRole("group", { name: "公開収録数" });
-    const homeQuestions = within(published).getByText("公開中の問題数").nextElementSibling;
-    const homeQualifications = within(published).getByText("資格・区分").nextElementSibling;
-    expect(homeQuestions?.textContent).toBe(questions.toLocaleString("ja-JP"));
-    expect(homeQualifications?.textContent).toBe(qualifications.toLocaleString("ja-JP"));
+    expect(within(home.container).getByText(`${qualifications}資格・${questions.toLocaleString("ja-JP")}問・ログインなしで1日10問まで無料`)).toBeInTheDocument();
 
     const transparency = render(await TransparencyPage());
     const questionsCard = within(transparency.container).getByText("公開中の問題数").parentElement;
     const qualificationsCard = within(transparency.container).getByText("資格・区分").parentElement;
-    expect(questionsCard?.children[1]?.textContent).toBe(homeQuestions?.textContent);
-    expect(qualificationsCard?.children[1]?.textContent).toBe(homeQualifications?.textContent);
+    expect(questionsCard?.children[1]?.textContent).toBe(questions.toLocaleString("ja-JP"));
+    expect(qualificationsCard?.children[1]?.textContent).toBe(qualifications.toLocaleString("ja-JP"));
     expect(questionsCard).toHaveTextContent("ホーム掲載資格・区分の合計");
     expect(qualificationsCard).toHaveTextContent("ホームと同じ公開範囲");
   });

@@ -1,8 +1,10 @@
 import { act, fireEvent, render, screen, within } from "@testing-library/react";
-import { beforeEach, describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it, vi } from "vitest";
 import type { ExamQuestion } from "@/lib/exam-library-model";
 import { examProgressKey } from "@/lib/exam-library-progress";
 import { ExamQuestionPlayer } from "@/components/exam-library/exam-question-player";
+import { getPaceAttempts } from "@/lib/study-plan/pace-storage";
+import { LS_KEYS } from "@/lib/storage/keys";
 
 const EXAM_ID = "lckohyo-TEST01";
 const PDF_URL = "https://www.exam.or.jp/wp-content/uploads/2026/04/TEST01.pdf";
@@ -52,6 +54,18 @@ describe("ExamQuestionPlayer", () => {
   beforeEach(() => {
     window.localStorage.clear();
     window.sessionStorage.clear();
+  });
+
+  it("records the official result for a fresh pace session without replacing ordinary paper progress", () => {
+    const ordinary = renderPlayer(); answer(2); ordinary.unmount();
+    const savedTab = sessionStorage.getItem(LS_KEYS.examLibrarySessionPrefix + EXAM_ID);
+    const completed = vi.fn();
+    render(<ExamQuestionPlayer examId={EXAM_ID} examTitle="テスト" pdfUrl={PDF_URL} indexUrl="https://www.exam.or.jp/" questions={[questions[0]]} paceSession={{ exam: "eisei1", onComplete: completed }} />);
+    expect(screen.getByRole("radio", { name: /^選択肢 3:/ })).toBeEnabled();
+    answer(3);
+    expect(getPaceAttempts().at(-1)).toMatchObject({ id: questions[0].id, correct: true });
+    expect(sessionStorage.getItem(LS_KEYS.examLibrarySessionPrefix + EXAM_ID)).toBe(savedTab);
+    next(); expect(completed).toHaveBeenCalledOnce();
   });
 
   it("shows local explanations and official sources without article CTAs after answering", () => {

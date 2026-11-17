@@ -40,6 +40,6 @@ it.each([
     expect(within(counts).getByRole("listitem")).toHaveTextContent(`${presenceExamName("fe")} ${count}人`);
   } else {
     expect(screen.queryByRole("list", { name: "資格別の学習人数" })).not.toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "資格から問題を探す" })).toHaveAttribute("href", "#home-directory-title");
+    expect(screen.getByRole("link", { name: "資格から問題を探す" })).toHaveAttribute("href", "/search#home-directory-title");
   }
 });

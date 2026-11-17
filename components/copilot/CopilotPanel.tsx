@@ -1,6 +1,8 @@
 "use client";
 
 import { requestAiConsent } from "@/lib/ai/consent";
+import { recordLearningAction } from "@/lib/study-plan/pace-storage";
+import { readSettings } from "@/lib/storage/settings";
 
 import * as React from "react";
 import dynamic from "next/dynamic";
@@ -516,6 +518,10 @@ export function CopilotPanel({
           });
         }
 
+        if (acc.trim() && !isTimeout && !isServerError && readSettings().recordHistory) {
+          recordLearningAction({ id: crypto.randomUUID(), kind: "ai-question", questionId: question.id,
+            exam: question.exam, at: Date.now() });
+        }
         posthogCapture("copilot_response_received", {
           questionId: question?.id,
           exam: question?.exam,
