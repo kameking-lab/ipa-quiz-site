@@ -15,5 +15,7 @@ it.each([25, 60, 130])("counts an away chihuahua as one of %i learners, never an
   const { container } = render(<StudyRoom snapshot={snapshot} suggestions={[]} />);
   expect(container.querySelectorAll(".study-mascot")).toHaveLength(Math.min(count, 120));
   expect(screen.getAllByRole("img", { name: /席を立って遊んでいる/ })).toHaveLength(1);
-  expect(container.querySelectorAll('img[src="/vacant.webp"]')).toHaveLength(1);
+  // The room artwork supplies the vacant desk; never draw a second desk over it.
+  expect(container.querySelectorAll('img[src="/vacant.webp"]')).toHaveLength(0);
+  expect(screen.getByTestId("study-room-scene")).toHaveAttribute("data-art-status", "ready");
 });

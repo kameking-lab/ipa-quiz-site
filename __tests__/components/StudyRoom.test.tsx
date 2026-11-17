@@ -79,7 +79,7 @@ it("puts server-supplied premium seats first and displays only supplied daily an
 it("reuses the same qualification images, preserves visit poses, and loads only occupied seats", () => {
   sessionStorage.setItem("study-room-mascot-visit:v1", "0");
   const { container, rerender, unmount } = render(<StudyRoom snapshot={snapshot(120)} suggestions={[]} />);
-  const sources = () => [...container.querySelectorAll<HTMLImageElement>("img")].map(img => img.getAttribute("src"));
+  const sources = () => [...container.querySelectorAll<HTMLImageElement>(".study-mascot")].map(img => img.getAttribute("src"));
   const initial = sources();
   expect(new Set(initial).size).toBeLessThanOrEqual(2);
   container.querySelectorAll("img").forEach(img => { expect(img).toHaveAttribute("loading", "lazy"); expect(img).toHaveAttribute("decoding", "async"); });
@@ -87,7 +87,7 @@ it("reuses the same qualification images, preserves visit poses, and loads only 
   expect(sources()).toEqual(initial);
   unmount();
   const remount = render(<StudyRoom snapshot={snapshot(120)} suggestions={[]} />);
-  expect([...remount.container.querySelectorAll("img")].map(img => img.getAttribute("src"))).toEqual(initial);
+  expect([...remount.container.querySelectorAll(".study-mascot")].map(img => img.getAttribute("src"))).toEqual(initial);
 });
 
 it("observes each seat so a tall hall does not animate offscreen dogs or hidden documents", () => {

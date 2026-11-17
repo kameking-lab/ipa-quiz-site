@@ -34,7 +34,7 @@ it("filters the same qualification before counting, allocating seats, and choosi
   expect(screen.getAllByTestId("study-room-seat")).toHaveLength(25);
 });
 
-it("has one bounded coordinate for every seat, decreasing sizes, and no substitute background", () => {
+it("has one bounded coordinate for every illustrated seat with decreasing sizes", () => {
   expect(STUDY_ROOM_SCENES.map(scene => scene.seats.length)).toEqual([5, 12, 24, 48, 120]);
   let previous = Infinity;
   for (const scene of STUDY_ROOM_SCENES) {
@@ -46,15 +46,13 @@ it("has one bounded coordinate for every seat, decreasing sizes, and no substitu
       expect(seat.y - seat.width * 1.15 / 2).toBeGreaterThanOrEqual(0);
       expect(seat.y + seat.width * 1.15 / 2).toBeLessThanOrEqual(scene.height);
     }
-    expect(scene.background).toBeNull(); // ar-2 approved artwork has not arrived.
+    expect(scene.background).toMatch(/^\/images\/home\/study-room-scenes\/room-\d-(nordic|sunlit)\.webp$/);
+    const smallest = Math.min(...scene.seats.map(point => point.width));
+    expect(smallest * (scene.minWidth ?? 358) / scene.width).toBeGreaterThanOrEqual(44);
   }
 });
 
-it("uses only occupied rows while art is pending and preserves the approved background ratio", () => {
+it("preserves illustrated room coordinates at all occupancies", () => {
   const hall = STUDY_ROOM_SCENES[4];
-  expect(studyRoomHeight(hall, 60)).toBeLessThan(studyRoomHeight(hall, 120));
-  expect(studyRoomHeight(hall, 130)).toBeGreaterThan(studyRoomHeight(hall, 120));
-  const approved = { ...hall, background: "/approved-hall.webp" };
-  expect(studyRoomHeight(approved, 3)).toBe(hall.height);
-  expect(studyRoomHeight(approved, 130)).toBe(hall.height);
+  for (const count of [1, 5, 12, 24, 48, 120, 130]) expect(studyRoomHeight(hall, count)).toBe(hall.height);
 });

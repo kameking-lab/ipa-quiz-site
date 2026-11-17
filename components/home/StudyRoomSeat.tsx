@@ -13,25 +13,26 @@ export interface StudyRoomSeatDetail {
 }
 
 /** Presentation only: the anonymous presence aggregate currently has no per-learner metadata. */
-export function StudyRoomSeat({ name, index, mascot, detail, cheering, onCheer }: {
+export function StudyRoomSeat({ name, index, mascot, detail, illustrated = false, cheering, onCheer }: {
   name: string; index: number; mascot: SeatMascot | null; detail?: StudyRoomSeatDetail;
+  illustrated?: boolean;
   cheering: boolean; onCheer: () => void;
 }) {
   return <button type="button" aria-label={`${index + 1} ${name}のチワワを応援`} onClick={onCheer} title={name}
     data-premium={detail?.premium === true} data-mascot-state={mascot?.state} data-cheering={cheering}
     className={cn("relative flex h-full w-full min-w-0 flex-col items-center justify-center rounded-xl border text-foreground outline-offset-[-3px] hover:bg-stone-200/40 dark:hover:bg-stone-700/40 focus-visible:outline-2 focus-visible:outline-primary",
-      detail?.premium ? "border-amber-500 bg-amber-50/40 ring-2 ring-amber-300 dark:bg-amber-950/30" : "border-transparent")}>
+      detail?.premium ? "border-amber-500! bg-amber-50/40 ring-2 ring-amber-300 dark:bg-amber-950/30" : "border-0")}>
     {detail?.premium && <Star aria-label="特等席" className="absolute right-1 top-1 z-10 size-3.5 fill-amber-300 text-amber-800 dark:text-amber-300" />}
     <span className="relative block aspect-square w-full" data-mirrored={mascot?.mirrored}>
       {mascot && <>
-        {mascot.state === "away" && <>
+        {mascot.state === "away" && !illustrated && <>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src={mascot.vacantSrc} alt="" className="absolute inset-0 size-full object-contain" width={256} height={256} loading="lazy" decoding="async" />
         </>}
         {/* Native lazy loading reuses identical local WebP URLs without image optimizer requests. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={mascot.src} alt={`${name}のチワワ（${mascot.stateLabel}）`} width={256} height={256} loading="lazy" decoding="async"
-          className={cn("study-mascot size-full object-contain motion-reduce:animate-none", mascot.mirrored && "-scale-x-100", mascot.state === "away" && "absolute bottom-0 right-0 !size-3/4")} />
+          className={cn("study-mascot size-full object-contain motion-reduce:animate-none", mascot.mirrored && "-scale-x-100", illustrated && mascot.state !== "away" && "[clip-path:inset(0_0_38%_0)]", mascot.state === "away" && "absolute bottom-0 right-0 !size-3/4", illustrated && mascot.state === "away" && "translate-y-1/2")} />
       </>}
     </span>
     {detail?.todayAnswers !== undefined && <span className="max-w-full truncate rounded-full bg-background/95 px-1 pb-1 text-[10px] font-medium tabular-nums">今日{detail.todayAnswers}問</span>}

@@ -21,11 +21,13 @@ async function show(page: Page, snapshot: StudyPresenceSnapshot) {
         snapshot: { ...snapshot, status: "measured", total: snapshot.count, measuredAt: new Date(now).toISOString(),
           validUntil: new Date(now + 90_000).toISOString(), windowSeconds: 300 } } }));
     }, snapshot);
-    return page.getByTestId("study-room-total").textContent();
+    // A sample sent before hydration is ignored. Keep polling so it can be
+    // delivered after subscription instead of waiting on a still-absent label.
+    return page.getByTestId("study-room-total").textContent({ timeout: 200 }).catch(() => "");
   }).toBe(`いま${snapshot.count}人`);
 }
 
-for (const [count, stage, name] of [[3, 0, "small"], [25, 3, "large"], [60, 4, "hall"], [130, 4, "overflow"]] as const) {
+for (const [count, stage, name] of [[1, 0, "one"], [5, 0, "small"], [12, 1, "classroom"], [24, 2, "wide"], [48, 3, "large"], [120, 4, "hall"], [130, 4, "overflow"]] as const) {
   test(`${count} learners have matching chihuahuas and no horizontal scroll at 390px`, async ({ page }) => {
     const errors: string[] = []; page.on("pageerror", error => errors.push(error.message));
     await page.setViewportSize({ width: 390, height: 844 });
@@ -38,7 +40,7 @@ for (const [count, stage, name] of [[3, 0, "small"], [25, 3, "large"], [60, 4, "
     if (count > 120) await expect(page.getByLabel("ほか10人が勉強中")).toHaveText("+10");
     else await expect(page.getByText(/^\+/)).toHaveCount(0);
     // Visit every row so native lazy images can be decoded before the evidence capture.
-    for (const image of await scene.locator("img").all()) {
+    for (const image of await scene.locator(".study-mascot").all()) {
       await image.scrollIntoViewIfNeeded();
       await expect.poll(() => image.evaluate(element => (element as HTMLImageElement).naturalWidth)).toBe(256);
     }
@@ -51,7 +53,7 @@ for (const [count, stage, name] of [[3, 0, "small"], [25, 3, "large"], [60, 4, "
     });
     expect(geometry).toEqual({ fits: true, seatsFit: true, targets: true });
     await scene.screenshot({ path: `${evidence}/${name}-390.png` });
-    if (count === 3) await page.locator("#study-room").screenshot({ path: `${evidence}/room-390.png` });
+    if (count === 5) await page.locator("#study-room").screenshot({ path: `${evidence}/room-390.png` });
     expect(errors).toEqual([]);
   });
 }

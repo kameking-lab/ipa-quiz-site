@@ -129,7 +129,7 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
     ? `/quiz?mode=random&exam=${encodeURIComponent(selectedExam)}` : suggestion?.href ?? "/#choose-qualification";
 
   const Heading = standalone ? "h1" : "h2";
-  return <div className="mx-auto w-full min-w-0 max-w-3xl space-y-4">
+  return <div className="mx-auto w-full min-w-0 max-w-4xl space-y-4">
     <header className="flex min-w-0 items-center justify-between gap-2">
       <Heading id="study-room-title" className="text-xl font-bold tracking-tight">自習室</Heading>
       {filtered && <p data-testid="study-room-total" className="whitespace-nowrap text-sm tabular-nums text-muted-foreground">{current ? "いま" : "前回"}<strong className="ml-1 text-foreground">{filtered.count.toLocaleString("ja-JP")}</strong>人</p>}
@@ -141,10 +141,11 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
       </div>
       <span className="min-w-0 text-right text-xs leading-relaxed text-muted-foreground">{filtered ? scene.name : ""}</span>
     </div>
+    <div role="region" aria-label="自習室の席" tabIndex={0} className="overflow-x-auto rounded-2xl outline-offset-2 focus-visible:outline-2 focus-visible:outline-primary">
     <div ref={sceneRef} data-testid="study-room-scene" data-stage={renderedStage} data-motion-visible={motionVisible} data-art-status={scene.background ? "ready" : "pending"}
       role="group" aria-label="チワワの自習室" tabIndex={-1}
       className="relative isolate w-full min-w-0 overflow-hidden rounded-2xl border border-stone-200 bg-stone-50 outline-offset-2 focus-visible:outline-2 focus-visible:outline-primary dark:border-stone-700 dark:bg-stone-900"
-      style={{ aspectRatio: `${scene.width} / ${sceneHeight}` }}>
+      style={{ aspectRatio: `${scene.width} / ${sceneHeight}`, minWidth: scene.minWidth }}>
       {scene.background && backgroundReady && <>
         {/* The approved ar-2 source image and seat coordinates share exactly the same aspect ratio. */}
         {/* eslint-disable-next-line @next/next/no-img-element */}
@@ -159,13 +160,14 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
         return <div key={key} data-testid="study-room-seat" data-seat-key={key} data-animate={motionVisible && visibleSeats.has(key)}
           onFocus={() => { focusedSeat.current = key; }} onBlur={() => { focusedSeat.current = null; }} style={coordinates}
           className="group/seat absolute left-[var(--seat-x)] top-[var(--seat-y)] aspect-[1/1.15] w-[var(--seat-width)] -translate-x-1/2 -translate-y-1/2 [&[data-animate=true]_.study-mascot]:motion-safe:animate-[pulse_3.6s_ease-in-out_infinite]">
-          <StudyRoomSeat name={presenceExamName(seat.exam)!} index={seat.index} mascot={mascot} detail={seat.detail} cheering={cheer === key} onCheer={() => cheerSeat(seat)} />
+          <StudyRoomSeat name={presenceExamName(seat.exam)!} index={seat.index} mascot={mascot} detail={seat.detail} illustrated={!!scene.background} cheering={cheer === key} onCheer={() => cheerSeat(seat)} />
         </div>;
       })}
-      {!seats.length && <p className="absolute inset-0 grid place-items-center px-4 text-sm text-stone-600 dark:text-stone-300">{filtered ? "静かな、自習室。" : "自習室"}</p>}
+      {!seats.length && <p className="absolute inset-0 grid place-items-center px-4 text-sm text-stone-600 dark:text-stone-300"><span className="rounded-full bg-background/95 px-4 py-2 shadow-sm">{filtered ? "静かな、自習室。" : "自習室"}</span></p>}
       {measured && measured.hidden > 0 && <span aria-label={`ほか${measured.hidden}人が勉強中`} className="absolute bottom-3 right-3 rounded-full border border-border bg-background px-3 py-1.5 text-sm font-semibold tabular-nums shadow-sm">+{measured.hidden}</span>}
     </div>
+    </div>
     {snapshot && !current && <p className="text-right text-xs text-muted-foreground"><time dateTime={snapshot.measuredAt}>{new Date(snapshot.measuredAt).toLocaleString("ja-JP", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Tokyo" })}</time> 時点</p>}
-    <Link href={href} className="flex min-h-12 items-center justify-center rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground outline-offset-2 hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-primary">席について解く</Link>
+    <Link href={href} className="sticky bottom-[calc(4.5rem+env(safe-area-inset-bottom))] z-20 flex min-h-12 items-center justify-center rounded-xl bg-primary shadow-md md:bottom-4 px-4 py-3 text-sm font-semibold text-primary-foreground outline-offset-2 hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-primary">席について解く</Link>
   </div>;
 }
