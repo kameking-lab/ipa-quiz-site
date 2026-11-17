@@ -1,45 +1,57 @@
-import { cleanup, render, screen, within } from "@testing-library/react";
-import { afterEach, expect, it, vi } from "vitest";
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { afterEach, expect, it } from "vitest";
 import { StudyRoom } from "@/components/home/StudyRoom";
 import { measuredPresence } from "@/lib/study-presence-contract";
-import { presenceExamName } from "@/lib/study-presence";
+import { STUDY_ROOM_SCENES, studyRoomScene } from "@/lib/home/study-room-scenes";
 
-vi.mock("@/components/home/StudyRewardCorner", () => ({ StudyRewardCorner: () => null }));
-afterEach(cleanup);
+afterEach(() => { cleanup(); sessionStorage.clear(); localStorage.clear(); });
 
-// These are DOM assertions, not browser geometry or visual overlap checks.
-it.each([
-  [0, 0], [1, 0], [5, 0], [6, 1], [12, 1], [13, 2],
-  [24, 2], [25, 3], [48, 3], [49, 4], [100, 4],
-])("renders the measured room for %i learners at stage %i", (count, stage) => {
-  const snapshot = measuredPresence({ count, exams: count ? [{ exam: "fe", count }] : [] }, Date.UTC(2026, 9, 30));
-  const { container } = render(<StudyRoom snapshot={snapshot} suggestions={[]} />);
-  const scene = screen.getByRole("group", { name: "前回取得時点の集計に基づくチワワの自習室" });
-  expect(scene).toHaveAttribute("data-stage", String(stage));
-  const visible = Math.min(count, 12);
-  // Images expose qualification and illustration state; seat controls stay outside the scene.
-  expect(within(scene).queryAllByRole("button")).toHaveLength(0);
-  const illustrations = scene.querySelectorAll(".study-room-seat");
-  expect(illustrations).toHaveLength(visible);
-  for (const illustration of illustrations) {
-    expect(illustration).not.toHaveAttribute("aria-hidden", "true");
-    expect(within(illustration as HTMLElement).getByRole("img")).toHaveAccessibleName(/^基本情報技術者の(?:チワワ（(?:勉強中|あるある：.+|ひと休み：.+)）|空席（椅子と机、開いたままの本）)$/);
-  }
-  const seatList = screen.queryByRole("group", { name: "自習室の席を選ぶ" });
-  const seats = seatList ? within(seatList).getAllByRole("button") : [];
-  expect(seats).toHaveLength(visible);
-  if (visible === 0) expect(seatList).not.toBeInTheDocument();
-  seats.forEach((seat, index) => {
-    expect(seat).toHaveAccessibleName(`${index + 1} ${presenceExamName("fe")}`);
-    expect(seat).toHaveAttribute("aria-controls", "study-room-selection");
-    expect(seat).toHaveAttribute("aria-pressed", "false");
-  });
-  expect(container.querySelector(".study-room-total")).toHaveTextContent(`${count}人`);
-  if (count) {
-    const counts = screen.getByRole("list", { name: "資格別の学習人数" });
-    expect(within(counts).getByRole("listitem")).toHaveTextContent(`${presenceExamName("fe")} ${count}人`);
-  } else {
-    expect(screen.queryByRole("list", { name: "資格別の学習人数" })).not.toBeInTheDocument();
-    expect(screen.getByRole("link", { name: "資格から問題を探す" })).toHaveAttribute("href", "/search#home-directory-title");
+it.each([[0, 0], [3, 0], [5, 0], [6, 1], [12, 1], [13, 2], [24, 2], [25, 3], [48, 3], [60, 4], [130, 5]])(
+  "%i learners draw exactly their chihuahuas at stage %i (including expanded halls)", (count, stage) => {
+    const snapshot = measuredPresence({ count, exams: count ? [{ exam: "fe", count }] : [] }, Date.now());
+    const { container } = render(<StudyRoom snapshot={snapshot} suggestions={[]} current />);
+    const scene = screen.getByTestId("study-room-scene");
+    expect(scene).toHaveAttribute("data-stage", String(stage));
+    expect(screen.queryAllByTestId("study-room-seat")).toHaveLength(count);
+    expect(container.querySelectorAll(".study-mascot")).toHaveLength(count);
+    expect(screen.getByTestId("study-room-total")).toHaveTextContent(`いま${count}人`);
+    expect(screen.queryByText(/^\+/)).not.toBeInTheDocument();
+    expect(screen.getByText(studyRoomScene(stage).name)).toBeInTheDocument();
+  },
+);
+
+it("filters the same qualification before counting, allocating seats, and choosing the room", () => {
+  const snapshot = measuredPresence({ count: 25, exams: [{ exam: "ip", count: 22 }, { exam: "fe", count: 3 }] }, Date.now());
+  const { container } = render(<StudyRoom snapshot={snapshot} suggestions={[]} exam="fe" current />);
+  fireEvent.click(screen.getByRole("button", { name: "同じ資格" }));
+  expect(screen.getByTestId("study-room-total")).toHaveTextContent("いま3人");
+  expect(screen.getAllByTestId("study-room-seat")).toHaveLength(3);
+  expect(container.querySelectorAll(".study-mascot")).toHaveLength(3);
+  // Shrinking keeps the previous room for sixty seconds, but never keeps extra dogs.
+  expect(screen.getByTestId("study-room-scene")).toHaveAttribute("data-stage", "3");
+  fireEvent.click(screen.getByRole("button", { name: "みんな" }));
+  expect(screen.getAllByTestId("study-room-seat")).toHaveLength(25);
+});
+
+it("samples bounded floor coordinates with depth-scaled sizes instead of rows", () => {
+  expect(STUDY_ROOM_SCENES.map(scene => scene.seats.length)).toEqual([5, 12, 24, 48, 120]);
+  let previous = Infinity;
+  for (const scene of STUDY_ROOM_SCENES) {
+    const largest = Math.max(...scene.seats.map(point => point.width));
+    expect(largest).toBeLessThan(previous); previous = largest;
+    expect(new Set(scene.seats.map(point => `${point.x},${point.y}`)).size).toBe(scene.seats.length);
+    for (const seat of scene.seats) {
+      expect(seat.x - seat.width / 2).toBeGreaterThanOrEqual(0);
+      expect(seat.x + seat.width / 2).toBeLessThanOrEqual(scene.width);
+      expect(seat.y - seat.width / 2).toBeGreaterThanOrEqual(0);
+      expect(seat.floorY).toBeLessThanOrEqual(scene.height);
+      expect(seat.y + seat.width / 2).toBeCloseTo(seat.floorY);
+    }
+    expect(new Set(scene.seats.map(seat => seat.floorY)).size).toBe(scene.seats.length);
+    const byDepth = [...scene.seats].sort((a, b) => a.floorY - b.floorY);
+    for (let i = 1; i < byDepth.length; i++) expect(byDepth[i].width).toBeGreaterThan(byDepth[i - 1].width);
+    expect(scene.background).toMatch(/^\/images\/home\/study-room-v3\/R\d\.webp$/);
+    const smallest = Math.min(...scene.seats.map(point => point.width));
+    expect(smallest * (scene.minWidth ?? 358) / scene.width).toBeGreaterThanOrEqual(44);
   }
 });

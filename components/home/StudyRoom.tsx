@@ -1,186 +1,183 @@
 "use client";
-import Link from "next/link";
 
-import { useEffect, useRef, useState } from "react";
-import { ArrowRight } from "lucide-react";
-import { presenceExamName } from "@/lib/study-presence";
+import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react";
+import Link from "next/link";
+import { canonicalPresenceExam, presenceExamName } from "@/lib/study-presence";
 import type { MeasuredPresence } from "@/lib/study-presence-contract";
-import { initialSeatIdles, mascotVisitSeed, measuredRoom, nextSeatIdles, qualificationMascot, quietRoomMascots, randomFor, roomCharacter, roomMascots, roomStage, type SeatIdle } from "@/lib/home/study-room";
-import { PetOwnStudySeat } from "@/components/pet/PetOwnStudySeat";
-import { usePetProfileView } from "@/components/pet/usePetProfileView";
-import { StudyReturnLink } from "./StudyReturnLink";
-import styles from "./StudyRoomSeats.module.css";
+import { measuredRoom, roomStage } from "@/lib/home/study-room";
+import { studyRoomScene } from "@/lib/home/study-room-scenes";
+import { assignRoomPoints } from "@/lib/home/study-room-scatter";
+import { furnitureRoomMascots } from "@/lib/home/study-room-furniture";
+import { readLastQuestion } from "@/lib/storage/last-question";
+import { listExamLearningSummaries } from "@/lib/exam-library-session";
+import { EXAM_CONFIGS } from "@/lib/exam-config";
+import { StudyRoomSeat, type StudyRoomSeatDetail } from "./StudyRoomSeat";
 
 interface Suggestion { name: string; href: string; exam?: string }
-interface Seat { name: string; href?: string; exam: string; index: number }
+const EMPTY_DETAILS: readonly StudyRoomSeatDetail[] = [];
 
-export function StudyRoom({ snapshot, suggestions }: {
+export function StudyRoom({ snapshot, suggestions, current = false, exam, standalone = false, seatDetails = EMPTY_DETAILS, onCheer }: {
   snapshot: MeasuredPresence | null;
   suggestions: readonly Suggestion[];
+  current?: boolean;
+  exam?: string;
+  standalone?: boolean;
+  /** Integration slot for anonymous metadata from a server; the current aggregate supplies none. */
+  seatDetails?: readonly StudyRoomSeatDetail[];
+  /** Integration slot for delivery; without it the paw is a local encouragement animation. */
+  onCheer?: (seat: { exam: string; index: number }) => void;
 }) {
-  const petView = usePetProfileView(() => {});
-  // No source is emitted until hydration has recovered the visit seed: no SSR mismatch or image swap.
-  const [visitSeed, setVisitSeed] = useState<number | null>(null);
-  useEffect(() => { setVisitSeed(mascotVisitSeed()); }, []);
-  const mascots = visitSeed === null ? null : roomMascots(visitSeed);
-  const [stage, setStage] = useState(() => roomStage(snapshot?.count ?? 0));
-  const targetStage = snapshot ? roomStage(snapshot.count) : null;
+  const [ownExam, setOwnExam] = useState<string | null>(null);
+  const [sameExam, setSameExam] = useState(false);
+  const selectedExam = (exam && canonicalPresenceExam(exam)) || ownExam;
   useEffect(() => {
-    if (targetStage === null) { setStage(0); return; }
-    const target = targetStage;
-    if (target >= stage) { if (target !== stage) setStage(target); return; }
-    const timer = setTimeout(() => setStage(target), 60_000);
+    const last = readLastQuestion();
+    const paper = listExamLearningSummaries().find(item => item.answered > 0);
+    const code = paper && (!last || Date.parse(paper.updatedAt) > last.answeredAt) ? paper.examId : last?.exam;
+    setOwnExam(code ? canonicalPresenceExam(code) : null);
+  }, []);
+  const filtered = useMemo(() => {
+    if (!snapshot || !sameExam || !selectedExam) return snapshot;
+    const exams = snapshot.exams.filter(row => canonicalPresenceExam(row.exam) === selectedExam);
+    const count = exams.reduce((sum, row) => sum + row.count, 0);
+    return { ...snapshot, count, total: count, exams };
+  }, [snapshot, sameExam, selectedExam]);
+  const measured = useMemo(() => filtered ? measuredRoom(filtered, filtered.count) : null, [filtered]);
+  const seats = useMemo(() => (measured?.seats ?? []).map(seat => ({ ...seat,
+    detail: seatDetails.find(item => item.exam === seat.exam && item.index === seat.index),
+  })), [measured, seatDetails]);
+  const targetStage = roomStage(filtered?.count ?? 0);
+  const [stage, setStage] = useState(targetStage);
+  const hasSnapshot = filtered !== null;
+  useEffect(() => {
+    if (!hasSnapshot) { setStage(0); return; }
+    if (targetStage >= stage) { if (targetStage !== stage) setStage(targetStage); return; }
+    const timer = setTimeout(() => setStage(targetStage), 60_000);
     return () => clearTimeout(timer);
-  }, [targetStage, stage]);
-  const [selected, setSelected] = useState<string | null>(null);
+    // Fresh samples within the same stage must not restart the shrink deadline.
+  }, [targetStage, stage, hasSnapshot]);
+  const renderedStage = Math.max(stage, targetStage);
+  const scene = studyRoomScene(renderedStage);
+  const sceneHeight = scene.height;
   const sceneRef = useRef<HTMLDivElement>(null);
-  const scrollRef = useRef<HTMLDivElement>(null);
-  const seatListRef = useRef<HTMLDivElement>(null);
-  const focusedSeat = useRef<string | null>(null);
-  const [motionVisible, setMotionVisible] = useState(false);
-  // 背景の大きな部屋の絵（約 300KB）は、自習室が画面に近づいてから読み込む。
-  // ページ下部にあるので、開いた直後のダウンロードをトップの絵などに譲る。
   const [backgroundReady, setBackgroundReady] = useState(false);
+  const [motionVisible, setMotionVisible] = useState(false);
+  const [visibleSeats, setVisibleSeats] = useState<Set<string>>(new Set());
+  const seatKey = seats.map(seat => `${seat.exam}:${seat.index}`).join("|");
+  const [placement, setPlacement] = useState<{ stage: number; keys: string; points: Map<string, number> }>({ stage: -1, keys: "", points: new Map() });
+  const points = placement.stage === renderedStage && placement.keys === seatKey ? placement.points
+    : assignRoomPoints(seats.map(seat => `${seat.exam}:${seat.index}`), scene.seats.length,
+      placement.stage === renderedStage || (placement.stage >= 4 && renderedStage >= 4) ? placement.points : undefined);
+  if (placement.stage !== renderedStage || placement.keys !== seatKey) setPlacement({ stage: renderedStage, keys: seatKey, points });
+  const mascots = useMemo(() => furnitureRoomMascots(seatKey ? seatKey.split("|") : [], points, scene.seats), [seatKey, points, scene]);
+  const [inspected, setInspected] = useState<string | null>(null);
+  const focusedSeat = useRef<string | null>(null);
   useEffect(() => {
-    const scene = sceneRef.current;
-    if (!scene) return;
+    if (focusedSeat.current && !seatKey.split("|").includes(focusedSeat.current)) {
+      sceneRef.current?.focus();
+      focusedSeat.current = null;
+    }
+  }, [seatKey]);
+  useEffect(() => {
+    const element = sceneRef.current;
+    if (!element) return;
     if (typeof IntersectionObserver === "undefined") { setBackgroundReady(true); return; }
     const observer = new IntersectionObserver(([entry]) => {
-      if (!entry.isIntersecting) return;
-      setBackgroundReady(true);
-      observer.disconnect();
+      if (entry.isIntersecting) { setBackgroundReady(true); observer.disconnect(); }
     }, { rootMargin: "800px 0px" });
-    observer.observe(scene);
+    observer.observe(element);
     return () => observer.disconnect();
   }, []);
   useEffect(() => {
-    const scene = sceneRef.current;
-    if (!scene) return;
+    const element = sceneRef.current;
+    if (!element) return;
     let inViewport = typeof IntersectionObserver === "undefined";
-    const updateVisibility = () => setMotionVisible(inViewport && !document.hidden);
-    const observer = typeof IntersectionObserver === "undefined" ? null : new IntersectionObserver(([entry]) => {
-      inViewport = entry.isIntersecting && entry.intersectionRatio >= 0.1;
-      updateVisibility();
-    }, { threshold: 0.1 });
-    observer?.observe(scene);
-    document.addEventListener("visibilitychange", updateVisibility);
-    updateVisibility();
-    return () => {
-      observer?.disconnect();
-      document.removeEventListener("visibilitychange", updateVisibility);
+    const visible = new Set<string>();
+    const update = () => {
+      const active = inViewport && !document.hidden;
+      setMotionVisible(active);
+      setVisibleSeats(active ? new Set(visible) : new Set());
     };
-  }, []);
-  const measured = snapshot ? measuredRoom(snapshot) : null;
-  const introductions = suggestions.filter((item, index, items) => items.findIndex(candidate => candidate.href === item.href) === index).slice(0, 6);
-  const seats: Seat[] = measured ? measured.seats.map(seat => {
-    const name = presenceExamName(seat.exam)!;
-    return { name, exam: seat.exam, href: suggestions.find(item => item.name === name)?.href, index: seat.index };
-  }) : introductions.map((item, index) => ({ ...item, exam: item.exam ?? item.href.split("/")[1], index }));
-  // A quiet room (1-3 learners) shows everyone studying at their desk; breaks, idle moments and the
-  // playing dog only start from 4 learners, so a single learner never looks like an empty desk.
-  const slots = mascots && quietRoomMascots(mascots, seats.length);
-  // Studying seats rotate through their character's idle moments (never the same one twice in a row).
-  const characterKey = seats.map(seat => slots?.[seat.index]?.state === "study" && !slots.quiet ? roomCharacter(seat.exam) : "").join("|");
-  const [idles, setIdles] = useState<SeatIdle[]>([]);
+    const observer = typeof IntersectionObserver === "undefined" ? null : new IntersectionObserver(entries => {
+      for (const entry of entries) {
+        const key = entry.target.getAttribute("data-seat-key");
+        if (key !== null) {
+          if (entry.isIntersecting) visible.add(key); else visible.delete(key);
+        } else inViewport = entry.isIntersecting;
+      }
+      update();
+    });
+    observer?.observe(element);
+    element.querySelectorAll("[data-seat-key]").forEach(seat => observer?.observe(seat));
+    document.addEventListener("visibilitychange", update);
+    update();
+    return () => { observer?.disconnect(); document.removeEventListener("visibilitychange", update); };
+  }, [seatKey]);
+  const [cheer, setCheer] = useState<string | null>(null);
+  const cooldowns = useRef(new Map<string, number>());
+  const lastCheer = useRef(-Infinity);
   useEffect(() => {
-    if (visitSeed === null) return;
-    // Seeded by the visit so a remount shows the same room; only later ticks vary.
-    setIdles(initialSeatIdles(characterKey.split("|").map(character => character || null), randomFor(visitSeed ^ 0x9e3779b9)));
-  }, [characterKey, visitSeed]);
-  useEffect(() => {
-    if (!motionVisible || visitSeed === null || window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) return;
-    const characters = characterKey.split("|").map(character => character || null);
-    const timer = setInterval(() => setIdles(current => nextSeatIdles(current.length === characters.length ? current : characters.map(() => ({ idle: null, last: null })), characters, Math.random)), 7000);
-    return () => clearInterval(timer);
-  }, [characterKey, motionVisible, visitSeed]);
-  const illustratedSeats = seats.map((seat, i) => ({ ...seat, mascot: slots && qualificationMascot(seat.exam, slots[seat.index], slots.quiet ? null : idles[i]?.idle ?? null) }));
-  const awaySeat = illustratedSeats.find(seat => seat.mascot?.state === "away");
-  const away = awaySeat?.mascot;
-  const selectionKey = (seat: Seat) => `${measured ? "measured" : "introduction"}:${seat.index}:${seat.name}`;
-  const focus = seats.find(seat => selectionKey(seat) === selected);
-  // A seat can represent another qualification after a fresh measurement or a mode change.
-  // Discard the old selection before it can reappear on an unrelated seat.
-  const seatKeys = seats.map(selectionKey).join("\n");
-  const selectedExists = Boolean(focus);
-  useEffect(() => {
-    const focusedStillExists = focusedSeat.current === null || seatKeys.split("\n").includes(focusedSeat.current);
-    if (!focusedStillExists) {
-      scrollRef.current?.focus();
-      focusedSeat.current = null;
-    }
-    if (selected !== null && !selectedExists) setSelected(null);
-  }, [seatKeys, selected, selectedExists]);
-  function clearSelection() {
-    seatListRef.current?.querySelector<HTMLButtonElement>('[aria-pressed="true"]')?.focus();
-    setSelected(null);
+    if (!cheer) return;
+    const timer = setTimeout(() => setCheer(null), 1200);
+    return () => clearTimeout(timer);
+  }, [cheer]);
+  function cheerSeat(seat: { exam: string; index: number }) {
+    const key = `${seat.exam}:${seat.index}`;
+    setInspected(current => current === key ? null : key);
+    const now = Date.now();
+    if (now - lastCheer.current < 1200 || now - (cooldowns.current.get(key) ?? -Infinity) < 10_000) return;
+    lastCheer.current = now;
+    cooldowns.current.set(key, now);
+    setCheer(key);
+    onCheer?.(seat);
   }
-  function selectSeat(seat: Seat) {
-    const key = selectionKey(seat);
-    setSelected(selected === key ? null : key);
-    // Keep the chosen character and its question link together, even after scrolling to a lower seat.
-    if (selected !== key && window.matchMedia?.("(min-width:768px)").matches) {
-      const top = scrollRef.current?.getBoundingClientRect().top;
-      if (top !== undefined && top < 80) window.scrollBy({ top: top - 80, behavior: "instant" });
-    }
-  }
+  const suggestion = suggestions.find(item => item.exam && canonicalPresenceExam(item.exam) === selectedExam);
+  const href = selectedExam && Object.hasOwn(EXAM_CONFIGS, selectedExam)
+    ? `/quiz?mode=random&exam=${encodeURIComponent(selectedExam)}` : suggestion?.href ?? "/#choose-qualification";
 
-  return <>
-    <header className="study-room-heading">
-      <h2 id="study-room-title"><span>それぞれの目標へ。</span><span>同じ空間で。</span></h2>
+  const Heading = standalone ? "h1" : "h2";
+  return <div className="mx-auto w-full min-w-0 max-w-4xl space-y-3 sm:space-y-4">
+    <header className="flex min-w-0 items-center justify-between gap-2">
+      <Heading id="study-room-title" className="text-xl font-bold tracking-tight">自習室</Heading>
+      {filtered && <p data-testid="study-room-total" className="whitespace-nowrap text-sm tabular-nums text-muted-foreground">{current ? "いま" : "前回"}<strong className="ml-1 text-foreground">{filtered.count.toLocaleString("ja-JP")}</strong>人</p>}
     </header>
-    <div className="study-room-layout">
-      <div className={`study-room-card ${styles.room}`}>
-        <div className="study-room-toolbar"><h3>木もれびの自習室</h3></div>
-        <div ref={scrollRef} className="study-room-scroll" tabIndex={0} aria-label="広がる自習室。横にスクロールできます"><div ref={sceneRef} data-stage={stage} data-motion-visible={motionVisible} data-bg-ready={backgroundReady} className="study-room-scene" role="group" aria-label={snapshot ? "前回取得時点の集計に基づくチワワの自習室" : "資格を紹介するイメージルーム"} onKeyDown={event => { if (event.key === "Escape") setSelected(null); }}>
-          <span className="study-room-light" aria-hidden="true">木もれびの時間</span>
-          <div className={styles.seatedArea}>
-          {illustratedSeats.map(seat => {
-            const mascot = seat.mascot;
-            return <span key={selectionKey(seat)} className={`study-room-seat study-seat-${seat.index} ${styles.illustration}`} data-selected={selected === selectionKey(seat)} data-mascot-state={mascot?.state === "away" ? "vacant" : mascot?.state}>
-              {mascot && <span className={styles.direction} data-mirrored={mascot.mirrored}>
-                {/* Local pre-sized WebP; native lazy loading avoids optimizer requests and preloads. */}
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img className={`${mascot.state === "away" ? styles.vacant : "study-mascot"} ${styles.image}`} src={mascot.state === "away" ? mascot.vacantSrc : mascot.src} alt={mascot.state === "away" ? `${seat.name}の空席（椅子と机、開いたままの本）` : `${seat.name}のチワワ（${mascot.stateLabel}）`} width={256} height={256} loading="lazy" decoding="async" />
-              </span>}
-              <span className={styles.number} aria-hidden="true">{seat.index + 1}</span>
-            </span>;
-          })}
-          </div>
-          {away && awaySeat && <span className={`study-room-away ${styles.illustration} ${styles.floor}`} data-mascot-state="away" data-origin-seat={awaySeat.index} data-selected={selected === selectionKey(awaySeat)}>
-            <span className={styles.direction} data-mirrored={away.mirrored}>
-              {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img className={`study-mascot ${styles.image}`} src={away.src} alt={`${awaySeat.name}のチワワ（${away.stateLabel}）`} width={256} height={256} loading="lazy" decoding="async" />
-            </span>
-          </span>}
-          {snapshot?.count === 0 && <div className="study-room-empty"><p>静かな、自習室。</p></div>}
-        </div></div>
-        <PetOwnStudySeat view={petView} />
+    <div className="flex min-w-0 items-center justify-between gap-2">
+      <div role="group" aria-label="自習室の資格" className="inline-flex rounded-full bg-muted p-1 text-sm font-medium">
+        <button type="button" aria-pressed={!sameExam} onClick={() => setSameExam(false)} className="min-h-11 min-w-20 rounded-full px-4 outline-offset-2 hover:text-foreground focus-visible:outline-2 focus-visible:outline-primary aria-pressed:bg-background aria-pressed:shadow-sm">みんな</button>
+        <button type="button" aria-pressed={sameExam} disabled={!selectedExam} onClick={() => setSameExam(true)} className="min-h-11 min-w-20 rounded-full px-4 outline-offset-2 hover:text-foreground focus-visible:outline-2 focus-visible:outline-primary aria-pressed:bg-background aria-pressed:shadow-sm disabled:opacity-50">同じ資格</button>
       </div>
-      <aside className="study-room-sidebar">
-        {seats.length > 0 && <div ref={seatListRef} className={styles.list} role="group" aria-label="自習室の席を選ぶ" onKeyDown={event => { if (event.key === "Escape") setSelected(null); }}>
-          {seats.map(seat => <button key={selectionKey(seat)} type="button" className={styles.button} aria-controls="study-room-selection" aria-pressed={selected === selectionKey(seat)} onFocus={() => { focusedSeat.current = selectionKey(seat); }} onBlur={() => { focusedSeat.current = null; }} onClick={() => selectSeat(seat)}>
-            <span className={styles.listNumber}>{seat.index + 1}</span><span>{seat.name}</span>
-          </button>)}
-        </div>}
-
-        <div id="study-room-selection" className={`study-room-focus${!focus ? " study-room-focus-empty" : ""}`} aria-live="polite" aria-atomic="true">
-          {focus && <h3>{focus.name}</h3>}
-          {focus?.href && <a href={focus.href} className="study-text-link">{focus.name}の問題を見る<ArrowRight aria-hidden="true" /></a>}
-          {focus && <button type="button" className="study-text-link" onClick={clearSelection}>選択を戻す</button>}
-        </div>
-        <StudyReturnLink />
-        {snapshot && <div className="study-room-summary">
-          <p className="study-kicker">直近5分の学習者</p>
-          <p className="study-room-total"><strong>{snapshot.count.toLocaleString("ja-JP")}</strong><span>人</span></p>
-          <p className="study-room-measurement"><time dateTime={snapshot.measuredAt}>{new Date(snapshot.measuredAt).toLocaleString("ja-JP", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Tokyo" })}</time> 時点</p>
-          {snapshot.exams.length ? <ul className="study-room-counts" aria-label="資格別の学習人数" tabIndex={0}>
-            {snapshot.exams.map(row => <li key={row.exam}>{presenceExamName(row.exam)} <strong>{row.count.toLocaleString("ja-JP")}</strong>人</li>)}
-          </ul> : <div className="study-room-guidance">
-            {introductions.length > 0 && <ul>{introductions.map(item => <li key={item.href}><a href={item.href}>{item.name}<ArrowRight aria-hidden="true" /></a></li>)}</ul>}
-            <Link href="/search#home-directory-title" className="study-text-link">資格から問題を探す<ArrowRight aria-hidden="true" /></Link>
-          </div>}
-        </div>}
-      </aside>
+      <span className="min-w-0 text-right text-xs leading-relaxed text-muted-foreground">{filtered ? scene.name : ""}</span>
     </div>
-  </>;
+    <div role="region" aria-label="自習室の席" tabIndex={0} className="overflow-x-auto rounded-2xl outline-offset-2 focus-visible:outline-2 focus-visible:outline-primary">
+    <div ref={sceneRef} data-testid="study-room-scene" data-stage={renderedStage} data-motion-visible={motionVisible} data-art-status={scene.background ? "ready" : "pending"}
+      role="group" aria-label="チワワの自習室" tabIndex={-1}
+      className="relative isolate w-full min-w-0 overflow-hidden rounded-2xl border border-stone-200 bg-stone-50 outline-offset-2 focus-visible:outline-2 focus-visible:outline-primary dark:border-stone-700 dark:bg-stone-900"
+      style={{ aspectRatio: `${scene.width} / ${sceneHeight}`, minWidth: scene.minWidth }}>
+      {scene.background && backgroundReady && <>
+        {/* Extra halls retain the source image's aspect ratio instead of stretching it. */}
+        {Array.from({ length: scene.columns ?? 1 }, (_, column) =>
+          // eslint-disable-next-line @next/next/no-img-element
+          <img key={column} src={scene.background!} alt="" width={scene.width / (scene.columns ?? 1)} height={scene.height} loading="lazy" decoding="async"
+            className="pointer-events-none absolute top-0 h-full" style={{ left: `${column * 100 / (scene.columns ?? 1)}%`, width: `${100 / (scene.columns ?? 1)}%` }} />)}
+      </>}
+      {seats.map((seat) => {
+        const key = `${seat.exam}:${seat.index}`;
+        const point = scene.seats[points.get(key)!];
+        const mascot = mascots.get(key)!;
+        // A stable identity picks the point and visual variation; membership changes do not reflow survivors.
+        const coordinates = { "--seat-x": `${point.x / scene.width * 100}%`, "--seat-y": `${point.y / sceneHeight * 100}%`, "--seat-width": `${point.width / scene.width * 100}%`, zIndex: Math.round(point.floorY) } as CSSProperties;
+        return <div key={key} data-testid="study-room-seat" data-seat-key={key} data-animate={motionVisible && visibleSeats.has(key)}
+          onFocus={() => { focusedSeat.current = key; }} onBlur={() => { focusedSeat.current = null; }} style={coordinates}
+          className="group/seat absolute left-[var(--seat-x)] top-[var(--seat-y)] aspect-square w-[var(--seat-width)] -translate-x-1/2 -translate-y-1/2 focus-within:!z-[2000]">
+          <StudyRoomSeat name={presenceExamName(seat.exam)!} index={seat.index} mascot={mascot} detail={seat.detail} inspected={inspected === key} cheering={cheer === key} onCheer={() => cheerSeat(seat)}
+            art={mascot.art} />
+        </div>;
+      })}
+      {!seats.length && <p className="absolute inset-0 grid place-items-center px-4 text-sm text-stone-600 dark:text-stone-300"><span className="rounded-full bg-background/95 px-4 py-2 shadow-sm">{filtered ? "静かな、自習室。" : "自習室"}</span></p>}
+      {measured && measured.hidden > 0 && <span aria-label={`ほか${measured.hidden}人が勉強中`} className="absolute bottom-3 right-3 rounded-full border border-border bg-background px-3 py-1.5 text-sm font-semibold tabular-nums shadow-sm">+{measured.hidden}</span>}
+    </div>
+    </div>
+    {snapshot && !current && <p className="text-right text-xs text-muted-foreground"><time dateTime={snapshot.measuredAt}>{new Date(snapshot.measuredAt).toLocaleString("ja-JP", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Tokyo" })}</time> 時点</p>}
+    <Link href={href} className="flex min-h-12 items-center justify-center rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground outline-offset-2 hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-primary">席について解く</Link>
+  </div>;
 }

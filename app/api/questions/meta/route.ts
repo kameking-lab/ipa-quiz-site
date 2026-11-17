@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { z } from "zod";
 import { findQuestionById } from "@/lib/questions/pool-server";
+import { questionHeading } from "@/lib/seo/question-meta";
 
 export const runtime = "nodejs";
 
@@ -16,10 +17,10 @@ export async function POST(req: Request) {
     return NextResponse.json({ error: "invalid body" }, { status: 400 });
   }
 
-  const meta: Array<{ id: string; exam: string; category: string }> = [];
+  const meta: Array<{ id: string; exam: string; category: string; label: string }> = [];
   for (const id of parsed.ids) {
     const q = await findQuestionById(id);
-    if (q) meta.push({ id: q.id, exam: q.exam, category: q.category });
+    if (q) meta.push({ id: q.id, exam: q.exam, category: q.category, label: questionHeading(q) });
   }
 
   return NextResponse.json({ meta });
