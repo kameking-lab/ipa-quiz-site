@@ -58,7 +58,7 @@ for (const [percent, target] of [[0, 0], [50, 50], [100, 100]] as const) {
     const geometry = await track.evaluate(el => {
       const image = el.querySelector("image")!, flag = el.querySelector("path")!;
       const imageBox = image.getBoundingClientRect(), flagBox = flag.getBoundingClientRect(), box = el.getBoundingClientRect();
-      return { dogCenter: Number(image.getAttribute("x")) + 27,
+      return { dogCenter: Number(image.getAttribute("x")) + Number(image.getAttribute("width")) / 2,
         flagX: Number(flag.getAttribute("d")!.match(/^M([\d.]+)/)![1]),
         inside: imageBox.left >= box.left && imageBox.right <= box.right && flagBox.right <= box.right,
         separate: flagBox.bottom < imageBox.top, animation: getComputedStyle(image.parentElement!).animationName };

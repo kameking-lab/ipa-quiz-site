@@ -38,7 +38,7 @@
   display: flex;
   align-items: baseline;
   gap: 6px;
-  margin-top: 16px;
+  margin-top: 14px;
   color: var(--muted-foreground);
   font-size: 14px;
 }
@@ -71,4 +71,4 @@
 }
 .judgment { font-size: 13px; line-height: 20px; }
 .percent { font-size: 32px; line-height: 1.2; font-weight: 600; font-variant-numeric: tabular-nums; }
-@media (min-width: 640px) { .content { padding: 32px; } }
+@media (min-width: 640px) { .content { padding: 28px; } }

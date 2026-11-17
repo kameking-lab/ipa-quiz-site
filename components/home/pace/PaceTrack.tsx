@@ -3,7 +3,7 @@ import { qualificationStudyArt } from "@/lib/home/study-room";
 import type { PacePlan } from "@/lib/study-plan/pace";
 
 // SVG coordinates allow percentage positions without inline style or generated Tailwind classes.
-export function PaceTrack({ plan, percent, target, onOpen }: { plan: PacePlan; percent: number; target: number | null; onOpen: () => void }) {
+export function PaceTrack({ plan, percent, target, onOpen, expanded = false }: { plan: PacePlan; percent: number; target: number | null; onOpen: () => void; expanded?: boolean }) {
   const x = (value: number) => 30 + Math.max(0, Math.min(100, value)) * 2.6;
   const passing = passingLineForExam(plan.exam);
   const start = plan.registration?.start;
@@ -11,8 +11,8 @@ export function PaceTrack({ plan, percent, target, onOpen }: { plan: PacePlan; p
   const span = plan.examDate ? Date.parse(plan.examDate) - Date.parse(plan.startDate) : 0;
   const at = (date: string) => span > 0 ? Math.max(0, Math.min(100, (Date.parse(date) - Date.parse(plan.startDate)) * 100 / span)) : 0;
   const bandStart = start ? at(start) : 0, bandEnd = deadline ? at(deadline) : 0;
-  return <button type="button" onClick={onOpen} aria-label="学習計画の詳細を開く" className="block w-full rounded-xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">
-    <svg viewBox="0 0 320 184" className="mx-auto h-[174px] w-full overflow-visible sm:h-[192px]" role="img" aria-label={`進み具合${Math.round(percent)}%、${target === null ? "受験日未設定" : `今日の目標${Math.round(target)}%`}`}>
+  return <button type="button" onClick={onOpen} aria-label="学習計画の詳細を開く" aria-haspopup="dialog" aria-expanded={expanded} className="block w-full rounded-xl">
+    <svg viewBox="-16 0 352 184" className="mx-auto h-[164px] w-full overflow-visible sm:h-[176px]" role="img" aria-label={`進み具合${Math.round(percent)}%、${target === null ? "受験日未設定" : `今日の目標${Math.round(target)}%`}`}>
       {deadline && bandEnd > bandStart && <g><rect x={x(bandStart)} y="12" width={x(bandEnd) - x(bandStart)} height="15" rx="7" className="fill-amber-100 dark:fill-amber-900" /><text x={(x(bandStart) + x(bandEnd)) / 2} y="23" textAnchor="middle" fontSize="9" className="fill-amber-800 dark:fill-amber-200">申込{plan.registration?.estimated ? "（予定）" : "期間"}</text></g>}
       <line x1="30" y1="128" x2="290" y2="128" strokeWidth="5" strokeLinecap="round" className="stroke-muted" />
       <line x1="30" y1="128" x2={x(percent)} y2="128" strokeWidth="5" strokeLinecap="round" className="stroke-primary" />
