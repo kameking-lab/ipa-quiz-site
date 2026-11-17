@@ -32,7 +32,9 @@ const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
   display: "swap",
-  preload: true,
+  // The Japanese LCP heading uses a system font. Discover this Latin font
+  // through CSS instead of competing with render-blocking styles site-wide.
+  preload: false,
 });
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",

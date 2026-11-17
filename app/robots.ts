@@ -2,6 +2,14 @@ import type { MetadataRoute } from "next";
 import { SITE_BASE_URL } from "@/lib/seo/config";
 import { EXAM_LABELS } from "@/lib/utils";
 import { QUALIFICATION_HUBS, qualificationHubPath } from "@/lib/exam-qualification-hubs";
+import { QUALIFICATION_CATALOG } from "@/lib/qualifications/catalog";
+
+// New qualifications can be published before the short-label dictionary is
+// extended. Keep their exact introduction URL in the policy as well.
+const EXAM_INTRODUCTION_PATHS = [...new Set([
+  ...Object.keys(EXAM_LABELS),
+  ...QUALIFICATION_CATALOG.filter(entry => entry.status === "live" && entry.examCode).map(entry => entry.examCode!),
+])].map(exam => `/${exam}$`);
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -41,7 +49,7 @@ export default function robots(): MetadataRoute.Robots {
           "/qualifications$",
           "/e-learning/exams$",
           ...QUALIFICATION_HUBS.map(hub => `${qualificationHubPath(hub.slug)}$`),
-          ...Object.keys(EXAM_LABELS).map(exam => `/${exam}$`),
+          ...EXAM_INTRODUCTION_PATHS,
           "/blog$",
           "/blog/",
           "/about$",

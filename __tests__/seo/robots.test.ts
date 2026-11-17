@@ -2,6 +2,7 @@ import { describe, expect, it } from "vitest";
 
 import robots from "@/app/robots";
 import { SITE_BASE_URL } from "@/lib/seo/config";
+import { getAvailableExams } from "@/lib/seo/exam-meta";
 import {
   renderBlogSitemapXml,
   renderBooksSitemapXml,
@@ -88,6 +89,15 @@ describe("AI crawler policy (2026-11-17)", () => {
     }
     for (const path of ["/q/ap/2009-autumn/am/q1", "/sc/2025-autumn", "/sc/topic/network", "/fp2/practical/2025-05/1", "/denken1/2025-primary/machine/q3", "/sharoushi/sentaku/2025/1", "/e-learning/exams/lc-example", "/e-learning/exams/qualifications/dai-1-shu-eisei-kanrisha/question/1", "/quiz?mode=random", "/api/og", "/api/copilot", "/admin/", "/auth/signin", "/about-secret"]) {
       expect(canCrawl(bot, path), `${bot} ${path}`).toBe(false);
+    }
+  });
+
+  it.each(["GPTBot", "ClaudeBot", "Applebot-Extended"])("%s covers every registered exam introduction without allowing its archives", bot => {
+    const exams = getAvailableExams();
+    expect(exams.length).toBeGreaterThan(300);
+    for (const exam of exams) {
+      expect(canCrawl(bot, `/${exam}`), exam).toBe(true);
+      expect(canCrawl(bot, `/${exam}/2026-annual`), exam).toBe(false);
     }
   });
 
