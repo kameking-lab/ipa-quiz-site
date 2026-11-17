@@ -98,7 +98,7 @@ export function DashboardProgress() {
             分野別習熟度（直近10分野）
           </h2>
           <div
-            className="h-72"
+            className={data.categoryStats.length > 0 ? "h-64 sm:h-72" : "hidden"}
             role="img"
             aria-label="分野別習熟度を示すレーダーチャート（直近10分野の正答率）"
           >
@@ -151,8 +151,8 @@ export function DashboardProgress() {
 
         <div className="space-y-3">
           <SummaryCard label="累計回答" value={data.totalAnswered.toLocaleString("ja-JP")} unit="問" />
-          <SummaryCard label="ユニーク問題" value={data.uniqueAnswered.toLocaleString("ja-JP")} unit="問" />
-          <SummaryCard label="通算正答率" value={`${overallAccuracy}%`} accent />
+          <SummaryCard label="解いた問題の種類" value={data.uniqueAnswered.toLocaleString("ja-JP")} unit="問" />
+          <SummaryCard label="通算正答率" value={data.totalAnswered > 0 ? `${overallAccuracy}%` : "—"} accent />
         </div>
       </section>
 
@@ -197,10 +197,10 @@ function ExamRow({ prob }: { prob: ExamPassProbability }) {
   return (
     <Link
       href={`/quiz?mode=random&exam=${prob.exam}`}
-      className="group flex items-center justify-between gap-3 rounded-xl border border-zinc-200 bg-white p-3 transition hover:-translate-y-0.5 hover:border-sky-300 hover:shadow dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-sky-700"
+      className="group flex items-center justify-between gap-3 rounded-xl border border-zinc-200 bg-white p-3 transition-colors hover:border-sky-300 dark:border-zinc-800 dark:bg-zinc-950 dark:hover:border-sky-700"
     >
       <div className="min-w-0 flex-1">
-        <div className="truncate text-sm font-semibold">{examLabel(prob.exam)}</div>
+        <div className="break-words text-sm font-semibold">{examLabel(prob.exam)}</div>
         <div className="flex items-center gap-2 text-[11px] text-zinc-500 dark:text-zinc-400">
           <span>{prob.answered}問 解答済</span>
 

@@ -48,7 +48,6 @@ const THEME_OPTIONS: { value: Theme; label: string; icon: React.ReactNode }[] = 
 ];
 
 const SECTIONS = [
-  { id: "home-screen", label: "ホーム画面に追加", icon: <Download className="h-3.5 w-3.5" /> },
   { id: "appearance", label: "外観", icon: <Palette className="h-3.5 w-3.5" /> },
   { id: "quiz-options", label: "出題・演出", icon: <Sliders className="h-3.5 w-3.5" /> },
   { id: "notifications", label: "通知設定", icon: <Bell className="h-3.5 w-3.5" /> },
@@ -56,6 +55,7 @@ const SECTIONS = [
   { id: "history", label: "学習履歴", icon: <TrendingUp className="h-3.5 w-3.5" /> },
   { id: "cloud-sync", label: "クラウド同期", icon: <Cloud className="h-3.5 w-3.5" /> },
   { id: "api-keys", label: "APIキー管理", icon: <KeyRound className="h-3.5 w-3.5" /> },
+  { id: "home-screen", label: "ホーム画面に追加", icon: <Download className="h-3.5 w-3.5" /> },
 ] as const;
 
 function SectionTitle({
@@ -255,14 +255,6 @@ export default function SettingsPage() {
         </nav>
 
         <div className="space-y-6">
-          <section aria-labelledby="home-screen">
-            <SectionTitle id="home-screen" icon={<Download className="h-5 w-5" />}>
-              ホーム画面に追加
-            </SectionTitle>
-            <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
-              <MobileInstallControl />
-            </div>
-          </section>
           {/* Appearance */}
           <section>
             <SectionTitle
@@ -309,7 +301,7 @@ export default function SettingsPage() {
               id="quiz-options"
               icon={<Sliders className="h-5 w-5" />}
             >
-              クイズオプション
+              出題・演出
             </SectionTitle>
             <div className="divide-y divide-border rounded-2xl border border-border bg-card shadow-sm">
               <SettingRow
@@ -390,7 +382,7 @@ export default function SettingsPage() {
               id="history"
               icon={<TrendingUp className="h-5 w-5" />}
             >
-              学習履歴管理
+              学習履歴
             </SectionTitle>
             <div className="overflow-hidden rounded-2xl border border-border bg-card shadow-sm">
               <SettingRow
@@ -485,6 +477,14 @@ export default function SettingsPage() {
             </Link>
           </section>
 
+          <section aria-labelledby="home-screen">
+            <SectionTitle id="home-screen" icon={<Download className="h-5 w-5" />}>
+              ホーム画面に追加
+            </SectionTitle>
+            <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+              <MobileInstallControl />
+            </div>
+          </section>
           {/* About / footer info */}
           <section>
             <div className="divide-y divide-border rounded-2xl border border-border bg-card shadow-sm">

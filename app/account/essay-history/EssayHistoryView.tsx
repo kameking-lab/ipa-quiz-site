@@ -111,7 +111,7 @@ export function EssayHistoryView({questions}: {questions: readonly {id:string;ti
               >
                 <Card className="transition-colors hover:border-sky-400 dark:hover:border-sky-600">
                   <CardContent className="flex items-center gap-4 pt-5">
-                    <Badge variant={RANK_VARIANT[entry.rank]} className="h-10 w-12 justify-center text-base">
+                    <Badge variant={RANK_VARIANT[entry.rank]} className="min-h-10 w-14 shrink-0 justify-center text-sm">
                       {RANK_TEXT[entry.rank]}
                     </Badge>
                     <div className="min-w-0 flex-1">
@@ -119,7 +119,7 @@ export function EssayHistoryView({questions}: {questions: readonly {id:string;ti
                         {examLabel(entry.exam)} · {INDUSTRY_LABELS[entry.industry]} ·{" "}
                         {formatDate(entry.gradedAt)}
                       </p>
-                      <p className="truncate text-sm font-medium text-zinc-900 dark:text-zinc-100">
+                      <p className="break-words text-sm font-medium text-zinc-900 dark:text-zinc-100">
                         {q?.title ?? entry.questionId}
                       </p>
                       <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">

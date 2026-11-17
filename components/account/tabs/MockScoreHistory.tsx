@@ -94,7 +94,7 @@ export function MockScoreHistory() {
             </div>
           ) : (
             <p className="text-sm text-zinc-500 dark:text-zinc-400">
-              この試験の模試スコアはまだ記録されていません。模試モードを完了するとここに反映されます。
+              この試験の模試スコアはまだありません。
             </p>
           )}
           <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
@@ -136,9 +136,6 @@ export function MockScoreHistory() {
               })}
             </ul>
           )}
-          <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
-            ※ 模試スコアはこの端末に保存されます。
-          </p>
           <Link href={`/mock-exam?exam=${exam}`} className="mt-3 inline-flex min-h-11 items-center text-sm font-semibold text-primary underline">模試を受ける</Link>
         </CardContent>
       </Card>

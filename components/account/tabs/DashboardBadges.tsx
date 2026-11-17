@@ -18,7 +18,7 @@ export function DashboardBadges() {
 
   return (
     <div className="space-y-6">
-      <div className="rounded-2xl border border-violet-200 bg-gradient-to-br from-violet-50 via-fuchsia-50 to-pink-50 p-5 dark:border-violet-900/60 dark:from-violet-950/40 dark:via-fuchsia-950/40 dark:to-pink-950/40">
+      <div className="rounded-2xl border border-border bg-card p-5">
         <div className="flex items-center justify-between gap-4">
           <div className="min-w-0">
             <p className="mb-1 inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-wider text-violet-700 dark:text-violet-300">
@@ -52,7 +52,7 @@ export function DashboardBadges() {
         )}
       </div>
 
-      <p className="text-sm text-muted-foreground">以前に案内された特典については、<Link href="/contact#legacy-benefits" className="underline">お問い合わせください</Link>。</p>
+      <p className="text-sm text-muted-foreground">以前に案内された特典については、<Link href="/contact#legacy-benefits" className="inline-flex min-h-11 items-center underline underline-offset-4">お問い合わせください</Link>。</p>
 
       <BadgeWall />
     </div>

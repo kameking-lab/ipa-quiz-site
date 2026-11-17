@@ -64,10 +64,10 @@ export function DashboardTabs({ categoryById }: Props) {
   }
 
   return (
-    <main className="mx-auto w-full max-w-5xl px-4 py-8">
+    <main className="mx-auto w-full max-w-3xl px-4 pb-20 pt-8 sm:px-6 sm:pt-10">
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
-          学習ダッシュボード
+          わたしの記録
         </h1>
       </header>
 
