@@ -1,3 +1,4 @@
+import { PLAN_OFFER } from "@/lib/billing/plan-offer";
 import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
 import { referralPracticeHref } from "@/lib/questions/referral-practice";
 import { PUBLISHED_SENTAKU } from "@/lib/sharoushi/sentaku";
@@ -36,6 +37,7 @@ import { ExamPastQuestionGuide } from "@/components/exam/ExamPastQuestionGuide";
 import { ExamCbtSummary } from "@/components/exam/ExamCbtGuide";
 import { isExamEntryCode } from "@/lib/seo/exam-entry";
 import { isIpaTop } from "@/lib/seo/ipa-top";
+import { examSearchMetadata } from "@/lib/seo/exam-search-metadata";
 import { KanriCoverageNote } from "@/components/exam/KanriCoverageNote";
 import { Tsushin1CoverageNote } from "@/components/exam/Tsushin1CoverageNote";
 const ExamBrowseTabs = dynamic(
@@ -94,10 +96,10 @@ export async function generateMetadata({
   }
   const code = exam as ExamCode;
   const count = getQuestionsByExamStrict(code).length;
-  const title = examTopTitle(code);
-  const description = code === "sharoushi"
+  const coverageDescription = code === "sharoushi"
     ? `第58・57回の全156原問から、択一式${count}原問と選択式${PUBLISHED_SENTAKU.length}原問、計${count + PUBLISHED_SENTAKU.length}原問を部分収録。選択式は1原問5空欄の原形で、公式正答と解説を確認できます。`
     : examMetaDescription(code, count);
+  const { title, description } = examSearchMetadata(code, count + (code === "sharoushi" ? PUBLISHED_SENTAKU.length : 0), coverageDescription);
   const ogParams = new URLSearchParams({
     type: "exam",
     title: examLabel(code),
@@ -245,9 +247,7 @@ export default async function ExamTopPage({
   const hasAm1 = questions.some((q) => q.session === "am1");
   const hasAm2 = questions.some((q) => q.session === "am2");
   const isHighLevel = code !== "kenchiku-setsubishi" && hasAm1 && hasAm2;
-  const summary = isIpaTop(code) ? examTopDescription(code, publishedOriginalCount) : code === "hokenshi" || code === "josanshi" || code === "rinsho-kensagishi" || code === "shinryo-hoshasengishi" || code === "sagyo-ryohoshi"
-    ? examMetaDescription(code, publishedOriginalCount)
-    : EXAM_DESCRIPTIONS[code] ?? `${examLabel(code)}の過去問演習。`;
+
 
   return (
     <main className="relative flex-1">
@@ -284,12 +284,78 @@ export default async function ExamTopPage({
         </nav>
 
         <header className="mb-6">
+<<<<<<< HEAD
           <h1 className="text-balance text-2xl font-bold leading-snug tracking-tight text-foreground sm:text-3xl">
             {examLabel(code)} {isIpaTop(code) ? "過去問・解説" : "過去問"}
+=======
+          <Badge variant="soft" className="mb-3">
+            <Sparkles className="h-3 w-3" />
+            {examLabel(code)}
+          </Badge>
+          <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
+            <span className="inline-block max-w-full">{examLabel(code)}</span>{" "}
+            <span className="inline-block">{isIpaTop(code) ? "過去問・解説" : "過去問"}</span>
+>>>>>>> cx/kako-lp-20261117
           </h1>
-          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{summary}</p>
-          {isExamEntryCode(code) && <ExamCbtSummary exam={code} />}
+          <p className="mt-2 text-sm leading-relaxed text-muted-foreground">無料・登録なしで1日{PLAN_OFFER.freeDaily}問</p>
           {isExamEntryCode(code) && <FirstPracticeEntry exam={code} />}
+        {/* Big CTA */}
+        {!FIRST_PRACTICE_EXAMS.some((entry) => entry === code) && <section aria-label="今すぐ解く" className="mt-4">
+          {code === "fp2" || code === "fp3" ? (
+            <div className="grid gap-3 sm:grid-cols-2">
+              <Button asChild variant="gradient" size="lg" className="w-full font-semibold">
+                <Link href={`/quiz?mode=random&exam=${code}&session=gakka`}>学科を解く</Link>
+              </Button>
+              <Button asChild variant="outline" size="lg" className="w-full font-semibold">
+                <Link href={`/${code}/practical`}>
+                  実技の問題と模範解答（{code === "fp2" ? fp2PracticalCount : fp3PracticalCount}問）
+                </Link>
+              </Button>
+            </div>
+          ) : code === "kenchiku-setsubishi" ? (
+            <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+              <h2 className="mb-3 text-sm font-semibold text-foreground">出題する科目を選択</h2>
+              <div className="grid gap-2 sm:grid-cols-3">
+                {(["am1", "am2", "pm"] as const).map(session => (
+                  <Button key={session} asChild variant="outline" size="lg">
+                    <Link href={`/quiz?mode=random&exam=${code}&session=${session}`}>
+                      {practiceSessionLabel(session, code)}
+                    </Link>
+                  </Button>
+                ))}
+              </div>
+            </div>
+          ) : isHighLevel ? (
+            <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
+              <h2 className="mb-3 text-sm font-semibold text-foreground">
+                ランダム出題の範囲を選択
+              </h2>
+              <div className="grid gap-2 sm:grid-cols-2">
+                <Button asChild variant="gradient" size="lg" className="font-semibold">
+                  <Link href={`/quiz?mode=random&exam=${exam}&session=am2`}>
+                    科目A-2（旧午前II）
+                  </Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link href={`/quiz?mode=random&exam=${exam}&session=am1`}>科目A-1（旧午前I）</Link>
+                </Button>
+              </div>
+            </div>
+          ) : (
+            <Button
+              asChild
+              variant="gradient"
+              size="xl"
+              className="w-full font-semibold shadow-md hover:shadow-lg"
+            >
+              <Link href={`/quiz?mode=random&exam=${exam}`}>
+                今すぐ解く
+                <ChevronRight className="h-4 w-4" />
+              </Link>
+            </Button>
+          )}
+        </section>}
+          {isExamEntryCode(code) && <ExamCbtSummary exam={code} />}
           <div className="mt-3 flex flex-wrap gap-2 text-xs">
             <Badge variant="outline">収録 {publishedOriginalCount} 問</Badge>
             <Badge variant="outline">{years.length} 期分</Badge>
@@ -372,6 +438,7 @@ export default async function ExamTopPage({
           </section>
         )}
 
+<<<<<<< HEAD
         {/* Big CTA */}
         {!FIRST_PRACTICE_EXAMS.some((entry) => entry === code) && <section aria-label="今すぐ解く" className="mb-8">
           {code === "fp2" || code === "fp3" ? (
@@ -428,6 +495,9 @@ export default async function ExamTopPage({
             </Button>
           )}
         </section>}
+=======
+
+>>>>>>> cx/kako-lp-20261117
 
         {code === "denko2" && (
           <section aria-label="技能試験" className="mb-8 rounded-2xl border border-blue-200 bg-blue-50 p-5">

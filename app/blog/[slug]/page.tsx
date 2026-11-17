@@ -331,10 +331,10 @@ export default async function BlogArticlePage({ params }: PageProps) {
           <div className="flex flex-wrap items-center gap-2">
             <Link
               href={post.practicePlacement === "none" ? `/${post.exam}` : `/quiz?mode=random&exam=${post.exam}`}
-              aria-label={post.practicePlacement === "none" ? `${examLabel(post.exam)}の受験区分・科目を選ぶ` : `この試験を演習する（${examLabel(post.exam)}・${getExamQuestionCount(post.exam)}問）`}
+              aria-label={post.practicePlacement === "none" ? `${examLabel(post.exam)}の受験区分・科目を選ぶ` : `この資格の過去問を解く（全${getExamQuestionCount(post.exam).toLocaleString("ja-JP")}問・無料）・${examLabel(post.exam)}`}
               className="inline-flex min-h-[48px] items-center gap-1.5 rounded-full bg-sky-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-sky-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              {post.practicePlacement === "none" ? "受験区分・科目を選ぶ" : <>この試験を演習する（{getExamQuestionCount(post.exam).toLocaleString("ja-JP")}問）</>}→
+              {post.practicePlacement === "none" ? "受験区分・科目を選ぶ" : <>この資格の過去問を解く（全{getExamQuestionCount(post.exam).toLocaleString("ja-JP")}問・無料）</>}→
             </Link>
             <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2.5 py-1 text-[11px] font-medium text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300">
               <span aria-hidden="true">✓</span>問題・解説の閲覧は無料

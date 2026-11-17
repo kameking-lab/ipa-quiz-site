@@ -1,4 +1,5 @@
 "use client";
+import { MobileInstallNudge } from "@/components/pwa/MobileInstallNudge";
 import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
 import { NativeQuestionGate } from "@/mobile/shared/NativeQuestionGate";
 
@@ -627,6 +628,7 @@ function ScoredQuizPlayer({
                   onToggleStar={toggleStar}
                   onNext={goNext}
                   nextLabel={index + 1 >= total ? "結果を見る" : "次の問題へ"}
+                  afterNavigation={revealed ? <MobileInstallNudge placement="answer" answered={stats.answered} /> : undefined}
                   onAskAI={() => { setCopilotQuery("open"); setCopilotRequest((value) => ({ questionId: question!.id, sequence: (value?.sequence ?? 0) + 1 })); }}
                   onAnalyzeWrong={
                     !isCorrect ? () => { setCopilotQuery("why-wrong"); setCopilotRequest((value) => ({ questionId: question!.id, sequence: (value?.sequence ?? 0) + 1, prompt: "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" })); } : undefined

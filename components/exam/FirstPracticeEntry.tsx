@@ -1,3 +1,4 @@
+import { PLAN_OFFER } from "@/lib/billing/plan-offer";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,7 +13,7 @@ export function FirstPracticeEntry({ exam }: { exam: ExamEntryCode }) {
     <section aria-label="今すぐ解く" className="mt-4 space-y-2">
       <Button asChild variant="gradient" size="lg" className="w-full font-semibold">
         <Link href={`/quiz?mode=random&exam=${exam}${advanced ? "&session=am2" : ""}`}>
-          まず10問、解いてみる{advanced ? "（科目A-2・旧午前II）" : "（科目A・旧午前）"}
+          まず{PLAN_OFFER.freeDaily}問、解いてみる{advanced ? "（科目A-2・旧午前II）" : "（科目A・旧午前）"}
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </Link>
       </Button>

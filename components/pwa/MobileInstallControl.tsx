@@ -25,7 +25,7 @@ export function MobileInstallControl() {
   const statusHeading = useRef<HTMLParagraphElement>(null);
   const restoreAfterCompletion = useRef(false);
   const mounted = useRef(false);
-  const done = standalone || phase === "installed";
+  const done = standalone || state.native || phase === "installed";
   const device = selectedOs ?? (os === "android" ? "android" : "iphone");
 
   useEffect(() => {
@@ -57,7 +57,7 @@ export function MobileInstallControl() {
     if (mounted.current && (result === "error" || result === "unavailable")) setGuideOpen(true);
   }
 
-  if (!ready) return null;
+  if (!ready || state.native) return null;
   return (
     <div ref={root} onKeyDown={(event) => {
       if (guideOpen && event.key === "Escape") { event.preventDefault(); closeGuide(); }

@@ -5,6 +5,10 @@
   "start_url": "/",
   "scope": "/",
   "id": "/",
+  "related_applications": [
+    { "platform": "webapp", "url": "/manifest.webmanifest" }
+  ],
+  "prefer_related_applications": false,
   "display": "standalone",
   "display_override": [
     "standalone",
