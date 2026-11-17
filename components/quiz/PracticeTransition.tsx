@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { MobileInstallNudge } from "@/components/pwa/MobileInstallNudge";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
 import { planStartHref, saveQuizReturn } from "@/lib/billing/quiz-return";
 import { PLAN_OFFER } from "@/lib/billing/plan-offer";
@@ -51,6 +52,7 @@ export function PracticeDailyLimit({ resumeHref, freeDaily, onUnlocked }: { rese
       <FeedbackUnlock onUnlocked={onUnlocked ?? (() => window.location.reload())} />
     </div>
     <p className="text-xs text-muted-foreground">明日また{free}問</p>
+    <MobileInstallNudge placement="daily-limit" />
     </div>
   </section>;
 }

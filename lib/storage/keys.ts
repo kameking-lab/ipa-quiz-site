@@ -1,4 +1,6 @@
 export const LS_KEYS = {
+  mobileInstalled: "ipa-quiz:mobile-installed:v1",
+  mobileInstallNudge: "ipa-quiz:mobile-install-nudge:v1",
   funnelFirstTouch: "ipa-quiz:funnel-first-touch:v1",
   referral: "ipa-quiz:referral:v1",
   referralStages: "ipa-quiz:referral-stages:v1",

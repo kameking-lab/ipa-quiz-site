@@ -1,4 +1,5 @@
 "use client";
+import { MobileInstallNudge } from "@/components/pwa/MobileInstallNudge";
 import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
 import { NativeQuestionGate } from "@/mobile/shared/NativeQuestionGate";
 
@@ -629,6 +630,7 @@ function ScoredQuizPlayer({
                   }
                 />
                 {revealed && <>
+                <MobileInstallNudge placement="answer" answered={stats.answered} />
                 {onRelated && (
                   <section ref={relatedRef} tabIndex={-1} aria-label="同じ科目の関連問題" className="scroll-mt-28 rounded-2xl border border-border bg-background p-4 outline-none">
                     <button type="button" onClick={() => setShowRelated((value) => !value)} aria-expanded={showRelated} className="flex min-h-11 w-full items-center justify-between text-left font-semibold">

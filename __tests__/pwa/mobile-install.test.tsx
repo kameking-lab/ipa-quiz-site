@@ -41,6 +41,7 @@ function control() {
 const addButton = () => screen.getByRole("button", { name: "ホーム画面に追加" });
 
 beforeEach(() => {
+  localStorage.clear();
   standalone = false;
   displayListeners = new Set();
   setDevice(android);
