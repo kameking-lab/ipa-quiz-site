@@ -1,9 +1,11 @@
 import "server-only";
 import { createHmac } from "node:crypto";
 import { jstDay } from "./domain";
+import { retentionCache } from "@/lib/kv/retention";
 import { CONVERSION_CHANNELS, CONVERSION_METRICS, type ConversionChannel, type ConversionMetric, type ConversionCounts, type ConversionRow } from "./conversion-contract";
 
 const RETENTION = 95 * 86400;
+const retention = retentionCache();
 function prefix() {
   // Test purchases must never appear in the production figures.
   return `conversion:v1:${process.env.VERCEL_ENV ?? "local"}:${process.env.BILLING_WEBHOOK_MODE ?? "off"}`;
@@ -26,9 +28,9 @@ async function pipeline(commands: string[][]): Promise<{ result: unknown }[] | n
 // Atomic deduplication and increment: concurrent tabs/webhook retries cannot overcount.
 export const CONVERSION_UPDATE = `
 if ARGV[2] ~= '' and redis.call('SADD', KEYS[2], ARGV[2]) == 0 then return 0 end
-if ARGV[2] ~= '' then redis.call('EXPIRE', KEYS[2], ARGV[4]) end
+if ARGV[2] ~= '' and ARGV[6] == '1' then redis.call('EXPIRE', KEYS[2], ARGV[4]) end
 redis.call('HINCRBY', KEYS[1], ARGV[1], 1)
-redis.call('EXPIRE', KEYS[1], ARGV[3])
+if ARGV[5] == '1' then redis.call('EXPIRE', KEYS[1], ARGV[3]) end
 return 1`;
 
 /** Only daily HMACs for people; checkout IDs are hashed separately for retry deduplication. */
@@ -41,7 +43,18 @@ export async function recordConversion(metric: ConversionMetric, channel: Conver
     // A shared order set with a refreshed TTL would retain old members forever
     // under steady traffic. Each order gets its own fixed-lifetime marker.
     const seen = order ? `${base}:seen:order:${metric}:${member}` : `${base}:seen:${day}:${metric}`;
-    const result = await pipeline([["EVAL", CONVERSION_UPDATE, "2", `${base}:${day}:${channel}`, seen, metric, member, String(RETENTION), String(order ? RETENTION : 2 * 86400)]]);
+    const aggregate = `${base}:${day}:${channel}`;
+    const storeUrl = process.env.KV_REST_API_URL?.replace(/\/+$/, "");
+    const aggregateCache = `${storeUrl}|${aggregate}`, seenCache = `${storeUrl}|${seen}`;
+    const refreshAggregate = retention.needsRefresh(aggregateCache);
+    const refreshSeen = !!member && retention.needsRefresh(seenCache);
+    // Keep deduplication, increment and optional TTLs in one atomic pipeline entry.
+    const result = await pipeline([["EVAL", CONVERSION_UPDATE, "2", aggregate, seen, metric, member,
+      String(RETENTION), String(order ? RETENTION : 2 * 86400), refreshAggregate ? "1" : "0", refreshSeen ? "1" : "0"]]);
+    if (result?.[0]?.result === 1) {
+      if (refreshAggregate) retention.confirm(aggregateCache);
+      if (refreshSeen) retention.confirm(seenCache);
+    }
     return result?.[0]?.result === 0 || result?.[0]?.result === 1;
   } catch { return false; }
 }

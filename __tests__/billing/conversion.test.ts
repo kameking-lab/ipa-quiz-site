@@ -8,13 +8,15 @@ const now = Date.parse("2026-11-17T14:59:00Z");
 let values: Map<string, string | Set<string> | Map<string, number>>;
 let bodies: string[];
 let ttl: Map<string, number>;
+let expirations: string[];
+let testNamespace = 0;
 function command(op: string, key: string, ...args: string[]): unknown {
   if (op === "SADD") {
     const set = values.get(key) as Set<string> ?? new Set<string>(); values.set(key, set);
     if (set.has(args[0])) return 0;
     set.add(args[0]); return 1;
   }
-  if (op === "EXPIRE") { ttl.set(key, Number(args[0])); return 1; }
+  if (op === "EXPIRE") { expirations.push(key); ttl.set(key, Number(args[0])); return 1; }
   if (op === "HINCRBY") {
     const hash = values.get(key) as Map<string, number> ?? new Map<string, number>(); values.set(key, hash);
     const count = (hash.get(args[0]) ?? 0) + Number(args[1]); hash.set(args[0], count); return count;
@@ -25,8 +27,9 @@ function command(op: string, key: string, ...args: string[]): unknown {
   throw Error(`Unexpected command ${op}`);
 }
 beforeEach(() => {
-  values = new Map(); bodies = []; ttl = new Map();
-  vi.stubEnv("KV_REST_API_URL", "https://kv.invalid"); vi.stubEnv("KV_REST_API_TOKEN", "fixture-token"); vi.stubEnv("AUTH_SECRET", "fixture-secret");
+  values = new Map(); bodies = []; ttl = new Map(); expirations = [];
+  vi.useFakeTimers(); vi.setSystemTime(now);
+  vi.stubEnv("KV_REST_API_URL", `https://kv-${++testNamespace}.invalid`); vi.stubEnv("KV_REST_API_TOKEN", "fixture-token"); vi.stubEnv("AUTH_SECRET", "fixture-secret");
   vi.stubEnv("VERCEL_ENV", "production"); vi.stubEnv("BILLING_WEBHOOK_MODE", "stripe-live");
   vi.stubGlobal("fetch", vi.fn(async (_url, init?: RequestInit) => {
     bodies.push(String(init?.body));
@@ -36,7 +39,7 @@ beforeEach(() => {
       : command(c[0], c[1], ...c.slice(2)) })));
   }));
 });
-afterEach(() => { vi.unstubAllEnvs(); vi.unstubAllGlobals(); });
+afterEach(() => { vi.useRealTimers(); vi.unstubAllEnvs(); vi.unstubAllGlobals(); });
 
 it("executes the production Lua atomically: guests once per JST day/platform, occurrences on every call", async () => {
   await Promise.all(Array.from({ length: 5 }, () => recordConversion("guest_answered", "web", "private-guest", now)));
@@ -99,4 +102,18 @@ it("rejects damaged aggregates and leaves zero-denominator ratios undefined", as
   vi.stubGlobal("fetch", vi.fn(async () => Response.json(Array.from({ length: 3 }, () => ({ result: ["offer_viewed", "-1"] })))));
   expect((await readConversions(1, now)).available).toBe(false);
   expect(conversionRate(1, 0)).toBe("—"); expect(conversionRate(3, 2)).toBe("150.0%");
+});
+
+it("batches writes and skips warm TTL refreshes while preserving deduplication and retention repair", async () => {
+  await recordConversion("guest_answered", "web", "first", now);
+  await recordConversion("guest_answered", "web", "second", now);
+  await recordConversion("offer_viewed", "web", undefined, now);
+  expect(expirations).toHaveLength(2); // daily aggregate and daily guest set
+  expect(bodies).toHaveLength(3);
+  expect(bodies.every(body => JSON.parse(body).length === 1)).toBe(true);
+  vi.advanceTimersByTime(5 * 60_000);
+  await recordConversion("guest_answered", "web", "third", now);
+  expect(expirations).toHaveLength(4);
+  const counts = (await readConversions(1, now)).rows.find(row => row.channel === "web")!.counts;
+  expect(counts).toMatchObject({ guest_answered: 3, offer_viewed: 1 });
 });
