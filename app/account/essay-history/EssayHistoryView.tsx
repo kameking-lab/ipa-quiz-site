@@ -66,7 +66,7 @@ export function EssayHistoryView({questions}: {questions: readonly {id:string;ti
           <p className="text-sm text-zinc-500 dark:text-zinc-400">
             まだ採点履歴がありません。
           </p>
-          <Button asChild variant="primary" size="sm" className="mt-4">
+          <Button asChild variant="primary" size="lg" className="mt-4">
             <Link href="/essay">AI 論述添削を試す</Link>
           </Button>
         </CardContent>
@@ -95,7 +95,7 @@ export function EssayHistoryView({questions}: {questions: readonly {id:string;ti
       )}
 
       <div className="flex justify-end">
-        <Button variant="ghost" size="sm" onClick={handleClear}>
+        <Button variant="ghost" size="lg" onClick={handleClear}>
           <Trash2 className="h-3.5 w-3.5" /> 履歴を削除
         </Button>
       </div>

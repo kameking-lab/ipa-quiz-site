@@ -85,11 +85,11 @@ export function PurchaseStatus({ order, canceled = false, testMode = true }: { o
     <h1 className="text-2xl font-bold">{title}</h1>
     <p role="status" aria-live="polite">{!order ? "注文番号を確認できません。料金ページから契約管理をご確認ください。" : error || (complete ? "プランをご利用いただけます。学習を続けましょう。" : pending ? "確認が反映されるまで少しお待ちください。再購入は不要です。" : status?.purchase ? labels[status.purchase.status] ?? "この注文の利用状況を確認できません。再購入せずお問い合わせください。" : status ? "この注文の購入情報を確認できません。" : "購入状況を確認しています…")}</p>
     {complete && <QuizResumeLinks order={order} primary />}
-    {!complete && order && (!needsLogin || accountStatus !== "unauthenticated") && <button type="button" disabled={busy} className="min-h-11 rounded-lg border px-4 disabled:opacity-50" onClick={() => void check()}>{busy ? "確認中…" : "購入状況を再確認"}</button>}
+    {!complete && order && (!needsLogin || accountStatus !== "unauthenticated") && <button type="button" disabled={busy} className="min-h-12 rounded-xl border border-border bg-background px-4 py-3 text-sm font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50" onClick={() => void check()}>{busy ? "確認中…" : "購入状況を再確認"}</button>}
     {!complete && <QuizResumeLinks order={order} showLogin={needsLogin} />}
     {canceled && <p className="text-sm">画面から戻るだけで新しい請求や解約は行いません。別のタブで支払済みの場合は、上の購入状況をご確認ください。</p>}
     {order && <details className="rounded-xl border border-border p-4">
-      <summary className="cursor-pointer font-semibold">注文・契約の詳細</summary>
+      <summary className="flex min-h-11 cursor-pointer items-center font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">注文・契約の詳細</summary>
       <div className="mt-3 space-y-3 text-sm">
         <p className="break-all">注文番号: {order}</p>
         {status?.purchase?.expiresAt && <p>この注文の有効期限: {new Date(status.purchase.expiresAt).toLocaleString("ja-JP", { timeZone: "Asia/Tokyo" })}（日本時間）</p>}

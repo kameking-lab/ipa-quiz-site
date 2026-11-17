@@ -59,7 +59,7 @@ export function ApiKeysClient() {
           β版のキーはこのブラウザに保存され、レート制限の識別に使われます。サーバーでの署名検証は行われません。
         </p>
         <div className="mt-4 flex flex-wrap gap-2">
-          <Button asChild variant="outline" size="sm">
+          <Button asChild variant="outline" size="lg">
             <Link href="/api-docs">
               API ドキュメント
               <ExternalLink className="h-4 w-4" />
@@ -87,7 +87,7 @@ export function ApiKeysClient() {
               <span className="font-medium text-foreground">キー名（任意）</span>
               <input
                 type="text"
-                className="h-10 rounded-lg border border-border bg-background px-3 text-sm"
+                className="min-h-11 min-w-0 rounded-xl border border-border bg-background px-3 text-sm"
                 placeholder="例: 社内研修ボット"
                 value={showName}
                 maxLength={60}
@@ -97,7 +97,7 @@ export function ApiKeysClient() {
             <Button
               type="submit"
               variant="primary"
-              size="md"
+              size="lg"
               disabled={keys.length >= 5}
             >
               <Plus className="h-4 w-4" />
@@ -132,16 +132,17 @@ export function ApiKeysClient() {
                 <Card>
                   <CardContent className="p-5">
                     <div className="mb-2 flex flex-wrap items-center justify-between gap-2">
-                      <div className="min-w-0">
-                        <div className="text-base font-semibold text-foreground">{k.name}</div>
+                      <div className="min-w-0 flex-1">
+                        <div className="break-words text-base font-semibold text-foreground">{k.name}</div>
                         <div className="text-xs text-muted-foreground">
                           発行: {formatDate(k.createdAt)}
                         </div>
                       </div>
                       <button
                         type="button"
+                        aria-label={`「${k.name}」を削除`}
                         onClick={() => handleDelete(k.id)}
-                        className="inline-flex items-center gap-1 rounded-md border border-border bg-background px-2 py-1 text-xs text-destructive hover:bg-muted"
+                        className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-lg border border-border bg-background px-2 py-1 text-xs text-destructive hover:bg-muted"
                       >
                         <Trash2 className="h-3 w-3" />
                         削除
@@ -154,8 +155,9 @@ export function ApiKeysClient() {
                       </code>
                       <button
                         type="button"
+                        aria-label={`「${k.name}」を${revealed ? "隠す" : "表示"}`}
                         onClick={() => setRevealId(revealed ? null : k.id)}
-                        className="inline-flex items-center gap-1 rounded-md border border-border bg-background px-2 py-1 text-xs text-foreground hover:bg-muted"
+                        className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-lg border border-border bg-background px-2 py-1 text-xs text-foreground hover:bg-muted"
                       >
                         {revealed ? (
                           <>
@@ -171,8 +173,9 @@ export function ApiKeysClient() {
                       </button>
                       <button
                         type="button"
+                        aria-label={`「${k.name}」をコピー`}
                         onClick={() => handleCopy(k.id, k.secret)}
-                        className="inline-flex items-center gap-1 rounded-md border border-border bg-background px-2 py-1 text-xs text-foreground hover:bg-muted"
+                        className="inline-flex min-h-11 min-w-11 items-center justify-center gap-1.5 rounded-lg border border-border bg-background px-2 py-1 text-xs text-foreground hover:bg-muted"
                       >
                         <Copy className="h-3 w-3" />
                         {copiedId === k.id ? "コピー済" : "コピー"}

@@ -56,7 +56,7 @@ export function MockScoreHistory() {
                 placeholder="名無しの受験者"
                 maxLength={20}
                 onChange={(e) => persistNickname(e.target.value)}
-                className="mt-1 block w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+                className="mt-1 block min-h-11 w-full min-w-0 rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
               />
             </label>
             <label className="flex-1">
@@ -64,7 +64,7 @@ export function MockScoreHistory() {
               <select
                 value={exam}
                 onChange={(e) => setExam(e.target.value as ExamCode)}
-                className="mt-1 block w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+                className="mt-1 block min-h-11 w-full min-w-0 rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
               >
                 {ALL_QUIZ_EXAM_CODES.map((c) => (
                   <option key={c} value={c}>

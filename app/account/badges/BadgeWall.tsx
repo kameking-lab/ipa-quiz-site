@@ -79,7 +79,7 @@ export function BadgeWall() {
                   <button
                     type="button"
                     onClick={() => setShareTarget(shareTarget === t ? null : t)}
-                    className="rounded-lg border border-zinc-200 p-1.5 text-zinc-600 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-900"
+                    className="inline-flex min-h-11 min-w-11 shrink-0 items-center justify-center rounded-lg border border-zinc-200 p-1.5 text-zinc-600 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-900"
                     aria-label="シェアする"
                   >
                     <Share2 className="h-4 w-4" />

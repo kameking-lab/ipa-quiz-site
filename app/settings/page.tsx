@@ -21,7 +21,7 @@ import {
   TrendingUp,
   Upload,
 } from "lucide-react";
-import { Switch } from "@/components/ui/switch";
+import { SettingsSwitch as Switch } from "@/components/account/SettingsSwitch";
 import { Button } from "@/components/ui/button";
 import { useTheme } from "@/components/theme-provider";
 import { useRovingRadioGroup } from "@/lib/a11y/use-roving-radio";
@@ -221,7 +221,7 @@ export default function SettingsPage() {
       />
 
       <div className="relative mx-auto w-full max-w-2xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
-        <Button asChild variant="ghost" size="sm" className="mb-4">
+        <Button asChild variant="ghost" size="sm" className="mb-4 min-h-11">
           <Link href="/">
             <ArrowLeft className="h-4 w-4" />
             戻る
@@ -244,7 +244,7 @@ export default function SettingsPage() {
             <a
               key={s.id}
               href={`#${s.id}`}
-              className="inline-flex items-center gap-1 rounded-lg bg-background px-2.5 py-1.5 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+              className="inline-flex min-h-11 items-center gap-1.5 rounded-lg bg-background px-3 py-2 text-xs font-medium text-muted-foreground shadow-sm transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
               {s.icon}
               {s.label}
@@ -378,7 +378,7 @@ export default function SettingsPage() {
               試験予定
             </SectionTitle>
             <div className="rounded-2xl border border-border bg-card p-5 shadow-sm">
-              <a href="https://tsugino-shikaku.jp/calendar" target="_blank" rel="noopener noreferrer" className="mt-3 inline-block text-sm font-semibold text-primary underline underline-offset-4">次の資格で日程を見る ↗</a>
+              <a href="https://tsugino-shikaku.jp/calendar" target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center text-sm font-semibold text-primary underline underline-offset-4">次の資格で日程を見る ↗</a>
             </div>
           </section>
 
@@ -410,14 +410,14 @@ export default function SettingsPage() {
                 />
               </div>
               <div className="grid gap-2 p-4 sm:grid-cols-3">
-                <Button variant="outline" size="sm" className="gap-2" onClick={handleExport}>
+                <Button variant="outline" size="sm" className="min-h-11 gap-2" onClick={handleExport}>
                   <Download className="h-4 w-4" />
                   エクスポート
                 </Button>
                 <Button
                   variant="outline"
                   size="sm"
-                  className="gap-2"
+                  className="min-h-11 gap-2"
                   onClick={() => fileInputRef.current?.click()}
                 >
                   <Upload className="h-4 w-4" />
@@ -426,7 +426,7 @@ export default function SettingsPage() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="gap-2 border-destructive/30 text-destructive hover:bg-destructive/10 hover:text-destructive"
+                  className="min-h-11 gap-2 border-destructive/30 text-destructive hover:bg-destructive/10 hover:text-destructive"
                   onClick={handleReset}
                 >
                   <RotateCcw className="h-4 w-4" />
@@ -435,7 +435,7 @@ export default function SettingsPage() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="gap-2"
+                  className="min-h-11 gap-2"
                   onClick={handlePersonalContextReset}
                   title="訪問回数 / 続きから情報 / おすすめ問題のシードを初期化"
                 >

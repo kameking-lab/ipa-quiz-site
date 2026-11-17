@@ -3,7 +3,7 @@
 import * as React from "react";
 import { Bell, BellOff, Mail, Send, AlertCircle, CheckCircle2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
+import { SettingsSwitch as Switch } from "@/components/account/SettingsSwitch";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import {
   readNotificationPrefs,
@@ -108,7 +108,7 @@ export function NotificationSettings() {
     <div className="space-y-6">
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex items-center gap-2 text-base">
             <Mail className="h-5 w-5" />
             メール通知
           </CardTitle>
@@ -128,11 +128,11 @@ export function NotificationSettings() {
               value={prefs.email}
               onChange={(e) => update({ email: e.target.value })}
               placeholder="you@example.com"
-              className="w-full rounded-xl border border-border bg-background px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
+              className="min-h-11 w-full rounded-xl border border-border bg-background px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring"
             />
           </div>
 
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-4">
             <div>
               <p className="font-medium text-sm">メール通知を有効化</p>
               <p className="text-xs text-muted-foreground">下の設定に応じてメールを送信します</p>
@@ -144,7 +144,7 @@ export function NotificationSettings() {
             />
           </div>
 
-          <div className="flex items-center justify-between border-t border-border pt-4">
+          <div className="flex items-center justify-between gap-4 border-t border-border pt-4">
             <div>
               <p className="font-medium text-sm">学習継続リマインダー</p>
               <p className="text-xs text-muted-foreground">毎日設定時刻に学習を促します</p>
@@ -167,7 +167,7 @@ export function NotificationSettings() {
               value={prefs.reminderHour}
               onChange={(e) => update({ reminderHour: Number(e.target.value) })}
               disabled={!prefs.emailEnabled || !prefs.streakReminder}
-              className="rounded-xl border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring disabled:opacity-50"
+              className="min-h-11 rounded-xl border border-border bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-ring disabled:opacity-50"
             >
               {Array.from({ length: 24 }, (_, h) => (
                 <option key={h} value={h}>
@@ -181,7 +181,7 @@ export function NotificationSettings() {
             onClick={sendTestEmail}
             disabled={!prefs.email || status.kind === "loading"}
             variant="outline"
-            size="sm"
+            size="lg"
           >
             <Send className="mr-2 h-4 w-4" />
             テストメールを送信
@@ -191,7 +191,7 @@ export function NotificationSettings() {
 
       <Card>
         <CardHeader>
-          <CardTitle className="flex items-center gap-2">
+          <CardTitle className="flex items-center gap-2 text-base">
             {prefs.pushEnabled ? <Bell className="h-5 w-5" /> : <BellOff className="h-5 w-5" />}
             プッシュ通知 (PWA)
           </CardTitle>
@@ -209,12 +209,12 @@ export function NotificationSettings() {
               通知がブロックされています。ブラウザの設定から許可してください。
             </p>
           ) : prefs.pushEnabled ? (
-            <Button onClick={handleDisablePush} variant="outline" size="sm">
+            <Button onClick={handleDisablePush} variant="outline" size="lg">
               <BellOff className="mr-2 h-4 w-4" />
               プッシュ通知を無効化
             </Button>
           ) : (
-            <Button onClick={handleEnablePush} variant="primary" size="sm">
+            <Button onClick={handleEnablePush} variant="primary" size="lg">
               <Bell className="mr-2 h-4 w-4" />
               プッシュ通知を有効化
             </Button>

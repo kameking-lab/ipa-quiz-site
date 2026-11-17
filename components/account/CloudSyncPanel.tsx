@@ -88,7 +88,7 @@ export function CloudSyncPanel() {
 
         {auth === "out" ? (
           <div className="flex flex-col gap-2">
-            <Button asChild variant="primary" size="sm" className="w-fit gap-2">
+            <Button asChild variant="primary" size="lg" className="w-fit gap-2">
               <Link href="/auth/signin?callbackUrl=/settings">
                 <LogIn className="h-4 w-4" aria-hidden="true" />
                 サインインして同期
@@ -99,7 +99,7 @@ export function CloudSyncPanel() {
           <div className="flex flex-wrap items-center gap-3">
             <Button
               variant="primary"
-              size="sm"
+              size="lg"
               className="gap-2"
               onClick={handleSync}
               disabled={busy || auth === "checking" || identity.ownership === "different" ||
