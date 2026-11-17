@@ -2,6 +2,18 @@ import { Purchases, PURCHASES_ERROR_CODE, type PurchasesPackage } from "@revenue
 import { Capacitor } from "@capacitor/core";
 import { Preferences } from "@capacitor/preferences";
 import type { MobileConfiguration, MobileEntitlement } from "../shared/contracts";
+import { PURCHASE_MESSAGES } from "@/lib/billing/purchase-messages";
+
+/** Last server check before persisting the pending marker and presenting StoreKit. */
+export async function checkNativePurchase(transport: typeof fetch = fetch) {
+  try {
+    const response = await transport("https://www.kakomon-ai.jp/api/mobile/purchase-check", { method: "POST", credentials: "include", signal: AbortSignal.timeout(15000) });
+    const body = await response.json().catch(()=>null) as { allowed?: boolean; error?: string } | null;
+    if (!response.ok || body?.allowed !== true) throw new StoreError(PURCHASE_MESSAGES[body?.error ?? ""] ?? PURCHASE_MESSAGES.purchase_check_unavailable, "purchase_check");
+  } catch (error) {
+    throw error instanceof StoreError ? error : new StoreError(PURCHASE_MESSAGES.purchase_check_unavailable, "purchase_check");
+  }
+}
 export function purchaseError(error:unknown) {
   const code=error&&typeof error==="object"&&"code"in error?String(error.code):"";
   const cancelled=code===PURCHASES_ERROR_CODE.PURCHASE_CANCELLED_ERROR || !!(error&&typeof error==="object"&&"userCancelled"in error&&error.userCancelled);

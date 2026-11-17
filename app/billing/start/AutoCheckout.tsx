@@ -4,8 +4,10 @@ import Link from "next/link";
 import { saveQuizReturn } from "@/lib/billing/quiz-return";
 import { posthogCapture } from "@/lib/posthog";
 import { flushJourney, observeJourney } from "@/lib/billing/journey-client";
+import { PURCHASE_MESSAGES } from "@/lib/billing/purchase-messages";
 
 const MESSAGES: Record<string, string> = {
+  ...PURCHASE_MESSAGES,
   sign_in_required: "ログインが切れました。もう一度お試しください。",
   subscription_exists: "契約済みか、支払確認中の申込があります。",
   app_store_subscription_exists: "App Storeで契約済みです。追加購入は不要です。",

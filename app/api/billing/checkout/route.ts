@@ -7,6 +7,7 @@ import { BillingError } from "@/lib/billing/domain";
 import { recordFunnel, saveOrderAttribution } from "@/lib/billing/funnel";
 import { requestAttribution } from "@/lib/billing/attribution";
 import { conversionChannel, recordConversion, saveConversionChannel } from "@/lib/billing/conversion";
+import { assertNoDuplicatePurchase } from "@/lib/billing/duplicate-purchase-runtime";
 export const runtime = "nodejs";
 export async function POST(request: Request) {
   try {
@@ -17,6 +18,9 @@ export async function POST(request: Request) {
     let result: { orderId: string; url: string };
     if (monthlySelected()) {
       const { service, provider } = (await import("@/lib/billing/subscription/runtime")).monthlyRuntime(true);
+      const state = await service.status(userId);
+      if (state.entitled || state.subscription && !["canceled", "incomplete_expired"].includes(state.subscription.status)) throw new BillingError("subscription_exists", 409);
+      await assertNoDuplicatePurchase(userId);
       result = await service.checkout(userId, terms, provider, await checkoutEmail(), async orderId => {
         const channel = conversionChannel(request);
         await saveConversionChannel(orderId, channel);

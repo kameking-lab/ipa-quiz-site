@@ -9,7 +9,7 @@ import { Preferences } from "@capacitor/preferences";
 import Link from "next/link";
 import type { MobileConfiguration, MobileEntitlement, CatalogEntry } from "../shared/contracts";
 import { downloads, type DownloadIndex } from "./downloads";
-import { Membership, deviceMembership, purchaseError, nativePublicSdkKey, describeStoreError, StoreError } from "./purchases";
+import { Membership, deviceMembership, purchaseError, nativePublicSdkKey, describeStoreError, StoreError, checkNativePurchase } from "./purchases";
 import { beginLogin, observeLogin } from "./login";
 import { sendConversion } from "@/lib/billing/conversion-client";
 import { observeReminderTap, setReminder } from "./platform";
@@ -230,6 +230,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     const selected=offer??await loadOffer(r);
     if(!selected)throw new StoreError("商品情報を取得できないため購入を開始できません。表示中の理由をご確認ください。","no_offer");
     await membership.buy(r.configuration,r.entitlement,selected,async()=>{
+      await checkNativePurchase();
       await Preferences.set({key:`kakomon:pending-purchase:${r.entitlement.userId}`,value:"true"});setPurchasePending(true);
     });
     // StoreKit has charged at this point. RevenueCat may need a moment to show

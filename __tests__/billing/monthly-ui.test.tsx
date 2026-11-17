@@ -25,6 +25,11 @@ describe("monthly purchase copy and status", () => {
     expect(await screen.findByRole("alert")).toHaveTextContent("契約済みか、支払確認中の申込があります。");
     expect(screen.getByRole("link", { name: "料金・契約の画面へ" })).toHaveAttribute("href", "/billing");
   });
+  it.each([["duplicate_purchase_google","Google"],["duplicate_purchase_apple","Apple"],["duplicate_purchase_google_apple","Google / Apple"]])("shows only the other login method for %s", async (code,provider) => {
+    vi.stubGlobal("fetch", vi.fn(async()=>Response.json({error:code},{status:409})));
+    render(<AutoCheckout terms={"a".repeat(64)} returnTo={null} fallback="/billing" />);
+    expect(await screen.findByRole("alert")).toHaveTextContent(`このメールアドレスの別のアカウント（${provider}）で購入済みです。そちらでログインしてください。`);
+  });
   it("shows period-end cancellation and management without claiming no auto-renewal", async () => {
     vi.stubGlobal("fetch", vi.fn(async () => Response.json({ billingModel: "subscription", entitled: true, canManage: true,
       subscription: { status: "active", cancelAtPeriodEnd: true, periodEnd: "2026-02-28T00:00:00Z" },

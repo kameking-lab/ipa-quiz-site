@@ -8,6 +8,7 @@ import { SellerDisclosureLine } from "@/components/billing/SellerDisclosureLine"
 import { ManageSubscriptionButton } from "./ManageSubscriptionButton";
 import { BillingPageBeacon } from "./BillingPageBeacon";
 import { SignedOutOnly } from "@/components/account/AccountNavigation";
+import { revenueCatAccess } from "@/mobile/server/revenuecat";
 
 /** One button and one line of terms; the full conditions live on /billing/terms. */
 export default async function MonthlyPage({ returnTo }: { returnTo?: string } = {}) {
@@ -16,8 +17,10 @@ export default async function MonthlyPage({ returnTo }: { returnTo?: string } = 
   let canManage = false, hasContract = false;
   try {
     if (config) {
-      const state = await monthlyRuntime().service.status(await billingIdentity());
+      const userId = await billingIdentity();
+      const state = await monthlyRuntime().service.status(userId);
       canManage = state.canManage; hasContract = !!state.subscription && !["canceled", "incomplete_expired"].includes(state.subscription.status);
+      hasContract ||= state.entitled || !!await revenueCatAccess(userId);
     }
   } catch { /* Signed out or storage unavailable: the plan button signs in first. */ }
   const { priceYen: price, freeDaily: free, trialDays } = MONTHLY_PUBLIC_OFFER;

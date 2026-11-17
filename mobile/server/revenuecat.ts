@@ -4,6 +4,7 @@ import { z } from "zod";
 import { prisma } from "@/lib/db/prisma";
 import { BillingError } from "@/lib/billing/domain";
 import { requireMobileReady, mobileConfig } from "./config";
+import { auditDuplicatePurchases } from "@/lib/billing/duplicate-purchase-runtime";
 
 export function appUserIdentity(userId: string, secret: string) {
   if (secret.length < 32) throw new BillingError("mobile_identity_unconfigured", 503);
@@ -50,7 +51,7 @@ export async function ensureRevenueCatAccount(userId: string) {
 /** Serialize BEFORE fetching the authoritative subscriber. Replayed/out-of-order webhooks cannot restore an old snapshot. */
 export async function refreshRevenueCat(appUserId: string, transport: typeof fetch = fetch) {
   const c = requireMobileReady();
-  return prisma.$transaction(async tx => {
+  const result = await prisma.$transaction(async tx => {
     const rows = await tx.$queryRawUnsafe<AccountRow[]>('SELECT * FROM "MobileRevenueCatAccount" WHERE "appUserId"=$1 FOR UPDATE', appUserId);
     if (!rows[0]) return null;
     const response = await transport(`https://api.revenuecat.com/v1/subscribers/${encodeURIComponent(appUserId)}`, {
@@ -69,6 +70,8 @@ export async function refreshRevenueCat(appUserId: string, transport: typeof fet
     await tx.$executeRawUnsafe('UPDATE "MobileRevenueCatAccount" SET "expiresAt"=$2, "checkedAt"=$3, "productionExpiresAt"=$4, "sandboxExpiresAt"=$5 WHERE "appUserId"=$1', appUserId, expiresAt ? new Date(expiresAt) : null, new Date(now), productionExpiresAt ? new Date(productionExpiresAt) : null, sandboxExpiresAt ? new Date(sandboxExpiresAt) : null);
     return { ...rows[0], expiresAt: expiresAt ? new Date(expiresAt) : null, checkedAt: new Date(now) };
   }, { maxWait: 5000, timeout: 15000 });
+  if (result) await auditDuplicatePurchases(result.userId);
+  return result;
 }
 export async function revenueCatAccess(userId: string, fresh = false) {
   if (!mobileConfig().enabled) return null;

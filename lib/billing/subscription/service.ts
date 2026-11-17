@@ -57,7 +57,7 @@ export function access(a: Account, now: number): { subscriptionId: string; perio
 }
 /** No legacy-account grace. Existing Auth and history records are neither deleted nor rewritten. */
 export class MonthlyService {
-  constructor(private store: MonthlyStore, readonly config: MonthlyConfig, private clock = () => new Date()) {}
+  constructor(private store: MonthlyStore, readonly config: MonthlyConfig, private clock = () => new Date(), private afterReceive?: (userId: string) => Promise<void>) {}
   private tx<T>(id: string, fn: (a: Account) => Promise<T>, readOnly = false) { return this.store.transaction(id, this.config.mode, this.config.sourceInstance, fn, readOnly); }
   async checkout(userId: string, terms: string, provider: MonthlyProvider, email?: string, onCreated?: (orderId: string) => Promise<void>) {
     if (!this.config.enabled) throw new BillingError("billing_unavailable", 503);
@@ -217,6 +217,7 @@ export class MonthlyService {
     // Dispute revocation is durable BEFORE the provider write. Refunds create no stop intent.
     await this.flushRenewalStops(userId, provider);
     await this.flushTrialEnds(userId, provider);
+    await this.afterReceive?.(userId);
     return result;
   }
   async flushTrialEnds(userId: string, provider: MonthlyProvider) {
