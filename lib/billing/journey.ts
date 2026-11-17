@@ -2,8 +2,10 @@ import "server-only";
 import { z } from "zod";
 import { jstDay } from "./domain";
 import { JOURNEY_PAGES, JOURNEY_STAGES, journeyQualification, type JourneySnapshot } from "./journey-contract";
+import { retentionCache } from "@/lib/kv/retention";
 
 const RETENTION = 95 * 86400;
+const retention = retentionCache();
 const snapshot = z.object({
   day: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
   qualification: z.string().refine(value => journeyQualification(value) === value),
@@ -28,7 +30,9 @@ const UPDATE = `for i=1,#ARGV-1,3 do
   redis.call('HINCRBY',KEYS[1],ARGV[i]..'|sessions',ARGV[i+1])
   redis.call('HINCRBY',KEYS[1],ARGV[i]..'|answers',ARGV[i+2])
 end
-redis.call('EXPIRE',KEYS[1],ARGV[#ARGV])
+if tonumber(ARGV[#ARGV]) > 0 then
+  redis.call('EXPIRE',KEYS[1],ARGV[#ARGV])
+end
 return 1`;
 
 export async function recordJourney(body: JourneyBody, now = Date.now()): Promise<boolean> {
@@ -37,14 +41,17 @@ export async function recordJourney(body: JourneyBody, now = Date.now()): Promis
   const today = jstDay(new Date(now)), yesterday = jstDay(new Date(now - 86400_000));
   if (body.changes.some(row => row.day !== today && row.day !== yesterday)) return false;
   const days = [...new Set(body.changes.map(row => row.day))];
-  const commands = days.map(day => ["EVAL", UPDATE, "1", key(day),
-    ...body.changes.filter(row => row.day === day).flatMap(row => [field(row), String(row.delta), String(row.delta * row.answers)]), String(RETENTION)]);
+  const refresh = days.map(day => retention.needsRefresh(`${kv.url}|${key(day)}`));
+  const commands = days.map((day, i) => ["EVAL", UPDATE, "1", key(day),
+    ...body.changes.filter(row => row.day === day).flatMap(row => [field(row), String(row.delta), String(row.delta * row.answers)]), String(refresh[i] ? RETENTION : 0)]);
   try {
     const response = await fetch(`${kv.url}/pipeline`, { method: "POST", cache: "no-store", signal: AbortSignal.timeout(1500),
       headers: { Authorization: `Bearer ${kv.token}`, "Content-Type": "application/json" }, body: JSON.stringify(commands) });
     if (!response.ok) return false;
     const result: unknown = await response.json();
-    return Array.isArray(result) && result.length === commands.length && result.every(row => row?.result === 1 && !row?.error);
+    if (!Array.isArray(result) || result.length !== commands.length || !result.every(row => row?.result === 1 && !row?.error)) return false;
+    for (let i = 0; i < days.length; i++) if (refresh[i]) retention.confirm(`${kv.url}|${key(days[i])}`);
+    return true;
   } catch { return false; }
 }
 
