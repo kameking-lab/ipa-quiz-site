@@ -76,7 +76,7 @@ describe("buildQuestionJsonLd", () => {
         expect(resource.publisher["@id"]).toMatch(/#organization$/);
         expect(resource.publisher.name).toBe("過去問AI");
         expect(resource.publisher.url).toMatch(/^https?:\/\//);
-        expect(resource.hasPart.author.name).toBe("情報処理推進機構 (IPA)");
+        expect(resource.hasPart.author?.name).toBe("情報処理推進機構 (IPA)");
         expect(resource.creator).toMatchObject({ name: "情報処理推進機構 (IPA)" });
         expect(resource.license).toBe("https://www.ipa.go.jp/shiken/faq.html");
         expect(resource.hasPart).not.toHaveProperty("datePublished");
@@ -306,7 +306,7 @@ describe("LQ4B source metadata", () => {
         const resource = build({ ...baseQuestion, exam, license, sourcePdfUrl: `${url}example.pdf` })["@graph"][0];
         if (!("hasPart" in resource))
             throw new Error("Missing question resource");
-        expect(resource.hasPart.author.url).toBe(url);
+        expect(resource.hasPart.author?.url).toBe(url);
         expect(resource).not.toHaveProperty("license");
         expect(JSON.stringify(resource)).not.toContain("https://www.ipa.go.jp/");
     });

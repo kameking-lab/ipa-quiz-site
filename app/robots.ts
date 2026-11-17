@@ -1,5 +1,7 @@
 import type { MetadataRoute } from "next";
 import { SITE_BASE_URL } from "@/lib/seo/config";
+import { EXAM_LABELS } from "@/lib/utils";
+import { QUALIFICATION_HUBS, qualificationHubPath } from "@/lib/exam-qualification-hubs";
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -28,7 +30,26 @@ export default function robots(): MetadataRoute.Robots {
         ],
       },
       {
-        userAgent: ["Amazonbot", "GPTBot", "ClaudeBot"],
+        // Owner policy (2026-11-17): training may use public introductions,
+        // not the question/explanation corpus. `$` is essential: /sc alone
+        // would also allow /sc/2025-autumn and /sc/topic/... by prefix match.
+        // A specific group does not inherit the wildcard group's rules.
+        userAgent: ["GPTBot", "ClaudeBot", "Applebot-Extended"],
+        allow: [
+          "/$",
+          "/ipa$",
+          "/qualifications$",
+          "/e-learning/exams$",
+          ...QUALIFICATION_HUBS.map(hub => `${qualificationHubPath(hub.slug)}$`),
+          ...Object.keys(EXAM_LABELS).map(exam => `/${exam}$`),
+          "/blog$",
+          "/blog/",
+          "/about$",
+        ],
+        disallow: ["/", "/q/", "/api/", "/admin/", "/auth/"],
+      },
+      {
+        userAgent: ["Amazonbot", "Bytespider", "CCBot"],
         disallow: "/",
       },
     ],
