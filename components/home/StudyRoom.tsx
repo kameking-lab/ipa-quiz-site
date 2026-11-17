@@ -4,8 +4,10 @@ import { useEffect, useMemo, useRef, useState, type CSSProperties } from "react"
 import Link from "next/link";
 import { canonicalPresenceExam, presenceExamName } from "@/lib/study-presence";
 import type { MeasuredPresence } from "@/lib/study-presence-contract";
-import { mascotVisitSeed, measuredRoom, qualificationMascot, quietRoomMascots, roomMascots, roomStage } from "@/lib/home/study-room";
+import { measuredRoom, roomStage } from "@/lib/home/study-room";
 import { studyRoomHeight, studyRoomScene } from "@/lib/home/study-room-scenes";
+import { assignRoomPoints, roomIdentitySeed } from "@/lib/home/study-room-scatter";
+import { scatteredChihuahuaArt } from "@/lib/home/room-chihuahua-art";
 import { readLastQuestion } from "@/lib/storage/last-question";
 import { listExamLearningSummaries } from "@/lib/exam-library-session";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
@@ -43,10 +45,7 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
   const measured = useMemo(() => filtered ? measuredRoom(filtered) : null, [filtered]);
   const seats = useMemo(() => (measured?.seats ?? []).map(seat => ({ ...seat,
     detail: seatDetails.find(item => item.exam === seat.exam && item.index === seat.index),
-  })).sort((a, b) => Number(b.detail?.premium === true) - Number(a.detail?.premium === true)), [measured, seatDetails]);
-  const [visitSeed, setVisitSeed] = useState<number | null>(null);
-  useEffect(() => { setVisitSeed(mascotVisitSeed()); }, []);
-  const mascots = useMemo(() => visitSeed === null ? null : quietRoomMascots(roomMascots(visitSeed, seats.length), seats.length), [visitSeed, seats.length]);
+  })), [measured, seatDetails]);
   const targetStage = roomStage(filtered?.count ?? 0);
   const [stage, setStage] = useState(targetStage);
   const hasSnapshot = filtered !== null;
@@ -65,6 +64,11 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
   const [motionVisible, setMotionVisible] = useState(false);
   const [visibleSeats, setVisibleSeats] = useState<Set<string>>(new Set());
   const seatKey = seats.map(seat => `${seat.exam}:${seat.index}`).join("|");
+  const [placement, setPlacement] = useState<{ stage: number; keys: string; points: Map<string, number> }>({ stage: -1, keys: "", points: new Map() });
+  const points = placement.stage === renderedStage && placement.keys === seatKey ? placement.points
+    : assignRoomPoints(seats.map(seat => `${seat.exam}:${seat.index}`), scene.seats.length, placement.stage === renderedStage ? placement.points : undefined);
+  if (placement.stage !== renderedStage || placement.keys !== seatKey) setPlacement({ stage: renderedStage, keys: seatKey, points });
+  const [inspected, setInspected] = useState<string | null>(null);
   const focusedSeat = useRef<string | null>(null);
   useEffect(() => {
     if (focusedSeat.current && !seatKey.split("|").includes(focusedSeat.current)) {
@@ -117,6 +121,7 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
   }, [cheer]);
   function cheerSeat(seat: { exam: string; index: number }) {
     const key = `${seat.exam}:${seat.index}`;
+    setInspected(current => current === key ? null : key);
     const now = Date.now();
     if (now - lastCheer.current < 1200 || now - (cooldowns.current.get(key) ?? -Infinity) < 10_000) return;
     lastCheer.current = now;
@@ -151,16 +156,17 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img src={scene.background} alt="" width={scene.width} height={scene.height} loading="lazy" decoding="async" className="pointer-events-none absolute inset-0 size-full" />
       </>}
-      {seats.map((seat, position) => {
+      {seats.map((seat) => {
         const key = `${seat.exam}:${seat.index}`;
-        const point = scene.seats[position];
-        const mascot = mascots && qualificationMascot(seat.exam, mascots[position]);
-        // Pixel coordinates come from the room illustration manifest.
-        const coordinates = { "--seat-x": `${point.x / scene.width * 100}%`, "--seat-y": `${point.y / sceneHeight * 100}%`, "--seat-width": `${point.width / scene.width * 100}%` } as CSSProperties;
+        const point = scene.seats[points.get(key)!];
+        const mascot = scatteredChihuahuaArt(seat.exam, key);
+        const seed = roomIdentitySeed(key);
+        // A stable identity picks the point and visual variation; membership changes do not reflow survivors.
+        const coordinates = { "--seat-x": `${point.x / scene.width * 100}%`, "--seat-y": `${point.y / sceneHeight * 100}%`, "--seat-width": `${point.width / scene.width * 100}%`, "--dog-turn": `${(seed % 25) - 12}deg`, "--dog-scale": `${.72 + (seed % 4) * .045}` } as CSSProperties;
         return <div key={key} data-testid="study-room-seat" data-seat-key={key} data-animate={motionVisible && visibleSeats.has(key)}
           onFocus={() => { focusedSeat.current = key; }} onBlur={() => { focusedSeat.current = null; }} style={coordinates}
-          className="group/seat absolute left-[var(--seat-x)] top-[var(--seat-y)] aspect-[1/1.15] w-[var(--seat-width)] -translate-x-1/2 -translate-y-1/2 [&[data-animate=true]_.study-mascot]:motion-safe:animate-[pulse_3.6s_ease-in-out_infinite]">
-          <StudyRoomSeat name={presenceExamName(seat.exam)!} index={seat.index} mascot={mascot} detail={seat.detail} illustrated={!!scene.background} cheering={cheer === key} onCheer={() => cheerSeat(seat)} />
+          className="group/seat absolute left-[var(--seat-x)] top-[var(--seat-y)] aspect-square w-[var(--seat-width)] -translate-x-1/2 -translate-y-1/2 [&[data-animate=true]_.study-mascot]:motion-safe:animate-[pulse_3.6s_ease-in-out_infinite]">
+          <StudyRoomSeat name={presenceExamName(seat.exam)!} index={seat.index} mascot={mascot} detail={seat.detail} inspected={inspected === key} cheering={cheer === key} onCheer={() => cheerSeat(seat)} />
         </div>;
       })}
       {!seats.length && <p className="absolute inset-0 grid place-items-center px-4 text-sm text-stone-600 dark:text-stone-300"><span className="rounded-full bg-background/95 px-4 py-2 shadow-sm">{filtered ? "静かな、自習室。" : "自習室"}</span></p>}

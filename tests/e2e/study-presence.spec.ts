@@ -46,9 +46,10 @@ for (const [count, stage, name] of [[1, 0, "one"], [5, 0, "small"], [12, 1, "cla
     if (count > 120) await expect(page.getByLabel("ほか10人が勉強中")).toHaveText("+10");
     else await expect(page.getByText(/^\+/)).toHaveCount(0);
     // Visit every row so native lazy images can be decoded before the evidence capture.
-    for (const image of await scene.locator(".study-mascot").all()) {
+    for (const image of await scene.locator(".study-mascot img").all()) {
       await image.scrollIntoViewIfNeeded();
-      await expect.poll(() => image.evaluate(element => (element as HTMLImageElement).naturalWidth)).toBe(256);
+      await expect.poll(() => image.evaluate(element => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
+      expect(await image.evaluate(element => (element as HTMLImageElement).naturalWidth)).toBe(await image.getAttribute("src") === "/images/home/room-chihuahuas/home-cream-sheet.png" ? 1536 : 256);
     }
     const geometry = await scene.evaluate(element => {
       const box = element.getBoundingClientRect();
@@ -91,16 +92,22 @@ test("a tall hall reuses images and rests offscreen seats and reduced-motion ima
   await page.goto("/study-room");
   await show(page, { count: 60, exams: [{ exam: "ip", count: 60 }] });
   const seats = page.getByTestId("study-room-seat");
-  await seats.first().scrollIntoViewIfNeeded();
-  await expect(seats.first()).toHaveAttribute("data-animate", "true");
-  await expect(seats.last()).toHaveAttribute("data-animate", "false");
-  await expect(seats.last().locator(".study-mascot")).toHaveCSS("animation-name", "none");
-  await seats.last().scrollIntoViewIfNeeded();
-  await expect(seats.first()).toHaveAttribute("data-animate", "false");
-  await expect(seats.last()).toHaveAttribute("data-animate", "true");
-  expect(new Set(requests).size).toBeLessThanOrEqual(4); // study, break, one away, its empty desk
+  // Scattered DOM order has no spatial meaning. Exercise the two horizontal extremes.
+  const extremes = await seats.evaluateAll(elements => {
+    const sorted = elements.toSorted((a, b) => a.getBoundingClientRect().left - b.getBoundingClientRect().left);
+    return [sorted[0].getAttribute("data-seat-key"), sorted.at(-1)!.getAttribute("data-seat-key")];
+  });
+  const left = page.locator(`[data-seat-key="${extremes[0]}"]`), right = page.locator(`[data-seat-key="${extremes[1]}"]`);
+  await left.scrollIntoViewIfNeeded();
+  await expect(left).toHaveAttribute("data-animate", "true");
+  await expect(right).toHaveAttribute("data-animate", "false");
+  await expect(right.locator(".study-mascot")).toHaveCSS("animation-name", "none");
+  await right.scrollIntoViewIfNeeded();
+  await expect(left).toHaveAttribute("data-animate", "false");
+  await expect(right).toHaveAttribute("data-animate", "true");
+  expect(new Set(requests).size).toBeLessThanOrEqual(1); // one reused qualification play image, plus the shared ar-3 sheet
   await page.emulateMedia({ reducedMotion: "reduce" });
-  await expect(seats.last().locator(".study-mascot")).toHaveCSS("animation-name", "none");
+  await expect(right.locator(".study-mascot")).toHaveCSS("animation-name", "none");
   await page.setViewportSize({ width: 1280, height: 900 });
   expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
   await page.getByTestId("study-room-scene").screenshot({ path: `${evidence}/hall-1280.png` });

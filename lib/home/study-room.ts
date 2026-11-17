@@ -41,7 +41,7 @@ export function randomFor(seed: number) {
   };
 }
 
-export interface SeatMascot { src: string; state: "study" | "break" | "away" | "idle"; stateLabel: string; mirrored: boolean; vacantSrc?: string }
+export interface SeatMascot { src: string; state: "study" | "break" | "away" | "idle"; stateLabel: string; mirrored: boolean; vacantSrc?: string; frame?: number }
 type Pair = { study: string; break: string; breakLabel: string };
 type AwayArt = { src: string; label: string };
 const awayCatalog = catalog as typeof catalog & {

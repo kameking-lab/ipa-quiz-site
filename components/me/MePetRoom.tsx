@@ -5,7 +5,8 @@ import dynamic from "next/dynamic";
 import { Award, ChevronDown, Heart, Leaf, Shirt, Sparkles, Star, Utensils } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { usePetProfileView } from "@/components/pet/usePetProfileView";
-import { petArtFor, petPortraitFor, type PetPose } from "@/lib/pet/v1/art";
+import type { PetPose } from "@/lib/pet/v1/art";
+import { RoomChihuahua, RELAXED_ROOM_SHEET } from "@/components/home/RoomChihuahua";
 import { savePetCare } from "@/lib/pet/v1/browser-care";
 import type { PetCareAction } from "@/lib/pet/v1/care";
 import type { PetProfile } from "@/lib/pet/v1/profile";
@@ -21,7 +22,7 @@ const accessories: readonly { id: Accessory; label: string; level: number; paid?
   { id: "star", label: "星のブローチ", level: 0, paid: true },
 ];
 
-export function MePetRoom({ exam, minutes, todayCount, todayExamCount, goal, passedExams, paceBehind }: {
+export function MePetRoom({ exam, minutes, todayCount, goal, passedExams }: {
   exam: string; minutes: number; todayCount: number; todayExamCount: number; goal: number; passedExams: string[]; paceBehind?: boolean;
 }) {
   const view = usePetProfileView(() => {});
@@ -35,16 +36,12 @@ export function MePetRoom({ exam, minutes, todayCount, todayExamCount, goal, pas
   const doc = view.document, owner = doc?.ownerScope;
   const selectedExam = qualification ?? exam;
   const profile = doc?.profiles.find(profile => profile.qualificationId === selectedExam) ?? doc?.profiles.find(profile => profile.qualificationId === exam) ?? doc?.profiles[0];
-  const artExam = qualification ?? profile?.qualificationId ?? exam;
   const stage = lifetimePetStage(doc, minutes);
   const level = ROOM_STAGES.indexOf(stage);
   const entitled = paid !== null && paid.owner === owner && paid.value;
   const appearance = profile?.care.appearance;
   const accessory = appearance?.accessory === "star" && !entitled ? "none" : appearance?.accessory ?? "none";
   const formal = entitled && appearance?.costume === "formal";
-  const sleepy = paceBehind ?? todayExamCount < goal;
-  const shownPose = pose ?? (sleepy ? "slack" : "study");
-  const image = formal ? petArtFor(artExam, stage, shownPose === "study" ? "correct" : shownPose) : petPortraitFor(artExam, stage, shownPose);
   const mealOwner = doc?.profiles.find(item => item.care.meals.some(meal => meal.consumedAt === null));
   const meal = mealOwner?.care.meals.find(meal => meal.consumedAt === null);
   const enabled = view.status === "ready" && !busy;
@@ -85,7 +82,7 @@ export function MePetRoom({ exam, minutes, todayCount, todayExamCount, goal, pas
     catch { setMessage("保存を確認できませんでした。もう一度お試しください。"); }
     finally { setBusy(false); }
   };
-  return <section aria-label="チワワの部屋" data-pet-stage={stage} data-pet-mood={sleepy ? "sleepy" : "active"} className="overflow-hidden rounded-3xl border border-stone-200 bg-stone-50 dark:border-stone-700 dark:bg-stone-900">
+  return <section aria-label="チワワの部屋" data-pet-stage={stage} data-pet-mood="relaxed" className="overflow-hidden rounded-3xl border border-stone-200 bg-stone-50 dark:border-stone-700 dark:bg-stone-900">
     <div className="relative isolate h-80 overflow-hidden bg-gradient-to-b from-orange-50/80 to-stone-100 dark:from-stone-900 dark:to-stone-800">
       <div aria-hidden="true" className="absolute left-7 top-6 grid h-24 w-20 grid-cols-2 grid-rows-2 gap-1 rounded-t-full border-[5px] border-white bg-white p-1 shadow-sm dark:border-stone-600 dark:bg-stone-600"><span className="rounded-tl-full bg-sky-100 dark:bg-sky-950" /><span className="rounded-tr-full bg-sky-100 dark:bg-sky-950" /><span className="bg-sky-100 dark:bg-sky-950" /><span className="bg-sky-100 dark:bg-sky-950" /></div>
       {passedExams.length ? <div aria-label="合格証" className="absolute right-5 top-5 max-w-24 rounded-sm border-2 border-amber-700/60 dark:border-amber-500/60 bg-white px-2 py-2 text-center shadow-sm sm:right-7 sm:max-w-32 dark:bg-stone-800"><Award aria-hidden="true" className="mx-auto mb-1 size-4 text-amber-700 dark:text-amber-400" /><span className="block text-[10px] text-muted-foreground">合格</span><span className="block text-balance text-[11px] font-bold leading-relaxed">{examLabel(passedExams[0])}</span>{passedExams.length > 1 ? <span className="text-[10px] text-muted-foreground">+{passedExams.length - 1}</span> : null}</div> : null}
@@ -93,8 +90,7 @@ export function MePetRoom({ exam, minutes, todayCount, todayExamCount, goal, pas
       <div aria-hidden="true" className="absolute bottom-16 left-5"><Leaf className="mx-auto size-12 -rotate-12 fill-emerald-700/30 text-emerald-700 dark:text-emerald-500" /><span className="mx-auto block h-9 w-8 rounded-b-xl bg-orange-200 dark:bg-orange-900" /></div>
       <div aria-hidden="true" className="absolute bottom-10 left-1/2 h-14 w-56 -translate-x-1/2 rounded-[50%] bg-stone-200/70 dark:bg-stone-700/70" />
       <button type="button" aria-label="チワワをなでる" disabled={!enabled} onClick={() => react("petted", "なでなで、うれしそう。")} className={`absolute bottom-11 left-1/2 h-52 w-52 -translate-x-1/2 rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary ${pose && !paused ? "motion-safe:animate-pulse" : ""}`}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={image} alt={`${ROOM_STAGE_LABELS[stage]}のチワワ`} width={208} height={208} className="h-full w-full object-contain" />
+        <RoomChihuahua src={RELAXED_ROOM_SHEET} frame={pose === "petted" ? 3 : pose === "meal" ? 1 : 0} alt={`${ROOM_STAGE_LABELS[stage]}のチワワ（くつろぎ）`} />
         {formal ? <svg aria-hidden="true" viewBox="0 0 100 70" width="54" height="38" className="pointer-events-none absolute bottom-[88px] left-[45%] -translate-x-1/2 drop-shadow-sm"><path d="m22 9 28 10L78 9l17 48-25 7H30L5 57z" fill="#d7a34b" stroke="#a77927" strokeWidth="2" /><path d="m22 9 28 10-12 22-13-15zM78 9 50 19l12 22 13-15z" fill="#fff0c7" /><path d="M50 23v39" stroke="#b38537" strokeWidth="2" /><circle cx="54" cy="44" r="2" fill="#fff5d5" /><circle cx="54" cy="54" r="2" fill="#fff5d5" /></svg> : null}
         {accessory !== "none" ? <span aria-hidden="true" className={`absolute bottom-24 left-[45%] -translate-x-1/2 ${accessory === "star" ? "text-amber-500" : "text-rose-500"}`}><AccessoryArtwork accessory={accessory} /></span> : null}
         {pose === "petted" ? <Heart aria-hidden="true" className="absolute right-2 top-3 size-7 fill-rose-300 text-rose-300" /> : null}
@@ -104,7 +100,7 @@ export function MePetRoom({ exam, minutes, todayCount, todayExamCount, goal, pas
       <button ref={clothesButton} type="button" disabled={!enabled || !profile} aria-label="着がえ" onClick={() => setClothesOwner(owner ?? null)} className="absolute bottom-4 right-4 flex min-h-11 items-center gap-1.5 rounded-full border border-white bg-white/90 px-4 text-xs font-medium text-stone-700 shadow-sm outline-offset-2 hover:bg-stone-100 focus-visible:outline-2 focus-visible:outline-primary disabled:opacity-40 dark:hover:bg-stone-800 dark:border-stone-700 dark:bg-stone-900 dark:text-stone-200"><Shirt aria-hidden="true" className="size-4" />着がえ</button>
     </div>
     <div className="px-5 pb-5 pt-2 text-center"><button type="button" ref={nameButton} disabled={!enabled} onClick={() => setSettingsOwner(owner ?? null)} className="inline-flex min-h-11 max-w-full items-center justify-center gap-2 rounded-lg px-4 text-base font-bold outline-offset-2 hover:bg-stone-200/50 focus-visible:outline-2 focus-visible:outline-primary dark:hover:bg-stone-800"><span className="min-w-0 break-words">{profile?.name ?? "チワワ"}</span><ChevronDown aria-hidden="true" className="size-4 shrink-0 text-muted-foreground" /></button>
-      <p role="status" className="min-h-5 text-xs text-stone-600 dark:text-stone-300">{message || (view.status === "unavailable" ? "育成の保存を確認できませんでした" : !profile ? "" : sleepy ? "眠そう" : "元気")}</p>
+      <p role="status" className="min-h-5 text-xs text-stone-600 dark:text-stone-300">{message || (view.status === "unavailable" ? "育成の保存を確認できませんでした" : !profile ? "" : "くつろいでいる")}</p>
       <ol aria-label="チワワの成長" className="mx-auto mt-3 flex max-w-72 items-center justify-between">{ROOM_STAGES.map((item, index) => <li key={item} aria-current={item === stage ? "step" : undefined} className={`relative flex flex-1 flex-col items-center gap-1 border-t-2 pt-3 text-xs ${index === level ? "after:absolute after:-top-[5px] after:left-1/2 after:size-2 after:-translate-x-1/2 after:rounded-full after:bg-emerald-600 after:ring-4 after:ring-stone-50 dark:after:bg-emerald-400 dark:after:ring-stone-900" : ""} ${index <= level ? "border-emerald-600 font-semibold text-emerald-800 dark:text-emerald-400" : "border-stone-200 text-muted-foreground dark:border-stone-700"}`}>{ROOM_STAGE_LABELS[item]}</li>)}</ol>
     </div>
     {settingsOwner !== null ? <PetCareSheet key={`${settingsOwner}:${selectedExam}`} document={doc?.ownerScope === settingsOwner ? doc : null} qualificationId={selectedExam} initialSettingsOpen motionPaused={paused} onMotionChange={motion} allowMotion={!paused} onClose={() => setSettingsOwner(null)} returnFocus={() => nameButton.current?.focus()} onPose={react} /> : null}

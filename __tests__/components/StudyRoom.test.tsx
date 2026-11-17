@@ -66,20 +66,24 @@ it("starts a supported quiz directly and resolves library qualification aliases 
   expect(screen.getByRole("link", { name: "席について解く" })).toHaveAttribute("href", "/e-learning/exams/qualifications/ni-kyu-boiler-gishi");
 });
 
-it("puts server-supplied premium seats first and displays only supplied daily answers", () => {
+it("keeps premium dogs in place and reveals supplied daily answers only on tap", () => {
   render(<StudyRoom snapshot={snapshot(3)} suggestions={[]} seatDetails={[{ exam: "fe", index: 2, premium: true, todayAnswers: 17 }]} />);
   const seats = screen.getAllByTestId("study-room-seat");
-  expect(seats[0]).toHaveAttribute("data-seat-key", "fe:2");
-  expect(seats[0].querySelector("button")).toHaveAttribute("data-premium", "true");
+  expect(seats[0]).toHaveAttribute("data-seat-key", "fe:0");
+  expect(seats[2].querySelector("button")).toHaveAttribute("data-premium", "true");
   expect(screen.getByLabelText("特等席")).toBeInTheDocument();
+  expect(screen.queryByText("今日17問")).not.toBeInTheDocument();
+  fireEvent.click(seats[2].querySelector("button")!);
   expect(screen.getByText("今日17問")).toBeInTheDocument();
+  fireEvent.click(seats[2].querySelector("button")!);
+  expect(screen.queryByText("今日17問")).not.toBeInTheDocument();
   expect(screen.queryByText("今日0問")).not.toBeInTheDocument();
 });
 
-it("reuses the same qualification images, preserves visit poses, and loads only occupied seats", () => {
+it("reuses qualification images, preserves identity poses, and loads only occupied seats", () => {
   sessionStorage.setItem("study-room-mascot-visit:v1", "0");
   const { container, rerender, unmount } = render(<StudyRoom snapshot={snapshot(120)} suggestions={[]} />);
-  const sources = () => [...container.querySelectorAll<HTMLImageElement>(".study-mascot")].map(img => img.getAttribute("src"));
+  const sources = () => [...container.querySelectorAll<HTMLImageElement>(".study-mascot img")].map(img => img.getAttribute("src"));
   const initial = sources();
   expect(new Set(initial).size).toBeLessThanOrEqual(2);
   container.querySelectorAll("img").forEach(img => { expect(img).toHaveAttribute("loading", "lazy"); expect(img).toHaveAttribute("decoding", "async"); });
@@ -87,7 +91,7 @@ it("reuses the same qualification images, preserves visit poses, and loads only 
   expect(sources()).toEqual(initial);
   unmount();
   const remount = render(<StudyRoom snapshot={snapshot(120)} suggestions={[]} />);
-  expect([...remount.container.querySelectorAll(".study-mascot")].map(img => img.getAttribute("src"))).toEqual(initial);
+  expect([...remount.container.querySelectorAll(".study-mascot img")].map(img => img.getAttribute("src"))).toEqual(initial);
 });
 
 it("observes each seat so a tall hall does not animate offscreen dogs or hidden documents", () => {
