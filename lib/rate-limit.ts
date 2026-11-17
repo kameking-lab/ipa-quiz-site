@@ -49,8 +49,11 @@ for i = 1, 4 do
     counts[i] = false
   end
 end
-redis.pcall('ZINCRBY', KEYS[5], 1, ARGV[5])
-if counts[4] == 1 then redis.pcall('EXPIRE', KEYS[5], ARGV[4]) end
+local score = redis.pcall('ZINCRBY', KEYS[5], 1, ARGV[5])
+-- A first member also covers recovery after the initial sorted-set write failed.
+-- Do not leave a newly created top-IP set without retention when stats failed.
+local firstMember = (type(score) == 'string' or type(score) == 'number') and tonumber(score) == 1
+if counts[4] == 1 or firstMember then redis.pcall('EXPIRE', KEYS[5], ARGV[4]) end
 return counts
 `;
 
