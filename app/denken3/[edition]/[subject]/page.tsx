@@ -1,3 +1,4 @@
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -10,11 +11,11 @@ const names = { theory: "理論", power: "電力", machine: "機械", law: "法�
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { edition, subject } = await params;
   const part = getDenken3NativePart(edition, subject);
-  return part ? {
+  return part ? withCanonicalSocialMetadata({
     title: `電験三種 ${part.sitting === "2026-upper" ? "2026年度上期" : "2025年度下期"} ${names[part.subject]} 原問${part.questions.length}題`,
     description: `確認済み${part.questions.length}原問・${part.questions.reduce((sum, q) => sum + q.slots.length, 0)}回答欄を原本画像とともに掲載。`,
     alternates: { canonical: denken3NativeSubjectPath(part.sitting, part.subject) },
-  } : { title: "問題が見つかりません", robots: { index: false } };
+  }) : { title: "問題が見つかりません", robots: { index: false } };
 }
 export default async function Page({ params }: Props) {
   const { edition, subject } = await params;

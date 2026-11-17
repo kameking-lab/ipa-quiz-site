@@ -43,7 +43,7 @@ describe("hyoso1 2025年度前期の公式50問", () => {
       expect(findQuestionByRoute(rows,{exam:routeExam,yearSeason,section,qnum})?.id).toBe(q.id);
       const graph=buildQuestionJsonLd({question:q,pageUrlAbs:`https://www.kakomon-ai.jp${questionPagePath(q)}`,title:exam})["@graph"][0];
       if(!("hasPart" in graph)||!("acceptedAnswer" in graph.hasPart)||Array.isArray(graph.hasPart.acceptedAnswer))throw new Error("Missing answer");
-      expect(graph.hasPart.author.name).toBe("中央職業能力開発協会");
+      expect(graph.hasPart.author?.name).toBe("中央職業能力開発協会");
       expect(graph.hasPart.acceptedAnswer.text).toContain(key[i]);
       expect(q.sourceAttribution).toContain(getQualificationByExamCode(exam)!.fullName.replace("技能検定 ",""));
     });

@@ -1,3 +1,4 @@
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import { strictContentGateEnabled } from "@/lib/billing/content-policy";
 import { ContentPage } from "@/mobile/server/ContentPage";
 import {Fp1AppliedView} from "@/components/quiz/Fp1AppliedView";
@@ -16,11 +17,11 @@ export function generateStaticParams() {
 export async function generateMetadata({ params }: { params: Promise<RouteParams> }): Promise<Metadata> {
   const { edition, number } = await params;
   const extensionQuestion = getFp1ExtensionQuestions(edition).find((q) => String(q.number) === number);
-  if (extensionQuestion) return { title: `FP1級 ${edition === "202609" ? "2026年9月" : "2026年5月"} 学科応用編 問${number}｜問題・模範解答`, description: extensionQuestion.title, alternates: { canonical: fp1AppliedQuestionPath(edition, extensionQuestion.number) } };
+  if (extensionQuestion) return withCanonicalSocialMetadata({ title: `FP1級 ${edition === "202609" ? "2026年9月" : "2026年5月"} 学科応用編 問${number}｜問題・模範解答`, description: extensionQuestion.title, alternates: { canonical: fp1AppliedQuestionPath(edition, extensionQuestion.number) } });
   const data = getFp1AppliedEdition(edition);
   const question = data?.questions.find((item) => String(item.number) === number);
   if (!data || !question) return { title: "問題が見つかりません", robots: { index: false } };
-  return { title: `FP1級 ${data.label} 学科応用編 問${question.number}｜問題・模範解答`, description: `問${question.number} ${question.title}。${question.type === "originalcalculation" ? "共通設例、2つの計算問題、公式模範解答と計算過程を確認できます。" : question.type === "originalnumericcloze" ? "共通設例、数値記入式の空欄①～⑦、公式模範解答と7つの独自解説を確認できます。" : "共通設例、空欄①〜④と空欄④の3肢、公式模範解答と独自解説を確認できます。"}法令基準日は${data.lawReferenceDate}です。`, alternates: { canonical: fp1AppliedQuestionPath(edition, question.number) } };
+  return withCanonicalSocialMetadata({ title: `FP1級 ${data.label} 学科応用編 問${question.number}｜問題・模範解答`, description: `問${question.number} ${question.title}。${question.type === "originalcalculation" ? "共通設例、2つの計算問題、公式模範解答と計算過程を確認できます。" : question.type === "originalnumericcloze" ? "共通設例、数値記入式の空欄①～⑦、公式模範解答と7つの独自解説を確認できます。" : "共通設例、空欄①〜④と空欄④の3肢、公式模範解答と独自解説を確認できます。"}法令基準日は${data.lawReferenceDate}です。`, alternates: { canonical: fp1AppliedQuestionPath(edition, question.number) } });
 }
 
 export default async function Fp1AppliedQuestionPage({ params }: { params: Promise<RouteParams> }) {

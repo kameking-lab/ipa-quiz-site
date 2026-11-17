@@ -103,7 +103,7 @@ describe("化学分析技能士2級 化学分析作業 2025年度前期", () => 
     const q = questions[44];
     const resource = buildQuestionJsonLd({ question: q, pageUrlAbs: `https://www.kakomon-ai.jp${questionPagePath(q)}`, title: "化学分析技能士2級 B群20" })["@graph"][0];
     if (!("hasPart" in resource) || !("acceptedAnswer" in resource.hasPart)) throw new Error("Missing accepted answer");
-    expect(resource.hasPart.author.name).toBe("中央職業能力開発協会");
+    expect(resource.hasPart.author?.name).toBe("中央職業能力開発協会");
     expect(resource.hasPart.acceptedAnswer).toMatchObject({ text: "ハ: KClO₄" });
   });
 });

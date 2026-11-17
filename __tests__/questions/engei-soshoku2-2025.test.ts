@@ -95,7 +95,7 @@ describe("園芸装飾技能士2級 室内園芸装飾作業 2025年度前期", 
     const resource = graph[0];
     if (!("hasPart" in resource)) throw new Error("Missing learning resource");
     if (!("acceptedAnswer" in resource.hasPart)) throw new Error("Missing official accepted answer");
-    expect(resource.hasPart.author.name).toBe("中央職業能力開発協会");
+    expect(resource.hasPart.author?.name).toBe("中央職業能力開発協会");
     expect(resource.hasPart.acceptedAnswer).toMatchObject({ text: "イ: エゾマツとアレカヤシ" });
   });
 });

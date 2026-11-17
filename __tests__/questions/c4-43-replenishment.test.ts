@@ -79,7 +79,7 @@ for (const edition of editions) {
       }
       const graph = buildQuestionJsonLd({ question: questions[0], pageUrlAbs: `https://www.kakomon-ai.jp${questionPagePath(questions[0])}`, title: "サッシ施工" })["@graph"][0];
       if (!("hasPart" in graph) || !("acceptedAnswer" in graph.hasPart) || Array.isArray(graph.hasPart.acceptedAnswer)) throw new Error("Missing answer");
-      expect(graph.hasPart.author.name).toBe("中央職業能力開発協会");
+      expect(graph.hasPart.author?.name).toBe("中央職業能力開発協会");
       expect(graph.hasPart.acceptedAnswer.text).toContain(questions[0].officialAnswerNumber);
     });
   });

@@ -105,7 +105,7 @@ describe("サッシ施工技能士2級 ビル用サッシ施工作業 2025年度
     const q = questions[40];
     const resource = buildQuestionJsonLd({ question: q, pageUrlAbs: `https://www.kakomon-ai.jp${questionPagePath(q)}`, title: "サッシ施工技能士2級 B群16" })["@graph"][0];
     if (!("hasPart" in resource) || !("acceptedAnswer" in resource.hasPart)) throw new Error("Missing accepted answer");
-    expect(resource.hasPart.author.name).toBe("中央職業能力開発協会");
+    expect(resource.hasPart.author?.name).toBe("中央職業能力開発協会");
     expect(resource.hasPart.acceptedAnswer).toMatchObject({ text: "ロ: 50N" });
   });
 });

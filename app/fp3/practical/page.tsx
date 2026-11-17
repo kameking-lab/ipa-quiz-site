@@ -1,13 +1,14 @@
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowRight, BookOpenCheck } from "lucide-react";
 import { FP3_PRACTICAL_EDITIONS, getPracticalEdition } from "@/lib/fp3/practical";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalSocialMetadata({
   title: "FP3級 実技試験の過去問と模範解答",
   description: "日本FP協会公表のFP3級実技試験を2024年から2026年までの3年分、60問収録。設問と公式模範解答を回ごとに確認できます。",
   alternates: { canonical: "/fp3/practical" },
-};
+});
 
 export default function Fp3PracticalHome() {
   return (

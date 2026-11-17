@@ -1,3 +1,4 @@
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
 import { referralPracticeHref } from "@/lib/questions/referral-practice";
 import type { Metadata } from "next";
@@ -8,11 +9,11 @@ import { ExamYearArchiveLinks } from "@/components/seo/ExamYearArchiveLinks";
 import type { Session } from "@/lib/questions/types";
 import { DENKEN1_NATIVE_PARTS, DENKEN1_PUBLISHED_ORIGINAL_COUNT, denken1NativeSubjectPath } from "@/lib/denken1/native";
 
-export const metadata: Metadata = {
+export const metadata: Metadata = withCanonicalSocialMetadata({
   title: "電験一種 一次試験 過去問｜2025・2026年度の収録範囲",
   description: "第一種電気主任技術者一次試験の2025・2026年度から確認済みの理論・電力・機械36原問を原問単位で収録。従来の2026年度5原問・25空欄も保持しています。",
   alternates: { canonical: "/denken1" },
-};
+});
 
 const SUBJECTS: { session: Session; name: string; original: string; description: string }[] = [
   { session: "riron", name: "理論", original: "A問題 問2・問3", description: "半導体の輸送・発振回路" },
