@@ -63,6 +63,16 @@ for (const width of [390, 1280]) test(`records, room and day review at ${width}p
   await expect(review.getByRole("link")).toHaveCount(30);
   await expect(review.getByRole("link").first()).toHaveAttribute("href", /^\/me\/review\//);
   await page.keyboard.press("Escape");
+  const today = page.getByRole("button", { name: `${data.today} 30問`, exact: true });
+  await expect(today).toBeFocused();
+  const target = await today.boundingBox();
+  expect(target!.width).toBeGreaterThanOrEqual(44);
+  expect(target!.height).toBeGreaterThanOrEqual(44);
+  const recent = page.locator('section[aria-labelledby="me-recent"] button').first();
+  await recent.click();
+  await expect(review).toBeVisible();
+  await page.keyboard.press("Escape");
+  await expect(recent).toBeFocused();
   await room.getByRole("button", { name: "ごはんをあげる" }).click();
   await expect(room.getByRole("button", { name: "ごはんをあげる" })).toHaveCount(0);
   await room.getByRole("button", { name: "着がえ", exact: true }).click();

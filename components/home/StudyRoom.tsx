@@ -139,7 +139,7 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
         <button type="button" aria-pressed={!sameExam} onClick={() => setSameExam(false)} className="min-h-11 min-w-20 rounded-full px-4 outline-offset-2 hover:text-foreground focus-visible:outline-2 focus-visible:outline-primary aria-pressed:bg-background aria-pressed:shadow-sm">みんな</button>
         <button type="button" aria-pressed={sameExam} disabled={!selectedExam} onClick={() => setSameExam(true)} className="min-h-11 min-w-20 rounded-full px-4 outline-offset-2 hover:text-foreground focus-visible:outline-2 focus-visible:outline-primary aria-pressed:bg-background aria-pressed:shadow-sm disabled:opacity-50">同じ資格</button>
       </div>
-      <span className="min-w-0 text-right text-xs leading-relaxed text-muted-foreground">{scene.name}</span>
+      <span className="min-w-0 text-right text-xs leading-relaxed text-muted-foreground">{filtered ? scene.name : ""}</span>
     </div>
     <div ref={sceneRef} data-testid="study-room-scene" data-stage={renderedStage} data-motion-visible={motionVisible} data-art-status={scene.background ? "ready" : "pending"}
       role="group" aria-label="チワワの自習室" tabIndex={-1}
@@ -162,8 +162,8 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
           <StudyRoomSeat name={presenceExamName(seat.exam)!} index={seat.index} mascot={mascot} detail={seat.detail} cheering={cheer === key} onCheer={() => cheerSeat(seat)} />
         </div>;
       })}
-      {!seats.length && <p className="absolute inset-0 grid place-items-center px-4 text-sm text-muted-foreground">{filtered ? "静かな、自習室。" : "自習室"}</p>}
-      {measured && measured.hidden > 0 && <span aria-label={`ほか${measured.hidden}人が勉強中`} className="absolute bottom-2 right-2 rounded-full bg-background/90 px-2 py-1 text-xs tabular-nums">+{measured.hidden}</span>}
+      {!seats.length && <p className="absolute inset-0 grid place-items-center px-4 text-sm text-stone-600 dark:text-stone-300">{filtered ? "静かな、自習室。" : "自習室"}</p>}
+      {measured && measured.hidden > 0 && <span aria-label={`ほか${measured.hidden}人が勉強中`} className="absolute bottom-3 right-3 rounded-full border border-border bg-background px-3 py-1.5 text-sm font-semibold tabular-nums shadow-sm">+{measured.hidden}</span>}
     </div>
     {snapshot && !current && <p className="text-right text-xs text-muted-foreground"><time dateTime={snapshot.measuredAt}>{new Date(snapshot.measuredAt).toLocaleString("ja-JP", { month: "numeric", day: "numeric", hour: "2-digit", minute: "2-digit", timeZone: "Asia/Tokyo" })}</time> 時点</p>}
     <Link href={href} className="flex min-h-12 items-center justify-center rounded-xl bg-primary px-4 py-3 text-sm font-semibold text-primary-foreground outline-offset-2 hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-primary">席について解く</Link>
