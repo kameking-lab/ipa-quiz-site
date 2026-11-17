@@ -1,5 +1,5 @@
 import { EXAM_CONFIGS } from "@/lib/exam-config";
-import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { ExamBrowseTabs } from "@/components/exam/ExamBrowseTabs";
 import { MobileBottomNav } from "@/components/MobileBottomNav";
@@ -26,13 +26,14 @@ describe("qualification mock eligibility from the question schema", () => {
   });
   // Publication-gated staging codes have no public label or qualification page.
   // The generic 404 navigation is not that qualification's mobile navigation.
-  it.each(schemaExams.filter(exam => Object.hasOwn(EXAM_LABELS, exam)))("%s mobile mock keeps the qualification or is absent", (exam) => {
+  it.each(schemaExams.filter(exam => Object.hasOwn(EXAM_LABELS, exam)))("%s mobile navigation keeps the three shared tabs", (exam) => {
     route.pathname = `/${exam}`;
     render(<MobileBottomNav />);
-    const link = screen.queryByRole("link", { name: "模試" });
-    if (Object.hasOwn(MOCK_EXAM_CONFIGS, exam)) {
-      expect(link).toHaveAttribute("href", `/mock-exam?${new URLSearchParams({ exam, returnTo: route.pathname })}`);
-    } else expect(link).not.toBeInTheDocument();
+    const navigation = within(screen.getByRole("navigation", { name: "モバイル底タブ" }));
+    expect(navigation.getAllByRole("link").map(link => [link.textContent, link.getAttribute("href")])).toEqual([
+      ["ホーム", "/"], ["さがす", "/search"], ["わたし", "/me"],
+    ]);
+    expect(navigation.queryByRole("link", { name: "模試" })).not.toBeInTheDocument();
   });
   it("SG describes subject A practice without claiming a full exam", () => {
     render(<ExamBrowseTabs exam="sg" years={[]} categories={[]} />);
