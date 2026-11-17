@@ -24,8 +24,8 @@ export function StudyRoomSeat({ name, index, mascot, detail, inspected = false, 
 }) {
   return <button type="button" aria-label={`${index + 1} ${name}のチワワを応援`} onClick={onCheer} title={name}
     data-premium={detail?.premium === true} data-mascot-state={mascot?.state} data-cheering={cheering}
-    className={cn("relative flex h-full w-full min-w-0 flex-col items-center justify-center rounded-full border text-foreground outline-offset-[-3px] hover:bg-stone-200/40 dark:hover:bg-stone-700/40 focus-visible:outline-2 focus-visible:outline-primary",
-      detail?.premium ? "border-amber-400/80 ring-1 ring-amber-300/60" : "border-0")}>
+    className={cn("relative flex h-full w-full min-w-0 flex-col items-center justify-center rounded-full border-0 text-foreground outline-offset-[-3px] hover:bg-stone-200/40 dark:hover:bg-stone-700/40 focus-visible:outline-2 focus-visible:outline-primary",
+      detail?.premium && "ring-1 ring-inset ring-amber-400/80")}>
     {detail?.premium && <Star aria-label="特等席" className="absolute right-1 top-1 z-10 size-3.5 fill-amber-300 text-amber-800 dark:text-amber-300" />}
     <span className="relative block aspect-square w-full" data-mirrored={mascot?.mirrored}>
       {mascot && (desk ? <StudyDeskArtwork mascot={mascot} name={name} {...desk} /> : <RoomChihuahua src={mascot.src} alt={`${name}のチワワ（${mascot.stateLabel}）`}

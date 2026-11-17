@@ -30,7 +30,7 @@ export function seatedRoomMascots(keys: readonly string[]): Map<string, SeatMasc
   const ranked = [...keys].sort((a, b) => roomIdentitySeed(`moment:${a}`) - roomIdentitySeed(`moment:${b}`) || a.localeCompare(b));
   const away = Math.min(3, Math.floor(keys.length * .07));
   const naps = Math.round(keys.length * .15);
-  return new Map(ranked.map((key, index) => {
+  return new Map(ranked.map((key, index): [string, SeatMascot] => {
     const exam = key.slice(0, key.lastIndexOf(":"));
     const seed = roomIdentitySeed(key);
     if (index < away) {

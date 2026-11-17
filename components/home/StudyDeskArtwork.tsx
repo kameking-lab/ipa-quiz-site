@@ -14,12 +14,13 @@ export function StudyDeskArtwork({ mascot, name, point, scene, seed }: {
   const ratio = 256 / point.width;
   const desktop = ((point.deskY ?? point.y) - point.y) * ratio + 128;
   const turn = seed % 5 - 2;
+  const bodyClass = cn("absolute inset-0 block origin-[50%_62%] [clip-path:polygon(25%_11%,80%_11%,80%_40%,69%_53%,69%_69%,51%_76%,34%_73%,31%_62%,33%_52%,31%_45%)]", mascot.mirrored && "-scale-x-100");
+  const poseStyle = { rotate: `${turn}deg`, translate: `${(seed % 3) - 1}% 0` };
   return <span className="pointer-events-none absolute inset-0 block" data-desk-artwork>
-    <span className={cn("study-mascot absolute inset-0 block origin-[50%_62%] [clip-path:polygon(25%_0,80%_0,80%_29%,69%_42%,69%_58%,51%_65%,34%_62%,31%_51%,33%_41%,31%_34%)]", mascot.mirrored && "-scale-x-100")}
-      style={{ rotate: `${turn}deg`, translate: `${(seed % 3) - 1}% 0` }}>
+    <span className={cn("study-mascot", bodyClass)} style={poseStyle}>
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img src={mascot.src} alt={`${name}のチワワ（${mascot.stateLabel}）`} width={256} height={256} loading="lazy" decoding="async"
-        className="size-full translate-x-[9%] object-contain" />
+        className="size-full translate-x-[9%] translate-y-[11%] object-contain" />
     </span>
     <svg viewBox="0 0 256 256" aria-hidden="true" className="absolute inset-0 size-full overflow-visible">
       <defs><clipPath id={`${id}-desk`}><rect x="0" y={desktop} width="256" height={256 - desktop} /></clipPath></defs>
@@ -36,11 +37,14 @@ export function StudyDeskArtwork({ mascot, name, point, scene, seed }: {
         {seed % 3 === 0 ? <g data-tool="laptop"><path d="m162 162 9-28 37 3-6 28Z" fill="#586767" stroke="#354849" strokeWidth="2" /><path d="m174 139 28 2-4 19-29-2Z" fill="#99b6b2" /><path d="m162 163 40 2 11 9-39-1Z" fill="#89938a" stroke="#5b665f" strokeWidth="1.5" /></g>
           : seed % 3 === 1 ? <g data-tool="calculator" transform="rotate(9 192 171)"><rect x="180" y="157" width="24" height="29" rx="3" fill="#607f78" stroke="#3f5b52" /><path d="M184 162H200V168H184Z" fill="#b5c8a0" /><path d="M185 174h2m5 0h2m5 0h1m-15 5h2m5 0h2m5 0h1" stroke="#ede6ca" strokeWidth="2" /></g>
             : <g data-tool="books"><path d="m178 164 26 3-1 15-26-3Z" fill="#6f8871" stroke="#506650" /><path d="m178 175 24 3" stroke="#e7dbba" strokeWidth="3" /></g>}
-        {/* Forepaws rest above the desktop, while the torso remains behind it. */}
-        <ellipse cx={mascot.mirrored ? 145 : 103} cy="166" rx="12" ry="6" fill="#eed7ac" stroke="#b9976d" strokeWidth="1" />
-        <ellipse cx={mascot.mirrored ? 106 : 143} cy="161" rx="11" ry="6" fill="#f4e4c4" stroke="#b9976d" strokeWidth="1" />
-        <path d={mascot.mirrored ? "m141 164 1 4m5-4 1 4m-45-9 1 4" : "m99 164 1 4m5-4 1 4m34-9 1 4"} stroke="#bf9e76" fill="none" />
       </g>
     </svg>
+    {/* Reuse the actual front paws (and a sleeping chin), so a reader never gains extra limbs. */}
+    <span aria-hidden="true" className="absolute inset-0 block [clip-path:inset(62.5%_0_27%_0)]" data-layer="forepaws">
+      <span className={bodyClass} style={poseStyle}>
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={mascot.src} alt="" width={256} height={256} loading="lazy" decoding="async" className="size-full translate-x-[9%] translate-y-[11%] object-contain" />
+      </span>
+    </span>
   </span>;
 }
