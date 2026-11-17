@@ -3,6 +3,37 @@
   box-shadow: 0 8px 32px #18181b04;
 }
 .content { padding: 24px; }
+.qualification {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  min-height: 44px;
+  border-radius: 8px;
+  text-align: left;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.5;
+  overflow-wrap: anywhere;
+}
+.qualification > span { min-width: 0; text-wrap: pretty; }
+.search:focus-within { outline: 2px solid var(--primary); outline-offset: 3px; }
+.search input::-webkit-search-cancel-button { cursor: pointer; min-width: 28px; min-height: 28px; }
+.result {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  min-height: 52px;
+  padding-block: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.6;
+}
+.result > span:first-child { min-width: 0; overflow-wrap: anywhere; }
+.result > span:last-child { flex-shrink: 0; color: var(--muted-foreground); }
+.result:hover { color: var(--primary); }
 .countdown {
   display: flex;
   align-items: baseline;
