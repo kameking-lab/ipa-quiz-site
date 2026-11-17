@@ -64,8 +64,8 @@ describe("robots()", () => {
 });
 
 describe("AI crawler policy (2026-11-17)", () => {
-  const rules = robots().rules;
-  if (!Array.isArray(rules)) throw new Error("Expected crawler groups");
+  const emittedRules = robots().rules;
+  const rules = Array.isArray(emittedRules) ? emittedRules : [emittedRules];
   const list = (value: string | string[] | undefined) => value ? [value].flat() : [];
 
   // Evaluate group selection and longest-match, including REP's end anchor.

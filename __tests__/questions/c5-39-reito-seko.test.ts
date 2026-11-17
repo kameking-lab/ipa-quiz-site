@@ -72,7 +72,7 @@ for (const { code, rows: corpus, a, b, figures } of editions) {
         expect(EXAM_CONFIGS[code].sessions[0].categories).toContain(q.category);
         const graph = buildQuestionJsonLd({ question: q, pageUrlAbs: `https://www.kakomon-ai.jp${questionPagePath(q)}`, title: code })["@graph"][0];
         if (!("hasPart" in graph) || !("acceptedAnswer" in graph.hasPart) || Array.isArray(graph.hasPart.acceptedAnswer)) throw new Error("Missing answer");
-        expect(graph.hasPart.author.name).toBe("中央職業能力開発協会");
+        expect(graph.hasPart.author?.name).toBe("中央職業能力開発協会");
         expect(graph.hasPart.acceptedAnswer.text).toContain(q.officialAnswerNumber);
       });
     });

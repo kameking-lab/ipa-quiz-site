@@ -46,7 +46,7 @@ for (const [code, key] of Object.entries(officialKeys)) {
         expect(findQuestionByRoute(rows, { exam: routeExam, yearSeason, section, qnum })?.id).toBe(q.id);
         const graph = buildQuestionJsonLd({ question: q, pageUrlAbs: `https://www.kakomon-ai.jp${questionPagePath(q)}`, title: exam })["@graph"][0];
         if (!("hasPart" in graph) || !("acceptedAnswer" in graph.hasPart) || Array.isArray(graph.hasPart.acceptedAnswer)) throw new Error("Missing answer");
-        expect(graph.hasPart.author.name).toBe("中央職業能力開発協会");
+        expect(graph.hasPart.author?.name).toBe("中央職業能力開発協会");
         expect(graph.hasPart.acceptedAnswer.text).toContain(key[i]);
       });
       if (!code.endsWith("3")) expect(["ア", "イ", "ウ", "エ"].map(k => choiceDisplayLabel(exam, k as "ア"))).toEqual(["イ", "ロ", "ハ", "ニ"]);

@@ -16,7 +16,7 @@ describe("question authors follow the published source, not an IPA default", () 
       expect(resource.hasPart.author?.name, exam).toBeTruthy();
       expect(resource.hasPart.author?.url, exam).not.toContain("ipa.go.jp");
       expect(resource.license ?? "", exam).not.toContain("ipa.go.jp");
-      expect(resource.hasPart.acceptedAnswer ?? resource.hasPart.suggestedAnswer, exam).toBeTruthy();
+      expect("acceptedAnswer" in resource.hasPart ? resource.hasPart.acceptedAnswer : resource.hasPart.suggestedAnswer, exam).toBeTruthy();
     }
   });
 
