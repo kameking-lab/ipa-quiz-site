@@ -40,6 +40,7 @@ export const LS_KEYS = {
   spacedRepetition: "ipa-quiz:srs:v1",
   studyPlans: "ipa-quiz:study-plans:v1",
   pacePlans: "ipa-quiz:pace-plans:v1",
+  paceOffer: "ipa-quiz:pace-offer:v1",
   pacePlanDeleted: "ipa-quiz:pace-plan-deleted:v1",
   paceSyncOwner: "ipa-quiz:pace-sync-owner:v1",
   learningActivity: "ipa-quiz:learning-activity:v1",

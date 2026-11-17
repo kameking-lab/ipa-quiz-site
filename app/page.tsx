@@ -1,8 +1,6 @@
-import "./home-study.css";
 import type { Metadata } from "next";
-import { TotalAnswerCounter } from "@/components/home/TotalAnswerCounter";
-import { HomeScheduleLink } from "@/components/home/landing/HomeScheduleLink";
-import { HomeHero } from "@/components/home/landing/HomeHero";
+import { HomePace } from "@/components/home/pace/HomePace";
+import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { getHomeDirectory } from "@/lib/home/home-directory";
 import { buildOrgNode, buildWebsiteNode } from "@/lib/seo/structured-data";
@@ -18,19 +16,11 @@ export const metadata: Metadata = {
 
 export default function HomePage() {
   const domains = getHomeDirectory();
-  const roomItems = domains.flatMap(domain => domain.featured.slice(0, 1));
-  const roomKeys = new Set(roomItems.map(item => item.key));
-  roomItems.push(...domains.flatMap(domain => [...domain.featured, ...domain.compact]).filter(item => !roomKeys.has(item.key)));
 
   return (
-    <main className="study-home mx-auto w-full max-w-6xl flex-1 px-5 pb-12 pt-4 sm:px-10 sm:pt-7">
+    <main className="mx-auto w-full max-w-[640px] flex-1 px-4 pb-6 pt-6 sm:px-6 sm:pt-10">
       <JsonLd data={{ "@context": "https://schema.org", "@graph": [buildWebsiteNode(description), buildOrgNode()] }} />
-      <HomeHero domains={domains} />
-      <TotalAnswerCounter suggestions={roomItems.filter(item => item.questionCount > 0)
-        .map(({ name, href, key }) => ({ name, href, exam: key }))} />
-      <div className="study-context">
-      <HomeScheduleLink />
-      </div>
+      <HomePace domains={domains} planExamKeys={ALL_QUIZ_EXAM_CODES} />
     </main>
   );
 }

@@ -19,6 +19,9 @@ export interface PacePlan {
   createdAt: string;
   updatedAt: string;
   range: RangeSnapshot;
+  registration?: { label: string; start: string | null; deadline: string | null; resultDate: string | null; sourceUrl: string | null; estimated: boolean };
+  registered?: boolean;
+  result?: "passed" | "failed" | "absent";
 }
 const DAY = 86_400_000;
 export function dayNumber(date: string): number | null {
