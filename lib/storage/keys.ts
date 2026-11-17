@@ -1,6 +1,4 @@
 export const LS_KEYS = {
-  mobileInstalled: "ipa-quiz:mobile-installed:v1",
-  mobileInstallNudge: "ipa-quiz:mobile-install-nudge:v1",
   funnelFirstTouch: "ipa-quiz:funnel-first-touch:v1",
   referral: "ipa-quiz:referral:v1",
   referralStages: "ipa-quiz:referral-stages:v1",
@@ -25,6 +23,8 @@ export const LS_KEYS = {
   theme: "ipa-quiz:theme:v1",
   aiUsage: "ipa-quiz:ai-usage:v1",
   settings: "ipa-quiz:settings:v1",
+  mobileInstalled: "ipa-quiz:mobile-installed:v1",
+  mobileInstallNudge: "ipa-quiz:mobile-install-nudge:v1",
   swipeHintShown: "ipa-quiz:swipe-hint-shown:v1",
   feedbackSubmitted: "ipa-quiz:feedback-submitted:v1",
   feedbackUnlockPendingClaim: "ipa-quiz:feedback-unlock-pending-claim:v1",

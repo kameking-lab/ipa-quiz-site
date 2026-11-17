@@ -199,3 +199,52 @@ describe("daily and thirty-day boundaries", () => {
     expect(canShowInstallNudge({ dismissedAt: now }, now + INSTALL_DISMISS_MS)).toBe(true);
   });
 });
+
+// Cross the independent browser, persistence and placement conditions. An
+// eligible placement must never override a suppression condition.
+const histories = ["new", "seen-today", "seen-yesterday", "closed-29-days", "closed-30-days", "corrupt", "read-blocked", "write-blocked"] as const;
+const placements = [
+  { placement: "answer", answered: 0 },
+  { placement: "answer", answered: 2 },
+  { placement: "answer", answered: 3 },
+  { placement: "daily-limit", answered: 0 },
+] as const;
+const combinations = [];
+for (const os of ["android", "iphone", "desktop"] as const)
+  for (const native of [false, true])
+    for (const standalone of [false, true])
+      for (const installed of [false, true])
+        for (const installable of [false, true])
+          for (const history of histories)
+            for (const placement of placements)
+              combinations.push({ os, native, standalone, installed, installable, history, ...placement });
+
+describe("all invitation condition combinations", () => {
+  it.each(combinations)("$os native=$native standalone=$standalone installed=$installed prompt=$installable $history $placement/$answered", (test) => {
+    Object.defineProperty(navigator, "userAgent", { configurable: true,
+      value: test.os === "android" ? android : test.os === "iphone" ? "iPhone Version/18 Mobile Safari" : "Windows Chrome/130" });
+    if (test.native) Object.defineProperty(window, "Capacitor", { configurable: true, value: { isNativePlatform: () => true } });
+    if (test.standalone) vi.stubGlobal("matchMedia", () => ({ matches: true, addEventListener() {}, removeEventListener() {} }));
+    if (test.installed) localStorage.setItem(LS_KEYS.mobileInstalled, "1");
+    const records = {
+      "new": {},
+      "seen-today": { shownDay: installDay(now) },
+      "seen-yesterday": { shownDay: installDay(now - 86400000) },
+      "closed-29-days": { dismissedAt: now - 29 * 86400000 },
+      "closed-30-days": { dismissedAt: now - 30 * 86400000 },
+      "corrupt": { dismissedAt: "yesterday" },
+      "read-blocked": {},
+      "write-blocked": {},
+    };
+    localStorage.setItem(LS_KEYS.mobileInstallNudge, JSON.stringify(records[test.history]));
+    if (test.history === "read-blocked") vi.spyOn(Storage.prototype, "getItem").mockImplementation(() => { throw new Error("blocked"); });
+    if (test.history === "write-blocked") vi.spyOn(Storage.prototype, "setItem").mockImplementation(() => { throw new Error("quota"); });
+    render(app(test.answered, test.placement));
+    if (test.installable) event();
+    const shouldShow = test.os === "android" && !test.native && !test.standalone && !test.installed && test.installable
+      && ["new", "seen-yesterday", "closed-30-days"].includes(test.history)
+      && (test.placement === "daily-limit" || test.answered >= 3);
+    if (shouldShow) expect(add()).toBeVisible();
+    else expect(add()).toBeNull();
+  });
+});
