@@ -49,7 +49,6 @@ for (const [count, stage, name] of [[1, 0, "one"], [5, 0, "small"], [12, 1, "cla
     for (const image of await scene.locator(".study-mascot img").all()) {
       await image.scrollIntoViewIfNeeded();
       await expect.poll(() => image.evaluate(element => (element as HTMLImageElement).naturalWidth)).toBeGreaterThan(0);
-      expect(await image.evaluate(element => (element as HTMLImageElement).naturalWidth)).toBe(await image.getAttribute("src") === "/images/home/room-chihuahuas/home-cream-sheet.png" ? 1536 : 256);
     }
     const geometry = await scene.evaluate(element => {
       const box = element.getBoundingClientRect();
@@ -88,7 +87,7 @@ test("a tall hall reuses images and rests offscreen seats and reduced-motion ima
   await page.setViewportSize({ width: 390, height: 844 });
   await page.emulateMedia({ reducedMotion: "no-preference" });
   const requests: string[] = [];
-  page.on("request", request => { if (request.url().includes("/study-room-mascots/")) requests.push(request.url()); });
+  page.on("request", request => { if (request.url().includes("/room-chihuahuas/study/")) requests.push(request.url()); });
   await page.goto("/study-room");
   await show(page, { count: 60, exams: [{ exam: "ip", count: 60 }] });
   const seats = page.getByTestId("study-room-seat");
@@ -105,7 +104,7 @@ test("a tall hall reuses images and rests offscreen seats and reduced-motion ima
   await right.scrollIntoViewIfNeeded();
   await expect(left).toHaveAttribute("data-animate", "false");
   await expect(right).toHaveAttribute("data-animate", "true");
-  expect(new Set(requests).size).toBeLessThanOrEqual(1); // one reused qualification play image, plus the shared ar-3 sheet
+  expect(new Set(requests).size).toBeLessThanOrEqual(11); // shared single-dog ar-3 poses
   await page.emulateMedia({ reducedMotion: "reduce" });
   await expect(right.locator(".study-mascot")).toHaveCSS("animation-name", "none");
   await page.setViewportSize({ width: 1280, height: 900 });

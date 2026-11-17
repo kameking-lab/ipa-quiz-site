@@ -25,7 +25,7 @@ export function StudyRoomSeat({ name, index, mascot, detail, inspected = false, 
       detail?.premium ? "border-amber-400/80 ring-1 ring-amber-300/60" : "border-0")}>
     {detail?.premium && <Star aria-label="特等席" className="absolute right-1 top-1 z-10 size-3.5 fill-amber-300 text-amber-800 dark:text-amber-300" />}
     <span className="relative block aspect-square w-full" data-mirrored={mascot?.mirrored}>
-      {mascot && <RoomChihuahua src={mascot.src} frame={mascot.frame} alt={`${name}のチワワ（${mascot.stateLabel}）`}
+      {mascot && <RoomChihuahua src={mascot.src} alt={`${name}のチワワ（${mascot.stateLabel}）`}
         className={cn("study-mascot rotate-[var(--dog-turn)] scale-[var(--dog-scale)] motion-reduce:animate-none", mascot.mirrored && "-scale-x-[var(--dog-scale)]")} />}
     </span>
     {inspected && detail?.todayAnswers !== undefined && <span className="absolute -bottom-1 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap rounded-full bg-background/95 px-1 pb-1 text-[10px] font-medium tabular-nums">今日{detail.todayAnswers}問</span>}

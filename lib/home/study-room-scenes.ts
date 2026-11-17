@@ -18,7 +18,7 @@ const names = ["小さな自習室", "教室", "広い教室", "大教室", "ホ
 export const STUDY_ROOM_SCENES: readonly StudyRoomScene[] = counts.map((count, index) => {
   const width = index === 4 ? 1086 : 1024, height = index === 4 ? 1448 : 1536;
   return { name: names[index], background: image(index + 1), width, height,
-    minWidth: Math.max(358, Math.ceil(width * 44 / sizes[index])),
+    minWidth: Math.max(358, Math.ceil(width * 44 / sizes[index]) + 2),
     seats: scatteredRoomPoints(count, width, height, sizes[index]) };
 });
 

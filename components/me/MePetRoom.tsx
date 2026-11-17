@@ -6,7 +6,8 @@ import { Award, ChevronDown, Heart, Leaf, Shirt, Sparkles, Star, Utensils } from
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { usePetProfileView } from "@/components/pet/usePetProfileView";
 import type { PetPose } from "@/lib/pet/v1/art";
-import { RoomChihuahua, RELAXED_ROOM_SHEET } from "@/components/home/RoomChihuahua";
+import { RoomChihuahua } from "@/components/home/RoomChihuahua";
+import { RELAXED_ROOM_ART } from "@/lib/home/room-chihuahua-art";
 import { savePetCare } from "@/lib/pet/v1/browser-care";
 import type { PetCareAction } from "@/lib/pet/v1/care";
 import type { PetProfile } from "@/lib/pet/v1/profile";
@@ -90,9 +91,9 @@ export function MePetRoom({ exam, minutes, todayCount, goal, passedExams }: {
       <div aria-hidden="true" className="absolute bottom-16 left-5"><Leaf className="mx-auto size-12 -rotate-12 fill-emerald-700/30 text-emerald-700 dark:text-emerald-500" /><span className="mx-auto block h-9 w-8 rounded-b-xl bg-orange-200 dark:bg-orange-900" /></div>
       <div aria-hidden="true" className="absolute bottom-10 left-1/2 h-14 w-56 -translate-x-1/2 rounded-[50%] bg-stone-200/70 dark:bg-stone-700/70" />
       <button type="button" aria-label="チワワをなでる" disabled={!enabled} onClick={() => react("petted", "なでなで、うれしそう。")} className={`absolute bottom-11 left-1/2 h-52 w-52 -translate-x-1/2 rounded-full focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary ${pose && !paused ? "motion-safe:animate-pulse" : ""}`}>
-        <RoomChihuahua src={RELAXED_ROOM_SHEET} frame={pose === "petted" ? 3 : pose === "meal" ? 1 : 0} alt={`${ROOM_STAGE_LABELS[stage]}のチワワ（くつろぎ）`} />
-        {formal ? <svg aria-hidden="true" viewBox="0 0 100 70" width="54" height="38" className="pointer-events-none absolute bottom-[88px] left-[45%] -translate-x-1/2 drop-shadow-sm"><path d="m22 9 28 10L78 9l17 48-25 7H30L5 57z" fill="#d7a34b" stroke="#a77927" strokeWidth="2" /><path d="m22 9 28 10-12 22-13-15zM78 9 50 19l12 22 13-15z" fill="#fff0c7" /><path d="M50 23v39" stroke="#b38537" strokeWidth="2" /><circle cx="54" cy="44" r="2" fill="#fff5d5" /><circle cx="54" cy="54" r="2" fill="#fff5d5" /></svg> : null}
-        {accessory !== "none" ? <span aria-hidden="true" className={`absolute bottom-24 left-[45%] -translate-x-1/2 ${accessory === "star" ? "text-amber-500" : "text-rose-500"}`}><AccessoryArtwork accessory={accessory} /></span> : null}
+        <RoomChihuahua src={pose === "petted" ? RELAXED_ROOM_ART.petted : pose === "meal" ? RELAXED_ROOM_ART.play : RELAXED_ROOM_ART.sleep} alt={`${ROOM_STAGE_LABELS[stage]}のチワワ（くつろぎ）`} />
+        {formal ? <svg aria-hidden="true" viewBox="0 0 100 70" width="54" height="38" className="pointer-events-none absolute bottom-[46px] left-[68%] -rotate-12 -translate-x-1/2 drop-shadow-sm"><path d="m22 9 28 10L78 9l17 48-25 7H30L5 57z" fill="#d7a34b" stroke="#a77927" strokeWidth="2" /><path d="m22 9 28 10-12 22-13-15zM78 9 50 19l12 22 13-15z" fill="#fff0c7" /><path d="M50 23v39" stroke="#b38537" strokeWidth="2" /><circle cx="54" cy="44" r="2" fill="#fff5d5" /><circle cx="54" cy="54" r="2" fill="#fff5d5" /></svg> : null}
+        {accessory !== "none" ? <span aria-hidden="true" className={`absolute bottom-[54px] left-[68%] -translate-x-1/2 ${accessory === "star" ? "text-amber-500" : "text-rose-500"}`}><AccessoryArtwork accessory={accessory} /></span> : null}
         {pose === "petted" ? <Heart aria-hidden="true" className="absolute right-2 top-3 size-7 fill-rose-300 text-rose-300" /> : null}
         {formal ? <Sparkles aria-hidden="true" className="absolute right-1 top-20 size-5 text-amber-500" /> : null}
       </button>

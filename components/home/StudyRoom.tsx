@@ -159,7 +159,7 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
       {seats.map((seat) => {
         const key = `${seat.exam}:${seat.index}`;
         const point = scene.seats[points.get(key)!];
-        const mascot = scatteredChihuahuaArt(seat.exam, key);
+        const mascot = scatteredChihuahuaArt(key);
         const seed = roomIdentitySeed(key);
         // A stable identity picks the point and visual variation; membership changes do not reflow survivors.
         const coordinates = { "--seat-x": `${point.x / scene.width * 100}%`, "--seat-y": `${point.y / sceneHeight * 100}%`, "--seat-width": `${point.width / scene.width * 100}%`, "--dog-turn": `${(seed % 25) - 12}deg`, "--dog-scale": `${.72 + (seed % 4) * .045}` } as CSSProperties;

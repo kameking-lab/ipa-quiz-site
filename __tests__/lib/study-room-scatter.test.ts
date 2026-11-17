@@ -1,7 +1,7 @@
 import { expect, it } from "vitest";
 import { assignRoomPoints } from "@/lib/home/study-room-scatter";
 import { STUDY_ROOM_SCENES } from "@/lib/home/study-room-scenes";
-import { relaxedChihuahuaArt } from "@/lib/home/room-chihuahua-art";
+import { RELAXED_ROOM_ART, STUDY_ROOM_POSES, scatteredChihuahuaArt } from "@/lib/home/room-chihuahua-art";
 
 it("keeps every room's dogs apart, including their square tap areas", () => {
   for (const scene of STUDY_ROOM_SCENES) for (const [i, point] of scene.seats.entries()) {
@@ -26,6 +26,13 @@ it("keeps survivors fixed when arrivals collide, departures happen, or input ord
   expect(assignRoomPoints(keys, 24)).toEqual(assignRoomPoints(keys.slice().reverse(), 24));
 });
 
-it("uses desk-free play art for the private room, including unknown qualifications", () => {
-  for (const exam of ["ap", "fp2", "fe", "unknown"]) expect(relaxedChihuahuaArt(exam)).toMatch(/away-.+\.webp$/);
+it("uses single-dog ar-3 cutouts and stable poses, with no study pose in the private room", () => {
+  expect(STUDY_ROOM_POSES).toHaveLength(11);
+  expect(STUDY_ROOM_POSES.some(([file]) => file.includes("pair"))).toBe(false);
+  for (const src of Object.values(RELAXED_ROOM_ART)) expect(src).toMatch(/\/home\/cream-(cushion-sleep|ball-play|belly-up)\.png$/);
+  expect(scatteredChihuahuaArt("fe:2")).toEqual(scatteredChihuahuaArt("fe:2"));
+  for (const exam of ["ap", "fe", "ip"]) {
+    const poses = Array.from({ length: 12 }, (_, index) => scatteredChihuahuaArt(`${exam}:${index}`).src);
+    expect(new Set(poses).size).toBeGreaterThanOrEqual(5);
+  }
 });

@@ -80,12 +80,12 @@ it("keeps premium dogs in place and reveals supplied daily answers only on tap",
   expect(screen.queryByText("今日0問")).not.toBeInTheDocument();
 });
 
-it("reuses qualification images, preserves identity poses, and loads only occupied seats", () => {
+it("reuses shared pose images, preserves identity poses, and loads only occupied seats", () => {
   sessionStorage.setItem("study-room-mascot-visit:v1", "0");
   const { container, rerender, unmount } = render(<StudyRoom snapshot={snapshot(120)} suggestions={[]} />);
   const sources = () => [...container.querySelectorAll<HTMLImageElement>(".study-mascot img")].map(img => img.getAttribute("src"));
   const initial = sources();
-  expect(new Set(initial).size).toBeLessThanOrEqual(2);
+  expect(new Set(initial).size).toBeLessThanOrEqual(11);
   container.querySelectorAll("img").forEach(img => { expect(img).toHaveAttribute("loading", "lazy"); expect(img).toHaveAttribute("decoding", "async"); });
   rerender(<StudyRoom snapshot={snapshot(120)} suggestions={[]} />);
   expect(sources()).toEqual(initial);
