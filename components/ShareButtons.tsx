@@ -62,7 +62,7 @@ export function ShareButtons({ url, text, compact }: Props) {
       "inline-flex h-11 w-11 items-center justify-center rounded-full border border-zinc-300 bg-white text-zinc-700 transition-colors hover:bg-zinc-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800";
 
     return (
-      <div role="group" aria-label="この問題を共有" className="relative flex items-center gap-1">
+      <div role="group" aria-label="この問題を共有" className="relative flex max-w-full flex-wrap items-center gap-1">
         <a
           href={buildLineUrl(url, text)}
           target="_blank"
@@ -91,7 +91,7 @@ export function ShareButtons({ url, text, compact }: Props) {
           aria-live="polite"
           className={
             copied || copyError
-              ? "pointer-events-none absolute right-0 top-full z-10 mt-2 w-56 max-w-[80vw] rounded-lg border border-border bg-card px-3 py-2 text-sm text-foreground shadow-md"
+              ? "basis-full rounded-lg border border-border bg-card px-3 py-2 text-sm text-foreground"
               : "sr-only"
           }
         >

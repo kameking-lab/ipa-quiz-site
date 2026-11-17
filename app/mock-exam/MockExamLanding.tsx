@@ -152,6 +152,7 @@ function SupportedMockExamLanding({ initialExam, returnTo, countFromQuery }: { i
     <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-10 pt-8 sm:px-6 min-h-[640px]">
       <Link href={quizBackHref({ exam, returnTo: exam === initialExam ? returnTo : undefined })} className="mb-4 inline-flex min-h-11 items-center text-sm text-muted-foreground hover:underline">← 試験ページに戻る</Link>
       <Breadcrumbs
+        className="[&_a]:inline-flex [&_a]:min-h-11 [&_a]:min-w-11 [&_a]:items-center"
         items={[
           { name: "ホーム", href: "/" },
           { name: "模試モード", href: "/mock-exam" },
