@@ -9,12 +9,14 @@ import { appStorePurchaseCheck, appStorePurchaseStatus } from "@/mobile/server/r
 export const runtime = "nodejs";
 
 const reservation = z.object({ reservationId: z.uuid() }).strict();
-const approvalRecovery = reservation.extend({ action: z.enum(["approval", "retry-approval"]) });
+const approvalRecovery = reservation.extend({ action: z.literal("approval") });
 const recovery = z.union([reservation, approvalRecovery, z.object({ attemptId: z.uuid() }).strict(),
   z.object({ expiresAt: z.iso.datetime() }).strict(), z.object({ legacy: z.literal(true) }).strict()]);
 const preparation = z.object({ attemptId: z.uuid().optional(), confirmStoreKit: z.literal(true).optional() })
   .refine(({ attemptId, confirmStoreKit }) => !confirmStoreKit || !!attemptId);
 const start = reservation.extend({ action: z.literal("start") });
+const retryApproval = reservation.extend({ action: z.literal("retry-approval") });
+const status = z.object({ action: z.literal("status"), userId: z.string().min(1) }).strict();
 
 export async function POST(request: Request) {
   const requestedAt = Date.now();
@@ -41,17 +43,24 @@ export async function PATCH(request: Request) {
   try {
     sameOrigin(request);
     const userId = await billingIdentity();
-    const parsed = z.union([start, recovery]).safeParse(await request.json().catch(() => null));
+    const parsed = z.union([start, retryApproval, status, recovery]).safeParse(await request.json().catch(() => null));
     if (!parsed.success) throw new BillingError("invalid_request", 400);
-    const check = () => appStorePurchaseStatus(userId);
-    if (!monthlySelected()) return json({ state: await check() });
-    const { service } = monthlyRuntime();
     const { data } = parsed;
+    const managed = monthlySelected();
+    if ("action" in data && data.action === "status") {
+      if (data.userId !== userId) throw new BillingError("purchase_check_unavailable");
+      return json({ managed, pending: managed ? await monthlyRuntime().service.appStorePurchaseHold(userId) : null });
+    }
+    if (!managed) return json({ state: await appStorePurchaseStatus(userId) });
+    const { service } = monthlyRuntime();
     if ("action" in data && data.action === "start") {
       await service.startAppStorePurchase(userId, data.reservationId);
       return json({ started: true });
     }
-    return json(await service.recoverAppStorePurchase(userId, data, check));
+    if ("action" in data && data.action === "retry-approval") {
+      return json(await service.retryAppStoreApproval(userId, data.reservationId, id => appStorePurchaseStatus(id, true)));
+    }
+    return json(await service.recoverAppStorePurchase(userId, data, appStorePurchaseStatus));
   } catch (error) { return billingFailure(error); }
 }
 

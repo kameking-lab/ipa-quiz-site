@@ -1,6 +1,7 @@
 import { Preferences } from "@capacitor/preferences";
 import { PURCHASE_MESSAGES } from "@/lib/billing/purchase-messages";
-import { recoverNativePurchase, releaseNativePurchase, type PurchaseReservation } from "./purchases";
+import { readNativePurchaseHold, recoverNativePurchase, releaseNativePurchase, type PurchaseReservation } from "./purchases";
+import type { AppStorePurchaseState } from "@/lib/billing/subscription/domain";
 
 export interface PendingPurchase {
   state: "preparing" | "recheck" | "approval" | "completed" | "release";
@@ -9,7 +10,8 @@ export interface PendingPurchase {
   reservation?: PurchaseReservation;
   expiresAt?: string;
 }
-export type PendingPurchaseStatus = "processing" | { approval: PendingPurchase } | null;
+type PendingApproval = { reservationId: string | null };
+export type PendingPurchaseStatus = "processing" | { approval: PendingApproval } | null;
 
 const pendingKey = (userId: string) => `kakomon:pending-purchase:${userId}`;
 const pendingWrites = new Map<string, Promise<boolean>>();
@@ -43,52 +45,72 @@ function readCurrentMarker(raw: string): PendingPurchase | null {
   }
 }
 
-function pendingStatus(marker: PendingPurchase | null): PendingPurchaseStatus {
-  return marker?.state === "approval" ? { approval: marker } : "processing";
-}
-
 export async function reconcilePendingPurchase(userId: string, appStoreEntitled: boolean, expected?: PendingPurchase): Promise<PendingPurchaseStatus> {
   const key = pendingKey(userId);
-  const { value } = await Preferences.get({ key });
-  if (!value) return null;
-  const marker = readCurrentMarker(value);
-  if (expected && value !== JSON.stringify(expected)) return pendingStatus(marker);
+  const { value } = await Preferences.get({ key }).catch(() => ({ value: null }));
+  const marker = value ? readCurrentMarker(value) : null;
+  let state: AppStorePurchaseState = null;
+  let recoveryFailed = false;
 
   try {
-    if ((marker?.state === "release" || appStoreEntitled) && marker?.reservation) {
-      // Leave the release intent on disk until the exact reservation is acknowledged.
-      await releaseNativePurchase(marker.reservation.id);
-    } else if (!appStoreEntitled) {
-      const legacyDate = Date.parse(value);
-      const state = await recoverNativePurchase(marker?.state !== "preparing" && marker?.reservation
-        ? { reservationId: marker.reservation.id, ...(marker.state === "approval" ? { action: "approval" } : {}) }
-        : marker ? { attemptId: marker.attemptId }
-        : Number.isFinite(legacyDate) ? { expiresAt: new Date(legacyDate).toISOString() } : { legacy: true });
-      if (state) return pendingStatus(marker);
-      // Older/non-monthly servers may return no reservation at checkout.
-      if (!marker?.reservation && marker?.expiresAt) {
-        const legacyAdjustment = marker.revision ? 0 : (marker.state === "approval" ? 1 : 24.5) * 3600000;
-        if (Date.parse(marker.expiresAt) - legacyAdjustment > Date.now()) return pendingStatus(marker);
+    if (value && (!expected || value === JSON.stringify(expected))) {
+      if (marker?.reservation && (marker.state === "release" || (appStoreEntitled && marker.state !== "approval"))) {
+        // Keep a cancellation intent until the exact reservation is acknowledged.
+        await releaseNativePurchase(marker.reservation.id);
+      } else if (!appStoreEntitled || marker?.state === "approval" && marker.reservation) {
+        const legacyDate = Date.parse(value);
+        state = await recoverNativePurchase(marker?.state !== "preparing" && marker?.reservation
+          ? { reservationId: marker.reservation.id, ...(marker.state === "approval" ? { action: "approval" } : {}) }
+          : marker ? { attemptId: marker.attemptId }
+          : Number.isFinite(legacyDate) ? { expiresAt: new Date(legacyDate).toISOString() } : { legacy: true });
       }
     }
-    const cleared = await replaceMarker(key, value, null);
-    const latest = cleared ? null : (await Preferences.get({ key })).value;
-    return latest === null ? null : pendingStatus(readCurrentMarker(latest));
   } catch {
-    return appStoreEntitled ? null : pendingStatus(marker);
+    recoveryFailed = true;
+  }
+
+  try {
+    if (!appStoreEntitled) {
+      const { managed, pending } = await readNativePurchaseHold(userId);
+      if (pending) return pending;
+      // A successful group read supersedes an old local approval, even if the
+      // previous release response or the auxiliary marker lookup failed.
+      if (managed && marker?.state === "approval" && marker.reservation) recoveryFailed = false;
+      if (!managed && marker && !marker.reservation && marker.expiresAt) {
+        // Legacy checkout can return no reservation. Preserve its local expiry.
+        const adjustment = marker.revision ? 0 : (marker.state === "approval" ? 1 : 24.5) * 3600000;
+        if (Date.parse(marker.expiresAt) - adjustment > Date.now()) {
+          return marker.state === "approval" ? { approval: { reservationId: null } } : "processing";
+        }
+      }
+      if (recoveryFailed || state) return "processing";
+    }
+    if (value && !recoveryFailed) {
+      if (expected && value !== JSON.stringify(expected)) return "processing";
+      if (!await replaceMarker(key, value, null) && (await Preferences.get({ key })).value) return "processing";
+    }
+    return null;
+  } catch {
+    return appStoreEntitled ? null : "processing";
   }
 }
 
-export async function retryPendingApproval(userId: string, marker: PendingPurchase, checkDevice: () => Promise<boolean>) {
-  const key = pendingKey(userId);
-  const expected = JSON.stringify(marker);
-  if (marker.state !== "approval" || (await Preferences.get({ key })).value !== expected) return;
-  if (await checkDevice()) return "active";
-  if ((await Preferences.get({ key })).value !== expected) return;
-  const state = await recoverNativePurchase(marker.reservation
-    ? { reservationId: marker.reservation.id, action: "retry-approval" } : { legacy: true }).catch(() => {
+export async function retryPendingApproval(userId: string, { reservationId }: PendingApproval, checkDevice: () => Promise<boolean>) {
+  const recover = (request: Parameters<typeof recoverNativePurchase>[0]) => recoverNativePurchase(request).catch(() => {
     throw new Error(PURCHASE_MESSAGES.purchase_check_unavailable);
   });
-  if (state === null) await replaceMarker(key, expected, null);
+  if (reservationId) {
+    if (await checkDevice()) return "active";
+    return recover({ reservationId, action: "retry-approval" });
+  }
+
+  const key = pendingKey(userId);
+  const { value } = await Preferences.get({ key });
+  const marker = value ? readCurrentMarker(value) : null;
+  if (marker?.state !== "approval" || marker.reservation) return;
+  if (await checkDevice()) return "active";
+  if ((await Preferences.get({ key })).value !== value) return;
+  const state = await recover({ legacy: true });
+  if (state === null) await replaceMarker(key, value, null);
   return state;
 }

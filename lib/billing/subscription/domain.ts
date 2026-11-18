@@ -48,7 +48,8 @@ export interface AppStorePurchase {
   startedAt?: string;
 }
 export type AppStorePurchaseState = "active" | "processing" | null;
-export type AppStoreRecovery = { reservationId: string; action?: "approval" | "retry-approval" } | { attemptId: string } | { expiresAt: string } | { legacy: true };
+export type AppStorePurchaseHold = "processing" | { approval: { reservationId: string } } | null;
+export type AppStoreRecovery = { reservationId: string; action?: "approval" } | { attemptId: string } | { expiresAt: string } | { legacy: true };
 export interface Account {
   userId: string; mode: Realm; sourceInstance: string;
   customer: { attemptId: string; createdAt: string; id: string | null } | null;

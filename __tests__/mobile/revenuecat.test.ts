@@ -1,5 +1,5 @@
 import { beforeEach, expect, it, vi } from "vitest";
-import { appStorePurchaseState, appUserIdentity, validWebhookAuthorization, verifiedExpiration } from "@/mobile/server/revenuecat";
+import { appStorePurchaseState, appStorePurchaseStatus, appUserIdentity, validWebhookAuthorization, verifiedExpiration } from "@/mobile/server/revenuecat";
 const now=Date.parse("2026-11-03T03:00:00Z");
 const config={entitlement:"kakomon_pro",productId:"mock.monthly",environment:"SANDBOX"};
 function snapshot(overrides:Record<string,unknown>={}) {
@@ -7,6 +7,9 @@ function snapshot(overrides:Record<string,unknown>={}) {
     subscriptions:{[config.productId]:{store:"app_store",is_sandbox:true,expires_date:new Date(now+86400000).toISOString(),...overrides}}}};
 }
 beforeEach(()=>{vi.stubEnv("MOBILE_IAP_ENABLED","false");});
+it("fails approval verification when the App Store integration is disabled", async () => {
+  await expect(appStorePurchaseStatus("user1", true)).rejects.toMatchObject({ code: "mobile_iap_unconfigured", status: 503 });
+});
 it("uses a non-guessable stable server identity without exposing the site's user ID",()=>{
   const a=appUserIdentity("user1","x".repeat(32));expect(a).toMatch(/^kakomon_[a-f0-9]{64}$/);expect(a).not.toContain("user1");expect(appUserIdentity("user2","x".repeat(32))).not.toBe(a);expect(()=>appUserIdentity("u","short")).toThrow();
 });

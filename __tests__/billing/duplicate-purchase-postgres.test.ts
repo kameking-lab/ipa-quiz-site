@@ -117,6 +117,7 @@ const prepareNative = (id = attemptId) => nativeCheck(purchaseBody("POST", { att
 const recoverAttempt = () => recoverNative(purchaseBody("PATCH", { attemptId }));
 const recoverReservation = (reservationId: string) => recoverNative(purchaseBody("PATCH", { reservationId }));
 const transitionNative = (reservationId: string, action: "start" | "approval" | "retry-approval") => recoverNative(purchaseBody("PATCH", { reservationId, action }));
+const pendingNative = (userId = wiring.user) => recoverNative(purchaseBody("PATCH", { action: "status", userId }));
 const reservationInDb = () => store.transaction("alice", config.mode, config.sourceInstance, async a => a.appStorePurchase, true);
 async function reserveAndRelease() {
   const response = await nativeCheck(nativeRequest());
@@ -531,16 +532,20 @@ it.each(["iOS", "Web"])("HTTP: a declined Ask to Buy at five minutes can be retr
   const original = await requestApproval();
   now = new Date(now.getTime() + 5 * 60000);
   expect((await prepareNative()).status).toBe(409);
+  expect((await release(original.id)).status).toBe(200);
+  expect(await reservationInDb()).toMatchObject({ id: original.id, phase: "approval" });
   wiring.user = "bob";
   expect((await checkout(webRequest())).status).toBe(409);
-  // Another member with the same email cannot release the original reservation.
-  expect((await transitionNative(original.id, "retry-approval")).status).toBe(200);
-  expect(await reservationInDb()).toMatchObject({ id: original.id, phase: "approval" });
+  expect((await pendingNative("alice")).status).toBe(409);
+  expect(await (await pendingNative()).json()).toEqual({ managed: true, pending: { approval: { reservationId: original.id } } });
   expect(provider.checkout).not.toHaveBeenCalled();
-  wiring.user = "alice";
+  wiring.appStatus.mockClear();
   expect(await (await transitionNative(original.id, "retry-approval")).json()).toEqual({ state: null });
+  expect(wiring.appStatus.mock.calls).toEqual([["alice", true], ["bob", true]]);
   expect(await reservationInDb()).toBeUndefined();
   if (channel === "iOS") {
+    wiring.user = "alice";
+    expect(await (await pendingNative()).json()).toEqual({ managed: true, pending: null });
     const next = await requestApproval("00000000-0000-4000-8000-000000000078");
     expect(next.id).not.toBe(original.id);
   } else {
@@ -550,17 +555,72 @@ it.each(["iOS", "Web"])("HTTP: a declined Ask to Buy at five minutes can be retr
   }
 });
 
+it.each(["other@example.invalid", "owner+tag@example.invalid", "owner@privaterelay.appleid.com"])(
+  "HTTP: an account outside the purchase group cannot see or release an approval (%s)", async email => {
+    const original = await requestApproval();
+    if (email.endsWith("@privaterelay.appleid.com")) {
+      await pg.query('UPDATE "User" SET email=$1 WHERE id=$2', [` ${email.toUpperCase()} `, "alice"]);
+    }
+    await pg.query('UPDATE "User" SET email=$1 WHERE id=$2', [email, "bob"]);
+    wiring.user = "bob";
+    expect(await (await pendingNative()).json()).toEqual({ managed: true, pending: null });
+    wiring.appStatus.mockClear();
+    expect(await (await transitionNative(original.id, "retry-approval")).json()).toEqual({ state: null });
+    expect(wiring.appStatus).not.toHaveBeenCalled();
+    expect(await reservationInDb()).toMatchObject({ id: original.id, phase: "approval" });
+    wiring.user = "alice";
+    expect(await (await pendingNative()).json()).toMatchObject({ pending: { approval: { reservationId: original.id } } });
+  },
+);
+
+it.each([6, 23])("HTTP: can retry at %i hours after starting Ask to Buy", async hours => {
+  const original = await requestApproval();
+  now = new Date(now.getTime() + hours * 3600000);
+  wiring.user = "bob";
+  expect(await (await pendingNative()).json()).toMatchObject({ pending: { approval: { reservationId: original.id } } });
+  expect((await prepareNative()).status).toBe(409);
+  expect((await checkout(webRequest())).status).toBe(409);
+  expect(await (await transitionNative(original.id, "retry-approval")).json()).toEqual({ state: null });
+  wiring.user = "alice";
+  expect((await prepareNative()).status).toBe(200);
+});
+
+it("HTTP: records an approval whose StoreKit result arrives after switching logins", async () => {
+  const { reservation } = await (await prepareNative()).json();
+  expect((await transitionNative(reservation.id, "start")).status).toBe(200);
+  wiring.user = "bob";
+  expect(await (await transitionNative(reservation.id, "approval")).json()).toEqual({ state: "processing" });
+  expect(wiring.appStatus).toHaveBeenCalledExactlyOnceWith("alice");
+  expect(await (await pendingNative()).json()).toMatchObject({ pending: { approval: { reservationId: reservation.id } } });
+  expect(await reservationInDb()).toMatchObject({ id: reservation.id, phase: "approval" });
+});
+
 it("HTTP: retry preserves approval on an active or processing receipt or an unavailable RevenueCat lookup", async () => {
   const original = await requestApproval();
-  wiring.appStatus.mockResolvedValueOnce("active").mockResolvedValueOnce("processing").mockRejectedValueOnce(new BillingError("purchase_check_unavailable", 503));
+  wiring.user = "bob";
+  wiring.appStatus.mockImplementation(async id => id === "alice" ? "active" : null);
   expect(await (await transitionNative(original.id, "retry-approval")).json()).toEqual({ state: "active" });
   expect(await reservationInDb()).toMatchObject({ id: original.id, phase: "approval" });
+  wiring.appStatus.mockImplementation(async id => id === "bob" ? "processing" : null);
   expect(await (await transitionNative(original.id, "retry-approval")).json()).toEqual({ state: "processing" });
+  wiring.appStatus.mockRejectedValueOnce(new BillingError("purchase_check_unavailable", 503));
   expect((await transitionNative(original.id, "retry-approval")).status).toBe(503);
   expect(await reservationInDb()).toMatchObject({ id: original.id, phase: "approval" });
   expect((await prepareNative()).status).toBe(409);
-  wiring.user = "bob";
   expect((await checkout(webRequest())).status).toBe(409);
+});
+
+it("HTTP: retry revalidates group membership after the RevenueCat lookup", async () => {
+  const original = await requestApproval();
+  const checking = Promise.withResolvers<void>(), lookup = Promise.withResolvers<null>();
+  wiring.appStatus.mockImplementationOnce(() => { checking.resolve(); return lookup.promise; });
+  wiring.user = "bob";
+  const retry = transitionNative(original.id, "retry-approval");
+  await checking.promise;
+  await pg.query('UPDATE "User" SET email=$1 WHERE id=$2', ["different@example.invalid", "bob"]);
+  lookup.resolve(null);
+  expect((await retry).status).toBe(409);
+  expect(await reservationInDb()).toMatchObject({ id: original.id, phase: "approval" });
 });
 
 it("HTTP: the retry action preserves uncertain and newer reservations", async () => {

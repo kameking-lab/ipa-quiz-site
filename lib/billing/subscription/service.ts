@@ -2,7 +2,7 @@ import "server-only";
 import { createHash, randomUUID } from "node:crypto";
 import { BillingError, jstDay } from "../domain";
 import { refundState } from "../finance";
-import { terminal, type Account, type AppStorePurchase, type AppStorePurchaseState, type AppStoreRecovery, type MonthlyConfig, type MonthlyProvider, type MonthlyStore, type Invoice, type Observation, type Signup } from "./domain";
+import { terminal, type Account, type AppStorePurchase, type AppStorePurchaseHold, type AppStorePurchaseState, type AppStoreRecovery, type MonthlyConfig, type MonthlyProvider, type MonthlyStore, type Invoice, type Observation, type Signup } from "./domain";
 
 export function monthlyTerms(c: MonthlyConfig) {
   return createHash("sha256").update(JSON.stringify({ version: c.termsVersion, price: c.priceYen, priceId: c.priceId,
@@ -33,6 +33,11 @@ function activeReservation(a: Account, now: number) {
   return limit > now ? current : null;
 }
 const beforeStoreKit = (r: AppStorePurchase) => r.phase === "preparing" || r.phase === "closing_checkout" || r.phase === "ready";
+function groupPurchaseHold(members: Account[], now: number): AppStorePurchaseHold {
+  const holds = members.map(member => activeReservation(member, now));
+  const approval = holds.find(hold => hold?.phase === "approval");
+  return approval ? { approval: { reservationId: approval.id } } : holds.some(Boolean) ? "processing" : null;
+}
 function abandonedAttempts(a: Account, now: number) {
   const live = Object.entries(a.abandonedAppStoreAttempts ?? {}).filter(([, expiresAt]) => expiresAt > now);
   if (!live.length) delete a.abandonedAppStoreAttempts;
@@ -351,44 +356,74 @@ export class MonthlyService {
 
   async releaseAppStorePurchase(userId: string, reservationId: string) {
     await this.tx(userId, async a => {
-      if (a.appStorePurchase?.id === reservationId) delete a.appStorePurchase;
+      if (a.appStorePurchase?.id === reservationId && a.appStorePurchase.phase !== "approval") delete a.appStorePurchase;
     });
   }
 
-  async recoverAppStorePurchase(userId: string, recovery: AppStoreRecovery, checkAppStore: () => Promise<AppStorePurchaseState>) {
-    const retryApproval = "action" in recovery && recovery.action === "retry-approval";
-    const reservation = await this.purchaseTx(userId, a => {
+  appStorePurchaseHold(userId: string) {
+    return this.purchaseTx(userId, (_, members) => groupPurchaseHold(members, this.clock().getTime()));
+  }
+
+  async retryAppStoreApproval(userId: string, reservationId: string, checkAppStore: (id: string) => Promise<AppStorePurchaseState>) {
+    const plan = await this.purchaseTx(userId, (_, members) => {
       const now = this.clock().getTime();
+      const owner = members.find(member => {
+        const hold = activeReservation(member, now);
+        return hold?.id === reservationId && hold.phase === "approval";
+      });
+      return owner ? { ownerId: owner.userId, ids: memberIds(members) } : { pending: groupPurchaseHold(members, now) };
+    });
+    if (!plan.ids) return { state: plan.pending ? "processing" as const : null };
+
+    // The StoreKit sync may run under any of these logins. Include the original
+    // owner and keep the reservation if any lookup reports a purchase or fails.
+    const states = await Promise.all(plan.ids.map(checkAppStore));
+    if (states.includes("active")) return { state: "active" as const };
+    if (states.includes("processing")) return { state: "processing" as const };
+    return this.purchaseTx(userId, (_, members) => {
+      assertSameMembers(plan.ids, members);
+      const now = this.clock().getTime();
+      const owner = members.find(member => member.userId === plan.ownerId)!;
+      const hold = activeReservation(owner, now);
+      if (hold?.id === reservationId && hold.phase === "approval") delete owner.appStorePurchase;
+      return { state: groupPurchaseHold(members, now) ? "processing" as const : null };
+    });
+  }
+
+  async recoverAppStorePurchase(userId: string, recovery: AppStoreRecovery, checkAppStore: (id: string) => Promise<AppStorePurchaseState>) {
+    const target = await this.purchaseTx(userId, (account, members) => {
+      const now = this.clock().getTime();
+      // A StoreKit result can arrive after the login changed within the group.
+      const a = "reservationId" in recovery && recovery.action === "approval"
+        ? members.find(member => activeReservation(member, now)?.id === recovery.reservationId) ?? account : account;
       const current = activeReservation(a, now);
+      const result = (reservation: AppStorePurchase | null) => ({ ownerId: a.userId, reservation });
       if ("reservationId" in recovery && recovery.action === "approval" && current?.id === recovery.reservationId
         && !beforeStoreKit(current) && current.phase !== "approval") {
         const startedAt = current.startedAt ? Date.parse(current.startedAt) : Date.parse(current.expiresAt) - legacyAppStoreHoldMs;
         a.appStorePurchase = { ...current, phase: "approval", expiresAt: new Date(startedAt + appStoreApprovalMs).toISOString() };
-        return a.appStorePurchase;
+        return result(a.appStorePurchase);
       }
-      if (!("attemptId" in recovery)) return current;
-      if (current?.attemptId === recovery.attemptId && !beforeStoreKit(current)) return current;
+      if (!("attemptId" in recovery)) return result(current);
+      if (current?.attemptId === recovery.attemptId && !beforeStoreKit(current)) return result(current);
       // An attempt-only marker was saved before the device received a reservation.
       // Revoke unfinished preparation, and fence out a POST that has yet to acquire the lock.
       const abandoned = abandonedAttempts(a, now);
       a.abandonedAppStoreAttempts = { ...abandoned, [recovery.attemptId]: now + purchasePreparationMs };
       if (current?.attemptId === recovery.attemptId && current.phase !== "closing_checkout") {
         delete a.appStorePurchase;
-        return null;
+        return result(null);
       }
-      return current;
+      return result(current);
     });
-    const state = await checkAppStore();
-    return this.purchaseTx(userId, a => {
+    const state = await checkAppStore(target.ownerId);
+    return this.purchaseTx(userId, (_, members) => {
+      const a = members.find(member => member.userId === target.ownerId);
+      if (!a) throw new BillingError("checkout_conflict");
       const current = activeReservation(a, this.clock().getTime());
-      if (current && current.id === reservation?.id && current.phase === reservation.phase && matchesRecovery(current, recovery)) {
-        if (!retryApproval && state === "active" && !beforeStoreKit(current)) delete a.appStorePurchase;
-        // Ask to Buy can be declined without sending a transaction. An explicit retry can
-        // release this approval only after a fresh lookup and only if the reservation is unchanged.
-        if (retryApproval && state === null && current.phase === "approval") {
-          delete a.appStorePurchase;
-          return { state: null };
-        }
+      if (state === "active" && current && current.id === target.reservation?.id && current.phase === target.reservation.phase
+        && matchesRecovery(current, recovery) && !beforeStoreKit(current)) {
+        delete a.appStorePurchase;
       }
       if (state) return { state };
       if (!current) return { state: null };

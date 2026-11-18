@@ -3,10 +3,18 @@ import { Capacitor } from "@capacitor/core";
 import { Preferences } from "@capacitor/preferences";
 import type { MobileConfiguration, MobileEntitlement } from "../shared/contracts";
 import { PURCHASE_MESSAGES, purchaseNeedsSignIn } from "@/lib/billing/purchase-messages";
+import type { AppStorePurchaseHold, AppStoreRecovery } from "@/lib/billing/subscription/domain";
 
 const purchaseCheckUrl = "https://www.kakomon-ai.jp/api/mobile/purchase-check";
 export interface PurchaseReservation { id: string; expiresAt: string; requiresStart?: true }
-export type PurchaseRecovery = { reservationId: string; action?: "approval" | "retry-approval" } | { attemptId: string } | { expiresAt: string } | { legacy: true };
+type PurchaseRecovery = AppStoreRecovery | { reservationId: string; action: "retry-approval" };
+
+function patchPurchaseCheck(body: PurchaseRecovery | { action: "status"; userId: string }, transport: typeof fetch) {
+  return transport(purchaseCheckUrl, {
+    method: "PATCH", credentials: "include", signal: AbortSignal.timeout(15000),
+    headers: { "Content-Type": "application/json" }, body: JSON.stringify(body),
+  });
+}
 
 function purchaseCheckError(code = "") {
   return new StoreError(PURCHASE_MESSAGES[code] ?? PURCHASE_MESSAGES.purchase_check_unavailable,
@@ -34,14 +42,22 @@ export async function startNativePurchase(reservationId: string, transport: type
   if (!response?.ok || body?.started !== true) throw purchaseCheckError(typeof body?.error === "string" ? body.error : "");
 }
 export async function recoverNativePurchase(recovery: PurchaseRecovery, transport: typeof fetch = fetch) {
-  const response = await transport(purchaseCheckUrl, {
-    method: "PATCH", credentials: "include", signal: AbortSignal.timeout(15000),
-    headers: { "Content-Type": "application/json" }, body: JSON.stringify(recovery),
-  });
+  const response = await patchPurchaseCheck(recovery, transport);
   if (!response.ok) throw new Error("purchase_recovery_failed");
   const { state } = await response.json() as { state: unknown };
   if (state !== null && state !== "active" && state !== "processing") throw new Error("invalid_purchase_state");
   return state;
+}
+export async function readNativePurchaseHold(userId: string, transport: typeof fetch = fetch) {
+  const response = await patchPurchaseCheck({ action: "status", userId }, transport);
+  if (!response.ok) throw new Error("purchase_status_failed");
+  const { managed, pending } = await response.json() as { managed?: unknown; pending?: unknown };
+  if (typeof managed !== "boolean" || (pending !== null && pending !== "processing" &&
+    !(pending && typeof pending === "object" && "approval" in pending && pending.approval && typeof pending.approval === "object"
+      && "reservationId" in pending.approval && typeof pending.approval.reservationId === "string"))) {
+    throw new Error("invalid_purchase_status");
+  }
+  return { managed, pending: pending as AppStorePurchaseHold };
 }
 export async function releaseNativePurchase(reservationId: string, transport: typeof fetch = fetch) {
   const response = await transport(purchaseCheckUrl, {

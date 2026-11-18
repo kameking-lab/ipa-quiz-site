@@ -1,7 +1,7 @@
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { Capacitor } from "@capacitor/core";
 import { Preferences } from "@capacitor/preferences";
-import { Membership,purchaseError,describeStoreError,StoreError,checkNativePurchase } from "../src/purchases";
+import { Membership,purchaseError,describeStoreError,StoreError,checkNativePurchase,readNativePurchaseHold } from "../src/purchases";
 import { PACKAGE_TYPE, type PurchasesPackage } from "@revenuecat/purchases-capacitor";
 import type { MobileConfiguration, MobileEntitlement } from "../shared/contracts";
 vi.mock("@capacitor/preferences",()=>({Preferences:{get:vi.fn()}}));
@@ -9,6 +9,15 @@ const c:MobileConfiguration={sdkKey:"mock-public-sdk-key",productId:"mock.monthl
 const a:MobileEntitlement={userId:"u",appUserId:"opaque-server-identity",entitled:false,source:"free",expiresAt:null,checkedAt:"",lease:null};
 const product={identifier:"monthly",packageType:PACKAGE_TYPE.MONTHLY,product:{identifier:c.productId,price:980,priceString:"¥980",currencyCode:"JPY",subscriptionPeriod:"P1M"}} as PurchasesPackage;
 const sdk={isConfigured:vi.fn(),isAnonymous:vi.fn(),configure:vi.fn(),logIn:vi.fn(),logOut:vi.fn(),getOfferings:vi.fn(),purchasePackage:vi.fn(),restorePurchases:vi.fn(),syncPurchases:vi.fn(),getCustomerInfo:vi.fn()};
+it("reads a shared approval without a local reservation and rejects a malformed status", async () => {
+  const hold = { managed: true, pending: { approval: { reservationId: "shared-reservation" } } };
+  const transport = vi.fn<typeof fetch>().mockResolvedValueOnce(Response.json(hold)).mockResolvedValueOnce(Response.json({ state: null }));
+  await expect(readNativePurchaseHold("current-user", transport)).resolves.toEqual(hold);
+  expect(transport).toHaveBeenCalledWith("https://www.kakomon-ai.jp/api/mobile/purchase-check", expect.objectContaining({
+    method: "PATCH", credentials: "include", body: JSON.stringify({ action: "status", userId: "current-user" }),
+  }));
+  await expect(readNativePurchaseHold("current-user", transport)).rejects.toThrow("invalid_purchase_status");
+});
 let configured=false;
 beforeEach(()=>{vi.resetAllMocks();configured=false;sdk.isConfigured.mockImplementation(async()=>({isConfigured:configured}));sdk.configure.mockImplementation(async()=>{configured=true;});sdk.isAnonymous.mockResolvedValue({isAnonymous:false});sdk.getOfferings.mockResolvedValue({all:{main:{availablePackages:[product]}}});});
 it("shows server web membership without calling StoreKit or buying twice",async()=>{

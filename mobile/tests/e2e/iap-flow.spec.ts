@@ -22,7 +22,13 @@ async function serve(context:BrowserContext,page:Page,server:Server){
       await route.fulfill({json:{entitlement,configuration:{sdkKey:"appl_mock_public_key",productId:"mock.monthly",offeringId:"main",entitlement:"kakomon_pro",expectedPriceYen:980,leasePublicKey:""}}});return;
     }
     if(url.pathname==="/api/mobile/catalog"){await route.fulfill({json:{exams:[]}});return;}
-    if(url.pathname==="/api/mobile/purchase-check"){await route.fulfill(server.purchaseError?{status:409,json:{error:server.purchaseError}}:{json:{allowed:true}});return;}
+    if(url.pathname==="/api/mobile/purchase-check"){
+      if (route.request().method() === "PATCH") {
+        const { action } = route.request().postDataJSON();
+        await route.fulfill({ json: action === "status" ? { managed: false, pending: null } : { state: null } });
+      } else await route.fulfill(server.purchaseError?{status:409,json:{error:server.purchaseError}}:{json:{allowed:true}});
+      return;
+    }
     if(url.pathname.startsWith("/api/")){await route.fulfill({status:503,json:{error:"mock_offline"}});return;}
     const path=fileURLToPath(new URL(`../../dist${url.pathname==="/"?"/index.html":url.pathname}`,import.meta.url));
     try {await stat(path);await route.fulfill({path});}catch{await route.abort();}

@@ -9,7 +9,7 @@ import { Preferences } from "@capacitor/preferences";
 import Link from "next/link";
 import type { MobileConfiguration, MobileEntitlement, CatalogEntry } from "../shared/contracts";
 import { downloads, type DownloadIndex } from "./downloads";
-import { Membership, deviceMembership, purchaseError, nativePublicSdkKey, describeStoreError, StoreError, checkNativePurchase, startNativePurchase } from "./purchases";
+import { Membership, deviceMembership, purchaseError, nativePublicSdkKey, describeStoreError, StoreError, checkNativePurchase, startNativePurchase, recoverNativePurchase } from "./purchases";
 import { fallbackPurchaseExpiry, reconcilePendingPurchase, retryPendingApproval, savePendingPurchase, type PendingPurchase, type PendingPurchaseStatus } from "./pending-purchase";
 import { beginLogin, observeLogin } from "./login";
 import { PLAN_OFFER } from "@/lib/billing/plan-offer";
@@ -275,10 +275,14 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
         const cleared = await savePendingPurchase(userId, pending);
         setPurchasePending(cleared ? null : "processing");
       } else if (pending && outcome.pending) {
-        if (await writePending({ ...pending, state: "approval", expiresAt: fallbackPurchaseExpiry(true) })) {
-          setPurchasePending(pending.reservation ? await reconcilePendingPurchase(userId, false, pending) : { approval: pending });
-          return;
+        const { reservation } = pending;
+        const saved = await writePending({ ...pending, state: "approval", expiresAt: fallbackPurchaseExpiry(true) }).catch(() => false);
+        if (!saved && reservation) {
+          // A failed Preferences write must not prevent the server from recording Ask to Buy.
+          await recoverNativePurchase({ reservationId: reservation.id, action: "approval" }).catch(() => {});
         }
+        setPurchasePending(await reconcilePendingPurchase(userId, false, pending));
+        return;
       } else if (pending && !readyForStoreKit) {
         setPurchasePending(await reconcilePendingPurchase(userId, false, pending));
       }
@@ -296,13 +300,14 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     setNotice(confirmed?.entitlement.entitled?"購入を確認しました。有料会員です（ウェブでも同じ会員です）。":"購入は完了しています。会員状態の反映を確認中です。再購入せず、少し待ってから「再確認」を押してください。");
   });
   const retryApproval = () => void run(async () => {
-    const userId = access?.userId;
-    if (!userId || !purchasePending || purchasePending === "processing") return;
-    const { entitlement, configuration } = await refresh(true);
-    if (entitlement.userId !== userId || entitlement.entitled) return;
-    const state = await retryPendingApproval(userId, purchasePending.approval, async () => {
+    if (!purchasePending || purchasePending === "processing") return;
+    const { entitlement, configuration, pending } = await refresh(true);
+    const { userId } = entitlement;
+    if (!userId || entitlement.entitled || !pending || pending === "processing"
+      || pending.approval.reservationId !== purchasePending.approval.reservationId) return;
+    const state = await retryPendingApproval(userId, pending.approval, async () => {
       const active = await membership.hasActiveAppStorePurchase(configuration, entitlement);
-      if (signingOut.current || user.current !== userId) throw new StatusError("ログイン状態が変わりました。");
+      if (signingOut.current || (pending.approval.reservationId === null && user.current !== userId)) throw new StatusError("ログイン状態が変わりました。");
       return active;
     });
     if (state === undefined) return;

@@ -80,8 +80,8 @@ async function fetchSubscriber(appUserId: string, apiKey: string, transport: typ
   }
   return response.json() as Promise<unknown>;
 }
-export async function appStorePurchaseStatus(userId: string): Promise<AppStorePurchaseState> {
-  if (!mobileConfig().enabled) return null;
+export async function appStorePurchaseStatus(userId: string, requireVerification = false): Promise<AppStorePurchaseState> {
+  if (!requireVerification && !mobileConfig().enabled) return null;
   const c = requireMobileReady();
   const { appUserId } = await ensureRevenueCatAccount(userId);
   const body = await fetchSubscriber(appUserId, c.apiKey, fetch);
