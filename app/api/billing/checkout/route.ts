@@ -18,15 +18,13 @@ export async function POST(request: Request) {
     if (monthlySelected()) {
       const { service, provider } = (await import("@/lib/billing/subscription/runtime")).monthlyRuntime(true);
       await assertNoDuplicatePurchase(userId);
-      const checkAppStore = await appStorePurchaseCheck(userId);
       result = await service.checkout(userId, terms, provider, await checkoutEmail(), async orderId => {
         const channel = conversionChannel(request);
         await saveConversionChannel(orderId, channel);
         await recordConversion("checkout_created", channel, orderId);
-      }, checkAppStore);
+      }, memberId => appStorePurchaseCheck(memberId, memberId === userId ? undefined : "duplicate_purchase"));
     } else {
-      const checkAppStore = await appStorePurchaseCheck(userId);
-      await checkAppStore();
+      await appStorePurchaseCheck(userId);
       const { service, provider } = billingRuntime();
       result = await service.checkout(userId, terms, provider);
     }

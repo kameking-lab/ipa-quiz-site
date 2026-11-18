@@ -44,6 +44,7 @@ export async function monthlyStripeFixture(options: { trialDays?: number } = {})
       meta.signup_id = body.get("metadata[signup_id]")!; session.client_reference_id = meta.signup_id;
       return Response.json({ ...session, status: "open", subscription: null });
     }
+    if (path === "checkout/sessions") return Response.json(list([session]));
     if (path === "billing_portal/sessions") return Response.json({ url: "https://billing.stripe.com/p/session/monthly" });
     if (path === "billing_portal/configurations/bpc_fixture") return Response.json(portalConfiguration);
     if (path === "subscriptions") return Response.json(list(visible ? [sub] : []));

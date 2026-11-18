@@ -8,6 +8,9 @@ export class MonthlyMemoryStore implements MonthlyStore {
   async trialCardOwner(cardHash: string, mode: Realm, exceptUserId: string) {
     return [...this.accounts.values()].find(a => a.mode === mode && a.userId !== exceptUserId && a.trialCards?.[cardHash])?.userId ?? null;
   }
+  purchaseTransaction<T>(userId: string, mode: Realm, source: string, fn: (account: Account, members: Account[]) => T) {
+    return this.transaction(userId, mode, source, async account => fn(account, [account]));
+  }
   async transaction<T>(userId: string, mode: Realm, source: string, fn: (a: Account) => Promise<T>, readOnly = false) {
     const before = this.queue; let done!: () => void; this.queue = new Promise(resolve => done = resolve); await before;
     try {

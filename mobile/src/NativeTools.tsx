@@ -9,7 +9,8 @@ import { Preferences } from "@capacitor/preferences";
 import Link from "next/link";
 import type { MobileConfiguration, MobileEntitlement, CatalogEntry } from "../shared/contracts";
 import { downloads, type DownloadIndex } from "./downloads";
-import { Membership, deviceMembership, purchaseError, nativePublicSdkKey, describeStoreError, StoreError, checkNativePurchase, releaseNativePurchase } from "./purchases";
+import { Membership, deviceMembership, purchaseError, nativePublicSdkKey, describeStoreError, StoreError, checkNativePurchase } from "./purchases";
+import { clearPendingPurchase, fallbackPurchaseExpiry, reconcilePendingPurchase, savePendingPurchase, type PendingPurchase } from "./pending-purchase";
 import { beginLogin, observeLogin } from "./login";
 import { PLAN_OFFER } from "@/lib/billing/plan-offer";
 import { sendConversion } from "@/lib/billing/conversion-client";
@@ -74,6 +75,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   const studyReady = useRef(false), accessSignature = useRef("");
   const signingOut = useRef(false);
   const running=useRef(false);
+  const storeKitRunning=useRef(false);
   const refreshing=useRef<Promise<unknown>>(Promise.resolve());
   const inSite = typeof location !== "undefined" && location.origin === SITE_ORIGIN;
   const refresh = useCallback((fresh = false) => {
@@ -102,12 +104,12 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       studyReady.current=true;
     }
     user.current = result.entitlement.userId;
-    if(result.entitlement.userId) {
-      const key=`kakomon:pending-purchase:${result.entitlement.userId}`;
-      if(result.entitlement.entitled)await Preferences.remove({key});
-      const marker = (await Preferences.get({key})).value;
-      setPurchasePending(!result.entitlement.entitled && (marker === "true" || Date.parse(marker ?? "") > Date.now()));
-    }else setPurchasePending(false);
+    let pending = false;
+    if (!storeKitRunning.current) {
+      pending = result.entitlement.userId
+        ? await reconcilePendingPurchase(result.entitlement.userId, result.entitlement.source === "app-store") : false;
+      setPurchasePending(pending);
+    }
     const signature=JSON.stringify([result.entitlement.userId,result.entitlement.entitled]);
     if(accessSignature.current!==signature) { accessSignature.current=signature;window.dispatchEvent(new Event("mobile:entitlement-changed")); }
     if (signingOut.current) throw new StatusError("ログアウト中です。");
@@ -119,7 +121,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       if (cached && cached.access.userId !== result.entitlement.userId) await downloads.invalidate();
     }
     setSaved(await downloads.list());
-    return result;
+    return { ...result, pending };
     });
     refreshing.current=task.catch(()=>{});
     return task;
@@ -150,6 +152,9 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       if(s.isActive)void refresh(true).catch(report);
       else if(studyReady.current)void persistStudyAfterPets(user.current).catch(e=>setNotice(noticeText(e)));
     }).then(h=>keep(()=>{ void h.remove(); }));
+    const online = () => { void refresh(true).catch(report); };
+    window.addEventListener("online", online);
+    keep(() => window.removeEventListener("online", online));
     void observeReminderTap(()=>window.location.assign(`${SITE_ORIGIN}/review`)).then(keep);
     void Purchases.addCustomerInfoUpdateListener(()=>{ void refresh(true).catch(report); }).then(id=>keep(()=>{ void Purchases.removeCustomerInfoUpdateListener({ listenerToRemove: id }); })).catch(()=>{});
     const interval = window.setInterval(()=>{ void refresh().catch(report); },60000);
@@ -231,27 +236,43 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     const r=await refresh(true);
     if(r.entitlement.entitled)throw new Error("すでに有料会員です。追加購入は不要です。");
     if(!r.entitlement.userId){ await loginFor("buy"); return; }
+    if(r.pending) return;
     await Preferences.remove({key:INTENT_KEY});
     const selected=offer??await loadOffer(r);
     if(!selected)throw new StoreError("商品情報を取得できないため購入を開始できません。表示中の理由をご確認ください。","no_offer");
-    const key = `kakomon:pending-purchase:${r.entitlement.userId}`;
-    let reservationId: string | undefined;
+    const userId = r.entitlement.userId;
+    let pending: PendingPurchase | undefined;
     let readyForStoreKit = false;
+    storeKitRunning.current = true;
     try {
       await membership.buy(r.configuration, r.entitlement, selected, async () => {
-        const reservation = await checkNativePurchase();
-        reservationId = reservation?.id;
-        await Preferences.set({ key, value: reservation?.expiresAt ?? "true" });
+        pending = { state: "recheck", attemptId: crypto.randomUUID() };
+        await savePendingPurchase(userId, pending);
         setPurchasePending(true);
+        const reservation = await checkNativePurchase(fetch, pending.attemptId);
+        if (reservation) {
+          pending.reservation = reservation;
+          await savePendingPurchase(userId, pending);
+        }
         readyForStoreKit = true;
       });
+      if (pending) await savePendingPurchase(userId, { ...pending, state: "completed", expiresAt: fallbackPurchaseExpiry() });
     } catch (error) {
-      if (purchaseError(error).rejected || !readyForStoreKit && reservationId) {
-        if (reservationId) await releaseNativePurchase(reservationId).catch(() => {});
-        await Preferences.remove({ key }).catch(() => {});
+      const outcome = purchaseError(error);
+      if (pending?.reservation && (outcome.rejected || !readyForStoreKit)) {
+        await savePendingPurchase(userId, { ...pending, state: "release" });
+        setPurchasePending(await reconcilePendingPurchase(userId, false));
+      } else if (pending && readyForStoreKit && outcome.rejected) {
+        await clearPendingPurchase(userId);
         setPurchasePending(false);
+      } else if (pending && outcome.pending) {
+        await savePendingPurchase(userId, { ...pending, state: "approval", expiresAt: fallbackPurchaseExpiry() });
+      } else if (pending && !readyForStoreKit) {
+        setPurchasePending(await reconcilePendingPurchase(userId, false));
       }
       throw error;
+    } finally {
+      storeKitRunning.current = false;
     }
     // StoreKit has charged at this point. RevenueCat may need a moment to show
     // the receipt to our server, so re-check a few times before giving up.
@@ -261,13 +282,18 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       confirmed=await refresh(true).catch(()=>null);
     }
     setNotice(confirmed?.entitlement.entitled?"購入を確認しました。有料会員です（ウェブでも同じ会員です）。":"購入は完了しています。会員状態の反映を確認中です。再購入せず、少し待ってから「再確認」を押してください。");
-    if (reservationId && confirmed?.entitlement.source === "app-store") void releaseNativePurchase(reservationId).catch(() => {});
   });
   const restore = ()=>void run(async()=>{
-    const r=await refresh(true);
-    if(!r.entitlement.userId){ await loginFor("restore"); return; }
-    await Preferences.remove({key:INTENT_KEY});
-    await membership.restore(r.configuration,r.entitlement); const confirmed=await refresh(true);
+    storeKitRunning.current = true;
+    try {
+      const r=await refresh(true);
+      if(!r.entitlement.userId){ await loginFor("restore"); return; }
+      await Preferences.remove({key:INTENT_KEY});
+      await membership.restore(r.configuration,r.entitlement);
+    } finally {
+      storeKitRunning.current = false;
+    }
+    const confirmed=await refresh(true);
     setNotice(confirmed.entitlement.entitled?"購入を復元し、サーバーで権利を確認しました。":"有効な購入をサーバーで確認できませんでした。購入に使用したApple IDとログイン中のアカウントをご確認ください。承認待ちの場合は、承認後に再確認してください。");
   });
   // Latest handlers for the resume effect below (effects run in order).

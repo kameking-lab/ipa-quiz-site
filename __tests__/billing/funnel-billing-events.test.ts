@@ -79,12 +79,16 @@ describe("server-confirmed funnel steps", () => {
     const f = await monthlyStripeFixture(); wiring.runtime = f; f.visible(false);
     f.session.status = "open";
     await f.store.transaction("alice", f.config.mode, f.config.sourceInstance, async account => {
-      for (const signup of Object.values(account.signups)) { signup.sessionId = null; signup.url = null; }
+      const prior = account.signups[f.result.orderId];
+      Object.assign(prior, { state: "failed", sessionId: null, url: null });
     });
     const response = await checkout(post({ terms: monthlyTerms(f.config) }));
     expect(response.status).toBe(200);
-    expect(conversion.record).toHaveBeenCalledExactlyOnceWith("checkout_created", "web", f.result.orderId);
-    expect(conversion.save).toHaveBeenCalledWith(f.result.orderId, "web");
+    const { orderId } = await response.json();
+    expect(orderId).not.toBe(f.result.orderId);
+    expect((await f.service.status("alice", orderId)).purchase?.status).toBe("pending");
+    expect(conversion.record).toHaveBeenCalledExactlyOnceWith("checkout_created", "web", orderId);
+    expect(conversion.save).toHaveBeenCalledWith(orderId, "web");
     expect((await checkout(post({ terms: monthlyTerms(f.config) }))).status).toBe(200);
     expect(conversion.record).toHaveBeenCalledTimes(1);
   });

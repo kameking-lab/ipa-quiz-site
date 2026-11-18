@@ -11,7 +11,9 @@ export interface MonthlyConfig {
 }
 export interface Signup {
   id: string; createdAt: string; terms: string; amount: number; priceId: string;
-  state: "pending" | "expired" | "attached"; sessionId: string | null; url: string | null; subscriptionId: string | null;
+  state: "pending" | "expired" | "failed" | "attached"; sessionId: string | null; url: string | null; subscriptionId: string | null;
+  /** Time allowed for the request that is preparing this Checkout URL. */
+  preparingUntil?: string;
   /** Trial offered with this signup (first contract only). Missing on older signups = no trial. */
   trialDays?: number;
 }
@@ -38,6 +40,11 @@ export interface Invoice {
   /** Paid allocations, not an assumption that a PaymentIntent belongs to exactly one invoice. */
   payments: { id: string; paymentId: string; amount: number }[];
 }
+export interface AppStorePurchase {
+  id: string; expiresAt: string; attemptId?: string;
+}
+export type AppStorePurchaseState = "active" | "processing" | null;
+export type AppStoreRecovery = { reservationId: string } | { attemptId: string } | { expiresAt: string } | { legacy: true };
 export interface Account {
   userId: string; mode: Realm; sourceInstance: string;
   customer: { attemptId: string; createdAt: string; id: string | null } | null;
@@ -46,7 +53,7 @@ export interface Account {
   renewalStopJobs: Record<string, { token: string; reason?: "dispute" }>;
   events: Record<string, string>; grants: Record<string, string[]>;
   /** StoreKit may still be completing a purchase that RevenueCat cannot see yet. */
-  appStorePurchase?: { id: string; expiresAt: string };
+  appStorePurchase?: AppStorePurchase;
   /** Hashed card fingerprints that started a free trial on this account -> subscription. Missing on older accounts. */
   trialCards?: Record<string, string>;
   /** Trials to end at Stripe because the card was already used for a trial (subscription -> event token). */
@@ -55,6 +62,7 @@ export interface Account {
 export interface MonthlyStore {
   owner(customerId: string, mode: Realm): Promise<string | null>;
   transaction<T>(userId: string, mode: Realm, sourceInstance: string, fn: (account: Account) => Promise<T>, readOnly?: boolean): Promise<T>;
+  purchaseTransaction<T>(userId: string, mode: Realm, sourceInstance: string, fn: (account: Account, members: Account[]) => T): Promise<T>;
   /** Another account (if any) that already started a free trial with this hashed card. */
   trialCardOwner(cardHash: string, mode: Realm, exceptUserId: string): Promise<string | null>;
 }

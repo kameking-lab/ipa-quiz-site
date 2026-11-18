@@ -9,7 +9,7 @@ import { monthlyFixture, monthlyFixtureConfig } from "./monthly-fixture";
 import type { SqlSession } from "@/lib/billing/postgres-store";
 import { BillingError } from "@/lib/billing/domain";
 
-const wiring = vi.hoisted(() => ({ user: "alice", check: vi.fn(), runtime: null as unknown, entitlement: vi.fn(), app: vi.fn() }));
+const wiring = vi.hoisted(() => ({ user: "alice", check: vi.fn(), runtime: null as unknown, entitlement: vi.fn(), app: vi.fn(), appStatus: vi.fn() }));
 vi.mock("@/lib/billing/runtime", () => ({
   billingIdentity: async () => wiring.user,
   sameOrigin: (r: Request) => { if (r.headers.get("origin") !== "http://localhost:3338") throw new BillingError("invalid_origin", 403); },
@@ -20,9 +20,9 @@ vi.mock("@/lib/billing/subscription/runtime", () => ({ monthlyRuntime: () => wir
 vi.mock("@/lib/billing/duplicate-purchase-runtime", () => ({ assertNoDuplicatePurchase: wiring.check }));
 vi.mock("@/lib/billing/checkout-email", () => ({ checkoutEmail: async () => undefined }));
 vi.mock("@/mobile/server/entitlement", () => ({ mobileEntitlement: wiring.entitlement }));
-vi.mock("@/mobile/server/revenuecat", () => ({ appStorePurchaseCheck: () => wiring.app }));
+vi.mock("@/mobile/server/revenuecat", () => ({ appStorePurchaseCheck: wiring.app, appStorePurchaseStatus: wiring.appStatus }));
 import { POST as checkout, DELETE as cancelWeb } from "@/app/api/billing/checkout/route";
-import { POST as nativeCheck, DELETE as cancelNative } from "@/app/api/mobile/purchase-check/route";
+import { POST as nativeCheck, DELETE as cancelNative, PATCH as recoverNative } from "@/app/api/mobile/purchase-check/route";
 
 // A fresh in-memory PostgreSQL engine, with the real schema/SQL and no application connection.
 const pg = new PGlite();
@@ -47,6 +47,7 @@ beforeEach(async () => {
   wiring.check.mockImplementation(id => guard.assertCanPurchase(id));
   now = new Date();
   wiring.app.mockReset().mockResolvedValue(undefined);
+  wiring.appStatus.mockReset().mockResolvedValue(null);
   wiring.entitlement.mockImplementation(async id => ({ userId: id, entitled: (await service.status(id)).entitled }));
   const f = await monthlyFixture();
   provider = f.provider;
@@ -103,6 +104,9 @@ const request = (path: string, origin = "http://localhost:3338", cancellation?: 
 const webRequest = () => request("billing/checkout");
 const nativeRequest = () => request("mobile/purchase-check");
 const release = (reservationId: string) => cancelNative(request("mobile/purchase-check", undefined, { reservationId }));
+const attemptId = "00000000-0000-4000-8000-000000000077";
+const purchaseBody = (method: string, body: object, origin = "http://localhost:3338") => new Request(
+  "http://localhost:3338/api/mobile/purchase-check", { method, headers: { origin }, body: JSON.stringify(body) });
 async function reserveAndRelease() {
   const response = await nativeCheck(nativeRequest());
   expect(response.status).toBe(200);
@@ -154,7 +158,7 @@ it("HTTP: identical relay email is excluded at both purchase entry points", asyn
   expect((await checkout(request("billing/checkout"))).status).toBe(200);
 });
 
-async function currentWebContract(status: "past_due" | "incomplete" | "trialing" | "canceled" | "incomplete_expired") {
+async function currentWebContract(status: "past_due" | "incomplete" | "trialing" | "canceled" | "incomplete_expired", userId = "alice") {
   const f = await monthlyFixture();
   await f.send();
   const account = f.account();
@@ -166,7 +170,7 @@ async function currentWebContract(status: "past_due" | "incomplete" | "trialing"
     invoice.periodStart = now.getTime() / 1000 - 86400;
     invoice.periodEnd = now.getTime() / 1000 - 60;
   }
-  await store.transaction("alice", config.mode, config.sourceInstance, async a => { Object.assign(a, account); });
+  await store.transaction(userId, config.mode, config.sourceInstance, async a => { Object.assign(a, account, { userId }); });
 }
 
 it.each(["past_due", "incomplete"] as const)("HTTP: refuses iOS purchase for %s after the paid period while management works", async status => {
@@ -195,8 +199,9 @@ it.each(["open", "complete", "expired"] as const)("HTTP: Web first, Stripe says 
   expect((await checkout(webRequest())).status).toBe(200);
   vi.mocked(provider.checkoutSession).mockResolvedValueOnce({ id: "cs_test_monthly", status });
   const response = await nativeCheck(nativeRequest());
-  expect(response.status).toBe(status === "expired" ? 200 : 409);
-  if (status !== "expired") expect(await response.json()).toEqual({ error: "web_checkout_pending" });
+  expect(response.status).toBe(status === "complete" ? 409 : 200);
+  if (status === "complete") expect(await response.json()).toEqual({ error: "web_checkout_pending" });
+  if (status === "open") expect(provider.expireCheckout).toHaveBeenCalledWith("cs_test_monthly");
 });
 
 it("HTTP: an unrecorded Stripe response cannot free a Checkout that can still complete", async () => {
@@ -205,8 +210,6 @@ it("HTTP: an unrecorded Stripe response cannot free a Checkout that can still co
     a.signups[orderId].sessionId = null;
     a.signups[orderId].url = null;
   });
-  expect((await nativeCheck(nativeRequest())).status).toBe(409);
-  now = new Date(now.getTime() + 24 * 3600000);
   vi.mocked(provider.checkoutSession)
     .mockResolvedValueOnce({ id: "cs_test_monthly", status: "complete" })
     .mockResolvedValueOnce({ id: "cs_test_monthly", status: "expired" });
@@ -249,7 +252,132 @@ it.each(["app_store_subscription_exists", "app_store_purchase_pending"])("HTTP: 
   expect(provider.checkout).not.toHaveBeenCalled();
 });
 
-it("HTTP: a simultaneous Web and iOS request can only reserve one checkout", async () => {
-  const results = await Promise.all([checkout(webRequest()), nativeCheck(nativeRequest())]);
-  expect(results.map(r => r.status).sort()).toEqual([200, 409]);
+it("HTTP: a second member cannot reserve iOS while the first is creating Stripe Checkout", async () => {
+  const entered = Promise.withResolvers<void>(), continueStripe = Promise.withResolvers<void>();
+  vi.mocked(provider.checkout).mockImplementationOnce(async () => {
+    entered.resolve();
+    await continueStripe.promise;
+    return { id: "cs_test_monthly", url: "https://checkout.stripe.com/c/pay/monthly" };
+  });
+  const web = checkout(webRequest());
+  await entered.promise;
+  try {
+    wiring.user = "bob";
+    const native = await nativeCheck(nativeRequest());
+    expect(native.status).toBe(409);
+    expect(await native.json()).toEqual({ error: "web_checkout_preparing" });
+  } finally { continueStripe.resolve(); }
+  expect((await web).status).toBe(200);
+});
+
+it("HTTP: a matched member's past_due renewal blocks both buyers after paid access expires", async () => {
+  await currentWebContract("past_due", "bob");
+  expect((await service.status("bob")).entitled).toBe(false);
+  for (const [route, input] of [[checkout, webRequest], [nativeCheck, nativeRequest]] as const) {
+    const response = await route(input());
+    expect(response.status).toBe(409);
+    expect(await response.json()).toEqual({ error: "duplicate_purchase" });
+  }
+  await store.transaction("bob", config.mode, config.sourceInstance, async a => { Object.values(a.contracts)[0].status = "canceled"; });
+  await reserveAndRelease();
+  vi.mocked(provider.customer).mockResolvedValueOnce("cus_rejoin");
+  vi.mocked(provider.checkout).mockResolvedValueOnce({ id: "cs_test_rejoin", url: "https://checkout.stripe.com/c/pay/rejoin" });
+  expect((await checkout(webRequest())).status).toBe(200);
+});
+
+it.each(["open", "complete", "expired"] as const)("HTTP: cross-ID Web-first Checkout, Stripe says %s", async status => {
+  const web = await checkout(webRequest());
+  expect(web.status).toBe(200);
+  const { orderId } = await web.json();
+  wiring.user = "bob";
+  const otherWeb = await checkout(webRequest());
+  expect(otherWeb.status).toBe(409);
+  expect(await otherWeb.json()).toEqual({ error: "web_checkout_pending" });
+  vi.mocked(provider.checkoutSession).mockResolvedValueOnce({ id: "cs_test_monthly", status });
+  const native = await nativeCheck(nativeRequest());
+  expect(native.status).toBe(status === "complete" ? 409 : 200);
+  expect((await service.status("alice", orderId)).purchase?.status).toBe(status === "complete" ? "pending" : "expired");
+  if (status === "open") expect(provider.expireCheckout).toHaveBeenCalledWith("cs_test_monthly");
+});
+
+it("HTTP: the first iOS buyer blocks both channels on the other ID before RevenueCat returns", async () => {
+  const entered = Promise.withResolvers<void>(), continueRevenueCat = Promise.withResolvers<void>();
+  wiring.app.mockImplementation(async (id: string) => {
+    if (id === "alice") { entered.resolve(); await continueRevenueCat.promise; }
+  });
+  const first = nativeCheck(nativeRequest());
+  await entered.promise;
+  try {
+    wiring.user = "bob";
+    expect(await (await checkout(webRequest())).json()).toEqual({ error: "app_store_purchase_pending" });
+    expect(await (await nativeCheck(nativeRequest())).json()).toEqual({ error: "app_store_purchase_pending" });
+  } finally { continueRevenueCat.resolve(); }
+  const original = await first;
+  expect(original.status).toBe(200);
+  const { reservation } = await original.json();
+  expect((await release(reservation.id)).status).toBe(200); // another ID cannot release it
+  expect((await checkout(webRequest())).status).toBe(409);
+  wiring.user = "alice";
+  expect((await release(reservation.id)).status).toBe(200);
+  wiring.user = "bob";
+  expect((await checkout(webRequest())).status).toBe(200);
+});
+
+it("HTTP: a purchase visible only as processing at RevenueCat blocks both channels on the matching ID", async () => {
+  wiring.app.mockImplementation(async (id: string) => {
+    if (id === "bob") throw new BillingError("app_store_purchase_pending");
+  });
+  expect(await (await checkout(webRequest())).json()).toEqual({ error: "app_store_purchase_pending" });
+  expect(await (await nativeCheck(nativeRequest())).json()).toEqual({ error: "app_store_purchase_pending" });
+  wiring.app.mockResolvedValue(undefined);
+  await reserveAndRelease();
+});
+
+it("HTTP: Stripe completion racing expiration wins and retains the order", async () => {
+  const { orderId } = await (await checkout(webRequest())).json();
+  vi.mocked(provider.expireCheckout).mockRejectedValueOnce(new BillingError("subscription_exists"));
+  wiring.user = "bob";
+  expect(await (await nativeCheck(nativeRequest())).json()).toEqual({ error: "subscription_exists" });
+  expect((await service.status("alice", orderId)).purchase?.status).toBe("pending");
+  expect(await store.transaction("bob", config.mode, config.sourceInstance, async a => a.appStorePurchase, true)).toBeUndefined();
+});
+
+it.each(["customer", "checkout"] as const)("HTTP: Stripe %s connection failure leaves a failed, retryable signup", async call => {
+  vi.mocked(provider[call]).mockRejectedValueOnce(new Error("offline"));
+  expect((await checkout(webRequest())).status).toBe(503);
+  const signups = await store.transaction("alice", config.mode, config.sourceInstance, async a => Object.values(a.signups), true);
+  expect(signups).toHaveLength(1);
+  expect(signups[0]).toMatchObject({ state: "failed", sessionId: null, url: null });
+  wiring.user = "bob";
+  await reserveAndRelease();
+  wiring.user = "alice";
+  expect((await checkout(webRequest())).status).toBe(200);
+});
+
+it.each([null, "active", "processing"] as const)("HTTP: checks legacy true against fresh RevenueCat state %s", async state => {
+  wiring.appStatus.mockResolvedValue(state);
+  expect(await (await recoverNative(purchaseBody("PATCH", { legacy: true }))).json()).toEqual({ state });
+  expect(wiring.appStatus).toHaveBeenCalledWith("alice");
+  expect((await recoverNative(purchaseBody("PATCH", { legacy: true }, "https://untrusted.invalid"))).status).toBe(403);
+});
+
+it("HTTP: recovery of a lost POST response releases only its own reservation after a confirmed absence", async () => {
+  expect((await nativeCheck(purchaseBody("POST", { attemptId }))).status).toBe(200);
+  const recovery = () => recoverNative(purchaseBody("PATCH", { attemptId }));
+  wiring.appStatus.mockRejectedValueOnce(new BillingError("mobile_verification_unavailable", 503)).mockResolvedValueOnce("processing");
+  expect((await recovery()).status).toBe(503);
+  expect(await (await recovery()).json()).toEqual({ state: "processing" });
+  expect((await checkout(webRequest())).status).toBe(409);
+  expect(await (await recoverNative(purchaseBody("PATCH", { legacy: true }))).json()).toEqual({ state: "processing" });
+  expect(await (await recovery()).json()).toEqual({ state: null });
+  const newer = await nativeCheck(nativeRequest());
+  expect(newer.status).toBe(200);
+  expect(await (await recovery()).json()).toEqual({ state: "processing" });
+  expect((await checkout(webRequest())).status).toBe(409);
+});
+
+it("HTTP: succeeds immediately when a previous version saved only the matching expiration", async () => {
+  const { reservation } = await (await nativeCheck(nativeRequest())).json();
+  expect(await (await recoverNative(purchaseBody("PATCH", { expiresAt: reservation.expiresAt }))).json()).toEqual({ state: null });
+  expect((await checkout(webRequest())).status).toBe(200);
 });

@@ -3,6 +3,7 @@ import { createHmac, timingSafeEqual } from "node:crypto";
 import { z } from "zod";
 import { prisma } from "@/lib/db/prisma";
 import { BillingError } from "@/lib/billing/domain";
+import type { AppStorePurchaseState } from "@/lib/billing/subscription/domain";
 import { requireMobileReady, mobileConfig } from "./config";
 import { auditDuplicatePurchases } from "@/lib/billing/duplicate-purchase-runtime";
 
@@ -79,17 +80,16 @@ async function fetchSubscriber(appUserId: string, apiKey: string, transport: typ
   }
   return response.json() as Promise<unknown>;
 }
-/** Resolve identity before locking the monthly account, then fetch within the lock. */
-export async function appStorePurchaseCheck(userId: string, activeCode = "app_store_subscription_exists") {
-  if (!mobileConfig().enabled) return async () => {};
+export async function appStorePurchaseStatus(userId: string): Promise<AppStorePurchaseState> {
+  if (!mobileConfig().enabled) return null;
   const c = requireMobileReady();
   const { appUserId } = await ensureRevenueCatAccount(userId);
-  return async () => {
-    const body = await fetchSubscriber(appUserId, c.apiKey, fetch);
-    if (body === null) return;
-    const state = appStorePurchaseState(body, c, Date.now());
-    if (state) throw new BillingError(state === "active" ? activeCode : "app_store_purchase_pending", 409);
-  };
+  const body = await fetchSubscriber(appUserId, c.apiKey, fetch);
+  return body === null ? null : appStorePurchaseState(body, c, Date.now());
+}
+export async function appStorePurchaseCheck(userId: string, activeCode = "app_store_subscription_exists") {
+  const state = await appStorePurchaseStatus(userId);
+  if (state) throw new BillingError(state === "active" ? activeCode : "app_store_purchase_pending", 409);
 }
 interface AccountRow { userId: string; appUserId: string; expiresAt: Date | null; checkedAt: Date | null }
 export async function ensureRevenueCatAccount(userId: string) {
@@ -99,23 +99,30 @@ export async function ensureRevenueCatAccount(userId: string) {
   if (rows[0]?.appUserId !== appUserId) throw new BillingError("mobile_identity_conflict", 503);
   return rows[0];
 }
-/** Serialize BEFORE fetching the authoritative subscriber. Replayed/out-of-order webhooks cannot restore an old snapshot. */
+/** Retry if another request saved a snapshot while RevenueCat was responding. */
 export async function refreshRevenueCat(appUserId: string, transport: typeof fetch = fetch) {
   const c = requireMobileReady();
-  const result = await prisma.$transaction(async tx => {
-    const rows = await tx.$queryRawUnsafe<AccountRow[]>('SELECT * FROM "MobileRevenueCatAccount" WHERE "appUserId"=$1 FOR UPDATE', appUserId);
-    if (!rows[0]) return null;
+  for (let attempt = 0; attempt < 4; attempt++) {
+    const [before] = await prisma.$queryRawUnsafe<AccountRow[]>('SELECT * FROM "MobileRevenueCatAccount" WHERE "appUserId"=$1', appUserId);
+    if (!before) return null;
     const body = await fetchSubscriber(appUserId, c.apiKey, transport), now = Date.now();
     const productionExpiresAt = body ? verifiedExpiration(body,{...c,environment:"PRODUCTION"},now) : null;
     const sandboxExpiresAt = body ? verifiedExpiration(body,{...c,environment:"SANDBOX"},now) : null;
     const expiresAt = body ? verifiedExpiration(body,c,now) : null;
-    // Store separate verified snapshots. Sandbox never writes production rights.
-    // Every refresh replaces both snapshots; webhook/client timestamps grant nothing.
-    await tx.$executeRawUnsafe('UPDATE "MobileRevenueCatAccount" SET "expiresAt"=$2, "checkedAt"=$3, "productionExpiresAt"=$4, "sandboxExpiresAt"=$5 WHERE "appUserId"=$1', appUserId, expiresAt ? new Date(expiresAt) : null, new Date(now), productionExpiresAt ? new Date(productionExpiresAt) : null, sandboxExpiresAt ? new Date(sandboxExpiresAt) : null);
-    return { ...rows[0], expiresAt: expiresAt ? new Date(expiresAt) : null, checkedAt: new Date(now) };
-  }, { maxWait: 5000, timeout: 15000 });
-  if (result) await auditDuplicatePurchases(result.userId);
-  return result;
+    const checkedAt = new Date(Math.max(now, (before.checkedAt?.getTime() ?? 0) + 1));
+    // Both store environments are verified separately. The timestamp also
+    // fences concurrent refreshes, including two that finish in the same ms.
+    const [saved] = await prisma.$queryRawUnsafe<AccountRow[]>(`UPDATE "MobileRevenueCatAccount"
+      SET "expiresAt"=$2, "checkedAt"=$3, "productionExpiresAt"=$4, "sandboxExpiresAt"=$5
+      WHERE "appUserId"=$1 AND "userId"=$7 AND "checkedAt" IS NOT DISTINCT FROM $6::timestamptz
+      RETURNING "userId","appUserId","expiresAt","checkedAt"`, appUserId, expiresAt ? new Date(expiresAt) : null, checkedAt,
+    productionExpiresAt ? new Date(productionExpiresAt) : null, sandboxExpiresAt ? new Date(sandboxExpiresAt) : null, before.checkedAt, before.userId);
+    if (saved) {
+      await auditDuplicatePurchases(saved.userId);
+      return saved;
+    }
+  }
+  throw new BillingError("mobile_verification_unavailable", 503);
 }
 export async function revenueCatAccess(userId: string, fresh = false) {
   if (!mobileConfig().enabled) return null;

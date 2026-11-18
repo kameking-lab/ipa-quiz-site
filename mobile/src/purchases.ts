@@ -5,12 +5,14 @@ import type { MobileConfiguration, MobileEntitlement } from "../shared/contracts
 import { PURCHASE_MESSAGES, purchaseNeedsSignIn } from "@/lib/billing/purchase-messages";
 
 const purchaseCheckUrl = "https://www.kakomon-ai.jp/api/mobile/purchase-check";
-interface PurchaseReservation { id: string; expiresAt: string }
+export interface PurchaseReservation { id: string; expiresAt: string }
+export type PurchaseRecovery = { reservationId: string } | { attemptId: string } | { expiresAt: string } | { legacy: true };
 
 /** Last server check before persisting the pending marker and presenting StoreKit. */
-export async function checkNativePurchase(transport: typeof fetch = fetch): Promise<PurchaseReservation | null> {
+export async function checkNativePurchase(transport: typeof fetch = fetch, attemptId?: string): Promise<PurchaseReservation | null> {
   try {
-    const response = await transport(purchaseCheckUrl, { method: "POST", credentials: "include", signal: AbortSignal.timeout(15000) });
+    const response = await transport(purchaseCheckUrl, { method: "POST", credentials: "include", signal: AbortSignal.timeout(60000),
+      ...(attemptId ? { headers: { "Content-Type": "application/json" }, body: JSON.stringify({ attemptId }) } : {}) });
     const body = await response.json().catch(()=>null) as { allowed?: boolean; error?: string; reservation?: PurchaseReservation } | null;
     if (!response.ok || body?.allowed !== true) {
       const code = typeof body?.error === "string" ? body.error : "";
@@ -21,6 +23,16 @@ export async function checkNativePurchase(transport: typeof fetch = fetch): Prom
   } catch (error) {
     throw error instanceof StoreError ? error : new StoreError(PURCHASE_MESSAGES.purchase_check_unavailable, "purchase_check");
   }
+}
+export async function recoverNativePurchase(recovery: PurchaseRecovery, transport: typeof fetch = fetch) {
+  const response = await transport(purchaseCheckUrl, {
+    method: "PATCH", credentials: "include", signal: AbortSignal.timeout(15000),
+    headers: { "Content-Type": "application/json" }, body: JSON.stringify(recovery),
+  });
+  if (!response.ok) throw new Error("purchase_recovery_failed");
+  const { state } = await response.json() as { state: unknown };
+  if (state !== null && state !== "active" && state !== "processing") throw new Error("invalid_purchase_state");
+  return state;
 }
 export async function releaseNativePurchase(reservationId: string, transport: typeof fetch = fetch) {
   const response = await transport(purchaseCheckUrl, {
