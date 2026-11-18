@@ -7,6 +7,7 @@ export const CONVERSION_LABELS: Record<ConversionMetric, string> = {
 };
 export const CLIENT_CONVERSIONS = ["guest_answered", "offer_viewed", "plan_clicked", "signin_viewed", "checkout_canceled"] as const satisfies readonly ConversionMetric[];
 export type ClientConversion = typeof CLIENT_CONVERSIONS[number];
+export const GUEST_ANSWER_HANDLED = "X-Kakomon-Guest-Answer-Handled";
 export type ConversionCounts = Record<ConversionMetric, number>;
 export interface ConversionRow { day: string; channel: ConversionChannel; counts: ConversionCounts; measured: boolean }
 export const CONVERSION_STEPS = ["guest_answered", "guest_limited", "offer_viewed", "plan_clicked", "checkout_created", "payment_completed"] as const;

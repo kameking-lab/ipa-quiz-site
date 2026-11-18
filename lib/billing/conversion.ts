@@ -2,9 +2,11 @@ import "server-only";
 import { createHmac } from "node:crypto";
 import { jstDay } from "./domain";
 import { retentionCache } from "@/lib/kv/retention";
-import { CONVERSION_CHANNELS, CONVERSION_METRICS, type ConversionChannel, type ConversionMetric, type ConversionCounts, type ConversionRow } from "./conversion-contract";
+import { CONVERSION_CHANNELS, CONVERSION_METRICS, type ClientConversion, type ConversionChannel, type ConversionMetric, type ConversionCounts, type ConversionRow } from "./conversion-contract";
 
 const RETENTION = 95 * 86400;
+export const CONVERSION_VISITOR_MINUTE_LIMIT = 120;
+export const CONVERSION_GLOBAL_MINUTE_LIMIT = 1_000;
 const retention = retentionCache();
 function prefix() {
   // Test purchases must never appear in the production figures.
@@ -27,16 +29,24 @@ async function pipeline(commands: string[][]): Promise<{ result: unknown }[] | n
 }
 // Atomic deduplication and increment: concurrent tabs/webhook retries cannot overcount.
 export const CONVERSION_UPDATE = `
+if ARGV[7] ~= '' then
+  local total = tonumber(redis.call('HGET', KEYS[3], 'total') or '0')
+  if total >= tonumber(ARGV[9]) then return -1 end
+  local visitor = redis.call('HINCRBY', KEYS[3], ARGV[7], 1)
+  if visitor > tonumber(ARGV[8]) then return -1 end
+  if redis.call('HINCRBY', KEYS[3], 'total', 1) == 1 then redis.call('EXPIRE', KEYS[3], 120) end
+end
 if ARGV[2] ~= '' and redis.call('SADD', KEYS[2], ARGV[2]) == 0 then return 0 end
 if ARGV[2] ~= '' and ARGV[6] == '1' then redis.call('EXPIRE', KEYS[2], ARGV[4]) end
 redis.call('HINCRBY', KEYS[1], ARGV[1], 1)
 if ARGV[5] == '1' then redis.call('EXPIRE', KEYS[1], ARGV[3]) end
 return 1`;
 
-/** Only daily HMACs for people; checkout IDs are hashed separately for retry deduplication. */
-export async function recordConversion(metric: ConversionMetric, channel: ConversionChannel, unique?: string, now = Date.now()): Promise<boolean> {
+type WriteResult = "ok" | "limited" | "unavailable";
+
+async function writeConversion(metric: ConversionMetric, channel: ConversionChannel, unique: string | undefined, now: number, network?: string): Promise<WriteResult> {
   try {
-    if (!CONVERSION_METRICS.includes(metric) || !CONVERSION_CHANNELS.includes(channel)) return false;
+    if (!CONVERSION_METRICS.includes(metric) || !CONVERSION_CHANNELS.includes(channel)) return "unavailable";
     const day = jstDay(new Date(now)), base = prefix();
     const order = metric === "checkout_created" || metric === "payment_completed";
     const member = unique ? digest(`${order ? "order" : `${day}:${channel}`}:${unique}`) : "";
@@ -48,15 +58,30 @@ export async function recordConversion(metric: ConversionMetric, channel: Conver
     const aggregateCache = `${storeUrl}|${aggregate}`, seenCache = `${storeUrl}|${seen}`;
     const refreshAggregate = retention.needsRefresh(aggregateCache);
     const refreshSeen = !!member && retention.needsRefresh(seenCache);
-    // Keep deduplication, increment and optional TTLs in one atomic pipeline entry.
-    const result = await pipeline([["EVAL", CONVERSION_UPDATE, "2", aggregate, seen, metric, member,
-      String(RETENTION), String(order ? RETENTION : 2 * 86400), refreshAggregate ? "1" : "0", refreshSeen ? "1" : "0"]]);
+    const minute = Math.floor(now / 60_000);
+    const limitKey = network === undefined ? [] : [`${base}:rate:${minute}`];
+    const visitor = network === undefined ? "" : digest(`rate:${minute}:${network}`);
+    // Use the existing write to enforce shared admission. Like the other fixed
+    // windows, the bucket gets a TTL only on its first admitted request.
+    const result = await pipeline([["EVAL", CONVERSION_UPDATE, String(2 + limitKey.length), aggregate, seen, ...limitKey, metric, member,
+      String(RETENTION), String(order ? RETENTION : 2 * 86400), refreshAggregate ? "1" : "0", refreshSeen ? "1" : "0",
+      visitor, String(CONVERSION_VISITOR_MINUTE_LIMIT), String(CONVERSION_GLOBAL_MINUTE_LIMIT)]]);
     if (result?.[0]?.result === 1) {
       if (refreshAggregate) retention.confirm(aggregateCache);
       if (refreshSeen) retention.confirm(seenCache);
     }
-    return result?.[0]?.result === 0 || result?.[0]?.result === 1;
-  } catch { return false; }
+    if (result?.[0]?.result === -1) return "limited";
+    return result?.[0]?.result === 0 || result?.[0]?.result === 1 ? "ok" : "unavailable";
+  } catch { return "unavailable"; }
+}
+
+/** Only daily HMACs for people; checkout IDs are hashed separately for retry deduplication. */
+export async function recordConversion(metric: ConversionMetric, channel: ConversionChannel, unique?: string, now = Date.now()): Promise<boolean> {
+  return await writeConversion(metric, channel, unique, now) === "ok";
+}
+
+export function recordClientConversion(event: ClientConversion, channel: ConversionChannel, unique: string | undefined, now: number, network: string): Promise<WriteResult> {
+  return writeConversion(event, channel, unique, now, network);
 }
 export function conversionChannel(request: Request): ConversionChannel { return request.headers.get("X-Kakomon-Native") === "ios" ? "ios" : "web"; }
 

@@ -1,6 +1,6 @@
 // @vitest-environment node
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
-import { recordConversion, readConversions, readConversionChannel, saveConversionChannel } from "@/lib/billing/conversion";
+import { CONVERSION_GLOBAL_MINUTE_LIMIT, CONVERSION_VISITOR_MINUTE_LIMIT, recordClientConversion, recordConversion, readConversions, readConversionChannel, saveConversionChannel } from "@/lib/billing/conversion";
 import { conversionRate } from "@/lib/billing/conversion-contract";
 import { translateLua } from "./guest-lua-kv";
 
@@ -21,6 +21,7 @@ function command(op: string, key: string, ...args: string[]): unknown {
     const hash = values.get(key) as Map<string, number> ?? new Map<string, number>(); values.set(key, hash);
     const count = (hash.get(args[0]) ?? 0) + Number(args[1]); hash.set(args[0], count); return count;
   }
+  if (op === "HGET") return (values.get(key) as Map<string, number> | undefined)?.get(args[0]) ?? false;
   if (op === "HGETALL") return [...(values.get(key) as Map<string, number> ?? new Map())].flat();
   if (op === "SET") { if (values.has(key)) return null; values.set(key, args[0]); return "OK"; }
   if (op === "GET") return values.get(key) ?? null;
@@ -35,7 +36,7 @@ beforeEach(() => {
     bodies.push(String(init?.body));
     const commands: string[][] = JSON.parse(String(init?.body));
     return Response.json(commands.map(c => ({ result: c[0] === "EVAL"
-      ? new Function("call", "KEYS", "ARGV", translateLua(c[1]))(command, [undefined, ...c.slice(3, 5)], [undefined, ...c.slice(5)])
+      ? new Function("call", "KEYS", "ARGV", translateLua(c[1]))(command, [undefined, ...c.slice(3, 3 + Number(c[2]))], [undefined, ...c.slice(3 + Number(c[2]))])
       : command(c[0], c[1], ...c.slice(2)) })));
   }));
 });
@@ -116,4 +117,25 @@ it("batches writes and skips warm TTL refreshes while preserving deduplication a
   expect(expirations).toHaveLength(4);
   const counts = (await readConversions(1, now)).rows.find(row => row.channel === "web")!.counts;
   expect(counts).toMatchObject({ guest_answered: 3, offer_viewed: 1 });
+});
+
+it("limits each network and the whole site atomically inside the existing write", async () => {
+  const network = "v4:192.0.2.12";
+  const record = (visitor: string) => recordClientConversion("plan_clicked", "web", undefined, now, visitor);
+  const results = await Promise.all(Array.from({ length: CONVERSION_VISITOR_MINUTE_LIMIT + 2 }, () => record(network)));
+  expect(results.filter(result => result === "ok")).toHaveLength(CONVERSION_VISITOR_MINUTE_LIMIT);
+  expect(results.slice(-2)).toEqual(["limited", "limited"]);
+  expect(await recordClientConversion("offer_viewed", "ios", undefined, now, network)).toBe("limited");
+  const remaining = CONVERSION_GLOBAL_MINUTE_LIMIT - CONVERSION_VISITOR_MINUTE_LIMIT;
+  const otherResults = await Promise.all(Array.from({ length: remaining }, (_, i) => record(`other-${i}`)));
+  expect(otherResults.every(result => result === "ok")).toBe(true);
+  expect(await record("next-network")).toBe("limited");
+  expect(bodies.every(body => JSON.parse(body).length === 1)).toBe(true);
+  expect(bodies.join()).not.toContain(network);
+  expect(expirations.filter(key => key.includes(":rate:"))).toHaveLength(1);
+
+  expect(await recordConversion("checkout_created", "web", "server-side-order", now)).toBe(true);
+  const rows = (await readConversions(1, now)).rows;
+  expect(rows.find(row => row.channel === "web")?.counts).toMatchObject({ plan_clicked: CONVERSION_GLOBAL_MINUTE_LIMIT, checkout_created: 1 });
+  expect(await recordClientConversion("plan_clicked", "web", undefined, now + 60_000, network)).toBe("ok");
 });

@@ -9,6 +9,7 @@ afterEach(() => { cleanup(); vi.clearAllTimers(); vi.useRealTimers(); vi.unstubA
 
 it("records page views once per navigation and answers even without the external SDK", async () => {
   const beacon = vi.fn<(url: string, body?: Blob) => boolean>(() => true); Object.defineProperty(navigator, "sendBeacon", { configurable: true, value: beacon });
+  const fetcher = vi.fn(async () => new Response(null, { status: 204 })); vi.stubGlobal("fetch", fetcher);
   const activityCalls = () => beacon.mock.calls.filter(([url]) => url === "/api/activity");
   const { ActivityTracker } = await import("@/components/analytics/ActivityTracker");
   const { posthogCapture } = await import("@/lib/posthog");
@@ -19,8 +20,7 @@ it("records page views once per navigation and answers even without the external
   posthogCapture("question_answered", { exam: "sc", questionId: "private-question", userId: "private-user" });
   act(() => { vi.advanceTimersByTime(2000); });
   expect(activityCalls()).toHaveLength(1);
-  const conversion = beacon.mock.calls.find(([url]) => url === "/api/funnel/conversion");
-  expect(JSON.parse(await conversion![1]!.text())).toEqual({ event: "guest_answered" });
+  expect(fetcher).toHaveBeenCalledWith("/api/funnel/conversion", expect.objectContaining({ body: '{"event":"guest_answered"}', keepalive: true }));
   const payload = JSON.parse(await activityCalls()[0][1]!.text());
   expect(payload.events).toEqual([{ event: "page_view", qualification: "sc", page: "question" }, { event: "question_answered", qualification: "sc", page: "question" }]);
   pathname = "/ap"; window.history.replaceState({}, "", pathname); rerender(<ActivityTracker />);
