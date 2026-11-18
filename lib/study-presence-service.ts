@@ -3,9 +3,8 @@ import { PRESENCE_POLL_MS, type StudyPresenceSnapshot } from "@/lib/study-presen
 import { measuredPresence, presenceRetryDelay, unavailablePresence, type MeasuredPresence, type PresenceResponse } from "@/lib/study-presence-contract";
 
 interface PresenceStore {
-  read: () => Promise<StudyPresenceSnapshot>;
-  record: (id: string, idleMs: number, exam: string, previousId?: string) => Promise<StudyPresenceSnapshot>;
-  legacy: (id: string, idleMs: number, previousId?: string) => Promise<number>;
+  read: (measuredAt: number) => Promise<{ snapshot: StudyPresenceSnapshot; expiresAt?: number }>;
+  record: (id: string, answeredAt: number, exam: string, previousId?: string) => Promise<void>;
 }
 
 /** Instance-local only: cold starts/other instances have separate caches and breakers.
@@ -35,10 +34,11 @@ export function createPresenceService(store: PresenceStore, now: () => number = 
     } finally { if (probe) probing = false; }
   }
 
-  async function measure(operation: () => Promise<StudyPresenceSnapshot>): Promise<MeasuredPresence> {
+  async function measure(): Promise<MeasuredPresence> {
     const measuredAt = now();
     const version = generation;
-    const result = measuredPresence(await operation(), measuredAt);
+    const { snapshot, expiresAt } = await store.read(measuredAt);
+    const result = measuredPresence(snapshot, measuredAt, expiresAt);
     // An older in-flight success cannot erase a failure or overwrite a newer snapshot.
     if (version === generation && (!cached || Date.parse(cached.measuredAt) <= measuredAt)) cached = result;
     return result;
@@ -49,18 +49,17 @@ export function createPresenceService(store: PresenceStore, now: () => number = 
       if (now() < retryAt || probing) return blocked();
       if (cached && now() < Date.parse(cached.validUntil)) return cached;
       if (readInFlight) return readInFlight;
-      const operation = attempt(() => measure(store.read));
+      const operation = attempt(measure);
       readInFlight = operation;
-      try { return await operation; } finally { readInFlight = null; }
+      try { return await operation; } finally { if (readInFlight === operation) readInFlight = null; }
     },
-    record: (id: string, idleMs: number, exam: string, previousId?: string) =>
-      attempt(() => measure(() => store.record(id, idleMs, exam, previousId))),
-    async legacy(id: string, idleMs: number, previousId?: string) {
-      return attempt(async () => {
-        const count = await store.legacy(id, idleMs, previousId);
-        cached = null; // Unknown activity can change qualified totals; don't retimestamp an old snapshot.
-        return { count };
-      });
+    async record(id: string, answeredAt: number, exam: string, previousId?: string) {
+      const failure = await attempt(() => store.record(id, answeredAt, exam, previousId));
+      if (failure) return failure;
+      // A read started before this write cannot be reused for later readers.
+      generation++;
+      cached = null;
+      readInFlight = null;
     },
   };
 }

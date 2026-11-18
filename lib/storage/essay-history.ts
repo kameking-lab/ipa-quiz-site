@@ -1,4 +1,5 @@
 import type { EssayHistoryEntry } from "@/lib/essay/types";
+import { reportStudyAnswer } from "@/lib/study-presence-client";
 
 const LS_KEY = "ipa-quiz:essay-history:v1";
 const MAX_ENTRIES = 50;
@@ -18,6 +19,7 @@ export function readEssayHistory(): EssayHistoryEntry[] {
 
 export function appendEssayHistory(entry: EssayHistoryEntry): void {
   if (typeof window === "undefined") return;
+  reportStudyAnswer(entry.exam);
   try {
     const all = readEssayHistory();
     const next = [entry, ...all].slice(0, MAX_ENTRIES);

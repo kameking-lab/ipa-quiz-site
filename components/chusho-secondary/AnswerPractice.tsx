@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { posthogCapture } from "@/lib/posthog";
+import { reportStudyAnswer } from "@/lib/study-presence-client";
 import type { ChushoSolution } from "@/lib/chusho-secondary/data";
 
 export function AnswerPractice({ questionId, solutions }: { questionId: string; solutions: ChushoSolution[] }) {
@@ -10,6 +11,7 @@ export function AnswerPractice({ questionId, solutions }: { questionId: string; 
   const [message, setMessage] = useState("");
   const [visible, setVisible] = useState(false);
   const started = useRef<string | null>(null);
+  const edited = useRef(new Set<number>());
   useEffect(() => {
     if (!ready || started.current === questionId) return;
     started.current = questionId;
@@ -19,6 +21,7 @@ export function AnswerPractice({ questionId, solutions }: { questionId: string; 
     setReady(false);
     setVisible(false);
     setMessage("");
+    edited.current.clear();
     let next = solutions.map(() => "");
     try {
       const raw = localStorage.getItem(`kakomon-ai:chusho-secondary:${questionId}`);
@@ -34,11 +37,20 @@ export function AnswerPractice({ questionId, solutions }: { questionId: string; 
   function update(index: number, value: string) {
     const next = [...drafts];
     next[index] = value;
+    edited.current.add(index);
     setDrafts(next);
     try {
       localStorage.setItem(`kakomon-ai:chusho-secondary:${questionId}`, JSON.stringify(next));
       setMessage("このブラウザに下書きを保存しました。");
     } catch { setMessage("下書きを保存できません。必要な文章をコピーして残してください。"); }
+  }
+
+  function toggleExamples() {
+    if (!visible && drafts.some((draft, index) => edited.current.has(index) && draft.trim())) {
+      reportStudyAnswer("chusho-secondary");
+      edited.current.clear();
+    }
+    setVisible(!visible);
   }
 
   return <section aria-labelledby="practice-title" className="mt-8 rounded-2xl border border-border bg-card p-5 sm:p-6">
@@ -57,7 +69,7 @@ export function AnswerPractice({ questionId, solutions }: { questionId: string; 
       </div>;
     })}
     <p role="status" aria-live="polite" className="mt-3 min-h-6 text-sm text-muted-foreground">{message}</p>
-    <button type="button" aria-expanded={visible} aria-controls="editorial-examples" onClick={() => setVisible(value => !value)}
+    <button type="button" aria-expanded={visible} aria-controls="editorial-examples" onClick={toggleExamples}
       className="mt-4 min-h-11 rounded-xl bg-primary px-5 py-3 font-semibold text-primary-foreground focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-primary/40">
       {visible ? "独自解答例を閉じる" : "独自解答例と根拠を確認する"}
     </button>

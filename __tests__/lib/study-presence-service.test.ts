@@ -3,7 +3,7 @@ import { createPresenceService } from "@/lib/study-presence-service";
 const data = { count: 1, exams: [{ exam: "fe", count: 1 }] };
 function setup() {
   let clock = Date.parse("2026-10-23T10:00:00Z");
-  const store = { read: vi.fn().mockResolvedValue(data), record: vi.fn().mockResolvedValue(data), legacy: vi.fn().mockResolvedValue(2) };
+  const store = { read: vi.fn().mockResolvedValue({ snapshot: data }), record: vi.fn().mockResolvedValue(undefined) };
   const service = createPresenceService(store, () => clock);
   return { store, service, advance: (ms: number) => { clock += ms; } };
 }
@@ -20,27 +20,34 @@ it("does not invent measured zero on error and backs off 90,180,300,900 seconds"
   for (const seconds of [90, 180, 300, 900, 900]) {
     const before = store.read.mock.calls.length;
     expect(await service.read()).toMatchObject({ status: "unavailable", count: null, total: null, exams: null, retryAfterSeconds: seconds });
-    await service.read(); await service.record("id", 0, "fe"); await service.legacy("id", 0);
-    expect(store.read).toHaveBeenCalledTimes(before + 1); expect(store.record).not.toHaveBeenCalled(); expect(store.legacy).not.toHaveBeenCalled();
+    await service.read(); await service.record("id", 0, "fe");
+    expect(store.read).toHaveBeenCalledTimes(before + 1); expect(store.record).not.toHaveBeenCalled();
     advance(seconds * 1000);
   }
-  store.read.mockResolvedValue({ count: 0, exams: [] });
+  store.read.mockResolvedValue({ snapshot: { count: 0, exams: [] } });
   expect(await service.read()).toMatchObject({ status: "measured", count: 0, total: 0, exams: [] });
 });
 it("allows only one half-open recovery probe", async () => {
   const { store, service, advance } = setup(); store.read.mockRejectedValueOnce(new Error("offline")); await service.read(); advance(90_000);
-  let resolve: (value: typeof data) => void = () => {};
+  let resolve: (value: { snapshot: typeof data }) => void = () => {};
   store.read.mockReturnValue(new Promise(done => { resolve = done; }));
   const probe = service.read();
   expect(await service.record("id", 0, "fe")).toMatchObject({ status: "unavailable", reason: "circuit_open" });
-  expect(store.record).not.toHaveBeenCalled(); resolve(data); expect(await probe).toMatchObject({ status: "measured" });
+  expect(store.record).not.toHaveBeenCalled(); resolve({ snapshot: data }); expect(await probe).toMatchObject({ status: "measured" });
 });
-it("reuses a real write snapshot and invalidates it after legacy unknown activity", async () => {
+it("invalidates an in-flight read after an answer without aggregating as part of the write", async () => {
   const { store, service } = setup();
-  const written = await service.record("id", 0, "fe", "old");
+  let resolve: (value: { snapshot: typeof data }) => void = () => {};
+  store.read.mockReturnValueOnce(new Promise(done => { resolve = done; }));
+  const oldRead = service.read();
+  expect(await service.record("id", 0, "fe", "old")).toBeUndefined();
   expect(store.record).toHaveBeenCalledWith("id", 0, "fe", "old");
-  expect(await service.read()).toEqual(written); expect(store.read).not.toHaveBeenCalled();
-  expect(await service.legacy("id", 0)).toEqual({ count: 2 }); await service.read(); expect(store.read).toHaveBeenCalledOnce();
+  expect(store.read).toHaveBeenCalledOnce();
+  store.read.mockResolvedValue({ snapshot: { count: 0, exams: [] } });
+  expect(await service.read()).toMatchObject({ status: "measured", count: 0 });
+  resolve({ snapshot: data }); await oldRead;
+  expect(await service.read()).toMatchObject({ status: "measured", count: 0 });
+  expect(store.read).toHaveBeenCalledTimes(2);
 });
 it("cannot share cache or breaker state across independent server instances", async () => {
   const a = setup(), b = setup();
@@ -49,9 +56,9 @@ it("cannot share cache or breaker state across independent server instances", as
 });
 it("an older concurrent success cannot clear a newly opened circuit", async () => {
   const { store, service } = setup();
-  let resolve: (value: typeof data) => void = () => {};
+  let resolve: (value: undefined) => void = () => {};
   store.record.mockReturnValue(new Promise(done => { resolve = done; }));
   const write = service.record("id", 0, "fe");
-  store.read.mockRejectedValue(new Error("offline")); await service.read(); resolve(data); await write;
+  store.read.mockRejectedValue(new Error("offline")); await service.read(); resolve(undefined); await write;
   expect(await service.read()).toMatchObject({ status: "unavailable", reason: "circuit_open" }); expect(store.read).toHaveBeenCalledOnce();
 });

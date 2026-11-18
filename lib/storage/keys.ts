@@ -16,7 +16,8 @@ export const LS_KEYS = {
   petCloudDevice: "ipa-quiz:pet-cloud-device:v1",
   studyReward: "ipa-quiz:study-reward:v1",
   studyRewardPreferences: "ipa-quiz:study-reward-preferences:v1",
-  studyPresenceVisitor: "study-presence-visitor",
+  // Old page heartbeats can still run in open tabs during rollout.
+  studyPresenceVisitor: "study-presence-visitor:v2",
   examLibraryPrefix: "ipa-quiz:exam-library:v1:",
   examLibrarySessionPrefix: "ipa-quiz:exam-library-session:v1:",
   history: "ipa-quiz:history:v1",

@@ -9,6 +9,7 @@ import { createHistoryStore } from "@/lib/storage/history";
 import { readSettings } from "@/lib/storage/settings";
 import { writeLastQuestion } from "@/lib/storage/last-question";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
+import { reportStudyAnswer } from "@/lib/study-presence-client";
 
 /** Review shares the normal five-slot grader and explanation components. */
 export function NativeBReview({ question, onNext }: { question: Question; onNext: (correct: boolean) => void }) {
@@ -19,6 +20,7 @@ export function NativeBReview({ question, onNext }: { question: Question; onNext
     if (result || !question.nativeB) return;
     const grade = gradeNativeB(question.nativeB, selections);
     const serialized = serializeNativeBSelections(question.nativeB, selections);
+    reportStudyAnswer(question.exam);
     setResult(grade);
     setSelected(serialized);
     try {

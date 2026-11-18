@@ -38,9 +38,9 @@ it("replays the last measured sample to a new room without another request or ti
     expect(events.at(-1)).toMatchObject({mode:"stale",reason:"expired"});expect(fetchMock).toHaveBeenCalledOnce();
   } finally { window.removeEventListener(PRESENCE_STATE_EVENT,listener); }
 });
-it("posts a problem qualification hourly while preserving the existing browser identifier",async()=>{
-  render(<><div data-study-presence-exam="fe"/><StudyPresence/></>);await advance(1);const first=JSON.parse(fetchMock.mock.calls[0][1].body);
-  await activeFor(PRESENCE_REFRESH_MS-1);expect(fetchMock).toHaveBeenCalledTimes(2);expect(fetchMock.mock.calls[1][1].method).toBe("POST");expect(JSON.parse(fetchMock.mock.calls[1][1].body)).toMatchObject({exam:"fe",visitorId:first.visitorId});
+it("never sends presence from a problem marker, even after an hour of input",async()=>{
+  render(<><div data-study-presence-exam="fe"/><StudyPresence/></>);await advance(1);
+  await activeFor(PRESENCE_REFRESH_MS);expect(fetchMock).not.toHaveBeenCalled();expect(localStorage.getItem(LS_KEYS.studyPresenceVisitor)).toBeNull();
 });
 it("does not retry a network error before one hour",async()=>{
   fetchMock.mockRejectedValue(new Error("offline"));render(<><div data-study-presence-viewer/><StudyPresence/></>);await advance(1);
