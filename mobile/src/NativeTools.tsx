@@ -261,7 +261,6 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     void beginLogin(SITE_ORIGIN).catch(error=>setNotice(error instanceof Error?error.message:"ログイン画面を開けませんでした。")).finally(()=>setTimeout(()=>setSigningIn(s=>s==="opening"?"":s),1500));
   };
   if (!inSite) return null;
-  const loginButton = <button className={`inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-4 font-semibold text-primary-foreground disabled:opacity-60 active:opacity-80 touch-manipulation`} aria-busy={!!signingIn} disabled={!!signingIn} onClick={startLogin}>{signingIn==="finishing"?"ログインしています…":signingIn?"ログイン画面を開いています…":"ログイン"}</button>;
   const pill = "inline-flex min-h-11 shrink-0 items-center justify-center rounded-full border border-border bg-background px-3 text-sm font-medium text-foreground disabled:opacity-50";
   const primary = "inline-flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-4 font-semibold text-primary-foreground disabled:opacity-50";
   const secondary = "inline-flex min-h-11 items-center justify-center rounded-xl border border-border bg-background px-4 text-sm font-medium disabled:opacity-50";
@@ -285,15 +284,12 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
         {!access ? <>{!statusError && <><p role="status">会員状態を確認しています…</p><button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await refresh(true); })}>会員状態を再確認</button></>}</> : <>
           <p className="font-semibold">{access.entitled ? access.source === "web" ? "ウェブの有料会員です。追加購入は不要です。" : "App Storeの有料会員です。" : "無料会員"}</p>
           {access.source === "web" && <ManageSubscriptionButton label="ウェブ契約の管理・解約"/>}
-          {!access.userId && loginButton}
           {purchasePending&&<p role="status" className="text-sm">購入内容をサーバーで確認中です。再購入せず「購入を復元」または会員状態の再確認をご利用ください。</p>}
           {offer && !access.entitled && <button className={primary} disabled={busy||purchasePending||!!signingIn}
             aria-describedby="native-purchase-terms" onClick={()=>{sendConversion("plan_clicked");purchase();}}>
             {offer.product.priceString} / 月で登録
           </button>}
           {!access.entitled && !offer && (offerLoading ? <p className="text-sm">App Storeの価格を読み込んでいます…</p> : offerError && <div role="alert" className="space-y-2 rounded-xl border border-destructive/40 p-3 text-sm"><p className="break-words">{offerError}</p><button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await loadOffer(await refresh(true)); })}>商品情報を再読み込み</button></div>)}
-          <div className="grid gap-2 sm:grid-cols-2"><button className={secondary} disabled={busy || !config?.sdkKey || !!signingIn} onClick={restore}>購入を復元</button>
-            <button className={secondary} onClick={()=>void Browser.open({ url:"https://apps.apple.com/account/subscriptions" })}>App Storeで管理・解約</button></div>
           <div className="space-y-1 text-xs leading-5 text-muted-foreground">
             {offer && !access.entitled && <p id="native-purchase-terms">表示価格は税込です。購入時にApple IDに請求され、毎月自動更新されます。解約はApp Storeのサブスクリプションから。</p>}
             <nav aria-label="App Storeの契約に関する情報" className="flex flex-wrap gap-x-4 [&_a]:inline-flex [&_a]:min-h-8 [&_a]:items-center [&_a]:underline [&_a]:underline-offset-4">
@@ -301,6 +297,10 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
               <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple標準使用許諾契約</a>
             </nav>
           </div>
+          <div className="grid gap-2 sm:grid-cols-2"><button className={secondary} disabled={busy || !config?.sdkKey || !!signingIn} onClick={restore}>購入を復元</button>
+            <button className={secondary} onClick={()=>void Browser.open({ url:"https://apps.apple.com/account/subscriptions" })}>App Storeで管理・解約</button></div>
+          {!access.userId && <button type="button" className="inline-flex min-h-11 items-center text-sm underline underline-offset-4 disabled:opacity-60 touch-manipulation"
+            aria-busy={!!signingIn} disabled={!!signingIn} onClick={startLogin}>{signingIn==="finishing"?"ログインしています…":signingIn?"ログイン画面を開いています…":"ログイン"}</button>}
           <details className="rounded-xl border border-border px-3"><summary className="flex min-h-11 cursor-pointer items-center font-semibold">資格ごとの事前ダウンロード（有料会員限定）</summary>
             <div className="space-y-2 pb-3"><p className="text-sm">必要な図表も事前に取得・検証し、すべて保存できた資格のみ保存済みになります。保存した問題は会員権利の有効期限内で利用できます。オフラインの権利確認は最大24時間です。</p>
             {access.entitled && !access.lease && access.leaseError && <p role="status" className="text-sm">事前ダウンロードは現在準備中です（{access.leaseError}）。オンラインの有料機能はそのまま使えます。</p>}

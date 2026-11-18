@@ -20,7 +20,7 @@ export function MonthlyConditions({ showTrial = true, keepPracticeOpen = false }
   const linkProps = keepPracticeOpen ? { target: "_blank", rel: "noopener noreferrer" } : {};
   return <div className="space-y-1 text-[13px] leading-5 text-muted-foreground">
     <p id="monthly-terms">
-      {showTrial && PLAN_OFFER.trialDays > 0 && <span className="block [.native-app_&]:hidden">初回{PLAN_OFFER.trialDays}日間無料（アカウント・カード各1回）。無料期間中の解約は請求なし。</span>}
+      {showTrial && PLAN_OFFER.trialDays > 0 && <span className="block [.native-app_&]:hidden">初回{PLAN_OFFER.trialDays}日間無料（アカウント・カード各1回）。<span className="inline-block">無料期間中の解約は請求なし。</span></span>}
       毎月自動更新。<span className="[.native-app_&]:hidden">解約は契約管理から。</span>
       <span className="hidden [.native-app_&]:inline">解約はApp Storeのサブスクリプションから。</span>
     </p>
