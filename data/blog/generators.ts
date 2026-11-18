@@ -5,6 +5,7 @@ import { EXAM_PROFILES } from "./exam-data";
 import { buildFeStudyGuide } from "./fe-study-guide";
 import { buildWorkedExamplesPost } from "./worked-examples";
 import { buildLateCbtGeneralPost, withLateCbtStudyPlan } from "./late-cbt";
+import { withItPastQuestionGuide } from "./it-past-question-guides";
 import type { BlogPost } from "./types";
 
 const PUBLISHED_BASE = new Date("2026-01-01T00:00:00.000Z").getTime();
@@ -332,7 +333,7 @@ ${cbt ? "" : `
 /* ========== 3. 頻出論点まとめ（13本） ========== */
 
 export function buildFrequentTopicsPost(exam: IpaExamCode, idx: number): BlogPost {
-  return withLateCbtStudyPlan(buildWorkedExamplesPost(exam, publishedAtFor(26 + idx)));
+  return withItPastQuestionGuide(withLateCbtStudyPlan(buildWorkedExamplesPost(exam, publishedAtFor(26 + idx))));
 }
 
 export function buildPracticePost(exam: ExamCode, idx: number): BlogPost {
@@ -446,7 +447,7 @@ ${cbt ? cbt.application : "科目Aで身につけた知識を科目Bの問題で
 過去問演習の質を上げれば、合格は手の届く距離まで近づきます。
 `;
 
-  return {
+  return withItPastQuestionGuide({
     slug,
     title,
     description,
@@ -458,7 +459,7 @@ ${cbt ? cbt.application : "科目Aで身につけた知識を科目Bの問題で
     editorialDates: { firstPublishedAt: null, lastEditedAt: "2026-10-08" },
     sourceUrls: ["https://www.ipa.go.jp/shiken/"],
     relatedSlugs: [`${exam}-goukaku-benkyouhou`, `${exam}-cyokusen-1kagetsu`, `${exam}-hinnshutsu-ronten-toppu10`],
-  };
+  });
 }
 
 /* ========== 5. 試験別 実戦問題分析（13本） ========== */

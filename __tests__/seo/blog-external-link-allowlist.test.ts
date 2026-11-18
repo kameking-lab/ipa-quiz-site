@@ -19,6 +19,17 @@ import { getAllBlogPosts } from "@/data/blog";
 //
 // Newly added URLs verified resolving (HEAD, HTTP 200, no redirect) on 2026-09-28:
 const EXPECTED_EXTERNAL_URLS = [
+  // IT practice-guide refresh: six marking reports and exam formats checked 2026-11-17.
+  "https://www.ipa.go.jp/shiken/kubun/ap.html",
+  "https://www.ipa.go.jp/shiken/kubun/pm.html",
+  "https://www.ipa.go.jp/shiken/kubun/sa.html",
+  "https://www.ipa.go.jp/shiken/kubun/sc.html",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_sa_pm1_cmnt.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_nw_pm1_cmnt.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_ap_pm_cmnt.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_sc_pm_cmnt.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_pm1_cmnt.pdf",
+  "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_pm_pm2_cmnt.pdf",
   // Article review corrections: official/primary links checked 2026-11-11.
   "https://cbt-s.com/examinee/examination/fe/",
   "https://cbt-s.com/examinee/examination/sg/",
