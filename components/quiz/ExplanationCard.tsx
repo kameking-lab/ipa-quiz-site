@@ -13,7 +13,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { getOfficialAnswerPdfUrl, getSafePdfUrl, ipaSourceLabel } from "@/lib/exam-config";
 import { BookmarkButton } from "@/components/BookmarkButton";
-import { QuestionBody } from "./QuestionBody";
+import { QuestionBody, QuestionInlineText } from "./QuestionBody";
 import { QuestionSourcePresentation } from "./QuestionSourcePresentation";
 import { RikuTech2CylinderGuide } from "./RikuTech2CylinderGuide";
 import { LearningPetCorner } from "@/components/pet/LearningPetCorner";
@@ -52,7 +52,7 @@ export function ExplanationCard({
   if (question.type === "native-b" && question.nativeB) return <div className="space-y-4" role="region" aria-label="五枠の解説">
     <NativeBFeedback data={question.nativeB} result={nativeBResult} />
     <LearningPetCorner qualificationId={question.exam} questionId={question.id} compact />
-    <QuestionBody text={displayQuestionExplanation(question.exam, question.explanation)} />
+    <QuestionBody text={displayQuestionExplanation(question.exam, question.explanation)} linkReferences />
     <QuestionSourcePresentation question={question} phase="after" />
     <div className="flex flex-col gap-3 sm:flex-row">
       <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" onClick={onNext}>{nextLabel}<ArrowRight className="h-4 w-4" /></Button>
@@ -156,7 +156,7 @@ export function ExplanationCard({
           )}>
             {`結論: 正解は${answerLabel}です。`}
           </p>
-          <QuestionBody text={displayQuestionExplanation(question.exam, question.explanation)} />
+          <QuestionBody text={displayQuestionExplanation(question.exam, question.explanation)} linkReferences />
         </div>
       )}
 
@@ -169,7 +169,7 @@ export function ExplanationCard({
           className="mb-4 rounded-xl border border-red-300 bg-red-50 p-3 text-sm leading-relaxed text-red-950 dark:border-red-800 dark:bg-red-950/40 dark:text-red-100"
         >
           <h3 className="mb-1 font-semibold">あなたが選んだ「{choiceDisplayLabel(question.exam, selected as ChoiceKey)}」が違う理由</h3>
-          <p>{selectedChoiceExplanation}</p>
+          <p><QuestionInlineText text={selectedChoiceExplanation} linkReferences /></p>
         </section>
       )}
 
@@ -191,7 +191,9 @@ export function ExplanationCard({
                 )}
               >
                 <dt className="font-bold text-zinc-900 dark:text-zinc-100">{choiceDisplayLabel(question.exam, key as ChoiceKey)}</dt>
-                <dd className="text-zinc-700 dark:text-zinc-300">{displayQuestionExplanation(question.exam, explanation)}</dd>
+                <dd className="text-zinc-700 dark:text-zinc-300">
+                  <QuestionInlineText text={displayQuestionExplanation(question.exam, explanation)} linkReferences />
+                </dd>
               </div>
             ))}
           </dl>

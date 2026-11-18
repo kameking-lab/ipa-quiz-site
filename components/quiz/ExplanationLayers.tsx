@@ -126,7 +126,7 @@ function LayerBody({
     <div
       className={`selectable-content text-sm leading-[1.85] sm:text-[15px] ${textClass}`}
     >
-      <QuestionBody text={body} />
+      <QuestionBody text={body} linkReferences />
     </div>
   );
 }

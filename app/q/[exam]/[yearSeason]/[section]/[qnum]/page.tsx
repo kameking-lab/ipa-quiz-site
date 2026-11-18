@@ -57,7 +57,7 @@ import { ShareButtons } from "@/components/ShareButtons";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExplanationLayers } from "@/components/quiz/ExplanationLayers";
-import { QuestionBody } from "@/components/quiz/QuestionBody";
+import { QuestionBody, QuestionInlineText } from "@/components/quiz/QuestionBody";
 import { QuestionSourcePresentation } from "@/components/quiz/QuestionSourcePresentation";
 import { AiTransparencyDisclaimer } from "@/components/quiz/AiTransparencyDisclaimer";
 import { AfternoonEssayHint } from "@/components/quiz/AfternoonEssayHint";
@@ -458,7 +458,7 @@ export default async function QuestionPage({
                         <dd>
                           <div className="font-medium text-foreground"><QuestionBody text={choice} /></div>
                           <p className="mt-1 text-muted-foreground">
-                            {displayQuestionExplanation(q.exam, q.choiceExplanations?.[key as ChoiceKey])}
+                            <QuestionInlineText text={displayQuestionExplanation(q.exam, q.choiceExplanations?.[key as ChoiceKey])} linkReferences />
                           </p>
                         </dd>
                       </div>
