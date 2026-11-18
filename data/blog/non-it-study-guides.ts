@@ -9,7 +9,8 @@ const AVIATION_PAPER = "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/k
 const AVIATION_RULES = "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/1/koku-toku-hoki.pdf";
 const RADIO_GUIDE = "https://www.nichimu.or.jp/vc-files/kshiken/pdf/R81001_toku.pdf";
 const RADIO_CBT = "https://cbt-s.com/examinee/examination/nichimu.html";
-const SEA_PAPER = "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/kai-toku-2-kogaku.pdf";
+const SEA_CBT_EXAMPLES = "https://www.nichimu.or.jp/kshiken/siken/vcmsFolder_856/vcms_856.html";
+const SEA_PAPER = "https://www.nichimu.or.jp/vc-files/kshiken/cbt/KoukaiReidai/2kaitoku_A/2kaitoku_A_01.pdf";
 const SEA_RULES = "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/4/kai-toku-2-hoki.pdf";
 const LAB_INDEX = "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-07.html";
 const LAB_PAPER = "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-07a_01.pdf";
@@ -182,10 +183,10 @@ export const NON_IT_STUDY_GUIDES: BlogPost[] = [
     exam: "kai-toku2",
     tags: ["第二級海上特殊無線技士", "二海特", "過去問", "CBT"],
     publishedAt: "2026-11-17T00:00:00.000Z",
-    editorialDates,
+    editorialDates: { ...editorialDates, lastEditedAt: "2026-11-18" },
     editorialKind: "study-guide",
     practicePlacement: "after-body",
-    sourceUrls: [RADIO_INDEX, RADIO_CBT, SEA_PAPER, SEA_RULES],
+    sourceUrls: [SEA_CBT_EXAMPLES, RADIO_CBT, SEA_PAPER, SEA_RULES],
     relatedQuestionIds: ["radio21-sea2-2022-10-hoki-q01"],
     body: `# 二海特の過去問とCBT例題の使い方
 
@@ -195,13 +196,13 @@ export const NON_IT_STUDY_GUIDES: BlogPost[] = [
 
 [CBTの公式受験案内](${RADIO_CBT})では、二海特は四肢択一式24問・60分で、電波法規12問、無線工学12問です。科目別の合格基準はそれぞれ12問中8問以上です。合計の正答数だけでなく、法規と工学を分けて答え合わせします。
 
-[日本無線協会の問題公開ページ](${RADIO_INDEX})は、第二級海上特殊無線技士などのCBT対象資格について「例題」を掲載しています。旧過去問の実施年と、例題で確認する現在の方式をノートで分けてください。
+[日本無線協会のCBT例題一覧](${SEA_CBT_EXAMPLES})では、第二級海上特殊無線技士の法規・無線工学の例題を確認できます。旧過去問の実施年と、例題で確認する現在の方式をノートで分けてください。
 
 ## 出題傾向の見方：法規の主体と、工学の装置・数値
 
 法規の過去問を読むときは、免許人が行う手続なのか、無線従事者の資格を聞くのかを最初に区別します。次に、通常の場合か、例外の条件があるかを確認します。手続の名前だけを丸暗記せず、その前後で何をするかまで一組にしましょう。
 
-[無線工学の公式例題](${SEA_PAPER})では、合成抵抗、アンテナ、レーダー、蓄電池、測定レンジなどが扱われています。図を読む問題、計算する問題、用語を対応させる問題に分けて復習すると、自分が時間を使う型を見つけられます。
+[無線工学の公式例題 No.1](${SEA_PAPER})には、抵抗を半分にしたときの消費電力、船舶用レーダー、直流電流計の接続などの問題があります。図を読む問題、計算する問題、用語を対応させる問題に分けて復習すると、自分が時間を使う型を見つけられます。
 
 ## 60分の時間配分例：両科目に確認時間を残す
 
