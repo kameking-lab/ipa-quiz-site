@@ -80,7 +80,7 @@ import { getQuestionCanonicalRepresentative } from "@/lib/seo/question-canonical
 // 17-23 min Vercel build (plus the output/upload of every generated file).
 // Rendering on demand moves that work to the first visit (a few hundred ms).
 export const dynamicParams = true;
-export const revalidate = 86400;
+export const revalidate = 604800; // 7 days; question content changes with deployments.
 
 export async function generateStaticParams(): Promise<QuestionRouteParams[]> {
   return [];
@@ -615,6 +615,7 @@ export default async function QuestionPage({
               <li key={r.id}>
                 <Link
                   href={questionPagePath(r)}
+                  prefetch={false}
                   className="group block rounded-2xl border border-border bg-card p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
                 >
                   <div className="mb-1.5 flex items-center gap-1.5 text-[11px] text-muted-foreground">
@@ -656,6 +657,7 @@ export default async function QuestionPage({
               <li key={r.id}>
                 <Link
                   href={questionPagePath(r)}
+                  prefetch={false}
                   className="group block rounded-2xl border border-border bg-card p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
                 >
                   <div className="mb-1.5 flex items-center gap-1.5 text-[11px] text-muted-foreground">
@@ -693,6 +695,7 @@ export default async function QuestionPage({
               <li key={r.id}>
                 <Link
                   href={questionPagePath(r)}
+                  prefetch={false}
                   className="group block rounded-2xl border border-border bg-card p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
                 >
                   <div className="mb-1.5 flex items-center gap-1.5 text-[11px] text-muted-foreground">
@@ -724,6 +727,7 @@ export default async function QuestionPage({
               <li key={p.slug}>
                 <Link
                   href={`/blog/${p.slug}`}
+                  prefetch={false}
                   className="group flex items-start justify-between gap-3 rounded-2xl border border-border bg-card p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
                 >
                   <div className="min-w-0">

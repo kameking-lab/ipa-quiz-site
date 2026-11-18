@@ -6,6 +6,7 @@ import { Cloud, CloudUpload, CheckCircle2 } from "lucide-react";
 import { syncAll } from "@/lib/sync";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { readOwnership, readSyncAccount } from "@/lib/sync/ownership";
+import { useObservedSyncAccount } from "@/lib/sync/session-observation";
 import {nativeClient} from "@/mobile/shared/contracts";
 import { startPaceAutoSync } from "@/lib/study-plan/pace-sync";
 
@@ -15,9 +16,10 @@ interface Toast { message: string; tone: "info" | "success" }
 /** Optional browser-owned data only. Failed attempts remain eligible for retry. */
 export function CloudSyncAutoSync() {
   const pathname = usePathname();
+  const readAccount = useObservedSyncAccount() ?? readSyncAccount;
   const [phase, setPhase] = React.useState<Phase>("idle");
   const [toast, setToast] = React.useState<Toast | null>(null);
-  React.useEffect(() => startPaceAutoSync(), []);
+  React.useEffect(() => startPaceAutoSync(readAccount), [readAccount]);
 
   React.useEffect(() => {
     let cancelled = false;
@@ -29,8 +31,14 @@ export function CloudSyncAutoSync() {
       let leaseKey: string | undefined;
       let lease: string | undefined;
       try {
-        const account = await readSyncAccount();
-        if(account&&nativeClient())await (await import("@/mobile/src/portable-storage")).restoreStudy(account.id);
+        const account = await readAccount();
+        if (cancelled) return;
+        if (account && nativeClient()) {
+          const { restoreStudy } = await import("@/mobile/src/portable-storage");
+          const currentAccount = await readSyncAccount();
+          if (cancelled || currentAccount?.id !== account.id) return;
+          await restoreStudy(account.id);
+        }
         if (!account || cancelled || readOwnership(account.id) !== "matching") return;
         const suffix = encodeURIComponent(account.id);
         const successKey = LS_KEYS.syncSessionSuccessPrefix + suffix;
@@ -85,7 +93,7 @@ export function CloudSyncAutoSync() {
       window.removeEventListener("focus", retry);
       window.removeEventListener("online", retry);
     };
-  }, []);
+  }, [readAccount]);
 
   if (pathname === "/quiz" || pathname?.startsWith("/q/") || (phase === "idle" && !toast)) return null;
   return (

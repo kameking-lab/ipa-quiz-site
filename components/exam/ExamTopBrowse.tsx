@@ -13,7 +13,7 @@ export function ExamTopBrowse({ exam, years, categories }: {
 }) {
   const yearLink = (item: YearItem) => (
     <li key={item.key}>
-      <Link href={`/${exam}/${item.key}`} className={linkClass}>
+      <Link prefetch={false} href={`/${exam}/${item.key}`} className={linkClass}>
         <span className="min-w-0 font-medium">{item.label}<span className="mt-1 block text-xs font-normal text-muted-foreground">{item.coverage}{item.missingSpecialist ? "（午前IIは未収録）" : ""}</span></span>
         <span className="shrink-0 text-xs text-muted-foreground">{item.count}問 →</span>
       </Link>
@@ -21,7 +21,7 @@ export function ExamTopBrowse({ exam, years, categories }: {
   );
   const categoryLink = (item: CategoryItem) => (
     <li key={item.category}>
-      <Link href={`/${exam}/topic/${encodeURIComponent(item.category)}`} className={linkClass}>
+      <Link prefetch={false} href={`/${exam}/topic/${encodeURIComponent(item.category)}`} className={linkClass}>
         <span className="min-w-0 font-medium">{item.category}</span>
         <span className="shrink-0 text-xs text-muted-foreground">{item.count}問 →</span>
       </Link>

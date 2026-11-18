@@ -116,6 +116,18 @@ describe("build-versioned service worker", () => {
     expect(await (await w.request(path, mode))?.text()).toBe("new deployment");
   });
 
+  it("reuses versioned images and revalidates mutable image URLs", async () => {
+    const w = worker();
+    const room = "/_next/static/immutable/media/study-room-white.af2e9bb1.webp";
+    const logo = "/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fchihuahua-icon-192.70c088d0.png&w=48&q=75";
+    const mutable = "/_next/image?url=%2Fbrand%2Fchihuahua-icon-192.png&w=48&q=75";
+    for (const path of [room, logo, mutable]) await w.request(path, "cors");
+    w.fetch.mockResolvedValue(new Response("updated"));
+    for (const path of [room, logo]) expect(await (await w.request(path, "cors"))?.text()).toBe("new HTML");
+    expect(await (await w.request(mutable, "cors"))?.text()).toBe("updated");
+    expect(w.fetch).toHaveBeenCalledTimes(4);
+  });
+
   it("keeps HTTP errors online, never substitutes an offline HTML shell for RSC and bypasses API/SW", async () => {
     const w = worker();
     w.fetch.mockResolvedValue(new Response("unavailable", { status: 503 }));

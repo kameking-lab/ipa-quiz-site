@@ -22,7 +22,7 @@ export function FirstPracticeEntry({ exam }: { exam: ExamEntryCode }) {
           <a key={href} href={href} className="inline-flex min-h-11 items-center justify-center rounded-lg border border-border px-2 py-2 text-center font-medium hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">{label}</a>
         ))}
       </nav>
-      {advanced && <Link href={`/quiz?mode=random&exam=${exam}&session=am1`} className="inline-flex min-h-11 items-center text-sm underline underline-offset-4">科目A-1（旧午前I・共通）を解く →</Link>}
+      {advanced && <Link prefetch={false} href={`/quiz?mode=random&exam=${exam}&session=am1`} className="inline-flex min-h-11 items-center text-sm underline underline-offset-4">科目A-1（旧午前I・共通）を解く →</Link>}
     </section>
   );
 }

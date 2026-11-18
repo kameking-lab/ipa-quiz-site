@@ -144,6 +144,7 @@ export default async function YearModePage({
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {items.map((item, idx) => (
               <Link
+                prefetch={false}
                 key={`${item.year}-${item.season}-${item.session}`}
                 href={`/quiz?mode=year&exam=${exam}&year=${item.year}&season=${item.season}&session=${item.session}&order=1`}
                 className="group relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"

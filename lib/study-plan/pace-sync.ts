@@ -6,13 +6,21 @@ import type { StudyPlanSyncEntry } from "@/lib/sync/types";
 import { getPaceSyncEntries, mergePaceSyncEntries } from "./pace-storage";
 
 /** Auto-sync only this feature's data. Does not opt older history/bookmarks into cloud sync. */
-export async function syncPacePlans(): Promise<"ok" | "local-only" | "retry"> {
+export async function syncPacePlans(readAccount = readSyncAccount): Promise<"ok" | "local-only" | "retry"> {
   try {
-    const account = await readSyncAccount();
+    const account = await readAccount();
     if (!account) return "local-only";
     const owner = localStorage.getItem(LS_KEYS.paceSyncOwner);
     if ((owner && owner !== account.id) || readOwnership(account.id) === "different") return "local-only";
-    if (!owner) localStorage.setItem(LS_KEYS.paceSyncOwner, account.id);
+    if (!owner) {
+      if (readAccount !== readSyncAccount) {
+        // A shared display lookup cannot claim an unowned plan after an account switch.
+        if ((await readSyncAccount())?.id !== account.id) return "local-only";
+        const currentOwner = localStorage.getItem(LS_KEYS.paceSyncOwner);
+        if ((currentOwner && currentOwner !== account.id) || readOwnership(account.id) === "different") return "local-only";
+      }
+      localStorage.setItem(LS_KEYS.paceSyncOwner, account.id);
+    }
     const stillOwned = async () => localStorage.getItem(LS_KEYS.paceSyncOwner) === account.id && readOwnership(account.id) !== "different" &&
       (await readSyncAccount())?.id === account.id;
     async function exchange(entries: StudyPlanSyncEntry[]): Promise<StudyPlanSyncEntry[]> {
@@ -40,7 +48,7 @@ export async function syncPacePlans(): Promise<"ok" | "local-only" | "retry"> {
   } catch { return "retry"; }
 }
 /** No toast, consent checkbox, or additional button. Offline writes stay local. */
-export function startPaceAutoSync(): () => void {
+export function startPaceAutoSync(readAccount = readSyncAccount): () => void {
   let timer: ReturnType<typeof setTimeout> | undefined;
   let running = false, disposed = false, dirty = false;
   const schedule = () => {
@@ -51,7 +59,7 @@ export function startPaceAutoSync(): () => void {
   const run = async () => {
     if (disposed || running || navigator.onLine === false) return;
     running = true; dirty = false;
-    try { await syncPacePlans(); } finally { running = false; if (dirty) schedule(); }
+    try { await syncPacePlans(readAccount); } finally { running = false; if (dirty) schedule(); }
   };
   window.addEventListener("study-plan:changed", schedule);
   window.addEventListener("focus", schedule);

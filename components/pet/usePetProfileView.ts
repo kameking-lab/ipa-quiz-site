@@ -4,11 +4,13 @@ import type { PetProfileDocument } from "@/lib/pet/v1/profile";
 import type { PetLearningResult } from "@/lib/pet/v1/learning";
 import type { PetOwnerLease } from "@/lib/pet/v1/runtime";
 import { LS_KEYS } from "@/lib/storage/keys";
+import { SYNC_SESSION_CHANGED, useObservedSyncAccount } from "@/lib/sync/session-observation";
 
 export interface PetCommittedDetail { ownerScope: string; qualificationId: string; questionId: string; eventId: string; occurredAt: number; result: PetLearningResult }
 export interface PetProfileView { status: "loading" | "ready" | "unavailable"; document: PetProfileDocument | null }
 /** Read-only views never migrate, reward, replay or write a profile. */
 export function usePetProfileView(onFresh: (event: PetCommittedDetail) => void, supplied?: PetProfileView) {
+  const readAccount = useObservedSyncAccount();
   const [view, setView] = useState<PetProfileView>({ status: "loading", document: null });
   const shared = supplied !== undefined;
   const fresh = useRef(onFresh); useEffect(() => { fresh.current = onFresh; }, [onFresh]);
@@ -24,7 +26,7 @@ export function usePetProfileView(onFresh: (event: PetCommittedDetail) => void, 
       setView({ status: "loading", document: null });
       try {
         const petRuntime = await runtime;
-        const lease = await petRuntime.preparePetOwner(() => !disposed && epoch === generation);
+        const lease = await petRuntime.preparePetOwner(() => !disposed && epoch === generation, readAccount ?? undefined);
         if (!lease || !lease.isCurrent()) { if (!disposed && epoch === generation) setView({ status: "unavailable", document: null }); return; }
         owner = lease;
         const loaded = await petRuntime.browserPetProfiles().load(lease, Intl.DateTimeFormat().resolvedOptions().timeZone);
@@ -61,9 +63,12 @@ export function usePetProfileView(onFresh: (event: PetCommittedDetail) => void, 
     window.addEventListener("pet-v1:owner-changed", refresh);
     window.addEventListener("storage", storage);
     window.addEventListener("focus", refresh);
+    window.addEventListener(SYNC_SESSION_CHANGED, refresh);
+    window.addEventListener("mobile:entitlement-changed", refresh);
     document.addEventListener("visibilitychange", visible);
     return () => { disposed = true; generation++; window.removeEventListener("pet-v1:committed", committed); window.removeEventListener("pet-v1:updated", updated); window.removeEventListener("pet-v1:owner-changed", refresh);
-      window.removeEventListener("storage", storage); window.removeEventListener("focus", refresh); document.removeEventListener("visibilitychange", visible); };
-  }, [shared]);
+      window.removeEventListener("storage", storage); window.removeEventListener("focus", refresh); document.removeEventListener("visibilitychange", visible);
+      window.removeEventListener(SYNC_SESSION_CHANGED, refresh); window.removeEventListener("mobile:entitlement-changed", refresh); };
+  }, [shared, readAccount]);
   return supplied ?? view;
 }

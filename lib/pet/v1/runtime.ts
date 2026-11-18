@@ -41,12 +41,12 @@ function readPetAccount() {
   return request;
 }
 /** Session truth comes from auth, never the last cloud-sync owner alone. */
-export async function preparePetOwner(isCurrent: () => boolean): Promise<PetOwnerLease | null> {
+export async function preparePetOwner(isCurrent: () => boolean, readAccount = readPetAccount): Promise<PetOwnerLease | null> {
   try {
     const localResolver = petLocalOwnerResolver();
     if (localResolver) return await localResolver(isCurrent);
     const token = localStorage.getItem(LS_KEYS.syncLocalOwner);
-    const account = await readPetAccount();
+    const account = await readAccount();
     const ownerScope = account ? `user:${account.id}` : "guest";
     const current = () => isCurrent() && localStorage.getItem(LS_KEYS.syncLocalOwner) === token;
     if (!current()) return null;
