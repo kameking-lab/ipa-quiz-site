@@ -5,6 +5,7 @@ import { monthlyRuntime } from "@/lib/billing/subscription/runtime";
 import { MonthlyConditions, MonthlyPlanLink, MonthlyPrice } from "@/components/billing/MonthlyOffer";
 import { ManageSubscriptionButton } from "./ManageSubscriptionButton";
 import { BillingPageBeacon } from "./BillingPageBeacon";
+import { MonthlyMascot } from "./MonthlyMascot";
 import { revenueCatAccess } from "@/mobile/server/revenuecat";
 
 /** One button and one line of terms; the full conditions live on /billing/terms. */
@@ -23,9 +24,14 @@ export default async function MonthlyPage({ returnTo }: { returnTo?: string } = 
   return <>
     <BillingPageBeacon />
     <section aria-labelledby="monthly-price" className="mx-auto w-full max-w-sm space-y-6 py-4 sm:py-8">
-      <h1 id="monthly-price" className="text-xl font-bold">月額プラン</h1>
       <div className="space-y-4">
-        <MonthlyPrice />
+        <div className="flex items-center justify-between gap-3">
+          <div className="space-y-4">
+            <h1 id="monthly-price" className="text-xl font-bold">月額プラン</h1>
+            <MonthlyPrice />
+          </div>
+          <MonthlyMascot />
+        </div>
         <p>演習は無料で1日{MONTHLY_PUBLIC_OFFER.freeDaily}問、月額で回数無制限。</p>
       </div>
       {hasContract ? <p role="status" className="text-sm">契約済みです（支払確認中を含む）。</p>
