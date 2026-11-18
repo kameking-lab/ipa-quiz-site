@@ -14,7 +14,7 @@ import { frequentExamKeys, japanDate, upcomingExamPicks } from "@/lib/home/featu
 import { readLastQuestion } from "@/lib/storage/last-question";
 import { listExamLearningSummaries } from "@/lib/exam-library-session";
 import { LS_KEYS } from "@/lib/storage/keys";
-import { qualificationStudyArt } from "@/lib/home/study-room";
+import { qualificationRunArt, qualificationStudyArt } from "@/lib/home/study-room";
 import { passingLineForExam } from "@/lib/study-plan/policy";
 import { qualificationIdsForExam } from "@/lib/study-plan/schedule";
 import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
@@ -136,7 +136,7 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false }: {
               : <><h1 className="text-xl font-bold">次の一歩を、いっしょに。</h1><Button className="mt-6 min-h-12 w-full" onClick={() => setSheet("create")}>学習計画を作成</Button></>}
           </div> : <>
             <h1 className={styles.countdown} aria-label={pace.daysRemaining === null ? "受験日未設定" : undefined}>試験まで <span>{pace.daysRemaining ?? "—"}</span> 日</h1>
-            <PaceTrack plan={plan} percent={pace.percent} target={pace.idealPercent} expanded={sheet === "detail"} onOpen={() => setSheet("detail")} />
+            <PaceTrack plan={plan} runArt={qualificationRunArt(plan.exam, planDomain?.id)} percent={pace.percent} target={pace.idealPercent} expanded={sheet === "detail"} onOpen={() => setSheet("detail")} />
             <div className="mt-1 flex items-end justify-between gap-3"><p className={`${styles.judgment} rounded-full px-3 py-1 font-semibold ${pace.judgment === "behind" ? "bg-amber-100 text-amber-900 dark:bg-amber-950 dark:text-amber-100" : "bg-emerald-100 text-emerald-900 dark:bg-emerald-950 dark:text-emerald-100"}`}>{pace.judgment === "ahead" ? "いいペース" : pace.judgment === "behind" ? "少し遅れ" : pace.judgment === "unscheduled" ? "日程未設定" : "予定どおり"}</p><p className={styles.percent}><span className="sr-only">進み具合</span>{Math.round(pace.percent)}<span className="ml-1 text-base font-normal text-muted-foreground">%</span></p></div>
             {pace.requiredQuestionsPerDay !== null && <p className="mt-4 text-sm font-medium">{pace.requiredQuestionsPerDay === 0 ? "すべての問題を仕上げました" : <>1日 <strong className="text-lg tabular-nums">{pace.requiredQuestionsPerDay}</strong> 問</>}</p>}
             <Button asChild className={`${styles.primary} mt-5 w-full text-base`}><Link href={`/quiz/today?plan=${encodeURIComponent(plan.id)}`}>今日の問題を解く <span aria-hidden="true">→</span></Link></Button>

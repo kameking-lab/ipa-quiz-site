@@ -1,6 +1,7 @@
 import { canonicalPresenceExam, type StudyPresenceSnapshot } from "@/lib/study-presence";
 import catalog from "./study-room-mascots.generated.json";
 import variety from "./study-room-variety.json";
+import type { HomeDomainId } from "./home-directory";
 
 /** Maximum illustrations, not a room capacity. */
 export const STUDY_ROOM_VISIBLE_LIMIT = 120;
@@ -117,6 +118,21 @@ export function roomCharacter(exam: string): string {
   const field = awayCatalog.away?.examFields[code];
   return field ? `field-${field}` : code;
 }
+
+// Newly added exams can already be selected in a plan before the room has custom art.
+const runningField: Record<HomeDomainId, string> = {
+  it: "it-basics", safety: "safety", electrical: "electrical", construction: "civil",
+  money: "finance", "real-estate": "real-estate", legal: "legal", welfare: "welfare", automotive: "mechanical",
+};
+
+export function qualificationRunArt(exam: string, domain?: HomeDomainId): string {
+  const code = canonicalPresenceExam(exam) ?? exam;
+  const wardrobe = awayCatalog.away;
+  const field = wardrobe && Object.hasOwn(wardrobe.examFields, code) ? wardrobe.examFields[code] : domain && runningField[domain];
+  const outfit = wardrobe && Object.hasOwn(wardrobe.exams, code) ? code : field ? `field-${field}` : "generic";
+  return `/images/home/pace-run/${outfit}.webp`;
+}
+
 export function idleArt(exam: string, idle: IdleVariant): string | null {
   return characterIdleArt(roomCharacter(exam), idle);
 }

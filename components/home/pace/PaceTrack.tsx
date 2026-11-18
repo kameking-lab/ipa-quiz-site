@@ -1,10 +1,66 @@
+import { useLayoutEffect, useRef, useState } from "react";
 import { passingLineForExam } from "@/lib/study-plan/policy";
-import { qualificationStudyArt } from "@/lib/home/study-room";
 import type { PacePlan } from "@/lib/study-plan/pace";
 
+const START_X = 30;
+const FRAME_SIZE = 84;
+const STRIDE_MS = 320;
+
+function RunningChihuahua({ src, destination }: { src: string; destination: number }) {
+  const runner = useRef<SVGGElement>(null);
+  const strip = useRef<SVGImageElement>(null);
+  const position = useRef(START_X);
+  const [loaded, setLoaded] = useState(false);
+
+  useLayoutEffect(() => {
+    const dog = runner.current;
+    const sprite = strip.current;
+    if (!dog || !sprite) return;
+    const motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const from = position.current;
+    const distance = destination - from;
+    const duration = Math.min(1800, Math.max(STRIDE_MS, distance * 7));
+    let request = 0;
+    const draw = (x: number, lift: number, frame: number) => {
+      position.current = x;
+      dog.setAttribute("transform", `translate(${x} ${-lift})`);
+      sprite.setAttribute("x", String(-frame * FRAME_SIZE));
+    };
+    function finish() {
+      cancelAnimationFrame(request);
+      draw(destination, 0, 0);
+    }
+    if (motion.matches || distance <= 0) {
+      finish();
+      return;
+    }
+    if (!loaded) return;
+    const start = performance.now();
+    function advance(now: number) {
+      const elapsed = Math.max(0, now - start);
+      if (elapsed >= duration) return finish();
+      const stride = (elapsed % STRIDE_MS) / STRIDE_MS;
+      draw(from + distance * elapsed / duration, 2 * Math.sin(Math.PI * stride), Math.floor(stride * 4));
+      request = requestAnimationFrame(advance);
+    }
+    request = requestAnimationFrame(advance);
+    motion.addEventListener("change", finish);
+    return () => {
+      cancelAnimationFrame(request);
+      motion.removeEventListener("change", finish);
+    };
+  }, [loaded, destination]);
+
+  return <g ref={runner} transform={`translate(${START_X} 0)`} aria-hidden="true">
+    <svg x={-FRAME_SIZE / 2} y="51" width={FRAME_SIZE} height={FRAME_SIZE} className="overflow-hidden">
+      <image ref={strip} href={src} width={FRAME_SIZE * 4} height={FRAME_SIZE} x="0" onLoad={() => setLoaded(true)} />
+    </svg>
+  </g>;
+}
+
 // SVG coordinates allow percentage positions without inline style or generated Tailwind classes.
-export function PaceTrack({ plan, percent, target, onOpen, expanded = false }: { plan: PacePlan; percent: number; target: number | null; onOpen: () => void; expanded?: boolean }) {
-  const x = (value: number) => 30 + Math.max(0, Math.min(100, value)) * 2.6;
+export function PaceTrack({ plan, runArt, percent, target, onOpen, expanded = false }: { plan: PacePlan; runArt: string; percent: number; target: number | null; onOpen: () => void; expanded?: boolean }) {
+  const x = (value: number) => START_X + Math.max(0, Math.min(100, value)) * 2.6;
   const passing = passingLineForExam(plan.exam);
   const start = plan.registration?.start;
   const deadline = plan.registration?.deadline;
@@ -18,7 +74,7 @@ export function PaceTrack({ plan, percent, target, onOpen, expanded = false }: {
       <line x1="30" y1="128" x2={x(percent)} y2="128" strokeWidth="5" strokeLinecap="round" className="stroke-primary" />
       {!passing.isDefault && passing.sourceUrl && <g><line x1={x(passing.percent)} x2={x(passing.percent)} y1="123" y2="135" className="stroke-muted-foreground" /><text x={x(passing.percent)} y="151" fontSize="10" textAnchor="middle" className="fill-muted-foreground">{passing.conditions?.includes("IRT") ? "基準点" : "合格ライン"}</text></g>}
       {target !== null && <g><line x1={x(target)} x2={x(target)} y1="35" y2="125" strokeDasharray="3 4" className="stroke-amber-500" /><path d={`M${x(target)} 35 l17 0 -4 7 4 7 -17 0z`} className="fill-amber-400" /><text x={Math.max(58, Math.min(262, x(target)))} y="30" textAnchor="middle" fontSize="11" className="fill-muted-foreground">今日の目標</text></g>}
-      <g className="origin-center [transform-box:fill-box] motion-safe:animate-[reward-rest_1.8s_ease-in-out_infinite] motion-reduce:animate-none"><image href={qualificationStudyArt(plan.exam)} onError={e => { if (e.currentTarget.getAttribute("href") !== "/mascot/chihuahua-study.webp") e.currentTarget.setAttribute("href", "/mascot/chihuahua-study.webp"); }} x={x(percent) - 42} y="51" width="84" height="84" /></g>
+      <RunningChihuahua key={`${plan.id}/${runArt}`} src={runArt} destination={x(percent)} />
       <path d="M290 128V100m0 0c6-5 12 5 18 0v14c-6 5-12-5-18 0" fill="none" strokeWidth="2" className="stroke-primary" />
       <text x="30" y="174" fontSize="11" className="fill-muted-foreground">スタート</text><text x="290" y="174" textAnchor="end" fontSize="11" className="fill-muted-foreground">試験日</text>
     </svg>
