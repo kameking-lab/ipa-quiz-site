@@ -107,6 +107,11 @@ const release = (reservationId: string) => cancelNative(request("mobile/purchase
 const attemptId = "00000000-0000-4000-8000-000000000077";
 const purchaseBody = (method: string, body: object, origin = "http://localhost:3338") => new Request(
   "http://localhost:3338/api/mobile/purchase-check", { method, headers: { origin }, body: JSON.stringify(body) });
+const prepareNative = (id = attemptId) => nativeCheck(purchaseBody("POST", { attemptId: id, confirmStoreKit: true }));
+const recoverAttempt = () => recoverNative(purchaseBody("PATCH", { attemptId }));
+const recoverReservation = (reservationId: string) => recoverNative(purchaseBody("PATCH", { reservationId }));
+const transitionNative = (reservationId: string, action: "start" | "approval") => recoverNative(purchaseBody("PATCH", { reservationId, action }));
+const reservationInDb = () => store.transaction("alice", config.mode, config.sourceInstance, async a => a.appStorePurchase, true);
 async function reserveAndRelease() {
   const response = await nativeCheck(nativeRequest());
   expect(response.status).toBe(200);
@@ -119,7 +124,8 @@ it.each(["stripe", "appStore"])("HTTP: both purchase entry points stop before a 
     const response = await route(request(path));
     expect(response.status).toBe(409); expect(await response.json()).toEqual({ error: "duplicate_purchase_google" });
   }
-  expect((await pg.query("SELECT user_id FROM billing_subscription_account WHERE user_id='alice'")).rows).toEqual([]);
+  expect(await reservationInDb()).toBeUndefined();
+  expect(provider.checkout).not.toHaveBeenCalled();
 });
 it("HTTP: a different email can reserve Stripe Checkout and pass the StoreKit check", async () => {
   await appPaid(); await pg.query('UPDATE "User" SET email=$1 WHERE id=$2', ["different@example.invalid", "bob"]);
@@ -142,7 +148,8 @@ it.each(["stripe", "appStore"])("HTTP: a legacy login is blocked only while a sa
     expect(response.status).toBe(409);
     expect(await response.json()).toEqual({ error: "purchase_email_unverified" });
   }
-  expect((await pg.query("SELECT user_id FROM billing_subscription_account WHERE user_id='alice'")).rows).toEqual([]);
+  expect(await reservationInDb()).toBeUndefined();
+  expect(provider.checkout).not.toHaveBeenCalled();
 });
 it("HTTP: preserves the existing own-account paid rejection and CSRF protection", async () => {
   await stripePaid(); wiring.user = "bob";
@@ -361,23 +368,148 @@ it.each([null, "active", "processing"] as const)("HTTP: checks legacy true again
   expect((await recoverNative(purchaseBody("PATCH", { legacy: true }, "https://untrusted.invalid"))).status).toBe(403);
 });
 
-it("HTTP: recovery of a lost POST response releases only its own reservation after a confirmed absence", async () => {
-  expect((await nativeCheck(purchaseBody("POST", { attemptId }))).status).toBe(200);
-  const recovery = () => recoverNative(purchaseBody("PATCH", { attemptId }));
-  wiring.appStatus.mockRejectedValueOnce(new BillingError("mobile_verification_unavailable", 503)).mockResolvedValueOnce("processing");
-  expect((await recovery()).status).toBe(503);
-  expect(await (await recovery()).json()).toEqual({ state: "processing" });
-  expect((await checkout(webRequest())).status).toBe(409);
-  expect(await (await recoverNative(purchaseBody("PATCH", { legacy: true }))).json()).toEqual({ state: "processing" });
-  expect(await (await recovery()).json()).toEqual({ state: null });
+it("HTTP: recovery after a lost preparation response fences StoreKit and cannot release a newer reservation", async () => {
+  const { reservation } = await (await prepareNative()).json();
+  expect(reservation.requiresStart).toBe(true);
+  expect(await (await recoverReservation(reservation.id)).json()).toEqual({ state: "processing", phase: "ready" });
+  expect(await (await recoverAttempt()).json()).toEqual({ state: null });
+  expect((await transitionNative(reservation.id, "start")).status).toBe(409);
   const newer = await nativeCheck(nativeRequest());
   expect(newer.status).toBe(200);
-  expect(await (await recovery()).json()).toEqual({ state: "processing" });
+  expect(await (await recoverAttempt()).json()).toEqual({ state: "processing" });
   expect((await checkout(webRequest())).status).toBe(409);
 });
 
-it("HTTP: succeeds immediately when a previous version saved only the matching expiration", async () => {
-  const { reservation } = await (await nativeCheck(nativeRequest())).json();
-  expect(await (await recoverNative(purchaseBody("PATCH", { expiresAt: reservation.expiresAt }))).json()).toEqual({ state: null });
+it("HTTP: an older expiry-only marker preserves an ambiguous purchase for at most 30 minutes", async () => {
+  const expiresAt = new Date(now.getTime() + 25 * 3600000).toISOString();
+  await store.transaction("alice", config.mode, config.sourceInstance, async a => {
+    a.appStorePurchase = { id: attemptId, expiresAt };
+  });
+  const recover = () => recoverNative(purchaseBody("PATCH", { expiresAt }));
+  expect(await (await recover()).json()).toEqual({ state: "processing" });
+  wiring.user = "bob";
+  expect((await checkout(webRequest())).status).toBe(409);
+  now = new Date(now.getTime() + 30 * 60000);
+  wiring.user = "alice";
+  expect(await (await recover()).json()).toEqual({ state: null });
+  wiring.user = "bob";
+  expect((await checkout(webRequest())).status).toBe(200);
+});
+
+it("HTTP: recovery outruns the initial duplicate lookup and a late POST cannot recreate its reservation", async () => {
+  const entered = Promise.withResolvers<void>(), continueDuplicateCheck = Promise.withResolvers<void>();
+  wiring.check.mockImplementationOnce(async () => {
+    entered.resolve();
+    await continueDuplicateCheck.promise;
+  });
+  const original = prepareNative();
+  await entered.promise;
+  try {
+    expect(await (await recoverNative(purchaseBody("PATCH", { legacy: true }))).json()).toEqual({ state: "processing", phase: "preparing" });
+    wiring.user = "bob";
+    expect((await checkout(webRequest())).status).toBe(409);
+    wiring.user = "alice";
+    expect(await (await recoverAttempt()).json()).toEqual({ state: null });
+    await reserveAndRelease();
+    wiring.user = "bob";
+    expect((await checkout(webRequest())).status).toBe(200);
+  } finally { continueDuplicateCheck.resolve(); }
+  expect((await original).status).toBe(409);
+  expect(await reservationInDb()).toBeUndefined();
+});
+
+it("HTTP: recovery before POST registration records a fence for that attempt only", async () => {
+  expect(await (await recoverAttempt()).json()).toEqual({ state: null });
+  expect((await prepareNative()).status).toBe(409);
+  await reserveAndRelease();
+  wiring.user = "bob";
+  expect((await checkout(webRequest())).status).toBe(200);
+});
+
+it("HTTP: an abandoned preparation keeps Web blocked while Stripe is closing an existing Checkout", async () => {
+  expect((await checkout(webRequest())).status).toBe(200);
+  const entered = Promise.withResolvers<void>(), continueStripe = Promise.withResolvers<void>();
+  vi.mocked(provider.expireCheckout).mockImplementationOnce(async () => {
+    entered.resolve();
+    await continueStripe.promise;
+  });
+  wiring.user = "bob";
+  const original = prepareNative();
+  await entered.promise;
+  try {
+    expect(await (await recoverAttempt()).json()).toEqual({ state: "processing", phase: "closing_checkout" });
+    wiring.user = "alice";
+    expect((await checkout(webRequest())).status).toBe(409);
+  } finally { continueStripe.resolve(); }
+  expect((await original).status).toBe(409);
+  wiring.user = "bob";
+  expect(await (await recoverAttempt()).json()).toEqual({ state: null });
+  vi.mocked(provider.checkoutSession).mockResolvedValueOnce({ id: "cs_test_monthly", status: "expired" });
+  await reserveAndRelease();
+});
+
+it("HTTP: StoreKit started, an absent RevenueCat result keeps both channels blocked for 30 minutes", async () => {
+  const { reservation } = await (await prepareNative()).json();
+  expect((await transitionNative(reservation.id, "start")).status).toBe(200);
+  const expiry = now.getTime() + 30 * 60000;
+  expect(await reservationInDb()).toMatchObject({ phase: "uncertain", expiresAt: new Date(expiry).toISOString() });
+  wiring.appStatus.mockRejectedValueOnce(new BillingError("mobile_verification_unavailable", 503));
+  expect((await recoverReservation(reservation.id)).status).toBe(503);
+  expect(await (await recoverReservation(reservation.id)).json()).toEqual({ state: "processing" });
+  expect((await nativeCheck(nativeRequest())).status).toBe(409);
+  wiring.user = "bob";
+  now = new Date(expiry - 1000);
+  expect((await checkout(webRequest())).status).toBe(409);
+  expect(provider.checkout).not.toHaveBeenCalled();
+  now = new Date(expiry);
+  await reserveAndRelease();
+  expect((await checkout(webRequest())).status).toBe(200);
+});
+
+it("HTTP: a replayed cancellation for A cannot release B, which both channels can retry after its own cancellation", async () => {
+  const { reservation: a } = await (await nativeCheck(nativeRequest())).json();
+  expect((await release(a.id)).status).toBe(200);
+  const { reservation: b } = await (await nativeCheck(nativeRequest())).json();
+  expect((await release(a.id)).status).toBe(200);
+  expect(await reservationInDb()).toMatchObject({ id: b.id });
+  wiring.user = "bob";
+  expect((await checkout(webRequest())).status).toBe(409);
+  expect((await nativeCheck(nativeRequest())).status).toBe(409);
+  wiring.user = "alice";
+  expect((await release(b.id)).status).toBe(200);
+  await reserveAndRelease();
+  wiring.user = "bob";
+  expect((await checkout(webRequest())).status).toBe(200);
+});
+
+it.each(["uncertain", "approval"] as const)("HTTP: accepts a late verified App Store transaction during %s", async phase => {
+  const { reservation } = await (await prepareNative()).json();
+  expect((await transitionNative(reservation.id, "start")).status).toBe(200);
+  if (phase === "approval") expect(await (await transitionNative(reservation.id, "approval")).json()).toEqual({ state: "processing" });
+  now = new Date(now.getTime() + 20 * 60000);
+  wiring.appStatus.mockResolvedValue("active");
+  await pg.query('INSERT INTO "MobileRevenueCatAccount" ("userId","appUserId","sandboxExpiresAt") VALUES ($1,$2,$3)', ["alice", "opaque", new Date(Date.now()+3600000)]);
+  expect(await (await recoverReservation(reservation.id)).json()).toEqual({ state: "active" });
+  expect(await reservationInDb()).toBeUndefined();
+  wiring.user = "bob";
+  expect((await checkout(webRequest())).status).toBe(409);
+  expect((await nativeCheck(nativeRequest())).status).toBe(409);
+  expect(provider.checkout).not.toHaveBeenCalled();
+});
+
+it("HTTP: acknowledged approval stays pending beyond 30 minutes and cannot extend past 24 hours", async () => {
+  const { reservation } = await (await prepareNative()).json();
+  expect((await transitionNative(reservation.id, "start")).status).toBe(200);
+  const expiry = now.getTime() + 24 * 3600000;
+  expect(await (await transitionNative(reservation.id, "approval")).json()).toEqual({ state: "processing" });
+  now = new Date(expiry - 1000);
+  expect(await (await transitionNative(reservation.id, "approval")).json()).toEqual({ state: "processing" });
+  expect(await reservationInDb()).toMatchObject({ phase: "approval", expiresAt: new Date(expiry).toISOString() });
+  wiring.user = "bob";
+  expect((await checkout(webRequest())).status).toBe(409);
+  now = new Date(expiry);
+  wiring.user = "alice";
+  expect(await (await transitionNative(reservation.id, "approval")).json()).toEqual({ state: null });
+  wiring.user = "bob";
   expect((await checkout(webRequest())).status).toBe(200);
 });

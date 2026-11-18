@@ -9,10 +9,11 @@ import { Preferences } from "@capacitor/preferences";
 import Link from "next/link";
 import type { MobileConfiguration, MobileEntitlement, CatalogEntry } from "../shared/contracts";
 import { downloads, type DownloadIndex } from "./downloads";
-import { Membership, deviceMembership, purchaseError, nativePublicSdkKey, describeStoreError, StoreError, checkNativePurchase } from "./purchases";
-import { clearPendingPurchase, fallbackPurchaseExpiry, reconcilePendingPurchase, savePendingPurchase, type PendingPurchase } from "./pending-purchase";
+import { Membership, deviceMembership, purchaseError, nativePublicSdkKey, describeStoreError, StoreError, checkNativePurchase, startNativePurchase } from "./purchases";
+import { fallbackPurchaseExpiry, reconcilePendingPurchase, savePendingPurchase, type PendingPurchase } from "./pending-purchase";
 import { beginLogin, observeLogin } from "./login";
 import { PLAN_OFFER } from "@/lib/billing/plan-offer";
+import { PURCHASE_MESSAGES } from "@/lib/billing/purchase-messages";
 import { sendConversion } from "@/lib/billing/conversion-client";
 import { observeReminderTap, setReminder } from "./platform";
 import { persistStudy, restoreStudy } from "./portable-storage";
@@ -242,33 +243,42 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     if(!selected)throw new StoreError("商品情報を取得できないため購入を開始できません。表示中の理由をご確認ください。","no_offer");
     const userId = r.entitlement.userId;
     let pending: PendingPurchase | undefined;
+    const writePending = async (next: PendingPurchase) => {
+      const marker = { ...next, revision: (pending?.revision ?? 0) + 1 };
+      const saved = await savePendingPurchase(userId, pending, marker);
+      if (saved) pending = marker;
+      return saved;
+    };
     let readyForStoreKit = false;
     storeKitRunning.current = true;
     try {
       await membership.buy(r.configuration, r.entitlement, selected, async () => {
-        pending = { state: "recheck", attemptId: crypto.randomUUID() };
-        await savePendingPurchase(userId, pending);
+        const preparing: PendingPurchase = { state: "preparing", attemptId: crypto.randomUUID() };
+        const stale = () => new StoreError(PURCHASE_MESSAGES.app_store_purchase_pending, "purchase_check");
+        if (!await writePending(preparing)) throw stale();
         setPurchasePending(true);
-        const reservation = await checkNativePurchase(fetch, pending.attemptId);
+        const reservation = await checkNativePurchase(fetch, preparing.attemptId);
         if (reservation) {
-          pending.reservation = reservation;
-          await savePendingPurchase(userId, pending);
+          if (!await writePending({ ...preparing, reservation })) throw stale();
+          if (reservation.requiresStart) await startNativePurchase(reservation.id);
         }
+        if (!await writePending({ ...preparing, reservation: reservation ?? undefined, state: "recheck", expiresAt: fallbackPurchaseExpiry() })) throw stale();
         readyForStoreKit = true;
       });
-      if (pending) await savePendingPurchase(userId, { ...pending, state: "completed", expiresAt: fallbackPurchaseExpiry() });
+      if (pending) await writePending({ ...pending, state: "completed" });
     } catch (error) {
       const outcome = purchaseError(error);
       if (pending?.reservation && (outcome.rejected || !readyForStoreKit)) {
-        await savePendingPurchase(userId, { ...pending, state: "release" });
-        setPurchasePending(await reconcilePendingPurchase(userId, false));
+        if (await writePending({ ...pending, state: "release" }))
+          setPurchasePending(await reconcilePendingPurchase(userId, false, pending));
       } else if (pending && readyForStoreKit && outcome.rejected) {
-        await clearPendingPurchase(userId);
-        setPurchasePending(false);
+        const cleared = await savePendingPurchase(userId, pending);
+        setPurchasePending(!cleared);
       } else if (pending && outcome.pending) {
-        await savePendingPurchase(userId, { ...pending, state: "approval", expiresAt: fallbackPurchaseExpiry() });
+        if (await writePending({ ...pending, state: "approval", expiresAt: fallbackPurchaseExpiry(true) }) && pending.reservation)
+          setPurchasePending(await reconcilePendingPurchase(userId, false, pending));
       } else if (pending && !readyForStoreKit) {
-        setPurchasePending(await reconcilePendingPurchase(userId, false));
+        setPurchasePending(await reconcilePendingPurchase(userId, false, pending));
       }
       throw error;
     } finally {

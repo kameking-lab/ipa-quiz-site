@@ -9,20 +9,25 @@ import { appStorePurchaseCheck, appStorePurchaseStatus } from "@/mobile/server/r
 export const runtime = "nodejs";
 
 const reservation = z.object({ reservationId: z.uuid() }).strict();
-const recovery = z.union([reservation, z.object({ attemptId: z.uuid() }).strict(),
+const approval = reservation.extend({ action: z.literal("approval") });
+const recovery = z.union([reservation, approval, z.object({ attemptId: z.uuid() }).strict(),
   z.object({ expiresAt: z.iso.datetime() }).strict(), z.object({ legacy: z.literal(true) }).strict()]);
+const preparation = z.object({ attemptId: z.uuid().optional(), confirmStoreKit: z.literal(true).optional() })
+  .refine(({ attemptId, confirmStoreKit }) => !confirmStoreKit || !!attemptId);
+const start = reservation.extend({ action: z.literal("start") });
 
 export async function POST(request: Request) {
+  const requestedAt = Date.now();
   try {
     sameOrigin(request);
     const userId = await billingIdentity();
     if (monthlySelected()) {
-      const parsed = z.object({ attemptId: z.uuid().optional() }).safeParse(request.body ? await request.json().catch(() => null) : {});
+      const parsed = preparation.safeParse(request.body ? await request.json().catch(() => null) : {});
       if (!parsed.success) throw new BillingError("invalid_request", 400);
-      await assertNoDuplicatePurchase(userId);
       const { service, provider } = monthlyRuntime();
       const reservation = await service.reserveAppStorePurchase(userId, provider,
-        memberId => appStorePurchaseCheck(memberId, memberId === userId ? "subscription_exists" : "duplicate_purchase"), parsed.data.attemptId);
+        memberId => appStorePurchaseCheck(memberId, memberId === userId ? "subscription_exists" : "duplicate_purchase"),
+        () => assertNoDuplicatePurchase(userId), parsed.data, requestedAt);
       return json({ allowed: true, reservation });
     }
     const access = await mobileEntitlement(userId, true);
@@ -36,11 +41,17 @@ export async function PATCH(request: Request) {
   try {
     sameOrigin(request);
     const userId = await billingIdentity();
-    const parsed = recovery.safeParse(await request.json().catch(() => null));
+    const parsed = z.union([start, recovery]).safeParse(await request.json().catch(() => null));
     if (!parsed.success) throw new BillingError("invalid_request", 400);
     const check = () => appStorePurchaseStatus(userId);
-    const state = monthlySelected() ? await monthlyRuntime().service.recoverAppStorePurchase(userId, parsed.data, check) : await check();
-    return json({ state });
+    if (!monthlySelected()) return json({ state: await check() });
+    const { service } = monthlyRuntime();
+    const { data } = parsed;
+    if ("action" in data && data.action === "start") {
+      await service.startAppStorePurchase(userId, data.reservationId);
+      return json({ started: true });
+    }
+    return json(await service.recoverAppStorePurchase(userId, data, check));
   } catch (error) { return billingFailure(error); }
 }
 

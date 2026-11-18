@@ -42,9 +42,13 @@ export interface Invoice {
 }
 export interface AppStorePurchase {
   id: string; expiresAt: string; attemptId?: string;
+  /** Older reservations have no phase. Treat them as potentially presented to StoreKit. */
+  phase?: "preparing" | "closing_checkout" | "ready" | "uncertain" | "approval";
+  checkedMemberIds?: string[];
+  startedAt?: string;
 }
 export type AppStorePurchaseState = "active" | "processing" | null;
-export type AppStoreRecovery = { reservationId: string } | { attemptId: string } | { expiresAt: string } | { legacy: true };
+export type AppStoreRecovery = { reservationId: string; action?: "approval" } | { attemptId: string } | { expiresAt: string } | { legacy: true };
 export interface Account {
   userId: string; mode: Realm; sourceInstance: string;
   customer: { attemptId: string; createdAt: string; id: string | null } | null;
@@ -54,6 +58,8 @@ export interface Account {
   events: Record<string, string>; grants: Record<string, string[]>;
   /** StoreKit may still be completing a purchase that RevenueCat cannot see yet. */
   appStorePurchase?: AppStorePurchase;
+  /** A recovery request may reach the lock before the POST for the same attempt. */
+  abandonedAppStoreAttempts?: Record<string, number>;
   /** Hashed card fingerprints that started a free trial on this account -> subscription. Missing on older accounts. */
   trialCards?: Record<string, string>;
   /** Trials to end at Stripe because the card was already used for a trial (subscription -> event token). */

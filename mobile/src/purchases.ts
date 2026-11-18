@@ -5,24 +5,33 @@ import type { MobileConfiguration, MobileEntitlement } from "../shared/contracts
 import { PURCHASE_MESSAGES, purchaseNeedsSignIn } from "@/lib/billing/purchase-messages";
 
 const purchaseCheckUrl = "https://www.kakomon-ai.jp/api/mobile/purchase-check";
-export interface PurchaseReservation { id: string; expiresAt: string }
-export type PurchaseRecovery = { reservationId: string } | { attemptId: string } | { expiresAt: string } | { legacy: true };
+export interface PurchaseReservation { id: string; expiresAt: string; requiresStart?: true }
+export type PurchaseRecovery = { reservationId: string; action?: "approval" } | { attemptId: string } | { expiresAt: string } | { legacy: true };
 
-/** Last server check before persisting the pending marker and presenting StoreKit. */
+function purchaseCheckError(code = "") {
+  return new StoreError(PURCHASE_MESSAGES[code] ?? PURCHASE_MESSAGES.purchase_check_unavailable,
+    purchaseNeedsSignIn(code) ? "purchase_signin" : code === "web_subscription_exists" ? code : "purchase_check");
+}
+
+/** Prepare a reservation before presenting StoreKit. */
 export async function checkNativePurchase(transport: typeof fetch = fetch, attemptId?: string): Promise<PurchaseReservation | null> {
   try {
     const response = await transport(purchaseCheckUrl, { method: "POST", credentials: "include", signal: AbortSignal.timeout(60000),
-      ...(attemptId ? { headers: { "Content-Type": "application/json" }, body: JSON.stringify({ attemptId }) } : {}) });
+      ...(attemptId ? { headers: { "Content-Type": "application/json" }, body: JSON.stringify({ attemptId, confirmStoreKit: true }) } : {}) });
     const body = await response.json().catch(()=>null) as { allowed?: boolean; error?: string; reservation?: PurchaseReservation } | null;
-    if (!response.ok || body?.allowed !== true) {
-      const code = typeof body?.error === "string" ? body.error : "";
-      throw new StoreError(PURCHASE_MESSAGES[code] ?? PURCHASE_MESSAGES.purchase_check_unavailable,
-        purchaseNeedsSignIn(code) ? "purchase_signin" : code === "web_subscription_exists" ? code : "purchase_check");
-    }
+    if (!response.ok || body?.allowed !== true) throw purchaseCheckError(typeof body?.error === "string" ? body.error : "");
     return body.reservation ?? null;
   } catch (error) {
-    throw error instanceof StoreError ? error : new StoreError(PURCHASE_MESSAGES.purchase_check_unavailable, "purchase_check");
+    throw error instanceof StoreError ? error : purchaseCheckError();
   }
+}
+export async function startNativePurchase(reservationId: string, transport: typeof fetch = fetch) {
+  const response = await transport(purchaseCheckUrl, {
+    method: "PATCH", credentials: "include", signal: AbortSignal.timeout(15000),
+    headers: { "Content-Type": "application/json" }, body: JSON.stringify({ reservationId, action: "start" }),
+  }).catch(() => null);
+  const body = await response?.json().catch(() => null) as { started?: boolean; error?: string } | null | undefined;
+  if (!response?.ok || body?.started !== true) throw purchaseCheckError(typeof body?.error === "string" ? body.error : "");
 }
 export async function recoverNativePurchase(recovery: PurchaseRecovery, transport: typeof fetch = fetch) {
   const response = await transport(purchaseCheckUrl, {

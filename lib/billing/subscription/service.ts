@@ -2,7 +2,7 @@ import "server-only";
 import { createHash, randomUUID } from "node:crypto";
 import { BillingError, jstDay } from "../domain";
 import { refundState } from "../finance";
-import { terminal, type Account, type AppStorePurchaseState, type AppStoreRecovery, type MonthlyConfig, type MonthlyProvider, type MonthlyStore, type Invoice, type Observation, type Signup } from "./domain";
+import { terminal, type Account, type AppStorePurchase, type AppStorePurchaseState, type AppStoreRecovery, type MonthlyConfig, type MonthlyProvider, type MonthlyStore, type Invoice, type Observation, type Signup } from "./domain";
 
 export function monthlyTerms(c: MonthlyConfig) {
   return createHash("sha256").update(JSON.stringify({ version: c.termsVersion, price: c.priceYen, priceId: c.priceId,
@@ -13,8 +13,9 @@ export function monthlyTerms(c: MonthlyConfig) {
 function problem(code: string): never { throw new BillingError(code, 503); }
 const staleSignupMs = 23 * 3600000;
 const purchasePreparationMs = 2 * 60000;
-// Covers Apple's 24-hour Ask to Buy window after StoreKit is presented.
-const appStorePurchaseMs = 25 * 3600000;
+const appStoreHoldMs = 30 * 60000;
+const appStoreApprovalMs = 24 * 3600000;
+const legacyAppStoreHoldMs = 25 * 3600000;
 const within = (start: number, end: number, now: number) => start <= now && now < end;
 const memberIds = (members: Account[]) => members.map(a => a.userId);
 function assertSameMembers(ids: string[], members: Account[]) {
@@ -24,7 +25,24 @@ async function checkMembers(ids: string[], check?: (id: string) => Promise<void>
   if (check) await Promise.all(ids.map(id => check(id)));
 }
 function activeReservation(a: Account, now: number) {
-  return a.appStorePurchase && Date.parse(a.appStorePurchase.expiresAt) > now ? a.appStorePurchase : null;
+  const current = a.appStorePurchase;
+  if (!current) return null;
+  // Old persisted holds have only their original 25-hour deadline. Shorten
+  // from that original start so polling or restarting cannot renew the hold.
+  const limit = Date.parse(current.expiresAt) - (current.phase ? 0 : legacyAppStoreHoldMs - appStoreHoldMs);
+  return limit > now ? current : null;
+}
+const beforeStoreKit = (r: AppStorePurchase) => r.phase === "preparing" || r.phase === "closing_checkout" || r.phase === "ready";
+function abandonedAttempts(a: Account, now: number) {
+  const live = Object.entries(a.abandonedAppStoreAttempts ?? {}).filter(([, expiresAt]) => expiresAt > now);
+  if (!live.length) delete a.abandonedAppStoreAttempts;
+  else a.abandonedAppStoreAttempts = Object.fromEntries(live);
+  return a.abandonedAppStoreAttempts;
+}
+function matchesRecovery(r: AppStorePurchase, recovery: AppStoreRecovery) {
+  if ("reservationId" in recovery) return recovery.reservationId === r.id;
+  if ("attemptId" in recovery) return recovery.attemptId === r.attemptId;
+  return "expiresAt" in recovery && !r.attemptId && recovery.expiresAt === r.expiresAt;
 }
 const hasPendingSignup = (a: Account) => Object.values(a.signups).some(s => s.state === "pending");
 function closeSignup(a: Account, orderId: string, sessionId: string | null) {
@@ -86,14 +104,15 @@ export class MonthlyService {
     return this.store.purchaseTransaction(id, this.config.mode, this.config.sourceInstance, fn);
   }
 
-  private assertPurchaseAvailable(owner: Account, members: Account[], native: boolean, now: number) {
+  private assertPurchaseAvailable(owner: Account, members: Account[], native: boolean, now: number, reservationId?: string) {
     for (const a of members) {
       assertPolicyReady(a);
       if (access(a, now / 1000)) throw new BillingError(a === owner ? "subscription_exists" : "duplicate_purchase");
       if (Object.values(a.contracts).some(c => !terminal(c.status))) {
         throw new BillingError(a !== owner ? "duplicate_purchase" : native ? "web_subscription_exists" : "subscription_exists");
       }
-      if (activeReservation(a, now)) throw new BillingError("app_store_purchase_pending");
+      const reservation = activeReservation(a, now);
+      if (reservation && !(a === owner && reservation.id === reservationId)) throw new BillingError("app_store_purchase_pending");
     }
     if (!native && disputeHold(owner)) throw new BillingError("billing_review_required");
   }
@@ -246,21 +265,45 @@ export class MonthlyService {
     }
   }
 
-  async reserveAppStorePurchase(userId: string, provider: MonthlyProvider, checkAppStore: (memberId: string) => Promise<void>, attemptId?: string) {
+  async reserveAppStorePurchase(userId: string, provider: MonthlyProvider, checkAppStore: (memberId: string) => Promise<void>,
+    checkDuplicate: () => Promise<void>, { attemptId, confirmStoreKit }: { attemptId?: string; confirmStoreKit?: true }, requestedAt: number) {
     const plan = await this.purchaseTx(userId, (a, members) => {
       const now = this.clock().getTime();
-      this.assertPurchaseAvailable(a, members, true, now);
+      const abandoned = abandonedAttempts(a, now);
+      if (Date.now() - requestedAt >= purchasePreparationMs || attemptId && abandoned?.[attemptId])
+        throw new BillingError("app_store_purchase_pending");
+      try {
+        this.assertPurchaseAvailable(a, members, true, now);
+      } catch (error) {
+        // Keep the duplicate guard's account-specific sign-in guidance for known contracts.
+        if (error instanceof BillingError && ["subscription_exists", "web_subscription_exists", "duplicate_purchase"].includes(error.code))
+          return { conflict: error };
+        throw error;
+      }
       const signups = members.flatMap(member => Object.values(member.signups).filter(s => s.state === "pending")
         .map(signup => ({ userId: member.userId, customerId: member.customer?.id ?? null, signup })));
       if (signups.some(({ signup }) => Date.parse(signup.preparingUntil ?? "") > now))
         throw new BillingError("web_checkout_preparing");
-      const id = randomUUID();
-      a.appStorePurchase = { id, attemptId, expiresAt: new Date(now + purchasePreparationMs).toISOString() };
-      return { id, ids: memberIds(members), signups };
+      const reservation: AppStorePurchase = { id: randomUUID(), attemptId, phase: "preparing",
+        expiresAt: new Date(now + purchasePreparationMs).toISOString() };
+      a.appStorePurchase = reservation;
+      return { reservation, ids: memberIds(members), signups };
     });
 
+    if (plan.conflict) {
+      await checkDuplicate();
+      throw plan.conflict;
+    }
     try {
+      await checkDuplicate();
       await checkMembers(plan.ids, checkAppStore);
+      // Recovery may have revoked this attempt while the provider was responding.
+      if (plan.signups.length) await this.purchaseTx(userId, a => {
+        const current = activeReservation(a, this.clock().getTime());
+        if (current?.id !== plan.reservation.id) throw new BillingError("app_store_purchase_pending");
+        // A concurrent Web retry must not reuse the URL while Stripe is closing it.
+        current.phase = "closing_checkout";
+      });
       const expired: { userId: string; signup: Signup; sessionId: string | null }[] = [];
       for (const entry of plan.signups) {
         const session = entry.customerId ? await provider.checkoutSession(entry.customerId, entry.signup) : null;
@@ -271,22 +314,39 @@ export class MonthlyService {
       }
       return await this.purchaseTx(userId, (a, members) => {
         const now = this.clock().getTime();
-        if (activeReservation(a, now)?.id !== plan.id) throw new BillingError("app_store_purchase_pending");
-        delete a.appStorePurchase;
-        this.assertPurchaseAvailable(a, members, true, now);
+        if (activeReservation(a, now)?.id !== plan.reservation.id || attemptId && a.abandonedAppStoreAttempts?.[attemptId])
+          throw new BillingError("app_store_purchase_pending");
+        this.assertPurchaseAvailable(a, members, true, now, plan.reservation.id);
         assertSameMembers(plan.ids, members);
         const byId = new Map(members.map(member => [member.userId, member]));
         for (const { userId, signup, sessionId } of expired) closeSignup(byId.get(userId)!, signup.id, sessionId);
         if (members.some(hasPendingSignup))
           throw new BillingError("web_checkout_pending");
-        const reservation = { id: plan.id, expiresAt: new Date(now + appStorePurchaseMs).toISOString() };
-        a.appStorePurchase = { ...reservation, attemptId };
-        return reservation;
+        a.appStorePurchase = confirmStoreKit
+          ? { ...plan.reservation, phase: "ready", checkedMemberIds: plan.ids }
+          : this.startAppStoreHold(plan.reservation, now);
+        return { id: a.appStorePurchase.id, expiresAt: a.appStorePurchase.expiresAt, ...(confirmStoreKit ? { requiresStart: true as const } : {}) };
       });
     } catch (error) {
-      await this.releaseAppStorePurchase(userId, plan.id);
+      await this.releaseAppStorePurchase(userId, plan.reservation.id);
       throw error;
     }
+  }
+
+  private startAppStoreHold({ id, attemptId }: AppStorePurchase, now: number): AppStorePurchase {
+    return { id, attemptId, phase: "uncertain", startedAt: new Date(now).toISOString(), expiresAt: new Date(now + appStoreHoldMs).toISOString() };
+  }
+
+  async startAppStorePurchase(userId: string, reservationId: string) {
+    await this.purchaseTx(userId, (a, members) => {
+      const now = this.clock().getTime();
+      const current = activeReservation(a, now);
+      if (current?.id !== reservationId || current.phase !== "ready") throw new BillingError("app_store_purchase_pending");
+      assertSameMembers(current.checkedMemberIds ?? [], members);
+      this.assertPurchaseAvailable(a, members, true, now, current.id);
+      if (members.some(hasPendingSignup)) throw new BillingError("web_checkout_pending");
+      a.appStorePurchase = this.startAppStoreHold(current, now);
+    });
   }
 
   async releaseAppStorePurchase(userId: string, reservationId: string) {
@@ -296,19 +356,38 @@ export class MonthlyService {
   }
 
   async recoverAppStorePurchase(userId: string, recovery: AppStoreRecovery, checkAppStore: () => Promise<AppStorePurchaseState>) {
-    const read = () => this.tx(userId, async a => activeReservation(a, this.clock().getTime()), true);
-    const reservation = await read();
+    const reservation = await this.purchaseTx(userId, a => {
+      const now = this.clock().getTime();
+      const current = activeReservation(a, now);
+      if ("reservationId" in recovery && recovery.action === "approval" && current?.id === recovery.reservationId
+        && !beforeStoreKit(current) && current.phase !== "approval") {
+        const startedAt = current.startedAt ? Date.parse(current.startedAt) : Date.parse(current.expiresAt) - legacyAppStoreHoldMs;
+        a.appStorePurchase = { ...current, phase: "approval", expiresAt: new Date(startedAt + appStoreApprovalMs).toISOString() };
+        return a.appStorePurchase;
+      }
+      if (!("attemptId" in recovery)) return current;
+      if (current?.attemptId === recovery.attemptId && !beforeStoreKit(current)) return current;
+      // An attempt-only marker was saved before the device received a reservation.
+      // Revoke unfinished preparation, and fence out a POST that has yet to acquire the lock.
+      const abandoned = abandonedAttempts(a, now);
+      a.abandonedAppStoreAttempts = { ...abandoned, [recovery.attemptId]: now + purchasePreparationMs };
+      if (current?.attemptId === recovery.attemptId && current.phase !== "closing_checkout") {
+        delete a.appStorePurchase;
+        return null;
+      }
+      return current;
+    });
     const state = await checkAppStore();
-    const matched = reservation && (
-      "reservationId" in recovery ? recovery.reservationId === reservation.id
-      : "attemptId" in recovery ? recovery.attemptId === reservation.attemptId
-      : "expiresAt" in recovery && !reservation.attemptId && recovery.expiresAt === reservation.expiresAt
-    );
-    // A generic legacy marker can signal a purchase, but cannot release
-    // a reservation made by a different device.
-    if (!matched) return state ?? (await read() ? "processing" : null);
-    if (state !== "processing") await this.releaseAppStorePurchase(userId, reservation.id);
-    return state;
+    return this.purchaseTx(userId, a => {
+      const current = activeReservation(a, this.clock().getTime());
+      if (state === "active" && current && current.id === reservation?.id && current.phase === reservation.phase
+        && matchesRecovery(current, recovery) && !beforeStoreKit(current)) {
+        delete a.appStorePurchase;
+      }
+      if (state) return { state };
+      if (!current) return { state: null };
+      return { state: "processing" as const, ...(beforeStoreKit(current) ? { phase: current.phase } : {}) };
+    });
   }
   async portal(userId: string, provider: MonthlyProvider) {
     const customerId = await this.tx(userId, async a => a.customer?.id ?? null, true);

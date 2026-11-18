@@ -3,7 +3,8 @@ import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-libra
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 
 const nativePurchase = vi.hoisted(() => ({
-  reserve: vi.fn(async () => ({ id: "native-attempt", expiresAt: "2099-01-01T00:00:00.000Z" })),
+  reserve: vi.fn(async () => ({ id: "native-attempt", expiresAt: "2099-01-01T00:00:00.000Z", requiresStart: true as const })),
+  start: vi.fn<(id: string) => Promise<void>>(async () => {}),
   release: vi.fn(async () => {}),
   recover: vi.fn<(marker: object) => Promise<"active" | "processing" | null>>(async () => null),
   preferences: new Map<string, string>(),
@@ -28,6 +29,7 @@ vi.mock("@/mobile/src/purchases", () => ({
     cancelled: result === "test-cancelled", pending: result === "test-pending", rejected: result === "test-cancelled",
   }),
   checkNativePurchase: nativePurchase.reserve,
+  startNativePurchase: nativePurchase.start,
   releaseNativePurchase: nativePurchase.release,
   recoverNativePurchase: nativePurchase.recover,
   nativePublicSdkKey: (key: string) => Promise.resolve(key),
@@ -51,6 +53,8 @@ beforeEach(() => {
   vi.clearAllMocks();
   nativePurchase.preferences.clear();
   nativePurchase.recover.mockReset().mockResolvedValue(null);
+  nativePurchase.release.mockReset().mockResolvedValue(undefined);
+  nativePurchase.start.mockReset().mockResolvedValue(undefined);
   scrollTo = vi.fn();
   window.scrollTo = scrollTo as unknown as typeof window.scrollTo;
   vi.stubGlobal("fetch", vi.fn(async (input: RequestInfo | URL) => {
@@ -136,6 +140,7 @@ it("exposes Web contract management when an unpaid renewal blocks the iOS purcha
 });
 
 it.each(["test-cancelled", "test-pending"] as const)("releases the server reservation only after a definite StoreKit cancellation (%s)", async result => {
+  if (result === "test-pending") nativePurchase.recover.mockResolvedValue("processing");
   const buy = vi.fn(async (_config, _access, _selected, beforePurchase: () => Promise<void>) => {
     await beforePurchase();
     throw result;
@@ -214,7 +219,7 @@ it.each(["online", "relaunch"] as const)("retries the exact cancellation after a
   expect(nativePurchase.preferences.has(pendingKey)).toBe(false);
 });
 
-it.each(["STORE_PROBLEM_ERROR", "NETWORK_ERROR"])("releases when explicit restore confirms absence after %s", async error => {
+it.each(["STORE_PROBLEM_ERROR", "NETWORK_ERROR"])("keeps a result-unknown purchase on reconnect and restore after %s", async error => {
   const restore = vi.fn(async () => {});
   purchaseScreen(async (_config, _access, _selected, beforePurchase) => {
     await beforePurchase();
@@ -227,32 +232,50 @@ it.each(["STORE_PROBLEM_ERROR", "NETWORK_ERROR"])("releases when explicit restor
   expect(nativePurchase.recover).not.toHaveBeenCalled();
   const marker = JSON.parse(nativePurchase.preferences.get(pendingKey)!);
   expect(marker.state).toBe("recheck");
+  nativePurchase.recover.mockResolvedValue("processing");
+  window.dispatchEvent(new Event("online"));
+  await waitFor(() => expect(nativePurchase.recover).toHaveBeenCalledWith({ reservationId: marker.reservation.id }));
+  expect(button).toBeDisabled();
+  expect(nativePurchase.preferences.get(pendingKey)).toBe(JSON.stringify(marker));
   nativePurchase.recover.mockImplementation(async () => {
     expect(restore).toHaveBeenCalledTimes(1);
-    return null;
+    return "processing";
   });
   fireEvent.click(screen.getByRole("button", { name: "購入を復元" }));
+  await waitFor(() => expect(nativePurchase.recover).toHaveBeenCalledTimes(2));
+  expect(button).toBeDisabled();
+  nativePurchase.recover.mockResolvedValue(null); // the server's hold expired
+  window.dispatchEvent(new Event("online"));
   await waitFor(() => expect(button).toBeEnabled());
-  expect(nativePurchase.recover).toHaveBeenCalledWith({ reservationId: marker.reservation.id });
+  expect(nativePurchase.release).not.toHaveBeenCalled();
   expect(nativePurchase.preferences.has(pendingKey)).toBe(false);
 });
 
-it("rechecks a purchase interrupted while StoreKit was open on the next launch", async () => {
+it("rechecks a purchase interrupted while StoreKit was open, including before PAYMENT_PENDING can be persisted", async () => {
+  const storeKit = vi.fn();
   const first = purchaseScreen(async (_config, _access, _selected, beforePurchase) => {
     await beforePurchase();
+    storeKit();
     await new Promise<void>(() => {});
   });
   fireEvent.click(await screen.findByRole("button", { name: "¥980 / 月で登録" }));
-  await waitFor(() => expect(nativePurchase.preferences.get(pendingKey)).toContain("native-attempt"));
+  await waitFor(() => expect(storeKit).toHaveBeenCalledTimes(1));
+  expect(nativePurchase.start).toHaveBeenCalledWith("native-attempt");
+  expect(JSON.parse(nativePurchase.preferences.get(pendingKey)!)).toMatchObject({ state: "recheck" });
   expect(nativePurchase.recover).not.toHaveBeenCalled();
+  nativePurchase.recover.mockResolvedValue("processing");
   first.unmount();
   purchaseScreen();
-  expect(await screen.findByRole("button", { name: "¥980 / 月で登録" })).toBeEnabled();
-  expect(nativePurchase.recover).toHaveBeenCalledTimes(1);
+  expect(await screen.findByRole("button", { name: "¥980 / 月で登録" })).toBeDisabled();
+  expect(nativePurchase.recover).toHaveBeenCalledWith({ reservationId: "native-attempt" });
+  nativePurchase.recover.mockResolvedValue(null);
+  window.dispatchEvent(new Event("online"));
+  await waitFor(() => expect(screen.getByRole("button", { name: "¥980 / 月で登録" })).toBeEnabled());
   expect(nativePurchase.preferences.has(pendingKey)).toBe(false);
 });
 
 it("retains PAYMENT_PENDING through restore and relaunch", async () => {
+  nativePurchase.recover.mockResolvedValue("processing");
   const restore = vi.fn(async () => {});
   const first = purchaseScreen(async (_config, _access, _selected, beforePurchase) => {
     await beforePurchase();
@@ -260,15 +283,75 @@ it("retains PAYMENT_PENDING through restore and relaunch", async () => {
   }, restore);
   fireEvent.click(await screen.findByRole("button", { name: "¥980 / 月で登録" }));
   expect(await screen.findByText(/購入の承認待ちです/)).toBeVisible();
+  const approval = { reservationId: "native-attempt", action: "approval" };
+  expect(nativePurchase.recover).toHaveBeenLastCalledWith(approval);
+  const beforeRestore = nativePurchase.recover.mock.calls.length;
   fireEvent.click(screen.getByRole("button", { name: "購入を復元" }));
   await waitFor(() => expect(restore).toHaveBeenCalledTimes(1));
   await waitFor(() => expect(screen.getByRole("button", { name: "購入を復元" })).toBeEnabled());
+  const beforeRelaunch = nativePurchase.recover.mock.calls.length;
+  expect(beforeRelaunch).toBeGreaterThan(beforeRestore);
+  expect(nativePurchase.recover).toHaveBeenLastCalledWith(approval);
   first.unmount();
   purchaseScreen();
   expect(await screen.findByRole("button", { name: "¥980 / 月で登録" })).toBeDisabled();
   expect(JSON.parse(nativePurchase.preferences.get(pendingKey)!)).toMatchObject({ state: "approval" });
-  expect(nativePurchase.recover).not.toHaveBeenCalled();
+  expect(nativePurchase.recover.mock.calls.length).toBeGreaterThan(beforeRelaunch);
+  expect(nativePurchase.recover).toHaveBeenLastCalledWith(approval);
   expect(nativePurchase.release).not.toHaveBeenCalled();
+});
+
+it("recovers the same attempt before the original purchase check returns, without opening StoreKit", async () => {
+  const preflight = Promise.withResolvers<Awaited<ReturnType<typeof nativePurchase.reserve>>>();
+  nativePurchase.reserve.mockImplementationOnce(() => preflight.promise);
+  const storeKit = vi.fn();
+  const first = purchaseScreen(async (_config, _access, _selected, beforePurchase) => {
+    await beforePurchase();
+    storeKit();
+  });
+  fireEvent.click(await screen.findByRole("button", { name: "¥980 / 月で登録" }));
+  await waitFor(() => expect(nativePurchase.reserve).toHaveBeenCalledTimes(1));
+  const { attemptId } = JSON.parse(nativePurchase.preferences.get(pendingKey)!);
+  first.unmount();
+  purchaseScreen();
+  expect(await screen.findByRole("button", { name: "¥980 / 月で登録" })).toBeEnabled();
+  expect(nativePurchase.recover).toHaveBeenCalledWith({ attemptId });
+  await act(async () => preflight.resolve({ id: "late-native", expiresAt: "2099-01-01T00:00:00.000Z", requiresStart: true }));
+  expect(nativePurchase.start).not.toHaveBeenCalled();
+  expect(storeKit).not.toHaveBeenCalled();
+  expect(nativePurchase.preferences.has(pendingKey)).toBe(false);
+});
+
+it("keeps B's failed cancellation after A's original success response and retries B on reconnect", async () => {
+  const lateRelease = Promise.withResolvers<void>();
+  nativePurchase.release.mockImplementationOnce(() => lateRelease.promise);
+  nativePurchase.reserve.mockResolvedValueOnce({ id: "reservation-a", expiresAt: "2099-01-01T00:00:00.000Z", requiresStart: true })
+    .mockResolvedValueOnce({ id: "reservation-b", expiresAt: "2099-01-01T00:00:00.000Z", requiresStart: true });
+  const cancel = async (_config: unknown, _access: unknown, _offer: unknown, beforePurchase: () => Promise<void>) => {
+    await beforePurchase();
+    throw "test-cancelled";
+  };
+  const first = purchaseScreen(cancel);
+  fireEvent.click(await screen.findByRole("button", { name: "¥980 / 月で登録" }));
+  await waitFor(() => expect(nativePurchase.release).toHaveBeenCalledWith("reservation-a"));
+  first.unmount();
+
+  purchaseScreen(cancel);
+  const button = await screen.findByRole("button", { name: "¥980 / 月で登録" });
+  expect(button).toBeEnabled();
+  expect(nativePurchase.release).toHaveBeenCalledTimes(2);
+  nativePurchase.release.mockRejectedValueOnce(new Error("offline"));
+  fireEvent.click(button);
+  expect(await screen.findByText("購入をキャンセルしました。")).toBeVisible();
+  const markerB = nativePurchase.preferences.get(pendingKey);
+  expect(JSON.parse(markerB!)).toMatchObject({ state: "release", revision: 4, reservation: { id: "reservation-b" } });
+  await act(async () => lateRelease.resolve());
+  expect(nativePurchase.preferences.get(pendingKey)).toBe(markerB);
+  expect(button).toBeDisabled();
+  window.dispatchEvent(new Event("online"));
+  await waitFor(() => expect(button).toBeEnabled());
+  expect(nativePurchase.release.mock.calls).toEqual([["reservation-a"], ["reservation-a"], ["reservation-b"], ["reservation-b"]]);
+  expect(nativePurchase.preferences.has(pendingKey)).toBe(false);
 });
 
 it("does not show login while the native session is still loading", async () => {
