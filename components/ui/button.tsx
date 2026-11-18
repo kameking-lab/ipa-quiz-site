@@ -9,11 +9,11 @@ const buttonVariants = cva(
     variants: {
       variant: {
         default:
-          "bg-foreground text-background hover:bg-foreground/90",
+          "bg-primary text-primary-foreground hover:bg-primary-hover",
         primary:
           "bg-primary text-primary-foreground hover:bg-primary-hover shadow-sm hover:shadow",
         gradient:
-          "bg-gradient-to-r from-primary to-violet-500 text-primary-foreground shadow-md hover:shadow-lg hover:brightness-105 dark:from-primary dark:to-violet-400",
+          "bg-linear-to-r from-primary to-primary-hover text-primary-foreground shadow-md hover:shadow-lg hover:brightness-105",
         outline:
           "border border-border bg-background hover:bg-muted hover:text-foreground",
         ghost:
@@ -31,7 +31,7 @@ const buttonVariants = cva(
         sm: "h-8 px-3 text-xs [@media(pointer:coarse)]:min-h-[44px]",
         md: "h-10 px-4 [@media(pointer:coarse)]:min-h-[44px]",
         lg: "h-12 px-6 text-base",
-        xl: "h-14 px-8 text-base font-semibold",
+        xl: "min-h-[54px] px-8 text-base font-bold",
         icon: "h-10 w-10 [@media(pointer:coarse)]:min-h-[44px] [@media(pointer:coarse)]:min-w-[44px]",
         "icon-sm": "h-8 w-8 [@media(pointer:coarse)]:min-h-[44px] [@media(pointer:coarse)]:min-w-[44px]",
       },

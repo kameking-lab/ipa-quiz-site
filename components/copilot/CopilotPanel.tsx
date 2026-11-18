@@ -813,7 +813,7 @@ export function CopilotPanel({
               ? "話してください…"
               : "AIに質問…"
           }
-          className="min-w-0 min-h-[44px] flex-1 resize-none rounded-xl border border-zinc-300 bg-white px-3 py-2 text-base placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600 sm:text-sm"
+          className="min-w-0 min-h-[44px] flex-1 resize-none rounded-xl border border-input bg-card px-3 py-2 text-base placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring sm:text-sm"
         />
         {voiceState !== "unsupported" && (
           <Button
@@ -880,7 +880,7 @@ export function CopilotPanel({
   );
 
   return (
-    <div className={cn("flex min-w-0 w-full flex-col bg-white dark:bg-zinc-950", !inline && "h-full", className)}>
+    <div className={cn("flex min-w-0 w-full flex-col bg-card", !inline && "h-full", className)}>
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-zinc-200 px-4 py-3 dark:border-zinc-800">
         <div className="flex items-center gap-2">
@@ -1263,7 +1263,7 @@ export function CopilotInline(props: Omit<Props, "onClose" | "inline" | "initial
   return (
     <section
       aria-label="この問題についてAIに質問"
-      className="min-w-0 scroll-mt-24 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800"
+      className="min-w-0 scroll-mt-24 overflow-hidden rounded-2xl border border-border"
       onTouchStart={(event) => event.stopPropagation()}
       onTouchEnd={(event) => event.stopPropagation()}
     >

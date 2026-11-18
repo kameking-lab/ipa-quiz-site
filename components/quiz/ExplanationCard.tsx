@@ -135,7 +135,7 @@ export function ExplanationCard({
 
       <div className="mb-5 space-y-3">
         <div className="flex justify-end">
-        <Button variant="primary" size="lg" onClick={onNext} className="shrink-0 font-semibold min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
+        <Button size="xl" onClick={onNext} className="shrink-0 min-w-11 whitespace-normal px-5 py-2.5">
           {nextLabel}
           <ArrowRight className="h-4 w-4" />
         </Button>
@@ -174,7 +174,7 @@ export function ExplanationCard({
       )}
 
       {remainingChoiceExplanations.length > 0 && (
-        <section aria-label="選択肢ごとの解説" className="mb-4 rounded-xl border border-zinc-200 bg-white/70 p-3 dark:border-zinc-700 dark:bg-zinc-950/40">
+        <section aria-label="選択肢ごとの解説" className="mb-4 rounded-xl border border-border bg-card p-3">
           <h3 className="mb-2 text-sm font-semibold text-zinc-900 dark:text-zinc-50">
             {!isCorrect && selectedChoiceExplanation ? "ほかの選択肢" : "選択肢ごとの解説"}
           </h3>

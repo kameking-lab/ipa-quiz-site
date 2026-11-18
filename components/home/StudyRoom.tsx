@@ -145,15 +145,15 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
     </header>
     <div className="flex min-w-0 items-center justify-between gap-2">
       <div role="group" aria-label="自習室の資格" className="inline-flex rounded-full bg-muted p-1 text-sm font-medium">
-        <button type="button" aria-pressed={!sameExam} onClick={() => setSameExam(false)} className="min-h-11 min-w-20 rounded-full px-4 outline-offset-2 hover:text-foreground focus-visible:outline-2 focus-visible:outline-primary aria-pressed:bg-background aria-pressed:shadow-sm">みんな</button>
-        <button type="button" aria-pressed={sameExam} disabled={!selectedExam} onClick={() => setSameExam(true)} className="min-h-11 min-w-20 rounded-full px-4 outline-offset-2 hover:text-foreground focus-visible:outline-2 focus-visible:outline-primary aria-pressed:bg-background aria-pressed:shadow-sm disabled:opacity-50">同じ資格</button>
+        <button type="button" aria-pressed={!sameExam} onClick={() => setSameExam(false)} className="min-h-11 min-w-20 rounded-full px-4 outline-offset-2 hover:text-foreground focus-visible:outline-2 focus-visible:outline-primary aria-pressed:bg-card aria-pressed:shadow-sm">みんな</button>
+        <button type="button" aria-pressed={sameExam} disabled={!selectedExam} onClick={() => setSameExam(true)} className="min-h-11 min-w-20 rounded-full px-4 outline-offset-2 hover:text-foreground focus-visible:outline-2 focus-visible:outline-primary aria-pressed:bg-card aria-pressed:shadow-sm disabled:opacity-50">同じ資格</button>
       </div>
       <span className="min-w-0 text-right text-xs leading-relaxed text-muted-foreground">{filtered ? scene.name : ""}</span>
     </div>
-    <div role="region" aria-label="自習室の席" className="rounded-2xl">
+    <div role="region" aria-label="自習室の席" className="rounded-[20px]">
     <div ref={sceneRef} data-testid="study-room-scene" data-stage={renderedStage} data-motion-visible={motionVisible} data-art-status={scene.background ? "ready" : "pending"}
       role="group" aria-label="チワワの自習室" tabIndex={-1}
-      className="relative isolate w-full min-w-0 overflow-hidden rounded-2xl border border-stone-200 bg-stone-50 outline-offset-2 focus-visible:outline-2 focus-visible:outline-primary dark:border-stone-700 dark:bg-stone-900"
+      className="relative isolate w-full min-w-0 overflow-hidden rounded-[20px] border border-border bg-card outline-offset-2 focus-visible:outline-2 focus-visible:outline-primary"
       style={{ aspectRatio: `${scene.width} / ${sceneHeight}` }}>
       {scene.background && backgroundReady && <>
         {/* Crop the production artwork to the floor; the back wall occupies about 15%. */}
@@ -176,7 +176,7 @@ export function StudyRoom({ snapshot, suggestions, current = false, exam, standa
             art={mascot.art} />
         </div>;
       })}
-      {!seats.length && <p className="absolute inset-0 grid place-items-center px-4 text-sm text-stone-600 dark:text-stone-300"><span className="rounded-full bg-background/95 px-4 py-2 shadow-sm">{filtered ? "静かな、自習室。" : "自習室"}</span></p>}
+      {!seats.length && <p className="absolute inset-0 grid place-items-center px-4 text-sm text-muted-foreground"><span className="rounded-full bg-card/95 px-4 py-2 shadow-sm">{filtered ? "静かな、自習室。" : "自習室"}</span></p>}
       {measured && measured.hidden > 0 && <span aria-label={`ほか${measured.hidden}人が勉強中`} className="absolute bottom-3 right-3 rounded-full border border-border bg-background px-3 py-1.5 text-sm font-semibold tabular-nums shadow-sm">+{measured.hidden}</span>}
     </div>
     </div>

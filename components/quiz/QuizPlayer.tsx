@@ -487,15 +487,15 @@ function ScoredQuizPlayer({
   const selectionLabel = native ? nativeBResult?.slotResults.map((slot) => `${slot.label}: ${slot.selectedCandidateId ?? "未回答"}`).join(" / ") : ordering ? (orderedSelected ? formatOrderingAnswer(question.exam, orderedSelected) : undefined) : numeric ? numericSelected : multiSelect ? (picked.length > 0 ? formatSelection(picked) : undefined) : selected;
 
   return (
-    <div className="flex min-h-[calc(100dvh-3.5rem)] flex-col bg-zinc-50 dark:bg-zinc-950">
-      <div role="region" aria-label="クイズナビゲーション" className="sticky top-0 z-20 flex flex-col border-b border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
+    <div className="flex min-h-[calc(100dvh-3.5rem)] flex-col bg-background">
+      <div role="region" aria-label="クイズナビゲーション" className="sticky top-0 z-20 flex flex-col border-b border-border bg-card">
         <div className="flex items-center gap-2 px-3 py-2 sm:py-2.5">
           <Button
             variant="ghost"
             size="icon"
             onClick={() => router.push(backHref)}
             aria-label={backLabel}
-            className="hover:bg-zinc-100 dark:hover:bg-zinc-800 min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
+            className="hover:bg-muted min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
           >
             <ArrowLeft aria-hidden="true" className="h-5 w-5" />
           </Button>
@@ -535,10 +535,10 @@ function ScoredQuizPlayer({
           aria-valuemin={1}
           aria-valuemax={total}
           aria-valuetext={`${index + 1}問目 / 全${total}問`}
-          className="h-1 bg-zinc-100 dark:bg-zinc-800"
+          className="h-1 bg-muted"
         >
           <div
-            className="h-full bg-sky-600 motion-safe:transition-all motion-safe:duration-300 dark:bg-sky-400"
+            className="h-full bg-primary motion-safe:transition-all motion-safe:duration-300"
             style={{ width: `${((index + 1) / total) * 100}%` }}
           />
         </div>
@@ -692,7 +692,7 @@ function KeyboardShortcutHelp({ onClose }: { onClose: () => void }) {
       role="dialog"
       aria-label="キーボードショートカット一覧"
       aria-modal="false"
-      className="mt-4 rounded-xl border border-zinc-200 bg-white p-4 shadow-sm dark:border-zinc-700 dark:bg-zinc-900"
+      className="mt-4 rounded-xl border border-border bg-card p-4 shadow-sm"
     >
       <div className="mb-3 flex items-center justify-between">
         <span className="text-sm font-semibold text-zinc-800 dark:text-zinc-100">
@@ -803,11 +803,11 @@ export function QuizCompleteScreen({
 
 
   const btnClass =
-    "inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-zinc-300 bg-white px-3 py-2 text-sm font-medium text-zinc-700 transition-colors hover:bg-zinc-100 dark:border-zinc-700 dark:bg-zinc-900 dark:text-zinc-200 dark:hover:bg-zinc-800";
+    "inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-border bg-card px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted dark:hover:bg-zinc-800";
 
   return (
-    <main className="flex flex-1 flex-col items-center justify-center bg-zinc-50 px-4 py-12 dark:bg-zinc-950">
-      <div className="w-full max-w-md rounded-3xl border border-zinc-200 bg-white p-5 shadow-sm sm:p-8 dark:border-zinc-800 dark:bg-zinc-900">
+    <main className="flex flex-1 flex-col items-center justify-center bg-background px-4 py-12">
+      <div className="w-full max-w-md rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-8">
         <div className="mb-6 text-center">
           <ChihuahuaMascot pose="celebrate" size={100} className="mx-auto mb-2" />
           <h1 ref={resultHeadingRef} tabIndex={-1} className="text-2xl font-bold text-zinc-900 outline-none dark:text-zinc-50">クイズ完了！</h1>

@@ -37,7 +37,7 @@ export function QuestionCard({
           </span>
         )}
       </div>
-      <div className="selectable-content rounded-2xl border border-zinc-200 bg-white p-5 text-base leading-relaxed text-zinc-900 shadow-sm dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-50">
+      <div className="selectable-content rounded-2xl border border-border bg-card p-5 text-base leading-relaxed text-card-foreground shadow-sm">
         <div className="mb-2 flex justify-end">
           <TTSButton text={question.question} label="読み上げ" />
         </div>
