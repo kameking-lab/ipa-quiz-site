@@ -18,14 +18,14 @@ it("runs GET through the real store and preserves a zero snapshot timestamp with
   vi.advanceTimersByTime(45_000);
   expect(await (await GET(new Request(url))).json()).toEqual(first);
   expect(db.$queryRaw).toHaveBeenCalledOnce(); expect(db.$executeRaw).not.toHaveBeenCalled(); expect(db.$transaction).not.toHaveBeenCalled();
-  expect(db.$queryRaw.mock.calls[0][1]).toBe(300_000);
+  expect(db.$queryRaw.mock.calls[0][1]).toEqual(new Date("2026-10-23T09:55:00Z"));
 });
-it("suppresses store work across GET and heartbeat after a DB failure then recovers with real zero", async () => {
+it("suppresses store work across reads and answer writes after a DB failure, then recovers", async () => {
   db.$queryRaw.mockRejectedValueOnce(new Error("database offline"));
   expect((await GET(new Request(url))).status).toBe(503);
-  const heartbeat = () => new Request(url, { method: "POST", headers: { Origin: "https://presence.example", "Content-Type": "application/json" },
-    body: JSON.stringify({ visitorId: "00000000-0000-4000-8000-000000000001", idleMs: 0, exam: "fe" }) });
-  expect((await POST(heartbeat())).headers.get("retry-after")).toBe("90");
+  const answer = new Request(url, { method: "POST", headers: { Origin: "https://presence.example", "Content-Type": "application/json", "User-Agent": "Mozilla/5.0" },
+    body: JSON.stringify({ visitorId: "00000000-0000-4000-8000-000000000001", answeredAgoMs: 0, exam: "fe" }) });
+  expect((await POST(answer)).headers.get("retry-after")).toBe("90");
   expect(db.$executeRaw).not.toHaveBeenCalled(); expect(db.$queryRaw).toHaveBeenCalledOnce();
   vi.advanceTimersByTime(90_000);
   expect(await (await GET(new Request(url))).json()).toMatchObject({ status: "measured", count: 0, exams: [] });

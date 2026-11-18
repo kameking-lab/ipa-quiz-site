@@ -27,6 +27,7 @@ import { usePetLearning } from "@/components/pet/usePetLearning";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 import { readSettings } from "@/lib/storage/settings";
 import { mockReviewHref } from "@/lib/mock-exam/review";
+import { reportStudyAnswer } from "@/lib/study-presence-client";
 
 
 interface Props {
@@ -187,6 +188,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
   const updateAnswer = (answer: ChoiceKey | undefined) => {
     if (submittedRef.current) return;
     if (Date.now() >= startedAt + totalSec * 1000) { submitRef.current(true); return; }
+    if (answer !== undefined && answer !== answersRef.current[index]) reportStudyAnswer(config.exam);
     const next = [...answersRef.current];
     next[index] = answer;
     answersRef.current = next;

@@ -29,6 +29,7 @@ import { ArrowLeft, ChevronUp, ChevronDown, Check, X, Flame } from "lucide-react
 import { StreamSummary } from "./StreamSummary";
 import { ComboFireworks } from "./ComboFireworks";
 import { useQuestionActivity } from "@/lib/study-plan/use-question-activity";
+import { reportStudyAnswer } from "@/lib/study-presence-client";
 
 const SUMMARY_AT = 10;
 
@@ -122,6 +123,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     if (!question?.nativeB || question.type !== "native-b" || revealed) return;
     const result = gradeNativeB(question.nativeB, selections);
     recordAnswer(result.isCorrect);
+    reportStudyAnswer(question.exam);
     const selection = serializeNativeBSelections(question.nativeB, selections);
     setNativeBResult(result);
     setRevealed(true);
@@ -137,6 +139,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
       if (!question || revealed || question.type === "ordering" || question.type === "numeric") return;
       const correct = isAcceptedAnswer(question.answer, key);
       recordAnswer(correct);
+      reportStudyAnswer(question.exam);
       setSelected(key);
       setRevealed(true);
       setAnswers((prev) => [
@@ -165,6 +168,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     if (!question || question.type !== "ordering" || revealed) return;
     const correct = isOrderingAnswerCorrect(question, value);
     recordAnswer(correct);
+    reportStudyAnswer(question.exam);
     const display = formatOrderingAnswer(question.exam, value);
     setRevealed(true);
     setAnswers((previous) => [...previous, { questionId: question.id, selected: display, correct }]);
@@ -186,6 +190,7 @@ export function StreamQuizPlayer({ questions, backHref = "/ipa" }: { questions: 
     if (!question || question.type !== "numeric" || revealed) return;
     const correct = isNumericAnswerCorrect(question, value);
     recordAnswer(correct);
+    reportStudyAnswer(question.exam);
     setRevealed(true);
     setAnswers(previous => [...previous, { questionId: question.id, selected: value, correct }]);
     history.record({ id: question.id, selected: value, correct, at: Date.now() });

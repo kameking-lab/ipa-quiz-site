@@ -1,79 +1,100 @@
-import { beforeEach, expect, it, vi } from "vitest";
-const db = vi.hoisted(() => ({ $executeRaw: vi.fn(), $queryRaw: vi.fn(), $transaction: vi.fn() }));
-vi.mock("@/lib/db/prisma", () => ({ prisma: db }));
-let readStudyPresence: typeof import("@/lib/study-presence-store").readStudyPresence;
-let recordStudyPresence: typeof import("@/lib/study-presence-store").recordStudyPresence;
-let recordLegacyStudyPresence: typeof import("@/lib/study-presence-store").recordLegacyStudyPresence;
-const id = "00000000-0000-4000-8000-000000000001";
-beforeEach(async () => { vi.resetModules(); ({ readStudyPresence, recordStudyPresence, recordLegacyStudyPresence } = await import("@/lib/study-presence-store")); vi.clearAllMocks(); db.$executeRaw.mockResolvedValue(1); db.$queryRaw.mockResolvedValue([]); db.$transaction.mockImplementation(ops => Promise.all(ops)); });
-it("uses one existing hashed browser key for all exams, never a browser/exam composite", async () => {
-  await recordStudyPresence(id, 0, "fe"); await recordStudyPresence(id, 0, "ap");
-  const [first, second] = db.$executeRaw.mock.calls.filter(call => call[0].join("").includes("INSERT"));
-  expect(first[1]).toMatch(/^[a-f0-9]{64}$/); expect(second[1]).toBe(first[1]); expect(first[1]).not.toBe(id);
-  expect(first[0].join("")).toContain('ON CONFLICT ("id") DO UPDATE');
-  expect(first[0].join("")).toContain('"exam" = EXCLUDED."exam"');
-  expect(first[0].join("")).toContain('"StudyPresence"."lastSeenAt" < EXCLUDED."lastSeenAt"');
+// @vitest-environment node
+import { PGlite } from "@electric-sql/pglite";
+import { afterAll, afterEach, beforeAll, beforeEach, expect, it, vi } from "vitest";
+
+const { execute, query, transaction } = vi.hoisted(() => ({ execute: vi.fn(), query: vi.fn(), transaction: vi.fn() }));
+vi.mock("@/lib/db/prisma", () => ({ prisma: { $executeRaw: execute, $queryRaw: query, $transaction: transaction } }));
+
+let db: PGlite;
+type Connection = Pick<PGlite, "query">;
+function statement(strings: TemplateStringsArray, ...values: unknown[]) {
+  const sql = strings.reduce((text, part, i) => i === 0 ? part : `${text}$${i}${part}`, "");
+  const run = (connection: Connection) => connection.query(sql, values);
+  return { run, then: (resolve: (value: unknown) => void, reject: (error: unknown) => void) => run(db).then(resolve, reject) };
+}
+
+const firstId = "00000000-0000-4000-8000-000000000001";
+const secondId = "00000000-0000-4000-8000-000000000002";
+const epoch = Date.parse("2026-11-18T15:27:00Z");
+const origin = "https://presence.example";
+const url = `${origin}/api/stats/study-presence`;
+const json = (value: unknown, ua = "Mozilla/5.0 Chrome/130") => new Request(url, {
+  method: "POST", body: JSON.stringify(value), headers: { Origin: origin, "Content-Type": "application/json", "User-Agent": ua },
 });
-it("GET counts only qualified rows within five minutes without cleanup writes", async () => {
-  db.$queryRaw.mockResolvedValue([{ exam: "denko2", count: 1n }, { exam: "fe", count: 2n }]);
-  expect(await readStudyPresence()).toEqual({ count: 3, exams: [{ exam: "fe", count: 2 }, { exam: "denko2", count: 1 }] });
-  const query = db.$queryRaw.mock.calls[0];
-  expect(db.$executeRaw).not.toHaveBeenCalled(); expect(db.$transaction).not.toHaveBeenCalled();
-  expect(query[0].join("")).toContain('"exam" IS NOT NULL'); expect(query[0].join("")).toContain('"lastSeenAt" > NOW()'); expect(query[1]).toBe(300_000);
-  expect(query[0].join("")).toContain('GROUP BY "exam"');
+function answer(exam: string, visitorId = firstId, answeredAgoMs = 0, previousVisitorId?: string) {
+  return { exam, visitorId, answeredAgoMs, previousVisitorId };
+}
+let route: typeof import("@/app/api/stats/study-presence/route");
+let store: typeof import("@/lib/study-presence-store");
+const read = async () => (await route.GET(new Request(url))).json();
+
+beforeAll(async () => {
+  db = new PGlite();
+  await db.exec(`SET TIME ZONE 'Asia/Tokyo'; CREATE TABLE "StudyPresence" ("id" TEXT PRIMARY KEY, "lastSeenAt" TIMESTAMP(3) NOT NULL, "exam" TEXT);`);
 });
-it("returns real zero from empty storage, but propagates failure", async () => {
-  expect(await readStudyPresence()).toEqual({ count: 0, exams: [] });
-  db.$queryRaw.mockRejectedValue(new Error("offline")); await expect(readStudyPresence()).rejects.toThrow("offline");
+afterAll(() => db.close());
+beforeEach(async () => {
+  await db.exec('TRUNCATE "StudyPresence"');
+  vi.resetModules();
+  vi.useFakeTimers({ toFake: ["Date"] });
+  vi.setSystemTime(epoch);
+  vi.stubEnv("DATABASE_URL", "postgresql://test");
+  vi.stubEnv("NODE_ENV", "production");
+  vi.stubEnv("VERCEL_ENV", "production");
+  execute.mockReset().mockImplementation(statement);
+  query.mockReset().mockImplementation((...args: Parameters<typeof statement>) => statement(...args).run(db).then(result => result.rows));
+  transaction.mockReset().mockImplementation((statements: ReturnType<typeof statement>[]) => db.transaction(async connection => {
+    for (const operation of statements) await operation.run(connection);
+  }));
+  route = await import("@/app/api/stats/study-presence/route");
+  store = await import("@/lib/study-presence-store");
 });
-it("omits obsolete qualifications and rejects invalid aggregate counts", async () => {
-  db.$queryRaw.mockResolvedValue([{ exam: "unknown", count: 9n }, { exam: "fe", count: 1n }]);
-  expect(await readStudyPresence()).toEqual({ count: 1, exams: [{ exam: "fe", count: 1 }] });
-  db.$queryRaw.mockResolvedValue([{ exam: "fe", count: 9007199254740992n }]); await expect(readStudyPresence()).rejects.toThrow("Invalid presence aggregate");
+afterEach(() => { vi.useRealTimers(); vi.unstubAllEnvs(); });
+
+it("excludes pre-release rows, legacy page-open heartbeats and bot answers without writing", async () => {
+  await db.query('INSERT INTO "StudyPresence" VALUES ($1, $2, $3)', ["e".repeat(64), new Date(epoch), "civil1"]);
+  const legacy = await route.POST(json({ visitorId: firstId, exam: "civil1", idleMs: 0 }));
+  expect(await legacy.json()).toMatchObject({ count: 0, exams: [] });
+  expect((await route.POST(json(answer("tsushin1"), "Mozilla/5.0 HeadlessChrome"))).status).toBe(403);
+  expect(await read()).toMatchObject({ status: "measured", count: 0, exams: [] });
+  expect(execute).not.toHaveBeenCalled();
 });
 
-it("removes the old browser hash before recording a rotated daily ID in one transaction", async () => {
-  await recordStudyPresence(id, 0, "fe", "00000000-0000-4000-8000-000000000099");
-  const calls = db.$executeRaw.mock.calls;
-  expect(calls[0][0].join("")).toContain('DELETE FROM "StudyPresence" WHERE "id" = ');
-  expect(calls[0][1]).toMatch(/^[a-f0-9]{64}$/); expect(calls[1][0].join("")).toContain('INSERT');
-  expect(db.$transaction).toHaveBeenCalledOnce(); expect(db.$transaction.mock.calls[0][0]).toHaveLength(4);
-});
-it("canonicalises safety library qualification aliases into the existing exam code", async () => {
-  await recordStudyPresence(id, 0, "dai-1-shu-eisei-kanrisha");
-  const insert = db.$executeRaw.mock.calls.find(call => call[0].join("").includes("INSERT"));
-  expect(insert?.[3]).toBe("eisei1");
-});
-
-it("counts all active browsers for legacy clients without adding unqualified rows to the new snapshot", async () => {
-  db.$queryRaw.mockImplementation(strings => Promise.resolve(strings.join("").includes('GROUP BY "exam"')
-    ? [{ exam: "fe", count: 1n }] : [{ count: 3n }]));
-  expect(await recordLegacyStudyPresence(id, 0)).toBe(3);
-  expect(await readStudyPresence()).toEqual({ count: 1, exams: [{ exam: "fe", count: 1 }] });
-});
-it("shares the same browser key across old/new clients and clears a qualification only for newer unknown activity", async () => {
-  db.$queryRaw.mockImplementation(strings => Promise.resolve(strings.join("").includes('GROUP BY "exam"') ? [] : [{ count: 1n }]));
-  await recordStudyPresence(id, 0, "fe"); await recordLegacyStudyPresence(id, 0); await recordStudyPresence(id, 0, "ap");
-  const inserts = db.$executeRaw.mock.calls.filter(call => call[0].join("").includes("INSERT"));
-  expect(inserts.map(call => call[1])).toEqual([inserts[0][1], inserts[0][1], inserts[0][1]]);
-  expect(inserts.map(call => call[3])).toEqual(["fe", null, "ap"]);
-  expect(inserts[1][0].join("")).toContain('"StudyPresence"."lastSeenAt" < EXCLUDED."lastSeenAt"');
-});
-it("returns legacy measured zero, rejects invalid totals and propagates failed storage", async () => {
-  db.$queryRaw.mockResolvedValue([{ count: 0n }]); expect(await recordLegacyStudyPresence(id, 0)).toBe(0);
-  db.$queryRaw.mockResolvedValue([{ count: 9007199254740992n }]); await expect(recordLegacyStudyPresence(id, 0)).rejects.toThrow("Invalid legacy presence aggregate");
-  db.$transaction.mockRejectedValue(new Error("offline")); await expect(recordLegacyStudyPresence(id, 0)).rejects.toThrow("offline");
+it("counts answers and drops each browser exactly five minutes after its submitted answer", async () => {
+  expect(await read()).toMatchObject({ count: 0 });
+  expect((await route.POST(json(answer("civil1")))).status).toBe(204);
+  vi.setSystemTime(epoch + 120_000);
+  expect((await route.POST(json(answer("tsushin1", secondId, 30_000)))).status).toBe(204);
+  vi.setSystemTime(epoch + 299_999);
+  expect(await read()).toMatchObject({ count: 2, exams: [{ exam: "civil1", count: 1 }, { exam: "tsushin1", count: 1 }], validUntil: new Date(epoch + 300_000).toISOString() });
+  vi.setSystemTime(epoch + 300_000);
+  expect(await read()).toMatchObject({ count: 1, exams: [{ exam: "tsushin1", count: 1 }] });
+  vi.setSystemTime(epoch + 390_000);
+  expect(await read()).toMatchObject({ count: 0, exams: [] });
 });
 
-it("throttles expiry cleanup to once per 15 minutes on real writes while always rotating old IDs", async () => {
-  const now = vi.spyOn(Date, "now").mockReturnValue(1_000_000);
-  try {
-    await recordStudyPresence(id, 0, "fe");
-    await recordStudyPresence(id, 0, "ap", "00000000-0000-4000-8000-000000000099");
-    const expiry = () => db.$executeRaw.mock.calls.filter(call => call[0].join("").includes('"lastSeenAt" <= NOW()'));
-    expect(expiry()).toHaveLength(1); expect(expiry()[0][1]).toBe(300_000);
-    expect(db.$executeRaw.mock.calls.filter(call => call[0].join("").includes('WHERE "id" ='))).toHaveLength(1);
-    now.mockReturnValue(1_900_000); await recordStudyPresence(id, 0, "fe");
-    expect(expiry()).toHaveLength(2);
-  } finally { now.mockRestore(); }
+it("groups a browser under its newest qualification, ignores older writes and rotates its ID atomically", async () => {
+  await route.POST(json(answer("civil1")));
+  vi.setSystemTime(epoch + 60_000);
+  await route.POST(json(answer("tsushin1")));
+  await route.POST(json(answer("civil1", firstId, 30_000)));
+  expect(await read()).toMatchObject({ count: 1, exams: [{ exam: "tsushin1", count: 1 }] });
+  await route.POST(json(answer("dai-1-shu-eisei-kanrisha", secondId, 0, firstId)));
+  expect(await read()).toMatchObject({ count: 1, exams: [{ exam: "eisei1", count: 1 }] });
+  const stored = await db.query<{id: string}>('SELECT "id" FROM "StudyPresence"');
+  expect(stored.rows.map(row => row.id)).toEqual([expect.stringMatching(/^answer:[a-f0-9]{64}$/)]);
+  expect(transaction).toHaveBeenCalledTimes(2);
+});
+
+it("leaves cleanup off reads and runs it at most once per fifteen minutes of writes", async () => {
+  await store.recordStudyPresence(firstId, epoch, "fe");
+  await store.recordStudyPresence(secondId, epoch, "ap");
+  const cleanupCount = () => execute.mock.calls.filter(([strings]) => strings.join("").includes('"lastSeenAt" <=')).length;
+  expect(cleanupCount()).toBe(1);
+  expect(await store.readStudyPresence(epoch + 900_000)).toMatchObject({ snapshot: { count: 0 } });
+  expect(cleanupCount()).toBe(1);
+  vi.setSystemTime(epoch + 900_000);
+  await store.recordStudyPresence(secondId, epoch + 900_000, "ap");
+  expect(cleanupCount()).toBe(2);
+  expect((await db.query('SELECT "id" FROM "StudyPresence"')).rows).toHaveLength(1);
 });
