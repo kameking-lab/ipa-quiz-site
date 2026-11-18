@@ -1,13 +1,10 @@
-import Link from "next/link";
 import { billingIdentity } from "@/lib/billing/runtime";
 import { monthlyConfig } from "@/lib/billing/subscription/config";
 import { MONTHLY_PUBLIC_OFFER } from "@/lib/billing/subscription/public-offer";
 import { monthlyRuntime } from "@/lib/billing/subscription/runtime";
-import { planStartHref } from "@/lib/billing/quiz-return";
-import { SellerDisclosureLine } from "@/components/billing/SellerDisclosureLine";
+import { MonthlyConditions, MonthlyPlanLink, MonthlyPrice } from "@/components/billing/MonthlyOffer";
 import { ManageSubscriptionButton } from "./ManageSubscriptionButton";
 import { BillingPageBeacon } from "./BillingPageBeacon";
-import { SignedOutOnly } from "@/components/account/AccountNavigation";
 import { revenueCatAccess } from "@/mobile/server/revenuecat";
 
 /** One button and one line of terms; the full conditions live on /billing/terms. */
@@ -23,19 +20,19 @@ export default async function MonthlyPage({ returnTo }: { returnTo?: string } = 
       hasContract ||= state.entitled || !!await revenueCatAccess(userId);
     }
   } catch { /* Signed out or storage unavailable: the plan button signs in first. */ }
-  const { priceYen: price, freeDaily: free, trialDays } = MONTHLY_PUBLIC_OFFER;
   return <>
     <BillingPageBeacon />
-    <section aria-labelledby="monthly-price" className="mx-auto max-w-md space-y-5 text-center">
-      <h1 id="monthly-price" className="text-2xl font-bold">月額プラン</h1>
-      <p>無料は1日{free}問。月額プランは回数無制限。</p>
-      {hasContract ? <div className="space-y-4 rounded-2xl border border-border bg-card p-5"><p role="status" className="text-sm font-medium leading-relaxed">契約済みです（支払確認中を含む）。追加購入は不要です。</p>{canManage && <ManageSubscriptionButton />}</div>
-        : !config?.enabled ? <p role="status">現在、新規申込を受け付けていません。既存契約は自動解約されません。</p>
-        : <a data-monthly-plan href={planStartHref(returnTo ?? "")} aria-describedby="monthly-terms" className="flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-4 py-3 text-lg font-bold text-primary-foreground hover:bg-primary/90">{trialDays > 0 ? <><span className="[.native-app_&]:hidden">{trialDays}日間無料で試す</span><span className="hidden [.native-app_&]:inline">月額{price.toLocaleString("ja-JP")}円で続ける</span></> : `月額${price.toLocaleString("ja-JP")}円で続ける`}</a>}
-      <p id="monthly-terms" className="text-sm leading-7 text-muted-foreground">{trialDays > 0 && <span className="[.native-app_&]:hidden">初回{trialDays}日間無料（期間中に解約すれば請求なし）・その後 </span>}<span className="whitespace-nowrap">月額{price.toLocaleString("ja-JP")}円（税込）</span>・毎月自動更新・いつでも解約可（期間末まで利用可）・日割返金なし <Link className="underline underline-offset-2" href="/billing/terms">条件・特商法表示</Link></p>
-      {!hasContract && <SignedOutOnly><p className="text-xs text-muted-foreground">購入済みの方は、購入したときと同じ方法（Google / Apple）でログインしてください。</p></SignedOutOnly>}
-      {!hasContract && canManage && <ManageSubscriptionButton />}
-      <SellerDisclosureLine className="text-xs text-muted-foreground" />
+    <section aria-labelledby="monthly-price" className="mx-auto w-full max-w-sm space-y-6 py-4 sm:py-8">
+      <h1 id="monthly-price" className="text-xl font-bold">月額プラン</h1>
+      <div className="space-y-4">
+        <MonthlyPrice />
+        <p>演習は無料で1日{MONTHLY_PUBLIC_OFFER.freeDaily}問、月額で回数無制限。</p>
+      </div>
+      {hasContract ? <p role="status" className="text-sm">契約済みです（支払確認中を含む）。</p>
+        : config?.enabled ? <MonthlyPlanLink returnTo={returnTo ?? ""} />
+        : <p role="status" className="rounded-lg bg-muted px-4 py-3 text-sm">現在、新規申込を受け付けていません。</p>}
+      {canManage && <ManageSubscriptionButton />}
+      <MonthlyConditions showTrial={!hasContract} />
     </section>
   </>;
 }

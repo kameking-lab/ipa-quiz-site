@@ -1,16 +1,14 @@
 "use client";
 
-import Link from "next/link";
-import { MobileInstallNudge } from "@/components/pwa/MobileInstallNudge";
+import { MonthlyConditions, MonthlyPlanLink, MonthlyPrice } from "@/components/billing/MonthlyOffer";
 import { ChihuahuaMascot } from "@/components/ChihuahuaMascot";
-import { planStartHref, saveQuizReturn } from "@/lib/billing/quiz-return";
+import { saveQuizReturn } from "@/lib/billing/quiz-return";
 import { PLAN_OFFER } from "@/lib/billing/plan-offer";
 import { sendFunnelEvent } from "@/lib/billing/funnel-client";
 import { useEffect, useRef, useState } from "react";
 import { sendConversion } from "@/lib/billing/conversion-client";
 import { posthogCapture } from "@/lib/posthog";
 import dynamic from "next/dynamic";
-import { SignedOutOnly } from "@/components/account/AccountNavigation";
 const FeedbackUnlock = dynamic(() => import("./FeedbackUnlock").then(m => m.FeedbackUnlock), { ssr: false });
 
 export function PracticeLoading({ index = 0, total = 0 }: { index?: number; total?: number }) {
@@ -46,18 +44,14 @@ export function PracticeDailyLimit({ resumeHref, freeDaily, onUnlocked }: { rese
     posthogCapture("practice_upgrade_clicked", { source: "daily_limit" });
     try { saveQuizReturn(window.sessionStorage, resumeHref); } catch { /* The link itself carries the return path. */ }
   };
-  return <section aria-labelledby="practice-limit-title" className="mx-auto min-h-[100dvh] w-full max-w-md px-4 py-8">
-    <div className="space-y-4 rounded-3xl border border-sky-200 bg-gradient-to-b from-sky-50 via-card to-card p-5 text-center shadow-sm dark:border-sky-800 dark:from-sky-950">
-    <div className="flex justify-center"><ChihuahuaMascot pose="celebrate" size={96} /></div>
-    <h2 id="practice-limit-title" className="text-2xl font-bold leading-snug">今日の無料{free}問はここまで</h2>
+  return <section aria-labelledby="practice-limit-title" className="mx-auto min-h-[100dvh] w-full max-w-sm space-y-6 px-4 py-8">
+    <h2 id="practice-limit-title" className="text-xl font-bold">今日の無料{free}問はここまで</h2>
     <div className="space-y-3">
-      <a data-monthly-plan href={planStartHref(resumeHref)} onClick={start} aria-describedby="plan-terms" className="flex min-h-12 w-full items-center justify-center rounded-xl bg-primary px-4 py-3 text-lg font-bold text-primary-foreground hover:bg-primary/90 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">{PLAN_OFFER.trialDays > 0 ? <><span className="[.native-app_&]:hidden">{PLAN_OFFER.trialDays}日間無料で試す</span><span className="hidden [.native-app_&]:inline">月額{PLAN_OFFER.priceYen}円で続ける</span></> : `月額${PLAN_OFFER.priceYen}円で続ける`}</a>
-      <p id="plan-terms" className="text-xs text-muted-foreground">{PLAN_OFFER.trialDays > 0 && <span className="[.native-app_&]:hidden">初回{PLAN_OFFER.trialDays}日間無料・その後 月額{PLAN_OFFER.priceYen}円・期間中の解約なら請求なし・</span>}税込・毎月自動更新・いつでも解約可 <Link href="/billing/terms" target="_blank" rel="noopener noreferrer" className="underline underline-offset-2">条件・返金</Link></p>
-      <SignedOutOnly><p className="text-xs text-muted-foreground">購入済みの方は、購入したときと同じ方法（Google / Apple）でログインしてください。</p></SignedOutOnly>
-      <FeedbackUnlock onUnlocked={onUnlocked ?? (() => window.location.reload())} />
+      <MonthlyPrice />
+      <p>月額プランは演習回数無制限。</p>
     </div>
-    <p className="text-xs text-muted-foreground">明日また{free}問</p>
-    <MobileInstallNudge placement="daily-limit" />
-    </div>
+    <MonthlyPlanLink returnTo={resumeHref} onClick={start} />
+    <MonthlyConditions keepPracticeOpen />
+    <FeedbackUnlock onUnlocked={onUnlocked ?? (() => window.location.reload())} />
   </section>;
 }

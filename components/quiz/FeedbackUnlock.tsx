@@ -100,9 +100,9 @@ export function FeedbackUnlock({ onUnlocked }: { onUnlocked: () => void }) {
     } catch { /* Keep the draft visible on connection failure. */ }
   }
   return <div className="space-y-3 text-left">
-    {status?.requiresLogin && accountStatus === "unauthenticated" && <Link href={`/auth/signin?callbackUrl=${encodeURIComponent(window.location.pathname + window.location.search + "#feedback-unlock")}`} onClick={saveDraft} className="inline-flex min-h-11 w-full items-center justify-center rounded-xl border border-border px-4 py-3 text-sm font-semibold">意見を送ってあと10問</Link>}
+    {status?.requiresLogin && accountStatus === "unauthenticated" && <Link href={`/auth/signin?callbackUrl=${encodeURIComponent(window.location.pathname + window.location.search + "#feedback-unlock")}`} onClick={saveDraft} className="inline-flex min-h-11 items-center text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground">意見を送ってあと10問</Link>}
     {status?.requiresLogin && open && <button type="button" onClick={checkLogin} className="min-h-11 px-3 text-sm underline">{accountStatus === "unauthenticated" ? "別タブでログインした後に再確認" : "利用状態を再確認"}</button>}
-    {status?.eligible && <button type="button" className="min-h-11 w-full rounded-xl border border-border bg-background px-4 py-3 text-sm font-semibold hover:bg-muted" onClick={() => setOpen(v => !v)} aria-expanded={open} aria-controls="feedback-unlock-form">意見を送ってあと10問</button>}
+    {status?.eligible && <button type="button" className="inline-flex min-h-11 items-center text-sm text-muted-foreground underline underline-offset-4 hover:text-foreground" onClick={() => setOpen(v => !v)} aria-expanded={open} aria-controls="feedback-unlock-form">意見を送ってあと10問</button>}
     {status?.submitted && status.remaining > 0 && <button type="button" onClick={onUnlocked} className="min-h-11 w-full rounded-xl border border-border px-4 py-3 text-sm font-semibold">追加の{status.remaining}問で続ける</button>}
     {error && <p role="alert" className="text-sm text-red-600 dark:text-red-400">{error}</p>}
     {open && <form id="feedback-unlock-form" onSubmit={submit} className="space-y-4 rounded-xl border border-border bg-background p-4">

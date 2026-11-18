@@ -179,10 +179,11 @@ for (const native of [false, true]) {
     });
     await page.goto("/quiz/today?plan=edge-plan");
     await expect(page.getByRole("heading", { name: "今日の無料10問はここまで" })).toBeVisible();
-    await expect(page.getByRole("link", { name: native ? "月額980円で続ける" : "7日間無料で試す", exact: true })).toHaveAttribute("href", /returnTo=/);
+    await expect(page.getByRole("link", { name: "月額プランに申し込む", exact: true })).toHaveAttribute("href", /returnTo=/);
     await expect(page.getByRole("radio")).toHaveCount(0);
     expect(grants).toBeGreaterThan(0);
-    await expect(page.getByText("明日また10問", { exact: true })).toBeVisible();
+    await expect(page.getByText("月額プランは演習回数無制限。", { exact: true })).toBeVisible();
+    await expect(page.getByText(/初回7日間無料/)).toBeVisible({ visible: !native });
     restored = true;
     await page.evaluate(() => window.dispatchEvent(new Event("mobile:entitlement-changed")));
     await expect(page.getByRole("radio").first()).toBeVisible();

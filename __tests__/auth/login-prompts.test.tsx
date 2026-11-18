@@ -55,7 +55,7 @@ for (const state of ["authenticated", "loading", "unauthenticated"] as const) {
       const { container } = render(<PracticeDailyLimit resumeHref="/quiz?mode=year&question=q1" />);
       expect(screen.getByRole("heading", { name: "今日の無料10問はここまで" })).toBeVisible();
       expect(container.querySelector('a[href^="/billing/start?"]')).toBeVisible();
-      expect(screen.queryByText(/購入したときと同じ方法/) !== null).toBe(guest);
+      expect(screen.queryByText(/購入したときと同じ方法/)).toBeNull();
     });
     it("does not let a stale feedback response show a login link", async () => {
       const { container } = render(<FeedbackUnlock onUnlocked={vi.fn()} />);
@@ -84,10 +84,10 @@ for (const state of ["authenticated", "loading", "unauthenticated"] as const) {
       render(<CloudSyncPanel />);
       expect(screen.queryByRole("link", { name: "サインインして同期" }) !== null).toBe(guest);
     });
-    it("guards monthly purchase advice while retaining the same plan link", async () => {
+    it("keeps the monthly checkout link without repeated login advice", async () => {
       const { container } = render(await MonthlyPage({ returnTo: "/quiz?question=q1" }));
       expect(container.querySelector('a[href^="/billing/start?"]')).toBeVisible();
-      expect(screen.queryByText(/購入したときと同じ方法/) !== null).toBe(guest);
+      expect(screen.queryByText(/購入したときと同じ方法/)).toBeNull();
     });
     it("does not turn a stale purchase 401 into login advice for a signed-in user", async () => {
       const { container } = render(<PurchaseStatus order="ux-order" />);

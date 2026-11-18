@@ -76,11 +76,11 @@ test("/q pages share the free 10; plan → sign-in → Checkout → back to the 
 
   // The 11th question: the limit screen replaces the question for a person.
   await page.goto(url);
-  const plan = page.getByRole("link", { name: "7日間無料で試す" });
+  const plan = page.getByRole("link", { name: "月額プランに申し込む" });
   await expect(page.getByRole("heading", { name: "今日の無料10問はここまで" })).toBeVisible({ timeout: 60_000 });
   await expect(page.getByRole("region", { name: "問題文" })).toBeHidden();
   await expect(plan).toHaveAttribute("href", `/billing/start?returnTo=${encodeURIComponent(url)}`);
-  await expect(page.getByText("明日また10問", { exact: true })).toBeVisible();
+  await expect(page.getByText("月額プランは演習回数無制限。", { exact: true })).toBeVisible();
   // Anonymous and the bonus unused: the second button goes to sign-in, then the feedback form.
   const bonus = page.getByRole("link", { name: "意見を送ってあと10問" });
   await expect(bonus).toBeVisible({ timeout: 60_000 });
