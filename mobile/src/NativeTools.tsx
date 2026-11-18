@@ -11,6 +11,7 @@ import type { MobileConfiguration, MobileEntitlement, CatalogEntry } from "../sh
 import { downloads, type DownloadIndex } from "./downloads";
 import { Membership, deviceMembership, purchaseError, nativePublicSdkKey, describeStoreError, StoreError, checkNativePurchase } from "./purchases";
 import { beginLogin, observeLogin } from "./login";
+import { PLAN_OFFER } from "@/lib/billing/plan-offer";
 import { sendConversion } from "@/lib/billing/conversion-client";
 import { observeReminderTap, setReminder } from "./platform";
 import { persistStudy, restoreStudy } from "./portable-storage";
@@ -279,18 +280,27 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       {statusError && <div role="alert" className="space-y-2 rounded-xl border border-destructive/40 p-3 text-sm"><p className="break-words">{statusError}</p><button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await refresh(true); })}>会員状態を再確認</button></div>}
       {notice && <p role="status" className="break-words rounded-xl bg-muted p-3 text-sm">{notice}</p>}
       <section aria-labelledby="native-plan" className={card}>
-        <h2 id="native-plan" className="font-bold">有料会員（月額プラン）</h2>
-        <p className="text-sm">ログイン不要で1日10問（全資格共通・日本時間0時リセット）。意見を1回送ると＋10問。有料会員は回数無制限、資格ごとの事前ダウンロードも使えます。</p>
+        <h2 id="native-plan" className="font-bold">月額プラン</h2>
+        <p className="text-sm">演習は無料で1日{PLAN_OFFER.freeDaily}問、月額で回数無制限。</p>
         {!access ? <>{!statusError && <><p role="status">会員状態を確認しています…</p><button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await refresh(true); })}>会員状態を再確認</button></>}</> : <>
           <p className="font-semibold">{access.entitled ? access.source === "web" ? "ウェブの有料会員です。追加購入は不要です。" : "App Storeの有料会員です。" : "無料会員"}</p>
-          {access.source === "web" && <div className="space-y-2"><p className="text-sm">既存のウェブ契約の管理・解約を開きます。</p><ManageSubscriptionButton label="ウェブ契約の管理・解約"/></div>}
+          {access.source === "web" && <ManageSubscriptionButton label="ウェブ契約の管理・解約"/>}
           {!access.userId && loginButton}
           {purchasePending&&<p role="status" className="text-sm">購入内容をサーバーで確認中です。再購入せず「購入を復元」または会員状態の再確認をご利用ください。</p>}
-          {offer && !access.entitled && <div className="space-y-3 rounded-xl border border-border p-4"><h3 className="font-bold">過去問AI 月額プラン</h3><p>{offer.product.priceString} / 1か月（税込・自動更新）</p><p className="text-sm">全資格の問題を無制限で演習、資格ごとの事前ダウンロード。購入確認時にApple IDへ請求されます。解約するまで自動更新され、更新前にApp Storeのサブスクリプション管理で解約できます。解約後も有効期間の末日までは利用できます。</p>{!access.userId && <p className="text-sm">登録ボタンを押すとログイン画面が開き、ログイン後そのまま購入に進みます。ウェブと同じ会員になり、どちらでも有料機能を使えます。</p>}<button className={primary} disabled={busy||purchasePending||!!signingIn} onClick={()=>{sendConversion("plan_clicked");purchase();}}>{offer.product.priceString} / 月で登録</button>{!access.userId && <p className="text-xs text-muted-foreground">購入済みの方は、購入したときと同じ方法（Google / Apple）でログインしてください。</p>}</div>}
+          {offer && !access.entitled && <button className={primary} disabled={busy||purchasePending||!!signingIn}
+            aria-describedby="native-purchase-terms" onClick={()=>{sendConversion("plan_clicked");purchase();}}>
+            {offer.product.priceString} / 月で登録
+          </button>}
           {!access.entitled && !offer && (offerLoading ? <p className="text-sm">App Storeの価格を読み込んでいます…</p> : offerError && <div role="alert" className="space-y-2 rounded-xl border border-destructive/40 p-3 text-sm"><p className="break-words">{offerError}</p><button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await loadOffer(await refresh(true)); })}>商品情報を再読み込み</button></div>)}
           <div className="grid gap-2 sm:grid-cols-2"><button className={secondary} disabled={busy || !config?.sdkKey || !!signingIn} onClick={restore}>購入を復元</button>
             <button className={secondary} onClick={()=>void Browser.open({ url:"https://apps.apple.com/account/subscriptions" })}>App Storeで管理・解約</button></div>
-          <p className="text-sm"><Link className="underline underline-offset-4" href="/terms">利用規約</Link> · <Link className="underline underline-offset-4" href="/privacy">プライバシーポリシー</Link> · <a className="underline underline-offset-4" href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple標準使用許諾契約</a></p>
+          <div className="space-y-1 text-xs leading-5 text-muted-foreground">
+            {offer && !access.entitled && <p id="native-purchase-terms">表示価格は税込です。購入時にApple IDに請求され、毎月自動更新されます。解約はApp Storeのサブスクリプションから。</p>}
+            <nav aria-label="App Storeの契約に関する情報" className="flex flex-wrap gap-x-4 [&_a]:inline-flex [&_a]:min-h-8 [&_a]:items-center [&_a]:underline [&_a]:underline-offset-4">
+              <Link href="/operator">特商法表示</Link><Link href="/terms">利用規約</Link><Link href="/privacy">プライバシーポリシー</Link>
+              <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Apple標準使用許諾契約</a>
+            </nav>
+          </div>
           <details className="rounded-xl border border-border px-3"><summary className="flex min-h-11 cursor-pointer items-center font-semibold">資格ごとの事前ダウンロード（有料会員限定）</summary>
             <div className="space-y-2 pb-3"><p className="text-sm">必要な図表も事前に取得・検証し、すべて保存できた資格のみ保存済みになります。保存した問題は会員権利の有効期限内で利用できます。オフラインの権利確認は最大24時間です。</p>
             {access.entitled && !access.lease && access.leaseError && <p role="status" className="text-sm">事前ダウンロードは現在準備中です（{access.leaseError}）。オンラインの有料機能はそのまま使えます。</p>}

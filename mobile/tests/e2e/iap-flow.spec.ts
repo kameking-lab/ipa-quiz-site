@@ -40,7 +40,7 @@ for(const [code,provider] of [["duplicate_purchase_google","Google"],["duplicate
   test(`another ${provider} account already paid: shows the login method and never opens StoreKit`,async({page,context})=>{
     const server:Server={user:"free-user",entitledAfterPurchase:false,requests:[],purchaseError:code};await serve(context,page,server);
     await open(page,"success");
-    await expect(page.getByText("ウェブで購入済みの方は、購入したときと同じ方法（Google / Apple）でログインしてください。",{exact:true})).toBeVisible();
+    await expect(page.getByText(/購入したときと同じ方法/)).toHaveCount(0);
     await page.getByRole("button",{name:"¥980 / 月で登録",exact:true}).click();
     await expect(page.getByRole("status")).toContainText(`このメールアドレスの別のアカウント（${provider}）で購入済みです。そちらでログインしてください。`);
     expect((await page.evaluate(()=>window.mobileTest.storeCalls())).purchases).toBe(0);
@@ -53,7 +53,7 @@ test("signed out: price is visible, 登録 opens sign-in, and the purchase conti
   await open(page,"success");
   const buy=page.getByRole("button",{name:"¥980 / 月で登録",exact:true});
   await expect(buy).toBeEnabled();
-  await expect(page.getByText("登録ボタンを押すとログイン画面が開き",{exact:false})).toBeVisible();
+  await expect(page.getByText(/購入時にApple IDに請求/)).toBeVisible();
   await page.screenshot({path:info.outputPath("1-signed-out-price.png")});
   await buy.click();
   await expect(page.getByRole("status")).toContainText("ログインが終わると、そのまま購入画面に進みます。");

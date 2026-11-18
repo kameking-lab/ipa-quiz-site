@@ -81,12 +81,13 @@ it.each([true, false])("links native settings to the account or login (signed in
     .toHaveAttribute("href", signedIn ? "/account" : "/auth/signin?callbackUrl=/account");
 });
 
-it.each([true, false])("shows the native purchase login hint only for confirmed guests (signed in: %s)", async signedIn => {
+it.each([true, false])("shows the store offer without repeating login advice (signed in: %s)", async signedIn => {
   vi.mocked(deviceMembership.offer).mockResolvedValue({ product: { priceString: "¥980" } } as Awaited<ReturnType<typeof deviceMembership.offer>>);
   vi.stubGlobal("fetch", vi.fn(async input => String(input).includes("/api/mobile/catalog") ? Response.json({ exams: [] }) : Response.json({ ...entitlement, entitlement: { userId: signedIn ? "native-user" : null, entitled: false } })));
   const { container } = render(<NativeTools membershipOnly />);
   await screen.findByRole("button", { name: "¥980 / 月で登録" });
-  expect(screen.queryByText(/購入したときと同じ方法/) !== null).toBe(!signedIn);
+  expect(screen.queryByText(/購入したときと同じ方法/)).toBeNull();
+  expect(screen.getByText(/購入時にApple IDに請求/)).toBeVisible();
   if (signedIn) expect(container.querySelector('a[href*="/auth/signin"]')).toBeNull();
   vi.mocked(deviceMembership.offer).mockResolvedValue(null as unknown as Awaited<ReturnType<typeof deviceMembership.offer>>);
 });
