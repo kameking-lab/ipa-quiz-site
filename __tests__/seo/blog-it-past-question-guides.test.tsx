@@ -18,7 +18,8 @@ describe("IT search-entry practice guides", () => {
   it("renders all six existing canonical routes with source citations and exam links", async () => {
     const params = await generateStaticParams();
     const sitemap = renderBlogSitemapXml();
-    expect(getAllBlogSlugs()).toHaveLength(192);
+    expect(getAllBlogSlugs()).toHaveLength(197);
+    expect(new Set(getAllBlogSlugs()).size).toBe(197);
     for (const [exam, slug] of routes) {
       const post = getBlogPostBySlug(slug)!;
       expect(params).toContainEqual({ slug });
