@@ -1,5 +1,5 @@
 // @vitest-environment-options {"url":"https://www.kakomon-ai.jp/q/ip/2024-cbt/am/q12"}
-import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 
 
@@ -13,6 +13,7 @@ vi.mock("@/mobile/src/downloads", () => ({ downloads: { rights: vi.fn(() => Prom
 vi.mock("@/mobile/src/purchases", () => ({
   Membership: class { disconnect() { return Promise.resolve(); } offer() { return Promise.resolve(null); } },
   deviceMembership: { disconnect: vi.fn(async () => {}), offer: vi.fn(async () => null) },
+  StoreError: class extends Error { constructor(message: string, readonly code: string) { super(message); } },
   purchaseError: () => ({ cancelled: false, pending: false, rejected: false }),
   nativePublicSdkKey: (key: string) => Promise.resolve(key),
 }));
@@ -27,7 +28,7 @@ vi.mock("@/app/billing/ManageSubscriptionButton", () => ({ ManageSubscriptionBut
 
 import { NativeTools, noticeText } from "@/mobile/src/NativeTools";
 import { downloads } from "@/mobile/src/downloads";
-import { deviceMembership } from "@/mobile/src/purchases";
+import { deviceMembership, StoreError } from "@/mobile/src/purchases";
 
 const entitlement = { entitlement: { userId: null, entitled: false }, configuration: { sdkKey: "" } };
 let scrollTo: ReturnType<typeof vi.fn>;
@@ -90,6 +91,20 @@ it.each([true, false])("shows the store offer without repeating login advice (si
   expect(screen.getByText(/購入時にApple IDに請求/)).toBeVisible();
   if (signedIn) expect(container.querySelector('a[href*="/auth/signin"]')).toBeNull();
   vi.mocked(deviceMembership.offer).mockResolvedValue(null as unknown as Awaited<ReturnType<typeof deviceMembership.offer>>);
+});
+
+it("lets a blocked native buyer reopen the existing login for the paid account", async () => {
+  const signIn = vi.fn(async () => {});
+  const buy = vi.fn(async () => { throw new StoreError("購入済みです。そちらでログインしてください。", "purchase_signin"); });
+  const offer = vi.fn(async () => ({ product: { priceString: "¥980" } }));
+  const membership = { ...deviceMembership, buy, offer } as unknown as typeof deviceMembership;
+  vi.stubGlobal("fetch", vi.fn(async input => String(input).includes("/api/mobile/catalog") ? Response.json({ exams: [] }) : Response.json({ ...entitlement, entitlement: { userId: "native-user", entitled: false } })));
+  render(<NativeTools membershipOnly membership={membership} signIn={signIn} />);
+  expect(screen.queryByRole("button", { name: "ログインし直す" })).toBeNull();
+  fireEvent.click(await screen.findByRole("button", { name: "¥980 / 月で登録" }));
+  fireEvent.click(await screen.findByRole("button", { name: "ログインし直す" }));
+  await waitFor(() => expect(signIn).toHaveBeenCalledWith("/q/ip/2024-cbt/am/q12#app-settings", true));
+  expect(buy).toHaveBeenCalledTimes(1);
 });
 
 it("does not show login while the native session is still loading", async () => {

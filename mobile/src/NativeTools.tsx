@@ -32,7 +32,7 @@ const localUrl = "capacitor://localhost/index.html?local=1";
 // automatically when the panel reopens after the sign-in return.
 const INTENT_KEY = "kakomon:purchase-intent:v1";
 type Intent = "buy" | "restore";
-const defaultSignIn = (returnTo: string) => beginLogin(SITE_ORIGIN, returnTo);
+const defaultSignIn = (returnTo: string, switchAccount = false) => beginLogin(SITE_ORIGIN, returnTo, switchAccount ? "switch-account" : false);
 /** Message for a failed action: our own sentences as-is, SDK failures with their code. */
 /** The membership check itself failed. Shown once, as its own line, and cleared by the next success. */
 export class StatusError extends Error {}
@@ -47,11 +47,12 @@ export function actionFailureText(error: unknown, step: string): string {
   if (error instanceof Error && !("code" in error)) return error.message;
   return describeStoreError(error, step);
 }
-export function NativeTools({ membershipOnly = false, membership = defaultMembership, signIn = defaultSignIn }: { membershipOnly?: boolean; membership?:Membership; signIn?: (returnTo: string)=>Promise<void> }) {
+export function NativeTools({ membershipOnly = false, membership = defaultMembership, signIn = defaultSignIn }: { membershipOnly?: boolean; membership?:Membership; signIn?: (returnTo: string, switchAccount?: boolean)=>Promise<void> }) {
   const [open, setOpen] = useState(membershipOnly || (typeof location !== "undefined" && location.hash === "#app-settings")), [access, setAccess] = useState<MobileEntitlement | null>(null);
   const [config, setConfig] = useState<MobileConfiguration | null>(null), [offer, setOffer] = useState<PurchasesPackage | null>(null);
   const [catalog, setCatalog] = useState<CatalogEntry[]>([]), [saved, setSaved] = useState<DownloadIndex>({});
   const [notice, setNotice] = useState(""), [busy, setBusy] = useState(false), [time, setTime] = useState("20:00");
+  const [purchaseSignIn, setPurchaseSignIn] = useState(false);
   const [signingIn, setSigningIn] = useState<"" | "opening" | "finishing">("");
   const [purchasePending,setPurchasePending]=useState(false);
   // Why the price could not be shown. Kept apart from `notice`, which every
@@ -124,9 +125,10 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   const run = useCallback(async (fn: ()=>Promise<void>)=>{
     if(running.current || signingOut.current)return;
     running.current=true;
-    setBusy(true); setNotice("");
+    setBusy(true); setNotice(""); setPurchaseSignIn(false);
     try { await fn(); } catch(error) {
       const {cancelled,pending,rejected}=purchaseError(error);
+      setPurchaseSignIn(error instanceof StoreError && error.code === "purchase_signin");
       if(rejected&&user.current){await Preferences.remove({key:`kakomon:pending-purchase:${user.current}`}).catch(()=>{});setPurchasePending(false);}
       // A failed membership check is already on screen as statusError.
       setNotice(error instanceof StatusError?"":cancelled?"購入をキャンセルしました。":pending?"購入の承認待ちです。再購入せず、承認後に権利を再確認してください。":actionFailureText(error,"処理を完了できませんでした"));
@@ -254,11 +256,12 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   const actions=useRef({purchase,restore});
   useEffect(()=>{ actions.current={purchase,restore}; });
   useEffect(()=>{ if(!resume)return; setResume(null); if(resume==="buy")actions.current.purchase(); else actions.current.restore(); },[resume]);
-  const startLogin = ()=>{
+  const startLogin = (switchAccount = false)=>{
     // Instant feedback, then the system sign-in sheet; nothing else is awaited first.
     if (signingIn) return;
     setSigningIn("opening"); setNotice("");
-    void beginLogin(SITE_ORIGIN).catch(error=>setNotice(error instanceof Error?error.message:"ログイン画面を開けませんでした。")).finally(()=>setTimeout(()=>setSigningIn(s=>s==="opening"?"":s),1500));
+    const login = switchAccount ? signIn(returnHere(), true) : beginLogin(SITE_ORIGIN);
+    void login.catch(error=>setNotice(error instanceof Error?error.message:"ログイン画面を開けませんでした。")).finally(()=>setTimeout(()=>setSigningIn(s=>s==="opening"?"":s),1500));
   };
   if (!inSite) return null;
   const pill = "inline-flex min-h-11 shrink-0 items-center justify-center rounded-full border border-border bg-background px-3 text-sm font-medium text-foreground disabled:opacity-50";
@@ -278,6 +281,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       <div className="flex items-center justify-between gap-3"><h1 ref={heading} tabIndex={-1} className="text-xl font-bold outline-none">会員・設定</h1>{!membershipOnly && <button className={secondary} onClick={()=>setOpen(false)}>閉じる</button>}</div>
       {statusError && <div role="alert" className="space-y-2 rounded-xl border border-destructive/40 p-3 text-sm"><p className="break-words">{statusError}</p><button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await refresh(true); })}>会員状態を再確認</button></div>}
       {notice && <p role="status" className="break-words rounded-xl bg-muted p-3 text-sm">{notice}</p>}
+      {purchaseSignIn && <button type="button" className={secondary} disabled={busy || !!signingIn} onClick={()=>startLogin(true)}>ログインし直す</button>}
       <section aria-labelledby="native-plan" className={card}>
         <h2 id="native-plan" className="font-bold">月額プラン</h2>
         <p className="text-sm">演習は無料で1日{PLAN_OFFER.freeDaily}問、月額で回数無制限。</p>
@@ -300,7 +304,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
           <div className="grid gap-2 sm:grid-cols-2"><button className={secondary} disabled={busy || !config?.sdkKey || !!signingIn} onClick={restore}>購入を復元</button>
             <button className={secondary} onClick={()=>void Browser.open({ url:"https://apps.apple.com/account/subscriptions" })}>App Storeで管理・解約</button></div>
           {!access.userId && <button type="button" className="inline-flex min-h-11 items-center text-sm underline underline-offset-4 disabled:opacity-60 touch-manipulation"
-            aria-busy={!!signingIn} disabled={!!signingIn} onClick={startLogin}>{signingIn==="finishing"?"ログインしています…":signingIn?"ログイン画面を開いています…":"ログイン"}</button>}
+            aria-busy={!!signingIn} disabled={!!signingIn} onClick={()=>startLogin()}>{signingIn==="finishing"?"ログインしています…":signingIn?"ログイン画面を開いています…":"ログイン"}</button>}
           <details className="rounded-xl border border-border px-3"><summary className="flex min-h-11 cursor-pointer items-center font-semibold">資格ごとの事前ダウンロード（有料会員限定）</summary>
             <div className="space-y-2 pb-3"><p className="text-sm">必要な図表も事前に取得・検証し、すべて保存できた資格のみ保存済みになります。保存した問題は会員権利の有効期限内で利用できます。オフラインの権利確認は最大24時間です。</p>
             {access.entitled && !access.lease && access.leaseError && <p role="status" className="text-sm">事前ダウンロードは現在準備中です（{access.leaseError}）。オンラインの有料機能はそのまま使えます。</p>}

@@ -2,11 +2,11 @@
 
 import * as React from "react";
 import { useState } from "react";
-import { signIn } from "next-auth/react";
+import { signIn, signOut } from "next-auth/react";
 import { Button } from "@/components/ui/button";
 import { trackEvent } from "@/lib/analytics/events";
 
-export function EmailSignInForm({ callbackUrl }: { callbackUrl?: string }) {
+export function EmailSignInForm({ callbackUrl, clearSession = false }: { callbackUrl?: string; clearSession?: boolean }) {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
   const [sent, setSent] = useState(false);
@@ -25,6 +25,7 @@ export function EmailSignInForm({ callbackUrl }: { callbackUrl?: string }) {
     setError(null);
     setLoading(true);
     try {
+      if (clearSession) await signOut({ redirect: false });
       trackEvent({ name: "signin_started", provider: "email", source: callbackUrl });
       const res = await signIn("nodemailer", {
         email,

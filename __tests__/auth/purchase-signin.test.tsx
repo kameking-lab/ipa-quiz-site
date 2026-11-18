@@ -29,6 +29,15 @@ it("on the way to Checkout shows only the title, the provider buttons (Apple and
   expect(html).toContain("data-purchase-focus");
   for (const removed of ["メールアドレス", "または", "履歴クラウド同期", "ログインだけで課金は始まりません", "購入画面に戻る", "あと2ステップ"]) expect(text(html)).not.toContain(removed);
 });
+it("opens the existing login methods from a duplicate warning even with a current session", async () => {
+  m.auth.mockResolvedValue({ user: { id: "owner" } });
+  try {
+    const html = renderToStaticMarkup(await SignInPage({ searchParams: Promise.resolve({ callbackUrl: "/billing/start", switchAccount: "1" }) }));
+    expect(text(html)).toContain("もう一度ログイン");
+    expect(text(html)).toContain("Google でログイン");
+    expect(text(html)).toContain("メールアドレスでログイン");
+  } finally { m.auth.mockResolvedValue(null); }
+});
 
 it("keeps the ordinary sign-in page (with email and the site footer) for other destinations", async () => {
   const html = renderToStaticMarkup(await SignInPage({ searchParams: Promise.resolve({ callbackUrl: "/review" }) }));

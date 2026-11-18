@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   robots: { index: false, follow: false },
 };
 
-type SearchParams = { callbackUrl?: string; error?: string; reauth?: string };
+type SearchParams = { callbackUrl?: string; error?: string; reauth?: string; switchAccount?: string };
 
 const KNOWN_AUTH_ERRORS: Record<string, string> = {
   OAuthSignin: "外部プロバイダへの接続に失敗しました。",
@@ -48,7 +48,9 @@ export default async function SignInPage({
   const sp = await searchParams;
   const callbackUrl = safeAuthCallback(sp.callbackUrl);
   const session = await auth();
-  const reauthenticate = sp.reauth === "1";
+  const switchAccount = sp.switchAccount === "1";
+  const reauthenticate = sp.reauth === "1" || switchAccount;
+  const clearSession = switchAccount && !!session?.user;
   if (session?.user && !reauthenticate) redirect(callbackUrl);
 
   const errorMessage = sp.error ? friendlyAuthError(sp.error) : null;
@@ -62,7 +64,7 @@ export default async function SignInPage({
   );
 
   return (
-    <NativeSignInBoundary returnTo={callbackUrl}>
+    <NativeSignInBoundary returnTo={callbackUrl} switchAccount={switchAccount}>
     <main className="relative flex flex-1 items-center justify-center px-4 py-8 sm:py-12">
 
       <div className="relative w-full max-w-md">
@@ -70,7 +72,7 @@ export default async function SignInPage({
         <div className="mb-8 text-center">
           {forPurchase && <><PurchaseSignInBeacon /><span data-purchase-focus hidden /></>}
           <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
-            {forPurchase ? "ログインして決済へ" : reauthenticate ? "もう一度ログイン" : "過去問AIにログイン"}
+            {switchAccount ? "もう一度ログイン" : forPurchase ? "ログインして決済へ" : reauthenticate ? "もう一度ログイン" : "過去問AIにログイン"}
           </h1>
 
         </div>
@@ -92,6 +94,7 @@ export default async function SignInPage({
             <>
               <SignInButtons
                 reauthenticate={reauthenticate}
+                clearSession={clearSession}
                 callbackUrl={callbackUrl}
                 hasGoogle={providerIds.has("google") && (!nativeLogin || providerIds.has("apple"))}
                 hasGitHub={providerIds.has("github") && (!nativeLogin || providerIds.has("apple"))}
@@ -99,14 +102,14 @@ export default async function SignInPage({
               />
               {nativeLogin&&!providerIds.has("apple")&&<p className="text-sm">アプリの通常ログインはAppleログインの設定後に利用できます。審査担当者は下の審査用ログインをご利用ください。</p>}
 
-              {providerIds.has("nodemailer") && !forPurchase && (
+              {providerIds.has("nodemailer") && (!forPurchase || switchAccount) && (
                 <>
                   <div className="my-5 flex items-center gap-3 text-xs uppercase tracking-wider text-muted-foreground">
                     <span className="h-px flex-1 bg-border" />
                     または
                     <span className="h-px flex-1 bg-border" />
                   </div>
-                  <EmailSignInForm callbackUrl={callbackUrl} />
+                  <EmailSignInForm callbackUrl={callbackUrl} clearSession={clearSession} />
                 </>
               )}
               {/* Review access is for App Review inside the iOS app only; ordinary web visitors never see it. */}

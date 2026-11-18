@@ -33,10 +33,16 @@ it("excludes Apple relay addresses before verification or a cross-account lookup
   await expect(f.guard.assertCanPurchase("current")).resolves.toBeUndefined();
   expect(f.query).toHaveBeenCalledTimes(1); expect(f.rights).not.toHaveBeenCalled();
 });
-it("requires a fresh verified login for legacy OAuth email without trusting a client claim", async () => {
+it("only requests reauthentication for a legacy email on a paid match", async () => {
   const f = fixture(); f.current.emailVerified = null;
   await expect(f.guard.assertCanPurchase("current")).rejects.toMatchObject({ code: "purchase_email_unverified" });
-  expect(f.rights).not.toHaveBeenCalled();
+  expect(f.rights).toHaveBeenCalledExactlyOnceWith("paid");
+  f.rights.mockResolvedValue({ stripe: false, appStore: false });
+  await expect(f.guard.assertCanPurchase("current")).resolves.toBeUndefined();
+});
+it("stops an active duplicate with no Google or Apple account and uses generic guidance", async () => {
+  const f = fixture([member("paid", [])]);
+  await expect(f.guard.assertCanPurchase("current")).rejects.toMatchObject({ code: "duplicate_purchase", status: 409 });
 });
 it.each(["db", "provider"])("fails closed on %s failure without printing personal data", async failure => {
   const warn = vi.spyOn(console, "warn").mockImplementation(()=>{}), f = fixture();

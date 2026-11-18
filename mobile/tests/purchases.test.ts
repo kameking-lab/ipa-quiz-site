@@ -127,7 +127,7 @@ it("uses the public SDK key saved by the bundled shell in the online native purc
 it.each(["duplicate_purchase_google", "duplicate_purchase_apple"])("stops StoreKit and pending persistence when the server reports %s", async code => {
   const transport = vi.fn(async()=>Response.json({error:code},{status:409}));
   const pending = vi.fn();
-  await expect(new Membership(sdk).buy(c,a,product,async()=>{await checkNativePurchase(transport);await pending();})).rejects.toThrow("そちらでログインしてください");
+  await expect(new Membership(sdk).buy(c,a,product,async()=>{await checkNativePurchase(transport);await pending();})).rejects.toMatchObject({ message: expect.stringContaining("そちらでログインしてください"), code: "purchase_signin" });
   expect(pending).not.toHaveBeenCalled(); expect(sdk.purchasePackage).not.toHaveBeenCalled();
   expect(transport).toHaveBeenCalledWith("https://www.kakomon-ai.jp/api/mobile/purchase-check",expect.objectContaining({method:"POST",credentials:"include"}));
 });

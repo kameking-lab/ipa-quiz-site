@@ -108,6 +108,23 @@ it("HTTP: a different email can reserve Stripe Checkout and pass the StoreKit ch
   const response = await checkout(request("billing/checkout"));
   expect(response.status).toBe(200); expect((await response.json()).url).toContain("checkout.stripe.com");
 });
+it("HTTP: a legacy login with no active duplicate can buy on Web and iOS", async () => {
+  await pg.exec(`UPDATE "User" SET "emailVerified"=NULL WHERE id='alice'`);
+  expect((await nativeCheck(request("mobile/purchase-check"))).status).toBe(200);
+  const response = await checkout(request("billing/checkout"));
+  expect(response.status).toBe(200);
+  expect((await response.json()).url).toContain("checkout.stripe.com");
+});
+it.each(["stripe", "appStore"])("HTTP: a legacy login is blocked only while a same-email %s right is active", async source => {
+  await pg.exec(`UPDATE "User" SET "emailVerified"=NULL WHERE id='alice'`);
+  if (source === "stripe") await stripePaid(); else await appPaid();
+  for (const route of [checkout, nativeCheck]) {
+    const response = await route(request("purchase"));
+    expect(response.status).toBe(409);
+    expect(await response.json()).toEqual({ error: "purchase_email_unverified" });
+  }
+  expect((await pg.query("SELECT user_id FROM billing_subscription_account WHERE user_id='alice'")).rows).toEqual([]);
+});
 it("HTTP: preserves the existing own-account paid rejection and CSRF protection", async () => {
   await stripePaid(); wiring.user = "bob";
   for (const route of [checkout, nativeCheck]) {
