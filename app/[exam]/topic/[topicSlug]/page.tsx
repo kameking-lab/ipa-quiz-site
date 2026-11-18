@@ -1,7 +1,7 @@
 import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
 import { referralPracticeHref } from "@/lib/questions/referral-practice";
 import { questionNumberLabel } from "@/lib/questions/display";
-import { practiceSessionLabel } from "@/lib/questions/practice-session";
+import { practiceCategoryLabel, practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -55,11 +55,12 @@ export async function generateMetadata({
   }
   const questionCount = getQuestionsByExamStrict(exam as ExamCode)
     .filter((q) => q.category === category).length;
-  const title = `${examLabel(exam as ExamCode)} ${category} 過去問・解説`;
-  const description = `${examLabel(exam as ExamCode)}試験の「${category}」分野の過去問をまとめて確認できます。AI解説付きで理解を深められます。`;
+  const categoryLabel = practiceCategoryLabel(category, exam as ExamCode);
+  const title = `${examLabel(exam as ExamCode)} ${categoryLabel} 過去問・解説`;
+  const description = `${examLabel(exam as ExamCode)}試験の「${categoryLabel}」分野の過去問をまとめて確認できます。AI解説付きで理解を深められます。`;
   const ogImageUrl = `${SITE_BASE_URL}/api/og?${new URLSearchParams({
     type: "topic",
-    title: category,
+    title: categoryLabel,
     subtitle: `${examLabel(exam as ExamCode)} 分野別`,
   }).toString()}`;
   return {
@@ -94,6 +95,7 @@ export default async function ExamTopicPage({
     .filter((q) => q.category === category)
     .sort((a, b) => (b.year !== a.year ? b.year - a.year : a.qNumber - b.qNumber));
   if (pool.length === 0) notFound();
+  const categoryLabel = practiceCategoryLabel(category, code);
 
   const absUrl = `${SITE_BASE_URL}/${exam}/topic/${encodeURIComponent(category)}`;
 
@@ -102,7 +104,7 @@ export default async function ExamTopicPage({
     "@graph": [
       {
         "@type": "CollectionPage",
-        name: `${examLabel(code)} ${category} 過去問`,
+        name: `${examLabel(code)} ${categoryLabel} 過去問`,
         url: absUrl,
         inLanguage: "ja",
       },
@@ -116,7 +118,7 @@ export default async function ExamTopicPage({
             name: examLabel(code),
             item: `${SITE_BASE_URL}/${exam}`,
           },
-          { "@type": "ListItem", position: 3, name: category, item: absUrl },
+          { "@type": "ListItem", position: 3, name: categoryLabel, item: absUrl },
         ],
       },
     ],
@@ -135,7 +137,7 @@ export default async function ExamTopicPage({
 
       <div className="relative mx-auto w-full max-w-3xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
         <JsonLd data={jsonLd} />
-      <TsuginoWelcome href={referralPracticeHref(pool, `/${exam}/topic/${encodeURIComponent(category)}`, category)} qualification={`${examLabel(code)}・${category}`} />
+      <TsuginoWelcome href={referralPracticeHref(pool, `/${exam}/topic/${encodeURIComponent(category)}`, category)} qualification={`${examLabel(code)}・${categoryLabel}`} />
 
         <nav
           aria-label="パンくずリスト"
@@ -158,7 +160,7 @@ export default async function ExamTopicPage({
             </li>
             <li aria-hidden="true">/</li>
             <li aria-current="page" className="text-foreground">
-              {category}
+              {categoryLabel}
             </li>
           </ol>
         </nav>
@@ -167,7 +169,7 @@ export default async function ExamTopicPage({
           <h1 className="text-balance text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
             {examLabel(code)}{" "}
             <span className="text-primary">
-              {category}
+              {categoryLabel}
             </span>
           </h1>
           <div className="mt-3 flex flex-wrap gap-2 text-xs">

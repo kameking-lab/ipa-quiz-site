@@ -35,6 +35,13 @@ export function parsePracticeSession(value?: string): Session | undefined {
   return PRACTICE_SESSIONS.includes(value as Session) ? value as Session : undefined;
 }
 
+export function practiceCategoryLabel(category: string, exam?: ExamCode): string {
+  if (exam === "gijutsushi1-kikai") {
+    return EXAM_CONFIGS[exam].sessions.find(item => item.categories.includes(category))?.label ?? category;
+  }
+  return category;
+}
+
 export function practiceSessionLabel(session: Session, exam?: ExamCode): string {
   if (exam && ["unko-kanrisha-ryokaku", "shobo-setsubishi-kou1", "kikenbutsu-kou", "kikenbutsu-hei", "kikenbutsu-otsu4", "unko-kanrisha-kamotsu", "shobo-setsubishi-otsu6", "shobo-setsubishi-kou4"].includes(exam)) {
     return EXAM_CONFIGS[exam].sessions.find(item => item.session === session)?.label ?? session;

@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { parsePracticeSession, practiceSessionLabel } from "@/lib/questions/practice-session";
+import { parsePracticeSession, practiceCategoryLabel, practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { ExamCode } from "@/lib/questions/types";
 import { Check, ChevronRight, X } from "lucide-react";
 import { LS_KEYS } from "@/lib/storage/keys";
@@ -183,7 +183,7 @@ export function QuestionListWithFilter({ groups, exam, showSectionNavigation = f
                       </span>
                       <span className="flex-1 space-y-1.5 min-w-0">
                         <span className="flex flex-wrap items-center gap-1.5 text-xs">
-                          <Badge variant="default">{q.category}</Badge>
+                          <Badge variant="default">{practiceCategoryLabel(q.category, exam)}</Badge>
                           {q.isCalculation && <Badge variant="warn">計算</Badge>}
                           {q.isPlaceholder && (
                             <Badge variant="warn">解説準備中</Badge>

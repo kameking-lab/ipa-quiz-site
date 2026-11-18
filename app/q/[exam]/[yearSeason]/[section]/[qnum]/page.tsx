@@ -49,6 +49,7 @@ import {
 import { examTopicPageExists } from "@/lib/seo/exam-meta";
 import { buildQuestionJsonLd, questionBreadcrumbItems, sessionLabel, withQuotaPaywall } from "@/lib/seo/question-jsonld";
 import { questionHeading, questionSnippet, questionTitle } from "@/lib/seo/question-meta";
+import { practiceCategoryLabel } from "@/lib/questions/practice-session";
 import { CurrentLearningLinks } from "@/components/term-relations/CurrentLearningLinks";
 import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
 import { DescriptiveAnswerCard } from "@/components/quiz/DescriptiveAnswerCard";
@@ -187,6 +188,7 @@ export default async function QuestionPage({
   // ap-2013a-am-q75 の「品質管理」）。strict プールに同分野の問題が一つも
   // 無ければリンクを張らずプレーンテキスト表示にして死リンクを防ぐ。
   const topicPageExists = examTopicPageExists(q.exam, q.category);
+  const categoryLabel = practiceCategoryLabel(q.category, q.exam);
 
   // Sequential prev/next nav skips needsReview questions: their pages
   // notFound() (404), so keeping them in the sequence would ship dead links
@@ -331,11 +333,11 @@ export default async function QuestionPage({
               href={`/${q.exam}/topic/${encodeURIComponent(q.category)}`}
               className="inline-flex min-h-11 items-center text-sm font-medium text-muted-foreground underline underline-offset-4 transition hover:text-primary"
             >
-              {q.category}
+              {categoryLabel}
             </Link>
           ) : (
             <span className="text-sm font-medium text-muted-foreground">
-              {q.category}
+              {categoryLabel}
             </span>
           )}
           {q.topicTags.slice(0, 3).map((t) => (
@@ -646,7 +648,7 @@ export default async function QuestionPage({
             <p className="mt-0.5 text-xs text-muted-foreground">
               {crossExamMode === "topic"
                 ? `トピック「${getSharedSubjectTopics(q, crossExamByTopic).slice(0, 2).join("・")}」を扱う他試験区分の過去問`
-                : `${questionSourceExam(q)} と共通カリキュラムの他区分で「${q.category}」分野を演習する`}
+                : `${questionSourceExam(q)} と共通カリキュラムの他区分で「${categoryLabel}」分野を演習する`}
             </p>
           </div>
           <ul className="flex flex-col gap-2">
@@ -680,7 +682,7 @@ export default async function QuestionPage({
         <section aria-label="他年度の同分野問題" className="print:hidden mt-10">
           <div className="mb-4">
             <h2 className="text-lg font-bold tracking-tight text-foreground">
-              他年度の「{q.category}」問題
+              他年度の「{categoryLabel}」問題
             </h2>
             <p className="mt-0.5 text-xs text-muted-foreground">
               {questionSourceExam(q)} の同じ分野を年度をまたいで演習する

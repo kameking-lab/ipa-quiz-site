@@ -3,6 +3,7 @@ import type { Question } from "@/lib/questions/types";
 import { sessionLabel } from "@/lib/seo/question-jsonld";
 import { questionNumberLabel } from "@/lib/questions/display";
 import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
+import { practiceCategoryLabel } from "@/lib/questions/practice-session";
 
 const DESCRIPTION_MAX = 110;
 
@@ -54,7 +55,9 @@ export function questionHeading(q: Question): string {
 }
 
 function supplementaryCategory(q: Question): string {
-  return (q.category === "午前" || q.category === "午後") && q.category === sessionLabel(q.session, q.exam) ? "" : q.category;
+  const category = practiceCategoryLabel(q.category, q.exam);
+  const canRepeatSession = q.exam === "gijutsushi1-kikai" || category === "午前" || category === "午後";
+  return canRepeatSession && category === sessionLabel(q.session, q.exam) ? "" : category;
 }
 
 /** Page <title> for a single question. */

@@ -5,6 +5,8 @@ import { SHIKA_ISHI_QUESTIONS } from "@/data/questions/shika-ishi";
 import { JUDO_SEIFUKUSHI_QUESTIONS } from "@/data/questions/judo-seifukushi";
 import { SHINRISHI_QUESTIONS } from "@/data/questions/shinrishi";
 import { questionPagePath } from "@/lib/seo/question-url";
+import { questionSnippet } from "@/lib/seo/question-meta";
+import { practiceCategoryLabel } from "@/lib/questions/practice-session";
 const baseQuestion: Question = {
     id: "ap-2024s-am-q1",
     exam: "ap",
@@ -215,11 +217,15 @@ describe("sessionLabel", () => {
     it("falls back to upper-cased input for unknown sessions", () => {
         expect(sessionLabel("xyz")).toBe("XYZ");
     });
-    it("uses the official subject labels for engineering without changing radio labels", () => {
+    it("uses the official engineering and radio subject labels", () => {
         expect(sessionLabel("kiso", "gijutsushi1-kikai")).toBe("基礎科目");
         expect(sessionLabel("ippan", "gijutsushi1-kikai")).toBe("適性科目");
         expect(sessionLabel("kikai", "gijutsushi1-kikai")).toBe("専門科目");
         expect(sessionLabel("kiso", "general3")).toBe("無線工学の基礎");
+        expect(practiceCategoryLabel("basis", "gijutsushi1-kikai")).toBe("基礎科目");
+        const snippet = questionSnippet({ ...baseQuestion, exam: "gijutsushi1-kikai", session: "kiso", category: "basis" });
+        expect(snippet).toContain("基礎科目");
+        expect(snippet).not.toContain("basis");
     });
     it("maps every Session union member to a real label", () => {
         const SESSION_PRESENCE: Record<Session, true> = {
