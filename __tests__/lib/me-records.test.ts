@@ -29,6 +29,19 @@ describe("わたしの記録", () => {
     expect(studyMinutesFromHistory(entries)).toBe(9);
     expect(studyMinutesFromHistory([])).toBe(0);
   });
+  it("uses measured minutes for overlapping answers and preserves legacy and synced activity", () => {
+    const legacy = entry("ap-old", "2026-11-16T18:00:00+09:00");
+    const recent = entry("ap-new", "2026-11-17T00:30:00+09:00");
+    const base = { exam: "ap", questionId: recent.id, at: recent.at + 1 };
+    const records = buildMeRecords([legacy, recent], {}, now, {}, [
+      { ...base, id: "rapid", kind: "answer", activeMs: 50, correct: recent.correct },
+      { ...base, id: "read", kind: "explanation-read" },
+      { ...base, id: "synced", questionId: "ap-essay", kind: "answer", questionType: "essay", activeMs: 9000, correct: true },
+    ]);
+    expect(records.total).toBe(3);
+    expect(records.minutes).toBe(34);
+    expect(records.records[0].entries).toHaveLength(2);
+  });
   it("decays a lapsed streak and ignores future/invalid saved counters", () => {
     const records = buildMeRecords([], { "2026-11-14": 1, "2026-11-15": 1, "2026-12-01": 200, junk: 100, "2026-11-16": -2 }, now);
     expect(records.total).toBe(2); expect(records.streak).toBe(0);
@@ -62,5 +75,8 @@ describe("累計のチワワ", () => {
   it("only frames an explicitly recorded pass", () => {
     expect(passedPlanExams([{ input: { exam: "ap" }, result: "passed" }, { input: { exam: "fp2" }, result: "failed" }, { input: { exam: "fe" } }, { input: { exam: "ap" }, result: "passed" }])).toEqual(["ap"]);
     expect(passedPlanExams(null)).toEqual([]);
+    expect(passedPlanExams([{ input: { exam: "ip" }, result: "passed" }], [
+      { exam: "ap", result: "passed" }, { exam: "fp2", result: "failed" }, { exam: "ip", result: "passed" },
+    ])).toEqual(["ap", "ip"]);
   });
 });

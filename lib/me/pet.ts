@@ -18,11 +18,12 @@ export function lifetimePetStage(document: PetProfileDocument | null, minutes: n
 export interface MeExamResult { exam: string; result: "passed" | "failed" | "absent" }
 
 /** The planner owns result collection/sync; the room only reads its result. */
-export function passedPlanExams(plans: unknown): string[] {
-  if (!Array.isArray(plans)) return [];
-  return [...new Set(plans.flatMap((plan: unknown) => {
+export function passedPlanExams(plans: unknown, pacePlans: readonly { exam: string; result?: MeExamResult["result"] }[] = []): string[] {
+  const passed = pacePlans.filter(plan => plan.result === "passed").map(plan => plan.exam);
+  if (!Array.isArray(plans)) return [...new Set(passed)];
+  return [...new Set([...passed, ...plans.flatMap((plan: unknown) => {
     if (!plan || typeof plan !== "object" || !("result" in plan) || plan.result !== "passed" || !("input" in plan)) return [];
     const input = plan.input;
     return input && typeof input === "object" && "exam" in input && typeof input.exam === "string" ? [input.exam] : [];
-  }))];
+  })])];
 }

@@ -11,13 +11,15 @@ import { readLastQuestion } from "@/lib/storage/last-question";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { buildMeRecords, plannedPaceBehind, type StudyRecord } from "@/lib/me/records";
 import { passedPlanExams } from "@/lib/me/pet";
+import { getLearningActions, listPacePlans } from "@/lib/study-plan/pace-storage";
+import type { LearningAction } from "@/lib/study-plan/activity";
 import { examLabel } from "@/lib/utils";
 import { MePetRoom } from "./MePetRoom";
 
 const intensity = ["bg-stone-100 dark:bg-stone-800", "bg-emerald-100 dark:bg-emerald-950", "bg-emerald-300 dark:bg-emerald-800", "bg-emerald-500 dark:bg-emerald-600", "bg-emerald-700 dark:bg-emerald-400"] as const;
 const number = new Intl.NumberFormat("ja-JP", { maximumFractionDigits: 1 });
 const shortDate = (date: string) => `${Number(date.slice(5, 7))}/${Number(date.slice(8))}`;
-interface Snapshot { history: HistoryEntry[]; days: Record<string, number>; exam: string | null; goal: number; passed: string[]; plans: unknown; now: Date }
+interface Snapshot { history: HistoryEntry[]; actions: LearningAction[]; days: Record<string, number>; exam: string | null; goal: number; passed: string[]; plans: unknown; now: Date }
 
 export function MeClient() {
   const [snapshot, setSnapshot] = useState<Snapshot | null>(null);
@@ -45,8 +47,9 @@ export function MeClient() {
       let plans: unknown = [];
       try { plans = JSON.parse(localStorage.getItem(LS_KEYS.studyPlans) ?? "[]"); } catch { /* no plan */ }
       setSelected(null); setMetadata({}); setQuestionLabels({});
-      setSnapshot({ history, days: getHeatmapMap(), exam: readLastQuestion()?.exam ?? null,
-        goal: readDailyGoalTarget(), passed: passedPlanExams(plans), plans, now: new Date() });
+      const pacePlans = listPacePlans();
+      setSnapshot({ history, actions: getLearningActions(), days: getHeatmapMap(), exam: readLastQuestion()?.exam ?? pacePlans[0]?.exam ?? null,
+        goal: readDailyGoalTarget(), passed: passedPlanExams(plans, pacePlans), plans, now: new Date() });
       const ids = [...new Set(history.map(entry => entry.id))].filter(id => id.length > 0 && id.length <= 120).slice(-2000);
       if (!ids.length) return;
       const controller = new AbortController(); controllers.add(controller);
@@ -65,12 +68,14 @@ export function MeClient() {
     refresh();
     const visible = () => { if (!document.hidden) refresh(); };
     window.addEventListener("storage", refresh); window.addEventListener("focus", refresh);
+    window.addEventListener("study-plan:changed", refresh);
     window.addEventListener("pet-v1:owner-changed", refresh); document.addEventListener("visibilitychange", visible);
     return () => { generation++; controllers.forEach(controller => controller.abort());
       window.removeEventListener("storage", refresh); window.removeEventListener("focus", refresh);
+      window.removeEventListener("study-plan:changed", refresh);
       window.removeEventListener("pet-v1:owner-changed", refresh); document.removeEventListener("visibilitychange", visible); };
   }, []);
-  const records = snapshot ? buildMeRecords(snapshot.history, snapshot.days, snapshot.now, metadata) : null;
+  const records = snapshot ? buildMeRecords(snapshot.history, snapshot.days, snapshot.now, metadata, snapshot.actions) : null;
   const exam = snapshot?.exam ?? records?.records[0]?.exam ?? "ip";
   const today = records?.calendar.at(-1);
   const todayExamCount = records?.records.find(record => record.date === today?.date && record.exam === exam)?.entries.length ?? 0;
