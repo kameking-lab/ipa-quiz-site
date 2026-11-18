@@ -11,6 +11,7 @@ import { toSummary } from "./types";
 import { FOCUSED_STUDY_GUIDES, FOCUSED_GUIDE_INCOMING_LINKS } from "./focused-study-guides";
 import { TOPIC_STUDY_GUIDES, TOPIC_GUIDE_INCOMING_LINKS } from "./topic-study-guides";
 import { QUALIFICATION_STUDY_GUIDES } from "./qualification-study-guides";
+import { NON_IT_STUDY_GUIDES } from "./non-it-study-guides";
 import { BLOG_ARTICLE_ALIASES, canonicalBlogSlug } from "@/lib/blog/article-aliases";
 
 function buildAllPosts(): BlogPost[] {
@@ -25,6 +26,7 @@ function buildAllPosts(): BlogPost[] {
   posts.push(...FOCUSED_STUDY_GUIDES);
   posts.push(...TOPIC_STUDY_GUIDES);
   posts.push(...QUALIFICATION_STUDY_GUIDES);
+  posts.push(...NON_IT_STUDY_GUIDES);
   return posts.map(post => ({
     ...post,
     relatedSlugs: [...new Set([

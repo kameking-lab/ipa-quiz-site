@@ -3,16 +3,17 @@ import { renderToStaticMarkup } from "react-dom/server";
 import BlogArticlePage, { generateMetadata, generateStaticParams } from "@/app/blog/[slug]/page";
 import { TOPIC_STUDY_GUIDES, TOPIC_GUIDE_INCOMING_LINKS } from "@/data/blog/topic-study-guides";
 import { QUALIFICATION_STUDY_GUIDES } from "@/data/blog/qualification-study-guides";
+import { NON_IT_STUDY_GUIDES } from "@/data/blog/non-it-study-guides";
 import { getRelatedPosts } from "@/data/blog";
 import { getRelatedBlogPosts } from "@/lib/blog/related-content";
 import { renderBlogSitemapXml } from "@/lib/seo/sitemap-xml";
 import { ALL_EXAM_CODES } from "@/lib/exam-config";
 
-const guides = [...TOPIC_STUDY_GUIDES, ...QUALIFICATION_STUDY_GUIDES];
+const guides = [...TOPIC_STUDY_GUIDES, ...QUALIFICATION_STUDY_GUIDES, ...NON_IT_STUDY_GUIDES];
 
 describe("new qualification study articles", () => {
-  it("exposes all ten articles through real static routes, metadata, structured data and the sitemap", async () => {
-    expect(guides).toHaveLength(10);
+  it("exposes all fifteen articles through real static routes, metadata, structured data and the sitemap", async () => {
+    expect(guides).toHaveLength(15);
     const params = await generateStaticParams();
     const sitemap = renderBlogSitemapXml();
     for (const guide of guides) {
@@ -45,7 +46,7 @@ describe("new qualification study articles", () => {
     for (const [slug, details] of Object.entries(TOPIC_GUIDE_INCOMING_LINKS)) {
       expect(getRelatedPosts(slug).map(post => post.slug)[0]).toBe(details[0]);
     }
-    for (const guide of QUALIFICATION_STUDY_GUIDES) {
+    for (const guide of [...QUALIFICATION_STUDY_GUIDES, ...NON_IT_STUDY_GUIDES]) {
       expect(getRelatedBlogPosts(guide.exam!, 3).map(post => post.slug)).toContain(guide.slug);
     }
   });
