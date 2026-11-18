@@ -50,7 +50,7 @@ it("samples bounded floor coordinates with depth-scaled sizes instead of rows", 
     expect(new Set(scene.seats.map(seat => seat.floorY)).size).toBe(scene.seats.length);
     const byDepth = [...scene.seats].sort((a, b) => a.floorY - b.floorY);
     for (let i = 1; i < byDepth.length; i++) expect(byDepth[i].width).toBeGreaterThan(byDepth[i - 1].width);
-    expect(scene.background).toBe("/images/home/study-room-white.webp");
+    expect(scene.background).toContain("study-room-white");
     const smallest = Math.min(...scene.seats.map(point => point.width));
     // Full-room overview, including 120 learners, fits the phone without scrolling.
     // A seat tap exposes a full-size portrait below the frame.

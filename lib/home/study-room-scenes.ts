@@ -1,4 +1,5 @@
 import layouts from "./study-room-layouts.json";
+import roomBackground from "@/public/images/home/study-room-white.webp";
 
 /** Source pixels: y is the reserved square centre; floorY is its contact with the floor. */
 export interface RoomSeatPosition { x: number; y: number; width: number; floorY: number }
@@ -19,7 +20,7 @@ export const STUDY_ROOM_SCENES: readonly StudyRoomScene[] = names.map((name, ind
   const seats = layouts[index];
   // The production room's pale wood and furnishings remain the visual reference.
   // Increasing the viewed floor area fits every learner without a scrolling canvas.
-  return { name, background: "/images/home/study-room-white.webp", width, height,
+  return { name, background: typeof roomBackground === "string" ? roomBackground : roomBackground.src, width, height,
     minWidth: 0, seats };
 });
 

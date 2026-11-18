@@ -118,6 +118,7 @@ export default async function TopicModePage({
               });
               return (
                 <Link
+                  prefetch={false}
                   key={g.label}
                   href={`/quiz?${qs.toString()}`}
                   className="group relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
@@ -160,6 +161,7 @@ export default async function TopicModePage({
           <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
             {items.map(([category, v]) => (
               <Link
+                prefetch={false}
                 key={category}
                 href={`/quiz?mode=topic&exam=${exam}&category=${encodeURIComponent(category)}&session=${session}&returnTo=${encodeURIComponent(`/modes/topic?exam=${exam}&session=${session}`)}`}
                 className="group relative overflow-hidden rounded-2xl border border-border bg-card p-5 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"

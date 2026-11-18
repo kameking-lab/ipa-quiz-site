@@ -328,7 +328,7 @@ export default async function ExamTopPage({
                   </Link>
                 </Button>
                 <Button className="min-h-12 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="outline" size="lg">
-                  <Link href={`/quiz?mode=random&exam=${exam}&session=am1`}>科目A-1（旧午前I）</Link>
+                  <Link prefetch={false} href={`/quiz?mode=random&exam=${exam}&session=am1`}>科目A-1（旧午前I）</Link>
                 </Button>
               </div>
             </div>
