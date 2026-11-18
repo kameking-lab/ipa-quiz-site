@@ -11,6 +11,7 @@ import { ThemeProvider, THEME_BOOTSTRAP_SCRIPT } from "@/components/theme-provid
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { SiteHeader } from "@/components/SiteHeader";
 import { AccountNavigationProvider } from "@/components/account/AccountNavigation";
+import { SyncSessionObservationProvider } from "@/lib/sync/session-observation";
 import { NativeAppHost } from "@/components/NativeAppHost";
 import { NATIVE_APP_BOOTSTRAP_SCRIPT } from "@/lib/native-app-bootstrap";
 import { NativeAdPrivacy } from "@/components/ads/NativeAdPrivacy";
@@ -140,6 +141,7 @@ export default function RootLayout({
         {process.env.FEEDBACK_UNLOCK_ENABLED === "true" && <FeedbackAccountClaim />}
         <ThemeProvider>
           <MobileInstallProvider>
+          <SyncSessionObservationProvider>
           <StudyPresence />
           <PurchaseJourney />
           <ActivityTracker />
@@ -281,6 +283,7 @@ export default function RootLayout({
           </div>
           <MobileBottomNav />
           </AccountNavigationProvider>
+          </SyncSessionObservationProvider>
           </MobileInstallProvider>
         </ThemeProvider>
       </body>
