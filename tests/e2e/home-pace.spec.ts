@@ -72,7 +72,7 @@ for (const width of [390, 1280]) {
       await fixtures(page, undefined, 0, true); await page.goto("/");
       await page.getByRole("button", { name: "学習計画を作成", exact: true }).click();
       await page.getByRole("combobox", { name: "受ける資格" }).selectOption("ip");
-      await expect(page.getByRole("combobox", { name: "受ける回" })).toBeVisible();
+      await expect(page.getByRole("radio", { name: "随時受験" })).toBeChecked();
       await page.getByLabel("予約した日・受けたい日").fill("2026-12-20");
       await layout(page); await screenshot(page, "04-create", width);
       await page.getByRole("button", { name: "この回で作成" }).click();

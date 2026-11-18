@@ -1,4 +1,6 @@
 import type { Metadata } from "next";
+import Link from "next/link";
+import { Settings } from "lucide-react";
 import { MeClient } from "@/components/me/MeClient";
 
 export const metadata: Metadata = {
@@ -8,5 +10,11 @@ export const metadata: Metadata = {
 };
 
 export default function MePage() {
-  return <main className="mx-auto w-full max-w-2xl px-4 py-6 sm:py-10"><h1 className="mb-5 text-xl font-bold tracking-tight">わたしの記録</h1><MeClient /></main>;
+  return <main className="mx-auto w-full max-w-[640px] px-4 pb-6 sm:px-6">
+    <header className="flex min-h-14 items-center justify-between gap-2">
+      <h1 className="text-xl font-bold">わたしの記録</h1>
+      <Link href="/settings" aria-label="設定" className="grid size-11 place-items-center rounded-lg hover:bg-muted"><Settings aria-hidden="true" className="size-5" /></Link>
+    </header>
+    <MeClient />
+  </main>;
 }

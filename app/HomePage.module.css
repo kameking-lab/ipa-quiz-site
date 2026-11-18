@@ -1,5 +1,3 @@
-.home { padding-top: 20px; }
+.home { padding-top: 4px; }
 :global(#main-content):has(.home) { padding-bottom: 0; }
-@media (min-width: 640px) { .home { padding-top: 24px; } }
-:global(body):has(.home) :global(.mobile-bottom-nav svg) { width: 28px; height: 28px; padding: 4px; border-radius: 8px; }
-:global(body):has(.home) :global(.mobile-bottom-nav a[aria-current="page"] svg) { background: var(--primary-soft); }
+@media (min-width: 640px) { .home { padding-top: 16px; } }

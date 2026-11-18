@@ -112,6 +112,7 @@ function SiteHeaderContent({ search }: { search: Pick<URLSearchParams, "get"> | 
     <header
       className={cn(
         "sticky top-0 z-40 w-full transition-all duration-150",
+        pathname === "/me" && "hidden md:block",
         scrolled
           ? "surface-glass border-b border-border"
           : "border-b border-transparent",

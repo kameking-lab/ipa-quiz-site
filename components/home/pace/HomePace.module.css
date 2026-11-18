@@ -1,18 +1,12 @@
-.card {
-  border-radius: 28px;
-  box-shadow: 0 8px 32px #18181b04;
-}
-.content { padding: 24px; }
+.content { padding: 16px 18px; }
 .qualification {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
-  width: 100%;
+  gap: 4px;
+  min-width: 0;
   min-height: 44px;
-  border-radius: 8px;
   text-align: left;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 700;
   line-height: 1.5;
   overflow-wrap: anywhere;
@@ -25,41 +19,28 @@
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  min-height: 52px;
-  padding-block: 12px;
+  min-height: 48px;
+  padding-block: 8px;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.6;
 }
 .result > span:first-child { min-width: 0; overflow-wrap: anywhere; }
-.result > span:last-child { flex-shrink: 0; color: var(--muted-foreground); }
 .result:hover { color: var(--primary); }
 .countdown {
   display: flex;
   align-items: baseline;
   gap: 6px;
-  margin-top: 14px;
-  color: var(--muted-foreground);
-  font-size: 14px;
+  margin-top: 10px;
+  font-size: 15px;
+  font-weight: 600;
 }
 .countdown > span {
-  color: var(--foreground);
-  font-size: 56px;
-  font-weight: 600;
+  font-size: 44px;
+  font-weight: 700;
   line-height: 1;
-  letter-spacing: -.05em;
   font-variant-numeric: tabular-nums;
 }
-.primary {
-  min-height: 56px;
-  border-radius: 16px;
-  background: var(--primary);
-  color: var(--primary-foreground);
-  font-weight: 600;
-  box-shadow: 0 4px 12px #4f46e514;
-}
-.primary:hover { background: var(--primary-hover); }
-.card :is(a,button):focus-visible { outline: 2px solid var(--primary); outline-offset: 4px; }
 .sheet > button:last-child {
   display: flex;
   align-items: center;
@@ -69,5 +50,4 @@
   top: 12px;
   right: 12px;
 }
-.judgment { font-size: 13px; line-height: 20px; }
-@media (min-width: 640px) { .content { padding: 28px; } }
+@media (min-width: 640px) { .content { padding: 18px 24px; } }
