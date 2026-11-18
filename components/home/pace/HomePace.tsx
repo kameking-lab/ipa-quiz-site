@@ -163,7 +163,7 @@ export function HomePace({ domains, planExamKeys, createOnLoad = false }: {
         <Button variant="outline" className="mt-2 min-h-11 w-full border-primary bg-card text-primary" onClick={() => setSheet("create")}><CalendarDays aria-hidden="true" className="size-4" />学習計画を作成</Button>
       </div> : <div className="pt-5">
         <div className="flex items-center justify-between gap-4">
-          <h1 className="font-display text-[28px] font-bold leading-snug sm:text-4xl">今日も、<br />ひと問ずつ。</h1>
+          <h1 aria-label="今日も、ひと問ずつ。" className="font-display text-[28px] font-bold leading-snug sm:text-4xl">今日も、<br />ひと問ずつ。</h1>
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img src="/mascot/chihuahua-guide.webp" alt="" width={88} height={88} className="size-[88px] object-contain sm:size-24" />
         </div>
