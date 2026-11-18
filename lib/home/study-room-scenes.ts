@@ -1,6 +1,10 @@
 import layouts from "./study-room-layouts.json";
 import roomBackground from "@/public/images/home/study-room-white.webp";
 
+// Next's image loader supplies an object, while Vite supplies the asset URL.
+const importedBackground = roomBackground as string | { src: string };
+const background = typeof importedBackground === "string" ? importedBackground : importedBackground.src;
+
 /** Source pixels: y is the reserved square centre; floorY is its contact with the floor. */
 export interface RoomSeatPosition { x: number; y: number; width: number; floorY: number }
 export interface StudyRoomScene {
@@ -20,7 +24,7 @@ export const STUDY_ROOM_SCENES: readonly StudyRoomScene[] = names.map((name, ind
   const seats = layouts[index];
   // The production room's pale wood and furnishings remain the visual reference.
   // Increasing the viewed floor area fits every learner without a scrolling canvas.
-  return { name, background: typeof roomBackground === "string" ? roomBackground : roomBackground.src, width, height,
+  return { name, background, width, height,
     minWidth: 0, seats };
 });
 
