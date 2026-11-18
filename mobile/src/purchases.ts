@@ -4,18 +4,30 @@ import { Preferences } from "@capacitor/preferences";
 import type { MobileConfiguration, MobileEntitlement } from "../shared/contracts";
 import { PURCHASE_MESSAGES, purchaseNeedsSignIn } from "@/lib/billing/purchase-messages";
 
+const purchaseCheckUrl = "https://www.kakomon-ai.jp/api/mobile/purchase-check";
+interface PurchaseReservation { id: string; expiresAt: string }
+
 /** Last server check before persisting the pending marker and presenting StoreKit. */
-export async function checkNativePurchase(transport: typeof fetch = fetch) {
+export async function checkNativePurchase(transport: typeof fetch = fetch): Promise<PurchaseReservation | null> {
   try {
-    const response = await transport("https://www.kakomon-ai.jp/api/mobile/purchase-check", { method: "POST", credentials: "include", signal: AbortSignal.timeout(15000) });
-    const body = await response.json().catch(()=>null) as { allowed?: boolean; error?: string } | null;
+    const response = await transport(purchaseCheckUrl, { method: "POST", credentials: "include", signal: AbortSignal.timeout(15000) });
+    const body = await response.json().catch(()=>null) as { allowed?: boolean; error?: string; reservation?: PurchaseReservation } | null;
     if (!response.ok || body?.allowed !== true) {
       const code = typeof body?.error === "string" ? body.error : "";
-      throw new StoreError(PURCHASE_MESSAGES[code] ?? PURCHASE_MESSAGES.purchase_check_unavailable, purchaseNeedsSignIn(code) ? "purchase_signin" : "purchase_check");
+      throw new StoreError(PURCHASE_MESSAGES[code] ?? PURCHASE_MESSAGES.purchase_check_unavailable,
+        purchaseNeedsSignIn(code) ? "purchase_signin" : code === "web_subscription_exists" ? code : "purchase_check");
     }
+    return body.reservation ?? null;
   } catch (error) {
     throw error instanceof StoreError ? error : new StoreError(PURCHASE_MESSAGES.purchase_check_unavailable, "purchase_check");
   }
+}
+export async function releaseNativePurchase(reservationId: string, transport: typeof fetch = fetch) {
+  const response = await transport(purchaseCheckUrl, {
+    method: "DELETE", credentials: "include", signal: AbortSignal.timeout(15000),
+    headers: { "Content-Type": "application/json" }, body: JSON.stringify({ reservationId }),
+  });
+  if (!response.ok) throw new Error("purchase_release_failed");
 }
 export function purchaseError(error:unknown) {
   const code=error&&typeof error==="object"&&"code"in error?String(error.code):"";

@@ -11,6 +11,9 @@ export function monthlyTerms(c: MonthlyConfig) {
     ...(c.trialDays > 0 ? { trialDays: c.trialDays, trial: "first-contract;card-required;cancel-before-end-no-charge" } : {}) })).digest("hex");
 }
 function problem(code: string): never { throw new BillingError(code, 503); }
+const staleSignupMs = 23 * 3600000;
+// Covers Apple's 24-hour Ask to Buy window after StoreKit is presented.
+const appStorePurchaseMs = 25 * 3600000;
 const within = (start: number, end: number, now: number) => start <= now && now < end;
 function disputeHold(a: Account, subscriptionId?: string) {
   return Object.values(a.invoices).filter(i => !subscriptionId || i.subscriptionId === subscriptionId).some(i =>
@@ -59,57 +62,109 @@ export function access(a: Account, now: number): { subscriptionId: string; perio
 export class MonthlyService {
   constructor(private store: MonthlyStore, readonly config: MonthlyConfig, private clock = () => new Date(), private afterReceive?: (userId: string) => Promise<void>) {}
   private tx<T>(id: string, fn: (a: Account) => Promise<T>, readOnly = false) { return this.store.transaction(id, this.config.mode, this.config.sourceInstance, fn, readOnly); }
-  async checkout(userId: string, terms: string, provider: MonthlyProvider, email?: string, onCreated?: (orderId: string) => Promise<void>) {
+  async checkout(userId: string, terms: string, provider: MonthlyProvider, email?: string, onCreated?: (orderId: string) => Promise<void>,
+    checkAppStore?: () => Promise<void>) {
     if (!this.config.enabled) throw new BillingError("billing_unavailable", 503);
     if (terms !== monthlyTerms(this.config)) throw new BillingError("terms_changed");
-    // A stale (23h+, near Stripe's 24h session/idempotency limit) or outdated pending
-    // signup never blocks a new purchase: its Checkout session is expired at Stripe
-    // (refused if it was actually paid) and a fresh signup starts immediately.
-    type Reservation = { signup: Signup; customer: NonNullable<Account["customer"]> };
-    let reservation: Reservation | null = null;
-    for (let round = 0; round < 3 && !reservation; round++) {
-      const step = await this.tx(userId, async (a): Promise<Reservation | { stale: Signup }> => {
-        assertPolicyReady(a);
-        if (disputeHold(a)) throw new BillingError("billing_review_required");
-        if (Object.values(a.contracts).some(c => !terminal(c.status))) throw new BillingError("subscription_exists");
-        const now = this.clock();
-        let s = Object.values(a.signups).find(s => s.state === "pending");
-        if (s && (now.getTime() - Date.parse(s.createdAt) >= 23 * 3600000 || s.terms !== terms)) return structuredClone({ stale: s });
-        // The free trial is for an account's first contract only.
-        const firstContract = !Object.keys(a.contracts).length && !Object.values(a.signups).some(v => v.state === "attached");
-        if (!s) { s = { id: randomUUID(), createdAt: now.toISOString(), terms, amount: this.config.priceYen, priceId: this.config.priceId,
+    const reservation = await this.tx(userId, async a => {
+      assertPolicyReady(a);
+      if (Object.values(a.contracts).some(c => !terminal(c.status))) throw new BillingError("subscription_exists");
+      if (disputeHold(a)) throw new BillingError("billing_review_required");
+      const now = this.clock();
+      // Check RevenueCat under the same lock as StoreKit's reservation.
+      await checkAppStore?.();
+      if (a.appStorePurchase && now.getTime() < Date.parse(a.appStorePurchase.expiresAt))
+        throw new BillingError("app_store_purchase_pending", 409);
+      delete a.appStorePurchase;
+      let signup = Object.values(a.signups).find(s => s.state === "pending");
+      if (signup) {
+        if (now.getTime() - Date.parse(signup.createdAt) >= staleSignupMs || signup.terms !== terms) {
+          await this.expireSignup(a, signup, provider);
+          signup = undefined;
+        } else if (signup.sessionId) {
+          const session = a.customer?.id ? await provider.checkoutSession(a.customer.id, signup) : null;
+          if (!session) problem("checkout_conflict");
+          if (session.status === "complete") throw new BillingError("subscription_exists");
+          if (session.status === "expired") {
+            signup.state = "expired";
+            signup = undefined;
+          }
+        }
+      }
+      if (!signup) {
+        const firstContract = !Object.keys(a.contracts).length && !Object.values(a.signups).some(s => s.state === "attached");
+        signup = { id: randomUUID(), createdAt: now.toISOString(), terms, amount: this.config.priceYen, priceId: this.config.priceId,
           state: "pending", sessionId: null, url: null, subscriptionId: null,
-          ...(firstContract && this.config.trialDays > 0 ? { trialDays: this.config.trialDays } : {}) }; a.signups[s.id] = s; }
-        // An unconfirmed customer attempt past the idempotency window starts over (at worst an unused Stripe customer).
-        if (!a.customer || !a.customer.id && now.getTime() - Date.parse(a.customer.createdAt) >= 23 * 3600000) a.customer = { attemptId: randomUUID(), createdAt: now.toISOString(), id: null };
-        return structuredClone({ signup: s, customer: a.customer });
-      });
-      if ("stale" in step) {
-        if (step.stale.sessionId) await provider.expireCheckout(step.stale.sessionId);
-        await this.tx(userId, async a => { const current = a.signups[step.stale.id]; if (current?.state === "pending") current.state = "expired"; });
-      } else reservation = step;
-    }
-    if (!reservation) throw new BillingError("checkout_conflict", 503);
+          ...(firstContract && this.config.trialDays > 0 ? { trialDays: this.config.trialDays } : {}) };
+        a.signups[signup.id] = signup;
+      }
+      if (!a.customer || !a.customer.id && now.getTime() - Date.parse(a.customer.createdAt) >= staleSignupMs)
+        a.customer = { attemptId: randomUUID(), createdAt: now.toISOString(), id: null };
+      return structuredClone({ signup, customer: a.customer });
+    });
     const customerId = reservation.customer.id ?? await provider.customer(reservation.customer.attemptId);
     await this.tx(userId, async a => {
       if (a.customer?.attemptId !== reservation.customer.attemptId || a.customer.id && a.customer.id !== customerId) problem("customer_conflict");
       a.customer.id = customerId;
     });
-    const result = reservation.signup.sessionId && reservation.signup.url
-      ? { id: reservation.signup.sessionId, url: reservation.signup.url } : await provider.checkout(customerId, reservation.signup, email);
     const checkout = await this.tx(userId, async a => {
       const current = a.signups[reservation.signup.id];
-      if (!current || current.sessionId && current.sessionId !== result.id) problem("checkout_conflict");
-      // Webhook may have attached the contract already. Never overwrite its state.
+      if (current?.state !== "pending") throw new BillingError("checkout_conflict", 409);
+      if (current.sessionId && current.url) return { orderId: current.id, url: current.url, created: false };
+      // Keep the persisted signup if Stripe creates a session but the response
+      // or DB commit fails. A later lookup can recover it by signup ID.
+      const result = await provider.checkout(customerId, current, email);
+      if (current.sessionId && current.sessionId !== result.id) problem("checkout_conflict");
       current.sessionId = result.id; current.url = result.url;
-      return { orderId: current.id, url: result.url };
+      return { orderId: current.id, url: result.url, created: true };
     });
     // Observe only new sessions after commit, never a cached Checkout URL.
     // Optional measurement cannot roll back or fail the successful purchase action.
-    if (!reservation.signup.sessionId && onCreated) {
+    if (checkout.created && onCreated) {
       try { await onCreated(checkout.orderId); } catch { /* measurement only */ }
     }
-    return checkout;
+    return { orderId: checkout.orderId, url: checkout.url };
+  }
+  private async expireSignup(a: Account, signup: Signup, provider: MonthlyProvider) {
+    const sessionId = signup.sessionId ?? (a.customer?.id ? (await provider.checkoutSession(a.customer.id, signup))?.id : null);
+    if (sessionId) {
+      await provider.expireCheckout(sessionId);
+      signup.sessionId = sessionId;
+    }
+    signup.state = "expired";
+  }
+  async cancelCheckout(userId: string, orderId: string, provider: MonthlyProvider) {
+    return this.tx(userId, async a => {
+      const signup = a.signups[orderId];
+      if (!signup) throw new BillingError("purchase_not_found", 404);
+      if (signup.state === "pending") await this.expireSignup(a, signup, provider);
+    });
+  }
+  async reserveAppStorePurchase(userId: string, provider: MonthlyProvider, checkAppStore: () => Promise<void>) {
+    return this.tx(userId, async a => {
+      const now = this.clock().getTime();
+      if (access(a, now / 1000)) throw new BillingError("subscription_exists", 409);
+      if (Object.values(a.contracts).some(c => !terminal(c.status))) throw new BillingError("web_subscription_exists", 409);
+      for (const signup of Object.values(a.signups).filter(s => s.state === "pending")) {
+        if (!signup.sessionId && now - Date.parse(signup.createdAt) < staleSignupMs)
+          throw new BillingError("web_checkout_pending", 409);
+        const session = a.customer?.id ? await provider.checkoutSession(a.customer.id, signup) : null;
+        if (signup.sessionId && !session) problem("checkout_conflict");
+        if (session && session.status !== "expired") throw new BillingError("web_checkout_pending", 409);
+        signup.state = "expired";
+        signup.sessionId = session?.id ?? null;
+      }
+      await checkAppStore();
+      if (a.appStorePurchase && now < Date.parse(a.appStorePurchase.expiresAt))
+        throw new BillingError("app_store_purchase_pending", 409);
+      a.appStorePurchase = { id: randomUUID(), expiresAt: new Date(this.clock().getTime() + appStorePurchaseMs).toISOString() };
+      return a.appStorePurchase;
+    });
+  }
+  async releaseAppStorePurchase(userId: string, reservationId: string) {
+    await this.tx(userId, async a => {
+      if (a.appStorePurchase?.id === reservationId) delete a.appStorePurchase;
+    });
   }
   async portal(userId: string, provider: MonthlyProvider) {
     const customerId = await this.tx(userId, async a => a.customer?.id ?? null, true);

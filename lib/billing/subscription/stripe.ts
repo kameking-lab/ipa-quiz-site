@@ -105,13 +105,41 @@ export class StripeMonthlyProvider implements MonthlyProvider {
     if (!result.id.startsWith(this.c.mode === "stripe-live" ? "cs_live_" : "cs_test_") || new URL(result.url).origin !== "https://checkout.stripe.com") throw new BillingError("invalid_checkout_url", 503);
     return { id: result.id, url: result.url };
   }
+  async checkoutSession(customerId: string, signup: Signup) {
+    const schema = z.object({
+      id, livemode: z.boolean(), mode: z.literal("subscription"), customer: z.literal(customerId),
+      client_reference_id: z.literal(signup.id), metadata: z.object({
+        signup_id: z.literal(signup.id), source_instance: z.literal(this.c.sourceInstance), terms_hash: z.literal(signup.terms),
+      }),
+      status: z.enum(["open", "complete", "expired"]),
+    });
+    const sessions = signup.sessionId
+      ? [await this.api(`checkout/sessions/${encodeURIComponent(signup.sessionId)}`)]
+      : (await this.list("checkout/sessions", { customer: customerId, "created[gte]": String(Math.floor(Date.parse(signup.createdAt) / 1000)) }))
+        .filter(raw => z.object({ client_reference_id: z.literal(signup.id) }).safeParse(raw).success);
+    if (!sessions.length) return null;
+    if (sessions.length !== 1) throw new BillingError("checkout_conflict", 503);
+    const session = schema.parse(sessions[0]); this.mode(session);
+    if (signup.sessionId && session.id !== signup.sessionId) throw new BillingError("checkout_owner_mismatch", 503);
+    return { id: session.id, status: session.status };
+  }
   async expireCheckout(sessionId: string) {
     const path = `checkout/sessions/${encodeURIComponent(sessionId)}`;
     const state = z.object({ id, livemode: z.boolean(), status: z.enum(["open", "complete", "expired"]) });
     const current = state.parse(await this.api(path)); this.mode(current);
     if (current.id !== sessionId) throw new BillingError("checkout_owner_mismatch", 503);
     if (current.status === "complete") throw new BillingError("subscription_exists");
-    if (current.status === "open") { const closed = state.parse(await this.api(`${path}/expire`, {})); this.mode(closed); if (closed.status !== "expired") throw new BillingError("subscription_exists"); }
+    if (current.status === "open") {
+      try {
+        const closed = state.parse(await this.api(`${path}/expire`, {})); this.mode(closed);
+        if (closed.id !== sessionId || closed.status !== "expired") throw new BillingError("checkout_conflict", 503);
+      } catch (error) {
+        // The session can complete or expire at Stripe after our initial read.
+        const latest = state.parse(await this.api(path)); this.mode(latest);
+        if (latest.id !== sessionId || latest.status === "open") throw error;
+        if (latest.status === "complete") throw new BillingError("subscription_exists");
+      }
+    }
   }
   async portal(customerId: string, configurationId: string) {
     await this.checkPortalConfiguration(configurationId);

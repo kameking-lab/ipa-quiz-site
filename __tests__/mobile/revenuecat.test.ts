@@ -1,5 +1,5 @@
 import { beforeEach, expect, it, vi } from "vitest";
-import { appUserIdentity, validWebhookAuthorization, verifiedExpiration } from "@/mobile/server/revenuecat";
+import { appStorePurchaseState, appUserIdentity, validWebhookAuthorization, verifiedExpiration } from "@/mobile/server/revenuecat";
 const now=Date.parse("2026-11-03T03:00:00Z");
 const config={entitlement:"kakomon_pro",productId:"mock.monthly",environment:"SANDBOX"};
 function snapshot(overrides:Record<string,unknown>={}) {
@@ -39,6 +39,23 @@ it("does not turn a billing issue into an unlimited or malformed grace period",(
   const malformed=snapshot({...expired,grace_period_expires_date:"invalid"});
   malformed.subscriber.entitlements.kakomon_pro.expires_date=new Date(now-1000).toISOString();
   expect(verifiedExpiration(malformed,config,now)).toBeNull();
+});
+
+it("recognizes an active App Store purchase and blocks a recoverable renewal without granting access", () => {
+  const expiration = now - 86400000;
+  const retry = snapshot({ expires_date: new Date(expiration).toISOString(), billing_issues_detected_at: new Date(expiration).toISOString() });
+  expect(appStorePurchaseState(snapshot(), config, now)).toBe("active");
+  expect(appStorePurchaseState(retry, config, now)).toBe("processing");
+  expect(verifiedExpiration(retry, config, now)).toBeNull();
+  expect(appStorePurchaseState(retry, config, expiration + 60 * 86400000)).toBeNull();
+  expect(appStorePurchaseState(retry, { ...config, environment: "PRODUCTION" }, now)).toBeNull();
+  expect(appStorePurchaseState(snapshot({ expires_date: new Date(expiration).toISOString() }), config, now)).toBeNull();
+});
+
+it("blocks a verified store period while entitlement data is still missing", () => {
+  const receipt = { subscriber: { ...snapshot().subscriber, entitlements: {} } };
+  expect(appStorePurchaseState(receipt, config, now)).toBe("processing");
+  expect(verifiedExpiration(receipt, config, now)).toBeNull();
 });
 
 it("accepts Apple verified Sandbox on the production app API, never arbitrary stores, and expires review rights",()=>{

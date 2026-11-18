@@ -45,6 +45,8 @@ export interface Account {
   invoices: Record<string, Invoice>; payments: Record<string, Payment>;
   renewalStopJobs: Record<string, { token: string; reason?: "dispute" }>;
   events: Record<string, string>; grants: Record<string, string[]>;
+  /** StoreKit may still be completing a purchase that RevenueCat cannot see yet. */
+  appStorePurchase?: { id: string; expiresAt: string };
   /** Hashed card fingerprints that started a free trial on this account -> subscription. Missing on older accounts. */
   trialCards?: Record<string, string>;
   /** Trials to end at Stripe because the card was already used for a trial (subscription -> event token). */
@@ -71,6 +73,7 @@ export interface Observation {
 export interface MonthlyProvider {
   customer(attemptId: string): Promise<string>;
   checkout(customerId: string, signup: Signup, email?: string): Promise<{ id: string; url: string }>;
+  checkoutSession(customerId: string, signup: Signup): Promise<{ id: string; status: "open" | "complete" | "expired" } | null>;
   /** Close an unpaid Checkout session; rejects with subscription_exists if it was completed. */
   expireCheckout(sessionId: string): Promise<void>;
   portal(customerId: string, configurationId: string): Promise<string>;

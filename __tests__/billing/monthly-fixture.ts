@@ -29,6 +29,8 @@ export async function monthlyFixture() {
   let observation: Observation = { contracts: [], invoices: [], payments: [] };
   const provider: MonthlyProvider = {
     customer: vi.fn(async () => "cus_alice"), checkout: vi.fn(async () => ({ id: "cs_test_monthly", url: "https://checkout.stripe.com/c/pay/monthly" })),
+    checkoutSession: vi.fn<MonthlyProvider["checkoutSession"]>(
+      async (_customerId, signup) => signup.sessionId ? { id: signup.sessionId, status: "open" } : null),
     portal: vi.fn(async () => "https://billing.stripe.com/p/session/fixture"), resolve: vi.fn(async () => ({ customerId: "cus_alice", subscriptionIds: ["sub_monthly"], invoiceIds: [] })),
     observe: vi.fn(async () => structuredClone(observation)), stopRenewal: vi.fn(async () => undefined), endTrial: vi.fn(async () => undefined),
     expireCheckout: vi.fn(async () => undefined),

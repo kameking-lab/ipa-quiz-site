@@ -16,19 +16,29 @@ export function validWebhookAuthorization(actual: string | null, expected: strin
 }
 const subscriberSchema = z.object({ subscriber: z.object({
   entitlements: z.record(z.string(), z.object({ product_identifier: z.string(), expires_date: z.string().nullable(), purchase_date: z.string(), grace_period_expires_date:z.string().nullable().optional() })),
-  subscriptions: z.record(z.string(), z.object({ store: z.string(), is_sandbox: z.boolean(), expires_date: z.string().nullable(), refunded_at: z.string().nullable().optional(), grace_period_expires_date:z.string().nullable().optional() })),
+  subscriptions: z.record(z.string(), z.object({ store: z.string(), is_sandbox: z.boolean(), expires_date: z.string().nullable(), refunded_at: z.string().nullable().optional(), grace_period_expires_date:z.string().nullable().optional(),
+    billing_issues_detected_at: z.string().nullable().optional(), unsubscribe_detected_at: z.string().nullable().optional(),
+  })),
 }) });
-export function verifiedExpiration(body: unknown, config: { entitlement: string; productId: string; environment: string }, now: number): string | null {
-  if (!["PRODUCTION","SANDBOX","APP_STORE"].includes(config.environment)) return null;
+type StoreConfig = { entitlement: string; productId: string; environment: string };
+function parseSubscriber(body: unknown) {
   const parsed = subscriberSchema.safeParse(body);
   if (!parsed.success) {
     console.error("[revenuecat] unexpected subscriber shape", parsed.error.issues.slice(0, 5).map(issue => issue.path.join(".")).join(","));
     throw new BillingError("mobile_verification_unexpected_response", 503);
   }
-  const { subscriber } = parsed.data;
-  const e = subscriber.entitlements[config.entitlement], sub = subscriber.subscriptions[config.productId];
-  if (!e || !sub || e.product_identifier !== config.productId || sub.store !== "app_store" || sub.refunded_at
-    || config.environment !== "APP_STORE" && sub.is_sandbox !== (config.environment === "SANDBOX") || !e.expires_date || !sub.expires_date) return null;
+  return parsed.data.subscriber;
+}
+type Subscriber = ReturnType<typeof parseSubscriber>;
+function verifiedAppStoreSubscription(subscriber: Subscriber, config: StoreConfig) {
+  if (!["PRODUCTION","SANDBOX","APP_STORE"].includes(config.environment)) return null;
+  const sub = subscriber.subscriptions[config.productId];
+  return sub && sub.store === "app_store" && !sub.refunded_at
+    && (config.environment === "APP_STORE" || sub.is_sandbox === (config.environment === "SANDBOX")) ? sub : null;
+}
+function accessExpiration(subscriber: Subscriber, config: StoreConfig, now: number): string | null {
+  const e = subscriber.entitlements[config.entitlement], sub = verifiedAppStoreSubscription(subscriber, config);
+  if (!e || !sub || e.product_identifier !== config.productId || !e.expires_date || !sub.expires_date) return null;
   const regularEnd = Math.min(Date.parse(e.expires_date), Date.parse(sub.expires_date));
   // Only RevenueCat's verified App Store grace extends access; a billing issue
   // or cancellation alone never creates a new paid period.
@@ -39,6 +49,47 @@ export function verifiedExpiration(body: unknown, config: { entitlement: string;
   const purchased=Date.parse(e.purchase_date);
   if (!Number.isFinite(end) || end <= now || !Number.isFinite(purchased) || purchased > now) return null;
   return new Date(end).toISOString();
+}
+export function verifiedExpiration(body: unknown, config: StoreConfig, now: number): string | null {
+  if (!["PRODUCTION","SANDBOX","APP_STORE"].includes(config.environment)) return null;
+  return accessExpiration(parseSubscriber(body), config, now);
+}
+export function appStorePurchaseState(body: unknown, config: StoreConfig, now: number) {
+  const subscriber = parseSubscriber(body);
+  if (accessExpiration(subscriber, config, now)) return "active";
+  const sub = verifiedAppStoreSubscription(subscriber, config);
+  if (!sub?.expires_date) return null;
+  const expiration = Date.parse(sub.expires_date);
+  if (expiration > now) return "processing";
+  const billingIssue = Date.parse(sub.billing_issues_detected_at ?? "");
+  const unsubscribe = Date.parse(sub.unsubscribe_detected_at ?? "");
+  // Apple may retry a lapsed renewal for up to 60 days. This affects purchases only.
+  if (billingIssue <= now && !(unsubscribe < billingIssue) && now < expiration + 60 * 86400000) return "processing";
+  return null;
+}
+
+async function fetchSubscriber(appUserId: string, apiKey: string, transport: typeof fetch) {
+  const response = await transport(`https://api.revenuecat.com/v1/subscribers/${encodeURIComponent(appUserId)}`, {
+    headers: { Authorization: `Bearer ${apiKey}`, Accept: "application/json" }, cache: "no-store", signal: AbortSignal.timeout(8000), redirect: "error",
+  });
+  if (response.status === 404) return null;
+  if (!response.ok) {
+    console.error("[revenuecat] subscriber lookup failed", response.status);
+    throw new BillingError(`mobile_verification_unavailable_${response.status}`, 503);
+  }
+  return response.json() as Promise<unknown>;
+}
+/** Resolve identity before locking the monthly account, then fetch within the lock. */
+export async function appStorePurchaseCheck(userId: string, activeCode = "app_store_subscription_exists") {
+  if (!mobileConfig().enabled) return async () => {};
+  const c = requireMobileReady();
+  const { appUserId } = await ensureRevenueCatAccount(userId);
+  return async () => {
+    const body = await fetchSubscriber(appUserId, c.apiKey, fetch);
+    if (body === null) return;
+    const state = appStorePurchaseState(body, c, Date.now());
+    if (state) throw new BillingError(state === "active" ? activeCode : "app_store_purchase_pending", 409);
+  };
 }
 interface AccountRow { userId: string; appUserId: string; expiresAt: Date | null; checkedAt: Date | null }
 export async function ensureRevenueCatAccount(userId: string) {
@@ -54,14 +105,7 @@ export async function refreshRevenueCat(appUserId: string, transport: typeof fet
   const result = await prisma.$transaction(async tx => {
     const rows = await tx.$queryRawUnsafe<AccountRow[]>('SELECT * FROM "MobileRevenueCatAccount" WHERE "appUserId"=$1 FOR UPDATE', appUserId);
     if (!rows[0]) return null;
-    const response = await transport(`https://api.revenuecat.com/v1/subscribers/${encodeURIComponent(appUserId)}`, {
-      headers: { Authorization: `Bearer ${c.apiKey}`, Accept: "application/json" }, cache: "no-store", signal: AbortSignal.timeout(8000), redirect: "error",
-    });
-    if (!response.ok && response.status !== 404) {
-      console.error("[revenuecat] subscriber lookup failed", response.status);
-      throw new BillingError(`mobile_verification_unavailable_${response.status}`, 503);
-    }
-    const now = Date.now(), body = response.status === 404 ? null : await response.json();
+    const body = await fetchSubscriber(appUserId, c.apiKey, transport), now = Date.now();
     const productionExpiresAt = body ? verifiedExpiration(body,{...c,environment:"PRODUCTION"},now) : null;
     const sandboxExpiresAt = body ? verifiedExpiration(body,{...c,environment:"SANDBOX"},now) : null;
     const expiresAt = body ? verifiedExpiration(body,c,now) : null;

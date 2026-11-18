@@ -9,7 +9,7 @@ import { Preferences } from "@capacitor/preferences";
 import Link from "next/link";
 import type { MobileConfiguration, MobileEntitlement, CatalogEntry } from "../shared/contracts";
 import { downloads, type DownloadIndex } from "./downloads";
-import { Membership, deviceMembership, purchaseError, nativePublicSdkKey, describeStoreError, StoreError, checkNativePurchase } from "./purchases";
+import { Membership, deviceMembership, purchaseError, nativePublicSdkKey, describeStoreError, StoreError, checkNativePurchase, releaseNativePurchase } from "./purchases";
 import { beginLogin, observeLogin } from "./login";
 import { PLAN_OFFER } from "@/lib/billing/plan-offer";
 import { sendConversion } from "@/lib/billing/conversion-client";
@@ -53,6 +53,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   const [catalog, setCatalog] = useState<CatalogEntry[]>([]), [saved, setSaved] = useState<DownloadIndex>({});
   const [notice, setNotice] = useState(""), [busy, setBusy] = useState(false), [time, setTime] = useState("20:00");
   const [purchaseSignIn, setPurchaseSignIn] = useState(false);
+  const [manageWebPurchase, setManageWebPurchase] = useState(false);
   const [signingIn, setSigningIn] = useState<"" | "opening" | "finishing">("");
   const [purchasePending,setPurchasePending]=useState(false);
   // Why the price could not be shown. Kept apart from `notice`, which every
@@ -104,7 +105,8 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     if(result.entitlement.userId) {
       const key=`kakomon:pending-purchase:${result.entitlement.userId}`;
       if(result.entitlement.entitled)await Preferences.remove({key});
-      setPurchasePending(!result.entitlement.entitled && (await Preferences.get({key})).value==="true");
+      const marker = (await Preferences.get({key})).value;
+      setPurchasePending(!result.entitlement.entitled && (marker === "true" || Date.parse(marker ?? "") > Date.now()));
     }else setPurchasePending(false);
     const signature=JSON.stringify([result.entitlement.userId,result.entitlement.entitled]);
     if(accessSignature.current!==signature) { accessSignature.current=signature;window.dispatchEvent(new Event("mobile:entitlement-changed")); }
@@ -125,11 +127,11 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   const run = useCallback(async (fn: ()=>Promise<void>)=>{
     if(running.current || signingOut.current)return;
     running.current=true;
-    setBusy(true); setNotice(""); setPurchaseSignIn(false);
+    setBusy(true); setNotice(""); setPurchaseSignIn(false); setManageWebPurchase(false);
     try { await fn(); } catch(error) {
-      const {cancelled,pending,rejected}=purchaseError(error);
+      const {cancelled,pending}=purchaseError(error);
       setPurchaseSignIn(error instanceof StoreError && error.code === "purchase_signin");
-      if(rejected&&user.current){await Preferences.remove({key:`kakomon:pending-purchase:${user.current}`}).catch(()=>{});setPurchasePending(false);}
+      setManageWebPurchase(error instanceof StoreError && error.code === "web_subscription_exists");
       // A failed membership check is already on screen as statusError.
       setNotice(error instanceof StatusError?"":cancelled?"購入をキャンセルしました。":pending?"購入の承認待ちです。再購入せず、承認後に権利を再確認してください。":actionFailureText(error,"処理を完了できませんでした"));
     }
@@ -232,10 +234,25 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
     await Preferences.remove({key:INTENT_KEY});
     const selected=offer??await loadOffer(r);
     if(!selected)throw new StoreError("商品情報を取得できないため購入を開始できません。表示中の理由をご確認ください。","no_offer");
-    await membership.buy(r.configuration,r.entitlement,selected,async()=>{
-      await checkNativePurchase();
-      await Preferences.set({key:`kakomon:pending-purchase:${r.entitlement.userId}`,value:"true"});setPurchasePending(true);
-    });
+    const key = `kakomon:pending-purchase:${r.entitlement.userId}`;
+    let reservationId: string | undefined;
+    let readyForStoreKit = false;
+    try {
+      await membership.buy(r.configuration, r.entitlement, selected, async () => {
+        const reservation = await checkNativePurchase();
+        reservationId = reservation?.id;
+        await Preferences.set({ key, value: reservation?.expiresAt ?? "true" });
+        setPurchasePending(true);
+        readyForStoreKit = true;
+      });
+    } catch (error) {
+      if (purchaseError(error).rejected || !readyForStoreKit && reservationId) {
+        if (reservationId) await releaseNativePurchase(reservationId).catch(() => {});
+        await Preferences.remove({ key }).catch(() => {});
+        setPurchasePending(false);
+      }
+      throw error;
+    }
     // StoreKit has charged at this point. RevenueCat may need a moment to show
     // the receipt to our server, so re-check a few times before giving up.
     let confirmed:Awaited<ReturnType<typeof refresh>>|null=null;
@@ -244,6 +261,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       confirmed=await refresh(true).catch(()=>null);
     }
     setNotice(confirmed?.entitlement.entitled?"購入を確認しました。有料会員です（ウェブでも同じ会員です）。":"購入は完了しています。会員状態の反映を確認中です。再購入せず、少し待ってから「再確認」を押してください。");
+    if (reservationId && confirmed?.entitlement.source === "app-store") void releaseNativePurchase(reservationId).catch(() => {});
   });
   const restore = ()=>void run(async()=>{
     const r=await refresh(true);
@@ -287,7 +305,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
         <p className="text-sm">演習は無料で1日{PLAN_OFFER.freeDaily}問、月額で回数無制限。</p>
         {!access ? <>{!statusError && <><p role="status">会員状態を確認しています…</p><button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await refresh(true); })}>会員状態を再確認</button></>}</> : <>
           <p className="font-semibold">{access.entitled ? access.source === "web" ? "ウェブの有料会員です。追加購入は不要です。" : "App Storeの有料会員です。" : "無料会員"}</p>
-          {access.source === "web" && <ManageSubscriptionButton label="ウェブ契約の管理・解約"/>}
+          {(access.source === "web" || manageWebPurchase) && <ManageSubscriptionButton label="ウェブ契約の管理・解約"/>}
           {purchasePending&&<p role="status" className="text-sm">購入内容をサーバーで確認中です。再購入せず「購入を復元」または会員状態の再確認をご利用ください。</p>}
           {offer && !access.entitled && <button className={primary} disabled={busy||purchasePending||!!signingIn}
             aria-describedby="native-purchase-terms" onClick={()=>{sendConversion("plan_clicked");purchase();}}>

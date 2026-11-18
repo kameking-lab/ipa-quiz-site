@@ -11,7 +11,7 @@ import { purchaseJourney } from "@/lib/billing/journey-client";
 import { useAccountStatus } from "@/components/account/AccountNavigation";
 import { sendConversion } from "@/lib/billing/conversion-client";
 interface Status { feedbackSubmitted?: boolean; billingModel?: "subscription"; canManage?: boolean; subscription?: { status: string; periodEnd: string; cancelAtPeriodEnd: boolean }; entitled: boolean; expiresAt: string | null; purchase: { id: string; status: string; expiresAt: string | null } | null }
-export function PurchaseStatus({ order, canceled = false, testMode = true }: { order: string; canceled?: boolean; testMode?: boolean }) {
+export function PurchaseStatus({ order, canceled = false, closeCheckout = false, testMode = true }: { order: string; canceled?: boolean; closeCheckout?: boolean; testMode?: boolean }) {
   const [status, setStatus] = useState<Status | null>(null);
   const [error, setError] = useState("");
   const [needsLogin, setNeedsLogin] = useState(false);
@@ -25,6 +25,10 @@ export function PurchaseStatus({ order, canceled = false, testMode = true }: { o
     const id = ++request.current;
     setBusy(true);
     try {
+      if (closeCheckout) {
+        await fetch("/api/billing/checkout", { method: "DELETE", headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ orderId: order }) }).catch(() => {});
+      }
       const res = await fetch(`/api/billing/status?order=${encodeURIComponent(order)}`, { cache: "no-store" });
       if (id !== request.current) return null;
       setNeedsLogin(res.status === 401);
@@ -39,7 +43,7 @@ export function PurchaseStatus({ order, canceled = false, testMode = true }: { o
     } finally {
       if (id === request.current) { active.current = false; setBusy(false); }
     }
-  }, [order]);
+  }, [order, closeCheckout]);
   useEffect(() => {
     let disposed = false;
     let timer: ReturnType<typeof setTimeout> | undefined;
@@ -83,6 +87,7 @@ export function PurchaseStatus({ order, canceled = false, testMode = true }: { o
   }, [complete, order]);
   const pending = status?.purchase?.status === "pending";
   const labels: Record<string, string> = { failed: "支払いは成立していません。", suspended: "返金手続を確認中のため利用を一時停止しています。", refunded: "返金により、この購入の利用は停止しています。", expired: "利用期間が満了しました。無料の演習・履歴は引き続き使えます。" };
+  if (closeCheckout) labels.expired = "決済手続きを中止しました。";
   const title = complete ? "購入が完了しました" : canceled ? "決済画面から戻りました" : pending ? "支払いを確認しています" : "購入状況の確認";
   return <div className="space-y-5">
     <h1 className="text-2xl font-bold">{title}</h1>

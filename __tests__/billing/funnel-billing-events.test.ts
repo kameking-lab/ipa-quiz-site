@@ -44,6 +44,7 @@ describe("server-confirmed funnel steps", () => {
     ["work-environment-measurement-expert-first_kakomon_my_next_steps_sagyo-kankyo-sokuteishi", "work-environment-measurement-expert-first.my_next_steps.source-1"],
   ])("links real sender label %s through the checkout and verified webhook", async (raw, content) => {
     const f = await monthlyStripeFixture(); wiring.runtime = f;
+    f.session.status = "open";
     localStorage.clear();
     window.history.replaceState({}, "", `/?utm_source=tsugino_shikaku&utm_content=${encodeURIComponent(raw)}`);
     const touch = { utm_source: "tsugino_shikaku", utm_content: content };
@@ -56,6 +57,7 @@ describe("server-confirmed funnel steps", () => {
     expect(saveSource).toHaveBeenCalledWith(result.orderId, touch);
     expect(record).toHaveBeenCalledWith("checkout_started", "user:alice", expect.any(Number), touch);
     readSource.mockResolvedValueOnce(touch);
+    f.session.status = "complete";
     const completed = { id: "evt_source_done", type: "checkout.session.completed", livemode: false, data: { object: { ...f.session, status: "complete", mode: "subscription", client_reference_id: result.orderId } } };
     expect((await webhook(signed(completed))).status).toBe(200);
     expect(readSource).toHaveBeenCalledWith(result.orderId);
@@ -63,6 +65,7 @@ describe("server-confirmed funnel steps", () => {
   });
   it("counts checkout_started per signed-in user only after a Checkout session exists", async () => {
     const f = await monthlyStripeFixture(); wiring.runtime = f;
+    f.session.status = "open";
     const response = await checkout(post({ terms: monthlyTerms(f.config) }));
     expect(response.status).toBe(200);
     expect(record).toHaveBeenCalledWith("checkout_started", "user:alice");
@@ -74,6 +77,7 @@ describe("server-confirmed funnel steps", () => {
   });
   it("counts a newly created session after commit and leaves Checkout usable when measurement fails", async () => {
     const f = await monthlyStripeFixture(); wiring.runtime = f; f.visible(false);
+    f.session.status = "open";
     await f.store.transaction("alice", f.config.mode, f.config.sourceInstance, async account => {
       for (const signup of Object.values(account.signups)) { signup.sessionId = null; signup.url = null; }
     });
@@ -153,5 +157,33 @@ describe("Stripe Checkout stays minimal", () => {
     expect(posts).toHaveLength(1);
     status = "complete";
     await expect(f.provider.expireCheckout("cs_test_old")).rejects.toMatchObject({ code: "subscription_exists" });
+  });
+  it("reads a Checkout whose creation response was lost and verifies the saved signup binding", async () => {
+    const f = await monthlyStripeFixture();
+    const signup = f.store.accounts.get("stripe-test:alice")!.signups[f.result.orderId];
+    await expect(f.provider.checkoutSession("cus_monthly", signup)).resolves.toEqual({ id: f.session.id, status: "complete" });
+    const original = vi.mocked(f.fetcher).getMockImplementation()!;
+    vi.mocked(f.fetcher).mockImplementation((input, options) => {
+      const url = new URL(String(input));
+      if (url.pathname !== "/v1/checkout/sessions") return original(input, options);
+      expect(url.searchParams.get("customer")).toBe("cus_monthly");
+      return Promise.resolve(Response.json({ data: [f.session], has_more: false }));
+    });
+    const lost = { ...signup, sessionId: null, url: null };
+    await expect(f.provider.checkoutSession("cus_monthly", lost)).resolves.toEqual({ id: f.session.id, status: "complete" });
+    f.session.metadata.terms_hash = "changed";
+    await expect(f.provider.checkoutSession("cus_monthly", lost)).rejects.toThrow();
+  });
+  it("does not treat a concurrent Checkout completion as a cancellation", async () => {
+    const f = await monthlyStripeFixture();
+    const original = vi.mocked(f.fetcher).getMockImplementation()!;
+    f.session.status = "open";
+    vi.mocked(f.fetcher).mockImplementation((input, options) => {
+      if (!String(input).endsWith("/expire")) return original(input, options);
+      f.session.status = "complete";
+      return Promise.resolve(new Response(null, { status: 400 }));
+    });
+    await expect(f.service.cancelCheckout("alice", f.result.orderId, f.provider)).rejects.toMatchObject({ code: "subscription_exists" });
+    expect((await f.service.status("alice", f.result.orderId)).purchase?.status).toBe("pending");
   });
 });

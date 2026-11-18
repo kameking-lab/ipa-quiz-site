@@ -2,6 +2,10 @@
 import { act, cleanup, fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 
+const nativePurchase = vi.hoisted(() => ({
+  reserve: vi.fn(async () => ({ id: "native-attempt", expiresAt: "2099-01-01T00:00:00.000Z" })),
+  release: vi.fn(async () => {}),
+}));
 
 vi.mock("@capacitor/core", () => ({ Capacitor: { isNativePlatform: () => true, getPlatform: () => "ios" } }));
 vi.mock("@capacitor/app", () => ({ App: { addListener: () => Promise.resolve({ remove: () => Promise.resolve() }) } }));
@@ -14,7 +18,11 @@ vi.mock("@/mobile/src/purchases", () => ({
   Membership: class { disconnect() { return Promise.resolve(); } offer() { return Promise.resolve(null); } },
   deviceMembership: { disconnect: vi.fn(async () => {}), offer: vi.fn(async () => null) },
   StoreError: class extends Error { constructor(message: string, readonly code: string) { super(message); } },
-  purchaseError: () => ({ cancelled: false, pending: false, rejected: false }),
+  purchaseError: (result: unknown) => ({
+    cancelled: result === "test-cancelled", pending: result === "test-pending", rejected: result === "test-cancelled",
+  }),
+  checkNativePurchase: nativePurchase.reserve,
+  releaseNativePurchase: nativePurchase.release,
   nativePublicSdkKey: (key: string) => Promise.resolve(key),
 }));
 vi.mock("@/mobile/src/login", () => ({ beginLogin: vi.fn(() => Promise.resolve()), observeLogin: vi.fn(() => Promise.resolve(() => {})) }));
@@ -24,7 +32,7 @@ vi.mock("@/mobile/src/images", () => ({ cachedImage: vi.fn() }));
 vi.mock("@/mobile/src/QualificationActions", () => ({ NativePageQualificationActions: () => null }));
 vi.mock("@/mobile/src/qualification-platform", () => ({ openQualificationUrl: vi.fn() }));
 vi.mock("@/mobile/src/pet-support", () => ({ installNativePetSupport: () => () => {}, observePetStudyWrites: () => () => {}, persistStudyAfterPets: vi.fn(() => Promise.resolve()) }));
-vi.mock("@/app/billing/ManageSubscriptionButton", () => ({ ManageSubscriptionButton: () => null }));
+vi.mock("@/app/billing/ManageSubscriptionButton", () => ({ ManageSubscriptionButton: ({ label }: { label: string }) => <button>{label}</button> }));
 
 import { NativeTools, noticeText } from "@/mobile/src/NativeTools";
 import { downloads } from "@/mobile/src/downloads";
@@ -105,6 +113,39 @@ it("lets a blocked native buyer reopen the existing login for the paid account",
   fireEvent.click(await screen.findByRole("button", { name: "ログインし直す" }));
   await waitFor(() => expect(signIn).toHaveBeenCalledWith("/q/ip/2024-cbt/am/q12#app-settings", true));
   expect(buy).toHaveBeenCalledTimes(1);
+});
+
+it("exposes Web contract management when an unpaid renewal blocks the iOS purchase", async () => {
+  const buy = vi.fn(async () => { throw new StoreError("ウェブの契約が残っています。", "web_subscription_exists"); });
+  const offer = vi.fn(async () => ({ product: { priceString: "¥980" } }));
+  const membership = { ...deviceMembership, buy, offer } as unknown as typeof deviceMembership;
+  vi.stubGlobal("fetch", vi.fn(async input => String(input).includes("/api/mobile/catalog") ? Response.json({ exams: [] }) : Response.json({ ...entitlement, entitlement: { userId: "native-user", entitled: false } })));
+  render(<NativeTools membershipOnly membership={membership} />);
+  expect(screen.queryByRole("button", { name: "ウェブ契約の管理・解約" })).toBeNull();
+  fireEvent.click(await screen.findByRole("button", { name: "¥980 / 月で登録" }));
+  expect(await screen.findByRole("button", { name: "ウェブ契約の管理・解約" })).toBeVisible();
+});
+
+it.each(["test-cancelled", "test-pending"] as const)("releases the server reservation only after a definite StoreKit cancellation (%s)", async result => {
+  const buy = vi.fn(async (_config, _access, _selected, beforePurchase: () => Promise<void>) => {
+    await beforePurchase();
+    throw result;
+  });
+  const offer = vi.fn(async () => ({ product: { priceString: "¥980" } }));
+  const membership = { ...deviceMembership, buy, offer } as unknown as typeof deviceMembership;
+  vi.stubGlobal("fetch", vi.fn(async input => String(input).includes("/api/mobile/catalog") ? Response.json({ exams: [] }) : Response.json({ ...entitlement, entitlement: { userId: "native-user", entitled: false } })));
+  render(<NativeTools membershipOnly membership={membership} />);
+  const subscribe = await screen.findByRole("button", { name: "¥980 / 月で登録" });
+  fireEvent.click(subscribe);
+  if (result === "test-cancelled") {
+    expect(await screen.findByText("購入をキャンセルしました。")).toBeVisible();
+    expect(nativePurchase.release).toHaveBeenCalledWith("native-attempt");
+    expect(subscribe).toBeEnabled();
+  } else {
+    expect(await screen.findByText(/購入の承認待ちです/)).toBeVisible();
+    expect(nativePurchase.release).not.toHaveBeenCalled();
+    expect(subscribe).toBeDisabled();
+  }
 });
 
 it("does not show login while the native session is still loading", async () => {
