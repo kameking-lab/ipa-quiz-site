@@ -215,6 +215,12 @@ describe("sessionLabel", () => {
     it("falls back to upper-cased input for unknown sessions", () => {
         expect(sessionLabel("xyz")).toBe("XYZ");
     });
+    it("uses the official subject labels for engineering without changing radio labels", () => {
+        expect(sessionLabel("kiso", "gijutsushi1-kikai")).toBe("基礎科目");
+        expect(sessionLabel("ippan", "gijutsushi1-kikai")).toBe("適性科目");
+        expect(sessionLabel("kikai", "gijutsushi1-kikai")).toBe("専門科目");
+        expect(sessionLabel("kiso", "general3")).toBe("無線工学の基礎");
+    });
     it("maps every Session union member to a real label", () => {
         const SESSION_PRESENCE: Record<Session, true> = {
 "yakkan": true,"jitsumu": true,"patent": true,"design": true,"trademark": true,"treaty": true,"copyright": true,"dokugeki-ippan": true,"dokugeki-nougyou": true,"dokugeki-tokutei": true,"gakka-I": true,"gakka-II": true,"gakka-III": true,"gakka-IV": true, "khk-ax": true, "khk-ay": true, "khk-az": true, "khk-bx": true, "khk-by": true, "khk-bz": true, "khk-cx": true, "khk-cy": true, "khk-cz": true, "khk-dx": true, "khk-dy": true, "khk-dz": true,  keikaku: true, "kankyo-setsubi": true, kozo: true, sekou: true,  gakushiki: true,

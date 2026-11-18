@@ -27,6 +27,7 @@ function toJstDateTimeISO(iso: string): string {
 /** Human-readable label for an exam session segment. */
 export function sessionLabel(session: string, exam?: ExamCode): string {
   const parsed = parsePracticeSession(session);
+  if (parsed && exam === "gijutsushi1-kikai") return practiceSessionLabel(parsed, exam);
   if (parsed && (exam === "kisho" || exam === "kenchiku-setsubishi" || exam === "chizai2" || exam === "kanteishi" || exam === "kaikeishi")) return practiceSessionLabel(parsed, exam);
   if (parsed && (exam === "kanteishi" || exam === "kaikeishi" || exam?.startsWith("khk-reito-"))) return practiceSessionLabel(parsed, exam);
   if (parsed && (exam === "kenki1" || exam === "kenki2" || exam === "kanteishi" || exam === "kaikeishi")) return practiceSessionLabel(parsed, exam);
