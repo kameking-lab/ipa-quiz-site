@@ -356,6 +356,7 @@ export class MonthlyService {
   }
 
   async recoverAppStorePurchase(userId: string, recovery: AppStoreRecovery, checkAppStore: () => Promise<AppStorePurchaseState>) {
+    const retryApproval = "action" in recovery && recovery.action === "retry-approval";
     const reservation = await this.purchaseTx(userId, a => {
       const now = this.clock().getTime();
       const current = activeReservation(a, now);
@@ -380,9 +381,14 @@ export class MonthlyService {
     const state = await checkAppStore();
     return this.purchaseTx(userId, a => {
       const current = activeReservation(a, this.clock().getTime());
-      if (state === "active" && current && current.id === reservation?.id && current.phase === reservation.phase
-        && matchesRecovery(current, recovery) && !beforeStoreKit(current)) {
-        delete a.appStorePurchase;
+      if (current && current.id === reservation?.id && current.phase === reservation.phase && matchesRecovery(current, recovery)) {
+        if (!retryApproval && state === "active" && !beforeStoreKit(current)) delete a.appStorePurchase;
+        // Ask to Buy can be declined without sending a transaction. An explicit retry can
+        // release this approval only after a fresh lookup and only if the reservation is unchanged.
+        if (retryApproval && state === null && current.phase === "approval") {
+          delete a.appStorePurchase;
+          return { state: null };
+        }
       }
       if (state) return { state };
       if (!current) return { state: null };

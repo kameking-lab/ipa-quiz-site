@@ -6,7 +6,7 @@ import { PURCHASE_MESSAGES, purchaseNeedsSignIn } from "@/lib/billing/purchase-m
 
 const purchaseCheckUrl = "https://www.kakomon-ai.jp/api/mobile/purchase-check";
 export interface PurchaseReservation { id: string; expiresAt: string; requiresStart?: true }
-export type PurchaseRecovery = { reservationId: string; action?: "approval" } | { attemptId: string } | { expiresAt: string } | { legacy: true };
+export type PurchaseRecovery = { reservationId: string; action?: "approval" | "retry-approval" } | { attemptId: string } | { expiresAt: string } | { legacy: true };
 
 function purchaseCheckError(code = "") {
   return new StoreError(PURCHASE_MESSAGES[code] ?? PURCHASE_MESSAGES.purchase_check_unavailable,
@@ -100,7 +100,8 @@ export function describeStoreError(error: unknown, step: string): string {
 export async function nativePublicSdkKey(fallback: string): Promise<string> {
   return (Capacitor.isNativePlatform() ? (await Preferences.get({ key: "kakomon:rc-ios-public-key" })).value : null) || fallback;
 }
-type Sdk = Pick<typeof Purchases, "isConfigured" | "isAnonymous" | "configure" | "logIn" | "logOut" | "getOfferings" | "purchasePackage" | "restorePurchases">;
+type Sdk = Pick<typeof Purchases, "isConfigured" | "isAnonymous" | "configure" | "logIn" | "logOut" | "getOfferings"
+  | "purchasePackage" | "restorePurchases" | "syncPurchases" | "getCustomerInfo">;
 export class Membership {
   // One SDK identity change at a time: a second configure() racing a logIn()
   // would silently replace the signed-in RevenueCat user.
@@ -166,6 +167,22 @@ export class Membership {
     await this.connect(c, access);
     try { await this.sdk.restorePurchases(); }
     catch (error) { throw new StoreError(describeStoreError(error, "購入を復元できませんでした"), "restore"); }
+  }
+  hasActiveAppStorePurchase(c: MobileConfiguration, access: MobileEntitlement): Promise<boolean> {
+    const task = this.connecting.then(async () => {
+      await this.connectNow(c, access);
+      try {
+        // Sync completed StoreKit transactions before the separate server check.
+        await this.sdk.syncPurchases();
+        const { customerInfo } = await this.sdk.getCustomerInfo();
+        return customerInfo.activeSubscriptions.includes(c.productId)
+          || customerInfo.entitlements.active[c.entitlement]?.productIdentifier === c.productId;
+      } catch (error) {
+        throw new StoreError(describeStoreError(error, "App Storeの購入を確認できませんでした"), "purchase_check");
+      }
+    });
+    this.connecting = task.catch(() => {});
+    return task;
   }
   disconnect(): Promise<void> {
     const task = this.connecting.then(async () => {

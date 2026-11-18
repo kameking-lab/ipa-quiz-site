@@ -10,7 +10,7 @@ import Link from "next/link";
 import type { MobileConfiguration, MobileEntitlement, CatalogEntry } from "../shared/contracts";
 import { downloads, type DownloadIndex } from "./downloads";
 import { Membership, deviceMembership, purchaseError, nativePublicSdkKey, describeStoreError, StoreError, checkNativePurchase, startNativePurchase } from "./purchases";
-import { fallbackPurchaseExpiry, reconcilePendingPurchase, savePendingPurchase, type PendingPurchase } from "./pending-purchase";
+import { fallbackPurchaseExpiry, reconcilePendingPurchase, retryPendingApproval, savePendingPurchase, type PendingPurchase, type PendingPurchaseStatus } from "./pending-purchase";
 import { beginLogin, observeLogin } from "./login";
 import { PLAN_OFFER } from "@/lib/billing/plan-offer";
 import { PURCHASE_MESSAGES } from "@/lib/billing/purchase-messages";
@@ -57,7 +57,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
   const [purchaseSignIn, setPurchaseSignIn] = useState(false);
   const [manageWebPurchase, setManageWebPurchase] = useState(false);
   const [signingIn, setSigningIn] = useState<"" | "opening" | "finishing">("");
-  const [purchasePending,setPurchasePending]=useState(false);
+  const [purchasePending,setPurchasePending]=useState<PendingPurchaseStatus>(null);
   // Why the price could not be shown. Kept apart from `notice`, which every
   // later action clears, so the reason stays on screen until it is fixed.
   const [offerError,setOfferError]=useState(""), [offerLoading,setOfferLoading]=useState(false);
@@ -105,10 +105,10 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       studyReady.current=true;
     }
     user.current = result.entitlement.userId;
-    let pending = false;
+    let pending: PendingPurchaseStatus = null;
     if (!storeKitRunning.current) {
       pending = result.entitlement.userId
-        ? await reconcilePendingPurchase(result.entitlement.userId, result.entitlement.source === "app-store") : false;
+        ? await reconcilePendingPurchase(result.entitlement.userId, result.entitlement.source === "app-store") : null;
       setPurchasePending(pending);
     }
     const signature=JSON.stringify([result.entitlement.userId,result.entitlement.entitled]);
@@ -256,7 +256,7 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
         const preparing: PendingPurchase = { state: "preparing", attemptId: crypto.randomUUID() };
         const stale = () => new StoreError(PURCHASE_MESSAGES.app_store_purchase_pending, "purchase_check");
         if (!await writePending(preparing)) throw stale();
-        setPurchasePending(true);
+        setPurchasePending("processing");
         const reservation = await checkNativePurchase(fetch, preparing.attemptId);
         if (reservation) {
           if (!await writePending({ ...preparing, reservation })) throw stale();
@@ -273,10 +273,12 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
           setPurchasePending(await reconcilePendingPurchase(userId, false, pending));
       } else if (pending && readyForStoreKit && outcome.rejected) {
         const cleared = await savePendingPurchase(userId, pending);
-        setPurchasePending(!cleared);
+        setPurchasePending(cleared ? null : "processing");
       } else if (pending && outcome.pending) {
-        if (await writePending({ ...pending, state: "approval", expiresAt: fallbackPurchaseExpiry(true) }) && pending.reservation)
-          setPurchasePending(await reconcilePendingPurchase(userId, false, pending));
+        if (await writePending({ ...pending, state: "approval", expiresAt: fallbackPurchaseExpiry(true) })) {
+          setPurchasePending(pending.reservation ? await reconcilePendingPurchase(userId, false, pending) : { approval: pending });
+          return;
+        }
       } else if (pending && !readyForStoreKit) {
         setPurchasePending(await reconcilePendingPurchase(userId, false, pending));
       }
@@ -292,6 +294,20 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
       confirmed=await refresh(true).catch(()=>null);
     }
     setNotice(confirmed?.entitlement.entitled?"購入を確認しました。有料会員です（ウェブでも同じ会員です）。":"購入は完了しています。会員状態の反映を確認中です。再購入せず、少し待ってから「再確認」を押してください。");
+  });
+  const retryApproval = () => void run(async () => {
+    const userId = access?.userId;
+    if (!userId || !purchasePending || purchasePending === "processing") return;
+    const { entitlement, configuration } = await refresh(true);
+    if (entitlement.userId !== userId || entitlement.entitled) return;
+    const state = await retryPendingApproval(userId, purchasePending.approval, async () => {
+      const active = await membership.hasActiveAppStorePurchase(configuration, entitlement);
+      if (signingOut.current || user.current !== userId) throw new StatusError("ログイン状態が変わりました。");
+      return active;
+    });
+    if (state === undefined) return;
+    const confirmed = await refresh(true);
+    if (state && !confirmed.entitlement.entitled) setNotice("App Storeの購入を確認中です。反映までお待ちください。");
   });
   const restore = ()=>void run(async()=>{
     storeKitRunning.current = true;
@@ -342,8 +358,12 @@ export function NativeTools({ membershipOnly = false, membership = defaultMember
         {!access ? <>{!statusError && <><p role="status">会員状態を確認しています…</p><button className={secondary} disabled={busy} onClick={()=>void run(async()=>{ await refresh(true); })}>会員状態を再確認</button></>}</> : <>
           <p className="font-semibold">{access.entitled ? access.source === "web" ? "ウェブの有料会員です。追加購入は不要です。" : "App Storeの有料会員です。" : "無料会員"}</p>
           {(access.source === "web" || manageWebPurchase) && <ManageSubscriptionButton label="ウェブ契約の管理・解約"/>}
-          {purchasePending&&<p role="status" className="text-sm">購入内容をサーバーで確認中です。再購入せず「購入を復元」または会員状態の再確認をご利用ください。</p>}
-          {offer && !access.entitled && <button className={primary} disabled={busy||purchasePending||!!signingIn}
+          {purchasePending === "processing" && <p role="status" className="text-sm">購入内容をサーバーで確認中です。再購入せず「購入を復元」または会員状態の再確認をご利用ください。</p>}
+          {purchasePending && purchasePending !== "processing" && !access.entitled && <div className="text-sm">
+            <p role="status">購入の承認待ちです。</p>
+            <button type="button" className="min-h-11 underline underline-offset-4 disabled:opacity-50" disabled={busy || !!signingIn} onClick={retryApproval}>承認依頼をやり直す</button>
+          </div>}
+          {offer && !access.entitled && <button className={primary} disabled={busy||!!purchasePending||!!signingIn}
             aria-describedby="native-purchase-terms" onClick={()=>{sendConversion("plan_clicked");purchase();}}>
             {offer.product.priceString} / 月で登録
           </button>}

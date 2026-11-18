@@ -56,7 +56,11 @@ export class DuplicatePurchaseGuard {
   async audit(userId: string) {
     try {
       const current = await this.purchaseEmail(userId);
-      if (!current) return;
+      if (!current) {
+        const paid = await this.rights(userId);
+        if (paid.stripe && paid.appStore) console.warn("duplicate_purchase_stripe_app_store_same_account");
+        return;
+      }
       let stripe = false, appStore = false;
       for (const member of await this.members(current.email)) {
         const paid = await this.rights(member.id);

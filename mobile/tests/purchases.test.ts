@@ -8,7 +8,7 @@ vi.mock("@capacitor/preferences",()=>({Preferences:{get:vi.fn()}}));
 const c:MobileConfiguration={sdkKey:"mock-public-sdk-key",productId:"mock.monthly",offeringId:"main",entitlement:"kakomon_pro",expectedPriceYen:980,leasePublicKey:""};
 const a:MobileEntitlement={userId:"u",appUserId:"opaque-server-identity",entitled:false,source:"free",expiresAt:null,checkedAt:"",lease:null};
 const product={identifier:"monthly",packageType:PACKAGE_TYPE.MONTHLY,product:{identifier:c.productId,price:980,priceString:"¥980",currencyCode:"JPY",subscriptionPeriod:"P1M"}} as PurchasesPackage;
-const sdk={isConfigured:vi.fn(),isAnonymous:vi.fn(),configure:vi.fn(),logIn:vi.fn(),logOut:vi.fn(),getOfferings:vi.fn(),purchasePackage:vi.fn(),restorePurchases:vi.fn()};
+const sdk={isConfigured:vi.fn(),isAnonymous:vi.fn(),configure:vi.fn(),logIn:vi.fn(),logOut:vi.fn(),getOfferings:vi.fn(),purchasePackage:vi.fn(),restorePurchases:vi.fn(),syncPurchases:vi.fn(),getCustomerInfo:vi.fn()};
 let configured=false;
 beforeEach(()=>{vi.resetAllMocks();configured=false;sdk.isConfigured.mockImplementation(async()=>({isConfigured:configured}));sdk.configure.mockImplementation(async()=>{configured=true;});sdk.isAnonymous.mockResolvedValue({isAnonymous:false});sdk.getOfferings.mockResolvedValue({all:{main:{availablePackages:[product]}}});});
 it("shows server web membership without calling StoreKit or buying twice",async()=>{
@@ -78,6 +78,18 @@ it("propagates cancellation, pending purchases and restore errors without granti
 });
 it("supports restore and disconnects the RevenueCat identity at sign-out",async()=>{
   const m=new Membership(sdk);await m.restore(c,a);expect(sdk.restorePurchases).toHaveBeenCalledOnce();await m.disconnect();expect(sdk.logOut).toHaveBeenCalledOnce();
+});
+it.each([false, true])("syncs StoreKit before checking the monthly product (active: %s)", async active => {
+  sdk.getCustomerInfo.mockResolvedValue({ customerInfo: { activeSubscriptions: active ? [c.productId] : [], entitlements: { active: {} } } });
+  await expect(new Membership(sdk).hasActiveAppStorePurchase(c, a)).resolves.toBe(active);
+  expect(sdk.configure).toHaveBeenCalledWith({ apiKey: c.sdkKey, appUserID: a.appUserId });
+  expect(sdk.syncPurchases.mock.invocationCallOrder[0]).toBeLessThan(sdk.getCustomerInfo.mock.invocationCallOrder[0]);
+  expect(sdk.purchasePackage).not.toHaveBeenCalled();
+});
+it("does not use cached purchase info after a failed StoreKit sync", async () => {
+  sdk.syncPurchases.mockRejectedValue({ code: "10", message: "offline" });
+  await expect(new Membership(sdk).hasActiveAppStorePurchase(c, a)).rejects.toThrow("App Storeの購入を確認できませんでした");
+  expect(sdk.getCustomerInfo).not.toHaveBeenCalled();
 });
 it("disconnect waits for a pending SDK login so the buyer cannot be reconnected after logout", async()=>{
   configured=true;

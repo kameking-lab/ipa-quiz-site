@@ -97,6 +97,12 @@ it("logs active cross-store duplicates and leaves both owners and rights unchang
   try { await guard.audit("alice"); expect(warn).toHaveBeenCalledExactlyOnceWith("duplicate_purchase_stripe_app_store_same_email"); } finally { warn.mockRestore(); }
   expect(await pg.query('SELECT * FROM billing_subscription_account')).toEqual(before);
 });
+it("logs a cross-store duplicate on one account with an Apple private relay address", async () => {
+  await stripePaid(); await appPaid();
+  await pg.query('UPDATE "User" SET email=$1 WHERE id=$2', ["owner@privaterelay.appleid.com", "bob"]);
+  const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+  try { await guard.audit("bob"); expect(warn).toHaveBeenCalledExactlyOnceWith("duplicate_purchase_stripe_app_store_same_account"); } finally { warn.mockRestore(); }
+});
 
 const request = (path: string, origin = "http://localhost:3338", cancellation?: Record<string, string>) => new Request(`http://localhost:3338/api/${path}`, {
   method: cancellation ? "DELETE" : "POST", headers: { origin }, body: JSON.stringify(cancellation ?? { terms: monthlyTerms(config) }),
@@ -110,7 +116,7 @@ const purchaseBody = (method: string, body: object, origin = "http://localhost:3
 const prepareNative = (id = attemptId) => nativeCheck(purchaseBody("POST", { attemptId: id, confirmStoreKit: true }));
 const recoverAttempt = () => recoverNative(purchaseBody("PATCH", { attemptId }));
 const recoverReservation = (reservationId: string) => recoverNative(purchaseBody("PATCH", { reservationId }));
-const transitionNative = (reservationId: string, action: "start" | "approval") => recoverNative(purchaseBody("PATCH", { reservationId, action }));
+const transitionNative = (reservationId: string, action: "start" | "approval" | "retry-approval") => recoverNative(purchaseBody("PATCH", { reservationId, action }));
 const reservationInDb = () => store.transaction("alice", config.mode, config.sourceInstance, async a => a.appStorePurchase, true);
 async function reserveAndRelease() {
   const response = await nativeCheck(nativeRequest());
@@ -512,4 +518,103 @@ it("HTTP: acknowledged approval stays pending beyond 30 minutes and cannot exten
   expect(await (await transitionNative(reservation.id, "approval")).json()).toEqual({ state: null });
   wiring.user = "bob";
   expect((await checkout(webRequest())).status).toBe(200);
+});
+
+async function requestApproval(id?: string) {
+  const { reservation } = await (await prepareNative(id)).json();
+  expect((await transitionNative(reservation.id, "start")).status).toBe(200);
+  expect(await (await transitionNative(reservation.id, "approval")).json()).toEqual({ state: "processing" });
+  return reservation;
+}
+
+it.each(["iOS", "Web"])("HTTP: a declined Ask to Buy at five minutes can be retried on %s", async channel => {
+  const original = await requestApproval();
+  now = new Date(now.getTime() + 5 * 60000);
+  expect((await prepareNative()).status).toBe(409);
+  wiring.user = "bob";
+  expect((await checkout(webRequest())).status).toBe(409);
+  // Another member with the same email cannot release the original reservation.
+  expect((await transitionNative(original.id, "retry-approval")).status).toBe(200);
+  expect(await reservationInDb()).toMatchObject({ id: original.id, phase: "approval" });
+  expect(provider.checkout).not.toHaveBeenCalled();
+  wiring.user = "alice";
+  expect(await (await transitionNative(original.id, "retry-approval")).json()).toEqual({ state: null });
+  expect(await reservationInDb()).toBeUndefined();
+  if (channel === "iOS") {
+    const next = await requestApproval("00000000-0000-4000-8000-000000000078");
+    expect(next.id).not.toBe(original.id);
+  } else {
+    wiring.user = "bob";
+    expect((await checkout(webRequest())).status).toBe(200);
+    expect(provider.checkout).toHaveBeenCalledOnce();
+  }
+});
+
+it("HTTP: retry preserves approval on an active or processing receipt or an unavailable RevenueCat lookup", async () => {
+  const original = await requestApproval();
+  wiring.appStatus.mockResolvedValueOnce("active").mockResolvedValueOnce("processing").mockRejectedValueOnce(new BillingError("purchase_check_unavailable", 503));
+  expect(await (await transitionNative(original.id, "retry-approval")).json()).toEqual({ state: "active" });
+  expect(await reservationInDb()).toMatchObject({ id: original.id, phase: "approval" });
+  expect(await (await transitionNative(original.id, "retry-approval")).json()).toEqual({ state: "processing" });
+  expect((await transitionNative(original.id, "retry-approval")).status).toBe(503);
+  expect(await reservationInDb()).toMatchObject({ id: original.id, phase: "approval" });
+  expect((await prepareNative()).status).toBe(409);
+  wiring.user = "bob";
+  expect((await checkout(webRequest())).status).toBe(409);
+});
+
+it("HTTP: the retry action preserves uncertain and newer reservations", async () => {
+  const { reservation: first } = await (await prepareNative()).json();
+  expect((await transitionNative(first.id, "start")).status).toBe(200);
+  expect(await (await transitionNative(first.id, "retry-approval")).json()).toEqual({ state: "processing" });
+  expect(await reservationInDb()).toMatchObject({ id: first.id, phase: "uncertain" });
+  expect(await (await transitionNative(first.id, "approval")).json()).toEqual({ state: "processing" });
+
+  const checking = Promise.withResolvers<void>(), oldLookup = Promise.withResolvers<null>();
+  wiring.appStatus.mockImplementationOnce(() => { checking.resolve(); return oldLookup.promise; });
+  const slowRetry = transitionNative(first.id, "retry-approval");
+  await checking.promise;
+  expect(await (await transitionNative(first.id, "retry-approval")).json()).toEqual({ state: null });
+  const next = await requestApproval("00000000-0000-4000-8000-000000000078");
+  oldLookup.resolve(null);
+  expect(await (await slowRetry).json()).toEqual({ state: "processing" });
+  expect(await reservationInDb()).toMatchObject({ id: next.id, phase: "approval" });
+});
+
+it("HTTP: a still-approvable request that completes after release blocks the next purchase on either channel", async () => {
+  const original = await requestApproval();
+  now = new Date(now.getTime() + 5 * 60000);
+  expect(await (await transitionNative(original.id, "retry-approval")).json()).toEqual({ state: null });
+  // StoreKit only delivers the transaction when the guardian approves. Model a delivery after the retry.
+  wiring.app.mockImplementation(async id => {
+    if (id === "alice") throw new BillingError("app_store_subscription_exists");
+  });
+  wiring.appStatus.mockResolvedValue("active");
+  expect(await (await recoverReservation(original.id)).json()).toEqual({ state: "active" });
+  expect((await prepareNative()).status).toBe(409);
+  wiring.user = "bob";
+  expect((await checkout(webRequest())).status).toBe(409);
+  expect(provider.checkout).not.toHaveBeenCalled();
+});
+
+it("logs a late App Store approval when Web payment already went through after the retry", async () => {
+  const original = await requestApproval();
+  expect(await (await transitionNative(original.id, "retry-approval")).json()).toEqual({ state: null });
+  wiring.user = "bob";
+  const response = await checkout(webRequest());
+  expect(response.status).toBe(200);
+  const { orderId } = await response.json();
+  const { observation } = await monthlyFixture();
+  const start = Math.floor(now.getTime() / 1000), end = start + 30 * 86400;
+  Object.assign(observation.contracts[0], { signupId: orderId, terms: monthlyTerms(config), periodStart: start, periodEnd: end });
+  Object.assign(observation.invoices[0], { periodStart: start, periodEnd: end });
+  vi.mocked(provider.observe).mockResolvedValueOnce(observation);
+  expect(await service.receive({ id: "evt_web_paid" }, "web-paid", provider)).toBe("processed");
+  expect((await service.status("bob")).entitled).toBe(true);
+  await pg.query('INSERT INTO "MobileRevenueCatAccount" ("userId","appUserId","sandboxExpiresAt") VALUES ($1,$2,$3)', ["alice", "late-approval", new Date(Date.now() + 3600000)]);
+  const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+  try {
+    await guard.audit("alice");
+    expect(warn).toHaveBeenCalledWith("duplicate_purchase_stripe_app_store_same_email");
+  } finally { warn.mockRestore(); }
 });

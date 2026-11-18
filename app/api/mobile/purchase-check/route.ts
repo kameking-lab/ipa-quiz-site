@@ -9,8 +9,8 @@ import { appStorePurchaseCheck, appStorePurchaseStatus } from "@/mobile/server/r
 export const runtime = "nodejs";
 
 const reservation = z.object({ reservationId: z.uuid() }).strict();
-const approval = reservation.extend({ action: z.literal("approval") });
-const recovery = z.union([reservation, approval, z.object({ attemptId: z.uuid() }).strict(),
+const approvalRecovery = reservation.extend({ action: z.enum(["approval", "retry-approval"]) });
+const recovery = z.union([reservation, approvalRecovery, z.object({ attemptId: z.uuid() }).strict(),
   z.object({ expiresAt: z.iso.datetime() }).strict(), z.object({ legacy: z.literal(true) }).strict()]);
 const preparation = z.object({ attemptId: z.uuid().optional(), confirmStoreKit: z.literal(true).optional() })
   .refine(({ attemptId, confirmStoreKit }) => !confirmStoreKit || !!attemptId);
