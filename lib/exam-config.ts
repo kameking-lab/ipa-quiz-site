@@ -853,6 +853,27 @@ tohan: {
     seasons: ["annual"],
     yearRange: { start: 2026, end: 2026 },
 },
+"tohan-kitakanto-koshinetsu": {
+    code: "tohan-kitakanto-koshinetsu",
+    nameFull: "登録販売者試験（北関東・甲信越）",
+    urlSlug: "tohan-kitakanto-koshinetsu",
+    level: "basic",
+    sessions: [{
+        session: "gakka",
+        urlSlug: "gakka",
+        expectedQuestions: 120,
+        label: "試験問題（第一部・第二部）",
+        categories: [
+            "医薬品に共通する特性と基本的な知識",
+            "人体の働きと医薬品",
+            "主な医薬品とその作用",
+            "薬事に関する法規と制度",
+            "医薬品の適正使用と安全対策",
+        ],
+    }],
+    seasons: ["annual"],
+    yearRange: { start: 2026, end: 2026 },
+},
 kanri: {
     code: "kanri",
     nameFull: "管理業務主任者試験",
