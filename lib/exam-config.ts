@@ -245,6 +245,15 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
   ],
   seasons: ["annual"], yearRange: { start: 2022, end: 2025 },
 },
+"dokugeki-tokyo": {
+  code: "dokugeki-tokyo", nameFull: "毒物劇物取扱者試験（東京都）", urlSlug: "dokugeki-tokyo", level: "specialist",
+  sessions: [
+    { session: "dokugeki-ippan", urlSlug: "dokugeki-ippan", expectedQuestions: 75, label: "一般", categories: ["毒物及び劇物に関する法規", "基礎化学", "毒物及び劇物の性質及び貯蔵その他取扱方法", "毒物及び劇物の識別及び取扱方法"] },
+    { session: "dokugeki-nougyou", urlSlug: "dokugeki-nougyou", expectedQuestions: 60, label: "農業用品目", categories: ["毒物及び劇物に関する法規", "基礎化学", "毒物及び劇物の性質及び貯蔵その他取扱方法", "毒物及び劇物の識別及び取扱方法"] },
+    { session: "dokugeki-tokutei", urlSlug: "dokugeki-tokutei", expectedQuestions: 60, label: "特定品目", categories: ["毒物及び劇物に関する法規", "基礎化学", "毒物及び劇物の性質及び貯蔵その他取扱方法", "毒物及び劇物の識別及び取扱方法"] },
+  ],
+  seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
+},
 "dokugeki-chiba": {"code": "dokugeki-chiba", "nameFull": "毒物劇物取扱者", "urlSlug": "dokugeki-chiba", "level": "specialist", "sessions": [{"session": "dokugeki-ippan", "urlSlug": "dokugeki-ippan", "expectedQuestions": 80, "label": "一般", "categories": ["毒物及び劇物に関する法規", "基礎化学", "毒物及び劇物の性質及び貯蔵その他取扱方法", "毒物及び劇物の識別及び取扱方法"]}, {"session": "dokugeki-nougyou", "urlSlug": "dokugeki-nougyou", "expectedQuestions": 80, "label": "農業用品目", "categories": ["毒物及び劇物に関する法規", "基礎化学", "毒物及び劇物の性質及び貯蔵その他取扱方法", "毒物及び劇物の識別及び取扱方法"]}, {"session": "dokugeki-tokutei", "urlSlug": "dokugeki-tokutei", "expectedQuestions": 80, "label": "特定品目", "categories": ["毒物及び劇物に関する法規", "基礎化学", "毒物及び劇物の性質及び貯蔵その他取扱方法", "毒物及び劇物の識別及び取扱方法"]}], "seasons": ["annual"], "yearRange": {"start": 2025, "end": 2026}},
 "jokaso-setsubishi": {"code": "jokaso-setsubishi", "nameFull": "浄化槽設備士（学科）", "urlSlug": "jokaso-setsubishi", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "学科", "categories": ["浄化槽設備士学科"]}], "seasons": ["annual"], "yearRange": {"start": 2025, "end": 2026}},
 "chiiki-ryoko": {"code": "chiiki-ryoko", "nameFull": "地域限定旅行業務取扱管理者", "urlSlug": "chiiki-ryoko", "level": "specialist", "sessions": [{"session": "hoki", "urlSlug": "hoki", "expectedQuestions": 25, "label": "旅行業法令", "categories": ["旅行業法令"]}, {"session": "yakkan", "urlSlug": "yakkan", "expectedQuestions": 24, "label": "旅行業約款", "categories": ["旅行業約款"]}, {"session": "jitsumu", "urlSlug": "jitsumu", "expectedQuestions": 10, "label": "国内旅行実務", "categories": ["国内旅行実務"]}], "seasons": ["annual"], "yearRange": {"start": 2025, "end": 2026}},

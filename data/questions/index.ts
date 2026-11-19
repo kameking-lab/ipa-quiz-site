@@ -184,6 +184,7 @@ import { QUESTIONS as UNKO_KANRISHA_RYOKAKU } from "./unko-kanrisha-ryokaku";
 import { QUESTIONS as BATCH3_0 } from "./benrishi";
 import { QUESTIONS as BATCH3_1 } from "./sokuryoshi";
 import { DOKUGEKI_KANSAI_QUESTIONS } from "./dokugeki-kansai";
+import { DOKUGEKI_TOKYO_QUESTIONS } from "./dokugeki-tokyo";
 import { QUESTIONS as BATCH3_2 } from "./dokugeki-chiba";
 import { QUESTIONS as BATCH3_3 } from "./jokaso-setsubishi";
 import { QUESTIONS as BATCH3_4 } from "./chiiki-ryoko";
@@ -460,6 +461,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("benrishi") ? { "benrishi": BATCH3_0.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("sokuryoshi") ? { "sokuryoshi": BATCH3_1.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("dokugeki-kansai") ? { "dokugeki-kansai": DOKUGEKI_KANSAI_QUESTIONS } : {}),
+  ...(isExamPublished("dokugeki-tokyo") ? { "dokugeki-tokyo": DOKUGEKI_TOKYO_QUESTIONS } : {}),
   ...(isExamPublished("dokugeki-chiba") ? { "dokugeki-chiba": BATCH3_2.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("jokaso-setsubishi") ? { "jokaso-setsubishi": BATCH3_3.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("chiiki-ryoko") ? { "chiiki-ryoko": BATCH3_4.filter(isPracticeReadyQuestion) } : {}),

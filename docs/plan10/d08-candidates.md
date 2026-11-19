@@ -27,9 +27,16 @@
 | 関西広域連合 2024年度 | 48問 | 48問 | 48問 |
 | 関西広域連合 2023年度 | 48問 | 48問 | 49問 |
 | 関西広域連合 2022年度 | 47問 | 47問 | 50問 |
+| 東京都 2026年度 | 74問 | 60問 | 58問 |
 
 - 関西広域連合2025年度の原本は各区分50問で、正答表は3区分共通。問1～35は3区分の問題冊子で共通。問題データには区分ごとの原本URLと公式の問番号を保持している。 [一般](https://www.kouiki-kansai.jp/material/files/group/12/01_R7dokugekishiken_ippan.pdf)・[農業用品目](https://www.kouiki-kansai.jp/material/files/group/12/02_R7dokugekishiken_nougyo.pdf)・[特定品目](https://www.kouiki-kansai.jp/material/files/group/12/03_R7dokugekishiken_tokutei.pdf)・[公式正答](https://www.kouiki-kansai.jp/material/files/group/12/R7dokugeki_kaitou.pdf)
 - 危険物の生成や高毒性物質の具体的な処理手順を含む設問は収録対象から外した。2025年度は3区分共通の問35、一般の問39・40・50、農業用品目の問39、特定品目の問48・50。
 - 関西広域連合2024年度も各区分50問で、問1～35と正答表は3区分共通。危険物の生成や高毒性物質の具体的な処理手順を含む一般の問40・50、農業用品目の問40・43、特定品目の問49・50を収録対象から外した。 [一般](https://www.kouiki-kansai.jp/material/files/group/12/01_R6dokugekishiken_ippan.pdf)・[農業用品目](https://www.kouiki-kansai.jp/material/files/group/12/02_R6dokugekishiken_nougyou.pdf)・[特定品目](https://www.kouiki-kansai.jp/material/files/group/12/03_R6dokugekishiken_tokutei.pdf)・[公式正答](https://www.kouiki-kansai.jp/material/files/group/12/R6dokugekishiken_kaitou.pdf)
 - 関西広域連合2023年度も各区分50問で、問1～35と正答表は3区分共通。危険物の生成や高毒性物質の具体的な処理手順を含む一般の問38・39、農業用品目の問39・40、特定品目の問50を収録対象から外した。 [一般](https://www.kouiki-kansai.jp/material/files/group/12/R5dokugeki_ippan.pdf)・[農業用品目](https://www.kouiki-kansai.jp/material/files/group/12/R05dokugeki_nougyou.pdf)・[特定品目](https://www.kouiki-kansai.jp/material/files/group/12/R5dokugeki_tokutei.pdf)・[公式正答](https://www.kouiki-kansai.jp/material/files/group/12/R5dokugeki_kaitou.pdf)
 - 関西広域連合2022年度も各区分50問で、問1～35と正答表は3区分共通。危険物の生成や高毒性物質の具体的な処理手順を含む一般の問48～50、農業用品目の問38～40を収録対象から外した。 [一般](https://www.kouiki-kansai.jp/material/files/group/12/R4dokugeki_ippan.pdf)・[農業用品目](https://www.kouiki-kansai.jp/material/files/group/12/R4dokugeki_nougyou.pdf)・[特定品目](https://www.kouiki-kansai.jp/material/files/group/12/R4dokugeki_tokutei.pdf)・[公式正答](https://www.kouiki-kansai.jp/material/files/group/12/R4dokugeki_kaitou.pdf)
+- 東京都2026年度の原本は一般75解答欄、農業用品目・特定品目各60解答欄。正答表と同じ小問番号で採点し、冊子の大問番号と小問番号を併記する。一般の小問66と特定品目の小問50・56は、高毒性ガスの生成条件を含むため収録対象から外した。農業用品目の小問51～55に共通する表では、解答に必要な性状・用途を残し、物質Ｄの反応性に関する一文を省いた。構造式の選択肢は原本から画像化した。 [一般](https://www.hokeniryo.metro.tokyo.lg.jp/documents/d/hokeniryo/r8ippan)・[農業用品目](https://www.hokeniryo.metro.tokyo.lg.jp/documents/d/hokeniryo/r8nougyo)・[特定品目](https://www.hokeniryo.metro.tokyo.lg.jp/documents/d/hokeniryo/r8tokutei)・[公式正答](https://www.hokeniryo.metro.tokyo.lg.jp/documents/d/hokeniryo/r8seito)
+
+## 未収録
+
+- 東京都2025・2024年度は3区分の問題・正答PDFを取得済み。全肢解説の作成と照合は未完了。 [東京都の公式掲載ページ](https://www.hokeniryo.metro.tokyo.lg.jp/anzen/iyaku/sonota/d_g/shiken)
+- 愛知県、埼玉県、神奈川県、福岡県、北海道、静岡県、千葉県の未収録年度、宮城県は候補表に公式掲載先を記録した。問題データと全肢解説の収録は未完了。

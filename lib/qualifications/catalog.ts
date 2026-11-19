@@ -268,6 +268,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
   },
   {
+    slug: "dokugeki-tokyo", examCode: "dokugeki-tokyo", shortName: "毒物劇物取扱者（東京都）",
+    fullName: "毒物劇物取扱者試験（東京都）", domain: "pharmacy", administrator: "東京都",
+    officialQuestionsUrl: "https://www.hokeniryo.metro.tokyo.lg.jp/anzen/iyaku/sonota/d_g/shiken",
+    officialReuseTermsUrl: "https://www.hokeniryo.metro.tokyo.lg.jp/policy",
+    status: "live", stagingDataPath: "data/questions/dokugeki-tokyo",
+    reuseSummary: "2026年度の一般・農業用品目・特定品目の公式問題・正答、原本の構造式と全選択肢の独自解説を収録。",
+    attributionTemplate: "出典：東京都 毒物劇物取扱者試験。問題・選択肢をテキスト化。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
+  {
     slug: "dokugeki-chiba", examCode: "dokugeki-chiba", shortName: "毒物劇物取扱者", fullName: "毒物劇物取扱者試験 一般・農業用品目・特定品目",
     domain: "pharmacy", administrator: "千葉県",
     officialQuestionsUrl: "https://www.pref.chiba.lg.jp/yakumu/dokugeki/r8shikenzissikekka.html",
