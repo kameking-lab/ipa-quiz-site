@@ -1406,7 +1406,7 @@ kisho: { code: "kisho", nameFull: "気象予報士試験", urlSlug: "kisho", lev
 "jidosha-3-chassis": {
     code: "jidosha-3-chassis", nameFull: "三級自動車シャシ整備士", urlSlug: "jidosha-3-chassis", level: "specialist",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科", categories: ["三級自動車シャシ"] }],
-    seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
+    seasons: ["first", "second"], yearRange: { start: 2024, end: 2026 },
 },
 "jidosha-3-gasoline": {
     code: "jidosha-3-gasoline", nameFull: "三級自動車ガソリン・エンジン整備士", urlSlug: "jidosha-3-gasoline", level: "specialist",
