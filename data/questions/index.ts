@@ -238,6 +238,7 @@ import { isExamPublished } from "@/lib/qualifications/catalog";
 import { KANTEISHI_QUESTIONS } from "./kanteishi";
 import { KAIKEISHI_QUESTIONS } from "./kaikeishi";
 import { EISEI1_QUESTIONS } from "./eisei1";
+import { KANKEN_3_QUESTIONS } from "./kanken-3";
 import { EISEI2_QUESTIONS } from "./eisei2";
 import { SOUKAN_QUESTIONS } from "./soukan";
 import { HOIKUSHI_QUESTIONS } from "./hoikushi";
@@ -544,6 +545,7 @@ takken: TAKKEN_QUESTIONS,
 ...(isExamPublished("tohan") ? { tohan: TOHAN_QUESTIONS } : {}),
 ...(isExamPublished("kanri") ? { kanri: KANRI_QUESTIONS } : {}),
 ...(isExamPublished("eisei1") ? { eisei1: EISEI1_QUESTIONS } : {}),
+...(isExamPublished("kanken-3") ? { "kanken-3": KANKEN_3_QUESTIONS } : {}),
 ...(isExamPublished("eisei2") ? { eisei2: EISEI2_QUESTIONS } : {}),
 ...(isExamPublished("soukan") ? { soukan: SOUKAN_QUESTIONS } : {}),
 ...(isExamPublished("hoikushi") ? { hoikushi: HOIKUSHI_QUESTIONS } : {}),

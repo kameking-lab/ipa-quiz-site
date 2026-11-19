@@ -275,6 +275,7 @@ export const EXAM_LABELS: Record<string, string> = {
     kisho: "気象予報士",
     "jidosha-1-small-written": "一級小型自動車整備士（筆記）",
     "jidosha-2-gasoline": "二級ガソリン自動車整備士",
+    "kanken-3": "漢検3級",
     "jidosha-2-diesel": "二級ジーゼル自動車整備士",
     "jidosha-2-chassis": "二級自動車シャシ整備士",
     "jidosha-2-motorcycle": "二級二輪自動車整備士",

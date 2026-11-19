@@ -856,6 +856,18 @@ eisei1: {
     seasons: ["published", "october"],
     yearRange: { start: 2025, end: 2026 },
 },
+"kanken-3": {
+    code: "kanken-3",
+    nameFull: "日本漢字能力検定 3級",
+    urlSlug: "kanken-3",
+    level: "basic",
+    sessions: [{
+        session: "gakka", urlSlug: "gakka", expectedQuestions: 120, label: "検定問題",
+        categories: ["読み", "同音・同訓異字", "漢字識別", "熟語の構成", "部首", "対義語・類義語", "漢字と送りがな", "四字熟語", "誤字訂正", "書き取り"],
+    }],
+    seasons: ["late"],
+    yearRange: { start: 2024, end: 2024 },
+},
 eisei2: {
     code: "eisei2",
     nameFull: "第二種衛生管理者免許試験",
