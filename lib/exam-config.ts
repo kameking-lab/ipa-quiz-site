@@ -1489,6 +1489,12 @@ shuwa: {
         categories: ["知的財産権", "ディジタル画像", "マルチメディアの特徴", "マルチメディアの表現", "マルチメディア端末", "インターネットと通信", "インターネットサービス", "インターネットビジネス", "情報セキュリティ", "マルチメディアの活用"] }],
     seasons: ["early", "late"], yearRange: { start: 2025, end: 2026 },
 },
+"multimedia-kentei-expert": {
+    code: "multimedia-kentei-expert", nameFull: "マルチメディア検定 エキスパート", urlSlug: "multimedia-kentei-expert", level: "advanced",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 41, label: "エキスパート",
+        categories: ["知的財産権", "画像と色", "知覚とヒューマンコンピュータインタラクション", "メディア処理", "コンピュータのしくみ", "インターネット", "情報セキュリティ", "マルチメディアアプリケーション", "インターネットの応用", "マルチメディアの社会活用"] }],
+    seasons: ["early", "late"], yearRange: { start: 2025, end: 2026 },
+},
 "g-kentei": {
     code: "g-kentei", nameFull: "G検定（ジェネラリスト検定）", urlSlug: "g-kentei", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 0, label: "公式公開問題",
