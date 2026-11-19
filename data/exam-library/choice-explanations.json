@@ -36491,5 +36491,705 @@
     ],
     "provisionalReview": true,
     "lastCheckedAt": "2026-09-25"
+  },
+  "emkohyo-EM20241807-q1": {
+    "sourceHash": "94204b9bfcf376dc69eb810e5cc4535dc1be74b5b4b1ddb37966761b5027f030",
+    "correctChoice": 4,
+    "summary": "ガラス製のセルは可視域の多くを透過するので、可視光の測定に使える。紫外域では石英セルを用いる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "均一な溶液では、ランベルト・ベールの法則により吸光度は濃度とセルの光路長の積に比例する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "物質によって光を吸収する強さは波長ごとに異なるため、測定に選んだ特定の波長の単色光を照射する。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "モル吸光係数は、特定の波長において単位濃度と単位光路長に対応する吸光度を示す比例係数である。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "ガラス製のセルは可視域の多くを透過するので、可視光の測定に使える。紫外域では石英セルを用いる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "吸光度は透過光と入射光の比の常用対数で定義されるため、測定の線形範囲では入射強度自体に依存しない。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241807-q2": {
+    "sourceHash": "e3e40d6484d9afe84de7f9a9f7b8a42ac0b96d07c492f9cc97f8587b74cf789f",
+    "correctChoice": 3,
+    "summary": "吸光度は−log₁₀(0.60)＝1−log₁₀2−log₁₀3＝0.222。0.222を8.26×10³と1.0の積で割ると約2.7×10⁻⁵ mol/Lとなる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "この濃度では吸光度は約0.107で、透過率60％に対応する約0.222の半分ほどにしかならない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "2.0×10⁻⁵ mol/Lでは吸光度が約0.165となり、透過率60％から求まる約0.222を下回る。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "吸光度は−log₁₀(0.60)＝1−log₁₀2−log₁₀3＝0.222。0.222を8.26×10³と1.0の積で割ると約2.7×10⁻⁵ mol/Lとなる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "この濃度は吸光度約0.297を与え、与えられた透過率とモル吸光係数から求める値より大きい。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "5.8×10⁻⁵ mol/Lでは吸光度が約0.479で、透過率60％に対応する吸光度を大きく上回る。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241807-q3": {
+    "sourceHash": "5ed30f2a7d8cc62e27ae98949b0bde03ad5174a7fa1dda469b3d30436c4b73b9",
+    "correctChoice": 4,
+    "summary": "マゼンタは可視部に強い吸収がある色素であり、それ自体の吸光度を測定できるため発色操作を要しない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "アクリロニトリルは可視域で発色した色素ではないため、可視吸光度を用いる方法では発色反応を利用する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "ペンタクロロフェノールはマゼンタのような可視色素ではなく、この測定では可視部で測れるよう発色させる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "ジアニシジンの定量には発色反応を利用できる。測定対象が元から強い可視吸収を示すマゼンタとは異なる。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "マゼンタは可視部に強い吸収がある色素であり、それ自体の吸光度を測定できるため発色操作を要しない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "エチレンイミンはそのままでは可視部で十分な吸収を示さないため、可視吸光光度法では発色操作を行う。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241807-q4": {
+    "sourceHash": "07ff690913dfeac1f2b3c3f12da60608577f687ff1b02727b799a23cd1a897f2",
+    "correctChoice": 4,
+    "summary": "塩酸で液体捕集し、クロラミンTによる酸化で黄色の生成物を得る。その抽出液を約440 nmで測定する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "クロラミンTと440 nmは測定法に合う。一方、塩基性の水酸化ナトリウムではなく塩酸を捕集液に用いる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "酸性の捕集液として塩酸を使用する。黄色の酸化物を測る波長も、660 nmでなく約440 nmである。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "この方法では塩酸で捕集し、クロラミンTで酸化して約440 nmを測定するため、三つとも一致しない。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "塩酸で液体捕集し、クロラミンTによる酸化で黄色の生成物を得る。その抽出液を約440 nmで測定する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "塩酸での捕集及び約440 nmでの測定は合うが、発色に用いるのはナフトキノンスルホン酸でなくクロラミンTである。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241807-q5": {
+    "sourceHash": "351df0aa688fffb3854cb2eca10dd85a726058a0657baa2bc26772cc70f0a39a",
+    "correctChoice": 5,
+    "summary": "炎光光度検出器は主に硫黄やリンを含む化合物を検出する。これらの元素を含まないアクリルアミドの測定には適さない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "グラスファイバーろ紙は粒子を、活性炭フェルトはろ紙を通る蒸気を捕らえるのに用いるため、記述は正しい。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "この測定法では一定流量で吸引して捕集量と採気量を対応させる。設問の方法では30 L/minを用いる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "メタノールで試料を脱着し、添加したプロピオンアミドを内部標準にして測定値を比較する記述は正しい。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "捕集後は密栓できる共栓付試験管に入れて−20℃で保管し、分析までの試料の変化を抑える。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "炎光光度検出器は主に硫黄やリンを含む化合物を検出する。これらの元素を含まないアクリルアミドの測定には適さない。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241807-q6": {
+    "sourceHash": "6c3203cbdf0963569029ee530e0947f4d986f937a1fbd5e3a692c7b7d93ef011",
+    "correctChoice": 3,
+    "summary": "FIDの応答はハロゲン化の程度などにより弱くなるが、ハロゲン化炭化水素をすべて検出できないという記述は誤りである。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "カラムから出た成分が検出器で凝縮したり汚染源になったりしないよう、検出器をカラムより高温に保つ。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "キャピラリーカラムなどでキャリアガスの流量が不足するときは、メイクアップガスを加えて検出条件を整える。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "FIDの応答はハロゲン化の程度などにより弱くなるが、ハロゲン化炭化水素をすべて検出できないという記述は誤りである。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "電子捕獲検出器は高い感度を持つが、検量線の直線範囲は一般に水素炎イオン化検出器より狭い。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "FPDでは水素を多くした還元炎中で硫黄やリンに由来する発光を生じさせ、光学的に検出する。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241807-q7": {
+    "sourceHash": "b86bf812bd2874672bcef1c47ccee307c221ce5581297b5464e7654cf7264406",
+    "correctChoice": 3,
+    "summary": "スプリット注入法は気化した試料の一部だけをカラムに送る。導入量が減るため低濃度の成分には不利である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "加熱脱着法は捕集材に濃縮した対象成分を熱で放出して導入できるため、低濃度試料の分析に利用できる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "プログラム昇温気化注入法では注入口の温度と導入を制御し、溶媒を減らしながら対象成分を導入できる。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "スプリット注入法は気化した試料の一部だけをカラムに送る。導入量が減るため低濃度の成分には不利である。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "クール・オンカラム注入法は冷却したカラムへ試料を直接入れ、気化時の成分損失などを抑えられる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "直接注入法は試料を分割して排出する操作を前提とせず、微量成分を多くカラムに導入できる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241807-q8": {
+    "sourceHash": "8eeb36f719b6795138a719029480f218b7c01f80c809faa5c466e7f9762c42f3",
+    "correctChoice": 3,
+    "summary": "臭化水素酸でエチレンオキシドを2-ブロモエタノールに変えて捕集する。この方法で用いる分析法はGC/MSである。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "試薬は臭化水素酸だが、測定対象となる誘導体は2-ブロモエタノールで、記述の分析法も異なる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "臭化水素酸と2-ブロモエタノールは合っているが、この方法の分析は高速液体クロマトグラフ法でなくGC/MSである。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "臭化水素酸でエチレンオキシドを2-ブロモエタノールに変えて捕集する。この方法で用いる分析法はGC/MSである。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "この方法の捕集剤には臭化水素酸を使い、生成物は1-ブロモエタノールでなく2-ブロモエタノールである。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "2-ブロモエタノールは正しいが、捕集剤に含浸させる試薬と最後の分析法がこの方法に合わない。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241807-q9": {
+    "sourceHash": "77a08127c406890bd3b79e5ad6e386a764901e963d1d34399168fb93d339c312",
+    "correctChoice": 3,
+    "summary": "この設問では、アンモニアが共存するとシアン化水素用検知管の指示値が低い側に偏る点を問うている。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "シアン化水素が別途検知対象となることと、アクリロニトリル用検知管の妨害で負の誤差が出ることは別である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "エチレンオキシド用検知管に対し、ホルムアルデヒドとの組合せは負の妨害がある例として該当しない。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "この設問では、アンモニアが共存するとシアン化水素用検知管の指示値が低い側に偏る点を問うている。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "フッ化水素用検知管に対し、硝酸を負の妨害物質として組み合わせる記述は該当しない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "キシレンはベンゼンと同様に芳香族化合物だが、ベンゼン用検知管で問われる負の妨害の組合せではない。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241807-q10": {
+    "sourceHash": "631db5e6b1f0e25bd3cdf13afb24358288c0e8d55f3c95b3fb5992de2d96764e",
+    "correctChoice": 3,
+    "summary": "流量などを一定としたとき、粘度が高い移動相ほど充填カラムを通りにくくなり、カラム圧力は上昇する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "イオン化する試料も、移動相のpHや適切な選択性を持つ固定相などを選ぶことで逆相分離の対象にできる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "超音波や減圧で移動相中の溶存気体を取り除くと、送液や検出の際に気泡が発生しにくくなる。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "流量などを一定としたとき、粘度が高い移動相ほど充填カラムを通りにくくなり、カラム圧力は上昇する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "芳香族炭化水素は紫外部に吸収を持つため、紫外可視吸光光度検出器で検出できる化合物がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "温度の上昇により励起状態から無放射で緩和する過程が増え、一般に蛍光強度は低下することがある。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241807-q11": {
+    "sourceHash": "df147bbc7b7449dc962ab79a2a114532dc63f1016037bde612fa987da17f81d0",
+    "correctChoice": 3,
+    "summary": "試料液は0.40×1900÷4800≒0.158 µg/mL。これに25 mLを掛けて10 Lで割ると、約0.40 mg/m³となる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "この濃度は吸引した10 Lに1 µgが含まれる場合に相当し、ピーク面積比から得る約4 µgより少ない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "0.2 mg/m³は10 Lに対して2 µgに相当する。捕集液の定容量25 mLを用いて求める量の約半分である。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "試料液は0.40×1900÷4800≒0.158 µg/mL。これに25 mLを掛けて10 Lで割ると、約0.40 mg/m³となる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "0.6 mg/m³では採取した10 Lに6 µgが含まれる計算になるが、試料液の分析値は約3.96 µgである。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "0.8 mg/m³は25 mLに定容した全量を採取空気10 Lで割った値の約2倍であり、計算に合わない。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241807-q12": {
+    "sourceHash": "57e44f6dccc6e440796e7243f97ae161c880b80a98b3e9b6a31ca1b5d7d6f4e5",
+    "correctChoice": 4,
+    "summary": "TDIのイソシアネート基は1-(2-ピリジル)ピペラジンと反応し、HPLCで定量できる尿素誘導体を与える。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "o-トルイジンは芳香族アミンで、この試薬で尿素誘導体を作る対象となるイソシアネート基を持たない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "1,1-ジメチルヒドラジンはヒドラジン誘導体で、分析対象としてこの試薬と反応させるイソシアネート類ではない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "DDVPは有機リン化合物で、1-(2-ピリジル)ピペラジンで誘導体化する対象のイソシアネート基を持たない。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "TDIのイソシアネート基は1-(2-ピリジル)ピペラジンと反応し、HPLCで定量できる尿素誘導体を与える。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "酸化プロピレンはエポキシドであり、TDIのイソシアネート基を利用するこの誘導体化法の対象ではない。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241807-q13": {
+    "sourceHash": "b2d2d01abaaeb83928041d34adee8406b692ef6256f680f4bfd8e6da38ed2297",
+    "correctChoice": 3,
+    "summary": "o-フタロジニトリルには隣接する二つのシアノ基（−C≡N）がある。図はナフタレン骨格に二つのニトロ基が付いた構造を示している。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "エチレンオキシドは二つの炭素原子と一つの酸素原子を含む三員環であり、図はその構造に一致する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "ベンゾトリクロリドはベンゼン環にトリクロロメチル基が結合した構造であり、図中の三つの塩素の配置は正しい。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "o-フタロジニトリルには隣接する二つのシアノ基（−C≡N）がある。図はナフタレン骨格に二つのニトロ基が付いた構造を示している。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "β-プロピオラクトンは分子内のエステル結合による四員環を持ち、図でカルボニル酸素と環内酸素を区別している。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ジクロロベンジジンでは二つのベンゼン環にアミノ基と塩素が付く。図はその置換を示している。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241807-q14": {
+    "sourceHash": "6b53276ef11c29f4ba2e2de5b2a4b39d8c45ee353ce90fb90e958a602cb62558",
+    "correctChoice": 5,
+    "summary": "酸化プロピレンは1気圧で約34℃で沸騰する。エチレンイミンなど他の選択肢より沸点が低い。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ジアニシジンは大きな芳香族骨格を持つ。1気圧での沸点が約34℃の酸化プロピレンより揮発しやすい物質ではない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "アクリロニトリルの沸点は約77℃であり、この選択肢の中で最も低い酸化プロピレンの約34℃を上回る。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "エチレンイミンの沸点は約56℃で、酸化プロピレンの沸点より20℃ほど高いため最も低くはない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "クロロメチルメチルエーテルの沸点は約59℃であり、酸化プロピレンの約34℃より高い。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "酸化プロピレンは1気圧で約34℃で沸騰する。エチレンイミンなど他の選択肢より沸点が低い。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241807-q15": {
+    "sourceHash": "62da614645d48581665a770546ef9030169dcc502133c832409ee9d69ebdc7bb",
+    "correctChoice": 4,
+    "summary": "o-トルイジンはベンゼン環にメチル基とアミノ基が結合し、窒素原子は一つで、25℃では液体である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "1,1-ジメチルヒドラジンにはN−N結合がある。分子中に窒素原子が二つあるので、㋑の条件を満たさない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "アクリルアミドの窒素はアミド基に含まれ、25℃では固体であるため、アミノ基と常温液体の条件に合わない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "α-ナフチルアミンの窒素原子はアミノ基にあるが、25℃で固体なので、常温で液体との条件を満たさない。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "o-トルイジンはベンゼン環にメチル基とアミノ基が結合し、窒素原子は一つで、25℃では液体である。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ニトログリコールの窒素は二つの硝酸エステル基に含まれる。アミノ基を持つという条件にも合わない。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241807-q16": {
+    "sourceHash": "c365b687dc7246d9d1da558cf9665116846196588d7e70780d733e1ad240b3b8",
+    "correctChoice": 4,
+    "summary": "硫酸ナトリウムは硫酸イオンを含むが、硫酸ジメチルのメチル化による発色応答を再現する標準にはならない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "臭化メチルを臭化物イオンとして定量する手順では、既知濃度の臭化物イオンを臭化カリウムから用意できる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "シアン化カリウムはシアン化物イオンを含み、シアン化水素をシアン化物として測る場合の標準に対応する。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "硫化ナトリウムから硫化物を含む標準液を作り、硫化水素の捕集液を発色させた際の応答と比較できる。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "硫酸ナトリウムは硫酸イオンを含むが、硫酸ジメチルのメチル化による発色応答を再現する標準にはならない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "フッ化ナトリウムはフッ化物イオンを供給するため、フッ化水素をフッ化物として定量する標準液に使える。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241807-q17": {
+    "sourceHash": "c83b925160d0e6889453abefef3b4a84a0d7dfe03aa70e4f7d67e8941e93f5ee",
+    "correctChoice": 3,
+    "summary": "5時間に減った0.0107 gは約1.37×10⁻⁴ molで、25℃では約0.00335 Lに相当する。300 Lに対して約11 ppmである。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "8.9 ppmは、5時間に0.0107 g減って300 Lを通過したという条件から計算する体積分率を下回る。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "流量から5時間の気体体積は300 L。0.0107 gをモル量に換算して求める約11 ppmより小さい値である。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "5時間に減った0.0107 gは約1.37×10⁻⁴ molで、25℃では約0.00335 Lに相当する。300 Lに対して約11 ppmである。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "16 ppmを得るには同じ300 Lに約0.015 gが含まれる必要があり、測定した質量減少0.0107 gより大きい。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "19 ppmなら同じ流量で約0.018 g減少する計算になるが、表の5時間当たりの質量減少は0.0107 gである。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241807-q18": {
+    "sourceHash": "fa5857de37e4ae24a04f21edb7014aaf07af155c445cb14b2947d42e8d9d1976",
+    "correctChoice": 4,
+    "summary": "揮発性物質を物理的に溶解させて捕らえる場合、液温が高いと気相へ戻りやすくなり、一般に捕集率は低下する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "気体と捕集液の接触面が広いほど物質の移動が起きやすく、同じ条件なら捕集効率が高くなる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "気泡が捕集液の中に長く滞留すれば、気相から液相に物質が移る時間が長くなり、捕集率が高まる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "反応を利用する捕集では、低温で反応が遅くなれば、同じ接触時間に捕集できる割合が下がる場合がある。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "揮発性物質を物理的に溶解させて捕らえる場合、液温が高いと気相へ戻りやすくなり、一般に捕集率は低下する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "直列に置いた2段目は1段目を通過した成分を捕らえる。両段の捕集量を比べれば捕集率を評価できる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241807-q19": {
+    "sourceHash": "3334ec7626f101b0f634229f4d7c236b20af1e5b0cb676f5ff07bfebf3fedf37",
+    "correctChoice": 1,
+    "summary": "o-フタロジニトリルでは、粒子状の成分をろ紙で、通過した蒸気を固体の捕集材で取る組合せが用いられる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "o-フタロジニトリルでは、粒子状の成分をろ紙で、通過した蒸気を固体の捕集材で取る組合せが用いられる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "コールタールの測定は対象となる粒子状物質をろ紙で捕集する方法を取り、この設問の固体捕集との組合せではない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "シアン化カリウムは水溶性の塩で、液体捕集を利用する方法がある。この問題が問う組合せには当たらない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "MOCAには硫酸含浸ろ紙で捕集する方法がある。通過蒸気を別の固体捕集材で捕らえる組合せとは区別する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "塩化ビニルは常温で気体であり、固体捕集材による捕集にろ紙を組み合わせて粒子を回収する対象ではない。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20241807-q20": {
+    "sourceHash": "00de04eb948969fa53363d1aa7d0bdb91cbb5acab28d0c154b486b2bcd42c612",
+    "correctChoice": 2,
+    "summary": "定量下限濃度に液量を掛けて最小定量質量を求める。これを管理濃度の10分の1で割るので、Aは総量、Bは0.1、Cは管理濃度である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "最終試料液の総量を掛ける点は正しいが、分母には分析上の検出下限でなく対象物質の管理濃度を使う。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "定量下限濃度に液量を掛けて最小定量質量を求める。これを管理濃度の10分の1で割るので、Aは総量、Bは0.1、Cは管理濃度である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "Aには濃度を質量に換算するためmL単位の総量が必要で、捕集時間ではない。Bも0.01ではなく0.1を用いる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "Bの0.1とCの管理濃度は合うが、Aを捕集時間にすると、分子が捕集した対象物質の質量にならない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "吸引流量をAにしても定量下限濃度から質量を求められず、分母の検出下限濃度も空気中の管理濃度とは異なる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
   }
 }
