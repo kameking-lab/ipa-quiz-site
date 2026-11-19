@@ -752,7 +752,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialReuseTermsUrl: "https://www.katei-ed.or.jp/past.html",
     status: "terms-review-required",
     stagingDataPath: "data/questions/katei-hifuku",
-    reuseSummary: "第61回の筆記12大問（20解答単位）を公式問題・解答から収録。",
+    reuseSummary: "第61回・第60回の筆記計24大問（38解答単位）を公式問題・解答から収録。",
     attributionTemplate: "出典：公益財団法人全国高等学校家庭科教育振興会。解説は過去問AIの独自作成。",
     remainingWork: ["問題文・図版の転載条件の確認", "公開時に figures の図版を public/images/questions/katei-hifuku に配置"],
   },

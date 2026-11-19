@@ -769,8 +769,8 @@ civil1: {
         label: "2級・旧3級（筆記）",
         categories: ["被服材料", "衣服の手入れ", "採寸・衣服の構成", "裁断・型紙", "裁縫用具・縫製"],
     }],
-    seasons: ["first"],
-    yearRange: { start: 2025, end: 2025 },
+    seasons: ["first", "second"],
+    yearRange: { start: 2024, end: 2025 },
 },
 shakai: {
     code: "shakai",
