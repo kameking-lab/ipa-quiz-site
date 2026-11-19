@@ -34,6 +34,7 @@
 | 2025（令和8年度採用） | 群馬県 第1次選考 教科専門（中学校・英語） | 4問 | [問題と正答（末尾11ページ）](https://www.pref.gunma.jp/uploaded/attachment/683290.pdf) |
 | 2025（令和8年度採用） | 群馬県 第1次選考 教科専門（高等学校・英語） | 5問 | [問題と正答（11ページ）](https://www.pref.gunma.jp/uploaded/attachment/683311.pdf) |
 | 2025（令和8年度採用） | 群馬県 第1次選考 教科専門（中学校・社会） | 1問 | [問題と正答（16ページ）](https://www.pref.gunma.jp/uploaded/attachment/683281.pdf) |
+| 2025（令和8年度採用） | 群馬県 第1次選考 教科専門（高等学校・政治・経済） | 5問 | [問題と正答（14ページ）](https://www.pref.gunma.jp/uploaded/attachment/683296.pdf) |
 | 2024（令和7年度採用） | 群馬県 第1次選考 教科専門（中学校・英語） | 5問 | [問題と正答（10ページ）](https://www.pref.gunma.jp/uploaded/attachment/643780.pdf) |
 | 2024（令和7年度採用） | 群馬県 第1次選考 教科専門（高等学校・英語） | 5問 | [問題と正答（11ページ）](https://www.pref.gunma.jp/uploaded/attachment/643802.pdf) |
 | 2023（令和6年度採用） | 群馬県 第1次選考 教科専門（中学校・英語） | 5問 | [問題と正答（9ページ）](https://www.pref.gunma.jp/uploaded/life/612847_618243_misc.pdf) |

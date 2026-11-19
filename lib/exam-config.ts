@@ -2026,6 +2026,13 @@ caremanager: {
             label: "教科専門（中学校・社会）",
             categories: ["中学校・社会"],
         },
+        {
+            session: "senmon-ko-seikei",
+            urlSlug: "senmon-ko-seikei",
+            expectedQuestions: 5,
+            label: "教科専門（高等学校・政治・経済）",
+            categories: ["高等学校・政治・経済"],
+        },
     ],
     seasons: ["annual"],
     yearRange: { start: 2022, end: 2025 },
