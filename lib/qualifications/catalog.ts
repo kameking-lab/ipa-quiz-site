@@ -1859,6 +1859,13 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {"slug":"biru-kan","examCode":"biru-kan","shortName":"建築物環境衛生管理技術者","fullName":"建築物環境衛生管理技術者","domain":"construction","administrator":"日本建築衛生管理教育センター","officialQuestionsUrl":"https://www.jahmec.or.jp/kokka/","officialReuseTermsUrl":"https://www.jahmec.or.jp/kokka/","status":"live","reuseSummary":"第54〜56回（2024〜2026年度）540問。公式問題・公式正答・全肢解説・必要図を収録しています。","remainingWork":[]},
   {"slug":"gijutsushi1-kikai","examCode":"gijutsushi1-kikai","shortName":"技術士第一次試験・機械部門","fullName":"技術士第一次試験・機械部門","domain":"construction","administrator":"日本技術士会","officialQuestionsUrl":"https://www.engineer.or.jp/c_categories/index02021.html","officialReuseTermsUrl":"https://www.engineer.or.jp/c_categories/index02021.html","status":"live","reuseSummary":"2024・2025年度の基礎・適性・機械専門160原問を保存。公式全員正解の専門2問は通常採点対象外、158問を演習できます。","remainingWork":[]},
   {
+    slug: "jobpass3", examCode: "jobpass3", shortName: "ビジネス能力検定ジョブパス3級",
+    fullName: "ビジネス能力検定ジョブパス3級", domain: "personal-services", administrator: "一般財団法人職業教育・キャリア教育財団",
+    officialQuestionsUrl: "https://bken.sgec.or.jp/about/problem.html",
+    officialReuseTermsUrl: "https://bken.sgec.or.jp/about/problem.html", status: "live",
+    reuseSummary: "公式問題・正答を全選択肢の解説付きで収録。", remainingWork: [],
+  },
+  {
     slug: "gijutsushi1-tekisei", examCode: "gijutsushi1-tekisei", shortName: "技術士第一次試験（適性科目）",
     fullName: "技術士第一次試験（適性科目）", domain: "construction", administrator: "日本技術士会",
     officialQuestionsUrl: "https://www.engineer.or.jp/c_categories/index02021.html",

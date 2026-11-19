@@ -175,6 +175,7 @@ export const EXAM_LABELS: Record<string, string> = {
     "biru-kan": "建築物環境衛生管理技術者",
     "gijutsushi1-kikai": "技術士第一次試験・機械部門",
     "gijutsushi1-tekisei": "技術士第一次試験（適性科目）",
+    jobpass3: "ビジネス能力検定ジョブパス3級",
     "hoshasen-1": "第一種放射線取扱主任者",
     "hoshasen-2": "第二種放射線取扱主任者",
     "khk-kikai-kou": "高圧ガス製造保安責任者 甲種機械",
