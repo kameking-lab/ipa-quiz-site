@@ -1899,6 +1899,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：岐阜県教育委員会 岐阜県公立学校教員採用選考試験。解説は過去問AIの独自作成。",
     remainingWork: [],
   },
+  {
+    slug: "kyoin-kobe", examCode: "kyoin-kobe", shortName: "神戸市教員採用試験", fullName: "神戸市立学校園教員採用選考試験",
+    domain: "welfare", administrator: "神戸市教育委員会",
+    officialQuestionsUrl: "https://www.city.kobe.lg.jp/a55153/shise/shokuinsaiyou/kyouiku/kyosaikako.html",
+    officialReuseTermsUrl: "https://www.city.kobe.lg.jp/a57337/homepage/rule.html",
+    status: "live",
+    reuseSummary: "2027年度採用（2026年度実施）の教職・一般教養を公式問題・正答と全肢の独自解説で46問収録。本文が公表されていない4問は除外。",
+    attributionTemplate: "出典：神戸市教育委員会 神戸市立学校園教員採用選考試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
 ] as const;
 
 export function getQualificationByExamCode(exam: ExamCode): QualificationCatalogEntry | undefined {
