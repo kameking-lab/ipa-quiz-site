@@ -542,7 +542,7 @@ fp2: {
             categories: ["電気通信技術の基礎", "端末設備の接続のための技術及び理論", "端末設備の接続に関する法規"],
         },
     ],
-    seasons: ["round2"],
+    seasons: ["round1", "round2"],
     yearRange: { start: 2024, end: 2024 },
 },
 "zensho-eco-79": {
