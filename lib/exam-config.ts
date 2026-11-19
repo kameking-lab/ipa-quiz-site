@@ -1371,7 +1371,7 @@ chizai3: {
         { session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科", categories: ["知的財産管理技能検定3級"] },
         { session: "practical", urlSlug: "practical", expectedQuestions: 30, label: "実技", categories: ["知的財産管理技能検定3級"] },
     ],
-    seasons: ["autumn"], yearRange: { start: 2025, end: 2025 },
+    seasons: ["july", "autumn"], yearRange: { start: 2025, end: 2025 },
 },
 chizai2: {
     code: "chizai2", nameFull: "知的財産管理技能検定2級", urlSlug: "chizai2", level: "advanced",
