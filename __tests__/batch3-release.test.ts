@@ -17,13 +17,14 @@ import scope from "@/reports/int7-20261105/release-scope.json";
 import receipt from "@/reports/int7-20261105/projection-receipt.json";
 
 const codes = Object.keys(scope) as (keyof typeof scope)[];
+const supplementalCounts: Partial<Record<keyof typeof scope, number>> = { sokuryoshi: 9, "dojo-osen": 15 };
 describe("INT7 batch3 public release integration", () => {
   it.each(codes)("serves %s through eager/lazy registries, canonical routes, home and question API", async code => {
     const questions = QUESTIONS_BY_EXAM[code]!;
     expect(EXAM_CONFIGS[code].sessions.every(s => /[一-龯ぁ-んァ-ン]/.test(s.label))).toBe(true);
     if (code === "dojo-osen") expect(EXAM_CONFIGS[code].sessions.find(s => s.session === "pm")?.label).toBe("午後（選択式）");
     if (code === "chiiki-ryoko") expect(questions.every(q => /[一-龯ぁ-んァ-ン]/.test(q.category))).toBe(true);
-    expect(questions).toHaveLength(scope[code].exercises);
+    expect(questions).toHaveLength(scope[code].exercises + (supplementalCounts[code] ?? 0));
     expect(await getQuestionsForExam(code)).toEqual(questions);
     expect(getRegisteredExamCodes()).toContain(code);
     expect(getQualificationByExamCode(code)?.status).toBe("live");

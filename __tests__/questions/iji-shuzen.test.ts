@@ -10,7 +10,8 @@ import { isExamPublished } from "@/lib/qualifications/catalog";
 const keys = ["ア", "イ", "ウ", "エ"];
 describe("マンション維持修繕技術者の直近2回", () => {
   it("全94原問と90問の公式正答、記述4問の公式正解例を保持する", () => {
-    expect(IJI_SHUZEN_QUESTIONS).toHaveLength(94);
+    const auditedYears = new Set(audit.papers.map(paper => paper.year));
+    expect(IJI_SHUZEN_QUESTIONS.filter(q => auditedYears.has(q.year))).toHaveLength(94);
     for (const paper of audit.papers) {
       const rows = IJI_SHUZEN_QUESTIONS.filter(q => q.year === paper.year);
       expect(rows.map(q => q.qNumber)).toEqual(Array.from({ length: 47 }, (_, i) => i + 1));

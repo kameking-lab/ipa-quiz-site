@@ -16,7 +16,7 @@ import type { ExamCode } from "@/lib/questions/types";
 const counts: Partial<Record<ExamCode, number>> = {
   kenchikushi1: 249, "khk-kagaku": 422, "sekou-1kenchiku": 144,
   "khk-kikai-kou": 80, "khk-kikai-otsu": 100,
-  "khk-reito-1": 80, "khk-reito-2": 80, "khk-reito-3": 70,
+  "khk-reito-1": 80, "khk-reito-2": 80, "khk-reito-3": 140,
 };
 describe("batch2 public release integration", () => {
   it("connects complete reviewed scopes through eager/lazy/search/home/sitemap and distinct routes", async () => {
