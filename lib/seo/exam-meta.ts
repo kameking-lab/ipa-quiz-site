@@ -6,6 +6,7 @@ import { questionSourceEdition } from "@/lib/questions/source-label";
 import { examLabel } from "@/lib/utils";
 import { isIpaTop, ipaTopDescription } from "@/lib/seo/ipa-top";
 export const EXAM_DESCRIPTIONS: Partial<Record<ExamCode, string>> = {
+    "katei-hifuku": "2025年度 第62回の2級筆記を全12大問・19演習単位で収録。公式正答と原本図表、選択肢ごとの独自解説を確認できます。",
 "sasshi2": "技能検定 2級サッシ施工（ビル用サッシ施工作業）学科試験。公式過去問を全肢の独自解説で学べます。",
 "sasshi1": "技能検定 1級サッシ施工（ビル用サッシ施工作業）学科試験。公式過去問を全肢の独自解説で学べます。",
 "kyoka-plastic2": "技能検定 2級強化プラスチック成形（手積み積層成形作業）学科試験。公式過去問を全肢の独自解説で学べます。",
@@ -454,6 +455,7 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
     return `${base}${examLabel(exam)}の過去問${questionCount}問を年度別・分野別に収録。AIコパイロット付きで効率的に学習。`;
 }
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+    "katei-hifuku": "家庭科技術検定・被服製作",
     "sasshi2": "技能検定 2級サッシ施工（ビル用サッシ施工作業）学科試験",
     "sasshi1": "技能検定 1級サッシ施工（ビル用サッシ施工作業）学科試験",
     "kyoka-plastic2": "技能検定 2級強化プラスチック成形（手積み積層成形作業）学科試験",
@@ -824,6 +826,7 @@ export function examFullName(exam: ExamCode): string {
     return EXAM_FULL_NAMES[exam];
 }
 const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number) => string> = {
+    "katei-hifuku": (c) => `家庭科技術検定・被服製作の公式問題から${c}問を収録。公式正答・原本図表・独自解説で学べます。`,
     "sasshi2": (c, y, k) => `技能検定 2級サッシ施工（ビル用サッシ施工作業）学科試験を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
     "sasshi1": (c, y, k) => `技能検定 1級サッシ施工（ビル用サッシ施工作業）学科試験を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,
     "kyoka-plastic2": (c, y, k) => `技能検定 2級強化プラスチック成形（手積み積層成形作業）学科試験を${c}問・${y}回分・${k}分野で収録。公式正答と全肢の独自解説で学べます。`,

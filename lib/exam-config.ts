@@ -1474,6 +1474,13 @@ shuwa: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 46, label: "情報活用3級", categories: ["情報表現と処理手順", "パソコンの基礎", "インターネットの基礎", "インターネットの利用", "情報機器の基本操作", "情報社会とコンピュータ", "情報モラル"] }],
     seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
 },
+"katei-hifuku": {
+    code: "katei-hifuku", nameFull: "家庭科技術検定・被服製作", urlSlug: "katei-hifuku", level: "basic",
+    sessions: [
+        { session: "gakka", urlSlug: "gakka", expectedQuestions: 19, label: "被服製作技術検定 2級・筆記", categories: ["被服製作技術検定 2級・筆記"] },
+    ],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2025 },
+},
 "jken-system": {
     code: "jken-system", nameFull: "情報検定（J検）情報システム試験", urlSlug: "jken-system", level: "basic",
     sessions: [
