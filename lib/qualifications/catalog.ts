@@ -1244,6 +1244,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["令和8年建築法規問18の出題機関による訂正又は直接解釈の確認", "第二次試験は未収録"],
 },
   {
+    slug: "zensho-financial-statement-analysis", examCode: "zensho-financial-statement-analysis", shortName: "全商 財務諸表分析検定", fullName: "全商 財務諸表分析検定試験",
+    domain: "accounting", administrator: "公益財団法人全国商業高等学校協会",
+    officialQuestionsUrl: "https://zensho.or.jp/examination/pastexams/accounting/",
+    officialReuseTermsUrl: "https://zensho.or.jp/examination/pastexams/accounting/",
+    status: "live",
+    reuseSummary: "2023年度第15回の全5大問を88の演習項目に分け、公式の問題と正答、計算手順と選択肢の解説を収録しています。",
+    attributionTemplate: "出典：全国商業高等学校協会 財務諸表分析検定試験 問題・正答。解説は過去問AI独自作成。",
+    remainingWork: [],
+  },
+  {
     slug: "chizai1", examCode: "chizai1", shortName: "知的財産管理技能検定1級", fullName: "知的財産管理技能検定1級",
     domain: "legal", administrator: "知的財産教育協会",
     officialQuestionsUrl: "https://www.kentei-info-ip-edu.org/gakushujoho/kakomon.html",

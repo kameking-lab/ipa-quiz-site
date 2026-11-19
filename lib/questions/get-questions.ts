@@ -203,6 +203,7 @@ josanshi: async () => isExamPublished("josanshi") ? (await import("@/data/questi
 "shinryo-hoshasengishi": async () => isExamPublished("shinryo-hoshasengishi") ? (await import("@/data/questions/shinryo-hoshasengishi")).SHINRYO_HOSHASENGISHI_QUESTIONS : [],
 "shika-ishi": async () => isExamPublished("shika-ishi") ? (await import("@/data/questions/shika-ishi")).SHIKA_ISHI_QUESTIONS : [],
 "kenchiku-setsubishi": async () => isExamPublished("kenchiku-setsubishi") ? (await import("@/data/questions/kenchiku-setsubishi")).KENCHIKU_SETSUBISHI_STUDY_QUESTIONS : [],
+"zensho-financial-statement-analysis": async () => isExamPublished("zensho-financial-statement-analysis") ? (await import("@/data/questions/zensho-financial-statement-analysis")).ZENSHO_FINANCIAL_STATEMENT_ANALYSIS_QUESTIONS : [],
 chizai1: async () => isExamPublished("chizai1") ? (await import("@/data/questions/chizai1")).CHIZAI1_QUESTIONS : [],
 chizai2: async () => isExamPublished("chizai2") ? (await import("@/data/questions/chizai2")).CHIZAI2_QUESTIONS : [],
 kisho: async () => isExamPublished("kisho") ? (await import("@/data/questions/kisho")).KISHO_QUESTIONS : [],
