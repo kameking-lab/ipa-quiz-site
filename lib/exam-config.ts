@@ -1759,6 +1759,14 @@ shihoshoshi: {
         { session: "pm", urlSlug: "pm", expectedQuestions: 103, label: "午後", categories: ["栄養教育論", "臨床栄養学", "公衆栄養学", "給食経営管理論", "応用力試験"] },
     ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
 },
+"chuken3": {
+    code: "chuken3", nameFull: "中国語検定試験 3級", urlSlug: "chuken3", level: "basic",
+    sessions: [{
+        session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "試験問題",
+        categories: ["リスニング（原稿）", "発音・声調", "文法・語彙", "語順・翻訳", "長文読解"],
+    }],
+    seasons: ["round2"], yearRange: { start: 2026, end: 2026 },
+},
 "biz-career-logistics3": {
     code: "biz-career-logistics3", nameFull: "ビジネス・キャリア検定 3級ロジスティクス管理", urlSlug: "biz-career-logistics3", level: "basic",
     sessions: [{

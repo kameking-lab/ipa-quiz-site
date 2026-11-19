@@ -1807,6 +1807,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["第39回：問題PDFが公式で404。保存コピー利用はオーナー判断待ち"],
 },
   {
+    slug: "chuken3", examCode: "chuken3", shortName: "中国語検定 3級", fullName: "中国語検定試験 3級",
+    domain: "personal-services", administrator: "一般財団法人日本中国語検定協会", status: "live",
+    officialQuestionsUrl: "https://www.chuken.gr.jp/tcp/test.html",
+    officialReuseTermsUrl: "https://www.chuken.gr.jp/tcp/test.html",
+    reuseSummary: "第118回の公式問題・正答と独自解説を収録。リスニングは公式原稿を用いた読解形式です。",
+    attributionTemplate: "出典：日本中国語検定協会 中国語検定試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
+  {
     slug: "biz-career-logistics3", examCode: "biz-career-logistics3",
     shortName: "ビジネス・キャリア検定 3級ロジスティクス管理", fullName: "ビジネス・キャリア検定試験 3級ロジスティクス管理",
     domain: "personal-services", administrator: "中央職業能力開発協会", status: "live",
