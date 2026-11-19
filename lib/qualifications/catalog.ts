@@ -1274,6 +1274,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
   },
   {
+    slug: "kanken-j1", examCode: "kanken-j1", shortName: "漢検準1級", fullName: "日本漢字能力検定 準1級",
+    domain: "personal-services", administrator: "公益財団法人日本漢字能力検定協会",
+    officialQuestionsUrl: "https://www.kanken.or.jp/kanken/grades/sample/",
+    officialReuseTermsUrl: "https://www.kanken.or.jp/kanken/grades/sample/",
+    status: "live",
+    reuseSummary: "2024年度第3回の公式問題と標準解答を収録。記入式の設問は同じ回の標準解答を使った選択式で演習できます。",
+    attributionTemplate: "出典：公益財団法人日本漢字能力検定協会 日本漢字能力検定 準1級（試験問題・標準解答）。解説は過去問AI独自作成。",
+    remainingWork: [],
+  },
+  {
     slug: "kogai-08", examCode: "kogai-08", shortName: "公害防止管理者 汚水処理特論", fullName: "公害防止管理者等国家試験（汚水処理特論）",
     domain: "safety", administrator: "一般社団法人産業環境管理協会",
     officialQuestionsUrl: "https://www.jemai.or.jp/polconman/examination/past.html",
