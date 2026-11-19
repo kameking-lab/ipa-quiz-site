@@ -310,7 +310,7 @@ kaikeishi: {
         { session: "kansa", urlSlug: "kansa", expectedQuestions: 20, label: "監査論", categories: ["監査論"] },
         { session: "zaimu", urlSlug: "zaimu", expectedQuestions: 35, label: "財務会計論", categories: ["財務会計論"] },
     ],
-    seasons: ["round1", "round2"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["round1", "round2"], yearRange: { start: 2024, end: 2026 },
 },
 chosashi: {
     code: "chosashi",

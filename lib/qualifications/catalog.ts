@@ -323,8 +323,8 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     domain: "accounting", administrator: "公認会計士・監査審査会",
     officialQuestionsUrl: "https://www.fsa.go.jp/cpaaob/kouninkaikeishi-shiken/r8shiken/01.pdf",
     officialReuseTermsUrl: "https://www.fsa.go.jp/cpaaob/copyright.html", status: "live",
-    reuseSummary: "令和8年試験第I回・第II回の短答式186原問を無料・回数制限なしで演習できます。原文・公式正答・実際の5肢または6肢の全解説と共通設例・図表を保持し、出典と加工内容を表示します。",
-    attributionTemplate: "出典：公認会計士・監査審査会 令和8年公認会計士試験短答式問題・正答。公共データ利用規約に基づき過去問AIが加工。解説は過去問AIの独自作成。",
+    reuseSummary: "公認会計士試験の短答式過去問を年度・実施回・科目別に演習できます。原文・公式正答・実際の5肢または6肢の全解説と共通設例・図表を保持し、出典と加工内容を表示します。",
+    attributionTemplate: "出典：公認会計士・監査審査会 公認会計士試験短答式問題・正答。公共データ利用規約に基づき過去問AIが加工。解説は過去問AIの独自作成。",
     remainingWork: [],
 },
   {
