@@ -374,6 +374,7 @@ export const EXAM_LABELS: Record<string, string> = {
     "kikenbutsu-otsu3": "危険物取扱者 乙種第3類",
     "khk-hanbai": "高圧ガス販売主任者 第一種",
     "shobo-setsubishi-otsu4": "消防設備士 乙種第4類",
+    "shobo-setsubishi-otsu7": "消防設備士 乙種第7類",
     "tsukanshi": "通関士"
 };
 export function examLabel(exam: string): string {

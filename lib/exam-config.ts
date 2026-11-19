@@ -296,6 +296,15 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["published"], yearRange: { start: 2026, end: 2026 },
   },
 
+  "shobo-setsubishi-otsu7": {
+    code: "shobo-setsubishi-otsu7", nameFull: "消防設備士 乙種第7類", urlSlug: "shobo-setsubishi-otsu7", level: "basic",
+    sessions: [
+      { session: "gakka", urlSlug: "gakka", expectedQuestions: 16, label: "筆記公表問題", categories: ["消防関係法令", "電気に関する基礎的知識", "規格・基準"] },
+      { session: "practical", urlSlug: "practical", expectedQuestions: 1, label: "実技公表問題", categories: ["実技・鑑別等"] },
+    ],
+    seasons: ["published"], yearRange: { start: 2026, end: 2026 },
+  },
+
   "khk-kagaku": {
     code: "khk-kagaku", nameFull: "高圧ガス製造保安責任者（化学）", urlSlug: "khk-kagaku", level: "advanced",
     sessions: [
