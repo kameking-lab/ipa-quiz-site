@@ -1,4 +1,5 @@
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+import marketing2024 from "./2024-marketing.json";
 import basic2025 from "./2025-basic.json";
 import law2025 from "./2025-businesshouki.json";
 import management2025 from "./2025-businessmane.json";
@@ -6,6 +7,8 @@ import marketing2025 from "./2025-marketing.json";
 import shouhin2025 from "./2025-shouhin.json";
 
 const organization = "公益財団法人全国商業高等学校協会";
+const round40 = { year: 2025, date: "2026-02-01", label: "第40回（令和7年度）" };
+const round39 = { year: 2024, date: "2025-02-02", label: "第39回（令和6年度）" };
 
 interface Paper {
   sourcePdfUrl: string;
@@ -28,7 +31,12 @@ interface Paper {
   }>;
 }
 
-function convert(paper: Paper, subject: string, passageKey: (item: Paper["questions"][number]) => string | undefined): Question[] {
+function convert(
+  paper: Paper,
+  subject: string,
+  passageKey: (item: Paper["questions"][number]) => string | undefined,
+  round = round40,
+): Question[] {
   return paper.questions.map((item) => {
     const { page, passageKey: _, question, ...data } = item;
     const key = passageKey(item);
@@ -39,10 +47,10 @@ function convert(paper: Paper, subject: string, passageKey: (item: Paper["questi
       ...data,
       exam: "zensho-eco-78",
       session: "gakka",
-      year: 2025,
-      fiscalYear: 2025,
+      year: round.year,
+      fiscalYear: round.year,
       season: "annual",
-      examDate: "2026-02-01",
+      examDate: round.date,
       subject,
       category: subject,
       difficulty: 2,
@@ -51,7 +59,7 @@ function convert(paper: Paper, subject: string, passageKey: (item: Paper["questi
       hasImage: Boolean(item.imageUrls?.length),
       sourcePdfUrl: paper.sourcePdfUrl,
       sourceAnswerUrl: paper.sourcePdfUrl,
-      sourceAttribution: `出典：${organization} 第40回（令和7年度）商業経済検定試験 ${subject} ${item.officialQuestionLabel}（問題PDF ${page}ページ、模範解答17ページ）。解説は過去問AI独自作成。`,
+      sourceAttribution: `出典：${organization} ${round.label}商業経済検定試験 ${subject} ${item.officialQuestionLabel}（問題PDF ${page}ページ、模範解答17ページ）。解説は過去問AI独自作成。`,
       license: "ZENSHO-owner-authorized",
       explanationCoverage: "full",
       lastUpdated: "2026-11-19",
@@ -65,4 +73,5 @@ export const ZENSHO_ECO_78_QUESTIONS: Question[] = [
   ...convert(shouhin2025, "商品開発と流通", (item) => String(item.page)),
   ...convert(management2025, "ビジネス・マネジメント", (item) => String(item.page)),
   ...convert(law2025, "ビジネス法規", (item) => item.passageKey ?? String(item.page)),
+  ...convert(marketing2024, "マーケティング", (item) => String(item.page), round39),
 ];
