@@ -37891,5 +37891,705 @@
     "sources": [],
     "provisionalReview": true,
     "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231804-q1": {
+    "sourceHash": "8a8f05b31e76b581059da5596755270787efd7ee43ce1267403358af56dd31fa",
+    "correctChoice": 2,
+    "summary": "ジュールは力×距離なので、N·m＝m²·kg·s⁻²です。mの指数が3になっているこの組合せは誤りです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "パスカルはN/m²で、Nをkg·m·s⁻²と書くとm⁻¹·kg·s⁻²になります。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "ジュールは力×距離なので、N·m＝m²·kg·s⁻²です。mの指数が3になっているこの組合せは誤りです。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "ヘルツは1秒当たりの繰り返し数を表すため、基本単位ではs⁻¹です。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "クーロンは電流と時間の積で表します。基本単位のアンペアと秒を掛けたA·sです。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "オームは電気抵抗で、電圧を電流で割ったV/Aです。基本単位で表すとm²·kg·s⁻³·A⁻²になります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231804-q2": {
+    "sourceHash": "4651113dc966bb48076e52b5beade78d94a847de780b4e118b1909460ecdaa44",
+    "correctChoice": 1,
+    "summary": "平均は全測定値の和をnで割り、分散は偏差の平方和をn、不偏分散はn−1で割ります。ばらつきの幅にはその平方根を使います。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "平均は全測定値の和をnで割り、分散は偏差の平方和をn、不偏分散はn−1で割ります。ばらつきの幅にはその平方根を使います。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "偏差を二乗せずに足すと、平均からの正負の差が打ち消し合います。分散には偏差の平方和を使います。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "分散は偏差の二乗を用い、不偏分散でもxᵢ＋x̄ではなくxᵢ−x̄の二乗を用います。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "平均を求めるときも不偏分散の平方和を求めるときも、n回すべての測定値を使います。最後に使うのは分散などの平方根です。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "全測定値を平均に使い、分散は二乗した偏差を合計して求めます。ばらつきを測定値と同じ単位で表すには、二乗値ではなく平方根を使います。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231804-q3": {
+    "sourceHash": "518dfa86ad596ff40401d7dc9ad94d9d5e6fb908568264669ba7b7f0fa352381",
+    "correctChoice": 1,
+    "summary": "フェノールは水中でヒドロキシ基からプロトンをわずかに放出する弱酸です。水溶液はアルカリ性にはなりません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "フェノールは水中でヒドロキシ基からプロトンをわずかに放出する弱酸です。水溶液はアルカリ性にはなりません。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "アニリンのアミノ基はプロトンを受け取ることができ、アニリンは弱塩基としてふるまいます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "プロピオン酸はカルボキシ基を持つ弱酸で、水中で一部が電離して酸性を示します。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "プロパンの常圧沸点はおよそ−42℃なので、25℃、1気圧では気体です。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "エタノールを酸化するとまずアセトアルデヒドが生成し、さらに酸化されると酢酸になります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231804-q4": {
+    "sourceHash": "ed74ed868563c2cf13dc701b0133be27b1d71241be8c32ca96f20441f12917ad",
+    "correctChoice": 5,
+    "summary": "ジエチルエーテルは二つのエチル基を酸素原子がつなぐエーテルです。酸素に水素が結合した−OH基はありません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "アセトニトリルはCH₃−C≡Nです。窒素と炭素が三重結合したニトリル基を持ちます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "酢酸はCH₃COOHで、末端の−COOHはカルボキシ基です。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "トルエンはベンゼン環の水素1個をメチル基−CH₃で置き換えた構造です。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "ホルムアルデヒドはH₂C=Oです。炭素と酸素との二重結合であるカルボニル基を持ちます。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "ジエチルエーテルは二つのエチル基を酸素原子がつなぐエーテルです。酸素に水素が結合した−OH基はありません。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231804-q5": {
+    "sourceHash": "9428ff1693c17b133059c1705061288541cfd0a8c039101c8a266dd8d70f2470",
+    "correctChoice": 3,
+    "summary": "溶液1 Lに水酸化ナトリウムが6.0×40.0＝240 g含まれます。溶液1 Lは密度から1,200 gなので、240÷1,200×100＝20％です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "16％は、1 Lの溶液に含まれる水酸化ナトリウム240 gを溶液質量1,200 gで割った割合より小さいです。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "18％は、240 gを1,200 gで割った値と一致しません。密度から求めるのは溶媒だけでなく溶液全体の質量です。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "溶液1 Lに水酸化ナトリウムが6.0×40.0＝240 g含まれます。溶液1 Lは密度から1,200 gなので、240÷1,200×100＝20％です。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "22％では溶液1,200 gに水酸化ナトリウムが264 gある計算になりますが、濃度6.0 mol/Lからは240 gです。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "24％は分母を1,000 gにした場合の値です。1 Lの溶液質量は密度1.20 g/cm³から1,200 gです。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231804-q6": {
+    "sourceHash": "8ec385b2bd674837072e00451b9cb6c785c85bbea9b9eda6753149d6d5c711d2",
+    "correctChoice": 5,
+    "summary": "ヘキサン相は40÷5.0＝8.0 mg/mL、水相は(50−40)÷100＝0.10 mg/mLなので、分配係数は80です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "16は抽出前の水相の濃度0.50 mg/mLを分母にした計算です。分母には抽出後に残った濃度を使います。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "20は、ヘキサン相8 mg/mLと抽出後の水相0.10 mg/mLの比とは一致しません。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "40 mgはヘキサンに移った質量です。各相の体積で割って濃度を求め、その濃度同士を割る必要があります。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "水相に残るのは50−40＝10 mgで濃度0.10 mg/mLです。これを使ってヘキサン相8.0 mg/mLとの比を計算します。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "ヘキサン相は40÷5.0＝8.0 mg/mL、水相は(50−40)÷100＝0.10 mg/mLなので、分配係数は80です。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231804-q7": {
+    "sourceHash": "dec042ebdb47cfa64fae01c0eddbcbef1506c34a371d25cf8769765c7de55518",
+    "correctChoice": 5,
+    "summary": "真空捕集瓶は空気中のガスや蒸気の採取に用います。液体微粒子のミストは、ろ過捕集などの適した方法で採取します。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ビュレットから滴定液を少量ずつ加え、終点までに使った体積から標定する溶液の濃度を求められます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "メスフラスコは標線まで溶媒を加えて一定の体積にする器具です。濃度が分かった標準液をつくるのに用います。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "パーミエーションチューブから一定条件で成分を透過させ、その成分を希釈すると標準ガスを調製できます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "石けん膜が既知の容積を移動する時間から通過流量を求められます。この流量を見てポンプを調整します。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "真空捕集瓶は空気中のガスや蒸気の採取に用います。液体微粒子のミストは、ろ過捕集などの適した方法で採取します。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231804-q8": {
+    "sourceHash": "2de6dd0cc9890d1d4035a1e4a299d7de10c625ad1157efcbb6ba220e31c5a695",
+    "correctChoice": 5,
+    "summary": "管が長いほど濃度差による拡散が緩やかになります。希釈流量が同じなら成分の流出量が減るため、濃度は低くなります。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "一定の蒸気の流出量は管の寸法や温度に依存します。さらに希釈空気の流量によって、混合後の濃度が変わります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "成分ごとの流出量を管理するため、個々の標準物質を別の拡散セルで発生させ、必要に応じて後で混合します。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "希釈空気の流量を変更すると混合比がすぐに変わります。セル温度の変更では、温度や蒸気圧の安定を待つ必要があります。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "他の条件が同じなら、温度が高いほど標準物質の蒸気圧が上がり、標準ガス中の成分濃度は高くなります。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "管が長いほど濃度差による拡散が緩やかになります。希釈流量が同じなら成分の流出量が減るため、濃度は低くなります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231804-q9": {
+    "sourceHash": "e5d01c9107b3406e095bd7317fd0c57a835e4e3eaf9ace6557f210a6fd1b0766",
+    "correctChoice": 5,
+    "summary": "一次標準物質は純度がよく分かっている安定な物質を使います。滴定で濃度を決めるのは、これを標準として使う溶液の側です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "試薬特級については、試薬ごとの日本産業規格に純度や不純物の上限などの項目が定められています。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "分析方法によって問題となる不純物が異なるため、それぞれの用途に合わせて許容濃度などを定めた試薬があります。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "酸と塩基は漏れたときに触れ合わないよう分けて保管します。混ざると発熱して飛散することがあります。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "光によって分解や変質を起こす有機溶剤があります。必要に応じて遮光して保管します。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "一次標準物質は純度がよく分かっている安定な物質を使います。滴定で濃度を決めるのは、これを標準として使う溶液の側です。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231804-q10": {
+    "sourceHash": "e4382b180c14a3eab113f56a9e1e4a195da1a4725077695ac1e629b1042e601d",
+    "correctChoice": 4,
+    "summary": "両物質に共通する測定上の変動は、目的物質と内標準物質の信号の比を取ることで相殺でき、精度を改善できます。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "測定結果が検量線の上限を超えたら、適切な範囲に入るよう試料を希釈します。再測定値に希釈倍率を反映させます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "濃度と信号が本来比例するのに直線にならなければ、測定範囲や妨害、測定条件などを調べます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "標準添加法では、添加量と信号の直線を信号ゼロまで外挿します。対象物質がない場合の信号をゼロにできることが前提です。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "両物質に共通する測定上の変動は、目的物質と内標準物質の信号の比を取ることで相殺でき、精度を改善できます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "目的成分の性質によく似た内標準を選ぶと、試料の導入量など、測定条件の変動を似たように受けるため補正できます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231804-q11": {
+    "sourceHash": "5e12f4526619072716f6092367dd743bf241b4b3bbc4588afacdd0c247a654b5",
+    "correctChoice": 5,
+    "summary": "炭酸カルシウムのモル質量は40.0＋12.0＋3×16.0＝100 g/molです。1対1で二酸化炭素が生成するので0.004 molです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "0.400は炭酸カルシウムの質量をグラムで示した数です。モル質量100 g/molで割ってから反応の物質量比を使います。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "0.200 molを得るには、1対1で反応する炭酸カルシウムが20 g必要です。設問では0.400 gしかありません。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "0.040 molは、炭酸カルシウムの質量をモル質量で換算した0.004 molの10倍なので、二酸化炭素の量として過大です。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "炭酸カルシウムのモル質量は100 g/molです。0.400 gから生成できる二酸化炭素は、その物質量と同じです。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "炭酸カルシウムのモル質量は40.0＋12.0＋3×16.0＝100 g/molです。1対1で二酸化炭素が生成するので0.004 molです。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231804-q12": {
+    "sourceHash": "9172a460481caae280a8266e244ae2a73c9994f10ee5305a4cd786af9036b01d",
+    "correctChoice": 2,
+    "summary": "炭酸ナトリウムは酸の標定に用いる塩基性物質です。水酸化ナトリウムの標定には、これを中和する酸性の標準物質を用います。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "一次標準物質は化学的に安定し、純度が高く、正確に質量を量って用いることができる固体が適しています。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "炭酸ナトリウムは酸の標定に用いる塩基性物質です。水酸化ナトリウムの標定には、これを中和する酸性の標準物質を用います。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "フタル酸水素カリウムは酸性の一次標準物質として用いられ、水酸化ナトリウムを定量的に中和できます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "シュウ酸ナトリウムは過マンガン酸イオンと酸化還元反応をするため、過マンガン酸カリウム溶液の標定に使えます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "塩化ナトリウムの塩化物イオンは銀イオンと1対1で塩化銀を生じます。この反応を硝酸銀の標定に使います。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231804-q13": {
+    "sourceHash": "f8d9a5139ba475deb4bfbdf52ec804f9fc8514bacb1fb51ed74102c6535d7182",
+    "correctChoice": 4,
+    "summary": "Cu²⁺はd⁹配置で、水分子が配位したときのd軌道間の電子遷移によって可視光を吸収し、水溶液が青く見えます。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "Zn²⁺はd軌道に電子が満たされたd¹⁰のイオンです。通常の水溶液は無色で、d軌道内の遷移による可視吸収はありません。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "Ca²⁺はアルカリ土類金属のイオンで可視光を吸収する電子遷移を示さず、通常の水溶液は無色です。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "Ag⁺はd¹⁰の電子配置です。普通の水溶液で銅イオンのような可視吸収を示しません。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "Cu²⁺はd⁹配置で、水分子が配位したときのd軌道間の電子遷移によって可視光を吸収し、水溶液が青く見えます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "Ba²⁺はアルカリ土類金属のイオンです。炎色反応で色を示すことと、通常の水溶液が可視光を吸収することは別です。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231804-q14": {
+    "sourceHash": "7ac0c8b152cf6613f709d4ff7371ea62f9b29e07011992ea8dad32cf96fa4181",
+    "correctChoice": 3,
+    "summary": "A＝εclから、ε＝0.240÷(2.0×10⁻⁵×1.0)＝1.2×10⁴ L·mol⁻¹·cm⁻¹です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "3.0×10³では所定の濃度2.0×10⁻⁵ mol/L、光路長1.0 cmで吸光度0.060になり、0.240より小さくなります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "6.0×10³を用いると吸光度は0.120です。与えられた0.240を濃度と光路長の積で割る必要があります。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "A＝εclから、ε＝0.240÷(2.0×10⁻⁵×1.0)＝1.2×10⁴ L·mol⁻¹·cm⁻¹です。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "2.4×10⁴とすると、濃度と光路長を掛けた吸光度は0.480になります。設問の測定値0.240の2倍です。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "3.6×10⁴は正しい値の3倍です。この係数を使うと同じ溶液と光路長から吸光度0.720になります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231804-q15": {
+    "sourceHash": "6a9b7820735a24ba046feec0bbede21da1aadd6fb7848f59caa31bb491a940d9",
+    "correctChoice": 4,
+    "summary": "ヒ素の還元気化では、ヒ素はまず原子ではなく気体の水素化物として分離されます。その後、測定のために原子化します。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "原子吸光分析では、対象元素に固有の波長を発する中空陰極ランプを用います。原子化・気化の方法が異なってもこの原理は共通です。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "グラファイト炉は電流を流して発生するジュール熱を利用し、炉内の試料を加熱して原子化します。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "重水素ランプは連続スペクトルを発します。この光を利用して、試料の背景吸収の影響を見積もって補正できます。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "ヒ素の還元気化では、ヒ素はまず原子ではなく気体の水素化物として分離されます。その後、測定のために原子化します。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "水銀の還元気化では水銀イオンを金属水銀の状態に還元し、原子状の水銀蒸気を測定に用います。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231804-q16": {
+    "sourceHash": "f975173f4c33a1fb2052ef3de783563e93617ffe37e8584289c065f1297995e9",
+    "correctChoice": 5,
+    "summary": "蛍光は励起光よりエネルギーが小さく波長が長くなります。分光蛍光光度計の光源には主にキセノンランプを用います。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "蛍光の発生前に一部のエネルギーが熱として失われるため、蛍光は励起光より低エネルギーで長波長です。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "キセノンランプは代表的な光源で、波長が長くなる点も合っていますが、長波長の蛍光は励起光よりエネルギーが小さくなります。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "エネルギーが小さくなると光の波長は長くなります。また代表的な光源にはキセノンランプを用います。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "エネルギーと波長の関係は正しいものの、紫外域を含む広い波長域をカバーする光源としてキセノンランプが代表的です。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "蛍光は励起光よりエネルギーが小さく波長が長くなります。分光蛍光光度計の光源には主にキセノンランプを用います。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231804-q17": {
+    "sourceHash": "c6c319fbb7702f073a219dcf607b35779de9420f4fa0e5ea59643bcf896aedd0",
+    "correctChoice": 3,
+    "summary": "無極性液相では直鎖アルカンは主に沸点の低い順に溶出します。炭素数5、6、8のペンタン、ヘキサン、オクタンの順です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "オクタンは三つのアルカンのうち沸点が最も高く、無極性カラムでは最初ではなく最後に溶出します。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "オクタンはペンタンやヘキサンより沸点が高いため、無極性カラムでは先に溶出しません。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "無極性液相では直鎖アルカンは主に沸点の低い順に溶出します。炭素数5、6、8のペンタン、ヘキサン、オクタンの順です。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "ペンタンが最初になる点は合っていますが、オクタンの沸点はヘキサンより高いため、ヘキサンが先になります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ヘキサンよりペンタンの沸点が低いため、ペンタンを最初に置きます。最も沸点の高いオクタンは最後です。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231804-q18": {
+    "sourceHash": "3514043db5523281705fc91d311d8d5eca5240c84b0a9a6515a24277512d2bcf",
+    "correctChoice": 3,
+    "summary": "電子捕獲検出器は電子を捕獲しやすい有機ハロゲン化合物などに高感度です。一般的な芳香族炭化水素とは用途が異なります。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "水素炎イオン化検出器は炭化水素などが水素炎中でイオンを生じることを利用し、そのイオンによる電流を測定します。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "炎光光度検出器は炎中での硫黄などの特徴的な発光を利用するため、有機硫黄化合物の検出に適しています。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "電子捕獲検出器は電子を捕獲しやすい有機ハロゲン化合物などに高感度です。一般的な芳香族炭化水素とは用途が異なります。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "光イオン化検出器は光を吸収してイオンになりやすい化合物に応答します。不飽和炭化水素の検出に用いられます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "熱イオン化検出器はリンや窒素を含む化合物に選択的に応答するため、有機リン化合物の分析に適しています。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231804-q19": {
+    "sourceHash": "135b98d72023eb7cda12b08995927ca4a9c59fc1d2a6f2e669877ce6c693e514",
+    "correctChoice": 4,
+    "summary": "回折測定では結晶構造が必要です。捕集した目的物質をいったん抽出して溶かして測定する方法ではありません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "銅を陽極に使ったX線管から得られるCu-Kα線は、結晶の回折を測定するための代表的な特性X線です。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "得られた回折パターンで物質を同定し、特定の回折線の強度を使って結晶物質を定量できます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "ゴニオメーターは試料や検出器の角度を制御し、回折X線をどの角度で検出したかを測る装置です。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "回折測定では結晶構造が必要です。捕集した目的物質をいったん抽出して溶かして測定する方法ではありません。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ブラッグの式ではX線の波長、回折角、格子面間隔が関係します。既知波長で角度を測れば面間隔を求められます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231804-q20": {
+    "sourceHash": "45fda621568bbd33b49d6a59038f0552220d328e9ec59028e5b9d2eb78e591a5",
+    "correctChoice": 4,
+    "summary": "核異性体転移で原子核が励起状態から低いエネルギー状態へ移るときの代表的な放出はγ線です。X線とする組合せは誤りです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "α粒子は陽子2個と中性子2個からなるヘリウム4の原子核で、α壊変の際に放出されます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "β⁻壊変では中性子が陽子へ変わり、その際に電子と反電子ニュートリノが放出されます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "β⁺壊変では陽子が中性子へ変わり、放出される荷電粒子は電子と符号が逆の陽電子です。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "核異性体転移で原子核が励起状態から低いエネルギー状態へ移るときの代表的な放出はγ線です。X線とする組合せは誤りです。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "自発核分裂では原子核が主に二つの核分裂片に分かれます。その際に中性子も放出されます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
   }
 }
