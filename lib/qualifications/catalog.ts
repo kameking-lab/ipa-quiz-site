@@ -1784,9 +1784,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_24.html",
     officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
     status: "live",
-    reuseSummary: "2026年度の外国語試験（多肢選択式）の公開問題15問を公式正答・全肢解説付きで収録。",
+    reuseSummary: "2026年度の適性試験Ⅰ60問と外国語試験（多肢選択式）の公開問題15問を公式正答・全肢解説付きで収録。",
     attributionTemplate: "出典：人事院「航空管制官採用試験」。解説は過去問AIの独自作成。",
-    remainingWork: ["外国語試験の過年度と適性試験の補充"],
+    remainingWork: ["外国語試験・適性試験Ⅰの過年度の補充"],
   },
   {
     slug: "kokka-ippan-dai", examCode: "kokka-ippan-dai", shortName: "国家一般職（大卒程度）", fullName: "国家公務員採用一般職試験（大卒程度試験）",
