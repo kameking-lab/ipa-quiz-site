@@ -1355,7 +1355,7 @@ riyoshi: {
         { session: "am2", urlSlug: "am2", expectedQuestions: 18, label: "建築法規", categories: ["建築法規"] },
         { session: "pm", urlSlug: "pm", expectedQuestions: 60, label: "建築設備", categories: ["建築設備"] },
     ],
-    seasons: ["annual"], yearRange: { start: 2023, end: 2026 },
+    seasons: ["annual"], yearRange: { start: 2022, end: 2026 },
 },
 chizai2: {
     code: "chizai2", nameFull: "知的財産管理技能検定2級", urlSlug: "chizai2", level: "advanced",
