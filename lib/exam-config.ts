@@ -522,7 +522,7 @@ fp2: {
     level: "specialist",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 15, label: "大気特論", categories: ["大気特論"] }],
     seasons: ["annual"],
-    yearRange: { start: 2023, end: 2025 },
+    yearRange: { start: 2022, end: 2025 },
 },
 "kogai-01": {
     code: "kogai-01",
