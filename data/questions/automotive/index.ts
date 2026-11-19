@@ -7,6 +7,7 @@ import priorAssets from "./prior-assets.json";
 import chassis2024Second from "./2024-second-3-chassis.json";
 import chassis2024First from "./2024-first-3-chassis.json";
 import chassis2023Second from "./2023-second-3-chassis.json";
+import chassis2023First from "./2023-first-3-chassis.json";
 
 export type AutomotiveExamCode =
   | "jidosha-1-small-written" | "jidosha-2-gasoline" | "jidosha-2-diesel"
@@ -44,7 +45,7 @@ const reviewedQuestions: Question[] = [...reviewed, ...priorSittings].map((q) =>
   imageAltTexts: imageBindings[q.id].map((asset) => `${q.sourceAttribution} 原問題の図表（PDF ${asset.physicalPage}ページ）`),
 }));
 
-export const AUTOMOTIVE_QUESTIONS = [...reviewedQuestions, ...chassis2024Second, ...chassis2024First, ...chassis2023Second] as Question[];
+export const AUTOMOTIVE_QUESTIONS = [...reviewedQuestions, ...chassis2024Second, ...chassis2024First, ...chassis2023Second, ...chassis2023First] as Question[];
 
 export function getAutomotiveQuestions(exam: AutomotiveExamCode): Question[] {
   return AUTOMOTIVE_QUESTIONS.filter((q) => q.exam === exam);
