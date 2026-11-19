@@ -1424,13 +1424,13 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
 },
   {
-    slug: "katei-shokumotsu", shortName: "食物調理技術検定", fullName: "家庭科技術検定・食物調理",
+    slug: "katei-shokumotsu", examCode: "katei-shokumotsu", shortName: "食物調理技術検定", fullName: "家庭科技術検定・食物調理",
     domain: "personal-services", administrator: "公益財団法人全国高等学校家庭科教育振興会",
     officialQuestionsUrl: "https://www.katei-ed.or.jp/past.html",
     officialReuseTermsUrl: "https://www.katei-ed.or.jp/past.html",
-    status: "terms-review-required",
-    reuseSummary: "2024年度 第59回の旧3級・旧2級の筆記問題と正答を公式PDFで確認。",
-    remainingWork: ["問題文・図版・正答の転載条件を確認"],
+    status: "live",
+    reuseSummary: "2024年度 第59回の旧3級・旧2級を全24大問・37演習単位で収録。公式正答と原本図表、選択肢ごとの独自解説を確認できます。",
+    remainingWork: [],
   },
   {
     slug: "katei-hifuku", examCode: "katei-hifuku", shortName: "被服製作技術検定", fullName: "家庭科技術検定・被服製作",

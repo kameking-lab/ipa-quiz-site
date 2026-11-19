@@ -1481,6 +1481,14 @@ shuwa: {
     ],
     seasons: ["annual"], yearRange: { start: 2025, end: 2025 },
 },
+"katei-shokumotsu": {
+    code: "katei-shokumotsu", nameFull: "家庭科技術検定・食物調理", urlSlug: "katei-shokumotsu", level: "basic",
+    sessions: [
+        { session: "katei-old3", urlSlug: "katei-old3", expectedQuestions: 17, label: "旧3級・筆記", categories: ["旧3級・筆記"] },
+        { session: "katei-old2", urlSlug: "katei-old2", expectedQuestions: 20, label: "旧2級・筆記", categories: ["旧2級・筆記"] },
+    ],
+    seasons: ["annual"], yearRange: { start: 2024, end: 2024 },
+},
 "jken-system": {
     code: "jken-system", nameFull: "情報検定（J検）情報システム試験", urlSlug: "jken-system", level: "basic",
     sessions: [
