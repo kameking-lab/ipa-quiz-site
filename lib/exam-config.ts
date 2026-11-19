@@ -865,6 +865,18 @@ eisei1: {
     seasons: ["published", "october"],
     yearRange: { start: 2025, end: 2026 },
 },
+jobpass: {
+    code: "jobpass",
+    nameFull: "ビジネス能力検定ジョブパス",
+    urlSlug: "jobpass",
+    level: "basic",
+    sessions: [{
+        session: "gakka", urlSlug: "gakka", expectedQuestions: 35, label: "3級",
+        categories: ["ビジネス常識", "時事・社会", "組織・業務基本", "コミュニケーション手法"],
+    }],
+    seasons: ["second"],
+    yearRange: { start: 2024, end: 2024 },
+},
 "kounin-science": {
     code: "kounin-science",
     nameFull: "高卒認定試験 科学と人間生活",
