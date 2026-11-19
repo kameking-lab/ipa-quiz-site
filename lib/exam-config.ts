@@ -1823,7 +1823,7 @@ sokuryoshiho: {
       session: "gakka", urlSlug: "gakka", expectedQuestions: 120, label: "2級",
       categories: ["読み", "部首", "熟語の構成", "四字熟語", "対義語・類義語", "同音・同訓異字", "誤字訂正", "漢字と送りがな", "書き取り"],
     }],
-    seasons: ["round3"], yearRange: { start: 2023, end: 2024 },
+    seasons: ["round3"], yearRange: { start: 2022, end: 2024 },
 },
 caremanager: {
     code: "caremanager", nameFull: "介護支援専門員実務研修受講試験", urlSlug: "caremanager", level: "basic",
