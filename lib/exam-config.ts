@@ -1489,6 +1489,11 @@ shuwa: {
     seasons: ["round1", "round2"],
     yearRange: { start: 2024, end: 2024 },
 },
+"kanken-1": {
+    code: "kanken-1", nameFull: "日本漢字能力検定1級", urlSlug: "kanken-1", level: "advanced",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "読み", categories: ["読み"] }],
+    seasons: ["february"], yearRange: { start: 2024, end: 2026 },
+},
 "kogai-15": {
     code: "kogai-15", nameFull: "公害防止管理者等国家試験", urlSlug: "kogai-15", level: "specialist",
     sessions: [

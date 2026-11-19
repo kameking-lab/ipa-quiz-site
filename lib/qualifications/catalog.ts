@@ -1855,6 +1855,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["第29回（2026-10-11）は正答公表（合格発表 2026-11-24 予定）後に追加", "法改正・報酬改定で成立しなくなった問題の失効管理"],
 },
   {
+    slug: "kanken-1", examCode: "kanken-1", shortName: "漢検1級", fullName: "日本漢字能力検定1級",
+    domain: "legal", administrator: "日本漢字能力検定協会",
+    officialQuestionsUrl: "https://www.kanken.or.jp/kanken/grades/sample/",
+    officialReuseTermsUrl: "https://www.kanken.or.jp/kanken/grades/sample/",
+    status: "live",
+    reuseSummary: "公式公開の過去問題から、第3回の読み問題を抜粋収録。筆記解答は公式の標準解答と照合できます。",
+    attributionTemplate: "出典：日本漢字能力検定協会 日本漢字能力検定1級",
+    remainingWork: [],
+  },
+  {
     slug: "kogai-15", examCode: "kogai-15", shortName: "公害防止管理者", fullName: "公害防止管理者等国家試験",
     domain: "safety", administrator: "産業環境管理協会",
     officialQuestionsUrl: "https://www.jemai.or.jp/polconman/examination/past.html",
