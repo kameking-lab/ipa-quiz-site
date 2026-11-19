@@ -1279,7 +1279,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jemai.or.jp/polconman/examination/past.html",
     officialReuseTermsUrl: "https://www.jemai.or.jp/polconman/examination/past.html",
     status: "live",
-    reuseSummary: "汚水処理特論の2025年度25問を、公式問題と正答に基づく全肢解説付きで収録しています。",
+    reuseSummary: "汚水処理特論の2024〜2025年度計50問を、公式問題と正答に基づく全肢解説付きで収録しています。",
     attributionTemplate: "出典：一般社団法人産業環境管理協会 年度別公害防止管理者等国家試験（汚水処理特論）。解説は過去問AI独自作成。",
     remainingWork: [],
   },
