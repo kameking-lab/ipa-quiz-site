@@ -963,6 +963,9 @@ sharoushi: {
         }, {
             session: "kounen", urlSlug: "kounen", expectedQuestions: 10, label: "択一式・厚生年金保険法",
             categories: ["厚生年金保険法"],
+        }, {
+            session: "kokunen", urlSlug: "kokunen", expectedQuestions: 10, label: "択一式・国民年金法",
+            categories: ["国民年金法"],
         }],
     seasons: ["annual"],
     yearRange: { start: 2023, end: 2026 },
