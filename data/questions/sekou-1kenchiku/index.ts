@@ -1,4 +1,5 @@
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+import r4 from "./2022-june.json";
 import r5 from "./2023-july.json";
 import r6 from "./2024-july.json";
 import r7 from "./2025-july.json";
@@ -12,9 +13,10 @@ type Source = {
     choiceExplanations: string[]; imageUrls?: string[];
     sourcePdfUrl: string; sourceAnswerUrl: string }[];
 };
-function convert(source: Source): Question[] {
+function convert(source: Source, season: "june" | "july" = "july"): Question[] {
   if (source.questions.length !== 72) throw new Error("建築施工管理: 72原問が必要です");
   return source.questions.map((q, index) => {
+    const session = q.number <= 44 ? "am" : "pm";
     const firstAppliedQuestion = source.year <= 2023 ? 55 : 51;
     const count = q.number >= firstAppliedQuestion && q.number <= 60 ? 5 : 4;
     const requiredSelections = count === 5 && source.year <= 2023 ? 2 : 1;
@@ -27,8 +29,8 @@ function convert(source: Source): Question[] {
     const usedKeys = keys.slice(0, count);
     const answers = q.officialAnswerNumbers.map(n => keys[n - 1]!);
     return {
-      id: `sekou-1kenchiku-${source.year}-july-${q.number <= 44 ? "am" : "pm"}-q${q.number}`,
-      exam: "sekou-1kenchiku", year: source.year, season: "july", session: q.number <= 44 ? "am" : "pm",
+      id: `sekou-1kenchiku-${source.year}-${season}-${session}-q${q.number}`,
+      exam: "sekou-1kenchiku", year: source.year, season, session,
       qNumber: q.number, type: "multiple-choice", category: q.category, topicTags: [q.category], difficulty: 3,
       question: q.question, choices: Object.fromEntries(usedKeys.map((k, i) => [k, q.choices[i]!])),
       answer: answers.length === 1 ? answers[0]! : answers,
@@ -44,4 +46,6 @@ function convert(source: Source): Question[] {
   });
 }
 /** 公開判定は資格台帳に従う。ここは公開前検証でも直接読み込む。 */
-export const SEKOU_1KENCHIKU_QUESTIONS: Question[] = [...convert(r5), ...convert(r6), ...convert(r7), ...convert(r8)];
+export const SEKOU_1KENCHIKU_QUESTIONS: Question[] = [
+  ...convert(r4, "june"), ...convert(r5), ...convert(r6), ...convert(r7), ...convert(r8),
+];
