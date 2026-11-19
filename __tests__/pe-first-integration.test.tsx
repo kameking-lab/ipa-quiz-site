@@ -6,6 +6,7 @@ import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import manifest from "@/reports/LQ3-20261104/adoption-manifest.json";
 import continuationManifest from "@/reports/LQ3B-20261104/adoption-manifest.json";
 import lq3dManifest from "@/reports/LQ3D-20261104/adoption-manifest.json";
+import forestSources from "@/data/exam-library/pe-first/sources-c06.json";
 import { PE_FIRST_CATALOG } from "@/lib/exam-library/pe-first-catalog";
 import { loadPeFirstPaper } from "@/lib/exam-library/pe-first";
 import { findExamEntry } from "@/lib/exam-library-catalog";
@@ -29,7 +30,7 @@ describe("LQ3 existing manuscript adoption", () => {
     expect(within(group).getByRole("link", {name:/技術士第一次・化学/})).toHaveAttribute("href", expect.stringContaining("group=pe-first"));
   });
   it("preserves all 17 accepted sets and adds only complete continuation papers", () => {
-    const continuationCount = continuationManifest.length + lq3dManifest.length;
+    const continuationCount = continuationManifest.length + lq3dManifest.length + forestSources.length;
     expect(PE_FIRST_CATALOG).toHaveLength(17 + continuationCount);
     expect(PE_FIRST_CATALOG.reduce((sum, entry) => sum + entry.questionCount!, 0)).toBe(595 + 35 * continuationCount);
     expect(PE_FIRST_CATALOG.reduce((sum, entry) => sum + entry.scoredCount!, 0)).toBe(594 + 35 * continuationCount);
@@ -41,6 +42,22 @@ describe("LQ3 existing manuscript adoption", () => {
     }
     expect(loadPeFirstPaper("../../package")).toBeNull();
     expect(loadPeFirstPaper("pe-first-nonexistent-2025")).toBeNull();
+  });
+
+  it.each(forestSources)("checks the $year forest paper against its own answer sheet and original page images", source => {
+    const paper = loadExamPaper(source.paperId)!;
+    const answers: Record<string, number> = source.answers;
+    expect(paper.map(q => q.number)).toEqual(Array.from({ length: 35 }, (_, i) => i + 1));
+    for (const q of paper) {
+      expect(q.originalPdf).toBe(source.sourcePdfUrl);
+      expect(q.answerPdf).toBe(`${source.sourceAnswerUrl}#page=${source.sourceAnswerPage}`);
+      expect(q.correctChoice).toBe(answers[q.number]);
+      expect(q.choiceExplanation?.choices.map(choice => choice.number)).toEqual([1, 2, 3, 4, 5]);
+      expect(gradeExamAnswer(q, q.correctChoice)).toBe("correct");
+    }
+    for (const [url, sha] of Object.entries(source.assets)) {
+      expect(createHash("sha256").update(readFileSync(join(process.cwd(), "public", url))).digest("hex")).toBe(sha);
+    }
   });
 
   it("keeps each accepted image byte-identical and all 2,975 choice reasons accessible", () => {
