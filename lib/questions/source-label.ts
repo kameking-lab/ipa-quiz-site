@@ -95,6 +95,8 @@ if (q.exam === "biyoshi" && q.year === 2026) {
     if (q.season === "second")
         return "第54回（2026年9月6日実施）";
 }
+if (q.exam === "kikenbutsu-otsu4" && q.year === 2025 && q.season === "published")
+    return "2025年度 公式訂正公表問題";
 if ((q.exam?.startsWith("kikenbutsu-") || q.exam?.startsWith("shobo-setsubishi-")) && q.season === "published")
     return "2026年6月公表版（個別の出題年・回は非公表）";
 if (q.exam?.startsWith("jken-katsuyo")) {
