@@ -5,6 +5,7 @@ import source2024Late from "./2024-late.json";
 import source2024Early from "./2024-early.json";
 import questions2024Secondary from "./2024-late-jitsumu.json";
 import questions2023Secondary from "./2023-late-jitsumu.json";
+import questions2022Secondary from "./2022-late-jitsumu.json";
 
 const keys: ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ"];
 type Source = typeof source2026 | typeof source2024Late | typeof source2024Early;
@@ -51,4 +52,5 @@ export const DENKI2_QUESTIONS: Question[] = [
   ...questions2024Secondary as Question[],
   ...toQuestions(source2024Early, "2026-11-19"),
   ...questions2023Secondary as Question[],
+  ...questions2022Secondary as Question[],
 ];
