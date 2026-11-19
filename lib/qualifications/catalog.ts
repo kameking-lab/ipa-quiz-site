@@ -1855,6 +1855,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["第29回（2026-10-11）は正答公表（合格発表 2026-11-24 予定）後に追加", "法改正・報酬改定で成立しなくなった問題の失効管理"],
 },
   {
+    slug: "kogai-15", examCode: "kogai-15", shortName: "公害防止管理者", fullName: "公害防止管理者等国家試験",
+    domain: "safety", administrator: "産業環境管理協会",
+    officialQuestionsUrl: "https://www.jemai.or.jp/polconman/examination/past.html",
+    officialReuseTermsUrl: "https://www.jemai.or.jp/polconman/examination/past.html",
+    status: "live",
+    reuseSummary: "2023年度の公式試験結果変更資料に掲載された3問を収録。通常演習では複数正答の2問を解けます。",
+    attributionTemplate: "出典：産業環境管理協会 公害防止管理者等国家試験",
+    remainingWork: [],
+  },
+  {
     slug: "zensho-boki", examCode: "zensho-boki", shortName: "全商簿記実務検定", fullName: "全商簿記実務検定",
     domain: "accounting", administrator: "全国商業高等学校協会",
     officialQuestionsUrl: "https://zensho.or.jp/examination/pastexams/bookkeeping/",

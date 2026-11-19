@@ -1489,6 +1489,15 @@ shuwa: {
     seasons: ["round1", "round2"],
     yearRange: { start: 2024, end: 2024 },
 },
+"kogai-15": {
+    code: "kogai-15", nameFull: "公害防止管理者等国家試験", urlSlug: "kogai-15", level: "specialist",
+    sessions: [
+        { session: "kogai-soron", urlSlug: "kogai-soron", expectedQuestions: 15, label: "公害総論", categories: ["公害総論"] },
+        { session: "baijin-funjin", urlSlug: "baijin-funjin", expectedQuestions: 15, label: "ばいじん・粉じん特論", categories: ["ばいじん・粉じん特論"] },
+        { session: "osui-shori", urlSlug: "osui-shori", expectedQuestions: 25, label: "汚水処理特論", categories: ["汚水処理特論"] },
+    ],
+    seasons: ["annual"], yearRange: { start: 2023, end: 2026 },
+},
 "zensho-boki": {
     code: "zensho-boki",
     nameFull: "全商簿記実務検定",

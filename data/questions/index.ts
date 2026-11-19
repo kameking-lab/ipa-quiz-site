@@ -299,6 +299,7 @@ import { DENKI1_QUESTIONS } from "./denki1";
 import { SHUWA_QUESTIONS } from "./shuwa";
 import { BUILDING_CLEANING3_QUESTIONS } from "./building-cleaning3";
 import { KOUNIN_CIVICS_QUESTIONS } from "./kounin-civics";
+import { KOGAI_QUESTIONS } from "./kogai-15";
 import { ZENSHO_BOKI_QUESTIONS } from "./zensho-boki";
 import { JKEN_KATSUYO1_QUESTIONS } from "./jken-katsuyo1";
 import { JKEN_KATSUYO2_QUESTIONS } from "./jken-katsuyo2";
@@ -600,6 +601,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("jken-katsuyo2") ? { "jken-katsuyo2": JKEN_KATSUYO2_QUESTIONS } : {}),
 ...(isExamPublished("building-cleaning3") ? { "building-cleaning3": BUILDING_CLEANING3_QUESTIONS } : {}),
 ...(isExamPublished("kounin-civics") ? { "kounin-civics": KOUNIN_CIVICS_QUESTIONS } : {}),
+...(isExamPublished("kogai-15") ? { "kogai-15": KOGAI_QUESTIONS } : {}),
 ...(isExamPublished("zensho-boki") ? { "zensho-boki": ZENSHO_BOKI_QUESTIONS } : {}),
 ...(isExamPublished("jken-katsuyo1") ? { "jken-katsuyo1": JKEN_KATSUYO1_QUESTIONS } : {}),
 ...(isExamPublished("jken-system") ? { "jken-system": JKEN_SYSTEM_QUESTIONS } : {}),
