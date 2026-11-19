@@ -337,7 +337,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     sessions: [
       { session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "筆記", categories: ["法令", "下水処理", "工場排水", "運転・維持管理", "安全管理"] },
     ],
-    seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
   },
 
   "khk-kagaku": {
