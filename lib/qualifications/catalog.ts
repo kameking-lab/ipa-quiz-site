@@ -1845,6 +1845,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["No.21の地形図（電子地形図25000）の測量法上の複製承認要否の確認"],
 },
   {
+    slug: "zensho-calc", examCode: "zensho-calc", shortName: "全商ビジネス計算実務検定",
+    fullName: "全商ビジネス計算実務検定", domain: "accounting", administrator: "全国商業高等学校協会",
+    officialQuestionsUrl: "https://zensho.or.jp/examination/pastexams/calculating/",
+    officialReuseTermsUrl: "https://zensho.or.jp/examination/pastexams/",
+    status: "live",
+    reuseSummary: "1〜3級の普通計算・ビジネス計算を公式問題と正答に基づいて収録。",
+    remainingWork: [],
+  },
+  {
     slug: "caremanager", examCode: "caremanager", shortName: "ケアマネ", fullName: "介護支援専門員実務研修受講試験",
     domain: "welfare", administrator: "都道府県（全国共通問題）",
     officialQuestionsUrl: "https://www.fukushi.metro.tokyo.lg.jp/kourei/hoken/kaigo_lib/care/shikenjyouhou",

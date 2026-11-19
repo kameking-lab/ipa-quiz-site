@@ -4,6 +4,10 @@ import { isExamPublished } from "@/lib/qualifications/catalog";
 import { isCanonicalExamCode } from "@/lib/questions/exam-aliases";
 
 const officialAnswerUrls = new Map(Object.values(officialSources).map(source => [source.question, source.answer]));
+const BUSINESS_CALC_CATEGORIES = [
+  "乗算", "除算", "見取算", "減価償却", "年金・積立・返済", "手形割引", "利息・元金",
+  "有価証券・手数料", "売価・原価・利益", "通貨換算", "割合・増減", "単位換算", "金額・数量",
+];
 
 export interface SessionConfig {
   session: Session;
@@ -1790,6 +1794,19 @@ sokuryoshiho: {
     code: "sokuryoshiho", nameFull: "測量士補試験", urlSlug: "sokuryoshiho", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 28, label: "試験問題", categories: ["測量法規", "多角測量", "GNSS測量", "水準測量", "地形測量", "写真測量", "地図編集", "応用測量"] }],
     seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+},
+"zensho-calc": {
+    code: "zensho-calc",
+    nameFull: "全商ビジネス計算実務検定",
+    urlSlug: "zensho-calc",
+    level: "basic",
+    sessions: [
+      { session: "gakka-I", urlSlug: "gakka-I", expectedQuestions: 80, label: "1級", categories: BUSINESS_CALC_CATEGORIES },
+      { session: "gakka-II", urlSlug: "gakka-II", expectedQuestions: 80, label: "2級", categories: BUSINESS_CALC_CATEGORIES },
+      { session: "gakka-III", urlSlug: "gakka-III", expectedQuestions: 80, label: "3級", categories: BUSINESS_CALC_CATEGORIES },
+    ],
+    seasons: ["first", "second"],
+    yearRange: { start: 2024, end: 2024 },
 },
 caremanager: {
     code: "caremanager", nameFull: "介護支援専門員実務研修受講試験", urlSlug: "caremanager", level: "basic",

@@ -315,6 +315,7 @@ export const EXAM_LABELS: Record<string, string> = {
     "yobi-tanto": "予備試験（短答）",
     "sokuryoshiho": "測量士補",
     "caremanager": "ケアマネ試験",
+    "zensho-calc": "全商ビジネス計算実務検定",
 
     "tekko2": "鉄工技能士 2級",
 
