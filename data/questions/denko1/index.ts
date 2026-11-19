@@ -19,6 +19,7 @@ import upper2024 from "./reviewed/20240401.json";
 import morning2023 from "./reviewed/20231001-am.json";
 import afternoon2023 from "./reviewed/20231001-pm.json";
 import morning2022 from "./reviewed/20221002-am.json";
+import afternoon2022 from "./reviewed/20221002-pm.json";
 
 /**
  * 2025年下期の原本・全肢査読・図版は
@@ -113,6 +114,17 @@ const morning2022Paper: Paper = {
   lastUpdated: "2026-11-19",
 };
 
+const afternoon2022Paper: Paper = {
+  date: "20221002",
+  year: 2022,
+  season: "october",
+  session: "pm",
+  form: "02",
+  title: "令和4年度第一種電気工事士筆記試験（午後）",
+  batches: [afternoon2022 as Reviewed[]],
+  lastUpdated: "2026-11-19",
+};
+
 function mapped<T>(values: Partial<Record<OfficialChoice, T>>): Partial<Record<ChoiceKey, T>> {
   return Object.fromEntries(
     Object.entries(values).map(([key, value]) => [choiceMap[key as OfficialChoice], value]),
@@ -134,7 +146,7 @@ function attribution(item: Reviewed, title: string): string {
   return `出典：${title}問${item.number}（電気技術者試験センター）。改行・空白と表記を整え、元のイ・ロ・ハ・ニをア・イ・ウ・エに置換。図のみの選択肢は識別用説明を追加。${figure}`;
 }
 
-export const DENKO1_QUESTIONS: Question[] = [paper, secondPaper, lower2024Paper, upper2024Paper, morning2023Paper, afternoon2023Paper, morning2022Paper].flatMap((edition) => edition.batches.flatMap((batch) =>
+export const DENKO1_QUESTIONS: Question[] = [paper, secondPaper, lower2024Paper, upper2024Paper, morning2023Paper, afternoon2023Paper, morning2022Paper, afternoon2022Paper].flatMap((edition) => edition.batches.flatMap((batch) =>
   batch.map((item): Question => ({
     id: `denko1-${edition.year}-${edition.season}-${edition.session ?? "gakka"}-q${item.number}`,
     exam: "denko1",
