@@ -1,6 +1,7 @@
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import basic2025 from "./2025-basic.json";
 import marketing2025 from "./2025-marketing.json";
+import shouhin2025 from "./2025-shouhin.json";
 
 const organization = "公益財団法人全国商業高等学校協会";
 
@@ -59,4 +60,5 @@ function convert(paper: Paper, subject: string, passageKey: (item: Paper["questi
 export const ZENSHO_ECO_78_QUESTIONS: Question[] = [
   ...convert(marketing2025, "マーケティング", (item) => String(item.page)),
   ...convert(basic2025, "ビジネス基礎", (item) => item.passageKey),
+  ...convert(shouhin2025, "商品開発と流通", (item) => String(item.page)),
 ];
