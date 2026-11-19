@@ -1,3 +1,4 @@
+import { KHK_KIKAI_KOU_QUESTIONS } from "./khk-kikai-kou";
 import { ZENSHO_INFO_QUESTIONS } from "./zensho-info";
 import { SASSHI1_QUESTIONS } from "./sasshi1";
 import { EXAM_CODE_ALIASES } from "@/lib/questions/exam-aliases";
@@ -480,7 +481,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("gijutsushi1-kikai") ? { "gijutsushi1-kikai": BATCH1_QUESTIONS["gijutsushi1-kikai"]!.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("hoshasen-1") ? { "hoshasen-1": BATCH1_QUESTIONS["hoshasen-1"]!.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("hoshasen-2") ? { "hoshasen-2": BATCH1_QUESTIONS["hoshasen-2"]!.filter(isPracticeReadyQuestion) } : {}),
-...(isExamPublished("khk-kikai-kou") ? { "khk-kikai-kou": BATCH1_QUESTIONS["khk-kikai-kou"]!.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("khk-kikai-kou") ? { "khk-kikai-kou": KHK_KIKAI_KOU_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("khk-kikai-otsu") ? { "khk-kikai-otsu": BATCH1_QUESTIONS["khk-kikai-otsu"]!.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("energy-kanri") ? { "energy-kanri": BATCH1_QUESTIONS["energy-kanri"]!.filter(isPracticeReadyQuestion) } : {}),
 
