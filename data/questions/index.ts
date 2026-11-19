@@ -341,8 +341,10 @@ import { TETSUDO_SHARYO2_QUESTIONS } from "./tetsudo-sharyo2";
 
 import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
 import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
+import { KYOTSU_JOHO1_QUESTIONS } from "./kyotsu-joho1";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+...(isExamPublished("kyotsu-joho1") ? { "kyotsu-joho1": KYOTSU_JOHO1_QUESTIONS } : {}),
 ...(isExamPublished("fujin-kodomofuku2") ? { "fujin-kodomofuku2": FUJIN_KODOMOFUKU2_QUESTIONS } : {}),
 ...(isExamPublished("fujin-kodomofuku1") ? { "fujin-kodomofuku1": FUJIN_KODOMOFUKU1_QUESTIONS } : {}),
 ...(isExamPublished("toso1") ? { "toso1": TOSO1_QUESTIONS } : {}),

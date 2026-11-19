@@ -13,6 +13,7 @@ export function hasUnrenderableContent(q: Question): boolean {
   const visibleText = [q.question, ...(q.originalContent?.sharedPassages ?? []).map(passage => passage.text)].join("\n");
   const hasTable = /^\s*\|?\s*:?-{2,}:?\s*\|/m.test(visibleText);
   if (hasTable) return false;
+  if (q.exam === "kyotsu-joho1" && !q.hasImage && visibleText.includes("```text")) return false;
   // 電験三種の2024年度上期法規問8は、公式表の行・数値・単位を
   // 「【表】」以下に全文文字起こししている。画像フラグだけで除外しない。
   if (q.exam === "denken3" && q.id === "denken3-2024-upper-law-q08" && q.question.includes("【表】") && q.question.includes("0.1 MΩ") && q.question.includes("0.2 MΩ")) return false;

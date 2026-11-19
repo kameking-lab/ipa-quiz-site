@@ -43,6 +43,10 @@ const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string,
 };
 
 export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl"> & Partial<Pick<Question, "exam" | "fiscalYear">>): string {
+  if (q.exam === "kyotsu-joho1") {
+    const edition = q.season === "published" ? "試作問題" : q.season === "second" ? "追・再試験" : "本試験";
+    return `令和${q.year - 2018}年度 ${edition}`;
+  }
   if (q.exam === "kenchiku-daiku3" && q.year === 2025 && q.season === "early") {
     return "2025年度前期（2025年7月13日実施）";
   }
