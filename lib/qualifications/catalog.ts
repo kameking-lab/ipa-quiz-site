@@ -372,7 +372,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     shortName: "航空無線通信士", fullName: "航空無線通信士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
     officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
-    reuseSummary: "2026年2月・8月の公表済み日本語筆記2回、各回の無線工学14問・法規20問、計68原問を収録。公式正答・全肢解説・本文や数式と語群を保持した原問題画像で、無料で回数制限なく演習できます。B問題は1原問の5枠を個別に採点します。英語の筆記・英会話・通信術は収録していません。法令は各実施回当時の内容です。",
+    reuseSummary: "2025年8月・2026年2月・8月の無線工学と法規、2025年8月の英語筆記と英会話を収録。公式正答と全肢解説付きで無料で回数制限なく演習できます。英会話は公式公表の放送用質問文を掲載し、法令は各実施回当時の内容を扱います。",
     attributionTemplate: "出典：公益財団法人日本無線協会 航空無線通信士試験 ○年○月 法規・無線工学 A/B問○（問題・正答）。原問題画像の切出しと解説は過去問AIが作成・加工。",
     remainingWork: [],
 },

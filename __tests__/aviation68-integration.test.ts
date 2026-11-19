@@ -7,7 +7,7 @@ import { integrationOracle, runtimeFingerprint, normalizedTextSha256, repository
 import { describe,expect,it } from 'vitest';
 import { existsSync, readFileSync } from 'node:fs';
 import path from 'node:path';
-import { AVIATION_COMM_QUESTIONS as questions } from '@/data/questions/aviation-comm';
+import { AVIATION_COMM_QUESTIONS as allQuestions } from '@/data/questions/aviation-comm';
 import { ALL_QUESTIONS,QUESTIONS_BY_EXAM } from '@/data/questions';
 import { RIKU_TECH1_QUESTIONS } from '@/data/questions/riku-tech1';
 import { MARITIME4_QUESTIONS } from '@/data/questions/maritime4';
@@ -28,30 +28,31 @@ import { buildQuestionJsonLd } from '@/lib/seo/question-jsonld';
 import { getHomeDirectory } from '@/lib/home/home-directory';
 import { tsuginoScheduleUrl,tsuginoLearningUrl } from '@/lib/tsugino-qualification';
 const exam='aviation-comm';
+const questions=allQuestions.filter(q=>q.year===2026);
 
 describe('aviation communication68 local registration candidate',()=>{
- it('registers exactly68 ready originals through eager/lazy/strict/home without changing the IPA-only list',async()=>{
+ it('registers every practice-ready question through eager/lazy/strict/home without changing the IPA-only list',async()=>{
   expect(questions).toHaveLength(68);expect(new Set(questions.map(q=>q.id)).size).toBe(68);
   expect(new Set(getRegisteredExamCodes())).toEqual(new Set(ALL_QUIZ_EXAM_CODES));expect(getRegisteredExamCodes()).toContain(exam);expect(ALL_EXAM_CODES).not.toContain(exam);
-  expect(await getQuestionsForExam(exam)).toEqual(questions);expect(QUESTIONS_BY_EXAM[exam]).toEqual(questions);expect(ALL_QUESTIONS.filter(q=>q.exam===exam)).toEqual(questions);expect(getQuestionsByExamStrict(exam)).toEqual(questions);expect(questions.every(isPracticeReadyQuestion)).toBe(true);
-  const home=getHomeDirectory().flatMap(d=>[...d.featured,...d.compact]).find(q=>q.key===exam)!;expect(home.questionCount).toBe(68);expect(home.periodLabel).toBe('2期分');expect(home.href).toBe('/aviation-comm');
+  expect(allQuestions).toHaveLength(133);expect(await getQuestionsForExam(exam)).toEqual(allQuestions);expect(QUESTIONS_BY_EXAM[exam]).toEqual(allQuestions);expect(ALL_QUESTIONS.filter(q=>q.exam===exam)).toEqual(allQuestions);expect(getQuestionsByExamStrict(exam)).toEqual(allQuestions);expect(allQuestions.every(isPracticeReadyQuestion)).toBe(true);
+  const home=getHomeDirectory().flatMap(d=>[...d.featured,...d.compact]).find(q=>q.key===exam)!;expect(home.questionCount).toBe(133);expect(home.periodLabel).toBe('3期分');expect(home.href).toBe('/aviation-comm');
  });
- it('preserves four actual papers, original A/B numbering and the Japanese written-only scope',()=>{
-  expect(EXAM_CONFIGS[exam].sessions.map(s=>s.expectedQuestions)).toEqual([14,20]);expect(defaultPracticeSession(exam)).toBe('houki');expect(groupByYearSeason(questions).map(g=>g.count)).toEqual([34,34]);
+ it('preserves the 2026 A/B numbering and registers the 2025 English sessions',()=>{
+  expect(EXAM_CONFIGS[exam].sessions.map(s=>s.expectedQuestions)).toEqual([14,20,5,7]);expect(defaultPracticeSession(exam)).toBe('houki');expect(groupByYearSeason(questions).map(g=>g.count)).toEqual([34,34]);
   for(const season of ['february','august'])for(const session of ['kogaku','houki']){
    const qs=questions.filter(q=>q.season===season&&q.session===session);expect(qs.length).toBe(session==='kogaku'?14:20);
    expect(qs.filter(q=>q.part==='a').map(q=>q.qNumber)).toEqual(Array.from({length:session==='kogaku'?10:14},(_,i)=>i+1));
    expect(qs.filter(q=>q.part==='b').map(q=>q.qNumber)).toEqual(Array.from({length:session==='kogaku'?4:6},(_,i)=>i+1));
   }
-  const catalog=getQualificationByExamCode(exam)!;expect(catalog.status).toBe('live');expect(catalog.reuseSummary).toContain('英語の筆記・英会話・通信術は収録していません');expect(catalog.reuseSummary).toContain('無料で回数制限なく');expect(questions.every(q=>q.year===2026&&['february','august'].includes(q.season))).toBe(true);
+  const catalog=getQualificationByExamCode(exam)!;expect(catalog.status).toBe('live');expect(catalog.reuseSummary).toContain('英語');expect(catalog.reuseSummary).toContain('無料で回数制限なく');expect(questions.every(q=>q.year===2026&&['february','august'].includes(q.season))).toBe(true);
  });
- it('keeps all68 canonical routes and all68 search hits including A/B parts distinct',async()=>{
-  expect(new Set(questions.map(questionPagePath)).size).toBe(68);
+ it('keeps canonical routes and search hits for both years distinct',async()=>{
+  expect(new Set(allQuestions.map(questionPagePath)).size).toBe(133);
   const hits=[];
-  for(const offset of [0,60]){const res=await searchGET(new Request(`http://localhost/api/search/questions?exam=${exam}&limit=60&offset=${offset}`));expect(res.status).toBe(200);const data=await res.json();expect(data.total).toBe(68);hits.push(...data.hits);}
-  expect(hits).toHaveLength(68);
-  for(const hit of hits){const [,,ex,ys,section,qnum]=questionPagePath(hit).split('/');const p={exam:ex!,yearSeason:ys!,section:section!,qnum:qnum!};expect(parseQuestionRoute(p)).not.toBeNull();expect(findQuestionByRoute(questions,p)?.id).toBe(hit.id);expect(['a','b']).toContain(hit.part);}
-  for(const season of ['february','august'])for(const session of ['kogaku','houki']){const res=await searchGET(new Request(`http://localhost/api/search/questions?exam=${exam}&season=${season}&session=${session}&limit=60`));expect(res.status).toBe(200);expect((await res.json()).total).toBe(session==='kogaku'?14:20);}
+  for(const offset of [0,60,120]){const res=await searchGET(new Request(`http://localhost/api/search/questions?exam=${exam}&limit=60&offset=${offset}`));expect(res.status).toBe(200);const data=await res.json();expect(data.total).toBe(133);hits.push(...data.hits);}
+  expect(hits).toHaveLength(133);
+  for(const hit of hits){const [,,ex,ys,section,qnum]=questionPagePath(hit).split('/');const p={exam:ex!,yearSeason:ys!,section:section!,qnum:qnum!};expect(parseQuestionRoute(p)).not.toBeNull();expect(findQuestionByRoute(allQuestions,p)?.id).toBe(hit.id);if(hit.year===2026)expect(['a','b']).toContain(hit.part);}
+  for(const season of ['february','august'])for(const session of ['kogaku','houki']){const res=await searchGET(new Request(`http://localhost/api/search/questions?exam=${exam}&year=2026&season=${season}&session=${session}&limit=60`));expect(res.status).toBe(200);expect((await res.json()).total).toBe(session==='kogaku'?14:20);}
  });
  it('normalizes native20 originals and100 cells, retains candidate reuse and partial/empty grades',()=>{
   const native=questions.filter(q=>q.nativeB);expect(native).toHaveLength(20);expect(questions.filter(q=>q.type==='multiple-choice')).toHaveLength(48);expect(native.filter(q=>q.nativeB!.mode==='binary')).toHaveLength(8);expect(native.filter(q=>q.nativeB!.mode==='shared-bank')).toHaveLength(12);

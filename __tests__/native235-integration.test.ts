@@ -5,7 +5,7 @@ import { existsSync } from 'node:fs';
 import path from 'node:path';
 import { AMATEUR1_QUESTIONS as am } from '@/data/questions/amateur1';
 import { MARITIME_SPECIAL1_QUESTIONS as sea } from '@/data/questions/maritime-special1';
-import { AVIATION_COMM_QUESTIONS as avi } from '@/data/questions/aviation-comm';
+import { AVIATION_COMM_QUESTIONS as aviation } from '@/data/questions/aviation-comm';
 import { getAllQuestions,getQuestionById } from '@/lib/questions/load';
 import { getIndexableQuestions,getSitemapQuestions } from '@/lib/seo/sitemap-pagination';
 import { getPoolIds,getExplicitPoolIds } from '@/lib/questions/pool-server';
@@ -22,6 +22,7 @@ import { getQualificationByExamCode } from '@/lib/qualifications/catalog';
 import { GET as nextGET } from '@/app/api/questions/next/route';
 import { GET as searchGET } from '@/app/api/search/questions/route';
 import { POST as duePOST } from '@/app/api/review/due/route';
+const avi=aviation.filter(q=>q.year===2026);
 const hold='radio21-amateur1-2026-05-kogaku-q19';
 const cases=[{exam:'amateur1',qs:am,stored:120,ready:119,periodCounts:[59,60]},{exam:'maritime-special1',qs:sea,stored:48,ready:48,periodCounts:[24,24]}] as const;
 describe('235-ready separated candidate integration',()=>{

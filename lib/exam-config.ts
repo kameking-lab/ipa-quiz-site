@@ -1300,8 +1300,10 @@ kangoshi: {
     sessions: [
         { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 14, label: "無線工学", categories: ["無線工学"] },
         { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
+        { session: "eigo-hikki", urlSlug: "eigo-hikki", expectedQuestions: 5, label: "英語・筆記", categories: ["英語・筆記"] },
+        { session: "eigo-kaiwa", urlSlug: "eigo-kaiwa", expectedQuestions: 7, label: "英会話", categories: ["英会話"] },
     ],
-    seasons: ["february", "august"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["february", "august"], yearRange: { start: 2025, end: 2026 },
 },
 "maritime4": {
     code: "maritime4", nameFull: "第四級海上無線通信士試験", urlSlug: "maritime4", level: "specialist",
