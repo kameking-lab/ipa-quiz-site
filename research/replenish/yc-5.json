@@ -1,0 +1,44 @@
+{
+  "lane": "yc-5",
+  "plan": "plan5.json",
+  "assignment": "zero-based index % 14 == 4, descending",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "checkedAt": "2026-11-18",
+  "rows": [
+    {
+      "jobId": "PLAN5-397",
+      "index": 396,
+      "exam": "denki2",
+      "year": 2026,
+      "season": "late",
+      "session": "gakka",
+      "status": "source-text-corrected",
+      "newQuestionCount": 0,
+      "questionNumbers": [1],
+      "questionUrl": "https://www.fcip-shiken.jp/pdf/r08_2dg_mondai.pdf#page=2",
+      "dataPaths": ["data/questions/denki2/2026-late.json"],
+      "notes": "rv-3指摘。問1の容量の添字を公式原本に合わせ、大文字A・Bに修正。正答肢1は公式表と一致。"
+    },
+    {
+      "jobId": "PLAN5-271",
+      "index": 270,
+      "exam": "takken",
+      "year": 2021,
+      "season": "december",
+      "session": "gakka",
+      "status": "completed-local",
+      "countUnit": "原問",
+      "officialQuestionCount": 50,
+      "mainQuestionCountBefore": 0,
+      "importedQuestionCount": 0,
+      "newQuestionCount": 50,
+      "questionNumbers": "1–50",
+      "dataPaths": ["data/questions/takken/2021-december.ts"],
+      "questionUrl": "https://www.retio.or.jp/wp-content/uploads/2024/12/R3-question_002.pdf",
+      "questionSha256": "88beed8b5280e76b35b57c2894ed3be35453ccf3dfc76dbc2d8f6ff195b74e45",
+      "answerUrl": "https://www.retio.or.jp/wp-content/uploads/2024/10/R3-answer_002.pdf",
+      "answerSha256": "41d47a4612a23548ff888705a01674e67e235aaae31f5e8e65ca954b4d211c36",
+      "notes": "法令基準日2021年4月1日。問44は原文の誤植を保存し、公式訂正に従って2と3をそれぞれ正答として扱う。"
+    }
+  ]
+}

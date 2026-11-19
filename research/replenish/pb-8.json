@@ -1,0 +1,213 @@
+{
+  "schemaVersion": 1,
+  "lane": "pb-8",
+  "checkedAt": "2026-11-18",
+  "plan": "plan4.json",
+  "assignment": "zero-based index % 14 == 7",
+  "branch": "cx/kako-pa8-20261118",
+  "rows": [
+    {
+      "key": "cfp-realestate|2026|round1",
+      "candidateId": "cfp-2",
+      "planIndex": 35,
+      "qualificationCode": "cfp-realestate",
+      "qualification": "CFP・不動産運用設計",
+      "year": 2026,
+      "sitting": "round1",
+      "status": "ブランチ／PR に有り",
+      "questionCount": 50,
+      "officialSourceUrls": [
+        "https://www.jafp.or.jp/aim/cfp/cfp_exam/files/2026_01_CFP02_q.pdf",
+        "https://www.jafp.or.jp/aim/cfp/cfp_exam/files/2026_01_CFP02_a.pdf"
+      ],
+      "occurrences": [
+        {
+          "kind": "branch",
+          "name": "cx/kako-pa8-20261118",
+          "lane": "pb-8",
+          "updatedAt": "2026-11-18",
+          "questionCount": 50,
+          "paths": [
+            "data/questions/cfp-realestate/2026-round1.json",
+            "data/questions/cfp-realestate/index.ts",
+            "data/questions/cfp-realestate/sources.json"
+          ]
+        }
+      ],
+      "scope": "plan4指定の2026年度第1回・第2回。不動産運用設計を各50問収録。金融資産運用設計とは別区分。公式本文・正答・設例・図表を保持し総合解説と全4肢の独自解説を付与。"
+    },
+    {
+      "key": "cfp-realestate|2026|round2",
+      "candidateId": "cfp-2",
+      "planIndex": 35,
+      "qualificationCode": "cfp-realestate",
+      "qualification": "CFP・不動産運用設計",
+      "year": 2026,
+      "sitting": "round2",
+      "status": "ブランチ／PR に有り",
+      "questionCount": 50,
+      "officialSourceUrls": [
+        "https://www.jafp.or.jp/aim/cfp/cfp_exam/files/2026_02_CFP02_q.pdf",
+        "https://www.jafp.or.jp/aim/cfp/cfp_exam/files/2026_02_CFP02_a.pdf"
+      ],
+      "occurrences": [
+        {
+          "kind": "branch",
+          "name": "cx/kako-pa8-20261118",
+          "lane": "pb-8",
+          "updatedAt": "2026-11-18",
+          "questionCount": 50,
+          "paths": [
+            "data/questions/cfp-realestate/2026-round2.json",
+            "data/questions/cfp-realestate/index.ts",
+            "data/questions/cfp-realestate/sources.json"
+          ]
+        }
+      ],
+      "scope": "plan4指定の2026年度第1回・第2回。不動産運用設計を各50問収録。金融資産運用設計とは別区分。公式本文・正答・設例・図表を保持し総合解説と全4肢の独自解説を付与。"
+    }
+  ],
+  "previousManifest": "research/replenish/pa-8.json",
+  "skipped": [
+    {
+      "candidateId": "dekyo-charge-5",
+      "planIndex": 7,
+      "sourceLedgerKey": "kojitan-sogo|unknown|前回記録・対象年度未特定",
+      "status": "記録上作業中だが成果なし",
+      "reason": "共有台帳の前回着手記録を優先し、重複作業を避けて追加しない。年度・成果は未特定。"
+    }
+  ],
+  "remaining": [
+    {
+      "planIndex": 63,
+      "candidateId": "government-guide-2026-69cc4d3c5ff68f1b",
+      "name": "航空管制官・基礎能力",
+      "status": "未着手",
+      "notes": "公式2026年度・基礎能力30問と末尾正答表を確認し、原本をtools/pb-8/airtraffic-2026.pdfに保存。計画のSHA-256と一致。全文はアウトライン化されており通常のPDFテキスト抽出では空。本文・選択肢・図表・解説の収録は未実施。"
+    },
+    {
+      "planIndex": 77,
+      "candidateId": "javada-47035cd9bb44",
+      "name": "さく井(ロータリー式さく井工事作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 91,
+      "candidateId": "javada-9f6ed9fcefbb",
+      "name": "テクニカルイラストレーション(テクニカルイラストレーション手書き作業)2級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 105,
+      "candidateId": "javada-1f3d6d9467f9",
+      "name": "半導体製品製造(集積回路組立て作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 119,
+      "candidateId": "javada-9e282b4a3543",
+      "name": "時計修理(時計修理作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 133,
+      "candidateId": "javada-9aaef1d8ac99",
+      "name": "紳士服製造特級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 147,
+      "candidateId": "javada-6f3f5e0a9af7",
+      "name": "金属材料試験(機械試験作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 161,
+      "candidateId": "javada-b45640189df4",
+      "name": "ブロック建築(コンクリートブロック工事作業)2級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 175,
+      "candidateId": "javada-874e3184bee6",
+      "name": "内装仕上げ施工(化粧フィルム工事作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 189,
+      "candidateId": "javada-124a8c19d494",
+      "name": "塗装(鋼橋塗装作業)2級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 203,
+      "candidateId": "javada-6bb4dea4b0dd",
+      "name": "建具製作(木製建具手加工作業)2級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 217,
+      "candidateId": "javada-c97904722b6e",
+      "name": "機械加工(平面研削盤作業)3級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 231,
+      "candidateId": "javada-0dea6fa87c14",
+      "name": "産業車両整備(産業車両整備作業)2級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 245,
+      "candidateId": "javada-d2113dd3d4fb",
+      "name": "鉄筋施工(鉄筋組立て作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 259,
+      "candidateId": "javada-a11084e16313",
+      "name": "鋳造(鋳鋼鋳物鋳造作業)2級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 273,
+      "candidateId": "javada-48aaec32438b",
+      "name": "防水施工(塩化ビニル系シート防水工事作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    },
+    {
+      "planIndex": 287,
+      "candidateId": "javada-a2cfb78b6081",
+      "name": "非接触除去加工(ワイヤ放電加工作業)1級（学科）",
+      "status": "未着手",
+      "notes": "このレーンでは本文・正答の全件照合と収録を完了していない。"
+    }
+  ],
+  "duplicateChecks": {
+    "production": "https://www.kakomon-ai.jp/cfp-realestate は2026-11-18の取得でHTTP 404。",
+    "mergedBranches": "指定37ブランチはすべてHEADに含まれる。",
+    "ledger": "共有台帳・取込済み台帳にCFP02の原本URLおよびcandidateId=cfp-2の既存作業なし。"
+  },
+  "verification": {
+    "officialAnswerCount": 100,
+    "choiceExplanationCount": 400,
+    "sourceImageCount": 144,
+    "calculationSpotChecks": 5,
+    "sourceImagesBytes": 5704130
+  }
+}

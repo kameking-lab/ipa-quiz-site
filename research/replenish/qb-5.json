@@ -1,0 +1,54 @@
+{
+  "lane": "qb-5",
+  "plan": "plan5.json",
+  "assignment": "zero-based index % 14 == 4",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "checkedAt": "2026-11-18",
+  "duplicateAudit": {
+    "refsChecked": 87,
+    "uniqueCommits": 74,
+    "scope": "origin/main + local/remote cx/kako-* + rel/kako-*; qualification-specific question/afternoon/essay data and lib",
+    "existingOfficialMatches": 0,
+    "details": "codex-run-20261110/tools/qb-5/duplicate-audit.json"
+  },
+  "rows": [
+    {
+      "jobId": "PLAN5-005",
+      "index": 4,
+      "exam": "sc",
+      "year": 2023,
+      "season": "autumn",
+      "session": "pm",
+      "status": "completed-local",
+      "newQuestionCount": 4,
+      "countUnit": "大問",
+      "questionIds": [
+        "sc-2023a-pm-q1",
+        "sc-2023a-pm-q2",
+        "sc-2023a-pm-q3",
+        "sc-2023a-pm-q4"
+      ],
+      "dataPath": "data/questions/sc/2023-autumn-pm.ts",
+      "evidencePath": "data/questions/sc/2023-autumn-pm-sources.json",
+      "answerPolicy": "公式解答例を転記し原本画像も保持。問4の別解3例と備考を含む。自動採点なし。"
+    },
+    {
+      "jobId": "PLAN5-019",
+      "index": 18,
+      "exam": "nw",
+      "year": 2024,
+      "season": "spring",
+      "session": "pm2",
+      "status": "completed-local",
+      "newQuestionCount": 2,
+      "countUnit": "大問",
+      "questionIds": [
+        "nw-2024h-pm2-q1",
+        "nw-2024h-pm2-q2"
+      ],
+      "dataPath": "data/questions/nw/2024-spring-pm2.ts",
+      "evidencePath": "data/questions/nw/2024-spring-pm2-sources.json",
+      "answerPolicy": "公式解答例の転記と全文画像を保持。問2設問5(1)～(3)の不成立を原文どおり保持し解説に注記。自動採点なし。"
+    }
+  ]
+}

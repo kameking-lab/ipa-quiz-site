@@ -1,0 +1,92 @@
+{
+  "lane": "rs-12",
+  "branch": "cx/kako-restock-g9-20261117",
+  "checkedOn": "2026-11-17",
+  "allocation": [
+    "kanteishi",
+    "tsukanshi",
+    "keiryoshi-nodo",
+    "kanri-eiyoshi"
+  ],
+  "allocationOrdinals": [
+    4,
+    8,
+    12,
+    16
+  ],
+  "rows": [
+    {
+      "key": "kanteishi|2024|annual",
+      "qualificationCode": "kanteishi",
+      "qualification": "不動産鑑定士",
+      "year": 2024,
+      "sitting": "annual",
+      "status": "ブランチ／PR に有り",
+      "questionCount": 40,
+      "sessionCounts": {
+        "riron": 40
+      },
+      "choiceExplanationCount": 200,
+      "statementExplanationCount": 115,
+      "remainingQuestionCount": 40,
+      "remainingSession": "gyosei",
+      "officialSourceUrls": [
+        "https://www.mlit.go.jp/totikensangyo/kanteishi/content/001743659.pdf",
+        "https://www.mlit.go.jp/totikensangyo/kanteishi/content/001743666.pdf"
+      ],
+      "paths": [
+        "data/questions/kanteishi/2024-riron.json",
+        "data/questions/kanteishi/2024-riron-sources.json",
+        "data/questions/kanteishi/index.ts"
+      ],
+      "questionIds": [
+        "kanteishi-2024-riron-q01",
+        "kanteishi-2024-riron-q02",
+        "kanteishi-2024-riron-q03",
+        "kanteishi-2024-riron-q04",
+        "kanteishi-2024-riron-q05",
+        "kanteishi-2024-riron-q06",
+        "kanteishi-2024-riron-q07",
+        "kanteishi-2024-riron-q08",
+        "kanteishi-2024-riron-q09",
+        "kanteishi-2024-riron-q10",
+        "kanteishi-2024-riron-q11",
+        "kanteishi-2024-riron-q12",
+        "kanteishi-2024-riron-q13",
+        "kanteishi-2024-riron-q14",
+        "kanteishi-2024-riron-q15",
+        "kanteishi-2024-riron-q16",
+        "kanteishi-2024-riron-q17",
+        "kanteishi-2024-riron-q18",
+        "kanteishi-2024-riron-q19",
+        "kanteishi-2024-riron-q20",
+        "kanteishi-2024-riron-q21",
+        "kanteishi-2024-riron-q22",
+        "kanteishi-2024-riron-q23",
+        "kanteishi-2024-riron-q24",
+        "kanteishi-2024-riron-q25",
+        "kanteishi-2024-riron-q26",
+        "kanteishi-2024-riron-q27",
+        "kanteishi-2024-riron-q28",
+        "kanteishi-2024-riron-q29",
+        "kanteishi-2024-riron-q30",
+        "kanteishi-2024-riron-q31",
+        "kanteishi-2024-riron-q32",
+        "kanteishi-2024-riron-q33",
+        "kanteishi-2024-riron-q34",
+        "kanteishi-2024-riron-q35",
+        "kanteishi-2024-riron-q36",
+        "kanteishi-2024-riron-q37",
+        "kanteishi-2024-riron-q38",
+        "kanteishi-2024-riron-q39",
+        "kanteishi-2024-riron-q40"
+      ],
+      "notes": [
+        "2024年は鑑定理論40問を収録。行政法規は未収録。既存2025・2026年の160問は不変。",
+        "公式answer変更0件。問6の原文表記は保持し解説に注記。問39の表は全24セルを原本画像で確認。",
+        "原文40・選択肢200はPyMuPDFとpdfplumberの二通りで照合。問39の表は抽出順が異なるため、表以外の本文は文字照合、表はセル単位の構造確認と目視で照合。",
+        "残る担当3資格は新規回を未選定、着手予約しない。"
+      ]
+    }
+  ]
+}
