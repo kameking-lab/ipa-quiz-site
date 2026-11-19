@@ -2,6 +2,7 @@ import type { Question } from "@/lib/questions/types";
 import business2023 from "./2023-business.json";
 import business2022 from "./2022-business.json";
 import marketing2023 from "./2023-marketing.json";
+import marketing2022 from "./2022-marketing.json";
 import economicLaw2023 from "./2023-keihou.json";
 import economicsA2023 from "./2023-businessA.json";
 import economicsB2023 from "./2023-businessB.json";
@@ -15,4 +16,5 @@ export const ZENSHO_ECO_QUESTIONS = [
   ...economicsB2023,
   ...management2023,
   ...business2022,
+  ...marketing2022,
 ] as Question[];
