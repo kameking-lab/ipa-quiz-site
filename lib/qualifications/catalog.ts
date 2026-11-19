@@ -767,7 +767,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialReuseTermsUrl: "https://zenkoukyo.or.jp/index_kentei/exam_result/",
     status: "terms-review-required",
     stagingDataPath: "data/questions/zenkou-pc",
-    reuseSummary: "第51回の1級筆記全20大問と、同回2〜3級および第50回1〜3級の筆記を部分収録。公式問題・解答と図版を照合。",
+    reuseSummary: "第51回の1級筆記全20大問と、同回2〜3級および第49・50回1〜3級の筆記を部分収録。公式問題・解答と図版を照合。",
     attributionTemplate: "出典：公益社団法人全国工業高等学校長協会。解説は過去問AIの独自作成。",
     remainingWork: ["残る問題の転記・解答照合と全肢解説の作成", "問題文・図版の転載条件の確認", "公開時に figures の図版を public/images/questions/zenkou-pc に配置"],
   },
