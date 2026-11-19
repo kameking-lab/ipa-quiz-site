@@ -1997,7 +1997,7 @@ caremanager: {
     sessions: [
         { session: "kiso", urlSlug: "kiso", expectedQuestions: 30, label: "基礎能力試験", categories: ["文章理解", "判断推理", "数的推理", "資料解釈", "社会事情"] },
         { session: "senmon", urlSlug: "senmon", expectedQuestions: 50, label: "専門試験", categories: ["憲法", "民法", "行政法", "刑法", "経済理論"] },
-    ], seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
+    ], seasons: ["annual"], yearRange: { start: 2023, end: 2026 },
 },
 "kyoin-osaka": {
     code: "kyoin-osaka", nameFull: "大阪府公立学校教員採用選考テスト", urlSlug: "kyoin-osaka", level: "advanced",
