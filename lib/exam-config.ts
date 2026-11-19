@@ -1519,7 +1519,7 @@ shinrishi: {
         { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法令", categories: ["法令"] },
         { session: "hoan", urlSlug: "hoan", expectedQuestions: 15, label: "保安管理技術", categories: ["保安管理技術"] },
     ],
-    seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
+    seasons: ["annual"], yearRange: { start: 2023, end: 2026 },
 },
 "khk-reito-2": {
     code: "khk-reito-2", nameFull: "高圧ガス製造保安責任者試験（第二種冷凍機械）", urlSlug: "khk-reito-2", level: "advanced",
