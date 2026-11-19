@@ -40479,5 +40479,705 @@
         "url": "https://www.mhlw.go.jp/content/001478037.pdf"
       }
     ]
+  },
+  "emkohyo-EM20232804-q1": {
+    "sourceHash": "2fdaeb09f00819f6c60a2cf57501c0ecac9119c62ae2cb410e7f4ceab02ea048",
+    "correctChoice": 3,
+    "summary": "質量数は原子核を構成する陽子と中性子の数の合計です。原子核の外に存在する電子の数は質量数に含まれません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "1 molは、アボガドロ定数と同じ数の指定された粒子を含む物質量です。対象には原子や分子、イオンなどを指定できます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "相対原子質量の基準は炭素12の原子の質量の12分の1です。これに対する質量の比から各元素の原子量を定めます。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "質量数は原子核を構成する陽子と中性子の数の合計です。原子核の外に存在する電子の数は質量数に含まれません。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "原子番号が増えるにつれて電子配置に一定のパターンが繰り返され、原子や単体の性質も周期的な傾向を示します。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "中性の粒子が電子を失うと、負電荷が減って正電荷が過剰になります。結果として陽イオンが生じます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20232804-q2": {
+    "sourceHash": "6b288565ba696041b045e3ae392c371f9056b91cec03cef2a7bbac061e7d309a",
+    "correctChoice": 1,
+    "summary": "測定誤差は測定値と真の値または参照値との差です。測定値から測定値の平均を引いたものは平均からの偏差です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "測定誤差は測定値と真の値または参照値との差です。測定値から測定値の平均を引いたものは平均からの偏差です。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "精度は繰返し測定した値同士がどの程度一致するかを示します。測定値のばらつきが小さいほど精度が高くなります。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "真度は繰返し測定の平均値が真値または参照値にどの程度近いかを表します。個々の値のばらつきとは別の尺度です。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "目的によっては測定値の速報を優先します。例えば異常の有無をまず判定し、必要に応じて精密な確認を行う場合です。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "平均値に標準偏差などを添えると、値の中心とばらつきをまとめて示せます。分散の平方根は元の測定値と同じ単位になります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20232804-q3": {
+    "sourceHash": "7ccbd3a7a507b973cea4ce77cb38bffcec8b0964890824c53c21615c99535724",
+    "correctChoice": 4,
+    "summary": "エーテルの結合は R−O−R′ で、酸素の両側に炭化水素基が結合します。カルボニル基 C=O はエーテルの官能基ではありません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "アルコールは飽和炭素原子に結合したヒドロキシ基を持ちます。官能基を表す記号は−OHです。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "カルボン酸の特徴はカルボキシ基−COOHです。この基にはカルボニル部とヒドロキシ部が含まれます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "アルデヒドは末端のホルミル基−CHOで特徴づけられます。カルボニル炭素が水素原子と結合しています。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "エーテルの結合は R−O−R′ で、酸素の両側に炭化水素基が結合します。カルボニル基 C=O はエーテルの官能基ではありません。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "第一アミンはアンモニアの水素一つを炭化水素基に置き換えた構造で、−NH₂基が残っています。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20232804-q4": {
+    "sourceHash": "9971fe4e250065bd790f3e52cde6c1f2a846fe4dc64bfaecac9b463c900e2b78",
+    "correctChoice": 3,
+    "summary": "メタンは4÷16＝0.25mol、二酸化炭素は11÷44＝0.25molです。全圧1.0気圧にメタンのモル分率0.5を掛けます。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "0.3気圧はメタンのモル分率を0.3とみなす数値です。メタンと二酸化炭素は各0.25molなので、モル分率は0.5です。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "分圧は質量分率でなくモル分率に比例します。メタン4gと二酸化炭素11gは、質量は違っても物質量は同じです。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "メタンは4÷16＝0.25mol、二酸化炭素は11÷44＝0.25molです。全圧1.0気圧にメタンのモル分率0.5を掛けます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "気相中のメタンが全体の6割を占めるわけではありません。各成分は0.25molずつなので分圧は全圧の半分です。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "メタンの質量が他成分より小さくても、モル分率は質量をモル質量で割って求めます。この場合は0.7ではなく0.5です。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20232804-q5": {
+    "sourceHash": "3849c07f01fa16ce7ee30f18a739fab3c9abef2a2c64062bfc1ce49d034a94e5",
+    "correctChoice": 2,
+    "summary": "硫酸の第一段階はほぼ完全に解離し、第二段階でも一部が解離します。同じ物質量濃度では五つの中で水素イオン濃度が最も高くなります。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "硝酸は強酸ですが、一分子から放出するプロトンは一つです。同濃度の硫酸では第二段階の解離も水素イオンを増やします。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "硫酸の第一段階はほぼ完全に解離し、第二段階でも一部が解離します。同じ物質量濃度では五つの中で水素イオン濃度が最も高くなります。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "酢酸は弱酸なので、水中で解離するのは一部です。同濃度の硫酸ほど水素イオン濃度は上がりません。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "フッ化水素酸には強い腐食性がありますが、水中での解離の強さは別の性質です。解離は一部に限られます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "炭酸は二段階で解離しますが、いずれも弱く、同濃度の硫酸よりも水素イオン濃度が低くなります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20232804-q6": {
+    "sourceHash": "cad5b5efef82a5e560b54816b0262cc3d2e6fd4db2a1599aea01510f2eb92143",
+    "correctChoice": 2,
+    "summary": "反応式の q が負なので正反応は吸熱反応です。温度を上げると熱を消費する右向きの反応が有利になります。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "化学平衡では正反応と逆反応が続いています。両反応の速度が等しくなり、各成分の濃度は見かけ上一定です。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "反応式の q が負なので正反応は吸熱反応です。温度を上げると熱を消費する右向きの反応が有利になります。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "問題で定義された濃度の比は、分子が mol/L、分母がその二乗です。従って単位は L/mol となります。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "式の［A］、［B］、［C］には平衡に達した時点の濃度を代入します。反応前の濃度はそのまま代入しません。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "平衡定数は反応ごとに決まり、温度で変化します。同じ温度であれば、初期濃度を変えても平衡定数は同じです。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20232804-q7": {
+    "sourceHash": "d0d404f727c37f902a14ea4906cd6b60b292fdd02fc5e8ef0be73b0a8178e961",
+    "correctChoice": 4,
+    "summary": "トルエンの物質量0.0030÷92molに、25℃でのモル体積0.082×298L/molを掛けます。100Lに対する比は約8ppmです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "トルエンの物質量は0.0030÷92molです。25℃、1気圧での体積は約0.00080Lとなり、100Lに対して2ppmを超えます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "気化したトルエンの体積は約0.00080Lです。100Lに対する体積比に10の6乗を掛けると、4ppmの約2倍になります。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "トルエンを気体に換算した後、全体積100Lで割ると体積分率は約8×10⁻⁶です。選択肢では6ppmより8ppmが近くなります。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "トルエンの物質量0.0030÷92molに、25℃でのモル体積0.082×298L/molを掛けます。100Lに対する比は約8ppmです。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "25℃・1気圧で3.0mgのトルエンが占める体積は約0.8mLです。100Lに1mLを含むときの10ppmより小さい値になります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20232804-q8": {
+    "sourceHash": "e46d90a1254767b2116d047449333c323b309f32d574154bb272f74920b0af24",
+    "correctChoice": 2,
+    "summary": "拡散経路は原則として拡散チューブの寸法で規定されます。貯液部の液面にわずかな変動があるだけで毎回同じ試薬量を必要とするわけではありません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "各物質を単独の拡散セルで発生させるのは、温度や蒸気圧ごとに拡散率を管理するためです。単一セルに液を混ぜると組成や分圧が変わります。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "拡散経路は原則として拡散チューブの寸法で規定されます。貯液部の液面にわずかな変動があるだけで毎回同じ試薬量を必要とするわけではありません。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "希釈空気の流量を変えれば、同じ発生量に対する濃度をすぐ調整できます。セルの温度変更には熱平衡を待つ時間がかかります。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "セルの温度を上げると液の蒸気圧が高くなり、一般に拡散する量が増えます。希釈流量が同じなら濃度も上がります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "拡散チューブの内径を大きくすると断面積が増え、他の条件が同じなら単位時間当たりの拡散量が増えます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20232804-q9": {
+    "sourceHash": "274d9364c63ac876bd972a1a80443f5ddea1931d15606a9690ef19c8d66a97ec",
+    "correctChoice": 1,
+    "summary": "メチレンブルーは酸化還元の状態によって色が変わる色素です。通常の酸塩基滴定で用いるpH指示薬とは作用が異なります。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "メチレンブルーは酸化還元の状態によって色が変わる色素です。通常の酸塩基滴定で用いるpH指示薬とは作用が異なります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "メチルイソブチルケトンは水と分離する有機溶媒で、水相にある金属キレートを有機相へ抽出するのに使えます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "シリカゲルには気体中の成分を吸着する性質があります。測定対象に応じて有機溶剤の蒸気の捕集に使われます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "二硫化炭素は捕集材に吸着した一部の有機溶剤を溶媒で取り出すときの脱着溶媒として使われます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "重水素化トルエンはトルエンに似た挙動を示し、質量分析で区別できます。試料処理や測定の変動の補正に用います。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20232804-q10": {
+    "sourceHash": "bd63e7b9e38b4f9e8a1ba156ff80e78bca74f82b2d8488f9c90779825b8da518",
+    "correctChoice": 5,
+    "summary": "軸方向観測はプラズマを縦に見る長い経路で感度が高く、低濃度に向きます。横方向観測は高濃度で使いやすくなります。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ICP発光分析装置は高周波でプラズマを発生させ、試料の元素が発した光を分光して測定します。記載された各部がこの流れを支えます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "誘導結合プラズマは数千K以上の高温で、試料の原子やイオンを励起して元素に固有の発光を生じさせます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "懸濁した不溶物が細いネブライザーを塞ぐおそれがあります。溶液を導入する測定では前処理で不溶物を除きます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "シーケンシャル型は波長を切り替えて順次、多波長型は複数の波長をまとめて観測することで、どちらも多元素を測れます。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "軸方向観測はプラズマを縦に見る長い経路で感度が高く、低濃度に向きます。横方向観測は高濃度で使いやすくなります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20232804-q11": {
+    "sourceHash": "e268c2e9eaed3dfda4a321304b8a69e72501916e06eb37cf162a6a6c5c0c31ce",
+    "correctChoice": 5,
+    "summary": "中和後に残る水素イオンは1.00×10⁻⁴molです。混合体積0.0200Lで割ると5.0×10⁻³mol/Lとなります。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "1.0×10⁻³mol/Lとするには残った酸を100mLで割ることになります。混合溶液の体積は20.0mLです。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "混合前の酸は2.00×10⁻⁴molで、塩基により1.00×10⁻⁴molが中和されます。残量は20.0mLに溶けています。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "反応は塩酸と水酸化ナトリウムの一対一の中和です。初濃度の平均ではなく、各溶液の物質量の差を全体積で割ります。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "酸の過剰量は1.00×10⁻⁴molです。全体積0.0200Lで割ると4.0×10⁻³mol/Lより大きくなります。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "中和後に残る水素イオンは1.00×10⁻⁴molです。混合体積0.0200Lで割ると5.0×10⁻³mol/Lとなります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20232804-q12": {
+    "sourceHash": "2cc650a5854c41a6b24f55dedd105a0c83a8a000361965e62e8dc3e1992a151d",
+    "correctChoice": 5,
+    "summary": "EDTAは多価金属イオンと錯体を形成するため、亜鉛などの金属標準液で標定できます。硝酸カリウムはその用途に適しません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "炭酸ナトリウムは純度の高い標準物質として用いられます。塩酸との中和反応から、その濃度を求められます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "フタル酸水素カリウムは酸性の標準物質です。水酸化ナトリウムと当量関係が明確なので標定に使えます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "過マンガン酸イオンは酸性条件でシュウ酸イオンを酸化します。濃度既知のシュウ酸ナトリウムを使って標定できます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "銀イオンは塩化物イオンと反応して塩化銀を沈殿させます。この反応を使い、塩化ナトリウム溶液で濃度を求めます。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "EDTAは多価金属イオンと錯体を形成するため、亜鉛などの金属標準液で標定できます。硝酸カリウムはその用途に適しません。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20232804-q13": {
+    "sourceHash": "f44760718adcfe3a5d8851ae784ca8bc04a1fbde3008b8aae189501b1d5c83a1",
+    "correctChoice": 4,
+    "summary": "青色に見える溶液は青色の光を比較的よく透過します。吸光測定では通常、よく吸収する青色の補色側の波長を選びます。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "タングステンランプは可視域に連続スペクトルを持つため、可視部吸光光度分析の光源に使えます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "石英セルは可視光を透過するため、可視部の分析にも使用できます。紫外測定で特に必要になります。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "回折格子は光を波長ごとに分ける素子です。分光器内で測定に必要な波長の光を選ぶために用いられます。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "青色に見える溶液は青色の光を比較的よく透過します。吸光測定では通常、よく吸収する青色の補色側の波長を選びます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "光電子増倍管は弱い光を電気信号として増幅できます。試料を通過した光の強度を測る検出器になります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20232804-q14": {
+    "sourceHash": "cef3daeecd8b372852588000ef407c53276732d42b63e9c9fb7059aedb194730",
+    "correctChoice": 4,
+    "summary": "濃度は標準液の濃度に吸光度の比0.480÷0.360と光路長の比2.0÷1.0を掛けます。答えは8.0×10⁻⁵mol/Lです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "同じ物質と波長なら吸光度は濃度と光路長の積に比例します。光路が短くなっても吸光度が増したので、元より高い濃度です。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "濃度4.0×10⁻⁵mol/Lとすると光路長1.0cmでの吸光度は0.240です。観測された0.480にはなりません。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "同じ濃度ならセルを半分にすると吸光度も半分になります。吸光度の増加も考慮して、濃度を元の2倍より大きくする必要があります。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "濃度は標準液の濃度に吸光度の比0.480÷0.360と光路長の比2.0÷1.0を掛けます。答えは8.0×10⁻⁵mol/Lです。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "濃度を1.0×10⁻⁴mol/Lとすると、光路長1.0cmでの吸光度は0.600です。0.480に対応する濃度はそれより低くなります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20232804-q15": {
+    "sourceHash": "95ea19c5d230f0b0f9f42b9aa8499886510bd30b0af65f7f517a62678de6bc3a",
+    "correctChoice": 4,
+    "summary": "吸光度は入射光と透過光の強度比の対数で表します。適切な測定条件では入射光の強度そのものに比例しません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "アセチレンと空気などの化学炎は、導入した試料から測定対象の原子を気相に生じさせるために用います。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "フレームで原子化した元素の原子の多くは基底状態です。それらが元素に固有な波長の光を吸収します。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "炎の位置により温度や原子化の程度が異なるため、測定光を通す高さによって同じ試料の吸光度も変わります。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "吸光度は入射光と透過光の強度比の対数で表します。適切な測定条件では入射光の強度そのものに比例しません。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "中空陰極に対象元素を用いると、対象元素が吸収する波長の線スペクトルを放射できるため、元素選択性が得られます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20232804-q16": {
+    "sourceHash": "f397430f43446b42be7147f2f10a96881b4aac3893fd6b7e030e16a3a5faae47",
+    "correctChoice": 1,
+    "summary": "蛍光は主として電子励起状態から電子基底状態へ戻る際に放出される光です。基底状態内の振動準位間の遷移ではありません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "蛍光は主として電子励起状態から電子基底状態へ戻る際に放出される光です。基底状態内の振動準位間の遷移ではありません。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "分子は発光する前にエネルギーの一部を失うため、通常の蛍光は励起光より低エネルギーで波長が長くなります。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "励起波長が変わると分子が光を吸収する割合が変わり、同じ試料でも蛍光の強度は変化します。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "低濃度では励起光の吸収が小さいため、他の条件が一定なら入射する励起光が強いほど蛍光も強くなります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "低濃度で消光や自己吸収が無視できれば、励起される分子数は濃度に比例し、蛍光強度も比例します。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20232804-q17": {
+    "sourceHash": "25c53880cbcef95229c601f75191c330c6f5f4c5da412db366561448820866df",
+    "correctChoice": 4,
+    "summary": "試料を光でイオン化するには高いエネルギーが必要です。光イオン化検出器は紫外光を用い、赤外光を用いるという点が誤りです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "熱伝導度検出器はキャリヤーガスと溶出成分の熱伝導率の差により、加熱した測定素子の温度が変わることを利用します。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "水素炎イオン化検出器は、水素の炎の中で主に有機化合物が生じさせるイオンを電流として検出します。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "電子捕獲検出器では、β線により生じた電子が試料に捕獲され、電流が減少することを信号として用います。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "試料を光でイオン化するには高いエネルギーが必要です。光イオン化検出器は紫外光を用い、赤外光を用いるという点が誤りです。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "炎光光度検出器は還元性の炎で硫黄やリンの化合物に特有な光を発生させ、波長を選別して測ります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20232804-q18": {
+    "sourceHash": "b6008bb5f275c8e081660dba2a7292f67a89f93ea27b5b13689ef49a68dc1980",
+    "correctChoice": 4,
+    "summary": "保持時間は長さとともに増えますが、ピーク幅は長さの平方根に比例します。2倍のカラムでは√2倍が目安です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "理論段相当高さはカラム長を理論段数で割ったものです。長さと理論段数がともに2倍になるので変わりません。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "カラムが2倍の長さになるとピーク幅は√2倍となります。面積を一定とすれば、ピーク高さは1/√2倍となります。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "同じ分離条件では理論段数が2倍になるため、理論段数の平方根に比例する分離度は√2倍になります。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "保持時間は長さとともに増えますが、ピーク幅は長さの平方根に比例します。2倍のカラムでは√2倍が目安です。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "理論段相当高さが一定である場合、カラム長と理論段数は比例します。カラム長を2倍にすれば理論段数も2倍です。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20232804-q19": {
+    "sourceHash": "3e675fd582aa2d049520659b4b0232276697d679de20cc0c36a43e3dd52e4dfd",
+    "correctChoice": 5,
+    "summary": "X線回折で測るのは角度ごとの回折強度です。検出器にX線のエネルギースペクトル分析機能が必須ではありません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "銅の特性X線であるCu Kα線は、一般的な粉末X線回折測定でよく用いられる単色に近い線源です。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "粉末にすると、多数の結晶粒がさまざまな方向を向くため、結晶の複数の格子面からの回折を測定できます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "対象結晶の回折線の強度は一定条件下で含有量に応じて変化するため、標準試料等と比べて定量できます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "回折角とX線の波長が分かれば、ブラッグの式により回折を起こした結晶の格子面間隔を求められます。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "X線回折で測るのは角度ごとの回折強度です。検出器にX線のエネルギースペクトル分析機能が必須ではありません。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20232804-q20": {
+    "sourceHash": "0260dd6eaa17d35ded5c201e489e62a0d332d469c793d4e208f58b9b85dc7f35",
+    "correctChoice": 5,
+    "summary": "同程度のエネルギーならβ線は空気中でα線より遠くまで届きます。α線は物質との電離作用が強く、短い距離でエネルギーを失います。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "β⁻壊変では原子核内の中性子が陽子に変わり、電子と反電子ニュートリノを放出します。放出電子がβ⁻線です。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "β⁺壊変では陽子が中性子に変わり、正電荷を持つ陽電子と電子ニュートリノが放出されます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "電子捕獲では原子核が自身の原子の内側の軌道電子を取り込みます。陽子は中性子に変わります。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "壊変エネルギーをβ粒子とニュートリノ等で分け合うため、β粒子の運動エネルギーは連続分布になります。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "同程度のエネルギーならβ線は空気中でα線より遠くまで届きます。α線は物質との電離作用が強く、短い距離でエネルギーを失います。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
   }
 }
