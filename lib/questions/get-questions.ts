@@ -235,6 +235,7 @@ shinrishi: async () => isExamPublished("shinrishi") ? (await import("@/data/ques
 "sekou-kenchiku2": async () => isExamPublished("sekou-kenchiku2") ? (await import("@/data/questions/sekou-kenchiku2")).SEKOU_KENCHIKU2_QUESTIONS : [],
 denki2: async () => isExamPublished("denki2") ? (await import("@/data/questions/denki2")).DENKI2_QUESTIONS : [],
 kankoji1: async () => isExamPublished("kankoji1") ? (await import("@/data/questions/kankoji1")).KANKOJI1_QUESTIONS : [],
+"chori-center": async () => isExamPublished("chori-center") ? (await import("@/data/questions/chori-center")).CHORI_CENTER_QUESTIONS : [],
 "yamaguchi-chori": async () => isExamPublished("yamaguchi-chori") ? (await import("@/data/questions/yamaguchi-chori")).YAMAGUCHI_CHORI_QUESTIONS : [],
 "yamaguchi-seika": async () => isExamPublished("yamaguchi-seika") ? (await import("@/data/questions/yamaguchi-seika")).YAMAGUCHI_SEIKA_QUESTIONS : [],
 "yamaguchi-fugu": async () => isExamPublished("yamaguchi-fugu") ? (await import("@/data/questions/yamaguchi-fugu")).YAMAGUCHI_FUGU_QUESTIONS : [],

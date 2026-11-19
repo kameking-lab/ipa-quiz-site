@@ -42,6 +42,7 @@
 
 ## 原本の公開状況
 
+- 調理技術技能センターの公式一覧にある2023〜2025年度のPDFは取得時に403を返したため、委託元の岐阜県が公開している同センターの原本を取得した。 [岐阜県の問題・正答](https://www.pref.gifu.lg.jp/page/11051.html)
 - 調理技術技能センターの2026年度は12月18日公表予定。2022年度は現行の公表一覧に掲載なし。 [2026年度の案内](https://chouri-ggc.or.jp/chourishishiken/all_delegation/)・[過去問題](https://chouri-ggc.or.jp/chourishishiken/past_questions/)
 - 静岡県の2026年度は確認時点で原本・正答の掲載なし。2022年度も現行の公表一覧に掲載なし。 [静岡県の案内](https://www.pref.shizuoka.jp/kenkofukushi/eiseiyakuji/shokuanzen/shokushiken/1024968.html)
 - 現行掲載で確認できた範囲は神奈川県が直近4回、長野県が2026年度、沖縄県が2026・2025年度、群馬県が2026〜2024年度。旧年度の原本・正答は別途確認する。

@@ -1542,6 +1542,14 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["監督役による独立レビューと公開判断"],
 },
   {
+    slug: "chori-center", examCode: "chori-center", shortName: "調理師試験（共通問題）", fullName: "調理師試験（共通問題）",
+    domain: "personal-services", administrator: "公益社団法人調理技術技能センター",
+    officialQuestionsUrl: "https://chouri-ggc.or.jp/chourishishiken/past_questions/", officialReuseTermsUrl: "https://chouri-ggc.or.jp/chourishishiken/past_questions/",
+    status: "live",
+    reuseSummary: "公式問題・正答と全選択肢の独自解説を収録。法令・制度は出題時点。",
+    remainingWork: [],
+  },
+  {
     slug: "yamaguchi-chori", examCode: "yamaguchi-chori", shortName: "調理師", fullName: "調理師",
     domain: "personal-services", administrator: "山口県 生活衛生課",
     officialQuestionsUrl: "https://www.pref.yamaguchi.lg.jp/site/syoku-anshin/320296.html",
