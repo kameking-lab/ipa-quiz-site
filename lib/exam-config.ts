@@ -1251,7 +1251,7 @@ kangoshi: {
         { session: "kogaku-b", urlSlug: "kogaku-b", expectedQuestions: 25, label: "無線工学B", categories: ["無線工学B"] },
         { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
     ],
-    seasons: ["january", "july"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["january", "july"], yearRange: { start: 2025, end: 2026 },
 },
 "riku-tech2": {
     code: "riku-tech2", nameFull: "第二級陸上無線技術士試験", urlSlug: "riku-tech2", level: "specialist",

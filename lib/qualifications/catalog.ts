@@ -462,7 +462,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     shortName: "第一級陸上無線技術士", fullName: "第一級陸上無線技術士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
     officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
-    reuseSummary: "2026年1月・7月の2回、無線工学の基礎・無線工学A・無線工学B各25問と法規20問、計190原問を収録。公式正答・全肢解説・原図と解答群で演習できます。B問題は1原問の5枠を個別に採点します。法令は各実施回当時の内容です。",
+    reuseSummary: "2026年1月・7月の2回、無線工学の基礎・無線工学A・無線工学B各25問と法規20問に加え、2025年7月の法規20問を収録。公式正答・全肢解説・原図と解答群で演習できます。B問題は1原問の5枠を個別に採点します。法令は各実施回当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 第一級陸上無線技術士試験 ○年○月 ○科目 問○（問題・正答）。解説と原図の切出しは過去問AIが作成・加工。",
     remainingWork: ["現行法令との差を学習時に確認"],
 },
