@@ -897,7 +897,7 @@ hoikushi: {
         { session: "hoiku-jisshu-riron", urlSlug: "hoiku-jisshu-riron", expectedQuestions: 20, label: "保育実習理論", categories: ["保育実習理論"] },
     ],
     seasons: ["early", "late"],
-    yearRange: { start: 2023, end: 2026 },
+    yearRange: { start: 2022, end: 2026 },
 },
 mankan: {
     code: "mankan",
