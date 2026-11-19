@@ -1804,9 +1804,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/recruit/exam.html",
     officialReuseTermsUrl: "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/policy.html",
     status: "live",
-    reuseSummary: "2025・2026年度実施の教職教養各25問を公式問題・正答と全肢の独自解説で収録。",
-    attributionTemplate: "出典：東京都教育委員会 東京都公立学校教員採用候補者選考 教職教養。解説は過去問AIの独自作成。",
-    remainingWork: ["専門教養の収録"],
+    reuseSummary: "2025・2026年度実施の教職教養50問と、2026年度の専門教養（小学校全科）15問を公式問題・正答と全肢の独自解説で収録。",
+    attributionTemplate: "出典：東京都教育委員会 東京都公立学校教員採用候補者選考。解説は過去問AIの独自作成。",
+    remainingWork: ["2025年度の小学校全科と、他の校種・教科の専門教養の収録"],
   },
   {
     slug: "tsukanshi", examCode: "tsukanshi", shortName: "通関士", fullName: "通関士試験",
