@@ -1176,7 +1176,7 @@ kangoshi: {
 "riku-toku-kokunai": {
     code: "riku-toku-kokunai", nameFull: "国内電信級陸上特殊無線技士試験", urlSlug: "riku-toku-kokunai", level: "specialist",
     sessions: [{ session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規", categories: ["無線通信の法規"] }],
-    seasons: ["february", "june", "october"], yearRange: { start: 2025, end: 2026 },
+    seasons: ["february", "june", "october"], yearRange: { start: 2023, end: 2026 },
 },
 "maritime2": {
     code: "maritime2", nameFull: "第二級海上無線通信士試験", urlSlug: "maritime2", level: "specialist",
