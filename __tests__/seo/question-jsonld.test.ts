@@ -291,7 +291,9 @@ describe("sessionLabel", () => {
             "kenki-type6": true,
             constitution: true, "civil-law": true, "criminal-law": true, "admin-law": true,
             "commercial-law": true, "civil-procedure": true, "criminal-procedure": true,
-            "tsukan-law": true, "customs-law": true, "tsukan-practical": true
+            "tsukan-law": true, "customs-law": true, "tsukan-practical": true,
+            "keisan-2": true, "keisan-3": true, "keisan-4": true,
+            "shokumotsu-2": true, "shokumotsu-pre1": true, "shokumotsu-old3": true, "shokumotsu-old2": true,
         };
         for (const session of Object.keys(SESSION_PRESENCE) as Session[]) {
             expect(sessionLabel(session)).not.toBe(session.toUpperCase());

@@ -57,7 +57,6 @@ export function practiceSessionLabel(session: Session, exam?: ExamCode): string 
   if (exam === "kanteishi" && session === "riron") return "鑑定評価理論";
   if (exam === "kaikeishi" && session === "kigyo") return "企業法";
   if (exam === "kaikeishi" && session === "zaimu") return "財務会計論";
-  if (exam === "zenkou-keisan-gijutsu" || exam === "katei-shokumotsu") return EXAM_CONFIGS[exam].sessions.find(item => item.session === session)?.label ?? session;
   return ({ "khk-ax": "甲種化学 法令", "khk-ay": "甲種化学 保安管理技術", "khk-az": "甲種化学 学識", "khk-bx": "乙種化学 法令", "khk-by": "乙種化学 保安管理技術", "khk-bz": "乙種化学 学識", "khk-cx": "丙種化学（液石） 法令", "khk-cy": "丙種化学（液石） 保安管理技術", "khk-cz": "丙種化学（液石） 学識", "khk-dx": "丙種化学（特別） 法令", "khk-dy": "丙種化学（特別） 保安管理技術", "khk-dz": "丙種化学（特別） 学識",  keikaku: "計画", "kankyo-setsubi": "環境・設備", kozo: "構造", sekou: "施工", gakushiki: "学識", gyosei: "行政法規",
 kanri: "管理会計論",
 kansa: "監査論",
@@ -80,6 +79,13 @@ constitution: "憲法",
 "tsukan-law": "通関業法",
 "customs-law": "関税法等",
 "tsukan-practical": "通関実務",
+"keisan-2": "2級",
+"keisan-3": "3級",
+"keisan-4": "4級",
+"shokumotsu-2": "2級・筆記",
+"shokumotsu-pre1": "準1級・筆記",
+"shokumotsu-old3": "旧3級・筆記",
+"shokumotsu-old2": "旧2級・筆記",
 rousai: "労災",
 koyou: "雇用保険",
 kenpo: "健康保険",

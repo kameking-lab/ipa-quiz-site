@@ -42,7 +42,10 @@ const VERIFIED_MEDICAL_EDITIONS: Readonly<Record<string, Readonly<Record<string,
   },
 };
 
-export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl"> & Partial<Pick<Question, "exam" | "fiscalYear">>): string {
+export function questionSourceEdition(q: Pick<Question, "year" | "season" | "sourcePdfUrl"> & Partial<Pick<Question, "exam" | "fiscalYear" | "sourceExamSession">>): string {
+  if ((q.exam === "zenkou-keisan-gijutsu" || q.exam === "katei-shokumotsu") && q.sourceExamSession) {
+    return `${q.year}年度 ${q.sourceExamSession}`;
+  }
   if (q.exam === "kenchiku-daiku3" && q.year === 2025 && q.season === "early") {
     return "2025年度前期（2025年7月13日実施）";
   }

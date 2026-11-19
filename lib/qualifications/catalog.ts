@@ -1238,7 +1238,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.katei-ed.or.jp/past.html",
     officialReuseTermsUrl: "https://www.katei-ed.or.jp/past.html",
     status: "live",
-    reuseSummary: "第61・62回の2級・準1級の筆記を収録。公式の問題・正答と独自解説で学べます。",
+    reuseSummary: "第61・62回の2級・準1級と第60回の旧3級・旧2級の筆記68大問を収録。公式の問題・正答と独自解説で学べます。",
     remainingWork: [],
   },
   {
