@@ -37191,5 +37191,705 @@
     "sources": [],
     "provisionalReview": true,
     "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231809-q1": {
+    "sourceHash": "eb5867b4f7d9fbc08ff7fd7addd2ca0a997c9c39901813a3ade47ebfd5aceea1",
+    "correctChoice": 2,
+    "summary": "実効線量は放射線の種類、次いで臓器・組織の感受性を考慮します。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "カーマは非荷電放射線が物質に与えた二次荷電粒子の初期運動エネルギーを質量当たりで表したものです。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "等価線量を求めるときに使うのは放射線加重係数です。組織加重係数は、その後に実効線量を求めるときに掛けます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "皮膚の評価では照射表面に近い深さに対応する70 µm線量当量を使うため、記述は正しいです。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "男性の放射線業務従事者については、5年間100 mSvと各年50 mSvの両方の限度を満たす必要があります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "作業環境で使う1 cm線量当量は、整列した放射線場でICRU球を照射したときの深さ1 cmの線量当量です。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231809-q2": {
+    "sourceHash": "0823e557c5aedd13a7616ab8fe575fd781ec2913114f394e2bde4157d3cf9b89",
+    "correctChoice": 4,
+    "summary": "吸収線量は単位質量当たりの吸収エネルギーで、単位はGyです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "照射線量は、生成された一方の符号の電荷の合計を空気の質量で割った量なので、単位はC/kgになります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "空気中の放射能をその空気の体積で割って表すので、Bq/cm³を濃度の単位として使うことができます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "周辺線量当量率は時間当たりで表す量です。1時間を基準とすれば、単位にはSv/hを使います。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "吸収線量は単なるエネルギー量でも体積で割った量でもなく、単位質量当たりの吸収エネルギーです。1 Gy＝1 J/kgです。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "表面密度はその表面に存在する放射能を面積で割った量です。面積にcm²を使えばBq/cm²で表せます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231809-q3": {
+    "sourceHash": "393e23577e42379c5abf698aedcb861ca4c7a835fe9709d523410eb3c8e03891",
+    "correctChoice": 1,
+    "summary": "候補の中では、半減期が約12年のトリチウムが最も短くなります。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "³Hの半減期は約12.3年で、約29年の⁹⁰Srや約30年の¹³⁷Csよりも短くなります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "¹⁴Cの半減期は約5,730年で、候補の中では数千年に達するため最短にはなりません。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "⁹⁰Srの半減期は約28.8年で、候補の中では短い方ですが、約12.3年の³Hよりも長くなります。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "¹³⁷Csの半減期は約30年なので、候補の中では約12年の³Hの方が短くなります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "²⁴¹Amの半減期は約432年です。約12年の³Hと比較すると大幅に長く、最短にはなりません。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231809-q4": {
+    "sourceHash": "130544232d4356e108a49871241381ed6f92053911c6461cad0af4a4463d5db1",
+    "correctChoice": 5,
+    "summary": "この条件の分解能はNaI（Tl）で6～8％、Geで0.1～0.2％程度で、効率はエネルギーごとに変わります。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "NaI（Tl）を2～3％、Geを0.01～0.02％とするのはいずれも小さすぎ、効率の横軸も異なります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "効率曲線の横軸はエネルギーですが、どちらの検出器についても示された分解能の値が小さすぎます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "Geの0.1～0.2％は合いますが、NaI（Tl）の2～3％と、効率の変数を計数率とする点が合いません。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "NaI（Tl）の6～8％は合いますが、Geの分解能は0.1～0.2％程度で、効率は光子エネルギーに依存します。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "NaI（Tl）の方がピーク幅は相対的に広く、効率曲線は光子のエネルギーを変えて求めるため、三つとも合います。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231809-q5": {
+    "sourceHash": "486357de589d1a58a4625ab3faad1da78f1cc00fe9ea7ec1bb5563425ef1efdb",
+    "correctChoice": 3,
+    "summary": "⁶⁰Coはβ⁻崩壊し、娘核種の励起状態から続けてγ線が出ます。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "後方散乱は、入射した電子が物質で散乱され、入射した側へ戻ってくる現象を指すので、記述は正しいです。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "空気に平均一対のイオンを作るために使われるエネルギーは、一般的に約34 eVです。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "⁶⁰Coはβ⁻崩壊によりニッケル60となり、その脱励起でγ線を出すため、γ線だけという記述は誤りです。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "物質中でコンプトン散乱した光子は電子にエネルギーを渡すため、直接線よりエネルギーが低くなります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "¹³⁴Csの半減期は約2.1年、⁶⁰Coは約5.3年なので、¹³⁴Csの方が短いという記述は正しいです。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231809-q6": {
+    "sourceHash": "d1ac9566c88608eb652ad035a5ba9a76e29e5123260eb25ec8895838fb68a26e",
+    "correctChoice": 4,
+    "summary": "中段に至る割合は30％＋24％÷2で、その95％がγ₁になります。毎秒300個をこの確率で割ります。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "320 Bqは、ほぼ全崩壊でγ₁が生じるとした値に近く、中段を経由する割合42％が反映されていません。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "γ₁は全崩壊の約39.9％で発生します。580 Bqではこの割合を掛けても毎秒300個には達しません。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "約710 Bqは転換電子を考えず300÷0.42で求めた値です。γ₁の割合はさらに0.95を掛けます。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "中段への確率は0.30＋0.24÷2＝0.42です。γ線になる確率を掛け、300÷（0.42×0.95）で約752 Bqです。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "上段から中段へ遷移する分のほか、直接中段に入る30％があり、両方を足すと2.6×10³ Bqは大きすぎます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231809-q7": {
+    "sourceHash": "a35ee9d50737b30437edcfeaa4c53e3d781da890ac2ec9a7bae93d8c081edbd6",
+    "correctChoice": 3,
+    "summary": "ZnS（Ag）は主としてα線用で、¹³⁷Csの測定には適しません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "³²Pはβ線を放出するため、試料を発光液に混ぜる液体シンチレーション検出器で測定できます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "⁶⁰Coのγ線はNaI（Tl）と相互作用して発光を起こすので、このサーベイメータで測定できます。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "ZnS（Ag）は主としてα線用です。¹³⁷Csのγ線を測定する場合はNaI（Tl）などを使います。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "GM管には薄い窓でα線を検出できる型があり、²⁴¹Amの汚染測定に利用できます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "⁸⁵Krは放射性希ガスで、試料空気を流せる通気型電離箱で放射能を測定することができます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231809-q8": {
+    "sourceHash": "f0c64d1e0d2cd4142e3bb180b8315cacb5a9312bebca96de148a09584077193b",
+    "correctChoice": 3,
+    "summary": "300計数のばらつきを600秒で割り、3√2を掛けて検出効率0.25で割ると、約0.49 Bqです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "0.031は背景計数率の標準偏差に近い値で、検出下限の係数や検出効率を反映していません。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "約0.12は3√2σを計数率で表した値です。放射能に直すには検出効率0.25で割る必要があります。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "背景300計数のσは√300÷600 s⁻¹です。3√2σを0.25で割ると0.49 Bqになります。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "背景の計数率の平均を基準にするのではなく、300計数の平方根を時間で割った標準偏差を基準にします。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "背景計数の√300は10分間全体の標準偏差なので、1秒当たりに換算しないと過大になります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231809-q9": {
+    "sourceHash": "d6f1dbf860b0971eaa979c6fa7cb7ae25b0e8e9356946b5dd6d2486c766f3410",
+    "correctChoice": 3,
+    "summary": "二つの独立な計数率の分散を足し、平方根を取ると約0.023 s⁻¹です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "5.4×10⁻⁴は試料側と背景側の分散を足した値です。標準偏差にするには平方根を取ります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "試料側の標準偏差だけでも√450÷1000で約0.021です。背景側の分散を加えるとさらに大きくなります。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "二つの分散を足して平方根を取るので、√（450÷1000²＋350÷2000²）≒0.023 s⁻¹です。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "計数のばらつきは測定時間を秒で割って計数率のばらつきに直すため、この選択肢よりかなり小さくなります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "28 s⁻¹は計数率の不確かさとして過大です。標準偏差を求める際はそれぞれの測定時間で規格化します。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231809-q10": {
+    "sourceHash": "e52b866f1f5600949961e2045deed1edce58caea391450a9fb35346bbd099d2e",
+    "correctChoice": 3,
+    "summary": "採取してから測る方法はサンプリング法、連続して濃度を追う方法はモニタリング法です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "方法名の順番は合いますが、この設問が求める全α線用の検出器はZnS（Ag）です。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "サンプリング法とモニタリング法は合いますが、NaI（Tl）は主にγ線向けで、全α測定にはZnS（Ag）を使います。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "採取から時間を置くのがサンプリング法、連続測定がモニタリング法で、全α計測にはZnS（Ag）を用います。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "試料を採取してから時間を置いて測る方法をモニタリング法とするのは逆です。α線用の検出器も合いません。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ZnS（Ag）は合いますが、連続して濃度を追う方がモニタリング法なので、二つの方法名の順が逆です。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231809-q11": {
+    "sourceHash": "1f9b4ef02256b0b207fda9b0e1ea9de4ff5f58d50416e3351c6d53990c65c787",
+    "correctChoice": 4,
+    "summary": "⁹⁰Srはβ⁻を放出するため、その電離を直接測れるガスフロー比例計数管が適します。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "NaI（Tl）は通常γ線を測る検出器です。低透過性のβ線を測るには、この中ではガスフロー比例計数管が適します。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "Ge半導体検出器は主にγ線のエネルギー分析用で、β線を出す⁹⁰Srの放射能測定には適しません。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "³He比例計数管では中性子捕獲で発生する荷電粒子を検出し、⁹⁰Srのβ線測定には用いません。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "⁹⁰Srからのβ線が計数管内のガスを電離して生じるパルスを数え、放射能を求められます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ZnS（Ag）は主としてα線の検出に使うため、β線を放出する⁹⁰Srの測定目的には適しません。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231809-q12": {
+    "sourceHash": "530df6ac3b604ba929e7b082d285b2d172fec37a509c614922fde11204852d71",
+    "correctChoice": 3,
+    "summary": "コバルト57、ユウロピウム152、アメリシウム241の既知の光子ピークを使って校正できます。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "¹³³Ba、²⁴¹Amは光子校正に使えますが、²⁵²Cfは自発核分裂を利用する中性子源として扱われます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "³²P、⁸⁵Kr、²⁰⁴Tlはいずれも主にβ線の測定で扱い、γ線用のエネルギー校正の組合せではありません。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "⁵⁷Co、¹⁵²Eu、²⁴¹Amは既知のエネルギーの光子を放出し、分析装置のピーク位置を校正できます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "⁶⁰Coと¹³⁷Csはγ線校正に使えますが、³⁵Sは主に低エネルギーβ線を放出します。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "¹¹C、¹⁵O、¹⁸Fは短寿命の陽電子放出核種で、種々のγ線エネルギーを既知とする校正用線源の組合せではありません。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231809-q13": {
+    "sourceHash": "6363c67738c92937c78bd1da2c619a84e42d2fcb4404b0e946863d778425de34",
+    "correctChoice": 4,
+    "summary": "クエンチングで発光が弱くなると、通常は計数や放射能を小さく評価します。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "試料液を発光液に乳化または溶解させれば、粒子のエネルギーが発光液へ効率よく移ります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "³Hや¹⁴Cのように飛程の短いβ線でも、試料と発光液を混合する方法なら測定しやすくなります。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "生じた弱いシンチレーション光を光電子増倍管で電気信号にして増幅し、計数する方式です。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "化学クエンチングは放射線一回当たりの発光を減らし、補正しないと放射能を過小評価します。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "既知の外部γ線源を照射してクエンチングの程度を求め、校正結果を用いて試料の計数効率を推定できます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231809-q14": {
+    "sourceHash": "07f6d7584fb9b5a9da10e0245cd3b4335ba1013e2490981db6fe2c8d015618f7",
+    "correctChoice": 1,
+    "summary": "シリカゲルは水蒸気を吸着し、捕集した水を回収できるため固体捕集剤に使えます。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "トリチウム化水蒸気はシリカゲルに吸着させて回収できます。酸化カルシウムの強い化学結合が有利とはいえません。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "微小な粒子の取り逃がしを抑えるため、0.3 µm粒子に対して95％以上を捕集する性能のろ紙を用います。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "放射性ヨウ素などのハロゲン系の気体は、活性炭を使うろ紙やカートリッジに吸着させて捕集します。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "α線がろ紙を抜け出せる深さには限りがあり、その平均飛程以内で捕集された粉じんの割合が表面捕集率です。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "全量を最も低い濃度限度の核種に帰属させれば、濃度限度に対して厳しい側の評価になります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231809-q15": {
+    "sourceHash": "5489cd5577027ad0aa6c7a1c6a334af667c7b2ffa7c211e030dc4b9fb496f618",
+    "correctChoice": 2,
+    "summary": "¹⁴CO₂は、活性炭含浸ろ紙でなく二酸化炭素を吸収する捕集液で採取します。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "トリチウム化水蒸気は捕集用電離箱で生じる電離電流を、微小電流計で測る方法で測定できます。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "¹⁴CO₂は二酸化炭素を吸収できる液で捕らえます。活性炭含浸ろ紙は主に放射性ヨウ素などの捕集に使います。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "放射性ヨウ化メチルを活性炭カートリッジで捕集し、ヨウ素131のγ線をGe半導体検出器で測定できます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "粒子状の酸化プルトニウムをろ紙で捕集し、²³⁹Puのα線をSi半導体検出器で測定できます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "粒子状の酸化コバルトはろ紙で捕集可能で、⁶⁰Coからの放射線は対応したGM検出器で計数できます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231809-q16": {
+    "sourceHash": "da21b69c3710a95bbbb9e31fbec883844bc2d3c26434407840f6fad998286218",
+    "correctChoice": 1,
+    "summary": "吸引した総空気量に濃度と捕集効率を掛け、捕集液180 cm³で割ると約129 Bq/cm³です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "0.8 L/min×168×60分をcm³に直し、3.2×10⁻³と0.90を掛けて180 cm³で割ると約129 Bq/cm³です。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "捕集効率90％を掛ける前でも液の濃度は約143 Bq/cm³です。効率を反映すると1.6×10²には届きません。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "求めるのは捕集液1 cm³当たりの放射能です。吸引量をcm³へ換算し168時間を分に直すと約129 Bq/cm³になります。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "捕集された放射能は約2.32×10⁴ Bqです。液量180 cm³で割った場合は250 Bq/cm³まで達しません。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "空気から液へ移る割合を90％として計算し、残った液180 cm³で割るので、千Bq/cm³以上にはなりません。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231809-q17": {
+    "sourceHash": "b3a08610e088dafd36e6be98fafa7bcce32ae4a1580067def1375d9cd8fc5d55",
+    "correctChoice": 5,
+    "summary": "水バブラーで他のガスと分けて測れ、シリカゲルは長時間の連続採取に使えます。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "内壁が汚染されやすいのは水蒸気形です。また、電離箱では他核種との分離が常に不可能とはいえません。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "㋩の水バブラーによる分離は正しい一方、㋑は捕集用電離箱での分離可能性を全て否定している点が不適切です。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "㋩は合いますが、㋺のガス状トリチウムは水蒸気形より壁面に残りやすいわけではありません。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "シリカゲルによる長期捕集は正しいですが、電離箱内壁をより汚染しやすいのはトリチウム化水蒸気です。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "水バブラーで水蒸気を水に取り込み、他のガスと分けられます。シリカゲルは長期の連続採取にも使えます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231809-q18": {
+    "sourceHash": "c6a1288dcaed227ac7e8f01d81b129fbbc5eb17a1b446372db2d3db178c3db5b",
+    "correctChoice": 2,
+    "summary": "平均93.5 L/minで168時間吸引した空気量に目標濃度と計数効率を掛けると約18.5 s⁻¹です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "100と87 L/minの平均で168時間の吸引量を求め、7.0×10⁻⁸ Bq/cm³と28％を掛けると13より大きくなります。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "93.5×168×60×1000 cm³に、7.0×10⁻⁸ Bq/cm³と0.28を掛けた約18.5 s⁻¹に最も近い値です。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "直線的に流量が変化するので、流量は開始時だけでなく前後の算術平均を使います。24 s⁻¹は大きすぎます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "37 s⁻¹は両端の流量を足したまま使ったときの約2倍の結果です。正しくは足して2で割ります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "試料の放射能と検出された計数率は異なります。目標濃度での捕集放射能に計数効率0.28を掛けます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231809-q19": {
+    "sourceHash": "8339f0131f82d511aa7669c6207d03cced8915a5d2e708454aed27d240963fa7",
+    "correctChoice": 5,
+    "summary": "定期的な作業環境測定では経時変化を追うため、前回と同じ位置を測るのが原則です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "各単位作業場所の代表となる線量当量率を把握するため、少なくとも1箇所で測定します。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "床面から約1 mの高さを基準にすると、作業者に近い高さで条件をそろえて測定できます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "中性子線とγ線は別々に評価します。それぞれ線量当量率が高くなると見込まれる場所を測定します。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "境界で直接測定できないときは、境界の線量当量率を推定できる場所を選んで測ることができます。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "測定点を変えると位置の影響と経時変化を区別しにくくなるため、原則として前回と同じ測定点を選びます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231809-q20": {
+    "sourceHash": "b79340a37d19a73592fc0e44a970215c7cbe1a0826ba419c8a2cc94031bfa7fa",
+    "correctChoice": 5,
+    "summary": "この端窓型GM計数管のガスモニタは、主にガス状β線放出核種の検出に用います。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "α線は飛程が短くガス中でエネルギーを失いやすく、β線より電離を効率よく捉えられます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "電離箱は、動作電圧を飽和領域に設定して放射線によって生じたイオンを安定して集めます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "容積が変われば同じ濃度でも箱内に入る放射性物質の量が変わるため、検出下限濃度も変化します。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "直接捕集法では十分な試料量を確保するため、原則として1000 cm³以上の捕集容器を用います。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "端窓を設けたGM計数管は、窓を通過するβ線の検出を目的としたガスモニタに使います。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
   }
 }
