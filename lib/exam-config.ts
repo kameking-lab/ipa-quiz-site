@@ -1802,7 +1802,7 @@ sokuryoshiho: {
     level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 20, label: "物理基礎", categories: ["力学", "熱", "波動", "電気", "放射線", "エネルギー"] }],
     seasons: ["first", "second"],
-    yearRange: { start: 2024, end: 2024 },
+    yearRange: { start: 2023, end: 2024 },
 },
 "zensho-calc": {
     code: "zensho-calc",
