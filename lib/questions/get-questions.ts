@@ -365,6 +365,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 
 
 "kounin-geography": async () => isExamPublished("kounin-geography") ? (await import("@/data/questions/kounin-geography")).KOUNIN_GEOGRAPHY_QUESTIONS : [],
+"rodo-kijun-kantokukan": async () => isExamPublished("rodo-kijun-kantokukan") ? (await import("@/data/questions/rodo-kijun-kantokukan")).RODO_KIJUN_KANTOKUKAN_QUESTIONS : [],
 "kogai-16": async () => isExamPublished("kogai-16") ? (await import("@/data/questions/kogai-16")).KOGAI_16_QUESTIONS : [],
 "kanken-10": async () => isExamPublished("kanken-10") ? (await import("@/data/questions/kanken-10")).KANKEN_10_QUESTIONS : [],
 "zensho-boki-2": async () => isExamPublished("zensho-boki-2") ? (await import("@/data/questions/zensho-boki-2")).ZENSHO_BOKI_2_QUESTIONS : [],

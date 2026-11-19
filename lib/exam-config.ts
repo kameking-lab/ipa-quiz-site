@@ -2001,6 +2001,11 @@ caremanager: {
     ],
     seasons: ["round2", "round1"], yearRange: { start: 2022, end: 2024 },
 },
+"rodo-kijun-kantokukan": {
+    code: "rodo-kijun-kantokukan", nameFull: "労働基準監督官採用試験", urlSlug: "rodo-kijun-kantokukan", level: "specialist",
+    sessions: [{ session: "senmon", urlSlug: "senmon-a", expectedQuestions: 48, label: "専門試験（労働基準監督Ａ）", categories: ["労働法", "労働統計・労使関係", "憲法・行政法・財政", "民法・刑法", "経済", "労働経済・社会保障・社会学"] }],
+    seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
+},
 "kogai-16": {
     code: "kogai-16", nameFull: "公害防止管理者等国家試験", urlSlug: "kogai-16", level: "specialist",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 290, label: "学科試験", categories: ["公害総論", "大気概論", "大気特論", "ばいじん・粉じん特論", "大気有害物質特論", "大規模大気特論", "水質概論", "汚水処理特論", "水質有害物質特論", "大規模水質特論", "騒音・振動概論", "騒音・振動特論", "ばいじん・一般粉じん特論", "ダイオキシン類概論", "ダイオキシン類特論", "大気・水質概論", "大気関係技術特論", "水質関係技術特論"] }],

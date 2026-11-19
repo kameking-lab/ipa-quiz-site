@@ -1844,6 +1844,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
   },
   {
+    slug: "rodo-kijun-kantokukan", examCode: "rodo-kijun-kantokukan", shortName: "労働基準監督官", fullName: "労働基準監督官採用試験",
+    domain: "welfare", administrator: "人事院",
+    officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_23.html",
+    officialReuseTermsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_23.html", status: "live",
+    reuseSummary: "人事院が公表した多肢選択式の問題と正答を、全肢解説付きで収録。",
+    attributionTemplate: "出典：人事院 労働基準監督官採用試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
+  {
     slug: "kogai-16", examCode: "kogai-16", shortName: "公害防止管理者", fullName: "公害防止管理者等国家試験",
     domain: "safety", administrator: "一般社団法人産業環境管理協会",
     officialQuestionsUrl: "https://www.jemai.or.jp/polconman/examination/past.html",
