@@ -2009,7 +2009,7 @@ caremanager: {
 "kanken-10": {
     code: "kanken-10", nameFull: "日本漢字能力検定 10級", urlSlug: "kanken-10", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 81, label: "10級", categories: ["漢字の読み", "筆順", "ひらがなの書き取り", "漢字の書き取り"] }],
-    seasons: ["february"], yearRange: { start: 2023, end: 2026 },
+    seasons: ["february"], yearRange: { start: 2022, end: 2026 },
 },
 "zensho-boki-2": {
     code: "zensho-boki-2", nameFull: "全商簿記実務検定試験 2級", urlSlug: "zensho-boki-2", level: "basic",
