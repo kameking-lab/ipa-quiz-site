@@ -1383,6 +1383,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
 },
   {
+    slug: "zensho-english", examCode: "zensho-english", shortName: "全商英語検定", fullName: "全商英語検定試験",
+    domain: "personal-services", administrator: "公益財団法人全国商業高等学校協会",
+    officialQuestionsUrl: "https://zensho.or.jp/examination/pastexams/english/",
+    officialReuseTermsUrl: "https://zensho.or.jp/examination/pastexams/",
+    status: "live",
+    reuseSummary: "全商英語検定1〜3級の公式問題と正答を、解答欄ごとに独自の全選択肢解説付きで収録。",
+    attributionTemplate: "出典：公益財団法人全国商業高等学校協会 英語検定試験。解説は過去問AI作成。",
+    remainingWork: [],
+  },
+  {
     slug: "jken-katsuyo3", examCode: "jken-katsuyo3", shortName: "J検 情報活用3級", fullName: "情報検定（J検）情報活用3級",
     domain: "information-technology", administrator: "一般財団法人職業教育・キャリア教育財団",
     officialQuestionsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",

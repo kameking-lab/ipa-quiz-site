@@ -224,6 +224,7 @@ jokaso: async () => isExamPublished("jokaso") ? (await import("@/data/questions/
 "iji-shuzen": async () => isExamPublished("iji-shuzen") ? (await import("@/data/questions/iji-shuzen")).IJI_SHUZEN_QUESTIONS : [],
 denki1: async () => isExamPublished("denki1") ? (await import("@/data/questions/denki1")).DENKI1_QUESTIONS : [],
 shuwa: async () => isExamPublished("shuwa") ? (await import("@/data/questions/shuwa")).SHUWA_QUESTIONS : [],
+"zensho-english": async () => isExamPublished("zensho-english") ? (await import("@/data/questions/zensho-english")).ZENSHO_ENGLISH_QUESTIONS : [],
 "jken-katsuyo3": async () => isExamPublished("jken-katsuyo3") ? (await import("@/data/questions/jken-katsuyo3")).JKEN_KATSUYO3_QUESTIONS : [],
 "jken-katsuyo2": async () => isExamPublished("jken-katsuyo2") ? (await import("@/data/questions/jken-katsuyo2")).JKEN_KATSUYO2_QUESTIONS : [],
 "jken-katsuyo1": async () => isExamPublished("jken-katsuyo1") ? (await import("@/data/questions/jken-katsuyo1")).JKEN_KATSUYO1_QUESTIONS : [],

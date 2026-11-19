@@ -6,6 +6,7 @@ export const PRACTICE_SESSIONS: readonly Session[] = ["yakkan", "jitsumu", "pate
 
 /** Specialist practice starts with the specialist paper; common AM I is explicit. */
 export function defaultPracticeSession(exam: ExamCode, year?: number): Session {
+  if (exam === "zensho-english") return "gakka-III";
   if (!["ip","sg","fe","ap","st","sa","pm","nw","db","es","sc","sm","au","fp2","fp1","fp3","denken3","denken2","denken1","denko2","denko1","takken","civil2","kankoji2","zoen2","zoen1","tsushin2","tsushin1","kaigo","civil1","shakai","seishin","tohan","kanri","eisei1","eisei2","soukan","hoikushi","mankan","kashikin","sharoushi","kangoshi","yakuzaishi","ahaki-anma","ahaki-hari-kyu","hokenshi","josanshi","rigaku-ryohoshi","sagyo-ryohoshi","shino-kunrenshi","rinsho-kensagishi","shinryo-hoshasengishi","rinsho-kogishi","shika-ishi","riyoshi","chusho-kigyo-shindanshi","chosashi","judo-seifukushi","riku-toku-kokunai","kai-toku2","kai-toku3","koku-toku","land-special1","riku-tech1","maritime4","aviation-comm","amateur1","maritime-special1","riku-tech2","amateur2","maritime-radar","general1","general2","general3","maritime3","maritime2","maritime1","land-special2","land-special3","kanteishi","kaikeishi","gas-kou","gas-otsu","gas-hei"].includes(exam)) return EXAM_CONFIGS[exam]?.sessions[0]?.session ?? "gakka";
 
   if (exam === "kenchiku-setsubishi") return "am1";
@@ -36,6 +37,7 @@ export function parsePracticeSession(value?: string): Session | undefined {
 }
 
 export function practiceSessionLabel(session: Session, exam?: ExamCode): string {
+  if (exam === "zensho-english") return EXAM_CONFIGS[exam].sessions.find(item => item.session === session)?.label ?? session;
   if (exam && ["unko-kanrisha-ryokaku", "shobo-setsubishi-kou1", "kikenbutsu-kou", "kikenbutsu-hei", "kikenbutsu-otsu4", "unko-kanrisha-kamotsu", "shobo-setsubishi-otsu6", "shobo-setsubishi-kou4"].includes(exam)) {
     return EXAM_CONFIGS[exam].sessions.find(item => item.session === session)?.label ?? session;
   }

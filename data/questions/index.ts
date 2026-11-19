@@ -298,6 +298,7 @@ import { DENKI1_QUESTIONS } from "./denki1";
 import { SHUWA_QUESTIONS } from "./shuwa";
 import { JKEN_KATSUYO1_QUESTIONS } from "./jken-katsuyo1";
 import { JKEN_KATSUYO2_QUESTIONS } from "./jken-katsuyo2";
+import { ZENSHO_ENGLISH_QUESTIONS } from "./zensho-english";
 import { JKEN_KATSUYO3_QUESTIONS } from "./jken-katsuyo3";
 import { JKEN_SYSTEM_QUESTIONS } from "./jken-system";
 import { SHINRISHI_QUESTIONS } from "./shinrishi";
@@ -591,6 +592,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("iji-shuzen") ? { "iji-shuzen": IJI_SHUZEN_QUESTIONS } : {}),
 ...(isExamPublished("denki1") ? { denki1: DENKI1_QUESTIONS } : {}),
 ...(isExamPublished("shuwa") ? { shuwa: SHUWA_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+...(isExamPublished("zensho-english") ? { "zensho-english": ZENSHO_ENGLISH_QUESTIONS } : {}),
 ...(isExamPublished("jken-katsuyo3") ? { "jken-katsuyo3": JKEN_KATSUYO3_QUESTIONS } : {}),
 ...(isExamPublished("jken-katsuyo2") ? { "jken-katsuyo2": JKEN_KATSUYO2_QUESTIONS } : {}),
 ...(isExamPublished("jken-katsuyo1") ? { "jken-katsuyo1": JKEN_KATSUYO1_QUESTIONS } : {}),

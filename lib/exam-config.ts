@@ -1469,6 +1469,15 @@ shuwa: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "情報活用2級", categories: ["経営戦略とシステム戦略", "プロジェクトマネジメント", "データ構造と情報表現", "問題解決処理手順", "パソコンの基礎", "インターネットの基礎", "アプリケーションソフトの利用"] }],
     seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
 },
+"zensho-english": {
+    code: "zensho-english", nameFull: "全商英語検定試験", urlSlug: "zensho-english", level: "basic",
+    sessions: [
+        { session: "gakka-I", urlSlug: "gakka-I", expectedQuestions: 60, label: "1級", categories: ["発音・アクセント", "聞き方", "読解", "会話", "語彙・表現", "語順"] },
+        { session: "gakka-II", urlSlug: "gakka-II", expectedQuestions: 60, label: "2級", categories: ["発音・アクセント", "会話・発音", "聞き方", "読解", "会話", "語彙・表現", "文法", "語順"] },
+        { session: "gakka-III", urlSlug: "gakka-III", expectedQuestions: 60, label: "3級", categories: ["発音・アクセント", "会話・発音", "聞き方", "読解", "会話", "会話・文脈", "語彙・表現", "文法", "語順"] },
+    ],
+    seasons: ["first", "second"], yearRange: { start: 2022, end: 2026 },
+},
 "jken-katsuyo3": {
     code: "jken-katsuyo3", nameFull: "情報検定（J検）情報活用3級", urlSlug: "jken-katsuyo3", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 46, label: "情報活用3級", categories: ["情報表現と処理手順", "パソコンの基礎", "インターネットの基礎", "インターネットの利用", "情報機器の基本操作", "情報社会とコンピュータ", "情報モラル"] }],
