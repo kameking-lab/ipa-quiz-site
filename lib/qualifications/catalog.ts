@@ -1231,7 +1231,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     domain: "safety", administrator: "一般財団法人 気象業務支援センター",
     officialQuestionsUrl: "https://www.jmbsc.or.jp/jp/examination/examination-7.html",
     officialReuseTermsUrl: "https://www.jmbsc.or.jp/jp/examination/examination-7.html", status: "live",
-    reuseSummary: "第65・66回の学科60問・全肢解説、実技18問・237回答欄を収録。実技は公式解答例・作図との手動照合です。",
+    reuseSummary: "第64〜66回の学科90問・全肢解説と実技26問を収録。実技は公式解答例・作図との手動照合です。",
     attributionTemplate: "出典：一般財団法人 気象業務支援センター 気象予報士試験問題・解答例。画像化・表記整理、解説は過去問AI作成。",
     remainingWork: [] },
   {

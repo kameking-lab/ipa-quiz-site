@@ -63,6 +63,7 @@ import { z } from "zod";
 import { validateDojoOsenStaging } from "@/data/qualification-staging/dojo-osen";
 import { validateKhkHanbaiStaging } from "./validate-khk-hanbai";
 import { KIKAI_HOZEN_STAGED_QUESTIONS } from "@/data/qualification-staging/kikai-hozen";
+import { KISHO_ROUND_64_PRACTICAL_QUESTIONS } from "@/data/questions/kisho";
 import { RIYOSHI_CANDIDATES } from "@/data/questions/riyoshi";
 import { validateSokuryoshiStaging } from "./qualification-ingestion/validate-sokuryoshi";
 import { validateJokasoSetsubishiStaging } from "./lib/jokaso-setsubishi-staging";
@@ -82,7 +83,7 @@ import { readKhk2026Sales, validateKhk2026Sales } from "./lib/validate-khk-2026-
 // before their release gate can be lifted.
 const VALIDATION_QUESTIONS = [
   ...new Map(
-    [...ALL_QUESTIONS, ...GENGO_CHOKAKUSHI_QUESTIONS, ...K11_OTSU4, ...K11_RYOKAKU, ...K11_KOU1, ...K11_KIKEN_KOU, ...K11_HEI, ...K11_KOU, ...K11_OTSU, ...K11_KAMOTSU, ...SEKOU_1KENCHIKU_QUESTIONS, ...KENCHIKUSHI1_CANDIDATES, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
+    [...ALL_QUESTIONS, ...KISHO_ROUND_64_PRACTICAL_QUESTIONS, ...GENGO_CHOKAKUSHI_QUESTIONS, ...K11_OTSU4, ...K11_RYOKAKU, ...K11_KOU1, ...K11_KIKEN_KOU, ...K11_HEI, ...K11_KOU, ...K11_OTSU, ...K11_KAMOTSU, ...SEKOU_1KENCHIKU_QUESTIONS, ...KENCHIKUSHI1_CANDIDATES, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
   ).values(),
 ];
 
@@ -117,7 +118,7 @@ function parseCliOptions(): CliOptions {
 const QuestionSchema = z.object({
   id: z.string().min(1),
   exam: z.enum(Object.keys(EXAM_CONFIGS) as [string, ...string[]]),
-  session: z.enum([...PRACTICE_SESSIONS] as [string, ...string[]]),
+  session: z.enum([...PRACTICE_SESSIONS, "pm1", "pm2"]),
   year: z.number().int().min(2000).max(2100),
   season: z.enum(["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai", "february", "june", "august", "march", "round1", "round2"]),
   qNumber: z.number().int().min(1),

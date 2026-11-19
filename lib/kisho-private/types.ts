@@ -57,7 +57,7 @@ export interface ImageAsset {
 
 export interface SourceQuestion {
   questionId: string;
-  round: 65 | 66;
+  round: 64 | 65 | 66;
   session: KishoSession;
   qNumber: number;
   questionPages: PageReference[];
