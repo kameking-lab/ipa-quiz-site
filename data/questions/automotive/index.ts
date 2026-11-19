@@ -7,6 +7,7 @@ import priorAssets from "./prior-assets.json";
 import electrical2023 from "./electrical-2023.json";
 import electrical2022 from "./electrical-2022.json";
 import electrical2023Second from "./electrical-2023-second.json";
+import electrical2022Second from "./electrical-2022-second.json";
 
 export type AutomotiveExamCode =
   | "jidosha-1-small-written" | "jidosha-2-gasoline" | "jidosha-2-diesel"
@@ -42,7 +43,10 @@ export const AUTOMOTIVE_QUESTIONS: Question[] = [...reviewed, ...priorSittings].
   needsReview: false,
   imageUrls: imageBindings[q.id].map((asset) => asset.url),
   imageAltTexts: imageBindings[q.id].map((asset) => `${q.sourceAttribution} 原問題の図表（PDF ${asset.physicalPage}ページ）`),
-})).concat(electrical2023Second as Question[], electrical2023 as Question[], electrical2022 as Question[]);
+})).concat(
+  electrical2023Second as Question[], electrical2023 as Question[],
+  electrical2022Second as Question[], electrical2022 as Question[],
+);
 
 export function getAutomotiveQuestions(exam: AutomotiveExamCode): Question[] {
   return AUTOMOTIVE_QUESTIONS.filter((q) => q.exam === exam);

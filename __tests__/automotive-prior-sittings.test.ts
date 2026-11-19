@@ -94,7 +94,7 @@ describe("automotive previous sittings (W2)", () => {
       const exam = `jidosha-${subject}` as AutomotiveExamCode;
       const questions = getAutomotiveQuestions(exam);
       expect(questions.filter((q) => AUTOMOTIVE_PRIOR_SITTING_IDS.has(q.id)).length, exam).toBe(prior.filter((q) => q.subject === subject).length);
-      expect(new Set(questions.map((q) => `${q.year}-${q.season}`)).size, exam).toBe(2);
+      expect(new Set(questions.map((q) => `${q.year}-${q.season}`)).size, exam).toBe(subject === "electrical" ? 6 : 2);
     }
   });
 });
