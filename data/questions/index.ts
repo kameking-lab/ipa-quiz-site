@@ -226,6 +226,7 @@ import { TSUSHIN2_QUESTIONS } from "./tsushin2";
 import { TSUSHIN1_QUESTIONS } from "./tsushin1";
 import { KAIGO_QUESTIONS } from "./kaigo";
 import { CIVIL1_QUESTIONS } from "./civil1";
+import { KATEI_HIFUKU_QUESTIONS } from "./katei-hifuku";
 import { SHAKAI_QUESTIONS } from "./shakai";
 import { SEISHIN_QUESTIONS } from "./seishin";
 import { TOHAN_QUESTIONS } from "./tohan";
@@ -539,6 +540,7 @@ takken: TAKKEN_QUESTIONS,
 ...(isExamPublished("tsushin1") ? { tsushin1: TSUSHIN1_QUESTIONS } : {}),
 ...(isExamPublished("kaigo") ? { kaigo: KAIGO_QUESTIONS } : {}),
 ...(isExamPublished("civil1") ? { civil1: CIVIL1_QUESTIONS } : {}),
+...(isExamPublished("katei-hifuku") ? { "katei-hifuku": KATEI_HIFUKU_QUESTIONS } : {}),
 ...(isExamPublished("shakai") ? { shakai: SHAKAI_QUESTIONS } : {}),
 ...(isExamPublished("seishin") ? { seishin: SEISHIN_QUESTIONS } : {}),
 ...(isExamPublished("tohan") ? { tohan: TOHAN_QUESTIONS } : {}),

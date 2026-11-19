@@ -757,6 +757,21 @@ civil1: {
     seasons: ["july"],
     yearRange: { start: 2026, end: 2026 },
 },
+"katei-hifuku": {
+    code: "katei-hifuku",
+    nameFull: "全国高等学校家庭科被服製作技術検定",
+    urlSlug: "katei-hifuku",
+    level: "basic",
+    sessions: [{
+        session: "gakka",
+        urlSlug: "gakka",
+        expectedQuestions: 20,
+        label: "2級・旧3級（筆記）",
+        categories: ["被服材料", "衣服の手入れ", "採寸・衣服の構成", "裁断・型紙", "裁縫用具・縫製"],
+    }],
+    seasons: ["first"],
+    yearRange: { start: 2025, end: 2025 },
+},
 shakai: {
     code: "shakai",
     nameFull: "社会福祉士国家試験",
