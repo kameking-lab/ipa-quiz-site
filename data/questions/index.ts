@@ -346,6 +346,7 @@ import { QUESTIONS as KIKENBUTSU_OTSU3_QUESTIONS } from "./kikenbutsu-otsu3";
 import { QUESTIONS as KHK_HANBAI_QUESTIONS } from "./khk-hanbai";
 import { QUESTIONS as SHOBO_SETSUBISHI_OTSU4_QUESTIONS } from "./shobo-setsubishi-otsu4";
 import { QUESTIONS as SHOBO_SETSUBISHI_OTSU7_QUESTIONS } from "./shobo-setsubishi-otsu7";
+import { QUESTIONS as SHOBO_SETSUBISHI_KOU3_QUESTIONS } from "./shobo-setsubishi-kou3";
 import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
@@ -722,6 +723,7 @@ biyoshi: BIYOSHI_QUESTIONS,
   ...(isExamPublished("khk-hanbai") ? { "khk-hanbai": KHK_HANBAI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("shobo-setsubishi-otsu4") ? { "shobo-setsubishi-otsu4": SHOBO_SETSUBISHI_OTSU4_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("shobo-setsubishi-otsu7") ? { "shobo-setsubishi-otsu7": SHOBO_SETSUBISHI_OTSU7_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("shobo-setsubishi-kou3") ? { "shobo-setsubishi-kou3": SHOBO_SETSUBISHI_KOU3_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("tsukanshi") ? { "tsukanshi": TSUKANSHI_QUESTIONS } : {})
 };
 
