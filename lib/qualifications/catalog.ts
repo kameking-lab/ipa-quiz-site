@@ -1377,7 +1377,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.fcip-shiken.jp/about/index.html",
     officialReuseTermsUrl: "https://www.fcip-shiken.jp/about/index.html",
     status: "live",
-    reuseSummary: "令和8・7年度の全178問、公式正答、全選択肢の独自解説と必要な図を収録。法令・規程は出題時点に基づく。",
+    reuseSummary: "令和6〜8年度の第一次検定267問、公式正答、全選択肢の独自解説と必要な図を収録。法令・規程は出題時点に基づく。",
     attributionTemplate: "出典：一般財団法人建設業振興基金 1級電気工事施工管理技術検定 第一次検定。解説は過去問AI作成。",
     remainingWork: [],
 },

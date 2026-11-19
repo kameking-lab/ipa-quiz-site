@@ -1453,7 +1453,7 @@ denki1: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 89, label: "第一次検定",
             categories: ["電気工学等（必須）", "電気工学等（選択）", "電気設備（選択）", "関連分野（選択）", "施工管理法（必須）", "施工管理法・応用能力（必須）", "施工管理法（選択）", "法規（選択）"],
         }],
-    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+    seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
 shuwa: {
     code: "shuwa", nameFull: "手話通訳士（学科試験）", urlSlug: "shuwa", level: "specialist",
