@@ -85,7 +85,7 @@ const VALIDATION_QUESTIONS = [
   ...new Map(
     [...ALL_QUESTIONS, ...GENGO_CHOKAKUSHI_QUESTIONS, ...K11_OTSU4, ...K11_RYOKAKU, ...K11_KOU1, ...K11_KIKEN_KOU, ...K11_HEI, ...K11_KOU, ...K11_OTSU, ...K11_KAMOTSU, ...SEKOU_1KENCHIKU_QUESTIONS, ...KENCHIKUSHI1_CANDIDATES, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
   ).values(),
-  ...KISHO_HISTORICAL_ROUNDS.flatMap(round => round.practical.map(({ raw }) => raw as Question)),
+  ...KISHO_HISTORICAL_ROUNDS.flatMap(round => round.practical.map(({ raw }) => raw)),
 ];
 
 // ─── CLI ─────────────────────────────────────────────────────────────────────
