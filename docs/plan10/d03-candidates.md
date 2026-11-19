@@ -42,6 +42,7 @@
 | 広島県・広島市 | 2026 | 第1次 教職に関する専門教育科目 | 22 | [問題](https://www.pref.hiroshima.lg.jp/uploaded/attachment/676989.pdf)・[採点基準](https://www.pref.hiroshima.lg.jp/uploaded/attachment/676991.pdf) |
 | 広島県・広島市 | 2025 | 第1次 教職に関する専門教育科目 | 17 | [問題](https://www.pref.hiroshima.lg.jp/uploaded/attachment/632142.pdf)・[採点基準](https://www.pref.hiroshima.lg.jp/uploaded/attachment/632145.pdf) |
 | 広島県・広島市 | 2024 | 第1次 教職に関する専門教育科目（小学校・養護・栄養） | 19 | [問題](https://www.pref.hiroshima.lg.jp/uploaded/attachment/586552.pdf)・[採点基準](https://www.pref.hiroshima.lg.jp/uploaded/attachment/586593.pdf) |
+| 広島県・広島市 | 2024 | 第1次 教職に関する専門教育科目（中学校・高等学校） | 19 | [問題](https://www.pref.hiroshima.lg.jp/uploaded/attachment/586555.pdf)・[採点基準](https://www.pref.hiroshima.lg.jp/uploaded/attachment/586594.pdf) |
 | 沖縄県 | 2026 | 第1次 一般教養・教職教養（午前の部） | 44 | [問題](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/040/383/r8am.pdf)・[正答・配点](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/040/383/r8-2syuuseiseitouhaiten.pdf) |
 | 沖縄県 | 2026 | 第1次 一般教養・教職教養（午後の部） | 45 | [問題](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/040/383/r8pm.pdf)・[正答・配点](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/040/383/r8-2syuuseiseitouhaiten.pdf) |
 | 高知県 | 2025 | 第1次 教職・一般教養 | 39 | [問題](https://www.pref.kochi.lg.jp/doc/2019112600143/file_contents/file_2025112631592_1.pdf)・[正答](https://www.pref.kochi.lg.jp/doc/2019112600143/file_contents/file_2025112631592_2.pdf) |

@@ -143,6 +143,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     sessions: [
       { session: "kyotsu", urlSlug: "kyotsu", expectedQuestions: 22, label: "第1次選考 教職教養", categories: ["教育法規", "教育課程", "教育心理", "学習評価", "特別支援教育", "学校保健", "生徒指導"] },
       { session: "kyoshoku-sho", urlSlug: "kyoshoku-sho", expectedQuestions: 19, label: "教職教養（小学校・養護・栄養）", categories: ["教育法規", "教育課程", "教育心理", "教育原理", "特別支援教育", "学校保健", "生徒指導"] },
+      { session: "kyoshoku-chuko", urlSlug: "kyoshoku-chuko", expectedQuestions: 19, label: "教職教養（中学校・高等学校）", categories: ["教育法規", "教育課程", "教育心理", "教育原理", "特別支援教育", "学校保健", "生徒指導"] },
     ],
     seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
   },
