@@ -1995,8 +1995,8 @@ caremanager: {
 "kokka-ippan-dai": {
     code: "kokka-ippan-dai", nameFull: "国家公務員採用一般職試験（大卒程度試験）", urlSlug: "kokka-ippan-dai", level: "specialist",
     sessions: [
-        { session: "kadai-taiou", urlSlug: "kadai-taiou", expectedQuestions: 120, label: "課題対応能力試験（教養区分）", categories: ["演算記号", "文字の置き換え", "表による分類"] },
-    ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
+        { session: "kadai-taiou", urlSlug: "kadai-taiou", expectedQuestions: 120, label: "課題対応能力試験（教養区分）", categories: ["演算記号", "文字の置き換え", "表による分類", "表の計算", "表の照合"] },
+    ], seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
 },
 "kokka-ippan-kou": {
     code: "kokka-ippan-kou", nameFull: "国家公務員採用一般職試験（高卒者試験）", urlSlug: "kokka-ippan-kou", level: "basic",

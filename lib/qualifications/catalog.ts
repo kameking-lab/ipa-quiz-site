@@ -1784,9 +1784,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_15.html",
     officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
     status: "live",
-    reuseSummary: "2026年度教養区分の課題対応能力試験120問を公式正答・全肢解説付きで収録。",
+    reuseSummary: "2025・2026年度の教養区分の課題対応能力試験240問を公式正答・全肢解説付きで収録。",
     attributionTemplate: "出典：人事院「一般職試験（大卒程度試験）」。解説は過去問AIの独自作成。",
-    remainingWork: ["課題対応能力試験の2025年度と未収録の専門試験等の補充"],
+    remainingWork: ["未収録の専門試験等の補充"],
   },
   {
     slug: "kokka-ippan-kou", examCode: "kokka-ippan-kou", shortName: "国家一般職（高卒者）", fullName: "国家公務員採用一般職試験（高卒者試験）",
