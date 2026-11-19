@@ -772,6 +772,19 @@ civil1: {
     seasons: ["first", "second"],
     yearRange: { start: 2024, end: 2025 },
 },
+"zenkou-pc": {
+    code: "zenkou-pc",
+    nameFull: "パソコン利用技術検定試験",
+    urlSlug: "zenkou-pc",
+    level: "basic",
+    sessions: [
+        { session: "gakka-I", urlSlug: "1-kyu", expectedQuestions: 20, label: "1級・筆記（データベース）", categories: ["データベース", "ハードウェア", "ネットワーク", "情報の表現", "情報と社会"] },
+        { session: "gakka-II", urlSlug: "2-kyu", expectedQuestions: 18, label: "2級・筆記（表計算）", categories: ["表計算", "ハードウェア", "情報の表現", "基本操作"] },
+        { session: "gakka-III", urlSlug: "3-kyu", expectedQuestions: 20, label: "3級・筆記（ワープロ）", categories: ["ワープロ", "基本操作", "日本語入力"] },
+    ],
+    seasons: ["first"],
+    yearRange: { start: 2026, end: 2026 },
+},
 shakai: {
     code: "shakai",
     nameFull: "社会福祉士国家試験",

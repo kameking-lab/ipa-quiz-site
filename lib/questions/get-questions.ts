@@ -173,6 +173,7 @@ tsushin1: async () => isExamPublished("tsushin1") ? (await import("@/data/questi
 kaigo: async () => isExamPublished("kaigo") ? (await import("@/data/questions/kaigo")).KAIGO_QUESTIONS : [],
 civil1: async () => isExamPublished("civil1") ? (await import("@/data/questions/civil1")).CIVIL1_QUESTIONS : [],
 "katei-hifuku": async () => isExamPublished("katei-hifuku") ? (await import("@/data/questions/katei-hifuku")).KATEI_HIFUKU_QUESTIONS : [],
+"zenkou-pc": async () => isExamPublished("zenkou-pc") ? (await import("@/data/questions/zenkou-pc")).ZENKOU_PC_QUESTIONS : [],
 shakai: async () => isExamPublished("shakai") ? (await import("@/data/questions/shakai")).SHAKAI_QUESTIONS : [],
 seishin: async () => isExamPublished("seishin") ? (await import("@/data/questions/seishin")).SEISHIN_QUESTIONS : [],
 tohan: async () => isExamPublished("tohan") ? (await import("@/data/questions/tohan")).TOHAN_QUESTIONS : [],
