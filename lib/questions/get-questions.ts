@@ -364,6 +364,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 
 
 
+"biz-career-logistics3": async () => isExamPublished("biz-career-logistics3") ? (await import("@/data/questions/biz-career-logistics3")).BIZ_CAREER_LOGISTICS3_QUESTIONS : [],
 "tsukanshi": async () => isExamPublished("tsukanshi") ? (await import("@/data/questions/tsukanshi")).TSUKANSHI_QUESTIONS : []
 };
 

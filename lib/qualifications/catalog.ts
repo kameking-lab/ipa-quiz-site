@@ -1807,6 +1807,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["第39回：問題PDFが公式で404。保存コピー利用はオーナー判断待ち"],
 },
   {
+    slug: "biz-career-logistics3", examCode: "biz-career-logistics3",
+    shortName: "ビジネス・キャリア検定 3級ロジスティクス管理", fullName: "ビジネス・キャリア検定試験 3級ロジスティクス管理",
+    domain: "personal-services", administrator: "中央職業能力開発協会", status: "live",
+    officialQuestionsUrl: "https://www.javada.or.jp/jigyou/gino/business/gakusyu.html#mondai",
+    officialReuseTermsUrl: "https://www.javada.or.jp/lib/rights.html",
+    reuseSummary: "3級ロジスティクス管理の公式問題・正答と全選択肢の独自解説を収録。",
+    attributionTemplate: "出典：中央職業能力開発協会 ビジネス・キャリア検定試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
+  {
     slug: "sogo-ryoko", examCode: "sogo-ryoko", shortName: "総合旅行業務取扱管理者", fullName: "総合旅行業務取扱管理者試験",
     domain: "personal-services", administrator: "一般社団法人日本旅行業協会",
     officialQuestionsUrl: "https://www.jata-net.or.jp/seminar/page-41637/exam_xaminationquestion/",

@@ -340,6 +340,7 @@ import { TETSUDO_SHARYO2_QUESTIONS } from "./tetsudo-sharyo2";
 
 
 import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
+import { BIZ_CAREER_LOGISTICS3_QUESTIONS } from "./biz-career-logistics3";
 import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
@@ -710,6 +711,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("kikai-hozen") ? { "kikai-hozen": KIKAI_HOZEN_QUESTIONS } : {}),
 ...(isExamPublished("tobi2") ? { "tobi2": TOBI2_QUESTIONS } : {}),
 
+...(isExamPublished("biz-career-logistics3") ? { "biz-career-logistics3": BIZ_CAREER_LOGISTICS3_QUESTIONS } : {}),
 ...(isExamPublished("tsukanshi") ? { "tsukanshi": TSUKANSHI_QUESTIONS } : {})
 };
 

@@ -818,6 +818,7 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
 
 
 
+    "biz-career-logistics3": "ビジネス・キャリア検定試験 3級ロジスティクス管理",
     "tsukanshi": "通関士試験"
 };
 export function examFullName(exam: ExamCode): string {
@@ -1188,6 +1189,7 @@ const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number)
 
 
 
+    "biz-career-logistics3": (c, y) => `ビジネス・キャリア検定3級ロジスティクス管理の公式過去問${c}問（${y}回分）と全選択肢の独自解説。`,
     "tsukanshi": (c) => `通関士試験の${c}。公式正答どおりに収録。`
 };
 function publishedYearRange(exam: ExamCode): string {

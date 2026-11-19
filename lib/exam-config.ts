@@ -1759,6 +1759,14 @@ shihoshoshi: {
         { session: "pm", urlSlug: "pm", expectedQuestions: 103, label: "午後", categories: ["栄養教育論", "臨床栄養学", "公衆栄養学", "給食経営管理論", "応用力試験"] },
     ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
 },
+"biz-career-logistics3": {
+    code: "biz-career-logistics3", nameFull: "ビジネス・キャリア検定 3級ロジスティクス管理", urlSlug: "biz-career-logistics3", level: "basic",
+    sessions: [{
+        session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "試験問題",
+        categories: ["ロジスティクスの基礎", "物流政策・法令", "物流サービス・品質", "物流システム・輸配送", "在庫管理", "輸送・包装", "物流コスト", "物流情報システム"],
+    }],
+    seasons: ["early"], yearRange: { start: 2026, end: 2026 },
+},
 "sogo-ryoko": {
     code: "sogo-ryoko", nameFull: "総合旅行業務取扱管理者", urlSlug: "sogo-ryoko", level: "specialist",
     sessions: [
