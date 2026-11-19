@@ -2003,6 +2003,7 @@ caremanager: {
     code: "kyoin-osaka", nameFull: "大阪府公立学校教員採用選考テスト", urlSlug: "kyoin-osaka", level: "advanced",
     sessions: [
         { session: "kyotsu", urlSlug: "kyotsu", expectedQuestions: 30, label: "第1次選考 筆答", categories: ["教育課程", "教育法規", "教育施策", "特別支援教育", "生徒指導", "教育心理", "学校安全", "教育史", "教育方法", "数的推理", "英語", "資料解釈", "判断推理"] },
+        { session: "senmon", urlSlug: "senmon", expectedQuestions: 30, label: "第2次選考 教科専門（小学校等）", categories: ["国語", "社会", "算数・数学", "理科", "英語", "学習指導要領"] },
     ], seasons: ["annual"], yearRange: { start: 2022, end: 2026 },
 },
 "kyoin-tokyo": {
