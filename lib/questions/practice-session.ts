@@ -52,6 +52,7 @@ export function practiceSessionLabel(session: Session, exam?: ExamCode): string 
     if (session === "pm") return "建築設備";
   }
   if (exam === "chizai2" && session === "practical") return "実技";
+  if (exam === "yobi-tanto" && session === "ippan") return "一般教養科目";
   if (exam === "kisho" && session === "ippan") return "学科一般";
   if (exam === "kisho" && session === "senmon") return "学科専門";
   if (exam === "kanteishi" && session === "riron") return "鑑定評価理論";

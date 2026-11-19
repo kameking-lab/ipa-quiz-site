@@ -1836,14 +1836,14 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["問題冊子の転載許諾"],
   },
   {
-    slug: "yobi-tanto", examCode: "yobi-tanto", shortName: "予備試験（短答）", fullName: "司法試験予備試験 短答式（法律基本科目）",
+    slug: "yobi-tanto", examCode: "yobi-tanto", shortName: "予備試験（短答）", fullName: "司法試験予備試験 短答式",
     domain: "legal", administrator: "法務省",
     officialQuestionsUrl: "https://www.moj.go.jp/jinji/shihoushiken/jinji07_00317.html",
     officialReuseTermsUrl: "https://www.moj.go.jp/hisho06_00280.html",
     status: "live",
-    reuseSummary: "令和8・7年の短答式・法律基本科目（憲法・行政法・民法・商法・民事訴訟法・刑法・刑事訴訟法）各95問・137解答欄を公式問題・公式正解どおりに収録。全記述・全選択肢に条文・判例を示した独自解説。一般教養科目は未収録。",
+    reuseSummary: "令和8・7年の法律基本科目各95原問と、令和4年の憲法・行政法24原問、刑法・刑事訴訟法26原問、一般教養32原問を収録。一般教養は公式問題PDFで引用本文が省略された第8〜12問・第38〜43問を除く。",
     attributionTemplate: "出典：法務省 令和○年司法試験予備試験 短答式試験問題（科目）第○問・同正解及び配点。解説は過去問AIが独自作成。",
-    remainingWork: ["一般教養科目（各年44問中20問選択）の収録可否"],
+    remainingWork: ["令和8・7年の一般教養科目の原本確認"],
 },
   {
     slug: "sokuryoshiho", examCode: "sokuryoshiho", shortName: "測量士補", fullName: "測量士補",
