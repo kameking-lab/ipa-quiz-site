@@ -1383,6 +1383,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
 },
   {
+    slug: "kanken-7", examCode: "kanken-7", shortName: "漢検7級", fullName: "日本漢字能力検定7級",
+    domain: "personal-services", administrator: "公益財団法人日本漢字能力検定協会",
+    officialQuestionsUrl: "https://www.kanken.or.jp/kanken/grades/sample/",
+    officialReuseTermsUrl: "https://www.kanken.or.jp/kanken/grades/sample/",
+    status: "live",
+    reuseSummary: "協会が公開した検定問題と標準解答をもとに、解答欄ごとに演習できます。",
+    attributionTemplate: "出典：公益財団法人日本漢字能力検定協会 日本漢字能力検定7級。解説は過去問AI作成。",
+    remainingWork: [],
+  },
+  {
     slug: "zensho-eco-80", examCode: "zensho-eco-80", shortName: "商業経済検定", fullName: "商業経済検定",
     domain: "accounting", administrator: "公益財団法人全国商業高等学校協会",
     officialQuestionsUrl: "https://zensho.or.jp/examination/pastexams/economics/",

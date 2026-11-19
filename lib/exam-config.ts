@@ -1459,6 +1459,14 @@ shuwa: {
 },
 "reform-mgr": { code: "reform-mgr", nameFull: "マンションリフォームマネジャー学科試験", urlSlug: "reform-mgr", level: "specialist", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（未公開）", categories: ["??"] }], seasons: ["annual"], yearRange: { start: 2025, end: 2026 } },
 "shohi-sodan": { code: "shohi-sodan", nameFull: "消費生活相談員資格試験（マークシート部分）", urlSlug: "shohi-sodan", level: "specialist", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 160, label: "マークシート式試験（未公開）", categories: ["??"] }], seasons: ["annual"], yearRange: { start: 2024, end: 2025 } },
+"kanken-7": {
+    code: "kanken-7", nameFull: "日本漢字能力検定7級", urlSlug: "kanken-7", level: "basic",
+    sessions: [{
+        session: "gakka", urlSlug: "gakka", expectedQuestions: 120, label: "7級",
+        categories: ["漢字の読み", "同じ漢字の異なる読み", "漢字選び", "筆順・総画数", "音読み・訓読み", "対義語", "漢字と送りがな", "同じ部首の漢字", "同じ読みの漢字", "熟語作り", "漢字の書き取り"],
+    }],
+    seasons: ["published"], yearRange: { start: 2024, end: 2024 },
+},
 "zensho-eco-80": {
     code: "zensho-eco-80", nameFull: "商業経済検定", urlSlug: "zensho-eco-80", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 100, label: "学科", categories: ["ビジネス基礎", "マーケティング"] }],
