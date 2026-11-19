@@ -37191,5 +37191,705 @@
     "sources": [],
     "provisionalReview": true,
     "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242801-q1": {
+    "sourceHash": "dac1aceb27f673b60f680f0aa2775645134e3ced6bf83e03e7d3986a585ace09",
+    "correctChoice": 3,
+    "summary": "管理濃度が定められた物質は、A測定の最大値ではなく第一評価値を比較に用います。第一評価値は高濃度側5％に相当する濃度の推定値です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "厚生労働省版のコントロール・バンディングは、鉱物・金属などの粉じん作業用と、それ以外の粉体・液体作業用に分かれています。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "CREATE-SIMPLEは、健康に対する有害性に加えて、火災や爆発などの物理化学的危険性についても見積りに利用できます。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "管理濃度が定められた物質は、A測定の最大値ではなく第一評価値を比較に用います。第一評価値は高濃度側5％に相当する濃度の推定値です。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "作業者のばく露が濃度基準値などを十分下回ると確認できれば、その評価ではリスクが許容範囲内とされ、追加対策の検討を省略できます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "作業手順の改善、立入禁止などの管理的対策は、作業者個人に依存する保護具の選択と使用より先に検討する位置づけです。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242801-q2": {
+    "sourceHash": "f880fc85bd36b30b6cd639fa66ec3af7840097414ce6dd41f4f44e48db64d678",
+    "correctChoice": 3,
+    "summary": "区分番号は各クラス固有の判定基準に基づきます。急性毒性と発がん性など別のクラスの区分番号をそのまま比べても程度は比較できません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "GHSは物理化学的危険性、健康有害性、環境有害性を区分し、健康有害性には発がん性や誤えん有害性など10クラスがあります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "区分番号が付けられる場合、同じ危険有害性クラスの中では一般に小さい番号ほど危険性または有害性の程度が大きくなります。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "区分番号は各クラス固有の判定基準に基づきます。急性毒性と発がん性など別のクラスの区分番号をそのまま比べても程度は比較できません。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "胸に星形を描いた人体の絵表示が発がん性や誤えん有害性などに使われるように、一つの図が複数のクラスを表すことがあります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "化学品に複数の有害性があるときは、各有害性に対応する絵表示を付すのが原則で、重複する場合などには優先順位の規則を適用します。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242801-q3": {
+    "sourceHash": "0a773810e1409f702abc556f121c12ef7f0c982ab11e2ef47e06ddcf4986f1ee",
+    "correctChoice": 5,
+    "summary": "変異原性試験は発がん性のスクリーニングに用いられますが、催奇形性試験が評価するのは胚・胎児の発生への影響です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "量－反応関係は、ばく露量を変えたときに、集団において定められた反応を示す人の割合がどう変わるかを表す関係です。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "NOAELは、毒性試験で設定した複数のばく露量のうち、有害な影響が観察されなかった最高の量を指す毒性の指標です。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "LOAELは、毒性試験で有害な影響が実際に認められた最小のばく露量で、無毒性量よりも高い側の水準に当たります。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "LD₅₀は、単回投与など急性毒性の試験で、試験動物の半数が死亡すると推定される投与量で、急性毒性の強さを示します。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "変異原性試験は発がん性のスクリーニングに用いられますが、催奇形性試験が評価するのは胚・胎児の発生への影響です。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242801-q4": {
+    "sourceHash": "81ff2053033b589ab5791430ead85125f12ab5f82ae746150bee515767e781d9",
+    "correctChoice": 5,
+    "summary": "鉛は長期には主に骨に蓄積します。職業ばく露の生物学的モニタリングでは血中鉛や尿中δ-アミノレブリン酸などを用います。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "有害作用が現れ始める細胞内の濃度が臨界濃度です。全身のうち最も早くそこに達して障害を受ける臓器が標的臓器です。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "吸入したベンゼンの毒性には、親化合物だけでなく、フェノールやカテコールなど代謝で生じる化合物の作用も関与しています。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "n-ヘキサンの代謝物には2,5-ヘキサンジオンがあり、その尿中濃度が作業者のばく露を評価する指標として利用されます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "スチレンとエチルベンゼンはいずれも体内で代謝され、尿中にマンデル酸が排泄されるので、代謝物が重なる組合せです。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "鉛は長期には主に骨に蓄積します。職業ばく露の生物学的モニタリングでは血中鉛や尿中δ-アミノレブリン酸などを用います。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242801-q5": {
+    "sourceHash": "73ba0a3e87a4a2786bd8a77b6f1f39a21b474cbd6387b9f9833f8d8317563636",
+    "correctChoice": 4,
+    "summary": "テトラヒドロフランは環状エーテルの一種で、水とは任意の割合で混ざります。水にほとんど溶けないという説明は誤りです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "作業場の気中濃度は発生源の偏りや換気の変動で高濃度側に裾を持ちやすく、対数を取ると正規分布に近い傾向があります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "同じ大きさ・形状の粒子では、空気に対する密度差が大きいほど重力による沈降が速く、作業環境の評価では粒子の密度も重要です。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "研磨で金属の温度が局部的に上がると、蒸発した成分が冷却・凝縮して、空気中に微細な固体粒子のヒュームを生じることがあります。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "テトラヒドロフランは環状エーテルの一種で、水とは任意の割合で混ざります。水にほとんど溶けないという説明は誤りです。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "アセトンのカルボニル基は電荷分布の偏りが大きく、分子構造の異なるエチルエーテルと比較すると分子の極性が大きくなります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242801-q6": {
+    "sourceHash": "527c480d0664a65efc29ddbcc5e5baa0b0b3a13bd5c925e41f2c58cd3d270963",
+    "correctChoice": 2,
+    "summary": "フッ化水素酸は弱酸でも、皮膚や粘膜から深部に浸透して重い化学熱傷を起こし得ます。酸の強さだけで接触の危険性は判断できません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "アンモニアは常温常圧で空気より軽い無色の刺激性気体です。高濃度の気体を吸入すると気道損傷や肺水腫を起こし得ます。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "フッ化水素酸は弱酸でも、皮膚や粘膜から深部に浸透して重い化学熱傷を起こし得ます。酸の強さだけで接触の危険性は判断できません。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "シアン化水素は細胞呼吸に必要な酵素の働きを妨げ、酸素が細胞に届いても利用できない状態にして呼吸障害を起こし得ます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "エチレンオキシドには刺激性があり、皮膚接触で水疱、眼へのばく露で角膜炎、吸入で粘膜刺激や吐き気などが生じ得ます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ホスゲンを吸入すると肺の組織が損傷し、遅れて肺水腫を生じることがあります。常温・常圧では青草様の臭気を持つ気体です。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242801-q7": {
+    "sourceHash": "3dd0e1fbade9a7dabd31079883b15a6c933b4e7f800a3a278976ee35517f7970",
+    "correctChoice": 5,
+    "summary": "N,N-ジメチルホルムアミドでは肝障害が重要な毒性です。膵臓がんを主要ながんとして結びつける組合せは適切ではありません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "クロム酸は六価クロム化合物です。職業的に吸入ばく露が続く場合、肺がんのリスクと関係する組合せとして知られています。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "無機ヒ素への職業性の吸入ばく露は肺がん発症との関連が認められており、皮膚がんなどを生じ得ることも知られています。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "印刷作業での1,2-ジクロロプロパンへの長期ばく露では、胆汁の通り道である胆管に生じるがんとの関係が確認されています。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "コールタールを扱い、繰り返し皮膚に接触する作業には、陰嚢がんなどの皮膚がんとの職業性の関連が古くから知られています。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "N,N-ジメチルホルムアミドでは肝障害が重要な毒性です。膵臓がんを主要ながんとして結びつける組合せは適切ではありません。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242801-q8": {
+    "sourceHash": "60f5151e2ec7683e3673696dedb635f3c2ddfdbde8469bc99c92a95e036e2308",
+    "correctChoice": 2,
+    "summary": "4 µmで50％透過する分粒装置は、肺胞域まで届く吸入性粉じんを測ります。口や鼻に入る範囲全体の吸引性粉じんとは別です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "粉じんの分粒区分には鼻や口へ入るもの、咽頭を通過するもの、肺胞域まで到達できるものがあり、到達の程度が異なります。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "4 µmで50％透過する分粒装置は、肺胞域まで届く吸入性粉じんを測ります。口や鼻に入る範囲全体の吸引性粉じんとは別です。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "じん肺は粉じんの吸入による肺の線維性変化を特徴とします。粉じんの種類によって、けい肺や炭素肺などの名称が使われます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "じん肺が進むと肺でのガス交換が低下し、血液の酸素飽和度も低下するため、唇などにチアノーゼが現れることがあります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "石綿粉じんの吸入は石綿肺の原因となるほか、肺がんや胸膜などに生じる中皮腫など、長い潜伏期間を伴う障害と関係します。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242801-q9": {
+    "sourceHash": "246cbd8d8b41e94391fbcde68fa6d07003a9f81c23b608bc664dc93d07b4d143",
+    "correctChoice": 3,
+    "summary": "自然界のコバルトには安定同位体のコバルト59が存在します。放射性のコバルト60と安定なコバルトを区別する必要があります。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ベリリウムへの職業ばく露は感作を起こすことがあり、慢性ベリリウム症では肺に肉芽腫性の病変を生じることがあります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "マンガンばく露による慢性中毒では中枢神経が影響を受け、歩行障害や発語障害、筋肉の緊張亢進などが現れることがあります。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "自然界のコバルトには安定同位体のコバルト59が存在します。放射性のコバルト60と安定なコバルトを区別する必要があります。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "ニッケルは接触皮膚炎などの感作を起こすことがあり、一部のニッケル化合物の職業性ばく露は肺がんや鼻腔がんと関係します。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "金属水銀は消化管から吸収されにくい一方、蒸気は肺から吸収され、神経系の障害や手指のふるえなどの症状を起こし得ます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242801-q10": {
+    "sourceHash": "da9f62ee3b7b265827d3b0afa81a4e6dc0929e3f01050fd444e0daf85754930c",
+    "correctChoice": 2,
+    "summary": "1,2-ジクロロエチレンは蒸気が空気より重いだけでなく、液体の密度も水より大きく、選択肢の液体密度の大小が逆です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "引火性を持つ有機溶剤は多い一方、ハロゲン化炭化水素の一部には燃えにくい溶剤もあり、性質は物質によって異なります。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "1,2-ジクロロエチレンは蒸気が空気より重いだけでなく、液体の密度も水より大きく、選択肢の液体密度の大小が逆です。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "セロソルブはエーテル基とヒドロキシ基をもつ溶剤で、水にも油にも親和性があります。肝臓や腎臓への毒性に注意が必要です。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "酢酸メチルは体内で加水分解され、メタノールなどを生じ得るため、ばく露では代謝物による視神経への影響にも注意を要します。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "トルエンは神経系への影響だけでなく、発生など生殖への影響も評価されており、ヒトに対する生殖毒性が問題になります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242801-q11": {
+    "sourceHash": "cf1e5637868e6fbdf31eec3b23651e305e1f73408eda0c10e59f6f77cdff8038",
+    "correctChoice": 1,
+    "summary": "実効温度は人の温熱感を表す尺度で、WBGTは暑熱の負担を評価する指標です。両者は同一の測定値の別名ではありません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "実効温度は人の温熱感を表す尺度で、WBGTは暑熱の負担を評価する指標です。両者は同一の測定値の別名ではありません。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "作業場所で測定したWBGTが作業強度や暑熱順化に応じた基準値を上回るときは、作業者にかかる熱負担が大きいと判断します。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "暑さに順化していない人は熱放散などの適応が十分でないため、同一の作業強度でもより低いWBGT基準値を用います。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "大量の発汗で塩分を失った後に水だけを過剰に補うと、体内のナトリウム濃度が低下して筋肉のけいれんが起きることがあります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "糖尿病、高血圧、心疾患などがあると、体温調節や脱水への対応に影響する場合があり、基礎疾患は熱中症の危険因子になります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242801-q12": {
+    "sourceHash": "09fcf29e5da8287f04b9ff2109f4794f167a5cec84d6dcf5dfd8aa7d2c1af4e0",
+    "correctChoice": 5,
+    "summary": "局所振動障害は手指のしびれなど、本人の自覚症状が先に現れることがあります。他覚症状が一般に先行するという記述は誤りです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "人体が受ける影響は振動加速度が同じでも周波数によって異なるため、周波数ごとに重み付けした加速度の実効値を用います。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "直交する三方向で測った周波数補正振動加速度の実効値をそれぞれ二乗し、その和の平方根を取ると3軸合成値になります。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "レイノー現象では振動や冷えを契機に末梢血管が収縮し、指が一時的に白くなります。発作は数分以上続く場合があります。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "レイノー現象は振動ばく露に特有のものではなく、塩化ビニルばく露や血管の閉塞性疾患、膠原病などに伴うことがあります。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "局所振動障害は手指のしびれなど、本人の自覚症状が先に現れることがあります。他覚症状が一般に先行するという記述は誤りです。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242801-q13": {
+    "sourceHash": "725ca6e60a16c54380f7ddeaf58cdb0e60044290c608bf650e3496ac12dd6842",
+    "correctChoice": 4,
+    "summary": "0 dBは基準音圧に等しいレベルで、音の物理的な強さがゼロという意味ではありません。無響室だけに固有の値でもありません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ヒトの可聴域はおよそ20〜20,000 Hzで、これより低い振動を超低周波音、高い周波数の振動を超音波と呼びます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "ヒトの聴覚は中高音域の2,000〜4,000 Hz付近で感度が良く、この範囲から大きく外れると聞こえにくくなります。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "騒音性難聴の初期は4,000 Hz付近で聴力が落ちる型が多く、加齢に伴う難聴はより高い音域から進むことが一般的です。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "0 dBは基準音圧に等しいレベルで、音の物理的な強さがゼロという意味ではありません。無響室だけに固有の値でもありません。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "等価騒音レベルは、一定時間に受ける音のエネルギーを平均し、同じエネルギーを持つ仮想的な定常音のレベルで表します。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242801-q14": {
+    "sourceHash": "25a2663329bcd779ec857e8192aa0524766ce4d1cd498caf31d25a8b51eee2ec",
+    "correctChoice": 3,
+    "summary": "硫化水素は腐卵臭があり空気より重い気体ですが、色は無色です。換気の悪い低所にたまりやすいという点は合っています。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "酸素濃度が約16％以下に低下すると、低酸素を補おうとして脈拍や呼吸数が増え、吐き気や耳鳴りが起きることがあります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "低酸素の場所に長く滞在するほど危険が高まり、身体活動が激しく酸素消費量が多い場合も酸素欠乏症が重くなり得ます。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "硫化水素は腐卵臭があり空気より重い気体ですが、色は無色です。換気の悪い低所にたまりやすいという点は合っています。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "硫化水素は粘膜表面の水分に溶け、眼の結膜や気道などを刺激します。この作用は高濃度での細胞呼吸阻害とは区別します。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "非常に高濃度の硫化水素では脳神経に障害が及び、意識消失などを起こし得ます。およそ700 ppm以上はそのような危険がある領域です。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242801-q15": {
+    "sourceHash": "f88db7466a9753a64b17213d73a979d503b9308528a7986396ffabe2618ab8a8",
+    "correctChoice": 4,
+    "summary": "マイクロ波の波長は主としてミリメートルからメートルの範囲です。1〜100 µmはマイクロ波より短く赤外線に当たります。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "可視光の波長はおよそ400〜760 nmです。可視スペクトルでは青紫に近い色ほど短波長、赤に近い色ほど長波長です。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "赤外線を強く浴びると、放射エネルギーが皮膚や眼の組織に吸収され、局所の温度が上がって熱傷が生じることがあります。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "紫外線は眼や皮膚の炎症を引き起こす一方、太陽光中のUV-Bは体内で利用されるビタミンDの皮膚での生成にも関わります。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "マイクロ波の波長は主としてミリメートルからメートルの範囲です。1〜100 µmはマイクロ波より短く赤外線に当たります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "レーザー製品にはヒトが接近できる放射の危険性に応じた分類があり、クラス1が低危険側、クラス4が最も高い危険側です。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242801-q16": {
+    "sourceHash": "9f00dcd8428da590ad18ca8ba1e7ac9b916f7638b5bee01058aca287f744a539",
+    "correctChoice": 1,
+    "summary": "電荷がないことは非電離を意味しません。X線やγ線は電離を起こす電磁波で、中性子線も間接的に電離を生じさせます。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "電荷がないことは非電離を意味しません。X線やγ線は電離を起こす電磁波で、中性子線も間接的に電離を生じさせます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "α線は正の電荷を2つ分持つヘリウム原子核の流れです。この設問でいうβ線は負に帯電した電子の流れであるβ⁻線です。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "皮膚の急性放射線障害には、線量に応じて脱毛や紅斑が生じ、さらに高線量では水疱や潰瘍などのより重い障害が起こります。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "確定的影響では症状が現れる線量にしきい値があり、線量がしきい値を超えて高くなると、障害の程度が大きくなります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "生殖細胞の変異などを介した遺伝的影響は、放射線防護では線量に応じて発生する確率が高くなる確率的影響に分類されます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242801-q17": {
+    "sourceHash": "c539b83efa9b847781320f9b747e03c9becb1d19831f6ddf86d99c71aad965e5",
+    "correctChoice": 1,
+    "summary": "囲い式フードの制御風速は開口面の最小風速で評価し、平均ではありません。風速の不足する場所からの漏れを防ぐ必要があります。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "囲い式フードの制御風速は開口面の最小風速で評価し、平均ではありません。風速の不足する場所からの漏れを防ぐ必要があります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "外付け式フードでは、吸引対象範囲のうち開口面から最も遠く捕捉しにくい点で、必要な風速が得られるかを判断します。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "局所排気のブース型フードは発生源を部分的に囲って作業用の開口を残す構造で、汚染空気の流出を抑える囲い式に分類されます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "同じ排風量で排気ダクトの断面積を小さくすると、ダクト内部の流速が高くなり、摩擦による圧力損失が一般に増加します。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ダクトの急な曲がりや大きな角度での合流は圧力損失を増やすので、曲がりを減らし、合流角を45度以下にするのが原則です。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242801-q18": {
+    "sourceHash": "7197dae99b451b676c79833cfe2753943f033e42a1bcabc96e2a52870d3dee73",
+    "correctChoice": 2,
+    "summary": "非常に強い騒音にばく露する作業では、耳栓とイヤーマフを併用して遮音する方法があります。二つの遮音値を単純に足すことはできません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "遮光保護具は、有害な紫外線や赤外線、強すぎる可視光への眼のばく露を抑える目的で、作業に応じた遮光度を選びます。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "非常に強い騒音にばく露する作業では、耳栓とイヤーマフを併用して遮音する方法があります。二つの遮音値を単純に足すことはできません。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "保護クリームは露出皮膚に層を作って付着を抑え、作業後に洗い落とします。必要な化学防護手袋などを代替するものではありません。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "手袋材料を分子として通るのが透過、縫い目や小さな穴などから液体が入るのが浸透で、防護性能の評価では区別します。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "振動工具から手指に伝わる振動を低減するには、手のひらだけでなく指先まで振動吸収材を備えた防振手袋を選ぶことが重要です。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242801-q19": {
+    "sourceHash": "910a3622fa449788c24315037bc1793bf772ee4e01ccb25b05ed7138a97ca688",
+    "correctChoice": 3,
+    "summary": "外部の自然大気をホースで取り入れるのはホースマスクです。圧縮空気を送るエアラインマスクと空気源の説明が逆です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "防じんマスクの取替え式には吸気弁と排気弁があり、使い捨て式には排気弁のみをもつ型のほか、弁のない型があります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "防毒マスクの吸収缶は対象とするガスの種類に応じて表示が異なり、缶の外側面の色に加えて、印刷された文字などでも識別できます。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "外部の自然大気をホースで取り入れるのはホースマスクです。圧縮空気を送るエアラインマスクと空気源の説明が逆です。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "自給式呼吸器には圧縮空気を携行するものと酸素を使うものがあり、酸素はボンベで携行する方式や化学的に発生させる方式があります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "陰圧法は吸気口を塞いで吸い込み、陽圧法は排気口を塞いで吐き出して、装着者が面体と顔の間の漏れを確認する方法です。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242801-q20": {
+    "sourceHash": "4cb229d0b30e74a8febae251abf396b0e975afbd88d018f0344fc96e9ee32a67",
+    "correctChoice": 5,
+    "summary": "空気中の許容濃度は経気道ばく露を前提とした値です。「皮」は皮膚からの吸収も全身のばく露に大きく寄与し得るという注意表示です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "作業環境評価基準で用いる気中濃度は、温度25 ℃、圧力1気圧の空気中での値として扱い、基準値と測定値を比較します。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "相加的に扱う混合溶剤では、個々の濃度を対応する管理濃度で割って合計し、その換算値を管理濃度に相当する1と比較します。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "許容濃度は所定の労働時間と労働強度で繰り返しばく露する場合の目安で、通常は時間加重平均のばく露濃度で評価します。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "最大許容濃度は作業時間中のどの時点でも超えないことを目安とする濃度で、長時間の平均で超過を相殺する指標ではありません。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "空気中の許容濃度は経気道ばく露を前提とした値です。「皮」は皮膚からの吸収も全身のばく露に大きく寄与し得るという注意表示です。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
   }
 }
