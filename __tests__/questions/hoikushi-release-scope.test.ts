@@ -9,9 +9,9 @@ import officialAnswers from "@/reports/hoikushi-2rounds-20260929/official-answer
 import type { ChoiceKey } from "@/lib/questions/types";
 
 describe("保育士の案内と公開年度の一致", () => {
-  it("令和8年度前期154問、令和7年度後期158問・前期156問、令和6年度後期157問・前期156問、令和5年度後期156問・前期157問、令和4年度後期156問を九科目ずつ公開する", () => {
+  it("令和8年度前期154問、令和7年度後期158問・前期156問、令和6年度後期157問・前期156問、令和5年度後期156問・前期157問、令和4年度後期156問・前期156問を九科目ずつ公開する", () => {
     const ready = HOIKUSHI_QUESTIONS.filter(isPracticeReadyQuestion);
-    const rounds = [[2026, "early", 154], [2025, "late", 158], [2025, "early", 156], [2024, "late", 157], [2024, "early", 156], [2023, "late", 156], [2023, "early", 157], [2022, "late", 156]] as const;
+    const rounds = [[2026, "early", 154], [2025, "late", 158], [2025, "early", 156], [2024, "late", 157], [2024, "early", 156], [2023, "late", 156], [2023, "early", 157], [2022, "late", 156], [2022, "early", 156]] as const;
     expect([...new Set(ready.map((q) => `${q.year}-${q.season}`))]).toEqual(rounds.map(([year, season]) => `${year}-${season}`));
     for (const [year, season, count] of rounds) {
       const round = ready.filter((q) => q.year === year && q.season === season);
@@ -56,6 +56,6 @@ describe("保育士の案内と公開年度の一致", () => {
     expect(entry?.reuseSummary).toContain("令和8年度前期154問");
     expect(entry?.reuseSummary).toContain("令和7年度後期158問・前期156問");
     expect(entry?.reuseSummary).toContain("令和6年度後期157問・前期156問");
-    expect(entry?.reuseSummary).toContain("令和5年度後期156問・前期157問、令和4年度後期156問");
+    expect(entry?.reuseSummary).toContain("令和5年度後期156問・前期157問、令和4年度後期156問・前期156問");
   });
 });
