@@ -1294,7 +1294,7 @@ kangoshi: {
         { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 30, label: "無線工学", categories: ["無線工学"] },
         { session: "houki", urlSlug: "houki", expectedQuestions: 30, label: "法規", categories: ["法規"] },
     ],
-    seasons: ["may", "august"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["may", "august", "late"], yearRange: { start: 2025, end: 2026 },
 },
 "maritime-special1": {
     code: "maritime-special1", nameFull: "第一級海上特殊無線技士試験", urlSlug: "maritime-special1", level: "specialist",

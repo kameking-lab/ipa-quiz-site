@@ -355,7 +355,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     slug: "amateur1", examCode: "amateur1", shortName: "第一級アマチュア無線技士", fullName: "第一級アマチュア無線技士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
     officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
-    reuseSummary: "2026年5月・8月の工学・法規120原問を保存し、119原問を無料で回数制限なく演習できます。確認中の5月工学A19は演習対象外です。B問題は原問単位で5枠を個別採点します。法令は各実施回当時の内容です。",
+    reuseSummary: "2025年11月・2026年5月・8月の工学・法規を無料で回数制限なく演習できます。B問題は原問単位で5枠を個別採点します。法令は各実施回当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 第一級アマチュア無線技士試験 公表過去問（日本語・非英語部分）。解説は過去問AI作成。",
     remainingWork: [],
 },
