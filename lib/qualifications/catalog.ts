@@ -1811,7 +1811,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     domain: "personal-services", administrator: "一般財団法人日本中国語検定協会", status: "live",
     officialQuestionsUrl: "https://www.chuken.gr.jp/tcp/test.html",
     officialReuseTermsUrl: "https://www.chuken.gr.jp/tcp/test.html",
-    reuseSummary: "第117・118回の公式問題・正答と独自解説を収録。リスニングは公式原稿を用いた読解形式です。",
+    reuseSummary: "第116～118回の公式問題・正答と独自解説を収録。リスニングは公式原稿を用いた読解形式です。",
     attributionTemplate: "出典：日本中国語検定協会 中国語検定試験。解説は過去問AIの独自作成。",
     remainingWork: [],
   },
