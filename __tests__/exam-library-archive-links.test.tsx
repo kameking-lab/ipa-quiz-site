@@ -6,7 +6,7 @@ import { EXAM_CATALOG } from "@/lib/exam-library-catalog";
 import { examSourcePdfUrl, parseExamCatalogEntry } from "@/lib/exam-library-model";
 import { loadExamPaper } from "@/lib/exam-library-papers";
 
-const archiveEntries = catalog.filter((entry) => entry.sourceMode === "official-archive-copy");
+const archiveEntries = catalog.filter((entry) => entry.group === "cskohyo" && entry.sourceMode === "official-archive-copy");
 
 beforeEach(() => {
   window.localStorage.clear();
@@ -60,5 +60,16 @@ describe("archived consultant PDF links", () => {
 
   it("rejects archive mode outside the reviewed year", () => {
     expect(parseExamCatalogEntry({ ...archiveEntries[0], id: "cskohyo-CS20221901" })).toBeNull();
+  });
+});
+
+describe("archived licence PDF links", () => {
+  it("loads the official October 2024 boiler maintenance snapshot", () => {
+    const entry = EXAM_CATALOG.find((candidate) => candidate.id === "lckohyo-LC20242106")!;
+    expect(examSourcePdfUrl(entry)).toBe(`https://web.archive.org/web/20250119100112id_/${entry.pdfUrl}`);
+    const questions = loadExamPaper(entry.id)!;
+    expect(questions).toHaveLength(30);
+    expect(questions.every((question) => question.choiceExplanation?.choices.length === 5)).toBe(true);
+    expect(parseExamCatalogEntry({ ...entry, archiveSourceUrl: `${entry.archiveSourceUrl}?other` })).toBeNull();
   });
 });

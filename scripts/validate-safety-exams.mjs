@@ -32,17 +32,30 @@ for (const paper of catalog) {
     `Unexpected source mode: ${paper.id}`,
   );
   if (paper.sourceMode === 'official-archive-copy') {
-    check(/^cskohyo-CS202119\d{2}$/u.test(paper.id), `Archive copy outside reviewed 2021 consultant set: ${paper.id}`);
-    check(
-      typeof paper.archiveSourceUrl === 'string' &&
-        /^https:\/\/osh-lab\.com\/wp-content\/uploads\/2022\/06\/[a-f0-9]{32}\.pdf$/u.test(paper.archiveSourceUrl),
-      `Missing reviewed archive source: ${paper.id}`,
-    );
-    check(
-      paper.officialArchiveManifestUrl ===
-        'https://web.archive.org/web/20220528065047id_/https://www.exam.or.jp/exmn/csv/cspdf.csv',
-      `Missing official archive manifest: ${paper.id}`,
-    );
+    const snapshotPrefix = /^https:\/\/web\.archive\.org\/web\/\d{14}id_\//u;
+    if (paper.group === 'lckohyo') {
+      for (const [source, original] of [
+        [paper.archiveSourceUrl, paper.pdfUrl],
+        [paper.officialArchiveManifestUrl, paper.indexUrl],
+      ]) {
+        check(
+          typeof source === 'string' && snapshotPrefix.test(source) && source.replace(snapshotPrefix, '') === original,
+          `Missing official archive snapshot: ${paper.id}/${original}`,
+        );
+      }
+    } else {
+      check(/^cskohyo-CS202119\d{2}$/u.test(paper.id), `Archive copy outside reviewed 2021 consultant set: ${paper.id}`);
+      check(
+        typeof paper.archiveSourceUrl === 'string' &&
+          /^https:\/\/osh-lab\.com\/wp-content\/uploads\/2022\/06\/[a-f0-9]{32}\.pdf$/u.test(paper.archiveSourceUrl),
+        `Missing reviewed archive source: ${paper.id}`,
+      );
+      check(
+        paper.officialArchiveManifestUrl ===
+          'https://web.archive.org/web/20220528065047id_/https://www.exam.or.jp/exmn/csv/cspdf.csv',
+        `Missing official archive manifest: ${paper.id}`,
+      );
+    }
   }
   check(['reference', 'official-choice'].includes(paper.answerMode), `Unexpected answer mode: ${paper.id}`);
   for (const key of ['pdfUrl', 'indexUrl']) {
