@@ -1552,7 +1552,7 @@ kankoji1: {
 "katei-shoku-chori": {
     code: "katei-shoku-chori", nameFull: "全国高等学校家庭科食物調理技術検定", urlSlug: "katei-shoku-chori", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 59, label: "筆記", categories: ["2級", "準1級", "1級"] }],
-    seasons: ["second"], yearRange: { start: 2025, end: 2025 },
+    seasons: ["first", "second"], yearRange: { start: 2025, end: 2025 },
 },
 "mental-health-management": {
     code: "mental-health-management", nameFull: "メンタルヘルス・マネジメント検定試験", urlSlug: "mental-health-management", level: "basic",
