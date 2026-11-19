@@ -1779,6 +1779,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["1級・電気系・設備診断作業の追加"],
 },
   {
+    slug: "kokka-ippan-kou", examCode: "kokka-ippan-kou", shortName: "国家一般職（高卒者）", fullName: "国家公務員採用一般職試験（高卒者試験）",
+    domain: "legal", administrator: "人事院",
+    officialQuestionsUrl: "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_16.html",
+    officialReuseTermsUrl: "https://www.jinji.go.jp/shinsei/notice.html",
+    status: "live",
+    reuseSummary: "2025年度の基礎能力試験40問を公式正答・全肢解説・原図付きで収録。",
+    attributionTemplate: "出典：人事院「一般職試験（高卒者試験） 基礎能力試験」。解説は過去問AIの独自作成。",
+    remainingWork: ["基礎能力試験の2024・2023年度と、適性試験・専門試験の補充"],
+  },
+  {
     slug: "tsukanshi", examCode: "tsukanshi", shortName: "通関士", fullName: "通関士試験",
     domain: "legal", administrator: "財務省関税局・税関",
     officialQuestionsUrl: "https://www.customs.go.jp/tsukanshi/",

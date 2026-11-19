@@ -369,6 +369,7 @@ export const EXAM_LABELS: Record<string, string> = {
 
 
     "kikai-hozen": "機械保全技能士 2級",
+    "kokka-ippan-kou": "国家一般職（高卒者）",
     "tsukanshi": "通関士"
 };
 export function examLabel(exam: string): string {

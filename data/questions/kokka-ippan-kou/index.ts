@@ -1,0 +1,3 @@
+import { KOKKA_IPPAN_KOU_2025_KISO } from "./2025-kiso";
+
+export const KOKKA_IPPAN_KOU_QUESTIONS = [...KOKKA_IPPAN_KOU_2025_KISO];

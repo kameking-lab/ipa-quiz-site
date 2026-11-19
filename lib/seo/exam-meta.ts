@@ -818,6 +818,7 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
 
 
 
+    "kokka-ippan-kou": "国家公務員採用一般職試験（高卒者試験）",
     "tsukanshi": "通関士試験"
 };
 export function examFullName(exam: ExamCode): string {
@@ -1188,6 +1189,7 @@ const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number)
 
 
 
+    "kokka-ippan-kou": (c, y) => `国家一般職（高卒者）の基礎能力試験を${y}年度分・計${c}問収録。人事院の公式問題・正答と全肢解説で学べます。`,
     "tsukanshi": (c) => `通関士試験の${c}。公式正答どおりに収録。`
 };
 function publishedYearRange(exam: ExamCode): string {
