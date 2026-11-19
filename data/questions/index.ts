@@ -348,6 +348,7 @@ import { QUESTIONS as SHOBO_SETSUBISHI_OTSU4_QUESTIONS } from "./shobo-setsubish
 import { QUESTIONS as SHOBO_SETSUBISHI_OTSU7_QUESTIONS } from "./shobo-setsubishi-otsu7";
 import { QUESTIONS as SHOBO_SETSUBISHI_KOU3_QUESTIONS } from "./shobo-setsubishi-kou3";
 import { QUESTIONS as SHOBO_SETSUBISHI_KOU2_QUESTIONS } from "./shobo-setsubishi-kou2";
+import { QUESTIONS as SHOBO_SETSUBISHI_KOU5_QUESTIONS } from "./shobo-setsubishi-kou5";
 import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
@@ -726,6 +727,7 @@ biyoshi: BIYOSHI_QUESTIONS,
   ...(isExamPublished("shobo-setsubishi-otsu7") ? { "shobo-setsubishi-otsu7": SHOBO_SETSUBISHI_OTSU7_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("shobo-setsubishi-kou3") ? { "shobo-setsubishi-kou3": SHOBO_SETSUBISHI_KOU3_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("shobo-setsubishi-kou2") ? { "shobo-setsubishi-kou2": SHOBO_SETSUBISHI_KOU2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("shobo-setsubishi-kou5") ? { "shobo-setsubishi-kou5": SHOBO_SETSUBISHI_KOU5_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("tsukanshi") ? { "tsukanshi": TSUKANSHI_QUESTIONS } : {})
 };
 

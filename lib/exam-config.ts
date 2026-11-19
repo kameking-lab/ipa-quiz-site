@@ -323,6 +323,15 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["published"], yearRange: { start: 2026, end: 2026 },
   },
 
+  "shobo-setsubishi-kou5": {
+    code: "shobo-setsubishi-kou5", nameFull: "消防設備士 甲種第5類", urlSlug: "shobo-setsubishi-kou5", level: "basic",
+    sessions: [
+      { session: "gakka", urlSlug: "gakka", expectedQuestions: 12, label: "筆記公表問題", categories: ["消防関係法令", "機械の基礎知識", "構造・機能・整備", "規格・基準"] },
+      { session: "practical", urlSlug: "practical", expectedQuestions: 6, label: "実技公表問題", categories: ["実技・鑑別等", "実技・製図"] },
+    ],
+    seasons: ["published"], yearRange: { start: 2026, end: 2026 },
+  },
+
   "khk-kagaku": {
     code: "khk-kagaku", nameFull: "高圧ガス製造保安責任者（化学）", urlSlug: "khk-kagaku", level: "advanced",
     sessions: [

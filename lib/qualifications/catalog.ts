@@ -1637,6 +1637,12 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "live", reuseSummary: "2026年6月公表版の筆記20問・実技4解答単位を収録。", remainingWork: [],
   },
   {
+    slug: "shobo-setsubishi-kou5", examCode: "shobo-setsubishi-kou5", shortName: "消防設備士 甲種第5類", fullName: "消防設備士 甲種第5類",
+    domain: "safety", administrator: "一般財団法人消防試験研究センター",
+    officialQuestionsUrl: "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", officialReuseTermsUrl: "https://www.shoubo-shiken.or.jp/shoubou/exercise.html",
+    status: "live", reuseSummary: "2026年6月公表版の筆記12問・実技6解答単位を収録。", remainingWork: [],
+  },
+  {
     slug: "khk-setsubishi", shortName: "液化石油ガス設備士（学科）", fullName: "液化石油ガス設備士試験（学科）",
     domain: "safety", administrator: "高圧ガス保安協会",
     officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html", officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",

@@ -372,6 +372,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
   "shobo-setsubishi-otsu7": async () => isExamPublished("shobo-setsubishi-otsu7") ? (await import("@/data/questions/shobo-setsubishi-otsu7")).QUESTIONS : [],
   "shobo-setsubishi-kou3": async () => isExamPublished("shobo-setsubishi-kou3") ? (await import("@/data/questions/shobo-setsubishi-kou3")).QUESTIONS : [],
   "shobo-setsubishi-kou2": async () => isExamPublished("shobo-setsubishi-kou2") ? (await import("@/data/questions/shobo-setsubishi-kou2")).QUESTIONS : [],
+  "shobo-setsubishi-kou5": async () => isExamPublished("shobo-setsubishi-kou5") ? (await import("@/data/questions/shobo-setsubishi-kou5")).QUESTIONS : [],
 "tsukanshi": async () => isExamPublished("tsukanshi") ? (await import("@/data/questions/tsukanshi")).TSUKANSHI_QUESTIONS : []
 };
 
