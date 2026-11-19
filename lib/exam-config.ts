@@ -1429,7 +1429,7 @@ kisho: { code: "kisho", nameFull: "気象予報士試験", urlSlug: "kisho", lev
     seasons: ["first", "second"], yearRange: { start: 2024, end: 2026 },
 },
 "biyoshi": { code: "biyoshi", nameFull: "美容師", urlSlug: "biyoshi", level: "basic", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 55, label: "筆記", categories: ["美容師筆記"] }], seasons: ["first", "second"], yearRange: { start: 2026, end: 2026 } },
-"kikenbutsu-otsu1": { code: "kikenbutsu-otsu1", nameFull: "危険物取扱者 乙種第1類", urlSlug: "kikenbutsu-otsu1", level: "basic", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 10, label: "筆記", categories: ["危険物の性質・火災予防・消火"] }], seasons: ["published"], yearRange: { start: 2026, end: 2026 } },
+"kikenbutsu-otsu1": { code: "kikenbutsu-otsu1", nameFull: "危険物取扱者 乙種第1類", urlSlug: "kikenbutsu-otsu1", level: "basic", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 10, label: "筆記", categories: ["危険物の性質・火災予防・消火"] }], seasons: ["published"], yearRange: { start: 2025, end: 2026 } },
 "kikenbutsu-otsu2": { code: "kikenbutsu-otsu2", nameFull: "危険物取扱者 乙種第2類", urlSlug: "kikenbutsu-otsu2", level: "basic", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 10, label: "筆記", categories: ["危険物の性質並びにその火災予防及び消火の方法"] }], seasons: ["published"], yearRange: { start: 2026, end: 2026 } },
 "kikenbutsu-otsu6": { code: "kikenbutsu-otsu6", nameFull: "危険物取扱者 乙種第6類", urlSlug: "kikenbutsu-otsu6", level: "basic", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 10, label: "筆記", categories: ["危険物の性質・火災予防・消火"] }], seasons: ["published"], yearRange: { start: 2026, end: 2026 } },
 jokaso: {
