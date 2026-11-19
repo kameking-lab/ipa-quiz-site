@@ -50,17 +50,15 @@ it.each(["db", "provider"])("fails closed on %s failure without printing persona
   await expect(f.guard.assertCanPurchase("current")).rejects.toMatchObject({ code: "purchase_check_unavailable", status: 503 });
   expect(warn).toHaveBeenCalledExactlyOnceWith("purchase_check_unavailable");
 });
-it("warns with only a reason code when Stripe and App Store are active across matching accounts", async () => {
-  const f = fixture(), warn = vi.spyOn(console, "warn").mockImplementation(()=>{});
-  f.rights.mockImplementation(async id => ({ stripe: id === "paid", appStore: id === "current" }));
-  await f.guard.audit("current");
-  expect(warn).toHaveBeenCalledExactlyOnceWith("duplicate_purchase_stripe_app_store_same_email");
+it("finds active App Store accounts in the purchase group independently of Web access", async () => {
+  const f = fixture();
+  f.rights.mockImplementation(async id => ({ stripe: false, appStore: id === "current" }));
+  await expect(f.guard.appStoreUsers("current")).resolves.toEqual(["current"]);
 });
-it("keeps audit failures from failing webhook processing", async () => {
-  const f = fixture(), warn = vi.spyOn(console, "warn").mockImplementation(()=>{});
-  f.query.mockRejectedValue(Error("secret database detail"));
-  await expect(f.guard.audit("current")).resolves.toBeUndefined();
-  expect(warn).toHaveBeenCalledExactlyOnceWith("duplicate_purchase_audit_unavailable");
+it("lets callers distinguish an audit failure from an absence of overlaps", async () => {
+  const f = fixture(), failure = Error("fixture lookup failure");
+  f.query.mockRejectedValue(failure);
+  await expect(f.guard.appStoreUsers("current")).rejects.toBe(failure);
 });
 it.each([["google", true], ["apple", true], ["apple", "true"]])("remembers only Auth.js-verified %s email (%s)", async (provider, email_verified) => {
   const save = vi.fn();

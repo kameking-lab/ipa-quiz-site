@@ -1,5 +1,5 @@
 import { describe, it, expect, beforeEach } from "vitest";
-import { render, screen, fireEvent, cleanup } from "@testing-library/react";
+import { render, screen, cleanup } from "@testing-library/react";
 
 import {
   QuestionListWithFilter,
@@ -45,50 +45,21 @@ beforeEach(() => {
   );
 });
 
-// 解答状況フィルター（全て/未解答のみ/不正解のみ）はセグメント型のトグルであり、
-// 矢印キーや tabpanel の暗黙契約を満たさないため role="tab"/aria-selected を使わず、
-// codebase 既定の aria-pressed トグル（AfternoonResultView と統一）で実装する。
-describe("QuestionListWithFilter — 解答状況フィルター A11y", () => {
-  it("フィルターは aria-pressed トグルで、tab ロールを名乗らない", () => {
-    render(<QuestionListWithFilter groups={makeGroups()} />);
-
-    expect(screen.queryAllByRole("tab")).toHaveLength(0);
-    expect(screen.queryAllByRole("tablist")).toHaveLength(0);
-
-    // 初期フィルターは "all" = 「全て」が pressed
-    const all = screen.getByRole("button", { name: /全て/ });
-    expect(all.getAttribute("aria-pressed")).toBe("true");
-
-    const unanswered = screen.getByRole("button", { name: /未解答のみ/ });
-    expect(unanswered.getAttribute("aria-pressed")).toBe("false");
+describe("年度一覧の解答状況", () => {
+  it("全問を表示し、誤答履歴は同じ資格の復習へつなぐ", () => {
+    render(<QuestionListWithFilter groups={makeGroups()} exam="ap" />);
+    expect(screen.getByRole("link", { name: "問1を解く" })).toBeVisible();
+    expect(screen.getByRole("link", { name: "問2を解く" })).toBeVisible();
+    expect(screen.getByRole("link", { name: "間違えた問題を復習" }))
+      .toHaveAttribute("href", "/quiz?exam=ap&mode=review&reviewKind=wrong");
+    expect(screen.queryByRole("button", { name: "未解答のみ" })).toBeNull();
   });
 
-  it("フィルターを切り替えると pressed 状態が移る", () => {
-    render(<QuestionListWithFilter groups={makeGroups()} />);
-
-    fireEvent.click(screen.getByRole("button", { name: /未解答のみ/ }));
-
-    expect(
-      screen.getByRole("button", { name: /未解答のみ/ }).getAttribute("aria-pressed"),
-    ).toBe("true");
-    expect(
-      screen.getByRole("button", { name: /全て/ }).getAttribute("aria-pressed"),
-    ).toBe("false");
-  });
-
-  it("分野ジャンプはフィルター後に問題が残る区分だけを示す", () => {
-    window.localStorage.setItem(LS_KEYS.history, JSON.stringify({ entries: [{ id: "ap-2024a-am-q1", correct: true }] }));
-    const [first, second] = makeGroups()[0]!.items;
-    render(<QuestionListWithFilter showSectionNavigation groups={[
-      { session: "必須 1〜5", id: "required", items: [first!] },
-      { session: "選択 6〜16", id: "optional", items: [second!] },
-    ]} />);
-    expect(screen.getByRole("navigation", { name: "出題区分へ移動" }).querySelectorAll("a")).toHaveLength(2);
-    fireEvent.click(screen.getByRole("button", { name: /未解答のみ/ }));
-    const links = screen.getByRole("navigation", { name: "出題区分へ移動" }).querySelectorAll("a");
-    expect(links).toHaveLength(1);
-    expect(links[0]?.getAttribute("href")).toBe("#optional");
-    fireEvent.click(screen.getByRole("button", { name: /不正解のみ/ }));
-    expect(screen.queryByRole("navigation", { name: "出題区分へ移動" })).toBeNull();
+  it("出題区分のアンカーと解答済み表示を残す", () => {
+    localStorage.setItem(LS_KEYS.history, JSON.stringify({ entries: [{ id: "ap-2024a-am-q1", correct: true }] }));
+    render(<QuestionListWithFilter showSectionNavigation exam="ap" groups={[{ ...makeGroups()[0]!, id: "required" }]} />);
+    expect(screen.getByRole("navigation", { name: "出題区分へ移動" }).querySelector("a")).toHaveAttribute("href", "#required");
+    expect(screen.getByText("正解")).toBeVisible();
+    expect(screen.queryByRole("link", { name: "間違えた問題を復習" })).toBeNull();
   });
 });

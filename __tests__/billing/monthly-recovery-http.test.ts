@@ -85,11 +85,12 @@ describe("monthly signed HTTP recovery across runtime reconstruction (offline me
       return response;
     });
     vi.mocked(f.fetcher).mockClear();
-    await expect(f.service.reconcileAppStoreOverlap("alice", f.result.orderId, f.provider)).rejects.toThrow();
+    const reconcile = () => f.service.reconcileAppStoreOverlap("alice", f.result.orderId, f.provider, async () => "active");
+    await expect(reconcile()).rejects.toThrow();
     expect(readOverlap()?.renewal).toBe("pending");
 
-    await f.service.reconcileAppStoreOverlap("alice", f.result.orderId, f.provider);
-    await f.service.reconcileAppStoreOverlap("alice", f.result.orderId, f.provider);
+    await reconcile();
+    await reconcile();
     expect(readOverlap()?.renewal).toBe("stopped");
     const writes = vi.mocked(f.fetcher).mock.calls.filter(([, options]) => options?.method === "POST");
     expect(writes).toHaveLength(1);

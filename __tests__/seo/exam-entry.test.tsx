@@ -30,7 +30,6 @@ describe.each(Object.keys(EXAM_ENTRIES) as ExamEntryCode[])("%s search landing",
     expect(html).toContain('id="years"');
     expect(html).toContain('id="topics"');
     expect(html).toContain(`/mock-exam?exam=${exam}`);
-    expect(html).toContain(`mode=review&amp;exam=${exam}&amp;scope=exam`);
     expect(years.reduce((sum, item) => sum + item.count, 0)).toBe(questions.length);
     expect(categories.reduce((sum, item) => sum + item.count, 0)).toBe(questions.length);
   });
@@ -44,7 +43,6 @@ describe.each(Object.keys(EXAM_ENTRIES) as ExamEntryCode[])("%s search landing",
   it("names current subjects at the existing practice and guide links", () => {
     const html = renderToStaticMarkup(<><FirstPracticeEntry exam={exam} /><ExamTopGuide exam={exam} /></>);
     expect(html).toContain(exam === "ap" ? "科目A・旧午前" : "科目A-2・旧午前II");
-    expect(html).toContain(exam === "ap" || exam === "sc" ? "科目B対策" : "科目B-1・科目B-2対策");
     expect(html).toContain(`href="/quiz?mode=random&amp;exam=${exam}${exam === "ap" ? "" : "&amp;session=am2"}"`);
     expect(html).toContain(`href="/blog/${EXAM_ENTRIES[exam].guide}"`);
   });

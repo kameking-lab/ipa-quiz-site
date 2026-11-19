@@ -45,8 +45,7 @@ export function DashboardStudyPlan() {
       {day.tasks.length > 0 && day.tasks.every((task) => progress[task.key]?.done) ? <p role="status" className="text-sm font-semibold text-emerald-700 dark:text-emerald-300">今日のタスクは完了です。</p> : null}
     </> : <p className="text-sm text-muted-foreground">今日はこの計画の期間外です。全日程を確認するか、新しい計画を作成できます。</p>}
     <div className="flex flex-wrap gap-3 text-sm">
-      <Link className="inline-flex min-h-11 items-center text-primary underline" href={`/study-plan/result/${plan.id}`}>この計画の全日程を見る</Link>
-      <Link className="inline-flex min-h-11 items-center text-primary underline" href="/study-plan">学習計画を作成・見直す</Link>
+      <details><summary className="min-h-11 cursor-pointer py-3">全日程</summary><Link className="inline-flex min-h-11 items-center text-primary underline" href={`/study-plan/result/${plan.id}`}>この計画の全日程を見る</Link></details>
     </div>
   </section>;
 }

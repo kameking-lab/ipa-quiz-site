@@ -6,7 +6,6 @@ import type { ExamCode, QuizFilter, QuizMode, Season } from "@/lib/questions/typ
 import { getExplicitPoolIds, getPoolIds } from "@/lib/questions/pool-server";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 import { QuizClient } from "./QuizClient";
-import { QuizModeTabs } from "@/components/quiz/QuizModeTabs";
 import { redirect } from "next/navigation";
 import { practiceGateEnabled } from "@/lib/billing/practice-access";
 
@@ -160,8 +159,12 @@ export default async function QuizPage({
           ? "検索結果から選んだ過去問演習"
           : `${EXAM_CONFIGS[exam].nameFull} ${MODE_LABELS[mode]}過去問演習`}
       </h1>
-      {!isExplicitPool && exam !== "denken3" && exam !== "denken2" && exam !== "denken1" && <QuizModeTabs active={mode} exam={exam} />}
-      {!isExplicitPool && !examGroup?.length && <PracticeSessionTabs sessions={[...sessions]} selected={session} />}
+      {!isExplicitPool && !examGroup?.length && sessions.length > 1 && (
+        <details className="mx-auto w-full max-w-2xl px-4 pt-3 text-sm">
+          <summary className="min-h-11 cursor-pointer py-3">試験科目を選ぶ</summary>
+          <PracticeSessionTabs sessions={[...sessions]} selected={session} />
+        </details>
+      )}
       <QuizClient
         billingGateEnabled={practiceGateEnabled()}
         poolIds={poolIds}
@@ -170,8 +173,6 @@ export default async function QuizPage({
         backHref={backHref}
         backLabel={isWeaknessPool ? "わたしの記録に戻る" : isSearchPool ? "検索結果に戻る" : undefined}
         exam={isSearchPool ? "search" : exam}
-        completionLabel={isWeaknessPool ? "弱点レポートの復習" : isSearchPool ? "検索結果から選んだ問題" : undefined}
-        completionShareHref={isSearchPool ? backHref : undefined}
         categoryById={categoryById}
         wrongOnly={mode === "review" && sp.reviewKind === "wrong"}
         mockResultId={mode === "review" ? sp.mock : undefined}

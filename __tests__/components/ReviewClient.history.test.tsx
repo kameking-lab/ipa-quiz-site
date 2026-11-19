@@ -58,7 +58,7 @@ describe("existing answer history → real review lookup", () => {
   it("a genuinely new user gets qualification selection, without being assigned AP", async () => {
     useRealReadApi(); render(<ReviewClient />);
     await screen.findByText("復習キューはまだ空です");
-    expect(screen.getByRole("link", { name: "問題を解き始める" })).toHaveAttribute("href", "/#choose-qualification");
+    expect(screen.getByRole("link", { name: "資格を選ぶ" })).toHaveAttribute("href", "/search");
   });
   it("deduplicates repeated answers through the store API, preserving the original entries", async () => {
     const fetchMock = useRealReadApi(); const history = createHistoryStore();

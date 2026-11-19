@@ -1,4 +1,39 @@
-import { publishedQuestions } from "./published";
+import { ZENKOU_KEISAN_GIJUTSU_QUESTIONS } from "./zenkou-keisan-gijutsu";
+import { KATEI_SHOKUMOTSU_QUESTIONS } from "./katei-shokumotsu";
+import { KATEI_HIFUKU_QUESTIONS } from "./katei-hifuku";
+import { ZENKOU_JOHO_QUESTIONS } from "./zenkou-joho";
+import { KATEI_HOIKU_QUESTIONS } from "./katei-hoiku";
+import { KATEI_SHOKU_CHORI_QUESTIONS } from "./katei-shoku-chori";
+import { MENTAL_HEALTH_MANAGEMENT_QUESTIONS } from "./mental-health-management";
+import { BUILDING_CLEANING_SSW1_QUESTIONS } from "./building-cleaning-ssw1";
+import { COURT_STAFF_QUESTIONS } from "./saibansho-ippan-dai";
+import { KYOIN_TOKYO_QUESTIONS } from "./kyoin-tokyo";
+import { KYOIN_OSAKA_QUESTIONS } from "./kyoin-osaka";
+import { CG_CREATOR_BASIC_QUESTIONS } from "./cg-creator-basic";
+import { CG_CREATOR_EXPERT_QUESTIONS } from "./cg-creator-expert";
+import { CG_ENGINEER_BASIC_QUESTIONS } from "./cg-engineer-basic";
+import { CG_ENGINEER_EXPERT_QUESTIONS } from "./cg-engineer-expert";
+import { MULTIMEDIA_KENTEI_BASIC_QUESTIONS } from "./multimedia-kentei-basic";
+import { MULTIMEDIA_KENTEI_EXPERT_QUESTIONS } from "./multimedia-kentei-expert";
+import { G_KENTEI_QUESTIONS } from "./g-kentei";
+import { KYOTO_KENTEI3_QUESTIONS } from "./kyoto-kentei3";
+import { TOPIK1_QUESTIONS } from "./topik1";
+import { APEF4_QUESTIONS } from "./apef4";
+import { CHUKEN3_QUESTIONS } from "./chuken3";
+import { BIZ_CAREER_LOGISTICS3_QUESTIONS } from "./biz-career-logistics3";
+import { QUESTIONS as KHK_HANBAI2_QUESTIONS } from "./khk-hanbai2";
+import { QUESTIONS as KIKENBUTSU_OTSU5_QUESTIONS } from "./kikenbutsu-otsu5";
+import { QUESTIONS as KIKENBUTSU_OTSU3_QUESTIONS } from "./kikenbutsu-otsu3";
+import { QUESTIONS as KHK_HANBAI_QUESTIONS } from "./khk-hanbai";
+import { QUESTIONS as SHOBO_SETSUBISHI_OTSU4_QUESTIONS } from "./shobo-setsubishi-otsu4";
+import { QUESTIONS as SHOBO_SETSUBISHI_OTSU7_QUESTIONS } from "./shobo-setsubishi-otsu7";
+import { QUESTIONS as SHOBO_SETSUBISHI_KOU3_QUESTIONS } from "./shobo-setsubishi-kou3";
+import { QUESTIONS as SHOBO_SETSUBISHI_KOU2_QUESTIONS } from "./shobo-setsubishi-kou2";
+import { QUESTIONS as SHOBO_SETSUBISHI_KOU5_QUESTIONS } from "./shobo-setsubishi-kou5";
+import { QUESTIONS as GESUIDO_3SHU_QUESTIONS } from "./gesuido-3shu";
+import { loadAdditionalPapers } from "./additional-papers";
+import { appendReplenishedQuestions, publishedQuestions } from "./published";
+import { ZENKOU_PC_QUESTIONS } from "./zenkou-pc";
 import { CONCRETE_ASSOU1_QUESTIONS } from "./concrete-assou1";
 
 import { ZENSHO_ECO80_QUESTIONS } from "./zensho-eco-80";
@@ -1194,6 +1229,7 @@ import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 import { EIKENP2PLUS_QUESTIONS } from "./eikenp2plus";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  ...(isExamPublished("zenkou-pc") ? { "zenkou-pc": ZENKOU_PC_QUESTIONS } : {}),
   ...(isExamPublished("kogai-18") ? { "kogai-18": KOGAI_18_QUESTIONS } : {}),
   ...(isExamPublished("kogai-13") ? { "kogai-13": KOGAI_13_QUESTIONS } : {}),
   ...(isExamPublished("concrete-assou1") ? { "concrete-assou1": CONCRETE_ASSOU1_QUESTIONS } : {}),
@@ -1657,11 +1693,46 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
   ...(isExamPublished("kikai-hozen") ? { "kikai-hozen": KIKAI_HOZEN_QUESTIONS } : {}),
   ...(isExamPublished("tobi2") ? { "tobi2": TOBI2_QUESTIONS } : {}),
   ...(isExamPublished("tsukanshi") ? { "tsukanshi": TSUKANSHI_QUESTIONS } : {}),
+  ...(isExamPublished("zenkou-keisan-gijutsu") ? { "zenkou-keisan-gijutsu": ZENKOU_KEISAN_GIJUTSU_QUESTIONS } : {}),
+  ...(isExamPublished("katei-shokumotsu") ? { "katei-shokumotsu": KATEI_SHOKUMOTSU_QUESTIONS } : {}),
+  ...(isExamPublished("katei-hifuku") ? { "katei-hifuku": KATEI_HIFUKU_QUESTIONS } : {}),
+  ...(isExamPublished("zenkou-joho") ? { "zenkou-joho": ZENKOU_JOHO_QUESTIONS } : {}),
+  ...(isExamPublished("katei-hoiku") ? { "katei-hoiku": KATEI_HOIKU_QUESTIONS } : {}),
+  ...(isExamPublished("katei-shoku-chori") ? { "katei-shoku-chori": KATEI_SHOKU_CHORI_QUESTIONS } : {}),
+  ...(isExamPublished("mental-health-management") ? { "mental-health-management": MENTAL_HEALTH_MANAGEMENT_QUESTIONS } : {}),
+  ...(isExamPublished("building-cleaning-ssw1") ? { "building-cleaning-ssw1": BUILDING_CLEANING_SSW1_QUESTIONS } : {}),
+  ...(isExamPublished("saibansho-ippan-dai") ? { "saibansho-ippan-dai": COURT_STAFF_QUESTIONS } : {}),
+  ...(isExamPublished("kyoin-tokyo") ? { "kyoin-tokyo": KYOIN_TOKYO_QUESTIONS } : {}),
+  ...(isExamPublished("kyoin-osaka") ? { "kyoin-osaka": KYOIN_OSAKA_QUESTIONS } : {}),
+  ...(isExamPublished("cg-creator-basic") ? { "cg-creator-basic": CG_CREATOR_BASIC_QUESTIONS } : {}),
+  ...(isExamPublished("cg-creator-expert") ? { "cg-creator-expert": CG_CREATOR_EXPERT_QUESTIONS } : {}),
+  ...(isExamPublished("cg-engineer-basic") ? { "cg-engineer-basic": CG_ENGINEER_BASIC_QUESTIONS } : {}),
+  ...(isExamPublished("cg-engineer-expert") ? { "cg-engineer-expert": CG_ENGINEER_EXPERT_QUESTIONS } : {}),
+  ...(isExamPublished("multimedia-kentei-basic") ? { "multimedia-kentei-basic": MULTIMEDIA_KENTEI_BASIC_QUESTIONS } : {}),
+  ...(isExamPublished("multimedia-kentei-expert") ? { "multimedia-kentei-expert": MULTIMEDIA_KENTEI_EXPERT_QUESTIONS } : {}),
+  ...(isExamPublished("g-kentei") ? { "g-kentei": G_KENTEI_QUESTIONS } : {}),
+  ...(isExamPublished("kyoto-kentei3") ? { "kyoto-kentei3": KYOTO_KENTEI3_QUESTIONS } : {}),
+  ...(isExamPublished("topik1") ? { "topik1": TOPIK1_QUESTIONS } : {}),
+  ...(isExamPublished("apef4") ? { "apef4": APEF4_QUESTIONS } : {}),
+  ...(isExamPublished("chuken3") ? { "chuken3": CHUKEN3_QUESTIONS } : {}),
+  ...(isExamPublished("biz-career-logistics3") ? { "biz-career-logistics3": BIZ_CAREER_LOGISTICS3_QUESTIONS } : {}),
+  ...(isExamPublished("khk-hanbai2") ? { "khk-hanbai2": KHK_HANBAI2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("kikenbutsu-otsu5") ? { "kikenbutsu-otsu5": KIKENBUTSU_OTSU5_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("kikenbutsu-otsu3") ? { "kikenbutsu-otsu3": KIKENBUTSU_OTSU3_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("khk-hanbai") ? { "khk-hanbai": KHK_HANBAI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("shobo-setsubishi-otsu4") ? { "shobo-setsubishi-otsu4": SHOBO_SETSUBISHI_OTSU4_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("shobo-setsubishi-otsu7") ? { "shobo-setsubishi-otsu7": SHOBO_SETSUBISHI_OTSU7_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("shobo-setsubishi-kou3") ? { "shobo-setsubishi-kou3": SHOBO_SETSUBISHI_KOU3_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("shobo-setsubishi-kou2") ? { "shobo-setsubishi-kou2": SHOBO_SETSUBISHI_KOU2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("shobo-setsubishi-kou5") ? { "shobo-setsubishi-kou5": SHOBO_SETSUBISHI_KOU5_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("gesuido-3shu") ? { "gesuido-3shu": GESUIDO_3SHU_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
 };
 
 for (const exam of Object.keys(QUESTIONS_BY_EXAM) as ExamCode[]) {
   const questions = QUESTIONS_BY_EXAM[exam];
-  if (questions) QUESTIONS_BY_EXAM[exam] = publishedQuestions(questions);
+  if (!questions) continue;
+  const additional = loadAdditionalPapers(exam);
+  QUESTIONS_BY_EXAM[exam] = publishedQuestions(additional ? appendReplenishedQuestions(questions, [additional]) : questions);
 }
 
 // Compatibility lookups do not add a second copy to the enumerable registry.

@@ -24,8 +24,8 @@ export function ExamTopGuide({ exam }: { exam: ExamEntryCode }) {
   const entry = EXAM_ENTRIES[exam];
   return (
     <>
-      <section id="afternoon" aria-labelledby="afternoon-heading" className="mb-6 scroll-mt-20 rounded-2xl border border-border bg-card p-4 sm:p-5">
-        <h2 id="afternoon-heading" className="text-base font-bold">{exam === "ap" || exam === "sc" ? "科目B対策" : "科目B-1・科目B-2対策"}（旧{entry.afternoon}）</h2>
+      <details id="afternoon" className="mb-6 scroll-mt-20 rounded-2xl border border-border bg-card p-4 sm:p-5">
+        <summary className="min-h-11 cursor-pointer py-3 text-base font-bold">{exam === "ap" || exam === "sc" ? "科目B対策" : "科目B-1・科目B-2対策"}（旧{entry.afternoon}）</summary>
         {exam !== "st" && <>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">年度別一覧は午前の知識確認に使い、午後はIPAの問題冊子を開いて練習します。次の順で、解く前の準備から復習まで進めましょう。</p>
           <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm leading-relaxed">
@@ -50,7 +50,7 @@ export function ExamTopGuide({ exam }: { exam: ExamEntryCode }) {
           {entry.aiEssay && <li><Link href="/essay" className={guideLink}>論述の練習問題 →</Link></li>}
           <li><a href={EXAM_OFFICIAL_LINKS[exam].pastQuestions} target="_blank" rel="noopener noreferrer" className={guideLink}>IPA公式の過去問・解答例 →</a></li>
         </ul>
-      </section>
+      </details>
     </>
   );
 }

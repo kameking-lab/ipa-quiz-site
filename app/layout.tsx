@@ -5,10 +5,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Link from "next/link";
 import { SourceRelationshipFooter } from "@/components/question-provenance/SourceRelationshipFooter";
 import { HomeFooterNavigation } from "@/components/HomeFooterNavigation";
-import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
 import "./globals.css";
 import { ThemeProvider, THEME_BOOTSTRAP_SCRIPT } from "@/components/theme-provider";
-import { ThemeToggle } from "@/components/ThemeToggle";
 import { SiteHeader } from "@/components/SiteHeader";
 import { AccountNavigationProvider } from "@/components/account/AccountNavigation";
 import { SyncSessionObservationProvider } from "@/lib/sync/session-observation";
@@ -27,7 +25,6 @@ import { StudyPresence } from "@/components/StudyPresence";
 import { EmergencyBanner } from "@/components/EmergencyBanner";
 import { SITE_BASE_URL } from "@/lib/seo/config";
 import { FeedbackAccountClaim } from "@/components/quiz/FeedbackAccountClaim";
-import { AppStorePromo } from "@/components/app-store/AppStorePromo";
 import { appStoreItunesMetadata } from "@/lib/app-store";
 
 const geistSans = Geist({
@@ -193,7 +190,6 @@ export default function RootLayout({
                       <li><Link prefetch={false} href="/sc" className="block py-2.5 hover:text-foreground">SC セキュリティ</Link></li>
                       <li><Link prefetch={false} href="/db" className="block py-2.5 hover:text-foreground">DB データベース</Link></li>
                       <li><Link prefetch={false} href="/ipa" className="block py-2.5 font-medium hover:text-foreground">IPAの全試験 →</Link></li>
-                      <li><Link prefetch={false} href="/" className="block py-2.5 font-medium hover:text-foreground">IPA・安全を選ぶ →</Link></li>
                     </ul>
                   </nav>
                   <nav aria-labelledby="footer-nav-safety">
@@ -216,8 +212,9 @@ export default function RootLayout({
                       <li><Link prefetch={false} href="/challenge" className="block py-2.5 hover:text-foreground">IPA デイリーチャレンジ</Link></li>
                       <li><Link prefetch={false} href="/mock-exam" className="block py-2.5 hover:text-foreground">IPA 模試モード</Link></li>
                       <li><Link href="/account/dashboard#mock-scores" prefetch={false} className="block py-2.5 hover:text-foreground">模試記録</Link></li>
-                      <li><Link prefetch={false} href={PRICE_PAGE_LINK.href} className="block py-2.5 hover:text-foreground">{PRICE_PAGE_LINK.label}</Link></li>
                       <li><Link prefetch={false} href="/faq" className="block py-2.5 hover:text-foreground">FAQ</Link></li>
+                      <li><Link prefetch={false} href="/why-kakomon-ai" className="block py-2.5 hover:text-foreground">過去問AIを選ぶ理由</Link></li>
+                      <li><Link prefetch={false} href="/essays" className="block py-2.5 hover:text-foreground">論述例</Link></li>
                       <li><Link prefetch={false} href="/features" className="block py-2.5 hover:text-foreground">機能特集</Link></li>
                       <li><Link prefetch={false} href="/glossary" className="block py-2.5 hover:text-foreground">用語集</Link></li>
                       <li><Link prefetch={false} href="/keywords" className="block py-2.5 hover:text-foreground">学習トピック</Link></li>
@@ -234,6 +231,8 @@ export default function RootLayout({
                       <li><Link prefetch={false} href="/about" className="block py-2.5 hover:text-foreground">プロジェクトについて</Link></li>
                       <li><Link prefetch={false} href="/stats" className="block py-2.5 hover:text-foreground">公開ダッシュボード</Link></li>
                       <li><Link prefetch={false} href="/transparency" className="block py-2.5 hover:text-foreground">透明性レポート</Link></li>
+                      <li><Link prefetch={false} href="/transparency#static-explanations" className="block py-2.5 hover:text-foreground">静的解説の確認方針</Link></li>
+                      <li><Link prefetch={false} href="/license" className="block py-2.5 hover:text-foreground">コンテンツ方針</Link></li>
                       <li><Link prefetch={false} href="/operator" className="block py-2.5 hover:text-foreground">運営者情報</Link></li>
                       <li><Link prefetch={false} href="/updates" className="block py-2.5 hover:text-foreground">更新履歴</Link></li>
                     </ul>
@@ -244,9 +243,7 @@ export default function RootLayout({
                     </h3>
                     <ul className="space-y-0">
                       <li><a href="https://tsugino-shikaku.jp/?utm_source=kakomon_ai&utm_medium=referral&utm_campaign=learning_network" target="_blank" rel="noopener noreferrer" className="block py-2.5 hover:text-foreground">日程・締切を探す・次の資格</a></li>
-                      <li><a href="https://www.youtube.com/channel/UCrR65J1ZQ6Zzr0Gs70YPHNA?utm_source=kakomon_ai&utm_medium=referral&utm_campaign=learning_network" target="_blank" rel="noopener noreferrer" className="block py-2.5 hover:text-foreground">耳で復習・ミナト資格ラジオ</a></li>
 
-                      <li><a href="https://www.instagram.com/kakomon_ipa_jp/" target="_blank" rel="noopener noreferrer" className="block py-2.5 hover:text-foreground">Instagramで毎日1問</a></li>
                       <li><Link prefetch={false} href="/contact" className="block py-2.5 hover:text-foreground">フィードバック</Link></li>
                       <li><Link prefetch={false} href="/community-guidelines" className="block py-2.5 hover:text-foreground">コミュニティガイドライン</Link></li>
                     </ul>
@@ -259,22 +256,12 @@ export default function RootLayout({
                       <li><Link prefetch={false} href="/terms" className="block py-2.5 hover:text-foreground">利用規約</Link></li>
                       <li><Link prefetch={false} href="/privacy" className="block py-2.5 hover:text-foreground">プライバシーポリシー</Link></li>
                       <li><NativeAdPrivacy /></li>
-                      <li><Link prefetch={false} href="/license" className="block py-2.5 hover:text-foreground">コンテンツ方針</Link></li>
                       <li><Link prefetch={false} href="/operator" className="block py-2.5 hover:text-foreground">運営者情報・特商法</Link></li>
                       <li><Link prefetch={false} href="/about#attribution" className="block py-2.5 hover:text-foreground">公式問題の著作権・出典</Link></li>
                     </ul>
                   </nav>
                 </div>
 
-                {/* Theme */}
-                <div className="native-app-hidden print:hidden mt-6 flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                  <div className="flex items-center gap-2 text-[11px]">
-                    <span className="text-muted-foreground">テーマ</span>
-                    <ThemeToggle />
-                  </div>
-                </div>
-
-                <AppStorePromo className="print:hidden mt-4" />
                 </HomeFooterNavigation>
 
                 <SourceRelationshipFooter />

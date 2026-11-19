@@ -12,11 +12,9 @@ import type { PetLearningSubmission } from "@/lib/pet/client/learning-submission
 import type { NativeBGrade } from "@/lib/questions/types";
 import { gradeNativeB, serializeNativeBSelections, formatNativeBAnswer, type NativeBSelections } from "@/lib/questions/native-b";
 import { NativeBAnswerInput, NativeBFeedback } from "./NativeBAnswer";
-import dynamic from "next/dynamic";
+import { QuestionAiFollowup } from "./QuestionAiFollowup";
 import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys, isCompleteSelectionCorrect, formatSelection, selectionInstruction } from "@/lib/questions/answers";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { ArrowRight, BookOpenCheck, Eye, MessageCircle } from "lucide-react";
 
 import { ChoiceButton } from "./ChoiceButton";
 import { NumericAnswerInput } from "./NumericAnswerInput";
@@ -34,12 +32,6 @@ import { observeJourney } from "@/lib/billing/journey-client";
 import type { ChoiceKey, ExamCode, Question, QuestionPart, Season, Session } from "@/lib/questions/types";
 import { choiceDisplayLabel, choiceImageAlt, formatQuestionAnswerForDisplay, usesNumberedChoices } from "@/lib/questions/display";
 
-const CopilotInline = dynamic(
-  () => import("@/components/copilot/CopilotPanel").then((module) => module.CopilotInline),
-  { ssr: false },
-);
-
-
 interface Props {
   /** Present on real question pages; enables a one-click, in-place AI follow-up. */
   question?: Question;
@@ -54,8 +46,8 @@ interface Props {
   session: Session;
   qNumber: number;
   part?: QuestionPart;
-  /** /q path of the next question in the same session, if any. */
-  nextHref?: string;
+  explanation?: React.ReactNode;
+  source?: React.ReactNode;
   /** 1問で選ぶ肢の数。2以上なら answerKey の全肢をそろえて選ぶと正解。 */
   requiredSelections?: number;
 }
@@ -74,20 +66,18 @@ interface Props {
  *     roving-tabindex + number-key UX as the full QuizPlayer).
  *   - Answering reveals correct/incorrect and records to the *existing* history
  *     store (no new localStorage keys), so a landing-page solve counts exactly
- *     like a /quiz solve. The (already server-rendered, <details open>)
- *     explanation sits directly below.
- *   - A "just reveal" path is preserved for pure readers, and is NOT recorded
- *     so stats stay honest.
+ *     like a /quiz solve. The server-rendered explanation sits directly below.
+ *   - Revealing the answer shows the pet's reading pose without recording an attempt.
  */
 export function QuestionAnswerCard(props: Props) {
   if (isReferenceOnlyQuestionId(props.questionId) || isReferenceOnlyQuestionId(props.question?.id)) {
-    return <section aria-label="参照専用の選択肢">
+    return <><section aria-label="参照専用の選択肢">
       <p role="note">この問題は参照専用です。採点・学習記録・報酬の対象には含まれません。</p>
       <dl className="mt-3 space-y-3">{Object.entries(props.choices ?? props.question?.choices ?? {}).map(([key, text]) => (
         <div key={key} className="rounded-lg border border-border p-3"><dt className="font-semibold">{choiceDisplayLabel(props.exam, key as ChoiceKey)}</dt><dd><QuestionBody text={text} /></dd></div>
       ))}</dl>
       <p className="mt-3 font-semibold">公式正答（参照）: {props.question?.officialAnswerNumber ?? formatAcceptedAnswers(props.answerKey)}</p>
-    </section>;
+    </section>{props.explanation}{props.source}</>;
   }
   return <NativeQuestionGate id={props.questionId}><ScoredQuestionAnswerCard {...props} /></NativeQuestionGate>;
 }
@@ -105,7 +95,8 @@ function ScoredQuestionAnswerCard({
   session,
   qNumber,
   part,
-  nextHref,
+  explanation,
+  source,
   requiredSelections = 1,
 }: Props) {
   const pet = usePetLearning();
@@ -121,7 +112,6 @@ function ScoredQuestionAnswerCard({
   const [orderedSelected, setOrderedSelected] = React.useState<ChoiceKey[] | undefined>(undefined);
   const [revealed, setRevealed] = React.useState(false);
   const [shortcutsReady, setShortcutsReady] = React.useState(false);
-  const [copilotRequest, setCopilotRequest] = React.useState<{ questionId: string; sequence: number; prompt?: string } | null>(null);
 
   React.useEffect(() => {
     setNativeBResult(undefined);
@@ -130,7 +120,6 @@ function ScoredQuestionAnswerCard({
     setNumericSelected(undefined);
     setOrderedSelected(undefined);
     setRevealed(false);
-    setCopilotRequest(null);
   }, [question, questionId]);
 
   const keys = React.useMemo(
@@ -206,16 +195,12 @@ function ScoredQuestionAnswerCard({
     recordOutcome(value.join("→"), isOrderingAnswerCorrect(question, value), { kind: "ordering", selected: [...value] });
   }, [questionId, question, ordering, revealed, recordOutcome]);
 
-  // Pure-reader path: reveal the answer without committing/recording.
-  const revealOnly = React.useCallback(() => {
+  function revealOnly() {
     if (revealed) return;
     if (question) pet.reveal(question);
-    setSelected(undefined);
     setPicked([]);
-    setNumericSelected(undefined);
-    setOrderedSelected(undefined);
     setRevealed(true);
-  }, [revealed, question, pet]);
+  }
 
   // Number-key selection (1–4), mirroring QuizPlayer; ignore when typing in a
   // field so the AI copilot input etc. are unaffected.
@@ -242,7 +227,7 @@ function ScoredQuestionAnswerCard({
     };
   }, [revealed, ordering, keys, onSelect]);
 
-  const answered = native ? nativeBResult !== undefined : ordering ? orderedSelected !== undefined : numeric ? numericSelected !== undefined : multiSelect ? (question?.acceptedAnswerCombinations ? revealed : picked.length === requiredSelections) : selected !== undefined;
+  const answered = native ? nativeBResult !== undefined : ordering ? orderedSelected !== undefined : numeric ? numericSelected !== undefined : multiSelect ? revealed && picked.length > 0 : selected !== undefined;
   const isCorrect = native ? nativeBResult?.isCorrect === true : ordering ? isOrderingAnswerCorrect(question!, orderedSelected ?? []) : numeric ? isNumericAnswerCorrect(question!, numericSelected ?? "") : multiSelect ? isCompleteSelectionCorrect(answerKey, picked, requiredSelections, question?.acceptedAnswerCombinations) : isAcceptedAnswer(answerKey, selected);
   const answerLabel = native ? formatNativeBAnswer(question!.nativeB!) : ordering ? formatOrderingAnswer(exam, answerKey as ChoiceKey[]) : numeric ? formatNumericAnswer(question!) : usesNumberedChoices(exam)
     ? question ? formatQuestionAnswerForDisplay(question, answerKey as ChoiceKey | ChoiceKey[])
@@ -308,12 +293,7 @@ function ScoredQuestionAnswerCard({
       </div>
 
       {!revealed ? (
-        <button
-          type="button"
-          onClick={revealOnly}
-          className="inline-flex min-h-[44px] items-center gap-1.5 text-sm font-medium text-muted-foreground underline decoration-border underline-offset-4 transition hover:text-foreground"
-        >
-          <Eye className="h-4 w-4" aria-hidden="true" />
+        <button type="button" onClick={revealOnly} className="inline-flex min-h-11 items-center text-sm font-medium text-muted-foreground underline decoration-border underline-offset-4 hover:text-foreground">
           採点せずに答えだけ見る
         </button>
       ) : (
@@ -342,45 +322,18 @@ function ScoredQuestionAnswerCard({
             ))}
           </div>
           {question ? <div className="mt-3"><LearningPetCorner qualificationId={question.exam} questionId={question.id} compact /></div> : null}
-          <div className="mt-3 flex flex-wrap items-center gap-2">
-            <a
-              href="#explanation"
-              className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full bg-primary px-5 py-2 text-sm font-bold text-primary-foreground shadow-sm transition hover:bg-primary/90"
-            >
-              <BookOpenCheck className="h-4 w-4 text-primary-foreground" aria-hidden="true" />
-              解説を読む
-            </a>
-            {question && !native && (
-              <button
-                type="button"
-                onClick={() => setCopilotRequest((value) => ({ questionId, sequence: (value?.sequence ?? 0) + 1, prompt: answered && !isCorrect ? "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" : undefined }))}
-                className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-primary/40 bg-card px-4 py-2 text-sm font-semibold text-primary transition hover:bg-primary-soft"
-              >
-                <MessageCircle className="h-4 w-4" aria-hidden="true" />
-                {answered && !isCorrect ? "誤答をAIに質問" : "この問題をAIに質問"}
-              </button>
-            )}
-            {nextHref && (
-              <Link
-                href={nextHref}
-                className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-border bg-card px-4 py-2 text-sm font-semibold text-foreground transition hover:bg-muted"
-              >
-                次の問題へ
-                <ArrowRight className="h-4 w-4" aria-hidden="true" />
-              </Link>
-            )}
-          </div>
         </div>
       )}
       {revealed && <RikuTech2CylinderGuide questionId={questionId} revealed={revealed} />}
+      {explanation}
       {question && !native && (
-        <CopilotInline
+        <QuestionAiFollowup
           question={question}
           selectedChoice={answered ? (ordering ? orderedSelected?.join("→") : numeric ? numericSelected : multiSelect ? formatSelection(picked) : selected) : undefined}
           isCorrect={answered ? isCorrect : undefined}
-          focusRequest={{ sequence: copilotRequest?.questionId === question.id ? copilotRequest.sequence : 0, prompt: copilotRequest?.prompt }}
         />
       )}
+      {source}
     </div>
   );
 }

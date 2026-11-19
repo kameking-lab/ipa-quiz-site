@@ -14,7 +14,7 @@ it.each([1, 5, 12, 24, 48, 120, 130])("seats most of %i learners at desks with t
   const snapshot = measuredPresence({ count, exams: [{ exam: "ip", count }] }, Date.now());
   const { container } = render(<StudyRoom snapshot={snapshot} suggestions={[]} />);
   expect(container.querySelectorAll(".study-mascot")).toHaveLength(count);
-  const buttons = [...container.querySelectorAll('button[data-mascot-state]')];
+  const buttons = [...container.querySelectorAll('[data-mascot-state]')];
   const floor = buttons.filter(button => button.getAttribute('data-mascot-state') === 'away');
   const study = buttons.filter(button => button.getAttribute('data-mascot-state') === 'study');
   expect(study.length / count).toBeGreaterThanOrEqual(.78);

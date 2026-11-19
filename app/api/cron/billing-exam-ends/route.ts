@@ -1,6 +1,7 @@
 import { monthlySelected } from "@/lib/billing/subscription/config";
 import { monthlyRuntime } from "@/lib/billing/subscription/runtime";
 import { notifyOpsInBackground } from "@/lib/notify/ops-alert";
+import { readAppStorePurchaseStatus } from "@/mobile/server/revenuecat";
 
 export const runtime = "nodejs";
 export const maxDuration = 60;
@@ -25,7 +26,7 @@ export async function GET(request: Request) {
         const batch = orders.slice(start, start + 4);
         scanned.push(...batch.map(order => order.signup_id));
         const results = await Promise.allSettled(batch.map(order =>
-          service.runExamEndCheck(order.user_id, order.signup_id, provider)));
+          service.runExamEndCheck(order.user_id, order.signup_id, provider, readAppStorePurchaseStatus)));
         checked += results.length;
         failed += results.filter(result => result.status === "rejected").length;
       }

@@ -21,13 +21,14 @@ import { PetStageProgress } from "./PetStageProgress";
 
 const STAGE_NAMES = { puppy: "こいぬ", partner: "学習の相棒", expert: "専門家" } as const;
 
-export default function PetCareSheet({ document: doc, qualificationId, initialAppearanceOpen = false, initialSettingsOpen = false, motionPaused, onMotionChange, allowMotion = true, onClose, returnFocus, onPose }: {
+export default function PetCareSheet({ document: doc, qualificationId, initialAppearanceOpen = false, initialSettingsOpen = false, motionPaused, onMotionChange, allowMotion = true, onClose, returnFocus, onPose, appearanceAction }: {
   document: PetProfileDocument | null; qualificationId?: string; onClose(): void;
   initialAppearanceOpen?: boolean;
   initialSettingsOpen?: boolean;
   motionPaused?: boolean;
   onMotionChange?(paused: boolean): void;
   allowMotion?: boolean;
+  appearanceAction?: () => void;
   returnFocus(): void; onPose(pose: PetPose, caption: string, qualificationId: string): void;
 }) {
   const [selected, setSelected] = useState(qualificationId), [busy, setBusy] = useState(false), [message, setMessage] = useState("");
@@ -92,6 +93,7 @@ export default function PetCareSheet({ document: doc, qualificationId, initialAp
       <DialogTitle ref={heading} tabIndex={-1}>{settingsMode ? "チワワの設定" : "チワワの育成"}</DialogTitle>
       <DialogDescription className={settingsMode ? "sr-only" : undefined}>{settingsMode ? "名前・動き・バックアップ" : "問題を解くほど育ちます。"}</DialogDescription>
       <div role="status" className={styles.message}>{message}</div>
+      {appearanceAction && <button type="button" className={styles.done} onClick={appearanceAction}>着がえ</button>}
       {!doc ? <p>読み込み中…</p> : <>
         {doc.profiles.length > 1 || (selected && !profile && doc.profiles.length > 0) ? <label>資格<select value={profile?.qualificationId ?? ""} disabled={busy} onChange={event => { if (timer.current) clearTimeout(timer.current); if (greetingTimer.current) clearTimeout(greetingTimer.current); setPreparing(false); setLookChosen(true); setSelected(event.target.value); setPose("study"); setHearts(0); onPose("study", "", event.target.value); setMessage(""); setSections({ appearance: false, paths: false, memories: false, settings: false }); }}>
           {!profile ? <option value="">資格を選んでください</option> : null}

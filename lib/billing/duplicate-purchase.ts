@@ -52,29 +52,11 @@ export class DuplicatePurchaseGuard {
     }
   }
 
-  /** Report an overlap using verified provider rights, without changing access. */
-  async audit(userId: string) {
-    try {
-      const current = await this.purchaseEmail(userId);
-      if (!current) {
-        const paid = await this.rights(userId);
-        if (paid.stripe && paid.appStore) {
-          console.warn("duplicate_purchase_stripe_app_store_same_account");
-          return [userId];
-        }
-        return;
-      }
-      let stripe = false;
-      const appStoreUsers: string[] = [];
-      for (const member of await this.members(current.email)) {
-        const paid = await this.rights(member.id);
-        stripe ||= paid.stripe;
-        if (paid.appStore) appStoreUsers.push(member.id);
-      }
-      if (stripe && appStoreUsers.length) {
-        console.warn("duplicate_purchase_stripe_app_store_same_email");
-        return appStoreUsers;
-      }
-    } catch { console.warn("duplicate_purchase_audit_unavailable"); }
+  async appStoreUsers(userId: string) {
+    const current = await this.purchaseEmail(userId);
+    const ids = current ? (await this.members(current.email)).map(member => member.id) : [userId];
+    const appStoreUsers: string[] = [];
+    for (const id of ids) if ((await this.rights(id)).appStore) appStoreUsers.push(id);
+    return appStoreUsers;
   }
 }

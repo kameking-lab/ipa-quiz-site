@@ -51,12 +51,12 @@ export function TodayQuiz({ planId, billingGateEnabled }: { planId: string; bill
     })().catch(e => { if (!controller.signal.aborted) setError(e instanceof Error ? e.message : "問題を準備できませんでした。"); });
     return () => controller.abort();
   }, [planId, billingGateEnabled]);
-  if (error) return <main className="mx-auto max-w-[640px] p-6"><p role="alert">{error}</p><Link href="/" className="mt-4 block underline">ホームへ</Link></main>;
+  if (error) return <main className="mx-auto max-w-[640px] p-6"><p role="alert">{error}</p><Link href="/search" className="mt-4 inline-flex min-h-11 items-center underline">資格を選ぶ</Link></main>;
   if (!batch) return <p role="status" className="p-8 text-center text-sm text-muted-foreground">今日の問題を準備中…</p>;
   if (!batch.ids.length) return <main className="mx-auto w-full max-w-[640px] p-8 text-center"><h1 className="text-xl font-bold">今日も、おつかれさまでした</h1><Button asChild className="mt-6 min-h-12"><Link href="/">ホームへ</Link></Button></main>;
   if (batch.library) return <><h1 className="mx-auto w-full max-w-[640px] px-4 pt-4 text-sm font-semibold">今日の問題 · {batch.ids.length}問</h1><TodayLibrary questions={batch.library} exam={batch.exam} /></>;
   // Year mode preserves the exact priority order and all supplied IDs. Every
   // question still passes through QuizClient's existing server access gate.
   return <><h1 className="mx-auto w-full max-w-[640px] px-4 pt-4 text-sm font-semibold">今日の問題 · {batch.ids.length}問</h1><QuizClient poolIds={batch.ids} mode="year" backHref="/" backLabel="ホームへ" exam={batch.exam}
-    completionLabel="今日の問題" billingGateEnabled={billingGateEnabled} /></>;
+    billingGateEnabled={billingGateEnabled} /></>;
 }

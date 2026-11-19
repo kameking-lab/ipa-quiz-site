@@ -1,0 +1,852 @@
+[
+  {
+    "id": "kounin-physics-2024-second-gakka-q1",
+    "exam": "kounin-physics",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 1,
+    "officialQuestionLabel": "解答番号 1",
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "相対速度"
+    ],
+    "difficulty": 2,
+    "question": "自動車 A が東向きに40 km/hで進み，自動車 B が東向きに30 km/hで進んでいる。自動車 A に対する自動車 B の相対速度の向きと大きさの組合せとして正しいものはどれか。",
+    "choices": {
+      "ア": "東向き・10 km/h",
+      "イ": "東向き・70 km/h",
+      "ウ": "西向き・10 km/h",
+      "エ": "西向き・70 km/h"
+    },
+    "answer": "ウ",
+    "explanation": "東を正とするとBのAに対する相対速度は30−40＝−10 km/hです。負号が西向きを表します。",
+    "choiceExplanations": {
+      "ア": "大きさの差は10 km/hですが、BはAより東向きに遅いので、Aから見ると西向きに動きます。",
+      "イ": "東向きの速度同士は、Bの速度からAの速度を差し引きます。70 km/hは二つの速さを足した値です。",
+      "ウ": "東を正とするとBのAに対する相対速度は30−40＝−10 km/hです。負号が西向きを表します。",
+      "エ": "両車は同じ東向きに走るので、相対速度の大きさは70 km/hではなく差の10 km/hです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20250410-mxt_syogai02-mext_000038763_07.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20241031_mxt_syogai02_000038763_07_butsurikiso.pdf",
+    "sourceAttribution": "出典：文部科学省 令和6年度第2回高等学校卒業程度認定試験 物理基礎（解答番号1）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2024-second-gakka-q2",
+    "exam": "kounin-physics",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 2,
+    "officialQuestionLabel": "解答番号 2",
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "自由落下"
+    ],
+    "difficulty": 2,
+    "question": "図のように，Aさんが長さ50 cmのものさしの上部を持ち，Bさんの親指と人差し指の間にものさしの下端がくるようにする。Aさんが予告なしで，初速度0でものさしをはなす。それを見たBさんがものさしをつかむ。この間にものさしが落下した距離を測定することで，AさんがものさしをはなしたのをBさんが見てから，つかむまでのBさんの反応時間を調べることができる。Bさんがつかんだ位置が，下端から45 cmだったとすると，Bさんの反応時間は何 s か。ただし，重力加速度の大きさを10 m/s²とする。",
+    "choices": {
+      "ア": "0.1",
+      "イ": "0.2",
+      "ウ": "0.3",
+      "エ": "0.4",
+      "オ": "0.5"
+    },
+    "answer": "ウ",
+    "explanation": "落下距離0.45 mを0.45＝(1/2)×10×t²に代入すると、t＝0.3 sです。",
+    "choiceExplanations": {
+      "ア": "落下距離は5t²です。0.1 sでは0.05 mしか落下しません。",
+      "イ": "5×0.2²＝0.20 mであり、つかんだ位置の0.45 mに届きません。",
+      "ウ": "落下距離0.45 mを0.45＝(1/2)×10×t²に代入すると、t＝0.3 sです。",
+      "エ": "0.4 sでは5×0.4²＝0.80 mとなり、実際の落下距離を超えます。",
+      "オ": "0.5 sの落下距離は1.25 mで、ものさしの全長よりも長くなります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20250410-mxt_syogai02-mext_000038763_07.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20241031_mxt_syogai02_000038763_07_butsurikiso.pdf",
+    "sourceAttribution": "出典：文部科学省 令和6年度第2回高等学校卒業程度認定試験 物理基礎（解答番号2）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2024-2-q02.webp"
+    ],
+    "imageAltTexts": [
+      "自由落下の原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2024-second-gakka-q3",
+    "exam": "kounin-physics",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 3,
+    "officialQuestionLabel": "解答番号 3",
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "浮力"
+    ],
+    "difficulty": 2,
+    "question": "図1のように，軽い棒の両端に質量の等しい二つの物体 A，B をつるす。棒の中心に糸を付け，持ち上げたところ，棒は水平を保った。次に，図2のように水を入れた水槽に物体 A，B を沈めると，B は水槽の底についた。これは，A にはたらく浮力が B にはたらく浮力より［ア］，同じ質量でも，A の方が体積が［イ］，密度が［ウ］ためである。ア〜ウの組合せとして正しいものはどれか。",
+    "choices": {
+      "ア": "大きく・大きく・大きい",
+      "イ": "大きく・大きく・小さい",
+      "ウ": "小さく・小さく・大きい",
+      "エ": "小さく・小さく・小さい"
+    },
+    "answer": "イ",
+    "explanation": "Aが押しのける水の体積が大きく、Aの浮力が大きくなります。質量が同じなので、体積の大きいAの密度は小さくなります。",
+    "choiceExplanations": {
+      "ア": "質量が等しいとき、体積の大きい物体ほど密度は小さくなります。",
+      "イ": "Aが押しのける水の体積が大きく、Aの浮力が大きくなります。質量が同じなので、体積の大きいAの密度は小さくなります。",
+      "ウ": "この関係ではAの水中での見かけの重さが大きくなり、図の傾きと反対になります。",
+      "エ": "質量一定で体積が小さければ密度は大きくなります。また図では高い側のAの浮力が大きくなっています。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20250410-mxt_syogai02-mext_000038763_07.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20241031_mxt_syogai02_000038763_07_butsurikiso.pdf",
+    "sourceAttribution": "出典：文部科学省 令和6年度第2回高等学校卒業程度認定試験 物理基礎（解答番号3）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2024-2-q03.webp"
+    ],
+    "imageAltTexts": [
+      "浮力の原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2024-second-gakka-q4",
+    "exam": "kounin-physics",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 4,
+    "officialQuestionLabel": "解答番号 4",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "ばねの仕事と弾性エネルギー"
+    ],
+    "difficulty": 2,
+    "question": "ばね定数 k のばねが伸びた状態から自然の長さにもどるとき，弾性力は物体に仕事をする。図のように，ばねが自然の長さから a だけ伸びた位置から自然の長さにもどるまでに，弾性力がする仕事は，縦軸を弾性力 F，横軸をばねの伸び x として描いた［ア］と等しくなる。したがって，a だけ伸びたばねにつけられた物体は，弾性力による位置エネルギーをたくわえていると考えることができる。このときの弾性力による位置エネルギーは［イ］と表される。アとイの組合せとして正しいものはどれか。",
+    "choices": {
+      "ア": "グラフの傾き・ka",
+      "イ": "グラフの傾き・(1/2)ka²",
+      "ウ": "グラフの斜線部分の面積・ka",
+      "エ": "グラフの斜線部分の面積・(1/2)ka²"
+    },
+    "answer": "エ",
+    "explanation": "仕事はF–xグラフの面積です。0からaまでの三角形の面積は a×ka÷2 となります。",
+    "choiceExplanations": {
+      "ア": "傾きはばね定数 k です。ka は伸び a における弾性力の大きさで、仕事の単位ではありません。",
+      "イ": "エネルギーの式は合っていますが、仕事は傾きから直接読み取る量ではなく、力を変位について積算した面積です。",
+      "ウ": "面積を用いる点は合っています。三角形の底辺 a と高さ ka の積を2で割る必要があります。",
+      "エ": "仕事はF–xグラフの面積です。0からaまでの三角形の面積は a×ka÷2 となります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20250410-mxt_syogai02-mext_000038763_07.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20241031_mxt_syogai02_000038763_07_butsurikiso.pdf",
+    "sourceAttribution": "出典：文部科学省 令和6年度第2回高等学校卒業程度認定試験 物理基礎（解答番号4）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2024-2-q04.webp"
+    ],
+    "imageAltTexts": [
+      "ばねの仕事と弾性エネルギーの原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2024-second-gakka-q5",
+    "exam": "kounin-physics",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 5,
+    "officialQuestionLabel": "解答番号 5",
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "斜面の運動方程式"
+    ],
+    "difficulty": 2,
+    "question": "図のように，水平面とのなす角が θ の摩擦のない斜面上を，質量 m の小物体がすべり下りている。このときの小物体の斜面方向の運動方程式として正しいものはどれか。ただし，斜面に沿って下向きを正とし，小物体の加速度を a，重力加速度の大きさを g とする。",
+    "choices": {
+      "ア": "ma = mg",
+      "イ": "ma = mg sin θ",
+      "ウ": "ma = mg cos θ",
+      "エ": "ma = mg tan θ"
+    },
+    "answer": "イ",
+    "explanation": "斜面に平行な重力の大きさは mg sin θ です。摩擦がなく、垂直抗力には斜面方向成分がないのでこの式になります。",
+    "choiceExplanations": {
+      "ア": "mg は鉛直方向の重力の大きさです。斜面方向にはその成分だけがはたらきます。",
+      "イ": "斜面に平行な重力の大きさは mg sin θ です。摩擦がなく、垂直抗力には斜面方向成分がないのでこの式になります。",
+      "ウ": "mg cos θ は斜面に垂直な重力成分で、垂直抗力とつり合います。",
+      "エ": "tan θ は斜面方向成分と垂直成分の比です。重力全体に掛けて斜面方向成分を求める係数にはなりません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20250410-mxt_syogai02-mext_000038763_07.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20241031_mxt_syogai02_000038763_07_butsurikiso.pdf",
+    "sourceAttribution": "出典：文部科学省 令和6年度第2回高等学校卒業程度認定試験 物理基礎（解答番号5）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2024-2-q05.webp"
+    ],
+    "imageAltTexts": [
+      "斜面の運動方程式の原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2024-second-gakka-q6",
+    "exam": "kounin-physics",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 6,
+    "officialQuestionLabel": "解答番号 6",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "振り子の力学的エネルギー"
+    ],
+    "difficulty": 2,
+    "question": "長さ L の軽い糸に小球をつけた振り子がある。図のように，糸が鉛直と θ をなす点 A から小球を初速度0ではなす。小球が最下点 B を通過するときの速さはいくらか。ただし，重力加速度の大きさを g とする。",
+    "choices": {
+      "ア": "√{gL(1 − sin θ)}",
+      "イ": "√{gL(1 − cos θ)}",
+      "ウ": "√{2gL(1 − sin θ)}",
+      "エ": "√{2gL(1 − cos θ)}"
+    },
+    "answer": "エ",
+    "explanation": "AからBまでの高さの差は L−L cos θ です。mgL(1−cos θ)＝mv²/2 を解くとこの速さになります。",
+    "choiceExplanations": {
+      "ア": "鉛直方向の糸の長さは L cos θ です。また、運動エネルギーの係数1/2を解く際に平方根の中へ2が入ります。",
+      "イ": "落下する高さ L(1−cos θ) は合っていますが、速さは v²＝2gh を使って求めます。",
+      "ウ": "2g を掛ける点は合っています。角度は鉛直から測っているので、高低差は L(1−cos θ) です。",
+      "エ": "AからBまでの高さの差は L−L cos θ です。mgL(1−cos θ)＝mv²/2 を解くとこの速さになります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20250410-mxt_syogai02-mext_000038763_07.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20241031_mxt_syogai02_000038763_07_butsurikiso.pdf",
+    "sourceAttribution": "出典：文部科学省 令和6年度第2回高等学校卒業程度認定試験 物理基礎（解答番号6）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2024-2-q06.webp"
+    ],
+    "imageAltTexts": [
+      "振り子の力学的エネルギーの原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2024-second-gakka-q7",
+    "exam": "kounin-physics",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 7,
+    "officialQuestionLabel": "解答番号 7",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "category": "波動",
+    "topicTags": [
+      "縦波と横波"
+    ],
+    "difficulty": 2,
+    "question": "波が伝わる方向と同じ方向に媒質が振動する波を［ア］，波が伝わる方向と直交する方向に媒質が振動する波を［イ］という。空気中を伝わる音波は［ウ］である。ア〜ウの組合せとして正しいものはどれか。",
+    "choices": {
+      "ア": "縦波・横波・縦波",
+      "イ": "縦波・横波・横波",
+      "ウ": "横波・縦波・縦波",
+      "エ": "横波・縦波・横波"
+    },
+    "answer": "ア",
+    "explanation": "媒質の振動が進行方向と平行なら縦波、直角なら横波です。空気中の音では空気の圧縮・膨張が進行方向に伝わります。",
+    "choiceExplanations": {
+      "ア": "媒質の振動が進行方向と平行なら縦波、直角なら横波です。空気中の音では空気の圧縮・膨張が進行方向に伝わります。",
+      "イ": "ア・イは合っていますが、空気中の音では空気の変位が波の進行方向に沿います。",
+      "ウ": "音の分類は合っていますが、平行な振動が縦波、直交する振動が横波です。",
+      "エ": "アとイの区別が逆です。空気中の音も、進行方向と同じ向きに空気が振動する縦波です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20250410-mxt_syogai02-mext_000038763_07.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20241031_mxt_syogai02_000038763_07_butsurikiso.pdf",
+    "sourceAttribution": "出典：文部科学省 令和6年度第2回高等学校卒業程度認定試験 物理基礎（解答番号7）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2024-second-gakka-q8",
+    "exam": "kounin-physics",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 8,
+    "officialQuestionLabel": "解答番号 8",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "category": "波動",
+    "topicTags": [
+      "進行波の波長と周期"
+    ],
+    "difficulty": 2,
+    "question": "図のように，x軸の正の向きに進む波がある。実線は時刻 t＝0 sの波形であり，t＝0.05 sにはじめて破線のような波形になった。この波の振動数は何 Hz か。",
+    "choices": {
+      "ア": "5",
+      "イ": "10",
+      "ウ": "15",
+      "エ": "20"
+    },
+    "answer": "ア",
+    "explanation": "波長は8 mで、波形は0.05 sで右へ2 m進みました。1周期は4倍の0.20 sなので振動数は5 Hzです。",
+    "choiceExplanations": {
+      "ア": "波長は8 mで、波形は0.05 sで右へ2 m進みました。1周期は4倍の0.20 sなので振動数は5 Hzです。",
+      "イ": "10 Hzなら周期は0.10 sであり、0.05 sで半波長の4 m進むことになります。",
+      "ウ": "15 Hzなら0.05 sで0.75周期分、つまり6 m進むことになり、図のずれ2 mと合いません。",
+      "エ": "20 Hzは0.05 sを1周期とした値です。図のずれは1波長ではなく1/4波長です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20250410-mxt_syogai02-mext_000038763_07.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20241031_mxt_syogai02_000038763_07_butsurikiso.pdf",
+    "sourceAttribution": "出典：文部科学省 令和6年度第2回高等学校卒業程度認定試験 物理基礎（解答番号8）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2024-2-q08.webp"
+    ],
+    "imageAltTexts": [
+      "進行波の波長と周期の原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2024-second-gakka-q9",
+    "exam": "kounin-physics",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 9,
+    "officialQuestionLabel": "解答番号 9",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "category": "波動",
+    "topicTags": [
+      "縦波の密部と疎部"
+    ],
+    "difficulty": 2,
+    "question": "図は，x軸の正の向きに進むある瞬間の縦波を横波のように表したもので，媒質のx軸の正の向きの変位をy軸の正の向きの変位として表している。この瞬間に，A〜Dの中で媒質が密集した部分（密部）はどこか。",
+    "choices": {
+      "ア": "A",
+      "イ": "B",
+      "ウ": "C",
+      "エ": "D"
+    },
+    "answer": "エ",
+    "explanation": "Dでは左側の媒質が右へ、右側の媒質が左へずれます。媒質同士が近づくのでここが密部です。",
+    "choiceExplanations": {
+      "ア": "Aは変位が最も負のところで、変位曲線の傾きは0です。変位の大きさと媒質の密度は別です。",
+      "イ": "Bの左側は負、右側は正に変位しています。左右が離れる方向なので疎部に当たります。",
+      "ウ": "Cは正の変位の極大で、変位曲線の傾きは0です。左右の媒質が集まる位置ではありません。",
+      "エ": "Dでは左側の媒質が右へ、右側の媒質が左へずれます。媒質同士が近づくのでここが密部です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20250410-mxt_syogai02-mext_000038763_07.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20241031_mxt_syogai02_000038763_07_butsurikiso.pdf",
+    "sourceAttribution": "出典：文部科学省 令和6年度第2回高等学校卒業程度認定試験 物理基礎（解答番号9）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2024-2-q09.webp"
+    ],
+    "imageAltTexts": [
+      "縦波の密部と疎部の原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2024-second-gakka-q10",
+    "exam": "kounin-physics",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 10,
+    "officialQuestionLabel": "解答番号 10",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "category": "波動",
+    "topicTags": [
+      "弦の基本振動"
+    ],
+    "difficulty": 2,
+    "question": "図1のように，弦の一端をおんさにつけ，滑車に通して他端におもりをつけた。おんさと滑車の距離を調整し，おんさを振動させて弦が基本振動で共振するようにした。次に，図2のようにおもりの質量を増やし，おんさと滑車の距離を調整して，再び弦が基本振動で共振するようにしたところ，おんさと滑車の距離ははじめより大きくなった。おもりの質量を増やすと基本振動の節と節の間隔が広くなることから，おもりの質量を増やすと，弦を伝わる波の波長は［ア］。共振する振動数は変わらないので，おもりの質量を増やしたことにより，弦を伝わる波の速さが［イ］といえる。アとイの組合せとして正しいものはどれか。",
+    "choices": {
+      "ア": "長くなる・速くなった",
+      "イ": "長くなる・遅くなった",
+      "ウ": "短くなる・速くなった",
+      "エ": "短くなる・遅くなった"
+    },
+    "answer": "ア",
+    "explanation": "節間の距離は半波長なので、距離が広がれば波長は長くなります。同じ振動数では v＝fλ により速さも増します。",
+    "choiceExplanations": {
+      "ア": "節間の距離は半波長なので、距離が広がれば波長は長くなります。同じ振動数では v＝fλ により速さも増します。",
+      "イ": "波長が長くなる点は合っています。振動数一定のもとでは長い波長ほど波の速さが大きくなります。",
+      "ウ": "基本振動の節間隔が広がるので波長は短くなりません。また、振動数一定なら速さと波長は同じ向きに変化します。",
+      "エ": "この組合せは波長が縮む場合の関係です。おもりを増やした実験では節間隔が広がりました。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20250410-mxt_syogai02-mext_000038763_07.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20241031_mxt_syogai02_000038763_07_butsurikiso.pdf",
+    "sourceAttribution": "出典：文部科学省 令和6年度第2回高等学校卒業程度認定試験 物理基礎（解答番号10）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2024-2-q10.webp"
+    ],
+    "imageAltTexts": [
+      "弦の基本振動の原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2024-second-gakka-q11",
+    "exam": "kounin-physics",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 11,
+    "officialQuestionLabel": "解答番号 11",
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "category": "熱",
+    "topicTags": [
+      "融解と状態変化"
+    ],
+    "difficulty": 2,
+    "question": "冷凍庫から取り出した氷を容器に入れ，容器にヒーターで一定の熱を加え続け，100 ℃になるまで熱した。そのときの温度変化は図のようなグラフとなり，温度が変化しない時間帯があった。温度上昇が止まった時刻を t₁，再び温度が上昇し始めた時刻を t₂ とする。温度が変化しない時間帯では，容器の中はどのような状態になっているか。",
+    "choices": {
+      "ア": "固体のみの状態",
+      "イ": "液体のみの状態",
+      "ウ": "固体と液体がある状態",
+      "エ": "気体のみの状態"
+    },
+    "answer": "ウ",
+    "explanation": "融解中は氷と水が共存します。加えた熱が融解に使われるため、温度はほぼ一定です。",
+    "choiceExplanations": {
+      "ア": "固体だけの区間では、供給した熱によって氷の温度が融点まで上昇します。",
+      "イ": "氷がすべて解けた後の水は、供給した熱によって再び温度が上昇します。",
+      "ウ": "融解中は氷と水が共存します。加えた熱が融解に使われるため、温度はほぼ一定です。",
+      "エ": "温度が一定になったのは氷の融点で、容器全体が気体になった状態ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20250410-mxt_syogai02-mext_000038763_07.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20241031_mxt_syogai02_000038763_07_butsurikiso.pdf",
+    "sourceAttribution": "出典：文部科学省 令和6年度第2回高等学校卒業程度認定試験 物理基礎（解答番号11）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2024-2-q11.webp"
+    ],
+    "imageAltTexts": [
+      "融解と状態変化の原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2024-second-gakka-q12",
+    "exam": "kounin-physics",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 12,
+    "officialQuestionLabel": "解答番号 12",
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "category": "熱",
+    "topicTags": [
+      "融解熱と加熱出力"
+    ],
+    "difficulty": 2,
+    "question": "冷凍庫から取り出した氷を容器に入れ，ヒーターで一定の熱を加え続け，100 ℃になるまで熱した。温度上昇が止まった時刻を t₁，再び温度が上昇し始めた時刻を t₂ とする。条件を変えて同様の実験を2つ行った。実験1は氷の質量のみを変えて実験し，実験2はヒーターの出力のみを変えて実験した。どちらの実験結果のグラフも t₁ から t₂ の間の時間が長くなった。このとき，実験1の氷の質量と実験2のヒーターの出力を，それぞれどのように変えて実験したのか。条件の変化の組合せとして正しいものはどれか。",
+    "choices": {
+      "ア": "増やした・大きくした",
+      "イ": "増やした・小さくした",
+      "ウ": "減らした・大きくした",
+      "エ": "減らした・小さくした"
+    },
+    "answer": "イ",
+    "explanation": "融解にかかる時間は融解熱を出力で割った値です。質量を増やすと必要な熱が増え、出力を下げると単位時間当たりの供給熱量が減るため、どちらも時間が延びます。",
+    "choiceExplanations": {
+      "ア": "氷の質量を増やすと融解に必要な熱は増えます。出力を大きくした実験では必要な熱を早く供給できるため、融解時間は短くなります。",
+      "イ": "融解にかかる時間は融解熱を出力で割った値です。質量を増やすと必要な熱が増え、出力を下げると単位時間当たりの供給熱量が減るため、どちらも時間が延びます。",
+      "ウ": "質量を減らすと必要な融解熱が減り、出力を上げると熱を早く供給できます。どちらも時間を短くします。",
+      "エ": "出力を下げると融解時間は延びます。質量を減らした実験では必要な融解熱が減るため、時間は短くなります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20250410-mxt_syogai02-mext_000038763_07.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20241031_mxt_syogai02_000038763_07_butsurikiso.pdf",
+    "sourceAttribution": "出典：文部科学省 令和6年度第2回高等学校卒業程度認定試験 物理基礎（解答番号12）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2024-2-q12.webp"
+    ],
+    "imageAltTexts": [
+      "融解熱と加熱出力の原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2024-second-gakka-q13",
+    "exam": "kounin-physics",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 13,
+    "officialQuestionLabel": "解答番号 13",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "category": "電気",
+    "topicTags": [
+      "抵抗の直列・並列接続"
+    ],
+    "difficulty": 2,
+    "question": "同じ抵抗値 R の抵抗3つと電圧 V の電池を用いて，図1〜図3のように3通りの回路を作った。それぞれの回路の点 A，点 B，点 C を流れる電流 I_A，I_B，I_C の大きさの関係を表しているものとして正しいものはどれか。",
+    "choices": {
+      "ア": "I_A > I_B > I_C",
+      "イ": "I_B > I_C > I_A",
+      "ウ": "I_C > I_A > I_B",
+      "エ": "I_C > I_B > I_A"
+    },
+    "answer": "エ",
+    "explanation": "A、B、Cの合成抵抗はそれぞれ3R、3R/2、R/3です。同じ電圧 V では抵抗が小さいほど電流が大きくなります。",
+    "choiceExplanations": {
+      "ア": "Aは抵抗3個が直列で合成抵抗が最大なので、最も小さい電流になります。",
+      "イ": "Aが最小なのは合っています。Cの合成抵抗 R/3 はBの3R/2より小さいので、I_C が I_B を上回ります。",
+      "ウ": "Cが最大なのは合っていますが、Aの合成抵抗3RはBの3R/2より大きいため、I_A は I_B より小さくなります。",
+      "エ": "A、B、Cの合成抵抗はそれぞれ3R、3R/2、R/3です。同じ電圧 V では抵抗が小さいほど電流が大きくなります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20250410-mxt_syogai02-mext_000038763_07.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20241031_mxt_syogai02_000038763_07_butsurikiso.pdf",
+    "sourceAttribution": "出典：文部科学省 令和6年度第2回高等学校卒業程度認定試験 物理基礎（解答番号13）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2024-2-q13.webp"
+    ],
+    "imageAltTexts": [
+      "抵抗の直列・並列接続の原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2024-second-gakka-q14",
+    "exam": "kounin-physics",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 14,
+    "officialQuestionLabel": "解答番号 14",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "category": "放射線",
+    "topicTags": [
+      "放射線の性質"
+    ],
+    "difficulty": 2,
+    "question": "次の文は，放射線について述べた文である。［ア］は電磁波ではなく粒子であり，電離作用は最も大きいが，透過力は最も小さい。アにあてはまる放射線は α線，β線，γ線，X線のうちのどれか。",
+    "choices": {
+      "ア": "α線",
+      "イ": "β線",
+      "ウ": "γ線",
+      "エ": "X線"
+    },
+    "answer": "ア",
+    "explanation": "α線はヘリウム原子核の流れです。電離作用が強い反面、紙でも遮られるほど透過力は小さくなります。",
+    "choiceExplanations": {
+      "ア": "α線はヘリウム原子核の流れです。電離作用が強い反面、紙でも遮られるほど透過力は小さくなります。",
+      "イ": "β線は電子や陽電子の流れです。粒子線ですが、この四つの比較ではα線より電離作用が弱く透過力が大きいです。",
+      "ウ": "γ線は主に原子核の遷移などに伴って放出される電磁波です。",
+      "エ": "X線は電磁波です。粒子線であるという条件を満たしません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20250410-mxt_syogai02-mext_000038763_07.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20241031_mxt_syogai02_000038763_07_butsurikiso.pdf",
+    "sourceAttribution": "出典：文部科学省 令和6年度第2回高等学校卒業程度認定試験 物理基礎（解答番号14）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2024-second-gakka-q15",
+    "exam": "kounin-physics",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 15,
+    "officialQuestionLabel": "解答番号 15",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "category": "波動",
+    "topicTags": [
+      "閉管の共鳴"
+    ],
+    "difficulty": 2,
+    "question": "図1は，気柱の共鳴実験の装置である。長いガラス管の左側の管口の近くに発振器をつないだスピーカーを置き，ガラス管の右側からピストンを差し込む。ピストン側では，空気の分子が自由に振動できず，音波は［ア］端による反射になります。スピーカー側では，空気の分子が自由に振動でき，音波は［イ］端による反射になります。このため，気柱の長さを変えて管内に［ウ］が生じると，音が大きくなります。この現象が共鳴です。管内に［ウ］が生じているとき，ピストン側には節が，スピーカー側には腹が生じています。ア〜ウの組合せとして正しいものはどれか。",
+    "choices": {
+      "ア": "固定・自由・定在波（定常波）",
+      "イ": "固定・自由・パルス波",
+      "ウ": "自由・固定・定在波（定常波）",
+      "エ": "自由・固定・パルス波"
+    },
+    "answer": "ア",
+    "explanation": "ピストン側は空気の変位が抑えられる固定端、開いた管口側は自由端です。入射波と反射波で定在波ができると共鳴します。",
+    "choiceExplanations": {
+      "ア": "ピストン側は空気の変位が抑えられる固定端、開いた管口側は自由端です。入射波と反射波で定在波ができると共鳴します。",
+      "イ": "両端の条件は合っています。共鳴時に生じるのは、節と腹の位置が一定の定在波です。",
+      "ウ": "定在波は合っていますが、閉じたピストン側が固定端、開いた管口側が自由端です。",
+      "エ": "端の種類が逆です。また、単発の波形であるパルス波ではなく、入射波と反射波による定在波が生じます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20250410-mxt_syogai02-mext_000038763_07.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20241031_mxt_syogai02_000038763_07_butsurikiso.pdf",
+    "sourceAttribution": "出典：文部科学省 令和6年度第2回高等学校卒業程度認定試験 物理基礎（解答番号15）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2024-2-q15.webp"
+    ],
+    "imageAltTexts": [
+      "閉管の共鳴の原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2024-second-gakka-q16",
+    "exam": "kounin-physics",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 16,
+    "officialQuestionLabel": "解答番号 16",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "category": "波動",
+    "topicTags": [
+      "音速・振動数・波長"
+    ],
+    "difficulty": 2,
+    "question": "図1の気柱の共鳴実験で，ピストンの位置を管口から11 cmに固定し，スピーカーから出る音の振動数を少しずつ大きくすると684 Hzで基本振動になった。気温から音速は342 m/sである。波長は何 cmになるか。",
+    "choices": {
+      "ア": "2",
+      "イ": "5",
+      "ウ": "20",
+      "エ": "50"
+    },
+    "answer": "エ",
+    "explanation": "波長 λ は音速 v を振動数 f で割った値です。342÷684＝0.50 m＝50 cmです。",
+    "choiceExplanations": {
+      "ア": "2 cmをメートルに直すと0.02 mです。684 Hzを掛けた音速13.68 m/sは、実験の342 m/sと一致しません。",
+      "イ": "5 cmは0.05 mなので、684 Hzを掛けると34.2 m/sにしかなりません。",
+      "ウ": "20 cmを波長とすると音速は684×0.20＝136.8 m/sで、与えられた音速と合いません。",
+      "エ": "波長 λ は音速 v を振動数 f で割った値です。342÷684＝0.50 m＝50 cmです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20250410-mxt_syogai02-mext_000038763_07.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20241031_mxt_syogai02_000038763_07_butsurikiso.pdf",
+    "sourceAttribution": "出典：文部科学省 令和6年度第2回高等学校卒業程度認定試験 物理基礎（解答番号16）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2024-second-gakka-q17",
+    "exam": "kounin-physics",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 17,
+    "officialQuestionLabel": "解答番号 17",
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "category": "波動",
+    "topicTags": [
+      "開口端補正"
+    ],
+    "difficulty": 2,
+    "question": "図1の気柱の共鳴実験で，ピストンの位置を管口から11 cmに固定した。基本振動の振動数は684 Hz，音速は342 m/sである。図2のように，節から腹までの長さとピストンから管口までの長さを比較すると，腹は管口の少し外側にある。管口から管の外の腹までの長さである開口端補正は何 cmか。",
+    "choices": {
+      "ア": "0.5",
+      "イ": "1",
+      "ウ": "1.5",
+      "エ": "2"
+    },
+    "answer": "ウ",
+    "explanation": "基本振動ではピストン側の節から開口端の腹までが50÷4＝12.5 cmです。管内の11 cmを差し引くと1.5 cmです。",
+    "choiceExplanations": {
+      "ア": "0.5 cmを加えると有効長は11.5 cmですが、波長50 cmの1/4は12.5 cmです。",
+      "イ": "開口端補正を1 cmとすると有効長は12 cmとなり、基本振動に必要な12.5 cmに届きません。",
+      "ウ": "基本振動ではピストン側の節から開口端の腹までが50÷4＝12.5 cmです。管内の11 cmを差し引くと1.5 cmです。",
+      "エ": "開口端補正を2 cmとすると有効長は13 cmで、基本振動における1/4波長を超えます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20250410-mxt_syogai02-mext_000038763_07.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20241031_mxt_syogai02_000038763_07_butsurikiso.pdf",
+    "sourceAttribution": "出典：文部科学省 令和6年度第2回高等学校卒業程度認定試験 物理基礎（解答番号17）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2024-2-q17.webp"
+    ],
+    "imageAltTexts": [
+      "開口端補正の原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2024-second-gakka-q18",
+    "exam": "kounin-physics",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 18,
+    "officialQuestionLabel": "解答番号 18",
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "category": "波動",
+    "topicTags": [
+      "変位の節と閉管の倍振動"
+    ],
+    "difficulty": 2,
+    "question": "ピストンと独立して動く小さなマイクを使い，共鳴している管内の音の大きさを調べた。グラフを描くと図4のようになった。このマイクで調べると，図4のように密度変化の大きい［カ］の位置で音は大きくなる。装置は片方がピストンで閉じられた閉管なので，基本振動684 Hzから振動数を大きくすると次に共鳴するのは［キ］倍振動の2052 Hzである。カとキの組合せとして正しいものはどれか。",
+    "choices": {
+      "ア": "節・2",
+      "イ": "腹・2",
+      "ウ": "節・3",
+      "エ": "腹・3"
+    },
+    "answer": "ウ",
+    "explanation": "変位の節では両側の空気が寄ったり離れたりするため、密度や音圧の変化が大きくなります。次の共鳴は684 Hzの3倍です。",
+    "choiceExplanations": {
+      "ア": "密度変化が大きいのは変位の節です。片端だけ閉じた管では偶数倍の振動は共鳴条件を満たしません。",
+      "イ": "変位の腹では空気の変位は大きくても密度変化は小さくなります。また閉管の次の共鳴は基本振動の3倍です。",
+      "ウ": "変位の節では両側の空気が寄ったり離れたりするため、密度や音圧の変化が大きくなります。次の共鳴は684 Hzの3倍です。",
+      "エ": "周波数は3倍で合っていますが、音圧を感知するマイクで音が大きくなるのは変位の節の位置です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20250410-mxt_syogai02-mext_000038763_07.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20241031_mxt_syogai02_000038763_07_butsurikiso.pdf",
+    "sourceAttribution": "出典：文部科学省 令和6年度第2回高等学校卒業程度認定試験 物理基礎（解答番号18）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2024-2-q18.webp"
+    ],
+    "imageAltTexts": [
+      "変位の節と閉管の倍振動の原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2024-second-gakka-q19",
+    "exam": "kounin-physics",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 19,
+    "officialQuestionLabel": "解答番号 19",
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "category": "波動",
+    "topicTags": [
+      "閉管の音圧分布"
+    ],
+    "difficulty": 2,
+    "question": "AさんとBさんは片側をピストンで閉じた管を使い，振動数を2052 Hzとして実験を行い，縦軸に音の大きさを，横軸にマイクの位置を取ってグラフを描いた。描いたグラフとして適当なものはどれか。ただし，マイクによる音波への影響はないものとする。",
+    "choices": {
+      "ア": "図の1",
+      "イ": "図の2",
+      "ウ": "図の3"
+    },
+    "answer": "イ",
+    "explanation": "3倍振動では、管口側で音圧の変動が小さく、管内とピストン側に大きくなる箇所が一つずつあります。この配置を示す図です。",
+    "choiceExplanations": {
+      "ア": "この図は管口側でも音の大きさが大きい形です。開口端付近では空気の密度変化が小さくなります。",
+      "イ": "3倍振動では、管口側で音圧の変動が小さく、管内とピストン側に大きくなる箇所が一つずつあります。この配置を示す図です。",
+      "ウ": "この図ではピストン側の音が小さくなっています。閉じた端は変位の節であり、音圧の変動は大きくなります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20250410-mxt_syogai02-mext_000038763_07.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20241031_mxt_syogai02_000038763_07_butsurikiso.pdf",
+    "sourceAttribution": "出典：文部科学省 令和6年度第2回高等学校卒業程度認定試験 物理基礎（解答番号19）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2024-2-q19.webp"
+    ],
+    "imageAltTexts": [
+      "閉管の音圧分布の原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2024-second-gakka-q20",
+    "exam": "kounin-physics",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 20,
+    "officialQuestionLabel": "解答番号 20",
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "category": "波動",
+    "topicTags": [
+      "音速の温度依存性"
+    ],
+    "difficulty": 2,
+    "question": "生徒たちは放課後に気柱の共鳴実験をもう一度行った。気温が下がり，授業のときより音が小さくなったが，振動数を変えずにピストンを管口へ少し近づけると再び共鳴した。振動数を変えていないのに，ピストンの位置を管口に少し近づける必要があるのは，気温が下がったときは音速が［ク］なって，波長が［ケ］なるからである。クとケの組合せとして正しいものはどれか。",
+    "choices": {
+      "ア": "大きく・短く",
+      "イ": "小さく・短く",
+      "ウ": "大きく・長く",
+      "エ": "小さく・長く"
+    },
+    "answer": "イ",
+    "explanation": "気温低下で音速が小さくなります。振動数一定なら λ＝v/f で波長も短くなり、共鳴する気柱も短くなります。",
+    "choiceExplanations": {
+      "ア": "冷えた空気中では音速が小さくなります。また振動数が同じなら、波長が短くなるのは音速が小さくなる場合です。",
+      "イ": "気温低下で音速が小さくなります。振動数一定なら λ＝v/f で波長も短くなり、共鳴する気柱も短くなります。",
+      "ウ": "これは音速が上がった場合の関係ですが、気温低下では音速は下がります。",
+      "エ": "音速が小さくなる点は合っています。振動数が同じなら、波長は音速に比例して短くなります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20250410-mxt_syogai02-mext_000038763_07.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20241031_mxt_syogai02_000038763_07_butsurikiso.pdf",
+    "sourceAttribution": "出典：文部科学省 令和6年度第2回高等学校卒業程度認定試験 物理基礎（解答番号20）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  }
+]

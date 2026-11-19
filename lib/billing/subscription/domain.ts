@@ -37,7 +37,7 @@ export interface Signup {
   examWriteOffJobs?: string[];
   examFinalChecked?: true;
   /** Verified overlap retained for billing review after renewal is resolved. */
-  appStoreOverlap?: { appStoreUserId: string; detectedAt: string; renewal: "pending" | "stopped" | "already_ending" };
+  appStoreOverlap?: { appStoreUserId: string; detectedAt: string; renewal: "pending" | "stopped" | "already_ending" | "discarded"; renewalAttempt?: number };
 }
 export interface Contract {
   id: string; customerId: string; signupId: string; priceId: string; amount: number;
@@ -109,7 +109,7 @@ export interface Account {
 export interface MonthlyStore {
   owner(customerId: string, mode: Realm): Promise<string | null>;
   transaction<T>(userId: string, mode: Realm, sourceInstance: string, fn: (account: Account) => Promise<T>, readOnly?: boolean): Promise<T>;
-  purchaseTransaction<T>(userId: string, mode: Realm, sourceInstance: string, fn: (account: Account, members: Account[], verifiedMembers?: ReadonlySet<string>) => T): Promise<T>;
+  purchaseTransaction<T>(userId: string, mode: Realm, sourceInstance: string, fn: (account: Account, members: Account[], verifiedMembers?: ReadonlySet<string>) => T | Promise<T>): Promise<T>;
   /** Another account (if any) that already started a free trial with this hashed card. */
   trialCardOwner(cardHash: string, mode: Realm, exceptUserId: string): Promise<string | null>;
 }
@@ -139,7 +139,7 @@ export interface MonthlyProvider {
   /** Stop an overlapping Web contract at period end, returning the scheduled cutoff, if changed. */
   stopAppStoreOverlapRenewal?(subscriptionId: string, customerId: string, signup: Signup): Promise<number | null>;
   scheduleExamEnd?(subscriptionId: string, customerId: string, signup: Signup, now: number): Promise<"scheduled" | "ended" | "conflict" | "superseded">;
-  changeEnding?(subscriptionId: string, customerId: string, signup: Signup, change: EndingChange, now: number): Promise<void>;
+  changeEnding?(subscriptionId: string, customerId: string, signup: Signup, change: EndingChange, now: number, beforeExtension?: () => Promise<void>): Promise<void>;
   endMemberExam?(subscriptionId: string, customerId: string, signup: Signup, now: number): Promise<void>;
   /** End a trial now so Stripe charges the first month immediately. */
   endTrial(subscriptionId: string, eventId: string): Promise<void>;

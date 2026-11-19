@@ -44,9 +44,9 @@ describe("qualification-aware editorial context", () => {
     expect(questionReferenceLabel(q, "https://laws.e-gov.go.jp/law/417AC0000000123")).toContain("法令原文");
     expect(questionReferenceLabel({ ...q, sourceAnswerUrl: q.sourcePdfUrl }, q.sourcePdfUrl)).toBe("公式問題・正答（同じ資料）");
   });
-  it("exposes separate ordinary links to solve and read an explanation before hydration", () => {
+  it("exposes one ordinary solve link in the question row", () => {
     render(<QuestionListWithFilter groups={[{ session: "gakka", items: [{ id: "fp3-q11", qNumber: 11, category: "金融資産運用", isCalculation: false, isPlaceholder: false, questionPreview: "売りオペと買いオペ", href: "/quiz?exam=fp3&question=fp3-q11", explanationHref: "/q/fp3/2026-published/gakka/q11" }] }]} />);
-    expect(screen.getByRole("link", { name: "問11の解説を見る" })).toHaveAttribute("href", "/q/fp3/2026-published/gakka/q11");
+    expect(screen.queryByRole("link", { name: "問11の解説を見る" })).toBeNull();
     expect(screen.getByRole("link", { name: "問11を解く" })).toHaveAttribute("href", "/quiz?exam=fp3&question=fp3-q11");
   });
 });

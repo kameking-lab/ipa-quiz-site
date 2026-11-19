@@ -3,11 +3,9 @@ import { CHUSHO_SECONDARY_ORIGINAL_COUNT } from "@/lib/chusho-secondary/data";
 import { HomeQualificationFinder } from "@/components/home/landing/HomeQualificationFinder";
 import { getHomeDirectory } from "@/lib/home/home-directory";
 import type { Metadata } from "next";
-import Link from "next/link";
-import { ArrowLeft, ArrowRight, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { getQuestionsByExamStrict } from "@/lib/seo/exam-meta";
 import { fp2May2026CoverageLabel } from "@/data/questions/fp2";
 import { FP2_PRACTICAL_EDITIONS, getPracticalEdition } from "@/lib/fp2/practical";
@@ -36,26 +34,13 @@ const fp3PracticalCount = FP3_PRACTICAL_EDITIONS.reduce(
 export default function QualificationsPage() {
   return (
     <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-16 pt-6 sm:px-6 sm:pt-10">
-      <Button asChild variant="ghost" size="sm" className="mb-4 min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
-        <Link href="/"><ArrowLeft className="h-4 w-4" />分野選択へ戻る</Link>
-      </Button>
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">その他資格の過去問</h1>
       </header>
 
       <div className={styles.finder}>
-      <HomeQualificationFinder domains={getHomeDirectory().filter((domain) => domain.id !== "it")} directoryHref="#qualification-coverage" auxiliaryLink={<Link href="/ipa" className="inline-flex min-h-11 items-center underline underline-offset-4">IT・情報処理の資格一覧はこちら</Link>} />
+      <HomeQualificationFinder domains={getHomeDirectory()} directoryHref="#qualification-coverage" showDirectoryLink={false} />
       </div>
-      {published.some((item) => item.slug === "sharoushi") ? <nav aria-label="社会保険労務士の分野別入口" className="mt-4 grid gap-3 sm:grid-cols-2">
-        <section aria-labelledby="sharoushi-law-title" className="min-w-0 rounded-xl border border-border p-3">
-          <h2 id="sharoushi-law-title" className="text-sm font-semibold">法律から探す方へ</h2>
-          <ul><li><Link href="/sharoushi" className="inline-flex min-h-11 items-center text-sm underline [overflow-wrap:anywhere]">社会保険労務士試験</Link></li></ul>
-        </section>
-        <section aria-labelledby="sharoushi-labor-title" className="min-w-0 rounded-xl border border-border p-3">
-          <h2 id="sharoushi-labor-title" className="text-sm font-semibold">労務・社会保険から探す方へ</h2>
-          <ul><li><Link href="/sharoushi" className="inline-flex min-h-11 items-center text-sm underline [overflow-wrap:anywhere]">社会保険労務士試験</Link></li></ul>
-        </section>
-      </nav> : null}
       <details id="qualification-coverage" className="group mt-6 rounded-2xl border border-border bg-card p-4">
         <summary className="scroll-mt-20 min-h-11 cursor-pointer py-3 text-base font-semibold focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary">資格ごとの収録範囲・公式資料を見る</summary>
         <div className="mt-3 grid gap-4 sm:grid-cols-2">
@@ -68,9 +53,6 @@ export default function QualificationsPage() {
             <p className="mb-4 text-sm leading-relaxed text-muted-foreground">{item.fullName}。{item.reuseSummary}</p>
             {item.slug === "fp2" && <><p className="text-sm text-muted-foreground">2024・2025年の学科240問と2026年5月公表の学科{fp2May2026CoverageLabel()}、実技は2024～2026年の{FP2_PRACTICAL_EDITIONS.length}セット{fp2PracticalCount}問を収録。</p></>}
             {item.slug === "fp3" && <p className="mb-4 text-sm text-muted-foreground">2024～2026年の学科180問・実技60問を収録。各年の公式問題と正答を確認できます。</p>}
-            <Button asChild variant="primary" className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
-              <Link href={`/${item.examCode ?? item.slug}`}>年度・科目を選ぶ<ArrowRight className="h-4 w-4" /></Link>
-            </Button>
             <div className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-xs">
               <a href={item.officialQuestionsUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center gap-1 underline underline-offset-4">
                 {item.slug === "chusho-secondary" ? "公式問題" : "公式問題・正答"}<ExternalLink className="h-3 w-3" />

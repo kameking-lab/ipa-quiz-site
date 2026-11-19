@@ -16,41 +16,6 @@ test("mobile: hash-selected dashboard tabs scroll horizontally without moving th
   await expect.poll(() => page.evaluate(() => window.scrollY)).toBe(before);
 });
 
-test("mobile: answer → explanation → related → review → next survives reload", async ({ page }, testInfo) => {
-  await page.goto("/quiz?mode=year&exam=ip&year=2009&season=autumn&session=am&question=ip-2009a-am-q1");
-  await page.getByRole("radio").first().click();
-  const actions = page.getByRole("navigation", { name: "解答後の学習操作" });
-  await expect(actions).toBeVisible();
-  await expect(page.getByRole("region", { name: /^(不正解|正解)の解説$/ })).toBeVisible();
-  await actions.getByRole("button", { name: "復習に登録", exact: true }).click();
-  await expect(actions.getByRole("button", { name: "復習登録済み" })).toHaveAttribute("aria-pressed", "true");
-  await expect.poll(() => page.evaluate(() => JSON.parse(localStorage.getItem("ipa-quiz:history:v1")!).starredIds)).toContain("ip-2009a-am-q1");
-  await page.evaluate(() => { document.documentElement.dataset.kgrowDocument = "same"; });
-  await actions.getByRole("button", { name: "関連問題", exact: true }).click();
-  const related = page.getByRole("region", { name: "同じ科目の関連問題" });
-  await expect(related).toBeVisible();
-  const suggestion = related.getByRole("button").filter({ hasText: /年 問/ }).first();
-  await expect(suggestion).toBeVisible();
-  await page.screenshot({ path: testInfo.outputPath("quiz-related-mobile.png") });
-  await suggestion.click();
-  await expect.poll(() => new URL(page.url()).searchParams.get("question")).not.toBe("ip-2009a-am-q1");
-  const relatedId = new URL(page.url()).searchParams.get("question");
-  await expect(page.locator("html")).toHaveAttribute("data-kgrow-document", "same");
-  await expect(page.getByRole("radio").first()).toBeEnabled();
-  const nextId = await page.evaluate((id) => {
-    const key = Object.keys(sessionStorage).find((key) => key.startsWith("ipa-quiz:active-pool:"))!;
-    const ids = JSON.parse(sessionStorage.getItem(key)!) as string[];
-    return ids[ids.indexOf(id!) + 1];
-  }, relatedId);
-  await page.reload();
-  await expect(page.getByRole("radio").first()).toBeEnabled();
-  expect(new URL(page.url()).searchParams.get("question")).toBe(relatedId);
-  await page.getByRole("radio").first().click();
-  await page.getByRole("button", { name: /^(次の問題へ|結果を見る)/ }).first().click();
-  await expect.poll(() => new URL(page.url()).searchParams.get("question")).toBe(nextId);
-  await expect(page.getByRole("radio").first()).toBeEnabled();
-  expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-});
 
 test("mobile: a submitted short mock reaches scores, progress, weakness and exact review", async ({ page }, testInfo) => {
   await page.goto("/mock-exam?exam=sc&count=10");

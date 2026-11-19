@@ -37,22 +37,20 @@ export function ExamTopBrowse({ exam, years, categories }: {
           <ul className="grid gap-2 p-3 pt-0 sm:grid-cols-2">{years.slice(4).map(yearLink)}</ul>
         </details>}
       </section>
-      <section id="topics" aria-labelledby="topics-heading" className="scroll-mt-20">
-        <h2 id="topics-heading" className="mb-3 text-base font-bold">分野別の過去問</h2>
-        <ul className="grid gap-2 sm:grid-cols-2">{categories.slice(0, 4).map(categoryLink)}</ul>
-        {categories.length > 4 && <details className="mt-3 rounded-xl border border-border">
-          <summary className="min-h-11 cursor-pointer px-3 py-3 text-sm font-medium focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">すべての分野を見る（全{categories.length}分野）</summary>
-          <ul className="grid gap-2 p-3 pt-0 sm:grid-cols-2">{categories.slice(4).map(categoryLink)}</ul>
-        </details>}
-      </section>
-      <section aria-labelledby="practice-heading">
-        <h2 id="practice-heading" className="mb-3 text-base font-bold">模試・復習で続ける</h2>
-        <ul className="grid gap-2 sm:grid-cols-2">
-          {isMockExamCode(exam) && <li><Link href={`/mock-exam?exam=${exam}`} className={linkClass}>{exam === "ap" ? "科目A（旧午前）" : "科目A-2（旧午前II）"}の模試で力試し →</Link></li>}
-          <li><Link href={`/quiz?mode=unanswered&exam=${exam}&session=${exam === "ap" ? "am" : "am2"}`} className={linkClass}>まだ解いていない{exam === "ap" ? "科目A（旧午前）" : "科目A-2（旧午前II）"}問題 →</Link></li>
-          <li><Link href={`/quiz?mode=review&exam=${exam}&scope=exam`} className={linkClass}>間違えた問題・ブックマークを復習 →</Link></li>
-        </ul>
-      </section>
+      {categories.length > 0 && (
+        <details id="topics" className="scroll-mt-20 rounded-xl border border-border px-3">
+          <summary className="min-h-11 cursor-pointer py-3 text-sm font-medium">分野別の過去問</summary>
+          <ul className="grid gap-2 pb-3 sm:grid-cols-2">{categories.map(categoryLink)}</ul>
+        </details>
+      )}
+      {isMockExamCode(exam) && (
+        <details id="mock" className="scroll-mt-20 rounded-xl border border-border px-3">
+          <summary className="min-h-11 cursor-pointer py-3 text-sm font-medium">模試</summary>
+          <Link prefetch={false} href={'/mock-exam?exam=' + exam} className="inline-flex min-h-11 items-center underline">
+            {exam === "ap" ? "科目A（旧午前）" : "科目A-2（旧午前II）"}の模試で力試し
+          </Link>
+        </details>
+      )}
     </div>
   );
 }

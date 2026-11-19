@@ -1,0 +1,484 @@
+[
+  {
+    "id": "koku-toku-2025-october-kogaku-q13",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "october",
+    "qNumber": 13,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "抵抗の消費電力"
+    ],
+    "difficulty": 2,
+    "question": "3〔A〕の電流を流すと30〔W〕の電力を消費する抵抗器がある。これに50〔V〕の電圧を加えたとき、消費される電力の値として正しいのはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "150〔W〕",
+      "イ": "250〔W〕",
+      "ウ": "500〔W〕",
+      "エ": "750〔W〕"
+    },
+    "answer": "エ",
+    "explanation": "抵抗Rは30÷3²＝10/3 Ωである。50 Vを加えたときの電力は50²÷R＝750 Wとなる。",
+    "choiceExplanations": {
+      "ア": "150 Wは元の電流3 Aに50 Vを掛けた値である。50 V印加時は電流も変わる。",
+      "イ": "250 Wは50 Vを10 Ωに加えた値だが、抵抗は30÷3²＝10/3 Ωである。",
+      "ウ": "500 Wに相当する抵抗は50²÷500＝5 Ωであり、与えられた条件から求まる10/3 Ωと異なる。",
+      "エ": "抵抗Rは30÷3²＝10/3 Ωである。50 Vを加えたときの電力は50²÷R＝750 Wとなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和7年10月期 無線工学 問13。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "isCalculation": true
+  },
+  {
+    "id": "koku-toku-2025-october-kogaku-q14",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "october",
+    "qNumber": 14,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "FETの電極"
+    ],
+    "difficulty": 2,
+    "question": "図に示す電界効果トランジスタ(FET)の図記号において、電極名の組合せとして、正しいのはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "① ゲート、② ドレイン、③ ソース",
+      "イ": "① ドレイン、② ソース、③ ドレイン",
+      "ウ": "① ソース、② ドレイン、③ ソース",
+      "エ": "① ゲート、② ソース、③ ドレイン"
+    },
+    "answer": "ア",
+    "explanation": "①の矢印が付いた枝はゲートである。図ではチャネル上端の②がドレイン、下端の③がソースである。",
+    "choiceExplanations": {
+      "ア": "①の矢印が付いた枝はゲートである。図ではチャネル上端の②がドレイン、下端の③がソースである。",
+      "イ": "①はチャネル電流を制御するゲートであり、ドレインではない。③もドレインでなくソースである。",
+      "ウ": "②のドレインと③のソースは合うが、矢印が付いた①はゲートである。",
+      "エ": "①がゲートである点は合うが、図中の②がドレイン、③がソースであり、後二つを入れ替えている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和7年10月期 無線工学 問14。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/koku-toku/2025-october/q14-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "図中の①、②及び③が付いたFETの図記号。"
+    ]
+  },
+  {
+    "id": "koku-toku-2025-october-kogaku-q15",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "october",
+    "qNumber": 15,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "ブラウンアンテナ"
+    ],
+    "difficulty": 2,
+    "question": "120〔MHz〕用ブラウンアンテナの放射素子の長さの値として最も近いものはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "0.3〔m〕",
+      "イ": "0.6〔m〕",
+      "ウ": "1.2〔m〕",
+      "エ": "2.5〔m〕"
+    },
+    "answer": "イ",
+    "explanation": "120 MHzの波長は約2.5 mなので、ブラウンアンテナの1/4波長の放射素子は約0.625 mになる。",
+    "choiceExplanations": {
+      "ア": "0.3 mは120 MHzでおよそ1/8波長に相当する。ブラウンアンテナの放射素子は約1/4波長である。",
+      "イ": "120 MHzの波長は約2.5 mなので、ブラウンアンテナの1/4波長の放射素子は約0.625 mになる。",
+      "ウ": "1.2 mは約半波長である。設問の放射素子は約1/4波長の長さを用いる。",
+      "エ": "2.5 mは120 MHzの1波長に近く、放射素子の長さはその約4分の1になる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和7年10月期 無線工学 問15。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "isCalculation": true
+  },
+  {
+    "id": "koku-toku-2025-october-kogaku-q16",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "october",
+    "qNumber": 16,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "レーダー受信機の雑音"
+    ],
+    "difficulty": 2,
+    "question": "レーダー受信機において、最も影響の大きい雑音はどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "自動車の電気的雑音",
+      "イ": "電動機による雑音",
+      "ウ": "受信機の内部雑音",
+      "エ": "空電による雑音"
+    },
+    "answer": "ウ",
+    "explanation": "レーダーは弱い反射波を受信するため、入力段などの受信機内部で発生する雑音が感度を大きく左右する。",
+    "choiceExplanations": {
+      "ア": "自動車からの電気雑音は外来雑音の一例だが、レーダー受信の一般的な感度を最も大きく左右するのは内部雑音である。",
+      "イ": "電動機は外来雑音を発生させることがあるが、レーダー受信機では内部回路で生じる雑音の影響が大きい。",
+      "ウ": "レーダーは弱い反射波を受信するため、入力段などの受信機内部で発生する雑音が感度を大きく左右する。",
+      "エ": "雷などによる空電は外来雑音であり、一般的なレーダー受信機で支配的な内部雑音とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和7年10月期 無線工学 問16。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "koku-toku-2025-october-kogaku-q17",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "october",
+    "qNumber": 17,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "直流電源回路"
+    ],
+    "difficulty": 2,
+    "question": "図に示す一般的な直流電源(DC 電源)装置の回路についての記述として、誤っているのはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "整流回路は、大きさと方向が変化する電圧(電流)を一方向の電圧(電流)に変える。",
+      "イ": "平滑回路は、整流された電圧(電流)を完全な直流に近づける。",
+      "ウ": "平滑回路の働きが不十分だと、出力は完全な直流にならずに、交流分を含む。",
+      "エ": "変圧器は、任意の大きさの直流電圧を作る。"
+    },
+    "answer": "エ",
+    "explanation": "変圧器は交流電圧の大きさを変える。直流にするのは、変圧器の後にある整流回路などである。",
+    "choiceExplanations": {
+      "ア": "整流回路は逆向きの電流を抑えるなどして、極性が交互に変わる交流から一方向の出力を得る。",
+      "イ": "整流後の出力に含まれる脈動を減らし、直流に近づけるのが平滑回路の役割である。",
+      "ウ": "平滑が不十分だと出力電圧に周期的な変動が残り、直流に交流分が重なった状態になる。",
+      "エ": "変圧器は交流電圧の大きさを変える。直流にするのは、変圧器の後にある整流回路などである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和7年10月期 無線工学 問17。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/koku-toku/2025-october/q17-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "交流から変圧器、整流回路、平滑回路、安定化回路を経て直流を出力する構成。"
+    ]
+  },
+  {
+    "id": "koku-toku-2025-october-kogaku-q18",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "october",
+    "qNumber": 18,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "電流と電圧の測定"
+    ],
+    "difficulty": 2,
+    "question": "次の記述において空欄に入れるべき字句の正しい組合せを下の番号から選べ。\n\n回路の［A］を測定するときは、測定回路に直列に計器を接続し、［B］を測定するときは、測定回路に並列に計器を接続する。また、特に［C］を測定するときは、極性を間違わないよう注意しなければならない。",
+    "choices": {
+      "ア": "A 電流、B 電圧、C 直流",
+      "イ": "A 電流、B 電圧、C 交流",
+      "ウ": "A 電圧、B 電流、C 直流",
+      "エ": "A 電圧、B 電流、C 交流"
+    },
+    "answer": "ア",
+    "explanation": "電流計を直列に入れ、電圧計は測る二点間に並列につなぐ。直流の測定では計器の極性に注意する。",
+    "choiceExplanations": {
+      "ア": "電流計を直列に入れ、電圧計は測る二点間に並列につなぐ。直流の測定では計器の極性に注意する。",
+      "イ": "電流と電圧の接続の組合せは合うが、正負の極性に注意するのは直流の測定である。",
+      "ウ": "直流の極性に注意する点は合っているが、直列につなぐのは電流計、並列につなぐのは電圧計である。",
+      "エ": "電流計と電圧計の接続を取り違えている。正負の極性を確認すべきなのも交流ではなく直流である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和7年10月期 無線工学 問18。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "koku-toku-2025-october-kogaku-q19",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "october",
+    "qNumber": 19,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "AM変調とFM変調"
+    ],
+    "difficulty": 2,
+    "question": "次の記述において空欄に入れるべき字句の正しい組合せを下の番号から選べ。\n\nAM 変調は、信号波に応じて搬送波の［A］を変化させる。\n\nFM 変調は、信号波に応じて搬送波の［B］を変化させる。",
+    "choices": {
+      "ア": "A 周波数、B 振幅",
+      "イ": "A 周波数、B 周波数",
+      "ウ": "A 振幅、B 周波数",
+      "エ": "A 振幅、B 振幅"
+    },
+    "answer": "ウ",
+    "explanation": "AMは信号波に応じて搬送波の振幅を変え、FMは信号波に応じて搬送波の瞬時周波数を変える。",
+    "choiceExplanations": {
+      "ア": "AMで変えるのは振幅、FMで変えるのは周波数であり、記述の順ではこの組合せが逆になる。",
+      "イ": "FMでは周波数を変えるが、AMは搬送波の周波数ではなく振幅を変える。",
+      "ウ": "AMは信号波に応じて搬送波の振幅を変え、FMは信号波に応じて搬送波の瞬時周波数を変える。",
+      "エ": "AMについては振幅で正しいが、FMでは搬送波の振幅ではなく周波数を変える。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和7年10月期 無線工学 問19。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "koku-toku-2025-october-kogaku-q20",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "october",
+    "qNumber": 20,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "機上気象レーダー"
+    ],
+    "difficulty": 2,
+    "question": "図に示す機上気象レーダーのコントロールパネルの操作に伴う機能で誤っているのはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "STBY：準備が完了した状態であり、電波は発射されている。",
+      "イ": "RANGE：測定距離範囲を切り替えるために用いられ、目的に応じて適切なRANGE を選択する。",
+      "ウ": "ANT TILT：レーダーアンテナの垂直方向の角度を調整するために用いられ、上方に10度下方に15度の範囲で任意にセットできる。",
+      "エ": "GAIN：目標物の最適な影像が得られるように受信機の利得を調整する。"
+    },
+    "answer": "ア",
+    "explanation": "STBYは待機状態であり、運用のための電波は発射しない。",
+    "choiceExplanations": {
+      "ア": "STBYは待機状態であり、運用のための電波は発射しない。",
+      "イ": "RANGEは表示や測定の距離範囲を切り替えるためのつまみで、観測目的に合わせて設定する。",
+      "ウ": "ANT TILTはアンテナの仰角・俯角を調整する。図の目盛りは上側10度、下側15度までの設定範囲を示す。",
+      "エ": "GAINは受信機の利得を調整し、必要なエコーを見やすい状態にする。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和7年10月期 無線工学 問20。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/koku-toku/2025-october/q20-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "機上気象レーダーの操作パネルに、RANGE、GAIN、ANT TILTのつまみが示されている。"
+    ]
+  },
+  {
+    "id": "koku-toku-2025-october-kogaku-q21",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "october",
+    "qNumber": 21,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "二次監視レーダー"
+    ],
+    "difficulty": 2,
+    "question": "航空交通管制用として地上に設置されているSSR設備は、次のうち、どれに含まれるか。下の番号から選べ。",
+    "choices": {
+      "ア": "ドプラレーダー",
+      "イ": "CW レーダー",
+      "ウ": "一次レーダー",
+      "エ": "二次レーダー"
+    },
+    "answer": "エ",
+    "explanation": "SSRは地上からの質問信号に機上トランスポンダが応答する方式なので、二次レーダーに該当する。",
+    "choiceExplanations": {
+      "ア": "ドプラレーダーは主に反射波の周波数変化から速度などを測る。SSRの区分は質問に対して機上側が応答する二次レーダーである。",
+      "イ": "CWレーダーは連続波を用いる方式である。SSRは質問信号に対するトランスポンダの応答を受信する方式である。",
+      "ウ": "一次レーダーは目標から返る反射波を用いる。SSRは航空機の機上装置が返す応答信号を用いる。",
+      "エ": "SSRは地上からの質問信号に機上トランスポンダが応答する方式なので、二次レーダーに該当する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和7年10月期 無線工学 問21。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "koku-toku-2025-october-kogaku-q22",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "october",
+    "qNumber": 22,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "特別位置識別"
+    ],
+    "difficulty": 2,
+    "question": "図に示すATC トランスポンダにおいて、管制官からの識別のための要請により、SPI(特別位置識別)パルスを送信するときの操作として、正しいのはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "ファンクション・セレクタを「TST」の位置にする。",
+      "イ": "アイデント・ボタンを押す。",
+      "ウ": "ファンクション・セレクタを「ALT」の位置にする。",
+      "エ": "ファンクション・セレクタを「STBY」の位置にする。"
+    },
+    "answer": "イ",
+    "explanation": "管制官が識別を求めたときは、IDENTボタンを押すことで特別位置識別の信号を応答に付加する。",
+    "choiceExplanations": {
+      "ア": "TSTは機器の試験のための位置であり、識別を求められた際のSPI送信操作とは異なる。",
+      "イ": "管制官が識別を求めたときは、IDENTボタンを押すことで特別位置識別の信号を応答に付加する。",
+      "ウ": "ALTは高度情報を含む応答のための選択位置であり、個別のSPI送信を指示する操作ではない。",
+      "エ": "STBYは待機の位置であり、識別を求められた際にSPIを送るための操作ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和7年10月期 無線工学 問22。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/koku-toku/2025-october/q22-official-figure.png"
+    ],
+    "imageAltTexts": [
+      "ATCトランスポンダのファンクション・セレクタ、表示、コード・セレクタ、アイデント・ボタンを示す図。"
+    ]
+  },
+  {
+    "id": "koku-toku-2025-october-kogaku-q23",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "october",
+    "qNumber": 23,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "受信障害の雑音源"
+    ],
+    "difficulty": 2,
+    "question": "無線受信機において、通常、受信に障害を与える雑音の原因にならないのはどれか。次のうちから選べ。",
+    "choices": {
+      "ア": "発電機のブラシの火花",
+      "イ": "電源用電池の容量低下",
+      "ウ": "高周波加熱装置",
+      "エ": "給電線のコネクタのゆるみによるアンテナとの接触不良"
+    },
+    "answer": "イ",
+    "explanation": "電池の容量低下は主に電源切れや機能低下に関係し、通常の無線雑音の発生源ではない。",
+    "choiceExplanations": {
+      "ア": "ブラシの火花による急な電流変化が電磁波を出し、近くの受信機に雑音が入る場合がある。",
+      "イ": "電池の容量低下は主に電源切れや機能低下に関係し、通常の無線雑音の発生源ではない。",
+      "ウ": "高周波加熱装置から漏れる高周波エネルギーは、受信周波数などによって妨害になることがある。",
+      "エ": "コネクタの緩みで接触が不安定になると、信号が途切れたり接触雑音が生じたりする。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和7年10月期 無線工学 問23。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "koku-toku-2025-october-kogaku-q24",
+    "exam": "koku-toku",
+    "session": "kogaku",
+    "year": 2025,
+    "season": "october",
+    "qNumber": 24,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "無線工学",
+    "subject": "無線工学",
+    "topicTags": [
+      "スケルチ調整"
+    ],
+    "difficulty": 2,
+    "question": "次の記述において空欄に入れるべき字句の正しい組合せを下の番号から選べ。\n\n相手局からの送話が［A］ときに受信機から雑音が出るときは、［B］調整つまみを回して、雑音が消える限界点付近の位置に調整する。",
+    "choices": {
+      "ア": "A 有る、B スケルチ",
+      "イ": "A 有る、B 音量",
+      "ウ": "A 無い、B スケルチ",
+      "エ": "A 無い、B 音量"
+    },
+    "answer": "ウ",
+    "explanation": "相手局の送話が無いときの雑音は、スケルチを雑音が消える限界付近に合わせて抑える。",
+    "choiceExplanations": {
+      "ア": "スケルチを調整する操作は合うが、抑えたいのは相手局が送話していないときに現れる雑音である。",
+      "イ": "相手局の送話があるときに音量を絞ると、必要な音声も小さくなる。待受けの雑音はスケルチで抑える。",
+      "ウ": "相手局の送話が無いときの雑音は、スケルチを雑音が消える限界付近に合わせて抑える。",
+      "エ": "雑音が目立つのは送話が無いときだが、音量を下げると必要な音声も小さくなるのでスケルチを使う。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku.pdf",
+    "sourceAnswerUrl": "https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/3/koku-toku-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空特殊無線技士 令和7年10月期 無線工学 問24。解説は過去問AI作成。",
+    "license": "NICHIMU-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  }
+]

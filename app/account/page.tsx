@@ -6,6 +6,7 @@ import { ArrowRight, LogOut } from "lucide-react";
 import { auth } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { HistorySyncPanel } from "./HistorySyncPanel";
+import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
 
 export const metadata: Metadata = {
   title: "アカウント", description: "プロフィールと利用状況。",
@@ -34,11 +35,13 @@ export default async function AccountPage() {
       <section aria-labelledby="account-records" className="mb-8">
         <h2 id="account-records" className="mb-3 text-base font-semibold">学習記録</h2>
         <nav aria-label="学習記録" className="divide-y divide-border overflow-hidden rounded-2xl border border-border bg-card">
-          {[
-            ["/account/dashboard", "学習ダッシュボード"],
-            ["/account/dashboard?tab=weakness", "弱点ヒートマップ"],
-            ["/account/dashboard#mock-scores", "模試の記録"],
-          ].map(([href, label]) => <Link key={href} href={href} className="flex min-h-14 items-center justify-between gap-3 px-5 py-3 text-sm font-medium transition-colors hover:bg-muted"><span>{label}</span><ArrowRight className="h-4 w-4 shrink-0 text-muted-foreground" aria-hidden="true" /></Link>)}
+          <Link href="/me" className="flex min-h-14 items-center justify-between gap-3 px-5 py-3 text-sm font-medium hover:bg-muted">
+            わたしの記録 <ArrowRight aria-hidden="true" className="h-4 w-4" />
+          </Link>
+          <details className="px-5">
+            <summary className="min-h-11 cursor-pointer py-3 text-sm">学習記録の詳細</summary>
+            <Link href="/account/dashboard#mock-scores" className="inline-flex min-h-11 items-center text-sm underline">模試の記録</Link>
+          </details>
         </nav>
       </section>
       <section aria-labelledby="account-history" className="mb-8">
@@ -47,6 +50,7 @@ export default async function AccountPage() {
           {dbReady ? <HistorySyncPanel /> : <p className="text-sm text-muted-foreground">学習履歴はこの端末に保存されます。</p>}
         </div>
       </section>
+      <Link href={PRICE_PAGE_LINK.href} className="mb-4 inline-flex min-h-11 items-center font-medium underline">{PRICE_PAGE_LINK.label}</Link>
       <nav aria-label="アカウント操作" className="flex flex-col items-start gap-2 border-t border-border pt-4 sm:flex-row sm:items-center sm:justify-between">
         <Button asChild variant="outline" size="lg"><Link href="/auth/signout"><LogOut className="h-4 w-4" aria-hidden="true" />ログアウト</Link></Button>
         <Link href="/account/delete" className="inline-flex min-h-11 items-center text-sm text-muted-foreground underline underline-offset-4">アカウントとデータを削除</Link>

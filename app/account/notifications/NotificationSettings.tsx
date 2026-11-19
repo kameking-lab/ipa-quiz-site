@@ -3,11 +3,9 @@ import * as React from "react";
 import { Bell, Mail } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
-import { useAccountStatus } from "@/components/account/AccountNavigation";
 import { readNotificationPrefs, writeNotificationPrefs } from "@/lib/storage/notifications";
 
 export function NotificationSettings() {
-  const accountStatus = useAccountStatus();
   const [permission, setPermission] = React.useState<NotificationPermission | null>(null);
   const [busy, setBusy] = React.useState(false);
   const [status, setStatus] = React.useState({ error: false, message: "" });
@@ -25,21 +23,9 @@ export function NotificationSettings() {
     } catch { setStatus({ error: true, message: "通知の許可を確認できませんでした。" }); }
     finally { setBusy(false); }
   }
-  async function sendTestEmail() {
-    if (busy || accountStatus !== "authenticated") return;
-    setBusy(true); setStatus({ error: false, message: "テストメール送信中…" });
-    try {
-      const response = await fetch("/api/email", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ type: "test" }) });
-      const result: { mocked?: boolean } = await response.json();
-      if (!response.ok || result.mocked) throw new Error("not_sent");
-      setStatus({ error: false, message: "テストメールを送信しました（ログイン中のアカウント宛て）" });
-    } catch { setStatus({ error: true, message: "テストメールを送信できませんでした。" }); }
-    finally { setBusy(false); }
-  }
   return <div className="space-y-4">
     <Card>
       <CardHeader><CardTitle className="flex items-center gap-2 text-base"><Mail className="h-4 w-4" aria-hidden="true" />メール通知</CardTitle><CardDescription>定期メールの登録受付は終了しました。</CardDescription></CardHeader>
-      {accountStatus === "authenticated" && <CardContent><Button variant="outline" size="lg" disabled={busy} onClick={() => void sendTestEmail()}>テストメールを送信</Button></CardContent>}
     </Card>
     <Card>
       <CardHeader><CardTitle className="flex items-center gap-2 text-base"><Bell className="h-4 w-4" aria-hidden="true" />ブラウザ通知</CardTitle></CardHeader>

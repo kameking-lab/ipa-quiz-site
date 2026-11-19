@@ -1,122 +1,64 @@
 "use client";
-import { SafetyLearningProgress } from "@/components/exam-library/SafetyLearningProgress";
 
-import * as React from "react";
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { useEffect } from "react";
+import Link from "next/link";
+import { SafetyLearningProgress } from "@/components/exam-library/SafetyLearningProgress";
 import { DashboardOverview } from "./tabs/DashboardOverview";
 import { DashboardProgress } from "./tabs/DashboardProgress";
 import { DashboardWeakness } from "./tabs/DashboardWeakness";
 import { DashboardBadges } from "./tabs/DashboardBadges";
-
 import { MockScoreHistory } from "./tabs/MockScoreHistory";
 import { DashboardStudyPlan } from "./tabs/DashboardStudyPlan";
 
-const TABS = [
-  { value: "overview", label: "概要" },
-  { value: "study-plan", label: "今日の計画" },
-  { value: "mock-scores", label: "模試記録" },
-  { value: "progress", label: "進捗" },
-  { value: "weakness", label: "弱点" },
-  { value: "badges", label: "バッジ" },
-] as const;
+const sections = new Set(["overview", "progress", "weakness", "study-plan", "mock-scores", "badges"]);
+const summaryClass = "min-h-11 cursor-pointer py-3 text-sm font-semibold";
+const detailsClass = "scroll-mt-16 rounded-xl border border-border px-4 pb-2";
 
-type TabValue = (typeof TABS)[number]["value"];
-
-interface Props {
-  categoryById: Record<string, string>;
-}
-
-function findTab(raw: string | null): TabValue | null {
-  if (!raw) return null;
-  const found = TABS.find((t) => t.value === raw);
-  return (found?.value as TabValue) ?? null;
-}
-
-function readInitialTab(): TabValue | null {
-  if (typeof window === "undefined") return null;
-  const fromHash = findTab(window.location.hash.replace("#", ""));
-  if (fromHash) return fromHash;
-  const params = new URLSearchParams(window.location.search);
-  return findTab(params.get("tab"));
-}
-
-export function DashboardTabs({ categoryById }: Props) {
-  const [tab, setTab] = React.useState<TabValue>("overview");
-
-  React.useEffect(() => {
-    const initial = readInitialTab();
-    if (initial) setTab(initial);
-    function onHashChange() {
-      const next = findTab(window.location.hash.replace("#", ""));
-      if (next) setTab(next);
+export function DashboardTabs({ categoryById }: { categoryById: Record<string, string> }) {
+  useEffect(() => {
+    function showLinkedSection() {
+      const hash = window.location.hash.slice(1);
+      const query = new URLSearchParams(window.location.search).get("tab") ?? "";
+      const id = sections.has(hash) ? hash : query;
+      if (!sections.has(id)) return;
+      const section = document.getElementById(id);
+      if (section instanceof HTMLDetailsElement) section.open = true;
+      section?.scrollIntoView?.({ block: "start" });
     }
-    window.addEventListener("hashchange", onHashChange);
-    return () => window.removeEventListener("hashchange", onHashChange);
+    showLinkedSection();
+    window.addEventListener("hashchange", showLinkedSection);
+    window.addEventListener("popstate", showLinkedSection);
+    return () => {
+      window.removeEventListener("hashchange", showLinkedSection);
+      window.removeEventListener("popstate", showLinkedSection);
+    };
   }, []);
 
-  function handleChange(v: string) {
-    setTab(v as TabValue);
-    if (typeof window !== "undefined") {
-      const url = new URL(window.location.href);
-      url.hash = v;
-      window.history.replaceState(null, "", url.toString());
-    }
-  }
-
   return (
-    <main className="mx-auto w-full max-w-3xl px-4 pb-20 pt-8 sm:px-6 sm:pt-10">
-      <header className="mb-6">
-        <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
-          わたしの記録
-        </h1>
+    <main className="mx-auto w-full max-w-3xl space-y-6 px-4 pb-20 pt-8 sm:px-6 sm:pt-10">
+      <header>
+        <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">わたしの記録</h1>
+        <Link href="/me#study-progress" className="inline-flex min-h-11 items-center text-sm underline">進捗と間違えた問題の復習</Link>
       </header>
-
-      <div className="mb-6"><SafetyLearningProgress compact /></div>
-      <Tabs value={tab} onValueChange={handleChange}>
-        <div>
-        <TabsList aria-label="学習記録の表示" className="mb-6 grid w-full grid-cols-3 gap-1 sm:grid-cols-6">
-          {TABS.map((t) => (
-            <TabsTrigger
-              key={t.value}
-              value={t.value}
-              tabIndex={tab === t.value ? 0 : -1}
-              onKeyDown={(event) => {
-                const index = TABS.findIndex(item => item.value === t.value);
-                const next = event.key === "Home" ? 0 : event.key === "End" ? TABS.length - 1
-                  : event.key === "ArrowRight" ? (index + 1) % TABS.length
-                  : event.key === "ArrowLeft" ? (index - 1 + TABS.length) % TABS.length : -1;
-                if (next < 0) return;
-                event.preventDefault();
-                handleChange(TABS[next].value);
-                event.currentTarget.closest('[role="tablist"]')?.querySelectorAll<HTMLButtonElement>('[role="tab"]')[next]?.focus();
-              }}
-              className="h-12 min-h-12 min-w-0 whitespace-nowrap px-2 text-xs leading-none sm:text-sm"
-            >
-              {t.label}
-            </TabsTrigger>
-          ))}
-        </TabsList>
-        </div>
-
-        <TabsContent value="overview">
-          <DashboardOverview />
-        </TabsContent>
-        <TabsContent value="mock-scores">
-          <MockScoreHistory />
-        </TabsContent>
-        <TabsContent value="study-plan">
-          <DashboardStudyPlan />
-        </TabsContent>
-        <TabsContent value="progress">
-          <DashboardProgress />
-        </TabsContent>
-        <TabsContent value="weakness">
-          <DashboardWeakness categoryById={categoryById} />
-        </TabsContent>
-        <TabsContent value="badges">
-          <DashboardBadges />
-        </TabsContent>
-      </Tabs>
+      <section id="overview" className="scroll-mt-16"><DashboardOverview /></section>
+      <section id="progress" className="scroll-mt-16"><DashboardProgress /></section>
+      <details id="study-plan" className={detailsClass}>
+        <summary className={summaryClass}>今日の計画</summary>
+        <DashboardStudyPlan />
+      </details>
+      <details id="mock-scores" className={detailsClass}>
+        <summary className={summaryClass}>模試記録</summary>
+        <MockScoreHistory />
+      </details>
+      <details id="weakness" className={detailsClass}>
+        <summary className={summaryClass}>弱点の記録</summary>
+        <DashboardWeakness categoryById={categoryById} />
+      </details>
+      <details id="badges" className={detailsClass}>
+        <summary className={summaryClass}>獲得済みのバッジ</summary>
+        <DashboardBadges />
+      </details>
+      <SafetyLearningProgress compact />
     </main>
   );
 }

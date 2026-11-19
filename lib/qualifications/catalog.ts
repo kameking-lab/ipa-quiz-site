@@ -22,7 +22,8 @@ export type PublicationStatus =
 
   | "permission-required"
 
-  | "terms-review-required";
+  | "terms-review-required"
+  | "unpublished";
 
 export interface QualificationCatalogEntry {
 
@@ -103,18 +104,18 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {"slug": "sakui-rotary1", "examCode": "sakui-rotary1", "shortName": "さく井技能士1級（ロータリー式）", "fullName": "さく井技能検定1級（ロータリー式さく井工事作業）", "domain": "construction", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "さく井技能検定1級（ロータリー式さく井工事作業）の2025・2024年度後期各50問、計100問を、公式正答と全肢解説付きで収録。", "attributionTemplate": "出典：中央職業能力開発協会。解説は過去問AIの独自作成。", "remainingWork": []},
   {"slug": "kouku-kanseikan", "examCode": "kouku-kanseikan", "shortName": "航空管制官（基礎能力）", "fullName": "航空管制官採用試験（基礎能力試験）", "domain": "legal", "administrator": "人事院", "officialQuestionsUrl": "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_24.html", "officialReuseTermsUrl": "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_24.html", "status": "live", "reuseSummary": "航空管制官採用試験の2026年度基礎能力から、判断推理・数的推理・資料解釈・時事・情報を公式正答・全肢解説・原図付きで学べます。", "attributionTemplate": "出典：人事院。解説は過去問AIの独自作成。", "remainingWork": ["2025年度基礎能力と適性・外国語試験の補充"]},
   {"slug": "cfp-realestate", "examCode": "cfp-realestate", "shortName": "CFP®不動産運用設計", "fullName": "CFP®資格審査試験（不動産運用設計）", "domain": "finance", "administrator": "NPO法人日本FP協会", "officialQuestionsUrl": "https://www.jafp.or.jp/aim/cfp/cfp_exam/mohan.shtml", "officialReuseTermsUrl": "https://www.jafp.or.jp/aim/cfp/cfp_exam/mohan.shtml", "status": "live", "reuseSummary": "2026年度第1回・第2回の不動産運用設計各50問、計100問を公式正答・独自解説・原本の設例と図表付きで収録。", "attributionTemplate": "出典：NPO法人日本FP協会。解説は過去問AIの独自作成。", "remainingWork": []},
-  {"slug": "building-cleaning3", "examCode": "building-cleaning3", "shortName": "ビルクリーニング技能士3級", "fullName": "ビルクリーニング技能士3級", "domain": "safety", "administrator": "公益社団法人全国ビルメンテナンス協会", "officialQuestionsUrl": "https://www.j-bma.or.jp/qualification-training/building-cleaning", "officialReuseTermsUrl": "https://www.j-bma.or.jp/qualification-training/building-cleaning", "status": "live", "reuseSummary": "2025・2024年度の学科試験各25問、計50問を公式正答と独自解説付きで収録。", "attributionTemplate": "出典：公益社団法人全国ビルメンテナンス協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "building-cleaning3", "examCode": "building-cleaning3", "shortName": "ビルクリーニング技能士3級", "fullName": "ビルクリーニング技能士3級", "domain": "safety", "administrator": "公益社団法人全国ビルメンテナンス協会", "officialQuestionsUrl": "https://www.j-bma.or.jp/qualification-training/building-cleaning", "officialReuseTermsUrl": "https://www.j-bma.or.jp/qualification-training/building-cleaning", "status": "unpublished", "reuseSummary": "2025・2024年度の学科試験各25問、計50問を公式正答と独自解説付きで収録。", "attributionTemplate": "出典：公益社団法人全国ビルメンテナンス協会。解説は過去問AIの独自作成。", "remainingWork": []},
   {"slug": "kogai-taiki-gairon", "examCode": "kogai-taiki-gairon", "shortName": "公害防止管理者・大気概論", "fullName": "公害防止管理者・大気概論", "domain": "safety", "administrator": "一般社団法人産業環境管理協会", "officialQuestionsUrl": "https://www.jemai.or.jp/polconman/examination/past.html", "officialReuseTermsUrl": "https://www.jemai.or.jp/polconman/examination/past.html", "status": "live", "reuseSummary": "2026年度の大気概論・全10問を公式正答と全肢の独自解説付きで収録。", "attributionTemplate": "出典：一般社団法人産業環境管理協会。解説は過去問AIの独自作成。", "remainingWork": []},
-  {"slug": "restaurant-1", "examCode": "restaurant-1", "shortName": "レストランサービス技能検定1級（学科）", "fullName": "レストランサービス技能検定1級（学科）", "domain": "personal-services", "administrator": "一般社団法人日本ホテル・レストランサービス技能協会", "officialQuestionsUrl": "https://hrs.or.jp/restaurant/certificate/index.html", "officialReuseTermsUrl": "https://hrs.or.jp/restaurant/certificate/index.html", "status": "live", "reuseSummary": "2025・2026年度の学科試験を各100問、計200問収録。公式問題・正答と独自解説で、料飲サービス・食品衛生・国際儀礼を学べます。", "attributionTemplate": "出典：一般社団法人日本ホテル・レストランサービス技能協会「レストランサービス技能検定」。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "restaurant-1", "examCode": "restaurant-1", "shortName": "レストランサービス技能検定1級（学科）", "fullName": "レストランサービス技能検定1級（学科）", "domain": "personal-services", "administrator": "一般社団法人日本ホテル・レストランサービス技能協会", "officialQuestionsUrl": "https://hrs.or.jp/restaurant/certificate/index.html", "officialReuseTermsUrl": "https://hrs.or.jp/restaurant/certificate/index.html", "status": "unpublished", "reuseSummary": "2025・2026年度の学科試験を各100問、計200問収録。公式問題・正答と独自解説で、料飲サービス・食品衛生・国際儀礼を学べます。", "attributionTemplate": "出典：一般社団法人日本ホテル・レストランサービス技能協会「レストランサービス技能検定」。解説は過去問AIの独自作成。", "remainingWork": []},
   {"slug": "cfp-souzoku", "examCode": "cfp-souzoku", "shortName": "CFP®・相続・事業承継設計", "fullName": "CFP®・相続・事業承継設計", "domain": "finance", "administrator": "NPO法人日本FP協会", "officialQuestionsUrl": "https://www.jafp.or.jp/aim/cfp/cfp_exam/mohan.shtml", "officialReuseTermsUrl": "https://www.jafp.or.jp/aim/cfp/cfp_exam/mohan.shtml", "status": "live", "reuseSummary": "2026年度第1・2回の相続・事業承継設計を全100問収録。公式問題・正答と独自解説で、相続・遺言・財産評価・事業承継を学べます。", "attributionTemplate": "出典：NPO法人日本FP協会「CFP®資格審査試験 相続・事業承継設計」。解説は過去問AIの独自作成。", "remainingWork": []},
   {"slug": "kogai-taiki-tokuron", "examCode": "kogai-taiki-tokuron", "shortName": "公害防止管理者・大気特論", "fullName": "公害防止管理者（大気特論）", "domain": "safety", "administrator": "一般社団法人産業環境管理協会", "officialQuestionsUrl": "https://www.jemai.or.jp/polconman/examination/past.html", "officialReuseTermsUrl": "https://www.jemai.or.jp/polconman/examination/past.html", "status": "live", "reuseSummary": "公害防止管理者の2026年度大気特論を全15問収録。燃料・燃焼、排煙処理、測定・分析を公式問題・正答と全肢の独自解説で学べます。", "attributionTemplate": "出典：一般社団法人産業環境管理協会。解説は過去問AIの独自作成。", "remainingWork": []},
   {"slug": "telecom-chief-denso", "examCode": "telecom-chief-denso", "shortName": "電気通信主任技術者・伝送交換", "fullName": "電気通信主任技術者（伝送交換設備及び設備管理）", "domain": "electrical", "administrator": "一般財団法人日本データ通信協会 電気通信国家試験センター", "officialQuestionsUrl": "https://www.dekyo.or.jp/shiken/chief/exam", "officialReuseTermsUrl": "https://www.dekyo.or.jp/shiken/chief/exam", "status": "live", "reuseSummary": "電気通信主任技術者の伝送交換設備及び設備管理から、2026年度第1回・2025年度第1回と第2回の全180解答欄を収録。公式問題・正答と独自解説で、伝送・交換・無線・電源・設備管理・情報セキュリティを学べます。", "attributionTemplate": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。", "remainingWork": []},
   {"slug": "eiken2", "examCode": "eiken2", "shortName": "英検2級", "fullName": "実用英語技能検定2級", "domain": "personal-services", "administrator": "公益財団法人日本英語検定協会", "officialQuestionsUrl": "https://www.eiken.or.jp/eiken/exam/grade_2/", "officialReuseTermsUrl": "https://www.eiken.or.jp/eiken/exam/grade_2/", "status": "live", "reuseSummary": "2026年度第1・2回、2025年度第3回の一次試験189問を収録。公式正答と全選択肢の独自解説、公式音声、英文の独自解答例付き。", "attributionTemplate": "出典：公益財団法人日本英語検定協会。解説は過去問AIの独自作成。", "remainingWork": []},
-  {"slug": "restaurant-2", "examCode": "restaurant-2", "shortName": "レストランサービス技能士 2級", "fullName": "レストランサービス技能検定2級（学科）", "domain": "personal-services", "administrator": "一般社団法人日本ホテル・レストランサービス技能協会", "officialQuestionsUrl": "https://hrs.or.jp/restaurant/certificate/index.html", "officialReuseTermsUrl": "https://hrs.or.jp/restaurant/certificate/index.html", "status": "live", "reuseSummary": "2025・2026年度の学科各100問を、公式正答と全肢の独自解説付きで収録。", "attributionTemplate": "出典：一般社団法人日本ホテル・レストランサービス技能協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "restaurant-2", "examCode": "restaurant-2", "shortName": "レストランサービス技能士 2級", "fullName": "レストランサービス技能検定2級（学科）", "domain": "personal-services", "administrator": "一般社団法人日本ホテル・レストランサービス技能協会", "officialQuestionsUrl": "https://hrs.or.jp/restaurant/certificate/index.html", "officialReuseTermsUrl": "https://hrs.or.jp/restaurant/certificate/index.html", "status": "unpublished", "reuseSummary": "2025・2026年度の学科各100問を、公式正答と全肢の独自解説付きで収録。", "attributionTemplate": "出典：一般社団法人日本ホテル・レストランサービス技能協会。解説は過去問AIの独自作成。", "remainingWork": []},
   {"slug": "kogai-17", "examCode": "kogai-17", "shortName": "公害防止管理者・大気関係技術特論", "fullName": "公害防止管理者・大気関係技術特論", "domain": "safety", "administrator": "一般社団法人産業環境管理協会", "officialQuestionsUrl": "https://www.jemai.or.jp/polconman/examination/past.html", "officialReuseTermsUrl": "https://www.jemai.or.jp/polconman/examination/past.html", "status": "live", "reuseSummary": "公害防止管理者等国家試験の2026年度・大気関係技術特論全20問を収録。公式問題・正答と全肢の独自解説で、燃焼・排ガス処理・集じん・大気拡散を学べます。", "attributionTemplate": "出典：一般社団法人産業環境管理協会。解説は過去問AIの独自作成。", "remainingWork": []},
   {"slug": "dekyo-chief-3", "examCode": "dekyo-chief-3", "shortName": "電気通信主任技術者・法規", "fullName": "電気通信主任技術者・法規", "domain": "electrical", "administrator": "一般財団法人日本データ通信協会 電気通信国家試験センター", "officialQuestionsUrl": "https://www.dekyo.or.jp/shiken/chief/exam", "officialReuseTermsUrl": "https://www.dekyo.or.jp/shiken/chief/exam", "status": "live", "reuseSummary": "電気通信主任技術者の2025・2026年度・法規を3回92解答欄、公式正答と独自解説で学べます。伝送交換・線路共通の問題です。", "attributionTemplate": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター。解説は過去問AIの独自作成。", "remainingWork": []},
   {"slug": "eiken3", "examCode": "eiken3", "shortName": "英検3級", "fullName": "実用英語技能検定3級", "domain": "personal-services", "administrator": "公益財団法人日本英語検定協会", "officialQuestionsUrl": "https://www.eiken.or.jp/eiken/exam/grade_3/", "officialReuseTermsUrl": "https://www.eiken.or.jp/eiken/exam/grade_3/", "status": "live", "reuseSummary": "2026年度第2回・第1回、2025年度第3回の全186問を収録。読解・リスニングの全肢解説、公式音声・原図、英作文の公式解答例付き。", "attributionTemplate": "出典：公益財団法人日本英語検定協会。解説は過去問AIの独自作成。", "remainingWork": []},
-  {"slug": "restaurant-3", "examCode": "restaurant-3", "shortName": "レストランサービス技能検定3級", "fullName": "レストランサービス技能検定3級", "domain": "personal-services", "administrator": "一般社団法人日本ホテル・レストランサービス技能協会", "officialQuestionsUrl": "https://hrs.or.jp/restaurant/certificate/index.html", "officialReuseTermsUrl": "https://hrs.or.jp/restaurant/certificate/index.html", "status": "live", "reuseSummary": "2026・2025年度の学科各100問、計200問を公式正答・正誤の独自解説付きで収録。", "attributionTemplate": "出典：一般社団法人日本ホテル・レストランサービス技能協会。解説は過去問AIの独自作成。", "remainingWork": []},
+  {"slug": "restaurant-3", "examCode": "restaurant-3", "shortName": "レストランサービス技能検定3級", "fullName": "レストランサービス技能検定3級", "domain": "personal-services", "administrator": "一般社団法人日本ホテル・レストランサービス技能協会", "officialQuestionsUrl": "https://hrs.or.jp/restaurant/certificate/index.html", "officialReuseTermsUrl": "https://hrs.or.jp/restaurant/certificate/index.html", "status": "unpublished", "reuseSummary": "2026・2025年度の学科各100問、計200問を公式正答・正誤の独自解説付きで収録。", "attributionTemplate": "出典：一般社団法人日本ホテル・レストランサービス技能協会。解説は過去問AIの独自作成。", "remainingWork": []},
   {"slug": "eiken4", "examCode": "eiken4", "shortName": "英検4級", "fullName": "実用英語技能検定4級", "domain": "personal-services", "administrator": "公益財団法人日本英語検定協会", "officialQuestionsUrl": "https://www.eiken.or.jp/eiken/exam/grade_4/", "officialReuseTermsUrl": "https://www.eiken.or.jp/eiken/exam/grade_4/", "status": "live", "reuseSummary": "2026年度第1・2回、2025年度第3回の筆記105問・リスニング90問。公式正答と全750肢の独自解説、公式音源・放送原稿を収録。", "attributionTemplate": "出典：公益財団法人日本英語検定協会。解説は過去問AI独自作成。", "remainingWork": []},
   {"slug": "nyukoku-keibikan", "examCode": "nyukoku-keibikan", "shortName": "入国警備官", "fullName": "入国警備官採用試験", "domain": "legal", "administrator": "人事院", "officialQuestionsUrl": "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_27.html", "officialReuseTermsUrl": "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_27.html", "status": "live", "reuseSummary": "2025年度基礎能力試験40問を全問収録。公式正答・全200肢の独自解説と原本図表。", "attributionTemplate": "出典：人事院。解説は過去問AIの独自作成。", "remainingWork": ["作文試験等の補充"]},
   {"slug": "chizai3", "examCode": "chizai3", "shortName": "知的財産管理技能検定3級", "fullName": "知的財産管理技能検定3級", "domain": "legal", "administrator": "知的財産教育協会", "officialQuestionsUrl": "https://www.kentei-info-ip-edu.org/gakushujoho/kakomon/", "officialReuseTermsUrl": "https://www.kentei-info-ip-edu.org/gakushujoho/kakomon/", "status": "live", "reuseSummary": "第54回・第53回の学科各30問、計60問を公式正答と全肢解説付きで収録。", "attributionTemplate": "出典：知的財産教育協会。解説は過去問AIの独自作成。", "remainingWork": []},
@@ -1780,29 +1781,17 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["第58回の午前と第61・60回の未収録問題の公式原本を確認"],
 },
   {
-
     slug: "gengo-chokakushi",
-
     examCode: "gengo-chokakushi",
-
     shortName: "言語聴覚士",
-
     fullName: "言語聴覚士国家試験",
-
     domain: "welfare",
-
     administrator: "厚生労働省",
-
     officialQuestionsUrl: "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken21/about.html",
-
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
-
-    status: "terms-review-required",
-
-    reuseSummary: "第27・28回の公式通知7原問を確認し、除外2問を分離。5原問に全肢解説を保存し、2原問は学術的な局所確認待ち。出題候補3問を保持するが公開は保留。400原問の公式正答は確保し、393原問の本冊・図表は未取得です。",
-
-    remainingWork: ["公式問題本冊の原文・図表と正答の照合", "転載条件・表示出典の確認", "難問の局所確認と統合担当の公開判断"],
-
+    status: "live",
+    reuseSummary: "厚生労働省の採点通知に掲載された第25・26回の部分収録です。複数正答は公式の正答表に従っています。",
+    remainingWork: ["公式問題本冊の原文・図表と正答の照合"],
   },
   {
     slug: "shino-kunrenshi",
@@ -2105,27 +2094,29 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   },
   {
     slug: "zenkou-keisan-gijutsu",
+    examCode: "zenkou-keisan-gijutsu",
     shortName: "計算技術検定",
     fullName: "計算技術検定試験",
     domain: "electrical",
     administrator: "公益社団法人全国工業高等学校長協会",
     officialQuestionsUrl: "https://zenkoukyo.or.jp/index_kentei/exam_result/",
     officialReuseTermsUrl: "https://zenkoukyo.or.jp/index_kentei/exam_result/",
-    status: "terms-review-required",
-    reuseSummary: "第92〜94回の2〜4級の問題と正答を公式の実施結果PDFで確認。公開リポジトリに問題と図表を転載できる条件は未確認。",
-    remainingWork: ["公開リポジトリへの転載条件を確認", "第92〜94回の2〜4級を収録"],
+    status: "live",
+    reuseSummary: "第92〜94回の2〜4級、各級の全3種目198問を収録。公式の問題・正答と図表を使い、計算の手順を確認できます。",
+    remainingWork: [],
   },
   {
     slug: "katei-shokumotsu",
+    examCode: "katei-shokumotsu",
     shortName: "家庭科技術検定・食物調理",
     fullName: "全国高等学校家庭科食物調理技術検定",
     domain: "personal-services",
     administrator: "公益財団法人全国高等学校家庭科教育振興会",
     officialQuestionsUrl: "https://www.katei-ed.or.jp/past.html",
     officialReuseTermsUrl: "https://www.katei-ed.or.jp/past.html",
-    status: "terms-review-required",
-    reuseSummary: "第61・62回の2級・準1級と第60回の旧3級・旧2級の問題・正答を公式PDFで確認。公開リポジトリに問題と図表を転載できる条件は未確認。",
-    remainingWork: ["公開リポジトリへの転載条件を確認", "第60〜62回の対象級を収録", "問題文・図版・正答の転載条件を確認"],
+    status: "live",
+    reuseSummary: "第61・62回の2級・準1級と第60回の旧3級・旧2級の筆記68大問を収録。公式の問題・正答と独自解説で学べます。",
+    remainingWork: [],
   },
   {
 
@@ -2544,22 +2535,22 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
   },
   {
-    slug: "katei-hifuku", shortName: "被服製作技術検定", fullName: "家庭科技術検定・被服製作",
+    slug: "katei-hifuku", examCode: "katei-hifuku", shortName: "被服製作技術検定", fullName: "家庭科技術検定・被服製作",
     domain: "personal-services", administrator: "公益財団法人全国高等学校家庭科教育振興会",
     officialQuestionsUrl: "https://www.katei-ed.or.jp/past.html",
     officialReuseTermsUrl: "https://www.katei-ed.or.jp/past.html",
-    status: "terms-review-required",
-    reuseSummary: "2025年度 第62回の2級筆記問題と正答を公式PDFで確認。",
-    remainingWork: ["問題文・図版・正答の転載条件を確認"],
+    status: "live",
+    reuseSummary: "2025年度 第62回の2級筆記を全12大問・19演習単位で収録。公式正答と原本図表、選択肢ごとの独自解説を確認できます。",
+    remainingWork: [],
   },
   {
-    slug: "zenkou-joho", shortName: "情報技術検定", fullName: "情報技術検定",
+    slug: "zenkou-joho", examCode: "zenkou-joho", shortName: "情報技術検定", fullName: "情報技術検定",
     domain: "information-technology", administrator: "公益社団法人全国工業高等学校長協会",
     officialQuestionsUrl: "https://zenkoukyo.or.jp/index_kentei/exam_result/",
     officialReuseTermsUrl: "https://zenkoukyo.or.jp/index_kentei/exam_result/",
-    status: "terms-review-required",
-    reuseSummary: "2025年度 第74回・第75回と2026年度 第76回の各4区分の問題と標準解答を公式PDFで確認。",
-    remainingWork: ["問題文・図版・正答の転載条件を確認"],
+    status: "live",
+    reuseSummary: "第74〜76回の各1級2区分・2級・3級を収録。公式の標準解答と原本図表、選択肢ごとの独自解説を確認できます。",
+    remainingWork: [],
   },
   {
     slug: "shinrishi", examCode: "shinrishi", shortName: "公認心理師", fullName: "公認心理師試験",
@@ -2828,35 +2819,17 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["バッチ1対象外の保留10問の公開範囲を別途判断", "令和7年度の公式法令基準日の確認（問題PDFは403で取得不能）", "公式PDFと問題文・図表の公開前最終照合", "独立レビューのFAIL指摘への修正内容の再レビュー合格", "指定の質問検証・型検査・関連テストの完了"],
 },
   {
-
-    slug: "khk-hanbai", shortName: "第一種販売主任者", fullName: "高圧ガス販売主任者 第一種",
-
+    slug: "khk-hanbai", examCode: "khk-hanbai", shortName: "高圧ガス販売主任者 第一種", fullName: "高圧ガス販売主任者 第一種",
     domain: "safety", administrator: "高圧ガス保安協会",
-
     officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html", officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",
-
-    status: "ready-to-ingest", stagingDataPath: "data/qualification-staging/khk-hanbai",
-
-    reuseSummary: "令和7・6年度80問を未公開stagingに保存。公式の転載禁止文言を記録済み。",
-
-    remainingWork: ["publicAllowed=falseで維持", "公開する場合は別途統合・公開判断が必要"],
-
-},
+    status: "live", reuseSummary: "2022〜2026年度の公式問題・正答200問を収録。全肢解説付き。", remainingWork: [],
+  },
   {
-
-    slug: "khk-hanbai2", shortName: "第二種販売主任者", fullName: "高圧ガス販売主任者 第二種",
-
+    slug: "khk-hanbai2", examCode: "khk-hanbai2", shortName: "高圧ガス販売主任者 第二種", fullName: "高圧ガス販売主任者 第二種",
     domain: "safety", administrator: "高圧ガス保安協会",
-
     officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html", officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",
-
-    status: "ready-to-ingest", stagingDataPath: "data/qualification-staging/khk-hanbai",
-
-    reuseSummary: "令和7・6年度80問を未公開stagingに保存。",
-
-    remainingWork: ["publicAllowed=falseで維持", "公開する場合は別途統合・公開判断が必要"],
-
-},
+    status: "live", reuseSummary: "2022〜2026年度の公式問題・正答200問を収録。全肢解説付き。", remainingWork: [],
+  },
   {
 
     slug: "khk-setsubishi", shortName: "液化石油ガス設備士（学科）", fullName: "液化石油ガス設備士試験（学科）",
@@ -3351,6 +3324,248 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {"slug": "unko-kanrisha-ryokaku", "examCode": "unko-kanrisha-ryokaku", "shortName": "運行管理者（旅客）", "fullName": "運行管理者（旅客）", "domain": "safety", "administrator": "公益財団法人運行管理者試験センター", "officialQuestionsUrl": "https://www.unkan.or.jp/past.html", "officialReuseTermsUrl": "https://www.unkan.or.jp/past.html", "status": "live", "stagingDataPath": "data/questions/unko-kanrisha-ryokaku", "reuseSummary": "2023・2024年度CBT出題例60原問・92解答単位。公式問題画像・正答と全肢解説を収録。", "remainingWork": []},
   {"slug": "diecast2", "examCode": "diecast2", "shortName": "ダイカスト技能士 2級", "fullName": "技能検定 2級ダイカスト（ホットチャンバダイカスト作業）学科試験", "domain": "safety", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/list02.html?v1=%E4%BB%A4%E5%92%8C7%E5%B9%B4%E5%BA%A6&v2=%E5%89%8D%E6%9C%9F&v3=B34&v4=%E3%83%80%E3%82%A4%E3%82%AB%E3%82%B9%E3%83%88%EF%BC%88%E3%83%9B%E3%83%83%E3%83%88%E3%83%81%E3%83%A3%E3%83%B3%E3%83%90%E3%83%80%E3%82%A4%E3%82%AB%E3%82%B9%E3%83%88%E4%BD%9C%E6%A5%AD%EF%BC%89", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2025年度の学科50問を収録。公式問題・正答と全肢の独自解説で学べます。", "attributionTemplate": "出典：中央職業能力開発協会 令和7年度前期 2級ダイカスト（ホットチャンバダイカスト作業）学科試験。解説は過去問AIの独自作成。", "remainingWork": []},
   {"slug": "tetsudo-sharyo2", "examCode": "tetsudo-sharyo2", "shortName": "鉄道車両製造・整備技能士 2級", "fullName": "技能検定 2級鉄道車両製造・整備（機器ぎ装作業）学科試験", "domain": "safety", "administrator": "中央職業能力開発協会", "officialQuestionsUrl": "https://www.kentei.javada.or.jp/list02.html?v1=%E4%BB%A4%E5%92%8C7%E5%B9%B4%E5%BA%A6&v2=%E5%89%8D%E6%9C%9F&v3=B43&v4=%E9%89%84%E9%81%93%E8%BB%8A%E4%B8%A1%E8%A3%BD%E9%80%A0%E3%83%BB%E6%95%B4%E5%82%99%EF%BC%88%E6%A9%9F%E5%99%A8%E3%81%8E%E8%A3%85%E4%BD%9C%E6%A5%AD%EF%BC%89", "officialReuseTermsUrl": "https://www.kentei.javada.or.jp/", "status": "live", "reuseSummary": "2025年度の学科50問を収録。公式問題・正答と全肢の独自解説で学べます。", "attributionTemplate": "出典：中央職業能力開発協会 令和7年度前期 2級鉄道車両製造・整備（機器ぎ装作業）学科試験。解説は過去問AIの独自作成。", "remainingWork": []},
+  {
+    slug: "saibansho-ippan-dai", examCode: "saibansho-ippan-dai", shortName: "裁判所事務官（大卒程度）", fullName: "裁判所職員採用一般職試験（裁判所事務官・大卒程度区分）",
+    domain: "legal", administrator: "裁判所",
+    officialQuestionsUrl: "https://www.courts.go.jp/saiyo/sikenjoho/siken/siken_mondai/index.html",
+    officialReuseTermsUrl: "https://www.courts.go.jp/saiyo/sikenjoho/siken/siken_mondai/index.html",
+    status: "live",
+    reuseSummary: "2023～2026年度の基礎能力試験92問、2023～2026年度の専門試験180問を公式問題・正答と全肢の独自解説で収録。",
+    attributionTemplate: "出典：裁判所 裁判所職員採用一般職試験（裁判所事務官・大卒程度区分）。解説は過去問AIの独自作成。",
+    remainingWork: ["2022年度の問題・正答の確認"],
+  },
+  {
+    slug: "katei-hoiku", examCode: "katei-hoiku", shortName: "高校家庭科保育技術検定", fullName: "全国高等学校家庭科保育技術検定",
+    domain: "welfare", administrator: "公益財団法人全国高等学校家庭科教育振興会",
+    officialQuestionsUrl: "https://www.katei-ed.or.jp/past.html",
+    officialReuseTermsUrl: "https://www.katei-ed.or.jp/past.html",
+    status: "live",
+    reuseSummary: "準1級・1級の公式筆記問題と正答、独自の解説を収録。",
+    attributionTemplate: "出典：公益財団法人全国高等学校家庭科教育振興会。解説は過去問AIが作成。",
+    remainingWork: [],
+  },
+  {
+    slug: "katei-shoku-chori", examCode: "katei-shoku-chori", shortName: "高校家庭科食物調理技術検定", fullName: "全国高等学校家庭科食物調理技術検定",
+    domain: "personal-services", administrator: "公益財団法人全国高等学校家庭科教育振興会",
+    officialQuestionsUrl: "https://www.katei-ed.or.jp/past.html",
+    officialReuseTermsUrl: "https://www.katei-ed.or.jp/past.html",
+    status: "live",
+    reuseSummary: "2級・準1級・1級の公式筆記問題と正答、独自の解説を収録。",
+    attributionTemplate: "出典：公益財団法人全国高等学校家庭科教育振興会。解説は過去問AIが作成。",
+    remainingWork: [],
+  },
+  {
+    slug: "mental-health-management", examCode: "mental-health-management", shortName: "メンタルヘルス・マネジメント検定", fullName: "メンタルヘルス・マネジメント検定試験",
+    domain: "welfare", administrator: "大阪商工会議所",
+    officialQuestionsUrl: "https://www.mental-health.ne.jp/procedure/",
+    officialReuseTermsUrl: "https://www.mental-health.ne.jp/procedure/",
+    status: "live",
+    reuseSummary: "公式パンフレットに掲載されたI・II・III種の本試験問題抜粋と正答を収録。",
+    attributionTemplate: "出典：大阪商工会議所。解説は過去問AIが作成。",
+    remainingWork: [],
+  },
+  {
+    slug: "building-cleaning-ssw1", examCode: "building-cleaning-ssw1", shortName: "ビルクリーニング特定技能1号", fullName: "ビルクリーニング分野特定技能1号評価試験",
+    domain: "personal-services", administrator: "公益社団法人全国ビルメンテナンス協会",
+    officialQuestionsUrl: "https://www.j-bma.or.jp/qualification-training/zairyu-1go",
+    officialReuseTermsUrl: "https://www.j-bma.or.jp/qualification-training/zairyu-1go",
+    status: "live",
+    reuseSummary: "2019年に公表された判断試験の問題・正答と独自の全肢解説を収録。",
+    attributionTemplate: "出典：公益社団法人全国ビルメンテナンス協会。解説は過去問AIが作成。",
+    remainingWork: [],
+  },
+  {
+    slug: "kyoin-osaka", examCode: "kyoin-osaka", shortName: "大阪府教員採用試験", fullName: "大阪府公立学校教員採用選考テスト",
+    domain: "welfare", administrator: "大阪府教育委員会",
+    officialQuestionsUrl: "https://kyoin-pref-osaka.com/test/r9results-2-2/",
+    officialReuseTermsUrl: "https://kyoin-pref-osaka.com/test/r9results-2-2/",
+    status: "live",
+    reuseSummary: "2022～2026年度実施の第1次選考の筆答132問と、同5年度の教科専門（小学校等）115問を公式問題・正答と全肢の独自解説で収録。",
+    attributionTemplate: "出典：大阪府教育委員会 大阪府公立学校教員採用選考テスト。解説は過去問AIの独自作成。",
+    remainingWork: ["教科専門の未収録の校種・教科の筆答問題の収録"],
+  },
+  {
+    slug: "kyoin-tokyo", examCode: "kyoin-tokyo", shortName: "東京都教員採用試験", fullName: "東京都公立学校教員採用候補者選考",
+    domain: "welfare", administrator: "東京都教育委員会",
+    officialQuestionsUrl: "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/recruit/exam.html",
+    officialReuseTermsUrl: "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/policy.html",
+    status: "live",
+    reuseSummary: "2024～2026年度実施の教職教養75問と、2025・2026年度実施の専門教養（小学校全科）33問を公式問題・正答と全肢の独自解説で収録。",
+    attributionTemplate: "出典：東京都教育委員会 東京都公立学校教員採用候補者選考。解説は過去問AIの独自作成。",
+    remainingWork: ["他の校種・教科の専門教養の収録"],
+  },
+  {
+    slug: "cg-creator-basic", examCode: "cg-creator-basic", shortName: "CGクリエイター検定 ベーシック", fullName: "CGクリエイター検定 ベーシック",
+    domain: "information-technology", administrator: "公益財団法人画像情報教育振興協会（CG-ARTS）",
+    officialQuestionsUrl: "https://www.cgarts.or.jp/kentei/past_download/",
+    officialReuseTermsUrl: "https://www.cgarts.or.jp/termsofuse/",
+    status: "live", reuseSummary: "公式問題・正答と全肢の独自解説を収録。",
+    attributionTemplate: "出典：公益財団法人画像情報教育振興協会（CG-ARTS）CGクリエイター検定 ベーシック。",
+    remainingWork: [],
+  },
+  {
+    slug: "cg-creator-expert", examCode: "cg-creator-expert", shortName: "CGクリエイター検定 エキスパート", fullName: "CGクリエイター検定 エキスパート",
+    domain: "information-technology", administrator: "公益財団法人画像情報教育振興協会（CG-ARTS）",
+    officialQuestionsUrl: "https://www.cgarts.or.jp/kentei/past_download/",
+    officialReuseTermsUrl: "https://www.cgarts.or.jp/termsofuse/",
+    status: "live", reuseSummary: "公式問題・正答と全肢の独自解説を収録。",
+    attributionTemplate: "出典：公益財団法人画像情報教育振興協会（CG-ARTS）CGクリエイター検定 エキスパート。",
+    remainingWork: [],
+  },
+  {
+    slug: "cg-engineer-basic", examCode: "cg-engineer-basic", shortName: "CGエンジニア検定 ベーシック", fullName: "CGエンジニア検定 ベーシック",
+    domain: "information-technology", administrator: "公益財団法人画像情報教育振興協会（CG-ARTS）",
+    officialQuestionsUrl: "https://www.cgarts.or.jp/kentei/past_download/",
+    officialReuseTermsUrl: "https://www.cgarts.or.jp/termsofuse/",
+    status: "live", reuseSummary: "公式問題・正答と全肢の独自解説を収録。",
+    attributionTemplate: "出典：公益財団法人画像情報教育振興協会（CG-ARTS）CGエンジニア検定 ベーシック。",
+    remainingWork: [],
+  },
+  {
+    slug: "cg-engineer-expert", examCode: "cg-engineer-expert", shortName: "CGエンジニア検定 エキスパート", fullName: "CGエンジニア検定 エキスパート",
+    domain: "information-technology", administrator: "公益財団法人画像情報教育振興協会（CG-ARTS）",
+    officialQuestionsUrl: "https://www.cgarts.or.jp/kentei/past_download/",
+    officialReuseTermsUrl: "https://www.cgarts.or.jp/termsofuse/",
+    status: "live", reuseSummary: "公式問題・正答と全肢の独自解説を収録。",
+    attributionTemplate: "出典：公益財団法人画像情報教育振興協会（CG-ARTS）CGエンジニア検定 エキスパート。",
+    remainingWork: [],
+  },
+  {
+    slug: "multimedia-kentei-basic", examCode: "multimedia-kentei-basic", shortName: "マルチメディア検定 ベーシック", fullName: "マルチメディア検定 ベーシック",
+    domain: "information-technology", administrator: "公益財団法人画像情報教育振興協会（CG-ARTS）",
+    officialQuestionsUrl: "https://www.cgarts.or.jp/kentei/past_download/",
+    officialReuseTermsUrl: "https://www.cgarts.or.jp/termsofuse/",
+    status: "live", reuseSummary: "公式問題・正答と全肢の独自解説を収録。",
+    attributionTemplate: "出典：公益財団法人画像情報教育振興協会（CG-ARTS）マルチメディア検定 ベーシック。",
+    remainingWork: [],
+  },
+  {
+    slug: "multimedia-kentei-expert", examCode: "multimedia-kentei-expert", shortName: "マルチメディア検定 エキスパート", fullName: "マルチメディア検定 エキスパート",
+    domain: "information-technology", administrator: "公益財団法人画像情報教育振興協会（CG-ARTS）",
+    officialQuestionsUrl: "https://www.cgarts.or.jp/kentei/past_download/",
+    officialReuseTermsUrl: "https://www.cgarts.or.jp/termsofuse/",
+    status: "live", reuseSummary: "公式問題・正答と全肢の独自解説を収録。",
+    attributionTemplate: "出典：公益財団法人画像情報教育振興協会（CG-ARTS）マルチメディア検定 エキスパート。",
+    remainingWork: [],
+  },
+  {
+    slug: "g-kentei", examCode: "g-kentei", shortName: "G検定", fullName: "G検定（ジェネラリスト検定）",
+    domain: "information-technology", administrator: "一般社団法人日本ディープラーニング協会",
+    officialQuestionsUrl: "https://www.jdla.org/certificate/general/issues/",
+    officialReuseTermsUrl: "https://www.jdla.org/",
+    status: "live", reuseSummary: "試験実施機関が公開した実際の出題と正答、全肢の独自解説を収録。",
+    attributionTemplate: "出典：一般社団法人日本ディープラーニング協会「G検定の例題・過去問」。",
+    remainingWork: [],
+  },
+  {
+    slug: "kyoto-kentei3", examCode: "kyoto-kentei3", shortName: "京都検定 3級", fullName: "京都・観光文化検定試験 3級",
+    domain: "personal-services", administrator: "京都商工会議所", status: "live",
+    officialQuestionsUrl: "https://www.kyotokentei.ne.jp/news/119226.html",
+    officialReuseTermsUrl: "https://www.kyotokentei.ne.jp/faq/",
+    reuseSummary: "京都商工会議所が問題と正答を公開している3級の抜粋を収録。",
+    attributionTemplate: "出典：京都商工会議所 京都・観光文化検定試験。解説は過去問AIの独自作成。",
+    remainingWork: ["各回の問題冊子は公開抜粋のみ収録"],
+  },
+  {
+    slug: "topik1", examCode: "topik1", shortName: "TOPIK I", fullName: "韓国語能力試験 TOPIK I",
+    domain: "personal-services", administrator: "大韓民国 国立国際教育院", status: "live",
+    officialQuestionsUrl: "https://www.topik.go.kr/TWSTDY/TWSTDY0080.do",
+    officialReuseTermsUrl: "https://www.topik.go.kr/TWSTDY/TWSTDY0080.do",
+    reuseSummary: "第83・91・96・102回の読解を収録。問題・正答は国立国際教育院の公開版を使用。",
+    attributionTemplate: "出典：大韓民国 国立国際教育院 韓国語能力試験。解説は過去問AIの独自作成。",
+    remainingWork: ["聞き取り（原本は音声で公開）"],
+  },
+  {
+    slug: "apef4", examCode: "apef4", shortName: "仏検 4級", fullName: "実用フランス語技能検定試験 4級",
+    domain: "personal-services", administrator: "公益財団法人フランス語教育振興協会", status: "live",
+    officialQuestionsUrl: "https://apefdapf.org/dapf/presentation/exemples#4",
+    officialReuseTermsUrl: "https://apefdapf.org/dapf/presentation/exemples",
+    reuseSummary: "2011・2015年度秋季の公式問題・正答と独自解説を収録。聞き取りは公式原稿を読む形式で、公式音声も参照できます。",
+    attributionTemplate: "出典：公益財団法人フランス語教育振興協会 実用フランス語技能検定試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
+  {
+    slug: "chuken3", examCode: "chuken3", shortName: "中国語検定 3級", fullName: "中国語検定試験 3級",
+    domain: "personal-services", administrator: "一般財団法人日本中国語検定協会", status: "live",
+    officialQuestionsUrl: "https://www.chuken.gr.jp/tcp/test.html",
+    officialReuseTermsUrl: "https://www.chuken.gr.jp/tcp/test.html",
+    reuseSummary: "第109～118回の公式問題・正答と独自解説を収録。リスニングは公式原稿を用いた読解形式です。",
+    attributionTemplate: "出典：日本中国語検定協会 中国語検定試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
+  {
+    slug: "biz-career-logistics3", examCode: "biz-career-logistics3",
+    shortName: "ビジネス・キャリア検定 3級ロジスティクス管理", fullName: "ビジネス・キャリア検定試験 3級ロジスティクス管理",
+    domain: "personal-services", administrator: "中央職業能力開発協会", status: "live",
+    officialQuestionsUrl: "https://www.javada.or.jp/jigyou/gino/business/gakusyu.html#mondai",
+    officialReuseTermsUrl: "https://www.javada.or.jp/lib/rights.html",
+    reuseSummary: "3級ロジスティクス管理の公式問題・正答と全選択肢の独自解説を収録。",
+    attributionTemplate: "出典：中央職業能力開発協会 ビジネス・キャリア検定試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
+  {
+    slug: "kikenbutsu-otsu5", examCode: "kikenbutsu-otsu5", shortName: "危険物取扱者 乙種第5類", fullName: "危険物取扱者 乙種第5類",
+    domain: "safety", administrator: "一般財団法人消防試験研究センター",
+    officialQuestionsUrl: "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html", officialReuseTermsUrl: "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html",
+    status: "live", reuseSummary: "2026年6月公表版の共通25問と類別10問を収録。公式正答に基づく全肢解説付き。", remainingWork: [],
+  },
+  {
+    slug: "kikenbutsu-otsu3", examCode: "kikenbutsu-otsu3", shortName: "危険物取扱者 乙種第3類", fullName: "危険物取扱者 乙種第3類",
+    domain: "safety", administrator: "一般財団法人消防試験研究センター",
+    officialQuestionsUrl: "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html", officialReuseTermsUrl: "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html",
+    status: "live", reuseSummary: "2026年6月公表版の共通25問と類別10問を収録。公式正答に基づく全肢解説付き。", remainingWork: [],
+  },
+  {
+    slug: "shobo-setsubishi-otsu4", examCode: "shobo-setsubishi-otsu4", shortName: "消防設備士 乙種第4類", fullName: "消防設備士 乙種第4類",
+    domain: "safety", administrator: "一般財団法人消防試験研究センター",
+    officialQuestionsUrl: "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", officialReuseTermsUrl: "https://www.shoubo-shiken.or.jp/shoubou/exercise.html",
+    status: "live", reuseSummary: "2026年6月公表版の筆記18問・実技2解答単位を収録。", remainingWork: [],
+  },
+  {
+    slug: "shobo-setsubishi-otsu7", examCode: "shobo-setsubishi-otsu7", shortName: "消防設備士 乙種第7類", fullName: "消防設備士 乙種第7類",
+    domain: "safety", administrator: "一般財団法人消防試験研究センター",
+    officialQuestionsUrl: "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", officialReuseTermsUrl: "https://www.shoubo-shiken.or.jp/shoubou/exercise.html",
+    status: "live", reuseSummary: "2026年6月公表版の筆記16問・実技1解答単位を収録。", remainingWork: [],
+  },
+  {
+    slug: "shobo-setsubishi-kou3", examCode: "shobo-setsubishi-kou3", shortName: "消防設備士 甲種第3類", fullName: "消防設備士 甲種第3類",
+    domain: "safety", administrator: "一般財団法人消防試験研究センター",
+    officialQuestionsUrl: "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", officialReuseTermsUrl: "https://www.shoubo-shiken.or.jp/shoubou/exercise.html",
+    status: "live", reuseSummary: "2026年6月公表版の筆記18問・実技4解答単位を収録。", remainingWork: [],
+  },
+  {
+    slug: "shobo-setsubishi-kou2", examCode: "shobo-setsubishi-kou2", shortName: "消防設備士 甲種第2類", fullName: "消防設備士 甲種第2類",
+    domain: "safety", administrator: "一般財団法人消防試験研究センター",
+    officialQuestionsUrl: "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", officialReuseTermsUrl: "https://www.shoubo-shiken.or.jp/shoubou/exercise.html",
+    status: "live", reuseSummary: "2026年6月公表版の筆記20問・実技4解答単位を収録。", remainingWork: [],
+  },
+  {
+    slug: "shobo-setsubishi-kou5", examCode: "shobo-setsubishi-kou5", shortName: "消防設備士 甲種第5類", fullName: "消防設備士 甲種第5類",
+    domain: "safety", administrator: "一般財団法人消防試験研究センター",
+    officialQuestionsUrl: "https://www.shoubo-shiken.or.jp/shoubou/exercise.html", officialReuseTermsUrl: "https://www.shoubo-shiken.or.jp/shoubou/exercise.html",
+    status: "live", reuseSummary: "2026年6月公表版の筆記12問・実技6解答単位を収録。", remainingWork: [],
+  },
+  {
+    slug: "gesuido-3shu", examCode: "gesuido-3shu", shortName: "下水道技術検定 第3種", fullName: "下水道技術検定 第3種",
+    domain: "construction", administrator: "日本下水道事業団",
+    officialQuestionsUrl: "https://www.jswa.go.jp/kentei/goannai.html", officialReuseTermsUrl: "https://www.jswa.go.jp/kentei/goannai.html",
+    status: "live", reuseSummary: "2023・2025・2026年度の公式問題・正答を各60問収録。公式に全員加点となった1問を含む。", remainingWork: [],
+  },
+  {
+    slug: "zenkou-pc",
+    examCode: "zenkou-pc",
+    shortName: "パソコン利用技術検定",
+    fullName: "パソコン利用技術検定試験",
+    domain: "information-technology",
+    administrator: "公益社団法人全国工業高等学校長協会",
+    officialQuestionsUrl: "https://zenkoukyo.or.jp/index_kentei/exam_result/",
+    officialReuseTermsUrl: "https://zenkoukyo.or.jp/index_kentei/exam_result/",
+    status: "live",
+    stagingDataPath: "data/questions/zenkou-pc",
+    reuseSummary: "第51回の1級筆記全20大問と、同回2〜3級および第49・50回1〜3級の筆記を部分収録。公式問題・解答と図版を照合。",
+    attributionTemplate: "出典：公益社団法人全国工業高等学校長協会。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
 ] as const;
 
 export function getQualificationByExamCode(exam: ExamCode): QualificationCatalogEntry | undefined {

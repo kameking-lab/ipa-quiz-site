@@ -156,19 +156,35 @@ it("excludes identical relay addresses and never matches plus aliases", async ()
   await pg.exec(`UPDATE "User" SET email=CASE WHEN id='alice' THEN 'owner+tag@example.invalid' ELSE 'owner@example.invalid' END`);
   await expect(guard.assertCanPurchase("alice")).resolves.toBeUndefined();
 });
-it("logs active cross-store duplicates and leaves both owners and rights unchanged", async () => {
+it("finds an active App Store receipt without changing owners or rights", async () => {
   await stripePaid();
   await pg.query('INSERT INTO "MobileRevenueCatAccount" ("userId","appUserId","sandboxExpiresAt") VALUES ($1,$2,$3)', ["alice", "opaque", new Date(Date.now()+3600000)]);
   const before = await pg.query('SELECT * FROM billing_subscription_account');
-  const warn = vi.spyOn(console, "warn").mockImplementation(()=>{});
-  try { await guard.audit("alice"); expect(warn).toHaveBeenCalledExactlyOnceWith("duplicate_purchase_stripe_app_store_same_email"); } finally { warn.mockRestore(); }
+  expect(await guard.appStoreUsers("alice")).toEqual(["alice"]);
   expect(await pg.query('SELECT * FROM billing_subscription_account')).toEqual(before);
 });
-it("logs a cross-store duplicate on one account with an Apple private relay address", async () => {
+it("finds an active App Store receipt on the account with an Apple private relay address", async () => {
   await stripePaid(); await appPaid();
   await pg.query('UPDATE "User" SET email=$1 WHERE id=$2', ["owner@privaterelay.appleid.com", "bob"]);
-  const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
-  try { await guard.audit("bob"); expect(warn).toHaveBeenCalledExactlyOnceWith("duplicate_purchase_stripe_app_store_same_account"); } finally { warn.mockRestore(); }
+  expect(await guard.appStoreUsers("bob")).toEqual(["bob"]);
+});
+
+it("checks verified alternate accounts before extending a Web order with no overlap record", async () => {
+  await stripePaid();
+  await pg.exec('UPDATE "User" SET "emailVerified"=NOW() WHERE id=\'bob\'');
+  const [orderId] = await store.transaction("bob", config.mode, config.sourceInstance, async a => Object.keys(a.signups), true);
+  const write = vi.fn();
+  const changeEnding: NonNullable<typeof provider.changeEnding> = async (_sub, _customer, _signup, _change, _now, beforeExtension) => {
+    await beforeExtension?.();
+    write();
+  };
+  const check = vi.fn(async (id: string) => {
+    if (id === "alice") throw new BillingError("app_store_purchase_pending");
+  });
+  await expect(service.changeEnding("bob", orderId, { kind: "renew" }, { ...provider, changeEnding }, check))
+    .rejects.toMatchObject({ status: 409, code: "app_store_purchase_pending" });
+  expect(check.mock.calls).toEqual([["alice"], ["bob"]]);
+  expect(write).not.toHaveBeenCalled();
 });
 
 const request = (path: string, origin = "http://localhost:3338", cancellation?: Record<string, string>) => new Request(`http://localhost:3338/api/${path}`, {
@@ -772,28 +788,26 @@ it("retains a late App Store overlap, retries the Web stop from the cron queue a
   expect(await service.receive({ id: "evt_web_paid" }, "web-paid", provider)).toBe("processed");
   expect((await service.status("bob")).entitled).toBe(true);
   await pg.query('INSERT INTO "MobileRevenueCatAccount" ("userId","appUserId","sandboxExpiresAt") VALUES ($1,$2,$3)', ["alice", "late-approval", new Date(now.getTime() + 30 * 86400000)]);
-  const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
   const stop = vi.fn().mockRejectedValueOnce(new Error("Stripe unavailable")).mockResolvedValue(end);
   const retryProvider = { ...provider, stopAppStoreOverlapRenewal: stop };
+  const readAppStoreStatus = vi.fn(async () => "active" as const);
   const readOverlap = () => store.transaction("bob", config.mode, config.sourceInstance, async a => a.signups[orderId].appStoreOverlap, true);
-  try {
-    const appStoreUsers = (await guard.audit("alice"))!;
-    expect(warn).toHaveBeenCalledWith("duplicate_purchase_stripe_app_store_same_email");
-    expect(await service.recordAppStoreOverlaps("alice", appStoreUsers)).toEqual([]);
-    await pg.exec('UPDATE "User" SET "emailVerified"=NOW() WHERE id=\'bob\'');
-    expect(await service.recordAppStoreOverlaps("alice", appStoreUsers)).toEqual([{ userId: "bob", orderId }]);
-    await expect(service.reconcileAppStoreOverlap("bob", orderId, retryProvider)).rejects.toThrow("Stripe unavailable");
-    expect(await readOverlap()).toMatchObject({ appStoreUserId: "alice", renewal: "pending" });
-    await store.transaction("bob", config.mode, config.sourceInstance, async a => { a.signups[orderId].examEndCheckAt = start + 600; });
-    expect(await store.examEndsToReconcile(config.mode, start)).toEqual([{ user_id: "bob", signup_id: orderId }]);
-    await Promise.all([
-      service.runExamEndCheck("bob", orderId, retryProvider),
-      service.reconcileAppStoreOverlap("bob", orderId, retryProvider),
-    ]);
-    expect(stop).toHaveBeenCalledTimes(2);
-    expect(await readOverlap()).toMatchObject({ appStoreUserId: "alice", renewal: "stopped" });
-    expect(await service.recordAppStoreOverlaps("bob", appStoreUsers)).toEqual([]);
-    expect(await store.examEndsToReconcile(config.mode, start)).toEqual([]);
-    expect(await service.status("bob")).toMatchObject({ entitled: true, subscription: { cancelAtPeriodEnd: true, renewalBlocked: false } });
-  } finally { warn.mockRestore(); }
+  const appStoreUsers = await guard.appStoreUsers("alice");
+  expect(await service.recordAppStoreOverlaps("alice", appStoreUsers)).toEqual([]);
+  await pg.exec('UPDATE "User" SET "emailVerified"=NOW() WHERE id=\'bob\'');
+  expect(await service.recordAppStoreOverlaps("alice", appStoreUsers)).toEqual([{ userId: "bob", orderId, newlyRecorded: true }]);
+  await expect(service.reconcileAppStoreOverlap("bob", orderId, retryProvider, readAppStoreStatus)).rejects.toThrow("Stripe unavailable");
+  expect(await readOverlap()).toMatchObject({ appStoreUserId: "alice", renewal: "pending" });
+  await store.transaction("bob", config.mode, config.sourceInstance, async a => { a.signups[orderId].examEndCheckAt = start + 600; });
+  expect(await store.examEndsToReconcile(config.mode, start)).toEqual([{ user_id: "bob", signup_id: orderId }]);
+  await Promise.all([
+    service.runExamEndCheck("bob", orderId, retryProvider, readAppStoreStatus),
+    service.reconcileAppStoreOverlap("bob", orderId, retryProvider, readAppStoreStatus),
+  ]);
+  expect(stop).toHaveBeenCalledTimes(2);
+  expect(readAppStoreStatus.mock.calls).toEqual([["alice", config.mode], ["alice", config.mode]]);
+  expect(await readOverlap()).toMatchObject({ appStoreUserId: "alice", renewal: "stopped" });
+  expect(await service.recordAppStoreOverlaps("bob", appStoreUsers)).toEqual([]);
+  expect(await store.examEndsToReconcile(config.mode, start)).toEqual([]);
+  expect(await service.status("bob")).toMatchObject({ entitled: true, subscription: { cancelAtPeriodEnd: true, renewalBlocked: false } });
 });

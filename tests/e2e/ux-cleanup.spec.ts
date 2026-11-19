@@ -21,14 +21,7 @@ test("home, question, result, personal records and settings remain connected", a
     await page.screenshot({ path: images ? path.join(images, `after-${name}.png`) : testInfo.outputPath(`${name}.png`), fullPage: true, caret: "initial", animations: "disabled" });
   }
   await page.goto("/");
-  const start = page.getByRole("link", { name: "10問を始める", exact: true });
-  await expect(start).toBeVisible();
-  // A single question keeps this test independent of the random session order.
-  await start.click();
-  await expect(page.getByRole("radio").first()).toBeVisible({ timeout: 120_000 });
-  await page.evaluate(() => localStorage.clear());
-  await page.goto("/");
-  await expect(start).toBeVisible();
+  await expect(page.getByRole("searchbox", { name: "資格名・略称で検索" })).toBeVisible();
   await shot("home");
   await page.goto("/quiz?mode=year&exam=ip&year=2011&season=autumn&session=am&limit=1&order=1");
   await expect(page.getByRole("radio").first()).toBeVisible({ timeout: 120_000 });
@@ -36,7 +29,7 @@ test("home, question, result, personal records and settings remain connected", a
   await page.getByRole("radio").first().click();
   await expect(page.locator('[aria-label="解答結果"][aria-hidden="false"]')).toBeVisible();
   await shot("answer");
-  await page.getByRole("button", { name: "この問題をAIに質問", exact: true }).first().click();
+  await page.locator("summary").filter({ hasText: /^AIに質問$/ }).click();
   const input = page.getByRole("textbox", { name: /AIへの質問を入力/ });
   await expect(input).toBeVisible();
   await expect(page.getByText(/Google Geminiで処理します/).first()).toBeVisible();
@@ -48,13 +41,11 @@ test("home, question, result, personal records and settings remain connected", a
   await page.getByRole("button", { name: "結果を見る", exact: true }).click();
   await expect(page.getByRole("heading", { name: "クイズ完了！" })).toBeVisible();
   await shot("result");
-  await page.getByRole("button", { name: "メニューを開く" }).first().click();
-  await page.getByRole("dialog").getByRole("link", { name: "学習進捗", exact: true }).click();
-  await expect(page.getByRole("heading", { name: "学習ダッシュボード", exact: true })).toBeVisible({ timeout: 90_000 });
+  await page.getByRole("navigation", { name: "グローバルナビゲーション" }).getByRole("link", { name: "メニュー", exact: true }).click();
+  await expect(page.getByRole("heading", { name: "わたしの記録", exact: true })).toBeVisible();
   await shot("records");
-  await page.getByRole("button", { name: "メニューを開く" }).first().click();
-  await page.getByRole("dialog").getByRole("link", { name: "設定", exact: true }).click();
-  await expect(page.getByRole("heading", { name: "設定とプリファレンス", exact: true })).toBeVisible({ timeout: 90_000 });
+  await page.getByRole("link", { name: "設定", exact: true }).click();
+  await expect(page.getByRole("heading", { name: "設定", exact: true })).toBeVisible();
   await shot("settings");
 });
 

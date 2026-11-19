@@ -80,9 +80,9 @@ for (const state of ["authenticated", "loading", "unauthenticated"] as const) {
       const { container } = render(<QuizResumeLinks showLogin loginOnly={loginOnly} />);
       expect(container.querySelector('a[href*="/auth/signin"]') !== null).toBe(guest);
     });
-    it("guards cloud sync login", () => {
+    it("uses the existing account entry for cloud sync", () => {
       render(<CloudSyncPanel />);
-      expect(screen.queryByRole("link", { name: "サインインして同期" }) !== null).toBe(guest);
+      expect(screen.queryByRole("link", { name: "サインインして同期" })).toBeNull();
     });
     it("keeps the monthly checkout link without repeated login advice", async () => {
       const { container } = render(await MonthlyPage({ returnTo: "/quiz?question=q1" }));

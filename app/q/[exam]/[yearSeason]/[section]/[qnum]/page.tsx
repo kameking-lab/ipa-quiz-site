@@ -6,17 +6,12 @@ import { QuestionPracticeGate } from "@/components/quiz/QuestionPracticeGate";
 import { ContentPage } from "@/mobile/server/ContentPage";
 import { displayQuestionExplanation } from "@/lib/questions/explanation-display";
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
-import { questionReferenceLabel } from "@/lib/questions/reference-label";
 import { QuestionFigures } from "@/components/quiz/QuestionFigures";
 import { hasUnrenderableContent } from "@/lib/questions/content-quality";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound, redirect } from "next/navigation";
 import {
-  ChevronLeft,
-  ChevronRight,
-  ChevronDown,
-  ExternalLink,
   AlertTriangle,
   ArrowRight,
   BookOpenCheck,
@@ -24,17 +19,14 @@ import {
 
 import { ALL_QUESTIONS, QUESTIONS_BY_EXAM } from "@/data/questions";
 import { getRelatedBlogPosts } from "@/lib/blog/related-content";
-import { getOfficialAnswerPdfUrl, getSafePdfUrl, ipaSourceLabel } from "@/lib/exam-config";
 import { isPlaceholderExplanation, isPracticeReadyQuestion } from "@/lib/questions/filter";
 import {
   getCrossExamRelatedQuestions,
-  getSharedSubjectTopics,
   getSameExamOtherYears,
   getSameExamRelatedQuestions,
   getSessionNeighbors,
 } from "@/lib/questions/related";
 import {
-  formatLastUpdatedJa,
   getRecordedLastUpdatedISO,
 } from "@/lib/questions/last-updated";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
@@ -54,9 +46,7 @@ import { CurrentLearningLinks } from "@/components/term-relations/CurrentLearnin
 import { QuestionAnswerCard } from "@/components/quiz/QuestionAnswerCard";
 import { DescriptiveAnswerCard } from "@/components/quiz/DescriptiveAnswerCard";
 import { JsonLd } from "@/components/seo/JsonLd";
-import { ShareButtons } from "@/components/ShareButtons";
 import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
 import { ExplanationLayers } from "@/components/quiz/ExplanationLayers";
 import { QuestionBody, QuestionInlineText } from "@/components/quiz/QuestionBody";
 import { QuestionSourcePresentation } from "@/components/quiz/QuestionSourcePresentation";
@@ -64,8 +54,6 @@ import { AiTransparencyDisclaimer } from "@/components/quiz/AiTransparencyDiscla
 import { AfternoonEssayHint } from "@/components/quiz/AfternoonEssayHint";
 import { KamokuBStudyHint } from "@/components/quiz/KamokuBStudyHint";
 import { CategoryStudyTip } from "@/components/quiz/CategoryStudyTip";
-import { createQuestionReportContextForDisplay } from "@/lib/feedback/question-report-context-server";
-import { QuestionFeedback } from "@/components/quiz/QuestionFeedback";
 import { topicTagToSlug } from "@/lib/seo/topics";
 import { getQuestionCanonicalRepresentative } from "@/lib/seo/question-canonical";
 
@@ -241,7 +229,6 @@ export default async function QuestionPage({
   const requestedPageUrlAbs = `${SITE_BASE_URL}${questionPagePath(q)}`;
   const title = questionTitle(q);
   const lastUpdatedISO = getRecordedLastUpdatedISO(q);
-  const lastUpdatedJa = lastUpdatedISO ? formatLastUpdatedJa(lastUpdatedISO) : undefined;
 
   const breadcrumbItems = questionBreadcrumbItems(q, requestedPageUrlAbs);
   let gateEnabled = false;
@@ -255,6 +242,50 @@ export default async function QuestionPage({
     // Alias explanations retain requested context; do not date a canonical entity from an alias.
     lastUpdatedISO: canonicalQuestion.id === q.id ? lastUpdatedISO : undefined,
   });
+
+  const explanation = (
+    <section id="explanation" aria-label="解説" className="mt-6 scroll-mt-20">
+      <h2 className="mb-3 flex items-center gap-2.5 text-base font-bold sm:text-lg">
+        <BookOpenCheck aria-hidden="true" className="h-5 w-5 text-primary" />
+        解説
+      </h2>
+      {showRealExplanation ? (
+        <>
+          <ExplanationLayers explanation={displayQuestionExplanation(q.exam, q.explanation)} />
+          {q.choiceExplanations && q.choices && (
+            <div className="mt-4 rounded-2xl border border-border bg-card p-4 sm:p-5">
+              <h3 className="mb-3 text-sm font-bold text-foreground">各選択肢の解説</h3>
+              <dl className="space-y-3 text-sm leading-relaxed">
+                {Object.entries(q.choices).map(([key, choice]) => (
+                  <div key={key} className="grid grid-cols-[2rem_1fr] gap-2">
+                    <dt className="font-bold text-primary">{choiceDisplayLabel(q.exam, key as ChoiceKey)}</dt>
+                    <dd>
+                      <div className="font-medium text-foreground"><QuestionBody text={choice} /></div>
+                      <p className="mt-1 text-muted-foreground">
+                        <QuestionInlineText text={displayQuestionExplanation(q.exam, q.choiceExplanations?.[key as ChoiceKey])} linkReferences />
+                      </p>
+                    </dd>
+                  </div>
+                ))}
+              </dl>
+            </div>
+          )}
+        </>
+      ) : (
+        <div className="flex items-start gap-2.5 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-900/40 dark:bg-amber-950/30 dark:text-amber-200">
+          <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
+          <span>
+            解説は準備中です。AI コパイロットに詳しい解説を依頼してください。
+          </span>
+        </div>
+      )}
+
+      <QuestionSourcePresentation question={q} phase="after" />
+    </section>
+  );
+  const selfReviewed = isSelfReviewedDescriptiveQuestion(q);
+  const source = !selfReviewed && <AiTransparencyDisclaimer question={q} />;
+  const hasAnswerCard = (q.type === "native-b" || q.type === "numeric" || q.choices) && !hasUnrenderableContent(q);
 
   return (
     <>
@@ -327,29 +358,7 @@ export default async function QuestionPage({
         <h1 className="text-balance text-2xl font-bold leading-tight tracking-tight text-foreground sm:text-3xl">
           {questionHeading(q)}
         </h1>
-        <div className="mt-2 flex flex-wrap items-center gap-1.5">
-          {topicPageExists ? (
-            <Link
-              href={`/${q.exam}/topic/${encodeURIComponent(q.category)}`}
-              className="inline-flex min-h-11 items-center text-sm font-medium text-muted-foreground underline underline-offset-4 transition hover:text-primary"
-            >
-              {categoryLabel}
-            </Link>
-          ) : (
-            <span className="text-sm font-medium text-muted-foreground">
-              {categoryLabel}
-            </span>
-          )}
-          {q.topicTags.slice(0, 3).map((t) => (
-            <Link
-              key={t}
-              href={`/topics/${encodeURIComponent(topicTagToSlug(t))}`}
-              className="inline-flex min-h-11 items-center rounded-xl border border-border bg-card px-3 py-2 text-xs text-muted-foreground transition hover:border-primary/40 hover:text-primary"
-            >
-              #{t}
-            </Link>
-          ))}
-        </div>
+        <p className="mt-2 text-sm font-medium text-muted-foreground">{categoryLabel}</p>
       </header>
 
       {/* Figure-bearing notice — text-only fallback hint */}
@@ -364,15 +373,7 @@ export default async function QuestionPage({
               この問題の図表は原典との照合が必要です。図表の確認が終わるまで、
               演習への出題とこのページでの採点を停止しています。出典から問題をご確認ください。
             </p>
-            <a
-              href={getSafePdfUrl(q.sourcePdfUrl)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 font-semibold underline decoration-amber-400 underline-offset-4 hover:text-amber-700 dark:hover:text-amber-200"
-            >
-              {ipaSourceLabel(getSafePdfUrl(q.sourcePdfUrl), "question")}で図表を見る
-              <ExternalLink className="h-3 w-3" />
-            </a>
+            <a href="#question-source" className="inline-flex min-h-11 items-center font-semibold underline">原典で図表を見る</a>
           </div>
         </aside>
       )}
@@ -399,7 +400,7 @@ export default async function QuestionPage({
           HTML via ChoiceButton (crawlable / readable with JS off); hydration
           adds the grading interaction so a search visitor can answer right here
           instead of hopping to /quiz (致命傷⑤). */}
-      {(q.type === "native-b" || q.type === "numeric" || q.choices) && !hasUnrenderableContent(q) && (
+      {hasAnswerCard && (
         <section aria-label={q.type === "native-b" ? "五つの空欄と解答" : q.type === "numeric" ? "数値記入と解答" : "選択肢と解答"} className="mt-4">
           <h2 className="sr-only">{q.type === "native-b" ? "五つの空欄" : q.type === "numeric" ? "数値記入" : "選択肢"}</h2>
           <QuestionAnswerCard
@@ -416,335 +417,76 @@ export default async function QuestionPage({
             session={q.session}
             qNumber={q.qNumber}
             part={q.part}
-            nextHref={next ? questionPagePath(next) : undefined}
+            explanation={explanation}
+            source={source}
             requiredSelections={q.requiredSelections}
           />
         </section>
       )}
 
-      {isSelfReviewedDescriptiveQuestion(q) && (
+      {selfReviewed && (
         <div className="mt-5">
-          <DescriptiveAnswerCard question={q} defaultOpen />
+          <DescriptiveAnswerCard question={q} />
         </div>
       )}
 
-      {/* Explanation — label follows the available source layers */}
-      <section id="explanation" aria-label="解説" className="mt-8 scroll-mt-20">
-        <details open className="group">
-          <summary className="mb-3 flex min-h-11 cursor-pointer items-center justify-between gap-4 [&::-webkit-details-marker]:hidden">
-            <div className="flex items-center gap-2.5">
-              <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-violet-500 text-primary-foreground shadow-sm">
-                <BookOpenCheck className="h-4 w-4" />
-              </span>
-              <h2 className="text-base font-bold tracking-tight text-foreground sm:text-lg">
-                解説
-              </h2>
-            </div>
-            <span className="inline-flex items-center gap-1 rounded-full border border-border bg-card px-2.5 py-1 text-[11px] font-medium text-muted-foreground transition group-open:bg-muted">
-              <ChevronDown className="h-3.5 w-3.5 transition group-open:rotate-180" />
-              <span className="group-open:hidden">展開</span>
-              <span className="hidden group-open:inline">閉じる</span>
-            </span>
-          </summary>
-
-          {showRealExplanation ? (
-            <>
-              <ExplanationLayers explanation={displayQuestionExplanation(q.exam, q.explanation)} />
-              {q.choiceExplanations && q.choices && (
-                <div className="mt-4 rounded-2xl border border-border bg-card p-4 sm:p-5">
-                  <h3 className="mb-3 text-sm font-bold text-foreground">各選択肢の解説</h3>
-                  <dl className="space-y-3 text-sm leading-relaxed">
-                    {Object.entries(q.choices).map(([key, choice]) => (
-                      <div key={key} className="grid grid-cols-[2rem_1fr] gap-2">
-                        <dt className="font-bold text-primary">{choiceDisplayLabel(q.exam, key as ChoiceKey)}</dt>
-                        <dd>
-                          <div className="font-medium text-foreground"><QuestionBody text={choice} /></div>
-                          <p className="mt-1 text-muted-foreground">
-                            <QuestionInlineText text={displayQuestionExplanation(q.exam, q.choiceExplanations?.[key as ChoiceKey])} linkReferences />
-                          </p>
-                        </dd>
-                      </div>
-                    ))}
-                  </dl>
-                </div>
-              )}
-            </>
-          ) : (
-            <div className="flex items-start gap-2.5 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-900/40 dark:bg-amber-950/30 dark:text-amber-200">
-              <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
-              <span>
-                解説は準備中です。AI コパイロットに詳しい解説を依頼してください。
-              </span>
-            </div>
-          )}
-
-          <QuestionSourcePresentation question={q} phase="after" />
-          <CurrentLearningLinks origin={{kind: "question", id: q.id}} headingId="question-learning-links" />
-
-          {showRealExplanation && (
-            <div className="mt-4">
-              <QuestionFeedback questionId={q.id} context={createQuestionReportContextForDisplay(q)} />
-            </div>
-          )}
-
-          {q.officialReferenceUrls && q.officialReferenceUrls.length > 0 && (
-            <nav aria-label="問題・正答と参照資料" className="mt-4 text-sm">
-              <h3 className="font-semibold">問題・正答と参照資料</h3>
-              <ul className="mt-2 list-inside list-disc space-y-2">
-                {q.officialReferenceUrls.map((url, index) => (
-                  <li key={url}><a href={url} target="_blank" rel="noopener noreferrer" className="underline">{questionReferenceLabel(q, url)} {index + 1}（{new URL(url).hostname}）</a></li>
-                ))}
-              </ul>
-            </nav>
-          )}
-          {(q.license === "SSSC-reuse" || q.license === "IPEJ-attributed" || q.license === "HOYOKYO-attributed" || q.license === "SHAROSI-attributed") && q.sourceAttribution && (
-            // 独自解説であることを常に見える位置に示す（ポップオーバー内だけにしない）。
-            <p className="mt-4 text-xs leading-relaxed text-muted-foreground">{q.sourceAttribution}</p>
-          )}
-          {!(isSelfReviewedDescriptiveQuestion(q)) && <AiTransparencyDisclaimer
-            lastUpdatedISO={lastUpdatedISO}
-            lastUpdatedJa={lastUpdatedJa}
-            sourcePdfUrl={getSafePdfUrl(q.sourcePdfUrl)}
-            answerPdfUrl={getOfficialAnswerPdfUrl(q.sourcePdfUrl, q.sourceAnswerUrl)}
-            sourceAttribution={q.sourceAttribution}
-          />}
-        </details>
-      </section>
+      {!hasAnswerCard && <>{explanation}{source}</>}
       </QuestionPracticeGate>
 
-      <nav aria-label="解説のあとに学ぶ" className="print:hidden mb-6 flex flex-wrap gap-2 rounded-2xl border border-border bg-card p-4">
-        {next && <Link href={questionPagePath(next)} className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground">次の問題へ<ArrowRight aria-hidden="true" className="h-4 w-4" /></Link>}
-        <Link href={`/review?${new URLSearchParams({ exam: q.exam, returnTo: questionPagePath(q) })}`} className="inline-flex min-h-11 items-center rounded-xl border border-border px-4 text-sm font-semibold hover:bg-muted">学習履歴から復習する</Link>
-      </nav>
-      <div className="print:hidden mb-6 flex flex-wrap items-center gap-3 text-xs text-muted-foreground">
-        <span>この問題を共有</span>
-        <ShareButtons url={requestedPageUrlAbs} text={title} compact />
-      </div>
-
-      {/* Category-level study guidance */}
-      <div className="print:hidden">
-        <CategoryStudyTip
-          category={q.category}
-          exam={q.exam}
-          topicTags={q.topicTags}
-          hasTopicPage={topicPageExists}
-        />
-      </div>
-
-      {/* 旗艦＝午後II論述AI採点への導線（論述区分 ST/SA/PM/SM/AU のみ自己ゲート） */}
-      <div className="print:hidden">
-        <AfternoonEssayHint exam={q.exam} />
-      </div>
-
-      {/* 土台＝基本情報 科目B（擬似言語）完全対策への導線（FE科目Bのみ自己ゲート） */}
-      <div className="print:hidden">
-        <KamokuBStudyHint exam={q.exam} session={q.session} />
-      </div>
-
-      {/* Sharing remains a single compact group after the explanation follow-up links. */}
-
-      {/* Prev / Next — desktop & tablet inline, mobile sticky */}
-      <nav
-        aria-label="前後の問題"
-        className="print:hidden mt-8 hidden grid-cols-2 gap-3 sm:grid"
-      >
-        {prev ? (
-          <Button
-            asChild
-            variant="outline"
-            size="lg"
-            className="w-full justify-start gap-3 text-left min-h-12 min-w-11 h-auto whitespace-normal py-2.5"
-          >
-            <Link href={questionPagePath(prev)}>
-              <ChevronLeft className="h-4 w-4 shrink-0" />
-              <span className="flex min-w-0 flex-col items-start leading-tight">
-                <span className="text-[10px] font-normal uppercase tracking-wider text-muted-foreground">
-                  前の問題
-                </span>
-                <span className="truncate">問 {questionNumberLabel(prev)}</span>
-              </span>
-            </Link>
-          </Button>
-        ) : (
-          <span className="flex flex-col items-start gap-0.5 rounded-xl border border-dashed border-border px-4 py-3 text-left">
-            <span className="text-[10px] font-normal uppercase tracking-wider text-muted-foreground">
-              前の問題
-            </span>
-            <span className="text-xs text-muted-foreground">最初の問題です</span>
-          </span>
-        )}
-        {next ? (
-          <Button
-            asChild
-            variant="outline"
-            size="lg"
-            className="w-full justify-end gap-3 text-right min-h-12 min-w-11 h-auto whitespace-normal py-2.5"
-          >
-            <Link href={questionPagePath(next)}>
-              <span className="flex min-w-0 flex-col items-end leading-tight">
-                <span className="text-[10px] font-normal uppercase tracking-wider text-muted-foreground">
-                  次の問題
-                </span>
-                <span className="truncate">問 {questionNumberLabel(next)}</span>
-              </span>
-              <ChevronRight className="h-4 w-4 shrink-0" />
-            </Link>
-          </Button>
-        ) : (
-          <span className="flex flex-col items-end gap-0.5 rounded-xl border border-dashed border-border px-4 py-3 text-right">
-            <span className="text-[10px] font-normal uppercase tracking-wider text-muted-foreground">
-              次の問題
-            </span>
-            <span className="text-xs text-muted-foreground">最後の問題です</span>
-          </span>
-        )}
+      <nav aria-label="解説のあとに学ぶ" className="my-5 print:hidden">
+        <Link
+          href={next ? questionPagePath(next) : breadcrumbItems[2].href}
+          prefetch={false}
+          className="inline-flex min-h-11 items-center gap-2 rounded-xl bg-primary px-4 text-sm font-semibold text-primary-foreground"
+        >
+          {next ? "次の問題へ" : "年度の問題一覧へ戻る"}
+          <ArrowRight aria-hidden="true" className="h-4 w-4" />
+        </Link>
       </nav>
 
-      {/* Related */}
-      {related.length > 0 && (
-        <section aria-label="関連する問題" className="print:hidden mt-12">
-          <div className="mb-4 flex items-end justify-between gap-3">
-            <div>
-              <h2 className="text-lg font-bold tracking-tight text-foreground">
-                関連する問題
-              </h2>
-            </div>
-          </div>
-          <ul className="flex flex-col gap-2">
-            {related.map((r) => (
-              <li key={r.id}>
-                <Link
-                  href={questionPagePath(r)}
-                  prefetch={false}
-                  className="group block rounded-2xl border border-border bg-card p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
-                >
-                  <div className="mb-1.5 flex items-center gap-1.5 text-[11px] text-muted-foreground">
-                    <Badge variant="outline" className="text-[10px]">
-                      {questionSourceExam(r)}
-                    </Badge>
-                    <span>
-                      {questionSourceEdition(r)} {sessionLabel(r.session, r.exam)} 問{questionNumberLabel(r)}
-                    </span>
-                  </div>
-                  <div className="line-clamp-2 text-sm leading-relaxed text-card-foreground transition group-hover:text-primary">
-                    {r.question.slice(0, 140)}
-                    {r.question.length > 140 ? "…" : ""}
-                  </div>
-                </Link>
-              </li>
+      <details className="my-6 rounded-xl border border-border px-4 print:hidden">
+        <summary className="min-h-11 cursor-pointer py-3 font-semibold">関連資料</summary>
+        <div className="space-y-5 pb-4 text-sm">
+          <ul className="space-y-2">
+            {topicPageExists && <li><Link href={'/' + q.exam + '/topic/' + encodeURIComponent(q.category)} prefetch={false} className="underline">{categoryLabel}</Link></li>}
+            {q.topicTags.slice(0, 3).map((tag) => (
+              <li key={tag}><Link href={'/topics/' + encodeURIComponent(topicTagToSlug(tag))} prefetch={false} className="underline">#{tag}</Link></li>
             ))}
           </ul>
-        </section>
-      )}
-
-      {/* Cross-exam related — by shared topicTags */}
-      {crossExamByTopic.length > 0 && (
-        <section aria-label="他試験区分の関連問題" className="print:hidden mt-10">
-          <div className="mb-4">
-            <h2 className="text-lg font-bold tracking-tight text-foreground">
-              {crossExamMode === "topic"
-                ? "他試験の同テーマ問題"
-                : "他試験区分の同分野問題"}
-            </h2>
-            <p className="mt-0.5 text-xs text-muted-foreground">
-              {crossExamMode === "topic"
-                ? `トピック「${getSharedSubjectTopics(q, crossExamByTopic).slice(0, 2).join("・")}」を扱う他試験区分の過去問`
-                : `${questionSourceExam(q)} と共通カリキュラムの他区分で「${categoryLabel}」分野を演習する`}
-            </p>
-          </div>
-          <ul className="flex flex-col gap-2">
-            {crossExamByTopic.map((r) => (
-              <li key={r.id}>
-                <Link
-                  href={questionPagePath(r)}
-                  prefetch={false}
-                  className="group block rounded-2xl border border-border bg-card p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
-                >
-                  <div className="mb-1.5 flex items-center gap-1.5 text-[11px] text-muted-foreground">
-                    <Badge variant="primary" className="text-[10px]">
-                      {questionSourceExam(r)}
-                    </Badge>
-                    <span>
-                      {questionSourceEdition(r)} {sessionLabel(r.session, r.exam)} 問{questionNumberLabel(r)}
-                    </span>
-                  </div>
-                  <div className="line-clamp-2 text-sm leading-relaxed text-card-foreground transition group-hover:text-primary">
-                    {r.question.slice(0, 140)}
-                    {r.question.length > 140 ? "…" : ""}
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      {/* Same exam + category across other years — year-spanning link trail */}
-      {otherYearsSameCategory.length > 0 && (
-        <section aria-label="他年度の同分野問題" className="print:hidden mt-10">
-          <div className="mb-4">
-            <h2 className="text-lg font-bold tracking-tight text-foreground">
-              他年度の「{categoryLabel}」問題
-            </h2>
-            <p className="mt-0.5 text-xs text-muted-foreground">
-              {questionSourceExam(q)} の同じ分野を年度をまたいで演習する
-            </p>
-          </div>
-          <ul className="flex flex-col gap-2">
-            {otherYearsSameCategory.map((r) => (
-              <li key={r.id}>
-                <Link
-                  href={questionPagePath(r)}
-                  prefetch={false}
-                  className="group block rounded-2xl border border-border bg-card p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
-                >
-                  <div className="mb-1.5 flex items-center gap-1.5 text-[11px] text-muted-foreground">
-                    <Badge variant="outline" className="text-[10px]">
-                      {questionSourceEdition(r)}
-                    </Badge>
-                    <span>
-                      {questionSourceExam(r)} {sessionLabel(r.session, r.exam)} 問{questionNumberLabel(r)}
-                    </span>
-                  </div>
-                  <div className="line-clamp-2 text-sm leading-relaxed text-card-foreground transition group-hover:text-primary">
-                    {r.question.slice(0, 140)}
-                    {r.question.length > 140 ? "…" : ""}
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
-
-      {relatedBlogPosts.length > 0 && (
-        <section aria-label="この試験区分の学習ガイド" className="print:hidden mt-10">
-          <h2 className="mb-3 text-base font-bold tracking-tight text-foreground">
-            {questionSourceExam(q)} の学習ガイド
-          </h2>
-          <ul className="flex flex-col gap-2">
-            {relatedBlogPosts.map((p) => (
-              <li key={p.slug}>
-                <Link
-                  href={`/blog/${p.slug}`}
-                  prefetch={false}
-                  className="group flex items-start justify-between gap-3 rounded-2xl border border-border bg-card p-4 shadow-sm transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
-                >
-                  <div className="min-w-0">
-                    <p className="text-sm font-medium text-foreground group-hover:text-primary">
-                      {p.title}
-                    </p>
-                    <p className="mt-0.5 line-clamp-2 text-xs text-muted-foreground">
-                      {p.description}
-                    </p>
-                  </div>
-                  <ArrowRight className="mt-0.5 h-4 w-4 shrink-0 text-muted-foreground transition-transform group-hover:translate-x-0.5 group-hover:text-primary" />
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </section>
-      )}
+          <CategoryStudyTip category={q.category} exam={q.exam} topicTags={q.topicTags} hasTopicPage={topicPageExists} />
+          <AfternoonEssayHint exam={q.exam} />
+          <KamokuBStudyHint exam={q.exam} session={q.session} />
+          <CurrentLearningLinks origin={{kind: "question", id: q.id}} headingId="question-learning-links" />
+          {[
+            { title: "関連する問題", questions: related },
+            { title: crossExamMode === "topic" ? "他試験の同テーマ問題" : "他試験区分の同分野問題", questions: crossExamByTopic },
+            { title: '他年度の「' + categoryLabel + '」問題', questions: otherYearsSameCategory },
+          ].map(({ title, questions }) => questions.length > 0 && (
+            <section key={title}>
+              <h3 className="mb-2 font-semibold">{title}</h3>
+              <ul className="space-y-2">
+                {questions.map((r) => (
+                  <li key={r.id}>
+                    <Link href={questionPagePath(r)} prefetch={false} className="underline underline-offset-4">
+                      {questionSourceExam(r)} {questionSourceEdition(r)} {sessionLabel(r.session, r.exam)} 問{questionNumberLabel(r)} {questionSnippet(r)}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
+          {relatedBlogPosts.length > 0 && (
+            <section>
+              <h3 className="mb-2 font-semibold">{questionSourceExam(q)} の学習ガイド</h3>
+              <ul className="space-y-2">
+                {relatedBlogPosts.map((post) => (
+                  <li key={post.slug}><Link href={'/blog/' + post.slug} prefetch={false} className="underline underline-offset-4">{post.title}</Link></li>
+                ))}
+              </ul>
+            </section>
+          )}
+        </div>
+      </details>
 
       {/* Print-only attribution */}
       <div className="print-only hidden mt-10 border-t border-gray-300 pt-4 text-[10pt] text-gray-600">
@@ -752,41 +494,6 @@ export default async function QuestionPage({
         <p className="mt-1">{q.sourceAttribution ?? "出典: IPA 情報処理技術者試験"}</p>
       </div>
 
-      {/* Spacer so sticky bottom nav doesn't cover the related list on mobile */}
-      <div aria-hidden="true" className="print:hidden h-20 sm:hidden" />
-
-      {/* Mobile sticky bottom nav — prev/next */}
-      <nav
-        aria-label="前後の問題（モバイル）"
-        className="print:hidden surface-glass fixed inset-x-0 bottom-0 z-30 border-t border-border px-3 pb-safe pt-2 sm:hidden"
-      >
-        <div className="grid grid-cols-2 gap-2">
-          {prev ? (
-            <Button asChild variant="outline" size="md" className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
-              <Link href={questionPagePath(prev)}>
-                <ChevronLeft className="h-4 w-4" />
-                <span className="text-xs">問 {questionNumberLabel(prev)}</span>
-              </Link>
-            </Button>
-          ) : (
-            <span className="flex h-10 items-center justify-center rounded-xl border border-dashed border-border text-[11px] text-muted-foreground">
-              最初の問題
-            </span>
-          )}
-          {next ? (
-            <Button asChild variant="primary" size="md" className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
-              <Link href={questionPagePath(next)}>
-                <span className="text-xs">問 {questionNumberLabel(next)}</span>
-                <ChevronRight className="h-4 w-4" />
-              </Link>
-            </Button>
-          ) : (
-            <span className="flex h-10 items-center justify-center rounded-xl border border-dashed border-border text-[11px] text-muted-foreground">
-              最後の問題
-            </span>
-          )}
-        </div>
-      </nav>
     </main>
     </>
   );

@@ -42,10 +42,10 @@ it("does not persist a stale paid snapshot after another RevenueCat refresh has 
   try {
     await setupAccounts(pg);
     await pg.exec('INSERT INTO "MobileRevenueCatAccount" ("userId","appUserId") VALUES (\'alice\',\'fixture-account\');');
-    const delayed = refreshRevenueCat("fixture-account", slow);
+    const delayed = refreshRevenueCat("fixture-account", { transport: slow });
     await started.promise;
     try {
-      await expect(refreshRevenueCat("fixture-account", async () => new Response(null, { status: 404 })))
+      await expect(refreshRevenueCat("fixture-account", { transport: async () => new Response(null, { status: 404 }) }))
         .resolves.toMatchObject({ expiresAt: null });
     } finally { resume.resolve(); }
     await expect(delayed).resolves.toMatchObject({ expiresAt: null });

@@ -64,7 +64,7 @@ export class PostgresMonthlyStore implements MonthlyStore {
     });
   }
 
-  purchaseTransaction<T>(userId: string, mode: Realm, source: string, fn: (account: Account, members: Account[], verifiedMembers?: ReadonlySet<string>) => T) {
+  purchaseTransaction<T>(userId: string, mode: Realm, source: string, fn: (account: Account, members: Account[], verifiedMembers?: ReadonlySet<string>) => T | Promise<T>) {
     if (source !== this.source) throw new BillingError("source_instance_mismatch", 503);
     return this.db.transaction(async sql => {
       type User = { id: string; email: string | null; emailVerified: Date | null };
@@ -82,7 +82,7 @@ export class PostgresMonthlyStore implements MonthlyStore {
       for (const u of users) members.push(await this.load(sql, u.id, mode, source));
       const before = members.map(a => JSON.stringify(a));
       const verifiedMembers = new Set(users.filter(u => u.emailVerified && email).map(u => u.id));
-      const result = fn(members[users.indexOf(owner)], members, verifiedMembers);
+      const result = await this.session.run(sql, () => fn(members[users.indexOf(owner)], members, verifiedMembers));
       for (let i = 0; i < members.length; i++) {
         if (JSON.stringify(members[i]) !== before[i]) await this.save(sql, members[i]);
       }

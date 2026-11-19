@@ -9,7 +9,7 @@ test("GET /study-plan returns 200", async ({ request }) => {
 });
 test("study plan opens the date-based creation sheet", async ({ page }) => {
   await page.goto("/study-plan");
-  const sheet = page.getByRole("dialog", { name: "学習計画を作成" });
+  const sheet = page.getByRole("region", { name: "学習計画を作成" });
   await expect(sheet).toBeVisible();
   await expect(sheet.getByRole("combobox", { name: "受ける資格" })).toBeVisible();
   await expect(sheet.getByLabel("受験日", { exact: true })).toBeVisible();
@@ -22,7 +22,7 @@ test("a stored pace plan remains visible when the creation sheet closes", async 
   const plan = createPacePlan({ id: "saved-pace", exam: "ip", examDate: next, sessionId: null, startDate: today }, [{ id: "ip-2011a-am-q1", exam: "ip", year: 2011 }], now.toISOString());
   await page.addInitScript(({ key, plan }) => localStorage.setItem(key, JSON.stringify([plan])), { key: LS_KEYS.pacePlans, plan });
   await page.goto("/study-plan");
-  await page.getByRole("dialog", { name: "学習計画を作成" }).getByRole("button", { name: "閉じる", exact: true }).click();
+  await page.goto("/");
   await expect(page.getByRole("link", { name: /今日の問題を解く/ })).toBeVisible();
   await page.getByRole("button", { name: "学習計画の詳細を開く" }).click();
   await expect(page.getByRole("button", { name: "計画を削除" })).toBeVisible();

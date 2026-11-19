@@ -1,3 +1,4 @@
+import { CHOICE_KEYS } from "@/lib/questions/answers";
 import { QUESTIONS as K11_KAMOTSU } from "@/data/questions/unko-kanrisha-kamotsu";
 import { QUESTIONS as K11_OTSU } from "@/data/questions/shobo-setsubishi-otsu6";
 import { QUESTIONS as K11_KOU } from "@/data/questions/shobo-setsubishi-kou4";
@@ -134,24 +135,7 @@ const QuestionSchema = z.object({
   difficulty: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5)]),
   question: z.string().min(1),
   choices: z
-    .object({
-      ア: z.string().optional(),
-      イ: z.string().optional(),
-      ウ: z.string().optional(),
-      エ: z.string().optional(),
-      オ: z.string().optional(),
-      カ: z.string().optional(),
-      キ: z.string().optional(),
-      ク: z.string().optional(),
-      ケ: z.string().optional(),
-      コ: z.string().optional(),
-      サ: z.string().optional(),
-      シ: z.string().optional(),
-      ス: z.string().optional(),
-      セ: z.string().optional(),
-      ソ: z.string().optional(),
-      タ: z.string().optional(),
-    })
+    .partialRecord(z.enum(CHOICE_KEYS), z.string())
     .refine((choices) => Object.values(choices).filter(Boolean).length >= 2, "選択肢は2個以上必要です")
     .optional(),
   officialScoring: z.object({ kind: z.enum(["credit-for-all", "excluded"]), reason: z.string().trim().min(1) }).optional(),
@@ -171,7 +155,7 @@ const QuestionSchema = z.object({
   sourceAttribution: z.string().min(1).optional(),
   lawReferenceDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
   officialReferenceUrls: z.array(z.string().url()).optional(),
-  license: z.enum(["EIKEN-owner-authorized", "JASSO-attributed", "KANKEN-owner-authorized", "ZENSHO-owner-authorized", "DEKYO-owner-authorized", "JEMAI-owner-authorized", "CCRVN-owner-authorized", "CAREER-KENTEI-owner-authorized", "JBMA-owner-authorized", "HRS-owner-authorized", "DEKYO-attributed", "JEMAI-attributed", "NSPC-owner-authorized", "TOUKEI-attributed", "BENESSE-owner-authorized", "JINJI-attributed", "BOUJITSU-owner-authorized", "JITSUMU-owner-authorized", "APEF-owner-authorized", "KANKEN-attributed", "MEXT-attributed", "ZENSHO-attributed", "SUKEN-attributed", "JLPT-attributed", "JBMA-attributed", "MAFF-attributed", "owner-managed", "ZENSHO-official", "JAVADA-owner-authorized", "UNKAN-permission-required", "SHOUBO-permission-required", "INT7-owner-decision", "KHK-attributed", "JAEIC-owner-approved-staging", "CHINTAI-owner-authorized", "KYUSUI-owner-authorized", "JAHMEC-owner-authorized", "NUSTEC-owner-authorized", "ECCJ-owner-approved", "MLIT-PDL-1.0", "CPAAOB-PDL-1.0", "IPA-public", "JAFP-reuse-with-attribution", "KINZAI-reuse-with-attribution", "ECEE-educational-reuse", "RETIO-reuse", "JCTC-authorized-reuse", "SSSC-reuse", "KANSAI-UNION-reuse", "KANRIKYO-educational-reuse", "EXAM-OR-JP-attributed", "IPEJ-attributed", "HOYOKYO-attributed", "MANKAN-attributed", "JFSA-attributed", "SHAROSI-attributed", "MHLW-attributed", "AHK-attributed", "JAAME-attributed", "RBC-attributed", "JF-CMCA-attributed", "JCTC-attributed", "MOJ-attributed", "ZAIJUSEI-attributed", "NICHIMU-educational-reuse", "NICHIMU-past-question-study-use", "JIA-attributed", "JMBSC-permission-required", "JAEIC-permission-required", "IP-EDU-authorized-reuse", "JASPA-owner-authorized", "SHOUBO-owner-authorized", "JECES-owner-cleared", "FCIP-owner-confirmed", "JYOUBUN-owner-authorized", "KOKUSEN-owner-authorized", "CHORD-owner-authorized", "SGEC-owner-authorized", "JKEN-owner-cleared", "JCCPP-attributed", "KHK-owner-decision", "FCIP-owner-authorized", "YAMAGUCHI-attributed", "METI-attributed", "JCM-authorized-reuse", "GYOSEI-owner-cleared", "CAREER-SHIKEN-owner-authorized", "JATA-owner-authorized", "GSI-attributed", "PREF-published", "JIPM-owner-decision", "CUSTOMS-attributed"]),
+  license: z.enum(["EIKEN-owner-authorized", "JASSO-attributed", "KANKEN-owner-authorized", "ZENSHO-owner-authorized", "DEKYO-owner-authorized", "JEMAI-owner-authorized", "CCRVN-owner-authorized", "CAREER-KENTEI-owner-authorized", "JBMA-owner-authorized", "HRS-owner-authorized", "DEKYO-attributed", "JEMAI-attributed", "NSPC-owner-authorized", "TOUKEI-attributed", "BENESSE-owner-authorized", "JINJI-attributed", "BOUJITSU-owner-authorized", "JITSUMU-owner-authorized", "APEF-owner-authorized", "KANKEN-attributed", "MEXT-attributed", "ZENSHO-attributed", "SUKEN-attributed", "JLPT-attributed", "JBMA-attributed", "MAFF-attributed", "owner-managed", "ZENSHO-official", "JAVADA-owner-authorized", "UNKAN-permission-required", "SHOUBO-permission-required", "INT7-owner-decision", "KHK-attributed", "JAEIC-owner-approved-staging", "CHINTAI-owner-authorized", "KYUSUI-owner-authorized", "JAHMEC-owner-authorized", "NUSTEC-owner-authorized", "ECCJ-owner-approved", "MLIT-PDL-1.0", "CPAAOB-PDL-1.0", "IPA-public", "JAFP-reuse-with-attribution", "KINZAI-reuse-with-attribution", "ECEE-educational-reuse", "RETIO-reuse", "JCTC-authorized-reuse", "SSSC-reuse", "KANSAI-UNION-reuse", "KANRIKYO-educational-reuse", "EXAM-OR-JP-attributed", "IPEJ-attributed", "HOYOKYO-attributed", "MANKAN-attributed", "JFSA-attributed", "SHAROSI-attributed", "MHLW-attributed", "AHK-attributed", "JAAME-attributed", "RBC-attributed", "JF-CMCA-attributed", "JCTC-attributed", "MOJ-attributed", "ZAIJUSEI-attributed", "NICHIMU-educational-reuse", "NICHIMU-past-question-study-use", "JIA-attributed", "JMBSC-permission-required", "JAEIC-permission-required", "IP-EDU-authorized-reuse", "JASPA-owner-authorized", "SHOUBO-owner-authorized", "JECES-owner-cleared", "FCIP-owner-confirmed", "JYOUBUN-owner-authorized", "KOKUSEN-owner-authorized", "CHORD-owner-authorized", "SGEC-owner-authorized", "JKEN-owner-cleared", "JCCPP-attributed", "KHK-owner-decision", "FCIP-owner-authorized", "YAMAGUCHI-attributed", "METI-attributed", "JCM-authorized-reuse", "GYOSEI-owner-cleared", "CAREER-SHIKEN-owner-authorized", "JATA-owner-authorized", "GSI-attributed", "PREF-published", "JIPM-owner-decision", "CUSTOMS-attributed", "CGARTS-owner-authorized", "CHUKEN-owner-authorized", "COURTS-attributed", "DCCI-owner-authorized", "JDLA-owner-authorized", "JSWA-owner-decision", "KATEI-ED-owner-authorized", "KATEI-owner-decision", "KCCI-owner-authorized", "MEXT-owner-authorized", "NIIED-owner-authorized", "ZENKOU-owner-decision", "ZENKOU-terms-review-required", "ZENKOUKYO-owner-authorized"]),
   isCalculation: z.boolean().optional(),
 });
 
@@ -354,7 +338,7 @@ function validate(questions: Question[]): ValidationResult {
         continue;
       }
       const answers = Array.isArray(q.answer) ? q.answer : [q.answer];
-      const ans = answers.find(key => !["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ", "タ"].includes(key) || !q.choices?.[key as keyof typeof q.choices]);
+      const ans = answers.find(key => !CHOICE_KEYS.some((choice) => choice === key) || !q.choices?.[key as keyof typeof q.choices]);
       if (!q.officialScoring && (ans !== undefined || answers.length === 0)) {
         fail++;
         byExam[examKey].fail++;

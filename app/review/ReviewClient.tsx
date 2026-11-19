@@ -3,6 +3,11 @@ import { NativeBReview } from "./NativeBReview";
 import { QuestionBody } from "@/components/quiz/QuestionBody";
 import { QuestionFigures } from "@/components/quiz/QuestionFigures";
 import { choiceDisplayLabel, choiceImageAlt, formatQuestionAnswerForDisplay } from "@/lib/questions/display";
+import { isCompleteSelectionCorrect, requiredSelectionCount, selectionInstruction } from "@/lib/questions/answers";
+import { OrderingAnswerInput } from "@/components/quiz/OrderingAnswerInput";
+import { NumericAnswerInput } from "@/components/quiz/NumericAnswerInput";
+import { isOrderingAnswerCorrect } from "@/lib/questions/ordering";
+import { isNumericAnswerCorrect } from "@/lib/questions/numeric";
 import { displayQuestionExplanation } from "@/lib/questions/explanation-display";
 
 import { useState, useEffect, useCallback, useRef } from "react";
@@ -50,11 +55,14 @@ export function getTodayStr(now: Date = new Date()): string {
 export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: string; returnTo?: string }) {
   const [exam, setExam] = useState(examFromQuery ?? "");
   const knownExam = !exam || Object.hasOwn(EXAM_LABELS, exam);
-  const backHref = exam && knownExam ? quizBackHref({ exam, returnTo: exam === examFromQuery ? returnTo : undefined }) : "/#choose-qualification";
+  const backHref = exam && knownExam ? quizBackHref({ exam, returnTo: exam === examFromQuery ? returnTo : undefined }) : "/search";
   const [store, setStore] = useState<ReviewStore>({});
   const [dueQuestions, setDueQuestions] = useState<Question[]>([]);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [showAnswer, setShowAnswer] = useState(false);
+  const [graded, setGraded] = useState<boolean>();
+  const [picks, setPicks] = useState<ChoiceKey[]>([]);
+  const [reviewExams, setReviewExams] = useState<string[]>([]);
   const [sessionStats, setSessionStats] = useState({ correct: 0, incorrect: 0 });
   const [done, setDone] = useState(false);
   const [initialized, setInitialized] = useState(false);
@@ -81,14 +89,13 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
   }>({ seenCount: 0, scheduledCount: 0, nextReviewDate: null });
 
   const context = (
-    <nav aria-label="復習の資格" className="mb-5 space-y-3">
-      <Link href={backHref} className="inline-flex min-h-11 items-center text-sm text-muted-foreground hover:underline">{exam && knownExam ? `${examLabel(exam)}に戻る` : "資格を選ぶ"}</Link>
-      <label className="block text-sm font-medium">復習する資格
+    <nav aria-label="復習の資格" className="mb-5 space-y-3 empty:hidden">
+      {(reviewExams.length > 1 || !knownExam) && <label className="block text-sm font-medium">復習する資格
         <select aria-label="復習する資格" value={exam} onChange={(event) => setExam(event.target.value)} className="mt-1 block h-11 w-full rounded-xl border border-border bg-background px-3">
           <option value="">すべての資格</option>
-          {Object.entries(EXAM_LABELS).map(([code, label]) => <option key={code} value={code}>{label}</option>)}
+          {reviewExams.map((code) => <option key={code} value={code}>{examLabel(code)}</option>)}
         </select>
-      </label>
+      </label>}
     </nav>
   );
 
@@ -100,6 +107,8 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
     setLoadError(false);
     setCurrentIndex(0);
     setShowAnswer(false);
+    setGraded(undefined);
+    setPicks([]);
     setDone(false);
     setSessionStats({ correct: 0, incorrect: 0 });
     void (async () => {
@@ -138,6 +147,8 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
           };
           if (cancelled) return;
           setDueQuestions(data.questions);
+          if (!exam) setReviewExams([...new Set(data.questions.map((question) => question.exam))]);
+          if (exam) setReviewExams((codes) => codes.includes(exam) ? codes : [...codes, exam]);
           setEmptyMeta({
             seenCount: data.seenCount,
             scheduledCount: data.scheduledCount,
@@ -190,6 +201,8 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
       } else {
         setCurrentIndex((i) => i + 1);
         setShowAnswer(false);
+        setGraded(undefined);
+        setPicks([]);
       }
     },
     [currentIndex, dueQuestions, store, saveStore],
@@ -259,10 +272,7 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
 
         <div className="grid grid-cols-1 gap-3 sm:grid-cols-2">
           <Button asChild variant="primary" className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
-            <Link href={exam ? `/${exam}` : lastExam ? `/${lastExam}` : "/#choose-qualification"}>{exam || lastExam ? `${examLabel(exam || lastExam!)}の問題を解く` : isFreshUser ? "問題を解き始める" : "新しい問題を解く"}</Link>
-          </Button>
-          <Button asChild variant="outline" className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
-            <Link href="/#choose-qualification">別の資格を選ぶ</Link>
+            <Link href={exam ? `/${exam}` : lastExam ? `/${lastExam}` : "/search"}>{exam || lastExam ? `${examLabel(exam || lastExam!)}の問題を解く` : "資格を選ぶ"}</Link>
           </Button>
         </div>
       </div>
@@ -291,13 +301,6 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
         </Card>
 
         <div className="flex gap-3">
-          <Button
-            variant="primary"
-            onClick={() => { setCurrentIndex(0); setShowAnswer(false); setDone(false); setSessionStats({ correct: 0, incorrect: 0 }); }}
-            className="flex-1 min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
-          >
-            もう一度
-          </Button>
           <Button asChild variant="outline" className="flex-1 min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
             <Link href={backHref}>{exam ? `${examLabel(exam)}に戻る` : "試験選択に戻る"}</Link>
           </Button>
@@ -307,6 +310,20 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
   }
 
   const q = dueQuestions[currentIndex]!;
+  const required = requiredSelectionCount(q);
+  const hasChoices = Object.keys(q.choices ?? {}).length > 0;
+  function revealGrade(correct: boolean) {
+    setGraded(correct);
+    setShowAnswer(true);
+  }
+  function selectChoice(key: ChoiceKey) {
+    const next = picks.includes(key) ? picks.filter((pick) => pick !== key) : [...picks, key];
+    if (next.length > required) return;
+    setPicks(next);
+    if (next.length === required && !q.acceptedAnswerCombinations) {
+      revealGrade(isCompleteSelectionCorrect(q.answer, next, required));
+    }
+  }
   const correctAnswer = formatQuestionAnswerForDisplay(q, q.answer);
   const record = store[q.id];
   const nextInterval = INTERVALS[Math.min((record?.level ?? 0) + 1, INTERVALS.length - 1)];
@@ -343,12 +360,16 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
 
       {q.type === "native-b" ? <NativeBReview key={q.id} question={q} onNext={handleAnswer} /> : <>
       {/* 選択肢 */}
-      {!showAnswer && Object.keys(q.choices ?? {}).length > 0 && (
+      {!showAnswer && q.type === "ordering" && <OrderingAnswerInput question={q} disabled={false} onAnswer={(value) => revealGrade(isOrderingAnswerCorrect(q, value))} />}
+      {!showAnswer && q.type === "numeric" && q.numericAnswer && <NumericAnswerInput unit={q.numericAnswer.unit} specification={q.numericAnswer} disabled={false} onAnswer={(value) => revealGrade(isNumericAnswerCorrect(q, value))} />}
+      {!showAnswer && q.type !== "ordering" && q.type !== "numeric" && hasChoices && (
         <div className="space-y-2">
+          {required > 1 && <p className="text-sm">{selectionInstruction(q.answer, required)}</p>}
           {Object.entries(q.choices ?? {}).map(([key, value]) => (
             <button
               key={key}
-              onClick={() => setShowAnswer(true)}
+              aria-pressed={required > 1 ? picks.includes(key as ChoiceKey) : undefined}
+              onClick={() => selectChoice(key as ChoiceKey)}
               className="w-full rounded-xl border border-zinc-200 px-4 py-3 text-left text-sm hover:border-sky-400 hover:bg-sky-50 dark:border-zinc-700 dark:hover:border-sky-600 dark:hover:bg-sky-950/30"
             >
               <span className="font-medium">{choiceDisplayLabel(q.exam, key as ChoiceKey)}</span>
@@ -359,10 +380,11 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
               )}
             </button>
           ))}
+          {q.acceptedAnswerCombinations && <Button disabled={picks.length !== required} onClick={() => revealGrade(isCompleteSelectionCorrect(q.answer, picks, required, q.acceptedAnswerCombinations))}>回答を確定</Button>}
         </div>
       )}
 
-      {!showAnswer && Object.keys(q.choices ?? {}).length === 0 && (
+      {!showAnswer && !hasChoices && q.type !== "numeric" && q.type !== "ordering" && (
         <Button onClick={() => setShowAnswer(true)} className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">解答・解説を見る</Button>
       )}
 
@@ -371,7 +393,7 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
           <Card className="border-emerald-300 bg-emerald-50 dark:border-emerald-800 dark:bg-emerald-950/30">
             <CardContent className="p-4">
               <div ref={answerFocusRef} tabIndex={-1} className="mb-2 scroll-mt-24 font-semibold text-emerald-800 outline-none dark:text-emerald-300">
-                正解: {correctAnswer}
+                {graded === undefined ? "" : graded ? "正解 · " : "不正解 · "}正解 {correctAnswer}
               </div>
               <p className="text-sm leading-7 text-foreground">
                 {displayQuestionExplanation(q.exam, q.explanation)}
@@ -384,7 +406,11 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
             </CardContent>
           </Card>
 
-          <div className="grid grid-cols-2 gap-3">
+          {graded !== undefined ? (
+            <Button onClick={() => handleAnswer(graded)} className="min-h-11">
+              {currentIndex + 1 === dueQuestions.length ? "結果を見る" : "次の問題へ"}
+            </Button>
+          ) : <div className="grid grid-cols-2 gap-3">
             <Button
               variant="outline"
               onClick={() => handleAnswer(false)}
@@ -399,7 +425,7 @@ export function ReviewClient({ examFromQuery, returnTo }: { examFromQuery?: stri
             >
               ✓ 正解した
             </Button>
-          </div>
+          </div>}
         </>
       )}
       </>}

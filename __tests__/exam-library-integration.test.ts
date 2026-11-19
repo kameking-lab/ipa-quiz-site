@@ -7,8 +7,6 @@ import { requiredStructuredChoiceQuestionIds } from "@/lib/exam-library-coverage
 import { listAvailableExamIds, loadExamPaper } from "@/lib/exam-library-papers";
 import { isScorableQuestion } from "@/lib/exam-library-model";
 import explanations from "@/data/exam-library/explanations.json";
-import peContinuation from "@/reports/LQ3B-20261104/adoption-manifest.json";
-import peLq3d from "@/reports/LQ3D-20261104/adoption-manifest.json";
 
 const isReviewedOctoberImport = (id: string) => /^lckohyo-LC202621(?:0[23679]|1[01279])-q\d+$/.test(id);
 
@@ -50,13 +48,10 @@ describe("official exam library integration", () => {
     const surveySnapshot = answerSnapshot.filter(([id]) => String(id).startsWith("private-gsi-survey-assistant-20261021-"));
     const peIds = new Set(EXAM_CATALOG.filter(entry => entry.group === "pe-first").flatMap(entry => (loadExamPaper(entry.id) ?? []).map(question => question.id)));
     const peSnapshot = answerSnapshot.filter(([id]) => peIds.has(String(id)));
-    const existingSnapshot = answerSnapshot.filter(([id]) => !String(id).startsWith("private-gsi-survey-assistant-20261021-") && !peIds.has(String(id)) && !isReviewedOctoberImport(String(id)));
-    expect(answerSnapshot).toHaveLength(3153 + (peContinuation.length + peLq3d.length) * 35);
-    expect(peSnapshot).toHaveLength(594 + (peContinuation.length + peLq3d.length) * 35);
-    // Preserve the previous 2,154 official keys independently of the new reviewed packet.
-    expect(existingSnapshot).toHaveLength(2154);
-    expect(createHash("sha256").update(JSON.stringify(existingSnapshot)).digest("hex"))
-      .toBe("19ccb2b8b929d92f89d11f9ee3e5707123e92a2ed478dc9d761ddad8b8c8736d");
+    expect(answerSnapshot).toHaveLength(5418);
+    expect(createHash("sha256").update(JSON.stringify(answerSnapshot)).digest("hex"))
+      .toBe("f433ac7516a1bb1e888c0b246c80a2919394417a930910d52cd6acf0b5d3b8de");
+    expect(peSnapshot).toHaveLength(2082);
     // Bound to the existing packet's 55 officialKey values; 2026 No.12 stays unscored.
     expect(surveySnapshot).toHaveLength(55);
     expect(createHash("sha256").update(JSON.stringify(surveySnapshot)).digest("hex"))

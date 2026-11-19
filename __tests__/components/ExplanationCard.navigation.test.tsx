@@ -16,17 +16,19 @@ const question: Question = {
   },
   hasImage: false, sourcePdfUrl: "https://www.ipa.go.jp/shiken/", license: "IPA-public",
 };
-const props = { question, selected: "イ", isCorrect: true, starred: false,
-  onToggleStar: vi.fn(), onNext: vi.fn(), onAskAI: vi.fn() };
+const props = { question, selected: "イ", isCorrect: true, onNext: vi.fn() };
 
 describe("ExplanationCard learning continuity", () => {
   it("shows a shared fallback source only once", () => {
     render(<ExplanationCard {...props} />);
-    expect(screen.getAllByRole("link", { name: "IPA公式の過去問一覧" })).toHaveLength(1);
+    expect(screen.getAllByRole("link", { name: /公式問題の公開ページ/ })).toHaveLength(1);
   });
-  it("retains a separate official answer source", () => {
+  it("offers a single source followed by the next action", () => {
     render(<ExplanationCard {...props} question={{ ...question, sourceAnswerUrl: "https://example.com/answer.pdf" }} />);
-    expect(screen.getByRole("link", { name: "公式解答PDF" })).toHaveAttribute("href", "https://example.com/answer.pdf");
+    expect(document.querySelector('[href="https://example.com/answer.pdf"]')).toBeNull();
+    const source = screen.getByRole("link", { name: /公式問題の公開ページ/ });
+    const next = screen.getByRole("button", { name: "次の問題へ" });
+    expect(source.compareDocumentPosition(next)).toBe(Node.DOCUMENT_POSITION_FOLLOWING);
   });
   it("shows each dental key in a multiple-selection response as its printed label", () => {
     render(<ExplanationCard {...props} question={{ ...question, exam: "shika-ishi", answer: ["イ", "ウ"] }} selected="イ・ウ" isCorrect={false} />);

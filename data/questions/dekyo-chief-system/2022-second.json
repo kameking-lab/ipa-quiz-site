@@ -1,0 +1,814 @@
+[
+  {
+    "id": "dekyo-chief-system-2022-second-gakka-q1",
+    "exam": "dekyo-chief-system",
+    "year": 2022,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "電磁気",
+    "topicTags": [
+      "電気通信システム",
+      "電磁気"
+    ],
+    "difficulty": 3,
+    "question": "無線通信、光通信などで電磁波の伝搬を一方向に制限するアイソレータには、電磁波が磁界内に置かれた媒質を通過する際に偏波面が回転する現象を応用したものがある。この現象はどれか。",
+    "choices": {
+      "ア": "ペルチェ効果",
+      "イ": "誘導ラマン散乱",
+      "ウ": "ファラデー効果",
+      "エ": "ゼーベック効果",
+      "オ": "フレネル反射"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "ファラデー効果では磁界をかけた媒質中で右回りと左回りの円偏波の伝搬が異なり、直線偏波の偏波面が回転する。",
+    "choiceExplanations": {
+      "ア": "ペルチェ効果は異種材料の接合部に電流を流すと熱が吸収または放出される現象である。",
+      "イ": "誘導ラマン散乱は媒質との相互作用によって光の周波数が変化する散乱である。",
+      "ウ": "ファラデー効果では磁界をかけた媒質中で右回りと左回りの円偏波の伝搬が異なり、直線偏波の偏波面が回転する。",
+      "エ": "ゼーベック効果は温度差を電圧に変える熱電効果で、偏波面の回転とは関係しない。",
+      "オ": "フレネル反射は屈折率の異なる媒質の境界で生じる反射で、磁界による非可逆な偏波回転とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a3162369b.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a35b0fc66.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和4年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2022-second-gakka-q2",
+    "exam": "dekyo-chief-system",
+    "year": 2022,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "電気回路",
+    "topicTags": [
+      "電気通信システム",
+      "電気回路"
+    ],
+    "difficulty": 3,
+    "question": "図に示す回路で、スイッチSの開閉にかかわらず全電流Iが8 Aであるとき、抵抗R₁とR₂の組合せはどれか。電池の内部抵抗は無視する。",
+    "choices": {
+      "ア": "3 Ω及び9 Ω",
+      "イ": "4 Ω及び12 Ω",
+      "ウ": "5 Ω及び15 Ω",
+      "エ": "6 Ω及び18 Ω",
+      "オ": "7 Ω及び21 Ω"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "R₁：R₂＝15：45なので各枝の中点が同電位となる。スイッチ開放時の20 Ωと60 Ωの並列合成は15 Ωで、120 V÷15 Ω＝8 Aとなる。",
+    "choiceExplanations": {
+      "ア": "スイッチを開いた場合の各枝は18 Ωと54 Ωで、並列合成13.5 Ωは8 Aに必要な15 Ωより小さい。",
+      "イ": "スイッチ開放時は19 Ωと57 Ωの並列で14.25 Ωとなり、120 Vで流れる電流は約8.42 Aである。",
+      "ウ": "R₁：R₂＝15：45なので各枝の中点が同電位となる。スイッチ開放時の20 Ωと60 Ωの並列合成は15 Ωで、120 V÷15 Ω＝8 Aとなる。",
+      "エ": "スイッチ開放時の21 Ωと63 Ωを並列合成すると15.75 Ωとなり、電流は8 Aに届かない。",
+      "オ": "スイッチ開放時の22 Ωと66 Ωの並列合成は16.5 Ωで、全電流は約7.27 Aになる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a3162369b.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a35b0fc66.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和4年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/dekyo-chief-system/2022-second-q2.png"
+    ],
+    "imageAltTexts": [
+      "２枝の中点をスイッチSで結んだ抵抗回路と120 Vの電池。"
+    ]
+  },
+  {
+    "id": "dekyo-chief-system-2022-second-gakka-q3",
+    "exam": "dekyo-chief-system",
+    "year": 2022,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "半導体",
+    "topicTags": [
+      "電気通信システム",
+      "半導体"
+    ],
+    "difficulty": 3,
+    "question": "ダイオードの種類や特徴について述べた次の文章のうち、誤っているものはどれか。",
+    "choices": {
+      "ア": "ツェナーダイオードは、逆方向電圧を印加することにより、広い電流範囲で定電圧を保持する特性を持つ。",
+      "イ": "アバランシェフォトダイオードは、空乏層における衝突電離を連鎖的に繰り返して多数の電子を発生させ、光電流を増倍して出力する。",
+      "ウ": "発光ダイオードは、pn接合に順方向電圧を印加すると、注入された電子と正孔が再結合し、余ったエネルギーを光として放出する。",
+      "エ": "トンネルダイオードは、負性抵抗領域を有するダイオードであり、スイッチング動作や増幅動作を行う素子として用いられる。",
+      "オ": "バラクタダイオードは、接合部におけるインダクタンスがバイアス電圧により大きく変化するダイオードであり、電子同調、周波数逓倍などに用いられる。"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "バイアスで変わるのは空乏層の幅に依存する接合容量である。バラクタダイオードはこの可変容量を同調などに利用する。",
+    "choiceExplanations": {
+      "ア": "逆方向の降伏領域では電流が変わっても端子電圧の変化が小さく、基準電圧として使える。",
+      "イ": "光で生じたキャリアが電界で加速され、衝突電離でキャリアを増やすため、光電流が増倍される。",
+      "ウ": "注入された電子と正孔の再結合に伴い、エネルギーが光子として放出される。",
+      "エ": "トンネル効果に由来する負性抵抗領域を使うと、増幅や高速なスイッチングができる。",
+      "オ": "バイアスで変わるのは空乏層の幅に依存する接合容量である。バラクタダイオードはこの可変容量を同調などに利用する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a3162369b.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a35b0fc66.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和4年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2022-second-gakka-q4",
+    "exam": "dekyo-chief-system",
+    "year": 2022,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "論理回路",
+    "topicTags": [
+      "電気通信システム",
+      "論理回路"
+    ],
+    "difficulty": 3,
+    "question": "図に示す論理回路の入力a・b・cのレベルをA・B・Cとする。出力Xをベン図の斜線で表したものはどれか。各円の内部はそれぞれA・B・Cが真の範囲を表す。",
+    "choices": {
+      "ア": "①",
+      "イ": "②",
+      "ウ": "③",
+      "エ": "④",
+      "オ": "⑤"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "回路の出力はX＝(A∨B∨¬C)∧C＝(A∨B)∧Cである。Cの円内でAまたはBと重なる領域を塗った図は④である。",
+    "choiceExplanations": {
+      "ア": "①はA・B・Cの全てが重なる範囲のみで、AまたはBの片方が真でCが真の範囲が抜けている。",
+      "イ": "②にはCとAまたはBが重なる領域の一部があるが、3円すべての共通部分を含んでいない。",
+      "ウ": "③はAとBが重なる部分を表しており、Cが偽でも出力が真になる領域を含んでいる。",
+      "エ": "回路の出力はX＝(A∨B∨¬C)∧C＝(A∨B)∧Cである。Cの円内でAまたはBと重なる領域を塗った図は④である。",
+      "オ": "⑤には各円が他と重ならない領域が含まれるが、Cだけが真なら出力は偽である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a3162369b.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a35b0fc66.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和4年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/dekyo-chief-system/2022-second-q4.png"
+    ],
+    "imageAltTexts": [
+      "選択肢①〜⑤のベン図と３入力の論理回路。"
+    ]
+  },
+  {
+    "id": "dekyo-chief-system-2022-second-gakka-q5",
+    "exam": "dekyo-chief-system",
+    "year": 2022,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "データ伝送",
+    "topicTags": [
+      "電気通信システム",
+      "データ伝送"
+    ],
+    "difficulty": 3,
+    "question": "メタリックケーブルでデジタル伝送を行う場合、ユニポーラ符号をバイポーラ符号に変換して送出することが多い。これはバイポーラ符号の平均電力スペクトルにどの成分がないという利点を利用したものか。",
+    "choices": {
+      "ア": "直流",
+      "イ": "交流",
+      "ウ": "雑音",
+      "エ": "側波帯",
+      "オ": "エネルギー"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "正と負のパルスが交互に現れて平均電圧がゼロに近づくため、バイポーラ符号は周波数ゼロの直流成分を持たない。",
+    "choiceExplanations": {
+      "ア": "正と負のパルスが交互に現れて平均電圧がゼロに近づくため、バイポーラ符号は周波数ゼロの直流成分を持たない。",
+      "イ": "信号に変化がある限り、データの伝送に必要な交流成分は残る。",
+      "ウ": "バイポーラ化は信号の周波数成分を整える処理であり、伝送路で重なる雑音をなくせるわけではない。",
+      "エ": "側波帯は搬送波を変調したときに現れる周波数成分を指す。ここで除かれるのは信号の直流成分である。",
+      "オ": "伝送符号を受信側で識別できるよう、パルスに対応するエネルギーは伝送される。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a3162369b.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a35b0fc66.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和4年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2022-second-gakka-q6",
+    "exam": "dekyo-chief-system",
+    "year": 2022,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "測定",
+    "topicTags": [
+      "電気通信システム",
+      "測定"
+    ],
+    "difficulty": 3,
+    "question": "内部抵抗が20 kΩで最大目盛が5 Vの電圧計を、最大目盛が100 Vの電圧計として使用する。どの値の倍率器を用いればよいか。",
+    "choices": {
+      "ア": "100 kΩ",
+      "イ": "360 kΩ",
+      "ウ": "380 kΩ",
+      "エ": "400 kΩ",
+      "オ": "420 kΩ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "最大目盛電流は5 V÷20 kΩ＝0.25 mAである。100 Vでこの電流が流れる全抵抗400 kΩから内部抵抗20 kΩを引くと380 kΩになる。",
+    "choiceExplanations": {
+      "ア": "100 kΩを直列にすると計器を含む抵抗が120 kΩになり、同じ最大目盛電流では30 Vまでしか測れない。",
+      "イ": "360 kΩの場合の全抵抗は380 kΩで、最大目盛電流0.25 mAを掛けると95 Vになる。",
+      "ウ": "最大目盛電流は5 V÷20 kΩ＝0.25 mAである。100 Vでこの電流が流れる全抵抗400 kΩから内部抵抗20 kΩを引くと380 kΩになる。",
+      "エ": "400 kΩは内部抵抗を含む値で、これを倍率器として加えると最大目盛は105 Vになる。",
+      "オ": "420 kΩを倍率器にすると全抵抗は440 kΩになり、最大目盛電流では110 Vに相当する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a3162369b.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a35b0fc66.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和4年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2022-second-gakka-q7",
+    "exam": "dekyo-chief-system",
+    "year": 2022,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "雑音",
+    "topicTags": [
+      "電気通信システム",
+      "雑音"
+    ],
+    "difficulty": 3,
+    "question": "通信系で発生する熱雑音は、その振幅の確率密度がどの分布に従うか。",
+    "choices": {
+      "ア": "ガウス分布",
+      "イ": "一様分布",
+      "ウ": "指数分布",
+      "エ": "二項分布",
+      "オ": "ポアソン分布"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "多数の電荷のランダムな運動の寄与が重なり、熱雑音の瞬時振幅は通常、ガウス分布で表せる。",
+    "choiceExplanations": {
+      "ア": "多数の電荷のランダムな運動の寄与が重なり、熱雑音の瞬時振幅は通常、ガウス分布で表せる。",
+      "イ": "一様分布では範囲内で確率密度が一定だが、熱雑音の振幅は平均近くの値が現れやすい。",
+      "ウ": "指数分布は待ち時間などの非負の量に用いられ、正負に変動する熱雑音の瞬時振幅を表す分布とは異なる。",
+      "エ": "二項分布は一定回数の試行で発生した事象の回数を表す離散分布である。",
+      "オ": "ポアソン分布は一定区間内に生じる事象の件数を表し、連続な雑音振幅の分布ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a3162369b.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a35b0fc66.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和4年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2022-second-gakka-q8",
+    "exam": "dekyo-chief-system",
+    "year": 2022,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "情報理論",
+    "topicTags": [
+      "電気通信システム",
+      "情報理論"
+    ],
+    "difficulty": 3,
+    "question": "信号電力、雑音電力、通信路の周波数帯域幅から最大伝送速度（通信容量）を求められる法則は、一般に誰の定理といわれるか。",
+    "choices": {
+      "ア": "テブナン",
+      "イ": "シャノン",
+      "ウ": "ホール",
+      "エ": "ベルヌーイ",
+      "オ": "クーロン"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "シャノンの定理により、帯域幅B、信号電力S、雑音電力Nの理想化した通信路の容量はB log₂(1＋S/N)で求められる。",
+    "choiceExplanations": {
+      "ア": "テブナンの定理は線形回路を等価電圧源と直列インピーダンスに置き換えるために用いる。",
+      "イ": "シャノンの定理により、帯域幅B、信号電力S、雑音電力Nの理想化した通信路の容量はB log₂(1＋S/N)で求められる。",
+      "ウ": "ホールの名は、電流を流す材料に垂直な磁界を加えると横方向に電圧が発生するホール効果に使われる。",
+      "エ": "ベルヌーイの定理は流れにおける圧力や速度などの関係を扱う。",
+      "オ": "クーロンの法則は電荷間の力を表し、通信路の最大伝送速度を求めるものではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a3162369b.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a35b0fc66.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和4年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2022-second-gakka-q9",
+    "exam": "dekyo-chief-system",
+    "year": 2022,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "変調",
+    "topicTags": [
+      "電気通信システム",
+      "変調"
+    ],
+    "difficulty": 3,
+    "question": "アナログ信号をデジタル信号に変換して伝送する方式において、標本化により得られるパルスのうち、原信号波形の大きさを振幅で表すものはどれか。",
+    "choices": {
+      "ア": "PAM",
+      "イ": "PWM",
+      "ウ": "PPM",
+      "エ": "PFM",
+      "オ": "PCM"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "PAMはパルス振幅変調で、各時点の標本値をパルスの高さとして表す。",
+    "choiceExplanations": {
+      "ア": "PAMはパルス振幅変調で、各時点の標本値をパルスの高さとして表す。",
+      "イ": "PWMはパルスの振幅ではなく、幅を変えて信号値を表す。",
+      "ウ": "PPMでは基準時刻に対するパルスの位置に情報を割り当てる。",
+      "エ": "PFMではパルスの繰返し周波数を変えて情報を表す。",
+      "オ": "PCMでは標本値を量子化して符号に変換し、原信号の値をパルスの振幅の大小としてそのまま伝えない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a3162369b.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a35b0fc66.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和4年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2022-second-gakka-q10",
+    "exam": "dekyo-chief-system",
+    "year": 2022,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "IP電話",
+    "topicTags": [
+      "電気通信システム",
+      "IP電話"
+    ],
+    "difficulty": 3,
+    "question": "VoIPで、発信者の要求に応じた着信先の指定や、音声信号の送受信に必要な呼制御信号の処理に用いる技術はどれか。",
+    "choices": {
+      "ア": "コーデック",
+      "イ": "IPパケット処理",
+      "ウ": "フロー制御",
+      "エ": "シグナリング",
+      "オ": "ルーティング"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "シグナリングではSIPなどを用いて宛先との呼を開始し、通話条件の交渉や終了を行う。",
+    "choiceExplanations": {
+      "ア": "コーデックは音声の符号化や復号などを行い、呼の成立や終了を示す制御信号とは役割が異なる。",
+      "イ": "IPパケット処理はパケットの生成や転送などを指し、着信先との呼を確立する制御の名称ではない。",
+      "ウ": "フロー制御は受信側の処理能力などに合わせてデータの送信量を調整する。",
+      "エ": "シグナリングではSIPなどを用いて宛先との呼を開始し、通話条件の交渉や終了を行う。",
+      "オ": "ルーティングは宛先へのネットワーク上の経路を決める機能で、呼制御信号を交換する技術とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a3162369b.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a35b0fc66.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和4年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2022-second-gakka-q11",
+    "exam": "dekyo-chief-system",
+    "year": 2022,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "トラヒック理論",
+    "topicTags": [
+      "電気通信システム",
+      "トラヒック理論"
+    ],
+    "difficulty": 3,
+    "question": "即時式完全線群のある回線群が運んだ呼量は27アーランで、呼損率は0.1だった。この回線群に加わった呼量は何アーランか。",
+    "choices": {
+      "ア": "2.7",
+      "イ": "24.3",
+      "ウ": "27",
+      "エ": "30",
+      "オ": "270"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "運んだ呼量は加わった呼量の1−0.1＝0.9倍である。27÷0.9＝30アーランとなる。",
+    "choiceExplanations": {
+      "ア": "2.7は運んだ呼量27に呼損率0.1を掛けた値である。呼損率は加わった呼量に対する割合として使う。",
+      "イ": "24.3は運んだ呼量に成功率0.9を再び掛けた値である。加わった呼量を求めるには成功率で割る。",
+      "ウ": "27は回線群が実際に運んだ呼量で、失われた呼量の分を含まない。",
+      "エ": "運んだ呼量は加わった呼量の1−0.1＝0.9倍である。27÷0.9＝30アーランとなる。",
+      "オ": "呼に成功した割合は0.9であり、27を呼損率0.1で割る計算は当てはまらない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a3162369b.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a35b0fc66.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和4年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2022-second-gakka-q12",
+    "exam": "dekyo-chief-system",
+    "year": 2022,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "アクセス回線",
+    "topicTags": [
+      "電気通信システム",
+      "アクセス回線"
+    ],
+    "difficulty": 3,
+    "question": "電話共用型のADSLサービスでは、音声信号とデータ信号に対してどの処理を行うためにスプリッタが使われるか。",
+    "choices": {
+      "ア": "符号化・復号",
+      "イ": "等化増幅",
+      "ウ": "切替",
+      "エ": "変調・復調",
+      "オ": "分離・合成"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "スプリッタのフィルタで低い周波数の音声帯域と高い周波数のADSL帯域を分離でき、送信側では同じ線に合成できる。",
+    "choiceExplanations": {
+      "ア": "符号化や復号はADSLモデムなどが扱う。スプリッタは周波数帯によって音声とデータを分ける。",
+      "イ": "等化増幅は伝送路の損失やひずみを補う処理で、音声帯域とデータ帯域の分離とは異なる。",
+      "ウ": "電話とADSLは同じ加入者線で異なる周波数帯域を同時に利用でき、交互に切り替える必要はない。",
+      "エ": "データを回線上の信号に変換したり復元したりするのはADSLモデムである。",
+      "オ": "スプリッタのフィルタで低い周波数の音声帯域と高い周波数のADSL帯域を分離でき、送信側では同じ線に合成できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a3162369b.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a35b0fc66.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和4年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2022-second-gakka-q13",
+    "exam": "dekyo-chief-system",
+    "year": 2022,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "通信網",
+    "topicTags": [
+      "電気通信システム",
+      "通信網"
+    ],
+    "difficulty": 3,
+    "question": "広域イーサネットで、アクセス回線を通じてユーザのトラヒックを収容し、該当のユーザポートから当該ユーザグループに転送するものはどれか。",
+    "choices": {
+      "ア": "コアスイッチ",
+      "イ": "エッジスイッチ",
+      "ウ": "ファイバチャネル",
+      "エ": "トランスポンダ",
+      "オ": "VoIPゲートウェイ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "エッジスイッチが利用者のアクセス回線を受け、ポートやVLANなどで対応するユーザグループに転送する。",
+    "choiceExplanations": {
+      "ア": "コアスイッチは主に事業者網の中心で大量のトラヒックを中継し、ユーザ回線の接続点には通常エッジスイッチが置かれる。",
+      "イ": "エッジスイッチが利用者のアクセス回線を受け、ポートやVLANなどで対応するユーザグループに転送する。",
+      "ウ": "ファイバチャネルは主にストレージ接続などの規格で、広域イーサネット網への収容機器を指さない。",
+      "エ": "トランスポンダは信号の中継や波長変換などに用いられ、ユーザポートに基づくフレーム転送は行わない。",
+      "オ": "VoIPゲートウェイは音声ネットワークの相互接続などを担い、ここでいう一般のイーサネットトラヒックを収容する機器とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a3162369b.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a35b0fc66.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和4年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2022-second-gakka-q14",
+    "exam": "dekyo-chief-system",
+    "year": 2022,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "通信プロトコル",
+    "topicTags": [
+      "電気通信システム",
+      "通信プロトコル"
+    ],
+    "difficulty": 3,
+    "question": "TCPの受信側が受信データの順序整合や重複データの廃棄を行えるよう、送信するTCPセグメントに付与されるものはどれか。",
+    "choices": {
+      "ア": "シーケンス番号",
+      "イ": "ポート番号",
+      "ウ": "チェックサム",
+      "エ": "緊急ポインタ",
+      "オ": "確認応答番号"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "シーケンス番号からバイトストリーム中の各セグメントの位置を判断できるため、順序の復元や重複の除去に使える。",
+    "choiceExplanations": {
+      "ア": "シーケンス番号からバイトストリーム中の各セグメントの位置を判断できるため、順序の復元や重複の除去に使える。",
+      "イ": "ポート番号で通信先のアプリケーションなどを識別できるが、データの並ぶ順序は決められない。",
+      "ウ": "チェックサムは誤り検出の情報で、バイトストリームの位置を表さない。",
+      "エ": "緊急ポインタは緊急データの範囲を示すときに使い、受信データ全体の整列には用いない。",
+      "オ": "確認応答番号は受信側が次に期待する位置を相手に伝える値である。個々の受信セグメントの位置はシーケンス番号で判断する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a3162369b.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a35b0fc66.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和4年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2022-second-gakka-q15",
+    "exam": "dekyo-chief-system",
+    "year": 2022,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "電話交換",
+    "topicTags": [
+      "電気通信システム",
+      "電話交換"
+    ],
+    "difficulty": 3,
+    "question": "公衆交換電話網（PSTN）で、交換機が着信側端末の呼出中にその加入者線ループを検出したとき、発信側の端末に回線の極性を反転して送出する監視信号はどれか。",
+    "choices": {
+      "ア": "起動信号",
+      "イ": "応答信号",
+      "ウ": "選択信号",
+      "エ": "呼出信号",
+      "オ": "起動完了信号"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "着信側が受話器を上げると加入者線ループが閉じ、交換機はその応答を発信側に極性反転で知らせる。",
+    "choiceExplanations": {
+      "ア": "起動信号は接続処理を始める際に使う信号であり、着信端末の応答を知らせる段階より前に使われる。",
+      "イ": "着信側が受話器を上げると加入者線ループが閉じ、交換機はその応答を発信側に極性反転で知らせる。",
+      "ウ": "選択信号は相手先を指定する情報を伝えるもので、相手が通話に応答したことを知らせる信号とは役割が異なる。",
+      "エ": "呼出信号は着信側に着信を知らせるために送られ、着信側が応答したことを発信側へ知らせる信号は応答信号である。",
+      "オ": "起動完了信号は接続処理を開始する準備が整ったことを伝え、着信者による応答を通知するものではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a3162369b.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a35b0fc66.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和4年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2022-second-gakka-q16",
+    "exam": "dekyo-chief-system",
+    "year": 2022,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "通信プロトコル",
+    "topicTags": [
+      "電気通信システム",
+      "通信プロトコル"
+    ],
+    "difficulty": 3,
+    "question": "インターネット層の通信を保護するプロトコルで、認証機能、データ暗号化機能、鍵交換機能があるものはどれか。",
+    "choices": {
+      "ア": "S-HTTP",
+      "イ": "PPTP",
+      "ウ": "SSL",
+      "エ": "L2TP",
+      "オ": "IPsec"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "IPsecはIP層でパケットの認証や暗号化を行い、IKEで通信に用いる鍵や保護方式を取り決める。",
+    "choiceExplanations": {
+      "ア": "S-HTTPはHTTPメッセージの保護を目的とした方式で、IPパケットそのものを保護する方式とは対象の層が異なる。",
+      "イ": "PPTPはPPPフレームのトンネルを作るプロトコルで、IP層での認証や暗号化を提供するIPsecと用途が異なる。",
+      "ウ": "SSLはアプリケーションが使う通信を保護するための方式で、個々のIPパケットに保護を付けるプロトコルではない。",
+      "エ": "L2TPは第2層のフレームをトンネル化する方式で、暗号化が必要な構成ではIPsecなどを組み合わせる。",
+      "オ": "IPsecはIP層でパケットの認証や暗号化を行い、IKEで通信に用いる鍵や保護方式を取り決める。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a3162369b.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a35b0fc66.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和4年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2022-second-gakka-q17",
+    "exam": "dekyo-chief-system",
+    "year": 2022,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "無線通信",
+    "topicTags": [
+      "電気通信システム",
+      "無線通信"
+    ],
+    "difficulty": 3,
+    "question": "衛星からの微弱な電波を増幅するため、衛星通信の受信機の初段に設ける低雑音増幅器に用いる素子はどれか。",
+    "choices": {
+      "ア": "EDFA（Erbium Doped Fiber Amplifier）",
+      "イ": "TWT（Traveling Wave Tube）",
+      "ウ": "GTO（Gate Turn-Off thyristor）",
+      "エ": "HEMT（High Electron Mobility Transistor）",
+      "オ": "IGBT（Insulated Gate Bipolar Transistor）"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "HEMTはキャリアが高い移動度を持つ構造により高周波で低雑音に動作でき、衛星受信機の初段に適する。",
+    "choiceExplanations": {
+      "ア": "EDFAはエルビウムを添加した光ファイバで光信号を増幅する装置である。",
+      "イ": "TWTはマイクロ波の高出力増幅に使われる真空管で、微弱な受信信号を低雑音で増幅する初段にはHEMTがよく用いられる。",
+      "ウ": "GTOはゲート信号でターンオフできるサイリスタで、主に電力変換のスイッチとして用いる。",
+      "エ": "HEMTはキャリアが高い移動度を持つ構造により高周波で低雑音に動作でき、衛星受信機の初段に適する。",
+      "オ": "IGBTは高い電圧や大電流のスイッチングに用いられる電力用素子である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a3162369b.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a35b0fc66.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和4年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2022-second-gakka-q18",
+    "exam": "dekyo-chief-system",
+    "year": 2022,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "光通信",
+    "topicTags": [
+      "電気通信システム",
+      "光通信"
+    ],
+    "difficulty": 3,
+    "question": "光ファイバのコアとクラッドの屈折率の差が大きいほど、両者の境界面で全反射が始まる入射角（境界面の法線と光のなす角）が小さくなる。この関係は何の法則から分かるか。",
+    "choices": {
+      "ア": "ケプラー",
+      "イ": "ブラッグ",
+      "ウ": "ヘンリー",
+      "エ": "スネル",
+      "オ": "プランク"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "スネルの法則から、臨界角の正弦はクラッドの屈折率をコアの屈折率で割った値になる。その比が小さいほど臨界角も小さくなる。",
+    "choiceExplanations": {
+      "ア": "ケプラーの法則は惑星の公転運動について述べた法則である。",
+      "イ": "ブラッグの法則は結晶格子などで生じる波の回折の条件を与える。",
+      "ウ": "ヘンリーの法則は一定温度における気体の溶解量と分圧の関係を扱う。",
+      "エ": "スネルの法則から、臨界角の正弦はクラッドの屈折率をコアの屈折率で割った値になる。その比が小さいほど臨界角も小さくなる。",
+      "オ": "プランクの法則は黒体放射のスペクトルを記述し、媒質の境界の屈折角を与えるものではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a3162369b.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a35b0fc66.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和4年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2022-second-gakka-q19",
+    "exam": "dekyo-chief-system",
+    "year": 2022,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "電源設備",
+    "topicTags": [
+      "電気通信システム",
+      "電源設備"
+    ],
+    "difficulty": 3,
+    "question": "三相変圧器のY結線と△結線のうち、Y結線の巻線の1相当たりの電圧が各相とも同じ大きさのとき、線間電圧は相電圧の何倍か。",
+    "choices": {
+      "ア": "1/3",
+      "イ": "1/2",
+      "ウ": "1/√3",
+      "エ": "1/√2",
+      "オ": "√3"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "Y結線の線間電圧は位相差120°の等しい大きさの相電圧のベクトル差なので、相電圧の√3倍になる。",
+    "choiceExplanations": {
+      "ア": "3相の数で単純に割った値ではない。線間電圧は位相差が120°ある二相のベクトル差で決まる。",
+      "イ": "二相の位相がずれているため、振幅の半分にはならず、ベクトル差の大きさを計算する。",
+      "ウ": "1/√3は線間電圧に対する相電圧の比であり、問われている比の逆数である。",
+      "エ": "1/√2は正弦波の最大値から実効値への換算に現れる値で、相電圧と線間電圧の比には使わない。",
+      "オ": "Y結線の線間電圧は位相差120°の等しい大きさの相電圧のベクトル差なので、相電圧の√3倍になる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a3162369b.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a35b0fc66.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和4年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2022-second-gakka-q20",
+    "exam": "dekyo-chief-system",
+    "year": 2022,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "光ファイバ",
+    "topicTags": [
+      "電気通信システム",
+      "光ファイバ"
+    ],
+    "difficulty": 3,
+    "question": "ノンスロット型の細径高密度光ファイバケーブルでは、形状を容易に変形でき、心線接続時には並列形状に戻してテープ一括接続できる、何型の光ファイバテープ心線が用いられているか。",
+    "choices": {
+      "ア": "自己支持",
+      "イ": "層撚り",
+      "ウ": "間欠接着",
+      "エ": "コード集合",
+      "オ": "SZ撚り"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "間欠接着型の心線は一部だけを接着するため、小さく折り曲げて収納でき、接続するときには平らに戻せる。",
+    "choiceExplanations": {
+      "ア": "自己支持型は支持線などを組み込んだ架空ケーブルの構造を指し、テープ心線の接着方式を指さない。",
+      "イ": "層撚りは線を複数の層に分けて撚り合わせるケーブルの集合方法である。",
+      "ウ": "間欠接着型の心線は一部だけを接着するため、小さく折り曲げて収納でき、接続するときには平らに戻せる。",
+      "エ": "コード集合はコードを束ねる構成で、テープ心線の柔軟性を実現する接着方式とは異なる。",
+      "オ": "SZ撚りは撚りの方向を交互に切り替える方法であり、テープの形状を変えて戻せる性質の説明ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a3162369b.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2369/files236963d9a35b0fc66.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和4年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  }
+]

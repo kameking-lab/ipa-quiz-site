@@ -1,5 +1,4 @@
 "use client";
-import { MobileInstallNudge } from "@/components/pwa/MobileInstallNudge";
 import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
 import { NativeQuestionGate } from "@/mobile/shared/NativeQuestionGate";
 
@@ -10,8 +9,6 @@ import { isReferenceOnlyQuestionId } from "@/lib/questions/assessment";
 import type { NativeBGrade } from "@/lib/questions/types";
 import { gradeNativeB, serializeNativeBSelections, formatNativeBAnswer, type NativeBSelections } from "@/lib/questions/native-b";
 import { NativeBAnswerInput } from "./NativeBAnswer";
-import Link from "next/link";
-import { questionPagePath } from "@/lib/seo/question-url";
 import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys, requiredSelectionCount, isCompleteSelectionCorrect, formatSelection, selectionInstruction } from "@/lib/questions/answers";
 import { useRouter } from "next/navigation";
 import type { Question, ChoiceKey, ExamCode } from "@/lib/questions/types";
@@ -31,15 +28,13 @@ import { ChoiceButton } from "./ChoiceButton";
 import { AfternoonEssayHint } from "./AfternoonEssayHint";
 import { useQuizChoiceRoving } from "@/lib/a11y/use-quiz-choice-roving";
 import { ExplanationCard } from "./ExplanationCard";
-import { CopilotInline } from "@/components/copilot/CopilotPanel";
 import { createHistoryStore } from "@/lib/storage/history";
 import { writeLastQuestion } from "@/lib/storage/last-question";
 
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, Timer, Check, Copy, MessageCircle } from "lucide-react";
+import { ArrowLeft, Timer } from "lucide-react";
 import { examLabel } from "@/lib/utils";
-import { comboLevel, readMotivationSettings } from "@/lib/motivation/combo";
-import { playPiroro } from "@/lib/motivation/sound";
+import { comboLevel } from "@/lib/motivation/combo";
 import { recordSessionAnswer } from "@/lib/motivation/session";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 import { useQuestionActivity } from "@/lib/study-plan/use-question-activity";
@@ -47,11 +42,10 @@ import { posthogCapture } from "@/lib/posthog";
 import { observeJourney } from "@/lib/billing/journey-client";
 import { readSettings } from "@/lib/storage/settings";
 import { evaluateAchievementsAfterAnswer } from "@/lib/gamification/achievements";
-import { tsuginoLearningUrl, tsuginoScheduleUrl } from "@/lib/tsugino-qualification";
+import { tsuginoScheduleUrl } from "@/lib/tsugino-qualification";
 import { onBrowserIdle } from "@/lib/performance/browser-idle";
 
 // Decorations must not ship the animation runtime before the learner needs it.
-// Static answer/explanation UI and the AI copilot keep their existing path.
 const FireworksBurst = dynamic(() => import("@/components/motivation/FireworksBurst").then(module => module.FireworksBurst), { ssr: false });
 const ComboCounter = dynamic(() => import("@/components/motivation/ComboCounter").then(module => module.ComboCounter), { ssr: false });
 const AchievementToast = dynamic(() => import("@/components/motivation/AchievementToast").then(module => module.AchievementToast), { ssr: false });
@@ -75,12 +69,8 @@ interface Props {
   backHref?: string;
   backLabel?: string;
   exam?: string;
-  completionLabel?: string;
-  completionShareHref?: string;
   onNext: () => void;
   quiet?: boolean;
-  relatedQuestions?: Question[];
-  onRelated?: (question: Question) => void;
 }
 
 
@@ -99,12 +89,8 @@ function ScoredQuizPlayer({
   backHref = "/",
   backLabel = "モード選択に戻る",
   exam = "ap",
-  completionLabel,
-  completionShareHref,
   onNext,
   quiet = false,
-  relatedQuestions,
-  onRelated,
 }: Props) {
   const pet = usePetLearning();
   const router = useRouter();
@@ -121,18 +107,12 @@ function ScoredQuizPlayer({
   const [completed, setCompleted] = React.useState(false);
   const questionStartRef = React.useRef<HTMLDivElement>(null);
   const answerResultRef = React.useRef<HTMLDivElement>(null);
-  const relatedRef = React.useRef<HTMLElement>(null);
-  const [showRelated, setShowRelated] = React.useState(false);
-  const [copilotRequest, setCopilotRequest] = React.useState<{ questionId: string; sequence: number; prompt?: string } | null>(null);
-  const [copilotQuery, setCopilotQuery] = React.useState<"why-wrong" | "open" | null>(null);
-  const [starred, setStarred] = React.useState(false);
   const [stats, setStats] = React.useState({ answered: 0, correct: 0 });
   const [showKeyboardHelp, setShowKeyboardHelp] = React.useState(false);
   const [elapsed, setElapsed] = React.useState(0);
   const [combo, setCombo] = React.useState(0);
   const [burst, setBurst] = React.useState<{ level: "small" | "big"; nonce: number } | null>(null);
   const [pendingAchievement, setPendingAchievement] = React.useState<string | null>(null);
-  const motivationSettingsRef = React.useRef(readMotivationSettings());
   const quizStartedFiredRef = React.useRef(false);
 
   React.useEffect(() => {
@@ -157,10 +137,6 @@ function ScoredQuizPlayer({
     frame = requestAnimationFrame(() => { frame = requestAnimationFrame(recover); });
     return () => cancelAnimationFrame(frame);
   }, [revealed, question?.id]);
-
-  React.useEffect(() => {
-    motivationSettingsRef.current = readMotivationSettings();
-  }, []);
 
   // 最初の問題がロードされた瞬間に quiz_started を一度だけ送信
   React.useEffect(() => {
@@ -188,9 +164,6 @@ function ScoredQuizPlayer({
     setNumericSelected(undefined);
     setOrderedSelected(undefined);
     setRevealed(false);
-    setShowRelated(false);
-    setCopilotQuery(null);
-    setStarred(history.isStarred(question.id));
   }, [question, history]);
 
   // Arrow-key roving for the answer radiogroup (focus-only; Enter/Space/click
@@ -205,7 +178,6 @@ function ScoredQuizPlayer({
 
   const goNext = React.useCallback(() => {
     recordExplanation();
-    setCopilotQuery(null);
     if (index + 1 >= total) {
       setCompleted(true);
       window.scrollTo?.({ top: 0, behavior: "instant" });
@@ -269,15 +241,9 @@ function ScoredQuizPlayer({
 
       const nextCombo = correct ? combo + 1 : 0;
       setCombo(nextCombo);
-      if (correct) {
-        const level = comboLevel(nextCombo);
-        const reduceMotion = motivationSettingsRef.current.reduceMotion;
-        if (level !== "none" && !reduceMotion) {
-          setBurst({ level, nonce: Date.now() });
-          if (motivationSettingsRef.current.soundEnabled) {
-            playPiroro(level);
-          }
-        }
+      const level = comboLevel(nextCombo);
+      if (level !== "none" && !window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
+        setBurst({ level, nonce: Date.now() });
       }
     },
     [question, history, combo, pendingAchievement, pet, recordActivityAnswer],
@@ -320,12 +286,6 @@ function ScoredQuizPlayer({
     commitAnswer(value.join("→"), isOrderingAnswerCorrect(question, value), { kind: "ordering", selected: [...value] });
   }, [question, revealed, commitAnswer]);
 
-  const toggleStar = React.useCallback(() => {
-    if (!question || isReferenceOnlyQuestionId(question.id)) return;
-    const nowStarred = history.toggleStar(question.id);
-    setStarred(nowStarred);
-  }, [question, history]);
-
   React.useEffect(() => {
     const handler = (e: KeyboardEvent) => {
       if (!question || isReferenceOnlyQuestionId(question.id) || isSelfReviewedDescriptiveQuestion(question)) return;
@@ -354,11 +314,6 @@ function ScoredQuizPlayer({
           return;
         }
       }
-      if (e.key === "r" || e.key === "R") {
-        e.preventDefault();
-        toggleStar();
-        return;
-      }
       if (e.key === "?") {
         e.preventDefault();
         setShowKeyboardHelp((v) => !v);
@@ -367,14 +322,12 @@ function ScoredQuizPlayer({
       if (e.key === "Escape") {
         if (showKeyboardHelp) {
           setShowKeyboardHelp(false);
-        } else if (copilotQuery) {
-          setCopilotQuery(null);
         }
       }
     };
     window.addEventListener("keydown", handler);
     return () => window.removeEventListener("keydown", handler);
-  }, [question, revealed, onSelect, goNext, toggleStar, copilotQuery, showKeyboardHelp]);
+  }, [question, revealed, onSelect, goNext, showKeyboardHelp]);
 
   const touchStart = React.useRef<{ x: number; y: number } | null>(null);
   const onTouchStart = (e: React.TouchEvent) => {
@@ -427,22 +380,7 @@ function ScoredQuizPlayer({
         elapsed={elapsed}
         exam={exam}
         mode={mode}
-        labelOverride={completionLabel}
-        shareHref={completionShareHref}
         scheduleUrl={tsuginoScheduleUrl(question?.exam)}
-        learningUrl={tsuginoLearningUrl(question?.exam)}
-        onReviewLast={question && !isSelfReviewedDescriptiveQuestion(question) && revealed ? () => {
-          setCompleted(false);
-          setCopilotQuery("open");
-            setCopilotRequest((value) => ({ questionId: question!.id, sequence: (value?.sequence ?? 0) + 1 }));
-        } : undefined}
-        onRetry={() => {
-          setStats({ answered: 0, correct: 0 });
-          setElapsed(0);
-          setSelected(undefined);
-          setRevealed(false);
-          router.push(backHref);
-        }}
         onBack={() => router.push(backHref)}
         backLabel={backLabel}
       />
@@ -607,13 +545,6 @@ function ScoredQuizPlayer({
                 : ""}
             </div>
 
-            <CopilotInline
-              question={question}
-              selectedChoice={selectionLabel}
-              isCorrect={revealed ? isCorrect : undefined}
-              focusRequest={{ sequence: copilotRequest?.questionId === question.id ? copilotRequest.sequence : 0, prompt: copilotRequest?.prompt }}
-            />
-
             {/* Shape/layout the static explanation while the learner reads. Keep
                 it invisible, out of flow and inert until the explicit answer. */}
             {(revealed || preparedExplanationId === question.id) && (
@@ -624,37 +555,10 @@ function ScoredQuizPlayer({
                   nativeBResult={nativeBResult}
                   selected={selectionLabel}
                   isCorrect={isCorrect}
-                  starred={starred}
-                  onToggleStar={toggleStar}
                   onNext={goNext}
                   nextLabel={index + 1 >= total ? "結果を見る" : "次の問題へ"}
-                  afterNavigation={revealed ? <MobileInstallNudge placement="answer" answered={stats.answered} /> : undefined}
-                  onAskAI={() => { setCopilotQuery("open"); setCopilotRequest((value) => ({ questionId: question!.id, sequence: (value?.sequence ?? 0) + 1 })); }}
-                  onAnalyzeWrong={
-                    !isCorrect ? () => { setCopilotQuery("why-wrong"); setCopilotRequest((value) => ({ questionId: question!.id, sequence: (value?.sequence ?? 0) + 1, prompt: "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" })); } : undefined
-                  }
                 />
                 <span ref={explanationEndRef} aria-hidden="true" className="block h-px" />
-                {revealed && <>
-                {onRelated && (
-                  <section ref={relatedRef} tabIndex={-1} aria-label="同じ科目の関連問題" className="scroll-mt-28 rounded-2xl border border-border bg-background p-4 outline-none">
-                    <button type="button" onClick={() => setShowRelated((value) => !value)} aria-expanded={showRelated} className="flex min-h-11 w-full items-center justify-between text-left font-semibold">
-                      同じ科目の関連問題 <span aria-hidden="true">{showRelated ? "−" : "＋"}</span>
-                    </button>
-                    {showRelated && (
-                      <div className="space-y-2">
-                        {relatedQuestions?.length ? relatedQuestions.map((item) => (
-                          <button key={item.id} type="button" onClick={() => onRelated(item)} className="block min-h-11 w-full rounded-xl border border-border p-3 text-left text-sm hover:bg-muted">
-                            <span className="block text-xs text-muted-foreground">{item.year}年 問{item.qNumber}</span>
-                            <span className="line-clamp-2">{item.question}</span>
-                          </button>
-                        )) : <p role="status" className="py-2 text-sm text-muted-foreground">{relatedQuestions ? "関連問題はありません" : "読み込み中…"}</p>}
-                      </div>
-                    )}
-                  </section>
-                )}
-                <Link href={`${questionPagePath(question)}#explanation`} className="inline-flex min-h-11 items-center text-xs text-muted-foreground underline underline-offset-4 hover:text-foreground">誤りを報告</Link>
-                </>}
               </div>
             )}
 
@@ -733,40 +637,23 @@ function KeyboardShortcutHelp({ onClose }: { onClose: () => void }) {
   );
 }
 
-const QUIZ_ORIGIN =
-  typeof window !== "undefined"
-    ? window.location.origin
-    : "https://www.kakomon-ai.jp";
-
 export function QuizCompleteScreen({
   stats,
   elapsed,
   exam,
   mode,
-  onRetry,
   onBack,
   backLabel = "モード選択に戻る",
-  labelOverride,
-  shareHref,
   scheduleUrl,
-  learningUrl,
-  onReviewLast,
 }: {
   stats: { answered: number; correct: number };
   elapsed: number;
   exam: string;
   mode: string;
-  onRetry: () => void;
   onBack: () => void;
   backLabel?: string;
-  labelOverride?: string;
-  shareHref?: string;
   scheduleUrl?: string;
-  learningUrl?: string | null;
-  onReviewLast?: () => void;
 }) {
-  const [copied, setCopied] = React.useState(false);
-  const [copyError, setCopyError] = React.useState(false);
   const resultHeadingRef = React.useRef<HTMLHeadingElement>(null);
   React.useEffect(() => { resultHeadingRef.current?.focus({ preventScroll: true }); resultHeadingRef.current?.scrollIntoView?.({ block: "center", behavior: "instant" }); }, []);
   const accuracy = stats.answered > 0 ? Math.round((stats.correct / stats.answered) * 100) : 0;
@@ -783,28 +670,6 @@ export function QuizCompleteScreen({
     // fire once on mount
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  const label = labelOverride ?? examLabel(exam);
-  const safeShareHref = shareHref && /^\/(?!\/)/.test(shareHref) ? shareHref : undefined;
-  const shareUrl = safeShareHref
-    ? `${QUIZ_ORIGIN}${safeShareHref}`
-    : `${QUIZ_ORIGIN}/quiz?mode=${encodeURIComponent(mode)}&exam=${encodeURIComponent(exam)}`;
-  const shareText = `${label}の過去問で正答率${accuracy}%でした！ #過去問AI #IPA試験`;
-  const lineUrl = `https://social-plugins.line.me/lineit/share?url=${encodeURIComponent(`${shareUrl}\n${shareText}`)}`;
-
-  const handleCopy = async () => {
-    setCopyError(false);
-    setCopied(false);
-    try {
-      await navigator.clipboard.writeText(shareUrl);
-      setCopied(true);
-      setTimeout(() => setCopied(false), 1500);
-    } catch { setCopyError(true); }
-  };
-
-
-  const btnClass =
-    "inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-border bg-card px-3 py-2 text-sm font-medium text-foreground transition-colors hover:bg-muted dark:hover:bg-zinc-800";
-
   return (
     <main className="flex flex-1 flex-col items-center justify-center bg-background px-4 py-12">
       <div className="w-full max-w-md rounded-2xl border border-border bg-card p-5 shadow-sm sm:p-8">
@@ -831,57 +696,18 @@ export function QuizCompleteScreen({
           </div>
         </div>
 
-        <div className="flex flex-col gap-2">
-          <Button variant="primary" onClick={onRetry} className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
-            もう一度挑戦
-          </Button>
-          {onReviewLast ? (
-            <Button variant="outline" onClick={onReviewLast} className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
-              <MessageCircle className="h-4 w-4" aria-hidden="true" />
-              最後の問題をAIに質問
-            </Button>
-          ) : null}
-          <Button variant="outline" onClick={onBack} className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
-            <ArrowLeft className="h-4 w-4" /> {backLabel}
-          </Button>
-        </div>
+        <Button variant="primary" onClick={onBack} className="w-full min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
+          <ArrowLeft className="h-4 w-4" /> {backLabel}
+        </Button>
 
-        <section className="mt-6 border-t border-border pt-5">
-        <div className="mb-6">
-          <p className="mb-2 text-xs font-semibold text-zinc-500 dark:text-zinc-400">結果をシェアする</p>
-          <div className="flex flex-wrap gap-2">
-            <a href={lineUrl} target="_blank" rel="noopener noreferrer" aria-label="LINEで結果をシェア（新しいタブで開く）" className={btnClass}>
-              LINE
+        {scheduleUrl && (
+          <details className="mt-5 rounded-xl border border-border px-4 text-sm">
+            <summary className="min-h-11 cursor-pointer py-3 font-semibold">試験日程</summary>
+            <a href={scheduleUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center underline">
+              試験日・申込締切を次の資格で確認
             </a>
-            <button type="button" onClick={handleCopy} className={btnClass}>
-              {copied ? <Check className="h-4 w-4 text-emerald-600" /> : <Copy className="h-4 w-4" />}
-              {copied ? "コピーしました" : "URLコピー"}
-            </button>
-          </div>
-          {/* コピー成功はボタン文言変更だけでは SR に告知されない(WCAG 4.1.3)。
-              polite live region で告知する。 */}
-          <span role="status" aria-live="polite" className={copyError ? "mt-2 block text-sm text-destructive" : "sr-only"}>
-            {copyError ? "コピーできませんでした。もう一度お試しください。" : copied ? "結果 URL をコピーしました" : ""}
-          </span>
-        </div>
-
-        </section>
-
-        {scheduleUrl ? (
-          <nav aria-label="次の資格で日程と学習先を確認" className="mt-5 rounded-2xl border border-sky-200 bg-sky-50 p-4 text-sm dark:border-sky-900 dark:bg-sky-950/30">
-            <p className="font-semibold text-sky-950 dark:text-sky-100">この資格の次の一歩</p>
-            <div className="mt-2 flex flex-col gap-2">
-              <a href={scheduleUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center font-semibold text-sky-800 underline underline-offset-2 dark:text-sky-200">
-                試験日・申込締切を次の資格で確認 ↗
-              </a>
-              {learningUrl ? (
-                <a href={learningUrl} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-11 items-center font-semibold text-sky-800 underline underline-offset-2 dark:text-sky-200">
-                  対応する学習・教材を次の資格で選ぶ ↗
-                </a>
-              ) : null}
-            </div>
-          </nav>
-        ) : null}
+          </details>
+        )}
 
         {/* 旗艦＝午後II論述AI採点への導線。論述区分 (ST/SA/PM/SM/AU) を解き終えた
             読者にだけ 1 回だけ提示する（解説カードと違い問題ごとに繰り返さない）。

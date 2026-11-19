@@ -59,11 +59,6 @@ export default function EssayHomePage() {
         {ESSAY_EXAM_CODES.map((exam) => (
           <section key={exam} className="rounded-2xl border border-border p-5">
             <h2 className="font-semibold">{examLabel(exam)}</h2>
-            {exam === "pm" && (
-              <Link href="/essay/preview" className="mt-3 inline-block text-sm font-medium text-primary underline underline-offset-4">
-                ヒアリングから論文を組み立てる例を見る
-              </Link>
-            )}
             <ul className="mt-3 space-y-3 text-sm">
               {getEssayQuestionsByExam(exam).map((question) => (
                 <li key={question.id}>
@@ -71,18 +66,22 @@ export default function EssayHomePage() {
                 </li>
               ))}
             </ul>
+            {exam === "pm" && <details className="mt-3">
+              <summary className="min-h-11 cursor-pointer py-3 text-sm font-medium">プロジェクトマネージャの資料</summary>
+              <Link href="/essay/preview" className="inline-block py-2 text-sm text-primary underline">ヒアリングから論文を組み立てる例を見る</Link>
+            </details>}
           </section>
         ))}
       </div>
-      <section className="mt-6 rounded-2xl border border-border p-5">
-        <h2 className="font-semibold">論述の書き方・採点を学ぶ</h2>
+      <details className="mt-6 rounded-2xl border border-border px-5 pb-3">
+        <summary className="min-h-11 cursor-pointer py-3 font-semibold">論述の書き方・参考書</summary>
         <ul className="mt-3 space-y-2 text-sm">
           {ESSAY_GUIDE_POSTS.map((p) => (
             <li key={p.slug}><Link href={`/blog/${p.slug}`} className="text-primary hover:underline">{p.label}</Link></li>
           ))}
           <li><Link href="/recommended-books" className="text-primary hover:underline">論文対策の参考書</Link></li>
         </ul>
-      </section>
+      </details>
     </main>
   );
 }

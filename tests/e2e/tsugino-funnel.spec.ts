@@ -76,10 +76,10 @@ for (const width of [390, 1440]) {
     await page.setViewportSize({ width, height: 900 });
     const events = await isolateNetwork(page);
     await page.goto(`/fp3/2024-published?${utm}`);
-    const welcome = page.getByRole("complementary", { name: "次の資格からお越しの方へ" });
+    const welcome = page.getByRole("region", { name: "今すぐ解く" });
     await expect(welcome).toBeVisible();
     await expect(page.getByRole("dialog")).toHaveCount(0);
-    const start = welcome.getByRole("link", { name: "1問目から無料で解く" });
+    const start = welcome.getByRole("link", { name: /まず10問|今すぐ解く/ });
     const href = new URL((await start.getAttribute("href"))!, page.url());
     expect(href.searchParams.get("exam")).toBe("fp3");
     expect(href.searchParams.get("year")).toBe("2024");

@@ -35,6 +35,8 @@ export function SubscriptionEnding({ initial, today }: { initial: SubscriptionMa
       const result = await response.json() as { management: SubscriptionManagement | null; error?: string };
       if (!response.ok) {
         setError(result.error === "invalid_exam_date" ? "受験日を選び直してください。" :
+          result.error === "app_store_subscription_exists" ? "App Storeの契約が有効な間は、終了予約を解除・延長できません。" :
+          result.error === "app_store_purchase_pending" ? "App Storeで支払いを処理中のため、終了予約を解除・延長できません。" :
           result.error === "subscription_ending_conflict" ? "契約状況が変わりました。ページを開き直してください。" : "変更を確認できませんでした。もう一度お試しください。");
         return;
       }

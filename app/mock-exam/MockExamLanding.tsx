@@ -10,7 +10,6 @@ import {
   loadActiveSession,
   type MockExamActiveSession,
 } from "@/lib/mock-exam/session";
-import type { SelectionMode } from "@/lib/mock-exam/selection";
 import type {
   MockExamFetchResponse,
   SlimMockQuestion,
@@ -26,11 +25,6 @@ import { MockExamRunner } from "./MockExamRunner";
 
 const AVAILABLE_EXAMS = Object.keys(MOCK_EXAM_CONFIGS) as MockExamCode[];
 
-const MODE_OPTIONS: { id: SelectionMode; label: string; hint: string }[] = [
-  { id: "balanced", label: "分野バランス", hint: "本番の分野構成比を維持" },
-  { id: "random", label: "完全ランダム", hint: "プールから無作為抽出" },
-];
-
 export function MockExamLanding({ examFromQuery, returnTo, countFromQuery }: { examFromQuery?: string; returnTo?: string; countFromQuery?: string }) {
   if (examFromQuery !== undefined && !isMockExamCode(examFromQuery)) {
     const knownExam = Object.hasOwn(EXAM_LABELS, examFromQuery);
@@ -39,8 +33,7 @@ export function MockExamLanding({ examFromQuery, returnTo, countFromQuery }: { e
         <h1 className="text-2xl font-bold">この資格の模試は未対応です</h1>
         <p className="mt-3 text-sm text-muted-foreground">{knownExam ? `${examLabel(examFromQuery)}の` : "指定された資格の"}本番形式の模試は提供していません。</p>
         <div className="mt-6 flex flex-wrap gap-3">
-          <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="primary"><Link href={knownExam ? quizBackHref({ exam: examFromQuery, returnTo }) : "/#choose-qualification"}>{knownExam ? `${examLabel(examFromQuery)}に戻る` : "資格を選ぶ"}</Link></Button>
-          <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="outline"><Link href="/mock-exam">対応している資格の模試を選ぶ</Link></Button>
+          <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="primary"><Link href={knownExam ? quizBackHref({ exam: examFromQuery, returnTo }) : "/search"}>{knownExam ? `${examLabel(examFromQuery)}に戻る` : "資格を選ぶ"}</Link></Button>
         </div>
       </main>
     );
@@ -51,7 +44,6 @@ export function MockExamLanding({ examFromQuery, returnTo, countFromQuery }: { e
 
 function SupportedMockExamLanding({ initialExam, returnTo, countFromQuery }: { initialExam: MockExamCode; returnTo?: string; countFromQuery?: string }) {
   const [exam, setExam] = React.useState<MockExamCode>(initialExam);
-  const [mode, setMode] = React.useState<SelectionMode>("balanced");
   const [countChoice, setCountChoice] = React.useState(countFromQuery ?? "full");
   const [questions, setQuestions] = React.useState<SlimMockQuestion[] | null>(
     null,
@@ -88,7 +80,7 @@ function SupportedMockExamLanding({ initialExam, returnTo, countFromQuery }: { i
     setError(null);
     setResumeState(null);
     try {
-      const res = await fetch(`/api/mock-exam/${exam}?mode=${mode}&count=${questionCount}`, {
+      const res = await fetch(`/api/mock-exam/${exam}?mode=balanced&count=${questionCount}`, {
         cache: "no-store",
       });
       if (!res.ok) {
@@ -150,11 +142,10 @@ function SupportedMockExamLanding({ initialExam, returnTo, countFromQuery }: { i
 
   return (
     <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-10 pt-8 sm:px-6 min-h-[640px]">
-      <Link href={quizBackHref({ exam, returnTo: exam === initialExam ? returnTo : undefined })} className="mb-4 inline-flex min-h-11 items-center text-sm text-muted-foreground hover:underline">← 試験ページに戻る</Link>
       <Breadcrumbs
         className="[&_a]:inline-flex [&_a]:min-h-11 [&_a]:min-w-11 [&_a]:items-center"
         items={[
-          { name: "ホーム", href: "/" },
+          { name: examLabel(exam), href: quizBackHref({ exam, returnTo: exam === initialExam ? returnTo : undefined }) },
           { name: "模試モード", href: "/mock-exam" },
         ]}
       />
@@ -197,6 +188,9 @@ function SupportedMockExamLanding({ initialExam, returnTo, countFromQuery }: { i
               >
                 再開する
               </Button>
+            </div>
+            <details className="mt-2">
+              <summary className="min-h-11 cursor-pointer py-3 text-sm">中断した模試の管理</summary>
               <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
                 variant="ghost"
                 size="sm"
@@ -204,7 +198,7 @@ function SupportedMockExamLanding({ initialExam, returnTo, countFromQuery }: { i
               >
                 破棄する
               </Button>
-            </div>
+            </details>
           </CardContent>
         </Card>
       )}
@@ -228,44 +222,9 @@ function SupportedMockExamLanding({ initialExam, returnTo, countFromQuery }: { i
             />
           </div>
 
-          <label className="mt-5 block text-sm font-medium">演習する問題数
-            <select value={String(questionCount)} onChange={(event) => setCountChoice(event.target.value)} className="mt-2 block min-h-11 w-full rounded-xl border border-border bg-background px-3">
-              {countOptions.map((count) => <option key={count} value={count}>{count === config.questions ? `全問（${count}問）` : `${count}問（短時間演習）`}</option>)}
-            </select>
-          </label>
           {questionCount < config.questions ? <p className="mt-2 text-xs text-muted-foreground">短時間演習です。制限時間は本番形式の問題数に比例して設定します。</p> : null}
 
-          <div className="mt-5">
-            <div className="mb-2 text-xs font-semibold text-zinc-500">
-              出題モード
-            </div>
-            <div className="grid grid-cols-2 gap-2">
-              {MODE_OPTIONS.map((o) => {
-                const active = mode === o.id;
-                return (
-                  <button
-                    key={o.id}
-                    type="button"
-                    aria-pressed={active}
-                    onClick={() => setMode(o.id)}
-                    className={`rounded-xl border px-3 py-2 text-left transition ${
-                      active
-                        ? "border-sky-400 bg-sky-50 dark:border-sky-600 dark:bg-sky-950/40"
-                        : "border-zinc-200 hover:border-zinc-300 dark:border-zinc-700 dark:hover:border-zinc-600"
-                    }`}
-                  >
-                    <div className="text-xs font-semibold">{o.label}</div>
-                    <div className="mt-0.5 text-[11px] text-zinc-500">
-                      {o.hint}
-                    </div>
-                  </button>
-                );
-              })}
-            </div>
-          </div>
-
-
-          <div className="mt-5">
+          {!savedSession && <div className="mt-5">
             <Button
               onClick={startMock}
               variant="primary"
@@ -290,19 +249,19 @@ function SupportedMockExamLanding({ initialExam, returnTo, countFromQuery }: { i
             <p className="mt-2 text-center text-[11px] text-zinc-500">
               中断してもブラウザを閉じるまでは再開できます。タイマーは経過時間で継続します。
             </p>
-          </div>
+          </div>}
         </CardContent>
       </Card>
 
       {/* History area: reserve space to prevent CLS when localStorage history loads */}
-      <div className="mt-6 min-h-[200px]" aria-live="polite">
+      <div className="mt-6" aria-live="polite">
       {!ready ? (
         <div className="flex h-[200px] items-center justify-center" aria-hidden="true">
           <Loader2 className="h-4 w-4 animate-spin text-zinc-400" />
         </div>
       ) : history.length > 0 ? (
-        <>
-          <h2 className="mb-3 text-sm font-semibold">過去の模試 ({history.length}回)</h2>
+        <details className="rounded-xl border border-border px-4 pb-2">
+          <summary className="min-h-11 cursor-pointer py-3 text-sm font-semibold">過去の模試 ({history.length}回)</summary>
           {trend.length >= 2 && <ScoreTrend results={trend} pass={config.passThreshold} />}
           <Card className="mt-3">
             <CardContent className="pt-5">
@@ -346,7 +305,7 @@ function SupportedMockExamLanding({ initialExam, returnTo, countFromQuery }: { i
               </ul>
             </CardContent>
           </Card>
-        </>
+        </details>
       ) : null}
       </div>
 

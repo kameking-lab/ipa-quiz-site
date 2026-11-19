@@ -1,5 +1,17 @@
 import { test, expect } from "@playwright/test";
 
+test("the shared menu opens the monthly plan before reaching the free limit", async ({ page }) => {
+  await page.goto("/");
+  const header = page.getByRole("navigation", { name: "グローバルナビゲーション" });
+  await header.getByRole("link", { name: "メニュー", exact: true }).click();
+  const menu = page.getByRole("navigation", { name: "わたしのメニュー" });
+  const plan = menu.getByRole("link", { name: "料金・月額プラン", exact: true });
+  await expect(plan).toHaveCount(1);
+  await plan.click();
+  await expect(page).toHaveURL(/\/billing$/);
+  await expect(page.getByRole("heading", { name: "月額プラン", exact: true })).toBeVisible();
+});
+
 // 教育貢献プロジェクト方針により /pricing は恒久削除済み。middleware の GONE_PATHS で
 // 410 Gone を返す（404 より強い「もう辿らなくてよい」シグナルでクロール資産を回復）。
 // 詳細は middleware.ts と smoke-routes.spec.ts を参照。

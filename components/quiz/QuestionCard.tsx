@@ -38,9 +38,6 @@ export function QuestionCard({
         )}
       </div>
       <div className="selectable-content rounded-2xl border border-border bg-card p-5 text-base leading-relaxed text-card-foreground shadow-sm">
-        <div className="mb-2 flex justify-end">
-          <TTSButton text={question.question} label="読み上げ" />
-        </div>
         {question.lawReferenceDate && (
           <p className="mb-3 text-sm font-medium text-muted-foreground">
             法令基準日: {question.lawReferenceDate}（この日の制度で解答）
@@ -49,6 +46,10 @@ export function QuestionCard({
         <QuestionSourcePresentation question={question} phase="before" />
         <QuestionBody text={question.question} />
         <QuestionFigures question={question} />
+        <details className="mt-2 text-sm text-muted-foreground">
+          <summary className="min-h-11 cursor-pointer py-3">表示と読み上げ</summary>
+          <TTSButton text={question.question} label="読み上げ" />
+        </details>
         {hasUnrenderableContent(question) && (
           <div className="mt-3 flex items-start gap-1.5 rounded-xl border border-amber-200 bg-amber-50/70 px-3 py-2 text-xs text-amber-800 dark:border-amber-700/50 dark:bg-amber-950/30 dark:text-amber-200">
             <span className="shrink-0">※</span>

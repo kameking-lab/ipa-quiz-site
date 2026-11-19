@@ -2,7 +2,6 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { LS_KEYS } from "@/lib/storage/keys";
 import type { ExamCode } from "@/lib/questions/types";
 import type { HistoryEntry } from "@/lib/storage/history";
@@ -27,17 +26,19 @@ function loadEntries(): HistoryEntry[] {
 export function ExamProgressBar({ exam, totalQuestions }: Props) {
   const [progress, setProgress] = React.useState<{
     answered: number;
+    wrong: number;
     correct: number;
     accuracy: number;
   } | null>(null);
 
   React.useEffect(() => {
     const entries = loadEntries().filter((e) => e.id.startsWith(`${exam}-`));
-    const uniqueIds = new Set(entries.map((e) => e.id));
+    const latest = new Map(entries.map((entry) => [entry.id, entry.correct]));
     const correctEntries = entries.filter((e) => e.correct);
      
     setProgress({
-      answered: uniqueIds.size,
+      answered: latest.size,
+      wrong: [...latest.values()].filter((correct) => !correct).length,
       correct: correctEntries.length,
       accuracy: entries.length > 0 ? correctEntries.length / entries.length : 0,
     });
@@ -75,15 +76,11 @@ export function ExamProgressBar({ exam, totalQuestions }: Props) {
           style={{ width: `${pct}%` }}
         />
       </div>
-      <div className="mt-3 flex justify-end">
-        <Link
-          href="/account/dashboard"
-          className="inline-flex min-h-11 items-center gap-1 text-xs text-sky-600 hover:underline dark:text-sky-400"
-        >
-          ダッシュボードで詳細を見る
-          <ArrowRight className="h-3 w-3" />
+      {progress.wrong > 0 && (
+        <Link href={'/quiz?' + new URLSearchParams({ mode: "review", exam, reviewKind: "wrong" })} className="mt-2 inline-flex min-h-11 items-center text-sm underline">
+          間違えた問題を復習
         </Link>
-      </div>
+      )}
     </div>
   );
 }

@@ -115,11 +115,11 @@ describe("第一種電気工事士 令和8年度上期学科(出題例)", () => 
     for (const reason of Object.values(q.choiceExplanations ?? {})) {
       expect(context).toContain(reason);
     }
-    render(createElement(ExplanationCard, { question: q, selected: "イ", isCorrect: false, starred: false,
-      onToggleStar: () => {}, onNext: () => {}, onAskAI: () => {} }));
+    render(createElement(ExplanationCard, { question: q, selected: "イ", isCorrect: false,
+      onNext: () => {}, }));
     expect(screen.getByRole("region", { name: "不正解の解説" })).toBeTruthy();
     expect(screen.getByRole("region", { name: "不正解の解説" }).textContent).toContain(q.choiceExplanations?.イ);
-    expect(screen.getByText("選択肢ごとの解説")).toBeTruthy();
+    expect(screen.getByRole("region", { name: "選択肢ごとの解説" })).toBeTruthy();
   });
 
   it("names the examination center as author without a reuse-terms link in JSON-LD", () => {

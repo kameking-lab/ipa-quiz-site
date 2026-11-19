@@ -1,0 +1,386 @@
+[
+  {
+    "id": "sokuryoshi-2024-annual-am-q1",
+    "exam": "sokuryoshi",
+    "year": 2024,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 1,
+    "examDate": "2024-05-19",
+    "type": "multiple-choice",
+    "category": "測量法の定義",
+    "topicTags": [
+      "測量法の定義"
+    ],
+    "difficulty": 3,
+    "question": "次のa〜eの文は、測量法（昭和24年法律第188号）に規定された事項について述べたものである。明らかに間違っているものだけを全て含む組合せはどれか。\n\na. 基本測量及び公共測量以外の測量とは、基本測量及び公共測量の測量成果を使用しないで実施する測量である。\nb. 測量作業機関とは、測量計画機関の指示又は委託を受けて測量作業を実施する者をいう。\nc. 測量標とは、永久標識、一時標識及び仮設標識をいう。\nd. 測量業者は、その営業所ごとに測量士又は測量士補を一人以上置かなければならない。\ne. 測量業者は、その業務を誠実に行い、常に測量成果の正確さの確保に努めなければならない。",
+    "choices": {
+      "ア": "a、d",
+      "イ": "a、d、e",
+      "ウ": "b、c",
+      "エ": "b、c、e",
+      "オ": "d"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "〔No. 1〕",
+    "explanation": "基本測量及び公共測量以外の測量も、基本測量又は公共測量の成果を使用する。各営業所に置く必要があるのは測量士であり、測量士補だけでは要件を満たさない。",
+    "choiceExplanations": {
+      "ア": "aは測量成果を使用しないとしており、dは測量士補でも足りるとしている。どちらも測量法の定めと異なる。",
+      "イ": "aとdは誤っているが、eの誠実な業務の実施と測量成果の正確さの確保に努める義務は正しい。",
+      "ウ": "bの測量作業機関とcの測量標の定義はどちらも測量法の規定に合っている。",
+      "エ": "bとcの定義は規定に合っている。eも測量業者が守るべき職責の説明である。",
+      "オ": "dは測量士補でも足りるとしている点が誤りだが、aの測量の定義も誤っている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.gsi.go.jp/common/000257603.pdf#page=3",
+    "sourceAnswerUrl": "https://www.gsi.go.jp/common/000259611.pdf",
+    "license": "GSI-attributed",
+    "lastUpdated": "2026-11-19",
+    "sourceAttribution": "出典：国土地理院 令和6年測量士試験 午前 No.1。解説は過去問AI作成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/324AC0000000188?occasion_date=20240519"
+    ]
+  },
+  {
+    "id": "sokuryoshi-2024-annual-am-q2",
+    "exam": "sokuryoshi",
+    "year": 2024,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 2,
+    "examDate": "2024-05-19",
+    "type": "multiple-choice",
+    "category": "ITRFの座標軸",
+    "topicTags": [
+      "ITRFの座標軸"
+    ],
+    "difficulty": 3,
+    "question": "次の1〜5の文は、国際地球基準座標系（以下「ITRF」という。）について述べたものである。明らかに間違っているものはどれか。",
+    "choices": {
+      "ア": "ITRFは、GNSSやVLBIなどの宇宙測地技術を用いた国際協力による観測に基づき構築・維持されている。",
+      "イ": "ITRFのX軸は、回転楕円体の中心及び経度0°の子午線と赤道との交点を通る直線であり、回転楕円体の中心から経度0°の子午線と赤道との交点に向かう値は正である。",
+      "ウ": "ITRFのY軸は、回転楕円体の中心及び西経90°の子午線と赤道との交点を通る直線であり、回転楕円体の中心から西経90°の子午線と赤道との交点に向かう値は正である。",
+      "エ": "ITRFのZ軸は、回転楕円体の短軸と一致し、回転楕円体の中心から北に向かう値は正である。",
+      "オ": "日本経緯度原点の位置をITRFで表すと、X、Y、Zの符号は、それぞれXは−、Yは＋、Zは＋である。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "〔No. 2〕",
+    "explanation": "Y軸の正の向きは赤道と東経90°の子午線との交点に向かう方向である。西経90°とした記述は誤っている。",
+    "choiceExplanations": {
+      "ア": "GNSSやVLBIをはじめとする測地観測を国際的に組み合わせ、共通の座標系を実現している。",
+      "イ": "X軸は地球の中心から赤道上の経度0°の方向を正とする。",
+      "ウ": "Y軸が正になるのは東経90°の方向である。西経90°は負の方向に当たる。",
+      "エ": "Z軸の正の向きは北極方向で、回転楕円体の短軸に沿う。",
+      "オ": "原点は北緯で東経90°より東かつ東経180°より西にあるため、ZとYが正、Xが負になる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.gsi.go.jp/common/000257603.pdf#page=3",
+    "sourceAnswerUrl": "https://www.gsi.go.jp/common/000259611.pdf",
+    "license": "GSI-attributed",
+    "lastUpdated": "2026-11-19",
+    "sourceAttribution": "出典：国土地理院 令和6年測量士試験 午前 No.2。解説は過去問AI作成。"
+  },
+  {
+    "id": "sokuryoshi-2024-annual-am-q3",
+    "exam": "sokuryoshi",
+    "year": 2024,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 3,
+    "examDate": "2024-05-19",
+    "type": "multiple-choice",
+    "category": "公共測量の計画と製品仕様",
+    "topicTags": [
+      "公共測量の計画と製品仕様"
+    ],
+    "difficulty": 3,
+    "question": "次の1〜5の文は、地理情報標準プロファイル（以下「JPGIS」という。）について述べたものである。明らかに間違っているものはどれか。",
+    "choices": {
+      "ア": "JPGISは、異なる使用者、システム及び場所の間において地理空間データを取得、処理、解析、アクセス、表現及び転送するための手法、手段及びサービスを実現するために最低限必要となる基本的な要素を整理したものである。",
+      "イ": "JPGISでは、地理空間データを作成する場合においては、XML形式やGML形式で符号化することを推奨している。",
+      "ウ": "JPGISでは、画像データについて特定の形式を指定しておらず、一般的に使用されている形式を使用できる。",
+      "エ": "JPGISは、地球上の位置と直接的に関連付けられたオブジェクトのみに関する情報処理技術のための実用標準である。",
+      "オ": "JPGISでは、JMP2.0仕様書（日本版メタデータプロファイル）を使用してメタデータを作成することとしている。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "officialQuestionLabel": "〔No. 3〕",
+    "explanation": "JPGISは地球上の位置と直接的又は間接的に関連付けられるオブジェクトや現象を対象とする。直接的位置との関連があるものだけに限定する点が誤りである。",
+    "choiceExplanations": {
+      "ア": "異なるシステムや利用者間で地理空間データをやり取りできるよう、規格から基本的な項目を整理している。",
+      "イ": "XMLやGMLは、応用スキーマで定義したデータを交換できる形に符号化する際に使える。",
+      "ウ": "画像データは一般に使用されている形式を用いることができ、画像ファイルの方式を一種類に限っていない。",
+      "エ": "位置と間接的に関連する現象も含むため、直接的に関連するオブジェクトだけとした説明が誤っている。",
+      "オ": "データの内容や品質などの情報の記述には、日本版メタデータプロファイルの仕様書が用いられる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.gsi.go.jp/common/000257603.pdf#page=4",
+    "sourceAnswerUrl": "https://www.gsi.go.jp/common/000259611.pdf",
+    "license": "GSI-attributed",
+    "lastUpdated": "2026-11-19",
+    "sourceAttribution": "出典：国土地理院 令和6年測量士試験 午前 No.3。解説は過去問AI作成。"
+  },
+  {
+    "id": "sokuryoshi-2024-annual-am-q5",
+    "exam": "sokuryoshi",
+    "year": 2024,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 5,
+    "examDate": "2024-05-19",
+    "type": "multiple-choice",
+    "category": "正規分布",
+    "topicTags": [
+      "正規分布"
+    ],
+    "difficulty": 3,
+    "question": "ある距離の偶然誤差だけを含む一群の測定値について、平均値が80.000 m、標準偏差が0.010 mの結果を得た。測定値の分布が近似的に正規分布に従うと仮定した場合、測定値が80.005 mと80.010 mの間になる確率は幾らか。最も近いものを選べ。\n\nただし、必要に応じて表5の正規分布表（上側確率）の値を使用すること。",
+    "choices": {
+      "ア": "15.0％",
+      "イ": "15.9％",
+      "ウ": "22.7％",
+      "エ": "30.9％",
+      "オ": "46.7％"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "〔No. 5〕",
+    "explanation": "標準化すると0.5＜z＜1.0の確率を求める問題になる。上側確率の差0.30854−0.15866=0.14988なので、約15.0％である。",
+    "choiceExplanations": {
+      "ア": "0.5と1.0の上側確率を引くと約0.150で、区間内に入る確率が求まる。",
+      "イ": "約15.9％はzが1.0より大きい側の確率で、求める区間の外側に当たる。",
+      "ウ": "22.7％は区間の両端の上側確率の差として求めた値と一致しない。",
+      "エ": "約30.9％はzが0.5より大きい確率全体で、上限の1.0より大きい部分も含んでいる。",
+      "オ": "約46.7％は両端の上側確率を足した値に近い。重なる上側の領域を取り除くには差を取る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.gsi.go.jp/common/000257603.pdf#page=6",
+    "sourceAnswerUrl": "https://www.gsi.go.jp/common/000259611.pdf",
+    "license": "GSI-attributed",
+    "lastUpdated": "2026-11-19",
+    "sourceAttribution": "出典：国土地理院 令和6年測量士試験 午前 No.5。表は公式PDFから切り出し。解説は過去問AI作成。",
+    "imageUrls": [
+      "/images/questions/sokuryoshi/2024/am-q5.png"
+    ],
+    "imageAltTexts": [
+      "表5 正規分布表（上側確率）"
+    ]
+  },
+  {
+    "id": "sokuryoshi-2023-annual-am-q1",
+    "exam": "sokuryoshi",
+    "year": 2023,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 1,
+    "examDate": "2023-05-21",
+    "type": "multiple-choice",
+    "category": "測量法の定義",
+    "topicTags": [
+      "測量法の定義"
+    ],
+    "difficulty": 3,
+    "question": "次のa〜eの文は、測量法（昭和24年法律第188号）に規定された事項について述べたものである。明らかに間違っているものだけを全て含む組合せはどれか。\n\na. 公共測量とは、その実施に要する費用の全部又は一部について国又は公共団体の負担を受けて行われる測量をいい、国又は公共団体からの補助を受けて行う測量を含まない。\nb. 測量計画機関は、公共測量において永久標識又は一時標識を設置したときは、関係市町村長に通知するとともに、インターネット等で公表しなければならない。\nc. 山林原野等で基本測量を実施する者は、あらかじめ所有者等の承諾を得ることが困難であり、かつ植物又は垣、柵等の現状を著しく損傷しないときは、承諾を得ずにこれらを伐除できる。この場合においては、遅滞なく、その旨を所有者等に通知しなければならない。\nd. 基本測量の測量成果及び測量記録の謄本又は抄本の交付を受けようとする者は、国土交通省令で定めるところにより、国土地理院の長に申請をしなければならない。\ne. 基本測量及び公共測量以外の測量とは、基本測量及び公共測量以外の測量成果を使用して実施する測量をいう。",
+    "choices": {
+      "ア": "a、b、e",
+      "イ": "a、c、d",
+      "ウ": "a、d",
+      "エ": "b、c、e",
+      "オ": "c、d"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "〔No. 1〕",
+    "explanation": "公共測量の定義では国等からの補助も対象になりうる。永久標識の設置に関する通知先や、基本測量及び公共測量以外の測量に使う成果についての説明も誤っている。",
+    "choiceExplanations": {
+      "ア": "aは補助を除く点が誤りで、bは標識の設置時の通知先・手続の説明が誤っている。eも使用する成果についての法の定義と異なる。",
+      "イ": "aは誤っているが、cの伐除の例外と事後の通知、dの交付申請先は測量法に合っている。",
+      "ウ": "aの公共測量の範囲には誤りがあるが、dの国土地理院の長への申請は正しい。",
+      "エ": "bとeは誤りだが、cのように所有者の承諾が困難で損傷が著しくない場合には、事後通知を伴う伐除が認められる。",
+      "オ": "cの例外と事後通知も、dの国土地理院の長への申請も、いずれも法の定めに合っている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.gsi.go.jp/common/000249816.pdf#page=3",
+    "sourceAnswerUrl": "https://www.gsi.go.jp/common/000250861.pdf",
+    "license": "GSI-attributed",
+    "lastUpdated": "2026-11-19",
+    "sourceAttribution": "出典：国土地理院 令和5年測量士試験 午前 No.1。解説は過去問AI作成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/324AC0000000188?occasion_date=20230521"
+    ]
+  },
+  {
+    "id": "sokuryoshi-2023-annual-am-q2",
+    "exam": "sokuryoshi",
+    "year": 2023,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 2,
+    "examDate": "2023-05-21",
+    "type": "multiple-choice",
+    "category": "ITRFの座標軸",
+    "topicTags": [
+      "ITRFの座標軸"
+    ],
+    "difficulty": 3,
+    "question": "次のa〜eの文は、国際地球基準座標系（以下「ITRF」という。）について述べたものである。明らかに間違っているものだけを全て含む組合せはどれか。\n\na. ITRFにおける地球上の位置は、三次元直交座標（X、Y、Z）で表される。\nb. 日本の測地成果は、ITRFが更新されると連動して更新される。\nc. ITRFのX軸は、回転楕円体の中心及び経度0°の子午線と赤道との交点を通る直線であり、回転楕円体の中心から経度0°の子午線と赤道との交点に向かう値は正である。\nd. ITRFのY軸は、回転楕円体の中心及び東経90°の子午線と赤道との交点を通る直線であり、回転楕円体の中心から東経90°の子午線と赤道との交点に向かう値は正である。\ne. 日本列島の位置をITRFで表すと、X、Y、Zの値域は、X＜0、Y＞0、Z＞0であり、札幌市役所から那覇市役所に向かうベクトル（ΔX、ΔY、ΔZ）の符号は（負、正、負）となる。",
+    "choices": {
+      "ア": "a、b、d",
+      "イ": "a、d",
+      "ウ": "b、c、e",
+      "エ": "b、e",
+      "オ": "c、d"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "officialQuestionLabel": "〔No. 2〕",
+    "explanation": "日本の測地成果はITRFの更新のたびに自動で改定されるものではない。札幌から那覇への差では那覇のX座標のほうが大きいため、ΔXは正になる。",
+    "choiceExplanations": {
+      "ア": "bは誤りだが、aの三次元直交座標とdのY軸の正方向はいずれも正しい。",
+      "イ": "aの座標の形式、dのY軸の方向はともにITRFの定義に合っている。",
+      "ウ": "bとeは誤りだが、経度0°と赤道の交点に向かう方向をXの正としたcは正しい。",
+      "エ": "国内測地成果はITRFに連動して自動更新されず、那覇のXは札幌より負の程度が小さいためΔXは正になる。",
+      "オ": "Xの正方向は赤道上の経度0°、Yの正方向は赤道上の東経90°なので、cもdも正しい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.gsi.go.jp/common/000249816.pdf#page=4",
+    "sourceAnswerUrl": "https://www.gsi.go.jp/common/000250861.pdf",
+    "license": "GSI-attributed",
+    "lastUpdated": "2026-11-19",
+    "sourceAttribution": "出典：国土地理院 令和5年測量士試験 午前 No.2。解説は過去問AI作成。"
+  },
+  {
+    "id": "sokuryoshi-2023-annual-am-q3",
+    "exam": "sokuryoshi",
+    "year": 2023,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 3,
+    "examDate": "2023-05-21",
+    "type": "multiple-choice",
+    "category": "公共測量の計画と製品仕様",
+    "topicTags": [
+      "公共測量の計画と製品仕様"
+    ],
+    "difficulty": 3,
+    "question": "次の文は、地理情報標準プロファイル（以下「JPGIS」という。）について述べたものである。明らかに間違っているものはどれか。",
+    "choices": {
+      "ア": "JPGISは、地理情報に関する国際規格（ISO規格）及び日本産業規格の中から、必要となる基本的な要素を抽出し、体系化したものである。",
+      "イ": "JPGISに準拠する応用スキーマで定義された地理空間データは、統一モデル化言語（UML）を用いて符号化される。",
+      "ウ": "JPGISに準拠して整備されたデータが全て同じXML形式で作成されているわけではない。",
+      "エ": "測量計画機関が定める製品仕様書には、得ようとする測量成果の種類、内容、構造、品質等を示さなければならない。",
+      "オ": "JPGISに準拠した製品仕様書のデータ品質要素の検査は、最初に書式一貫性、次に概念一貫性の順で検査を行う。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "〔No. 3〕",
+    "explanation": "UMLは地理空間データの応用スキーマの記述に使う。データの符号化にはXMLやGMLなどが使われ、モデルの記述とデータの符号化は別の工程である。",
+    "choiceExplanations": {
+      "ア": "関連するISO規格やJISから実務上必要な要素を選び、組み合わせている。",
+      "イ": "UMLは応用スキーマの表現に使う記法である。地理空間データそのものをUMLで符号化するという説明は誤っている。",
+      "ウ": "準拠は必ず特定のXML形式で配布することを意味せず、製品仕様に応じたデータ形式が使われる。",
+      "エ": "発注・受注の双方が成果を同じ基準で確認できるよう、製品仕様書では成果の種類や構造、品質などを明示する。",
+      "オ": "まず所定の書式で記録されているかを確かめ、その上で概念スキーマの制約に適合するかを確認する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.gsi.go.jp/common/000249816.pdf#page=4",
+    "sourceAnswerUrl": "https://www.gsi.go.jp/common/000250861.pdf",
+    "license": "GSI-attributed",
+    "lastUpdated": "2026-11-19",
+    "sourceAttribution": "出典：国土地理院 令和5年測量士試験 午前 No.3。解説は過去問AI作成。"
+  },
+  {
+    "id": "sokuryoshi-2022-annual-am-q1",
+    "exam": "sokuryoshi",
+    "year": 2022,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 1,
+    "examDate": "2022-05-15",
+    "type": "multiple-choice",
+    "category": "測量法の定義",
+    "topicTags": [
+      "測量法の定義"
+    ],
+    "difficulty": 3,
+    "question": "次のa〜eの文は、測量法（昭和24年法律第188号）に規定された事項について述べたものである。明らかに間違っているものだけを全て含む組合せはどれか。\n\na. 「基本測量及び公共測量以外の測量」とは、基本測量又は公共測量の測量成果を使用して実施する基本測量及び公共測量以外の測量（建物に関する測量その他の局地的測量又は小縮尺図の調製その他の高度の精度を必要としない測量で政令で定めるものを除く。）をいう。\nb. 測量士又は測量士補となる資格を有する者は、測量士又は測量士補になろうとする場合においては、国土地理院の長に対してその資格を証する書類を添えて、測量士名簿又は測量士補名簿に登録の申請をしなければならない。\nc. 測量計画機関は、自ら測量作業機関となることはできない。\nd. 公共測量の測量成果を使用して測量を実施しようとする者は、あらかじめ、当該測量成果を得た測量作業機関の承認を得なければならない。\ne. 測量計画機関は、公共測量の測量成果を得たときは、遅滞なく、その写を国土交通大臣に送付しなければならない。",
+    "choices": {
+      "ア": "a、b、d",
+      "イ": "a、b、e",
+      "ウ": "a、c、d",
+      "エ": "b、c、e",
+      "オ": "c、d、e"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "officialQuestionLabel": "〔No. 1〕",
+    "explanation": "測量計画機関は自ら測量作業機関となることができる。成果使用を承認するのは測量計画機関で、公共測量の成果の写しは国土地理院の長へ送付する。",
+    "choiceExplanations": {
+      "ア": "dの承認主体は作業機関ではないが、aの測量の定義とbの資格の登録手続は正しい。",
+      "イ": "eは成果の送付先が誤っている。aの定義とbの登録先は測量法の定めに沿っている。",
+      "ウ": "cとdは間違いだが、政令で定める局地的な測量などを除くとしたaの説明は正しい。",
+      "エ": "cとeは間違いだが、bの国土地理院の長への登録申請は必要である。",
+      "オ": "cは計画機関が自ら測量できる点、dは承認主体、eは成果の送付先がそれぞれ規定と異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.gsi.go.jp/common/000240135.pdf#page=3",
+    "sourceAnswerUrl": "https://www.gsi.go.jp/common/000241385.pdf",
+    "license": "GSI-attributed",
+    "lastUpdated": "2026-11-19",
+    "sourceAttribution": "出典：国土地理院 令和4年測量士試験 午前 No.1。解説は過去問AI作成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/324AC0000000188?occasion_date=20220515"
+    ]
+  },
+  {
+    "id": "sokuryoshi-2022-annual-am-q3",
+    "exam": "sokuryoshi",
+    "year": 2022,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 3,
+    "examDate": "2022-05-15",
+    "type": "multiple-choice",
+    "category": "公共測量の計画と製品仕様",
+    "topicTags": [
+      "公共測量の計画と製品仕様"
+    ],
+    "difficulty": 3,
+    "question": "次の文は、地理情報標準プロファイル（以下「JPGIS」という。）について述べたものである。［ア］〜［オ］に入る語句の組合せとして最も適当なものはどれか。\n\nJPGISは、地理情報に関する国際規格（ISO規格）及び日本産業規格（JIS規格）の中から、地理空間情報の概念［ア］を記述し符号化するために必要となる基本的な［イ］を抽出し、［ウ］したもので、地球上の位置と直接的又は間接的に関連付けられた［エ］又は現象に関する情報処理技術のための実用標準である。\n測量計画機関が公共測量を実施するときは、得ようとする測量成果の種類、内容、構造、品質等を示すための、［オ］をJPGISに準拠して定めなければならない。",
+    "choices": {
+      "ア": "オブジェクト／要素／記号化／プロファイル／製品仕様書",
+      "イ": "オブジェクト／内容／記号化／プロファイル／作業規程の準則",
+      "ウ": "スキーマ／内容／体系化／オブジェクト／作業規程の準則",
+      "エ": "スキーマ／要素／体系化／オブジェクト／製品仕様書",
+      "オ": "スキーマ／要素／記号化／プロファイル／製品仕様書"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "officialQuestionLabel": "〔No. 3〕",
+    "explanation": "JPGISは、概念スキーマを記述・符号化する際に必要な要素を体系化したものである。位置と関連するオブジェクトや現象を対象とし、成果の条件は製品仕様書に定める。",
+    "choiceExplanations": {
+      "ア": "地理空間情報の概念を記述する枠組みはスキーマであり、位置に関連する対象にはオブジェクトが入る。",
+      "イ": "概念を記述するのに必要な要素を体系化する。また、成果の種類や品質を示すのは作業規程の準則ではなく製品仕様書である。",
+      "ウ": "体系化の対象は規格から抜き出した基本的な要素である。特定の測量の成果の要件は製品仕様書で示す。",
+      "エ": "スキーマを記述するための要素を体系化し、位置に関係するオブジェクトを扱う。成果の条件を示す文書は製品仕様書である。",
+      "オ": "規格から抽出した要素を体系化するので、記号化とは異なる。位置に関連するのは対象となるオブジェクト又は現象である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.gsi.go.jp/common/000240135.pdf#page=6",
+    "sourceAnswerUrl": "https://www.gsi.go.jp/common/000241385.pdf",
+    "license": "GSI-attributed",
+    "lastUpdated": "2026-11-19",
+    "sourceAttribution": "出典：国土地理院 令和4年測量士試験 午前 No.3。解説は過去問AI作成。"
+  }
+]

@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { BookOpen, ExternalLink, Info, ScrollText } from "lucide-react";
+import { BookOpen, ExternalLink, ScrollText } from "lucide-react";
 import {
   Dialog,
   DialogContent,
@@ -126,35 +126,10 @@ function CitationCard({
             </>
           )}
         </div>
-        <p className="mt-1 line-clamp-2 text-xs leading-snug text-zinc-800 dark:text-zinc-100">
+        <button type="button" onClick={onOpenDetail}
+          className="mt-1 min-h-11 text-left text-xs leading-snug text-sky-700 underline underline-offset-4 dark:text-sky-300">
           {citation.title}
-        </p>
-        <div className="mt-1.5 flex flex-wrap items-center gap-2">
-          <button
-            type="button"
-            onClick={onOpenDetail}
-            className="inline-flex items-center gap-1 text-[10px] font-medium text-zinc-600 hover:text-sky-700 dark:text-zinc-300 dark:hover:text-sky-300"
-            aria-label={`引用 ${citation.ordinal} の根拠を確認`}
-          >
-            <Info className="h-3 w-3" aria-hidden="true" />
-            根拠を確認
-          </button>
-          <a
-            href={citation.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-[10px] font-medium text-sky-700 hover:underline dark:text-sky-300"
-            onClick={() => {
-              posthogCapture("copilot_citation_clicked", {
-                docId: citation.docId,
-                kind: citation.kind,
-              });
-            }}
-          >
-            <ExternalLink className="h-3 w-3" aria-hidden="true" />
-            {isQuestion ? "問題を開く" : "用語集を開く"}
-          </a>
-        </div>
+        </button>
       </div>
     </div>
   );

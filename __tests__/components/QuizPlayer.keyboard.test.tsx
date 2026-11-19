@@ -1,13 +1,15 @@
 import { describe, it, expect, beforeEach, vi } from "vitest";
-import { render, fireEvent, cleanup, screen } from "@testing-library/react";
+import { act, render, fireEvent, cleanup, screen } from "@testing-library/react";
 
 // QuizPlayer uses next/navigation's useRouter; stub it so it renders in jsdom.
 vi.mock("next/navigation", () => ({
   useRouter: () => ({ push: vi.fn(), replace: vi.fn(), prefetch: vi.fn(), back: vi.fn() }),
 }));
+vi.mock("@/components/motivation/FireworksBurst", () => ({ FireworksBurst: () => <div data-testid="quiz-burst" /> }));
 
 import { QuizPlayer } from "@/components/quiz/QuizPlayer";
 import { createHistoryStore } from "@/lib/storage/history";
+import { LS_KEYS } from "@/lib/storage/keys";
 import { QUESTIONS as KIKAI_HOZEN_DENKI1_QUESTIONS } from "@/data/questions/kikai-hozen-denki1";
 import type { Question } from "@/lib/questions/types";
 
@@ -71,10 +73,10 @@ describe("QuizPlayer — keyboard does not hijack browser shortcuts", () => {
     expect(createHistoryStore().isStarred(question.id)).toBe(false);
   });
 
-  it("plain 'r' still toggles the star (shortcut preserved)", () => {
+  it("plain 'r' leaves saved stars unchanged", () => {
     render(<QuizPlayer question={question} index={0} total={10} mode="random" onNext={() => {}} />);
     fireEvent.keyDown(window, { key: "r" });
-    expect(createHistoryStore().isStarred(question.id)).toBe(true);
+    expect(createHistoryStore().isStarred(question.id)).toBe(false);
   });
 
   it("Ctrl+1 does not select a choice (browser tab-switch stays intact)", () => {
@@ -86,9 +88,9 @@ describe("QuizPlayer — keyboard does not hijack browser shortcuts", () => {
 
 it("does not advance after a revealed answer when a focused action receives Enter", () => {
   const onNext = vi.fn();
-  const { getByRole } = render(<QuizPlayer question={question} index={0} total={10} mode="random" onNext={onNext} />);
+  const { getByText } = render(<QuizPlayer question={question} index={0} total={10} mode="random" onNext={onNext} />);
   fireEvent.keyDown(window, { key: "1" });
-  const action = getByRole("button", { name: "この問題をAIに質問" });
+  const action = getByText("AIに質問");
   expect(createHistoryStore().getAllEntries()).toHaveLength(1);
   action.focus();
   expect(action).toHaveFocus();
@@ -101,4 +103,29 @@ it("preserves number shortcuts while an answer choice is focused", () => {
   choice.focus();
   fireEvent.keyDown(choice, { key: "2" });
   expect(createHistoryStore().getAllEntries()[0]?.correct).toBe(true);
+});
+
+it.each([false, true])("uses the device's reduced-motion preference (%s) and ignores the retired settings", async (reduced) => {
+  const query = "(prefers-reduced-motion: reduce)";
+  const media = window.matchMedia(query);
+  vi.mocked(window.matchMedia).mockReturnValue({ ...media, matches: reduced });
+  localStorage.setItem(LS_KEYS.motivation, JSON.stringify({ soundEnabled: true, reduceMotion: !reduced }));
+  const audioContext = vi.fn();
+  vi.stubGlobal("AudioContext", audioContext);
+  try {
+    const questions = [0, 1, 2].map(index => ({ ...question, id: `ap-quiz-motion-${index}` }));
+    const props = { total: 3, mode: "random", onNext: vi.fn() };
+    const { rerender } = render(<QuizPlayer {...props} question={questions[0]} index={0} />);
+    for (const [index, current] of questions.entries()) {
+      rerender(<QuizPlayer {...props} question={current} index={index} />);
+      fireEvent.keyDown(window, { key: "2" });
+    }
+    await act(async () => {});
+    expect(window.matchMedia).toHaveBeenCalledWith(query);
+    if (reduced) expect(screen.queryByTestId("quiz-burst")).toBeNull();
+    else expect(await screen.findByTestId("quiz-burst")).toBeInTheDocument();
+    expect(audioContext).not.toHaveBeenCalled();
+  } finally {
+    vi.unstubAllGlobals();
+  }
 });

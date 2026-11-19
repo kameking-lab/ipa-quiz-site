@@ -1,4 +1,5 @@
 import { PLAN_OFFER } from "@/lib/billing/plan-offer";
+import { ReferralPracticeLink } from "@/components/analytics/ReferralPracticeLink";
 import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
 import { referralPracticeHref } from "@/lib/questions/referral-practice";
 import { PUBLISHED_SENTAKU } from "@/lib/sharoushi/sentaku";
@@ -258,7 +259,7 @@ export default async function ExamTopPage({
 
       <div className="relative mx-auto w-full max-w-3xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
         <JsonLd data={jsonLd} />
-      <TsuginoWelcome href={referralPracticeHref(questions, `/${exam}`)} qualification={examLabel(code)} />
+      {!isExamEntryCode(code) && code !== "takken" && <TsuginoWelcome href={referralPracticeHref(questions, '/' + exam)} qualification={examLabel(code)} />}
 
         <nav aria-label="パンくずリスト" className="mb-4 text-xs text-muted-foreground">
           <ol className="flex flex-wrap items-center gap-1.5">
@@ -289,7 +290,7 @@ export default async function ExamTopPage({
             <span className="inline-block">{isIpaTop(code) ? "過去問・解説" : "過去問"}</span>
           </h1>
           <p className="mt-2 text-sm leading-relaxed text-muted-foreground">無料・登録なしで1日{PLAN_OFFER.freeDaily}問</p>
-          {isExamEntryCode(code) && <FirstPracticeEntry exam={code} />}
+          {isExamEntryCode(code) && <FirstPracticeEntry exam={code} referralHref={referralPracticeHref(questions, "/" + exam)} qualification={examLabel(code)} />}
         {/* Big CTA */}
         {!FIRST_PRACTICE_EXAMS.some((entry) => entry === code) && <section aria-label="今すぐ解く" className="mt-4">
           {code === "fp2" || code === "fp3" ? (
@@ -339,10 +340,10 @@ export default async function ExamTopPage({
               size="xl"
               className="w-full font-semibold shadow-md hover:shadow-lg min-h-14 min-w-11 h-auto whitespace-normal py-2.5"
             >
-              <Link href={`/quiz?mode=random&exam=${exam}`}>
+              <ReferralPracticeLink href={'/quiz?mode=random&exam=' + exam} referralHref={code === "takken" ? referralPracticeHref(questions, "/" + exam) : null} qualification={examLabel(code)}>
                 今すぐ解く
                 <ChevronRight className="h-4 w-4" />
-              </Link>
+              </ReferralPracticeLink>
             </Button>
           )}
         </section>}
@@ -441,16 +442,17 @@ export default async function ExamTopPage({
         )}
 
         {/* Browse tabs */}
-        {isExamEntryCode(code) && <ExamPastQuestionGuide exam={code} questions={questions} />}
         {isExamEntryCode(code) ? <ExamTopBrowse exam={code} years={years} categories={categories} /> : <section aria-label="問題を探す" className="mb-8">
-          {/* Deep-link targets for sitemap "年度別一覧 (#years)" / "分野別一覧 (#topics)".
-              ExamBrowseTabs reads the hash to pre-select the matching tab. */}
-          <span id="years" aria-hidden className="block scroll-mt-20" />
-          <span id="topics" aria-hidden className="block scroll-mt-20" />
           <ExamBrowseTabs exam={code} years={years} categories={categories} />
         </section>}
 
-        {isExamEntryCode(code) && <ExamTopGuide exam={code} />}
+        {isExamEntryCode(code) && <>
+          <ExamTopGuide exam={code} />
+          <details className="mb-6 rounded-xl border border-border px-4">
+            <summary className="min-h-11 cursor-pointer py-3 font-semibold">科目・収録範囲</summary>
+            <ExamPastQuestionGuide exam={code} questions={questions} />
+          </details>
+        </>}
 
         {/* Progress */}
         <section aria-label="進捗" className="mb-8 empty:hidden">
@@ -525,7 +527,10 @@ export default async function ExamTopPage({
         <ExamMainTopics exam={code} />
 
         {/* Official IPA resources — E-E-A-T */}
-        <ExamOfficialResources exam={code} />
+        <details className="mb-6 rounded-xl border border-border px-4">
+          <summary className="min-h-11 cursor-pointer py-3 font-semibold">公式資料</summary>
+          <ExamOfficialResources exam={code} />
+        </details>
 
         {/* High-level exam: AI essay / description grading CTA */}
         {!isExamEntryCode(code) && (["pm", "sm", "au"] as ExamCode[]).includes(code) && (

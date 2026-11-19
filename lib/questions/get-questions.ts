@@ -1,4 +1,5 @@
-import { publishedQuestions } from "@/data/questions/published";
+import { loadAdditionalPapers } from "@/data/questions/additional-papers";
+import { appendReplenishedQuestions, publishedQuestions } from "@/data/questions/published";
 import type { ExamCode, Question } from "./types";
 
 
@@ -10,6 +11,7 @@ import { isExamPublished } from "@/lib/qualifications/catalog";
 // Bundler-friendly lazy loaders — each exam chunk is only loaded on demand.
 // To add a new exam: (1) create data/questions/{exam}/index.ts, (2) uncomment the loader.
 const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
+  "zenkou-pc": async () => (await import("@/data/questions/zenkou-pc")).ZENKOU_PC_QUESTIONS,
   eikenp2: async () => isExamPublished("eikenp2") ? (await import("@/data/questions/eikenp2")).EIKENP2_QUESTIONS : [],
   "zensho-calc-1": async () => isExamPublished("zensho-calc-1") ? (await import("@/data/questions/zensho-calc-1")).ZENSHO_CALC_1_QUESTIONS : [],
   "suken-11": async () => isExamPublished("suken-11") ? (await import("@/data/questions/suken-11")).SUKEN_11_QUESTIONS : [],
@@ -451,14 +453,50 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "naiso-carpet1": async () => isExamPublished("naiso-carpet1") ? (await import("@/data/questions/naiso-carpet1")).NAISO_CARPET1_QUESTIONS : [],
   "shashutsu2": async () => isExamPublished("shashutsu2") ? (await import("@/data/questions/shashutsu2")).SHASHUTSU2_QUESTIONS : [],
   "tsukanshi": async () => isExamPublished("tsukanshi") ? (await import("@/data/questions/tsukanshi")).TSUKANSHI_QUESTIONS : [],
+  "zenkou-keisan-gijutsu": async () => isExamPublished("zenkou-keisan-gijutsu") ? (await import("@/data/questions/zenkou-keisan-gijutsu")).ZENKOU_KEISAN_GIJUTSU_QUESTIONS : [],
+  "katei-shokumotsu": async () => isExamPublished("katei-shokumotsu") ? (await import("@/data/questions/katei-shokumotsu")).KATEI_SHOKUMOTSU_QUESTIONS : [],
+  "katei-hifuku": async () => isExamPublished("katei-hifuku") ? (await import("@/data/questions/katei-hifuku")).KATEI_HIFUKU_QUESTIONS : [],
+  "zenkou-joho": async () => isExamPublished("zenkou-joho") ? (await import("@/data/questions/zenkou-joho")).ZENKOU_JOHO_QUESTIONS : [],
+  "katei-hoiku": async () => isExamPublished("katei-hoiku") ? (await import("@/data/questions/katei-hoiku")).KATEI_HOIKU_QUESTIONS : [],
+  "katei-shoku-chori": async () => isExamPublished("katei-shoku-chori") ? (await import("@/data/questions/katei-shoku-chori")).KATEI_SHOKU_CHORI_QUESTIONS : [],
+  "mental-health-management": async () => isExamPublished("mental-health-management") ? (await import("@/data/questions/mental-health-management")).MENTAL_HEALTH_MANAGEMENT_QUESTIONS : [],
+  "building-cleaning-ssw1": async () => isExamPublished("building-cleaning-ssw1") ? (await import("@/data/questions/building-cleaning-ssw1")).BUILDING_CLEANING_SSW1_QUESTIONS : [],
+  "saibansho-ippan-dai": async () => isExamPublished("saibansho-ippan-dai") ? (await import("@/data/questions/saibansho-ippan-dai")).COURT_STAFF_QUESTIONS : [],
+  "kyoin-tokyo": async () => isExamPublished("kyoin-tokyo") ? (await import("@/data/questions/kyoin-tokyo")).KYOIN_TOKYO_QUESTIONS : [],
+  "kyoin-osaka": async () => isExamPublished("kyoin-osaka") ? (await import("@/data/questions/kyoin-osaka")).KYOIN_OSAKA_QUESTIONS : [],
+  "cg-creator-basic": async () => isExamPublished("cg-creator-basic") ? (await import("@/data/questions/cg-creator-basic")).CG_CREATOR_BASIC_QUESTIONS : [],
+  "cg-creator-expert": async () => isExamPublished("cg-creator-expert") ? (await import("@/data/questions/cg-creator-expert")).CG_CREATOR_EXPERT_QUESTIONS : [],
+  "cg-engineer-basic": async () => isExamPublished("cg-engineer-basic") ? (await import("@/data/questions/cg-engineer-basic")).CG_ENGINEER_BASIC_QUESTIONS : [],
+  "cg-engineer-expert": async () => isExamPublished("cg-engineer-expert") ? (await import("@/data/questions/cg-engineer-expert")).CG_ENGINEER_EXPERT_QUESTIONS : [],
+  "multimedia-kentei-basic": async () => isExamPublished("multimedia-kentei-basic") ? (await import("@/data/questions/multimedia-kentei-basic")).MULTIMEDIA_KENTEI_BASIC_QUESTIONS : [],
+  "multimedia-kentei-expert": async () => isExamPublished("multimedia-kentei-expert") ? (await import("@/data/questions/multimedia-kentei-expert")).MULTIMEDIA_KENTEI_EXPERT_QUESTIONS : [],
+  "g-kentei": async () => isExamPublished("g-kentei") ? (await import("@/data/questions/g-kentei")).G_KENTEI_QUESTIONS : [],
+  "kyoto-kentei3": async () => isExamPublished("kyoto-kentei3") ? (await import("@/data/questions/kyoto-kentei3")).KYOTO_KENTEI3_QUESTIONS : [],
+  "topik1": async () => isExamPublished("topik1") ? (await import("@/data/questions/topik1")).TOPIK1_QUESTIONS : [],
+  "apef4": async () => isExamPublished("apef4") ? (await import("@/data/questions/apef4")).APEF4_QUESTIONS : [],
+  "chuken3": async () => isExamPublished("chuken3") ? (await import("@/data/questions/chuken3")).CHUKEN3_QUESTIONS : [],
+  "biz-career-logistics3": async () => isExamPublished("biz-career-logistics3") ? (await import("@/data/questions/biz-career-logistics3")).BIZ_CAREER_LOGISTICS3_QUESTIONS : [],
+  "khk-hanbai2": async () => isExamPublished("khk-hanbai2") ? (await import("@/data/questions/khk-hanbai2")).QUESTIONS : [],
+  "kikenbutsu-otsu5": async () => isExamPublished("kikenbutsu-otsu5") ? (await import("@/data/questions/kikenbutsu-otsu5")).QUESTIONS : [],
+  "kikenbutsu-otsu3": async () => isExamPublished("kikenbutsu-otsu3") ? (await import("@/data/questions/kikenbutsu-otsu3")).QUESTIONS : [],
+  "khk-hanbai": async () => isExamPublished("khk-hanbai") ? (await import("@/data/questions/khk-hanbai")).QUESTIONS : [],
+  "shobo-setsubishi-otsu4": async () => isExamPublished("shobo-setsubishi-otsu4") ? (await import("@/data/questions/shobo-setsubishi-otsu4")).QUESTIONS : [],
+  "shobo-setsubishi-otsu7": async () => isExamPublished("shobo-setsubishi-otsu7") ? (await import("@/data/questions/shobo-setsubishi-otsu7")).QUESTIONS : [],
+  "shobo-setsubishi-kou3": async () => isExamPublished("shobo-setsubishi-kou3") ? (await import("@/data/questions/shobo-setsubishi-kou3")).QUESTIONS : [],
+  "shobo-setsubishi-kou2": async () => isExamPublished("shobo-setsubishi-kou2") ? (await import("@/data/questions/shobo-setsubishi-kou2")).QUESTIONS : [],
+  "shobo-setsubishi-kou5": async () => isExamPublished("shobo-setsubishi-kou5") ? (await import("@/data/questions/shobo-setsubishi-kou5")).QUESTIONS : [],
+  "gesuido-3shu": async () => isExamPublished("gesuido-3shu") ? (await import("@/data/questions/gesuido-3shu")).QUESTIONS : [],
 };
 
 /** Load questions for one exam (lazy — only loads the requested exam's chunk). */
 export async function getQuestionsForExam(exam: ExamCode): Promise<Question[]> {
 
-  const loader = EXAM_LOADERS[canonicalExamCode(exam)];
-
-  return loader ? publishedQuestions(await loader()) : [];
+  const canonical = canonicalExamCode(exam);
+  const loader = EXAM_LOADERS[canonical];
+  if (!loader || !isExamPublished(canonical)) return [];
+  const additional = loadAdditionalPapers(canonical);
+  const questions = await loader();
+  return publishedQuestions(additional ? appendReplenishedQuestions(questions, [additional]) : questions);
 
 }
 

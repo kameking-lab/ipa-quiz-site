@@ -53,11 +53,12 @@ describe("maritime2 data-only original contract", () => {
     }
     expect(perfect).toBe(200);expect(partial).toBe(160);
   });
-  it("renders190 standard official-answer links, source images and attributed JSONLD without private source paths", () => {
+  it("renders190 official question links, source images and attributed JSONLD without private source paths", () => {
     for (const q of stored) {
       expect(q.sourceAnswerUrl).toMatch(/^https:\/\/www\.nichimu\.or\.jp\/.*-kaito\.pdf$/);
-      const html=renderToStaticMarkup(<ExplanationCard question={q} selected={undefined} isCorrect={true} starred={false} onToggleStar={()=>{}} onNext={()=>{}} onAskAI={()=>{}}/>);
-      expect(html).toContain(`href="${q.sourceAnswerUrl}"`);
+      const html=renderToStaticMarkup(<ExplanationCard question={q} selected={undefined} isCorrect={true} onNext={()=>{}}/>);
+      expect(html).toContain(`href="${q.sourcePdfUrl}"`);
+      expect(html).not.toContain(`href="${q.sourceAnswerUrl}"`);
       expect(q.imageUrls).toHaveLength(1);
       for (const url of q.imageUrls!) expect(existsSync(path.join(process.cwd(),"public",url.slice(1)))).toBe(true);
       const json=JSON.stringify(buildQuestionJsonLd({question:q,pageUrlAbs:`https://www.kakomon-ai.jp/q/maritime2/${q.year}-${q.season}/${q.session}/q${q.qNumber}${q.part}`,title:"第二級海上無線通信士",lastUpdatedISO:"2026-10-16"}));

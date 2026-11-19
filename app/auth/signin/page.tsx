@@ -123,10 +123,10 @@ export default async function SignInPage({
                 </strong>
               </p>
               <Link
-                href="/about"
+                href={forPurchase ? "/billing" : callbackUrl.startsWith("/quiz") || callbackUrl.startsWith("/q/") ? callbackUrl : "/search"}
                 className="mt-4 inline-flex min-h-11 items-center gap-1 text-xs font-medium text-primary underline-offset-4 hover:underline"
               >
-                プロジェクトについて →
+                {forPurchase ? "月額プランに戻る" : "学習に戻る"}
               </Link>
             </div>
           )}

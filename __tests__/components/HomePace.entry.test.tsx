@@ -1,0 +1,54 @@
+import { cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+import { HomePace } from "@/components/home/pace/HomePace";
+import type { HomeDirectoryDomain } from "@/lib/home/home-directory";
+import { LS_KEYS } from "@/lib/storage/keys";
+import { createPacePlan } from "@/lib/study-plan/pace";
+import { listPacePlans, savePacePlan } from "@/lib/study-plan/pace-storage";
+
+const router = vi.hoisted(() => ({ replace: vi.fn(), push: vi.fn() }));
+vi.mock("next/navigation", () => ({ useRouter: () => router }));
+vi.mock("@/components/home/pace/StudyRoomLine", () => ({ StudyRoomLine: () => null }));
+
+const domains: HomeDirectoryDomain[] = [{
+  id: "it", title: "IT", lead: "", allHref: "/ipa", allLabel: "すべて", compact: [], totalQuestions: 2, qualificationCount: 2,
+  featured: [
+    { key: "ip", name: "ITパスポート", href: "/ip", questionCount: 1, periodLabel: "1回分" },
+    { key: "fe", name: "基本情報技術者", href: "/fe", questionCount: 1, periodLabel: "1回分" },
+  ],
+}];
+const catalog = [{ id: "ip-2024h-am-q1", exam: "ip", year: 2024, season: "spring" as const, session: "am" as const, qNumber: 1 }];
+const plan = () => createPacePlan({ id: "past-pace", exam: "ip", sessionId: null, examDate: "2024-05-31", startDate: "2024-05-01" }, catalog, "2024-05-01T00:00:00+09:00");
+
+beforeEach(() => {
+  vi.stubGlobal("fetch", vi.fn(async (url: string) => Response.json(url.includes("schedule") ? { sessions: [] }
+    : url.includes("catalog") ? { questions: catalog } : url.includes("resume") ? { exam: "ip", name: "ITパスポート", href: "/ip", caption: "問1" }
+      : { entitled: false })));
+});
+afterEach(() => { cleanup(); localStorage.clear(); vi.unstubAllGlobals(); });
+
+describe("home plan entry", () => {
+  it.each([false, true])("opens creation from the home screen with prior study (%s)", async (returning) => {
+    if (returning) localStorage.setItem(LS_KEYS.lastQuestion, JSON.stringify({ ...catalog[0], answeredAt: 1 }));
+    render(<HomePace domains={domains} planExamKeys={["ip", "fe"]} />);
+    if (returning) expect(await screen.findByRole("link", { name: /続きを解く/ })).toBeVisible();
+    else expect(screen.getByRole("searchbox", { name: "資格名・略称で検索" })).toBeVisible();
+    fireEvent.click(screen.getByRole("button", { name: "学習計画を作成" }));
+    expect(screen.getByRole("dialog", { name: "学習計画を作成" })).toBeVisible();
+    expect(await screen.findByLabelText("受験日")).toBeVisible();
+  });
+
+  it.each([["合格", "passed"], ["不合格", "failed"], ["受けなかった", "absent"]] as const)("saves %s and offers the next step", async (label, result) => {
+    savePacePlan(plan());
+    render(<HomePace domains={domains} planExamKeys={["ip", "fe"]} />);
+    for (const name of ["合格", "不合格", "受けなかった"]) expect(screen.getByRole("button", { name })).toBeVisible();
+    fireEvent.click(screen.getByRole("button", { name: label }));
+    expect(listPacePlans()[0].result).toBe(result);
+    if (result === "passed") {
+      expect(screen.getByRole("link", { name: "次は 基本情報技術者へ" })).toHaveAttribute("href", "/fe");
+    } else {
+      fireEvent.click(screen.getByRole("button", { name: "学習計画を作成" }));
+      expect(await screen.findByLabelText("受験日")).toBeVisible();
+    }
+  });
+});

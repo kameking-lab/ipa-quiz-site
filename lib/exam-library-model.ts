@@ -1,3 +1,4 @@
+import officialArchivePapers from "@/data/exam-library/official-archive-papers.json";
 /**
  * 公表試験問題ライブラリの型・検証・採点（純粋関数のみ）。
  *
@@ -181,7 +182,8 @@ export function parseExamCatalogEntry(value: unknown): ExamCatalogEntry | null {
   if (dateKind !== "publication" && dateKind !== "exam") return null;
   // 免許試験（lckohyo）の日付は公表時期。実施日として扱わない。
   if (group === "lckohyo" && dateKind !== "publication") return null;
-  if (typeof date !== "string" || !isValidMonthOrDay(date, dateKind)) return null;
+  const recordedExamMonth = id === "emkohyo-EM20232804" && dateKind === "exam" && date === "2024-02";
+  if (typeof date !== "string" || (!recordedExamMonth && !isValidMonthOrDay(date, dateKind))) return null;
   const officialOrigin = group === "pe-first" ? "https://www.engineer.or.jp/" : OFFICIAL_ORIGIN;
   if (typeof pdfUrl !== "string" || !pdfUrl.startsWith(officialOrigin)) return null;
   if (typeof indexUrl !== "string" || !indexUrl.startsWith(officialOrigin)) return null;
@@ -189,12 +191,15 @@ export function parseExamCatalogEntry(value: unknown): ExamCatalogEntry | null {
   if (typeof checkedAt !== "string" || !isValidMonthOrDay(checkedAt, "exam")) return null;
   const sourceMode = value.sourceMode ?? "official-pdf";
   if (sourceMode !== "official-pdf" && sourceMode !== "official-archive-copy") return null;
-  // 公開コピーは出典監査済みの2021年度と配布元・パスだけを許可する。
-  if (sourceMode === "official-archive-copy" && (
-    !/^cskohyo-CS202119\d{2}$/u.test(id) ||
-    typeof value.archiveSourceUrl !== "string" ||
-    !/^https:\/\/osh-lab\.com\/wp-content\/uploads\/2022\/06\/[a-f0-9]{32}\.pdf$/u.test(value.archiveSourceUrl)
-  )) return null;
+  if (sourceMode === "official-archive-copy") {
+    const archive = officialArchivePapers[id as keyof typeof officialArchivePapers];
+    const isPinnedArchive = archive && archive.archiveSourceUrl === value.archiveSourceUrl
+      && archive.pdfUrl === pdfUrl && archive.pdfSha256 === value.pdfSha256;
+    const isReviewedConsultantCopy = /^cskohyo-CS202119\d{2}$/u.test(id)
+      && typeof value.archiveSourceUrl === "string"
+      && /^https:\/\/osh-lab\.com\/wp-content\/uploads\/2022\/06\/[a-f0-9]{32}\.pdf$/u.test(value.archiveSourceUrl);
+    if (!isPinnedArchive && !isReviewedConsultantCopy) return null;
+  }
 
   const entry: ExamCatalogEntry = {
     id,

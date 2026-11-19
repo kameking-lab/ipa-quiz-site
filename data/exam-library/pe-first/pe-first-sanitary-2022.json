@@ -1,0 +1,346 @@
+[
+  {
+    "id": "pe-first-sanitary-2022-q01",
+    "number": 1,
+    "text": "日照・日射に関する次の記述のうち、最も不適切なものはどれか。",
+    "images": [],
+    "sourcePages": [
+      1
+    ],
+    "sourceQuestionNumber": 1,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/009/attached/attach_9127_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=13",
+    "explanation": "鉄分を減らすとガラスによる日射の吸収が減り、透過率は高くなる。低鉄分ガラスの日射透過率が低いとする肢が不適切である。",
+    "presentation": {
+      "sourceHash": "066cb80378ab59ff0c42fc8f593a2114b36befd216ef182caee555fa0ccea520",
+      "prompt": "日照・日射に関する次の記述のうち、最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "日射が大気中で散乱されたのち、全天空から地表に到達する成分を天空日射量又は拡散日射量という。"
+        },
+        {
+          "number": 2,
+          "text": "日照時間の可照時間に対する比を百分率で表したものを日照率という。"
+        },
+        {
+          "number": 3,
+          "text": "日本では東経135°（明石）を日本中央標準時の基点に定めているが、東京は明石よりも早く南中時を迎える。"
+        },
+        {
+          "number": 4,
+          "text": "低鉄分ガラスは日射透過率が低い。"
+        },
+        {
+          "number": 5,
+          "text": "大気中の水蒸気や炭酸ガス、雲などの長波長放射を吸収する特性が、大気の温室効果の原因となっている。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "066cb80378ab59ff0c42fc8f593a2114b36befd216ef182caee555fa0ccea520",
+      "correctChoice": 4,
+      "summary": "鉄分を減らすとガラスによる日射の吸収が減り、透過率は高くなる。低鉄分ガラスの日射透過率が低いとする肢が不適切である。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "散乱を経て空の各方向から届く日射は、太陽から直接届く直達日射と区別される。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "日照率は、日の出から日没までなどの可照時間に対し、実際に日照のあった時間が占める割合である。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "東京は明石より東にあり、太陽がその地点の子午線を通過する時刻は日本標準時で早い。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "低鉄分ガラスは日射を吸収する成分が少なく、一般の透明ガラスより日射を通しやすい。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "水蒸気、二酸化炭素や雲などが地表からの長波長放射を吸収し、再放射する作用が温室効果につながる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/009/attached/attach_9127_2.pdf#page=1"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=13"
+        }
+      ],
+      "lastCheckedAt": "2026-11-19"
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2022-q02",
+    "number": 2,
+    "text": "床面積が50 m²で、机上面照度500 lxを確保するには、1灯当たりの光束が2,500 lmのランプが何灯必要か。光束法により求めた灯数で最も近い値はどれか。ただし、保守率0.7、照明率0.7とする。",
+    "images": [],
+    "sourcePages": [
+      1
+    ],
+    "sourceQuestionNumber": 2,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/009/attached/attach_9127_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=13",
+    "explanation": "光束法では灯数を照度×面積÷（光束×保守率×照明率）で求める。計算値は25,000÷1,225≒20.4で、照度を確保するには21灯必要になる。",
+    "presentation": {
+      "sourceHash": "6ef63048725704c679988dbc17352174dec6e3f6c2d2047d6b7d7fbea4eba63d",
+      "prompt": "床面積が50 m²で、机上面照度500 lxを確保するには、1灯当たりの光束が2,500 lmのランプが何灯必要か。光束法により求めた灯数で最も近い値はどれか。ただし、保守率0.7、照明率0.7とする。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "8灯"
+        },
+        {
+          "number": 2,
+          "text": "11灯"
+        },
+        {
+          "number": 3,
+          "text": "14灯"
+        },
+        {
+          "number": 4,
+          "text": "15灯"
+        },
+        {
+          "number": 5,
+          "text": "21灯"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "6ef63048725704c679988dbc17352174dec6e3f6c2d2047d6b7d7fbea4eba63d",
+      "correctChoice": 5,
+      "summary": "光束法では灯数を照度×面積÷（光束×保守率×照明率）で求める。計算値は25,000÷1,225≒20.4で、照度を確保するには21灯必要になる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "8灯では机上面の平均照度は2,500×0.7×0.7×8÷50=196 lxである。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "11灯では平均照度が約270 lxとなり、500 lxを下回る。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "14灯の平均照度は343 lxで、照明率と保守率の両方を考慮すると必要な照度に達しない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "15灯で得られる平均照度は約368 lxで、目標の500 lxに届かない。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "21灯の平均照度は約515 lxである。20灯では490 lxのため、必要な照度を満たす最少の整数は21灯となる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/009/attached/attach_9127_2.pdf#page=1"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=13"
+        }
+      ],
+      "lastCheckedAt": "2026-11-19"
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2022-q03",
+    "number": 3,
+    "text": "次のa〜eの建築材料の熱伝導率［W/(m・K)］について、値の大きいものから順に並べたものはどれか。\n\na 土壁\nb ステンレス鋼\nc せっこうボード\nd グラスウール断熱材16K相当\ne コンクリート",
+    "images": [],
+    "sourcePages": [
+      2
+    ],
+    "sourceQuestionNumber": 3,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/009/attached/attach_9127_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=13",
+    "explanation": "熱を通しやすいステンレス鋼が最も大きい。コンクリート、土壁、せっこうボードと続き、グラスウール断熱材が最も小さい。",
+    "presentation": {
+      "sourceHash": "509ca65d3f197b99b45709d0d2597a51d3f82781f24b4af798ac014e25389635",
+      "prompt": "次のa〜eの建築材料の熱伝導率［W/(m・K)］について、値の大きいものから順に並べたものはどれか。\n\na 土壁\nb ステンレス鋼\nc せっこうボード\nd グラスウール断熱材16K相当\ne コンクリート",
+      "choices": [
+        {
+          "number": 1,
+          "text": "b、a、e、d、c"
+        },
+        {
+          "number": 2,
+          "text": "b、a、e、c、d"
+        },
+        {
+          "number": 3,
+          "text": "b、e、a、c、d"
+        },
+        {
+          "number": 4,
+          "text": "e、b、a、c、d"
+        },
+        {
+          "number": 5,
+          "text": "e、b、a、d、c"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "509ca65d3f197b99b45709d0d2597a51d3f82781f24b4af798ac014e25389635",
+      "correctChoice": 3,
+      "summary": "熱を通しやすいステンレス鋼が最も大きい。コンクリート、土壁、せっこうボードと続き、グラスウール断熱材が最も小さい。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "一般にコンクリートの熱伝導率は土壁より大きく、グラスウールはせっこうボードより小さい。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "ステンレス鋼を先頭、グラスウールを最後に置く点は合っているが、コンクリートと土壁が逆である。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "鋼材が最も熱を伝えやすく、コンクリート、土壁、せっこうボード、断熱材の順に小さくなる。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "ステンレス鋼の熱伝導率はコンクリートより大きいので、先頭はbである。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "ステンレス鋼はコンクリートより熱を伝えやすく、グラスウールはせっこうボードより熱を伝えにくい。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/009/attached/attach_9127_2.pdf#page=2"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=13"
+        }
+      ],
+      "lastCheckedAt": "2026-11-19"
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2022-q04",
+    "number": 4,
+    "text": "人体の熱収支及び温熱感覚指標に関する次の記述のうち、最も不適切なものはどれか。",
+    "images": [],
+    "sourcePages": [
+      2
+    ],
+    "sourceQuestionNumber": 4,
+    "correctChoice": 2,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/009/attached/attach_9127_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=13",
+    "explanation": "PMVは主に比較的穏やかで定常的な環境の快適性評価に用いる。蒸暑環境で新有効温度ET*より正確に評価できると一般化するのは不適切である。",
+    "presentation": {
+      "sourceHash": "000b00822322a4c7bc237c7b74efa6f5bdca098d066553d7ef44ede94a20aa14",
+      "prompt": "人体の熱収支及び温熱感覚指標に関する次の記述のうち、最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "予測平均温冷感申告PMVと予測不満足率PPDはISOにおける標準的温熱感覚指標として採用されており、−0.5≦PMV≦0.5、PPD≦10％が推奨範囲とされている。"
+        },
+        {
+          "number": 2,
+          "text": "予測平均温冷感申告PMVは新有効温度ET*よりも蒸暑環境評価を正確に行うことができると考えられている。"
+        },
+        {
+          "number": 3,
+          "text": "体温調整機構において、皮膚血流の調整によるコア・シェル部の大きさ変化で体温調整が可能な領域を中性温域という。"
+        },
+        {
+          "number": 4,
+          "text": "各種作業時の代謝量はmetを単位として表すが、1 metは体表面積当たりの椅座安静状態での代謝量であり58.2 W/m²である。"
+        },
+        {
+          "number": 5,
+          "text": "発汗していない状態でも、絶えず人体の皮膚や粘膜からは水分蒸発による放熱が起こっており、これを「不感蒸せつ」という。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "000b00822322a4c7bc237c7b74efa6f5bdca098d066553d7ef44ede94a20aa14",
+      "correctChoice": 2,
+      "summary": "PMVは主に比較的穏やかで定常的な環境の快適性評価に用いる。蒸暑環境で新有効温度ET*より正確に評価できると一般化するのは不適切である。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "PMVが0に近い状態ほど温冷感が中立であり、−0.5〜0.5とPPD 10％以下の範囲が代表的な基準である。"
+        },
+        {
+          "number": 2,
+          "verdict": "correct",
+          "reason": "新有効温度は湿潤度や蒸発放熱にも着目しているため、蒸暑環境でPMVが常に優れるとはいえない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "中性温域では、発汗やふるえを起こさずに、皮膚への血流を調整することなどで体温を保ちやすい。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "1 metは座って安静にしているときの単位体表面積当たりの代謝量で、58.2 W/m²である。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "発汗が目に見えなくても皮膚や粘膜から水分が失われ、蒸発に伴って熱が放出される。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/009/attached/attach_9127_2.pdf#page=2"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_7.pdf#page=13"
+        }
+      ],
+      "lastCheckedAt": "2026-11-19"
+    }
+  }
+]

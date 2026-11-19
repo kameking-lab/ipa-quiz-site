@@ -1,0 +1,814 @@
+[
+  {
+    "id": "kounin-physics-2022-first-gakka-q1",
+    "exam": "kounin-physics",
+    "year": 2022,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 1,
+    "officialQuestionLabel": "解答番号 1",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "有効数字の丸め"
+    ],
+    "difficulty": 2,
+    "question": "1.5×2.3＝3.45となる計算結果として，有効数字2桁で適切に表したものはどれか。",
+    "choices": {
+      "ア": "3",
+      "イ": "3.4",
+      "ウ": "3.45",
+      "エ": "3.5",
+      "オ": "4"
+    },
+    "answer": "エ",
+    "explanation": "先頭の3と次の4までが残す2桁です。次の桁が5なので四捨五入して3.5になります。",
+    "choiceExplanations": {
+      "ア": "3は有効数字1桁です。2桁にするには小数第1位まで残します。",
+      "イ": "残す小数第1位の次の桁は5なので、4を切り上げます。",
+      "ウ": "3.45は丸める前の値で、有効数字が3桁あります。",
+      "エ": "先頭の3と次の4までが残す2桁です。次の桁が5なので四捨五入して3.5になります。",
+      "オ": "4では有効数字1桁になり、2桁で示すという条件を満たしません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240513-mxt_syogai02-mext_00002452_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20220817-mxt_syogai02-1411255_00007_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和4年度第1回高等学校卒業程度認定試験 物理基礎（解答番号1）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2022-first-gakka-q2",
+    "exam": "kounin-physics",
+    "year": 2022,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 2,
+    "officialQuestionLabel": "解答番号 2",
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "変位と移動距離"
+    ],
+    "difficulty": 2,
+    "question": "家，駅，郵便ポストが図のように一直線上にある。Aさんは家から郵便ポストに寄ってから駅へ移動した。この行程の変位の大きさは［ア］mで，移動距離は［イ］mである。ただし，家から駅までの距離は200 m，駅から郵便ポストまでの距離は100 mである。アとイの組合せとして正しいものはどれか。",
+    "choices": {
+      "ア": "200・200",
+      "イ": "200・400",
+      "ウ": "400・200",
+      "エ": "400・400"
+    },
+    "answer": "イ",
+    "explanation": "変位の大きさは出発点の家から終点の駅までの200 mです。移動距離は家からポストの300 mに、ポストから駅の100 mを足して400 mです。",
+    "choiceExplanations": {
+      "ア": "変位の大きさ200 mは合っています。往路でポストまで進み、駅へ戻った分も移動距離には加えます。",
+      "イ": "変位の大きさは出発点の家から終点の駅までの200 mです。移動距離は家からポストの300 mに、ポストから駅の100 mを足して400 mです。",
+      "ウ": "変位は始点と終点の差で、寄り道の分を含みません。400 mは道のりの方です。",
+      "エ": "移動距離は400 mですが、家と駅の位置の差は200 mです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240513-mxt_syogai02-mext_00002452_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20220817-mxt_syogai02-1411255_00007_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和4年度第1回高等学校卒業程度認定試験 物理基礎（解答番号2）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2022-1-q02.webp"
+    ],
+    "imageAltTexts": [
+      "変位と移動距離の原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2022-first-gakka-q3",
+    "exam": "kounin-physics",
+    "year": 2022,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 3,
+    "officialQuestionLabel": "解答番号 3",
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "鉛直投げ上げの初速度"
+    ],
+    "difficulty": 2,
+    "question": "t＝0 s に点 P から小球を鉛直上向きに投げ上げると，t＝4 s に最高点に達し，その後鉛直下向きに落下した。小球を投げ上げたときの初速度の大きさは何 m/s か。ただし，重力加速度の大きさを9.8 m/s²とし，空気抵抗を無視する。",
+    "choices": {
+      "ア": "9.8",
+      "イ": "19.6",
+      "ウ": "39.2",
+      "エ": "78.4"
+    },
+    "answer": "ウ",
+    "explanation": "上向きを正とすると最高点では v₀−9.8×4＝0です。初速度の大きさは39.2 m/sです。",
+    "choiceExplanations": {
+      "ア": "9.8は1 s当たりに変化する速度の値です。最高点に達するまで4 sあります。",
+      "イ": "19.6 m/sは上昇に2 sかかる場合の初速度です。ここでは4 s後に速度が0になります。",
+      "ウ": "上向きを正とすると最高点では v₀−9.8×4＝0です。初速度の大きさは39.2 m/sです。",
+      "エ": "78.4 m/sなら重力で速度が0になるまで8 sかかります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240513-mxt_syogai02-mext_00002452_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20220817-mxt_syogai02-1411255_00007_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和4年度第1回高等学校卒業程度認定試験 物理基礎（解答番号3）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2022-first-gakka-q4",
+    "exam": "kounin-physics",
+    "year": 2022,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 4,
+    "officialQuestionLabel": "解答番号 4",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "鉛直投げ上げの速度グラフ"
+    ],
+    "difficulty": 2,
+    "question": "t＝0 sに点 P から小球を鉛直上向きに投げ上げると，t＝4 sに最高点に達し，その後鉛直下向きに落下した。小球の速度 v と時間 t の関係を表すグラフとして正しいものはどれか。ただし鉛直上向きを正とし，空気抵抗は無視する。",
+    "choices": {
+      "ア": "図の1",
+      "イ": "図の2",
+      "ウ": "図の3",
+      "エ": "図の4"
+    },
+    "answer": "ア",
+    "explanation": "上向きの初速度から一定の重力加速度で速度が直線的に減り、4 sで0になります。その後の速度は下向きを表す負の値です。",
+    "choiceExplanations": {
+      "ア": "上向きの初速度から一定の重力加速度で速度が直線的に減り、4 sで0になります。その後の速度は下向きを表す負の値です。",
+      "イ": "速度が一定なら加速度は0です。投げ上げた小球には重力加速度がはたらき続けます。",
+      "ウ": "この曲線は位置と時刻のグラフに似ています。速度は一定の傾きで変化する直線です。",
+      "エ": "速度の傾きは負ですが、最高点の4 sで速度が0になっていません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240513-mxt_syogai02-mext_00002452_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20220817-mxt_syogai02-1411255_00007_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和4年度第1回高等学校卒業程度認定試験 物理基礎（解答番号4）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2022-1-q04.webp"
+    ],
+    "imageAltTexts": [
+      "鉛直投げ上げの速度グラフの原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2022-first-gakka-q5",
+    "exam": "kounin-physics",
+    "year": 2022,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 5,
+    "officialQuestionLabel": "解答番号 5",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "慣性とバスの急停止"
+    ],
+    "difficulty": 2,
+    "question": "等速度で動いているバスが急ブレーキをかけると，バスの中にいる人は［ア］向きに倒れそうになる。これは物体が運動の状態を維持し続けようとする性質によるものである。この性質を［イ］という。アとイの組合せとして正しいものはどれか。",
+    "choices": {
+      "ア": "進む向きと同じ・慣性",
+      "イ": "進む向きと同じ・作用・反作用",
+      "ウ": "進む向きと反対・慣性",
+      "エ": "進む向きと反対・作用・反作用"
+    },
+    "answer": "ア",
+    "explanation": "バスが減速しても、人の身体は前方へ運動を続けようとします。この性質が慣性です。",
+    "choiceExplanations": {
+      "ア": "バスが減速しても、人の身体は前方へ運動を続けようとします。この性質が慣性です。",
+      "イ": "前方に倒れそうになる向きは合っています。身体が速度を保とうとする性質は慣性です。",
+      "ウ": "慣性の名称は合っていますが、バスが減速すると身体はそのまま前方に進もうとします。",
+      "エ": "人はバスの進行方向へ動き続けようとします。2物体間の力の組である作用・反作用とは区別します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240513-mxt_syogai02-mext_00002452_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20220817-mxt_syogai02-1411255_00007_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和4年度第1回高等学校卒業程度認定試験 物理基礎（解答番号5）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2022-first-gakka-q6",
+    "exam": "kounin-physics",
+    "year": 2022,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 6,
+    "officialQuestionLabel": "解答番号 6",
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "浮力と排水体積"
+    ],
+    "difficulty": 2,
+    "question": "水に質量30 gの直方体の物体を浮かべたところ，図のように水平を保って静止した。この物体が水中に沈んでいる部分の高さ h は何 cm か。ただし，水の密度を1 g/cm³とする。",
+    "choices": {
+      "ア": "0.5",
+      "イ": "1",
+      "ウ": "1.5",
+      "エ": "2"
+    },
+    "answer": "ウ",
+    "explanation": "浮力と物体の重さがつり合うので、押しのける水は30 cm³です。底面積5×4＝20 cm²で割ると h＝1.5 cmです。",
+    "choiceExplanations": {
+      "ア": "0.5 cm沈むと押しのける水は5×4×0.5＝10 cm³です。10 g分の浮力では30 gを支えられません。",
+      "イ": "1 cm沈むと排水は20 cm³で、質量20 gに相当します。必要なのは30 cm³です。",
+      "ウ": "浮力と物体の重さがつり合うので、押しのける水は30 cm³です。底面積5×4＝20 cm²で割ると h＝1.5 cmです。",
+      "エ": "2 cmでは排水は40 cm³です。30 gの物体に必要な排水体積より大きくなります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240513-mxt_syogai02-mext_00002452_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20220817-mxt_syogai02-1411255_00007_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和4年度第1回高等学校卒業程度認定試験 物理基礎（解答番号6）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2022-1-q06.webp"
+    ],
+    "imageAltTexts": [
+      "浮力と排水体積の原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2022-first-gakka-q7",
+    "exam": "kounin-physics",
+    "year": 2022,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 7,
+    "officialQuestionLabel": "解答番号 7",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "つながった物体の加速度"
+    ],
+    "difficulty": 2,
+    "question": "摩擦のない水平面上に質量4 kgの物体 A と質量2 kgの物体 B を糸でつないで置いた。物体 B に水平に6 Nの力を加えて引くと，同じ加速度で動いた。加速度の大きさは何 m/s²か。ただし糸の質量は無視する。",
+    "choices": {
+      "ア": "1",
+      "イ": "1.5",
+      "ウ": "2",
+      "エ": "3"
+    },
+    "answer": "ア",
+    "explanation": "AとBを合わせると質量は6 kgで、外力は6 Nです。両方の加速度は6÷6＝1 m/s²です。",
+    "choiceExplanations": {
+      "ア": "AとBを合わせると質量は6 kgで、外力は6 Nです。両方の加速度は6÷6＝1 m/s²です。",
+      "イ": "6 NをAの質量4 kgだけで割った値です。2 kgのBもいっしょに動きます。",
+      "ウ": "加速度を2 m/s²とすると、質量6 kgの両物体に必要な外力は12 Nです。",
+      "エ": "6 NをBの2 kgだけで割ると3になりますが、Bは糸を通じてAも引きます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240513-mxt_syogai02-mext_00002452_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20220817-mxt_syogai02-1411255_00007_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和4年度第1回高等学校卒業程度認定試験 物理基礎（解答番号7）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2022-first-gakka-q8",
+    "exam": "kounin-physics",
+    "year": 2022,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 8,
+    "officialQuestionLabel": "解答番号 8",
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "斜面での静止摩擦力"
+    ],
+    "difficulty": 2,
+    "question": "水平面とのなす角が θ の摩擦のある斜面上に質量 m の物体を置いて静止させた。このときの静止摩擦力の大きさはいくらか。ただし重力加速度の大きさを g とする。",
+    "choices": {
+      "ア": "mg",
+      "イ": "mg sin θ",
+      "ウ": "mg cos θ",
+      "エ": "mg tan θ"
+    },
+    "answer": "イ",
+    "explanation": "斜面下向きの重力の成分は mg sin θ です。静止摩擦力はこれと同じ大きさで斜面上向きにはたらきます。",
+    "choiceExplanations": {
+      "ア": "mgは鉛直下向きの重力全体です。静止摩擦力は斜面に沿う成分とつり合います。",
+      "イ": "斜面下向きの重力の成分は mg sin θ です。静止摩擦力はこれと同じ大きさで斜面上向きにはたらきます。",
+      "ウ": "mg cos θは斜面に垂直な重力の成分で、垂直抗力とつり合います。",
+      "エ": "tan θは重力の平行成分と垂直成分の比です。重力全体 mg に掛けて平行成分を得る量ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240513-mxt_syogai02-mext_00002452_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20220817-mxt_syogai02-1411255_00007_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和4年度第1回高等学校卒業程度認定試験 物理基礎（解答番号8）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2022-first-gakka-q9",
+    "exam": "kounin-physics",
+    "year": 2022,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 9,
+    "officialQuestionLabel": "解答番号 9",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "力学的エネルギーの変換"
+    ],
+    "difficulty": 2,
+    "question": "摩擦のないレールの最下点からの高さ h にある点 S から，初速度0で小物体をすべらせた。点 S での運動エネルギーと位置エネルギーを K₀，U₀，最下点での運動エネルギーと位置エネルギーを K₁，U₁ とする。最下点での重力による位置エネルギーを0とすると，正しい関係はどれか。",
+    "choices": {
+      "ア": "K₀ > K₁・U₀ < U₁",
+      "イ": "K₀ > K₁・U₀ > U₁",
+      "ウ": "K₀ < K₁・U₀ < U₁",
+      "エ": "K₀ < K₁・U₀ > U₁"
+    },
+    "answer": "エ",
+    "explanation": "Sでは K₀＝0、U₀＝mgh です。最下点では U₁＝0となり、失われた位置エネルギーが運動エネルギーになります。",
+    "choiceExplanations": {
+      "ア": "Sでは速度が0です。Sの方が高いので、運動エネルギーはSの方が小さく、位置エネルギーはSの方が大きくなります。",
+      "イ": "位置エネルギーの大小は合っていますが、K₀は初速度0なので0です。",
+      "ウ": "運動エネルギーの大小は合っています。最下点で位置エネルギーを0とするので、Sの方が大きくなります。",
+      "エ": "Sでは K₀＝0、U₀＝mgh です。最下点では U₁＝0となり、失われた位置エネルギーが運動エネルギーになります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240513-mxt_syogai02-mext_00002452_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20220817-mxt_syogai02-1411255_00007_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和4年度第1回高等学校卒業程度認定試験 物理基礎（解答番号9）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2022-1-q09.webp"
+    ],
+    "imageAltTexts": [
+      "力学的エネルギーの変換の原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2022-first-gakka-q10",
+    "exam": "kounin-physics",
+    "year": 2022,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 10,
+    "officialQuestionLabel": "解答番号 10",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "高さと速さの関係"
+    ],
+    "difficulty": 2,
+    "question": "摩擦のないレールの最下点からの高さ h にある点 S から初速度0で小物体をすべらせると，点 G で鉛直上向きに飛び出した。空気抵抗は無視できるとする。点 G を飛び出すときの小物体の速さに関する文として正しいものはどれか。",
+    "choices": {
+      "ア": "点 G は最下点よりも上にあるので，速さは最下点を通過するときよりも小さくなる。",
+      "イ": "力学的エネルギーが保存するので，速さは最下点を通過するときと等しくなる。",
+      "ウ": "すべっている間は加速し続けるので，速さは最下点を通過するときよりも大きくなる。",
+      "エ": "垂直抗力が仕事をするので，速さは最下点を通過するときよりも大きくなる。"
+    },
+    "answer": "ア",
+    "explanation": "Gまで上る間に位置エネルギーが増えます。エネルギーの和は一定なので運動エネルギーと速さは小さくなります。",
+    "choiceExplanations": {
+      "ア": "Gまで上る間に位置エネルギーが増えます。エネルギーの和は一定なので運動エネルギーと速さは小さくなります。",
+      "イ": "保存するのは運動エネルギーと位置エネルギーの和です。高さの変化で速さは変わります。",
+      "ウ": "最下点からGへ上る途中では、重力の進行方向成分は運動を妨げます。",
+      "エ": "レールからの垂直抗力は移動方向と直交するため仕事をしません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240513-mxt_syogai02-mext_00002452_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20220817-mxt_syogai02-1411255_00007_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和4年度第1回高等学校卒業程度認定試験 物理基礎（解答番号10）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2022-1-q10.webp"
+    ],
+    "imageAltTexts": [
+      "高さと速さの関係の原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2022-first-gakka-q11",
+    "exam": "kounin-physics",
+    "year": 2022,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 11,
+    "officialQuestionLabel": "解答番号 11",
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "category": "力学",
+    "topicTags": [
+      "鉛直に飛び出した後の最高点"
+    ],
+    "difficulty": 2,
+    "question": "摩擦のないレールの最下点からの高さ h にある点 S から初速度0で小物体をすべらせると，点 G を鉛直上向きに飛び出した。空気抵抗は無視するとき，小物体がその後到達する高さに関する文として正しいものはどれか。",
+    "choices": {
+      "ア": "最下点からの高さ h より低いところまでしか上昇しない。",
+      "イ": "最下点からの高さ h まで上昇する。",
+      "ウ": "最下点からの高さ h を超えるところまで上昇する。",
+      "エ": "小物体の質量によって到達する高さが異なる。"
+    },
+    "answer": "イ",
+    "explanation": "出発時も最高点でも速さは0です。力学的エネルギーを保存するので、位置エネルギーは初めと同じ mgh になります。",
+    "choiceExplanations": {
+      "ア": "摩擦や空気抵抗でエネルギーが失われるなら低くなりますが、設問ではそれらを無視します。",
+      "イ": "出発時も最高点でも速さは0です。力学的エネルギーを保存するので、位置エネルギーは初めと同じ mgh になります。",
+      "ウ": "高さ h より上がるには初めの mgh を超える位置エネルギーが必要です。設問の条件では新たな仕事が加わりません。",
+      "エ": "出発時と最高点のエネルギー式の両辺に質量があり、相殺されます。高さは質量によらず同じです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240513-mxt_syogai02-mext_00002452_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20220817-mxt_syogai02-1411255_00007_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和4年度第1回高等学校卒業程度認定試験 物理基礎（解答番号11）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2022-first-gakka-q12",
+    "exam": "kounin-physics",
+    "year": 2022,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 12,
+    "officialQuestionLabel": "解答番号 12",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "category": "熱",
+    "topicTags": [
+      "比熱と電力"
+    ],
+    "difficulty": 2,
+    "question": "消費電力3000 Wの電磁調理器（IHコンロ）で，容器に入れた20 ℃，500 gの水を100 ℃のお湯にするまでの時間は何 s か。ただし水の比熱を4.2 J/(g・K)とする。消費された電力量はすべて水の温度上昇に使われ，外部に熱は逃げない。",
+    "choices": {
+      "ア": "14",
+      "イ": "28",
+      "ウ": "40",
+      "エ": "56",
+      "オ": "70"
+    },
+    "answer": "エ",
+    "explanation": "必要な熱は500×4.2×(100−20)＝168,000 Jです。3000 J/sで割ると56 sです。",
+    "choiceExplanations": {
+      "ア": "14 sで供給できる熱は42,000 Jで、水の温度は20 ℃しか上がりません。",
+      "イ": "28 sで供給できる熱は84,000 Jです。必要な168,000 Jの半分です。",
+      "ウ": "40 sで得る120,000 Jでは温度を約57 ℃しか上げられず、100 ℃に達しません。",
+      "エ": "必要な熱は500×4.2×(100−20)＝168,000 Jです。3000 J/sで割ると56 sです。",
+      "オ": "70 sは温度差に100 ℃を使った計算に相当します。実際の温度差は80 ℃です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240513-mxt_syogai02-mext_00002452_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20220817-mxt_syogai02-1411255_00007_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和4年度第1回高等学校卒業程度認定試験 物理基礎（解答番号12）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2022-first-gakka-q13",
+    "exam": "kounin-physics",
+    "year": 2022,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 13,
+    "officialQuestionLabel": "解答番号 13",
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "category": "波動",
+    "topicTags": [
+      "波の速さの公式"
+    ],
+    "difficulty": 2,
+    "question": "波が媒質を伝わるとき，媒質の各点が1秒間に振動する回数を波の振動数，1回振動するのに要する時間を周期，振動中心からの変位の最大値を振幅という。各点が1回振動する間に波が進む距離は1波長である。波の伝わる速さ＝［ア］×波長＝1/［イ］×波長とするとき，アとイの組合せとして正しいものはどれか。",
+    "choices": {
+      "ア": "振幅・周期",
+      "イ": "周期・振動数",
+      "ウ": "周期・振幅",
+      "エ": "振動数・振幅",
+      "オ": "振動数・周期"
+    },
+    "answer": "オ",
+    "explanation": "波は1周期 T の間に1波長 λ だけ進むので、速さは λ/T です。また f＝1/T なので fλ とも表せます。",
+    "choiceExplanations": {
+      "ア": "1/周期は正しいですが、波長に掛けるのは振幅ではなく1秒間の振動回数です。",
+      "イ": "周期は時間なので、波長に掛けても速さの単位になりません。周期の逆数が振動数です。",
+      "ウ": "周期は逆数にして用います。振幅は変位の大きさなので波の速さの式には入りません。",
+      "エ": "振動数×波長は正しい式です。振動数の逆数は周期で、振幅ではありません。",
+      "オ": "波は1周期 T の間に1波長 λ だけ進むので、速さは λ/T です。また f＝1/T なので fλ とも表せます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240513-mxt_syogai02-mext_00002452_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20220817-mxt_syogai02-1411255_00007_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和4年度第1回高等学校卒業程度認定試験 物理基礎（解答番号13）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2022-first-gakka-q14",
+    "exam": "kounin-physics",
+    "year": 2022,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 14,
+    "officialQuestionLabel": "解答番号 14",
+    "officialAnswerNumber": 5,
+    "type": "multiple-choice",
+    "category": "波動",
+    "topicTags": [
+      "定在波の腹と節"
+    ],
+    "difficulty": 2,
+    "question": "逆向きに等しい速さで進む，振幅と波長の等しい2つの波が重なると定常波（定在波）ができる。図は定常波のある瞬間の波形を表している。図の点 a〜e の中からすべての腹の位置を選んだものとして正しいものはどれか。",
+    "choices": {
+      "ア": "c",
+      "イ": "b",
+      "ウ": "a，e",
+      "エ": "b，d",
+      "オ": "a，c，e"
+    },
+    "answer": "オ",
+    "explanation": "定在波の腹は振幅が最大になる位置です。谷側のa、eと山側のcが該当します。",
+    "choiceExplanations": {
+      "ア": "cは振幅の大きい位置ですが、谷側のaとeも同様に腹です。",
+      "イ": "bは変位が常に0となる節の位置です。",
+      "ウ": "aとeに加え、山の中央に当たるcも腹になります。",
+      "エ": "bとdは節で動きません。腹はそれらの間などで変位の振幅が最大になるところです。",
+      "オ": "定在波の腹は振幅が最大になる位置です。谷側のa、eと山側のcが該当します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240513-mxt_syogai02-mext_00002452_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20220817-mxt_syogai02-1411255_00007_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和4年度第1回高等学校卒業程度認定試験 物理基礎（解答番号14）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2022-1-q14.webp"
+    ],
+    "imageAltTexts": [
+      "定在波の腹と節の原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2022-first-gakka-q15",
+    "exam": "kounin-physics",
+    "year": 2022,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 15,
+    "officialQuestionLabel": "解答番号 15",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "category": "波動",
+    "topicTags": [
+      "うなりと振動数の差"
+    ],
+    "difficulty": 2,
+    "question": "ギターの1本の弦とおんさを同時に鳴らすとうなりが聞こえた。次に弦の音の振動数をわずかに大きくすると1 sあたりのうなりの回数が減った。このうなりに関する文として正しいものはどれか。",
+    "choices": {
+      "ア": "最初うなりが聞こえていたとき，弦とおんさの音の高さは一致していた。",
+      "イ": "最初の弦の音の大きさをわずかに大きくしても，1 sあたりのうなりの回数は減る。",
+      "ウ": "最初の弦の音の振動数をわずかに小さくしても，1 sあたりのうなりの回数は減る。",
+      "エ": "うなりが消えたとき，弦とおんさの振動数は一致している。"
+    },
+    "answer": "エ",
+    "explanation": "うなりの振動数は、元の二つの振動数の差の絶対値です。一致すると差が0になり、うなりが消えます。",
+    "choiceExplanations": {
+      "ア": "うなりがあるということは、2つの振動数にわずかな差があったことを示します。",
+      "イ": "音量を変えると振幅が変わりますが、うなりの回数を決める振動数差は変わりません。",
+      "ウ": "振動数を上げておんさに近づいたので、初めの弦の振動数はおんさより低い値です。下げると差が広がります。",
+      "エ": "うなりの振動数は、元の二つの振動数の差の絶対値です。一致すると差が0になり、うなりが消えます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240513-mxt_syogai02-mext_00002452_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20220817-mxt_syogai02-1411255_00007_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和4年度第1回高等学校卒業程度認定試験 物理基礎（解答番号15）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2022-first-gakka-q16",
+    "exam": "kounin-physics",
+    "year": 2022,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 16,
+    "officialQuestionLabel": "解答番号 16",
+    "officialAnswerNumber": 1,
+    "type": "multiple-choice",
+    "category": "波動",
+    "topicTags": [
+      "弦の基本振動数"
+    ],
+    "difficulty": 2,
+    "question": "弦にできる定常波を調べる装置で，振動装置の振動数を660 Hzにすると3倍振動の定常波が現れた。振動装置の振動数だけを変えて基本振動の定常波を発生させるには，振動数を何 Hzにすればよいか。",
+    "choices": {
+      "ア": "220",
+      "イ": "330",
+      "ウ": "440",
+      "エ": "550",
+      "オ": "1320"
+    },
+    "answer": "ア",
+    "explanation": "3倍振動の振動数は基本振動の3倍です。660を3で割ると220 Hzになります。",
+    "choiceExplanations": {
+      "ア": "3倍振動の振動数は基本振動の3倍です。660を3で割ると220 Hzになります。",
+      "イ": "660を2で割った値です。660 Hzは2倍振動ではなく3倍振動です。",
+      "ウ": "440 Hzは基本振動220 Hzの2倍で、基本振動そのものではありません。",
+      "エ": "550 Hzを基本振動とすると3倍は1650 Hzとなり、設定の660 Hzと合いません。",
+      "オ": "660 Hzの2倍です。求める基本振動は660 Hzより小さく、3分の1になります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240513-mxt_syogai02-mext_00002452_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20220817-mxt_syogai02-1411255_00007_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和4年度第1回高等学校卒業程度認定試験 物理基礎（解答番号16）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2022-first-gakka-q17",
+    "exam": "kounin-physics",
+    "year": 2022,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 17,
+    "officialQuestionLabel": "解答番号 17",
+    "officialAnswerNumber": 2,
+    "type": "multiple-choice",
+    "category": "電気",
+    "topicTags": [
+      "金属の自由電子と抵抗率"
+    ],
+    "difficulty": 2,
+    "question": "金属には内部を自由に動きまわることができる［ア］が存在するため，金属は電気をよく通す。金属は電気を通しにくい物質に比べて抵抗率が［イ］。アとイの組合せとして正しいものはどれか。",
+    "choices": {
+      "ア": "電子・大きい",
+      "イ": "電子・小さい",
+      "ウ": "陽子・大きい",
+      "エ": "陽子・小さい"
+    },
+    "answer": "イ",
+    "explanation": "金属では自由電子が電荷を運びます。電流が流れやすいので絶縁体などに比べて抵抗率は小さい値です。",
+    "choiceExplanations": {
+      "ア": "移動する粒子は電子です。電流が流れやすい物質は抵抗率が小さくなります。",
+      "イ": "金属では自由電子が電荷を運びます。電流が流れやすいので絶縁体などに比べて抵抗率は小さい値です。",
+      "ウ": "陽子は原子核にあり、金属内を自由に動く担い手ではありません。また電気が流れやすい物質の抵抗率は小さくなります。",
+      "エ": "抵抗率は小さいですが、電流を担うのは自由電子です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240513-mxt_syogai02-mext_00002452_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20220817-mxt_syogai02-1411255_00007_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和4年度第1回高等学校卒業程度認定試験 物理基礎（解答番号17）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2022-first-gakka-q18",
+    "exam": "kounin-physics",
+    "year": 2022,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 18,
+    "officialQuestionLabel": "解答番号 18",
+    "officialAnswerNumber": 4,
+    "type": "multiple-choice",
+    "category": "電気",
+    "topicTags": [
+      "電流電圧特性と消費電力"
+    ],
+    "difficulty": 2,
+    "question": "電源装置にニクロム線を接続して回路をつくり，両端に加える電圧と流れる電流を測定すると図2のようになった。電圧を4 Vにすると，流れる電流は［ア］Aとなり，消費電力は［イ］Wとなる。アとイの組合せとして正しいものはどれか。",
+    "choices": {
+      "ア": "0.15・0.6",
+      "イ": "0.15・1",
+      "ウ": "0.25・0.6",
+      "エ": "0.25・1"
+    },
+    "answer": "エ",
+    "explanation": "図の4 Vに対応する電流は0.25 Aです。P＝VIより、消費電力は1 Wです。",
+    "choiceExplanations": {
+      "ア": "0.15 Aなら4×0.15＝0.6 Wですが、4 Vでの実際のグラフは0.25 Aです。",
+      "イ": "1 Wの電力は合っていますが、4 Vで1 Wになる電流は0.25 Aです。",
+      "ウ": "電流0.25 Aは合っています。消費電力は電圧と電流の積4×0.25＝1 Wです。",
+      "エ": "図の4 Vに対応する電流は0.25 Aです。P＝VIより、消費電力は1 Wです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240513-mxt_syogai02-mext_00002452_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20220817-mxt_syogai02-1411255_00007_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和4年度第1回高等学校卒業程度認定試験 物理基礎（解答番号18）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/kounin-physics/2022-1-q18.webp"
+    ],
+    "imageAltTexts": [
+      "電流電圧特性と消費電力の原本の図"
+    ]
+  },
+  {
+    "id": "kounin-physics-2022-first-gakka-q19",
+    "exam": "kounin-physics",
+    "year": 2022,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 19,
+    "officialQuestionLabel": "解答番号 19",
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "category": "電気",
+    "topicTags": [
+      "オームの法則と抵抗線の長さ"
+    ],
+    "difficulty": 2,
+    "question": "電流と電圧は比例する。導体の両端にかかる電圧を V，流れる電流を I，抵抗を R とすると，この関係は［ア］と表される。ニクロム線を切断して短くし，同じ実験で横軸を電圧，縦軸を電流としたグラフを描くと，傾きは［イ］くなる。アとイの組合せとして正しいものはどれか。",
+    "choices": {
+      "ア": "V＝I/R・大き",
+      "イ": "V＝I/R・小さ",
+      "ウ": "I＝V/R・大き",
+      "エ": "I＝V/R・小さ"
+    },
+    "answer": "ウ",
+    "explanation": "オームの法則を I について解くと I＝V/R です。長さを短くして抵抗 R が小さくなれば、傾き1/Rは大きくなります。",
+    "choiceExplanations": {
+      "ア": "短くすると傾きが大きくなる点は合っています。オームの法則は V＝IR です。",
+      "イ": "正しい式は V＝IR です。また短い線は抵抗が小さく、I–Vグラフの傾き1/Rは大きくなります。",
+      "ウ": "オームの法則を I について解くと I＝V/R です。長さを短くして抵抗 R が小さくなれば、傾き1/Rは大きくなります。",
+      "エ": "式は合っています。同じ電圧で抵抗が小さいほど流れる電流は増えるため、傾きは大きくなります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240513-mxt_syogai02-mext_00002452_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20220817-mxt_syogai02-1411255_00007_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和4年度第1回高等学校卒業程度認定試験 物理基礎（解答番号19）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "kounin-physics-2022-first-gakka-q20",
+    "exam": "kounin-physics",
+    "year": 2022,
+    "season": "first",
+    "session": "gakka",
+    "qNumber": 20,
+    "officialQuestionLabel": "解答番号 20",
+    "officialAnswerNumber": 3,
+    "type": "multiple-choice",
+    "category": "エネルギー",
+    "topicTags": [
+      "エネルギーの保存と発電"
+    ],
+    "difficulty": 2,
+    "question": "エネルギーについて述べた文として正しいものはどれか。",
+    "choices": {
+      "ア": "原子力発電はウランやプルトニウムを核分裂させ，このとき出てくる電子を用いて発電している。",
+      "イ": "化石燃料は地球が誕生したときに岩石中に蓄えられていたエネルギー資源である。",
+      "ウ": "エネルギーは別のエネルギーに変換されても，変換の前後でエネルギーの総量は変化しない。",
+      "エ": "地熱発電は太陽があたためた地面の熱のエネルギーを利用している。"
+    },
+    "answer": "ウ",
+    "explanation": "エネルギーは運動・熱・電気などの形を変えますが、系全体の総量は保存されます。",
+    "choiceExplanations": {
+      "ア": "原子力発電では核分裂で生じた熱で蒸気をつくり、タービンを回して発電します。放出された電子を取り出して発電する方式ではありません。",
+      "イ": "石炭や石油などは、過去の生物に由来する有機物が長い時間をかけて変化した資源です。",
+      "ウ": "エネルギーは運動・熱・電気などの形を変えますが、系全体の総量は保存されます。",
+      "エ": "地熱発電は地下の熱で温められた蒸気や熱水を利用します。地表面への日射を利用する発電とは異なります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mext.go.jp/content/20240513-mxt_syogai02-mext_00002452_10buturi.pdf",
+    "sourceAnswerUrl": "https://www.mext.go.jp/content/20220817-mxt_syogai02-1411255_00007_10buturi.pdf",
+    "sourceAttribution": "出典：文部科学省 令和4年度第1回高等学校卒業程度認定試験 物理基礎（解答番号20）。",
+    "license": "MEXT-attributed",
+    "lastUpdated": "2026-11-19"
+  }
+]

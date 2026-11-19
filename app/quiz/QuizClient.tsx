@@ -60,8 +60,6 @@ export function QuizClient({
   backHref,
   backLabel,
   exam = "ap",
-  completionLabel,
-  completionShareHref,
   categoryById,
   wrongOnly = false,
   mockResultId,
@@ -73,8 +71,6 @@ export function QuizClient({
   backHref: string;
   backLabel?: string;
   exam?: string;
-  completionLabel?: string;
-  completionShareHref?: string;
   categoryById?: Record<string, string>;
   wrongOnly?: boolean;
   mockResultId?: string;
@@ -98,7 +94,6 @@ export function QuizClient({
     window.addEventListener("mobile:entitlement-changed", recheck);
     return () => window.removeEventListener("mobile:entitlement-changed", recheck);
   }, [accessError]);
-  const [related, setRelated] = React.useState<{ id: string; questions: Question[] } | null>(null);
   const transitionHost = React.useRef<HTMLDivElement>(null);
   const navigating = React.useRef(false);
   const reportedLimits = React.useRef(new Set<string>());
@@ -124,31 +119,6 @@ export function QuizClient({
   // Set from each confirmed grant: may the next question appear before its own grant returns?
   const showBeforeGrant = React.useRef(false);
   const initializedPool = React.useRef<string | null>(null);
-
-  // Optional content is fetched while the learner reads the current question.
-  // Activation still uses the ordinary practice access check below.
-  React.useEffect(() => {
-    if (!current || nativeClient()) return;
-    const controller = new AbortController();
-    const id = current.id;
-    const eligible = sessionIds?.slice(index + 1) ?? [];
-    void fetch("/api/questions/related", { method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ id, ids: eligible }), signal: controller.signal })
-      .then(async (response) => {
-        if (!response.ok) throw new Error("related-unavailable");
-        const data = await response.json() as { questions: Question[] };
-        if (controller.signal.aborted) return;
-        const available = new Set(eligible);
-        const questions = data.questions.filter((q) => available.has(q.id));
-        for (const question of questions) {
-          if (!cache.current.has(question.id)) cache.current.set(question.id, mode === "random" ? shuffleChoices(question) : question);
-        }
-        setRelated({ id, questions });
-      }).catch(() => {
-        if (!controller.signal.aborted) setRelated({ id, questions: [] });
-      });
-    return () => controller.abort();
-  }, [current, mode, sessionIds, index]);
 
   // Derive session pool once on mount (needs localStorage for history modes).
   React.useEffect(() => {
@@ -286,24 +256,6 @@ export function QuizClient({
     setIndex((i) => i + 1);
   }, [sessionIds, index, billingGateEnabled, mode]);
 
-  const handleRelated = (question: Question) => {
-    if (navigating.current || !sessionIds || !current || related?.id !== current.id ||
-        !related.questions.some((item) => item.id === question.id)) return;
-    navigating.current = true;
-    const nextIds = [...sessionIds.slice(0, index + 1), question.id,
-      ...sessionIds.slice(index + 1).filter((id) => id !== question.id)];
-    try {
-      const url = new URL(window.location.href);
-      url.searchParams.delete("question");
-      window.sessionStorage.setItem(`${LS_KEYS.activeQuizPool}${url.pathname}${url.search}:related-order`, JSON.stringify(nextIds));
-    } catch { /* Continue in place when session storage is unavailable. */ }
-    setSessionIds(nextIds);
-    setCurrent(!(nativeClient() || billingGateEnabled && mode !== "review") ? cache.current.get(question.id) ?? null : null);
-    setAccess(null);
-    setLoadError(false);
-    setIndex(index + 1);
-  };
-
   if (!sessionIds) {
     return (
       <PracticeLoading />
@@ -367,11 +319,7 @@ export function QuizClient({
       backHref={backHref}
       backLabel={backLabel}
       exam={exam}
-      completionLabel={completionLabel}
-      completionShareHref={completionShareHref}
       onNext={handleNext}
-      relatedQuestions={related?.id === current?.id ? related?.questions : undefined}
-      onRelated={handleRelated}
       />
     </div>
   );

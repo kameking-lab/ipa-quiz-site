@@ -21,7 +21,7 @@ function event(body:unknown,authorization="Bearer "+"x".repeat(32)){return new R
 it("rejects spoofed webhook auth and isolates app IDs and sandbox/live environments",async()=>{
   const e={id:"e",app_id:"app-test",environment:"SANDBOX",app_user_id:"opaque"};expect((await webhook(event(e,"wrong"))).status).toBe(401);expect(m.refresh).not.toHaveBeenCalled();
   expect((await webhook(event({...e,environment:"PRODUCTION"}))).status).toBe(200);expect((await webhook(event({...e,app_id:"wrong"}))).status).toBe(200);expect(m.refresh).not.toHaveBeenCalled();
-  expect((await webhook(event(e))).status).toBe(200);expect(m.refresh).toHaveBeenCalledWith("opaque");
+  expect((await webhook(event(e))).status).toBe(200);expect(m.refresh).toHaveBeenCalledWith("opaque",{retryOverlapAudit:true});
 });
 it("reconciles both sides of transfers and returns non-200 for retryable provider failures",async()=>{
   expect((await webhook(event({id:"e",app_id:"app-test",environment:"SANDBOX",transferred_from:["old"],transferred_to:["new"]}))).status).toBe(200);expect(m.refresh.mock.calls.map(x=>x[0])).toEqual(["old","new"]);

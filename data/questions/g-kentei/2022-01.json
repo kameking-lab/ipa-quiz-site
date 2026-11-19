@@ -1,0 +1,224 @@
+[
+  {
+    "id": "g-kentei-2022-01-q02",
+    "exam": "g-kentei",
+    "session": "gakka",
+    "year": 2022,
+    "season": "cbt",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "人工知能をめぐる動向",
+    "topicTags": [
+      "第2次AIブーム"
+    ],
+    "difficulty": 2,
+    "question": "AI研究には過去に2度のブームが起こり、現実的な進展が周囲の過剰な期待に追いつかず、それらのブームは終焉を迎えた。第2次AIブームで登場し、第1次AIブームの時代に比べて適用範囲は広がったものの、知識を明示的な形で記述することの難しさがネックとなってしまったものとして、最も適切な選択肢を1つ選べ",
+    "choices": {
+      "ア": "ディープラーニング",
+      "イ": "コグニティブコンピューティング",
+      "ウ": "機械学習",
+      "エ": "エキスパートシステム"
+    },
+    "answer": "エ",
+    "explanation": "エキスパートシステムは専門家の知識を規則などで表現して推論を行い、その知識の聞き出しや記述が普及の制約になりました。",
+    "choiceExplanations": {
+      "ア": "ディープラーニングは多層ニューラルネットワークで特徴を学習する技術で、第3次AIブームを牽引しました。",
+      "イ": "コグニティブコンピューティングは、人間の認知を支援する計算システムを指す広い概念です。",
+      "ウ": "機械学習ではデータから規則性を獲得します。この設問で問われているのは、人が専門知識を規則として書き出す方式です。",
+      "エ": "エキスパートシステムは専門家の知識を規則などで表現して推論を行い、その知識の聞き出しや記述が普及の制約になりました。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jdla.org/certificate/general/issues/#g-issues_No02",
+    "sourceAnswerUrl": "https://www.jdla.org/certificate/general/issues/#ans",
+    "sourceAttribution": "出典：一般社団法人日本ディープラーニング協会「G検定の例題・過去問」 G検定2022#1に出題された過去問題。",
+    "license": "JDLA-owner-authorized",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "第1回・公開Q2"
+  },
+  {
+    "id": "g-kentei-2022-01-q03",
+    "exam": "g-kentei",
+    "session": "gakka",
+    "year": 2022,
+    "season": "cbt",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "人工知能をめぐる動向",
+    "topicTags": [
+      "残差学習"
+    ],
+    "difficulty": 2,
+    "question": "コンピュータによる画像中の物体認識の精度を競う国際コンテスト ILSVRC にて、2015年にMicrosoft社が開発し、人間に勝るとも劣らない認識率を示したと報告され大きな話題となったスキップ結合を特徴とするモデルとして、最も適切な選択肢を1つ選べ",
+    "choices": {
+      "ア": "ResNet",
+      "イ": "AlexNet",
+      "ウ": "ZFNet",
+      "エ": "VGGNet"
+    },
+    "answer": "ア",
+    "explanation": "ResNetは入力を足し戻すスキップ結合で残差を学習し、深いネットワークの学習を可能にしました。",
+    "choiceExplanations": {
+      "ア": "ResNetは入力を足し戻すスキップ結合で残差を学習し、深いネットワークの学習を可能にしました。",
+      "イ": "AlexNetは2012年のILSVRCで成果を上げたCNNで、ReLUやGPUの活用が特徴です。",
+      "ウ": "ZFNetはAlexNet系のCNNを可視化に基づいて改良し、初期層のフィルタやストライドを調整しました。",
+      "エ": "VGGNetは小さな3×3フィルタを積み重ねる設計で知られます。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jdla.org/certificate/general/issues/#g-issues_No02",
+    "sourceAnswerUrl": "https://www.jdla.org/certificate/general/issues/#ans",
+    "sourceAttribution": "出典：一般社団法人日本ディープラーニング協会「G検定の例題・過去問」 G検定2022#1に出題された過去問題。",
+    "license": "JDLA-owner-authorized",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "第1回・公開Q3"
+  },
+  {
+    "id": "g-kentei-2022-01-q07",
+    "exam": "g-kentei",
+    "session": "gakka",
+    "year": 2022,
+    "season": "cbt",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "ディープラーニングの概要",
+    "topicTags": [
+      "勾配消失"
+    ],
+    "difficulty": 2,
+    "question": "ニューラルネットワークにおいて、どのような条件のときに勾配消失問題が起こりやすくなると考えられるか. 最も適切な選択肢を1つ選べ",
+    "choices": {
+      "ア": "使用している活性化関数の微分値が大きい",
+      "イ": "学習データの数が多い",
+      "ウ": "バッチ正規化を行っている",
+      "エ": "ネットワークの層が深い"
+    },
+    "answer": "エ",
+    "explanation": "層をまたぐたびに微分値が掛かるため、深いネットワークほど小さな値の積が入力側で極端に小さくなりやすくなります。",
+    "choiceExplanations": {
+      "ア": "逆伝播では微分値を掛け合わせるため、小さな値が連続することが勾配消失につながります。",
+      "イ": "データ数は主に汎化性能や学習時間に関わります。逆伝播の経路で微分値が小さくなる直接の条件ではありません。",
+      "ウ": "バッチ正規化は層への入力の尺度を整えて学習を安定させる手法です。",
+      "エ": "層をまたぐたびに微分値が掛かるため、深いネットワークほど小さな値の積が入力側で極端に小さくなりやすくなります。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jdla.org/certificate/general/issues/#g-issues_No04",
+    "sourceAnswerUrl": "https://www.jdla.org/certificate/general/issues/#ans",
+    "sourceAttribution": "出典：一般社団法人日本ディープラーニング協会「G検定の例題・過去問」 G検定2022#1に出題された過去問題。",
+    "license": "JDLA-owner-authorized",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "第1回・公開Q7"
+  },
+  {
+    "id": "g-kentei-2022-01-q14",
+    "exam": "g-kentei",
+    "session": "gakka",
+    "year": 2022,
+    "season": "cbt",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "AIの社会実装に向けて",
+    "topicTags": [
+      "データリーケージ"
+    ],
+    "difficulty": 2,
+    "question": "検証データにデータリーケージがあった場合の影響について述べたものとして、最も適切な選択肢を1つ選べ",
+    "choices": {
+      "ア": "検証時には精度が良かったが、実際に導入すると精度が悪くなる",
+      "イ": "一定以上、学習が継続できなくなる",
+      "ウ": "過学習が起きやすくなる",
+      "エ": "学習にかかる時間が増加する"
+    },
+    "answer": "ア",
+    "explanation": "本番で得られない情報や学習データと重複する情報が検証に入ると、検証精度が実際の性能より高く見えます。",
+    "choiceExplanations": {
+      "ア": "本番で得られない情報や学習データと重複する情報が検証に入ると、検証精度が実際の性能より高く見えます。",
+      "イ": "データが漏れていても学習処理自体は進められます。問題になるのは検証で得た評価の信頼性です。",
+      "ウ": "過学習は訓練データへの過度な適合です。リーケージの直接的な影響は、独立なはずの検証から情報が漏れて性能が楽観的に評価されることです。",
+      "エ": "リーケージの有無から学習時間の増減は決まりません。検証値が本番性能を代表しなくなることが問題です。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jdla.org/certificate/general/issues/#g-issues_No07",
+    "sourceAnswerUrl": "https://www.jdla.org/certificate/general/issues/#ans",
+    "sourceAttribution": "出典：一般社団法人日本ディープラーニング協会「G検定の例題・過去問」 G検定2022#1に出題された過去問題。",
+    "license": "JDLA-owner-authorized",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "第1回・公開Q14"
+  },
+  {
+    "id": "g-kentei-2022-01-q15",
+    "exam": "g-kentei",
+    "session": "gakka",
+    "year": 2022,
+    "season": "cbt",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "AIに必要な数理・統計知識",
+    "topicTags": [
+      "相関と分散"
+    ],
+    "difficulty": 2,
+    "question": "以下のあ、い、う、えの説明に適した名称の組み合わせとして、最も適切な選択肢を1つ選べ\n\n( あ ) 相関の程度を表す指標\n( い ) 他の変数の影響を除いた相関の程度を表す指標\n( う ) 偏差積の全データについての平均\n( え ) 偏差を2乗したものの平均",
+    "choices": {
+      "ア": "( あ ) 相関係数　　( い ) 偏相関係数　( う ) 共分散　( え ) 分散",
+      "イ": "( あ ) 偏相関係数　( い ) 相関係数　　( う ) 共分散　( え ) 分散",
+      "ウ": "( あ ) 相関係数　　( い ) 偏相関係数　( う ) 分散　　( え ) 共分散",
+      "エ": "( あ ) 偏相関係数　( い ) 相関係数　　( う ) 分散　　( え ) 共分散"
+    },
+    "answer": "ア",
+    "explanation": "相関係数は相関の程度、偏相関係数は他の変数の影響を除いた相関です。偏差の積の平均が共分散で、同じ変数の偏差を二乗して平均したものが分散です。",
+    "choiceExplanations": {
+      "ア": "相関係数は相関の程度、偏相関係数は他の変数の影響を除いた相関です。偏差の積の平均が共分散で、同じ変数の偏差を二乗して平均したものが分散です。",
+      "イ": "他の変数の影響を除いた相関を表すのは偏相関係数なので、あ・いが逆です。",
+      "ウ": "二変数の偏差の積が共分散、同じ変数の偏差の二乗が分散なので、う・えが逆です。",
+      "エ": "相関係数と偏相関係数に加え、共分散と分散の位置も逆です。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jdla.org/certificate/general/issues/#g-issues_No08",
+    "sourceAnswerUrl": "https://www.jdla.org/certificate/general/issues/#ans",
+    "sourceAttribution": "出典：一般社団法人日本ディープラーニング協会「G検定の例題・過去問」 G検定2022#1に出題された過去問題。",
+    "license": "JDLA-owner-authorized",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "第1回・公開Q15"
+  },
+  {
+    "id": "g-kentei-2022-01-q19",
+    "exam": "g-kentei",
+    "session": "gakka",
+    "year": 2022,
+    "season": "cbt",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "AI倫理・AIガバナンス",
+    "topicTags": [
+      "顔認識の公平性"
+    ],
+    "difficulty": 2,
+    "question": "AIを用いた顔認識技術については、近年様々な倫理的な問題が指摘されている。この点に関して、最も不適切な選択肢を1つ選べ",
+    "choices": {
+      "ア": "顔認識技術については、肌の色が濃い人や女性において認識精度が下がるサービスが存在すると指摘されている. この原因として、学習に用いたデータセットの偏りが指摘されている",
+      "イ": "顔認識技術の利用にあたっては日本では個人情報保護法を遵守する必要があるが、それだけではなくプライバシーの観点から同法を超えた対応や措置を実施することが重要な場合がある。このような対応や措置の参考として、経済産業省が公表する「カメラ画像利活用ガイドブック」が存在する",
+      "ウ": "IBM 社は 2020年6月に、顔認識技術を利用することの倫理的課題などを原因として、今後警察に汎用顔認識技術の提供を行わないことを表明した",
+      "エ": "アメリカでは都市によっては条例等により顔認識システムの利用を禁止しているが、その禁止対象は民間企業による利用ばかりではなく、警察などの公共性の高い公的機関による利用も含めるものが主流である"
+    },
+    "answer": "エ",
+    "explanation": "米国の自治体には警察を含む市の機関の利用を対象にした禁止例があります。民間企業の利用も禁止する条例が主流だとはいえません。",
+    "choiceExplanations": {
+      "ア": "訓練データの属性分布に偏りがあると、十分な例を学習できなかった集団で認識精度が低くなる場合があります。",
+      "イ": "画像利用の説明や運用の透明性など、法の遵守に加えて利用者への配慮も重要です。ガイドブックはその検討に使えます。",
+      "ウ": "IBMは監視や差別などの懸念を挙げ、2020年6月に汎用の顔認識ソフトウェアの提供を終了する方針を示しました。",
+      "エ": "米国の自治体には警察を含む市の機関の利用を対象にした禁止例があります。民間企業の利用も禁止する条例が主流だとはいえません。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jdla.org/certificate/general/issues/#g-issues_No10",
+    "sourceAnswerUrl": "https://www.jdla.org/certificate/general/issues/#ans",
+    "sourceAttribution": "出典：一般社団法人日本ディープラーニング協会「G検定の例題・過去問」 G検定2022#1に出題された過去問題。",
+    "license": "JDLA-owner-authorized",
+    "sourceExamYear": 2022,
+    "sourceExamSession": "第1回",
+    "officialQuestionLabel": "第1回・公開Q19"
+  }
+]

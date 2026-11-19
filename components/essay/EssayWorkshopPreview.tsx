@@ -1,8 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useSyncExternalStore } from "react";
-import { ArrowRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { WORKSHOP_QUESTIONS } from "@/data/questions/essay/workshop";
 import { countEssayCharacters, SECTION_KEYS, WORKSHOP_RELEASE_DEFAULTS, type EssayDraft } from "@/lib/essay/workshop";
 import { adjustedSamples, planningExcerpt, sampleExcerpt, sampleSentenceChanges, shortCostFollowUp, shortSampleInterview, templateSample } from "@/lib/essay/workshop-sample";
@@ -138,10 +136,9 @@ function DraftSections({ draft, selected }: { draft: EssayDraft; selected?: (typ
 export function EssayWorkshopPreview() {
   const savedPosition = useSyncExternalStore(subscribe, getPosition, getServerPosition);
   const [position, costRead] = savedPosition.split("/");
-  const selected = questions.find(({ id }) => id === position);
-  const isReading = position === "template" || Boolean(selected);
-  const needsCostAnswer = position === costQuestion && !costRead;
-  const manuscript = needsCostAnswer ? undefined : selected ? adjustedSamples[selected.id] : templateSample;
+  const paperId = position === "0" ? sampleExcerpt.questionId : position;
+  const selected = questions.find(({ id }) => id === paperId);
+  const manuscript = (selected && adjustedSamples[selected.id]) ?? templateSample;
   const heading = useRef<HTMLHeadingElement>(null);
   const article = useRef<HTMLElement>(null);
   const focusOnChange = useRef<"change" | "excerpt" | null>(null);
@@ -194,8 +191,8 @@ export function EssayWorkshopPreview() {
           <h1 className="mt-2 text-2xl font-bold tracking-tight sm:text-4xl">経験から作る論文の見本</h1>
         </header>
 
-        {!isReading ? (
-          <section aria-label="回答から論文になる例" className="rounded-2xl border border-blue-100 bg-blue-50/80 p-4 dark:border-blue-900 dark:bg-blue-950/55 sm:px-6 sm:py-5">
+        {paperId === sampleExcerpt.questionId && (
+          <section aria-label="回答から論文になる例" className="mb-4 rounded-2xl border border-blue-100 bg-blue-50/80 p-4 dark:border-blue-900 dark:bg-blue-950/55 sm:px-6 sm:py-5">
             {[{ label: "設問イ", ...planningExcerpt }, { label: "設問ウ", ...sampleExcerpt }].map(({ label, answers, sentence }) => (
             <div key={label} className="border-b border-blue-200 pb-3.5 pt-3.5 first:pt-0 last-of-type:border-b-0 last-of-type:pb-0 dark:border-blue-900 sm:grid sm:grid-cols-[minmax(0,2fr)_minmax(0,3fr)] sm:gap-6">
               <div>
@@ -208,15 +205,11 @@ export function EssayWorkshopPreview() {
               </div>
             </div>
             ))}
-            <Button type="button" onClick={() => show(sampleExcerpt.questionId, false, "excerpt")} className="mt-4 min-h-11 cursor-pointer">
-              この年度の完成例を読む
-              <ArrowRight className="size-4" aria-hidden="true" />
-            </Button>
           </section>
-        ) : (
-          <>
-            <div className="sticky top-0 z-10 flex flex-wrap items-center gap-x-3 gap-y-2 bg-slate-50 py-2 dark:bg-slate-950">
-              <label htmlFor="workshop-question" className="sr-only">読む原稿</label>
+        )}
+        <>
+            <div className="sticky top-14 z-10 flex flex-wrap items-center gap-x-3 gap-y-2 bg-slate-50 py-2 dark:bg-slate-950">
+              <label htmlFor="workshop-question" className="text-sm">読む原稿</label>
               <select id="workshop-question" value={selected?.id ?? "template"} onChange={(event) => show(event.target.value)} className="min-h-11 min-w-0 max-w-full rounded-xl border border-slate-300 bg-white px-2.5 text-sm font-medium dark:border-slate-700 dark:bg-slate-900">
                 <option value="template">王道テンプレート</option>
                 {questions.map((question) => <option key={question.id} value={question.id}>{labelForQuestion(question)} · {question.year === 2025 ? "稼働開始リスク" : question.year === 2024 ? "コスト管理" : "管理方法の修整"}</option>)}
@@ -225,22 +218,18 @@ export function EssayWorkshopPreview() {
             </div>
             <article ref={article} className={panel + " min-w-0"} aria-labelledby="workshop-heading">
               <header className="border-b border-slate-200 px-4 py-4 dark:border-slate-800 sm:px-7 sm:py-6">
-                <h2 ref={heading} id="workshop-heading" tabIndex={-1} className="text-xl font-bold leading-snug tracking-tight outline-none sm:text-2xl">{manuscript ? manuscript.title : selected?.theme}</h2>
+                <h2 ref={heading} id="workshop-heading" tabIndex={-1} className="text-xl font-bold leading-snug tracking-tight outline-none sm:text-2xl">{manuscript.title}</h2>
               </header>
-              {manuscript ? <DraftSections draft={manuscript} selected={selected} /> : needsCostAnswer && (
-                <div className="px-4 py-4 sm:px-7 sm:py-6">
-                  <h3 className="mb-2 text-base font-bold sm:mb-3">補足の質問と回答例</h3>
+              {paperId === costQuestion && (
+                <details className="px-4 py-3 sm:px-7">
+                  <summary className="min-h-11 cursor-pointer py-3 text-sm font-semibold">補足の質問と回答例</summary>
                   <Answers turns={shortCostFollowUp} compact />
-                  <Button type="button" onClick={() => show(costQuestion, true)} className="mt-4 min-h-11 cursor-pointer">
-                    補足を反映した完成例を読む
-                    <ArrowRight className="size-4" aria-hidden="true" />
-                  </Button>
-                </div>
+                </details>
               )}
+              <DraftSections draft={manuscript} selected={selected} />
             </article>
-            <Transcript includeCost={position === costQuestion && Boolean(costRead)} />
-          </>
-        )}
+            <Transcript includeCost={paperId === costQuestion} />
+        </>
       </div>
     </main>
   );

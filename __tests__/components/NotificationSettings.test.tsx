@@ -14,21 +14,9 @@ describe("通知設定の実際の提供状態", () => {
     expect(screen.queryByRole("textbox")).toBeNull();
     expect(screen.queryByText(/毎日設定時刻|デイリーチャレンジや連続学習を通知/)).toBeNull();
   });
-  it.each(["unauthenticated", "loading"])("%sでは送信操作を表示しない", status => {
+  it.each(["authenticated", "unauthenticated", "loading"])("%sでは送信操作を表示しない", status => {
     account.status = status; render(<NotificationSettings />);
     expect(screen.queryByRole("button", { name: "テストメールを送信" })).toBeNull();
-  });
-  it("送信先を入力させず、既存APIにテスト種別だけを送る", async () => {
-    const fetchMock = vi.fn().mockResolvedValue(Response.json({ ok: true })); vi.stubGlobal("fetch", fetchMock);
-    render(<NotificationSettings />); fireEvent.click(screen.getByRole("button", { name: "テストメールを送信" }));
-    expect(await screen.findByText(/テストメールを送信しました/)).toBeInTheDocument();
-    expect(fetchMock).toHaveBeenCalledWith("/api/email", expect.objectContaining({ body: JSON.stringify({ type: "test" }) }));
-  });
-  it("mocked応答を実送信成功と表示しない", async () => {
-    vi.stubGlobal("fetch", vi.fn().mockResolvedValue(Response.json({ ok: true, mocked: true })));
-    render(<NotificationSettings />); fireEvent.click(screen.getByRole("button", { name: "テストメールを送信" }));
-    expect(await screen.findByText("テストメールを送信できませんでした。")).toBeInTheDocument();
-    expect(screen.queryByText(/送信しました/)).toBeNull();
   });
   it("ブラウザ許可の取得だけを完了し、serviceWorker.readyで待ち続けない", async () => {
     vi.stubGlobal("Notification", { permission: "default", requestPermission: vi.fn().mockResolvedValue("granted") });

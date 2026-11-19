@@ -1,0 +1,660 @@
+[
+  {
+    "id": "soukan-2024-annual-gakka-q2",
+    "exam": "soukan",
+    "session": "gakka",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 2,
+    "subject": "必須科目Ⅰ－1（択一式）",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "経済性管理",
+    "topicTags": [
+      "経済性管理",
+      "令和6年度"
+    ],
+    "difficulty": 3,
+    "question": "初期投資費用2,000万円，計画期間5年で，計画期間の間，毎年末に500万円の収益が得られるプロジェクトがある。このプロジェクトにおいて追加投資を3年目の年初に行うかどうかを検討している。追加投資費用が400万円で，追加投資によって3年目以降の毎年末に得られる収益は（500＋x）万円に増加するものとする。このとき，追加投資を行う場合と追加投資を行わない場合とで，プロジェクトの開始時点でのプロジェクトの正味現在価値が等しくなるような x の値に最も近いものはどれか。ただし，割引率（年利率）は5％で，上で述べたもの以外の費用や収益は考えず，追加投資を行ってもそれ以前の収益には影響を及ぼさないものとする。",
+    "choices": {
+      "ア": "133",
+      "イ": "140",
+      "ウ": "147",
+      "エ": "154",
+      "オ": "161"
+    },
+    "answer": "ウ",
+    "explanation": "既存投資と共通の収益を消去し、追加投資時点で3回の増収を割り引いて400万円と等置する。毎年の増収は約146.9万円で、147万円が最も近い。",
+    "choiceExplanations": {
+      "ア": "133万円は400万円を3年で単純に割った値に近いが、将来収益の割引を考慮すると不足する。",
+      "イ": "3年目年初を基準とすると400 = x/1.05 + x/1.05² + x/1.05³で、xは約146.9万円になる。140万円ではこの差分を埋められない。",
+      "ウ": "既存投資と共通の収益を消去し、追加投資時点で3回の増収を割り引いて400万円と等置する。毎年の増収は約146.9万円で、147万円が最も近い。",
+      "エ": "154万円なら、3回の増収の追加投資時点の現在価値は約419万円になり、400万円を超える。",
+      "オ": "161万円では増収分の現在価値は約438万円になり、400万円を相殺する額より大きい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10373_1.pdf#page=2",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_4.pdf",
+    "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－2（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.engineer.or.jp/c_categories/index02022241.html",
+      "https://www.engineer.or.jp/c_topics/003/003935.html"
+    ],
+    "license": "IPEJ-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "lawReferenceDate": "2024-04-01"
+  },
+  {
+    "id": "soukan-2024-annual-gakka-q4",
+    "exam": "soukan",
+    "session": "gakka",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 4,
+    "subject": "必須科目Ⅰ－1（択一式）",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "経済性管理",
+    "topicTags": [
+      "経済性管理",
+      "令和6年度"
+    ],
+    "difficulty": 3,
+    "question": "抜取検査は，対象とするグループからアイテムを抜き取って行う検査であり，抜取検査によって合否を判定する判定検査を，合否判定抜取検査という。検査及び合否判定抜取検査に関する次の記述の，空欄に入る用語の組合せとして，最も適切なものはどれか。\nアイテムの重さを測定することによって実施する検査は，［ア］による検査である。\n合否判定抜取検査では，［イ］及び判定基準を組合せて検査を計画する。所定の合否判定抜取検査において，品質水準が合格とされる値であるときに不合格としてしまう確率を［ウ］と呼ぶ。",
+    "choices": {
+      "ア": "計数値 — 測定誤差 — 生産者危険",
+      "イ": "計数値 — サンプルサイズ — 生産者危険",
+      "ウ": "計数値 — サンプルサイズ — 消費者危険",
+      "エ": "計量値 — サンプルサイズ — 生産者危険",
+      "オ": "計量値 — 測定誤差 — 消費者危険"
+    },
+    "answer": "エ",
+    "explanation": "重さは計量値であり、抜取計画にはサンプルサイズと判定基準を使う。合格品質で不合格になる確率は生産者危険である。",
+    "choiceExplanations": {
+      "ア": "生産者危険は正しいが、重さは計量値であり、検査はサンプルサイズと判定基準で計画する。",
+      "イ": "サンプルサイズと生産者危険は正しい。重さの測定で得られるのは、個数を数える計数値でなく計量値である。",
+      "ウ": "重さは計量値であり、合格品質を誤って不合格とする確率は生産者危険である。",
+      "エ": "重さは計量値であり、抜取計画にはサンプルサイズと判定基準を使う。合格品質で不合格になる確率は生産者危険である。",
+      "オ": "重さは計量値だが、測定誤差はサンプルサイズの代わりではなく、消費者危険は不合格品質を誤って合格とする側の危険である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10373_1.pdf#page=4",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_4.pdf",
+    "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－4（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.engineer.or.jp/c_categories/index02022241.html",
+      "https://www.engineer.or.jp/c_topics/003/003935.html"
+    ],
+    "license": "IPEJ-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "lawReferenceDate": "2024-04-01"
+  },
+  {
+    "id": "soukan-2024-annual-gakka-q5",
+    "exam": "soukan",
+    "session": "gakka",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 5,
+    "subject": "必須科目Ⅰ－1（択一式）",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "経済性管理",
+    "topicTags": [
+      "経済性管理",
+      "令和6年度"
+    ],
+    "difficulty": 3,
+    "question": "生産方式に関する次の記述のうち，最も不適切なものはどれか。",
+    "choices": {
+      "ア": "プル型生産方式では，時々刻々の生産・配送・在庫状況情報を集中管理する必要がない。",
+      "イ": "プッシュ型生産方式は，あらかじめ定められたスケジュールに従い，生産活動を行う管理方式であり，代表例としてJIT生産方式が知られている。",
+      "ウ": "JIT生産方式のねらいは，作りすぎによる中間仕掛品の滞留，工程の遊休などを生じないように，生産工程の流れ化と生産リードタイムの短縮をすることにある。",
+      "エ": "JITの考え方は，自動車産業に限らず，さまざまな製造業やサービス業などにも応用されている。",
+      "オ": "かんばん方式で使用するかんばんは，生産指示をするための生産指示かんばんと，運搬指示をするための引取かんばんの2種類に大別される。"
+    },
+    "answer": "イ",
+    "explanation": "あらかじめ定めた計画に従うのはプッシュ型だが、JITは後工程が必要なものを必要なときに引き取るプル型の代表例である。",
+    "choiceExplanations": {
+      "ア": "プル型では後工程の引取りが上流への補充の合図になるため、補充のたびに集中計画を更新する必要がない。",
+      "イ": "あらかじめ定めた計画に従うのはプッシュ型だが、JITは後工程が必要なものを必要なときに引き取るプル型の代表例である。",
+      "ウ": "JITは工程間の流れを整え、不要な仕掛品と待ち時間を減らして生産リードタイムを短縮する。",
+      "エ": "需要に合わせて供給する考え方は、他の製造業やサービス業にも適用できる。",
+      "オ": "生産指示かんばんは補充生産、引取かんばんは後工程への運搬を指示する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10373_1.pdf#page=4",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_4.pdf",
+    "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－5（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.engineer.or.jp/c_categories/index02022241.html",
+      "https://www.engineer.or.jp/c_topics/003/003935.html"
+    ],
+    "license": "IPEJ-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "lawReferenceDate": "2024-04-01"
+  },
+  {
+    "id": "soukan-2024-annual-gakka-q7",
+    "exam": "soukan",
+    "session": "gakka",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 7,
+    "subject": "必須科目Ⅰ－1（択一式）",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "経済性管理",
+    "topicTags": [
+      "経済性管理",
+      "令和6年度"
+    ],
+    "difficulty": 3,
+    "question": "ある工場では，2種類の製品P，Qを，2種類の原材料L，Mを用いて生産している。製品Pを1 kg生産するためには，原材料Lを3 kg，原材料Mを3 kg必要とし，製品Qを1 kg生産するためには，原材料Lを4 kg，原材料Mを1 kg必要とする。製品Pの利益は1 kg当たり3万円，製品Qの利益は1 kg当たり5万円である。原材料Lが240 kgまで，原材料Mが150 kgまでしか使用できないとき，利益を最大にするための製品Pの生産量 x（kg），製品Qの生産量 y（kg）の組合せとして，最も適切なものはどれか。",
+    "choices": {
+      "ア": "x＝0，y＝60",
+      "イ": "x＝10，y＝50",
+      "ウ": "x＝30，y＝50",
+      "エ": "x＝40，y＝30",
+      "オ": "x＝50，y＝0"
+    },
+    "answer": "ア",
+    "explanation": "Qだけを60 kg生産するとLを240 kg、Mを60 kg使い、利益は300万円である。L 1 kg当たりの利益はQの方が高く、この配分で最大になる。",
+    "choiceExplanations": {
+      "ア": "Qだけを60 kg生産するとLを240 kg、Mを60 kg使い、利益は300万円である。L 1 kg当たりの利益はQの方が高く、この配分で最大になる。",
+      "イ": "Lを230 kg、Mを80 kg使うので実行可能だが、利益は280万円でQだけを60 kg作る場合を下回る。",
+      "ウ": "利益以前に、原材料Lの必要量が290 kgになり、240 kgの上限を超える。",
+      "エ": "LとMの上限に同時に達するが、利益は270万円であり、両制約が等号でも最大とは限らない。",
+      "オ": "Mを150 kg使い切るが、利益は150万円でQだけを生産する場合より少ない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10373_1.pdf#page=6",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_4.pdf",
+    "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－7（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.engineer.or.jp/c_categories/index02022241.html",
+      "https://www.engineer.or.jp/c_topics/003/003935.html"
+    ],
+    "license": "IPEJ-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "lawReferenceDate": "2024-04-01"
+  },
+  {
+    "id": "soukan-2024-annual-gakka-q8",
+    "exam": "soukan",
+    "session": "gakka",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 8,
+    "subject": "必須科目Ⅰ－1（択一式）",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "経済性管理",
+    "topicTags": [
+      "経済性管理",
+      "令和6年度"
+    ],
+    "difficulty": 3,
+    "question": "品質管理の手法に関連する次の記述のうち，最も不適切なものはどれか。",
+    "choices": {
+      "ア": "問題解決型QCストーリーは，現状の分析に基づいて，現状からの情報をもとに解決策を導く手順である。",
+      "イ": "PDPC法では，問題の最終的な解決までの一連の手段を列挙し，予想される障害を事前に想定し，適切な対策を講じるために，プロセス決定計画図を用いる。",
+      "ウ": "親和図法は，混沌とした状況の中から事実や意見，発想といったさまざまな言語情報をデータとしてとらえ，それらのデータを親和性，類似性によってまとめあげることで，問題の本質を明確にする手法である。",
+      "エ": "系統図法は，いくつかの問題点とその要因を矢印でつなぎ，それぞれの因果関係を図で表すことにより，目的を達成するための最適手段を追求する手法である。",
+      "オ": "マトリックス図法は，行に属する要素と列に属する要素によって二元的配置をした図を用いて，要因と結果，要因と他の要因など，複数の要素間の関係を整理し，多元的思考によって問題点を明確にしていく手法である。"
+    },
+    "answer": "エ",
+    "explanation": "問題の要因を矢印で結んで因果を整理するのは連関図法である。系統図法は目的を達成するための手段を樹形に展開する。",
+    "choiceExplanations": {
+      "ア": "問題解決型QCストーリーでは、現状を把握し、原因を分析した上でその原因に対する対策を立てる。",
+      "イ": "PDPC法は目標に至る過程で想定される障害と、その障害への代替策をあらかじめ整理する。",
+      "ウ": "親和図法は言語データを意味の近さでまとめ、問題の構造を把握する手法である。",
+      "エ": "問題の要因を矢印で結んで因果を整理するのは連関図法である。系統図法は目的を達成するための手段を樹形に展開する。",
+      "オ": "マトリックス図法では行と列で要素群を配し、交点に関係の有無や強さを表す。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10373_1.pdf#page=6",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_4.pdf",
+    "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－8（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.engineer.or.jp/c_categories/index02022241.html",
+      "https://www.engineer.or.jp/c_topics/003/003935.html"
+    ],
+    "license": "IPEJ-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "lawReferenceDate": "2024-04-01"
+  },
+  {
+    "id": "soukan-2023-annual-gakka-q3",
+    "exam": "soukan",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 3,
+    "subject": "必須科目Ⅰ－1（択一式）",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "経済性管理",
+    "topicTags": [
+      "経済性管理",
+      "令和5年度"
+    ],
+    "difficulty": 3,
+    "question": "設計管理に関する次の（A）〜（E）の用語と，それらの説明である（ア）〜（オ）の組合せとして，最も適切なものはどれか。\n（A）信頼性設計\n（B）保全性設計\n（C）デザインイン\n（D）デザインレビュー\n（E）フロントローディング\n（ア）故障が発生した場合，その故障個所がすぐに検知でき，容易に修復できるように考慮した設計法。\n（イ）対象物が，与えられた条件の下で，与えられた期間，故障せずに，要求どおりに遂行できるようにすることを目的とした設計技術。\n（ウ）初期の工程のうちに試作や量産など後工程で発生しそうな問題の検討や改善などに前倒しで取組むことで，品質の向上や工期の短縮などを推進する手法。\n（エ）部品の製造販売を行う業者が，完成品のメーカーに設計の協力をして共同開発を行い，その際に自社の部品をその新製品の組立てに使用するように働きかける活動。\n（オ）対象物のライフサイクル全体にわたる既存又は新規に要求される設計活動に対する，文書化された計画的な審査。",
+    "choices": {
+      "ア": "イ — ア — ウ — エ — オ",
+      "イ": "イ — ア — エ — オ — ウ",
+      "ウ": "イ — ア — エ — ウ — オ",
+      "エ": "ア — イ — ウ — オ — エ",
+      "オ": "ア — イ — オ — エ — ウ"
+    },
+    "answer": "イ",
+    "explanation": "故障せずに機能を果たす設計が信頼性設計、故障検知や修復に配慮する設計が保全性設計である。部品採用を働きかける活動、計画的な設計審査、前倒しの検討は順にデザインイン、デザインレビュー、フロントローディングに当たる。",
+    "choiceExplanations": {
+      "ア": "（A）と（B）は合うが、（C）のデザインインは完成品メーカーと共同開発して自社部品の採用を働きかける活動である。",
+      "イ": "故障せずに機能を果たす設計が信頼性設計、故障検知や修復に配慮する設計が保全性設計である。部品採用を働きかける活動、計画的な設計審査、前倒しの検討は順にデザインイン、デザインレビュー、フロントローディングに当たる。",
+      "ウ": "（A）から（C）までは合うが、（D）は文書化された計画的な審査、（E）は後工程の課題を初期に検討する手法である。",
+      "エ": "（A）信頼性設計と（B）保全性設計が逆である。前倒しで課題を検討する説明は（E）に当たる。",
+      "オ": "（E）の前倒しの検討は合うが、（A）と（B）は逆で、（C）は計画的な審査でなく部品採用への働きかけである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9651_1.pdf#page=3",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_5.pdf",
+    "sourceAttribution": "出典：公益社団法人日本技術士会 令和5年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－3（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.engineer.or.jp/c_categories/index02022241.html",
+      "https://www.engineer.or.jp/c_topics/003/003935.html"
+    ],
+    "license": "IPEJ-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "lawReferenceDate": "2023-04-01"
+  },
+  {
+    "id": "soukan-2023-annual-gakka-q4",
+    "exam": "soukan",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 4,
+    "subject": "必須科目Ⅰ－1（択一式）",
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "経済性管理",
+    "topicTags": [
+      "経済性管理",
+      "令和5年度"
+    ],
+    "difficulty": 3,
+    "question": "品質管理で用いられる図やグラフと，その用途の例の組合せとして，最も適切なものはどれか。",
+    "choices": {
+      "ア": "パレート図：改善すべき事項の全体に及ぼす影響の確認，及び改善による効果の確認をする。",
+      "イ": "管理図：計量値データを統計的に解析して棒グラフで示し，平均値や中央値などの中心傾向，分布の形状を知る。",
+      "ウ": "ヒストグラム：2つの特性の相関関係を見る。",
+      "エ": "散布図：特定の結果に対する原因を定性的に分類・整理し，重要な原因を追究する。",
+      "オ": "特性要因図：数値データに基づいて工程の異常を発見し，安定状態を維持する。"
+    },
+    "answer": "ア",
+    "explanation": "パレート図は項目の大きい順と累積比率から重要項目を特定でき、改善の前後を比べると効果も確認できる。",
+    "choiceExplanations": {
+      "ア": "パレート図は項目の大きい順と累積比率から重要項目を特定でき、改善の前後を比べると効果も確認できる。",
+      "イ": "度数分布の形状を棒で示すのはヒストグラムである。管理図は工程の変動を時系列で監視する。",
+      "ウ": "2つの特性の相関を調べるには散布図を用いる。ヒストグラムは一つの変数の度数分布を示す。",
+      "エ": "原因を定性的に分類する用途には特性要因図を用いる。散布図は対になったデータを点で描く。",
+      "オ": "数値データから工程の異常を監視するものは管理図である。特性要因図は結果と要因の関係を整理する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9651_1.pdf#page=4",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_5.pdf",
+    "sourceAttribution": "出典：公益社団法人日本技術士会 令和5年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－4（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.engineer.or.jp/c_categories/index02022241.html",
+      "https://www.engineer.or.jp/c_topics/003/003935.html"
+    ],
+    "license": "IPEJ-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "lawReferenceDate": "2023-04-01"
+  },
+  {
+    "id": "soukan-2023-annual-gakka-q5",
+    "exam": "soukan",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 5,
+    "subject": "必須科目Ⅰ－1（択一式）",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "経済性管理",
+    "topicTags": [
+      "経済性管理",
+      "令和5年度"
+    ],
+    "difficulty": 3,
+    "question": "ある工場では，設備管理に関する次の取組を行った。このうち，設備総合効率の値を高めた取組として，最も不適切なものはどれか。",
+    "choices": {
+      "ア": "設備の予防保全の活動を見直すことによって，設備の停止時間を減らした。",
+      "イ": "設備の段取作業の省人化によって，段取作業における製造原価を減らした。",
+      "ウ": "設備の作業速度低下の発生を減らすことによって，稼働時間内の加工数量を増やした。",
+      "エ": "設備の改良保全の活動を見直すことによって，不適合品の発生数を減らした。",
+      "オ": "設備の事後保全の活動を見直すことによって，設備故障から復旧までの時間を減らした。"
+    },
+    "answer": "イ",
+    "explanation": "省人化は原価を下げるが、それだけでは時間稼働率、性能稼働率、良品率が改善したとはいえない。",
+    "choiceExplanations": {
+      "ア": "停止時間を減らすことで、負荷時間に占める稼働時間の割合が高まる。",
+      "イ": "省人化は原価を下げるが、それだけでは時間稼働率、性能稼働率、良品率が改善したとはいえない。",
+      "ウ": "設備が稼働している時間内により多く加工できれば、性能稼働率が向上する。",
+      "エ": "ほかの条件が同じで不適合品が減れば、設備総合効率の構成要素である良品率が改善する。",
+      "オ": "設備故障に伴う停止時間の短縮は、時間稼働率を高める。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9651_1.pdf#page=4",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_5.pdf",
+    "sourceAttribution": "出典：公益社団法人日本技術士会 令和5年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－5（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.engineer.or.jp/c_categories/index02022241.html",
+      "https://www.engineer.or.jp/c_topics/003/003935.html"
+    ],
+    "license": "IPEJ-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "lawReferenceDate": "2023-04-01"
+  },
+  {
+    "id": "soukan-2023-annual-gakka-q7",
+    "exam": "soukan",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 7,
+    "subject": "必須科目Ⅰ－1（択一式）",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "経済性管理",
+    "topicTags": [
+      "経済性管理",
+      "令和5年度"
+    ],
+    "difficulty": 3,
+    "question": "業務改善を実施するうえでの視点を示したECRSの原則を用いた改善活動の説明として，次のうち最も不適切なものはどれか。",
+    "choices": {
+      "ア": "作業のスケジュールを見直すことによって，作業の順序の変更をする。",
+      "イ": "工程分析を行った結果を活用し，一部の工程をなくす。",
+      "ウ": "完成品の利用調査に基づき，完成品の検査合格の許容範囲を狭める。",
+      "エ": "作業者の動作分析を行うことによって，動作方法を単純化する。",
+      "オ": "各工程の作業を見直し，別々であった工程を1つの工程にする。"
+    },
+    "answer": "ウ",
+    "explanation": "合否の許容範囲を狭めることは品質基準の見直しであり、工程の排除、結合、再配置、簡素化のいずれも示していない。",
+    "choiceExplanations": {
+      "ア": "作業順を組み替えるのは、ECRSのRに当たる再配置の例である。",
+      "イ": "不要な工程を取り除く改善は、Eに当たる排除である。",
+      "ウ": "合否の許容範囲を狭めることは品質基準の見直しであり、工程の排除、結合、再配置、簡素化のいずれも示していない。",
+      "エ": "動作を単純にして負担や手順を減らすことは、Sに当たる簡素化である。",
+      "オ": "別々の工程を一体化する改善は、Cに当たる結合である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9651_1.pdf#page=5",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_5.pdf",
+    "sourceAttribution": "出典：公益社団法人日本技術士会 令和5年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－7（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.engineer.or.jp/c_categories/index02022241.html",
+      "https://www.engineer.or.jp/c_topics/003/003935.html"
+    ],
+    "license": "IPEJ-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "lawReferenceDate": "2023-04-01"
+  },
+  {
+    "id": "soukan-2023-annual-gakka-q8",
+    "exam": "soukan",
+    "session": "gakka",
+    "year": 2023,
+    "season": "annual",
+    "qNumber": 8,
+    "subject": "必須科目Ⅰ－1（択一式）",
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "経済性管理",
+    "topicTags": [
+      "経済性管理",
+      "令和5年度"
+    ],
+    "difficulty": 3,
+    "question": "現品管理の活動として，次の記述のうち最も不適切なものはどれか。",
+    "choices": {
+      "ア": "ICタグを活用して，ものの動きと情報を関連付けた管理を行う。",
+      "イ": "コンビニエンスストアにおいて，販売する食料品の賞味期限の確認を行う。",
+      "ウ": "現品票を用いて，仕掛品の紛失を防止する。",
+      "エ": "バーコードを活用して，販売時点情報を把握する。",
+      "オ": "バスタブカーブの図を活用して，需要予測を行う。"
+    },
+    "answer": "オ",
+    "explanation": "バスタブ曲線が示すのは時間の経過に伴う故障率である。需要を見込む手法でも、現品を識別・追跡する手法でもない。",
+    "choiceExplanations": {
+      "ア": "ICタグで個体を識別し、移動や入出庫の情報を現品と対応づけられる。",
+      "イ": "商品の状態を把握し期限切れを防ぐための賞味期限確認は、現品管理の一例である。",
+      "ウ": "現品票を仕掛品と対応させることで、識別と所在の把握が可能になる。",
+      "エ": "バーコードから販売した品目を識別し、販売時点の情報を現品と結び付けられる。",
+      "オ": "バスタブ曲線が示すのは時間の経過に伴う故障率である。需要を見込む手法でも、現品を識別・追跡する手法でもない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/009/attached/attach_9651_1.pdf#page=6",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_5.pdf",
+    "sourceAttribution": "出典：公益社団法人日本技術士会 令和5年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－8（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.engineer.or.jp/c_categories/index02022241.html",
+      "https://www.engineer.or.jp/c_topics/003/003935.html"
+    ],
+    "license": "IPEJ-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "lawReferenceDate": "2023-04-01"
+  },
+  {
+    "id": "soukan-2022-annual-gakka-q4",
+    "exam": "soukan",
+    "session": "gakka",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 4,
+    "subject": "必須科目Ⅰ－1（択一式）",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "経済性管理",
+    "topicTags": [
+      "経済性管理",
+      "令和4年度"
+    ],
+    "difficulty": 3,
+    "question": "以下の（ア）〜（ウ）に示した設備管理における保全活動の内容と，その名称との組合せとして，最も適切なものはどれか。\n（ア）設備の劣化傾向を設備診断技術などによって管理し，故障に至る前の最適な時期に最善の対策を行う保全活動。\n（イ）設備，系，ユニット，アッセンブリ，部品などについて，計画・設計段階から過去の保全実績又は情報を用いて不良や故障に関する事項を予知・予測し，これらを排除するための対策を織り込む保全活動。\n（ウ）故障が起こりにくい設備への改善，又は性能向上を目的とした保全活動。",
+    "choices": {
+      "ア": "改良保全 — 保全予防 — 予知保全",
+      "イ": "保全予防 — 予知保全 — 改良保全",
+      "ウ": "保全予防 — 改良保全 — 予知保全",
+      "エ": "予知保全 — 保全予防 — 改良保全",
+      "オ": "予知保全 — 改良保全 — 保全予防"
+    },
+    "answer": "エ",
+    "explanation": "劣化傾向から適期を判断するのが予知保全で、計画・設計時に対策を入れるのが保全予防である。既存設備を改善する（ウ）は改良保全である。",
+    "choiceExplanations": {
+      "ア": "（イ）は正しいが、劣化傾向から対策時期を選ぶ（ア）が予知保全、設備の改善を行う（ウ）が改良保全である。",
+      "イ": "（ウ）は正しい。（ア）は劣化状態を監視する予知保全、（イ）は設計で対策を織り込む保全予防である。",
+      "ウ": "設計段階で保全の問題を防ぐのが保全予防であり、これは（イ）に当たる。劣化傾向から対策を行う（ア）は予知保全である。",
+      "エ": "劣化傾向から適期を判断するのが予知保全で、計画・設計時に対策を入れるのが保全予防である。既存設備を改善する（ウ）は改良保全である。",
+      "オ": "（ア）は正しいが、（イ）の設計時の対策が保全予防で、（ウ）の設備改善が改良保全である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/008/attached/attach_8867_1.pdf#page=3",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_6.pdf",
+    "sourceAttribution": "出典：公益社団法人日本技術士会 令和4年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－4（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.engineer.or.jp/c_categories/index02022241.html",
+      "https://www.engineer.or.jp/c_topics/003/003935.html"
+    ],
+    "license": "IPEJ-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "lawReferenceDate": "2022-04-01"
+  },
+  {
+    "id": "soukan-2022-annual-gakka-q5",
+    "exam": "soukan",
+    "session": "gakka",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 5,
+    "subject": "必須科目Ⅰ－1（択一式）",
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "経済性管理",
+    "topicTags": [
+      "経済性管理",
+      "令和4年度"
+    ],
+    "difficulty": 3,
+    "question": "顧客に満足される高い品質のサービスを販売し提供するためには，工業製品の特性とは異なる，サービスの特性の違いを理解する必要がある。サービスの特性に関する次の記述のうち，最も不適切なものはどれか。",
+    "choices": {
+      "ア": "サービスには，事前に在庫したり流通させたりすることができないという特性がある。",
+      "イ": "サービスのうち，特に対人サービスには，顧客が必要とする場所と時間に生産され，生産と同時に消費されるという特性がある。",
+      "ウ": "サービスには，同一のサービスを安定して繰り返し提供することが容易であるという特性がある。",
+      "エ": "サービスには，生産者と顧客との共同作業・相互作用によって便益や満足が生み出されるという特性がある。",
+      "オ": "サービスには，提供されると，それを元に戻すことができないという特性がある。"
+    },
+    "answer": "ウ",
+    "explanation": "提供者、顧客や状況により結果が変動するため、毎回まったく同じサービスを提供することは難しい。",
+    "choiceExplanations": {
+      "ア": "サービス提供の機会は多くの場合、事前に製造して保管したり、在庫として融通したりできない。",
+      "イ": "対人サービスでは提供者と顧客が相互作用する場で価値が生まれ、生産と消費が同時になることが多い。",
+      "ウ": "提供者、顧客や状況により結果が変動するため、毎回まったく同じサービスを提供することは難しい。",
+      "エ": "サービスでは利用者の情報提供や参加などが、提供者の働きかけと一体となって価値を生む。",
+      "オ": "提供済みのサービスは物品のように回収して、消費前の状態に戻すことはできない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/008/attached/attach_8867_1.pdf#page=3",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_6.pdf",
+    "sourceAttribution": "出典：公益社団法人日本技術士会 令和4年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－5（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.engineer.or.jp/c_categories/index02022241.html",
+      "https://www.engineer.or.jp/c_topics/003/003935.html"
+    ],
+    "license": "IPEJ-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "lawReferenceDate": "2022-04-01"
+  },
+  {
+    "id": "soukan-2022-annual-gakka-q6",
+    "exam": "soukan",
+    "session": "gakka",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 6,
+    "subject": "必須科目Ⅰ－1（択一式）",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "経済性管理",
+    "topicTags": [
+      "経済性管理",
+      "令和4年度"
+    ],
+    "difficulty": 3,
+    "question": "サプライチェーンマネジメントにおける制約条件の理論（TOC）の活用に関する次の記述のうち，最も不適切なものはどれか。",
+    "choices": {
+      "ア": "改善プロセスにおいて，既存のボトルネック工程の改善が進むにつれ，他の工程が新たなボトルネック工程として浮上してくることがある。",
+      "イ": "ボトルネック工程のスケジュールがサプライチェーンの最終工程に通知される。",
+      "ウ": "全体の工程をボトルネック工程のペースに合わせることが，生産活動の基本となる。",
+      "エ": "サプライチェーン内で発生しうる様々な不具合によってもたらされるスループットの減少を抑えるために，バッファを用いた管理を行う。",
+      "オ": "非ボトルネック工程を，ボトルネック工程でこなせる以上のペースで作業できるように改善したとしても，全体のスループットは増えない。"
+    },
+    "answer": "イ",
+    "explanation": "ボトルネックのペースに合わせて投入量を管理するため、そのスケジュールを最終工程でなく最初の投入工程に伝える。",
+    "choiceExplanations": {
+      "ア": "既存の制約が解消されると別の活動が全体の処理能力を制約し得るため、制約の特定を繰り返す。",
+      "イ": "ボトルネックのペースに合わせて投入量を管理するため、そのスケジュールを最終工程でなく最初の投入工程に伝える。",
+      "ウ": "ボトルネックの処理能力が全体を制約するため、他の工程はそのペースに合わせる。",
+      "エ": "制約工程の手前などにバッファを置くことで、一時的な遅れから全体の流れを保護できる。",
+      "オ": "制約工程の処理能力が同じであれば、そこを通れる量は変わらず、非制約工程を速くするだけでは全体量は増えない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/008/attached/attach_8867_1.pdf#page=4",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_6.pdf",
+    "sourceAttribution": "出典：公益社団法人日本技術士会 令和4年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－6（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.engineer.or.jp/c_categories/index02022241.html",
+      "https://www.engineer.or.jp/c_topics/003/003935.html"
+    ],
+    "license": "IPEJ-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "lawReferenceDate": "2022-04-01"
+  },
+  {
+    "id": "soukan-2022-annual-gakka-q7",
+    "exam": "soukan",
+    "session": "gakka",
+    "year": 2022,
+    "season": "annual",
+    "qNumber": 7,
+    "subject": "必須科目Ⅰ－1（択一式）",
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "経済性管理",
+    "topicTags": [
+      "経済性管理",
+      "令和4年度"
+    ],
+    "difficulty": 3,
+    "question": "製品やシステムの開発を行う際の開発プロセスの種類に関する次の記述のうち，最も適切なものはどれか。",
+    "choices": {
+      "ア": "ウォーターフォール型は，要求分析に基づき，まず試作システムを製造し，機能や操作性を確認した後，本番の開発を進める方法である。",
+      "イ": "スパイラル型は，開発チーム全員で，最初の工程から順番に開発を完了させて承認を受け，やり直しすることなく次の工程に進める方法である。",
+      "ウ": "V字型モデルは，開発する機能全体を俯瞰して，最初は機能を絞って薄く開発し，徐々に機能を強化し肉付けしていく方法である。",
+      "エ": "アジャイル型は，期間を短く区切って優先度の高い機能から実装することを繰り返し，ユーザーや顧客のフィードバックを取り入れながら開発をする方法である。",
+      "オ": "イテレーティブ型は，要求分析と現地テスト，詳細設計と結合テストなど，作成した仕様とそれに基づく成果の検証の対応関係をはっきりさせる方法である。"
+    },
+    "answer": "エ",
+    "explanation": "短い周期で優先度の高い機能を実装し、成果を評価して次の周期へフィードバックを反映するのがアジャイル型の進め方である。",
+    "choiceExplanations": {
+      "ア": "先に試作して確認する方法はプロトタイピングである。ウォーターフォール型は工程を順次進める。",
+      "イ": "スパイラル型は計画、リスク評価、開発などを周回して段階的に成果を具体化する。",
+      "ウ": "V字型モデルは要求や設計の各段階と対応するテスト段階を明示する。徐々に機能を強化する説明は反復型開発に近い。",
+      "エ": "短い周期で優先度の高い機能を実装し、成果を評価して次の周期へフィードバックを反映するのがアジャイル型の進め方である。",
+      "オ": "開発段階と検証段階を対応させる説明はV字型モデルの考え方である。イテレーティブ型では開発のサイクルを反復して成果を改良する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/008/attached/attach_8867_1.pdf#page=4",
+    "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_6.pdf",
+    "sourceAttribution": "出典：公益社団法人日本技術士会 令和4年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－7（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+    "officialReferenceUrls": [
+      "https://www.engineer.or.jp/c_categories/index02022241.html",
+      "https://www.engineer.or.jp/c_topics/003/003935.html"
+    ],
+    "license": "IPEJ-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "lawReferenceDate": "2022-04-01"
+  }
+]

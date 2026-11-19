@@ -76,13 +76,6 @@ export function MobileInstallControl() {
             aria-expanded={available ? undefined : guideOpen} aria-controls={available ? undefined : guideId}>
             ホーム画面に追加
           </Button>
-          {available && <Button type="button" variant="ghost" className="min-h-11 whitespace-normal"
-            aria-expanded={guideOpen} aria-controls={guideId} onClick={(event) => {
-              guideOrigin.current = event.currentTarget;
-              setGuideOpen(true);
-            }}>
-            追加方法を見る
-          </Button>}
         </div>
         <p role="status" className="mt-2 text-sm text-muted-foreground">{MESSAGES[phase]}</p>
         {guideOpen && <div id={guideId} className="mt-3 space-y-3 rounded-xl border border-border bg-background p-4">

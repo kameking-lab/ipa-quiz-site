@@ -1,0 +1,237 @@
+[
+ {
+  "id": "soukan-2024-annual-gakka-q2",
+  "exam": "soukan",
+  "session": "gakka",
+  "year": 2024,
+  "season": "annual",
+  "qNumber": 2,
+  "subject": "必須科目Ⅰ－1（択一式）",
+  "officialAnswerNumber": "3",
+  "type": "multiple-choice",
+  "category": "経済性管理",
+  "topicTags": [
+   "経済性管理",
+   "令和6年度"
+  ],
+  "difficulty": 3,
+  "question": "初期投資費用2,000万円，計画期間5年で，計画期間の間，毎年末に500万円の収益が得られるプロジェクトがある。このプロジェクトにおいて追加投資を3年目の年初に行うかどうかを検討している。追加投資費用が400万円で，追加投資によって3年目以降の毎年末に得られる収益は（500＋x）万円に増加するものとする。このとき，追加投資を行う場合と追加投資を行わない場合とで，プロジェクトの開始時点でのプロジェクトの正味現在価値が等しくなるような x の値に最も近いものはどれか。ただし，割引率（年利率）は5％で，上で述べたもの以外の費用や収益は考えず，追加投資を行ってもそれ以前の収益には影響を及ぼさないものとする。",
+  "choices": {
+   "ア": "133",
+   "イ": "140",
+   "ウ": "147",
+   "エ": "154",
+   "オ": "161"
+  },
+  "answer": "ウ",
+  "explanation": "既存投資と共通の収益を消去し、追加投資時点で3回の増収を割り引いて400万円と等置する。毎年の増収は約146.9万円で、147万円が最も近い。",
+  "choiceExplanations": {
+   "ア": "133万円は400万円を3年で単純に割った値に近いが、将来収益の割引を考慮すると不足する。",
+   "イ": "3年目年初を基準とすると400 = x/1.05 + x/1.05² + x/1.05³で、xは約146.9万円になる。140万円ではこの差分を埋められない。",
+   "ウ": "既存投資と共通の収益を消去し、追加投資時点で3回の増収を割り引いて400万円と等置する。毎年の増収は約146.9万円で、147万円が最も近い。",
+   "エ": "154万円なら、3回の増収の追加投資時点の現在価値は約419万円になり、400万円を超える。",
+   "オ": "161万円では増収分の現在価値は約438万円になり、400万円を相殺する額より大きい。"
+  },
+  "explanationCoverage": "full",
+  "hasImage": false,
+  "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10373_1.pdf#page=2",
+  "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_4.pdf",
+  "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－2（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+  "officialReferenceUrls": [
+   "https://www.engineer.or.jp/c_categories/index02022241.html",
+   "https://www.engineer.or.jp/c_topics/003/003935.html"
+  ],
+  "license": "IPEJ-attributed",
+  "needsReview": false,
+  "lastUpdated": "2026-11-19",
+  "lawReferenceDate": "2024-04-01"
+ },
+ {
+  "id": "soukan-2024-annual-gakka-q4",
+  "exam": "soukan",
+  "session": "gakka",
+  "year": 2024,
+  "season": "annual",
+  "qNumber": 4,
+  "subject": "必須科目Ⅰ－1（択一式）",
+  "officialAnswerNumber": "4",
+  "type": "multiple-choice",
+  "category": "経済性管理",
+  "topicTags": [
+   "経済性管理",
+   "令和6年度"
+  ],
+  "difficulty": 3,
+  "question": "抜取検査は，対象とするグループからアイテムを抜き取って行う検査であり，抜取検査によって合否を判定する判定検査を，合否判定抜取検査という。検査及び合否判定抜取検査に関する次の記述の，空欄に入る用語の組合せとして，最も適切なものはどれか。\nアイテムの重さを測定することによって実施する検査は，［ア］による検査である。\n合否判定抜取検査では，［イ］及び判定基準を組合せて検査を計画する。所定の合否判定抜取検査において，品質水準が合格とされる値であるときに不合格としてしまう確率を［ウ］と呼ぶ。",
+  "choices": {
+   "ア": "計数値 — 測定誤差 — 生産者危険",
+   "イ": "計数値 — サンプルサイズ — 生産者危険",
+   "ウ": "計数値 — サンプルサイズ — 消費者危険",
+   "エ": "計量値 — サンプルサイズ — 生産者危険",
+   "オ": "計量値 — 測定誤差 — 消費者危険"
+  },
+  "answer": "エ",
+  "explanation": "重さは計量値であり、抜取計画にはサンプルサイズと判定基準を使う。合格品質で不合格になる確率は生産者危険である。",
+  "choiceExplanations": {
+   "ア": "生産者危険は正しいが、重さは計量値であり、検査はサンプルサイズと判定基準で計画する。",
+   "イ": "サンプルサイズと生産者危険は正しい。重さの測定で得られるのは、個数を数える計数値でなく計量値である。",
+   "ウ": "重さは計量値であり、合格品質を誤って不合格とする確率は生産者危険である。",
+   "エ": "重さは計量値であり、抜取計画にはサンプルサイズと判定基準を使う。合格品質で不合格になる確率は生産者危険である。",
+   "オ": "重さは計量値だが、測定誤差はサンプルサイズの代わりではなく、消費者危険は不合格品質を誤って合格とする側の危険である。"
+  },
+  "explanationCoverage": "full",
+  "hasImage": false,
+  "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10373_1.pdf#page=4",
+  "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_4.pdf",
+  "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－4（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+  "officialReferenceUrls": [
+   "https://www.engineer.or.jp/c_categories/index02022241.html",
+   "https://www.engineer.or.jp/c_topics/003/003935.html"
+  ],
+  "license": "IPEJ-attributed",
+  "needsReview": false,
+  "lastUpdated": "2026-11-19",
+  "lawReferenceDate": "2024-04-01"
+ },
+ {
+  "id": "soukan-2024-annual-gakka-q5",
+  "exam": "soukan",
+  "session": "gakka",
+  "year": 2024,
+  "season": "annual",
+  "qNumber": 5,
+  "subject": "必須科目Ⅰ－1（択一式）",
+  "officialAnswerNumber": "2",
+  "type": "multiple-choice",
+  "category": "経済性管理",
+  "topicTags": [
+   "経済性管理",
+   "令和6年度"
+  ],
+  "difficulty": 3,
+  "question": "生産方式に関する次の記述のうち，最も不適切なものはどれか。",
+  "choices": {
+   "ア": "プル型生産方式では，時々刻々の生産・配送・在庫状況情報を集中管理する必要がない。",
+   "イ": "プッシュ型生産方式は，あらかじめ定められたスケジュールに従い，生産活動を行う管理方式であり，代表例としてJIT生産方式が知られている。",
+   "ウ": "JIT生産方式のねらいは，作りすぎによる中間仕掛品の滞留，工程の遊休などを生じないように，生産工程の流れ化と生産リードタイムの短縮をすることにある。",
+   "エ": "JITの考え方は，自動車産業に限らず，さまざまな製造業やサービス業などにも応用されている。",
+   "オ": "かんばん方式で使用するかんばんは，生産指示をするための生産指示かんばんと，運搬指示をするための引取かんばんの2種類に大別される。"
+  },
+  "answer": "イ",
+  "explanation": "あらかじめ定めた計画に従うのはプッシュ型だが、JITは後工程が必要なものを必要なときに引き取るプル型の代表例である。",
+  "choiceExplanations": {
+   "ア": "プル型では後工程の引取りが上流への補充の合図になるため、補充のたびに集中計画を更新する必要がない。",
+   "イ": "あらかじめ定めた計画に従うのはプッシュ型だが、JITは後工程が必要なものを必要なときに引き取るプル型の代表例である。",
+   "ウ": "JITは工程間の流れを整え、不要な仕掛品と待ち時間を減らして生産リードタイムを短縮する。",
+   "エ": "需要に合わせて供給する考え方は、他の製造業やサービス業にも適用できる。",
+   "オ": "生産指示かんばんは補充生産、引取かんばんは後工程への運搬を指示する。"
+  },
+  "explanationCoverage": "full",
+  "hasImage": false,
+  "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10373_1.pdf#page=4",
+  "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_4.pdf",
+  "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－5（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+  "officialReferenceUrls": [
+   "https://www.engineer.or.jp/c_categories/index02022241.html",
+   "https://www.engineer.or.jp/c_topics/003/003935.html"
+  ],
+  "license": "IPEJ-attributed",
+  "needsReview": false,
+  "lastUpdated": "2026-11-19",
+  "lawReferenceDate": "2024-04-01"
+ },
+ {
+  "id": "soukan-2024-annual-gakka-q7",
+  "exam": "soukan",
+  "session": "gakka",
+  "year": 2024,
+  "season": "annual",
+  "qNumber": 7,
+  "subject": "必須科目Ⅰ－1（択一式）",
+  "officialAnswerNumber": "1",
+  "type": "multiple-choice",
+  "category": "経済性管理",
+  "topicTags": [
+   "経済性管理",
+   "令和6年度"
+  ],
+  "difficulty": 3,
+  "question": "ある工場では，2種類の製品P，Qを，2種類の原材料L，Mを用いて生産している。製品Pを1 kg生産するためには，原材料Lを3 kg，原材料Mを3 kg必要とし，製品Qを1 kg生産するためには，原材料Lを4 kg，原材料Mを1 kg必要とする。製品Pの利益は1 kg当たり3万円，製品Qの利益は1 kg当たり5万円である。原材料Lが240 kgまで，原材料Mが150 kgまでしか使用できないとき，利益を最大にするための製品Pの生産量 x（kg），製品Qの生産量 y（kg）の組合せとして，最も適切なものはどれか。",
+  "choices": {
+   "ア": "x＝0，y＝60",
+   "イ": "x＝10，y＝50",
+   "ウ": "x＝30，y＝50",
+   "エ": "x＝40，y＝30",
+   "オ": "x＝50，y＝0"
+  },
+  "answer": "ア",
+  "explanation": "Qだけを60 kg生産するとLを240 kg、Mを60 kg使い、利益は300万円である。L 1 kg当たりの利益はQの方が高く、この配分で最大になる。",
+  "choiceExplanations": {
+   "ア": "Qだけを60 kg生産するとLを240 kg、Mを60 kg使い、利益は300万円である。L 1 kg当たりの利益はQの方が高く、この配分で最大になる。",
+   "イ": "Lを230 kg、Mを80 kg使うので実行可能だが、利益は280万円でQだけを60 kg作る場合を下回る。",
+   "ウ": "利益以前に、原材料Lの必要量が290 kgになり、240 kgの上限を超える。",
+   "エ": "LとMの上限に同時に達するが、利益は270万円であり、両制約が等号でも最大とは限らない。",
+   "オ": "Mを150 kg使い切るが、利益は150万円でQだけを生産する場合より少ない。"
+  },
+  "explanationCoverage": "full",
+  "hasImage": false,
+  "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10373_1.pdf#page=6",
+  "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_4.pdf",
+  "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－7（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+  "officialReferenceUrls": [
+   "https://www.engineer.or.jp/c_categories/index02022241.html",
+   "https://www.engineer.or.jp/c_topics/003/003935.html"
+  ],
+  "license": "IPEJ-attributed",
+  "needsReview": false,
+  "lastUpdated": "2026-11-19",
+  "lawReferenceDate": "2024-04-01"
+ },
+ {
+  "id": "soukan-2024-annual-gakka-q8",
+  "exam": "soukan",
+  "session": "gakka",
+  "year": 2024,
+  "season": "annual",
+  "qNumber": 8,
+  "subject": "必須科目Ⅰ－1（択一式）",
+  "officialAnswerNumber": "4",
+  "type": "multiple-choice",
+  "category": "経済性管理",
+  "topicTags": [
+   "経済性管理",
+   "令和6年度"
+  ],
+  "difficulty": 3,
+  "question": "品質管理の手法に関連する次の記述のうち，最も不適切なものはどれか。",
+  "choices": {
+   "ア": "問題解決型QCストーリーは，現状の分析に基づいて，現状からの情報をもとに解決策を導く手順である。",
+   "イ": "PDPC法では，問題の最終的な解決までの一連の手段を列挙し，予想される障害を事前に想定し，適切な対策を講じるために，プロセス決定計画図を用いる。",
+   "ウ": "親和図法は，混沌とした状況の中から事実や意見，発想といったさまざまな言語情報をデータとしてとらえ，それらのデータを親和性，類似性によってまとめあげることで，問題の本質を明確にする手法である。",
+   "エ": "系統図法は，いくつかの問題点とその要因を矢印でつなぎ，それぞれの因果関係を図で表すことにより，目的を達成するための最適手段を追求する手法である。",
+   "オ": "マトリックス図法は，行に属する要素と列に属する要素によって二元的配置をした図を用いて，要因と結果，要因と他の要因など，複数の要素間の関係を整理し，多元的思考によって問題点を明確にしていく手法である。"
+  },
+  "answer": "エ",
+  "explanation": "問題の要因を矢印で結んで因果を整理するのは連関図法である。系統図法は目的を達成するための手段を樹形に展開する。",
+  "choiceExplanations": {
+   "ア": "問題解決型QCストーリーでは、現状を把握し、原因を分析した上でその原因に対する対策を立てる。",
+   "イ": "PDPC法は目標に至る過程で想定される障害と、その障害への代替策をあらかじめ整理する。",
+   "ウ": "親和図法は言語データを意味の近さでまとめ、問題の構造を把握する手法である。",
+   "エ": "問題の要因を矢印で結んで因果を整理するのは連関図法である。系統図法は目的を達成するための手段を樹形に展開する。",
+   "オ": "マトリックス図法では行と列で要素群を配し、交点に関係の有無や強さを表す。"
+  },
+  "explanationCoverage": "full",
+  "hasImage": false,
+  "sourcePdfUrl": "https://www.engineer.or.jp/c_topics/010/attached/attach_10373_1.pdf#page=6",
+  "sourceAnswerUrl": "https://www.engineer.or.jp/c_topics/003/attached/attach_3935_4.pdf",
+  "sourceAttribution": "出典：公益社団法人日本技術士会 令和6年度技術士第二次試験 総合技術監理部門 必須科目 択一式 Ⅰ－1－8（問題・正答）。解説は過去問AIの独自作成で、日本技術士会とは関係ありません。",
+  "officialReferenceUrls": [
+   "https://www.engineer.or.jp/c_categories/index02022241.html",
+   "https://www.engineer.or.jp/c_topics/003/003935.html"
+  ],
+  "license": "IPEJ-attributed",
+  "needsReview": false,
+  "lastUpdated": "2026-11-19",
+  "lawReferenceDate": "2024-04-01"
+ }
+]

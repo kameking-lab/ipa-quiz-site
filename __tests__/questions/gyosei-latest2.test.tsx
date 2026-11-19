@@ -99,7 +99,7 @@ describe("行政書士 令和7・6年度の公式公開分", () => {
     const q = GYOSEI_QUESTIONS.find(q=>q.year===2024 && q.qNumber===45)!;
     render(<DescriptiveAnswerCard question={q} defaultOpen />);
     expect(screen.getByText("行政書士試験研究センターの公式正解例")).toBeTruthy();
-    expect(screen.getByText("公式正解例の出典").getAttribute("href")).toBe(q.sourceAnswerUrl);
+    expect(screen.getByRole("link", { name: /公式問題/ })).toHaveAttribute("href", q.sourcePdfUrl);
     expect(q.modelAnswer!.split("\n\n")).toHaveLength(3);
     expect(screen.queryByText(/法務省の公式解答ではありません/)).toBeNull();
   });

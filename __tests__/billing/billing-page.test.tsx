@@ -12,12 +12,13 @@ const text = (html: string) => html.replace(/<[^>]*>/g, "");
 beforeEach(() => {
   vi.clearAllMocks(); mocks.config.enabled = true;
   mocks.identity.mockResolvedValue("alice");
-  mocks.status.mockResolvedValue({ entitled: false, canManage: false, subscription: null });
+  mocks.status.mockResolvedValue({ entitled: false, canManage: false, subscription: null, trialDays: 7 });
 });
 describe("monthly billing page: one button, one line of terms", () => {
   it("keeps the required subscription terms in one line and sends the button straight to checkout", async () => {
     const html = await page("/q/ap/2023-spring/am/1");
     for (const required of ["申し込む", "月額980円（税込）", "初回7日間無料", "毎月自動更新", "解約は契約管理から", "条件・特商法表示"]) expect(text(html)).toContain(required);
+    expect(html).toContain('aria-label="月額プランに申し込む"');
     expect(html).toContain('href="/billing/start?returnTo=%2Fq%2Fap%2F2023-spring%2Fam%2F1"');
     expect(html).toContain('href="/billing/terms"');
     expect(html).toContain('aria-describedby="monthly-price-amount monthly-terms"');
@@ -52,8 +53,17 @@ describe("monthly billing page: one button, one line of terms", () => {
     expect(html).not.toContain("/billing/start");
     expect(mocks.status).toHaveBeenCalledWith("alice");
   });
+  it("shows the Web subscriber's payment and cancellation controls", async () => {
+    mocks.status.mockResolvedValue({ entitled: true, canManage: true, subscription: { status: "active" },
+      management: { orderId: "fixture", periodEnd: "2026-12-15T00:00:00Z", examDate: null, cancelAtPeriodEnd: false } });
+    const html = await page();
+    expect(html).toContain("契約・お支払い");
+    expect(html).toContain("更新設定を変更");
+    expect(html).toContain("毎月更新・いつでも解約可");
+    expect(html).not.toContain("/billing/start");
+  });
   it("moves the full conditions and the 特商法 items to /billing/terms", () => {
     const t = text(renderToStaticMarkup(<BillingTermsPage />));
-    for (const required of ["特定商取引法に基づく表示", "販売価格", "月額980円（税込）", "毎月自動更新", "契約管理から次回更新を停止", "支払確認後", "確認済みの利用期間を超えて利用権は延長されません", "日割返金はありません", "ご請求があれば遅滞なく開示します", "kenshi.ycc@gmail.com", "1日10問", "対応端末・ブラウザーの読み上げは無料"]) expect(t).toContain(required);
+    for (const required of ["特定商取引法に基づく表示", "販売価格", "月額980円（税込）", "毎月自動更新", "契約管理から次回更新を停止", "支払・提供期間", "初回と毎月の更新日に決済画面で示す方法で請求します", "確認済みの利用期間を超えて利用権は延長されません", "日割返金はありません", "ご請求があれば遅滞なく開示します", "kenshi.ycc@gmail.com", "1日10問", "対応端末・ブラウザーの読み上げは無料"]) expect(t).toContain(required);
   });
 });

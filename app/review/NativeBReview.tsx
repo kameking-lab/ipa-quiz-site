@@ -15,7 +15,6 @@ import { reportStudyAnswer } from "@/lib/study-presence-client";
 export function NativeBReview({ question, onNext }: { question: Question; onNext: (correct: boolean) => void }) {
   const [result, setResult] = useState<NativeBGrade>();
   const [selected, setSelected] = useState<string>();
-  const [starred, setStarred] = useState(() => createHistoryStore().isStarred(question.id));
   const answer = (selections: NativeBSelections) => {
     if (result || !question.nativeB) return;
     const grade = gradeNativeB(question.nativeB, selections);
@@ -32,7 +31,6 @@ export function NativeBReview({ question, onNext }: { question: Question; onNext
   if (!question.nativeB) return null;
   return result
     ? <ExplanationCard question={question} nativeBResult={result} selected={selected} isCorrect={result.isCorrect}
-        starred={starred} onToggleStar={() => setStarred(createHistoryStore().toggleStar(question.id))}
-        onNext={() => onNext(result.isCorrect)} onAskAI={() => undefined} />
+        onNext={() => onNext(result.isCorrect)} />
     : <NativeBAnswerInput data={question.nativeB} displayedImageUrls={question.imageUrls} disabled={false} onAnswer={answer} />;
 }

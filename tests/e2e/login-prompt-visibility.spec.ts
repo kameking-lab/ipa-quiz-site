@@ -24,11 +24,10 @@ async function noLoginPrompts(page: Page) {
 test("authenticated home, question, answer and completion have no login prompts", async ({ page }, testInfo) => {
   await page.route("**/api/auth/session", route => route.fulfill({ json: { user: { id: "ux-session", name: "表示確認" }, expires: "2099-01-01T00:00:00.000Z" } }));
   await page.goto("/");
-  await expect(page.getByRole("link", { name: "10問を始める", exact: true })).toBeVisible();
-  await page.getByRole("button", { name: "メニューを開く" }).first().click();
-  await expect(page.getByRole("dialog").getByRole("link", { name: "アカウント", exact: true })).toBeVisible();
+  await expect(page.getByRole("searchbox", { name: "資格名・略称で検索" })).toBeVisible();
+  await page.getByRole("navigation", { name: "グローバルナビゲーション" }).getByRole("link", { name: "メニュー", exact: true }).click();
+  await expect(page.getByRole("link", { name: "アカウント", exact: true })).toBeVisible();
   await noLoginPrompts(page);
-  await page.keyboard.press("Escape");
   await page.screenshot({ path: testInfo.outputPath("authenticated-home.png"), fullPage: true });
 
   await page.goto("/quiz?mode=year&exam=ip&year=2011&season=autumn&session=am&limit=1&order=1");
@@ -50,17 +49,17 @@ test("loading home has no guest login flash", async ({ page }) => {
   const pending = new Promise<void>(resolve => { finish = resolve; });
   await page.route("**/api/auth/session", async route => { await pending; await route.fulfill({ json: { user: { id: "ux-session" } } }); });
   await page.goto("/");
-  await expect(page.getByRole("link", { name: "10問を始める", exact: true })).toBeVisible();
-  await page.getByRole("button", { name: "メニューを開く" }).first().click();
+  await expect(page.getByRole("searchbox", { name: "資格名・略称で検索" })).toBeVisible();
+  await page.getByRole("navigation", { name: "グローバルナビゲーション" }).getByRole("link", { name: "メニュー", exact: true }).click();
   await noLoginPrompts(page);
   finish();
-  await expect(page.getByRole("dialog").getByRole("link", { name: "アカウント", exact: true })).toBeVisible();
+  await expect(page.getByRole("link", { name: "アカウント", exact: true })).toBeVisible();
   await noLoginPrompts(page);
 });
 
 test("signed-out home retains the login entry", async ({ page }) => {
   await page.route("**/api/auth/session", route => route.fulfill({ json: null }));
   await page.goto("/");
-  await page.getByRole("button", { name: "メニューを開く" }).first().click();
-  await expect(page.getByRole("dialog").getByRole("link", { name: "ログイン", exact: true })).toBeVisible();
+  await page.getByRole("navigation", { name: "グローバルナビゲーション" }).getByRole("link", { name: "メニュー", exact: true }).click();
+  await expect(page.getByRole("link", { name: "ログイン", exact: true })).toBeVisible();
 });

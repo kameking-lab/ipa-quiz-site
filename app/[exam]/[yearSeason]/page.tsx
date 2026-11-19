@@ -1,4 +1,4 @@
-import { TsuginoWelcome } from "@/components/analytics/TsuginoWelcome";
+import { ReferralPracticeLink } from "@/components/analytics/ReferralPracticeLink";
 import { referralPracticeHref } from "@/lib/questions/referral-practice";
 import { practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { Metadata } from "next";
@@ -25,6 +25,7 @@ import {
   QuestionListWithFilter,
   type SessionGroup,
 } from "./QuestionListWithFilter";
+import { displayQuestionGroupLabel } from "./question-list-label";
 
 export const dynamicParams = false;
 
@@ -254,7 +255,6 @@ export default async function ExamYearSeasonPage({
 
       <div className="relative mx-auto w-full max-w-3xl px-4 pb-20 pt-6 sm:px-6 sm:pt-10">
         <JsonLd data={jsonLd} />
-      <TsuginoWelcome href={referralPracticeHref(pool, `/${exam}/${yearSeason}`)} qualification={histLabel} />
 
         <nav
           aria-label="パンくずリスト"
@@ -358,12 +358,12 @@ export default async function ExamYearSeasonPage({
 
         <section aria-label="クイズを始める" className="mb-8">
           <div className="grid gap-2 sm:grid-cols-2">
-            {[...sessionMap.entries()].filter(([, items]) => items.some((q) => (q.type === "multiple-choice" || q.type === "numeric"))).map(([session]) => (
+            {[...sessionMap.entries()].filter(([, items]) => items.some((q) => (q.type === "multiple-choice" || q.type === "numeric"))).map(([session, items]) => (
               <Button key={session} asChild variant="gradient" size="lg" className="w-full min-h-12 min-w-11 h-auto whitespace-normal py-2.5">
-                <Link href={`/quiz?mode=year&exam=${exam}&year=${parsed.year}&season=${parsed.season}&session=${session}&order=1&returnTo=${encodeURIComponent(`/${exam}/${yearSeason}`)}`}>
+                <ReferralPracticeLink qualification={histLabel} referralHref={referralPracticeHref(items, `/${exam}/${yearSeason}`)} href={`/quiz?mode=year&exam=${exam}&year=${parsed.year}&season=${parsed.season}&session=${session}&order=1&returnTo=${encodeURIComponent(`/${exam}/${yearSeason}`)}`}>
                   {practiceSessionLabel(session as typeof pool[number]["session"], code)}を解く
                   <ChevronRight className="h-4 w-4" />
-                </Link>
+                </ReferralPracticeLink>
               </Button>
             ))}
           </div>
@@ -384,6 +384,23 @@ export default async function ExamYearSeasonPage({
         )}
 
         <QuestionListWithFilter groups={sessionGroups} exam={code} showSectionNavigation={!!civil2Sections || subjectSections || code === "civil1" || code === "zoen1" || code === "tsushin1"} />
+        <details className="rounded-xl border border-border px-4 text-sm">
+          <summary className="min-h-11 cursor-pointer py-3 font-semibold">問題別の解説</summary>
+          {sessionGroups.map(({ id, session, items }) => (
+            <section key={id ?? session} className="pb-4">
+              <h2 className="mb-2 font-medium">{displayQuestionGroupLabel(session, code)}</h2>
+              <ul className="grid grid-cols-2 gap-x-4 gap-y-2 sm:grid-cols-3">
+                {items.map((item) => item.explanationHref && (
+                  <li key={item.id}>
+                    <Link href={item.explanationHref} prefetch={false} className="inline-flex min-h-11 items-center underline">
+                      {item.officialQuestionLabel ?? ('問' + item.qNumber)}の解説を見る
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ))}
+        </details>
       </div>
     </main>
   );

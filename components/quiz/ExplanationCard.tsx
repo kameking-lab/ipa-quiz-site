@@ -1,18 +1,16 @@
 "use client";
 
 import { displayQuestionExplanation } from "@/lib/questions/explanation-display";
-import { questionReferenceLabel } from "@/lib/questions/reference-label";
 
-import * as React from "react";
 import type { NativeBGrade } from "@/lib/questions/types";
 import { NativeBFeedback } from "./NativeBAnswer";
-import { Star, MessageCircle, ArrowRight, AlertCircle, CheckCircle2, FileText } from "lucide-react";
+import { ArrowRight, AlertCircle, CheckCircle2 } from "lucide-react";
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import { choiceDisplayLabel, formatQuestionAnswerForDisplay } from "@/lib/questions/display";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { getOfficialAnswerPdfUrl, getSafePdfUrl, ipaSourceLabel } from "@/lib/exam-config";
-import { BookmarkButton } from "@/components/BookmarkButton";
+import { AiTransparencyDisclaimer } from "./AiTransparencyDisclaimer";
+import { QuestionAiFollowup } from "./QuestionAiFollowup";
 import { QuestionBody, QuestionInlineText } from "./QuestionBody";
 import { QuestionSourcePresentation } from "./QuestionSourcePresentation";
 import { RikuTech2CylinderGuide } from "./RikuTech2CylinderGuide";
@@ -27,14 +25,8 @@ interface Props {
   nativeBResult?: NativeBGrade;
   selected: string | undefined;
   isCorrect: boolean;
-  starred: boolean;
-  onToggleStar: () => void;
   onNext: () => void;
   nextLabel?: string;
-  afterNavigation?: React.ReactNode;
-  onAskAI: () => void;
-  /** Accepted for existing callers; the copilot's 「なぜ間違えた？分析」 chip is the single entry point now. */
-  onAnalyzeWrong?: () => void;
 }
 
 export function ExplanationCard({
@@ -42,34 +34,21 @@ export function ExplanationCard({
   nativeBResult,
   selected,
   isCorrect,
-  starred,
-  onToggleStar,
   onNext,
   nextLabel = "次の問題へ",
-  afterNavigation,
-  onAskAI,
 }: Props) {
   if (question.type === "native-b" && question.nativeB) return <div className="space-y-4" role="region" aria-label="五枠の解説">
     <NativeBFeedback data={question.nativeB} result={nativeBResult} />
     <LearningPetCorner qualificationId={question.exam} questionId={question.id} compact />
     <QuestionBody text={displayQuestionExplanation(question.exam, question.explanation)} linkReferences />
     <QuestionSourcePresentation question={question} phase="after" />
-    <div className="flex flex-col gap-3 sm:flex-row">
-      <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" onClick={onNext}>{nextLabel}<ArrowRight className="h-4 w-4" /></Button>
-      <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" variant="subtle" onClick={onToggleStar} aria-pressed={starred}>{starred ? "復習から外す" : "あとで復習"}</Button>
-    </div>
-    {afterNavigation}
-    <p className="text-sm"><a href={getSafePdfUrl(question.sourcePdfUrl)} target="_blank" rel="noopener noreferrer" className="underline">公式問題</a> / <a href={getOfficialAnswerPdfUrl(question.sourcePdfUrl, question.sourceAnswerUrl)} target="_blank" rel="noopener noreferrer" className="underline">公式正答</a></p>
-    {question.sourceAttribution && <p className="text-xs">{question.sourceAttribution}</p>}
+    <AiTransparencyDisclaimer question={question} />
+    <Button onClick={onNext} className="min-h-11">{nextLabel}<ArrowRight aria-hidden="true" className="h-4 w-4" /></Button>
   </div>;
   const selectedChoiceExplanation = selected && question.type !== "ordering"
     ? displayQuestionExplanation(question.exam, question.choiceExplanations?.[selected as ChoiceKey])
     : undefined;
   const answerLabel = formatQuestionAnswerForDisplay(question, question.answer);
-  const questionSourceUrl = getSafePdfUrl(question.sourcePdfUrl);
-  const answerSourceUrl = getOfficialAnswerPdfUrl(question.sourcePdfUrl, question.sourceAnswerUrl);
-  const hasDistinctAnswerSource = questionSourceUrl !== answerSourceUrl
-    || ipaSourceLabel(questionSourceUrl, "question") !== ipaSourceLabel(answerSourceUrl, "answer");
   const remainingChoiceExplanations = Object.entries(question.choiceExplanations ?? {}).filter(([key]) =>
     !(!isCorrect && selectedChoiceExplanation && key === selected),
   );
@@ -81,7 +60,6 @@ export function ExplanationCard({
       className={cn(
         "motion-safe:animate-in motion-safe:slide-in-from-bottom-4 motion-safe:duration-200",
         "rounded-2xl border border-border bg-card p-4 sm:p-5",
-        "[&:has(>[data-install-nudge=answer])>div.sticky]:static",
       )}
     >
       <div className="mb-4 flex items-start justify-between gap-3">
@@ -112,33 +90,7 @@ export function ExplanationCard({
             {selected ? ` / あなた: ${formatQuestionAnswerForDisplay(question, selected)}` : ""}
           </span>
         </div>
-        <div className="flex shrink-0 items-start gap-1.5">
-          <button
-            onClick={onToggleStar}
-            aria-pressed={starred}
-            aria-keyshortcuts="r"
-            className={cn(
-              "inline-flex h-11 w-11 items-center justify-center rounded-full transition-colors",
-              "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-amber-600 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:focus-visible:ring-amber-300",
-              starred
-                ? "bg-amber-200 text-amber-900 dark:bg-amber-900/60 dark:text-amber-200"
-                : "bg-zinc-200 text-zinc-700 hover:bg-zinc-300 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700",
-            )}
-            aria-label={starred ? "あとで復習から外す（Rキー）" : "あとで復習に追加（Rキー）"}
-            title="R キーでも切替"
-          >
-            <Star aria-hidden="true" className="h-4 w-4" fill={starred ? "currentColor" : "none"} />
-          </button>
-          <BookmarkButton question={question} />
-        </div>
       </div>
-
-      <div className="mb-5 flex justify-end">
-        <Button size="xl" onClick={onNext} className="shrink-0 min-w-11 whitespace-normal px-5 py-2.5">
-          {nextLabel}<ArrowRight className="h-4 w-4" />
-        </Button>
-      </div>
-      {afterNavigation}
 
       {isPlaceholderExplanation(question.explanation) ? (
         <div className="selectable-content mb-4 rounded-xl bg-amber-50 p-3 text-sm text-amber-800 dark:bg-amber-950/30 dark:text-amber-200">
@@ -198,56 +150,12 @@ export function ExplanationCard({
 
       <LearningPetCorner qualificationId={question.exam} questionId={question.id} compact />
 
-      <div className="mt-4 flex flex-col gap-2 sm:flex-row">
-        <Button
-          variant="subtle"
-          size="lg"
-          onClick={onAskAI}
-          className="sm:flex-1 min-h-12 min-w-11 h-auto whitespace-normal py-2.5"
-        >
-          <MessageCircle className="h-4 w-4" />
-          この問題をAIに質問
+      <QuestionAiFollowup key={question.id} question={question} selectedChoice={selected} isCorrect={isCorrect} />
+      <AiTransparencyDisclaimer question={question} />
+      <div className="mt-4">
+        <Button size="xl" onClick={onNext} className="min-w-11 whitespace-normal px-5 py-2.5">
+          {nextLabel}<ArrowRight aria-hidden="true" className="h-4 w-4" />
         </Button>
-      </div>
-
-      <div className="mt-3 space-y-2">
-        <div className="flex flex-wrap gap-1.5">
-          <a
-            href={questionSourceUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-xs text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
-          >
-            <FileText className="h-3 w-3 flex-shrink-0" />
-            {ipaSourceLabel(questionSourceUrl, "question")}
-          </a>
-          {hasDistinctAnswerSource && <a
-            href={answerSourceUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex min-h-11 items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-xs text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
-          >
-            <FileText className="h-3 w-3 flex-shrink-0" />
-            {ipaSourceLabel(answerSourceUrl, "answer")}
-          </a>}
-          {question.officialReferenceUrls?.map((url) => (
-            <a
-              key={url}
-              href={url}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-11 items-center gap-1 rounded-lg border border-zinc-200 bg-zinc-50 px-3 py-2 text-xs text-zinc-600 transition hover:border-zinc-300 hover:bg-zinc-100 hover:text-zinc-800 dark:border-zinc-700 dark:bg-zinc-800/60 dark:text-zinc-400 dark:hover:border-zinc-600 dark:hover:text-zinc-200"
-            >
-              <FileText className="h-3 w-3 flex-shrink-0" />
-              {questionReferenceLabel(question, url)}
-            </a>
-          ))}
-        </div>
-        {question.sourceAttribution && (
-          <p className="text-xs leading-relaxed text-zinc-500 dark:text-zinc-400">
-            {question.sourceAttribution}
-          </p>
-        )}
       </div>
     </div>
   );

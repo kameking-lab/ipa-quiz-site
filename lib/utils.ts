@@ -9,6 +9,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const EXAM_LABELS: Record<string, string> = {
+  "zenkou-pc": "パソコン利用技術検定",
   eikenp2: "英検準2級",
   "zensho-calc-1": "全商ビジネス計算実務検定 1級",
   "suken-11": "算数検定 11級",
@@ -445,6 +446,33 @@ export const EXAM_LABELS: Record<string, string> = {
   "tetsudo-sharyo2": "鉄道車両製造・整備技能士 2級",
   "kikai-hozen": "機械保全技能士 2級",
   "tsukanshi": "通関士",
+  "zenkou-keisan-gijutsu": "計算技術検定",
+  "katei-shokumotsu": "家庭科技術検定・食物調理",
+  "kyoin-tokyo": "東京都教員採用試験",
+  "kyoin-osaka": "大阪府教員採用試験",
+  "saibansho-ippan-dai": "裁判所事務官（大卒程度）",
+  "cg-creator-basic": "CGクリエイター検定 ベーシック",
+  "cg-creator-expert": "CGクリエイター検定 エキスパート",
+  "cg-engineer-basic": "CGエンジニア検定 ベーシック",
+  "cg-engineer-expert": "CGエンジニア検定 エキスパート",
+  "multimedia-kentei-basic": "マルチメディア検定 ベーシック",
+  "multimedia-kentei-expert": "マルチメディア検定 エキスパート",
+  "g-kentei": "G検定",
+  "kyoto-kentei3": "京都検定 3級",
+  "topik1": "韓国語能力試験 TOPIK I",
+  "apef4": "仏検 4級",
+  "chuken3": "中国語検定 3級",
+  "biz-career-logistics3": "ビジネス・キャリア検定 3級ロジスティクス管理",
+  "khk-hanbai2": "高圧ガス販売主任者 第二種",
+  "kikenbutsu-otsu5": "危険物取扱者 乙種第5類",
+  "kikenbutsu-otsu3": "危険物取扱者 乙種第3類",
+  "khk-hanbai": "高圧ガス販売主任者 第一種",
+  "shobo-setsubishi-otsu4": "消防設備士 乙種第4類",
+  "shobo-setsubishi-otsu7": "消防設備士 乙種第7類",
+  "shobo-setsubishi-kou3": "消防設備士 甲種第3類",
+  "shobo-setsubishi-kou2": "消防設備士 甲種第2類",
+  "shobo-setsubishi-kou5": "消防設備士 甲種第5類",
+  "gesuido-3shu": "下水道技術検定 第3種",
 };
 
 export function examLabel(exam: string): string {

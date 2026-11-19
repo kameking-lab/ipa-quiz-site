@@ -38,10 +38,10 @@ for (const [result, label] of [["failed", "不合格"], ["absent", "受けなか
     await setup(page, { ...makePlan(), examDate: "2026-11-16" });
     await page.goto("/");
     await page.getByRole("button", { name: label, exact: true }).click();
-    await expect(page.getByRole("heading", { name: "次の一歩を、いっしょに。" })).toBeVisible();
-    await expect(page.getByRole("button", { name: "学習計画を作成", exact: true })).toBeVisible();
     expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!)[0].result, LS_KEYS.pacePlans)).toBe(result);
     await expect(page.getByRole("link", { name: /今日の問題を解く/ })).toHaveCount(0);
+    await page.getByRole("button", { name: "学習計画を作成", exact: true }).click();
+    await expect(page.getByRole("dialog", { name: "学習計画を作成" })).toBeVisible();
   });
 }
 

@@ -1,7 +1,8 @@
 "use client";
 
 import * as React from "react";
-import { parsePracticeSession, practiceCategoryLabel, practiceSessionLabel } from "@/lib/questions/practice-session";
+import { practiceCategoryLabel } from "@/lib/questions/practice-session";
+import { displayQuestionGroupLabel } from "./question-list-label";
 import type { ExamCode } from "@/lib/questions/types";
 import { Check, ChevronRight, X } from "lucide-react";
 import { LS_KEYS } from "@/lib/storage/keys";
@@ -25,13 +26,6 @@ export interface SessionGroup {
   id?: string;
   items: QuestionListItem[];
 }
-
-function sessionLabel(session: string, exam?: ExamCode): string {
-  const parsed = parsePracticeSession(session);
-  return parsed ? practiceSessionLabel(parsed, exam) : session;
-}
-
-type Filter = "all" | "unanswered" | "wrong";
 
 interface SolvedMap {
   [id: string]: { correct: boolean };
@@ -60,7 +54,6 @@ function readSolvedMap(): SolvedMap {
 export function QuestionListWithFilter({ groups, exam, showSectionNavigation = false }: { groups: SessionGroup[]; exam?: ExamCode; showSectionNavigation?: boolean }) {
   const [solved, setSolved] = React.useState<SolvedMap>({});
   const [hydrated, setHydrated] = React.useState(false);
-  const [filter, setFilter] = React.useState<Filter>("all");
 
   React.useEffect(() => {
      
@@ -86,47 +79,14 @@ export function QuestionListWithFilter({ groups, exam, showSectionNavigation = f
     }
   }
 
-  function shouldShow(item: QuestionListItem): boolean {
-    if (!hydrated) return true;
-    const s = solved[item.id];
-    if (filter === "unanswered") return !s;
-    if (filter === "wrong") return !!s && !s.correct;
-    return true;
-  }
-
-  const visibleSectionGroups = showSectionNavigation
-    ? groups.filter((group) => group.id && group.items.some(shouldShow))
-    : [];
+  const visibleSectionGroups = showSectionNavigation ? groups.filter((group) => group.id && group.items.length > 0) : [];
 
   return (
     <div>
       {hydrated && answered > 0 && (
-        <div
-          role="group"
-          aria-label="解答状況フィルター"
-          className="mb-5 flex flex-wrap items-center gap-2"
-        >
-          <FilterButton
-            active={filter === "all"}
-            onClick={() => setFilter("all")}
-            label="全て"
-            count={total}
-          />
-          <FilterButton
-            active={filter === "unanswered"}
-            onClick={() => setFilter("unanswered")}
-            label="未解答のみ"
-            count={total - answered}
-          />
-          <FilterButton
-            active={filter === "wrong"}
-            onClick={() => setFilter("wrong")}
-            label="不正解のみ"
-            count={wrong}
-          />
-          <span className="ml-auto text-[11px] text-muted-foreground">
-            {answered} / {total} 解答済み
-          </span>
+        <div className="mb-5 flex flex-wrap items-center gap-3 text-sm text-muted-foreground">
+          <span>{answered} / {total} 解答済み</span>
+          {wrong > 0 && exam && <a href={'/quiz?' + new URLSearchParams({ exam, mode: "review", reviewKind: "wrong" })} className="inline-flex min-h-11 items-center underline">間違えた問題を復習</a>}
         </div>
       )}
 
@@ -136,7 +96,7 @@ export function QuestionListWithFilter({ groups, exam, showSectionNavigation = f
           <div className="grid gap-2 sm:grid-cols-2">
             {visibleSectionGroups.map((group) => (
               <a key={group.id} href={`#${group.id}`} className="rounded-xl border border-border px-3 py-2.5 text-sm font-medium text-foreground hover:border-primary/40 hover:bg-primary-soft focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
-                {sessionLabel(group.session, exam)}
+                {displayQuestionGroupLabel(group.session, exam)}
               </a>
             ))}
           </div>
@@ -144,16 +104,15 @@ export function QuestionListWithFilter({ groups, exam, showSectionNavigation = f
       )}
 
       {groups.map(({ session, id, items }) => {
-        const filtered = items.filter(shouldShow);
-        if (filtered.length === 0) return null;
+        if (items.length === 0) return null;
         return (
-          <section key={session} id={id} aria-label={sessionLabel(session, exam)} className="mb-8 scroll-mt-6">
+          <section key={session} id={id} aria-label={displayQuestionGroupLabel(session, exam)} className="mb-8 scroll-mt-6">
             <h2 className="mb-3 flex items-center gap-2 text-sm font-semibold tracking-wider text-muted-foreground">
               <span className="h-1 w-1 rounded-full bg-primary" />
-              {sessionLabel(session, exam)}
+              {displayQuestionGroupLabel(session, exam)}
             </h2>
             <ul className="space-y-2">
-              {filtered.map((q) => {
+              {items.map((q) => {
                 const status = solved[q.id];
                 return (
                   <li key={q.id}>
@@ -215,11 +174,6 @@ export function QuestionListWithFilter({ groups, exam, showSectionNavigation = f
                       </span>
                       <span className="mt-2 flex shrink-0 items-center gap-1 text-xs font-medium text-primary">解く<ChevronRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" /></span>
                     </a>
-                    {q.explanationHref && (
-                      <div className="flex flex-wrap gap-3 px-4 pb-2 pt-1 text-xs">
-                        <a href={q.explanationHref} className="inline-flex min-h-11 items-center font-medium text-primary underline underline-offset-4">{q.officialQuestionLabel ?? `問${q.qNumber}`}の解説を見る</a>
-                      </div>
-                    )}
                   </li>
                 );
               })}
@@ -228,42 +182,6 @@ export function QuestionListWithFilter({ groups, exam, showSectionNavigation = f
         );
       })}
 
-      {hydrated &&
-        answered > 0 &&
-        groups.every((g) => g.items.filter(shouldShow).length === 0) && (
-          <p className="rounded-2xl border border-dashed border-border px-4 py-8 text-center text-sm text-muted-foreground">
-            該当する問題はありません。
-          </p>
-        )}
     </div>
-  );
-}
-
-function FilterButton({
-  active,
-  onClick,
-  label,
-  count,
-}: {
-  active: boolean;
-  onClick: () => void;
-  label: string;
-  count: number;
-}) {
-  return (
-    <button
-      type="button"
-      aria-pressed={active}
-      onClick={onClick}
-      className={cn(
-        "inline-flex min-h-11 items-center gap-1.5 rounded-xl border px-3 py-2 text-sm font-medium transition-colors",
-        active
-          ? "border-primary/40 bg-primary-soft text-primary-soft-foreground"
-          : "border-border bg-card text-muted-foreground hover:border-primary/30 hover:bg-muted",
-      )}
-    >
-      <span>{label}</span>
-      <span className="text-xs tabular-nums">{count}</span>
-    </button>
   );
 }

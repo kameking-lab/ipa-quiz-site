@@ -1,4 +1,4 @@
-import { useId, useLayoutEffect, useRef, useState, type RefObject } from "react";
+import { useLayoutEffect, useRef, useState, type RefObject } from "react";
 import { passingLineForExam } from "@/lib/study-plan/policy";
 import type { PacePlan } from "@/lib/study-plan/pace";
 
@@ -82,8 +82,7 @@ function RunningChihuahua({ src, percent, fillRef }: {
 }
 
 // SVG coordinates allow percentage positions without inline style or generated Tailwind classes.
-export function PaceTrack({ plan, runArt, percent, target, onOpen, expanded = false }: { plan: PacePlan; runArt: string; percent: number; target: number | null; onOpen: () => void; expanded?: boolean }) {
-  const meterId = useId();
+export function PaceTrack({ plan, runArt, percent, target }: { plan: PacePlan; runArt: string; percent: number; target: number | null }) {
   const fillRef = useRef<SVGLineElement>(null);
   const passing = passingLineForExam(plan.exam);
   const start = plan.registration?.start;
@@ -91,8 +90,8 @@ export function PaceTrack({ plan, runArt, percent, target, onOpen, expanded = fa
   const span = plan.examDate ? Date.parse(plan.examDate) - Date.parse(plan.startDate) : 0;
   const at = (date: string) => span > 0 ? Math.max(0, Math.min(100, (Date.parse(date) - Date.parse(plan.startDate)) * 100 / span)) : 0;
   const bandStart = start ? at(start) : 0, bandEnd = deadline ? at(deadline) : 0;
-  return <button type="button" onClick={onOpen} aria-label="学習計画の詳細を開く" aria-describedby={meterId} aria-haspopup="dialog" aria-expanded={expanded} className="block w-full rounded-xl">
-    <svg id={meterId} viewBox="0 -19 320 131" className="mx-auto h-[131px] w-full max-w-[420px] overflow-visible" role="img" aria-label={`進み具合${Math.round(percent)}%、${target === null ? "受験日未設定" : `今日の目標${Math.round(target)}%`}`}>
+  return <div className="block w-full rounded-xl">
+    <svg viewBox="0 -19 320 131" className="mx-auto h-[131px] w-full max-w-[420px] overflow-visible" role="img" aria-label={`進み具合${Math.round(percent)}%、${target === null ? "受験日未設定" : `今日の目標${Math.round(target)}%`}`}>
       <line x1="30" y1="79" x2="290" y2="79" strokeWidth="8" strokeLinecap="round" className="stroke-progress-track" />
       {deadline && bandEnd > bandStart && <g><rect x={trackX(bandStart)} y="71" width={trackX(bandEnd) - trackX(bandStart)} height="16" rx="4" className="fill-warning-soft stroke-warning-soft-foreground/35" /><text x={(trackX(bandStart) + trackX(bandEnd)) / 2} y="105" textAnchor="middle" fontSize="9" className="fill-warning-soft-foreground">申込{plan.registration?.estimated ? "（予定）" : "期間"}</text></g>}
       <line ref={fillRef} x1={START_X} y1="79" x2={START_X} y2="79" strokeWidth="8" strokeLinecap="round" className="stroke-primary" />
@@ -107,5 +106,5 @@ export function PaceTrack({ plan, runArt, percent, target, onOpen, expanded = fa
       <text x="30" y="94" fontSize="10" className="fill-muted-foreground">{plan.startDate ? `${Number(plan.startDate.slice(5, 7))}/${Number(plan.startDate.slice(8))}` : "スタート"}</text><text x="290" y="94" textAnchor="end" fontSize="10" className="fill-muted-foreground">{plan.examDate ? `${Number(plan.examDate.slice(5, 7))}/${Number(plan.examDate.slice(8))}` : "試験日"}</text>
       <path d="M296 99V85c4-3 8 3 12 0v8c-4 3-8-3-12 0" fill="none" strokeWidth="1.5" className="stroke-primary" />
     </svg>
-  </button>;
+  </div>;
 }

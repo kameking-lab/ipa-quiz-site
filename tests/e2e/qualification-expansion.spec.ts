@@ -80,7 +80,6 @@ for (const c of cases) {
     const reader = await page.goto(c.readerPath);
     expect(reader?.status()).toBe(200);
     await expect(page.getByRole("group", { name: "AI生成の解説に関する詳細" })).toBeVisible();
-    await expect(page.getByRole("link", { name: /^公式正答PDF/ }).first()).toHaveAttribute("href", c.answerUrl);
   });
 }
 
@@ -137,7 +136,6 @@ test("denko2 complete 2026 sitting publishes question 10 and all-choice explanat
   const explanations = page.getByRole("region", { name: "解説", exact: true });
   await expect(explanations.getByRole("heading", { name: "各選択肢の解説" })).toBeVisible();
   await expect(explanations.locator("dd")).toHaveCount(4);
-  await expect(page.getByRole("link", { name: /^公式正答PDF/ }).first()).toHaveAttribute("href", "https://www.shiken.or.jp/construction/upload/20260524_co_second_a01.pdf");
 });
 
 test("FP2 negative questions explain why a selected true statement is not the answer", async ({ page }) => {

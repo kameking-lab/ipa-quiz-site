@@ -12,7 +12,8 @@ import styles from "./HomePace.module.css";
 
 const fieldClass = "mt-1.5 min-h-11 w-full min-w-0 rounded-lg border border-input bg-card px-3";
 
-export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCreated }: {
+export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCreated, embedded = false }: {
+  embedded?: boolean;
   open: boolean; onOpenChange: (open: boolean) => void; items: readonly HomeDirectoryItem[];
   initialExam: string; onCreated: (id: string) => void;
 }) {
@@ -64,10 +65,7 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
     } catch (e) { setError(e instanceof Error ? e.message : "作成できませんでした。"); }
     finally { setSaving(false); }
   }
-  return <Sheet open={open} onOpenChange={onOpenChange}>
-    <SheetContent side="bottom" aria-describedby={undefined} className={`${styles.sheet} mx-auto max-h-[min(90dvh,calc(100dvh-var(--safe-top)-1rem))] max-w-[640px] overflow-y-auto px-[18px] pt-3 pb-[max(1.5rem,var(--safe-bottom))] sm:px-6`}>
-      <div aria-hidden="true" className="mx-auto mb-3 h-1 w-11 rounded-full bg-border" />
-      <SheetHeader className="pr-11"><SheetTitle>学習計画を作成</SheetTitle></SheetHeader>
+  const fields = (
       <div className="mt-4 space-y-3">
         <label className="block text-sm font-medium">受ける資格<select className={fieldClass} value={exam} onChange={e => setExam(e.target.value)}>{items.map(item => <option key={item.key} value={item.key}>{item.name}</option>)}</select></label>
         {loading ? <p role="status" className="text-sm text-muted-foreground">日程を確認中…</p> : <>
@@ -92,10 +90,20 @@ export function PlanCreateSheet({ open, onOpenChange, items, initialExam, onCrea
           {scheduleFailed && <p className="text-sm text-muted-foreground">日程を取得できませんでした。受験日を入力してください。</p>}
           {!session && <label className="block text-sm font-medium">受験日<input type="date" min={japanDate(new Date())} value={date} onChange={e => setDate(e.target.value)} className={fieldClass} /></label>}
         </>}
-        <fieldset className="grid grid-cols-2 gap-3"><legend className="mb-1.5 text-sm font-medium">1日の勉強時間</legend><label className="text-xs text-muted-foreground">平日（分）<input type="number" min={1} max={1440} value={weekday} onChange={e => setWeekday(Number(e.target.value))} className={`${fieldClass} text-base text-foreground`} /></label><label className="text-xs text-muted-foreground">休日（分）<input type="number" min={1} max={1440} value={holiday} onChange={e => setHoliday(Number(e.target.value))} className={`${fieldClass} text-base text-foreground`} /></label></fieldset>
+        <details className="rounded-xl border border-border px-3"><summary className="min-h-11 cursor-pointer py-3 text-sm font-medium">1日の勉強時間</summary><fieldset aria-label="1日の勉強時間" className="grid grid-cols-2 gap-3 pb-3"><label className="text-xs text-muted-foreground">平日（分）<input type="number" min={1} max={1440} value={weekday} onChange={e => setWeekday(Number(e.target.value))} className={`${fieldClass} text-base text-foreground`} /></label><label className="text-xs text-muted-foreground">休日（分）<input type="number" min={1} max={1440} value={holiday} onChange={e => setHoliday(Number(e.target.value))} className={`${fieldClass} text-base text-foreground`} /></label></fieldset></details>
         {error && <p role="alert" className="text-sm text-destructive">{error}</p>}
         <Button size="xl" className="w-full" disabled={loading || saving || !examDate || examDate < japanDate(new Date()) || !Number.isInteger(weekday) || weekday < 1 || weekday > 1440 || !Number.isInteger(holiday) || holiday < 1 || holiday > 1440} onClick={() => void create()}>{saving ? "作成中…" : "この回で作成"}</Button>
       </div>
+  );
+  if (embedded) return <section aria-labelledby="plan-title">
+    <h1 id="plan-title" className="text-xl font-bold">学習計画を作成</h1>
+    {fields}
+  </section>;
+  return <Sheet open={open} onOpenChange={onOpenChange}>
+    <SheetContent side="bottom" aria-describedby={undefined} className={`${styles.sheet} mx-auto max-h-[min(90dvh,calc(100dvh-var(--safe-top)-1rem))] max-w-[640px] overflow-y-auto px-[18px] pt-3 pb-[max(1.5rem,var(--safe-bottom))] sm:px-6`}>
+      <div aria-hidden="true" className="mx-auto mb-3 h-1 w-11 rounded-full bg-border" />
+      <SheetHeader className="pr-11"><SheetTitle>学習計画を作成</SheetTitle></SheetHeader>
+      {fields}
     </SheetContent>
   </Sheet>;
 }

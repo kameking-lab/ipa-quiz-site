@@ -1,0 +1,338 @@
+[
+  {
+    "id": "gijutsushi1-oyo-2023-annual-senmon-q06",
+    "number": 6,
+    "text": "相転移に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [],
+    "sourcePages": [],
+    "sourceQuestionNumber": 6,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/009/attached/attach_9918_8.pdf#page=3",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=19",
+    "explanation": "二次相転移では自由エネルギーの一次微分は連続だが、二次微分に関係する比熱は不連続や発散などの特異性を示し得る。",
+    "presentation": {
+      "sourceHash": "194b657cf4f109234bf1f03c5907b28b0bfdf8ffab45a4d9b4b871bfe3287616",
+      "prompt": "相転移に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "固体の融解や液体の気化は第1種相転移（1次相転移）である。"
+        },
+        {
+          "number": 2,
+          "text": "第1種相転移の転移点で，エントロピーは不連続である。"
+        },
+        {
+          "number": 3,
+          "text": "第2種相転移（2次相転移）の転移点で，比熱は温度に対して連続となる。"
+        },
+        {
+          "number": 4,
+          "text": "鉄などの強磁性体がある転移点（キュリー温度）で常磁性に変わるのは，第2種相転移である。"
+        },
+        {
+          "number": 5,
+          "text": "相転移温度（融点や沸点）以下に冷却しても，液体や気体に転移が起こらず元の相を保っている状態を過冷却という。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "194b657cf4f109234bf1f03c5907b28b0bfdf8ffab45a4d9b4b871bfe3287616",
+      "correctChoice": 3,
+      "summary": "二次相転移では自由エネルギーの一次微分は連続だが、二次微分に関係する比熱は不連続や発散などの特異性を示し得る。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "通常の融解や気化には潜熱が伴い、エントロピーが不連続に変化するため一次相転移である。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "転移点では共存する相の自由エネルギーは等しいが、その温度微分に対応するエントロピーが異なる。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "二次相転移では自由エネルギーの一次微分は連続だが、二次微分に関係する比熱は不連続や発散などの特異性を示し得る。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "通常の強磁性転移の例では、自発磁化がキュリー温度に近づくと連続的にゼロに近づく。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "核生成が起きないなどの理由で、平衡転移温度を下回っても高温側の相を保つ準安定状態が過冷却である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/009/attached/attach_9918_8.pdf#page=3"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=19"
+        }
+      ],
+      "lastCheckedAt": "2026-11-19"
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2023-annual-senmon-q07",
+    "number": 7,
+    "text": "次のうち，光電磁場と電子励起との相互作用に基づいた技術として，最も不適切なものはどれか。",
+    "images": [],
+    "sourcePages": [],
+    "sourceQuestionNumber": 7,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/009/attached/attach_9918_8.pdf#page=3",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=19",
+    "explanation": "通常の超伝導は電子の対形成と集団的な量子状態に基づく現象である。光と電子励起の相互作用を基本原理とする技術ではない。",
+    "presentation": {
+      "sourceHash": "f3014c2db2fa076b4f2d702c98cbde72fd183d932df992dd5ebfdd04f14798ee",
+      "prompt": "次のうち，光電磁場と電子励起との相互作用に基づいた技術として，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "太陽電池"
+        },
+        {
+          "number": 2,
+          "text": "発光ダイオード（LED）"
+        },
+        {
+          "number": 3,
+          "text": "半導体レーザー"
+        },
+        {
+          "number": 4,
+          "text": "超伝導（超電導）"
+        },
+        {
+          "number": 5,
+          "text": "有機エレクトロルミネセンス（有機EL）"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "f3014c2db2fa076b4f2d702c98cbde72fd183d932df992dd5ebfdd04f14798ee",
+      "correctChoice": 4,
+      "summary": "通常の超伝導は電子の対形成と集団的な量子状態に基づく現象である。光と電子励起の相互作用を基本原理とする技術ではない。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "太陽電池の光吸収によって電子と正孔が生成され、電流として取り出せる。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "半導体中の電子と正孔が再結合する際に、エネルギーの一部が光子として放出される。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "電子と正孔の再結合による発光を光共振器で増幅し、誘導放出を利用する。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "通常の超伝導は電子の対形成と集団的な量子状態に基づく現象である。光と電子励起の相互作用を基本原理とする技術ではない。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "有機材料で電荷の再結合により生じた励起状態が低いエネルギー状態に戻るときに、光子が放出される。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/009/attached/attach_9918_8.pdf#page=3"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=19"
+        }
+      ],
+      "lastCheckedAt": "2026-11-19"
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2023-annual-senmon-q09",
+    "number": 9,
+    "text": "電磁波に関する次の記述のうち，最も不適切なものはどれか。",
+    "images": [],
+    "sourcePages": [],
+    "sourceQuestionNumber": 9,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/009/attached/attach_9918_8.pdf#page=4",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=19",
+    "explanation": "特性X線は電子の離散的な準位間の遷移に由来するので、元素固有の線スペクトルを示す。連続スペクトルは主に制動X線による。",
+    "presentation": {
+      "sourceHash": "21ec0c3e8a3f7aecaf8a8d1a100f908b2908e7f72f2a1fa5d8cf0d54d18a7814",
+      "prompt": "電磁波に関する次の記述のうち，最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "γ線は，原子核，素粒子のエネルギー準位間の遷移や素粒子の対消滅，対生成などによって放出・吸収される。"
+        },
+        {
+          "number": 2,
+          "text": "赤外線，可視光線，紫外線の順で，波長は短くなる。"
+        },
+        {
+          "number": 3,
+          "text": "特性X線のエネルギーは元素固有のもので，通常は連続スペクトルを示す。"
+        },
+        {
+          "number": 4,
+          "text": "マイクロ波は波長約1 m以下の電波で，高周波加熱，レーダーなどにも用いられる。"
+        },
+        {
+          "number": 5,
+          "text": "電波法における電波（ラジオ波）は，周波数が3 THz以下の電磁波である。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "21ec0c3e8a3f7aecaf8a8d1a100f908b2908e7f72f2a1fa5d8cf0d54d18a7814",
+      "correctChoice": 3,
+      "summary": "特性X線は電子の離散的な準位間の遷移に由来するので、元素固有の線スペクトルを示す。連続スペクトルは主に制動X線による。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "原子核の遷移や粒子の対消滅で光子が発生し、対生成では光子が吸収され得る。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "真空中では波長が短いほど周波数が高く、赤外線、可視光線、紫外線の順に高周波になる。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "特性X線は電子の離散的な準位間の遷移に由来するので、元素固有の線スペクトルを示す。連続スペクトルは主に制動X線による。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "マイクロ波には波長がおおむね1 m以下の周波数帯が含まれ、電子レンジやレーダーに使われる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "電波法第2条は、電波を300万メガヘルツ以下の周波数の電磁波と定義し、この上限は3 THzである。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/009/attached/attach_9918_8.pdf#page=4"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=19"
+        }
+      ],
+      "lastCheckedAt": "2026-11-19"
+    }
+  },
+  {
+    "id": "gijutsushi1-oyo-2023-annual-senmon-q11",
+    "number": 11,
+    "text": "炭素，水素，酸素だけからなる化合物92 mgを完全に燃焼したところ，二酸化炭素が176 mg，水が108 mg得られた。この化合物として，最も適切なものはどれか。ただし，原子量をH＝1，C＝12，O＝16とする。",
+    "images": [],
+    "sourcePages": [],
+    "sourceQuestionNumber": 11,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/009/attached/attach_9918_8.pdf#page=4",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=19",
+    "explanation": "生成した二酸化炭素と水から炭素4 mmol、水素12 mmolを得て、質量差から酸素2 mmolを得る。組成比は2：6：1で、C₂H₆Oのエタノールが該当する。",
+    "presentation": {
+      "sourceHash": "5d680830db332f1deca8e79c03f70fec41576b73bd4500604941449c0f69d306",
+      "prompt": "炭素，水素，酸素だけからなる化合物92 mgを完全に燃焼したところ，二酸化炭素が176 mg，水が108 mg得られた。この化合物として，最も適切なものはどれか。ただし，原子量をH＝1，C＝12，O＝16とする。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "アクリル酸"
+        },
+        {
+          "number": 2,
+          "text": "アセトアルデヒド"
+        },
+        {
+          "number": 3,
+          "text": "アセトン"
+        },
+        {
+          "number": 4,
+          "text": "エタノール"
+        },
+        {
+          "number": 5,
+          "text": "酢酸"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "5d680830db332f1deca8e79c03f70fec41576b73bd4500604941449c0f69d306",
+      "correctChoice": 4,
+      "summary": "生成した二酸化炭素と水から炭素4 mmol、水素12 mmolを得て、質量差から酸素2 mmolを得る。組成比は2：6：1で、C₂H₆Oのエタノールが該当する。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "アクリル酸の組成はC₃H₄O₂で、燃焼生成物から得られるC：H：O＝2：6：1と一致しない。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "アセトアルデヒドはC₂H₄Oであり、炭素2個に対して水素4個で、与えられた比の水素6個と合わない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "アセトンはC₃H₆Oであり、燃焼計算で求めた炭素と酸素の比2：1を満たさない。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "生成した二酸化炭素と水から炭素4 mmol、水素12 mmolを得て、質量差から酸素2 mmolを得る。組成比は2：6：1で、C₂H₆Oのエタノールが該当する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "酢酸の組成はC₂H₄O₂であり、酸素が炭素と同数なので計算結果に合わない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/009/attached/attach_9918_8.pdf#page=4"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=19"
+        }
+      ],
+      "lastCheckedAt": "2026-11-19"
+    }
+  }
+]

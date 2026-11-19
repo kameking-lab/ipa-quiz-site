@@ -94,8 +94,7 @@ describe("医療3区分の過年度追加（全年度の全問収録ではない
     expect(question.answer).toBe("エ");
     expect(question.officialAnswerNumber).toBe("4");
     expect(question.choiceFactTruth?.イ).toBe(true);
-    const markup = renderToStaticMarkup(<ExplanationCard question={question} selected="イ" isCorrect={false}
-      starred={false} onToggleStar={() => {}} onNext={() => {}} onAskAI={() => {}} />);
+    const markup = renderToStaticMarkup(<ExplanationCard question={question} selected="イ" isCorrect={false} onNext={() => {}} />);
     const doc = new DOMParser().parseFromString(markup, "text/html");
     const selectedReason = doc.querySelector('[aria-label="あなたが選んだ誤答の理由"]')?.textContent ?? "";
     expect(selectedReason).toContain("公式採点");
@@ -103,6 +102,7 @@ describe("医療3区分の過年度追加（全年度の全問収録ではない
     expect(selectedReason).toContain("否定する意味ではなく");
     expect(selectedReason).toContain("理由は未確認");
     expect(doc.querySelector('a[href="https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/630004_2529710X1027_1_09"]')).not.toBeNull();
-    expect(doc.querySelector(`a[href="${question.sourceAnswerUrl}"]`)).not.toBeNull();
+    expect(doc.querySelector(`a[href="${question.sourcePdfUrl}"]`)).not.toBeNull();
+    expect(doc.querySelector(`a[href="${question.sourceAnswerUrl}"]`)).toBeNull();
   });
 });

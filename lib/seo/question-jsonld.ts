@@ -7,7 +7,7 @@ import { formatNativeBAnswer } from "@/lib/questions/native-b";
 import { questionSourceEdition, questionSourceExam } from "@/lib/questions/source-label";
 import { formatNumericAnswer } from "@/lib/questions/numeric";
 import { formatOrderingAnswer } from "@/lib/questions/ordering";
-import { parsePracticeSession, practiceSessionLabel } from "@/lib/questions/practice-session";
+import { configuredPracticeSessionLabel, parsePracticeSession, practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { ChoiceKey, ExamCode, Question } from "@/lib/questions/types";
 import { choiceDisplayLabel, formatQuestionAnswerForDisplay, questionNumberLabel } from "@/lib/questions/display";
 import { SITE_BASE_URL, SITE_NAME } from "@/lib/seo/config";
@@ -27,6 +27,8 @@ function toJstDateTimeISO(iso: string): string {
 /** Human-readable label for an exam session segment. */
 export function sessionLabel(session: string, exam?: ExamCode): string {
   const parsed = parsePracticeSession(session);
+  const configured = parsed && configuredPracticeSessionLabel(parsed, exam);
+  if (configured) return configured;
   if (parsed && exam === "gijutsushi1-kikai") return practiceSessionLabel(parsed, exam);
   if (parsed && (exam === "kisho" || exam === "kenchiku-setsubishi" || exam === "chizai2" || exam === "kanteishi" || exam === "kaikeishi")) return practiceSessionLabel(parsed, exam);
   if (parsed && (exam === "kanteishi" || exam === "kaikeishi" || exam?.startsWith("khk-reito-"))) return practiceSessionLabel(parsed, exam);
@@ -129,7 +131,7 @@ export function sessionLabel(session: string, exam?: ExamCode): string {
     "keiei-joho": "経営情報システム",
     "chusho-seisaku": "中小企業経営・中小企業政策",
   };
-  return map[session] ?? session.toUpperCase();
+  return map[session] ?? (parsed ? practiceSessionLabel(parsed, exam) : session.toUpperCase());
 }
 
 export interface QuestionBreadcrumbItem { name: string; href: string }

@@ -46,7 +46,7 @@ export function ExamPastQuestionGuide({ exam, questions }: {
           <caption className="pb-2 text-left font-medium">過去問の表記とCBT移行後の科目名</caption>
           <thead><tr className="border-b"><th scope="col" className="p-2">過去問の表記</th><th scope="col" className="p-2">移行後</th><th scope="col" className="p-2">このサイトでの入口</th></tr></thead>
           <tbody>
-            {columns.map(column => <tr key={column.session} className="border-b"><th scope="row" className="p-2 font-medium">{column.old}</th><td className="p-2">{column.current}</td><td className="p-2"><Link href={`#subject-coverage`} className={`inline-flex min-h-11 items-center ${sourceClass}`}>{column.purpose}：収録年度を見る</Link></td></tr>)}
+            {columns.map(column => <tr key={column.session} className="border-b"><th scope="row" className="p-2 font-medium">{column.old}</th><td className="p-2">{column.current}</td><td className="p-2"><Link href="#years" className={`inline-flex min-h-11 items-center ${sourceClass}`}>{column.purpose}</Link></td></tr>)}
             {afternoon.map(column => <tr key={column.old} className="border-b"><th scope="row" className="p-2 font-medium">{column.old}</th><td className="p-2">{column.current}</td><td className="p-2"><Link href="#afternoon" className={`inline-flex min-h-11 items-center ${sourceClass}`}>対策記事・公式問題で練習する</Link></td></tr>)}
           </tbody>
         </table>

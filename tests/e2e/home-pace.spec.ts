@@ -56,10 +56,12 @@ for (const width of [390, 1280]) {
       await expect(page.getByText("いいペース", { exact: true })).toBeVisible();
       await expect(page.getByRole("link", { name: /回数無制限で追いつけます/ })).toHaveCount(0);
       await layout(page); await screenshot(page, "02-ahead", width);
-      await page.getByRole("button", { name: /申込締切は明日/ }).click();
-      await expect(page.getByRole("link", { name: /申込ページを開く/ })).toHaveAttribute("href", "https://www.ipa.go.jp/shiken/");
-      await page.getByRole("button", { name: "申込済みにする" }).click();
-      await expect(page.getByRole("button", { name: /申込締切は明日/ })).toHaveCount(0);
+      await page.getByRole("button", { name: /学習計画の詳細.*申込締切/ }).click();
+      const details = page.getByRole("dialog", { name: "学習計画", exact: true });
+      await expect(details.getByRole("link", { name: /申込ページを開く/ })).toHaveAttribute("href", "https://www.ipa.go.jp/shiken/");
+      await details.getByText("申し込み・計画の変更", { exact: true }).click();
+      await details.getByRole("button", { name: "申込済みにする" }).click();
+      await expect(page.getByRole("button", { name: "学習計画の詳細", exact: true })).toBeVisible();
     });
     test("③ returning: resume and create only", async ({ page }) => {
       await fixtures(page, undefined, 0, true); await page.goto("/");
@@ -71,6 +73,7 @@ for (const width of [390, 1280]) {
     test("④ create: choose day, save, return to pace card", async ({ page }) => {
       await fixtures(page, undefined, 0, true); await page.goto("/");
       await page.getByRole("button", { name: "学習計画を作成", exact: true }).click();
+      await expect(page.getByRole("dialog", { name: "学習計画を作成" })).toBeVisible();
       await page.getByRole("combobox", { name: "受ける資格" }).selectOption("ip");
       await expect(page.getByRole("radio", { name: "随時受験" })).toBeChecked();
       await page.getByLabel("予約した日・受けたい日").fill("2026-12-20");
@@ -88,9 +91,14 @@ for (const width of [390, 1280]) {
       if (width === 390) await expect(page.getByRole("navigation", { name: "モバイル底タブ" }).getByRole("link")).toHaveCount(3);
       await page.getByRole("searchbox", { name: "資格名・略称で検索" }).fill("ITパスポート");
       await expect(page.locator("main li")).toHaveCount(1);
+      await page.getByRole("button", { name: "学習計画を作成", exact: true }).click();
+      await expect(page.getByRole("dialog", { name: "学習計画を作成" })).toBeVisible();
     });
     test("post-exam: one-tap result and one next qualification", async ({ page }) => {
       await fixtures(page, { ...fixturePlan(), examDate: "2026-11-16" }); await page.goto("/");
+      for (const label of ["合格", "不合格", "受けなかった"]) {
+        await expect(page.getByRole("button", { name: label, exact: true })).toBeVisible();
+      }
       await page.getByRole("button", { name: "合格", exact: true }).click();
       await expect(page.getByRole("heading", { name: "合格おめでとう！" })).toBeVisible();
       await expect(page.locator("main").getByRole("link", { name: /次は/ })).toHaveCount(1);

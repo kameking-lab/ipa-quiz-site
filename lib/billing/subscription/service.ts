@@ -4,7 +4,9 @@ import { BillingError, jstDay } from "../domain";
 import { refundState } from "../finance";
 import { examDateBeforeEnd, examEndCanBeBooked } from "../exam-end";
 import { safeQuizReturn } from "../quiz-return";
-import { invoiceCashDue, stripeMinimumYenCharge, terminal, type Account, type AppStorePurchase, type AppStorePurchaseHold, type AppStorePurchaseState, type AppStoreRecovery, type Contract, type EndingChange, type MonthlyConfig, type MonthlyProvider, type MonthlyStore, type Invoice, type Observation, type Signup, type SubscriptionManagement, type Target } from "./domain";
+import { invoiceCashDue, stripeMinimumYenCharge, terminal, type Account, type AppStorePurchase, type AppStorePurchaseHold, type AppStorePurchaseState, type AppStoreRecovery, type Contract, type EndingChange, type MonthlyConfig, type MonthlyProvider, type MonthlyStore, type Invoice, type Observation, type Realm, type Signup, type SubscriptionManagement, type Target } from "./domain";
+
+type ReadAppStorePurchaseStatus = (userId: string, mode: Realm) => Promise<AppStorePurchaseState>;
 
 export function monthlyTerms(c: MonthlyConfig) {
   return createHash("sha256").update(JSON.stringify({ version: c.termsVersion, price: c.priceYen, priceId: c.priceId,
@@ -20,6 +22,13 @@ const appStoreApprovalMs = 24 * 3600000;
 const legacyAppStoreHoldMs = 25 * 3600000;
 const renewalRecoveryCooldownMs = 60_000;
 const within = (start: number, end: number, now: number) => start <= now && now < end;
+const canRenew = (sub: Contract, now: number) => ["active", "trialing", "past_due"].includes(sub.status) && sub.periodEnd > now;
+function endsByCurrentPeriod(sub: Contract) {
+  const ending = sub.memberEnding;
+  return sub.cancelAtPeriodEnd || (sub.examCancelAt ?? Infinity) <= sub.periodEnd
+    || ending?.kind === "exam" && ending.renewalEnd <= sub.periodEnd
+    || ending?.kind === "cancel" && ending.at <= sub.periodEnd;
+}
 const memberIds = (members: Account[]) => members.map(a => a.userId);
 function assertSameMembers(ids: string[], members: Account[]) {
   if (ids.length !== members.length || members.some((a, i) => a.userId !== ids[i])) throw new BillingError("checkout_conflict");
@@ -124,10 +133,10 @@ export function access(a: Account, now: number): { subscriptionId: string; perio
 /** No legacy-account grace. Existing Auth and history records are neither deleted nor rewritten. */
 export class MonthlyService {
   constructor(private store: MonthlyStore, readonly config: MonthlyConfig, private clock = () => new Date(),
-    private afterReceive?: (userId: string) => Promise<void>, private reviewExamCharge?: (orderId: string, invoiceId: string) => Promise<boolean>,
+    private afterReceive?: (userId: string, options?: { retryOnFailure: boolean }) => Promise<void>, private reviewExamCharge?: (orderId: string, invoiceId: string) => Promise<boolean>,
     private reviewPurchase?: (orderId: string, reason: "exam_writeoff" | "customer_balance") => Promise<boolean>) {}
   private tx<T>(id: string, fn: (a: Account) => Promise<T>, readOnly = false) { return this.store.transaction(id, this.config.mode, this.config.sourceInstance, fn, readOnly); }
-  private purchaseTx<T>(id: string, fn: (a: Account, members: Account[], verifiedMembers?: ReadonlySet<string>) => T) {
+  private purchaseTx<T>(id: string, fn: (a: Account, members: Account[], verifiedMembers?: ReadonlySet<string>) => T | Promise<T>) {
     return this.store.purchaseTransaction(id, this.config.mode, this.config.sourceInstance, fn);
   }
 
@@ -487,21 +496,36 @@ export class MonthlyService {
     if (!customerId) throw new BillingError("subscription_missing", 404);
     return { url: await provider.portal(customerId, this.config.portalConfigurationId) };
   }
-  async changeEnding(userId: string, orderId: string, change: EndingChange, provider: MonthlyProvider) {
+  async changeEnding(userId: string, orderId: string, change: EndingChange, provider: MonthlyProvider,
+    verifyAppStore?: (appStoreUserId: string) => Promise<void>) {
     const writeEnding = provider.changeEnding?.bind(provider);
     if (!writeEnding) problem("billing_unavailable");
-    await this.tx(userId, async a => {
+    await this.purchaseTx(userId, async (a, members, verified) => {
       assertPolicyReady(a);
       const signup = a.signups[orderId];
       const sub = signup?.subscriptionId ? a.contracts[signup.subscriptionId] : undefined;
       const customerId = a.customer?.id;
       if (!sub || !customerId || sub.customerId !== customerId) throw new BillingError("subscription_missing", 404);
       if (sub.renewalBlocked && change.kind !== "cancel") throw new BillingError("subscription_ending_conflict");
-      await writeEnding(sub.id, customerId, signup, change, this.clock().getTime() / 1000);
+      const beforeExtension = async () => {
+        if (!verifyAppStore && signup.appStoreOverlap) problem("mobile_verification_unavailable");
+        const buyers = members.filter(member => member === a || verified?.has(a.userId) && verified.has(member.userId));
+        const ids = new Set(memberIds(buyers));
+        if (signup.appStoreOverlap) ids.add(signup.appStoreOverlap.appStoreUserId);
+        await checkMembers([...ids], verifyAppStore);
+      };
+      const overlap = signup.appStoreOverlap;
+      const supersedesPendingStop = change.kind === "renew" && overlap?.renewal === "pending";
+      // Check access even if Stripe already has the requested renewal setting.
+      if (supersedesPendingStop) await beforeExtension();
+      await writeEnding(sub.id, customerId, signup, change, this.clock().getTime() / 1000,
+        supersedesPendingStop ? undefined : beforeExtension);
       // Make a webhook/cron observation started before this provider write re-fetch.
       delete signup.examEndCheckAt;
       const observation = await provider.observe({ customerId, subscriptionIds: [sub.id], invoiceIds: [] });
       await this.applyObservation(a, observation, customerId);
+      // Persist the buyer's confirmed choice under the lock used by the stop job.
+      if (supersedesPendingStop) overlap.renewal = "discarded";
     });
     return { management: (await this.status(userId, orderId)).management };
   }
@@ -514,11 +538,11 @@ export class MonthlyService {
     if (!userId && target.unallocatedRefund) return "ignored";
     if (!userId) problem("subscription_customer_missing");
     const result = await this.observeCustomer(userId, provider, target, { id: event.id, digest });
-    await this.finishObservation(userId, provider);
+    await this.finishObservation(userId, provider, true);
     return result;
   }
 
-  private async finishObservation(userId: string, provider: MonthlyProvider) {
+  private async finishObservation(userId: string, provider: MonthlyProvider, retryOnFailure = false) {
     // Stop overdue contracts before a queued duplicate-card job can bill them.
     await this.flushExamEnds(userId, provider, true);
     await this.flushRenewalStops(userId, provider);
@@ -526,37 +550,53 @@ export class MonthlyService {
     await this.flushExamEnds(userId, provider, false);
     await this.flushExamWriteOffs(userId, provider);
     await this.flushExamChargeReviews(userId);
-    await this.afterReceive?.(userId);
+    // Even a duplicate delivery must retry an audit that failed after commit.
+    await this.afterReceive?.(userId, { retryOnFailure });
   }
 
   async recordAppStoreOverlaps(userId: string, appStoreUsers: string[]) {
     return this.purchaseTx(userId, (_, members, verified) => {
       const now = this.clock();
-      const orders: { userId: string; orderId: string }[] = [];
+      const nowSeconds = now.getTime() / 1000;
+      const orders: { userId: string; orderId: string; newlyRecorded: boolean }[] = [];
       for (const member of members) {
         const appStoreUserId = members.find(other => appStoreUsers.includes(other.userId)
           && (other === member || verified?.has(member.userId) && verified.has(other.userId)))?.userId;
         if (!appStoreUserId) continue;
-        const paid = access(member, now.getTime() / 1000);
-        if (!paid) continue;
-        const signup = member.signups[member.contracts[paid.subscriptionId].signupId];
-        signup.appStoreOverlap ??= { appStoreUserId, detectedAt: now.toISOString(), renewal: "pending" };
-        if (signup.appStoreOverlap.renewal === "pending") orders.push({ userId: member.userId, orderId: signup.id });
+        assertPolicyReady(member);
+        for (const sub of Object.values(member.contracts)) {
+          if (!canRenew(sub, nowSeconds)) continue;
+          const signup = member.signups[sub.signupId];
+          const overlap = signup.appStoreOverlap;
+          if (!overlap) {
+            signup.appStoreOverlap = { appStoreUserId, detectedAt: now.toISOString(), renewal: "pending" };
+          } else if (overlap.renewal !== "pending" && !endsByCurrentPeriod(sub)) {
+            // An older overlap record survives a later withdrawal of the Web ending.
+            overlap.appStoreUserId = appStoreUserId;
+            overlap.renewal = "pending";
+            overlap.renewalAttempt = (overlap.renewalAttempt ?? 0) + 1;
+          }
+          if (signup.appStoreOverlap?.renewal === "pending") orders.push({ userId: member.userId, orderId: signup.id, newlyRecorded: !overlap });
+        }
       }
       return orders;
     });
   }
 
-  async reconcileAppStoreOverlap(userId: string, orderId: string, provider: MonthlyProvider) {
-    await this.tx(userId, a => this.stopAppStoreOverlap(a, a.signups[orderId], provider));
+  async reconcileAppStoreOverlap(userId: string, orderId: string, provider: MonthlyProvider, readAppStoreStatus: ReadAppStorePurchaseStatus) {
+    await this.tx(userId, a => this.stopAppStoreOverlap(a, a.signups[orderId], provider, readAppStoreStatus));
   }
 
-  private async stopAppStoreOverlap(a: Account, signup: Signup | undefined, provider: MonthlyProvider) {
+  private async stopAppStoreOverlap(a: Account, signup: Signup | undefined, provider: MonthlyProvider, readAppStoreStatus: ReadAppStorePurchaseStatus) {
     if (!signup) return;
     const overlap = signup.appStoreOverlap;
     if (overlap?.renewal !== "pending") return;
     const sub = signup.subscriptionId ? a.contracts[signup.subscriptionId] : undefined;
     if (!sub || !provider.stopAppStoreOverlapRenewal) problem("duplicate_purchase_reconcile_unavailable");
+    if (await readAppStoreStatus(overlap.appStoreUserId, a.mode) !== "active") {
+      overlap.renewal = "discarded";
+      return;
+    }
     // Keep the current period and serialize the provider write with other
     // changes to this contract. A failed write leaves the saved job pending.
     const cutoff = await provider.stopAppStoreOverlapRenewal(sub.id, sub.customerId, signup);
@@ -857,11 +897,11 @@ export class MonthlyService {
     }
   }
 
-  async runExamEndCheck(userId: string, orderId: string, provider: MonthlyProvider) {
+  async runExamEndCheck(userId: string, orderId: string, provider: MonthlyProvider, readAppStoreStatus: ReadAppStorePurchaseStatus) {
     const now = Math.floor(this.clock().getTime() / 1000);
     const claimed = await this.tx(userId, async a => {
       const s = a.signups[orderId];
-      await this.stopAppStoreOverlap(a, s, provider);
+      await this.stopAppStoreOverlap(a, s, provider, readAppStoreStatus);
       if (!s || (s.examEndCheckAt ?? 0) > now) return false;
       s.examEndCheckAt = now + 600;
       return true;

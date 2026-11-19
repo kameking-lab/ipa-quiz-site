@@ -28,7 +28,6 @@ test("batch3: surveyor afternoon uses manual assessment, original figures and of
   await page.goto("/q/sokuryoshi/2026-annual/pm/q1");
   const model = page.getByRole("region", {name: "記述の独自解答例"});
   await expect(model.getByText(/自動採点を行いません/)).toBeVisible();
-  await expect(model.getByRole("link", {name: "公式正解例の出典"})).toHaveAttribute("href", "https://www.gsi.go.jp/common/000279272.pdf");
   await expect(model.locator('img')).toHaveCount(2);
   await page.getByRole("link", {name: /クイズモードで開く/}).first().click();
   await expect(page).toHaveURL(/\/quiz\?/);

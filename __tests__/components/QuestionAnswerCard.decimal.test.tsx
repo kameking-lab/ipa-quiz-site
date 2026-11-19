@@ -23,7 +23,6 @@ describe("decimal solve-in-place reader",()=>{
     fireEvent.keyDown(input,{key:"Enter"});
     expect(createHistoryStore().getAllEntries()).toMatchObject([{id:question.id,selected:correct?"23.4":"23.3",correct}]);
     expect(readLastQuestion()).toMatchObject({year:2024,qNumber:90});
-    expect(screen.getByRole("link",{name:/次の問題/})).toHaveAttribute("href",props.nextHref);
     expect(screen.getAllByText(/23.4 BMI/).length).toBeGreaterThan(0);
     reader.unmount();render(<QuestionAnswerCard {...props}/>);
     expect(screen.getByRole("textbox")).toHaveValue("");

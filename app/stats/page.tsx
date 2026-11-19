@@ -8,10 +8,8 @@ import {
   BarChart3,
   ExternalLink,
   Globe,
-  Heart,
   LineChart,
   Megaphone,
-  MessageSquare,
   Search,
   ShieldCheck,
 } from "lucide-react";
@@ -330,30 +328,6 @@ export default async function StatsPage() {
         </Section>
       ) : null}
 
-      {/* Section 6: Support / Engagement */}
-      <Section
-        icon={<Heart className="h-3.5 w-3.5" />}
-        title="ご意見・運営方針"
-        subtitle="不具合の報告と運営について"
-      >
-        <Card>
-          <CardContent className="grid gap-3 p-5 sm:grid-cols-2">
-            <SupportLink
-              icon={<MessageSquare className="h-4 w-4" />}
-              title="フィードバックを送る"
-              body="バグ報告・機能要望・誤答指摘などお気軽に。"
-              href="/contact"
-            />
-            <SupportLink
-              icon={<ExternalLink className="h-4 w-4" />}
-              title="運営方針について"
-              body="AIの利用範囲と運営方針を公開しています。"
-              href="/transparency"
-            />
-          </CardContent>
-        </Card>
-      </Section>
-
       {/* Section 7: Policy */}
       <Section
         icon={<ShieldCheck className="h-3.5 w-3.5" />}
@@ -425,44 +399,6 @@ function MetricCard({ label, value, sub }: { label: string; value: string; sub?:
       <div className="mt-1 text-2xl font-bold tracking-tight text-foreground">{value}</div>
       {sub && <div className="mt-1 text-[11px] text-muted-foreground">{sub}</div>}
     </div>
-  );
-}
-
-function SupportLink({
-  icon,
-  title,
-  body,
-  href,
-  external,
-}: {
-  icon: React.ReactNode;
-  title: string;
-  body: string;
-  href: string;
-  external?: boolean;
-}) {
-  const className =
-    "block rounded-2xl border border-border bg-card p-4 transition hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md";
-  const content = (
-    <>
-      <div className="mb-2 inline-flex h-7 w-7 items-center justify-center rounded-lg bg-primary-soft text-primary-soft-foreground">
-        {icon}
-      </div>
-      <div className="text-sm font-semibold">{title}</div>
-      <p className="mt-1 text-xs leading-relaxed text-muted-foreground">{body}</p>
-    </>
-  );
-  if (external) {
-    return (
-      <a href={href} target="_blank" rel="noopener noreferrer" className={className}>
-        {content}
-      </a>
-    );
-  }
-  return (
-    <Link href={href} className={className}>
-      {content}
-    </Link>
   );
 }
 

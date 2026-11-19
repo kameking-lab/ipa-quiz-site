@@ -1,8 +1,7 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
-import { Cloud, CloudUpload, CheckCircle2, AlertCircle, Loader2, LogIn } from "lucide-react";
+import { Cloud, CloudUpload, CheckCircle2, AlertCircle, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { syncAll, readSyncMeta, type SyncAllResult } from "@/lib/sync";
 import { useSyncIdentity } from "@/lib/sync/use-sync-identity";
@@ -86,16 +85,7 @@ export function CloudSyncPanel() {
           onConfirm={(confirmed) => identity.setConfirmedFor(confirmed ? identity.account!.id : null)}
         />}
 
-        {auth === "out" ? (
-          <div className="flex flex-col gap-2">
-            <Button asChild variant="primary" size="lg" className="w-fit gap-2">
-              <Link href="/auth/signin?callbackUrl=/settings">
-                <LogIn className="h-4 w-4" aria-hidden="true" />
-                サインインして同期
-              </Link>
-            </Button>
-          </div>
-        ) : (
+        {auth !== "out" && (
           <div className="flex flex-wrap items-center gap-3">
             <Button
               variant="primary"

@@ -534,7 +534,7 @@ export class StripeMonthlyProvider implements MonthlyProvider {
     const updated = subscriptionSchema.parse(await this.api(path,
       { cancel_at: String(periodEnd), "metadata[member_ending]": marker,
         proration_behavior: "none", "billing_cycle_anchor[type]": "unchanged" },
-      `${this.c.sourceInstance}:app-store-overlap:${subscriptionId}`));
+      `${this.c.sourceInstance}:app-store-overlap:${subscriptionId}:${signup.appStoreOverlap?.renewalAttempt ?? 0}:${periodEnd}`));
     this.mode(updated);
     if (updated.id !== subscriptionId || updated.cancel_at !== periodEnd || updated.metadata.member_ending !== marker)
       throw new BillingError("subscription_ending_unconfirmed", 503);
@@ -573,7 +573,8 @@ export class StripeMonthlyProvider implements MonthlyProvider {
     return current;
   }
 
-  async changeEnding(subscriptionId: string, customerId: string, signup: Signup, change: EndingChange, now: number) {
+  async changeEnding(subscriptionId: string, customerId: string, signup: Signup, change: EndingChange, now: number,
+    beforeExtension?: () => Promise<void>) {
     const current = await this.ownedSubscription(subscriptionId, customerId, signup);
     const { current_period_end: periodEnd } = current.items.data[0];
     if (!["active", "trialing", "past_due"].includes(current.status) || periodEnd <= now)
@@ -587,7 +588,8 @@ export class StripeMonthlyProvider implements MonthlyProvider {
     }
     if (current.cancel_at != null && !legacyExamEnd && ending?.kind !== "exam")
       throw new BillingError("subscription_ending_conflict", 409);
-    const oldExamEnd = ending?.kind === "exam" ? ending.at : legacyExamEnd;
+    const pendingExamEnd = !ending && !signup.examEndApplied ? signup.examEndAt : undefined;
+    const oldExamEnd = ending?.kind === "exam" ? ending.at : legacyExamEnd ?? pendingExamEnd;
     if (oldExamEnd !== undefined && oldExamEnd <= now) throw new BillingError("subscription_ending_conflict", 409);
     if (change.kind === "exam" && change.at <= now) throw new BillingError("invalid_exam_date", 400);
     if (change.kind === "exam" && change.at === oldExamEnd || change.kind === "renew" && oldExamEnd === undefined && signup.examEndAt === undefined) return;
@@ -599,6 +601,8 @@ export class StripeMonthlyProvider implements MonthlyProvider {
     const marker = change.kind === "exam" ? `exam:${change.at}:${stopAt}` :
       change.kind === "cancel" ? `cancel:${stopAt}` : "renew";
     if (current.metadata.member_ending === marker && (current.cancel_at ?? null) === stopAt) return;
+    const requestedEnd = change.kind === "exam" ? change.at : stopAt ?? Infinity;
+    if (oldExamEnd !== undefined && requestedEnd > oldExamEnd) await beforeExtension?.();
     const body: Record<string, string> = { "metadata[member_ending]": marker, proration_behavior: "none", "billing_cycle_anchor[type]": "unchanged" };
     if ((current.cancel_at ?? null) !== stopAt) body.cancel_at = stopAt === null ? "" : String(stopAt);
     const updated = subscriptionSchema.parse(await this.api(`subscriptions/${encodeURIComponent(subscriptionId)}`, body));

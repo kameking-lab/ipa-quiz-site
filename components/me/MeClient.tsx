@@ -4,6 +4,10 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
+import { AccountNavigationLink } from "@/components/account/AccountNavigation";
+import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
+import { listExamLearningSummaries } from "@/lib/exam-library-session";
+import { ALL_QUIZ_EXAM_CODES } from "@/lib/exam-config";
 import { createHistoryStore, type HistoryEntry } from "@/lib/storage/history";
 import { getHeatmapMap, intensityLevel } from "@/lib/motivation/heatmap";
 import { readDailyGoalTarget } from "@/lib/motivation/daily-goal";
@@ -23,7 +27,7 @@ import { readExamDatePlans } from "@/lib/billing/exam-end-client";
 const intensity = ["bg-muted", "bg-activity-1", "bg-activity-2", "bg-activity-3", "bg-activity-4"] as const;
 const number = new Intl.NumberFormat("ja-JP", { maximumFractionDigits: 1 });
 const shortDate = (date: string) => `${Number(date.slice(5, 7))}/${Number(date.slice(8))}`;
-interface Snapshot { history: HistoryEntry[]; actions: LearningAction[]; days: Record<string, number>; exam: string | null; goal: number; passed: string[]; plans: unknown; examDatePlans: ExamDatePlan[]; now: Date }
+interface Snapshot { history: HistoryEntry[]; actions: LearningAction[]; days: Record<string, number>; exam: string | null; goal: number; passed: string[]; plans: unknown; examDatePlans: ExamDatePlan[]; hasSafetyHistory: boolean; now: Date }
 
 export function MeClient({ reportExam: requestedReportExam }: { reportExam?: string } = {}) {
   const [snapshot, setSnapshot] = useState<Snapshot | null>(null);
@@ -31,7 +35,6 @@ export function MeClient({ reportExam: requestedReportExam }: { reportExam?: str
   const [weaknessMeta, setWeaknessMeta] = useState<Record<string, WeaknessQuestionMeta>>({});
   const [questionLabels, setQuestionLabels] = useState<Record<string, string>>({});
   const [selected, setSelected] = useState<{ date: string; exam?: string | null } | null>(null);
-  const [showAll, setShowAll] = useState(false);
   const calendarScroll = useRef<HTMLDivElement>(null);
   const recordTrigger = useRef<HTMLButtonElement | null>(null);
   const openRecord = (selection: { date: string; exam?: string | null }, button: HTMLButtonElement) => {
@@ -56,7 +59,7 @@ export function MeClient({ reportExam: requestedReportExam }: { reportExam?: str
       setSelected(null); setMetadata({}); setQuestionLabels({}); setWeaknessMeta({});
       const pacePlans = listPacePlans();
       setSnapshot({ history, actions, days: getHeatmapMap(), exam: readLastQuestion()?.exam ?? pacePlans[0]?.exam ?? null,
-        goal: readDailyGoalTarget(), passed: passedPlanExams(plans, pacePlans), plans, examDatePlans: readExamDatePlans(pacePlans), now: new Date() });
+        goal: readDailyGoalTarget(), passed: passedPlanExams(plans, pacePlans), plans, examDatePlans: readExamDatePlans(pacePlans), hasSafetyHistory: listExamLearningSummaries().some((paper) => paper.answered > 0), now: new Date() });
       const ids = [...new Set([...actions.filter(action => action.kind === "answer").map(action => action.questionId), ...history.map(entry => entry.id)])]
         .filter(id => id.length > 0 && id.length <= 120).slice(-2000);
       if (!ids.length) return;
@@ -94,31 +97,55 @@ export function MeClient({ reportExam: requestedReportExam }: { reportExam?: str
     return record.exam && at > latest.at ? { exam: record.exam, at } : latest;
   }, { exam: null, at: -1 });
   const reportExam = mostRecent?.exam ?? exam;
+  const wrongExam = requestedReportExam ?? reportExam;
+  const hasWrong = records?.records.some((record) => record.exam === wrongExam && record.entries.some((entry) => !entry.correct));
+  const wrongHref = '/quiz?' + new URLSearchParams({ mode: "review", reviewKind: "wrong", exam: wrongExam });
+  const menuLink = "flex min-h-11 items-center py-2 text-sm font-medium underline-offset-4 hover:underline";
   const today = records?.calendar.at(-1);
   const todayExamCount = records?.records.find(record => record.date === today?.date && record.exam === exam)?.entries.length ?? 0;
   const opened = selected ? records?.records.filter(record => record.date === selected.date && (selected.exam === undefined || selected.exam === record.exam)) ?? [] : [];
   return <div className="space-y-3.5">
     <MePetRoom exam={exam} minutes={records?.minutes ?? 0} todayCount={today?.count ?? 0} todayExamCount={todayExamCount} goal={snapshot?.goal ?? 10} passedExams={snapshot?.passed ?? []} paceBehind={snapshot ? plannedPaceBehind(snapshot.plans, snapshot.history, exam, snapshot.now, metadata) : undefined} />
+    <h2 id="study-progress" className="scroll-mt-16 text-sm font-bold">学習の進捗</h2>
     <dl aria-label="学習の数字" aria-busy={!records} className="grid grid-cols-2 gap-2.5">
       {([
         ["連続日数", records?.streak, "日"], ["1日平均の問題数", records?.averageQuestions, "問"],
         ["1日平均の分数", records?.averageMinutes, "分"], ["これまでの問題数", records?.total, "問"],
       ] as const).map(([label, value, unit]) => <div key={label} className="min-w-0 rounded-xl border border-border bg-card px-3.5 py-2.5"><dt className="text-xs leading-relaxed text-muted-foreground">{label}</dt><dd className="font-display text-[26px] leading-tight font-bold tabular-nums">{value === undefined ? "—" : number.format(value)}<span className="ml-1 font-sans text-xs font-normal text-muted-foreground">{unit}</span></dd></div>)}
     </dl>
+    <nav aria-label="学習の進捗と復習" className="flex flex-wrap gap-x-4">
+      {hasWrong && ALL_QUIZ_EXAM_CODES.some((code) => code === wrongExam) && <Link href={wrongHref} className={menuLink}>間違えた問題を復習</Link>}
+      {!!records?.entries.length && <Link href={ALL_QUIZ_EXAM_CODES.some((code) => code === wrongExam) ? "/review?" + new URLSearchParams({ exam: wrongExam, returnTo: "/me" }) : "/review"} className={menuLink}>今日の復習</Link>}
+      {snapshot?.hasSafetyHistory && <Link href="/e-learning/progress" className={menuLink}>安全衛生の進捗・復習</Link>}
+      <Link href={snapshot?.examDatePlans.length ? "/#today" : "/study-plan"} className={menuLink}>{snapshot?.examDatePlans.length ? "学習計画を見る" : "学習計画を作成"}</Link>
+    </nav>
     {snapshot && records && <WeaknessReport history={records.entries}
       meta={weaknessMeta} exam={reportExam} requestedExam={requestedReportExam} plans={snapshot.examDatePlans} now={snapshot.now} />}
     <section aria-labelledby="me-calendar" className="rounded-xl border border-border bg-card p-3"><div className="mb-2 flex flex-wrap items-baseline justify-between gap-2"><h2 id="me-calendar" className="text-sm font-bold">12週間のカレンダー</h2><span className="text-xs tabular-nums text-muted-foreground">{records ? `${shortDate(records.calendar[0].date)}–${shortDate(records.calendar[83].date)}` : ""}</span></div>
       <div className="flex gap-1.5"><div aria-hidden="true" className="grid grid-rows-7 gap-0.5 text-[10px] leading-none text-muted-foreground">{records?.calendar.slice(0, 7).map(day => <span key={day.date} className="flex h-6 items-center">{new Intl.DateTimeFormat("ja", { weekday: "narrow", timeZone: "Asia/Tokyo" }).format(new Date(`${day.date}T12:00:00+09:00`))}</span>)}</div>
         <div ref={calendarScroll} role="region" aria-label="日別の学習量" tabIndex={0} className="min-w-0 flex-1 overflow-x-auto rounded-sm outline-offset-2 focus-visible:outline-2 focus-visible:outline-primary">
-          <div className="grid min-h-[180px] min-w-[310px] grid-flow-col grid-cols-12 grid-rows-7 gap-0.5">{records?.calendar.map(day => <button key={day.date} type="button" aria-label={`${day.date} ${day.count}問`} title={`${shortDate(day.date)} · ${day.count}問`} aria-current={day.date === today?.date ? "date" : undefined} disabled={!records.records.some(record => record.date === day.date)} className={`h-6 min-w-6 rounded-[4px] aria-current:ring-2 aria-current:ring-inset aria-current:ring-primary focus-visible:outline-2 focus-visible:outline-offset-[-3px] focus-visible:outline-primary disabled:cursor-default ${intensity[intensityLevel(day.count)]}`} onClick={event => openRecord({ date: day.date }, event.currentTarget)} />)}</div>
+          <div className="grid min-h-[180px] min-w-[310px] grid-flow-col grid-cols-12 grid-rows-7 gap-0.5">{records?.calendar.map(day => <span key={day.date} aria-label={day.date + " " + day.count + "問"} title={shortDate(day.date) + " · " + day.count + "問"} aria-current={day.date === today?.date ? "date" : undefined} className={'h-6 min-w-6 rounded-[4px] aria-current:ring-2 aria-current:ring-inset aria-current:ring-primary ' + intensity[intensityLevel(day.count)]} />)}</div>
         </div></div>
       <div aria-hidden="true" className="mt-2 flex items-center justify-end gap-1 text-[10px] text-muted-foreground"><span>少</span>{intensity.map(color => <span key={color} className={`size-2.5 rounded-sm ${color}`} />)}<span>多</span></div>
     </section>
     <section aria-labelledby="me-recent" className="rounded-xl border border-border bg-card"><h2 id="me-recent" className="px-3.5 pt-3 pb-2 text-sm font-bold">最近の記録</h2>
-      {records?.records.length === 0 ? <p className="px-3.5 py-4 text-sm text-muted-foreground">まだ記録がありません</p> : <ul className="divide-y divide-border border-t border-border">{(showAll ? records?.records : records?.records.slice(0, 10))?.map(record => <li key={`${record.date}:${record.exam}`}><RecordRow record={record} open={button => openRecord({ date: record.date, exam: record.exam }, button)} /></li>)}</ul>}
-      {(records?.records.length ?? 0) > 10 && !showAll ? <button type="button" className="mt-3 min-h-11 w-full rounded-xl text-sm text-muted-foreground outline-offset-2 hover:bg-muted focus-visible:outline-2 focus-visible:outline-primary" onClick={() => setShowAll(true)}>もっと見る</button> : null}
+      {records?.records.length === 0 ? <p className="px-3.5 py-4 text-sm text-muted-foreground">まだ記録がありません</p> : <ul className="divide-y divide-border border-t border-border">{records?.records.slice(0, 10).map(record => <li key={`${record.date}:${record.exam}`}><RecordRow record={record} open={button => openRecord({ date: record.date, exam: record.exam }, button)} /></li>)}</ul>}
+      {(records?.records.length ?? 0) > 10 && <details className="px-3.5">
+        <summary className="min-h-11 cursor-pointer py-3 text-sm">過去の記録</summary>
+        <ul className="divide-y divide-border">{records?.records.slice(10).map(record => <li key={record.date + ":" + record.exam}><RecordRow record={record} open={button => openRecord({ date: record.date, exam: record.exam }, button)} /></li>)}</ul>
+      </details>}
     </section>
-    <nav aria-label="わたしのメニュー" className="flex flex-wrap gap-x-3 gap-y-1 border-t border-border pt-1 text-sm text-muted-foreground"><Link className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg px-2 outline-offset-2 hover:bg-muted focus-visible:outline-2 focus-visible:outline-primary" href="/account/dashboard">アカウント</Link><Link className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg px-2 outline-offset-2 hover:bg-muted focus-visible:outline-2 focus-visible:outline-primary" href="/#home-directory-title">収録資格</Link><Link className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg px-2 outline-offset-2 hover:bg-muted focus-visible:outline-2 focus-visible:outline-primary" href="/transparency">出典・運営</Link></nav>
+    <nav aria-label="わたしのメニュー" className="border-t border-border pt-2">
+      <Link href="/study-room" className={menuLink}>自習室</Link>
+      <Link href={PRICE_PAGE_LINK.href} className={menuLink}>{PRICE_PAGE_LINK.label}</Link>
+      <AccountNavigationLink className={menuLink} />
+      <details>
+        <summary className="min-h-11 cursor-pointer py-3 text-sm font-medium">教材・運営情報</summary>
+        <Link href="/essay" className={menuLink}>論文対策</Link>
+        <Link href="/mock-exam" className={menuLink}>模試</Link>
+        <Link href="/transparency" className={menuLink}>出典・運営</Link>
+      </details>
+    </nav>
     <Dialog open={selected !== null} onOpenChange={open => { if (!open) setSelected(null); }}><DialogContent aria-describedby={undefined} onCloseAutoFocus={event => { event.preventDefault(); recordTrigger.current?.focus(); }} className="max-h-[85dvh] overflow-y-auto [&>button:last-child]:size-11"><DialogTitle className="pr-11">{selected ? `${shortDate(selected.date)}の記録` : "学習の記録"}</DialogTitle>
       {opened.map(record => <section key={record.exam ?? "unknown"}><h3 className="text-sm font-semibold">{record.exam ? examLabel(record.exam) : "その他"}</h3><ul className="mt-2 divide-y divide-border">{[...record.entries].reverse().map((entry, index) => <li key={`${entry.id}:${entry.at}:${index}`}><Link prefetch={false} href={`/me/review/${encodeURIComponent(entry.id)}`} className="flex min-h-12 items-center gap-3 rounded-lg px-2 py-3 text-sm outline-offset-2 hover:bg-muted focus-visible:outline-2 focus-visible:outline-primary"><span className={`shrink-0 ${entry.correct ? "text-emerald-700 dark:text-emerald-400" : "text-rose-600 dark:text-rose-400"}`}>{entry.correct ? "正解" : "不正解"}</span><span className="min-w-0 flex-1 break-words leading-relaxed">{questionLabels[entry.id] ?? `問題${record.entries.length - index}`}</span><ChevronRight aria-hidden="true" className="size-4 shrink-0 text-muted-foreground" /></Link></li>)}</ul></section>)}
     </DialogContent></Dialog>

@@ -1,4 +1,4 @@
-import { act, cleanup, fireEvent, render, screen } from "@testing-library/react";
+import { act, cleanup, fireEvent, render, screen, within } from "@testing-library/react";
 import { afterEach, expect, it, vi } from "vitest";
 import { StudyRoom } from "@/components/home/StudyRoom";
 import { measuredPresence } from "@/lib/study-presence-contract";
@@ -53,29 +53,12 @@ it("grows immediately, shrinks only after 60 seconds, and cancels shrinking on g
   expect(screen.queryAllByTestId("study-room-seat")).toHaveLength(0);
 });
 
-it("throttles cheers per seat and across seats without adding explanation or extra actions", () => {
-  vi.useFakeTimers();
-  const onCheer = vi.fn();
-  render(<StudyRoom snapshot={snapshot(3)} suggestions={[]} onCheer={onCheer} />);
-  const seats = screen.getAllByRole("button", { name: /のチワワを応援$/ });
-  fireEvent.click(seats[0]); fireEvent.click(seats[0]); fireEvent.click(seats[1]);
-  expect(onCheer).toHaveBeenCalledExactlyOnceWith({ exam: "fe", index: 0 });
-  expect(screen.getByLabelText("応援")).toBeInTheDocument();
-  act(() => vi.advanceTimersByTime(1200));
-  expect(screen.queryByLabelText("応援")).not.toBeInTheDocument();
-  fireEvent.click(seats[0]); expect(onCheer).toHaveBeenCalledTimes(1);
-  fireEvent.click(seats[1]); expect(onCheer).toHaveBeenCalledTimes(2);
-  act(() => vi.advanceTimersByTime(8800));
-  fireEvent.click(seats[0]); expect(onCheer).toHaveBeenCalledTimes(3);
+it("uses the seat artwork itself for inspection and keeps one study link", () => {
+  render(<StudyRoom snapshot={snapshot(3)} suggestions={[]} />);
+  expect(screen.getAllByTestId("study-room-seat")).toHaveLength(3);
+  expect(screen.getAllByRole("button", { name: /チワワを見る/ })).toHaveLength(3);
   expect(screen.getAllByRole("link")).toHaveLength(1);
-  expect(screen.getByRole("link", { name: "席について解く" })).toHaveAttribute("href", "/#choose-qualification");
-});
-
-it("restores focus to the room when the currently focused seat disappears", () => {
-  const { rerender } = render(<StudyRoom snapshot={snapshot(3)} suggestions={[]} />);
-  screen.getAllByRole("button", { name: /のチワワを応援$/ })[2].focus();
-  rerender(<StudyRoom snapshot={snapshot(1)} suggestions={[]} />);
-  expect(screen.getByTestId("study-room-scene")).toHaveFocus();
+  expect(screen.getByRole("link", { name: "席について解く" })).toHaveAttribute("href", "/search");
 });
 
 it("starts a supported quiz directly and resolves library qualification aliases to their existing hub", () => {
@@ -87,21 +70,26 @@ it("starts a supported quiz directly and resolves library qualification aliases 
   expect(screen.getByRole("link", { name: "席について解く" })).toHaveAttribute("href", "/e-learning/exams/qualifications/ni-kyu-boiler-gishi");
 });
 
-it("keeps premium dogs in place and reveals supplied daily answers only on tap", () => {
-  render(<StudyRoom snapshot={snapshot(3)} suggestions={[]} seatDetails={[{ exam: "fe", index: 2, premium: true, todayAnswers: 17 }]} />);
+it("preserves the position and visual label of a premium seat", () => {
+  render(<StudyRoom snapshot={snapshot(3)} suggestions={[]} seatDetails={[{ exam: "fe", index: 2, premium: true }]} />);
   const seats = screen.getAllByTestId("study-room-seat");
   expect(seats[0]).toHaveAttribute("data-seat-key", "fe:0");
-  expect(seats[2].querySelector("button")).toHaveAttribute("data-premium", "true");
+  expect(seats[2].querySelector('[data-premium="true"]')).not.toBeNull();
   expect(screen.getByLabelText("特等席")).toBeInTheDocument();
-  expect(screen.queryByText("今日17問")).not.toBeInTheDocument();
-  fireEvent.click(seats[2].querySelector("button")!);
-  expect(screen.getByText("今日17問")).toBeInTheDocument();
-  expect(screen.getByTestId("study-room-inspected")).toHaveTextContent("基本情報技術者");
-  expect(screen.getByTestId("study-room-inspected").querySelector("img")).toHaveAttribute("width", "112");
-  fireEvent.click(seats[2].querySelector("button")!);
-  expect(screen.queryByText("今日17問")).not.toBeInTheDocument();
-  expect(screen.queryByTestId("study-room-inspected")).not.toBeInTheDocument();
-  expect(screen.queryByText("今日0問")).not.toBeInTheDocument();
+});
+
+it("opens and closes the selected qualification artwork from the seat itself", () => {
+  render(<StudyRoom snapshot={snapshot(60)} suggestions={[]} />);
+  const seat = screen.getByRole("button", { name: "1 基本情報技術者のチワワを見る" });
+  const art = within(seat).getByRole("img", { name: /基本情報技術者のチワワ/ });
+  fireEvent.click(seat);
+  const inspection = screen.getByTestId("study-room-inspected");
+  expect(seat).toHaveAttribute("aria-pressed", "true");
+  expect(inspection).toHaveTextContent("基本情報技術者");
+  expect(inspection.querySelector("img")).toHaveAttribute("src", art.getAttribute("src"));
+  fireEvent.click(seat);
+  expect(seat).toHaveAttribute("aria-pressed", "false");
+  expect(screen.queryByTestId("study-room-inspected")).toBeNull();
 });
 
 it("reuses shared pose images, preserves identity poses, and loads only occupied seats", () => {

@@ -1,17 +1,5 @@
-import { describe, it, expect, beforeEach } from "vitest";
-import {
-  comboLevel,
-  readMotivationSettings,
-  writeMotivationSettings,
-} from "@/lib/motivation/combo";
-
-// combo.ts は連続正解コンボの演出レベル（none/small/big）と、サウンド/モーション低減の
-// ユーザー設定を司る。閾値や既定値が崩れると演出の発火タイミングや初期設定が静かにずれる。
-// 崩れたら落ちる契約として現挙動を回帰固定する（source 無変更）。
-
-beforeEach(() => {
-  window.localStorage.clear();
-});
+import { describe, it, expect } from "vitest";
+import { comboLevel } from "@/lib/motivation/combo";
 
 describe("comboLevel", () => {
   it("3未満は none", () => {
@@ -32,47 +20,5 @@ describe("comboLevel", () => {
 
   it("負値も none に倒れる", () => {
     expect(comboLevel(-1)).toBe("none");
-  });
-});
-
-describe("readMotivationSettings / writeMotivationSettings", () => {
-  it("未設定では既定（無音・motion 低減なし）を返す", () => {
-    expect(readMotivationSettings()).toEqual({
-      soundEnabled: false,
-      reduceMotion: false,
-    });
-  });
-
-  it("書き込んだ設定をそのまま読み戻す", () => {
-    writeMotivationSettings({ soundEnabled: false, reduceMotion: true });
-    expect(readMotivationSettings()).toEqual({
-      soundEnabled: false,
-      reduceMotion: true,
-    });
-  });
-
-  it("部分的に欠けた保存値は欠落フィールドのみ既定で補完する", () => {
-    window.localStorage.setItem(
-      "ipa-quiz:motivation:v1",
-      JSON.stringify({ soundEnabled: false }),
-    );
-    expect(readMotivationSettings()).toEqual({
-      soundEnabled: false,
-      reduceMotion: false,
-    });
-  });
-
-  it("壊れた JSON は既定にフォールバックする", () => {
-    window.localStorage.setItem("ipa-quiz:motivation:v1", "{not json");
-    expect(readMotivationSettings()).toEqual({
-      soundEnabled: false,
-      reduceMotion: false,
-    });
-  });
-
-  it("既定の返却はミューテーション分離されている（共有参照を返さない）", () => {
-    const a = readMotivationSettings();
-    a.soundEnabled = true;
-    expect(readMotivationSettings().soundEnabled).toBe(false);
   });
 });

@@ -56,8 +56,9 @@ describe("Sea2 historical original-only candidate", () => {
       const text = (markup: string) => { const el = document.createElement("div"); el.innerHTML = markup; return el.textContent!.replace(/\s+/g, ""); };
       for (const value of Object.values(q.choices!)) expect(text(html)).toContain(value!.replace(/\s+/g, ""));
       for (const key of ["ア","イ","ウ","エ"] as const) {
-        const explanation = renderToStaticMarkup(<ExplanationCard question={q} selected={key} isCorrect={q.answer===key} starred={false} onToggleStar={()=>{}} onNext={()=>{}} onAskAI={()=>{}}/>);
-        expect(explanation).toContain(`href="${q.sourceAnswerUrl}"`);
+        const explanation = renderToStaticMarkup(<ExplanationCard question={q} selected={key} isCorrect={q.answer===key} onNext={()=>{}}/>);
+        expect(explanation).toContain(`href="${q.sourcePdfUrl}"`);
+        expect(explanation).not.toContain(`href="${q.sourceAnswerUrl}"`);
         expect(text(explanation)).toContain(q.choiceExplanations![key]!.replace(/\s+/g, "")); reasons++;
       }
       const ld = buildQuestionJsonLd({question:q,pageUrlAbs:`https://www.kakomon-ai.jp${questionPagePath(q)}`,title:"Sea2",lastUpdatedISO:"2026-10-16"});

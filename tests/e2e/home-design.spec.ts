@@ -40,7 +40,7 @@ for (const width of [390, 1280]) for (const colorScheme of ["light", "dark"] as 
         await page.goto("/");
         const card = page.getByRole("region", { name: "今日の学習" });
         await expect(card).toHaveAttribute("aria-busy", "false");
-        const primary = state === "guest" ? card.getByRole("button", { name: "学習計画を作成" })
+        const primary = state === "guest" ? card.getByRole("searchbox", { name: "資格名・略称で検索" })
           : card.getByRole("link", { name: "今日の問題を解く" });
         await expect(primary).toBeVisible();
         expect(await primary.evaluate(el => el.getBoundingClientRect().height)).toBeGreaterThanOrEqual(44);

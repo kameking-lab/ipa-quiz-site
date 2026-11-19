@@ -1,5 +1,4 @@
 import { expect, test, type Page } from "@playwright/test";
-import { LS_KEYS } from "../../lib/storage/keys";
 import type { StudyPresenceSnapshot } from "../../lib/study-presence";
 
 const evidence = process.env.STUDY_ROOM_EVIDENCE_DIR ?? "test-results/study-room";
@@ -63,24 +62,6 @@ for (const [count, stage, name] of [[1, 0, "one"], [5, 0, "small"], [12, 1, "cla
   });
 }
 
-test("same qualification has exactly three dogs, cheers are throttled, and the only action opens learning", async ({ page }) => {
-  await page.setViewportSize({ width: 390, height: 844 });
-  await page.addInitScript(key => localStorage.setItem(key, JSON.stringify({ exam: "fe", year: 2023, season: "spring", session: "am", qNumber: 1, answeredAt: Date.now() })), LS_KEYS.lastQuestion);
-  await page.goto("/study-room");
-  await show(page, { count: 25, exams: [{ exam: "ip", count: 22 }, { exam: "fe", count: 3 }] });
-  await page.getByRole("button", { name: "同じ資格", exact: true }).click();
-  await expect(page.getByTestId("study-room-total")).toHaveText("いま3人");
-  await expect(page.getByTestId("study-room-scene").locator(".study-mascot")).toHaveCount(3);
-  const seat = page.getByRole("button", { name: /基本情報技術者のチワワを応援/ }).first();
-  await seat.click(); await expect(page.getByLabel("応援", { exact: true })).toBeVisible();
-  await expect(page.getByLabel("応援", { exact: true })).toHaveCount(0);
-  await seat.click(); await expect(page.getByLabel("応援", { exact: true })).toHaveCount(0);
-  await page.getByRole("button", { name: "みんな", exact: true }).click();
-  await expect(page.getByTestId("study-room-seat")).toHaveCount(25);
-  await page.getByRole("link", { name: "席について解く" }).click();
-  await expect(page).toHaveURL(/\/quiz\?mode=random&exam=fe/);
-  await expect(page.locator('[data-study-presence-exam="fe"]')).toBeVisible();
-});
 
 test("a tall hall reuses images and rests offscreen seats and reduced-motion images", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });

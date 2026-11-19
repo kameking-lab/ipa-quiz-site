@@ -60,7 +60,7 @@ describe("member controls for an existing Stripe subscription", () => {
     expect((await f.state()).entitled).toBe(true);
     f.clock(end);
     expect((await f.state()).entitled).toBe(false);
-    await f.service.runExamEndCheck("alice", f.result.orderId, f.provider);
+    await f.service.runExamEndCheck("alice", f.result.orderId, f.provider, async () => null);
     expect(f.writes().filter(([, request]) => request?.method === "DELETE").map(([url]) => new URL(String(url)).search))
       .toEqual(["?invoice_now=false&prorate=false"]);
     expect((await f.state()).subscription?.status).toBe("canceled");

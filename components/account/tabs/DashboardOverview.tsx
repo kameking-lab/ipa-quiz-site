@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import Link from "next/link";
 import { BookOpen, Clock, Flame, TrendingUp, ArrowRight } from "lucide-react";
 import { LS_KEYS } from "@/lib/storage/keys";
 import { readStreak } from "@/lib/streak/storage";
@@ -86,9 +85,6 @@ export function DashboardOverview() {
 
   return (
     <div className="space-y-6">
-      <Link href="/account/dashboard#study-plan" className="flex min-h-12 items-center justify-between rounded-xl border border-border bg-card px-4 font-semibold">
-        今日の学習計画を進める <ArrowRight className="h-4 w-4" aria-hidden="true" />
-      </Link>
       <section className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         <KpiCard
           icon={<BookOpen className="h-4 w-4" />}
@@ -118,6 +114,8 @@ export function DashboardOverview() {
         />
       </section>
 
+      <details className="rounded-xl border border-border px-4">
+        <summary className="min-h-11 cursor-pointer py-3 text-sm font-medium">試験日程</summary>
       <a
         href={tsuginoScheduleUrl(data.examTopProb?.exam)}
         target="_blank"
@@ -127,6 +125,7 @@ export function DashboardOverview() {
         <span>試験日・申込締切は「次の資格」で確認</span>
         <ArrowRight className="h-4 w-4" aria-hidden="true" />
       </a>
+      </details>
 
       <section>
         <h2 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
