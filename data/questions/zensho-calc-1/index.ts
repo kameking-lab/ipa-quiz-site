@@ -6,6 +6,7 @@ import paper4 from "./2024-first.json";
 import paper5 from "./2023-second.json";
 import paper6 from "./2023-first.json";
 import paper7 from "./2022-second.json";
+import paper8 from "./2022-first.json";
 
 export const ZENSHO_CALC_1_QUESTIONS = [
   ...paper1,
@@ -15,4 +16,5 @@ export const ZENSHO_CALC_1_QUESTIONS = [
   ...paper5,
   ...paper6,
   ...paper7,
+  ...paper8,
 ] as Question[];
