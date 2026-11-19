@@ -85,4 +85,14 @@ describe("official occupational health PDFs preserved in the archive", () => {
     expect(questions).toHaveLength(44);
     expect(questions?.every((question) => question.choiceExplanation?.choices.length === 5)).toBe(true);
   });
+
+  it("links the 2022 special chemicals paper to its official PDF snapshot", () => {
+    const entry = EXAM_CATALOG.find((candidate) => candidate.id === "emkohyo-EM20221807")!;
+    expect(examSourcePdfUrl(entry))
+      .toBe(`https://web.archive.org/web/20250125185546id_/${entry.pdfUrl}`);
+    const questions = loadExamPaper(entry.id)!;
+    expect(questions).toHaveLength(20);
+    expect(questions.every((question) => question.choiceExplanation?.choices.length === 5)).toBe(true);
+    expect(questions[12]?.presentation?.figures).toHaveLength(1);
+  });
 });

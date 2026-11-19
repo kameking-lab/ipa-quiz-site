@@ -31,10 +31,10 @@ for (const paper of catalog) {
     paper.sourceMode === 'official-pdf' || paper.sourceMode === 'official-archive-copy',
     `Unexpected source mode: ${paper.id}`,
   );
-  if (paper.sourceMode === 'official-archive-copy' && paper.group === 'lckohyo') {
-    const archivedOriginal = new RegExp('^https://web\\.archive\\.org/web/\\d{14}id_/');
-    check(/^lckohyo-LC20(?:22|23|24)[12]114$/u.test(paper.id)
-      && paper.pdfUrl?.endsWith(`/${paper.id.slice('lckohyo-'.length)}.pdf`)
+  if (paper.sourceMode === 'official-archive-copy' && paper.group !== 'cskohyo') {
+    const archivedOriginal = /^https:\/\/web\.archive\.org\/web\/\d{14}id_\//u;
+    check(/^(?:lckohyo-LC20(?:22|23|24)[12]114|emkohyo-EM20221807)$/u.test(paper.id)
+      && paper.pdfUrl?.endsWith(`/${paper.id.slice(paper.group.length + 1)}.pdf`)
       && archivedOriginal.test(paper.archiveSourceUrl ?? '')
       && paper.archiveSourceUrl.replace(archivedOriginal, '') === paper.pdfUrl,
     `Unexpected archived original PDF: ${paper.id}`);

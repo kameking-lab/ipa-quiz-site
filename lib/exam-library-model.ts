@@ -193,9 +193,8 @@ export function parseExamCatalogEntry(value: unknown): ExamCatalogEntry | null {
   if (sourceMode === "official-archive-copy") {
     const archiveUrl = value.archiveSourceUrl;
     if (typeof archiveUrl !== "string") return null;
-    const archivedOfficialPdf = group === "lckohyo"
-      && /^lckohyo-LC20(?:22|23|24)[12]114$/u.test(id)
-      && pdfUrl.endsWith(`/${id.slice("lckohyo-".length)}.pdf`)
+    const archivedOfficialPdf = /^(?:lckohyo-LC20(?:22|23|24)[12]114|emkohyo-EM20221807)$/u.test(id)
+      && pdfUrl.endsWith(`/${id.slice(group.length + 1)}.pdf`)
       && archiveUrl.replace(/^https:\/\/web\.archive\.org\/web\/\d{14}id_\//u, "") === pdfUrl
       && archiveUrl !== pdfUrl;
     const reviewedConsultantCopy = /^cskohyo-CS202119\d{2}$/u.test(id)
