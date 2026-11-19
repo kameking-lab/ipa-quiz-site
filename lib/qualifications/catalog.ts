@@ -1784,9 +1784,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.customs.go.jp/tsukanshi/",
     officialReuseTermsUrl: "https://www.customs.go.jp/kiyaku.htm",
     status: "live",
-    reuseSummary: "第59回（2025年）の通関業法・関税法等・通関実務65原問（語群の空欄ごと105解答単位）を公式問題・公式正答どおりに保存。全空欄・全記述・計算過程に条文・通達を示した独自解説。申告書作成式2問は対象外。第60回は問題文のみ転記し正答公表待ち。",
+    reuseSummary: "第60回の通関業法17問・関税法等28問・通関実務16問、第59回の65原問、第58回の関税法等30問を収録。第60回の申告書作成式は公式正答と手動で照合します。",
     attributionTemplate: "出典：税関 第○回通関士試験（○年）科目 第○問・同正答及び配点。解説は過去問AIの独自作成で税関とは関係ありません。",
-    remainingWork: ["第60回の公式正答（2026-11-10以降）を確認して解答・解説を追加"],
+    remainingWork: ["第59回の申告書作成式2問"],
 },
   {
     slug: "career-consultant", examCode: "career-consultant", shortName: "キャリアコンサルタント（学科）", fullName: "国家資格キャリアコンサルタント試験 学科試験",

@@ -8,10 +8,11 @@ import { findQuestionByRoute, questionPagePath } from "@/lib/seo/question-url";
 import type { ChoiceKey } from "@/lib/questions/types";
 
 describe("通関士 第59回: 択一式の「該当なし＝0」", () => {
-  const nonePrompts = TSUKANSHI_QUESTIONS.filter((q) => !q.part && q.choices?.[TSUKANSHI_NONE_KEY] !== undefined);
+  const round59 = TSUKANSHI_QUESTIONS.filter((q) => q.year === 2025);
+  const nonePrompts = round59.filter((q) => !q.part && q.choices?.[TSUKANSHI_NONE_KEY] !== undefined);
   it("publishes all 105 answer units and keeps every unit practice-ready", () => {
-    expect(TSUKANSHI_QUESTIONS).toHaveLength(105);
-    expect(TSUKANSHI_QUESTIONS.filter(isPracticeReadyQuestion)).toHaveLength(105);
+    expect(round59).toHaveLength(105);
+    expect(round59.filter(isPracticeReadyQuestion)).toHaveLength(105);
   });
   it("moves the 0 option of the 30 single/multi-choice prompts to タ and labels it 0", () => {
     expect(nonePrompts).toHaveLength(30);

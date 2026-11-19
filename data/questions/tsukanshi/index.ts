@@ -1,4 +1,5 @@
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+import y2026 from "./2026-annual.json";
 import y2024 from "./2024-annual.json";
 import y2025 from "@/data/qualification-staging/tsukanshi/2025.json";
 import { projectStagedQuestions } from "../batch4/project-staged";
@@ -20,9 +21,8 @@ function moveNoneChoice(question: Question): Question {
   return { ...question, choices: rename(question.choices), choiceExplanations: rename(question.choiceExplanations), answer };
 }
 
-/** 第59回（2025年）通関業法・関税法等・通関実務 65原問・105解答単位。申告書作成式2問は対象外。 */
-
 export const TSUKANSHI_QUESTIONS: Question[] = [
+  ...(y2026 as Question[]),
   ...projectStagedQuestions(y2025).map(moveNoneChoice),
   ...(y2024 as Question[]),
 ];
