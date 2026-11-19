@@ -1325,7 +1325,7 @@ kangoshi: {
         { session: "houki", urlSlug: "houki", expectedQuestions: 12, label: "法規", categories: ["無線通信の法規"] },
         { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 12, label: "無線工学", categories: ["無線工学"] },
     ],
-    seasons: ["february", "june"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["february", "june", "october"], yearRange: { start: 2025, end: 2026 },
 },
 "kai-toku2": {
     code: "kai-toku2", nameFull: "第二級海上特殊無線技士試験", urlSlug: "kai-toku2", level: "specialist",
