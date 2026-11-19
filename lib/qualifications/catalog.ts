@@ -1859,6 +1859,13 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {"slug":"biru-kan","examCode":"biru-kan","shortName":"建築物環境衛生管理技術者","fullName":"建築物環境衛生管理技術者","domain":"construction","administrator":"日本建築衛生管理教育センター","officialQuestionsUrl":"https://www.jahmec.or.jp/kokka/","officialReuseTermsUrl":"https://www.jahmec.or.jp/kokka/","status":"live","reuseSummary":"第54〜56回（2024〜2026年度）540問。公式問題・公式正答・全肢解説・必要図を収録しています。","remainingWork":[]},
   {"slug":"gijutsushi1-kikai","examCode":"gijutsushi1-kikai","shortName":"技術士第一次試験・機械部門","fullName":"技術士第一次試験・機械部門","domain":"construction","administrator":"日本技術士会","officialQuestionsUrl":"https://www.engineer.or.jp/c_categories/index02021.html","officialReuseTermsUrl":"https://www.engineer.or.jp/c_categories/index02021.html","status":"live","reuseSummary":"2024・2025年度の基礎・適性・機械専門160原問を保存。公式全員正解の専門2問は通常採点対象外、158問を演習できます。","remainingWork":[]},
   {
+    slug: "kanken-4", examCode: "kanken-4", shortName: "漢検4級",
+    fullName: "日本漢字能力検定 4級", domain: "personal-services", administrator: "公益財団法人日本漢字能力検定協会",
+    officialQuestionsUrl: "https://www.kanken.or.jp/kanken/grades/sample/",
+    officialReuseTermsUrl: "https://www.kanken.or.jp/kanken/grades/sample/", status: "live",
+    reuseSummary: "公式の検定問題と標準解答を収録。マーク式は全肢解説、記述式は標準解答を見て自己採点できます。", remainingWork: [],
+  },
+  {
     slug: "dekyo-charge-2", examCode: "dekyo-charge-2", shortName: "工事担任者 第二級",
     fullName: "電気通信設備工事担任者 第二級", domain: "electrical", administrator: "一般財団法人日本データ通信協会",
     officialQuestionsUrl: "https://www.dekyo.or.jp/shiken/charge/exam",

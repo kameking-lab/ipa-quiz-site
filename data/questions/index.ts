@@ -196,6 +196,7 @@ import { PUBLIC_KHK_KAGAKU_QUESTIONS } from "./khk-kagaku/public";
 import { KENCHIKUSHI1_QUESTIONS } from "./kenchikushi1";
 import { BATCH1_QUESTIONS } from "./batch1";
 import { GIJUTSUSHI1_TEKISEI_QUESTIONS } from "./gijutsushi1-tekisei";
+import { KANKEN_4_QUESTIONS } from "./kanken-4";
 import { DEKYO_CHARGE_2_QUESTIONS } from "./dekyo-charge-2";
 import { JOBPASS3_QUESTIONS } from "./jobpass3";
 import { REFORM_MGR_QUESTIONS } from "./reform-mgr";
@@ -480,6 +481,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("biru-kan") ? { "biru-kan": BATCH1_QUESTIONS["biru-kan"]!.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("gijutsushi1-kikai") ? { "gijutsushi1-kikai": BATCH1_QUESTIONS["gijutsushi1-kikai"]!.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("gijutsushi1-tekisei") ? { "gijutsushi1-tekisei": GIJUTSUSHI1_TEKISEI_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("kanken-4") ? { "kanken-4": KANKEN_4_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("dekyo-charge-2") ? { "dekyo-charge-2": DEKYO_CHARGE_2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("jobpass3") ? { jobpass3: JOBPASS3_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("hoshasen-1") ? { "hoshasen-1": BATCH1_QUESTIONS["hoshasen-1"]!.filter(isPracticeReadyQuestion) } : {}),

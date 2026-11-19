@@ -109,6 +109,14 @@ function am2(categories: string[]): SessionConfig {
 // ------- Exam configs -------
 
 export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
+  "kanken-4": {
+    code: "kanken-4", nameFull: "日本漢字能力検定 4級", urlSlug: "kanken-4", level: "basic",
+    sessions: [{
+      session: "gakka", urlSlug: "gakka", expectedQuestions: 120, label: "4級",
+      categories: ["読み", "同音・同訓異字", "漢字識別", "熟語の構成", "部首", "対義語・類義語", "漢字と送りがな", "四字熟語", "誤字訂正", "書き取り"],
+    }],
+    seasons: ["february"], yearRange: { start: 2024, end: 2024 },
+  },
   "dekyo-charge-2": {
     code: "dekyo-charge-2",
     nameFull: "工事担任者 第二級",
