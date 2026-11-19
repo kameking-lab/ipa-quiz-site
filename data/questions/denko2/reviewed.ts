@@ -1,4 +1,5 @@
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+import p231029am from "./reviewed/20231029-q01.json";
 import p2401 from "./reviewed/20240526-q01-05.json";
 import p2402 from "./reviewed/20240526-q06-10.json";
 import p2403 from "./reviewed/20240526-q11-15.json";
@@ -49,7 +50,9 @@ type Reviewed = {
   explanation: string;
   choiceExplanations: Record<OfficialChoice, string>;
   imageUrls?: string[];
+  imageAltTexts?: string[];
   choiceImageUrls?: Partial<Record<OfficialChoice, string>>;
+  sharedPassages?: NonNullable<Question["originalContent"]>["sharedPassages"];
   officialReferenceUrls?: string[];
   lawReferenceDate?: string;
 };
@@ -58,7 +61,17 @@ const choiceMap: Record<OfficialChoice, ChoiceKey> = {
   イ: "ア", ロ: "イ", ハ: "ウ", ニ: "エ",
 };
 
-const papers = [
+const papers: {
+  date: string;
+  year: number;
+  season: "first" | "second";
+  sitting?: "am" | "pm";
+  batches: unknown[][];
+}[] = [
+  {
+    date: "20231029", year: 2023, season: "second", sitting: "am",
+    batches: [p231029am],
+  },
   {
     date: "20240526", year: 2024, season: "first" as const,
     batches: [p2401, p2402, p2403, p2404, p2405, p2406, p2407, p2408, p2409, p2410],
@@ -92,9 +105,9 @@ function categoryFor(number: number): string {
 
 export const DENKO2_REVIEWED_QUESTIONS: Question[] = papers.flatMap((paper) =>
   paper.batches.flatMap((batch) => (batch as Reviewed[]).map((item): Question => ({
-    id: `denko2-${paper.year}-${paper.season}-gakka-q${item.number}`,
+    id: `denko2-${paper.year}-${paper.season}-${paper.sitting === "pm" ? "pm" : "gakka"}-q${item.number}`,
     exam: "denko2",
-    session: "gakka",
+    session: paper.sitting === "pm" ? "pm" : "gakka",
     year: paper.year,
     season: paper.season,
     qNumber: item.number,
@@ -103,20 +116,23 @@ export const DENKO2_REVIEWED_QUESTIONS: Question[] = papers.flatMap((paper) =>
     topicTags: [categoryFor(item.number)],
     difficulty: 2,
     question: item.question,
+    originalContent: item.sharedPassages ? { body: item.question, sharedPassages: item.sharedPassages } : undefined,
     choices: mapped(item.choices),
     answer: choiceMap[item.officialAnswer],
     explanation: item.explanation,
     choiceExplanations: mapped(item.choiceExplanations),
     imageUrls: item.imageUrls,
+    imageAltTexts: item.imageAltTexts,
     choiceImageUrls: item.choiceImageUrls ? mapped(item.choiceImageUrls) : undefined,
     hasImage: Boolean(item.imageUrls?.length || Object.keys(item.choiceImageUrls ?? {}).length),
-    sourcePdfUrl: `https://www.shiken.or.jp/construction/upload/${paper.date}_co_second_q01.pdf`,
-    sourceAnswerUrl: `https://www.shiken.or.jp/construction/upload/${paper.date}_co_second_a01.pdf`,
-    sourceAttribution: `出典：令和${paper.year - 2018}年度${paper.season === "first" ? "上期" : "下期"}第二種電気工事士学科試験 問${item.number}（電気技術者試験センター）。原本のイ・ロ・ハ・ニをア・イ・ウ・エに置換。`,
+    sourcePdfUrl: `https://www.shiken.or.jp/construction/upload/${paper.date}_co_second_q${paper.sitting === "pm" ? "02" : "01"}.pdf`,
+    sourceAnswerUrl: `https://www.shiken.or.jp/construction/upload/${paper.date}_co_second_a${paper.sitting === "pm" ? "02" : "01"}.pdf`,
+    sourceExamSession: paper.sitting === "am" ? "午前" : paper.sitting === "pm" ? "午後" : undefined,
+    sourceAttribution: `出典：令和${paper.year - 2018}年度${paper.season === "first" ? "上期" : "下期"}第二種電気工事士${paper.year <= 2022 ? "筆記" : "学科"}試験${paper.sitting === "am" ? "【午前】" : paper.sitting === "pm" ? "【午後】" : ""} 問${item.number}（電気技術者試験センター）。原本のイ・ロ・ハ・ニをア・イ・ウ・エに置換。`,
     officialReferenceUrls: item.officialReferenceUrls,
     lawReferenceDate: item.lawReferenceDate,
     license: "ECEE-educational-reuse",
     needsReview: false,
-    lastUpdated: "2026-09-23",
+    lastUpdated: paper.sitting ? "2026-11-19" : "2026-09-23",
   }))),
 );
