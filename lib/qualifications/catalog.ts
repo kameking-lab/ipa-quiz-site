@@ -1844,6 +1844,14 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
   },
   {
+    slug: "kanken-10", examCode: "kanken-10", shortName: "漢検10級", fullName: "日本漢字能力検定 10級",
+    domain: "personal-services", administrator: "公益財団法人日本漢字能力検定協会",
+    officialQuestionsUrl: "https://www.kanken.or.jp/kanken/grades/sample/",
+    officialReuseTermsUrl: "https://www.kanken.or.jp/kanken/grades/sample/", status: "live",
+    reuseSummary: "公式の問題・標準解答を収録。読みの選択問題は全肢解説付き、記入式は標準解答と照合できます。",
+    remainingWork: [],
+  },
+  {
     slug: "zensho-boki-2", examCode: "zensho-boki-2", shortName: "全商簿記2級", fullName: "全商簿記実務検定試験 2級",
     domain: "accounting", administrator: "全国商業高等学校協会",
     officialQuestionsUrl: "https://zensho.or.jp/examination/pastexams/bookkeeping/",

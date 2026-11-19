@@ -370,6 +370,7 @@ export const EXAM_LABELS: Record<string, string> = {
 
     "kikai-hozen": "機械保全技能士 2級",
     "kounin-geography": "高卒認定 地理",
+    "kanken-10": "漢検10級",
     "zensho-boki-2": "全商簿記2級",
     "tsukanshi": "通関士"
 };
