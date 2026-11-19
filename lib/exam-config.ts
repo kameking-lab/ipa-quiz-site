@@ -1471,6 +1471,12 @@ shuwa: {
         categories: ["知的財産権", "モデリング", "マテリアルとレンダリング", "アニメーション", "ライティングとカメラ", "合成", "写真撮影", "映像制作", "映像編集", "リアルタイムCG"] }],
     seasons: ["early", "late"], yearRange: { start: 2025, end: 2026 },
 },
+"cg-engineer-basic": {
+    code: "cg-engineer-basic", nameFull: "CGエンジニア検定 ベーシック", urlSlug: "cg-engineer-basic", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "ベーシック",
+        categories: ["知的財産権", "形状表現", "モデリング", "陰影と影", "反射と照明", "アニメーション", "座標変換", "CGの機器", "ディジタル画像", "画像処理"] }],
+    seasons: ["early", "late"], yearRange: { start: 2025, end: 2026 },
+},
 "g-kentei": {
     code: "g-kentei", nameFull: "G検定（ジェネラリスト検定）", urlSlug: "g-kentei", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 0, label: "公式公開問題",
