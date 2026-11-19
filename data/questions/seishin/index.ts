@@ -1,6 +1,7 @@
 import type { Question } from "@/lib/questions/types";
 import { SHAKAI_2025_SOURCE } from "../shakai";
 import { type SsscSource, toSsscQuestion } from "../sssc-welfare";
+import source2023 from "./2023-annual.json";
 import source2024 from "./2024-annual.json";
 import source from "./2025-annual.json";
 
@@ -28,4 +29,8 @@ const SEISHIN_2025_QUESTIONS: Question[] = [
 const SEISHIN_2024_QUESTIONS: Question[] = SEISHIN_2024_SOURCE.questions.map((item) =>
   toSsscQuestion("seishin", SEISHIN_2024_SOURCE, SEISHIN_2024_SOURCE.questionPdfs, item));
 
-export const SEISHIN_QUESTIONS: Question[] = [...SEISHIN_2025_QUESTIONS, ...SEISHIN_2024_QUESTIONS];
+const SEISHIN_2023_SOURCE = source2023 as SsscSource;
+const SEISHIN_2023_QUESTIONS = SEISHIN_2023_SOURCE.questions.map((item) =>
+  toSsscQuestion("seishin", SEISHIN_2023_SOURCE, SEISHIN_2023_SOURCE.questionPdfs, item));
+
+export const SEISHIN_QUESTIONS: Question[] = [...SEISHIN_2025_QUESTIONS, ...SEISHIN_2024_QUESTIONS, ...SEISHIN_2023_QUESTIONS];
