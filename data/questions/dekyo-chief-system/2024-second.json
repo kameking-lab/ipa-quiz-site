@@ -1,0 +1,826 @@
+[
+  {
+    "id": "dekyo-chief-system-2024-second-gakka-q1",
+    "exam": "dekyo-chief-system",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "電気回路",
+    "topicTags": [
+      "電気通信システム",
+      "電気回路"
+    ],
+    "difficulty": 3,
+    "question": "材質が異なる二つの導線のそれぞれの両端を接続して一つの閉回路を作り、二つの接続点を異なる温度に保つと、その回路内に起電力が生じて電流が流れる。この現象は、［　］効果といわれる。",
+    "choices": {
+      "ア": "ゼーベック",
+      "イ": "ペルチェ",
+      "ウ": "トムソン",
+      "エ": "ファラデー",
+      "オ": "ピエゾ"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "異種導体の接点間に温度差を与えると熱起電力が生じる現象がゼーベック効果で、熱電対に使われます。",
+    "choiceExplanations": {
+      "ア": "異種導体の接点間に温度差を与えると熱起電力が生じる現象がゼーベック効果で、熱電対に使われます。",
+      "イ": "ペルチェ効果は、異種導体の接合部に電流を流すと吸熱または発熱する現象です。",
+      "ウ": "トムソン効果では、温度勾配のある同一導体に電流を流すと熱の吸収・発生が起こります。",
+      "エ": "ファラデーの電磁誘導では、回路を貫く磁束の変化によって起電力が生じます。",
+      "オ": "ピエゾ効果は、圧電体に加えた機械的な力で電荷が現れる現象です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files2485679964230fbc7.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files24856799656758cbe.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和6年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2024-second-gakka-q2",
+    "exam": "dekyo-chief-system",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "電気回路",
+    "topicTags": [
+      "電気通信システム",
+      "電気回路"
+    ],
+    "difficulty": 3,
+    "question": "図に示す回路において、抵抗の値がそれぞれ12［Ω］であるとき、端子A－B間の合成抵抗は、［　］［Ω］である。",
+    "choices": {
+      "ア": "9",
+      "イ": "12",
+      "ウ": "16",
+      "エ": "18",
+      "オ": "20"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "対称な上下の節点は同電位なので、それぞれを合わせると端子側は各６ Ωです。中央は６ Ωと12 Ωの並列で４ Ωとなり、全体で16 Ωです。",
+    "choiceExplanations": {
+      "ア": "９ Ωは、端子側それぞれの等価抵抗６ Ωと、中央部分の４ Ωを足した値ではありません。",
+      "イ": "左右の端子側だけを足すと12 Ωですが、左右の等電位点の間にも合成抵抗４ Ωがあります。",
+      "ウ": "対称な上下の節点は同電位なので、それぞれを合わせると端子側は各６ Ωです。中央は６ Ωと12 Ωの並列で４ Ωとなり、全体で16 Ωです。",
+      "エ": "中央の橋渡しの経路も電流が流れるので、中央を６ Ωとする計算は抵抗を大きく見積もっています。",
+      "オ": "等電位点を合わせて計算すると、中央部分の合成抵抗は８ Ωではなく４ Ωです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files2485679964230fbc7.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files24856799656758cbe.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和6年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/dekyo-chief-system/2024-second-q2.png"
+    ],
+    "imageAltTexts": [
+      "端子AとBを結ぶ抵抗回路。すべての抵抗は12 Ω。"
+    ]
+  },
+  {
+    "id": "dekyo-chief-system-2024-second-gakka-q3",
+    "exam": "dekyo-chief-system",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "論理回路",
+    "topicTags": [
+      "電気通信システム",
+      "論理回路"
+    ],
+    "difficulty": 3,
+    "question": "図に示す論理回路を入出力とも正論理で使用するとき、この回路は、［　］回路として動作する。",
+    "choices": {
+      "ア": "NOR",
+      "イ": "OR",
+      "ウ": "NAND",
+      "エ": "AND",
+      "オ": "XOR"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "どちらかの入力が高いとダイオードを介してトランジスタが導通し、出力は低くなります。両方が低い場合だけ出力が高いのでNORです。",
+    "choiceExplanations": {
+      "ア": "どちらかの入力が高いとダイオードを介してトランジスタが導通し、出力は低くなります。両方が低い場合だけ出力が高いのでNORです。",
+      "イ": "ダイオードで入力の論理和を取った後、トランジスタのコレクタ出力で反転します。",
+      "ウ": "NANDは両入力が高いときだけ出力が低くなりますが、この回路は片方が高い場合も出力が低くなります。",
+      "エ": "ANDなら二つの入力が高いときに出力が高くなりますが、実際にはトランジスタが導通して低くなります。",
+      "オ": "XORは片方だけが高い場合に出力が高くなります。この回路では片方だけが高くても出力は低くなります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files2485679964230fbc7.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files24856799656758cbe.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和6年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/dekyo-chief-system/2024-second-q3.png"
+    ],
+    "imageAltTexts": [
+      "２入力のダイオードとトランジスタを組み合わせた論理回路。"
+    ]
+  },
+  {
+    "id": "dekyo-chief-system-2024-second-gakka-q4",
+    "exam": "dekyo-chief-system",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "論理回路",
+    "topicTags": [
+      "電気通信システム",
+      "論理回路"
+    ],
+    "difficulty": 3,
+    "question": "図に示す論理回路において、A及びBを入力とすると、出力Cの論理式は、C＝［　］で示される。",
+    "choices": {
+      "ア": "¬A・¬B",
+      "イ": "A・¬B",
+      "ウ": "¬A・B",
+      "エ": "A・B＋¬A・¬B",
+      "オ": "A・¬B＋¬A・B"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "二つの中間NOR出力は¬A・BとA・¬Bです。その論理和を最後のNORで反転すると、入力が同じときだけ１になります。",
+    "choiceExplanations": {
+      "ア": "この項は両入力が０のときだけ１ですが、回路の出力は両方が１のときも１です。",
+      "イ": "Aが１でBが０のときには一方の中間出力が１になり、最後のNORで出力が０になります。",
+      "ウ": "Aが０でBが１のときにはもう一方の中間出力が１に立つため、最終出力は０です。",
+      "エ": "二つの中間NOR出力は¬A・BとA・¬Bです。その論理和を最後のNORで反転すると、入力が同じときだけ１になります。",
+      "オ": "この式は中間出力二つの論理和、つまりXORです。最後のゲートはNORなのでさらに反転します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files2485679964230fbc7.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files24856799656758cbe.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和6年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/dekyo-chief-system/2024-second-q4.png"
+    ],
+    "imageAltTexts": [
+      "入力AとBから反転器とNORゲートを経て出力Cへ至る論理回路。"
+    ]
+  },
+  {
+    "id": "dekyo-chief-system-2024-second-gakka-q5",
+    "exam": "dekyo-chief-system",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "デジタル伝送",
+    "topicTags": [
+      "電気通信システム",
+      "デジタル伝送"
+    ],
+    "difficulty": 3,
+    "question": "アナログ音声信号（S）をデジタル信号に変換する過程で量子化雑音（NQ）が生ずる。通話品質を良好に保つためには、Sの大小にかかわらずS／NQを一定にすることが望ましいことから、送信側では、［　］といわれる処理が行われる。",
+    "choices": {
+      "ア": "不等間隔標本化",
+      "イ": "等間隔標本化",
+      "ウ": "直線量子化",
+      "エ": "固定長符号化",
+      "オ": "非直線量子化"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "非直線量子化では小振幅のとき細かく、大振幅のとき粗く区切ります。小さい信号でも相対的な量子化雑音を抑えられます。",
+    "choiceExplanations": {
+      "ア": "標本化の間隔は信号を取り出す時刻を決めるもので、振幅に応じた量子化幅を設定する処理ではありません。",
+      "イ": "等間隔標本化は一定期間ごとに信号の値を測る操作で、量子化の相対誤差は調整しません。",
+      "ウ": "直線量子化では量子化幅が等しいため、小さい信号ほど量子化誤差の影響が相対的に大きくなります。",
+      "エ": "固定長符号化は量子化値を一定ビット数の符号で表す処理で、振幅ごとの量子化の刻みは変えません。",
+      "オ": "非直線量子化では小振幅のとき細かく、大振幅のとき粗く区切ります。小さい信号でも相対的な量子化雑音を抑えられます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files2485679964230fbc7.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files24856799656758cbe.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和6年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2024-second-gakka-q6",
+    "exam": "dekyo-chief-system",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "電気計測",
+    "topicTags": [
+      "電気通信システム",
+      "電気計測"
+    ],
+    "difficulty": 3,
+    "question": "マイクロ波出力などの高周波電力を測定する際に、バレッタや［　］を用いて、これらの素子が被測定電力を吸収することにより生ずる抵抗値の変化分を電力値に換算する方法がある。",
+    "choices": {
+      "ア": "熱電対",
+      "イ": "サイリスタ",
+      "ウ": "ダイオード",
+      "エ": "トランジスタ",
+      "オ": "サーミスタ"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "サーミスタは、電力の吸収で自らの温度が変わると抵抗値が変化します。その変化から電力を求めます。",
+    "choiceExplanations": {
+      "ア": "熱電対を使う場合は温度差で生じる熱起電力を読み取ります。本問が示す量は抵抗変化です。",
+      "イ": "サイリスタはゲート信号で導通を制御する素子で、吸収した高周波電力を抵抗変化として測る素子ではありません。",
+      "ウ": "ダイオード式検波では整流された電圧などを用います。設問の熱による抵抗変化を利用する方式とは異なります。",
+      "エ": "トランジスタは増幅やスイッチングに用います。バレッタと並ぶ温度依存抵抗の素子はサーミスタです。",
+      "オ": "サーミスタは、電力の吸収で自らの温度が変わると抵抗値が変化します。その変化から電力を求めます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files2485679964230fbc7.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files24856799656758cbe.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和6年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2024-second-gakka-q7",
+    "exam": "dekyo-chief-system",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "伝送理論",
+    "topicTags": [
+      "電気通信システム",
+      "伝送理論"
+    ],
+    "difficulty": 3,
+    "question": "図に示すように、特性インピーダンスがそれぞれ600［Ω］と400［Ω］の伝送ケーブルを接続して信号を伝送すると、その接続点における電流反射係数は、［　］となる。",
+    "choices": {
+      "ア": "−0.4",
+      "イ": "−0.2",
+      "ウ": "0.2",
+      "エ": "0.4",
+      "オ": "0.6"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "電流反射係数は（600−400）／（600＋400）なので、0.2です。",
+    "choiceExplanations": {
+      "ア": "特性インピーダンスが変化する量は200 Ωで、600 Ωと400 Ωの和1,000 Ωで割った係数の大きさは0.2です。",
+      "イ": "−0.2はこの接続での電圧反射係数で、反射電流の係数は符号が逆です。",
+      "ウ": "電流反射係数は（600−400）／（600＋400）なので、0.2です。",
+      "エ": "差の200 Ωを片側の抵抗で割る形ではなく、両側の特性インピーダンスの合計1,000 Ωを使います。",
+      "オ": "0.6は600を全体の1,000で割った比であり、反射係数の分子は特性インピーダンスの差です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files2485679964230fbc7.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files24856799656758cbe.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和6年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized",
+    "imageUrls": [
+      "/images/questions/dekyo-chief-system/2024-second-q7.png"
+    ],
+    "imageAltTexts": [
+      "特性インピーダンス600 Ωから400 Ωのケーブルへの接続と信号の方向。"
+    ]
+  },
+  {
+    "id": "dekyo-chief-system-2024-second-gakka-q8",
+    "exam": "dekyo-chief-system",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "伝送理論",
+    "topicTags": [
+      "電気通信システム",
+      "伝送理論"
+    ],
+    "difficulty": 3,
+    "question": "アナログ伝送方式の多重化された伝送路で発生する雑音のうち、増幅器内部で発生する平均雑音電圧Eは、E＝√(4kTRB)で表される。ここで、kはボルツマン定数、Tは絶対温度、Rは増幅器を一つの導体とみなしたときの実効抵抗を表し、Bは対象とする［　］を表している。",
+    "choices": {
+      "ア": "変調度",
+      "イ": "バイアス電圧",
+      "ウ": "磁束密度",
+      "エ": "雑音指数",
+      "オ": "周波数帯域幅"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "抵抗の熱雑音を積算する周波数帯域幅がBです。帯域を広げると、雑音電圧はその平方根に比例して増えます。",
+    "choiceExplanations": {
+      "ア": "変調度は搬送波をどの程度変調したかを表し、ここで熱雑音を積算する範囲ではありません。",
+      "イ": "バイアス電圧は増幅素子の動作点を設定する電圧です。式のBの次元は周波数です。",
+      "ウ": "磁束密度もBで書くことがありますが、この式は抵抗の熱雑音を扱い、磁場は含みません。",
+      "エ": "雑音指数は増幅器などによる信号対雑音比の悪化を表す量です。式のBは測定範囲を表します。",
+      "オ": "抵抗の熱雑音を積算する周波数帯域幅がBです。帯域を広げると、雑音電圧はその平方根に比例して増えます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files2485679964230fbc7.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files24856799656758cbe.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和6年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2024-second-gakka-q9",
+    "exam": "dekyo-chief-system",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "光通信",
+    "topicTags": [
+      "電気通信システム",
+      "光通信"
+    ],
+    "difficulty": 3,
+    "question": "光通信に用いられる半導体レーザ（LD）の出力光を変調する方式としては、LDの駆動電流に信号電流を重畳することにより、LDの励起量を変化させる［　］変調方式がある。",
+    "choices": {
+      "ア": "直接",
+      "イ": "SSB",
+      "ウ": "DSB",
+      "エ": "二重",
+      "オ": "外部"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "レーザの駆動電流を信号で変化させ、その発光強度を直接変えるので直接変調です。",
+    "choiceExplanations": {
+      "ア": "レーザの駆動電流を信号で変化させ、その発光強度を直接変えるので直接変調です。",
+      "イ": "SSBは搬送波周辺にできる側波帯の一方を使う方式で、半導体レーザの駆動電流を変化させる手法の名称ではありません。",
+      "ウ": "DSBは両側波帯を用いる変調方式を指します。設問は側波帯の選択ではなく光出力の制御方法を問うています。",
+      "エ": "励起量を駆動電流で制御する説明に、別の変調を重ねる二重の操作は含まれません。",
+      "オ": "外部変調では発光した光を外部変調器で変化させます。設問はレーザ素子の駆動電流を変えています。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files2485679964230fbc7.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files24856799656758cbe.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和6年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2024-second-gakka-q10",
+    "exam": "dekyo-chief-system",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "交換・ネットワーク",
+    "topicTags": [
+      "電気通信システム",
+      "交換・ネットワーク"
+    ],
+    "difficulty": 3,
+    "question": "パケット交換方式は、情報量に応じ一定長のブロックに分割して組み立てたパケットの単位で情報転送を行う［　］方式である。",
+    "choices": {
+      "ア": "回線交換",
+      "イ": "プロトコル変換",
+      "ウ": "即時交換",
+      "エ": "蓄積交換",
+      "オ": "メディア変換"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "交換装置がパケットを受信して一時的に蓄え、次の区間へ送るため、蓄積交換に当たります。",
+    "choiceExplanations": {
+      "ア": "回線交換では、通信の前に端末間の回線を確立して通話等に利用します。パケット単位の転送とは方式が異なります。",
+      "イ": "プロトコル変換は互いに異なる通信手順の間を変換する処理であり、転送自体の方式ではありません。",
+      "ウ": "設問の方式は中継装置がパケットを一時的に蓄え、次の経路へ転送できる方式です。",
+      "エ": "交換装置がパケットを受信して一時的に蓄え、次の区間へ送るため、蓄積交換に当たります。",
+      "オ": "メディア変換はケーブルと光ファイバなど異なる媒体をつなぐ処理で、パケット交換の分類ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files2485679964230fbc7.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files24856799656758cbe.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和6年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2024-second-gakka-q11",
+    "exam": "dekyo-chief-system",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "交換・ネットワーク",
+    "topicTags": [
+      "電気通信システム",
+      "交換・ネットワーク"
+    ],
+    "difficulty": 3,
+    "question": "出回線数nの回線群において、加わる呼量がaアーラン、呼損率がBのとき、出線能率ηは、η＝［　］で表される。",
+    "choices": {
+      "ア": "aB／n",
+      "イ": "a(1−B)／n",
+      "ウ": "n／[a(1−B)]",
+      "エ": "n／aB",
+      "オ": "n(1−B)／a"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "運ばれた呼量はa(1−B)です。これを出回線数nで割ると１本当たりの出線能率になります。",
+    "choiceExplanations": {
+      "ア": "aBは失われた呼量なので、回線が実際に運んだ呼量には使いません。",
+      "イ": "運ばれた呼量はa(1−B)です。これを出回線数nで割ると１本当たりの出線能率になります。",
+      "ウ": "１本当たりの呼量を求めるため、運ばれた呼量を分子、回線数を分母に置きます。",
+      "エ": "除算の向きが逆で、aBも運ばれた呼量ではなく失われた呼量です。",
+      "オ": "呼損を除く割合1−Bを加わった呼量aに掛け、回線数nで割る必要があります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files2485679964230fbc7.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files24856799656758cbe.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和6年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2024-second-gakka-q12",
+    "exam": "dekyo-chief-system",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "交換・ネットワーク",
+    "topicTags": [
+      "電気通信システム",
+      "交換・ネットワーク"
+    ],
+    "difficulty": 3,
+    "question": "網状網を構成する通信網において、交換ノードの総数が８である場合、各交換ノード間を結ぶリンクの総数は、［　］となる。",
+    "choices": {
+      "ア": "24",
+      "イ": "28",
+      "ウ": "56",
+      "エ": "64",
+      "オ": "128"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "８ノードから重複なく２ノードを選んだ組数は、８×７÷２＝28です。",
+    "choiceExplanations": {
+      "ア": "８台それぞれをほかの全７台につなぐため、リンク端の数は８×７です。２端で１リンクなのですべて数えると28本です。",
+      "イ": "８ノードから重複なく２ノードを選んだ組数は、８×７÷２＝28です。",
+      "ウ": "８×７＝56では、両端から同じリンクを二度数えています。",
+      "エ": "８×８では自ノードへの接続も数え、他ノードへのリンクも二重に数えています。",
+      "オ": "リンクは異なる２ノードの組で数えるので、自己接続や方向別の二重計上は含めません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files2485679964230fbc7.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files24856799656758cbe.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和6年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2024-second-gakka-q13",
+    "exam": "dekyo-chief-system",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "光通信",
+    "topicTags": [
+      "電気通信システム",
+      "光通信"
+    ],
+    "difficulty": 3,
+    "question": "光アクセスネットワークの方式の一つであるGE－PONでは、通信ビルからユーザ宅の方向を下り、その反対方向を上りとすると、多重伝送技術として、［　］が用いられている。",
+    "choices": {
+      "ア": "下り方向通信にTDM方式、上り方向通信にTDMA方式",
+      "イ": "下り方向通信にTDM方式、上り方向通信にFDMA方式",
+      "ウ": "下り方向通信にFDM方式、上り方向通信にFDMA方式",
+      "エ": "下り方向通信にFDM方式、上り方向通信にTDMA方式",
+      "オ": "下り方向通信にFDM方式、上り方向通信にCDMA方式"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "下りは局側から時分割多重で送ります。上りは複数の端末が指定された時間枠に送るTDMAで衝突を防ぎます。",
+    "choiceExplanations": {
+      "ア": "下りは局側から時分割多重で送ります。上りは複数の端末が指定された時間枠に送るTDMAで衝突を防ぎます。",
+      "イ": "下りのTDMは合いますが、上りも周波数ではなく時間枠で端末の送信を分けます。",
+      "ウ": "下り・上りともに周波数分割ではなく、GE－PONでは時分割が使われます。",
+      "エ": "上りのTDMAは合いますが、下りは周波数分割多重ではなく時分割多重です。",
+      "オ": "下りにFDMを使わず、上りも符号の違いで端末を識別するCDMAではなくTDMAです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files2485679964230fbc7.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files24856799656758cbe.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和6年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2024-second-gakka-q14",
+    "exam": "dekyo-chief-system",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "通信方式",
+    "topicTags": [
+      "電気通信システム",
+      "通信方式"
+    ],
+    "difficulty": 3,
+    "question": "国際公衆電気通信番号計画はITU－T勧告E.164で規定されており、国際電話番号は、一般に、国番号、国内宛先コード及び加入者番号から構成される最大［　］桁の番号である。",
+    "choices": {
+      "ア": "11",
+      "イ": "12",
+      "ウ": "13",
+      "エ": "14",
+      "オ": "15"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "E.164は国番号を含む国際公衆電気通信番号を15桁以内と定めています。国際発信時の前置番号はこの桁数に含みません。",
+    "choiceExplanations": {
+      "ア": "11桁は個別の国・番号構成ではあり得ますが、E.164が規定する国際番号全体の上限は15桁です。",
+      "イ": "12桁は一部の番号の長さに該当し得ますが、この国際標準の上限を表しません。",
+      "ウ": "13桁は国番号等を含む番号の許容範囲内であり、最大桁数ではありません。",
+      "エ": "14桁であっても上限には達していません。国番号を含めて15桁までです。",
+      "オ": "E.164は国番号を含む国際公衆電気通信番号を15桁以内と定めています。国際発信時の前置番号はこの桁数に含みません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files2485679964230fbc7.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files24856799656758cbe.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和6年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2024-second-gakka-q15",
+    "exam": "dekyo-chief-system",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "通信方式",
+    "topicTags": [
+      "電気通信システム",
+      "通信方式"
+    ],
+    "difficulty": 3,
+    "question": "携帯事業者間番号ポータビリティを実現するための接続方式として、発信元事業者からのルーティングに際し、移転元事業者から移転先を示す情報の通知を受けて、発信元事業者から移転先事業者に直接ルーティングを行う方式は［　］方式といわれる。",
+    "choices": {
+      "ア": "ステップバイステップ",
+      "イ": "コールバック",
+      "ウ": "転送",
+      "エ": "リダイレクション",
+      "オ": "ダイレクト"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "移転元が移転先を知らせ、発信元がその通知に従い移転先へ接続し直すので、リダイレクション方式です。",
+    "choiceExplanations": {
+      "ア": "接続過程を段階的に進めるという一般的な表現で、移転元が宛先情報を返すこの方式の名称ではありません。",
+      "イ": "コールバックは通信相手に折り返すことを指します。この方式では受け取った宛先情報を使って発信元が経路を設定します。",
+      "ウ": "転送方式では移転元側を経由して接続します。設問では発信元が移転元から情報だけを受け、移転先へ直接接続します。",
+      "エ": "移転元が移転先を知らせ、発信元がその通知に従い移転先へ接続し直すので、リダイレクション方式です。",
+      "オ": "ダイレクト方式は発信元が番号移転情報のデータベースを参照して経路を設定します。設問では移転元事業者から通知を受ける点が異なります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files2485679964230fbc7.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files24856799656758cbe.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和6年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2024-second-gakka-q16",
+    "exam": "dekyo-chief-system",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "交換・ネットワーク",
+    "topicTags": [
+      "電気通信システム",
+      "交換・ネットワーク"
+    ],
+    "difficulty": 3,
+    "question": "インターネットなどで使用されているTCP／IPについて述べた次の文章のうち、正しいものは、［　］である。",
+    "choices": {
+      "ア": "IPは、IPデータグラムを送信元から送信先まで転送する手順を規定している。",
+      "イ": "IPデータグラムは、コネクション型のサービス形態を採っている。",
+      "ウ": "IPデータグラムの転送では、シーケンス制御、応答確認、ウインドウ制御、フロー制御などが行われる。",
+      "エ": "TCPは、TCP／IPプロトコル階層モデルにおけるインターネット層のプロトコルである。",
+      "オ": "TCPによるデータ転送では、コネクションレス型の通信プロトコルが用いられる。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "IPは宛先アドレスを基に、送信元から送信先へのデータグラム転送を行う仕組みを規定しています。",
+    "choiceExplanations": {
+      "ア": "IPは宛先アドレスを基に、送信元から送信先へのデータグラム転送を行う仕組みを規定しています。",
+      "イ": "IPはパケットごとに宛先を指定するコネクションレス型です。事前に通信路を確立する必要はありません。",
+      "ウ": "応答確認やウインドウによるフロー制御はTCPの機能です。IP単独では配送順序や到達を保証しません。",
+      "エ": "TCPはトランスポート層のプロトコルで、インターネット層にはIPがあります。",
+      "オ": "TCPでは送信前に接続を確立し、その接続上で順序や信頼性を管理するため、コネクション型です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files2485679964230fbc7.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files24856799656758cbe.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和6年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2024-second-gakka-q17",
+    "exam": "dekyo-chief-system",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "デジタル伝送",
+    "topicTags": [
+      "電気通信システム",
+      "デジタル伝送"
+    ],
+    "difficulty": 3,
+    "question": "無線LANシステムなどで用いられるOFDM方式は、マルチキャリア伝送方式の一種であり、高速な信号系列を［　］複数のサブキャリアに分割して並列伝送している。",
+    "choices": {
+      "ア": "キャリア間にガードバンドが必要な",
+      "イ": "キャリアごとにフィルタを設けた",
+      "ウ": "時間により切り替わる特定の周波数から構成される",
+      "エ": "直接拡散方式を用いて変調する",
+      "オ": "直交する"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "OFDMのOはOrthogonalを表します。互いに直交する複数のサブキャリアを使うので、周波数スペクトルが重なっても分離できます。",
+    "choiceExplanations": {
+      "ア": "サブキャリア間の直交性を利用するので、個々の間に互いのスペクトルを分離するためのガードバンドを取りません。",
+      "イ": "OFDMでは直交性を使って受信時にサブキャリアを分離します。キャリアごとに個別のフィルタを設けることが定義ではありません。",
+      "ウ": "時間ごとに搬送周波数を切り替えることは周波数ホッピングの特徴です。OFDMは複数のサブキャリアを並列に使います。",
+      "エ": "直接拡散は拡散符号を掛けて帯域を広げる手法で、OFDMのサブキャリアを並列化する原理ではありません。",
+      "オ": "OFDMのOはOrthogonalを表します。互いに直交する複数のサブキャリアを使うので、周波数スペクトルが重なっても分離できます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files2485679964230fbc7.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files24856799656758cbe.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和6年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2024-second-gakka-q18",
+    "exam": "dekyo-chief-system",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "光通信",
+    "topicTags": [
+      "電気通信システム",
+      "光通信"
+    ],
+    "difficulty": 3,
+    "question": "光ファイバ増幅器で生ずるASE雑音は、光増幅に伴って発生する［　］によるものであり、光ファイバ増幅器の雑音特性を決定する要因となる。",
+    "choices": {
+      "ア": "誘導ラマン散乱",
+      "イ": "誘導放出光",
+      "ウ": "ブラッグ反射",
+      "エ": "自然放出光",
+      "オ": "誘導ブリルアン散乱"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "励起状態から自然に放出された光が増幅されて生じる雑音がASEです。",
+    "choiceExplanations": {
+      "ア": "誘導ラマン散乱は光と媒質の振動による周波数変換を伴う現象です。ASEは自然放出された光が増幅されるために生じます。",
+      "イ": "信号光による誘導放出が増幅を担いますが、ASEの種となる光は信号に誘導されずに生じます。",
+      "ウ": "ブラッグ反射は媒質の周期的構造により特定波長が反射される現象で、ASEの発生源ではありません。",
+      "エ": "励起状態から自然に放出された光が増幅されて生じる雑音がASEです。",
+      "オ": "誘導ブリルアン散乱は光と音響波の相互作用による散乱で、ASEとは発生機構が異なります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files2485679964230fbc7.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files24856799656758cbe.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和6年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2024-second-gakka-q19",
+    "exam": "dekyo-chief-system",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "電源",
+    "topicTags": [
+      "電気通信システム",
+      "電源"
+    ],
+    "difficulty": 3,
+    "question": "スイッチングレギュレータは、トランジスタをD級増幅で動作させるためトランジスタでの内部損失を低減でき、シリーズレギュレータと比較して変換効率が高いが、応答速度が遅い、［　］といった特徴を有しており、通信機器用の安定化電源として用いる場合はこれらの特徴を考慮する必要がある。",
+    "choices": {
+      "ア": "出力電圧が可変にならない",
+      "イ": "入出力間の絶縁をすることが不可能である",
+      "ウ": "高周波雑音が発生しやすい",
+      "エ": "小型化が図れないため電源設備が大きくなる",
+      "オ": "出力電圧の偏差検出回路を持たないため安定した出力電圧を得にくい"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "素子を高速にオン・オフさせるため、高周波成分が発生しやすく、雑音を抑える設計が必要です。",
+    "choiceExplanations": {
+      "ア": "設定値や制御条件を変えれば、出力電圧を可変にできる構成があります。",
+      "イ": "高周波トランスを使う方式では、入力側と出力側を絶縁できます。",
+      "ウ": "素子を高速にオン・オフさせるため、高周波成分が発生しやすく、雑音を抑える設計が必要です。",
+      "エ": "高いスイッチング周波数を利用すると、トランスやリアクトル等を小型化できます。",
+      "オ": "一般的な安定化方式では電圧を検出して基準値との差を制御に戻します。偏差検出回路を持てないわけではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files2485679964230fbc7.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files24856799656758cbe.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和6年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  },
+  {
+    "id": "dekyo-chief-system-2024-second-gakka-q20",
+    "exam": "dekyo-chief-system",
+    "year": 2024,
+    "season": "second",
+    "session": "gakka",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "subject": "電気通信システム",
+    "category": "光通信",
+    "topicTags": [
+      "電気通信システム",
+      "光通信"
+    ],
+    "difficulty": 3,
+    "question": "光ファイバ中を基本モードだけが伝搬できる最も短い波長は、［　］波長といわれ、これより短い波長に対してはマルチモード伝搬状態になる。",
+    "choices": {
+      "ア": "カットオフ",
+      "イ": "臨界",
+      "ウ": "ゼロ分散",
+      "エ": "ブラッグ",
+      "オ": "ドミナント"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "高次の伝搬モードが遮断され、基本モードだけとなる境界をカットオフ波長といいます。",
+    "choiceExplanations": {
+      "ア": "高次の伝搬モードが遮断され、基本モードだけとなる境界をカットオフ波長といいます。",
+      "イ": "全反射の臨界角とは別の概念で、ここでは高次モードの伝搬限界を表すカットオフ波長を指します。",
+      "ウ": "ゼロ分散波長は波長分散の値がゼロになる波長で、伝搬可能なモード数の境界とは異なります。",
+      "エ": "ブラッグ波長は周期的な屈折率構造で強く反射される波長を指します。",
+      "オ": "ドミナントは支配的な成分を表しますが、単一モード伝搬を保てる波長の下限の名称ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files2485679964230fbc7.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2485/files24856799656758cbe.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信主任技術者試験 電気通信システム（令和6年度第2回）。解説は過去問AI作成。",
+    "license": "DEKYO-owner-authorized"
+  }
+]

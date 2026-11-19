@@ -1469,6 +1469,11 @@ shuwa: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "情報活用2級", categories: ["経営戦略とシステム戦略", "プロジェクトマネジメント", "データ構造と情報表現", "問題解決処理手順", "パソコンの基礎", "インターネットの基礎", "アプリケーションソフトの利用"] }],
     seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
 },
+"dekyo-chief-system": {
+    code: "dekyo-chief-system", nameFull: "電気通信主任技術者試験（電気通信システム）", urlSlug: "dekyo-chief-system", level: "specialist",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 20, label: "電気通信システム", categories: ["電気回路", "論理回路", "電気計測", "デジタル伝送", "伝送理論", "光通信", "交換・ネットワーク", "通信方式", "電源"] }],
+    seasons: ["first", "second"], yearRange: { start: 2022, end: 2026 },
+},
 "zensho-english": {
     code: "zensho-english", nameFull: "全商英語検定試験", urlSlug: "zensho-english", level: "basic",
     sessions: [
