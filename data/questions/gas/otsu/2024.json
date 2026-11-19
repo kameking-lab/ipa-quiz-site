@@ -1,0 +1,2945 @@
+[
+  {
+    "id": "gas-otsu-2024-basic-q1",
+    "exam": "gas-otsu",
+    "session": "gas-basic",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "基礎",
+    "topicTags": [
+      "基礎"
+    ],
+    "difficulty": 3,
+    "question": "気体の性質に関する次の記述のうち、誤っているものはどれか。",
+    "choices": {
+      "ア": "実在気体は、低温の条件では、理想気体に近い性質を示す。",
+      "イ": "相変化に伴い吸収又は放出される熱を、潜熱という。",
+      "ウ": "臨界温度より高い温度では、圧力をどれほど高くしても気体を液化させることはできない。",
+      "エ": "気体の粘度は、温度の上昇とともに増加する。",
+      "オ": "気体の粘度は、圧力によってほとんど変わらない。"
+    },
+    "answer": "ア",
+    "explanation": "実在気体が理想気体に近づくのは高温・低圧側である。低温では分子間引力の影響が相対的に大きくなる。",
+    "choiceExplanations": {
+      "ア": "実在気体が理想気体に近づくのは高温・低圧側である。低温では分子間引力の影響が相対的に大きくなる。",
+      "イ": "相の状態を変える熱で、温度変化による顕熱と区別する。",
+      "ウ": "臨界温度を超えると、等温圧縮で液相との相境界を越えることはない。",
+      "エ": "温度上昇で分子の熱運動が活発になり、運動量の交換が増えて粘度は増す。",
+      "オ": "希薄気体の粘度は主として温度に依存し、通常の圧力範囲では圧力の影響は小さい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=17",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」基礎 問1（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "1",
+    "subject": "基礎",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 17
+    },
+    "examDate": "2024-09-29"
+  },
+  {
+    "id": "gas-otsu-2024-basic-q2",
+    "exam": "gas-otsu",
+    "session": "gas-basic",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "基礎",
+    "topicTags": [
+      "基礎"
+    ],
+    "difficulty": 3,
+    "question": "温度27 ℃、圧力50 kPaのメタンが入っている容積400 m³の容器Aと温度27 ℃、圧力20 kPaのプロパンが入っている容積200 m³の容器Bを接続した場合の混合気体全体の圧力（kPa）として、最も近い値はどれか。ただし、いずれの気体も理想気体とし、容器AとBの接続後の混合気体の温度は27 ℃と一定で、接続管の容積は無視できるものとする。",
+    "choices": {
+      "ア": "30",
+      "イ": "35",
+      "ウ": "40",
+      "エ": "55",
+      "オ": "70"
+    },
+    "answer": "ウ",
+    "explanation": "等温なので混合前後でpVの合計が等しい。圧力は(50×400＋20×200)/(400＋200)＝40 kPaである。",
+    "choiceExplanations": {
+      "ア": "30 kPaでは大きい容器Aの50 kPaの寄与を小さく見積もっている。",
+      "イ": "35 kPaは初期圧力の単純平均であり、二つの容器の容積が異なる条件を含まない。",
+      "ウ": "等温なので混合前後でpVの合計が等しい。圧力は(50×400＋20×200)/(400＋200)＝40 kPaである。",
+      "エ": "混合後の圧力は二つの初期圧力を容積で重み付けした平均であり、50 kPaを超えない。",
+      "オ": "70 kPaは初期圧力の和だが、接続後の各気体は600 m³全体に広がる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=17",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」基礎 問2（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "3",
+    "subject": "基礎",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 17
+    },
+    "examDate": "2024-09-29"
+  },
+  {
+    "id": "gas-otsu-2024-basic-q3",
+    "exam": "gas-otsu",
+    "session": "gas-basic",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "基礎",
+    "topicTags": [
+      "基礎"
+    ],
+    "difficulty": 3,
+    "question": "温度300 K、圧力100 kPaの気体1 m³を定圧膨張させて2 m³にした。このとき、気体がした仕事（kJ）として、最も近い値はどれか。",
+    "choices": {
+      "ア": "100",
+      "イ": "200",
+      "ウ": "300",
+      "エ": "400",
+      "オ": "600"
+    },
+    "answer": "ア",
+    "explanation": "定圧膨張での仕事はpΔV＝100 kPa×(2−1) m³＝100 kJである。",
+    "choiceExplanations": {
+      "ア": "定圧膨張での仕事はpΔV＝100 kPa×(2−1) m³＝100 kJである。",
+      "イ": "200 kJは圧力に膨張後の総容積を掛けた値であり、膨張で増えた容積を使う。",
+      "ウ": "300 Kは初期温度であり、一定の圧力と容積変化から求める境界仕事の値ではない。",
+      "エ": "圧力100 kPaで400 kJを得るには4 m³の膨張が必要だが、容積の増加は1 m³である。",
+      "オ": "600 kJは100 kPaで6 m³の膨張に相当し、与えられた容積変化を大きく上回る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=18",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」基礎 問3（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "1",
+    "subject": "基礎",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 18
+    },
+    "examDate": "2024-09-29"
+  },
+  {
+    "id": "gas-otsu-2024-basic-q4",
+    "exam": "gas-otsu",
+    "session": "gas-basic",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "基礎",
+    "topicTags": [
+      "基礎"
+    ],
+    "difficulty": 3,
+    "question": "気体の熱力学に関する次の記述のうち、誤っているものはどれか。",
+    "choices": {
+      "ア": "熱も仕事もエネルギーの一形態である。",
+      "イ": "等温、定圧で2種の理想気体を混合すると、エントロピーは減少する。",
+      "ウ": "逆カルノーサイクルを用いたヒートポンプの成績係数（COP）は必ず1以上となる。",
+      "エ": "熱力学の第二法則によれば、熱は自然には低温度の物体から高温度の物体へ移ることはできない。",
+      "オ": "理想気体を可逆的に断熱膨張させた場合、内部エネルギーは減少する。"
+    },
+    "answer": "イ",
+    "explanation": "異なる理想気体を混合すると各成分が占める空間が広がり、混合のエントロピーは増加する。",
+    "choiceExplanations": {
+      "ア": "熱と仕事はいずれも系と外界との間のエネルギーの移動を表す。",
+      "イ": "異なる理想気体を混合すると各成分が占める空間が広がり、混合のエントロピーは増加する。",
+      "ウ": "暖房用のCOPは高温側で放出する熱を入力仕事で割った値で、放出熱には低温側から吸収した熱も含まれる。",
+      "エ": "低温物体から高温物体への熱の移動には、ヒートポンプなどで外部から仕事を加える必要がある。",
+      "オ": "断熱では外部から熱が入らず、気体がした膨張仕事に相当する量だけ内部エネルギーが減る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=18",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」基礎 問4（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "2",
+    "subject": "基礎",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 18
+    },
+    "examDate": "2024-09-29"
+  },
+  {
+    "id": "gas-otsu-2024-basic-q5",
+    "exam": "gas-otsu",
+    "session": "gas-basic",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "基礎",
+    "topicTags": [
+      "基礎"
+    ],
+    "difficulty": 3,
+    "question": "カルノーサイクルにおいて、高温熱源（750 K）から熱Q₁を吸収し、低温熱源（300 K）に熱Q₂を放出する場合、放熱量と吸熱量の比（Q₂/Q₁）として、最も近い値はどれか。",
+    "choices": {
+      "ア": "0.10",
+      "イ": "0.40",
+      "ウ": "1.00",
+      "エ": "2.50",
+      "オ": "7.50"
+    },
+    "answer": "イ",
+    "explanation": "可逆サイクルではQ₂/T₂＝Q₁/T₁なので、比は300/750＝0.40である。",
+    "choiceExplanations": {
+      "ア": "熱量の比0.10は、温度750 Kに対して放熱側温度75 Kに相当する。",
+      "イ": "可逆サイクルではQ₂/T₂＝Q₁/T₁なので、比は300/750＝0.40である。",
+      "ウ": "熱量比1.00になるのは両熱源の絶対温度が等しい場合である。",
+      "エ": "2.50は高温側温度を低温側温度で割った逆比である。",
+      "オ": "吸収熱の一部は仕事に変わるので、放熱量の吸熱量に対する比が1を超えることはない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=19",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」基礎 問5（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "2",
+    "subject": "基礎",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 19
+    },
+    "examDate": "2024-09-29"
+  },
+  {
+    "id": "gas-otsu-2024-basic-q6",
+    "exam": "gas-otsu",
+    "session": "gas-basic",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "基礎",
+    "topicTags": [
+      "基礎"
+    ],
+    "difficulty": 3,
+    "question": "化学反応と化学平衡に関する次の記述のうち、誤っているものはどれか。",
+    "choices": {
+      "ア": "一次反応において、反応物質の濃度が半分に減少するのに要する時間は、反応のどの時点から測っても同じである。",
+      "イ": "化学平衡とは、可逆反応において、順方向と逆方向の反応速度が等しくなった状態をいう。",
+      "ウ": "ある反応温度で発熱反応を平衡状態になるまで進行させたのちに、反応温度を上げると、反応はさらに進行して、新たな平衡状態に達する。",
+      "エ": "ある反応の標準自由エネルギー変化がわかれば、平衡定数を計算により求めることができる。",
+      "オ": "水を電気分解すれば、水素と酸素を発生させることができる。"
+    },
+    "answer": "ウ",
+    "explanation": "温度を上げると吸熱側が優先されるため、発熱反応の平衡は反応物側に移動する。",
+    "choiceExplanations": {
+      "ア": "一次反応の半減期は反応速度定数kからln 2/kと求まり、開始時の濃度に依存しない。",
+      "イ": "平衡では正反応と逆反応が続いていても速度が等しいので、組成に正味の変化がない。",
+      "ウ": "温度を上げると吸熱側が優先されるため、発熱反応の平衡は反応物側に移動する。",
+      "エ": "標準ギブズエネルギー変化と平衡定数の間にΔG°＝−RT ln Kの関係がある。",
+      "オ": "水の電気分解では、陰極側で水素、陽極側で酸素が発生する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=19",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」基礎 問6（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "3",
+    "subject": "基礎",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 19
+    },
+    "examDate": "2024-09-29"
+  },
+  {
+    "id": "gas-otsu-2024-basic-q7",
+    "exam": "gas-otsu",
+    "session": "gas-basic",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "基礎",
+    "topicTags": [
+      "基礎"
+    ],
+    "difficulty": 3,
+    "question": "電気化学反応に関する次の記述のうち、誤っているものはどれか。",
+    "choices": {
+      "ア": "物質の持つ自由エネルギーを直接電気エネルギーとして取り出すことができる。",
+      "イ": "電子を受け取る反応をカソード反応という。",
+      "ウ": "標準電極電位が高い金属ほど、イオン化傾向は小さい。",
+      "エ": "電池を構成したとき、標準電極電位が高い方がプラス側の電極となる。",
+      "オ": "銅（Cu）の標準電極電位はマグネシウム（Mg）より低い。"
+    },
+    "answer": "オ",
+    "explanation": "マグネシウムの方がイオン化傾向が大きく、標準還元電位は銅より低い。",
+    "choiceExplanations": {
+      "ア": "電池は自発的な酸化還元反応の自由エネルギーを電気的な仕事として取り出す。",
+      "イ": "カソードでは電子を受け取る還元反応が起こる。",
+      "ウ": "標準還元電位が高いほど還元されやすく、金属の状態から酸化されてイオンになりにくい。",
+      "エ": "標準条件で電池として作動するとき、標準還元電位の高い電極が正極である。",
+      "オ": "マグネシウムの方がイオン化傾向が大きく、標準還元電位は銅より低い。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=20",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」基礎 問7（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "5",
+    "subject": "基礎",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 20
+    },
+    "examDate": "2024-09-29"
+  },
+  {
+    "id": "gas-otsu-2024-basic-q8",
+    "exam": "gas-otsu",
+    "session": "gas-basic",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "基礎",
+    "topicTags": [
+      "基礎"
+    ],
+    "difficulty": 3,
+    "question": "メタン5 m³を空気比1.5で完全燃焼させるのに必要な空気量（m³）として、最も近い値はどれか。ただし、気体は標準状態（温度0 ℃、圧力101325 Pa）とし、空気中の窒素と酸素の体積比は4：1とする。",
+    "choices": {
+      "ア": "15",
+      "イ": "30",
+      "ウ": "50",
+      "エ": "75",
+      "オ": "90"
+    },
+    "answer": "エ",
+    "explanation": "メタンの体積の2倍の酸素が必要であり、空気中の酸素は1/5なので理論空気量は50 m³となる。空気比1.5を掛けると75 m³である。",
+    "choiceExplanations": {
+      "ア": "15 m³は、理論酸素量10 m³に空気比を掛けた酸素量である。空気の体積に直すには酸素の体積分率を用いる。",
+      "イ": "30 m³の空気に含まれる酸素は6 m³で、理論酸素量の10 m³にも足りない。",
+      "ウ": "50 m³は理論空気量であり、指定された空気比1.5による余剰空気を含まない。",
+      "エ": "メタンの体積の2倍の酸素が必要であり、空気中の酸素は1/5なので理論空気量は50 m³となる。空気比1.5を掛けると75 m³である。",
+      "オ": "90 m³を使うと理論空気量50 m³との比は1.8であり、指定の1.5より大きい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=20",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」基礎 問8（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "4",
+    "subject": "基礎",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 20
+    },
+    "examDate": "2024-09-29"
+  },
+  {
+    "id": "gas-otsu-2024-basic-q10",
+    "exam": "gas-otsu",
+    "session": "gas-basic",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "基礎",
+    "topicTags": [
+      "基礎"
+    ],
+    "difficulty": 3,
+    "question": "気体容器内の圧力を測定するため、水を注入したマノメーターの一端を気体容器に接続し、別の一端を大気開放した。水位の差Hは50 mmであった。気体容器内のゲージ圧力（Pa）として、最も近い値はどれか。ただし、水の密度は1000 kg/m³、重力加速度は9.8 m/s²とする。",
+    "choices": {
+      "ア": "49",
+      "イ": "196",
+      "ウ": "490",
+      "エ": "980",
+      "オ": "1960"
+    },
+    "answer": "ウ",
+    "explanation": "ゲージ圧力は水柱による圧力差ρgHなので、1000×9.8×0.050＝490 Paである。",
+    "choiceExplanations": {
+      "ア": "49 Paは水柱5 mmに相当し、50 mmの10分の1である。",
+      "イ": "196 Paは水柱20 mmに相当し、設問の水位差より小さい。",
+      "ウ": "ゲージ圧力は水柱による圧力差ρgHなので、1000×9.8×0.050＝490 Paである。",
+      "エ": "980 Paは水柱100 mmに相当し、図に示された水位差の2倍である。",
+      "オ": "1960 Paは水柱200 mmに相当し、設問の50 mmでは大きすぎる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=21",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」基礎 問10（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "3",
+    "subject": "基礎",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 21
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-basic-q10-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 基礎 問10の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-basic-q11",
+    "exam": "gas-otsu",
+    "session": "gas-basic",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "基礎",
+    "topicTags": [
+      "基礎"
+    ],
+    "difficulty": 3,
+    "question": "管内を流れる流体に関する次の記述のうち、誤っているものはどれか。",
+    "choices": {
+      "ア": "壁近くでは、流体が粘性の影響を受けて流速が急激に変化する。",
+      "イ": "流体の粘性や乱れによって、流れの下流の圧力が上流の圧力と比べ低くなることを圧力損失という。",
+      "ウ": "配管の屈曲部で生じる圧力損失は、流れの方向を急激に変化させるより緩やかに変化させる方が小さい。",
+      "エ": "直円管内の流れでは、レイノルズ数がある値以上となると層流から乱流に遷移する。",
+      "オ": "乱流における管摩擦係数は、管壁面の粗さに依存しない。"
+    },
+    "answer": "オ",
+    "explanation": "乱流域の管摩擦係数には相対粗さが影響し、管が粗い場合は損失が増えやすい。",
+    "choiceExplanations": {
+      "ア": "流体は壁面で壁に対する速度がゼロとなるため、すぐ外側の流れとの間に速度勾配が生じる。",
+      "イ": "粘性摩擦や乱れで機械的エネルギーが散逸し、配管で圧力が失われる。",
+      "ウ": "緩やかな曲がりなら流れのはく離や渦を抑えやすく、損失も小さくなる。",
+      "エ": "レイノルズ数がしきい値を超えると、直円管の層流は乱流へ遷移する。",
+      "オ": "乱流域の管摩擦係数には相対粗さが影響し、管が粗い場合は損失が増えやすい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=22",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」基礎 問11（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "5",
+    "subject": "基礎",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 22
+    },
+    "examDate": "2024-09-29"
+  },
+  {
+    "id": "gas-otsu-2024-basic-q12",
+    "exam": "gas-otsu",
+    "session": "gas-basic",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "基礎",
+    "topicTags": [
+      "基礎"
+    ],
+    "difficulty": 3,
+    "question": "熱交換器において、高温流体の入口温度は180 ℃、出口温度は50 ℃であった。また、低温流体の入口温度は20 ℃、出口温度は90 ℃であった。このときの高温流体の温度効率（％）として、最も近い値はどれか。",
+    "choices": {
+      "ア": "28",
+      "イ": "44",
+      "ウ": "74",
+      "エ": "81",
+      "オ": "88"
+    },
+    "answer": "エ",
+    "explanation": "高温側の温度降下130 ℃を高温と低温の入口温度差160 ℃で割ると、81.25％である。",
+    "choiceExplanations": {
+      "ア": "28％は高温側の出口温度と入口温度の単純な比に近く、可能な温度変化量で割った値ではない。",
+      "イ": "44％は低温側の温度上昇70 ℃を入口温度差160 ℃で割った値である。",
+      "ウ": "高温側の実際の温度降下は130 ℃で、可能な最大の温度差160 ℃に対して約81％である。",
+      "エ": "高温側の温度降下130 ℃を高温と低温の入口温度差160 ℃で割ると、81.25％である。",
+      "オ": "88％は高温側の入口から出口までの実際の温度低下を、入口温度差で評価した値より大きい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=22",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」基礎 問12（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "4",
+    "subject": "基礎",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 22
+    },
+    "examDate": "2024-09-29"
+  },
+  {
+    "id": "gas-otsu-2024-basic-q13",
+    "exam": "gas-otsu",
+    "session": "gas-basic",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "基礎",
+    "topicTags": [
+      "基礎"
+    ],
+    "difficulty": 3,
+    "question": "伝熱に関する次の記述のうち、誤っているものはどれか。",
+    "choices": {
+      "ア": "熱伝導での伝熱量の大きさは、温度勾配に比例する。",
+      "イ": "対流熱伝達には、自然対流や強制対流、相変化を伴う沸騰と凝縮等の様々な形態がある。",
+      "ウ": "熱放射では、原子や分子のような物質を介さず真空中でも伝熱が可能である。",
+      "エ": "外部から入射してくる電磁波を完全に吸収する仮想の物体を、黒体という。",
+      "オ": "熱交換器では対流熱伝達が生じ、熱伝導は生じない。"
+    },
+    "answer": "オ",
+    "explanation": "隔壁式の熱交換器では流体と壁との間は対流熱伝達、隔壁の内部は熱伝導で熱が移動する。",
+    "choiceExplanations": {
+      "ア": "フーリエの法則では、同じ材料の熱流束の大きさは温度勾配に比例する。",
+      "イ": "流動の原因と相変化の有無によって、対流熱伝達は自然対流、強制対流、沸騰、凝縮などに分類される。",
+      "ウ": "熱放射は電磁波で熱が伝わる過程なので、物質のない真空でも起こる。",
+      "エ": "黒体は入射する電磁波を全波長で吸収する理想化された物体である。",
+      "オ": "隔壁式の熱交換器では流体と壁との間は対流熱伝達、隔壁の内部は熱伝導で熱が移動する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=23",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」基礎 問13（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "5",
+    "subject": "基礎",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 23
+    },
+    "examDate": "2024-09-29"
+  },
+  {
+    "id": "gas-otsu-2024-basic-q14",
+    "exam": "gas-otsu",
+    "session": "gas-basic",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "基礎",
+    "topicTags": [
+      "基礎"
+    ],
+    "difficulty": 3,
+    "question": "材料の破壊に関する次の記述のうち、誤っているものはどれか。",
+    "choices": {
+      "ア": "無限の繰り返し数に破断しないで耐えることのできる応力振幅を、破損限度と呼ぶ。",
+      "イ": "クリープは、応力が大きいほど、温度が高いほど、顕著に現れる。",
+      "ウ": "応力腐食割れは、引張応力によって起きるが、圧縮応力によっては起こらない。",
+      "エ": "アルミニウム等の面心立方晶金属には、低温ぜい性が認められない。",
+      "オ": "溶接部近傍で生じる遅れ割れは、拘束応力や冷却速度が大きくなる大型構造物で発生しやすい。"
+    },
+    "answer": "ア",
+    "explanation": "繰返し応力で破断しない限界の応力振幅は、疲労限度又は耐久限度と呼ぶ。",
+    "choiceExplanations": {
+      "ア": "繰返し応力で破断しない限界の応力振幅は、疲労限度又は耐久限度と呼ぶ。",
+      "イ": "高温で大きな応力を受けるほど、時間とともに進むクリープ変形が顕著になる。",
+      "ウ": "応力腐食割れは腐食環境と引張応力が重なると発生しやすく、圧縮応力自体はき裂を開く方向には働かない。",
+      "エ": "アルミニウムなどの面心立方晶金属は、一般に低温でも延性を保ち、顕著な延性・ぜい性遷移を示さない。",
+      "オ": "溶接時の拘束が強いと引張残留応力が増し、急冷で硬化すると遅れ割れが起こりやすくなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=23",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」基礎 問14（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "1",
+    "subject": "基礎",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 23
+    },
+    "examDate": "2024-09-29"
+  },
+  {
+    "id": "gas-otsu-2024-basic-q15",
+    "exam": "gas-otsu",
+    "session": "gas-basic",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "基礎",
+    "topicTags": [
+      "基礎"
+    ],
+    "difficulty": 3,
+    "question": "ある延性材料の試験片について、常温で引張試験を行ったところ、降伏点での引張応力が450 MPaであった。この材料を許容応力90 MPaで使用するときの安全係数として、最も近い値はどれか。",
+    "choices": {
+      "ア": "0.2",
+      "イ": "0.5",
+      "ウ": "2",
+      "エ": "5",
+      "オ": "10"
+    },
+    "answer": "エ",
+    "explanation": "降伏応力を許容応力で割ると、450/90＝5である。",
+    "choiceExplanations": {
+      "ア": "0.2は許容応力を降伏応力で割った値で、安全係数の逆数である。",
+      "イ": "許容応力が降伏応力より小さいので、安全係数は1未満にならない。",
+      "ウ": "安全係数が2なら許容応力は450/2＝225 MPaとなり、設問の90 MPaより大きい。",
+      "エ": "降伏応力を許容応力で割ると、450/90＝5である。",
+      "オ": "安全係数10なら許容応力は45 MPaになり、設問条件とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=23",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」基礎 問15（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "4",
+    "subject": "基礎",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 23
+    },
+    "examDate": "2024-09-29"
+  },
+  {
+    "id": "gas-otsu-2024-law-q1",
+    "exam": "gas-otsu",
+    "session": "gas-law",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "法令",
+    "topicTags": [
+      "法令"
+    ],
+    "difficulty": 3,
+    "question": "法令で規定されている用語の定義及び事業の届出等に関する次の記述のうち、誤っているものはどれか。",
+    "choices": {
+      "ア": "「ガス事業」とは、ガス小売事業、一般ガス導管事業、特定ガス導管事業及びガス製造事業をいう。",
+      "イ": "ガス小売事業を営もうとする者は、経済産業大臣の許可を受けなければならない。",
+      "ウ": "「小売供給」とは、一般の需要に応じ導管によりガスを供給すること（特定ガス発生設備においてガスを発生させ、導管によりこれを供給するものにあっては、一の団地内におけるガスの供給地点の数が70以上のものに限る。）をいう。",
+      "エ": "12A及び13Aのガスグループ以外のガスグループに属するガスを供給する導管を用いて託送供給を行う事業は、一般ガス導管事業に該当しない。",
+      "オ": "「ガス製造事業」とは、自らが維持し、及び運用する液化ガス貯蔵設備等を用いてガスを製造する事業であって、その事業の用に供する液化ガス貯蔵設備が経済産業省令で定める要件に該当するものをいう。"
+    },
+    "answer": "イ",
+    "explanation": "ガス小売事業に必要なのは経済産業大臣の登録である。事業の種類によって許可や届出など、要件が異なる。",
+    "choiceExplanations": {
+      "ア": "ガス事業法はガス事業の種類として、小売、一般導管、特定導管、製造の四つを定める。",
+      "イ": "ガス小売事業に必要なのは経済産業大臣の登録である。事業の種類によって許可や届出など、要件が異なる。",
+      "ウ": "特定ガス発生設備による小売供給には、1団地内で供給地点が70以上という限定がある。",
+      "エ": "一般ガス導管事業としての託送供給に使用するガスのグループは、法令で指定された12A及び13Aである。",
+      "オ": "設備の維持・運用の主体と、事業に供する液化ガス貯蔵設備に関する省令の要件が定義に含まれる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」法令 問1（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "2",
+    "subject": "法令",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 3
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-law-q1-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 法令 問1の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-law-q2",
+    "exam": "gas-otsu",
+    "session": "gas-law",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "法令",
+    "topicTags": [
+      "法令"
+    ],
+    "difficulty": 3,
+    "question": "法令で規定されているガス小売事業者及び一般ガス導管事業者の業務に関する次の記述のうち、誤っているものはいくつあるか。\nイ ガス小売事業者は、正当な理由がある場合を除き、その小売供給の相手方の需要に応ずるために必要な供給能力を確保しなければならない。\nロ ガス小売事業者は、小売供給契約の締結に当たり、その料金その他の供給条件について経済産業大臣に届け出なければならない。\nハ 一般ガス導管事業者は、託送供給に係る料金その他の供給条件について託送供給約款を定め、経済産業大臣に届け出なければならない。\nニ 一般ガス導管事業者は、最終保障供給に係る料金その他の供給条件について約款を定め、経済産業大臣に届け出なければならない。\nホ 一般ガス導管事業者は毎年度、所定の供給計画を作成し、年度開始前に経済産業大臣の認可を受けなければならない。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "explanation": "誤っている記述は3つ（ロ、ハ、ホ）である。イは正しい、ロは誤り、ハは誤り、ニは正しい、ホは誤りである。イ ガス小売事業者には、正当な理由のある場合を除いて需要に応ずる供給能力の確保義務がある。ロ 契約締結前に予定の需要家へ供給条件を説明する義務であり、大臣への届出を定めた規定ではない。ハ 託送供給約款の設定には、原則として大臣の認可が必要である。ニ 最終保障供給約款は大臣への届出が必要である。ホ 供給計画は年度開始前の届出が必要で、認可を求める手続ではない。",
+    "choiceExplanations": {
+      "ア": "誤っている記述は3つ（ロ、ハ、ホ）であるため、1つではない。",
+      "イ": "誤っている記述は3つ（ロ、ハ、ホ）であるため、2つではない。",
+      "ウ": "誤っている記述は3つ（ロ、ハ、ホ）である。イは正しい、ロは誤り、ハは誤り、ニは正しい、ホは誤りである。",
+      "エ": "誤っている記述は3つ（ロ、ハ、ホ）であるため、4つではない。",
+      "オ": "誤っている記述は3つ（ロ、ハ、ホ）であるため、5つではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=4",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」法令 問2（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "3",
+    "subject": "法令",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 4
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-law-q2-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 法令 問2の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-law-q3",
+    "exam": "gas-otsu",
+    "session": "gas-law",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "法令",
+    "topicTags": [
+      "法令"
+    ],
+    "difficulty": 3,
+    "question": "法令で規定されているガス工作物及び保安規程に関する次の記述のうち、正しいものはどれか。",
+    "choices": {
+      "ア": "技術上の基準に適合していないガス工作物の修理等を、経済産業大臣はガス主任技術者に命じることができる。",
+      "イ": "一般ガス導管事業者は、定めた保安規程を遅滞なく経済産業大臣に届け出なければならない。",
+      "ウ": "経済産業大臣は、公共の利益の増進を図るため必要があるとき、一般ガス導管事業者に保安規程の変更を命ずることができる。",
+      "エ": "保安規程には、消費機器に関する周知及び調査の方法を定めなければならない。",
+      "オ": "一般ガス導管事業者以外の所有者又は占有者は、同事業者がガス工作物の技術基準への適合維持に必要な措置を講じるとき、協力するよう努めなければならない。"
+    },
+    "answer": "オ",
+    "explanation": "技術基準に適合させる措置に、対象工作物の所有者又は占有者は協力するよう努める。",
+    "choiceExplanations": {
+      "ア": "技術基準適合命令の相手方は一般ガス導管事業者であり、保安の監督をするガス主任技術者個人ではない。",
+      "イ": "保安規程は事業の開始前に届け出る必要がある。",
+      "ウ": "変更を命じる要件は、ガス工作物の工事、維持及び運用に関する保安を確保するために必要なことである。",
+      "エ": "消費機器の周知・調査は小売事業者の保安業務規程に関する事項である。",
+      "オ": "技術基準に適合させる措置に、対象工作物の所有者又は占有者は協力するよう努める。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」法令 問3（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "5",
+    "subject": "法令",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 5
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-law-q3-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 法令 問3の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-law-q4",
+    "exam": "gas-otsu",
+    "session": "gas-law",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "法令",
+    "topicTags": [
+      "法令"
+    ],
+    "difficulty": 3,
+    "question": "次のガス事故のうち、ガス事故速報を報告することが法令で規定されていないものの組合せはどれか。ただし、自然災害又は火災による広範囲の事故で経済産業大臣が指定するものではない。\nイ ガス工作物（ガス栓を除く。）の操作により人に酸素欠乏症が生じた事故。\nロ 供給支障戸数が20の事故。\nハ 製造支障時間が10時間の事故。\nニ ガス工作物（ガス栓を除く。）から漏えいしたガスによる火災事故。\nホ 消費機器から漏えいしたガスの引火で機器が損傷した物損事故で、死傷者がいないもの。",
+    "choices": {
+      "ア": "イ、ロ",
+      "イ": "イ、ハ",
+      "ウ": "ロ、ホ",
+      "エ": "ハ、ニ",
+      "オ": "ニ、ホ"
+    },
+    "answer": "ウ",
+    "explanation": "ロ　設問の規模の供給支障は、速報を求める供給支障戸数の区分に該当しない。ホ　死傷を伴わない、設問の消費機器の物損事故は速報の対象に該当しない。",
+    "choiceExplanations": {
+      "ア": "イ　ガス工作物の操作による酸素欠乏症の事故は速報の対象である。ロ　設問の規模の供給支障は、速報を求める供給支障戸数の区分に該当しない。",
+      "イ": "イ　ガス工作物の操作による酸素欠乏症の事故は速報の対象である。ハ　製造支障時間が10時間に達すると、速報対象となる区分に入る。",
+      "ウ": "ロ　設問の規模の供給支障は、速報を求める供給支障戸数の区分に該当しない。ホ　死傷を伴わない、設問の消費機器の物損事故は速報の対象に該当しない。",
+      "エ": "ハ　製造支障時間が10時間に達すると、速報対象となる区分に入る。ニ　ガス工作物からの漏えいによる火災事故は速報の対象である。",
+      "オ": "ニ　ガス工作物からの漏えいによる火災事故は速報の対象である。ホ　死傷を伴わない、設問の消費機器の物損事故は速報の対象に該当しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=5",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」法令 問4（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "3",
+    "subject": "法令",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 5
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-law-q4-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 法令 問4の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-law-q5",
+    "exam": "gas-otsu",
+    "session": "gas-law",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "法令",
+    "topicTags": [
+      "法令"
+    ],
+    "difficulty": 3,
+    "question": "法令で規定されているガス主任技術者に関する次の記述のうち、正しいものはどれか。",
+    "choices": {
+      "ア": "ガス小売事業者は、ガス主任技術者免状の交付を受けた者又は省令で定める実務経験を有する者からガス主任技術者を選任する。",
+      "イ": "ガス小売事業者はガス主任技術者を選任し、又は解任しようとするとき、あらかじめ経済産業大臣に届け出なければならない。",
+      "ウ": "免状は試験合格者又はその者と同等以上の知識及び技能を有するとガス事業者が認定した者に交付される。",
+      "エ": "法違反による罰金以上の刑の執行を終えた日等から1年を経過しない者に対し、大臣は免状の交付をしないことができる。",
+      "オ": "大臣は、免状の交付を受けた者がガス事業法、同法に基づく命令又はこれらに基づく処分に違反したとき、免状の返納を命ずることができる。"
+    },
+    "answer": "オ",
+    "explanation": "法律違反だけでなく、法に基づく命令や処分に違反した場合も、大臣は免状の返納を命じることができる。",
+    "choiceExplanations": {
+      "ア": "実務経験のみでの選任はできず、事業に応じた免状を持つ者から選任する。",
+      "イ": "選任又は解任の届出は行った後、遅滞なく届け出る。",
+      "ウ": "試験合格と同等以上の知識及び技能を認定するのは、ガス事業者ではなく経済産業大臣である。",
+      "エ": "免状を交付しないことができる欠格期間は、刑の執行を終えた日などから2年である。",
+      "オ": "法律違反だけでなく、法に基づく命令や処分に違反した場合も、大臣は免状の返納を命じることができる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=6",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」法令 問5（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "5",
+    "subject": "法令",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 6
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-law-q5-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 法令 問5の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-law-q6",
+    "exam": "gas-otsu",
+    "session": "gas-law",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "法令",
+    "topicTags": [
+      "法令"
+    ],
+    "difficulty": 3,
+    "question": "法令で規定されている工事計画及び使用前検査に関する記述の空欄イ〜ホに当てはまる組合せはどれか。\n一般ガス導管事業者は、一般ガス導管事業の用に供するガス工作物の（イ）の工事であって、経済産業省令で定めるものをしようとするときは、工事の計画を経済産業大臣に届け出る。原則として届出が（ロ）された日から（ハ）日を経過した後でなければ工事を開始してはならない。対象の工事について（ニ）を行う。対象のガス工作物でも（ホ）のために使用するときは使用前検査なしで使用できる。",
+    "choices": {
+      "ア": "設置／受理／30／自主検査／緊急",
+      "イ": "設置又は変更／受理／10／完成検査／緊急",
+      "ウ": "設置又は変更／受理／30／自主検査／試験",
+      "エ": "設置／提出／10／自主検査／試験",
+      "オ": "設置又は変更／提出／30／完成検査／緊急"
+    },
+    "answer": "ウ",
+    "explanation": "設置又は変更が対象で、原則は届出が受理されてから30日経過後に着工する。自主検査が必要で、試験のための使用は例外である。",
+    "choiceExplanations": {
+      "ア": "設置だけでなく変更の工事も対象となり、検査前の使用の例外として問題が挙げるのは試験のための使用である。",
+      "イ": "法定期間は受理から30日であり、対象工事には使用前の自主検査を行う。",
+      "ウ": "設置又は変更が対象で、原則は届出が受理されてから30日経過後に着工する。自主検査が必要で、試験のための使用は例外である。",
+      "エ": "設置と変更の両方が対象で、30日の起点は届出の提出ではなく受理である。",
+      "オ": "起点は受理であり、対象工事について行う検査は使用前の自主検査である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=7",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」法令 問6（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "3",
+    "subject": "法令",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 7
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-law-q6-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 法令 問6の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-law-q7",
+    "exam": "gas-otsu",
+    "session": "gas-law",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "法令",
+    "topicTags": [
+      "法令"
+    ],
+    "difficulty": 3,
+    "question": "技術基準で規定されているガス工作物に関する次の記述のうち、正しいものはいくつあるか。\nイ 製造所（特定製造所を除く。）、供給所及び導管を管理する事業場には、緊急時の通信設備を設ける。\nロ 製造所のガス等が漏えいして滞留するおそれのある適当な場所に、漏えいの検知・警報設備を設ける。\nハ 所定の液化ガス用貯槽の相互間には、漏えい事故に備え、保安上必要な距離を設ける。\nニ 所定の製造所・供給所のガス工作物又は大容量移動式ガス発生設備には、防消火設備を設ける。\nホ 製造所及び供給所でガス等を通ずるガス工作物を置く室は、漏えい時にガス等が滞留しない構造とする。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "オ",
+    "explanation": "正しい記述は5つ（イ、ロ、ハ、ニ、ホ）である。イは正しい、ロは正しい、ハは正しい、ニは正しい、ホは正しいである。イ 緊急時の迅速な通信のため、対象事業場等に適切な通信設備を設ける。ロ ガスが滞留するおそれのある場所では漏えい検知と警報の両方が求められる。ハ 貯槽間の保安距離には、漏えい時の災害を防ぐ目的がある。ニ 対象設備には、その規模に応じた防消火設備を適切な箇所に設ける。ホ ガス等が漏えいした際に室内に滞留しない構造にする。",
+    "choiceExplanations": {
+      "ア": "正しい記述は5つ（イ、ロ、ハ、ニ、ホ）であるため、1つではない。",
+      "イ": "正しい記述は5つ（イ、ロ、ハ、ニ、ホ）であるため、2つではない。",
+      "ウ": "正しい記述は5つ（イ、ロ、ハ、ニ、ホ）であるため、3つではない。",
+      "エ": "正しい記述は5つ（イ、ロ、ハ、ニ、ホ）であるため、4つではない。",
+      "オ": "正しい記述は5つ（イ、ロ、ハ、ニ、ホ）である。イは正しい、ロは正しい、ハは正しい、ニは正しい、ホは正しいである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=8",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」法令 問7（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "5",
+    "subject": "法令",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 8
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-law-q7-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 法令 問7の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-law-q8",
+    "exam": "gas-otsu",
+    "session": "gas-law",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "法令",
+    "topicTags": [
+      "法令"
+    ],
+    "difficulty": 3,
+    "question": "技術基準で規定されているガス工作物に関する次の記述のうち、誤っているものはいくつあるか。\nイ ガス栓の主要材料は、最高・最低使用温度で受ける化学的・物理的影響に対し、設備に応じた安全な機械的性質を有さなければならない。\nロ 製造設備の附帯設備に属し液化ガスを通ずる容器・管のうち、内面に0 Paを超える圧力を受ける部分は、荷重及び使用温度範囲での圧力に対して適切な構造とする。\nハ 整圧器及び特定ガス発生設備の調整装置の耐圧部分には、省令の耐圧試験の規定が適用される。\nニ ガス又は液化ガスが通り、内面に0 Paを超える圧力を受ける部分の溶接部は、溶込み・欠陥・強度の基準に適合させる。\nホ 所定の中圧導管でガス圧を受ける部分の溶接には、機械試験等で適切と確認された施工方法等を用いる。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ア",
+    "explanation": "誤っている記述は1つ（ハ）である。イは正しい、ロは正しい、ハは誤り、ニは正しい、ホは正しいである。イ ガス栓も安全な機械的性質が材料に求められる対象ガス工作物に含まれる。ロ 対象部分は供用時の荷重と、使用温度における最高使用圧力に耐える適切な構造にする。ハ 省令の当該耐圧試験規定には、整圧器及び特定ガス発生設備の調整装置を除く規定がある。ニ 溶込みが十分で有害な欠陥がなく、設計上必要な強度を備えることが求められる。ホ 設問の圧力と内径の条件をともに満たす中圧導管には、当該事前確認の規定が適用される。",
+    "choiceExplanations": {
+      "ア": "誤っている記述は1つ（ハ）である。イは正しい、ロは正しい、ハは誤り、ニは正しい、ホは正しいである。",
+      "イ": "誤っている記述は1つ（ハ）であるため、2つではない。",
+      "ウ": "誤っている記述は1つ（ハ）であるため、3つではない。",
+      "エ": "誤っている記述は1つ（ハ）であるため、4つではない。",
+      "オ": "誤っている記述は1つ（ハ）であるため、5つではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=9",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」法令 問8（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "1",
+    "subject": "法令",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 9
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-law-q8-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 法令 問8の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-law-q9",
+    "exam": "gas-otsu",
+    "session": "gas-law",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "法令",
+    "topicTags": [
+      "法令"
+    ],
+    "difficulty": 3,
+    "question": "技術基準で規定されているガス工作物に関する次の記述のうち、いずれも正しいものの組合せはどれか。\nイ 液化ガスを通じ過圧のおそれがあるガス発生設備には、圧力を逃がすインターロック機構を設ける。\nロ 製造所及び供給所の保安上重要な設備には、停電等で機能が失われない適切な措置を講じる。\nハ 凝縮液で機能低下又は損傷のおそれがあるガスホルダーには、凝縮液を抜く装置を設ける。\nニ 所定の液化ガス用貯槽には、ガス小売事業者の名称及び連絡先を見やすく表示する。\nホ 所定の貯槽の防液堤の外面から防災作業に必要な範囲には、防災に支障のない設備以外を置かない。",
+    "choices": {
+      "ア": "イ、ロ",
+      "イ": "イ、ニ",
+      "ウ": "ロ、ハ",
+      "エ": "ハ、ホ",
+      "オ": "ニ、ホ"
+    },
+    "answer": "エ",
+    "explanation": "ハ　凝縮液による機能低下や損傷を防ぐため、当該液を抜く装置を備える。ホ　防液堤周囲の作業空間を確保する設備設置制限がある。",
+    "choiceExplanations": {
+      "ア": "イ　圧力を逃す目的で設置するものは安全弁である。ロ　規定は「製造設備を安全に停止させるのに必要な装置」等を対象としており、「運転を継続させるのに必要な装置」という記述は合わない。",
+      "イ": "イ　圧力を逃す目的で設置するものは安全弁である。ニ　見やすく表示するのは液化ガス用貯槽又はガスホルダーである旨である。",
+      "ウ": "ロ　規定は「製造設備を安全に停止させるのに必要な装置」等を対象としており、「運転を継続させるのに必要な装置」という記述は合わない。ハ　凝縮液による機能低下や損傷を防ぐため、当該液を抜く装置を備える。",
+      "エ": "ハ　凝縮液による機能低下や損傷を防ぐため、当該液を抜く装置を備える。ホ　防液堤周囲の作業空間を確保する設備設置制限がある。",
+      "オ": "ニ　見やすく表示するのは液化ガス用貯槽又はガスホルダーである旨である。ホ　防液堤周囲の作業空間を確保する設備設置制限がある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=10",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」法令 問9（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "4",
+    "subject": "法令",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 10
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-law-q9-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 法令 問9の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-law-q10",
+    "exam": "gas-otsu",
+    "session": "gas-law",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "法令",
+    "topicTags": [
+      "法令"
+    ],
+    "difficulty": 3,
+    "question": "技術基準で規定されているガス工作物に関する次の記述のうち、正しいものはどれか。",
+    "choices": {
+      "ア": "製造設備（ガスホルダー、液化ガス用貯槽及び特定ガス発生設備を除く。）には、使用中の異常時にガス又は液化ガスの流出及び流入を速やかに遮断できる適切な装置を適切な箇所に設ける。",
+      "イ": "移動式ガス発生設備には、異常時にガスの発生を迅速かつ安全に停止し又は処理できる装置を設ける。",
+      "ウ": "移動式ガス発生設備は、漏えい時の火災等を防止するため、適切な場所に設置して容易に腐食又は転倒しない措置を講じる。",
+      "エ": "移動式ガス発生設備の容器又はその設置場所では、容器内の圧力が異常に低下しないよう温度を管理する。",
+      "オ": "電源で操作する気化装置を持つ所定の特定ガス発生設備には、操作用電源の停止時にガスの供給を遮断する装置を設ける。"
+    },
+    "answer": "ア",
+    "explanation": "異常による災害を防ぐため、対象となる製造設備にはガス等の流出・流入を速やかに遮断できる装置を備える。",
+    "choiceExplanations": {
+      "ア": "異常による災害を防ぐため、対象となる製造設備にはガス等の流出・流入を速やかに遮断できる装置を備える。",
+      "イ": "移動式設備については、緊急停止・処理に関する省令上の規定を一般の製造設備と同じ形で装置の設置義務とする記述は合わない。",
+      "ウ": "移動式設備の設置では、火災防止のための措置と、転倒・外部からの衝撃を防ぐ固定等の措置を要する。",
+      "エ": "容器の温度について防ぐべきなのは異常な圧力上昇であり、圧力低下ではない。",
+      "オ": "当該気化装置への電源が停止した場合にもガス供給を維持できる装置を設ける。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=11",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」法令 問10（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "1",
+    "subject": "法令",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 11
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-law-q10-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 法令 問10の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-law-q11",
+    "exam": "gas-otsu",
+    "session": "gas-law",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "法令",
+    "topicTags": [
+      "法令"
+    ],
+    "difficulty": 3,
+    "question": "技術基準で規定されているガス工作物に関する次の記述のうち、正しいものはどれか。ただし、（4）及び（5）のガスメーターはガス事業者が使用者との取引に使用する所定の規模のものとする。",
+    "choices": {
+      "ア": "水のたまるおそれのある導管には、適切な勾配を設ける。",
+      "イ": "道路に埋設される本支管（最高使用圧力10 kPa以上のポリエチレン管に限る。）には、掘削等による損傷を防ぐ措置を講じる。",
+      "ウ": "地下室等にガスを供給する導管には、地下室等から十分離れた場所に、地上から速やかに遮断できる装置を設ける。",
+      "エ": "ガスメーターは、ガス流入中に異常な圧力上昇を検知した場合に、ガスを速やかに遮断する機能を有する。",
+      "オ": "ガスメーターはガス流入中に所定の地震動を検知した場合の速やかな遮断機能を有する。ただし、所定の規模の団地に供給する特定製造所に、省令が定める地震動で速やかに供給を遮断する設備を設けたときはこの限りでない。"
+    },
+    "answer": "オ",
+    "explanation": "対象のメーターには地震時の遮断機能が必要であり、省令には供給側の遮断設備を備える小規模団地について地震動検知の例外がある。",
+    "choiceExplanations": {
+      "ア": "省令が要求するのは、水がたまるおそれのある導管への水取り器の設置である。",
+      "イ": "道路に埋設するポリエチレン本支管について、該当する圧力の基準は5 kPa以上である。",
+      "ウ": "遮断装置は地下室等の周囲で地上から操作できる適切な場所に設置するもので、十分に離すという規定ではない。",
+      "エ": "ガスメーターが検知して遮断する対象には、異常なガス圧力の低下がある。",
+      "オ": "対象のメーターには地震時の遮断機能が必要であり、省令には供給側の遮断設備を備える小規模団地について地震動検知の例外がある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=12",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」法令 問11（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "5",
+    "subject": "法令",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 12
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-law-q11-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 法令 問11の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-law-q12",
+    "exam": "gas-otsu",
+    "session": "gas-law",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "法令",
+    "topicTags": [
+      "法令"
+    ],
+    "difficulty": 3,
+    "question": "技術基準で規定されている漏えい検査及び導管の設置場所に関する記述のうち、いずれも正しいものの組合せはどれか。イ、ロ及びハの導管は特定地下街等又は特定地下室等に供給せず、漏えい検知装置はなく、検査対象場所に立ち入れるものとする。\nイ 道路に埋設された低圧導管（ポリエチレン管の部分を除く。）は埋設日以後6年に1回以上、検査して漏えいが認められないものとする。\nロ 道路に埋設される導管からガス栓までの屋外で埋設されていない部分は設置日以後4年に1回以上、検査して漏えいが認められないものとする。\nハ 基準日前4月以内に漏えい検査を実施した場合、基準日に検査を行ったものとみなす。\nニ 工場に設置される建物に供給する中圧導管は、所定の遮断装置又は漏れ警報器の検知区域でその建物の外壁を貫通するよう設置する。\nホ 導管を共同溝に設置する場合、漏えいで他の物件等に支障を生じないよう、導管と共同溝に所定の措置を講じる。",
+    "choices": {
+      "ア": "イ、ロ",
+      "イ": "イ、ニ",
+      "ウ": "ロ、ハ",
+      "エ": "ハ、ホ",
+      "オ": "ニ、ホ"
+    },
+    "answer": "エ",
+    "explanation": "ハ　所定の4月の範囲内での繰上げ検査には、基準日に行ったとみなす規定がある。ホ　漏えいに備えて導管と共同溝の双方に適切な防護措置が必要である。",
+    "choiceExplanations": {
+      "ア": "イ　この条件の低圧導管は省令の表の4年に1回以上の区分であり、6年ではない。ロ　屋外の埋設されていない部分は、設問の条件でこの4年の検査区分には当たらない。",
+      "イ": "イ　この条件の低圧導管は省令の表の4年に1回以上の区分であり、6年ではない。ニ　工場等に設置される建物は、中圧導管の外壁貫通時にその措置を要する建物から除外される。",
+      "ウ": "ロ　屋外の埋設されていない部分は、設問の条件でこの4年の検査区分には当たらない。ハ　所定の4月の範囲内での繰上げ検査には、基準日に行ったとみなす規定がある。",
+      "エ": "ハ　所定の4月の範囲内での繰上げ検査には、基準日に行ったとみなす規定がある。ホ　漏えいに備えて導管と共同溝の双方に適切な防護措置が必要である。",
+      "オ": "ニ　工場等に設置される建物は、中圧導管の外壁貫通時にその措置を要する建物から除外される。ホ　漏えいに備えて導管と共同溝の双方に適切な防護措置が必要である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=13",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」法令 問12（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "4",
+    "subject": "法令",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 13
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-law-q12-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 法令 問12の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-law-q13",
+    "exam": "gas-otsu",
+    "session": "gas-law",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "法令",
+    "topicTags": [
+      "法令"
+    ],
+    "difficulty": 3,
+    "question": "技術基準で規定されている導管及び整圧器に関する記述のうち、誤っているものはいくつあるか。\nイ ガス事業者の掘削で露出する導管の露出部分の両端は、地くずれのおそれのない地中で支持する。\nロ 供給用導管の露出部分が直管以外の管の接合部でフランジ接合であるものには、抜出し防止措置を講じる。\nハ 整圧器入口にはガス遮断装置を設ける。ただし、一使用者にガスを供給する場合は除く。\nニ ガス中の水分の凍結で整圧機能を損なうおそれのある整圧器には、凍結防止措置を講じる。\nホ 整圧器の制御用配管、補助整圧器その他の附属設備は、地震に耐えるよう支持する。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "イ",
+    "explanation": "誤っている記述は2つ（ロ、ハ）である。イは正しい、ロは誤り、ハは誤り、ニは正しい、ホは正しいである。イ 露出部の両端を安定した地中で支持し、掘削による変形や損傷を防ぐ。ロ フランジ接合は省令で定める特定接合に含まれ、当該抜出し防止措置の対象から除かれる。ハ 一の使用者に供給する場合の例外は入口の不純物除去装置に関するもので、ガス遮断装置には当てはまらない。ニ 水分が凍結して整圧機能を損なうおそれがある場合、凍結を防ぐ措置を講じる。ホ 附属設備等は地震に耐えるように支持する必要がある。",
+    "choiceExplanations": {
+      "ア": "誤っている記述は2つ（ロ、ハ）であるため、1つではない。",
+      "イ": "誤っている記述は2つ（ロ、ハ）である。イは正しい、ロは誤り、ハは誤り、ニは正しい、ホは正しいである。",
+      "ウ": "誤っている記述は2つ（ロ、ハ）であるため、3つではない。",
+      "エ": "誤っている記述は2つ（ロ、ハ）であるため、4つではない。",
+      "オ": "誤っている記述は2つ（ロ、ハ）であるため、5つではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=14",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」法令 問13（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "2",
+    "subject": "法令",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 14
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-law-q13-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 法令 問13の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-law-q14",
+    "exam": "gas-otsu",
+    "session": "gas-law",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "法令",
+    "topicTags": [
+      "法令"
+    ],
+    "difficulty": 3,
+    "question": "法令で規定されているガス用品及び特定ガス消費機器の設置工事の監督に関する法律に関する次の記述のうち、いずれも正しいものの組合せはどれか。\nイ 「ガス用品」とは、一般消費者等が消費する場合に用いられるすべての機械、器具及び材料（液化石油ガス器具等を除く。）をいう。\nロ 特定ガス用品には、密閉燃焼式のガス瞬間湯沸器等がある。\nハ ガス用品を製造、輸入又は販売する事業者は、技術基準への適合性についての表示がないガス用品を販売し、又は販売目的で陳列してはならない。\nニ 「特定工事」は、軽微なものを除く特定ガス用品の設置又は変更の工事をいう。\nホ 液化石油ガス設備士である者は、ガス消費機器設置工事監督者の資格を有する者に該当する。",
+    "choices": {
+      "ア": "イ、ロ",
+      "イ": "イ、ニ",
+      "ウ": "ロ、ハ",
+      "エ": "ハ、ホ",
+      "オ": "ニ、ホ"
+    },
+    "answer": "エ",
+    "explanation": "ハ　法令に基づく表示を付した製品に限って販売又は販売目的の陳列ができる。ホ　液化石油ガス設備士は設置工事の監督者の資格に該当する。",
+    "choiceExplanations": {
+      "ア": "イ　法令の「ガス用品」は、一般消費者等が用いるもののうち政令で定める範囲に限られる。ロ　特定ガス用品は政令で定めるもので、設問の密閉燃焼式を区分の例とする記述は一致しない。",
+      "イ": "イ　法令の「ガス用品」は、一般消費者等が用いるもののうち政令で定める範囲に限られる。ニ　特定工事は「特定ガス消費機器」の設置又は変更の工事であり、「特定ガス用品」の区分とは別である。",
+      "ウ": "ロ　特定ガス用品は政令で定めるもので、設問の密閉燃焼式を区分の例とする記述は一致しない。ハ　法令に基づく表示を付した製品に限って販売又は販売目的の陳列ができる。",
+      "エ": "ハ　法令に基づく表示を付した製品に限って販売又は販売目的の陳列ができる。ホ　液化石油ガス設備士は設置工事の監督者の資格に該当する。",
+      "オ": "ニ　特定工事は「特定ガス消費機器」の設置又は変更の工事であり、「特定ガス用品」の区分とは別である。ホ　液化石油ガス設備士は設置工事の監督者の資格に該当する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=14",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」法令 問14（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "4",
+    "subject": "法令",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 14
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-law-q14-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 法令 問14の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-law-q15",
+    "exam": "gas-otsu",
+    "session": "gas-law",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "法令",
+    "topicTags": [
+      "法令"
+    ],
+    "difficulty": 3,
+    "question": "法令で規定されている消費機器に関する周知及び調査、保安業務規程に関する次の記述のうち、正しいものはいくつあるか。\nイ 小売事業者は供給先の消費機器が技術基準に適合するか調査する。ただし、立入りの承諾を得られないときは除く。\nロ ガスによる災害又はそのおそれについて使用者から通知を受け措置を求められたガス小売事業者は、速やかに措置をとる。\nハ 消費機器が技術基準に不適合の場合、大臣は小売事業者にその修理、改造又は移転を命じることができる。\nニ 小売事業者は保安業務規程を変更しようとするとき、あらかじめ大臣に届け出る。\nホ 小売事業者及びガスの使用者は、保安業務規程を守る。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "イ",
+    "explanation": "正しい記述は2つ（イ、ニ）である。イは正しい、ロは誤り、ハは誤り、ニは正しい、ホは誤りである。イ 小売事業者の調査義務には、所有者又は占有者の立入り承諾を得られないときの例外がある。ロ 供給先の災害の通知を受けて速やかに措置する法的義務の主体は、一般ガス導管事業者等である。ハ 技術基準への適合を求める措置の名宛人は、消費機器の所有者又は占有者である。ニ 小売事業者が保安業務規程を変更するときは、変更前に届け出る。ホ 保安業務規程の遵守義務者は小売事業者とその従業者である。",
+    "choiceExplanations": {
+      "ア": "正しい記述は2つ（イ、ニ）であるため、1つではない。",
+      "イ": "正しい記述は2つ（イ、ニ）である。イは正しい、ロは誤り、ハは誤り、ニは正しい、ホは誤りである。",
+      "ウ": "正しい記述は2つ（イ、ニ）であるため、3つではない。",
+      "エ": "正しい記述は2つ（イ、ニ）であるため、4つではない。",
+      "オ": "正しい記述は2つ（イ、ニ）であるため、5つではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=15",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」法令 問15（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "2",
+    "subject": "法令",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 15
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-law-q15-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 法令 問15の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-law-q16",
+    "exam": "gas-otsu",
+    "session": "gas-law",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "法令",
+    "topicTags": [
+      "法令"
+    ],
+    "difficulty": 3,
+    "question": "消費機器の技術上の基準で規定されている次の記述のうち、いずれも正しいものの組合せはどれか。\nイ ガス消費量が12 kWを超える屋内用の密閉燃焼式以外のガス瞬間湯沸器には、原則として排気筒を接続し、構造等の理由で困難なら排気フードを設けることができる。\nロ 自然排気式燃焼器の排気筒のうち天井裏・床裏等にある部分は、排ガス温度が100 ℃を超える場合は金属材料で覆う。\nハ 自然排気式燃焼器の排気筒に接続する排気扇には、その停止時に燃焼を継続するための装置を設ける。\nニ 特定地下室等に設置する燃焼器には、告示の規格・方法による自動ガス遮断装置を設ける。\nホ 燃焼器は供給されるガスに適応したものとする。",
+    "choices": {
+      "ア": "イ、ニ",
+      "イ": "イ、ホ",
+      "ウ": "ロ、ハ",
+      "エ": "ロ、ニ",
+      "オ": "ハ、ホ"
+    },
+    "answer": "イ",
+    "explanation": "イ　対象の非密閉式湯沸器には排気筒を接続するのが原則で、構造上等の理由で困難なら排気フードで代替できる。ホ　機器が供給されるガスの種類に適合していることは、安全な燃焼の基本となる技術基準である。",
+    "choiceExplanations": {
+      "ア": "イ　対象の非密閉式湯沸器には排気筒を接続するのが原則で、構造上等の理由で困難なら排気フードで代替できる。ニ　地下室等で必要な安全措置は燃焼器と建物の区分に応じて適用され、設問のような一律の自動遮断装置規定ではない。",
+      "イ": "イ　対象の非密閉式湯沸器には排気筒を接続するのが原則で、構造上等の理由で困難なら排気フードで代替できる。ホ　機器が供給されるガスの種類に適合していることは、安全な燃焼の基本となる技術基準である。",
+      "ウ": "ロ　隠ぺい部分の防火措置は、金属で覆えばよいという記述では規定と一致しない。ハ　排気扇の停止時には燃焼を継続させず、燃焼を停止する側に安全制御する。",
+      "エ": "ロ　隠ぺい部分の防火措置は、金属で覆えばよいという記述では規定と一致しない。ニ　地下室等で必要な安全措置は燃焼器と建物の区分に応じて適用され、設問のような一律の自動遮断装置規定ではない。",
+      "オ": "ハ　排気扇の停止時には燃焼を継続させず、燃焼を停止する側に安全制御する。ホ　機器が供給されるガスの種類に適合していることは、安全な燃焼の基本となる技術基準である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=16",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」法令 問16（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "2",
+    "subject": "法令",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 16
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-law-q16-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 法令 問16の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q1",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "製造",
+    "topicTags": [
+      "製造"
+    ],
+    "difficulty": 3,
+    "question": "都市ガスの原料及びその取り扱いに関する次の記述のうち、いずれも誤っているものの組合せはどれか。\nイ メタンは常温では空気の約半分の重さで拡散しやすいが、−82 ℃以下の低温では空気より重い。\nロ LNGの濃縮は、外部からの入熱によりメタンを主成分とするボイルオフガスが発生するために生じる。\nハ LNG配管等を冷却するときは、上下の温度差によるボーイングを抑えるため時間をかける。\nニ 漏えいしたガスによる火災は、漏えいが続いていても早く消火する方が安全である。\nホ LNGを扱う機器には低温靱性に優れた材料を用いる。",
+    "choices": {
+      "ア": "イ、ハ",
+      "イ": "イ、ニ",
+      "ウ": "ロ、ニ",
+      "エ": "ロ、ホ",
+      "オ": "ハ、ホ"
+    },
+    "answer": "イ",
+    "explanation": "イ　出題の比較温度は実際に引用される約−113 ℃と合わず、提示された−82 ℃を境に空気より重いとはいえない。ニ　漏えいが続いたまま消火すると未燃ガスが広がる危険があるため、漏えい停止を含めた安全対応が必要である。",
+    "choiceExplanations": {
+      "ア": "イ　出題の比較温度は実際に引用される約−113 ℃と合わず、提示された−82 ℃を境に空気より重いとはいえない。ハ　配管が一様に収縮するように冷却を管理し、局部的な熱変形を避ける。",
+      "イ": "イ　出題の比較温度は実際に引用される約−113 ℃と合わず、提示された−82 ℃を境に空気より重いとはいえない。ニ　漏えいが続いたまま消火すると未燃ガスが広がる危険があるため、漏えい停止を含めた安全対応が必要である。",
+      "ウ": "ロ　メタン等が優先的に気化すると、貯槽に残る液の重質分の割合が高まる。ニ　漏えいが続いたまま消火すると未燃ガスが広がる危険があるため、漏えい停止を含めた安全対応が必要である。",
+      "エ": "ロ　メタン等が優先的に気化すると、貯槽に残る液の重質分の割合が高まる。ホ　極低温でもぜい性破壊を起こしにくい、低温靱性のある材料を用いる。",
+      "オ": "ハ　配管が一様に収縮するように冷却を管理し、局部的な熱変形を避ける。ホ　極低温でもぜい性破壊を起こしにくい、低温靱性のある材料を用いる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=24",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」製造 問1（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "2",
+    "subject": "製造",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 24
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q1-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 製造 問1の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q2",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "製造",
+    "topicTags": [
+      "製造"
+    ],
+    "difficulty": 3,
+    "question": "製造設備に関する次の記述のうち、いずれも誤っているものの組合せはどれか。\nイ 回転式スクリュー型圧縮機は、圧力が変化するとガス流量も変動する。\nロ ゲート弁は、開閉時のストロークが小さく開閉時間が短い。\nハ うず巻ポンプは軽量で構造が簡単であり、ガス製造所で多く採用されている。\nニ 円筒形LPG貯槽は加圧式で、比較的小容量の貯槽として広く使用されている。\nホ エアフィン式気化器は運転費が低廉であるが、着氷により連続運転時間に制約が生じる。",
+    "choices": {
+      "ア": "イ、ロ",
+      "イ": "イ、ハ",
+      "ウ": "ロ、ニ",
+      "エ": "ハ、ホ",
+      "オ": "ニ、ホ"
+    },
+    "answer": "ア",
+    "explanation": "イ　スクリュー型は容積式で、一定回転数なら圧力変化による流量変動は比較的小さい。ロ　ゲート弁は弁体を流路外まで移動させるため、ストロークを要し開閉が速い弁ではない。",
+    "choiceExplanations": {
+      "ア": "イ　スクリュー型は容積式で、一定回転数なら圧力変化による流量変動は比較的小さい。ロ　ゲート弁は弁体を流路外まで移動させるため、ストロークを要し開閉が速い弁ではない。",
+      "イ": "イ　スクリュー型は容積式で、一定回転数なら圧力変化による流量変動は比較的小さい。ハ　うず巻ポンプは遠心力を利用し、構造が比較的単純なので広く使われる。",
+      "ウ": "ロ　ゲート弁は弁体を流路外まで移動させるため、ストロークを要し開閉が速い弁ではない。ニ　円筒形の圧力貯槽は比較的小容量のLPG貯蔵に用いられる。",
+      "エ": "ハ　うず巻ポンプは遠心力を利用し、構造が比較的単純なので広く使われる。ホ　湿った外気に接する伝熱面が着氷すると熱交換能力が低下する。",
+      "オ": "ニ　円筒形の圧力貯槽は比較的小容量のLPG貯蔵に用いられる。ホ　湿った外気に接する伝熱面が着氷すると熱交換能力が低下する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=24",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」製造 問2（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "1",
+    "subject": "製造",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 24
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q2-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 製造 問2の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q3",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "製造",
+    "topicTags": [
+      "製造"
+    ],
+    "difficulty": 3,
+    "question": "製造設備の電気設備及び計装設備に関する次の記述のうち、いずれも正しいものの組合せはどれか。\nイ PID制御のD動作は、偏差を時間的に積分する。\nロ カスケード制御は、プロセス量を一定の比率に保つ制御である。\nハ 安全増防爆構造は、火花、アーク又は熱が可燃性ガス等に点火しないことが点火試験等で確認された構造である。\nニ 低圧電路の絶縁抵抗は、使用電圧が300 Vを超えるとき0.4 MΩ以上を要する。\nホ 事業用電気工作物に当たる電気設備の設置者は、保安規程の作成や電気主任技術者の選任などを行う。",
+    "choices": {
+      "ア": "イ、ロ",
+      "イ": "イ、ハ",
+      "ウ": "ロ、ニ",
+      "エ": "ハ、ホ",
+      "オ": "ニ、ホ"
+    },
+    "answer": "オ",
+    "explanation": "ニ　低圧電路のうち、使用電圧が300 Vを超える区分の絶縁抵抗は0.4 MΩ以上である。ホ　事業用電気工作物として、保安規程と主任技術者を含む自主保安体制を整える。",
+    "choiceExplanations": {
+      "ア": "イ　偏差を積分するのはI動作で、D動作は偏差の変化率を用いる。ロ　一定の比率に保つのは比率制御で、カスケード制御は外側の制御器の出力を内側の設定値にする。",
+      "イ": "イ　偏差を積分するのはI動作で、D動作は偏差の変化率を用いる。ハ　安全増防爆は通常運転で火花等を生じない機器に対して安全性を高める考え方で、提示された点火試験による説明とは異なる。",
+      "ウ": "ロ　一定の比率に保つのは比率制御で、カスケード制御は外側の制御器の出力を内側の設定値にする。ニ　低圧電路のうち、使用電圧が300 Vを超える区分の絶縁抵抗は0.4 MΩ以上である。",
+      "エ": "ハ　安全増防爆は通常運転で火花等を生じない機器に対して安全性を高める考え方で、提示された点火試験による説明とは異なる。ホ　事業用電気工作物として、保安規程と主任技術者を含む自主保安体制を整える。",
+      "オ": "ニ　低圧電路のうち、使用電圧が300 Vを超える区分の絶縁抵抗は0.4 MΩ以上である。ホ　事業用電気工作物として、保安規程と主任技術者を含む自主保安体制を整える。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=25",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」製造 問3（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "5",
+    "subject": "製造",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 25
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q3-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 製造 問3の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q4",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "製造",
+    "topicTags": [
+      "製造"
+    ],
+    "difficulty": 3,
+    "question": "都市ガスの熱量調整、燃焼性管理及び熱量測定に関する次の記述のうち、いずれも誤っているものの組合せはどれか。\nイ 燃焼速度がそのガス組成について最大となる値はMCPである。\nロ ウォッベ指数は総発熱量に比例し、比重の平方根に反比例する。\nハ FIDは有機化合物成分が水素炎で燃焼するときに電極間に発生する電圧を検出する。\nニ ガスクロマトグラフでは、ピーク面積を同条件の標準ガス等のピーク面積と比較して各成分を定量する。\nホ LPGを用いて増熱する場合、LPGは燃焼速度が比較的速いため、W–MCP図で混合ガスの燃焼性を確認する。",
+    "choices": {
+      "ア": "イ、ロ",
+      "イ": "イ、ハ",
+      "ウ": "ロ、ニ",
+      "エ": "ハ、ホ",
+      "オ": "ニ、ホ"
+    },
+    "answer": "エ",
+    "explanation": "ハ　FIDは炎中で生じたイオンが作る微小な電流を測る。ホ　W–MCP図は確認に使うが、増熱用のLPGを燃焼速度が比較的速いとする点が合わない。",
+    "choiceExplanations": {
+      "ア": "イ　ガス組成や空気比によって燃焼速度が変わり、MCPは燃焼速度の最大を表す。ロ　同じノズルでの熱入力の比較に用い、総発熱量を相対密度の平方根で割る。",
+      "イ": "イ　ガス組成や空気比によって燃焼速度が変わり、MCPは燃焼速度の最大を表す。ハ　FIDは炎中で生じたイオンが作る微小な電流を測る。",
+      "ウ": "ロ　同じノズルでの熱入力の比較に用い、総発熱量を相対密度の平方根で割る。ニ　成分ごとにピークの面積と既知濃度での応答を比較することで定量できる。",
+      "エ": "ハ　FIDは炎中で生じたイオンが作る微小な電流を測る。ホ　W–MCP図は確認に使うが、増熱用のLPGを燃焼速度が比較的速いとする点が合わない。",
+      "オ": "ニ　成分ごとにピークの面積と既知濃度での応答を比較することで定量できる。ホ　W–MCP図は確認に使うが、増熱用のLPGを燃焼速度が比較的速いとする点が合わない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=25",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」製造 問4（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "4",
+    "subject": "製造",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 25
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q4-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 製造 問4の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q5",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "製造",
+    "topicTags": [
+      "製造"
+    ],
+    "difficulty": 3,
+    "question": "次表は都市ガスの付臭方式の特徴をまとめたものである。原本の表のイ〜ハに当てはまる語句の組合せとして最も適切なものはどれか。",
+    "choices": {
+      "ア": "滴下注入方式／蒸発方式／ポンプ注入方式",
+      "イ": "滴下注入方式／ポンプ注入方式／蒸発方式",
+      "ウ": "蒸発方式／滴下注入方式／ポンプ注入方式",
+      "エ": "蒸発方式／ポンプ注入方式／滴下注入方式",
+      "オ": "ポンプ注入方式／滴下注入方式／蒸発方式"
+    },
+    "answer": "ウ",
+    "explanation": "蒸発方式は低処理量、滴下注入方式は小～中処理量、ポンプ注入方式は中～大処理量に対応する。",
+    "choiceExplanations": {
+      "ア": "イは混合付臭剤に通常不適な蒸発方式であり、滴下注入方式ではない。",
+      "イ": "蒸発方式は混合成分に沸点差があると組成を保ちにくいので、ハではなくイに対応する。",
+      "ウ": "蒸発方式は低処理量、滴下注入方式は小～中処理量、ポンプ注入方式は中～大処理量に対応する。",
+      "エ": "ポンプ注入方式は表の中～大処理量のハに当たり、ロではない。",
+      "オ": "ポンプ注入方式は処理量の大きい側に対応し、イの特性とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=26",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」製造 問5（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "3",
+    "subject": "製造",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 26
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q5-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 製造 問5の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q6",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "製造",
+    "topicTags": [
+      "製造"
+    ],
+    "difficulty": 3,
+    "question": "製造設備の保安及び防災に関する次の記述のうち、いずれも誤っているものの組合せはどれか。\nイ 可燃性ガス設備の近くの電気設備は、場所及びガスの種類に応じた防爆性能を有する。\nロ ガス主任技術者は、原則として保安統括者、保安管理者（又は保安主任者）又は保安係員に選ばれた者から選任する。\nハ 製造設備の運転・監視の制御システムには、リスクを判断して適切なセキュリティ対策を講じる。\nニ 停電等でBOG圧縮機の停止が長引くときは、LNG貯槽の内部圧力を注視し、必要に応じて降圧の準備を行う。\nホ 台風接近時は大気圧が低下するため、事前にLNG貯槽の圧力を上げておく。",
+    "choices": {
+      "ア": "イ、ハ",
+      "イ": "イ、ニ",
+      "ウ": "ロ、ニ",
+      "エ": "ロ、ホ",
+      "オ": "ハ、ホ"
+    },
+    "answer": "エ",
+    "explanation": "ロ　ガス主任技術者の選任には事業に対応する免状等が必要であり、保安係員まで含めた列挙がその原則ではない。ホ　貯槽内外の差圧を管理する必要があり、大気圧が下がる前に貯槽内圧を上げるという対応は適切でない。",
+    "choiceExplanations": {
+      "ア": "イ　設置区域の危険度と対象ガスの性質に適合する防爆性能を選定する。ハ　設備の制御システムの保安には、リスクの評価に応じた防御策を含む。",
+      "イ": "イ　設置区域の危険度と対象ガスの性質に適合する防爆性能を選定する。ニ　気化ガスを処理できないと貯槽内圧が上がるおそれがあり、監視と所定の対応が必要になる。",
+      "ウ": "ロ　ガス主任技術者の選任には事業に対応する免状等が必要であり、保安係員まで含めた列挙がその原則ではない。ニ　気化ガスを処理できないと貯槽内圧が上がるおそれがあり、監視と所定の対応が必要になる。",
+      "エ": "ロ　ガス主任技術者の選任には事業に対応する免状等が必要であり、保安係員まで含めた列挙がその原則ではない。ホ　貯槽内外の差圧を管理する必要があり、大気圧が下がる前に貯槽内圧を上げるという対応は適切でない。",
+      "オ": "ハ　設備の制御システムの保安には、リスクの評価に応じた防御策を含む。ホ　貯槽内外の差圧を管理する必要があり、大気圧が下がる前に貯槽内圧を上げるという対応は適切でない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=26",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」製造 問6（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "4",
+    "subject": "製造",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 26
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q6-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 製造 問6の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q7",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "製造",
+    "topicTags": [
+      "製造"
+    ],
+    "difficulty": 3,
+    "question": "製造設備の建設及び操業に関する次の記述のうち、いずれも誤っているものの組合せはどれか。\nイ レベル1地震動に対する耐震性能評価では、構造物の塑性変形能力を見込んで応答塑性率を確認する。\nロ LNG貯蔵中はBOGが発生し、濃縮の度合いは貯槽レベルにより異なる。\nハ LNG受入れ時にはBOGが増え、圧縮機負荷に伴う電力デマンドを管理する。\nニ LNGサテライト基地では、出荷元のLNG熱量に依存し貯槽数も限定されるため、濃縮を管理する。\nホ 製造所での熱量等は毎日1回以上、臭気濃度は毎月1回以上、特殊成分は毎月1回以上測定・記録する。",
+    "choices": {
+      "ア": "イ、ロ",
+      "イ": "イ、ホ",
+      "ウ": "ロ、ハ",
+      "エ": "ハ、ニ",
+      "オ": "ニ、ホ"
+    },
+    "answer": "イ",
+    "explanation": "イ　レベル1では基本的に弾性範囲内の応答を確認し、塑性変形能力を考慮する評価は主にレベル2地震動に対応する。ホ　熱量、臭気、特殊成分については個別に測定方法と頻度が定まり、設問で挙げる頻度をすべての製造所に一律に適用する記述は誤りである。",
+    "choiceExplanations": {
+      "ア": "イ　レベル1では基本的に弾性範囲内の応答を確認し、塑性変形能力を考慮する評価は主にレベル2地震動に対応する。ロ　入熱の影響と貯槽内の液量が変わるため、濃縮の進行速度は液面レベルによって異なる。",
+      "イ": "イ　レベル1では基本的に弾性範囲内の応答を確認し、塑性変形能力を考慮する評価は主にレベル2地震動に対応する。ホ　熱量、臭気、特殊成分については個別に測定方法と頻度が定まり、設問で挙げる頻度をすべての製造所に一律に適用する記述は誤りである。",
+      "ウ": "ロ　入熱の影響と貯槽内の液量が変わるため、濃縮の進行速度は液面レベルによって異なる。ハ　受入れ時のBOG増加は圧縮機の電力負荷を押し上げるので、最大需要電力の管理が必要となる。",
+      "エ": "ハ　受入れ時のBOG増加は圧縮機の電力負荷を押し上げるので、最大需要電力の管理が必要となる。ニ　貯槽が少ないサテライトでは他の貯槽と混合して熱量差を調整しにくく、貯蔵中の濃縮を把握する。",
+      "オ": "ニ　貯槽が少ないサテライトでは他の貯槽と混合して熱量差を調整しにくく、貯蔵中の濃縮を把握する。ホ　熱量、臭気、特殊成分については個別に測定方法と頻度が定まり、設問で挙げる頻度をすべての製造所に一律に適用する記述は誤りである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=27",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」製造 問7（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "2",
+    "subject": "製造",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 27
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q7-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 製造 問7の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q8",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "製造",
+    "topicTags": [
+      "製造"
+    ],
+    "difficulty": 3,
+    "question": "製造設備の保全に関する次の記述のうち、いずれも誤っているものの組合せはどれか。\nイ メカニカルシールの漏れはシートリングの偏摩耗によるものが多く、その場合は端面を加工する。\nロ エロージョンコロージョンの損耗は、単独に腐食又は摩耗が作用するときの和より大きくなる。\nハ 溶接部の硬度が高い部分に繰返しひずみが集中し、疲労強度が低下する。\nニ 超音波厚み計は、裏面で反射した超音波の伝搬時間から板厚を求める。\nホ 放射線透過試験は欠陥の投影像が得られるが、欠陥形状の直観性に欠ける。",
+    "choices": {
+      "ア": "イ、ハ",
+      "イ": "イ、ニ",
+      "ウ": "ロ、ニ",
+      "エ": "ロ、ホ",
+      "オ": "ハ、ホ"
+    },
+    "answer": "オ",
+    "explanation": "ハ　同じ荷重で塑性ひずみが集中しやすいのは、硬度が低く変形しやすい部分である。ホ　透過画像で欠陥の投影形状を確認できるのは、この方法の利点である。",
+    "choiceExplanations": {
+      "ア": "イ　偏摩耗でシール面が平らでなくなると漏れが起こり、端面を適切に修整する必要がある。ハ　同じ荷重で塑性ひずみが集中しやすいのは、硬度が低く変形しやすい部分である。",
+      "イ": "イ　偏摩耗でシール面が平らでなくなると漏れが起こり、端面を適切に修整する必要がある。ニ　音速と反射波の到達までの時間から往復距離を求め、その半分を厚さとする。",
+      "ウ": "ロ　流体による物理的な損耗と化学的な腐食が相互に促進し、合計より大きな損傷を生じる。ニ　音速と反射波の到達までの時間から往復距離を求め、その半分を厚さとする。",
+      "エ": "ロ　流体による物理的な損耗と化学的な腐食が相互に促進し、合計より大きな損傷を生じる。ホ　透過画像で欠陥の投影形状を確認できるのは、この方法の利点である。",
+      "オ": "ハ　同じ荷重で塑性ひずみが集中しやすいのは、硬度が低く変形しやすい部分である。ホ　透過画像で欠陥の投影形状を確認できるのは、この方法の利点である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=27",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」製造 問8（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "5",
+    "subject": "製造",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 27
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q8-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 製造 問8の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q9",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "製造",
+    "topicTags": [
+      "製造"
+    ],
+    "difficulty": 3,
+    "question": "環境対策に関する次の記述のうち、いずれも誤っているものの組合せはどれか。\nイ 排ガス再循環は、燃焼排ガスの一部を燃焼用空気に混ぜて、CO₂の発生を減らす。\nロ 水素イオン濃度指数は水域で規制される項目で、多くの水中生物や農作物に望ましい水のpHは5.8〜8.6である。\nハ 天然ガスは石炭や石油より炭素原子の割合が大きいので、燃焼時のCO₂排出量が少ない。\nニ カーボンニュートラルとは温室効果ガスの排出量と吸収量の均衡をいう。\nホ e-methaneは、グリーン水素等の非化石エネルギー源を原料に製造した合成メタンである。",
+    "choices": {
+      "ア": "イ、ハ",
+      "イ": "イ、ホ",
+      "ウ": "ロ、ハ",
+      "エ": "ロ、ニ",
+      "オ": "ニ、ホ"
+    },
+    "answer": "ア",
+    "explanation": "イ　排ガス再循環で火炎温度を低くする主目的は、窒素酸化物の生成抑制である。ハ　天然ガスは石炭等より水素に対する炭素の割合が小さく、同じ熱量を得るときのCO₂排出が少ない。",
+    "choiceExplanations": {
+      "ア": "イ　排ガス再循環で火炎温度を低くする主目的は、窒素酸化物の生成抑制である。ハ　天然ガスは石炭等より水素に対する炭素の割合が小さく、同じ熱量を得るときのCO₂排出が少ない。",
+      "イ": "イ　排ガス再循環で火炎温度を低くする主目的は、窒素酸化物の生成抑制である。ホ　非化石エネルギー由来の水素等を原料として合成したメタンを指す。",
+      "ウ": "ロ　pHは排水の規制項目であり、生物や農作物に適した水質を考える際の指標でもある。ハ　天然ガスは石炭等より水素に対する炭素の割合が小さく、同じ熱量を得るときのCO₂排出が少ない。",
+      "エ": "ロ　pHは排水の規制項目であり、生物や農作物に適した水質を考える際の指標でもある。ニ　排出の削減と吸収・除去を合わせ、差引きで温室効果ガスの排出を実質ゼロにする。",
+      "オ": "ニ　排出の削減と吸収・除去を合わせ、差引きで温室効果ガスの排出を実質ゼロにする。ホ　非化石エネルギー由来の水素等を原料として合成したメタンを指す。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=28",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」製造 問9（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "1",
+    "subject": "製造",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 28
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q9-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 製造 問9の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q10",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "供給",
+    "topicTags": [
+      "供給"
+    ],
+    "difficulty": 3,
+    "question": "口径10 cm、延長200 mの低圧導管において、起点圧力と末端圧力との差が0.4 kPaのとき、ガス流量は120 m³/hであった。口径20 cm、延長400 mの低圧導管で、圧力差が0.1 kPaのときのガス流量（m³/h）はどれか。同一のガスとし、高低差は考慮しない。",
+    "choices": {
+      "ア": "120",
+      "イ": "240",
+      "ウ": "260",
+      "エ": "340",
+      "オ": "480"
+    },
+    "answer": "イ",
+    "explanation": "低圧導管の流量は口径の5乗と圧力差に比例し、延長に反比例する量の平方根で比べる。流量比は√(2⁵×1/4×1/2)＝2なので、240 m³/hとなる。",
+    "choiceExplanations": {
+      "ア": "圧力差の減少と延長の増加を考えても、口径が倍になる効果が大きく、同じ流量にはならない。",
+      "イ": "低圧導管の流量は口径の5乗と圧力差に比例し、延長に反比例する量の平方根で比べる。流量比は√(2⁵×1/4×1/2)＝2なので、240 m³/hとなる。",
+      "ウ": "260 m³/hは、三つの条件の倍率を反映した2倍より大きい。",
+      "エ": "圧力差が4分の1となり、延長も2倍になるので、口径の増加だけから流量を見積もれない。",
+      "オ": "480 m³/hは4倍だが、平方根の中に得られる倍率4をそのまま適用した値である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=29",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」供給 問10（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "2",
+    "subject": "供給",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 29
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q10-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 供給 問10の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q11",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "供給",
+    "topicTags": [
+      "供給"
+    ],
+    "difficulty": 3,
+    "question": "整圧器に関する次の記述のうち、誤っているものはどれか。",
+    "choices": {
+      "ア": "軸流式整圧器の二次圧力はパイロットスプリングで設定する。",
+      "イ": "パイロット式整圧器は、一次と二次の差圧が一定以上ないと作動できなくなる。",
+      "ウ": "大規模地区整圧器には、オフセット及びロックアップが小さく、動特性に優れたものを選定する。",
+      "エ": "ハウスレギュレーターは、一般に不純物除去装置と圧力上昇防止装置を一体化している。",
+      "オ": "並列設置で予備整圧器を分解点検したときは、点検後に常用器を停止し、予備器の作動を確認する。"
+    },
+    "answer": "ウ",
+    "explanation": "大規模地区では動特性やオフセットに加え、選定時に運転条件に合う閉止時の挙動を検討する。ロックアップが小さいことを一般条件に挙げた点が公式正答で誤りとされている。",
+    "choiceExplanations": {
+      "ア": "軸流式の二次圧力の設定は、パイロット部のばねの力を調節して行う。",
+      "イ": "パイロット式の主弁を駆動するには、所要の一次・二次差圧が必要である。",
+      "ウ": "大規模地区では動特性やオフセットに加え、選定時に運転条件に合う閉止時の挙動を検討する。ロックアップが小さいことを一般条件に挙げた点が公式正答で誤りとされている。",
+      "エ": "需要家向けの小形調整器には、異物対策と圧力上昇対策を一体にしたものが一般的に用いられる。",
+      "オ": "分解点検後は常用器からの切替えによって、予備器が実運転で調整できることを確かめる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=29",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」供給 問11（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "3",
+    "subject": "供給",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 29
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q11-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 供給 問11の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q12",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "供給",
+    "topicTags": [
+      "供給"
+    ],
+    "difficulty": 3,
+    "question": "次のガスメーターのうち、推量式に分類されるものはいくつあるか。\nイ 渦流式ガスメーター\nロ 超音波式ガスメーター\nハ 膜式ガスメーター\nニ オリフィス式ガスメーター\nホ 回転子式ガスメーター",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "explanation": "正しい記述は3つ（イ、ロ、ニ）である。イは正しい、ロは正しい、ハは誤り、ニは正しい、ホは誤りである。イ 渦の発生周波数から流速を求める推量式である。ロ 超音波の伝搬時間差等から流速を求める推量式である。ハ 計量室の容積を使って直接測定する実測式である。ニ 絞りの前後の差圧から流量を求める推量式である。ホ 回転子で区切られた容積の積算で計量する実測式である。",
+    "choiceExplanations": {
+      "ア": "正しい記述は3つ（イ、ロ、ニ）であるため、1つではない。",
+      "イ": "正しい記述は3つ（イ、ロ、ニ）であるため、2つではない。",
+      "ウ": "正しい記述は3つ（イ、ロ、ニ）である。イは正しい、ロは正しい、ハは誤り、ニは正しい、ホは誤りである。",
+      "エ": "正しい記述は3つ（イ、ロ、ニ）であるため、4つではない。",
+      "オ": "正しい記述は3つ（イ、ロ、ニ）であるため、5つではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=30",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」供給 問12（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "3",
+    "subject": "供給",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 30
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q12-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 供給 問12の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q13",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "供給",
+    "topicTags": [
+      "供給"
+    ],
+    "difficulty": 3,
+    "question": "内圧を受ける鋼管の管厚t（mm）を求める場合のガス事業法の管厚計算式について、原本の式のイ〜ハに当てはまる組合せとして適切なものはどれか。鋼管の外径と内径の比は1.5以下とする。",
+    "choices": {
+      "ア": "導管の内径／2／許容引張応力",
+      "イ": "導管の内径／4／引張強さ",
+      "ウ": "導管の内径／2／引張強さ",
+      "エ": "導管の外径／4／引張強さ",
+      "オ": "導管の外径／2／許容引張応力"
+    },
+    "answer": "オ",
+    "explanation": "公式の式では分子に内圧と外径の積、分母に係数2と許容引張応力を使い、求めた圧力に対する厚さに腐れしろを加える。",
+    "choiceExplanations": {
+      "ア": "係数と応力の種類は合うが、式の分子に使う径は外径である。",
+      "イ": "分子に使うのは外径で、分母は引張強さそのものではなく許容引張応力を用いる。",
+      "ウ": "係数2は合うが、導管の外径と許容引張応力を使う。",
+      "エ": "外径は合っているが、分母では許容引張応力と継手効率の積に係数2を掛ける。",
+      "オ": "公式の式では分子に内圧と外径の積、分母に係数2と許容引張応力を使い、求めた圧力に対する厚さに腐れしろを加える。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=30",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」供給 問13（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "5",
+    "subject": "供給",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 30
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q13-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 供給 問13の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q14",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "供給",
+    "topicTags": [
+      "供給"
+    ],
+    "difficulty": 3,
+    "question": "導管の腐食に関する次の記述のうち、誤っているものはどれか。",
+    "choices": {
+      "ア": "レール漏れ電流による電食は、電気鉄道のレール電流の一部が地中に流出することに起因する。",
+      "イ": "近接導管に他の防食施設から防食電流が流入すると、電流の流出部で電食が起きることがある。",
+      "ウ": "通気性の異なる土壌の埋設導管では、通気性の悪い部分がアノードになることがある。",
+      "エ": "コンクリート中と土壌中にまたがる導管では、コンクリート部分をアノード、土壌部分をカソードとするマクロセルが形成される。",
+      "オ": "土壌中で異なる金属が電気的に接続されると、自然電位の低い金属が腐食することがある。"
+    },
+    "answer": "エ",
+    "explanation": "一般にコンクリート中の鋼はアルカリ性環境で不動態化し、土壌側がアノードとなりやすい。",
+    "choiceExplanations": {
+      "ア": "電気鉄道から漏れた電流が埋設金属を通ると、電流が金属から土壌へ出る箇所で腐食のおそれがある。",
+      "イ": "外部の電気防食設備による干渉では、導管から電流が出る部位が陽極となる。",
+      "ウ": "酸素供給が少ない部位が陽極となり、通気差による腐食電池が形成される。",
+      "エ": "一般にコンクリート中の鋼はアルカリ性環境で不動態化し、土壌側がアノードとなりやすい。",
+      "オ": "異種金属が導通すると電位差でガルバニック電池が生じ、より卑な金属が陽極として溶出しやすい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=31",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」供給 問14（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "4",
+    "subject": "供給",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 31
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q14-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 供給 問14の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q15",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "供給",
+    "topicTags": [
+      "供給"
+    ],
+    "difficulty": 3,
+    "question": "導管の工事に関する次の記述のうち、誤っているものはいくつあるか。\nイ 外径80 mm以上の低圧本支管を道路に埋設する際、管表面に2 m間隔で占用物件の名称、管理者、埋設年及び圧力を明示した。\nロ 屋内露出部の横引きにフレキ管を用い、3 mごとに支持固定した。\nハ 漏えいしたガスが滞留するおそれのあるピット内に配管したので、点検口を設けた。\nニ 防火区画を貫通する内管を施工し、壁とのすき間をモルタルで埋めた。\nホ 耐圧試験を最高使用圧力の1.5倍以上の圧力で、不活性ガスを用いて行った。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ア",
+    "explanation": "誤っている記述は1つ（ロ）である。イは正しい、ロは誤り、ハは正しい、ニは正しい、ホは正しいである。イ 道路に埋設する対象管では、工事で識別できるよう管の表面に必要事項を明示する。ロ 横引きで露出するフレキ管は支持間隔を十分に短くして固定する必要があり、3 mごとでは間隔が長すぎる。ハ 滞留のおそれのあるピットは、点検できるようにする。ニ 防火区画を貫通するすき間を耐火性の材料で埋め、区画としての機能を維持する。ホ 対象工事の耐圧試験は、最高使用圧力に対する所定の倍率と適切な試験媒体を用いる。",
+    "choiceExplanations": {
+      "ア": "誤っている記述は1つ（ロ）である。イは正しい、ロは誤り、ハは正しい、ニは正しい、ホは正しいである。",
+      "イ": "誤っている記述は1つ（ロ）であるため、2つではない。",
+      "ウ": "誤っている記述は1つ（ロ）であるため、3つではない。",
+      "エ": "誤っている記述は1つ（ロ）であるため、4つではない。",
+      "オ": "誤っている記述は1つ（ロ）であるため、5つではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=31",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」供給 問15（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "1",
+    "subject": "供給",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 31
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q15-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 供給 問15の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q16",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "供給",
+    "topicTags": [
+      "供給"
+    ],
+    "difficulty": 3,
+    "question": "導管の溶接欠陥に関する次の記述のうち、誤っているものはどれか。",
+    "choices": {
+      "ア": "ブローホールとは、溶接金属内に残留したガスのため空洞が生じた状態をいう。",
+      "イ": "融合不良とは、溶接金属と母材又は溶接金属同士が溶着していない状態をいう。",
+      "ウ": "スラグ巻込みとは、スラグが溶接金属に残留したものをいう。",
+      "エ": "溶込み不良とは、開先の一部がそのまま残った状態をいう。",
+      "オ": "クレーターとは、表面における溶接金属と母材の境界の凹みをいう。"
+    },
+    "answer": "オ",
+    "explanation": "クレーターはビードの終端にできるくぼみである。母材と溶接金属の境界の溝状の凹みはアンダーカットという。",
+    "choiceExplanations": {
+      "ア": "凝固時にガスが閉じ込められてできる細孔がブローホールである。",
+      "イ": "母材と溶接金属の界面又は溶接層間が十分に一体化しない欠陥である。",
+      "ウ": "溶融部から分離すべき非金属のスラグが内部に取り残された状態である。",
+      "エ": "必要な深さまで溶け込まず、開先の一部が未溶接のまま残る欠陥である。",
+      "オ": "クレーターはビードの終端にできるくぼみである。母材と溶接金属の境界の溝状の凹みはアンダーカットという。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=31",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」供給 問16（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "5",
+    "subject": "供給",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 31
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q16-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 供給 問16の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q17",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "供給",
+    "topicTags": [
+      "供給"
+    ],
+    "difficulty": 3,
+    "question": "導管の維持管理に関する次の記述のうち、誤っているものはいくつあるか。\nイ 半導体式ガス検知器は、雰囲気ガスの吸着で半導体の電導度が変わることを利用する。\nロ 本支管への浸水による供給支障の際に、管内から採取した水が水道水か判別するため、水道事業者に緊急調査を依頼した。\nハ 低圧導管の管体の腐食孔に対し、樹脂ライニング系工法による恒久修理を行った。\nニ 中圧導管の管体の亀裂からの漏えいを修理するため、鋼製修理バンド工法を適用した。\nホ 需要家等からのガス漏えい通報への出動を、内容に応じて一般出動、緊急出動、特別出動に区分する。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ア",
+    "explanation": "誤っている記述は1つ（ニ）である。イは正しい、ロは正しい、ハは正しい、ニは誤り、ホは正しいである。イ 半導体表面へのガスの吸着が電導度を変えるので、その変化からガスを検知できる。ロ 水道由来かどうかを調べるには、当該水道事業者との連携が必要になる。ハ 低圧導管では、腐食孔等を対象にライニング系の恒久修理が使われる場合がある。ニ 修理バンドを腐食などによる欠損に適用することと、進展しうる管体亀裂の修理とでは必要な対処が異なる。ホ 通報の内容に応じた出動区分で、必要な人員や対応の緊急度を判断する。",
+    "choiceExplanations": {
+      "ア": "誤っている記述は1つ（ニ）である。イは正しい、ロは正しい、ハは正しい、ニは誤り、ホは正しいである。",
+      "イ": "誤っている記述は1つ（ニ）であるため、2つではない。",
+      "ウ": "誤っている記述は1つ（ニ）であるため、3つではない。",
+      "エ": "誤っている記述は1つ（ニ）であるため、4つではない。",
+      "オ": "誤っている記述は1つ（ニ）であるため、5つではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=32",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」供給 問17（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "1",
+    "subject": "供給",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 32
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q17-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 供給 問17の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q18",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "供給",
+    "topicTags": [
+      "供給"
+    ],
+    "difficulty": 3,
+    "question": "地震対策に関する次の記述のうち、誤っているものはどれか。",
+    "choices": {
+      "ア": "中・低圧導管の地盤変位吸収能力は、実験で漏えいが生じるときの地盤変位量で評価する。",
+      "イ": "特殊地形地区の非裏波溶接中圧鋼管の耐震性向上に反転シール工法が適用できる。",
+      "ウ": "供給停止判断のため、SI値又は最大速度値を測定できる地震計を統合ブロックに1台以上設置する必要がある。",
+      "エ": "第1次緊急停止判断は、巡回点検などで経時的に得られる被害情報と緊急時対応能力等に応じて実施する。",
+      "オ": "供給継続地区からの漏えい通報には、供給停止地区に優先して応じ二次災害防止措置を講じる。"
+    },
+    "answer": "エ",
+    "explanation": "第1次は地震直後の観測値等を用いる速やかな判断であり、巡回で順次得る被害情報を用いる段階の判断とは区別する。",
+    "choiceExplanations": {
+      "ア": "地盤の変位が加わっても漏えいなく追従できる限界を、配管系に漏えいが生じる時点の変位で評価する。",
+      "イ": "反転シールは、既設の対象鋼管の継手部について耐震性を高めるために使われる。",
+      "ウ": "供給停止判断に利用できる観測値を取得できるよう、統合ブロックに地震計を設ける。",
+      "エ": "第1次は地震直後の観測値等を用いる速やかな判断であり、巡回で順次得る被害情報を用いる段階の判断とは区別する。",
+      "オ": "供給が継続している地区では漏えいが続く可能性があり、通報に迅速に対応する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=32",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」供給 問18（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "4",
+    "subject": "供給",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 32
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q18-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 供給 問18の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q19",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "消費",
+    "topicTags": [
+      "消費"
+    ],
+    "difficulty": 3,
+    "question": "ガスの燃焼及び伝熱に関する次の記述のうち、誤っているものはどれか。",
+    "choices": {
+      "ア": "ガスの燃焼方式は、ガスと空気が混合する場所や一次空気量で、赤火燃焼式やブンゼン燃焼式等に大別される。",
+      "イ": "実際のガス機器では、理論空気量だけで完全燃焼できず、20〜40％の過剰空気を要する。",
+      "ウ": "濃淡燃焼バーナーはブンゼン式とセミブンゼン式のバーナーを交互に配置した構造である。",
+      "エ": "ブンゼン燃焼式の外炎では、内炎で発生した中間生成物が二次空気と接触して反応する。",
+      "オ": "対流は流体の運動により熱が移動する現象である。"
+    },
+    "answer": "ウ",
+    "explanation": "濃淡燃焼は燃料と空気の混合比が高い火炎と低い火炎を組み合わせる方式であり、二種類の燃焼器を交互に置くことによる定義ではない。",
+    "choiceExplanations": {
+      "ア": "一次空気を燃料ガスとどこでどの程度混ぜるかは、燃焼方式を分ける基準の一つである。",
+      "イ": "実機では空気とガスの混合が完全には一様にならないため、理論量を上回る空気を供給する。",
+      "ウ": "濃淡燃焼は燃料と空気の混合比が高い火炎と低い火炎を組み合わせる方式であり、二種類の燃焼器を交互に置くことによる定義ではない。",
+      "エ": "外炎は、内炎を通過した成分が周囲からの二次空気と混合して燃焼する領域である。",
+      "オ": "高温の流体が移動してエネルギーを運ぶ伝熱が対流である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=33",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」消費 問19（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "3",
+    "subject": "消費",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 33
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q19-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 消費 問19の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q20",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "消費",
+    "topicTags": [
+      "消費"
+    ],
+    "difficulty": 3,
+    "question": "ガスの燃焼に関する次の記述のうち、誤っているものはどれか。",
+    "choices": {
+      "ア": "ブンゼンバーナーでは高入力のときに一次空気量を上げるとリフティングが、下げると不完全燃焼が生じる場合がある。",
+      "イ": "一部の炎口が詰まり、炎口同士の間隔が実質的に広がると、火移り不良が生じる場合がある。",
+      "ウ": "イエローチップの炎で使用すると、すすが熱交換器等に付着し、不完全燃焼につながるおそれがある。",
+      "エ": "ブンゼンバーナーではガス組成が変化してウォッベ指数が小さくなると、不完全燃焼が発生するおそれがある。",
+      "オ": "バーナーを通る混合ガスが極端に加熱されると、フラッシュバックが発生する場合がある。"
+    },
+    "answer": "エ",
+    "explanation": "同じ供給条件でウォッベ指数が小さくなるとノズルからの熱入力が低下する。設問は不完全燃焼側への影響の説明を取り違えている。",
+    "choiceExplanations": {
+      "ア": "一次空気量によって混合気の流れや燃焼状態が変わり、安定に燃焼する動作範囲がある。",
+      "イ": "炎口の閉塞は隣の炎口への炎の伝わりを妨げる原因となる。",
+      "ウ": "付着したすすが空気の流路や伝熱面に影響し、燃焼状態を悪化させることがある。",
+      "エ": "同じ供給条件でウォッベ指数が小さくなるとノズルからの熱入力が低下する。設問は不完全燃焼側への影響の説明を取り違えている。",
+      "オ": "混合気の予熱で燃焼速度が上がると、火炎の安定性が失われる場合がある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=33",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」消費 問20（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "4",
+    "subject": "消費",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 33
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q20-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 消費 問20の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q21",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 21,
+    "type": "multiple-choice",
+    "category": "消費",
+    "topicTags": [
+      "消費"
+    ],
+    "difficulty": 3,
+    "question": "家庭用ガス温水機器に関する次の記述のうち、いずれも誤っているものの組合せはどれか。\nイ 給排気が閉そくするとファン風量が少なくなり、モーター電流が小さくなる特徴を自己診断に利用する方法がある。\nロ 屋内から燃焼空気を取り込み排気筒で屋外に排出するふろがまをBF式という。\nハ Q機能により、冷水サンドイッチ現象を緩和して湯温を安定させられる。\nニ 元止め式瞬間湯沸器は使用場所に取り付け、出湯管から直接湯を使う。\nホ 20号の給湯器は、水温10 ℃から40 ℃への昇温で毎分20 L供給できる。",
+    "choices": {
+      "ア": "イ、ハ",
+      "イ": "イ、ニ",
+      "ウ": "ロ、ニ",
+      "エ": "ロ、ホ",
+      "オ": "ハ、ホ"
+    },
+    "answer": "エ",
+    "explanation": "ロ　BF式は屋外から燃焼空気を取り込む密閉式であり、室内空気を使う方式とは異なる。ホ　号数は25 ℃の温度上昇での毎分給湯量であり、30 ℃上昇なら20 L/minに届かない。",
+    "choiceExplanations": {
+      "ア": "イ　給排気経路が詰まるとファンの負荷状態が変化するため、電流の変化で閉塞を検知する方式がある。ハ　Q機能は短い間隔で給湯を止めて再開するときなどに、生じやすい湯温変動を緩和する。",
+      "イ": "イ　給排気経路が詰まるとファンの負荷状態が変化するため、電流の変化で閉塞を検知する方式がある。ニ　元止め式は湯沸器本体側で給水を開閉し、機器の出湯管から使う。",
+      "ウ": "ロ　BF式は屋外から燃焼空気を取り込む密閉式であり、室内空気を使う方式とは異なる。ニ　元止め式は湯沸器本体側で給水を開閉し、機器の出湯管から使う。",
+      "エ": "ロ　BF式は屋外から燃焼空気を取り込む密閉式であり、室内空気を使う方式とは異なる。ホ　号数は25 ℃の温度上昇での毎分給湯量であり、30 ℃上昇なら20 L/minに届かない。",
+      "オ": "ハ　Q機能は短い間隔で給湯を止めて再開するときなどに、生じやすい湯温変動を緩和する。ホ　号数は25 ℃の温度上昇での毎分給湯量であり、30 ℃上昇なら20 L/minに届かない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=34",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」消費 問21（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "4",
+    "subject": "消費",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 34
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q21-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 消費 問21の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q22",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 22,
+    "type": "multiple-choice",
+    "category": "消費",
+    "topicTags": [
+      "消費"
+    ],
+    "difficulty": 3,
+    "question": "家庭用ガス機器に関する次の記述のうち、誤っているものはどれか。",
+    "choices": {
+      "ア": "こんろの中火点火機能は、点火時の着衣着火火災を防ぐためのものである。",
+      "イ": "オーブンは庫内温度を調節し、250〜300 ℃の熱風を循環させて短時間で多量の調理ができる。",
+      "ウ": "ファンヒーターは転倒や強い衝撃時にガスを遮断する装置を備える。",
+      "エ": "FF式暖房機の排気筒外れ検知装置には、微少電流の導通を検知する方法が用いられている。",
+      "オ": "回転式ドラム乾燥機は、センサーに接触した衣類の温度を測定して湿り具合を判断する。"
+    },
+    "answer": "オ",
+    "explanation": "衣類の湿り具合を接触センサーで判定する方式では、水分量による電気抵抗の変化を利用する。",
+    "choiceExplanations": {
+      "ア": "点火炎が大きくなりすぎないようにして、衣服などへの着火を防ぐ機能である。",
+      "イ": "熱風循環で庫内の伝熱が進むため、多量でも短時間で調理しやすい。",
+      "ウ": "転倒時に燃料供給を止める安全装置で、運転継続による火災を防ぐ。",
+      "エ": "排気筒の装着で検知回路が導通するかを調べる方式が用いられる。",
+      "オ": "衣類の湿り具合を接触センサーで判定する方式では、水分量による電気抵抗の変化を利用する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=34",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」消費 問22（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "5",
+    "subject": "消費",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 34
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q22-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 消費 問22の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q23",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 23,
+    "type": "multiple-choice",
+    "category": "消費",
+    "topicTags": [
+      "消費"
+    ],
+    "difficulty": 3,
+    "question": "業務用ガス機器及びコージェネレーションシステム（CGS）に関する次の記述のうち、誤っているものはどれか。",
+    "choices": {
+      "ア": "業務用厨房の排気ダクト接続型半密閉式瞬間湯沸器には、一般的に排気温度、排気あふれ及びCOのセンサーがある。",
+      "イ": "パルス燃焼式フライヤーは浸管式の一種で、熱交換器の面積を小さくできる。",
+      "ウ": "遠赤外線暖房は、途中の空気より人体、床、壁などを直接暖める。",
+      "エ": "都市ガスを用いる代表的なCGSにはガスエンジン、ガスタービン、燃料電池を使う方式がある。",
+      "オ": "固体高分子形燃料電池は作動温度が約700 ℃と高く、原則として連続運転を行う。"
+    },
+    "answer": "オ",
+    "explanation": "固体高分子形は比較的低温で動作する。700 ℃程度の高温は固体酸化物形で見られる運転条件である。",
+    "choiceExplanations": {
+      "ア": "排気通路の状態や不完全燃焼を監視するため、排気関係のセンサーやCOセンサーを備える。",
+      "イ": "周期的な燃焼と流動を利用して伝熱を促進するため、比較的コンパクトにできる。",
+      "ウ": "放射で対象表面にエネルギーが届くため、空気を主な熱搬送媒体としない。",
+      "エ": "これらを用いて発電すると同時に、回収した熱を給湯や空調等に利用できる。",
+      "オ": "固体高分子形は比較的低温で動作する。700 ℃程度の高温は固体酸化物形で見られる運転条件である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=35",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」消費 問23（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "5",
+    "subject": "消費",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 35
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q23-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 消費 問23の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q24",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 24,
+    "type": "multiple-choice",
+    "category": "消費",
+    "topicTags": [
+      "消費"
+    ],
+    "difficulty": 3,
+    "question": "換気及び一酸化炭素（CO）に関する次の記述のうち、誤っているものはどれか。",
+    "choices": {
+      "ア": "自然換気を起こす力には、風圧を利用するものと、温度差によって生じる浮力を利用するものがある。",
+      "イ": "ガスこんろ上部の排気フードは、こんろ上面から1000 mm以上に設置されなければならない。",
+      "ウ": "高層住宅等では外風圧で換気風量が変動するため、シロッコファン等の高静圧な換気扇を使う必要がある。",
+      "エ": "自然換気回数n（回/h）は、自然換気量Q（m³/h）と室容積V（m³）からn＝Q/Vで求める。",
+      "オ": "酸素不足等で都市ガスの燃焼が完結しない場合、反応途中の物質としてCOが発生する。"
+    },
+    "answer": "イ",
+    "explanation": "フードを高くするほど排気の捕集が難しくなるため、1 mを下限とする記述は誤りである。防火上の離隔と捕集できる上限の両方を満たす。",
+    "choiceExplanations": {
+      "ア": "風による開口部間の圧力差と、温度差による空気密度の違いが自然換気を生じさせる。",
+      "イ": "フードを高くするほど排気の捕集が難しくなるため、1 mを下限とする記述は誤りである。防火上の離隔と捕集できる上限の両方を満たす。",
+      "ウ": "外風圧の影響が大きい場所では、圧力抵抗に対して必要な風量を確保できる換気扇を用いる。",
+      "エ": "1時間当たりの流入量をその室の容積で割ると、1時間の間に空気が入れ替わる回数になる。",
+      "オ": "不完全燃焼では炭素が十分に酸化されず、一酸化炭素を発生することがある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=35",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」消費 問24（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "2",
+    "subject": "消費",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 35
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q24-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 消費 問24の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q25",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 25,
+    "type": "multiple-choice",
+    "category": "消費",
+    "topicTags": [
+      "消費"
+    ],
+    "difficulty": 3,
+    "question": "ガス機器の給排気に関する次の記述のうち、誤っているものはどれか。",
+    "choices": {
+      "ア": "合計インプットが6 kWを超える開放式ガス機器を調理室以外の部屋に設置する場合は機械換気が必要である。",
+      "イ": "CF式機器を設置する際、一次排気筒と二次排気筒の両方を現場で適切な長さに加工する。",
+      "ウ": "BF-W式機器の給排気部が壁を貫通する箇所にすき間があってはならない。",
+      "エ": "FF式機器には外壁式、チャンバー式及びダクト式がある。",
+      "オ": "既存のBF式機器の給排気筒トップ穴を利用し、壁貫通部に設置するRF式機器がある。"
+    },
+    "answer": "イ",
+    "explanation": "機器の一次排気筒には所定の仕様があり、一次と二次の両方を現場で加工するという扱いではない。",
+    "choiceExplanations": {
+      "ア": "開放式機器が室内の空気を使い排ガスを室内に出すため、対象の設置場所では換気設備を要する。",
+      "イ": "機器の一次排気筒には所定の仕様があり、一次と二次の両方を現場で加工するという扱いではない。",
+      "ウ": "壁貫通部のすき間から排気が室内に回り込まないように施工する必要がある。",
+      "エ": "FFは燃焼用空気を屋外から取り、排気を強制的に排出する方式で、給排気経路による形式がある。",
+      "オ": "改修用の壁貫通型には、既存BF式機器の給排気部の壁開口を利用するものがある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=36",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」消費 問25（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "2",
+    "subject": "消費",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 36
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q25-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 消費 問25の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q26",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 26,
+    "type": "multiple-choice",
+    "category": "消費",
+    "topicTags": [
+      "消費"
+    ],
+    "difficulty": 3,
+    "question": "ガス機器の安全装置、点火装置及び制御装置に関する次の記述のうち、誤っているものはどれか。",
+    "choices": {
+      "ア": "調理油過熱防止装置は、現在販売されている2口以上の家庭用こんろの全口に搭載が義務付けられている。",
+      "イ": "不完全燃焼防止装置のCOセンサーには、固体電解質式、接触燃焼式及び半導体式がある。",
+      "ウ": "温水機器の空だき安全装置には、水位スイッチ式や水流スイッチ式等がある。",
+      "エ": "瞬時点火装置では、熱電対の起電力が十分になるまでコンデンサーの放電電流でガス弁を開状態に保持する。",
+      "オ": "比例電磁弁はコイルに流れる電流による電磁力で弁を制御し、ガス量を連続的に調節する。"
+    },
+    "answer": "ウ",
+    "explanation": "空だき安全装置は水がないときの異常な温度上昇を検出して作動する。水位や水流で点火の可否を判断する装置とは用途が異なる。",
+    "choiceExplanations": {
+      "ア": "複数口を持つ対象の家庭用こんろでは、いずれの口でも油温の過度の上昇を防止する装置を備える。",
+      "イ": "燃焼状態を監視するCOセンサーには、電気化学的又は材料の電気特性変化などを利用する方式がある。",
+      "ウ": "空だき安全装置は水がないときの異常な温度上昇を検出して作動する。水位や水流で点火の可否を判断する装置とは用途が異なる。",
+      "エ": "点火の直後に熱電対の信号で弁を保持できるようになるまでは、コンデンサーの放電による電流を利用する。",
+      "オ": "電流に応じて弁の開度を変更することで、オン・オフだけでなく流量を連続的に調節できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=36",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」消費 問26（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "3",
+    "subject": "消費",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 36
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q26-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 消費 問26の原本図表"
+    ]
+  },
+  {
+    "id": "gas-otsu-2024-technology-q27",
+    "exam": "gas-otsu",
+    "session": "gas-technology",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 27,
+    "type": "multiple-choice",
+    "category": "消費",
+    "topicTags": [
+      "消費"
+    ],
+    "difficulty": 3,
+    "question": "ガス栓、接続具及び警報器に関する次の記述のうち、誤っているものはどれか。",
+    "choices": {
+      "ア": "ガスソフトコードをコンセント口のガス栓に接続するには、ガス栓用プラグを用いる。",
+      "イ": "ヒューズガス栓がガスを遮断する流量はヒューズ作動流量といい、本体に表示されている。",
+      "ウ": "ガス小型湯沸器は、強化ガスホースで可とう管ガス栓と接続できる。",
+      "エ": "空気より軽い都市ガスの警報器は、ガス機器から水平距離8 m以内の同じ室内に設置しなければならない。",
+      "オ": "業務用換気警報器は、人体にCOの悪影響が及ぶおそれのある環境に達した場合にのみ警報を発する。"
+    },
+    "answer": "ア",
+    "explanation": "ソフトコードを接続する側には、ガス栓用プラグではなくゴム管用ソケットを用いる。",
+    "choiceExplanations": {
+      "ア": "ソフトコードを接続する側には、ガス栓用プラグではなくゴム管用ソケットを用いる。",
+      "イ": "規定流量に達するとヒューズボールが流路を閉じるため、作動流量は選定に必要な情報として本体に表示される。",
+      "ウ": "固定型の小型湯沸器は適合する強化ガスホースを用いて接続する方法がある。",
+      "エ": "設問の対象では漏えい源と同じ室内で、水平距離など設置位置の基準を満たす必要がある。",
+      "オ": "業務用換気警報器はCO濃度や検知の継続時間から悪影響のおそれを判定して警報する。常時の微量検知でただちに警報するものではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251105215053id_/https://www.jia-page.or.jp/files/user/doc/exam/q_otsu_r6.pdf#page=37",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251105234644id_/https://www.jia-page.or.jp/files/user/doc/exam/a_otsu_r6.pdf",
+    "sourceAttribution": "出典：一般財団法人日本ガス機器検査協会「令和6年度ガス主任技術者試験（乙種）」消費 問27（問題・正答）。解説は過去問AI作成。",
+    "officialAnswerNumber": "1",
+    "subject": "消費",
+    "license": "JIA-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-20",
+    "sourceEvidence": {
+      "questionPdfSha256": "59c4d7b13289bfa20916504b16cc829a4046b9baa05e6cac4e3737bd9ba54282",
+      "answerPdfSha256": "62e3460dd2956badc9c6364da374fe876c241c717d0b4ed49ad790c8c43ce0d5",
+      "questionPage": 37
+    },
+    "examDate": "2024-09-29",
+    "imageUrls": [
+      "/images/questions/gas-otsu/2024-technology-q27-official.png"
+    ],
+    "imageAltTexts": [
+      "令和6年度 ガス主任技術者試験乙種 消費 問27の原本図表"
+    ]
+  }
+]
