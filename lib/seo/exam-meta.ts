@@ -267,6 +267,7 @@ export const EXAM_DESCRIPTIONS: Partial<Record<ExamCode, string>> = {
 
 
 "kikai-hozen": "機械保全技能検定 2級 機械系保全作業 学科の2024・2025年度（各50問）を収録。真偽法・四肢択一とも公式正答と全肢の独自解説、必要な図を確認できます。",
+"kyoin-gunma": "群馬県教員採用試験の一般教養・教職の過去問を収録。群馬県教育委員会の公式正答と全選択肢の解説で学べます。",
 "tsukanshi": "第59回通関士試験の65原問（105解答単位）を公式正答どおりに収録。全空欄・全記述・計算過程に条文・通達を示した独自解説。",
 "caremanager": "介護支援専門員実務研修受講試験（ケアマネ試験）の第27回・第28回（令和6・7年度）全120問を収録。「2つ選べ」「3つ選べ」は全部そろえて採点し、公式正答と全選択肢の解説を確認できます。",
 
@@ -818,6 +819,7 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
 
 
 
+    "kyoin-gunma": "群馬県公立学校教員採用選考試験",
     "tsukanshi": "通関士試験"
 };
 export function examFullName(exam: ExamCode): string {
@@ -1188,6 +1190,7 @@ const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number)
 
 
 
+    "kyoin-gunma": (c, y) => `群馬県教員採用試験の一般教養・教職の過去問を${c}問・${y}年度分収録。公式正答と全選択肢の解説で学べます。`,
     "tsukanshi": (c) => `通関士試験の${c}。公式正答どおりに収録。`
 };
 function publishedYearRange(exam: ExamCode): string {

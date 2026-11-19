@@ -1,0 +1,1 @@
+export { KYOIN_GUNMA_2025 as KYOIN_GUNMA_QUESTIONS } from "./2025";

@@ -1992,6 +1992,24 @@ caremanager: {
 
 
 
+"kyoin-gunma": {
+    code: "kyoin-gunma",
+    nameFull: "群馬県公立学校教員採用選考試験",
+    urlSlug: "kyoin-gunma",
+    level: "advanced",
+    sessions: [
+        {
+            session: "kyotsu",
+            urlSlug: "kyotsu",
+            expectedQuestions: 37,
+            label: "一般教養・教職",
+            categories: ["国語", "社会", "数学", "理科", "英語", "芸術", "教育法規", "教育心理", "学校保健", "教育施策"],
+        },
+    ],
+    seasons: ["annual"],
+    yearRange: { start: 2025, end: 2025 },
+},
+
 tsukanshi: {
     code: "tsukanshi", nameFull: "通関士試験", urlSlug: "tsukanshi", level: "advanced",
     sessions: [
