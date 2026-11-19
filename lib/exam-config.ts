@@ -109,6 +109,16 @@ function am2(categories: string[]): SessionConfig {
 // ------- Exam configs -------
 
 export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
+  "zenkou-keisan-gijutsu": {
+    code: "zenkou-keisan-gijutsu", nameFull: "計算技術検定試験", urlSlug: "zenkou-keisan-gijutsu", level: "basic",
+    sessions: [
+    { session: "keisan-2", urlSlug: "keisan-2", expectedQuestions: 17, label: "2級", categories: ["関数計算", "方程式と不等式", "応用計算"] },
+    { session: "keisan-3", urlSlug: "keisan-3", expectedQuestions: 28, label: "3級", categories: ["四則計算", "関数計算", "実務計算"] },
+    { session: "keisan-4", urlSlug: "keisan-4", expectedQuestions: 21, label: "4級", categories: ["四則計算", "集計計算", "実務計算"] },
+    ],
+    seasons: ["early", "late"],
+    yearRange: { start: 2025, end: 2026 },
+  },
   "sasshi1": {"code":"sasshi1","nameFull":"技能検定 1級サッシ施工（ビル用サッシ施工作業）学科試験","urlSlug":"sasshi1","level":"specialist","sessions":[{"session":"gakka","urlSlug":"gakka","expectedQuestions":50,"label":"学科（A群 真偽法・B群 多肢択一法）","categories":["施工・墨出し","工具・加工","材料・シーリング","安全衛生・法令","ガラス・建具","性能・規格","建築構造","製図","図面・製図","安全衛生","工具・溶接","建具・金物","建築構造・関連工事","施工計画","材料・製品","設備・揚重","運搬・養生"]}],"seasons":["early"],"yearRange":{"start":2023,"end":2025}},
   "sasshi2": {"code":"sasshi2","nameFull":"技能検定 2級サッシ施工（ビル用サッシ施工作業）学科試験","urlSlug":"sasshi2","level":"basic","sessions":[{"session":"gakka","urlSlug":"gakka","expectedQuestions":50,"label":"学科（A群 真偽法・B群 多肢択一法）","categories":["施工・墨出し","工具・加工","材料・シーリング","安全衛生・法令","ガラス・建具","性能・規格","建築構造","製図"]}],"seasons":["early"],"yearRange":{"start":2023,"end":2025}},
   "engei-soshoku3": {"code":"engei-soshoku3","nameFull":"技能検定 3級園芸装飾（室内園芸装飾作業）学科試験","urlSlug":"engei-soshoku3","level":"basic","sessions":[{"session":"gakka","urlSlug":"gakka","expectedQuestions":30,"label":"学科（真偽法）","categories":["園芸装飾・デザイン","工具・資材","植物の種類・形態","植物生理・繁殖","栽培管理","用土・肥料","病害虫","施設・安全衛生"]}],"seasons":["early"],"yearRange":{"start":2023,"end":2025}},
