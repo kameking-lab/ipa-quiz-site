@@ -1391,7 +1391,7 @@ kisho: { code: "kisho", nameFull: "気象予報士試験", urlSlug: "kisho", lev
 "jidosha-2-chassis": {
     code: "jidosha-2-chassis", nameFull: "二級自動車シャシ整備士", urlSlug: "jidosha-2-chassis", level: "specialist",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 30, label: "学科", categories: ["二級自動車シャシ"] }],
-    seasons: ["first", "second"], yearRange: { start: 2023, end: 2026 },
+    seasons: ["first", "second"], yearRange: { start: 2022, end: 2026 },
 },
 "jidosha-2-motorcycle": {
     code: "jidosha-2-motorcycle", nameFull: "二級二輪自動車整備士", urlSlug: "jidosha-2-motorcycle", level: "specialist",

@@ -5,6 +5,7 @@ import qualifications from "./qualifications.json";
 import priorSittings from "./prior-sittings.json";
 import priorAssets from "./prior-assets.json";
 import chassis2023Second from "./2023-second-2-chassis.json";
+import chassis2022Second from "./2022-second-2-chassis.json";
 
 export type AutomotiveExamCode =
   | "jidosha-1-small-written" | "jidosha-2-gasoline" | "jidosha-2-diesel"
@@ -43,6 +44,7 @@ export const AUTOMOTIVE_QUESTIONS: Question[] = [
     imageAltTexts: imageBindings[q.id].map((asset) => `${q.sourceAttribution} 原問題の図表（PDF ${asset.physicalPage}ページ）`),
   })),
   ...(chassis2023Second as Question[]),
+  ...(chassis2022Second as Question[]),
 ];
 
 export function getAutomotiveQuestions(exam: AutomotiveExamCode): Question[] {
