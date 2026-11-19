@@ -8,6 +8,7 @@ import { AUTOMOTIVE_QUESTIONS, getAutomotiveQuestions } from "@/data/questions/a
 import metadata from "@/data/questions/automotive/qualifications.json";
 import reviewed from "@/data/questions/automotive/reviewed.json";
 import priorSittings from "@/data/questions/automotive/prior-sittings.json";
+import motorcycle2023 from "@/data/questions/automotive/2023-second-3-motorcycle.json";
 import recovery from "@/data/qualification-staging/automotive/latest-two/qa/lq1b-recovery-ledger.json";
 import continuation from "@/data/qualification-staging/automotive/latest-two/qa/lq1c-progress.json";
 import continuationCandidates from "@/data/qualification-staging/automotive/latest-two/qa/lq1c-candidates.json";
@@ -23,6 +24,8 @@ import { defaultPracticeSession } from "@/lib/questions/practice-session";
 import { findQuestionById, getPoolIds } from "@/lib/questions/pool-server";
 import { getHomeDirectory } from "@/lib/home/home-directory";
 import type { AutomotiveExamCode } from "@/lib/questions/types";
+
+const additionalQuestionCount = priorSittings.length + motorcycle2023.length;
 
 describe("recovered automotive release", () => {
   it("admits the exact continuation candidates only with matching independent PASS receipts", () => {
@@ -53,7 +56,7 @@ describe("recovered automotive release", () => {
     const recoveredCodes = new Set(metadata.map(row => row.exam));
     const recoveredCards = [...directory.featured, ...directory.compact].filter(card => recoveredCodes.has(card.key));
     expect(recoveredCards).toHaveLength(11);
-    expect(recoveredCards.reduce((sum, card) => sum + card.questionCount, 0)).toBe(recovery.releaseOriginals + priorSittings.length);
+    expect(recoveredCards.reduce((sum, card) => sum + card.questionCount, 0)).toBe(recovery.releaseOriginals + additionalQuestionCount);
     for (const row of metadata) {
       const exam = row.exam as AutomotiveExamCode;
       const questions = getAutomotiveQuestions(exam);
@@ -73,8 +76,8 @@ describe("recovered automotive release", () => {
   it("preserves accepted candidate bytes with matching receipt hashes and excludes unresolved originals", () => {
     expect(recovery.recoveredReviewedOriginals).toBe(385);
     // W2 (2026-11-06) appended the previous sitting of five subjects; see automotive-prior-sittings.test.ts.
-    expect(AUTOMOTIVE_QUESTIONS).toHaveLength(recovery.releaseOriginals + priorSittings.length);
-    expect(new Set(AUTOMOTIVE_QUESTIONS.map((q) => q.id)).size).toBe(recovery.releaseOriginals + priorSittings.length);
+    expect(AUTOMOTIVE_QUESTIONS).toHaveLength(recovery.releaseOriginals + additionalQuestionCount);
+    expect(new Set(AUTOMOTIVE_QUESTIONS.map((q) => q.id)).size).toBe(recovery.releaseOriginals + additionalQuestionCount);
     expect(recovery.notYetReleasedIds).toHaveLength(610 - recovery.releaseOriginals);
     const ids = new Set(AUTOMOTIVE_QUESTIONS.map((q) => q.id));
     for (const id of recovery.notYetReleasedIds) expect(ids.has(id), id).toBe(false);
