@@ -1552,6 +1552,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
   },
   {
+    slug: "katei-shoku-chori", examCode: "katei-shoku-chori", shortName: "高校家庭科食物調理技術検定", fullName: "全国高等学校家庭科食物調理技術検定",
+    domain: "personal-services", administrator: "公益財団法人全国高等学校家庭科教育振興会",
+    officialQuestionsUrl: "https://www.katei-ed.or.jp/past.html",
+    officialReuseTermsUrl: "https://www.katei-ed.or.jp/past.html",
+    status: "live",
+    reuseSummary: "2級・準1級・1級の公式筆記問題と正答、独自の解説を収録。",
+    attributionTemplate: "出典：公益財団法人全国高等学校家庭科教育振興会。解説は過去問AIが作成。",
+    remainingWork: [],
+  },
+  {
     slug: "yamaguchi-chori", examCode: "yamaguchi-chori", shortName: "調理師", fullName: "調理師",
     domain: "personal-services", administrator: "山口県 生活衛生課",
     officialQuestionsUrl: "https://www.pref.yamaguchi.lg.jp/site/syoku-anshin/320296.html",

@@ -1549,6 +1549,11 @@ kankoji1: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 78, label: "筆記", categories: ["音楽・リズム表現技術", "造形表現技術", "言語表現技術", "家庭看護技術"] }],
     seasons: ["second"], yearRange: { start: 2025, end: 2025 },
 },
+"katei-shoku-chori": {
+    code: "katei-shoku-chori", nameFull: "全国高等学校家庭科食物調理技術検定", urlSlug: "katei-shoku-chori", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 59, label: "筆記", categories: ["2級", "準1級", "1級"] }],
+    seasons: ["second"], yearRange: { start: 2025, end: 2025 },
+},
 "yamaguchi-chori": {
     code: "yamaguchi-chori", nameFull: "調理師", urlSlug: "yamaguchi-chori", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "学科", categories: ["公衆衛生学", "食品学", "栄養学", "食品衛生学", "調理理論", "食文化概論"] }],
