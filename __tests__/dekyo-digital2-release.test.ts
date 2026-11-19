@@ -2,6 +2,7 @@ import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
+import source2022First from "@/data/questions/dekyo-digital2/2022-first-sources.json";
 import source2022Second from "@/data/questions/dekyo-digital2/2022-second-sources.json";
 import source2023First from "@/data/questions/dekyo-digital2/2023-first-sources.json";
 import source2023Second from "@/data/questions/dekyo-digital2/2023-second-sources.json";
@@ -16,6 +17,7 @@ const papers = [
   { year: 2023, season: "second", source: source2023Second },
   { year: 2023, season: "first", source: source2023First },
   { year: 2022, season: "second", source: source2022Second },
+  { year: 2022, season: "first", source: source2022First },
 ];
 
 describe("工事担任者 第二級デジタル通信", () => {

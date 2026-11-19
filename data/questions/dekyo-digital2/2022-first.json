@@ -1,0 +1,2774 @@
+[
+  {
+    "id": "dekyo-digital2-2022-first-kiso-q1-1",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "kiso",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "電気通信技術の基礎",
+    "topicTags": [
+      "直並列抵抗"
+    ],
+    "difficulty": 3,
+    "question": "図1の端子a–b間の合成抵抗は何Ωか。",
+    "choices": {
+      "ア": "① 1.6",
+      "イ": "② 2.0",
+      "ウ": "③ 2.4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "左側の逆数の和は1/6＋1/2＋1/6＝5/6、右側は1/3＋1/3＋1/6＝5/6で、両方とも1.2 Ωである。二つを直列に足すと2.4 Ωになる。",
+    "choiceExplanations": {
+      "ア": "左側は6 Ω、2 Ω、6 Ωの三つの抵抗の並列で1.2 Ωとなる。右側も加える必要がある。",
+      "イ": "右側の3 Ω、3 Ω、6 Ωの並列も1.2 Ωである。左側と右側は中央の接続点を介して直列なので、合計は2 Ωより大きい。",
+      "ウ": "左側の逆数の和は1/6＋1/2＋1/6＝5/6、右側は1/3＋1/3＋1/6＝5/6で、両方とも1.2 Ωである。二つを直列に足すと2.4 Ωになる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      2
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 電気通信技術の基礎 第1問（1）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=2"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/dekyo-digital2/2022-first/kiso-1-1.webp"
+    ],
+    "imageAltTexts": [
+      "第二級デジタル通信 電気通信技術の基礎 第1問（1）の原図"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2022-first-kiso-q1-2",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "kiso",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "電気通信技術の基礎",
+    "topicTags": [
+      "交流の直列回路"
+    ],
+    "difficulty": 3,
+    "question": "図2の回路に2 Aの交流電流が流れているとき、端子a–b間の電圧は何Vか。",
+    "choices": {
+      "ア": "① 15",
+      "イ": "② 26",
+      "ウ": "③ 34"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "直列インピーダンスの大きさは√(12²＋5²)＝13 Ωである。電圧は2×13＝26 Vとなる。",
+    "choiceExplanations": {
+      "ア": "抵抗器だけでも2×12＝24 Vの電圧がかかる。コンデンサの電圧とは位相が90度異なるため、全体の大きさは24 Vより大きい。",
+      "イ": "直列インピーダンスの大きさは√(12²＋5²)＝13 Ωである。電圧は2×13＝26 Vとなる。",
+      "ウ": "34 Vは12 Ωと5 Ωをそのまま足して2 Aを掛けた値である。抵抗と容量性リアクタンスは直角に合成する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      2
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 電気通信技術の基礎 第1問（2）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=2"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/dekyo-digital2/2022-first/kiso-1-2.webp"
+    ],
+    "imageAltTexts": [
+      "第二級デジタル通信 電気通信技術の基礎 第1問（2）の原図"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2022-first-kiso-q1-3",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "kiso",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "電気通信技術の基礎",
+    "topicTags": [
+      "静電容量"
+    ],
+    "difficulty": 3,
+    "question": "コンデンサに蓄えられる電気量と、コンデンサの端子間の何との比が静電容量と呼ばれるか。",
+    "choices": {
+      "ア": "① 電圧",
+      "イ": "② 静電力",
+      "ウ": "③ 電荷"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "静電容量は蓄えられる電気量Qを端子間電圧Vで割ったC＝Q/Vで定義する。",
+    "choiceExplanations": {
+      "ア": "静電容量は蓄えられる電気量Qを端子間電圧Vで割ったC＝Q/Vで定義する。",
+      "イ": "静電力は電荷間の力を表し、静電容量の単位であるファラドに対応する分母ではない。",
+      "ウ": "電荷は蓄えられる電気量そのものであり、比の分母は端子間電圧である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      2
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 電気通信技術の基礎 第1問（3）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=2"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-kiso-q1-4",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "kiso",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "電気通信技術の基礎",
+    "topicTags": [
+      "金属導体の温度係数"
+    ],
+    "difficulty": 3,
+    "question": "常温付近で金属導体の温度が上がると、抵抗値は一般にどうなるか。",
+    "choices": {
+      "ア": "① 変わらない",
+      "イ": "② 減少する",
+      "ウ": "③ 増加する"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "温度が上がると金属内の格子振動が増し、電子が散乱されやすくなるので抵抗は増加する。",
+    "choiceExplanations": {
+      "ア": "一般の金属では温度によって電気抵抗が変化する。",
+      "イ": "温度上昇で抵抗が下がる材料もあるが、通常の金属導体の常温付近での変化は逆である。",
+      "ウ": "温度が上がると金属内の格子振動が増し、電子が散乱されやすくなるので抵抗は増加する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      2
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 電気通信技術の基礎 第1問（4）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=2"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-kiso-q2-1",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "kiso",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "電気通信技術の基礎",
+    "topicTags": [
+      "半導体のキャリア"
+    ],
+    "difficulty": 3,
+    "question": "半導体内で電荷を運ぶ自由電子と正孔をまとめて何と呼ぶか。",
+    "choices": {
+      "ア": "① アクセプタ",
+      "イ": "② ドナー",
+      "ウ": "③ キャリア"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "自由電子と正孔はいずれも移動して電荷を運ぶため、キャリアと呼ばれる。",
+    "choiceExplanations": {
+      "ア": "アクセプタは電子を受け取って正孔を生じさせる不純物である。自由電子と正孔の総称ではない。",
+      "イ": "ドナーは自由電子を供与する不純物である。",
+      "ウ": "自由電子と正孔はいずれも移動して電荷を運ぶため、キャリアと呼ばれる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      3
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 電気通信技術の基礎 第2問（1）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=3"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-kiso-q2-2",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "kiso",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "電気通信技術の基礎",
+    "topicTags": [
+      "フォトダイオード"
+    ],
+    "difficulty": 3,
+    "question": "フォトダイオードはpn接合に光を照射すると光の強さに応じた電流が流れる何効果を利用しているか。",
+    "choices": {
+      "ア": "① 光電",
+      "イ": "② ミラー",
+      "ウ": "③ 圧電"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "光によって電子と正孔が生じ、電気信号を得られる内部光電効果を利用する。",
+    "choiceExplanations": {
+      "ア": "光によって電子と正孔が生じ、電気信号を得られる内部光電効果を利用する。",
+      "イ": "ミラー効果は、増幅回路の入力と出力の間にある容量などが入力側で大きく見える現象である。",
+      "ウ": "圧電効果は材料に力を加えると電荷が生じる現象であり、光を電気信号に変える効果ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      3
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 電気通信技術の基礎 第2問（2）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=3"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-kiso-q2-3",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "kiso",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "電気通信技術の基礎",
+    "topicTags": [
+      "トランジスタの接地"
+    ],
+    "difficulty": 3,
+    "question": "トランジスタの三つの接地方式のうち、入出力の電流がほぼ等しくなるものは何接地方式か。",
+    "choices": {
+      "ア": "① エミッタ",
+      "イ": "② ベース",
+      "ウ": "③ コレクタ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "ベース接地では入力がエミッタ電流、出力がコレクタ電流である。差は小さいベース電流なのでほぼ等しい。",
+    "choiceExplanations": {
+      "ア": "エミッタ接地では入力はベース電流、出力は通常コレクタ電流なので、電流増幅が生じる。",
+      "イ": "ベース接地では入力がエミッタ電流、出力がコレクタ電流である。差は小さいベース電流なのでほぼ等しい。",
+      "ウ": "コレクタ接地では入力がベース電流、出力がエミッタ電流であり、一般に電流増幅率は1より大きい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      3
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 電気通信技術の基礎 第2問（3）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=3"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-kiso-q2-4",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "kiso",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "電気通信技術の基礎",
+    "topicTags": [
+      "読み出し専用メモリ"
+    ],
+    "difficulty": 3,
+    "question": "半導体メモリで、記録された情報を書き換えることができず、読み出しのみ可能なものはどれか。",
+    "choices": {
+      "ア": "① DRAM",
+      "イ": "② ROM",
+      "ウ": "③ SRAM"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "ROMは読み出し専用メモリで、問題が指す通常動作で記録内容を読み出すのみの種類である。",
+    "choiceExplanations": {
+      "ア": "DRAMは随時読み書きできるメモリであり、記憶を維持するために定期的に再書込みを行う。",
+      "イ": "ROMは読み出し専用メモリで、問題が指す通常動作で記録内容を読み出すのみの種類である。",
+      "ウ": "SRAMは電源がある間はリフレッシュを要しないが、通常の使用中に読み書きできる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      3
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 電気通信技術の基礎 第2問（4）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=3"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-kiso-q2-5",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "kiso",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "電気通信技術の基礎",
+    "topicTags": [
+      "トランジスタの電流"
+    ],
+    "difficulty": 3,
+    "question": "コレクタ電流2.49 mA、エミッタ電流2.55 mAのとき、ベース電流は何µAか。",
+    "choices": {
+      "ア": "① 0.06",
+      "イ": "② 5.04",
+      "ウ": "③ 60"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "エミッタ電流からコレクタ電流を引くと0.06 mAになる。これは60 µAである。",
+    "choiceExplanations": {
+      "ア": "0.06はmAで表した差である。µAに換算するには1,000を掛ける。",
+      "イ": "5.04 mAは二つの電流を加えた値である。ベース電流は二つの電流の差で求める。",
+      "ウ": "エミッタ電流からコレクタ電流を引くと0.06 mAになる。これは60 µAである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      3
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 電気通信技術の基礎 第2問（5）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=3"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-kiso-q3-1",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "kiso",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "電気通信技術の基礎",
+    "topicTags": [
+      "ベン図の論理和"
+    ],
+    "difficulty": 3,
+    "question": "図1〜3のA、B、Cは円の内部を表す。三つの図の斜線部分の論理和はどれか。¬は否定を表す。",
+    "choices": {
+      "ア": "① A·B·¬C＋A·¬B·C＋¬A·B·C",
+      "イ": "② ¬A·B·¬C＋¬A·¬B·C",
+      "ウ": "③ B＋C"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "三図のどれかで斜線になっている範囲を集めると、B又はCに属するすべての部分となる。",
+    "choiceExplanations": {
+      "ア": "この式は二つの円にだけ属する領域を表す。図2で三つの円の中央にも斜線がある。",
+      "イ": "この式ではBのみ又はCのみの部分だけが含まれる。円が重なる斜線部分を含める必要がある。",
+      "ウ": "三図のどれかで斜線になっている範囲を集めると、B又はCに属するすべての部分となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      4
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 電気通信技術の基礎 第3問（1）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 4,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=4"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/dekyo-digital2/2022-first/kiso-3-1.webp"
+    ],
+    "imageAltTexts": [
+      "第二級デジタル通信 電気通信技術の基礎 第3問（1）の原図"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2022-first-kiso-q3-2",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "kiso",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "電気通信技術の基礎",
+    "topicTags": [
+      "基数変換"
+    ],
+    "difficulty": 3,
+    "question": "16進数6Eを2進数で表すとどうなるか。",
+    "choices": {
+      "ア": "① 1101110",
+      "イ": "② 1101111",
+      "ウ": "③ 1110110"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "6は0110、Eは1110なので合わせて01101110となる。先頭の0を除くと1101110である。",
+    "choiceExplanations": {
+      "ア": "6は0110、Eは1110なので合わせて01101110となる。先頭の0を除くと1101110である。",
+      "イ": "1101111の下位4ビットは1111で、16進数ではFに対応する。",
+      "ウ": "1110110を4桁ごとに区切ると0111と0110であり、16進数では76となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      4
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 電気通信技術の基礎 第3問（2）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 4,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=4"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-kiso-q3-3",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "kiso",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "電気通信技術の基礎",
+    "topicTags": [
+      "組合せ論理回路"
+    ],
+    "difficulty": 3,
+    "question": "図4の論理回路でa、bとcの関係が図5のとおりになるとき、Mの論理素子はどれか。",
+    "choices": {
+      "ア": "① AND",
+      "イ": "② NAND",
+      "ウ": "③ OR",
+      "エ": "④ NOR"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "Mへの入力はa·bとa＋¬bである。ORで合わせるとa＋¬bとなり、a＝0、b＝1のときだけ0になる。",
+    "choiceExplanations": {
+      "ア": "a、bがともに0ならMへの一つの入力が0となるので、ANDの出力は0になる。図では出力は1である。",
+      "イ": "a＝1、b＝1ならMへの二つの入力はともに1になる。NANDでは出力が0となるが、図では1である。",
+      "ウ": "Mへの入力はa·bとa＋¬bである。ORで合わせるとa＋¬bとなり、a＝0、b＝1のときだけ0になる。",
+      "エ": "NORではa＝0、b＝1のとき二つの入力がともに0なので出力1になる。図5の極性とは反対である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      5
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 電気通信技術の基礎 第3問（3）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 5,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=5"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/dekyo-digital2/2022-first/kiso-3-3.webp"
+    ],
+    "imageAltTexts": [
+      "第二級デジタル通信 電気通信技術の基礎 第3問（3）の原図"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2022-first-kiso-q3-4",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "kiso",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "電気通信技術の基礎",
+    "topicTags": [
+      "ブール代数"
+    ],
+    "difficulty": 3,
+    "question": "論理関数X＝¬[(¬A＋¬B)·(¬A＋C)]＋¬(A＋¬B)＋¬(A＋C)を簡単にするとどの式になるか。¬は否定を表す。",
+    "choices": {
+      "ア": "① B＋¬C",
+      "イ": "② ¬B＋C",
+      "ウ": "③ A＋B＋¬C"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "各項をド・モルガンの法則で変形するとA·(B＋¬C)、¬A·B、¬A·¬Cとなる。まとめると(A＋¬A)·(B＋¬C)＝B＋¬Cである。",
+    "choiceExplanations": {
+      "ア": "各項をド・モルガンの法則で変形するとA·(B＋¬C)、¬A·B、¬A·¬Cとなる。まとめると(A＋¬A)·(B＋¬C)＝B＋¬Cである。",
+      "イ": "B＝0、C＝1では元の式は0だが、この選択肢の式は1となる。",
+      "ウ": "A＝1、B＝0、C＝1の場合にもこの式の値は1になるが、元の式の値は0である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      5
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 電気通信技術の基礎 第3問（4）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 5,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=5"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-kiso-q4-1",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "kiso",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "電気通信技術の基礎",
+    "topicTags": [
+      "増幅器の利得"
+    ],
+    "difficulty": 3,
+    "question": "図で回線への入力電力が35 mW、電力計の読みが3.5 mW、回線の損失は1.5 dB/kmである。各部が整合しているとき、増幅器の利得は何dBか。",
+    "choices": {
+      "ア": "① 30",
+      "イ": "② 40",
+      "ウ": "③ 50"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "距離は計40 kmなので回線損失は60 dBである。出力は入力の1/10で全体は−10 dBだから利得は50 dBとなる。",
+    "choiceExplanations": {
+      "ア": "30 dBでは合計60 dBの回線損失を30 dBしか補えず、出力は入力の1/1,000になる。",
+      "イ": "40 dBの利得では回線の60 dBの損失と合わせて−20 dBとなり、出力は入力の百分の一になる。",
+      "ウ": "距離は計40 kmなので回線損失は60 dBである。出力は入力の1/10で全体は−10 dBだから利得は50 dBとなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      6
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 電気通信技術の基礎 第4問（1）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 6,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=6"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/dekyo-digital2/2022-first/kiso-4-1.webp"
+    ],
+    "imageAltTexts": [
+      "第二級デジタル通信 電気通信技術の基礎 第4問（1）の原図"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2022-first-kiso-q4-2",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "kiso",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "電気通信技術の基礎",
+    "topicTags": [
+      "平衡対ケーブルの漏話"
+    ],
+    "difficulty": 3,
+    "question": "平衡対ケーブルの回線間の電磁結合による漏話の大きさは、誘導回線の電流とどう関係するか。",
+    "choices": {
+      "ア": "① 比例する",
+      "イ": "② 反比例する",
+      "ウ": "③ 関係しない"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "周波数や相互インダクタンスが同じなら、誘導側の電流が大きいほど相互誘導による漏話は比例して増える。",
+    "choiceExplanations": {
+      "ア": "周波数や相互インダクタンスが同じなら、誘導側の電流が大きいほど相互誘導による漏話は比例して増える。",
+      "イ": "誘導回線の電流が増えると磁束の変化が大きくなるので、漏話が減少するわけではない。",
+      "ウ": "相互誘導で生じる電圧は、電流が作る磁界の大きさに依存する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      6
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 電気通信技術の基礎 第4問（2）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 6,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=6"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-kiso-q4-3",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "kiso",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "電気通信技術の基礎",
+    "topicTags": [
+      "電圧と電流の反射係数"
+    ],
+    "difficulty": 3,
+    "question": "異なる特性インピーダンスを持つ線路の接続点で、電圧反射係数をmとしたとき電流反射係数はどう表せるか。",
+    "choices": {
+      "ア": "① 1−m",
+      "イ": "② −m",
+      "ウ": "③ m"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "反射波は入射波と逆向きに進むため、電流の反射係数は電圧の反射係数と符号が逆になる。",
+    "choiceExplanations": {
+      "ア": "反射電流には反射波の向きが関係するため、入射波を基準に符号が反転する。1から引く式ではない。",
+      "イ": "反射波は入射波と逆向きに進むため、電流の反射係数は電圧の反射係数と符号が逆になる。",
+      "ウ": "大きさは等しいが符号は異なる。電圧と同じmを用いると電流の向きを表せない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      6
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 電気通信技術の基礎 第4問（3）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 6,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=6"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-kiso-q4-4",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "kiso",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "電気通信技術の基礎",
+    "topicTags": [
+      "信号対雑音比"
+    ],
+    "difficulty": 3,
+    "question": "信号電力をPₛ mW、雑音電力をPₙ mWとしたとき、信号電力対雑音電力比をdBで表す式はどれか。",
+    "choices": {
+      "ア": "① 10 log₁₀(Pₙ/Pₛ)",
+      "イ": "② 10 log₁₀(Pₛ/Pₙ)",
+      "ウ": "③ 20 log₁₀(Pₙ/Pₛ)",
+      "エ": "④ 20 log₁₀(Pₛ/Pₙ)"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "信号対雑音比は信号電力を雑音電力で割り、その電力比の常用対数を10倍して表す。",
+    "choiceExplanations": {
+      "ア": "この式は分子と分母を逆にしているので、雑音電力対信号電力比のdB値になる。",
+      "イ": "信号対雑音比は信号電力を雑音電力で割り、その電力比の常用対数を10倍して表す。",
+      "ウ": "比の向きが逆で、さらに電力比に20を掛ける式は適用できない。",
+      "エ": "20 log₁₀は同じインピーダンスでの電圧比など振幅比に用いる。設問は電力比なので10 log₁₀を使う。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      6
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 電気通信技術の基礎 第4問（4）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 6,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=6"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-kiso-q5-1",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "kiso",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "電気通信技術の基礎",
+    "topicTags": [
+      "振幅変調の側波帯"
+    ],
+    "difficulty": 3,
+    "question": "振幅変調で生じた上側波帯又は下側波帯のいずれか一方を使って信号を伝送する方法は何伝送か。",
+    "choices": {
+      "ア": "① VSB",
+      "イ": "② SSB",
+      "ウ": "③ DSB"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "SSBは単側波帯を意味し、上側波帯か下側波帯の一方だけを利用する。",
+    "choiceExplanations": {
+      "ア": "VSBは片側波帯ともう一方の一部を残す残留側波帯方式である。",
+      "イ": "SSBは単側波帯を意味し、上側波帯か下側波帯の一方だけを利用する。",
+      "ウ": "DSBは二つの側波帯の両方を送る方式である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      7
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 電気通信技術の基礎 第5問（1）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 7,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=7"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-kiso-q5-2",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "kiso",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "電気通信技術の基礎",
+    "topicTags": [
+      "多元接続"
+    ],
+    "difficulty": 3,
+    "question": "利用者ごとに割り当てられたタイムスロットを使って、同じ伝送路を複数の利用者が時分割で使う方式は何か。",
+    "choices": {
+      "ア": "① FDMA",
+      "イ": "② SDMA",
+      "ウ": "③ TDMA"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "TDMAは時分割多元接続であり、利用者に異なる時間枠を割り当てる。",
+    "choiceExplanations": {
+      "ア": "FDMAは周波数を分けて各利用者に割り当てる。",
+      "イ": "SDMAは空間的な分離を用いて利用者を区別する。",
+      "ウ": "TDMAは時分割多元接続であり、利用者に異なる時間枠を割り当てる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      7
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 電気通信技術の基礎 第5問（2）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 7,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=7"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-kiso-q5-3",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "kiso",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "電気通信技術の基礎",
+    "topicTags": [
+      "誤り制御符号"
+    ],
+    "difficulty": 3,
+    "question": "BCH符号と同じように、伝送路のビット誤りの検出や訂正に用いる符号は何か。",
+    "choices": {
+      "ア": "① ハミング符号",
+      "イ": "② マンチェスタ符号",
+      "ウ": "③ B8ZS符号"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "ハミング符号は検査ビットを加え、所定の条件でビット誤りの検出や訂正ができる。",
+    "choiceExplanations": {
+      "ア": "ハミング符号は検査ビットを加え、所定の条件でビット誤りの検出や訂正ができる。",
+      "イ": "マンチェスタ符号はビット内で信号を変化させ、クロックを取り出しやすくする伝送路符号である。",
+      "ウ": "B8ZSは連続する8個のゼロを置き換える伝送路符号であり、誤り訂正用ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      7
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 電気通信技術の基礎 第5問（3）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 7,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=7"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-kiso-q5-4",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "kiso",
+    "qNumber": 21,
+    "type": "multiple-choice",
+    "category": "電気通信技術の基礎",
+    "topicTags": [
+      "電話回線の品質"
+    ],
+    "difficulty": 3,
+    "question": "通信の品質劣化要因について、正しい組み合わせはどれか。\nA アナログ電話回線の2線／4線変換で端末の送出電力が過大だと、4線部分での発振により別の電気通信回線に漏話や雑音を生じ得る。\nB 通話電流が受信端で反射し、遅れて送信端へ戻って通話を妨害する現象を鳴音という。",
+    "choices": {
+      "ア": "① Aのみ正しい",
+      "イ": "② Bのみ正しい",
+      "ウ": "③ AもBも正しい",
+      "エ": "④ AもBも正しくない"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "Aは4線部分の発振と漏話等の影響の説明である。Bは遅延した反射が戻るエコーを説明している。",
+    "choiceExplanations": {
+      "ア": "Aは4線部分の発振と漏話等の影響の説明である。Bは遅延した反射が戻るエコーを説明している。",
+      "イ": "Bは鳴音ではなくエコーの説明である。Aのように過大な送出電力で発振や漏話の問題が起こり得る。",
+      "ウ": "Aは正しいが、Bの遅れた反射波による通話妨害はエコーと呼ばれる。",
+      "エ": "Aの4線部分で発振が起こり漏話や雑音につながるという説明は正しい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      7
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 電気通信技術の基礎 第5問（4）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 7,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=7"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-kiso-q5-5",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "kiso",
+    "qNumber": 22,
+    "type": "multiple-choice",
+    "category": "電気通信技術の基礎",
+    "topicTags": [
+      "光ファイバの双方向通信"
+    ],
+    "difficulty": 3,
+    "question": "上り信号と下り信号に別々の光波長を割り当て、1心の光ファイバで同時に送受信できるようにする技術はどれか。",
+    "choices": {
+      "ア": "① PAM",
+      "イ": "② PWM",
+      "ウ": "③ WDM"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "WDMは波長分割多重を指す。上りと下りを別の波長にすることで同じ光ファイバで同時に伝送できる。",
+    "choiceExplanations": {
+      "ア": "PAMはパルスの振幅に情報を載せる変調方式であり、異なる波長を割り当てる多重化とは異なる。",
+      "イ": "PWMはパルスの幅を変化させる変調方式である。",
+      "ウ": "WDMは波長分割多重を指す。上りと下りを別の波長にすることで同じ光ファイバで同時に伝送できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      7
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 電気通信技術の基礎 第5問（5）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 7,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=7"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-senmon-q1-1",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "senmon",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "GE-PON"
+    ],
+    "difficulty": 3,
+    "question": "GE-PONでOLTとONUの間の光を光信号のまま分岐し、1心の光ファイバを複数の利用者で共用する。光スプリッタは何素子で構成されるか。",
+    "choices": {
+      "ア": "① 能動素子",
+      "イ": "② 受動素子",
+      "ウ": "③ 圧電素子"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "光スプリッタは入力された光信号を光のまま複数の出力へ分ける受動素子である。",
+    "choiceExplanations": {
+      "ア": "光スプリッタは光を増幅・変換するための電源を必要としない。",
+      "イ": "光スプリッタは入力された光信号を光のまま複数の出力へ分ける受動素子である。",
+      "ウ": "圧電素子は変形と電圧を相互に変換する素子であり、光信号の分岐用ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      8
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続のための技術及び理論 第1問（1）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 8,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=8"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-senmon-q1-2",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "senmon",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "ADSL回線の機器"
+    ],
+    "difficulty": 3,
+    "question": "アナログ電話回線を使ってADSL信号を送受信する機器で、DMTでデータ信号を変調・復調するものはどれか。",
+    "choices": {
+      "ア": "① ADSLスプリッタ",
+      "イ": "② ADSLモデム",
+      "ウ": "③ DSU"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "ADSLモデムは回線に送る信号を変調し、受信した信号を復調する。",
+    "choiceExplanations": {
+      "ア": "ADSLスプリッタは周波数の違いを利用して電話用とADSL用の信号を分離する。データ変調は担わない。",
+      "イ": "ADSLモデムは回線に送る信号を変調し、受信した信号を復調する。",
+      "ウ": "DSUはデジタル回線を終端する機器で、ADSL信号をDMTで変調するものではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      8
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続のための技術及び理論 第1問（2）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 8,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=8"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-senmon-q1-3",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "senmon",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "IP電話の呼制御"
+    ],
+    "difficulty": 3,
+    "question": "RFC 3261として標準化されたSIPは、どのIPの版で動作するか。",
+    "choices": {
+      "ア": "① IPv4のみ",
+      "イ": "② IPv6のみ",
+      "ウ": "③ IPv4及びIPv6の両方"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "SIPは呼の確立・変更・終了を制御するプロトコルで、IPv4とIPv6の両方に対応する。",
+    "choiceExplanations": {
+      "ア": "IPv4での運用に加え、IPv6アドレスを使う場合にもSIPを使用できる。",
+      "イ": "SIPはIPv6のみに限定されず、IPv4ネットワークでも利用できる。",
+      "ウ": "SIPは呼の確立・変更・終了を制御するプロトコルで、IPv4とIPv6の両方に対応する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      8
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続のための技術及び理論 第1問（3）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 8,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=8"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-senmon-q1-4",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "senmon",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "無線LANの電波干渉"
+    ],
+    "difficulty": 3,
+    "question": "無線LANの周波数帯のうち、医療機器や電子レンジなどが使用するISMバンドと重なり、干渉によるスループット低下のおそれが大きいのは何GHz帯か。",
+    "choices": {
+      "ア": "① 2.4",
+      "イ": "② 5",
+      "ウ": "③ 60"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "2.4 GHz帯の無線LANは電子レンジなどと同じ帯域を使うことがあるため、これらの機器の影響を受けることがある。",
+    "choiceExplanations": {
+      "ア": "2.4 GHz帯の無線LANは電子レンジなどと同じ帯域を使うことがあるため、これらの機器の影響を受けることがある。",
+      "イ": "5 GHz帯も無線LANで使うが、一般的な電子レンジによる2.4 GHz付近の干渉とは周波数帯が異なる。",
+      "ウ": "60 GHz帯はミリ波の無線LANなどで使われる帯域で、電子レンジが使う帯域とは離れている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      8
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続のための技術及び理論 第1問（4）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 8,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=8"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-senmon-q1-5",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "senmon",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "イーサネット給電"
+    ],
+    "difficulty": 3,
+    "question": "IEEE 802.3at Type 1のPoEで、LAN配線の予備2対4心を使ってIP電話機などに給電できるイーサネット規格はどれか。",
+    "choices": {
+      "ア": "① 1000BASE-T",
+      "イ": "② 10GBASE-T",
+      "ウ": "③ 100BASE-TX"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "100BASE-TXはデータに2対を使い、残る予備2対をオルタナティブB給電に使うことができる。",
+    "choiceExplanations": {
+      "ア": "1000BASE-Tでは4対全てをデータ信号に用いるため、データに使わない予備2対はない。",
+      "イ": "10GBASE-Tも4対全てで信号を伝送する。設問の予備対を用いた給電の例にはならない。",
+      "ウ": "100BASE-TXはデータに2対を使い、残る予備2対をオルタナティブB給電に使うことができる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      8
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続のための技術及び理論 第1問（5）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 8,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=8"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-senmon-q2-1",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "senmon",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "伝送路符号"
+    ],
+    "difficulty": 3,
+    "question": "図のように、ビット0ではレベルを保ち、ビット1が現れるたびに0、高、0、低、0の順に信号レベルを変える伝送路符号はどれか。",
+    "choices": {
+      "ア": "① MLT-3",
+      "イ": "② NRZ",
+      "ウ": "③ NRZI"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "MLT-3では高レベル・ゼロ・低レベルの三値を用い、ビット1を受け取るごとに順に遷移する。",
+    "choiceExplanations": {
+      "ア": "MLT-3では高レベル・ゼロ・低レベルの三値を用い、ビット1を受け取るごとに順に遷移する。",
+      "イ": "NRZは通常、ビット0と1に固定した二つのレベルを対応させる。設問のように三値の系列を進めない。",
+      "ウ": "NRZIは前の状態との反転の有無でビット値を表す。三つのレベルを使って順に遷移させるのはMLT-3である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      9
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続のための技術及び理論 第2問（1）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 9,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=9"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/questions/dekyo-digital2/2022-first/senmon-2-1.webp"
+    ],
+    "imageAltTexts": [
+      "第二級デジタル通信 端末設備の接続のための技術及び理論 第2問（1）の原図"
+    ]
+  },
+  {
+    "id": "dekyo-digital2-2022-first-senmon-q2-2",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "senmon",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "光アクセスの終端装置"
+    ],
+    "difficulty": 3,
+    "question": "光ファイバのブロードバンドアクセスで、事業者側の光加入者線終端装置に対し、利用者宅に設置される機器はどれか。",
+    "choices": {
+      "ア": "① ONU",
+      "イ": "② OSU",
+      "ウ": "③ OLT"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "ONUは利用者宅側で光回線を終端し、家庭の機器へ接続する役割を持つ。",
+    "choiceExplanations": {
+      "ア": "ONUは利用者宅側で光回線を終端し、家庭の機器へ接続する役割を持つ。",
+      "イ": "OSUは一般に収容局側などで光アクセスを収容するための装置を指す。",
+      "ウ": "OLTは事業者側に設置される光回線終端装置である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      9
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続のための技術及び理論 第2問（2）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 9,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=9"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-senmon-q2-3",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "senmon",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "CATVの伝送路"
+    ],
+    "difficulty": 3,
+    "question": "CATVでヘッドエンドからユーザー宅までの間に光ファイバケーブルと同軸ケーブルを組み合わせる方式はどれか。",
+    "choices": {
+      "ア": "① ADSL",
+      "イ": "② VDSL",
+      "ウ": "③ HFC"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "HFCはハイブリッドファイバ同軸網で、幹線側を光ファイバ、加入者側を同軸ケーブルなどで構成する。",
+    "choiceExplanations": {
+      "ア": "ADSLは加入者の電話用メタル回線でデータを伝送するDSLの一種である。",
+      "イ": "VDSLも電話用のメタル対線を使う方式で、CATVの同軸配線と光を組み合わせる方式名ではない。",
+      "ウ": "HFCはハイブリッドファイバ同軸網で、幹線側を光ファイバ、加入者側を同軸ケーブルなどで構成する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      9
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続のための技術及び理論 第2問（3）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 9,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=9"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-senmon-q2-4",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "senmon",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "TCP/IPモデル"
+    ],
+    "difficulty": 3,
+    "question": "TCP/IPの4階層モデルにおいて、ネットワークインタフェース層の直上に位置する層はどれか。",
+    "choices": {
+      "ア": "① アプリケーション層",
+      "イ": "② トランスポート層",
+      "ウ": "③ インターネット層"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "ネットワークインタフェース層のすぐ上にインターネット層があり、IPアドレスによるパケット配送などを扱う。",
+    "choiceExplanations": {
+      "ア": "アプリケーション層はTCP/IPの最上位にあり、ネットワーク接続よりも利用するサービスの規約を扱う。",
+      "イ": "トランスポート層の下には、IPによる配送を担当するインターネット層がある。",
+      "ウ": "ネットワークインタフェース層のすぐ上にインターネット層があり、IPアドレスによるパケット配送などを扱う。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      9
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続のための技術及び理論 第2問（4）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 9,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=9"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-senmon-q2-5",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "senmon",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "IPv4の送信方式"
+    ],
+    "difficulty": 3,
+    "question": "IPv4で、一つのホストから同じデータリンク内の全てのホストへ向けて送信する方式はどれか。",
+    "choices": {
+      "ア": "① マルチキャスト",
+      "イ": "② ブロードキャスト",
+      "ウ": "③ ユニキャスト"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "ブロードキャストは同じデータリンクなど特定の範囲内の全ホストを宛先にして送る。",
+    "choiceExplanations": {
+      "ア": "マルチキャストは特定のグループを構成する複数のホストに送る方式である。",
+      "イ": "ブロードキャストは同じデータリンクなど特定の範囲内の全ホストを宛先にして送る。",
+      "ウ": "ユニキャストは一つの宛先ホストへ送る方式である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      9
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続のための技術及び理論 第2問（5）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 9,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=9"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-senmon-q3-1",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "senmon",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "DNSのセキュリティ"
+    ],
+    "difficulty": 3,
+    "question": "DNSで偽の情報が保持され、利用者が目的のドメインに到達できなくなったり誤ったサイトに誘導されたりする攻撃はどれか。",
+    "choices": {
+      "ア": "① DNSキャッシュクリア",
+      "イ": "② DNSキャッシュポイズニング",
+      "ウ": "③ DNSラウンドロビン"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "DNSキャッシュポイズニングは、保存される名前解決情報が偽のものになり、利用者が誤った宛先に接続する問題である。",
+    "choiceExplanations": {
+      "ア": "キャッシュのクリアは保存された情報を取り除く操作であり、偽の応答を保存する攻撃ではない。",
+      "イ": "DNSキャッシュポイズニングは、保存される名前解決情報が偽のものになり、利用者が誤った宛先に接続する問題である。",
+      "ウ": "ラウンドロビンは同じ名前に対応する複数の正当な宛先を順番に返すなどして、負荷を分散する仕組みである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      10
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続のための技術及び理論 第3問（1）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 10,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=10"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-senmon-q3-2",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "senmon",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "ネットワークアドレス変換"
+    ],
+    "difficulty": 3,
+    "question": "IPマスカレードとも呼ばれ、IPアドレスに加えてポート番号も変換することで、複数のプライベートIPアドレスが一つのグローバルIPアドレスを共有できる機能は何か。",
+    "choices": {
+      "ア": "① NAPT",
+      "イ": "② DMZ",
+      "ウ": "③ DHCP"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "NAPTはIPアドレスとポート番号を対応付け、複数の端末からの通信でも戻り先を区別できる。",
+    "choiceExplanations": {
+      "ア": "NAPTはIPアドレスとポート番号を対応付け、複数の端末からの通信でも戻り先を区別できる。",
+      "イ": "DMZは外部向けシステムを内部のネットワークから分離して置くための区画である。",
+      "ウ": "DHCPは端末へのアドレスなどの設定の配布であり、通信時のポート番号の変換は行わない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      10
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続のための技術及び理論 第3問（2）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 10,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=10"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-senmon-q3-3",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "senmon",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "ICMPv6"
+    ],
+    "difficulty": 3,
+    "question": "RFC 4443で標準化されたICMPv6のメッセージのうち、エラーメッセージはどれか。",
+    "choices": {
+      "ア": "① 近隣探索",
+      "イ": "② パケット過大",
+      "ウ": "③ エコー要求"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "パケット過大は、転送先で扱えるパケットの大きさを超えたことを送信元に知らせるエラーメッセージである。",
+    "choiceExplanations": {
+      "ア": "近隣探索は近くのノードやルータの情報を得るためのメッセージであり、エラーに分類されない。",
+      "イ": "パケット過大は、転送先で扱えるパケットの大きさを超えたことを送信元に知らせるエラーメッセージである。",
+      "ウ": "エコー要求は相手への到達可能性などを確認する情報メッセージである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      10
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続のための技術及び理論 第3問（3）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 10,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=10"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-senmon-q3-4",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "senmon",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "スイッチの転送方式"
+    ],
+    "difficulty": 3,
+    "question": "スイッチングハブのストアアンドフォワード方式は、有効フレームの先頭からどこまで受信して異常を確認してから転送するか。",
+    "choices": {
+      "ア": "① 宛先アドレス",
+      "イ": "② 64バイト",
+      "ウ": "③ FCS"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "フレームの末尾にあるFCSまで受信し、誤りがないと確認してから転送する。",
+    "choiceExplanations": {
+      "ア": "宛先アドレスを確認できた時点で始めるのはカットスルー方式である。",
+      "イ": "最初の64バイトまでを確認するのはフラグメントフリー方式である。",
+      "ウ": "フレームの末尾にあるFCSまで受信し、誤りがないと確認してから転送する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      10
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続のための技術及び理論 第3問（4）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 10,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=10"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-senmon-q3-5",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "senmon",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "レイヤ2スイッチのアドレス学習"
+    ],
+    "difficulty": 3,
+    "question": "レイヤ2スイッチが受信したフレームから読み取り、未登録の場合にアドレステーブルへ登録する情報はどれか。",
+    "choices": {
+      "ア": "① 宛先IPアドレス",
+      "イ": "② 宛先MACアドレス",
+      "ウ": "③ 送信元IPアドレス",
+      "エ": "④ 送信元MACアドレス"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "送信元のMACアドレスとフレームを受けたポートを対応付け、そのアドレス宛の転送に使う。",
+    "choiceExplanations": {
+      "ア": "レイヤ2での転送はMACアドレスに基づく。IPアドレスはこの学習の対象ではない。",
+      "イ": "宛先MACアドレスは転送先ポートの検索に使われる。どこから届いたかを登録するには送信元を使う。",
+      "ウ": "送信元の情報は学習に使われるが、ここではレイヤ2で使うMACアドレスのことを指す。",
+      "エ": "送信元のMACアドレスとフレームを受けたポートを対応付け、そのアドレス宛の転送に使う。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      10
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続のための技術及び理論 第3問（5）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 10,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=10"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-senmon-q4-1",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "senmon",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "シングルモード光ファイバ"
+    ],
+    "difficulty": 3,
+    "question": "シングルモード光ファイバのコアとクラッドの屈折率は、どのような関係にあるか。",
+    "choices": {
+      "ア": "① コアがクラッドよりわずかに小さい",
+      "イ": "② コアがクラッドよりわずかに大きい",
+      "ウ": "③ コアとクラッドが全く同じ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "屈折率の高いコアを低いクラッドで囲むと、光をコア内に導く構造を作れる。",
+    "choiceExplanations": {
+      "ア": "コア側の屈折率が小さい場合、通常のファイバのような光の閉じ込めができない。",
+      "イ": "屈折率の高いコアを低いクラッドで囲むと、光をコア内に導く構造を作れる。",
+      "ウ": "屈折率が同じでは境界で光が閉じ込められず、コアに沿って伝送できない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      11
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続のための技術及び理論 第4問（1）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 11,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=11"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-senmon-q4-2",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "senmon",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "光ファイバ接続の損失"
+    ],
+    "difficulty": 3,
+    "question": "一般に、メカニカルスプライス接続による損失値をコネクタ接続と比較するとどうなるか。",
+    "choices": {
+      "ア": "① ほぼ同等である",
+      "イ": "② 大きい",
+      "ウ": "③ 小さい"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "メカニカルスプライスは突き合わせた端面を固定・整合するため、一般にコネクタ接続に比べて損失値が小さい。",
+    "choiceExplanations": {
+      "ア": "どちらも機械的な接続であるが、一般にメカニカルスプライスの接続損失はコネクタより小さいとされる。",
+      "イ": "コネクタは繰り返し着脱できる構造である。接続損失がメカニカルスプライスより小さいとは限らない。",
+      "ウ": "メカニカルスプライスは突き合わせた端面を固定・整合するため、一般にコネクタ接続に比べて損失値が小さい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      11
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続のための技術及び理論 第4問（2）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 11,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=11"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-senmon-q4-3",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "senmon",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "UTPケーブル"
+    ],
+    "difficulty": 3,
+    "question": "LANのUTPケーブルについて、誤っている記述はどれか。",
+    "choices": {
+      "ア": "① 2本の心線を対にして撚ることで、外部にノイズが出にくくなる。",
+      "イ": "② 外被の内側の薄い金属箔で心線全体をシールドし、外からのノイズの影響を抑える。",
+      "ウ": "③ 成端で撚りを戻す長さが長くなると、近端漏話が大きくなる。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "UTPは非シールドツイストペアで、金属箔などのシールドを備えない。",
+    "choiceExplanations": {
+      "ア": "対の二つの導体を撚り合わせると、各導体から生じる外部への影響が打ち消されやすい。",
+      "イ": "UTPは非シールドツイストペアで、金属箔などのシールドを備えない。",
+      "ウ": "撚りがなくなる区間が長いと対同士の結合が増え、近端漏話の原因になる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      11
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続のための技術及び理論 第4問（3）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 11,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=11"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-senmon-q4-4",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "senmon",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "接続確認"
+    ],
+    "difficulty": 3,
+    "question": "Windowsのpingで、ICMPの既定32バイトのデータを送り接続を確認する宛先は、PCの何を指定して選べるか。",
+    "choices": {
+      "ア": "① ポート番号",
+      "イ": "② MACアドレス",
+      "ウ": "③ IPアドレス"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "宛先IPアドレスを指定してICMPのエコー要求を送り、エコー応答が得られるかを確認する。",
+    "choiceExplanations": {
+      "ア": "ICMPはTCPやUDPのポート番号を用いない。",
+      "イ": "MACアドレスはデータリンク上で扱うアドレスであり、pingの宛先はIPアドレス等で指定する。",
+      "ウ": "宛先IPアドレスを指定してICMPのエコー要求を送り、エコー応答が得られるかを確認する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      11
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続のための技術及び理論 第4問（4）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 11,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=11"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-senmon-q4-5",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "senmon",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "端末設備の接続のための技術及び理論",
+    "topicTags": [
+      "屋内線の保護"
+    ],
+    "difficulty": 3,
+    "question": "屋内線が壁などを貫通する部分の絶縁を確保し、電灯線や障害物から屋内線を保護するために一般に使うものはどれか。",
+    "choices": {
+      "ア": "① 硬質ビニル管",
+      "イ": "② PVC電線防護カバー",
+      "ウ": "③ ワイヤプロテクタ"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "硬質ビニル管は絶縁性があり、壁を貫通するような箇所でも内部の線を機械的に保護できる。",
+    "choiceExplanations": {
+      "ア": "硬質ビニル管は絶縁性があり、壁を貫通するような箇所でも内部の線を機械的に保護できる。",
+      "イ": "PVC電線防護カバーは主に露出した電線を覆う保護材で、貫通箇所で線を通す管とは用途が異なる。",
+      "ウ": "ワイヤプロテクタは床面などに固定して配線を踏み付けから守る材料である。壁の貫通部には管を使う。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      11
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続のための技術及び理論 第4問（5）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 11,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=11"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-houki-q1-1",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "houki",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "端末設備の接続に関する法規",
+    "topicTags": [
+      "電気通信回線設備の定義"
+    ],
+    "difficulty": 3,
+    "question": "電気通信事業法又はその施行規則の用語について、正しい記述はどれか。",
+    "choices": {
+      "ア": "① 電気通信回線設備は、送受信の場所をつなぐ伝送路設備と、これと一体の交換設備、並びにそれらの附属設備である。",
+      "イ": "② 音声伝送役務は、おおむね3 kHz帯域の音声等を伝送交換する機能のある設備を他人の通信に供する役務で、データ伝送役務も含む。",
+      "ウ": "③ データ伝送役務は、音声等を伝送交換するための設備を他人の通信に供する役務である。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "電気通信回線設備の定義は、伝送路設備と一体に設置される交換設備のほか、両者の附属設備も含む。",
+    "choiceExplanations": {
+      "ア": "電気通信回線設備の定義は、伝送路設備と一体に設置される交換設備のほか、両者の附属設備も含む。",
+      "イ": "規則の音声伝送役務の定義では、おおむね4 kHz帯域とされ、データ伝送役務は除かれる。",
+      "ウ": "音声その他の音響を伝送交換するための役務という説明はデータ伝送役務の定義に合わない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      12
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続に関する法規 第1問（1）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 12,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=12"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-houki-q1-2",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "houki",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "端末設備の接続に関する法規",
+    "topicTags": [
+      "電気通信事業法の目的"
+    ],
+    "difficulty": 3,
+    "question": "電気通信事業法では、電気通信事業の公共性を踏まえて、その運営をどのようなものにすることを目的の一部に挙げているか。公正な競争を促し、役務の円滑な提供と利用者の利益の保護を図る。",
+    "choices": {
+      "ア": "① 安定かつ長期的",
+      "イ": "② 公平かつ安定的",
+      "ウ": "③ 適正かつ合理的"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "法の第1条は、事業の運営を適正かつ合理的なものとするとともに、公正な競争を促進することを掲げる。",
+    "choiceExplanations": {
+      "ア": "円滑な提供は法の目的に含まれるが、事業の運営について「安定かつ長期的」とは書かれていない。",
+      "イ": "公正は競争についての表現で、事業の運営を修飾する文言は「適正かつ合理的」である。",
+      "ウ": "法の第1条は、事業の運営を適正かつ合理的なものとするとともに、公正な競争を促進することを掲げる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      12
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続に関する法規 第1問（2）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 12,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=12"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-houki-q1-3",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "houki",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "端末設備の接続に関する法規",
+    "topicTags": [
+      "業務改善命令"
+    ],
+    "difficulty": 3,
+    "question": "事業者が重要通信について適切に配慮していない場合、総務大臣は利用者の利益又は何を確保するのに必要な範囲で業務改善などを命じられるか。",
+    "choices": {
+      "ア": "① 公共の利益",
+      "イ": "② 国民の利便",
+      "ウ": "③ 社会の秩序"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "業務改善などを命じられる範囲は、利用者の利益又は公共の利益を確保するのに必要な限度である。",
+    "choiceExplanations": {
+      "ア": "業務改善などを命じられる範囲は、利用者の利益又は公共の利益を確保するのに必要な限度である。",
+      "イ": "国民の利便は法の目的に関わるが、業務改善命令のこの規定は公共の利益を挙げている。",
+      "ウ": "この規定の空欄は「公共の利益」であり、社会の秩序一般を維持するための命令という規定ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      12
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続に関する法規 第1問（3）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 12,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=12"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-houki-q1-4",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "houki",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "端末設備の接続に関する法規",
+    "topicTags": [
+      "自営電気通信設備の接続"
+    ],
+    "difficulty": 3,
+    "question": "事業者が自営電気通信設備を電気通信回線設備へ接続するよう請求されたとき、その接続が総務省令の何に適合しない場合に請求を拒むことができるか。",
+    "choices": {
+      "ア": "① 管理規程",
+      "イ": "② 技術基準",
+      "ウ": "③ 検査規格"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "自営電気通信設備の接続が総務省令で定める技術基準に適合しない場合、事業者は請求を拒める。",
+    "choiceExplanations": {
+      "ア": "事業者が設ける管理規程ではなく、総務省令の技術基準が判断の根拠になる。",
+      "イ": "自営電気通信設備の接続が総務省令で定める技術基準に適合しない場合、事業者は請求を拒める。",
+      "ウ": "検査規格という言葉ではなく、法令は総務省令で定める「技術基準」としている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      12
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続に関する法規 第1問（4）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 12,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=12"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-houki-q1-5",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "houki",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "端末設備の接続に関する法規",
+    "topicTags": [
+      "工事担任者資格者証"
+    ],
+    "difficulty": 3,
+    "question": "総務省令の基準に適合する工事担任者の養成課程について、総務大臣はどのような条件を満たす者に資格者証を交付するか。",
+    "choices": {
+      "ア": "① 認証をしたものに合格",
+      "イ": "② 許可したものを受講",
+      "ウ": "③ 認定をしたものを修了"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "総務大臣が省令の基準に適合すると認定した養成課程を修了した者に、資格者証を交付する。",
+    "choiceExplanations": {
+      "ア": "養成課程に対して行う行政上の手続は「認定」であり、本人には養成課程の修了が必要となる。",
+      "イ": "授業を受講しただけでは足りず、認定を受けた養成課程を修了する必要がある。",
+      "ウ": "総務大臣が省令の基準に適合すると認定した養成課程を修了した者に、資格者証を交付する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      12
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続に関する法規 第1問（5）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 12,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=12"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-houki-q2-1",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "houki",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "端末設備の接続に関する法規",
+    "topicTags": [
+      "工事担任者の区分"
+    ],
+    "difficulty": 3,
+    "question": "工事担任者規則の資格区分と工事の範囲について、誤っている記述はどれか。",
+    "choices": {
+      "ア": "① 第一級アナログ通信は、アナログ伝送路設備と総合デジタル通信用設備に端末設備等を接続する工事を行い、又は監督できる。",
+      "イ": "② 第二級アナログ通信は端末設備に収容する回線が1のアナログ接続工事と、基本インタフェースで回線数が1の総合デジタル通信の接続工事を行い、又は監督できる。",
+      "ウ": "③ 第二級デジタル通信は主にインターネット接続用の1 Gbit/s以下の回線の接続工事に加え、総合デジタル通信用設備の接続工事を行い、又は監督できる。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "第二級デジタル通信の対象は、主にインターネットに接続する1 Gbit/s以下のデジタル回線である。総合デジタル通信用設備の工事は除かれる。",
+    "choiceExplanations": {
+      "ア": "第一級アナログ通信の範囲には、アナログ伝送路と総合デジタル通信用設備の両方への接続工事が含まれる。",
+      "イ": "第二級アナログ通信はアナログの収容回線が1、総合デジタルは基本インタフェースで1の工事に限られる。",
+      "ウ": "第二級デジタル通信の対象は、主にインターネットに接続する1 Gbit/s以下のデジタル回線である。総合デジタル通信用設備の工事は除かれる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      13
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続に関する法規 第2問（1）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 13,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=13"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-houki-q2-2",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "houki",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "端末設備の接続に関する法規",
+    "topicTags": [
+      "技術基準適合認定番号"
+    ],
+    "difficulty": 3,
+    "question": "端末機器に表示する技術基準適合認定番号の最初の文字について、Aになるのはどの設備に接続される端末機器か。",
+    "choices": {
+      "ア": "① 専用通信回線設備",
+      "イ": "② 総合デジタル通信用設備",
+      "ウ": "③ アナログ電話用設備"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "アナログ電話用設備に接続する端末機器で、認定番号の最初の文字はAとなる。",
+    "choiceExplanations": {
+      "ア": "専用通信回線設備に接続される端末の先頭の文字はDである。",
+      "イ": "総合デジタル通信用設備に接続する端末機器にはCを使う。",
+      "ウ": "アナログ電話用設備に接続する端末機器で、認定番号の最初の文字はAとなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      13
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続に関する法規 第2問（2）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 13,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=13"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-houki-q2-3",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "houki",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "端末設備の接続に関する法規",
+    "topicTags": [
+      "有線電気通信設備の技術基準"
+    ],
+    "difficulty": 3,
+    "question": "有線電気通信設備の技術基準によって、他人が設置する有線電気通信設備に対してどのようなことを確保する必要があるか。",
+    "choices": {
+      "ア": "① 妨害を与えない",
+      "イ": "② 相互に接続できる",
+      "ウ": "③ 分界点を設ける"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "技術基準は、自らの有線電気通信設備が他人の設備に妨害を与えないよう求める。",
+    "choiceExplanations": {
+      "ア": "技術基準は、自らの有線電気通信設備が他人の設備に妨害を与えないよう求める。",
+      "イ": "他人が設置した設備と常に相互接続できることを要求する条文ではない。",
+      "ウ": "分界点は端末設備などの責任を区分する別の規定で使われる用語であり、この有線設備の基準の文言ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      13
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続に関する法規 第2問（3）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 13,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=13"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-houki-q2-4",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "houki",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "端末設備の接続に関する法規",
+    "topicTags": [
+      "有線電気通信設備令の用語"
+    ],
+    "difficulty": 3,
+    "question": "有線電気通信設備令の用語について、誤っている記述はどれか。",
+    "choices": {
+      "ア": "① 平衡度は通信回線の中性点と大地間に起電力を加えた場合の、中性点と大地間の電圧と回線端子間に生じる電圧の比をdBで表したものである。",
+      "イ": "② 高周波は周波数が4,500 Hzを超える電磁波である。",
+      "ウ": "③ 絶縁電線は絶縁物のみで被覆されている電線である。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "同令で高周波とする境界は3,500 Hz超であり、4,500 Hz超ではない。",
+    "choiceExplanations": {
+      "ア": "平衡度は二つの箇所で生じる電圧の比をdBで表すもので、記述は定義に合う。",
+      "イ": "同令で高周波とする境界は3,500 Hz超であり、4,500 Hz超ではない。",
+      "ウ": "絶縁物のみで被覆された電線を絶縁電線と定義する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      13
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続に関する法規 第2問（4）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 13,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=13"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-houki-q2-5",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "houki",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "端末設備の接続に関する法規",
+    "topicTags": [
+      "不正アクセス禁止法の目的"
+    ],
+    "difficulty": 3,
+    "question": "不正アクセス禁止法は不正アクセスを禁止し、罰則と、再発防止のためのどの機関による援助措置などを定めることを目的とするか。",
+    "choices": {
+      "ア": "① 都道府県公安委員会",
+      "イ": "② 内閣府",
+      "ウ": "③ 公安調査庁"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "同法第1条は、不正アクセス行為の再発防止のための都道府県公安委員会による援助措置等を挙げる。",
+    "choiceExplanations": {
+      "ア": "同法第1条は、不正アクセス行為の再発防止のための都道府県公安委員会による援助措置等を挙げる。",
+      "イ": "内閣府はこの法律が挙げる再発防止の援助を行う主体ではない。",
+      "ウ": "制度の目的に掲げられる援助措置は公安調査庁によるものではなく、都道府県公安委員会が担う。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      13
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続に関する法規 第2問（5）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 13,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=13"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-houki-q3-1",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "houki",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備等規則の用語"
+    ],
+    "difficulty": 3,
+    "question": "端末設備等規則の用語について、誤っている記述はどれか。",
+    "choices": {
+      "ア": "① アナログ電話端末は、アナログ電話用設備との接続点でプラグジャック方式で接続する端末設備である。",
+      "イ": "② 総合デジタル通信用設備は、主に64 kbit/sを単位とするデジタル信号で符号、音響又は影像を統合して伝送交換する電気通信役務に用いる回線設備である。",
+      "ウ": "③ 絶対レベルは、一の皮相電力の1 mWに対する比をdBで表したものである。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "アナログ電話端末の定義に用いるのは「二線式の接続形式」である。プラグジャック方式に限定する定義ではない。",
+    "choiceExplanations": {
+      "ア": "アナログ電話端末の定義に用いるのは「二線式の接続形式」である。プラグジャック方式に限定する定義ではない。",
+      "イ": "総合デジタル通信用設備では、主に64 kbit/sを単位とした伝送により符号、音響、影像などを統合して扱う。",
+      "ウ": "端末設備等規則での「絶対レベル」は、皮相電力の1 mWに対する比をデシベルにした値である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      14
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続に関する法規 第3問（1）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 14,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=14"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-houki-q3-2",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "houki",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備による通信の識別"
+    ],
+    "difficulty": 3,
+    "question": "端末設備が意図的に内容を識別する機能を備えてはならないのは、事業用電気通信設備からどのように出る通信か。",
+    "choices": {
+      "ア": "① 拡散される",
+      "イ": "② 漏えいする",
+      "ウ": "③ 発出される"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "端末設備に、事業用設備から漏えいする通信の内容を意図的に識別する機能を設けてはならない。",
+    "choiceExplanations": {
+      "ア": "「拡散」はこの禁止規定に使われている文言ではない。",
+      "イ": "端末設備に、事業用設備から漏えいする通信の内容を意図的に識別する機能を設けてはならない。",
+      "ウ": "通常送信されること一般を指すのではなく、規則は漏えいする通信の内容を識別する機能を禁じている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      14
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続に関する法規 第3問（2）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 14,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=14"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-houki-q3-3",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "houki",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "端末設備の接続に関する法規",
+    "topicTags": [
+      "鳴音の防止"
+    ],
+    "difficulty": 3,
+    "question": "端末設備が備えるべき鳴音防止の条件は、誰がどのように定めるか。",
+    "choices": {
+      "ア": "① 工事担任者が接続する",
+      "イ": "② 電気通信事業者が別に規定する",
+      "ウ": "③ 総務大臣が別に告示する"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "端末設備は、事業用設備との間の鳴音を防止するため、総務大臣が別に告示する条件を満たす必要がある。",
+    "choiceExplanations": {
+      "ア": "工事担任者は工事を行い又は監督するが、鳴音防止の条件を定める主体ではない。",
+      "イ": "電気通信事業者ごとに定める条件ではなく、総務大臣の告示に従う。",
+      "ウ": "端末設備は、事業用設備との間の鳴音を防止するため、総務大臣が別に告示する条件を満たす必要がある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      14
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続に関する法規 第3問（3）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 14,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=14"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-houki-q3-4",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "houki",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備の絶縁抵抗"
+    ],
+    "difficulty": 3,
+    "question": "端末設備の使用電圧が直流300 V超750 V以下又は交流300 V超600 V以下の場合、電源回路と筐体、及び電源回路と事業用電気通信設備の間に何MΩ以上の絶縁抵抗が必要か。",
+    "choices": {
+      "ア": "① 0.2",
+      "イ": "② 0.3",
+      "ウ": "③ 0.4"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "規則は問題に示された直流と交流の電圧区分に対し、0.4 MΩ以上の絶縁抵抗を求める。",
+    "choiceExplanations": {
+      "ア": "0.2 MΩは使用電圧が300 V以下の場合の値で、この電圧区分には適用しない。",
+      "イ": "0.3 MΩではこの電圧区分で定める0.4 MΩ以上の条件を満たさない。",
+      "ウ": "規則は問題に示された直流と交流の電圧区分に対し、0.4 MΩ以上の絶縁抵抗を求める。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      14
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続に関する法規 第3問（4）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 14,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=14"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-houki-q3-5",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "houki",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "端末設備の接続に関する法規",
+    "topicTags": [
+      "端末設備と配線設備等"
+    ],
+    "difficulty": 3,
+    "question": "端末設備等規則の配線設備等について、誤っている記述はどれか。",
+    "choices": {
+      "ア": "① 事業用設備の損傷や障害を防ぐため、電気通信事業者が別に認可する設置方法がある場合は、その方法に従う。",
+      "イ": "② 電線相互間と電線・大地間の絶縁抵抗は、200 V以上の直流の一の電圧で測定して1 MΩ以上である必要がある。",
+      "ウ": "③ 評価雑音電力は絶対レベルで定常時−64 dB以下、最大時−58 dB以下である必要がある。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "設置方法を定めるのは総務大臣による告示である。電気通信事業者が認可するとの記述は誤っている。",
+    "choiceExplanations": {
+      "ア": "設置方法を定めるのは総務大臣による告示である。電気通信事業者が認可するとの記述は誤っている。",
+      "イ": "電線相互間と電線・大地間について、設問の測定方法で1 MΩ以上を求める。",
+      "ウ": "誘導による雑音を含む評価雑音電力は、定常時と最大時について記述の基準がある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      14
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続に関する法規 第3問（5）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 14,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=14"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-houki-q4-1",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "houki",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "端末設備の接続に関する法規",
+    "topicTags": [
+      "緊急通報"
+    ],
+    "difficulty": 3,
+    "question": "通話用のアナログ電話端末は、緊急通報番号で警察機関、海上保安機関又は何の機関に発信する機能を持つ必要があるか。",
+    "choices": {
+      "ア": "① 消防",
+      "イ": "② 報道",
+      "ウ": "③ 気象"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "警察、海上保安に加えて消防機関に発信する機能が必要である。",
+    "choiceExplanations": {
+      "ア": "警察、海上保安に加えて消防機関に発信する機能が必要である。",
+      "イ": "報道機関はアナログ電話端末の緊急通報先として挙げられていない。",
+      "ウ": "気象を扱う機関がこの規定の空欄に入るわけではなく、消防機関が入る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      15
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続に関する法規 第4問（1）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 15,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=15"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-houki-q4-2",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "houki",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "端末設備の接続に関する法規",
+    "topicTags": [
+      "押しボタンダイヤル信号"
+    ],
+    "difficulty": 3,
+    "question": "アナログ電話の押しボタンダイヤル信号について、誤っている記述はどれか。",
+    "choices": {
+      "ア": "① 低群周波数は600 Hzから1,000 Hzまでの範囲内の指定された四つの周波数で規定される。",
+      "イ": "② ミニマムポーズは隣接する信号間の休止時間の最小値である。",
+      "ウ": "③ 周期は信号休止時間とミニマムポーズの和である。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "周期は信号「送出時間」とミニマムポーズを合わせた時間であり、信号休止時間を加えるという記述は誤りである。",
+    "choiceExplanations": {
+      "ア": "低群周波数の697 Hz、770 Hz、852 Hz、941 Hzは、いずれもこの範囲に入る。",
+      "イ": "信号間に必要な最小の休止時間をミニマムポーズと呼ぶ。",
+      "ウ": "周期は信号「送出時間」とミニマムポーズを合わせた時間であり、信号休止時間を加えるという記述は誤りである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      15
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続に関する法規 第4問（2）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 15,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=15"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-houki-q4-3",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "houki",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "端末設備の接続に関する法規",
+    "topicTags": [
+      "総合デジタル通信端末"
+    ],
+    "difficulty": 3,
+    "question": "総合デジタル通信端末が電気通信回線に対して加えてはならない電圧はどれか。",
+    "choices": {
+      "ア": "① 高周波の交流",
+      "イ": "② 音声周波の交流",
+      "ウ": "③ 直流"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "総合デジタル通信端末は、接続する電気通信回線へ直流電圧を加えてはならない。",
+    "choiceExplanations": {
+      "ア": "高周波の交流全般を禁止する規定ではない。端末が回線に直流を加えることを禁じている。",
+      "イ": "規則は音声周波の交流を対象とせず、直流の印加を禁止している。",
+      "ウ": "総合デジタル通信端末は、接続する電気通信回線へ直流電圧を加えてはならない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      15
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続に関する法規 第4問（3）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 15,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=15"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-houki-q4-4",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "houki",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "端末設備の接続に関する法規",
+    "topicTags": [
+      "移動電話端末の発信"
+    ],
+    "difficulty": 3,
+    "question": "相手の応答を自動確認する移動電話端末が応答を確認できないとき、何の後1分以内にチャネルを切断する信号を送り、送信を停止する必要があるか。",
+    "choices": {
+      "ア": "① 通信路設定完了",
+      "イ": "② 選択信号送出終了",
+      "ウ": "③ 周波数捕捉完了"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "応答が確認できない場合は、選択信号送出終了後1分以内にチャネル切断の信号を出し、送信を停止する。",
+    "choiceExplanations": {
+      "ア": "通信路を確保した時点ではなく、発信先を選ぶ信号の送出終了を基準とする。",
+      "イ": "応答が確認できない場合は、選択信号送出終了後1分以内にチャネル切断の信号を出し、送信を停止する。",
+      "ウ": "周波数の捕捉は無線接続に関わるが、応答待ちの上限を測る起点ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      15
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続に関する法規 第4問（4）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 15,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=15"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "dekyo-digital2-2022-first-houki-q4-5",
+    "exam": "dekyo-digital2",
+    "year": 2022,
+    "season": "first",
+    "session": "houki",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "端末設備の接続に関する法規",
+    "topicTags": [
+      "IP移動電話端末の機能"
+    ],
+    "difficulty": 3,
+    "question": "インターネットプロトコル移動電話端末の送信タイミング又は発信の機能について、誤っている記述はどれか。",
+    "choices": {
+      "ア": "① 総務大臣が別に告示する条件に適合した送信タイミングで送信できること。",
+      "イ": "② 相手の応答を自動確認できない場合、呼設定メッセージ送出終了後128秒以内に選択信号を送出すること。",
+      "ウ": "③ 自動再発信は3回以内とし、最初の発信から3分を超えた発信は別とみなす。ただし火災等の非常時には適用しない。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "128秒以内に送るのは通信終了メッセージである。選択信号を送出するとの説明は誤りである。",
+    "choiceExplanations": {
+      "ア": "IP移動電話端末には、告示条件に合う送信タイミングで送信する機能を備える義務がある。",
+      "イ": "128秒以内に送るのは通信終了メッセージである。選択信号を送出するとの説明は誤りである。",
+      "ウ": "IP移動電話端末の自動再発信の上限は3回である。初回から3分を超えた発信や非常時は記述のように扱う。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8c759c3.pdf",
+    "sourcePages": [
+      15
+    ],
+    "sourceAttribution": "出典：日本データ通信協会 2022年度第1回 第二級デジタル通信 端末設備の接続に関する法規 第4問（5）",
+    "sourcePageReferences": [
+      {
+        "physicalPage": 15,
+        "url": "https://www.dekyo.or.jp/shiken/assets/files/articles/369/files36962ba6c8177252.pdf#page=15"
+      }
+    ],
+    "license": "DEKYO-attributed",
+    "lastUpdated": "2026-11-19"
+  }
+]

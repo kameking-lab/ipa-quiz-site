@@ -1259,7 +1259,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.dekyo.or.jp/shiken/charge/exam",
     officialReuseTermsUrl: "https://www.dekyo.or.jp/shiken/charge/exam",
     status: "live",
-    reuseSummary: "2023・2024年度の各第1回・第2回と2022年度第2回の基礎・技術及び理論・法規を、公式問題と正答に基づく全310問で演習できます。図のある設問には原図を付けています。",
+    reuseSummary: "2022〜2024年度の各第1回・第2回の基礎・技術及び理論・法規を、公式問題と正答に基づく全372問で演習できます。図のある設問には原図を付けています。",
     attributionTemplate: "出典：日本データ通信協会 電気通信国家試験センター 工事担任者試験 第二級デジタル通信（問題・正答）。解説は過去問AI独自作成。",
     remainingWork: [],
   },
