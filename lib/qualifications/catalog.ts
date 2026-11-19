@@ -1592,13 +1592,13 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     slug: "khk-hanbai", examCode: "khk-hanbai", shortName: "高圧ガス販売主任者 第一種", fullName: "高圧ガス販売主任者 第一種",
     domain: "safety", administrator: "高圧ガス保安協会",
     officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html", officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",
-    status: "live", reuseSummary: "公式問題・正答と全肢解説を収録。", remainingWork: [],
+    status: "live", reuseSummary: "2022〜2026年度の公式問題・正答200問を収録。全肢解説付き。", remainingWork: [],
   },
   {
     slug: "khk-hanbai2", examCode: "khk-hanbai2", shortName: "高圧ガス販売主任者 第二種", fullName: "高圧ガス販売主任者 第二種",
     domain: "safety", administrator: "高圧ガス保安協会",
     officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html", officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",
-    status: "live", reuseSummary: "公式問題・正答と全肢解説を収録。", remainingWork: [],
+    status: "live", reuseSummary: "2022〜2026年度の公式問題・正答200問を収録。全肢解説付き。", remainingWork: [],
   },
   {
     slug: "kikenbutsu-otsu5", examCode: "kikenbutsu-otsu5", shortName: "危険物取扱者 乙種第5類", fullName: "危険物取扱者 乙種第5類",
@@ -1646,7 +1646,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     slug: "gesuido-3shu", examCode: "gesuido-3shu", shortName: "下水道技術検定 第3種", fullName: "下水道技術検定 第3種",
     domain: "construction", administrator: "日本下水道事業団",
     officialQuestionsUrl: "https://www.jswa.go.jp/kentei/goannai.html", officialReuseTermsUrl: "https://www.jswa.go.jp/kentei/goannai.html",
-    status: "live", reuseSummary: "令和8年度第52回の公式問題・正答60問を収録。全肢解説付き。", remainingWork: [],
+    status: "live", reuseSummary: "2023・2025・2026年度の公式問題・正答を各60問収録。公式に全員加点となった1問を含む。", remainingWork: [],
   },
   {
     slug: "khk-setsubishi", shortName: "液化石油ガス設備士（学科）", fullName: "液化石油ガス設備士試験（学科）",

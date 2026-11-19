@@ -818,6 +818,16 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
 
 
 
+    "kikenbutsu-otsu5": "危険物取扱者 乙種第5類",
+    "kikenbutsu-otsu3": "危険物取扱者 乙種第3類",
+    "shobo-setsubishi-otsu4": "消防設備士 乙種第4類",
+    "khk-hanbai2": "高圧ガス販売主任者 第二種",
+    "shobo-setsubishi-otsu7": "消防設備士 乙種第7類",
+    "gesuido-3shu": "下水道技術検定 第3種",
+    "shobo-setsubishi-kou3": "消防設備士 甲種第3類",
+    "shobo-setsubishi-kou2": "消防設備士 甲種第2類",
+    "shobo-setsubishi-kou5": "消防設備士 甲種第5類",
+    "khk-hanbai": "高圧ガス販売主任者 第一種",
     "tsukanshi": "通関士試験"
 };
 export function examFullName(exam: ExamCode): string {
@@ -1188,6 +1198,16 @@ const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number)
 
 
 
+    "kikenbutsu-otsu5": (c) => `危険物取扱者 乙種第5類の2026年6月公表の共通・類別の筆記を${c}問収録。公式正答と全肢の独自解説付き。`,
+    "kikenbutsu-otsu3": (c) => `危険物取扱者 乙種第3類の2026年6月公表の共通・類別の筆記を${c}問収録。公式正答と全肢の独自解説付き。`,
+    "shobo-setsubishi-otsu4": (c) => `消防設備士 乙種第4類の2026年6月公表の筆記・実技を${c}問収録。公式正答・解答例と独自解説付き。`,
+    "khk-hanbai2": (c) => `高圧ガス販売主任者 第二種の2022〜2026年度の法令・保安管理技術を${c}問収録。公式正答と全肢の独自解説付き。`,
+    "shobo-setsubishi-otsu7": (c) => `消防設備士 乙種第7類の2026年6月公表の筆記・実技を${c}問収録。公式正答・解答例と独自解説付き。`,
+    "gesuido-3shu": (c) => `下水道技術検定 第3種の2023・2025・2026年度の筆記を${c}問収録。公式正答と全肢の独自解説付き。`,
+    "shobo-setsubishi-kou3": (c) => `消防設備士 甲種第3類の2026年6月公表の筆記・実技を${c}問収録。公式正答・解答例と独自解説付き。`,
+    "shobo-setsubishi-kou2": (c) => `消防設備士 甲種第2類の2026年6月公表の筆記・実技を${c}問収録。公式正答・解答例と独自解説付き。`,
+    "shobo-setsubishi-kou5": (c) => `消防設備士 甲種第5類の2026年6月公表の筆記・実技を${c}問収録。公式正答・解答例と独自解説付き。`,
+    "khk-hanbai": (c) => `高圧ガス販売主任者 第一種の2022〜2026年度の法令・保安管理技術を${c}問収録。公式正答と全肢の独自解説付き。`,
     "tsukanshi": (c) => `通関士試験の${c}。公式正答どおりに収録。`
 };
 function publishedYearRange(exam: ExamCode): string {

@@ -36,7 +36,13 @@ export function parsePracticeSession(value?: string): Session | undefined {
 }
 
 export function practiceSessionLabel(session: Session, exam?: ExamCode): string {
-  if (exam && ["khk-hanbai2", "unko-kanrisha-ryokaku", "shobo-setsubishi-kou1", "kikenbutsu-kou", "kikenbutsu-hei", "kikenbutsu-otsu4", "unko-kanrisha-kamotsu", "shobo-setsubishi-otsu6", "shobo-setsubishi-kou4"].includes(exam)) {
+  if (exam && [
+    "khk-hanbai", "khk-hanbai2", "gesuido-3shu",
+    "unko-kanrisha-ryokaku", "unko-kanrisha-kamotsu",
+    "kikenbutsu-kou", "kikenbutsu-hei", "kikenbutsu-otsu3", "kikenbutsu-otsu4", "kikenbutsu-otsu5",
+    "shobo-setsubishi-kou1", "shobo-setsubishi-kou2", "shobo-setsubishi-kou3", "shobo-setsubishi-kou4", "shobo-setsubishi-kou5",
+    "shobo-setsubishi-otsu4", "shobo-setsubishi-otsu6", "shobo-setsubishi-otsu7",
+  ].includes(exam)) {
     return EXAM_CONFIGS[exam].sessions.find(item => item.session === session)?.label ?? session;
   }
   if (exam && ["benrishi", "sokuryoshi", "dokugeki-chiba", "jokaso-setsubishi", "chiiki-ryoko", "junkango-kansai", "kukaku-seiri", "dojo-osen", "kenchikushi2", "mokuzo-kenchikushi"].includes(exam)) return EXAM_CONFIGS[exam].sessions.find(item => item.session === session)?.label ?? session;
