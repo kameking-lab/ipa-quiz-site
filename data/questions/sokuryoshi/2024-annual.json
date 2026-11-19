@@ -1,0 +1,175 @@
+[
+  {
+    "id": "sokuryoshi-2024-annual-am-q1",
+    "exam": "sokuryoshi",
+    "year": 2024,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 1,
+    "examDate": "2024-05-19",
+    "type": "multiple-choice",
+    "category": "測量法の定義",
+    "topicTags": [
+      "測量法の定義"
+    ],
+    "difficulty": 3,
+    "question": "次のa〜eの文は、測量法（昭和24年法律第188号）に規定された事項について述べたものである。明らかに間違っているものだけを全て含む組合せはどれか。\n\na. 基本測量及び公共測量以外の測量とは、基本測量及び公共測量の測量成果を使用しないで実施する測量である。\nb. 測量作業機関とは、測量計画機関の指示又は委託を受けて測量作業を実施する者をいう。\nc. 測量標とは、永久標識、一時標識及び仮設標識をいう。\nd. 測量業者は、その営業所ごとに測量士又は測量士補を一人以上置かなければならない。\ne. 測量業者は、その業務を誠実に行い、常に測量成果の正確さの確保に努めなければならない。",
+    "choices": {
+      "ア": "a、d",
+      "イ": "a、d、e",
+      "ウ": "b、c",
+      "エ": "b、c、e",
+      "オ": "d"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "〔No. 1〕",
+    "explanation": "基本測量及び公共測量以外の測量も、基本測量又は公共測量の成果を使用する。各営業所に置く必要があるのは測量士であり、測量士補だけでは要件を満たさない。",
+    "choiceExplanations": {
+      "ア": "aは測量成果を使用しないとしており、dは測量士補でも足りるとしている。どちらも測量法の定めと異なる。",
+      "イ": "aとdは誤っているが、eの誠実な業務の実施と測量成果の正確さの確保に努める義務は正しい。",
+      "ウ": "bの測量作業機関とcの測量標の定義はどちらも測量法の規定に合っている。",
+      "エ": "bとcの定義は規定に合っている。eも測量業者が守るべき職責の説明である。",
+      "オ": "dは測量士補でも足りるとしている点が誤りだが、aの測量の定義も誤っている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.gsi.go.jp/common/000257603.pdf#page=3",
+    "sourceAnswerUrl": "https://www.gsi.go.jp/common/000259611.pdf",
+    "license": "GSI-attributed",
+    "lastUpdated": "2026-11-19",
+    "sourceAttribution": "出典：国土地理院 令和6年測量士試験 午前 No.1。解説は過去問AI作成。",
+    "officialReferenceUrls": [
+      "https://laws.e-gov.go.jp/law/324AC0000000188?occasion_date=20240519"
+    ]
+  },
+  {
+    "id": "sokuryoshi-2024-annual-am-q2",
+    "exam": "sokuryoshi",
+    "year": 2024,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 2,
+    "examDate": "2024-05-19",
+    "type": "multiple-choice",
+    "category": "ITRFの座標軸",
+    "topicTags": [
+      "ITRFの座標軸"
+    ],
+    "difficulty": 3,
+    "question": "次の1〜5の文は、国際地球基準座標系（以下「ITRF」という。）について述べたものである。明らかに間違っているものはどれか。",
+    "choices": {
+      "ア": "ITRFは、GNSSやVLBIなどの宇宙測地技術を用いた国際協力による観測に基づき構築・維持されている。",
+      "イ": "ITRFのX軸は、回転楕円体の中心及び経度0°の子午線と赤道との交点を通る直線であり、回転楕円体の中心から経度0°の子午線と赤道との交点に向かう値は正である。",
+      "ウ": "ITRFのY軸は、回転楕円体の中心及び西経90°の子午線と赤道との交点を通る直線であり、回転楕円体の中心から西経90°の子午線と赤道との交点に向かう値は正である。",
+      "エ": "ITRFのZ軸は、回転楕円体の短軸と一致し、回転楕円体の中心から北に向かう値は正である。",
+      "オ": "日本経緯度原点の位置をITRFで表すと、X、Y、Zの符号は、それぞれXは−、Yは＋、Zは＋である。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "〔No. 2〕",
+    "explanation": "Y軸の正の向きは赤道と東経90°の子午線との交点に向かう方向である。西経90°とした記述は誤っている。",
+    "choiceExplanations": {
+      "ア": "GNSSやVLBIをはじめとする測地観測を国際的に組み合わせ、共通の座標系を実現している。",
+      "イ": "X軸は地球の中心から赤道上の経度0°の方向を正とする。",
+      "ウ": "Y軸が正になるのは東経90°の方向である。西経90°は負の方向に当たる。",
+      "エ": "Z軸の正の向きは北極方向で、回転楕円体の短軸に沿う。",
+      "オ": "原点は北緯で東経90°より東かつ東経180°より西にあるため、ZとYが正、Xが負になる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.gsi.go.jp/common/000257603.pdf#page=3",
+    "sourceAnswerUrl": "https://www.gsi.go.jp/common/000259611.pdf",
+    "license": "GSI-attributed",
+    "lastUpdated": "2026-11-19",
+    "sourceAttribution": "出典：国土地理院 令和6年測量士試験 午前 No.2。解説は過去問AI作成。"
+  },
+  {
+    "id": "sokuryoshi-2024-annual-am-q3",
+    "exam": "sokuryoshi",
+    "year": 2024,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 3,
+    "examDate": "2024-05-19",
+    "type": "multiple-choice",
+    "category": "公共測量の計画と製品仕様",
+    "topicTags": [
+      "公共測量の計画と製品仕様"
+    ],
+    "difficulty": 3,
+    "question": "次の1〜5の文は、地理情報標準プロファイル（以下「JPGIS」という。）について述べたものである。明らかに間違っているものはどれか。",
+    "choices": {
+      "ア": "JPGISは、異なる使用者、システム及び場所の間において地理空間データを取得、処理、解析、アクセス、表現及び転送するための手法、手段及びサービスを実現するために最低限必要となる基本的な要素を整理したものである。",
+      "イ": "JPGISでは、地理空間データを作成する場合においては、XML形式やGML形式で符号化することを推奨している。",
+      "ウ": "JPGISでは、画像データについて特定の形式を指定しておらず、一般的に使用されている形式を使用できる。",
+      "エ": "JPGISは、地球上の位置と直接的に関連付けられたオブジェクトのみに関する情報処理技術のための実用標準である。",
+      "オ": "JPGISでは、JMP2.0仕様書（日本版メタデータプロファイル）を使用してメタデータを作成することとしている。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "officialQuestionLabel": "〔No. 3〕",
+    "explanation": "JPGISは地球上の位置と直接的又は間接的に関連付けられるオブジェクトや現象を対象とする。直接的位置との関連があるものだけに限定する点が誤りである。",
+    "choiceExplanations": {
+      "ア": "異なるシステムや利用者間で地理空間データをやり取りできるよう、規格から基本的な項目を整理している。",
+      "イ": "XMLやGMLは、応用スキーマで定義したデータを交換できる形に符号化する際に使える。",
+      "ウ": "画像データは一般に使用されている形式を用いることができ、画像ファイルの方式を一種類に限っていない。",
+      "エ": "位置と間接的に関連する現象も含むため、直接的に関連するオブジェクトだけとした説明が誤っている。",
+      "オ": "データの内容や品質などの情報の記述には、日本版メタデータプロファイルの仕様書が用いられる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.gsi.go.jp/common/000257603.pdf#page=4",
+    "sourceAnswerUrl": "https://www.gsi.go.jp/common/000259611.pdf",
+    "license": "GSI-attributed",
+    "lastUpdated": "2026-11-19",
+    "sourceAttribution": "出典：国土地理院 令和6年測量士試験 午前 No.3。解説は過去問AI作成。"
+  },
+  {
+    "id": "sokuryoshi-2024-annual-am-q5",
+    "exam": "sokuryoshi",
+    "year": 2024,
+    "season": "annual",
+    "session": "am",
+    "qNumber": 5,
+    "examDate": "2024-05-19",
+    "type": "multiple-choice",
+    "category": "正規分布",
+    "topicTags": [
+      "正規分布"
+    ],
+    "difficulty": 3,
+    "question": "ある距離の偶然誤差だけを含む一群の測定値について、平均値が80.000 m、標準偏差が0.010 mの結果を得た。測定値の分布が近似的に正規分布に従うと仮定した場合、測定値が80.005 mと80.010 mの間になる確率は幾らか。最も近いものを選べ。\n\nただし、必要に応じて表5の正規分布表（上側確率）の値を使用すること。",
+    "choices": {
+      "ア": "15.0％",
+      "イ": "15.9％",
+      "ウ": "22.7％",
+      "エ": "30.9％",
+      "オ": "46.7％"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "〔No. 5〕",
+    "explanation": "標準化すると0.5＜z＜1.0の確率を求める問題になる。上側確率の差0.30854−0.15866=0.14988なので、約15.0％である。",
+    "choiceExplanations": {
+      "ア": "0.5と1.0の上側確率を引くと約0.150で、区間内に入る確率が求まる。",
+      "イ": "約15.9％はzが1.0より大きい側の確率で、求める区間の外側に当たる。",
+      "ウ": "22.7％は区間の両端の上側確率の差として求めた値と一致しない。",
+      "エ": "約30.9％はzが0.5より大きい確率全体で、上限の1.0より大きい部分も含んでいる。",
+      "オ": "約46.7％は両端の上側確率を足した値に近い。重なる上側の領域を取り除くには差を取る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.gsi.go.jp/common/000257603.pdf#page=6",
+    "sourceAnswerUrl": "https://www.gsi.go.jp/common/000259611.pdf",
+    "license": "GSI-attributed",
+    "lastUpdated": "2026-11-19",
+    "sourceAttribution": "出典：国土地理院 令和6年測量士試験 午前 No.5。表は公式PDFから切り出し。解説は過去問AI作成。",
+    "imageUrls": [
+      "/images/questions/sokuryoshi/2024/am-q5.png"
+    ],
+    "imageAltTexts": [
+      "表5 正規分布表（上側確率）"
+    ]
+  }
+]
