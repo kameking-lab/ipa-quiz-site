@@ -8,6 +8,7 @@ import { AUTOMOTIVE_QUESTIONS, getAutomotiveQuestions } from "@/data/questions/a
 import metadata from "@/data/questions/automotive/qualifications.json";
 import reviewed from "@/data/questions/automotive/reviewed.json";
 import priorSittings from "@/data/questions/automotive/prior-sittings.json";
+import gasoline2024First from "@/data/questions/automotive/2-gasoline-2024-first.json";
 import gasoline2024Second from "@/data/questions/automotive/2-gasoline-2024-second.json";
 import recovery from "@/data/qualification-staging/automotive/latest-two/qa/lq1b-recovery-ledger.json";
 import continuation from "@/data/qualification-staging/automotive/latest-two/qa/lq1c-progress.json";
@@ -74,7 +75,7 @@ describe("recovered automotive release", () => {
   it("preserves accepted candidate bytes with matching receipt hashes and excludes unresolved originals", () => {
     expect(recovery.recoveredReviewedOriginals).toBe(385);
     // W2 (2026-11-06) appended the previous sitting of five subjects; see automotive-prior-sittings.test.ts.
-    const publishedCount = recovery.releaseOriginals + priorSittings.length + gasoline2024Second.length;
+    const publishedCount = recovery.releaseOriginals + priorSittings.length + gasoline2024First.length + gasoline2024Second.length;
     expect(AUTOMOTIVE_QUESTIONS).toHaveLength(publishedCount);
     expect(new Set(AUTOMOTIVE_QUESTIONS.map((q) => q.id)).size).toBe(publishedCount);
     expect(recovery.notYetReleasedIds).toHaveLength(610 - recovery.releaseOriginals);
