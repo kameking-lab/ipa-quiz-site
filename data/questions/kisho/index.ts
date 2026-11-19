@@ -2,6 +2,7 @@ import type { Question } from "@/lib/questions/types";
 import { KISHO_PRIVATE_QUESTIONS } from "@/lib/kisho-private";
 import { KishoCandidateSchema } from "./schema";
 import publicAssets from "./public-assets.json";
+import round58 from "./round58.json";
 import round60 from "./round60.json";
 
 /** Candidate namespace until the release owner wires the public exam registry. */
@@ -44,4 +45,4 @@ const currentAcademicQuestions: Question[] = KISHO_ACADEMIC_CANDIDATES.map(q => 
   };
 });
 
-export const KISHO_QUESTIONS: Question[] = [...currentAcademicQuestions, ...(round60 as Question[])];
+export const KISHO_QUESTIONS: Question[] = [...currentAcademicQuestions, ...(round60 as Question[]), ...(round58 as Question[])];
