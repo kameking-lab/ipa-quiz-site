@@ -119,7 +119,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       { session: "ippan", urlSlug: "ippan", expectedQuestions: 100, label: "一般問題", categories: ["一般問題"] },
     ],
     seasons: ["annual"],
-    yearRange: { start: 2024, end: 2024 },
+    yearRange: { start: 2023, end: 2024 },
   },
   "zensho-eco-78": {
     code: "zensho-eco-78",

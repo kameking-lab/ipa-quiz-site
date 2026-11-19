@@ -1,9 +1,21 @@
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+import required2023 from "./2023-required.json";
 import general2024 from "./2024-general.json";
 import required2024 from "./2024-required.json";
 
 const organization = "一般財団法人動物看護師統一認定機構";
-const sourceAnswerUrl = "https://www.ccrvn.jp/aigan_shiken/seitou.d2kokkasiken.pdf";
+const secondExam = {
+  year: 2024,
+  date: "2024-02-18",
+  number: 2,
+  answerUrl: "https://www.ccrvn.jp/aigan_shiken/seitou.d2kokkasiken.pdf",
+};
+const firstExam = {
+  year: 2023,
+  date: "2023-02-19",
+  number: 1,
+  answerUrl: "https://www.ccrvn.jp/aigan_shiken/1kokkasiken-seitou.pdf",
+};
 
 function convert(
   paper: typeof general2024,
@@ -11,14 +23,15 @@ function convert(
   subject: string,
   sourcePdfUrl: string,
   answerPage: number,
+  sitting = secondExam,
 ): Question[] {
   return paper.map(({ page, category: topic, answer, ...question }) => ({
     ...question,
     answer: Array.isArray(answer) ? (answer as ChoiceKey[]) : answer,
-    id: `aigan-kangoshi-2024-annual-${session}-q${question.qNumber}`,
+    id: `aigan-kangoshi-${sitting.year}-annual-${session}-q${question.qNumber}`,
     exam: "aigan-kangoshi",
-    year: 2024,
-    examDate: "2024-02-18",
+    year: sitting.year,
+    examDate: sitting.date,
     season: "annual",
     session,
     subject,
@@ -29,8 +42,8 @@ function convert(
     hasImage: false,
     officialQuestionLabel: `${subject} 問${question.qNumber}`,
     sourcePdfUrl,
-    sourceAnswerUrl,
-    sourceAttribution: `出典：${organization} 第2回愛玩動物看護師国家試験 ${subject} 問${question.qNumber}（問題PDF ${page}ページ、正答PDF ${answerPage}ページ）。解説は過去問AI独自作成。`,
+    sourceAnswerUrl: sitting.answerUrl,
+    sourceAttribution: `出典：${organization} 第${sitting.number}回愛玩動物看護師国家試験 ${subject} 問${question.qNumber}（問題PDF ${page}ページ、正答PDF ${answerPage}ページ）。解説は過去問AI独自作成。`,
     license: "CCRVN-owner-authorized",
     explanationCoverage: "full",
     lastUpdated: "2026-11-19",
@@ -40,4 +53,5 @@ function convert(
 export const AIGAN_KANGOSHI_QUESTIONS: Question[] = [
   ...convert(required2024, "required", "必須問題", "https://www.ccrvn.jp/aigan_shiken/hissu.d2kokkasiken.pdf", 1),
   ...convert(general2024, "ippan", "一般問題", "https://www.ccrvn.jp/aigan_shiken/ippan.d2kokkasiken.pdf", 2),
+  ...convert(required2023, "required", "必須問題", "https://www.ccrvn.jp/aigan_shiken/1kokkasiken-hissu.pdf", 1, firstExam),
 ];

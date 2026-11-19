@@ -55,7 +55,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.ccrvn.jp/aigan.shiken.mondai.kakoshiken.html",
     officialReuseTermsUrl: "https://www.ccrvn.jp/aigan.shiken.mondai.kakoshiken.html",
     status: "live",
-    reuseSummary: "第2回（2024年実施）の必須問題50問と一般問題100問を収録。",
+    reuseSummary: "第1回（2023年実施）の必須問題と第2回（2024年実施）の必須・一般問題を収録。",
     remainingWork: [],
   },
   {
