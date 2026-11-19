@@ -1994,8 +1994,11 @@ caremanager: {
 
 "kounin-geography": {
     code: "kounin-geography", nameFull: "高等学校卒業程度認定試験 地理", urlSlug: "kounin-geography", level: "basic",
-    sessions: [{ session: "tiri", urlSlug: "tiri", expectedQuestions: 20, label: "地理", categories: ["地図と地理情報システム", "生活文化と国際理解", "地球的課題と国際協力", "自然環境と防災", "生活圏の調査"] }],
-    seasons: ["round2", "round1"], yearRange: { start: 2024, end: 2024 },
+    sessions: [
+        { session: "tiri", urlSlug: "tiri", expectedQuestions: 20, label: "地理", categories: ["地図と地理情報システム", "生活文化と国際理解", "地球的課題と国際協力", "自然環境と防災", "生活圏の調査"] },
+        { session: "kamoku-a", urlSlug: "tiri-a", expectedQuestions: 20, label: "地理A", categories: ["地図からとらえる現代世界", "世界の生活文化の多様性", "地球的課題の地理的考察", "自然環境と防災", "生活圏の地域調査"] },
+    ],
+    seasons: ["round2", "round1"], yearRange: { start: 2023, end: 2024 },
 },
 "zensho-boki-2": {
     code: "zensho-boki-2", nameFull: "全商簿記実務検定試験 2級", urlSlug: "zensho-boki-2", level: "basic",
