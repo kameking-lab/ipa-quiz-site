@@ -31,7 +31,13 @@ for (const paper of catalog) {
     paper.sourceMode === 'official-pdf' || paper.sourceMode === 'official-archive-copy',
     `Unexpected source mode: ${paper.id}`,
   );
-  if (paper.sourceMode === 'official-archive-copy') {
+  if (paper.sourceMode === 'official-archive-copy' && ['emkohyo', 'lckohyo'].includes(paper.group)) {
+    const archivedOriginal = (url, original) =>
+      typeof url === 'string' && /^https:\/\/web\.archive\.org\/web\/\d{14}id_\//u.test(url)
+        && url.replace(/^https:\/\/web\.archive\.org\/web\/\d{14}id_\//u, '') === original;
+    check(archivedOriginal(paper.archiveSourceUrl, paper.pdfUrl), `Missing archived official PDF: ${paper.id}`);
+    check(archivedOriginal(paper.officialArchiveManifestUrl, paper.indexUrl), `Missing archived official catalog: ${paper.id}`);
+  } else if (paper.sourceMode === 'official-archive-copy') {
     check(/^cskohyo-CS202119\d{2}$/u.test(paper.id), `Archive copy outside reviewed 2021 consultant set: ${paper.id}`);
     check(
       typeof paper.archiveSourceUrl === 'string' &&

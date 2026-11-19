@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import { createHash } from "node:crypto";
 import { existsSync, readFileSync, readdirSync } from "node:fs";
 import { join } from "node:path";
-import { boilerAnswerPage, parseExamPaper } from "@/lib/exam-library-model";
+import { boilerAnswerPage, examSourcePdfUrl, parseExamCatalogEntry, parseExamPaper } from "@/lib/exam-library-model";
 import { parseExamPresentation } from "@/lib/exam-library-presentation";
 
 const base = join(process.cwd(), "data", "exam-library");
@@ -34,8 +34,17 @@ describe("safety text presentation", () => {
         if (question.choiceCount === 5) choiceCount += 1;
       }
     }
-    expect(count).toBe(2756);
-    expect(choiceCount).toBe(2584);
+    expect(count).toBe(2776);
+    expect(choiceCount).toBe(2604);
+  });
+
+  it("serves a preserved original when the official February 2024 hygiene PDF moved", () => {
+    const catalog = read(join(base, "official-catalog.json")) as { id: string; archiveSourceUrl?: string }[];
+    const source = catalog.find(entry => entry.id === "emkohyo-EM20232801")!;
+    const paper = parseExamCatalogEntry(source);
+    expect(paper).not.toBeNull();
+    expect(examSourcePdfUrl(paper!)).toBe(source.archiveSourceUrl);
+    expect(parseExamCatalogEntry({ ...source, archiveSourceUrl: "https://web.archive.org/web/20250125191955id_/https://example.com/EM20232801.pdf" })).toBeNull();
   });
 
   it("preserves the source's three distinct axes and deliberate wrong chemical structure", () => {
