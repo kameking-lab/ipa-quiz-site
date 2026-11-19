@@ -14,9 +14,9 @@ import s02 from "./reviewed/20251005-q11-20.json";
 import s03 from "./reviewed/20251005-q21-30.json";
 import s04 from "./reviewed/20251005-q31-40.json";
 import s05 from "./reviewed/20251005-q41-50.json";
+import lower2024 from "./reviewed/20241006.json";
 
 /**
- * 第一種電気工事士学科。2026年上期出題例と2025年下期の各50問。
  * 2025年下期の原本・全肢査読・図版は
  * docs/evidence/denko1-2025-lower-hold に固定されている。
  */
@@ -50,6 +50,13 @@ const secondPaper = {
   title: "令和7年度下期第一種電気工事士学科試験",
   batches: [s01, s02, s03, s04, s05],
 };
+const lower2024Paper = {
+  date: "20241006",
+  year: 2024,
+  season: "second" as const,
+  title: "令和6年度第一種電気工事士下期学科試験",
+  batches: [lower2024],
+};
 
 function mapped<T>(values: Partial<Record<OfficialChoice, T>>): Partial<Record<ChoiceKey, T>> {
   return Object.fromEntries(
@@ -72,7 +79,7 @@ function attribution(item: Reviewed, title: string): string {
   return `出典：${title}問${item.number}（電気技術者試験センター）。改行・空白と表記を整え、元のイ・ロ・ハ・ニをア・イ・ウ・エに置換。図のみの選択肢は識別用説明を追加。${figure}`;
 }
 
-export const DENKO1_QUESTIONS: Question[] = [paper, secondPaper].flatMap((edition) => edition.batches.flatMap((batch) =>
+export const DENKO1_QUESTIONS: Question[] = [paper, secondPaper, lower2024Paper].flatMap((edition) => edition.batches.flatMap((batch) =>
   (batch as Reviewed[]).map((item): Question => ({
     id: `denko1-${edition.year}-${edition.season}-gakka-q${item.number}`,
     exam: "denko1",
@@ -102,6 +109,6 @@ export const DENKO1_QUESTIONS: Question[] = [paper, secondPaper].flatMap((editio
     lawReferenceDate: item.lawReferenceDate,
     license: "ECEE-educational-reuse",
     needsReview: false,
-    lastUpdated: edition.year === 2025 ? "2026-09-28" : "2026-09-26",
+    lastUpdated: edition.year === 2024 ? "2026-11-19" : edition.year === 2025 ? "2026-09-28" : "2026-09-26",
   })),
 ));
