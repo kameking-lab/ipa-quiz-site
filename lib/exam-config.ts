@@ -1752,7 +1752,7 @@ shihoshoshi: {
     nameFull: "商業経済検定試験",
     urlSlug: "zensho-eco-81",
     level: "specialist",
-    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 200, label: "筆記試験", categories: ["ビジネス基礎", "マーケティング", "ビジネス経済A", "ビジネス経済B"] }],
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 255, label: "筆記試験", categories: ["ビジネス基礎", "マーケティング", "ビジネス経済A", "ビジネス経済B", "経済活動と法"] }],
     seasons: ["annual"],
     yearRange: { start: 2022, end: 2022 },
 },
