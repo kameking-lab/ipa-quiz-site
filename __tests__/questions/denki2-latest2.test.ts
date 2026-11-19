@@ -10,10 +10,12 @@ import checkedSource from "@/reports/sekou-2denki/source-check.json";
 import figures from "@/reports/sekou-2denki/figures.json";
 
 const keys = ["ア", "イ", "ウ", "エ", "オ"];
+const checkedEditions = new Set(checkedSource.map(source => source.edition));
+const latestTwo = DENKI2_QUESTIONS.filter(q => checkedEditions.has(`${q.year}-${q.season}`));
 describe("sekou-2denki latest two official papers, staged", () => {
   it("keeps 62 original questions per edition and all 504 choice explanations", () => {
-    expect(DENKI2_QUESTIONS).toHaveLength(124);
-    expect(new Set(DENKI2_QUESTIONS.map(q => q.id)).size).toBe(124);
+    expect(latestTwo).toHaveLength(124);
+    expect(new Set(DENKI2_QUESTIONS.map(q => q.id)).size).toBe(DENKI2_QUESTIONS.length);
     let explanations = 0;
     for (const source of checkedSource) {
       const [year, season] = source.edition.split("-");
@@ -38,7 +40,7 @@ describe("sekou-2denki latest two official papers, staged", () => {
   });
 
   it("retains all 21 necessary official figures with matching hashes", () => {
-    expect(DENKI2_QUESTIONS.filter(q => q.hasImage)).toHaveLength(21);
+    expect(latestTwo.filter(q => q.hasImage)).toHaveLength(21);
     expect(figures).toHaveLength(21);
     for (const figure of figures) {
       const q = DENKI2_QUESTIONS.find(q => `${q.year}-${q.season}` === figure.edition && q.qNumber === figure.number)!;
