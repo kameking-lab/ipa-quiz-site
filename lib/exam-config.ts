@@ -114,7 +114,10 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     nameFull: "愛玩動物看護師国家試験",
     urlSlug: "aigan-kangoshi",
     level: "advanced",
-    sessions: [{ session: "required", urlSlug: "required", expectedQuestions: 50, label: "必須問題", categories: ["必須問題"] }],
+    sessions: [
+      { session: "required", urlSlug: "required", expectedQuestions: 50, label: "必須問題", categories: ["必須問題"] },
+      { session: "ippan", urlSlug: "ippan", expectedQuestions: 100, label: "一般問題", categories: ["一般問題"] },
+    ],
     seasons: ["annual"],
     yearRange: { start: 2024, end: 2024 },
   },
