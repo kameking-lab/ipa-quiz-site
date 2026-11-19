@@ -4,6 +4,7 @@ import assets from "./assets.json";
 import qualifications from "./qualifications.json";
 import priorSittings from "./prior-sittings.json";
 import priorAssets from "./prior-assets.json";
+import motorcycle2024First from "./2024-first-2-motorcycle.json";
 
 export type AutomotiveExamCode =
   | "jidosha-1-small-written" | "jidosha-2-gasoline" | "jidosha-2-diesel"
@@ -21,25 +22,27 @@ const imageBindings: Record<string, Array<{ url: string; physicalPage: number }>
  */
 export const AUTOMOTIVE_PRIOR_SITTING_IDS: ReadonlySet<string> = new Set(priorSittings.map((q) => q.id));
 
-/** Existing accepted candidates only. The remaining saved originals stay in staging. */
-export const AUTOMOTIVE_QUESTIONS: Question[] = [...reviewed, ...priorSittings].map((q) => ({
-  ...q,
-  exam: `jidosha-${q.subject}` as AutomotiveExamCode,
-  session: "gakka",
-  type: "multiple-choice",
-  season: q.season as Season,
-  // Question.term is reserved for 電験's upper/lower periods; JASPA uses season.
-  term: undefined,
-  originalJaspaTerm: q.term,
-  difficulty: q.difficulty as Difficulty,
-  explanationCoverage: "full",
-  license: "JASPA-owner-authorized",
-  permissionVerified: true,
-  publicGo: 1,
-  needsReview: false,
-  imageUrls: imageBindings[q.id].map((asset) => asset.url),
-  imageAltTexts: imageBindings[q.id].map((asset) => `${q.sourceAttribution} 原問題の図表（PDF ${asset.physicalPage}ページ）`),
-}));
+export const AUTOMOTIVE_QUESTIONS: Question[] = [...reviewed, ...priorSittings, ...motorcycle2024First].map((q) => {
+  const figures = imageBindings[q.id] ?? q.sourceFigureAssets;
+  return {
+    ...q,
+    exam: `jidosha-${q.subject}` as AutomotiveExamCode,
+    session: "gakka",
+    type: "multiple-choice",
+    season: q.season as Season,
+    // Question.term is reserved for 電験's upper/lower periods; JASPA uses season.
+    term: undefined,
+    originalJaspaTerm: q.term,
+    difficulty: q.difficulty as Difficulty,
+    explanationCoverage: "full",
+    license: "JASPA-owner-authorized",
+    permissionVerified: true,
+    publicGo: 1,
+    needsReview: false,
+    imageUrls: figures.map((asset) => asset.url),
+    imageAltTexts: figures.map((asset) => `${q.sourceAttribution} 原問題の図表（PDF ${asset.physicalPage}ページ）`),
+  };
+});
 
 export function getAutomotiveQuestions(exam: AutomotiveExamCode): Question[] {
   return AUTOMOTIVE_QUESTIONS.filter((q) => q.exam === exam);
