@@ -1996,6 +1996,7 @@ caremanager: {
     code: "saibansho-ippan-dai", nameFull: "裁判所職員採用一般職試験（裁判所事務官・大卒程度区分）", urlSlug: "saibansho-ippan-dai", level: "advanced",
     sessions: [
         { session: "kiso", urlSlug: "kiso", expectedQuestions: 30, label: "基礎能力試験", categories: ["文章理解", "判断推理", "数的推理", "資料解釈", "社会事情"] },
+        { session: "senmon", urlSlug: "senmon", expectedQuestions: 50, label: "専門試験", categories: ["憲法", "民法", "行政法", "刑法", "経済理論"] },
     ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
 },
 "kyoin-tokyo": {
