@@ -1,5 +1,6 @@
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import p231029am from "./reviewed/20231029-q01.json";
+import p231029pm from "./reviewed/20231029-q02.json";
 import p2401 from "./reviewed/20240526-q01-05.json";
 import p2402 from "./reviewed/20240526-q06-10.json";
 import p2403 from "./reviewed/20240526-q11-15.json";
@@ -71,6 +72,10 @@ const papers: {
   {
     date: "20231029", year: 2023, season: "second", sitting: "am",
     batches: [p231029am],
+  },
+  {
+    date: "20231029", year: 2023, season: "second", sitting: "pm",
+    batches: [p231029pm],
   },
   {
     date: "20240526", year: 2024, season: "first" as const,
