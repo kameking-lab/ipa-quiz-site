@@ -16,6 +16,7 @@ import { CHUSHO_2025_G_QUESTIONS } from "./2025-chusho-seisaku";
 import { CHUSHO_2023_RETEST_A_QUESTIONS } from "./2023-late-keizai";
 import { CHUSHO_2023_RETEST_B_QUESTIONS } from "./2023-late-zaimu";
 import { CHUSHO_2023_RETEST_C_QUESTIONS } from "./2023-late-kigyo";
+import { CHUSHO_2023_RETEST_D_QUESTIONS } from "./2023-late-unei";
 import { CHUSHO_2023_RETEST_E_QUESTIONS } from "./2023-late-keiei-houmu";
 import { CHUSHO_2023_RETEST_F_QUESTIONS } from "./2023-late-keiei-joho";
 import { CHUSHO_2023_F_QUESTIONS } from "./2023-keiei-joho";
@@ -39,6 +40,7 @@ export const CHUSHO_KIGYO_SHINDANSHI_QUESTIONS: Question[] = [
   ...CHUSHO_2023_RETEST_A_QUESTIONS,
   ...CHUSHO_2023_RETEST_B_QUESTIONS,
   ...CHUSHO_2023_RETEST_C_QUESTIONS,
+  ...CHUSHO_2023_RETEST_D_QUESTIONS,
   ...CHUSHO_2023_RETEST_E_QUESTIONS,
   ...CHUSHO_2023_RETEST_F_QUESTIONS,
   ...CHUSHO_2023_F_QUESTIONS,
