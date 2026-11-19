@@ -1,4 +1,5 @@
 import type { Question } from "@/lib/questions/types";
+import academic2022September from "./academic-202209.json";
 import academic2023January from "./academic-202301.json";
 import academic2023May from "./academic-202305.json";
 import academic2023September from "./academic-202309.json";
@@ -436,4 +437,5 @@ export const FP2_QUESTIONS: Question[] = [
   ...academic2023September as Question[],
   ...academic2023May as Question[],
   ...academic2023January as Question[],
+  ...academic2022September as Question[],
 ];
