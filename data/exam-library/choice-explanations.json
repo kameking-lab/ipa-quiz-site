@@ -37191,5 +37191,705 @@
     "sources": [],
     "provisionalReview": true,
     "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231806-q1": {
+    "sourceHash": "0c02c08e30f369f8de4a2f66067d78c9b50c985e1fa459f6698c61a1e726ee4b",
+    "correctChoice": 2,
+    "summary": "空気力学相当径は、密度1 g/cm³の球に換算した直径である。密度を粒径に掛けるだけでは求められない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "遠心加速度は半径に角速度の二乗を掛けた値になる。角速度を同じに保てば、半径に比例する。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "同じ沈降挙動を示す単位密度の球の直径は、滑り補正の差を無視すれば1×√2≒1.41 µmである。2 µmにはならない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "電荷と電界が同じときに働く電気力は同じである。小さい粒子は粘性抵抗が小さいので、釣合いの移動速度が大きい。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "ブラウン運動における平均二乗変位は拡散係数と経過時間に比例する。移動距離の代表値は拡散係数の平方根に比例する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ストークス・アインシュタインの関係では、粘性係数と温度が同じとき拡散係数は粒子径に反比例する。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231806-q2": {
+    "sourceHash": "68676cd5038c7e83822abc9bd577b35b1b262a424062f873e7bac71021c6733b",
+    "correctChoice": 1,
+    "summary": "ストークスの式では終末速度が直径の二乗に比例する。直径を求めるには式を平方根まで解く。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "Vs＝(ρ−ρ₀)g dₚ²/(18η)であり、dₚは18ηVsを密度差と重力加速度で割った値の平方根である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "この式は粘性係数ηと重力加速度gの位置が逆である。粘性が高いほど、同じ速度に達する粒子径は大きくなる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "浮力を差し引いた力は粒子密度から空気密度を引いた値に比例する。密度差を逆に取ると、沈降する場合に根号内が負になる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "密度差の向きが逆で、重力と粘性係数の位置も入れ替わっている。加えて、粒径を出す平方根がない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "右辺は大きさの二乗dₚ²に相当する。求めるのは粒子の直径dₚであるため、平方根が必要になる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231806-q3": {
+    "sourceHash": "63546b3fb14c872f861e836eecf942c8bb923257a01279b92d190da38aed962d",
+    "correctChoice": 1,
+    "summary": "ノズル流速が大きくなると慣性衝突が起こりやすくなり、より小さい粒子まで分離される。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "所定の分離効率に対応する粒径は、ノズル流速の平方根に反比例する。気流が速いほど50％透過粒径は小さくなる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "衝突板で分離した分とフィルターに捕集した分を利用して、総粉じんと吸入性粉じんの濃度を求めることができる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "衝突板に規定の厚さで粘着性のある油を塗ると、衝突した粒子がはね返って下流へ移るのを防げる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "吸入性粉じんに相当する、衝突板に捕まらず分粒装置を通過した粒子は、下流のフィルターで捕集する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "規定流量で空気力学相当径4 µmの粒子の半分を分離するのが、吸入性粉じん用分粒装置の性能の基準である。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231806-q4": {
+    "sourceHash": "f410f298ff8f872a9f05b15ec1221eba43d9d4393a3c07f296bb527f36fe1944",
+    "correctChoice": 1,
+    "summary": "繊維状ろ過材では機械的なふるい分けのほか、慣性による衝突、さえぎり、拡散で粒子を捕らえる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "1 µmより大きな粒子でも、繊維間に挟まることが主な捕集機構とは限らない。慣性衝突やさえぎりで繊維に接触して捕集される。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "粒径が小さいとブラウン運動による拡散が強くなるため、0.1 µm未満では拡散でろ過材に到達しやすい。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "メンブランフィルターは細孔を有する膜であり、繊維を積み重ねたろ過材に比べて空間率が小さい。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "ろ過では単純なふるい分けだけでなく、拡散なども働く。0.8 µmの平均孔径より小さな0.3 µmの粒子も高い効率で捕集される。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "帯電したフィルターは天秤の周囲と静電気力を及ぼし合う。質量濃度測定で微小な秤量差を評価するときには不利である。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231806-q5": {
+    "sourceHash": "dcfba3887c2bfaf73e13ed2fd30fef7bf2156fc911e2fde3854b664f907c497c",
+    "correctChoice": 2,
+    "summary": "さえぎりは細い繊維で強まり、重力は遅い気流、慣性は大きい粒子で強く働く。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ⒶとⒷは合うが、慣性効果は小さい粒子ほど強いとはいえない。粒子が大きいほど流線から外れやすい。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "繊維が細いとさえぎりが効きやすく、ろ過速度が遅いと重力で沈む時間が長くなる。大きな粒子ほど慣性衝突が起きやすい。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "重力沈降の時間は高速の気流ほど短くなる。Ⓑを速度が大きいほど効果大とする組合せは当てはまらない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "さえぎりは粒径に対して繊維が細いほど有効である。Ⓐが逆で、慣性効果を小粒径に結び付けたⒸも異なる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "Ⓐは繊維が細いほど効果が大きい。また、Ⓑはろ過速度が小さくて滞在時間の長い条件で効果が増す。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231806-q6": {
+    "sourceHash": "b88bfe68f01764b5331672486a602eba6119272f34f86953185cfee2c65b34b1",
+    "correctChoice": 5,
+    "summary": "ルーツメーターは大流量を測れる容積式流量計であり、ハイボリウム機器の校正に使える。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "面積式流量計の指示は空気の温度や圧力、捕集部の抵抗などの影響を受けるため、使用条件に合わせて校正する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "面積式流量計では流量とともに浮子が上がり、テーパー管との流通面積が大きくなるため、浮子の位置から流量が分かる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "フィルター下流で圧力が低くなると、通常の大気圧で校正した計器の指示は捕集口での真の流量より大きくなる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "石けん膜の移動時間と管の目盛の間の容積から流量を測れるため、低流量用機器の校正に利用できる。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "ルーツメーターは一回転で送り出す気体の容積を利用するため、大きい流量を扱うハイボリウム機器でも校正に使える。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231806-q7": {
+    "sourceHash": "bb6045ec585aa4dee06dfdc4568aa0cc0b92426024833c377a7ad01972eb5113",
+    "correctChoice": 2,
+    "summary": "散乱光の強さは粒径と波長の関係に依存し、波長が大きいほど強くなるとはいえない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "同じ粒子系を同じ光学条件で測ると、検出する散乱光の強さは測定領域に存在する粉じんの濃度に応じて増える。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "光の波長より十分小さい粒子のレイリー散乱では、散乱強度は波長の4乗に反比例する。長波長の方が強いとする記述は誤りである。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "この方式は試料に含まれる粒子が発する散乱光を測るため、通常の作動範囲では吸引流量の変化の影響が小さい。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "サブミクロン粒子に比べ、数µmの粒子は入射光を散乱させる領域が大きく、一粒当たりの散乱光が一般に強い。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "十分に小さい粒子は、数µm級の粒子のように前方向に散乱が集中しにくく、角度による強度変化が比較的小さい。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231806-q8": {
+    "sourceHash": "31e5f566d8e1c01534f640056f1845371e455f3a25a60ffa070ca186790c7e59",
+    "correctChoice": 4,
+    "summary": "併行測定で得られる変換係数は相対濃度計の型式などに依存する。校正と型式の一致は別の要件である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "発生源や気流の影響を考えて、作業場所を代表する粒度・組成の粉じんが測定できる地点を選定する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "併行測定の質量濃度を圧電天秤方式の平均指示濃度で割る。与えられた値からは1.20÷0.96＝1.25である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "石英と酸化鉄は密度や屈折率が異なる。同じ粒径の分布でも質量当たりの光散乱が異なるため、係数も異なり得る。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "装置の型式が違うと、校正済みでも粉じんに対する光学的応答は変わる。登録機関の校正だけを理由に機種が異なる係数をそのまま適用できない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "所轄労働基準監督署長の許可を受け、併行測定を省略できる場合には、労働基準局長が示す質量濃度変換係数を使用できる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231806-q9": {
+    "sourceHash": "29fccefdec50100ba7453a1a23478a5e0d77563fe8905b211348b1dc339ceb60",
+    "correctChoice": 5,
+    "summary": "精密な電子天秤でも使用条件の変化などによって感度が変わり得るため、定期的に校正する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "捕集前後の微小な質量の差から粉じん濃度を求めるため、0.01 mg以下を読み取れる天秤を使用する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "水準器を使い測定軸を鉛直に合わせると、傾きによって荷重の分力が変化することによる指示誤差を抑えられる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "電源投入直後は回路や測定部の状態が安定していない。秤量前に電源を入れ、安定する時間を確保する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "室内にフィルターを静置して温湿度を秤量環境になじませると、測定中の吸湿や温度差による誤差を抑えられる。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "高精度の天秤でも温湿度や使用に伴って感度が変わることがある。設置後も標準分銅などで確認し、定期的に校正する。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231806-q10": {
+    "sourceHash": "0613a2dbb3926dd383da74bb6c76e2750fbb45e66545b7504fc9b0d64ec167a9",
+    "correctChoice": 5,
+    "summary": "玉ずいは微細な石英結晶から構成されるため、石英を含む粉じんとして測定対象となる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "高温に長い時間さらされると、シリカは条件によってトリジマイトやクリストバライトの結晶構造へ転移する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "常圧下の573 ℃付近で低温型のα石英と高温型のβ石英が可逆的に入れ替わり、冷却で元に戻る。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "一般の鉱物性粉じんで測定される遊離けい酸の多くは、天然に広く分布する石英に由来する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "オパールは含水したシリカを主とする物質で、この設問の測定対象として扱う。石英と同じ結晶構造であることは条件ではない。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "玉ずいは微細な石英結晶の集合体である。石英を構成成分として含むため、遊離けい酸の測定対象になる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231806-q11": {
+    "sourceHash": "39d5b87acd68f13457036a00be818df6c3f5009c738a81322e750c92e87341ac",
+    "correctChoice": 4,
+    "summary": "再発じん試料を繰り返し作る場合は、粒径構成が変わった残りの粉じんをそのまま再利用しない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "堆積試料を浮遊させる部分と流動させる部分を通じ、下流で分粒して必要な粒径範囲の粒子を採取する構成である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "目開き75 µm程度のふるいで粗大な成分を除き、乾燥させると、粉じんを均一に流動・再分散させやすい。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "薄いフィルターでは粉じんの重量や圧力により変形しやすい。支持用のフィルターを重ねると捕集面の形が保ちやすい。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "一度目の再発じんで浮遊しやすい成分が先に取り出される。残った試料の粒径構成が変わるため、次回は新しい試料を用いる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "帯電しやすい粉じんが装置壁面に付着すると、採取する試料に偏りが生じる。内壁に帯電防止の処理をすると付着を抑えられる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231806-q12": {
+    "sourceHash": "4feefdcb2a14d22e11513b0d50922ec82c34c9de4b0c0b67b33c4cb5617227f2",
+    "correctChoice": 4,
+    "summary": "床上50〜150 cmは浮遊粉じんを空気から採る高さの基準であり、堆積粉じんに適用する一律の条件ではない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "浮遊粉じんから吸入性の粒径区分を集めるため、多段平行板や慣性衝突などの方式で分粒してからフィルターで捕集する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "フィルターを通る気流の圧力損失は粉じんがたまるにつれて増える。その対応関係を求めておけば捕集量の目安になる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "吸収補正や試料の回折ピークの評価には、粉じんが付着していない状態での基底標準板やフィルターの回折強度が必要である。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "床面から50〜150 cmは浮遊粉じんの測定点を設定する条件であり、既に表面に積もった粉じんの採取位置を定めたものではない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "堆積粉じんを採取した後、ふるいや液相沈降法で粒度を調整すると、りん酸法で遊離けい酸を分析する試料にできる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231806-q13": {
+    "sourceHash": "6d41737361024ef1f19aa004b88f6a5536036962ea0f1de9f0512f070598f718",
+    "correctChoice": 3,
+    "summary": "定量下限は測定のばらつきを考慮して定める。計数値の平方根一つ分を感度で割った値とは異なる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "初回の定性分析で遊離けい酸が見えない場合は、感度を上げて再測定する。それでも認められなければ含有率を0％として扱う。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "熱りん酸中ではクリストバライトが溶けて石英と同じように回収できない。クリストバライトがあればX線回折分析を用いる。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "計数のばらつきはおおむね√Nであり、定量下限にはその複数倍に相当する信号が必要である。√Nだけを勾配で割るのでは足りない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "炭酸カルシウムの回折線が亜鉛の測定に干渉すると吸収補正が不正確になるため、亜鉛以外の基底標準を選ぶ。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "王水は硫化物や金属類の影響を除くために加える。これらや石英以外の遊離けい酸がないと判断できれば、王水を添加しない方法を用いられる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231806-q14": {
+    "sourceHash": "3b9541783aa28edb98de38ffc197c22cc6b6c8fbf8db2968308c46761a6c50dd",
+    "correctChoice": 1,
+    "summary": "トリジマイトが検出された試料はX線回折で定量する。りん酸中では石英と同じ回収率を得られない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "トリジマイトはりん酸で石英と異なる割合で溶解し、石英用の重量法では正しく定量できない。X線回折で成分を分けて測る。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "りん酸中に試料を先に分散させ、共存する硫化物や金属類などの影響を抑えるために王水を加える順序である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "粒径の違いによって溶解挙動が変わるので、標準試料を液相沈降法で10 µm以下にそろえ、処理条件を決定する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "けい酸塩の微斜長石をほとんど溶かす一方、遊離けい酸の石英を残す条件として、残渣率1％以下と95％以上を同時に満たす。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "秤量による定量では使う天秤の読取り限度が測定精度を左右する。試料量と分析条件を考慮した定量下限は1％である。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231806-q15": {
+    "sourceHash": "7ab0fcdb47ba91656158ba3c1eefb719cfdcdadc88fcfd1a4e72c54d80d88672",
+    "correctChoice": 2,
+    "summary": "りん酸残渣から非石英残渣を差し引き、石英の残渣率で補正してから、元の試料の質量で割る。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "43.00 mgを試料量200.00 mgで割るだけで21.5％となる。この計算には非石英分の控除も石英の溶解損失の補正もない。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "石英含有率は(43.00−0.73)÷0.960÷200.00×100≒22.02％である。選択肢の中では22.0％が最も近い。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "22.5％なら石英質量が45.0 mgとなるが、非石英分を除いて残渣率で補正した質量は約44.0 mgである。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "23.0％とすると試料中の石英が46.0 mgになる。残渣の差42.27 mgを残渣率96.0％で補った値より大きい。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "23.5％は石英質量47.0 mgに相当する。りん酸残渣率を考慮しても、石英質量はそこまで増えない。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231806-q16": {
+    "sourceHash": "1ba553caeda9b4694097a31c94b491894e83c3c5533dc7c6be4cebad11686f67",
+    "correctChoice": 1,
+    "summary": "Cu管球を使った場合の2θ＝26.66°付近は石英の強い回折線であり、トリジマイトの主線とは異なる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "面間隔約3.34 Åで2θ約26.66°に現れる強い線は石英のものである。トリジマイトの主回折線としては扱えない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "同じ系列で原子番号が大きくなると電子のエネルギー準位間の差が大きくなるため、特性X線は高エネルギーかつ短波長になる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "受光スリットを広くすると入る信号が増える一方、近い回折角も合算されるので、回折線幅が広くなる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "結晶を使うモノクロメーターは波長選択性が高い反面、一部のX線しか通らないので、回折線の強度は弱くなる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "走査が速過ぎると計数の追従に必要な時間が確保できず、記録されたピークがずれたり低く見えたりする。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231806-q17": {
+    "sourceHash": "4be20805bbc5eafe543050f5f1e6f653f6041a1a310c831e8794c79495c49066",
+    "correctChoice": 3,
+    "summary": "玉ずいのように微細結晶からなる試料は、X線回折ピークが広がることがある。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "散乱スリットを狭めるとバックグラウンドとなる散乱光を抑える方向に働く。ピークが広がる直接の理由ではない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "発散スリットを狭めると入射光量が減るが、試料の結晶子サイズが小さい場合にみられるようなピークの広がりとは異なる。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "玉ずいは極めて小さい石英の結晶が集まったものである。結晶子の大きさが小さいと回折線の幅が広がって見える。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "光軸がわずかにずれるとピークの角度や強度に誤差が生じるが、微細結晶が混在する場合ほどピーク幅の広がりを説明しない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "走査を遅くすると各角度での測定時間が長くなり、通常は計数のばらつきが小さくなる。尖鋭性を失う主な理由にはならない。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231806-q18": {
+    "sourceHash": "6142eb8edb6bb08c1305bb39aab012b32f432a982f60d4098fbaaeb6fcf371ca",
+    "correctChoice": 5,
+    "summary": "フィルターと基底標準板の密着状態は、回折強度や吸収補正の精度に影響する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "同じ基底標準を試料の背後に置き、粉じんがあるときにその回折線がどれだけ弱まるかから吸収の影響を求める。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "夾雑物の吸収による信号の減衰を補うと、試料組成の違いが測定結果に及ぼす影響が小さくなり、定量範囲を広げられる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "波長が一定であれば、基底標準の回折強度が試料の有無でどれだけ減ったかを利用して吸収補正係数を求められる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "目的成分の線に近い高角度側に、重ならない基底標準の回折線があると双方の強度を測り分けられる。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "フィルターとの空隙や湾曲は試料面の高さ、回折角、光路を変え、回折強度に影響する。測定時には標準板に密着させる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231806-q19": {
+    "sourceHash": "cfb3bc11ef6ca83abfa68569baef53cd1d5a198ced658143a255953df0e3408a",
+    "correctChoice": 1,
+    "summary": "石英の面積密度から吸収補正後の強度を求め、補正係数で割ると測定すべき主回折線強度になる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "石英質量は1.30×0.150＝0.195 mgである。面積π cm²で割り、2,000を掛けて補正係数1.20で割ると約103.5 cpsとなる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "124.2 cpsは石英の面積密度に2,000を掛けた補正後の強度である。測定時の強度に戻すには1.20で割る。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "149.0 cpsは補正後の強度に係数1.20を掛けてしまった値である。実測値への換算は補正とは逆向きに行う。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "325.0 cpsは0.195 mgに2,000を掛けて1.20で割った値で、面積で割っていない。感度は1 mg/cm²当たりの値である。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "468.0 cpsは石英質量に2,000と補正係数を掛けた値である。フィルターの面積を除算し、吸収補正係数も除算する。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231806-q20": {
+    "sourceHash": "622de2386fe91c29b9a3cd1c2a81448294b4cf21d6a2d6ccf6e3d60dc45dbef3",
+    "correctChoice": 5,
+    "summary": "濃度と捕集空気量からフィルター全体の繊維数を求め、視野と採じん面の面積比を掛ける。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "0.5本は約8本という結果の16分の1程度である。直径21 mmの採じん面と0.30 mmの視野の正しい面積比を用いる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "採じん面に捕集された繊維は2×20,000＝40,000本である。その値に(0.30÷21)²を掛けても1本にはならない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "濃度の数値は1 cm³当たりの繊維数を表しており、1視野の繊維の平均本数そのものではない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "この面積比で4本になるフィルター全体の数は約19,600本である。与えられた濃度と採気量では総数は40,000本となる。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "捕集空気量は20,000 cm³なので全体の繊維は40,000本である。これに視野の面積比(0.30÷21)²を掛けると約8.16本となる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
   }
 }
