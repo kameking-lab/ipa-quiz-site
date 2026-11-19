@@ -1,0 +1,1220 @@
+[
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q01-01",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "10進数・2進数・16進数の変換、2進数の演算、BCDコードについて①〜⑩を答えなさい。",
+    "answer": "① 1011 1111\n② 1 1001.0101\n③ 16\n④ 174\n⑤ DA\n⑥ 19.8\n⑦ 1 1111\n⑧ 101 1010\n⑨ 1001 0100\n⑩ 4",
+    "explanation": "191は128＋32＋16＋8＋4＋2＋1、25.3125の小数部は1/4＋1/16。16進数は各桁の重みで換算し、2進数を16進数に直すときは小数点から4ビットずつまとめる。⑦は49－18＝31、⑧は9×10＝90。BCDでは9と4を個別に4ビットで表す。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問1",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=38",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問1。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-level2-p38-01.webp"
+    ],
+    "imageAltTexts": [
+      "基数変換、2進数演算とBCDコードについての原文。"
+    ],
+    "modelAnswer": "① 1011 1111\n② 1 1001.0101\n③ 16\n④ 174\n⑤ DA\n⑥ 19.8\n⑦ 1 1111\n⑧ 101 1010\n⑨ 1001 0100\n⑩ 4",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。",
+    "isCalculation": true
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q02-02",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "論理式X＝A・¬B＋Aを論理回路にしたとき、図の①に当てはまる素子を選びなさい。",
+    "answer": "オ",
+    "explanation": "①はBを反転して¬BにするのでNOTである。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2 問1 ①②③の1番目",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=39",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問2 問1 ①②③の1番目。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-level2-p39-02.webp"
+    ],
+    "imageAltTexts": [
+      "Bが①に入力され、その出力とAを②へ、②の出力とAを③に入力する回路。"
+    ],
+    "officialAnswerNumber": "オ",
+    "choices": {
+      "ア": "ORゲート",
+      "イ": "ANDゲート",
+      "ウ": "NORゲート",
+      "エ": "NANDゲート",
+      "オ": "NOTゲート"
+    },
+    "choiceExplanations": {
+      "ア": "いずれかの入力が1なら出力が1になる。この欄は単独入力の反転素子を使う。",
+      "イ": "両方の入力が1なら出力が1になる。この欄は単独入力の反転素子を使う。",
+      "ウ": "ORの結果を反転して出力する。この欄は単独入力の反転素子を使う。",
+      "エ": "ANDの結果を反転して出力する。この欄は単独入力の反転素子を使う。",
+      "オ": "①はBを反転して¬BにするのでNOTである。"
+    },
+    "explanationCoverage": "full",
+    "choiceImageUrls": {
+      "ア": "/images/questions/zenkou-joho/75-joho-level2-p39-03.webp",
+      "イ": "/images/questions/zenkou-joho/75-joho-level2-p39-04.webp",
+      "ウ": "/images/questions/zenkou-joho/75-joho-level2-p39-05.webp",
+      "エ": "/images/questions/zenkou-joho/75-joho-level2-p39-06.webp",
+      "オ": "/images/questions/zenkou-joho/75-joho-level2-p39-07.webp"
+    }
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q02-03",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "論理式X＝A・¬B＋Aを論理回路にしたとき、図の②に当てはまる素子を選びなさい。",
+    "answer": "イ",
+    "explanation": "②はAと¬Bから積項を作るのでANDである。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2 問1 ①②③の2番目",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=39",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問2 問1 ①②③の2番目。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-level2-p39-02.webp"
+    ],
+    "imageAltTexts": [
+      "Bが①に入力され、その出力とAを②へ、②の出力とAを③に入力する回路。"
+    ],
+    "officialAnswerNumber": "イ",
+    "choices": {
+      "ア": "ORゲート",
+      "イ": "ANDゲート",
+      "ウ": "NORゲート",
+      "エ": "NANDゲート",
+      "オ": "NOTゲート"
+    },
+    "choiceExplanations": {
+      "ア": "いずれかの入力が1なら出力が1になる。この欄は論理積の素子を使う。",
+      "イ": "②はAと¬Bから積項を作るのでANDである。",
+      "ウ": "ORの結果を反転して出力する。この欄は論理積の素子を使う。",
+      "エ": "ANDの結果を反転して出力する。この欄は論理積の素子を使う。",
+      "オ": "一つの入力を反転する。この欄は論理積の素子を使う。"
+    },
+    "explanationCoverage": "full",
+    "choiceImageUrls": {
+      "ア": "/images/questions/zenkou-joho/75-joho-level2-p39-03.webp",
+      "イ": "/images/questions/zenkou-joho/75-joho-level2-p39-04.webp",
+      "ウ": "/images/questions/zenkou-joho/75-joho-level2-p39-05.webp",
+      "エ": "/images/questions/zenkou-joho/75-joho-level2-p39-06.webp",
+      "オ": "/images/questions/zenkou-joho/75-joho-level2-p39-07.webp"
+    }
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q02-04",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "論理式X＝A・¬B＋Aを論理回路にしたとき、図の③に当てはまる素子を選びなさい。",
+    "answer": "ア",
+    "explanation": "③は積項A・¬BとAの論理和を取るためORである。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問2 問1 ①②③の3番目",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=39",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問2 問1 ①②③の3番目。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-level2-p39-02.webp"
+    ],
+    "imageAltTexts": [
+      "Bが①に入力され、その出力とAを②へ、②の出力とAを③に入力する回路。"
+    ],
+    "officialAnswerNumber": "ア",
+    "choices": {
+      "ア": "ORゲート",
+      "イ": "ANDゲート",
+      "ウ": "NORゲート",
+      "エ": "NANDゲート",
+      "オ": "NOTゲート"
+    },
+    "choiceExplanations": {
+      "ア": "③は積項A・¬BとAの論理和を取るためORである。",
+      "イ": "両方の入力が1なら出力が1になる。この欄は論理和の素子を使う。",
+      "ウ": "ORの結果を反転して出力する。この欄は論理和の素子を使う。",
+      "エ": "ANDの結果を反転して出力する。この欄は論理和の素子を使う。",
+      "オ": "一つの入力を反転する。この欄は論理和の素子を使う。"
+    },
+    "explanationCoverage": "full",
+    "choiceImageUrls": {
+      "ア": "/images/questions/zenkou-joho/75-joho-level2-p39-03.webp",
+      "イ": "/images/questions/zenkou-joho/75-joho-level2-p39-04.webp",
+      "ウ": "/images/questions/zenkou-joho/75-joho-level2-p39-05.webp",
+      "エ": "/images/questions/zenkou-joho/75-joho-level2-p39-06.webp",
+      "オ": "/images/questions/zenkou-joho/75-joho-level2-p39-07.webp"
+    }
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q02-05",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 5,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "論理式X＝A・¬B＋Aから真理値表を完成させなさい。入力ABの並びは00、01、10、11の順である。",
+    "answer": "① 0\n② 0\n③ 1\n④ 1",
+    "explanation": "Aが0なら両項が0であり、Aが1なら第2項だけで必ず1になる。したがってXはAの値に一致する。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問2 問2",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=39",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問2 問2。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "modelAnswer": "① 0\n② 0\n③ 1\n④ 1",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q02-06",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 6,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "論理式 X＝A・¬B＋A を簡略化し、Xを表す式を答えなさい。",
+    "answer": "A",
+    "explanation": "Aをくくると A・(¬B＋1) となる。¬B＋1は常に1なので、X＝Aである。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問2 問3",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=39",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問2 問3。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "modelAnswer": "A",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q03-07",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 7,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "図のJKフリップフロップのタイムチャートを完成させなさい。",
+    "answer": "クロックの各有効エッジ直後の値。Q：1、0、1、1、0。反転出力：0、1、0、0、1。",
+    "explanation": "クロックの立下りでJ、Kを読み取る。各立下りでセット、リセット、反転、保持、リセットとなり、反転出力はQと反対の値を取る。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3 問1",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問3 問1。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-level2-p40-08.webp"
+    ],
+    "imageAltTexts": [
+      "JKフリップフロップの図記号と入力波形、出力の作図欄。"
+    ],
+    "answerImageUrls": [
+      "/images/questions/zenkou-joho/75-joho-level2-answer62-09.webp"
+    ],
+    "answerImageAltTexts": [
+      "大問3 問1の公式タイムチャート。"
+    ],
+    "modelAnswer": "クロックの各有効エッジ直後の値。Q：1、0、1、1、0。反転出力：0、1、0、0、1。",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q03-08",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 8,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "図のDフリップフロップのタイムチャートを完成させなさい。",
+    "answer": "クロックの各有効エッジ直後の値。Q：0、1、0、1、1。反転出力：1、0、1、0、0。",
+    "explanation": "クロックの立上りでDの値をQに取り込み、次の立上りまで保持する。反転出力はQを反転した値である。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問3 問2",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=40",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問3 問2。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-level2-p40-10.webp"
+    ],
+    "imageAltTexts": [
+      "Dフリップフロップの図記号と入力波形、出力の作図欄。"
+    ],
+    "answerImageUrls": [
+      "/images/questions/zenkou-joho/75-joho-level2-answer62-11.webp"
+    ],
+    "answerImageAltTexts": [
+      "大問3 問2の公式タイムチャート。"
+    ],
+    "modelAnswer": "クロックの各有効エッジ直後の値。Q：0、1、0、1、1。反転出力：1、0、1、0、0。",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q04-09",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "静止画像を編集・作成するソフトウェアは、主に①系と②系の2つに大別できる。①系は画像を格子状に分割した③単位で扱う。画像は④形式で保存され、JPEGやPNGなどが使われる。②系は画像を直線や曲線、図形などの形状と座標で扱い、⑤形式と呼ばれる。\n\n①に当てはまるものを選びなさい。",
+    "answer": "オ",
+    "explanation": "写真などを画素単位で編集するソフトウェアはペイント系である。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問4 ①",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=41",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問4 ①。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "オ",
+    "choices": {
+      "ア": "ドロー",
+      "イ": "画素",
+      "ウ": "ラスタ",
+      "エ": "ベクタ",
+      "オ": "ペイント",
+      "カ": "ポリゴン"
+    },
+    "choiceExplanations": {
+      "ア": "点ではなく直線や図形の形状と座標で絵を扱う。この欄では、画素単位で編集するソフトウェアを選ぶ。",
+      "イ": "画面や画像を格子状に分けた最小の点である。この欄では、画素単位で編集するソフトウェアを選ぶ。",
+      "ウ": "格子状の画素の集合で画像を記録する。この欄では、画素単位で編集するソフトウェアを選ぶ。",
+      "エ": "直線・曲線や図形などを座標や式で記録する。この欄では、画素単位で編集するソフトウェアを選ぶ。",
+      "オ": "写真などを画素単位で編集するソフトウェアはペイント系である。",
+      "カ": "複数の頂点と辺で構成する多角形である。この欄では、画素単位で編集するソフトウェアを選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q04-10",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "静止画像を編集・作成するソフトウェアは、主に①系と②系の2つに大別できる。①系は画像を格子状に分割した③単位で扱う。画像は④形式で保存され、JPEGやPNGなどが使われる。②系は画像を直線や曲線、図形などの形状と座標で扱い、⑤形式と呼ばれる。\n\n②に当てはまるものを選びなさい。",
+    "answer": "ア",
+    "explanation": "図形の形状と座標を扱うソフトウェアはドロー系である。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問4 ②",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=41",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問4 ②。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "ア",
+    "choices": {
+      "ア": "ドロー",
+      "イ": "画素",
+      "ウ": "ラスタ",
+      "エ": "ベクタ",
+      "オ": "ペイント",
+      "カ": "ポリゴン"
+    },
+    "choiceExplanations": {
+      "ア": "図形の形状と座標を扱うソフトウェアはドロー系である。",
+      "イ": "画面や画像を格子状に分けた最小の点である。この欄では、形状と座標で描くソフトウェアを選ぶ。",
+      "ウ": "格子状の画素の集合で画像を記録する。この欄では、形状と座標で描くソフトウェアを選ぶ。",
+      "エ": "直線・曲線や図形などを座標や式で記録する。この欄では、形状と座標で描くソフトウェアを選ぶ。",
+      "オ": "格子状に並んだ画素を編集するタイプのソフトウェアである。この欄では、形状と座標で描くソフトウェアを選ぶ。",
+      "カ": "複数の頂点と辺で構成する多角形である。この欄では、形状と座標で描くソフトウェアを選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q04-11",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "静止画像を編集・作成するソフトウェアは、主に①系と②系の2つに大別できる。①系は画像を格子状に分割した③単位で扱う。画像は④形式で保存され、JPEGやPNGなどが使われる。②系は画像を直線や曲線、図形などの形状と座標で扱い、⑤形式と呼ばれる。\n\n③に当てはまるものを選びなさい。",
+    "answer": "イ",
+    "explanation": "格子で区切った画像の一つずつの点を画素と呼ぶ。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問4 ③",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=41",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問4 ③。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "イ",
+    "choices": {
+      "ア": "ドロー",
+      "イ": "画素",
+      "ウ": "ラスタ",
+      "エ": "ベクタ",
+      "オ": "ペイント",
+      "カ": "ポリゴン"
+    },
+    "choiceExplanations": {
+      "ア": "点ではなく直線や図形の形状と座標で絵を扱う。この欄では、格子状の画像の点を選ぶ。",
+      "イ": "格子で区切った画像の一つずつの点を画素と呼ぶ。",
+      "ウ": "格子状の画素の集合で画像を記録する。この欄では、格子状の画像の点を選ぶ。",
+      "エ": "直線・曲線や図形などを座標や式で記録する。この欄では、格子状の画像の点を選ぶ。",
+      "オ": "格子状に並んだ画素を編集するタイプのソフトウェアである。この欄では、格子状の画像の点を選ぶ。",
+      "カ": "複数の頂点と辺で構成する多角形である。この欄では、格子状の画像の点を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q04-12",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "静止画像を編集・作成するソフトウェアは、主に①系と②系の2つに大別できる。①系は画像を格子状に分割した③単位で扱う。画像は④形式で保存され、JPEGやPNGなどが使われる。②系は画像を直線や曲線、図形などの形状と座標で扱い、⑤形式と呼ばれる。\n\n④に当てはまるものを選びなさい。",
+    "answer": "ウ",
+    "explanation": "画素の並びとして表現するのはラスタ形式である。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問4 ④",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=41",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問4 ④。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "ウ",
+    "choices": {
+      "ア": "ドロー",
+      "イ": "画素",
+      "ウ": "ラスタ",
+      "エ": "ベクタ",
+      "オ": "ペイント",
+      "カ": "ポリゴン"
+    },
+    "choiceExplanations": {
+      "ア": "点ではなく直線や図形の形状と座標で絵を扱う。この欄では、画素で表現する画像形式を選ぶ。",
+      "イ": "画面や画像を格子状に分けた最小の点である。この欄では、画素で表現する画像形式を選ぶ。",
+      "ウ": "画素の並びとして表現するのはラスタ形式である。",
+      "エ": "直線・曲線や図形などを座標や式で記録する。この欄では、画素で表現する画像形式を選ぶ。",
+      "オ": "格子状に並んだ画素を編集するタイプのソフトウェアである。この欄では、画素で表現する画像形式を選ぶ。",
+      "カ": "複数の頂点と辺で構成する多角形である。この欄では、画素で表現する画像形式を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q04-13",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "静止画像を編集・作成するソフトウェアは、主に①系と②系の2つに大別できる。①系は画像を格子状に分割した③単位で扱う。画像は④形式で保存され、JPEGやPNGなどが使われる。②系は画像を直線や曲線、図形などの形状と座標で扱い、⑤形式と呼ばれる。\n\n⑤に当てはまるものを選びなさい。",
+    "answer": "エ",
+    "explanation": "図形の形状や座標を記録し、拡縮で輪郭が粗くならない形式はベクタ形式である。",
+    "hasImage": false,
+    "officialQuestionLabel": "大問4 ⑤",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=41",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問4 ⑤。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "officialAnswerNumber": "エ",
+    "choices": {
+      "ア": "ドロー",
+      "イ": "画素",
+      "ウ": "ラスタ",
+      "エ": "ベクタ",
+      "オ": "ペイント",
+      "カ": "ポリゴン"
+    },
+    "choiceExplanations": {
+      "ア": "点ではなく直線や図形の形状と座標で絵を扱う。この欄では、形状情報を保存する画像形式を選ぶ。",
+      "イ": "画面や画像を格子状に分けた最小の点である。この欄では、形状情報を保存する画像形式を選ぶ。",
+      "ウ": "格子状の画素の集合で画像を記録する。この欄では、形状情報を保存する画像形式を選ぶ。",
+      "エ": "図形の形状や座標を記録し、拡縮で輪郭が粗くならない形式はベクタ形式である。",
+      "オ": "格子状に並んだ画素を編集するタイプのソフトウェアである。この欄では、形状情報を保存する画像形式を選ぶ。",
+      "カ": "複数の頂点と辺で構成する多角形である。この欄では、形状情報を保存する画像形式を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q05-14",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "記憶装置について、原本のそれぞれの説明に当てはまる語を選びなさい。\n\n①に当てはまるものを選びなさい。",
+    "answer": "エ",
+    "explanation": "フリップフロップ回路で状態を保持し、速度が速いのはSRAMである。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5 ①",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=41",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問5 ①。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-level2-p41-12.webp"
+    ],
+    "imageAltTexts": [
+      "記憶装置の特徴を述べた(1)〜(5)の原文。"
+    ],
+    "officialAnswerNumber": "エ",
+    "choices": {
+      "ア": "キャッシュメモリ",
+      "イ": "マスクROM",
+      "ウ": "EEPROM",
+      "エ": "SRAM",
+      "オ": "DRAM",
+      "カ": "フラッシュメモリ"
+    },
+    "choiceExplanations": {
+      "ア": "CPUと主記憶の速度差を緩和するために、利用頻度の高いデータなどを保持する。この欄では、フリップフロップで記憶するメモリを選ぶ。",
+      "イ": "製造時に内容を書き込み、通常は書き換えできない。この欄では、フリップフロップで記憶するメモリを選ぶ。",
+      "ウ": "電気的に消去・書換えができ、小容量の設定保存に使われる。この欄では、フリップフロップで記憶するメモリを選ぶ。",
+      "エ": "フリップフロップ回路で状態を保持し、速度が速いのはSRAMである。",
+      "オ": "コンデンサに電荷を蓄え、定期的なリフレッシュが要る。この欄では、フリップフロップで記憶するメモリを選ぶ。",
+      "カ": "一般にブロック単位で消去する不揮発性メモリである。この欄では、フリップフロップで記憶するメモリを選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q05-15",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "記憶装置について、原本のそれぞれの説明に当てはまる語を選びなさい。\n\n②に当てはまるものを選びなさい。",
+    "answer": "ウ",
+    "explanation": "バイト単位で電気的に消去・再書込みできる設定用の小容量メモリはEEPROMである。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5 ②",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=41",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問5 ②。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-level2-p41-12.webp"
+    ],
+    "imageAltTexts": [
+      "記憶装置の特徴を述べた(1)〜(5)の原文。"
+    ],
+    "officialAnswerNumber": "ウ",
+    "choices": {
+      "ア": "キャッシュメモリ",
+      "イ": "マスクROM",
+      "ウ": "EEPROM",
+      "エ": "SRAM",
+      "オ": "DRAM",
+      "カ": "フラッシュメモリ"
+    },
+    "choiceExplanations": {
+      "ア": "CPUと主記憶の速度差を緩和するために、利用頻度の高いデータなどを保持する。この欄では、バイト単位で書換え可能な不揮発性メモリを選ぶ。",
+      "イ": "製造時に内容を書き込み、通常は書き換えできない。この欄では、バイト単位で書換え可能な不揮発性メモリを選ぶ。",
+      "ウ": "バイト単位で電気的に消去・再書込みできる設定用の小容量メモリはEEPROMである。",
+      "エ": "フリップフロップなどで状態を保持する高速なメモリである。この欄では、バイト単位で書換え可能な不揮発性メモリを選ぶ。",
+      "オ": "コンデンサに電荷を蓄え、定期的なリフレッシュが要る。この欄では、バイト単位で書換え可能な不揮発性メモリを選ぶ。",
+      "カ": "一般にブロック単位で消去する不揮発性メモリである。この欄では、バイト単位で書換え可能な不揮発性メモリを選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q05-16",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "記憶装置について、原本のそれぞれの説明に当てはまる語を選びなさい。\n\n③に当てはまるものを選びなさい。",
+    "answer": "ア",
+    "explanation": "主記憶の内容の一部を高速に利用できるようにするのがキャッシュメモリである。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5 ③",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=41",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問5 ③。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-level2-p41-12.webp"
+    ],
+    "imageAltTexts": [
+      "記憶装置の特徴を述べた(1)〜(5)の原文。"
+    ],
+    "officialAnswerNumber": "ア",
+    "choices": {
+      "ア": "キャッシュメモリ",
+      "イ": "マスクROM",
+      "ウ": "EEPROM",
+      "エ": "SRAM",
+      "オ": "DRAM",
+      "カ": "フラッシュメモリ"
+    },
+    "choiceExplanations": {
+      "ア": "主記憶の内容の一部を高速に利用できるようにするのがキャッシュメモリである。",
+      "イ": "製造時に内容を書き込み、通常は書き換えできない。この欄では、速度差を埋めるメモリを選ぶ。",
+      "ウ": "電気的に消去・書換えができ、小容量の設定保存に使われる。この欄では、速度差を埋めるメモリを選ぶ。",
+      "エ": "フリップフロップなどで状態を保持する高速なメモリである。この欄では、速度差を埋めるメモリを選ぶ。",
+      "オ": "コンデンサに電荷を蓄え、定期的なリフレッシュが要る。この欄では、速度差を埋めるメモリを選ぶ。",
+      "カ": "一般にブロック単位で消去する不揮発性メモリである。この欄では、速度差を埋めるメモリを選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q05-17",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "記憶装置について、原本のそれぞれの説明に当てはまる語を選びなさい。\n\n④に当てはまるものを選びなさい。",
+    "answer": "オ",
+    "explanation": "コンデンサの電荷が漏れるため定期的な書直しを行うのはDRAMである。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5 ④",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=41",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問5 ④。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-level2-p41-12.webp"
+    ],
+    "imageAltTexts": [
+      "記憶装置の特徴を述べた(1)〜(5)の原文。"
+    ],
+    "officialAnswerNumber": "オ",
+    "choices": {
+      "ア": "キャッシュメモリ",
+      "イ": "マスクROM",
+      "ウ": "EEPROM",
+      "エ": "SRAM",
+      "オ": "DRAM",
+      "カ": "フラッシュメモリ"
+    },
+    "choiceExplanations": {
+      "ア": "CPUと主記憶の速度差を緩和するために、利用頻度の高いデータなどを保持する。この欄では、コンデンサの電荷を保持するメモリを選ぶ。",
+      "イ": "製造時に内容を書き込み、通常は書き換えできない。この欄では、コンデンサの電荷を保持するメモリを選ぶ。",
+      "ウ": "電気的に消去・書換えができ、小容量の設定保存に使われる。この欄では、コンデンサの電荷を保持するメモリを選ぶ。",
+      "エ": "フリップフロップなどで状態を保持する高速なメモリである。この欄では、コンデンサの電荷を保持するメモリを選ぶ。",
+      "オ": "コンデンサの電荷が漏れるため定期的な書直しを行うのはDRAMである。",
+      "カ": "一般にブロック単位で消去する不揮発性メモリである。この欄では、コンデンサの電荷を保持するメモリを選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q05-18",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "記憶装置について、原本のそれぞれの説明に当てはまる語を選びなさい。\n\n⑤に当てはまるものを選びなさい。",
+    "answer": "カ",
+    "explanation": "ブロック単位の消去を行い、SDカードやSSDに使われる不揮発性メモリはフラッシュメモリである。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問5 ⑤",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=41",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問5 ⑤。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-level2-p41-12.webp"
+    ],
+    "imageAltTexts": [
+      "記憶装置の特徴を述べた(1)〜(5)の原文。"
+    ],
+    "officialAnswerNumber": "カ",
+    "choices": {
+      "ア": "キャッシュメモリ",
+      "イ": "マスクROM",
+      "ウ": "EEPROM",
+      "エ": "SRAM",
+      "オ": "DRAM",
+      "カ": "フラッシュメモリ"
+    },
+    "choiceExplanations": {
+      "ア": "CPUと主記憶の速度差を緩和するために、利用頻度の高いデータなどを保持する。この欄では、ブロック単位で消去するメモリを選ぶ。",
+      "イ": "製造時に内容を書き込み、通常は書き換えできない。この欄では、ブロック単位で消去するメモリを選ぶ。",
+      "ウ": "電気的に消去・書換えができ、小容量の設定保存に使われる。この欄では、ブロック単位で消去するメモリを選ぶ。",
+      "エ": "フリップフロップなどで状態を保持する高速なメモリである。この欄では、ブロック単位で消去するメモリを選ぶ。",
+      "オ": "コンデンサに電荷を蓄え、定期的なリフレッシュが要る。この欄では、ブロック単位で消去するメモリを選ぶ。",
+      "カ": "ブロック単位の消去を行い、SDカードやSSDに使われる不揮発性メモリはフラッシュメモリである。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q06-19",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "変数Nに入力された自然数の階乗N!を求め、出力する流れ図の空欄に入るものを選びなさい。\n\n①に当てはまるものを選びなさい。",
+    "answer": "ウ",
+    "explanation": "積の初期値は乗算の単位元である1を使う。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問6 ①",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=42",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問6 ①。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-level2-p42-13.webp"
+    ],
+    "imageAltTexts": [
+      "自然数の階乗の参考式と、Fへ累積積を保存する流れ図。"
+    ],
+    "officialAnswerNumber": "ウ",
+    "choices": {
+      "ア": "F",
+      "イ": "N",
+      "ウ": "F ← 1",
+      "エ": "F ← 0",
+      "オ": "F × I",
+      "カ": "F ＋ I"
+    },
+    "choiceExplanations": {
+      "ア": "階乗の途中結果を保持する変数である。この欄では、積を1で初期化する代入を選ぶ。",
+      "イ": "入力された階乗の対象の数である。この欄では、積を1で初期化する代入を選ぶ。",
+      "ウ": "積の初期値は乗算の単位元である1を使う。",
+      "エ": "積の初期値が0なので、乗算後も常に0になる。この欄では、積を1で初期化する代入を選ぶ。",
+      "オ": "現在の積に、今回の整数Iを掛けた式である。この欄では、積を1で初期化する代入を選ぶ。",
+      "カ": "整数Iを加えるので、積ではなく和になる。この欄では、積を1で初期化する代入を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q06-20",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "変数Nに入力された自然数の階乗N!を求め、出力する流れ図の空欄に入るものを選びなさい。\n\n②に当てはまるものを選びなさい。",
+    "answer": "イ",
+    "explanation": "1からNまでの整数を掛けるので、反復の終値はNとなる。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問6 ②",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=42",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問6 ②。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-level2-p42-13.webp"
+    ],
+    "imageAltTexts": [
+      "自然数の階乗の参考式と、Fへ累積積を保存する流れ図。"
+    ],
+    "officialAnswerNumber": "イ",
+    "choices": {
+      "ア": "F",
+      "イ": "N",
+      "ウ": "F ← 1",
+      "エ": "F ← 0",
+      "オ": "F × I",
+      "カ": "F ＋ I"
+    },
+    "choiceExplanations": {
+      "ア": "階乗の途中結果を保持する変数である。この欄では、反復の上限となるNを選ぶ。",
+      "イ": "1からNまでの整数を掛けるので、反復の終値はNとなる。",
+      "ウ": "積を計算する変数を1で初期化する。この欄では、反復の上限となるNを選ぶ。",
+      "エ": "積の初期値が0なので、乗算後も常に0になる。この欄では、反復の上限となるNを選ぶ。",
+      "オ": "現在の積に、今回の整数Iを掛けた式である。この欄では、反復の上限となるNを選ぶ。",
+      "カ": "整数Iを加えるので、積ではなく和になる。この欄では、反復の上限となるNを選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q06-21",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 21,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "変数Nに入力された自然数の階乗N!を求め、出力する流れ図の空欄に入るものを選びなさい。\n\n③に当てはまるものを選びなさい。",
+    "answer": "オ",
+    "explanation": "毎回、直前の積Fに今回のIを掛ける。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問6 ③",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=42",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問6 ③。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-level2-p42-13.webp"
+    ],
+    "imageAltTexts": [
+      "自然数の階乗の参考式と、Fへ累積積を保存する流れ図。"
+    ],
+    "officialAnswerNumber": "オ",
+    "choices": {
+      "ア": "F",
+      "イ": "N",
+      "ウ": "F ← 1",
+      "エ": "F ← 0",
+      "オ": "F × I",
+      "カ": "F ＋ I"
+    },
+    "choiceExplanations": {
+      "ア": "階乗の途中結果を保持する変数である。この欄では、今回のIを掛けた式を選ぶ。",
+      "イ": "入力された階乗の対象の数である。この欄では、今回のIを掛けた式を選ぶ。",
+      "ウ": "積を計算する変数を1で初期化する。この欄では、今回のIを掛けた式を選ぶ。",
+      "エ": "積の初期値が0なので、乗算後も常に0になる。この欄では、今回のIを掛けた式を選ぶ。",
+      "オ": "毎回、直前の積Fに今回のIを掛ける。",
+      "カ": "整数Iを加えるので、積ではなく和になる。この欄では、今回のIを掛けた式を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q07-22",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 22,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "2以上の正の整数Nを入力し、自分自身を除いた約数の和が元の数と等しいか（完全数か）を判定する。\n\n①に当てはまるものを選びなさい。",
+    "answer": "カ",
+    "explanation": "完全数の判定ではN自身を足さないので、候補は1からN－1までにする。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問7 ①",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=43",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問7 ①。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-level2-p43-14.webp"
+    ],
+    "imageAltTexts": [
+      "約数を調べて合算し、完全数かどうかを判定する流れ図と参考説明。"
+    ],
+    "officialAnswerNumber": "カ",
+    "choices": {
+      "ア": "D ← N％I",
+      "イ": "D ← N％2",
+      "ウ": "SUM ← SUM＋I",
+      "エ": "SUM ← SUM＋N",
+      "オ": "I＝1, N, 1",
+      "カ": "I＝1, N－1, 1"
+    },
+    "choiceExplanations": {
+      "ア": "Nを現在の候補Iで割った余りを求める。この欄では、Nの一つ前まで試す反復を選ぶ。",
+      "イ": "Nの偶奇だけを調べ、3など他の除数を試さない。この欄では、Nの一つ前まで試す反復を選ぶ。",
+      "ウ": "約数として見つかったIを合計に加える。この欄では、Nの一つ前まで試す反復を選ぶ。",
+      "エ": "見つけた約数ではなく入力Nを合計に加える。この欄では、Nの一つ前まで試す反復を選ぶ。",
+      "オ": "1からNまで試し、自分自身も含む。この欄では、Nの一つ前まで試す反復を選ぶ。",
+      "カ": "完全数の判定ではN自身を足さないので、候補は1からN－1までにする。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q07-23",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 23,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "2以上の正の整数Nを入力し、自分自身を除いた約数の和が元の数と等しいか（完全数か）を判定する。\n\n②に当てはまるものを選びなさい。",
+    "answer": "ア",
+    "explanation": "Nを候補Iで割った余りDを求め、D＝0ならIを約数と判定する。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問7 ②",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=43",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問7 ②。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-level2-p43-14.webp"
+    ],
+    "imageAltTexts": [
+      "約数を調べて合算し、完全数かどうかを判定する流れ図と参考説明。"
+    ],
+    "officialAnswerNumber": "ア",
+    "choices": {
+      "ア": "D ← N％I",
+      "イ": "D ← N％2",
+      "ウ": "SUM ← SUM＋I",
+      "エ": "SUM ← SUM＋N",
+      "オ": "I＝1, N, 1",
+      "カ": "I＝1, N－1, 1"
+    },
+    "choiceExplanations": {
+      "ア": "Nを候補Iで割った余りDを求め、D＝0ならIを約数と判定する。",
+      "イ": "Nの偶奇だけを調べ、3など他の除数を試さない。この欄では、約数を調べる可変の除数Iを選ぶ。",
+      "ウ": "約数として見つかったIを合計に加える。この欄では、約数を調べる可変の除数Iを選ぶ。",
+      "エ": "見つけた約数ではなく入力Nを合計に加える。この欄では、約数を調べる可変の除数Iを選ぶ。",
+      "オ": "1からNまで試し、自分自身も含む。この欄では、約数を調べる可変の除数Iを選ぶ。",
+      "カ": "1からN－1まで調べ、N自身を除く。この欄では、約数を調べる可変の除数Iを選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q07-24",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 24,
+    "type": "multiple-choice",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択"
+    ],
+    "difficulty": 2,
+    "question": "2以上の正の整数Nを入力し、自分自身を除いた約数の和が元の数と等しいか（完全数か）を判定する。\n\n③に当てはまるものを選びなさい。",
+    "answer": "ウ",
+    "explanation": "約数の合計を求めるため、見つかった約数IをSUMに加える。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問7 ③",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=43",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問7 ③。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-level2-p43-14.webp"
+    ],
+    "imageAltTexts": [
+      "約数を調べて合算し、完全数かどうかを判定する流れ図と参考説明。"
+    ],
+    "officialAnswerNumber": "ウ",
+    "choices": {
+      "ア": "D ← N％I",
+      "イ": "D ← N％2",
+      "ウ": "SUM ← SUM＋I",
+      "エ": "SUM ← SUM＋N",
+      "オ": "I＝1, N, 1",
+      "カ": "I＝1, N－1, 1"
+    },
+    "choiceExplanations": {
+      "ア": "Nを現在の候補Iで割った余りを求める。この欄では、約数Iを合計に加える処理を選ぶ。",
+      "イ": "Nの偶奇だけを調べ、3など他の除数を試さない。この欄では、約数Iを合計に加える処理を選ぶ。",
+      "ウ": "約数の合計を求めるため、見つかった約数IをSUMに加える。",
+      "エ": "見つけた約数ではなく入力Nを合計に加える。この欄では、約数Iを合計に加える処理を選ぶ。",
+      "オ": "1からNまで試し、自分自身も含む。この欄では、約数Iを合計に加える処理を選ぶ。",
+      "カ": "1からN－1まで調べ、N自身を除く。この欄では、約数Iを合計に加える処理を選ぶ。"
+    },
+    "explanationCoverage": "full"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q08-25",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 25,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択",
+      "JIS Full BASIC"
+    ],
+    "difficulty": 2,
+    "question": "二つの正の整数を入力し、引き算によるユークリッドの互除法で最大公約数を求める。いずれかが0なら「0を入力」と表示する。空欄①〜⑤を埋めなさい。（JIS Full BASIC）",
+    "answer": "① INPUT PROMPT\n② 0\n③ ELSE\n④ <>\n⑤ －",
+    "explanation": "一方が0の場合は積が0になるので別に処理する。両方が正なら比較する値が等しくなるまで大きい側から小さい側を引き、等しい値を最大公約数とする。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問8 JIS Full BASIC",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=44",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問8 JIS Full BASIC。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-level2-p44-15.webp"
+    ],
+    "imageAltTexts": [
+      "大問8の原文とJIS Full BASICのプログラム。"
+    ],
+    "modelAnswer": "① INPUT PROMPT\n② 0\n③ ELSE\n④ <>\n⑤ －",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q08-26",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 26,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択",
+      "C言語"
+    ],
+    "difficulty": 2,
+    "question": "二つの正の整数を入力し、引き算によるユークリッドの互除法で最大公約数を求める。いずれかが0なら「0を入力」と表示する。空欄①〜⑤を埋めなさい。（C言語）",
+    "answer": "① scanf\n② 0\n③ else\n④ !=\n⑤ －",
+    "explanation": "一方が0の場合は積が0になるので別に処理する。両方が正なら比較する値が等しくなるまで大きい側から小さい側を引き、等しい値を最大公約数とする。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問8 C言語",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=46",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問8 C言語。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-level2-p46-16.webp"
+    ],
+    "imageAltTexts": [
+      "大問8の原文とC言語のプログラム。"
+    ],
+    "modelAnswer": "① scanf\n② 0\n③ else\n④ !=\n⑤ －",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q09-27",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 27,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択",
+      "JIS Full BASIC"
+    ],
+    "difficulty": 2,
+    "question": "0〜255の整数を入力し8ビットの2進数を表示する。範囲外では理由を表示して終了する。空欄①〜⑤を埋めなさい。（JIS Full BASIC）",
+    "answer": "① <\n② 8\n③ MOD\n④ 2\n⑤ C",
+    "explanation": "負の入力は0未満の分岐で処理する。右端の添字から2で割った余りを格納し、商に更新するたび添字を一つ減らす。BASICは添字8、Cは7から始める。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問9 JIS Full BASIC",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=45",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問9 JIS Full BASIC。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-level2-p45-17.webp"
+    ],
+    "imageAltTexts": [
+      "大問9の原文とJIS Full BASICのプログラム。"
+    ],
+    "modelAnswer": "① <\n② 8\n③ MOD\n④ 2\n⑤ C",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  },
+  {
+    "id": "zenkou-joho-2025-late-joho-level2-q09-28",
+    "exam": "zenkou-joho",
+    "session": "joho-level2",
+    "year": 2025,
+    "season": "late",
+    "qNumber": 28,
+    "type": "descriptive",
+    "category": "2級・共通＋BASIC/Cの選択",
+    "topicTags": [
+      "2級・共通＋BASIC/Cの選択",
+      "C言語"
+    ],
+    "difficulty": 2,
+    "question": "0〜255の整数を入力し8ビットの2進数を表示する。範囲外では理由を表示して終了する。空欄①〜⑤を埋めなさい。（C言語）",
+    "answer": "① <\n② 7\n③ %\n④ 2\n⑤ c",
+    "explanation": "負の入力は0未満の分岐で処理する。右端の添字から2で割った余りを格納し、商に更新するたび添字を一つ減らす。BASICは添字8、Cは7から始める。",
+    "hasImage": true,
+    "officialQuestionLabel": "大問9 C言語",
+    "sourceExamSession": "第75回 2級・共通＋BASIC/Cの選択",
+    "sourcePdfUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=47",
+    "sourceAnswerUrl": "https://zenkoukyo.or.jp/web/content/uploads/75joho_kekka.pdf#page=62",
+    "sourceAttribution": "出典：公益社団法人全国工業高等学校長協会 2025年度 第75回 2級・共通＋BASIC/Cの選択 大問9 C言語。図表は公式PDFから切り出し、解説は過去問AI作成。",
+    "license": "ZENKOU-owner-decision",
+    "lastUpdated": "2026-11-19",
+    "imageUrls": [
+      "/images/questions/zenkou-joho/75-joho-level2-p47-18.webp"
+    ],
+    "imageAltTexts": [
+      "大問9の原文とC言語のプログラム。"
+    ],
+    "modelAnswer": "① <\n② 7\n③ %\n④ 2\n⑤ c",
+    "scoringCriteria": "公式解答を表示し、解答を自己確認する。"
+  }
+]

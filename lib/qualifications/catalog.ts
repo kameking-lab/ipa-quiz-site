@@ -1447,7 +1447,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://zenkoukyo.or.jp/index_kentei/exam_result/",
     officialReuseTermsUrl: "https://zenkoukyo.or.jp/index_kentei/exam_result/",
     status: "live",
-    reuseSummary: "第76回の1級2区分・2級・3級を収録。公式の標準解答と原本図表、選択肢ごとの独自解説を確認できます。",
+    reuseSummary: "第75・76回の各1級2区分・2級・3級を収録。公式の標準解答と原本図表、選択肢ごとの独自解説を確認できます。",
     remainingWork: [],
   },
   {

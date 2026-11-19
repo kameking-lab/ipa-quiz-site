@@ -8,6 +8,7 @@ import { QUESTIONS as K11_RYOKAKU } from "@/data/questions/unko-kanrisha-ryokaku
 import { QUESTIONS as K11_OTSU4 } from "@/data/questions/kikenbutsu-otsu4";
 import { SEKOU_1KENCHIKU_QUESTIONS } from "@/data/questions/sekou-1kenchiku";
 import { KENCHIKUSHI1_CANDIDATES } from "../data/qualification-staging/kenchikushi1";
+import { CHOICE_KEYS } from "@/lib/questions/answers";
 import { officialScoringIssue } from "@/lib/questions/official-scoring";
 import { validateBenrishiStaging } from "./lib/validate-benrishi-staging";
 import { PRACTICE_SESSIONS } from "@/lib/questions/practice-session";
@@ -134,28 +135,7 @@ const QuestionSchema = z.object({
   difficulty: z.union([z.literal(1), z.literal(2), z.literal(3), z.literal(4), z.literal(5)]),
   question: z.string().min(1),
   choices: z
-    .object({
-      ア: z.string().optional(),
-      イ: z.string().optional(),
-      ウ: z.string().optional(),
-      エ: z.string().optional(),
-      オ: z.string().optional(),
-      カ: z.string().optional(),
-      キ: z.string().optional(),
-      ク: z.string().optional(),
-      ケ: z.string().optional(),
-      コ: z.string().optional(),
-      サ: z.string().optional(),
-      シ: z.string().optional(),
-      ス: z.string().optional(),
-      セ: z.string().optional(),
-      ソ: z.string().optional(),
-      タ: z.string().optional(),
-      チ: z.string().optional(),
-      ツ: z.string().optional(),
-      テ: z.string().optional(),
-      ト: z.string().optional(),
-    })
+    .object(Object.fromEntries(CHOICE_KEYS.map((key) => [key, z.string().optional()])))
     .refine((choices) => Object.values(choices).filter(Boolean).length >= 2, "選択肢は2個以上必要です")
     .optional(),
   officialScoring: z.object({ kind: z.literal("credit-for-all"), reason: z.string().trim().min(1) }).optional(),
@@ -358,7 +338,7 @@ function validate(questions: Question[]): ValidationResult {
         continue;
       }
       const answers = Array.isArray(q.answer) ? q.answer : [q.answer];
-      const ans = answers.find(key => !["ア", "イ", "ウ", "エ", "オ", "カ", "キ", "ク", "ケ", "コ", "サ", "シ", "ス", "セ", "ソ", "タ", "チ", "ツ", "テ", "ト"].includes(key) || !q.choices?.[key as keyof typeof q.choices]);
+      const ans = answers.find(key => !CHOICE_KEYS.some((choice) => choice === key) || !q.choices?.[key as keyof typeof q.choices]);
       if (!q.officialScoring && (ans !== undefined || answers.length === 0)) {
         fail++;
         byExam[examKey].fail++;

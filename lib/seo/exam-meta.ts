@@ -6,7 +6,7 @@ import { questionSourceEdition } from "@/lib/questions/source-label";
 import { examLabel } from "@/lib/utils";
 import { isIpaTop, ipaTopDescription } from "@/lib/seo/ipa-top";
 export const EXAM_DESCRIPTIONS: Partial<Record<ExamCode, string>> = {
-    "zenkou-joho": "第76回の1級2区分・2級・3級を収録。公式の標準解答と原本図表、選択肢ごとの独自解説を確認できます。",
+    "zenkou-joho": "第75・76回の各1級2区分・2級・3級を収録。公式の標準解答と原本図表、選択肢ごとの独自解説を確認できます。",
     "katei-shokumotsu": "2024年度 第59回の旧3級・旧2級を全24大問・37演習単位で収録。公式正答と原本図表、選択肢ごとの独自解説を確認できます。",
     "katei-hifuku": "2025年度 第62回の2級筆記を全12大問・19演習単位で収録。公式正答と原本図表、選択肢ごとの独自解説を確認できます。",
 "sasshi2": "技能検定 2級サッシ施工（ビル用サッシ施工作業）学科試験。公式過去問を全肢の独自解説で学べます。",
