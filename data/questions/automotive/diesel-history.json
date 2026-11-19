@@ -5438,5 +5438,1810 @@
       }
     ],
     "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q01",
+    "qNumber": 1,
+    "question": "ジーゼル・エンジンの燃焼に関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) ジーゼル・エンジンの熱効率は、約20%〜25%である。",
+      "イ": "(2) 1kgの軽油を完全燃焼させるのに必要な空気の質量は、理論上約10kgとされている。",
+      "ウ": "(3) ジーゼル・ノックは、噴射時期が早過ぎるときや圧縮圧力が低いときなどに発生しやすい。",
+      "エ": "(4) 4サイクル・エンジンは、クランクシャフトが1回転する間に1サイクルの作用を完了する。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "噴射が早すぎる場合や圧縮圧力が低い場合は着火遅れが長くなりやすい。着火前に蓄積した燃料が一度に燃えて圧力が急上昇すると、ジーゼル・ノックが起こる。",
+    "choiceExplanations": {
+      "ア": "ジーゼル・エンジンは圧縮比が高く、一般にガソリン・エンジンより熱効率が高い。約20%〜25%という範囲はジーゼル・エンジンの標準的な値としては低すぎる。",
+      "イ": "軽油1kgに対する理論空燃比は質量比でおおむね14〜15であり、空気約10kgでは足りない。",
+      "ウ": "噴射が早すぎる場合や圧縮圧力が低い場合は着火遅れが長くなりやすい。着火前に蓄積した燃料が一度に燃えて圧力が急上昇すると、ジーゼル・ノックが起こる。",
+      "エ": "4サイクルは吸入・圧縮・膨張・排気の4行程で構成される。各行程にクランク角180°を要するので、1サイクルは720°、すなわち2回転である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      2
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "ジーゼル・エンジンの燃焼"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.1",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=2",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q02",
+    "qNumber": 2,
+    "question": "ジーゼル・エンジンのNOₓ（窒素酸化物）に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 燃焼ガスの温度が高いときに、N₂（窒素）とO₂（酸素）が反応してNOₓを生成する。",
+      "イ": "(2) ブローバイ・ガスの主成分は、NOₓである。",
+      "ウ": "(3) EGR（排気ガス再循環装置）を用いて、NOₓの低減を図っている。",
+      "エ": "(4) 尿素SCRシステム（排気ガス後処理装置）やNOₓ触媒により、NOₓの減少を図っている。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "ブローバイ・ガスは、ピストンとシリンダの隙間などからクランクケースに漏れたガスである。窒素酸化物がその主成分というわけではない。",
+    "choiceExplanations": {
+      "ア": "高温の燃焼域で空気中の窒素と酸素が反応し、窒素酸化物が生成する。",
+      "イ": "ブローバイ・ガスは、ピストンとシリンダの隙間などからクランクケースに漏れたガスである。窒素酸化物がその主成分というわけではない。",
+      "ウ": "排気の一部を吸気に戻すと、燃焼時の最高温度が下がり、高温で生じるNOₓが減る。",
+      "エ": "尿素SCRでは、尿素水から発生するアンモニアを使って触媒上でNOₓを窒素と水に還元する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      2
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "窒素酸化物"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.2",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=2",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q03",
+    "qNumber": 3,
+    "question": "着火順序が1－3－4－2の4サイクル直列4シリンダ・エンジンにおいて、第4シリンダが排気行程の上死点であり、この位置からクランクシャフトを回転方向に360°回転させたときに、吸入行程の下死点になるシリンダとして、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 第1シリンダ",
+      "イ": "(2) 第2シリンダ",
+      "ウ": "(3) 第3シリンダ",
+      "エ": "(4) 第4シリンダ"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "最初に第1シリンダが着火上死点、第4シリンダが排気上死点となる。第2シリンダは最初に膨張下死点にあり、360°後に吸入下死点となる。",
+    "choiceExplanations": {
+      "ア": "最初に第4シリンダが排気上死点なら、第1シリンダは圧縮上死点である。360°後の第1シリンダは排気上死点となる。",
+      "イ": "最初に第1シリンダが着火上死点、第4シリンダが排気上死点となる。第2シリンダは最初に膨張下死点にあり、360°後に吸入下死点となる。",
+      "ウ": "第3シリンダは最初に吸入下死点にあり、360°回すと膨張下死点となる。",
+      "エ": "最初に排気上死点にある第4シリンダは、吸入・圧縮の2行程を経て360°後に圧縮上死点となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      2
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "4サイクルの行程"
+    ],
+    "difficulty": 2,
+    "isCalculation": true,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.3",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=2",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q04",
+    "qNumber": 4,
+    "question": "図に示す燃焼室に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) Aは、インジェクション・ノズルである。",
+      "イ": "(2) 一般に、小型エンジンに多く用いられている。",
+      "ウ": "(3) 直接噴射式に比べて燃焼圧力が高いので、運転中の騒音・振動が大きくなる傾向がある。",
+      "エ": "(4) 始動性は、直接噴射式に比べて劣るため、予熱装置を設けている。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "副室式は燃焼圧力の上昇が直接噴射式より緩やかで、騒音・振動を抑えやすい。高い燃焼圧力で騒音が増すという説明は逆である。",
+    "choiceExplanations": {
+      "ア": "Aはシリンダ・ヘッド内の副室に燃料を噴射するインジェクション・ノズルである。",
+      "イ": "図の渦流室式は、従来の小型ジーゼル・エンジンで多く用いられてきた副室式の一つである。",
+      "ウ": "副室式は燃焼圧力の上昇が直接噴射式より緩やかで、騒音・振動を抑えやすい。高い燃焼圧力で騒音が増すという説明は逆である。",
+      "エ": "副室式では冷間時に燃焼室から熱が逃げやすく、着火しにくくなる。グロー・プラグなどで予熱して始動を補助する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePages": [
+      2
+    ],
+    "sourceFigureRequired": true,
+    "topicTags": [
+      "渦流室式燃焼室"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.4",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=2",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": [
+      {
+        "physicalPage": 2,
+        "url": "/automotive/0aa2b213ab300ac4554861a52f7b8762abb7d3f6a05a64a1b8cf084aa1e20882.webp"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q05",
+    "qNumber": 5,
+    "question": "シリンダ及びシリンダ・ブロックに関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) シリンダ・ブロックには、一般にマグネシウム合金が用いられている。",
+      "イ": "(2) 一般にシリンダ・ライナ上面は、シリンダ・ブロック上面よりやや突き出ている。",
+      "ウ": "(3) 乾式ライナは、アルミニウム合金製の薄い円筒状のもので、シリンダに圧入又は挿入されている。",
+      "エ": "(4) 乾式ライナは、シリンダ・ライナの外周面が直接冷却水に触れている。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "ライナの上面を規定量だけ突出させる構造では、ヘッドを締め付けたときにガスケットを適切に押さえられる。",
+    "choiceExplanations": {
+      "ア": "シリンダ・ブロックには鋳鉄やアルミニウム合金が一般的に用いられる。マグネシウム合金は一般的な材料ではない。",
+      "イ": "ライナの上面を規定量だけ突出させる構造では、ヘッドを締め付けたときにガスケットを適切に押さえられる。",
+      "ウ": "乾式ライナは一般に耐摩耗性のある鋳鉄製などの円筒で、シリンダ・ブロックに圧入または挿入される。",
+      "エ": "外周が直接冷却水に接するのは湿式ライナである。乾式の外周はシリンダ・ブロックに接する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      2
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "シリンダ・ライナ"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.5",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=2",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q06",
+    "qNumber": 6,
+    "question": "図に示すコンプレッション・リングの断面のうち、キーストン型のものとして、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "図の(1)",
+      "イ": "図の(2)",
+      "ウ": "図の(3)",
+      "エ": "図の(4)"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "外周側と内周側で断面の厚さが異なり、上下の側面が傾斜した台形断面である。これがキーストン型の特徴である。",
+    "choiceExplanations": {
+      "ア": "外周側と内周側で断面の厚さが異なり、上下の側面が傾斜した台形断面である。これがキーストン型の特徴である。",
+      "イ": "内周側に段を設けた断面であり、上下の側面の傾斜で形成される台形断面とは異なる。",
+      "ウ": "外周側が矩形で内周側に切欠きがあり、上下側面が傾斜する形状ではない。",
+      "エ": "上下面はほぼ平行で外周面だけに傾斜がある。キーストン型を区別するのはリング溝に接する上下の側面の傾斜である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePages": [
+      3
+    ],
+    "sourceFigureRequired": true,
+    "topicTags": [
+      "キーストン型ピストン・リング"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.6",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=3",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": [
+      {
+        "physicalPage": 3,
+        "url": "/automotive/a983c076ca04991096375ef420398c60f90dfd66f22c6b6d0a8cae832ab58f8d.webp"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q07",
+    "qNumber": 7,
+    "question": "コンロッド・ベアリングに関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) コンロッド・ベアリングが摩耗したときは、油圧低下の原因となる。",
+      "イ": "(2) コンロッド・ベアリングが摩耗したときは、クランク・ピンのオイル・クリアランスが大きくなる。",
+      "ウ": "(3) オイル・クリアランスの測定は、シックネス・ゲージを用いて行う。",
+      "エ": "(4) コンロッド・ベアリング内径の測定は、シリンダ・ゲージを用いて行う。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "軸受とクランク・ピン間の隙間は、プラスチゲージのつぶれ幅や内径と外径の差で測定する。シックネス・ゲージはこの軸受の標準的な測定方法ではない。",
+    "choiceExplanations": {
+      "ア": "摩耗でベアリングの隙間が増えると、そこから流出するオイルが増えて油圧が低下しやすい。",
+      "イ": "ベアリングの摺動面が摩耗すると内径が広がり、クランク・ピンとの隙間が増える。",
+      "ウ": "軸受とクランク・ピン間の隙間は、プラスチゲージのつぶれ幅や内径と外径の差で測定する。シックネス・ゲージはこの軸受の標準的な測定方法ではない。",
+      "エ": "規定トルクで組み付けたベアリングの内径を測るには、内径比較測定ができるシリンダ・ゲージが適する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      3
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "コンロッド・ベアリング"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.7",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=3",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q08",
+    "qNumber": 8,
+    "question": "エア・クリーナに関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) エア・クリーナは、エンジンの吸入空気騒音を低減する役目もしている。",
+      "イ": "(2) エア・クリーナのエレメントが目詰まりを起こすと、ブローバイ・ガス発生の原因となる。",
+      "ウ": "(3) ダスト・アンローダ・バルブは、排気ガスの圧力を利用して自動的にごみや水を排出する装置である。",
+      "エ": "(4) ビスカス式エレメントは、定期的に圧縮空気を吹き付けて清掃を行う必要がある。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "エア・クリーナは吸入空気中の異物を取り除くとともに、吸気の脈動に伴う騒音を抑える役割も持つ。",
+    "choiceExplanations": {
+      "ア": "エア・クリーナは吸入空気中の異物を取り除くとともに、吸気の脈動に伴う騒音を抑える役割も持つ。",
+      "イ": "目詰まりは吸気の抵抗を増やして吸入空気量を減らす。ブローバイは燃焼ガスがピストン周りからクランクケースへ漏れる現象である。",
+      "ウ": "これはエア・クリーナに集まったごみや水を排出するバルブである。排気ガスの圧力で作動する装置ではない。",
+      "エ": "ビスカス式はエレメントに含ませた油で粉じんを捕集する。圧縮空気による清掃ではなく指定時期に交換する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      3
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "エア・クリーナ"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.8",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=3",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q09",
+    "qNumber": 9,
+    "question": "燃焼室へのエンジン・オイル上がりの原因として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) シリンダの摩耗",
+      "イ": "(2) オイル・リングの圧着力不足",
+      "ウ": "(3) コンプレッション・リングの摩耗、損傷",
+      "エ": "(4) バルブ機構のオイル・シールのシール不良"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "バルブ・ステムのシール不良でシリンダ・ヘッド側から油が入るのはオイル下がりである。",
+    "choiceExplanations": {
+      "ア": "シリンダの摩耗でピストンとの隙間が増えると、油がクランクケース側から燃焼室側へ上がりやすくなる。",
+      "イ": "オイル・リングの圧着力が不足するとシリンダ壁の余分な油をかき落とせず、燃焼室に油が入りやすい。",
+      "ウ": "リングが摩耗または損傷するとピストン周囲の密封性が低下し、油がシリンダ側から燃焼室へ入りやすくなる。",
+      "エ": "バルブ・ステムのシール不良でシリンダ・ヘッド側から油が入るのはオイル下がりである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      3
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "オイル上がり"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.9",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=3",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q10",
+    "qNumber": 10,
+    "question": "冷却装置に関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 不凍液の混合率が60%の冷却水は、冷却水温度が−30℃になると凍結する恐れがある。",
+      "イ": "(2) プレッシャ型ラジエータ・キャップのバキューム・バルブの開弁圧の点検は、ラジエータ・キャップ・テスタを用いて行う。",
+      "ウ": "(3) サーモスタットのジグル・バルブは、冷却水の循環系統内に残留している空気があるときに開く。",
+      "エ": "(4) 入口制御式のサーモスタットは、開弁温度を82℃〜88℃と出口制御式に比べて約5℃〜7℃高めに設定している。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "ジグル・バルブはサーモスタットが閉じているときに、系統に残った空気を逃がすための小さなバルブである。",
+    "choiceExplanations": {
+      "ア": "一般的な冷却水で不凍液を60%にすると凍結点は−30℃より低くなる。製品の指定混合率と凍結温度表で対応温度を確認する。",
+      "イ": "キャップ・テスタで通常測るのは加圧側のプレッシャ・バルブの開弁圧である。冷却時の負圧で開くバキューム・バルブとは機能が異なる。",
+      "ウ": "ジグル・バルブはサーモスタットが閉じているときに、系統に残った空気を逃がすための小さなバルブである。",
+      "エ": "入口制御式はラジエータを通った冷却水が戻る側の温度を検知する。一般に開弁温度は出口制御式より低めに設定する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      3
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "冷却装置"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.10",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=3",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q11",
+    "qNumber": 11,
+    "question": "図に示す列型インジェクション・ポンプのタイマの作動原理に関する次の文章の（イ）と（ロ）に当てはまるものとして、下の組み合わせのうち、適切なものはどれか。\n\nエンジンが規定回転速度を超えると、フライウェイトが遠心力により外周方向へ移動し、被駆動アームと駆動アームの隙間Aを（イ）ように作動する。その結果、被駆動アームがカムシャフトの（ロ）に移動した分、進角する。",
+    "choices": {
+      "ア": "(1) （イ）狭める　（ロ）回転方向",
+      "イ": "(2) （イ）広げる　（ロ）回転方向",
+      "ウ": "(3) （イ）狭める　（ロ）回転と逆方向",
+      "エ": "(4) （イ）広げる　（ロ）回転と逆方向"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "フライウェイトが遠心力で開くとアーム間の隙間が広がり、被駆動側がカムシャフトの回転方向へ先行するので進角する。",
+    "choiceExplanations": {
+      "ア": "進角には回転方向への移動が合っているが、フライウェイトが外側へ開くとアーム間の隙間Aは広がる。",
+      "イ": "フライウェイトが遠心力で開くとアーム間の隙間が広がり、被駆動側がカムシャフトの回転方向へ先行するので進角する。",
+      "ウ": "回転速度の上昇で隙間Aは広がる。また逆回転方向への変位では噴射の進角にならない。",
+      "エ": "隙間Aが広がる点は合うが、進角時に被駆動アームが移動するのはカムシャフトの回転方向である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePages": [
+      4
+    ],
+    "sourceFigureRequired": true,
+    "topicTags": [
+      "列型噴射ポンプのタイマ"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.11",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 4,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=4",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": [
+      {
+        "physicalPage": 4,
+        "url": "/automotive/8a35091a6de628f05a90f10b740e74b2753226861d88a16ebdb6fba04e58d376.webp"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q12",
+    "qNumber": 12,
+    "question": "図に示す列型インジェクション・ポンプのプランジャ・バレルを表すものとして、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) A",
+      "イ": "(2) B",
+      "ウ": "(3) C",
+      "エ": "(4) D"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "Dはプランジャを内側に収め、精密な隙間で往復動を案内する筒状のプランジャ・バレルである。",
+    "choiceExplanations": {
+      "ア": "Aはコントロール・ロッドと連動してプランジャを回す側の部品を示しており、プランジャを案内する筒ではない。",
+      "イ": "Bはバレル内で往復して燃料を圧送するプランジャを示す。バレルはその摺動を案内する外側の筒である。",
+      "ウ": "Cは図でコントロール・ロッドの近くにある制御機構側を示しており、Dで示された外側の固定筒と区別する。",
+      "エ": "Dはプランジャを内側に収め、精密な隙間で往復動を案内する筒状のプランジャ・バレルである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePages": [
+      4
+    ],
+    "sourceFigureRequired": true,
+    "topicTags": [
+      "プランジャ・バレル"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.12",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 4,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=4",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": [
+      {
+        "physicalPage": 4,
+        "url": "/automotive/c254410577b9cdb030c83682592cb7c3358871904dc2b56d3718775115803a43.webp"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q13",
+    "qNumber": 13,
+    "question": "図に示す分配型インジェクション・ポンプのガバナにおいて、Aの部品名称として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) ドライブ・シャフト",
+      "イ": "(2) コントロール・スリーブ",
+      "ウ": "(3) デリバリ・バルブ",
+      "エ": "(4) ガバナ・スリーブ"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "ガバナ・スリーブはフライウェイトの開きに応じて軸方向に動き、その変位をガバナのレバーに伝える。",
+    "choiceExplanations": {
+      "ア": "ドライブ・シャフトはポンプへ回転を伝える軸である。図のAはガバナ側の軸方向に動く部品を示す。",
+      "イ": "コントロール・スリーブは分配プランジャ側で燃料の有効圧送行程を変える部品である。図のAはガバナ機構側にある。",
+      "ウ": "デリバリ・バルブは燃料出口側で噴射管への送油と逆流防止を担う。図のAは燃料出口を示していない。",
+      "エ": "ガバナ・スリーブはフライウェイトの開きに応じて軸方向に動き、その変位をガバナのレバーに伝える。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePages": [
+      4
+    ],
+    "sourceFigureRequired": true,
+    "topicTags": [
+      "分配型噴射ポンプのガバナ"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.13",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 4,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=4",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": [
+      {
+        "physicalPage": 4,
+        "url": "/automotive/78166792ca7039b162087af2adb88d65ad7a43374b5a141ab53f30837a0d3e89.webp"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q14",
+    "qNumber": 14,
+    "question": "コモンレール式高圧燃料噴射装置に関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 燃料の噴射時期は、ECU（エレクトロニック・コントロール・ユニット）がサプライ・ポンプを制御することで行われる。",
+      "イ": "(2) 燃料の最大噴射圧力は、機械式インジェクション・ポンプと比べて2倍程度である。",
+      "ウ": "(3) 燃料噴射を多段階に分割することができるので、排出ガスは低減できるが騒音は増大する。",
+      "エ": "(4) 燃料の噴射量は、主にエンジン回転速度とアクセル開度からの信号をもとに制御が行われる。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "ECUは回転速度とアクセル開度などの信号から要求噴射量を決定し、インジェクタの通電時間などを制御する。",
+    "choiceExplanations": {
+      "ア": "サプライ・ポンプはレールに燃料を送り圧力を確保する。噴射時期はECUが各インジェクタの開弁時期を制御して決める。",
+      "イ": "コモンレール式は高い圧力を蓄えて噴射できるが、最大圧力は機種や世代で異なる。機械式の約2倍を方式共通の特性とすることはできない。",
+      "ウ": "主噴射前のパイロット噴射などで圧力上昇を緩和できるため、多段噴射は排出ガスだけでなく燃焼騒音の低減にも役立つ。",
+      "エ": "ECUは回転速度とアクセル開度などの信号から要求噴射量を決定し、インジェクタの通電時間などを制御する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      5
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "コモンレール式高圧燃料噴射装置"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.14",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 5,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=5",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q15",
+    "qNumber": 15,
+    "question": "図に示す列型インジェクション・ポンプのデリバリ・バルブに関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) シート部は、燃料の吸い戻しを行う働きをする。",
+      "イ": "(2) デリバリ・バルブは、プランジャで加圧された燃料の圧力が17MPa〜23MPa程度に達すると開く。",
+      "ウ": "(3) インジェクション・パイプ内の残圧が高過ぎると、エンジン性能や排気ガスに悪影響を与える。",
+      "エ": "(4) デリバリ・バルブは、デリバリ・バルブ・スプリングのばね力により開く。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "残圧が高すぎるとノズルで二次噴射や後だれが起こりやすく、燃焼や排出ガスに悪影響を与える。",
+    "choiceExplanations": {
+      "ア": "シート部は着座して逆流を防ぐ部分である。燃料を吸い戻して噴射管側の圧力を下げる働きはピストン部が担う。",
+      "イ": "デリバリ・バルブは燃料圧力がばね力などに打ち勝つと開く。17〜23MPa程度という値は噴射ノズルの開弁圧の例であり、このバルブの開弁値ではない。",
+      "ウ": "残圧が高すぎるとノズルで二次噴射や後だれが起こりやすく、燃焼や排出ガスに悪影響を与える。",
+      "エ": "ばね力はバルブを閉じる方向に作用し、プランジャで加圧された燃料の力がこれに打ち勝つと開く。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePages": [
+      5
+    ],
+    "sourceFigureRequired": true,
+    "topicTags": [
+      "デリバリ・バルブ"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.15",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 5,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=5",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": [
+      {
+        "physicalPage": 5,
+        "url": "/automotive/9de5d2265a11c6fcad1eab2e8b5245aa77c0b1755e9f3be1290aa6b84f8d1e42.webp"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q16",
+    "qNumber": 16,
+    "question": "軽油（燃料）に関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 軽油の着火点は、一般に45℃〜80℃である。",
+      "イ": "(2) 軽油の着火性を表すものにオクタン価があり、この数値が大きいものほどノッキングを起こしにくい。",
+      "ウ": "(3) 寒冷地用の軽油は、一般に流動点が低い特1号又は1号が用いられている。",
+      "エ": "(4) 軽油は、適度な粘度をもち、ガソリンに比べてやや重く、着火性がよい。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "軽油はガソリンより密度と粘度が高く、圧縮された高温空気で自着火させるジーゼル・エンジンに適した燃料である。",
+    "choiceExplanations": {
+      "ア": "45〜80℃は、火源を近づけたときの引火点の範囲に当たる。自ら発火する着火点はそれより高い。",
+      "イ": "軽油の着火性はセタン価で表す。オクタン価は主にガソリンの耐ノック性の指標である。",
+      "ウ": "寒冷地では流動点がより低い3号や特3号が用いられる。特1号や1号はこれらほど低温流動性を重視した等級ではない。",
+      "エ": "軽油はガソリンより密度と粘度が高く、圧縮された高温空気で自着火させるジーゼル・エンジンに適した燃料である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      5
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "軽油の性質"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.16",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 5,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=5",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q17",
+    "qNumber": 17,
+    "question": "オルタネータに関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) オルタネータの出力制御は、ボルテージ・レギュレータがロータ・コイルに流す電流を断続させて行っている。",
+      "イ": "(2) オルタネータの調整電圧は、バッテリのプラス側とオルタネータのB端子間に電圧計を接続して確認する。",
+      "ウ": "(3) オルタネータのB端子を外す場合は、必ずバッテリのプラス端子を先に取り外してから行う。",
+      "エ": "(4) ブラシレス型オルタネータは、スリップ・リングを使用している。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "レギュレータはロータの界磁電流を断続して磁界の強さを調整し、出力電圧を指定の範囲に保つ。",
+    "choiceExplanations": {
+      "ア": "レギュレータはロータの界磁電流を断続して磁界の強さを調整し、出力電圧を指定の範囲に保つ。",
+      "イ": "この2点間の測定はプラス側配線の電圧降下の測定になる。調整電圧はB端子とアース側などの間で測る。",
+      "ウ": "工具などによるアースへの短絡を防ぐため、まずバッテリのマイナス端子を外して回路を遮断する。",
+      "エ": "ブラシレス型は界磁への給電に回転接触部を必要としない構造であり、ブラシとスリップ・リングを使用しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      5
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "オルタネータの点検"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.17",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 5,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=5",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q18",
+    "qNumber": 18,
+    "question": "予熱装置に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 電熱式インテーク・エア・ヒータでは、吸入空気の温度に応じて、予熱時間を制御している。",
+      "イ": "(2) 一般にインテーク・エア・ヒータ式予熱装置は、吸入空気を暖めて始動を容易にするものである。",
+      "ウ": "(3) グロー・プラグは、燃焼室に向かってシリンダ・ヘッドに取り付けられており、寒冷時の始動を容易にしている。",
+      "エ": "(4) グロー・プラグの点検において、抵抗を測定したときに抵抗値が無限大であれば断線しているので、グロー・プラグの交換が必要である。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "試験で扱う電熱式インテーク・エア・ヒータの予熱時間は、冷却水温などから判定したエンジン温度に応じて制御する。吸入空気を加熱することと、予熱時間を決める検出温度は別である。",
+    "choiceExplanations": {
+      "ア": "試験で扱う電熱式インテーク・エア・ヒータの予熱時間は、冷却水温などから判定したエンジン温度に応じて制御する。吸入空気を加熱することと、予熱時間を決める検出温度は別である。",
+      "イ": "吸気通路に設けたヒータで吸入空気を加熱すると、冷間時でも圧縮終期の温度が上がり、燃料が着火しやすくなる。",
+      "ウ": "グロー・プラグの先端を燃焼室内で赤熱させ、近くの燃料の着火を助ける。",
+      "エ": "抵抗値が無限大で導通がない場合、内部の発熱回路は断線している。加熱できないため交換する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      6
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "ジーゼルの予熱装置"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.18",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 6,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=6",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q19",
+    "qNumber": 19,
+    "question": "鉛バッテリの整備に関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 開放型のMF（メンテナンス・フリー）バッテリを保管する場合は、定期的な補充電は不要である。",
+      "イ": "(2) バッテリの電解液が多過ぎると、極板の活物質が結晶性硫酸鉛になるサルフェーションが生じる原因となる。",
+      "ウ": "(3) 冬期に精製水の補水を行った場合には、補水の凍結を防ぐため、補水後直ちに充電する必要がある。",
+      "エ": "(4) 開放型のMFバッテリでは、精製水の補水作業は不要であるが、栓を開けるとバッテリの性能が失われる。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "補水直後は比重の小さい水が上層に残り、低温では凍るおそれがある。充電により液を混和させる。",
+    "choiceExplanations": {
+      "ア": "開放型のMFでも保管中に自己放電する。長期に保管する場合は充電状態を確認し、必要に応じて補充電する。",
+      "イ": "サルフェーションは放電状態を長く放置したり、液不足で極板が露出したりすると起こりやすい。適正液面を超えた場合はあふれなどの原因となる。",
+      "ウ": "補水直後は比重の小さい水が上層に残り、低温では凍るおそれがある。充電により液を混和させる。",
+      "エ": "開放型は液面を点検でき、必要に応じて補水する。栓を開けると性能が失われるという説明は密閉型との混同である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      6
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "鉛バッテリの整備"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.19",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 6,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=6",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q20",
+    "qNumber": 20,
+    "question": "直結式スタータの構成部品として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) シフト・レバー",
+      "イ": "(2) オーバランニング・クラッチ",
+      "ウ": "(3) クラッチ・ギヤ",
+      "エ": "(4) マグネット・スイッチ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "直結式はアーマチュア軸からピニオンへ直接動力を伝え、減速式で用いるクラッチ・ギヤを構成部品としない。",
+    "choiceExplanations": {
+      "ア": "マグネット・スイッチの動きをピニオン側に伝え、始動時にリング・ギヤへかみ合わせる部品である。",
+      "イ": "エンジン始動後にピニオンがスタータより速く回されても、逆駆動を伝えないようにする一方向クラッチである。",
+      "ウ": "直結式はアーマチュア軸からピニオンへ直接動力を伝え、減速式で用いるクラッチ・ギヤを構成部品としない。",
+      "エ": "ピニオンのかみ合いを操作し、スタータ・モータへ大電流を流す主接点を閉じる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      6
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "直結式スタータ"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.20",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 6,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=6",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q21",
+    "qNumber": 21,
+    "question": "次に示す諸元のエンジンの圧縮比について、適切なものは次のうちどれか。ただし、円周率は3.14として計算しなさい。\n\nシリンダ内径：80mm\nピストンのストローク：130mm\n燃焼室容積：62.8cm³",
+    "choices": {
+      "ア": "(1) 9.4",
+      "イ": "(2) 11.4",
+      "ウ": "(3) 16.9",
+      "エ": "(4) 17.9"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "行程容積は3.14×4²×13＝653.12cm³である。圧縮比は(653.12＋62.8)÷62.8＝11.4となる。",
+    "choiceExplanations": {
+      "ア": "シリンダ内径8cm、ストローク13cmから、行程容積は653.12cm³となる。圧縮比の分子にはこの行程容積に燃焼室容積を加えた値を使う。",
+      "イ": "行程容積は3.14×4²×13＝653.12cm³である。圧縮比は(653.12＋62.8)÷62.8＝11.4となる。",
+      "ウ": "シリンダの断面積は、内径80mmを半径40mmに換算して求める。指定の寸法を用いた行程容積と燃焼室容積からは16.9にならない。",
+      "エ": "圧縮比は燃焼室容積62.8cm³に行程容積653.12cm³を足した全容積を、燃焼室容積だけで割った値である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      6
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "圧縮比の計算"
+    ],
+    "difficulty": 2,
+    "isCalculation": true,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.21",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 6,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=6",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q22",
+    "qNumber": 22,
+    "question": "プライヤの種類と構造・機能に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) ウォータ・ポンプ・プライヤは、主にホース類の取り外しに用いられる。",
+      "イ": "(2) ピストン・リング・プライヤは、ピストン・リングの脱着に用いられる。",
+      "ウ": "(3) ペンチは、支点の穴を変えることによって、口の開きを大小二段にできる。",
+      "エ": "(4) バイス・グリップ（ロッキング・プライヤ）は、二重レバーによってつかむ力が非常に強い。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "支点を切り替えて口の開きを変更できるのはコンビネーション・プライヤなどである。通常のペンチの支点は固定されている。",
+    "choiceExplanations": {
+      "ア": "口の開きを広く調整できるウォータ・ポンプ・プライヤは、ホース類をつかんで取り外す用途に適する。",
+      "イ": "リングを均等に広げ、変形や折損を抑えながらピストン溝への取り付け、取り外しを行う工具である。",
+      "ウ": "支点を切り替えて口の開きを変更できるのはコンビネーション・プライヤなどである。通常のペンチの支点は固定されている。",
+      "エ": "二重レバーの機構で強い把持力を得て、そのままロックできる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      7
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "プライヤの用途"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.22",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 7,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=7",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q23",
+    "qNumber": 23,
+    "question": "図に示すA－B間の合成抵抗が9Ωの場合、Rの抵抗値として、適切なものは次のうちどれか。ただし、配線の抵抗はないものとする。",
+    "choices": {
+      "ア": "(1) 6Ω",
+      "イ": "(2) 8Ω",
+      "ウ": "(3) 9Ω",
+      "エ": "(4) 18Ω"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "7Ωと11Ωを直列にして18Ω、これを36Ωと並列にして12Ωとなる。12Ωと並列で全体を9Ωにするには28Ω＋R＝36Ωなので、Rは8Ωである。",
+    "choiceExplanations": {
+      "ア": "Rが6Ωなら28Ωとの直列枝は34Ωとなる。残りの枝の合成12Ωと並列にすると、全体は約8.87Ωである。",
+      "イ": "7Ωと11Ωを直列にして18Ω、これを36Ωと並列にして12Ωとなる。12Ωと並列で全体を9Ωにするには28Ω＋R＝36Ωなので、Rは8Ωである。",
+      "ウ": "9ΩはA－B間の合成抵抗であり、R単体の抵抗値ではない。Rが9Ωなら全体は37Ωと12Ωの並列で約9.06Ωになる。",
+      "エ": "18Ωは7Ωと11Ωを足した内側の枝の値である。Rが18Ωなら外側の枝は46Ωとなり、全体の抵抗は約9.52Ωである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePages": [
+      7
+    ],
+    "sourceFigureRequired": true,
+    "topicTags": [
+      "合成抵抗の計算"
+    ],
+    "difficulty": 2,
+    "isCalculation": true,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.23",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 7,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=7",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": [
+      {
+        "physicalPage": 7,
+        "url": "/automotive/8b842d6804f3a4c80786bcf00dbad0ed70c2807c7f9ca847508b43a27d9f3360.webp"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q24",
+    "qNumber": 24,
+    "question": "電力の単位として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) W（ワット）",
+      "イ": "(2) F（ファラド）",
+      "ウ": "(3) V（ボルト）",
+      "エ": "(4) A（アンペア）"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "電力は単位時間当たりのエネルギーで、SI単位はワットである。直流では電圧Vと電流Aの積で求められる。",
+    "choiceExplanations": {
+      "ア": "電力は単位時間当たりのエネルギーで、SI単位はワットである。直流では電圧Vと電流Aの積で求められる。",
+      "イ": "ファラドは静電容量の単位で、1Fは1Vで1Cを蓄える容量である。",
+      "ウ": "ボルトは電位差や電圧の単位である。電力を求めるには電流も必要となる。",
+      "エ": "アンペアは電流の単位である。電力はエネルギーが移る速さを表すワットで示す。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      7
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "電力の単位"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.24",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 7,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=7",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q25",
+    "qNumber": 25,
+    "question": "測定器及び計測器具の使用方法として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) コンプレッション・ゲージは、エンジンの圧縮圧力の測定に用いられる。",
+      "イ": "(2) オパシ・メータは、排気ガス中の一酸化炭素及び炭化水素の濃度測定に用いられる。",
+      "ウ": "(3) マイクロメータは、ピストンの外径などの測定に用いられる。",
+      "エ": "(4) シリンダ・ゲージは、シリンダの内径などの測定に用いられる。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "オパシ・メータは光の減衰からジーゼル排気の不透過度を測る。COやHCの濃度には排気ガス分析計を使う。",
+    "choiceExplanations": {
+      "ア": "コンプレッション・ゲージをシリンダに接続し、クランキング時の圧縮圧力を測定する。",
+      "イ": "オパシ・メータは光の減衰からジーゼル排気の不透過度を測る。COやHCの濃度には排気ガス分析計を使う。",
+      "ウ": "外側マイクロメータは対向する測定面で部品を挟み、ピストンなどの外径を精密に測る。",
+      "エ": "シリンダ・ゲージは基準寸法との差を読み、内径のほか真円度やテーパの点検にも用いる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      7
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "整備用測定器"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.25",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 7,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=7",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q26",
+    "qNumber": 26,
+    "question": "ボルトやナット類に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 「M16×1.5」と表されるねじ山のピッチは1.5mmである。",
+      "イ": "(2) スプリング・ワッシャは、ボルトやナットの緩み止めなどに用いられる。",
+      "ウ": "(3) メートルねじのねじ山の角度は、45°である。",
+      "エ": "(4) 戻り止めナット（セルフロッキング・ナット）を緩めた場合は、原則として再使用は不可となっている。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "メートルねじの基本山形で、ねじ山の角度は60°である。",
+    "choiceExplanations": {
+      "ア": "M16はねじの呼び径16mmを示し、後ろの1.5が隣り合うねじ山の間隔であるピッチを示す。",
+      "イ": "ばね座金として、締結部にばね力が作用する構造である。ボルトやナットの緩みを抑える目的で用いられる。",
+      "ウ": "メートルねじの基本山形で、ねじ山の角度は60°である。",
+      "エ": "一度使用すると緩み止め部分の摩擦保持力が低下することがある。整備では原則として新品に交換する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      7
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "ねじと緩み止め"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.26",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 7,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=7",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q27",
+    "qNumber": 27,
+    "question": "潤滑剤に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 粘度指数の大きいオイルほど、温度による粘度変化の度合が少ない。",
+      "イ": "(2) SAE20W-40のエンジン・オイルは、マルチ・グレード・オイルである。",
+      "ウ": "(3) オイルの粘度が高過ぎると、粘性抵抗が大きくなるが、動力損失は減少する。",
+      "エ": "(4) DPF（ジーゼル微粒子除去装置）や触媒の装着車には、適合性を有しているエンジン・オイルが設定されている。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "粘性抵抗が増えると、摺動部でのせん断抵抗やオイルを送るための負荷が増す。したがって動力損失も増える。",
+    "choiceExplanations": {
+      "ア": "粘度指数は温度に対する粘度の変わりにくさの指標であり、指数が大きいほど変化が小さい。",
+      "イ": "20Wは低温側、40は高温側の規定粘度等級を表す。両方の等級を満たすマルチグレードである。",
+      "ウ": "粘性抵抗が増えると、摺動部でのせん断抵抗やオイルを送るための負荷が増す。したがって動力損失も増える。",
+      "エ": "後処理装置に堆積する灰分などを抑える必要があるため、車両メーカーが指定する適合規格のオイルを使用する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      8
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "エンジン・オイルの粘度"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.27",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 8,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=8",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q28",
+    "qNumber": 28,
+    "question": "「道路運送車両の保安基準」に照らし、自動車の幅の基準として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 2.5mを超えてはならない。",
+      "イ": "(2) 3.5mを超えてはならない。",
+      "ウ": "(3) 3.8mを超えてはならない。",
+      "エ": "(4) 4.8mを超えてはならない。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "道路運送車両の保安基準第2条は、一般の自動車の幅を2.5m以下としている。",
+    "choiceExplanations": {
+      "ア": "道路運送車両の保安基準第2条は、一般の自動車の幅を2.5m以下としている。",
+      "イ": "一般の自動車の幅の上限は2.5mであり、3.5mは同条に定める幅の基準を超える。",
+      "ウ": "3.8mは同条に定める高さの一般的な上限である。幅の上限は2.5mである。",
+      "エ": "車体の幅を4.8mまで認める規定ではない。一般の自動車の幅の上限は2.5mである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      8
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "自動車の幅"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.28",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 8,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=8",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q29",
+    "qNumber": 29,
+    "question": "「道路運送車両の保安基準」及び「道路運送車両の保安基準の細目を定める告示」に照らし、次の文章の（　）に当てはまるものとして、適切なものはどれか。\n\n尾灯又は後部上側端灯と兼用の制動灯は、同時に点灯したときの光度が尾灯のみ又は後部上側端灯のみを点灯したときの光度の（　）以上となる構造であること。",
+    "choices": {
+      "ア": "(1) 3倍",
+      "イ": "(2) 5倍",
+      "ウ": "(3) 8倍",
+      "エ": "(4) 10倍"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "告示では、尾灯等と制動灯の同時点灯時の光度を、尾灯等だけの点灯時の光度の5倍以上と定めている。",
+    "choiceExplanations": {
+      "ア": "尾灯等との兼用時に制動の合図を明確にするため、告示の最低基準は5倍である。3倍では下限に達しない。",
+      "イ": "告示では、尾灯等と制動灯の同時点灯時の光度を、尾灯等だけの点灯時の光度の5倍以上と定めている。",
+      "ウ": "8倍の光度比は最低基準を満たすが、告示に定める最低値そのものは5倍である。",
+      "エ": "10倍も5倍以上の光度比には含まれるが、告示が要求する倍率の下限は5倍である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      8
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "兼用制動灯の光度"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.29",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 8,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=8",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": []
+  },
+  {
+    "id": "jidosha-2023-first-3-diesel-q30",
+    "qNumber": 30,
+    "question": "「道路運送車両の保安基準」及び「道路運送車両の保安基準の細目を定める告示」に照らし、自動車の輪荷重に関する基準として、適切なものは次のうちどれか。ただし、牽引自動車のうち告示で定めるものは除く。",
+    "choices": {
+      "ア": "(1) 5tを超えてはならない。",
+      "イ": "(2) 7tを超えてはならない。",
+      "ウ": "(3) 8tを超えてはならない。",
+      "エ": "(4) 10tを超えてはならない。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "道路運送車両の保安基準第4条の2における、告示の例外を除いた一般の自動車の輪荷重上限は5tである。",
+    "choiceExplanations": {
+      "ア": "道路運送車両の保安基準第4条の2における、告示の例外を除いた一般の自動車の輪荷重上限は5tである。",
+      "イ": "例外を除く輪荷重の上限は5tであり、7tでは基準を上回る。",
+      "ウ": "輪荷重は1輪にかかる荷重で、一般の自動車については5tまでである。",
+      "エ": "10tは一般的な軸重の上限であり、設問の輪荷重の一般的な上限は5tである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePages": [
+      8
+    ],
+    "sourceFigureRequired": false,
+    "topicTags": [
+      "自動車の輪荷重"
+    ],
+    "difficulty": 2,
+    "isCalculation": false,
+    "needsReview": false,
+    "reviewNotes": [],
+    "officialReferenceUrls": [],
+    "qualification": "jidousha-seibishi-gakka",
+    "session": "gakka",
+    "type": "multiple-choice",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "term": "first",
+    "subject": "3-diesel",
+    "category": "三級自動車ジーゼル・エンジン",
+    "examDate": "2023-10-01",
+    "sourcePdfUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf",
+    "sourceAnswerUrl": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_kai.pdf",
+    "sourceAttribution": "出典：一般社団法人日本自動車整備振興会連合会 令和5年度第1回自動車整備技能登録試験 三級自動車ジーゼル・エンジン No.30",
+    "officialQuestionStatus": "normal",
+    "lastUpdated": "2026-11-20",
+    "permissionVerified": true,
+    "publicGo": 1,
+    "sourcePageReferences": [
+      {
+        "physicalPage": 8,
+        "url": "https://www.jaspa.or.jp/Portals/0/resources/jaspahp/user/mechanic/past/2023/20231002_3d.pdf#page=8",
+        "pdfSha256": "6ebab7168ddbbcac17670fa9abe4c24d9958433b373b1ba38384628935102b97"
+      }
+    ],
+    "sourceFigureAssets": []
   }
 ]
