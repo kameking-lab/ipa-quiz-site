@@ -1,0 +1,42 @@
+import type { Question } from "@/lib/questions/types";
+
+export const KYOIN_GUNMA_2025_SENMON_CHU_SHAKAI: Question[] = [
+  {
+    id: "kyoin-gunma-2025-annual-senmon-chu-shakai-01-4",
+    exam: "kyoin-gunma",
+    session: "senmon-chu-shakai",
+    year: 2025,
+    season: "annual",
+    qNumber: 1,
+    part: "4",
+    examDate: "2025-07-06",
+    type: "multiple-choice",
+    subject: "中学校・社会",
+    category: "中学校・社会",
+    topicTags: ["アジア州", "日本の貿易"],
+    difficulty: 3,
+    question: "大問1（1）④\n資料1の下線B「経済発展が進む国」について、下の資料3はインドネシア、タイ、中国、アラブ首長国連邦の日本との貿易に関する統計資料である。タイを示すものを、資料3のア〜エから1つ選び、記号で書きなさい。",
+    choices: {
+      "ア": "資料3のア",
+      "イ": "資料3のイ",
+      "ウ": "資料3のウ",
+      "エ": "資料3のエ",
+    },
+    answer: "エ",
+    officialAnswerNumber: 4,
+    explanation: "タイでは自動車や電気機器の生産が盛んで、日本への主な輸出にも電気機器や輸送用機器が含まれる。4か国の中で日本側の貿易収支が黒字であることも、表のエを見分ける手掛かりになる。",
+    choiceExplanations: {
+      "ア": "インドネシアである。石炭などと金属鉱などが日本の主な輸入品に含まれ、資源の比重が大きい。",
+      "イ": "中国である。日本の主な輸入品に電気機器や一般機械のほか、衣類及び同附属品が含まれ、表の4か国で日本側の貿易赤字の額が最も大きい。",
+      "ウ": "アラブ首長国連邦である。日本の輸入額の9割以上を石油及び同製品が占め、石油ガス類も主要品目に含まれる。",
+      "エ": "タイでは自動車や電気機器の生産が盛んで、日本への主な輸出にも電気機器や輸送用機器が含まれる。4か国の中で日本側の貿易収支が黒字であることも、表のエを見分ける手掛かりになる。",
+    },
+    hasImage: true,
+    imageUrls: ["/questions/kyoin-gunma/2025/chugaku-shakai-q1-1-4.webp"],
+    imageAltTexts: ["4か国との日本側の貿易収支と主な輸入品。アは赤字で石炭や金属鉱、イは赤字で電気機器や一般機械、衣類、ウは赤字で輸入の92.7%が石油及び同製品、エは黒字で電気機器、一般機械、輸送用機器、肉類が主な輸入品。"],
+    sourcePdfUrl: "https://www.pref.gunma.jp/uploaded/attachment/683281.pdf",
+    sourceAnswerUrl: "https://www.pref.gunma.jp/uploaded/attachment/683281.pdf#page=16",
+    sourceAttribution: "出典：群馬県教育委員会 令和8年度採用 群馬県公立学校教員選考試験（2025年度実施） 中学校（社会） 大問1（1）④。解説は過去問AIの独自作成。",
+    license: "PREF-published",
+  },
+];

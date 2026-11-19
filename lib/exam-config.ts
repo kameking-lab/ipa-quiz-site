@@ -2019,6 +2019,13 @@ caremanager: {
             label: "教科専門（高等学校・英語）",
             categories: ["高等学校・英語"],
         },
+        {
+            session: "senmon-chu-shakai",
+            urlSlug: "senmon-chu-shakai",
+            expectedQuestions: 1,
+            label: "教科専門（中学校・社会）",
+            categories: ["中学校・社会"],
+        },
     ],
     seasons: ["annual"],
     yearRange: { start: 2022, end: 2025 },
