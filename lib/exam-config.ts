@@ -874,6 +874,27 @@ tohan: {
     seasons: ["annual"],
     yearRange: { start: 2026, end: 2026 },
 },
+"tohan-chugoku-shikoku": {
+    code: "tohan-chugoku-shikoku",
+    nameFull: "登録販売者試験（中国・四国）",
+    urlSlug: "tohan-chugoku-shikoku",
+    level: "basic",
+    sessions: [{
+        session: "gakka",
+        urlSlug: "gakka",
+        expectedQuestions: 120,
+        label: "試験問題（午前・午後）",
+        categories: [
+            "医薬品に共通する特性と基本的な知識",
+            "人体の働きと医薬品",
+            "主な医薬品とその作用",
+            "薬事に関する法規と制度",
+            "医薬品の適正使用と安全対策",
+        ],
+    }],
+    seasons: ["annual"],
+    yearRange: { start: 2026, end: 2026 },
+},
 "tohan-hokkaido-tohoku": {
     code: "tohan-hokkaido-tohoku",
     nameFull: "登録販売者試験（北海道・東北）",
