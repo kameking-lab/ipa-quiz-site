@@ -1,0 +1,2343 @@
+[
+  {
+    "id": "radio21-aviation-comm-2022-02-kogaku-a01",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 1,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "A-1 次の記述は、電気磁気に関する単位記号について述べたものである。このうち誤っているものを下の番号から選べ。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-1",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-kogaku-a01.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 無線工学 A-1 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230806052411id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230806052505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 無線工学 A-1（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "起電力の単位は電圧と同じVです。Aは電流の単位なので誤りです。",
+    "choiceExplanations": {
+      "ア": "電界の強さは、電位差を距離で割った単位であるV/mで表します。",
+      "イ": "磁束の単位はウェーバーで、記号はWbです。",
+      "ウ": "磁界の強さは単位長さ当たりの電流に対応し、A/mで表します。",
+      "エ": "起電力の単位は電圧と同じVです。Aは電流の単位なので誤りです。",
+      "オ": "磁束密度の単位はテスラで、記号はTです。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-kogaku-a02",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 2,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "A-2 次の記述は、図に示す並列共振回路について述べたものである。このうち誤っているものを下の番号から選べ。ただし、交流電源電圧 Eሶ の\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-2",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-kogaku-a02.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 無線工学 A-2 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230806052411id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230806052505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 無線工学 A-2（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "並列共振ではLとCの電流が打ち消し合い、電源から見たインピーダンスは20 kΩです。1 kΩは各リアクタンスです。",
+    "choiceExplanations": {
+      "ア": "並列共振ではLとCの電流が打ち消し合い、電源から見たインピーダンスは20 kΩです。1 kΩは各リアクタンスです。",
+      "イ": "共振時に電源から流れるのは抵抗の枝の電流であり、100 V ÷ 20 kΩ = 5 mAです。",
+      "ウ": "誘導リアクタンスの枝には100 Vがかかるため、電流は100 V ÷ 1 kΩ = 100 mAです。",
+      "エ": "並列共振の条件では容量リアクタンスと誘導リアクタンスの絶対値は等しく、どちらも1 kΩです。",
+      "オ": "容量の電流は電圧より90°進み、誘導の電流は90°遅れるので、その差はπ radです。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-kogaku-a03",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 3,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "A-3 次の記述は、トランジスタTr のベース接地電流増幅率α とエミッタ接地電流増幅率β について述べたものである。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-3",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-kogaku-a03.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 無線工学 A-3 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230806052411id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230806052505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 無線工学 A-3（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "α = I꜀/Iₑ、β = I꜀/Iᵦ です。Iᵦ = Iₑ − I꜀ を代入するとβ = α/(1 − α)になります。",
+    "choiceExplanations": {
+      "ア": "αとβはいずれも電流増幅率の分子に出力のコレクタ電流を取ります。この組合せではどちらの比も逆です。",
+      "イ": "βの比とαからの式は合いますが、αは入力のエミッタ電流を分母に取ります。",
+      "ウ": "αとβの分母、分子が逆です。さらに Iₑ = I꜀ + Iᵦ を用いるとβの式の分母は1 − αです。",
+      "エ": "基礎となるαの式は合っていますが、βは I꜀/Iᵦ であり、分母は1 − αです。",
+      "オ": "α = I꜀/Iₑ、β = I꜀/Iᵦ です。Iᵦ = Iₑ − I꜀ を代入するとβ = α/(1 − α)になります。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-kogaku-a04",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 4,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "A-4 次の記述は、図に示すように増幅度 (Vo /ViA ) がA の増幅器と帰還率 (Vf /Vo ) がβ の帰還回路を用いた原理的な構成の負帰還増\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-4",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-kogaku-a04.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 無線工学 A-4 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230806052411id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230806052505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 無線工学 A-4（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "閉ループ利得は A/(1 + Aβ) であり、十分な帰還で約1/βに安定します。ひずみや雑音も抑えられます。",
+    "choiceExplanations": {
+      "ア": "負帰還で利得は小さくなりますが、十分な帰還で利得は安定し、ひずみや雑音は減ります。",
+      "イ": "利得の低下とひずみや雑音の低下は合っています。十分な帰還を安定性の低下とした箇所が誤りです。",
+      "ウ": "閉ループ利得は A/(1 + Aβ) であり、十分な帰還で約1/βに安定します。ひずみや雑音も抑えられます。",
+      "エ": "負帰還では裸の増幅器より利得は小さくなり、十分な帰還は利得の変動やひずみも抑えます。",
+      "オ": "安定化とひずみの低減は起こりますが、初めの利得が大きくなるという記述は負帰還に反します。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-kogaku-a05",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 5,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "A-5 次の記述は、図に示す送信機の発振部などに用いられるPLL 発振回路(PLL 周波数シンセサイザ)の原理的な構成例について述べた\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-5",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-kogaku-a05.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 無線工学 A-5 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230806052411id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230806052505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 無線工学 A-5（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "分周後の信号は位相比較器に入り、フィルターの出力はVCOを制御します。3.2 MHz ÷ 64 × 2,400 = 120 MHzです。",
+    "choiceExplanations": {
+      "ア": "回路名は正しいものの、基準を分周した50 kHzと出力側の分周後が一致するので、出力は118 MHzにはなりません。",
+      "イ": "分周後の信号は位相比較器に入り、フィルターの出力はVCOを制御します。3.2 MHz ÷ 64 × 2,400 = 120 MHzです。",
+      "ウ": "フィルターの電圧で制御するのはVCOです。トーン発振器と118 MHzの記述が誤りです。",
+      "エ": "二つの分周後の信号を比較するのは位相比較器であり、合致する出力周波数は120 MHzです。",
+      "オ": "120 MHzは合いますが、同期制御に用いるのは位相比較器とVCOの組合せです。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-kogaku-a06",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 6,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "A-6 次の記述は、AM(A3E)用スーパヘテロダイン受信機の基本的な動作について述べたものである。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-6",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-kogaku-a06.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 無線工学 A-6 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230806052411id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230806052505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 無線工学 A-6（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "周波数混合器で受信波と局部発振波との差を中間周波数として選び、増幅後に検波器でAMを復調します。",
+    "choiceExplanations": {
+      "ア": "周波数を変換するのは混合器であり、AMの復調には振幅を取り出す検波器を使います。",
+      "イ": "差周波数を使って検波器で復調しますが、周波数変換を行うのは緩衝増幅器ではありません。",
+      "ウ": "緩衝増幅器で積の周波数を作る動作ではありません。AMの受信情報は振幅検波で取り出します。",
+      "エ": "混合器は合っていますが、選ぶのは通常二つの周波数の差であり、周波数弁別器でAMを復調するわけではありません。",
+      "オ": "周波数混合器で受信波と局部発振波との差を中間周波数として選び、増幅後に検波器でAMを復調します。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-kogaku-a07",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 7,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "A-7 次の記述は、FM(F3E)通信方式の一般的な特徴について述べたものである。このうち誤っているものを下の番号から選べ。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-7",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-kogaku-a07.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 無線工学 A-7 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230806052411id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230806052505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 無線工学 A-7（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "FMでは振幅の変化をリミッターで抑えやすく、一般にAMより振幅性雑音の影響を受けにくくなります。",
+    "choiceExplanations": {
+      "ア": "一定範囲の入力変動はリミッターで抑えられ、FMの復調出力は大きく変わりません。",
+      "イ": "強いほうのFM信号を優先して復調する捕捉効果により、希望波が十分に強ければ妨害を抑えられます。",
+      "ウ": "FMは周波数偏移を持つため、一般には同程度の音声を伝えるAMより広い周波数帯域を使います。",
+      "エ": "FMでは振幅の変化をリミッターで抑えやすく、一般にAMより振幅性雑音の影響を受けにくくなります。",
+      "オ": "入力がしきい値を下回ると、FM受信では出力の信号対雑音比が急に悪化します。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-kogaku-a08",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 8,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "A-8 次の記述は、レーダーから発射される電波が物体に当たって反射するときに生じる現象について述べたものである。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-8",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-kogaku-a08.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 無線工学 A-8 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230806052411id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230806052505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 無線工学 A-8（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "ドプラ効果によって近づく反射体からの周波数が上がり、そのずれの大きさを移動速度の測定に利用できます。",
+    "choiceExplanations": {
+      "ア": "反射周波数のずれはドプラ効果です。発射源から遠ざかる物体で反射した場合は周波数が下がります。",
+      "イ": "周波数のずれはホール効果ではなく、物体の材質の判定ではなく速度測定に用います。",
+      "ウ": "ドプラ効果によって近づく反射体からの周波数が上がり、そのずれの大きさを移動速度の測定に利用できます。",
+      "エ": "速度の測定に使えますが、反射体が遠ざかる場合は反射周波数は高くなりません。",
+      "オ": "発射源に近づく物体で周波数が高くなる点は合います。そのずれから求めるのは移動速度です。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-kogaku-a09",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 9,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "A-9 次の記述は、FM 形電波高度計について述べたものである。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-9",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-kogaku-a09.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 無線工学 A-9 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230806052411id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230806052505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 無線工学 A-9（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "4 GHz帯の連続波を三角波で周波数変調します。送受のビート周波数が往復時間に比例するので高度を求められます。",
+    "choiceExplanations": {
+      "ア": "4 GHz帯と比例関係は合いますが、時間とともに直線的に周波数を変化させる三角波を使用します。",
+      "イ": "4 GHz帯の連続波を三角波で周波数変調します。送受のビート周波数が往復時間に比例するので高度を求められます。",
+      "ウ": "三角波の直線区間で変調の傾きが一定なら、送受の周波数差は遅延時間に比例します。",
+      "エ": "通常の航空用FM電波高度計は4 GHz帯を使用し、遅延時間はビート周波数に比例します。",
+      "オ": "航空用FM電波高度計は4 GHz帯を使用し、周波数を連続的に掃引するために三角波を使います。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-kogaku-a10",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 10,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "A-10 次の記述は、図に示す原理的な構成の浮動(フローティング)充電方式について述べたものである。このうち、誤っているものを下の番\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-10",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-kogaku-a10.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 無線工学 A-10 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230806052411id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230806052505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 無線工学 A-10（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "通常時の負荷電力は交流から整流器を通じて供給されます。蓄電池は接続されたまま充電状態を保ちます。",
+    "choiceExplanations": {
+      "ア": "通常時の負荷電力は交流から整流器を通じて供給されます。蓄電池は接続されたまま充電状態を保ちます。",
+      "イ": "交流が遮断されると整流器からの供給が止まり、蓄電池がそのまま負荷に電力を供給します。",
+      "ウ": "整流器、蓄電池、負荷を並列につなぐと、電源喪失時にも切替を待たずに蓄電池から給電できます。",
+      "エ": "負荷電流が急変した際には蓄電池が電流を出し入れし、供給電圧の変動を抑えます。",
+      "オ": "通常時は蓄電池を満充電に近い状態に保つため、自己放電を補う程度の充電を行います。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-kogaku-b01",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 1,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "B-1 次の航空用のレーダーの記述のうち、ASR の記述として、正しいものを1、誤っているものを2 として解答せよ。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-1",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-kogaku-b01.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 無線工学 B-1 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230806052411id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230806052505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 無線工学 B-1（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "b",
+    "type": "native-b",
+    "answer": "",
+    "officialAnswerNumber": "2,2,1,1,2",
+    "explanation": "最終進入の誘導でコースや降下路からのずれを測るのは着陸誘導用のPARです。\n\n滑走路や誘導路の地上目標を監視するのはASDEです。\n\n空港周辺の監視では、反射波で観測する一次レーダーとトランスポンダの応答を受ける二次レーダーが併用されます。\n\nASRは空港周辺の進入と出発に関わる航空機の監視に用いられます。\n\n機体前方の悪天候を探知するのは機上の気象レーダーです。",
+    "choiceExplanations": {
+      "ア": "記述が出題の条件や規定に適合するときに選びます。",
+      "イ": "記述が出題の条件や規定に適合しないときに選びます。"
+    },
+    "nativeB": {
+      "mode": "binary",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "1",
+          "explanation": "記述が出題の条件や規定に適合するときに選びます。"
+        },
+        {
+          "id": "2",
+          "label": "2",
+          "explanation": "記述が出題の条件や規定に適合しないときに選びます。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "2",
+          "explanation": "最終進入の誘導でコースや降下路からのずれを測るのは着陸誘導用のPARです。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "滑走路や誘導路の地上目標を監視するのはASDEです。"
+        },
+        {
+          "label": "ウ",
+          "answer": "1",
+          "explanation": "空港周辺の監視では、反射波で観測する一次レーダーとトランスポンダの応答を受ける二次レーダーが併用されます。"
+        },
+        {
+          "label": "エ",
+          "answer": "1",
+          "explanation": "ASRは空港周辺の進入と出発に関わる航空機の監視に用いられます。"
+        },
+        {
+          "label": "オ",
+          "answer": "2",
+          "explanation": "機体前方の悪天候を探知するのは機上の気象レーダーです。"
+        }
+      ],
+      "officialLabel": "B-1",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表の配点は小設問各1点です。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-kogaku-b02",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 2,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "B-2 次の記述は、アンテナと給電線の接続について述べたものである。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-2",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-kogaku-b02.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 無線工学 B-2 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230806052411id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230806052505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 無線工学 B-2（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "b",
+    "type": "native-b",
+    "answer": "",
+    "officialAnswerNumber": "1,2,3,9,10",
+    "explanation": "アンテナの入力インピーダンスを給電線の特性インピーダンスに合わせると反射がなくなります。\n\n反射波がなければ進行波と反射波の重なりによる定在波は発生しません。\n\n給電線上の電圧振幅が一定となるため、最大と最小の比であるVSWRは1です。\n\n反射波の振幅が0なので反射係数も0です。\n\n対称なダイポールと同軸線を適切に接続するには平衡・不平衡変換器のバランを用います。",
+    "choiceExplanations": {
+      "ア": "アンテナ入力と一致させる給電線自体の値は特性インピーダンスです。",
+      "イ": "整合して反射がなくなると定在波は生じません。",
+      "ウ": "反射がない場合、電圧の最大と最小が等しく、その比は1です。",
+      "エ": "VSWRが無限大になるのは全反射して電圧の最小値が0になる場合です。",
+      "オ": "サーキュレータは伝送方向によって異なるポートへ信号を導く素子です。",
+      "カ": "損失抵抗は熱などの損失分を表し、給電線の整合先として扱う値とは異なります。",
+      "キ": "給電線に反射波が戻ると定在波が生じ、整合している条件には合いません。",
+      "ク": "VSWRが2なら反射が起きており、完全整合を示す1とは異なります。",
+      "ケ": "反射がなければ反射波と入射波の比は0です。",
+      "コ": "バランは平衡系と不平衡系の間を変換する器具です。"
+    },
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "特性インピーダンス",
+          "explanation": "アンテナ入力と一致させる給電線自体の値は特性インピーダンスです。"
+        },
+        {
+          "id": "2",
+          "label": "定在波が生じない",
+          "explanation": "整合して反射がなくなると定在波は生じません。"
+        },
+        {
+          "id": "3",
+          "label": "1",
+          "explanation": "反射がない場合、電圧の最大と最小が等しく、その比は1です。"
+        },
+        {
+          "id": "4",
+          "label": "∞",
+          "explanation": "VSWRが無限大になるのは全反射して電圧の最小値が0になる場合です。"
+        },
+        {
+          "id": "5",
+          "label": "サーキュレータ",
+          "explanation": "サーキュレータは伝送方向によって異なるポートへ信号を導く素子です。"
+        },
+        {
+          "id": "6",
+          "label": "損失抵抗",
+          "explanation": "損失抵抗は熱などの損失分を表し、給電線の整合先として扱う値とは異なります。"
+        },
+        {
+          "id": "7",
+          "label": "定在波が生じる",
+          "explanation": "給電線に反射波が戻ると定在波が生じ、整合している条件には合いません。"
+        },
+        {
+          "id": "8",
+          "label": "2",
+          "explanation": "VSWRが2なら反射が起きており、完全整合を示す1とは異なります。"
+        },
+        {
+          "id": "9",
+          "label": "0",
+          "explanation": "反射がなければ反射波と入射波の比は0です。"
+        },
+        {
+          "id": "10",
+          "label": "バラン",
+          "explanation": "バランは平衡系と不平衡系の間を変換する器具です。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "アンテナの入力インピーダンスを給電線の特性インピーダンスに合わせると反射がなくなります。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "反射波がなければ進行波と反射波の重なりによる定在波は発生しません。"
+        },
+        {
+          "label": "ウ",
+          "answer": "3",
+          "explanation": "給電線上の電圧振幅が一定となるため、最大と最小の比であるVSWRは1です。"
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "反射波の振幅が0なので反射係数も0です。"
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "対称なダイポールと同軸線を適切に接続するには平衡・不平衡変換器のバランを用います。"
+        }
+      ],
+      "officialLabel": "B-2",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表の配点は小設問各1点です。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-kogaku-b03",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 3,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "B-3 次の記述は、電波の基本的性質について述べたものである。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-3",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-kogaku-b03.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 無線工学 B-3 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230806052411id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230806052505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 無線工学 B-3（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "b",
+    "type": "native-b",
+    "answer": "",
+    "officialAnswerNumber": "6,2,8,9,5",
+    "explanation": "電界と磁界が伝搬の向きに直角に振動するので横波です。\n\n電界と磁界は互いに直交し、どちらも進行方向と直交します。\n\n空気中で電波は約3×10⁸ m/sで伝わります。\n\n一周期の時間は1/f秒なので、その間に進む距離はc/fです。\n\n偏波の向きを電界で定めると、大地に垂直な電界は垂直偏波です。",
+    "choiceExplanations": {
+      "ア": "縦波では振動が伝搬方向に沿います。電波の電界と磁界は伝搬方向と直角です。",
+      "イ": "平面電磁波の電界と磁界は互いに直角です。",
+      "ウ": "空気中の速度は毎秒約3億mであり、毎秒300万mではありません。",
+      "エ": "速度と周波数を掛けるのでなく、速度を周波数で割ると長さの単位になります。",
+      "オ": "電界が大地に対して垂直に振動する直線偏波は垂直偏波です。",
+      "カ": "電界と磁界が伝搬方向と直角に振動するので電波は横波です。",
+      "キ": "電界と磁界が互いに平行という条件は電磁波の電界・磁界の関係と異なります。",
+      "ク": "空気中の電波の速さは真空中の光速に近い毎秒約3億mです。",
+      "ケ": "1秒に進む距離cを1秒当たりの振動回数fで割れば一波長になります。",
+      "コ": "水平偏波は電界の振動が大地に平行な偏波をいいます。"
+    },
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "縦波",
+          "explanation": "縦波では振動が伝搬方向に沿います。電波の電界と磁界は伝搬方向と直角です。"
+        },
+        {
+          "id": "2",
+          "label": "直交する",
+          "explanation": "平面電磁波の電界と磁界は互いに直角です。"
+        },
+        {
+          "id": "3",
+          "label": "3×10⁶ m/s",
+          "explanation": "空気中の速度は毎秒約3億mであり、毎秒300万mではありません。"
+        },
+        {
+          "id": "4",
+          "label": "cf",
+          "explanation": "速度と周波数を掛けるのでなく、速度を周波数で割ると長さの単位になります。"
+        },
+        {
+          "id": "5",
+          "label": "垂直偏波",
+          "explanation": "電界が大地に対して垂直に振動する直線偏波は垂直偏波です。"
+        },
+        {
+          "id": "6",
+          "label": "横波",
+          "explanation": "電界と磁界が伝搬方向と直角に振動するので電波は横波です。"
+        },
+        {
+          "id": "7",
+          "label": "平行な",
+          "explanation": "電界と磁界が互いに平行という条件は電磁波の電界・磁界の関係と異なります。"
+        },
+        {
+          "id": "8",
+          "label": "3×10⁸ m/s",
+          "explanation": "空気中の電波の速さは真空中の光速に近い毎秒約3億mです。"
+        },
+        {
+          "id": "9",
+          "label": "c/f",
+          "explanation": "1秒に進む距離cを1秒当たりの振動回数fで割れば一波長になります。"
+        },
+        {
+          "id": "10",
+          "label": "水平偏波",
+          "explanation": "水平偏波は電界の振動が大地に平行な偏波をいいます。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "6",
+          "explanation": "電界と磁界が伝搬の向きに直角に振動するので横波です。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "電界と磁界は互いに直交し、どちらも進行方向と直交します。"
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "空気中で電波は約3×10⁸ m/sで伝わります。"
+        },
+        {
+          "label": "エ",
+          "answer": "9",
+          "explanation": "一周期の時間は1/f秒なので、その間に進む距離はc/fです。"
+        },
+        {
+          "label": "オ",
+          "answer": "5",
+          "explanation": "偏波の向きを電界で定めると、大地に垂直な電界は垂直偏波です。"
+        }
+      ],
+      "officialLabel": "B-3",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表の配点は小設問各1点です。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-kogaku-b04",
+    "exam": "aviation-comm",
+    "session": "kogaku",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 4,
+    "subject": "無線工学",
+    "category": "無線工学",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "無線工学"
+    ],
+    "difficulty": 3,
+    "question": "B-4 次の記述は、図に示す構造のアンテナについて述べたものである。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-4",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-kogaku-b04.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 無線工学 B-4 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20230806052411id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20230806052505id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-kogaku-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 無線工学 B-4（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "b",
+    "type": "native-b",
+    "answer": "",
+    "officialAnswerNumber": "1,2,8,4,10",
+    "explanation": "円盤を表すdiscと円すいを表すconeを合わせた名称がディスコーンです。\n\n円盤面は大地と平行にして用い、アンテナの軸を鉛直にします。\n\n鉛直に設置したディスコーンは水平面の各方位に対して垂直偏波を放射します。\n\n円盤と円すいが鉛直軸のまわりで対称なので、水平面内では全方向性になります。\n\n広い周波数範囲を扱える構造で、主にVHF及びUHFに用います。",
+    "choiceExplanations": {
+      "ア": "円盤と円すいを向かい合わせた形がディスコーンアンテナの特徴です。",
+      "イ": "円盤面を地面と平行にし、円すいを含む軸を鉛直にするのが一般的です。",
+      "ウ": "円盤面が水平でも、図のアンテナの水平面方向の電界は垂直に偏波します。",
+      "エ": "鉛直軸を中心とする回転対称形なので水平面内では全方向性です。",
+      "オ": "この形式の主要な用途はVHFとUHFであり、長波帯ではありません。",
+      "カ": "アルホードループはループ形のアンテナで、円盤と円すいの組合せではありません。",
+      "キ": "円盤面を地面と垂直にする向きでは、一般的な鉛直設置の形になりません。",
+      "ク": "図のように鉛直軸で使うと垂直偏波が得られます。",
+      "ケ": "鉛直軸を取り囲む各方位で用いるため、水平面内で一方向に限るものではありません。",
+      "コ": "ディスコーンはVHFからUHFにかけて広帯域のアンテナとして用いられます。"
+    },
+    "nativeB": {
+      "mode": "shared-bank",
+      "candidates": [
+        {
+          "id": "1",
+          "label": "ディスコーン",
+          "explanation": "円盤と円すいを向かい合わせた形がディスコーンアンテナの特徴です。"
+        },
+        {
+          "id": "2",
+          "label": "平行にして",
+          "explanation": "円盤面を地面と平行にし、円すいを含む軸を鉛直にするのが一般的です。"
+        },
+        {
+          "id": "3",
+          "label": "水平偏波",
+          "explanation": "円盤面が水平でも、図のアンテナの水平面方向の電界は垂直に偏波します。"
+        },
+        {
+          "id": "4",
+          "label": "全方向性",
+          "explanation": "鉛直軸を中心とする回転対称形なので水平面内では全方向性です。"
+        },
+        {
+          "id": "5",
+          "label": "長波（LF）",
+          "explanation": "この形式の主要な用途はVHFとUHFであり、長波帯ではありません。"
+        },
+        {
+          "id": "6",
+          "label": "アルホードループ",
+          "explanation": "アルホードループはループ形のアンテナで、円盤と円すいの組合せではありません。"
+        },
+        {
+          "id": "7",
+          "label": "垂直にして",
+          "explanation": "円盤面を地面と垂直にする向きでは、一般的な鉛直設置の形になりません。"
+        },
+        {
+          "id": "8",
+          "label": "垂直偏波",
+          "explanation": "図のように鉛直軸で使うと垂直偏波が得られます。"
+        },
+        {
+          "id": "9",
+          "label": "単一指向性",
+          "explanation": "鉛直軸を取り囲む各方位で用いるため、水平面内で一方向に限るものではありません。"
+        },
+        {
+          "id": "10",
+          "label": "超短波（VHF）及び極超短波（UHF）",
+          "explanation": "ディスコーンはVHFからUHFにかけて広帯域のアンテナとして用いられます。"
+        }
+      ],
+      "slots": [
+        {
+          "label": "ア",
+          "answer": "1",
+          "explanation": "円盤を表すdiscと円すいを表すconeを合わせた名称がディスコーンです。"
+        },
+        {
+          "label": "イ",
+          "answer": "2",
+          "explanation": "円盤面は大地と平行にして用い、アンテナの軸を鉛直にします。"
+        },
+        {
+          "label": "ウ",
+          "answer": "8",
+          "explanation": "鉛直に設置したディスコーンは水平面の各方位に対して垂直偏波を放射します。"
+        },
+        {
+          "label": "エ",
+          "answer": "4",
+          "explanation": "円盤と円すいが鉛直軸のまわりで対称なので、水平面内では全方向性になります。"
+        },
+        {
+          "label": "オ",
+          "answer": "10",
+          "explanation": "広い周波数範囲を扱える構造で、主にVHF及びUHFに用います。"
+        }
+      ],
+      "officialLabel": "B-4",
+      "officialScoring": {
+        "maxPoints": 5,
+        "pointsPerSlot": 1,
+        "note": "公式正答表の配点は小設問各1点です。"
+      }
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-a01",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 1,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "A-1 共通の英文を読み、設問に答えてください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-1",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-a01.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 A-1 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 A-1（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "欧州でも最大級の検査機関Labor Berlinと病院の間で、ドローン輸送を試験しています。",
+    "choiceExplanations": {
+      "ア": "ベルリンはドイツの首都で、試験運用する企業はカリフォルニアを拠点としています。",
+      "イ": "本文にはドイツ企業に置き換わるという説明はなく、カリフォルニアの企業が試しています。",
+      "ウ": "欧州でも最大級の検査機関Labor Berlinと病院の間で、ドローン輸送を試験しています。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-a02",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 2,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "A-2 共通の英文を読み、設問に答えてください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-2",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-a02.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 A-2 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 A-2（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "輸送は従来の約1時間から約10分に短縮する見込みです。設問は本文と異なる記述を求めています。",
+    "choiceExplanations": {
+      "ア": "輸送は従来の約1時間から約10分に短縮する見込みです。設問は本文と異なる記述を求めています。",
+      "イ": "病院と検査機関の直線距離は約11 kmで、所要時間は約10分と見込まれています。",
+      "ウ": "最終的にベルリン市内の六つの地点から定期輸送することが目標とされています。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-a03",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 3,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "A-3 共通の英文を読み、設問に答えてください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-3",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-a03.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 A-3 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 A-3（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "本文は、一つの経路に二機を割り当てるのは一日24時間運用するためと説明しています。",
+    "choiceExplanations": {
+      "ア": "本文は、一つの経路に二機を割り当てるのは一日24時間運用するためと説明しています。",
+      "イ": "最大約40検体は一機で運べる量であり、二機を配備する理由ではありません。",
+      "ウ": "新型コロナウイルス検査以外の検体も運びますが、二機を配備する直接の目的は運用時間の確保です。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-a04",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 4,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "A-4 共通の英文を読み、設問に答えてください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-4",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-a04.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 A-4 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 A-4（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "緊急時には変化とイノベーションが速まることがあると、プロジェクト責任者は述べています。",
+    "choiceExplanations": {
+      "ア": "本文は緊急時に変化が加速し得ることを述べており、研究所の維持資金が増えるとは述べていません。",
+      "イ": "PCRを行う場所の種類は挙げられていますが、緊急時の特徴として新しい検査場の開設は述べていません。",
+      "ウ": "緊急時には変化とイノベーションが速まることがあると、プロジェクト責任者は述べています。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-a05",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 5,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "A-5 共通の英文を読み、設問に答えてください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-5",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-a05.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 A-5 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=1",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 A-5（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "エンジンの故障に備えたパラシュートによって、無制御な落下を避けながら降下すると読み取れます。",
+    "choiceExplanations": {
+      "ア": "管制センターとヘリコプターの運航側との連絡は衝突回避のためで、故障機を救助するためではありません。",
+      "イ": "エンジンの故障に備えたパラシュートによって、無制御な落下を避けながら降下すると読み取れます。",
+      "ウ": "正常時は経路を自律飛行しますが、エンジンが故障したときはパラシュートに頼ります。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-a06",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 6,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "A-6 Aeronautical stations should record messages at the time of their receipt, except that, if during an emergency\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-6",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-a06.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 A-6 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 A-6（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "緊急時に手動記録を続けると通信が遅れる場合は、一時的に中断し、できるだけ早く補完できます。",
+    "choiceExplanations": {
+      "ア": "音声録音を備えておくことは望ましいものの、手動記録を中断できる条件は通信の遅延です。",
+      "イ": "緊急時に手動記録を続けると通信が遅れる場合は、一時的に中断し、できるだけ早く補完できます。",
+      "ウ": "音声録音が容易だという理由だけで、手動の記録を中断できるとは述べていません。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-a07",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 7,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "A-7 The originator of messages addressed to an aircraft in distress or urgency condition shall restrict to the minimum\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-7",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-a07.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 A-7 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 A-7（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "遭難や緊急状態の航空機に送る通信は、状況に必要な最小限の件数と量・内容に抑えます。",
+    "choiceExplanations": {
+      "ア": "遭難や緊急状態の航空機に送る通信は、状況に必要な最小限の件数と量・内容に抑えます。",
+      "イ": "原文の volume は通信の量で、声を小さくする指示ではありません。",
+      "ウ": "通信を頻繁かつ詳しくすることではなく、必要な範囲に絞ることが求められます。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-a08",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 8,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "A-8 It is permissible for verification for the receiving station to read back the message as an additional\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-8",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-a08.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 A-8 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 A-8（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "送信元は自局の呼出符号を送信して、受信局が復唱した内容が正しいと確認します。",
+    "choiceExplanations": {
+      "ア": "送信元は自局の呼出符号を送信して、受信局が復唱した内容が正しいと確認します。",
+      "イ": "通信内容を先に復唱するのは受信局です。送信元の確認は呼出符号で行います。",
+      "ウ": "復唱が行われた場合に、送信元がその正確さを呼出符号で確認するよう求めています。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-a09",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 9,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "A-9 An aeronautical station having traffic for an aircraft station may call this station if it has reason to believe that\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "A-9",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-a09.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 A-9 の公式原問。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=2",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 A-9（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "part": "a",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "区域内にいて聴守中と判断する理由があると、航空局は通信を届けるために当該航空機局を呼び出せます。",
+    "choiceExplanations": {
+      "ア": "航空局が必要と判断しただけでは足りず、区域内かつ聴守中と判断できることが必要です。",
+      "イ": "指定区域内で当該周波数を聴守していると判断できればよく、目視での確認は必要ありません。",
+      "ウ": "区域内にいて聴守中と判断する理由があると、航空局は通信を届けるために当該航空機局を呼び出せます。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-b01-1",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 10,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "アの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-1・空欄ア",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-b01.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 B-1の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 B-1（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "effects",
+      "イ": "efficiency",
+      "ウ": "enforces",
+      "エ": "enhances",
+      "オ": "ensuring",
+      "カ": "included",
+      "キ": "including",
+      "ク": "near",
+      "ケ": "verifying"
+    },
+    "answer": "キ",
+    "officialAnswerNumber": "7",
+    "explanation": "including は数千種類の身分証に含まれる例として運転免許証とパスポートを挙げます。",
+    "choiceExplanations": {
+      "ア": "空欄アは「including」が適切です。effects は名詞なら効果、動詞なら実現するという意味で、ここで能力を高める動作に合いません。",
+      "イ": "空欄アは「including」が適切です。improves efficiency で効率を向上させるという意味になります。",
+      "ウ": "空欄アは「including」が適切です。enforces は法令や規則などを施行する意味で、識別能力を高める動作ではありません。",
+      "エ": "空欄アは「including」が適切です。enhances the capability で能力を向上させると表現できます。",
+      "オ": "空欄アは「including」が適切です。ensuring は確実にするという意味で、本人かどうかを照合する具体的な作業には verifying が合います。",
+      "カ": "空欄アは「including」が適切です。included は過去形または過去分詞で、コンマの後に含まれる例を挙げる表現には including を使います。",
+      "キ": "including は数千種類の身分証に含まれる例として運転免許証とパスポートを挙げます。",
+      "ク": "空欄アは「including」が適切です。near real time はリアルタイムに近いという意味です。",
+      "ケ": "空欄アは「including」が適切です。by verifying で、身元を照合することを手段として示します。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-b01-2",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 11,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "イの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-1・空欄イ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-b01.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 B-1の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 B-1（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "effects",
+      "イ": "efficiency",
+      "ウ": "enforces",
+      "エ": "enhances",
+      "オ": "ensuring",
+      "カ": "included",
+      "キ": "including",
+      "ク": "near",
+      "ケ": "verifying"
+    },
+    "answer": "ク",
+    "officialAnswerNumber": "8",
+    "explanation": "in near real time はほぼ即時にという意味で、運航状況を確認する速さを表します。",
+    "choiceExplanations": {
+      "ア": "空欄イは「near」が適切です。effects は名詞なら効果、動詞なら実現するという意味で、ここで能力を高める動作に合いません。",
+      "イ": "空欄イは「near」が適切です。improves efficiency で効率を向上させるという意味になります。",
+      "ウ": "空欄イは「near」が適切です。enforces は法令や規則などを施行する意味で、識別能力を高める動作ではありません。",
+      "エ": "空欄イは「near」が適切です。enhances the capability で能力を向上させると表現できます。",
+      "オ": "空欄イは「near」が適切です。ensuring は確実にするという意味で、本人かどうかを照合する具体的な作業には verifying が合います。",
+      "カ": "空欄イは「near」が適切です。included は過去形または過去分詞で、コンマの後に含まれる例を挙げる表現には including を使います。",
+      "キ": "空欄イは「near」が適切です。including は全体に含まれる例を続けて挙げる働きがあります。",
+      "ク": "in near real time はほぼ即時にという意味で、運航状況を確認する速さを表します。",
+      "ケ": "空欄イは「near」が適切です。by verifying で、身元を照合することを手段として示します。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-b01-3",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 12,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "ウの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-1・空欄ウ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-b01.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 B-1の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 B-1（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "effects",
+      "イ": "efficiency",
+      "ウ": "enforces",
+      "エ": "enhances",
+      "オ": "ensuring",
+      "カ": "included",
+      "キ": "including",
+      "ク": "near",
+      "ケ": "verifying"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "主語の It は認証システムを指し、enhances はその機能が識別能力を高めることを表します。",
+    "choiceExplanations": {
+      "ア": "空欄ウは「enhances」が適切です。effects は名詞なら効果、動詞なら実現するという意味で、ここで能力を高める動作に合いません。",
+      "イ": "空欄ウは「enhances」が適切です。improves efficiency で効率を向上させるという意味になります。",
+      "ウ": "空欄ウは「enhances」が適切です。enforces は法令や規則などを施行する意味で、識別能力を高める動作ではありません。",
+      "エ": "主語の It は認証システムを指し、enhances はその機能が識別能力を高めることを表します。",
+      "オ": "空欄ウは「enhances」が適切です。ensuring は確実にするという意味で、本人かどうかを照合する具体的な作業には verifying が合います。",
+      "カ": "空欄ウは「enhances」が適切です。included は過去形または過去分詞で、コンマの後に含まれる例を挙げる表現には including を使います。",
+      "キ": "空欄ウは「enhances」が適切です。including は全体に含まれる例を続けて挙げる働きがあります。",
+      "ク": "空欄ウは「enhances」が適切です。near real time はリアルタイムに近いという意味です。",
+      "ケ": "空欄ウは「enhances」が適切です。by verifying で、身元を照合することを手段として示します。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-b01-4",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 13,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "エの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-1・空欄エ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-b01.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 B-1の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 B-1（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "effects",
+      "イ": "efficiency",
+      "ウ": "enforces",
+      "エ": "enhances",
+      "オ": "ensuring",
+      "カ": "included",
+      "キ": "including",
+      "ク": "near",
+      "ケ": "verifying"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "improves の目的語には効率を意味する efficiency を置きます。",
+    "choiceExplanations": {
+      "ア": "空欄エは「efficiency」が適切です。effects は名詞なら効果、動詞なら実現するという意味で、ここで能力を高める動作に合いません。",
+      "イ": "improves の目的語には効率を意味する efficiency を置きます。",
+      "ウ": "空欄エは「efficiency」が適切です。enforces は法令や規則などを施行する意味で、識別能力を高める動作ではありません。",
+      "エ": "空欄エは「efficiency」が適切です。enhances the capability で能力を向上させると表現できます。",
+      "オ": "空欄エは「efficiency」が適切です。ensuring は確実にするという意味で、本人かどうかを照合する具体的な作業には verifying が合います。",
+      "カ": "空欄エは「efficiency」が適切です。included は過去形または過去分詞で、コンマの後に含まれる例を挙げる表現には including を使います。",
+      "キ": "空欄エは「efficiency」が適切です。including は全体に含まれる例を続けて挙げる働きがあります。",
+      "ク": "空欄エは「efficiency」が適切です。near real time はリアルタイムに近いという意味です。",
+      "ケ": "空欄エは「efficiency」が適切です。by verifying で、身元を照合することを手段として示します。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-b01-5",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 14,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "オの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-1・空欄オ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-b01.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 B-1の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 B-1（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "effects",
+      "イ": "efficiency",
+      "ウ": "enforces",
+      "エ": "enhances",
+      "オ": "ensuring",
+      "カ": "included",
+      "キ": "including",
+      "ク": "near",
+      "ケ": "verifying"
+    },
+    "answer": "ケ",
+    "officialAnswerNumber": "9",
+    "explanation": "by verifying passenger identities で、乗客の本人確認を自動で行うという手段を示します。",
+    "choiceExplanations": {
+      "ア": "空欄オは「verifying」が適切です。effects は名詞なら効果、動詞なら実現するという意味で、ここで能力を高める動作に合いません。",
+      "イ": "空欄オは「verifying」が適切です。improves efficiency で効率を向上させるという意味になります。",
+      "ウ": "空欄オは「verifying」が適切です。enforces は法令や規則などを施行する意味で、識別能力を高める動作ではありません。",
+      "エ": "空欄オは「verifying」が適切です。enhances the capability で能力を向上させると表現できます。",
+      "オ": "空欄オは「verifying」が適切です。ensuring は確実にするという意味で、本人かどうかを照合する具体的な作業には verifying が合います。",
+      "カ": "空欄オは「verifying」が適切です。included は過去形または過去分詞で、コンマの後に含まれる例を挙げる表現には including を使います。",
+      "キ": "空欄オは「verifying」が適切です。including は全体に含まれる例を続けて挙げる働きがあります。",
+      "ク": "空欄オは「verifying」が適切です。near real time はリアルタイムに近いという意味です。",
+      "ケ": "by verifying passenger identities で、乗客の本人確認を自動で行うという手段を示します。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-b02-1",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 15,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "アの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-2・空欄ア",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-b02.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 B-2の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 B-2（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "authentic",
+      "イ": "becomes",
+      "ウ": "comfort",
+      "エ": "further",
+      "オ": "incredibly",
+      "カ": "integral",
+      "キ": "makes",
+      "ク": "overall",
+      "ケ": "relief"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "incredibly は軽さの程度が際立っていることを表します。",
+    "choiceExplanations": {
+      "ア": "空欄アは「incredibly」が適切です。authentic は本物という意味の形容詞で、light の程度を修飾できません。",
+      "イ": "空欄アは「incredibly」が適切です。becomes は主語がある状態になる場合に用い、makes it light のように目的語を取れません。",
+      "ウ": "空欄アは「incredibly」が適切です。passenger comfort は乗客の快適さという意味になります。",
+      "エ": "空欄アは「incredibly」が適切です。further は程度を追加で高めることを示し、最適化が続いている文脈に合います。",
+      "オ": "incredibly は軽さの程度が際立っていることを表します。",
+      "カ": "空欄アは「incredibly」が適切です。integral は不可欠な、または一体のという意味で、全体重量を表す語ではありません。",
+      "キ": "空欄アは「incredibly」が適切です。makes は make + 目的語 + 形容詞で、目的語をその状態にします。",
+      "ク": "空欄アは「incredibly」が適切です。overall weight は部分ではなく全体の重量を表します。",
+      "ケ": "空欄アは「incredibly」が適切です。relief は苦痛などからの解放を表し、乗客の一般的な快適性は comfort で表します。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-b02-2",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 16,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "イの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-2・空欄イ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-b02.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 B-2の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 B-2（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "authentic",
+      "イ": "becomes",
+      "ウ": "comfort",
+      "エ": "further",
+      "オ": "incredibly",
+      "カ": "integral",
+      "キ": "makes",
+      "ク": "overall",
+      "ケ": "relief"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "エンジン音の低減で改善されるのは乗客の快適性なので passenger comfort とします。",
+    "choiceExplanations": {
+      "ア": "空欄イは「comfort」が適切です。authentic は本物という意味の形容詞で、light の程度を修飾できません。",
+      "イ": "空欄イは「comfort」が適切です。becomes は主語がある状態になる場合に用い、makes it light のように目的語を取れません。",
+      "ウ": "エンジン音の低減で改善されるのは乗客の快適性なので passenger comfort とします。",
+      "エ": "空欄イは「comfort」が適切です。further は程度を追加で高めることを示し、最適化が続いている文脈に合います。",
+      "オ": "空欄イは「comfort」が適切です。incredibly は信じられないほどという副詞で light を修飾します。",
+      "カ": "空欄イは「comfort」が適切です。integral は不可欠な、または一体のという意味で、全体重量を表す語ではありません。",
+      "キ": "空欄イは「comfort」が適切です。makes は make + 目的語 + 形容詞で、目的語をその状態にします。",
+      "ク": "空欄イは「comfort」が適切です。overall weight は部分ではなく全体の重量を表します。",
+      "ケ": "空欄イは「comfort」が適切です。relief は苦痛などからの解放を表し、乗客の一般的な快適性は comfort で表します。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-b02-3",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 17,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "ウの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-2・空欄ウ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-b02.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 B-2の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 B-2（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "authentic",
+      "イ": "becomes",
+      "ウ": "comfort",
+      "エ": "further",
+      "オ": "incredibly",
+      "カ": "integral",
+      "キ": "makes",
+      "ク": "overall",
+      "ケ": "relief"
+    },
+    "answer": "キ",
+    "officialAnswerNumber": "7",
+    "explanation": "its structure makes it light は、その構造が素材を軽量にするという意味になります。",
+    "choiceExplanations": {
+      "ア": "空欄ウは「makes」が適切です。authentic は本物という意味の形容詞で、light の程度を修飾できません。",
+      "イ": "空欄ウは「makes」が適切です。becomes は主語がある状態になる場合に用い、makes it light のように目的語を取れません。",
+      "ウ": "空欄ウは「makes」が適切です。passenger comfort は乗客の快適さという意味になります。",
+      "エ": "空欄ウは「makes」が適切です。further は程度を追加で高めることを示し、最適化が続いている文脈に合います。",
+      "オ": "空欄ウは「makes」が適切です。incredibly は信じられないほどという副詞で light を修飾します。",
+      "カ": "空欄ウは「makes」が適切です。integral は不可欠な、または一体のという意味で、全体重量を表す語ではありません。",
+      "キ": "its structure makes it light は、その構造が素材を軽量にするという意味になります。",
+      "ク": "空欄ウは「makes」が適切です。overall weight は部分ではなく全体の重量を表します。",
+      "ケ": "空欄ウは「makes」が適切です。relief は苦痛などからの解放を表し、乗客の一般的な快適性は comfort で表します。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-b02-4",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 18,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "エの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-2・空欄エ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-b02.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 B-2の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 B-2（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "authentic",
+      "イ": "becomes",
+      "ウ": "comfort",
+      "エ": "further",
+      "オ": "incredibly",
+      "カ": "integral",
+      "キ": "makes",
+      "ク": "overall",
+      "ケ": "relief"
+    },
+    "answer": "ク",
+    "officialAnswerNumber": "8",
+    "explanation": "nacelle に加えても機体の総重量がほぼ増えないので、whole に近い overall が合います。",
+    "choiceExplanations": {
+      "ア": "空欄エは「overall」が適切です。authentic は本物という意味の形容詞で、light の程度を修飾できません。",
+      "イ": "空欄エは「overall」が適切です。becomes は主語がある状態になる場合に用い、makes it light のように目的語を取れません。",
+      "ウ": "空欄エは「overall」が適切です。passenger comfort は乗客の快適さという意味になります。",
+      "エ": "空欄エは「overall」が適切です。further は程度を追加で高めることを示し、最適化が続いている文脈に合います。",
+      "オ": "空欄エは「overall」が適切です。incredibly は信じられないほどという副詞で light を修飾します。",
+      "カ": "空欄エは「overall」が適切です。integral は不可欠な、または一体のという意味で、全体重量を表す語ではありません。",
+      "キ": "空欄エは「overall」が適切です。makes は make + 目的語 + 形容詞で、目的語をその状態にします。",
+      "ク": "nacelle に加えても機体の総重量がほぼ増えないので、whole に近い overall が合います。",
+      "ケ": "空欄エは「overall」が適切です。relief は苦痛などからの解放を表し、乗客の一般的な快適性は comfort で表します。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-b02-5",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 19,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "オの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-2・空欄オ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-b02.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 B-2の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 B-2（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "authentic",
+      "イ": "becomes",
+      "ウ": "comfort",
+      "エ": "further",
+      "オ": "incredibly",
+      "カ": "integral",
+      "キ": "makes",
+      "ク": "overall",
+      "ケ": "relief"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "being further optimized で、より安全にするため最適化をさらに進めていることを表します。",
+    "choiceExplanations": {
+      "ア": "空欄オは「further」が適切です。authentic は本物という意味の形容詞で、light の程度を修飾できません。",
+      "イ": "空欄オは「further」が適切です。becomes は主語がある状態になる場合に用い、makes it light のように目的語を取れません。",
+      "ウ": "空欄オは「further」が適切です。passenger comfort は乗客の快適さという意味になります。",
+      "エ": "being further optimized で、より安全にするため最適化をさらに進めていることを表します。",
+      "オ": "空欄オは「further」が適切です。incredibly は信じられないほどという副詞で light を修飾します。",
+      "カ": "空欄オは「further」が適切です。integral は不可欠な、または一体のという意味で、全体重量を表す語ではありません。",
+      "キ": "空欄オは「further」が適切です。makes は make + 目的語 + 形容詞で、目的語をその状態にします。",
+      "ク": "空欄オは「further」が適切です。overall weight は部分ではなく全体の重量を表します。",
+      "ケ": "空欄オは「further」が適切です。relief は苦痛などからの解放を表し、乗客の一般的な快適性は comfort で表します。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-b03-1",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 20,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "アの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-3・空欄ア",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-b03.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 B-3の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 B-3（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "adjustment",
+      "イ": "composed",
+      "ウ": "each",
+      "エ": "either",
+      "オ": "followed",
+      "カ": "following",
+      "キ": "justification",
+      "ク": "letters",
+      "ケ": "numerals"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "either for ... or for ... の構文で、送信機の調整と受信機の調整のいずれかを示します。",
+    "choiceExplanations": {
+      "ア": "空欄アは「either」が適切です。adjustment は機器の状態を合わせることを表し、送信機と受信機の両方に使えます。",
+      "イ": "空欄アは「either」が適切です。be composed of は要素から構成されることを表します。",
+      "ウ": "空欄アは「either」が適切です。each は一つ一つを表し、二つの目的を or と対応させて示す場合は either を使います。",
+      "エ": "either for ... or for ... の構文で、送信機の調整と受信機の調整のいずれかを示します。",
+      "オ": "空欄アは「either」が適切です。followed by は、先に言うものの後に次のものが続くという意味です。",
+      "カ": "空欄アは「either」が適切です。following をこのように by と組み合わせて、呼出符号が数字の後に続くことを表すことはできません。",
+      "キ": "空欄アは「either」が適切です。justification は正当化や根拠を意味し、無線機器の調整を示しません。",
+      "ク": "空欄アは「either」が適切です。letters は文字を表しますが、ONE等で読み上げるのは数字です。",
+      "ケ": "空欄アは「either」が適切です。numerals は数字を指し、spoken numerals なら読み上げた数字になります。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-b03-2",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 21,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "イの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-3・空欄イ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-b03.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 B-3の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 B-3（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "adjustment",
+      "イ": "composed",
+      "ウ": "each",
+      "エ": "either",
+      "オ": "followed",
+      "カ": "following",
+      "キ": "justification",
+      "ク": "letters",
+      "ケ": "numerals"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "adjustment of で、後に続く送信機や受信機の調整を表します。",
+    "choiceExplanations": {
+      "ア": "adjustment of で、後に続く送信機や受信機の調整を表します。",
+      "イ": "空欄イは「adjustment」が適切です。be composed of は要素から構成されることを表します。",
+      "ウ": "空欄イは「adjustment」が適切です。each は一つ一つを表し、二つの目的を or と対応させて示す場合は either を使います。",
+      "エ": "空欄イは「adjustment」が適切です。either は後の or と呼応して二つの目的のうちいずれかを示します。",
+      "オ": "空欄イは「adjustment」が適切です。followed by は、先に言うものの後に次のものが続くという意味です。",
+      "カ": "空欄イは「adjustment」が適切です。following をこのように by と組み合わせて、呼出符号が数字の後に続くことを表すことはできません。",
+      "キ": "空欄イは「adjustment」が適切です。justification は正当化や根拠を意味し、無線機器の調整を示しません。",
+      "ク": "空欄イは「adjustment」が適切です。letters は文字を表しますが、ONE等で読み上げるのは数字です。",
+      "ケ": "空欄イは「adjustment」が適切です。numerals は数字を指し、spoken numerals なら読み上げた数字になります。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-b03-3",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 22,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "ウの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-3・空欄ウ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-b03.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 B-3の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 B-3（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "adjustment",
+      "イ": "composed",
+      "ウ": "each",
+      "エ": "either",
+      "オ": "followed",
+      "カ": "following",
+      "キ": "justification",
+      "ク": "letters",
+      "ケ": "numerals"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "shall be composed of で、以下のものから構成されなければならないという意味です。",
+    "choiceExplanations": {
+      "ア": "空欄ウは「composed」が適切です。adjustment は機器の状態を合わせることを表し、送信機と受信機の両方に使えます。",
+      "イ": "shall be composed of で、以下のものから構成されなければならないという意味です。",
+      "ウ": "空欄ウは「composed」が適切です。each は一つ一つを表し、二つの目的を or と対応させて示す場合は either を使います。",
+      "エ": "空欄ウは「composed」が適切です。either は後の or と呼応して二つの目的のうちいずれかを示します。",
+      "オ": "空欄ウは「composed」が適切です。followed by は、先に言うものの後に次のものが続くという意味です。",
+      "カ": "空欄ウは「composed」が適切です。following をこのように by と組み合わせて、呼出符号が数字の後に続くことを表すことはできません。",
+      "キ": "空欄ウは「composed」が適切です。justification は正当化や根拠を意味し、無線機器の調整を示しません。",
+      "ク": "空欄ウは「composed」が適切です。letters は文字を表しますが、ONE等で読み上げるのは数字です。",
+      "ケ": "空欄ウは「composed」が適切です。numerals は数字を指し、spoken numerals なら読み上げた数字になります。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-b03-4",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 23,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "エの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-3・空欄エ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-b03.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 B-3の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 B-3（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "adjustment",
+      "イ": "composed",
+      "ウ": "each",
+      "エ": "either",
+      "オ": "followed",
+      "カ": "following",
+      "キ": "justification",
+      "ク": "letters",
+      "ケ": "numerals"
+    },
+    "answer": "ケ",
+    "officialAnswerNumber": "9",
+    "explanation": "ONE、TWO、THREEは口頭で伝える数字であり、spoken numerals に当たります。",
+    "choiceExplanations": {
+      "ア": "空欄エは「numerals」が適切です。adjustment は機器の状態を合わせることを表し、送信機と受信機の両方に使えます。",
+      "イ": "空欄エは「numerals」が適切です。be composed of は要素から構成されることを表します。",
+      "ウ": "空欄エは「numerals」が適切です。each は一つ一つを表し、二つの目的を or と対応させて示す場合は either を使います。",
+      "エ": "空欄エは「numerals」が適切です。either は後の or と呼応して二つの目的のうちいずれかを示します。",
+      "オ": "空欄エは「numerals」が適切です。followed by は、先に言うものの後に次のものが続くという意味です。",
+      "カ": "空欄エは「numerals」が適切です。following をこのように by と組み合わせて、呼出符号が数字の後に続くことを表すことはできません。",
+      "キ": "空欄エは「numerals」が適切です。justification は正当化や根拠を意味し、無線機器の調整を示しません。",
+      "ク": "空欄エは「numerals」が適切です。letters は文字を表しますが、ONE等で読み上げるのは数字です。",
+      "ケ": "ONE、TWO、THREEは口頭で伝える数字であり、spoken numerals に当たります。"
+    }
+  },
+  {
+    "id": "radio21-aviation-comm-2022-02-eigo-hikki-b03-5",
+    "exam": "aviation-comm",
+    "session": "eigo-hikki",
+    "year": 2022,
+    "season": "february",
+    "qNumber": 24,
+    "subject": "英語・筆記",
+    "category": "英語・筆記",
+    "topicTags": [
+      "航空無線通信士",
+      "2022-02期",
+      "英語・筆記"
+    ],
+    "difficulty": 3,
+    "question": "オの空欄に入れる最も適切な語句を選んでください。\n\n問題文・図表・選択肢は原問題画像を参照してください。",
+    "officialQuestionLabel": "B-3・空欄オ",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/aviation-comm/2022/2022-02-eigo-hikki-b03.png"
+    ],
+    "imageAltTexts": [
+      "航空無線通信士 2022年2月期 英語・筆記 B-3の原問と語群。"
+    ],
+    "sourcePdfUrl": "https://web.archive.org/web/20220429111224id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo_hikki.pdf#page=3",
+    "sourceAnswerUrl": "https://web.archive.org/web/20220301084140id_/https://www.nichimu.or.jp/vc-files/kshiken/pdf/siken/2/koku-tu-eigo-kaito.pdf",
+    "sourceAttribution": "出典：公益財団法人日本無線協会 航空無線通信士 令和4年2月期 英語・筆記 B-3（問題・正答）。解説は過去問AI独自作成。",
+    "license": "NICHIMU-past-question-study-use",
+    "publicAllowed": true,
+    "needsReview": false,
+    "lastUpdated": "2026-11-19",
+    "explanationCoverage": "full",
+    "type": "multiple-choice",
+    "choices": {
+      "ア": "adjustment",
+      "イ": "composed",
+      "ウ": "each",
+      "エ": "either",
+      "オ": "followed",
+      "カ": "following",
+      "キ": "justification",
+      "ク": "letters",
+      "ケ": "numerals"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": "5",
+    "explanation": "数字の後に無線呼出符号が続くので、followed by the radio call sign といいます。",
+    "choiceExplanations": {
+      "ア": "空欄オは「followed」が適切です。adjustment は機器の状態を合わせることを表し、送信機と受信機の両方に使えます。",
+      "イ": "空欄オは「followed」が適切です。be composed of は要素から構成されることを表します。",
+      "ウ": "空欄オは「followed」が適切です。each は一つ一つを表し、二つの目的を or と対応させて示す場合は either を使います。",
+      "エ": "空欄オは「followed」が適切です。either は後の or と呼応して二つの目的のうちいずれかを示します。",
+      "オ": "数字の後に無線呼出符号が続くので、followed by the radio call sign といいます。",
+      "カ": "空欄オは「followed」が適切です。following をこのように by と組み合わせて、呼出符号が数字の後に続くことを表すことはできません。",
+      "キ": "空欄オは「followed」が適切です。justification は正当化や根拠を意味し、無線機器の調整を示しません。",
+      "ク": "空欄オは「followed」が適切です。letters は文字を表しますが、ONE等で読み上げるのは数字です。",
+      "ケ": "空欄オは「followed」が適切です。numerals は数字を指し、spoken numerals なら読み上げた数字になります。"
+    }
+  }
+]
