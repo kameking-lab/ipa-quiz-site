@@ -1462,7 +1462,7 @@ shuwa: {
         { session: "mondai-c", urlSlug: "mondai-c", expectedQuestions: 20, label: "手話通訳のあり方", categories: ["手話通訳のあり方"] },
         { session: "mondai-d", urlSlug: "mondai-d", expectedQuestions: 20, label: "国語", categories: ["国語"] },
     ],
-    seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
+    seasons: ["annual"], yearRange: { start: 2023, end: 2026 },
 },
 "reform-mgr": { code: "reform-mgr", nameFull: "マンションリフォームマネジャー学科試験", urlSlug: "reform-mgr", level: "specialist", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（未公開）", categories: ["??"] }], seasons: ["annual"], yearRange: { start: 2025, end: 2026 } },
 "shohi-sodan": { code: "shohi-sodan", nameFull: "消費生活相談員資格試験（マークシート部分）", urlSlug: "shohi-sodan", level: "specialist", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 160, label: "マークシート式試験（未公開）", categories: ["??"] }], seasons: ["annual"], yearRange: { start: 2024, end: 2025 } },
