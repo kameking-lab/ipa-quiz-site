@@ -1527,7 +1527,7 @@ shinrishi: {
             categories: ["建築学等（必須）", "建築学等（選択）", "共通（必須）", "施工（選択）", "施工管理法（必須）", "施工管理法・能力問題（必須）", "法規（選択）"],
         }],
     seasons: ["early", "late"],
-    yearRange: { start: 2025, end: 2026 },
+    yearRange: { start: 2024, end: 2026 },
 },
 denki2: {
     code: "denki2", nameFull: "2級電気工事施工管理技術検定（第一次検定）", urlSlug: "sekou-2denki", level: "basic",
