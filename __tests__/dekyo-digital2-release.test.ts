@@ -2,11 +2,15 @@ import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
+import source2024First from "@/data/questions/dekyo-digital2/2024-first-sources.json";
 import source2024Second from "@/data/questions/dekyo-digital2/2024-second-sources.json";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 
 const exam = "dekyo-digital2";
-const papers = [{ year: 2024, season: "second", source: source2024Second }];
+const papers = [
+  { year: 2024, season: "second", source: source2024Second },
+  { year: 2024, season: "first", source: source2024First },
+];
 
 describe("工事担任者 第二級デジタル通信", () => {
   it.each(papers)("serves all $year $season questions and matches their official grid", async ({ year, season, source }) => {
