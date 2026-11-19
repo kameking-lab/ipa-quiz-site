@@ -301,6 +301,7 @@ export const EXAM_LABELS: Record<string, string> = {
     kankoji1: "1級管工事施工管理技士",
     "chori-center": "調理師試験（共通問題）",
     "chori-kansai": "調理師試験（関西広域連合）",
+    "chori-kanagawa": "調理師試験（神奈川県）",
     "yamaguchi-chori": "調理師",
     "yamaguchi-seika": "製菓衛生師",
     "yamaguchi-fugu": "ふぐ処理師（学科）",

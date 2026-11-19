@@ -1558,6 +1558,14 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
   },
   {
+    slug: "chori-kanagawa", examCode: "chori-kanagawa", shortName: "調理師試験（神奈川県）", fullName: "調理師試験（神奈川県）",
+    domain: "personal-services", administrator: "神奈川県",
+    officialQuestionsUrl: "https://www.pref.kanagawa.jp/docs/e8z/cnt/f4501/", officialReuseTermsUrl: "https://www.pref.kanagawa.jp/docs/e8z/cnt/f4501/",
+    status: "live",
+    reuseSummary: "公式問題・正答と全選択肢の独自解説を収録。法令・制度は出題時点。",
+    remainingWork: [],
+  },
+  {
     slug: "yamaguchi-chori", examCode: "yamaguchi-chori", shortName: "調理師", fullName: "調理師",
     domain: "personal-services", administrator: "山口県 生活衛生課",
     officialQuestionsUrl: "https://www.pref.yamaguchi.lg.jp/site/syoku-anshin/320296.html",
