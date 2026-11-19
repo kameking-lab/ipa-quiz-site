@@ -1478,7 +1478,7 @@ shuwa: {
     level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 25, label: "学科", categories: ["建材", "清掃用具", "安全衛生", "建築設備", "汚れと衛生", "清掃管理", "洗剤と薬剤", "法令"] }],
     seasons: ["annual"],
-    yearRange: { start: 2023, end: 2023 },
+    yearRange: { start: 2022, end: 2023 },
 },
 "kounin-civics": {
     code: "kounin-civics",
