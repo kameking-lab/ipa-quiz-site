@@ -960,6 +960,9 @@ sharoushi: {
         }, {
             session: "ippan", urlSlug: "ippan", expectedQuestions: 10, label: "択一式・一般常識（収録中の一部10問）",
             categories: ["労務管理その他の労働及び社会保険に関する一般常識"],
+        }, {
+            session: "kounen", urlSlug: "kounen", expectedQuestions: 10, label: "択一式・厚生年金保険法",
+            categories: ["厚生年金保険法"],
         }],
     seasons: ["annual"],
     yearRange: { start: 2023, end: 2026 },

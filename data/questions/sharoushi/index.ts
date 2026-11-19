@@ -11,6 +11,7 @@ import koyou2026 from "./koyou-2026-annual.json";
 import kenpo2023 from "./kenpo-2023-annual.json";
 import kenpo2025 from "./kenpo-2025-annual.json";
 import kenpo2026 from "./kenpo-2026-annual.json";
+import kounen2023 from "./kounen-2023-annual.json";
 import kounen2025 from "./kounen-2025-annual.json";
 import kounen2026 from "./kounen-2026-annual.json";
 import ippan2023 from "./ippan-2023-annual.json";
@@ -40,6 +41,7 @@ export const SHAROUSHI_QUESTIONS: Question[] = [
   ...(kenpo2023 as Question[]),
   ...(kenpo2025 as Question[]),
   ...(kenpo2026 as Question[]),
+  ...(kounen2023 as Question[]),
   ...(kounen2025 as Question[]),
   ...(kounen2026 as Question[]),
   ...(ippan2023 as Question[]),
