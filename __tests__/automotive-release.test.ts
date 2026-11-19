@@ -8,6 +8,8 @@ import { AUTOMOTIVE_QUESTIONS, getAutomotiveQuestions } from "@/data/questions/a
 import metadata from "@/data/questions/automotive/qualifications.json";
 import reviewed from "@/data/questions/automotive/reviewed.json";
 import priorSittings from "@/data/questions/automotive/prior-sittings.json";
+import body2023Second from "@/data/questions/automotive/2023-second-body.json";
+import body2023SecondSources from "@/data/questions/automotive/2023-second-body-sources.json";
 import body2024First from "@/data/questions/automotive/2024-first-body.json";
 import body2024FirstSources from "@/data/questions/automotive/2024-first-body-sources.json";
 import body2024Second from "@/data/questions/automotive/2024-second-body.json";
@@ -27,6 +29,13 @@ import { defaultPracticeSession } from "@/lib/questions/practice-session";
 import { findQuestionById, getPoolIds } from "@/lib/questions/pool-server";
 import { getHomeDirectory } from "@/lib/home/home-directory";
 import type { AutomotiveExamCode } from "@/lib/questions/types";
+
+const olderBodyPapers = [
+  { year: 2024, season: "second", questions: body2024Second, source: body2024SecondSources },
+  { year: 2024, season: "first", questions: body2024First, source: body2024FirstSources },
+  { year: 2023, season: "second", questions: body2023Second, source: body2023SecondSources },
+];
+const olderBodyQuestions = olderBodyPapers.flatMap(paper => paper.questions);
 
 describe("recovered automotive release", () => {
   it("admits the exact continuation candidates only with matching independent PASS receipts", () => {
@@ -57,7 +66,7 @@ describe("recovered automotive release", () => {
     const recoveredCodes = new Set(metadata.map(row => row.exam));
     const recoveredCards = [...directory.featured, ...directory.compact].filter(card => recoveredCodes.has(card.key));
     expect(recoveredCards).toHaveLength(11);
-    expect(recoveredCards.reduce((sum, card) => sum + card.questionCount, 0)).toBe(recovery.releaseOriginals + priorSittings.length + body2024Second.length + body2024First.length);
+    expect(recoveredCards.reduce((sum, card) => sum + card.questionCount, 0)).toBe(recovery.releaseOriginals + priorSittings.length + olderBodyQuestions.length);
     for (const row of metadata) {
       const exam = row.exam as AutomotiveExamCode;
       const questions = getAutomotiveQuestions(exam);
@@ -77,8 +86,8 @@ describe("recovered automotive release", () => {
   it("preserves accepted candidate bytes with matching receipt hashes and excludes unresolved originals", () => {
     expect(recovery.recoveredReviewedOriginals).toBe(385);
     // W2 (2026-11-06) appended the previous sitting of five subjects; see automotive-prior-sittings.test.ts.
-    expect(AUTOMOTIVE_QUESTIONS).toHaveLength(recovery.releaseOriginals + priorSittings.length + body2024Second.length + body2024First.length);
-    expect(new Set(AUTOMOTIVE_QUESTIONS.map((q) => q.id)).size).toBe(recovery.releaseOriginals + priorSittings.length + body2024Second.length + body2024First.length);
+    expect(AUTOMOTIVE_QUESTIONS).toHaveLength(recovery.releaseOriginals + priorSittings.length + olderBodyQuestions.length);
+    expect(new Set(AUTOMOTIVE_QUESTIONS.map((q) => q.id)).size).toBe(recovery.releaseOriginals + priorSittings.length + olderBodyQuestions.length);
     expect(recovery.notYetReleasedIds).toHaveLength(610 - recovery.releaseOriginals);
     const ids = new Set(AUTOMOTIVE_QUESTIONS.map((q) => q.id));
     for (const id of recovery.notYetReleasedIds) expect(ids.has(id), id).toBe(false);
@@ -94,10 +103,7 @@ describe("recovered automotive release", () => {
     }
   });
 
-  it.each([
-    { season: "first", questions: body2024First, source: body2024FirstSources },
-    { season: "second", questions: body2024Second, source: body2024SecondSources },
-  ])("matches the 2024 $season body paper and its separate official key", ({ season, questions, source }) => {
+  it.each(olderBodyPapers)("matches the $year $season body paper and its separate official key", ({ year, season, questions, source }) => {
     expect(questions.map(q => q.qNumber)).toEqual(Array.from({ length: 40 }, (_, i) => i + 1));
     const answers: Record<string, number> = source.answers;
     for (const q of questions) {
@@ -107,7 +113,7 @@ describe("recovered automotive release", () => {
       expect(q.sourceAnswerUrl).toBe(source.sourceAnswerUrl);
       expect(Object.keys(q.choiceExplanations)).toEqual(Object.keys(q.choices));
       const released = getAutomotiveQuestions("jidosha-body").find(row => row.id === q.id)!;
-      expect(released.year).toBe(2024);
+      expect(released.year).toBe(year);
       expect(released.season).toBe(season);
       if (q.sourceFigureRequired) expect(released.imageUrls).toHaveLength(1);
       for (const url of released.imageUrls ?? []) {
