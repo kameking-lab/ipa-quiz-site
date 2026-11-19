@@ -316,6 +316,7 @@ export const EXAM_LABELS: Record<string, string> = {
     "sokuryoshiho": "測量士補",
     "caremanager": "ケアマネ試験",
     "zensho-calc": "全商ビジネス計算実務検定",
+    "kanken-2": "日本漢字能力検定2級",
     "kounin-physics": "高卒認定・物理基礎",
 
     "tekko2": "鉄工技能士 2級",
@@ -381,6 +382,8 @@ export function seasonLabel(season: string): string {
         return "第I回";
     if (season === "round2")
         return "第II回";
+    if (season === "round3")
+        return "第3回";
     if (season === "spring")
         return "春期";
     if (season === "autumn")

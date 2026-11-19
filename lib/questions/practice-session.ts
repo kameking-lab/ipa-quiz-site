@@ -45,7 +45,7 @@ export function practiceSessionLabel(session: Session, exam?: ExamCode): string 
     if (labels[session]) return labels[session]!;
   }
   if (exam && ["khk-reito-1", "khk-reito-2", "khk-reito-3", "shuwa"].includes(exam)) return EXAM_CONFIGS[exam].sessions.find(item => item.session === session)?.label ?? session;
-  if (exam && ["gijutsushi1-kikai", "khk-kikai-kou", "khk-kikai-otsu", "zensho-calc"].includes(exam)) return EXAM_CONFIGS[exam].sessions.find(item => item.session === session)?.label ?? session;
+  if (exam && ["gijutsushi1-kikai", "khk-kikai-kou", "khk-kikai-otsu", "zensho-calc", "kanken-2"].includes(exam)) return EXAM_CONFIGS[exam].sessions.find(item => item.session === session)?.label ?? session;
   if (exam === "kenchiku-setsubishi") {
     if (session === "am1") return "建築一般知識";
     if (session === "am2") return "建築法規";

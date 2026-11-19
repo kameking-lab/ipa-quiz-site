@@ -1863,6 +1863,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
   },
   {
+    slug: "kanken-2", examCode: "kanken-2", shortName: "漢検2級", fullName: "日本漢字能力検定2級",
+    domain: "personal-services", administrator: "公益財団法人 日本漢字能力検定協会",
+    officialQuestionsUrl: "https://www.kanken.or.jp/kanken/grades/sample/",
+    officialReuseTermsUrl: "https://www.kanken.or.jp/kanken/grades/sample/",
+    status: "live",
+    reuseSummary: "公式問題と標準解答に基づく演習。選択式は全肢解説付きで、記述式は標準解答と照合できます。",
+    remainingWork: [],
+  },
+  {
     slug: "caremanager", examCode: "caremanager", shortName: "ケアマネ", fullName: "介護支援専門員実務研修受講試験",
     domain: "welfare", administrator: "都道府県（全国共通問題）",
     officialQuestionsUrl: "https://www.fukushi.metro.tokyo.lg.jp/kourei/hoken/kaigo_lib/care/shikenjyouhou",
