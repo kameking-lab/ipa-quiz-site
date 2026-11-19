@@ -1826,6 +1826,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["部分点（2問正解で1点等）の表示方針の決定"],
 },
   {
+    slug: "saibansho-ippan-dai", examCode: "saibansho-ippan-dai", shortName: "裁判所事務官（一般職・大卒）", fullName: "裁判所職員採用一般職（裁判所事務官・大卒程度）",
+    domain: "legal", administrator: "裁判所",
+    officialQuestionsUrl: "https://www.courts.go.jp/saiyo/sikenjoho/siken/siken_mondai/index.html",
+    officialReuseTermsUrl: "https://www.courts.go.jp/saiyo/vc-files/saiyo/01-XYC-15kiso.pdf",
+    status: "permission-required", stagingDataPath: "data/questions/saibansho-ippan-dai",
+    reuseSummary: "2026年度の一次試験（基礎能力21問・専門択一50問）を公式問題・正答で照合。問題冊子に禁転載の記載があり、公開には転載許諾が必要。",
+    attributionTemplate: "出典：裁判所 裁判所職員採用一般職試験（裁判所事務官・大卒程度区分）第1次試験。解説は過去問AIの独自作成。",
+    remainingWork: ["問題冊子の転載許諾"],
+  },
+  {
     slug: "yobi-tanto", examCode: "yobi-tanto", shortName: "予備試験（短答）", fullName: "司法試験予備試験 短答式（法律基本科目）",
     domain: "legal", administrator: "法務省",
     officialQuestionsUrl: "https://www.moj.go.jp/jinji/shihoushiken/jinji07_00317.html",
