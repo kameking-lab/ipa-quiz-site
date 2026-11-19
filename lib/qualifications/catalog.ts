@@ -1784,7 +1784,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/recruit/exam.html",
     officialReuseTermsUrl: "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/policy.html",
     status: "live",
-    reuseSummary: "2026年度実施の教職教養25問を公式問題・正答と全肢の独自解説で収録。",
+    reuseSummary: "2025・2026年度実施の教職教養各25問を公式問題・正答と全肢の独自解説で収録。",
     attributionTemplate: "出典：東京都教育委員会 東京都公立学校教員採用候補者選考 教職教養。解説は過去問AIの独自作成。",
     remainingWork: ["専門教養の収録"],
   },
