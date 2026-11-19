@@ -4,6 +4,7 @@ import assets from "./assets.json";
 import qualifications from "./qualifications.json";
 import priorSittings from "./prior-sittings.json";
 import priorAssets from "./prior-assets.json";
+import gasoline2022Second from "./2-gasoline-2022-second.json";
 import gasoline2023First from "./2-gasoline-2023-first.json";
 import gasoline2023Second from "./2-gasoline-2023-second.json";
 import gasoline2024First from "./2-gasoline-2024-first.json";
@@ -43,7 +44,7 @@ export const AUTOMOTIVE_QUESTIONS: Question[] = [...reviewed, ...priorSittings].
   needsReview: false,
   imageUrls: imageBindings[q.id].map((asset) => asset.url),
   imageAltTexts: imageBindings[q.id].map((asset) => `${q.sourceAttribution} 原問題の図表（PDF ${asset.physicalPage}ページ）`),
-})).concat(gasoline2024First as Question[], gasoline2024Second as Question[], gasoline2023Second as Question[], gasoline2023First as Question[]);
+})).concat(gasoline2024First as Question[], gasoline2024Second as Question[], gasoline2023Second as Question[], gasoline2023First as Question[], gasoline2022Second as Question[]);
 
 export function getAutomotiveQuestions(exam: AutomotiveExamCode): Question[] {
   return AUTOMOTIVE_QUESTIONS.filter((q) => q.exam === exam);
