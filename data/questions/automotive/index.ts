@@ -4,6 +4,7 @@ import assets from "./assets.json";
 import qualifications from "./qualifications.json";
 import priorSittings from "./prior-sittings.json";
 import priorAssets from "./prior-assets.json";
+import diesel2023First from "./diesel-2023-first.json";
 import diesel2023Second from "./diesel-2023-second.json";
 import diesel2024First from "./diesel-2024-first.json";
 import diesel2024Second from "./diesel-2024-second.json";
@@ -46,7 +47,7 @@ const REVIEWED_AUTOMOTIVE_QUESTIONS: Question[] = [...reviewed, ...priorSittings
 
 export const AUTOMOTIVE_QUESTIONS: Question[] = [
   ...REVIEWED_AUTOMOTIVE_QUESTIONS,
-  ...([...diesel2024Second, ...diesel2024First, ...diesel2023Second] as Question[]),
+  ...([...diesel2024Second, ...diesel2024First, ...diesel2023Second, ...diesel2023First] as Question[]),
 ];
 
 export function getAutomotiveQuestions(exam: AutomotiveExamCode): Question[] {
