@@ -1438,7 +1438,7 @@ jokaso: {
 "iji-shuzen": {
     code: "iji-shuzen", nameFull: "マンション維持修繕技術者", urlSlug: "iji-shuzen", level: "advanced",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 47, label: "択一式・記述式", categories: ["維持修繕技術", "関連法令", "記述式"] }],
-    seasons: ["annual"], yearRange: { start: 2023, end: 2025 },
+    seasons: ["annual"], yearRange: { start: 2022, end: 2025 },
 },
 denki1: {
     code: "denki1", nameFull: "1級電気工事施工管理技術検定（第一次検定）", urlSlug: "sekou-1denki", level: "advanced",
