@@ -46,6 +46,16 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "kyoin-okinawa", examCode: "kyoin-okinawa", shortName: "沖縄県教員採用試験", fullName: "沖縄県公立学校教員候補者選考試験",
+    domain: "welfare", administrator: "沖縄県教育委員会",
+    officialQuestionsUrl: "https://www.pref.okinawa.jp/kyoiku/edu/1008490/1008535/1008540/1037341/1040383.html",
+    officialReuseTermsUrl: "https://www.pref.okinawa.lg.jp/about/index.html",
+    status: "live",
+    reuseSummary: "公式問題・正答と全選択肢の独自解説を収録。",
+    attributionTemplate: "出典：沖縄県教育委員会 沖縄県公立学校教員候補者選考試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
+  {
     slug: "kyoin-hiroshima", examCode: "kyoin-hiroshima", shortName: "広島県・広島市教員採用試験", fullName: "広島県・広島市公立学校教員採用候補者選考試験",
     domain: "welfare", administrator: "広島県・広島市教育委員会",
     officialQuestionsUrl: "https://www.pref.hiroshima.lg.jp/site/04file/r09shikenmondai1ji.html",
