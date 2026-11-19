@@ -1384,7 +1384,7 @@ chizai1: {
 "kogai-08": {
     code: "kogai-08", nameFull: "公害防止管理者（汚水処理特論）", urlSlug: "kogai-08", level: "specialist",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 25, label: "汚水処理特論", categories: ["汚水処理特論"] }],
-    seasons: ["annual"], yearRange: { start: 2023, end: 2025 },
+    seasons: ["annual"], yearRange: { start: 2022, end: 2025 },
 },
 chizai2: {
     code: "chizai2", nameFull: "知的財産管理技能検定2級", urlSlug: "chizai2", level: "advanced",
