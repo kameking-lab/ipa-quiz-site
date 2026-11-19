@@ -598,7 +598,7 @@ denko2: {
             categories: ["電気理論・配電", "電気機器・材料・工具", "施工・法規・検査", "配線図"],
         }],
     seasons: ["first", "second"],
-    yearRange: { start: 2023, end: 2026 },
+    yearRange: { start: 2022, end: 2026 },
 },
 denko1: {
     code: "denko1",
