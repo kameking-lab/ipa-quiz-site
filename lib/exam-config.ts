@@ -878,7 +878,7 @@ soukan: {
             categories: ["経済性管理", "人的資源管理", "情報管理", "安全管理", "社会環境管理"],
         }],
     seasons: ["annual"],
-    yearRange: { start: 2025, end: 2026 },
+    yearRange: { start: 2024, end: 2026 },
 },
 hoikushi: {
     code: "hoikushi",
