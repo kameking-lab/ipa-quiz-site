@@ -11,13 +11,14 @@ const blank = z.object({ id: label, answerOptionId: z.number().int().positive(),
   evidenceStatus: z.enum(["not-directly-verified", "direct-primary-verified"]), reviewFlags: z.array(text), primaryRefs: z.array(text).optional(),
 }).strict();
 const lawAsOfByYear = {
+  2022: "2022-04-15",
   2023: "2023-04-14",
   2025: "2025-04-11",
   2026: "2026-04-10",
 } as const;
 const common = {
-  id: text, year: z.union([z.literal(2023), z.literal(2025), z.literal(2026)]),
-  examRound: z.union([z.literal(55), z.literal(57), z.literal(58)]),
+  id: text, year: z.union([z.literal(2022), z.literal(2023), z.literal(2025), z.literal(2026)]),
+  examRound: z.union([z.literal(54), z.literal(55), z.literal(57), z.literal(58)]),
   questionNumber: z.number().int().min(1).max(8), subject: text, format: z.literal("official-cloze"),
   lawAsOf: z.string().regex(/^\d{4}-\d{2}-\d{2}$/), stem: text, rawSourceText: text,
   sourcePdfPhysicalPages: z.array(z.number().int().positive()).min(1), sourcePdfSha256: hash,
@@ -38,17 +39,23 @@ const schema = z.discriminatedUnion("wordBankMode", [
   const tokens=[...q.stem.matchAll(/\{\{([^{}]+)\}\}/g)].map(m=>m[1]);
   if(tokens.some(t=>!FIELD_LABELS.includes(t as typeof FIELD_LABELS[number])) || FIELD_LABELS.some(l=>!tokens.includes(l))) fail("Invalid or missing stem field");
   if(/[{}]/.test(q.stem.replace(/\{\{[A-E]\}\}/g,""))) fail("Malformed stem field");
-  if((q.wordBankMode==="per-blank-4") !== (q.year===2026 && [2,3,4].includes(q.questionNumber))) fail("Official bank mode mismatch");
+  const officialPerBlank = (q.year === 2022 && q.questionNumber === 3) ||
+    (q.year === 2026 && [2, 3, 4].includes(q.questionNumber));
+  if ((q.wordBankMode === "per-blank-4") !== officialPerBlank) fail("Official bank mode mismatch");
   if(q.sourcePdfPhysicalPages.some((p,i,a)=>i>0 && p<=a[i-1])) fail("Source pages must be ordered and unique");
   if(sentakuParagraphs(q.rawSourceText).join("")!==q.stem) fail("Original body differs from normalized stem");
   const banks=q.wordBankMode==="shared-20"?[q.sharedWordBank]:Object.values(q.blankWordBanks);
   for(const bank of banks) if(bank.some((o,i)=>o.id!==i+1 || o.label!==String.fromCodePoint(0x2460+i))) fail("Original option numbers must be consecutive and unique");
-  if (q.year === 2023) {
+  if (q.year === 2022 || q.year === 2023) {
     if (q.sourcePdfUrl !== `${q.sourceUrl}#page=${q.sourcePdfPhysicalPages[0]}`) {
       fail("Missing or mismatched official question page");
     }
     const explanations = q.choiceExplanations ?? {};
-    if (Object.keys(explanations).length !== 20 || q.sharedWordBank.some(({ id }) => !explanations[String(id)])) {
+    const explanationKeys = q.wordBankMode === "shared-20"
+      ? q.sharedWordBank.map(({ id }) => String(id))
+      : FIELD_LABELS.flatMap(field => q.blankWordBanks[field].map(({ id }) => `${field}${id}`));
+    if (Object.keys(explanations).length !== explanationKeys.length ||
+      explanationKeys.some(key => !explanations[key])) {
       fail("All 20 selections require explanations");
     }
   }
