@@ -1,0 +1,5 @@
+import { KYOIN_NAGASAKI_2026 } from "./2026";
+
+export const KYOIN_NAGASAKI_QUESTIONS = [
+  ...KYOIN_NAGASAKI_2026,
+];

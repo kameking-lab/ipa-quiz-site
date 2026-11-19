@@ -46,6 +46,16 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "kyoin-nagasaki", examCode: "kyoin-nagasaki", shortName: "長崎県教員採用試験", fullName: "長崎県公立学校教員採用選考試験",
+    domain: "welfare", administrator: "長崎県教育委員会",
+    officialQuestionsUrl: "https://www.pref.nagasaki.jp/doc/52353.html",
+    officialReuseTermsUrl: "https://www.pref.nagasaki.jp/doc/52353.html",
+    status: "live",
+    reuseSummary: "公式問題・正答と全選択肢の独自解説を収録。",
+    attributionTemplate: "出典：長崎県教育委員会 長崎県公立学校教員採用選考試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
+  {
     slug: "kyoin-shimane", examCode: "kyoin-shimane", shortName: "島根県教員採用試験", fullName: "島根県公立学校教員採用候補者選考試験",
     domain: "welfare", administrator: "島根県教育委員会",
     officialQuestionsUrl: "https://www.pref.shimane.lg.jp/admin/syokuin/saiyou/saiyou_info_tchr/kakomondai.html",
