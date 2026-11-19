@@ -2,11 +2,15 @@ import { existsSync } from "node:fs";
 import { join } from "node:path";
 import { describe, expect, it } from "vitest";
 import { QUESTIONS_BY_EXAM } from "@/data/questions";
+import source2022 from "@/data/questions/zensho-financial-statement-analysis/2022-sources.json";
 import source2023 from "@/data/questions/zensho-financial-statement-analysis/2023-sources.json";
 import { getQuestionsForExam } from "@/lib/questions/get-questions";
 
 const exam = "zensho-financial-statement-analysis";
-const papers = [{ year: 2023, count: 88, source: source2023 }];
+const papers = [
+  { year: 2023, count: 88, source: source2023 },
+  { year: 2022, count: 76, source: source2022 },
+];
 
 describe("全商 財務諸表分析検定", () => {
   it.each(papers)("serves the $year paper and its published answer key", async ({ year, count, source }) => {

@@ -1249,7 +1249,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://zensho.or.jp/examination/pastexams/accounting/",
     officialReuseTermsUrl: "https://zensho.or.jp/examination/pastexams/accounting/",
     status: "live",
-    reuseSummary: "2023年度第15回の全5大問を88の演習項目に分け、公式の問題と正答、計算手順と選択肢の解説を収録しています。",
+    reuseSummary: "2022年度第14回と2023年度第15回の計10大問を164の演習項目に分け、公式の問題と正答、計算手順と選択肢の解説を収録しています。",
     attributionTemplate: "出典：全国商業高等学校協会 財務諸表分析検定試験 問題・正答。解説は過去問AI独自作成。",
     remainingWork: [],
   },

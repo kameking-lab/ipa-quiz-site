@@ -1362,7 +1362,7 @@ riyoshi: {
 "zensho-financial-statement-analysis": {
     code: "zensho-financial-statement-analysis", nameFull: "全商 財務諸表分析検定", urlSlug: "zensho-financial-statement-analysis", level: "specialist",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 88, label: "財務諸表分析", categories: ["財務諸表分析"] }],
-    seasons: ["annual"], yearRange: { start: 2023, end: 2023 },
+    seasons: ["annual"], yearRange: { start: 2022, end: 2023 },
 },
 chizai1: {
     code: "chizai1", nameFull: "知的財産管理技能検定1級", urlSlug: "chizai1", level: "specialist",
