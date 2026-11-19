@@ -291,6 +291,7 @@ export const EXAM_LABELS: Record<string, string> = {
     "jken-katsuyo1": "J検 情報活用1級",
     "jken-katsuyo2": "J検 情報活用2級",
     "jken-katsuyo3": "J検 情報活用3級",
+    kounin: "高等学校卒業程度認定試験",
     "zensho-bido": "全商ビジネス文書実務検定",
     "jken-system": "J検 情報システム",
     shinrishi: "公認心理師",

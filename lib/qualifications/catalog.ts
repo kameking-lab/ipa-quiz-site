@@ -1413,6 +1413,17 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
 },
   {
+    slug: "kounin", examCode: "kounin", shortName: "高卒認定試験",
+    fullName: "高等学校卒業程度認定試験",
+    domain: "personal-services", administrator: "文部科学省",
+    officialQuestionsUrl: "https://www.mext.go.jp/a_menu/koutou/shiken/1421021.htm",
+    officialReuseTermsUrl: "https://www.mext.go.jp/b_menu/1351168.htm",
+    status: "live",
+    reuseSummary: "英語の一部を収録。公式問題・正答と、各選択肢の独自解説で学べます。",
+    attributionTemplate: "出典：文部科学省 高等学校卒業程度認定試験。",
+    remainingWork: [],
+  },
+  {
     slug: "zensho-bido", examCode: "zensho-bido", shortName: "全商ビジネス文書実務検定",
     fullName: "全国商業高等学校協会 ビジネス文書実務検定試験",
     domain: "information-technology", administrator: "公益財団法人全国商業高等学校協会",

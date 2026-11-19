@@ -1474,6 +1474,15 @@ shuwa: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 46, label: "情報活用3級", categories: ["情報表現と処理手順", "パソコンの基礎", "インターネットの基礎", "インターネットの利用", "情報機器の基本操作", "情報社会とコンピュータ", "情報モラル"] }],
     seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
 },
+kounin: {
+    code: "kounin",
+    nameFull: "高等学校卒業程度認定試験",
+    urlSlug: "kounin",
+    level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 24, label: "英語", categories: ["英語"] }],
+    seasons: ["round1", "round2"],
+    yearRange: { start: 2024, end: 2024 },
+},
 "zensho-bido": {
     code: "zensho-bido",
     nameFull: "全商ビジネス文書実務検定試験",
