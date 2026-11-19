@@ -4,27 +4,42 @@ import { describe, expect, it } from "vitest";
 import { HOIKUSHI_QUESTIONS } from "@/data/questions/hoikushi";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
+import officialAnswers from "@/reports/hoikushi-2rounds-20260929/official-answers.json";
+import type { ChoiceKey } from "@/lib/questions/types";
 
 describe("保育士の案内と公開年度の一致", () => {
-  it("演習可能な公開問題はR8前期154問・9科目の1期である", () => {
+  it("令和8年度前期154問と令和7年度後期158問を九科目ずつ公開する", () => {
     const ready = HOIKUSHI_QUESTIONS.filter(isPracticeReadyQuestion);
-    expect([...new Set(ready.map((q) => `${q.year}-${q.season}`))]).toEqual(["2026-early"]);
-    expect(ready).toHaveLength(154);
-    expect(new Set(ready.map((q) => q.session)).size).toBe(9);
+    expect([...new Set(ready.map((q) => `${q.year}-${q.season}`))]).toEqual(["2026-early", "2025-late"]);
+    for (const [year, count] of [[2026, 154], [2025, 158]]) {
+      const round = ready.filter((q) => q.year === year);
+      expect(round).toHaveLength(count);
+      expect(new Set(round.map((q) => q.session)).size).toBe(9);
+    }
   });
-  it("公開紹介にR7後期の収録や転載許諾を先取りしない", () => {
+
+  it("令和7年度後期は全肢の解説と公式正答を持ち、原本図表を参照できる", () => {
+    const keys: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ"];
+    const round = HOIKUSHI_QUESTIONS.filter((q) => q.year === 2025 && q.season === "late");
+    const answers = officialAnswers["r7-kouki"] as Record<string, string[]>;
+    for (const q of round) {
+      const official = answers[q.subject!][q.qNumber - 1];
+      const expected = official.split(",").map((k) => keys[Number(k) - 1]);
+      expect(q.officialAnswerNumber, q.id).toBe(official);
+      expect(q.answer, q.id).toEqual(expected.length > 1 ? expected : expected[0]);
+      expect(Object.keys(q.choiceExplanations ?? {}), q.id).toEqual(keys);
+      expect(q.sourcePdfUrl, q.id).toMatch(/www\.hoyokyo\.or\.jp\/07AP[1-9]-2\.pdf$/);
+      for (const image of q.imageUrls ?? []) expect(readFileSync(path.join(process.cwd(), "public", image)).length).toBeGreaterThan(0);
+    }
+    const practicum = round.filter((q) => q.session === "hoiku-jisshu-riron");
+    expect(practicum.filter((q) => q.hasImage).map((q) => q.qNumber)).toEqual([3, 12]);
+    expect(practicum.filter((q) => q.qNumber === 1 || q.qNumber === 5)).toEqual([]);
+  });
+
+  it("資格の案内に収録済みの回と件数を掲載する", () => {
     const entry = getQualificationByExamCode("hoikushi");
     expect(entry?.officialReuseTermsUrl).toBe("https://www.hoyokyo.or.jp/terms/");
-    expect(entry?.reuseSummary).toContain("令和7年度後期は未公開");
-    expect(entry?.reuseSummary).toContain("1回分154問");
-    expect(entry?.reuseSummary).not.toMatch(/許諾|転載|利用条件|利用規約|無断使用|選択科目/u);
-    const seo = readFileSync(path.join(process.cwd(), "lib/seo/exam-meta.ts"), "utf8");
-    const description = seo.split("\n").find((value) => value.trimStart().startsWith("hoikushi:"));
-    expect(description).toContain("令和8年度前期の1回分154問収録");
-    expect(description).not.toContain("2回分収録");
-    const home = readFileSync(path.join(process.cwd(), "lib/home/home-directory.ts"), "utf8");
-    const line = home.split("\n").find((value) => value.includes('code: "hoikushi"'));
-    expect(line).toContain("令和8年度前期・154問");
-    expect(line).not.toContain("令和7年度後期");
+    expect(entry?.reuseSummary).toContain("令和8年度前期154問");
+    expect(entry?.reuseSummary).toContain("令和7年度後期158問");
   });
 });

@@ -1,4 +1,5 @@
 import type { ChoiceKey, Question, Season, Session } from "@/lib/questions/types";
+import source2025late from "./2025-late.json";
 import source2026early from "./2026-early.json";
 
 const keys: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ"];
@@ -13,6 +14,8 @@ type HoikushiSourceQuestion = {
   officialAnswer: number[];
   requiredSelections?: number;
   choiceExplanations: string[];
+  imageUrls?: string[];
+  imageAltTexts?: string[];
   topicTags: string[];
   lawSensitive: boolean;
   hold?: boolean;
@@ -68,7 +71,9 @@ function toQuestion(item: HoikushiSourceQuestion, subjectSlug: string, subject: 
     explanation: `${correctExplanations.join(" ")}${lawNotice}`,
     choiceExplanations: Object.fromEntries(keys.map((key, index) => [key, item.choiceExplanations[index]]).filter(([, v]) => v !== undefined)),
     explanationCoverage: "full",
-    hasImage: false,
+    hasImage: Boolean(item.imageUrls?.length),
+    imageUrls: item.imageUrls,
+    imageAltTexts: item.imageAltTexts,
     sourcePdfUrl: subject.sourcePdfUrl,
     sourceAnswerUrl: subject.sourceAnswerUrl,
     sourceAttribution: `出典：一般社団法人全国保育士養成協議会 ${data.examLabel} 筆記試験「${subject.subjectName}」問${item.number}。${HOIKUSHI_INDEPENDENCE_NOTICE}`,
@@ -94,4 +99,7 @@ function buildRound(data: HoikushiSource): Question[] {
 /** 令和8年度前期・地域限定保育士試験（筆記9科目）。 */
 export const HOIKUSHI_2026_EARLY_QUESTIONS: Question[] = buildRound(source2026early as HoikushiSource);
 
-export const HOIKUSHI_QUESTIONS: Question[] = [...HOIKUSHI_2026_EARLY_QUESTIONS];
+export const HOIKUSHI_QUESTIONS: Question[] = [
+  ...HOIKUSHI_2026_EARLY_QUESTIONS,
+  ...buildRound(source2025late as HoikushiSource),
+];

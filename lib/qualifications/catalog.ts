@@ -888,9 +888,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.hoyokyo.or.jp/exam/pasttest/past-test.html",
     officialReuseTermsUrl: "https://www.hoyokyo.or.jp/terms/",
     status: "live",
-    reuseSummary: "公開中は令和8年度前期の筆記試験9科目・1回分154問。令和7年度後期は未公開。",
+    reuseSummary: "令和8年度前期154問と令和7年度後期158問を、筆記試験9科目の公式問題と正答を照合して収録。",
     attributionTemplate: "出典：一般社団法人全国保育士養成協議会 令和○年度○期保育士試験 筆記試験「○○」問○",
-    remainingWork: ["問題転載の許諾根拠を再確認", "令和7年度後期の残5科目・全肢解説・独立査読を準備", "法改正・指針改定の継続確認", "第三者の楽譜・図版の権利と再現性を設問単位で確認"],
+    remainingWork: ["令和7年度後期の保育実習理論は、公式冊子に必要な楽譜が掲載されていない問1・5を除外", "法改正・指針改定の継続確認"],
 },
   {
     slug: "mankan",
