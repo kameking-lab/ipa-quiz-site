@@ -1244,6 +1244,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["令和8年建築法規問18の出題機関による訂正又は直接解釈の確認", "第二次試験は未収録"],
 },
   {
+    slug: "chizai1", examCode: "chizai1", shortName: "知的財産管理技能検定1級", fullName: "知的財産管理技能検定1級",
+    domain: "legal", administrator: "知的財産教育協会",
+    officialQuestionsUrl: "https://www.kentei-info-ip-edu.org/gakushujoho/kakomon.html",
+    officialReuseTermsUrl: "https://www.kentei-info-ip-edu.org/gakushujoho/kakomon.html",
+    status: "live",
+    reuseSummary: "第52回（2025年11月16日）の特許専門業務の学科45問と、コンテンツ専門業務の実技5問を収録。実技は15の枝問で課題の有無を判断し、解説で理由を確認できます。",
+    attributionTemplate: "出典：知的財産教育協会 第52回 知的財産管理技能検定1級 問題・正答。解説は過去問AI独自作成。",
+    remainingWork: [],
+  },
+  {
     slug: "chizai2", examCode: "chizai2", shortName: "知的財産管理技能検定2級", fullName: "知的財産管理技能検定2級",
     domain: "legal", administrator: "知的財産教育協会",
     officialQuestionsUrl: "https://www.kentei-info-ip-edu.org/gakushujoho/kakomon.html",

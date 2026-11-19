@@ -1359,6 +1359,14 @@ riyoshi: {
     ],
     seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
 },
+chizai1: {
+    code: "chizai1", nameFull: "知的財産管理技能検定1級", urlSlug: "chizai1", level: "specialist",
+    sessions: [
+        { session: "gakka", urlSlug: "gakka", expectedQuestions: 45, label: "学科・特許専門業務", categories: ["知的財産管理技能検定1級 学科・特許専門業務"] },
+        { session: "practical", urlSlug: "practical", expectedQuestions: 15, label: "実技・コンテンツ専門業務", categories: ["知的財産管理技能検定1級 実技・コンテンツ専門業務"] },
+    ],
+    seasons: ["autumn"], yearRange: { start: 2025, end: 2025 },
+},
 chizai2: {
     code: "chizai2", nameFull: "知的財産管理技能検定2級", urlSlug: "chizai2", level: "advanced",
     sessions: [
