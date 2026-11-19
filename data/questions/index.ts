@@ -229,6 +229,7 @@ import { CIVIL1_QUESTIONS } from "./civil1";
 import { SHAKAI_QUESTIONS } from "./shakai";
 import { SEISHIN_QUESTIONS } from "./seishin";
 import { TOHAN_QUESTIONS } from "./tohan";
+import { TOHAN_TOKAI_HOKURIKU_QUESTIONS } from "./tohan-tokai-hokuriku";
 import { KANRI_QUESTIONS } from "./kanri";
 import { DENKEN3_QUESTIONS } from "./denken3";
 import { DENKEN2_QUESTIONS } from "./denken2";
@@ -542,6 +543,7 @@ takken: TAKKEN_QUESTIONS,
 ...(isExamPublished("shakai") ? { shakai: SHAKAI_QUESTIONS } : {}),
 ...(isExamPublished("seishin") ? { seishin: SEISHIN_QUESTIONS } : {}),
 ...(isExamPublished("tohan") ? { tohan: TOHAN_QUESTIONS } : {}),
+...(isExamPublished("tohan-tokai-hokuriku") ? { "tohan-tokai-hokuriku": TOHAN_TOKAI_HOKURIKU_QUESTIONS } : {}),
 ...(isExamPublished("kanri") ? { kanri: KANRI_QUESTIONS } : {}),
 ...(isExamPublished("eisei1") ? { eisei1: EISEI1_QUESTIONS } : {}),
 ...(isExamPublished("eisei2") ? { eisei2: EISEI2_QUESTIONS } : {}),
