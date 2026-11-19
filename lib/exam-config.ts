@@ -1479,9 +1479,9 @@ kounin: {
     nameFull: "高等学校卒業程度認定試験",
     urlSlug: "kounin",
     level: "basic",
-    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 24, label: "英語", categories: ["英語"] }],
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 24, label: "筆記", categories: ["英語", "情報"] }],
     seasons: ["round1", "round2"],
-    yearRange: { start: 2022, end: 2024 },
+    yearRange: { start: 2022, end: 2026 },
 },
 "zensho-bido": {
     code: "zensho-bido",

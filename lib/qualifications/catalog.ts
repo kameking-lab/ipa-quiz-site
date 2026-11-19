@@ -1419,7 +1419,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mext.go.jp/a_menu/koutou/shiken/1421021.htm",
     officialReuseTermsUrl: "https://www.mext.go.jp/b_menu/1351168.htm",
     status: "live",
-    reuseSummary: "英語の一部を収録。公式問題・正答と、各選択肢の独自解説で学べます。",
+    reuseSummary: "英語と情報の一部を収録。公式問題・正答と、各選択肢の独自解説で学べます。",
     attributionTemplate: "出典：文部科学省 高等学校卒業程度認定試験。",
     remainingWork: [],
   },
