@@ -14,6 +14,7 @@ import paper2024_02 from "./fiscal-2024-02.json";
 import paper2024_03 from "./fiscal-2024-03.json";
 import paper2024_04 from "./fiscal-2024-04.json";
 import paper2024_06 from "./fiscal-2024-06.json";
+import paper2024_16 from "./fiscal-2024-16.json";
 
 export const KOGAI_16_QUESTIONS: Question[] = projectStagedQuestions([
   ...paper2025_02,
@@ -30,4 +31,5 @@ export const KOGAI_16_QUESTIONS: Question[] = projectStagedQuestions([
   ...paper2024_03,
   ...paper2024_04,
   ...paper2024_06,
+  ...paper2024_16,
 ]);
