@@ -875,7 +875,7 @@ eisei1: {
         categories: ["乗算", "除算", "見取算", "ビジネス計算"],
     }],
     seasons: ["first", "second"],
-    yearRange: { start: 2023, end: 2025 },
+    yearRange: { start: 2022, end: 2025 },
 },
 "kanken-3": {
     code: "kanken-3",
