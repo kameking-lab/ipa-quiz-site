@@ -1603,6 +1603,12 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "live", reuseSummary: "公式問題・正答と全肢解説を収録。", remainingWork: [],
   },
   {
+    slug: "kikenbutsu-otsu5", examCode: "kikenbutsu-otsu5", shortName: "危険物取扱者 乙種第5類", fullName: "危険物取扱者 乙種第5類",
+    domain: "safety", administrator: "一般財団法人消防試験研究センター",
+    officialQuestionsUrl: "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html", officialReuseTermsUrl: "https://www.shoubo-shiken.or.jp/kikenbutsu/exercise.html",
+    status: "live", reuseSummary: "2026年6月公表版の共通25問と類別10問を収録。公式正答に基づく全肢解説付き。", remainingWork: [],
+  },
+  {
     slug: "khk-setsubishi", shortName: "液化石油ガス設備士（学科）", fullName: "液化石油ガス設備士試験（学科）",
     domain: "safety", administrator: "高圧ガス保安協会",
     officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html", officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",

@@ -262,6 +262,14 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
   },
 
+  "kikenbutsu-otsu5": {
+    code: "kikenbutsu-otsu5", nameFull: "危険物取扱者 乙種第5類", urlSlug: "kikenbutsu-otsu5", level: "basic",
+    sessions: [
+      { session: "gakka", urlSlug: "gakka", expectedQuestions: 35, label: "筆記公表問題", categories: ["危険物に関する法令", "基礎的な物理学・化学", "危険物の性質並びにその火災予防及び消火の方法"] },
+    ],
+    seasons: ["published"], yearRange: { start: 2026, end: 2026 },
+  },
+
   "khk-kagaku": {
     code: "khk-kagaku", nameFull: "高圧ガス製造保安責任者（化学）", urlSlug: "khk-kagaku", level: "advanced",
     sessions: [
