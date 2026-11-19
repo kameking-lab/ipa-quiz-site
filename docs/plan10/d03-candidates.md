@@ -48,6 +48,7 @@
 | 高知県 | 2025 | 第1次 教職・一般教養 | 39 | [問題](https://www.pref.kochi.lg.jp/doc/2019112600143/file_contents/file_2025112631592_1.pdf)・[正答](https://www.pref.kochi.lg.jp/doc/2019112600143/file_contents/file_2025112631592_2.pdf) |
 | 島根県 | 2026 | 一般選考 教職教養 | 15 | [問題](https://www.pref.shimane.lg.jp/admin/syokuin/saiyou/saiyou_info_tchr/kakomondai.data/1kyousyoku.pdf)・[解答例](https://www.pref.shimane.lg.jp/admin/syokuin/saiyou/saiyou_info_tchr/kakomondai.data/1kyousyokukyouyou.pdf) |
 | 長崎県 | 2026 | 第1次 教職教養 | 35 | [問題・解答例](https://www.pref.nagasaki.jp/fs/3/8/5/5/3/_/R9______________8_5_10____.pdf) |
+| 長崎県 | 2025 | 第1次 教職教養 | 35 | [問題・解答例](https://www.pref.nagasaki.lg.jp/uploads/2025/06/1749960715.pdf) |
 
 収録数は、空欄の枝問を含む公式の解答欄単位。
 

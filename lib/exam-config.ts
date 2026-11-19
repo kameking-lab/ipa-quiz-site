@@ -119,9 +119,9 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
   "kyoin-nagasaki": {
     code: "kyoin-nagasaki", nameFull: "長崎県公立学校教員採用選考試験", urlSlug: "kyoin-nagasaki", level: "advanced",
     sessions: [
-      { session: "kyotsu", urlSlug: "kyotsu", expectedQuestions: 35, label: "第1次 教職教養", categories: ["教育法規", "教育課程", "生徒指導", "教育施策", "教育史", "教育心理"] },
+      { session: "kyotsu", urlSlug: "kyotsu", expectedQuestions: 35, label: "第1次 教職教養", categories: ["教育法規", "教育課程", "生徒指導", "教育施策", "人権教育", "教育史", "教育心理"] },
     ],
-    seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
   },
   "kyoin-shimane": {
     code: "kyoin-shimane", nameFull: "島根県公立学校教員採用候補者選考試験", urlSlug: "kyoin-shimane", level: "advanced",
