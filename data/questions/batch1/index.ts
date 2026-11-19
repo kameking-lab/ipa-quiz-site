@@ -4,7 +4,7 @@ import data1 from "./kyusui.json";
 import { BIRU_KAN_QUESTIONS } from "../biru-kan";
 import data3 from "./gijutsushi1-kikai.json";
 import data4 from "./hoshasen-2.json";
-import data5 from "./hoshasen-1.json";
+import { HOSHASEN_FIRST_QUESTIONS } from "../hoshasen/first-public";
 import data6 from "./khk-kikai-kou.json";
 import { KHK_KIKAI_OTSU_QUESTIONS } from "../khk-kikai-otsu";
 import data8 from "./energy-kanri.json";
@@ -14,7 +14,7 @@ export const BATCH1_QUESTIONS: Partial<Record<Question["exam"], Question[]>> = {
   "biru-kan": BIRU_KAN_QUESTIONS,
   "gijutsushi1-kikai": data3 as Question[],
   "hoshasen-2": data4 as Question[],
-  "hoshasen-1": data5 as Question[],
+  "hoshasen-1": HOSHASEN_FIRST_QUESTIONS,
   "khk-kikai-kou": data6 as Question[],
   "khk-kikai-otsu": KHK_KIKAI_OTSU_QUESTIONS,
   "energy-kanri": data8 as Question[],

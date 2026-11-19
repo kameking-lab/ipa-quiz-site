@@ -111,7 +111,7 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
 "kyusui": async () => isExamPublished("kyusui") ? (await import("@/data/questions/batch1/kyusui.json")).default as Question[] : [],
 "biru-kan": async () => isExamPublished("biru-kan") ? (await import("@/data/questions/biru-kan")).BIRU_KAN_QUESTIONS : [],
 "gijutsushi1-kikai": async () => isExamPublished("gijutsushi1-kikai") ? (await import("@/data/questions/batch1/gijutsushi1-kikai.json")).default as Question[] : [],
-"hoshasen-1": async () => isExamPublished("hoshasen-1") ? (await import("@/data/questions/batch1/hoshasen-1.json")).default as Question[] : [],
+"hoshasen-1": async () => isExamPublished("hoshasen-1") ? (await import("@/data/questions/hoshasen/first-public")).HOSHASEN_FIRST_QUESTIONS : [],
 "hoshasen-2": async () => isExamPublished("hoshasen-2") ? (await import("@/data/questions/batch1/hoshasen-2.json")).default as Question[] : [],
 "khk-kikai-kou": async () => isExamPublished("khk-kikai-kou") ? (await import("@/data/questions/batch1/khk-kikai-kou.json")).default as Question[] : [],
 "khk-kikai-otsu": async () => isExamPublished("khk-kikai-otsu") ? (await import("@/data/questions/khk-kikai-otsu")).KHK_KIKAI_OTSU_QUESTIONS : [],
