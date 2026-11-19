@@ -529,6 +529,10 @@ fp2: {
             session: "dekyo-analog2", urlSlug: "analog2", expectedQuestions: 62, label: "第二級アナログ通信",
             categories: ["電気通信技術の基礎", "端末設備の接続のための技術及び理論", "端末設備の接続に関する法規"],
         },
+        {
+            session: "dekyo-analog1", urlSlug: "analog1", expectedQuestions: 72, label: "第一級アナログ通信",
+            categories: ["電気通信技術の基礎", "端末設備の接続のための技術及び理論", "端末設備の接続に関する法規"],
+        },
     ],
     seasons: ["round2"],
     yearRange: { start: 2024, end: 2024 },
