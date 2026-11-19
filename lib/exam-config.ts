@@ -1999,6 +1999,12 @@ caremanager: {
         { session: "senmon", urlSlug: "senmon", expectedQuestions: 50, label: "専門試験", categories: ["憲法", "民法", "行政法", "刑法", "経済理論"] },
     ], seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
+"kyoin-osaka": {
+    code: "kyoin-osaka", nameFull: "大阪府公立学校教員採用選考テスト", urlSlug: "kyoin-osaka", level: "advanced",
+    sessions: [
+        { session: "kyotsu", urlSlug: "kyotsu", expectedQuestions: 30, label: "第1次選考 筆答", categories: ["教育課程", "教育法規", "教育施策", "特別支援教育", "生徒指導", "教育心理", "学校安全", "教育史", "数的推理", "英語", "資料解釈", "判断推理"] },
+    ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
+},
 "kyoin-tokyo": {
     code: "kyoin-tokyo", nameFull: "東京都公立学校教員採用候補者選考", urlSlug: "kyoin-tokyo", level: "advanced",
     sessions: [

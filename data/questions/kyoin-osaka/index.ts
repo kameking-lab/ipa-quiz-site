@@ -1,0 +1,3 @@
+import { KYOIN_OSAKA_2026 } from "./2026";
+
+export const KYOIN_OSAKA_QUESTIONS = KYOIN_OSAKA_2026;

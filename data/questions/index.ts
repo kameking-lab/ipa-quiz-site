@@ -342,6 +342,7 @@ import { TETSUDO_SHARYO2_QUESTIONS } from "./tetsudo-sharyo2";
 import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
 import { COURT_STAFF_QUESTIONS } from "./saibansho-ippan-dai";
 import { KYOIN_TOKYO_QUESTIONS } from "./kyoin-tokyo";
+import { KYOIN_OSAKA_QUESTIONS } from "./kyoin-osaka";
 import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
@@ -714,6 +715,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 
 ...(isExamPublished("saibansho-ippan-dai") ? { "saibansho-ippan-dai": COURT_STAFF_QUESTIONS } : {}),
 ...(isExamPublished("kyoin-tokyo") ? { "kyoin-tokyo": KYOIN_TOKYO_QUESTIONS } : {}),
+...(isExamPublished("kyoin-osaka") ? { "kyoin-osaka": KYOIN_OSAKA_QUESTIONS } : {}),
 ...(isExamPublished("tsukanshi") ? { "tsukanshi": TSUKANSHI_QUESTIONS } : {})
 };
 
