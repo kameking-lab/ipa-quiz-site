@@ -6,6 +6,7 @@ import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import manifest from "@/reports/LQ3-20261104/adoption-manifest.json";
 import continuationManifest from "@/reports/LQ3B-20261104/adoption-manifest.json";
 import lq3dManifest from "@/reports/LQ3D-20261104/adoption-manifest.json";
+import plan9C13Manifest from "@/data/exam-library/pe-first/plan9-c13-adoption.json";
 import { PE_FIRST_CATALOG } from "@/lib/exam-library/pe-first-catalog";
 import { loadPeFirstPaper } from "@/lib/exam-library/pe-first";
 import { findExamEntry } from "@/lib/exam-library-catalog";
@@ -30,9 +31,9 @@ describe("LQ3 existing manuscript adoption", () => {
   });
   it("preserves all 17 accepted sets and adds only complete continuation papers", () => {
     const continuationCount = continuationManifest.length + lq3dManifest.length;
-    expect(PE_FIRST_CATALOG).toHaveLength(17 + continuationCount);
-    expect(PE_FIRST_CATALOG.reduce((sum, entry) => sum + entry.questionCount!, 0)).toBe(595 + 35 * continuationCount);
-    expect(PE_FIRST_CATALOG.reduce((sum, entry) => sum + entry.scoredCount!, 0)).toBe(594 + 35 * continuationCount);
+    expect(PE_FIRST_CATALOG).toHaveLength(17 + continuationCount + plan9C13Manifest.length);
+    expect(PE_FIRST_CATALOG.reduce((sum, entry) => sum + entry.questionCount!, 0)).toBe(595 + 35 * continuationCount + plan9C13Manifest.reduce((sum, paper) => sum + paper.questionCount, 0));
+    expect(PE_FIRST_CATALOG.reduce((sum, entry) => sum + entry.scoredCount!, 0)).toBe(594 + 35 * continuationCount + plan9C13Manifest.reduce((sum, paper) => sum + paper.scoredCount, 0));
     for (const entry of PE_FIRST_CATALOG) {
       expect(findExamEntry(entry.id)).toEqual(entry);
       expect(listAvailableExamIds()).toContain(entry.id);
