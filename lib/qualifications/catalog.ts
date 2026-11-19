@@ -1597,13 +1597,11 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["publicAllowed=falseで維持", "公開する場合は別途統合・公開判断が必要"],
 },
   {
-    slug: "khk-hanbai2", shortName: "第二種販売主任者", fullName: "高圧ガス販売主任者 第二種",
+    slug: "khk-hanbai2", examCode: "khk-hanbai2", shortName: "高圧ガス販売主任者 第二種", fullName: "高圧ガス販売主任者 第二種",
     domain: "safety", administrator: "高圧ガス保安協会",
     officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html", officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",
-    status: "ready-to-ingest", stagingDataPath: "data/qualification-staging/khk-hanbai",
-    reuseSummary: "令和7・6年度80問を未公開stagingに保存。",
-    remainingWork: ["publicAllowed=falseで維持", "公開する場合は別途統合・公開判断が必要"],
-},
+    status: "live", reuseSummary: "公式問題・正答と全肢解説を収録。", remainingWork: [],
+  },
   {
     slug: "khk-setsubishi", shortName: "液化石油ガス設備士（学科）", fullName: "液化石油ガス設備士試験（学科）",
     domain: "safety", administrator: "高圧ガス保安協会",
