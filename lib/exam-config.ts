@@ -1462,7 +1462,7 @@ shuwa: {
 "jken-katsuyo1": {
     code: "jken-katsuyo1", nameFull: "情報検定（J検）情報活用1級", urlSlug: "jken-katsuyo1", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 43, label: "情報活用1級", categories: ["情報と情報の利用", "パソコンを利用したシステム", "ネットワークの利用", "情報ネットワーク社会への対応", "情報セキュリティ", "表計算ソフト等を利用した問題解決"] }],
-    seasons: ["first", "second"], yearRange: { start: 2024, end: 2026 },
+    seasons: ["first", "second"], yearRange: { start: 2023, end: 2026 },
 },
 "jken-katsuyo2": {
     code: "jken-katsuyo2", nameFull: "情報検定（J検）情報活用2級", urlSlug: "jken-katsuyo2", level: "basic",
