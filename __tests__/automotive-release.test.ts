@@ -8,6 +8,8 @@ import { AUTOMOTIVE_QUESTIONS, getAutomotiveQuestions } from "@/data/questions/a
 import metadata from "@/data/questions/automotive/qualifications.json";
 import reviewed from "@/data/questions/automotive/reviewed.json";
 import priorSittings from "@/data/questions/automotive/prior-sittings.json";
+import body2024Second from "@/data/questions/automotive/2024-second-body.json";
+import body2024SecondSources from "@/data/questions/automotive/2024-second-body-sources.json";
 import recovery from "@/data/qualification-staging/automotive/latest-two/qa/lq1b-recovery-ledger.json";
 import continuation from "@/data/qualification-staging/automotive/latest-two/qa/lq1c-progress.json";
 import continuationCandidates from "@/data/qualification-staging/automotive/latest-two/qa/lq1c-candidates.json";
@@ -53,7 +55,7 @@ describe("recovered automotive release", () => {
     const recoveredCodes = new Set(metadata.map(row => row.exam));
     const recoveredCards = [...directory.featured, ...directory.compact].filter(card => recoveredCodes.has(card.key));
     expect(recoveredCards).toHaveLength(11);
-    expect(recoveredCards.reduce((sum, card) => sum + card.questionCount, 0)).toBe(recovery.releaseOriginals + priorSittings.length);
+    expect(recoveredCards.reduce((sum, card) => sum + card.questionCount, 0)).toBe(recovery.releaseOriginals + priorSittings.length + body2024Second.length);
     for (const row of metadata) {
       const exam = row.exam as AutomotiveExamCode;
       const questions = getAutomotiveQuestions(exam);
@@ -73,8 +75,8 @@ describe("recovered automotive release", () => {
   it("preserves accepted candidate bytes with matching receipt hashes and excludes unresolved originals", () => {
     expect(recovery.recoveredReviewedOriginals).toBe(385);
     // W2 (2026-11-06) appended the previous sitting of five subjects; see automotive-prior-sittings.test.ts.
-    expect(AUTOMOTIVE_QUESTIONS).toHaveLength(recovery.releaseOriginals + priorSittings.length);
-    expect(new Set(AUTOMOTIVE_QUESTIONS.map((q) => q.id)).size).toBe(recovery.releaseOriginals + priorSittings.length);
+    expect(AUTOMOTIVE_QUESTIONS).toHaveLength(recovery.releaseOriginals + priorSittings.length + body2024Second.length);
+    expect(new Set(AUTOMOTIVE_QUESTIONS.map((q) => q.id)).size).toBe(recovery.releaseOriginals + priorSittings.length + body2024Second.length);
     expect(recovery.notYetReleasedIds).toHaveLength(610 - recovery.releaseOriginals);
     const ids = new Set(AUTOMOTIVE_QUESTIONS.map((q) => q.id));
     for (const id of recovery.notYetReleasedIds) expect(ids.has(id), id).toBe(false);
@@ -86,6 +88,26 @@ describe("recovered automotive release", () => {
         for (const evidence of row.supportingEvidence ?? []) {
           expect(createHash("sha256").update(fs.readFileSync(path.join(process.cwd(), evidence.path))).digest("hex"), q.id).toBe(evidence.sha256);
         }
+      }
+    }
+  });
+
+  it("matches the 2024 second-sitting body paper and its separate official key", () => {
+    expect(body2024Second.map(q => q.qNumber)).toEqual(Array.from({ length: 40 }, (_, i) => i + 1));
+    const answers: Record<string, number> = body2024SecondSources.answers;
+    for (const q of body2024Second) {
+      expect(q.officialAnswerNumber).toBe(String(answers[q.qNumber]));
+      expect(q.answer).toBe("アイウエ"[answers[q.qNumber] - 1]);
+      expect(q.sourcePdfUrl).toBe(body2024SecondSources.sourcePdfUrl);
+      expect(q.sourceAnswerUrl).toBe(body2024SecondSources.sourceAnswerUrl);
+      expect(Object.keys(q.choiceExplanations)).toEqual(Object.keys(q.choices));
+      const released = getAutomotiveQuestions("jidosha-body").find(row => row.id === q.id)!;
+      expect(released.year).toBe(2024);
+      expect(released.season).toBe("second");
+      if (q.sourceFigureRequired) expect(released.imageUrls).toHaveLength(1);
+      for (const url of released.imageUrls ?? []) {
+        const bytes = fs.readFileSync(path.join(process.cwd(), "public", url));
+        expect(createHash("sha256").update(bytes).digest("hex") + ".webp").toBe(path.basename(url));
       }
     }
   });
