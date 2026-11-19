@@ -15,6 +15,7 @@ import { sessionLabel, buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
 import { GET as nextGET } from "@/app/api/questions/next/route";
 import scope from "@/reports/int7-20261105/release-scope.json";
 import receipt from "@/reports/int7-20261105/projection-receipt.json";
+import nurse2022 from "@/data/questions/junkango-kansai/2022-sources.json";
 import nurse2023 from "@/data/questions/junkango-kansai/2023-sources.json";
 import nurse2024 from "@/data/questions/junkango-kansai/2024-sources.json";
 
@@ -25,7 +26,7 @@ describe("INT7 batch3 public release integration", () => {
     expect(EXAM_CONFIGS[code].sessions.every(s => /[一-龯ぁ-んァ-ン]/.test(s.label))).toBe(true);
     if (code === "dojo-osen") expect(EXAM_CONFIGS[code].sessions.find(s => s.session === "pm")?.label).toBe("午後（選択式）");
     if (code === "chiiki-ryoko") expect(questions.every(q => /[一-龯ぁ-んァ-ン]/.test(q.category))).toBe(true);
-    expect(questions).toHaveLength(scope[code].exercises + (code === "junkango-kansai" ? nurse2024.answers.length + nurse2023.answers.length : 0));
+    expect(questions).toHaveLength(scope[code].exercises + (code === "junkango-kansai" ? nurse2024.answers.length + nurse2023.answers.length + nurse2022.answers.length : 0));
     expect(await getQuestionsForExam(code)).toEqual(questions);
     expect(getRegisteredExamCodes()).toContain(code);
     expect(getQualificationByExamCode(code)?.status).toBe("live");
@@ -53,10 +54,14 @@ describe("INT7 batch3 public release integration", () => {
   it.each([
     { year: 2024, examDate: "2024-02-04", edition: "令和5年度（2024年実施）", source: nurse2024 },
     { year: 2023, examDate: "2023-02-05", edition: "令和4年度（2023年実施）", source: nurse2023 },
+    { year: 2022, examDate: "2022-02-06", edition: "令和3年度（2022年実施）", source: nurse2022 },
   ])("uses the $year Kansai nursing exam's official answer order", ({ year, examDate, edition, source }) => {
     const round = QUESTIONS_BY_EXAM["junkango-kansai"]!.filter(q => q.year === year);
     expect(round.map(q => q.qNumber)).toEqual(Array.from({ length: 150 }, (_, i) => i + 1));
-    expect(round.map(q => q.answer)).toEqual(source.answers.map(n => "アイウエ"[Number(n) - 1]));
+    const toKana = (n: string) => "アイウエ"[Number(n) - 1];
+    expect(round.map(q => q.answer)).toEqual(source.answers.map(n =>
+      n.includes("・") ? n.split("・").map(toKana) : toKana(n),
+    ));
     for (const q of round) {
       expect(q.sourcePdfUrl).toBe(source.sourcePdfUrl);
       expect(q.sourceAnswerUrl).toBe(source.sourceAnswerUrl);
@@ -89,6 +94,12 @@ describe("INT7 batch3 public release integration", () => {
     expect(isAcceptedAnswer(nurse.answer, "イ")).toBe(true);
     expect(isAcceptedAnswer(nurse.answer, "エ")).toBe(true);
     expect(shuffleChoices(nurse)).toBe(nurse);
+    const revised = QUESTIONS_BY_EXAM["junkango-kansai"]!.find(q => q.year === 2022 && q.qNumber === 18)!;
+    expect(revised.answer).toEqual(["ウ", "エ"]);
+    expect(revised.requiredSelections).toBeUndefined();
+    expect(isAcceptedAnswer(revised.answer, "ウ")).toBe(true);
+    expect(isAcceptedAnswer(revised.answer, "エ")).toBe(true);
+    expect(isAcceptedAnswer(revised.answer, "イ")).toBe(false);
   });
   it("excludes official credit-for-all and keeps the 2026-only scope explicit", () => {
     expect(receipt.excluded).toHaveLength(2);
