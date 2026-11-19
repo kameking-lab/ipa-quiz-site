@@ -300,7 +300,7 @@ kanteishi: {
         { session: "gyosei", urlSlug: "gyosei", expectedQuestions: 40, label: "不動産に関する行政法規", categories: ["行政法規"] },
         { session: "riron", urlSlug: "riron", expectedQuestions: 40, label: "不動産の鑑定評価に関する理論", categories: ["鑑定評価理論"] },
     ],
-    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+    seasons: ["annual"], yearRange: { start: 2023, end: 2026 },
 },
 kaikeishi: {
     code: "kaikeishi", nameFull: "公認会計士試験（短答式）", urlSlug: "kaikeishi", level: "specialist",

@@ -28,20 +28,21 @@ function sourceMarkup(question: Question, phase: "before" | "after"): string {
 
 describe("locally connected PDL question data", () => {
   it("joins exactly the two screened exams and their actual sessions", () => {
-    expect(KANTEISHI_QUESTIONS).toHaveLength(160);
+    expect(KANTEISHI_QUESTIONS).toHaveLength(169);
     expect(KAIKEISHI_QUESTIONS).toHaveLength(186);
-    expect(new Set(questions.map((q) => q.id)).size).toBe(346);
+    expect(new Set(questions.map((q) => q.id)).size).toBe(355);
+    expect(KANTEISHI_QUESTIONS.filter((q) => q.year === 2023)).toHaveLength(9);
     expect(KANTEISHI_QUESTIONS.filter((q) => q.year === 2025)).toHaveLength(80);
     expect(KANTEISHI_QUESTIONS.filter((q) => q.year === 2026)).toHaveLength(80);
-    expect(KANTEISHI_QUESTIONS.filter((q) => q.session === "gyosei")).toHaveLength(80);
-    expect(KANTEISHI_QUESTIONS.filter((q) => q.session === "riron")).toHaveLength(80);
+    expect(KANTEISHI_QUESTIONS.filter((q) => q.session === "gyosei")).toHaveLength(85);
+    expect(KANTEISHI_QUESTIONS.filter((q) => q.session === "riron")).toHaveLength(84);
     expect(KAIKEISHI_QUESTIONS.filter((q) => q.season === "round1")).toHaveLength(93);
     expect(KAIKEISHI_QUESTIONS.filter((q) => q.season === "round2")).toHaveLength(93);
     expect(KAIKEISHI_QUESTIONS.filter((q) => q.session === "kigyo")).toHaveLength(40);
     expect(KAIKEISHI_QUESTIONS.filter((q) => q.session === "kanri")).toHaveLength(36);
     expect(KAIKEISHI_QUESTIONS.filter((q) => q.session === "kansa")).toHaveLength(40);
     expect(KAIKEISHI_QUESTIONS.filter((q) => q.session === "zaimu")).toHaveLength(70);
-    expect(reviewedManifest.questions).toHaveLength(346);
+    expect(reviewedManifest.questions).toHaveLength(355);
     expect(reviewedManifest.assets).toHaveLength(56);
   });
 
@@ -79,7 +80,7 @@ describe("locally connected PDL question data", () => {
         gridChoiceCount += keys.filter((key) => q.choices?.[key]?.includes("| --- |")).length;
       }
     }
-    expect(appraisalReasons).toBe(800);
+    expect(appraisalReasons).toBe(845);
     expect(accountingReasons).toBe(1106);
     expect(appraisalSections).toBe(70);
     expect(accountingSections).toBe(725);
@@ -197,7 +198,7 @@ describe("PDL route and admission boundaries", () => {
 
   it("exposes the two chunks via the lazy registry only when published", async () => {
     const registered = getRegisteredExamCodes();
-    for (const [exam, expected] of [["kanteishi", 160], ["kaikeishi", 186]] as const) {
+    for (const [exam, expected] of [["kanteishi", 169], ["kaikeishi", 186]] as const) {
       const loaded = await getQuestionsForExam(exam);
       expect(loaded.length).toBe(registered.includes(exam) ? expected : 0);
     }
