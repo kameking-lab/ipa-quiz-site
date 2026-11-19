@@ -1,0 +1,224 @@
+[
+  {
+    "id": "g-kentei-2024-04-q01",
+    "exam": "g-kentei",
+    "session": "gakka",
+    "year": 2024,
+    "season": "cbt",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "人工知能とは",
+    "topicTags": [
+      "フレーム問題"
+    ],
+    "difficulty": 2,
+    "question": "以下の文章を読み、空欄に最もよく当てはまる選択肢を1つ選べ\n\n人工知能は有限の処理能力しかないため、現実に起こりうる問題すべてに対処することができない (　) がある",
+    "choices": {
+      "ア": "フレーム問題",
+      "イ": "ブラックボックス問題",
+      "ウ": "シンボルグラウンディング問題",
+      "エ": "最適化問題"
+    },
+    "answer": "ア",
+    "explanation": "フレーム問題は、限られた計算資源で行動に関わる情報を選び、無関係な事柄を切り離す難しさです。",
+    "choiceExplanations": {
+      "ア": "フレーム問題は、限られた計算資源で行動に関わる情報を選び、無関係な事柄を切り離す難しさです。",
+      "イ": "ブラックボックス問題は、モデルがなぜその判定をしたのかを内部の処理から説明しにくいことです。",
+      "ウ": "シンボルグラウンディング問題は、記号を現実の対象や経験に結び付けて意味を持たせる難しさです。",
+      "エ": "最適化問題は、目的関数が最良になる解を制約の下で探す問題です。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jdla.org/certificate/general/issues/#g-issues_No01",
+    "sourceAnswerUrl": "https://www.jdla.org/certificate/general/issues/#ans",
+    "sourceAttribution": "出典：一般社団法人日本ディープラーニング協会「G検定の例題・過去問」 G検定2024#4に出題された過去問題。",
+    "license": "JDLA-owner-authorized",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第4回",
+    "officialQuestionLabel": "第4回・公開Q1"
+  },
+  {
+    "id": "g-kentei-2024-04-q08",
+    "exam": "g-kentei",
+    "session": "gakka",
+    "year": 2024,
+    "season": "cbt",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "ディープラーニングの要素技術",
+    "topicTags": [
+      "パディング"
+    ],
+    "difficulty": 2,
+    "question": "畳み込みニューラルネットワーク (CNN) において、パディングの効果の説明として、最も適切な選択肢を1つ選べ",
+    "choices": {
+      "ア": "移動不変性を強化する",
+      "イ": "データの特定範囲の特徴を抽出する",
+      "ウ": "特徴マップを小さくする",
+      "エ": "出力サイズを調整することができる"
+    },
+    "answer": "エ",
+    "explanation": "入力の縁を拡張する量を変えることで出力の縦横サイズを調整できます。",
+    "choiceExplanations": {
+      "ア": "移動への頑健性にはプーリングなどが寄与します。パディングの主な役割は、入力の縁に値を追加することです。",
+      "イ": "局所的な特徴を抽出するのはフィルタの畳み込みです。パディングはフィルタを適用できる入力範囲を変えます。",
+      "ウ": "フィルタとストライドを固定すると、パディングを追加した場合の出力は通常、追加しない場合より大きくなります。",
+      "エ": "入力の縁を拡張する量を変えることで出力の縦横サイズを調整できます。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jdla.org/certificate/general/issues/#g-issues_No05",
+    "sourceAnswerUrl": "https://www.jdla.org/certificate/general/issues/#ans",
+    "sourceAttribution": "出典：一般社団法人日本ディープラーニング協会「G検定の例題・過去問」 G検定2024#4に出題された過去問題。",
+    "license": "JDLA-owner-authorized",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第4回",
+    "officialQuestionLabel": "第4回・公開Q8"
+  },
+  {
+    "id": "g-kentei-2024-04-q09",
+    "exam": "g-kentei",
+    "session": "gakka",
+    "year": 2024,
+    "season": "cbt",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "ディープラーニングの要素技術",
+    "topicTags": [
+      "GAP"
+    ],
+    "difficulty": 2,
+    "question": "以下の文章を読み、空欄に最もよく当てはまる選択肢を1つ選べ\n\n畳み込みニューラルネットワーク (CNN) の出力層で、全結合層に代わって、(　) が用いられるようになった結果、出力結果と特徴マップとの関連が強くなることでこれまでよりも解釈しやすくなった",
+    "choices": {
+      "ア": "グローバルアベレージプーリング (GAP)",
+      "イ": "最大値プーリング",
+      "ウ": "平均値プーリング",
+      "エ": "サブサンプリング層"
+    },
+    "answer": "ア",
+    "explanation": "GAPは各特徴マップ全体の平均を一つの値にします。特徴マップの寄与を出力と対応させやすくなるため、全結合層に代えて使われます。",
+    "choiceExplanations": {
+      "ア": "GAPは各特徴マップ全体の平均を一つの値にします。特徴マップの寄与を出力と対応させやすくなるため、全結合層に代えて使われます。",
+      "イ": "最大値プーリングは領域ごとの最大反応を残す操作です。特徴マップ全体を平均する方式とは集約の仕方が異なります。",
+      "ウ": "一般的な平均値プーリングは局所窓ごとの平均で特徴マップを縮小します。この設問ではマップ全体を平均する方式が指定されています。",
+      "エ": "サブサンプリングは空間解像度を下げる操作の総称で、マップ全体の平均による出力との対応を特定しません。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jdla.org/certificate/general/issues/#g-issues_No05",
+    "sourceAnswerUrl": "https://www.jdla.org/certificate/general/issues/#ans",
+    "sourceAttribution": "出典：一般社団法人日本ディープラーニング協会「G検定の例題・過去問」 G検定2024#4に出題された過去問題。",
+    "license": "JDLA-owner-authorized",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第4回",
+    "officialQuestionLabel": "第4回・公開Q9"
+  },
+  {
+    "id": "g-kentei-2024-04-q11",
+    "exam": "g-kentei",
+    "session": "gakka",
+    "year": 2024,
+    "season": "cbt",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "ディープラーニングの応用例",
+    "topicTags": [
+      "スケーリング則"
+    ],
+    "difficulty": 2,
+    "question": "ChatGPTのベースとなるGPTは、大規模なデータセットを用いることでモデルを大規模化できている。この前提となる法則として、最も適切な選択肢を1つ選べ",
+    "choices": {
+      "ア": "スケーリング則",
+      "イ": "正規化則",
+      "ウ": "中心極限定理",
+      "エ": "マルコフ過程"
+    },
+    "answer": "ア",
+    "explanation": "スケーリング則は、データ量・パラメータ数・計算量を増やすとモデル性能がどう変わるかを記述する経験則です。",
+    "choiceExplanations": {
+      "ア": "スケーリング則は、データ量・パラメータ数・計算量を増やすとモデル性能がどう変わるかを記述する経験則です。",
+      "イ": "正規化はデータや中間表現の尺度を調整する操作です。大規模化に伴う性能の推移を表す法則とは異なります。",
+      "ウ": "中心極限定理は、一定の条件下で独立な確率変数の和や平均の分布が正規分布に近づくという定理です。",
+      "エ": "マルコフ過程は、現在の状態を与えれば将来の状態の分布が過去の状態に依存しない確率過程です。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jdla.org/certificate/general/issues/#g-issues_No06",
+    "sourceAnswerUrl": "https://www.jdla.org/certificate/general/issues/#ans",
+    "sourceAttribution": "出典：一般社団法人日本ディープラーニング協会「G検定の例題・過去問」 G検定2024#4に出題された過去問題。",
+    "license": "JDLA-owner-authorized",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第4回",
+    "officialQuestionLabel": "第4回・公開Q11"
+  },
+  {
+    "id": "g-kentei-2024-04-q12",
+    "exam": "g-kentei",
+    "session": "gakka",
+    "year": 2024,
+    "season": "cbt",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "ディープラーニングの応用例",
+    "topicTags": [
+      "モデル圧縮"
+    ],
+    "difficulty": 2,
+    "question": "以下の文章を読み、空欄に最もよく当てはまる選択肢を1つ選べ\n\nエッジデバイスで深層学習モデルを動かすため、しばしば (　) と呼ばれる、モデルの重みそれぞれをより少ないバイト数で表現するためのプロセスが取られることがある",
+    "choices": {
+      "ア": "量子化",
+      "イ": "プルーニング",
+      "ウ": "蒸留",
+      "エ": "標準化"
+    },
+    "answer": "ア",
+    "explanation": "量子化は32ビット浮動小数点の重みを8ビット整数などで表し、重み1個当たりの記憶量を抑えます。",
+    "choiceExplanations": {
+      "ア": "量子化は32ビット浮動小数点の重みを8ビット整数などで表し、重み1個当たりの記憶量を抑えます。",
+      "イ": "プルーニングは寄与の小さい結合やユニットを削り、重みの個数を減らす手法です。",
+      "ウ": "蒸留は大きな教師モデルの出力などを使って小さな生徒モデルを訓練する手法です。",
+      "エ": "標準化は値の平均や分散の尺度を整える処理で、表現のビット幅を縮める操作ではありません。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jdla.org/certificate/general/issues/#g-issues_No06",
+    "sourceAnswerUrl": "https://www.jdla.org/certificate/general/issues/#ans",
+    "sourceAttribution": "出典：一般社団法人日本ディープラーニング協会「G検定の例題・過去問」 G検定2024#4に出題された過去問題。",
+    "license": "JDLA-owner-authorized",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第4回",
+    "officialQuestionLabel": "第4回・公開Q12"
+  },
+  {
+    "id": "g-kentei-2024-04-q20",
+    "exam": "g-kentei",
+    "session": "gakka",
+    "year": 2024,
+    "season": "cbt",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "AI倫理・AIガバナンス",
+    "topicTags": [
+      "AIの環境負荷"
+    ],
+    "difficulty": 2,
+    "question": "AIが与える地球環境への影響などのAIにおけるサステナビリティ上の課題について、最も不適切な選択肢を1つ選べ",
+    "choices": {
+      "ア": "モデルの巨大化・複雑化に伴い学習に必要な電力の増大がサステナビリティの点から問題となっている",
+      "イ": "運搬などの分野で効率の良い経路を導き出すことで、運搬によるエネルギー消費を抑えるというAIを用いた環境保護の取り組みが存在する",
+      "ウ": "AIに多数のデータを学習させることは、学習効率が向上するため、電力消費量が少数データの学習の場合に比べて低下する",
+      "エ": "AIの学習や推論により発生する電力消費を抑えるべく、環境負荷の少ないモデルの開発が進められている"
+    },
+    "answer": "ウ",
+    "explanation": "訓練データが増えると処理すべき計算も増え得ます。学習効率が上がるという理由だけで総電力消費が下がるとはいえません。",
+    "choiceExplanations": {
+      "ア": "大規模なモデルの訓練に必要な計算には電力を使うため、モデルの性能とともに環境負荷も評価する必要があります。",
+      "イ": "配送経路を効率化すると走行距離や燃料を削減できるため、AIの出力が環境負荷の抑制につながる場合があります。",
+      "ウ": "訓練データが増えると処理すべき計算も増え得ます。学習効率が上がるという理由だけで総電力消費が下がるとはいえません。",
+      "エ": "量子化やモデルの軽量化など、訓練・推論に必要な計算資源を減らす研究が進められています。"
+    },
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jdla.org/certificate/general/issues/#g-issues_No10",
+    "sourceAnswerUrl": "https://www.jdla.org/certificate/general/issues/#ans",
+    "sourceAttribution": "出典：一般社団法人日本ディープラーニング協会「G検定の例題・過去問」 G検定2024#4に出題された過去問題。",
+    "license": "JDLA-owner-authorized",
+    "sourceExamYear": 2024,
+    "sourceExamSession": "第4回",
+    "officialQuestionLabel": "第4回・公開Q20"
+  }
+]
