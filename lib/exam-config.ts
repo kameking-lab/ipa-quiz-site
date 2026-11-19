@@ -515,6 +515,15 @@ fp2: {
     seasons: ["may", "september", "january", "published"],
     yearRange: { start: 2024, end: 2026 },
 },
+"kogai-01": {
+    code: "kogai-01",
+    nameFull: "公害防止管理者等国家試験（公害総論）",
+    urlSlug: "kogai-01",
+    level: "specialist",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 15, label: "公害総論", categories: ["公害総論"] }],
+    seasons: ["annual"],
+    yearRange: { start: 2025, end: 2025 },
+},
 "dekyo-charge-5": {
     code: "dekyo-charge-5",
     nameFull: "電気通信設備工事担任者試験",
