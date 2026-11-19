@@ -1992,6 +1992,11 @@ caremanager: {
 
 
 
+"kounin-geography": {
+    code: "kounin-geography", nameFull: "高等学校卒業程度認定試験 地理", urlSlug: "kounin-geography", level: "basic",
+    sessions: [{ session: "tiri", urlSlug: "tiri", expectedQuestions: 20, label: "地理", categories: ["地図と地理情報システム", "生活文化と国際理解", "地球的課題と国際協力", "自然環境と防災", "生活圏の調査"] }],
+    seasons: ["round2"], yearRange: { start: 2024, end: 2024 },
+},
 "zensho-boki-2": {
     code: "zensho-boki-2", nameFull: "全商簿記実務検定試験 2級", urlSlug: "zensho-boki-2", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 6, label: "商業簿記", categories: ["仕訳", "帳簿", "伝票", "決算", "株式会社", "簿記用語"] }],

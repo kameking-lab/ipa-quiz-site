@@ -340,6 +340,7 @@ import { TETSUDO_SHARYO2_QUESTIONS } from "./tetsudo-sharyo2";
 
 
 import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
+import { KOUNIN_GEOGRAPHY_QUESTIONS } from "./kounin-geography";
 import { ZENSHO_BOKI_2_QUESTIONS } from "./zensho-boki-2";
 import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 
@@ -711,6 +712,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("kikai-hozen") ? { "kikai-hozen": KIKAI_HOZEN_QUESTIONS } : {}),
 ...(isExamPublished("tobi2") ? { "tobi2": TOBI2_QUESTIONS } : {}),
 
+...(isExamPublished("kounin-geography") ? { "kounin-geography": KOUNIN_GEOGRAPHY_QUESTIONS } : {}),
 ...(isExamPublished("zensho-boki-2") ? { "zensho-boki-2": ZENSHO_BOKI_2_QUESTIONS } : {}),
 ...(isExamPublished("tsukanshi") ? { "tsukanshi": TSUKANSHI_QUESTIONS } : {})
 };

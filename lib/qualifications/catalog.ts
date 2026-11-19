@@ -1836,6 +1836,14 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["一般教養科目（各年44問中20問選択）の収録可否"],
 },
   {
+    slug: "kounin-geography", examCode: "kounin-geography", shortName: "高卒認定 地理", fullName: "高等学校卒業程度認定試験 地理",
+    domain: "personal-services", administrator: "文部科学省",
+    officialQuestionsUrl: "https://www.mext.go.jp/a_menu/koutou/shiken/1421021.htm",
+    officialReuseTermsUrl: "https://www.mext.go.jp/b_menu/1351168.htm", status: "live",
+    reuseSummary: "高卒認定試験の地理を、文部科学省の原問・正答と全肢解説で収録。",
+    remainingWork: [],
+  },
+  {
     slug: "zensho-boki-2", examCode: "zensho-boki-2", shortName: "全商簿記2級", fullName: "全商簿記実務検定試験 2級",
     domain: "accounting", administrator: "全国商業高等学校協会",
     officialQuestionsUrl: "https://zensho.or.jp/examination/pastexams/bookkeeping/",

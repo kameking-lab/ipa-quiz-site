@@ -818,6 +818,7 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
 
 
 
+    "kounin-geography": "高等学校卒業程度認定試験 地理",
     "zensho-boki-2": "全商簿記実務検定試験 2級",
     "tsukanshi": "通関士試験"
 };
