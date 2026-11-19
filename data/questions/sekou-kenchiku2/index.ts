@@ -2,6 +2,7 @@ import type { ChoiceKey, Question, Season } from "@/lib/questions/types";
 import early from "./2026-early.json";
 import late from "./2025-late.json";
 import late2024 from "./2024-late.json";
+import early2024 from "./2024-early.json";
 
 const keys: ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ"];
 type Source = {
@@ -50,5 +51,5 @@ export const SEKOU_KENCHIKU2_2026_QUESTIONS = convert(early as Source, "2026-01-
 export const SEKOU_KENCHIKU2_2025_QUESTIONS = convert(late as Source, "2025-01-01");
 export const SEKOU_KENCHIKU2_QUESTIONS: Question[] = [
   ...SEKOU_KENCHIKU2_2026_QUESTIONS, ...SEKOU_KENCHIKU2_2025_QUESTIONS,
-  ...convert(late2024 as Source),
+  ...convert(late2024 as Source), ...convert(early2024 as Source),
 ];
