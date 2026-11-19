@@ -1806,7 +1806,7 @@ sokuryoshiho: {
       { session: "gakka-III", urlSlug: "gakka-III", expectedQuestions: 80, label: "3級", categories: BUSINESS_CALC_CATEGORIES },
     ],
     seasons: ["first", "second"],
-    yearRange: { start: 2023, end: 2024 },
+    yearRange: { start: 2022, end: 2024 },
 },
 caremanager: {
     code: "caremanager", nameFull: "介護支援専門員実務研修受講試験", urlSlug: "caremanager", level: "basic",
