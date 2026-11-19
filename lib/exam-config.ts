@@ -873,6 +873,9 @@ jobpass: {
     sessions: [{
         session: "gakka", urlSlug: "gakka", expectedQuestions: 35, label: "3級",
         categories: ["ビジネス常識", "時事・社会", "組織・業務基本", "コミュニケーション手法"],
+    }, {
+        session: "gakka-II", urlSlug: "gakka-II", expectedQuestions: 35, label: "2級",
+        categories: ["ビジネス常識", "時事・社会", "組織・業務基本", "コミュニケーション手法"],
     }],
     seasons: ["second"],
     yearRange: { start: 2024, end: 2024 },
