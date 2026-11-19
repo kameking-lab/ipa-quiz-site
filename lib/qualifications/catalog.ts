@@ -1471,7 +1471,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html",
     officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",
     status: "live",
-    reuseSummary: "令和7・6年度80問を収録。公式公表問題・正答、全選択肢の独自解説と必要な図を確認できます。法令は出題時点の内容です。",
+    reuseSummary: "令和6〜8年度120問を収録。公式公表問題・正答、全選択肢の独自解説と必要な図を確認できます。法令は出題時点の内容です。",
     attributionTemplate: "出典：高圧ガス保安協会 令和○年度 第二種冷凍機械 ○科目 問○。解説は過去問AI独自作成。法令は出題時点。",
     remainingWork: [],
 },

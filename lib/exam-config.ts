@@ -1506,7 +1506,7 @@ shinrishi: {
         { session: "hoan", urlSlug: "hoan", expectedQuestions: 10, label: "保安管理技術", categories: ["保安管理技術"] },
         { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 10, label: "学識", categories: ["学識"] },
     ],
-    seasons: ["annual"], yearRange: { start: 2024, end: 2025 },
+    seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
 "khk-reito-1": {
     code: "khk-reito-1", nameFull: "高圧ガス製造保安責任者試験（第一種冷凍機械）", urlSlug: "khk-reito-1", level: "advanced",
