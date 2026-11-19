@@ -4,6 +4,7 @@ import sharedQuestions from "../batch1/gijutsushi1-kikai.json";
 // 適性科目は全技術部門で共通。既存の原問、図、解説を共通科目の資格コードでも使う。
 const officialKeys: Readonly<Record<number, string>> = {
   2025: "315315144344522",
+  2024: "451152435353532",
 };
 const choiceKeys = ["ア", "イ", "ウ", "エ", "オ"] as const;
 
@@ -18,7 +19,7 @@ export const GIJUTSUSHI1_TEKISEI_QUESTIONS: Question[] = (sharedQuestions as Que
     const choiceExplanations = Object.fromEntries(
       Object.entries(q.choiceExplanations).map(([key, explanation]) => [
         key,
-        explanation.replace(/^(?:誤り|正答|適切|不適切|正しい組合せ|適切な組合せ)です。/, ""),
+        explanation.replace(/^(?:(?:誤り|正答|適切|不適切|正しい組合せ|適切な組合せ|これが正答)です|政令に記載されています)。/, ""),
       ]),
     ) as Partial<Record<ChoiceKey, string>>;
     if (q.year === 2025 && qNumber === 10) {

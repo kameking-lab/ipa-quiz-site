@@ -291,7 +291,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
   "gijutsushi1-tekisei": {
     code: "gijutsushi1-tekisei", nameFull: "技術士第一次試験（適性科目）", urlSlug: "gijutsushi1-tekisei", level: "specialist",
     sessions: [{ session: "ippan", urlSlug: "ippan", expectedQuestions: 15, label: "適性科目", categories: ["aptitude"] }],
-    seasons: ["annual"], yearRange: { start: 2025, end: 2025 },
+    seasons: ["annual"], yearRange: { start: 2024, end: 2025 },
   },
 "hoshasen-1": {"code":"hoshasen-1","nameFull":"第一種放射線取扱主任者","urlSlug":"hoshasen-1","level":"specialist","sessions":[{"session":"gakka","urlSlug":"gakka","expectedQuestions":269,"label":"学科","categories":["生物学","物理学","化学","実務","法令"]}],"seasons":["annual"],"yearRange":{"start":2025,"end":2026}},
 "hoshasen-2": {"code":"hoshasen-2","nameFull":"第二種放射線取扱主任者","urlSlug":"hoshasen-2","level":"specialist","sessions":[{"session":"gakka","urlSlug":"gakka","expectedQuestions":139,"label":"学科","categories":["生物学","化学","物理学","実務","法令"]}],"seasons":["annual"],"yearRange":{"start":2025,"end":2026}},
