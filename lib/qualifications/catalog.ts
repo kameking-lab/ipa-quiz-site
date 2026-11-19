@@ -1807,6 +1807,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["第39回：問題PDFが公式で404。保存コピー利用はオーナー判断待ち"],
 },
   {
+    slug: "topik1", examCode: "topik1", shortName: "TOPIK I", fullName: "韓国語能力試験 TOPIK I",
+    domain: "personal-services", administrator: "大韓民国 国立国際教育院", status: "live",
+    officialQuestionsUrl: "https://www.topik.go.kr/TWSTDY/TWSTDY0080.do",
+    officialReuseTermsUrl: "https://www.topik.go.kr/TWSTDY/TWSTDY0080.do",
+    reuseSummary: "第102回の読解を収録。問題・正答は国立国際教育院の公開版を使用。",
+    attributionTemplate: "出典：大韓民国 国立国際教育院 韓国語能力試験。解説は過去問AIの独自作成。",
+    remainingWork: ["聞き取り（原本は音声で公開）"],
+  },
+  {
     slug: "apef4", examCode: "apef4", shortName: "仏検 4級", fullName: "実用フランス語技能検定試験 4級",
     domain: "personal-services", administrator: "公益財団法人フランス語教育振興協会", status: "live",
     officialQuestionsUrl: "https://apefdapf.org/dapf/presentation/exemples#4",

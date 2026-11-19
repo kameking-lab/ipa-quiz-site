@@ -1759,6 +1759,14 @@ shihoshoshi: {
         { session: "pm", urlSlug: "pm", expectedQuestions: 103, label: "午後", categories: ["栄養教育論", "臨床栄養学", "公衆栄養学", "給食経営管理論", "応用力試験"] },
     ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
 },
+"topik1": {
+    code: "topik1", nameFull: "韓国語能力試験 TOPIK I", urlSlug: "topik1", level: "basic",
+    sessions: [{
+        session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "読解",
+        categories: ["話題の把握", "語彙・文法", "資料読解", "短文読解", "文章読解", "語順整序"],
+    }],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2025 },
+},
 "apef4": {
     code: "apef4", nameFull: "実用フランス語技能検定試験 4級", urlSlug: "apef4", level: "basic",
     sessions: [{
