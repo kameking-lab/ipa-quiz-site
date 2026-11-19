@@ -22,11 +22,12 @@ describe('気象予報士の通常学習導線', () => {
     expect(container.querySelector('textarea')).toBeDisabled();
     expect(container.querySelector('main')).toHaveAttribute('data-study-ready', 'false');
   });
-  it('通常レジストリと遅延取得が同じ60学科問を返し、公式肢順を維持する', async () => {
+  it('通常レジストリと遅延取得が同じ問題を返し、第65・66回の公式肢順を維持する', async () => {
     expect(await getQuestionsForExam('kisho')).toEqual(KISHO_QUESTIONS);
     expect(QUESTIONS_BY_EXAM.kisho).toEqual(KISHO_QUESTIONS);
-    expect(KISHO_QUESTIONS).toHaveLength(60);
-    for (const q of KISHO_QUESTIONS) {
+    const currentQuestions = KISHO_QUESTIONS.filter((q) => q.year === 2026);
+    expect(currentQuestions).toHaveLength(60);
+    for (const q of currentQuestions) {
       expect(shuffleChoices(q)).toEqual(q);
       expect(Object.keys(q.choiceExplanations!)).toHaveLength(5);
       expect(q.imageUrls?.every(url => url.startsWith('/images/kisho/'))).toBe(true);

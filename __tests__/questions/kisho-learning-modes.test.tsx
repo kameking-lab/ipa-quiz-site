@@ -2,6 +2,7 @@ import { Children, isValidElement, type ReactElement, type ReactNode } from "rea
 import { renderToStaticMarkup } from "react-dom/server";
 import { beforeEach, describe, expect, it, vi } from "vitest";
 import { KISHO_QUESTIONS as questions } from "@/data/questions/kisho";
+import { isCompleteSelectionCorrect } from "@/lib/questions/answers";
 import type { Question } from "@/lib/questions/types";
 
 const access = vi.hoisted(() => ({ entitled: true, gate: false, query: "exam=kisho" }));
@@ -57,19 +58,27 @@ beforeEach(() => {
 });
 
 describe("weather learning routes retain exam and official subject", () => {
-  it.each(["ippan", "senmon"])("keeps %s in normal and stream player pools", async session => {
+  it("accepts either of the two official answers to round 59 specialist question 8", () => {
+    const question = questions.find(q => q.id === "kisho-59-senmon-q08")!;
+    for (const choice of ["エ", "オ"]) {
+      expect(isCompleteSelectionCorrect(question.answer, [choice], question.requiredSelections)).toBe(true);
+    }
+    expect(isCompleteSelectionCorrect(question.answer, ["エ", "オ"], question.requiredSelections)).toBe(false);
+  });
+
+  it.each([["ippan", 60], ["senmon", 60], ["pm1", 8], ["pm2", 7]])("keeps %s in normal and stream player pools", async (session, streamCount) => {
     const params = { exam: "kisho", session, mode: "random" };
     const normal = await QuizPage({ searchParams: Promise.resolve(params) });
     assertIds(playerProps(normal).poolIds, questions.filter(q => q.session === session));
     const stream = await StreamQuizPage({ searchParams: Promise.resolve(params) });
     const pool = elements(stream).find(node => node.type === StreamQuizLoader)!.props.pool!;
-    expect(pool).toHaveLength(30);
+    expect(pool).toHaveLength(streamCount);
     expect(pool.every(q => q.exam === "kisho" && q.session === session)).toBe(true);
   });
-  it("retains all 60 academic originals through year and topic links", async () => {
+  it("retains academic papers by year and all papers by topic", async () => {
     for (const Page of [YearModePage, TopicModePage]) {
       const trees = Page === TopicModePage
-        ? await Promise.all(["ippan", "senmon"].map(session => Page({ searchParams: Promise.resolve({ exam: "kisho", session }) })))
+        ? await Promise.all(["ippan", "senmon", "pm1", "pm2"].map(session => Page({ searchParams: Promise.resolve({ exam: "kisho", session }) })))
         : [await Page({ searchParams: Promise.resolve({ exam: "kisho" }) })];
       const links = trees.flatMap(quizLinks);
       expect(links.length).toBeGreaterThan(0);
@@ -79,7 +88,8 @@ describe("weather learning routes retain exam and official subject", () => {
         const quiz = await QuizPage({ searchParams: Promise.resolve(Object.fromEntries(link.searchParams)) });
         ids.push(...playerProps(quiz).poolIds!);
       }
-      expect(new Set(ids)).toEqual(new Set(questions.map(q => q.id)));
+      const expected = Page === YearModePage ? questions.filter(q => q.type === "multiple-choice") : questions;
+      expect(new Set(ids)).toEqual(new Set(expected.map(q => q.id)));
     }
     const year = await YearModePage({ searchParams: Promise.resolve({ exam: "kisho" }) });
     const html = renderToStaticMarkup(year);
