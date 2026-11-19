@@ -1992,6 +1992,12 @@ caremanager: {
 
 
 
+"kyoin-nagano": {
+    code: "kyoin-nagano", nameFull: "長野県公立学校教員採用選考", urlSlug: "kyoin-nagano", level: "advanced",
+    sessions: [
+        { session: "kyotsu", urlSlug: "kyotsu", expectedQuestions: 15, label: "教職教養（小・中・義務・特支）", categories: ["教育法規", "教育課程", "生徒指導", "教育史", "教育施策", "特別支援教育", "教育心理"] },
+    ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
+},
 tsukanshi: {
     code: "tsukanshi", nameFull: "通関士試験", urlSlug: "tsukanshi", level: "advanced",
     sessions: [

@@ -27,3 +27,9 @@
 | 富山県 | 630 | 第一次筆答（令和5～9年度） | [試験・選考の情報](https://www.pref.toyama.lg.jp/kyouinsaiyou/senkoukensa/index.html)。筆答検査問題は窓口閲覧。 |
 | 新潟市 | 472 | 第1次筆答（令和5～9年度） | [新潟市の教員採用選考検査](https://www.city.niigata.lg.jp/kosodate/gakko/sensei/kyouin_saiyo/index.html)。問題・正答の組は未確認。 |
 | 静岡市 | 392 | 第1次筆記（令和5～9年度） | [令和9年度案内](https://www.city.shizuoka.lg.jp/s8653/s013053.html)、[過去の実施結果](https://www.city.shizuoka.lg.jp/s8653/s006577.html)。県・浜松市と筆記問題共通の年度あり。市の施設で過去問題を閲覧。 |
+
+## 収録結果
+
+| 実施年度（採用年度） | 自治体・区分 | 収録 | 問題・正答 |
+| --- | --- | ---: | --- |
+| 2026（令和9） | 長野県・教職教養（小・中・義務・特支） | 15問（演習14問） | [問題](https://www.pref.nagano.lg.jp/kyoiku/gimukyo/jukense/documents/kyoushokukyouyou.pdf)・[正答](https://www.pref.nagano.lg.jp/kyoiku/gimukyo/jukense/documents/14_kyoushoku_k.pdf)・[第13問の訂正](https://www.pref.nagano.lg.jp/kyoiku/gimukyo/happyou/260715press.html)。第11問は原本のグラフを掲載。第13問は全員正答として保存。 |

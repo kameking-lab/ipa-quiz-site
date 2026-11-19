@@ -364,6 +364,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 
 
 
+"kyoin-nagano": async () => isExamPublished("kyoin-nagano") ? (await import("@/data/questions/kyoin-nagano")).KYOIN_NAGANO_QUESTIONS : [],
 "tsukanshi": async () => isExamPublished("tsukanshi") ? (await import("@/data/questions/tsukanshi")).TSUKANSHI_QUESTIONS : []
 };
 

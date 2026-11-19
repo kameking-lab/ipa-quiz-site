@@ -299,6 +299,7 @@ export const EXAM_LABELS: Record<string, string> = {
     "sekou-kenchiku2": "2級建築施工管理（第一次検定）",
     denki2: "2級電気工事施工管理（第一次検定）",
     kankoji1: "1級管工事施工管理技士",
+    "kyoin-nagano": "長野県教員採用試験",
     "yamaguchi-chori": "調理師",
     "yamaguchi-seika": "製菓衛生師",
     "yamaguchi-fugu": "ふぐ処理師（学科）",
