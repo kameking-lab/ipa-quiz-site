@@ -1,5 +1,6 @@
 import { describe, expect, it } from "vitest";
 import { createHash } from "node:crypto";
+import historicalPePapers from "@/data/exam-library/pe-first/historical-papers.json";
 import choiceExplanations from "@/data/exam-library/choice-explanations.json";
 import { EXAM_CATALOG } from "@/lib/exam-library-catalog";
 import { parseExamChoiceExplanation } from "@/lib/exam-library-choice-explanations";
@@ -51,8 +52,8 @@ describe("official exam library integration", () => {
     const peIds = new Set(EXAM_CATALOG.filter(entry => entry.group === "pe-first").flatMap(entry => (loadExamPaper(entry.id) ?? []).map(question => question.id)));
     const peSnapshot = answerSnapshot.filter(([id]) => peIds.has(String(id)));
     const existingSnapshot = answerSnapshot.filter(([id]) => !String(id).startsWith("private-gsi-survey-assistant-20261021-") && !peIds.has(String(id)) && !isReviewedOctoberImport(String(id)));
-    expect(answerSnapshot).toHaveLength(3153 + (peContinuation.length + peLq3d.length) * 35);
-    expect(peSnapshot).toHaveLength(594 + (peContinuation.length + peLq3d.length) * 35);
+    expect(answerSnapshot).toHaveLength(3153 + (peContinuation.length + peLq3d.length + historicalPePapers.length) * 35);
+    expect(peSnapshot).toHaveLength(594 + (peContinuation.length + peLq3d.length + historicalPePapers.length) * 35);
     // Preserve the previous 2,154 official keys independently of the new reviewed packet.
     expect(existingSnapshot).toHaveLength(2154);
     expect(createHash("sha256").update(JSON.stringify(existingSnapshot)).digest("hex"))
