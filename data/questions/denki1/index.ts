@@ -2,16 +2,19 @@ import type { ChoiceKey, Question } from "@/lib/questions/types";
 import source2026 from "./2026-annual.json";
 import source2025 from "./2025-annual.json";
 import source2024 from "./2024-annual.json";
+import source2023 from "./2023-annual.json";
 
 const keys: ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ"];
 type Source = typeof source2026 & { lastUpdated?: string };
 
 function convert(source: Source): Question[] {
-  if (source.questions.length !== 89 || new Set(source.questions.map(q => q.number)).size !== 89) {
+  const expectedCount = source.year < 2024 ? 92 : 89;
+  if (source.questions.length !== expectedCount || new Set(source.questions.map(q => q.number)).size !== expectedCount) {
     throw new Error(`Invalid denki1 ${source.year} coverage`);
   }
   return source.questions.map((item) => {
-    const count = item.number >= 55 && item.number <= 60 ? 5 : 4;
+    const appliedSkillsStart = source.year < 2024 ? 58 : 55;
+    const count = item.number >= appliedSkillsStart && item.number < appliedSkillsStart + 6 ? 5 : 4;
     const official = item.officialAnswerNumbers;
     if (item.choices.length !== count || item.choiceExplanations.length !== count ||
         official.length !== 1 || !Number.isInteger(official[0]) || official[0] < 1 || official[0] > count) {
@@ -46,4 +49,5 @@ export const DENKI1_QUESTIONS: Question[] = [
   ...DENKI1_2026_QUESTIONS,
   ...DENKI1_2025_QUESTIONS,
   ...convert(source2024 as Source),
+  ...convert(source2023 as Source),
 ];
