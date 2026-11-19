@@ -1,7 +1,9 @@
 import { KOKKA_IPPAN_KOU_2025_KISO } from "./2025-kiso";
 import { KOKKA_IPPAN_KOU_2025_TEKISEI } from "./2025-tekisei";
+import { KOKKA_IPPAN_KOU_2024_TEKISEI } from "./2024-tekisei";
 
 export const KOKKA_IPPAN_KOU_QUESTIONS = [
   ...KOKKA_IPPAN_KOU_2025_KISO,
   ...KOKKA_IPPAN_KOU_2025_TEKISEI,
+  ...KOKKA_IPPAN_KOU_2024_TEKISEI,
 ];
