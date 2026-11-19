@@ -46,6 +46,16 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "kyoin-kochi", examCode: "kyoin-kochi", shortName: "高知県教員採用試験", fullName: "高知県公立学校教員採用候補者選考審査",
+    domain: "welfare", administrator: "高知県教育委員会",
+    officialQuestionsUrl: "https://www.pref.kochi.lg.jp/doc/2019112600143/",
+    officialReuseTermsUrl: "https://www.pref.kochi.lg.jp/doc/2019112600143/",
+    status: "live",
+    reuseSummary: "公式問題・正答と全選択肢の独自解説を収録。",
+    attributionTemplate: "出典：高知県教育委員会 高知県公立学校教員採用候補者選考審査。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
+  {
     slug: "kyoin-nagasaki", examCode: "kyoin-nagasaki", shortName: "長崎県教員採用試験", fullName: "長崎県公立学校教員採用選考試験",
     domain: "welfare", administrator: "長崎県教育委員会",
     officialQuestionsUrl: "https://www.pref.nagasaki.jp/doc/52353.html",

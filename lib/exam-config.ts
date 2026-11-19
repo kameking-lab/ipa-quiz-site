@@ -109,6 +109,13 @@ function am2(categories: string[]): SessionConfig {
 // ------- Exam configs -------
 
 export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
+  "kyoin-kochi": {
+    code: "kyoin-kochi", nameFull: "高知県公立学校教員採用候補者選考審査", urlSlug: "kyoin-kochi", level: "advanced",
+    sessions: [
+      { session: "kyotsu", urlSlug: "kyotsu", expectedQuestions: 40, label: "第1次 教職・一般教養", categories: ["学習評価", "教育法規", "教育施策", "教育史", "教育心理", "特別支援教育", "教育課程", "生徒指導", "学校保健", "理科", "公民", "地理歴史", "高知の統計", "高知の教育施策"] },
+    ],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2025 },
+  },
   "kyoin-nagasaki": {
     code: "kyoin-nagasaki", nameFull: "長崎県公立学校教員採用選考試験", urlSlug: "kyoin-nagasaki", level: "advanced",
     sessions: [

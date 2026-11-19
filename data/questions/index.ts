@@ -1,4 +1,5 @@
 import { SASSHI1_QUESTIONS } from "./sasshi1";
+import { KYOIN_KOCHI_QUESTIONS } from "./kyoin-kochi";
 import { KYOIN_NAGASAKI_QUESTIONS } from "./kyoin-nagasaki";
 import { KYOIN_SHIMANE_QUESTIONS } from "./kyoin-shimane";
 import { KYOIN_OKINAWA_QUESTIONS } from "./kyoin-okinawa";
@@ -347,6 +348,7 @@ import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
 import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  ...(isExamPublished("kyoin-kochi") ? { "kyoin-kochi": KYOIN_KOCHI_QUESTIONS } : {}),
   ...(isExamPublished("kyoin-nagasaki") ? { "kyoin-nagasaki": KYOIN_NAGASAKI_QUESTIONS } : {}),
   ...(isExamPublished("kyoin-shimane") ? { "kyoin-shimane": KYOIN_SHIMANE_QUESTIONS } : {}),
   ...(isExamPublished("kyoin-okinawa") ? { "kyoin-okinawa": KYOIN_OKINAWA_QUESTIONS } : {}),

@@ -454,6 +454,7 @@ export function examTopDescription(exam: ExamCode, questionCount: number): strin
     return `${base}${examLabel(exam)}の過去問${questionCount}問を年度別・分野別に収録。AIコパイロット付きで効率的に学習。`;
 }
 const EXAM_FULL_NAMES: Record<ExamCode, string> = {
+    "kyoin-kochi": "高知県公立学校教員採用候補者選考審査",
     "kyoin-nagasaki": "長崎県公立学校教員採用選考試験",
     "kyoin-shimane": "島根県公立学校教員採用候補者選考試験",
     "kyoin-okinawa": "沖縄県公立学校教員候補者選考試験",
@@ -828,6 +829,7 @@ export function examFullName(exam: ExamCode): string {
     return EXAM_FULL_NAMES[exam];
 }
 const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number) => string> = {
+    "kyoin-kochi": (c, y) => `高知県教員採用試験の過去問を${y}年度分・計${c}問収録。公式問題・正答と全選択肢の解説で学べます。`,
     "kyoin-nagasaki": (c, y) => `長崎県教員採用試験の過去問を${y}年度分・計${c}問収録。公式問題・正答と全選択肢の解説で学べます。`,
     "kyoin-shimane": (c, y) => `島根県教員採用試験の過去問を${y}年度分・計${c}問収録。公式問題・正答と全選択肢の解説で学べます。`,
     "kyoin-okinawa": (c, y) => `沖縄県教員採用試験の過去問を${y}年度分・計${c}問収録。公式問題・正答と全選択肢の解説で学べます。`,

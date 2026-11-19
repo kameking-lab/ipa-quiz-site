@@ -43,9 +43,11 @@
 | 広島県・広島市 | 2025 | 第1次 教職に関する専門教育科目 | 17 | [問題](https://www.pref.hiroshima.lg.jp/uploaded/attachment/632142.pdf)・[採点基準](https://www.pref.hiroshima.lg.jp/uploaded/attachment/632145.pdf) |
 | 沖縄県 | 2026 | 第1次 一般教養・教職教養（午前の部） | 44 | [問題](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/040/383/r8am.pdf)・[正答・配点](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/040/383/r8-2syuuseiseitouhaiten.pdf) |
 | 沖縄県 | 2026 | 第1次 一般教養・教職教養（午後の部） | 45 | [問題](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/040/383/r8pm.pdf)・[正答・配点](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/040/383/r8-2syuuseiseitouhaiten.pdf) |
+| 高知県 | 2025 | 第1次 教職・一般教養 | 39 | [問題](https://www.pref.kochi.lg.jp/doc/2019112600143/file_contents/file_2025112631592_1.pdf)・[正答](https://www.pref.kochi.lg.jp/doc/2019112600143/file_contents/file_2025112631592_2.pdf) |
 | 島根県 | 2026 | 一般選考 教職教養 | 15 | [問題](https://www.pref.shimane.lg.jp/admin/syokuin/saiyou/saiyou_info_tchr/kakomondai.data/1kyousyoku.pdf)・[解答例](https://www.pref.shimane.lg.jp/admin/syokuin/saiyou/saiyou_info_tchr/kakomondai.data/1kyousyokukyouyou.pdf) |
 | 長崎県 | 2026 | 第1次 教職教養 | 35 | [問題・解答例](https://www.pref.nagasaki.jp/fs/3/8/5/5/3/_/R9______________8_5_10____.pdf) |
 
 収録数は、空欄の枝問を含む公式の解答欄単位。
 
 - 広島県・広島市の2025年度教職教養では、解答番号11の図、12～14の共通本文が公開版に掲載されていないため、該当の4問を除外した。 [問題](https://www.pref.hiroshima.lg.jp/uploaded/attachment/632142.pdf)
+- 高知県の2025年度教職・一般教養では、問15の引用文が公開版にないため、該当の1問を除外した。 [問題](https://www.pref.kochi.lg.jp/doc/2019112600143/file_contents/file_2025112631592_1.pdf)
