@@ -33,3 +33,4 @@
 | 実施年度（採用年度） | 自治体・区分 | 収録 | 問題・正答 |
 | --- | --- | ---: | --- |
 | 2026（令和9） | 長野県・教職教養（小・中・義務・特支） | 15問（演習14問） | [問題](https://www.pref.nagano.lg.jp/kyoiku/gimukyo/jukense/documents/kyoushokukyouyou.pdf)・[正答](https://www.pref.nagano.lg.jp/kyoiku/gimukyo/jukense/documents/14_kyoushoku_k.pdf)・[第13問の訂正](https://www.pref.nagano.lg.jp/kyoiku/gimukyo/happyou/260715press.html)。第11問は原本のグラフを掲載。第13問は全員正答として保存。 |
+| 2026（令和9） | 長野県・教職教養（高校） | 10問 | [問題](https://www.pref.nagano.lg.jp/kyoiku/koko/saiyo-nyuushi/joho/documents/00r9kyoshokukyoyo-mondai.pdf)・[正答](https://www.pref.nagano.lg.jp/kyoiku/koko/saiyo-nyuushi/joho/documents/00r9kyoshokukyoyo-kaitou.pdf) |
