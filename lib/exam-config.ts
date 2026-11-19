@@ -1997,6 +1997,7 @@ caremanager: {
     sessions: [
         { session: "tiri", urlSlug: "tiri", expectedQuestions: 20, label: "地理", categories: ["地図と地理情報システム", "生活文化と国際理解", "地球的課題と国際協力", "自然環境と防災", "生活圏の調査"] },
         { session: "kamoku-a", urlSlug: "tiri-a", expectedQuestions: 20, label: "地理A", categories: ["地図からとらえる現代世界", "世界の生活文化の多様性", "地球的課題の地理的考察", "自然環境と防災", "生活圏の地域調査"] },
+        { session: "kamoku-b", urlSlug: "tiri-b", expectedQuestions: 20, label: "地理B", categories: ["地図と地域調査", "自然環境と資源・産業", "人口・都市・生活文化", "世界の諸地域", "地球的課題"] },
     ],
     seasons: ["round2", "round1"], yearRange: { start: 2023, end: 2024 },
 },
