@@ -1258,7 +1258,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.kentei-info-ip-edu.org/gakushujoho/kakomon/",
     officialReuseTermsUrl: "https://www.kentei-info-ip-edu.org/gakushujoho/kakomon/",
     status: "live",
-    reuseSummary: "2024〜2025年実施の第47〜52回の学科・実技の選択式問題を収録。選択肢ごとに解説を掲載しています。法令は試験の基準日時点です。",
+    reuseSummary: "2023〜2025年実施の第46〜52回の学科・実技の選択式問題を収録。選択肢ごとに解説を掲載しています。法令は試験の基準日時点です。",
     attributionTemplate: "出典：知的財産教育協会 第○回 知的財産管理技能検定3級 学科・実技 問○（問題・正答）。解説は過去問AI独自作成。",
     remainingWork: [],
   },
