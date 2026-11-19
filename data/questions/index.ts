@@ -1,3 +1,4 @@
+import { ZENSHO_INFO_QUESTIONS } from "./zensho-info";
 import { SASSHI1_QUESTIONS } from "./sasshi1";
 import { EXAM_CODE_ALIASES } from "@/lib/questions/exam-aliases";
 import { SASSHI2_QUESTIONS } from "./sasshi2";
@@ -360,6 +361,7 @@ export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("insatsu2") ? { "insatsu2": INSATSU2_QUESTIONS } : {}),
 ...(isExamPublished("insatsu1") ? { "insatsu1": INSATSU1_QUESTIONS } : {}),
 ...(isExamPublished("engei-soshoku2") ? { "engei-soshoku2": ENGEI_SOSHOKU2_QUESTIONS } : {}),
+...(isExamPublished("zensho-info") ? { "zensho-info": ZENSHO_INFO_QUESTIONS } : {}),
 ...(isExamPublished("sasshi1") ? { "sasshi1": SASSHI1_QUESTIONS } : {}),
 ...(isExamPublished("kyoka-plastic2") ? { "kyoka-plastic2": KYOKA_PLASTIC2_QUESTIONS } : {}),
 ...(isExamPublished("kyoka-plastic1") ? { "kyoka-plastic1": KYOKA_PLASTIC1_QUESTIONS } : {}),
