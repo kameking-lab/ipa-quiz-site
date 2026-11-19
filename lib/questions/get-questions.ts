@@ -112,6 +112,7 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
 "biru-kan": async () => isExamPublished("biru-kan") ? (await import("@/data/questions/biru-kan")).BIRU_KAN_QUESTIONS : [],
 "gijutsushi1-kikai": async () => isExamPublished("gijutsushi1-kikai") ? (await import("@/data/questions/batch1/gijutsushi1-kikai.json")).default as Question[] : [],
 "gijutsushi1-tekisei": async () => isExamPublished("gijutsushi1-tekisei") ? (await import("@/data/questions/gijutsushi1-tekisei")).GIJUTSUSHI1_TEKISEI_QUESTIONS : [],
+"dekyo-charge-2": async () => isExamPublished("dekyo-charge-2") ? (await import("@/data/questions/dekyo-charge-2")).DEKYO_CHARGE_2_QUESTIONS : [],
 jobpass3: async () => isExamPublished("jobpass3") ? (await import("@/data/questions/jobpass3")).JOBPASS3_QUESTIONS : [],
 "hoshasen-1": async () => isExamPublished("hoshasen-1") ? (await import("@/data/questions/batch1/hoshasen-1.json")).default as Question[] : [],
 "hoshasen-2": async () => isExamPublished("hoshasen-2") ? (await import("@/data/questions/batch1/hoshasen-2.json")).default as Question[] : [],

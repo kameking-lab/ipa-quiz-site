@@ -109,6 +109,17 @@ function am2(categories: string[]): SessionConfig {
 // ------- Exam configs -------
 
 export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
+  "dekyo-charge-2": {
+    code: "dekyo-charge-2",
+    nameFull: "工事担任者 第二級",
+    urlSlug: "dekyo-charge-2",
+    level: "basic",
+    sessions: [
+      { session: "dekyo-digital", urlSlug: "dekyo-digital", expectedQuestions: 62, label: "第二級デジタル通信", categories: ["基礎", "技術及び理論", "法規"] },
+    ],
+    seasons: ["round2"],
+    yearRange: { start: 2024, end: 2024 },
+  },
   jobpass3: {
     code: "jobpass3", nameFull: "ビジネス能力検定ジョブパス3級", urlSlug: "jobpass3", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 35, label: "3級", categories: ["ビジネス常識", "時事・社会", "組織・業務基本", "コミュニケーション手法"] }],
