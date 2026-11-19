@@ -342,7 +342,10 @@ import { TETSUDO_SHARYO2_QUESTIONS } from "./tetsudo-sharyo2";
 import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
 import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 
+import { ZENSHO_ECO_78_QUESTIONS } from "./zensho-eco-78";
+
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
+  ...(isExamPublished("zensho-eco-78") ? { "zensho-eco-78": ZENSHO_ECO_78_QUESTIONS } : {}),
 ...(isExamPublished("fujin-kodomofuku2") ? { "fujin-kodomofuku2": FUJIN_KODOMOFUKU2_QUESTIONS } : {}),
 ...(isExamPublished("fujin-kodomofuku1") ? { "fujin-kodomofuku1": FUJIN_KODOMOFUKU1_QUESTIONS } : {}),
 ...(isExamPublished("toso1") ? { "toso1": TOSO1_QUESTIONS } : {}),
