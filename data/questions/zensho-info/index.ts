@@ -4,6 +4,7 @@ import round71 from "./2024-round1.json";
 import round70 from "./2023-round2.json";
 import round69 from "./2023-round1.json";
 import round68 from "./2022-round2.json";
+import round67 from "./2022-round1.json";
 
 export const ZENSHO_INFO_QUESTIONS = [
   ...round72,
@@ -11,4 +12,5 @@ export const ZENSHO_INFO_QUESTIONS = [
   ...round70,
   ...round69,
   ...round68,
+  ...round67,
 ] as Question[];
