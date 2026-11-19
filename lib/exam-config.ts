@@ -2011,7 +2011,7 @@ caremanager: {
     code: "kyoin-kobe", nameFull: "神戸市立学校園教員採用選考試験", urlSlug: "kyoin-kobe", level: "advanced",
     sessions: [
         { session: "kyotsu", urlSlug: "kyotsu", expectedQuestions: 50, label: "教職・一般教養", categories: ["教育法規", "教育施策", "生徒指導", "教育史", "教育心理", "特別支援教育", "国語", "算数・数学", "社会", "美術", "音楽", "保健体育", "理科", "英語", "技術", "家庭科", "資料解釈", "判断推理", "数的推理"] },
-    ], seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+    ], seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
 tsukanshi: {
     code: "tsukanshi", nameFull: "通関士試験", urlSlug: "tsukanshi", level: "advanced",
