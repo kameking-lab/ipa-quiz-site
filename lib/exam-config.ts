@@ -2008,7 +2008,7 @@ caremanager: {
         {
             session: "senmon",
             urlSlug: "senmon",
-            expectedQuestions: 4,
+            expectedQuestions: 5,
             label: "教科専門（中学校・英語）",
             categories: ["中学校・英語"],
         },
