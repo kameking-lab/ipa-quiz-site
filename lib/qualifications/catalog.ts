@@ -1388,7 +1388,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://zensho.or.jp/examination/pastexams/economics/",
     officialReuseTermsUrl: "https://zensho.or.jp/examination/pastexams/economics/",
     status: "live",
-    reuseSummary: "ビジネス基礎の公式問題と模範解答をもとに、解答欄ごとに演習できます。",
+    reuseSummary: "ビジネス基礎・マーケティングの公式問題と模範解答をもとに、解答欄ごとに演習できます。",
     attributionTemplate: "出典：公益財団法人全国商業高等学校協会 商業経済検定試験。解説は過去問AI作成。",
     remainingWork: [],
   },

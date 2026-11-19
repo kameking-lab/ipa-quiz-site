@@ -1461,7 +1461,7 @@ shuwa: {
 "shohi-sodan": { code: "shohi-sodan", nameFull: "消費生活相談員資格試験（マークシート部分）", urlSlug: "shohi-sodan", level: "specialist", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 160, label: "マークシート式試験（未公開）", categories: ["??"] }], seasons: ["annual"], yearRange: { start: 2024, end: 2025 } },
 "zensho-eco-80": {
     code: "zensho-eco-80", nameFull: "商業経済検定", urlSlug: "zensho-eco-80", level: "basic",
-    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科", categories: ["ビジネス基礎"] }],
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 100, label: "学科", categories: ["ビジネス基礎", "マーケティング"] }],
     seasons: ["annual"], yearRange: { start: 2023, end: 2023 },
 },
 "jken-katsuyo1": {
