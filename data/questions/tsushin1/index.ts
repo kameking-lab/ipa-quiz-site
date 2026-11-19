@@ -1,6 +1,7 @@
 import type { ChoiceKey, Question, Session } from "@/lib/questions/types";
 import source2026 from "./2026-september.json";
 import source2025 from "./2025-september.json";
+import source2024 from "./2024-september.json";
 
 const keys: readonly ChoiceKey[] = ["ア", "イ", "ウ", "エ"];
 
@@ -32,7 +33,7 @@ type Paper = {
 
 type Source = {
   exam: "tsushin1";
-  year: 2025 | 2026;
+  year: 2024 | 2025 | 2026;
   season: "september";
   answerUrl: string;
   answerSha256: string;
@@ -75,7 +76,7 @@ function toQuestions(source: Source): Question[] {
         hasImage: (item.imageUrls?.length ?? 0) > 0,
         imageUrls: item.imageUrls,
         imageAltTexts: item.imageAltTexts,
-        sourcePdfUrl: paper.questionUrl,
+        sourcePdfUrl: `${paper.questionUrl}#page=${item.pdfPage}`,
         sourceAnswerUrl: source.answerUrl,
         sourceAttribution: `出典：一般財団法人全国建設研修センター 令和${source.year - 2018}年度1級電気通信工事施工管理技術検定 第一次検定 試験問題${paper.paper} No.${item.number}。ルビ・改行・空白を整理し、添字・指数・分数を文字化。図中の情報は原本画像と併記し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。${source.year === 2025 ? "資料は公開保存コピーから取得。公式サイトからの直接取得・当時の公式原本とのハッシュ一致は未確認。" : ""}`,
         officialReferenceUrls: item.officialReferenceUrls ?? [],
@@ -86,8 +87,9 @@ function toQuestions(source: Source): Question[] {
   });
 }
 
-/** 最新2年度の第一次検定。各年度A55問・B35問、計180原問と全肢解説を収録。 */
+/** 第一次検定の公表原問と全肢解説。 */
 export const TSUSHIN1_QUESTIONS = [
   ...toQuestions(source2026 as Source),
   ...toQuestions(source2025 as Source),
+  ...toQuestions(source2024 as Source),
 ];
