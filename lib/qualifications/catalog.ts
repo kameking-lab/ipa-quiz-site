@@ -1442,13 +1442,13 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
   },
   {
-    slug: "zenkou-joho", shortName: "情報技術検定", fullName: "情報技術検定",
+    slug: "zenkou-joho", examCode: "zenkou-joho", shortName: "情報技術検定", fullName: "情報技術検定",
     domain: "information-technology", administrator: "公益社団法人全国工業高等学校長協会",
     officialQuestionsUrl: "https://zenkoukyo.or.jp/index_kentei/exam_result/",
     officialReuseTermsUrl: "https://zenkoukyo.or.jp/index_kentei/exam_result/",
-    status: "terms-review-required",
-    reuseSummary: "2025年度 第74回・第75回と2026年度 第76回の各4区分の問題と標準解答を公式PDFで確認。",
-    remainingWork: ["問題文・図版・正答の転載条件を確認"],
+    status: "live",
+    reuseSummary: "第76回の1級2区分・2級・3級を収録。公式の標準解答と原本図表、選択肢ごとの独自解説を確認できます。",
+    remainingWork: [],
   },
   {
     slug: "shinrishi", examCode: "shinrishi", shortName: "公認心理師", fullName: "公認心理師試験",

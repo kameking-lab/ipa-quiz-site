@@ -1489,6 +1489,16 @@ shuwa: {
     ],
     seasons: ["annual"], yearRange: { start: 2024, end: 2024 },
 },
+"zenkou-joho": {
+    code: "zenkou-joho", nameFull: "情報技術検定", urlSlug: "zenkou-joho", level: "basic",
+    sessions: [
+        { session: "joho-hardware", urlSlug: "joho-hardware", expectedQuestions: 35, label: "1級・ハードウェアの基礎知識", categories: ["1級・ハードウェアの基礎知識"] },
+        { session: "joho-programming", urlSlug: "joho-programming", expectedQuestions: 5, label: "1級・プログラミングの基礎知識", categories: ["1級・プログラミングの基礎知識"] },
+        { session: "joho-level2", urlSlug: "joho-level2", expectedQuestions: 26, label: "2級・共通＋BASIC/Cの選択", categories: ["2級・共通＋BASIC/Cの選択"] },
+        { session: "joho-level3", urlSlug: "joho-level3", expectedQuestions: 32, label: "3級・共通＋BASIC/Cの選択", categories: ["3級・共通＋BASIC/Cの選択"] },
+    ],
+    seasons: ["early", "late"], yearRange: { start: 2025, end: 2026 },
+},
 "jken-system": {
     code: "jken-system", nameFull: "情報検定（J検）情報システム試験", urlSlug: "jken-system", level: "basic",
     sessions: [

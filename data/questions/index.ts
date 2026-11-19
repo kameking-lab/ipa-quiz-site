@@ -301,6 +301,7 @@ import { JKEN_KATSUYO2_QUESTIONS } from "./jken-katsuyo2";
 import { JKEN_KATSUYO3_QUESTIONS } from "./jken-katsuyo3";
 import { KATEI_HIFUKU_QUESTIONS } from "./katei-hifuku";
 import { KATEI_SHOKUMOTSU_QUESTIONS } from "./katei-shokumotsu";
+import { ZENKOU_JOHO_QUESTIONS } from "./zenkou-joho";
 import { JKEN_SYSTEM_QUESTIONS } from "./jken-system";
 import { SHINRISHI_QUESTIONS } from "./shinrishi";
 import { KHK_REITO_1_QUESTIONS } from "./khk-reito-1";
@@ -598,6 +599,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("jken-katsuyo1") ? { "jken-katsuyo1": JKEN_KATSUYO1_QUESTIONS } : {}),
 ...(isExamPublished("katei-hifuku") ? { "katei-hifuku": KATEI_HIFUKU_QUESTIONS } : {}),
 ...(isExamPublished("katei-shokumotsu") ? { "katei-shokumotsu": KATEI_SHOKUMOTSU_QUESTIONS } : {}),
+...(isExamPublished("zenkou-joho") ? { "zenkou-joho": ZENKOU_JOHO_QUESTIONS } : {}),
 ...(isExamPublished("jken-system") ? { "jken-system": JKEN_SYSTEM_QUESTIONS } : {}),
 ...(isExamPublished("shinrishi") ? { shinrishi: SHINRISHI_QUESTIONS } : {}),
 ...(isExamPublished("khk-reito-3") ? { "khk-reito-3": KHK_REITO_3_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
