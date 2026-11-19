@@ -1,7 +1,9 @@
 import { Children, isValidElement, type ReactElement, type ReactNode } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { beforeEach, describe, expect, it, vi } from "vitest";
-import { KISHO_QUESTIONS as questions } from "@/data/questions/kisho";
+import { KISHO_QUESTIONS } from "@/data/questions/kisho";
+
+const questions = KISHO_QUESTIONS.filter(q => !q.officialScoring);
 import type { Question } from "@/lib/questions/types";
 
 const access = vi.hoisted(() => ({ entitled: true, gate: false, query: "exam=kisho" }));
@@ -63,10 +65,10 @@ describe("weather learning routes retain exam and official subject", () => {
     assertIds(playerProps(normal).poolIds, questions.filter(q => q.session === session));
     const stream = await StreamQuizPage({ searchParams: Promise.resolve(params) });
     const pool = elements(stream).find(node => node.type === StreamQuizLoader)!.props.pool!;
-    expect(pool).toHaveLength(30);
+    expect(pool).toHaveLength(Math.min(60, questions.filter(q => q.session === session).length));
     expect(pool.every(q => q.exam === "kisho" && q.session === session)).toBe(true);
   });
-  it("retains all 60 academic originals through year and topic links", async () => {
+  it("retains all playable academic originals through year and topic links", async () => {
     for (const Page of [YearModePage, TopicModePage]) {
       const trees = Page === TopicModePage
         ? await Promise.all(["ippan", "senmon"].map(session => Page({ searchParams: Promise.resolve({ exam: "kisho", session }) })))

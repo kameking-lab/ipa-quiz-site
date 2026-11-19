@@ -14,6 +14,7 @@ import { PRACTICE_SESSIONS } from "@/lib/questions/practice-session";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { validateDokugekiChiba } from "./validate-dokugeki-chiba";
 import { NativeBDataSchema, nativeBQuestionIssue } from "../lib/questions/native-b";
+import { KISHO_HISTORICAL_ROUNDS } from "../data/questions/kisho/history";
 /**
  * data/questions/ 配下の問題データを検証・品質スコア算出。
  *
@@ -84,6 +85,7 @@ const VALIDATION_QUESTIONS = [
   ...new Map(
     [...ALL_QUESTIONS, ...GENGO_CHOKAKUSHI_QUESTIONS, ...K11_OTSU4, ...K11_RYOKAKU, ...K11_KOU1, ...K11_KIKEN_KOU, ...K11_HEI, ...K11_KOU, ...K11_OTSU, ...K11_KAMOTSU, ...SEKOU_1KENCHIKU_QUESTIONS, ...KENCHIKUSHI1_CANDIDATES, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
   ).values(),
+  ...KISHO_HISTORICAL_ROUNDS.flatMap(round => round.practical.map(({ raw }) => raw as Question)),
 ];
 
 // ─── CLI ─────────────────────────────────────────────────────────────────────
@@ -174,6 +176,8 @@ const QuestionSchema = z.object({
   license: z.enum(["UNKAN-permission-required","SHOUBO-permission-required","INT7-owner-decision","KHK-attributed", "JAEIC-owner-approved-staging", "CHINTAI-owner-authorized", "KYUSUI-owner-authorized", "JAHMEC-owner-authorized", "NUSTEC-owner-authorized", "ECCJ-owner-approved", "MLIT-PDL-1.0", "CPAAOB-PDL-1.0", "IPA-public", "JAFP-reuse-with-attribution", "KINZAI-reuse-with-attribution", "ECEE-educational-reuse", "RETIO-reuse", "JCTC-authorized-reuse", "SSSC-reuse", "KANSAI-UNION-reuse", "KANRIKYO-educational-reuse", "EXAM-OR-JP-attributed", "IPEJ-attributed", "HOYOKYO-attributed", "MANKAN-attributed", "JFSA-attributed", "SHAROSI-attributed", "MHLW-attributed", "AHK-attributed", "JAAME-attributed", "RBC-attributed", "JF-CMCA-attributed", "JCTC-attributed", "MOJ-attributed", "ZAIJUSEI-attributed", "NICHIMU-educational-reuse", "NICHIMU-past-question-study-use", "JIA-attributed", "JMBSC-permission-required", "JAEIC-permission-required", "IP-EDU-authorized-reuse", "JASPA-owner-authorized", "SHOUBO-owner-authorized", "JECES-owner-cleared", "FCIP-owner-confirmed", "JYOUBUN-owner-authorized", "KOKUSEN-owner-authorized", "CHORD-owner-authorized", "SGEC-owner-authorized", "JKEN-owner-cleared", "JCCPP-attributed", "KHK-owner-decision", "FCIP-owner-authorized", "YAMAGUCHI-attributed", "METI-attributed", "JCM-authorized-reuse", "GYOSEI-owner-cleared", "CAREER-SHIKEN-owner-authorized", "JATA-owner-authorized", "GSI-attributed", "PREF-published", "JIPM-owner-decision", "JAVADA-owner-authorized", "CUSTOMS-attributed"]),
   isCalculation: z.boolean().optional(),
 });
+
+const KishoPracticalQuestionSchema = QuestionSchema.extend({ session: z.enum(["pm1", "pm2"]) });
 
 // ─── Quality score ────────────────────────────────────────────────────────────
 
@@ -275,7 +279,8 @@ function validate(questions: Question[]): ValidationResult {
     byExam[examKey].count++;
 
     // Schema validation
-    const r = QuestionSchema.safeParse(q);
+    const schema = q.exam === "kisho" && q.type === "descriptive" ? KishoPracticalQuestionSchema : QuestionSchema;
+    const r = schema.safeParse(q);
     if (!r.success) {
       fail++;
       byExam[examKey].fail++;

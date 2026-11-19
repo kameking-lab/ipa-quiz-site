@@ -2,6 +2,7 @@ import type { Question } from "@/lib/questions/types";
 import { KISHO_PRIVATE_QUESTIONS } from "@/lib/kisho-private";
 import { KishoCandidateSchema } from "./schema";
 import publicAssets from "./public-assets.json";
+import { KISHO_HISTORICAL_ROUNDS } from "./history";
 
 /** Candidate namespace until the release owner wires the public exam registry. */
 export type KishoQuestion = Omit<Question, "exam" | "license"> & {
@@ -27,7 +28,7 @@ export const KISHO_ACADEMIC_CANDIDATES = KISHO_CANDIDATES.filter(q => q.type ===
 export const KISHO_PRACTICAL_CANDIDATES = KISHO_PRIVATE_QUESTIONS.filter(q => q.raw.type === "descriptive");
 
 /** Public delivery is an explicit projection; never expose historical local paths. */
-export const KISHO_QUESTIONS: Question[] = KISHO_ACADEMIC_CANDIDATES.map(q => {
+const currentAcademicQuestions: Question[] = KISHO_ACADEMIC_CANDIDATES.map(q => {
   const source = KISHO_PRIVATE_QUESTIONS.find(item => item.raw.id === q.id)!.source;
   const pageIds = [...new Set([...source.questionPages, ...source.figurePages].map(p => p.assetId))];
   return {
@@ -42,3 +43,8 @@ export const KISHO_QUESTIONS: Question[] = KISHO_ACADEMIC_CANDIDATES.map(q => {
     sourceAttribution: `${q.sourceAttribution}。画像化・表記整理。解説は過去問AIの独自作成。`, license: "JMBSC-permission-required",
   };
 });
+
+export const KISHO_QUESTIONS: Question[] = [
+  ...currentAcademicQuestions,
+  ...KISHO_HISTORICAL_ROUNDS.flatMap(round => round.academic),
+];
