@@ -4,6 +4,8 @@ import assets from "./assets.json";
 import qualifications from "./qualifications.json";
 import priorSittings from "./prior-sittings.json";
 import priorAssets from "./prior-assets.json";
+import body2022First from "./2022-first-body.json";
+import body2022FirstAssets from "./2022-first-body-assets.json";
 import body2022Second from "./2022-second-body.json";
 import body2022SecondAssets from "./2022-second-body-assets.json";
 import body2023First from "./2023-first-body.json";
@@ -22,7 +24,7 @@ export type AutomotiveExamCode =
   | "jidosha-body" | "jidosha-electrical";
 
 export const AUTOMOTIVE_QUALIFICATIONS = qualifications;
-const imageBindings: Record<string, Array<{ url: string; physicalPage: number }>> = { ...assets, ...priorAssets, ...body2024SecondAssets, ...body2024FirstAssets, ...body2023SecondAssets, ...body2023FirstAssets, ...body2022SecondAssets };
+const imageBindings: Record<string, Array<{ url: string; physicalPage: number }>> = { ...assets, ...priorAssets, ...body2024SecondAssets, ...body2024FirstAssets, ...body2023SecondAssets, ...body2023FirstAssets, ...body2022SecondAssets, ...body2022FirstAssets };
 
 /**
  * Previous sitting for the five subjects that had only one sitting (W2, 2026-11-06):
@@ -32,7 +34,7 @@ const imageBindings: Record<string, Array<{ url: string; physicalPage: number }>
 export const AUTOMOTIVE_PRIOR_SITTING_IDS: ReadonlySet<string> = new Set(priorSittings.map((q) => q.id));
 
 /** Existing accepted candidates only. The remaining saved originals stay in staging. */
-export const AUTOMOTIVE_QUESTIONS: Question[] = [...reviewed, ...priorSittings, ...body2024Second, ...body2024First, ...body2023Second, ...body2023First, ...body2022Second].map((q) => ({
+export const AUTOMOTIVE_QUESTIONS: Question[] = [...reviewed, ...priorSittings, ...body2024Second, ...body2024First, ...body2023Second, ...body2023First, ...body2022Second, ...body2022First].map((q) => ({
   ...q,
   exam: `jidosha-${q.subject}` as AutomotiveExamCode,
   session: "gakka",

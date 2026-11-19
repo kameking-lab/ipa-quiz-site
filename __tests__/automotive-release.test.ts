@@ -8,6 +8,8 @@ import { AUTOMOTIVE_QUESTIONS, getAutomotiveQuestions } from "@/data/questions/a
 import metadata from "@/data/questions/automotive/qualifications.json";
 import reviewed from "@/data/questions/automotive/reviewed.json";
 import priorSittings from "@/data/questions/automotive/prior-sittings.json";
+import body2022First from "@/data/questions/automotive/2022-first-body.json";
+import body2022FirstSources from "@/data/questions/automotive/2022-first-body-sources.json";
 import body2022Second from "@/data/questions/automotive/2022-second-body.json";
 import body2022SecondSources from "@/data/questions/automotive/2022-second-body-sources.json";
 import body2023First from "@/data/questions/automotive/2023-first-body.json";
@@ -40,6 +42,7 @@ const olderBodyPapers = [
   { year: 2023, season: "second", questions: body2023Second, source: body2023SecondSources },
   { year: 2023, season: "first", questions: body2023First, source: body2023FirstSources },
   { year: 2022, season: "second", questions: body2022Second, source: body2022SecondSources },
+  { year: 2022, season: "first", questions: body2022First, source: body2022FirstSources },
 ];
 const olderBodyQuestions = olderBodyPapers.flatMap(paper => paper.questions);
 
