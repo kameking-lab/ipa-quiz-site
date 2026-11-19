@@ -291,6 +291,7 @@ export const EXAM_LABELS: Record<string, string> = {
     "cg-creator-basic": "CGクリエイター検定 ベーシック",
     "cg-creator-expert": "CGクリエイター検定 エキスパート",
     "cg-engineer-basic": "CGエンジニア検定 ベーシック",
+    "cg-engineer-expert": "CGエンジニア検定 エキスパート",
     "g-kentei": "G検定",
     "jken-katsuyo1": "J検 情報活用1級",
     "jken-katsuyo2": "J検 情報活用2級",

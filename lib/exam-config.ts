@@ -1477,6 +1477,12 @@ shuwa: {
         categories: ["知的財産権", "形状表現", "モデリング", "陰影と影", "反射と照明", "アニメーション", "座標変換", "CGの機器", "ディジタル画像", "画像処理"] }],
     seasons: ["early", "late"], yearRange: { start: 2025, end: 2026 },
 },
+"cg-engineer-expert": {
+    code: "cg-engineer-expert", nameFull: "CGエンジニア検定 エキスパート", urlSlug: "cg-engineer-expert", level: "advanced",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "エキスパート",
+        categories: ["知的財産権", "座標変換", "形状表現", "モデリング", "陰影とレンダリング", "アニメーション", "画像処理", "可視化", "CGの機器とシステム"] }],
+    seasons: ["early", "late"], yearRange: { start: 2025, end: 2026 },
+},
 "g-kentei": {
     code: "g-kentei", nameFull: "G検定（ジェネラリスト検定）", urlSlug: "g-kentei", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 0, label: "公式公開問題",

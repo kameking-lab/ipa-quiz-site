@@ -299,6 +299,7 @@ import { SHUWA_QUESTIONS } from "./shuwa";
 import { CG_CREATOR_BASIC_QUESTIONS } from "./cg-creator-basic";
 import { CG_CREATOR_EXPERT_QUESTIONS } from "./cg-creator-expert";
 import { CG_ENGINEER_BASIC_QUESTIONS } from "./cg-engineer-basic";
+import { CG_ENGINEER_EXPERT_QUESTIONS } from "./cg-engineer-expert";
 import { G_KENTEI_QUESTIONS } from "./g-kentei";
 import { JKEN_KATSUYO1_QUESTIONS } from "./jken-katsuyo1";
 import { JKEN_KATSUYO2_QUESTIONS } from "./jken-katsuyo2";
@@ -600,6 +601,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("cg-creator-basic") ? { "cg-creator-basic": CG_CREATOR_BASIC_QUESTIONS } : {}),
 ...(isExamPublished("cg-creator-expert") ? { "cg-creator-expert": CG_CREATOR_EXPERT_QUESTIONS } : {}),
 ...(isExamPublished("cg-engineer-basic") ? { "cg-engineer-basic": CG_ENGINEER_BASIC_QUESTIONS } : {}),
+...(isExamPublished("cg-engineer-expert") ? { "cg-engineer-expert": CG_ENGINEER_EXPERT_QUESTIONS } : {}),
 ...(isExamPublished("g-kentei") ? { "g-kentei": G_KENTEI_QUESTIONS } : {}),
 ...(isExamPublished("jken-katsuyo1") ? { "jken-katsuyo1": JKEN_KATSUYO1_QUESTIONS } : {}),
 ...(isExamPublished("jken-system") ? { "jken-system": JKEN_SYSTEM_QUESTIONS } : {}),

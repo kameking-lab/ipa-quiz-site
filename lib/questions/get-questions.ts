@@ -229,6 +229,7 @@ shuwa: async () => isExamPublished("shuwa") ? (await import("@/data/questions/sh
 "cg-creator-basic": async () => isExamPublished("cg-creator-basic") ? (await import("@/data/questions/cg-creator-basic")).CG_CREATOR_BASIC_QUESTIONS : [],
 "cg-creator-expert": async () => isExamPublished("cg-creator-expert") ? (await import("@/data/questions/cg-creator-expert")).CG_CREATOR_EXPERT_QUESTIONS : [],
 "cg-engineer-basic": async () => isExamPublished("cg-engineer-basic") ? (await import("@/data/questions/cg-engineer-basic")).CG_ENGINEER_BASIC_QUESTIONS : [],
+"cg-engineer-expert": async () => isExamPublished("cg-engineer-expert") ? (await import("@/data/questions/cg-engineer-expert")).CG_ENGINEER_EXPERT_QUESTIONS : [],
 "g-kentei": async () => isExamPublished("g-kentei") ? (await import("@/data/questions/g-kentei")).G_KENTEI_QUESTIONS : [],
 "jken-katsuyo1": async () => isExamPublished("jken-katsuyo1") ? (await import("@/data/questions/jken-katsuyo1")).JKEN_KATSUYO1_QUESTIONS : [],
 "jken-system": async () => isExamPublished("jken-system") ? (await import("@/data/questions/jken-system")).JKEN_SYSTEM_QUESTIONS : [],
