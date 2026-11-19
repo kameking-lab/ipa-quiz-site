@@ -20,8 +20,9 @@
 
 ### 東京都公立学校教員採用候補者選考
 
-- 2025・2026年度の教職教養を各25問収録。専門教養の小学校全科は2025年度18問、2026年度15問を収録。公開版で問題文・楽譜が伏せられている解答番号は、2025年度が15・16、2026年度が1～3・15・16。
-- 2022～2024年度は、公式ポータルと旧年度のPDFパスを確認したが問題・正答の組を取得できなかった。論文は評価の観点が公開されており、正答を取得できない。
+- 2024～2026年度の教職教養を各25問収録。2024年度は当時の東京都公式ページに掲載されていたPDFの保存版を使用した。 [当時の公式ページ](https://web.archive.org/web/20250327193958id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/recruit/exam.html)・[問題](https://web.archive.org/web/20250404121040id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/mondai00.pdf)・[正答](https://web.archive.org/web/20250814123945id_/https://www.kyoinsaiyopr.metro.tokyo.lg.jp/pdf/exam/seito00.pdf)
+- 専門教養の小学校全科は2025年度18問、2026年度15問を収録。公開版で問題文・楽譜が伏せられている解答番号は、2025年度が15・16、2026年度が1～3・15・16。
+- 公式ポータルの現行掲載は直近2年度。2022・2023年度の教職教養と2024年度の専門教養は、対応する問題・正答の組を取得できなかった。論文は評価の観点が公開されており、正答を取得できない。 [公式FAQ](https://www.kyoinsaiyopr.metro.tokyo.lg.jp/recruit/faq.html)
 - 2025・2026年度のその他の専門教養には、校種・教科別に公式の問題・正答がある。収録は未完了。
 
 ### 裁判所職員採用一般職試験（裁判所事務官・大卒程度区分）
@@ -34,7 +35,7 @@
 | 2023 | 30問（[問題](https://www.courts.go.jp/saiyo/vc-files/saiyo/2023/saisi/XYC-12mondai/01-XYC-12kiso.pdf)・[正答](https://www.courts.go.jp/saiyo/vc-files/saiyo/2023/saisi/XYC-12seitou/XYC-12kisoseitou.pdf)） | 40問（[問題](https://www.courts.go.jp/saiyo/vc-files/saiyo/2023/saisi/XYC-12mondai/02-XYC-12senmontashi.pdf)・[正答](https://www.courts.go.jp/saiyo/vc-files/saiyo/2023/saisi/XYC-12seitou/XYC-12senmonseitou.pdf)） |
 
 - 基礎能力試験は、公開版で本文が伏せられている2023年度の問1～10、2024～2026年度の問1～9を除いた。2025年度の問18は、投影図の読み取りから公式正答に至る説明を検証できず、収録を見送った。
-- 2022年度の問題・正答の組は、公式一覧と旧年度のPDFパスで取得できなかった。論文・専門記述は公式正答を取得できない。
+- 2022年度の基礎能力の公式正答表は取得したが、対応する問題原本は取得できなかった。論文・専門記述は公式正答を取得できない。 [2022年度 基礎能力の正答](https://www.courts.go.jp/saiyo/vc-files/saiyo/2022/R41jiseitoukiso.pdf)
 
 ### 大阪府公立学校教員採用選考テスト
 

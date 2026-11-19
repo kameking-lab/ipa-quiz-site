@@ -2011,7 +2011,7 @@ caremanager: {
     sessions: [
         { session: "kyotsu", urlSlug: "kyotsu", expectedQuestions: 25, label: "教職教養", categories: ["教育法規", "教育史", "教育方法", "生徒指導", "特別支援教育", "教育施策", "教育心理", "教育課程"] },
         { session: "senmon", urlSlug: "senmon", expectedQuestions: 20, label: "専門教養 小学校全科", categories: ["国語", "社会", "算数・数学", "理科", "英語", "図画工作", "家庭科", "体育", "学習指導要領"] },
-    ], seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+    ], seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
 tsukanshi: {
     code: "tsukanshi", nameFull: "通関士試験", urlSlug: "tsukanshi", level: "advanced",
