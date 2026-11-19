@@ -962,7 +962,7 @@ sharoushi: {
             categories: ["労務管理その他の労働及び社会保険に関する一般常識"],
         }],
     seasons: ["annual"],
-    yearRange: { start: 2025, end: 2026 },
+    yearRange: { start: 2023, end: 2026 },
 },
 yakuzaishi: {
     code: "yakuzaishi",
