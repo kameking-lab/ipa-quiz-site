@@ -1589,13 +1589,11 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["バッチ1対象外の保留10問の公開範囲を別途判断", "令和7年度の公式法令基準日の確認（問題PDFは403で取得不能）", "公式PDFと問題文・図表の公開前最終照合", "独立レビューのFAIL指摘への修正内容の再レビュー合格", "指定の質問検証・型検査・関連テストの完了"],
 },
   {
-    slug: "khk-hanbai", shortName: "第一種販売主任者", fullName: "高圧ガス販売主任者 第一種",
+    slug: "khk-hanbai", examCode: "khk-hanbai", shortName: "高圧ガス販売主任者 第一種", fullName: "高圧ガス販売主任者 第一種",
     domain: "safety", administrator: "高圧ガス保安協会",
     officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html", officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",
-    status: "ready-to-ingest", stagingDataPath: "data/qualification-staging/khk-hanbai",
-    reuseSummary: "令和7・6年度80問を未公開stagingに保存。公式の転載禁止文言を記録済み。",
-    remainingWork: ["publicAllowed=falseで維持", "公開する場合は別途統合・公開判断が必要"],
-},
+    status: "live", reuseSummary: "公式問題・正答と全肢解説を収録。", remainingWork: [],
+  },
   {
     slug: "khk-hanbai2", examCode: "khk-hanbai2", shortName: "高圧ガス販売主任者 第二種", fullName: "高圧ガス販売主任者 第二種",
     domain: "safety", administrator: "高圧ガス保安協会",

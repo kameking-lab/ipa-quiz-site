@@ -278,6 +278,15 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["published"], yearRange: { start: 2026, end: 2026 },
   },
 
+  "khk-hanbai": {
+    code: "khk-hanbai", nameFull: "高圧ガス販売主任者 第一種", urlSlug: "khk-hanbai", level: "basic",
+    sessions: [
+      { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法令", categories: ["法令"] },
+      { session: "gas-technology", urlSlug: "gas-technology", expectedQuestions: 20, label: "保安管理技術", categories: ["保安管理技術"] },
+    ],
+    seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
+  },
+
   "khk-kagaku": {
     code: "khk-kagaku", nameFull: "高圧ガス製造保安責任者（化学）", urlSlug: "khk-kagaku", level: "advanced",
     sessions: [
