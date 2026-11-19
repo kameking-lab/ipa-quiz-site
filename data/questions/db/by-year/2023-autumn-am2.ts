@@ -24,6 +24,7 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "CAP定理は、分散システムにおいて、整合性（Consistency）、可用性（Availability）、分断耐性（Partition tolerance）の3つの特性を同時にすべて満たすことはできない、という定理です。したがって、これら3つのうち任意の2つしか同時に実現できないため、「同時に満たすことはできない」という記述が適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "シャーディングとは、データベースのデータを特定の基準（この場合はデータの先頭文字）に基づいて複数のノードに分割して格納する方法です。提示された規則に従ってデータをノードに割り当てる方法は、まさにシャーディングの典型的なアプローチに該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "概念データモデルは、対象とする現実世界（対象世界）の情報を抽象化し、その構造（実体、属性、関連など）を表現するモデルです。データベースの物理的な実装や特定のDBMSに依存せず、ビジネス要件や情報構造を理解するための高レベルな視点を提供します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "B+木インデックスの検索性能は、木の深さに依存し、データ総件数Xに対しておおよそlog Xのオーダーとなります。これにより、データ量が増加しても検索性能の劣化が緩やかであるという特徴を持ちます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -119,7 +123,14 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
       "エ": "プログラム言語(従業員番号,プログラム言語)"
     },
     "answer": "エ",
-    "explanation": "「プログラム言語を2種類以上使用できる従業員がいる」という要件を満たすためには、従業員番号とプログラム言語の組を主キーとする必要があります。これにより、1人の従業員が複数のプログラム言語を持つことを表現でき、また「全く使用できない従業員もいる」ことは、その従業員のデータがこの表に存在しないことで管理できます。",
+    "explanation": "エは従業員番号とプログラム言語の組合せを主キーにします。同じ従業員番号でも言語が異なれば追加でき、使える言語がない従業員は従業員表だけに登録します。原本の下線は主キーを表し、アは氏名、イはプログラム言語、ウは従業員番号、エは従業員番号とプログラム言語の両方に付いています。",
+    "choiceExplanations": {
+      "ア": "原本では氏名だけに下線があります。同姓同名を識別できず、同じ氏名に対して二つの言語を別々の行に登録することもできません。",
+      "イ": "原本ではプログラム言語だけに下線があります。同じ言語の値が主キーで重複するので、複数の従業員が同じ言語を使えることを記録できません。",
+      "ウ": "原本では従業員番号だけに下線があります。従業員番号は一行にしか現れないため、一人が使える複数の言語を別々に登録できません。",
+      "エ": "原本では従業員番号とプログラム言語の両方に下線があります。組合せを主キーにすれば、一人の複数言語を複数行、使える言語がない従業員を0行で表せます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +155,7 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "第3正規形への変換（第3正規化）は、候補キー以外の属性間の推移的関数従属性を排除するプロセスです。この変換は、必ず情報無損失分解と関数従属性保存が両立するように行われるため、最も適切な選択肢です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -167,7 +179,14 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
       "エ": "関係“フライト”は、ボイス・コッド正規形の条件は満たしていない。"
     },
     "answer": "ウ",
-    "explanation": "ウが正解となるのは、関係“フライト”が主キーを「便名, 客室乗務員名, 搭乗者名」とする多値従属性（MVD）を含む場合、情報無損失分解が可能だからです。正規化の目的は、データの冗長性を排除し、更新時異状を防ぐことにあります。情報無損失分解は、元の関係を失うことなく複数の関係に分解できる性質を指し、これは正規化の過程で重要な概念です。\n\nアは、主キーに全ての属性が含まれていても、客室乗務員名と搭乗者名との間に直接的な関数従属性が存在しない場合、更新時異状が発生する可能性があります。イは、自明でない関数従属性が存在するかどうかはこの問題文だけでは判断できず、もし存在したとしても正規形とは直ちに関係しません。エは、ボイス・コッド正規形（BCNF）は、全ての非自明な関数従属性X→Yにおいて、Xがスーパーキーであるという条件を満たすことを要求しますが、この関係がBCNFを満たさない可能性も十分にあります。",
+    "explanation": "便名ごとに決まる乗務員名と搭乗者名は、いずれも集合です。同じ便に属する乗務員と搭乗者の全組合せが元の表にあるため、便名・乗務員名の表と便名・搭乗者名の表に分け、便名で自然結合すれば元に戻ります。したがって、情報無損失分解が可能です。",
+    "choiceExplanations": {
+      "ア": "乗務員を一人追加するだけでも、同じ便の搭乗者全員との組を登録する必要があります。書き漏らすと、同じ便の組合せがそろいません。",
+      "イ": "便名が決めるのは乗務員名や搭乗者名の集合です。便名から個々の乗務員名や搭乗者名が一つに決まる関数従属とは異なります。",
+      "ウ": "便ごとの乗務員と搭乗者は互いに独立です。便名と乗務員名、便名と搭乗者名の二つに射影して便名で自然結合すると元の表に戻ります。",
+      "エ": "同じ便に複数の乗務員と複数の搭乗者がいることは多値従属です。問題となる多値従属は第4正規形の論点です。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -191,7 +210,14 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
       "エ": "5"
     },
     "answer": "ウ",
-    "explanation": "この問題は、データベース正規化における第3正規形（3NF）への分割数を問うものです。第3正規形とは、第2正規形であり、かつ推移的関数従属がない状態を指します。推移的関数従属とは、非キー属性が他の非キー属性に関数従属している状態です。\n\n正解がウ（4つ）となる根拠は、提示された情報から、顧客、注文、商品、そしてこれらの関連性を表現するために、最低でも4つのエンティティ（実体）が必要となるためです。具体的には、顧客情報、注文情報（1回の注文に1枚の受注伝票）、注文明細（1回の注文で1つ以上の商品）という構造を考えると、それぞれ独立した表として正規化されるのが一般的です。さらに、これらのエンティティ間の関係性を表現するために、別途、注文と商品の関連を格納する表（注文明細表）が必要となるため、合計4つの表に分割されると考えられます。\n\nア（2つ）は、顧客と注文を1つの表にまとめ、注文と商品を別の表にまとめる場合が考えられますが、これでは注文明細の情報が冗長になったり、第3正規形を満たさない可能性があります。イ（3つ）は、顧客、注文、商品の3つの表に単純に分割した場合ですが、注文と商品の多対多の関係を正規化すると、通常は注文明細表が別途必要になります。エ（5つ）は、考えられる正規化の単位よりも多い場合で、例えば、商品カテゴリなどを別途表にするなど、より詳細な分割をした場合などが考えられますが、与えられた情報から最低限必要な表数としては過剰です。",
+    "explanation": "受注番号から受注日と顧客コードが決まり、顧客コードから顧客名が決まります。商品コードから商品名と単価が決まり、受注番号と商品コードの組合せから受注数が決まります。よって、受注・顧客・商品・受注明細の4表に分けます。受注金額は単価と受注数から計算できます。",
+    "choiceExplanations": {
+      "ア": "受注番号と商品コードの組合せで受注数が決まりますが、受注日や商品名などは一方の項目だけで決まります。2表では依存先の違いを分離し切れません。",
+      "イ": "受注、商品、受注明細の3表に分けても、受注表に顧客名を置くと受注番号→顧客コード→顧客名という推移的な関数従属が残ります。",
+      "ウ": "受注番号で決まる受注、顧客コードで決まる顧客、商品コードで決まる商品、受注番号と商品コードで決まる受注明細の4表に分けます。",
+      "エ": "受注金額は商品表の単価と受注明細の受注数から計算できます。受注金額のために独立した表を設けなくても、必要な値を得られます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +242,7 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "エのRANK関数は、ウィンドウ関数の一つで、指定された順序に基づき、各行に順位を付与します。特に、同順位のデータがある場合、同じ順位を割り当て、次の順位はスキップする（例: 1, 2, 2, 4）という特徴を持ちます。問題文では「得点の高い順に個人を順位付け」とあり、同点者がいた場合に「同じ順位」を割り当てるRANK関数が最も適切です。\n\nアのCUME_DIST（累積分布関数）は、指定した順序で、現在の行が全体のどの位置に相当するかを0から1の間の値で返しますが、これは順位付けとは異なります。イのMAX関数は、集計関数であり、グループ内の最大値を返しますが、個々の行に順位を付与する機能はありません。ウのPERCENT_RANK（パーセントランク）は、CUME_DISTに似ていますが、最大値が1にならないように調整された値であり、これも直接的な順位付けとは異なります。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +267,13 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ア: FULL OUTER JOIN が正解です。FULL OUTER JOIN は、結合する両方の表の全ての行を結果に含み、一方の表にのみ存在する行については、もう一方の表の列を NULL で埋めて表示します。この性質を利用することで、どちらか一方の表にのみ存在する ID を抽出することが可能になります。\n\nイ: INNER JOIN は、両方の表に共通する行のみを抽出するため、どちらか一方にしか存在しない ID を得ることはできません。\n\nウ: LEFT OUTER JOIN は、左側の表の全ての行と、右側の表で一致する行を結合しますが、右側の表にのみ存在する ID は取得できません。\n\nエ: RIGHT OUTER JOIN は、右側の表の全ての行と、左側の表で一致する行を結合しますが、左側の表にのみ存在する ID は取得できません。",
+    "choiceExplanations": {
+      "ア": "完全外部結合ならAだけにある100・300とBだけにある600・800がすべて残ります。WHEREで両方にある200・400を除きます。",
+      "イ": "内部結合では、両方の表にある200・400しか残りません。続くWHEREでその両方が消え、どちらか一方だけのIDは得られません。",
+      "ウ": "左外部結合はAの全行を保つのでAだけの100・300は残りますが、Bだけの600・800は結合結果に含まれません。",
+      "エ": "右外部結合はBの全行を保つのでBだけの600・800は残りますが、Aだけの100・300は結合結果に含まれません。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +298,7 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "商演算 R÷S は、関係 R のタプルであって、S の全てのタプルと結合したときに R に含まれる属性以外の属性を全て埋めることができるタプルの集合を表します。具体的には、R の属性集合を R_attr、S の属性集合を S_attr としたとき、(R_attr - S_attr) の属性を持つ R のタプルうち、S の全てのタプルと結合したときに R に属する全ての属性を網羅するものが R÷S の結果となります。\n\n選択肢エが正解となるのは、問題文の図表（ここでは示されていませんが、概念として）における関係Rと関係Sの属性およびタプルの関係から、Sの全タプル（ここでは「E」）と結合してもRの全ての属性（ここでは「店」）を網羅できるタプル（ここでは「店」が「E」）のみが残るからです。\n\n選択肢アは、Sの全タプルと結合できないタプルが含まれているため不適切です。選択肢イは、Sの全タプルと結合できるタプルの一部のみを提示しており、商演算の定義を満たしていません。選択肢ウは、Sの全タプルと結合できるタプル全てを網羅しておらず、商演算の結果として不完全です。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +323,7 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "2相ロック方式では、トランザクションはロックを獲得する成長フェーズとロックを解放する縮退フェーズを持ちます。コミットは通常、トランザクションの終了時点で行われるため、自身が獲得したロックを全て解除した後にコミット操作を実行することが、ロックの管理と他トランザクションとの衝突回避のために重要となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +348,7 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "B+木インデックスは、範囲検索（例：X以上Y以下）において非常に高い検索効率を発揮します。メーカーコードの値が4001以上4003以下の部品を検索する操作は範囲検索であり、インデックスの木構造を効率的にたどることで高速なアクセスが可能となるため、性能改善が最も期待できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +373,7 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "べき等性とは、ある操作を複数回実行しても、1回実行した場合と同じ結果になる性質を指します。データベースのREDO処理においてべき等性が保証されていることで、障害発生後にREDO処理を繰り返し実行しても、データの状態が矛盾せず、最終的に正しい状態に回復できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +398,7 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "イが正解となるのは、各障害におけるDBMSの回復メカニズムの定義に基づきます。\n\na デッドロックによるトランザクション障害は、複数のトランザクションがお互いのリソース解放を待ち続ける状態です。この場合、一方または両方のトランザクションを強制的に終了させ、それまでに行った変更を元に戻す「ロールバック」が唯一の解決策です。\n\nb ハードウェアの誤動作によるシステム障害は、DBMSが稼働中に予期せず停止した場合など、広範な影響が考えられます。この状況では、障害発生直前の状態に戻す「ロールバック」が有効な場合と、障害箇所以外は正常に動作しているため、記録媒体に残されたログ情報を利用して障害発生時点まで復旧する「ロールフォワード」が可能な場合があります。したがって、「ロールフォワード又はロールバック」が適切な回復手法となります。\n\nc データベースの記録媒体が使用不可能となる媒体障害は、データそのものが失われたか、アクセスできなくなった状態です。この場合、障害発生前の整合性のある状態に復旧するために、過去のログファイル（ジャーナル）に記録された変更履歴を適用してデータベースを再構築する「ロールフォワード」が不可欠です。\n\nアはcをロールバックとしているため不適切です。媒体障害ではロールバックだけでは失われたデータを復旧できません。ウはaをロールフォワード又はロールバックとしているため不適切です。デッドロックは必ずロールバックが必要です。エはaをロールフォワードとしているため不適切です。デッドロックはロールバックでしか解決できません。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +423,7 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "トランザクションの隔離性水準とは、複数のトランザクションが同時に実行される際に、互いに干渉することなく、一貫性のあるデータを参照・更新できる度合いを示すものです。隔離性水準を高めるということは、より厳格なロック機構などを用いて、他のトランザクションによるデータへのアクセスを制限することを意味します。\n\nまず、隔離性水準を高めると、あるトランザクションがデータを更新している間、他のトランザクションはそのデータにアクセスできなくなります。これにより、ダーティリード（未確定なデータを読み込むこと）やノンプアット・リピータブルリード（同じトランザクション内で同じデータを複数回読み込んだ際に、値が異なること）といった不整合なデータを読み込む可能性は減少します。したがって、「不整合なデータを読み込むトランザクション数」は減る傾向にあります。\n\n一方で、隔離性水準を高めるためにロックが頻繁にかけられるようになると、トランザクションの実行が待たされたり、ブロックされたりする機会が増えます。これは、リソースの競合を増加させ、結果として単位時間あたりに完了できるトランザクションの数、すなわちスループットを低下させる要因となります。よって、「単位時間に処理できるトランザクション数」は減る傾向にあります。\n\nこれらの理由から、不整合なデータを読み込むトランザクション数は減少し、単位時間に処理できるトランザクション数も減少する組み合わせが適切です。\n\nアは、隔離性水準向上による不整合データ減少のメカニズムを考慮していないため不適切です。イは、不整合データ減少という点は正しいものの、単位時間あたりの処理能力低下という結果を誤解しています。ウは、不整合データ減少という点は正しいですが、単位時間あたりの処理能力が増加するという結論が誤りです。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +448,7 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "直列化可能性（Serializable）とは、並行して実行された複数のトランザクションの最終的な実行結果が、それらのトランザクションを何らかの順序で直列に（一つずつ）実行した場合の結果と等しくなる性質を指します。これにより、並行処理によるデータの不整合を防ぎ、正しい結果を保証します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +473,7 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ブロックチェーンは、一連のブロックが連結されたデータ構造であり、各ブロックにはトランザクションデータと、直前のブロックのハッシュ値が格納されています。このハッシュ値の連結により、データの改ざんがあった場合にすぐに検出できる仕組みとなっており、セキュリティ特性の根幹をなしています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +498,7 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "DRDoS攻撃は、攻撃者が送信元IPアドレスを偽装し、多数のオープンリゾルバなどの第三者サーバ（リフレクター）にリクエストを送信する手法です。これにより、リフレクターからの大量のレスポンスが攻撃対象サーバに集中し、サービス停止を引き起こすもので、選択肢ウがこの攻撃に該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +523,7 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "JPCERT/CCのインシデントハンドリングマニュアルに基づくと、インシデント対応の順序は「検知/連絡受付」から始まり、次に情報の評価と優先順位付けを行う「トリアージ」が続き、その後具体的な対応を行う「インシデントレスポンス」へと進むのが一般的です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +548,7 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "エクスプロイトコードとは、ソフトウェアやハードウェアに存在する既知の脆弱性（セキュリティホール）を悪用し、システムを不正に操作したり、情報を窃取したりするために作成されたプログラムコードのことです。サイバー攻撃において、脆弱性を突くために用いられます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +573,7 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "RAID 6は、2つの独立したパリティブロックを使用するRAIDレベルであり、同時に2台までのハードディスクが故障してもデータロスなく復旧できる耐障害性を提供します。他のRAIDレベルでは2台故障に対応できないものが多いです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +598,7 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "キャパシティプランニングは、現在のシステム性能を測定・分析し、将来の負荷増加を予測して適切なリソースを計画的に増強・最適化することを目的とします。これにより、将来にわたってもシステムが要求される応答時間を維持できるようにします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +623,7 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "データ中心アプローチは、システム開発において、まずシステムが扱うデータそのものに着目し、その構造（実体、属性、関連）を実体関連モデル（ERモデル）などで整理・定義することから始める手法です。データの整合性や一貫性を重視し、システム全体の基盤をデータの観点から構築します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +648,7 @@ export const DB_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ステージング環境とは、本番環境とほぼ同じ構成（ハードウェア、ソフトウェア、ネットワーク、データなど）で構築されたテスト環境のことです。システムリリース前に、本番稼働を想定した最終的なテストを実施し、潜在的な問題を発見・修正するために利用されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_db_am2_qs.pdf",
     "license": "IPA-public"

@@ -1,0 +1,144 @@
+[
+  {
+    "id": "nw-2016a-pm1-q1",
+    "exam": "nw",
+    "session": "pm1",
+    "year": 2016,
+    "season": "autumn",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "電子メール",
+    "topicTags": [
+      "電子メールシステム"
+    ],
+    "difficulty": 4,
+    "question": "問1 電子メールシステム",
+    "answer": "設問                解答例・解答の要点                備考\n 設問１  ア MX\n      イ MSV3\n      ウ MSV2\n      エ SMTP-AUTH\n設問２  (1) 不正メールの踏み台にされてしまうリスク\n        (2) ルータ4\n        (3) オ TCP\n      カ  a.b.0.0/20\n      キ  25\n        (4) サブミッションポート\n        (5) ①  ・110\n      ②  ・587\n設問３  (1) MAIL FROM\n        (2) 送信元メールサーバのIP アドレス",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                備考\n 設問１  ア MX\n      イ MSV3\n      ウ MSV2\n      エ SMTP-AUTH\n設問２  (1) 不正メールの踏み台にされてしまうリスク\n        (2) ルータ4\n        (3) オ TCP\n      カ  a.b.0.0/20\n      キ  25\n        (4) サブミッションポート\n        (5) ①  ・110\n      ②  ・587\n設問３  (1) MAIL FROM\n        (2) 送信元メールサーバのIP アドレス\n```",
+    "explanation": "リレーを許可する条件を、社内と委託先で比較する。送信者認証では、配送先を示すMXと送信元の確認に使う情報の役割を区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/nw/2016-autumn-pm1/page-02.webp",
+      "/questions/ipa/nw/2016-autumn-pm1/page-03.webp",
+      "/questions/ipa/nw/2016-autumn-pm1/page-04.webp",
+      "/questions/ipa/nw/2016-autumn-pm1/page-05.webp",
+      "/questions/ipa/nw/2016-autumn-pm1/page-06.webp"
+    ],
+    "imageAltTexts": [
+      "ネットワークスペシャリスト 午後I 問1の本文・設問（公式問題冊子 2ページ）",
+      "ネットワークスペシャリスト 午後I 問1の本文・設問（公式問題冊子 3ページ）",
+      "ネットワークスペシャリスト 午後I 問1の本文・設問（公式問題冊子 4ページ）",
+      "ネットワークスペシャリスト 午後I 問1の本文・設問（公式問題冊子 5ページ）",
+      "ネットワークスペシャリスト 午後I 問1の本文・設問（公式問題冊子 6ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/nw/2016-autumn-pm1/answer-q01-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "ネットワークスペシャリスト 午後I 問1の公式解答例（1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_nw_pm1_qs.pdf#page=2",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_nw_pm1_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2016年度秋期 ネットワークスペシャリスト 午後I 問1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "nw-2016a-pm1-q2",
+    "exam": "nw",
+    "session": "pm1",
+    "year": 2016,
+    "season": "autumn",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "ネットワークセキュリティ",
+    "topicTags": [
+      "モバイルネットワーク"
+    ],
+    "difficulty": 4,
+    "question": "問2 モバイルネットワーク",
+    "answer": "設問                解答例・解答の要点                備考\n 設問１  ア AES\n      イ 事前共有鍵\n      ウ SIM カード\n      エ APN\n      オ NAPT\n      カ CONNECT\n設問２  (1) 定期的に送信するビーコン信号を停止する。\n        (2) SSID やMAC アドレスは暗号化できず，傍受されるから\n        (3) E\n設問３  (1) VPN 接続の利用者ID を停止する。\n        (2) プロキシサーバと内部DNS サーバへの通信\n設問４  (1) 機能名  プロキシ認証\n      設定内容 営業員ごとに利用者ID を登録する。\n        (2) ① ・接続先ホスト名\n      ② ・接続先ポート番号",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                備考\n 設問１  ア AES\n      イ 事前共有鍵\n      ウ SIM カード\n      エ APN\n      オ NAPT\n      カ CONNECT\n設問２  (1) 定期的に送信するビーコン信号を停止する。\n        (2) SSID やMAC アドレスは暗号化できず，傍受されるから\n        (3) E\n設問３  (1) VPN 接続の利用者ID を停止する。\n        (2) プロキシサーバと内部DNS サーバへの通信\n設問４  (1) 機能名  プロキシ認証\n      設定内容 営業員ごとに利用者ID を登録する。\n        (2) ① ・接続先ホスト名\n      ② ・接続先ポート番号\n```",
+    "explanation": "タブレットの通信を無線LAN、LTE、VPNの区間ごとにたどる。端末の紛失時は、VPN利用者の無効化で遮断できる通信を確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/nw/2016-autumn-pm1/page-07.webp",
+      "/questions/ipa/nw/2016-autumn-pm1/page-08.webp",
+      "/questions/ipa/nw/2016-autumn-pm1/page-09.webp",
+      "/questions/ipa/nw/2016-autumn-pm1/page-10.webp"
+    ],
+    "imageAltTexts": [
+      "ネットワークスペシャリスト 午後I 問2の本文・設問（公式問題冊子 7ページ）",
+      "ネットワークスペシャリスト 午後I 問2の本文・設問（公式問題冊子 8ページ）",
+      "ネットワークスペシャリスト 午後I 問2の本文・設問（公式問題冊子 9ページ）",
+      "ネットワークスペシャリスト 午後I 問2の本文・設問（公式問題冊子 10ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/nw/2016-autumn-pm1/answer-q02-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "ネットワークスペシャリスト 午後I 問2の公式解答例（2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_nw_pm1_qs.pdf#page=7",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_nw_pm1_ans.pdf#page=2",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2016年度秋期 ネットワークスペシャリスト 午後I 問2",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "nw-2016a-pm1-q3",
+    "exam": "nw",
+    "session": "pm1",
+    "year": 2016,
+    "season": "autumn",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "ネットワーク運用",
+    "topicTags": [
+      "メールサーバの更改"
+    ],
+    "difficulty": 4,
+    "question": "問3 メールサーバの更改",
+    "answer": "設問                解答例・解答の要点                備考\n設問１ (1)  a ゾーン転送\n             b  SMTP\n       (2)  c  DNS1\n       (3) 公開ゾーン情報の更新通知\n       (4) 条件 送信元が少数の場合\n      理由 送信元は，DNS のキャッシュが生存している間，宛先を変えないから\n設問２ (1)  d 新MSV1\n             e 新MSV2\n       (2)\n         ホスト名      IP アドレス\n                   msvc          VIP1\n                   msvc          VIP2\n設問３ (1)  機器名   FW\n      設定変更内容 新MSV とMGW との間のSMTP 通信を，双方向とも許可す\n             る。\n       (2) 送信元 メール送受信サーバの変更を実施済みの社員 又は 社外\n      宛先 未変更社員\n       (3)  (A) 新MSV → 旧MSV\n            (B) 旧MSV\n       (4) 申請者のメールアドレスに対応するメールサーバが，新MSV に変更される。",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                備考\n設問１ (1)  a ゾーン転送\n             b  SMTP\n       (2)  c  DNS1\n       (3) 公開ゾーン情報の更新通知\n       (4) 条件 送信元が少数の場合\n      理由 送信元は，DNS のキャッシュが生存している間，宛先を変えないから\n設問２ (1)  d 新MSV1\n             e 新MSV2\n       (2)\n         ホスト名      IP アドレス\n                   msvc          VIP1\n                   msvc          VIP2\n設問３ (1)  機器名   FW\n      設定変更内容 新MSV とMGW との間のSMTP 通信を，双方向とも許可す\n             る。\n       (2) 送信元 メール送受信サーバの変更を実施済みの社員 又は 社外\n      宛先 未変更社員\n       (3)  (A) 新MSV → 旧MSV\n            (B) 旧MSV\n       (4) 申請者のメールアドレスに対応するメールサーバが，新MSV に変更される。\n```",
+    "explanation": "メールの送信元と宛先を移行済み・未移行の組合せで整理する。DNSのキャッシュが残る間も配送を継続できるように、旧サーバと新サーバの経路を追う。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/nw/2016-autumn-pm1/page-11.webp",
+      "/questions/ipa/nw/2016-autumn-pm1/page-12.webp",
+      "/questions/ipa/nw/2016-autumn-pm1/page-13.webp",
+      "/questions/ipa/nw/2016-autumn-pm1/page-14.webp",
+      "/questions/ipa/nw/2016-autumn-pm1/page-15.webp"
+    ],
+    "imageAltTexts": [
+      "ネットワークスペシャリスト 午後I 問3の本文・設問（公式問題冊子 11ページ）",
+      "ネットワークスペシャリスト 午後I 問3の本文・設問（公式問題冊子 12ページ）",
+      "ネットワークスペシャリスト 午後I 問3の本文・設問（公式問題冊子 13ページ）",
+      "ネットワークスペシャリスト 午後I 問3の本文・設問（公式問題冊子 14ページ）",
+      "ネットワークスペシャリスト 午後I 問3の本文・設問（公式問題冊子 15ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/nw/2016-autumn-pm1/answer-q03-p03.webp"
+    ],
+    "answerImageAltTexts": [
+      "ネットワークスペシャリスト 午後I 問3の公式解答例（3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_nw_pm1_qs.pdf#page=11",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000g6fw-att/2016h28a_nw_pm1_ans.pdf#page=3",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2016年度秋期 ネットワークスペシャリスト 午後I 問3",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2016h28.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

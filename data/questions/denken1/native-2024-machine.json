@@ -1,0 +1,567 @@
+{
+  "year": 2024,
+  "season": "primary",
+  "examDate": "2024-08-18",
+  "subject": "machine",
+  "sourceIndexUrl": "https://www.shiken.or.jp/chief/first/qa/",
+  "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20240818_ch_first_a01.pdf",
+  "sourceAnswerPdfSha256": "a58324db8364811b7aa7d048800228c1d4d45bd16b99c55d2e94f5c52fbf9a03",
+  "sourcePacketSha256": "a9af85df6820a04ec0562cffb1c0f32b2aa1f49777ead4b1363ed2effe84a5c9",
+  "questions": [
+    {
+      "id": "denken1-2024-primary-machine-q01",
+      "year": 2024,
+      "season": "primary",
+      "examDate": "2024-08-18",
+      "subject": "machine",
+      "number": 1,
+      "topic": "同期発電機のV曲線と可能出力曲線",
+      "questionText": "次の文章は，同期機の特性曲線に関する記述である。文中の□に当てはまる最も適切なものを解答群の中から選べ。\n\n図1は同期発電機のV曲線である。V曲線は，発電機，電動機のいずれにおいても，同期機の端子電圧を定格に保ちながら出力(電動機の場合は軸出力，発電機の場合は有効電力)をパラメータとして一定にし，横軸の (1) を変化させることで得られる。ただし，発電機の場合では，一般的に縦軸には皮相電力をとり，点線①の右側の領域は遅相運転の領域となる。\n\n図1において，点aは発電機の電機子端子を (2) になる (1) での運転に相当する。太線の曲線②は (3) としての運転に相当する。また，曲線③は，有効電力を定格運転時の値としたときの曲線である。\n\n図2は同期発電機の可能出力曲線であり，図に示すように一般的にAB，BC，CDの3種類の曲線で構成される。そのうちの曲線 (4) が，図1のV曲線の点線dcに対応する。ここで点線dcを含む点線④は (1) が定格値のときの直線である。また，図1の点bは図2の点 (5) に相当する。",
+      "choiceGroups": {
+        "イ": "AB",
+        "ロ": "BC",
+        "ハ": "CD",
+        "ニ": "B",
+        "ホ": "E",
+        "ヘ": "C",
+        "ト": "電機子電流",
+        "チ": "界磁電流",
+        "リ": "誘導発電機",
+        "ヌ": "負荷電流",
+        "ル": "同期調相機",
+        "ヲ": "発電電動機",
+        "ワ": "短絡した場合に短絡容量",
+        "カ": "開放した場合に定格電圧",
+        "ヨ": "短絡した場合に定格電流"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "チ",
+          "explanation": "端子電圧と有効電力を固定し、励磁の強さを変える。",
+          "derivation": "横軸は回転子の界磁電流。励磁を動かすと無効電力と皮相電力が変わる。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "カ",
+          "explanation": "点aでは出力電流がゼロで、電機子は無負荷に相当する。",
+          "derivation": "無負荷の端子電圧を定格にする界磁電流に対応するため、電機子端子を開放した場合の定格電圧が該当する。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ル",
+          "explanation": "曲線②では有効電力をゼロとして励磁を調整する。",
+          "derivation": "進み又は遅れの無効電力を出し入れする同期調相機の動作である。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "イ",
+          "explanation": "曲線ABは遅れ側で界磁電流が定格に達する境界。",
+          "derivation": "V曲線でも、界磁電流が定格の位置を通る点線④上のdcが対応する。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ホ",
+          "explanation": "点bでは有効電力は曲線③の値、力率は1である。",
+          "derivation": "無効電力がゼロで同じ有効電力となる、点Bの真下の点Eを選ぶ。"
+        }
+      ],
+      "figures": [],
+      "sourcePages": [
+        {
+          "physicalPage": 4,
+          "url": "/images/denken1/2024-native/machine-q01-p04.png",
+          "sha256": "933a102a072f72190925820b0919dd7a5c197f58969f67a04f1a86b0cd53cbd4"
+        },
+        {
+          "physicalPage": 5,
+          "url": "/images/denken1/2024-native/machine-q01-p05.png",
+          "sha256": "c07ae8e40b985cd9c3299cff06263d2682496e5444f274042459f01738452953"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20240818_ch_first_q03.pdf",
+      "sourcePdfSha256": "195bc9ab0e66db8ac697b6db78415e86e406247248baaf7b1c5e3d76ec4f823f",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken1-2024-primary-machine-q02",
+      "year": 2024,
+      "season": "primary",
+      "examDate": "2024-08-18",
+      "subject": "machine",
+      "number": 2,
+      "topic": "避雷器の動作責務と特性",
+      "questionText": "次の文章は，避雷器に関する記述である。文中の□に当てはまる最も適切なものを解答群の中から選べ。\n\n避雷器は，雷又は回路の開閉などに起因するサージ電圧が電力機器に侵入することを防ぐため，線路と大地間に接続する装置である。避雷器の有する動作責務としては，過電圧の (1) がある値を超えたとき，放電により過電圧を制限して電力機器の絶縁を保護し，かつ， (2) を短時間のうちに遮断して，系統を元の状態に復帰させることである。\n\n避雷器の放電中，その両端子間に発生する電圧を (3) といい，その値は保護する機器や設備の耐電圧レベルよりも低くなければならない。また，避雷器の保護性能及び復帰性能を表現するために用いる放電電流の規定値を (4) という。\n\n現在使用されているギャップレス避雷器の多くは，優れた非直線の電圧－電流特性を有する (5) 素子を用いた避雷器であり，動作時の (3) をできるだけ低くし，かつ，常時運転電圧の印加に対して長期間の使用に耐えるようにしている。また，高抵抗・高耐圧化した (5) 素子を適用することにより素子の直列数の低減が可能となり，ガス絶縁開閉装置(GIS)用，送電用，配電用などの避雷器の小形化に大きく寄与している。",
+      "choiceGroups": {
+        "イ": "公称放電電流",
+        "ロ": "炭化ケイ素",
+        "ハ": "アーク電圧",
+        "ニ": "平均値",
+        "ホ": "放電開始電圧",
+        "ヘ": "実効値",
+        "ト": "波高値",
+        "チ": "連続放電電流",
+        "リ": "漏れ電流",
+        "ヌ": "交流",
+        "ル": "制限電圧",
+        "ヲ": "シリコン",
+        "ワ": "続流",
+        "カ": "定格通電電流",
+        "ヨ": "酸化亜鉛"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ト",
+          "explanation": "サージで絶縁にかかる最大の電圧を考える。",
+          "derivation": "放電が始まるかの判断に用いるのは、時間平均や実効値ではなく瞬時の最大値である波高値。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ワ",
+          "explanation": "サージの通過後に電源から引き続き流れる電流を考える。",
+          "derivation": "この電流が続流であり、短時間に遮断して正常な絶縁状態へ戻す。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ル",
+          "explanation": "放電中の避雷器の端子電圧が、保護対象にかかる電圧になる。",
+          "derivation": "放電中に端子間に現れる制限電圧が、保護する機器の耐電圧を下回るように選定する。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "イ",
+          "explanation": "放電性能の基準に用いる規定の電流値を選ぶ。",
+          "derivation": "公称放電電流を基準として、放電時の制限電圧などを比較する。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ヨ",
+          "explanation": "常時は高抵抗、サージ時には電流を流しやすい素子が適する。",
+          "derivation": "酸化亜鉛素子の非直線特性を利用すると、直列ギャップを使わずに電圧を制限できる。"
+        }
+      ],
+      "figures": [],
+      "sourcePages": [
+        {
+          "physicalPage": 6,
+          "url": "/images/denken1/2024-native/machine-q02-p06.png",
+          "sha256": "2081895106a5d60af87a7701ee14d75e6db643901c218daa46980b75ee2560c1"
+        },
+        {
+          "physicalPage": 7,
+          "url": "/images/denken1/2024-native/machine-q02-p07.png",
+          "sha256": "08b534727453bd5bc3f24921a4eebf7dcb74c0247197e0ca11356db4f423c2ff"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20240818_ch_first_q03.pdf",
+      "sourcePdfSha256": "195bc9ab0e66db8ac697b6db78415e86e406247248baaf7b1c5e3d76ec4f823f",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken1-2024-primary-machine-q03",
+      "year": 2024,
+      "season": "primary",
+      "examDate": "2024-08-18",
+      "subject": "machine",
+      "number": 3,
+      "topic": "誘導電動機のベクトル制御",
+      "questionText": "次の文章は，誘導電動機のベクトル制御に関する記述である。文中の□に当てはまる最も適切なものを解答群の中から選べ。\n\n(1) において，界磁磁束軸と電機子電流の磁束軸との間の角度は電気角で90°であり，界磁磁束と電機子電流によりトルクを発生し，さらに，界磁電流を一定にすればトルクは電機子電流に比例する。この考え方に基づき，誘導電動機のトルクなどを制御する方式をベクトル制御と呼んでいる。\n\n誘導電動機の (2) を，磁束を発生する励磁電流成分とトルクを発生するトルク電流成分とに分解し，それぞれの電流成分をベクトルとして独立に制御する。\n\nベクトル制御は直接型ベクトル制御と間接型ベクトル制御に大別される。このうち直接型ベクトル制御は，磁束を検出して制御する方式である。二次磁束指令値 φ₂* とトルク電流指令値 i_q* に応じて励磁電流ベクトルとトルク電流ベクトルを制御することにより電動機を (1) のように扱うことができる。\n\n一方，間接型ベクトル制御は磁束を検出することなしに制御する方法であり，磁束センサを必要とせずにベクトル制御できる。\n\n一つの方式として二次磁束指令値 φ₂* から (3) 指令値を求めて制御する方式がある。電動機の二次抵抗を r₂，二次インダクタンスを L₂，相互インダクタンスを M とした場合， (3) 指令値を ωₛ* として，次のように表される。\n\nωₛ* = (r₂/L₂) × M × (i_q*/φ₂*)\n\nこの式中の r₂/L₂ の逆数である L₂/r₂ = T₂ は，電動機の二次回路の (4) と呼ばれる。この方式は r₂，L₂，M を制御演算に用いているが，それらのうち (5) の温度変化の影響が最も大きい。",
+      "choiceGroups": {
+        "イ": "共振周波数",
+        "ロ": "一次電流",
+        "ハ": "二次電流",
+        "ニ": "V/f 一定制御",
+        "ホ": "滑り角周波数",
+        "ヘ": "他励直流機",
+        "ト": "時定数",
+        "チ": "一次角周波数",
+        "リ": "特性インピーダンス",
+        "ヌ": "二次インダクタンス",
+        "ル": "二次抵抗",
+        "ヲ": "空隙磁束",
+        "ワ": "同期機",
+        "カ": "回転子角周波数",
+        "ヨ": "相互インダクタンス"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ヘ",
+          "explanation": "磁束を作る回路とトルクを制御する回路を個別に扱う。",
+          "derivation": "他励直流機では界磁電流を一定にしておけば、電機子電流でトルクを調整できる。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ロ",
+          "explanation": "インバータから固定子に供給する電流を二つの成分に分解する。",
+          "derivation": "一次電流を励磁電流成分とトルク電流成分に分けて扱う。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ホ",
+          "explanation": "回転子の回転に対して磁界が先行する角周波数を求める。",
+          "derivation": "式のωs*は滑り角周波数の指令値であり、二次磁束指令値とトルク電流指令値から求める。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ト",
+          "explanation": "係数r₂/L₂の逆数は、インダクタンスを抵抗で割った値になる。",
+          "derivation": "L₂/r₂の単位は秒で、二次回路の時定数T₂を表す。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ル",
+          "explanation": "温度で導体の抵抗が変わる点が重要。",
+          "derivation": "三つの定数のうち二次抵抗r₂は温度に依存し、滑り角周波数の演算に影響する。"
+        }
+      ],
+      "figures": [],
+      "sourcePages": [
+        {
+          "physicalPage": 8,
+          "url": "/images/denken1/2024-native/machine-q03-p08.png",
+          "sha256": "5e430e06d691f7739d2a45a452c05ef02874434cccbdbd5d6708fbd1e8810454"
+        },
+        {
+          "physicalPage": 9,
+          "url": "/images/denken1/2024-native/machine-q03-p09.png",
+          "sha256": "6675a4ad3b2abea0d24e680b6fc6006bdeda0215db140a99fcf4d02151cce11e"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20240818_ch_first_q03.pdf",
+      "sourcePdfSha256": "195bc9ab0e66db8ac697b6db78415e86e406247248baaf7b1c5e3d76ec4f823f",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken1-2024-primary-machine-q04",
+      "year": 2024,
+      "season": "primary",
+      "examDate": "2024-08-18",
+      "subject": "machine",
+      "number": 4,
+      "topic": "ルーソー図と全光束",
+      "questionText": "次の文章は，光源の全光束の求め方に関する記述である。文中の□に当てはまる最も適切なものを解答群の中から選べ。\n\n配光は，光源が放射する光束を， (1) の空間分布として表したものである。鉛直配光が水平角 φ に依存しない場合は，配光は鉛直角 θ の関数 I(θ)として表される。このとき，この光源の全光束 Φ は次式によって表される。\n\nΦ = (2)　①\n\n実在の光源では複雑な配光を有するものが多いので，全光束 Φ は実測した I(θ) を数値積分することで求める。その方法の一つとして，以下に示す (3) と呼ばれる図を用いる方法がある。\n\n(3) の左側には，光源の光中心を中心とした半径 r の半円を描き，その内側に配光 I(θ) (曲線abc)を描く。また，半円上において，θ に対応する点をPとしている。\nさらに，図の右側には，直交座標xyをとっている。x軸(縦軸)において，座標の原点Oは，左側の半円上の θ = 0 の点Nに対応している。同様に，x軸上の点P′は半円上の点Pに対応している。x軸において，原点Oから点P′までの長さ(点Pにおける球帽の高さ)がxである。y軸(横軸)には，θ に対応する I(θ) をプロットしている。すなわち，図の左側の配光曲線abcが，図の右側の曲線ABCに対応している。\n\nこの図において，x軸上の微小幅を dx とすると，曲線ABCとx軸とで囲まれる面の面積Sは次式で与えられる。\n\nS = ∫₀²ʳ I(θ) dx　②\n\nここで，x は r と θ を使って，\n\nx = r(1−cosθ)　③\n\nと表すことができるので，これを使うと，②式は次式のようになる。\n\nS = (4)　④\n\nさらに，①式と④式とを比較することで次式を求めることができる。\n\nΦ = (5)　⑤\n\nすなわち，面積Sを求めることによって，光源の全光束 Φ を求めることができる。",
+      "choiceGroups": {
+        "イ": "2r∫₀^π I(θ)cosθ dθ",
+        "ロ": "2π∫₀^π I(θ)cosθ dθ",
+        "ハ": "2π∫₀^π I(θ)sinθ dθ",
+        "ニ": "(π/r)S",
+        "ホ": "(2π/r)S",
+        "ヘ": "(π/(2r))S",
+        "ト": "ルーソー図",
+        "チ": "色度図",
+        "リ": "等光度図",
+        "ヌ": "輝度",
+        "ル": "光度",
+        "ヲ": "光束発散度",
+        "ワ": "π∫₀^π I(θ) dθ",
+        "カ": "r∫₀^π I(θ)sinθ dθ",
+        "ヨ": "2r∫₀^π I(θ) dθ"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ル",
+          "explanation": "配光は、光源がどの方向にどれだけ強く光を出すかを表す。",
+          "derivation": "放射する方向ごとの単位立体角当たりの光束を光度Iとし、その分布を配光と呼ぶ。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ハ",
+          "explanation": "鉛直角θの微小帯の立体角は2π sinθ dθ。",
+          "derivation": "光度をこの立体角で重み付けしてθ＝0からπまで積分すると、全光束は2π∫₀^π I(θ)sinθ dθとなる。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ト",
+          "explanation": "球面の角度を球帽の高さへ写し替える図を選ぶ。",
+          "derivation": "角度をそのまま横軸に取らず、光度をx＝r(1−cosθ)に対して描くのがルーソー図である。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "カ",
+          "explanation": "③式を微分し、xを積分変数θに置き換える。",
+          "derivation": "dx＝r sinθ dθであり、x＝0から2rまでの範囲はθ＝0からπに対応する。S＝r∫₀^π I(θ)sinθ dθとなる。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ホ",
+          "explanation": "①式と④式は共通の積分に異なる係数が掛かる。",
+          "derivation": "①の係数2πを④の係数rで割れば、全光束Φ＝(2π/r)Sと求まる。"
+        }
+      ],
+      "figures": [],
+      "sourcePages": [
+        {
+          "physicalPage": 10,
+          "url": "/images/denken1/2024-native/machine-q04-p10.png",
+          "sha256": "82c6b0d3ca70a4e31bbdc8da75212b8065184138b9763805d835a2c88906853c"
+        },
+        {
+          "physicalPage": 11,
+          "url": "/images/denken1/2024-native/machine-q04-p11.png",
+          "sha256": "5ca6326b122588b04aad8a12ed1ed9b6a916e34280235662489ba41c6497f95f"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20240818_ch_first_q03.pdf",
+      "sourcePdfSha256": "195bc9ab0e66db8ac697b6db78415e86e406247248baaf7b1c5e3d76ec4f823f",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken1-2024-primary-machine-q05",
+      "year": 2024,
+      "season": "primary",
+      "examDate": "2024-08-18",
+      "subject": "machine",
+      "number": 5,
+      "topic": "トランジスタのスイッチングとスナバ",
+      "questionText": "次の文章は，トランジスタのスイッチングに関する記述である。文中の□に当てはまる最も適切なものを解答群の中から選べ。\n\n図1はトランジスタのコレクタ・エミッタ間電圧 vCE とコレクタ電流 iC のスイッチング期間中の軌跡の模式図である。外側の実線が安全動作領域(SOA)を示す。トランジスタの動作点の軌跡がSOAの内側にあることが望ましい。動作点が点aから点bに移行するとき，軌跡 (1) を通るとトランジスタの損失は非常に小さい。この軌跡を求めるためには移行期間中の vCE と iC の (2) を測定する必要がある。線分cdの部分は (3) や二次降伏による制限である。\n図2は，コンデンサC，抵抗R及びダイオードDからなる (4) がトランジスタに並列接続されている。Cはターンオフするときの vCE の上昇を (5) する働きがあり，SOA内でのトランジスタの動作の確保，スイッチング損失の低減， (6) の抑制に役立つ。Rはオン期間にCの (7) を制限する働きがある。",
+      "choiceGroups": {
+        "イ": "1",
+        "ロ": "2",
+        "ハ": "3",
+        "ニ": "放電電流",
+        "ホ": "最小値",
+        "ヘ": "環流回路",
+        "ト": "瞬時値",
+        "チ": "最大値",
+        "リ": "オン電流",
+        "ヌ": "緩やかに",
+        "ル": "サージ電圧",
+        "ヲ": "温度上昇",
+        "ワ": "スイッチング周期",
+        "カ": "急峻に",
+        "ヨ": "オン電圧",
+        "タ": "充電電流",
+        "レ": "スナバ回路"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "イ",
+          "explanation": "スイッチング期間中に電圧と電流が同時に大きくならない軌跡を選ぶ。",
+          "derivation": "瞬時損失はvCE×iCである。電流が先に下がる軌跡1は、電圧が上がる間もこの積を小さく保つ。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ト",
+          "explanation": "軌跡は移行期間の動作点を時間に沿って結んだもの。",
+          "derivation": "同じ時刻の電圧と電流の瞬時値を対にして描くことにより途中の動作点が分かる。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ヲ",
+          "explanation": "安全動作領域の斜辺では、大きな電圧に対して許容電流が小さくなる。",
+          "derivation": "電圧と電流の積による発熱で温度が上がる制限と、局所的な電流集中による二次降伏がある。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "レ",
+          "explanation": "並列のコンデンサ・抵抗・ダイオードが過渡現象を抑える。",
+          "derivation": "Cがターンオフ時の電流を一時的に受けるこの構成はスナバ回路である。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ヌ",
+          "explanation": "ターンオフ直後、コンデンサは充電に時間を要する。",
+          "derivation": "i＝C dv/dtから、コンデンサに電流が流れる間は端子電圧の立ち上がりが緩やかになる。"
+        },
+        {
+          "slot": 6,
+          "officialAnswer": "ル",
+          "explanation": "急な電流変化で配線などのインダクタンスに過電圧が生じる。",
+          "derivation": "スナバで過渡時の電圧上昇を抑え、トランジスタにかかるサージ電圧を低減する。"
+        },
+        {
+          "slot": 7,
+          "officialAnswer": "ニ",
+          "explanation": "オンに戻るとコンデンサに蓄えた電荷が抜ける。",
+          "derivation": "ダイオードが逆方向になる放電時に電流がRを通るため、突入する放電電流を制限できる。"
+        }
+      ],
+      "figures": [],
+      "sourcePages": [
+        {
+          "physicalPage": 12,
+          "url": "/images/denken1/2024-native/machine-q05-p12.png",
+          "sha256": "05cc676c15c38f2492e94eb189dc05c7b20e03e10eca73fcac54e77626928caf"
+        },
+        {
+          "physicalPage": 13,
+          "url": "/images/denken1/2024-native/machine-q05-p13.png",
+          "sha256": "010ebe0a27c8848fb3819406e6056d3a1ce52a8cfc1937437e5846fbdf02b481"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20240818_ch_first_q03.pdf",
+      "sourcePdfSha256": "195bc9ab0e66db8ac697b6db78415e86e406247248baaf7b1c5e3d76ec4f823f",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken1-2024-primary-machine-q06",
+      "year": 2024,
+      "season": "primary",
+      "examDate": "2024-08-18",
+      "subject": "machine",
+      "number": 6,
+      "topic": "鉛蓄電池の電極反応と理論容量",
+      "questionText": "次の文章は，鉛蓄電池に関する記述である。文中の□に当てはまる最も適切なものを解答群の中から選べ。\n\n鉛蓄電池は100年以上の歴史を持ち，自動車用，産業用の非常用電源装置，電動フォークリフト等の様々な用途があり，充放電の電極反応は以下の式で表される。\n\n正極　 PbO₂ + (1) H⁺ + HSO₄⁻ + 2 e⁻ ⇄ PbSO₄ + 2 H₂O\n負極　 Pb + HSO₄⁻ ⇄ PbSO₄ + H⁺ + 2 e⁻\n全反応　Pb + 2 H₂SO₄ + PbO₂ ⇄ 2 PbSO₄ + 2 H₂O\n\n全反応は，二酸化鉛と鉛が硫酸と反応して硫酸鉛と水になる反応であり，放電反応で正極の二酸化鉛は (2) される。公称電圧は2 Vであり，ニッケル－水素化物電池などの他の水溶液電解質を用いる電池と比較して (3) い。また，放電すると電解質は (4) くなる。鉛蓄電池の構成材料のモル質量をそれぞれPbは207.2 g/mol，H₂SO₄は98.1 g/mol，PbO₂は239.2 g/mol，硫酸濃度38 %とすると，質量あたりの理論容量は (5) A·h/kgである。公称電圧12 V，20時間率容量12.0 A·h，重量3.9 kgの集合電池の重量エネルギー密度は (6) W·h/kgである。\nなお，ファラデー定数は26.80 A·h/molとせよ。",
+      "choiceGroups": {
+        "イ": "1.86",
+        "ロ": "2",
+        "ハ": "3",
+        "ニ": "3.08",
+        "ホ": "4",
+        "ヘ": "36.9",
+        "ト": "41.7",
+        "チ": "55.7",
+        "リ": "83.4",
+        "ヌ": "高",
+        "ル": "低",
+        "ヲ": "活性化",
+        "ワ": "酸化",
+        "カ": "還元",
+        "ヨ": "変わらな",
+        "タ": "薄",
+        "レ": "濃"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ハ",
+          "explanation": "正極反応式の水素原子と電荷を合わせる。",
+          "derivation": "右辺の水2分子にはHが4個あり、HSO₄⁻が持つHは1個なので、左辺にH⁺が3個必要。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "カ",
+          "explanation": "正極のPbO₂は放電時に電子を受け取る側。",
+          "derivation": "Pbの酸化数が＋4から硫酸鉛の＋2へ下がるため、還元である。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ヌ",
+          "explanation": "1セル当たりの公称電圧を比較する。",
+          "derivation": "鉛蓄電池は約2 Vで、ニッケル系の水溶液電解質セルの約1.2 Vより高い。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "タ",
+          "explanation": "全反応で硫酸が反応物、水が生成物になっている。",
+          "derivation": "放電に伴って硫酸が消費され、水が増えるため、電解液は薄くなる。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "チ",
+          "explanation": "電子2 mol分の電気量を構成材料の質量で割る。",
+          "derivation": "電気量は53.60 A·h。硫酸溶液の質量を196.2/0.38 gとし、鉛と二酸化鉛を加えると約0.963 kgなので、理論容量は55.7 A·h/kg。"
+        },
+        {
+          "slot": 6,
+          "officialAnswer": "ヘ",
+          "explanation": "公称電圧と容量から集合電池のエネルギーを計算する。",
+          "derivation": "12 V×12.0 A·h＝144 W·h。これを3.9 kgで割ると36.9 W·h/kgとなる。"
+        }
+      ],
+      "figures": [],
+      "sourcePages": [
+        {
+          "physicalPage": 14,
+          "url": "/images/denken1/2024-native/machine-q06-p14.png",
+          "sha256": "d12508d9fef1536ec154e826f4e7fdbf09de774667d6e9b7f433beeee9b07838"
+        },
+        {
+          "physicalPage": 15,
+          "url": "/images/denken1/2024-native/machine-q06-p15.png",
+          "sha256": "733faf00b0ee43967f04c1a8e6c54c886d8b25f9bde914fc4826d2365ab38526"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20240818_ch_first_q03.pdf",
+      "sourcePdfSha256": "195bc9ab0e66db8ac697b6db78415e86e406247248baaf7b1c5e3d76ec4f823f",
+      "alternateQuestionRule": "問6・問7から1問を選択。両方を解答すると採点されません。"
+    },
+    {
+      "id": "denken1-2024-primary-machine-q07",
+      "year": 2024,
+      "season": "primary",
+      "examDate": "2024-08-18",
+      "subject": "machine",
+      "number": 7,
+      "topic": "無線LANとBluetoothの周波数帯",
+      "questionText": "次の文章は，PC周辺の無線ネットワークに関する記述である。文中の□に当てはまる最も適切なものを解答群の中から選べ。\n\n携帯型のPCでは，無線技術を利用したネットワーク通信が多く用いられている。\n無線LANとしては，OSI参照モデルの (1) とデータリンク層の一部を定義したIEEE 802.11関連規格に対応した各種機器が普及しており，ネットワーク上の無線アクセスポイントなどとして用いられている。\n\n無線LANの使用周波数としては， (2) 付近と5 GHz付近などが使われている。周波数が (3) 方が，電波の到達距離で有利となるが伝送速度は小さくなる。\n(2) 付近は水分子のマイクロ波加熱に適切な周波数で， (4) として通信以外にも利用できる周波数帯域となっており，無線LANの利用には注意を要する場合がある。\n(5) 機器は，無線LANと同じ (2) 付近を利用するが，周波数チャンネルを決められたパターンに従って高速に切り替える (6) 方式により無線LANとの共存を実現している。",
+      "choiceGroups": {
+        "イ": "マルチパス",
+        "ロ": "IEEE1394",
+        "ハ": "0.4GHz",
+        "ニ": "1.9GHz",
+        "ホ": "2.4GHz",
+        "ヘ": "高い",
+        "ト": "Bluetooth",
+        "チ": "AM バンド",
+        "リ": "セッション層",
+        "ヌ": "トランスポート層",
+        "ル": "ISM バンド",
+        "ヲ": "低い",
+        "ワ": "USB",
+        "カ": "周波数ホッピング",
+        "ヨ": "物理層",
+        "タ": "直接拡散",
+        "レ": "HF バンド"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ヨ",
+          "explanation": "IEEE 802.11は無線の伝送方法と媒体アクセスを規定する。",
+          "derivation": "電波の変調や伝送を扱う物理層と、データリンク層のMAC部分が対応する。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ホ",
+          "explanation": "5 GHzと並んで無線LANで使われる周波数帯を選ぶ。",
+          "derivation": "2.4 GHz帯は無線LANの一部の方式やBluetoothでも使われる。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ヲ",
+          "explanation": "設問は周波数と伝搬の関係を問う。",
+          "derivation": "低い周波数は自由空間伝搬損失が小さく、遮蔽物も回り込みやすい。なお、実際の伝送速度には規格やチャネル幅なども影響する。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ル",
+          "explanation": "2.4 GHz近傍は通信用だけに割り当てられているわけではない。",
+          "derivation": "産業・科学・医療用途に割り当てられたISM帯に含まれ、電子レンジなどでも利用される。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ト",
+          "explanation": "無線LANと同じ2.4 GHz帯を利用する近距離通信を選ぶ。",
+          "derivation": "Bluetoothは機器間の短距離無線通信に使われる。"
+        },
+        {
+          "slot": 6,
+          "officialAnswer": "カ",
+          "explanation": "同じチャネルにとどまらず、使用周波数を短時間で切り替える。",
+          "derivation": "周波数ホッピングにより、同じ周波数を使う別方式との干渉が同じチャネルに連続するのを抑える。"
+        }
+      ],
+      "figures": [],
+      "sourcePages": [
+        {
+          "physicalPage": 16,
+          "url": "/images/denken1/2024-native/machine-q07-p16.png",
+          "sha256": "8b7d6c52677d6e0a9cb825be916f11a19d35b1f1fa55b570100c265b411aa9fc"
+        },
+        {
+          "physicalPage": 17,
+          "url": "/images/denken1/2024-native/machine-q07-p17.png",
+          "sha256": "3e2bfc7d452a25d424e061dd8f7c8c681fa3a1a80e9e7c31ff9a43057b090b65"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20240818_ch_first_q03.pdf",
+      "sourcePdfSha256": "195bc9ab0e66db8ac697b6db78415e86e406247248baaf7b1c5e3d76ec4f823f",
+      "alternateQuestionRule": "問6・問7から1問を選択。両方を解答すると採点されません。"
+    }
+  ]
+}

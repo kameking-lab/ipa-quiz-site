@@ -24,6 +24,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "アウトオブオーダ実行は、データハザードを回避するため、命令の実行に必要なデータが揃うまで待つのではなく、データが揃っている後続の命令を先に実行する方式です。アの記述は、このアウトオブオーダ実行の仕組みを正確に説明しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "命令アドレスレジスタ（プログラムカウンタ）は次に実行する命令のアドレスを保持します。条件分岐命令は、条件の真偽によって次に実行する命令のアドレスが変わるため、プログラムカウンタの内容が分岐先のアドレスに書き換えられることがあります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "メモリインタリーブは、主記憶を複数の独立したバンクに分割し、隣接するアドレスを異なるバンクに割り当てることで、連続したアドレスへのアクセスを並列処理して高速化する技術です。イの記述は、このメモリインタリーブの仕組みを適切に説明しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "正解はイです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和3年度秋期 午前II 問4）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "MQTT（Message Queuing Telemetry Transport）は、IoT機器間の通信に適した軽量なメッセージングプロトコルで、パブリッシュ/サブスクライブモデルを採用しています。プロトコルヘッダの最小サイズが2バイトと非常に小さく、帯域幅の狭いネットワークでの利用を想定しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "密結合マルチプロセッサシステムは、複数のプロセッサが共通の主記憶装置を共有し、高速なバスなどを介して連携することで処理能力の向上を図る構成です。各プロセッサが独立した主記憶を持つ疎結合マルチプロセッサとは対照的です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +174,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ラウンドロビン方式は、各プロセスに一定の時間（タイムクウォンタム）を割り当て、その時間内で実行し、時間切れになるとプロセスを中断して待ち行列の最後尾に移動させるスケジューリング方式です。エの記述は、このラウンドロビン方式の基本的な動作を説明しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +199,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "セグメンテーションページング方式では、仮想アドレスはセグメント番号とセグメント内オフセットに分けられます。セグメントテーブルはセグメント番号に対応し、そのセグメントを構成するページの情報を管理するページテーブルの「実アドレス」（物理アドレス）を格納しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -207,7 +215,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     "category": "組込みシステム",
     "topicTags": [],
     "difficulty": 3,
-    "question": "三つの媒体 A~Cに次の条件でファイル領域を割り当てた場合、割り当てた領域の総量が大きい順に媒体を並べたものはどれか。",
+    "question": "三つの媒体A～Cに次の条件でファイル領域を割り当てた場合、割り当てた領域の総量が大きい順に媒体を並べたものはどれか。\n\n〔条件〕\n（1）ファイル領域を割り当てる際の媒体選択アルゴリズムとして、空き領域が最大の媒体を選択する方式を採用する。\n（2）割当て要求されるファイル領域の大きさは、順に90、30、40、40、70、30（Mバイト）であり、割り当てられたファイル領域は、途中で解放されない。\n（3）各媒体は容量が同一であり、割当て要求に対して十分な大きさをもち、初めは全て空きの状態である。\n（4）空き領域の大きさが等しい場合には、A、B、Cの順に選択する。",
     "choices": {
       "ア": "A, B, C",
       "イ": "A, C, B",
@@ -215,7 +223,14 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
       "エ": "C, B, A"
     },
     "answer": "エ",
-    "explanation": "問題文の「条件」が不明ですが、正解がC, B, Aであることから、媒体Cが最も多くのファイル領域を割り当て可能であり、媒体Aが最も少ないと推測されます。この「総量」は、各媒体が提供する利用可能なストレージ容量の最大値を指すと考えられます。",
+    "explanation": "媒体の初期容量が同じなので、空きが最大の媒体は、すでに割り当てた量が最少の媒体です。90、30、40、40、70、30Mバイトを割り当てると、順にA、B、C、B、C、Bとなります。累積量がA＝90、B＝100、C＝110Mバイトなので、降順はC、B、Aです。",
+    "choiceExplanations": {
+      "ア": "誤りです。3媒体は容量が同じなので、空きが最大の媒体は、それまでの割当てが最少の媒体です。Aは最初の90Mバイトだけで止まり、最終的に最少です。",
+      "イ": "誤りです。同じ空き容量でAが優先されるのは、割当て前などに空きが同じときだけです。以降もAが優先されると考えると、累積量の大小を取り違えます。",
+      "ウ": "誤りです。Bは30、40、30の合計100Mバイトを受け取りますが、Cは40と70の合計110Mバイトです。Bが最大になることはありません。",
+      "エ": "正しいです。割当て先は順にA、B、C、B、C、Bです。累積量はAが90、Bが100、Cが110Mバイトとなり、大きい順はC、B、Aです。"
+    },
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -241,6 +256,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "正解はエです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和3年度秋期 午前II 問10）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -266,6 +282,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "正解はアです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和3年度秋期 午前II 問11）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -290,6 +307,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "正解はウです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和3年度秋期 午前II 問12）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -315,6 +333,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "正解はウです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和3年度秋期 午前II 問13）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -339,6 +358,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "クロックゲーティングは、不要な回路ブロックへのクロック信号の供給を停止することで、そのブロックでのスイッチング動作をなくし、ダイナミックな消費電力を削減する技術です。エの記述は、このクロックゲーティングによる低消費電力化について説明しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -363,6 +383,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ICMP（Internet Control Message Protocol）は、IPネットワークにおけるエラー通知や診断メッセージを扱うプロトコルです。IPパケットのTTL（Time To Live）が0になった場合、ルータはパケットを破棄し、送信元にICMP Time Exceededメッセージを通知します。アの記述は、このICMPの主要な機能の一つです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -387,6 +408,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "100人の送受信者がそれぞれ相互に暗号化通信を行うには、特定の2者間で1つの共通鍵が必要です。これは100人から2人を選ぶ組み合わせの数で計算でき、100 × 99 ÷ 2 = 4,950個の共通鍵が必要となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -411,6 +433,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "正解はエです。（出典: IPA エンベデッドシステムスペシャリスト試験 令和3年度秋期 午前II 問17）",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -435,6 +458,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "エンベロープ暗号化は、データを共通鍵暗号方式で暗号化し、その共通鍵（データ暗号鍵）をさらに公開鍵暗号方式（または別の鍵）で暗号化して「包む」手法です。アの記述は、このエンベロープ暗号化の概念を説明しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -459,6 +483,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "フェールセーフは、システムに故障が発生した場合でも、自動的に安全な状態へ移行したり、危害が利用者に及ばないようにしたりする設計思想です。問題文の「利用者に危害が及ばないような方法でシステムを停止する」という記述は、まさにフェールセーフの考え方を示しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -483,6 +508,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ペトリネットモデルは、並列に動作するプロセスや事象間の同期、競合、並行性を表現するのに適したグラフィカルなモデルです。状態（プレース）とイベント（トランジション）を用いて、システムの動的な振る舞いを記述できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -507,6 +533,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "MVC（Model-View-Controller）は、アプリケーションをデータ（Model）、表示（View）、ユーザー操作の処理（Controller）に分離するアーキテクチャパターンです。これにより、UIの変更がビジネスロジックに影響を与えにくくなり、修正性や再利用性が向上します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -531,6 +558,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "アサーションチェックは、プログラムの特定の実行時点で成立すべき条件（アサーション）を論理式で記述し、実行時にその条件が満たされているかを確認する手法です。条件が満たされない場合はエラーを報告し、プログラムの正当性を動的に検証します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -555,6 +583,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "スクラムにおいて、各スプリントでは「リリース判断が可能なプロダクトインクリメント」を作成することを目標としてスプリントゴールを設定します。これは、スプリントの期間内に価値のある成果物を完成させるというスクラムの原則に合致しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -579,6 +608,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ディジタルサイネージは、駅や店舗、公共空間などに設置されたディスプレイ装置を用いて、映像、文字、音声などの情報を表示する電子的な情報表示システムです。ウの記述は、このディジタルサイネージの定義を正確に説明しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"
@@ -603,6 +633,7 @@ export const ES_QUESTIONS_2021_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ディジタルツインは、現実世界の物理的なシステムやプロセスから収集したデータを基に、仮想空間にそのレプリカ（双子）を構築し、リアルタイムでシミュレーションや分析を行う技術です。問題文のエンジンの例は、まさにディジタルツインの応用を示しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_2/2021h03a_es_am2_qs.pdf",
     "license": "IPA-public"

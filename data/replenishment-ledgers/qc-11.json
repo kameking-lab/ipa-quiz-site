@@ -1,0 +1,275 @@
+{
+  "schemaVersion": 1,
+  "lane": "qc-11",
+  "previousLane": "qb-11",
+  "date": "2026-11-18",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "assignment": "jobs array index % 14 == 10",
+  "branchAudit": {
+    "refCount": 93,
+    "dataBlobCount": 396,
+    "ledgerBlobCount": 1,
+    "method": "origin/main and all local cx/kako-* and rel/kako-* refs; distinct blobs under assigned exam directories and data/replenishment-ledgers. Existing qb-11 pending entries do not count as completed work."
+  },
+  "completedJobs": [
+    {
+      "jobId": "PLAN5-123",
+      "exam": "shika-ishi",
+      "year": 2026,
+      "season": "annual",
+      "session": "mondai-a",
+      "status": "completed-official-exclusions-confirmed",
+      "expectedOriginalQuestions": 90,
+      "existingScoredQuestions": 85,
+      "officiallyExcludedQuestions": 5,
+      "addedRecords": 0,
+      "missingScoredQuestions": 0,
+      "notes": "計画の欠番5問はすべて公式の採点除外。既存official-audit.jsonに原問本文があり、新規の正答を作成しない。",
+      "officialExclusions": [
+        {
+          "id": "shika-ishi-2026-annual-mondai-a-q9",
+          "qNumber": 9,
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-02a_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-02seitou.pdf",
+          "handlingUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken02/dl/A9.pdf",
+          "officialAnswerCells": [],
+          "handling": "採点対象から除外する。",
+          "reason": "問題としては適切であるが、受験者レベルでは難しすぎるため。"
+        },
+        {
+          "id": "shika-ishi-2026-annual-mondai-a-q47",
+          "qNumber": 47,
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-02a_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-02seitou.pdf",
+          "handlingUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken02/dl/A47.pdf",
+          "officialAnswerCells": [],
+          "handling": "採点対象から除外する。",
+          "reason": "問題としては適切であるが、受験者レベルでは難しすぎるため。"
+        },
+        {
+          "id": "shika-ishi-2026-annual-mondai-a-q63",
+          "qNumber": 63,
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-02a_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-02seitou.pdf",
+          "handlingUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken02/dl/A63.pdf",
+          "officialAnswerCells": [],
+          "handling": "採点対象から除外する。",
+          "reason": "設問の状況設定が不十分で正解が得られないため。"
+        },
+        {
+          "id": "shika-ishi-2026-annual-mondai-a-q68",
+          "qNumber": 68,
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-02a_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-02seitou.pdf",
+          "handlingUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken02/dl/A68.pdf",
+          "officialAnswerCells": [],
+          "handling": "採点対象から除外する。",
+          "reason": "設問の状況設定が不十分で正解が得られないため。"
+        },
+        {
+          "id": "shika-ishi-2026-annual-mondai-a-q73",
+          "qNumber": 73,
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-02a_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-02seitou.pdf",
+          "handlingUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken02/dl/A73.pdf",
+          "officialAnswerCells": [],
+          "handling": "採点対象から除外する。",
+          "reason": "問題としては適切であるが、受験者レベルでは難しすぎるため。"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-02a_01.pdf",
+          "filename": "tp260424-02a_01.pdf",
+          "sha256": "9fceee47e8d44424ba1869a99cc6daeeac4f83487023606cded7d93f04dc91d2",
+          "pages": 60
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-02seitou.pdf",
+          "filename": "tp260424-02seitou.pdf",
+          "sha256": "1a27cb5a353f699b75bea8dd5036173d387cd605cba35625090c6baf16575b96",
+          "pages": 2
+        },
+        {
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken02/dl/A9.pdf",
+          "filename": "A9.pdf",
+          "sha256": "bb8abeed35cbed4e9c4f050158a7fef56ba95a52f2882e37c325796147673348",
+          "pages": 1
+        },
+        {
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken02/dl/A47.pdf",
+          "filename": "A47.pdf",
+          "sha256": "e84259e2c1ff30def7f593c9fc933acc14ee29012c811baa4c83bc05cd570901",
+          "pages": 1
+        },
+        {
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken02/dl/A63.pdf",
+          "filename": "A63.pdf",
+          "sha256": "22d9df282d75437aaf3c70e797f6d00e75b6a9c7c6913b3bf854ef2771674314",
+          "pages": 1
+        },
+        {
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken02/dl/A68.pdf",
+          "filename": "A68.pdf",
+          "sha256": "74b40f27c13ea5c69d9870bc7eb02a45a7b97d28baa45d828aca8bb7d246763c",
+          "pages": 1
+        },
+        {
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken02/dl/A73.pdf",
+          "filename": "A73.pdf",
+          "sha256": "4bd4e9d93f9578475c274f17d23783457d7066b1048c05725288fe1ec88d49e5",
+          "pages": 1
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-137",
+      "exam": "shika-ishi",
+      "year": 2023,
+      "season": "annual",
+      "session": "mondai-d",
+      "status": "completed",
+      "expectedOriginalQuestions": 90,
+      "existingScoredQuestions": 0,
+      "officiallyExcludedQuestions": 3,
+      "addedRecords": 87,
+      "missingScoredQuestions": 0,
+      "notes": "全90原問を照合。公式正答がある87問を新規収録。空欄の3問は公式取扱いと原文・原本図を収録台帳に保持。問17・18の公式取扱いは正答を変えず解説に注記。",
+      "officialExclusions": [
+        {
+          "id": "shika-ishi-2023-annual-mondai-d-q35",
+          "qNumber": 35,
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02d_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "handlingUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2023/siken02/dl/D35.pdf",
+          "officialAnswerCells": [],
+          "handling": "採点対象から除外する。",
+          "reason": "設問の状況設定が不十分で正解が得られないため。"
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-d-q38",
+          "qNumber": 38,
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02d_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "handlingUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2023/siken02/dl/D38.pdf",
+          "officialAnswerCells": [],
+          "handling": "採点対象から除外する。",
+          "reason": "選択肢において正解を得ることが困難なため。"
+        },
+        {
+          "id": "shika-ishi-2023-annual-mondai-d-q48",
+          "qNumber": 48,
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02d_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "handlingUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2023/siken02/dl/D48.pdf",
+          "officialAnswerCells": [],
+          "handling": "採点対象から除外する。",
+          "reason": "選択肢が不適切であるため。"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02d_01.pdf",
+          "filename": "tp230524-02d_01.pdf",
+          "sha256": "354037248672a5c8ed063c7f1d89d73e2e9d52e05b855151e9ddcc15e7d4b8c9",
+          "pages": 60
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02d_02.pdf",
+          "filename": "tp230524-02d_02.pdf",
+          "sha256": "07c448f5e7828c35ff9eededfdcc51daf71e32e293b2a4fbf5735fafca7af093",
+          "pages": 56
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-02seitou.pdf",
+          "filename": "tp230524-02seitou.pdf",
+          "sha256": "5b8be8ea6515d2ad7850f0e66c981448dc4af3237ea5956c2a3c18fbab6707bd",
+          "pages": 2
+        }
+      ],
+      "sourceManifest": "data/questions/shika-ishi/2023-annual-d-sources.json",
+      "dataFile": "data/questions/shika-ishi/2023-annual-d.json",
+      "imageAssetCount": 137
+    },
+    {
+      "jobId": "PLAN5-151",
+      "exam": "hokenshi",
+      "year": 2024,
+      "storedYear": 2023,
+      "season": "annual",
+      "session": "pm",
+      "status": "completed",
+      "expectedOriginalQuestions": 55,
+      "existingScoredQuestions": 0,
+      "officiallyExcludedQuestions": 1,
+      "addedRecords": 54,
+      "missingScoredQuestions": 0,
+      "notes": "第110回の公式正答54問を収録。既存の保存年慣例（実施2024年→保存2023年）を維持し、2025年原問の既存IDと重複させない。午後問1は2又は3の択一正答、午後問9は公式採点除外。",
+      "officialExclusions": [
+        {
+          "id": "hokenshi-2023-annual-pm-q9",
+          "qNumber": 9,
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-03b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-03seitou.pdf",
+          "handlingUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2024/siken03_04_05/dl/hokenshi_pm9.pdf",
+          "officialAnswerCells": [],
+          "handling": "採点対象から除外する。",
+          "reason": "設問が不十分で正解が得られないため。"
+        }
+      ],
+      "sources": [
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-03b_01.pdf",
+          "filename": "tp240424-03b_01.pdf",
+          "sha256": "4130e9ae7dae1ed9bc2c6e1e6a6b9f0d909fedc3af4da541fdcc1414dbf34e40",
+          "pages": 40
+        },
+        {
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-03seitou.pdf",
+          "filename": "tp240424-03seitou.pdf",
+          "sha256": "0f9d0dccbd0902958c38b537e10584a9d377d3448518c3d098d6365b1fde158d",
+          "pages": 1
+        },
+        {
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2024/siken03_04_05/dl/hokenshi_pm1.pdf",
+          "filename": "hokenshi_pm1.pdf",
+          "sha256": "6c4bf6d0b6122839d009c64ec29aaccea0f16a4dd47e229d78bd4dc9cccea728",
+          "pages": 1,
+          "text": "                                   （別　紙）\n\n\n  第１１０回保健師国家試験における採点除外等の取扱いをした問題について\n\n午後 第  1 問\n\n\n\n\n\n（　採点上の取り扱い　）\n\n\n\n  複数の選択肢を正解として採点する。\n\n\n\n（　理　由　）\n\n\n  複数の正解があるため。"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2024/siken03_04_05/dl/hokenshi_pm9.pdf",
+          "filename": "hokenshi_pm9.pdf",
+          "sha256": "b8aea5e96fe588605ad014f5364e34d833730f72c23bc088c8b290637d1e4101",
+          "pages": 1,
+          "text": "                                   （別　紙）\n\n\n  第１１０回保健師国家試験における採点除外等の取扱いをした問題について\n\n午後 第  9 問\n\n\n\n\n\n（　採点上の取り扱い　）\n\n\n\n  採点対象から除外する。\n\n\n\n（　理　由　）\n\n\n  設問が不十分で正解が得られないため。"
+        }
+      ],
+      "sourceManifest": "data/questions/hokenshi/2024-pm-official-sources.json",
+      "dataFile": "data/questions/hokenshi/2024-pm-official.json",
+      "imageAssetCount": 28
+    }
+  ],
+  "pendingJobIds": [
+    "PLAN5-165",
+    "PLAN5-179",
+    "PLAN5-193",
+    "PLAN5-207",
+    "PLAN5-221",
+    "PLAN5-235",
+    "PLAN5-249",
+    "PLAN5-263",
+    "PLAN5-277",
+    "PLAN5-291",
+    "PLAN5-305",
+    "PLAN5-319",
+    "PLAN5-333",
+    "PLAN5-347",
+    "PLAN5-361",
+    "PLAN5-375",
+    "PLAN5-389",
+    "PLAN5-403",
+    "PLAN5-417",
+    "PLAN5-445"
+  ]
+}

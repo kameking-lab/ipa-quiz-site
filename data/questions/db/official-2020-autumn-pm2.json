@@ -1,0 +1,142 @@
+[
+  {
+    "id": "db-2020a-pm2-q1",
+    "exam": "db",
+    "session": "pm2",
+    "year": 2020,
+    "season": "autumn",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "データベース物理設計",
+    "topicTags": [
+      "データベースの設計、実装"
+    ],
+    "difficulty": 4,
+    "question": "問1 データベースの設計、実装",
+    "answer": "設問                解答例・解答の要点                備考\n設問１  (1) 世帯区分，地域コード\n       (2) ①   a 探索行数\n                 b ページ当たり平均行数\n                 c 探索行数\n                 d  540,000\n                 e  6,000\n                 f  540,000\n      ② 日別計（住居番号，年月日，電力区分，電力量）\n      ③ 最小読込みページ数  1\n        最大読込みページ数  120\n設問２  (1)  g  CROSS\n             h 距離\n             i AVG(標準発電量) AS 平均標準発電量\n             j  GROUP BY 住居番号, 年月日, 時\n             k  SUM(発電量) AS 時間発電量\n       (2)  l ①の結果と住居を住居番号で内結合\n             m 平均使用電力量=[地域コード，階級番号ごとの合計使用電力量の平均]\n             n  W3 の全行を選択\n             o ①の結果と地域を地域コードで内結合\n             p  PARTITION BY 地域コード ORDER BY 合計使用電力量 DESC\n設問３  (1) ① 分散するテーブルは住居番号が分散キーであり，ノード当たりの行数と\n           DB サーバの仕様が同じだから\n      ② ・地域当たりの住居数が実データに近い比率で分散するように値を設定す\n         る。\n          ・1 地域当たりの住居数が100 となるように値を設定する。\n       (2) 差異1 “機器ログ”テーブルは，住居番号，年月日順に行を追加したこと\n          で，クラスタ率が高くなったこと\n       差異2 処理2 の実行によって，同時に実行される処理3 が参照するページが\n          バッファから追い出されたこと",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                備考\n設問１  (1) 世帯区分，地域コード\n       (2) ①   a 探索行数\n                 b ページ当たり平均行数\n                 c 探索行数\n                 d  540,000\n                 e  6,000\n                 f  540,000\n      ② 日別計（住居番号，年月日，電力区分，電力量）\n      ③ 最小読込みページ数  1\n        最大読込みページ数  120\n設問２  (1)  g  CROSS\n             h 距離\n             i AVG(標準発電量) AS 平均標準発電量\n             j  GROUP BY 住居番号, 年月日, 時\n             k  SUM(発電量) AS 時間発電量\n       (2)  l ①の結果と住居を住居番号で内結合\n             m 平均使用電力量=[地域コード，階級番号ごとの合計使用電力量の平均]\n             n  W3 の全行を選択\n             o ①の結果と地域を地域コードで内結合\n             p  PARTITION BY 地域コード ORDER BY 合計使用電力量 DESC\n設問３  (1) ① 分散するテーブルは住居番号が分散キーであり，ノード当たりの行数と\n           DB サーバの仕様が同じだから\n      ② ・地域当たりの住居数が実データに近い比率で分散するように値を設定す\n         る。\n          ・1 地域当たりの住居数が100 となるように値を設定する。\n       (2) 差異1 “機器ログ”テーブルは，住居番号，年月日順に行を追加したこと\n          で，クラスタ率が高くなったこと\n       差異2 処理2 の実行によって，同時に実行される処理3 が参照するページが\n          バッファから追い出されたこと\n```",
+    "explanation": "索引で絞り込む行と、実際に読むページの数は区別する。性能試験では本番データの分布や処理の同時実行を条件に加える。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2020-autumn-pm2/page-06.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-07.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-08.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-09.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-10.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-11.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-12.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-13.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-14.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-15.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-16.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-17.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-18.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-03.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-04.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-05.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 午後II 問1の本文・設問（公式問題冊子 6ページ）",
+      "データベーススペシャリスト 午後II 問1の本文・設問（公式問題冊子 7ページ）",
+      "データベーススペシャリスト 午後II 問1の本文・設問（公式問題冊子 8ページ）",
+      "データベーススペシャリスト 午後II 問1の本文・設問（公式問題冊子 9ページ）",
+      "データベーススペシャリスト 午後II 問1の本文・設問（公式問題冊子 10ページ）",
+      "データベーススペシャリスト 午後II 問1の本文・設問（公式問題冊子 11ページ）",
+      "データベーススペシャリスト 午後II 問1の本文・設問（公式問題冊子 12ページ）",
+      "データベーススペシャリスト 午後II 問1の本文・設問（公式問題冊子 13ページ）",
+      "データベーススペシャリスト 午後II 問1の本文・設問（公式問題冊子 14ページ）",
+      "データベーススペシャリスト 午後II 問1の本文・設問（公式問題冊子 15ページ）",
+      "データベーススペシャリスト 午後II 問1の本文・設問（公式問題冊子 16ページ）",
+      "データベーススペシャリスト 午後II 問1の本文・設問（公式問題冊子 17ページ）",
+      "データベーススペシャリスト 午後II 問1の本文・設問（公式問題冊子 18ページ）",
+      "データベーススペシャリスト 午後II 問1の本文・設問（公式問題冊子 3ページ）",
+      "データベーススペシャリスト 午後II 問1の本文・設問（公式問題冊子 4ページ）",
+      "データベーススペシャリスト 午後II 問1の本文・設問（公式問題冊子 5ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/db/2020-autumn-pm2/answer-q01-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "データベーススペシャリスト 午後II 問1の公式解答例（1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d05l-att/2020r02o_db_pm2_qs.pdf#page=6",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d05l-att/2020r02o_db_pm2_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2020年度秋期 データベーススペシャリスト 午後II 問1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2020r02.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2020a-pm2-q2",
+    "exam": "db",
+    "session": "pm2",
+    "year": 2020,
+    "season": "autumn",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "概念データモデリング",
+    "topicTags": [
+      "調達業務及び調達物流業務"
+    ],
+    "difficulty": 4,
+    "question": "問2 調達業務及び調達物流業務",
+    "answer": "設問                解答例・解答の要点                備考\n設問１  (1)\n           車両    部門\n           ルート                             調達先\n                                    生産先\n             地点\n                                      仕入先\n                           部品                    物流部\n                           生産部\n                                     品目\n           ルート          製品                 倉庫                   BP\n           明細          生産部\n                                             部材\n                                     専用品              汎用品\n                                        製品     部品        素材\n              在庫\n                                                  専用部品\n                                                      汎用部品\n                倉庫在庫            BP在庫     構成\n                                                 専用部品                                          製品構成\n                                                 構成\n       (2) ア 生産ライン数\n      イ 生産先コード\n      ウ 生産先コード，地点コード\n      エ 設計番号\n      オ 汎用品仕様，仕入先調達先コード\n      カ 生産先コード，個体重量\n      キ 部材品目コード\n      ク 部材品目コード\n      ケ 部材品目コード\n      コ 専用部品品目コード\n\n設問２  (1)\n          受注                     調達手配\n                           支給指示\n              製品\n             生産実績                   輸送指示   荷積実績   荷卸実績\n                         専用部品\n                          発注                             入庫実績\n                     専用部品   専用部品\n                     生産指示   生産実績     倉庫              支給部品理\n                                    入庫実績             論入庫実績\n                   汎用品\n                   発注\n                                                         出庫実績\n          出庫指示\n                                         倉庫   支給部品理\n                                         出庫実績  論出庫実績\n             製品用    専用部品用          支給部品\n            出庫指示    出庫指示          出庫指示\n       (2) サ 調達番号\n      シ 輸送番号\n      ス 受注番号，部材品目コード\n      セ 専用部品生産指示調達番号，部材品目コード\n      ソ 支給指示調達番号\n      タ 専用部品発注調達番号，子部品品目コード，使用数\n設問３  (1)  a 輸送日\n             b 輸送日\n             c 輸送重量\n             d ルート番号，積地巡回順\n             e 輸送重量\n             f ルート番号，卸地巡回順\n             g ルート番号     積地巡回順\n             h ルート番号     卸地巡回順\n               又は\n             i 積地巡回順     ルート番号\n             j 卸地巡回順     ルート番号\n             k 荷積重量 － 荷卸重量\n       (2)\n                 確定        輸送指示             荷積実績\n                 輸送指示\n       (3) 輸送番号，確定車両番号",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                備考\n設問１  (1)\n           車両    部門\n           ルート                             調達先\n                                    生産先\n             地点\n                                      仕入先\n                           部品                    物流部\n                           生産部\n                                     品目\n           ルート          製品                 倉庫                   BP\n           明細          生産部\n                                             部材\n                                     専用品              汎用品\n                                        製品     部品        素材\n              在庫\n                                                  専用部品\n                                                      汎用部品\n                倉庫在庫            BP在庫     構成\n                                                 専用部品                                          製品構成\n                                                 構成\n       (2) ア 生産ライン数\n      イ 生産先コード\n      ウ 生産先コード，地点コード\n      エ 設計番号\n      オ 汎用品仕様，仕入先調達先コード\n      カ 生産先コード，個体重量\n      キ 部材品目コード\n      ク 部材品目コード\n      ケ 部材品目コード\n      コ 専用部品品目コード\n\n設問２  (1)\n          受注                     調達手配\n                           支給指示\n              製品\n             生産実績                   輸送指示   荷積実績   荷卸実績\n                         専用部品\n                          発注                             入庫実績\n                     専用部品   専用部品\n                     生産指示   生産実績     倉庫              支給部品理\n                                    入庫実績             論入庫実績\n                   汎用品\n                   発注\n                                                         出庫実績\n          出庫指示\n                                         倉庫   支給部品理\n                                         出庫実績  論出庫実績\n             製品用    専用部品用          支給部品\n            出庫指示    出庫指示          出庫指示\n       (2) サ 調達番号\n      シ 輸送番号\n      ス 受注番号，部材品目コード\n      セ 専用部品生産指示調達番号，部材品目コード\n      ソ 支給指示調達番号\n      タ 専用部品発注調達番号，子部品品目コード，使用数\n設問３  (1)  a 輸送日\n             b 輸送日\n             c 輸送重量\n             d ルート番号，積地巡回順\n             e 輸送重量\n             f ルート番号，卸地巡回順\n             g ルート番号     積地巡回順\n             h ルート番号     卸地巡回順\n               又は\n             i 積地巡回順     ルート番号\n             j 卸地巡回順     ルート番号\n             k 荷積重量 － 荷卸重量\n       (2)\n                 確定        輸送指示             荷積実績\n                 輸送指示\n       (3) 輸送番号，確定車両番号\n```",
+    "explanation": "品目、地点、在庫の対応を整理し、輸送・荷積み・荷卸しの指示と実績を分けてモデル化する。変更後の属性とキーの整合を確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2020-autumn-pm2/page-20.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-21.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-22.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-23.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-24.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-25.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-26.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-27.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-28.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-29.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-30.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-31.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-03.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-04.webp",
+      "/questions/ipa/db/2020-autumn-pm2/page-05.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 午後II 問2の本文・設問（公式問題冊子 20ページ）",
+      "データベーススペシャリスト 午後II 問2の本文・設問（公式問題冊子 21ページ）",
+      "データベーススペシャリスト 午後II 問2の本文・設問（公式問題冊子 22ページ）",
+      "データベーススペシャリスト 午後II 問2の本文・設問（公式問題冊子 23ページ）",
+      "データベーススペシャリスト 午後II 問2の本文・設問（公式問題冊子 24ページ）",
+      "データベーススペシャリスト 午後II 問2の本文・設問（公式問題冊子 25ページ）",
+      "データベーススペシャリスト 午後II 問2の本文・設問（公式問題冊子 26ページ）",
+      "データベーススペシャリスト 午後II 問2の本文・設問（公式問題冊子 27ページ）",
+      "データベーススペシャリスト 午後II 問2の本文・設問（公式問題冊子 28ページ）",
+      "データベーススペシャリスト 午後II 問2の本文・設問（公式問題冊子 29ページ）",
+      "データベーススペシャリスト 午後II 問2の本文・設問（公式問題冊子 30ページ）",
+      "データベーススペシャリスト 午後II 問2の本文・設問（公式問題冊子 31ページ）",
+      "データベーススペシャリスト 午後II 問2の本文・設問（公式問題冊子 3ページ）",
+      "データベーススペシャリスト 午後II 問2の本文・設問（公式問題冊子 4ページ）",
+      "データベーススペシャリスト 午後II 問2の本文・設問（公式問題冊子 5ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/db/2020-autumn-pm2/answer-q02-p02.webp",
+      "/questions/ipa/db/2020-autumn-pm2/answer-q02-p03.webp"
+    ],
+    "answerImageAltTexts": [
+      "データベーススペシャリスト 午後II 問2の公式解答例（2ページ）",
+      "データベーススペシャリスト 午後II 問2の公式解答例（3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d05l-att/2020r02o_db_pm2_qs.pdf#page=20",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000d05l-att/2020r02o_db_pm2_ans.pdf#page=2",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）2020年度秋期 データベーススペシャリスト 午後II 問2",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2020r02.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

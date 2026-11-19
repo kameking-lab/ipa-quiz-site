@@ -1,0 +1,114 @@
+{
+  "lane": "pc-6",
+  "branch": "cx/kako-pa6-20261118",
+  "updatedOn": "2026-11-18",
+  "allocationRule": "candidatesの0始まり配列index % 14 == 5",
+  "allocatedCandidateIds": [
+    "dekyo-charge-2",
+    "kogai-16",
+    "cfp-3",
+    "building-cleaning-1",
+    "government-guide-2026-dd860fc011ad6e9b",
+    "javada-857dbaeca9e1",
+    "javada-3fa1bf751b91",
+    "javada-4c9d8b06259a",
+    "javada-aa97298a81f9",
+    "javada-dc36248df38d",
+    "javada-d0a49e7388e6",
+    "javada-038c8ef9c21c",
+    "javada-e63a174cd692",
+    "javada-ebc79c522493",
+    "javada-132de90a63d0",
+    "javada-36a5bbf82269",
+    "javada-8511b30969f1",
+    "javada-81c039b1dcea",
+    "javada-6646621da53c",
+    "javada-d72cad956e00",
+    "javada-50075ac9a903"
+  ],
+  "sourceAudit": "tools/pc-6/allocation-audit.json（実行フォルダ内）",
+  "summary": {
+    "addedQuestions": 40,
+    "choiceExplanations": 160,
+    "remainingCfpQuestions": 50,
+    "officialAnswersChanged": 0,
+    "untouchedCandidateRows": 18
+  },
+  "rows": [
+    {
+      "key": "cfp-3|2026|round1|gakka|pc-6",
+      "planCandidateId": "cfp-3",
+      "planArrayIndex": 33,
+      "qualificationCode": "cfp-3",
+      "qualification": "CFP・ライフプランニング・リタイアメントプランニング",
+      "year": 2026,
+      "sitting": "round1",
+      "session": "gakka",
+      "status": "ブランチ／PR に有り",
+      "branch": "cx/kako-pa6-20261118",
+      "questionCount": 20,
+      "choiceExplanationCount": 80,
+      "previousQuestionCount": 5,
+      "totalSittingQuestionCount": 25,
+      "remainingQuestionCount": 25,
+      "officialQuestionLabels": "問題6〜25",
+      "dataFile": "data/questions/cfp-3/2026-round1-selected.json",
+      "officialSourceUrls": [
+        "https://www.jafp.or.jp/aim/cfp/cfp_exam/files/2026_01_CFP03_q.pdf",
+        "https://www.jafp.or.jp/aim/cfp/cfp_exam/files/2026_01_CFP03_a.pdf"
+      ],
+      "notes": [
+        "前回の問題1〜5を保持し、続きの原問を全肢解説付きで追加。公式正答の変更なし。",
+        "CFP金融資産運用設計は別課目・別原本。重複なし。"
+      ]
+    },
+    {
+      "key": "cfp-3|2026|round2|gakka|pc-6",
+      "planCandidateId": "cfp-3",
+      "planArrayIndex": 33,
+      "qualificationCode": "cfp-3",
+      "qualification": "CFP・ライフプランニング・リタイアメントプランニング",
+      "year": 2026,
+      "sitting": "round2",
+      "session": "gakka",
+      "status": "ブランチ／PR に有り",
+      "branch": "cx/kako-pa6-20261118",
+      "questionCount": 20,
+      "choiceExplanationCount": 80,
+      "previousQuestionCount": 5,
+      "totalSittingQuestionCount": 25,
+      "remainingQuestionCount": 25,
+      "officialQuestionLabels": "問題6〜25",
+      "dataFile": "data/questions/cfp-3/2026-round2-selected.json",
+      "officialSourceUrls": [
+        "https://www.jafp.or.jp/aim/cfp/cfp_exam/files/2026_02_CFP03_q.pdf",
+        "https://www.jafp.or.jp/aim/cfp/cfp_exam/files/2026_02_CFP03_a.pdf"
+      ],
+      "notes": [
+        "前回の問題1〜5を保持し、続きの原問を全肢解説付きで追加。公式正答の変更なし。",
+        "CFP金融資産運用設計は別課目・別原本。重複なし。"
+      ]
+    }
+  ],
+  "notStartedCandidateIds": [
+    "building-cleaning-1",
+    "government-guide-2026-dd860fc011ad6e9b",
+    "javada-857dbaeca9e1",
+    "javada-3fa1bf751b91",
+    "javada-4c9d8b06259a",
+    "javada-aa97298a81f9",
+    "javada-dc36248df38d",
+    "javada-d0a49e7388e6",
+    "javada-038c8ef9c21c",
+    "javada-e63a174cd692",
+    "javada-ebc79c522493",
+    "javada-132de90a63d0",
+    "javada-36a5bbf82269",
+    "javada-8511b30969f1",
+    "javada-81c039b1dcea",
+    "javada-6646621da53c",
+    "javada-d72cad956e00",
+    "javada-50075ac9a903"
+  ],
+  "humanDecisionsRequired": []
+}

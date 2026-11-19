@@ -1,0 +1,2587 @@
+{
+  "exam": "cfp-souzoku",
+  "planId": "cfp-6",
+  "checkedOn": "2026-11-18",
+  "officialIndexUrl": "https://www.jafp.or.jp/aim/cfp/cfp_exam/mohan.shtml",
+  "sources": [
+    {
+      "url": "https://www.jafp.or.jp/aim/cfp/cfp_exam/files/2026_02_CFP06_q.pdf",
+      "file": "2026_02_CFP06_q.pdf",
+      "sha256": "a36492df207e0de8f3272ff15be4ec13ea24d9207c01b802362a8583be3fdd69",
+      "pages": 43,
+      "status": 200
+    },
+    {
+      "url": "https://www.jafp.or.jp/aim/cfp/cfp_exam/files/2026_02_CFP06_a.pdf",
+      "file": "2026_02_CFP06_a.pdf",
+      "sha256": "74bc61ca22544f8c2b6c78be11e88e4e1b4e29d44966cf30e1b07ca8cf0233df",
+      "pages": 1,
+      "status": 200
+    },
+    {
+      "url": "https://www.jafp.or.jp/aim/cfp/cfp_exam/files/2026_01_CFP06_q.pdf",
+      "file": "2026_01_CFP06_q.pdf",
+      "sha256": "10afe37984d35f82d576ff1510c83a603c39ab7ba13d36fb60e29610a66363cc",
+      "pages": 41,
+      "status": 200
+    },
+    {
+      "url": "https://www.jafp.or.jp/aim/cfp/cfp_exam/files/2026_01_CFP06_a.pdf",
+      "file": "2026_01_CFP06_a.pdf",
+      "sha256": "7b47bdbb743c77669cb24aa1822def199c0b742e44c43e76ca2fa54191189d85",
+      "pages": 1,
+      "status": 200
+    }
+  ],
+  "references": [
+    {
+      "key": "civil",
+      "url": "https://laws.e-gov.go.jp/law/129AC0000000089",
+      "retrievalUrl": "https://laws.e-gov.go.jp/api/1/lawdata/129AC0000000089",
+      "title": "民法",
+      "sha256": "30d574130c40dc5fffacdf1f29163b1a3814889dc3c65085345a198cadc6625a",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "inheritance-tax",
+      "url": "https://laws.e-gov.go.jp/law/325AC0000000073",
+      "retrievalUrl": "https://laws.e-gov.go.jp/api/1/lawdata/325AC0000000073",
+      "title": "相続税法",
+      "sha256": "128abbc978b94c6fd01eaa0a67877bd2c8654d19ebd4732d491b7cd9413719b3",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "trust",
+      "url": "https://laws.e-gov.go.jp/law/418AC0000000108",
+      "retrievalUrl": "https://laws.e-gov.go.jp/api/1/lawdata/418AC0000000108",
+      "title": "信託法",
+      "sha256": "8229eade8f140e10b4af59f7db2320db5530dbe39865e84676bbff2f92fca934",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "voluntary-guardianship",
+      "url": "https://laws.e-gov.go.jp/law/411AC0000000150",
+      "retrievalUrl": "https://laws.e-gov.go.jp/api/1/lawdata/411AC0000000150",
+      "title": "任意後見契約に関する法律",
+      "sha256": "42fb9482dfae16c8e1ad6990921b9aa71818901c56b5974d2140f291c2bf8f17",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "companies",
+      "url": "https://laws.e-gov.go.jp/law/417AC0000000086",
+      "retrievalUrl": "https://laws.e-gov.go.jp/api/1/lawdata/417AC0000000086",
+      "title": "会社法",
+      "sha256": "7d3d9d1d22293e3345fcacdd1f03e1f6a0b6e46d1fbb6f6396c5d48426f49647",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "land-reversion",
+      "url": "https://laws.e-gov.go.jp/law/503AC0000000025",
+      "retrievalUrl": "https://laws.e-gov.go.jp/api/1/lawdata/503AC0000000025",
+      "title": "相続等により取得した土地所有権の国庫への帰属に関する法律",
+      "sha256": "67d0836f54a99f93a16446359c5485c9db4ef3391976533da0d2e3f766ff9a97",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "real-estate-register",
+      "url": "https://laws.e-gov.go.jp/law/416AC0000000123",
+      "retrievalUrl": "https://laws.e-gov.go.jp/api/1/lawdata/416AC0000000123",
+      "title": "不動産登記法",
+      "sha256": "91f3134eaa36e94999e93f3ec184d61195296484853addeec814204cbe1892ea",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "will-deposit",
+      "url": "https://laws.e-gov.go.jp/law/430AC0000000073",
+      "retrievalUrl": "https://laws.e-gov.go.jp/api/1/lawdata/430AC0000000073",
+      "title": "法務局における遺言書の保管等に関する法律",
+      "sha256": "636480cef93e1865f1d970d081e1e011e54845adce8142032f0eea7f4fbf4001",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "notaries",
+      "url": "https://laws.e-gov.go.jp/law/141AC0000000053",
+      "retrievalUrl": "https://laws.e-gov.go.jp/api/1/lawdata/141AC0000000053",
+      "title": "公証人法",
+      "sha256": "b41140e53cde4d807804d4cb87afbd1395ddb02664411beb75dbd66414c25112",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "income-tax",
+      "url": "https://laws.e-gov.go.jp/law/340AC0000000033",
+      "retrievalUrl": "https://laws.e-gov.go.jp/api/1/lawdata/340AC0000000033",
+      "title": "所得税法",
+      "sha256": "4e5d010f6717eb59427d3cc786c544292a07d80a2aadef012e06014265743bad",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "local-tax",
+      "url": "https://laws.e-gov.go.jp/law/325AC0000000226",
+      "retrievalUrl": "https://laws.e-gov.go.jp/api/1/lawdata/325AC0000000226",
+      "title": "地方税法",
+      "sha256": "26c3d640e683496ee5a6bd32f2085194f0ef002ec302aec1623c0fd05dcf3e32",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "insurance",
+      "url": "https://laws.e-gov.go.jp/law/420AC0000000056",
+      "retrievalUrl": "https://laws.e-gov.go.jp/api/1/lawdata/420AC0000000056",
+      "title": "保険法",
+      "sha256": "6b58d54e700a2d6d80f8602c4fca9e3d24c1a4c476a774597ae875b2cc6a9800",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "withdrawal-limit",
+      "url": "https://laws.e-gov.go.jp/law/430M60000010029",
+      "retrievalUrl": "https://laws.e-gov.go.jp/api/1/lawdata/430M60000010029",
+      "title": "民法第九百九条の二に規定する法務省令で定める額を定める省令",
+      "sha256": "8ad7fa6dbef49788c9dddadebb1a80d9c086eca9eae2366aaa358767d4f38dfb",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "business-succession",
+      "url": "https://laws.e-gov.go.jp/law/420AC0000000033",
+      "retrievalUrl": "https://laws.e-gov.go.jp/api/1/lawdata/420AC0000000033",
+      "title": "中小企業における経営の承継の円滑化に関する法律",
+      "sha256": "e8856365f881727e2906d04448b10c8a56592d1bf56fc7b745bd7175b1b1a134",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "tax-general",
+      "url": "https://laws.e-gov.go.jp/law/337AC0000000066",
+      "retrievalUrl": "https://laws.e-gov.go.jp/api/1/lawdata/337AC0000000066",
+      "title": "国税通則法",
+      "sha256": "84701c9cecc1f5d05aa1c01c91e279eaef1630f4bbceacb78f393f040f134e5e",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "insurance-tax",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4114.htm",
+      "title": "No.4114 相続税の課税対象になる死亡保険金｜国税庁",
+      "sha256": "b83e3a13967396b8e23f190e9610d53a32bcc093cea0c3e18b334aef647a6b0b",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "retirement-tax",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4117.htm",
+      "title": "No.4117 相続税の課税対象になる死亡退職金｜国税庁",
+      "sha256": "d5e2dc786562d244916ee4ba1d76859385c24437e7949dd9e3471753366247e7",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "funeral-tax",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4129.htm",
+      "title": "No.4129 相続財産から控除できる葬式費用｜国税庁",
+      "sha256": "00fc18be86e702802a040a8bcc943cbe6ffd7f5b9a806411d1fbe652e38ad7f1",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "small-land",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4124.htm",
+      "title": "No.4124 相続した事業の用や居住の用の宅地等の価額の特例（小規模宅地等の特例）｜国税庁",
+      "sha256": "a26233e837a4ed72009df77a879e032a8d686e30e2ac81c24b5c152b73fb572a",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "valuation-land",
+      "url": "https://www.nta.go.jp/law/tsutatsu/kihon/sisan/hyoka_new/02/01.htm",
+      "title": "第1節　通則｜国税庁",
+      "sha256": "1c8bbf96d0fd5c1d2258681f50381f8b1e5fbb26872412e5ee991702c3addb24",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "valuation-house",
+      "url": "https://www.nta.go.jp/law/tsutatsu/kihon/sisan/hyoka_new/03/01.htm",
+      "title": "第3章　家屋及び家屋の上に存する権利｜国税庁",
+      "sha256": "9208b999d24fdb0baf956f8bcb90995f5205eda05303eab8d8c484256d655bc4",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "investment-trust",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hyoka/4644.htm",
+      "title": "No.4644 貸付信託・証券投資信託の評価｜国税庁",
+      "sha256": "5ae86016c3625e6fc630a5ac4ff2e61ea4a5e7085f7c78052d38aaffd8e930f4",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "unlisted-shares",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hyoka/4638.htm",
+      "title": "No.4638 取引相場のない株式の評価｜国税庁",
+      "sha256": "88900aa6eff93955da7a381a0373f1fab93fb137462132678196c9fce2b8aa3f",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "exit-tax",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1478.htm",
+      "title": "No.1478 国外転出をする場合の譲渡所得等の特例｜国税庁",
+      "sha256": "e37f9eaa193a61f9cfd39deca4a83ad0157c79c121c2ae987c10c14e40e4677d",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "residence-tax",
+      "url": "https://www.nta.go.jp/law/tsutatsu/kihon/sisan/sozoku2/01.htm",
+      "title": "通達目次　/　相続税法基本通達｜国税庁",
+      "sha256": "6e7db42fed5b4fc935ab9557f08850282296288abbc07f58fceba158cd7cf57b",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "lump-pension",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4123.htm",
+      "title": "No.4123 相続税等の課税対象になる年金受給権｜国税庁",
+      "sha256": "7df4db720aa00ff05d26bb50b200d6c89986800e2f4098e310b147f421835dc3",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "listed-shares",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hyoka/4632.htm",
+      "title": "No.4632 上場株式の評価｜国税庁",
+      "sha256": "bfe99fda1b7b8928bb7105b9b221c124f7593029709f01bc6eb173608ad17b28",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "life-insurance-right",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hyoka/4660.htm",
+      "title": "No.4660 生命保険契約に関する権利の評価｜国税庁",
+      "sha256": "e37b06ba97eec9aa6f9c7eccbd74661fa6b14d6b080578dceab38597e13191a1",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "spouse-gift",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4452.htm",
+      "title": "No.4452 夫婦の間で居住用の不動産を贈与したときの配偶者控除｜国税庁",
+      "sha256": "0f4672c3108955987852252207d72215b33d8970d020248342e8dfefb64ebc2a",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "mixed-gift",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4408.htm",
+      "title": "No.4408 贈与税の計算と税率（暦年課税）｜国税庁",
+      "sha256": "c937178b94e85b87f3227a6ab7f01e41495b14a14ed83ad0a73d9a86b5eaf85f",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "land-loan",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4552.htm",
+      "title": "No.4552 親の土地に子供が家を建てたとき｜国税庁",
+      "sha256": "e5c1783164c9c8635010cd09566657535f439b0a020b4bbe3e4bce8cd4480f81",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "private-road",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hyoka/4622.htm",
+      "title": "No.4622 私道の評価｜国税庁",
+      "sha256": "9a21e736f8f82fe0e03e3669f1bc2d7fbfe31897a61e20fc3c7b232ad241ca17",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "leased-land",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hyoka/4614.htm",
+      "title": "No.4614 貸家建付地の評価｜国税庁",
+      "sha256": "937fae43d59116741fa012987f013ac1951a96b43a42564f3312ca8df65ad024",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "exit-inheritance",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1468.htm",
+      "title": "No.1468 相続又は遺贈により非居住者に資産が移転した場合の譲渡所得等の特例（国外転出（相続）時課税）｜国税庁",
+      "sha256": "f3d644c89bdb0a9fa46cf26491b16b97d6d7867104fad7fb8b33be7d18ddc9ee",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "land-corner",
+      "url": "https://www.nta.go.jp/law/tsutatsu/kihon/sisan/hyoka_new/02/02.htm",
+      "title": "第2節　宅地及び宅地の上に存する権利｜国税庁",
+      "sha256": "61af27d38a3086cd331bd8e9e4ee227ce2e9dba0dc8e775cf8e46e84865eed3b",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "unlisted-detail",
+      "url": "https://www.nta.go.jp/law/tsutatsu/kihon/sisan/hyoka_new/08/03.htm",
+      "title": "（類似業種比準価額）｜国税庁",
+      "sha256": "0c2c7181f280883681bc352de29dbad0ac629f95832f8b0ce061d670b6573ecb",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "pension-salary",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/shotoku/1605.htm",
+      "title": "No.1605 遺族の方に支給される公的年金等｜国税庁",
+      "sha256": "eb20b49fedf3534c3e3c73529467d17a64796275e0ef7d4e8ba2522831e9e8f2",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "condolence",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4120.htm",
+      "title": "No.4120 弔慰金を受け取ったときの取扱い｜国税庁",
+      "sha256": "f9af3791930f42cd4735a47cc28314918475895a3ede2060ae3a5f0b83bb7fac",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "condo",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hyoka/4667.htm",
+      "title": "No.4667 居住用の区分所有財産の評価｜国税庁",
+      "sha256": "bb6920fe37709ba39ac3840adc39cfe86fa5b14387cb3d65b756cb633629a97e",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "valuation-general",
+      "url": "https://www.nta.go.jp/law/tsutatsu/kihon/sisan/hyoka_new/01/01.htm",
+      "title": "第1章　総則｜国税庁",
+      "sha256": "59441a2a24b289444da1ffe1510027f9d559d4d9e36d725c468f61bb1f29a448",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "unlisted-net",
+      "url": "https://www.nta.go.jp/law/tsutatsu/kihon/sisan/hyoka_new/08/04.htm",
+      "title": "第1節　株式及び出資｜国税庁",
+      "sha256": "f1d571d137cb327401c3372d91a5b1492a9b78a7278b22f62a0a0dad035e92bf",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "unlisted-dividend",
+      "url": "https://www.nta.go.jp/law/tsutatsu/kihon/sisan/hyoka_new/08/05.htm",
+      "title": "（特定の評価会社の株式）｜国税庁",
+      "sha256": "f9accbe453abde26b5bfc333d912f275c6029aa6e52463a738eb11de52b4b043",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "unlisted-special",
+      "url": "https://www.nta.go.jp/law/tsutatsu/kihon/sisan/hyoka_new/08/06.htm",
+      "title": "（株式の割当てを受ける権利の評価）｜国税庁",
+      "sha256": "3af69f8bb41263e31955640861df900b0d91508de9838e70f51a3b1e142858c4",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "bonds",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/hyoka/4641.htm",
+      "title": "No.4641 利付公社債・割引発行の公社債の評価｜国税庁",
+      "sha256": "c95e1f4cf9561804e960eb2c8e65027feb07f20270dd1e60e9bea7cc853d23f6",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "spouse-gift-detail",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/zoyo/4455.htm",
+      "title": "No.4455 配偶者控除の対象となる居住用不動産の範囲｜国税庁",
+      "sha256": "d1ffcf5340170bc35e8253c49a3ea067520733ada2308d782a95f00cb49f28f7",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "settlement-adoption",
+      "url": "https://www.nta.go.jp/taxes/shiraberu/taxanswer/sozoku/4103.htm",
+      "title": "No.4103 相続時精算課税の選択｜国税庁",
+      "sha256": "465ef3bc7f74f4d48f0e684affee3914718de726f60fc7b4d87081c3bba1f46f",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "listed-detail",
+      "url": "https://www.nta.go.jp/law/tsutatsu/kihon/sisan/hyoka_new/08/06.htm",
+      "title": "（株式の割当てを受ける権利の評価）｜国税庁",
+      "sha256": "3af69f8bb41263e31955640861df900b0d91508de9838e70f51a3b1e142858c4",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "residence-disappearance",
+      "url": "https://www.nta.go.jp/law/tsutatsu/kihon/sisan/sozoku2/01/06.htm#a-9_13_2",
+      "title": "第9条《その他の利益の享受》関係｜国税庁",
+      "sha256": "c80ef02905d91321ab315bfeff65f2db4ecb092d96265a62a52103b6086cf9f7",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "ma-guideline",
+      "url": "https://www.chusho.meti.go.jp/zaimu/shoukei/download/m_and_a_guideline.pdf",
+      "title": "中小Ｍ＆Ａガイドライン（第3版）",
+      "retrievalMethod": "web search indexed official PDF/publication page; direct HTTP 403",
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "key": "whitepaper-2025",
+      "url": "https://www.chusho.meti.go.jp/pamflet/hakusyo/2025/shokibo/b1_1_9.html",
+      "title": "2025年版 小規模企業白書 第9節 事業承継（中小企業・小規模企業白書の共通掲載内容）",
+      "retrievalMethod": "web search indexed official page; direct HTTP 403",
+      "checkedOn": "2026-11-18"
+    }
+  ],
+  "sittings": [
+    {
+      "year": 2026,
+      "season": "round1",
+      "officialQuestionCount": 50,
+      "includedQuestionCount": 50,
+      "remainingQuestionCount": 0,
+      "officialAnswers": [
+        3,
+        3,
+        2,
+        4,
+        1,
+        4,
+        3,
+        1,
+        2,
+        3,
+        4,
+        4,
+        3,
+        2,
+        3,
+        3,
+        2,
+        4,
+        3,
+        2,
+        4,
+        1,
+        1,
+        2,
+        4,
+        2,
+        1,
+        4,
+        4,
+        3,
+        1,
+        2,
+        3,
+        4,
+        2,
+        1,
+        1,
+        4,
+        3,
+        1,
+        3,
+        1,
+        2,
+        3,
+        2,
+        1,
+        2,
+        1,
+        4,
+        2
+      ]
+    },
+    {
+      "year": 2026,
+      "season": "round2",
+      "officialQuestionCount": 50,
+      "includedQuestionCount": 50,
+      "remainingQuestionCount": 0,
+      "officialAnswers": [
+        3,
+        4,
+        2,
+        1,
+        4,
+        4,
+        1,
+        2,
+        2,
+        4,
+        1,
+        4,
+        3,
+        1,
+        4,
+        2,
+        2,
+        2,
+        1,
+        3,
+        3,
+        2,
+        3,
+        2,
+        2,
+        4,
+        4,
+        1,
+        3,
+        2,
+        3,
+        1,
+        4,
+        4,
+        2,
+        1,
+        3,
+        1,
+        4,
+        3,
+        2,
+        1,
+        3,
+        3,
+        4,
+        3,
+        3,
+        4,
+        1,
+        4
+      ]
+    }
+  ],
+  "questions": [
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q1",
+      "officialQuestionNumber": 1,
+      "officialAnswer": 3,
+      "pdfPage": 1,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case1-p1.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "9f49656c6cd78032695dc3f7caed1cdf5abc46e97d75da1938fb572ea47aa486",
+      "referenceKeys": [
+        "civil"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q2",
+      "officialQuestionNumber": 2,
+      "officialAnswer": 3,
+      "pdfPage": 2,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case1-p1.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "133a36ee152ae877fec94329792fef468a65a8d80b88087830fea5f79f23486c",
+      "referenceKeys": [
+        "civil",
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q3",
+      "officialQuestionNumber": 3,
+      "officialAnswer": 2,
+      "pdfPage": 2,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case1-p1.webp"
+      ],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-01/q3-material-p2.webp"
+      ],
+      "sourceTranscriptionSha256": "be750a9300b59a2f1667eba62855288ec386669794beb3508c9255b460833200",
+      "referenceKeys": [
+        "civil"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q4",
+      "officialQuestionNumber": 4,
+      "officialAnswer": 4,
+      "pdfPage": 2,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case1-p1.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "8b1a826ab32eb1c45f9b19e234f3a26a1f3d60b0f7f48a15d4ae19bc582b7d4c",
+      "referenceKeys": [
+        "civil"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q5",
+      "officialQuestionNumber": 5,
+      "officialAnswer": 1,
+      "pdfPage": 3,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "dae2aedd96c3bbb9f2d74388fa510870e1fb6b93028547198ccdb7d7a6860cf0",
+      "referenceKeys": [
+        "civil"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q6",
+      "officialQuestionNumber": 6,
+      "officialAnswer": 4,
+      "pdfPage": 3,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "49fa6ab1b6f6d8722373a73cbe9d3945ca8b57a95856c89f2136494cdbcbcf7e",
+      "referenceKeys": [
+        "real-estate-register"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q7",
+      "officialQuestionNumber": 7,
+      "officialAnswer": 3,
+      "pdfPage": 5,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case2-p5.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "95abad0dbb7c8997f02b5c0772f51c4a27e36c2b130555496596943a28f8d03f",
+      "referenceKeys": [
+        "trust",
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q8",
+      "officialQuestionNumber": 8,
+      "officialAnswer": 1,
+      "pdfPage": 6,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case2-p5.webp"
+      ],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-01/q8-material-p6.webp"
+      ],
+      "sourceTranscriptionSha256": "3393c9d71784bd79dc7c8b42635182a0ebccfe01509976618744081e2aa2c887",
+      "referenceKeys": [
+        "civil",
+        "withdrawal-limit"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q9",
+      "officialQuestionNumber": 9,
+      "officialAnswer": 2,
+      "pdfPage": 6,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case2-p5.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "516d653e4c2ea45324b0adf5e2b9b1ffe1bfc3189b9fe70a253c4bbe74c25193",
+      "referenceKeys": [
+        "civil",
+        "residence-disappearance"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q10",
+      "officialQuestionNumber": 10,
+      "officialAnswer": 3,
+      "pdfPage": 7,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "fd817100008870e827ee1ef6ead45547f481cb76cc222383fd24dd12c03c1cc0",
+      "referenceKeys": [
+        "will-deposit"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q11",
+      "officialQuestionNumber": 11,
+      "officialAnswer": 4,
+      "pdfPage": 7,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "120d953483781ba5bb36e4bb075d20f287816691452b9b3626d1e3d3227b6e6b",
+      "referenceKeys": [
+        "civil",
+        "notaries"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q12",
+      "officialQuestionNumber": 12,
+      "officialAnswer": 4,
+      "pdfPage": 8,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "f6c9f555f903c70f6768c4aa8e2b669d7a43c9e55b6ce298850c3ed5fef2049c",
+      "referenceKeys": [
+        "civil",
+        "voluntary-guardianship"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q13",
+      "officialQuestionNumber": 13,
+      "officialAnswer": 3,
+      "pdfPage": 8,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "59f653a3a9696ae986f54d65d5d82e4a0e24da4718e6f1674114f09c04cdd990",
+      "referenceKeys": [
+        "civil"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q14",
+      "officialQuestionNumber": 14,
+      "officialAnswer": 2,
+      "pdfPage": 10,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case4-p9.webp"
+      ],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-01/q14-material-p10.webp"
+      ],
+      "sourceTranscriptionSha256": "6a1a400077159a0949b6de21e9786dc38305c9aadb0a8575dcc2843638e15f12",
+      "referenceKeys": [
+        "inheritance-tax",
+        "insurance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q15",
+      "officialQuestionNumber": 15,
+      "officialAnswer": 3,
+      "pdfPage": 10,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case4-p9.webp"
+      ],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-01/q15-material-p10.webp"
+      ],
+      "sourceTranscriptionSha256": "7df3193640ebc7fcfdf356f769866879a6b40e5d5b2143a7dfa494ba5a573be4",
+      "referenceKeys": [
+        "inheritance-tax",
+        "retirement-tax",
+        "condolence"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q16",
+      "officialQuestionNumber": 16,
+      "officialAnswer": 3,
+      "pdfPage": 11,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case4-p9.webp"
+      ],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-01/q16-material-p11.webp"
+      ],
+      "sourceTranscriptionSha256": "295ad40b0c8d2433f4062b64fd8a334f8c6e690fb04cc154d8f7de5f665088ab",
+      "referenceKeys": [
+        "inheritance-tax",
+        "funeral-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q17",
+      "officialQuestionNumber": 17,
+      "officialAnswer": 2,
+      "pdfPage": 12,
+      "commonImages": [],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-01/q17-material-p12.webp"
+      ],
+      "sourceTranscriptionSha256": "b0b588335361cb2cac57f85edca80ac72a191093c1f0c473b0f114121ec37040",
+      "referenceKeys": [
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q18",
+      "officialQuestionNumber": 18,
+      "officialAnswer": 4,
+      "pdfPage": 14,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case5-p13.webp",
+        "/questions/cfp-souzoku/2026-01/case5-p14.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "5cffaab6eaa439b0f7e465c7fe91fd577ae99e43ea8c7dce6d3bd2c10623f2ee",
+      "referenceKeys": [
+        "small-land"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q19",
+      "officialQuestionNumber": 19,
+      "officialAnswer": 3,
+      "pdfPage": 15,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case5-p13.webp",
+        "/questions/cfp-souzoku/2026-01/case5-p14.webp"
+      ],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-01/q19-material-p15.webp"
+      ],
+      "sourceTranscriptionSha256": "e3ac1216364e336146e88375d2879d846c76fbac954e4ebcdc1cb630a3f51c8f",
+      "referenceKeys": [
+        "small-land"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q20",
+      "officialQuestionNumber": 20,
+      "officialAnswer": 2,
+      "pdfPage": 16,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "48b6f4f59ed37233f6f9c9c05f8a380a01aec869f1c6a6b72bf08731555a913c",
+      "referenceKeys": [
+        "small-land"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q21",
+      "officialQuestionNumber": 21,
+      "officialAnswer": 4,
+      "pdfPage": 18,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case6-p17.webp",
+        "/questions/cfp-souzoku/2026-01/case6-p18.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "bf6d918421eb1632c46a117fb5cc7b793fbff98a9766f350b8bb0a737549f528",
+      "referenceKeys": [
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q22",
+      "officialQuestionNumber": 22,
+      "officialAnswer": 1,
+      "pdfPage": 18,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case6-p17.webp",
+        "/questions/cfp-souzoku/2026-01/case6-p18.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "3316ff34fa6158d0794ca735dad14491469c4a7e8f59e6524d3eb68386624d0a",
+      "referenceKeys": [
+        "inheritance-tax",
+        "civil"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q23",
+      "officialQuestionNumber": 23,
+      "officialAnswer": 1,
+      "pdfPage": 19,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case6-p17.webp",
+        "/questions/cfp-souzoku/2026-01/case6-p18.webp"
+      ],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-01/q23-material-p19.webp"
+      ],
+      "sourceTranscriptionSha256": "477d547f186399a209d8d9a7d025b1d46e6e8343f0b80c10a2b878ff153c2528",
+      "referenceKeys": [
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q24",
+      "officialQuestionNumber": 24,
+      "officialAnswer": 2,
+      "pdfPage": 19,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "1945281b55069989c9eaa052b344a9ef1d91e819baff5b754798b53d579fc659",
+      "referenceKeys": [
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q25",
+      "officialQuestionNumber": 25,
+      "officialAnswer": 4,
+      "pdfPage": 20,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "3344125912c5b6ac1e46af7a4f5c6d506dc6aae3a34e144910ea1cf6bc48f60e",
+      "referenceKeys": [
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q26",
+      "officialQuestionNumber": 26,
+      "officialAnswer": 2,
+      "pdfPage": 21,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "8e8f41706796dc9137811658bb9d21fb85c5e3d32e6e9db701c532a9886150e7",
+      "referenceKeys": [
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q27",
+      "officialQuestionNumber": 27,
+      "officialAnswer": 1,
+      "pdfPage": 21,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "d353fe6a5d158e609d562080d8f71db15c31638fe894be0dc6f00a9c41b6b5c7",
+      "referenceKeys": [
+        "inheritance-tax",
+        "tax-general"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q28",
+      "officialQuestionNumber": 28,
+      "officialAnswer": 4,
+      "pdfPage": 22,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "b3c2ab1efc1a625580cd33123e2e08488f0d22f4d2baf2491da9bd8dc79df89a",
+      "referenceKeys": [
+        "income-tax",
+        "pension-salary"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q29",
+      "officialQuestionNumber": 29,
+      "officialAnswer": 4,
+      "pdfPage": 24,
+      "commonImages": [],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-01/q29-material-p24.webp"
+      ],
+      "sourceTranscriptionSha256": "48bc1f5dc527cfdde6b0ca5f80acba11c71f61416ee9b17e209fc9bdc59d44b3",
+      "referenceKeys": [
+        "mixed-gift",
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q30",
+      "officialQuestionNumber": 30,
+      "officialAnswer": 3,
+      "pdfPage": 24,
+      "commonImages": [],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-01/q30-material-p24.webp"
+      ],
+      "sourceTranscriptionSha256": "c4deb68c2df541a111e9bf69aacbf59df7e1c72feb601348d93dbf5e51ffc4fc",
+      "referenceKeys": [
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q31",
+      "officialQuestionNumber": 31,
+      "officialAnswer": 1,
+      "pdfPage": 25,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "9df2193c949c845238600d5d8055cbeb73a7c2e40c067a7c97ba36e3dc2a7e88",
+      "referenceKeys": [
+        "spouse-gift",
+        "spouse-gift-detail"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q32",
+      "officialQuestionNumber": 32,
+      "officialAnswer": 2,
+      "pdfPage": 25,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "a1c18daef277860e12574aee0ad30ceee4f7e991029b0ecbc987b358e9c0630e",
+      "referenceKeys": [
+        "inheritance-tax",
+        "settlement-adoption"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q33",
+      "officialQuestionNumber": 33,
+      "officialAnswer": 3,
+      "pdfPage": 26,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "038b9f3037f71d6b59d4af9cf5eda77f52ca5c7130c41a1596cd1002dd741ecb",
+      "referenceKeys": [
+        "inheritance-tax",
+        "tax-general"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q34",
+      "officialQuestionNumber": 34,
+      "officialAnswer": 4,
+      "pdfPage": 28,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case9-p27.webp"
+      ],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-01/q34-material-p28.webp"
+      ],
+      "sourceTranscriptionSha256": "2f00caa2564eee0e706208a676aa2130ddffd5e7d4dcb6bbdbb10fa47d4470f6",
+      "referenceKeys": [
+        "land-corner",
+        "land-loan"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q35",
+      "officialQuestionNumber": 35,
+      "officialAnswer": 2,
+      "pdfPage": 28,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case9-p27.webp"
+      ],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-01/q35-material-p28.webp"
+      ],
+      "sourceTranscriptionSha256": "fb789f961403c524949f89b589fdeed20fa8dd73b6dfe451b86a963f632394a3",
+      "referenceKeys": [
+        "land-corner",
+        "leased-land"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q36",
+      "officialQuestionNumber": 36,
+      "officialAnswer": 1,
+      "pdfPage": 29,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case9-p27.webp"
+      ],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-01/q36-material-p29.webp"
+      ],
+      "sourceTranscriptionSha256": "285ea7d66b2c5684957445746b17ed159a69a8547b8125f6239c24e1a8c3981a",
+      "referenceKeys": [
+        "valuation-house",
+        "leased-land"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q37",
+      "officialQuestionNumber": 37,
+      "officialAnswer": 1,
+      "pdfPage": 30,
+      "commonImages": [],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-01/q37-material-p30.webp"
+      ],
+      "sourceTranscriptionSha256": "7c5a6753040a03e40e457b9df396ce355b5fdb2d6d02548f7a7f56e3c3d7bdad",
+      "referenceKeys": [
+        "condo"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q38",
+      "officialQuestionNumber": 38,
+      "officialAnswer": 4,
+      "pdfPage": 31,
+      "commonImages": [],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-01/q38-material-p31.webp"
+      ],
+      "sourceTranscriptionSha256": "850364cb496e396a6b6583f2f85000664d744ae2d1abf447d7c31b73363a9c9d",
+      "referenceKeys": [
+        "listed-shares",
+        "listed-detail"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q39",
+      "officialQuestionNumber": 39,
+      "officialAnswer": 3,
+      "pdfPage": 32,
+      "commonImages": [],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-01/q39-material-p32.webp"
+      ],
+      "sourceTranscriptionSha256": "ff2c8c5ac9747130bb6734de91e5196e4691ea2794309c440a707e361f3c7f13",
+      "referenceKeys": [
+        "valuation-general"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q40",
+      "officialQuestionNumber": 40,
+      "officialAnswer": 1,
+      "pdfPage": 32,
+      "commonImages": [],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-01/q40-material-p32.webp"
+      ],
+      "sourceTranscriptionSha256": "c45c4e02d1fce7a10c94ac58a93ce418af7a0166a3f5eb08c35ffa76a420e55f",
+      "referenceKeys": [
+        "bonds"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q41",
+      "officialQuestionNumber": 41,
+      "officialAnswer": 3,
+      "pdfPage": 35,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case11-p33.webp",
+        "/questions/cfp-souzoku/2026-01/case11-p34.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "877eaa0a765a4bfbda3f252a62936d455546d250acbfc548ccf14442f5d56571",
+      "referenceKeys": [
+        "inheritance-tax",
+        "insurance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q42",
+      "officialQuestionNumber": 42,
+      "officialAnswer": 1,
+      "pdfPage": 35,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case11-p33.webp",
+        "/questions/cfp-souzoku/2026-01/case11-p34.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "3891eda0a77e3596109b90c655c1cce5345aa56e25c5e67791f410871ea01217",
+      "referenceKeys": [
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q43",
+      "officialQuestionNumber": 43,
+      "officialAnswer": 2,
+      "pdfPage": 35,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case11-p33.webp",
+        "/questions/cfp-souzoku/2026-01/case11-p34.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "3612e9276835e0c6f7cc4270bdc255a50bb50a66a8370a29678b0ae2231985ed",
+      "referenceKeys": [
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q44",
+      "officialQuestionNumber": 44,
+      "officialAnswer": 3,
+      "pdfPage": 35,
+      "commonImages": [],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-01/q44-material-p35.webp"
+      ],
+      "sourceTranscriptionSha256": "655d990ac980c20f46a33980a58e082d69e6057e95989fb137998d6bd1c73cf5",
+      "referenceKeys": [
+        "income-tax",
+        "exit-inheritance"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q45",
+      "officialQuestionNumber": 45,
+      "officialAnswer": 2,
+      "pdfPage": 39,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case12-p37.webp",
+        "/questions/cfp-souzoku/2026-01/case12-p38.webp",
+        "/questions/cfp-souzoku/2026-01/case12-p39.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "c694870eb3bf27cfef147f6c1ce59fd06b0e3750c7e1b47b8f64f610b5afdcf3",
+      "referenceKeys": [
+        "unlisted-shares",
+        "unlisted-net"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q46",
+      "officialQuestionNumber": 46,
+      "officialAnswer": 1,
+      "pdfPage": 39,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case12-p37.webp",
+        "/questions/cfp-souzoku/2026-01/case12-p38.webp",
+        "/questions/cfp-souzoku/2026-01/case12-p39.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "3ddf8138e0a9aef6f30ff1a2aa390ea5ad9ed3c3c7bbb52ddead15acb25d7479",
+      "referenceKeys": [
+        "unlisted-net"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q47",
+      "officialQuestionNumber": 47,
+      "officialAnswer": 2,
+      "pdfPage": 40,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-01/case12-p37.webp",
+        "/questions/cfp-souzoku/2026-01/case12-p38.webp",
+        "/questions/cfp-souzoku/2026-01/case12-p39.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "c002efcd8524e19ae4d528afe39b3329d3baf071a5644d4e019d55b2bd3f352e",
+      "referenceKeys": [
+        "unlisted-shares",
+        "unlisted-dividend"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q48",
+      "officialQuestionNumber": 48,
+      "officialAnswer": 1,
+      "pdfPage": 40,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "f7dc2556d421ef90c578bbccb8d31f1b6a746be9fe5764db2a1091651d42b4e9",
+      "referenceKeys": [
+        "companies"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q49",
+      "officialQuestionNumber": 49,
+      "officialAnswer": 4,
+      "pdfPage": 40,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "d249c1254bec2225f3f92ef76a87184e1b24a28e7e393f8b165d63babca59e2a",
+      "referenceKeys": [
+        "companies"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round1-gakka-q50",
+      "officialQuestionNumber": 50,
+      "officialAnswer": 2,
+      "pdfPage": 41,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "8bddbb26eb3bee80d2cc8a39e1f68ca3485360082d14955e4dda3a847a6e59e6",
+      "referenceKeys": [
+        "whitepaper-2025"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q1",
+      "officialQuestionNumber": 1,
+      "officialAnswer": 3,
+      "pdfPage": 1,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case1-p1.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "98a67ad8308559a06394b89cd931e37c03afd396f5157b4d815f76785b92f6f0",
+      "referenceKeys": [
+        "civil"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q2",
+      "officialQuestionNumber": 2,
+      "officialAnswer": 4,
+      "pdfPage": 2,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case1-p1.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "1cedb0b649cd06b6f74f9f22d219520ff30089faf81749b162da52ab5b81b2c0",
+      "referenceKeys": [
+        "civil",
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q3",
+      "officialQuestionNumber": 3,
+      "officialAnswer": 2,
+      "pdfPage": 2,
+      "commonImages": [],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-02/q3-material-p2.webp"
+      ],
+      "sourceTranscriptionSha256": "f670dc758a320556003c58ed681971c8faa54b835d9df163f982733a7ad1a935",
+      "referenceKeys": [
+        "civil"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q4",
+      "officialQuestionNumber": 4,
+      "officialAnswer": 1,
+      "pdfPage": 3,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "bd434853ea0919741b581dbe256f4248d2897fcf35973a6f029ad60daba16a77",
+      "referenceKeys": [
+        "civil"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q5",
+      "officialQuestionNumber": 5,
+      "officialAnswer": 4,
+      "pdfPage": 3,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "2a7b120a19e599ede2d6c43733fdb0a048c9f1246e2b89974a6d12440e8e502c",
+      "referenceKeys": [
+        "civil"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q6",
+      "officialQuestionNumber": 6,
+      "officialAnswer": 4,
+      "pdfPage": 3,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "8edd69c822c0f56567a72a256e605e63d0241c6dce74bac5fdfbc53efb884a5f",
+      "referenceKeys": [
+        "real-estate-register",
+        "land-reversion"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q7",
+      "officialQuestionNumber": 7,
+      "officialAnswer": 1,
+      "pdfPage": 5,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case2-p5.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "756a997d0b0c0cbf7fd1fbaeca658611e0e9856337c7198c0b5e4be1f4804d9f",
+      "referenceKeys": [
+        "trust"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q8",
+      "officialQuestionNumber": 8,
+      "officialAnswer": 2,
+      "pdfPage": 6,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case2-p5.webp"
+      ],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-02/q8-trust-terms-p5.webp"
+      ],
+      "sourceTranscriptionSha256": "828645e6f655700a50b1ada1f1de5b6fdb1b58095cf97fcede6803e955202a60",
+      "referenceKeys": [
+        "inheritance-tax",
+        "income-tax",
+        "local-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q9",
+      "officialQuestionNumber": 9,
+      "officialAnswer": 2,
+      "pdfPage": 6,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case2-p5.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "6260bafbcd225287b8bed2ad5994bed569a3ca869217cd051811656cb8019470",
+      "referenceKeys": [
+        "civil",
+        "residence-disappearance"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q10",
+      "officialQuestionNumber": 10,
+      "officialAnswer": 4,
+      "pdfPage": 7,
+      "commonImages": [],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-02/q10-material-p7.webp"
+      ],
+      "sourceTranscriptionSha256": "7d7694e4b283c4322420cb3223028dc9b3e40b2a771169419f6e4e584df6096b",
+      "referenceKeys": [
+        "civil"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q11",
+      "officialQuestionNumber": 11,
+      "officialAnswer": 1,
+      "pdfPage": 8,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "c1eedec52f173b6839865f690405d182e12a364050313818ac7b0aebfa09f6c5",
+      "referenceKeys": [
+        "civil"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q12",
+      "officialQuestionNumber": 12,
+      "officialAnswer": 4,
+      "pdfPage": 8,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "b94f6f675bdd59f5eb33f91e2c955a67732c5a19e5265b2a95807d6bc03b8321",
+      "referenceKeys": [
+        "civil",
+        "insurance"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q13",
+      "officialQuestionNumber": 13,
+      "officialAnswer": 3,
+      "pdfPage": 8,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "67501ba2e4020679b5d18898ee38e91881f5a74fa89aa6d5bae59c4d9f0ad5b9",
+      "referenceKeys": [
+        "voluntary-guardianship"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q14",
+      "officialQuestionNumber": 14,
+      "officialAnswer": 1,
+      "pdfPage": 9,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case4-p9.webp"
+      ],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-02/q14-material-p9.webp"
+      ],
+      "sourceTranscriptionSha256": "63777440413d8858a893fcc32bf05aa79377f428f481128f78877c08de62f27f",
+      "referenceKeys": [
+        "inheritance-tax",
+        "insurance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q15",
+      "officialQuestionNumber": 15,
+      "officialAnswer": 4,
+      "pdfPage": 10,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case4-p9.webp"
+      ],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-02/q15-material-p10.webp"
+      ],
+      "sourceTranscriptionSha256": "6d949a48c1ec5a7c555b4ab0dfae5a56c3e1fcc8b90d16a01dcb8c4e27770c31",
+      "referenceKeys": [
+        "inheritance-tax",
+        "retirement-tax",
+        "lump-pension",
+        "pension-salary"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q16",
+      "officialQuestionNumber": 16,
+      "officialAnswer": 2,
+      "pdfPage": 11,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case4-p9.webp"
+      ],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-02/q16-material-p11.webp"
+      ],
+      "sourceTranscriptionSha256": "19517e5af5649c55924c1abaa6f98a4544b39bb3e2eafc5863f465e105b74930",
+      "referenceKeys": [
+        "inheritance-tax",
+        "funeral-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q17",
+      "officialQuestionNumber": 17,
+      "officialAnswer": 2,
+      "pdfPage": 12,
+      "commonImages": [],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-02/q17-material-p12.webp"
+      ],
+      "sourceTranscriptionSha256": "6c2988ab26f4a9eefa096e43388c80fcaf4751165dfee061d7ad988d5514662d",
+      "referenceKeys": [
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q18",
+      "officialQuestionNumber": 18,
+      "officialAnswer": 2,
+      "pdfPage": 14,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case5-p13.webp"
+      ],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-02/q18-material-p14.webp"
+      ],
+      "sourceTranscriptionSha256": "0ee7cabd5a6370a8f67ddacff994096ee62125df7ac209a65b2a70c0bee6c2fc",
+      "referenceKeys": [
+        "small-land"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q19",
+      "officialQuestionNumber": 19,
+      "officialAnswer": 1,
+      "pdfPage": 15,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case5-p13.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "77b5e24c599bd08b464d4cff1b880a9129834d7e09980ac168750bea33c8cbd4",
+      "referenceKeys": [
+        "small-land"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q20",
+      "officialQuestionNumber": 20,
+      "officialAnswer": 3,
+      "pdfPage": 15,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "8ae0350261c22c434f06f38525e79aea96eaca87a7b9707e026430c4ce2a6570",
+      "referenceKeys": [
+        "small-land"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q21",
+      "officialQuestionNumber": 21,
+      "officialAnswer": 3,
+      "pdfPage": 18,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case6-p17.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "eddf2851e43d9103021d34e9677d2abd455d65a61d0e7e71a93e66696976470d",
+      "referenceKeys": [
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q22",
+      "officialQuestionNumber": 22,
+      "officialAnswer": 2,
+      "pdfPage": 18,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case6-p17.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "faba9d329bdd94538f1962bdaef2a158ffafc331e872791ada48f11d1e601db5",
+      "referenceKeys": [
+        "inheritance-tax",
+        "civil"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q23",
+      "officialQuestionNumber": 23,
+      "officialAnswer": 3,
+      "pdfPage": 18,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case6-p17.webp"
+      ],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-02/q23-material-p18.webp"
+      ],
+      "sourceTranscriptionSha256": "7bcde5b093e8d0595764f77d7c515077bca441f275e61edc845c287430848b61",
+      "referenceKeys": [
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q24",
+      "officialQuestionNumber": 24,
+      "officialAnswer": 2,
+      "pdfPage": 19,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "d3be70489873e988876b4bf61617eba76531b020b83caa604e89902b37ca002e",
+      "referenceKeys": [
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q25",
+      "officialQuestionNumber": 25,
+      "officialAnswer": 2,
+      "pdfPage": 21,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "691c10263e9d41b7d222eb149436c2b9e35a594aba360a1093471f8aacabb138",
+      "referenceKeys": [
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q26",
+      "officialQuestionNumber": 26,
+      "officialAnswer": 4,
+      "pdfPage": 21,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "3964d7bf499b79d6b34426bfa18d3140b9e0032a63c3b75bd2ea465ceb74014c",
+      "referenceKeys": [
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q27",
+      "officialQuestionNumber": 27,
+      "officialAnswer": 4,
+      "pdfPage": 22,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "c5c3f078ed348f7b3786c94f8d541976545b72da3f25aa58c5d5d7dde98d46ab",
+      "referenceKeys": [
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q28",
+      "officialQuestionNumber": 28,
+      "officialAnswer": 1,
+      "pdfPage": 22,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "6888cddacea2d7181e1816261689ab1d0b3ec6e37e0352cf009790431bb92485",
+      "referenceKeys": [
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q29",
+      "officialQuestionNumber": 29,
+      "officialAnswer": 3,
+      "pdfPage": 24,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case8-p23.webp",
+        "/questions/cfp-souzoku/2026-02/case8-p24.webp"
+      ],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-02/q29-material-p24.webp"
+      ],
+      "sourceTranscriptionSha256": "97131a91915e70182654c3f037ebe39f46713bb1338790cb4dfa6d007ed64867",
+      "referenceKeys": [
+        "inheritance-tax",
+        "spouse-gift"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q30",
+      "officialQuestionNumber": 30,
+      "officialAnswer": 2,
+      "pdfPage": 25,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case8-p23.webp",
+        "/questions/cfp-souzoku/2026-02/case8-p24.webp"
+      ],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-02/q30-material-p25.webp"
+      ],
+      "sourceTranscriptionSha256": "540b1e348d553f888811f22ca35ce420434dde98d68943bf2b209c56ef9248a2",
+      "referenceKeys": [
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q31",
+      "officialQuestionNumber": 31,
+      "officialAnswer": 3,
+      "pdfPage": 25,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case8-p23.webp",
+        "/questions/cfp-souzoku/2026-02/case8-p24.webp"
+      ],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-02/q31-material-p25.webp"
+      ],
+      "sourceTranscriptionSha256": "f6cc66ef81524cffbb6b725def85021304a9baff824b9602171c5858288a9b4e",
+      "referenceKeys": [
+        "inheritance-tax",
+        "mixed-gift"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q32",
+      "officialQuestionNumber": 32,
+      "officialAnswer": 1,
+      "pdfPage": 26,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "90e334965bc43ee38056a4db6521e585e483a0f055e3863d7140c370cd9a1bbd",
+      "referenceKeys": [
+        "inheritance-tax",
+        "land-loan"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q33",
+      "officialQuestionNumber": 33,
+      "officialAnswer": 4,
+      "pdfPage": 28,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case9-p27.webp",
+        "/questions/cfp-souzoku/2026-02/case9-p28.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "f59de043a508b662bf14c9eafda4badcebff42c81a9f46e485f6f0943ed1011a",
+      "referenceKeys": [
+        "valuation-land",
+        "land-corner"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q34",
+      "officialQuestionNumber": 34,
+      "officialAnswer": 4,
+      "pdfPage": 29,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case9-p27.webp",
+        "/questions/cfp-souzoku/2026-02/case9-p28.webp"
+      ],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-02/q34-material-p29.webp"
+      ],
+      "sourceTranscriptionSha256": "05713ee645fbf5d911ca12a689080b9a308c10add950bd0a68cd55b389813e59",
+      "referenceKeys": [
+        "valuation-land",
+        "leased-land"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q35",
+      "officialQuestionNumber": 35,
+      "officialAnswer": 2,
+      "pdfPage": 29,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case9-p27.webp",
+        "/questions/cfp-souzoku/2026-02/case9-p28.webp"
+      ],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-02/q35-material-p29.webp"
+      ],
+      "sourceTranscriptionSha256": "49f26e5715410373469604cd81c6beec6136e201ad8c26f38a7a4ab1708fddd1",
+      "referenceKeys": [
+        "valuation-house"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q36",
+      "officialQuestionNumber": 36,
+      "officialAnswer": 1,
+      "pdfPage": 30,
+      "commonImages": [],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-02/q36-material-p30.webp"
+      ],
+      "sourceTranscriptionSha256": "d439f3c6c52cc973d594682f65939fd4c3939b5136f9c6c6638d68c548cb2df1",
+      "referenceKeys": [
+        "private-road"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q37",
+      "officialQuestionNumber": 37,
+      "officialAnswer": 3,
+      "pdfPage": 31,
+      "commonImages": [],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-02/q37-material-p31.webp"
+      ],
+      "sourceTranscriptionSha256": "93df7e8c473b0a253ab65466fe942a6f6eee8c20616ee4951052d387ab4ed119",
+      "referenceKeys": [
+        "listed-shares"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q38",
+      "officialQuestionNumber": 38,
+      "officialAnswer": 1,
+      "pdfPage": 32,
+      "commonImages": [],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-02/q38-material-p32.webp"
+      ],
+      "sourceTranscriptionSha256": "52bd5cb5b0c5a9d62c7af3a931000a9a4b963d9d47153122d90cbf49b1ce244d",
+      "referenceKeys": [
+        "investment-trust"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q39",
+      "officialQuestionNumber": 39,
+      "officialAnswer": 4,
+      "pdfPage": 33,
+      "commonImages": [],
+      "ownImages": [
+        "/questions/cfp-souzoku/2026-02/q39-material-p33.webp"
+      ],
+      "sourceTranscriptionSha256": "a6670501c8e4669344c8025f3141fc3001e1d6953b2916d3fae05e2228508de3",
+      "referenceKeys": [
+        "life-insurance-right"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q40",
+      "officialQuestionNumber": 40,
+      "officialAnswer": 3,
+      "pdfPage": 36,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case11-p35.webp",
+        "/questions/cfp-souzoku/2026-02/case11-p36.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "618e1798e245434c49c62e7fa3afd81dbfc15dc21a67f4de38ccf15eb235a1e2",
+      "referenceKeys": [
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q41",
+      "officialQuestionNumber": 41,
+      "officialAnswer": 2,
+      "pdfPage": 37,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case11-p35.webp",
+        "/questions/cfp-souzoku/2026-02/case11-p36.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "fe6919cf39729fc1fef525df68e507a53b768f69deb43ed3fed970b9b9f4c42b",
+      "referenceKeys": [
+        "inheritance-tax",
+        "funeral-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q42",
+      "officialQuestionNumber": 42,
+      "officialAnswer": 1,
+      "pdfPage": 37,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "54d2b29fa6b1f68c5806c623c20d5bb1e18d99602265184e382ed5c081169caf",
+      "referenceKeys": [
+        "inheritance-tax"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q43",
+      "officialQuestionNumber": 43,
+      "officialAnswer": 3,
+      "pdfPage": 37,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "2245a1e9e29395f73abf8df04f0a75a6b07fa97a85e30450067c98d59ccaff9e",
+      "referenceKeys": [
+        "income-tax",
+        "exit-inheritance"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q44",
+      "officialQuestionNumber": 44,
+      "officialAnswer": 3,
+      "pdfPage": 41,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case12-p39.webp",
+        "/questions/cfp-souzoku/2026-02/case12-p40.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "f87c2932213c801624b43a8fd857e9fc4a15436fc20fe77f90923356bb681690",
+      "referenceKeys": [
+        "unlisted-shares"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q45",
+      "officialQuestionNumber": 45,
+      "officialAnswer": 4,
+      "pdfPage": 41,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case12-p39.webp",
+        "/questions/cfp-souzoku/2026-02/case12-p40.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "2177e76d1ed8973d6724de39bf22c3250e79ef020c7c671b1c0e906f1b1a825e",
+      "referenceKeys": [
+        "unlisted-shares",
+        "unlisted-net"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q46",
+      "officialQuestionNumber": 46,
+      "officialAnswer": 3,
+      "pdfPage": 41,
+      "commonImages": [
+        "/questions/cfp-souzoku/2026-02/case12-p39.webp",
+        "/questions/cfp-souzoku/2026-02/case12-p40.webp"
+      ],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "b065918f135d635aa74009821235934441c309bbeddc35dfbc21717fc81e492e",
+      "referenceKeys": [
+        "unlisted-shares",
+        "unlisted-net",
+        "unlisted-dividend"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q47",
+      "officialQuestionNumber": 47,
+      "officialAnswer": 3,
+      "pdfPage": 42,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "3d4ec6b04cb17bad6efc191084285f53b2424c93bddf0f1111cb41d085a32ce9",
+      "referenceKeys": [
+        "companies"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q48",
+      "officialQuestionNumber": 48,
+      "officialAnswer": 4,
+      "pdfPage": 42,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "6137f05be71b77aa0e539635b319a6f55a0b3ad37ada6712aeb0816c6bd3976c",
+      "referenceKeys": [
+        "companies"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q49",
+      "officialQuestionNumber": 49,
+      "officialAnswer": 1,
+      "pdfPage": 43,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "4e042540c528144c7ee9c7b6e2fa5c95be65cb7b14f1a56fea9e55f60bda7ca5",
+      "referenceKeys": [
+        "business-succession"
+      ]
+    },
+    {
+      "id": "cfp-souzoku-2026-round2-gakka-q50",
+      "officialQuestionNumber": 50,
+      "officialAnswer": 4,
+      "pdfPage": 43,
+      "commonImages": [],
+      "ownImages": [],
+      "sourceTranscriptionSha256": "92480a533f1ca4e4b0453066a723ca80a53ccaa01d189d6f5cc6eea87a6c2f47",
+      "referenceKeys": [
+        "ma-guideline"
+      ]
+    }
+  ],
+  "images": {
+    "/questions/cfp-souzoku/2026-01/case1-p1.webp": {
+      "pdfPage": 1,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        522.1680000000005
+      ],
+      "sha256": "01a6de1c9e5b7aa38b1fe75b4c7bcd4b1bf29d21ebaa5baefd490b7910b7cbb9"
+    },
+    "/questions/cfp-souzoku/2026-01/q3-material-p2.webp": {
+      "pdfPage": 2,
+      "clip": [
+        42.0,
+        337.7459200000001,
+        555.0,
+        390.24672
+      ],
+      "sha256": "3df1b5963de69ddb69ef82b354975a19f077c44ea5e0558518d4de0b5ee968e8"
+    },
+    "/questions/cfp-souzoku/2026-01/case2-p5.webp": {
+      "pdfPage": 5,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        370.32671999999997
+      ],
+      "sha256": "1cd03acf3d6bf9beef3523d8e6aa1c211e0a7bdf6b6f1a4309dde8665f990f24"
+    },
+    "/questions/cfp-souzoku/2026-01/q8-material-p6.webp": {
+      "pdfPage": 6,
+      "clip": [
+        42.0,
+        175.74592000000007,
+        555.0,
+        259.20672
+      ],
+      "sha256": "d722595ec109e8b2e82fe6851e0c5118296cdc409d0761da0605ce5e50e50bc1"
+    },
+    "/questions/cfp-souzoku/2026-01/case4-p9.webp": {
+      "pdfPage": 9,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        486.1795200000005
+      ],
+      "sha256": "61d9b287b686048cc6283e9ce07200fccf6fafb4d5c303907e9eb56867db28ff"
+    },
+    "/questions/cfp-souzoku/2026-01/q14-material-p10.webp": {
+      "pdfPage": 10,
+      "clip": [
+        42.0,
+        157.73055999999997,
+        555.0,
+        287.28671999999995
+      ],
+      "sha256": "4cf7e46154ab86b370d76687e2d5e7bc5271a86a56c18c1435bd13d189f6994c"
+    },
+    "/questions/cfp-souzoku/2026-01/q15-material-p10.webp": {
+      "pdfPage": 10,
+      "clip": [
+        42.0,
+        534.6803199999999,
+        555.0,
+        664.68192
+      ],
+      "sha256": "f9770281fd559dc87f581bd0ae4aa41e692d04ea8eb9ed0a5b9198530f9a59a2"
+    },
+    "/questions/cfp-souzoku/2026-01/q16-material-p11.webp": {
+      "pdfPage": 11,
+      "clip": [
+        42.0,
+        175.74592000000007,
+        555.0,
+        399.75552000000005
+      ],
+      "sha256": "af6b90c96a79b46c79cefbc4ebb6fa84cba28f25719f201060fbb25a0738fd70"
+    },
+    "/questions/cfp-souzoku/2026-01/q17-material-p12.webp": {
+      "pdfPage": 12,
+      "clip": [
+        42.0,
+        193.75072000000011,
+        555.0,
+        376.21631999999994
+      ],
+      "sha256": "6d9dd6cc6262c7d8ff537b97aba3c3bb2d157cb01b0308eeb1f6cee3feffb020"
+    },
+    "/questions/cfp-souzoku/2026-01/case5-p13.webp": {
+      "pdfPage": 13,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        486.1795200000005
+      ],
+      "sha256": "41b7c7239abc6e9e186d6f12171372c0ac5ad2cac507a6d75a3adc5a360bfc84"
+    },
+    "/questions/cfp-souzoku/2026-01/case5-p14.webp": {
+      "pdfPage": 14,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        441.72672
+      ],
+      "sha256": "a2e135f56611ddae5a7d49db4b10f8ff23873a62cf48efa708a543071519ea80"
+    },
+    "/questions/cfp-souzoku/2026-01/q19-material-p15.webp": {
+      "pdfPage": 15,
+      "clip": [
+        42.0,
+        193.74016000000006,
+        555.0,
+        383.65631999999994
+      ],
+      "sha256": "177afb3537f275480003020e2f5d7c7ba120d2f7aa50d2f70803a1d895fa63e9"
+    },
+    "/questions/cfp-souzoku/2026-01/case6-p17.webp": {
+      "pdfPage": 17,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        756.1987200000004
+      ],
+      "sha256": "ebe2acc1828edb47730e22440f9c9bd7b1aae29b842b66d7aeb4c3015f3604e2"
+    },
+    "/questions/cfp-souzoku/2026-01/case6-p18.webp": {
+      "pdfPage": 18,
+      "clip": [
+        42.0,
+        67.72671999999989,
+        555.0,
+        228.24671999999998
+      ],
+      "sha256": "5a0cf270aa8f3d2e573a7aeafa4067ceb3f9e2108d53f2c428e8c3166194a5c4"
+    },
+    "/questions/cfp-souzoku/2026-01/q23-material-p19.webp": {
+      "pdfPage": 19,
+      "clip": [
+        42.0,
+        157.74112000000002,
+        555.0,
+        256.68672000000004
+      ],
+      "sha256": "a9628a1f0d7306476ef3ccdb26a13ffb88278e131c72c7e0ad8dc499c9b164a9"
+    },
+    "/questions/cfp-souzoku/2026-01/q29-material-p24.webp": {
+      "pdfPage": 24,
+      "clip": [
+        42.0,
+        175.74592000000007,
+        555.0,
+        243.72672
+      ],
+      "sha256": "6f81489b32ea2eb42888205c21019f5249bff62be1d7874f926a32c671dcf5b9"
+    },
+    "/questions/cfp-souzoku/2026-01/q30-material-p24.webp": {
+      "pdfPage": 24,
+      "clip": [
+        42.0,
+        436.1449599999999,
+        555.0,
+        521.1667199999999
+      ],
+      "sha256": "c50550e371e399fa445b209c6ad54aa1ab704b52c403c0c982c7e5c3c1cd6f98"
+    },
+    "/questions/cfp-souzoku/2026-01/case9-p27.webp": {
+      "pdfPage": 27,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        697.7107199999999
+      ],
+      "sha256": "7e6bd323cdd2f1d304325422f6944ad05cccd8af01c3cccd624ac5176369f49f"
+    },
+    "/questions/cfp-souzoku/2026-01/q34-material-p28.webp": {
+      "pdfPage": 28,
+      "clip": [
+        42.0,
+        176.59072000000015,
+        555.0,
+        261.23712
+      ],
+      "sha256": "176081c6c70fbb088d5a74ee4fb19448c40ce23808168bbd12af2f6deda56ab4"
+    },
+    "/questions/cfp-souzoku/2026-01/q35-material-p28.webp": {
+      "pdfPage": 28,
+      "clip": [
+        42.0,
+        472.63071999999994,
+        555.0,
+        572.27712
+      ],
+      "sha256": "db8f0be51ec47d6bfc9258846638c3a5abfe334b617e483b20d9999d1f6f837e"
+    },
+    "/questions/cfp-souzoku/2026-01/q36-material-p29.webp": {
+      "pdfPage": 29,
+      "clip": [
+        42.0,
+        158.5859200000001,
+        555.0,
+        317.74271999999974
+      ],
+      "sha256": "eddf97191b4c53a7ef3bfd57a6de3648b806d785a024e29333a800e974691441"
+    },
+    "/questions/cfp-souzoku/2026-01/q37-material-p30.webp": {
+      "pdfPage": 30,
+      "clip": [
+        42.0,
+        158.5859200000001,
+        555.0,
+        360.1939200000005
+      ],
+      "sha256": "90f9ba369063bcecd2271abcced97fc7b0772962a332491d1a2f05a1063cb324"
+    },
+    "/questions/cfp-souzoku/2026-01/q38-material-p31.webp": {
+      "pdfPage": 31,
+      "clip": [
+        42.0,
+        266.5955200000002,
+        555.0,
+        536.1907199999999
+      ],
+      "sha256": "a00d9ca4c82b8c5686f2f7cf25bfe79ef96c2dcd92b01b30a2e1448779ce7b21"
+    },
+    "/questions/cfp-souzoku/2026-01/q39-material-p32.webp": {
+      "pdfPage": 32,
+      "clip": [
+        42.0,
+        176.59072000000015,
+        555.0,
+        340.68672
+      ],
+      "sha256": "fd97a6759c7ded2cbfc84af32c8558975faa08d922b16a78ac6923c8114539e3"
+    },
+    "/questions/cfp-souzoku/2026-01/q40-material-p32.webp": {
+      "pdfPage": 32,
+      "clip": [
+        42.0,
+        535.1459199999999,
+        555.0,
+        635.76672
+      ],
+      "sha256": "90f834d7882bb79370fc1634aecc57f4364f19dd3c6d5cf4de0d1d0dcd2547d3"
+    },
+    "/questions/cfp-souzoku/2026-01/case11-p33.webp": {
+      "pdfPage": 33,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        648.1910400000004
+      ],
+      "sha256": "820d1c9bd80e7a74e0850868ff48003f6e49d28072fbe1b4506ae37a7c392ffe"
+    },
+    "/questions/cfp-souzoku/2026-01/case11-p34.webp": {
+      "pdfPage": 34,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        648.72192
+      ],
+      "sha256": "48353e7981119edd9671972db2dbdf94106f56c4d32355678cee06228beb456b"
+    },
+    "/questions/cfp-souzoku/2026-01/q44-material-p35.webp": {
+      "pdfPage": 35,
+      "clip": [
+        42.0,
+        608.5859199999999,
+        555.0,
+        684.1603199999998
+      ],
+      "sha256": "2f39cd944da2e8fe2962fdcc3e0e516b851ce14aad30c15a9464df8f5b5ec95b"
+    },
+    "/questions/cfp-souzoku/2026-01/case12-p37.webp": {
+      "pdfPage": 37,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        652.2067199999999
+      ],
+      "sha256": "9cc0524271aca07dc6c143642715f16f005fe085f23044c408c2d9cb425e3e17"
+    },
+    "/questions/cfp-souzoku/2026-01/case12-p38.webp": {
+      "pdfPage": 38,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        660.13536
+      ],
+      "sha256": "76c8fd948343dae6de2a8a58e22d5fc2daec9b9f3fee9603f5387204320488cd"
+    },
+    "/questions/cfp-souzoku/2026-01/case12-p39.webp": {
+      "pdfPage": 39,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        307.68672000000004
+      ],
+      "sha256": "64cba6a096a5b19e88f565125f90fb62a2d28cb9d14dfcc8303469b4d3ae6c63"
+    },
+    "/questions/cfp-souzoku/2026-02/case1-p1.webp": {
+      "pdfPage": 1,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        540.1833600000004
+      ],
+      "sha256": "152247c1cb738cb6515d9187e29571345ad0d5fe90e6bbb9f6bd2193f17e0576"
+    },
+    "/questions/cfp-souzoku/2026-02/q3-material-p2.webp": {
+      "pdfPage": 2,
+      "clip": [
+        42.0,
+        338.5907200000001,
+        555.0,
+        558.16128
+      ],
+      "sha256": "0f6fba32259f47a556a50006f7934efa979ed79e4c75b3467afaea560250e932"
+    },
+    "/questions/cfp-souzoku/2026-02/case2-p5.webp": {
+      "pdfPage": 5,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        372.24672
+      ],
+      "sha256": "86645e4262c728316435896d0c94dc8644a2e433233638e130a9055e0847edec"
+    },
+    "/questions/cfp-souzoku/2026-02/q8-trust-terms-p5.webp": {
+      "pdfPage": 5,
+      "clip": [
+        42.0,
+        410.56672,
+        555.0,
+        486.14111999999994
+      ],
+      "sha256": "ec187c321eb9325924f22d96c67761b79ce025c504bdf2cd64e4fcc652124dcd"
+    },
+    "/questions/cfp-souzoku/2026-02/q10-material-p7.webp": {
+      "pdfPage": 7,
+      "clip": [
+        42.0,
+        248.59072000000015,
+        555.0,
+        648.1411199999999
+      ],
+      "sha256": "6e14c03dc57cd6d68a03a5dace0c3b025b0a55a308b176cd474601a5647112ff"
+    },
+    "/questions/cfp-souzoku/2026-02/case4-p9.webp": {
+      "pdfPage": 9,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        450.18048000000044
+      ],
+      "sha256": "20d574b51a71f31d3fa4ef4b2e2c14bb84fc5c50f920155df721f4f8c4653068"
+    },
+    "/questions/cfp-souzoku/2026-02/q14-material-p9.webp": {
+      "pdfPage": 9,
+      "clip": [
+        42.0,
+        553.73056,
+        555.0,
+        652.2067199999999
+      ],
+      "sha256": "9ea40e032c957845e1c7d46fe50b9f7930e7c1dfd30c1e325683fa8431d06fcc"
+    },
+    "/questions/cfp-souzoku/2026-02/q15-material-p10.webp": {
+      "pdfPage": 10,
+      "clip": [
+        42.0,
+        230.60512000000028,
+        555.0,
+        451.67712
+      ],
+      "sha256": "8067224a6d1c40e083c4613270a2ea44062b8b989810d042ddd46056b063b688"
+    },
+    "/questions/cfp-souzoku/2026-02/q16-material-p11.webp": {
+      "pdfPage": 11,
+      "clip": [
+        42.0,
+        175.74592000000007,
+        555.0,
+        507.78432
+      ],
+      "sha256": "b53d72c5882d95900b7ea8a636e14087131f6d9def204648c2e2ecd9ba062e08"
+    },
+    "/questions/cfp-souzoku/2026-02/q17-material-p12.webp": {
+      "pdfPage": 12,
+      "clip": [
+        42.0,
+        211.75552000000016,
+        555.0,
+        427.70111999999995
+      ],
+      "sha256": "de245f24b840ae7c8e7b848d2338011d3a2930369ef79d79b0a020d1d55ab9f4"
+    },
+    "/questions/cfp-souzoku/2026-02/case5-p13.webp": {
+      "pdfPage": 13,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        753.72672
+      ],
+      "sha256": "ac38d7cf73d986b799d7c1136ea4d2554e239397f86946527e8fcbd043b64973"
+    },
+    "/questions/cfp-souzoku/2026-02/q18-material-p14.webp": {
+      "pdfPage": 14,
+      "clip": [
+        42.0,
+        193.74016000000006,
+        555.0,
+        383.65631999999994
+      ],
+      "sha256": "9911788b363451f6526b26b5e02ee3b197bb26715114843c952cdbe57cd2ca02"
+    },
+    "/questions/cfp-souzoku/2026-02/case6-p17.webp": {
+      "pdfPage": 17,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        753.24672
+      ],
+      "sha256": "df6367d9b3ea33d178905c74a30c594411f36e76f55f7b16d4ae8ad4d610389c"
+    },
+    "/questions/cfp-souzoku/2026-02/q23-material-p18.webp": {
+      "pdfPage": 18,
+      "clip": [
+        42.0,
+        500.5907199999999,
+        555.0,
+        555.6364799999999
+      ],
+      "sha256": "2d0e6e2eac3d08e9536462cc2d44b85659d598ced6ecc670810a2df7894047ec"
+    },
+    "/questions/cfp-souzoku/2026-02/case8-p23.webp": {
+      "pdfPage": 23,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        645.24672
+      ],
+      "sha256": "c8bcbd469cd02463f94ec65bca2c8de90608a99ef44fb6c66a26538ef53dfd3e"
+    },
+    "/questions/cfp-souzoku/2026-02/case8-p24.webp": {
+      "pdfPage": 24,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        231.24671999999998
+      ],
+      "sha256": "08de2d5fee32e83435b3f565cc9ff1b2221adf933b984377f1e363255accb662"
+    },
+    "/questions/cfp-souzoku/2026-02/q29-material-p24.webp": {
+      "pdfPage": 24,
+      "clip": [
+        42.0,
+        351.66976,
+        555.0,
+        478.66272000000004
+      ],
+      "sha256": "ab542dbf11bd6b92a851b441e584a4d003087d22e4bbbf9bca0bbdda28b4723e"
+    },
+    "/questions/cfp-souzoku/2026-02/q30-material-p25.webp": {
+      "pdfPage": 25,
+      "clip": [
+        42.0,
+        157.74112000000002,
+        555.0,
+        263.17632000000003
+      ],
+      "sha256": "6c4251dee649708d14d2ca9b2af3153399c42dbf3b9d097551ef484f8318e9be"
+    },
+    "/questions/cfp-souzoku/2026-02/q31-material-p25.webp": {
+      "pdfPage": 25,
+      "clip": [
+        42.0,
+        456.66495999999995,
+        555.0,
+        524.76672
+      ],
+      "sha256": "9743df50279b1298ce3a2b7665665c448124befbdd8d280d7a0b1b7a1bfe9da5"
+    },
+    "/questions/cfp-souzoku/2026-02/case9-p27.webp": {
+      "pdfPage": 27,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        743.4316800000001
+      ],
+      "sha256": "c49ee2195e16973b7c93e5d99ac1dd1d7a06012f3c191e1d9d8c65ab7e11d4ed"
+    },
+    "/questions/cfp-souzoku/2026-02/case9-p28.webp": {
+      "pdfPage": 28,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        264.7603200000003
+      ],
+      "sha256": "807a4f3a027df6a50d9b62a51e5aed538ed7e27d530acf64de63ea670d56c3b7"
+    },
+    "/questions/cfp-souzoku/2026-02/q34-material-p29.webp": {
+      "pdfPage": 29,
+      "clip": [
+        42.0,
+        230.60512000000028,
+        555.0,
+        360.13631999999996
+      ],
+      "sha256": "8b527c146ba93d7af983e8c20d15ee6b20d0624e1795be86572f9e6399f9bbb0"
+    },
+    "/questions/cfp-souzoku/2026-02/q35-material-p29.webp": {
+      "pdfPage": 29,
+      "clip": [
+        42.0,
+        590.5955199999999,
+        555.0,
+        684.1747199999999
+      ],
+      "sha256": "489696fcffa28b962460e5748d4bb5f36bc431aafbe560e9bfbb068ef39daab1"
+    },
+    "/questions/cfp-souzoku/2026-02/q36-material-p30.webp": {
+      "pdfPage": 30,
+      "clip": [
+        42.0,
+        140.58112000000006,
+        555.0,
+        234.1603200000003
+      ],
+      "sha256": "eb1aceb721d3386d12776a6f06326081de6254ff60d9629cdff5886c11212148"
+    },
+    "/questions/cfp-souzoku/2026-02/q37-material-p31.webp": {
+      "pdfPage": 31,
+      "clip": [
+        42.0,
+        230.5859200000001,
+        555.0,
+        362.28672
+      ],
+      "sha256": "f9e00d35311ab6e02f236f4184dc5c6c02829a47ac487d401ff358d32f90febd"
+    },
+    "/questions/cfp-souzoku/2026-02/q38-material-p32.webp": {
+      "pdfPage": 32,
+      "clip": [
+        42.0,
+        194.5955200000002,
+        555.0,
+        372.24672
+      ],
+      "sha256": "55fa1f8389e4cc1ce9955c17e23359b782ef926b700245a4cc7c9f3e1a43332d"
+    },
+    "/questions/cfp-souzoku/2026-02/q39-material-p33.webp": {
+      "pdfPage": 33,
+      "clip": [
+        42.0,
+        176.59072000000015,
+        555.0,
+        308.28671999999995
+      ],
+      "sha256": "a8c1cbaf9164e9f6674614855bb24914cb2aabf9a2241398741fd223352838ba"
+    },
+    "/questions/cfp-souzoku/2026-02/case11-p35.webp": {
+      "pdfPage": 35,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        594.1766400000004
+      ],
+      "sha256": "a430766ec837fbd40d28522c0c1ec42c8345607a01fbd81c5ef0368558a7796a"
+    },
+    "/questions/cfp-souzoku/2026-02/case11-p36.webp": {
+      "pdfPage": 36,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        499.68192
+      ],
+      "sha256": "3a9124e059208403ffbc8bc0b4841ad2b9ff4c276ac950c57323643e477df226"
+    },
+    "/questions/cfp-souzoku/2026-02/case12-p39.webp": {
+      "pdfPage": 39,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        746.67072
+      ],
+      "sha256": "0cd8e96677d4e99ba33de8d339c02ea4d25843c0c742b8b5aedfbab01b3cd470"
+    },
+    "/questions/cfp-souzoku/2026-02/case12-p40.webp": {
+      "pdfPage": 40,
+      "clip": [
+        42.0,
+        68.56671999999992,
+        555.0,
+        703.6867199999999
+      ],
+      "sha256": "d75ce828d3a9fd9aba833f1706a2590509407e3b3f0ae0544160c23374adf5ac"
+    }
+  }
+}

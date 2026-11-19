@@ -1,0 +1,149 @@
+{
+  "lane": "ql-9",
+  "checkedAt": "2026-11-18",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "reviews": [
+    {
+      "review": "rv-2",
+      "jobId": "PLAN5-093",
+      "arrayIndex": 92,
+      "verifiedCorrection": "02873afb5",
+      "questionPdfPageRanges": [
+        [
+          7,
+          12
+        ],
+        [
+          13,
+          19
+        ],
+        [
+          20,
+          26
+        ]
+      ],
+      "answerPdfPages": [
+        [
+          1,
+          2
+        ],
+        [
+          3,
+          4
+        ],
+        [
+          4
+        ]
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_db_pm1_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_db_pm1_ans.pdf"
+    },
+    {
+      "review": "rv-4",
+      "jobId": "PLAN5-163",
+      "arrayIndex": 162,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-07b_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-07seitou.pdf",
+      "checkedOriginalQuestions": [2, 3, 8, 11, 18, 20, 21, 23, 26, 37, 40, 49, 56, 62, 64, 68, 73, 85, 88, 98, 100],
+      "matchedOriginalImageCount": 11,
+      "changes": []
+    },
+    {
+      "review": "rv-4",
+      "jobId": "PLAN5-177",
+      "arrayIndex": 176,
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-08a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-08seitou.pdf",
+      "checkedOriginalQuestions": [4, 12, 16, 18, 20, 61],
+      "officialAnswerNumbers": [3, 5, 4, 3, 3, 3],
+      "changes": []
+    },
+    {
+      "review": "rv-4",
+      "jobId": "PLAN5-191",
+      "arrayIndex": 190,
+      "path": "data/questions/sagyo-ryohoshi/2022-annual-am-plan5.json",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-09a_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-09seitou.pdf",
+      "checkedOriginalQuestionCount": 35,
+      "checkedOfficialAnswerCount": 35,
+      "changes": [
+        { "questionNumber": 35, "pdfPage": 24, "correctedChoices": ["ウ"] },
+        { "questionNumber": 54, "pdfPage": 31, "correctedChoices": ["ア", "イ", "ウ", "エ", "オ"] },
+        { "questionNumber": 78, "pdfPage": 40, "correctedChoices": ["ア", "ウ"] }
+      ]
+    },
+    {
+      "review": "rv-4",
+      "jobId": "PLAN5-233",
+      "arrayIndex": 232,
+      "path": "data/questions/rinsho-kogishi/2025-annual-am-plan5-imported.json",
+      "sourcePdfUrl": "https://www.jaame.or.jp/ce/pdf/39am.pdf",
+      "sourceAnswerUrl": "https://www.jaame.or.jp/ce/pdf/39ans.pdf",
+      "checkedOfficialAnswers": 45,
+      "checkedOriginalQuestions": [
+        5,
+        12,
+        26,
+        31,
+        35,
+        36,
+        39,
+        42,
+        46,
+        50,
+        51,
+        52,
+        53,
+        54,
+        61,
+        63,
+        76,
+        87
+      ],
+      "changes": [
+        {
+          "questionNumber": 31,
+          "pdfPage": 12,
+          "description": "選択肢と解説の酸素飽和度の下付き数字を復元"
+        },
+        {
+          "questionNumber": 42,
+          "pdfPage": 16,
+          "description": "回路図と同じ添字にそろえ、フィルタ出力で測る電圧と電流値への換算を解説",
+          "explanationSources": [
+            "https://www.kistec.jp/kistec-manage/wp-content/uploads/research_rep_all_2006_no12.pdf",
+            "https://www.hioki.com/system/files/catalog/2025-07/ST5540E16-57B.pdf"
+          ]
+        },
+        {
+          "questionNumber": 87,
+          "pdfPage": 35,
+          "description": "断面積の二乗と熱伝導率の負の指数を原本の上付き表記に復元"
+        }
+      ],
+      "verifiedPreviousCorrection": {
+        "commit": "fbb380122",
+        "questionNumber": 54,
+        "pdfPage": 21,
+        "officialAnswerNumber": 4
+      }
+    }
+  ],
+  "pending": [
+    {
+      "jobId": "PLAN5-429",
+      "arrayIndex": 428,
+      "status": "official-answer-not-yet-published",
+      "sourcePdfUrl": "https://www.hoyokyo.or.jp/08AP5-2.pdf",
+      "sourcePage": "https://www.hoyokyo.or.jp/exam/pasttest/08-2.html",
+      "officialAnswerPublication": "2026-11-30T10:00:00+09:00",
+      "stagedQuestionCount": 20,
+      "addedQuestionCount": 0,
+      "stagedPath": "data/qualification-staging/hoikushi-2026-late/questions.json",
+      "lawReferenceDate": "2026-04-01",
+      "lawReferenceSourceUrl": "https://www.hoyokyo.or.jp/exam/guidance/writtenexam2.html",
+      "auxiliaryAuditCommit": "438b91279"
+    }
+  ]
+}

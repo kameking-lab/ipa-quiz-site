@@ -1,6 +1,7 @@
 import type { BlogPost } from "./types";
 
 const NURSING = "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-03_04_05.html";
+const NURSING_PM = "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-05c_01.pdf";
 const CHILDCARE = "https://www.hoyokyo.or.jp/exam/pasttest/08-1.html";
 const KHK = "https://shiken.khk.or.jp/shiken.html";
 const REFRIGERATION = "https://www.jsrae.or.jp/E-learning/saikuru/saikuru.html";
@@ -14,15 +15,15 @@ const editorialDates = { firstPublishedAt: null, lastEditedAt: "2026-11-11" } as
 export const QUALIFICATION_STUDY_GUIDES: BlogPost[] = [
   {
     slug: "kangoshi-free-past-questions-review",
-    title: "看護師国家試験の公式過去問PDFの探し方｜別冊の照合と復習ノート",
-    description: "看護師国家試験の公式問題・別冊・正答をそろえ、確信度と判断理由を分けて復習。問題番号を対応させる方法と、スマホで解き直す問題の選び方を紹介します。",
+    title: "看護師国家試験の過去問｜出題傾向・時間配分・公式PDFと別冊の使い方",
+    description: "看護師国家試験の公式問題・別冊・正答をそろえ、第115回午後120問160分の配分例で練習。状況設定の読み方、選ぶ数と計算の確認、確信度と判断理由を分ける復習法を紹介します。",
     exam: "kangoshi",
     tags: ["看護師", "国家試験", "過去問", "復習"],
     publishedAt: "2026-11-11T00:00:00.000Z",
-    editorialDates,
+    editorialDates: { ...editorialDates, lastEditedAt: "2026-11-17" },
     editorialKind: "study-guide",
     practicePlacement: "after-body",
-    sourceUrls: [NURSING],
+    sourceUrls: [NURSING, NURSING_PM],
     relatedSlugs: ["kakomon-ai-vs-paper"],
     relatedQuestionIds: ["kangoshi-2025-annual-pm-q38"],
     body: `# 看護師国家試験の公式PDFと復習ノート
@@ -36,6 +37,24 @@ export const QUALIFICATION_STUDY_GUIDES: BlogPost[] = [
 ダウンロードした資料は「試験回／午前・午後／問題・別冊・正答」が分かる名前で保存します。問題文が別冊を指定している場合は、その番号の図や写真を開きます。PDFのページ番号と設問番号を同じものとして扱わないようにします。
 
 別冊を別ウィンドウで開くと、本文の条件と画像を見比べやすくなります。スマホで読む場合も、先に必要な資料をそろえておきましょう。
+
+## 出題傾向：知識・状況設定・計算で読む順序を変える
+
+[第115回午後の公式問題](${NURSING_PM})には、単独の知識を問う問題に加え、患者や家族の状況を読み、続く設問へ答える問題があります。まず設問が求める対象を確認し、年齢・経過・現在の状態・本人や家族の言葉のうち、判断に使う条件を拾います。
+
+状況設定では、一つ前の設問で選んだ答えを次の設問の条件にせず、各設問の本文へ戻ります。計算では求める量・単位・丸め方を先に書き、途中式と答案の桁を最後に照合しましょう。公式冊子の注意事項には、一つ・二つを選ぶ解答と、数値を記入する計算の例があります。
+
+## 時間配分：午後120問・160分の練習例
+
+第115回午後の問題冊子の表紙では、120問・正味2時間40分です。自宅では次の配分を一度試し、どこで時間を使ったか記録します。
+
+| 経過時間 | 練習すること |
+| --- | --- |
+| 開始〜110分 | 最後まで一巡し、長く迷う問題は根拠が不足した箇所に印を残す |
+| 110〜140分 | 保留した状況設定・画像・計算へ戻る |
+| 140〜160分 | 選ぶ数、否定の指定、数値の桁、解答欄を確認する |
+
+これは練習用の配分例です。状況設定を後に残しすぎたら、一巡目に共通文を読んで設問をまとめて進める練習に変えます。知識問題で迷った場合は、思い出せない用語を記録して進み、確認時間を確保しましょう。
 
 ## 初回は自信のなかった問題も記録する
 
@@ -73,7 +92,7 @@ export const QUALIFICATION_STUDY_GUIDES: BlogPost[] = [
 
 ## 看護師の過去問を解いてみる
 
-公式PDFは第115回の資料をそろえる入口です。記事内の一問は別回の2025年午後問38なので、ノートにはその回・時間帯・番号を残して同じ復習手順を試します。第115回の復習を続ける場合は、上の厚労省の資料へ戻ってください。
+記事内の一問は[第115回（2026年実施）の午後問38](${NURSING_PM}#page=17)です。ノートには「第115回・午後・問38」と残して、選んだ根拠を一文で説明します。同じ回を通して復習する場合は、上の厚労省の資料を使ってください。
 
 [看護師の過去問で、答えの理由まで確認する](/kangoshi)
 `,

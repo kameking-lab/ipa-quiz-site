@@ -1,0 +1,952 @@
+[
+  {
+    "id": "es-2017h-am2-q1",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "スーパスカラ"
+    ],
+    "difficulty": 3,
+    "question": "スーパスカラ",
+    "answer": "ウ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "複数の実行系を持ち、一つのクロック周期で複数の命令の処理を進めて性能を高める。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q01.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問1の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=4",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問1。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q2",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "内部割込み"
+    ],
+    "difficulty": 3,
+    "question": "内部割込み",
+    "answer": "ウ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "CPU内で実行中の命令に起因する例外を選ぶ。周辺機器やタイマからの通知と区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q02.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問2の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=4",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問2。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q3",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "MLC型フラッシュメモリ"
+    ],
+    "difficulty": 3,
+    "question": "MLC型フラッシュメモリ",
+    "answer": "イ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "一つのセルで複数の状態を区別するため、SLCより1セル当たりに記録できるビット数が多い。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q03.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問3の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=4",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問3。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q4",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "PWM信号の音声出力"
+    ],
+    "difficulty": 3,
+    "question": "PWM信号の音声出力",
+    "answer": "エ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "PWMの高周波成分を減衰させ、パルス幅の変化に対応する低周波の音声成分を取り出す。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q04.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問4の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=5",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問4。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q5",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "ZigBee"
+    ],
+    "difficulty": 3,
+    "question": "ZigBee",
+    "answer": "ウ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "低電力で少量のデータを送る用途に向き、センサネットワークなどで利用される。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q05.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問5の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=5",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問5。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q6",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "シミュレーションによる性能評価"
+    ],
+    "difficulty": 3,
+    "question": "シミュレーションによる性能評価",
+    "answer": "ウ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "解析式で解を得にくいモデルでも、動作を数値的に再現して結果を求められる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q06.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問6の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=5",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問6。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q7",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "Java EEの構成要素"
+    ],
+    "difficulty": 3,
+    "question": "Java EEの構成要素",
+    "answer": "ウ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "Servletはサーバー側でリクエストを受け付け、レスポンスを生成するJavaの仕組みである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q07.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問7の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=6",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問7。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q8",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "ハッシュ表の探索時間"
+    ],
+    "difficulty": 3,
+    "question": "ハッシュ表の探索時間",
+    "answer": "エ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "衝突がないという条件では、ハッシュ値から調べる場所が直接決まり、要素数を増やしても探索時間は一定。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q08.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問8の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=6",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問8。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q9",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "プロファイラ"
+    ],
+    "difficulty": 3,
+    "question": "プロファイラ",
+    "answer": "エ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "関数の呼出し回数や処理時間を測り、実行時間が集中している箇所を特定する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q09.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問9の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=7",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問9。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q10",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "SELinuxのアクセス制御"
+    ],
+    "difficulty": 3,
+    "question": "SELinuxのアクセス制御",
+    "answer": "ア",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "強制アクセス制御で、管理者権限を持つプロセスもポリシーが許可した範囲で動作させる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q10.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問10の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=7",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問10。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q11",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "PLLの出力周波数"
+    ],
+    "difficulty": 3,
+    "question": "PLLの出力周波数",
+    "answer": "エ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "ロック時は分周後の周波数が基準周波数に一致する。出力周波数は基準周波数に分周比を掛けた値。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q11.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問11の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=7",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問11。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q12",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "D/Aコンバータの出力"
+    ],
+    "difficulty": 3,
+    "question": "D/Aコンバータの出力",
+    "answer": "イ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "デジタルの入力値を分解能に対する割合で表し、その割合を基準電圧に掛ける。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q12.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問12の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問12。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q13",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "二相エンコーダの分解能"
+    ],
+    "difficulty": 3,
+    "question": "二相エンコーダの分解能",
+    "answer": "ア",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "二相の立上りと立下りを全て数えると1周期に4つの位置を区別できる。360度を90×4で割る。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q13.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問13の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問13。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q14",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "耐タンパ性"
+    ],
+    "difficulty": 3,
+    "question": "耐タンパ性",
+    "answer": "ウ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "チップを物理的に解析しようとしたときに内部回路が壊れる措置は、情報の読み出しを難しくする。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q14.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問14の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問14。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q15",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "シリアル通信のクロック"
+    ],
+    "difficulty": 3,
+    "question": "シリアル通信のクロック",
+    "answer": "イ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "必要な通信速度に2のべき乗を掛け、各候補を分周したときの誤差が許容範囲に入るかを調べる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q15.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問15の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=9",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問15。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q16",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "熱電変換とゼーベック効果"
+    ],
+    "difficulty": 3,
+    "question": "熱電変換とゼーベック効果",
+    "answer": "イ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "異なる材料からなる回路に温度差があると起電力が生じ、熱から電気を取り出せる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q16.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問16の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=9",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問16。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q17",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "FTPの二つのコネクション"
+    ],
+    "difficulty": 3,
+    "question": "FTPの二つのコネクション",
+    "answer": "イ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "命令と応答をやり取りする制御用と、実際のデータを転送するデータ用に分かれる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q17.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問17の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=10",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問17。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q18",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "共通鍵の個数"
+    ],
+    "difficulty": 3,
+    "question": "共通鍵の個数",
+    "answer": "イ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "同じ二人は送信・受信の向きにかかわらず鍵を共有する。100人から二人を選ぶ組の数を数える。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q18.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問18の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=10",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問18。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q19",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "TLSと証明書"
+    ],
+    "difficulty": 3,
+    "question": "TLSと証明書",
+    "answer": "イ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "個人認証に用いるデジタル証明書は、ICカードなどに格納して認証に使うことができる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q19.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問19の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=11",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問19。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q20",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "フールプルーフ"
+    ],
+    "difficulty": 3,
+    "question": "フールプルーフ",
+    "answer": "ア",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "入力ミスを想定し、システムを異常終了させず、利用者が修正して次の操作に進めるようにする。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q20.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問20の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=11",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問20。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q21",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 21,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "開発・保守のリポジトリ"
+    ],
+    "difficulty": 3,
+    "question": "開発・保守のリポジトリ",
+    "answer": "エ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "工程をまたいで成果物やその構成情報を管理し、相互の関係や変更の影響を追えるようにする。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q21.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問21の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=12",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問21。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q22",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 22,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "MVC"
+    ],
+    "difficulty": 3,
+    "question": "MVC",
+    "answer": "ア",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "データや機能を受け持つモデルと、表示を受け持つビュー、操作を扱うコントローラを分離する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q22.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問22の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=12",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問22。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q23",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 23,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "性能効率性"
+    ],
+    "difficulty": 3,
+    "question": "性能効率性",
+    "answer": "イ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "応答時間や処理能力などの性能を、明示された条件下で使用する資源の量と合わせて評価する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q23.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問23の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=13",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問23。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q24",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 24,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "機能安全のC1カバレージ"
+    ],
+    "difficulty": 3,
+    "question": "機能安全のC1カバレージ",
+    "answer": "イ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "プログラム内の分岐で、それぞれの分岐先をテストが通った割合を調べる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q24.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問24の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=13",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問24。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2017h-am2-q25",
+    "exam": "es",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 25,
+    "type": "multiple-choice",
+    "category": "組込みシステム",
+    "topicTags": [
+      "マッシュアップ"
+    ],
+    "difficulty": 3,
+    "question": "マッシュアップ",
+    "answer": "エ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "独立したサービスの情報や機能を組み合わせ、一つの画面やサービスとして提供する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2017-spring-am2/q25.webp"
+    ],
+    "imageAltTexts": [
+      "エンベデッドシステムスペシャリスト 2017年度春期 午前II 問25の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_qs.pdf#page=13",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_es_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA エンベデッドシステムスペシャリスト 2017年度春期 午前II 問25。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

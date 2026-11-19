@@ -15,6 +15,7 @@ type Civil1SourceItem = {
   explanation: string;
   choiceExplanations: string[];
   imageUrl?: string;
+  imageAltText?: string;
   officialReferenceUrls?: string[];
 };
 
@@ -54,6 +55,7 @@ function toQuestions(source: Civil1Source): Question[] {
       explanationCoverage: "full",
       hasImage: Boolean(item.imageUrl),
       imageUrls: item.imageUrl ? [item.imageUrl] : undefined,
+      imageAltTexts: item.imageAltText ? [item.imageAltText] : undefined,
       sourcePdfUrl: source.questionUrl,
       sourceAnswerUrl: source.answerUrl,
       sourceAttribution: `出典：一般財団法人全国建設研修センター 令和8年度1級土木施工管理技術検定 第一次検定 試験問題${source.paper} No.${item.number}。ルビ・改行・空白を整理し、原本の数字選択肢をア・イ・ウ・エに変換。解説は本サイト作成。`,
@@ -64,7 +66,7 @@ function toQuestions(source: Civil1Source): Question[] {
   });
 }
 
-/** 令和8年度（7月5日実施）第一次検定。問題A 66問・問題B 34問（No.7は解釈未確定のため保留）。 */
+/** 令和8年度（7月5日実施）第一次検定。問題A 66問・問題B 35問。 */
 export const CIVIL1_2026_A_QUESTIONS = toQuestions(paperA as Civil1Source);
 export const CIVIL1_2026_B_QUESTIONS = toQuestions(paperB as Civil1Source);
 export const CIVIL1_QUESTIONS: Question[] = [...CIVIL1_2026_A_QUESTIONS, ...CIVIL1_2026_B_QUESTIONS];

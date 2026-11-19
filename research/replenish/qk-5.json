@@ -1,0 +1,45 @@
+{
+  "lane": "qk-5",
+  "continues": "qj-5",
+  "plan": "plan5.json",
+  "assignment": "zero-based index % 14 == 4",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "checkedAt": "2026-11-18",
+  "rows": [
+    {
+      "jobId": "PLAN5-425",
+      "index": 424,
+      "exam": "hoikushi",
+      "yearSeason": "2026-late",
+      "session": "kodomo-hoken",
+      "status": "awaiting-official-answers",
+      "officialQuestionCount": 20,
+      "sourceVerifiedQuestionCount": 20,
+      "sourceVerifiedChoiceCount": 100,
+      "newQuestionCount": 0,
+      "sourcePdfUrl": "https://www.hoyokyo.or.jp/08AP7-2.pdf",
+      "sourcePdfSha256": "4a3c652f2b0811f12bbafb8424ebcaf95d3937ad3630d9d20ed94c783033bed9",
+      "officialPublicationPage": "https://www.hoyokyo.or.jp/exam/pasttest/08-2.html",
+      "expectedAnswerPublication": "2026-11-30T10:00:00+09:00",
+      "answerPublicationRecheck": {
+        "lane": "ql-5",
+        "checkedAt": "2026-11-18",
+        "officialAnswersPublished": false
+      },
+      "stagingQuestions": "data/qualification-staging/hoikushi-2026-late/questions.json",
+      "verifiedStemUnderlines": {
+        "11": "不適切なもの",
+        "20": "定められていないもの"
+      },
+      "verifiedExplanationReferences": {
+        "3": {
+          "1": "https://www.mhlw.go.jp/www1/kinkyu/iyaku_j/iyaku_j/anzenseijyouhou/299.pdf",
+          "2": "https://dl.ndl.go.jp/view/prepareDownload?contentNo=1&itemId=info%3Andljp%2Fpid%2F10693455",
+          "3": "https://www.microbio.med.saga-u.ac.jp/Lecture/kohashi3/part1/S-IgA.html",
+          "4": "https://www.kanen.jihs.go.jp/sick/kinds/b_gata.html",
+          "5": "https://tokyo-hp.hosp.go.jp/bumon/kensa/kensa.html"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,506 @@
+[
+  {
+    "qNumber": 1,
+    "category": "リスクマネジメント",
+    "topicTags": [
+      "残留リスク"
+    ],
+    "question": "情報セキュリティのリスクマネジメントにおける残留リスクに関する記述のうち，適切なものはどれか。",
+    "choices": {
+      "ア": "経営者の意思決定に従って保有したリスクは，残留リスクに含まれない。",
+      "イ": "特定されていないリスクは，残留リスクに含まれない。",
+      "ウ": "リスク対応を行った後に残るリスクは，残留リスクである。",
+      "エ": "リスクを生じさせる活動を継続しないという決定によって回避したリスクは，残留リスクである。"
+    },
+    "answer": "ウ",
+    "explanation": "残留リスクは、リスク対応を実施しても残っているリスクを指す。対策によってリスクを小さくしても、必ずゼロになるわけではない。保有することを決めたリスクや、まだ特定できていないリスクも残る場合がある。一方、活動をやめることで回避できたリスクを、そのまま残留リスクとは呼ばない。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf) ／ [公式正答](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf)",
+    "id": "sg-2026cbt-kamoku-a-q1",
+    "exam": "sg",
+    "year": 2026,
+    "season": "cbt",
+    "session": "kamoku-a",
+    "type": "multiple-choice",
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "qNumber": 2,
+    "category": "インシデント対応",
+    "topicTags": [
+      "CSIRT"
+    ],
+    "question": "組織的なインシデント対応体制の構築を支援する目的でJPCERTコーディネーションセンターが作成したものはどれか。",
+    "choices": {
+      "ア": "CSIRTマテリアル",
+      "イ": "ISMSユーザーズガイド",
+      "ウ": "証拠保全ガイドライン",
+      "エ": "組織における内部不正防止ガイドライン"
+    },
+    "answer": "ア",
+    "explanation": "本問の公式正答はCSIRTマテリアルである。CSIRTは組織としてインシデントに対応するための体制であり、問われている目的はその構築の支援である。ISMSの導入、証拠の保全、内部不正の防止という個別の目的と取り違えないように、資料名と設問中の目的を対応付ける。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf) ／ [公式正答](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf)",
+    "id": "sg-2026cbt-kamoku-a-q2",
+    "exam": "sg",
+    "year": 2026,
+    "season": "cbt",
+    "session": "kamoku-a",
+    "type": "multiple-choice",
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "qNumber": 3,
+    "category": "ネットワークセキュリティ",
+    "topicTags": [
+      "DMZ"
+    ],
+    "question": "DMZはどれか。",
+    "choices": {
+      "ア": "インターネットと内部ネットワークとの間に設置されるネットワーク",
+      "イ": "外部から持ち込んだPCがマルウェアなどに感染していないかどうかを社内ネットワークに接続する前にチェックするための，社内ネットワークとは隔離された専用のネットワーク",
+      "ウ": "通信内容を監視し，あらかじめ設定された不正な通信パターンと一致した場合に通信を遮断するネットワーク",
+      "エ": "不正通信を検知する際に利用するためにセキュリティベンダーから入手するシグネチャ情報"
+    },
+    "answer": "ア",
+    "explanation": "DMZは、インターネットと内部ネットワークの間に設けるネットワークで、外部へ公開するサーバなどを内部から分離して配置する。持込みPCを検査するための隔離ネットワークや、不正通信を検知・遮断する仕組み、検知用のシグネチャそのものとは区別する。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf) ／ [公式正答](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf)",
+    "id": "sg-2026cbt-kamoku-a-q3",
+    "exam": "sg",
+    "year": 2026,
+    "season": "cbt",
+    "session": "kamoku-a",
+    "type": "multiple-choice",
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "qNumber": 4,
+    "category": "認証",
+    "topicTags": [
+      "チャレンジレスポンス"
+    ],
+    "question": "チャレンジレスポンス認証方式に該当するものはどれか。",
+    "choices": {
+      "ア": "固定パスワードを，TLSによる暗号通信を使い，クライアントからサーバに送信して，サーバで検証する。",
+      "イ": "端末のシリアル番号を，クライアントで秘密鍵を使って暗号化し，サーバに送信して，サーバで検証する。",
+      "ウ": "トークンという機器が自動的に表示する，認証のたびに異なる数字列をパスワードとしてサーバに送信して，サーバで検証する。",
+      "エ": "利用者が入力したパスワードと，サーバから受け取ったランダムなデータとをクライアントで演算し，その結果をサーバに送信して，サーバで検証する。"
+    },
+    "answer": "エ",
+    "explanation": "サーバが毎回異なるチャレンジを出し、クライアントがパスワードなどと組み合わせて計算したレスポンスを返す方式である。エにはサーバから受け取るランダムなデータと、それを使った演算の両方がある。TLSで固定パスワードを送る方式や、機器が生成するワンタイムパスワードを送る説明とは仕組みが異なる。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf) ／ [公式正答](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf)",
+    "id": "sg-2026cbt-kamoku-a-q4",
+    "exam": "sg",
+    "year": 2026,
+    "season": "cbt",
+    "session": "kamoku-a",
+    "type": "multiple-choice",
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "qNumber": 5,
+    "category": "セキュリティテスト",
+    "topicTags": [
+      "ホワイトボックステスト"
+    ],
+    "question": "情報セキュリティでの脆弱性の検出に用いられるホワイトボックステストに該当するものはどれか。",
+    "choices": {
+      "ア": "検査対象のソフトウェア製品に対して，外部仕様を基に，問題を引き起こしそうなデータを大量に送り込み，その応答や挙動を監視することによって脆弱性を検出する。",
+      "イ": "検査対象のネットワークに対して，ネットワークの構成図や機器名などの情報を得ずに，TCP/IPに係る既知の脆弱性を攻撃し，実際に侵入できるかどうかを確認することによって脆弱性を検出する。",
+      "ウ": "検査対象のプログラムの内部構造及び内部仕様を基に，脆弱性の可能性がある箇所の処理で使われる入力値を変化させて実行することによって脆弱性を検出する。",
+      "エ": "検査対象のプログラムの内部仕様を参照せずに，変数領域のあふれを見つけ出すツールを利用して，バッファオーバフローの脆弱性を検出する。"
+    },
+    "answer": "ウ",
+    "explanation": "ホワイトボックステストは、内部構造や内部仕様を把握した上で処理を検証する。ウは内部の処理と入力値の関係を基に実行する説明なので該当する。外部仕様や応答だけに基づく検査、構成情報を得ずに行う侵入の確認、内部仕様を参照しないツール利用は、この設問のホワイトボックスの説明には当たらない。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf) ／ [公式正答](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf)",
+    "id": "sg-2026cbt-kamoku-a-q5",
+    "exam": "sg",
+    "year": 2026,
+    "season": "cbt",
+    "session": "kamoku-a",
+    "type": "multiple-choice",
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "qNumber": 6,
+    "category": "アクセス制御",
+    "topicTags": [
+      "セキュアOS",
+      "最小権限"
+    ],
+    "question": "セキュアOSのアクセス制御と管理者権限管理を説明した適切な組みはどれか。",
+    "choices": {
+      "ア": "リソースやプログラムのアクセス権は，OSの管理者が定めたセキュリティポリシーの下で一元的に制御され，リソースやプログラムの所有者が変更できない。\nOSの管理の分野ごとに異なる管理用アカウントを作成し，各アカウントに必要最小限の管理者特権を与える。",
+      "イ": "リソースやプログラムのアクセス権は，OSの管理者が定めたセキュリティポリシーの下で一元的に制御され，リソースやプログラムの所有者が変更できない。\nOSの管理用に特権アカウントを作成し，特権アカウントに全ての権限を与える。",
+      "ウ": "リソースやプログラムのアクセス権は，リソースやプログラムの所有者が保持し，制御する。\nOSの管理の分野ごとに異なる管理用アカウントを作成し，各アカウントに必要最小限の管理者特権を与える。",
+      "エ": "リソースやプログラムのアクセス権は，リソースやプログラムの所有者が保持し，制御する。\nOSの管理用に特権アカウントを作成し，特権アカウントに全ての権限を与える。"
+    },
+    "answer": "ア",
+    "explanation": "アクセス権を所有者の判断で変更できる仕組みと、管理者が定めたポリシーで一元的に強制する仕組みを区別する。本問では後者が適切である。管理者の権限も一つのアカウントへ全て集中させず、担当分野ごとに分け、必要最小限を割り当てる。この二つを同時に満たす組合せがアになる。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf) ／ [公式正答](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf)",
+    "id": "sg-2026cbt-kamoku-a-q6",
+    "exam": "sg",
+    "year": 2026,
+    "season": "cbt",
+    "session": "kamoku-a",
+    "type": "multiple-choice",
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "imageUrls": [
+      "/question-assets/qb-11/sg-2026cbt-kamoku-a/q6-p04-0.webp"
+    ],
+    "imageAltTexts": [
+      "問6の公式本文・図表・解答群（原本4ページ）"
+    ]
+  },
+  {
+    "qNumber": 7,
+    "category": "情報セキュリティと法務",
+    "topicTags": [
+      "電子計算機損壊等業務妨害"
+    ],
+    "question": "刑法の電子計算機損壊等業務妨害に該当する行為はどれか。",
+    "choices": {
+      "ア": "自社のWebサイトで海賊版のソフトウェアを故意に販売した。",
+      "イ": "存在しない商品をインターネットのオークションサイトに故意に出品し，落札者に現金を振り込ませてだまし取った。",
+      "ウ": "他人の著作物を著作者に許可なく，引用元の記載もせずに，営業目的の自社のWebサイトに故意に掲載した。",
+      "エ": "プロバイダのサーバに侵入し，サーバに保管されていたある企業が業務に使用しているWebページの内容を故意に消去したり，書き換えたりした。"
+    },
+    "answer": "エ",
+    "explanation": "本問の公式正答はエである。業務に使用するWebページを故意に消去・改変する事例を、設問で問われた行為に対応付ける。ほかの選択肢は、海賊版の販売、架空の出品による金銭の詐取、著作物の無断掲載という異なる事例である。試験で提示された行為を区別して読む。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf) ／ [公式正答](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf)",
+    "id": "sg-2026cbt-kamoku-a-q7",
+    "exam": "sg",
+    "year": 2026,
+    "season": "cbt",
+    "session": "kamoku-a",
+    "type": "multiple-choice",
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "qNumber": 8,
+    "category": "システム監査",
+    "topicTags": [
+      "フォローアップ"
+    ],
+    "question": "システム監査におけるフォローアップの説明として，適切なものはどれか。",
+    "choices": {
+      "ア": "監査の品質管理体制を，システム監査人が事前に確かめておくこと",
+      "イ": "監査報告書の指摘事項に基づいて監査対象先が実施した改善措置を，システム監査人が確認すること",
+      "ウ": "システム監査の対象範囲に関する事項を，システム監査人が文書化すること",
+      "エ": "システム監査の目的に応じた適切な形式で作成した監査報告書を，監査の依頼者及び関係者に提出すること"
+    },
+    "answer": "イ",
+    "explanation": "フォローアップは、監査で指摘した問題について改善措置が実施されたかを確認する段階である。監査前の品質管理体制の確認、対象範囲の文書化、監査報告書の提出とは時点と目的が異なる。指摘を報告して終わらず、その後の改善を確認する点を押さえる。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf) ／ [公式正答](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf)",
+    "id": "sg-2026cbt-kamoku-a-q8",
+    "exam": "sg",
+    "year": 2026,
+    "season": "cbt",
+    "session": "kamoku-a",
+    "type": "multiple-choice",
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "qNumber": 9,
+    "category": "サービスマネジメント",
+    "topicTags": [
+      "サービスレベル目標"
+    ],
+    "question": "サービスマネジメントにおける，サービスレベル目標の説明はどれか。",
+    "choices": {
+      "ア": "意図した結果を達成するために，知識及び技能を適用する能力",
+      "イ": "組織が約束する，具体的に測定可能なサービスの特性",
+      "ウ": "トップマネジメントによって正式に表明された組織の意図及び方向付け",
+      "エ": "明示されているか，通常，暗黙のうちに了解されているか，又は義務として要求されているニーズ又は期待"
+    },
+    "answer": "イ",
+    "explanation": "サービスレベル目標は、サービスの品質を具体的に測定できる形で示すものである。例えば応答時間や可用性のように、達成したかを確認できる特性として約束する。知識・技能を適用する能力、組織の方針、一般的なニーズや期待という説明と区別する。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf) ／ [公式正答](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf)",
+    "id": "sg-2026cbt-kamoku-a-q9",
+    "exam": "sg",
+    "year": 2026,
+    "season": "cbt",
+    "session": "kamoku-a",
+    "type": "multiple-choice",
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "qNumber": 10,
+    "category": "ネットワーク",
+    "topicTags": [
+      "サブネットマスク"
+    ],
+    "question": "次のIPアドレスとサブネットマスクをもつPCがある。このPCのネットワークアドレスとして，適切なものはどれか。\n\nIPアドレス：10.170.70.19\nサブネットマスク：255.255.255.240",
+    "choices": {
+      "ア": "10.170.70.0",
+      "イ": "10.170.70.16",
+      "ウ": "10.170.70.31",
+      "エ": "10.170.70.255"
+    },
+    "answer": "イ",
+    "explanation": "255.255.255.240は末尾オクテットの上位4ビットをネットワーク部にするマスクで、アドレス範囲は16ずつ区切られる。19が属する範囲は16〜31なので、ネットワークアドレスは10.170.70.16となる。31はこの範囲のブロードキャストアドレスである。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf) ／ [公式正答](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf)",
+    "id": "sg-2026cbt-kamoku-a-q10",
+    "exam": "sg",
+    "year": 2026,
+    "season": "cbt",
+    "session": "kamoku-a",
+    "type": "multiple-choice",
+    "difficulty": 3,
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "qNumber": 11,
+    "category": "データ活用",
+    "topicTags": [
+      "ビッグデータ",
+      "データ分析"
+    ],
+    "question": "eコマース運営会社がビッグデータを用いて新たなニーズを発掘し，その後のビジネス戦略に生かそうとしている。ビッグデータの収集から活用までのフローを次の図のようにしたとき，データの分析で行うことはどれか。ここで，選択肢ア〜エは，フロー図のa〜dのいずれかに対応している。",
+    "choices": {
+      "ア": "機械学習を用いて自然言語処理やクラスタリングを行い，新しい傾向を導き出す。",
+      "イ": "取扱い製品に関するSNSでの評価などを自動プログラムで取得する。",
+      "ウ": "ノイズリダクション処理やデータクレンジング処理を行う。",
+      "エ": "発見した新しい傾向を見極めて，注力すべきビジネス戦略を立案する。"
+    },
+    "answer": "ア",
+    "explanation": "データ分析は、整備したデータから傾向や特徴を見いだす段階である。自然言語処理やクラスタリングで新たな傾向を導くアが該当する。SNSの評価を取得するのは収集、ノイズ除去やクレンジングは整備、得られた傾向から戦略を決めるのは活用に対応する。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf) ／ [公式正答](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf)",
+    "id": "sg-2026cbt-kamoku-a-q11",
+    "exam": "sg",
+    "year": 2026,
+    "season": "cbt",
+    "session": "kamoku-a",
+    "type": "multiple-choice",
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "imageUrls": [
+      "/question-assets/qb-11/sg-2026cbt-kamoku-a/q11-p06-0.webp"
+    ],
+    "imageAltTexts": [
+      "問11の公式本文・図表・解答群（原本6ページ）"
+    ]
+  },
+  {
+    "qNumber": 12,
+    "category": "期待値",
+    "topicTags": [
+      "期待費用",
+      "品質管理"
+    ],
+    "question": "良品である確率が0.9，不良品である確率が0.1の外注部品について，受入検査を行いたい。受入検査には四つの案があり，それぞれの良品と不良品1個に掛かる諸費用は表のとおりである。期待費用が最も低い案はどれか。",
+    "choices": {
+      "ア": "A",
+      "イ": "B",
+      "ウ": "C",
+      "エ": "D"
+    },
+    "answer": "ウ",
+    "explanation": "各案の良品の費用に0.9、不良品の費用に0.1を掛けて合計する。Aは0×0.9＋1,500×0.1＝150円、Bは40×0.9＋1,000×0.1＝136円、Cは80×0.9＋500×0.1＝122円、Dは120×0.9＋200×0.1＝128円となる。最も小さいのはCの122円なのでウを選ぶ。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf) ／ [公式正答](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf)",
+    "id": "sg-2026cbt-kamoku-a-q12",
+    "exam": "sg",
+    "year": 2026,
+    "season": "cbt",
+    "session": "kamoku-a",
+    "type": "multiple-choice",
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "imageUrls": [
+      "/question-assets/qb-11/sg-2026cbt-kamoku-a/q12-p06-0.webp"
+    ],
+    "imageAltTexts": [
+      "問12の公式本文・図表・解答群（原本6ページ）"
+    ]
+  },
+  {
+    "qNumber": 13,
+    "category": "物理的セキュリティ",
+    "topicTags": [
+      "入退室管理",
+      "来訪者管理"
+    ],
+    "question": "A社の入居するBビルの物理的セキュリティについて，表1中のa1，a2に入れるB社への依頼の最も適切な組合せを選べ。本文・表1・解答群（一）〜（四）は次の公式問題のとおりである。",
+    "choices": {
+      "ア": "a1：（一），a2：（二）",
+      "イ": "a1：（一），a2：（三）",
+      "ウ": "a1：（二），a2：（一）",
+      "エ": "a1：（二），a2：（三）",
+      "オ": "a1：（二），a2：（四）",
+      "カ": "a1：（三），a2：（一）",
+      "キ": "a1：（三），a2：（二）",
+      "ク": "a1：（三），a2：（四）",
+      "ケ": "a1：（四），a2：（一）",
+      "コ": "a1：（四），a2：（二）"
+    },
+    "answer": "エ",
+    "explanation": "a1の課題は、捨てられた使用済みゲスト入館証を拾えば再利用できる点である。QRコードの誤り訂正を強くしても再利用は防げないので、入館を1回限りにする（二）が対応する。a2は別の階への来訪者が平日の昼間に6階へ移動できる点であり、行先階への移動にもICカードを必須にして各社が来訪者をアテンドする（三）が対応する。組合せはエとなる。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf) ／ [公式正答](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf)",
+    "id": "sg-2026cbt-kamoku-a-q13",
+    "exam": "sg",
+    "year": 2026,
+    "season": "cbt",
+    "session": "kamoku-a",
+    "type": "multiple-choice",
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "imageUrls": [
+      "/question-assets/qb-11/sg-2026cbt-kamoku-a/q13-p08-0.webp",
+      "/question-assets/qb-11/sg-2026cbt-kamoku-a/q13-p09-1.webp",
+      "/question-assets/qb-11/sg-2026cbt-kamoku-a/q13-p10-2.webp"
+    ],
+    "imageAltTexts": [
+      "問13の公式本文・図表・解答群（原本8ページ）",
+      "問13の公式本文・図表・解答群（原本9ページ）",
+      "問13の公式本文・図表・解答群（原本10ページ）"
+    ]
+  },
+  {
+    "qNumber": 14,
+    "category": "事業継続",
+    "topicTags": [
+      "RPO",
+      "RTO",
+      "バックアップ"
+    ],
+    "question": "A社のファイルサーバの運用について，表2中のa1〜a3に入れる字句の適切な組合せを選べ。運用条件，要求事項，表1・表2は次の公式問題のとおりである。",
+    "choices": {
+      "ア": "a1：月曜日の正午，a2：4.25，a3：CISO",
+      "イ": "a1：月曜日の正午，a2：4.25，a3：情報システム部の担当者",
+      "ウ": "a1：月曜日の正午，a2：4.25，a3：内部監査室長",
+      "エ": "a1：月曜日の正午，a2：4.50，a3：CISO",
+      "オ": "a1：月曜日の正午，a2：4.50，a3：情報システム部の担当者",
+      "カ": "a1：火曜日の正午，a2：4.25，a3：情報システム部の担当者",
+      "キ": "a1：火曜日の正午，a2：4.25，a3：内部監査室長",
+      "ク": "a1：火曜日の正午，a2：4.50，a3：CISO",
+      "ケ": "a1：火曜日の正午，a2：4.50，a3：情報システム部の担当者",
+      "コ": "a1：火曜日の正午，a2：4.50，a3：内部監査室長"
+    },
+    "answer": "ク",
+    "explanation": "a1は目標復旧時点RPOの条件で考える。金曜日の正午から72時間前は火曜日の正午なので、少なくともその時点まで戻せる必要がある。a2は土曜日のフルバックアップの復元4時間に、火曜と木曜の増分バックアップ各0.25時間を加え、4.50時間となる。a3ではICT継続の計画を承認する責任者を、作業担当者や独立した監査担当者と区別する。公式正答はCISOとの組合せである。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf) ／ [公式正答](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf)",
+    "id": "sg-2026cbt-kamoku-a-q14",
+    "exam": "sg",
+    "year": 2026,
+    "season": "cbt",
+    "session": "kamoku-a",
+    "type": "multiple-choice",
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "imageUrls": [
+      "/question-assets/qb-11/sg-2026cbt-kamoku-a/q14-p12-0.webp",
+      "/question-assets/qb-11/sg-2026cbt-kamoku-a/q14-p13-1.webp"
+    ],
+    "imageAltTexts": [
+      "問14の公式本文・図表・解答群（原本12ページ）",
+      "問14の公式本文・図表・解答群（原本13ページ）"
+    ]
+  },
+  {
+    "qNumber": 15,
+    "category": "情報資産管理",
+    "topicTags": [
+      "機密区分",
+      "文書管理"
+    ],
+    "question": "A社の文書管理ルールについて，表1中のa1〜a3に入れる評価の適切な組合せを選べ。文書管理ルールとヒアリング事例は次の公式問題のとおりである。",
+    "choices": {
+      "ア": "a1：○，a2：○，a3：○",
+      "イ": "a1：○，a2：○，a3：×",
+      "ウ": "a1：○，a2：×，a3：○",
+      "エ": "a1：○，a2：×，a3：×",
+      "オ": "a1：×，a2：○，a3：○",
+      "カ": "a1：×，a2：○，a3：×",
+      "キ": "a1：×，a2：×，a3：○",
+      "ク": "a1：×，a2：×，a3：×"
+    },
+    "answer": "エ",
+    "explanation": "a1の営業部だけに開示する議事メモは、営業部員だけが解錠できるキャビネットで保管し、不要時は細断しているのでルールに従っている。a2は、人事部から営業部へ異動した人に“人事部だけ関係者外秘”の資料を見せており、開示範囲を外れる。a3は、極秘の紙の文書を机上に置いたまま離席しており、キャビネットで保管する条件を満たさない。したがって○・×・×のエとなる。\n\n[出典：IPA公式問題](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf) ／ [公式正答](https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf)",
+    "id": "sg-2026cbt-kamoku-a-q15",
+    "exam": "sg",
+    "year": 2026,
+    "season": "cbt",
+    "session": "kamoku-a",
+    "type": "multiple-choice",
+    "difficulty": 3,
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-18",
+    "imageUrls": [
+      "/question-assets/qb-11/sg-2026cbt-kamoku-a/q15-p14-0.webp",
+      "/question-assets/qb-11/sg-2026cbt-kamoku-a/q15-p15-1.webp",
+      "/question-assets/qb-11/sg-2026cbt-kamoku-a/q15-p16-2.webp"
+    ],
+    "imageAltTexts": [
+      "問15の公式本文・図表・解答群（原本14ページ）",
+      "問15の公式本文・図表・解答群（原本15ページ）",
+      "問15の公式本文・図表・解答群（原本16ページ）"
+    ]
+  }
+]

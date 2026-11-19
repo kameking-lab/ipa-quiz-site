@@ -42,7 +42,7 @@ const MOCK_PRESETS = [
 ] as const;
 
 function YearLink({ exam, item: g }: { exam: ExamCode; item: YearItem }) {
-  return <li><Link href={`/${exam}/${g.key}`} className="group flex min-h-16 items-center justify-between gap-3 rounded-xl border border-border bg-card p-3.5 text-sm transition hover:border-primary/40 hover:shadow-sm"><span className="min-w-0 font-medium">{g.label}{g.coverage && <span className="mt-1 block text-xs font-normal text-muted-foreground">{g.coverage}</span>}{g.missingSpecialist && <span className="mt-1 block text-xs font-normal text-amber-700 dark:text-amber-300">午前IIは未収録</span>}</span><span className="flex shrink-0 items-center gap-2 text-xs text-muted-foreground"><span className="rounded-full bg-muted px-2 py-0.5 font-semibold">{g.count}問</span><ChevronRight aria-hidden="true" className="h-4 w-4" /></span></Link></li>;
+  return <li><Link prefetch={false} href={`/${exam}/${g.key}`} className="group flex min-h-16 items-center justify-between gap-3 rounded-xl border border-border bg-card p-3.5 text-sm transition hover:border-primary/40 hover:shadow-sm"><span className="min-w-0 font-medium">{g.label}{g.coverage && <span className="mt-1 block text-xs font-normal text-muted-foreground">{g.coverage}</span>}{g.missingSpecialist && <span className="mt-1 block text-xs font-normal text-amber-700 dark:text-amber-300">午前IIは未収録</span>}</span><span className="flex shrink-0 items-center gap-2 text-xs text-muted-foreground"><span className="rounded-full bg-muted px-2 py-0.5 font-semibold">{g.count}問</span><ChevronRight aria-hidden="true" className="h-4 w-4" /></span></Link></li>;
 }
 
 export function ExamBrowseTabs({ exam, years, categories }: Props) {
@@ -100,10 +100,11 @@ export function ExamBrowseTabs({ exam, years, categories }: Props) {
               <li key={c.category}>
                 <Link
                   href={`/${exam}/topic/${encodeURIComponent(c.category)}`}
-                  className="group flex items-center justify-between rounded-xl border border-border bg-card p-3.5 text-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+                  prefetch={false}
+                  className="group flex min-h-16 items-center justify-between gap-3 rounded-xl border border-border bg-card p-3.5 text-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
                 >
-                  <span className="font-medium text-foreground">{c.category}</span>
-                  <span className="flex items-center gap-2 text-xs text-muted-foreground">
+                  <span className="min-w-0 break-words font-medium text-foreground">{c.category}</span>
+                  <span className="flex shrink-0 items-center gap-2 text-xs text-muted-foreground">
                     <span className="rounded-full bg-muted px-2 py-0.5 font-semibold">
                       {c.count}問
                     </span>
@@ -122,7 +123,8 @@ export function ExamBrowseTabs({ exam, years, categories }: Props) {
             <li key={m.label}>
               <Link
                 href={m.href(exam)}
-                className="group flex items-center justify-between rounded-xl border border-border bg-card p-3.5 text-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+                prefetch={false}
+                className="group flex min-h-16 items-center justify-between gap-3 rounded-xl border border-border bg-card p-3.5 text-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
               >
                 <span>
                   <span className="block font-medium text-foreground">{exam === "sg" && m.label === "本番想定 模試" ? "科目A 演習" : m.label}</span>

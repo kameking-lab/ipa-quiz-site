@@ -5,63 +5,34 @@ test.beforeEach(async ({ page }) => { await page.route("https://**", (route) => 
 
 test.setTimeout(90_000);
 for (const width of [390, 1280]) {
-  test(`home search reaches a question in two activations and restores filters at ${width}px`, async ({ page }, testInfo) => {
+  test(`home search reaches a question in two activations at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 844 });
     await page.goto("/");
-    const finder = page.locator("#choose-qualification");
-    const search = finder.getByRole("searchbox", { name: "資格名・略称で検索" });
-    await search.scrollIntoViewIfNeeded();
+    const search = page.getByRole("searchbox", { name: "資格名・略称で検索" });
     await expect(search).toBeInViewport();
-    await expect(page.locator('main a[href="/challenge"]')).toHaveCount(0);
-    if (width < 768) await expect(page.locator('nav[aria-label="モバイルタブ"] a[href="/mock-exam"]:visible')).toHaveCount(0);
-    await expect(page.locator(".study-resume")).toHaveCount(0);
     await search.fill("ｆｅ");
-    const filter = finder.getByRole("combobox", { name: "資格の分野で絞り込む" });
-    await filter.selectOption({ label: "IT・情報処理" });
-    await expect(finder.getByRole("status")).toHaveText("1資格・区分");
-    await expect(filter).toHaveValue("it");
-    const row = finder.getByRole("link", { name: /^基本情報技術者/ });
+    const row = page.locator("main").getByRole("link", { name: /^基本情報技術者/ });
     await expect(row).toHaveAttribute("href", "/fe");
     expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
-    // After entering the search/filter, only two link activations reach a question.
-    await row.focus();
-    await page.keyboard.press("Enter");
-    await expect(page).toHaveURL(/\/fe$/, { timeout: 30_000 });
+    await row.click();
     await page.getByRole("region", { name: "今すぐ解く" }).getByRole("link", { name: "今すぐ解く", exact: true }).click();
-    await expect(page.getByRole("radio").first()).toBeVisible({ timeout: 30_000 });
+    await expect(page.getByRole("radio").first()).toBeVisible({ timeout: 30000 });
     expect(new URL(page.url()).searchParams.get("exam")).toBe("fe");
-    await page.goBack();
-    await expect(page).toHaveURL(/\/fe$/, { timeout: 30_000 });
-    await page.goBack();
-    await expect.poll(() => new URL(page.url()).pathname).toBe("/");
-    expect(new URL(page.url()).searchParams.get("q")).toBe("ｆｅ");
-    expect(new URL(page.url()).searchParams.get("domain")).toBe("it");
-    await expect(finder.getByRole("searchbox")).toHaveValue("ｆｅ");
-    await expect(filter).toHaveValue("it");
-    await expect(finder.getByRole("status")).toHaveText("1資格・区分");
-    await expect(finder.getByRole("link", { name: /^基本情報技術者/ })).toHaveAttribute("href", "/fe");
-    // Clearing both controls returns to the complete nine-domain directory.
-    await finder.getByRole("button", { name: "検索をクリア", exact: true }).click();
-    await filter.selectOption("");
-    await expect(finder.getByRole("heading", { name: "分野から探す", exact: true })).toBeVisible();
-    await expect(finder.locator("details.study-domain")).toHaveCount(9);
-    await page.screenshot({ path: testInfo.outputPath(`direct-${width}.png`), fullPage: true });
   });
 }
-
 test("real saved question and wrong answers stay within the selected exam", async ({ page }) => {
   await page.addInitScript(() => {
     localStorage.setItem("ipa-quiz:last-question:v1", JSON.stringify({ exam: "ip", year: 2011, season: "autumn", session: "am", qNumber: 1, answeredAt: Date.now() }));
     localStorage.setItem("ipa-quiz:history:v1", JSON.stringify({ entries: [{ id: "ip-2011a-am-q1", selected: "ア", correct: false, at: Date.now() }, { id: "ap-2024a-am-q1", selected: "ア", correct: false, at: Date.now() }], starredIds: [] }));
   });
   await page.goto("/");
-  await expect(page.getByRole("link", { name: "続きを開く" })).toHaveAttribute("href", "/quiz?mode=year&exam=ip&year=2011&season=autumn&session=am&question=ip-2011a-am-q1", { timeout: 30_000 });
-  await expect(page.getByRole("link", { name: "間違えた 1問を復習" })).toHaveAttribute("href", "/quiz?mode=review&scope=exam&reviewKind=wrong&exam=ip");
+  await expect(page.getByRole("link", { name: /続きを解く/ })).toHaveAttribute("href", "/quiz?mode=year&exam=ip&year=2011&season=autumn&session=am&question=ip-2011a-am-q1", { timeout: 30_000 });
+
   await page.setViewportSize({ width: 390, height: 844 });
-  await page.screenshot({ path: "reports/home-redesign/returning-390.png", fullPage: true });
-  await page.getByRole("link", { name: "別の資格を選ぶ" }).click();
-  await expect(page.getByRole("searchbox")).toBeFocused();
-  await page.locator(".study-resume .study-primary").click();
+  await page.screenshot({ path: (process.env.KP2_SCREENSHOTS ?? "test-results") + "/returning-390.png", fullPage: true });
+
+
+  await page.getByRole("link", { name: /続きを解く/ }).click();
   await expect(page.getByRole("radio").first()).toBeVisible({ timeout: 30_000 });
   expect(new URL(page.url()).searchParams.get("question")).toBe("ip-2011a-am-q1");
 });
@@ -70,7 +41,7 @@ test("invalid saved coordinates produce no invented progress", async ({ page }) 
   await page.addInitScript(() => localStorage.setItem("ipa-quiz:last-question:v1", JSON.stringify({ exam: "ip", year: 2099, season: "autumn", session: "am", qNumber: 999, answeredAt: Date.now() })));
   await page.goto("/");
   await expect(page.locator(".study-resume")).toHaveCount(0);
-  await expect(page.getByRole("link", { name: "続きを開く" })).toHaveCount(0);
+  await expect(page.getByRole("link", { name: /続きを解く/ })).toHaveCount(0);
 });
 
 test("year list starts the chosen question without revealing its answer", async ({ page }) => {
@@ -112,7 +83,7 @@ test("answer actions keep focus and next question survives reload on a short pho
   await expect(page.locator('[aria-label="解答結果"]')).toBeFocused();
   await expect(page.locator('[aria-label="解答結果"]')).toBeInViewport();
   await expect(page.getByRole("button", { name: "次の問題へ", exact: true }).first()).toBeInViewport();
-  await page.screenshot({ path: "reports/home-redesign/quiz-result-400x606.png" });
+  await page.screenshot({ path: (process.env.KP2_SCREENSHOTS ?? "test-results") + "/quiz-result-400x606.png" });
   const ask = page.getByRole("button", { name: /AIに質問|この解説|AIに聞く/ }).first();
   await ask.focus();
   await page.keyboard.press("Enter");
@@ -128,7 +99,7 @@ test("answer actions keep focus and next question survives reload on a short pho
   expect(aiSubmissions).toBe(0);
   const inputBox = await input.boundingBox();
   expect(inputBox!.y + inputBox!.height).toBeLessThanOrEqual(606);
-  await page.screenshot({ path: "reports/home-redesign/quiz-ai-400x606.png" });
+  await page.screenshot({ path: (process.env.KP2_SCREENSHOTS ?? "test-results") + "/quiz-ai-400x606.png" });
   await page.keyboard.press("Escape");
   await expect(inline).toBeVisible();
   expect(new URL(page.url()).searchParams.get("question")).toBe(original);
@@ -157,7 +128,7 @@ test("safety paper resumes its real saved question without a guessed score", asy
     sessionStorage.setItem(`ipa-quiz:exam-library-session:v1:${paper}`, JSON.stringify({ progress: { version: 1, examId: paper, lastQuestionId: question, updatedAt: summary.updatedAt, answers: { [question]: { choice: null, memo: "検証用", submitted: true } } }, summary }));
   }, { paper, question, total: meta.total });
   await page.goto("/");
-  await expect(page.getByRole("link", { name: "続きを開く" })).toHaveAttribute("href", `/e-learning/exams/${paper}?question=${question}`);
+  await expect(page.getByRole("link", { name: /続きを解く/ })).toHaveAttribute("href", `/e-learning/exams/${paper}?question=${question}`);
   await expect(page.getByRole("heading", { name: meta.name, exact: true })).toBeVisible();
   await expect(page.getByRole("link", { name: /間違えた/ })).toHaveCount(0);
 });

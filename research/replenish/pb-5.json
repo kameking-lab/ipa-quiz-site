@@ -1,0 +1,72 @@
+{
+  "schemaVersion": 1,
+  "lane": "pb-5",
+  "checkedOn": "2026-11-18",
+  "baseline": "56c04ee54",
+  "allocation": "配列の1始まり位置で position % 14 == 4（4,18,...,284）",
+  "addedQuestionCount": 200,
+  "addedOriginalQuestionCount": 80,
+  "rows": [
+    {
+      "planId": "dekyo-charge-1",
+      "lane": "pb-5",
+      "branch": "cx/kako-pa5-20261118",
+      "status": "ブランチ／PR に有り",
+      "coverageStatus": "complete",
+      "addedQuestionCount": 150,
+      "addedOriginalQuestionCount": 30,
+      "remainingVerifiedAnswerUnits": 0,
+      "years": [
+        2026,
+        2025
+      ],
+      "paths": [
+        "data/questions/dekyo-charge-1/2025-first-houki.json",
+        "data/questions/dekyo-charge-1/2025-first-theory.json",
+        "data/questions/dekyo-charge-1/2025-second-houki.json",
+        "data/questions/dekyo-charge-1/2025-second-theory.json",
+        "data/questions/dekyo-charge-1/2026-first-houki.json",
+        "data/questions/dekyo-charge-1/2026-first-theory.json"
+      ],
+      "sourceUrls": [
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files2493683648881d9e8.pdf",
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2493/files249368364982e423d.pdf",
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files25276926371c03d29.pdf",
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2527/files2527692639569429b.pdf",
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a1628d6ad0ac.pdf",
+        "https://www.dekyo.or.jp/shiken/assets/files/articles/2563/files25636a162a4510464.pdf"
+      ],
+      "notes": [
+        "pa-5の基礎66欄に続く技術及び理論・法規。既存問題・公式正答は変更していない。",
+        "ローカルブランチにのみコミット。push・PR・公開なし。"
+      ]
+    },
+    {
+      "planId": "career-gino-1",
+      "lane": "pb-5",
+      "branch": "cx/kako-pa5-20261118",
+      "status": "ブランチ／PR に有り",
+      "coverageStatus": "complete",
+      "addedQuestionCount": 50,
+      "addedOriginalQuestionCount": 50,
+      "remainingVerifiedAnswerUnits": 0,
+      "years": [
+        2025
+      ],
+      "paths": [
+        "data/questions/career-gino-1/index.ts",
+        "data/questions/career-gino-1/2025-late.json",
+        "data/questions/career-gino-1/sources.json"
+      ],
+      "sourceUrls": [
+        "https://www.career-kentei.org/wordpress/wp-content/uploads/23_2025_2H_F_GakkaSeitou1416.pdf",
+        "https://www.career-kentei.org/wordpress/wp-content/uploads/23_2025_2H_F_Gakkamondai1414.pdf"
+      ],
+      "notes": [
+        "PLAN4対象の2025年度後期・第15回学科全50問、独自解説50件・全250肢。",
+        "国家資格キャリアコンサルタントとは別区分。公式の本文・正答を保持。",
+        "ローカルブランチにのみコミット。push・PR・公開なし。"
+      ]
+    }
+  ]
+}

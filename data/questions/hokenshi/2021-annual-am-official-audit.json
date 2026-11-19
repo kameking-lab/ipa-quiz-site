@@ -1,0 +1,515 @@
+{
+  "jobId": "PLAN5-154",
+  "examEdition": "第108回保健師国家試験",
+  "examDate": "2022-02-11",
+  "sourcePage": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp220421-03_04_05.html",
+  "sourceFiles": [
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-03a_01.pdf",
+      "httpStatus": 200,
+      "sha256": "bbd58f8495c1de69cace52df149dfcc4d7c653c776a82294ec87590fb29e16a0",
+      "bytes": 849871,
+      "pages": 36
+    },
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-03seitou.pdf",
+      "httpStatus": 200,
+      "sha256": "19c2066f7ef0dae3397a4e0649c04df7fb95c6abfc860368bc16cdbf4e8d6830",
+      "bytes": 32796,
+      "pages": 1
+    },
+    {
+      "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken03_04_05/dl/hokenshi_am51.pdf",
+      "sha256": "c7cdf1ac48f639bc64f24385a0ab793ba35d35d4699d3d6d4a1de7a294b01c9c",
+      "bytes": 307355,
+      "reason": "選択肢に正解がないため。",
+      "review": "rendered notice inspected; official answer cell A051 is blank"
+    }
+  ],
+  "complete": true,
+  "sourceCount": 55,
+  "retainedPracticeQuestionCount": 10,
+  "addedPracticeQuestionCount": 44,
+  "addedChoiceExplanationCount": 192,
+  "excludedQuestionNumbers": [
+    51
+  ],
+  "assets": [
+    {
+      "url": "/questions/hokenshi/108-am/q29-mortality.webp",
+      "pdfPage": 16,
+      "sha256": "2c684dd633c13c293afe163eaf07e8dc1346e889d4e2e111164a34b9cdfd4c41",
+      "bytes": 34538
+    },
+    {
+      "url": "/questions/hokenshi/108-am/q51-official-original.webp",
+      "pdfPage": 29,
+      "sha256": "73b055d93130a6243e99557440dd98b35c176eb577c682c8349cc7b7bdeda476",
+      "bytes": 36728
+    }
+  ],
+  "records": [
+    {
+      "number": 1,
+      "sourcePdfPage": 7,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q1"
+    },
+    {
+      "number": 2,
+      "sourcePdfPage": 7,
+      "officialAnswerCells": [
+        "1"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q2"
+    },
+    {
+      "number": 3,
+      "sourcePdfPage": 7,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q3"
+    },
+    {
+      "number": 4,
+      "sourcePdfPage": 8,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q4"
+    },
+    {
+      "number": 5,
+      "sourcePdfPage": 8,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q5"
+    },
+    {
+      "number": 6,
+      "sourcePdfPage": 9,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q6"
+    },
+    {
+      "number": 7,
+      "sourcePdfPage": 9,
+      "officialAnswerCells": [
+        "1"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q7"
+    },
+    {
+      "number": 8,
+      "sourcePdfPage": 9,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q8"
+    },
+    {
+      "number": 9,
+      "sourcePdfPage": 10,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q9"
+    },
+    {
+      "number": 10,
+      "sourcePdfPage": 10,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q10"
+    },
+    {
+      "number": 11,
+      "sourcePdfPage": 10,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q11"
+    },
+    {
+      "number": 12,
+      "sourcePdfPage": 11,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q12"
+    },
+    {
+      "number": 13,
+      "sourcePdfPage": 11,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q13"
+    },
+    {
+      "number": 14,
+      "sourcePdfPage": 11,
+      "officialAnswerCells": [
+        "1"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q14"
+    },
+    {
+      "number": 15,
+      "sourcePdfPage": 11,
+      "officialAnswerCells": [
+        "1"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q15"
+    },
+    {
+      "number": 16,
+      "sourcePdfPage": 12,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q16"
+    },
+    {
+      "number": 17,
+      "sourcePdfPage": 12,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q17"
+    },
+    {
+      "number": 18,
+      "sourcePdfPage": 12,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q18"
+    },
+    {
+      "number": 19,
+      "sourcePdfPage": 13,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q19"
+    },
+    {
+      "number": 20,
+      "sourcePdfPage": 13,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q20"
+    },
+    {
+      "number": 21,
+      "sourcePdfPage": 13,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q21"
+    },
+    {
+      "number": 22,
+      "sourcePdfPage": 14,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q22"
+    },
+    {
+      "number": 23,
+      "sourcePdfPage": 14,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q23"
+    },
+    {
+      "number": 24,
+      "sourcePdfPage": 14,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q24"
+    },
+    {
+      "number": 25,
+      "sourcePdfPage": 14,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q25"
+    },
+    {
+      "number": 26,
+      "sourcePdfPage": 15,
+      "officialAnswerCells": [
+        "5"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q26"
+    },
+    {
+      "number": 27,
+      "sourcePdfPage": 15,
+      "officialAnswerCells": [
+        "1"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q27"
+    },
+    {
+      "number": 28,
+      "sourcePdfPage": 15,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q28"
+    },
+    {
+      "number": 29,
+      "sourcePdfPage": 16,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q29"
+    },
+    {
+      "number": 30,
+      "sourcePdfPage": 17,
+      "officialAnswerCells": [
+        "5"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q30"
+    },
+    {
+      "number": 31,
+      "sourcePdfPage": 17,
+      "officialAnswerCells": [
+        "1"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q31"
+    },
+    {
+      "number": 32,
+      "sourcePdfPage": 17,
+      "officialAnswerCells": [
+        "35"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q32"
+    },
+    {
+      "number": 33,
+      "sourcePdfPage": 18,
+      "officialAnswerCells": [
+        "25"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q33"
+    },
+    {
+      "number": 34,
+      "sourcePdfPage": 18,
+      "officialAnswerCells": [
+        "15"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q34"
+    },
+    {
+      "number": 35,
+      "sourcePdfPage": 18,
+      "officialAnswerCells": [
+        "34"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q35"
+    },
+    {
+      "number": 36,
+      "sourcePdfPage": 19,
+      "officialAnswerCells": [
+        "23"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q36"
+    },
+    {
+      "number": 37,
+      "sourcePdfPage": 19,
+      "officialAnswerCells": [
+        "35"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q37"
+    },
+    {
+      "number": 38,
+      "sourcePdfPage": 20,
+      "officialAnswerCells": [
+        "23"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q38"
+    },
+    {
+      "number": 39,
+      "sourcePdfPage": 20,
+      "officialAnswerCells": [
+        "13"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q39"
+    },
+    {
+      "number": 40,
+      "sourcePdfPage": 21,
+      "officialAnswerCells": [
+        "15"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q40"
+    },
+    {
+      "number": 41,
+      "sourcePdfPage": 22,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q41"
+    },
+    {
+      "number": 42,
+      "sourcePdfPage": 22,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q42"
+    },
+    {
+      "number": 43,
+      "sourcePdfPage": 23,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q43"
+    },
+    {
+      "number": 44,
+      "sourcePdfPage": 24,
+      "officialAnswerCells": [
+        "1"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q44"
+    },
+    {
+      "number": 45,
+      "sourcePdfPage": 24,
+      "officialAnswerCells": [
+        "1"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q45"
+    },
+    {
+      "number": 46,
+      "sourcePdfPage": 25,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q46"
+    },
+    {
+      "number": 47,
+      "sourcePdfPage": 26,
+      "officialAnswerCells": [
+        "24"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q47"
+    },
+    {
+      "number": 48,
+      "sourcePdfPage": 26,
+      "officialAnswerCells": [
+        "35"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q48"
+    },
+    {
+      "number": 49,
+      "sourcePdfPage": 27,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q49"
+    },
+    {
+      "number": 50,
+      "sourcePdfPage": 28,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q50"
+    },
+    {
+      "number": 51,
+      "sourcePdfPage": 29,
+      "officialAnswerCells": [],
+      "questionId": null,
+      "status": "OFFICIAL_EXCLUDED",
+      "officialQuestionLabel": "A051",
+      "originalQuestionText": "人口2万人のA市において運動習慣の有無と総死亡数との関連に注目し、施策に反映させるために疫学調査を行うこととした。特定健康診査の際に運動習慣に関する聞き取り調査を行った。運動習慣ありを「週2回以上、1回30分以上、1年以上、運動をしている者」と定義し、その後5年間の死亡の有無を確認した。\n\n調査を行った年度に特定健康診査を受診した住民は1万人であった。運動習慣の有無と5年間の死亡数について全員を追跡した調査結果を表に示す。\n運動習慣「なし」に対する運動習慣「あり」の累積死亡率比を求めよ。\nただし、小数点以下第2位を四捨五入すること。\n解答：①．②％",
+      "originalTable": [
+        [
+          "運動習慣",
+          "死亡（人）",
+          "生存（人）"
+        ],
+        [
+          "あり",
+          "200",
+          "2,800"
+        ],
+        [
+          "なし",
+          "600",
+          "6,400"
+        ]
+      ],
+      "originalImageUrl": "/questions/hokenshi/108-am/q51-official-original.webp",
+      "officialNoticeUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken03_04_05/dl/hokenshi_am51.pdf",
+      "officialReason": "選択肢に正解がないため。",
+      "note": "厚生労働省は「選択肢に正解がないため。」として採点対象から除外。公式正答欄は空欄。"
+    },
+    {
+      "number": 52,
+      "sourcePdfPage": 29,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q52"
+    },
+    {
+      "number": 53,
+      "sourcePdfPage": 30,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q53"
+    },
+    {
+      "number": 54,
+      "sourcePdfPage": 30,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q54"
+    },
+    {
+      "number": 55,
+      "sourcePdfPage": 31,
+      "officialAnswerCells": [
+        "13"
+      ],
+      "questionId": "hokenshi-2021-annual-am-q55"
+    }
+  ]
+}

@@ -14,7 +14,6 @@ import {
   MessageSquare,
   Search,
   ShieldCheck,
-  Sparkles,
 } from "lucide-react";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -143,7 +142,6 @@ export default async function StatsPage() {
       <header className="mb-8">
         <div className="mb-3 flex flex-wrap items-center gap-1.5">
           <Badge variant="primary">
-            <Sparkles className="mr-1 h-3 w-3" />
             公開統計
           </Badge>
           <Badge variant="success">教育貢献プロジェクト</Badge>

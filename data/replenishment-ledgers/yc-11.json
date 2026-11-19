@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "lane": "yc-11",
+  "date": "2026-11-18",
+  "assignment": "jobs array index % 14 == 10 descending, then uncovered jobs from other lanes",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "completedJobs": [
+    {
+      "jobId": "PLAN5-316",
+      "index": 315,
+      "exam": "kenchikushi1",
+      "year": 2024,
+      "season": "annual",
+      "session": "gakka-4_5",
+      "loaderSessions": [
+        "kozo",
+        "sekou"
+      ],
+      "status": "completed",
+      "expectedOriginalQuestions": 55,
+      "existingOriginalQuestions": 0,
+      "importedRecords": 0,
+      "newRecords": 55,
+      "remainingOriginalQuestions": 0,
+      "dataPath": "data/questions/kenchikushi1/2024-kouzo-sekou.json",
+      "sourceIndexUrl": "https://www.jaeic.or.jp/shiken/1k/1k-mondai.html",
+      "questionPdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2024-1st-gakka4_5.pdf",
+      "answerPdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2024-1st-gokakukijun.pdf",
+      "questionPdfSha256": "5d252f4199df09af69f674594626fce74ac55601404fd685e2d7c5d38207272d",
+      "answerPdfSha256": "35898f5bfb0ee35922fa21d70a13a0fb9fb8f3cd9ab71252b9f7df31be663160",
+      "examDate": "2024-07-28",
+      "examDateSource": "https://www.jaeic.or.jp/assets/pdf/zaidan/information/202506-jigyohokoku.pdf",
+      "lawReferenceDate": "2024-01-01",
+      "imageAssetCount": 17,
+      "officialAnswerCount": 55,
+      "preflight": {
+        "comparedRefs": 112,
+        "comparedBlobs": 32,
+        "matches": 0
+      },
+      "notes": "第8班補助。学科Ⅳ（構造）30問、学科Ⅴ（施工）25問。公式正答をPyMuPDFとpdfplumberで照合。独自解説55件。"
+    }
+  ]
+}

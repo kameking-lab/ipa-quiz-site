@@ -17,7 +17,7 @@ const TABS = [
   { value: "mock-scores", label: "模試記録" },
   { value: "progress", label: "進捗" },
   { value: "weakness", label: "弱点" },
-  { value: "badges", label: "バッジ・ストリーク" },
+  { value: "badges", label: "バッジ" },
 ] as const;
 
 type TabValue = (typeof TABS)[number]["value"];
@@ -42,19 +42,6 @@ function readInitialTab(): TabValue | null {
 
 export function DashboardTabs({ categoryById }: Props) {
   const [tab, setTab] = React.useState<TabValue>("overview");
-  const tabListHost = React.useRef<HTMLDivElement>(null);
-
-  React.useEffect(() => {
-    const list = tabListHost.current?.querySelector<HTMLElement>('[role="tablist"]');
-    const active = list?.querySelector<HTMLElement>('[role="tab"][aria-selected="true"]');
-    if (!list || !active) return;
-    const bounds = list.getBoundingClientRect();
-    const tabBounds = active.getBoundingClientRect();
-    const left = tabBounds.left - bounds.left - 4;
-    const right = tabBounds.right - bounds.right + 4;
-    if (left < 0) list.scrollLeft += left;
-    else if (right > 0) list.scrollLeft += right;
-  }, [tab]);
 
   React.useEffect(() => {
     const initial = readInitialTab();
@@ -77,25 +64,33 @@ export function DashboardTabs({ categoryById }: Props) {
   }
 
   return (
-    <main className="mx-auto w-full max-w-5xl px-4 py-8">
+    <main className="mx-auto w-full max-w-3xl px-4 pb-20 pt-8 sm:px-6 sm:pt-10">
       <header className="mb-6">
         <h1 className="text-2xl font-bold tracking-tight sm:text-3xl">
-          学習ダッシュボード
+          わたしの記録
         </h1>
-        <p className="mt-1 text-xs text-zinc-500 dark:text-zinc-400">
-          今日の計画・模試記録・進捗・弱点をまとめて確認できます。
-        </p>
       </header>
 
       <div className="mb-6"><SafetyLearningProgress compact /></div>
       <Tabs value={tab} onValueChange={handleChange}>
-        <div ref={tabListHost}>
-        <TabsList className="mb-6 flex w-full flex-nowrap justify-start overflow-x-auto">
+        <div>
+        <TabsList aria-label="学習記録の表示" className="mb-6 grid w-full grid-cols-3 gap-1 sm:grid-cols-6">
           {TABS.map((t) => (
             <TabsTrigger
               key={t.value}
               value={t.value}
-              className="h-12 min-h-12 shrink-0 whitespace-nowrap px-4 text-xs leading-none sm:text-sm"
+              tabIndex={tab === t.value ? 0 : -1}
+              onKeyDown={(event) => {
+                const index = TABS.findIndex(item => item.value === t.value);
+                const next = event.key === "Home" ? 0 : event.key === "End" ? TABS.length - 1
+                  : event.key === "ArrowRight" ? (index + 1) % TABS.length
+                  : event.key === "ArrowLeft" ? (index - 1 + TABS.length) % TABS.length : -1;
+                if (next < 0) return;
+                event.preventDefault();
+                handleChange(TABS[next].value);
+                event.currentTarget.closest('[role="tablist"]')?.querySelectorAll<HTMLButtonElement>('[role="tab"]')[next]?.focus();
+              }}
+              className="h-12 min-h-12 min-w-0 whitespace-nowrap px-2 text-xs leading-none sm:text-sm"
             >
               {t.label}
             </TabsTrigger>

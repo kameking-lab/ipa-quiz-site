@@ -1,0 +1,91 @@
+{
+  "lane": "rs-16",
+  "checkedAt": "2026-11-17",
+  "branch": "cx/kako-restock-g13-20261117",
+  "additions": [
+    {
+      "key": "boueki-c|2018|published",
+      "qualificationCode": "boueki-c",
+      "qualification": "貿易実務検定C級",
+      "year": 2018,
+      "sitting": "published",
+      "status": "ローカルブランチに有り・未公開",
+      "questionCount": 7,
+      "choiceExplanationCount": 21,
+      "sourceExamYear": null,
+      "yearMeaning": "year=2018は公式ページの作成年。実際の出題年ではない。",
+      "branch": "cx/kako-restock-g13-20261117",
+      "officialSourceUrls": [
+        "https://www.boujitsu.com/introduction/questionstrend/qt-c/c2/2",
+        "https://www.boujitsu.com/introduction/questionstrend/qt-c/c2/3"
+      ],
+      "sourceManifest": "data/questions/boueki-c/published-sources.json",
+      "questionIds": [
+        "boueki-c-2018-published-gakka-q1",
+        "boueki-c-2018-published-gakka-q2",
+        "boueki-c-2018-published-gakka-q3",
+        "boueki-c-2018-published-gakka-q4",
+        "boueki-c-2018-published-gakka-q5",
+        "boueki-c-2018-published-gakka-q6",
+        "boueki-c-2018-published-gakka-q7"
+      ],
+      "remaining": "貿易実務の語群選択10設問。20語群を縮めずに扱う演習への対応は未実施。"
+    },
+    {
+      "key": "service2|2026|published",
+      "qualificationCode": "service2",
+      "qualification": "サービス接遇検定2級",
+      "year": 2026,
+      "sitting": "published",
+      "status": "ローカルブランチに有り・未公開",
+      "questionCount": 3,
+      "choiceExplanationCount": 15,
+      "sourceExamYear": null,
+      "yearMeaning": "year=2026は取得版の年。公表年・実施年として表示しない。",
+      "branch": "cx/kako-restock-g13-20261117",
+      "officialSourceUrls": [
+        "https://jitsumu-ginou-kentei.jp/SV/example"
+      ],
+      "sourceManifest": "data/questions/service2/published-sources.json",
+      "questionIds": [
+        "service2-2026-published-gakka-q1",
+        "service2-2026-published-gakka-q2",
+        "service2-2026-published-gakka-q3"
+      ],
+      "remaining": "2級公式例題5題のうち、記述式2題（留守番電話、料理の置き方）は未収録。"
+    },
+    {
+      "key": "kokka-sogo-dai|2026|基礎能力",
+      "qualificationCode": "kokka-sogo-dai",
+      "qualification": "国家総合職（大卒程度・教養区分以外）",
+      "year": 2026,
+      "sitting": "基礎能力",
+      "season": "annual",
+      "session": "kiso",
+      "status": "ローカルブランチに有り・未公開",
+      "questionCount": 9,
+      "choiceExplanationCount": 45,
+      "sourceExamYear": 2026,
+      "yearMeaning": "公式掲載ページと冊子表紙の2026年度。",
+      "branch": "cx/kako-restock-g13-20261117",
+      "officialSourceUrls": [
+        "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_13.html",
+        "https://www.jinji.go.jp/content/000018339.pdf",
+        "https://www.jinji.go.jp/content/000018339.pdf#page=40"
+      ],
+      "sourceManifest": "data/questions/kokka-sogo-dai/2026-sources.json",
+      "questionIds": [
+        "kokka-sogo-dai-2026-annual-kiso-q11",
+        "kokka-sogo-dai-2026-annual-kiso-q12",
+        "kokka-sogo-dai-2026-annual-kiso-q13",
+        "kokka-sogo-dai-2026-annual-kiso-q14",
+        "kokka-sogo-dai-2026-annual-kiso-q15",
+        "kokka-sogo-dai-2026-annual-kiso-q16",
+        "kokka-sogo-dai-2026-annual-kiso-q18",
+        "kokka-sogo-dai-2026-annual-kiso-q19",
+        "kokka-sogo-dai-2026-annual-kiso-q20"
+      ],
+      "remaining": "基礎能力30問のうち未収録21問。専門試験等は未着手。"
+    }
+  ]
+}

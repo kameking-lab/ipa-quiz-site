@@ -156,14 +156,13 @@ export default async function EssayExamPage({
           <li>自分の業種に近い答案を選んで全文を読む</li>
           <li>序論・本論・結論の構成とキーワードを把握する</li>
           <li>自分の業務経験に照らして固有名詞・数値を置き換える</li>
-          <li>AI 論述添削機能で自分の答案をフィードバック</li>
         </ol>
         <div className="mt-4">
           <Link
             href="/essay"
             className="text-xs text-sky-600 underline hover:text-sky-800 dark:text-sky-400 dark:hover:text-sky-200"
           >
-            → AI 論述添削（午後 II）へ
+            → 論述の練習問題へ
           </Link>
         </div>
       </section>

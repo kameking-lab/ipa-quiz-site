@@ -21,7 +21,7 @@ import { Badge } from "@/components/ui/badge";
 import { Breadcrumbs } from "@/components/seo/Breadcrumbs";
 import { examLabel, EXAM_LABELS } from "@/lib/utils";
 import { useRovingRadioGroup } from "@/lib/a11y/use-roving-radio";
-import { Loader2, Timer, ChevronDown, BarChart3 } from "lucide-react";
+import { Loader2, Timer, ChevronDown } from "lucide-react";
 import { MockExamRunner } from "./MockExamRunner";
 
 const AVAILABLE_EXAMS = Object.keys(MOCK_EXAM_CONFIGS) as MockExamCode[];
@@ -39,8 +39,8 @@ export function MockExamLanding({ examFromQuery, returnTo, countFromQuery }: { e
         <h1 className="text-2xl font-bold">この資格の模試は未対応です</h1>
         <p className="mt-3 text-sm text-muted-foreground">{knownExam ? `${examLabel(examFromQuery)}の` : "指定された資格の"}本番形式の模試は提供していません。</p>
         <div className="mt-6 flex flex-wrap gap-3">
-          <Button asChild variant="primary"><Link href={knownExam ? quizBackHref({ exam: examFromQuery, returnTo }) : "/#choose-qualification"}>{knownExam ? `${examLabel(examFromQuery)}に戻る` : "資格を選ぶ"}</Link></Button>
-          <Button asChild variant="outline"><Link href="/mock-exam">対応している資格の模試を選ぶ</Link></Button>
+          <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="primary"><Link href={knownExam ? quizBackHref({ exam: examFromQuery, returnTo }) : "/#choose-qualification"}>{knownExam ? `${examLabel(examFromQuery)}に戻る` : "資格を選ぶ"}</Link></Button>
+          <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="outline"><Link href="/mock-exam">対応している資格の模試を選ぶ</Link></Button>
         </div>
       </main>
     );
@@ -152,6 +152,7 @@ function SupportedMockExamLanding({ initialExam, returnTo, countFromQuery }: { i
     <main className="mx-auto w-full max-w-3xl flex-1 px-4 pb-10 pt-8 sm:px-6 min-h-[640px]">
       <Link href={quizBackHref({ exam, returnTo: exam === initialExam ? returnTo : undefined })} className="mb-4 inline-flex min-h-11 items-center text-sm text-muted-foreground hover:underline">← 試験ページに戻る</Link>
       <Breadcrumbs
+        className="[&_a]:inline-flex [&_a]:min-h-11 [&_a]:min-w-11 [&_a]:items-center"
         items={[
           { name: "ホーム", href: "/" },
           { name: "模試モード", href: "/mock-exam" },
@@ -162,7 +163,7 @@ function SupportedMockExamLanding({ initialExam, returnTo, countFromQuery }: { i
           <Timer className="h-5 w-5 text-sky-500" />
           <Badge variant="outline">{exam === "sg" ? "科目Aの収録問題で演習" : "本番形式"}</Badge>
         </div>
-        <h1 className="text-2xl font-bold">{exam === "sg" ? "科目A 演習 — 収録問題で実力チェック" : "模試モード — 本番形式で実力チェック"}</h1>
+        <h1 className="text-2xl font-bold">{exam === "sg" ? "科目Aの演習" : "模試"}</h1>
         <p className="mt-1 text-sm text-zinc-600 dark:text-zinc-400">
           {exam === "sg" ? "演習対象の科目A 37問で練習します。科目Bは含みません。制限時間120分・正答率60%はこの演習の設定で、本試験全体の再現や合否判定ではありません。" : "本番と同じ問題数・時間配分で挑戦。終了後に学習の目安と分野別分析を表示します。"}
         </p>
@@ -189,14 +190,14 @@ function SupportedMockExamLanding({ initialExam, returnTo, countFromQuery }: { i
               {savedSession.questions.length}問解答済）。
             </p>
             <div className="mt-3 flex gap-2">
-              <Button
+              <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
                 variant="primary"
                 size="sm"
                 onClick={() => resumeMock(savedSession)}
               >
                 再開する
               </Button>
-              <Button
+              <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
                 variant="ghost"
                 size="sm"
                 onClick={discardSavedSession}
@@ -263,14 +264,13 @@ function SupportedMockExamLanding({ initialExam, returnTo, countFromQuery }: { i
             </div>
           </div>
 
-          <ResultPreviewHint />
 
           <div className="mt-5">
             <Button
               onClick={startMock}
               variant="primary"
               size="lg"
-              className="w-full"
+              className="w-full min-h-12 min-w-11 h-auto whitespace-normal py-2.5"
               disabled={loading}
             >
               {loading ? (
@@ -502,28 +502,6 @@ function ExamSelector({ exams, current, defaultExam, onSelect }: ExamSelectorPro
             </button>
           );
         })}
-      </div>
-    </div>
-  );
-}
-
-function ResultPreviewHint() {
-  return (
-    <div
-      className="mt-5 flex items-start gap-3 rounded-xl border border-sky-200 bg-sky-50/60 p-3 text-xs text-sky-900 dark:border-sky-900/60 dark:bg-sky-950/30 dark:text-sky-100"
-      aria-label="模試完了後に得られる結果分析の予告"
-    >
-      <BarChart3
-        className="mt-0.5 h-4 w-4 shrink-0 text-sky-500 dark:text-sky-400"
-        aria-hidden="true"
-      />
-      <div className="space-y-1.5">
-        <p className="font-semibold">模試後の結果分析でわかること</p>
-        <ul className="list-disc space-y-0.5 pl-4 leading-relaxed text-sky-800/90 dark:text-sky-200/90">
-          <li>合否判定（合格基準クリアか）</li>
-          <li>分野別正答率・弱点分野の可視化</li>
-          <li>過去の模試結果との成績推移グラフ</li>
-        </ul>
       </div>
     </div>
   );

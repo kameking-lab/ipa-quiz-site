@@ -1,0 +1,142 @@
+[
+  {
+    "id": "au-2017h-pm1-q1",
+    "exam": "au",
+    "year": 2017,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "システム監査",
+    "topicTags": [
+      "システム統合"
+    ],
+    "difficulty": 4,
+    "question": "問1 在庫管理システム統合計画の監査",
+    "answer": "設問                解答例・解答の要点                備考\n 設問１   A 社がB 社から仕入れたモジュール製品製造用の製品にB 社と異なる製品コー\n      ドが設定されているから\n 設問２  登録入力ができる担当者と承認入力ができる責任者を別の者とする。\n設問３   a 在庫移管開始前に全ての棚卸差異データの承認入力が完了していることを確認\n      する。\n 設問４  システム担当者に質問し，最終出庫日が在庫移管日で置き換えられないことを\n      確認する。\n 設問５  統合後の取引件数及び品目数の増加に対応できるシステムの処理能力が検討さ\n      れていること",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                備考\n 設問１   A 社がB 社から仕入れたモジュール製品製造用の製品にB 社と異なる製品コー\n      ドが設定されているから\n 設問２  登録入力ができる担当者と承認入力ができる責任者を別の者とする。\n設問３   a 在庫移管開始前に全ての棚卸差異データの承認入力が完了していることを確認\n      する。\n 設問４  システム担当者に質問し，最終出庫日が在庫移管日で置き換えられないことを\n      確認する。\n 設問５  統合後の取引件数及び品目数の増加に対応できるシステムの処理能力が検討さ\n      れていること\n```",
+    "explanation": "各社の在庫運用と業務ルールの違いを確認し、統合後に必要な追加対応とその確認方法を整理する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/au/2017-spring-pm1/page-02.webp",
+      "/questions/ipa/au/2017-spring-pm1/page-03.webp",
+      "/questions/ipa/au/2017-spring-pm1/page-04.webp",
+      "/questions/ipa/au/2017-spring-pm1/page-05.webp",
+      "/questions/ipa/au/2017-spring-pm1/page-06.webp"
+    ],
+    "imageAltTexts": [
+      "システム監査技術者 2017年度春期 午後I 問1 本文・設問（公式問題PDF 2ページ）",
+      "システム監査技術者 2017年度春期 午後I 問1 本文・設問（公式問題PDF 3ページ）",
+      "システム監査技術者 2017年度春期 午後I 問1 本文・設問（公式問題PDF 4ページ）",
+      "システム監査技術者 2017年度春期 午後I 問1 本文・設問（公式問題PDF 5ページ）",
+      "システム監査技術者 2017年度春期 午後I 問1 本文・設問（公式問題PDF 6ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/au/2017-spring-pm1/answer-q01-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "システム監査技術者 2017年度春期 午後I 問1 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_au_pm1_qs.pdf#page=2",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_au_pm1_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA システム監査技術者 2017年度春期 午後I 問1。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "au-2017h-pm1-q2",
+    "exam": "au",
+    "year": 2017,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "システム監査",
+    "topicTags": [
+      "品質管理"
+    ],
+    "difficulty": 4,
+    "question": "問2 システム開発における品質管理の適切性の監査",
+    "answer": "設問                解答例・解答の要点                備考\n 設問１  レビュー指摘件数としてカウントする指摘内容の判断基準が明文化され，各開\n      発部に周知されているか。\n 設問２  実績値が指標値を下回った理由について，品質管理部が審査して承認している\n      こと\n設問３(1) レビューアによってレビュー観点が異なり，指摘区分に偏りが発生していない\n      か。\n       (2) 表計算ソフトを使用して傾向を分析するなら，サンプリングではなく全件調査\n      すべきである。\n 設問４  テスト標準で定められたテスト密度などの実績値が工程完了の判定基準に含ま\n      れているかどうか。",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                備考\n 設問１  レビュー指摘件数としてカウントする指摘内容の判断基準が明文化され，各開\n      発部に周知されているか。\n 設問２  実績値が指標値を下回った理由について，品質管理部が審査して承認している\n      こと\n設問３(1) レビューアによってレビュー観点が異なり，指摘区分に偏りが発生していない\n      か。\n       (2) 表計算ソフトを使用して傾向を分析するなら，サンプリングではなく全件調査\n      すべきである。\n 設問４  テスト標準で定められたテスト密度などの実績値が工程完了の判定基準に含ま\n      れているかどうか。\n```",
+    "explanation": "開発工程ごとにどのようなレビューやテストが行われたかを確認し、発見された問題の管理と対応を評価する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/au/2017-spring-pm1/page-07.webp",
+      "/questions/ipa/au/2017-spring-pm1/page-08.webp",
+      "/questions/ipa/au/2017-spring-pm1/page-09.webp",
+      "/questions/ipa/au/2017-spring-pm1/page-10.webp"
+    ],
+    "imageAltTexts": [
+      "システム監査技術者 2017年度春期 午後I 問2 本文・設問（公式問題PDF 7ページ）",
+      "システム監査技術者 2017年度春期 午後I 問2 本文・設問（公式問題PDF 8ページ）",
+      "システム監査技術者 2017年度春期 午後I 問2 本文・設問（公式問題PDF 9ページ）",
+      "システム監査技術者 2017年度春期 午後I 問2 本文・設問（公式問題PDF 10ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/au/2017-spring-pm1/answer-q02-p01.webp"
+    ],
+    "answerImageAltTexts": [
+      "システム監査技術者 2017年度春期 午後I 問2 公式解答例（公式PDF 1ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_au_pm1_qs.pdf#page=7",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_au_pm1_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA システム監査技術者 2017年度春期 午後I 問2。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "au-2017h-pm1-q3",
+    "exam": "au",
+    "year": 2017,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "システム監査",
+    "topicTags": [
+      "制御システム"
+    ],
+    "difficulty": 4,
+    "question": "問3 制御ネットワーク及び制御システムの監査",
+    "answer": "設問                解答例・解答の要点                備考\n 設問１  両規程で定められたセキュリティ管理のレベルが同等であり，相互に矛盾がな\n      いこと\n 設問２  不要なアクセス権をもつ社員などによる情報の持出しやインターネット経由の\n      外部からの不正アクセス\n設問３  (1) ①・セキュリティパッチ適用計画書\n      ②・制御データ処理時の影響調査結果報告書\n        (2) 侵入防御システムの導入による防御\n 設問４  ポリシを査閲し，遠隔監視・保守に必要なパケットだけを通過させる設定にな\n      っていることを確認する。",
+    "modelAnswer": "```text\n設問                解答例・解答の要点                備考\n 設問１  両規程で定められたセキュリティ管理のレベルが同等であり，相互に矛盾がな\n      いこと\n 設問２  不要なアクセス権をもつ社員などによる情報の持出しやインターネット経由の\n      外部からの不正アクセス\n設問３  (1) ①・セキュリティパッチ適用計画書\n      ②・制御データ処理時の影響調査結果報告書\n        (2) 侵入防御システムの導入による防御\n 設問４  ポリシを査閲し，遠隔監視・保守に必要なパケットだけを通過させる設定にな\n      っていることを確認する。\n```",
+    "explanation": "制御系の可用性を考慮し、系の分離、保守アクセスや機器の変更が規程どおり管理されているかを確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/au/2017-spring-pm1/page-11.webp",
+      "/questions/ipa/au/2017-spring-pm1/page-12.webp",
+      "/questions/ipa/au/2017-spring-pm1/page-13.webp",
+      "/questions/ipa/au/2017-spring-pm1/page-14.webp"
+    ],
+    "imageAltTexts": [
+      "システム監査技術者 2017年度春期 午後I 問3 本文・設問（公式問題PDF 11ページ）",
+      "システム監査技術者 2017年度春期 午後I 問3 本文・設問（公式問題PDF 12ページ）",
+      "システム監査技術者 2017年度春期 午後I 問3 本文・設問（公式問題PDF 13ページ）",
+      "システム監査技術者 2017年度春期 午後I 問3 本文・設問（公式問題PDF 14ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/au/2017-spring-pm1/answer-q03-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "システム監査技術者 2017年度春期 午後I 問3 公式解答例（公式PDF 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_au_pm1_qs.pdf#page=11",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_au_pm1_ans.pdf#page=2",
+    "sourceAnswerKind": "example",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA システム監査技術者 2017年度春期 午後I 問3。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

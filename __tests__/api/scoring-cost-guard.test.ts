@@ -5,7 +5,7 @@ import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 /**
  * /api/scoring のコスト上限装置への配線（ブロッカー1）。
  *
- * 背景: cost-guard を呼んでいたのは copilot / essay-grade / generate-question の
+ * 背景: cost-guard を呼んでいたのは copilot / essay-grade などの
  * 3 ルートだけで、/api/scoring は未配線だった。午後採点は resolveModel("grading")
  * = pro 層を使う最も単価の高い経路なのに、月間累計に記録すらされず、
  * §0 の ¥50,000 自動停止も効かない状態だった。

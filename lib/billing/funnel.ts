@@ -3,12 +3,14 @@ import { createHmac } from "node:crypto";
 import { jstDay } from "./domain";
 import { FUNNEL_EVENTS, type FunnelEvent } from "./funnel-events";
 import { attributionQualification, normalizeAttribution, type FunnelAttribution } from "./attribution";
+import { retentionCache } from "@/lib/kv/retention";
 
 export { FUNNEL_EVENTS, CLIENT_FUNNEL_EVENTS, isClientFunnelEvent, type FunnelEvent } from "./funnel-events";
 
 const DAY_MS = 86_400_000;
 /** Counts are kept for about three months; nothing older is needed to read the funnel. */
 const RETENTION_SECONDS = 95 * 86400;
+const retention = retentionCache();
 
 function kv() {
   const url = process.env.KV_REST_API_URL?.replace(/\/$/, ""), token = process.env.KV_REST_API_TOKEN;
@@ -48,19 +50,32 @@ export async function recordFunnel(event: FunnelEvent, visitor: string, now = Da
   const day = jstDay(new Date(now));
   const key = funnelKey(day, event);
   try {
-    const commands = [["SADD", key, funnelVisitor(visitor, day)], ["EXPIRE", key, String(RETENTION_SECONDS)]];
+    const commands: string[][] = [];
+    const expirations: { cacheKey: string; index: number }[] = [];
+    const add = (set: string, member: string) => {
+      commands.push(["SADD", set, member]);
+      const cacheKey = `${store.url}|${set}`;
+      if (retention.needsRefresh(cacheKey)) {
+        expirations.push({ cacheKey, index: commands.length });
+        commands.push(["EXPIRE", set, String(RETENTION_SECONDS)]);
+      }
+    };
+    const member = funnelVisitor(visitor, day);
+    add(key, member);
     const touch = normalizeAttribution(attribution);
     if (touch) {
       const group = `${touch.utm_source}:${touch.utm_content}`;
       const groupKey = `${key}:source:${group}`;
       const index = `funnel:v1:${day}:sources`;
-      commands.push(["SADD", groupKey, funnelVisitor(visitor, day)], ["EXPIRE", groupKey, String(RETENTION_SECONDS)],
-        ["SADD", index, group], ["EXPIRE", index, String(RETENTION_SECONDS)]);
+      add(groupKey, member);
+      add(index, group);
     }
     const response = await pipeline(store, commands, 1500);
     if (!response.ok) return false;
     const payload: unknown = await response.json();
-    return Array.isArray(payload) && payload.length === commands.length && payload.every(row => row && typeof row === "object" && !row.error && Number.isSafeInteger(row.result) && row.result >= 0);
+    if (!Array.isArray(payload) || payload.length !== commands.length || !payload.every(row => row && typeof row === "object" && !row.error && Number.isSafeInteger(row.result) && row.result >= 0)) return false;
+    for (const expiry of expirations) if (payload[expiry.index].result === 1) retention.confirm(expiry.cacheKey);
+    return true;
   } catch { return false; }
 }
 

@@ -1,0 +1,61 @@
+{
+  "lane": "ye-10",
+  "jobs": [
+    {
+      "jobId": "PLAN5-430",
+      "index": 429,
+      "status": "official-answer-pending",
+      "exam": "hoikushi",
+      "year": 2026,
+      "season": "late",
+      "session": "shakaiteki-yougo",
+      "checkedAt": "2026-11-18",
+      "stagedFile": "data/qualification-staging/hoikushi-2026-late/questions.json",
+      "questionUrl": "https://www.hoyokyo.or.jp/08AP3-2.pdf",
+      "questionSha256": "a2d376ea3ab243d8054ff4f344a7ce0ada06b282b272bba19fd7d72d38cd3f21",
+      "answerIndexUrl": "https://www.hoyokyo.or.jp/exam/pasttest/08-2.html",
+      "answerExpectedAt": "2026-11-30T10:00:00+09:00",
+      "verifiedQuestionNumbers": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      "verifiedChoiceCount": 50,
+      "threeChoiceQuestionNumbers": [4, 7],
+      "newQuestionCount": 0
+    },
+    {
+      "jobId": "PLAN5-416",
+      "index": 415,
+      "status": "reviewed",
+      "exam": "fp1",
+      "year": 2025,
+      "season": "september",
+      "session": "gakka-oyo",
+      "dataFile": "data/questions/fp1/applied-2025-september.json",
+      "questionUrl": "https://products.kinzai.or.jp/wp-content/uploads/2026/11/fp01_g_oyo_202509.pdf",
+      "questionSha256": "76bac73e4f1cb96119be077ce9c11043aa6054e1c4520261e8265fa31aea88d2",
+      "answerUrl": "https://products.kinzai.or.jp/wp-content/uploads/2026/11/fp01_g_202509.pdf",
+      "answerSha256": "af664ffb214de515289355b5c21dd82c89ee59fa13a2a0ed03eee34c2385aee6",
+      "verifiedQuestionNumbers": [51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65],
+      "verifiedAnswerFieldCount": 62,
+      "verifiedSharedCaseCount": 5,
+      "verifiedTableCount": 8,
+      "verifiedFigureCount": 2,
+      "restoredHeading": { "caseNumber": 5, "pdfPage": 19, "heading": "(1) Ａさんの親族関係図" },
+      "newQuestionCount": 0
+    },
+    {
+      "jobId": "PLAN5-444",
+      "index": 443,
+      "status": "reviewed",
+      "exam": "sekou-kenchiku2",
+      "year": 2024,
+      "season": "early",
+      "session": "gakka",
+      "dataFile": "data/questions/sekou-kenchiku2/2024-early.json",
+      "questionUrl": "https://www.fcip-shiken.jp/pdf/r06_2kgz_mondai.pdf",
+      "answerUrl": "https://www.fcip-shiken.jp/pdf/r06_2kgz_mondai.pdf#page=25",
+      "verifiedAnswerCount": 50,
+      "visuallyVerifiedQuestionNumbers": [3, 11, 15, 21, 44, 46, 48],
+      "updatedFigureDescriptions": [3, 11],
+      "newQuestionCount": 0
+    }
+  ]
+}

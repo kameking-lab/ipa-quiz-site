@@ -1,0 +1,1202 @@
+{
+  "exam": "rinsho-kensagishi",
+  "year": 2024,
+  "round": 70,
+  "examDate": "2024-02-14",
+  "session": "am",
+  "questionCount": 30,
+  "choiceExplanationCount": 150,
+  "totalOriginalQuestions": 200,
+  "remainingOriginalQuestions": 170,
+  "morningTotal": 100,
+  "morningRemaining": 70,
+  "afternoonRemaining": 100,
+  "partial": true,
+  "sourceIndexUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-07.html",
+  "sources": [
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp240424-07.html",
+      "file": "clinical-70-index.html",
+      "sha256": "8a861c4f1e973b2b0f6d08c76c8a7f70e3a1d414752bc7e2c75d61c2ef9f8a24",
+      "bytes": 8598,
+      "checkedOn": "2026-11-17",
+      "status": 200
+    },
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-07a_01.pdf",
+      "file": "clinical-70-am.pdf",
+      "sha256": "e56ae6b739b8c4a95550077acd1da18daa8f143de1d50cf1fd77f0310863cd2a",
+      "bytes": 936094,
+      "checkedOn": "2026-11-17",
+      "status": 200,
+      "pages": 44
+    },
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-07seitou.pdf",
+      "file": "clinical-70-answers.pdf",
+      "sha256": "6fb6c5c66877838d2f44466da778f73fbcd86aba8c88b0f85bf7321c5e657e00",
+      "bytes": 17560,
+      "checkedOn": "2026-11-17",
+      "status": 200,
+      "pages": 1
+    }
+  ],
+  "explanationReferences": [
+    {
+      "key": "otc",
+      "url": "https://www.pmda.go.jp/files/000222442.pdf",
+      "sha256": "2165ddfcb3b3775c1d36e9e7e64a9f783413af6607c757d98375c1ca50c5842b",
+      "bytes": 2521864,
+      "checkedOn": "2026-11-17",
+      "status": 200,
+      "pages": 60
+    },
+    {
+      "key": "tubes",
+      "url": "https://www.jamt.or.jp/news/asset/pdf/%E7%97%85%E6%A3%9F%E9%85%8D%E7%BD%AE.pdf",
+      "sha256": "4910b14f0bc01f5eefa175a4596d53962062092d2129219c014d203ed35cea63",
+      "bytes": 6439631,
+      "checkedOn": "2026-11-17",
+      "status": 200,
+      "pages": 88
+    },
+    {
+      "key": "qc",
+      "url": "https://www.jstage.jst.go.jp/article/thcu/11/1/11_51/_pdf",
+      "sha256": "aee29b7f0c18fb135ba8cf6fc218e0bb4ffdd55179d49d8b24617d2263823886",
+      "bytes": 2674962,
+      "checkedOn": "2026-11-17",
+      "status": 200,
+      "pages": 9
+    },
+    {
+      "key": "stool",
+      "url": "https://canscreen.ncc.go.jp/guideline/colon_report2023.pdf",
+      "sha256": "28d8ae1d046170dd9bdcd03069349c9dc56c43509747620af1b383bc27fc6151",
+      "bytes": 12461178,
+      "checkedOn": "2026-11-17",
+      "status": 200,
+      "pages": 454
+    },
+    {
+      "key": "stool2",
+      "url": "https://www.eiken.co.jp/public/crc3/index.html",
+      "sha256": "0a2aae9e86485454750e8cdba63397e2d6045ae428e2400838f6c92bb83f5839",
+      "bytes": 28409,
+      "checkedOn": "2026-11-17",
+      "status": 200
+    },
+    {
+      "key": "fluke",
+      "url": "https://www.hokeniryo1.metro.tokyo.lg.jp/shokuhin/musi/07.html",
+      "sha256": "da3a54b1a2a116287be4be6ffb6191e0aa23a7db83bba38a5cb7e0bb9c116bdb",
+      "bytes": 10010,
+      "checkedOn": "2026-11-17",
+      "status": 200
+    },
+    {
+      "key": "schistosome",
+      "url": "https://idsc.nih.go.jp/infectious-diseases/schistosomiasis/detail/index.html",
+      "status": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'idsc.nih.go.jp'. (_ssl.c:1010)>"
+    },
+    {
+      "key": "tapeworm",
+      "url": "https://idsc.nih.go.jp/surveillance/iasr/pathogens/vol46/539/539r05.html",
+      "status": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'idsc.nih.go.jp'. (_ssl.c:1010)>"
+    },
+    {
+      "key": "echinococcus",
+      "url": "https://idsc.nih.go.jp/niid/ja/typhi-m/iasr-reference/8690-469r06.html",
+      "status": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'idsc.nih.go.jp'. (_ssl.c:1010)>"
+    },
+    {
+      "key": "clonorchis",
+      "url": "https://idsc.niid.go.jp/iasr/25/291/tpc291-j.html",
+      "sha256": "8132dc056fe9c549c5e8c1b9ef5bdd7617d144cda0713d2a69d52e4dc446144d",
+      "bytes": 10266,
+      "checkedOn": "2026-11-17",
+      "status": 200
+    },
+    {
+      "key": "addison",
+      "url": "https://www.nanbyou.or.jp/wp-content/uploads/upload_files/File/083-202404-kijyun.pdf",
+      "sha256": "3a5a837777166d329051fb8a27a444856a128eddd0b1213bd77184e0a01d27f4",
+      "bytes": 136144,
+      "checkedOn": "2026-11-17",
+      "status": 200,
+      "pages": 4
+    },
+    {
+      "key": "htlv",
+      "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/kekkaku-kansenshou/htlv1.html",
+      "sha256": "db270651bb23b52143d79c9acd011fdc3d18bbd05f2ed1a32d92e478e075eeec",
+      "bytes": 70419,
+      "checkedOn": "2026-11-17",
+      "status": 200
+    },
+    {
+      "key": "vitamins",
+      "url": "https://www.ejim.mhlw.go.jp/pro/overseas/c03/14.html",
+      "sha256": "081acefa884d11048065494d863ba516c23915a513b4b79e35f34c6b16a31285",
+      "bytes": 121210,
+      "checkedOn": "2026-11-17",
+      "status": 200
+    },
+    {
+      "key": "handbook",
+      "url": "https://www.mhlw.go.jp/content/001477984.pdf",
+      "sha256": "2754f6fe7cc1e06d5586576ee754f40c02d28258211f319177a2bd989cf9f77f",
+      "bytes": 5638637,
+      "checkedOn": "2026-11-17",
+      "status": 200,
+      "pages": 411
+    },
+    {
+      "key": "poison",
+      "url": "https://www.med.or.jp/dl-med/kansen/19chi3_271.pdf",
+      "sha256": "dc8a2ca99df3e198d4ba617f7666e6ba6792ea8085611391bca93089af6c3043",
+      "bytes": 1562222,
+      "checkedOn": "2026-11-17",
+      "status": 200,
+      "pages": 15
+    },
+    {
+      "key": "cardiac",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/19-3-cardiac-cycle",
+      "sha256": "3c82c4b2f77f69a8b91e8a22656e49009521cbe69ae1be898bbc26c163c927e8",
+      "bytes": 351705,
+      "checkedOn": "2026-11-17",
+      "status": 200
+    },
+    {
+      "key": "lung",
+      "url": "https://www.mhlw.go.jp/content/11201250/001561413.pdf",
+      "sha256": "106c7dc31df34d2629133059f038dd0a657d7367ad9545fb8866f0668349b5d9",
+      "bytes": 11290011,
+      "checkedOn": "2026-11-17",
+      "status": 200,
+      "pages": 171
+    },
+    {
+      "key": "potential",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/12-4-the-action-potential",
+      "sha256": "22365eff31eef5a631fefca147ecb8446f48f5ddc72b1853b6c7a3c00354634e",
+      "bytes": 387786,
+      "checkedOn": "2026-11-17",
+      "status": 200
+    },
+    {
+      "key": "eeg",
+      "url": "https://guides.lib.kyushu-u.ac.jp/c.php?g=775027&p=5560159",
+      "sha256": "02b688e9034a68593c8d1b528fc57cd87d7baa736ef9e45ffd0613baf79f86ca",
+      "bytes": 34031,
+      "checkedOn": "2026-11-17",
+      "status": 200
+    },
+    {
+      "key": "ultrasound",
+      "url": "https://www.jstage.jst.go.jp/article/jjsca/33/3/33_443/_pdf",
+      "sha256": "a9f2ebdecd2a80702f2299f825a13b6e3fdd0b3467d0ca3831365aef9252994a",
+      "bytes": 997025,
+      "checkedOn": "2026-11-17",
+      "status": 200,
+      "pages": 6
+    },
+    {
+      "key": "doppler",
+      "url": "https://jse.gr.jp/contents/guideline/data/ASEguideline_TTE_2021-03-23.pdf",
+      "status": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: Hostname mismatch, certificate is not valid for 'jse.gr.jp'. (_ssl.c:1010)>"
+    },
+    {
+      "key": "hearing",
+      "url": "https://eprints.lib.hokudai.ac.jp/dspace/bitstream/2115/329/1/basic-neuroanatomy.pdf",
+      "sha256": "007029b1a81745e4c314a59823d89a40f3cc3df89bc32b2db816db3e84c7e7f7",
+      "bytes": 4430970,
+      "checkedOn": "2026-11-17",
+      "status": 200,
+      "pages": 140
+    },
+    {
+      "key": "beer",
+      "url": "https://www.an.shimadzu.co.jp/service-support/technical-support/analysis-basics/uv/fundamentals/uvtalk2-basic/index.html",
+      "status": "<urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: unable to get local issuer certificate (_ssl.c:1010)>"
+    },
+    {
+      "key": "hormones",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/17-2-hormones",
+      "sha256": "a64229a1e9aadf54e8a54b52d1ec2b9bc97956cd17a6410ebb756a3805016043",
+      "bytes": 373974,
+      "checkedOn": "2026-11-17",
+      "status": 200
+    },
+    {
+      "key": "dna",
+      "url": "https://www.hitachi-hightech.com/jp/ja/knowledge/applications/analytical-systems/uv-vis-nir/uv-025.html",
+      "status": "HTTP Error 403: Forbidden"
+    },
+    {
+      "key": "organic",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/2-5-organic-compounds-essential-to-human-functioning",
+      "sha256": "a61da4a2f20b1b07bd58cad5815eb5fb3d3eb84132eb4c0584480d679fa9002e",
+      "bytes": 395753,
+      "checkedOn": "2026-11-17",
+      "status": 200
+    },
+    {
+      "key": "glycolysis",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/24-2-carbohydrate-metabolism",
+      "sha256": "fd9ba378795c31fa0c736e458f93253cc57774dde2653cc695182a88b2686f77",
+      "bytes": 372165,
+      "checkedOn": "2026-11-17",
+      "status": 200
+    },
+    {
+      "key": "calcium",
+      "url": "https://jsn.or.jp/journal/document/50_2/091-096.pdf",
+      "sha256": "bd48a66115c8498d3c075fcd15578ba0af46a5e028180125d7611fb990cde03e",
+      "bytes": 403706,
+      "checkedOn": "2026-11-17",
+      "status": 200,
+      "pages": 6
+    },
+    {
+      "key": "pth",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/17-5-the-parathyroid-glands",
+      "sha256": "d81b1f3489049ece99acaa073d8f2f86d6e1bf2f670905abe7a36701b5724597",
+      "bytes": 346627,
+      "checkedOn": "2026-11-17",
+      "status": 200
+    },
+    {
+      "key": "fixative",
+      "url": "https://www.aori.u-tokyo.ac.jp/research/news/2021/20210218.html",
+      "sha256": "dc990bb837a288da70dd12dde0085e15fdb4ecc2e01e965414aeaf7554e92163",
+      "bytes": 27180,
+      "checkedOn": "2026-11-17",
+      "status": 200
+    },
+    {
+      "key": "fixative2",
+      "url": "https://byori.kuhp.kyoto-u.ac.jp/templates/fixation.html",
+      "sha256": "d91fe08e8efa59a0cbeb29cd047383743ad0e72a86de2906260019b84bbdae81",
+      "bytes": 43651,
+      "checkedOn": "2026-11-17",
+      "status": 200
+    },
+    {
+      "key": "kidney",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/25-4-microscopic-anatomy-of-the-kidney",
+      "sha256": "d41f70463aaf1620dac9cedcaeed4d2f9847be22a62887796e426c61bbe4ba61",
+      "bytes": 353874,
+      "checkedOn": "2026-11-17",
+      "status": 200
+    },
+    {
+      "key": "adrenal17ks",
+      "url": "https://www.shouman.jp/disease/instructions/05_19_042/",
+      "sha256": "745037dd3761aa03b67c0779e26ede870d22267d4bfddaaf23732e3fae79645f",
+      "bytes": 20329,
+      "checkedOn": "2026-11-17",
+      "status": 200
+    },
+    {
+      "key": "organelles",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/3-2-the-cytoplasm-and-cellular-organelles",
+      "sha256": "844952b9b7eb5f68070fba87ffc1e5a2e53bceb0722b5d733b070bbef87c341b",
+      "bytes": 367626,
+      "checkedOn": "2026-11-17",
+      "status": 200
+    },
+    {
+      "key": "neuron",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/12-2-nervous-tissue",
+      "sha256": "3747c7207ea3d929e99030b0f0b954fb56d14409e86ec63174d37983670f89f9",
+      "bytes": 379884,
+      "checkedOn": "2026-11-17",
+      "status": 200
+    },
+    {
+      "key": "death",
+      "url": "https://ocw.kyoto-u.ac.jp/wp-content/uploads/2021/03/2010_byourigakusouron_02.pdf",
+      "sha256": "84070679bbcae493dc370fdaf6ce4eab2aa267e58d6dcc9796d8fe630c46e2ee",
+      "bytes": 5220,
+      "checkedOn": "2026-11-17",
+      "status": 200
+    },
+    {
+      "key": "leukocytes",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/18-4-leukocytes-and-platelets",
+      "sha256": "cb620382501485bf038356f53725c3a1eb38e21f1643ba6929c54961d3cbb225",
+      "bytes": 361763,
+      "checkedOn": "2026-11-17",
+      "status": 200
+    },
+    {
+      "key": "pancreas",
+      "url": "https://openstax.org/books/anatomy-and-physiology-2e/pages/17-9-the-endocrine-pancreas",
+      "sha256": "68f6f7de0a03bb294b54c5994dbbdaf84de0c50e693fe4e5983180c58eed48e3",
+      "bytes": 357578,
+      "checkedOn": "2026-11-17",
+      "status": 200
+    }
+  ],
+  "reviewed": [
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q1",
+      "qNumber": 1,
+      "pdfPage": 5,
+      "question": "Over the counter〈OTC〉検査で実施されるのはどれか。2 つ選べ。",
+      "choices": {
+        "ア": "血　糖",
+        "イ": "尿蛋白",
+        "ウ": "中性脂肪",
+        "エ": "HIV 抗体",
+        "オ": "尿中hCG"
+      },
+      "officialAnswer": "25",
+      "twoExtractorAgreement": {
+        "question": false,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "5c212a7792fa72a8421009527aaad3e458212d8d32e722f124d828126c80d6b5",
+      "questionSha256": "ca08696ebb27b6d971a8cef7faee1f31f068c90e3a9f39cf16225323cd8f2840",
+      "references": [
+        "otc"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q2",
+      "qNumber": 2,
+      "pdfPage": 5,
+      "question": "検査項目と採血管の添加物の組合せで正しいのはどれか。2 つ選べ。",
+      "choices": {
+        "ア": "PT ― EDTA-2Na",
+        "イ": "ALP ― EDTA-2K",
+        "ウ": "血糖 ― フッ化ナトリウム",
+        "エ": "赤沈 ― クエン酸溶液",
+        "オ": "血小板数 ― ヘパリンリチウム"
+      },
+      "officialAnswer": "34",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "280c5532fe66557d7963d2601dc7788594110f8f551cba39ebf1e943de8537b8",
+      "questionSha256": "a4dd04c2141009d3f279c773323f55c13a0a1bc74445c54f611ab9bc3f312f94",
+      "references": [
+        "tubes"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q3",
+      "qNumber": 3,
+      "pdfPage": 5,
+      "question": "精度管理法で正しいのはどれか。",
+      "choices": {
+        "ア": "精密さは真の値からの偏りの程度をいう。",
+        "イ": "マルチルール管理図法は患者検体を用いる。",
+        "ウ": "2 シグマ法での管理では統計学的に10 回に1 回は外れ値が出現する。",
+        "エ": "管理試料の測定値が3 点連続して上昇傾向を示した場合をシフト現象という。",
+        "オ": "X（bar）-R 管理図法のR は日内の管理試料の測定値の最大値と最小値の差である。"
+      },
+      "officialAnswer": "5",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "8a069ef744780976e90e4168dbc4f12292d61bc0d387ba7dfd41bc121b32fc17",
+      "questionSha256": "41f53515ad1bc0355de1b8af180394350816beecac8e04abdb9c9318015c1191",
+      "references": [
+        "qc"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q4",
+      "qNumber": 4,
+      "pdfPage": 6,
+      "question": "免疫学的便潜血検査で正しいのはどれか。",
+      "choices": {
+        "ア": "検体採取前は食事制限をする。",
+        "イ": "採取後の検体は室温で保存する。",
+        "ウ": "化学的測定法より検出感度が低い。",
+        "エ": "胃がんのスクリーニング検査である。",
+        "オ": "便のこすり方は検出率に影響を与える。"
+      },
+      "officialAnswer": "5",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "cb7052f388009825c696e82efcff13bf78305659f20d5fc83e27262c6e4d55e9",
+      "questionSha256": "93c23570815f0d3115b413346b420d25cd216d94c1a8ec19fcb4d3ce178ab12c",
+      "references": [
+        "stool",
+        "stool2"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q7",
+      "qNumber": 7,
+      "pdfPage": 7,
+      "question": "寄生虫と中間宿主の組合せで正しいのはどれか。",
+      "choices": {
+        "ア": "肝吸虫 ― イカ",
+        "イ": "単包条虫 ― イヌ",
+        "ウ": "宮崎肺吸虫 ― サワガニ",
+        "エ": "日本住血吸虫 ― サケ",
+        "オ": "日本海裂頭条虫 ― ブタ"
+      },
+      "officialAnswer": "3",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "dd29023a0bd25625aac9ea1355d878525827aeb9a921e60e8a454b3686f04b1e",
+      "questionSha256": "e38ef7384275c6faa8d3feafc99ced37aad15ecfb58cb7c3571399e78241d412",
+      "references": [
+        "fluke",
+        "schistosome",
+        "tapeworm",
+        "echinococcus",
+        "clonorchis"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q8",
+      "qNumber": 8,
+      "pdfPage": 7,
+      "question": "正確度の確認方法はどれか。2 つ選べ。",
+      "choices": {
+        "ア": "機種間差の確認",
+        "イ": "室内精度の確認",
+        "ウ": "標準物質の測定",
+        "エ": "標準法との比較",
+        "オ": "併行精度の確認"
+      },
+      "officialAnswer": "34",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "c1ced9ff2c7fa101587e87904db9c6f300f9255f867735c920020b473f6407d1",
+      "questionSha256": "4ceba64907d033566d0d280f0117b7a9d7b934e53662bc4ba032c54c68c6356b",
+      "references": [
+        "qc"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q11",
+      "qNumber": 11,
+      "pdfPage": 8,
+      "question": "Addison 病で高値を示すのはどれか。2 つ選べ。",
+      "choices": {
+        "ア": "血中ACTH",
+        "イ": "血清カリウム",
+        "ウ": "血清ナトウム",
+        "エ": "血中コルチゾール",
+        "オ": "尿中17-KS〈17-ケトステロイド〉"
+      },
+      "officialAnswer": "12",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "e38a9189723ba740fc009d91ab466a8cb815c081766d69bed738f455150732ad",
+      "questionSha256": "72b761d0289816987eca6cedf84ca0a8ff42585b27eccfb5b71e3685b98a5e5c",
+      "references": [
+        "addison",
+        "adrenal17ks"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q13",
+      "qNumber": 13,
+      "pdfPage": 9,
+      "question": "リンパ腫の原因となるのはどれか。",
+      "choices": {
+        "ア": "サイトメガロウイルス",
+        "イ": "単純ヘルペスウイルス",
+        "ウ": "ヒトT 細胞白血病ウイルス1 型",
+        "エ": "ヒトパピローマウイルス",
+        "オ": "ヒトパルボウイルスB19"
+      },
+      "officialAnswer": "3",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "cf0e51a164db610d457c83b8f6299f5b913a8f77bdeb07fc33404d14d5c4c5d7",
+      "questionSha256": "18352827e3781577b654f66d7fe9f58fab4efc8f441d7a399c50ebe59a4369e8",
+      "references": [
+        "htlv",
+        "handbook"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q14",
+      "qNumber": 14,
+      "pdfPage": 9,
+      "question": "欠乏により巨赤芽球性貧血をきたすのはどれか。",
+      "choices": {
+        "ア": "ビタミンA",
+        "イ": "ビタミンB12",
+        "ウ": "ビタミンC",
+        "エ": "ビタミンD",
+        "オ": "ビタミンE"
+      },
+      "officialAnswer": "2",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "5e71513398edf821c038dbb64f6df4483eb40b32137778c11620b7f537bf8260",
+      "questionSha256": "6e8fb424859b8e2492a526a3405d18976556bc2593b8738b00f7dab5379c8821",
+      "references": [
+        "vitamins",
+        "handbook"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q15",
+      "qNumber": 15,
+      "pdfPage": 9,
+      "question": "血清コリンエステラーゼ活性が低下するのはどれか。",
+      "choices": {
+        "ア": "一酸化炭素中毒",
+        "イ": "水銀中毒",
+        "ウ": "青酸〈シアン〉中毒",
+        "エ": "鉛中毒",
+        "オ": "有機リン中毒"
+      },
+      "officialAnswer": "5",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "f895ba4b0097a4a0232caf83bc9b25a411e65d858d22647cf8c538c30f581204",
+      "questionSha256": "83fb2563414852ddb0cc8b1a0ff077a38cffca63e4e26c6da8093e7dba64f3ee",
+      "references": [
+        "poison"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q16",
+      "qNumber": 16,
+      "pdfPage": 10,
+      "question": "僧帽弁が閉じてから大動脈弁が開くまでの心時相はどれか。",
+      "choices": {
+        "ア": "急速流入期",
+        "イ": "駆出期",
+        "ウ": "心房収縮期",
+        "エ": "等容弛緩期",
+        "オ": "等容収縮期"
+      },
+      "officialAnswer": "5",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "3b3db63dd6d34e29b1395c8f7fb2f5d9ddc52a4286679e734c79495ec4b098e4",
+      "questionSha256": "a99d3ce13865249f4ded21c9e9b2940f881860b35c15a06add62d6e3e43d36e5",
+      "references": [
+        "cardiac"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q19",
+      "qNumber": 19,
+      "pdfPage": 11,
+      "question": "残気量を求めるために行う検査はどれか。2 つ選べ。",
+      "choices": {
+        "ア": "肺活量測定",
+        "イ": "最大換気量測定",
+        "ウ": "努力肺活量測定",
+        "エ": "機能的残気量測定",
+        "オ": "クロージングボリューム測定"
+      },
+      "officialAnswer": "14",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "cc34889ae465bd60f3b4a73f99b475acb5c92eb42a2b574f9a6a3b44619d5cbb",
+      "questionSha256": "160b3e2319c86ebfe76da753bb5dd58ac613617153eec4cd50178ca483644fbf",
+      "references": [
+        "lung"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q21",
+      "qNumber": 21,
+      "pdfPage": 12,
+      "question": "正常な神経細胞の静止膜電位［mV］はどれか。",
+      "choices": {
+        "ア": "＋30",
+        "イ": "0",
+        "ウ": "－50",
+        "エ": "－70",
+        "オ": "－100"
+      },
+      "officialAnswer": "4",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": false,
+        "エ": false,
+        "オ": false
+      },
+      "sourceTextSha256": "99754ac2708da6f5ca5d902de50ac6742366859c7da3951e6e9ed2036e59e3fa",
+      "questionSha256": "9e9535a1e9086054d0c260c2efb4b975fe16f4fe9c5f58c8db6105618988caf7",
+      "references": [
+        "potential"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q23",
+      "qNumber": 23,
+      "pdfPage": 13,
+      "question": "健常成人の脳波でみられるα 波で正しいのはどれか。",
+      "choices": {
+        "ア": "開眼で抑制される。",
+        "イ": "振幅は一定である。",
+        "ウ": "前頭部に優位である。",
+        "エ": "精神的負荷で増強する。",
+        "オ": "加齢で周波数が高くなる。"
+      },
+      "officialAnswer": "1",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "d3b94ba07fa35cd668c750f51f6eee2375dcc3690d07c4b9fef3d3defa2d9a75",
+      "questionSha256": "3bc1443caf5b31f148b39b03f43a4ae956001d92c15f0e6243aeb53ccea248e8",
+      "references": [
+        "eeg"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q24",
+      "qNumber": 24,
+      "pdfPage": 13,
+      "question": "超音波検査で誤っているのはどれか。",
+      "choices": {
+        "ア": "周波数1 ～20 MHz の超音波が用いられる。",
+        "イ": "距離分解能は超音波の周波数が高いほどよい。",
+        "ウ": "連続波ドプラ法は高速血流の測定に適している。",
+        "エ": "深部の描出は超音波の周波数が高いほど有利になる。",
+        "オ": "方位分解能は電子フォーカスによるビーム集束で向上する。"
+      },
+      "officialAnswer": "4",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": false,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "f0e353c9d8f021c8a9ec7e3a3a574e4f85937af514b220049e85500f38035f80",
+      "questionSha256": "8a62c2b79c5145f8de41703f91c06917dfa25d9a77e36e182bc01c5eb9795a9a",
+      "references": [
+        "ultrasound",
+        "doppler"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q28",
+      "qNumber": 28,
+      "pdfPage": 15,
+      "question": "聴覚伝導路でないのはどれか。",
+      "choices": {
+        "ア": "蝸牛神経核",
+        "イ": "上オリーブ核",
+        "ウ": "外側毛帯",
+        "エ": "下　丘",
+        "オ": "外側膝状体"
+      },
+      "officialAnswer": "5",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "053765d4c860c252ecd742de25e5fdbf2978f817e0a5de5a3dc4fd92c1484267",
+      "questionSha256": "c92fdcad9f6c049498a7e11582b63004dbd4be5dd6b7a7261bc5fb7cd527f21d",
+      "references": [
+        "hearing"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q29",
+      "qNumber": 29,
+      "pdfPage": 15,
+      "question": "水、10 mg/dL 標準液、血清の終点分析法における反応終了後の吸光度を測定したところそれぞれ0.02、0.30、0.16 であった。血清中に含まれる物質の濃度［mg/dL］で正しいのはどれか。",
+      "choices": {
+        "ア": "5.0",
+        "イ": "5.2",
+        "ウ": "5.4",
+        "エ": "5.6",
+        "オ": "5.8"
+      },
+      "officialAnswer": "1",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "0a929081300b7be4993ebfa69c85021c5d3dfe3e4b9ae2d9e18c670c22d6d63c",
+      "questionSha256": "a7f457f4a3251913a62a03e7d6d7c336121a02e5d96e571597f071361db81ed8",
+      "references": [
+        "beer"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q38",
+      "qNumber": 38,
+      "pdfPage": 18,
+      "question": "ペプチドホルモンはどれか。2 つ選べ。",
+      "choices": {
+        "ア": "アドレナリン",
+        "イ": "アルドステロン",
+        "ウ": "カルシトニン",
+        "エ": "サイロキシン",
+        "オ": "副甲状腺ホルモン〈PTH〉"
+      },
+      "officialAnswer": "35",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "d4236475813539c3461734373c98fcbdd150278337c06645705c87641ff6f7c7",
+      "questionSha256": "7ce1879d10682068867c832bb53fb83bc8080867bb23535bf24b64d796db067d",
+      "references": [
+        "hormones"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q39",
+      "qNumber": 39,
+      "pdfPage": 19,
+      "question": "260 nm が極大吸収波長であるのはどれか。",
+      "choices": {
+        "ア": "DNA",
+        "イ": "尿　酸",
+        "ウ": "ビリルビン",
+        "エ": "ヘモグロビン",
+        "オ": "芳香族アミノ酸"
+      },
+      "officialAnswer": "1",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "252c010f4f2555a4c6e627f77785cd963593695f88c5752771fdcdb6533795e9",
+      "questionSha256": "4263e6013d60b13abecd282ef39c6e6580fa5ef3157f429d3b3ef5ae8fa4cdd7",
+      "references": [
+        "dna"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q40",
+      "qNumber": 40,
+      "pdfPage": 19,
+      "question": "グルコースのみで構成される二糖類はどれか。",
+      "choices": {
+        "ア": "スクロース",
+        "イ": "マルトース",
+        "ウ": "ラクトース",
+        "エ": "ガラクトース",
+        "オ": "フルクトース"
+      },
+      "officialAnswer": "2",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "22114f4363fb75a25263a4760045cc11411cb0735de291b3b9c23f25213639ce",
+      "questionSha256": "ae06406db55cf809f16d76a183a3c16f6c891c2d20443505978b594068342551",
+      "references": [
+        "organic"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q41",
+      "qNumber": 41,
+      "pdfPage": 19,
+      "question": "解糖系の律速酵素はどれか。",
+      "choices": {
+        "ア": "エノラーゼ",
+        "イ": "アルドラーゼ",
+        "ウ": "イソメラーゼ",
+        "エ": "ヘキソキナーゼ",
+        "オ": "ホスホグリセリン酸キナーゼ"
+      },
+      "officialAnswer": "4",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "24b6a6b0e20a694d6af72271a34cf039a2e418b01df67f67cfe202604a2efc88",
+      "questionSha256": "c4646c159b751fb3987bde5a9ccc279dbff5d1c549045426d5c8f8f4ab204445",
+      "references": [
+        "glycolysis"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q42",
+      "qNumber": 42,
+      "pdfPage": 20,
+      "question": "構造蛋白質はどれか。",
+      "choices": {
+        "ア": "アルブミン",
+        "イ": "コラーゲン",
+        "ウ": "フィブリノゲン",
+        "エ": "セルロプラスミン",
+        "オ": "α1-リポプロテイン"
+      },
+      "officialAnswer": "2",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": false
+      },
+      "sourceTextSha256": "dc979a9ef0389875aab3b20e616dd986e6df8a9ea5e0fd7595bea4534cb918ac",
+      "questionSha256": "3709cb8f89486186c1911da5487b9b907d21f4b047e05f86a4b8d798ef7757da",
+      "references": [
+        "organic",
+        "handbook"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q43",
+      "qNumber": 43,
+      "pdfPage": 20,
+      "question": "半減期3 日の放射性同位元素の放射能が1/8 になるのはどれか。",
+      "choices": {
+        "ア": "6 日後",
+        "イ": "9 日後",
+        "ウ": "12 日後",
+        "エ": "24 日後",
+        "オ": "48 日後"
+      },
+      "officialAnswer": "2",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "9767a690b687352832f7f35c1c48a30311660e79295ff1fba006730c28a608b2",
+      "questionSha256": "8843dd824cc7fc1717991c36cd84c77347673ad3fcc0090550c9c5c352d7d6bd",
+      "references": [],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q44",
+      "qNumber": 44,
+      "pdfPage": 20,
+      "question": "血中カルシウムで正しいのはどれか。",
+      "choices": {
+        "ア": "約30％がイオン型で存在する。",
+        "イ": "基準範囲は3.6～4.4 mg/dL である。",
+        "ウ": "低アルブミン血症では偽高値を示す。",
+        "エ": "アルカローシスではイオン型が低下する。",
+        "オ": "副甲状腺ホルモン〈PTH〉の作用で低下する。"
+      },
+      "officialAnswer": "4",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": false,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "7bd735c718248e480c5bab3e605f39f244aaae316c7481737815c2e96cb1aea3",
+      "questionSha256": "55a48abde5728c35a78e7419d30ca353f8e48cb3e18feb09b64f0e3334db4240",
+      "references": [
+        "calcium",
+        "pth"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q45",
+      "qNumber": 45,
+      "pdfPage": 21,
+      "question": "組織の固定原理がメチレン架橋によるのはどれか。",
+      "choices": {
+        "ア": "酢　酸",
+        "イ": "アセトン",
+        "ウ": "エタノール",
+        "エ": "ピクリン酸",
+        "オ": "ホルマリン"
+      },
+      "officialAnswer": "5",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "988ace7a92341ebbf03175de01cb0cf114e7a518bce04f4c130b08ac66279645",
+      "questionSha256": "bea2bad1f99738844ffd829bb4684376de42904c1a0279f451168599a6733d7d",
+      "references": [
+        "fixative",
+        "fixative2"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q51",
+      "qNumber": 51,
+      "pdfPage": 23,
+      "question": "腎近位尿細管の刷子縁に一致する電子顕微鏡像はどれか。",
+      "choices": {
+        "ア": "線　毛",
+        "イ": "微絨毛",
+        "ウ": "ゴルジ装置",
+        "エ": "粗面小胞体",
+        "オ": "ミトコンドリア"
+      },
+      "officialAnswer": "2",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "7ef409c244fc04eaadc109ed89a918d8f125bf8e3f7fc1f684ddcc71552f23d2",
+      "questionSha256": "d6cdd6e2ca9e24573e0401b21e379467f16744727e104921c18c0ff991dac208",
+      "references": [
+        "organelles",
+        "kidney"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q52",
+      "qNumber": 52,
+      "pdfPage": 23,
+      "question": "神経組織で正しいのはどれか。",
+      "choices": {
+        "ア": "稀突起膠細胞をニューロンと呼ぶ。",
+        "イ": "小膠細胞は末梢神経系に存在する。",
+        "ウ": "星状膠細胞は末梢神経系に存在する。",
+        "エ": "樹状突起は受容した興奮を神経細胞体に伝える。",
+        "オ": "ランヴィエ〈Ranvier〉の絞輪はシナプス間隙に存在する。"
+      },
+      "officialAnswer": "4",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": false,
+        "ウ": false,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "aff92b6d514e1e2fe31cf03fa2dca5fdec25debd9ef6afcc9b5cb20d5d059cf2",
+      "questionSha256": "10be8d240436608665f4eded462e44b877728d5368339d39ee10f5ec21281c21",
+      "references": [
+        "neuron"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q54",
+      "qNumber": 54,
+      "pdfPage": 24,
+      "question": "細胞死で正しいのはどれか。",
+      "choices": {
+        "ア": "壊疽は可逆的である。",
+        "イ": "乾酪壊死は脳梗塞で起こる。",
+        "ウ": "融解壊死は心筋梗塞で起こる。",
+        "エ": "凝固壊死は脂質に富んだ臓器に多い。",
+        "オ": "アポトーシスは発生過程で生理的にみられる。"
+      },
+      "officialAnswer": "5",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "cbdfd4dffc68d4f89afcad66ef347aa85cdb7cfb554cf7ce2b5e665914494a34",
+      "questionSha256": "cda90a02248ffcb98f4bf0dd0243a061062640648a29d18ce87b678781a7b291",
+      "references": [
+        "death"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q56",
+      "qNumber": 56,
+      "pdfPage": 25,
+      "question": "化膿性炎で多数認められる細胞はどれか。",
+      "choices": {
+        "ア": "形質細胞",
+        "イ": "好酸球",
+        "ウ": "好中球",
+        "エ": "組織球",
+        "オ": "リンパ球"
+      },
+      "officialAnswer": "3",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "9f1c5c8a89d1435955229dd11a3baf09b5bb58c32f6521ebe0f35a4962ae0f57",
+      "questionSha256": "a8b8b4b8fde4c88dd29c7e020d09d4f2b17d841fa1887cbb1075864ea0af139b",
+      "references": [
+        "leukocytes"
+      ],
+      "visualPageChecked": true
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q57",
+      "qNumber": 57,
+      "pdfPage": 25,
+      "question": "内分泌機能を有するのはどれか。",
+      "choices": {
+        "ア": "肺",
+        "イ": "子　宮",
+        "ウ": "膵　臓",
+        "エ": "脾　臓",
+        "オ": "膀　胱"
+      },
+      "officialAnswer": "3",
+      "twoExtractorAgreement": {
+        "question": true,
+        "ア": true,
+        "イ": true,
+        "ウ": true,
+        "エ": true,
+        "オ": true
+      },
+      "sourceTextSha256": "ba07e6c662e9a0611cc72c24b234b31cc2204c1be66a39c2db4bfb707797a48f",
+      "questionSha256": "c04664bfe0331751d35c86b5885874c9622a8c482b410df4bc3f18ea08071e40",
+      "references": [
+        "pancreas",
+        "handbook"
+      ],
+      "visualPageChecked": true
+    }
+  ],
+  "notes": [
+    "公式問題と公式正答を保持。問11のナトウム表記はそのまま残し解説に注記。",
+    "独立抽出の差が残る項目は原本画像で照合し、元の添字・句読点・単位を保持。",
+    "組合せ問題の水平線を画面では―に置換。原文欄は抽出した各語を保持。"
+  ]
+}

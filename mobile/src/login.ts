@@ -6,7 +6,7 @@ const PENDING = "kakomon:auth-pkce:v1";
 // website itself, so the session cookie lands in the WebView's own cookie jar.
 const RETURNED = "kakomon:auth-return:v1";
 const b64 = (bytes: Uint8Array) => btoa(String.fromCharCode(...bytes)).replace(/\+/g,"-").replace(/\//g,"_").replace(/=+$/,"");
-export async function beginLogin(origin: string, returnTo = location.pathname+location.search+location.hash, reauthenticate = false) {
+export async function beginLogin(origin: string, returnTo = location.pathname+location.search+location.hash, reauthenticate: boolean | "switch-account" = false) {
   const verifier = b64(crypto.getRandomValues(new Uint8Array(32))), state = b64(crypto.getRandomValues(new Uint8Array(32)));
   const challenge = b64(new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(verifier))));
   if(!returnTo.startsWith("/")||returnTo.startsWith("//")||returnTo.startsWith("/\\"))returnTo="/";
@@ -14,7 +14,8 @@ export async function beginLogin(origin: string, returnTo = location.pathname+lo
   // Open the sign-in sheet at once; saving the verifier runs alongside (the
   // return needs the user to finish signing in, long after this write).
   const saving = Preferences.set({ key: PENDING, value: JSON.stringify({ verifier, state, returnTo, createdAt: Date.now() }) });
-  await Promise.all([saving, Browser.open({ url: `${origin}/auth/signin?${reauthenticate ? "reauth=1&" : ""}callbackUrl=${encodeURIComponent(callback)}` })]);
+  const mode = reauthenticate === "switch-account" ? "switchAccount=1&" : reauthenticate ? "reauth=1&" : "";
+  await Promise.all([saving, Browser.open({ url: `${origin}/auth/signin?${mode}callbackUrl=${encodeURIComponent(callback)}` })]);
 }
 /** The WebView must see the new session before we leave the page, or the next page loads signed out. */
 async function waitForSession(origin: string) {

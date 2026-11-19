@@ -3,9 +3,9 @@ import { generateKeyPairSync, sign } from "node:crypto";
 import { afterEach, expect, it, vi } from "vitest";
 import { NextRequest } from "next/server";
 
-const m = vi.hoisted(() => ({ create: vi.fn(), link: vi.fn(), find: vi.fn() }));
+const m = vi.hoisted(() => ({ create: vi.fn(), link: vi.fn(), find: vi.fn(), verified: vi.fn(async()=>({count:1})) }));
 vi.mock("@/lib/db/prisma", () => ({ prisma: {
-  user: { create: m.create, findUnique: m.find },
+  user: { create: m.create, findUnique: m.find, updateMany: m.verified },
   account: { findUnique: vi.fn(async () => null), create: m.link },
 } }));
 
@@ -70,11 +70,13 @@ it.each([["/account", "success"], [nativeDestination, "success"], ["/account", "
       expect(completed.headers.get("location")).toContain("error=");
       expect(completed.headers.getSetCookie().some(c => c.includes("authjs.session-token="))).toBe(false);
       expect(m.create).not.toHaveBeenCalled(); expect(m.link).not.toHaveBeenCalled();
+      expect(m.verified).not.toHaveBeenCalled();
       return;
     }
     expect(completed.headers.get("location")).toBe(`https://auth.example.invalid${destination}`);
     expect(m.create).toHaveBeenCalledWith(expect.objectContaining({ data: expect.objectContaining({ email: profile.email }) }));
     expect(m.link).toHaveBeenCalledWith(expect.objectContaining({ data: expect.objectContaining({ provider: "apple", refresh_token: "synthetic-refresh" }) }));
+    expect(m.verified).toHaveBeenCalledWith({where:{id:profile.id,email:profile.email},data:{emailVerified:expect.any(Date)}});
     const sessionCookies = completed.headers.getSetCookie().filter(c => c.includes("authjs.session-token=")).map(c => c.split(";")[0]).join("; ");
     expect(sessionCookies).not.toBe("");
     const session = await handlers.GET(new NextRequest("https://auth.example.invalid/api/auth/session", { headers: { cookie: sessionCookies } }));

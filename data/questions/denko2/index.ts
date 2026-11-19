@@ -1,11 +1,44 @@
+import official2017 from "./official-2017-second-gakka.json";
+import official2016SecondGakka from "./official-2016-second-gakka.json";
+
 import type { ChoiceKey, Question } from "@/lib/questions/types";
+
+
 import { DENKO2_REVIEWED_QUESTIONS } from "./reviewed";
+
+
 import { createDenko22026Questions } from "./latest";
 
+
+import source2026Second from "./2026-second.json";
+
+
+import official2018Second from "./official-2018-second-gakka.json";
+
+import first2017 from "./plan7-065.json";
+
+
+import official2020SecondAm from "./official-2020-second-am.json";
+
+import { DENKO2_2020_SECOND_PM } from "./2020-second-pm";
+
+
+import official2018FirstGakka from "./2018-first-gakka.json";
+
+import official2016FirstGakka from "./official-2016-first-gakka.json";
+
 const sourcePdfUrl = "https://www.shiken.or.jp/construction/upload/20260524_co_second_q01.pdf";
+
+
 const sourceAnswerUrl = "https://www.shiken.or.jp/construction/upload/20260524_co_second_a01.pdf";
+
+
 const governmentRule = "https://www.meti.go.jp/policy/safety_security/industrial_safety/law/files/dengikaishaku.pdf";
+
+
 const image = (name: string) => `/images/denko2/2026-first/${name}.png`;
+
+
 const officialToSite: Record<string, ChoiceKey> = { イ: "ア", ロ: "イ", ハ: "ウ", ニ: "エ" };
 
 function question(
@@ -176,4 +209,11 @@ export const DENKO2_2026_PILOT: Question[] = [
 
 // Complete source-checked sitting, reusing the original ten-question pilot.
 export const DENKO2_2026_QUESTIONS: Question[] = createDenko22026Questions(DENKO2_2026_PILOT);
-export const DENKO2_QUESTIONS: Question[] = [...DENKO2_REVIEWED_QUESTIONS, ...DENKO2_2026_QUESTIONS];
+
+
+export const DENKO2_2026_SECOND_QUESTIONS = source2026Second as Question[];
+
+
+export const DENKO2_QUESTIONS: Question[] = [...DENKO2_REVIEWED_QUESTIONS, ...DENKO2_2026_QUESTIONS, ...DENKO2_2026_SECOND_QUESTIONS, ...(official2018Second as Question[]), ...(first2017 as Question[]), ...(official2020SecondAm as Question[]), ...DENKO2_2020_SECOND_PM, ...(official2016FirstGakka as Question[]), ...(official2017 as Question[]), ...(official2016SecondGakka as Question[])];
+
+export const DENKO2_PRACTICE_QUESTIONS: Question[] = [...DENKO2_QUESTIONS, ...(official2018FirstGakka as Question[])];

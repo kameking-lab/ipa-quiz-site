@@ -36,14 +36,16 @@ function questionUrl(entry: BookmarkEntry): string {
 
 export default function BookmarksPage() {
   const [bookmarks, setBookmarks] = React.useState<BookmarkEntry[]>([]);
-  const [activeTag, setActiveTag] = React.useState<string | null>(null);
+  const [tagFilter, setActiveTag] = React.useState<string | null>(null);
   const importRef = React.useRef<HTMLInputElement>(null);
+  const [importStatus, setImportStatus] = React.useState<string | null>(null);
 
   React.useEffect(() => {
     setBookmarks(getAllBookmarks());
   }, []);
 
   const allTags = [...new Set(bookmarks.flatMap((b) => b.tags))].sort();
+  const activeTag = tagFilter && allTags.includes(tagFilter) ? tagFilter : null;
   const filtered = activeTag
     ? bookmarks.filter((b) => b.tags.includes(activeTag))
     : bookmarks;
@@ -62,25 +64,30 @@ export default function BookmarksPage() {
   function handleImport(e: React.ChangeEvent<HTMLInputElement>) {
     const file = e.target.files?.[0];
     if (!file) return;
+    setImportStatus(null);
     const reader = new FileReader();
     reader.onload = (ev) => {
       const ok = importBookmarks(ev.target?.result as string);
       if (ok) {
         setBookmarks(getAllBookmarks());
+        setImportStatus("ブックマークを読み込みました。");
       } else {
-        alert("ファイルの読み込みに失敗しました。正しいJSONファイルか確認してください。");
+        setImportStatus("読み込めませんでした。ブックマークのJSONファイルを選んでください。");
       }
     };
+    reader.onerror = () => setImportStatus("ファイルを読み込めませんでした。");
     reader.readAsText(file);
     e.target.value = "";
   }
 
   function handleTagsChange(questionId: string, tags: string[]) {
+    setImportStatus(null);
     updateBookmarkTags(questionId, tags);
     setBookmarks(getAllBookmarks());
   }
 
   function handleRemoveBookmark(entry: BookmarkEntry) {
+    setImportStatus(null);
     // Build a minimal Question-shaped object to satisfy toggleBookmark
     const stub = {
       id: entry.questionId,
@@ -105,14 +112,15 @@ export default function BookmarksPage() {
   return (
     <main className="container mx-auto max-w-2xl px-4 py-8">
       <Breadcrumbs
+          className="[&_a]:inline-flex [&_a]:min-h-11 [&_a]:min-w-11 [&_a]:items-center"
         items={[
           { name: "ホーム", href: "/" },
           { name: "ブックマーク", href: "/bookmarks" },
         ]}
       />
       {/* Header */}
-      <div className="mb-6 flex items-center justify-between">
-        <h1 className="flex items-center gap-2 text-xl font-bold text-zinc-900 dark:text-zinc-50">
+      <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+        <h1 className="flex items-center gap-2 text-2xl font-bold leading-snug text-zinc-900 dark:text-zinc-50">
           <Bookmark
             aria-hidden="true"
             className="h-5 w-5 text-blue-600 dark:text-blue-400"
@@ -123,19 +131,19 @@ export default function BookmarksPage() {
             ({bookmarks.length}件)
           </span>
         </h1>
-        <div className="flex items-center gap-2">
+        <div className="flex flex-wrap items-center gap-2">
           <button
             type="button"
             onClick={handleExport}
             disabled={bookmarks.length === 0}
-            className="inline-flex items-center gap-1.5 rounded-lg border border-zinc-300 bg-white px-3 py-1.5 text-xs font-medium text-zinc-700 transition hover:bg-zinc-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
+            className="inline-flex min-h-11 min-w-11 items-center gap-1.5 rounded-lg border border-zinc-300 bg-white px-3 py-1.5 text-xs font-medium text-zinc-700 transition hover:bg-zinc-50 disabled:cursor-not-allowed disabled:opacity-40 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
             title="JSONでエクスポート"
           >
             <Download className="h-3.5 w-3.5" />
             エクスポート
           </button>
           <label
-            className="inline-flex cursor-pointer items-center gap-1.5 rounded-lg border border-zinc-300 bg-white px-3 py-1.5 text-xs font-medium text-zinc-700 transition hover:bg-zinc-50 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
+            className="inline-flex min-h-11 min-w-11 cursor-pointer items-center gap-1.5 rounded-lg focus-within:outline-2 focus-within:outline-offset-2 focus-within:outline-primary border border-zinc-300 bg-white px-3 py-1.5 text-xs font-medium text-zinc-700 transition hover:bg-zinc-50 dark:border-zinc-600 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700"
             title="JSONからインポート"
           >
             <Upload className="h-3.5 w-3.5" />
@@ -152,7 +160,7 @@ export default function BookmarksPage() {
             <button
               type="button"
               onClick={handleClearAll}
-              className="inline-flex items-center gap-1.5 rounded-lg border border-red-200 bg-white px-3 py-1.5 text-xs font-medium text-red-600 transition hover:bg-red-50 dark:border-red-800 dark:bg-zinc-800 dark:text-red-400 dark:hover:bg-red-950/30"
+              className="inline-flex min-h-11 min-w-11 items-center gap-1.5 rounded-lg border border-red-200 bg-white px-3 py-1.5 text-xs font-medium text-red-600 transition hover:bg-red-50 dark:border-red-800 dark:bg-zinc-800 dark:text-red-400 dark:hover:bg-red-950/30"
               title="全て削除"
             >
               <Trash2 className="h-3.5 w-3.5" />
@@ -162,14 +170,17 @@ export default function BookmarksPage() {
         </div>
       </div>
 
+      <p role="status" aria-live="polite" className="mb-4 text-sm text-muted-foreground">{importStatus}</p>
+
       {/* Tag filter chips */}
       {allTags.length > 0 && (
         <div className="mb-4 flex flex-wrap gap-2">
           <button
             type="button"
+            aria-pressed={!activeTag}
             onClick={() => setActiveTag(null)}
             className={cn(
-              "rounded-full px-3 py-1 text-xs font-medium transition",
+              "inline-flex min-h-11 items-center rounded-xl px-3 py-2 text-sm font-medium transition",
               !activeTag
                 ? "bg-blue-600 text-white"
                 : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700",
@@ -183,9 +194,10 @@ export default function BookmarksPage() {
               <button
                 key={tag}
                 type="button"
+                aria-pressed={activeTag === tag}
                 onClick={() => setActiveTag(activeTag === tag ? null : tag)}
                 className={cn(
-                  "rounded-full px-3 py-1 text-xs font-medium transition",
+                  "inline-flex min-h-11 items-center rounded-xl px-3 py-2 text-sm font-medium transition",
                   activeTag === tag
                     ? "bg-blue-600 text-white"
                     : "bg-zinc-100 text-zinc-600 hover:bg-zinc-200 dark:bg-zinc-800 dark:text-zinc-300 dark:hover:bg-zinc-700",
@@ -209,7 +221,7 @@ export default function BookmarksPage() {
           </p>
           <Link
             href="/ipa"
-            className="mt-2 rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-700"
+            className="mt-2 inline-flex min-h-11 items-center rounded-lg bg-blue-600 px-4 py-2 text-sm font-medium text-white transition hover:bg-blue-700"
           >
             問題を解く
           </Link>
@@ -251,7 +263,7 @@ function BookmarkCard({ entry, onTagsChange, onRemove }: BookmarkCardProps) {
   });
 
   return (
-    <div className="rounded-2xl border border-zinc-200 bg-white p-4 dark:border-zinc-700 dark:bg-zinc-900">
+    <div className="rounded-2xl border border-zinc-200 bg-white p-4 sm:p-5 dark:border-zinc-700 dark:bg-zinc-900">
       <div className="mb-2 flex items-start justify-between gap-2">
         <div className="flex flex-wrap items-center gap-1.5 text-xs text-zinc-500 dark:text-zinc-400">
           <span className="rounded-full bg-zinc-100 px-2 py-0.5 font-medium dark:bg-zinc-800">
@@ -264,12 +276,12 @@ function BookmarkCard({ entry, onTagsChange, onRemove }: BookmarkCardProps) {
               {entry.category}
             </span>
           )}
-          <span className="ml-auto text-[10px] text-zinc-400">{date}</span>
+          <span className="ml-auto text-xs text-zinc-500 dark:text-zinc-400">{date}</span>
         </div>
         <button
           type="button"
           onClick={onRemove}
-          className="shrink-0 rounded-full p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
+          className="shrink-0 inline-flex min-h-11 min-w-11 items-center justify-center rounded-full p-1 text-zinc-400 hover:bg-zinc-100 hover:text-zinc-600 dark:hover:bg-zinc-800 dark:hover:text-zinc-300"
           aria-label="ブックマークから外す"
         >
           <X className="h-3.5 w-3.5" />

@@ -126,7 +126,7 @@ describe("コスト計上はレスポンス完了前に永続化を終える", (
   it("/api/essay-grade — レスポンス返却時点で recordAiCost が解決済み", async () => {
     const pending = installPendingRecord();
     stubStream("これはJSONではないので評価不能だが、呼出し使用量は計上する。");
-    const { POST } = await import("@/app/api/essay-grade/route");
+    const { POST } = await import("@/lib/essay/legacy-grade");
 
     const res = await POST(
       new Request("http://localhost/api/essay-grade", {
@@ -200,7 +200,7 @@ describe("ソースレベルの再発防止", () => {
     const { join } = await import("node:path");
     const ROUTES = [
       "app/api/scoring/route.ts",
-      "app/api/essay-grade/route.ts",
+      "lib/essay/legacy-grade.ts",
       "app/api/copilot/route.ts",
     ];
     for (const rel of ROUTES) {

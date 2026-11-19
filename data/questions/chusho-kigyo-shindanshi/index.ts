@@ -1,4 +1,6 @@
 import type { Question } from "@/lib/questions/types";
+import info2024 from "./2024-keiei-joho.json";
+import finance2024 from "./2024-zaimu.json";
 import { CHUSHO_2026_A_QUESTIONS } from "./2026-keizai";
 import { CHUSHO_2026_B_QUESTIONS } from "./2026-zaimu";
 import { CHUSHO_2026_C_QUESTIONS } from "./2026-kigyo";
@@ -15,6 +17,8 @@ import { CHUSHO_2025_F_QUESTIONS } from "./2025-keiei-joho";
 import { CHUSHO_2025_G_QUESTIONS } from "./2025-chusho-seisaku";
 
 export const CHUSHO_KIGYO_SHINDANSHI_QUESTIONS: Question[] = [
+  ...(info2024 as Question[]),
+  ...(finance2024 as Question[]),
   ...CHUSHO_2026_A_QUESTIONS,
   ...CHUSHO_2026_B_QUESTIONS,
   ...CHUSHO_2026_C_QUESTIONS,

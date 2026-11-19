@@ -1,0 +1,831 @@
+{
+  "exam": "shino-kunrenshi",
+  "year": 2026,
+  "storedYear": 2025,
+  "edition": 56,
+  "session": "pm",
+  "officialIndexUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp260424-10.html",
+  "originalQuestionCount": 75,
+  "loadedScoredQuestionCount": 75,
+  "retainedExistingRecords": 55,
+  "importedRecords": 20,
+  "newlyAuthoredRecords": 0,
+  "sourceFiles": [
+    {
+      "kind": "questions",
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-10b_01.pdf",
+      "sha256": "1fdda348eba0c9f34799c820cdd2a4dba14654a9d94e05bad5ef08fc1f351975",
+      "pages": 36
+    },
+    {
+      "kind": "answers",
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-10seitou.pdf",
+      "sha256": "2b6b4cc8a51cfd601d1ef4897c61c3947233ab94505f029922b94ec25d8b2583",
+      "pages": 1
+    },
+    {
+      "kind": "figures",
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-10b_02.pdf",
+      "sha256": "d254ca5de7c470deac30a58aba6679a0f312cb0c1999ca4100007be630172bb8",
+      "pages": 32
+    }
+  ],
+  "branchSources": [
+    {
+      "commit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "path": "data/questions/shino-kunrenshi/reviewed-18-pm-20261013.json",
+      "sha256": "b404f1ba931ce7620418801b266186d01c6787fedb74b3ea1bcc7c3e0d16d77a",
+      "selectedQuestionNumbers": [
+        10,
+        13,
+        24,
+        26,
+        29,
+        66,
+        67,
+        68,
+        70,
+        72,
+        74,
+        75
+      ]
+    },
+    {
+      "commit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "path": "data/questions/shino-kunrenshi/reviewed-33-20261013.json",
+      "sha256": "8558b59e5cd69bf75196c6fc2a266c4aac83083bf9272948fde62b3c9a9e7c30",
+      "selectedQuestionNumbers": [
+        61,
+        63,
+        64
+      ]
+    },
+    {
+      "commit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "path": "data/questions/shino-kunrenshi/reviewed-5-20261013.json",
+      "sha256": "855b9061cb572753bca4ecee5f26a21b9774301ff3c6e38591b05d961fe1f385",
+      "selectedQuestionNumbers": [
+        47,
+        50,
+        71
+      ]
+    },
+    {
+      "commit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "path": "data/questions/shino-kunrenshi/reviewed-remaining-6-20261014.json",
+      "sha256": "d57bf39287ee8d397159f69c3652525daeeb1c153c33d741ff77c145fb94d9b4",
+      "selectedQuestionNumbers": [
+        58,
+        69
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "url": "/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q10-figure-1.png",
+      "sourceCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "sourcePath": "public/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q10-figure-1.png",
+      "sha256": "0fe45df47cf3c3a1ff86f79954b1625531ced48a980d873103a36cf95f592896",
+      "width": 674,
+      "height": 888
+    },
+    {
+      "url": "/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q13-figure-1.png",
+      "sourceCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "sourcePath": "public/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q13-figure-1.png",
+      "sha256": "b12428c796ef2fe39302131419875cd97fe87625f42da27400c148edc8629741",
+      "width": 674,
+      "height": 888
+    },
+    {
+      "url": "/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q24-figure-1.png",
+      "sourceCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "sourcePath": "public/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q24-figure-1.png",
+      "sha256": "3da07cbf9b94a55860e55b3b10630cf5f0f222020af6c97cc49a477c5df35ca0",
+      "width": 674,
+      "height": 888
+    },
+    {
+      "url": "/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q26-figure-1.png",
+      "sourceCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "sourcePath": "public/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q26-figure-1.png",
+      "sha256": "b10b72d23dcdd54c440d17812c166d2bd9de322ce21df04778ead8869a4168e3",
+      "width": 674,
+      "height": 888
+    },
+    {
+      "url": "/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q29-figure-1.png",
+      "sourceCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "sourcePath": "public/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q29-figure-1.png",
+      "sha256": "b1348e2bdbf6f9ac42546307eb73bf77cb85f2fadaf1b0395108f79ac33c719e",
+      "width": 674,
+      "height": 888
+    },
+    {
+      "url": "/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q29-figure-2.png",
+      "sourceCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "sourcePath": "public/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q29-figure-2.png",
+      "sha256": "324e740c0551216ba4210b6d30758b6d022cd46999708447032e1b78a0fd0f76",
+      "width": 674,
+      "height": 888
+    },
+    {
+      "url": "/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q66-figure-1.png",
+      "sourceCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "sourcePath": "public/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q66-figure-1.png",
+      "sha256": "b70a0cc67390761b63dc39c71a28c5e6336eabdbd3b52ebd0f7a08f7f752744c",
+      "width": 674,
+      "height": 888
+    },
+    {
+      "url": "/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q67-figure-1.png",
+      "sourceCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "sourcePath": "public/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q67-figure-1.png",
+      "sha256": "a2c420d282b08921cd68bb6be7317521f1b4a1fcd3e3b033f5e2729fba68adc2",
+      "width": 674,
+      "height": 888
+    },
+    {
+      "url": "/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q68-figure-1.png",
+      "sourceCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "sourcePath": "public/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q68-figure-1.png",
+      "sha256": "305fdcd39b974ef0c89d241fd7b0e2b05f018195c5ead00bc26fc4cebc4aceb0",
+      "width": 674,
+      "height": 888
+    },
+    {
+      "url": "/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q69-figure-1.png",
+      "sourceCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "sourcePath": "public/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q69-figure-1.png",
+      "sha256": "5940742a34c5b00829becc719175a1e1dc8a86055e613274ab83a1cf090b9e85",
+      "width": 1850,
+      "height": 1404
+    },
+    {
+      "url": "/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q69-figure-2.png",
+      "sourceCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "sourcePath": "public/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q69-figure-2.png",
+      "sha256": "327df1bedc22de5fb9654994ec5c4212768b01d1251a9b419119c312f55764b0",
+      "width": 1850,
+      "height": 1404
+    },
+    {
+      "url": "/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q69-original-glyph.png",
+      "sourceCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "sourcePath": "public/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q69-original-glyph.png",
+      "sha256": "5ccb1ce169e468ad86f29981297bd88b159115a775929ac84556aff9f1259792",
+      "width": 1397,
+      "height": 1921
+    },
+    {
+      "url": "/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q70-figure-1.png",
+      "sourceCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "sourcePath": "public/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q70-figure-1.png",
+      "sha256": "ff9cf9d06243238ee3cad1bbe3500d579e608b37d70f3b150b2fcb2762936101",
+      "width": 674,
+      "height": 888
+    },
+    {
+      "url": "/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q72-figure-1.png",
+      "sourceCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "sourcePath": "public/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q72-figure-1.png",
+      "sha256": "f6424595117410d8b655995b8aa63f385d0f816b126b74c4ea63c0a706acb664",
+      "width": 674,
+      "height": 888
+    },
+    {
+      "url": "/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q72-figure-2.png",
+      "sourceCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "sourcePath": "public/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q72-figure-2.png",
+      "sha256": "104a82d9352ea16b63fc68762c25e59130425dfe30a39e56358f2023a48d83f6",
+      "width": 674,
+      "height": 888
+    },
+    {
+      "url": "/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q74-figure-1.png",
+      "sourceCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "sourcePath": "public/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q74-figure-1.png",
+      "sha256": "5add2f970a44aa723bcffe1d1f82795d104b99d81fdc41dfe17af2e053381d21",
+      "width": 674,
+      "height": 888
+    },
+    {
+      "url": "/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q74-figure-2.png",
+      "sourceCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "sourcePath": "public/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q74-figure-2.png",
+      "sha256": "9fa1ce953c87436833e2c37b060195e67ce30d2177f5e51f69d78ee78f32efb8",
+      "width": 674,
+      "height": 888
+    },
+    {
+      "url": "/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q75-figure-1.png",
+      "sourceCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "sourcePath": "public/images/shino-kunrenshi/2025/annual/shino-kunrenshi-2025-annual-pm-q75-figure-1.png",
+      "sha256": "8940e6b46d7338131067598a57e6527934220ac19d4c87d97e88707edcf0be3c",
+      "width": 674,
+      "height": 888
+    }
+  ],
+  "receipts": [
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q1",
+      "qNumber": 1,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q2",
+      "qNumber": 2,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q3",
+      "qNumber": 3,
+      "officialAnswerCells": [
+        "5"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q4",
+      "qNumber": 4,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q5",
+      "qNumber": 5,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q6",
+      "qNumber": 6,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q7",
+      "qNumber": 7,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q8",
+      "qNumber": 8,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q9",
+      "qNumber": 9,
+      "officialAnswerCells": [
+        "1"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q10",
+      "qNumber": 10,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "imported"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q11",
+      "qNumber": 11,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q12",
+      "qNumber": 12,
+      "officialAnswerCells": [
+        "5"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q13",
+      "qNumber": 13,
+      "officialAnswerCells": [
+        "1"
+      ],
+      "status": "imported"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q14",
+      "qNumber": 14,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q15",
+      "qNumber": 15,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q16",
+      "qNumber": 16,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q17",
+      "qNumber": 17,
+      "officialAnswerCells": [
+        "5"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q18",
+      "qNumber": 18,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q19",
+      "qNumber": 19,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q20",
+      "qNumber": 20,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q21",
+      "qNumber": 21,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q22",
+      "qNumber": 22,
+      "officialAnswerCells": [
+        "5"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q23",
+      "qNumber": 23,
+      "officialAnswerCells": [
+        "5"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q24",
+      "qNumber": 24,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "status": "imported"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q25",
+      "qNumber": 25,
+      "officialAnswerCells": [
+        "14"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q26",
+      "qNumber": 26,
+      "officialAnswerCells": [
+        "1"
+      ],
+      "status": "imported"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q27",
+      "qNumber": 27,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q28",
+      "qNumber": 28,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q29",
+      "qNumber": 29,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "imported"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q30",
+      "qNumber": 30,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q31",
+      "qNumber": 31,
+      "officialAnswerCells": [
+        "5"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q32",
+      "qNumber": 32,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q33",
+      "qNumber": 33,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q34",
+      "qNumber": 34,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q35",
+      "qNumber": 35,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q36",
+      "qNumber": 36,
+      "officialAnswerCells": [
+        "1"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q37",
+      "qNumber": 37,
+      "officialAnswerCells": [
+        "5"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q38",
+      "qNumber": 38,
+      "officialAnswerCells": [
+        "14"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q39",
+      "qNumber": 39,
+      "officialAnswerCells": [
+        "5"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q40",
+      "qNumber": 40,
+      "officialAnswerCells": [
+        "45"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q41",
+      "qNumber": 41,
+      "officialAnswerCells": [
+        "25"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q42",
+      "qNumber": 42,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q43",
+      "qNumber": 43,
+      "officialAnswerCells": [
+        "5"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q44",
+      "qNumber": 44,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q45",
+      "qNumber": 45,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q46",
+      "qNumber": 46,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q47",
+      "qNumber": 47,
+      "officialAnswerCells": [
+        "5"
+      ],
+      "status": "imported"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q48",
+      "qNumber": 48,
+      "officialAnswerCells": [
+        "5"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q49",
+      "qNumber": 49,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q50",
+      "qNumber": 50,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "status": "imported"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q51",
+      "qNumber": 51,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q52",
+      "qNumber": 52,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q53",
+      "qNumber": 53,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q54",
+      "qNumber": 54,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q55",
+      "qNumber": 55,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q56",
+      "qNumber": 56,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q57",
+      "qNumber": 57,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q58",
+      "qNumber": 58,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "imported"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q59",
+      "qNumber": 59,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q60",
+      "qNumber": 60,
+      "officialAnswerCells": [
+        "14"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q61",
+      "qNumber": 61,
+      "officialAnswerCells": [
+        "2"
+      ],
+      "status": "imported"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q62",
+      "qNumber": 62,
+      "officialAnswerCells": [
+        "23"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q63",
+      "qNumber": 63,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "imported"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q64",
+      "qNumber": 64,
+      "officialAnswerCells": [
+        "5"
+      ],
+      "status": "imported"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q65",
+      "qNumber": 65,
+      "officialAnswerCells": [
+        "1"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q66",
+      "qNumber": 66,
+      "officialAnswerCells": [
+        "1"
+      ],
+      "status": "imported"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q67",
+      "qNumber": 67,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "imported"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q68",
+      "qNumber": 68,
+      "officialAnswerCells": [
+        "5"
+      ],
+      "status": "imported"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q69",
+      "qNumber": 69,
+      "officialAnswerCells": [
+        "3"
+      ],
+      "status": "imported"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q70",
+      "qNumber": 70,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "status": "imported"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q71",
+      "qNumber": 71,
+      "officialAnswerCells": [
+        "45"
+      ],
+      "status": "imported"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q72",
+      "qNumber": 72,
+      "officialAnswerCells": [
+        "24"
+      ],
+      "status": "imported"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q73",
+      "qNumber": 73,
+      "officialAnswerCells": [
+        "4"
+      ],
+      "status": "existing-retained"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q74",
+      "qNumber": 74,
+      "officialAnswerCells": [
+        "5"
+      ],
+      "status": "imported"
+    },
+    {
+      "id": "shino-kunrenshi-2025-annual-pm-q75",
+      "qNumber": 75,
+      "officialAnswerCells": [
+        "1"
+      ],
+      "status": "imported"
+    }
+  ]
+}

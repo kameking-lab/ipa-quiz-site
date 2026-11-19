@@ -47,7 +47,7 @@ export function ExamTopGuide({ exam }: { exam: ExamEntryCode }) {
         <ul className="mt-2 space-y-1">
           <li><Link href={`/blog/${entry.guide}`} className={guideLink}>{entry.guideLabel} →</Link></li>
           {ADDITIONAL_PAST_QUESTION_GUIDES[exam].map(guide => <li key={guide.slug}><Link href={`/blog/${guide.slug}`} className={guideLink}>{guide.label} →</Link></li>)}
-          {entry.aiEssay && <li><Link href="/essay" className={guideLink}>オリジナル論述教材でAI添削 →</Link></li>}
+          {entry.aiEssay && <li><Link href="/essay" className={guideLink}>論述の練習問題 →</Link></li>}
           <li><a href={EXAM_OFFICIAL_LINKS[exam].pastQuestions} target="_blank" rel="noopener noreferrer" className={guideLink}>IPA公式の過去問・解答例 →</a></li>
         </ul>
       </section>

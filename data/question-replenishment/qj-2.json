@@ -1,0 +1,95 @@
+{
+  "rows": [
+    {
+      "jobId": "PLAN5-142",
+      "index": 141,
+      "exam": "shinryo-hoshasengishi",
+      "officialYear": 2026,
+      "season": "annual",
+      "session": "am",
+      "status": "公式原図待ち（問15）・採点除外確認済み（問23）",
+      "questionCount": 0,
+      "importedCount": 0,
+      "newCount": 0,
+      "questionIds": [],
+      "officialUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_01.pdf",
+      "answerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06seitou.pdf",
+      "sourceFigureUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-06a_02.pdf#page=10",
+      "officialExclusionUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken06/dl/AM23.pdf",
+      "notes": "問15の正答は2。公式別冊No.6は省略と記載。問23の正答欄は空欄で、採点除外。既存の詳細な照合はqc-2の台帳を参照。"
+    },
+    {
+      "jobId": "PLAN5-346",
+      "index": 345,
+      "exam": "mankan",
+      "officialYear": 2021,
+      "season": "annual",
+      "session": "gakka",
+      "status": "着手（公式原本・正答照合）",
+      "questionCount": 0,
+      "officialQuestionCount": 50,
+      "importedCount": 0,
+      "newCount": 0,
+      "questionIds": [],
+      "officialUrl": "https://www.mankan.org/pdf/R3_shiken.pdf",
+      "answerUrl": "https://www.mankan.org/pdf/R03_answer.pdf",
+      "officialLawReferenceDate": "2021-04-01",
+      "sourceHashes": {
+        "questions.pdf": "999236d05de37906879429076b982a8e11c61513b6d9a77226b658fadb203dfc",
+        "answers.pdf": "ed916a0e0b58aed6b1e263d95d9604642be9c6615607cf44da573663901bdbff"
+      },
+      "notes": "公式50原問・200肢・正答50件の対応表と問1の原図を tools/qj-2/official/PLAN5-346/ に保存。正文・法令と全肢解説、ローダー登録の確認が残る。"
+    },
+    {
+      "jobId": "PLAN5-360",
+      "index": 359,
+      "exam": "denken2",
+      "officialYear": 2021,
+      "storedYear": 2021,
+      "season": "primary",
+      "session": "denryoku",
+      "status": "収録済み（他班の未着手行を補助）",
+      "questionCount": 7,
+      "officialQuestionCount": 7,
+      "importedCount": 0,
+      "newCount": 7,
+      "answerSlotCount": 35,
+      "questionIds": [
+        "denken2-2021-primary-power-q01",
+        "denken2-2021-primary-power-q02",
+        "denken2-2021-primary-power-q03",
+        "denken2-2021-primary-power-q04",
+        "denken2-2021-primary-power-q05",
+        "denken2-2021-primary-power-q06",
+        "denken2-2021-primary-power-q07"
+      ],
+      "dataPath": "data/questions/denken2/native-2021-power.json",
+      "officialUrl": "https://www.shiken.or.jp/chief/upload/20210821_ch_second_q02.pdf",
+      "answerUrl": "https://www.shiken.or.jp/chief/upload/20210821_ch_second_a01.pdf",
+      "sourceHashes": {
+        "questions.pdf": "61e10c26e65267c09504c0dc2fd05bced5d3cb8af4586d4e465eeb21f30b5b55",
+        "answers.pdf": "595888e2402a71ab1055f07b5a3f3b8a0e9f89917058c9d12a1cc0e7730c047c"
+      },
+      "sourcePageCount": 8,
+      "notes": "全7原問・35回答欄。全105肢、各欄解説、公式原本画像8ページ。問7の本文と表はp.10、解答群はp.11。"
+    },
+    {
+      "jobId": "PLAN5-422",
+      "index": 421,
+      "exam": "hoikushi",
+      "officialYear": 2026,
+      "season": "late",
+      "session": "hoiku-genri",
+      "status": "公式正答公開待ち",
+      "questionCount": 0,
+      "officialQuestionCount": 20,
+      "importedCount": 0,
+      "newCount": 0,
+      "questionIds": [],
+      "officialUrl": "https://www.hoyokyo.or.jp/08AP1-2.pdf",
+      "answerPublicationUrl": "https://www.hoyokyo.or.jp/exam/pasttest/08-2.html",
+      "answerPublicationScheduledAt": "2026-11-30T10:00:00+09:00",
+      "notes": "全国共通の後期・地域限定冊子。本文・選択肢・選択数の確認資料はtools/qf-2/official/PLAN5-422/review-packet.json。"
+    }
+  ]
+}

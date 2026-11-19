@@ -1,0 +1,161 @@
+{
+  "checkedAt": "2026-11-17",
+  "allocation": {
+    "policy": "既着手のマンション管理士・会計士と、rs-4〜7が補充したFP1・宅建・行政書士・土地家屋調査士を除外。残りを再採番し1・5・9・13・17番を担当。",
+    "remaining": [
+      {
+        "position": 1,
+        "exam": "denken1",
+        "assigned": true
+      },
+      {
+        "position": 2,
+        "exam": "benrishi",
+        "assigned": false
+      },
+      {
+        "position": 3,
+        "exam": "shihoshoshi",
+        "assigned": false
+      },
+      {
+        "position": 4,
+        "exam": "kanteishi",
+        "assigned": false
+      },
+      {
+        "position": 5,
+        "exam": "chusho-secondary",
+        "assigned": true
+      },
+      {
+        "position": 6,
+        "exam": "sharoushi",
+        "assigned": false
+      },
+      {
+        "position": 7,
+        "exam": "denken2",
+        "assigned": false
+      },
+      {
+        "position": 8,
+        "exam": "tsukanshi",
+        "assigned": false
+      },
+      {
+        "position": 9,
+        "exam": "gas-kou",
+        "assigned": true
+      },
+      {
+        "position": 10,
+        "exam": "zoen1",
+        "assigned": false
+      },
+      {
+        "position": 11,
+        "exam": "caremanager",
+        "assigned": false
+      },
+      {
+        "position": 12,
+        "exam": "keiryoshi-nodo",
+        "assigned": false
+      },
+      {
+        "position": 13,
+        "exam": "kenchikushi1",
+        "assigned": true
+      },
+      {
+        "position": 14,
+        "exam": "kenchikushi2",
+        "assigned": false
+      },
+      {
+        "position": 15,
+        "exam": "rinsho-kensagishi",
+        "assigned": false
+      },
+      {
+        "position": 16,
+        "exam": "kanri-eiyoshi",
+        "assigned": false
+      },
+      {
+        "position": 17,
+        "exam": "kenchiku-setsubishi",
+        "assigned": true
+      },
+      {
+        "position": 18,
+        "exam": "mokuzo-kenchikushi",
+        "assigned": false
+      }
+    ],
+    "assigned": [
+      "denken1",
+      "chusho-secondary",
+      "gas-kou",
+      "kenchikushi1",
+      "kenchiku-setsubishi"
+    ],
+    "skip": {
+      "denken1": "2025・2026年度に既存原稿あり。第2班も重複回避済み。"
+    },
+    "selected": "chusho-secondary|2023|annual|case1",
+    "duplicateCheck": "共有台帳・branchInventoryに2023年度二次の原稿なし。ローカル全参照の対象パス履歴なし。既存二次2024/2025、一次とは区別。"
+  },
+  "rows": [
+    {
+      "key": "chusho-secondary|2023|annual",
+      "qualificationCode": "chusho-secondary",
+      "qualification": "中小企業診断士二次",
+      "year": 2023,
+      "sitting": "annual",
+      "lane": "rs-8",
+      "branch": "cx/kako-restock-g5-20261117",
+      "status": "ローカルブランチに有り・公開なし",
+      "questionCount": 17,
+      "solutionCount": 34,
+      "cases": [
+        "case1",
+        "case2",
+        "case3",
+        "case4"
+      ],
+      "questionIds": [
+        "chusho-secondary-2023-case1-q1",
+        "chusho-secondary-2023-case1-q2",
+        "chusho-secondary-2023-case1-q3",
+        "chusho-secondary-2023-case1-q4",
+        "chusho-secondary-2023-case2-q1",
+        "chusho-secondary-2023-case2-q2",
+        "chusho-secondary-2023-case2-q3",
+        "chusho-secondary-2023-case2-q4",
+        "chusho-secondary-2023-case3-q1",
+        "chusho-secondary-2023-case3-q2",
+        "chusho-secondary-2023-case3-q3",
+        "chusho-secondary-2023-case3-q4",
+        "chusho-secondary-2023-case3-q5",
+        "chusho-secondary-2023-case4-q1",
+        "chusho-secondary-2023-case4-q2",
+        "chusho-secondary-2023-case4-q3",
+        "chusho-secondary-2023-case4-q4"
+      ],
+      "officialSourceUrls": [
+        "https://www.jf-cmca.jp/attach/test/shikenmondai/2ji2023/A2JI2023.pdf",
+        "https://www.jf-cmca.jp/attach/test/r05/2ji_shushi/r05_2ji_shushi_jirei1.pdf",
+        "https://www.jf-cmca.jp/attach/test/shikenmondai/2ji2023/B2JI2023.pdf",
+        "https://www.jf-cmca.jp/attach/test/r05/2ji_shushi/r05_2ji_shushi_jirei2.pdf",
+        "https://www.jf-cmca.jp/attach/test/shikenmondai/2ji2023/C2JI2023.pdf",
+        "https://www.jf-cmca.jp/attach/test/r05/2ji_shushi/r05_2ji_shushi_jirei3.pdf",
+        "https://www.jf-cmca.jp/attach/test/shikenmondai/2ji2023/D2JI2023.pdf",
+        "https://www.jf-cmca.jp/attach/test/r05/2ji_shushi/r05_2ji_shushi_jirei4.pdf"
+      ],
+      "sourceManifest": "data/questions/chusho-secondary/2023-sources.json",
+      "remaining": "2023年度全4事例17原問を完了。残り0問。"
+    }
+  ]
+}

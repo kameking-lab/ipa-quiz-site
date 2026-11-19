@@ -1,0 +1,236 @@
+{
+  "lane": "qk-8",
+  "previousLane": "qj-8",
+  "branch": "cx/kako-5y8-20261118",
+  "baseMain": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "assignment": "plan5.jobs: index % 14 == 7",
+  "records": [
+    {
+      "jobId": "PLAN5-260",
+      "index": 259,
+      "exam": "ahaki-anma",
+      "year": 2023,
+      "season": "annual",
+      "session": "pm",
+      "edition": 31,
+      "examDate": "2023-02-25",
+      "status": "complete-session",
+      "officialPrintedQuestionCount": 80,
+      "officialQuestionNumberRange": [
+        81,
+        160
+      ],
+      "addedPracticeQuestions": 80,
+      "addedChoiceExplanations": 320,
+      "sharedCasePairs": [
+        [
+          139,
+          140
+        ],
+        [
+          141,
+          142
+        ],
+        [
+          143,
+          144
+        ],
+        [
+          145,
+          146
+        ],
+        [
+          147,
+          148
+        ]
+      ],
+      "questionFile": "data/questions/ahaki/ahaki-anma-2023-pm.json",
+      "questionFileSha256": "005283be26fa4d9cd17b51201030830298a8365bfaab262a94a6eb2a3a740e94",
+      "sourcePdfUrl": "https://ahaki.or.jp/wordpress/wp-content/uploads/mondai_31_anma_pm.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2023/siken13_14_15/dl/seitou_amashi.pdf",
+      "foundationAnswerUrl": "https://ahaki.or.jp/examination/data/seito_31_a.html",
+      "answerDifferences": 0,
+      "sourcePdfSha256": "81ab2141be5cde46e779cd8366098909899c07fe9e33f5fc521186f62b1a5178",
+      "sourceAnswerPdfSha256": "1b672e33c2260452f4e0507323c5b7521c2bb460a710ff0c58e9295a8391c240",
+      "foundationAnswerHtmlSha256": "034c789d1fb8d142e74f10c5393b34b36d4c4c50a73b468188809a67fc6c5976",
+      "sourceAnnouncementUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2023/siken13_14_15/about.html",
+      "allYearComplete": false
+    },
+    {
+      "jobId": "PLAN5-274",
+      "index": 273,
+      "exam": "gyosei",
+      "year": 2025,
+      "season": "annual",
+      "session": "gakka",
+      "status": "published-scope-already-complete",
+      "officialPublishedQuestionRange": [
+        2,
+        57
+      ],
+      "officialPublishedQuestionCount": 56,
+      "officialUnpublishedQuestionNumbers": [
+        1,
+        58,
+        59,
+        60
+      ],
+      "existingPracticeQuestions": 56,
+      "addedPracticeQuestions": 0,
+      "sourceBranch": "origin/main",
+      "questionFile": "data/questions/gyosei/2025.ts",
+      "sourcePdfUrl": "https://www.gyosei-shiken.or.jp/pdf/r7_mondai.pdf",
+      "sourceAnswerUrl": "https://www.gyosei-shiken.or.jp/doc/exam/r7ans.html",
+      "sourceIndexUrl": "https://www.gyosei-shiken.or.jp/doc/exam/index.html",
+      "notes": "PLAN5 counted the answer-sheet example labelled 問題1. The first published original is 問題2."
+    },
+    {
+      "jobId": "PLAN5-288",
+      "index": 287,
+      "exam": "denken3",
+      "year": 2022,
+      "season": "first",
+      "session": "denryoku",
+      "examDate": "2022-08-21",
+      "status": "complete-session",
+      "format": "native-original",
+      "officialPrintedQuestionRange": [
+        1,
+        17
+      ],
+      "addedOriginalQuestions": 17,
+      "addedAnswerFields": 20,
+      "addedChoiceExplanations": 100,
+      "addedOfficialPages": 17,
+      "answerDifferences": 0,
+      "questionFile": "data/questions/denken3/native-2022-upper-power.json",
+      "questionFileSha256": "203b12b66d28cce5caaad3865b0a625c93a5f76f08be1fab23888d549dfa3f3a",
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_q02.pdf",
+      "sourcePdfSha256": "782fd0fd33f91ee23da9e55b3e19cdf2d0cde2c5d739df7880a7d68cb67d0796",
+      "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_a01.pdf",
+      "sourceAnswerPdfSha256": "8367761133c5a88e07c1cc1cfda2e996b3e92f4c8998ce0d1a7642f4e5c77974",
+      "sourceIndexUrl": "https://www.shiken.or.jp/chief/third/qa/",
+      "sourcePacketSha256": "a5187af589db697d2a33986dab75e7373abfd434a80b1fb8d6c501b3754b4f86",
+      "subjectRoute": "/denken3/2022-upper/power",
+      "allYearComplete": false
+    },
+    {
+      "jobId": "PLAN5-302",
+      "index": 301,
+      "exam": "sekou-1kenchiku",
+      "year": 2023,
+      "season": "annual",
+      "session": "gakka",
+      "status": "official-scope-and-key-confirmed",
+      "examDate": "2023-06-11",
+      "officialPrintedQuestionCount": 72,
+      "officialQuestionNumberRange": [
+        1,
+        72
+      ],
+      "officialAmQuestionCount": 44,
+      "officialPmQuestionCount": 28,
+      "officialRequiredQuestionCount": 60,
+      "officialMultipleSelectionQuestionNumbers": [
+        55,
+        56,
+        57,
+        58,
+        59,
+        60
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r05_1kg_mondai.pdf",
+      "sourceAnswerPage": 37,
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/ans1k.pdf",
+      "sourceSha256": {
+        "302-question-answer.pdf": "c4fed26009d3b01dddd7fcf29205e4459b64acbc7118c77e850a82f74c1ae205",
+        "302-answer-only.pdf": "89c6b6d62753c47d7f5afb9f7042c19cc2d62b3f4f3e14cde55303315894b993"
+      },
+      "answerDifferences": 0,
+      "addedPracticeQuestions": 0,
+      "officialIntake": "tools/qk-8/302-official-intake.json",
+      "notes": "PLAN5 counted 10; the official booklet contains 72 originals."
+    },
+    {
+      "jobId": "PLAN5-316",
+      "index": 315,
+      "exam": "kenchikushi1",
+      "year": 2024,
+      "season": "annual",
+      "session": "gakka-4_5",
+      "status": "complete-in-helper-branch",
+      "sourceBranch": "cx/kako-5yh11-20261118",
+      "sourceCommit": "2ad84eb57",
+      "existingPracticeQuestions": 55,
+      "addedPracticeQuestions": 0,
+      "sourcePdfUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2024-1st-gakka4_5.pdf",
+      "sourceAnswerUrl": "https://www.jaeic.or.jp/assets/pdf/shiken/1k/1k-mondai/1k-2024-1st-gokakukijun.pdf"
+    },
+    {
+      "jobId": "PLAN5-330",
+      "index": 329,
+      "exam": "denki1",
+      "year": 2023,
+      "season": "annual",
+      "session": "gakka",
+      "status": "official-scope-and-key-confirmed-in-helper-lanes",
+      "officialPrintedQuestionCount": 92,
+      "officialIntake": [
+        "tools/yc-8/330-official-intake.json",
+        "tools/yc-5/330-source-verified.json"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r05_1dg_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/ans1e.pdf",
+      "addedPracticeQuestions": 0
+    },
+    {
+      "jobId": "PLAN5-344",
+      "index": 343,
+      "exam": "mankan",
+      "year": 2023,
+      "season": "annual",
+      "session": "gakka",
+      "status": "complete-in-release-branch",
+      "sourceBranch": "rel/kako-preview-20261117",
+      "sourceCommit": "3e2505198",
+      "officialPublishedQuestionRange": [
+        1,
+        50
+      ],
+      "existingPracticeQuestions": 50,
+      "addedPracticeQuestions": 0,
+      "sourcePdfUrl": "https://www.mankan.org/pdf/R5_shiken.pdf",
+      "sourceAnswerUrl": "https://www.mankan.org/pdf/R5_answer.pdf",
+      "notes": "PLAN5-344 verified by yc-8. This lane reused the audit and verified the release-branch loader."
+    },
+    {
+      "jobId": "PLAN5-358",
+      "index": 357,
+      "exam": "denken2",
+      "year": 2022,
+      "season": "primary",
+      "session": "kikai",
+      "status": "complete-in-helper-branch",
+      "sourceBranch": "cx/kako-5yh8-20261118",
+      "sourceCommit": "952cfbc19",
+      "existingOriginalQuestions": 8,
+      "existingAnswerFields": 40,
+      "addedPracticeQuestions": 0,
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20220820_ch_second_q03.pdf",
+      "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20220820_ch_second_a01.pdf"
+    },
+    {
+      "jobId": "PLAN5-428",
+      "index": 427,
+      "exam": "hoikushi",
+      "year": 2026,
+      "season": "late",
+      "session": "kyoiku-genri",
+      "status": "waiting-for-official-answers",
+      "officialAnswerScheduledAt": "2026-11-30T10:00:00+09:00",
+      "sourcePdfUrl": "https://www.hoyokyo.or.jp/08AP2-2.pdf",
+      "sourceIndexUrl": "https://www.hoyokyo.or.jp/exam/pasttest/08-2.html",
+      "addedPracticeQuestions": 0
+    }
+  ]
+}

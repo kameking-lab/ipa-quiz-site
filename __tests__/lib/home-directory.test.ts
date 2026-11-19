@@ -165,7 +165,7 @@ describe("home directory", () => {
     for (const key of ["gyosei", "sharoushi", "benrishi", "chizai2", "tsukanshi"]) expect(findDomain(key)).toBe("legal");
     expect(findDomain("fp3")).toBe("money");
     // The same catalog-domain mapping used for new qualifications covers every registered live exam.
-    const expected = { "information-technology": "it", finance: "money", accounting: "money", "real-estate": "real-estate", legal: "legal", construction: "construction", electrical: "electrical", safety: "safety", welfare: "welfare", pharmacy: "welfare", "personal-services": "welfare", automotive: "automotive" };
+    const expected = { "information-technology": "it", business: "money", finance: "money", accounting: "money", "real-estate": "real-estate", legal: "legal", construction: "construction", electrical: "electrical", safety: "safety", welfare: "welfare", pharmacy: "welfare", "personal-services": "welfare", automotive: "automotive" };
     for (const entry of QUALIFICATION_CATALOG.filter(entry => entry.status === "live" && entry.examCode && !["eisei1", "eisei2"].includes(entry.examCode))) {
       expect(findDomain(entry.examCode!), entry.examCode).toBe(expected[entry.domain]);
     }

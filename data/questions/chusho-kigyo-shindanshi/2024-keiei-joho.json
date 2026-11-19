@@ -1,0 +1,1111 @@
+[
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q1",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 1,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "タッチパネル"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "タッチパネルの原理や機能に関する記述の正誤の組み合わせとして、最も適切なものを下記の解答群から選べ。\n\nａ　静電容量方式は、指先で触れた部分で赤外線が遮られる中断点を捉えて位置を検出する。\n\nｂ　静電容量方式は、機器の画面の複数点を指先で同時に触れて操作できる。\n\nｃ　赤外線方式は、指先で触れた部分の表面電荷の変化を捉えて位置を検出する。\n\nｄ　赤外線方式は、機器の画面の複数点を指先で同時に触れて操作できる。",
+    "choices": {
+      "ア": "ａ：正　　ｂ：正　　ｃ：正　　ｄ：誤",
+      "イ": "ａ：正　　ｂ：誤　　ｃ：誤　　ｄ：正",
+      "ウ": "ａ：誤　　ｂ：正　　ｃ：誤　　ｄ：正",
+      "エ": "ａ：誤　　ｂ：正　　ｃ：誤　　ｄ：誤",
+      "オ": "ａ：誤　　ｂ：誤　　ｃ：正　　ｄ：正"
+    },
+    "answer": "ウ",
+    "explanation": "正解はウです。静電容量方式は電気的な容量の変化、赤外線方式は光の遮断を利用します。ａとｃは検出原理を入れ替えています。両方式とも複数の接触点を検出できるため、ｂ・ｄが正しい組合せです。",
+    "choiceExplanations": {
+      "ア": "ａ・ｃの原理が逆です。静電容量方式が赤外線の遮断を使うわけではなく、ｄも正しい記述です。",
+      "イ": "ａは誤り、ｂは正しいため、この組合せにはなりません。",
+      "ウ": "ａ：誤、ｂ：正、ｃ：誤、ｄ：正の組合せです。検出する物理量と複数点への対応を分けて判断します。",
+      "エ": "赤外線方式もマルチタッチに対応できます。ｄを誤りとしている点が違います。",
+      "オ": "ｂは正しく、ｃは誤りです。静電容量方式の複数点操作と電荷・容量による検出を取り違えています。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "officialReferenceUrls": [
+      "https://www.eizo.co.jp/eizolibrary/industry/touch-panel/"
+    ]
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q2",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 2,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "文字コード"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "文字コードに関する記述とその用語の組み合わせとして、最も適切なものを下記の解答群から選べ。\n\nａ　7 ビットの文字コードであり、英数字、制御文字および一部の記号を含む128種類のコードを表現できる。\n\nｂ　UNIX 系OS のために開発された符号化方式であり、日本語の符号化方式の名称には“-JP” が付く。\n\nｃ　世界の主要な文字を表現できる文字集合であり、ISO/IEC 10646 によって定義される文字集合と互換性を保つ対応が図られている。",
+    "choices": {
+      "ア": "ａ：ASCII ｂ：EUC ｃ：Unicode",
+      "イ": "ａ：ASCII ｂ：ISO-2022 ｃ：JIS X 0208",
+      "ウ": "ａ：ASCII ｂ：ISO-2022 ｃ：Unicode",
+      "エ": "ａ：Unicode ｂ：EUC ｃ：JIS X 0208",
+      "オ": "ａ：Unicode ｂ：ISO-2022 ｃ：JIS X 0208"
+    },
+    "answer": "ア",
+    "explanation": "正解はアです。7ビット・128種類はASCII、UNIX系で使われた日本語符号化方式はEUC-JP、世界の文字を扱う文字集合はUnicodeに対応します。文字集合と、その文字をバイト列へ変換する符号化方式を区別します。",
+    "choiceExplanations": {
+      "ア": "ａ＝ASCII、ｂ＝EUC、ｃ＝Unicodeで、3つの説明に対応します。",
+      "イ": "ａだけは一致しますが、ｂはEUC、ｃはUnicodeです。JIS X 0208は世界の主要文字を扱うUnicodeとは異なります。",
+      "ウ": "ｂのUNIX向けの説明はEUCです。ISO-2022-JPはエスケープシーケンスで文字集合を切り替える別の方式です。",
+      "エ": "Unicodeは7ビット・128種類に限られません。またｃはJIS X 0208ではなくUnicodeです。",
+      "オ": "ａとｃが逆の分類であり、ｂもEUC-JPの説明に対応していません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "officialReferenceUrls": [
+      "https://www.unicode.org/faq/basic_q.html"
+    ]
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q3",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 3,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "オブジェクト指向"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "オブジェクト指向プログラミングに関する記述として、最も適切なものはどれか。\n\nａ　多相性は、プログラムの実行時に変数に値が代入されると、その値に基づいてデータの型が自動的に決定される仕組みである。\n\nｂ　インスタンス化は、オブジェクトの属性と機能を外部から隠蔽 する仕組みである。\n\nｃ　継承は、下位クラスが上位クラスの属性と機能を引き継ぐ仕組みである。\n\nｄ　カプセル化は、上位クラスで定義された機能を下位クラスの役割に応じて再定義する仕組みである。",
+    "choices": {
+      "ア": "ａ：正　　ｂ：正　　ｃ：誤　　ｄ：誤",
+      "イ": "ａ：正　　ｂ：誤　　ｃ：正　　ｄ：正",
+      "ウ": "ａ：正　　ｂ：誤　　ｃ：正　　ｄ：誤",
+      "エ": "ａ：誤　　ｂ：正　　ｃ：誤　　ｄ：正",
+      "オ": "ａ：誤　　ｂ：誤　　ｃ：正　　ｄ：誤"
+    },
+    "answer": "オ",
+    "explanation": "正解はオです。継承の説明であるｃのみ正しく、ａは動的な型決定、ｂはカプセル化、ｄはオーバーライドに相当する説明です。インスタンス化はクラスから具体的なオブジェクトを生成することです。",
+    "choiceExplanations": {
+      "ア": "ａ・ｂを正、ｃを誤としている点が違います。継承は上位クラスの性質を引き継ぐ仕組みです。",
+      "イ": "ａは誤りで、ｄの再定義はカプセル化ではなくオーバーライドです。",
+      "ウ": "ａを正としている点が違います。多相性は、同じ操作でも対象の型に応じた振る舞いができる性質です。",
+      "エ": "ｂとｄはどちらも誤りです。情報を隠す仕組みと、クラスから実体を生成する操作を区別します。",
+      "オ": "ａ：誤、ｂ：誤、ｃ：正、ｄ：誤で一致します。用語と説明を1つずつ対応させます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "officialReferenceUrls": [
+      "https://docs.oracle.com/javase/tutorial/java/concepts/"
+    ]
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q4",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 4,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "色と視認性"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "Web ページやアプリケーションの作成に当たっては、色覚を考慮した画面設計が求められる。次の文章の空欄Ａ～Ｄに入る用語の組み合わせとして、最も適切なものを下記の解答群から選べ。ディスプレイに表示される色（カラー）は、Ｒ（Red）、Ｇ（Green）、Ｂ（Blue）の3色の混合の割合で表現される。このＲ、Ｇ、Ｂの3 色のことを  Ａ の3 原色という。  Ａ の3  原色は、混ぜれば混ぜるほど明度が高くなるのでＢ 混色と呼ばれている。24 ビットカラーの場合、  Ｃ を表現でき、全部で約1,677 万色を表現できる。図の色と背景色の明度に差がある組み合わせや反対色同士の組み合わせはＤ が高いが、反対色同士でも明度が近いと  Ｄ が低くなる。",
+    "choices": {
+      "ア": "Ａ：色　　Ｂ：加法　　Ｃ：256 階調　　　Ｄ：識別性",
+      "イ": "Ａ：色　　Ｂ：減法　　Ｃ：256 階調　　　Ｄ：識別性",
+      "ウ": "Ａ：光　　Ｂ：加法　　Ｃ：256 階調　　　Ｄ：視認性",
+      "エ": "Ａ：光　　Ｂ：加法　　Ｃ：1,024 階調　　Ｄ：視認性",
+      "オ": "Ａ：光　　Ｂ：減法　　Ｃ：1,024 階調　　Ｄ：視認性"
+    },
+    "answer": "ウ",
+    "explanation": "正解はウです。ディスプレイのRGBは光の三原色で、重ねるほど明るくなる加法混色です。24ビットは各色8ビットなので各256階調、組合せは256³＝16,777,216色となります。背景との明度差は視認性に関係します。",
+    "choiceExplanations": {
+      "ア": "RGBは色材の三原色ではなく光の三原色です。ここでは明度差による見えやすさを視認性として問うています。",
+      "イ": "RGBは光の加法混色です。減法混色は主に色材の混合に対応します。",
+      "ウ": "光・加法・256階調・視認性の組合せです。8ビットで表せる値は2⁸＝256通りです。",
+      "エ": "24ビットを3色に配分すると各色8ビットです。各1,024階調には10ビットずつ必要です。",
+      "オ": "混色方式と階調数が違います。RGBは加法混色で、24ビットでは各色256階調です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "officialReferenceUrls": [],
+    "isCalculation": true
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q5",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 5,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "ユーザビリティ"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "情報システムの利用のしやすさに関する記述の正誤の組み合わせとして、最も適切なものを下記の解答群から選べ。\n\nａ　ユーザビリティとは、ユーザがシステムを操作するために使用する手段と方法の総称である。\n\nｂ　UX（User Experience）とは、ユーザがシステム・製品・サービスを利用する際に、効果的に、効率的に、満足して利用できるかの度合いのことである。\n\nｃ　UI（User Interface）とは、システム・製品・サービスの利用前、利用中および利用後に生じるユーザの知覚および反応のことである。\n\nｄ　ウェブアクセシビリティとは、高齢者や障がい者など、心身の機能に関する制約や利用環境などに関係なく、すべての人がウェブで提供される情報や機能を支障なく利用できることである。",
+    "choices": {
+      "ア": "ａ：正　　ｂ：正　　ｃ：正　　ｄ：誤",
+      "イ": "ａ：正　　ｂ：誤　　ｃ：誤　　ｄ：誤",
+      "ウ": "ａ：誤　　ｂ：正　　ｃ：正　　ｄ：正",
+      "エ": "ａ：誤　　ｂ：正　　ｃ：誤　　ｄ：正",
+      "オ": "ａ：誤　　ｂ：誤　　ｃ：誤　　ｄ：正"
+    },
+    "answer": "オ",
+    "explanation": "正解はオです。ａはUI、ｂはユーザビリティ、ｃはUXの説明であり、用語が一致しません。ｄのウェブアクセシビリティは、障害や利用環境などにかかわらず情報・機能を利用できることを指します。",
+    "choiceExplanations": {
+      "ア": "ａ・ｂ・ｃは用語と定義が一致せず、ｄは正しい記述です。",
+      "イ": "ａはユーザビリティではなくUIの説明です。またｄは正しい記述です。",
+      "ウ": "ｂはユーザビリティ、ｃはUXの説明なので、どちらもこの用語の組合せでは誤りです。",
+      "エ": "ｂを正としている点が違います。効果性・効率性・満足度はユーザビリティを整理する視点です。",
+      "オ": "ａ：誤、ｂ：誤、ｃ：誤、ｄ：正です。操作の接点、使いやすさ、利用に伴う体験を区別します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "officialReferenceUrls": [
+      "https://www.w3.org/WAI/fundamentals/accessibility-usability-inclusion/"
+    ]
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q6",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 6,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "クラウドの配置モデル"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "クラウドコンピューティングの実装形態に関する記述として、最も適切なものはどれか。",
+    "choices": {
+      "ア": "エッジクラウドでは、クラウドサービスは、サービスの提供者と利用者の間でサービス提供の交渉が可能であり、利用者の具体的なニーズに合わせて提供される。",
+      "イ": "コミュニティクラウドでは、クラウドサービスは、共通の懸念事項を持つ異なる組織の成員から構成される共同体の専用使用のために提供される。",
+      "ウ": "ハイブリッドクラウドでは、クラウドサービスは、複数のパブリッククラウドサービスを組み合わせて提供される。",
+      "エ": "パブリッククラウドでは、クラウドサービスは、複数の利用者からなる単一組織の専用使用のために提供される。",
+      "オ": "プライベートクラウドでは、クラウドサービスは、営利を目的としない利用者の専用使用のために提供される。"
+    },
+    "answer": "イ",
+    "explanation": "正解はイです。コミュニティクラウドは、共通の関心や要件を持つ複数組織からなる共同体向けの環境です。パブリック・プライベート・コミュニティ・ハイブリッドは、利用範囲と環境の組合せで整理します。",
+    "choiceExplanations": {
+      "ア": "利用者の要望に応じた交渉だけではエッジクラウドを定義できません。エッジは端末やデータ発生源に近い場所で処理する配置に着目します。",
+      "イ": "共通の関心を持つ複数組織の共同体専用という説明が、コミュニティクラウドに対応します。",
+      "ウ": "複数のパブリックサービスの併用だけでは、異なる配置モデルのクラウドを結び付けるハイブリッドの説明になりません。",
+      "エ": "単一組織の専用利用はプライベートクラウドです。パブリックは広く一般の利用に供されます。",
+      "オ": "プライベートを分ける基準は単一組織の専用利用であり、営利・非営利の別ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "officialReferenceUrls": [
+      "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-145.pdf"
+    ]
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q7",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 7,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "データベース正規化"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "以下に示す表は、ある小売店が利用している受注管理表の一部である。この表を正規化した構造として、最も適切なものを下記の解答群から選べ。ただし、単価は商品コードによって一意に定まるものとする。",
+    "choices": {
+      "ア": "受注番号 受注日 得意先コード 合計金額 ／ 商品コード 単価 ／ 受注番号 商品コード 受注数量",
+      "イ": "受注番号 受注日 得意先コード 商品コード ／ 得意先コード 商品コード 単価 ／ 受注番号 商品コード 合計金額",
+      "ウ": "受注番号 受注日 得意先コード 合計金額 ／ 得意先コード 商品コード 単価 ／ 得意先コード 商品コード 受注数量",
+      "エ": "受注番号 得意先コード 合計金額 ／ 商品コード 単価 ／ 得意先コード 商品コード 受注数量 ／ 受注番号 受注日",
+      "オ": "受注番号 受注日 商品コード 合計金額 ／ 商品コード 単価 ／ 受注番号 得意先コード 受注数量"
+    },
+    "answer": "ア",
+    "explanation": "正解はアです。受注番号で決まる受注日・得意先・合計金額、商品コードで決まる単価、受注番号と商品コードの組合せで決まる受注数量を分離します。同じ商品の単価や同じ受注の基本情報を繰り返し持つ構造を解消できます。",
+    "choiceExplanations": {
+      "ア": "受注、商品、受注明細を、それぞれの決定項目に対応させて分離しています。明細の受注数量は受注番号と商品コードで識別できます。",
+      "イ": "商品コードにだけ依存する単価に得意先コードを加え、受注単位の合計金額を明細へ置いています。属性の依存先が一致しません。",
+      "ウ": "受注数量を得意先コードと商品コードで管理すると、同じ得意先からの別の受注を区別できません。単価にも得意先コードは不要です。",
+      "エ": "受注数量に受注番号がないため、個々の受注明細を区別できません。受注日だけ別表にしてもこの問題は解決しません。",
+      "オ": "受注の基本表に商品コードを残す一方、数量の表から商品コードが抜けています。複数商品を含む受注明細を表せません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "officialReferenceUrls": [],
+    "imageUrls": [
+      "/questions/chusho-kigyo-shindanshi/2024-keiei-joho-q7.png"
+    ],
+    "imageAltTexts": [
+      "受注管理表と解答群ア〜オの関係表。各表の項目と対応は原典の配置。"
+    ]
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q8",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 8,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "SQLの条件付き集計"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "以下に示す、ある小売店における販売データ「取引記録」から、販売店別の商品ごとの販売個数を集計した「店舗別商品販売個数」を作成することを考える。\n\n以下のSQL文の空欄①～③に入る語句の組み合わせとして、最も適切なものを下記の解答群から選べ。\n\n【SQL文】\n```sql\nSELECT\n  商品ID，\n  SUM（CASE ① WHEN 'Ａ' THEN ② ELSE 0 END）AS 販売店Ａ，\n  SUM（CASE ① WHEN 'Ｂ' THEN ② ELSE 0 END）AS 販売店Ｂ\nFROM\n  取引記録\nGROUP BY\n  ③\nORDER BY\n  ③ ;\n```",
+    "choices": {
+      "ア": "①：商品ID　　　②：1 　　　　　③：販売店ID",
+      "イ": "①：商品ID　　　②：販売個数　　③：販売店ID",
+      "ウ": "①：販売店ID　　②：1 　　　　　③：商品ID",
+      "エ": "①：販売店ID　　②：1 　　　　　③：販売店ID",
+      "オ": "①：販売店ID　　②：販売個数　　③：商品ID"
+    },
+    "answer": "オ",
+    "explanation": "正解はオです。CASEで販売店IDを判定し、一致した行の販売個数をSUMで合計します。結果は商品ごとに1行なので、GROUP BYとORDER BYの対象は商品IDです。1を合計すると販売数量ではなく取引の件数になります。",
+    "choiceExplanations": {
+      "ア": "店舗の振分けは商品IDではなく販売店IDで行います。販売店IDでグループ化すると商品別の行になりません。",
+      "イ": "販売個数の合計という点は合いますが、CASEの判定項目とGROUP BYの対象が違います。",
+      "ウ": "販売店の判定と商品単位のグループ化は合いますが、1を足すと取引件数になり、販売個数を集計できません。",
+      "エ": "集計値が件数になり、グループも販売店別になってしまいます。商品IDごとの数量集計にはなりません。",
+      "オ": "①＝販売店ID、②＝販売個数、③＝商品IDです。店舗条件による列への振分けと商品別の集約ができます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "officialReferenceUrls": [
+      "https://www.postgresql.org/docs/current/functions-conditional.html"
+    ],
+    "imageUrls": [
+      "/questions/chusho-kigyo-shindanshi/2024-keiei-joho-q8.png"
+    ],
+    "imageAltTexts": [
+      "取引記録の抜粋9行と、商品ID別に販売店A・Bの販売個数を集計した表。"
+    ]
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q9",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 9,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "通信プロトコル"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "通信プロトコルに関する記述として、最も適切なものはどれか。",
+    "choices": {
+      "ア": "DHCP は、ドメイン名とIP アドレスを関連付ける際に用いられる。",
+      "イ": "DNS は、プライベートIP アドレスをグローバルIP アドレスに変換する際に用いられる。",
+      "ウ": "MIME は、電子メールにおいて、テキストだけではなく、音声、画像、動画などを扱う際に用いられる。",
+      "エ": "NNTP は、タイムサーバの時刻を基にネットワークに接続される機器の時刻を同期させる際に用いられる。",
+      "オ": "SMTP は、Web ブラウザが、Web サーバからHTML 形式のファイルを受け取る際に用いられる。"
+    },
+    "answer": "ウ",
+    "explanation": "正解はウです。MIMEはメールで扱うデータ形式を拡張し、画像・音声などを表現できるようにします。アはDNS、イはNAT、エはNTP、オはHTTPの役割に当たる記述です。",
+    "choiceExplanations": {
+      "ア": "ドメイン名とIPアドレスの対応を扱うのはDNSです。DHCPは端末へIPアドレスなどの設定情報を渡します。",
+      "イ": "プライベートとグローバルのIPアドレス変換はNATです。DNSは名前の解決を担います。",
+      "ウ": "MIMEの役割と一致します。Content-Typeなどを使い、本文や添付データの種類・表現方法を示します。",
+      "エ": "時刻同期はNTPです。NNTPはネットニュースの記事の配信・取得に使われます。",
+      "オ": "ブラウザによるWebコンテンツの取得はHTTPです。SMTPは電子メールの送信・転送を行います。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "officialReferenceUrls": [
+      "https://www.rfc-editor.org/rfc/rfc2045"
+    ]
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q10-1",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 10,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "DX認定制度"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "近年、デジタルトランスフォーメーション（DX）推進の取り組みが中小企業にも拡大している。DX 推進に関する下記の設問に答えよ。DX 認定制度は、DX 推進の準備が整っていると認められた企業を国が認定する制度であり、デジタル技術による社会変革に対して経営者に求められる事項を取りまとめた「デジタルガバナンス・コード」に対応している。経済産業省および情報処理推進機構（IPA）による「DX 認定制度 申請要項（申請のガイダンス）」 （第2 版）では、下記に示す〈デジタルガバナンス・コードの項目〉とDX 認定制度の申請項目の対応関係が説明されている。\n\n〈デジタルガバナンス・コードの項目〉1 ．経営ビジョン・ビジネスモデル2 ．戦略2 . 1 ．組織づくり・人材・企業文化に関する方策2 . 2 ．IT システム・デジタル技術活用環境の整備に関する方策3 ．成果と重要な成果指標4 ．ガバナンスシステム上記の「2 . 1 ．組織づくり・人材・企業文化に関する方策」に対応するDX 認定制度の申請項目として、最も適切なものはどれか。",
+    "choices": {
+      "ア": "最新の情報処理技術を活用するための環境整備の具体的方策の提示",
+      "イ": "サイバーセキュリティに関する対策の的確な策定及び実施",
+      "ウ": "実務執行総括責任者が主導的な役割を果たすことによる、事業者が利用する情報処理システムにおける課題の把握",
+      "エ": "実務執行総括責任者による効果的な戦略の推進等を図るために必要な情報発信",
+      "オ": "戦略を効果的に進めるための体制の提示"
+    },
+    "answer": "オ",
+    "explanation": "正解はオです。設問が指定する「2.1」は組織・人材・企業文化に関する方策なので、戦略を進めるための体制が対応します。技術環境、対外発信、課題の把握、セキュリティの各項目と切り分けて読み取ります。",
+    "choiceExplanations": {
+      "ア": "ITシステム・デジタル技術を活用する環境の整備に対応する内容であり、組織体制を問う項目とは異なります。",
+      "イ": "サイバーセキュリティ対策に関する内容です。設問は戦略実行の組織・人材面を問うています。",
+      "ウ": "情報処理システムの課題把握に関する内容であり、戦略を進めるための体制そのものではありません。",
+      "エ": "責任者による情報発信に関する内容です。組織づくりの方策を直接示す項目とは異なります。",
+      "オ": "戦略を効果的に進める体制が、組織づくり・人材・企業文化の方策に対応します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "part": "1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/digital/dx-nintei/hojyo.html"
+    ]
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q10-2",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 10,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "製造分野のDX"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "近年、デジタルトランスフォーメーション（DX）推進の取り組みが中小企業にも拡大している。DX 推進に関する下記の設問に答えよ。情報処理推進機構（IPA）が公開している「中小規模製造業者の製造分野におけるデジタルトランスフォーメーション（DX）推進のためのガイド」では、中小規模製造業が先進的にDX に取り組んでいる事例を基に、これからDX に取り組む企業に向けて、その必要性や進め方がまとめられている。このガイドに記載されている内容に関する記述の正誤の組み合わせとして、最も適切なものを下記の解答群から選べ。\n\nａ　スマートサービスは、AI やIoT などのデジタル技術を使い、顧客に高い体験価値を与えるサービスのことで、モノの使用状況に基づいてメンテナンスなどを行うサービスのほか、モノづくりのノウハウを提供・サポートするサービスも含まれる。\n\nｂ　スマートファクトリーは、生産設備をデジタル化し、ネットワーク上でデータをやりとりすることで効率化している工場のことである。\n\nｃ　製造分野のDX は、顧客価値を高めるため、製造分野で利用されている製造装置や製造工程の監視・制御（OT：運用技術）などのデジタル化を軸に、IT との連携により製品やサービス、ビジネスモデルの変革を実現することと定義されている。\n\nｄ　中小規模製造業におけるDX においては、収益増に直結するスマートプロダクトへの取り組みから行うことが推奨されている。",
+    "choices": {
+      "ア": "ａ：正　　ｂ：正　　ｃ：正　　ｄ：誤",
+      "イ": "ａ：正　　ｂ：正　　ｃ：誤　　ｄ：誤",
+      "ウ": "ａ：正　　ｂ：誤　　ｃ：正　　ｄ：正",
+      "エ": "ａ：誤　　ｂ：正　　ｃ：正　　ｄ：正",
+      "オ": "ａ：誤　　ｂ：誤　　ｃ：誤　　ｄ：正"
+    },
+    "answer": "ア",
+    "explanation": "正解はアです。スマートサービス、スマートファクトリー、OTとITの連携による変革の説明は適切です。取組は自社の状況や課題に応じて進めるもので、スマートプロダクトから一律に始めるというｄは不適切です。",
+    "choiceExplanations": {
+      "ア": "ａ：正、ｂ：正、ｃ：正、ｄ：誤です。目指す姿の定義と、一律の開始順序を区別します。",
+      "イ": "ｃはガイドが示す製造分野DXの定義に対応しており、誤りにはなりません。",
+      "ウ": "ｂは正しく、ｄは誤りです。製品の高付加価値化だけを必ず出発点にするわけではありません。",
+      "エ": "ａは正しく、ｄは誤りです。使用状況に応じた保守や製造ノウハウの支援もサービスに含みます。",
+      "オ": "ａ・ｂ・ｃは適切です。ｄの「スマートプロダクトから」という固定的な進め方が不適切です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "part": "2",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/digital/dx/mfg-dx/index.html"
+    ]
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q11",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 11,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "責任共有モデル"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "クラウドサービスを利用する際、セキュリティやコンプライアンスなどの責任範囲を、クラウドサービスを提供する事業者とクラウドサービスの利用者の間で明確に分担するという考え方を「責任共有モデル」と呼ぶ。クラウドサービス事業者とクラウドサービス利用者の間の責任分界に関する記述として、最も適切なものはどれか。",
+    "choices": {
+      "ア": "IaaS を利用する場合、ミドルウェアやOS を管理する責任はクラウドサービス事業者が負う。",
+      "イ": "PaaS を利用する場合、ハードウェアやネットワークを管理する責任はクラウドサービス利用者が負う。",
+      "ウ": "SaaS 事業者が他社のIaaS/PaaS を利用してクラウドサービスを提供する場合、提供するクラウドサービス全体の管理責任をIaaS/PaaS 事業者が負う。",
+      "エ": "SaaS を利用する場合、クラウドサービス事業者が提供するアプリケーションを利用するためのデータやアプリケーション上で生成したデータを管理する責任はクラウドサービス利用者が負う。",
+      "オ": "クラウドサービス利用者がIaaS の設定をシステムインテグレータに準委任契約で外部委託する場合、最終責任をシステムインテグレータが負う。"
+    },
+    "answer": "エ",
+    "explanation": "正解はエです。SaaSでも、利用者自身のデータや権限設定などの管理責任が残ります。サービス事業者が管理する層と利用者が管理する層は、IaaS・PaaS・SaaSの提供範囲に応じて変わります。",
+    "choiceExplanations": {
+      "ア": "IaaSでは、利用者が導入するゲストOSやミドルウェアの管理は原則として利用者側の責任です。",
+      "イ": "PaaSの基盤となるハードウェアやネットワークは、原則として提供事業者側が管理します。",
+      "ウ": "他社の基盤を使っても、SaaS提供者が利用者に対するサービス全体の管理責任をすべて移せるわけではありません。",
+      "エ": "SaaS上で使用・生成する自社データを適切に管理する責任は利用者側に残るため、適切です。",
+      "オ": "委託しても利用者側の責任が全面的に消えるわけではありません。委託範囲・責任分担と委託先の管理が必要です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "officialReferenceUrls": [
+      "https://aws.amazon.com/compliance/shared-responsibility-model/"
+    ]
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q12",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 12,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "ビジネスモデルキャンバス"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "ビジネスモデルキャンバスに関する記述として、最も適切なものはどれか。",
+    "choices": {
+      "ア": "エンドユーザーの視点から特定の目的を達成するプロセスを記述することで、企業がシステムの機能要件を分析する枠組みである。",
+      "イ": "業務の流れや役割、ビジネスルール、情報の流れなどを図式化することで、企業が組織内のコミュニケーションを促進し、システム開発や業務改善の機会を分析する枠組みである。",
+      "ウ": "顧客セグメント、価値提案、チャネル、顧客との関係、収益の流れ、リソース、主要活動、パートナー、コスト構造の9 つの視点から、企業がどのように価値を創造し顧客に届けるかを分析する枠組みである。",
+      "エ": "組織内の知識・技術と組織外のアイデアやノウハウを組み合わせて、企業が新製品やサービスを分析する枠組みである。",
+      "オ": "ビジネス、データ、アプリケーション、テクノロジーの4 つのアーキテクチャを用いて、企業が組織の構造と機能を全体最適の観点から分析する枠組みである。"
+    },
+    "answer": "ウ",
+    "explanation": "正解はウです。ビジネスモデルキャンバスは、顧客への価値提供と収益・費用の仕組みを9つの要素で整理します。システムの機能要件、業務プロセス、技術の取込み、全社の情報システム構造の分析とは目的が異なります。",
+    "choiceExplanations": {
+      "ア": "利用者の目的とシステムの振る舞いを整理するユースケースに対応する説明です。9要素による事業モデルの整理ではありません。",
+      "イ": "業務プロセスを図式化するモデリングの説明であり、事業全体の価値創造を9要素で整理する枠組みとは違います。",
+      "ウ": "顧客・価値提案・チャネルから費用構造までの9要素が示されており、ビジネスモデルキャンバスに一致します。",
+      "エ": "組織内外の技術やアイデアを組み合わせるオープンイノベーションの説明に対応します。",
+      "オ": "4つのアーキテクチャによる全体最適はエンタープライズアーキテクチャの説明に対応します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "officialReferenceUrls": [
+      "https://www.strategyzer.com/library/the-business-model-canvas"
+    ]
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q13",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 13,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "キャッシュレス決済"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "キャッシュレス決済の技術や仕組みに関する記述の正誤の組み合わせとして、最も適切なものを下記の解答群から選べ。\n\nａ　IC チップ付きクレジットカードには、カード番号・氏名・有効期限などの基本情報の他にPIN（暗証番号）が保存されている。\n\nｂ　3 Ｄセキュアとは、インターネット上でクレジットカード決済を安全に行うための本人認証サービスのことである。\n\nｃ　クレジットカードによるタッチ決済とは、クレジットカードのIC チップに保存された情報を決済端末で読み取る非接触型決済のことである。\n\nｄ　QR コード決済において店舗提示型（MPM）とは、決済に際し、支払者がQRコードを表示して店舗側の処理端末に読み取らせる方式のことである。",
+    "choices": {
+      "ア": "ａ：正　　ｂ：正　　ｃ：正　　ｄ：誤",
+      "イ": "ａ：正　　ｂ：正　　ｃ：誤　　ｄ：誤",
+      "ウ": "ａ：正　　ｂ：誤　　ｃ：誤　　ｄ：誤",
+      "エ": "ａ：誤　　ｂ：正　　ｃ：正　　ｄ：正",
+      "オ": "ａ：誤　　ｂ：誤　　ｃ：正　　ｄ：正"
+    },
+    "answer": "ア",
+    "explanation": "正解はアです。ICカード、3Dセキュア、非接触決済の説明は適切です。MPMは店舗側がコードを提示して支払者が読み取る方式であり、支払者が提示する方式との違いに注意します。",
+    "choiceExplanations": {
+      "ア": "ａ：正、ｂ：正、ｃ：正、ｄ：誤の組合せです。MPMのMは店舗側の提示を表します。",
+      "イ": "タッチ決済はカードのICチップの情報を非接触で読み取るため、ｃは正しい記述です。",
+      "ウ": "ｂ・ｃはともに正しい記述です。オンラインでの本人認証と、店舗でのカード読取りを区別します。",
+      "エ": "ａは正しく、ｄは誤りです。支払者がコードを表示する方式はCPMです。",
+      "オ": "ａ・ｂは正しく、ｄは誤りです。認証の仕組みとコードの提示者をそれぞれ確認します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "officialReferenceUrls": [
+      "https://www.emvco.com/emv-technologies/3-d-secure/",
+      "https://www.emvco.com/emv-technologies/qr-codes/"
+    ]
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q14",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 14,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "スクラム"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "アジャイル開発手法の1 つにスクラムがある。スクラムの特徴に関する記述として、最も適切なものはどれか。",
+    "choices": {
+      "ア": "開発者は、製品開発に必要な機能、タスク、要件などをリストアップしたプロダクトバックログの優先順位を決定する。",
+      "イ": "スクラムマスターは、スクラムチームから生み出されるプロダクトの価値を最大化させる責任がある。",
+      "ウ": "スプリントレビューは、主要なステークホルダーに作業の結果を提示し、プロダクトゴールに対する進捗を話し合うイベントである。",
+      "エ": "プロダクトオーナーには、開発チームの開発における障害物を取り除く責任がある。",
+      "オ": "レトロスペクティブは、開発チームの全員が、昨日行ったこと、今日行うこと、障害になっていることを話し合い、全員で開発状況を共有するイベントである。"
+    },
+    "answer": "ウ",
+    "explanation": "正解はウです。スプリントレビューでは成果をステークホルダーと確認し、プロダクトゴールに向けた今後の適応を検討します。プロダクト価値とバックログの順序はプロダクトオーナーの責任で、レトロスペクティブは改善を話し合う場です。",
+    "choiceExplanations": {
+      "ア": "プロダクトバックログの順序付けについて説明責任を負うのはプロダクトオーナーです。開発者だけで決定するとはしていません。",
+      "イ": "プロダクトの価値最大化はプロダクトオーナーの責任です。スクラムマスターはスクラムの確立と有効性に責任を持ちます。",
+      "ウ": "スプリントレビューの目的に一致します。単なる進捗報告に終わらず、成果と今後を共同で検討します。",
+      "エ": "障害の除去を促すのはスクラムマスターの役割です。プロダクトオーナーの中心責任は価値とバックログの管理です。",
+      "オ": "日々の進捗・計画を適応させるデイリースクラムと混同しています。レトロスペクティブでは品質・効果を高める改善を計画します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "officialReferenceUrls": [
+      "https://scrumguides.org/docs/scrumguide/v2020/2020-Scrum-Guide-Japanese.pdf"
+    ]
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q15",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 15,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "バックアップと復旧"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "システム障害やサイバー犯罪などに備えてデータをバックアップしておくことは重要である。バックアップに関する記述の正誤の組み合わせとして、最も適切なものを下記の解答群から選べ。\n\nａ　クラウドバックアップとは、クラウド上にあるデータをオンプレミスのストレージにバックアップすることである。\n\nｂ　ロールバックとは、データベースシステムなどに障害が発生した時に、更新前のトランザクションログを使ってトランザクション実行前の状態に復元する処理である。\n\nｃ　イメージバックアップとは、画像や動画などのイメージデータを圧縮せずにバックアップすることである。\n\nｄ　ウォームサイトとは、障害発生時に、バックアップされたデータやプログラムを活用してシステムを復元し業務を再開できるように、バックアップする予備のサイトのことである。",
+    "choices": {
+      "ア": "ａ：正　　ｂ：誤　　ｃ：正　　ｄ：誤",
+      "イ": "ａ：正　　ｂ：誤　　ｃ：誤　　ｄ：誤",
+      "ウ": "ａ：誤　　ｂ：正　　ｃ：正　　ｄ：正",
+      "エ": "ａ：誤　　ｂ：正　　ｃ：正　　ｄ：誤",
+      "オ": "ａ：誤　　ｂ：正　　ｃ：誤　　ｄ：正"
+    },
+    "answer": "オ",
+    "explanation": "正解はオです。ロールバックは更新を取り消して前の状態に戻す処理です。イメージバックアップはOSや設定を含むディスク等の状態の保存を指し、画像・動画ファイルだけの無圧縮保存ではありません。ウォームサイトは復旧に備える代替拠点です。",
+    "choiceExplanations": {
+      "ア": "ａ・ｃが誤りで、ｂ・ｄは正しいため、この組合せにはなりません。",
+      "イ": "ａは誤りで、ｂ・ｄは正しい記述です。クラウドバックアップは保存先としてクラウドを利用します。",
+      "ウ": "ｃは誤りです。イメージという語を画像・動画ファイルという意味に限定してはいけません。",
+      "エ": "ｃは誤りで、ｄは正しい記述です。ウォームサイトは復旧用の予備拠点ですが、ホットサイトほど即時稼働の準備は整っていません。",
+      "オ": "ａ：誤、ｂ：正、ｃ：誤、ｄ：正です。保存先・保存単位・更新取消し・代替拠点の4点を区別します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "officialReferenceUrls": [
+      "https://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-34r1.pdf",
+      "https://www.postgresql.org/docs/current/tutorial-transactions.html"
+    ]
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q16",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 16,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "開発規模の見積り"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "システム開発やソフトウェア開発において、工数やコストの面から開発規模を見積もることは重要である。以下の記述のうち、最も適切なものはどれか。",
+    "choices": {
+      "ア": "CoBRA 法とは、LOC 法で算出されたソフトウェア規模に補正係数を掛け合わせて開発規模を見積もる方法である。",
+      "イ": "COCOMO 法とは、データの構造や流れに着目してソフトウェアの開発規模を見積もる方法である。",
+      "ウ": "COSMIC 法とは、開発工数が開発規模に比例すると仮定するとともに、さまざまな変動要因によって工数増加が発生することを加味して開発規模を見積もる方法である。",
+      "エ": "ファンクションポイント法とは、開発するシステムの入力や出力などの機能を抽出し、それぞれの難易度や複雑さに応じて重み付けし点数化することによって、ソフトウェアの開発規模を見積もる方法である。",
+      "オ": "類推法とは、WBS で洗い出された作業単位ごとに工数を見積もり、この合計をシステム全体の工数と考えて開発規模を見積もる方法である。"
+    },
+    "answer": "エ",
+    "explanation": "正解はエです。ファンクションポイント法は入出力などの機能を重み付けして規模を数値化します。ソースコード行数、データ移動、過去案件との比較、作業ごとの積上げは、それぞれ別の見積りの切り口です。",
+    "choiceExplanations": {
+      "ア": "CoBRA法は専門家の知見と実績データを用い、変動要因による工数増加を考慮します。LOCに係数を掛けるだけの説明ではありません。",
+      "イ": "COCOMOはコード規模等を使うパラメトリックな工数見積りです。データ移動に着目する説明とは違います。",
+      "ウ": "COSMICはソフトウェアの機能に含まれるデータ移動を数える機能規模測定です。記述はCoBRA法の考え方に近いものです。",
+      "エ": "入力・出力等の機能を種類や複雑さに応じて数える、ファンクションポイント法の説明です。",
+      "オ": "WBSの作業単位を合計するのはボトムアップの積上げです。類推法は過去の類似案件を手掛かりに見積もります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/archive/digital/tools/cobra.html"
+    ]
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q17",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 17,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "パスキー"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "近年パスワードレス認証が普及してきた。パスワードレス認証の方法に関する記述として、最も適切なものはどれか。",
+    "choices": {
+      "ア": "パスキー認証では、生体認証は用いられない。",
+      "イ": "パスキー認証では、複数のデバイス間で同じパスキー（FIDO 認証資格情報）を用いることができる。",
+      "ウ": "パスキー認証では、利用者の電話番号にワンタイムパスコードを通知して、そのコードを用いて認証する。",
+      "エ": "パスキー認証とは、一度の認証で許可されている複数のサーバやアプリケーションを利用できる仕組みをいう。",
+      "オ": "パスキー認証は、パスワード認証に比べてDoS 攻撃への耐性がある。"
+    },
+    "answer": "イ",
+    "explanation": "正解はイです。同期可能なパスキーは、利用者の認証情報を複数デバイスで利用できます。端末の生体認証などで秘密鍵の使用を許可し、公開鍵暗号により認証するため、SMSのコードや共通パスワードを入力する方式とは異なります。",
+    "choiceExplanations": {
+      "ア": "端末上の生体認証をパスキー利用の承認に使うことができます。「用いられない」という限定が誤りです。",
+      "イ": "同期可能なパスキーを複数デバイスで使えるという説明で適切です。すべてのパスキーが同期型であるという意味ではありません。",
+      "ウ": "電話番号へコードを送るSMS認証の説明です。パスキーは公開鍵暗号を使います。",
+      "エ": "一度の認証で複数サービスを利用するSSOの説明です。パスキーという認証手段そのものの定義とは異なります。",
+      "オ": "パスキーの特徴はフィッシング等への耐性であり、通信資源やサービスを圧迫するDoS攻撃全般を防ぐものではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "officialReferenceUrls": [
+      "https://fidoalliance.org/passkeys/"
+    ]
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q18",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 18,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "ゼロデイ攻撃"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "サイバー攻撃の手口はますます多様化し、巧妙になっている。ゼロデイ攻撃に関する記述として、最も適切なものはどれか。",
+    "choices": {
+      "ア": "機密情報を盗み取ることなどを目的として、特定の組織や個人を狙って行うサイバー攻撃のことである。",
+      "イ": "サイバー攻撃への対策が手薄な関連企業などを踏み台にして、狙った企業へ攻撃を行うことである。",
+      "ウ": "サイバー攻撃を目的としたツール・サービスや、サイバー攻撃によって手に入れた個人情報などを金銭でやり取りするサービスのことである。",
+      "エ": "情報通信技術を使用せずに、人間の心理的な隙などを突いて、コンピュータに侵入するための情報を盗み出すことである。",
+      "オ": "脆弱性に対する修正プログラム（パッチ）や回避策が公開される前に脆弱性を悪用して行われるサイバー攻撃のことである。"
+    },
+    "answer": "オ",
+    "explanation": "正解はオです。対策用パッチなどが利用できる前に脆弱性を悪用する点がゼロデイ攻撃の特徴です。攻撃対象を絞ること、取引先を経由すること、人の心理を利用することとは分類の軸が違います。",
+    "choiceExplanations": {
+      "ア": "特定の組織・個人を狙う標的型攻撃の説明です。修正公開前の脆弱性の悪用という条件は含まれていません。",
+      "イ": "関連企業等を踏み台にするサプライチェーン攻撃の説明です。ゼロデイという時点の条件とは別です。",
+      "ウ": "攻撃ツールや盗まれた情報の取引など、サイバー犯罪をサービス化する仕組みの説明です。",
+      "エ": "人の心理的な隙から情報を得るソーシャルエンジニアリングの説明です。",
+      "オ": "対策公開前の脆弱性を突くという、ゼロデイ攻撃の特徴を示しています。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "officialReferenceUrls": [
+      "https://csrc.nist.gov/glossary/term/zero_day_attack"
+    ]
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q19",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 19,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "脆弱性管理"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "情報セキュリティ管理に関する記述の正誤の組み合わせとして、最も適切なものを下記の解答群から選べ。\n\nａ　CC（Common Criteria）とは、組織内での情報の取り扱いについて、機密性・完全性・可用性を確保するための仕組みのことである。\n\nｂ　CSIRT（Computer Security Incident Response Team）とは、24 時間365 日体制で企業のネットワークやデバイスを監視し、インシデントの検出を行う組織のことである。\n\nｃ　CVE（Common Vulnerabilities and Exposures）とは、情報セキュリティにおける脆弱性やインシデントに付与された固有の名称や番号のカタログのことである。\n\nｄ　CVSS（Common Vulnerability Scoring System）とは、情報システムの脆弱性の深刻度を、基本評価基準、現状評価基準、環境評価基準の3 つの基準で評価する枠組みのことである。",
+    "choices": {
+      "ア": "ａ：正　　ｂ：正　　ｃ：正　　ｄ：誤",
+      "イ": "ａ：正　　ｂ：正　　ｃ：誤　　ｄ：誤",
+      "ウ": "ａ：正　　ｂ：誤　　ｃ：正　　ｄ：正",
+      "エ": "ａ：誤　　ｂ：誤　　ｃ：正　　ｄ：正",
+      "オ": "ａ：誤　　ｂ：誤　　ｃ：誤　　ｄ：正"
+    },
+    "answer": [
+      "ア",
+      "イ",
+      "ウ",
+      "エ",
+      "オ"
+    ],
+    "explanation": "公式訂正により、問19はすべての受験者の解答が正解として扱われます。用語を整理すると、CCはIT製品等のセキュリティ評価基準、CSIRTはインシデントへの対応組織、CVEは公知の脆弱性の識別、CVSSは脆弱性の深刻度評価に用いられます。",
+    "choiceExplanations": {
+      "ア": "公式訂正によりこの肢も正解扱いです。学習上は、CCを組織の情報管理の仕組みであるISMSと区別します。",
+      "イ": "公式訂正によりこの肢も正解扱いです。継続監視・検知を担うSOCと、インシデント対応を担うCSIRTの役割を整理します。",
+      "ウ": "公式訂正によりこの肢も正解扱いです。CVEは脆弱性の識別情報であり、インシデント一般の番号付けではありません。",
+      "エ": "公式訂正によりこの肢も正解扱いです。CVEの脆弱性識別とCVSSによる深刻度評価を区別します。",
+      "オ": "公式訂正によりこの肢も正解扱いです。本文ｄはCVSS v3系の3評価基準に対応します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "officialReferenceUrls": [
+      "https://www.jf-cmca.jp/attach/test/r06/seikai_teisei_20240903.pdf",
+      "https://www.cve.org/About/Overview",
+      "https://www.first.org/cvss/v3.1/specification-document"
+    ],
+    "officialAnswerNumber": null
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q20",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 20,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "並列系の信頼度"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "ある会社では、本店とＡ支店の間を通信回線で結んでいる。Ａ支店は重要な支店であるため、バックアップ回線として別の通信会社の通信回線を新たに契約することにした。バックアップ回線新設後の通信回線の信頼度を表す計算式として、最も適切なものはどれか。ただし、旧来の通信回線の信頼度をa（0 ≦a ≦1）、新しく契約する通信回線の信頼度をb（0 ≦b ≦1）とする。",
+    "choices": {
+      "ア": "a × b",
+      "イ": "1 － a × b",
+      "ウ": "1 － （1 － a）×（1 － b）",
+      "エ": "（1 － a）×（1 － b）",
+      "オ": "（a × b）²"
+    },
+    "answer": "ウ",
+    "explanation": "正解はウです。2回線が独立に故障するとして、両方が使えない確率は（1−a）（1−b）です。少なくとも一方が使える確率は、その余事象である1−（1−a）（1−b）となります。設問は故障の独立性を明記していませんが、公式正答はこの並列系の式です。",
+    "choiceExplanations": {
+      "ア": "a×bは、両回線がともに使えることを必要とする直列系の式です。予備回線として片方で足りる条件に合いません。",
+      "イ": "1−a×bは、両方が使える事象の余事象です。少なくとも一方が使える確率ではありません。",
+      "ウ": "独立を前提に、両回線が同時に故障する確率を1から引いた並列系の式で、公式正答です。",
+      "エ": "（1−a）（1−b）は両方が故障する確率です。求める信頼度はこれを1から引きます。",
+      "オ": "両回線の成功確率の積をさらに二乗しても、片方が使えればよい条件を表せません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "officialReferenceUrls": [],
+    "isCalculation": true
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q21",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 21,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "EVMの完成時総コスト"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "Ａ社では、BAC（完成時総予算）が1,000 万円の情報システム開発プロジェクトが進行中である。プロジェクト期間のちょうど半分が経過した時点での進捗を把握したところ、AC（コスト実績値）が600 万円、PV（出来高計画値）が500 万円、EV（出来高実績値）が400 万円であった。このままのコスト効率でプロジェクトが進んでいくと、プロジェクトが完了した時にどれくらいのコストがかかると予想できるか。最も適切なものを選べ。",
+    "choices": {
+      "ア": "667 万円",
+      "イ": "1,000 万円",
+      "ウ": "1,200 万円",
+      "エ": "1,250 万円",
+      "オ": "1,500 万円"
+    },
+    "answer": "オ",
+    "explanation": "正解はオです。コスト効率CPI＝EV÷AC＝400÷600＝2/3です。この効率が続くと、完成時総コストEAC＝BAC÷CPI＝1,000÷（2/3）＝1,500万円となります。経過期間の割合ではなく、出来高と実支出の比を使います。",
+    "choiceExplanations": {
+      "ア": "約667万円は1,000×（400÷600）で、予算に効率を掛けた値です。効率が1未満なら費用見通しは予算より増えます。",
+      "イ": "1,000万円は当初予算です。現時点で出来高400万円に600万円を使っている超過を反映していません。",
+      "ウ": "1,200万円は経過期間半分で実支出を2倍した値です。問題は現在のコスト効率が継続する条件です。",
+      "エ": "1,250万円は1,000÷（400÷500）で、進捗の効率SPIを使った値です。コスト効率はEV÷ACです。",
+      "オ": "CPI＝2/3、EAC＝1,000÷（2/3）＝1,500万円で一致します。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "officialReferenceUrls": [
+      "https://www.pmi.org/learning/library/managing-fixed-price-projects-evm-7642"
+    ],
+    "isCalculation": true
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q22",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 22,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "最頻値と中央値"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "以下に示す表1は、2000年以降における中小企業の経営者年齢の相対度数分布である。また、表2は、表1を基にして作成された累積相対度数分布である。経営者年齢分布の最頻値（モード）や中央値（メディアン、中位数）に関する記述として、最も適切なものを下記の解答群から選べ。",
+    "choices": {
+      "ア": "2000 年から2020 年にかけて年を追うごとに、最頻値は大きくなる。",
+      "イ": "2000 年と2005 年の各中央値は、2010 年以降のどの中央値よりも小さい。",
+      "ウ": "2000 年においては、最頻値が中央値よりも大きい。",
+      "エ": "2015 年においては、最頻値が中央値よりも小さい。",
+      "オ": "各年の中で最頻値が最も大きいのは、2020 年である。"
+    },
+    "answer": "イ",
+    "explanation": "正解はイです。累積割合が初めて50％を超える階級は、2000・2005年が55～59歳、2010年以降が60～64歳です。最頻階級は2015年の65～69歳が最も高く、2020年は60～64歳へ下がっています。",
+    "choiceExplanations": {
+      "ア": "最頻階級は2015年の65～69歳から2020年の60～64歳へ下がるため、毎回大きくなるとはいえません。",
+      "イ": "2000・2005年の中央値の階級は55～59歳で、2010・2015・2020年の60～64歳より小さくなります。",
+      "ウ": "2000年の最頻階級は50～54歳、中央値の階級は55～59歳であり、大小関係が逆です。",
+      "エ": "2015年の最頻階級は65～69歳で、中央値の階級60～64歳より大きくなっています。",
+      "オ": "最も高い最頻階級は2015年の65～69歳です。2020年の相対度数の最大値は60～64歳にあります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "officialReferenceUrls": [],
+    "isCalculation": true,
+    "imageUrls": [
+      "/questions/chusho-kigyo-shindanshi/2024-keiei-joho-q22-table1.png",
+      "/questions/chusho-kigyo-shindanshi/2024-keiei-joho-q22-table2.png"
+    ],
+    "imageAltTexts": [
+      "表1：2000・2005・2010・2015・2020年の経営者年齢の相対度数分布。出典と2020年9月時点の注記を含む。",
+      "表2：各年の経営者年齢の累積相対度数分布。"
+    ]
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q23",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 23,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "混同行列"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "ある二値分類問題に対する2 つの予測モデルＡとＢに対して、1,000 件のデータを用いて性能評価を行ったところ、以下の混同行列が得られた。\n\nモデルＡとＢの性能評価に関する記述の正誤の組み合わせとして、最も適切なものを下記の解答群から選べ。ただし、正解率、適合率、再現率は、以下のように定義される。\n\n・正解率：全体の件数のうち、陽性と陰性を正しく予測した割合\n\n・適合率：陽性と予測した件数のうち、実際も陽性である割合\n\n・再現率：実際に陽性である件数のうち、陽性と予測した割合\n\nａ　モデルＡの正解率は、モデルＢの正解率と等しい。\n\nｂ　モデルＡの適合率は、モデルＢの適合率よりも大きい。\n\nｃ　モデルＡの再現率は、モデルＢの再現率よりも大きい。",
+    "choices": {
+      "ア": "ａ：正　　ｂ：正　　ｃ：正",
+      "イ": "ａ：正　　ｂ：正　　ｃ：誤",
+      "ウ": "ａ：正　　ｂ：誤　　ｃ：正",
+      "エ": "ａ：誤　　ｂ：正　　ｃ：正",
+      "オ": "ａ：誤　　ｂ：誤　　ｃ：誤"
+    },
+    "answer": "ウ",
+    "explanation": "正解はウです。正解率はAが（75＋875）÷1,000＝95％、Bが（15＋935）÷1,000＝95％です。適合率はいずれも75％、再現率はAが75％、Bが25％なので、ａ：正・ｂ：誤・ｃ：正となります。",
+    "choiceExplanations": {
+      "ア": "ｂは誤りです。適合率はAが75÷（75＋25）、Bが15÷（15＋5）で、どちらも75％です。",
+      "イ": "ｂは誤りで、ｃは正しい記述です。再現率の分母は実際に陽性である件数です。",
+      "ウ": "正解率はともに95％、適合率はともに75％、再現率はA＝75％、B＝25％で一致します。",
+      "エ": "ａを誤りとしている点が違います。どちらも正しく予測した件数は950件です。",
+      "オ": "ａとｃは正しい記述です。モデルごとに実際の陽性件数が異なるため、再現率の分母も異なります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "officialReferenceUrls": [],
+    "isCalculation": true,
+    "imageUrls": [
+      "/questions/chusho-kigyo-shindanshi/2024-keiei-joho-q23.png"
+    ],
+    "imageAltTexts": [
+      "混同行列。A：真陽性75・偽陰性25・偽陽性25・真陰性875。B：真陽性15・偽陰性45・偽陽性5・真陰性935。"
+    ]
+  },
+  {
+    "id": "chusho-kigyo-shindanshi-2024-annual-keiei-joho-q24",
+    "exam": "chusho-kigyo-shindanshi",
+    "session": "keiei-joho",
+    "year": 2024,
+    "season": "annual",
+    "qNumber": 24,
+    "subject": "経営情報システム",
+    "type": "multiple-choice",
+    "category": "経営情報システム",
+    "topicTags": [
+      "生成AIのハルシネーション"
+    ],
+    "difficulty": 3,
+    "examDate": "2024-08-04",
+    "question": "生成AI に見られる現象の1 つにハルシネーションがある。ハルシネーションに関する記述として、最も適切なものはどれか。",
+    "choices": {
+      "ア": "AI が生成したデータをAI 自らが学習することで、言語モデルの精度が低下したり多様性が失われたりする現象のこと。",
+      "イ": "事実に基づかない情報や実際には存在しない情報をAI が生成する現象のこと。",
+      "ウ": "人間がAI との対話中に、そのAI が感情や意図を持っているかのように感じる現象のこと。",
+      "エ": "人間がAI を反復的に利用することで、特定の意見や思想が正しいと信じ込むようになる現象のこと。",
+      "オ": "モデル訓練時の入力データの統計的分布と、テスト時／本番環境での入力データの統計的分布が、何らかの変化によってズレてくる現象のこと。"
+    },
+    "answer": "イ",
+    "explanation": "正解はイです。ハルシネーションは、事実に裏付けられていない内容をもっともらしく生成する現象です。学習データの循環による劣化、人による擬人化、意見の偏り、入力分布の変化とは区別します。",
+    "choiceExplanations": {
+      "ア": "生成データの再学習によって分布や多様性が劣化するモデル崩壊に対応する説明です。誤った内容を生成する現象そのものとは異なります。",
+      "イ": "根拠のない情報や実在しない情報を生成するという、ハルシネーションの説明に一致します。",
+      "ウ": "利用者がAIへ感情や意図を読み込む擬人化に関する現象です。生成内容の事実性を問う定義ではありません。",
+      "エ": "利用者の信念や意見が偏る現象の説明であり、AIが事実に反する内容を生成することとは違います。",
+      "オ": "入力データの分布が訓練時から変化するデータドリフトの説明です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.jf-cmca.jp/attach/test/shikenmondai/1ji2024/F1JI2024.pdf",
+    "sourceAnswerUrl": "https://www.jf-cmca.jp/attach/test/r06/1ji_seikai/Fv2_20240903.pdf",
+    "sourceAttribution": "出典：一般社団法人 中小企業診断協会 令和6年度 中小企業診断士第1次試験 経営情報システム。改行・空白と図表の配置を整形。解説は当サイト作成。",
+    "license": "JF-CMCA-attributed",
+    "lastUpdated": "2026-11-17",
+    "officialReferenceUrls": [
+      "https://nvlpubs.nist.gov/nistpubs/ai/NIST.AI.600-1.pdf"
+    ]
+  }
+]

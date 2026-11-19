@@ -1,0 +1,726 @@
+[
+  {
+    "id": "sm-2017a-am2-q1",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "サービス移行",
+    "topicTags": [
+      "サービス移行"
+    ],
+    "difficulty": 3,
+    "question": "ITIL 2011 editionで定義されるサービスのライフサイクルにおける，サービストランジション段階に対応する説明はどれか。",
+    "choices": {
+      "ア": "顧客及び利害関係者の満足度を改善するために，サービス要件に規定された要件と制約に沿って，サービスを利用できるようにする。",
+      "イ": "サービスの効率，有効性，費用対効果の観点で運用状況を継続的に測定し，改善していく。",
+      "ウ": "サービスの内容を具体的に決める。",
+      "エ": "戦略的資産として，どのようにサービスマネジメントを設計，開発，導入するかについての手引を提供する。"
+    },
+    "answer": "ア",
+    "explanation": "移行段階では、設計されたサービスを要件と制約に合うよう実環境に移し、顧客が利用できる状態にします。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  },
+  {
+    "id": "sm-2017a-am2-q2",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "重み付き評価",
+    "topicTags": [
+      "重み付き評価"
+    ],
+    "difficulty": 3,
+    "question": "システムの改善に向けて提出された4案について，評価項目を設定して採点した結果を，採点結果表に示す。効果及びリスクについては5段階評価とし，それぞれの評価項目の重要度に応じて，重み付け表に示すとおりの重み付けを行った上で，次の式で総合評価点を算出する。総合評価点が最も高い改善案はどれか。\n\n総合評価点＝効果の総評価点－リスクの総評価点",
+    "choices": {
+      "ア": "案1",
+      "イ": "案2",
+      "ウ": "案3",
+      "エ": "案4"
+    },
+    "answer": "ウ",
+    "explanation": "各項目の点に表の重みを掛けます。効果3項目の合計からリスク2項目の合計を引いて比較すると案3が最大です。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public",
+    "imageUrls": [
+      "/questions/plan7/sm-2017a-am2-q2/figure.webp"
+    ],
+    "imageAltTexts": [
+      "採点結果表と評価項目の重み付け表"
+    ]
+  },
+  {
+    "id": "sm-2017a-am2-q3",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "サービスマネジメントの目的",
+    "topicTags": [
+      "サービスマネジメントの目的"
+    ],
+    "difficulty": 3,
+    "question": "JIS Q 20000-2:2013（サービスマネジメントシステムの適用の手引）によれば，トップマネジメントは合意されたサービスマネジメントの目的を定義する。その際の考慮点のうち，適切なものはどれか。",
+    "choices": {
+      "ア": "顧客の要求事項及び事業ニーズを満たした重要業績評価指標に整合させる。",
+      "イ": "サービス提供者の事業目的及びサービスマネジメントの方針に整合させる。",
+      "ウ": "サービスマネジメントシステムを構成する各プロセスの目的に整合させる。",
+      "エ": "サービスマネジメントシステムを支援する要員の達成目標に整合させる。"
+    },
+    "answer": "イ",
+    "explanation": "組織全体の目的は、提供者の事業目的とサービスマネジメント方針を踏まえて設定します。手段や個々の目標はその下で定めます。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  },
+  {
+    "id": "sm-2017a-am2-q4",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "サービス・ポートフォリオ",
+    "topicTags": [
+      "サービス・ポートフォリオ"
+    ],
+    "difficulty": 3,
+    "question": "ITIL 2011 editionによれば，サービス・ポートフォリオの構成要素のうち，サービス・パイプラインに収録されるサービスはどれか。",
+    "choices": {
+      "ア": "開発が完了し，顧客に提供することが可能なサービス",
+      "イ": "今後，段階的に停止されたり，取り消されたりするサービス",
+      "ウ": "サービスオペレーション段階で実行されているサービス",
+      "エ": "将来提供する予定である開発中のサービス"
+    },
+    "answer": "エ",
+    "explanation": "パイプラインには、これから提供するサービスとして検討中・開発中のものを置きます。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  },
+  {
+    "id": "sm-2017a-am2-q5",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "エスカレーション",
+    "topicTags": [
+      "エスカレーション"
+    ],
+    "difficulty": 3,
+    "question": "ITサービスマネジメントにおけるインシデントの段階的取扱い（エスカレーション）の種類のうち，階層的エスカレーションに該当するものはどれか。",
+    "choices": {
+      "ア": "一次サポートグループでは解決できなかったインシデントの対応を，より専門的な知識をもつ二次サポートグループに委ねる。",
+      "イ": "現在の担当者では解決できなかったインシデントの対応を，広範にわたる関係者を招集する権限をもつ上級マネージャに委ねる。",
+      "ウ": "自分のシフト勤務時間内に完了しなかったインシデントの対応を，次のシフト勤務者に委ねる。",
+      "エ": "中央サービスデスクで受け付けたインシデントの対応を，利用者が属する地域のローカルサービスデスクに委ねる。"
+    },
+    "answer": "イ",
+    "explanation": "階層的な引き上げ先は、ふだんの担当者より広い権限を持つ上位の管理者です。専門チームへの引継ぎは機能的なエスカレーションです。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  },
+  {
+    "id": "sm-2017a-am2-q6",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "サービス継続と可用性",
+    "topicTags": [
+      "サービス継続と可用性"
+    ],
+    "difficulty": 3,
+    "question": "サービスマネジメントシステムにおけるサービス継続及び可用性管理プロセスで行う活動はどれか。",
+    "choices": {
+      "ア": "インシデント及び問題の影響を識別し，これを最小限に抑える，又は回避するための手順を採用する。",
+      "イ": "サービス全体の可用性などの要求事項に対して，事業計画，サービスの要求事項，SLA及びリスクを考慮して，顧客及び利害関係者と合意する。",
+      "ウ": "サービスの容量・能力を監視し，サービスのパフォーマンスを調整して，さらに，十分な容量・能力を提供するための手順を明確にする。",
+      "エ": "提供する個々のサービスを定義し，これに顧客と合意して，さらに，文書化する。"
+    },
+    "answer": "イ",
+    "explanation": "可用性や継続性には、停止できる時間や事業への影響を踏まえた要求事項が必要です。顧客などとその要求に合意する活動が該当します。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  },
+  {
+    "id": "sm-2017a-am2-q7",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "サービス障害分析",
+    "topicTags": [
+      "サービス障害分析"
+    ],
+    "difficulty": 3,
+    "question": "ITIL 2011 editionによれば，リアクティブな可用性管理の活動で用いる技法はどれか。",
+    "choices": {
+      "ア": "故障樹解析（FTA）",
+      "イ": "コンポーネント障害インパクト分析（CFIA）",
+      "ウ": "サービス障害分析（SFA）",
+      "エ": "単一障害点分析（SPOF分析）"
+    },
+    "answer": "ウ",
+    "explanation": "サービス障害分析では、実際に起きた障害を調べて、その根本原因や改善すべき点を見つけます。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  },
+  {
+    "id": "sm-2017a-am2-q8",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "インシデント管理",
+    "topicTags": [
+      "インシデント管理"
+    ],
+    "difficulty": 3,
+    "question": "ITサービスマネジメントにおける，インシデント及びサービス要求管理の主な活動はどれか。",
+    "choices": {
+      "ア": "インシデントの影響を最小限にするための既知の誤り記録の作成",
+      "イ": "インシデントの解決とサービスの回復",
+      "ウ": "インシデントの傾向分析と予防処置",
+      "エ": "インシデントの未知の根本原因の特定"
+    },
+    "answer": "イ",
+    "explanation": "インシデント管理では、サービスをできる限り早く回復します。再発防止や根本原因の特定は問題管理の役割です。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  },
+  {
+    "id": "sm-2017a-am2-q9",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "稼働品質率",
+    "topicTags": [
+      "稼働品質率"
+    ],
+    "difficulty": 3,
+    "question": "システムの信頼性を測る指標の一つに稼働品質率がある。年間の稼働品質率で評価される信頼性が最も高いシステムはどれか。ここで，稼働品質率は次の式で算出し，システムの資産規模には総運用費用を用いるものとする。\n\n稼働品質率＝利用者に迷惑を掛けた回数÷システムの資産規模",
+    "choices": {
+      "ア": "A",
+      "イ": "B",
+      "ウ": "C",
+      "エ": "D"
+    },
+    "answer": "ウ",
+    "explanation": "オンライン処理とバッチ処理の件数を足し、運用費用で割ります。費用で調整した件数が最も少ないシステムCが該当します。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public",
+    "imageUrls": [
+      "/questions/plan7/sm-2017a-am2-q9/figure.webp"
+    ],
+    "imageAltTexts": [
+      "システム別のオンライン処理・バッチ処理の件数と総運用費用"
+    ]
+  },
+  {
+    "id": "sm-2017a-am2-q10",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "関係プロセス",
+    "topicTags": [
+      "関係プロセス"
+    ],
+    "difficulty": 3,
+    "question": "サービスマネジメントシステムの関係プロセスで実施する内容はどれか。",
+    "choices": {
+      "ア": "各供給者について，サービス提供者は，供給者との関係，契約及び供給者のパフォーマンスの管理に責任をもつ個人を指名する。",
+      "イ": "サービスの提供のために管理する必要がある構成品目を特定し，その属性及び構成品目間の関係を構成管理データベースに記録して管理する。",
+      "ウ": "サービス要求の実現を管理するための手順を定めるとともに，サービス要求の優先度付けを行う場合には，影響及び緊急度を考慮する。",
+      "エ": "予算に照らして費用を監視して報告し，財務予測をレビューし，費用を管理する。"
+    },
+    "answer": "ア",
+    "explanation": "関係プロセスには供給者管理が含まれます。供給者ごとに責任者を決め、契約と提供状況を管理します。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  },
+  {
+    "id": "sm-2017a-am2-q11",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "緊急変更",
+    "topicTags": [
+      "緊急変更"
+    ],
+    "difficulty": 3,
+    "question": "ITサービスマネジメントの変更管理の要求事項に基づいて策定する変更管理規程に記載する規則のうち，適切なものはどれか。",
+    "choices": {
+      "ア": "緊急を要する情報セキュリティパッチの適用は，通常変更及び標準変更とは異なる緊急変更の手順を利用する。",
+      "イ": "サービスの廃止は，顧客への影響及びリスクの大きさを考慮して，重大な影響を及ぼす可能性のあるサービス変更として分類するかどうかを決定する。",
+      "ウ": "変更が失敗した場合に差異を識別し，原因究明を行えるようにするために，変更の展開前にCMDBを更新する。",
+      "エ": "変更が失敗した場合には，失敗した変更を元に戻す処置を新たな変更要求とする。"
+    },
+    "answer": "ア",
+    "explanation": "至急のセキュリティ修正では、緊急変更として事前に定めた手順で承認や実施を進めます。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  },
+  {
+    "id": "sm-2017a-am2-q12",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "インシデント・モデル",
+    "topicTags": [
+      "インシデント・モデル"
+    ],
+    "difficulty": 3,
+    "question": "ITIL 2011 editionのインシデント管理において，インシデント・モデルを定義しておくことによって得られるメリットはどれか。",
+    "choices": {
+      "ア": "インシデント管理プロセス及びその運用の，効率性と有効性を判断するための基準を明確にできる。",
+      "イ": "過去のインシデントについて，履歴，カテゴリ，及び解決するために取られた処置を容易に参照できる。",
+      "ウ": "繰り返し発生するインシデントに対して，事前に定義された経路で，事前に定義された時間枠内に対応できる。",
+      "エ": "根本原因が判明していない問題に対する解決策を提供できる。"
+    },
+    "answer": "ウ",
+    "explanation": "インシデント・モデルはよく起こる種類の事案に備え、担当、経路、手順と対応時間をあらかじめ決めておくものです。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  },
+  {
+    "id": "sm-2017a-am2-q13",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "シフト勤務",
+    "topicTags": [
+      "シフト勤務"
+    ],
+    "difficulty": 3,
+    "question": "“24時間365日”の有人オペレーションサービスを提供する。シフト勤務の条件が次のとおりであるとき，オペレータは最少で何人必要か。\n\n（1）1日に3シフトの交代勤務とする。\n\n（2）各シフトで勤務するオペレータは2人以上とする。\n\n（3）各オペレータの勤務回数は7日間当たり5回以内とする。",
+    "choices": {
+      "ア": "8",
+      "イ": "9",
+      "ウ": "10",
+      "エ": "16"
+    },
+    "answer": "イ",
+    "explanation": "1週間の勤務枠は3シフト×2人×7日＝42枠です。1人当たり5枠までなので、42÷5を切り上げて9人以上必要です。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  },
+  {
+    "id": "sm-2017a-am2-q14",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "UPSの冗長構成",
+    "topicTags": [
+      "UPSの冗長構成"
+    ],
+    "difficulty": 3,
+    "question": "JDCC（日本データセンター協会）が制定する“データセンターファシリティスタンダード”において，UPS設備の冗長性に関するティア基準がある。ティア3に該当する構成はどれか。ここで，ティア3は機器のメンテナンスなど一部設備の一時停止時においても，コンピューティングサービスを継続して提供できる冗長構成の設備を有するレベルである。また，システム構成として必要となる常用UPSの台数はNとする。",
+    "choices": {
+      "ア": "2N",
+      "イ": "N",
+      "ウ": "N＋1",
+      "エ": "N＋2"
+    },
+    "answer": "ウ",
+    "explanation": "設問のティア3の構成はN＋1です。1台を止めて点検しても必要なN台を確保できます。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  },
+  {
+    "id": "sm-2017a-am2-q15",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "職務の分離",
+    "topicTags": [
+      "職務の分離"
+    ],
+    "difficulty": 3,
+    "question": "内部統制としての効果的な職務の分離の例として，最も適切なものはどれか。",
+    "choices": {
+      "ア": "開発部門のプログラマが運用部門のオペレータを兼務しない。",
+      "イ": "購買管理で購入物品の検品確認と検品確認入力を同じ担当者が行わない。",
+      "ウ": "資材管理で資材現物の状態の確認と当該資材に係る発注情報の確認を兼務しない。",
+      "エ": "電子送金システムでシステムの始動と送金操作を同じ担当者が行わない。"
+    },
+    "answer": "ア",
+    "explanation": "開発と運用を別の担当に分けると、開発担当者が単独で本番環境のプログラムを入れ替えて運用するリスクを抑えられます。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  },
+  {
+    "id": "sm-2017a-am2-q16",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "責任分担",
+    "topicTags": [
+      "責任分担"
+    ],
+    "difficulty": 3,
+    "question": "プロジェクトで必要な作業とメンバの関係を表したものはどれか。",
+    "choices": {
+      "ア": "コロケーション",
+      "イ": "資源ヒストグラム",
+      "ウ": "責任分担マトリックス",
+      "エ": "プロジェクト憲章"
+    },
+    "answer": "ウ",
+    "explanation": "責任分担マトリックスは作業とメンバを軸に並べ、作業ごとの担当者や責任者を示します。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  },
+  {
+    "id": "sm-2017a-am2-q17",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "期待金額価値",
+    "topicTags": [
+      "期待金額価値"
+    ],
+    "difficulty": 3,
+    "question": "自動生産システムの増強に関する次のディシジョンツリーにおいて，新規にシステムを開発する場合の期待金額価値（EMV）は何億円か。",
+    "choices": {
+      "ア": "14",
+      "イ": "20",
+      "ウ": "26",
+      "エ": "64"
+    },
+    "answer": "ア",
+    "explanation": "新規開発の純利益は需要大で30億円、需要小で－10億円です。確率を掛けて足すと30×0.6－10×0.4＝14億円となります。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public",
+    "imageUrls": [
+      "/questions/plan7/sm-2017a-am2-q17/figure.webp"
+    ],
+    "imageAltTexts": [
+      "新規開発と既存システム改修のディシジョンツリー"
+    ]
+  },
+  {
+    "id": "sm-2017a-am2-q18",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "傾向分析",
+    "topicTags": [
+      "傾向分析"
+    ],
+    "difficulty": 3,
+    "question": "プロジェクト管理で使用する分析技法のうち，傾向分析の説明はどれか。",
+    "choices": {
+      "ア": "個々の選択肢とそれぞれを選択した場合に想定されるシナリオの関係を図に表し，それぞれのシナリオにおける期待値を計算して，最善の策を選択する。",
+      "イ": "個々のリスクが現実のものとなったときの，プロジェクトの目標に与える影響の度合いを調べる。",
+      "ウ": "時間の経過に伴うプロジェクトのパフォーマンスの変動を分析する。",
+      "エ": "発生した障害とその要因の関係を魚の骨のような図にして分析する。"
+    },
+    "answer": "ウ",
+    "explanation": "傾向分析では、時点ごとのパフォーマンスを並べて観察し、改善・悪化など時間とともに現れる変化を調べます。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  },
+  {
+    "id": "sm-2017a-am2-q19",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "フラッシュメモリ",
+    "topicTags": [
+      "フラッシュメモリ"
+    ],
+    "difficulty": 3,
+    "question": "MLC（Multi-Level Cell）フラッシュメモリの特徴として，適切なものはどれか。",
+    "choices": {
+      "ア": "コンデンサに蓄えた電荷を用いて，データを記憶する。",
+      "イ": "電気抵抗の値を用いて，データを記憶する。",
+      "ウ": "一つのメモリセルに2ビット以上のデータを記憶する。",
+      "エ": "フリップフロップを利用して，データを記憶する。"
+    },
+    "answer": "ウ",
+    "explanation": "1セルで複数のしきい値を識別できるため、1セル当たりに2ビット以上の情報を記録できます。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  },
+  {
+    "id": "sm-2017a-am2-q20",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "ストレージネットワーク",
+    "topicTags": [
+      "ストレージネットワーク"
+    ],
+    "difficulty": 3,
+    "question": "SAN（Storage Area Network）におけるサーバとストレージの接続形態の説明として，適切なものはどれか。",
+    "choices": {
+      "ア": "シリアルATAなどの接続方式によって内蔵ストレージとして1対1に接続する。",
+      "イ": "ファイバチャネルなどによる専用ネットワークで接続する。",
+      "ウ": "プロトコルはCIFS（Common Internet File System）を使用し，LANで接続する。",
+      "エ": "プロトコルはNFS（Network File System）を使用し，LANで接続する。"
+    },
+    "answer": "イ",
+    "explanation": "SANはストレージとサーバを結ぶ専用ネットワークです。ファイバチャネルはその接続に使われる方式の一つです。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  },
+  {
+    "id": "sm-2017a-am2-q21",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 21,
+    "type": "multiple-choice",
+    "category": "更新前ログ",
+    "topicTags": [
+      "更新前ログ"
+    ],
+    "difficulty": 3,
+    "question": "WAL（Write Ahead Log）プロトコルの目的に関する記述のうち，適切なものはどれか。",
+    "choices": {
+      "ア": "実行中のトランザクションを一時停止させることなく，チェックポイント処理を可能にする。",
+      "イ": "デッドロック状態になっているトランザクションの検出を可能にする。",
+      "ウ": "何らかの理由でDBMSが停止しても，“コミット済みであるがデータベースに書き込まれていない更新データ”の回復を可能にする。",
+      "エ": "ログを格納する記録媒体に障害が発生しても，データベースのデータ更新を可能にする。"
+    },
+    "answer": "ウ",
+    "explanation": "更新内容のログを先に永続化するので、障害後にコミット済みのログを再適用してデータを復旧できます。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  },
+  {
+    "id": "sm-2017a-am2-q22",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 22,
+    "type": "multiple-choice",
+    "category": "プロキシとTCP",
+    "topicTags": [
+      "プロキシとTCP"
+    ],
+    "difficulty": 3,
+    "question": "図は，組織内のTCP/IPネットワークに接続しているクライアントが，プロキシサーバ，ルータ，インターネットを経由して組織外のWebサーバを利用するときの経路を示している。この通信のTCPコネクションが設定される場所はどれか。",
+    "choices": {
+      "ア": "クライアントとWebサーバの間，クライアントとプロキシサーバの間",
+      "イ": "クライアントとプロキシサーバの間，プロキシサーバとWebサーバの間",
+      "ウ": "クライアントとプロキシサーバの間，プロキシサーバとルータの間，ルータとWebサーバの間",
+      "エ": "クライアントとルータの間，ルータとWebサーバの間"
+    },
+    "answer": "イ",
+    "explanation": "プロキシはクライアントからの接続を受けたうえで、Webサーバへ別の接続を張ります。ルータはその通信を転送します。",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public",
+    "imageUrls": [
+      "/questions/plan7/sm-2017a-am2-q22/figure.webp"
+    ],
+    "imageAltTexts": [
+      "クライアントからプロキシ、ルータを経由する通信経路の図"
+    ]
+  },
+  {
+    "id": "sm-2017a-am2-q23",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 23,
+    "type": "multiple-choice",
+    "category": "XML署名",
+    "topicTags": [
+      "XML署名"
+    ],
+    "difficulty": 3,
+    "question": "XML署名の特徴はどれか。",
+    "choices": {
+      "ア": "TLSにおいて，HTTP通信の暗号化及び署名の付与に利用され，通信経路上でのXMLファイルの盗聴を防止する。",
+      "イ": "XMLとJavaScriptがもつ非同期なHTTP通信機能を使い，Webページの内容を動的に書き換えた上で署名を付与することによって，対話型のWebページを作成できる。",
+      "ウ": "XML文書全体に対する署名だけではなく，文書の一部に対しても署名を付与することができ，部分署名や多重署名などの複雑な要件に対応できる。",
+      "エ": "隠したい署名データを画像データの中に埋め込むことによって，署名の存在自体を外から判別できなくする。"
+    },
+    "answer": "ウ",
+    "explanation": "XML署名では参照で署名対象を指定できます。文書の一部分を保護したり、複数の主体が署名したりできます。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  },
+  {
+    "id": "sm-2017a-am2-q24",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 24,
+    "type": "multiple-choice",
+    "category": "コード署名",
+    "topicTags": [
+      "コード署名"
+    ],
+    "difficulty": 3,
+    "question": "署名されたソフトウェアを導入する前に，そのソフトウェアの開発元又は発行元を確認するために使用する証明書はどれか。",
+    "choices": {
+      "ア": "EV SSL証明書",
+      "イ": "クライアント証明書",
+      "ウ": "コードサイニング証明書",
+      "エ": "サーバ証明書"
+    },
+    "answer": "ウ",
+    "explanation": "コードサイニング証明書は署名用の公開鍵とソフトウェア発行者を結び付けます。その署名によって発行元と改変の有無を確認します。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  },
+  {
+    "id": "sm-2017a-am2-q25",
+    "exam": "sm",
+    "session": "am2",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 25,
+    "type": "multiple-choice",
+    "category": "ソフトウェア使用許諾",
+    "topicTags": [
+      "ソフトウェア使用許諾"
+    ],
+    "difficulty": 3,
+    "question": "シュリンクラップ契約において，ソフトウェアの使用許諾契約が成立するのはどの時点か。",
+    "choices": {
+      "ア": "購入したソフトウェアの代金を支払った時点",
+      "イ": "ソフトウェアの入ったCD-ROMを受け取った時点",
+      "ウ": "ソフトウェアの入ったCD-ROMの包装を解いた時点",
+      "エ": "ソフトウェアをPCにインストールした時点"
+    },
+    "answer": "ウ",
+    "explanation": "設問のシュリンクラップ契約では、条件を示した包装を開封する行為を使用許諾への同意と扱います。",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_qs.pdf",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_sm_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  }
+]

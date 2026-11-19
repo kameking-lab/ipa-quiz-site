@@ -77,7 +77,7 @@ export default function OgImage() {
             lineHeight: 1.5,
           }}
         >
-          全 13 試験区分 × AI コパイロット × 無料枠と月額プラン
+          年度別・分野別の過去問演習 × 無料枠と月額プラン
         </div>
         <div
           style={{

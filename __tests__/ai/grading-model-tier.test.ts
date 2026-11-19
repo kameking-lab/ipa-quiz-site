@@ -6,7 +6,7 @@ import { resolveModel } from "@/lib/ai/provider";
 import { isPricedModel, tierForModel } from "@/lib/ai/cost-tracker";
 
 // 強み2: 午後記述・論述の AI 採点だけ上位モデルを使う。汎用LLMに勝つため
-// 採点品質を優先し、四択/コパイロット/類題生成は free(flash-lite) のまま。
+// 採点品質を優先し、四択/コパイロットは free(flash-lite) のまま。
 // resolve("grading") を新設し、採点2ルートだけがそれを使うことをガードする。
 
 afterEach(() => {
@@ -91,7 +91,7 @@ describe("採点ルートだけが grading 層を使う（用途別の使い分�
   const read = (p: string) => readFileSync(join(process.cwd(), p), "utf8");
 
   it("essay-grade（論文採点）は resolveModel('grading') を使う", () => {
-    expect(read("app/api/essay-grade/route.ts")).toMatch(
+    expect(read("lib/essay/legacy-grade.ts")).toMatch(
       /resolveModel\("grading"\)/,
     );
   });

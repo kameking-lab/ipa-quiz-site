@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { parsePracticeSession, practiceSessionLabel } from "@/lib/questions/practice-session";
+import { parsePracticeSession, practiceCategoryLabel, practiceSessionLabel } from "@/lib/questions/practice-session";
 import type { ExamCode } from "@/lib/questions/types";
 import { Check, ChevronRight, X } from "lucide-react";
 import { LS_KEYS } from "@/lib/storage/keys";
@@ -161,7 +161,7 @@ export function QuestionListWithFilter({ groups, exam, showSectionNavigation = f
                       href={q.href}
                       aria-label={`${q.officialQuestionLabel ?? `問${q.qNumber}`}を解く`}
                       className={cn(
-                        "group flex items-start gap-3 rounded-2xl border p-4 transition-all hover:-translate-y-0.5 hover:shadow-md",
+                        "group flex min-h-16 items-start gap-3 rounded-2xl border p-4 transition-all hover:-translate-y-0.5 hover:shadow-md",
                         status
                           ? status.correct
                             ? "border-emerald-300/70 bg-emerald-50/50 hover:border-emerald-400 dark:border-emerald-900/60 dark:bg-emerald-950/20"
@@ -183,7 +183,7 @@ export function QuestionListWithFilter({ groups, exam, showSectionNavigation = f
                       </span>
                       <span className="flex-1 space-y-1.5 min-w-0">
                         <span className="flex flex-wrap items-center gap-1.5 text-xs">
-                          <Badge variant="default">{q.category}</Badge>
+                          <Badge variant="default">{practiceCategoryLabel(q.category, exam)}</Badge>
                           {q.isCalculation && <Badge variant="warn">計算</Badge>}
                           {q.isPlaceholder && (
                             <Badge variant="warn">解説準備中</Badge>
@@ -256,14 +256,14 @@ function FilterButton({
       aria-pressed={active}
       onClick={onClick}
       className={cn(
-        "inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs font-medium transition-colors",
+        "inline-flex min-h-11 items-center gap-1.5 rounded-xl border px-3 py-2 text-sm font-medium transition-colors",
         active
           ? "border-primary/40 bg-primary-soft text-primary-soft-foreground"
           : "border-border bg-card text-muted-foreground hover:border-primary/30 hover:bg-muted",
       )}
     >
       <span>{label}</span>
-      <span className="text-[10px] tabular-nums opacity-70">{count}</span>
+      <span className="text-xs tabular-nums">{count}</span>
     </button>
   );
 }

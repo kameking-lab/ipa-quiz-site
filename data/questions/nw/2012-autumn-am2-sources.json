@@ -1,0 +1,210 @@
+{
+  "exam": "nw",
+  "year": 2012,
+  "season": "autumn",
+  "session": "am2",
+  "checkedAt": "2026-11-17",
+  "officialIndexUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2012h24.html",
+  "files": {
+    "qs": {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_nw_am2_qs.pdf",
+      "sha256": "76adbd7be52371aa7ce7e55da8aadbb6543ab06977503e9d9231bd08fb9fc04c"
+    },
+    "ans": {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000002h5m-att/2012h24a_nw_am2_ans.pdf",
+      "sha256": "0358e03d33f016ddd91796e7e145fe976671dbe3ed98da92b96c4e77e2d97657"
+    }
+  },
+  "questionCount": 25,
+  "remainingInSession": 0,
+  "officialAnswers": "ウウアウエアウアウイイウウウエウウエエエエエエイイ",
+  "verification": "公式問題冊子の全問題ページを画像で読み，本文・選択肢を転記。別の公式解答PDFをpdftotextで抽出して25件照合。本文ハッシュ・原本ページ・原図の切出し座標を記録。",
+  "duplicateCheck": "共有台帳2026-11-11のNW 2012行はspring am1のみ。yr-1と指定10ブランチ取り込み後，追加前のgit log --all -- data/questions/nw/by-year/2012-autumn-am2.tsに履歴なし。",
+  "questions": [
+    {
+      "qNumber": 1,
+      "answer": "ウ",
+      "printedPage": 3,
+      "normalizedTextSha256": "8be29cf3e9369fb6c214f7c449c93adaceeaec084697460ca8b0814539e791ac"
+    },
+    {
+      "qNumber": 2,
+      "answer": "ウ",
+      "printedPage": 3,
+      "normalizedTextSha256": "aa949580e01ee6939cc7cb9095e82ef52df5481de1d7e273d4f4b538d7f1bf5e"
+    },
+    {
+      "qNumber": 3,
+      "answer": "ア",
+      "printedPage": 3,
+      "normalizedTextSha256": "b65663b63c5e272f3c461a8afd80997962791fb023700add54511f3f1e9b1077"
+    },
+    {
+      "qNumber": 4,
+      "answer": "ウ",
+      "printedPage": 4,
+      "normalizedTextSha256": "a96ef9daf752e66ec3949113d296f1c481e17d1a6a088b3d15abbb9d2e2ab52d",
+      "figure": {
+        "path": "/images/questions/nw/2012-autumn-am2-q4.png",
+        "sha256": "d2a81ecc069622968c54411b0b37d3638adae1e049a85ce07e35cac2bf2d6dd1",
+        "page": 4,
+        "cropPdfPoints": [
+          119,
+          140,
+          391,
+          237
+        ]
+      }
+    },
+    {
+      "qNumber": 5,
+      "answer": "エ",
+      "printedPage": 4,
+      "normalizedTextSha256": "5199340c23b5c21d91d90145252e6d72046ae919e10a921b6d0ea0de5410e1dd"
+    },
+    {
+      "qNumber": 6,
+      "answer": "ア",
+      "printedPage": 4,
+      "normalizedTextSha256": "40e3e709f776bf7a844b158f5b9a303127f98ababe89693a87a0354870b800fd"
+    },
+    {
+      "qNumber": 7,
+      "answer": "ウ",
+      "printedPage": 5,
+      "normalizedTextSha256": "1238711e9e30592a3da4cdb6fd181e2e48421c81ab647fb7be0a7a63afbe1759"
+    },
+    {
+      "qNumber": 8,
+      "answer": "ア",
+      "printedPage": 5,
+      "normalizedTextSha256": "dbb7482e9e60d5fe8e857ee5662d1ce21d293cb891a16e64cf2cd39675134130"
+    },
+    {
+      "qNumber": 9,
+      "answer": "ウ",
+      "printedPage": 5,
+      "normalizedTextSha256": "0cc052670e485324c01f081c8abca58cc1ab3167638ef5140ad847956fdaf914"
+    },
+    {
+      "qNumber": 10,
+      "answer": "イ",
+      "printedPage": 6,
+      "normalizedTextSha256": "3cf1171405f8b34bed1825162848a6df4210165fea477c487cfdb6d2920b14c7"
+    },
+    {
+      "qNumber": 11,
+      "answer": "イ",
+      "printedPage": 6,
+      "normalizedTextSha256": "c9c62c22563c20d5f24e2e1f49c2441a406f21d1b260193dc456582d4b5fedca"
+    },
+    {
+      "qNumber": 12,
+      "answer": "ウ",
+      "printedPage": 6,
+      "normalizedTextSha256": "743cee5268d37f082dd2658e71abf549a76b927be0f91685e124f8a8bf2f94c4",
+      "figure": {
+        "path": "/images/questions/nw/2012-autumn-am2-q12.png",
+        "sha256": "f44e3d8f4fe19e5b1ee4fa617ff68095c009f94d421b8056af64c343a5b0ba7d",
+        "page": 6,
+        "cropPdfPoints": [
+          102,
+          484,
+          410,
+          523
+        ]
+      }
+    },
+    {
+      "qNumber": 13,
+      "answer": "ウ",
+      "printedPage": 7,
+      "normalizedTextSha256": "40e075e4c79617bd5b2a7e0570a169c3f0f3f3b10531bde94a383d73d5aace10",
+      "referenceUrls": [
+        "https://www.rfc-editor.org/rfc/rfc4786.html#section-1",
+        "https://www.rfc-editor.org/rfc/rfc4291.html#section-2.6"
+      ]
+    },
+    {
+      "qNumber": 14,
+      "answer": "ウ",
+      "printedPage": 7,
+      "normalizedTextSha256": "df88d5dd12efbb2ade7708ab997cb3655a0b6b47935cbb31077f20e756e694e9"
+    },
+    {
+      "qNumber": 15,
+      "answer": "エ",
+      "printedPage": 7,
+      "normalizedTextSha256": "ba855c7501674d5a5e1a0f239eb2a0c25d7d16033f8031145d4150372f1dd994"
+    },
+    {
+      "qNumber": 16,
+      "answer": "ウ",
+      "printedPage": 8,
+      "normalizedTextSha256": "367c8ed961ce5dbf8dcbca1815190c193d6ba2f2e7bb863e3561e28a59945150"
+    },
+    {
+      "qNumber": 17,
+      "answer": "ウ",
+      "printedPage": 8,
+      "normalizedTextSha256": "36a86d486f83aaf834132269b803642cd16e3016d3f7536a237792bb29012242",
+      "referenceUrls": [
+        "https://www.rfc-editor.org/rfc/rfc7617.html#section-2"
+      ]
+    },
+    {
+      "qNumber": 18,
+      "answer": "エ",
+      "printedPage": 8,
+      "normalizedTextSha256": "28583c9c11d3ce3504b6eb76ab42d006f8f9e62339a94857e4d85cd2ca1eedbd"
+    },
+    {
+      "qNumber": 19,
+      "answer": "エ",
+      "printedPage": 9,
+      "normalizedTextSha256": "93c2f91b9552a395327fbd2f4128c6be952e8de912659ee33bacd6d052a40ee5"
+    },
+    {
+      "qNumber": 20,
+      "answer": "エ",
+      "printedPage": 9,
+      "normalizedTextSha256": "088d70ded9e831033c7063f8e05e591d02406421e1f45e071120fe19cde75cd8"
+    },
+    {
+      "qNumber": 21,
+      "answer": "エ",
+      "printedPage": 9,
+      "normalizedTextSha256": "27019085c8b16ac10014710e56b3a898aa407b40ec78efb9dab42f052c6dcbd5",
+      "referenceUrls": [
+        "https://www.cisco.com/c/en/us/support/docs/wireless-mobility/wireless-lan-wlan/67134-wpa2-config.html"
+      ]
+    },
+    {
+      "qNumber": 22,
+      "answer": "エ",
+      "printedPage": 10,
+      "normalizedTextSha256": "c8357dae90d68cb0c0b2b8c88240852c7948e962818fe14ef9f27a601d025117"
+    },
+    {
+      "qNumber": 23,
+      "answer": "エ",
+      "printedPage": 10,
+      "normalizedTextSha256": "4444e53a6047849403dd19177a23ffaabcad2ea798c2e2ded51458a6f7422d5a"
+    },
+    {
+      "qNumber": 24,
+      "answer": "イ",
+      "printedPage": 11,
+      "normalizedTextSha256": "e91eec0f01d3b818b2885f7bfbbeb07caae3cbfe8d87c6da1dc6475918d901f7"
+    },
+    {
+      "qNumber": 25,
+      "answer": "イ",
+      "printedPage": 11,
+      "normalizedTextSha256": "528648de113fdcde5971b8d9b8467ecf52118025ef327532340e46dbb6745b7f",
+      "referenceUrls": [
+        "https://www.omg.org/mda/"
+      ]
+    }
+  ]
+}

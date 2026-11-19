@@ -1,0 +1,1366 @@
+{
+  "jobId": "PLAN5-176",
+  "exam": "rigaku-ryohoshi",
+  "year": 2025,
+  "edition": 60,
+  "session": "pm",
+  "officialPrintedQuestionCount": 100,
+  "practiceQuestionCount": 99,
+  "existingPracticeQuestionCount": 62,
+  "importedPracticeQuestionCount": 22,
+  "newPracticeQuestionCount": 15,
+  "completeSession": true,
+  "completeYear": false,
+  "officialIndexUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-08_09.html",
+  "sourceFiles": [
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+      "file": "tp250428-08b_01.pdf",
+      "sha256": "7a5a0f5f05d2c11bbd194615437710ebd22dac2ce0200c7960d0fef0080c534b",
+      "bytes": 2991654,
+      "pages": 56,
+      "retrievedAtUtc": "2026-11-17T21:46:55.272095+00:00"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+      "file": "tp250428-08seitou.pdf",
+      "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b",
+      "bytes": 17246,
+      "pages": 1,
+      "retrievedAtUtc": "2026-11-17T21:46:56.670534+00:00"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_02.pdf",
+      "file": "tp250428-08b_02.pdf",
+      "sha256": "ed8967bc0c9524b26d571ff105d4cc993bff11e03f057734d5ef53a4c068f468",
+      "bytes": 2244695,
+      "pages": 12,
+      "retrievedAtUtc": "2026-11-17T21:46:58.266745+00:00"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken08_09/dl/kyoutu_PM98.pdf",
+      "file": "kyoutu_PM98.pdf",
+      "sha256": "5b8a499bf2e49c9eab4db8d24e5ff9de218391c34af5cc5f4fd617bb049e8375",
+      "bytes": 37562,
+      "pages": 1,
+      "retrievedAtUtc": "2026-11-17T21:53:54.302965+00:00"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken08_09/dl/PT_PM31.pdf",
+      "file": "PT_PM31.pdf",
+      "sha256": "8247232707fd409453748214982cbb6306048a1afbc39d96358a8b2014f0a6d2",
+      "bytes": 45418,
+      "pages": 1,
+      "retrievedAtUtc": "2026-11-17T21:53:54.306470+00:00"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken08_09/dl/PT_PM46.pdf",
+      "file": "PT_PM46.pdf",
+      "sha256": "b9121d91670e221e22f11b13e32d87f31d159c4519a4a2c6c3622e65344eb894",
+      "bytes": 47040,
+      "pages": 1,
+      "retrievedAtUtc": "2026-11-17T21:53:54.309977+00:00"
+    },
+    {
+      "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken08_09/dl/kyoutu_PM53.pdf",
+      "file": "kyoutu_PM53.pdf",
+      "sha256": "74e4d96b10ffb6180d6bf00f01c1b0ff849f300afccd2def6c1eaaf9ff7d0c11",
+      "bytes": 35783,
+      "pages": 1,
+      "retrievedAtUtc": "2026-11-17T21:53:54.312487+00:00"
+    }
+  ],
+  "imports": [
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q17",
+      "commit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "refs": [
+        "refs/heads/codex/kakomon-next-additions-local-20261013"
+      ],
+      "path": "data/questions/rigaku-ryohoshi/2025-2026-primary-next5-20261013.json",
+      "sourceBlobSha256": "a9b2b8937107e1026a1d6c15ad4c0aa8dd75e7fa2d663ac9fe6a7e65b4546d35",
+      "questionSha256": "146647dcdd13ab75bff419cfe215807bca2725ce5b9dca237d7c86aac1b6d515",
+      "assets": [
+        {
+          "path": "/images/questions/rigaku-ryohoshi/2025-pm-q17-question-b528ef3294ff.png",
+          "sha256": "b528ef3294ff03c1c0a2754918c9b3b2e722fe3a83052d2780ffb0b6bbbd148d",
+          "bytes": 113832
+        }
+      ]
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q9",
+      "commit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "refs": [
+        "refs/heads/codex/kakomon-next-additions-local-20261013"
+      ],
+      "path": "data/questions/rigaku-ryohoshi/2025-am-q9-pm-q9-q13-q15-reviewed.json",
+      "sourceBlobSha256": "8156c9a9cc44c2d1ffe27fc221009ee32da492240d45032bd1946f6623afe27e",
+      "questionSha256": "995bc39b236d9be9b3c308dfad47cab7de59011f2daf8782446e697ad71102ac",
+      "assets": [
+        {
+          "path": "/images/questions/rigaku-ryohoshi/2025-pm-q9-question-833cd54d24b6.png",
+          "sha256": "833cd54d24b6b0d9e187d5ed62194505bb68aafe6b3cbe73bd66fbbb96320af7",
+          "bytes": 94225
+        }
+      ]
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q13",
+      "commit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "refs": [
+        "refs/heads/codex/kakomon-next-additions-local-20261013"
+      ],
+      "path": "data/questions/rigaku-ryohoshi/2025-am-q9-pm-q9-q13-q15-reviewed.json",
+      "sourceBlobSha256": "8156c9a9cc44c2d1ffe27fc221009ee32da492240d45032bd1946f6623afe27e",
+      "questionSha256": "a69bda41bce0b28cdc9aeca336a67afe23b890e88a5831d4d510317ba176d7ed",
+      "assets": [
+        {
+          "path": "/images/questions/rigaku-ryohoshi/2025-pm-q13-question-affbf6547677.png",
+          "sha256": "affbf6547677629cfa90911cb87acb6e2ca2ff88512b2c12ec3ef1542cb35da1",
+          "bytes": 146964
+        }
+      ]
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q15",
+      "commit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "refs": [
+        "refs/heads/codex/kakomon-next-additions-local-20261013"
+      ],
+      "path": "data/questions/rigaku-ryohoshi/2025-am-q9-pm-q9-q13-q15-reviewed.json",
+      "sourceBlobSha256": "8156c9a9cc44c2d1ffe27fc221009ee32da492240d45032bd1946f6623afe27e",
+      "questionSha256": "ab379cc613d40794c1d1daf7fbc83132eec20d81734c8262c5b1b2e249ae150d",
+      "assets": [
+        {
+          "path": "/images/questions/rigaku-ryohoshi/2025-pm-q15-question-f62f46e08110.png",
+          "sha256": "f62f46e081106413a19494625f23cc4c46952d60905992f3d2d7149fe2fff37e",
+          "bytes": 122295
+        },
+        {
+          "path": "/images/questions/rigaku-ryohoshi/2025-pm-q15-supplement-bb5e5caeccc3.png",
+          "sha256": "bb5e5caeccc3f4bb6eee056beb25be6613e6daa27ed3e60ee7b9aba3be3c7062",
+          "bytes": 314907
+        }
+      ]
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q4",
+      "commit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "refs": [
+        "refs/heads/codex/kakomon-next-additions-local-20261013"
+      ],
+      "path": "data/questions/rigaku-ryohoshi/2025-am22-pm4-45-59-60-reviewed.json",
+      "sourceBlobSha256": "2176244676c300b2220b36fd5a34766ab1373cc21ae1bff61f76c7034b7388af",
+      "questionSha256": "a39a580594cc61f17e117cc0bbb12009a7fdc01d35ec446b6cc32c6ee4b67d8d",
+      "assets": []
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q45",
+      "commit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "refs": [
+        "refs/heads/codex/kakomon-next-additions-local-20261013"
+      ],
+      "path": "data/questions/rigaku-ryohoshi/2025-am22-pm4-45-59-60-reviewed.json",
+      "sourceBlobSha256": "2176244676c300b2220b36fd5a34766ab1373cc21ae1bff61f76c7034b7388af",
+      "questionSha256": "5c69541de3dc827bf91e31b7aa9313b183d4130c421a6147ee1f788fe47195c5",
+      "assets": []
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q59",
+      "commit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "refs": [
+        "refs/heads/codex/kakomon-next-additions-local-20261013"
+      ],
+      "path": "data/questions/rigaku-ryohoshi/2025-am22-pm4-45-59-60-reviewed.json",
+      "sourceBlobSha256": "2176244676c300b2220b36fd5a34766ab1373cc21ae1bff61f76c7034b7388af",
+      "questionSha256": "521ce1b17e11a2ccec2cbaeb249bbf4a36dd94cc56d3b0db420f9ca3db4af94d",
+      "assets": []
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q60",
+      "commit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "refs": [
+        "refs/heads/codex/kakomon-next-additions-local-20261013"
+      ],
+      "path": "data/questions/rigaku-ryohoshi/2025-am22-pm4-45-59-60-reviewed.json",
+      "sourceBlobSha256": "2176244676c300b2220b36fd5a34766ab1373cc21ae1bff61f76c7034b7388af",
+      "questionSha256": "1dde712f04320e896ae099af1058e1fef0ab81ea7e6f2b9a3853c665ccd3429b",
+      "assets": []
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q2",
+      "commit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "refs": [
+        "refs/heads/codex/kakomon-next-additions-local-20261013"
+      ],
+      "path": "data/questions/rigaku-ryohoshi/2025-pm-q2-q3-q6-reviewed.json",
+      "sourceBlobSha256": "d18e7d4c3fc7e87309d270b1a596eb423522b2026c91b7424df6bbd33544ed90",
+      "questionSha256": "1cda9c871294e2293ccce83953c4b901c8d690a365458732e70f80d9c9567e1f",
+      "assets": [
+        {
+          "path": "/images/questions/rigaku-ryohoshi/2025-pm-q2-question-f4d3be4a16fa.png",
+          "sha256": "f4d3be4a16fa1531cbbba93efec5b8aa4f3066af6ec94c4c73c1657e4ad73c08",
+          "bytes": 82144
+        },
+        {
+          "path": "/images/questions/rigaku-ryohoshi/2025-pm-q2-supplement-6dae62d7fcd7.png",
+          "sha256": "6dae62d7fcd77e8d1d4b8d5329bbffb2514f48746f1a166271e8e36d47d8d27b",
+          "bytes": 204077
+        }
+      ]
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q3",
+      "commit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "refs": [
+        "refs/heads/codex/kakomon-next-additions-local-20261013"
+      ],
+      "path": "data/questions/rigaku-ryohoshi/2025-pm-q2-q3-q6-reviewed.json",
+      "sourceBlobSha256": "d18e7d4c3fc7e87309d270b1a596eb423522b2026c91b7424df6bbd33544ed90",
+      "questionSha256": "435c05428ba1248523d7ec03a96d0922828d92fecdcc0a3ff10e6f148c379212",
+      "assets": [
+        {
+          "path": "/images/questions/rigaku-ryohoshi/2025-pm-q2-question-f4d3be4a16fa.png",
+          "sha256": "f4d3be4a16fa1531cbbba93efec5b8aa4f3066af6ec94c4c73c1657e4ad73c08",
+          "bytes": 82144
+        },
+        {
+          "path": "/images/questions/rigaku-ryohoshi/2025-pm-q2-supplement-6dae62d7fcd7.png",
+          "sha256": "6dae62d7fcd77e8d1d4b8d5329bbffb2514f48746f1a166271e8e36d47d8d27b",
+          "bytes": 204077
+        }
+      ]
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q6",
+      "commit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "refs": [
+        "refs/heads/codex/kakomon-next-additions-local-20261013"
+      ],
+      "path": "data/questions/rigaku-ryohoshi/2025-pm-q2-q3-q6-reviewed.json",
+      "sourceBlobSha256": "d18e7d4c3fc7e87309d270b1a596eb423522b2026c91b7424df6bbd33544ed90",
+      "questionSha256": "58bc7847e5ccb22307a7269f3958bcf5e48c969c93dd62d661533da8e00046da",
+      "assets": [
+        {
+          "path": "/images/questions/rigaku-ryohoshi/2025-pm-q6-question-435f55721443.png",
+          "sha256": "435f557214435e930daef4aa77d8f89d3aae279e5257f7fb4545b4344fc952dd",
+          "bytes": 79754
+        }
+      ]
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q56",
+      "commit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "refs": [
+        "refs/heads/codex/kakomon-next-additions-local-20261013"
+      ],
+      "path": "data/questions/rigaku-ryohoshi/2025-pm-q56-reviewed.json",
+      "sourceBlobSha256": "c42b840b44e394673c6b122eadc6bf8332b39692f82397fa43858f8dba5f26df",
+      "questionSha256": "cff0c5c33f360174a1807fee076aa2961b4d0990cdec1375138a6de7f7c8d7c0",
+      "assets": [
+        {
+          "path": "/images/questions/rigaku-ryohoshi/2025-pm-q56-question-555b7707c262.png",
+          "sha256": "555b7707c2627dd082b3c5432825f66b6f7dcf91693ee42209e4e9caeb5eee5c",
+          "bytes": 133330
+        }
+      ]
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q79",
+      "commit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "refs": [
+        "refs/heads/codex/kakomon-next-additions-local-20261013"
+      ],
+      "path": "data/questions/rigaku-ryohoshi/2025-pm-q79-q80-2026-am-q8-reviewed.json",
+      "sourceBlobSha256": "33a8d55f6d2d150398c3511f938f64f4006affb15beea8212dd6b9f49e3e0b9d",
+      "questionSha256": "cee9c1e3f329a91ee46fd9c0c3d2e07e5a89dc047f83f766188f7ec3b4971df4",
+      "assets": []
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q80",
+      "commit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "refs": [
+        "refs/heads/codex/kakomon-next-additions-local-20261013"
+      ],
+      "path": "data/questions/rigaku-ryohoshi/2025-pm-q79-q80-2026-am-q8-reviewed.json",
+      "sourceBlobSha256": "33a8d55f6d2d150398c3511f938f64f4006affb15beea8212dd6b9f49e3e0b9d",
+      "questionSha256": "31eb03037b68a4e8c430e313d68f85230b66bafb7b2bab5ab66153b12b2c2124",
+      "assets": []
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q88",
+      "commit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "refs": [
+        "refs/heads/codex/kakomon-next-additions-local-20261013"
+      ],
+      "path": "data/questions/rigaku-ryohoshi/2025-pm-q88-2026-am-q6-reviewed.json",
+      "sourceBlobSha256": "21573cdb5ab88243f48248f4a4d4acd68c3debf3dd6d04180956ae1891d111f7",
+      "questionSha256": "ddb1ea4977ab042282f9ea5d30dd63abc27de3b66ea323ed1eb9b95c41580578",
+      "assets": []
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q21",
+      "commit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "refs": [
+        "refs/heads/codex/kakomon-next-additions-local-20261013"
+      ],
+      "path": "data/questions/rigaku-ryohoshi/2025-saved-adoption8.json",
+      "sourceBlobSha256": "d4a4352fe7bf147786bcbda8e34ba9cdc09551c950a913630ec394b3a5a15923",
+      "questionSha256": "fda10dbd32f8fddceb397e6c6313b86b59035ac838a6c0460ee70e2f418c5e86",
+      "assets": []
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q22",
+      "commit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "refs": [
+        "refs/heads/codex/kakomon-next-additions-local-20261013"
+      ],
+      "path": "data/questions/rigaku-ryohoshi/2025-saved-adoption8.json",
+      "sourceBlobSha256": "d4a4352fe7bf147786bcbda8e34ba9cdc09551c950a913630ec394b3a5a15923",
+      "questionSha256": "ded18dac10ac8d524d81927014814d8b83a8d58c0eecb840b6492a5554ca6661",
+      "assets": []
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q30",
+      "commit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "refs": [
+        "refs/heads/codex/kakomon-next-additions-local-20261013"
+      ],
+      "path": "data/questions/rigaku-ryohoshi/2025-saved-adoption8.json",
+      "sourceBlobSha256": "d4a4352fe7bf147786bcbda8e34ba9cdc09551c950a913630ec394b3a5a15923",
+      "questionSha256": "606b231677a8e8e10a9238d394881541a9e6f644eb07a527da63526affbe6b5c",
+      "assets": []
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q33",
+      "commit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "refs": [
+        "refs/heads/codex/kakomon-next-additions-local-20261013"
+      ],
+      "path": "data/questions/rigaku-ryohoshi/accepted-scope2-20261013.json",
+      "sourceBlobSha256": "d94cbfc4d9d903a11a4da3f5a88a45067be62249c8d7020bc63dac52371e2fbf",
+      "questionSha256": "bd376d1e11af2bee4c6d462b651d809304d757c3171310e06c5f518f7a36f654",
+      "assets": []
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q31",
+      "commit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "refs": [
+        "refs/heads/codex/kakomon-next-additions-local-20261013"
+      ],
+      "path": "data/questions/rigaku-ryohoshi/clinical-key4-20261013.json",
+      "sourceBlobSha256": "74d99a8742952c34a152b22f488c76bf1d2bb5bfec9a4fb9e929d674d0c0964f",
+      "questionSha256": "e574a3ed762dac95e0f06842d2ca51447d996af5f3ce8c16ece3de9c589c2905",
+      "assets": []
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q46",
+      "commit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "refs": [
+        "refs/heads/codex/kakomon-next-additions-local-20261013"
+      ],
+      "path": "data/questions/rigaku-ryohoshi/clinical-key4-20261013.json",
+      "sourceBlobSha256": "74d99a8742952c34a152b22f488c76bf1d2bb5bfec9a4fb9e929d674d0c0964f",
+      "questionSha256": "f45165263f35c20d3b2467886a2bff8e270dbc2f0e2e4ee3b98fe40067a78581",
+      "assets": []
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q53",
+      "commit": "564444ac48046794812b19dc6c1371f7c48f825e",
+      "refs": [
+        "refs/heads/codex/kakomon-next-additions-local-20261013"
+      ],
+      "path": "data/questions/rigaku-ryohoshi/clinical-key4-20261013.json",
+      "sourceBlobSha256": "74d99a8742952c34a152b22f488c76bf1d2bb5bfec9a4fb9e929d674d0c0964f",
+      "questionSha256": "9001b6901f86cc580eb017a555161c394e8760d51bc5533a890b8a2206fa4651",
+      "assets": []
+    }
+  ],
+  "receipts": [
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q1",
+      "sourceQuestionNumber": 1,
+      "physicalPages": [
+        7
+      ],
+      "officialKeyCell": "B001",
+      "officialKeyLiteral": "3",
+      "imageUrls": [
+        "/questions/physical-therapy-plan5-qd8/60-pm-q001-original.webp"
+      ]
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q5",
+      "sourceQuestionNumber": 5,
+      "physicalPages": [
+        10
+      ],
+      "officialKeyCell": "B005",
+      "officialKeyLiteral": "3",
+      "imageUrls": [
+        "/questions/physical-therapy-plan5-qd8/60-pm-q005-original.webp"
+      ]
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q7",
+      "sourceQuestionNumber": 7,
+      "physicalPages": [
+        12
+      ],
+      "officialKeyCell": "B007",
+      "officialKeyLiteral": "2",
+      "imageUrls": [
+        "/questions/physical-therapy-plan5-qd8/60-pm-q007-original.webp"
+      ]
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q8",
+      "sourceQuestionNumber": 8,
+      "physicalPages": [
+        12
+      ],
+      "officialKeyCell": "B008",
+      "officialKeyLiteral": "35",
+      "imageUrls": [
+        "/questions/physical-therapy-plan5-qd8/60-pm-q008-original.webp"
+      ]
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q19",
+      "sourceQuestionNumber": 19,
+      "physicalPages": [
+        20
+      ],
+      "officialKeyCell": "B019",
+      "officialKeyLiteral": "2",
+      "imageUrls": [
+        "/questions/physical-therapy-plan5-qd8/60-pm-q019-original.webp"
+      ]
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q20",
+      "sourceQuestionNumber": 20,
+      "physicalPages": [
+        21
+      ],
+      "officialKeyCell": "B020",
+      "officialKeyLiteral": "4",
+      "imageUrls": [
+        "/questions/physical-therapy-plan5-qd8/60-pm-q020-original.webp",
+        "/questions/physical-therapy-plan5-qd8/60-pm-appendix-03.webp"
+      ]
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q24",
+      "sourceQuestionNumber": 24,
+      "physicalPages": [
+        22
+      ],
+      "officialKeyCell": "B024",
+      "officialKeyLiteral": "1",
+      "imageUrls": [
+        "/questions/physical-therapy-plan5-qd8/60-pm-q024-original.webp"
+      ]
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q25",
+      "sourceQuestionNumber": 25,
+      "physicalPages": [
+        22
+      ],
+      "officialKeyCell": "B025",
+      "officialKeyLiteral": "3",
+      "imageUrls": [
+        "/questions/physical-therapy-plan5-qd8/60-pm-q025-original.webp"
+      ]
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q27",
+      "sourceQuestionNumber": 27,
+      "physicalPages": [
+        23
+      ],
+      "officialKeyCell": "B027",
+      "officialKeyLiteral": "2",
+      "imageUrls": [
+        "/questions/physical-therapy-plan5-qd8/60-pm-q027-original.webp"
+      ]
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q28",
+      "sourceQuestionNumber": 28,
+      "physicalPages": [
+        23
+      ],
+      "officialKeyCell": "B028",
+      "officialKeyLiteral": "2",
+      "imageUrls": [
+        "/questions/physical-therapy-plan5-qd8/60-pm-q028-original.webp"
+      ]
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q34",
+      "sourceQuestionNumber": 34,
+      "physicalPages": [
+        25
+      ],
+      "officialKeyCell": "B034",
+      "officialKeyLiteral": "25",
+      "imageUrls": [
+        "/questions/physical-therapy-plan5-qd8/60-pm-q034-original.webp"
+      ]
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q35",
+      "sourceQuestionNumber": 35,
+      "physicalPages": [
+        26
+      ],
+      "officialKeyCell": "B035",
+      "officialKeyLiteral": "5",
+      "imageUrls": [
+        "/questions/physical-therapy-plan5-qd8/60-pm-q035-original.webp"
+      ]
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q36",
+      "sourceQuestionNumber": 36,
+      "physicalPages": [
+        26
+      ],
+      "officialKeyCell": "B036",
+      "officialKeyLiteral": "1",
+      "imageUrls": [
+        "/questions/physical-therapy-plan5-qd8/60-pm-q036-original.webp"
+      ]
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q44",
+      "sourceQuestionNumber": 44,
+      "physicalPages": [
+        29
+      ],
+      "officialKeyCell": "B044",
+      "officialKeyLiteral": "3",
+      "imageUrls": [
+        "/questions/physical-therapy-plan5-qd8/60-pm-q044-original.webp"
+      ]
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q71",
+      "sourceQuestionNumber": 71,
+      "physicalPages": [
+        40
+      ],
+      "officialKeyCell": "B071",
+      "officialKeyLiteral": "3",
+      "imageUrls": [
+        "/questions/physical-therapy-plan5-qd8/60-pm-q071-original.webp"
+      ]
+    }
+  ],
+  "assets": [
+    {
+      "path": "/questions/physical-therapy-plan5-qd8/60-pm-q001-original.webp",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+      "physicalPage": 7,
+      "clip": [
+        70.0,
+        76.45,
+        596.455322265625,
+        302.0827941894531
+      ],
+      "rotateDegreesCounterclockwise": 0,
+      "sha256": "73cb0d0e15893e8dffbfbd92784c0599627541029cda363f5084ebf48eb7e03d",
+      "bytes": 32912,
+      "width": 1053,
+      "height": 453
+    },
+    {
+      "path": "/questions/physical-therapy-plan5-qd8/60-pm-q005-original.webp",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+      "physicalPage": 10,
+      "clip": [
+        70.0,
+        76.45,
+        596.455322265625,
+        615.2864379882812
+      ],
+      "rotateDegreesCounterclockwise": 0,
+      "sha256": "d7936870b848609f919e77f5617bc627171543a457ecdef619bfc1aec9f9948a",
+      "bytes": 76110,
+      "width": 1053,
+      "height": 1079
+    },
+    {
+      "path": "/questions/physical-therapy-plan5-qd8/60-pm-q007-original.webp",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+      "physicalPage": 12,
+      "clip": [
+        70.0,
+        76.45,
+        596.455322265625,
+        410.9655456542969
+      ],
+      "rotateDegreesCounterclockwise": 0,
+      "sha256": "ebb3c585ef906b0379a469546dbcd902daa6b07dfecd3ce8f98d15548af01a82",
+      "bytes": 35180,
+      "width": 1053,
+      "height": 670
+    },
+    {
+      "path": "/questions/physical-therapy-plan5-qd8/60-pm-q008-original.webp",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+      "physicalPage": 12,
+      "clip": [
+        70.0,
+        448.74,
+        596.455322265625,
+        783.8181762695312
+      ],
+      "rotateDegreesCounterclockwise": 0,
+      "sha256": "e3b619d0756823b4d873d45335a59073ca2966a8de07833c5c7433e574eeb90d",
+      "bytes": 54334,
+      "width": 1053,
+      "height": 671
+    },
+    {
+      "path": "/questions/physical-therapy-plan5-qd8/60-pm-q019-original.webp",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+      "physicalPage": 20,
+      "clip": [
+        70.0,
+        365.58,
+        596.455322265625,
+        615.3099975585938
+      ],
+      "rotateDegreesCounterclockwise": 0,
+      "sha256": "0ccb407d6ee6e64daa52dcfa701982616b75e7135a9aa1fb1aaa804493efee00",
+      "bytes": 30850,
+      "width": 1053,
+      "height": 500
+    },
+    {
+      "path": "/questions/physical-therapy-plan5-qd8/60-pm-q020-original.webp",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+      "physicalPage": 21,
+      "clip": [
+        70.0,
+        76.45,
+        596.455322265625,
+        338.742431640625
+      ],
+      "rotateDegreesCounterclockwise": 0,
+      "sha256": "7ccbffb565b20ac4e1015b087c0d9fc39a309c6ea5d5864127fc2d5618dfce00",
+      "bytes": 25628,
+      "width": 1053,
+      "height": 526
+    },
+    {
+      "path": "/questions/physical-therapy-plan5-qd8/60-pm-appendix-03.webp",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_02.pdf",
+      "physicalPage": 9,
+      "clip": [
+        0.0,
+        0.0,
+        626.455322265625,
+        870.2357788085938
+      ],
+      "rotateDegreesCounterclockwise": -90,
+      "sha256": "b738208f5183b9156cd6c566e7e0d442cdb4f825cc2240ffead0d2a1457f18c0",
+      "bytes": 339926,
+      "width": 1741,
+      "height": 1253
+    },
+    {
+      "path": "/questions/physical-therapy-plan5-qd8/60-pm-q024-original.webp",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+      "physicalPage": 22,
+      "clip": [
+        70.0,
+        269.2,
+        596.455322265625,
+        422.5548095703125
+      ],
+      "rotateDegreesCounterclockwise": 0,
+      "sha256": "1e9b14a0082a82e861869f8925bf5506f975e2b3a066bdd144477ddc2aeba728",
+      "bytes": 6802,
+      "width": 1053,
+      "height": 308
+    },
+    {
+      "path": "/questions/physical-therapy-plan5-qd8/60-pm-q025-original.webp",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+      "physicalPage": 22,
+      "clip": [
+        70.0,
+        461.96,
+        596.455322265625,
+        639.4043579101562
+      ],
+      "rotateDegreesCounterclockwise": 0,
+      "sha256": "3606e0dad8133e5ed1692686d19ff2691d8310fa0f0e37823c4fa0872c3d36b6",
+      "bytes": 10652,
+      "width": 1053,
+      "height": 356
+    },
+    {
+      "path": "/questions/physical-therapy-plan5-qd8/60-pm-q027-original.webp",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+      "physicalPage": 23,
+      "clip": [
+        70.0,
+        269.2,
+        596.455322265625,
+        422.5548095703125
+      ],
+      "rotateDegreesCounterclockwise": 0,
+      "sha256": "312d4cd11d5bf55b64be81e2dcea823d4f36fb9c1547b96fa02ea0b95df86841",
+      "bytes": 9666,
+      "width": 1053,
+      "height": 308
+    },
+    {
+      "path": "/questions/physical-therapy-plan5-qd8/60-pm-q028-original.webp",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+      "physicalPage": 23,
+      "clip": [
+        70.0,
+        461.96,
+        596.455322265625,
+        663.500732421875
+      ],
+      "rotateDegreesCounterclockwise": 0,
+      "sha256": "02c65c4d710504011f47a4cdfb0c4aba5121318e713fd9681f23265fb586ea06",
+      "bytes": 21640,
+      "width": 1053,
+      "height": 405
+    },
+    {
+      "path": "/questions/physical-therapy-plan5-qd8/60-pm-q034-original.webp",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+      "physicalPage": 25,
+      "clip": [
+        70.0,
+        461.96,
+        596.455322265625,
+        615.3099975585938
+      ],
+      "rotateDegreesCounterclockwise": 0,
+      "sha256": "e4dbcc88a1a85791f54fbd9ad92cfbdfd2e42fa19c3677f97fd811946a3d320f",
+      "bytes": 9044,
+      "width": 1053,
+      "height": 308
+    },
+    {
+      "path": "/questions/physical-therapy-plan5-qd8/60-pm-q035-original.webp",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+      "physicalPage": 26,
+      "clip": [
+        70.0,
+        76.45,
+        596.455322265625,
+        229.79954528808594
+      ],
+      "rotateDegreesCounterclockwise": 0,
+      "sha256": "494a30a47336c779c49bb961272896d22b9bcb8a37dfff4d44b5c781097f99cc",
+      "bytes": 16836,
+      "width": 1053,
+      "height": 308
+    },
+    {
+      "path": "/questions/physical-therapy-plan5-qd8/60-pm-q036-original.webp",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+      "physicalPage": 26,
+      "clip": [
+        70.0,
+        269.2,
+        596.455322265625,
+        422.5548095703125
+      ],
+      "rotateDegreesCounterclockwise": 0,
+      "sha256": "ed17249c4cbb892bb4c38581f9fb5f54dfa2f1953c6484a3b890b8981575fdf9",
+      "bytes": 18476,
+      "width": 1053,
+      "height": 308
+    },
+    {
+      "path": "/questions/physical-therapy-plan5-qd8/60-pm-q044-original.webp",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+      "physicalPage": 29,
+      "clip": [
+        70.0,
+        76.45,
+        596.455322265625,
+        229.79991149902344
+      ],
+      "rotateDegreesCounterclockwise": 0,
+      "sha256": "b60650c239ee6bd3b742721ba35a205583f1037b83f4f402658762f3055619f3",
+      "bytes": 24248,
+      "width": 1053,
+      "height": 308
+    },
+    {
+      "path": "/questions/physical-therapy-plan5-qd8/60-pm-q071-original.webp",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+      "physicalPage": 40,
+      "clip": [
+        70.0,
+        76.45,
+        596.455322265625,
+        591.3740844726562
+      ],
+      "rotateDegreesCounterclockwise": 0,
+      "sha256": "9452326cfcbf1a2e01cf24d916ad57cf532daff731587f5d8e86418f854d568c",
+      "bytes": 41728,
+      "width": 1053,
+      "height": 1031
+    },
+    {
+      "path": "/questions/physical-therapy-plan5-qd8/60-pm-q098-original.webp",
+      "sourceUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+      "physicalPage": 49,
+      "clip": [
+        70.0,
+        461.96,
+        596.455322265625,
+        615.3099975585938
+      ],
+      "rotateDegreesCounterclockwise": 0,
+      "sha256": "7a585ecd768fd04c429f5304cfc5acb465d2d2b54f7218e5e1178c55c71963fe",
+      "bytes": 11106,
+      "width": 1053,
+      "height": 308
+    }
+  ],
+  "officiallyExcludedQuestions": [
+    {
+      "sourceQuestionNumber": 98,
+      "physicalPage": 49,
+      "question": "統合失調症の陽性症状はどれか。2つ選べ。",
+      "choices": {
+        "ア": "快感消失",
+        "イ": "会話の貧困",
+        "ウ": "幻覚",
+        "エ": "注意の障害",
+        "オ": "連合弛緩"
+      },
+      "officialKeyLiteral": "",
+      "scoring": "excluded",
+      "reason": "選択肢に不適切があるため。",
+      "officialScoringUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken08_09/dl/kyoutu_PM98.pdf",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08b_01.pdf",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+      "imageUrls": [
+        "/questions/physical-therapy-plan5-qd8/60-pm-q098-original.webp"
+      ],
+      "note": "公式正答表は空欄。正答は補作せず、公式本文と全選択肢を保持。"
+    }
+  ],
+  "allPracticeKeys": [
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q1",
+      "qNumber": 1,
+      "officialKeyLiteral": "3"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q2",
+      "qNumber": 2,
+      "officialKeyLiteral": "1"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q3",
+      "qNumber": 3,
+      "officialKeyLiteral": "35"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q4",
+      "qNumber": 4,
+      "officialKeyLiteral": "3"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q5",
+      "qNumber": 5,
+      "officialKeyLiteral": "3"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q6",
+      "qNumber": 6,
+      "officialKeyLiteral": "5"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q7",
+      "qNumber": 7,
+      "officialKeyLiteral": "2"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q8",
+      "qNumber": 8,
+      "officialKeyLiteral": "35"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q9",
+      "qNumber": 9,
+      "officialKeyLiteral": "2"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q10",
+      "qNumber": 10,
+      "officialKeyLiteral": "4"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q11",
+      "qNumber": 11,
+      "officialKeyLiteral": "4"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q12",
+      "qNumber": 12,
+      "officialKeyLiteral": "3"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q13",
+      "qNumber": 13,
+      "officialKeyLiteral": "3"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q14",
+      "qNumber": 14,
+      "officialKeyLiteral": "4"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q15",
+      "qNumber": 15,
+      "officialKeyLiteral": "3"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q16",
+      "qNumber": 16,
+      "officialKeyLiteral": "5"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q17",
+      "qNumber": 17,
+      "officialKeyLiteral": "5"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q18",
+      "qNumber": 18,
+      "officialKeyLiteral": "5"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q19",
+      "qNumber": 19,
+      "officialKeyLiteral": "2"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q20",
+      "qNumber": 20,
+      "officialKeyLiteral": "4"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q21",
+      "qNumber": 21,
+      "officialKeyLiteral": "14"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q22",
+      "qNumber": 22,
+      "officialKeyLiteral": "1"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q23",
+      "qNumber": 23,
+      "officialKeyLiteral": "1"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q24",
+      "qNumber": 24,
+      "officialKeyLiteral": "1"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q25",
+      "qNumber": 25,
+      "officialKeyLiteral": "3"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q26",
+      "qNumber": 26,
+      "officialKeyLiteral": "2"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q27",
+      "qNumber": 27,
+      "officialKeyLiteral": "2"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q28",
+      "qNumber": 28,
+      "officialKeyLiteral": "2"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q29",
+      "qNumber": 29,
+      "officialKeyLiteral": "3"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q30",
+      "qNumber": 30,
+      "officialKeyLiteral": "2"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q31",
+      "qNumber": 31,
+      "officialKeyLiteral": "1     2     4"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q32",
+      "qNumber": 32,
+      "officialKeyLiteral": "1"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q33",
+      "qNumber": 33,
+      "officialKeyLiteral": "1"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q34",
+      "qNumber": 34,
+      "officialKeyLiteral": "25"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q35",
+      "qNumber": 35,
+      "officialKeyLiteral": "5"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q36",
+      "qNumber": 36,
+      "officialKeyLiteral": "1"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q37",
+      "qNumber": 37,
+      "officialKeyLiteral": "2"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q38",
+      "qNumber": 38,
+      "officialKeyLiteral": "3"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q39",
+      "qNumber": 39,
+      "officialKeyLiteral": "4"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q40",
+      "qNumber": 40,
+      "officialKeyLiteral": "5"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q41",
+      "qNumber": 41,
+      "officialKeyLiteral": "45"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q42",
+      "qNumber": 42,
+      "officialKeyLiteral": "1"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q43",
+      "qNumber": 43,
+      "officialKeyLiteral": "1"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q44",
+      "qNumber": 44,
+      "officialKeyLiteral": "3"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q45",
+      "qNumber": 45,
+      "officialKeyLiteral": "3"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q46",
+      "qNumber": 46,
+      "officialKeyLiteral": "2     4"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q47",
+      "qNumber": 47,
+      "officialKeyLiteral": "5"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q48",
+      "qNumber": 48,
+      "officialKeyLiteral": "4"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q49",
+      "qNumber": 49,
+      "officialKeyLiteral": "4"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q50",
+      "qNumber": 50,
+      "officialKeyLiteral": "1"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q51",
+      "qNumber": 51,
+      "officialKeyLiteral": "1"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q52",
+      "qNumber": 52,
+      "officialKeyLiteral": "1"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q53",
+      "qNumber": 53,
+      "officialKeyLiteral": "2     3"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q54",
+      "qNumber": 54,
+      "officialKeyLiteral": "1"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q55",
+      "qNumber": 55,
+      "officialKeyLiteral": "1"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q56",
+      "qNumber": 56,
+      "officialKeyLiteral": "24"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q57",
+      "qNumber": 57,
+      "officialKeyLiteral": "2"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q58",
+      "qNumber": 58,
+      "officialKeyLiteral": "3"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q59",
+      "qNumber": 59,
+      "officialKeyLiteral": "2"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q60",
+      "qNumber": 60,
+      "officialKeyLiteral": "4"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q61",
+      "qNumber": 61,
+      "officialKeyLiteral": "3"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q62",
+      "qNumber": 62,
+      "officialKeyLiteral": "13"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q63",
+      "qNumber": 63,
+      "officialKeyLiteral": "1"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q64",
+      "qNumber": 64,
+      "officialKeyLiteral": "4"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q65",
+      "qNumber": 65,
+      "officialKeyLiteral": "23"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q66",
+      "qNumber": 66,
+      "officialKeyLiteral": "1"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q67",
+      "qNumber": 67,
+      "officialKeyLiteral": "2"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q68",
+      "qNumber": 68,
+      "officialKeyLiteral": "5"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q69",
+      "qNumber": 69,
+      "officialKeyLiteral": "2"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q70",
+      "qNumber": 70,
+      "officialKeyLiteral": "5"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q71",
+      "qNumber": 71,
+      "officialKeyLiteral": "3"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q72",
+      "qNumber": 72,
+      "officialKeyLiteral": "3"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q73",
+      "qNumber": 73,
+      "officialKeyLiteral": "2"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q74",
+      "qNumber": 74,
+      "officialKeyLiteral": "1"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q75",
+      "qNumber": 75,
+      "officialKeyLiteral": "5"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q76",
+      "qNumber": 76,
+      "officialKeyLiteral": "4"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q77",
+      "qNumber": 77,
+      "officialKeyLiteral": "4"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q78",
+      "qNumber": 78,
+      "officialKeyLiteral": "3"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q79",
+      "qNumber": 79,
+      "officialKeyLiteral": "2"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q80",
+      "qNumber": 80,
+      "officialKeyLiteral": "4"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q81",
+      "qNumber": 81,
+      "officialKeyLiteral": "1"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q82",
+      "qNumber": 82,
+      "officialKeyLiteral": "4"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q83",
+      "qNumber": 83,
+      "officialKeyLiteral": "13"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q84",
+      "qNumber": 84,
+      "officialKeyLiteral": "4"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q85",
+      "qNumber": 85,
+      "officialKeyLiteral": "4"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q86",
+      "qNumber": 86,
+      "officialKeyLiteral": "5"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q87",
+      "qNumber": 87,
+      "officialKeyLiteral": "23"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q88",
+      "qNumber": 88,
+      "officialKeyLiteral": "2"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q89",
+      "qNumber": 89,
+      "officialKeyLiteral": "1"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q90",
+      "qNumber": 90,
+      "officialKeyLiteral": "5"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q91",
+      "qNumber": 91,
+      "officialKeyLiteral": "2"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q92",
+      "qNumber": 92,
+      "officialKeyLiteral": "1"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q93",
+      "qNumber": 93,
+      "officialKeyLiteral": "1"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q94",
+      "qNumber": 94,
+      "officialKeyLiteral": "2"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q95",
+      "qNumber": 95,
+      "officialKeyLiteral": "4"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q96",
+      "qNumber": 96,
+      "officialKeyLiteral": "1"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q97",
+      "qNumber": 97,
+      "officialKeyLiteral": "1"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q99",
+      "qNumber": 99,
+      "officialKeyLiteral": "5"
+    },
+    {
+      "id": "rigaku-ryohoshi-2025-annual-pm-q100",
+      "qNumber": 100,
+      "officialKeyLiteral": "5"
+    }
+  ],
+  "notes": [
+    "既存62問の本文・公式正答は変更しない。ブランチ22問は全フィールドを保持して取り込む。",
+    "問31・46・53は公式に複数解。既存原稿のrequiredSelections=1を維持し、いずれか一つで正答とする。",
+    "問19は公式本文・正答2を維持。原文の肛門随意収縮とISNCSCIの運動不全基準の相違を解説に注記。ASIAの2019年版公式worksheetをWeb経由で確認。",
+    "問98は公式採点除外。本文・5肢・原図・除外理由をこの台帳に保持し、正答は補作しない。",
+    "問5・28の可動域は設問指定の1995年基準を保持。",
+    "別冊No.3はPDF9ページ全体を時計回り90度回転。"
+  ]
+}

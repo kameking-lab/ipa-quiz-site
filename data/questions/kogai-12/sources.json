@@ -1,0 +1,569 @@
+{
+  "exam": "kogai-12",
+  "checkedOn": "2026-11-18",
+  "sourcePageUrl": "https://www.jemai.or.jp/polconman/examination/past.html",
+  "coverage": {
+    "years": [
+      2026
+    ],
+    "sittings": 1,
+    "originalMainQuestions": 30,
+    "answerUnits": 30,
+    "completeSittings": true,
+    "officialQuestionCount": 30,
+    "addedCount": 30,
+    "remainingCount": 0
+  },
+  "sources": [
+    {
+      "url": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR08.pdf",
+      "sha256": "82171c73f7e0d9250f0885edfa66d3e249c653c298edea6f728e2fbd8438798b",
+      "bytes": 69500,
+      "pages": 1,
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "url": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R08_12.pdf",
+      "sha256": "165a8f0cc6c3006ef1a1bc13f0ad9204612e0bf1941add9e86a121d0f6ee5f5b",
+      "bytes": 1132924,
+      "pages": 22,
+      "checkedOn": "2026-11-18"
+    },
+    {
+      "planId": "kogai-12",
+      "year": 2026,
+      "label": "2026年度",
+      "kind": "question",
+      "url": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R08_12.pdf",
+      "path": "kogai-12-2026-0-question-0.pdf",
+      "sha256": "165a8f0cc6c3006ef1a1bc13f0ad9204612e0bf1941add9e86a121d0f6ee5f5b",
+      "pages": 22,
+      "checkedAt": "2026-11-17T15:16:33.467585+00:00"
+    },
+    {
+      "planId": "kogai-12",
+      "year": 2026,
+      "label": "2026年度",
+      "kind": "answer",
+      "url": "https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR08.pdf",
+      "path": "kogai-12-2026-0-answer-0.pdf",
+      "sha256": "82171c73f7e0d9250f0885edfa66d3e249c653c298edea6f728e2fbd8438798b",
+      "pages": 1,
+      "checkedAt": "2026-11-17T15:16:35.160190+00:00"
+    }
+  ],
+  "method": "公式正答表の科目列を位置情報で読み取り、画像から独立転記した正答と全問照合。公式PDFの設問単位の原図を保持し、全選択肢の理由と計算過程を独自作成。",
+  "questions": [
+    {
+      "id": "kogai-12-2026-annual-gakka-q1",
+      "questionPdfPage": 3,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 4,
+      "imageSha256": "768f3b867d728340037d71daa73b96d9fe4a33a98e2cfe4c6747cebf8a32de7c",
+      "pdfPage": 3,
+      "clip": [
+        54.0,
+        65.08712005615234,
+        558.0,
+        296.1982421875
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q01.png",
+      "originalTextSha256": "8affb8ba9320a975871fe88960ba0b097f069849a230300990e9fdadbcc35f4d"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q2",
+      "questionPdfPage": 3,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 1,
+      "imageSha256": "f3bdedcd5a34b7faed61c9db16bed0e3ee8443e251833c96095f8dccd2a98737",
+      "pdfPage": 3,
+      "clip": [
+        54.0,
+        303.1982421875,
+        558.0,
+        670.0
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q02.png",
+      "originalTextSha256": "de27edd28d727615698aebe46b6b402a26da8a9bcfb7396e17354c352b804598"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q3",
+      "questionPdfPage": 4,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 3,
+      "imageSha256": "be38b61564cdf5cca23dbd500f8ffe69223045cbb040135000d82241dc9b7295",
+      "pdfPage": 4,
+      "clip": [
+        54.0,
+        65.08712005615234,
+        558.0,
+        266.43414306640625
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q03.png",
+      "originalTextSha256": "c3659ab9feb32368d6700355286a538e5c1e11c4be7dabc804d02101f47c8da7"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q4",
+      "questionPdfPage": 4,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 3,
+      "imageSha256": "2abc45c5812aa573671a81fff61ff979a92b2e239e270fcd6846687c3f472f81",
+      "pdfPage": 4,
+      "clip": [
+        54.0,
+        273.43414306640625,
+        558.0,
+        670.0
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q04.png",
+      "originalTextSha256": "4b4b53f4c3db4963b844ec022efd08723fcde4e3b450426566083a4dcaae37ff"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q5",
+      "questionPdfPage": 5,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 3,
+      "imageSha256": "f3d8dbda6e0888d82a6728d690cb552e4539595ac26a9c1251747065d024db62",
+      "pdfPage": 5,
+      "clip": [
+        54.0,
+        65.08712005615234,
+        558.0,
+        670.0
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q05.png",
+      "originalTextSha256": "1f574f7e719d8456608b320f567b2f257a8f39800cf55906eaa9cd093b561fa9"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q6",
+      "questionPdfPage": 6,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 3,
+      "imageSha256": "6ae18724394cda01ec573b22d60a57d228c759a43524561acbc96d991fb5670f",
+      "pdfPage": 6,
+      "clip": [
+        54.0,
+        65.08712005615234,
+        558.0,
+        670.0
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q06.png",
+      "originalTextSha256": "c019e88bdfe7ea3991ed406099731747942a05bf95723fc16701ad282d12e44d"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q7",
+      "questionPdfPage": 7,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 3,
+      "imageSha256": "284a3672ff3bd21d6c51203a3ae2b81de4d7701c97d91d8eb84efc3d71a79bd9",
+      "pdfPage": 7,
+      "clip": [
+        54.0,
+        65.08712005615234,
+        558.0,
+        296.1978759765625
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q07.png",
+      "originalTextSha256": "82bfc515c156a4fea90facb02248a027c7e9d02a7734b0c432f47f0628340882"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q8",
+      "questionPdfPage": 7,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 1,
+      "imageSha256": "6e9255d4e9168a95b2b761e696c14846ad80c55a4da764ecf44ea36b65ce9c55",
+      "pdfPage": 7,
+      "clip": [
+        54.0,
+        303.1978759765625,
+        558.0,
+        445.0162048339844
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q08.png",
+      "originalTextSha256": "208bdfb3e1a8b7cf997770fc9e9982289030c575a3b92d2c8bb921419843e11c"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q9",
+      "questionPdfPage": 7,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 4,
+      "imageSha256": "a1e4828ab01f379e4570cb0e65a481054c47fb59c4d325bbb27cf3c02c719a09",
+      "pdfPage": 7,
+      "clip": [
+        54.0,
+        452.0162048339844,
+        558.0,
+        670.0
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q09.png",
+      "originalTextSha256": "cbc5aaed377cce4965b961e2366b9d1b41802014e5c159411db044c4a630cd4b"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q10",
+      "questionPdfPage": 8,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 2,
+      "imageSha256": "56dc46286947c98dc8fcf4cc29a94aa6462c487865c7fd31c928a356a7b0d5b5",
+      "pdfPage": 8,
+      "clip": [
+        54.0,
+        65.08712005615234,
+        558.0,
+        316.04083251953125
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q10.png",
+      "originalTextSha256": "3578e688210e314d971533710e296f0fdce6398c3bf2594b99caa69fcae631f6"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q11",
+      "questionPdfPage": 8,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 3,
+      "imageSha256": "8d15ad3f549919a970a932ae91ac1726dc1343b678c40ca41ff3eff7b56880d4",
+      "pdfPage": 8,
+      "clip": [
+        54.0,
+        323.04083251953125,
+        558.0,
+        670.0
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q11.png",
+      "originalTextSha256": "3a63e7e992dec3e5122bf81f5f84a43aae4dd0a3161552f4e7a7c55a3a112249"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q12",
+      "questionPdfPage": 9,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 3,
+      "imageSha256": "22952f7a063b48efcb7527dafb0be2ad1496d70bf16a3a33569d1d67130369ee",
+      "pdfPage": 9,
+      "clip": [
+        54.0,
+        65.08712005615234,
+        558.0,
+        286.2764892578125
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q12.png",
+      "originalTextSha256": "fe767832daf66c97453d25478c16169a9903ff44a5fc922a2a00ea87e3b116e6"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q13",
+      "questionPdfPage": 9,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 5,
+      "imageSha256": "dfd0372851beada55192881619aed946d6c1df2af5a504c10cfbbf90b09e226e",
+      "pdfPage": 9,
+      "clip": [
+        54.0,
+        293.2764892578125,
+        558.0,
+        670.0
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q13.png",
+      "originalTextSha256": "64d75d05d173d39ac2c9ecb2df9696e7d8dd516f5d7aa98cc0afc2aaaab90154"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q14",
+      "questionPdfPage": 10,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 3,
+      "imageSha256": "6707a530ba67984940ee8b3addc891e41ca4f47d0ba17cb71a9906fa319444cb",
+      "pdfPage": 10,
+      "clip": [
+        54.0,
+        65.08712005615234,
+        558.0,
+        415.7598876953125
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q14.png",
+      "originalTextSha256": "c5822ea969331340966819c6c5b46737a119b8b57371777c75ac13ed4294ba2c"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q15",
+      "questionPdfPage": 10,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 5,
+      "imageSha256": "da0fc222b75a6be50fe5d93aec3fb9c28df9d58d2fd0403debc113f5b02cb73a",
+      "pdfPage": 10,
+      "clip": [
+        54.0,
+        422.7598876953125,
+        558.0,
+        670.0
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q15.png",
+      "originalTextSha256": "2c8d1866884b0045a9030667b3f73b88dd26f15da30e61377dd8a0c9db9e8435"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q16",
+      "questionPdfPage": 11,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 4,
+      "imageSha256": "3182385ec0d5b6722cb354879706c41aa7a48df7c46d67cd24ba5e312f3e2158",
+      "pdfPage": 11,
+      "clip": [
+        54.0,
+        65.08712005615234,
+        558.0,
+        352.39251708984375
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q16.png",
+      "originalTextSha256": "51b2fbabfeb925b16d132ecbae75477e39d090453dcee7dbfd5a68298af871c2"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q17",
+      "questionPdfPage": 11,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 5,
+      "imageSha256": "161dc0a357aac75f694c9afeb441513661808f55cf95bb531a64070f0e312eab",
+      "pdfPage": 11,
+      "clip": [
+        54.0,
+        359.39251708984375,
+        558.0,
+        670.0
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q17.png",
+      "originalTextSha256": "7d3b54398ac7d64423554ea91602163154c4ff8a9bb618bf08d4748205b812ee"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q18",
+      "questionPdfPage": 12,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 2,
+      "imageSha256": "39fe157b3822bc08bebafa3b222a657a3024a637f90d4d7f686dea906e044f18",
+      "pdfPage": 12,
+      "clip": [
+        54.0,
+        65.08712005615234,
+        558.0,
+        242.6294708251953
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q18.png",
+      "originalTextSha256": "1626f6545ab2c0ce72b238ddeb936cd13e54018eb73bdc520781533291f6e2a9"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q19",
+      "questionPdfPage": 12,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 2,
+      "imageSha256": "139b27ca1c536bc128c7b7116f562cb45978960fa8019de2e5c2f452b78fe3a5",
+      "pdfPage": 12,
+      "clip": [
+        54.0,
+        249.6294708251953,
+        558.0,
+        670.0
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q19.png",
+      "originalTextSha256": "e5f512d3900887dfe3a0de2e43f9c00e021325103c80fe590f37bc1d59d47575"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q20",
+      "questionPdfPage": 13,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 2,
+      "imageSha256": "6892b7d4d649ee39d48941926301737521ac1de3ab05b7b3597ce8b9ef75f2d0",
+      "pdfPage": 13,
+      "clip": [
+        54.0,
+        65.08712005615234,
+        558.0,
+        286.2769775390625
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q20.png",
+      "originalTextSha256": "4ed97053f046cbfd7f487617d520dc6821e49c832daae4ee80a4a8eb8a5c141d"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q21",
+      "questionPdfPage": 13,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 2,
+      "imageSha256": "535c62f20dc707ec983345b2e00a6d0be379efb0e4cc57114dc418a462f9b9e0",
+      "pdfPage": 13,
+      "clip": [
+        54.0,
+        293.2769775390625,
+        558.0,
+        474.7816162109375
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q21.png",
+      "originalTextSha256": "8e65a22e2b95d3f3bde761e0f431f0a7f0605c65edec3dec38c35e30b4958d8b"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q22",
+      "questionPdfPage": 13,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 4,
+      "imageSha256": "dbaa93a2cbb65cc93a6610087250822d552f05948f80b0dc630c3197eb5d631b",
+      "pdfPage": 13,
+      "clip": [
+        54.0,
+        481.7816162109375,
+        558.0,
+        670.0
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q22.png",
+      "originalTextSha256": "71a99e1a928b9e35e45b29778c199bc730596763179789b3269b0d632b666a0e"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q23",
+      "questionPdfPage": 14,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 1,
+      "imageSha256": "7595e8b34513d8bb2be6fbd13ae1d283e842ce9f54924bc239c5defd9a026c9a",
+      "pdfPage": 14,
+      "clip": [
+        54.0,
+        65.08712005615234,
+        558.0,
+        236.6704864501953
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q23.png",
+      "originalTextSha256": "13e5bf614d71fb111c1f9c5957ae52beda1d2fa1744e31fd7cc138e73e25d78a"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q24",
+      "questionPdfPage": 14,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 4,
+      "imageSha256": "124610e09cb83419fe48e2b9315c8a65864a53fe2a12c1e7d16465918a1fcf97",
+      "pdfPage": 14,
+      "clip": [
+        54.0,
+        243.6704864501953,
+        558.0,
+        670.0
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q24.png",
+      "originalTextSha256": "2e6e238e28fee0f9397d9d717fc89d81c3b53589fe191ce25bf767e32327c61d"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q25",
+      "questionPdfPage": 15,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 1,
+      "imageSha256": "dc88c8f8e6401234147824bb7c78c27d888fdbd4e12f9cc0d3fea3b20695f797",
+      "pdfPage": 15,
+      "clip": [
+        54.0,
+        65.08712005615234,
+        558.0,
+        187.0639190673828
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q25.png",
+      "originalTextSha256": "a7a6b51935e8db719c616b9a9fabb553b028b0640b05fed418985f518003c42d"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q26",
+      "questionPdfPage": 15,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 2,
+      "imageSha256": "05b65ef2a3ee59f99b343bda2cd08adc3f1b3db78af748e6523179ea52222ae1",
+      "pdfPage": 15,
+      "clip": [
+        54.0,
+        194.0639190673828,
+        558.0,
+        365.646728515625
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q26.png",
+      "originalTextSha256": "95a3ce20e44077c2deedc6c1a2fa6ee52d2d08fd2e6934abc7534fcaa50801e1"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q27",
+      "questionPdfPage": 15,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 2,
+      "imageSha256": "d50d87457faa5a8dd399d47a937a79cf3d035566390d9d6a58adb615560e96cd",
+      "pdfPage": 15,
+      "clip": [
+        54.0,
+        372.646728515625,
+        558.0,
+        670.0
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q27.png",
+      "originalTextSha256": "665ce92e276232d3500eecc0164be08cff60751539abc404d02e6b82e41d52d3"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q28",
+      "questionPdfPage": 16,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 2,
+      "imageSha256": "242c6c82434f9ddf8685a4b355c809f0a8731cdc187f09635a102126d2ca70ab",
+      "pdfPage": 16,
+      "clip": [
+        54.0,
+        65.08712005615234,
+        558.0,
+        670.0
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q28.png",
+      "originalTextSha256": "a2912d794db844164dcc3ac1a4f4f6f1b1e422992d9c98e6fd69ef0569ebb71b"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q29",
+      "questionPdfPage": 17,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 4,
+      "imageSha256": "e146454c173559d438626be5884f21202b1a1eb345439c72c67d1701e15d1005",
+      "pdfPage": 17,
+      "clip": [
+        54.0,
+        65.08712005615234,
+        558.0,
+        330.9041748046875
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q29.png",
+      "originalTextSha256": "f6847a7d90d456c44766752f23448ef149cd3869096514e793d826766834d001"
+    },
+    {
+      "id": "kogai-12-2026-annual-gakka-q30",
+      "questionPdfPage": 17,
+      "officialAnswerColumn": 12,
+      "officialAnswerNumber": 2,
+      "imageSha256": "a7ead365ac077e1b9f79c11a9a5be5306583a4d52283569895f5880ba5049c6e",
+      "pdfPage": 17,
+      "clip": [
+        54.0,
+        337.9041748046875,
+        558.0,
+        670.0
+      ],
+      "answerColumn": 12,
+      "imageUrl": "/questions/kogai-12/2026/q30.png",
+      "originalTextSha256": "4e31b8f05f98f636e5b4d8e883962cade2233b22549d7112646d3d17be685d5b"
+    }
+  ],
+  "planId": "kogai-12"
+}

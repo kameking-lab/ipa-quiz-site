@@ -27,6 +27,7 @@ import { usePetLearning } from "@/components/pet/usePetLearning";
 import { recordStudyOnDate } from "@/lib/motivation/heatmap";
 import { readSettings } from "@/lib/storage/settings";
 import { mockReviewHref } from "@/lib/mock-exam/review";
+import { reportStudyAnswer } from "@/lib/study-presence-client";
 
 
 interface Props {
@@ -38,6 +39,11 @@ interface Props {
 
 type Phase = "running" | "submitted";
 
+function warningTimeLabel(seconds: number): string {
+  const minutes = Math.floor(seconds / 60), rest = seconds % 60;
+  return `${minutes ? `${minutes}分` : ""}${rest ? `${rest}秒` : ""}` || "0秒";
+}
+
 function getVerdict(scorePct: number, passThreshold: number): "合格圏内" | "あと一歩" | "要対策" {
   const threshold = passThreshold * 100;
   if (scorePct >= threshold + 10) return "合格圏内";
@@ -47,6 +53,7 @@ function getVerdict(scorePct: number, passThreshold: number): "合格圏内" | "
 
 export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Props) {
   const pet = usePetLearning();
+  const questionRef = React.useRef<HTMLDivElement>(null);
   const totalSec = config.minutes * 60;
   const [startedAt] = React.useState(() => resumeFrom?.startedAt ?? Date.now());
   const [remaining, setRemaining] = React.useState(() =>
@@ -60,6 +67,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
       ? resumeFrom.answers.map((answer) => answer ?? undefined)
       : Array(questions.length).fill(undefined),
   );
+  React.useEffect(() => { questionRef.current?.focus({ preventScroll: true }); questionRef.current?.scrollIntoView?.({ block: "start", behavior: "instant" }); }, [index]);
   const answersRef = React.useRef(answers);
   const [phase, setPhase] = React.useState<Phase>("running");
   const nativePermission = useNativeQuestionGrant(phase === "running" ? questions[index]?.id : undefined);
@@ -180,6 +188,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
   const updateAnswer = (answer: ChoiceKey | undefined) => {
     if (submittedRef.current) return;
     if (Date.now() >= startedAt + totalSec * 1000) { submitRef.current(true); return; }
+    if (answer !== undefined && answer !== answersRef.current[index]) reportStudyAnswer(config.exam);
     const next = [...answersRef.current];
     next[index] = answer;
     answersRef.current = next;
@@ -215,21 +224,23 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
   const answered = answers.filter((a) => a !== undefined).length;
   const m = Math.floor(remaining / 60);
   const s = remaining % 60;
-  const danger = remaining <= 600;
-  const warn = remaining <= 1800 && !danger;
+  const dangerAt = Math.min(600, Math.ceil(totalSec * 0.1));
+  const warnAt = Math.min(1800, Math.ceil(totalSec * 0.2));
+  const danger = remaining <= dangerAt;
+  const warn = remaining <= warnAt && !danger;
 
   return (
     <main data-study-presence-exam={q ? config.exam : undefined} className="mx-auto w-full max-w-3xl flex-1 px-4 pb-24 pt-4 sm:px-6">
       <div className="sticky top-0 z-10 -mx-4 mb-4 border-b border-zinc-200 bg-white/95 px-4 py-3 backdrop-blur dark:border-zinc-800 dark:bg-zinc-950/95 sm:-mx-6 sm:px-6">
         <div className="flex items-center justify-between gap-3">
-          <div>
-            <div className="text-[11px] text-zinc-500">{config.label}</div>
+          <div className="min-w-0 flex-1">
+            <h1 className="text-sm font-semibold leading-snug text-muted-foreground">{config.label}</h1>
             <div className="text-xs font-medium">
               {index + 1}/{questions.length} ・ 解答済 {answered}
             </div>
           </div>
           <div
-            className={`tabular-nums text-2xl font-bold ${
+            className={`shrink-0 tabular-nums text-2xl font-bold ${
               danger
                 ? "animate-pulse text-rose-600 dark:text-rose-400"
                 : warn
@@ -260,14 +271,14 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
           role="alert"
         >
           {danger
-            ? "残り10分です。未回答の問題を埋めましょう。"
-            : "残り30分です。ペース配分を確認してください。"}
+            ? `残り${warningTimeLabel(dangerAt)}です。未回答を確認しましょう。`
+            : `残り${warningTimeLabel(warnAt)}です。ペース配分を確認してください。`}
         </div>
       )}
 
       <Card className="mb-4">
         <CardContent className="pt-5">
-          <div className="mb-2 flex items-center gap-2">
+          <div ref={questionRef} tabIndex={-1} className="mb-2 flex scroll-mt-28 items-center gap-2 outline-none" role="group" aria-label={`問${index + 1} ${q.category}`}>
             <Badge variant="outline">問{index + 1}</Badge>
             <Badge variant="default">{q.category}</Badge>
           </div>
@@ -285,13 +296,13 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
                     key={k}
                     onClick={() => updateAnswer(k)}
                     aria-pressed={selected}
-                    className={`block w-full rounded-xl border px-4 py-3 text-left text-sm transition ${
+                    className={`flex min-h-14 w-full items-start gap-3 rounded-xl border px-4 py-3 text-left text-sm leading-relaxed transition ${
                       selected
                         ? "border-sky-500 bg-sky-50 dark:border-sky-400 dark:bg-sky-950/40"
                         : "border-zinc-200 bg-white hover:border-sky-300 dark:border-zinc-800 dark:bg-zinc-900 dark:hover:border-sky-700"
                     }`}
                   >
-                    <span className="mr-2 inline-flex h-6 w-6 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold dark:bg-zinc-800">
+                    <span className="inline-flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-zinc-100 text-xs font-bold dark:bg-zinc-800">
                       {k}
                     </span>
                     {text}
@@ -304,7 +315,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
       </Card>
 
       <div className="mb-4 flex items-center justify-between gap-2">
-        <Button
+        <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
           variant="outline"
           onClick={() => setIndex((i) => Math.max(0, i - 1))}
           disabled={index === 0}
@@ -312,14 +323,14 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
           前へ
         </Button>
         <div className="flex items-center gap-2">
-          <Button
+          <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
             variant="ghost"
             onClick={() => updateAnswer(undefined)}
           >
             クリア
           </Button>
           {index === questions.length - 1 ? (
-            <Button
+            <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
               variant="primary"
               onClick={() => {
                 if (
@@ -336,7 +347,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
               提出する
             </Button>
           ) : (
-            <Button
+            <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
               variant="primary"
               onClick={() => setIndex((i) => Math.min(questions.length - 1, i + 1))}
             >
@@ -351,7 +362,7 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
           <div className="mb-2 text-[11px] font-semibold text-zinc-500">
             回答状況（クリックで移動）
           </div>
-          <div className="grid grid-cols-10 gap-1.5 sm:grid-cols-12">
+          <div className="grid grid-cols-6 gap-2 sm:grid-cols-10">
             {questions.map((_, i) => {
               const ans = answers[i];
               const cur = i === index;
@@ -359,8 +370,9 @@ export function MockExamRunner({ questions, config, onFinish, resumeFrom }: Prop
                 <button
                   key={i}
                   onClick={() => setIndex(i)}
+                  aria-current={cur ? "step" : undefined}
                   aria-label={`問${i + 1}へ移動${ans !== undefined ? "（解答済）" : ""}`}
-                  className={`h-7 rounded text-[10px] font-medium ${
+                  className={`min-h-11 min-w-11 rounded-lg text-sm font-medium ${
                     cur
                       ? "bg-sky-600 text-white"
                       : ans !== undefined
@@ -393,6 +405,8 @@ function ResultView({
   onClose: () => void;
 }) {
   const [wrongExpanded, setWrongExpanded] = React.useState(false);
+  const headingRef = React.useRef<HTMLHeadingElement>(null);
+  React.useEffect(() => { headingRef.current?.focus({ preventScroll: true }); headingRef.current?.scrollIntoView?.({ block: "center", behavior: "instant" }); }, []);
 
   const verdict = getVerdict(result.scorePct, config.passThreshold);
 
@@ -446,9 +460,9 @@ function ResultView({
       {/* スコアヘッダー */}
       <Card className="mb-4 overflow-hidden">
         <div className={`p-6 text-center ${vc.bg}`}>
-          <div className="text-xs font-medium text-zinc-500 dark:text-zinc-400">
+          <h1 ref={headingRef} tabIndex={-1} className="text-base font-semibold text-zinc-700 outline-none dark:text-zinc-200">
             {config.label} 結果
-          </div>
+          </h1>
           <div className="my-2 text-7xl font-extrabold tabular-nums">
             <span className={vc.score}>{result.scorePct}</span>
             <span className="text-2xl text-zinc-400">%</span>
@@ -474,9 +488,9 @@ function ResultView({
 
       {/* 分野別正答率 */}
       <nav aria-label="模試後の学習" className="mb-4 grid gap-2 sm:grid-cols-3">
-        {result.wrongQuestionIds?.length ? <Button asChild><Link href={mockReviewHref(result)}>今回の間違い・未回答を復習</Link></Button> : <p className="self-center text-sm font-semibold">全問正解です</p>}
-        <Button asChild variant="outline"><Link href="/account/dashboard#mock-scores">進捗で模試記録を見る</Link></Button>
-        <Button asChild variant="outline"><Link href="/account/dashboard#weakness">弱点を確認</Link></Button>
+        {result.wrongQuestionIds?.length ? <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" asChild><Link href={mockReviewHref(result)}>今回の間違い・未回答を復習</Link></Button> : <p className="self-center text-sm font-semibold">全問正解です</p>}
+        <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="outline"><Link href="/account/dashboard#mock-scores">進捗で模試記録を見る</Link></Button>
+        <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" asChild variant="outline"><Link href="/account/dashboard#weakness">弱点を確認</Link></Button>
       </nav>
       <p className="mb-4 text-xs text-muted-foreground">模試結果を端末に保存しました。{readSettings().recordHistory ? "未回答を含む採点結果は進捗・弱点にも反映されます。" : "回答履歴の記録がオフのため、進捗・弱点への回答追加は行いません。"}</p>
       <Card className="mb-4">
@@ -491,9 +505,9 @@ function ResultView({
               const isWeak = acc < 0.6;
               return (
                 <li key={cat}>
-                  <div className="mb-1 flex justify-between text-xs">
+                  <div className="mb-1 flex items-start justify-between gap-3 text-xs">
                     <span
-                      className={`flex items-center gap-1 truncate ${
+                      className={`min-w-0 break-words ${
                         isWeak ? "font-semibold text-rose-600 dark:text-rose-400" : ""
                       }`}
                     >
@@ -501,7 +515,7 @@ function ResultView({
                       {cat}
                     </span>
                     <span
-                      className={`tabular-nums ${
+                      className={`shrink-0 tabular-nums ${
                         isWeak ? "text-rose-600 dark:text-rose-400" : ""
                       }`}
                     >
@@ -547,7 +561,7 @@ function ResultView({
               </ul>
               <a
                 href={reviewUrl}
-                className="flex w-full items-center justify-center rounded-lg bg-rose-600 px-3 py-2 text-center text-xs font-semibold text-white hover:bg-rose-700 dark:bg-rose-700 dark:hover:bg-rose-600"
+                className="flex min-h-11 w-full items-center justify-center rounded-lg bg-rose-600 px-3 py-2 text-center text-xs font-semibold text-white hover:bg-rose-700 dark:bg-rose-700 dark:hover:bg-rose-600"
                 aria-label="苦手分野を集中練習する"
               >
                 苦手分野を集中練習 →
@@ -608,7 +622,7 @@ function ResultView({
               {wrongQuestions.length > 5 && (
                 <button
                   onClick={() => setWrongExpanded((v) => !v)}
-                  className="text-[11px] text-sky-600 hover:underline dark:text-sky-400"
+                  className="inline-flex min-h-11 items-center text-xs text-sky-600 hover:underline dark:text-sky-400"
                   aria-expanded={wrongExpanded}
                   aria-controls="wrong-list"
                 >
@@ -658,7 +672,7 @@ function ResultView({
             {!wrongExpanded && wrongQuestions.length > 5 && (
               <button
                 onClick={() => setWrongExpanded(true)}
-                className="mt-3 w-full rounded-lg border border-zinc-200 py-2 text-xs text-zinc-600 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-900"
+                className="mt-3 min-h-11 w-full rounded-lg border border-zinc-200 py-2 text-xs text-zinc-600 hover:bg-zinc-50 dark:border-zinc-700 dark:text-zinc-400 dark:hover:bg-zinc-900"
               >
                 残り {wrongQuestions.length - 5} 問を表示
               </button>
@@ -669,7 +683,7 @@ function ResultView({
 
       {/* アクションボタン */}
       <div className="flex flex-col gap-2 sm:flex-row">
-        <Button onClick={onClose} variant="primary" className="flex-1">
+        <Button onClick={onClose} variant="primary" className="flex-1 min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
           模試一覧に戻る
         </Button>
       </div>

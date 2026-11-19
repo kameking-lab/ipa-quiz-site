@@ -1,0 +1,597 @@
+{
+  "lane": "qb-9",
+  "checkedAt": "2026-11-18",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "branchAuditRefCount": 90,
+  "jobs": [
+    {
+      "jobId": "PLAN5-009",
+      "arrayIndex": 8,
+      "key": "sc|2022|autumn|pm2|2022r04a_sc_pm2_qs.pdf",
+      "status": "added",
+      "path": "data/questions/sc/by-year/2022-autumn-pm2.ts",
+      "questionCount": 2,
+      "records": [
+        {
+          "qNumber": 1,
+          "id": "sc-2022a-pm2-q1",
+          "questionPdfPages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13,
+            14
+          ],
+          "answerPdfPages": [
+            1
+          ],
+          "answerSha256": "2affdcc57b391dd162a96a531f4447a97420af6baf5a6ec7f70fcf767fae3dea"
+        },
+        {
+          "qNumber": 2,
+          "id": "sc-2022a-pm2-q2",
+          "questionPdfPages": [
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26,
+            27
+          ],
+          "answerPdfPages": [
+            2
+          ],
+          "answerSha256": "ab9f698e8a58002ff99e293e4eaa8ec484e4736a0fddd00bdbe4e878ffd43045"
+        }
+      ],
+      "sources": [
+        {
+          "jobId": "PLAN5-009",
+          "kind": "qs",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_sc_pm2_qs.pdf",
+          "sha256": "f0e9bd38dafa57cecb063e93159dc976ea4e3d6988ac0ec69fc2c25d7bd2d653",
+          "pages": 28
+        },
+        {
+          "jobId": "PLAN5-009",
+          "kind": "ans",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000008smf-att/2022r04a_sc_pm2_ans.pdf",
+          "sha256": "f85eb5609c58d70fbd0e111d1d16e4fed3d21bfdbc4ad0f751c0d53cca2ff6a8",
+          "pages": 2
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-023",
+      "arrayIndex": 22,
+      "key": "nw|2022|spring|pm2|2022r04h_nw_pm2_qs.pdf",
+      "status": "added",
+      "path": "data/questions/nw/by-year/2022-spring-pm2.ts",
+      "questionCount": 2,
+      "records": [
+        {
+          "qNumber": 1,
+          "id": "nw-2022h-pm2-q1",
+          "questionPdfPages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "answerPdfPages": [
+            1
+          ],
+          "answerSha256": "b5a72966ed240931eb23272dbdc847b19c72a9f2aca296817d7820a90018caef"
+        },
+        {
+          "qNumber": 2,
+          "id": "nw-2022h-pm2-q2",
+          "questionPdfPages": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20,
+            21,
+            22,
+            23,
+            24
+          ],
+          "answerPdfPages": [
+            2
+          ],
+          "answerSha256": "f55d66ae204d53fc3108e78121a1c02dfc45f7a191b074c2504469e58edd2de4"
+        }
+      ],
+      "sources": [
+        {
+          "jobId": "PLAN5-023",
+          "kind": "qs",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_nw_pm2_qs.pdf",
+          "sha256": "3d39f49a5c76b12da8b3803482a719704dbc4f2995095d504c217451d6b1da70",
+          "pages": 28
+        },
+        {
+          "jobId": "PLAN5-023",
+          "kind": "ans",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_nw_pm2_ans.pdf",
+          "sha256": "ae19ef4f3577500e6b5ab5897f4a675540fc3e6ebaa3e927c541db22f339c3d7",
+          "pages": 2
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-037",
+      "arrayIndex": 36,
+      "key": "ap|2025|spring|pm|2025r07h_ap_pm_qs.pdf",
+      "status": "imported",
+      "path": "data/questions/ap/by-year/2025-spring-pm.ts",
+      "questionCount": 11,
+      "records": [
+        {
+          "qNumber": 1,
+          "id": "ap-2025h-pm-q1",
+          "answerSha256": "9ca05b600a8911b5cd11fee5efe1a3167a077b20802a1f0503f4210a8dc46516",
+          "imageUrls": [
+            "/images/questions/ipa-latest2/2025r07h_ap_pm_qs-q1-figure-1.webp"
+          ]
+        },
+        {
+          "qNumber": 2,
+          "id": "ap-2025h-pm-q2",
+          "answerSha256": "0ee9980717f6a4459137e21c41c092ffcb75a6bae1ebb5404f261f24cc7c7123",
+          "imageUrls": []
+        },
+        {
+          "qNumber": 3,
+          "id": "ap-2025h-pm-q3",
+          "answerSha256": "c81491b07b4ad7b93b1d0137bd645965202dc4a45d70a65b6bc89abaa973d47b",
+          "imageUrls": [
+            "/images/questions/ipa-latest2/2025r07h_ap_pm_qs-q3-figure-1.webp",
+            "/images/questions/ipa-latest2/2025r07h_ap_pm_qs-q3-figure-2.webp",
+            "/images/questions/ipa-latest2/2025r07h_ap_pm_qs-q3-figure-3.webp"
+          ]
+        },
+        {
+          "qNumber": 4,
+          "id": "ap-2025h-pm-q4",
+          "answerSha256": "3917e9607667edd2c2cd72d05bf14f6b1b1244cd30579c109a81695bb9ad4fca",
+          "imageUrls": [
+            "/images/questions/ipa-latest2/2025r07h_ap_pm_qs-q4-figure-1.webp",
+            "/images/questions/ipa-latest2/2025r07h_ap_pm_qs-q4-figure-2.webp"
+          ]
+        },
+        {
+          "qNumber": 5,
+          "id": "ap-2025h-pm-q5",
+          "answerSha256": "c360c23e828bf8c5b3a080c2b7366dfda81e9547ceb95291e8dd323f1be43046",
+          "imageUrls": [
+            "/images/questions/ipa-latest2/2025r07h_ap_pm_qs-q5-figure-1.webp"
+          ]
+        },
+        {
+          "qNumber": 6,
+          "id": "ap-2025h-pm-q6",
+          "answerSha256": "ffd7969c9bb1ca41973276131f8afe7f41c50ffdda96d4d172eff2dafceec464",
+          "imageUrls": [
+            "/images/questions/ipa-latest2/2025r07h_ap_pm_qs-q6-figure-1.webp"
+          ]
+        },
+        {
+          "qNumber": 7,
+          "id": "ap-2025h-pm-q7",
+          "answerSha256": "62f3374f87967467097ed8b3e2e8ed94d03cbfda06d3597a57f097b655bb9593",
+          "imageUrls": [
+            "/images/questions/ipa-latest2/2025r07h_ap_pm_qs-q7-figure-1.webp",
+            "/images/questions/ipa-latest2/2025r07h_ap_pm_qs-q7-figure-2.webp"
+          ]
+        },
+        {
+          "qNumber": 8,
+          "id": "ap-2025h-pm-q8",
+          "answerSha256": "2c76ee0d1111e4a856caa4d4d9898a2adafbce3a5f3bb6d4e8f7f555681fb5c8",
+          "imageUrls": [
+            "/images/questions/ipa-latest2/2025r07h_ap_pm_qs-q8-figure-1.webp",
+            "/images/questions/ipa-latest2/2025r07h_ap_pm_qs-q8-figure-2.webp"
+          ]
+        },
+        {
+          "qNumber": 9,
+          "id": "ap-2025h-pm-q9",
+          "answerSha256": "454a36190eaecfa23bcd852ffaed26128c7ca9b7781069845159ce672379c9b8",
+          "imageUrls": [
+            "/images/questions/ipa-latest2/2025r07h_ap_pm_qs-q9-figure-1.webp",
+            "/images/questions/ipa-latest2/2025r07h_ap_pm_qs-q9-figure-2.webp"
+          ]
+        },
+        {
+          "qNumber": 10,
+          "id": "ap-2025h-pm-q10",
+          "answerSha256": "bfba1f06eedaeb3cd374aeb2905d56e05f99a3dfacc2b9731c68ecbd07c61073",
+          "imageUrls": []
+        },
+        {
+          "qNumber": 11,
+          "id": "ap-2025h-pm-q11",
+          "answerSha256": "13d4e423f3d1564c3200ad4e5d48040da55e47b8d537f38242f8ab4ec1dab7cd",
+          "imageUrls": [
+            "/images/questions/ipa-latest2/2025r07h_ap_pm_qs-q11-figure-1.webp"
+          ]
+        }
+      ],
+      "sources": [
+        {
+          "jobId": "PLAN5-037",
+          "kind": "qs",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_pm_qs.pdf",
+          "sha256": "bb5d30aec1814e276a093d7930a94e4e641cd6892a467153ac780ad24979fd1b",
+          "pages": 68
+        },
+        {
+          "jobId": "PLAN5-037",
+          "kind": "ans",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07h_ap_pm_ans.pdf",
+          "sha256": "8ac9a45ae67c822fdceb9a35973d9afd44ed8805edd4cd46d8812c2b02bb1583",
+          "pages": 6
+        }
+      ],
+      "importCommit": "1712224b06004bd1dd7f9d88d8e6269c5cfb968b",
+      "sourceFileSha256": "860c5414c2818fe21dc579b88f16ad85dea57f2873c52d1c55007a698e242a53"
+    },
+    {
+      "jobId": "PLAN5-051",
+      "arrayIndex": 50,
+      "key": "st|2023|spring|pm2|2023r05h_st_pm2_qs.pdf",
+      "status": "added",
+      "path": "data/questions/st/by-year/2023-spring-pm2.ts",
+      "questionCount": 3,
+      "records": [
+        {
+          "qNumber": 1,
+          "id": "st-2023h-pm2-q1",
+          "questionPdfPages": [
+            3
+          ],
+          "answerPdfPages": [
+            1
+          ],
+          "answerSha256": "a6d7cd2e2d55003e7d06d5231b2bda3e33ab8baaa7b45ce8d4abfd771239f7bb"
+        },
+        {
+          "qNumber": 2,
+          "id": "st-2023h-pm2-q2",
+          "questionPdfPages": [
+            4
+          ],
+          "answerPdfPages": [
+            1
+          ],
+          "answerSha256": "87221cd2918ce30f10ca07dd9327bcaa6eac2d8206a2f8a85cfa52593f04f1b0"
+        },
+        {
+          "qNumber": 3,
+          "id": "st-2023h-pm2-q3",
+          "questionPdfPages": [
+            5
+          ],
+          "answerPdfPages": [
+            1
+          ],
+          "answerSha256": "1cd4c42186468e35c695a53dbc6290dc9f1c13210275806b75f1ed2bbca8254f"
+        }
+      ],
+      "sources": [
+        {
+          "jobId": "PLAN5-051",
+          "kind": "qs",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_st_pm2_qs.pdf",
+          "sha256": "3a7dfa805a16f5f2ae8a31e9daab36ecb2d986edf62e1c71eb19dfd4f90ed2a2",
+          "pages": 8
+        },
+        {
+          "jobId": "PLAN5-051",
+          "kind": "ans",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05h_st_pm2_ans.pdf",
+          "sha256": "d5cf5b7dba54f10d71bb54d7d970c930fe974a0b286734b40640c0640bfc814e",
+          "pages": 1
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-065",
+      "arrayIndex": 64,
+      "key": "au|2021|autumn|pm2|2021r03a_au_pm2_qs.pdf",
+      "status": "added",
+      "path": "data/questions/au/by-year/2021-autumn-pm2.ts",
+      "questionCount": 2,
+      "records": [
+        {
+          "qNumber": 1,
+          "id": "au-2021a-pm2-q1",
+          "questionPdfPages": [
+            3
+          ],
+          "answerPdfPages": [
+            1
+          ],
+          "answerSha256": "f779a1b72c1874ff14eda2e7c06b746471e0923a8886cedf7c4d14dce33dacec"
+        },
+        {
+          "qNumber": 2,
+          "id": "au-2021a-pm2-q2",
+          "questionPdfPages": [
+            4
+          ],
+          "answerPdfPages": [
+            1
+          ],
+          "answerSha256": "e8a1440a57269f2b578a46c0eb1b3a0d101307b66c5a405e98cedefa5d3053ba"
+        }
+      ],
+      "sources": [
+        {
+          "jobId": "PLAN5-065",
+          "kind": "qs",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_au_pm2_qs.pdf",
+          "sha256": "633d3da9657c11dbde5b142e7a93f2f4efbb82c4d4a60531e1aa106811a30473",
+          "pages": 8
+        },
+        {
+          "jobId": "PLAN5-065",
+          "kind": "ans",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_au_pm2_ans.pdf",
+          "sha256": "68f941235a65ad2a1197134fdb7fc7def4cf5a9c0865191ae5549afae7925468",
+          "pages": 1
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-079",
+      "arrayIndex": 78,
+      "key": "pm|2025|autumn|pm1|2025r07a_pm_pm1_qs.pdf",
+      "status": "added",
+      "path": "data/questions/pm/by-year/2025-autumn-pm1.ts",
+      "questionCount": 3,
+      "records": [
+        {
+          "qNumber": 1,
+          "id": "pm-2025a-pm1-q1",
+          "questionPdfPages": [
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "answerPdfPages": [
+            1
+          ],
+          "answerSha256": "a610167f40390c8cf364ec9e04c8e931c3f5662a8c3516dabcfd05d798a2f15a"
+        },
+        {
+          "qNumber": 2,
+          "id": "pm-2025a-pm1-q2",
+          "questionPdfPages": [
+            7,
+            8,
+            9,
+            10,
+            11
+          ],
+          "answerPdfPages": [
+            1
+          ],
+          "answerSha256": "fb40757f58a0ca43eb7e484194c15ab8b387d6212628d59ebdf608d1a86899ff"
+        },
+        {
+          "qNumber": 3,
+          "id": "pm-2025a-pm1-q3",
+          "questionPdfPages": [
+            12,
+            13,
+            14,
+            15
+          ],
+          "answerPdfPages": [
+            2
+          ],
+          "answerSha256": "4d8023b546040a63a876a1a3b88303b0b47af9327df5cf2af1608fd05ac56fcb"
+        }
+      ],
+      "sources": [
+        {
+          "jobId": "PLAN5-079",
+          "kind": "qs",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_pm_pm1_qs.pdf",
+          "sha256": "2b70809008e9adf447b9b8425546d05173b0c9193a2473d6cd281cde8eb1387a",
+          "pages": 16
+        },
+        {
+          "jobId": "PLAN5-079",
+          "kind": "ans",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_pm_pm1_ans.pdf",
+          "sha256": "d11fc725c83144c8990ccd1b738f52d39d073f69f2481281f0ae0dbfce293da2",
+          "pages": 2
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-093",
+      "arrayIndex": 92,
+      "key": "db|2023|autumn|pm1|2023r05a_db_pm1_qs.pdf",
+      "status": "added",
+      "path": "data/questions/db/by-year/2023-autumn-pm1.ts",
+      "questionCount": 3,
+      "records": [
+        {
+          "qNumber": 1,
+          "id": "db-2023a-pm1-q1",
+          "questionPdfPages": [
+            7,
+            8,
+            9,
+            10,
+            11,
+            12
+          ],
+          "answerPdfPages": [
+            1,
+            2
+          ],
+          "answerSha256": "3d7fdbecceb5cc754d3909e343eb5191e20254a3bc6f3d2edaf2ee94a90c99ff"
+        },
+        {
+          "qNumber": 2,
+          "id": "db-2023a-pm1-q2",
+          "questionPdfPages": [
+            13,
+            14,
+            15,
+            16,
+            17,
+            18,
+            19
+          ],
+          "answerPdfPages": [
+            3,
+            4
+          ],
+          "answerSha256": "7ff8f8e272d06754d515c77365ee83bb65dad5dd98e4e4be1ebb2427649f71b1"
+        },
+        {
+          "qNumber": 3,
+          "id": "db-2023a-pm1-q3",
+          "questionPdfPages": [
+            20,
+            21,
+            22,
+            23,
+            24,
+            25,
+            26
+          ],
+          "answerPdfPages": [
+            4
+          ],
+          "answerSha256": "eac19350e7e6260935760dafd0e83fc0475ec09897c4a5cb4b362393d6aaf578"
+        }
+      ],
+      "sources": [
+        {
+          "jobId": "PLAN5-093",
+          "kind": "qs",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_db_pm1_qs.pdf",
+          "sha256": "8ab00fc624094914c14d55d801f2346f52c6017c01e6512275005524030515c9",
+          "pages": 28
+        },
+        {
+          "jobId": "PLAN5-093",
+          "kind": "ans",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_db_pm1_ans.pdf",
+          "sha256": "21f4cb216ced666f7ca00ab4085ae18d234c7288cf51a4cdbde2479cc0c54301",
+          "pages": 4
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-107",
+      "arrayIndex": 106,
+      "key": "es|2021|autumn|pm1|2021r03a_es_pm1_qs.pdf",
+      "status": "added",
+      "path": "data/questions/es/by-year/2021-autumn-pm1.ts",
+      "questionCount": 3,
+      "records": [
+        {
+          "qNumber": 1,
+          "id": "es-2021a-pm1-q1",
+          "questionPdfPages": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+          ],
+          "answerPdfPages": [
+            1
+          ],
+          "answerSha256": "138bd4cf33976b830ad40b9b0376070debbf9fae58462c648b1c9e02bac5c01d"
+        },
+        {
+          "qNumber": 2,
+          "id": "es-2021a-pm1-q2",
+          "questionPdfPages": [
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+          ],
+          "answerPdfPages": [
+            2
+          ],
+          "answerSha256": "f59371c1b068db2ffeedebf4f2f39d40033c76918dfb66f4a1aac57f472082d2"
+        },
+        {
+          "qNumber": 3,
+          "id": "es-2021a-pm1-q3",
+          "questionPdfPages": [
+            14,
+            15,
+            16,
+            17,
+            18,
+            19,
+            20
+          ],
+          "answerPdfPages": [
+            2
+          ],
+          "answerSha256": "7dd5ba1b43195521de4984fc698f00dff138da1dca458650994755eb30aa34ba"
+        }
+      ],
+      "sources": [
+        {
+          "jobId": "PLAN5-107",
+          "kind": "qs",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_es_pm1_qs.pdf",
+          "sha256": "1bdcd4f171a43e1d400742c4aef150d2fadb53b658de22246cd827b5b1c7c03e",
+          "pages": 24
+        },
+        {
+          "jobId": "PLAN5-107",
+          "kind": "ans",
+          "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000apad-att/2021r03a_es_pm1_ans.pdf",
+          "sha256": "1a5938ffa54f8eb027fecd615ca982d0e8a1a12e02707e1abf691ee9c5803c7f",
+          "pages": 2
+        }
+      ]
+    }
+  ]
+}

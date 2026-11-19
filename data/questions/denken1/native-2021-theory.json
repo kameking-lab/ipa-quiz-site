@@ -1,0 +1,551 @@
+{
+  "year": 2021,
+  "season": "primary",
+  "examDate": "2021-08-21",
+  "subject": "theory",
+  "sourceIndexUrl": "https://www.shiken.or.jp/chief/first/qa/",
+  "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20210821_ch_first_a01.pdf",
+  "sourceAnswerPdfSha256": "d75fa69e7d57bf539239e1c10810071f4cc8397c208d88e1d1fbc8bdeed30f43",
+  "sourcePacketSha256": "ff56c7d8c935c2ed26cd5ae2ba9adc3f1ad2e3ae15722fea71ba79038590cfe6",
+  "questions": [
+    {
+      "id": "denken1-2021-primary-theory-q01",
+      "year": 2021,
+      "season": "primary",
+      "examDate": "2021-08-21",
+      "subject": "theory",
+      "number": 1,
+      "topic": "誘電体境界における影像電荷",
+      "questionText": "問1　次の文章は，誘電体の近くに存在する電荷に関する記述である。文中の□に当てはまる最も適切なものを解答群の中から選べ。\n\n図1のように，平面βから上方に距離a離れた真空中に点電荷Qを置く。βより上側は誘電率ε₀の真空であり，下側は誘電率2ε₀の誘電体で完全に満たされている。このとき，空間中の電界を求めるために，影像電荷の考え方を用いる。\n\nβより上側の電界は，図2のように，誘電体を取り除き，βに対して電荷Qと対称な位置に電荷Q′を置くことで求める。βより下側の電界は，図3のように，全空間を誘電体で満たし，電荷Qの位置の電荷をQ″とすることで求める。\n\nQ′及びQ″は，β上の任意の点において，βに平行な電界の成分が同じであることと，βに【(1)】な電束密度の成分が同じであることにより求められる。ただし，ここでは簡単のため，電荷Qよりβに下ろした垂線の足Hから距離a離れた点Pを考える。\n\n図2で，電荷QとQ′が点Pに作る電界E₀において，βに平行な成分E₀hと垂直な成分E₀vはそれぞれ\nE₀h = (Q + Q′)/(8√2πε₀a²)，E₀v = 【(2)】\nである。ただし，E₀hとE₀vは，それぞれ点Hから点Pへ向かう方向と誘電体に進入する方向を正とする。また，図3で，電荷Q″が点Pに作る電界Eにおいて，βに平行な成分Ehと垂直な成分Evはそれぞれ\nEh = Ev = [Q″/(4π × 2ε₀ × 2a²)] × 1/√2 = Q″/(16√2πε₀a²)\nと求められる。ただし，EhとEvの向きの定義は，E₀hとE₀vの場合と同様である。\n\nここで，βに平行な電界の成分が同じであることによりE₀h = Ehが成り立ち，βに【(1)】な電束密度の成分が同じであることにより，【(3)】が成り立つ。これらから導かれる方程式を解くことで，置くべき影像電荷Q′及びQ″をそれぞれ【(4)】，【(5)】と定められる。",
+      "choiceGroups": {
+        "イ": "E₀v/ε₀ = Ev/(2ε₀)",
+        "ロ": "[QQ′/(Q + Q′)]/(8√2πε₀a²)",
+        "ハ": "2Q",
+        "ニ": "(2/3)Q",
+        "ホ": "−(1/3)Q",
+        "ヘ": "ε₀E₀h = 2ε₀Eh",
+        "ト": "(Q + Q′)/(8√2πε₀a²)",
+        "チ": "0",
+        "リ": "E₀h/ε₀ = Eh/(2ε₀)",
+        "ヌ": "垂直",
+        "ル": "平行",
+        "ヲ": "ε₀E₀v = 2ε₀Ev",
+        "ワ": "(4/3)Q",
+        "カ": "−Q",
+        "ヨ": "(Q − Q′)/(8√2πε₀a²)"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ヌ",
+          "explanation": "境界を貫く電束密度の成分に着目する。",
+          "derivation": "境界をまたぐ薄い柱にガウスの法則を適用する。境界上に自由電荷がなければ両底面の電束の大きさが等しく、法線方向の電束密度が連続する。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ヨ",
+          "explanation": "垂直成分ではQとQ′の寄与が逆向きになる。",
+          "derivation": "どちらの電荷からもPまで√2aで、法線方向への射影は1/√2倍。図2の下向きを正に取るとQの寄与からQ′の寄与を引き、(Q − Q′)/(8√2πε₀a²)となる。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ヲ",
+          "explanation": "電界にそれぞれの媒質の誘電率を掛ける。",
+          "derivation": "D = εEだから、真空側の法線成分はε₀E₀v、誘電体側は2ε₀Evとなる。これらを等しいと置く。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ホ",
+          "explanation": "二つの境界条件からQ″を消去する。",
+          "derivation": "接線方向の電界が等しいので2(Q + Q′) = Q″、法線方向の電束密度が等しいのでQ − Q′ = Q″。両式を等置すると3Q′ = −Q。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ワ",
+          "explanation": "法線方向の境界条件にQ′を戻す。",
+          "derivation": "Q″ = Q − Q′にQ′ = −Q/3を代入するとQ″ = 4Q/3。接線方向の式2(Q + Q′)に代入しても同じ値になる。"
+        }
+      ],
+      "figures": [
+        "図1は真空と誘電体の境界、図2は真空側の等価配置、図3は誘電体側の等価配置を示す。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 4,
+          "url": "/images/denken1/2021/theory/page-04.png",
+          "sha256": "6391664b168dab26102f39e89d1ef0127e77973089c73b2d02ca1f71a572647d"
+        },
+        {
+          "physicalPage": 5,
+          "url": "/images/denken1/2021/theory/page-05.png",
+          "sha256": "04640bc5b54e02ffc0dddd446f3addda1ff9ed54eec286e5f4361429338ef6e5"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20210821_ch_first_q01.pdf",
+      "sourcePdfSha256": "323ceff932194a7f8e3eaa5880a3b47ae04cabbbdcbf8153d4b3894678547181",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken1-2021-primary-theory-q02",
+      "year": 2021,
+      "season": "primary",
+      "examDate": "2021-08-21",
+      "subject": "theory",
+      "number": 2,
+      "topic": "共通鉄心上の自己・相互インダクタンス",
+      "questionText": "問2　次の文章は，コイルのインダクタンスに関する記述である。文中の□に当てはまる最も適切なものを解答群の中から選べ。\n\n図1のように，環状鉄心にコイル1とコイル2が巻かれており，コイル1の巻数とコイル2の巻数の比は1 : aである。各コイルに電流が流れたときには鉄心の内部にのみ磁界が発生するものとする。\n\nコイル1の自己インダクタンスをL₁とすると，コイル2の自己インダクタンスL₂は【(1)】，コイル1の端子abとコイル2の端子cdの間の相互インダクタンスMは【(2)】と表される。図1に示す向きにI₁，I₂の電流が各コイルに流れている場合には，蓄積された磁界のエネルギーは，\nW = (1/2)L₁I₁² + (1/2)L₂I₂² + MI₁I₂\nと表されるので，I₁ = −aI₂の場合には磁界のエネルギーは【(3)】となる。\n\n図1のコイル1の端子bとコイル2の端子cを接続すると，端子ad間の自己インダクタンスは【(4)】となる。これに対して図2のように，図1で用いたものと同じ特性を有する2個の環状鉄心にそれぞれ巻かれているコイル1の端子bとコイル2の端子cを接続した場合には，端子ad間の自己インダクタンスは【(5)】となる。",
+      "choiceGroups": {
+        "イ": "aL₁",
+        "ロ": "L₁/√a",
+        "ハ": "L₁/a²",
+        "ニ": "a²L₁",
+        "ホ": "(a + 1)²L₁",
+        "ヘ": "2L₁I₁²",
+        "ト": "(a + 1)L₁",
+        "チ": "a³L₁",
+        "リ": "(a³ + 1)L₁",
+        "ヌ": "(a² + 1)L₁",
+        "ル": "√(a + 1)L₁",
+        "ヲ": "0",
+        "ワ": "4a²L₁I₁²",
+        "カ": "L₁/a",
+        "ヨ": "√(∣a − 1∣)L₁"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ニ",
+          "explanation": "同じ鉄心上の自己インダクタンスは巻数の二乗に比例する。",
+          "derivation": "磁気抵抗をℛとすると、N巻のコイルの自己インダクタンスはN²/ℛ。巻数をa倍にしたコイル2ではL₂ = a²L₁となる。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "イ",
+          "explanation": "共通の磁束を両方のコイルが鎖交する。",
+          "derivation": "コイル2にI₂を流すと磁束はN₂I₂/ℛで、コイル1の鎖交磁束はN₁N₂I₂/ℛ。したがってM = N₁N₂/ℛ = aL₁である。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ヲ",
+          "explanation": "二つのコイルの起磁力がちょうど相殺する。",
+          "derivation": "L₂ = a²L₁とM = aL₁を代入すると、W = (L₁/2)(I₁ + aI₂)²。I₁ = −aI₂なら磁束も蓄積エネルギーも0になる。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ホ",
+          "explanation": "共通鉄心で磁束が強め合う直列接続を考える。",
+          "derivation": "端子bとcを結ぶと、図1のI₁、I₂の正方向に同じ電流が流れる。等価インダクタンスはL₁ + L₂ + 2M = (a + 1)²L₁。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ヌ",
+          "explanation": "鉄心が別なら相互インダクタンスの項が消える。",
+          "derivation": "磁界が各鉄心の内部に限られるためM = 0。端子aとdの間では自己インダクタンスを足し、L₁ + a²L₁ = (a² + 1)L₁となる。"
+        }
+      ],
+      "figures": [
+        "図1は共通の環状鉄心、図2は互いに独立した環状鉄心を用いる。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 6,
+          "url": "/images/denken1/2021/theory/page-06.png",
+          "sha256": "6c4c40c1d49453f983ff34fc94e2c99ded4891c8d2b6e82c454458d3248e718d"
+        },
+        {
+          "physicalPage": 7,
+          "url": "/images/denken1/2021/theory/page-07.png",
+          "sha256": "99d154d8355e17f4a69d3f710067ce30a982185c67c5fa64941ad8be4ba4fa09"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20210821_ch_first_q01.pdf",
+      "sourcePdfSha256": "323ceff932194a7f8e3eaa5880a3b47ae04cabbbdcbf8153d4b3894678547181",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken1-2021-primary-theory-q03",
+      "year": 2021,
+      "season": "primary",
+      "examDate": "2021-08-21",
+      "subject": "theory",
+      "number": 3,
+      "topic": "2端子対の抵抗回路",
+      "questionText": "問3　次の文章は，2端子対抵抗回路の電流，電圧に関する記述である。文中の□に当てはまる最も適切なものを解答群の中から選べ。\n\n図のように2端子対抵抗回路の電流と電圧を定義する。オームの法則とキルヒホッフの法則を使って，V₁/I₁とV₂/I₂を求めてみる。\n\n端子対a−b間の電位差V₁は，経路a→c→bでの電圧降下の和で表すと，\nV₁ = RₐIₐ + Rᵦ(【(1)】) ……①\nとなり，経路a→d→bでの電圧降下の和で表すと，\nV₁ = RₐIᵦ + Rᵦ(【(2)】) ……②\nとなる。I₁ = Iₐ + Iᵦを利用すると，①式と②式よりV₁/I₁ = 【(3)】となる。\n\n一方，端子対c−d間の電位差V₂は経路c→a→dでの電圧降下の和で表すと，\nV₂ = Rₐ(−Iₐ) + RₐIᵦ ……③\nとなり，経路c→b→dでの電圧降下の和で表すと，\nV₂ = Rᵦ(【(1)】) + Rᵦ(【(4)】) ……④\nとなる。③式からV₂/Rₐを求め，④式からV₂/Rᵦを求めて加算すると，V₂/I₂ = 【(5)】となる。",
+      "choiceGroups": {
+        "イ": "Rₐ + Rᵦ",
+        "ロ": "Iᵦ",
+        "ハ": "Iₐ − I₂",
+        "ニ": "Rₐ",
+        "ホ": "Iᵦ + I₂",
+        "ヘ": "Iₐ + I₂",
+        "ト": "Iᵦ − I₂",
+        "チ": "Iₐ",
+        "リ": "−Iᵦ",
+        "ヌ": "I₂ − Iᵦ",
+        "ル": "−Iₐ",
+        "ヲ": "(Rₐ + Rᵦ)/2",
+        "ワ": "2RₐRᵦ/(Rₐ + Rᵦ)",
+        "カ": "RₐRᵦ/(Rₐ + Rᵦ)",
+        "ヨ": "Rᵦ"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ヘ",
+          "explanation": "節点cで流入する電流を加える。",
+          "derivation": "aからのIₐと右側からのI₂がともに節点cへ入る。流出するc→bの枝電流は、キルヒホッフの電流則によりIₐ + I₂となる。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ト",
+          "explanation": "節点dでは右側へ出ていくI₂を差し引く。",
+          "derivation": "dへの流入はaからのIᵦ。右側へI₂が流出するので、d→bを正に取った残りの枝電流はIᵦ − I₂である。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ヲ",
+          "explanation": "同じ電位差V₁を表す二つの経路式を足す。",
+          "derivation": "①と②を加えるとI₂の項が相殺し、2V₁ = (Rₐ + Rᵦ)(Iₐ + Iᵦ)。Iₐ + Iᵦ = I₁を用いればV₁/I₁ = (Rₐ + Rᵦ)/2。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ヌ",
+          "explanation": "b→dの電流は、②に使ったd→bの電流と逆符号になる。",
+          "derivation": "②の枝電流はd→bを正としたIᵦ − I₂。経路c→b→dでは同じ枝を逆に通るため、その電圧降下を求める電流はI₂ − Iᵦとなる。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ワ",
+          "explanation": "抵抗で割った二つの式を加えるとIₐとIᵦが消える。",
+          "derivation": "③よりV₂/Rₐ = −Iₐ + Iᵦ、④よりV₂/Rᵦ = Iₐ + 2I₂ − Iᵦ。加えてV₂(1/Rₐ + 1/Rᵦ) = 2I₂となるので、V₂/I₂ = 2RₐRᵦ/(Rₐ + Rᵦ)。"
+        }
+      ],
+      "figures": [
+        "交差する斜めの枝は交点で接続されていない。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 8,
+          "url": "/images/denken1/2021/theory/page-08.png",
+          "sha256": "e8a60d6f762b30255f769fd369058887a29c3345bbaa9f0f86dde27ad37a7a96"
+        },
+        {
+          "physicalPage": 9,
+          "url": "/images/denken1/2021/theory/page-09.png",
+          "sha256": "d12bb963535e329a67b36940b24782c578b9cb6f0def1e75661e6b19a884e129"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20210821_ch_first_q01.pdf",
+      "sourcePdfSha256": "323ceff932194a7f8e3eaa5880a3b47ae04cabbbdcbf8153d4b3894678547181",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken1-2021-primary-theory-q04",
+      "year": 2021,
+      "season": "primary",
+      "examDate": "2021-08-21",
+      "subject": "theory",
+      "number": 4,
+      "topic": "不平衡Δ負荷のアドミタンスと有効電力",
+      "questionText": "問4　次の文章は，三相交流回路に関する記述である。文中の□に当てはまる最も適切なものを解答群の中から選べ。\n\n図1のように，実効値が1 Vである対称三相交流電源に，二つのΔ形不平衡負荷が並列接続されている。図1の各線間電圧はĖab = 1∠0° [V]を基準に，Ėbc = a²Ėab，Ėca = aĖabとする。ただし，a = exp(j2π/3)である。\n図2は，アドミタンスẎab，Ẏbc及びẎcaを用いて表した図1の等価回路であり，Ẏab及びẎcaは【(1)】S，Ẏbcは【(2)】Sとなる。\n線電流İaの実効値及び位相角を求めると，それぞれ【(3)】A及び【(4)】°となる。ただし，位相角の符号は進みを正とする。\n図1で消費する有効電力は【(5)】Wである。",
+      "choiceGroups": {
+        "イ": "5√3/3",
+        "ロ": "−45",
+        "ハ": "(√3/3)exp(−jπ/3)",
+        "ニ": "2√3 exp(−jπ/3)",
+        "ホ": "√3 exp(−jπ/3)",
+        "ヘ": "√3",
+        "ト": "5√3/2",
+        "チ": "(√3/3)exp(−j2π/3)",
+        "リ": "2",
+        "ヌ": "−90",
+        "ル": "(2√3/3)exp(−j2π/3)",
+        "ヲ": "5√3/6",
+        "ワ": "−60",
+        "カ": "2√3",
+        "ヨ": "(2√3/3)exp(−jπ/3)"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ヨ",
+          "explanation": "並列枝ではインピーダンスの逆数を加える。",
+          "derivation": "abとcaは各々√3 Ωとj Ωの並列なので、Y = 1/√3 + 1/j = 1/√3 − j。絶対値2√3/3、偏角−π/3である。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ハ",
+          "explanation": "bc枝はab枝の抵抗とリアクタンスをどちらも2倍した枝である。",
+          "derivation": "Ybc = 1/(2√3) + 1/(2j) = Yab/2。したがって偏角は−π/3のまま、絶対値は√3/3になる。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "リ",
+          "explanation": "a端子から負荷へ流れる二つの枝電流を合成する。",
+          "derivation": "Ia = Yab Eab − Yca Eca = Yab(1 − a)。a = exp(j2π/3)なので|1 − a| = √3。|Yab| = 2√3/3を掛けると2 A。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ヌ",
+          "explanation": "線電流の位相は、アドミタンスと二つの線間電圧の差の位相を足す。",
+          "derivation": "1 − a = 3/2 − j√3/2の偏角は−30°。Yabの偏角−60°を加えると−90°で、基準のEabより90°遅れる。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ヲ",
+          "explanation": "有効電力に寄与するのは各枝のコンダクタンスである。",
+          "derivation": "各線間電圧の実効値は1 V。P = |Eab|²Re(Yab) + |Ebc|²Re(Ybc) + |Eca|²Re(Yca) = 1/√3 + 1/(2√3) + 1/√3 = 5√3/6 Wとなる。"
+        }
+      ],
+      "figures": [
+        "図1の各線間には抵抗と誘導性リアクタンスが並列に接続される。図2はそのΔ等価回路を示す。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 10,
+          "url": "/images/denken1/2021/theory/page-10.png",
+          "sha256": "6a6a1ada4f1038bb31a412bbb9aa74f901f8e763c027113e0bf50c430198d1dc"
+        },
+        {
+          "physicalPage": 11,
+          "url": "/images/denken1/2021/theory/page-11.png",
+          "sha256": "e1033c60102a0ac8b5161b78616725b9c73eea4e9fbc0441364a3f220ddee6a2"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20210821_ch_first_q01.pdf",
+      "sourcePdfSha256": "323ceff932194a7f8e3eaa5880a3b47ae04cabbbdcbf8153d4b3894678547181",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken1-2021-primary-theory-q05",
+      "year": 2021,
+      "season": "primary",
+      "examDate": "2021-08-21",
+      "subject": "theory",
+      "number": 5,
+      "topic": "交流投入時の直列RL回路の過渡現象",
+      "questionText": "問5　次の文章は，交流回路の過渡現象に関する記述である。文中の□に当てはまる最も適切なものを解答群の中から選べ。\n\n図のRL回路において，時刻t < 0ではスイッチSは開いている。時刻t = 0でスイッチSを閉じ，回路に正弦波交流電圧v(t) = Vₘ sin(ωt + θ)が印加されるものとする。\n回路の電流をi(t)とすれば，時刻t ≥ 0では次式の回路方程式が成立する。\n【(1)】 + Ri(t) = Vₘ sin(ωt + θ) ……①\n\n時刻t ≥ 0における回路の電流i(t)は，①式の定常解iₛ(t)と過渡解iₜ(t)の和として与えられる。\n定常解iₛ(t)は，正弦波交流回路の定常電流として，\niₛ(t) = Vₘ/√[R² + (ωL)²] × sin(ωt + θ − φ) ……②\nとなる。ただし，φ = 【(2)】である。\n一方，過渡解iₜ(t)は，①の右辺を0とした場合の解であるので，任意定数をKとすれば次式となる。\niₜ(t) = K × 【(3)】 ……③\nしたがって，電流i(t)の一般解は，②式及び③式より，次式で与えられる。\ni(t) = iₛ(t) + iₜ(t) = Vₘ/√[R² + (ωL)²] × sin(ωt + θ − φ) + K × 【(3)】 ……④\n\n時刻t = 0における回路の電流i(0) = 0であることに注意すれば，④式より任意定数Kは次式で与えられる。\nK = 【(4)】 ……⑤\n以上より，時刻t ≥ 0における回路の電流i(t)は，次式で与えられる。\ni(t) = Vₘ/√[R² + (ωL)²] × sin(ωt + θ − φ) + 【(4)】 × 【(3)】 ……⑥\nなお，⑥式においてθ − φ = 【(5)】が成立する場合には，時刻t ≥ 0における回路の電流i(t)は定常解iₛ(t)のみで表される。",
+      "choiceGroups": {
+        "イ": "arctan[1/(ωLR)]",
+        "ロ": "exp[−t/(RL)]",
+        "ハ": "0",
+        "ニ": "arctan(ωL/R)",
+        "ホ": "exp[−(R/L)t]",
+        "ヘ": "ωLi(t)",
+        "ト": "arctan[R/(ωL)]",
+        "チ": "di(t)/dt",
+        "リ": "π/4",
+        "ヌ": "L di(t)/dt",
+        "ル": "π/2",
+        "ヲ": "exp[−(L/R)t]",
+        "ワ": "−Vₘ sin(θ − φ)/√[R² + (ωL)²]",
+        "カ": "Vₘ sin(θ − φ)/√[R² + (ωL)²]",
+        "ヨ": "Vₘ sin(θ + φ)/√[R² + (ωL)²]"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ヌ",
+          "explanation": "過渡状態ではコイルの端子電圧を電流の時間微分で表す。",
+          "derivation": "コイルの電圧はL di/dt、抵抗の電圧はRi。キルヒホッフの電圧則でこれらの和を電源電圧v(t)に等置する。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ニ",
+          "explanation": "定常電流の遅れ角は直列インピーダンスの偏角で決まる。",
+          "derivation": "Z = R + jωLだからtan φ = Im(Z)/Re(Z) = ωL/R。電圧の位相からφを引いたものが電流の位相となる。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ホ",
+          "explanation": "電源をゼロにした同次方程式は指数減衰を表す。",
+          "derivation": "L diₜ/dt + Riₜ = 0なのでdiₜ/dt = −(R/L)iₜ。解はK exp[−(R/L)t]となり、時定数はL/Rである。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "ワ",
+          "explanation": "投入直後の過渡成分が定常解の初期値を打ち消す。",
+          "derivation": "開放中の電流は0で、インダクタ電流は連続する。指数関数はt = 0で1だから、0 = iₛ(0) + KよりK = −Vₘ sin(θ − φ)/√[R² + (ωL)²]。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ハ",
+          "explanation": "投入時の定常解が0なら過渡成分の係数も0になる。",
+          "derivation": "Kはsin(θ − φ)に比例する。解答群ではθ − φ = 0が該当する。一般にθ − φがπの整数倍のときにもsin(θ − φ) = 0となる。"
+        }
+      ],
+      "figures": [
+        "電源・スイッチ・抵抗・インダクタが一つのループを構成する。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 12,
+          "url": "/images/denken1/2021/theory/page-12.png",
+          "sha256": "c9175ac0ac20c45c99918de8e40006d99e327bd20c61f2744f5f9347cce586a3"
+        },
+        {
+          "physicalPage": 13,
+          "url": "/images/denken1/2021/theory/page-13.png",
+          "sha256": "ab7978042a7164dfd471b6ecea1e8a10d9d343d4139488faf671bf4f1e589142"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20210821_ch_first_q01.pdf",
+      "sourcePdfSha256": "323ceff932194a7f8e3eaa5880a3b47ae04cabbbdcbf8153d4b3894678547181",
+      "alternateQuestionRule": null
+    },
+    {
+      "id": "denken1-2021-primary-theory-q06",
+      "year": 2021,
+      "season": "primary",
+      "examDate": "2021-08-21",
+      "subject": "theory",
+      "number": 6,
+      "topic": "ホール効果による正孔濃度の測定",
+      "questionText": "問6　次の文章は，ホール効果測定に関する記述である。文中の□に当てはまる最も適切なものを解答群の中から選べ。\n\n図のように，板状の半導体（長さL，幅W，厚さt）のA面とB面の間に電圧V (> 0)を印加する。半導体中のキャリヤが電界から力を受けて一定速度vで運動している状況を考える。キャリヤが正の電荷量qを持つ正孔の場合，正孔の濃度をp，移動度をμₕと仮定すると，運動の方向はx軸の正方向となり，v = 【(1)】と表されることから，回路を流れる電流Iは，I = 【(2)】と表される。\n\nこの半導体に，図のz軸の正方向に磁束密度Bz (> 0)の磁界を印加すると，正孔がローレンツ力を受けることで，C面の電位がD面に対して【(3)】くなる。この電位差をホール電圧Vₕと定義する。定常状態では，Vₕによる電界から受ける力と，ローレンツ力が釣り合うことから，Vₕ = 【(4)】と表される。以上の関係を用いると，VₕとIを実測することによりμₕとpが得られ，p = 【(5)】と算出される。",
+      "choiceGroups": {
+        "イ": "高",
+        "ロ": "等し",
+        "ハ": "μₕV/W",
+        "ニ": "qpμₕV/L",
+        "ホ": "低",
+        "ヘ": "qBzI/(tVₕ)",
+        "ト": "μₕV/L",
+        "チ": "qμₕVBzW/L",
+        "リ": "μₕVBzW/L",
+        "ヌ": "BzI/(qtVₕ)",
+        "ル": "BzVₕ/(qtI)",
+        "ヲ": "qpμₕVtW/L",
+        "ワ": "qpμₕVtL/W",
+        "カ": "μₕL/V",
+        "ヨ": "μₕVBzW/(Lt)"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ト",
+          "explanation": "移動度にA面とB面の間の電界を掛ける。",
+          "derivation": "正孔のドリフト速度の大きさはμₕE。電位差Vが長さLにかかるのでE = V/L、したがってv = μₕV/Lとなる。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ヲ",
+          "explanation": "電流密度に、電流と垂直な断面積を掛ける。",
+          "derivation": "正孔の数密度がpなら電流密度はqpv。図では電流に垂直な面積がtWなのでI = qpv tW = qpμₕVtW/L。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "イ",
+          "explanation": "正孔が集まる面の電位が高くなる。",
+          "derivation": "正電荷に働く磁気力q(v × B)は、+xと+zの外積で−y向き。C面側に正孔が偏るので、C面はD面より高電位になる。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "リ",
+          "explanation": "ホール電界による力と磁気力の大きさを等置する。",
+          "derivation": "qVₕ/W = qvBzよりVₕ = vBzW。v = μₕV/Lを用いるとVₕ = μₕVBzW/Lとなる。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ヌ",
+          "explanation": "電流の式とホール電圧の式からドリフト速度を消去する。",
+          "derivation": "I/Vₕ = (qpv tW)/(vBzW) = qpt/Bz。よってp = BzI/(qtVₕ)であり、断面の幅Wは相殺する。"
+        }
+      ],
+      "figures": [
+        "電流はx軸の正方向、磁束はz軸の正方向。C面はy軸の負側にある。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 14,
+          "url": "/images/denken1/2021/theory/page-14.png",
+          "sha256": "33131e68e4a3bc8bcdd089c06f9a7ce12fce454bef583cfb759bc4dcf4cd9451"
+        },
+        {
+          "physicalPage": 15,
+          "url": "/images/denken1/2021/theory/page-15.png",
+          "sha256": "5fd5ba5cab70426ef9f745b972bcd21536c2e7e1aa046972ce04215237e16a49"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20210821_ch_first_q01.pdf",
+      "sourcePdfSha256": "323ceff932194a7f8e3eaa5880a3b47ae04cabbbdcbf8153d4b3894678547181",
+      "alternateQuestionRule": "問6と問7のどちらか一方を選択"
+    },
+    {
+      "id": "denken1-2021-primary-theory-q07",
+      "year": 2021,
+      "season": "primary",
+      "examDate": "2021-08-21",
+      "subject": "theory",
+      "number": 7,
+      "topic": "バイポーラトランジスタのダーリントン接続",
+      "questionText": "問7　次の文章は，バイポーラトランジスタに関する記述である。文中の□に当てはまる最も適切なものを解答群の中から選べ。\n\nバイポーラトランジスタの各端子を流れる電流を図1のように定義すると，コレクタ電流I꜀とエミッタ電流Iₑ及びベース電流Iᵦの間には，\nI꜀ = αIₑ ……①\nI꜀ = βIᵦ ……②\nの関係がある。ここでαとβはそれぞれベース接地電流増幅率とエミッタ接地電流増幅率である。バイポーラトランジスタのαの大きさは【(1)】。トランジスタを流れる電流は，\nIₑ = Iᵦ + I꜀ ……③\nであるから，エミッタ電流Iₑをベース電流Iᵦとαを用いて表すと，\nIₑ = 【(2)】 Iᵦ ……④\nとなる。①式，②式及び④式より，αはβを用いて，\nα = 【(3)】 ……⑤\nとかける。\n\n次に，図2に示す回路のI꜀′/Iᵦ′を求める。このときTr1及びTr2のベース接地電流増幅率はそれぞれα₁及びα₂であり，エミッタ接地電流増幅率をβ₁及びβ₂とすると，\nI꜀′/Iᵦ′ = (I꜀₁ + I꜀₂)/Iᵦ′ = β₁ + β₂(Iᵦ₂/Iᵦ′) = β₁ + β₂(Iₑ₁/Iᵦ′) ……⑥\nとなる。ここでTr1に④式及び⑤式の関係を考慮すると，\nI꜀′/Iᵦ′ = 【(4)】 ……⑦\nが得られる。図2の接続はダーリントン接続と呼ばれ，図2は⑦式で表される大きなエミッタ接地電流増幅率を有する等価的なトランジスタとして用いられる。図2の回路についても等価的なエミッタ接地電流増幅率β′とベース接地電流増幅率α′の間には⑤式の関係が成り立つ。このことから，図2の回路の等価的なベース接地電流増幅率α′はα₁及びα₂を用いて，\nα′ = I꜀′/Iₑ′ = 【(5)】\nとかける。",
+      "choiceGroups": {
+        "イ": "ちょうど1である",
+        "ロ": "1より大きい",
+        "ハ": "1より小さい",
+        "ニ": "α₁α₂/[(1 − α₁)(1 − α₂)]",
+        "ホ": "β/(1 + β)",
+        "ヘ": "β₁ + β₂",
+        "ト": "β/(β − 1)",
+        "チ": "2β₁β₂",
+        "リ": "β₁ + β₂ + β₁β₂",
+        "ヌ": "1 − α",
+        "ル": "1/(1 − α)",
+        "ヲ": "α₁ + α₂ − α₁α₂",
+        "ワ": "1/(α − 1)",
+        "カ": "1/(1 − β)",
+        "ヨ": "α₁/(1 − α₁) + α₂/(1 − α₂)"
+      },
+      "slots": [
+        {
+          "slot": 1,
+          "officialAnswer": "ハ",
+          "explanation": "エミッタ電流の一部がベース電流になる。",
+          "derivation": "図の向きに正のベース電流とコレクタ電流が流れる動作ではIₑ = Iᵦ + I꜀ > I꜀。したがってα = I꜀/Iₑは1より小さい。"
+        },
+        {
+          "slot": 2,
+          "officialAnswer": "ル",
+          "explanation": "電流の和にI꜀ = αIₑを代入して整理する。",
+          "derivation": "Iₑ = Iᵦ + αIₑより(1 − α)Iₑ = Iᵦ。よってIₑ = Iᵦ/(1 − α)。"
+        },
+        {
+          "slot": 3,
+          "officialAnswer": "ホ",
+          "explanation": "コレクタ電流とエミッタ電流をベース電流で表す。",
+          "derivation": "I꜀ = βIᵦ、Iₑ = Iᵦ + I꜀ = (1 + β)Iᵦ。比I꜀/Iₑを取るとα = β/(1 + β)となる。"
+        },
+        {
+          "slot": 4,
+          "officialAnswer": "リ",
+          "explanation": "第2段のベース電流は第1段のエミッタ電流に等しい。",
+          "derivation": "Iₑ₁ = (1 + β₁)Iᵦ′だから、全コレクタ電流はβ₁Iᵦ′ + β₂(1 + β₁)Iᵦ′。Iᵦ′で割るとβ₁ + β₂ + β₁β₂となる。"
+        },
+        {
+          "slot": 5,
+          "officialAnswer": "ヲ",
+          "explanation": "二段分のエミッタ電流の比から等価なαを求める。",
+          "derivation": "Iᵦ′/Iₑ₁ = 1 − α₁、Iₑ₁/Iₑ′ = Iᵦ₂/Iₑ′ = 1 − α₂。したがって1 − α′ = Iᵦ′/Iₑ′ = (1 − α₁)(1 − α₂)。展開するとα′ = α₁ + α₂ − α₁α₂。"
+        }
+      ],
+      "figures": [
+        "Tr1のエミッタはTr2のベースにつながり、二つのコレクタは共通端子につながる。"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 16,
+          "url": "/images/denken1/2021/theory/page-16.png",
+          "sha256": "0d9afc5368d1c25bd08da3c22595f20b2b47288fdebaa701c6d60f9ec03bc090"
+        },
+        {
+          "physicalPage": 17,
+          "url": "/images/denken1/2021/theory/page-17.png",
+          "sha256": "bf3169089a5ab4fd66a5f638bf153d25b349d5587d4628fc63850a973f805991"
+        }
+      ],
+      "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20210821_ch_first_q01.pdf",
+      "sourcePdfSha256": "323ceff932194a7f8e3eaa5880a3b47ae04cabbbdcbf8153d4b3894678547181",
+      "alternateQuestionRule": "問6と問7のどちらか一方を選択"
+    }
+  ]
+}

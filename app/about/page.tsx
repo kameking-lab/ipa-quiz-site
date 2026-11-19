@@ -62,7 +62,7 @@ export default function AboutPage() {
       <nav aria-label="パンくずリスト" className="mb-4 text-xs text-muted-foreground">
         <ol className="flex flex-wrap items-center gap-1.5">
           <li>
-            <Link href="/" className="inline-block py-1.5 hover:text-foreground hover:underline">
+            <Link href="/" className="inline-flex min-h-11 min-w-11 items-center py-1.5 hover:text-foreground hover:underline">
               ホーム
             </Link>
           </li>
@@ -72,9 +72,9 @@ export default function AboutPage() {
           </li>
         </ol>
       </nav>
-      <h1 className="mb-4 text-2xl font-bold">過去問 AI プロジェクトについて</h1>
+      <h1 className="mb-4 text-2xl font-bold leading-snug">過去問AIについて</h1>
 
-      <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+      <section className="mb-8 space-y-3 text-sm leading-7 text-zinc-700 dark:text-zinc-300">
         <p>
           過去問AIは、IPAの情報処理技術者試験に加え、FP・電気・医療・福祉・不動産等の公開過去問を、
           <strong>誰もが平等に学べる場</strong>として公開している教育貢献プロジェクトです。
@@ -86,7 +86,7 @@ export default function AboutPage() {
       </section>
 
       <h2 className="mb-2 text-lg font-semibold">運営について</h2>
-      <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+      <section className="mb-8 space-y-3 text-sm leading-7 text-zinc-700 dark:text-zinc-300">
         <p>
           本プロジェクトの公開運営ハンドルは<strong>kameking-lab</strong>です。
           サーバー費用・AI利用料について確認できた情報と未確認事項は、
@@ -95,7 +95,7 @@ export default function AboutPage() {
       </section>
 
       <h2 id="attribution" className="mb-2 scroll-mt-20 text-lg font-semibold">出典・著作権</h2>
-      <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+      <section className="mb-8 space-y-3 text-sm leading-7 text-zinc-700 dark:text-zinc-300">
         <p>
           当サイトに掲載している問題文・選択肢・模範解答等の一次情報は、IPA が公式サイトで
           公開している過去問題 PDF を原典としています。各問の解説末尾から原典 PDF へリンクしています。
@@ -127,7 +127,7 @@ export default function AboutPage() {
       </section>
 
       <h2 className="mb-2 text-lg font-semibold">AI コパイロットについて</h2>
-      <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+      <section className="mb-8 space-y-3 text-sm leading-7 text-zinc-700 dark:text-zinc-300">
         <p>
           AI コパイロットは生成 AI を用いて応答を生成しています。生成 AI の性質上、
           内容に誤りが含まれる可能性があります。重要な判断の根拠とする場合は、当該試験実施団体の公式資料や
@@ -141,7 +141,7 @@ export default function AboutPage() {
       </section>
 
       <h2 className="mb-2 text-lg font-semibold">AI コンテンツ取扱方針・査読体制</h2>
-      <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+      <section className="mb-8 space-y-3 text-sm leading-7 text-zinc-700 dark:text-zinc-300">
         <p>
           本サービスでは、コンテンツの種類ごとにAIの利用と確認範囲を区別しています。
         </p>
@@ -177,7 +177,7 @@ export default function AboutPage() {
       </section>
 
       <h2 className="mb-2 text-lg font-semibold">料金について</h2>
-      <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+      <section className="mb-8 space-y-3 text-sm leading-7 text-zinc-700 dark:text-zinc-300">
         <p>
           過去問AI は IPA 情報処理技術者試験の学習機会を広げることを目的とした
           <strong>教育貢献プロジェクト</strong>として運営されています。
@@ -195,7 +195,7 @@ export default function AboutPage() {
       </section>
 
       <h2 className="mb-2 text-lg font-semibold">プライバシー</h2>
-      <section className="mb-8 space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+      <section className="mb-8 space-y-3 text-sm leading-7 text-zinc-700 dark:text-zinc-300">
         <p>
           {HISTORY_PRIVACY_COPY}
         </p>
@@ -223,7 +223,7 @@ export default function AboutPage() {
           <Link
             key={href}
             href={href}
-            className="rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm text-zinc-700 hover:border-sky-300 hover:text-zinc-900 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300 dark:hover:border-sky-700 dark:hover:text-zinc-50"
+            className="flex min-h-12 items-center rounded-xl border border-zinc-200 bg-white px-3 py-2 text-sm text-zinc-700 hover:border-sky-300 hover:text-zinc-900 dark:border-zinc-800 dark:bg-zinc-950 dark:text-zinc-300 dark:hover:border-sky-700 dark:hover:text-zinc-50"
           >
             {label}
           </Link>
@@ -236,7 +236,7 @@ export default function AboutPage() {
       </section>
 
       <h2 className="mb-2 text-lg font-semibold">お問い合わせ</h2>
-      <section className="space-y-3 text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">
+      <section className="space-y-3 text-sm leading-7 text-zinc-700 dark:text-zinc-300">
         <p>
           改善要望・不具合報告・教育機関での活用に関するご相談は、
           <Link className="underline" href="/contact">

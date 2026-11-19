@@ -1,0 +1,182 @@
+[
+  {
+    "id": "denken1-2024-second-kikai-q1",
+    "exam": "denken1",
+    "year": 2024,
+    "season": "second",
+    "session": "kikai",
+    "qNumber": 1,
+    "examDate": "2024-11-10",
+    "category": "機械・制御",
+    "subject": "機械・制御",
+    "topicTags": [
+      "同期発電機の並行運転"
+    ],
+    "difficulty": 4,
+    "type": "descriptive",
+    "question": "問1　同期発電機の並行運転",
+    "answer": "- 11 - \n \n〔問1 の標準解答〕 \n(1) \n \n \n \n \n \n \n･･･(答) \n \n(2) \na\na\na\ncos\nP\nI V\n\n=\nより，\na\na\na\n0.4\n0.5\ncos\n1 0.8\nP\nI\nV\n\n=\n=\n=\n\n  →\na\n0.5\nI =\np.u. ･･･(答) \nフェーザ図より，\n(\n)\n(\n)\n2\n2\na\na\na\na a\ncos\nsin\nE\nV\nV\nX I\n\n\n=\n+\n+\n \n上式に，\n1.0\nV =\n，\na\ncos\n0.8\n=\n，\na\nsin\n0.6\n=\n，\na\n2.0\nX =\n，\na\n0.5\nI =\n \nを代入して， \n(\n)\n(\n)\n2\n2\na\n0.8\n0.6\n2.0 0.5\n1.7889p.u.\nE =\n+\n+\n\n=\n   →\na\n1.79p.u.\nE =\n  ･･･(答) \na\na\na\nsin\nVE\nP\nX\n\n=\nより，\na\na\na\nsin\nX P\nVE\n=\n \na\n2.0\nX =\n，\na\n0.4p.u.\nP =\n，\n1.0\nV =\n，\na\n1.788 9\nE =\n を代入して， \n2.0 0.4\nsin\n0.44720\n1 1.7889\n\n\n=\n=\n\n           →sin\n0.447\n=\n  ･･･(答) \n(3) \nb\nb\nb\nsin\nVE\nP\nX\n\n=\nより，\nb\nb\nb\nsin\nX P\nE\nV\n\n=\n \nb\n1.5\nX =\n，\nb\n0.4p.u.\nP =\n，\n1.0\nV =\n，sin\n0.447 20\n=\n を代入して， \na\nE\nb\nE\nV\nb b\nj X I\na a\nj X I\nbI\naI\n\nb\n\na\n\n\n- 12 - \n \nb\n1.5 0.4\n1.3417p.u.\n1 0.44720\nE\n\n=\n=\n\n       → \nb\n1.34p.u.\nE =\n ･･･(答) \nb\nE ，\nb b\nj X I ，V の三角形に余弦定理を適用して， \n(\n)\n2\n2\n2\nb b\nb\nb\n2\ncos\nX I\nE\nV\nE V\n\n=\n+\n−\nより， \n2\n2\nb\nb\nb\nb\n2\ncos\nE\nV\nE V\nI\nX\n\n+\n−\n=\n \n2\n2\n2\n1.3417\n1\n2 1.3417 1\n1\n0.44720\n1.5\n+\n−\n\n−\n=\n  \n \n0.42166p.u.\n=\n \n             → \nb\n0.422\nI =\np.u.  ･･･(答) \nb\nb\nb\ncos\nP\nVI\n\n=\nより，\nb\nb\nb\ncos\nP\nVI\n=\n \nb\n0.4\ncos\n0.94863\n1 0.42166\n=\n=\n\n       →  \nb\ncos\n0.949\n=\n   ･･･(答) \nb\nb\nb\nsin\nQ\nVI\n\n=\n より，\n2\nb\n1 0.42166\n1\n0.94863\n0.13341p.u.\nQ = \n\n−\n=\n   \n                         →\nb\n0.133\nQ =\np.u.     ･･･(答)",
+    "modelAnswer": "- 11 - \n \n〔問1 の標準解答〕 \n(1) \n \n \n \n \n \n \n･･･(答) \n \n(2) \na\na\na\ncos\nP\nI V\n\n=\nより，\na\na\na\n0.4\n0.5\ncos\n1 0.8\nP\nI\nV\n\n=\n=\n=\n\n  →\na\n0.5\nI =\np.u. ･･･(答) \nフェーザ図より，\n(\n)\n(\n)\n2\n2\na\na\na\na a\ncos\nsin\nE\nV\nV\nX I\n\n\n=\n+\n+\n \n上式に，\n1.0\nV =\n，\na\ncos\n0.8\n=\n，\na\nsin\n0.6\n=\n，\na\n2.0\nX =\n，\na\n0.5\nI =\n \nを代入して， \n(\n)\n(\n)\n2\n2\na\n0.8\n0.6\n2.0 0.5\n1.7889p.u.\nE =\n+\n+\n\n=\n   →\na\n1.79p.u.\nE =\n  ･･･(答) \na\na\na\nsin\nVE\nP\nX\n\n=\nより，\na\na\na\nsin\nX P\nVE\n=\n \na\n2.0\nX =\n，\na\n0.4p.u.\nP =\n，\n1.0\nV =\n，\na\n1.788 9\nE =\n を代入して， \n2.0 0.4\nsin\n0.44720\n1 1.7889\n\n\n=\n=\n\n           →sin\n0.447\n=\n  ･･･(答) \n(3) \nb\nb\nb\nsin\nVE\nP\nX\n\n=\nより，\nb\nb\nb\nsin\nX P\nE\nV\n\n=\n \nb\n1.5\nX =\n，\nb\n0.4p.u.\nP =\n，\n1.0\nV =\n，sin\n0.447 20\n=\n を代入して， \na\nE\nb\nE\nV\nb b\nj X I\na a\nj X I\nbI\naI\n\nb\n\na\n\n\n- 12 - \n \nb\n1.5 0.4\n1.3417p.u.\n1 0.44720\nE\n\n=\n=\n\n       → \nb\n1.34p.u.\nE =\n ･･･(答) \nb\nE ，\nb b\nj X I ，V の三角形に余弦定理を適用して， \n(\n)\n2\n2\n2\nb b\nb\nb\n2\ncos\nX I\nE\nV\nE V\n\n=\n+\n−\nより， \n2\n2\nb\nb\nb\nb\n2\ncos\nE\nV\nE V\nI\nX\n\n+\n−\n=\n \n2\n2\n2\n1.3417\n1\n2 1.3417 1\n1\n0.44720\n1.5\n+\n−\n\n−\n=\n  \n \n0.42166p.u.\n=\n \n             → \nb\n0.422\nI =\np.u.  ･･･(答) \nb\nb\nb\ncos\nP\nVI\n\n=\nより，\nb\nb\nb\ncos\nP\nVI\n=\n \nb\n0.4\ncos\n0.94863\n1 0.42166\n=\n=\n\n       →  \nb\ncos\n0.949\n=\n   ･･･(答) \nb\nb\nb\nsin\nQ\nVI\n\n=\n より，\n2\nb\n1 0.42166\n1\n0.94863\n0.13341p.u.\nQ = \n\n−\n=\n   \n                         →\nb\n0.133\nQ =\np.u.     ･･･(答)",
+    "explanation": "共通母線電圧を基準とし、二台が分担する有効電力と無効電力を分けてフェーザを求める。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2024-second-kikai/q01-p03.webp"
+    ],
+    "imageAltTexts": [
+      "機械・制御 問1の公式本文・図表（3ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2024-second-kikai/a01-p11.webp",
+      "/questions/denken1/2024-second-kikai/a01-p12.webp"
+    ],
+    "answerImageAltTexts": [
+      "機械・制御 問1の公式標準解答（11ページ）",
+      "機械・制御 問1の公式標準解答（12ページ）"
+    ],
+    "sourceAnswerKind": "example",
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_as_02_ch_first_q02.pdf#page=3",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20241110_ch_first_a01_ks.pdf#page=11",
+    "sourceAttribution": "出典：電気技術者試験センター 2024年度 二次・機械・制御 問1",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/first/qa/"
+    ],
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken1-2024-second-kikai-q2",
+    "exam": "denken1",
+    "year": 2024,
+    "season": "second",
+    "session": "kikai",
+    "qNumber": 2,
+    "examDate": "2024-11-10",
+    "category": "機械・制御",
+    "subject": "機械・制御",
+    "topicTags": [
+      "三相誘導電動機"
+    ],
+    "difficulty": 4,
+    "type": "descriptive",
+    "question": "問2　三相誘導電動機",
+    "answer": "- 13 - \n \n〔問２の標準解答〕 \n(1) 三相誘導電動機の星形換算一相分の等価回路の入力電流I の式は，題意より， \n2\n2\n2\n3\nV\nI\nr\nx\ns\n=\n\n\n+\n\n\n\n\n                                          ･･･(答) \n三相分の機械的出力\no\nP の式は， \n(\n)\n2\n2\n2\no\n2\n2\n2\n2\n2\n2\n2\n2\n1\n1\n1\n3\n3\n3\nV\ns V\ns\ns\nP\nr\nI\nr\nr\ns\ns\ns\nr\nx\nx\ns\nr\ns\n−\n−\n−\n\n\n=\n\n\n=\n\n\n=\n\n\n\n\n+\n+\n\n\n\n\n\n       ･･･(答) \n(2) 発生トルクT の式を，\no\nP\nT\n\n=\nの関係から求める場合，\ns\nを用いて回転角速\n度の式を表すと， \n(\n)\ns 1\ns\n\n\n=\n−\n \nよって，T の式は， \n(\n)\n(\n)\n2\n2\no\n2\n2\n2\n2\ns\ns\n2\n2\n1\n1\n1\n1\ns V\nP\nV\nT\nr\nr\ns\ns\ns\nx\nx\ns\nr\ns\nr\n\n\n\n−\n=\n=\n\n=\n\n\n\n−\n+\n+\n\n\n ····················  ①    \n   ･･･(答) \n(3) 始動トルク\ns\nT の式は，①式に始動時の滑り\n1\ns =\nを代入して， \n2\n2\n2\ns\n2\n2\n2\ns\ns\n2\n2\n2\n1\nr\nV\nV\nT\nx\nr\nx\nr\nr\n\n\n\n=\n\n=\n\n+\n+\n\n                   ･･･(答) \n(4) ①式において，最大トルク\nm\nT を求めるために，滑りsを変数として分母をs\nで微分し，分母の最小条件（極値となる条件）を求める。 \n2\n2\n2\n2\n2\n2\n2\nd\n0\nd\nr\nr\ns\nx\nx\ns\ns\nr\nr\ns\n\n\n\n\n+\n= −\n+\n=\n\n\n\n\n\n\n\n\n     \n2\n2\n2\n2\nr\ns\nx\n\n=\n \n0\ns \nより，\n\n- 14 - \n \n2r\ns\nx\n\n=\n······················································· ②  \nのとき①式の分母は最小となり，T は最大となる。 \nしたがって，求める最大トルク\nm\nT の式は，②式を①式に代入して， \n2\n2\nm\n2\ns\ns\n2\n2\n2\n2\n1\n2\nV\nV\nT\nx\nr\nx\nx\nr\nr\nx\nr\n\n\n=\n\n=\n\n\n+\n\n\n\n                   ･･･(答) \n \n(5) 題意から\nm\ns\n2\nT\nT\n=\nであるため，小問(3)及び小問(4)の解から， \n2\n2\n2\n2\n2\ns\ns\n2\n2\n2\nr\nV\nV\nx\nr\nx\n\n\n\n=\n\n\n+\n \n2\n2\n2\n2\n4\nr\nx\nxr\n\n\n+\n=\n \n2\n2\n2\n2\n4\n0\nr\nxr\nx\n\n\n−\n+\n=\n \n上式を2rの二次方程式として解くと， \n(\n)\n2\n2\n2\n2\n4\n16\n4\n4\n2 3\n2\n3\n2\n3\n2\n2\nx\nx\nx\nx\nx\nr\nx\nx\nx\n\n−\n\n=\n=\n=\n\n=\n\n \nまた，②式より2r\nsx\n=\nであるから，このときの滑りが\nm\ns となるので， \nm\n2\n3\ns\n=\n\n \nここで，\nm\n0\n1\ns\n\n\nより， \n    \nm\n2\n3\n0.267 95\ns\n=\n−\n=\n → 0.268                           ･･･(答)",
+    "modelAnswer": "- 13 - \n \n〔問２の標準解答〕 \n(1) 三相誘導電動機の星形換算一相分の等価回路の入力電流I の式は，題意より， \n2\n2\n2\n3\nV\nI\nr\nx\ns\n=\n\n\n+\n\n\n\n\n                                          ･･･(答) \n三相分の機械的出力\no\nP の式は， \n(\n)\n2\n2\n2\no\n2\n2\n2\n2\n2\n2\n2\n2\n1\n1\n1\n3\n3\n3\nV\ns V\ns\ns\nP\nr\nI\nr\nr\ns\ns\ns\nr\nx\nx\ns\nr\ns\n−\n−\n−\n\n\n=\n\n\n=\n\n\n=\n\n\n\n\n+\n+\n\n\n\n\n\n       ･･･(答) \n(2) 発生トルクT の式を，\no\nP\nT\n\n=\nの関係から求める場合，\ns\nを用いて回転角速\n度の式を表すと， \n(\n)\ns 1\ns\n\n\n=\n−\n \nよって，T の式は， \n(\n)\n(\n)\n2\n2\no\n2\n2\n2\n2\ns\ns\n2\n2\n1\n1\n1\n1\ns V\nP\nV\nT\nr\nr\ns\ns\ns\nx\nx\ns\nr\ns\nr\n\n\n\n−\n=\n=\n\n=\n\n\n\n−\n+\n+\n\n\n ····················  ①    \n   ･･･(答) \n(3) 始動トルク\ns\nT の式は，①式に始動時の滑り\n1\ns =\nを代入して， \n2\n2\n2\ns\n2\n2\n2\ns\ns\n2\n2\n2\n1\nr\nV\nV\nT\nx\nr\nx\nr\nr\n\n\n\n=\n\n=\n\n+\n+\n\n                   ･･･(答) \n(4) ①式において，最大トルク\nm\nT を求めるために，滑りsを変数として分母をs\nで微分し，分母の最小条件（極値となる条件）を求める。 \n2\n2\n2\n2\n2\n2\n2\nd\n0\nd\nr\nr\ns\nx\nx\ns\ns\nr\nr\ns\n\n\n\n\n+\n= −\n+\n=\n\n\n\n\n\n\n\n\n     \n2\n2\n2\n2\nr\ns\nx\n\n=\n \n0\ns \nより，\n\n- 14 - \n \n2r\ns\nx\n\n=\n······················································· ②  \nのとき①式の分母は最小となり，T は最大となる。 \nしたがって，求める最大トルク\nm\nT の式は，②式を①式に代入して， \n2\n2\nm\n2\ns\ns\n2\n2\n2\n2\n1\n2\nV\nV\nT\nx\nr\nx\nx\nr\nr\nx\nr\n\n\n=\n\n=\n\n\n+\n\n\n\n                   ･･･(答) \n \n(5) 題意から\nm\ns\n2\nT\nT\n=\nであるため，小問(3)及び小問(4)の解から， \n2\n2\n2\n2\n2\ns\ns\n2\n2\n2\nr\nV\nV\nx\nr\nx\n\n\n\n=\n\n\n+\n \n2\n2\n2\n2\n4\nr\nx\nxr\n\n\n+\n=\n \n2\n2\n2\n2\n4\n0\nr\nxr\nx\n\n\n−\n+\n=\n \n上式を2rの二次方程式として解くと， \n(\n)\n2\n2\n2\n2\n4\n16\n4\n4\n2 3\n2\n3\n2\n3\n2\n2\nx\nx\nx\nx\nx\nr\nx\nx\nx\n\n−\n\n=\n=\n=\n\n=\n\n \nまた，②式より2r\nsx\n=\nであるから，このときの滑りが\nm\ns となるので， \nm\n2\n3\ns\n=\n\n \nここで，\nm\n0\n1\ns\n\n\nより， \n    \nm\n2\n3\n0.267 95\ns\n=\n−\n=\n → 0.268                           ･･･(答)",
+    "explanation": "一相分の等価回路で滑りを含む二次抵抗を使い、トルクの式から最大となる条件を求める。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2024-second-kikai/q02-p04.webp"
+    ],
+    "imageAltTexts": [
+      "機械・制御 問2の公式本文・図表（4ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2024-second-kikai/a02-p13.webp",
+      "/questions/denken1/2024-second-kikai/a02-p14.webp"
+    ],
+    "answerImageAltTexts": [
+      "機械・制御 問2の公式標準解答（13ページ）",
+      "機械・制御 問2の公式標準解答（14ページ）"
+    ],
+    "sourceAnswerKind": "example",
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_as_02_ch_first_q02.pdf#page=4",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20241110_ch_first_a01_ks.pdf#page=13",
+    "sourceAttribution": "出典：電気技術者試験センター 2024年度 二次・機械・制御 問2",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/first/qa/"
+    ],
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken1-2024-second-kikai-q3",
+    "exam": "denken1",
+    "year": 2024,
+    "season": "second",
+    "session": "kikai",
+    "qNumber": 3,
+    "examDate": "2024-11-10",
+    "category": "機械・制御",
+    "subject": "機械・制御",
+    "topicTags": [
+      "三レベルインバータ"
+    ],
+    "difficulty": 4,
+    "type": "descriptive",
+    "question": "問3　三レベルインバータ",
+    "answer": "- 15 - \n \n〔問３の標準解答〕 \n(1) 電源の中性点O を基準としたときの端子A 及び端子B の電圧\nAO\nv\n，\nBO\nv\n，端\n子B を基準としたときの端子A の電圧(出力電圧)\nAB\nv\nは，図２のようになる。 \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n図2 各スイッチのオンオフ信号に対する電圧波形   \n t\n t\n t\n100\n-100\n0\n100\n-100\n0\n100\n-100\n0\n200\n-200\n\n\n\n\n2\n t\n t\n t\n t\n t\n t\n t\n t\non\non\non\non\non\non\non\non\noff\noff\noff\noff\noff\noff\noff\noff\n\n\n\n\n2\n2\n2\nAO\nv\nAB\nv\nBO\nv\n11\nS\n12\nS\n13\nS\n14\nS\n21\nS\n22\nS\n23\nS\n24\nS\n\n- 16 - \n \n(2)与えられた式で\n3\n\n\n=\nrad とすると，次式が得られる。 \n(\n)\n(\n)\n2\n1\n400\ncos\n6\n2\n1\nn\nn\n−\n\n−\n\n \nこの式で，n=1, 2, 3 のときが，基本波成分，第3 次調波成分，第5 次調波成\n分の振幅になるため，得られた値を\n2 で割ることで，電圧\nAO\nv\nと\nBO\nv\nの基本波\n成分，第3 次調波成分，第5 次調波成分を計算すると以下の表が得られる。 \n \n \n基本波成分 \n第3 次調波成分 \n第5 次調波成分 \nAO\nv\n \n78.0 V \n0 \n15.6 V \nBO\nv\n \n78.0 V \n0 \n15.6 V \n                                                             \n(3) \n3\n\n\n=\nのとき，小問(2)のとおり\nAO\nv\n，BO\nv\nの第3 次調波成分は0 であり，AB\nv\nは，その差分(\n)\nAO\nBO\nv\nv\n−\nであることから，第3 次調波成分の実効値は0 となる。\nまた，\n5\n\n\n=\nrad の場合，\nAO\nv\nに対する\nBO\nv\nの基本波の位相は\n6\n5\n5\n\n\n\n\n+\n=\n\n\n\n\nrad 遅\nれる。このとき，第5 次調波成分の位相差は0 となるため，\nAB\nv\nの第5 次調波\n成分の実効値は0 となる。また，基本波成分の実効値は，以下のベクトル図よ\nり，\nAB1\nAO1\n2\n2\nsin 5\nV\nV\n\n=\n\nであることから，148 V となる。              \n \n  \n  \n \n \n \n \n \nO\nBO1\nV\nAO1\nV\nAB1\nV\n4\n5\n",
+    "modelAnswer": "- 15 - \n \n〔問３の標準解答〕 \n(1) 電源の中性点O を基準としたときの端子A 及び端子B の電圧\nAO\nv\n，\nBO\nv\n，端\n子B を基準としたときの端子A の電圧(出力電圧)\nAB\nv\nは，図２のようになる。 \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n \n図2 各スイッチのオンオフ信号に対する電圧波形   \n t\n t\n t\n100\n-100\n0\n100\n-100\n0\n100\n-100\n0\n200\n-200\n\n\n\n\n2\n t\n t\n t\n t\n t\n t\n t\n t\non\non\non\non\non\non\non\non\noff\noff\noff\noff\noff\noff\noff\noff\n\n\n\n\n2\n2\n2\nAO\nv\nAB\nv\nBO\nv\n11\nS\n12\nS\n13\nS\n14\nS\n21\nS\n22\nS\n23\nS\n24\nS\n\n- 16 - \n \n(2)与えられた式で\n3\n\n\n=\nrad とすると，次式が得られる。 \n(\n)\n(\n)\n2\n1\n400\ncos\n6\n2\n1\nn\nn\n−\n\n−\n\n \nこの式で，n=1, 2, 3 のときが，基本波成分，第3 次調波成分，第5 次調波成\n分の振幅になるため，得られた値を\n2 で割ることで，電圧\nAO\nv\nと\nBO\nv\nの基本波\n成分，第3 次調波成分，第5 次調波成分を計算すると以下の表が得られる。 \n \n \n基本波成分 \n第3 次調波成分 \n第5 次調波成分 \nAO\nv\n \n78.0 V \n0 \n15.6 V \nBO\nv\n \n78.0 V \n0 \n15.6 V \n                                                             \n(3) \n3\n\n\n=\nのとき，小問(2)のとおり\nAO\nv\n，BO\nv\nの第3 次調波成分は0 であり，AB\nv\nは，その差分(\n)\nAO\nBO\nv\nv\n−\nであることから，第3 次調波成分の実効値は0 となる。\nまた，\n5\n\n\n=\nrad の場合，\nAO\nv\nに対する\nBO\nv\nの基本波の位相は\n6\n5\n5\n\n\n\n\n+\n=\n\n\n\n\nrad 遅\nれる。このとき，第5 次調波成分の位相差は0 となるため，\nAB\nv\nの第5 次調波\n成分の実効値は0 となる。また，基本波成分の実効値は，以下のベクトル図よ\nり，\nAB1\nAO1\n2\n2\nsin 5\nV\nV\n\n=\n\nであることから，148 V となる。              \n \n  \n  \n \n \n \n \n \nO\nBO1\nV\nAO1\nV\nAB1\nV\n4\n5\n",
+    "explanation": "各スイッチ状態で中性点に対する端子電圧を求め、差を取って出力電圧を描く。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2024-second-kikai/q03-p05.webp",
+      "/questions/denken1/2024-second-kikai/q03-p06.webp"
+    ],
+    "imageAltTexts": [
+      "機械・制御 問3の公式本文・図表（5ページ）",
+      "機械・制御 問3の公式本文・図表（6ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2024-second-kikai/a03-p15.webp",
+      "/questions/denken1/2024-second-kikai/a03-p16.webp"
+    ],
+    "answerImageAltTexts": [
+      "機械・制御 問3の公式標準解答（15ページ）",
+      "機械・制御 問3の公式標準解答（16ページ）"
+    ],
+    "sourceAnswerKind": "example",
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_as_02_ch_first_q02.pdf#page=5",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20241110_ch_first_a01_ks.pdf#page=15",
+    "sourceAttribution": "出典：電気技術者試験センター 2024年度 二次・機械・制御 問3",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/first/qa/"
+    ],
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken1-2024-second-kikai-q4",
+    "exam": "denken1",
+    "year": 2024,
+    "season": "second",
+    "session": "kikai",
+    "qNumber": 4,
+    "examDate": "2024-11-10",
+    "category": "機械・制御",
+    "subject": "機械・制御",
+    "topicTags": [
+      "周波数応答とフィードバック制御"
+    ],
+    "difficulty": 4,
+    "type": "descriptive",
+    "question": "問4　周波数応答とフィードバック制御",
+    "answer": "- 17 - \n \n〔問４の標準解答〕 \n(1) \n3\n1.5\n( )\n2\n0.5\n1\nG s\ns\ns\n=\n=\n+\n+\n は，1 次遅れ系の伝達関数であり，時定数をT とおく\nと，\n0.5\nT =\nである。1 次遅れ系のボード線図において，位相が45\n−\nになる角周\n波数は，1\nT [rad/s]である。したがって，位相が\n45\n−\nになる角周波数\n0\nは，\n2rad / s である。                         ･･･(答) \nまた，角周波数が14 rad/s のときのゲインは， \n10\n10\n10\n10\n10\n1.5\n1.5\n1\n20log\n20log\n20 log\n3\nlog\n10\nlog\n2\n2\n0.5 j 14+1\n5 2\n\n\n=\n=\n−\n−\n\n\n\n\n\n  \n20(0.4771 1\n0.5 0.3010)\n13.468\n=\n−−\n\n= −\n  \nしたがって，角周波数が14rad / sのときのゲイン\n0\ng は，13.5\n−\ndB である。 \n ･･･(答) \n（2） 目標値\n( )\nR s から閉ループ出力\n( )\nY s までの閉ループ伝達関数\nc( )\nG s は，制御\n器の伝達関数を\n( )\nC s\nK\n=\nとすると，次のようになる。 \nc\n3\n3\n2\n( )\n3\n2\n3\n1\n2\nK\nK\ns\nG s\ns\nK\nK s\n\n+\n=\n=\n+\n+\n+\n\n+\n                  ･･･(答) \n（3） (2) で求められた\nc( )\nG s を1 次遅れ系の標準形で記述すると， \nc\n3\n3\n2\n3\n( )\n1\n2\n3\n1\n2\n3\nK\nK\nK\nG s\ns\nK\ns\nK\n+\n=\n=\n+\n+\n+\n+\n  \nとなる。よって時定数T は\n1\n2\n3\nT\nK\n=\n+\nと表されるので，位相が45\n−\nになる\n角周波数は，\n1\n1\n2\n3K\nT\n=\n=\n+\n[rad/s]となる。このときのゲインは， \nc\n1\n1\n3\n3\n1\n3\n2\n3\n2\n3\n(j\n)\n1\nj\n1\n2\n3\n2\nj\n1\n2\n3\nK\nK\nK\nK\nK\nG\nK\nK\n\n\n+\n+\n=\n=\n=\n\n+\n+\n+\n+\n\n- 18 - \n \nとなるので，このゲインが，0.9\n2\nとなるのは，\n3\n0.9\n2\n3\nK\nK =\n+\nのときである。 \nよって，これを解くと，\n6\nK =\nが得られる。 \n6\nK =\n                                               ･･･(答) \nまた，\n1\n2\n3 6\n20\n=\n+ \n=\nrad/s となる。 \n1\n20\n=\nrad/s                                             ･･･(答) \n（4） \n2\n1\n( )\n(\n1)\nC s\ns\n=\n+\nのとき，一巡伝達関数\na( )\nG s は， \na\n2\n2\n3\n1\n3\n( )\n2 (\n1)\n(\n2)(\n1)\nG s\ns\ns\ns\ns\n=\n=\n+\n+\n+\n+\n \nとなる。この\na( )\nG s の周波数特性を調べるために\nj\ns\n\n=\nを代入すると， \na\n2\n2\n3\n3\n3\n(j )\n(j\n2)(j\n1)\n4\n2\nj(\n5 )\nG\n\n\n\n\n\n\n=\n=\n+\n+\n−\n+\n+\n−\n+\n \n位相が180\n−\nとなる角周波数を\n2\nは，\na(j )\nG\nの虚数部が零になるときであ\nる。よって，\n3\n2\n2\n5\n0\n\n\n−\n+\n=\nとなる正の角周波数を求めると， \n3\n2\n2\n2\n2\n2\n5\n(\n5)\n0\n\n\n\n\n−\n+\n=\n−\n+\n=\n \nより，\n2\n5\n2.2361\n=\n=\nrad/s となる。 \n2\n2.24\n=\nrad/s                         ･･･(答) \n（5）\n2\n5\n=\nのときの一巡伝達関数\na\n2\n3\n( )\n(\n2)(\n1)\nG\ns\ns\ns\n=\n+\n+\nのゲインを求める。 \n2\na\n5\n3\n1\n(j )\n4 5\n2\n6\nG\n\n\n=\n=\n=\n−+\n \nよって，ゲイン余裕は， \n10\n10\n10\n10\n1\n20log\n20log\n6\n20(log\n2\nlog\n3)\n6\n−\n=\n=\n+\n  \n20(0.3010\n0.4771)\n15.562\n=\n+\n=\n  \nとなる。ゲイン余裕は，15.6 dB である。                ･･･(答)",
+    "modelAnswer": "- 17 - \n \n〔問４の標準解答〕 \n(1) \n3\n1.5\n( )\n2\n0.5\n1\nG s\ns\ns\n=\n=\n+\n+\n は，1 次遅れ系の伝達関数であり，時定数をT とおく\nと，\n0.5\nT =\nである。1 次遅れ系のボード線図において，位相が45\n−\nになる角周\n波数は，1\nT [rad/s]である。したがって，位相が\n45\n−\nになる角周波数\n0\nは，\n2rad / s である。                         ･･･(答) \nまた，角周波数が14 rad/s のときのゲインは， \n10\n10\n10\n10\n10\n1.5\n1.5\n1\n20log\n20log\n20 log\n3\nlog\n10\nlog\n2\n2\n0.5 j 14+1\n5 2\n\n\n=\n=\n−\n−\n\n\n\n\n\n  \n20(0.4771 1\n0.5 0.3010)\n13.468\n=\n−−\n\n= −\n  \nしたがって，角周波数が14rad / sのときのゲイン\n0\ng は，13.5\n−\ndB である。 \n ･･･(答) \n（2） 目標値\n( )\nR s から閉ループ出力\n( )\nY s までの閉ループ伝達関数\nc( )\nG s は，制御\n器の伝達関数を\n( )\nC s\nK\n=\nとすると，次のようになる。 \nc\n3\n3\n2\n( )\n3\n2\n3\n1\n2\nK\nK\ns\nG s\ns\nK\nK s\n\n+\n=\n=\n+\n+\n+\n\n+\n                  ･･･(答) \n（3） (2) で求められた\nc( )\nG s を1 次遅れ系の標準形で記述すると， \nc\n3\n3\n2\n3\n( )\n1\n2\n3\n1\n2\n3\nK\nK\nK\nG s\ns\nK\ns\nK\n+\n=\n=\n+\n+\n+\n+\n  \nとなる。よって時定数T は\n1\n2\n3\nT\nK\n=\n+\nと表されるので，位相が45\n−\nになる\n角周波数は，\n1\n1\n2\n3K\nT\n=\n=\n+\n[rad/s]となる。このときのゲインは， \nc\n1\n1\n3\n3\n1\n3\n2\n3\n2\n3\n(j\n)\n1\nj\n1\n2\n3\n2\nj\n1\n2\n3\nK\nK\nK\nK\nK\nG\nK\nK\n\n\n+\n+\n=\n=\n=\n\n+\n+\n+\n+\n\n- 18 - \n \nとなるので，このゲインが，0.9\n2\nとなるのは，\n3\n0.9\n2\n3\nK\nK =\n+\nのときである。 \nよって，これを解くと，\n6\nK =\nが得られる。 \n6\nK =\n                                               ･･･(答) \nまた，\n1\n2\n3 6\n20\n=\n+ \n=\nrad/s となる。 \n1\n20\n=\nrad/s                                             ･･･(答) \n（4） \n2\n1\n( )\n(\n1)\nC s\ns\n=\n+\nのとき，一巡伝達関数\na( )\nG s は， \na\n2\n2\n3\n1\n3\n( )\n2 (\n1)\n(\n2)(\n1)\nG s\ns\ns\ns\ns\n=\n=\n+\n+\n+\n+\n \nとなる。この\na( )\nG s の周波数特性を調べるために\nj\ns\n\n=\nを代入すると， \na\n2\n2\n3\n3\n3\n(j )\n(j\n2)(j\n1)\n4\n2\nj(\n5 )\nG\n\n\n\n\n\n\n=\n=\n+\n+\n−\n+\n+\n−\n+\n \n位相が180\n−\nとなる角周波数を\n2\nは，\na(j )\nG\nの虚数部が零になるときであ\nる。よって，\n3\n2\n2\n5\n0\n\n\n−\n+\n=\nとなる正の角周波数を求めると， \n3\n2\n2\n2\n2\n2\n5\n(\n5)\n0\n\n\n\n\n−\n+\n=\n−\n+\n=\n \nより，\n2\n5\n2.2361\n=\n=\nrad/s となる。 \n2\n2.24\n=\nrad/s                         ･･･(答) \n（5）\n2\n5\n=\nのときの一巡伝達関数\na\n2\n3\n( )\n(\n2)(\n1)\nG\ns\ns\ns\n=\n+\n+\nのゲインを求める。 \n2\na\n5\n3\n1\n(j )\n4 5\n2\n6\nG\n\n\n=\n=\n=\n−+\n \nよって，ゲイン余裕は， \n10\n10\n10\n10\n1\n20log\n20log\n6\n20(log\n2\nlog\n3)\n6\n−\n=\n=\n+\n  \n20(0.3010\n0.4771)\n15.562\n=\n+\n=\n  \nとなる。ゲイン余裕は，15.6 dB である。                ･･･(答)",
+    "explanation": "伝達関数の折点とゲインの変化を整理してから、帰還回路の条件と応答の変化を確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken1/2024-second-kikai/q04-p07.webp",
+      "/questions/denken1/2024-second-kikai/q04-p08.webp"
+    ],
+    "imageAltTexts": [
+      "機械・制御 問4の公式本文・図表（7ページ）",
+      "機械・制御 問4の公式本文・図表（8ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken1/2024-second-kikai/a04-p17.webp",
+      "/questions/denken1/2024-second-kikai/a04-p18.webp"
+    ],
+    "answerImageAltTexts": [
+      "機械・制御 問4の公式標準解答（17ページ）",
+      "機械・制御 問4の公式標準解答（18ページ）"
+    ],
+    "sourceAnswerKind": "example",
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20241110_as_02_ch_first_q02.pdf#page=7",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20241110_ch_first_a01_ks.pdf#page=17",
+    "sourceAttribution": "出典：電気技術者試験センター 2024年度 二次・機械・制御 問4",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/first/qa/"
+    ],
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  }
+]

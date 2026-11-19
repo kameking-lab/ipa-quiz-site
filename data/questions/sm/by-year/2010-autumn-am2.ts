@@ -24,6 +24,7 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "JIS Q 20000-1はサービス提供者がサービスマネジメントシステムを確立・維持することを要求しており、その一部として供給者管理プロセスを文書化する必要があります。これは、プロセスの透明性と一貫性を確保するために不可欠です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "運用マニュアルに記載された手順に従ってシステムの異常を回復させることは、オペレータとして適切な行動です。これにより、手順遵守とサービス継続性の確保が図られます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 20000において、サービス提供者は顧客に対するサービスの最終責任を負います。外部の供給者から提供されるサービスを利用する場合でも、顧客へのサービス品質全体はサービス提供者が責任を持って保証します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "SLA（サービスレベル合意書）は、ITサービスの品質を具体的に定める文書であり、サービスの信頼性はその重要な評価項目の一つです。サービスが安定して稼働し続ける能力は、顧客にとって不可欠な要素です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "問題管理プロセスの主要な目的は、インシデントの再発を防止するために、その根本原因を究明し、恒久的な解決策を策定・実施することです。これにより、システムの安定性とサービスの品質向上に貢献します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "問題管理プロセスで特定された既知の誤りやその回避策に関する情報は、インシデント管理プロセスが迅速にインシデントを解決するために非常に有用です。この情報共有により、サービス復旧時間の短縮が期待されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +174,7 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "コールドスタートとは、システムが完全に停止した状態から、初期設定や初期化を経てシステムを再起動する方法であり、「イニシャルプログラムロード（IPL）」とも呼ばれます。障害発生時にシステムを初期状態から再構築する際に用いられます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +199,7 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "レプリケーションはデータを複数の場所に複製し同期させる技術であり、これにより災害などでメインシステムが停止した場合でも、複製データを持つ別のシステムに切り替えてサービスを継続できます。結果として、システム停止時間を大幅に短縮し、事業継続性を高めます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +224,7 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ITIL v3における変更諮問委員会（CAB）の役割は、提案された変更のリスク、費用、便益などを評価し、変更管理プロセスが適切な意思決定を行うのを支援することです。これにより、変更の承認プロセスが適切に実行されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -239,7 +248,14 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
       "エ": "6"
     },
     "answer": "ウ",
-    "explanation": "この問題では、システムを年間稼働させるために必要な最少要員数を求めます。まず、1人の要員が1年間で勤務できる実質的な日数を計算します。年間日数は365日ですが、休日が120日、年次有給休暇が20日あるため、これらの日数は勤務に充てられません。したがって、1人の要員が勤務できる最大日数は 365 - 120 - 20 = 225日となります。\n\nシステムは毎日8時から24時までの16時間稼働させる必要があり、図表から3種類の勤務時間（恐らく8時間勤務）で1名ずつ配置されています。これは、1日あたり3名（＝3勤務時間）の要員が必要であることを意味します。年間365日稼働させるためには、延べ 365日 × 3名/日 ＝ 1095名・日 の要員が必要です。\n\n1人の要員が最大225日勤務できるとすると、必要な要員の総数は 1095名・日 ÷ 225日/人 ≒ 4.87人となります。要員は整数でなければならないため、切り上げて5名が必要となります。\n\nアの3名は、1人あたりの年間勤務可能日数（225日）で計算すると、3人 × 225日/人 ＝ 675名・日となり、年間必要な1095名・日には全く足りません。イの4名では、4人 × 225日/人 ＝ 900名・日となり、これも不足します。エの6名では、6人 × 225日/人 ＝ 1350名・日となり、必要数（1095名・日）は満たせますが、最少人数を求めているため、より少ない人数で実現可能か検討する必要があります。計算結果から5名が最少となります。",
+    "explanation": "図では1日につき勤務1、勤務2、勤務3に1人ずつ必要です。年間で3×365＝1,095人日の勤務枠があり、1人が勤務できるのは365−120−20＝225日です。必要人数は1,095÷225を切り上げた5人です。",
+    "choiceExplanations": {
+      "ア": "誤りです。3人という数は、ある1日に必要な勤務枠の数です。1人の年間勤務日数は225日なので、3人で年間365日の3枠は埋められません。",
+      "イ": "誤りです。休日と有給休暇を引くと1人は年225日勤務できます。4人で確保できる900人日は、年間に必要な1,095人日を下回ります。",
+      "ウ": "正しいです。毎日3枠を埋めるには年1,095人日が必要で、1人は365−120−20＝225日勤務できます。1,095÷225を切り上げると5人です。",
+      "エ": "誤りです。6人いれば枠は埋まりますが、問題の条件では5人で225×5＝1,125人日を確保できます。必要な1,095人日を満たす最少人数は5人です。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +280,7 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ITILにおけるサービスレベル管理は、顧客とサービス提供者間で合意されたサービスレベルが達成されているかを監視し、ITサービスの品質を維持・改善するプロセスです。SLAに基づき、顧客満足度とサービス品質の向上を目指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +305,7 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ITILの可用性管理は、ITサービスが必要とされたときに合意済の機能を実行する能力を定義、分析、計画、測定、改善することを責務とします。これにより、ITサービスが常に利用可能であることを保証し、ビジネス要件を満たします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +330,7 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ITIL v3のサービストランジションは、新規または変更されたサービスを運用環境に移行し、要件と制約に沿って確実に稼働させることを管理するライフサイクルフェーズです。サービスの円滑な導入と運用への安定移行を目指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +355,7 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ソフトウェア開発・保守の工程でリポジトリを構築する主な理由は、設計情報、ソースコード、ドキュメントなどの各種成果物を一元管理することです。これにより、情報の共有が容易になり、開発・保守作業の効率化と用語の統一が図られます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +380,7 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "システム運用にかかわる費用を利用部門に公平に負担させるための制度を課金制度と呼びます。これにより、利用量や利用時間などに応じて費用が適切に配分され、ITコストの透明性と効率性が向上します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +405,7 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ミッションクリティカルシステムとは、その停止や障害が企業の業務継続性や存続に直接的かつ重大な影響を及ぼす、極めて重要なシステムを指します。これらのシステムは、高い可用性と信頼性が求められます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +430,7 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "請負契約では、委託元は成果物に対して責任を持つものの、委託先の従業員に直接指揮命令することはできません。委託元の管理者が委託先の開発担当者を指揮命令している場合、それは「偽装請負」にあたり、システム監査で重大な指摘事項となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -431,7 +454,14 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
       "エ": "進捗の遅れを金額で表した値"
     },
     "answer": "エ",
-    "explanation": "EVM（Earned Value Management）は、プロジェクトの計画値（PV）、実施値（EV）、実績コスト（AC）を用いて進捗とコストを管理する手法です。図中のAは、進捗の遅れが金額でどの程度発生しているかを示す指標です。EVMにおいて、進捗の遅れは「スケジュール差異（SV）」として計算されます。SVはEVからPVを差し引いた値（SV = EV - PV）で表され、SVがマイナスであれば進捗遅延、プラスであれば進捗超過を示します。このSVが、進捗の遅れを金額で表現した値に相当します。\n\nアは、EVMは計画からの乖離を把握するものであり、実質的な削減金額を直接示すものではないため不適切です。イは、プロジェクトのコスト超過を示す「コスト差異（CV = EV - AC）」と混同しやすく、Aは進捗遅延に焦点を当てた値であるため誤りです。ウは、Aは金額で進捗の遅れを表すものであり、遅延日数そのものを直接示すものではないため不適切です。",
+    "explanation": "図のAは、現在時点での計画価値PVと出来高EVの縦方向の差です。縦軸は金額であり、PVがEVを上回る分は進捗の遅れを金額で表したものです。コスト超過の金額を求めるには、実コストACと出来高EVを比較します。",
+    "choiceExplanations": {
+      "ア": "誤りです。節約できた金額は、実コストACが出来高EVを下回るときの差から読めます。図のAは実コストの曲線を端点としていません。",
+      "イ": "誤りです。超過金額は実コストACと出来高EVの差です。図のAは、実コストではなく計画価値PVと出来高EVの縦方向の差を指しています。",
+      "ウ": "誤りです。日数は横軸の目盛で読みます。図のAは現在時点で二つの曲線の間を縦に測っているため、差の単位は金額です。",
+      "エ": "正しいです。Aは現在の計画価値PVと出来高EVの縦の差です。計画に対して終えていない作業の分を、日数ではなく予算上の金額で示しています。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +486,7 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "リスクの受容策とは、リスクが発生した場合の影響を許容し、その発生に備えてあらかじめ予備（コンティンジェンシー予備など）を確保しておくことです。これにより、リスクが顕在化した場合の被害を最小限に抑える準備ができます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +511,7 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "RAID3は、データをビット単位で複数のデータディスクに分散させ（ストライピング）、専用の1つのパリティディスクにパリティ情報を集中して書き込む方式です。これにより、1つのディスク障害からの回復が可能です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +536,7 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "Webシステムのアプリケーションレベル稼働監視では、ロードバランサがWebサーバの特定のURLにアクセスし、その応答内容（含まれる文字列など）が正常であるかを確認します。これにより、Webサーバが単に起動しているだけでなく、アプリケーションが期待通りに機能しているかを判断できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +561,7 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "多次元分析（OLAP）におけるダイス（Dice）操作は、データキューブから特定の次元や要素を切り出して新しいビューを作成したり、分析軸を切り替えたりすることです。この問題のように分析の観点を「販売チャネル」から「顧客タイプ」に切り替える操作がこれに該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +586,7 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "TCPコネクションは、通信の終点となるアプリケーション間で信頼性のあるデータ転送を保証するために設定されます。プロキシサーバは、クライアントの代わりに外部サーバと通信を行う中継サーバであり、クライアントから見るとプロキシサーバが、プロキシサーバから見るとWebサーバが、それぞれ通信の相手方となります。したがって、TCPコネクションはクライアントとプロキシサーバの間、およびプロキシサーバとWebサーバの間に設定されます。\n\nアは、クライアントとWebサーバの間に直接TCPコネクションが設定されると誤解しているため不適切です。プロキシサーバはクライアントとWebサーバの間の通信を中継するため、クライアントとWebサーバの間で直接コネクションが確立されるわけではありません。ウは、プロキシサーバとルータの間、ルータとWebサーバの間にTCPコネクションが設定されると誤解しています。ルータはIPアドレスに基づいてパケットを転送する機器であり、TCPコネクションを終端する役割はありません。エは、クライアントとルータの間、ルータとWebサーバの間にTCPコネクションが設定されると誤解しています。これもウと同様に、ルータはTCPコネクションを終端しないため不適切です。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +611,7 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "共通鍵暗号方式は、暗号化と復号に同一の鍵を使用する暗号方式です。選択肢イは、この共通鍵暗号方式の基本的な特性を正確に説明しています。他の選択肢は、暗号方式の種類や鍵の扱いに関して誤った記述をしています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +636,7 @@ export const SM_QUESTIONS_2010_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "製造物責任法（PL法）には、「開発危険の抗弁」と呼ばれる免責事由が存在します。これは、製造物を引き渡した時点の科学または技術水準では予測や発見が不可能であった欠陥については、製造業者の損害賠償責任を問わないというものです。選択肢ウは、この「開発危険の抗弁」を正確に記述しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2010h-8_2/2010h-8a_sm_am2_qs.pdf",
     "license": "IPA-public"

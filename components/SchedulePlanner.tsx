@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { ArrowLeft, ArrowRight, GraduationCap, Sparkles, BookOpen, Hourglass } from "lucide-react";
+import { ArrowLeft, ArrowRight, GraduationCap, BookOpen, Hourglass } from "lucide-react";
 import { EXAM_CONFIGS } from "@/lib/exam-config";
 import { examLabel } from "@/lib/utils";
 import type { ExamCode } from "@/lib/questions/types";
@@ -44,7 +44,7 @@ const LEVELS: KnowledgeLevel[] = [
 const LEVEL_ICONS: Record<KnowledgeLevel, React.ComponentType<{ className?: string }>> = {
   beginner: BookOpen,
   foundation: GraduationCap,
-  learner: Sparkles,
+  learner: GraduationCap,
   "final-review": Hourglass,
 };
 

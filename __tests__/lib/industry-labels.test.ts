@@ -14,7 +14,7 @@ import { ESSAY_INDUSTRY_LABELS } from "@/lib/essays/types";
  * 値同士が重複しないことは保証しない。これらは user-visible に効く:
  *  - INDUSTRY_LABELS: EssayEditor の業種選択 <select> オプション
  *    (components/essay/EssayEditor.tsx:177)、essay-grade API が LLM へ渡す
- *    `【受験生の業種】${INDUSTRY_LABELS[industry]}`(app/api/essay-grade/route.ts:103)、
+ *    `【受験生の業種】${INDUSTRY_LABELS[industry]}`(lib/essay/legacy-grade.ts:103)、
  *    EssayResultView / EssayHistoryView の見出し
  *  - ESSAY_INDUSTRY_LABELS: EssayIndustryTabs の業種タブのボタン文言
  *    (app/essays/.../EssayIndustryTabs.tsx:62)

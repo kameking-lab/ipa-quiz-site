@@ -187,6 +187,9 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
       { status: 404 },
     );
   }
+  if (question.type === "essay") {
+    return NextResponse.json({ error: "essay_grading_retired" }, { status: 410 });
+  }
 
   const usage = await prepareAiUsage("scoring");
   track(usage);
@@ -243,7 +246,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
   const userPrompt = buildUserPrompt(question, payload.answers);
   // 午後記述の採点は上位モデル（採点品質優先・強み2）。四択/コパイロットは free のまま。
   const model = resolveModel("grading");
-  const budget = textBudget(tierForModel(model), SCORING_SYSTEM_PROMPT, [{ content: userPrompt }], question.type === "essay" ? 6000 : 3000);
+  const budget = textBudget(tierForModel(model), SCORING_SYSTEM_PROMPT, [{ content: userPrompt }], 3000);
   const cap = await checkMonthlyCostCap(provider.name, budget);
   if (!cap.allowed) {
     if (!usage.legacy) usage.headers["X-AI-RateLimit-Scope"] = "service-cost";
@@ -275,7 +278,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
           system: SCORING_SYSTEM_PROMPT,
           messages: [{ role: "user", content: userPrompt }],
           model,
-          maxTokens: question.type === "essay" ? 6000 : 3000,
+          maxTokens: 3000,
           // 思考トークンは maxOutputTokens を食う。既定はオフにして、上限を
           // まるごと採点 JSON に使わせる（実測: 思考ありでは 1500 のうち 1091 を
           // 思考が消費し、JSON が improvements の途中で切れていた）。
@@ -316,7 +319,7 @@ async function handlePost(req: Request, track: (context: AiUsageContext) => void
               ? Math.max(0, usage.totalTokens - usage.promptTokens)
               : usage?.outputTokens !== undefined && usage.thoughtsTokens !== undefined
               ? usage.outputTokens + usage.thoughtsTokens
-              : Math.max(question.type === "essay" ? 6000 : 3000, estimateTokens(buf.length)),
+              : Math.max(3000, estimateTokens(buf.length)),
           label: "scoring",
           reservation: cap.reservation,
         });

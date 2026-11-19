@@ -108,7 +108,7 @@ describe("単価表 — pro 行の存在", () => {
 describe("全 AI ルートが課金層を手書きしていない", () => {
   const ROUTES = [
     "app/api/copilot/route.ts",
-    "app/api/essay-grade/route.ts",
+    "lib/essay/legacy-grade.ts",
     "app/api/scoring/route.ts",
   ];
 

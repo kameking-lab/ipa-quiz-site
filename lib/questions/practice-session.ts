@@ -1,14 +1,24 @@
 import { EXAM_CONFIGS } from "@/lib/exam-config";
+
+
 import type { ExamCode, Session } from "./types";
 
 export const SPECIALIST_EXAMS: readonly ExamCode[] = ["st", "sa", "pm", "nw", "db", "es", "sc", "sm", "au"];
-export const PRACTICE_SESSIONS: readonly Session[] = ["yakkan", "jitsumu", "patent", "design", "trademark", "treaty", "copyright", "dokugeki-ippan", "dokugeki-nougyou", "dokugeki-tokutei", "gakka-I", "gakka-II", "gakka-III", "gakka-IV", "khk-ax", "khk-ay", "khk-az", "khk-bx", "khk-by", "khk-bz", "khk-cx", "khk-cy", "khk-cz", "khk-dx", "khk-dy", "khk-dz", "keikaku", "kankyo-setsubi", "kozo", "sekou", "gakushiki", "gyosei","kanri","kansa","am","am1","am2","pm","kamoku-a","kamoku-b","gakka","rousai","koyou","kenpo","kounen","kokunen","ippan","sentaku","riron","denryoku","kikai","houki","hoki","kogaku","kiso","kogaku-a","kogaku-b","tiri","mondai-a","mondai-b","mondai-c","mondai-d","kyotsu","senmon","hoiku-genri","kyoiku-genri","shakaiteki-yougo","kodomo-katei-fukushi","shakai-fukushi","hoiku-shinrigaku","kodomo-hoken","kodomo-shokueiyou","hoiku-jisshu-riron","keizai","zaimu","kigyo","unei","keiei-houmu","keiei-joho","chusho-seisaku","required","theory","practical","gas-law","gas-basic","gas-technology","jken-basic","jken-programming","jken-design","hoan","wagashi","yogashi","seipan","measurement-basic","measurement-mass","measurement-chemistry","measurement-concentration","measurement-physics","measurement-sound","measurement-management","kenki-type1","kenki-type2","kenki-type3","kenki-type4","kenki-type5","kenki-type6","constitution","civil-law","criminal-law","admin-law","commercial-law","civil-procedure","criminal-procedure","tsukan-law","customs-law","tsukan-practical"];
+
+
+export const PRACTICE_SESSIONS: readonly Session[] = ["cfp-risk", "reading", "writing", "listening", "eju-biology", "eju-chemistry", "eju-physics", "eju-math-2", "eju-math-1", "eju-math-common", "zensho-english-grade-3", "zensho-info-pro2", "zensho-calc-2-business", "zensho-calc-1-ordinary", "zensho-calc-3-business", "mondai-e", "zensho-boki-2-commercial", "suken-9", "zensho-boki-100-grade-1-accounting", "zensho-info-programming-2", "programming-1", "zensho-calc-grade-3-ordinary", "zensho-calc-grade-1-business", "suken-grade-8", "suken-grade-2-first", "suken-grade7", "suken-grade-6", "jken-business", "special-a", "yakkan", "jitsumu", "patent", "design", "trademark", "treaty", "copyright", "dokugeki-ippan", "dokugeki-nougyou", "dokugeki-tokutei", "gakka-I", "gakka-II", "gakka-III", "gakka-IV", "khk-ax", "khk-ay", "khk-az", "khk-bx", "khk-by", "khk-bz", "khk-cx", "khk-cy", "khk-cz", "khk-dx", "khk-dy", "khk-dz", "keikaku", "kankyo-setsubi", "kozo", "sekou", "gakushiki", "gyosei", "kanri", "kansa", "am", "am1", "am2", "pm", "pm1", "pm2", "kamoku-a", "kamoku-b", "gakka", "rousai", "koyou", "kenpo", "kounen", "kokunen", "ippan", "sentaku", "riron", "denryoku", "kikai", "houki", "hoki", "kogaku", "kiso", "kogaku-a", "kogaku-b", "chigaku-kiso", "tiri", "kokyo", "mondai-a", "mondai-b", "mondai-c", "mondai-d", "mondai-f", "kyotsu", "senmon", "hoiku-genri", "kyoiku-genri", "shakaiteki-yougo", "kodomo-katei-fukushi", "shakai-fukushi", "hoiku-shinrigaku", "kodomo-hoken", "kodomo-shokueiyou", "hoiku-jisshu-riron", "keizai", "zaimu", "kigyo", "unei", "keiei-houmu", "keiei-joho", "chusho-seisaku", "required", "theory", "practical", "gas-law", "gas-basic", "gas-technology", "jken-basic", "jken-programming", "jken-design", "hoan", "wagashi", "yogashi", "seipan", "measurement-basic", "measurement-mass", "measurement-chemistry", "measurement-concentration", "measurement-physics", "measurement-sound", "measurement-management", "kenki-type1", "kenki-type2", "kenki-type3", "kenki-type4", "kenki-type5", "kenki-type6", "constitution", "civil-law", "criminal-law", "admin-law", "commercial-law", "civil-procedure", "criminal-procedure", "tsukan-law", "customs-law", "tsukan-practical", "special-b"];
 
 /** Specialist practice starts with the specialist paper; common AM I is explicit. */
 export function defaultPracticeSession(exam: ExamCode, year?: number): Session {
+  if (exam === "literas") return "gakka";
+  if (exam === "cfp") return "gakka";
+  if (exam === "kokka-sogo-dai" || exam === "kokka-ippan-dai" || exam === "kokka-sogo-in") return "kiso";
+  if (exam === "toukei1") return "gakka";
+  if (exam === "boueki-c" || exam === "service2") return "gakka";
   if (!["ip","sg","fe","ap","st","sa","pm","nw","db","es","sc","sm","au","fp2","fp1","fp3","denken3","denken2","denken1","denko2","denko1","takken","civil2","kankoji2","zoen2","zoen1","tsushin2","tsushin1","kaigo","civil1","shakai","seishin","tohan","kanri","eisei1","eisei2","soukan","hoikushi","mankan","kashikin","sharoushi","kangoshi","yakuzaishi","ahaki-anma","ahaki-hari-kyu","hokenshi","josanshi","rigaku-ryohoshi","sagyo-ryohoshi","shino-kunrenshi","rinsho-kensagishi","shinryo-hoshasengishi","rinsho-kogishi","shika-ishi","riyoshi","chusho-kigyo-shindanshi","chosashi","judo-seifukushi","riku-toku-kokunai","kai-toku2","kai-toku3","koku-toku","land-special1","riku-tech1","maritime4","aviation-comm","amateur1","maritime-special1","riku-tech2","amateur2","maritime-radar","general1","general2","general3","maritime3","maritime2","maritime1","land-special2","land-special3","kanteishi","kaikeishi","gas-kou","gas-otsu","gas-hei"].includes(exam)) return EXAM_CONFIGS[exam]?.sessions[0]?.session ?? "gakka";
 
   if (exam === "kenchiku-setsubishi") return "am1";
+  if (exam === "denko1" && year === 2023) return "am";
   if (exam === "chizai2") return "gakka";
   if (exam === "kisho") return "ippan";
   if (exam === "kanteishi") return "gyosei";
@@ -32,10 +42,35 @@ export function defaultPracticeSession(exam: ExamCode, year?: number): Session {
 }
 
 export function parsePracticeSession(value?: string): Session | undefined {
+
   return PRACTICE_SESSIONS.includes(value as Session) ? value as Session : undefined;
+
+}
+
+export function practiceCategoryLabel(category: string, exam?: ExamCode): string {
+  if (exam === "gijutsushi1-kikai") {
+    return EXAM_CONFIGS[exam].sessions.find(item => item.categories.includes(category))?.label ?? category;
+  }
+  return category;
+}
+
+
+const CONFIGURED_SESSION_LABEL_EXAMS: readonly ExamCode[] = [
+  "dekyo-charge-5", "eiken1", "kokka-ippan-dai", "jlpt",
+  "zensho-calc", "zensho-info", "zensho-boki", "zensho-english",
+];
+
+
+export function configuredPracticeSessionLabel(session: Session, exam?: ExamCode): string | undefined {
+  if (!exam || !CONFIGURED_SESSION_LABEL_EXAMS.includes(exam)) return undefined;
+  return EXAM_CONFIGS[exam].sessions.find((item) => item.session === session)?.label;
 }
 
 export function practiceSessionLabel(session: Session, exam?: ExamCode): string {
+  if (exam === "toukei1" && session === "gakka") return "統計数理（記述式）";
+  if (exam === "literas" && session === "gakka") return "社会理解力の公式例題";
+  if (exam === "cfp" && session === "gakka") return "金融資産運用設計";
+  if ((exam === "kokka-sogo-dai" || exam === "kokka-ippan-dai" || exam === "kokka-sogo-in") && session === "kiso") return "基礎能力試験";
   if (exam && ["unko-kanrisha-ryokaku", "shobo-setsubishi-kou1", "kikenbutsu-kou", "kikenbutsu-hei", "kikenbutsu-otsu4", "unko-kanrisha-kamotsu", "shobo-setsubishi-otsu6", "shobo-setsubishi-kou4"].includes(exam)) {
     return EXAM_CONFIGS[exam].sessions.find(item => item.session === session)?.label ?? session;
   }
@@ -45,12 +80,16 @@ export function practiceSessionLabel(session: Session, exam?: ExamCode): string 
     if (labels[session]) return labels[session]!;
   }
   if (exam && ["khk-reito-1", "khk-reito-2", "khk-reito-3", "shuwa"].includes(exam)) return EXAM_CONFIGS[exam].sessions.find(item => item.session === session)?.label ?? session;
-  if (exam && ["gijutsushi1-kikai", "khk-kikai-kou", "khk-kikai-otsu"].includes(exam)) return EXAM_CONFIGS[exam].sessions.find(item => item.session === session)?.label ?? session;
+  if (exam === "kounin") return EXAM_CONFIGS[exam].sessions.find((item) => item.session === session)?.label ?? session;
+  if (exam === "suken") return EXAM_CONFIGS[exam].sessions.find((item) => item.session === session)?.label ?? session;
+  if (exam === "jlpt") return EXAM_CONFIGS[exam].sessions.find((item) => item.session === session)?.label ?? session;
+  if (exam && ["gijutsushi1-kensetsu", "gijutsushi1-tekisei", "gijutsushi1-kikai", "khk-kikai-kou", "khk-kikai-otsu"].includes(exam)) return EXAM_CONFIGS[exam].sessions.find(item => item.session === session)?.label ?? session;
   if (exam === "kenchiku-setsubishi") {
     if (session === "am1") return "建築一般知識";
     if (session === "am2") return "建築法規";
     if (session === "pm") return "建築設備";
   }
+  if (exam === "denko1" && session === "am") return "学科（午前）";
   if (exam === "chizai2" && session === "practical") return "実技";
   if (exam === "kisho" && session === "ippan") return "学科一般";
   if (exam === "kisho" && session === "senmon") return "学科専門";
@@ -147,9 +186,15 @@ seipan: "製パン（選択）",
 }
 
 export function quizBackHref({ exam, mode, returnTo }: { exam: string; mode?: string; returnTo?: string }): string {
+
   // Only local learning destinations; never accept external URLs or player loops.
+
   if (returnTo && /^\/(?!\/)/.test(returnTo) && !/[\\\u0000-\u0020]/.test(returnTo) && !/^\/quiz(?:[/?#]|$)/.test(returnTo)) return returnTo;
+
   if (mode === "year") return `/modes/year?exam=${encodeURIComponent(exam)}`;
+
   if (mode === "topic") return `/modes/topic?exam=${encodeURIComponent(exam)}`;
+
   return `/${encodeURIComponent(exam)}`;
+
 }

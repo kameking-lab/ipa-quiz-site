@@ -108,7 +108,7 @@ describe("強化プラスチック成形技能士2級 手積み積層成形作�
     const q = questions[44];
     const resource = buildQuestionJsonLd({ question: q, pageUrlAbs: `https://www.kakomon-ai.jp${questionPagePath(q)}`, title: "強化プラスチック成形技能士2級 B群20" })["@graph"][0];
     if (!("hasPart" in resource) || !("acceptedAnswer" in resource.hasPart)) throw new Error("Missing accepted answer");
-    expect(resource.hasPart.author.name).toBe("中央職業能力開発協会");
+    expect(resource.hasPart.author?.name).toBe("中央職業能力開発協会");
     expect(resource.hasPart.acceptedAnswer).toMatchObject({ text: "ハ: 図ハ" });
   });
 });

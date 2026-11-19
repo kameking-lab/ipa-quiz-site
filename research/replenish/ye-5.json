@@ -1,0 +1,216 @@
+{
+  "lane": "ye-5",
+  "plan": "plan5.json",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "checkedAt": "2026-11-18",
+  "rows": [
+    {
+      "jobId": "PLAN5-453",
+      "index": 452,
+      "exam": "zoen2",
+      "year": 2026,
+      "season": "late",
+      "session": "gakka",
+      "status": "original-text-reviewed",
+      "newQuestionCount": 0,
+      "reviewedPublicationIds": 6,
+      "questionNumbersByFile": {
+        "data/questions/zoen2/2026-late.json": [
+          16,
+          29,
+          37,
+          38,
+          39,
+          40
+        ]
+      },
+      "questionSources": [
+        {
+          "url": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/11/20261116z_mondaia.pdf",
+          "sha256": "1cf29e0587e8157f9ce6d34bfa059c51602611bfd9d8fcf98152979aa38046ae"
+        }
+      ],
+      "notes": "原本の本文・選択肢・表を照合した。"
+    },
+    {
+      "jobId": "PLAN5-439",
+      "index": 438,
+      "exam": "kyusui",
+      "year": 2022,
+      "season": "annual",
+      "session": "gakka-2",
+      "status": "original-text-reviewed",
+      "newQuestionCount": 0,
+      "reviewedPublicationIds": 4,
+      "questionNumbersByFile": {
+        "data/questions/batch1/kyusui.json": [
+          44,
+          47,
+          48,
+          57
+        ]
+      },
+      "questionSources": [
+        {
+          "url": "https://www.kyuukou.or.jp/shiken/file-r04/file-r04_gakka-02.pdf",
+          "sha256": "a85a57d9fd4954e2d493f0fe7aa5fff318efbe072679b93e054ed8e47dd902d4"
+        }
+      ],
+      "notes": "原本の本文・選択肢・表を照合した。"
+    },
+    {
+      "jobId": "PLAN5-411",
+      "index": 410,
+      "exam": "fp1",
+      "year": 2025,
+      "season": "january",
+      "session": "gakka-kiso",
+      "status": "original-text-reviewed",
+      "newQuestionCount": 0,
+      "reviewedPublicationIds": 6,
+      "questionNumbersByFile": {
+        "data/questions/fp1/2025-january.json": [
+          1,
+          12,
+          20,
+          22,
+          27,
+          41
+        ]
+      },
+      "questionSources": [
+        {
+          "url": "https://products.kinzai.or.jp/wp-content/uploads/2026/11/fp01_g_kiso_202501.pdf",
+          "sha256": "8aef18f5a6ad932f7de0e2e0deffc35e2bfa1c19510c53d1efa0604b36d71490"
+        }
+      ],
+      "notes": "原本の本文・選択肢・表を照合した。"
+    },
+    {
+      "jobId": "PLAN5-397",
+      "index": 396,
+      "exam": "denki2",
+      "year": 2026,
+      "season": "late",
+      "session": "gakka",
+      "status": "original-text-reviewed",
+      "newQuestionCount": 0,
+      "reviewedPublicationIds": 6,
+      "questionNumbersByFile": {
+        "data/questions/denki2/2026-late.json": [
+          1,
+          2,
+          3,
+          4,
+          15,
+          55
+        ]
+      },
+      "questionSources": [
+        {
+          "url": "https://www.fcip-shiken.jp/pdf/r08_2dg_mondai.pdf",
+          "sha256": "66333c2411938c4b4e26c35c838a3b476e12e65b7a833117c418108798de6a4e"
+        }
+      ],
+      "notes": "問1は前回修正を原本で再確認。問55で引用符直後の空白を取り除き、原本の改段を転記した。"
+    },
+    {
+      "jobId": "PLAN5-383",
+      "index": 382,
+      "exam": "mokuzo-kenchikushi",
+      "year": 2024,
+      "season": "annual",
+      "session": "gakka-1_2",
+      "status": "original-text-reviewed",
+      "newQuestionCount": 0,
+      "reviewedPublicationIds": 19,
+      "questionNumbersByFile": {
+        "data/questions/mokuzo-kenchikushi/2024-am1.json": [
+          1,
+          2,
+          12,
+          13,
+          14,
+          17,
+          19
+        ],
+        "data/questions/mokuzo-kenchikushi/2024-am2.json": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          10,
+          13,
+          15,
+          16,
+          17,
+          18,
+          23
+        ]
+      },
+      "questionSources": [
+        {
+          "url": "https://www.jaeic.or.jp/assets/pdf/shiken/mk/mk-mondai/mk-2024-1st-gakka1_2.pdf",
+          "sha256": "69446d6c473e9005c340982d98e2a378b8d6b5d774632ecd702ae3fa338a4da3"
+        }
+      ],
+      "notes": "学科Ⅱの原図8点の代替テキストに、公式図にある位置・寸法・条件を補った。"
+    },
+    {
+      "jobId": "PLAN5-341",
+      "index": 340,
+      "exam": "kanri",
+      "year": 2023,
+      "season": "annual",
+      "session": "gakka",
+      "status": "original-text-reviewed",
+      "newQuestionCount": 0,
+      "reviewedPublicationIds": 5,
+      "questionNumbersByFile": {
+        "data/questions/kanri/2023-annual.json": [
+          11,
+          12,
+          13,
+          14,
+          19
+        ]
+      },
+      "questionSources": [
+        {
+          "url": "https://www.kanrikyo.or.jp/kanri/mondaiseikai/pdf/r05.pdf",
+          "sha256": "1eedf8582429b3270a1f04289d88dd06fb9330d5b837b634e954973f476e5e6c"
+        }
+      ],
+      "notes": "原本の本文・選択肢・表を照合した。"
+    },
+    {
+      "jobId": "PLAN5-327",
+      "index": 326,
+      "exam": "shakai",
+      "year": 2025,
+      "season": "annual",
+      "session": "all-written",
+      "status": "original-text-reviewed",
+      "newQuestionCount": 0,
+      "reviewedPublicationIds": 4,
+      "questionNumbersByFile": {
+        "data/questions/seishin/2024-annual.json": [
+          4,
+          69
+        ]
+      },
+      "questionSources": [
+        {
+          "url": "https://www.sssc.or.jp/shakai/past_exam/pdf/no37/sp_am_01_37.pdf",
+          "sha256": "c2da49e7e2fcff17965312b9a63f728a67a66dc6e46a34360dcf4195e4022788"
+        },
+        {
+          "url": "https://www.sssc.or.jp/shakai/past_exam/pdf/no37/sp_am_10_37.pdf",
+          "sha256": "cebb713939e6955e7ef36f45981df9be1fddf0ee7cab1ccee2674ab0a98891a3"
+        }
+      ],
+      "notes": "共通科目の原問2問を社会福祉士と精神保健福祉士の両方で利用するため、公開IDは4件。"
+    }
+  ]
+}

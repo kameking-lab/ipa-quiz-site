@@ -1,0 +1,1986 @@
+{
+  "schemaVersion": 1,
+  "lane": "qc-12",
+  "checkedAt": "2026-11-18",
+  "branch": "cx/kako-5y12-20261118",
+  "baselineCommit": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "previousLedger": "data/question-ingestion/plan5-qb12-ledger.json",
+  "duplicateAudit": {
+    "refsChecked": 92,
+    "changedBlobsChecked": 787,
+    "ledger": "research/replenish/ledger.json",
+    "result": "origin/main・対象ブランチの自前差分・台帳にIP2026公開問題の既存原稿なし。"
+  },
+  "rows": [
+    {
+      "jobId": "PLAN5-110",
+      "planIndex": 109,
+      "key": "ip|2026|cbt|am|2026r08_ip_qs.pdf",
+      "status": "収録完了",
+      "recordCount": 100,
+      "officialQuestionCount": 100,
+      "dataPath": "data/questions/ip/official-2026-cbt-am-qc12.json",
+      "sources": [
+        {
+          "jobId": "PLAN5-110",
+          "kind": "questions",
+          "url": "https://www3.jitec.ipa.go.jp/JitesCbt/html/openinfo/pdf/questions/2026r08_ip_qs.pdf",
+          "sha256": "16934af1ab515dac8756da05c7d80dec7d25afbe26bd1a20ebdf4b545922ab2e",
+          "pages": 56
+        },
+        {
+          "jobId": "PLAN5-110",
+          "kind": "answers",
+          "url": "https://www3.jitec.ipa.go.jp/JitesCbt/html/openinfo/pdf/questions/2026r08_ip_ans.pdf",
+          "sha256": "d90ff38528d7911b94a207e5a2ba31a51d8f206b827377f1f5c8cd5b76a6f4f0",
+          "pages": 1
+        }
+      ],
+      "notes": [
+        "公開問題100問。全CBT出題バンクの収録ではない。",
+        "画像形式の公式本文・設問・選択肢を問単位の原本画像で保持。選択肢を文字起こしし独自解説を付与。"
+      ],
+      "records": [
+        {
+          "id": "ip-2026cbt-am-q1",
+          "qNumber": 1,
+          "officialAnswer": "ア",
+          "questionPdfPage": 2,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            285,
+            1190,
+            929
+          ],
+          "imageSha256": "c993676878beaa71fb7cb7fa171a32e334c71c1ea60fb7c99e318ddbe8bbf9b6",
+          "imageSize": [
+            1085,
+            644
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q2",
+          "qNumber": 2,
+          "officialAnswer": "ア",
+          "questionPdfPage": 2,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            931,
+            1190,
+            1265
+          ],
+          "imageSha256": "ec8bb8a9efb22e56af948c249980bf8cce32e426e774a56e8b78bef0b3014fe8",
+          "imageSize": [
+            1085,
+            334
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q3",
+          "qNumber": 3,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 3,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            155,
+            1190,
+            738
+          ],
+          "imageSha256": "2d8ddbf2a18649f5de305d25a89f8b93561a1966196cbaf6802287191107e3cb",
+          "imageSize": [
+            1085,
+            583
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q4",
+          "qNumber": 4,
+          "officialAnswer": "イ",
+          "questionPdfPage": 3,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            740,
+            1190,
+            1137
+          ],
+          "imageSha256": "734da48554e8e7c57d3514d698380097450ea1d35618cf25de619118078dc38e",
+          "imageSize": [
+            1085,
+            397
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q5",
+          "qNumber": 5,
+          "officialAnswer": "エ",
+          "questionPdfPage": 3,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            1139,
+            1190,
+            1424
+          ],
+          "imageSha256": "ef041fc8d15315c3c92de9a0d58f629aa9faaa9bb86713b0aa7d16de6d3d335e",
+          "imageSize": [
+            1085,
+            285
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q6",
+          "qNumber": 6,
+          "officialAnswer": "エ",
+          "questionPdfPage": 4,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            158,
+            1190,
+            756
+          ],
+          "imageSha256": "eeb2f545e631c6cfa3fca11827b80f973bd30991d8c9763e77626a28f496997c",
+          "imageSize": [
+            1085,
+            598
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q7",
+          "qNumber": 7,
+          "officialAnswer": "イ",
+          "questionPdfPage": 4,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            758,
+            1190,
+            1092
+          ],
+          "imageSha256": "27594b91324866c4ad78721be2fe63b08fe8b8b7455c3770fa241dfab9a9f660",
+          "imageSize": [
+            1085,
+            334
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q8",
+          "qNumber": 8,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 5,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            155,
+            1190,
+            761
+          ],
+          "imageSha256": "0a21b47d611f0a7863d59c8b38a77d08eb0183e47841e65e0751d30cbee36835",
+          "imageSize": [
+            1085,
+            606
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q9",
+          "qNumber": 9,
+          "officialAnswer": "イ",
+          "questionPdfPage": 5,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            763,
+            1190,
+            1191
+          ],
+          "imageSha256": "0476888a92a57df6e53c86989da132aab9220c3c840966f548b6c9b898785035",
+          "imageSize": [
+            1085,
+            428
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q10",
+          "qNumber": 10,
+          "officialAnswer": "エ",
+          "questionPdfPage": 6,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            156,
+            1190,
+            709
+          ],
+          "imageSha256": "56a8b2382d78badbbbc7dd4fb5753996ede7c675573e11952073e715e1261ebc",
+          "imageSize": [
+            1085,
+            553
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q11",
+          "qNumber": 11,
+          "officialAnswer": "エ",
+          "questionPdfPage": 6,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            711,
+            1190,
+            1059
+          ],
+          "imageSha256": "588eeaa9c46e89e8ec4d0d44d9d132ff829bccc63b13fe5c84d644aab6ff806f",
+          "imageSize": [
+            1085,
+            348
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q12",
+          "qNumber": 12,
+          "officialAnswer": "エ",
+          "questionPdfPage": 6,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            1061,
+            1190,
+            1391
+          ],
+          "imageSha256": "8f19209a061e504ae97bc1e53ad5d49c67812cb66eee3e0aaeeb50ef758c31a4",
+          "imageSize": [
+            1085,
+            330
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q13",
+          "qNumber": 13,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 7,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            156,
+            1190,
+            754
+          ],
+          "imageSha256": "0456ffd1e39369e56fee3da2e65659791e14839f443629d46e166afea02e293c",
+          "imageSize": [
+            1085,
+            598
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q14",
+          "qNumber": 14,
+          "officialAnswer": "ア",
+          "questionPdfPage": 7,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            756,
+            1190,
+            1103
+          ],
+          "imageSha256": "70be290fb8ecd2e3d5f61e95a23a0208dd440669b0e9b2cff2adbc123da268fe",
+          "imageSize": [
+            1085,
+            347
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q15",
+          "qNumber": 15,
+          "officialAnswer": "イ",
+          "questionPdfPage": 7,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            1105,
+            1190,
+            1539
+          ],
+          "imageSha256": "96242631dde0842f30acb31733419e860c8aed0e09e26552e9903872707e2dad",
+          "imageSize": [
+            1085,
+            434
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q16",
+          "qNumber": 16,
+          "officialAnswer": "ア",
+          "questionPdfPage": 8,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            154,
+            1190,
+            502
+          ],
+          "imageSha256": "654ac4b9968ff0809ffa28407a013105df0a211eb778d3de3e29d763e4264f94",
+          "imageSize": [
+            1085,
+            348
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q17",
+          "qNumber": 17,
+          "officialAnswer": "イ",
+          "questionPdfPage": 8,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            504,
+            1190,
+            1007
+          ],
+          "imageSha256": "5ec534cf2614ba007144091d08a37572ad4744bec3628507fc628d414f267357",
+          "imageSize": [
+            1085,
+            503
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q18",
+          "qNumber": 18,
+          "officialAnswer": "ア",
+          "questionPdfPage": 8,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            1009,
+            1190,
+            1338
+          ],
+          "imageSha256": "9eb2f0a3abdb7d7c6b8d6a5e29022a327634021c375f6e5cc32bd343645f7af9",
+          "imageSize": [
+            1085,
+            329
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q19",
+          "qNumber": 19,
+          "officialAnswer": "ア",
+          "questionPdfPage": 9,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            160,
+            1190,
+            554
+          ],
+          "imageSha256": "c7cebe6fed53e5636a8316056abfb35e32490b0ab0071d5f89b7640a447543c1",
+          "imageSize": [
+            1085,
+            394
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q20",
+          "qNumber": 20,
+          "officialAnswer": "イ",
+          "questionPdfPage": 9,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            556,
+            1190,
+            1090
+          ],
+          "imageSha256": "e1206ba5040db1a4201004e9b4ab47b41a1d7b87ea50bd6f479e576872331e4b",
+          "imageSize": [
+            1085,
+            534
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q21",
+          "qNumber": 21,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 10,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            155,
+            1190,
+            803
+          ],
+          "imageSha256": "b7d819c823dc1e9a07a22aa78cbfff0999d87610a44bfca889f3c5f5269747c8",
+          "imageSize": [
+            1085,
+            648
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q22",
+          "qNumber": 22,
+          "officialAnswer": "エ",
+          "questionPdfPage": 10,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            805,
+            1190,
+            1103
+          ],
+          "imageSha256": "63e34360dcab174f45d01c88bee49c899c1ffc67f099a72323e9f883540f4f70",
+          "imageSize": [
+            1085,
+            298
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q23",
+          "qNumber": 23,
+          "officialAnswer": "イ",
+          "questionPdfPage": 10,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            1105,
+            1190,
+            1589
+          ],
+          "imageSha256": "d47b5a0d9bbeabbc89d80da50499c0752076953e44710076d9f47901ffef7e5a",
+          "imageSize": [
+            1085,
+            484
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q24",
+          "qNumber": 24,
+          "officialAnswer": "ア",
+          "questionPdfPage": 11,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            156,
+            1190,
+            704
+          ],
+          "imageSha256": "68da8a73c2faffe45425c083686e010ee7a2f659b30aea8fc4622bbbf72ade39",
+          "imageSize": [
+            1085,
+            548
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q25",
+          "qNumber": 25,
+          "officialAnswer": "エ",
+          "questionPdfPage": 11,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            706,
+            1190,
+            1056
+          ],
+          "imageSha256": "87e6990b6c5fd53e67bd43f41a87555b0b05b91e677ba46a4867909ea98c2625",
+          "imageSize": [
+            1085,
+            350
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q26",
+          "qNumber": 26,
+          "officialAnswer": "ア",
+          "questionPdfPage": 11,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            1058,
+            1190,
+            1530
+          ],
+          "imageSha256": "75fb9503d7d9d48e11dba0637b06908924551e73461cedf4f2224f6e5d1c671f",
+          "imageSize": [
+            1085,
+            472
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q27",
+          "qNumber": 27,
+          "officialAnswer": "イ",
+          "questionPdfPage": 12,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            155,
+            1190,
+            753
+          ],
+          "imageSha256": "a12a23551424646303d7000ecadf15ee40e7feb734b9dedeb0993fcba39f4891",
+          "imageSize": [
+            1085,
+            598
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q28",
+          "qNumber": 28,
+          "officialAnswer": "イ",
+          "questionPdfPage": 12,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            755,
+            1190,
+            1140
+          ],
+          "imageSha256": "95fe25f8fd619d66cbaabde2ff20e049aada77ba303e009bf0c0bb0c17280a43",
+          "imageSize": [
+            1085,
+            385
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q29",
+          "qNumber": 29,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 13,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            161,
+            1190,
+            755
+          ],
+          "imageSha256": "6fd9fb870e8a0a58698683d61a38c89ab02d2bb0830f59a54e700ba2ca3e16de",
+          "imageSize": [
+            1085,
+            594
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q30",
+          "qNumber": 30,
+          "officialAnswer": "ア",
+          "questionPdfPage": 13,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            757,
+            1190,
+            1291
+          ],
+          "imageSha256": "e252fb3915efd30fd9b8f5d6840a9d5aea404498b04aacf446efcc4a049f7aae",
+          "imageSize": [
+            1085,
+            534
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q31",
+          "qNumber": 31,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 14,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            163,
+            1190,
+            606
+          ],
+          "imageSha256": "4f075e3d9f2cae710d02f3557c93d9aa013d672407c5091dde29c555ca04217c",
+          "imageSize": [
+            1085,
+            443
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q32",
+          "qNumber": 32,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 14,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            608,
+            1190,
+            1254
+          ],
+          "imageSha256": "e186cc9b28a6bce3f3a4dba232f47e3ff8b3899bfb24b442fd88001e38809b38",
+          "imageSize": [
+            1085,
+            646
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q33",
+          "qNumber": 33,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 14,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            1256,
+            1190,
+            1539
+          ],
+          "imageSha256": "38b8d127bd41363478431fc2a18631d0e087ea9c72e164d45af4a3aeaa008dba",
+          "imageSize": [
+            1085,
+            283
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q34",
+          "qNumber": 34,
+          "officialAnswer": "ア",
+          "questionPdfPage": 15,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            163,
+            1190,
+            593
+          ],
+          "imageSha256": "ee25c06ebb8fff17a03446e1f167e8b33a4c9cfbf339bbf5ea89589bd6021617",
+          "imageSize": [
+            1085,
+            430
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q35",
+          "qNumber": 35,
+          "officialAnswer": "エ",
+          "questionPdfPage": 16,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            282,
+            1190,
+            1013
+          ],
+          "imageSha256": "e9280849f538e301dd652f43565b4847cb8f685cc399eb155feb369ea4b13da8",
+          "imageSize": [
+            1085,
+            731
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q36",
+          "qNumber": 36,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 17,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            162,
+            1190,
+            812
+          ],
+          "imageSha256": "da8a4be331a701b6a6c3c8790b5bb84079568f8021068519e14d9a24f612512d",
+          "imageSize": [
+            1085,
+            650
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q37",
+          "qNumber": 37,
+          "officialAnswer": "エ",
+          "questionPdfPage": 17,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            814,
+            1190,
+            1304
+          ],
+          "imageSha256": "db386a6028803b918927639c59ac83457253d203e74ba9250212e156103a68b1",
+          "imageSize": [
+            1085,
+            490
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q38",
+          "qNumber": 38,
+          "officialAnswer": "イ",
+          "questionPdfPage": 17,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            1306,
+            1190,
+            1589
+          ],
+          "imageSha256": "e9dd88f49bd89647fe0af0e0a9d13725d9cb714248b64e437aa8bd0310500720",
+          "imageSize": [
+            1085,
+            283
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q39",
+          "qNumber": 39,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 18,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            161,
+            1190,
+            611
+          ],
+          "imageSha256": "0f7844e69bdd3bf43a5702b407da530e92f3b5975bd2ce5f9bf59e9478e5f557",
+          "imageSize": [
+            1085,
+            450
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q40",
+          "qNumber": 40,
+          "officialAnswer": "ア",
+          "questionPdfPage": 18,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            613,
+            1190,
+            991
+          ],
+          "imageSha256": "e8b69772be03b74663cb1d9b1dc6ed19abb8fbf40a417f7dcee97b9d8d583d71",
+          "imageSize": [
+            1085,
+            378
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q41",
+          "qNumber": 41,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 19,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            161,
+            1190,
+            812
+          ],
+          "imageSha256": "bfbc882cdecde9e3ae92c89d85f9e0b7e29945e242339e9bece9578caf0ab018",
+          "imageSize": [
+            1085,
+            651
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q42",
+          "qNumber": 42,
+          "officialAnswer": "イ",
+          "questionPdfPage": 19,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            814,
+            1190,
+            1209
+          ],
+          "imageSha256": "d152bd5e5dc8164d649dcd7074580a7f7dc0f39136b98b88c95d5edec705d553",
+          "imageSize": [
+            1085,
+            395
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q43",
+          "qNumber": 43,
+          "officialAnswer": "イ",
+          "questionPdfPage": 19,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            1211,
+            1190,
+            1639
+          ],
+          "imageSha256": "dd25952cbb83453ac4b31ca54abd2d1324dd03d25277285f66108fc6cc31decb",
+          "imageSize": [
+            1085,
+            428
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q44",
+          "qNumber": 44,
+          "officialAnswer": "イ",
+          "questionPdfPage": 20,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            163,
+            1190,
+            950
+          ],
+          "imageSha256": "8ab08c0df238614ffff6e0282424c8e1235ad1bb828ea08884f5f0d73ed6d390",
+          "imageSize": [
+            1085,
+            787
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q45",
+          "qNumber": 45,
+          "officialAnswer": "イ",
+          "questionPdfPage": 20,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            952,
+            1190,
+            1231
+          ],
+          "imageSha256": "b50dc033ff176fd6b4809a6439fa1d63f907d4e5d3ff85554f22132b796497d0",
+          "imageSize": [
+            1085,
+            279
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q46",
+          "qNumber": 46,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 21,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            164,
+            1190,
+            660
+          ],
+          "imageSha256": "cd80aac5bfbed96b0f932ef63afa6bd452c9740138f7f27f184c479d47602055",
+          "imageSize": [
+            1085,
+            496
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q47",
+          "qNumber": 47,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 21,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            662,
+            1190,
+            1242
+          ],
+          "imageSha256": "47c81d37a85cbeb2705eb6e16545610d273e8f7dddb4beb1bf5909144327ffc2",
+          "imageSize": [
+            1085,
+            580
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q48",
+          "qNumber": 48,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 22,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            159,
+            1190,
+            1039
+          ],
+          "imageSha256": "abf55c12acf4a29becee29883aaf6ab4fe53c36b27dc6dd397a8525cf7436d24",
+          "imageSize": [
+            1085,
+            880
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q49",
+          "qNumber": 49,
+          "officialAnswer": "ア",
+          "questionPdfPage": 23,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            164,
+            1190,
+            762
+          ],
+          "imageSha256": "4ae1436dbd43d5d31f2dbab76f537a2a1219b5634624047db26ef1b934d54a20",
+          "imageSize": [
+            1085,
+            598
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q50",
+          "qNumber": 50,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 23,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            764,
+            1190,
+            1493
+          ],
+          "imageSha256": "1817136cee34a90ca8ade15a16297b65693081ed925177f03c0436d40edb73e8",
+          "imageSize": [
+            1085,
+            729
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q51",
+          "qNumber": 51,
+          "officialAnswer": "エ",
+          "questionPdfPage": 24,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            156,
+            1190,
+            562
+          ],
+          "imageSha256": "3c3c4ca8ca60ee44c9c588b4b6ea339594f24f3bc54d337aff347bed3ec03239",
+          "imageSize": [
+            1085,
+            406
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q52",
+          "qNumber": 52,
+          "officialAnswer": "ア",
+          "questionPdfPage": 24,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            564,
+            1190,
+            1012
+          ],
+          "imageSha256": "ea26b18e1913fc706e2c97927c01d9b78303be362e848a5820566c22d8b9123e",
+          "imageSize": [
+            1085,
+            448
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q53",
+          "qNumber": 53,
+          "officialAnswer": "イ",
+          "questionPdfPage": 24,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            1014,
+            1190,
+            1290
+          ],
+          "imageSha256": "591b4faf5df8cf9f592fa6ce700d4017500b657856352945fa20359e66d1e979",
+          "imageSize": [
+            1085,
+            276
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q54",
+          "qNumber": 54,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 25,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            162,
+            1190,
+            942
+          ],
+          "imageSha256": "6e8e0dc269063d966fc0790369dcab1104dd462824fca09554c1a0e238a8512a",
+          "imageSize": [
+            1085,
+            780
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q55",
+          "qNumber": 55,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 26,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            281,
+            1190,
+            994
+          ],
+          "imageSha256": "785084eb7af21c1d36f34e60fe8dcb599c76b0d586729e974ce3ad23aa932576",
+          "imageSize": [
+            1085,
+            713
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q56",
+          "qNumber": 56,
+          "officialAnswer": "エ",
+          "questionPdfPage": 26,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            996,
+            1190,
+            1531
+          ],
+          "imageSha256": "e3b88858cf0152f48c705da72d08a27aa701391e02f4b2a7303f687b136a78f9",
+          "imageSize": [
+            1085,
+            535
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q57",
+          "qNumber": 57,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 27,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            156,
+            1190,
+            1291
+          ],
+          "imageSha256": "dd8c976bcf40a6eb1d39aacda771bf1849c032806912cc3ffa905309d7d489c8",
+          "imageSize": [
+            1085,
+            1135
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q58",
+          "qNumber": 58,
+          "officialAnswer": "ア",
+          "questionPdfPage": 28,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            160,
+            1190,
+            604
+          ],
+          "imageSha256": "a047dd54c11e08a44629330792654ef27f91b41bce1b23829c29530457707d23",
+          "imageSize": [
+            1085,
+            444
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q59",
+          "qNumber": 59,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 28,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            606,
+            1190,
+            932
+          ],
+          "imageSha256": "bb100c70bac385abf3e64b6ba5814c6b4e5d704ae38b02a1101f47f5a655dc2c",
+          "imageSize": [
+            1085,
+            326
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q60",
+          "qNumber": 60,
+          "officialAnswer": "ア",
+          "questionPdfPage": 29,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            161,
+            1190,
+            954
+          ],
+          "imageSha256": "dbfbabec4484f84f92f8c084e164a993aaa3b0a8f9310081b158192d690270e0",
+          "imageSize": [
+            1085,
+            793
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q61",
+          "qNumber": 61,
+          "officialAnswer": "イ",
+          "questionPdfPage": 29,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            956,
+            1190,
+            1240
+          ],
+          "imageSha256": "aee1fedbdef40e804ac55a9d03e3c284256d6cd6bcbc58f0a5cdf9f5ab3bdd39",
+          "imageSize": [
+            1085,
+            284
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q62",
+          "qNumber": 62,
+          "officialAnswer": "エ",
+          "questionPdfPage": 30,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            158,
+            1190,
+            806
+          ],
+          "imageSha256": "e4fe97875d35938f94c52e11a1879d246eb30f42a0570f11ea4224eaff023f70",
+          "imageSize": [
+            1085,
+            648
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q63",
+          "qNumber": 63,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 30,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            808,
+            1190,
+            1156
+          ],
+          "imageSha256": "2343217d924a7f19d11829f6ba578e8bf95b164ccde5eee1515ae5d1225b0d1f",
+          "imageSize": [
+            1085,
+            348
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q64",
+          "qNumber": 64,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 30,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            1158,
+            1190,
+            1542
+          ],
+          "imageSha256": "aad2cbcd85c317bee625517c10f9b3dbaeb875c19001896a8252e7ec530df56b",
+          "imageSize": [
+            1085,
+            384
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q65",
+          "qNumber": 65,
+          "officialAnswer": "エ",
+          "questionPdfPage": 31,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            157,
+            1190,
+            705
+          ],
+          "imageSha256": "fd2225a50e4bb3d3935c49ba87ec781a7fa2e09f2ee0d0843c438063f948c169",
+          "imageSize": [
+            1085,
+            548
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q66",
+          "qNumber": 66,
+          "officialAnswer": "イ",
+          "questionPdfPage": 31,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            707,
+            1190,
+            990
+          ],
+          "imageSha256": "a93e8b9fd261f5fdbd99bd226c9a0da51813d68f3ff21a9e5134023a09afa387",
+          "imageSize": [
+            1085,
+            283
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q67",
+          "qNumber": 67,
+          "officialAnswer": "イ",
+          "questionPdfPage": 32,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            163,
+            1190,
+            1660
+          ],
+          "imageSha256": "a38f7a1387914ba17ead623b0457ff39a20fb907186e66968249691a12de17b8",
+          "imageSize": [
+            1085,
+            1497
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q68",
+          "qNumber": 68,
+          "officialAnswer": "エ",
+          "questionPdfPage": 33,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            164,
+            1190,
+            675
+          ],
+          "imageSha256": "a69793cc54ddc5194293f01c2dd357b382a90848851b2b72b424517ae152a2fe",
+          "imageSize": [
+            1085,
+            511
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q69",
+          "qNumber": 69,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 33,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            677,
+            1190,
+            1261
+          ],
+          "imageSha256": "388bf6556abd729cabfacb595f9f40fff0d1440cfdbe4bd300277b82561c3fa7",
+          "imageSize": [
+            1085,
+            584
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q70",
+          "qNumber": 70,
+          "officialAnswer": "エ",
+          "questionPdfPage": 34,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            162,
+            1190,
+            805
+          ],
+          "imageSha256": "3f0c00481489b192555dfceb0ef8a085387d96364c34ead95d060e64c72aec32",
+          "imageSize": [
+            1085,
+            643
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q71",
+          "qNumber": 71,
+          "officialAnswer": "ア",
+          "questionPdfPage": 34,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            807,
+            1190,
+            1391
+          ],
+          "imageSha256": "c468aab2f25275b8c042c93fea65e55a3477ca9ba84b6ebc21ed93beb81812c0",
+          "imageSize": [
+            1085,
+            584
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q72",
+          "qNumber": 72,
+          "officialAnswer": "イ",
+          "questionPdfPage": 35,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            157,
+            1190,
+            1050
+          ],
+          "imageSha256": "8f4955f683e7e7af4ef86394955d37f2f660a66eb0cf266d20203348b9586582",
+          "imageSize": [
+            1085,
+            893
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q73",
+          "qNumber": 73,
+          "officialAnswer": "エ",
+          "questionPdfPage": 35,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            1052,
+            1190,
+            1580
+          ],
+          "imageSha256": "9660bd829d0d0662a60ac8b5bf36f9d84f0794448820309b4740c84be6636205",
+          "imageSize": [
+            1085,
+            528
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q74",
+          "qNumber": 74,
+          "officialAnswer": "ア",
+          "questionPdfPage": 36,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            158,
+            1190,
+            1065
+          ],
+          "imageSha256": "e34f4f36159c7ba290a5c6c74ddb252d3d41688aa0ec349892620c07bb29621e",
+          "imageSize": [
+            1085,
+            907
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q75",
+          "qNumber": 75,
+          "officialAnswer": "エ",
+          "questionPdfPage": 37,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            156,
+            1190,
+            754
+          ],
+          "imageSha256": "c2eefdf090a8db5dc0dac878403b77bc98852df7d91b40495e2a414a8484bdf5",
+          "imageSize": [
+            1085,
+            598
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q76",
+          "qNumber": 76,
+          "officialAnswer": "エ",
+          "questionPdfPage": 37,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            756,
+            1190,
+            1345
+          ],
+          "imageSha256": "cc2d65d84beb192a68e158def110acf3f57e60b0b372e0731188c14dac20cb13",
+          "imageSize": [
+            1085,
+            589
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q77",
+          "qNumber": 77,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 38,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            164,
+            1190,
+            556
+          ],
+          "imageSha256": "5f1732dca9bfd5b70b8c25e8bcff8040a834447593cfd3b7f4bb4b9f574627b2",
+          "imageSize": [
+            1085,
+            392
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q78",
+          "qNumber": 78,
+          "officialAnswer": "エ",
+          "questionPdfPage": 38,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            558,
+            1190,
+            1011
+          ],
+          "imageSha256": "ec2e7bd5938c214ffa716383a9c27a302eecef8f31c98808785bd0895fad37e1",
+          "imageSize": [
+            1085,
+            453
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q79",
+          "qNumber": 79,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 38,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            1013,
+            1190,
+            1591
+          ],
+          "imageSha256": "bd41125648246a36aa13cf2d6ff399ab6c3ba866c509621bac447329a836c05a",
+          "imageSize": [
+            1085,
+            578
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q80",
+          "qNumber": 80,
+          "officialAnswer": "エ",
+          "questionPdfPage": 39,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            161,
+            1190,
+            968
+          ],
+          "imageSha256": "f4c287e33c7b9ba6f76de63990fe8eff358a8eef468d851d1dffd3cef73ec55c",
+          "imageSize": [
+            1085,
+            807
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q81",
+          "qNumber": 81,
+          "officialAnswer": "ア",
+          "questionPdfPage": 39,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            970,
+            1190,
+            1223
+          ],
+          "imageSha256": "e52e39ff3f40bb9904c4f3e0b1b186c1db33231bdfac4ff1e15192669b3f9d77",
+          "imageSize": [
+            1085,
+            253
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q82",
+          "qNumber": 82,
+          "officialAnswer": "ア",
+          "questionPdfPage": 39,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            1225,
+            1190,
+            1604
+          ],
+          "imageSha256": "eb9363b5ec386fb67cd9d7b4a31df02923f26dc09f49c82196f8f92f39cb2261",
+          "imageSize": [
+            1085,
+            379
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q83",
+          "qNumber": 83,
+          "officialAnswer": "ア",
+          "questionPdfPage": 40,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            155,
+            1190,
+            702
+          ],
+          "imageSha256": "a4b0c40a637d0c26871450a1fc8e9a8b1e838cdbb35ce01a38ab6010aba0cc62",
+          "imageSize": [
+            1085,
+            547
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q84",
+          "qNumber": 84,
+          "officialAnswer": "エ",
+          "questionPdfPage": 40,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            704,
+            1190,
+            1488
+          ],
+          "imageSha256": "d006e5c063447e649bed94b8d8b94615f65efbf239692c33b5dd10e2f0900375",
+          "imageSize": [
+            1085,
+            784
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q85",
+          "qNumber": 85,
+          "officialAnswer": "エ",
+          "questionPdfPage": 41,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            158,
+            1190,
+            1496
+          ],
+          "imageSha256": "e17f4c95cff932fef562f264b54f1f54e0722c51ec27c087fbc979ee23e828f8",
+          "imageSize": [
+            1085,
+            1338
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q86",
+          "qNumber": 86,
+          "officialAnswer": "エ",
+          "questionPdfPage": 42,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            155,
+            1190,
+            904
+          ],
+          "imageSha256": "3d91920592196cfa77df13644b9b85f7349ec2cd7728392a846af76d55e974c3",
+          "imageSize": [
+            1085,
+            749
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q87",
+          "qNumber": 87,
+          "officialAnswer": "ア",
+          "questionPdfPage": 42,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            906,
+            1190,
+            1389
+          ],
+          "imageSha256": "55ff8ad131fd3f9be6d4ae9d94dc158568d8e69f3cccd8e8195296395ddb6d91",
+          "imageSize": [
+            1085,
+            483
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q88",
+          "qNumber": 88,
+          "officialAnswer": "ア",
+          "questionPdfPage": 43,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            163,
+            1190,
+            1216
+          ],
+          "imageSha256": "306551e7f5bd7fbe8fc33a2ae37af65e7590b256cbfba4e3aa4debf50c84a56f",
+          "imageSize": [
+            1085,
+            1053
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q89",
+          "qNumber": 89,
+          "officialAnswer": "イ",
+          "questionPdfPage": 44,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            157,
+            1190,
+            914
+          ],
+          "imageSha256": "4268669907ca08069cf8cdec48a056795d545f8198c4dc9d8456df9aef807cdf",
+          "imageSize": [
+            1085,
+            757
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q90",
+          "qNumber": 90,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 44,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            916,
+            1190,
+            1300
+          ],
+          "imageSha256": "46ed9a5831923867f343f9e6f06842f2c25aebc994839d55335f3bc0a53270a8",
+          "imageSize": [
+            1085,
+            384
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q91",
+          "qNumber": 91,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 45,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            155,
+            1190,
+            803
+          ],
+          "imageSha256": "0845841dda23b67ae8742444bea385560372ad6f3e2fbcccff263c1067c6259b",
+          "imageSize": [
+            1085,
+            648
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q92",
+          "qNumber": 92,
+          "officialAnswer": "イ",
+          "questionPdfPage": 45,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            805,
+            1190,
+            1389
+          ],
+          "imageSha256": "7b6120579b799f595515044dd62b7c3eed45d0f0b9dce07afe8f6e0f69a3c390",
+          "imageSize": [
+            1085,
+            584
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q93",
+          "qNumber": 93,
+          "officialAnswer": "ア",
+          "questionPdfPage": 46,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            162,
+            1190,
+            554
+          ],
+          "imageSha256": "7ca05c9b8e9ea01e2718435e878ac9a55506e86cbef8e781bee690128086c310",
+          "imageSize": [
+            1085,
+            392
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q94",
+          "qNumber": 94,
+          "officialAnswer": "イ",
+          "questionPdfPage": 46,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            556,
+            1190,
+            1191
+          ],
+          "imageSha256": "c1f6377f01dc6ffad89285a0a4243e94b7568d3dab7bda39cb91d7b0d3eb0f31",
+          "imageSize": [
+            1085,
+            635
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q95",
+          "qNumber": 95,
+          "officialAnswer": "イ",
+          "questionPdfPage": 47,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            156,
+            1190,
+            554
+          ],
+          "imageSha256": "7ab75a6565f97789b6e888059336a418bb655f6402e5339bd788080a16e22a52",
+          "imageSize": [
+            1085,
+            398
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q96",
+          "qNumber": 96,
+          "officialAnswer": "ア",
+          "questionPdfPage": 47,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            556,
+            1190,
+            954
+          ],
+          "imageSha256": "2eadf4bfe3a822fda3bb5c8155ed3ac0e55327cea63a622c6694849cb0022d6b",
+          "imageSize": [
+            1085,
+            398
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q97",
+          "qNumber": 97,
+          "officialAnswer": "イ",
+          "questionPdfPage": 47,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            956,
+            1190,
+            1439
+          ],
+          "imageSha256": "e93dd38795ae0900397dea2994d728fa7bd55986ab21d0d7522bf144f4d1bb9a",
+          "imageSize": [
+            1085,
+            483
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q98",
+          "qNumber": 98,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 48,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            159,
+            1190,
+            703
+          ],
+          "imageSha256": "8f1fd076dc1d1865c542acd7fe7031769712378140227fc242e6446eb8b86a11",
+          "imageSize": [
+            1085,
+            544
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q99",
+          "qNumber": 99,
+          "officialAnswer": "イ",
+          "questionPdfPage": 48,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            705,
+            1190,
+            1303
+          ],
+          "imageSha256": "5541c0646c39ef77cc7b5124828b6f67650b8ac917c0db7b633fbf3a30168e5d",
+          "imageSize": [
+            1085,
+            598
+          ]
+        },
+        {
+          "id": "ip-2026cbt-am-q100",
+          "qNumber": 100,
+          "officialAnswer": "ウ",
+          "questionPdfPage": 49,
+          "renderScale": 2.5,
+          "cropPixels": [
+            105,
+            157,
+            1190,
+            540
+          ],
+          "imageSha256": "b82199a13c92c040def751c601aabb53a7394a1de10532ff25ec2d8a5497850b",
+          "imageSize": [
+            1085,
+            383
+          ]
+        }
+      ]
+    }
+  ],
+  "remainingJobIds": [
+    "PLAN5-138",
+    "PLAN5-152",
+    "PLAN5-166",
+    "PLAN5-180",
+    "PLAN5-194",
+    "PLAN5-208",
+    "PLAN5-222",
+    "PLAN5-236",
+    "PLAN5-250",
+    "PLAN5-264",
+    "PLAN5-278",
+    "PLAN5-292",
+    "PLAN5-306",
+    "PLAN5-320",
+    "PLAN5-334",
+    "PLAN5-348",
+    "PLAN5-362",
+    "PLAN5-376",
+    "PLAN5-390",
+    "PLAN5-404",
+    "PLAN5-418",
+    "PLAN5-432",
+    "PLAN5-446"
+  ],
+  "verificationRows": [
+    {
+      "jobId": "PLAN5-124",
+      "planIndex": 123,
+      "key": "shika-ishi|2026|annual|mondai-b|tp260424-02b_01.pdf",
+      "status": "照合完了（既存採点対象87問・公式採点除外3問）",
+      "recordCount": 0,
+      "existingScoredRecordCount": 87,
+      "officialQuestionCount": 90,
+      "officialExcludedQuestionNumbers": [
+        20,
+        46,
+        63
+      ],
+      "existingAuditPath": "data/questions/shika-ishi/official-audit.json",
+      "sources": [
+        {
+          "jobId": "PLAN5-124",
+          "kind": "questions",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-02b_01.pdf",
+          "sha256": "cf6ca30be0a1d135c6bfef89dfe1ff314baea328820446d50f377eaf85a1af12",
+          "pages": 60
+        },
+        {
+          "jobId": "PLAN5-124",
+          "kind": "answers",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-02seitou.pdf",
+          "sha256": "1a27cb5a353f699b75bea8dd5036173d387cd605cba35625090c6baf16575b96",
+          "pages": 2
+        },
+        {
+          "jobId": "PLAN5-124",
+          "kind": "official-handling-B20",
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken02/dl/B20.pdf",
+          "sha256": "2898c8c236450dd25a8580d576abc6995bce4d4eb9ed24f6bfef480478be1079",
+          "pages": 1
+        },
+        {
+          "jobId": "PLAN5-124",
+          "kind": "official-handling-B46",
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken02/dl/B46.pdf",
+          "sha256": "ef1521b037c720b944dbde936bff641a47a88e87bc1a3c22e239770a6c4dac1e",
+          "pages": 1
+        },
+        {
+          "jobId": "PLAN5-124",
+          "kind": "official-handling-B63",
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken02/dl/B63.pdf",
+          "sha256": "e768f4a27ec0ff9197fc7fef9a819c6bf84b61c0bed8224fedc09967bf8d3296",
+          "pages": 1
+        }
+      ],
+      "notes": [
+        "不足とされた3問は公式正答表が空欄で、公式に採点対象から除外されている。",
+        "origin/mainの監査台帳に公式本文・空の正答欄・採点取扱URLを保存済み。正答を新規作成せず既存の本文・採点状態を保持。"
+      ],
+      "officialExcludedRecords": [
+        {
+          "id": "shika-ishi-2026-annual-mondai-b-q20",
+          "sourceId": "119B020",
+          "edition": 119,
+          "year": 2026,
+          "paper": "b",
+          "number": 20,
+          "status": "OFFICIAL_EXCLUDED",
+          "officialAnswerCells": [],
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-02seitou.pdf",
+          "originalQuestionText": "20 哺乳齲蝕の初発部位はどれか。1 つ選べ。\nａ　上顎乳前歯唇側面\nｂ　上顎乳前歯口蓋面\nｃ　下顎乳前歯唇側面\nｄ　下顎乳前歯舌側面\nｅ　下顎乳臼歯咬合面",
+          "sourcePdfPage": 17,
+          "sourceAnswerPage": 1,
+          "officialHandlingUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken02/dl/B20.pdf",
+          "officialHandling": "採点対象から除外する。",
+          "officialReason": "問題として適切であるが、受験者レベルでは難しすぎるため。"
+        },
+        {
+          "id": "shika-ishi-2026-annual-mondai-b-q46",
+          "sourceId": "119B046",
+          "edition": 119,
+          "year": 2026,
+          "paper": "b",
+          "number": 46,
+          "status": "OFFICIAL_EXCLUDED",
+          "officialAnswerCells": [],
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-02seitou.pdf",
+          "originalQuestionText": "46 75 歳の男性。上顎粘膜の灼熱感を主訴として来院した。上顎には7 年前に製作\nした義歯が装着されていた。診察の結果、義歯の適合や咬合に異常は認められず、\n病原体検査ではCandida albicans が検出された。初診時の口腔内写真（別冊\nNo. 12）を別に示す。\n　対応で正しいのはどれか。3 つ選べ。\nａ　義歯安定剤の使用を勧める。\nｂ　義歯洗浄剤の使用を勧める。\nｃ　硬い食品の摂取を控えさせる。\nｄ　ミコナゾール硝酸塩を塗布する。\nｅ　就寝中は義歯を外すよう指導する。\n　　別　冊　　\nNo. 12",
+          "sourcePdfPage": 30,
+          "sourceAnswerPage": 1,
+          "officialHandlingUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken02/dl/B46.pdf",
+          "officialHandling": "採点対象から除外する。",
+          "officialReason": "選択肢に誤りがあり正解が得られないため。"
+        },
+        {
+          "id": "shika-ishi-2026-annual-mondai-b-q63",
+          "sourceId": "119B063",
+          "edition": 119,
+          "year": 2026,
+          "paper": "b",
+          "number": 63,
+          "status": "OFFICIAL_EXCLUDED",
+          "officialAnswerCells": [],
+          "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-02b_01.pdf",
+          "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-02seitou.pdf",
+          "originalQuestionText": "63 \n9 歳の男児。上顎左側中切歯の歯列不正を主訴として来院した。8 歳になってか\nら萌出し、徐々に突出してきたという。初診時の口腔内写真（別冊No. 21Ａ、Ｂ）と\nエックス線画像（別冊No. 21Ｃ）を別に示す。\n　原因として考えられるのはどれか。2 つ選べ。\nａ　過剰歯\nｂ　癒合歯\nｃ　口腔習癖\nｄ　上唇小帯\nｅ　切歯結節\n　　別　冊　　\nNo. 21　Ａ、Ｂ、Ｃ",
+          "sourcePdfPage": 38,
+          "sourceAnswerPage": 1,
+          "officialHandlingUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken02/dl/B63.pdf",
+          "officialHandling": "採点対象から除外する。",
+          "officialReason": "問題として適切であるが、受験者レベルでは難しすぎるため。"
+        }
+      ]
+    }
+  ]
+}

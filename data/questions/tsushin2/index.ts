@@ -2,6 +2,7 @@ import { isReferenceOnlyQuestionId } from "@/lib/questions/assessment";
 import type { Question } from "@/lib/questions/types";
 import { toJctcFirstQuestions } from "./jctc-first";
 import source from "./2026-early.json";
+import late2026 from "./2026-late.json";
 import { readSavedSource } from "./saved-source-reader";
 import saved1 from "./sources/2026-early-first5.json";
 import saved2 from "./sources/2026-early-next5.json";
@@ -30,8 +31,9 @@ const added = savedBlocks.flatMap((block) =>
     license: attributedLicense,
   })),
 );
-const all = [...existing, ...added];
-if (existing.length !== 5 || added.length !== 125 || all.length !== 130) {
+export const TSUSHIN2_2026_LATE_QUESTIONS = late2026 as Question[];
+const all = [...existing, ...added, ...TSUSHIN2_2026_LATE_QUESTIONS];
+if (existing.length !== 5 || added.length !== 125 || TSUSHIN2_2026_LATE_QUESTIONS.length !== 65 || all.length !== 195) {
   throw new Error("tsushin2 saved source count mismatch");
 }
 if (new Set(all.map((question) => question.id)).size !== all.length) {
@@ -41,6 +43,6 @@ if (new Set(all.map((question) => question.id)).size !== all.length) {
 export const TSUSHIN2_QUESTIONS: Question[] = all;
 export const TSUSHIN2_REFERENCE_QUESTIONS = all.filter(q => isReferenceOnlyQuestionId(q.id));
 export const TSUSHIN2_ASSESSMENT_COUNTS = { materials: all.length, scored: all.filter(q => !isReferenceOnlyQuestionId(q.id)).length, referenceOnly: TSUSHIN2_REFERENCE_QUESTIONS.length };
-if (TSUSHIN2_ASSESSMENT_COUNTS.materials !== 130 || TSUSHIN2_ASSESSMENT_COUNTS.scored !== 129 || TSUSHIN2_ASSESSMENT_COUNTS.referenceOnly !== 1) {
+if (TSUSHIN2_ASSESSMENT_COUNTS.materials !== 195 || TSUSHIN2_ASSESSMENT_COUNTS.scored !== 194 || TSUSHIN2_ASSESSMENT_COUNTS.referenceOnly !== 1) {
   throw new Error("tsushin2 material and scored counts mismatch");
 }

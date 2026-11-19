@@ -1,0 +1,50 @@
+"use client";
+
+import { PawPrint, Star } from "lucide-react";
+import { cn } from "@/lib/utils";
+import { ROOM_ART_EXTENT } from "@/lib/home/study-room-scatter";
+import type { FurnitureMascot } from "@/lib/home/study-room-furniture";
+
+export interface StudyRoomSeatDetail {
+  index: number;
+  exam: string;
+  /** Must come from the existing server entitlement check, never a browser premium flag. */
+  premium?: boolean;
+  todayAnswers?: number;
+}
+
+/** Presentation only: the anonymous presence aggregate currently has no per-learner metadata. */
+export function StudyRoomSeat({ name, index, mascot, art, detail, inspected = false, cheering, onCheer }: {
+  name: string; index: number; mascot: FurnitureMascot | null; detail?: StudyRoomSeatDetail;
+  inspected?: boolean;
+  cheering: boolean; onCheer: () => void;
+  art: FurnitureMascot["art"];
+}) {
+  return <button type="button" aria-label={`${index + 1} ${name}のチワワを応援`} onClick={onCheer} title={name}
+    data-premium={detail?.premium === true} data-mascot-state={mascot?.state} data-cheering={cheering}
+    className={cn("relative flex h-full w-full min-w-0 flex-col items-center justify-center rounded-full border-0 text-foreground outline-offset-[-3px] hover:bg-stone-200/40 dark:hover:bg-stone-700/40 focus-visible:outline-2 focus-visible:outline-primary",
+      detail?.premium && "ring-1 ring-inset ring-amber-400/80")}>
+    {detail?.premium && <Star aria-label="特等席" className="absolute right-1 top-1 z-10 size-3.5 fill-amber-300 text-amber-800 dark:text-amber-300" />}
+    <span className="study-mascot pointer-events-none absolute inset-0 block motion-reduce:animate-none" data-furniture-art={art.id} data-direction={art.direction}>
+      {mascot?.qualification ? <span className={cn("absolute inset-0 block", mascot.mirrored && "-scale-x-100")} style={{ rotate: `${mascot.turn}deg` }} data-qualification-art>
+        {/* Complementary cutouts retain the qualification's original chair, clothes,
+            tools and paws. Their matching coordinates avoid a second desk or dog. */}
+        {([
+          ["furniture-back", "polygon(0% 0%,25% 0%,25% 55%,0% 65%)"],
+          ["character", "polygon(25% 0%,100% 0%,100% 55%,25% 55%)"],
+          ["furniture-front", "polygon(0% 65%,25% 55%,100% 55%,100% 100%,0% 100%)"],
+        ] as const).map(([layer, clipPath]) => <span key={layer} data-layer={layer} className="absolute inset-0 block" style={{ clipPath }}>
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={mascot.src} alt={layer === "character" ? `${name}のチワワ（${mascot.stateLabel}）` : ""} width={256} height={256} loading="lazy" decoding="async" className="size-full object-contain" />
+        </span>)}
+      </span> : <>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      {mascot && <img src={mascot.src} alt={`${name}のチワワ（${mascot.stateLabel}）`} width={art.size[0]} height={art.size[1]} loading="lazy" decoding="async"
+        className="absolute left-1/2 max-w-none -translate-x-1/2"
+        style={{ width: `${art.size[0] / art.headWidth / ROOM_ART_EXTENT * 100}%`,
+          bottom: `${-(art.size[1] - art.ground[1]) / art.headWidth / ROOM_ART_EXTENT * 100}%` }} />}</>}
+    </span>
+    {inspected && detail?.todayAnswers !== undefined && <span className="absolute -bottom-1 left-1/2 z-20 -translate-x-1/2 whitespace-nowrap rounded-full bg-background/95 px-1 pb-1 text-[10px] font-medium tabular-nums">今日{detail.todayAnswers}問</span>}
+    {cheering && <PawPrint aria-label="応援" className="pointer-events-none absolute left-1/2 top-1/4 size-6 -translate-x-1/2 fill-rose-200 text-rose-500 motion-safe:animate-pulse" />}
+  </button>;
+}

@@ -24,6 +24,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "JIS Q 19011:2019において、「監査プログラム」は「特定の目的に向けた、決められた期間内で実行するように計画された一連の監査に関する取決め」と定義されています。これは複数の監査を体系的に計画し、実施するための枠組みを指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "システム管理基準(令和5年)における「稼働後評価と報告」は、情報システムが実際にビジネスモデルや業務プロセスを実現し、期待された効果を発揮しているかを評価する段階です。したがって、情報システムが目的通りのビジネス価値を提供しているかを示す客観的情報の提供が最も適切な観点となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "システム監査基準(令和5年)において、リスクの大きさは「脅威と脆弱性が決定要因となるリスク発生可能性」と「リスクが発生した場合に組織体が受ける影響度」の組み合わせで評価されると明記されています。これはリスク評価の基本的な考え方を示しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "システム監査基準(令和5年)は、システム監査が効果的かつ効率的に実施されるための基本的な枠組みと指針を定めています。これにより、システム監査のあるべき体制や実施方法が示され、監査の品質と信頼性の確保を目指しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "システム監査基準(令和5年)では、監査組織の品質維持・向上を図るため、組織体外部の独立した専門家による定期的な点検・評価（ピアレビューなど）を受けることが望ましいとされています。これは客観的な視点から監査業務の適切性を確認し、改善に繋げることを目的としています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "JIS Q 27002:2024では、監査活動が運用システムに与える影響を最小限にするため、監査におけるテストでソフトウェアやデータにアクセスする際は「読出し専用のアクセス」に限定することが望ましいとされています。これにより、データの改ざんやシステムへの不要な変更リスクを防ぎます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +174,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "システム監査基準(令和5年)において、保証を目的とした監査と助言を目的とした監査のいずれにおいても、監査の結論は監査調書に基づき合理的な根拠を持って導かれるべきです。これは監査の客観性と信頼性を確保するための共通の基本原則です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +199,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "3線モデル（三つのラインモデル）において、第1ラインは業務執行部門自身によるリスク管理、第2ラインはそれを監督・支援する専門部門（リスク管理部門など）、第3ラインはこれら全体の適切性を客観的に評価する内部監査部門を指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +224,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ITに係る全般統制は、特定の業務処理に限定されず、情報システム全体の信頼性、網羅性、正確性、および可用性を確保するための統制活動です。プログラム作成における上位者によるロジックのレビューは、開発プロセス全体に適用されるため、全般統制に該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +249,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "金融庁の実施基準によれば、ITに係る全般統制の評価単位は共通のIT環境や規則に基づいて設定され、業務処理統制は個々の業務プロセスに組み込まれた統制として個別に評価されます。本ケースでは、システム部の3システムと経理部の会計システムでIT環境が異なるため、全般統制は二つに分け、業務処理統制は各システムで個別評価が適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +274,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "Redmineは、プロジェクト管理や課題管理、バグ管理などに利用されるオープンソースソフトウェアです。タスクを「チケット」として扱い、起票、調査、解決、クローズといった状態を用いて進捗を管理し、チケットを活用したワークフローも実現できる特徴を持っています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +299,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "フェールソフトとは、システムに障害が発生した場合に、一部の機能を停止させることで全体としての運用を継続する設計思想です。ハードウェア障害時にパフォーマンスは低下するものの、構成を縮小して運転を続けられるようにする例は、このフェールソフトの考え方を適用しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +324,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "特許法第100条において、特許権者等は、自己の特許権を侵害する者に対し、その侵害の停止または「侵害の予防」を請求できると定められています。この「侵害の予防」には、将来的な侵害のおそれがある場合も含まれるため、侵害するおそれのある者に対しても差止請求権を行使できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +349,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "JIS X 9251:2021において、プライバシー影響評価（PIA: Privacy Impact Assessment）は、個人識別可能情報の処理に関する潜在的なプライバシー影響を特定、分析、評価し、対応計画を立てるための全体的なプロセスと定義されています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +374,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "集団思考（Groupthink）とは、強い連帯性を持つチームが、一体感を保つために批判的思考を欠き、不合理な意思決定や合意に至ってしまう現象を指します。技術者倫理においては、問題のある判断が集団内で承認されやすくなる要因となり得ます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +399,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "SL理論（状況対応型リーダーシップ理論）は、ハーシーとブランチャードが提唱したもので、リーダーシップの有効性は部下の成熟度によって異なると考えます。仕事志向と人間志向の2軸で4象限のスタイル（教示型、説得型、参加型、委任型）に分類し、部下の成熟度に応じて最適なスタイルを選択するプロセスを示しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +424,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "SAML（Security Assertion Markup Language）は、異なるセキュリティドメイン間で認証情報、属性情報、および認可情報をXML形式で安全に交換するための標準規格です。主にシングルサインオン（SSO）を実現するために利用され、IDプロバイダとサービスプロバイダ間でユーザーの認証や権限情報を伝達します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +449,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 27002:2024では、サイバーセキュリティの概念を構成する五つの属性値として、「識別 (Identify)」、「防御 (Protect)」、「検知 (Detect)」、「対応 (Respond)」、「復旧 (Recover)」を挙げています。これらはNIST Cybersecurity Framework (CSF) の主要な機能に準拠しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +474,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "JIS Q 27000:2019において、「リスク対応」は「リスクを修正するプロセス」と定義されています。これには、リスクの低減、共有、回避、受容といった様々なアプローチが含まれ、リスクに対する具体的な行動計画を策定し実行することを目指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +499,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "CASB（Cloud Access Security Broker）は、クラウドサービスへのアクセスを可視化、制御、保護するソリューションです。従業員が利用しているクラウドサービスの利用状況を可視化することで、組織が許可していないクラウドサービス（シャドーIT）の利用を発見し、特定する効果があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -503,7 +523,14 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
       "エ": "“ドラム式洗濯機:商品”がどの注文にもリンクしていないのは、誤りである。"
     },
     "answer": "ア",
-    "explanation": "正解はアです。オブジェクト図において、1つの「注文」オブジェクトが複数の「商品」オブジェクトにリンクすることは、一般的に「注文明細」のような関連エンティティを介して表現されるのが自然です。しかし、もしオブジェクト図が簡略化されて直接「注文」が複数の「商品」を指し示すように描かれている場合でも、1つの注文が複数の商品を含むことはビジネスロジックとして一般的であり、誤りとは言えません。したがって、この記述は誤解を招く可能性があります。\n\nイは、「2ドア冷蔵庫:商品」が複数の注文にリンクしていることは、同じ商品が複数の顧客によって注文される可能性があるため、誤りとは言えません。ウは、「A商店:顧客」が複数の注文にリンクしていることは、1つの顧客が複数回注文することはビジネス上あり得るため、誤りではありません。エは、「ドラム式洗濯機:商品」がどの注文にもリンクしていないことは、商品がまだ販売されていない、あるいは在庫として存在するだけで注文されていない状態を示しており、オブジェクト図の静的な表現としては誤りとは断定できません。\n\nしたがって、最も解釈の誤りを適切に指摘しているのはアとなります。",
+    "explanation": "データモデルでは、注文の相手となる商品側の多重度が1です。注文123456はテレビと冷蔵庫の2点にリンクしており、この多重度に反するのでアが正解です。注文側の＊は0以上を表すため、一つの商品に注文が複数あっても、注文が一つもない商品があっても構いません。顧客に対しても注文側は＊なので、A商店が複数の注文を持てます。",
+    "choiceExplanations": {
+      "ア": "正しいです。商品側の多重度が1なので、各注文が参照できる商品は1点です。注文123456からテレビと冷蔵庫に伸びる2本のリンクはこの制約に反します。",
+      "イ": "誤りです。注文側の多重度は＊なので、同じ商品が複数の注文から参照されても多重度に反しません。商品側の1は、各注文が持てる商品の個数を制約します。",
+      "ウ": "誤りです。顧客側の1は、各注文の注文主が1人という制約です。注文側は＊なので、A商店が注文123456と123457の両方の注文主になれます。",
+      "エ": "誤りです。商品から見た注文側の多重度＊は0件も許します。どの注文からも参照されていない商品が図にあっても、多重度の制約を満たします。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +555,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "UDP (User Datagram Protocol) は、コネクションレス型で高速な通信に適したプロトコルです。NTP (Network Time Protocol) は、時刻同期のためにUDPポート123を使用します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +580,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "JIS X 0160:2021では、提供するソフトウェアシステムが利害関係者要件に合致し、利用に適していることを顧客とともに確信するに至るためのテストを「ソフトウェア受入れテスト」と定義しています。これは、顧客がシステムを受け入れる最終判断を行うための重要なテストです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +605,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "特許庁によれば、IPランドスケープとは、経営・事業情報に知財情報を組み込んだ分析を実施し、現状把握や将来展望などを経営者・事業責任者と共有することです。これにより、知財戦略を経営戦略に統合し、事業の意思決定に活用することを目指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +630,7 @@ export const AU_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "PEST分析は、政治(Politics)、経済(Economy)、社会(Society)、技術(Technology)の4つのマクロ環境要因を分析するフレームワークです。法規制(P)、景気動向(E)、流行の推移(S)、新技術の状況(T)を把握し、製品改良の方針を決定する事例は、PEST分析を戦略策定に活用している典型的なケースです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_au_am2_qs.pdf",
     "license": "IPA-public"

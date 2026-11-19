@@ -14,6 +14,7 @@ import { createHash } from "node:crypto";
 import { feedbackStore, unlockIdentity, readFeedbackBrowser, feedbackBrowserHeader } from "@/lib/feedback/unlock-runtime";
 import { strictContentGateEnabled } from "@/lib/billing/content-policy";
 import { paperReviewProof } from "@/mobile/server/paper-review";
+import { conversionChannel, recordConversion } from "@/lib/billing/conversion";
 export const runtime = "nodejs";
 export async function POST(request: Request) {
   const now = Date.now();
@@ -78,6 +79,7 @@ export async function POST(request: Request) {
             if (result.status === "rate") { access.retryAfter = result.retry ?? 60; throw new BillingError("guest_rate_limited", 429); }
             if (result.status === "limit") {
               access.remaining = 0;
+              await recordConversion("guest_limited", conversionChannel(request), `guest:${guest}`, now);
               throw new BillingError("daily_limit", 429);
             }
             if (result.status !== "ok" || result.used === undefined) throw new BillingError("billing_unavailable", 503);
@@ -97,6 +99,7 @@ export async function POST(request: Request) {
               const bonus = await feedbackStore().grant(unlockIdentity(request, userId, realm), jstDay(new Date(now)), question.id);
               if (!bonus) throw error;
               access = { ...access, kind: "trial", remaining: bonus.remaining, feedbackBonus: bonus };
+              if (bonus.newlyUsed) await recordConversion("feedback_used", conversionChannel(request), `user:${userId}`, now);
             }
           }
         }

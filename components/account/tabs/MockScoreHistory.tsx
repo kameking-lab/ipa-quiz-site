@@ -56,7 +56,7 @@ export function MockScoreHistory() {
                 placeholder="名無しの受験者"
                 maxLength={20}
                 onChange={(e) => persistNickname(e.target.value)}
-                className="mt-1 block w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+                className="mt-1 block min-h-11 w-full min-w-0 rounded-xl border border-zinc-300 bg-white px-3 py-2 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring dark:border-zinc-700 dark:bg-zinc-900"
               />
             </label>
             <label className="flex-1">
@@ -64,7 +64,7 @@ export function MockScoreHistory() {
               <select
                 value={exam}
                 onChange={(e) => setExam(e.target.value as ExamCode)}
-                className="mt-1 block w-full rounded-md border border-zinc-300 bg-white px-3 py-2 text-sm dark:border-zinc-700 dark:bg-zinc-900"
+                className="mt-1 block min-h-11 w-full min-w-0 rounded-xl border border-zinc-300 bg-white px-3 py-2 text-base focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring dark:border-zinc-700 dark:bg-zinc-900"
               >
                 {ALL_QUIZ_EXAM_CODES.map((c) => (
                   <option key={c} value={c}>
@@ -94,7 +94,7 @@ export function MockScoreHistory() {
             </div>
           ) : (
             <p className="text-sm text-zinc-500 dark:text-zinc-400">
-              この試験の模試スコアはまだ記録されていません。模試モードを完了するとここに反映されます。
+              この試験の模試スコアはまだありません。
             </p>
           )}
           <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
@@ -136,9 +136,6 @@ export function MockScoreHistory() {
               })}
             </ul>
           )}
-          <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
-            ※ 模試スコアはこの端末に保存されます。
-          </p>
           <Link href={`/mock-exam?exam=${exam}`} className="mt-3 inline-flex min-h-11 items-center text-sm font-semibold text-primary underline">模試を受ける</Link>
         </CardContent>
       </Card>

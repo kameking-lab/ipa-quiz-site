@@ -1,0 +1,1109 @@
+[
+  {
+    "id": "yakuzaishi-2026-annual-required-q2",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 2,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "イオン強度Iを求める式として正しいのはどれか。1つ選べ。ただし、cᵢはイオン種iのモル濃度、zᵢはそのイオンの電荷である。",
+    "choices": {
+      "ア": "I = ∑ cᵢ zᵢ",
+      "イ": "I = ∑ cᵢ² zᵢ",
+      "ウ": "I = ∑ cᵢ zᵢ²",
+      "エ": "I = (1/2) ∑ cᵢ² zᵢ",
+      "オ": "I = (1/2) ∑ cᵢ zᵢ²"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "イオン強度は I = (1/2)Σ c_i z_i^2 で定義されます。濃度は1乗、電荷は2乗で、全体に1/2を掛けます。例として、0.1 mol/Lの NaCl では Na+ と Cl- がそれぞれ0.1 mol/L、電荷は±1です。I = 1/2 × (0.1×1 + 0.1×1) = 0.1 となり、モル濃度と一致します。一方、0.1 mol/Lの CaCl2 では Ca2+ が0.1、Cl- が0.2 mol/Lです。I = 1/2 × (0.1×4 + 0.2×1) = 0.3 となります。",
+    "choiceExplanations": {
+      "ア": "電荷を2乗しておらず、1/2もありません。電荷をそのまま足すと、陽イオンと陰イオンが打ち消し合ってしまいます。誤りです。",
+      "イ": "2乗しているのが濃度で、電荷には2乗がありません。2乗する対象が逆なので誤りです。",
+      "ウ": "電荷を2乗する点は正しいですが、係数1/2がありません。そのため値が2倍になり、誤りです。",
+      "エ": "濃度を2乗しており、電荷は2乗していません。係数1/2はあるものの、式の形が誤りです。",
+      "オ": "濃度c_iと電荷の2乗z_i^2の積を総和し、1/2を掛けた式で、イオン強度の定義と一致します。公式正答は5です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=2",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問2（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q3",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 3,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "ある薬物の分解反応を異なる温度で行い、その反応速度定数kの対数(ln k)を縦軸に、絶対温度Tの逆数(1/T)を横軸にとってプロットした場合、アレニウスの式に従っているのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "アレニウスの式 k = A·exp(-Ea/RT) の両辺の自然対数をとると、ln k = ln A - (Ea/R)(1/T) となります。これは1/Tに対して直線で、傾きは -Ea/R です。Eaは正なので傾きは負になります。つまり、ln k を縦軸、1/T を横軸にとると右下がりの直線になります。原図の選択肢のうち、右下がりの直線にデータ点が乗っているのは1です。",
+    "choiceExplanations": {
+      "ア": "原図では、点が右下がりの直線上に並んでいます。ln k = ln A - (Ea/R)(1/T) の形(傾き負の直線)と一致するため正しいです。公式正答は1です。",
+      "イ": "原図では右上がりの直線です。これは傾きが正で、Eaが負という意味になります。通常の分解反応のアレニウス式とは合いません。",
+      "ウ": "原図では水平な直線です。傾きが0ならEa=0で、温度によってkが変わらないことになります。温度依存性を示すアレニウス式には合いません。",
+      "エ": "原図では右上がりに曲がる曲線です。直線ではないので、1/Tに対して直線になるはずのアレニウスプロットに合いません。",
+      "オ": "原図では右下がりですが、曲線(下に凸)です。直線にならないため、アレニウスの式に従っているとはいえません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=3",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問3（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q003-original.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問3の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q5",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 5,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "採取した1つの均質な検体から同じように調製した多数の試料を1回ずつ分析し、得られた測定値の分布を、真の値を100.0としてヒストグラムに表した。真度及び精度ともに高いのはどれか。1つ選べ。ただし、分析した試料数は同じである。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "真度は、測定値の平均が真の値(100.0)にどれだけ近いかを表します(偏りの小ささ)。精度は、測定値のばらつきの小ささを表します。両方が高いのは、分布の中心が100.0にあり、幅が狭いヒストグラムです。原図では、選択肢4が100付近を中心に最も幅が狭く、これに当たります。選択肢1は幅が狭いものの、中心が100よりやや低い側にあります。選択肢2と3は中心が100付近ですが、ばらつきが大きいです。選択肢5は中心が100より高い側にずれています。",
+    "choiceExplanations": {
+      "ア": "原図では分布が狭く精度は高いですが、ピークが真の値100.0より低い側にずれて見えます。真度が劣るため、両方が高いとはいえません。",
+      "イ": "原図では分布の中心は100付近で真度は良好です。しかし幅が広く、精度は選択肢4より劣ります。",
+      "ウ": "原図では中心は100付近ですが、分布が最も広く、精度が低いです。",
+      "エ": "原図では分布が100付近に集中し、幅も狭いです。真度・精度ともに高いため正しいです。公式正答は4です。",
+      "オ": "原図では分布が100より高い側にずれており、幅も狭くありません。真度・精度ともに高いとはいえません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=4",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問5（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q005-original.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問5の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q6",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 6,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "薬物中の塩基性官能基を中和するベシル酸の化学構造(分子形)として、正しいのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "ベシル酸はベンゼンスルホン酸(C6H5SO3H)です。アミン等の塩基性官能基と塩(ベシル酸塩)をつくります。構造は、ベンゼン環にスルホ基(SO3H)が1つ付いたものです。原図の選択肢2に当たります。選択肢1は安息香酸、3はフェノール、4はp-トルイル酸です。5はトシル酸(p-トルエンスルホン酸)で、メチル基の有無で区別します。",
+    "choiceExplanations": {
+      "ア": "原図ではベンゼン環にカルボキシ基(CO2H)が付いた構造で、安息香酸です。ベシル酸ではありません。",
+      "イ": "原図ではベンゼン環にスルホ基(SO3H)が直接付いた構造で、ベンゼンスルホン酸です。これがベシル酸です。公式正答は2です。",
+      "ウ": "原図ではベンゼン環にヒドロキシ基が付いた構造で、フェノールです。ベシル酸ではありません。",
+      "エ": "原図ではp位にメチル基を持つ安息香酸誘導体(p-トルイル酸)です。ベシル酸ではありません。",
+      "オ": "原図ではp位にメチル基を持つベンゼンスルホン酸で、トシル酸(トシル酸塩の酸)です。メチル基があるため、ベシル酸とは異なります。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=4",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問6（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q006-foundation-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問6の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q7",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 7,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "一酸化窒素はラジカル分子である。そのルイス構造式はどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "一酸化窒素(NO)の価電子の総数は N(5)+O(6)=11 個で奇数です。そのため、すべての電子を対にすることはできず、不対電子を1個もつラジカルになります。選択肢1は、N原子上に不対電子（点1個）が描かれた中性の構造式で、公式の正答です。",
+    "choiceExplanations": {
+      "ア": "正しい。N上に不対電子を1個もつ、電子11個の中性の構造式として描かれています。ラジカル分子であるというNOの性質に合います。",
+      "イ": "誤り。公式の正答ではありません。この図はN上に不対電子をもつ描き方になっておらず、ラジカルとしてのNOを表していません。",
+      "ウ": "誤り。公式の正答ではありません。電子の描かれ方が、不対電子を1個だけもつ11電子の構造にはなっていません。",
+      "エ": "誤り。O上に+電荷が描かれています。NO⁺は電子が10個で偶数なので、ラジカルではなく、中性のNOのルイス構造式でもありません。",
+      "オ": "誤り。N上に+電荷が描かれています。電荷をもつ化学種として描かれており、中性のラジカルNOを表していません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=4",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問7（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q007-foundation-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問7の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q8",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 8,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "芳香環を除く二重結合が、E配置であるのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "E/Z配置は、二重結合の各炭素について CIP 順位則で高順位の置換基を決め、その2つが反対側にあれば E、同じ側にあれば Z とします。選択肢3では、一方の炭素では Cl（原子番号17）が F（9）より高順位、もう一方の炭素では CH3 が H より高順位です。図では Cl と CH3 が二重結合の反対側にあるので E配置です。",
+    "choiceExplanations": {
+      "ア": "誤り。一方の炭素では CH3 が H より高順位、もう一方の炭素ではエチル基が CH3 より高順位です。図では CH3 とエチル基が同じ側にあるので Z配置です。",
+      "イ": "誤り。二重結合が六員環の中にあり、環内の二重結合の置換基は同じ側に固定されます。環内の二重結合なので E配置にはなりません（Z型）。",
+      "ウ": "正しい。Cl と CH3 が反対側にあるので E配置です。",
+      "エ": "誤り。2つのエステル基（CO2CH3）が二重結合の同じ側にある（マレイン酸ジメチル型の）配置で、Z配置です。",
+      "オ": "誤り。一方の炭素ではヒドロキシフェニル基がフェニル基より高順位、もう一方の炭素ではフェニル基がエチル基より高順位です。図では高順位の2つの基が同じ側にあるので Z配置です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=5",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問8（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q008-original.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問8の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q9",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 9,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "芳香族性を示さないのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "芳香族性には、環状に共役していること、平面であること、π電子が 4n+2 個（ヒュッケル則）であることが必要です。選択肢3の八員環の化合物はπ電子が8個で 4n+2 を満たさず、環も平面にならないため、芳香族性を示しません。",
+    "choiceExplanations": {
+      "ア": "芳香族性を示す。ピロールは、C=C 2つの4電子とNの非共有電子対の2電子を合わせて、6π電子系になります。",
+      "イ": "芳香族性を示す。チオフェンは、C=C 2つの4電子とSの非共有電子対の2電子を合わせて、6π電子系になります。",
+      "ウ": "芳香族性を示さない。8π電子で 4n+2 則を満たさず、環が平面を保たないため、正解です。",
+      "エ": "芳香族性を示す。ナフタレンは10π電子の縮合環系で、ヒュッケル則を満たします。",
+      "オ": "芳香族性を示す。アズレンは五員環と七員環が縮合した10π電子の非ベンゼン系芳香族化合物です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=5",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問9（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q009-original.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問9の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q10",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 10,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "下図に示した植物由来の化合物が含む部分構造はどれか。1つ選べ。",
+    "choices": {
+      "ア": "リグナン",
+      "イ": "クロモン",
+      "ウ": "フラノクマリン",
+      "エ": "ジテルペン",
+      "オ": "アントラキノン"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "図の化合物は、ベンゼン環にα-ピロン環（クマリン骨格）とフラン環が縮合した三環構造をもち、これをフラノクマリンといいます。これにゲラニルオキシ基が結合しています。公式の正答は3です。",
+    "choiceExplanations": {
+      "ア": "誤り。リグナンはフェニルプロパノイド（C6-C3）2分子がつながった構造です。図の化合物の母核は、フラン環が縮合したクマリンです。",
+      "イ": "誤り。クロモンは、ベンゼン環にγ-ピロン環が縮合した骨格です。図の化合物のピロン環は、ラクトンを含むα-ピロン（クマリン）型です。",
+      "ウ": "正しい。ベンゼン環にα-ピロン環とフラン環が縮合した構造で、フラノクマリンです。",
+      "エ": "誤り。ジテルペンは炭素数20のテルペンです。図の側鎖はゲラニル基（炭素数10）に相当し、ジテルペンを含むとはいえません。",
+      "オ": "誤り。アントラキノンはベンゼン環2つがキノンで縮合した三環構造です。図の化合物には、この骨格はありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=6",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問10（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q010-foundation-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問10の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q11",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 11,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "下図は、ヒト男性の泌尿器及び生殖器を含む下腹部の正中矢状断面図である。前立腺はどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "前立腺は膀胱の直下にあり、尿道の起始部を取り囲む臓器です。図では、膀胱の下で尿道を囲む部位を指す4が前立腺で、公式の正答は4です。",
+    "choiceExplanations": {
+      "ア": "誤り。1は陰嚢内の精巣（睾丸）を指しています。",
+      "イ": "誤り。2は精巣の上後方に付着する精巣上体（副睾丸）を指しています。",
+      "ウ": "誤り。3は尿道に沿った小さな構造で、尿道球腺（カウパー腺）を指しています。",
+      "エ": "正しい。膀胱の下で尿道を取り囲む位置にある前立腺です。",
+      "オ": "誤り。5は膀胱の後方にある精嚢を指しています。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=6",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問11（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q011-foundation-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問11の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q18",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 18,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "欠乏によりウェルニッケ脳症が引き起こされるビタミンはどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "ウェルニッケ脳症は、ビタミンB1（チアミン）の欠乏で起こります。チアミンは、ピリミジン環とチアゾリウム環をメチレンで連結した構造に、ヒドロキシエチル基を持ちます。図中の選択肢2がこの構造です。したがって正解は2です。",
+    "choiceExplanations": {
+      "ア": "ラクトン環を持つ、アスコルビン酸（ビタミンC）の構造です。欠乏すると壊血病を起こします。",
+      "イ": "ピリミジン環とチアゾリウム環を持つ、チアミン（ビタミンB1）の構造です。欠乏でウェルニッケ脳症が起こります。正しい選択肢です。",
+      "ウ": "セコステロイド骨格を持つ、ビタミンD3（コレカルシフェロール）の構造です。欠乏するとくる病や骨軟化症を起こします。",
+      "エ": "ナフトキノン環に側鎖を持つ、ビタミンK1（フィトナジオン）の構造です。欠乏すると血液凝固が障害されます。",
+      "オ": "クロマン環と長い側鎖を持つ、トコフェロール（ビタミンE）の構造です。ウェルニッケ脳症の原因ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=10",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問18（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q018-vitamin-next-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問18の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q45",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 45,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "イヌリンを点滴静注するとき、定常状態における血漿中イヌリン濃度(C_p)、糸球体ろ過された直後の尿(原尿)に含まれるイヌリンの濃度(C_原尿)及び排泄される尿に含まれるイヌリンの濃度(C_尿)の関係を最も適切に表しているのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "C_p ≒ C_原尿 ≒ C_尿",
+      "イ": "C_p ≒ C_原尿 > C_尿",
+      "ウ": "C_p ≒ C_原尿 < C_尿",
+      "エ": "C_p > C_原尿 > C_尿",
+      "オ": "C_p < C_原尿 < C_尿"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "イヌリンは、糸球体で自由にろ過される。血漿タンパクとは結合せず、尿細管では分泌も再吸収も受けない。したがって、原尿中濃度は血漿中の非結合形濃度とほぼ等しく、C_p ≒ C_原尿となる。一方、原尿は尿細管で水が再吸収されて濃縮されるため、イヌリンの量は変わらず体積だけが減る。そのため、排泄される尿中濃度は原尿より高くなる。以上より、C_p ≒ C_原尿 < C_尿である。",
+    "choiceExplanations": {
+      "ア": "尿細管で水が再吸収されて尿が濃縮されるため、C_尿はC_原尿より高くなる。C_原尿 ≒ C_尿とはならないので誤り。",
+      "イ": "C_尿がC_原尿より低くなるのは、尿細管で水よりイヌリンが多く再吸収される場合である。イヌリンは再吸収されないので誤り。",
+      "ウ": "正しい。C_p ≒ C_原尿 < C_尿である。",
+      "エ": "イヌリンは血漿タンパクと結合せず自由にろ過されるので、C_pとC_原尿はほぼ等しい。C_p > C_原尿とはならず、C_原尿 > C_尿も成り立たないので誤り。",
+      "オ": "糸球体ろ過で水とイヌリンは同じ割合でろ過されるので、C_原尿はC_pより高くならない。C_p < C_原尿とはならないので誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=19",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問45（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q48",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 48,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "下図は、ある結晶多形を有する薬物の粉末X線回折パターンである。非晶質はどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "結晶は原子・分子が規則正しく配列するため、特定の回折角2θに鋭いピークが現れる。非晶質は長距離秩序がないため、鋭いピークがなく、ブロードな山(ハロー)だけが現れる。図中で鋭いピークがなくなだらかな山だけを示すのは5であり、5が非晶質である。",
+    "choiceExplanations": {
+      "ア": "鋭く明瞭な回折ピークが多数あり、結晶性を示す。非晶質ではないので誤り。",
+      "イ": "小さいながらも多数の回折ピークが認められ、結晶性を示す。非晶質ではないので誤り。",
+      "ウ": "鋭い回折ピークが多数あり、結晶性を示す。非晶質ではないので誤り。",
+      "エ": "3とよく似た鋭い回折ピークの並びがあり、結晶性を示す。非晶質ではないので誤り。",
+      "オ": "正しい。鋭いピークがなく、ブロードなハローだけが見られ、非晶質のパターンである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=21",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問48（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q048-model-original.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問48の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q53",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 53,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "日本薬局方の製剤に関する一般試験法のうち、下図の装置を用いるのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "製剤均一性試験法",
+      "イ": "展延性試験法",
+      "ウ": "比表面積測定法",
+      "エ": "崩壊試験法",
+      "オ": "粘着力試験法"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "図は傾斜面にボールを転がし、試験片の粘着面上で停止する位置を測る装置です。これは貼付剤の粘着力試験法(ボールタック試験)に用いる装置です。",
+    "choiceExplanations": {
+      "ア": "製剤均一性試験法は含量均一性や質量偏差を調べる試験で、この傾斜装置は使いません。",
+      "イ": "展延性試験法は半固形製剤の広がりを調べる試験で、傾斜溝とボールの装置とは異なります。",
+      "ウ": "比表面積測定法はガス吸着などで粉体の表面積を測る方法で、図の装置は使いません。",
+      "エ": "崩壊試験法は試験器の上下運動で崩壊を調べる試験で、図の装置とは異なります。",
+      "オ": "正しい。傾斜溝を転がるボールが試験片の粘着面で止まる距離を測る装置は、粘着力試験法(ボールタック)のものです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=23",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問53（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q053-foundation-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問53の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q54",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 54,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "テオフィリン徐放性製剤に代表されるスパスタブ型製剤の構造はどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "スパスタブ型は、速溶性顆粒と徐放性顆粒を混合して打錠した製剤です。服用後に速溶性部分が速やかに溶け、徐放性部分が持続的に薬物を放出します。図1の構造が該当します。",
+    "choiceExplanations": {
+      "ア": "正しい。速溶性顆粒と徐放性顆粒を含む錠剤の図で、スパスタブ型の構造です。",
+      "イ": "速溶性顆粒と徐放性顆粒をカプセルに充てんした構造で、錠剤ではありません。スパスタブ型ではありません。",
+      "ウ": "二層構造の錠剤で、速放層と徐放層を積層した型です。スパスタブ型ではありません。",
+      "エ": "マトリックス型の錠剤で、薬物を基剤中に分散させた構造です。スパスタブ型ではありません。",
+      "オ": "有核構造の錠剤で、核錠の周囲を別の層で覆った型です。スパスタブ型ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=23",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問54（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q054-foundation-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問54の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q72",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 72,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "以下は薬剤師綱領(昭和48年10月制定)の文章である。[　　　]に入る語句として正しいのはどれか。1つ選べ。\n\n「薬剤師は国から付託された資格に基づき、医薬品の製造、調剤、供給において、その固有の任務を遂行することにより、[　　　]に資することを本領とする。」",
+    "choices": {
+      "ア": "薬局数の増加",
+      "イ": "医薬品生産の拡大",
+      "ウ": "医療費の抑制",
+      "エ": "医療水準の向上",
+      "オ": "薬剤師中心の医療の推進"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "薬剤師綱領には、薬剤師が国から付託された資格に基づき、医薬品の製造、調剤、供給においてその固有の任務を遂行することで、医療水準の向上に資することを本領とする、という趣旨の文があります。したがって4が正解です。",
+    "choiceExplanations": {
+      "ア": "薬局数の増加は綱領の目的として述べられていません。",
+      "イ": "医薬品生産の拡大は綱領の目的として述べられていません。",
+      "ウ": "医療費の抑制は綱領の目的として述べられていません。",
+      "エ": "正しい選択肢です。綱領の文言に合致し、医療水準の向上に資することを本領としています。",
+      "オ": "薬剤師中心の医療の推進は綱領の目的として述べられていません。薬剤師の職能は、医療水準の向上という目的のために果たすものです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=30",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問72（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q74",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 74,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "以下は医療法の条文である。[   ]に入る語句として正しいのはどれか。1つ選べ。\n\n医療法第1条の4第2項\n「医師、歯科医師、薬剤師、看護師その他の医療の担い手は、医療を提供するに当たり、適切な説明を行い、医療を受ける者の[   ]よう努めなければならない。」",
+    "choices": {
+      "ア": "理解を得る",
+      "イ": "意見に従う",
+      "ウ": "意識を高める",
+      "エ": "負担を少なくする",
+      "オ": "不安を軽減する"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "医療法第1条の4第2項は、医療の担い手が適切な説明を行い、医療を受ける者の理解を得るよう努めることを定めています。インフォームド・コンセントの考え方を表す条文です。したがって1が正解です。",
+    "choiceExplanations": {
+      "ア": "正しい。「医療を受ける者の理解を得るよう努めなければならない」が条文の文言です。",
+      "イ": "「意見に従う」は条文にありません。説明の目的は理解を得ることです。",
+      "ウ": "「意識を高める」は条文にありません。",
+      "エ": "「負担を少なくする」は条文にありません。",
+      "オ": "「不安を軽減する」は条文にありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=31",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問74（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q78",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 78,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "図は、医薬品供給の流れの一例を示している。薬価改定の基礎資料である市場実勢価格を調べるための調査の対象となる主たる取引はどれか。1つ選べ。",
+    "choices": {
+      "ア": "A",
+      "イ": "B",
+      "ウ": "C",
+      "エ": "D",
+      "オ": "E"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "薬価調査では、卸売販売業者が医療機関・薬局へ販売した価格を調べ、それをもとに市場実勢価格を把握して薬価改定に反映します。図で卸売販売業者から保険薬局への取引はCです。したがって3が正解です。",
+    "choiceExplanations": {
+      "ア": "Aは製造業者と製造販売業者の間の取引です。薬価調査の主な対象ではありません。",
+      "イ": "Bは製造販売業者から卸売販売業者への取引です。調査の主な対象は卸売販売業者から医療機関・薬局への販売です。",
+      "ウ": "正しい。卸売販売業者から保険薬局への取引Cが、市場実勢価格調査の主たる対象です。",
+      "エ": "Dは製造販売業者から保険薬局への直接取引で、主たる調査対象ではありません。",
+      "オ": "Eは保険薬局から患者への調剤・交付で、薬価(公定価格)に基づく取引です。市場実勢価格の調査対象ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=32",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問78（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q078-system-next-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問78の原図または原表"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q79",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 79,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "表は、財源別国民医療費の構成割合を示している。近年(2018~2021年度)のAに最も近いのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "5 %",
+      "イ": "10%",
+      "ウ": "40%",
+      "エ": "70%",
+      "オ": "90%"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "Aは「公費」の構成割合である。国民医療費の財源は、保険料が約5割、公費(国庫+地方)が約4割弱~4割、患者負担等が約1割強という構成が近年続いている。したがって、選択肢の中でAに最も近いのは40%である。この数値は設問の表には載っておらず、国民医療費の統計に関する一般知識に基づく。",
+    "choiceExplanations": {
+      "ア": "5%では小さすぎる。公費は国民医療費の財源の約4割を占める。",
+      "イ": "10%に近いのは公費ではなく、患者負担等(C)の割合である。",
+      "ウ": "正しい。公費は近年の国民医療費の約4割を占め、選択肢の中では40%が最も近い。",
+      "エ": "70%では大きすぎる。公費と保険料を合わせても約9割で、公費だけではない。",
+      "オ": "90%は公費と保険料を合わせた割合に近く、公費単独の割合ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=33",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問79（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q079-system-next-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問79の原図または原表"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q80",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 80,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "医療コミュニケーションにおいて求められる「互いに信頼感で結ばれている関係」を示す言葉はどれか。1つ選べ。",
+    "choices": {
+      "ア": "レディネス",
+      "イ": "ラポール",
+      "ウ": "エンパワメント",
+      "エ": "ナラティブ",
+      "オ": "コンプライアンス"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "「互いに信頼感で結ばれている関係」を示す言葉はラポール(rapport)である。患者と医療者の間のラポールを築くことは、円滑な医療コミュニケーションの基盤になる。",
+    "choiceExplanations": {
+      "ア": "レディネスは、学習や行動変容に対する準備状態を指す。信頼関係のことではない。",
+      "イ": "正しい。ラポールは、相互の信頼感で結ばれた関係を意味する。",
+      "ウ": "エンパワメントは、患者が本来持つ力を引き出し、主体的に取り組めるよう支援することを指す。",
+      "エ": "ナラティブは「物語」の意味で、患者自身の語りや背景を重視する考え方に用いる。",
+      "オ": "コンプライアンスは、患者が医療者の指示どおりに服薬するなど、指示の遵守を指す。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=33",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問80（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q81",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 81,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "安全キャビネット内での調製が最も推奨されるのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "ファモチジン注射液",
+      "イ": "パクリタキセル注射液",
+      "ウ": "ノルアドレナリン注射液",
+      "エ": "フェンタニルクエン酸塩注射液",
+      "オ": "注射用ドリペネム"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "安全キャビネット内での調製は、調製者の曝露を防ぐ必要がある抗悪性腫瘍薬(ハザーダス・ドラッグ)で最も推奨される。パクリタキセルは抗悪性腫瘍薬なので、これが該当する。",
+    "choiceExplanations": {
+      "ア": "ファモチジンはH2受容体拮抗薬で、曝露対策としての安全キャビネットは通常必要としない。",
+      "イ": "正しい。パクリタキセルは抗悪性腫瘍薬で、調製者の曝露防止のため安全キャビネット内で調製する。",
+      "ウ": "ノルアドレナリンは昇圧薬で、安全キャビネットでの調製は通常必要としない。",
+      "エ": "フェンタニルは麻薬で、保管・管理は厳重にするが、調製時の曝露防止用の安全キャビネットを最も推奨する薬剤ではない。",
+      "オ": "ドリペネムはカルバペネム系抗菌薬である。抗菌薬は感作などに注意するが、安全キャビネットが最も推奨される薬剤ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=34",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問81（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q82",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 82,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "世界アンチ・ドーピング規程において、禁止されている成分はどれか。1つ選べ。",
+    "choices": {
+      "ア": "カフェイン",
+      "イ": "ストリキニーネ",
+      "ウ": "サリチルアミド",
+      "エ": "デキストロメトルファン臭化水素酸塩水和物",
+      "オ": "グアイフェネシン"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "ストリキニーネは中枢興奮作用を持つ物質で、世界アンチ・ドーピング規程の禁止表国際基準で興奮薬として禁止されている。他の選択肢は、同規程で禁止されている成分ではない。",
+    "choiceExplanations": {
+      "ア": "2026年のWADA禁止表では、カフェインは監視プログラム対象であり、禁止物質とはされていない。したがって本問の正解ではない。",
+      "イ": "正しい。ストリキニーネは興奮薬として禁止されている。",
+      "ウ": "サリチルアミドは解熱鎮痛成分で、禁止されていない。",
+      "エ": "デキストロメトルファンは鎮咳薬で、禁止されていない。",
+      "オ": "グアイフェネシンは去痰薬で、禁止されていない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=34",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問82（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q83",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 83,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "医療安全の観点から、一般病棟や外来処置室での常備を避けることが望ましい薬剤はどれか。1つ選べ。",
+    "choices": {
+      "ア": "リドカイン塩酸塩静脈内注射用 2 %",
+      "イ": "アドレナリン注射液0.1%",
+      "ウ": "d-クロルフェニラミンマレイン酸塩注射液0.5%",
+      "エ": "L-アスパラギン酸カリウム注射液 10 mEq/10 mL",
+      "オ": "アトロピン硫酸塩注射液0.05%"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "高濃度のカリウム製剤は、急速静注や誤投与で致死的な不整脈・心停止を起こしうる。そのため、一般病棟や外来処置室には常備せず、薬剤部での管理や必要時の払い出しにするのが望ましい。L-アスパラギン酸カリウム注射液10 mEq/10 mLは高濃度カリウム製剤にあたる。",
+    "choiceExplanations": {
+      "ア": "リドカイン静注用は、不整脈の緊急時などに使うため救急用に備えることがある。高濃度カリウム製剤のような常備回避の対象ではない。",
+      "イ": "アドレナリン注射液は、アナフィラキシーや心停止などの緊急時に必要で、常備されることが多い。",
+      "ウ": "d-クロルフェニラミン注射液は抗ヒスタミン薬で、急性のアレルギー症状への対応に用いる。常備を避ける薬剤ではない。",
+      "エ": "正しい。高濃度カリウム製剤は誤投与の危険が大きく、病棟や処置室への常備を避けることが望ましい。",
+      "オ": "アトロピン注射液は、徐脈などの緊急時に用いるため救急用に備える。常備を避ける薬剤ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=34",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問83（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q84",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 84,
+    "examDate": "2026-02-21",
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回",
+      "実務"
+    ],
+    "difficulty": 3,
+    "question": "注意事項等情報（添付文書）上、手術前後の患者に対して禁忌なのはどれか。１つ選べ。",
+    "choices": {
+      "ア": "アミオダロン",
+      "イ": "ダパグリフロジン",
+      "ウ": "ニフェジピン",
+      "エ": "バルプロ酸",
+      "オ": "レボチロキシン"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "ダパグリフロジンはSGLT2阻害薬。フォシーガの電子添文2.3では手術前後が禁忌に含まれる。糖尿病を有する患者では、このような状況でインスリンによる血糖管理が望まれることが根拠に挙げられている。",
+    "choiceExplanations": {
+      "ア": "アミオダロンは抗不整脈薬。電子添文では重い伝導障害や特定薬剤との併用などが禁忌に該当する。",
+      "イ": "電子添文の禁忌欄に、手術前後の患者が明記されている。",
+      "ウ": "ニフェジピンはカルシウム拮抗薬。アダラートCRの禁忌には心原性ショックなどが記載されている。",
+      "エ": "バルプロ酸は抗てんかん薬などとして用いる。デパケンの禁忌には重篤な肝障害やカルバペネム系抗菌薬との併用などがある。",
+      "オ": "レボチロキシンは甲状腺ホルモン製剤。チラーヂンS錠では新鮮な心筋梗塞が禁忌に該当する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=35",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.pmda.go.jp/drugs/2025/P20251219001/630004000_30400AMX00176_B100_1.pdf",
+      "https://www.pmda.go.jp/PmdaSearch/rdDetail/iyaku/2129010F1022_2?user=1",
+      "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/630004_2171014G3022_1_24",
+      "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/581120_1139004C1057_2_02",
+      "https://www.pmda.go.jp/PmdaSearch/iyakuDetail/ResultDataSetPDF/470007_2431004F1056_1_06"
+    ],
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問84（問題・正答）。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-11-18"
+  },
+  {
+    "id": "yakuzaishi-2026-annual-required-q86",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2026,
+    "season": "annual",
+    "qNumber": 86,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第111回"
+    ],
+    "difficulty": 3,
+    "question": "成人に対する胸骨圧迫において、最も適切な圧迫部位はどれか。1つ選べ。",
+    "choices": {
+      "ア": "①",
+      "イ": "②",
+      "ウ": "③",
+      "エ": "④",
+      "オ": "⑤"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "成人の胸骨圧迫は、胸骨の下半分を圧迫します。図では②がこの位置にあたります。したがって正解は2です。",
+    "choiceExplanations": {
+      "ア": "①は胸骨より左上外側にあたり、胸骨の上にありません。圧迫部位として不適切です。",
+      "イ": "正しい。②は胸骨の下半分、胸の真ん中にあたり、適切な圧迫部位です。",
+      "ウ": "③は胸骨から左側へ外れ、乳頭側に寄っています。心臓を効果的に圧迫できません。",
+      "エ": "④は胸骨の最下端(剣状突起付近)にあたります。圧迫部位としては低すぎ、臓器損傷のおそれもあります。",
+      "オ": "⑤は胸骨より下の上腹部にあたります。胸骨圧迫の部位ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001677927.pdf#page=36",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001677933.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第111回薬剤師国家試験」必須問題 問86（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-111-required-q086-system-next-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第111回薬剤師国家試験 必須問題 問86の原図または原表"
+    ]
+  }
+]

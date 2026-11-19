@@ -282,8 +282,8 @@ export function SearchClient() {
       setResult(data);
       setResultQueryKey(queryKey);
     } catch (err) {
-      if ((err as Error).name === "AbortError") return;
-      setError("検索に失敗しました。時間をおいて再度お試しください。");
+      if (abortRef.current !== ctrl || (err as Error).name === "AbortError") return;
+      setError("検索に失敗しました。もう一度「検索」を押してください。");
       setResult(null);
       setResultQueryKey(null);
     } finally {
@@ -428,11 +428,9 @@ export function SearchClient() {
       {/* Search Form (full-width on every viewport) */}
       <SearchForm
         inputText={inputText}
-        query={query}
         onInputChange={setInputText}
-        onSubmit={() => updateQuery({ q: inputText })}
+        onSubmit={() => { if (inputText === query.q) void fetchResults(query); else updateQuery({ q: inputText }); }}
         onClear={clearAll}
-        onFilterChange={updateQuery}
       />
 
       {/* History & Saved quick access */}
@@ -448,11 +446,9 @@ export function SearchClient() {
         onDeleteSaved={deleteSavedSearch}
       />
 
-      {/* PC: facet panel sits in a left rail (≈18rem) while the right */}
-      {/* column carries toolbar + results; mobile keeps the prior stacked */}
-      {/* layout so the chip row never competes with vertical real-estate. */}
-      <div className="md:grid md:grid-cols-[18rem_minmax(0,1fr)] md:gap-6 md:items-start">
-        <div className="md:sticky md:top-4">
+      {/* Keep the filter labels visible in two columns on mobile. */}
+      <div className="md:grid md:grid-cols-[14rem_minmax(0,1fr)] md:gap-6 md:items-start">
+        <div className="md:sticky md:top-20">
           <FacetPanel
             facets={result?.facets}
             query={query}
@@ -491,14 +487,12 @@ export function SearchClient() {
 
 interface SearchFormProps {
   inputText: string;
-  query: ActiveQuery;
   onInputChange: (text: string) => void;
   onSubmit: () => void;
   onClear: () => void;
-  onFilterChange: (patch: Partial<ActiveQuery>) => void;
 }
 
-function SearchForm({ inputText, query, onInputChange, onSubmit, onClear, onFilterChange }: SearchFormProps) {
+function SearchForm({ inputText, onInputChange, onSubmit, onClear }: SearchFormProps) {
   return (
     <form
       role="search"
@@ -510,8 +504,8 @@ function SearchForm({ inputText, query, onInputChange, onSubmit, onClear, onFilt
       }}
     >
       <label htmlFor="search-input" className="sr-only">キーワード</label>
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-        <div className="relative flex-1">
+      <div className="flex items-center gap-2">
+        <div className="relative min-w-0 flex-1">
           <SearchIcon
             className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground"
             aria-hidden="true"
@@ -520,8 +514,8 @@ function SearchForm({ inputText, query, onInputChange, onSubmit, onClear, onFilt
             id="search-input"
             type="search"
             inputMode="search"
-            placeholder="例) TCP/IP、正規化、SQLインジェクション"
-            className="h-11 w-full rounded-xl border border-border bg-background pl-9 pr-9 text-sm text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 sm:h-12"
+            placeholder="キーワード"
+            className="h-11 w-full rounded-xl border border-border bg-background pl-9 pr-12 text-base text-foreground sm:text-sm placeholder:text-muted-foreground focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30 sm:h-12 [&::-webkit-search-cancel-button]:appearance-none"
             value={inputText}
             onChange={(e) => onInputChange(e.target.value)}
             enterKeyHint="search"
@@ -530,7 +524,7 @@ function SearchForm({ inputText, query, onInputChange, onSubmit, onClear, onFilt
             <button
               type="button"
               aria-label="入力をクリア"
-              className="absolute right-2 top-1/2 grid h-7 w-7 -translate-y-1/2 place-items-center rounded-md text-muted-foreground hover:bg-muted"
+              className="absolute right-0 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center rounded-md text-muted-foreground hover:bg-muted"
               onClick={() => onInputChange("")}
             >
               <X className="h-4 w-4" aria-hidden="true" />
@@ -538,26 +532,13 @@ function SearchForm({ inputText, query, onInputChange, onSubmit, onClear, onFilt
           )}
         </div>
         <div className="flex gap-2">
-          <Button type="submit" variant="primary" size="md" className="flex-1 sm:flex-none">
+          <Button type="submit" variant="primary" size="md" className="flex-1 sm:flex-none min-h-11 min-w-11 h-auto whitespace-normal py-2.5">
             検索
           </Button>
-          <Button type="button" variant="ghost" size="md" onClick={onClear} aria-label="すべての条件をクリア">
-            クリア
-          </Button>
+          <Button type="button" variant="ghost" size="sm" className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" onClick={onClear} aria-label="すべての条件をクリア">クリア</Button>
         </div>
       </div>
 
-      <div className="mt-3 flex items-center gap-2">
-        <label className="flex cursor-pointer items-center gap-2 text-xs text-muted-foreground">
-          <input
-            type="checkbox"
-            checked={query.calculationOnly}
-            onChange={(e) => onFilterChange({ calculationOnly: e.target.checked })}
-            className="h-4 w-4 rounded border-border accent-primary"
-          />
-          計算問題のみ
-        </label>
-      </div>
     </form>
   );
 }
@@ -591,7 +572,7 @@ function HistoryBar({
             onClick={onToggleHistory}
             aria-expanded={showHistory}
             className={cn(
-              "inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs transition-colors",
+              "inline-flex min-h-11 items-center gap-1.5 rounded-xl border px-3 py-2 text-xs transition-colors",
               showHistory
                 ? "border-primary bg-primary text-primary-foreground"
                 : "border-border bg-background text-muted-foreground hover:border-primary/40 hover:bg-muted",
@@ -607,7 +588,7 @@ function HistoryBar({
             onClick={onToggleSaved}
             aria-expanded={showSaved}
             className={cn(
-              "inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs transition-colors",
+              "inline-flex min-h-11 items-center gap-1.5 rounded-xl border px-3 py-2 text-xs transition-colors",
               showSaved
                 ? "border-primary bg-primary text-primary-foreground"
                 : "border-border bg-background text-muted-foreground hover:border-primary/40 hover:bg-muted",
@@ -652,7 +633,7 @@ function HistoryList({
         >
           <button
             type="button"
-            className="min-w-0 flex-1 truncate text-left text-xs text-foreground"
+            className="min-h-11 min-w-0 flex-1 break-words text-left text-sm text-foreground"
             onClick={() => onApply(item.params)}
           >
             {item.label}
@@ -702,7 +683,7 @@ function SearchToolbar({
         aria-label={isCurrentSaved ? "検索条件の保存を解除" : "この検索条件を保存"}
         onClick={onToggleSave}
         className={cn(
-          "inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs transition-colors",
+          "inline-flex min-h-11 items-center gap-1.5 rounded-xl border px-3 py-2 text-xs transition-colors",
           isCurrentSaved
             ? "border-amber-400 bg-amber-50 text-amber-700 dark:border-amber-500 dark:bg-amber-950/30 dark:text-amber-400"
             : "border-border bg-background text-muted-foreground hover:border-amber-400/60 hover:bg-muted",
@@ -723,7 +704,7 @@ function SearchToolbar({
           aria-pressed={recentOnly}
           onClick={onToggleRecentOnly}
           className={cn(
-            "inline-flex items-center gap-1.5 rounded-full border px-3 py-1 text-xs transition-colors",
+            "inline-flex min-h-11 items-center gap-1.5 rounded-xl border px-3 py-2 text-xs transition-colors",
             recentOnly
               ? "border-primary bg-primary text-primary-foreground"
               : "border-border bg-background text-muted-foreground hover:border-primary/40 hover:bg-muted",
@@ -740,7 +721,7 @@ function SearchToolbar({
         id="sort-select"
         value={sort}
         onChange={(e) => onSortChange(e.target.value as SearchSort)}
-        className="h-7 rounded-full border border-border bg-background px-3 text-xs text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary/30"
+        className="min-h-11 rounded-xl border border-border bg-background px-3 text-xs text-foreground focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary/30"
       >
         {SORT_OPTIONS.map((o) => (
           <option key={o.value} value={o.value}>{o.label}</option>
@@ -751,7 +732,7 @@ function SearchToolbar({
       {practiceCount > 0 && !loading && (
         <Link
           href={practiceUrl}
-          className="ml-auto inline-flex items-center gap-1.5 rounded-full border border-primary bg-primary px-3 py-1 text-xs text-primary-foreground transition-opacity hover:opacity-90"
+          className="ml-auto inline-flex min-h-11 items-center gap-1.5 rounded-xl border border-primary bg-primary px-3 py-1 text-xs text-primary-foreground transition-opacity hover:opacity-90"
           aria-label={`${practiceCount.toLocaleString("ja-JP")}件の検索結果を連続演習する${searchTotal > practiceCount ? `（全${searchTotal.toLocaleString("ja-JP")}件中）` : ""}`}
         >
           <Play className="h-3 w-3 fill-current" aria-hidden="true" />
@@ -771,181 +752,30 @@ interface FacetPanelProps {
 }
 
 function FacetPanel({ facets, query, onChange }: FacetPanelProps) {
-  const examEntries = useMemo(
-    () =>
-      EXAM_OPTIONS.map((code) => ({ code, count: facets?.exam[code] ?? 0 })).filter(
-        (e) => e.count > 0 || query.exam === e.code,
-      ),
-    [facets, query.exam],
-  );
-
-  const yearEntries = useMemo(() => {
-    const map = facets?.year ?? {};
-    return Object.keys(map)
-      .map((y) => ({ year: y, count: map[y] }))
-      .sort((a, b) => Number(b.year) - Number(a.year));
-  }, [facets]);
-
-  const seasonEntries = useMemo(
-    () =>
-      SEASON_OPTIONS.map((s) => ({ season: s, count: facets?.season[s] ?? 0 })).filter(
-        (e) => e.count > 0 || query.season === e.season,
-      ),
-    [facets, query.season],
-  );
-
-  const categoryEntries = useMemo(() => {
-    const map = facets?.category ?? {};
-    return Object.keys(map)
-      .map((c) => ({ category: c, count: map[c] }))
-      .sort((a, b) => b.count - a.count)
-      .slice(0, 20);
-  }, [facets]);
-
-  const difficultyEntries = useMemo(
-    () =>
-      DIFFICULTY_OPTIONS.map((d) => ({
-        difficulty: d,
-        count: facets?.difficulty[String(d)] ?? 0,
-      })).filter(
-        (e) => e.count > 0 || String(query.difficulty) === String(e.difficulty),
-      ),
-    [facets, query.difficulty],
-  );
-
+  const fields = [
+    {key: "exam", label: "資格", options: EXAM_OPTIONS.filter(code => (facets?.exam[code] ?? 0) > 0 || query.exam === code).map(code => [code, examLabel(code), facets?.exam[code] ?? 0])},
+    {key: "year", label: "年度", options: Object.entries(facets?.year ?? {}).sort((a,b) => Number(b[0])-Number(a[0])).map(([v,n]) => [v, v+"年", n])},
+    {key: "season", label: "実施回", options: SEASON_OPTIONS.filter(v => (facets?.season[v] ?? 0) > 0 || query.season === v).map(v => [v, seasonLabel(v), facets?.season[v] ?? 0])},
+    {key: "category", label: "分野", options: Object.entries(facets?.category ?? {}).sort((a,b) => b[1]-a[1]).map(([v,n]) => [v,v,n])},
+    {key: "difficulty", label: "難度", options: DIFFICULTY_OPTIONS.filter(v => (facets?.difficulty[String(v)] ?? 0) > 0 || query.difficulty === String(v)).map(v => [String(v), "★".repeat(v), facets?.difficulty[String(v)] ?? 0])},
+  ] as const;
   return (
-    <section
-      aria-label="絞り込み"
-      className="rounded-2xl border border-border bg-card p-4 shadow-sm"
-    >
-      <h2 className="mb-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-        絞り込み
-      </h2>
-      <div className="space-y-4">
-        <FacetGroup label="試験区分">
-          {examEntries.length === 0 ? (
-            <span className="text-xs text-muted-foreground">該当なし</span>
-          ) : (
-            examEntries.map(({ code, count }) => (
-              <FacetChip
-                key={code}
-                active={query.exam === code}
-                onClick={() => onChange({ exam: query.exam === code ? "" : code })}
-                label={examLabel(code)}
-                count={count}
-              />
-            ))
-          )}
-        </FacetGroup>
-
-        {yearEntries.length > 0 && (
-          <FacetGroup label="年度">
-            {yearEntries.map(({ year, count }) => (
-              <FacetChip
-                key={year}
-                active={query.year === year}
-                onClick={() => onChange({ year: query.year === year ? "" : year })}
-                label={`${year}年`}
-                count={count}
-              />
-            ))}
-          </FacetGroup>
-        )}
-
-        {seasonEntries.length > 0 && (
-          <FacetGroup label="季節">
-            {seasonEntries.map(({ season, count }) => (
-              <FacetChip
-                key={season}
-                active={query.season === season}
-                onClick={() => onChange({ season: query.season === season ? "" : season })}
-                label={seasonLabel(season)}
-                count={count}
-              />
-            ))}
-          </FacetGroup>
-        )}
-
-        {categoryEntries.length > 0 && (
-          <FacetGroup label="分野">
-            {categoryEntries.map(({ category, count }) => (
-              <FacetChip
-                key={category}
-                active={query.category === category}
-                onClick={() =>
-                  onChange({ category: query.category === category ? "" : category })
-                }
-                label={category}
-                count={count}
-              />
-            ))}
-          </FacetGroup>
-        )}
-
-        {difficultyEntries.length > 0 && (
-          <FacetGroup label="難度">
-            {difficultyEntries.map(({ difficulty, count }) => (
-              <FacetChip
-                key={difficulty}
-                active={String(query.difficulty) === String(difficulty)}
-                onClick={() =>
-                  onChange({
-                    difficulty:
-                      String(query.difficulty) === String(difficulty) ? "" : String(difficulty),
-                  })
-                }
-                label={`★${difficulty}`}
-                count={count}
-              />
-            ))}
-          </FacetGroup>
-        )}
+    <section aria-label="絞り込み" className="rounded-2xl border border-border bg-card p-4">
+      <div className="grid grid-cols-2 gap-3 md:grid-cols-1">
+        {fields.filter(field => field.options.length > 0 || query[field.key]).map(field => <label key={field.key} className="min-w-0 text-xs font-medium text-muted-foreground">
+          {field.label}
+          <select value={query[field.key]} onChange={e => onChange({[field.key]:e.target.value})} className="mt-1 block min-h-11 w-full min-w-0 rounded-lg border border-border bg-background px-2 text-base text-foreground sm:text-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary">
+            <option value="">すべて</option>
+            {query[field.key] && !field.options.some(([v]) => v === query[field.key]) && <option value={query[field.key]}>{query[field.key]}</option>}
+            {field.options.map(([value,label,count]) => <option key={String(value)} value={value}>{label} ({count})</option>)}
+          </select>
+        </label>)}
+        <label className="flex min-h-11 cursor-pointer items-center gap-2 self-end text-sm text-foreground">
+          <input type="checkbox" checked={query.calculationOnly} onChange={e => onChange({calculationOnly:e.target.checked})} className="h-4 w-4 rounded border-border accent-primary" />
+          計算問題のみ
+        </label>
       </div>
     </section>
-  );
-}
-
-function FacetGroup({ label, children }: { label: string; children: React.ReactNode }) {
-  return (
-    <div>
-      <div className="mb-2 text-[11px] font-semibold uppercase tracking-wider text-muted-foreground">
-        {label}
-      </div>
-      <div className="flex flex-wrap gap-1.5">{children}</div>
-    </div>
-  );
-}
-
-function FacetChip({
-  active, onClick, label, count,
-}: {
-  active: boolean;
-  onClick: () => void;
-  label: string;
-  count: number;
-}) {
-  return (
-    <button
-      type="button"
-      aria-pressed={active}
-      onClick={onClick}
-      className={cn(
-        "inline-flex items-center gap-1 rounded-full border px-2.5 py-1 text-xs transition-colors",
-        active
-          ? "border-primary bg-primary text-primary-foreground"
-          : "border-border bg-background text-foreground hover:border-primary/40 hover:bg-muted",
-      )}
-    >
-      <span>{label}</span>
-      <span
-        className={cn(
-          "rounded-full px-1.5 py-0.5 text-[10px] font-bold",
-          active ? "bg-primary-foreground/20" : "bg-muted text-muted-foreground",
-        )}
-      >
-        {count.toLocaleString("ja-JP")}
-      </span>
-    </button>
   );
 }
 
@@ -1042,7 +872,7 @@ function ResultItem({ hit, tokens }: { hit: SearchHit; tokens: string[] }) {
   return (
     <Link
       href={href}
-      className="group block rounded-2xl border border-border bg-card p-4 shadow-sm transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-md"
+      className="group block rounded-2xl border border-border bg-card p-4 transition-colors hover:border-primary/40 hover:bg-muted/30 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
     >
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0 flex-1">

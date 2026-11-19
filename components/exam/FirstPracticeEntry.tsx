@@ -1,3 +1,4 @@
+import { PLAN_OFFER } from "@/lib/billing/plan-offer";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,7 +13,7 @@ export function FirstPracticeEntry({ exam }: { exam: ExamEntryCode }) {
     <section aria-label="今すぐ解く" className="mt-4 space-y-2">
       <Button asChild variant="gradient" size="lg" className="w-full font-semibold">
         <Link href={`/quiz?mode=random&exam=${exam}${advanced ? "&session=am2" : ""}`}>
-          まず10問、解いてみる{advanced ? "（科目A-2・旧午前II）" : "（科目A・旧午前）"}
+          まず{PLAN_OFFER.freeDaily}問、解いてみる{advanced ? "（科目A-2・旧午前II）" : "（科目A・旧午前）"}
           <ArrowRight className="h-4 w-4" aria-hidden="true" />
         </Link>
       </Button>
@@ -21,7 +22,7 @@ export function FirstPracticeEntry({ exam }: { exam: ExamEntryCode }) {
           <a key={href} href={href} className="inline-flex min-h-11 items-center justify-center rounded-lg border border-border px-2 py-2 text-center font-medium hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring">{label}</a>
         ))}
       </nav>
-      {advanced && <Link href={`/quiz?mode=random&exam=${exam}&session=am1`} className="inline-flex min-h-11 items-center text-sm underline underline-offset-4">科目A-1（旧午前I・共通）を解く →</Link>}
+      {advanced && <Link prefetch={false} href={`/quiz?mode=random&exam=${exam}&session=am1`} className="inline-flex min-h-11 items-center text-sm underline underline-offset-4">科目A-1（旧午前I・共通）を解く →</Link>}
     </section>
   );
 }

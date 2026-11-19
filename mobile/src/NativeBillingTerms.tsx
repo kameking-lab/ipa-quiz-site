@@ -9,6 +9,10 @@ export function NativeBillingTerms() {
     <p>App Storeで購入したプランの返金はAppleへ申請してください。返金の可否はAppleが適用条件に基づいて判断します。運営者への障害連絡とは別の手続きです。法令上の権利は制限しません。</p>
     <p><a className="underline" href="https://support.apple.com/118223">Appleの返金申請方法</a></p>
     <p><a className="underline" href="https://apps.apple.com/account/subscriptions">App Storeで管理・解約</a></p>
-    <Link className="underline" href="/terms">利用規約</Link>
+    <nav className="flex flex-wrap gap-4">
+      <Link className="underline" href="/operator">特定商取引法に基づく表示</Link>
+      <Link className="underline" href="/terms">利用規約</Link>
+      <Link className="underline" href="/privacy">プライバシーポリシー</Link>
+    </nav>
   </section>;
 }

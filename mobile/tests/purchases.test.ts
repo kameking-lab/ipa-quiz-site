@@ -1,14 +1,23 @@
 import { afterEach, beforeEach, expect, it, vi } from "vitest";
 import { Capacitor } from "@capacitor/core";
 import { Preferences } from "@capacitor/preferences";
-import { Membership,purchaseError,describeStoreError,StoreError } from "../src/purchases";
+import { Membership,purchaseError,describeStoreError,StoreError,checkNativePurchase,readNativePurchaseHold } from "../src/purchases";
 import { PACKAGE_TYPE, type PurchasesPackage } from "@revenuecat/purchases-capacitor";
 import type { MobileConfiguration, MobileEntitlement } from "../shared/contracts";
 vi.mock("@capacitor/preferences",()=>({Preferences:{get:vi.fn()}}));
 const c:MobileConfiguration={sdkKey:"mock-public-sdk-key",productId:"mock.monthly",offeringId:"main",entitlement:"kakomon_pro",expectedPriceYen:980,leasePublicKey:""};
 const a:MobileEntitlement={userId:"u",appUserId:"opaque-server-identity",entitled:false,source:"free",expiresAt:null,checkedAt:"",lease:null};
 const product={identifier:"monthly",packageType:PACKAGE_TYPE.MONTHLY,product:{identifier:c.productId,price:980,priceString:"¥980",currencyCode:"JPY",subscriptionPeriod:"P1M"}} as PurchasesPackage;
-const sdk={isConfigured:vi.fn(),isAnonymous:vi.fn(),configure:vi.fn(),logIn:vi.fn(),logOut:vi.fn(),getOfferings:vi.fn(),purchasePackage:vi.fn(),restorePurchases:vi.fn()};
+const sdk={isConfigured:vi.fn(),isAnonymous:vi.fn(),configure:vi.fn(),logIn:vi.fn(),logOut:vi.fn(),getOfferings:vi.fn(),purchasePackage:vi.fn(),restorePurchases:vi.fn(),syncPurchases:vi.fn(),getCustomerInfo:vi.fn()};
+it("reads a shared approval without a local reservation and rejects a malformed status", async () => {
+  const hold = { managed: true, pending: { approval: { reservationId: "shared-reservation" } } };
+  const transport = vi.fn<typeof fetch>().mockResolvedValueOnce(Response.json(hold)).mockResolvedValueOnce(Response.json({ state: null }));
+  await expect(readNativePurchaseHold("current-user", transport)).resolves.toEqual(hold);
+  expect(transport).toHaveBeenCalledWith("https://www.kakomon-ai.jp/api/mobile/purchase-check", expect.objectContaining({
+    method: "PATCH", credentials: "include", body: JSON.stringify({ action: "status", userId: "current-user" }),
+  }));
+  await expect(readNativePurchaseHold("current-user", transport)).rejects.toThrow("invalid_purchase_status");
+});
 let configured=false;
 beforeEach(()=>{vi.resetAllMocks();configured=false;sdk.isConfigured.mockImplementation(async()=>({isConfigured:configured}));sdk.configure.mockImplementation(async()=>{configured=true;});sdk.isAnonymous.mockResolvedValue({isAnonymous:false});sdk.getOfferings.mockResolvedValue({all:{main:{availablePackages:[product]}}});});
 it("shows server web membership without calling StoreKit or buying twice",async()=>{
@@ -79,6 +88,18 @@ it("propagates cancellation, pending purchases and restore errors without granti
 it("supports restore and disconnects the RevenueCat identity at sign-out",async()=>{
   const m=new Membership(sdk);await m.restore(c,a);expect(sdk.restorePurchases).toHaveBeenCalledOnce();await m.disconnect();expect(sdk.logOut).toHaveBeenCalledOnce();
 });
+it.each([false, true])("syncs StoreKit before checking the monthly product (active: %s)", async active => {
+  sdk.getCustomerInfo.mockResolvedValue({ customerInfo: { activeSubscriptions: active ? [c.productId] : [], entitlements: { active: {} } } });
+  await expect(new Membership(sdk).hasActiveAppStorePurchase(c, a)).resolves.toBe(active);
+  expect(sdk.configure).toHaveBeenCalledWith({ apiKey: c.sdkKey, appUserID: a.appUserId });
+  expect(sdk.syncPurchases.mock.invocationCallOrder[0]).toBeLessThan(sdk.getCustomerInfo.mock.invocationCallOrder[0]);
+  expect(sdk.purchasePackage).not.toHaveBeenCalled();
+});
+it("does not use cached purchase info after a failed StoreKit sync", async () => {
+  sdk.syncPurchases.mockRejectedValue({ code: "10", message: "offline" });
+  await expect(new Membership(sdk).hasActiveAppStorePurchase(c, a)).rejects.toThrow("App Storeの購入を確認できませんでした");
+  expect(sdk.getCustomerInfo).not.toHaveBeenCalled();
+});
 it("disconnect waits for a pending SDK login so the buyer cannot be reconnected after logout", async()=>{
   configured=true;
   let finish!:()=>void;
@@ -123,4 +144,21 @@ it("uses the public SDK key saved by the bundled shell in the online native purc
   await new Membership(sdk).connect({...c,sdkKey:""},a);
   expect(stored).toHaveBeenCalledWith({key:"kakomon:rc-ios-public-key"});
   expect(sdk.configure).toHaveBeenCalledWith({apiKey:"mock-bundled-public-sdk-key",appUserID:a.appUserId});
+});
+it.each(["duplicate_purchase_google", "duplicate_purchase_apple"])("stops StoreKit and pending persistence when the server reports %s", async code => {
+  const transport = vi.fn(async()=>Response.json({error:code},{status:409}));
+  const pending = vi.fn();
+  await expect(new Membership(sdk).buy(c,a,product,async()=>{await checkNativePurchase(transport);await pending();})).rejects.toMatchObject({ message: expect.stringContaining("そちらでログインしてください"), code: "purchase_signin" });
+  expect(pending).not.toHaveBeenCalled(); expect(sdk.purchasePackage).not.toHaveBeenCalled();
+  expect(transport).toHaveBeenCalledWith("https://www.kakomon-ai.jp/api/mobile/purchase-check",expect.objectContaining({method:"POST",credentials:"include"}));
+});
+it.each(["network", "malformed", "denied"])("fails closed with one retry line on %s", async reason => {
+  const transport = vi.fn(async()=>{if(reason==="network")throw Error("private transport detail");return reason==="malformed"?new Response("<html>error</html>"):Response.json({allowed:false});});
+  await expect(checkNativePurchase(transport)).rejects.toThrow("購入済みか確認できませんでした。少し待ってからもう一度お試しください。");
+});
+it("opens StoreKit only after the server check and pending persistence succeed", async()=>{
+  const order:string[]=[];
+  sdk.purchasePackage.mockImplementation(async()=>{order.push("storekit");});
+  await new Membership(sdk).buy(c,a,product,async()=>{await checkNativePurchase(async()=>{order.push("server");return Response.json({allowed:true});});order.push("pending");});
+  expect(order).toEqual(["server","pending","storekit"]);
 });

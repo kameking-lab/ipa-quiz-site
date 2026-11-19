@@ -1,11 +1,13 @@
 "use client";
 
-import { requestAiConsent } from "@/lib/ai/consent";
+import { recordLearningAction } from "@/lib/study-plan/pace-storage";
+import { readSettings } from "@/lib/storage/settings";
+import { AiProcessingNotice } from "@/components/ai/AiProcessingNotice";
 
 import * as React from "react";
 import dynamic from "next/dynamic";
 import {
-  Sparkles,
+  MessageCircle,
   Send,
   Loader2,
   Square,
@@ -350,7 +352,6 @@ export function CopilotPanel({
       }
       const trimmed = text.trim();
       if (!trimmed && !quickAction) return;
-      if (!requestAiConsent()) return;
 
       setErrorState(null);
       setRestriction(null);
@@ -516,6 +517,10 @@ export function CopilotPanel({
           });
         }
 
+        if (acc.trim() && !isTimeout && !isServerError && readSettings().recordHistory) {
+          recordLearningAction({ id: crypto.randomUUID(), kind: "ai-question", questionId: question.id,
+            exam: question.exam, at: Date.now() });
+        }
         posthogCapture("copilot_response_received", {
           questionId: question?.id,
           exam: question?.exam,
@@ -808,7 +813,7 @@ export function CopilotPanel({
               ? "話してください…"
               : "AIに質問…"
           }
-          className="min-w-0 min-h-[44px] flex-1 resize-none rounded-xl border border-zinc-300 bg-white px-3 py-2 text-base placeholder:text-zinc-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:border-zinc-700 dark:bg-zinc-900 dark:placeholder:text-zinc-600 sm:text-sm"
+          className="min-w-0 min-h-[44px] flex-1 resize-none rounded-xl border border-input bg-card px-3 py-2 text-base placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring sm:text-sm"
         />
         {voiceState !== "unsupported" && (
           <Button
@@ -832,6 +837,7 @@ export function CopilotPanel({
                   : "音声で質問"
             }
             className={cn(
+              "min-h-11 min-w-11 h-auto whitespace-normal py-2.5",
               voiceState === "listening" && "animate-pulse",
               voiceState === "denied" && "opacity-50",
             )}
@@ -853,12 +859,12 @@ export function CopilotPanel({
             onClick={handleStop}
             aria-label="生成を停止"
             title="生成を停止"
-            className="bg-red-600 hover:bg-red-700 focus-visible:ring-red-500"
+            className="bg-red-600 hover:bg-red-700 focus-visible:ring-red-500 min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
           >
             <Square className="h-4 w-4 fill-current" />
           </Button>
         ) : (
-          <Button
+          <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
             type="submit"
             variant="primary"
             size="icon"
@@ -869,19 +875,17 @@ export function CopilotPanel({
           </Button>
         )}
       </form>
+      <div className="px-3 pb-2"><AiProcessingNotice /></div>
     </>
   );
 
   return (
-    <div className={cn("flex min-w-0 w-full flex-col bg-white dark:bg-zinc-950", !inline && "h-full", className)}>
+    <div className={cn("flex min-w-0 w-full flex-col bg-card", !inline && "h-full", className)}>
       {/* Header */}
       <div className="flex flex-wrap items-center justify-between gap-2 border-b border-zinc-200 px-4 py-3 dark:border-zinc-800">
         <div className="flex items-center gap-2">
-          <Sparkles className="h-4 w-4 text-sky-600 dark:text-sky-400" />
-          <span className="text-sm font-semibold">{inline ? "この問題をAIに質問" : "AI コパイロット"}</span>
-          <span className="ml-2 rounded-full bg-emerald-100 px-2 py-0.5 text-[10px] font-medium text-emerald-700 dark:bg-emerald-950/60 dark:text-emerald-300" title="短時間の連続利用などには適正利用制限があります">
-            無料で質問
-          </span>
+          <MessageCircle className="h-4 w-4 text-sky-600 dark:text-sky-400" />
+          <span className="text-sm font-semibold">この問題をAIに質問</span>
         </div>
         <div className="flex items-center gap-1">
           {hasMessages && (
@@ -889,7 +893,7 @@ export function CopilotPanel({
               <button
                 onClick={() => setActionsOpen((v) => !v)}
                 title="その他の操作"
-                className="flex h-9 w-9 items-center justify-center rounded-lg text-zinc-400 transition-colors hover:bg-zinc-100 hover:text-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
+                className="flex h-11 w-11 items-center justify-center rounded-lg text-zinc-400 transition-colors hover:bg-zinc-100 hover:text-zinc-700 dark:hover:bg-zinc-800 dark:hover:text-zinc-200"
                 aria-label="その他の操作"
                 aria-expanded={actionsOpen}
                 aria-controls="copilot-actions-popup"
@@ -943,7 +947,7 @@ export function CopilotPanel({
           )}
           {headerRight}
           {onClose && (
-            <Button variant="ghost" size="icon" onClick={onClose} aria-label="閉じる">
+            <Button className="min-h-11 min-w-11 h-auto whitespace-normal py-2.5" variant="ghost" size="icon" onClick={onClose} aria-label="閉じる">
               <X className="h-4 w-4" />
             </Button>
           )}
@@ -965,7 +969,7 @@ export function CopilotPanel({
                 onClick={() => handleLengthChange(len)}
                 aria-pressed={responseLength === len}
                 className={cn(
-                  "px-2.5 py-0.5 text-[11px] font-medium transition-colors",
+                  "min-h-11 min-w-11 px-3 py-2 text-xs font-medium transition-colors",
                   responseLength === len
                     ? "bg-sky-600 text-white"
                     : "bg-white text-zinc-600 hover:bg-zinc-100 dark:bg-zinc-900 dark:text-zinc-300 dark:hover:bg-zinc-800",
@@ -1214,7 +1218,7 @@ export function CopilotPanel({
                 variant="outline"
                 size="sm"
                 onClick={handleCopyShareUrl}
-                className="shrink-0"
+                className="shrink-0 min-h-11 min-w-11 h-auto whitespace-normal py-2.5"
                 aria-label="URLをコピー"
               >
                 {copiedShareUrl ? (
@@ -1259,7 +1263,7 @@ export function CopilotInline(props: Omit<Props, "onClose" | "inline" | "initial
   return (
     <section
       aria-label="この問題についてAIに質問"
-      className="min-w-0 scroll-mt-24 overflow-hidden rounded-2xl border border-zinc-200 dark:border-zinc-800"
+      className="min-w-0 scroll-mt-24 overflow-hidden rounded-2xl border border-border"
       onTouchStart={(event) => event.stopPropagation()}
       onTouchEnd={(event) => event.stopPropagation()}
     >
@@ -1345,7 +1349,7 @@ export function CopilotMobileSheet({
           onClick={() => setOpen(true)}
           className="my-4 inline-flex min-h-11 items-center gap-2 rounded-full border border-primary/30 bg-card px-5 py-3 text-sm font-semibold text-primary hover:bg-primary-soft sm:hidden"
         >
-          <Sparkles className="h-4 w-4" />
+          <MessageCircle className="h-4 w-4" />
           AIに聞く
         </button>
       )}
@@ -1477,7 +1481,7 @@ export function CopilotDesktopFloating({
           aria-expanded={open}
           className="bottom-safe fixed right-6 z-40 hidden h-14 items-center gap-2 rounded-full bg-sky-600 pl-4 pr-5 text-sm font-semibold text-white shadow-xl transition hover:bg-sky-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:inline-flex"
         >
-          <Sparkles className="h-4 w-4" aria-hidden="true" />
+          <MessageCircle className="h-4 w-4" aria-hidden="true" />
           AIに聞く
         </button>
       )}

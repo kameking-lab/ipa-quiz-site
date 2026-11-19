@@ -1,0 +1,172 @@
+[
+  {
+    "id": "denken2-2022-second-kikai-q1",
+    "exam": "denken2",
+    "year": 2022,
+    "season": "second",
+    "session": "kikai",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "機械・制御",
+    "topicTags": [
+      "同期発電機"
+    ],
+    "question": "問1 同期発電機",
+    "answer": "〔問１の標準解答〕\n\n  (1)\n      SN    3VN I N より，\n                     SN    5000 10 3   定格電流は， I N                      481.13 → 481 A  ･･･(答)\n                        3VN    3  6000\n  (2)\n   短絡比K は定義から，短絡電流と定格電流の比なので，次のようになる。\n\n             300      K           0.623 53 → 0.624  ･･･(答)\n             481.13\n\n  (3)\n\n   基準インピーダンスは，定格電圧と定格電流から，\n              VN      6 000       ZN[ ]=                     7.199 9 → 7.20   ･･･(答)\n                 3 I N    3  481.13\n\n  (4)\n\n   抵抗を無視しているので，同期リアクタンスは同期インピーダンスと等しい。\n\n  短絡比は同期インピーダンス(p.u.)の逆数なので，同期インピーダンス[ ]は，\n\n  基準インピーダンス[ ]と短絡比から求めることができる。\n\n   したがって，\n                       1  VN      1       6000      X S [  ]  ZS [  ]                                   11.547   11.5  ･･･(答)\n                 K   3 I N   0.623 53   3  481.13\n\n  (5)\n\n   電圧変動率は，\n\n          V0  VN                   100[％]\n           VN\n   と定義される。ここで， V 0 は無負荷時の線間電圧， VN は運転時の線間電圧\n\n  である。無負荷時の電圧を求めるための，等価回路よりフェーザ図を描くと次\n\n  の関係が得られる。\n\n\n                                                      - 8 -\n\nVN  E0              j XS I N (cos    jsin  )\n        3\n\nこれより，\n\n\n                                 2\n        VN                                    2  E0       X S I N sin     X S I N cos\n          3\n\n\ncos  0.9なので， sin     1  0.9 2   0.435 89\n\n\n\n                                                    2\n         6000                                                              2\n  E0            11.547  481.13  0.435 89     11.547  481.13  0.9    7 722.8 V\n           3\n\n     V0  VN             100[％]\n      VN\n\n      3 E0  VN        3  7722.8  6000                100                    100  122.94 →  123％  ･･･(答)\n       VN               6000",
+    "modelAnswer": "〔問１の標準解答〕\n\n  (1)\n      SN    3VN I N より，\n                     SN    5000 10 3   定格電流は， I N                      481.13 → 481 A  ･･･(答)\n                        3VN    3  6000\n  (2)\n   短絡比K は定義から，短絡電流と定格電流の比なので，次のようになる。\n\n             300      K           0.623 53 → 0.624  ･･･(答)\n             481.13\n\n  (3)\n\n   基準インピーダンスは，定格電圧と定格電流から，\n              VN      6 000       ZN[ ]=                     7.199 9 → 7.20   ･･･(答)\n                 3 I N    3  481.13\n\n  (4)\n\n   抵抗を無視しているので，同期リアクタンスは同期インピーダンスと等しい。\n\n  短絡比は同期インピーダンス(p.u.)の逆数なので，同期インピーダンス[ ]は，\n\n  基準インピーダンス[ ]と短絡比から求めることができる。\n\n   したがって，\n                       1  VN      1       6000      X S [  ]  ZS [  ]                                   11.547   11.5  ･･･(答)\n                 K   3 I N   0.623 53   3  481.13\n\n  (5)\n\n   電圧変動率は，\n\n          V0  VN                   100[％]\n           VN\n   と定義される。ここで， V 0 は無負荷時の線間電圧， VN は運転時の線間電圧\n\n  である。無負荷時の電圧を求めるための，等価回路よりフェーザ図を描くと次\n\n  の関係が得られる。\n\n\n                                                      - 8 -\n\nVN  E0              j XS I N (cos    jsin  )\n        3\n\nこれより，\n\n\n                                 2\n        VN                                    2  E0       X S I N sin     X S I N cos\n          3\n\n\ncos  0.9なので， sin     1  0.9 2   0.435 89\n\n\n\n                                                    2\n         6000                                                              2\n  E0            11.547  481.13  0.435 89     11.547  481.13  0.9    7 722.8 V\n           3\n\n     V0  VN             100[％]\n      VN\n\n      3 E0  VN        3  7722.8  6000                100                    100  122.94 →  123％  ･･･(答)\n       VN               6000",
+    "difficulty": 5,
+    "explanation": "等価回路で電圧と電流の関係を整理し、励磁の条件と電機子電流の向きを確認します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken2/2022-second-machine-control/page-03.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度 電験二種二次 機械・制御 問1 公式問題（PDF 3ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken2/2022-second-machine-control/answer-q01-p08.webp",
+      "/questions/denken2/2022-second-machine-control/answer-q01-p09.webp"
+    ],
+    "answerImageAltTexts": [
+      "2022年度 電験二種二次 機械・制御 問1 公式標準解答（PDF 8ページ）",
+      "2022年度 電験二種二次 機械・制御 問1 公式標準解答（PDF 9ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_second_q02.pdf#page=3",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_second_a01.pdf#page=8",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/second/qa/index.html"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2022年度 電験二種二次 機械・制御 問1」。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken2-2022-second-kikai-q2",
+    "exam": "denken2",
+    "year": 2022,
+    "season": "second",
+    "session": "kikai",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "機械・制御",
+    "topicTags": [
+      "三相かご形誘導電動機"
+    ],
+    "question": "問2 三相かご形誘導電動機",
+    "answer": "〔問２の標準解答〕\n\n  (1) 滑りs\n\n                     120  50\n   同期速度  n0          1 500 min-1                       4\n\n          1500  1455           s=              0.03 → s=3.0 ％  ･･･(答)\n             1500\n\n  (2) 励磁電流 0I [A]\n             200\n            I 0       (0.05   j0.1)  5.773 5  j11.547         5.77   j11.5 A  ･･･(答)\n              3\n  (3) 二次電流の一次換算値 2I [A]\n                                     200            200\n               V1                  3              3            I 2                    r2                   0.15                5.1   j0.8                r1          j( x1  x2 )   0.1          j(0.3  0.5)                     s                   0.03\n                                                      - 9 -\n\n= 22.097  j3.466 3         22.1  j3.47 A  ･･･(答)\n(4) 銅損は一次銅損 P1c と二次銅損 P2c の和であるので，\n\n         I 2    22.097 2  3.466 32   22.367\n\n     P1c  P2c  3  I 22   ( r1   r2 )  3  22.367 2   0.1  0.15   375.21\n                                                     375 W  ･･･(答)\n(5) 電動機入力電流 1I [A]\n         I1   I 0   I 2  (5.773 5  j11.547)  (22.097  j3.466 3)\n           27.871  j15.013\n\n\n                                         ･･･(答)         I1    27.871 2  15.013 2   31.657       31.7A\n\n(6) 電動機の入力力率\n\n              27.871       cos            0.880 41 →  88.0 ％  ･･･(答)\n              31.657",
+    "modelAnswer": "〔問２の標準解答〕\n\n  (1) 滑りs\n\n                     120  50\n   同期速度  n0          1 500 min-1                       4\n\n          1500  1455           s=              0.03 → s=3.0 ％  ･･･(答)\n             1500\n\n  (2) 励磁電流 0I [A]\n             200\n            I 0       (0.05   j0.1)  5.773 5  j11.547         5.77   j11.5 A  ･･･(答)\n              3\n  (3) 二次電流の一次換算値 2I [A]\n                                     200            200\n               V1                  3              3            I 2                    r2                   0.15                5.1   j0.8                r1          j( x1  x2 )   0.1          j(0.3  0.5)                     s                   0.03\n                                                      - 9 -\n\n= 22.097  j3.466 3         22.1  j3.47 A  ･･･(答)\n(4) 銅損は一次銅損 P1c と二次銅損 P2c の和であるので，\n\n         I 2    22.097 2  3.466 32   22.367\n\n     P1c  P2c  3  I 22   ( r1   r2 )  3  22.367 2   0.1  0.15   375.21\n                                                     375 W  ･･･(答)\n(5) 電動機入力電流 1I [A]\n         I1   I 0   I 2  (5.773 5  j11.547)  (22.097  j3.466 3)\n           27.871  j15.013\n\n\n                                         ･･･(答)         I1    27.871 2  15.013 2   31.657       31.7A\n\n(6) 電動機の入力力率\n\n              27.871       cos            0.880 41 →  88.0 ％  ･･･(答)\n              31.657",
+    "difficulty": 5,
+    "explanation": "一相分の等価回路で滑りを使う抵抗を求め、電力と損失の関係から必要な量を計算します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken2/2022-second-machine-control/page-04.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度 電験二種二次 機械・制御 問2 公式問題（PDF 4ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken2/2022-second-machine-control/answer-q02-p09.webp",
+      "/questions/denken2/2022-second-machine-control/answer-q02-p10.webp"
+    ],
+    "answerImageAltTexts": [
+      "2022年度 電験二種二次 機械・制御 問2 公式標準解答（PDF 9ページ）",
+      "2022年度 電験二種二次 機械・制御 問2 公式標準解答（PDF 10ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_second_q02.pdf#page=4",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_second_a01.pdf#page=9",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/second/qa/index.html"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2022年度 電験二種二次 機械・制御 問2」。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken2-2022-second-kikai-q3",
+    "exam": "denken2",
+    "year": 2022,
+    "season": "second",
+    "session": "kikai",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "機械・制御",
+    "topicTags": [
+      "三相誘導電動機の電力変換システム"
+    ],
+    "question": "問3 三相誘導電動機の電力変換システム",
+    "answer": "〔問３の標準解答〕\n  (1) 三相ダイオード整流の平均電圧は1.35 Vab であるので，1.35×220=297 V\n  (2) 損失がないので，直流回路の電力は誘導電動機の有効電力と同じ。したがっ\n\n  て，直流電流は10 000 =33.670 A → 33.7 A  ･･･(答)\n                    297\n\n  (3) 損失がないので，交流電源の電力も誘導電動機の有効電力と同じ。したがっ\n\n  て，電源インピーダンスを無視できると，三相ダイオード整流器の基本波力率\n\n  は1。さらに，電源の交流電圧が正弦波であるので，有効電力となる交流電流\n  は基本波のみであるので，その実効値は10 000 =26.243 A → 26.2 A･･･(答)\n                                          3  220\n\n                 Ed       297  (4) 相電圧の波高値は      0.9        0.9  133.65 →134 V ･･･(答)\n                       2        2\n\n                    Ed         3           3  (5) 線間電圧の実効値は       0.9        133.65       163.69 →164 V  ･･･(答)\n                           2         2           2\n                                                     - 10 -\n\n(6) V/f 一定となることが望ましいので，1/2 の周波数のときに1/2 の大きさの電\n 圧となる。ただし， vu25 と vu50 の位相の関係は問わない。\n\n                                   vu50                   vu25                    cv        1\n         0.9\n         0.45\n           0                                                                                                         t",
+    "modelAnswer": "〔問３の標準解答〕\n  (1) 三相ダイオード整流の平均電圧は1.35 Vab であるので，1.35×220=297 V\n  (2) 損失がないので，直流回路の電力は誘導電動機の有効電力と同じ。したがっ\n\n  て，直流電流は10 000 =33.670 A → 33.7 A  ･･･(答)\n                    297\n\n  (3) 損失がないので，交流電源の電力も誘導電動機の有効電力と同じ。したがっ\n\n  て，電源インピーダンスを無視できると，三相ダイオード整流器の基本波力率\n\n  は1。さらに，電源の交流電圧が正弦波であるので，有効電力となる交流電流\n  は基本波のみであるので，その実効値は10 000 =26.243 A → 26.2 A･･･(答)\n                                          3  220\n\n                 Ed       297  (4) 相電圧の波高値は      0.9        0.9  133.65 →134 V ･･･(答)\n                       2        2\n\n                    Ed         3           3  (5) 線間電圧の実効値は       0.9        133.65       163.69 →164 V  ･･･(答)\n                           2         2           2\n                                                     - 10 -\n\n(6) V/f 一定となることが望ましいので，1/2 の周波数のときに1/2 の大きさの電\n 圧となる。ただし， vu25 と vu50 の位相の関係は問わない。\n\n                                   vu50                   vu25                    cv        1\n         0.9\n         0.45\n           0                                                                                                         t",
+    "difficulty": 5,
+    "explanation": "整流とインバータの波形を順に追い、線間電圧の実効値と周波数による変化を確認します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken2/2022-second-machine-control/page-05.webp",
+      "/questions/denken2/2022-second-machine-control/page-06.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度 電験二種二次 機械・制御 問3 公式問題（PDF 5ページ）",
+      "2022年度 電験二種二次 機械・制御 問3 公式問題（PDF 6ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken2/2022-second-machine-control/answer-q03-p10.webp",
+      "/questions/denken2/2022-second-machine-control/answer-q03-p11.webp"
+    ],
+    "answerImageAltTexts": [
+      "2022年度 電験二種二次 機械・制御 問3 公式標準解答（PDF 10ページ）",
+      "2022年度 電験二種二次 機械・制御 問3 公式標準解答（PDF 11ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_second_q02.pdf#page=5",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_second_a01.pdf#page=10",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/second/qa/index.html"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2022年度 電験二種二次 機械・制御 問3」。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "denken2-2022-second-kikai-q4",
+    "exam": "denken2",
+    "year": 2022,
+    "season": "second",
+    "session": "kikai",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "機械・制御",
+    "topicTags": [
+      "フィードバック制御系"
+    ],
+    "question": "問4 フィードバック制御系",
+    "answer": "〔問４の標準解答〕\n\n  (1) 図から，フィードバック制御系の特性方程式は，\n\n               100 K        1                 0\n               s s  1  s  40\n\n   となるから，分母を払って整理して，\n\n           s 3  41 s 2  40 s  100 K  0 ····································· ①\n                          ･･･(答)\n   を得る。\n\n  (2) ラウス・フルビッツの安定判別法を適用する。①式についてラウス表を作成\n\n  すれば次のようになる。\n\n\n           3s 行         1         40\n           2s 行         41      100K\n\n                 1 640  100 K            1s 行                    0\n                     41\n\n            0s 行       100K\n\n\n\n   最左端の列の全ての要素が正であることが，制御系が安定となるための必要\n\n  十分条件である。したがって，K の条件として，\n        0  K  16.4 ・・・（答）\n\n   を得る。\n\n\n                                                     - 11 -\n\n【(2)の別解】\n\n  ①式についてフルビッツの行列式を作成すれば次のようになる。\n     H 1 =41\n\n            41 100 K\n    H 2 =            1   40\n\n            41 100 K 0\n    H 3 = 1   40   0\n            0   41 100 K\n\n  行列式 H 1 , H 2 , H 3 の全てが正であることが，制御系が安定となるための必要\n\n 十分条件である。したがって，\n\n            41 100 K\n    H 2 =        =1640－100 K >0 ······························ ②            1   40\n\n            41 100 K 0\n    H 3 = 1   40   0  =1640×100 K－100 K ×100 K\n            0   41 100 K\n\n              = 1640－100 K ×100 K >0 ·················· ③\n\n  を満たすK の条件として，\n      0  K  16.4 ・・・（答）\n\n  を得る。\n(3) 目標値 R( s) から制御偏差 E ( s) までの伝達関数 TER ( s ) は，\n\n           E ( s )          1                 s s +1  s +40\n     TER ( s )=   =          =                     ······· ④           R( s )         100 K         s s +1  s +40 +100 K               1+\n                              s s +1 s+40                    ･･･(答)\n\n  となる。\n\n【(3)の別解】\n\n  図から，\n\n     E  s  R s  Y  s  ·········································· ⑤\n\n                 100 K     Y  s            E  s  ··································· ⑥\n                 s s  1  s  40\n\n                                                  - 12 -\n\nが成り立つ。\n\n  ⑥式を⑤式に代入すると，\n\n                       100 K     E  s  R s            E  s\n                        s s  1  s  40\n\n                     100 K                s s  1  s  40  100 K     R s    1            E  s                 E  s\n                      s s  1  s  40               s s  1  s  40\n\n  と書くことができるので，\n\n           E  s        s s  1  s  40\n     TER  s                             ························· ⑦           R s    s s  1  s  40  100 K\n                                   ･･･(答)\n  となる。\n\n(4) 傾きが2 のランプ関数は r  t   2 t ， t≧であるから，これをラプラス変換す0\n\n             2 ると R s        となる。定常速度偏差 ve は， K  2 とおいた④式にラプラス変換                   2                 s\n\n の最終値の定理を適用して次のように求めることができる。\n\n        ev   lim sE  s                   s  0\n\n                         s s  1  s  40     2           lim  s\n                   s  0     s s  1  s  40   200   s 2\n\n                2 s  1  s  40     2  40           lim                                 0.4 ······················· ⑧\n                   s  0 s s  1  s  40   200   200     ･･･(答)\n\n(5) ④式を，\n\n                                     s s  1  s  40\n     E  s  TER  s R s                 R s  ················· ⑨                                s s  1  s  40  100 K\n\n と書くと，目標値r  t を入力信号，制御偏差e  t を出力信号とする伝達関数\n  TER  s が⑨式で与えられていることになる。題意から，入力信号r  t は正弦関\n\n 数なので，出力信号の正弦関数の振幅は入力信号に比べて TER   j 倍になる。\n\n そこで，⑨式において s    j とおいた周波数伝達関数 TER   j の絶対値を    1\n\n について求める。\n\n                                                  - 13 -\n\n⑨式に K  2 ， s     j を代入すると次のようになる。\n\n                          j  j  1    j  40       41  j39\n  TER   j                     j  j  1    j  40   200  159  j39\n\n上式の絶対値を計算して，\n\n            41  j39    41 2  39 2     3202\n  TER   j                                       0.345 64           159  j39                      159 2  39 2    26802\nとなる。題意より入力信号の振幅は2 であるから，B=0.691 となる。\n\n                               ・・・（答）\n\n\n\n\n\n                                            - 14 -",
+    "modelAnswer": "〔問４の標準解答〕\n\n  (1) 図から，フィードバック制御系の特性方程式は，\n\n               100 K        1                 0\n               s s  1  s  40\n\n   となるから，分母を払って整理して，\n\n           s 3  41 s 2  40 s  100 K  0 ····································· ①\n                          ･･･(答)\n   を得る。\n\n  (2) ラウス・フルビッツの安定判別法を適用する。①式についてラウス表を作成\n\n  すれば次のようになる。\n\n\n           3s 行         1         40\n           2s 行         41      100K\n\n                 1 640  100 K            1s 行                    0\n                     41\n\n            0s 行       100K\n\n\n\n   最左端の列の全ての要素が正であることが，制御系が安定となるための必要\n\n  十分条件である。したがって，K の条件として，\n        0  K  16.4 ・・・（答）\n\n   を得る。\n\n\n                                                     - 11 -\n\n【(2)の別解】\n\n  ①式についてフルビッツの行列式を作成すれば次のようになる。\n     H 1 =41\n\n            41 100 K\n    H 2 =            1   40\n\n            41 100 K 0\n    H 3 = 1   40   0\n            0   41 100 K\n\n  行列式 H 1 , H 2 , H 3 の全てが正であることが，制御系が安定となるための必要\n\n 十分条件である。したがって，\n\n            41 100 K\n    H 2 =        =1640－100 K >0 ······························ ②            1   40\n\n            41 100 K 0\n    H 3 = 1   40   0  =1640×100 K－100 K ×100 K\n            0   41 100 K\n\n              = 1640－100 K ×100 K >0 ·················· ③\n\n  を満たすK の条件として，\n      0  K  16.4 ・・・（答）\n\n  を得る。\n(3) 目標値 R( s) から制御偏差 E ( s) までの伝達関数 TER ( s ) は，\n\n           E ( s )          1                 s s +1  s +40\n     TER ( s )=   =          =                     ······· ④           R( s )         100 K         s s +1  s +40 +100 K               1+\n                              s s +1 s+40                    ･･･(答)\n\n  となる。\n\n【(3)の別解】\n\n  図から，\n\n     E  s  R s  Y  s  ·········································· ⑤\n\n                 100 K     Y  s            E  s  ··································· ⑥\n                 s s  1  s  40\n\n                                                  - 12 -\n\nが成り立つ。\n\n  ⑥式を⑤式に代入すると，\n\n                       100 K     E  s  R s            E  s\n                        s s  1  s  40\n\n                     100 K                s s  1  s  40  100 K     R s    1            E  s                 E  s\n                      s s  1  s  40               s s  1  s  40\n\n  と書くことができるので，\n\n           E  s        s s  1  s  40\n     TER  s                             ························· ⑦           R s    s s  1  s  40  100 K\n                                   ･･･(答)\n  となる。\n\n(4) 傾きが2 のランプ関数は r  t   2 t ， t≧であるから，これをラプラス変換す0\n\n             2 ると R s        となる。定常速度偏差 ve は， K  2 とおいた④式にラプラス変換                   2                 s\n\n の最終値の定理を適用して次のように求めることができる。\n\n        ev   lim sE  s                   s  0\n\n                         s s  1  s  40     2           lim  s\n                   s  0     s s  1  s  40   200   s 2\n\n                2 s  1  s  40     2  40           lim                                 0.4 ······················· ⑧\n                   s  0 s s  1  s  40   200   200     ･･･(答)\n\n(5) ④式を，\n\n                                     s s  1  s  40\n     E  s  TER  s R s                 R s  ················· ⑨                                s s  1  s  40  100 K\n\n と書くと，目標値r  t を入力信号，制御偏差e  t を出力信号とする伝達関数\n  TER  s が⑨式で与えられていることになる。題意から，入力信号r  t は正弦関\n\n 数なので，出力信号の正弦関数の振幅は入力信号に比べて TER   j 倍になる。\n\n そこで，⑨式において s    j とおいた周波数伝達関数 TER   j の絶対値を    1\n\n について求める。\n\n                                                  - 13 -\n\n⑨式に K  2 ， s     j を代入すると次のようになる。\n\n                          j  j  1    j  40       41  j39\n  TER   j                     j  j  1    j  40   200  159  j39\n\n上式の絶対値を計算して，\n\n            41  j39    41 2  39 2     3202\n  TER   j                                       0.345 64           159  j39                      159 2  39 2    26802\nとなる。題意より入力信号の振幅は2 であるから，B=0.691 となる。\n\n                               ・・・（答）\n\n\n\n\n\n                                            - 14 -",
+    "difficulty": 5,
+    "explanation": "ブロック線図から特性方程式と伝達関数を求め、安定条件と正弦波入力に対する偏差を分けて計算します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken2/2022-second-machine-control/page-07.webp"
+    ],
+    "imageAltTexts": [
+      "2022年度 電験二種二次 機械・制御 問4 公式問題（PDF 7ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken2/2022-second-machine-control/answer-q04-p11.webp",
+      "/questions/denken2/2022-second-machine-control/answer-q04-p12.webp",
+      "/questions/denken2/2022-second-machine-control/answer-q04-p13.webp",
+      "/questions/denken2/2022-second-machine-control/answer-q04-p14.webp"
+    ],
+    "answerImageAltTexts": [
+      "2022年度 電験二種二次 機械・制御 問4 公式標準解答（PDF 11ページ）",
+      "2022年度 電験二種二次 機械・制御 問4 公式標準解答（PDF 12ページ）",
+      "2022年度 電験二種二次 機械・制御 問4 公式標準解答（PDF 13ページ）",
+      "2022年度 電験二種二次 機械・制御 問4 公式標準解答（PDF 14ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_second_q02.pdf#page=7",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20221113_ch_second_a01.pdf#page=11",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/second/qa/index.html"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2022年度 電験二種二次 機械・制御 問4」。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19"
+  }
+]

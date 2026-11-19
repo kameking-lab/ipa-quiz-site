@@ -1,0 +1,382 @@
+{
+  "schemaVersion": 1,
+  "lane": "qd-1",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "checkedRefs": 91,
+  "checkedUniqueCommits": 87,
+  "rows": [
+    {
+      "jobId": "PLAN5-155",
+      "planIndex": 154,
+      "key": "hokenshi|2022|annual|pm|tp220421-03b_01.pdf",
+      "branch": "cx/kako-5y1-20261118",
+      "status": "公式55原問を照合し54問を新規収録・採点除外1問を記録",
+      "importedQuestionCount": 0,
+      "newQuestionCount": 54,
+      "questionIds": [
+        "hokenshi-2021-annual-pm-q1",
+        "hokenshi-2021-annual-pm-q2",
+        "hokenshi-2021-annual-pm-q3",
+        "hokenshi-2021-annual-pm-q4",
+        "hokenshi-2021-annual-pm-q5",
+        "hokenshi-2021-annual-pm-q6",
+        "hokenshi-2021-annual-pm-q7",
+        "hokenshi-2021-annual-pm-q8",
+        "hokenshi-2021-annual-pm-q9",
+        "hokenshi-2021-annual-pm-q10",
+        "hokenshi-2021-annual-pm-q11",
+        "hokenshi-2021-annual-pm-q12",
+        "hokenshi-2021-annual-pm-q13",
+        "hokenshi-2021-annual-pm-q14",
+        "hokenshi-2021-annual-pm-q15",
+        "hokenshi-2021-annual-pm-q16",
+        "hokenshi-2021-annual-pm-q17",
+        "hokenshi-2021-annual-pm-q19",
+        "hokenshi-2021-annual-pm-q20",
+        "hokenshi-2021-annual-pm-q21",
+        "hokenshi-2021-annual-pm-q22",
+        "hokenshi-2021-annual-pm-q23",
+        "hokenshi-2021-annual-pm-q24",
+        "hokenshi-2021-annual-pm-q25",
+        "hokenshi-2021-annual-pm-q26",
+        "hokenshi-2021-annual-pm-q27",
+        "hokenshi-2021-annual-pm-q28",
+        "hokenshi-2021-annual-pm-q29",
+        "hokenshi-2021-annual-pm-q30",
+        "hokenshi-2021-annual-pm-q31",
+        "hokenshi-2021-annual-pm-q32",
+        "hokenshi-2021-annual-pm-q33",
+        "hokenshi-2021-annual-pm-q34",
+        "hokenshi-2021-annual-pm-q35",
+        "hokenshi-2021-annual-pm-q36",
+        "hokenshi-2021-annual-pm-q37",
+        "hokenshi-2021-annual-pm-q38",
+        "hokenshi-2021-annual-pm-q39",
+        "hokenshi-2021-annual-pm-q40",
+        "hokenshi-2021-annual-pm-q41",
+        "hokenshi-2021-annual-pm-q42",
+        "hokenshi-2021-annual-pm-q43",
+        "hokenshi-2021-annual-pm-q44",
+        "hokenshi-2021-annual-pm-q45",
+        "hokenshi-2021-annual-pm-q46",
+        "hokenshi-2021-annual-pm-q47",
+        "hokenshi-2021-annual-pm-q48",
+        "hokenshi-2021-annual-pm-q49",
+        "hokenshi-2021-annual-pm-q50",
+        "hokenshi-2021-annual-pm-q51",
+        "hokenshi-2021-annual-pm-q52",
+        "hokenshi-2021-annual-pm-q53",
+        "hokenshi-2021-annual-pm-q54",
+        "hokenshi-2021-annual-pm-q55"
+      ],
+      "expectedPrintedCount": 55,
+      "practiceQuestionCount": 54,
+      "officialExcludedQuestionNumbers": [
+        18
+      ],
+      "missingUnresolvedQuestionNumbers": [],
+      "dataPath": "data/questions/hokenshi/2021-pm-official-qd1.json",
+      "exclusionArchivePath": "data/question-ingestion/plan5-qd1-official-exclusions.json",
+      "sourceReceipts": [
+        {
+          "jobId": "PLAN5-155",
+          "kind": "question",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-03b_01.pdf",
+          "file": "tp220421-03b_01.pdf",
+          "sha256": "ed3ccc2c1e4eee286a097f88a6900a8ddd96102b5e8db7b0b37c90e85602d44a",
+          "pages": 40
+        },
+        {
+          "jobId": "PLAN5-155",
+          "kind": "answer",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp220421-03seitou.pdf",
+          "file": "tp220421-03seitou.pdf",
+          "sha256": "19c2066f7ef0dae3397a4e0649c04df7fb95c6abfc860368bc16cdbf4e8d6830",
+          "pages": 1
+        },
+        {
+          "jobId": "PLAN5-155",
+          "kind": "exclusion",
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken03_04_05/dl/hokenshi_pm18.pdf",
+          "sha256": "09797e6e4e931802e14edb02ecd6ad00271365c5111b9c4ec07ea12877c5a595",
+          "pages": 1
+        }
+      ],
+      "storedYear": 2021,
+      "officialExamYear": 2022
+    },
+    {
+      "jobId": "PLAN5-169",
+      "planIndex": 168,
+      "key": "josanshi|2023|annual|am|tp230524-04a_01.pdf",
+      "branch": "cx/kako-5y1-20261118",
+      "status": "既存10問を維持し44問を新規収録・採点除外1問を記録",
+      "importedQuestionCount": 0,
+      "newQuestionCount": 44,
+      "questionIds": [
+        "josanshi-2022-annual-am-q6",
+        "josanshi-2022-annual-am-q11",
+        "josanshi-2022-annual-am-q12",
+        "josanshi-2022-annual-am-q14",
+        "josanshi-2022-annual-am-q15",
+        "josanshi-2022-annual-am-q16",
+        "josanshi-2022-annual-am-q17",
+        "josanshi-2022-annual-am-q18",
+        "josanshi-2022-annual-am-q19",
+        "josanshi-2022-annual-am-q20",
+        "josanshi-2022-annual-am-q21",
+        "josanshi-2022-annual-am-q22",
+        "josanshi-2022-annual-am-q23",
+        "josanshi-2022-annual-am-q24",
+        "josanshi-2022-annual-am-q25",
+        "josanshi-2022-annual-am-q26",
+        "josanshi-2022-annual-am-q27",
+        "josanshi-2022-annual-am-q28",
+        "josanshi-2022-annual-am-q29",
+        "josanshi-2022-annual-am-q30",
+        "josanshi-2022-annual-am-q31",
+        "josanshi-2022-annual-am-q32",
+        "josanshi-2022-annual-am-q33",
+        "josanshi-2022-annual-am-q34",
+        "josanshi-2022-annual-am-q35",
+        "josanshi-2022-annual-am-q36",
+        "josanshi-2022-annual-am-q37",
+        "josanshi-2022-annual-am-q38",
+        "josanshi-2022-annual-am-q39",
+        "josanshi-2022-annual-am-q40",
+        "josanshi-2022-annual-am-q41",
+        "josanshi-2022-annual-am-q43",
+        "josanshi-2022-annual-am-q44",
+        "josanshi-2022-annual-am-q45",
+        "josanshi-2022-annual-am-q46",
+        "josanshi-2022-annual-am-q47",
+        "josanshi-2022-annual-am-q48",
+        "josanshi-2022-annual-am-q49",
+        "josanshi-2022-annual-am-q50",
+        "josanshi-2022-annual-am-q51",
+        "josanshi-2022-annual-am-q52",
+        "josanshi-2022-annual-am-q53",
+        "josanshi-2022-annual-am-q54",
+        "josanshi-2022-annual-am-q55"
+      ],
+      "expectedPrintedCount": 55,
+      "practiceQuestionCount": 54,
+      "officialExcludedQuestionNumbers": [
+        42
+      ],
+      "missingUnresolvedQuestionNumbers": [],
+      "dataPath": "data/questions/josanshi/2022-am-completion-qd1.json",
+      "exclusionArchivePath": "data/question-ingestion/plan5-qd1-official-exclusions.json",
+      "sourceReceipts": [
+        {
+          "jobId": "PLAN5-169",
+          "kind": "question",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-04a_01.pdf",
+          "file": "tp230524-04a_01.pdf",
+          "sha256": "c6cd33e3b252e7d15be8cf4f33ee8583726d84f183111bfb9ce8ee5b750e60ca",
+          "pages": 36
+        },
+        {
+          "jobId": "PLAN5-169",
+          "kind": "answer",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-04seitou.pdf",
+          "file": "tp230524-04seitou.pdf",
+          "sha256": "422fa69f723045240ab7421734d1299d29c08d33d310a36cf683ed8cc77f0675",
+          "pages": 1
+        },
+        {
+          "jobId": "PLAN5-169",
+          "kind": "appendix",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp230524-04a_02.pdf",
+          "file": "tp230524-04a_02.pdf",
+          "sha256": "1dba59578978113ae19de27580d035098c16fbfee58974f38be3670e2ae7a110",
+          "pages": 20
+        },
+        {
+          "jobId": "PLAN5-169",
+          "kind": "exclusion",
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2023/siken03_04_05/dl/josanshi_am42.pdf",
+          "file": "josanshi_am42.pdf",
+          "sha256": "6504762cd46c1068f9bebf5788684142d28b5dd3936589bcb4a70f6a20892052",
+          "pages": 1
+        }
+      ],
+      "storedYear": 2022,
+      "officialExamYear": 2023
+    },
+    {
+      "jobId": "PLAN5-183",
+      "planIndex": 182,
+      "key": "sagyo-ryohoshi|2026|annual|am|tp260424-09a_01.pdf",
+      "branch": "cx/kako-5y1-20261118",
+      "status": "既存59問を維持し既存23問を取り込み、新規17問を補充・採点除外1問を記録",
+      "importedQuestionCount": 23,
+      "newQuestionCount": 17,
+      "questionIds": [
+        "sagyo-ryohoshi-2025-annual-am-q1",
+        "sagyo-ryohoshi-2025-annual-am-q2",
+        "sagyo-ryohoshi-2025-annual-am-q3",
+        "sagyo-ryohoshi-2025-annual-am-q4",
+        "sagyo-ryohoshi-2025-annual-am-q5",
+        "sagyo-ryohoshi-2025-annual-am-q6",
+        "sagyo-ryohoshi-2025-annual-am-q7",
+        "sagyo-ryohoshi-2025-annual-am-q8",
+        "sagyo-ryohoshi-2025-annual-am-q9",
+        "sagyo-ryohoshi-2025-annual-am-q30",
+        "sagyo-ryohoshi-2025-annual-am-q36",
+        "sagyo-ryohoshi-2025-annual-am-q49",
+        "sagyo-ryohoshi-2025-annual-am-q50",
+        "sagyo-ryohoshi-2025-annual-am-q51",
+        "sagyo-ryohoshi-2025-annual-am-q52",
+        "sagyo-ryohoshi-2025-annual-am-q53",
+        "sagyo-ryohoshi-2025-annual-am-q54",
+        "sagyo-ryohoshi-2025-annual-am-q55",
+        "sagyo-ryohoshi-2025-annual-am-q56",
+        "sagyo-ryohoshi-2025-annual-am-q57",
+        "sagyo-ryohoshi-2025-annual-am-q58",
+        "sagyo-ryohoshi-2025-annual-am-q59",
+        "sagyo-ryohoshi-2025-annual-am-q60",
+        "sagyo-ryohoshi-2025-annual-am-q61",
+        "sagyo-ryohoshi-2025-annual-am-q62",
+        "sagyo-ryohoshi-2025-annual-am-q63",
+        "sagyo-ryohoshi-2025-annual-am-q64",
+        "sagyo-ryohoshi-2025-annual-am-q65",
+        "sagyo-ryohoshi-2025-annual-am-q66",
+        "sagyo-ryohoshi-2025-annual-am-q67",
+        "sagyo-ryohoshi-2025-annual-am-q68",
+        "sagyo-ryohoshi-2025-annual-am-q69",
+        "sagyo-ryohoshi-2025-annual-am-q70",
+        "sagyo-ryohoshi-2025-annual-am-q71",
+        "sagyo-ryohoshi-2025-annual-am-q73",
+        "sagyo-ryohoshi-2025-annual-am-q74",
+        "sagyo-ryohoshi-2025-annual-am-q75",
+        "sagyo-ryohoshi-2025-annual-am-q76",
+        "sagyo-ryohoshi-2025-annual-am-q77",
+        "sagyo-ryohoshi-2025-annual-am-q98"
+      ],
+      "expectedPrintedCount": 100,
+      "practiceQuestionCount": 99,
+      "officialExcludedQuestionNumbers": [
+        42
+      ],
+      "missingUnresolvedQuestionNumbers": [],
+      "dataPaths": [
+        "data/questions/sagyo-ryohoshi/plan5-qd1-imported.json",
+        "data/questions/sagyo-ryohoshi/plan5-qd1-new.json"
+      ],
+      "importedFrom": [
+        {
+          "commit": "25277ca1081994ac49a36f31a41cb2aed1036cbb",
+          "refs": [
+            "refs/heads/codex/ot61-am-next20-20261011",
+            "refs/remotes/origin/codex/ot61-am-next20-20261011"
+          ],
+          "questionNumbers": [
+            51,
+            52,
+            53,
+            54,
+            55,
+            56,
+            57,
+            59,
+            61,
+            62,
+            63,
+            64,
+            65,
+            66,
+            67,
+            68,
+            69,
+            70,
+            71,
+            73
+          ],
+          "questionIds": [
+            "sagyo-ryohoshi-2025-annual-am-q51",
+            "sagyo-ryohoshi-2025-annual-am-q52",
+            "sagyo-ryohoshi-2025-annual-am-q53",
+            "sagyo-ryohoshi-2025-annual-am-q54",
+            "sagyo-ryohoshi-2025-annual-am-q55",
+            "sagyo-ryohoshi-2025-annual-am-q56",
+            "sagyo-ryohoshi-2025-annual-am-q57",
+            "sagyo-ryohoshi-2025-annual-am-q59",
+            "sagyo-ryohoshi-2025-annual-am-q61",
+            "sagyo-ryohoshi-2025-annual-am-q62",
+            "sagyo-ryohoshi-2025-annual-am-q63",
+            "sagyo-ryohoshi-2025-annual-am-q64",
+            "sagyo-ryohoshi-2025-annual-am-q65",
+            "sagyo-ryohoshi-2025-annual-am-q66",
+            "sagyo-ryohoshi-2025-annual-am-q67",
+            "sagyo-ryohoshi-2025-annual-am-q68",
+            "sagyo-ryohoshi-2025-annual-am-q69",
+            "sagyo-ryohoshi-2025-annual-am-q70",
+            "sagyo-ryohoshi-2025-annual-am-q71",
+            "sagyo-ryohoshi-2025-annual-am-q73"
+          ],
+          "paths": [
+            "data/qualification-staging/sagyo-ryohoshi/ot61-am-next20/questions.ts"
+          ]
+        },
+        {
+          "commit": "aee7540be32bd97d37a36b0c760c2c800c7ebdce",
+          "refs": [
+            "refs/heads/codex/medical-key9-closeout-20261011",
+            "refs/remotes/origin/codex/medical-key9-closeout-20261011"
+          ],
+          "questionNumbers": [
+            50,
+            60,
+            98
+          ],
+          "questionIds": [
+            "sagyo-ryohoshi-2025-annual-am-q50",
+            "sagyo-ryohoshi-2025-annual-am-q60",
+            "sagyo-ryohoshi-2025-annual-am-q98"
+          ],
+          "paths": [
+            "data/questions/sagyo-ryohoshi/2024-2025-clinical-key9-ready.json"
+          ]
+        }
+      ],
+      "exclusionArchivePath": "data/question-ingestion/plan5-qd1-official-exclusions.json",
+      "sourceReceipts": [
+        {
+          "jobId": "PLAN5-183",
+          "kind": "question",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-09a_01.pdf",
+          "file": "tp260424-09a_01.pdf",
+          "sha256": "a3b373afdc4f4fc9c144513f01a891505fef3494684c95ec64368248b189ce6e",
+          "pages": 52
+        },
+        {
+          "jobId": "PLAN5-183",
+          "kind": "answer",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-09seitou.pdf",
+          "file": "tp260424-09seitou.pdf",
+          "sha256": "369949cff20ad86f0c56f4772052300eaa1aa0c077f86c3d0c12fef3700ef9e2",
+          "pages": 1
+        },
+        {
+          "jobId": "PLAN5-183",
+          "kind": "appendix",
+          "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp260424-09a_02.pdf",
+          "file": "tp260424-09a_02.pdf",
+          "sha256": "7c9e05c45b9412a6810dd9440fdf6aa32114b8f47cec6e732c08219c0bfae475",
+          "pages": 12
+        },
+        {
+          "jobId": "PLAN5-183",
+          "kind": "exclusion",
+          "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken08_09/dl/OT_AM42.pdf",
+          "file": "OT_AM42.pdf",
+          "sha256": "c6e9aff3526abf67b22cbf0b2663ed568790e2ffdd0869cb45ca29a5e6582008",
+          "pages": 1
+        }
+      ],
+      "storedYear": 2025,
+      "officialExamYear": 2026
+    }
+  ]
+}

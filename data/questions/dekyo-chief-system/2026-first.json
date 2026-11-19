@@ -1,0 +1,1022 @@
+[
+  {
+    "id": "dekyo-chief-system-2026-first-gakka-q1",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "電気・電子回路",
+    "topicTags": [
+      "電気通信システム",
+      "コンデンサの並列接続と蓄積エネルギー"
+    ],
+    "difficulty": 3,
+    "question": "1μFのコンデンサを1Vで充電し、4μFのコンデンサを6Vで充電して並列に接続したとき、この二つのコンデンサに蓄えられる総合のエネルギーは、［　］Jである。ただし、充電後の二つのコンデンサは極性を一致させて接続するものとする。",
+    "choices": {
+      "ア": "28.9×10⁻⁶",
+      "イ": "62.5×10⁻⁶",
+      "ウ": "72.5×10⁻⁶",
+      "エ": "12.5×10⁻⁵",
+      "オ": "14.5×10⁻⁵"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "接続後も二つのコンデンサの総電荷は保存される。総電荷は1×1＋4×6＝25 μC、合成容量は5 μFなので、共通電圧は5 Vとなる。接続後のエネルギーはC V²/2＝5×10⁻⁶×25/2＝62.5×10⁻⁶ J。接続前のエネルギーの単純な和とは区別する。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf#page=2)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2026-first-q01.png"
+    ],
+    "imageAltTexts": [
+      "問１ １μＦのコンデンサを１Ｖで充電し、４μＦのコンデンサを６Ｖで充電して並列に接続\n\n  したとき、この二つのコンデンサに蓄えられる総合のエネルギーは、     Ｊである。ただ\n\n  し、充電後の二つのコンデンサは極性を一致させて接続するものとする。\n\n\n        ① ２８.９×１０ －６  ② ６２.５×１０ －６  ③ ７２.５×１０ －６\n        ④ １２.５×１０ －５  ⑤ １４.５×１０ －５"
+    ],
+    "originalContent": {
+      "body": "問１ １μＦのコンデンサを１Ｖで充電し、４μＦのコンデンサを６Ｖで充電して並列に接続\n\n  したとき、この二つのコンデンサに蓄えられる総合のエネルギーは、     Ｊである。ただ\n\n  し、充電後の二つのコンデンサは極性を一致させて接続するものとする。\n\n\n        ① ２８.９×１０ －６  ② ６２.５×１０ －６  ③ ７２.５×１０ －６\n        ④ １２.５×１０ －５  ⑤ １４.５×１０ －５"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": true,
+    "choiceExplanations": {
+      "ア": "接続後の共通電圧は5 Vであり、5 μFに対する蓄積エネルギーはこの値にならない。",
+      "イ": "接続後も二つのコンデンサの総電荷は保存される。総電荷は1×1＋4×6＝25 μC、合成容量は5 μFなので、共通電圧は5 Vとなる。接続後のエネルギーはC V²/2＝5×10⁻⁶×25/2＝62.5×10⁻⁶ J。接続前のエネルギーの単純な和とは区別する。",
+      "ウ": "接続前の蓄積エネルギーの合計である。並列接続して電荷が移動した後の値を求める。",
+      "エ": "接続後のCV²に相当し、エネルギーに必要な係数1/2が抜けている。",
+      "オ": "接続前のCV²の和に当たり、接続後のエネルギーには一致しない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2026-first-gakka-q2",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "電気・電子回路",
+    "topicTags": [
+      "電気通信システム",
+      "電熱線の抵抗回路"
+    ],
+    "difficulty": 3,
+    "question": "図に示すように、一辺がrΩ の電熱線で作った正方形の対角線をそれぞれ同じ線種の電熱線で結んだ回路のa-b間の合成抵抗値は、［　］Ω である。",
+    "choices": {
+      "ア": "(2−√2)r/2",
+      "イ": "√2 r/4",
+      "ウ": "(3−√2)r/2",
+      "エ": "(2√2−1)r/2",
+      "オ": "(2＋√2)r/2"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "同じ材質・断面の電熱線の抵抗は長さに比例するため、各対角線は√2 rとなる。上下対称の節点を等電位としてまとめると、左右のr/4に、r/2と√2 r/2の並列合成分が直列につながる。合成値はr/2＋√2 r/{2(1＋√2)}＝(3−√2)r/2である。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf#page=2)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2026-first-q02.png"
+    ],
+    "imageAltTexts": [
+      "問２ 図に示すように、一辺がｒΩ の電熱線で作った正方形の対角線をそれぞれ同じ線種の電熱線で\n\n  結んだ回路のａ－ｂ間の合成抵抗値は、      Ω である。\n\n\n              ２－ √２      √２      ３－ √２\n             ①      ｒ   ②    ｒ  ③      ｒ\n                 ２         ４        ２\n\n               ２ √２－１     ２＋ √２             ④       ｒ  ⑤      ｒ\n                 ２         ２\n\n\n                         ｒ\n\n                     ｒ        ｒ\n                     ２        ２\n                  ａ             ｂ\n                     ｒ        ｒ\n                     ２        ２\n                         ｒ"
+    ],
+    "originalContent": {
+      "body": "問２ 図に示すように、一辺がｒΩ の電熱線で作った正方形の対角線をそれぞれ同じ線種の電熱線で\n\n  結んだ回路のａ－ｂ間の合成抵抗値は、      Ω である。\n\n\n              ２－ √２      √２      ３－ √２\n             ①      ｒ   ②    ｒ  ③      ｒ\n                 ２         ４        ２\n\n               ２ √２－１     ２＋ √２             ④       ｒ  ⑤      ｒ\n                 ２         ２\n\n\n                         ｒ\n\n                     ｒ        ｒ\n                     ２        ２\n                  ａ             ｂ\n                     ｒ        ｒ\n                     ２        ２\n                         ｒ"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": true,
+    "choiceExplanations": {
+      "ア": "左右のr/4ずつを含む全体の値は(3−√2)r/2となり、この式では不足する。",
+      "イ": "a、bから上下の節点へ至るr/2の部分も含めて合成する必要がある。",
+      "ウ": "同じ材質・断面の電熱線の抵抗は長さに比例するため、各対角線は√2 rとなる。上下対称の節点を等電位としてまとめると、左右のr/4に、r/2と√2 r/2の並列合成分が直列につながる。合成値はr/2＋√2 r/{2(1＋√2)}＝(3−√2)r/2である。",
+      "エ": "中央の二つの等価経路を並列に合成すると、この係数にはならない。",
+      "オ": "上下対称の節点をまとめた後の並列部分の抵抗を過大に見積もっている。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2026-first-gakka-q3",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "電気・電子回路",
+    "topicTags": [
+      "電気通信システム",
+      "負帰還増幅回路の利得"
+    ],
+    "difficulty": 3,
+    "question": "図に示す負帰還増幅回路において、増幅器の増幅度をμ 、帰還回路の帰還率をβ とすると、μβ≫1のとき、負帰還増幅回路全体の利得(閉ループ利得)Gは、G≒［　］となる。",
+    "choices": {
+      "ア": "μ",
+      "イ": "β",
+      "ウ": "1",
+      "エ": "1/μ",
+      "オ": "1/β"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "負帰還では出力のβ倍が入力から差し引かれる。出力をVout、入力をVinとすればVout＝μ(Vin−βVout)なので、閉ループ利得はμ/(1＋μβ)。μβが1より十分大きければ分母の1を無視でき、利得は約1/βとなる。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf#page=2)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2026-first-q03.png"
+    ],
+    "imageAltTexts": [
+      "問３ 図に示す負帰還増幅回路において、増幅器の増幅度をμ 、帰還回路の帰還率をβ とすると、\n\n  μβ≫１のとき、負帰還増幅回路全体の利得(閉ループ利得)Ｇは、Ｇ≒     となる。\n\n\n                                １      １\n             ① μ  ② β  ③ １  ④      ⑤\n                                μ      β\n\n\n               入力               出力\n                  ＋\n                     ＋     μ\n\n                      －\n                        増幅器\n\n\n                          β\n\n                       帰還回路"
+    ],
+    "originalContent": {
+      "body": "問３ 図に示す負帰還増幅回路において、増幅器の増幅度をμ 、帰還回路の帰還率をβ とすると、\n\n  μβ≫１のとき、負帰還増幅回路全体の利得(閉ループ利得)Ｇは、Ｇ≒     となる。\n\n\n                                １      １\n             ① μ  ② β  ③ １  ④      ⑤\n                                μ      β\n\n\n               入力               出力\n                  ＋\n                     ＋     μ\n\n                      －\n                        増幅器\n\n\n                          β\n\n                       帰還回路"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "μは帰還のない増幅器自体の利得で、負帰還後の近似値ではない。",
+      "イ": "βは出力を入力側へ戻す割合である。強い負帰還時の利得はその逆数となる。",
+      "ウ": "μβが大きいという条件だけではβ＝1にはならず、利得を1と固定できない。",
+      "エ": "閉ループ利得はμ/(1＋μβ)なので、μの逆数には近づかない。",
+      "オ": "負帰還では出力のβ倍が入力から差し引かれる。出力をVout、入力をVinとすればVout＝μ(Vin−βVout)なので、閉ループ利得はμ/(1＋μβ)。μβが1より十分大きければ分母の1を無視でき、利得は約1/βとなる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2026-first-gakka-q4",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "電気・電子回路",
+    "topicTags": [
+      "電気通信システム",
+      "論理式に対応するゲート"
+    ],
+    "difficulty": 3,
+    "question": "A及びBを入力、Cを出力とするとき、論理式 C＝A・(¬A＋B)＋B・(A＋¬B) で示される論理回路は、［　］ゲートである。",
+    "choices": {
+      "ア": "AND",
+      "イ": "NAND",
+      "ウ": "OR",
+      "エ": "NOR",
+      "オ": "XOR"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "原本の上線は否定を表す。第1項A・(¬A＋B)はA・B、第2項B・(A＋¬B)もA・Bとなる。したがって全体はA・B＋A・B＝A・Bで、両入力が1の場合だけ出力が1となるANDゲートに一致する。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf#page=3)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2026-first-q04.png"
+    ],
+    "imageAltTexts": [
+      "問４ Ａ及びＢを入力、Ｃを出力とするとき、論理式Ｃ＝Ａ･(Ａ＋Ｂ)＋Ｂ･(Ａ＋Ｂ)で示される論理回\n\n  路は、     ゲートである。\n\n\n        ① ＡＮＤ  ② ＮＡＮＤ  ③ ＯＲ  ④ ＮＯＲ  ⑤ ＸＯＲ"
+    ],
+    "originalContent": {
+      "body": "問４ Ａ及びＢを入力、Ｃを出力とするとき、論理式Ｃ＝Ａ･(Ａ＋Ｂ)＋Ｂ･(Ａ＋Ｂ)で示される論理回\n\n  路は、     ゲートである。\n\n\n        ① ＡＮＤ  ② ＮＡＮＤ  ③ ＯＲ  ④ ＮＯＲ  ⑤ ＸＯＲ"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "原本の上線は否定を表す。第1項A・(¬A＋B)はA・B、第2項B・(A＋¬B)もA・Bとなる。したがって全体はA・B＋A・B＝A・Bで、両入力が1の場合だけ出力が1となるANDゲートに一致する。",
+      "イ": "求めた式はA・Bであり、その出力を反転する操作は含まれていない。",
+      "ウ": "ORならAまたはBの片方が1でも出力が1になるが、この式は両方が1の場合に限る。",
+      "エ": "NORは両入力が0のときに1となり、A・Bの真理値表と一致しない。",
+      "オ": "XORは入力が異なるときに1となる。設問の式はA＝B＝1でも1となる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2026-first-gakka-q5",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "電気・電子回路",
+    "topicTags": [
+      "電気通信システム",
+      "バイポーラ符号の特徴"
+    ],
+    "difficulty": 3,
+    "question": "メタリックケーブルを用いてデジタル伝送を行う場合は、一般に、ユニポーラ(単極性)符号をバイポーラ(複極性)符号に変換して送出することが多い。これは、バイポーラ符号の平均電力スペクトルには［　］成分がないという利点を利用したものである。",
+    "choices": {
+      "ア": "高調波",
+      "イ": "雑音",
+      "ウ": "側波帯",
+      "エ": "交流",
+      "オ": "直流"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "バイポーラ符号では正負のパルスを用い、符号列の平均が直流に偏らないようにする。これにより平均電力スペクトルの直流成分をなくせる。高調波や雑音そのものがなくなるという意味ではなく、直流を伝送できない結合回路などで扱いやすい点が特徴となる。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf#page=3)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2026-first-q05.png"
+    ],
+    "imageAltTexts": [
+      "問５ メタリックケーブルを用いてデジタル伝送を行う場合は、一般に、ユニポーラ(単極性)符号をバ\n\n  イポーラ(複極性)符号に変換して送出することが多い。これは、バイポーラ符号の平均電力スペク\n\n  トルには     成分がないという利点を利用したものである。\n\n\n        ① 高調波  ② 雑 音  ③ 側波帯  ④ 交 流  ⑤ 直 流"
+    ],
+    "originalContent": {
+      "body": "問５ メタリックケーブルを用いてデジタル伝送を行う場合は、一般に、ユニポーラ(単極性)符号をバ\n\n  イポーラ(複極性)符号に変換して送出することが多い。これは、バイポーラ符号の平均電力スペク\n\n  トルには     成分がないという利点を利用したものである。\n\n\n        ① 高調波  ② 雑 音  ③ 側波帯  ④ 交 流  ⑤ 直 流"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "高調波成分全体がなくなるわけではなく、直流側の性質を問うている。",
+      "イ": "バイポーラ化だけで伝送路の雑音がなくなるわけではない。",
+      "ウ": "信号の側波帯を一律になくすという利点を述べた設問ではない。",
+      "エ": "交流成分は信号伝送に必要であり、なくしたい成分は直流である。",
+      "オ": "バイポーラ符号では正負のパルスを用い、符号列の平均が直流に偏らないようにする。これにより平均電力スペクトルの直流成分をなくせる。高調波や雑音そのものがなくなるという意味ではなく、直流を伝送できない結合回路などで扱いやすい点が特徴となる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2026-first-gakka-q6",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "電気・電子回路",
+    "topicTags": [
+      "電気通信システム",
+      "交流ブリッジ回路の平衡"
+    ],
+    "difficulty": 3,
+    "question": "図に示す検出器Dが接続されたブリッジ回路において、R_Aが800 Ω、R_Bが400 Ω、R_Cが20 Ω、C_Cが1 μFのときブリッジ回路は平衡している。このときのC_Xは［　］μFである。",
+    "choices": {
+      "ア": "0.01",
+      "イ": "0.5",
+      "ウ": "1",
+      "エ": "2",
+      "オ": "5"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "平衡時は左右の枝のインピーダンス比が等しく、Zx/Zc＝RA/RB＝800/400＝2となる。直列RCの容量性リアクタンスは1/(ωC)なので、1/Cx＝2/Cc。したがってCx＝Cc/2＝0.5 μFとなる。抵抗比を容量へそのまま掛けると逆になる。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf#page=3)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2026-first-q06.png"
+    ],
+    "imageAltTexts": [
+      "問６ 図に示す検出器Ｄが接続されたブリッジ回路において、Ｒ Ａ が８００Ω 、Ｒ Ｂ が４００Ω 、\n\n  Ｒ Ｃ が２０Ω 、Ｃ Ｃ が１ μＦのときブリッジ回路は平衡している。このときのＣ Ｘ は\n\n  μＦである。\n\n\n            ① ０.０１  ② ０.５  ③ １  ④ ２  ⑤ ５\n\n\n                                        ＲＸ\n                             ＲＡ\n                                          ＣＸ\n\n\n                          Ｄ\n\n\n                                          ＲＣ\n                            ＲＢ\n\n                                      ＣＣ"
+    ],
+    "originalContent": {
+      "body": "問６ 図に示す検出器Ｄが接続されたブリッジ回路において、Ｒ Ａ が８００Ω 、Ｒ Ｂ が４００Ω 、\n\n  Ｒ Ｃ が２０Ω 、Ｃ Ｃ が１ μＦのときブリッジ回路は平衡している。このときのＣ Ｘ は\n\n  μＦである。\n\n\n            ① ０.０１  ② ０.５  ③ １  ④ ２  ⑤ ５\n\n\n                                        ＲＸ\n                             ＲＡ\n                                          ＣＸ\n\n\n                          Ｄ\n\n\n                                          ＲＣ\n                            ＲＢ\n\n                                      ＣＣ"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": true,
+    "choiceExplanations": {
+      "ア": "容量の比は抵抗値20 Ωそのものから求めず、平衡条件の800：400を使う。",
+      "イ": "平衡時は左右の枝のインピーダンス比が等しく、Zx/Zc＝RA/RB＝800/400＝2となる。直列RCの容量性リアクタンスは1/(ωC)なので、1/Cx＝2/Cc。したがってCx＝Cc/2＝0.5 μFとなる。抵抗比を容量へそのまま掛けると逆になる。",
+      "ウ": "両容量が等しいと容量性リアクタンスの比は1になり、必要な比2を満たさない。",
+      "エ": "抵抗比2を容量へそのまま掛けた値。容量性リアクタンスは容量に反比例する。",
+      "オ": "平衡条件では1/C_X＝2/C_Cとなるため、5 μFでは条件を満たさない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2026-first-gakka-q7",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "伝送方式",
+    "topicTags": [
+      "電気通信システム",
+      "電圧反射係数と電流反射係数"
+    ],
+    "difficulty": 3,
+    "question": "図に示すように、異なる特性インピーダンスZ 01 、Z 02 の線路を接続して信号を伝送したとき、その接続点における電圧反射係数をmとすると、電流反射係数は、［　］で表される。",
+    "choices": {
+      "ア": "−m",
+      "イ": "1−m",
+      "ウ": "m",
+      "エ": "1＋m",
+      "オ": "1/m"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "入射波と反射波は逆向きに進むため、同じ基準方向で定義した電流では反射波の符号が反転する。電圧反射係数をmとすれば電流反射係数は−m。接続点での合成電圧の倍率1＋mや、合成電流の倍率1−mと混同しない。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf#page=3)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2026-first-q07.png"
+    ],
+    "imageAltTexts": [
+      "問７ 図に示すように、異なる特性インピーダンスＺ ０１ 、Ｚ ０２ の線路を接続して信号を伝送したとき、\n\n  その接続点における電圧反射係数をｍとすると、電流反射係数は、     で表される。\n\n\n                                         １\n          ① － ｍ  ② １－ ｍ  ③ ｍ  ④ １＋ ｍ  ⑤                                         ｍ\n\n              伝送方向                        接続点\n\n                       電圧反射係数                       Ｚ０１                     Ｚ０２\n                          ｍ"
+    ],
+    "originalContent": {
+      "body": "問７ 図に示すように、異なる特性インピーダンスＺ ０１ 、Ｚ ０２ の線路を接続して信号を伝送したとき、\n\n  その接続点における電圧反射係数をｍとすると、電流反射係数は、     で表される。\n\n\n                                         １\n          ① － ｍ  ② １－ ｍ  ③ ｍ  ④ １＋ ｍ  ⑤                                         ｍ\n\n              伝送方向                        接続点\n\n                       電圧反射係数                       Ｚ０１                     Ｚ０２\n                          ｍ"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "入射波と反射波は逆向きに進むため、同じ基準方向で定義した電流では反射波の符号が反転する。電圧反射係数をmとすれば電流反射係数は−m。接続点での合成電圧の倍率1＋mや、合成電流の倍率1−mと混同しない。",
+      "イ": "1−mは入射電流を基準にした接続点の合成電流の倍率に当たる。",
+      "ウ": "反射波の電流は進行方向が逆なので、電圧と同じ符号のmにはならない。",
+      "エ": "1＋mは接続点での入射電圧と反射電圧の合成倍率に当たる。",
+      "オ": "電圧と電流の反射係数の関係は逆数ではなく符号の反転である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2026-first-gakka-q8",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "伝送方式",
+    "topicTags": [
+      "電気通信システム",
+      "周波数による送出レベルの補正"
+    ],
+    "difficulty": 3,
+    "question": "アナログ伝送において、伝送信号の多重化により伝送帯域が広くなると、低周波域と高周波域との伝送損失の差が大きくなることから、伝送帯域内でのSN比を一定に近づけるため、低周波域の信号送出レベルを高周波域より下げ、高周波域の信号送出レベルを上げて伝送する方法は、［　］伝送といわれる。",
+    "choices": {
+      "ア": "ベースバンド",
+      "イ": "エンファシス",
+      "ウ": "シリアル",
+      "エ": "パラレル",
+      "オ": "周波数分割双方向"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "伝送損失の大きい高周波側の信号を送信時に強め、帯域内の信号対雑音比をそろえる考え方がエンファシスである。受信側では対応する逆の特性を用いて元の周波数特性へ戻す。直列・並列というデータの送り方や、搬送波を使わないベースバンド伝送とは異なる。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf#page=3)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2026-first-q08.png"
+    ],
+    "imageAltTexts": [
+      "問８ アナログ伝送において、伝送信号の多重化により伝送帯域が広くなると、低周波域と高周波域と\n\n  の伝送損失の差が大きくなることから、伝送帯域内でのＳＮ比を一定に近づけるため、低周波域の\n\n  信号送出レベルを高周波域より下げ、高周波域の信号送出レベルを上げて伝送する方法は、\n\n  伝送といわれる。\n\n\n            ① ベースバンド  ② エンファシス  ③ シリアル\n\n            ④ パラレル     ⑤ 周波数分割双方向"
+    ],
+    "originalContent": {
+      "body": "問８ アナログ伝送において、伝送信号の多重化により伝送帯域が広くなると、低周波域と高周波域と\n\n  の伝送損失の差が大きくなることから、伝送帯域内でのＳＮ比を一定に近づけるため、低周波域の\n\n  信号送出レベルを高周波域より下げ、高周波域の信号送出レベルを上げて伝送する方法は、\n\n  伝送といわれる。\n\n\n            ① ベースバンド  ② エンファシス  ③ シリアル\n\n            ④ パラレル     ⑤ 周波数分割双方向"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "周波数ごとに送出レベルを補正する操作を、ベースバンドとは呼ばない。",
+      "イ": "伝送損失の大きい高周波側の信号を送信時に強め、帯域内の信号対雑音比をそろえる考え方がエンファシスである。受信側では対応する逆の特性を用いて元の周波数特性へ戻す。直列・並列というデータの送り方や、搬送波を使わないベースバンド伝送とは異なる。",
+      "ウ": "シリアルはデータを順に送る形態であり、周波数によるレベル補正の名称ではない。",
+      "エ": "パラレルは複数のデータを並べて送る形態であり、設問の補正操作とは異なる。",
+      "オ": "上り・下りの周波数を分ける考え方ではなく、同じ伝送帯域内のレベルを補正している。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2026-first-gakka-q9",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "伝送方式",
+    "topicTags": [
+      "電気通信システム",
+      "伝送路符号の波形"
+    ],
+    "difficulty": 3,
+    "question": "デジタル信号を送受信するための伝送路符号化方式において、入力信号と出力レベルが図に示す関係となるものは［　］符号である。",
+    "choices": {
+      "ア": "AMI",
+      "イ": "MLT-3",
+      "ウ": "CMI",
+      "エ": "NRZI",
+      "オ": "NRZ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "図では0の区間で正負への半ビットの遷移があり、1の区間では同じ極性を1ビット維持し、その極性を交互に切り替えている。これはCMI符号の規則である。AMIは1を正負交互のパルスにし、0はゼロレベルにするので、図の0区間とは合わない。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf#page=4)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2026-first-q09.png"
+    ],
+    "imageAltTexts": [
+      "問９ デジタル信号を送受信するための伝送路符号化方式において、入力信号と出力レベルが図に示す\n\n  関係となるものは     符号である。\n\n\n       ① ＡＭＩ  ② ＭＬＴ－３  ③ ＣＭＩ  ④ ＮＲＺＩ  ⑤ ＮＲＺ\n\n\n       入力信号    １   ０   １   １   １   ０   １   ０\n\n           ＋\n\n       出力\n           ０\n       レベル\n\n           －"
+    ],
+    "originalContent": {
+      "body": "問９ デジタル信号を送受信するための伝送路符号化方式において、入力信号と出力レベルが図に示す\n\n  関係となるものは     符号である。\n\n\n       ① ＡＭＩ  ② ＭＬＴ－３  ③ ＣＭＩ  ④ ＮＲＺＩ  ⑤ ＮＲＺ\n\n\n       入力信号    １   ０   １   １   １   ０   １   ０\n\n           ＋\n\n       出力\n           ０\n       レベル\n\n           －"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "AMIでは0をゼロレベルにするが、図の0は半ビットで極性が変化している。",
+      "イ": "図の0と1に対する符号化規則は、三つのレベルを順に切り替えるMLT-3ではない。",
+      "ウ": "図では0の区間で正負への半ビットの遷移があり、1の区間では同じ極性を1ビット維持し、その極性を交互に切り替えている。これはCMI符号の規則である。AMIは1を正負交互のパルスにし、0はゼロレベルにするので、図の0区間とは合わない。",
+      "エ": "単純な反転の有無ではなく、0を半ビットの遷移で表す図の規則に注目する。",
+      "オ": "NRZのような二つの一定レベルだけでは、図の0と1の表し方に一致しない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2026-first-gakka-q10",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "交換・IPネットワーク",
+    "topicTags": [
+      "電気通信システム",
+      "メタルIP電話の設備"
+    ],
+    "difficulty": 3,
+    "question": "PSTNのIP網への移行後に提供されたメタルIP電話に用いられる設備のうち、電気通信事業者のビル内に設置され、電話機との間で加入者線信号を送受信する機能などを備え、変換装置を経由してIP網と接続する装置は、［　］といわれる。",
+    "choices": {
+      "ア": "アクセスコントローラ",
+      "イ": "加入者線終端装置",
+      "ウ": "メタル収容装置",
+      "エ": "メディアゲートウェイ",
+      "オ": "メディアコンバータ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "設問の役割は、既存のメタル加入者線を収容し、電話機との加入者線信号を扱うことである。この設備がメタル収容装置に当たる。IP網への変換装置と、その手前でメタル線を収容する設備を分けて考えると選べる。光・電気の媒体変換だけを行う装置とは役割が異なる。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf#page=4)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2026-first-q10.png"
+    ],
+    "imageAltTexts": [
+      "問10 ＰＳＴＮのＩＰ網への移行後に提供されたメタルＩＰ電話に用いられる設備のうち、電気通信事\n\n  業者のビル内に設置され、電話機との間で加入者線信号を送受信する機能などを備え、変換装置を\n\n  経由してＩＰ網と接続する装置は、     といわれる。\n\n\n       ① アクセスコントローラ  ② 加入者線終端装置  ③ メタル収容装置\n\n       ④ メディアゲートウェイ  ⑤ メディアコンバータ"
+    ],
+    "originalContent": {
+      "body": "問10 ＰＳＴＮのＩＰ網への移行後に提供されたメタルＩＰ電話に用いられる設備のうち、電気通信事\n\n  業者のビル内に設置され、電話機との間で加入者線信号を送受信する機能などを備え、変換装置を\n\n  経由してＩＰ網と接続する装置は、     といわれる。\n\n\n       ① アクセスコントローラ  ② 加入者線終端装置  ③ メタル収容装置\n\n       ④ メディアゲートウェイ  ⑤ メディアコンバータ"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "設問の設備は、アクセスの制御一般ではなくメタル加入者線の収容を担当する。",
+      "イ": "選ぶ設備名はメタルIP電話のメタル収容装置であり、この選択肢の名称ではない。",
+      "ウ": "設問の役割は、既存のメタル加入者線を収容し、電話機との加入者線信号を扱うことである。この設備がメタル収容装置に当たる。IP網への変換装置と、その手前でメタル線を収容する設備を分けて考えると選べる。光・電気の媒体変換だけを行う装置とは役割が異なる。",
+      "エ": "設問は変換装置を経由してIP網につながる、その手前の収容設備を尋ねている。",
+      "オ": "媒体の変換という役割だけでは、電話機との加入者線信号を扱う設備の説明に合わない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2026-first-gakka-q11",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "交換・IPネットワーク",
+    "topicTags": [
+      "電気通信システム",
+      "呼量から呼数を求める"
+    ],
+    "difficulty": 3,
+    "question": "ある回線群についてトラヒックを30分間調査し、保留時間別に呼数を集計したところ、表に示す結果が得られた。調査時間中におけるこの回線群の総呼量が4.0アーランであるとき、1呼当たりの保留時間が200秒の呼数は、［　］呼である。",
+    "choices": {
+      "ア": "4",
+      "イ": "10",
+      "ウ": "15",
+      "エ": "18",
+      "オ": "21"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "30分は1800秒で、総呼量4.0アーランに対応する延べ保留時間は4.0×1800＝7200秒。既知の呼による保留時間は110×9＋120×18＋150×7＝4200秒である。残り3000秒を200秒で割ると15呼となる。呼量は延べ保留時間を調査時間で割った値である。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf#page=4)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2026-first-q11.png"
+    ],
+    "imageAltTexts": [
+      "問11 ある回線群についてトラヒックを３０分間調査し、保留時間別に呼数を集計したところ、表に示\n\n  す結果が得られた。調査時間中におけるこの回線群の総呼量が４.０アーランであるとき、１呼\n\n  当たりの保留時間が２００秒の呼数は、     呼である。\n\n\n       １呼当たりの保留時間  １１０秒  １２０秒  １５０秒  ２００秒\n\n           呼  数       ９     １８     ７\n\n\n\n            ① ４  ② １０  ③ １５  ④ １８  ⑤ ２１"
+    ],
+    "originalContent": {
+      "body": "問11 ある回線群についてトラヒックを３０分間調査し、保留時間別に呼数を集計したところ、表に示\n\n  す結果が得られた。調査時間中におけるこの回線群の総呼量が４.０アーランであるとき、１呼\n\n  当たりの保留時間が２００秒の呼数は、     呼である。\n\n\n       １呼当たりの保留時間  １１０秒  １２０秒  １５０秒  ２００秒\n\n           呼  数       ９     １８     ７\n\n\n\n            ① ４  ② １０  ③ １５  ④ １８  ⑤ ２１"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": true,
+    "choiceExplanations": {
+      "ア": "4呼では延べ保留時間が4200＋200×4＝5000秒となり、4アーランに届かない。",
+      "イ": "10呼では延べ保留時間6200秒となり、必要な7200秒を満たさない。",
+      "ウ": "30分は1800秒で、総呼量4.0アーランに対応する延べ保留時間は4.0×1800＝7200秒。既知の呼による保留時間は110×9＋120×18＋150×7＝4200秒である。残り3000秒を200秒で割ると15呼となる。呼量は延べ保留時間を調査時間で割った値である。",
+      "エ": "18呼では延べ保留時間7800秒となり、総呼量が4アーランを超える。",
+      "オ": "21呼では延べ保留時間8400秒となり、調査条件より大きくなる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2026-first-gakka-q12",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "交換・IPネットワーク",
+    "topicTags": [
+      "電気通信システム",
+      "IP網上のマルチメディアサービス"
+    ],
+    "difficulty": 3,
+    "question": "IPをベースとしたパケット通信ネットワーク上で、音声とビデオなどのマルチメディア・アプリケーションを提供することを目的として標準化された仕組みは、［　］といわれる。",
+    "choices": {
+      "ア": "IMS",
+      "イ": "ITU",
+      "ウ": "ISP",
+      "エ": "MMS",
+      "オ": "RCS"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "IMSはIP Multimedia Subsystemの略で、IP網上で音声・映像などのマルチメディアサービスを提供するための仕組みを指す。ITUは国際機関、ISPは接続サービスの提供者であり、システムの名称ではない。設問は個別のメッセージサービスではなく、それらを支える仕組みを尋ねている。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf#page=4)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2026-first-q12.png"
+    ],
+    "imageAltTexts": [
+      "問12 ＩＰをベースとしたパケット通信ネットワーク上で、音声とビデオなどのマルチメディア・アプ\n\n  リケーションを提供することを目的として標準化された仕組みは、     といわれる。\n\n\n        ① ＩＭＳ  ② ＩＴＵ  ③ ＩＳＰ  ④ ＭＭＳ  ⑤ ＲＣＳ"
+    ],
+    "originalContent": {
+      "body": "問12 ＩＰをベースとしたパケット通信ネットワーク上で、音声とビデオなどのマルチメディア・アプ\n\n  リケーションを提供することを目的として標準化された仕組みは、     といわれる。\n\n\n        ① ＩＭＳ  ② ＩＴＵ  ③ ＩＳＰ  ④ ＭＭＳ  ⑤ ＲＣＳ"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "IMSはIP Multimedia Subsystemの略で、IP網上で音声・映像などのマルチメディアサービスを提供するための仕組みを指す。ITUは国際機関、ISPは接続サービスの提供者であり、システムの名称ではない。設問は個別のメッセージサービスではなく、それらを支える仕組みを尋ねている。",
+      "イ": "ITUは機関の名称であり、IP網上のマルチメディア提供方式そのものの名称ではない。",
+      "ウ": "ISPは接続サービスを提供する事業者を表し、設問の標準化された仕組みとは異なる。",
+      "エ": "設問は特定のメッセージサービスではなく、音声・映像を提供する共通の仕組みを問う。",
+      "オ": "設問にあるIP網でのマルチメディア提供基盤はIMSであり、RCSを選ぶ条件ではない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2026-first-gakka-q13",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "交換・IPネットワーク",
+    "topicTags": [
+      "電気通信システム",
+      "光ファイバと同軸ケーブルの併用"
+    ],
+    "difficulty": 3,
+    "question": "ケーブルテレビ網における伝送路の構成として、センタのヘッドエンド装置から光ノードまでの区間に光ファイバケーブルを用い、光ノードから個々のユーザ宅までの区間に同軸ケーブルを用いる構成を採る方式は、［　］方式といわれる。この方式は、全区間を同軸ケーブルで構成する方式と比較して、高速なデータ伝送が可能とされている。",
+    "choices": {
+      "ア": "ADS",
+      "イ": "PDS",
+      "ウ": "PLC",
+      "エ": "HFC",
+      "オ": "SDH"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "HFCはHybrid Fiber Coaxialの略で、光ファイバと同軸ケーブルを組み合わせる方式を表す。ヘッドエンドから光ノードまでは光、そこから利用者宅までは同軸という区間の分担が判断の手掛かり。PDSやADSは光アクセスの構成に関する用語で、同軸との併用を表す名称ではない。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf#page=4)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2026-first-q13.png"
+    ],
+    "imageAltTexts": [
+      "問13 ケーブルテレビ網における伝送路の構成として、センタのヘッドエンド装置から光ノードまでの\n\n  区間に光ファイバケーブルを用い、光ノードから個々のユーザ宅までの区間に同軸ケーブルを用い\n\n  る構成を採る方式は、     方式といわれる。この方式は、全区間を同軸ケーブルで構成する\n\n  方式と比較して、高速なデータ伝送が可能とされている。\n\n\n        ① ＡＤＳ  ② ＰＤＳ  ③ ＰＬＣ  ④ ＨＦＣ  ⑤ ＳＤＨ"
+    ],
+    "originalContent": {
+      "body": "問13 ケーブルテレビ網における伝送路の構成として、センタのヘッドエンド装置から光ノードまでの\n\n  区間に光ファイバケーブルを用い、光ノードから個々のユーザ宅までの区間に同軸ケーブルを用い\n\n  る構成を採る方式は、     方式といわれる。この方式は、全区間を同軸ケーブルで構成する\n\n  方式と比較して、高速なデータ伝送が可能とされている。\n\n\n        ① ＡＤＳ  ② ＰＤＳ  ③ ＰＬＣ  ④ ＨＦＣ  ⑤ ＳＤＨ"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "設問の光区間と同軸区間を併用する構成はHFCであり、ADSではない。",
+      "イ": "PDSは光を分岐して共有する構成で、同軸との併用を表すHFCとは異なる。",
+      "ウ": "PLCは電力線を使う通信で、設問の光ファイバと同軸の組合せに合わない。",
+      "エ": "HFCはHybrid Fiber Coaxialの略で、光ファイバと同軸ケーブルを組み合わせる方式を表す。ヘッドエンドから光ノードまでは光、そこから利用者宅までは同軸という区間の分担が判断の手掛かり。PDSやADSは光アクセスの構成に関する用語で、同軸との併用を表す名称ではない。",
+      "オ": "設問は伝送路の光・同軸の区間構成を尋ねており、その名称はSDHではない。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2026-first-gakka-q14",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "交換・IPネットワーク",
+    "topicTags": [
+      "電気通信システム",
+      "TCPセグメントの順序管理"
+    ],
+    "difficulty": 3,
+    "question": "IPネットワークに用いられるTCPでは、受信側において受信データの順序整合、重複データの廃棄などが行えるよう、送信するTCPセグメントに［　］を付与している。",
+    "choices": {
+      "ア": "チェックサム",
+      "イ": "データオフセット",
+      "ウ": "ポート番号",
+      "エ": "コントロールフラグ",
+      "オ": "シーケンス番号"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "explanation": "TCPはデータのバイト位置をシーケンス番号で示す。受信側はその番号を使って順番をそろえ、既に受け取ったデータの重複を識別する。チェックサムは誤りの検出、ポート番号は通信先アプリケーションの識別、データオフセットはヘッダ長の指定に用いられる。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf#page=5)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2026-first-q14.png"
+    ],
+    "imageAltTexts": [
+      "問14 ＩＰネットワークに用いられるＴＣＰでは、受信側において受信データの順序整合、重複データ\n\n  の廃棄などが行えるよう、送信するＴＣＰセグメントに     を付与している。\n\n\n         ① チェックサム      ② データオフセット  ③ ポート番号\n\n         ④ コントロールフラグ  ⑤ シーケンス番号"
+    ],
+    "originalContent": {
+      "body": "問14 ＩＰネットワークに用いられるＴＣＰでは、受信側において受信データの順序整合、重複データ\n\n  の廃棄などが行えるよう、送信するＴＣＰセグメントに     を付与している。\n\n\n         ① チェックサム      ② データオフセット  ③ ポート番号\n\n         ④ コントロールフラグ  ⑤ シーケンス番号"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "チェックサムはデータの誤りを調べるための値で、バイトの順序を指定する番号ではない。",
+      "イ": "データオフセットはヘッダ長を示し、データの順序や重複を識別するものではない。",
+      "ウ": "ポート番号はアプリケーション側の通信端点を区別するために使う。",
+      "エ": "フラグは制御上の状態などを示す。データの位置を示すのはシーケンス番号である。",
+      "オ": "TCPはデータのバイト位置をシーケンス番号で示す。受信側はその番号を使って順番をそろえ、既に受け取ったデータの重複を識別する。チェックサムは誤りの検出、ポート番号は通信先アプリケーションの識別、データオフセットはヘッダ長の指定に用いられる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2026-first-gakka-q15",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "交換・IPネットワーク",
+    "topicTags": [
+      "電気通信システム",
+      "固定電話の双方向番号ポータビリティ"
+    ],
+    "difficulty": 3,
+    "question": "固定電話における双方向番号ポータビリティでは、一般に、どの電気通信事業者から取得した固定電話番号であっても番号ポータビリティが実現されており、接続方式には、発信元のSIPサーバからの呼制御信号とは異なる信号により各電気通信事業者が保有する番号データベースに対して移転先を問い合わせ、呼制御信号を移転先に接続する［　］方式が採用されている。",
+    "choices": {
+      "ア": "リダイレクション",
+      "イ": "ENUM",
+      "ウ": "カットスルー",
+      "エ": "CIDR",
+      "オ": "ストアアンドフォーワード"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "ENUMは電話番号を用いて接続先の情報を検索する仕組みである。設問では、呼制御信号そのものとは別の問い合わせによって番号データベースを調べ、移転先へ呼を接続する点が特徴となる。CIDRはIPアドレスの集約・割当ての考え方であり、番号の移転先を検索する方式ではない。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf#page=5)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2026-first-q15.png"
+    ],
+    "imageAltTexts": [
+      "問15 固定電話における双方向番号ポータビリティでは、一般に、どの電気通信事業者から取得した固\n\n  定電話番号であっても番号ポータビリティが実現されており、接続方式には、発信元のＳＩＰサー\n\n  バからの呼制御信号とは異なる信号により各電気通信事業者が保有する番号データベースに対して\n\n  移転先を問い合わせ、呼制御信号を移転先に接続する     方式が採用されている。\n\n\n           ① リダイレクション  ② ＥＮＵＭ  ③ カットスルー\n\n           ④ ＣＩＤＲ       ⑤ ストアアンドフォーワード"
+    ],
+    "originalContent": {
+      "body": "問15 固定電話における双方向番号ポータビリティでは、一般に、どの電気通信事業者から取得した固\n\n  定電話番号であっても番号ポータビリティが実現されており、接続方式には、発信元のＳＩＰサー\n\n  バからの呼制御信号とは異なる信号により各電気通信事業者が保有する番号データベースに対して\n\n  移転先を問い合わせ、呼制御信号を移転先に接続する     方式が採用されている。\n\n\n           ① リダイレクション  ② ＥＮＵＭ  ③ カットスルー\n\n           ④ ＣＩＤＲ       ⑤ ストアアンドフォーワード"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "設問は呼制御信号とは別の問い合わせで番号情報を検索するENUM方式を述べている。",
+      "イ": "ENUMは電話番号を用いて接続先の情報を検索する仕組みである。設問では、呼制御信号そのものとは別の問い合わせによって番号データベースを調べ、移転先へ呼を接続する点が特徴となる。CIDRはIPアドレスの集約・割当ての考え方であり、番号の移転先を検索する方式ではない。",
+      "ウ": "選択肢のカットスルーではなく、番号データベースを問い合わせるENUMが対応する。",
+      "エ": "CIDRはIPアドレスの割当てや経路の集約に関する用語である。",
+      "オ": "蓄積してから転送する方式の説明ではなく、番号の移転先を検索して接続する処理である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2026-first-gakka-q16",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "交換・IPネットワーク",
+    "topicTags": [
+      "電気通信システム",
+      "インターネット層のセキュリティ"
+    ],
+    "difficulty": 3,
+    "question": "TCP/IPプロトコル階層モデルのインターネット層における通信のセキュリティを確保するためのプロトコルである［　］の主な機能として、認証機能、データ暗号化機能及び鍵交換機能が挙げられる。",
+    "choices": {
+      "ア": "HTTPS",
+      "イ": "PPTP",
+      "ウ": "SSL",
+      "エ": "IPsec",
+      "オ": "SCTP"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "IPsecはIP層で通信を保護するための仕組みで、認証や暗号化を行い、鍵交換の仕組みと組み合わせて利用する。HTTPSやSSLはIP層そのものを保護する名称ではない。SCTPはトランスポート層のプロトコルであり、設問が指定する階層と機能を満たさない。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf#page=5)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2026-first-q16.png"
+    ],
+    "imageAltTexts": [
+      "問16 ＴＣＰ／ＩＰプロトコル階層モデルのインターネット層における通信のセキュリティを確保する\n\n  ためのプロトコルである     の主な機能として、認証機能、データ暗号化機能及び鍵交換機\n\n  能が挙げられる。\n\n\n              ① ＨＴＴＰＳ  ② ＰＰＴＰ  ③ ＳＳＬ\n\n              ④ ＩＰｓｅｃ  ⑤ ＳＣＴＰ"
+    ],
+    "originalContent": {
+      "body": "問16 ＴＣＰ／ＩＰプロトコル階層モデルのインターネット層における通信のセキュリティを確保する\n\n  ためのプロトコルである     の主な機能として、認証機能、データ暗号化機能及び鍵交換機\n\n  能が挙げられる。\n\n\n              ① ＨＴＴＰＳ  ② ＰＰＴＰ  ③ ＳＳＬ\n\n              ④ ＩＰｓｅｃ  ⑤ ＳＣＴＰ"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "HTTPSはWeb通信を保護する仕組みで、指定されたインターネット層のプロトコル名ではない。",
+      "イ": "設問が列挙するIP層での認証・暗号化などに対応するのはIPsecである。",
+      "ウ": "SSLは設問が指定するIP層の保護プロトコルとは階層が異なる。",
+      "エ": "IPsecはIP層で通信を保護するための仕組みで、認証や暗号化を行い、鍵交換の仕組みと組み合わせて利用する。HTTPSやSSLはIP層そのものを保護する名称ではない。SCTPはトランスポート層のプロトコルであり、設問が指定する階層と機能を満たさない。",
+      "オ": "SCTPはトランスポート層のプロトコルで、設問が指定する層とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2026-first-gakka-q17",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "無線・光通信・電源",
+    "topicTags": [
+      "電気通信システム",
+      "3素子八木・宇田アンテナの配置"
+    ],
+    "difficulty": 3,
+    "question": "3素子八木・宇田アンテナの各素子は、電波が放射される方向から見て、［　］の順に配置されている。",
+    "choices": {
+      "ア": "放射器→導波器→反射器",
+      "イ": "導波器→放射器→反射器",
+      "ウ": "放射器→反射器→導波器",
+      "エ": "導波器→反射器→放射器",
+      "オ": "反射器→導波器→放射器"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "explanation": "主な放射方向には導波器、その後ろに給電する放射器、さらに後方に反射器を置く。設問は電波が放射される側からアンテナを見た順序なので、導波器→放射器→反射器になる。放射方向へ進む順に並べた場合とは読み取り方向が逆になることに注意する。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf#page=5)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2026-first-q17.png"
+    ],
+    "imageAltTexts": [
+      "問17 ３素子八木・宇田アンテナの各素子は、電波が放射される方向から見て、     の順に配置\n\n  されている。\n\n\n           ① 放射器→導波器→反射器  ② 導波器→放射器→反射器\n\n           ③ 放射器→反射器→導波器  ④ 導波器→反射器→放射器\n\n           ⑤ 反射器→導波器→放射器"
+    ],
+    "originalContent": {
+      "body": "問17 ３素子八木・宇田アンテナの各素子は、電波が放射される方向から見て、     の順に配置\n\n  されている。\n\n\n           ① 放射器→導波器→反射器  ② 導波器→放射器→反射器\n\n           ③ 放射器→反射器→導波器  ④ 導波器→反射器→放射器\n\n           ⑤ 反射器→導波器→放射器"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "放射される側には導波器を置くので、先頭を放射器にはしない。",
+      "イ": "主な放射方向には導波器、その後ろに給電する放射器、さらに後方に反射器を置く。設問は電波が放射される側からアンテナを見た順序なので、導波器→放射器→反射器になる。放射方向へ進む順に並べた場合とは読み取り方向が逆になることに注意する。",
+      "ウ": "反射器は放射器より後方であり、導波器を最後に置く順序は一致しない。",
+      "エ": "中央の給電素子は放射器で、導波器と反射器の間に置く。",
+      "オ": "放射方向側の先頭は反射器ではなく導波器である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2026-first-gakka-q18",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "無線・光通信・電源",
+    "topicTags": [
+      "電気通信システム",
+      "GE-PONの上り帯域制御"
+    ],
+    "difficulty": 3,
+    "question": "GE-PONシステムでは、複数のONUで共用している伝送帯域を有効活用するため、一般に、ONUからOLT方向の上り信号の帯域を動的に制御しており、各ONUは要求する帯域をOLTへ通知し、OLTが各ONUに帯域を割り当てる［　］といわれる機能が用いられている。",
+    "choices": {
+      "ア": "DBA",
+      "イ": "DMT",
+      "ウ": "FEC",
+      "エ": "SCM",
+      "オ": "TDM"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "explanation": "DBAはDynamic Bandwidth Allocation、動的帯域割当てを表す。各ONUからの要求などを基にOLTが上りの帯域を配分し、共用区間を効率よく利用する。FECは誤り訂正、DMTやSCMは変調・多重に関する用語で、要求に応じて帯域を割り当てる機能の名称ではない。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf#page=5)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2026-first-q18.png"
+    ],
+    "imageAltTexts": [
+      "問18 ＧＥ－ＰＯＮシステムでは、複数のＯＮＵで共用している伝送帯域を有効活用するため、一般に、\n\n  ＯＮＵからＯＬＴ方向の上り信号の帯域を動的に制御しており、各ＯＮＵは要求する帯域をＯＬＴ\n\n  へ通知し、ＯＬＴが各ＯＮＵに帯域を割り当てる     といわれる機能が用いられている。\n\n\n        ① ＤＢＡ  ② ＤＭＴ  ③ ＦＥＣ  ④ ＳＣＭ  ⑤ ＴＤＭ"
+    ],
+    "originalContent": {
+      "body": "問18 ＧＥ－ＰＯＮシステムでは、複数のＯＮＵで共用している伝送帯域を有効活用するため、一般に、\n\n  ＯＮＵからＯＬＴ方向の上り信号の帯域を動的に制御しており、各ＯＮＵは要求する帯域をＯＬＴ\n\n  へ通知し、ＯＬＴが各ＯＮＵに帯域を割り当てる     といわれる機能が用いられている。\n\n\n        ① ＤＢＡ  ② ＤＭＴ  ③ ＦＥＣ  ④ ＳＣＭ  ⑤ ＴＤＭ"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "DBAはDynamic Bandwidth Allocation、動的帯域割当てを表す。各ONUからの要求などを基にOLTが上りの帯域を配分し、共用区間を効率よく利用する。FECは誤り訂正、DMTやSCMは変調・多重に関する用語で、要求に応じて帯域を割り当てる機能の名称ではない。",
+      "イ": "DMTは設問にある要求に応じた動的帯域割当ての機能名ではない。",
+      "ウ": "FECは誤り訂正を行うもので、ONUごとの帯域要求を割り当てる機能とは異なる。",
+      "エ": "SCMは多重化に関する用語で、設問にある動的な割当て機能の名称ではない。",
+      "オ": "時分割での伝送と、要求に応じて帯域を動的に配分するDBAという機能名を区別する。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2026-first-gakka-q19",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "無線・光通信・電源",
+    "topicTags": [
+      "電気通信システム",
+      "遮断器間で保つ協調"
+    ],
+    "difficulty": 3,
+    "question": "高圧で受電する通信ビルでは、自ビル内の事故が他需要家に影響を与えること及び他需要家の事故の影響を受けることを防止するために、自ビル内及び電気事業者の配電用変電所内のそれぞれに施設される遮断器などの間で［　］を保つ必要がある。",
+    "choices": {
+      "ア": "絶縁協調",
+      "イ": "等電位化",
+      "ウ": "保護協調",
+      "エ": "系統安定性",
+      "オ": "短絡強度協調"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "explanation": "事故箇所に近い保護装置を適切に動作させ、他の需要家や上位系統への影響を抑える関係を保護協調という。遮断器や保護リレーの動作時間・電流特性を組み合わせて考える。絶縁協調は耐電圧などの整合を扱う考え方で、遮断器の選択的な動作関係とは異なる。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf#page=5)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2026-first-q19.png"
+    ],
+    "imageAltTexts": [
+      "問19 高圧で受電する通信ビルでは、自ビル内の事故が他需要家に影響を与えること及び他需要家の事\n\n  故の影響を受けることを防止するために、自ビル内及び電気事業者の配電用変電所内のそれぞれに\n\n  施設される遮断器などの間で     を保つ必要がある。\n\n\n    ① 絶縁協調  ② 等電位化  ③ 保護協調  ④ 系統安定性  ⑤ 短絡強度協調"
+    ],
+    "originalContent": {
+      "body": "問19 高圧で受電する通信ビルでは、自ビル内の事故が他需要家に影響を与えること及び他需要家の事\n\n  故の影響を受けることを防止するために、自ビル内及び電気事業者の配電用変電所内のそれぞれに\n\n  施設される遮断器などの間で     を保つ必要がある。\n\n\n    ① 絶縁協調  ② 等電位化  ③ 保護協調  ④ 系統安定性  ⑤ 短絡強度協調"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "絶縁の耐電圧などをそろえる考え方と、遮断器の動作を協調させる考え方を区別する。",
+      "イ": "等電位化は電位差を抑える考え方で、遮断器間の動作関係の名称ではない。",
+      "ウ": "事故箇所に近い保護装置を適切に動作させ、他の需要家や上位系統への影響を抑える関係を保護協調という。遮断器や保護リレーの動作時間・電流特性を組み合わせて考える。絶縁協調は耐電圧などの整合を扱う考え方で、遮断器の選択的な動作関係とは異なる。",
+      "エ": "事故時の遮断器の選択的な動作関係を表す用語は保護協調である。",
+      "オ": "短絡に耐える強度だけでなく、事故の影響を限定する動作上の保護協調が必要である。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  },
+  {
+    "id": "dekyo-chief-system-2026-first-gakka-q20",
+    "exam": "dekyo-chief-system",
+    "session": "gakka",
+    "year": 2026,
+    "fiscalYear": 2026,
+    "season": "first",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "無線・光通信・電源",
+    "topicTags": [
+      "電気通信システム",
+      "ドロップ光ファイバケーブルの構成"
+    ],
+    "difficulty": 3,
+    "question": "ユーザ宅への引込みに使用するドロップ光ファイバケーブルの構成要素である［　］には、落雷などによるサージ電流がケーブルを介して宅内へ侵入することを防止するために、一般に、FRPが用いられる。",
+    "choices": {
+      "ア": "リップコード",
+      "イ": "ケーブル外被",
+      "ウ": "スロットロッド",
+      "エ": "テンションメンバ",
+      "オ": "光ファイバテープ心線被覆"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "explanation": "テンションメンバはケーブルに加わる張力を受け持ち、光ファイバへの力を抑える部材である。金属の代わりにFRPを使うと、張力を支えながら導電経路を作らずに済む。外被や心線の被覆など、保護を目的とする他の構成部材と、張力を担う部材を区別する。\n\n出典：[日本データ通信協会・公式問題](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf#page=6)／[公式正答](https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf)。解説は過去問AIの独自作成。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/dekyo-chief-system/2026-first-q20.png"
+    ],
+    "imageAltTexts": [
+      "問20 ユーザ宅への引込みに使用するドロップ光ファイバケーブルの構成要素である     には、\n\n  落雷などによるサージ電流がケーブルを介して宅内へ侵入することを防止するために、一般に、\n\n  ＦＲＰが用いられる。\n\n\n         ① リップコード     ② ケーブル外被  ③ スロットロッド\n\n         ④ テンションメンバ  ⑤ 光ファイバテープ心線被覆"
+    ],
+    "originalContent": {
+      "body": "問20 ユーザ宅への引込みに使用するドロップ光ファイバケーブルの構成要素である     には、\n\n  落雷などによるサージ電流がケーブルを介して宅内へ侵入することを防止するために、一般に、\n\n  ＦＲＰが用いられる。\n\n\n         ① リップコード     ② ケーブル外被  ③ スロットロッド\n\n         ④ テンションメンバ  ⑤ 光ファイバテープ心線被覆"
+    },
+    "sourcePdfUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c4863ba66.pdf",
+    "sourceAnswerUrl": "https://www.dekyo.or.jp/shiken/assets/files/articles/2577/files25776a56c56cb3db8.pdf",
+    "sourceAttribution": "出典：一般財団法人日本データ通信協会 電気通信国家試験センター「電気通信主任技術者試験 電気通信システム」。",
+    "license": "DEKYO-attributed",
+    "isCalculation": false,
+    "choiceExplanations": {
+      "ア": "リップコードは外被を裂くための部材で、張力を受け持つテンションメンバとは役割が異なる。",
+      "イ": "外被はケーブル全体の保護層で、FRPを使う張力部材を尋ねた設問の答えではない。",
+      "ウ": "設問のドロップケーブルで張力を受け持つ部材名はテンションメンバである。",
+      "エ": "テンションメンバはケーブルに加わる張力を受け持ち、光ファイバへの力を抑える部材である。金属の代わりにFRPを使うと、張力を支えながら導電経路を作らずに済む。外被や心線の被覆など、保護を目的とする他の構成部材と、張力を担う部材を区別する。",
+      "オ": "心線の被覆と、ケーブルの張力を支える部材は区別する。"
+    },
+    "explanationCoverage": "full",
+    "needsReview": false
+  }
+]

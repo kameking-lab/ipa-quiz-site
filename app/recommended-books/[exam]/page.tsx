@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { ArrowLeft, ExternalLink, BookOpen, Sparkles } from "lucide-react";
+import { ArrowLeft, ExternalLink, BookOpen } from "lucide-react";
 
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -84,7 +84,7 @@ export async function generateMetadata({
   const label = EXAM_LABELS[code];
   const title = `【${label}】おすすめ問題集`;
   const ogTitle = `${title} | 過去問AI`;
-  const description = `${label}試験の定番問題集・参考書をAIが厳選。教科書・過去問・午後対策・論文事例まで段階別に紹介し、過去問AIと組み合わせた最短学習ルートを提案します。`;
+  const description = `${label}試験の定番問題集・参考書を紹介。教科書・過去問・午後対策・論文事例まで段階別に紹介し、過去問AIと組み合わせた最短学習ルートを提案します。`;
   const ogParams = new URLSearchParams({
     type: "books",
     title: `${label} おすすめ問題集`,
@@ -242,7 +242,6 @@ export default async function RecommendedBooksExamPage({
         <p className="text-sm leading-relaxed text-zinc-700 dark:text-zinc-300">{intro}</p>
         <div className="mt-3 flex flex-wrap gap-2 text-xs">
           <Badge variant="outline">{books.length}冊掲載</Badge>
-          <Badge variant="outline">AI推薦</Badge>
           <Badge variant="success">過去問AIと併用推奨</Badge>
         </div>
       </header>
@@ -314,7 +313,6 @@ export default async function RecommendedBooksExamPage({
         className="mb-10 rounded-2xl border border-sky-200 bg-sky-50 p-4 dark:border-sky-900/50 dark:bg-sky-950/30"
       >
         <div className="mb-2 flex items-center gap-2">
-          <Sparkles className="h-5 w-5 text-sky-600 dark:text-sky-300" />
           <h2 className="text-lg font-bold text-sky-900 dark:text-sky-100">
             この書籍と過去問AIを組み合わせるおすすめ学習プラン
           </h2>

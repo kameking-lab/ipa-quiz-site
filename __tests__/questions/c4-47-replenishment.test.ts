@@ -74,7 +74,7 @@ for (const { exam, year, questions: all, a, b } of editions) {
         expect(entry.pdfPage).toBe(Number(questions[i].sourcePdfUrl!.split("#page=")[1]));
         const graph = buildQuestionJsonLd({ question: questions[i], pageUrlAbs: `https://www.kakomon-ai.jp${questionPagePath(questions[i])}`, title: "化学分析" })["@graph"][0];
         if (!("hasPart" in graph) || !("acceptedAnswer" in graph.hasPart) || Array.isArray(graph.hasPart.acceptedAnswer)) throw new Error("Missing answer");
-        expect(graph.hasPart.author.name).toBe("中央職業能力開発協会");
+        expect(graph.hasPart.author?.name).toBe("中央職業能力開発協会");
         expect(graph.hasPart.acceptedAnswer.text).toContain(questions[i].officialAnswerNumber);
       }
     });

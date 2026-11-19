@@ -1,7 +1,7 @@
 "use client";
 
 import * as React from "react";
-import { CheckCircle2, Clock, Share2, Sparkles, Target, X } from "lucide-react";
+import { CheckCircle2, Clock, Share2, Target, X } from "lucide-react";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
 import { Button } from "@/components/ui/button";
 import type { SessionSummary } from "@/lib/motivation/session";
@@ -85,7 +85,6 @@ export function SessionSummaryDialog({ open, summary, onClose }: Props) {
           </button>
           <div className="bg-gradient-to-br from-sky-500 via-sky-600 to-indigo-600 px-6 py-5 text-white">
             <div className="mb-1 flex items-center gap-1 text-xs opacity-90">
-              <Sparkles className="h-3 w-3" />
               セッション完了
             </div>
             <DialogTitle className="text-2xl font-bold leading-8 tracking-tight">
@@ -136,7 +135,6 @@ export function SessionSummaryDialog({ open, summary, onClose }: Props) {
 
             <div className="rounded-xl border border-sky-200 bg-sky-50 p-3 text-sm dark:border-sky-900 dark:bg-sky-950/40">
               <div className="flex items-start gap-2">
-                <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-sky-600 dark:text-sky-400" />
                 <div>
                   <p className="font-semibold text-sky-900 dark:text-sky-100">
                     明日のおすすめ

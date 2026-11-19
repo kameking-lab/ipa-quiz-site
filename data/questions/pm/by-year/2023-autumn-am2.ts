@@ -24,6 +24,7 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "アジャイル宣言の原則には「開発の後期であっても、変更を歓迎する」「計画に従うことよりも変化への対応を」とあり、顧客の変更要求自体は歓迎すべきです。しかし、期間延長ではなく、追加機能を含む全機能の優先順位を顧客と合意し、期間内で優先度の高い機能から開発を進めることで、価値の高いものを早期に提供し、フィードバックを得るべきでした。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 21500:2018における「プロジェクト全体計画の作成」の目的は、プロジェクトをどのように実行し、管理し、終結するのかを包括的に文書化することです。これは、プロジェクトマネジメント計画書を作成し、全てのサブマネジメント計画を統合するプロセスに相当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "JIS Q 21500:2018において、「スコープの定義」はプロジェクトの目標を達成するために必要な作業を詳細に特定し、成果物を明確にするプロセスです。これはプロジェクトの具体的な内容を定める計画段階の活動であるため、計画のプロセス群に属します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "プロジェクトマネージャがステークホルダの貢献を最大限利用するためには、まずステークホルダがプロジェクトに与える影響や彼らの期待を深く理解する必要があります。そのため、「ステークホルダ及びステークホルダがプロジェクトに及ぼす影響を詳細に分析する」活動は、効果的なステークホルダマネジメントの基礎となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -119,7 +123,14 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
       "エ": "150"
     },
     "answer": "エ",
-    "explanation": "この問題では、アーンドバリューマネジメント（EVM）の概念と、完成時総コスト見積り（EAC）の算出方法を理解しているかが問われています。EACの算出には、現状のコスト効率が将来も継続するという仮定に基づき、EAC = 実績コスト (AC) + (完成時総予算 (BAC) - アーンドバリュー (EV)) / コストパフォーマンス指標 (CPI) という公式を用います。あるいは、より直接的に、EAC = BAC / CPI という公式も使用できます。ここでは、後者の公式を採用し、提供された表から、BAC（プロジェクト全体の予算）とCPI（コストパフォーマンス指標）の値を読み取ることが重要となります。CPIは EV / AC で計算され、プロジェクトのコスト効率を示します。\n\nまず、正解の根拠について説明します。完成時総コスト見積り (EAC) は、プロジェクト完了までに要すると見積もられる総コストです。問題文の状況において、コスト効率が今後も続くと仮定した場合、EACは、プロジェクト全体の総予算 (BAC) を、現時点でのコストパフォーマンス指標 (CPI) で割ることによって算出されます。CPIは、計画通りに進んでいるか、それとも予算超過しているかを示す指標です。この公式 EAC = BAC / CPI を用いることで、現状のコスト効率を将来に extrapolate（外挿）した、より現実的な完成時総コストの見積もりを得ることができます。\n\n次に、他の選択肢がなぜ誤りなのかを検討します。\n\nアの110万円は、単純に実績コスト (AC) や、現時点までのアーンドバリュー (EV) に基づいた計算結果である可能性があり、将来のコスト効率を考慮したEACの算出方法として不適切です。\n\nイの120万円は、プロジェクトの現時点までの累積コスト (AC) に、残りの期間における予測コストを加算した値に近しいかもしれませんが、CPIを考慮したEACの算出とは異なります。\n\nウの135万円は、何らかの別の計算方法、例えば、現時点までの進捗率を基にした単純な線形外挿などで得られる数値かもしれませんが、EVMにおけるコスト効率の概念を正確に反映していません。EVMでは、実績（AC）と価値（EV）の乖離をコストパフォーマンス指標（CPI）で定量化し、これを基に将来を予測します。",
+    "explanation": "現時点のコスト効率はEV÷AC＝40÷60です。残りの予算価値は100－40＝60万円なので、この効率で作業を終えるためには60÷（40÷60）＝90万円かかります。支出済みの60万円を足すと、出来上がるまでに150万円かかる見積りになります。",
+    "choiceExplanations": {
+      "ア": "110万円は、実コスト60万円に計画上の残額50万円を足した値です。実際の出来高は40万円なので、残作業の予算価値は60万円です。",
+      "イ": "120万円は、期間が半分なので実コスト60万円を倍にした値です。進捗は時間の比率でなく、EVの40万円で測ります。",
+      "ウ": "残作業を100－50＝50万円分とすると135万円になります。差し引くのは現時点の計画価値PVではなく、実際の出来高EVです。",
+      "エ": "これまでのコスト効率はEV÷AC＝40÷60です。同じ効率が続くと、完成時総コストは100÷（40÷60）＝150万円です。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -143,7 +154,14 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
       "エ": "15"
     },
     "answer": "イ",
-    "explanation": "クリティカルチェーンプロジェクトマネジメント(CCPM)では、プロジェクト全体の遅延リスクを管理するためにプロジェクトバッファを設けます。プロジェクトバッファは、クリティカルチェーン上の全作業の余裕日数の合計の半分で算出されます。\n\nまず、本問ではクリティカルチェーンの特定と、それに連なる作業の余裕日数(HP-ABP)の合計を計算する必要があります。HPは「ヒューマン・パフォーマンス」、ABPは「アクティビティ・ベースド・プランニング」と推測され、HP-ABPは作業ごとの個別の見積もりと、担当者の能力などを考慮した余裕日数を示唆しています。\n\nクリティカルチェーン上の作業の余裕日数の合計が算出された後、その半分がプロジェクトバッファとなります。プロジェクト全体の所要日数は、クリティカルチェーン上の各作業の所要日数の合計と、このプロジェクトバッファを合算することで求められます。\n\n提示された選択肢について、アの11日は、クリティカルチェーン上の作業の合計日数にプロジェクトバッファを加える前の値である可能性が考えられます。ウの14日やエの15日は、余裕日数の算出方法やプロジェクトバッファの計算において、何らかの誤りが生じている場合に到達する値と推測されます。特に、各作業の所要日数や余裕日数の解釈を誤ると、これらの値に近くなる可能性があります。正解のイである13日は、クリティカルチェーンの特定、各作業の余裕日数の算出、そしてプロジェクトバッファの計算が正しく行われた結果であると考えられます。",
+    "explanation": "④は②と③の両方が終わるまで待ちます。ABPでは①→②→④が6＋2＋3＝11日で、③→④は3＋3＝6日です。クリティカルチェーンの①・②・④の余裕は（8－6）＋（3－2）＋（4－3）＝4日です。プロジェクトバッファはその半分の2日なので、全体は13日です。",
+    "choiceExplanations": {
+      "ア": "11日はABPで最長となる①→②→④の作業日数だけです。問われているのは、この日数にプロジェクトバッファを足した値です。",
+      "イ": "ABPで①→②→④は6＋2＋3＝11日です。このチェーンの余裕は2＋1＋1＝4日なので、半分の2日を加えて13日です。",
+      "ウ": "全作業のHPとABPの差を合計すると6日で、その半分を11日に足すと14日です。③はクリティカルチェーンに含まれません。",
+      "エ": "15日は①→②→④のHPの合計8＋3＋4に当たります。各作業はABPで見積もり、合計の余裕の半分を最後に加えます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -167,7 +185,14 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
       "エ": "18"
     },
     "answer": "イ",
-    "explanation": "この問題では、PDM（プレシデンスダイアグラム法）で示されたアクティビティ間の依存関係と、各アクティビティの所要時間から、プロジェクト全体の最小所要日数を求める必要があります。最小所要日数は、プロジェクトのクリティカルパス（各アクティビティの開始・終了に遅延が許されない一連の経路）の合計所要時間によって決まります。\n\n正解のイ（16日）は、このプロジェクトにおけるクリティカルパスの合計所要時間が16日であることを示しています。PDMでは、各アクティビティの先行タスクが完了してから開始できるため、依存関係を考慮して各アクティビティの開始可能日と完了日を順に計算していくことで、プロジェクト全体の最短完了日を導き出します。\n\nア（15日）は、何らかの依存関係や所要時間の計算を見落とした、あるいはクリティカルパスではない経路の所要時間である可能性が考えられます。ウ（17日）やエ（18日）は、クリティカルパスの所要時間を過大に計算している、または、複数の経路を単純に合算してしまっているなどの誤りが考えられます。",
+    "explanation": "開始を0日とします。AとBを15日で終えるには、Aを0日目、Bを10日目に開始する必要があります。Cも5日目までに開始する必要があるので、Aに続けてCを支援すると、Bの支援前にも後にもDの連続4日を確保できません。A・C・B・Dの順に支援し、Bを10日目、Dを12日目に開始すれば全作業を16日で終えられます。",
+    "choiceExplanations": {
+      "ア": "15日で終えるにはAが0日目、Bが10日目に始まる必要があります。Cの支援を先に入れると、Dの連続4日を15日目までに確保できません。",
+      "イ": "Aを0日目、Cを4日目、Bを10日目、Dを12日目に始めます。支援期間は順に0〜4日、4〜8日、10〜12日、12〜16日で重なりません。",
+      "ウ": "Dを8日目から実施するとBの開始が12日目となり17日で終わります。先にBを10日目に始めてからDを行えば短縮できます。",
+      "エ": "例えばCを先に始めてAを4日目まで遅らせると、AとBだけで19日目までかかります。作業だけでなく最初に必要な支援の順も検討します。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +217,7 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "クリティカルチェーン法（CCPM）は、プロジェクトの不確実性と資源制約に対応するため、作業の完了を早めるのではなく、プロジェクト全体に時間的なゆとり（バッファ）を設けるのが特徴です。特に、クリティカルチェーンの終点に「プロジェクトバッファ」を、非クリティカルチェーンがクリティカルチェーンに合流する地点に「合流バッファ（フィーディングバッファ）」を設けて遅延リスクを吸収します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +242,7 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "10人のチームの場合、週に10C2 = 45組のコミュニケーションが発生し、1組あたり週4人時のコミュニケーション工数が発生するため、1週あたり45 × 4 = 180人時のコミュニケーション工数が必要です。各メンバーが週40時間働くうち、1人あたり週18時間 (180人時 ÷ 10人) がコミュニケーションに費やされるため、開発作業に使えるのは週22時間 (40時間 - 18時間) となります。チーム全体の開発能力は週220人時 (10人 × 22時間) であり、440人時の開発には2週間 (440人時 ÷ 220人時/週) を要します。この2週間のコミュニケーション工数は 180人時/週 × 2週 = 360人時となるため、10人チームの総工数は 440人時 (開発) + 360人時 (コミュニケーション) = 800人時です。したがって、倍率は 800人時 ÷ 440人時 = 1.818... となり、小数第2位を切り捨てると 1.8 となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +267,13 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ファンクションポイント法によるソフトウェア規模の見積もりは、未調整ファンクションポイントと調整要因を用いて行われます。未調整ファンクションポイントは、トランザクションファンクションとデータファンクションの合計値です。問題文によれば、データファンクションの未調整ファンクションポイントは33と与えられています。トランザクションファンクションの未調整ファンクションポイントの算出には表1〜表4が用いられますが、ここではその合計値が明示されていないため、選択肢から逆算することになります。\n\n調整要因も加味した最終的なファンクションポイント数は、未調整ファンクションポイントに調整要因を乗じて算出されます。調整要因が0.9であることから、正解のファンクションポイント数（ア：45）を未調整ファンクションポイントで割ると、45 ÷ 0.9 = 50 という未調整ファンクションポイントの合計値が得られます。この50という値は、データファンクションの33にトランザクションファンクションの未調整ファンクションポイントを加えたものとして妥当な範囲と考えられます。\n\n他の選択肢が誤りである理由を分析します。イ（46）の場合、未調整ファンクションポイントは46 ÷ 0.9 ≒ 51.1 となり、整数で表されるファンクションポイントの計算としては不自然です。ウ（49）の場合、未調整ファンクションポイントは49 ÷ 0.9 ≒ 54.4 となり、同様に不自然です。エ（50）の場合、未調整ファンクションポイントは50 ÷ 0.9 ≒ 55.6 となり、こちらも整数計算として不適切です。したがって、調整要因と未調整ファンクションポイントの整合性から、アが正解となります。",
+    "choiceExplanations": {
+      "ア": "①は低の外部入力3、②は高の外部照会6、③は低の外部照会3、④は中の外部出力5です。33を足して50、0.9を掛けて45です。",
+      "イ": "外部照会③を中の4とすると調整前が51になります。表3では関連ファイル1、データ項目12の外部照会は低で、重みは3です。",
+      "ウ": "外部照会②は関連ファイル3、項目21なので高の6です。調整前の合計を求めた後、指定された係数0.9を掛けます。",
+      "エ": "50はデータファンクション33とトランザクションファンクション17の合計です。調整要因を掛ける前の値です。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +298,7 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "EMV（期待金額価値）は、プロジェクトのリスクを定量的に評価する手法の一つで、特定のリスク事象が発生した場合の金銭的影響とその発生確率を掛け合わせることで算出されます。これにより、リスクの期待される金銭的な影響度を数値化できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +323,7 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 21500:2018において、リスクの特定と評価（分析）は、プロジェクトの計画段階で将来起こりうるリスクを洗い出し、その発生確率と影響度を分析する活動です。これらのプロセスは、プロジェクトの計画を具体的に立てる上で不可欠であるため、計画のプロセス群に属します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +348,7 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "aの説明は、参加者全員が役割を交代しながら意見を述べる「ラウンドロビン」に合致します。bの説明は、作成者が主体となって説明し、参加者が質問・コメントする「ウォークスルー」に合致します。cの説明は、厳密な役割分担と公式な評価を伴う体系的なレビューである「インスペクション」に合致します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +373,7 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "オブジェクト指向における汎化とは、複数のクラスに共通する属性や操作を抽出し、それらをまとめた上位の抽象的なクラス（スーパークラス）を定義することです。これにより、コードの再利用性を高め、システムの構造を整理します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +398,7 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "スクラムでは、開発を「スプリント」と呼ばれる短い期間の反復で行い、このスプリントの期間は通常1〜4週間、最大でも1か月以内と定められています。これにより、迅速なフィードバックと変化への対応を可能にします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +423,7 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "JIS X 0160:2021におけるテクニカルプロセスとは、利害関係者のニーズを具体的な製品やサービスに変換し、それらを適用・運用することで顧客の要件を満たし、満足度を得るための一連の技術的な活動を指します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +448,7 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "著作権は著作物を作成した時点で著作者に帰属するのが原則です。契約書に著作権の帰属先が明記されていない場合、委託先が全て開発したソフトウェアの著作権は委託先に帰属します。そのため、委託元は当該ソフトウェアを自由に利用、複製、改変することができなくなり、別のソフトウェアに適用する際には委託先の許諾が必要となるなどの問題が生じる可能性があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -431,7 +472,14 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
       "エ": "D案"
     },
     "answer": "ウ",
-    "explanation": "TCO（総所有費用：Total Cost of Ownership）は、システム導入にかかる初期費用だけでなく、運用、保守、廃棄に至るまで、システムがライフサイクル全体で発生する全ての費用を合計したものです。この問題では、開発後3年間という使用期間におけるTCOを比較し、最小の案を選択する必要があります。\n\nウのC案が最小のTCOとなるのは、初期開発費用と3年間の運用・保守費用を合算した総額が、他の選択肢と比較して最も低いためです。\n\nアのA案は、初期開発費用は低いものの、運用・保守費用が高額になる可能性があり、3年間の合計TCOが大きくなっていると考えられます。イのB案も同様に、開発費用の構成や運用コストのバランスが悪く、総費用が増加していると推測できます。エのD案は、初期開発費用は最も高いものの、将来的な運用・保守費用が大幅に削減されるわけではなく、結果としてC案よりTCOが高くなっています。",
+    "explanation": "ハードウェア導入・システム開発・導入教育の費用に、ネットワーク通信・保守・システム運用の3年分を加えます。A案は65＋32×3＝161、B案は85＋29×3＝172、C案は75＋26×3＝153、D案は85＋24×3＝157です。単位は百万円で、最も低いのはC案です。",
+    "choiceExplanations": {
+      "ア": "A案の初期費用は65百万円で最も低い一方、年間費用が32百万円かかります。3年分を加えると161百万円になります。",
+      "イ": "B案は初期費用が85百万円、毎年の費用は29百万円です。3年間では85＋29×3＝172百万円かかります。",
+      "ウ": "C案は初期費用が40＋30＋5＝75百万円、年間費用は15＋5＋6＝26百万円です。3年分を加えて153百万円と最小です。",
+      "エ": "D案は年間費用24百万円でC案より2百万円低いですが、初期費用は10百万円高いので、3年間の合計は157百万円です。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +504,7 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "JIS Q 20000-1:2020を適用する組織において、SMSが規定された要求事項や規格に適合しているか否かに関する情報を提供するために、あらかじめ定めた間隔で独立した立場の要員が実施する活動は「内部監査」です。これはSMSの適合性と有効性を評価する重要な手段です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +529,7 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "要件が検証可能であるとは、その要件が実装されたときに、要件定義書の記述内容をシステムやソフトウェアが満たしているかどうかを客観的にチェックする方法が存在し、かつ、そのチェック作業が妥当な費用内で実施できることを指します。これにより、開発されたシステムが本当に必要な要件を満たしているかを確認できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +554,7 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "プロバイダ責任制限法では、特定電気通信役務提供者が権利侵害情報に対する送信防止措置を講じた結果、情報の発信者に損害が生じた場合でも、一定の条件（例：権利侵害が明白である場合、発信者から反論の機会を得た場合など）を満たしていれば、その賠償責任を負わないと規定されています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +579,7 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "36協定（さぶろくきょうてい）とは、労働基準法第36条に基づき、法定労働時間を超える時間外労働や法定休日における労働（休日労働）を従業員にさせる場合、使用者と労働組合または労働者の過半数代表者が書面で締結し、労働基準監督署に届け出ることが義務付けられている労使協定のことです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +604,7 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ISO/IEC 15408は、IT製品やシステムのセキュリティ機能が、その仕様書、ガイダンス、開発プロセスなど、様々な側面からどれだけ適切に実装され、信頼できるかを評価するための国際規格です。通称Common Criteria（コモンクライテリア）とも呼ばれ、機能要件と保証要件の双方から評価を行います。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +629,7 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "デジタルフォレンジックスとは、コンピュータ犯罪や情報セキュリティインシデントが発生した際に、デジタルデバイスやネットワーク上に残されたデータを法的な証拠として利用できるよう、適切な手続きに従って収集、保全、調査、分析する技術やプロセス全般を指します。これにより、証拠の完全性と信頼性を確保し、その後の訴訟などに備えます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +654,7 @@ export const PM_QUESTIONS_2023_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ファジングとは、ソフトウェアの脆弱性を発見するためのテスト手法の一つで、プログラムの入力インターフェースに対し、予期しない、不正な、またはランダムなデータを大量かつ多様なパターンで投入し、その挙動（クラッシュ、ハングアップ、エラーなど）を監視することで、潜在的な脆弱性を見つけ出す方法です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_2/2023h05a_pm_am2_qs.pdf",
     "license": "IPA-public"

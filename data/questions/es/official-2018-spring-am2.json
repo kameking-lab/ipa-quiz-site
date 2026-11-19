@@ -1,0 +1,977 @@
+[
+  {
+    "id": "es-2018h-am2-q1",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "メモリマップドI/O",
+    "topicTags": [
+      "メモリマップドI/O"
+    ],
+    "difficulty": 3,
+    "question": "問1　メモリマップドI/O",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "イ",
+    "answer": "イ",
+    "explanation": "I/Oポートを通常のメモリアドレスに割り付ける方式。コンパイラに読み書きを省略させない扱いを確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q01.webp"
+    ],
+    "imageAltTexts": [
+      "問1 メモリマップドI/Oの公式本文・選択肢（問題冊子 4ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=4",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q2",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "キャッシュコヒーレンシ",
+    "topicTags": [
+      "キャッシュコヒーレンシ"
+    ],
+    "difficulty": 3,
+    "question": "問2　キャッシュコヒーレンシ",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "イ",
+    "answer": "イ",
+    "explanation": "同じメモリを複数のキャッシュが持つとき、一方の書込み後に他方が古い値を使わない仕組みを考える。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q02.webp"
+    ],
+    "imageAltTexts": [
+      "問2 キャッシュコヒーレンシの公式本文・選択肢（問題冊子 4ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=4",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q3",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "入出力ポートのレジスタ",
+    "topicTags": [
+      "入出力ポートのレジスタ"
+    ],
+    "difficulty": 3,
+    "question": "問3　入出力ポートのレジスタ",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "イ",
+    "answer": "イ",
+    "explanation": "方向レジスタで各端子の入力・出力を定め、データレジスタで値を扱う。ビットごとに条件を確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q03.webp"
+    ],
+    "imageAltTexts": [
+      "問3 入出力ポートのレジスタの公式本文・選択肢（問題冊子 5ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=5",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q4",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "JTAG",
+    "topicTags": [
+      "JTAG"
+    ],
+    "difficulty": 3,
+    "question": "問4　JTAG",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "ウ",
+    "answer": "ウ",
+    "explanation": "回路のテストに用いるインターフェースと、周辺装置との一般的なデータ転送方式を区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q04.webp"
+    ],
+    "imageAltTexts": [
+      "問4 JTAGの公式本文・選択肢（問題冊子 5ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=5",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q5",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "周辺装置へのデータ転送",
+    "topicTags": [
+      "周辺装置へのデータ転送"
+    ],
+    "difficulty": 3,
+    "question": "問5　周辺装置へのデータ転送",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "エ",
+    "answer": "エ",
+    "explanation": "並列伝送では各信号線の到着時刻をそろえる必要がある。転送速度を上げると、線ごとの遅れの差が問題になる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q05.webp"
+    ],
+    "imageAltTexts": [
+      "問5 周辺装置へのデータ転送の公式本文・選択肢（問題冊子 6ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=6",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q6",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "ロードバランサの監視",
+    "topicTags": [
+      "ロードバランサの監視"
+    ],
+    "difficulty": 3,
+    "question": "問6　ロードバランサの監視",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "イ",
+    "answer": "イ",
+    "explanation": "振り分け先が応答可能かを定期的に確認し、利用できないサーバへの振り分けを避ける仕組みに着目する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q06.webp"
+    ],
+    "imageAltTexts": [
+      "問6 ロードバランサの監視の公式本文・選択肢（問題冊子 6ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=6",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q7",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "プロセスとスレッド",
+    "topicTags": [
+      "プロセスとスレッド"
+    ],
+    "difficulty": 3,
+    "question": "問7　プロセスとスレッド",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "エ",
+    "answer": "エ",
+    "explanation": "プロセスの資源をスレッドが共有する点と、スレッドごとに独立する実行状態を分けて考える。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q07.webp"
+    ],
+    "imageAltTexts": [
+      "問7 プロセスとスレッドの公式本文・選択肢（問題冊子 7ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=7",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q8",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "セマフォ",
+    "topicTags": [
+      "セマフォ"
+    ],
+    "difficulty": 3,
+    "question": "問8　セマフォ",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "ア",
+    "answer": "ア",
+    "explanation": "共有資源を使える数を管理し、利用条件を満たさないタスクを待たせる仕組みを確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q08.webp"
+    ],
+    "imageAltTexts": [
+      "問8 セマフォの公式本文・選択肢（問題冊子 7ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=7",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q9",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "デッドラインスケジューリング",
+    "topicTags": [
+      "デッドラインスケジューリング"
+    ],
+    "difficulty": 3,
+    "question": "問9　デッドラインスケジューリング",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "イ",
+    "answer": "イ",
+    "explanation": "処理時間と締切から余裕時間を考え、タスクを終える期限に応じた優先順位を選ぶ。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q09.webp"
+    ],
+    "imageAltTexts": [
+      "問9 デッドラインスケジューリングの公式本文・選択肢（問題冊子 8ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q10",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "タスクの優先度逆転",
+    "topicTags": [
+      "タスクの優先度逆転"
+    ],
+    "difficulty": 3,
+    "question": "問10　タスクの優先度逆転",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "ア",
+    "answer": "ア",
+    "explanation": "低優先度タスクが排他制御の対象を保持していると、高優先度タスクがその解放を待つことになる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q10.webp"
+    ],
+    "imageAltTexts": [
+      "問10 タスクの優先度逆転の公式本文・選択肢（問題冊子 8ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q11",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "分散バージョン管理",
+    "topicTags": [
+      "分散バージョン管理"
+    ],
+    "difficulty": 3,
+    "question": "問11　分散バージョン管理",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "ウ",
+    "answer": "ウ",
+    "explanation": "ローカルに履歴を持ち、中央サーバへの接続がなくても変更を記録できる方式を選ぶ。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q11.webp"
+    ],
+    "imageAltTexts": [
+      "問11 分散バージョン管理の公式本文・選択肢（問題冊子 9ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=9",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q12",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "NAND回路",
+    "topicTags": [
+      "NAND回路"
+    ],
+    "difficulty": 3,
+    "question": "問12　NAND回路",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "イ",
+    "answer": "イ",
+    "explanation": "各段でANDの結果が反転するため、入力側から論理式を書き、二重否定を整理する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q12.webp"
+    ],
+    "imageAltTexts": [
+      "問12 NAND回路の公式本文・選択肢（問題冊子 9ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=9",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q13",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "マトリクススイッチ",
+    "topicTags": [
+      "マトリクススイッチ"
+    ],
+    "difficulty": 3,
+    "question": "問13　マトリクススイッチ",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "ウ",
+    "answer": "ウ",
+    "explanation": "駆動する線と状態を読む線を分け、どの組合せで押されたキーを判定できるかを図で追う。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q13.webp"
+    ],
+    "imageAltTexts": [
+      "問13 マトリクススイッチの公式本文・選択肢（問題冊子 10ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=10",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q14",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "インクリメンタルエンコーダ",
+    "topicTags": [
+      "インクリメンタルエンコーダ"
+    ],
+    "difficulty": 3,
+    "question": "問14　インクリメンタルエンコーダ",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "ア",
+    "answer": "ア",
+    "explanation": "移動に伴うパルスの計数による相対位置と、起動直後から分かる絶対位置を区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q14.webp"
+    ],
+    "imageAltTexts": [
+      "問14 インクリメンタルエンコーダの公式本文・選択肢（問題冊子 10ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=10",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q15",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "ROMのアドレス範囲",
+    "topicTags": [
+      "ROMのアドレス範囲"
+    ],
+    "difficulty": 3,
+    "question": "問15　ROMのアドレス範囲",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "ウ",
+    "answer": "ウ",
+    "explanation": "上位アドレス線を入力とする論理回路を読み、負論理のチップセレクトが有効になる組合せを探す。下位アドレス線はROM内の位置を選ぶ。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q15.webp"
+    ],
+    "imageAltTexts": [
+      "問15 ROMのアドレス範囲の公式本文・選択肢（問題冊子 11ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=11",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q16",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "ランプの出力回路",
+    "topicTags": [
+      "ランプの出力回路"
+    ],
+    "difficulty": 3,
+    "question": "問16　ランプの出力回路",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "ア",
+    "answer": "ア",
+    "explanation": "信号の論理値をトランジスタの導通状態に置き換え、ランプに電流が流れる経路をたどる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q16.webp"
+    ],
+    "imageAltTexts": [
+      "問16 ランプの出力回路の公式本文・選択肢（問題冊子 11ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=11",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q17",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "DNSラウンドロビン",
+    "topicTags": [
+      "DNSラウンドロビン"
+    ],
+    "difficulty": 3,
+    "question": "問17　DNSラウンドロビン",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "イ",
+    "answer": "イ",
+    "explanation": "同じ名前に複数のアドレスを対応させる方法と、機器が負荷を見て接続を振り分ける方法を区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q17.webp"
+    ],
+    "imageAltTexts": [
+      "問17 DNSラウンドロビンの公式本文・選択肢（問題冊子 12ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=12",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q18",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "サイドチャネル",
+    "topicTags": [
+      "サイドチャネル"
+    ],
+    "difficulty": 3,
+    "question": "問18　サイドチャネル",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "イ",
+    "answer": "イ",
+    "explanation": "暗号の計算結果そのものと、装置が動作するときに外部へ現れる副次的な情報を区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q18.webp"
+    ],
+    "imageAltTexts": [
+      "問18 サイドチャネルの公式本文・選択肢（問題冊子 12ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=12",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q19",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "共通鍵暗号",
+    "topicTags": [
+      "共通鍵暗号"
+    ],
+    "difficulty": 3,
+    "question": "問19　共通鍵暗号",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "ア",
+    "answer": "ア",
+    "explanation": "暗号化と復号で同じ鍵を使う方式を、公開鍵と秘密鍵を分ける方式から見分ける。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q19.webp"
+    ],
+    "imageAltTexts": [
+      "問19 共通鍵暗号の公式本文・選択肢（問題冊子 12ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=12",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q20",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "FPGAの設計工程",
+    "topicTags": [
+      "FPGAの設計工程"
+    ],
+    "difficulty": 3,
+    "question": "問20　FPGAの設計工程",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "イ",
+    "answer": "イ",
+    "explanation": "論理設計の記述が実装データになるまでの、論理合成と配置・配線の順序を確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q20.webp"
+    ],
+    "imageAltTexts": [
+      "問20 FPGAの設計工程の公式本文・選択肢（問題冊子 13ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=13",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q21",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 21,
+    "type": "multiple-choice",
+    "category": "MISRA C",
+    "topicTags": [
+      "MISRA C"
+    ],
+    "difficulty": 3,
+    "question": "問21　MISRA C",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "エ",
+    "answer": "エ",
+    "explanation": "組込みソフトウェアのC言語コードで、危険な書き方を制限するための規則に着目する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q21.webp"
+    ],
+    "imageAltTexts": [
+      "問21 MISRA Cの公式本文・選択肢（問題冊子 13ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=13",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q22",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 22,
+    "type": "multiple-choice",
+    "category": "ホワイトボックステスト",
+    "topicTags": [
+      "ホワイトボックステスト"
+    ],
+    "difficulty": 3,
+    "question": "問22　ホワイトボックステスト",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "ウ",
+    "answer": "ウ",
+    "explanation": "内部構造が分かる場合は、処理の分岐や条件を通過したかをテスト設計に使える。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q22.webp"
+    ],
+    "imageAltTexts": [
+      "問22 ホワイトボックステストの公式本文・選択肢（問題冊子 13ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=13",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q23",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 23,
+    "type": "multiple-choice",
+    "category": "実験計画法によるテスト",
+    "topicTags": [
+      "実験計画法によるテスト"
+    ],
+    "difficulty": 3,
+    "question": "問23　実験計画法によるテスト",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "ウ",
+    "answer": "ウ",
+    "explanation": "条件の組合せを全部試す方法と、直交表に従って組合せを選ぶ方法を区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q23.webp"
+    ],
+    "imageAltTexts": [
+      "問23 実験計画法によるテストの公式本文・選択肢（問題冊子 14ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=14",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q24",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 24,
+    "type": "multiple-choice",
+    "category": "ソフトウェア支援プロセス",
+    "topicTags": [
+      "ソフトウェア支援プロセス"
+    ],
+    "difficulty": 3,
+    "question": "問24　ソフトウェア支援プロセス",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "エ",
+    "answer": "エ",
+    "explanation": "開発や運用の主作業に対し、文書化や品質を確認する支援の作業を区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q24.webp"
+    ],
+    "imageAltTexts": [
+      "問24 ソフトウェア支援プロセスの公式本文・選択肢（問題冊子 15ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=15",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "es-2018h-am2-q25",
+    "exam": "es",
+    "year": 2018,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 25,
+    "type": "multiple-choice",
+    "category": "特許のライセンス",
+    "topicTags": [
+      "特許のライセンス"
+    ],
+    "difficulty": 3,
+    "question": "問25　特許のライセンス",
+    "choices": {
+      "ア": "選択肢ア",
+      "イ": "選択肢イ",
+      "ウ": "選択肢ウ",
+      "エ": "選択肢エ"
+    },
+    "officialAnswerNumber": "ア",
+    "answer": "ア",
+    "explanation": "実施する権利を与える許諾と、特許権そのものを移転する契約を区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/es/2018-spring-am2/q25.webp"
+    ],
+    "imageAltTexts": [
+      "問25 特許のライセンスの公式本文・選択肢（問題冊子 15ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_qs.pdf#page=15",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fabr-att/2018h30h_es_am2_ans.pdf",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2018h30.html"
+    ],
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

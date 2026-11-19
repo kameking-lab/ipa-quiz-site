@@ -78,7 +78,7 @@ vi.mock("@/lib/ai/cost-guard", async () => {
 });
 
 const { POST: scoringPOST } = await import("@/app/api/scoring/route");
-const { POST: essayPOST } = await import("@/app/api/essay-grade/route");
+const { POST: essayPOST } = await import("@/lib/essay/legacy-grade");
 
 let ipCounter = 0;
 function req(url: string, body: unknown): Request {

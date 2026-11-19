@@ -1,6 +1,8 @@
 import { parseStudyPresence, PRESENCE_POLL_MS, PRESENCE_WINDOW_MS, type StudyPresenceSnapshot } from "@/lib/study-presence";
 
 export const PRESENCE_STATE_EVENT = "study-presence-state";
+/** A newly mounted room/summary asks the existing publisher to replay its state without fetching. */
+export const PRESENCE_REPLAY_EVENT = "study-presence-replay";
 export const PRESENCE_RETRY_MS = [90_000, 180_000, 300_000, 900_000] as const;
 export const presenceRetryDelay = (failures: number) => PRESENCE_RETRY_MS[Math.min(Math.max(failures - 1, 0), PRESENCE_RETRY_MS.length - 1)];
 
@@ -33,9 +35,9 @@ export type PresenceViewState =
 // Demo is an explicit UI-only mode. Neither API responses nor failures create it.
 export type PresenceRoomMode = PresenceViewState["mode"] | "demo";
 
-export function measuredPresence(snapshot: StudyPresenceSnapshot, measuredAt: number): MeasuredPresence {
+export function measuredPresence(snapshot: StudyPresenceSnapshot, measuredAt: number, expiresAt = Infinity): MeasuredPresence {
   return { ...snapshot, status: "measured", total: snapshot.count,
-    measuredAt: new Date(measuredAt).toISOString(), validUntil: new Date(measuredAt + PRESENCE_POLL_MS).toISOString(),
+    measuredAt: new Date(measuredAt).toISOString(), validUntil: new Date(Math.min(measuredAt + PRESENCE_POLL_MS, expiresAt)).toISOString(),
     windowSeconds: PRESENCE_WINDOW_MS / 1000 };
 }
 
@@ -48,7 +50,7 @@ export function parseMeasuredPresence(value: unknown, now = Date.now()): Measure
       typeof data.measuredAt !== "string" || typeof data.validUntil !== "string") return null;
   const measuredAt = Date.parse(data.measuredAt), validUntil = Date.parse(data.validUntil);
   if (!Number.isFinite(measuredAt) || !Number.isFinite(validUntil) || measuredAt > now + 5_000 ||
-      validUntil - measuredAt !== PRESENCE_POLL_MS) return null;
+      validUntil <= measuredAt || validUntil - measuredAt > PRESENCE_POLL_MS) return null;
   if (new Date(measuredAt).toISOString() !== data.measuredAt || new Date(validUntil).toISOString() !== data.validUntil) return null;
   return { ...snapshot, status: "measured", total: snapshot.count, measuredAt: data.measuredAt,
     validUntil: data.validUntil, windowSeconds: PRESENCE_WINDOW_MS / 1000 };

@@ -1,0 +1,968 @@
+[
+  {
+    "id": "yakuzaishi-2025-annual-required-q1",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 1,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "図はダニエル電池（Zn|ZnSO4(aq)¦CuSO4(aq)|Cu）の模式図である。この電池の標準起電力として正しいのはどれか。1つ選べ。\nただし、Zn と Cu の半電池の標準電極電位はそれぞれ −0.763 V と +0.337 V とする。",
+    "choices": {
+      "ア": "+0.213 V",
+      "イ": "+0.426 V",
+      "ウ": "+1.100 V",
+      "エ": "−0.426 V",
+      "オ": "−1.100 V"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "標準起電力は、正極（還元が起こる側、電位が高い側）の標準電極電位から負極（酸化が起こる側、電位が低い側）の標準電極電位を引いて求める。Cu 半電池が +0.337 V で高く正極、Zn 半電池が −0.763 V で低く負極になる。したがって E° = (+0.337) − (−0.763) = +1.100 V。起電力は正の値で表すので、正解は 3。",
+    "choiceExplanations": {
+      "ア": "誤り。+0.213 V は 2 つの電位の和のようにも見えない値で、根拠のある計算では得られない。E° = 0.337 − (−0.763) = 1.100 V である。",
+      "イ": "誤り。+0.426 V は −0.763 と +0.337 の和（−0.426）の符号を変えた値で、電位差ではなく和をとった誤りである。起電力は差で求める。",
+      "ウ": "正しい。E° = 0.337 − (−0.763) = +1.100 V。Cu 側が正極、Zn 側が負極で、ダニエル電池の標準起電力として整合する。",
+      "エ": "誤り。−0.426 V は 2 つの電位の和（−0.763 + 0.337）であり、差ではない。また自発的に作動する電池の標準起電力は正の値になる。",
+      "オ": "誤り。大きさは正しいが符号が逆である。正極 − 負極の順に引けば正の値になる。電池は Zn が酸化され Cu2+ が還元される向きに自発的に進むので、起電力は正である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=2",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問1（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q001-original.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問1の原図"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q3",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 3,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "難溶性塩である水酸化鉄（Ⅲ）（Fe(OH)3）の純水中での溶解度を S mol/L とすると、その溶解度積（Ksp）を正しく表しているのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "3S³ (mol/L)³",
+      "イ": "4S³ (mol/L)³",
+      "ウ": "9S³ (mol/L)³",
+      "エ": "9S⁴ (mol/L)⁴",
+      "オ": "27S⁴ (mol/L)⁴"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "Fe(OH)3 は Fe(OH)3 ⇌ Fe3+ + 3OH− と溶解する。溶解度を S mol/L とすると、[Fe3+] = S、[OH−] = 3S となる。したがって Ksp = [Fe3+][OH−]^3 = S × (3S)^3 = S × 27S^3 = 27S^4 (mol/L)^4。次元は濃度の 4 乗で (mol/L)^4。正解は 5。なお、純水中の水の自己電離による OH− は無視する前提である。",
+    "choiceExplanations": {
+      "ア": "誤り。3S^3 は係数 3 を掛けただけで、OH− 濃度 3S を 3 乗する操作が反映されていない。また単位も (mol/L)^4 になるはずで合わない。",
+      "イ": "誤り。4S^3 (mol/L)^3 は Ca(OH)2 のような AB2 型（Ksp = S × (2S)^2 = 4S^3）の式である。Fe(OH)3 は AB3 型で 4 乗になる。",
+      "ウ": "誤り。9S^3 は (3S)^2 のような扱いで、Fe(OH)3 の OH− の係数 3 を 2 乗にした誤りである。冪は 3 乗で、全体では 4 乗になる。",
+      "エ": "誤り。冪は 4 乗で合っているが、係数が 9 になっており、(3S)^3 = 27S^3 とすべきところを 9 としている。",
+      "オ": "正しい。Ksp = S·(3S)^3 = 27S^4 (mol/L)^4。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=3",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問3（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q6",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 6,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "以下のアルドヘキソース A のアノマーはどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "アノマーは、環状ヘミアセタール（ヘミケタール）構造をとったときに新しく生じる不斉中心である C1（アノマー炭素）の立体配置だけが異なる異性体（α体とβ体）の関係をいう。したがって、A と C2〜C5 の置換基の向きがすべて同じで、C1 の OH の向きだけが逆になっているものを選ぶ。原図の4では、AとC2〜C5の立体配置が同じで、C1のOHだけが上から下に変わっている。",
+    "choiceExplanations": {
+      "ア": "AではC4のOHが下向きだが、1では上向きになっている。C1以外の立体配置が異なるため、アノマーではない。",
+      "イ": "AではC3のOHが上向きだが、2では下向きになっている。C1だけの違いではないため、アノマーではない。",
+      "ウ": "AではC2のOHが下向きだが、3では上向きになっている。C1以外の立体配置が異なるため、アノマーではない。",
+      "エ": "正しい（公式正答）。A とは C1 の OH の向きだけが異なる異性体、すなわちアノマーである。",
+      "オ": "5はAを左右に反転した鏡像の構造で、環酸素に沿って炭素を番号付けするとC2〜C5の立体配置も反転している。C1だけの違いではないため、アノマーではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=4",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問6（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q006-foundation-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問6の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q7",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 7,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "以下の薬物に含まれる金属元素Mとして適切なのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "Li",
+      "イ": "Mg",
+      "ウ": "Al",
+      "エ": "Ca",
+      "オ": "Zn"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "図の化合物は、アラントインにジヒドロキシアルミニウムが結合した構造で、アルジオキサ(アルミニウムを含むアラントイン誘導体)と考えられる。金属元素MにはAlが当てはまる。構造式でM(OH)2と表されているので、金属はOH基を2個もち、O-Mの結合を1個もつ。つまり3価の金属であり、Alの価数と一致する。アルジオキサは胃粘膜保護・組織修復作用をもつ制酸薬として用いられる。",
+    "choiceExplanations": {
+      "ア": "Liは1価の金属である。M(OH)2とO-Mの結合から、Mは3価でなければならない。Liは合わない。",
+      "イ": "Mgは2価の金属である。図のMは結合を3個もつので合わない。",
+      "ウ": "正しい。Alは3価の金属で、図のO-M(OH)2の構造と一致する。この化合物はアルジオキサである。",
+      "エ": "Caは2価の金属である。図のMは結合を3個もつので合わない。",
+      "オ": "Znは2価の金属である。図のMは結合を3個もつので合わない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=4",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問7（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q007-required-next-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問7の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q8",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 8,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "以下の化合物のうち、最も酸性度が高いのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "フェノール類の酸性度は、脱プロトン化で生じるフェノキシドアニオンの安定性で決まる。ニトロ基は強い電子求引性(-I、-M効果)をもつ。パラ位にあると、負電荷がベンゼン環を通ってニトロ基まで非局在化し、アニオンが大きく安定化する。そのため4-ニトロフェノールが最も酸性度が高い。",
+    "choiceExplanations": {
+      "ア": "シクロヘキサノールは普通のアルコールで、生じるアルコキシドは共鳴安定化されない。フェノール類より酸性度が低い。",
+      "イ": "フェノキシドは環への共鳴で安定化されるが、さらに電子求引基をもつ化合物には及ばない。",
+      "ウ": "アミノ基は電子供与性(+M効果)で、フェノキシドを不安定化する。フェノールより酸性度が低い。",
+      "エ": "塩素は電子求引性(-I効果)で酸性度をやや高めるが、ニトロ基のような共鳴による安定化はない。",
+      "オ": "正しい。ニトロ基の強い電子求引性と共鳴効果によりアニオンが最も安定化され、酸性度が最も高い。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=5",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問8（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q008-original.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問8の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q9",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 9,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "以下の化学種のうち、ベンジルカチオンが最も安定化されているのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "ベンジルカチオンの正電荷はベンゼン環のオルト位とパラ位に非局在化する。この位置にあるメトキシ基は、酸素の非共有電子対を共鳴で供与して強く安定化する(+M効果)。メタ位のメトキシ基は共鳴に関与できず、電子求引性の誘起効果(-I効果)が主になる。そのため、オルト位とパラ位の両方にメトキシ基をもつ2,4-ジメトキシ体が最も安定である。",
+    "choiceExplanations": {
+      "ア": "オルト位のメトキシ基1個だけが共鳴で安定化する。オルト位とパラ位の両方にある4より安定化が小さい。",
+      "イ": "メタ位のメトキシ基は共鳴で安定化せず、誘起効果で不安定化に働く。",
+      "ウ": "オルト位は共鳴で安定化するが、もう1個はメタ位で安定化に寄与しない。4には及ばない。",
+      "エ": "正しい。オルト位とパラ位の2個のメトキシ基が共鳴で正電荷を安定化し、最も安定である。",
+      "オ": "オルト位は有効だが、もう1個はCH2+に対してメタ位にあり、共鳴に寄与しない。4より安定化が小さい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=5",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問9（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q009-original.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問9の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q10",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 10,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "ビンクリスチンの生合成前駆体となるアミノ酸はどれか。1つ選べ。",
+    "choices": {
+      "ア": "オルニチン",
+      "イ": "チロシン",
+      "ウ": "トリプトファン",
+      "エ": "フェニルアラニン",
+      "オ": "リシン"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "ビンクリスチンはビンカアルカロイドで、インドールアルカロイドに分類される。構造式にはインドール骨格が含まれる。インドール骨格はトリプトファンに由来する(脱炭酸でトリプタミンとなり、セコロガニンと縮合してストリクトシジンを経る)。したがって前駆体のアミノ酸はトリプトファンである。",
+    "choiceExplanations": {
+      "ア": "オルニチンは、トロパンアルカロイドやピロリジンアルカロイドの前駆体である。ビンクリスチンのインドール骨格とは関係しない。",
+      "イ": "チロシンは、イソキノリンアルカロイドなどの前駆体である。インドール骨格の由来ではない。",
+      "ウ": "正しい。インドール骨格の由来であり、インドールアルカロイドであるビンクリスチンの前駆体となる。",
+      "エ": "フェニルアラニンは、フェニルプロパノイド系化合物の前駆体などである。インドール骨格は生成しない。",
+      "オ": "リシンは、ピペリジンやキノリジジン系アルカロイドの前駆体である。インドール骨格とは関係しない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=6",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問10（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q010-required-next-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問10の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q12",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 12,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "核酸に含まれるプリン塩基のヒトにおける最終代謝産物はどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "ヒトでは、プリン塩基の分解でヒポキサンチンがキサンチンになり、さらに尿酸になる(キサンチンオキシダーゼによる)。ヒトは尿酸をさらに分解するウリカーゼをもたないため、尿酸が最終代謝産物となる。図の5は、2,6,8位に酸素をもつ尿酸の構造である。",
+    "choiceExplanations": {
+      "ア": "ヒポキサンチンは、アデニンの代謝で生じる中間体である。さらにキサンチンを経て酸化される。",
+      "イ": "グアニンは核酸塩基で、代謝されてキサンチンに変わる。最終代謝産物ではない。",
+      "ウ": "アデニンは核酸塩基で、代謝されてヒポキサンチンなどに変わる。最終代謝産物ではない。",
+      "エ": "キサンチンは、尿酸の一段階手前の中間体である。キサンチンオキシダーゼでさらに酸化される。",
+      "オ": "正しい。ヒトのプリン塩基の最終代謝産物は尿酸である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=7",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問12（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q012-original.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問12の原図（選択肢1〜5）"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q15",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 15,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "ウイルスゲノムを中心としてその周囲を取り囲むタンパク質の殻はどれか。1つ選べ。",
+    "choices": {
+      "ア": "エンベロープ",
+      "イ": "カプシド",
+      "ウ": "コア",
+      "エ": "スパイク",
+      "オ": "ビリオン"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "ウイルスのゲノム（DNAまたはRNA）は、カプソメアというタンパク質サブユニットからなるカプシドに包まれています。カプシドはゲノムを囲むタンパク質の殻です。したがって正解は2です。",
+    "choiceExplanations": {
+      "ア": "エンベロープは一部のウイルスが持つ脂質二重膜の外被です。タンパク質の殻ではなく、カプシドのさらに外側にあります。",
+      "イ": "正しい。カプシドはウイルスゲノムを取り囲むタンパク質の殻です。",
+      "ウ": "コアは一般にゲノムとそれを包む内部構造を指す語です。ゲノムを囲むタンパク質の殻そのものを指す名称としては、カプシドが適切です。",
+      "エ": "スパイクはエンベロープなどの表面から突き出た糖タンパク質で、宿主細胞への吸着や侵入に関わります。ゲノムを囲む殻ではありません。",
+      "オ": "ビリオンは、感染性を持つ完全なウイルス粒子全体を指す語です。タンパク質の殻だけを指すのではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=8",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問15（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q16",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 16,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "下図の年次推移を示す我が国の人口統計指標はどれか。1つ選べ。",
+    "choices": {
+      "ア": "出生率",
+      "イ": "合計特殊出生率",
+      "ウ": "総再生産率",
+      "エ": "粗死亡率",
+      "オ": "年齢調整死亡率"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "縦軸が人口千対であるため、率の単位は人口千人あたりです。グラフは、戦後に低下したのち1980年前後を底として上昇し、2022年に最高値となっています。我が国の粗死亡率の推移がこの形に当たります。粗死亡率は、医療の進歩で戦後に低下しました。その後、高齢化の進行で上昇に転じています。したがって正解は4です。",
+    "choiceExplanations": {
+      "ア": "出生率（人口千対）は戦後に低下を続け、近年は10を大きく下回ります。図のように上昇に転じる推移にはなりません。",
+      "イ": "合計特殊出生率は人口千対ではなく、1人の女性が一生の間に産む子どもの数の平均を表す指標です。単位が図と合いません。",
+      "ウ": "総再生産率は、女児の数に注目した再生産の指標で、人口千対の単位ではありません。図の縦軸と合いません。",
+      "エ": "正しい。粗死亡率（人口千対）は、戦後に低下して1980年前後に最低となり、その後は高齢化により上昇して近年は10を超えています。図の推移と一致します。",
+      "オ": "年齢調整死亡率は年齢構成の影響を除いた指標で、高齢化が進んでも低下傾向を示します。図のような上昇にはなりません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=9",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問16（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q016-required-next-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問16の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q19",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 19,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "以下の構造式で示す腐敗アミンの前駆体となるアミノ酸はどれか。1つ選べ。",
+    "choices": {
+      "ア": "リシン",
+      "イ": "チロシン",
+      "ウ": "ヒスチジン",
+      "エ": "アルギニン",
+      "オ": "トリプトファン"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "図の構造は、イミダゾール環(HNとNを含む5員環)にCH2CH2NH2が結合したヒスタミンである。ヒスタミンはアミノ酸のヒスチジンが脱炭酸されて生じる腐敗アミンである。したがって正解は3。",
+    "choiceExplanations": {
+      "ア": "リシンが脱炭酸されると生じるのはカダベリンで、図のヒスタミンではない。",
+      "イ": "チロシンが脱炭酸されるとチラミンが生じる。チラミンはイミダゾール環ではなくフェノール環をもつ。",
+      "ウ": "正しい。ヒスチジンの脱炭酸でヒスタミンが生じる。イミダゾール環とエチルアミン側鎖が図の構造と一致する。",
+      "エ": "アルギニンからはアグマチンなどが生じ、さらにプトレシンに変わる。図のヒスタミンではない。",
+      "オ": "トリプトファンが脱炭酸されるとトリプタミンが生じる。トリプタミンはインドール環をもち、図の構造とは異なる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=10",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問19（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q019-foundation-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問19の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q23",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 23,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "水道水質基準の基準項目に定められている大腸菌を特異的に検出するための基質はどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "水道水質基準の大腸菌は、特定酵素基質培地法で検出される。大腸菌はβ-グルクロニダーゼをもつ。この酵素は4-メチルウンベリフェリルβ-D-グルクロニド(MUG)を加水分解し、蛍光物質を遊離させる。図の4は、グルクロン酸(CO2Hをもつ)に4-メチルクマリンが結合した構造で、これに当たる。したがって正解は4。なお、各構造の名称は図の構造から判断したものである。",
+    "choiceExplanations": {
+      "ア": "2-ニトロフェニルガラクトシド(ONPG)に相当する構造で、β-ガラクトシダーゼの基質である。大腸菌群の検出には使われるが、大腸菌に特異的ではない。",
+      "イ": "X-Galに相当する構造で、β-ガラクトシダーゼにより青色を呈する。大腸菌に特異的ではない。",
+      "ウ": "フェニル基とシアノ基をもつ配糖体で、青酸配糖体(マンデロニトリル配糖体)に相当する構造である。大腸菌の検出基質ではない。",
+      "エ": "正しい。グルクロン酸を含む4-メチルウンベリフェリルグルクロニドで、大腸菌のβ-グルクロニダーゼにより蛍光を発する。",
+      "オ": "メチルアゾキシメチル基をもつ配糖体で、サイカシン様の構造である。大腸菌の検出基質ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=11",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問23（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q023-required-next-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問23の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q41",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 41,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "下図のように、細胞膜の形態変化を伴って高分子医薬品を細胞内へ取り込む輸送機構はどれか。1つ選べ。",
+    "choices": {
+      "ア": "単純拡散",
+      "イ": "促進拡散",
+      "ウ": "一次性能動輸送",
+      "エ": "二次性能動輸送",
+      "オ": "膜動輸送"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "図では、細胞外の高分子医薬品を細胞膜が包み込むようにくぼみ、膜が閉じて小胞となり細胞内に取り込まれています。これは、細胞膜の形態変化(陥入と小胞形成)を伴うエンドサイトーシスで、膜動輸送に分類されます。",
+    "choiceExplanations": {
+      "ア": "単純拡散は、膜の脂質二重層を濃度勾配に従って透過する輸送です。膜の形態変化は伴わないため誤りです。",
+      "イ": "促進拡散は、担体(トランスポーター)やチャネルを介して濃度勾配に従って輸送する機構です。膜が変形して小胞を作ることはないため誤りです。",
+      "ウ": "一次性能動輸送は、ATPの加水分解エネルギーを直接利用して、濃度勾配に逆らって輸送する機構です(例:Na+,K+-ATPase)。膜の形態変化による取り込みではないため誤りです。",
+      "エ": "二次性能動輸送は、イオン濃度勾配のエネルギーを利用して、共輸送や逆輸送により物質を運ぶ機構です。トランスポーターを介し、小胞形成は伴わないため誤りです。",
+      "オ": "正しいです。図は、膜が変形して小胞を形成し物質を取り込む膜動輸送(エンドサイトーシス)を示しています。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=19",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問41（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q041-foundation-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問41の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q46",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 46,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "体内動態が線形1-コンパートメントモデルに従う薬物を経口投与した場合、最高血中濃度到達時間が短縮する要因はどれか。1つ選べ。",
+    "choices": {
+      "ア": "投与量の減少",
+      "イ": "吸収率の上昇",
+      "ウ": "分布容積の増大",
+      "エ": "吸収速度定数の上昇",
+      "オ": "消失速度定数の低下"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "最高血中濃度到達時間は tmax = ln(ka/ke)/(ka−ke) で表され、吸収速度定数 ka と消失速度定数 ke だけで決まります。ka が大きくなると tmax は短くなります。投与量と吸収率は濃度の大きさに関わりますが、tmax の式には直接含まれません。分布容積についても、ka と ke が変わらなければ tmax は変化しません。",
+    "choiceExplanations": {
+      "ア": "投与量が変わっても tmax は変化しません。血中濃度が全体に比例して変わるだけです。",
+      "イ": "吸収率(バイオアベイラビリティ)は濃度の大きさに影響しますが、tmax の式には含まれません。",
+      "ウ": "分布容積は濃度の大きさに関わりますが、ka と ke が変わらなければ tmax は変化しません。",
+      "エ": "正解です。ka が上昇すると tmax は短縮します。",
+      "オ": "ke が低下すると tmax は延長します。短縮する要因ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=21",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問46（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q47",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 47,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "体内動態が線形1-コンパートメントモデルに従い、消失半減期が2時間である薬物を静脈内定速注入する。投与開始後、薬物の血中濃度が定常状態の血中濃度の75%に到達する時間(h)はどれか。1つ選べ。",
+    "choices": {
+      "ア": "1",
+      "イ": "2",
+      "ウ": "3",
+      "エ": "4",
+      "オ": "5"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "静脈内定速注入では C(t) = Css(1−e^(−ke·t)) です。\n1) C/Css = 0.75 なので、e^(−ke·t) = 0.25 = (1/2)^2 です。\n2) (1/2)^(t/t1/2) = (1/2)^2 より、t/t1/2 = 2 となります。\n3) t1/2 = 2 時間なので、t = 2 × 2 = 4 時間です。",
+    "choiceExplanations": {
+      "ア": "1時間では 1−(1/2)^(1/2) ≒ 0.29 で、約29%にとどまります。",
+      "イ": "2時間は半減期1回分で、定常状態の50%に達する時間です。",
+      "ウ": "3時間では 1−(1/2)^1.5 ≒ 0.65 で、約65%です。",
+      "エ": "正解です。半減期2回分(2×2時間)で75%に達します。",
+      "オ": "5時間では 1−(1/2)^2.5 ≒ 0.82 で、約82%となり75%を超えます。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=22",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問47（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q48",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 48,
+    "officialAnswerNumber": "4",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "ある薬物の肝固有クリアランス(CLint)が肝血流量(Qh)と比較して十分に小さい場合、その薬物の肝クリアランスはどのように近似できるか。1つ選べ。\nただし、fu は血漿タンパク非結合形分率とする。",
+    "choices": {
+      "ア": "Qh",
+      "イ": "CLint",
+      "ウ": "fu・Qh",
+      "エ": "fu・CLint",
+      "オ": "CLint/fu"
+    },
+    "answer": "エ",
+    "requiredSelections": 1,
+    "explanation": "well-stirred model では CLh = Qh・fu・CLint / (Qh + fu・CLint) です。CLint が Qh より十分に小さければ、分母の Qh + fu・CLint は Qh と近似できます。したがって CLh ≒ Qh・fu・CLint / Qh = fu・CLint となります。",
+    "choiceExplanations": {
+      "ア": "Qh は fu・CLint が Qh より十分に大きい場合の近似（血流律速）である。CLint >> Qh だけでは fu が極小のとき成立しない。本問の CLint が小さい条件とは逆である。",
+      "イ": "CLint だけでは血漿タンパク結合の影響が含まれていません。fu を掛ける必要があります。",
+      "ウ": "fu・Qh は肝クリアランスの近似として成り立ちません。",
+      "エ": "正解です。CLint が小さいとき CLh ≒ fu・CLint(代謝律速)です。",
+      "オ": "CLint/fu は結合の影響を逆に扱っており、誤りです。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=22",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問48（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q51",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 51,
+    "officialAnswerNumber": "2",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "構造粘性を有する製剤でみられる、下図のレオグラムを示す現象はどれか。1つ選べ。",
+    "choices": {
+      "ア": "クリープ",
+      "イ": "チキソトロピー",
+      "ウ": "応力緩和",
+      "エ": "ダイラタンシー",
+      "オ": "コアセルベーション"
+    },
+    "answer": "イ",
+    "requiredSelections": 1,
+    "explanation": "図では、せん断応力を上げていく上昇曲線と、下げていく下降曲線が一致せず、ヒステリシスループを描いている。下降曲線は上昇曲線より左側(同じせん断応力でせん断速度が大きい側)にある。これは、せん断で構造が壊れて粘度が下がり、静置すると元に戻る性質で、チキソトロピーの典型的なレオグラムである。したがって正解は2である。",
+    "choiceExplanations": {
+      "ア": "クリープは、一定の応力を加え続けたときに変形が時間とともに増加する現象で、時間-ひずみ曲線で表す。図のヒステリシスループとは異なる。",
+      "イ": "チキソトロピーは、ずり応力で粘度が低下し、静置すると回復する現象である。上昇曲線と下降曲線が一致しないヒステリシスループを示す。これが正解。",
+      "ウ": "応力緩和は、一定のひずみを与えたときに応力が時間とともに減少する現象で、図のレオグラムとは異なる。",
+      "エ": "ダイラタンシーは、せん断速度の増加に伴って粘度が増大する現象で、上昇曲線は上に凸になる。図は下に凸の上昇曲線なので該当しない。",
+      "オ": "コアセルベーションは、親水コロイド溶液から濃厚なコロイド相が分離する現象で、マイクロカプセル調製などに利用される。レオグラムで表す流動現象ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=23",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問51（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q051-model-original.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問51の原図"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q53",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 53,
+    "officialAnswerNumber": "1",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "下の模式図で示される経口徐放カプセル剤の型はどれか。1つ選べ。",
+    "choices": {
+      "ア": "スパンスル型",
+      "イ": "ロンタブ型",
+      "ウ": "グラデュメット型",
+      "エ": "スパスタブ型",
+      "オ": "レジネート型"
+    },
+    "answer": "ア",
+    "requiredSelections": 1,
+    "explanation": "図は、カプセルに速放性顆粒と放出速度の異なる複数種類の徐放性顆粒を混合して充填した構造を示す。これはスパンスル型の特徴である。したがって正解は1である。",
+    "choiceExplanations": {
+      "ア": "スパンスル型は、放出速度の異なる顆粒をカプセルに充填した複合顆粒型である。図の構造と一致する。これが正解。",
+      "イ": "ロンタブ型はマトリックスを用いた錠剤型で、顆粒を充填したカプセル剤ではない。",
+      "ウ": "グラデュメット型は、不溶性の多孔性マトリックス(プラスチック骨格)から薬物が溶出する錠剤型で、顆粒を充填したカプセルではない。",
+      "エ": "スパスタブ型は、速放性顆粒と複数種の徐放性顆粒を打錠した錠剤で、顆粒を充填したカプセルではない。",
+      "オ": "レジネート型は、イオン交換樹脂に薬物を結合させて徐放性を得る型で、図のような顆粒混合の構造ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=24",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問53（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q053-foundation-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問53の原図1"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q72",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 72,
+    "officialAnswerNumber": "3",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "医薬品医療機器等法において、「薬局医薬品」とは、「要指導医薬品及び[A]以外の医薬品をいう。」となっている。Aにあてはまるのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "医療用医薬品",
+      "イ": "処方箋医薬品",
+      "ウ": "一般用医薬品",
+      "エ": "体外診断用医薬品",
+      "オ": "薬局製造販売医薬品"
+    },
+    "answer": "ウ",
+    "requiredSelections": 1,
+    "explanation": "医薬品医療機器等法では、薬局医薬品を「要指導医薬品及び一般用医薬品以外の医薬品」と定義しています。したがって正解は3です。",
+    "choiceExplanations": {
+      "ア": "薬局医薬品から除外する定義文の名称は、医療用医薬品ではなく一般用医薬品です。",
+      "イ": "処方箋医薬品は、薬局医薬品の一部に当たる区分です。除外の対象ではありません。",
+      "ウ": "正しい。一般用医薬品が入り、「要指導医薬品及び一般用医薬品以外の医薬品」が薬局医薬品です。",
+      "エ": "体外診断用医薬品は、この定義の文言に含まれません。",
+      "オ": "薬局製造販売医薬品は、空欄に入る「一般用医薬品」という名称ではありません。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=31",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問72（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q75",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 75,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "医薬品副作用被害救済制度の概要を示した下図において、健康被害者が給付を請求する先の A として正しいのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "主治医",
+      "イ": "都道府県知事",
+      "ウ": "製造販売業者",
+      "エ": "社会保険診療報酬支払基金",
+      "オ": "独立行政法人医薬品医療機器総合機構(PMDA)"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "図では、健康被害者(本人または遺族)が A に①給付請求を行い、A が厚生労働大臣へ②判定を申し出ます。厚生労働大臣は薬事審議会に③諮問して④答申を受け、⑤判定結果を A に通知し、A が⑥給付を行います。この役割を担うのは独立行政法人医薬品医療機器総合機構(PMDA)です。したがって正解は 5 です。",
+    "choiceExplanations": {
+      "ア": "主治医は給付の請求先ではありません。給付の請求や支給の判定の手続きを行う機関ではないため誤りです。",
+      "イ": "都道府県知事は図の A の役割(給付請求の受付、判定の申出、給付)を担いません。誤りです。",
+      "ウ": "製造販売業者は給付の請求先ではありません。製造販売業者は拠出金を納付する立場です。",
+      "エ": "社会保険診療報酬支払基金は診療報酬の審査・支払いを行う機関で、本制度の給付請求先ではありません。",
+      "オ": "正しい選択肢です。PMDA が給付請求を受け、判定を厚生労働大臣に申し出て、判定結果の通知を受けたうえで給付を行います。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=32",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問75（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11",
+    "imageUrls": [
+      "/images/questions/yakuzaishi/pharmacy-110-required-q075-system-next-original-1.png"
+    ],
+    "imageAltTexts": [
+      "第110回薬剤師国家試験 必須問題 問75の原図または原表"
+    ]
+  },
+  {
+    "id": "yakuzaishi-2025-annual-required-q81",
+    "exam": "yakuzaishi",
+    "session": "required",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 81,
+    "officialAnswerNumber": "5",
+    "type": "multiple-choice",
+    "category": "必須問題",
+    "topicTags": [
+      "必須問題",
+      "第110回"
+    ],
+    "difficulty": 3,
+    "question": "以下の成分を含む一般用医薬品を使用した場合に、出血傾向に最も注意が必要なのはどれか。1つ選べ。",
+    "choices": {
+      "ア": "センノシド",
+      "イ": "ロペラミド塩酸塩",
+      "ウ": "ミノキシジル",
+      "エ": "フェキソフェナジン塩酸塩",
+      "オ": "イコサペント酸エチル"
+    },
+    "answer": "オ",
+    "requiredSelections": 1,
+    "explanation": "イコサペント酸エチル(EPA製剤)は血小板凝集を抑制する作用があります。そのため出血傾向に最も注意が必要で、出血している人や出血しやすい人では慎重な対応が求められます。",
+    "choiceExplanations": {
+      "ア": "センノシドは刺激性下剤です。主な注意点は下痢や腹痛などで、出血傾向への注意が最も必要な成分ではありません。",
+      "イ": "ロペラミド塩酸塩は止瀉薬です。主な注意点は便秘やイレウスなどで、出血傾向への注意が最も必要な成分ではありません。",
+      "ウ": "ミノキシジルは発毛剤の成分です。主な注意点は循環器系や頭皮の症状などで、出血傾向への注意が最も必要な成分ではありません。",
+      "エ": "フェキソフェナジン塩酸塩は抗ヒスタミン薬です。眠気などに注意しますが、出血傾向への注意が最も必要な成分ではありません。",
+      "オ": "正しい。血小板凝集抑制作用により出血傾向に最も注意が必要です。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://www.mhlw.go.jp/content/001455149.pdf#page=35",
+    "sourceAnswerUrl": "https://www.mhlw.go.jp/content/001458551.pdf#page=1",
+    "sourceAttribution": "出典：厚生労働省「第110回薬剤師国家試験」必須問題 問81（原問・最終正答）。解説は過去問AIが独自に作成。",
+    "license": "MHLW-attributed",
+    "needsReview": false,
+    "lastUpdated": "2026-10-11"
+  }
+]

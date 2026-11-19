@@ -80,7 +80,7 @@ async function boundedFetch(url: string, init: RequestInit, signal: AbortSignal,
   }
 }
 
-async function boundedJson(response: Response, signal: AbortSignal, deadline: number): Promise<unknown> {
+async function boundedJson(response: Response, signal: AbortSignal, deadline: number, maxBytes: number): Promise<unknown> {
   const reader = response.body?.getReader();
   if (!reader) throw new Error("invalid normal use response");
   const decoder = new TextDecoder("utf-8", { fatal: true });
@@ -92,7 +92,7 @@ async function boundedJson(response: Response, signal: AbortSignal, deadline: nu
       checkDeadline(signal, deadline);
       if (done) break;
       bytes += value.byteLength;
-      if (bytes > 4096) throw new Error("oversized normal use response");
+      if (bytes > maxBytes) throw new Error("oversized normal use response");
       text += decoder.decode(value, { stream: true });
     }
     checkDeadline(signal, deadline);
@@ -107,41 +107,44 @@ async function boundedJson(response: Response, signal: AbortSignal, deadline: nu
 
 export const sharedNormalUseStore: NormalUseStore = {
   async admit(windows) {
-    let response: Response | undefined;
-    try {
       if (!Array.isArray(windows) || windows.length < 1 || windows.length > 6) throw new Error("invalid normal use windows");
       // The request and reply must refer to these same captured primitive values.
       const snapshot = Array.from(windows, w => ({ key: w.key, limit: w.limit, resetAt: w.resetAt }));
       if (new Set(snapshot.map(w => w.key)).size !== snapshot.length
         || snapshot.some(w => typeof w.key !== "string" || !w.key || !Number.isSafeInteger(w.limit) || w.limit < 1
           || !Number.isSafeInteger(w.resetAt) || w.resetAt <= 0)) throw new Error("invalid normal use windows");
-      const url = process.env.KV_REST_API_URL?.replace(/\/$/, "");
-      const token = process.env.KV_REST_API_TOKEN;
-      if (!url || !token) throw new Error("normal use store unavailable");
-      const signal = AbortSignal.timeout(3000);
-      const deadline = performance.now() + 3000;
-      response = await boundedFetch(url, {
-        method: "POST", headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
-        body: JSON.stringify(["EVAL", ADMIT_NORMAL_USE_LUA, snapshot.length, ...snapshot.map(w => w.key),
-          ...snapshot.flatMap(w => [w.limit, Math.ceil(w.resetAt / 1000)])]),
-        signal, cache: "no-store",
-      }, signal, deadline);
-      if (!response.ok) throw new Error("normal use store unavailable");
-      const body = await boundedJson(response, signal, deadline);
-      if (typeof body !== "object" || body === null || !("result" in body) || "error" in body)
-        throw new Error("invalid normal use response");
-      const result = body.result;
+      const result = await evalNormalUse(ADMIT_NORMAL_USE_LUA, snapshot.map(w => w.key),
+        snapshot.flatMap(w => [w.limit, Math.ceil(w.resetAt / 1000)]));
       if (!Array.isArray(result) || result.length !== 2 || !Number.isInteger(result[1])
         || !((result[0] === 1 && result[1] === 0)
           || (result[0] === 0 && result[1] >= 1 && result[1] <= snapshot.length)))
         throw new Error("invalid normal use response");
       return result[0] === 1 ? { allowed: true } : { allowed: false, deniedWindow: result[1] - 1 };
-      } catch {
-      // A remote write may already have committed. No retry, fallback or refund;
-      // do not expose raw transport messages, response bodies or credentials.
-      throw new Error("normal use store unavailable");
-    } finally {
-      if (response) cancelBody(response);
-    }
   },
 };
+
+async function evalNormalUse(script: string, keys: readonly string[], args: readonly number[]): Promise<unknown> {
+  let response: Response | undefined;
+  try {
+    const url = process.env.KV_REST_API_URL?.replace(/\/$/, "");
+    const token = process.env.KV_REST_API_TOKEN;
+    if (!url || !token) throw new Error("normal use store unavailable");
+    const signal = AbortSignal.timeout(3000);
+    const deadline = performance.now() + 3000;
+    response = await boundedFetch(url, {
+      method: "POST", headers: { Authorization: `Bearer ${token}`, "Content-Type": "application/json" },
+      body: JSON.stringify(["EVAL", script, keys.length, ...keys, ...args]), signal, cache: "no-store",
+    }, signal, deadline);
+    if (!response.ok) throw new Error("normal use store unavailable");
+    const body = await boundedJson(response, signal, deadline, 4096);
+    if (typeof body !== "object" || body === null || !("result" in body) || "error" in body)
+      throw new Error("invalid normal use response");
+    return body.result;
+  } catch {
+      // A remote write may already have committed. No retry, fallback or refund;
+      // do not expose raw transport messages, response bodies or credentials.
+    throw new Error("normal use store unavailable");
+  } finally {
+    if (response) cancelBody(response);
+  }
+}

@@ -1,0 +1,188 @@
+[
+  {
+    "id": "denken2-2023-second-kikai-q1",
+    "exam": "denken2",
+    "year": 2023,
+    "season": "second",
+    "session": "kikai",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "機械・制御",
+    "topicTags": [
+      "同期発電機の運転"
+    ],
+    "difficulty": 5,
+    "question": "同期発電機の運転（機械・制御）",
+    "answer": "〔問１の標準解答〕\n\n  (1)\n    （a）E ，（b） jX s I ，（c） ，（d） ，（e）I   ・・・（答）\n  (2)\n\n   (フェーザ図は解答ではなく参考用)\n\n\n\n                       E\n                                      X s I cos   E sin                                                                          j Xs I\n\n                           V\n                             X s I sin\n                                 I\n\n\n\n\n   フェーザ図より，\n\n      E     (V  Xs I sin  ) 2   ( Xs I cos  ) 2\n\n\n                     2                          2           V   2VXs I sin   Xs I  ・・・（答）\n\n\n                               より   定格状態では， V  1 ， I  1 ，sin    0.6 ，また Xs   1.8\n\n                     2                                  2      En    1   2 1  1.8 1  0.6   1.8 1    2.5298 →  2.53 p.u.・・・（答）\n\n  (3)\n      P  VI cos に，フェーザ図から得られる Xs I cos   E sin の関係を代入す\n\n  ると，\n\n                VE       P  VI cos        sin  [p.u.]\n                Xs\n\n          VE       P      sin  [p.u.] ・・・①    ・・・(答)\n         X s\n\n                                                      - 6 -\n(4)\n\n                         PXs  a）①式から，sin は sin    と表され，また定格状態では， V  1 ，\n                         VE\n     En  2.5298 p.u.，P = 0.8 p.u.であるので，\n            PXs    0.8  1.8          sin  n                   0.56921 →  0.569・・・(答)            VEn   1  2.5298\n   b） Pm は①式においてsin    1 のときに得られるので，\n\n          VE\n       Pm     [p.u.]・・・(答)\n          X s\n   定格状態では， V  1 ， En  2.5298 p.u.であるので，\n              VEn  1  2.5298       Pmn[p.u.]                   1.4054 p.u.              Xs       1.8\n       Pmn[MW]  1.4054  15  21.081MW →  21.1 MW・・・(答)\n\n\n(5)\n  a）定格運転時と比べて定態安定極限電力は減少する。 ・・・(答)\n   磁気飽和を無視した条件では，界磁電流を80％にするとそのときの無負荷\n   誘導起電力E は En の80％になるので，\n              VE  VEn  0.8  1  2.5298  0.8       Pm[p.u.]                                   1.124 4 p.u.             Xs    Xs            1.8\n       Pm[MW ]  1.124 4  15  16.866MW →  16.9 MW・・・(答)\n  b）界磁電流を80％にしても発電機の有効電力P は変化しないので，\n            PXs       0.8  1.8          sin                          0.71152 →  0.712・・・(答)\n            VE   1  2.5298  0.8\n\n   定格運転時と比べて定態安定度(同期安定性)は低下する。・・・(答)\n\n\n\n\n\n                                                   - 7 -\n",
+    "modelAnswer": "〔問１の標準解答〕\n\n  (1)\n    （a）E ，（b） jX s I ，（c） ，（d） ，（e）I   ・・・（答）\n  (2)\n\n   (フェーザ図は解答ではなく参考用)\n\n\n\n                       E\n                                      X s I cos   E sin                                                                          j Xs I\n\n                           V\n                             X s I sin\n                                 I\n\n\n\n\n   フェーザ図より，\n\n      E     (V  Xs I sin  ) 2   ( Xs I cos  ) 2\n\n\n                     2                          2           V   2VXs I sin   Xs I  ・・・（答）\n\n\n                               より   定格状態では， V  1 ， I  1 ，sin    0.6 ，また Xs   1.8\n\n                     2                                  2      En    1   2 1  1.8 1  0.6   1.8 1    2.5298 →  2.53 p.u.・・・（答）\n\n  (3)\n      P  VI cos に，フェーザ図から得られる Xs I cos   E sin の関係を代入す\n\n  ると，\n\n                VE       P  VI cos        sin  [p.u.]\n                Xs\n\n          VE       P      sin  [p.u.] ・・・①    ・・・(答)\n         X s\n\n                                                      - 6 -\n(4)\n\n                         PXs  a）①式から，sin は sin    と表され，また定格状態では， V  1 ，\n                         VE\n     En  2.5298 p.u.，P = 0.8 p.u.であるので，\n            PXs    0.8  1.8          sin  n                   0.56921 →  0.569・・・(答)            VEn   1  2.5298\n   b） Pm は①式においてsin    1 のときに得られるので，\n\n          VE\n       Pm     [p.u.]・・・(答)\n          X s\n   定格状態では， V  1 ， En  2.5298 p.u.であるので，\n              VEn  1  2.5298       Pmn[p.u.]                   1.4054 p.u.              Xs       1.8\n       Pmn[MW]  1.4054  15  21.081MW →  21.1 MW・・・(答)\n\n\n(5)\n  a）定格運転時と比べて定態安定極限電力は減少する。 ・・・(答)\n   磁気飽和を無視した条件では，界磁電流を80％にするとそのときの無負荷\n   誘導起電力E は En の80％になるので，\n              VE  VEn  0.8  1  2.5298  0.8       Pm[p.u.]                                   1.124 4 p.u.             Xs    Xs            1.8\n       Pm[MW ]  1.124 4  15  16.866MW →  16.9 MW・・・(答)\n  b）界磁電流を80％にしても発電機の有効電力P は変化しないので，\n            PXs       0.8  1.8          sin                          0.71152 →  0.712・・・(答)\n            VE   1  2.5298  0.8\n\n   定格運転時と比べて定態安定度(同期安定性)は低下する。・・・(答)\n\n\n\n\n\n                                                   - 7 -\n",
+    "explanation": "フェーザ図から端子電圧、同期リアクタンス降下、内部起電力の関係を求める。出力角と有効電力の関係を式にし、定格との比較に用いる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken2/2023-second-machine-control/question-p03.webp",
+      "/questions/denken2/2023-second-machine-control/question-p04.webp"
+    ],
+    "imageAltTexts": [
+      "問1 公式の本文・図表・設問（PDF 3ページ）",
+      "問1 公式の本文・図表・設問（PDF 4ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken2/2023-second-machine-control/answer-q01-p06.webp",
+      "/questions/denken2/2023-second-machine-control/answer-q01-p07.webp"
+    ],
+    "answerImageAltTexts": [
+      "問1 公式標準解答（PDF 6ページ）",
+      "問1 公式標準解答（PDF 7ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20231112_ch_second_q02.pdf#page=3",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20231112_ch_second_a01.pdf#page=6",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/second/qa/index.html"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2023年度 第二種電気主任技術者 二次試験 機械・制御」問1。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "questionNotice": "問1〜問4から2問を選択。"
+  },
+  {
+    "id": "denken2-2023-second-kikai-q2",
+    "exam": "denken2",
+    "year": 2023,
+    "season": "second",
+    "session": "kikai",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "機械・制御",
+    "topicTags": [
+      "変圧器のV結線"
+    ],
+    "difficulty": 5,
+    "question": "変圧器のV結線（機械・制御）",
+    "answer": "〔問２の標準解答〕\n\n  (1) 巻数比をa とすると題意から a  4 であるから，図2 における一次側線間電圧\n    V1ab の二次側換算値 V1ab を求めると，\n\n              1       1\n       V1ab    V1ab     400  100 V ・・・ (答)              a       4\n  (2) 図2 における一次側線電流 I1a の二次側換算値 I1a を求めると，\n            I1a   aI1a  4  30  120A ・・・ (答)\n  (3) 一次及び二次の漏れリアクタンスを 1x 及び 2x とすると，図2 における二次側\n  に換算した合成リアクタンスX は，\n\n             1         1       X                    2                  x1  x2     2  0.64  0.21  0.04  0.21  0.25 ・・・ (答)             a         4\n\n  (4) 解図1 は，図3 のフェーザ図である。\n\n                                                         j X  I1c\n              V1cb sin                       6\n                            V2cb\n\n\n                     V1cb\n                V1c                                                                                                            j X I1a                                            c          V1ab\n                               I1c        V1cb cos                 6\n                                                                                                       1a                                   V2ab          V1ab sin 6  X I                        6                         a\n                    O                                                   I1a    V1a\n\n                              V1ab cos                                           6                V1b\n\n\n\n           解図1 図3 のフェーザ図\n\n\n\n\n\n                                                      - 8 -\nこの図より，図中の①，②，③，④の電圧のフェーザは以下となる。\n  ① V1ab\n  ②  jX I1a\n  ③ V1cb\n  ④ V2cb\n\n(5) 解図1 より，負荷接続時の変圧器二次電圧 V2ab 及び V2cb を求めると以下とな\n\n る。\n\n                                         2                         2\n     V2ab  V2ab    V1ab cos     V1ab sin   X I1a                           6           6\n\n                                   2                            2\n                      3          1                               2             2                100         100     0.25 120      50 3    50  30\n                      2          2\n\n              7500  400   7900  88.882 →  88.9V ・・・ (答)\n\n                                         2                         2\n     V2cb  V2cb    V1cb cos     V1cb sin   X I1c                           6           6\n\n                                    2                         2\n             V1cb cos     V1cb sin   X I1a      ∵  I1c    I1a                       6           6\n\n                                   2                            2\n                      3          1                               2             2                100         100     0.25 120      50 3    50  30\n                      2          2\n\n               7500  6400   13900  117.90 →  118 V ・・・ (答)\n\n\n【(5)別解】\n  解図1 より， V2ab 及び V2cb を求めると\n     V2ab  V1ab    j X I1a\n\n          V1ab  cos     jsin         j X  I1a                    6      6\n\n\n                                                   - 9 -\n3   1      100            j     j0.25  120\n           2    2\n\n      50 3   j50  j30\n      50 3   j20\n\nV2ab  V1ab    j X I1a\n\n\n                              2\n  V2ab  V2ab     50 3    20 2    7500  400\n\n         7900  88.882 →  88.9V ・・・・・(答)\n\n\nV2cb  V1cb    j X I1c\n\n                                    2       2\n     V1cb  cos     jsin          j X  I1c  cos      jsin              2      2              3       3\n\n                       1    3    = j100  j0.25 120            j\n                       2    2\n\n                 1    3       j100  j30            j\n                 2    2\n\n    = j100  j15  15 3\n\n      15 3  j115\n\nV2cb  V1cb    j X I1c\n\n\n                           2\nV2cb  V2cb     15 3    115 2    675  13225\n\n       13900  117.90 →  118V ・・・・・(答)\n\n\n\n\n\n                                         - 10 -\n(6) 変圧器の損失を無視しているため，変圧器入力＝変圧器出力が成り立つ。対\n\n\n                                                                                1cb                             と I1c との位相差が  称三相交流電源電圧 V1ab と I1a との位相差が6 であり， V\n\n    であるから，Tr1 及びTr2 の出力の有効電力 1P 及び P2 はそれぞれ，     6\n\n                                   3\n       P1  V1ab I1a cos    400  30      10392 W  →  10.4 kW                     6           2\n\n                                   3\n       P2  V1cb I1c cos    400  30      10392 W  →  10.4 kW                      6           2\n   となるため，いずれも P1  P2  10.4 kW となる。\n\n\n【(6)別解】\n\n   変圧器の損失を無視しているため，変圧器入力＝変圧器出力が成り立つ。変\n   圧器Tr1，Tr2 のそれぞれの複素電力 S1 ， S2 を求め、その実部から 1P ， P2 を求\n  める（ S  P    j Q ）。\n\n\n   変圧器入力としての S1\n        S1  V1ab  I1a\n\n            100 cos     jsin    120\n                   6      6\n\n                  3   1            100            j    120   50 3  j50  120  6000 3  j6000\n                 2    2\n\n       P1  6 000 3  10392 W →  10.4 kW・・・ (答)\n\n   変圧器出力としての S1\n       S1  V2ab  I 2a  V2ab  I1a\n\n             50 3  j50  120\n\n\n\n                                                     - 11 -\n50 3  j50  120  6000 3  j6000\n\n  P1  6000 3  10392 W →  10.4 kW・・・・・(答)\n\n変圧器入力としての S2\n  S2  V1cb  I1c\n                                2       2       100 cos     jsin    120 cos      jsin\n              2      2          3       3\n\n                   1    3             1    3         j100 120            j        j12000            j\n                   2    2             2    2\n\n       6000 3  j6000\n   P2  6000 3  10392 W →  10.4 kW・・・・・(答)\n変圧器出力としての S2\n  S2  V2cb  I 2c  V2cb  I1c\n                   2       2                1    3        j100 120 cos      jsin        j100 120            j\n                    3       3                2    2\n\n       6000 3  j6000\n  P2  6000 3  10392 W →  10.4 kW・・・・・(答)\n\n\n\n\n\n                                            - 12 -\n",
+    "modelAnswer": "〔問２の標準解答〕\n\n  (1) 巻数比をa とすると題意から a  4 であるから，図2 における一次側線間電圧\n    V1ab の二次側換算値 V1ab を求めると，\n\n              1       1\n       V1ab    V1ab     400  100 V ・・・ (答)              a       4\n  (2) 図2 における一次側線電流 I1a の二次側換算値 I1a を求めると，\n            I1a   aI1a  4  30  120A ・・・ (答)\n  (3) 一次及び二次の漏れリアクタンスを 1x 及び 2x とすると，図2 における二次側\n  に換算した合成リアクタンスX は，\n\n             1         1       X                    2                  x1  x2     2  0.64  0.21  0.04  0.21  0.25 ・・・ (答)             a         4\n\n  (4) 解図1 は，図3 のフェーザ図である。\n\n                                                         j X  I1c\n              V1cb sin                       6\n                            V2cb\n\n\n                     V1cb\n                V1c                                                                                                            j X I1a                                            c          V1ab\n                               I1c        V1cb cos                 6\n                                                                                                       1a                                   V2ab          V1ab sin 6  X I                        6                         a\n                    O                                                   I1a    V1a\n\n                              V1ab cos                                           6                V1b\n\n\n\n           解図1 図3 のフェーザ図\n\n\n\n\n\n                                                      - 8 -\nこの図より，図中の①，②，③，④の電圧のフェーザは以下となる。\n  ① V1ab\n  ②  jX I1a\n  ③ V1cb\n  ④ V2cb\n\n(5) 解図1 より，負荷接続時の変圧器二次電圧 V2ab 及び V2cb を求めると以下とな\n\n る。\n\n                                         2                         2\n     V2ab  V2ab    V1ab cos     V1ab sin   X I1a                           6           6\n\n                                   2                            2\n                      3          1                               2             2                100         100     0.25 120      50 3    50  30\n                      2          2\n\n              7500  400   7900  88.882 →  88.9V ・・・ (答)\n\n                                         2                         2\n     V2cb  V2cb    V1cb cos     V1cb sin   X I1c                           6           6\n\n                                    2                         2\n             V1cb cos     V1cb sin   X I1a      ∵  I1c    I1a                       6           6\n\n                                   2                            2\n                      3          1                               2             2                100         100     0.25 120      50 3    50  30\n                      2          2\n\n               7500  6400   13900  117.90 →  118 V ・・・ (答)\n\n\n【(5)別解】\n  解図1 より， V2ab 及び V2cb を求めると\n     V2ab  V1ab    j X I1a\n\n          V1ab  cos     jsin         j X  I1a                    6      6\n\n\n                                                   - 9 -\n3   1      100            j     j0.25  120\n           2    2\n\n      50 3   j50  j30\n      50 3   j20\n\nV2ab  V1ab    j X I1a\n\n\n                              2\n  V2ab  V2ab     50 3    20 2    7500  400\n\n         7900  88.882 →  88.9V ・・・・・(答)\n\n\nV2cb  V1cb    j X I1c\n\n                                    2       2\n     V1cb  cos     jsin          j X  I1c  cos      jsin              2      2              3       3\n\n                       1    3    = j100  j0.25 120            j\n                       2    2\n\n                 1    3       j100  j30            j\n                 2    2\n\n    = j100  j15  15 3\n\n      15 3  j115\n\nV2cb  V1cb    j X I1c\n\n\n                           2\nV2cb  V2cb     15 3    115 2    675  13225\n\n       13900  117.90 →  118V ・・・・・(答)\n\n\n\n\n\n                                         - 10 -\n(6) 変圧器の損失を無視しているため，変圧器入力＝変圧器出力が成り立つ。対\n\n\n                                                                                1cb                             と I1c との位相差が  称三相交流電源電圧 V1ab と I1a との位相差が6 であり， V\n\n    であるから，Tr1 及びTr2 の出力の有効電力 1P 及び P2 はそれぞれ，     6\n\n                                   3\n       P1  V1ab I1a cos    400  30      10392 W  →  10.4 kW                     6           2\n\n                                   3\n       P2  V1cb I1c cos    400  30      10392 W  →  10.4 kW                      6           2\n   となるため，いずれも P1  P2  10.4 kW となる。\n\n\n【(6)別解】\n\n   変圧器の損失を無視しているため，変圧器入力＝変圧器出力が成り立つ。変\n   圧器Tr1，Tr2 のそれぞれの複素電力 S1 ， S2 を求め、その実部から 1P ， P2 を求\n  める（ S  P    j Q ）。\n\n\n   変圧器入力としての S1\n        S1  V1ab  I1a\n\n            100 cos     jsin    120\n                   6      6\n\n                  3   1            100            j    120   50 3  j50  120  6000 3  j6000\n                 2    2\n\n       P1  6 000 3  10392 W →  10.4 kW・・・ (答)\n\n   変圧器出力としての S1\n       S1  V2ab  I 2a  V2ab  I1a\n\n             50 3  j50  120\n\n\n\n                                                     - 11 -\n50 3  j50  120  6000 3  j6000\n\n  P1  6000 3  10392 W →  10.4 kW・・・・・(答)\n\n変圧器入力としての S2\n  S2  V1cb  I1c\n                                2       2       100 cos     jsin    120 cos      jsin\n              2      2          3       3\n\n                   1    3             1    3         j100 120            j        j12000            j\n                   2    2             2    2\n\n       6000 3  j6000\n   P2  6000 3  10392 W →  10.4 kW・・・・・(答)\n変圧器出力としての S2\n  S2  V2cb  I 2c  V2cb  I1c\n                   2       2                1    3        j100 120 cos      jsin        j100 120            j\n                    3       3                2    2\n\n       6000 3  j6000\n  P2  6000 3  10392 W →  10.4 kW・・・・・(答)\n\n\n\n\n\n                                            - 12 -\n",
+    "explanation": "巻数比で電圧と電流を同じ側に換算する。二台の変圧器の電圧・電流の位相を区別し、出力電力をそれぞれ計算する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken2/2023-second-machine-control/question-p05.webp",
+      "/questions/denken2/2023-second-machine-control/question-p06.webp"
+    ],
+    "imageAltTexts": [
+      "問2 公式の本文・図表・設問（PDF 5ページ）",
+      "問2 公式の本文・図表・設問（PDF 6ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken2/2023-second-machine-control/answer-q02-p08.webp",
+      "/questions/denken2/2023-second-machine-control/answer-q02-p09.webp",
+      "/questions/denken2/2023-second-machine-control/answer-q02-p10.webp",
+      "/questions/denken2/2023-second-machine-control/answer-q02-p11.webp",
+      "/questions/denken2/2023-second-machine-control/answer-q02-p12.webp"
+    ],
+    "answerImageAltTexts": [
+      "問2 公式標準解答（PDF 8ページ）",
+      "問2 公式標準解答（PDF 9ページ）",
+      "問2 公式標準解答（PDF 10ページ）",
+      "問2 公式標準解答（PDF 11ページ）",
+      "問2 公式標準解答（PDF 12ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20231112_ch_second_q02.pdf#page=5",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20231112_ch_second_a01.pdf#page=8",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/second/qa/index.html"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2023年度 第二種電気主任技術者 二次試験 機械・制御」問2。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "questionNotice": "問1〜問4から2問を選択。"
+  },
+  {
+    "id": "denken2-2023-second-kikai-q3",
+    "exam": "denken2",
+    "year": 2023,
+    "season": "second",
+    "session": "kikai",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "機械・制御",
+    "topicTags": [
+      "電力用能動フィルタ"
+    ],
+    "difficulty": 5,
+    "question": "電力用能動フィルタ（機械・制御）",
+    "answer": "〔問３の標準解答〕\n\n  (1) ダイオード整流器・変換器，サイリスタ整流器・変換器，インバータ，など。\n  (2) コンデンサやリアクトルの過熱や振動，コンピュータや電子機器の誤作動，\n\n  など。\n  (3)  ic    i1   iL      iH   【(3) 別解】ci    iH  0 ，ci    i1   iL  0 など。\n\n\n  (4)\n                  LI\n                 Li                                                                                      t                   0                               2\n                  LI\n\n\n            4\n                    I L\n                    1i                                                                                       t\n            4\n                    I L\n\n\n                  LI\n               Hi                                                                                      t\n                  LI\n\n\n\n                  LI\n                    ci                                                                                       t\n                  LI\n\n\n\n                   (4)の解答図\n\n\n\n\n\n                                                     - 13 -\n4\n(5)   Li の実効値は LI ，  1i の実効値は       I L   0.900 I L ，  ci の実効値は\n                                           2\n\n         8\n    I L  1    2   0.435 I L\n\n  【(5) 別解】\n\n\n\n                   実効値\n\n                   2 2       8      2.83\n                       1i              I L            ，     I L ，       I L\n\n                                  2  8     I L    2             ，        8 ， 0.44I L                       ci        I L      2",
+    "modelAnswer": "〔問３の標準解答〕\n\n  (1) ダイオード整流器・変換器，サイリスタ整流器・変換器，インバータ，など。\n  (2) コンデンサやリアクトルの過熱や振動，コンピュータや電子機器の誤作動，\n\n  など。\n  (3)  ic    i1   iL      iH   【(3) 別解】ci    iH  0 ，ci    i1   iL  0 など。\n\n\n  (4)\n                  LI\n                 Li                                                                                      t                   0                               2\n                  LI\n\n\n            4\n                    I L\n                    1i                                                                                       t\n            4\n                    I L\n\n\n                  LI\n               Hi                                                                                      t\n                  LI\n\n\n\n                  LI\n                    ci                                                                                       t\n                  LI\n\n\n\n                   (4)の解答図\n\n\n\n\n\n                                                     - 13 -\n4\n(5)   Li の実効値は LI ，  1i の実効値は       I L   0.900 I L ，  ci の実効値は\n                                           2\n\n         8\n    I L  1    2   0.435 I L\n\n  【(5) 別解】\n\n\n\n                   実効値\n\n                   2 2       8      2.83\n                       1i              I L            ，     I L ，       I L\n\n                                  2  8     I L    2             ，        8 ， 0.44I L                       ci        I L      2",
+    "explanation": "負荷電流を基本波と高調波に分ける。観測点の電流の向きを図とそろえ、高調波を打ち消すための補償電流とその実効値を求める。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken2/2023-second-machine-control/question-p07.webp",
+      "/questions/denken2/2023-second-machine-control/question-p08.webp"
+    ],
+    "imageAltTexts": [
+      "問3 公式の本文・図表・設問（PDF 7ページ）",
+      "問3 公式の本文・図表・設問（PDF 8ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken2/2023-second-machine-control/answer-q03-p13.webp",
+      "/questions/denken2/2023-second-machine-control/answer-q03-p14.webp"
+    ],
+    "answerImageAltTexts": [
+      "問3 公式標準解答（PDF 13ページ）",
+      "問3 公式標準解答（PDF 14ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20231112_ch_second_q02.pdf#page=7",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20231112_ch_second_a01.pdf#page=13",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/second/qa/index.html"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2023年度 第二種電気主任技術者 二次試験 機械・制御」問3。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "questionNotice": "問1〜問4から2問を選択。"
+  },
+  {
+    "id": "denken2-2023-second-kikai-q4",
+    "exam": "denken2",
+    "year": 2023,
+    "season": "second",
+    "session": "kikai",
+    "qNumber": 4,
+    "type": "descriptive",
+    "category": "機械・制御",
+    "topicTags": [
+      "ボード線図と伝達関数"
+    ],
+    "difficulty": 5,
+    "question": "ボード線図と伝達関数（機械・制御）",
+    "answer": "〔問４の標準解答〕\n\n  (1) 図１のゲイン特性曲線は傾きが  20dB / dec の直線なので，積分要素であっ\n\n  て，その伝達関数は，\n\n                1\n      G1 ( s)          , TI  0 ··········································· ①\n           TI s\n   で表される。ここで，定数 IT を積分時間という。ゲインが0dB となる角周波\n\n                              1\n  数は，積分時間 IT を使って T［I  rad / s ］で表すことができる。したがって，図1\n\n  より，\n\n         1               0.1 ····················································· ②\n      TI\n\n   が成り立つ。上式を解いて，\n      TI  10 ····················································· ③\n\n   を得る。\n\n   ③式を①式に代入して，\n\n                1\n                  ·················································· ④      G1 ( s)               10 s ･･･(答)\n\n   となる。\n                                                     - 14 -\n1\n(2) 解図１に示すように，積分要素 G1( s)=  と比例要素 G2( s) K に分解するこ\n                             TI s\n\n とができる。\n\n\n\n                40\n                        G2\n\n\n\n                 0                        角周波数［rad/s］                           0.1                                ゲイン［dB］\n\n                        G1\n\n\n\n\n                解図１\n\n\n   G1( s)は小問(1)で扱った伝達関数に一致している。\n   G2( s)は，\n\n                              ···································· ⑤       20log 10 K  40  20log 10 10 2\n  から， K  100 となる。したがって，\n    G2( s)  100 ·················································· ⑥\n\n  と求められる。                         ・・・（答）\n\n\n(3) 図2 のゲイン特性曲線は傾きが  20dB / dec の直線なので，積分要素\n\n         1                                             1\n  G( s)              , TI1  0 である。その周波数伝達関数 G(j  )    のゲインは，\n      TI1 s                                                                                        j TI1\n\n              1      1   G(j  )               ········································· ⑦\n                          j TI1   TI1\n\n                                         1\n  となるから，デシベルで表すと 20log 10   ［dB］である。\n                              TI1\n\n                                                  - 15 -\nさて，図2 から，    0.1rad / s のとき40dB なので次式が成り立つ。\n\n               1                        2\n       20log 10        40  20log 10 10  ································ ⑧\n              0.1TI1\n\n  よって，\n\n        1              100 ················································· ⑨\n       0.1TI1\n\n               1                                   10\n  より， TI1  となるので，求める伝達関数は G( s )   である。・・・（答）               10                                              s\n\n\n                                        1                         1\n(4) 解図2 に示すように積分要素 G1 ( s)   と一次遅れ要素 G2 ( s)    に分                             TI2 s                      1  Ts\n\n 解して考える。\n\n\n\n\n                     G1\n                14\n\n                 0                         角周波数［rad/s］                                  ゲイン［dB］                    0.5\n                             G2\n\n\n                  解図2\n\n                                     1                     1\n  小問(3)において，積分要素 G1 ( s)   のゲインは 20log 10   ［dB］で計算\n                           TI2 s              TI2\n\n できることを学んでいる。解図2 から，    0.5rad / s のとき14 dB なので次式\n\n が成り立つ。\n\n               1                             0.7\n       20log 10        14  20log 10 10   ······························· ⑩\n              0.5TI2\n\n\n\n\n                                                  - 16 -\nよって，\n\n       1           0.7            10    5.0119 ········································ ⑪\n     0.5TI2\n\n                                                       1\n より， TI2  0.39905 となる。一方，一次遅れ要素 G2 ( s)    は，折れ点角                                                      1  Ts\n\n周波数が    0.5rad / s なので，T  2 となる。したがって，求める伝達関数は，\n\n                1               1   G( s)         →             ························· ⑫\n           0.39905 s(1  2 s)     0.399 s(1  2 s )\n\n                             ・・・（答）\n\n である。\n\n\n\n\n\n                                               - 17 -",
+    "modelAnswer": "〔問４の標準解答〕\n\n  (1) 図１のゲイン特性曲線は傾きが  20dB / dec の直線なので，積分要素であっ\n\n  て，その伝達関数は，\n\n                1\n      G1 ( s)          , TI  0 ··········································· ①\n           TI s\n   で表される。ここで，定数 IT を積分時間という。ゲインが0dB となる角周波\n\n                              1\n  数は，積分時間 IT を使って T［I  rad / s ］で表すことができる。したがって，図1\n\n  より，\n\n         1               0.1 ····················································· ②\n      TI\n\n   が成り立つ。上式を解いて，\n      TI  10 ····················································· ③\n\n   を得る。\n\n   ③式を①式に代入して，\n\n                1\n                  ·················································· ④      G1 ( s)               10 s ･･･(答)\n\n   となる。\n                                                     - 14 -\n1\n(2) 解図１に示すように，積分要素 G1( s)=  と比例要素 G2( s) K に分解するこ\n                             TI s\n\n とができる。\n\n\n\n                40\n                        G2\n\n\n\n                 0                        角周波数［rad/s］                           0.1                                ゲイン［dB］\n\n                        G1\n\n\n\n\n                解図１\n\n\n   G1( s)は小問(1)で扱った伝達関数に一致している。\n   G2( s)は，\n\n                              ···································· ⑤       20log 10 K  40  20log 10 10 2\n  から， K  100 となる。したがって，\n    G2( s)  100 ·················································· ⑥\n\n  と求められる。                         ・・・（答）\n\n\n(3) 図2 のゲイン特性曲線は傾きが  20dB / dec の直線なので，積分要素\n\n         1                                             1\n  G( s)              , TI1  0 である。その周波数伝達関数 G(j  )    のゲインは，\n      TI1 s                                                                                        j TI1\n\n              1      1   G(j  )               ········································· ⑦\n                          j TI1   TI1\n\n                                         1\n  となるから，デシベルで表すと 20log 10   ［dB］である。\n                              TI1\n\n                                                  - 15 -\nさて，図2 から，    0.1rad / s のとき40dB なので次式が成り立つ。\n\n               1                        2\n       20log 10        40  20log 10 10  ································ ⑧\n              0.1TI1\n\n  よって，\n\n        1              100 ················································· ⑨\n       0.1TI1\n\n               1                                   10\n  より， TI1  となるので，求める伝達関数は G( s )   である。・・・（答）               10                                              s\n\n\n                                        1                         1\n(4) 解図2 に示すように積分要素 G1 ( s)   と一次遅れ要素 G2 ( s)    に分                             TI2 s                      1  Ts\n\n 解して考える。\n\n\n\n\n                     G1\n                14\n\n                 0                         角周波数［rad/s］                                  ゲイン［dB］                    0.5\n                             G2\n\n\n                  解図2\n\n                                     1                     1\n  小問(3)において，積分要素 G1 ( s)   のゲインは 20log 10   ［dB］で計算\n                           TI2 s              TI2\n\n できることを学んでいる。解図2 から，    0.5rad / s のとき14 dB なので次式\n\n が成り立つ。\n\n               1                             0.7\n       20log 10        14  20log 10 10   ······························· ⑩\n              0.5TI2\n\n\n\n\n                                                  - 16 -\nよって，\n\n       1           0.7            10    5.0119 ········································ ⑪\n     0.5TI2\n\n                                                       1\n より， TI2  0.39905 となる。一方，一次遅れ要素 G2 ( s)    は，折れ点角                                                      1  Ts\n\n周波数が    0.5rad / s なので，T  2 となる。したがって，求める伝達関数は，\n\n                1               1   G( s)         →             ························· ⑫\n           0.39905 s(1  2 s)     0.399 s(1  2 s )\n\n                             ・・・（答）\n\n である。\n\n\n\n\n\n                                               - 17 -",
+    "explanation": "ゲインの傾きが変わる周波数を見つけ、積分要素、比例要素、一次遅れ要素に分ける。傾きとゲイン値からそれぞれの係数を求める。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/denken2/2023-second-machine-control/question-p09.webp",
+      "/questions/denken2/2023-second-machine-control/question-p10.webp"
+    ],
+    "imageAltTexts": [
+      "問4 公式の本文・図表・設問（PDF 9ページ）",
+      "問4 公式の本文・図表・設問（PDF 10ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/denken2/2023-second-machine-control/answer-q04-p14.webp",
+      "/questions/denken2/2023-second-machine-control/answer-q04-p15.webp",
+      "/questions/denken2/2023-second-machine-control/answer-q04-p16.webp",
+      "/questions/denken2/2023-second-machine-control/answer-q04-p17.webp"
+    ],
+    "answerImageAltTexts": [
+      "問4 公式標準解答（PDF 14ページ）",
+      "問4 公式標準解答（PDF 15ページ）",
+      "問4 公式標準解答（PDF 16ページ）",
+      "問4 公式標準解答（PDF 17ページ）"
+    ],
+    "sourcePdfUrl": "https://www.shiken.or.jp/chief/upload/20231112_ch_second_q02.pdf#page=9",
+    "sourceAnswerUrl": "https://www.shiken.or.jp/chief/upload/20231112_ch_second_a01.pdf#page=14",
+    "officialReferenceUrls": [
+      "https://www.shiken.or.jp/chief/second/qa/index.html"
+    ],
+    "sourceAttribution": "出典：電気技術者試験センター「2023年度 第二種電気主任技術者 二次試験 機械・制御」問4。",
+    "license": "ECEE-educational-reuse",
+    "lastUpdated": "2026-11-19",
+    "questionNotice": "問1〜問4から2問を選択。"
+  }
+]

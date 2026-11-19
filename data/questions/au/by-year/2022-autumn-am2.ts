@@ -24,6 +24,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "デューデリジェンスとは、企業買収などの重要な取引において、対象となる企業の情報システムに関する価値やリスクを詳細に評価するプロセスです。アの選択肢は、このデューデリジェンスの目的と内容を正確に説明しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "試査とは、監査対象となるデータや記録の全体から一部を抽出し、その抽出した部分について監査手続を適用し、その結果に基づいて全体を評価する監査手法です。エの選択肢は、抽出したデータから全件の正当性を判断するという、試査の定義に合致しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "システム管理基準（平成30年）の前文では、同基準が大企業だけでなく、中小企業においても情報システム化戦略や実践に関わる適切な自己診断および監査に活用できると明記されています。ウの記述は、この活用の留意点に適切に合致しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "システム監査基準（平成30年）におけるフォローアップとは、システム監査人が監査報告書で指摘した改善提案が適切に実施されているか、その状況を監査対象部門から報告を受けるなどして確認・監視する活動を指します。ウの記述は、システム監査人が改善提案の実施状況に関する情報を収集し、モニタリングする活動として適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "監査報告書は監査チームの統一された意見として提出されるべきであり、一部の項目で監査人の意見が分かれた場合、その原因が調査不足であれば追加の監査手続を実施して事実確認を補強し、意見の統一を図ることが最も適切です。これにより監査の信頼性が確保されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "個人情報保護マネジメントシステム（PIMS）では、個人情報管理台帳を常に最新かつ正確な状態に保つため、定期的な見直しが義務付けられています。「新たな個人情報の取得があった場合にだけ見直しを行う」という運用では、変更や利用目的の削除、保管期間の経過などに対応できず、適切な管理とは言えないため、指摘事項となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +174,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 27002:2014では、運用システムに対する監査活動の影響を最小限にするため、監査におけるテストでソフトウェア及びデータにアクセスする際は、データの改ざんや破壊のリスクを避けるために「読出し専用のアクセスに限定すること」が最も望ましいとされています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +199,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "システム管理基準（平成30年）の前文において、経営陣がITガバナンスを成功に導くために採用することが望ましい原則として、「責任、戦略、取得、パフォーマンス、適合、人間行動」の6つが挙げられています。エの選択肢は、これらの原則を適切に表現しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +224,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "金融庁の「財務報告に係る内部統制の評価及び監査の基準」において、統制活動とは「経営者の命令及び指示が適切に実行されることを確保するために定める方針及び手続」と定義されています。これには承認、照合、検証、職務分掌などが含まれます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +249,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "自動化されたITに係る業務処理統制（ITAC）の運用状況の評価作業を減らすことができるのは、IT全般統制（ITGC）が有効に機能している場合です。IT全般統制が有効であれば、ITACが適切に設計・承認・変更・運用されていると信頼できるため、ITAC自体のテスト範囲を縮小することが可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +274,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "資金決済法は、前払式支払手段の発行者に対して、利用者の保護を目的として、その発行業務に係る情報の漏えい、滅失又は毀損の防止措置を義務付けています。これにより、資金決済に関する利用者の利便性の向上及び保護を図っています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +299,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ウォームスタンバイとは、バックアップシステムが稼働状態にあるものの、緊急時にサービスを復旧させるために、データを最新状態にする処理やアプリケーションの起動など、多少の準備期間を要する方式です。エの記述は、このウォームスタンバイの特性を適切に説明しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +324,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "1世代のデータ量は、Aが400×1.25＝500Gバイト、Bが600×1.25＝750Gバイトです。3世代分の容量だけならAは2本、Bは3本に収まりますが、必要な世代が残るテープは再利用できません。Aでは1本目に第1・第2世代、2本目に第3・第4世代を順に記録すると、第5世代の作成時にも第2世代を保持する必要があり、3本目が必要です。Bでは1本目に第1世代と第2世代の250G、2本目に第2世代の残り500Gと第3世代の500G、3本目に第3世代の残り250Gと第4世代を記録します。第5世代の作成時には1本目に必要な第2世代が残るため、4本目が必要です。以後は不要な世代だけになったテープを再利用して循環でき、最少本数はAが3本、Bが4本のウです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +349,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "プライバシー影響評価（PIA: Privacy Impact Assessment）は、JIS X 9251:2021で、個人識別可能情報の処理に関する潜在的なプライバシー影響の特定、分析、評価、協議、伝達及び対応の計画を立てるための全体的なプロセスと定義されています。ウの選択肢がこれに該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +374,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "特定商取引法は、消費者トラブルが生じやすい通信販売などの取引において、消費者を保護するため、事業者に商品の販売価格、支払時期・方法、引渡時期、契約解除に関する事項などの表示を義務付けています。インターネットショッピングはこの通信販売に該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +399,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "コンティンジェンシー理論は、組織の最適な形態や経営戦略は固定的なものではなく、企業が置かれた外部環境や内部状況といった偶発的（コンティンジェント）な要因に依存するという考え方です。アの選択肢はこの理論の核心を正確に述べています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +424,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "AES（Advanced Encryption Standard）はブロック暗号であり、その暗号化の段数（ラウンド数）は使用される鍵長（128ビット、192ビット、256ビット）によって決定されます。鍵長が長いほど段数も多くなるという特徴があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +449,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "公開鍵暗号方式では、各ユーザーが固有の公開鍵と秘密鍵のペアを1組（合計2個の鍵）持ちます。したがって、n人のユーザーが相互に通信する場合、必要な鍵の総数は n × 2 = 2n 個となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +474,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ビヘイビア法（振る舞い検知）とは、プログラムの動作やシステムへの影響を監視し、マルウェア特有の異常な挙動（データの読み書き、通信、レジストリ変更など）を検出する手法です。エの選択肢は、このビヘイビア法の説明として適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +499,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "OP25B（Outbound Port 25 Blocking）は、プロバイダのメールサーバを経由せずに、直接インターネット上のポート25にアクセスしてメールを送信する通信をブロックするスパムメール対策です。ISP 'A'管理下の動的IPアドレスのPCからISP 'A'のメールサーバを経由せずに直接送信される電子メールは、このOP25Bによって遮断されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +524,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "データベースのトランザクションが異常終了した場合、トランザクションの原子性（Atomicity）を保証するため、それまでに行った更新処理をすべて取り消し、トランザクション開始前の状態に戻す必要があります。この処理をロールバックと呼び、更新ログ情報を使用して実行されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +549,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "DNSSEC（Domain Name System Security Extensions）は、DNS応答の信頼性と完全性を確保するためのプロトコル拡張です。デジタル署名を利用して、DNS応答が正規のサーバから送信されたものであり、途中で改ざんされていないことを検証できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +574,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "参照モードは、ソフトウェアの機能に慣れた利用者が特定の情報に迅速にアクセスし、問題解決に役立てるための文書です。エラーメッセージの説明に問題の識別、推定される原因、および是正処置を含めることは、熟練者が問題発生時に迅速に対処するために非常に適切であり、参照モードの目的と合致します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +599,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ポーターのバリューチェーン分析では、事業活動を主活動と支援活動に分類します。主活動は購買物流、製造、出荷物流、販売・マーケティング、サービスなど、直接付加価値を生み出す活動であり、技術開発はこれらの主活動を支え、製品やプロセスの改善を通じて間接的に価値を高める支援活動に該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +624,7 @@ export const AU_QUESTIONS_2022_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "まず顧客1人当たりの年平均利益を計算します（200万円 × (1 - 0.5) = 100万円）。次に、この利益に年間顧客維持率を適用して3年間のLTVを算出します。1年目: 100万円、2年目: 100万円 × 0.4 = 40万円、3年目: 40万円 × 0.4 = 16万円。これらを合計すると、100 + 40 + 16 = 156万円となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_2/2022h04a_au_am2_qs.pdf",
     "license": "IPA-public"

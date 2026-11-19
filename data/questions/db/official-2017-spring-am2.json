@@ -1,0 +1,952 @@
+[
+  {
+    "id": "db-2017h-am2-q1",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "三層スキーマ"
+    ],
+    "difficulty": 3,
+    "question": "三層スキーマ",
+    "answer": "ア",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "概念スキーマはデータ全体の論理構造を表し、利用者の見方を表す外部スキーマと実装を表す内部スキーマの間に位置する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q01.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問1の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=3",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問1。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q2",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "会計取引の残高を求めるSQL"
+    ],
+    "difficulty": 3,
+    "question": "会計取引の残高を求めるSQL",
+    "answer": "イ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "対象勘定の期首残高に、指定日までに発生した移動金額の合計を加える。勘定科目と取引番号で表を結び付ける。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q02.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問2の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=4",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問2。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q3",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "検査項目のデータモデル"
+    ],
+    "difficulty": 3,
+    "question": "検査項目のデータモデル",
+    "answer": "イ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "人、検査項目、計測結果を分ける。標準値は項目ごと、計測値と日時は結果ごとに保持する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q03.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問3の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=5",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問3。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q4",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "候補キー"
+    ],
+    "difficulty": 3,
+    "question": "候補キー",
+    "answer": "ウ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "属性集合から関数従属を順に適用して閉包を求める。全属性を導出でき、その真部分集合では導出できない集合を選ぶ。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q04.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問4の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=5",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問4。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q5",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "弱実体"
+    ],
+    "difficulty": 3,
+    "question": "弱実体",
+    "answer": "ウ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "別の実体が存在しなくなると自身も存在できない実体を、依存する側として扱う。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q05.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問5の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=6",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問5。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q6",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "ロールフォワード"
+    ],
+    "difficulty": 3,
+    "question": "ロールフォワード",
+    "answer": "エ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "復元した状態に更新を適用し直すため、更新後の情報を用いる。変更を取り消す場合の更新前情報と区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q06.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問6の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=6",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問6。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q7",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "第二・第三正規形"
+    ],
+    "difficulty": 3,
+    "question": "第二・第三正規形",
+    "answer": "ウ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "社員番号に所属コードが従属し、所属コードに勤務地が従属するため、勤務地には推移的な従属がある。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q07.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問7の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=7",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問7。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q8",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "条件付きCOUNT"
+    ],
+    "difficulty": 3,
+    "question": "条件付きCOUNT",
+    "answer": "ウ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "COUNTはNULLを数えない。該当する役職だけに値を返し、それ以外をNULLにする。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q08.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問8の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問8。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q9",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "SQLの三値論理"
+    ],
+    "difficulty": 3,
+    "question": "SQLの三値論理",
+    "answer": "エ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "NULLとの比較は不定になり、この式では真になる比較がないため、OR全体の評価も不定になる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q09.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問9の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問9。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q10",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "外部結合を使った集計"
+    ],
+    "difficulty": 3,
+    "question": "外部結合を使った集計",
+    "answer": "ア",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "商品ごとの出荷実績を集計し、SQLの条件を満たした商品の在庫数だけを合計する。出荷行のない商品のNULLも区別する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q10.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問10の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=9",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問10。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q11",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "取付け表の制約"
+    ],
+    "difficulty": 3,
+    "question": "取付け表の制約",
+    "answer": "ウ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "PCIDとスロット番号の組で取り付け位置を一意にし、カードIDは一つの位置でしか使えないようにする。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q11.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問11の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=10",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問11。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q12",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "関係の差と共通集合"
+    ],
+    "difficulty": 3,
+    "question": "関係の差と共通集合",
+    "answer": "ア",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "RからSに存在しない行を取り除くと、RとSの両方に存在する行が残る。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q12.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問12の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=11",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問12。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q13",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "射影の数"
+    ],
+    "difficulty": 3,
+    "question": "射影の数",
+    "answer": "イ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "各属性を含めるか含めないかは独立に選べる。空集合を含めるため、n属性の組合せは2のn乗通り。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q13.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問13の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=11",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問13。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q14",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "二相コミット"
+    ],
+    "difficulty": 3,
+    "question": "二相コミット",
+    "answer": "イ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "各参加先にコミット可能かを確認し、その結果を基に全体でコミットまたは中止を決定する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q14.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問14の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=11",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問14。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q15",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "二相ロック"
+    ],
+    "difficulty": 3,
+    "question": "二相ロック",
+    "answer": "エ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "ロック取得を終えて解放を始めた後は、新しいロックを取らない。この制約が競合直列可能性を保証する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q15.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問15の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=12",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問15。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q16",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "ACID特性"
+    ],
+    "difficulty": 3,
+    "question": "ACID特性",
+    "answer": "ウ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "一貫性は、トランザクションを適用した結果がデータベースの整合性を保つことを指す。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q16.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問16の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=12",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問16。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q17",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "ファントムリード"
+    ],
+    "difficulty": 3,
+    "question": "ファントムリード",
+    "answer": "エ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "同じ条件の検索の間に他のトランザクションが該当行を追加し、結果の行集合が変化している。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q17.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問17の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=13",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問17。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q18",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "行のロックと表のロック"
+    ],
+    "difficulty": 3,
+    "question": "行のロックと表のロック",
+    "answer": "イ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "特定行の共有ロックを持つ処理があると、その行も含めて排他的に使う表全体の専有ロックは取れない。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q18.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問18の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=14",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問18。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q19",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "入れ子ループ結合"
+    ],
+    "difficulty": 3,
+    "question": "入れ子ループ結合",
+    "answer": "ウ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "一方の表の各行に対して他方の表の行を走査する。両表がn行なら、比較の回数はnの二乗に比例する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q19.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問19の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=14",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問19。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q20",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "CSIRT"
+    ],
+    "difficulty": 3,
+    "question": "CSIRT",
+    "answer": "イ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "組織のセキュリティインシデントを受け付け、対応を調整するチームである。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q20.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問20の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=14",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問20。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q21",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 21,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "SSH"
+    ],
+    "difficulty": 3,
+    "question": "SSH",
+    "answer": "エ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "遠隔ログインやファイル転送に使われ、通信の暗号化などで遠隔操作を保護する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q21.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問21の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=15",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問21。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q22",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 22,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "メモリの誤り訂正"
+    ],
+    "difficulty": 3,
+    "question": "メモリの誤り訂正",
+    "answer": "ア",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "ECCは誤りを見つけるだけでなく、方式が対応する範囲の誤りを訂正する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q22.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問22の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=15",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問22。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q23",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 23,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "HAクラスタの切替え"
+    ],
+    "difficulty": 3,
+    "question": "HAクラスタの切替え",
+    "answer": "ウ",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "通信経路、共有ディスクに記録された稼働状態、排他制御、停止の順に関係を追い、二重稼働を避ける。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q23.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問23の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=16",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問23。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q24",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 24,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "機能適合性"
+    ],
+    "difficulty": 3,
+    "question": "機能適合性",
+    "answer": "ア",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "指定された利用条件で、必要とされる機能を製品やシステムがどの程度提供できるかを表す。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q24.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問24の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=17",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問24。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "db-2017h-am2-q25",
+    "exam": "db",
+    "year": 2017,
+    "season": "spring",
+    "session": "am2",
+    "qNumber": 25,
+    "type": "multiple-choice",
+    "category": "データベース",
+    "topicTags": [
+      "リファクタリング"
+    ],
+    "difficulty": 3,
+    "question": "リファクタリング",
+    "answer": "ア",
+    "choices": {
+      "ア": "原本のア",
+      "イ": "原本のイ",
+      "ウ": "原本のウ",
+      "エ": "原本のエ"
+    },
+    "explanation": "利用者から見た振る舞いを保ちながら、内部構造を整理して修正や保守をしやすくする。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2017-spring-am2/q25.webp"
+    ],
+    "imageAltTexts": [
+      "データベーススペシャリスト 2017年度春期 午前II 問25の本文・選択肢"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_qs.pdf#page=17",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fzx1-att/2017h29h_db_am2_ans.pdf",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA データベーススペシャリスト 2017年度春期 午前II 問25。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

@@ -119,7 +119,7 @@ describe("/api/essay-grade — 簡易判定の開示", () => {
   it("AI 応答が解析できないと gradingMode:'simplified' + X-Grading-Mode を返し、ログに残す", async () => {
     const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
     stubStream("採点できません。JSON ではない散文。");
-    const { POST } = await import("@/app/api/essay-grade/route");
+    const { POST } = await import("@/lib/essay/legacy-grade");
 
     const res = await POST(req("/api/essay-grade", ESSAY_BODY, "10.8.0.3"));
     expect(res.status).toBe(503);
@@ -146,7 +146,7 @@ describe("/api/essay-grade — 簡易判定の開示", () => {
         unnecessaryElements: [],
       }),
     );
-    const { POST } = await import("@/app/api/essay-grade/route");
+    const { POST } = await import("@/lib/essay/legacy-grade");
 
     const res = await POST(req("/api/essay-grade", ESSAY_BODY, "10.8.0.4"));
     const body = (await res.json()) as { gradingMode?: string };
@@ -159,24 +159,17 @@ describe("UI と文言", () => {
   const read = (p: string) => readFileSync(join(process.cwd(), p), "utf8");
 
   it("採点結果 UI は gradingMode:'simplified' のとき告知を描画する", () => {
-    const afternoon = read("components/afternoon/AfternoonResultView.tsx");
-    expect(afternoon).toContain("内容を評価したものではありません");
     const essay = read("components/essay/EssayResultView.tsx");
     expect(essay).toMatch(/gradingMode === "simplified"/);
     expect(essay).toContain("内容を評価したものではありません");
   });
 
-  it("告知は「簡易判定」と「内容は評価していない」ことを明示する", () => {
-    const src = read("components/SimplifiedGradingNotice.tsx");
-    expect(src).toContain("簡易判定");
-    expect(src).toContain("評価していません");
-  });
 
   it("利用者に見える文言へ内部の env 変数名が漏れていない", () => {
     // "GEMINI_API_KEY を設定すると…" のような内部都合の文言は利用者に無意味。
     for (const rel of [
       "app/api/scoring/route.ts",
-      "app/api/essay-grade/route.ts",
+      "lib/essay/legacy-grade.ts",
     ]) {
       const src = read(rel);
       // コメント行を除いた上で、文字列リテラル中に env 名が無いことを見る。

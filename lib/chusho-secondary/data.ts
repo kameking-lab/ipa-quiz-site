@@ -9,6 +9,10 @@ import a24 from "@/data/chusho-secondary/2024-case1.json";
 import b24 from "@/data/chusho-secondary/2024-case2.json";
 import c24 from "@/data/chusho-secondary/2024-case3.json";
 import d24 from "@/data/chusho-secondary/2024-case4.json";
+import a23 from "@/data/questions/chusho-secondary/2023-case1.json";
+import b23 from "@/data/questions/chusho-secondary/2023-case2.json";
+import c23 from "@/data/questions/chusho-secondary/2023-case3.json";
+import d23 from "@/data/questions/chusho-secondary/2023-case4.json";
 
 const text = z.string().trim().min(1);
 const hash = z.string().regex(/^[a-f0-9]{64}$/);
@@ -23,7 +27,7 @@ const solution = z.object({
   if (s.maxChars && Array.from(s.example).length > s.maxChars) ctx.addIssue({ code: "custom", message: "Example exceeds the official character limit" });
 });
 const question = z.object({
-  id: z.string().regex(/^chusho-secondary-202[45]-case[1-4]-q[1-5]$/),
+  id: z.string().regex(/^chusho-secondary-202[345]-case[1-4]-q[1-5]$/),
   number: z.number().int().min(1).max(5),
   points: z.number().int().positive(),
   topic: text,
@@ -33,7 +37,7 @@ const question = z.object({
   solutions: z.array(solution).min(1),
 }).strict();
 const part = z.object({
-  year: z.union([z.literal(2025), z.literal(2024)]),
+  year: z.union([z.literal(2025), z.literal(2024), z.literal(2023)]),
   case: z.enum(["case1", "case2", "case3", "case4"]),
   caseTitle: text,
   domain: text,
@@ -44,16 +48,16 @@ const part = z.object({
   sourceIntentSha256: hash,
   sourcePages: z.array(z.object({ page: z.number().int().min(2), url: z.string().startsWith("/images/chusho-secondary/"), sha256: hash }).strict()).min(1),
   questions: z.array(question).min(4).max(5),
-  lastUpdated: z.literal("2026-10-11"),
+  lastUpdated: z.string().regex(/^\d{4}-\d{2}-\d{2}$/),
 }).strict();
 
 export type ChushoCase = z.infer<typeof part>;
 export type ChushoQuestion = z.infer<typeof question>;
 export type ChushoSolution = z.infer<typeof solution>;
-export const CHUSHO_SECONDARY_CASES: ChushoCase[] = [a25, b25, c25, d25, a24, b24, c24, d24].map(raw => part.parse(raw));
+export const CHUSHO_SECONDARY_CASES: ChushoCase[] = [a25, b25, c25, d25, a24, b24, c24, d24, a23, b23, c23, d23].map(raw => part.parse(raw));
 for (const paper of CHUSHO_SECONDARY_CASES) {
   const number = Number(paper.case.slice(-1));
-  const expected = paper.year === 2024 && number === 3 ? 5 : 4;
+  const expected = (paper.year === 2024 || paper.year === 2023) && number === 3 ? 5 : 4;
   if (paper.questions.length !== expected || paper.questions.reduce((sum, q) => sum + q.points, 0) !== 100) throw new Error("Incomplete secondary case");
   paper.questions.forEach((q, i) => {
     if (q.number !== i + 1 || q.id !== `chusho-secondary-${paper.year}-${paper.case}-q${q.number}`
@@ -63,8 +67,8 @@ for (const paper of CHUSHO_SECONDARY_CASES) {
 export const CHUSHO_SECONDARY_QUESTIONS = CHUSHO_SECONDARY_CASES.flatMap(p => p.questions);
 export const CHUSHO_SECONDARY_ORIGINAL_COUNT = CHUSHO_SECONDARY_QUESTIONS.length;
 export const CHUSHO_SECONDARY_SOLUTION_COUNT = CHUSHO_SECONDARY_QUESTIONS.reduce((sum, q) => sum + q.solutions.length, 0);
-if (CHUSHO_SECONDARY_ORIGINAL_COUNT !== 33 || new Set(CHUSHO_SECONDARY_QUESTIONS.map(q => q.id)).size !== 33
-  || CHUSHO_SECONDARY_SOLUTION_COUNT !== 54) throw new Error("Secondary latest-two coverage changed");
+if (CHUSHO_SECONDARY_ORIGINAL_COUNT !== 50 || new Set(CHUSHO_SECONDARY_QUESTIONS.map(q => q.id)).size !== 50
+  || CHUSHO_SECONDARY_SOLUTION_COUNT !== 88) throw new Error("Secondary coverage changed");
 export const getChushoCase = (year: number, key: string) => CHUSHO_SECONDARY_CASES.find(p => p.year === year && p.case === key);
 export const getChushoQuestion = (year: number, key: string, number: number) => getChushoCase(year, key)?.questions.find(q => q.number === number);
 export const chushoSitemapPaths = () => ["/chusho-secondary", ...CHUSHO_SECONDARY_CASES.flatMap(p => [chushoCasePath(p.year, p.case), ...p.questions.map(q => chushoQuestionPath(p.year, p.case, q.number))])];

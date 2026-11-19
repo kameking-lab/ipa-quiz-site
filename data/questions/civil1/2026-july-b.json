@@ -4,7 +4,7 @@
   "season": "july",
   "session": "mondai-b",
   "paper": "B",
-  "publishedCount": 34,
+  "publishedCount": 35,
   "officialQuestionCount": 35,
   "questionUrl": "https://www.jctc.jp/wjctcp/wp-content/uploads/2026/07/20260706d_mondaib.pdf",
   "questionSha256": "6e8ee05d9773b4be548d34ace43ce5043445bcebeadbd3a8e6298e15800f495f",
@@ -138,6 +138,34 @@
         "適当でない。作業Eはクリティカルパス上の作業で、トータルフロートは0である。3日遅れると④・⑦・⑧の時刻がそれぞれ3日ずつ遅れ、工期は36日となる。遅れは3日であり、2日ではない。"
       ],
       "imageUrl": "/questions/civil1/2026-july/b6-official-figure.png"
+    },
+    {
+      "number": 7,
+      "pdfPage": 5,
+      "category": "共通工学・施工管理法（必須）",
+      "officialAnswerNumber": 1,
+      "question": "下図に示す施工体制の現場において，Ａ社がＢ社に組み立てさせた作業足場でＢ社，Ｃ社，Ｄ社，Ｆ社，Ｇ社が作業を行い，Ｅ社はＣ社が持ち込んだ移動式足場でも作業を行うこととなった。労働安全衛生法令上，特定事業の仕事を行う注文者として積載荷重の表示，点検等の安全措置義務に関する記述のうち，正しいものはどれか。",
+      "choices": [
+        "Ａ社は，作業足場について，Ｂ社，Ｃ社，Ｄ社の労働者に対し注文者としての安全措置義務を負う。",
+        "Ａ社は，Ｃ社が持ち込んだ移動式足場について，Ｅ社の労働者に対し注文者としての安全措置義務を負わない。",
+        "Ｃ社は，移動式足場について，Ｅ社の労働者に対し注文者としての安全措置義務を負わない。",
+        "Ａ社は，作業足場について，Ｆ社，Ｇ社の労働者に対し注文者としての安全措置義務を負う。"
+      ],
+      "topic": "注文者の足場の安全措置",
+      "explanation": "公式正答は（1）。A社が用意させた作業足場を、自社の請負系列にあるB社・C社・D社の労働者に使用させる場合、A社が注文者として安全措置を講じます。移動式足場については、持込み元だけで義務は決まらず、誰がどの請負人の労働者に使用させるかで判断します。",
+      "choiceExplanations": [
+        "A社はB社に作業足場を組み立てさせています。B社・C社と、C社の後次の請負人であるD社の労働者が、その足場を使います。",
+        "移動式足場を持ち込んだのがC社という事実だけで、A社が使用させたかどうかまでは確定しません。",
+        "C社が特定事業の仕事を自ら行い、下請のE社の労働者に足場を使用させる場合、C社にも注文者としての措置義務が生じ得ます。",
+        "F社・G社はA社の請負系列にありません。A社が組み立てさせた足場を使う事実だけでは、A社の請負人の労働者にはなりません。"
+      ],
+      "imageUrl": "/questions/civil1/2026-july/b7-official-figure.png",
+      "officialReferenceUrls": [
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74001000&dataType=0&pageNo=1",
+        "https://www.mhlw.go.jp/web/t_doc?dataId=74003000&dataType=0&pageNo=11",
+        "https://jsite.mhlw.go.jp/tokyo-roudoukyoku/content/contents/001714992.pdf"
+      ],
+      "imageAltText": "発注者の下に特定元方事業者A社とF社。A社の一次下請はB社とC社、C社の二次下請はD社とE社。F社の一次下請はG社。"
     },
     {
       "number": 8,

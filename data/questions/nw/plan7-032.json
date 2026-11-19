@@ -1,0 +1,117 @@
+[
+  {
+    "id": "nw-2017a-pm1-q1",
+    "exam": "nw",
+    "session": "pm1",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "SSL-VPNの導入",
+    "topicTags": [
+      "SSL-VPNの導入"
+    ],
+    "difficulty": 3,
+    "question": "問1　SSL-VPNの導入。原本の設問に答えよ。",
+    "answer": "設問１ ／ ア ／ SHA-1  \nイ ／ 1.2  \nウ ／ Client Hello _  \nエ ／ Server Hello _  \nオ ／ リバースプロキシ  \n設問２ ／ (1) ／ 暗号アルゴリズム ／ ① ② ／ ・鍵交換・認証  \nハッシュアルゴリズム ／ メッセージ認証  \n(2) ／ 顧客システムは，様々なプロトコルを利用している。  \n(3) ／ vNIC  \n設問３ ／ カ ／ 内部LAN  \nキ ／ DMZ  \nク ／ 172.16.0.0/16  \nケ ／ 202.y.44.2/32  \n設問４ ／ (1) ／ ②，③，④，⑤  \n(2) ／ 顧客システム構築ネットワークから他社の顧客システム構築ネットワークへの通信  \n(3) ／ ⑥",
+    "explanation": "リモート接続で端末に求める条件、接続経路、認証方式を分け、端末・VPN装置・社内システムの役割を図で確認します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/nw-2017a-pm1-q1/question-p02.webp",
+      "/questions/plan7/nw-2017a-pm1-q1/question-p03.webp",
+      "/questions/plan7/nw-2017a-pm1-q1/question-p04.webp",
+      "/questions/plan7/nw-2017a-pm1-q1/question-p05.webp",
+      "/questions/plan7/nw-2017a-pm1-q1/question-p06.webp",
+      "/questions/plan7/nw-2017a-pm1-q1/question-p07.webp"
+    ],
+    "imageAltTexts": [
+      "問1の原本（問題冊子 2ページ）",
+      "問1の原本（問題冊子 3ページ）",
+      "問1の原本（問題冊子 4ページ）",
+      "問1の原本（問題冊子 5ページ）",
+      "問1の原本（問題冊子 6ページ）",
+      "問1の原本（問題冊子 7ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_nw_pm1_qs.pdf#page=2",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_nw_pm1_ans.pdf#page=1",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  },
+  {
+    "id": "nw-2017a-pm1-q2",
+    "exam": "nw",
+    "session": "pm1",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "仮想デスクトップ基盤の導入",
+    "topicTags": [
+      "仮想デスクトップ基盤の導入"
+    ],
+    "difficulty": 3,
+    "question": "問2　仮想デスクトップ基盤の導入。原本の設問に答えよ。",
+    "answer": "設問１ ／ バーストトラフィック  \n設問２ ／ (1) ／ VDI 導入前に経由する通信 ／ ファイル転送通信  \nVDI 導入後に経由する通信 ／ ① ② ／ ・画面転送通信・プリント通信  \n(2) ／ a ／ 1.25  \nb ／ 100  \nc ／ 10  \n(3) ／ 理由 ／ インターネット通信は本社の仮想PC から行われるから  \n利点 ／ 情報セキュリティ対策を本社で集中的に行うことができる。  \n設問３ ／ (1) ／ プリント通信が画面転送通信を圧迫するから  \n(2) ／ 送出タイミングを調整する。  \n設問４ ／ ア ／ 仮想SW  \nイ ／ 任意  \nウ ／ C&C サーバ",
+    "explanation": "端末と仮想デスクトップのどちらで処理が行われるかを確認して、利用形態ごとに必要な通信経路と設定を整理します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/nw-2017a-pm1-q2/question-p08.webp",
+      "/questions/plan7/nw-2017a-pm1-q2/question-p09.webp",
+      "/questions/plan7/nw-2017a-pm1-q2/question-p10.webp",
+      "/questions/plan7/nw-2017a-pm1-q2/question-p11.webp",
+      "/questions/plan7/nw-2017a-pm1-q2/question-p12.webp",
+      "/questions/plan7/nw-2017a-pm1-q2/question-p13.webp"
+    ],
+    "imageAltTexts": [
+      "問2の原本（問題冊子 8ページ）",
+      "問2の原本（問題冊子 9ページ）",
+      "問2の原本（問題冊子 10ページ）",
+      "問2の原本（問題冊子 11ページ）",
+      "問2の原本（問題冊子 12ページ）",
+      "問2の原本（問題冊子 13ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_nw_pm1_qs.pdf#page=8",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_nw_pm1_ans.pdf#page=2",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  },
+  {
+    "id": "nw-2017a-pm1-q3",
+    "exam": "nw",
+    "session": "pm1",
+    "year": 2017,
+    "season": "autumn",
+    "qNumber": 3,
+    "type": "descriptive",
+    "category": "社内ネットワークとクラウドサービスとの接続",
+    "topicTags": [
+      "社内ネットワークとクラウドサービスとの接続"
+    ],
+    "difficulty": 3,
+    "question": "問3　社内ネットワークとクラウドサービスとの接続。原本の設問に答えよ。",
+    "answer": "設問１ ／ ア ／ NAPT  \nイ ／ 事前共有鍵  \nウ ／ AS  \nエ ／ TCP  \nオ ／ ICMP  \nカ ／ echo reply  \n設問２ ／ (1) ／ 暗号化対象の通信がグローバルIP アドレス間の通信だから  \n(2) ／ フラグメントとリアセンブルの処理が発生する。  \n設問３ ／ (1) ／ BGP によって回線断や機器障害を検知し，トラフィックをう回できる。  \n(2) ／ Hello パケットを出さない。  \n(3) ／ A ／ 大きく  \n(4) ／ eBGP からOSPF へ再配布された経路を再びeBGP へ再配布しない。  \n設問４ ／ ネットワーク接続の冗長構成が失われたことを検出するため",
+    "explanation": "BGPとOSPFの経路がどちら向きに再配布されるかを構成図に書き込み、ループを防ぐ条件と冗長経路の検知を整理します。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/plan7/nw-2017a-pm1-q3/question-p14.webp",
+      "/questions/plan7/nw-2017a-pm1-q3/question-p15.webp",
+      "/questions/plan7/nw-2017a-pm1-q3/question-p16.webp",
+      "/questions/plan7/nw-2017a-pm1-q3/question-p17.webp",
+      "/questions/plan7/nw-2017a-pm1-q3/question-p18.webp"
+    ],
+    "imageAltTexts": [
+      "問3の原本（問題冊子 14ページ）",
+      "問3の原本（問題冊子 15ページ）",
+      "問3の原本（問題冊子 16ページ）",
+      "問3の原本（問題冊子 17ページ）",
+      "問3の原本（問題冊子 18ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_nw_pm1_qs.pdf#page=14",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_nw_pm1_ans.pdf#page=2",
+    "sourceAnswerKind": "example",
+    "sourceAttribution": "出典：独立行政法人情報処理推進機構（IPA）情報処理技術者試験",
+    "license": "IPA-public"
+  }
+]

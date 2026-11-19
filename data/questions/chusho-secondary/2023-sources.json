@@ -1,0 +1,426 @@
+{
+  "checkedAt": "2026-11-17",
+  "sources": [
+    {
+      "name": "case1",
+      "url": "https://www.jf-cmca.jp/attach/test/shikenmondai/2ji2023/A2JI2023.pdf",
+      "sha256": "871297bba36be38db5ed2726d5d12e766e626c557ddcee7e29547b4c4e37e910",
+      "pages": 5
+    },
+    {
+      "name": "intent1",
+      "url": "https://www.jf-cmca.jp/attach/test/r05/2ji_shushi/r05_2ji_shushi_jirei1.pdf",
+      "sha256": "e4598ff33a3d1b5851086a4e705d05db451df1f5fea6e867d7e0fc8384de4e00",
+      "pages": 1
+    },
+    {
+      "name": "correction",
+      "url": "https://www.jf-cmca.jp/attach/test/r05/令和５年度中小企業診断士第２次試験の筆記試験における試験問題の誤記およびその取り扱いについて.pdf",
+      "sha256": "110ddc0d49b5c8e1d723e031bbce1afd66e8acf1914055521dbcb674b7d09f57",
+      "pages": 1
+    },
+    {
+      "name": "case2",
+      "url": "https://www.jf-cmca.jp/attach/test/shikenmondai/2ji2023/B2JI2023.pdf",
+      "sha256": "7c6c1e2359ef854ddd7b0570b1e29bdc62c8a711b594db2e997d16cbc257138c",
+      "pages": 6
+    },
+    {
+      "name": "intent2",
+      "url": "https://www.jf-cmca.jp/attach/test/r05/2ji_shushi/r05_2ji_shushi_jirei2.pdf",
+      "sha256": "2f1e3b18a8ed55e07fad003afe1ff5308e42df5fef0e0c21864615488114bdcf",
+      "pages": 1
+    },
+    {
+      "name": "case3",
+      "url": "https://www.jf-cmca.jp/attach/test/shikenmondai/2ji2023/C2JI2023.pdf",
+      "sha256": "706919c0cb292b033b564d54e228082cfd292a81afcd3049b753949079d08a20",
+      "pages": 5
+    },
+    {
+      "name": "intent3",
+      "url": "https://www.jf-cmca.jp/attach/test/r05/2ji_shushi/r05_2ji_shushi_jirei3.pdf",
+      "sha256": "adcfe26d34dd2feacc58e25e7069f71a31586d9f2bcbfc4ba820813155e0c1c6",
+      "pages": 1
+    },
+    {
+      "name": "case4",
+      "url": "https://www.jf-cmca.jp/attach/test/shikenmondai/2ji2023/D2JI2023.pdf",
+      "sha256": "277f10ca9881168e6ef1dd1b7a63c3fa003ed32cc644336ee854b2674dc34076",
+      "pages": 10
+    },
+    {
+      "name": "intent4",
+      "url": "https://www.jf-cmca.jp/attach/test/r05/2ji_shushi/r05_2ji_shushi_jirei4.pdf",
+      "sha256": "d5b42f947547d0ce7b924ee8c15ffe6ba8d8a3941ff4bb2efef573ddc0094201",
+      "pages": 2
+    }
+  ],
+  "sourceIndexUrl": "https://www.jf-cmca.jp/contents/010_c_/shikenmondai.html",
+  "intentIndexUrl": "https://www.jf-cmca.jp/contents/010_c_/010_c_r05_shiken/R05_2ji_shushi.html",
+  "examDate": "2023-10-29",
+  "correctionScope": "事例ⅣのPDF内に当日配布・後日公表の正誤表を保持。印刷本文は変更せず、問２の解説に訂正内容を注記。",
+  "transcription": "PDFの行折返しと読み仮名を整理。事例Ⅳの表はセルを行ごとに整列し、原本全ページ・正誤表も画像で保持。本文・配点・字数制限は保持。",
+  "answerProvenance": "独自解答例。公式出題趣旨に沿って作成。公式正答ではない。",
+  "questions": [
+    {
+      "id": "chusho-secondary-2023-case1-q1",
+      "sourcePage": 5,
+      "questionTextSha256": "1c5dc6462f889213011c128358d11d27bb348b81c010732d75578bff40f8a285",
+      "answerFieldCount": 2
+    },
+    {
+      "id": "chusho-secondary-2023-case1-q2",
+      "sourcePage": 5,
+      "questionTextSha256": "8044c6f75d803d3113637fb25a8d14c9ee7faed8c1b634f0ffd1104aeae5bcb6",
+      "answerFieldCount": 1
+    },
+    {
+      "id": "chusho-secondary-2023-case1-q3",
+      "sourcePage": 5,
+      "questionTextSha256": "242f7b3f69ccc0b66fcb23d12183ac4eabcb3ee763c8a4c9e4565c79f61afd65",
+      "answerFieldCount": 1
+    },
+    {
+      "id": "chusho-secondary-2023-case1-q4",
+      "sourcePage": 5,
+      "questionTextSha256": "c5a0ca8f2e42488131485ab96789ad721be05a572d70ed55a5868d51200cf379",
+      "answerFieldCount": 2
+    },
+    {
+      "id": "chusho-secondary-2023-case2-q1",
+      "sourcePage": 6,
+      "questionTextSha256": "062449ba6a5df3a161d7f9b87c279fec05c1c9a86b5a3d20a346b0fa80d5eeec",
+      "answerFieldCount": 1
+    },
+    {
+      "id": "chusho-secondary-2023-case2-q2",
+      "sourcePage": 6,
+      "questionTextSha256": "54b7f3b8d93dd9cb9059b77356be56708bf5365bdbc5f619e343dec7a3b03beb",
+      "answerFieldCount": 1
+    },
+    {
+      "id": "chusho-secondary-2023-case2-q3",
+      "sourcePage": 6,
+      "questionTextSha256": "787a789d138f098f1c733f4114e76fd108f074ced38326548831221638da4ddc",
+      "answerFieldCount": 1
+    },
+    {
+      "id": "chusho-secondary-2023-case2-q4",
+      "sourcePage": 6,
+      "questionTextSha256": "6f3e58fc099d3b09eef25984a6292ca7c4038f2a1602e7f534fe80d8f3c4678e",
+      "answerFieldCount": 1
+    },
+    {
+      "id": "chusho-secondary-2023-case3-q1",
+      "sourcePage": 5,
+      "questionTextSha256": "391d241e2d293beab04af56083cdc79fe96f1ac5e597e806c7d83c83af7af574",
+      "answerFieldCount": 1
+    },
+    {
+      "id": "chusho-secondary-2023-case3-q2",
+      "sourcePage": 5,
+      "questionTextSha256": "293e389e7a6565261e08f3747dfff557dbaee0ea75cf43cfba4e719cc4b6ee21",
+      "answerFieldCount": 1
+    },
+    {
+      "id": "chusho-secondary-2023-case3-q3",
+      "sourcePage": 5,
+      "questionTextSha256": "967206d2ffee26c984071aa56fb64acf167b718e503aab6d1726b122f894feb3",
+      "answerFieldCount": 1
+    },
+    {
+      "id": "chusho-secondary-2023-case3-q4",
+      "sourcePage": 5,
+      "questionTextSha256": "873cd2d86edd3a631fe104d42c1be6880782acee3bdd9c7dd0a232b9b42c770f",
+      "answerFieldCount": 1
+    },
+    {
+      "id": "chusho-secondary-2023-case3-q5",
+      "sourcePage": 5,
+      "questionTextSha256": "aa0e7e4b8f5f82ea223df748d5521a80d6801ecfa5ee91c6443c0703d8c2ece0",
+      "answerFieldCount": 1
+    },
+    {
+      "id": "chusho-secondary-2023-case4-q1",
+      "sourcePages": [
+        4
+      ],
+      "questionTextSha256": "b210e71d5766d18ec7a7fc181886e283009b2a122623f7200a5c7fcacd6c5fae",
+      "answerFieldCount": 4
+    },
+    {
+      "id": "chusho-secondary-2023-case4-q2",
+      "sourcePages": [
+        5,
+        7
+      ],
+      "questionTextSha256": "1e3c7180cd084a2ea1969e720cb703b53db951f5ea71c28097213a0cae82c59e",
+      "answerFieldCount": 8
+    },
+    {
+      "id": "chusho-secondary-2023-case4-q3",
+      "sourcePages": [
+        8,
+        9
+      ],
+      "questionTextSha256": "866ca58a2b06adac6231ab489f04fbdd7730d2a275e3fca940ddf0a3e46ba706",
+      "answerFieldCount": 5
+    },
+    {
+      "id": "chusho-secondary-2023-case4-q4",
+      "sourcePages": [
+        10
+      ],
+      "questionTextSha256": "d4da38fdc8508d0a3d2824283da33873392dbe88eea1d8a8fd80c2cbfd237927",
+      "answerFieldCount": 2
+    }
+  ],
+  "financialTables": {
+    "balanceSheet": [
+      [
+        "流動資産",
+        "2,676,193",
+        "2,777,545"
+      ],
+      [
+        "現金等",
+        "593,256",
+        "1,133,270"
+      ],
+      [
+        "売掛金・受取手形",
+        "1,085,840",
+        "864,915"
+      ],
+      [
+        "製品・原材料等",
+        "948,537",
+        "740,810"
+      ],
+      [
+        "その他の流動資産",
+        "48,560",
+        "38,550"
+      ],
+      [
+        "固定資産",
+        "186,973",
+        "197,354"
+      ],
+      [
+        "建物・工具等",
+        "64,524",
+        "63,256"
+      ],
+      [
+        "無形固定資産",
+        "37,492",
+        "34,683"
+      ],
+      [
+        "投資その他の資産",
+        "84,957",
+        "99,415"
+      ],
+      [
+        "資産合計",
+        "2,863,166",
+        "2,974,899"
+      ],
+      [
+        "流動負債",
+        "851,394",
+        "640,513"
+      ],
+      [
+        "買掛金",
+        "191,034",
+        "197,162"
+      ],
+      [
+        "短期借入金",
+        "120,000",
+        "70,000"
+      ],
+      [
+        "未払金",
+        "197,262",
+        "104,341"
+      ],
+      [
+        "未払法人税等",
+        "250,114",
+        "184,887"
+      ],
+      [
+        "その他の流動負債",
+        "92,984",
+        "84,123"
+      ],
+      [
+        "固定負債",
+        "22,500",
+        "27,153"
+      ],
+      [
+        "長期借入金",
+        "22,500",
+        "24,360"
+      ],
+      [
+        "リース債務",
+        "－",
+        "2,793"
+      ],
+      [
+        "負債合計",
+        "873,894",
+        "667,666"
+      ],
+      [
+        "資本金",
+        "100,000",
+        "100,000"
+      ],
+      [
+        "資本剰余金",
+        "－",
+        "－"
+      ],
+      [
+        "利益剰余金",
+        "1,889,272",
+        "2,207,233"
+      ],
+      [
+        "純資産合計",
+        "1,989,272",
+        "2,307,233"
+      ],
+      [
+        "負債・純資産合計",
+        "2,863,166",
+        "2,974,899"
+      ]
+    ],
+    "profitAndLoss": [
+      [
+        "売上高",
+        "5,796,105",
+        "4,547,908"
+      ],
+      [
+        "売上原価",
+        "2,185,856",
+        "1,743,821"
+      ],
+      [
+        "売上総利益",
+        "3,610,249",
+        "2,804,087"
+      ],
+      [
+        "販売費及び一般管理費",
+        "2,625,222",
+        "2,277,050"
+      ],
+      [
+        "営業利益",
+        "985,027",
+        "527,037"
+      ],
+      [
+        "営業外収益",
+        "368",
+        "11,608"
+      ],
+      [
+        "営業外費用",
+        "2,676",
+        "1,613"
+      ],
+      [
+        "経常利益",
+        "982,719",
+        "537,032"
+      ],
+      [
+        "特別利益",
+        "－",
+        "－"
+      ],
+      [
+        "特別損失",
+        "－",
+        "－"
+      ],
+      [
+        "税引前当期純利益",
+        "982,719",
+        "537,032"
+      ],
+      [
+        "法人税等",
+        "331,059",
+        "169,072"
+      ],
+      [
+        "当期純利益",
+        "651,660",
+        "367,960"
+      ]
+    ],
+    "productProfitAndLoss": [
+      [
+        "売上高",
+        "80,000",
+        "100,000",
+        "10,000",
+        "190,000"
+      ],
+      [
+        "変動費",
+        "56,000",
+        "80,000",
+        "6,000",
+        "142,000"
+      ],
+      [
+        "限界利益",
+        "24,000",
+        "20,000",
+        "4,000",
+        "48,000"
+      ],
+      [
+        "個別固定費",
+        "10,000",
+        "15,000",
+        "1,500",
+        "26,500"
+      ],
+      [
+        "共通費",
+        "8,000",
+        "10,000",
+        "1,000",
+        "19,000"
+      ],
+      [
+        "固定費計",
+        "18,000",
+        "25,000",
+        "2,500",
+        "45,500"
+      ],
+      [
+        "営業利益",
+        "6,000",
+        "△5,000",
+        "1,500",
+        "2,500"
+      ]
+    ]
+  }
+}

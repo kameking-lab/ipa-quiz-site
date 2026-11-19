@@ -1,0 +1,3 @@
+.home { padding-top: 4px; }
+:global(#main-content):has(.home) { padding-bottom: 0; }
+@media (min-width: 640px) { .home { padding-top: 16px; } }

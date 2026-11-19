@@ -1,0 +1,304 @@
+{
+  "checkedOn": "2026-11-17",
+  "officialListingUrl": "https://www.jinji.go.jp/saiyo/siken/mondairei/mondairei_13.html",
+  "sourcePdfUrl": "https://www.jinji.go.jp/content/000018339.pdf",
+  "sourceAnswerUrl": "https://www.jinji.go.jp/content/000018339.pdf#page=40",
+  "sha256": "e6eddbf8515f51c4cbd591f2feca74c535befbfabc030f5a85e73f11f80e5600",
+  "pageCount": 40,
+  "coverage": {
+    "officialQuestionCount": 30,
+    "addedQuestionNumbers": [
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      18,
+      19,
+      20
+    ],
+    "addedCount": 9,
+    "remainingCount": 21,
+    "fullAnnualPaper": false
+  },
+  "transcription": "画像PDFの原本9頁と正答表1頁を目視。本文・全45肢を手入力し原本と再照合。抽出テキストによる二重照合はできていない。",
+  "image": {
+    "path": "public/questions/kokka-sogo-dai/2026-kiso-q13.png",
+    "sha256": "e1a63e8b1d92d7392a0c173c669c98a8099c59abaa9216426c4bf720577ce284",
+    "pdfPage": 21,
+    "clipPdfPoints": [
+      80,
+      295,
+      475,
+      432
+    ]
+  },
+  "questions": [
+    {
+      "id": "kokka-sogo-dai-2026-annual-kiso-q11",
+      "qNumber": 11,
+      "pdfPage": 19,
+      "officialAnswerNumber": 4,
+      "questionSha256": "91036965c4983b733646bbbd60225250b99026e8ab6ee21dd6686aac1e440a67"
+    },
+    {
+      "id": "kokka-sogo-dai-2026-annual-kiso-q12",
+      "qNumber": 12,
+      "pdfPage": 20,
+      "officialAnswerNumber": 5,
+      "questionSha256": "6d2995d1c606cff23e0d74afff5e5e6808c10a3b2971715c43d7c0fa637311a9"
+    },
+    {
+      "id": "kokka-sogo-dai-2026-annual-kiso-q13",
+      "qNumber": 13,
+      "pdfPage": 21,
+      "officialAnswerNumber": 4,
+      "questionSha256": "2abe8b200a587ae6d1c666ee79feac9eced7e25be3ec943b0377795c6d2785b6"
+    },
+    {
+      "id": "kokka-sogo-dai-2026-annual-kiso-q14",
+      "qNumber": 14,
+      "pdfPage": 22,
+      "officialAnswerNumber": 3,
+      "questionSha256": "42f909bd4fb79f2e251df3288fe98b5993b616eb94b5ef626554b0f249e9822c"
+    },
+    {
+      "id": "kokka-sogo-dai-2026-annual-kiso-q15",
+      "qNumber": 15,
+      "pdfPage": 23,
+      "officialAnswerNumber": 3,
+      "questionSha256": "7d4759a56886d2a8a29981d7ccbfb4c1440eeae752391253432477ba80e98357"
+    },
+    {
+      "id": "kokka-sogo-dai-2026-annual-kiso-q16",
+      "qNumber": 16,
+      "pdfPage": 24,
+      "officialAnswerNumber": 2,
+      "questionSha256": "2513a665e28363382b062029655ea7e68c85cb32d3a4d197fb09daa80a5ef11b"
+    },
+    {
+      "id": "kokka-sogo-dai-2026-annual-kiso-q18",
+      "qNumber": 18,
+      "pdfPage": 26,
+      "officialAnswerNumber": 5,
+      "questionSha256": "fa87df18831397e2292263db99ddd858cb9adadea3420921fd84ee106b010549"
+    },
+    {
+      "id": "kokka-sogo-dai-2026-annual-kiso-q19",
+      "qNumber": 19,
+      "pdfPage": 27,
+      "officialAnswerNumber": 1,
+      "questionSha256": "c8703ca486779b393b58396d0e695ababd52d54390c90b027b3eb3e766c8c2b0"
+    },
+    {
+      "id": "kokka-sogo-dai-2026-annual-kiso-q20",
+      "qNumber": 20,
+      "pdfPage": 28,
+      "officialAnswerNumber": 5,
+      "questionSha256": "08fa15fcd477b292ad5db30f661def5c8d4110597a72eac40efcbb4158fb6ea9"
+    }
+  ],
+  "solutionVerification": "補助スクリプトによる命題全探索・状態遷移・勤務表全探索・確率の全2500通り・連立式・重さの全探索で公式正答との一致を確認。",
+  "mathematicalChecks": {
+    "11": {
+      "validInferences": [
+        "ウ"
+      ],
+      "verifiedBy": "真理値の全探索"
+    },
+    "12": {
+      "guaranteedChoices": [
+        5
+      ]
+    },
+    "13": {
+      "minimumMoves": 19,
+      "tenthMoves": [
+        [
+          4,
+          "A",
+          "C"
+        ]
+      ]
+    },
+    "14": {
+      "possibleBirthYears": [
+        [
+          1983,
+          1986,
+          1987,
+          1988,
+          1990
+        ],
+        [
+          1983,
+          1986,
+          1987,
+          1989,
+          1990
+        ]
+      ],
+      "guaranteedChoices": [
+        3
+      ]
+    },
+    "15": {
+      "cases": [
+        {
+          "roster": [
+            [
+              0,
+              1,
+              2
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              3,
+              4
+            ],
+            [
+              0,
+              1,
+              4
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "choices": [
+            false,
+            false,
+            true,
+            false,
+            true
+          ]
+        },
+        {
+          "roster": [
+            [
+              1,
+              2,
+              3
+            ],
+            [
+              2,
+              3
+            ],
+            [
+              0,
+              4
+            ],
+            [
+              0,
+              1,
+              4
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "choices": [
+            true,
+            true,
+            true,
+            true,
+            true
+          ]
+        },
+        {
+          "roster": [
+            [
+              2,
+              3,
+              4
+            ],
+            [
+              1,
+              2
+            ],
+            [
+              0,
+              1
+            ],
+            [
+              0,
+              3,
+              4
+            ],
+            [
+              2,
+              4
+            ]
+          ],
+          "choices": [
+            true,
+            false,
+            true,
+            false,
+            false
+          ]
+        }
+      ],
+      "guaranteedChoices": [
+        3
+      ]
+    },
+    "16": {
+      "minimumProduct": 6,
+      "xFlips": 2,
+      "yFlips": 3,
+      "timeline": [
+        [
+          0,
+          1,
+          1
+        ],
+        [
+          5,
+          1,
+          0
+        ],
+        [
+          8,
+          0,
+          1
+        ],
+        [
+          10,
+          0,
+          1
+        ]
+      ]
+    },
+    "18": {
+      "favorableOutcomes": 164,
+      "allOutcomes": 2500,
+      "probability": "41/625"
+    },
+    "19": {
+      "distances": [
+        24,
+        12
+      ],
+      "ratio": "2"
+    },
+    "20": {
+      "weights": [
+        [
+          12,
+          15,
+          19,
+          24,
+          34
+        ]
+      ],
+      "middleSum": 58
+    }
+  }
+}

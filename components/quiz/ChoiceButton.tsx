@@ -85,24 +85,24 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
       aria-keyshortcuts={!revealed && numberKey !== null ? String(numberKey) : undefined}
       data-state={state}
       className={cn(
-        "group relative w-full rounded-2xl border-2 px-4 py-4 text-left transition-colors",
+        "group relative w-full rounded-xl border-2 px-4 py-4 text-left transition-colors",
         "flex items-start gap-3 sm:gap-4",
         "min-h-[64px]",
         "touch-manipulation",
         "disabled:cursor-default",
-        "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-sky-600 focus-visible:ring-offset-2 focus-visible:ring-offset-background dark:focus-visible:ring-sky-300",
+        "focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background",
         !revealed &&
           !disabled &&
-          "border-zinc-200 bg-white hover:border-sky-400 hover:bg-sky-50 active:bg-sky-100 dark:border-zinc-700 dark:bg-zinc-900 dark:hover:border-sky-500 dark:hover:bg-zinc-800",
+          "border-border bg-card hover:border-primary hover:bg-primary-soft active:bg-muted",
         state === "selected" &&
-          "border-sky-500 bg-sky-50 dark:border-sky-400 dark:bg-sky-950/40",
+          "border-primary bg-primary-soft",
         state === "revealed-correct" &&
           "border-emerald-500 bg-emerald-50 text-emerald-950 dark:border-emerald-400 dark:bg-emerald-950/50 dark:text-emerald-100",
         state === "wrong" &&
           "border-red-500 bg-red-50 text-red-950 dark:border-red-400 dark:bg-red-950/50 dark:text-red-100",
         revealed &&
           state === "idle" &&
-          "border-zinc-200 bg-white opacity-60 dark:border-zinc-800 dark:bg-zinc-950",
+          "border-border bg-card opacity-60",
       )}
     >
       <span
@@ -114,8 +114,8 @@ export const ChoiceButton = React.forwardRef<HTMLButtonElement, Props>(function 
             : state === "wrong"
               ? "bg-red-700 text-white dark:bg-red-400 dark:text-red-950"
               : state === "selected"
-                ? "bg-sky-700 text-white dark:bg-sky-400 dark:text-sky-950"
-                : "bg-zinc-200 text-zinc-900 dark:bg-zinc-800 dark:text-zinc-50",
+                ? "bg-primary text-primary-foreground"
+                : "bg-muted text-foreground",
         )}
       >
         {displayLabel ?? choiceKey}

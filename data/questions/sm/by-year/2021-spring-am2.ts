@@ -24,6 +24,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "JIS Q 20000-1:2020において、継続的改善は、意図した結果であるサービスパフォーマンスの向上を達成するために、計画、実施、監視、レビューといった一連の活動として捉えられます。これらの活動は互いに関連し、インプット（例えばサービスパフォーマンスデータ）を活用して、改善というアウトプットを生み出します。このため、継続的改善を「意図した結果を得るためにインプットを使用する、相互に関連する又は相互に作用する一連の活動」と説明できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "稼働品質率 = 利用者に迷惑を掛けた回数 ÷ システムの資産規模 という定義に基づき、信頼性が最も高いシステムを判断します。システムの資産規模は総運用費用で評価されます。\n\nイ: Bシステムは、利用者に迷惑を掛けた回数が4回/年、総運用費用が100百万円/年なので、稼働品質率は 4 ÷ 100 = 0.04 となります。これが最も低い値となるため、信頼性が最も高いと判断されます。\n\nアは、利用者に迷惑を掛けた回数が3回/年、総運用費用が120百万円/年であり、稼働品質率は 3 ÷ 120 = 0.025 となり、Bよりも信頼性が低いです。\nウは、利用者に迷惑を掛けた回数が6回/年、総運用費用が80百万円/年であり、稼働品質率は 6 ÷ 80 = 0.075 となり、Bよりも信頼性が低いです。\nエは、利用者に迷惑を掛けた回数が6回/年、総運用費用が60百万円/年であり、稼働品質率は 6 ÷ 60 = 0.1 となり、Bよりも信頼性が低いです。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "JIS Q 20000-1:2020のサービスレベルの監視及びレビューに関する規定では、「あらかじめ定めた間隔及び/又は必要に応じて」と明記されています。このうち「必要に応じて」という規定は、定期的なレビューだけでなく、サービスに何らかの変化や問題が発生した際にも柔軟にレビューを行うことを求めています。したがって、「間隔を定めず」という表現が「必ずしも定期的な間隔に限定されず」というニュアンスで解釈される場合、「必要に応じて実施する」という側面に焦点を当てた選択肢ウが正解となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ITIL 2011 editionのイベント管理プロセスは、ITインフラストラクチャやサービスの状態変化を示すイベントを監視・検知することを目的としています。イベントが検知された場合、そのイベントがインシデントや警告などを示すものであれば、適切なプロセス（例: インシデント管理）に通知し、さらなる対応を促します。したがって、インシデントの発生を検知して、関連するプロセスに通知することは、イベント管理の主要な活動です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ITIL 2011 editionにおいて、「IT サービスが必要とされるときに、合意した条件の下で要求された機能を果たせる状態にある能力」は、可用性 (Availability) と定義されています。この可用性を確保し向上させるために、その定義、分析、計画、測定、改善といったライフサイクル全体にわたる活動を行うのが可用性管理プロセスです。したがって、この説明は可用性管理に合致します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "エ 8.5 が正解です。この問題は、プロジェクトマネジメントにおけるクリティカルパス法（CPM）の考え方に基づいています。CPMでは、プロジェクト全体の所要時間を決定する、遅延が許されない一連の作業（クリティカルパス）を特定します。各作業には先行・後続関係があり、利用可能なリソース（作業者）の制約下で、並行処理と休憩時間を考慮して最短所要時間を算出します。\n\nア 6.5 は、休憩時間を考慮していない、または作業者を無制限に利用できると仮定した場合の理論上の最短時間であるため不適切です。イ 7.0 は、作業の依存関係や3人という作業者数の制約、休憩時間の配置によっては到達できない時間です。ウ 7.5 は、休憩時間の取得方法によっては到達可能に見えますが、最も効率的な作業者の配置と休憩時間の組み合わせを考慮すると、さらに時間を要するケースが存在するため不適切です。\n\nエ 8.5 となるのは、3人の作業者が作業を分担し、休憩を最低1回1時間以上取得しながら、依存関係のある作業を並行して進めた場合の、最も時間のかかる経路（クリティカルパス）を考慮した結果です。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +174,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ITIL 2011 editionのサービス資産管理および構成管理における構成コントロールは、構成アイテム（CI）の状態が常に正しく管理され、承認された変更のみが適用されることを保証します。構成コントロールが不適切に行われると、承認されていない、または品質が確認されていない（不具合のある）CIが稼働環境に展開されるリスクが高まります。したがって、不具合のあるリリースが稼働環境に展開される事象は、構成コントロールの不備によって直接的に発生しうる結果です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +199,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "エラープルーフ化の原理において、「代替化」は人による作業自体を不要にすることでエラーの発生機会をなくし、「排除」は特定の作業や注意そのものを不要とすることでエラーの根本原因を取り除き、いずれもヒューマンエラーの発生を未然に防ぐ効果があります。また、「異常検出」も、エラーに繋がる異常な状態を早期に検知し、大きなエラーに発展する前に対応を促すことで、結果としてエラーの発生を未然に防ぐ役割を果たすと解釈できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +224,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "フェールセーフとは、システムに何らかの故障や異常が発生した場合に、その影響が重大な事故や被害に繋がらないよう、システムを安全な状態へと導く設計思想です。具体的には、システムを安全に停止させたり、機能の一部を制限して安全を確保したりすることで、人命や財産への被害を最小限に抑えることを目的とします。したがって、「システムを構成している機器が故障したときは、システムが安全に停止するようにして、被害を最小限に抑える」という説明がフェールセーフに該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +249,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ウォームスタンバイとは、バックアップサイトに基本的なシステム環境が整備されており、一部のアプリケーションが起動済みであったり、定期的にデータが転送されていたりする状態を指します。障害発生時には、バックアップシステムの起動や最新データの反映などの準備作業が必要ですが、コールドスタンバイよりも短い時間でサービスを復旧することが可能です。したがって、「別の場所にバックアップシステムを用意しておき、緊急時にはバックアップシステムを起動して、データを最新状態にする処理を行った後にサービスを復旧する」という説明がウォームスタンバイに該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +274,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "データベースの復旧処理では、まずフルバックアップをリストアし、次にそのバックアップ取得時点から障害発生時点までのすべてのトランザクションログを適用（ロールフォワード）することで、データを最新の状態に戻します。フルバックアップの取得間隔を2倍にすると、障害が発生した場合に、前回のフルバックアップからの期間が平均して長くなるため、復旧時に適用しなければならないトランザクションログの量が約2倍に増加します。結果として、ログ情報の反映にかかる平均処理時間も約2倍になると考えられます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +299,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "クールピットは、データセンターなどの空調システムにおいて、地中に埋設した熱交換パイプを通じて地中の安定した温度を利用する技術です。夏季には外気よりも低温な地中の熱を利用して、データセンターへの供給空気を予冷することで、空調負荷を低減し省エネルギー化を図ります。この特徴は、「夏季は外気よりも低温になる地中の自然冷熱を熱交換に利用する」という説明に正確に合致します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +324,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "PUE (Power Usage Effectiveness) は、データセンターのエネルギー効率を示す国際的な指標であり、データセンター全体の消費電力が、実際にIT機器の稼働にどれだけ使われているかを測ります。その計算式は、「データセンターの総消費電力」を「IT機器の総消費電力」で割ることで求められ、PUE値が1.0に近いほどエネルギー効率が良いと評価されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +349,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "情報セキュリティ監査基準における保証型監査は、監査人が独立した立場で客観的な監査手続を実施し、その結果に基づいて、監査対象の情報セキュリティに関するマネジメントやコントロールが、定められた規準に照らして適切に運用されているか否かについて、保証意見を表明することを目的としています。この保証は、実施した監査手続の範囲内での合理的な保証であり、将来のインシデントの完全な発生防止を約束するものではありません。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +374,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "虹彩認証は、個々人で異なる虹彩のパターンを利用して個人を特定する生体認証技術です。成人の虹彩パターンは生涯にわたってほとんど変化しないという特性を持つため、一度登録した認証パターンを更新する必要がほとんどありません。この特性は、指紋や顔などの他の生体情報と比較して、利用者の利便性が高いという利点となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +399,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "CSIRT (Computer Security Incident Response Team) は、コンピュータセキュリティインシデントが発生した際に、その検知、分析、対応、再発防止策の立案など一連の活動を行う専門チームまたは組織です。企業や行政機関、教育機関など、さまざまな組織に設置され、組織のセキュリティ体制の中核を担い、情報資産の保護と事業継続に貢献します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +424,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "JIS Q 22301:2020は、国際規格であるISO 22301:2019を日本工業規格として制定したもので、「事業継続マネジメントシステム (BCMS) の要求事項」を定めています。この規格は、組織が事業継続能力を確立し、維持し、改善するためのフレームワークを提供し、災害や予期せぬ事態が発生した場合でも中核事業を継続できるよう支援することを目的としています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +449,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ノミナル・グループ技法は、ブレーンストーミングの派生形であり、参加者が個々にアイデアを生成した後、全員でアイデアを共有し、議論を通じて理解を深め、最終的に投票によって最適なアイデアを選出する構造化された集団討議技法です。この手法は、提示された「アイデアの書き出し」「モデレーターによる共有」「話し合い」「点数投票」「選択」という一連の手順と完全に一致し、プロジェクトの要求事項収集において効果的な合意形成を促進します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +474,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ファンクションポイント法において、調整前FP（Unadjusted Function Point）は、システムが提供する機能の論理的な量を測定するために、5種類の機能要素（外部入力、外部出力、外部照会、内部論理ファイル、外部インタフェースファイル）の数とその複雑度に基づいて算出されます。このうち、「画面数」は、ユーザーがシステムに入力を行うための外部入力や、情報を表示する外部出力、情報を照会する外部照会といった機能要素を具体的に数えるために必要となる情報です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +499,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "PMBOKガイド第6版における「転嫁 (Transfer)」は、脅威（ネガティブなリスク）に対するリスク対応戦略の一つであり、リスクが発生した場合の影響や責任、またはリスク管理のオーナーシップそのものを第三者に移すことを指します。これは、保険の契約、保証の利用、あるいはリスクをより適切に管理できる外部組織への業務委託（アウトソーシング）などの方法で実施されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +524,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "割込みは、プログラムの実行を一時中断し、特定の処理を行うための仕組みです。内部割込みは、プログラム自身の実行中に発生する事象、例えばゼロ除算や不正なメモリアクセス、そして演算結果のオーバーフローなど、ソフトウェア的な要因によって引き起こされます。これに対し、外部割込みはI/Oデバイスの完了やタイマ満了、電源異常といった、CPU外部のハードウェアからの信号によって発生します。したがって、演算結果のオーバーフローは内部割込みの適切な要因です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +549,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "この問題は、MTBF（平均故障間隔）とMTTR（平均修復時間）という二つの指標を用いて、直列に結合されたシステムの信頼性評価に関するものです。MTBFはシステムの平均的な稼働時間、MTTRは故障発生から復旧までの平均時間を示します。\n\n正解はウです。MTBFは、直列に結合されたサブシステムのMTBFの調和平均で近似されます。サブシステムAのMTBFをR1、サブシステムBのMTBFをR2とすると、システム全体のMTBFは、1/(1/R1 + 1/R2)で近似されます。本問ではR1=R2=Rなので、システム全体のMTBFは1/(1/R + 1/R) = 1/(2/R) = R/2 となります。MTTRは、直列に結合されたサブシステムのMTTRの合計で近似されます。サブシステムAのMTTRをS1、サブシステムBのMTTRをS2とすると、システム全体のMTTRはS1 + S2 となります。本問ではS1=S2=Sなので、システム全体のMTTRはS + S = 2S となります。\n\nアは、システム全体のMTBFがサブシステムと同じRになるとしており、直列結合による信頼性低下を考慮していないため不適切です。イは、MTTRが2Sとなる点は正しいですが、MTBFがRであると誤っています。エは、MTBFがR/2となる点は正しいですが、MTTRが2SではなくSであると誤っています。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +574,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "媒体障害が発生し、データベースのデータファイルが破損した場合の回復には、まず物理的に失われたデータを復元する必要があります。そのためには、事前に取得しておいたデータベースのバックアップコピーをリストアして、データベースの基盤となるデータを回復させます。その後、バックアップ取得時点以降に実行されたすべてのコミット済みトランザクションのログデータを適用（ロールフォワード）することで、データベースを障害発生直前の最新の状態に復旧させます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +599,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "SAN（Storage Area Network）は、サーバとストレージ装置をファイバチャネルなどの高速な専用ネットワークで接続し、ブロックレベルでのデータアクセスを提供するシステムです。これにより、通常のLANに影響を与えることなく大容量データを高速に転送し、ストレージの共有や集約を可能にします。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +624,7 @@ export const SM_QUESTIONS_2021_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "企業のWebサイトを改ざんし、システムを不正に動作させて業務を妨害する行為は、「電子計算機損壊等業務妨害罪」などに該当します。これらの犯罪行為は、日本においては刑法によって処罰の対象となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2021h03_1/2021h03h_sm_am2_qs.pdf",
     "license": "IPA-public"

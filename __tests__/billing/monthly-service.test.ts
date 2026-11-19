@@ -27,6 +27,25 @@ describe("monthly contract and invoice lifecycle (offline transactional fixture)
     await expect(f.send("evt_monthly", "different")).rejects.toMatchObject({ code: "event_conflict" });
     expect(Object.keys(f.account().invoices)).toEqual(["in_jan"]);
   });
+  it("re-fetches an older Stripe observation after a concurrent webhook commits", async () => {
+    const f = await monthlyFixture();
+    const started = Promise.withResolvers<void>(), resume = Promise.withResolvers<void>();
+    const old = structuredClone(f.observation);
+    vi.mocked(f.provider.observe).mockImplementationOnce(async () => {
+      started.resolve();
+      await resume.promise;
+      return old;
+    });
+    const delayed = f.send("evt_delayed");
+    await started.promise;
+    f.observation.contracts[0].status = "canceled";
+    try {
+      await expect(f.send("evt_newer")).resolves.toBe("processed");
+    } finally { resume.resolve(); }
+    await expect(delayed).resolves.toBe("processed");
+    expect(f.provider.observe).toHaveBeenCalledTimes(3);
+    expect(f.account().contracts.sub_monthly.status).toBe("canceled");
+  });
   it("retains paid history when an older failed invoice observation arrives", async () => {
     const f = await monthlyFixture(); await f.send(); f.observation.invoices[0].paid = false; f.observation.invoices[0].payments = [];
     await f.send("evt_old_failure"); expect((await f.service.status("alice")).entitled).toBe(true);

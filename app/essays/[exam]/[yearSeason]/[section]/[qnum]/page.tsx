@@ -192,13 +192,13 @@ export default async function EssayPm2DetailPage({
       <div className="print:hidden mt-8 rounded-2xl border border-violet-200/70 bg-gradient-to-br from-violet-50 via-card to-card p-5 dark:border-violet-900/40 dark:from-violet-950/40">
         <h2 className="mb-2 text-base font-bold">自分の答案を AI で採点してみる</h2>
         <p className="mb-3 text-sm text-zinc-600 dark:text-zinc-400">
-          上記の答案例を参考に論述を書いたら、AI 添削で「適合度・論理性・具体性・業種事例」の4軸でフィードバックを受けましょう。
+          別の題材で、設問に合わせた構成を確認できます。
         </p>
         <Link
           href="/essay"
           className="inline-flex items-center gap-1.5 rounded-lg bg-violet-600 px-4 py-2 text-sm font-semibold text-white hover:bg-violet-700 dark:bg-violet-500 dark:hover:bg-violet-600"
         >
-          AI 論述添削を試す →
+          論述の練習問題を見る →
         </Link>
       </div>
 

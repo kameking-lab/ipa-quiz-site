@@ -11,6 +11,7 @@ import { POST as webhook } from "@/app/api/billing/webhook/route";
 import { POST as portal } from "@/app/api/billing/portal/route";
 import { POST as checkout } from "@/app/api/billing/checkout/route";
 import { GET as status } from "@/app/api/billing/status/route";
+import { PATCH as ending } from "@/app/api/billing/ending/route";
 import { monthlyTerms } from "@/lib/billing/subscription/service";
 const secret = "whsec_public_fixture_only";
 function request(event: unknown, valid = true) {
@@ -50,5 +51,21 @@ describe("signed monthly HTTP handler -> adapter -> service -> transactional mem
     const f = await monthlyStripeFixture(); wiring.runtime = f; await webhook(request(f.event()));
     const before = JSON.stringify([...f.store.accounts]); await status(new Request("http://localhost:3338/api/billing/status"));
     expect(JSON.stringify([...f.store.accounts])).toBe(before);
+  });
+  it("only the signed-in member can change renewal, including while sales are closed", async () => {
+    const f = await monthlyStripeFixture(); wiring.runtime = f;
+    await webhook(request(f.event()));
+    f.config.enabled = false;
+    const patch = (body: unknown, origin = "http://localhost:3338") => new Request("http://localhost:3338/api/billing/ending", {
+      method: "PATCH", headers: { origin }, body: JSON.stringify(body),
+    });
+    const cancel = { orderId: f.result.orderId, kind: "cancel" };
+    expect((await ending(patch(cancel, "https://example.invalid"))).status).toBe(403);
+    expect((await ending(patch({ ...cancel, customer: f.sub.customer }))).status).toBe(400);
+    expect((await ending(patch({ ...cancel, kind: "exam", examDate: "2026-02-30" }))).status).toBe(400);
+    wiring.user = "bob";
+    expect((await ending(patch(cancel))).status).toBe(404);
+    wiring.user = "alice";
+    expect(await (await ending(patch(cancel))).json()).toMatchObject({ management: { cancelAtPeriodEnd: true } });
   });
 });

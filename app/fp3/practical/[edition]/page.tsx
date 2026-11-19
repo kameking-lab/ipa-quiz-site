@@ -1,3 +1,4 @@
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
@@ -11,7 +12,7 @@ export async function generateMetadata({ params }: { params: Promise<{ edition: 
   const { edition } = await params;
   const data = getPracticalEdition(edition);
   if (!data) return { title: "実技試験が見つかりません", robots: { index: false } };
-  return { title: `FP3級 実技 ${data.label} 全20問`, description: `FP3級実技 ${data.label} の全20問と公式模範解答。`, alternates: { canonical: `/fp3/practical/${edition}` } };
+  return withCanonicalSocialMetadata({ title: `FP3級 実技 ${data.label} 全20問`, description: `FP3級実技 ${data.label} の全20問と公式模範解答。`, alternates: { canonical: `/fp3/practical/${edition}` } });
 }
 
 export default async function Fp3PracticalEdition({ params }: { params: Promise<{ edition: string }> }) {

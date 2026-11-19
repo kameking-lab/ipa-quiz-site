@@ -235,7 +235,10 @@ function mergeProfile(ownerScope: string, local: PetProfile, localMeta: PetCloud
     unlockedPaths, selectedPath: path.value === null || unlockedPaths.includes(path.value) ? path.value : local.selectedPath,
     roomEvents: roomEvents.slice(0, 6),
     recentAnswers: lastActivity(local) > lastActivity(remote) ? local.recentAnswers : remote.recentAnswers,
-    care: { autoFeed: autoFeed.value, meals: [...meals.values()] },
+    care: { autoFeed: autoFeed.value, meals: [...meals.values()],
+      ...((local.care.appearance || remote.care.appearance) ? { appearance: lastWriter(
+        { value: local.care.appearance ?? null, at: local.care.appearance?.updatedAt ?? 0 },
+        { value: remote.care.appearance ?? null, at: remote.care.appearance?.updatedAt ?? 0 }, value => value !== null).value ?? undefined } : {}) },
     combo: local.combo, memories: [...memories.values()],
   };
   // Union may cross a threshold neither side reached alone (e.g. 3 + 3 distinct

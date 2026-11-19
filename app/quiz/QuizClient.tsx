@@ -5,6 +5,7 @@ import * as React from "react";
 import type { Question, QuizMode } from "@/lib/questions/types";
 import { QuizPlayer } from "@/components/quiz/QuizPlayer";
 import { startSession } from "@/lib/motivation/session";
+import { LS_KEYS } from "@/lib/storage/keys";
 import { PracticeDailyLimit, PracticeLoading } from "@/components/quiz/PracticeTransition";
 import Link from "next/link";
 import { fetchPracticeQuestion, PracticeRequestError } from "@/lib/billing/guest-client";
@@ -13,6 +14,7 @@ import { posthogCapture } from "@/lib/posthog";
 import { nativeClient } from "@/mobile/shared/contracts";
 import { jstResetLabel } from "@/lib/billing/reset-time";
 import {shuffleChoices} from "@/lib/questions/filter";
+import { SignedOutOnly, useAccountStatus } from "@/components/account/AccountNavigation";
 
 const MAX_POOL = 80;
 import { getMockExamHistory } from "@/lib/mock-exam/storage";
@@ -84,6 +86,7 @@ export function QuizClient({
   const [current, setCurrent] = React.useState<Question | null>(null);
   const [loadError, setLoadError] = React.useState(false);
   const [accessError, setAccessError] = React.useState<string | null>(null);
+  const accountStatus = useAccountStatus(!!accessError);
   const [access, setAccess] = React.useState<PracticeAccess | null>(null);
   const [invalidQuestionId, setInvalidQuestionId] = React.useState(false);
   const [retryCount, setRetryCount] = React.useState(0);
@@ -163,7 +166,7 @@ export function QuizClient({
     }
     setInvalidQuestionId(false);
     url.searchParams.delete("question");
-    const sessionKey = `ipa-quiz:active-pool:v1:${url.pathname}${url.search}`;
+    const sessionKey = `${LS_KEYS.activeQuizPool}${url.pathname}${url.search}`;
     let ids = mockResultId
       ? (getMockExamHistory().find((result) => result.id === mockResultId)?.wrongQuestionIds ?? [])
         .filter((id) => poolIds.includes(id))
@@ -207,7 +210,7 @@ export function QuizClient({
     const url = new URL(window.location.href);
     url.searchParams.delete("question");
     try {
-      window.sessionStorage.setItem(`ipa-quiz:active-pool:v1:${url.pathname}${url.search}`, JSON.stringify(sessionIds));
+      window.sessionStorage.setItem(`${LS_KEYS.activeQuizPool}${url.pathname}${url.search}`, JSON.stringify(sessionIds));
     } catch { /* Practice remains usable without session storage. */ }
   }, [sessionIds]);
 
@@ -292,7 +295,7 @@ export function QuizClient({
     try {
       const url = new URL(window.location.href);
       url.searchParams.delete("question");
-      window.sessionStorage.setItem(`ipa-quiz:active-pool:v1:${url.pathname}${url.search}:related-order`, JSON.stringify(nextIds));
+      window.sessionStorage.setItem(`${LS_KEYS.activeQuizPool}${url.pathname}${url.search}:related-order`, JSON.stringify(nextIds));
     } catch { /* Continue in place when session storage is unavailable. */ }
     setSessionIds(nextIds);
     setCurrent(!(nativeClient() || billingGateEnabled && mode !== "review") ? cache.current.get(question.id) ?? null : null);
@@ -329,7 +332,9 @@ export function QuizClient({
     const message = accessError === "daily_limit"
       ? `本日の無料連続演習枠を使い切りました。${reset ? `${reset}に再開できます。` : "次の無料枠更新後に再開できます。"}`
       : accessError === "sign_in_required"
-        ? "この端末の本日の演習枠はアカウントへの引継ぎが開始されています。続きは同じアカウントでログインして再試行してください。"
+        ? accountStatus === "unauthenticated"
+          ? "この端末の本日の演習枠はアカウントへの引継ぎが開始されています。続きは同じアカウントでログインして再試行してください。"
+          : "利用状態を確認できません。もう一度お試しください。"
         : accessError === "guest_cookie_required"
           ? "このブラウザーでCookieを保存できませんでした。Cookieの設定をご確認ください。公開問題や無料復習もご利用いただけます。"
           : accessError === "guest_rate_limited"
@@ -337,11 +342,10 @@ export function QuizClient({
             : "問題を読み込めませんでした。少し待ってからもう一度お試しください。";
     return <div ref={transitionHost} tabIndex={-1} role="alert" className="mx-auto min-h-[100dvh] max-w-xl scroll-mt-24 space-y-4 px-4 py-10 text-center outline-none">
       <p className="font-semibold">{message}</p>
-      <p>この端末に保存した学習記録は削除されません。履歴の同期などは無料ログインで利用できます。</p>
-      {accessError === "daily_limit" ? <p>ログインだけで本日の無料枠が追加されることはありません。</p> : null}
+      <p>この端末に保存した学習記録は削除されません。<SignedOutOnly>履歴の同期などは無料ログインで利用できます。</SignedOutOnly></p>
       <nav aria-label="無料で続ける・保存と利用条件" className="flex flex-wrap justify-center gap-3">
         <Link href="/review" className="underline">保存済みの履歴・無料復習</Link>
-        <Link className="underline" href={loginHref}>この問題から再開するためにログイン</Link>
+        <SignedOutOnly><Link className="underline" href={loginHref}>この問題から再開するためにログイン</Link></SignedOutOnly>
         <Link href="/billing" className="underline">無料試用・料金と利用条件</Link>
       </nav>
       <div className="flex flex-wrap justify-center gap-3">

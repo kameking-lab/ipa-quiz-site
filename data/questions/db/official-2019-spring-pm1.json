@@ -1,0 +1,150 @@
+[
+  {
+    "id": "db-2019h-pm1-q1",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 1,
+    "category": "データベース設計",
+    "topicTags": [
+      "スポーツ大会のデータベース設計"
+    ],
+    "difficulty": 4,
+    "explanation": "主催者や大会などの実体を区別し、関連の多重度と識別子を確認する。解答表記は冊子冒頭に示された記法に合わせる。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午後I 問1",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "descriptive",
+    "question": "問1 スポーツ大会のデータベース設計",
+    "answer": "問１\n\n出題趣旨\n\nデータベースの設計では，業務要件を理解し，その要件を的確に実現することが求められる。\n\n本問では，スポーツイベントの運営システムを題材に，データモデリング，データベース設計，リレーショ\n\nンシップと外部キーの適切な設定などの能力，決定表による要件整理，ビジネスの要件の変化に対応してデー\n\nタモデル，データベース設計を拡張する能力を問う。\n\n設問 解答例・解答の要点 備考\n\n設問１(1) a 種目分類コード\n\nb 主催者番号\n\nc 種目コード\n\nd 大会番号\n\ne 会員番号\n\n順不同\n\nf 入金年月日\n\ng 使用ポイント\n\n(2) 運営\n\n種目分類 主催者 アイテム 会員\n\nサービス\n\n会員\n\n種目 大会\n\nポイント\n\n大会運営 大会\n\nサービス アイテム\n\nエントリ枠 参加申込み\n\n抽選\n\nエントリ枠\n\n設問２ 先着順抽選区分 先着順先着順先着順先着順 抽選 抽選 抽選 抽選 抽選 抽選 ＊1（後も可）\n\n＊2（前も可）\n\n募集期間に対する本日 前 中 中 後 前 中 後 後 －＊1 －＊1\n\n参加申込数 － 未満 到達 － － － 以下 超過 超過 超過\n\n抽選年月日に対する本日 － － － － －＊2 －＊2 － 前 当日 後\n\nエントリ枠状態を\n\n－ X － － － X － － － －\n\n‘募集中’にする\n\nエントリ枠状態を\n\n－ － － － － － － X － －\n\n‘抽選中’にする\n\n抽選実施 － － － － － － － － X －\n\nエントリ枠状態を\n\n－ － X X － － X － X X\n\n‘参加者確定’にする\n\n設問３(1) ① 関係名 抽選エントリ枠\n\n属性名 後続エントリ枠番号\n\n② 関係名 参加申込み\n\n属性名 抽選結果\n\n③ 抽選結果（大会番号，会員番号，エントリ枠番号，抽選結果）\n\n(2) 会員番号 ポイ ト付与年月日 付与ポイ ト 使用済ポイ ト",
+    "modelAnswer": "問１\n\n出題趣旨\n\nデータベースの設計では，業務要件を理解し，その要件を的確に実現することが求められる。\n\n本問では，スポーツイベントの運営システムを題材に，データモデリング，データベース設計，リレーショ\n\nンシップと外部キーの適切な設定などの能力，決定表による要件整理，ビジネスの要件の変化に対応してデー\n\nタモデル，データベース設計を拡張する能力を問う。\n\n設問 解答例・解答の要点 備考\n\n設問１(1) a 種目分類コード\n\nb 主催者番号\n\nc 種目コード\n\nd 大会番号\n\ne 会員番号\n\n順不同\n\nf 入金年月日\n\ng 使用ポイント\n\n(2) 運営\n\n種目分類 主催者 アイテム 会員\n\nサービス\n\n会員\n\n種目 大会\n\nポイント\n\n大会運営 大会\n\nサービス アイテム\n\nエントリ枠 参加申込み\n\n抽選\n\nエントリ枠\n\n設問２ 先着順抽選区分 先着順先着順先着順先着順 抽選 抽選 抽選 抽選 抽選 抽選 ＊1（後も可）\n\n＊2（前も可）\n\n募集期間に対する本日 前 中 中 後 前 中 後 後 －＊1 －＊1\n\n参加申込数 － 未満 到達 － － － 以下 超過 超過 超過\n\n抽選年月日に対する本日 － － － － －＊2 －＊2 － 前 当日 後\n\nエントリ枠状態を\n\n－ X － － － X － － － －\n\n‘募集中’にする\n\nエントリ枠状態を\n\n－ － － － － － － X － －\n\n‘抽選中’にする\n\n抽選実施 － － － － － － － － X －\n\nエントリ枠状態を\n\n－ － X X － － X － X X\n\n‘参加者確定’にする\n\n設問３(1) ① 関係名 抽選エントリ枠\n\n属性名 後続エントリ枠番号\n\n② 関係名 参加申込み\n\n属性名 抽選結果\n\n③ 抽選結果（大会番号，会員番号，エントリ枠番号，抽選結果）\n\n(2) 会員番号 ポイ ト付与年月日 付与ポイ ト 使用済ポイ ト",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-pm1/page-06.webp",
+      "/questions/ipa/db/2019-spring-pm1/page-07.webp",
+      "/questions/ipa/db/2019-spring-pm1/page-08.webp",
+      "/questions/ipa/db/2019-spring-pm1/page-09.webp",
+      "/questions/ipa/db/2019-spring-pm1/page-10.webp",
+      "/questions/ipa/db/2019-spring-pm1/page-11.webp",
+      "/questions/ipa/db/2019-spring-pm1/page-03.webp",
+      "/questions/ipa/db/2019-spring-pm1/page-04.webp",
+      "/questions/ipa/db/2019-spring-pm1/page-05.webp"
+    ],
+    "imageAltTexts": [
+      "問1の公式問題冊子 6ページ",
+      "問1の公式問題冊子 7ページ",
+      "問1の公式問題冊子 8ページ",
+      "問1の公式問題冊子 9ページ",
+      "問1の公式問題冊子 10ページ",
+      "問1の公式問題冊子 11ページ",
+      "問1の公式問題冊子 3ページ",
+      "問1の公式問題冊子 4ページ",
+      "問1の公式問題冊子 5ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/db/2019-spring-pm1/answer-q01.webp"
+    ],
+    "answerImageAltTexts": [
+      "問1の公式解答例"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_pm1_qs.pdf#page=6",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_pm1_ans.pdf#page=1"
+  },
+  {
+    "id": "db-2019h-pm1-q2",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 2,
+    "category": "SQL",
+    "topicTags": [
+      "データベースでのトリガの実装"
+    ],
+    "difficulty": 4,
+    "explanation": "トリガを起動する変更と、変更前後に参照する行を区別する。在庫の変化が関係する表に伝わる順序を追う。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午後I 問2",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "descriptive",
+    "question": "問2 データベースでのトリガの実装",
+    "answer": "問２\n\n出題趣旨\n\nRDBMS のトリガを利用する際には，そのトリガの影響を受けて予期せぬ結果を発生させることのないよう\n\nに，テーブルに対する変更操作の内容や，トリガの定義条件を注意深く設計する必要がある。\n\n本問では，在庫管理データベースを題材に，トリガを絡めて，SQL の基礎知識とその実装，及び，誤動作を\n\n発生させないトリガとテーブル変更操作の設計能力を問う。\n\n設問 解答例・解答の要点 備考\n\n設問１(1) ア 出庫要求明細\n\nイ 挿入\n\nウ 部品番号\n\nエ 在庫\n\nオ 実在庫数量\n\nカ 引当済数量\n\n(2) (a) BEFORE トリガを実行した後に，別のトランザクションが割り込んで先に実\n\n行されてしまうと，AFTER トリガで不当な引当判定に基づいて更新すること\n\nになる。\n\n(b) FOR UPDATE 句を指定する。\n\n設問２(1) a ア\n\nb オ\n\nc ウ\n\nd キ\n\n(2) あ 出庫\n\nい 在庫\n\nう 引当済数量\n\nえ 発注済フラグ\n\n設問３(1) 在庫\n\n(2) ① ・出庫要求明細の登録と入庫を，それぞれ部品番号順に処理する。\n\n② ・入庫は複数の部品をまとめず，部品ごとに別トランザクションで処理す\n\nる。",
+    "modelAnswer": "問２\n\n出題趣旨\n\nRDBMS のトリガを利用する際には，そのトリガの影響を受けて予期せぬ結果を発生させることのないよう\n\nに，テーブルに対する変更操作の内容や，トリガの定義条件を注意深く設計する必要がある。\n\n本問では，在庫管理データベースを題材に，トリガを絡めて，SQL の基礎知識とその実装，及び，誤動作を\n\n発生させないトリガとテーブル変更操作の設計能力を問う。\n\n設問 解答例・解答の要点 備考\n\n設問１(1) ア 出庫要求明細\n\nイ 挿入\n\nウ 部品番号\n\nエ 在庫\n\nオ 実在庫数量\n\nカ 引当済数量\n\n(2) (a) BEFORE トリガを実行した後に，別のトランザクションが割り込んで先に実\n\n行されてしまうと，AFTER トリガで不当な引当判定に基づいて更新すること\n\nになる。\n\n(b) FOR UPDATE 句を指定する。\n\n設問２(1) a ア\n\nb オ\n\nc ウ\n\nd キ\n\n(2) あ 出庫\n\nい 在庫\n\nう 引当済数量\n\nえ 発注済フラグ\n\n設問３(1) 在庫\n\n(2) ① ・出庫要求明細の登録と入庫を，それぞれ部品番号順に処理する。\n\n② ・入庫は複数の部品をまとめず，部品ごとに別トランザクションで処理す\n\nる。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-pm1/page-12.webp",
+      "/questions/ipa/db/2019-spring-pm1/page-13.webp",
+      "/questions/ipa/db/2019-spring-pm1/page-14.webp",
+      "/questions/ipa/db/2019-spring-pm1/page-15.webp",
+      "/questions/ipa/db/2019-spring-pm1/page-16.webp"
+    ],
+    "imageAltTexts": [
+      "問2の公式問題冊子 12ページ",
+      "問2の公式問題冊子 13ページ",
+      "問2の公式問題冊子 14ページ",
+      "問2の公式問題冊子 15ページ",
+      "問2の公式問題冊子 16ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/db/2019-spring-pm1/answer-q02.webp"
+    ],
+    "answerImageAltTexts": [
+      "問2の公式解答例"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_pm1_qs.pdf#page=12",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_pm1_ans.pdf#page=2"
+  },
+  {
+    "id": "db-2019h-pm1-q3",
+    "exam": "db",
+    "year": 2019,
+    "season": "spring",
+    "session": "pm1",
+    "qNumber": 3,
+    "category": "データベース設計",
+    "topicTags": [
+      "部品表の設計及び処理"
+    ],
+    "difficulty": 4,
+    "explanation": "製品と部品の親子関係をたどる。複数の経路から同じ部品に達する場合は、経路ごとの数量を求めてから合計する。",
+    "sourceAttribution": "出典：IPA 2019年度春期 データベーススペシャリスト試験 午後I 問3",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19",
+    "type": "descriptive",
+    "question": "問3 部品表の設計及び処理",
+    "answer": "問３\n\n出題趣旨\n\n部品表は，製造業における生産管理業務などに欠かせないものである。\n\n本問では，RDBMS に構築した単純な部品表を題材に，部品表の基本的なテーブル設計と索引設計，部品表\n\nに対する基本的な処理である正展開処理，逆展開処理及び所要量計算処理の概要を理解し，その部品表を操作\n\nするSQL 構文の基本的な特徴及び考慮点を理解しているかを問う。\n\n設問 解答例・解答の要点 備考\n\n設問１(1) ア P3\n\nイ P6\n\nウ P8\n\n(2) エ P7\n\nオ P7\n\nカ P2\n\n設問２(1) a 子品番\n\nb 親品番\n\n(2) P2 2\n\nP3 5\n\nP4 2\n\n設問３(1) c 親品番\n\nd 子品番\n\n品番 AX\n\n(2) 子品番，親品番\n\n設問４(1) 単体部品は子部品がないのでSQL3 の発行は不要だから\n\n(2) 処理が無限ループして終わらない。\n\n(3) AX AZ\n\nP1 P4 P9 P3 P7 P9\n\nP2 P9 P2 P4\n\nP3 P3\n\n(4) SQL4 を部品の品番順に実行する。",
+    "modelAnswer": "問３\n\n出題趣旨\n\n部品表は，製造業における生産管理業務などに欠かせないものである。\n\n本問では，RDBMS に構築した単純な部品表を題材に，部品表の基本的なテーブル設計と索引設計，部品表\n\nに対する基本的な処理である正展開処理，逆展開処理及び所要量計算処理の概要を理解し，その部品表を操作\n\nするSQL 構文の基本的な特徴及び考慮点を理解しているかを問う。\n\n設問 解答例・解答の要点 備考\n\n設問１(1) ア P3\n\nイ P6\n\nウ P8\n\n(2) エ P7\n\nオ P7\n\nカ P2\n\n設問２(1) a 子品番\n\nb 親品番\n\n(2) P2 2\n\nP3 5\n\nP4 2\n\n設問３(1) c 親品番\n\nd 子品番\n\n品番 AX\n\n(2) 子品番，親品番\n\n設問４(1) 単体部品は子部品がないのでSQL3 の発行は不要だから\n\n(2) 処理が無限ループして終わらない。\n\n(3) AX AZ\n\nP1 P4 P9 P3 P7 P9\n\nP2 P9 P2 P4\n\nP3 P3\n\n(4) SQL4 を部品の品番順に実行する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/db/2019-spring-pm1/page-17.webp",
+      "/questions/ipa/db/2019-spring-pm1/page-18.webp",
+      "/questions/ipa/db/2019-spring-pm1/page-19.webp",
+      "/questions/ipa/db/2019-spring-pm1/page-20.webp",
+      "/questions/ipa/db/2019-spring-pm1/page-21.webp",
+      "/questions/ipa/db/2019-spring-pm1/page-22.webp",
+      "/questions/ipa/db/2019-spring-pm1/page-03.webp",
+      "/questions/ipa/db/2019-spring-pm1/page-04.webp",
+      "/questions/ipa/db/2019-spring-pm1/page-05.webp"
+    ],
+    "imageAltTexts": [
+      "問3の公式問題冊子 17ページ",
+      "問3の公式問題冊子 18ページ",
+      "問3の公式問題冊子 19ページ",
+      "問3の公式問題冊子 20ページ",
+      "問3の公式問題冊子 21ページ",
+      "問3の公式問題冊子 22ページ",
+      "問3の公式問題冊子 3ページ",
+      "問3の公式問題冊子 4ページ",
+      "問3の公式問題冊子 5ページ"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/db/2019-spring-pm1/answer-q03.webp"
+    ],
+    "answerImageAltTexts": [
+      "問3の公式解答例"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_pm1_qs.pdf#page=17",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000ddiw-att/2019h31h_db_pm1_ans.pdf#page=3"
+  }
+]

@@ -24,6 +24,7 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 20000-1:2020において「他の関係者」とは、サービスのライフサイクルに影響を与えたり、サービス提供を支援したりする外部および内部の供給者を指します。外部供給者、供給者として行動する顧客（顧客がサービス提供の一部を担う場合）、そして内部供給者がこれに該当し、組織はこれらの関係者の評価・選定基準を設定する必要があります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 20000-1:2020における「リスク及び機会への取組み」の主要な目的は、サービスマネジメントシステムがその意図した成果を達成できるという確信を与えることです。これには、望ましくない影響を防止または低減し、望ましい影響を増大させることが含まれます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "フェールソフトとは、システムの一部に障害が発生しても、機能を縮小するなどしてシステム全体の運転を継続しようとする設計思想です。ハードウェア障害時にパフォーマンスは低下するものの、運転を続けられるようにする構成は、この考え方に合致します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "目標復旧時間 (RTO: Recovery Time Objective) は、災害や障害発生後、中断したITサービスを許容可能なレベルまで復旧させるまでに許容される目標時間のことです。したがって、中断したITサービスを24時間以内に復旧させる、という記述がRTOの定義に直接合致します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "JIS Q 20000-1:2020では、「監視,測定,分析及び評価」の活動において、サービスの有効性をサービスの要求事項に照らして評価することが求められています。これは、サービスが顧客の期待や合意された要件をどの程度満たしているかを判断するための基準となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "サービス可用性は、サービス提供時間中の利用可能な時間を全体のサービス提供時間で割って算出します。この月の総サービス提供時間は14時間/日 × 30日 = 420時間で、停止時間は7時間なので、(420 - 7) / 420 = 413 / 420 ≈ 0.98333...となり、小数第2位を四捨五入して98.3%です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -167,7 +173,14 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
       "エ": "8.5"
     },
     "answer": "ウ",
-    "explanation": "ウが正解となるのは、プロジェクトの制約条件と各作業の依存関係を考慮した最短所要時間を計算するためです。この問題では、3人の作業者が各作業を1人ずつ担当し、並行作業を最大限に活用することが求められます。さらに、各作業者は作業の合間に最低1時間の休憩を挟む必要があるため、作業時間と休憩時間を合算した実質的な作業時間を考慮する必要があります。最短所要時間は、全ての作業が完了するまでの全工程を、人員配置と休憩時間を考慮して最も効率的に進めた場合の合計時間となります。\n\nアは、作業者間の連携や休憩時間を考慮しない単純な作業時間の合計、あるいは誤った並行作業の認識に基づいているため不適切です。イは、一部の並行作業を考慮しているものの、休憩時間の合計や作業の依存関係を正確に反映できていない可能性があります。エは、休憩時間を過剰に見積もっているか、あるいは非効率な作業分割により所要時間が長くなっていると考えられます。",
+    "explanation": "最短は7.5時間です。短い抽出を担当した2人は開始から2.0～3.0時間に休憩し、利用者IDとマスターの登録を開始します。取引データ抽出の担当者は3.0～4.0時間に休憩し、取引データを登録します。これで全登録が7.0時間で完了し、二つの動作確認を並行して7.5時間で終えられます。7.5時間未満を狙うと、利用者IDの登録は3.0時間より前に始める必要があります。その担当者は休憩を後に回し、登録完了の6.0時間以降に1時間休んでから動作確認を担当するので、終了は7.5時間以降です。",
+    "choiceExplanations": {
+      "ア": "誤りです。休憩を入れなくても、オンライン停止、取引データ抽出、マスターデータ登録、動作確認の経路に0.5＋2.5＋3.5＋0.5＝7.0時間掛かります。",
+      "イ": "誤りです。7.0時間は休憩を省いた場合です。利用者IDデータ登録の担当者が開始から3時間未満で登録を始めると休憩を後に回すことになり、動作確認を7.0時間までに終えられません。",
+      "ウ": "正しいです。短い抽出を担当した2人は2.0～3.0時間、長い抽出を担当した人は3.0～4.0時間に休憩でき、三つの登録を7.0時間までに終えて動作確認を並行できます。",
+      "エ": "誤りです。各作業者の休憩を同時刻にそろえる必要はありません。長い抽出の担当者が休む間にも他の2人は登録を開始でき、全体を7.5時間で終えられます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +205,7 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 20000-1:2020の「マネジメントレビュー」の要求事項では、そのアウトプットとして、継続的改善の機会に関する決定を含まなければならないと規定されています。これは、サービスマネジメントシステムのパフォーマンスと有効性を評価し、将来の改善方向を決定することがマネジメントレビューの重要な目的であるためです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +230,7 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "稼働品質率は「利用者に迷惑を掛けた回数 ÷ システムの資産規模」で計算され、この値が小さいほど信頼性が高いと評価されます。各システムの稼働品質率を計算すると、A: 15/120=0.125、B: 12/100=0.120、C: 8/80=0.100、D: 9/60=0.150となり、Cが最も小さい値を示し、信頼性が最も高いと言えます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +255,7 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "エラープルーフ化におけるヒューマンエラーの未然防止原理は、エラーそのものが発生しないようにする、または発生しにくくするものです。「代替化」は人が作業しないようにし、「排除」は作業や注意を不要にし、「容易化」は作業を易しくすることで、エラーの発生を事前に防ぎます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +280,7 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "データベースのフルバックアップ間隔を2倍にすると、次のフルバックアップが取得されるまでの期間が長くなります。この期間に発生するデータの追加・変更・削除のログ情報が蓄積されるため、障害発生時にフルバックアップから復旧した後に行うログ情報の反映処理時間が、平均的に約2倍になると考えられます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +305,7 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "24時間365日のサービスを3シフト制、各シフト2人以上で運用する場合、1日あたり最低6人のオペレーターが必要です。1人あたり週5回（8時間/回）勤務とすると、1人あたりの週勤務時間は40時間。週全体で必要な勤務時間は6人 × 8時間/シフト × 7日 = 336時間なので、336時間 ÷ 40時間/人 = 8.4人となり、整数である必要があるので最少9人必要です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +330,7 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "クールピットは、データセンターなどで用いられる環境配慮型空調システムの一つで、夏季に外気よりも低温になる地中と外気との温度差を熱交換に利用して冷却を行うものです。これは、問題文の記述と完全に合致する特徴です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +355,7 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "システム管理基準におけるITガバナンス監査では、経営陣が情報システム資源の適切な管理を怠った場合に指摘事項となります。内部人材の不足にもかかわらず外部資源の活用を考慮していなかったことは、資源管理方針の不備であり、監査報告書に記載すべき不適切な対応です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +380,7 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "虹彩認証は、個人の虹彩パターンを利用する生体認証で、一度登録すれば成人の虹彩パターンはほとんど変化しないため、認証デバイスでのパターン更新がほとんど不要という特徴があります。これは、指紋認証のような皮膚の状態変化や声紋認証のような声質の変化が少ないためです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +405,7 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "CSIRT (Computer Security Incident Response Team) は、企業や行政機関などに設置され、コンピュータセキュリティインシデントの報告を受け付け、分析し、その対応を支援する専門組織です。これは、コンピュータセキュリティに関するインシデントへの効果的な対応を目的としています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +430,7 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "JIS Q 22301:2020は「セキュリティ及びレジリエンスー事業継続マネジメントシステムー要求事項」というタイトルが示す通り、事業継続マネジメントシステム (BCMS) の要求事項を規定する国際規格です。組織が災害や事故などの中断事象発生時に事業を継続するための枠組みを提供します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +455,7 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "プロジェクトスコープのクリープ（Scope Creep）とは、プロジェクトのスコープが、公式な変更管理プロセスを経ずに、徐々に拡大していく現象を指します。これは、時間、コスト、資源の調整が行われないまま、コントロールされていない変更が積み重なることで発生します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +480,7 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "各ツールの総工数を計算します。A: (50×0.5) + (5×20) = 25+100=125人日。B: (50×0.8) + (4×20) = 40+80=120人日。C: (50×1.0) + (3×20) = 50+60=110人日。D: (50×1.5) + (2×20) = 75+40=115人日。最も少ない工数で開発できるのはCの110人日です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +505,7 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "感度分析は、プロジェクトの目標に最も大きな影響を与える不確実性要因やリスクを特定するための分析技法です。具体的には、個々のリスクが顕在化した場合にプロジェクトの目標（スケジュール、コスト、品質など）にどれほどのプラスまたはマイナスの影響を与えるかを評価します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +530,7 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "メモリインタリーブは、主記憶（メインメモリ）を複数の独立したバンクに分割し、CPUからのアクセス要求を並列的に処理することで、メモリのアクセス速度を向上させる技術です。これにより、連続したアドレスへのデータ転送を高速化できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +555,7 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "クラウドサービス派生データとは、利用者がサービスを利用する過程で、システム側で自動的に生成・収集されるデータを指します。利用者が直接入力・作成したデータではなく、利用者の行動履歴や利用状況から派生する情報です。選択肢エは、利用者がクラウドサービスを利用した時間や作業内容が記録されたログデータであり、この定義に最も合致するため正解です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +580,7 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "2相ロッキングプロトコルは、トランザクションの直列化可能性を保証するために共有ロックと専有ロックを使用する並行性制御手法です。これによりダーティリード、ノンリピータブルリード、ロストアップデートは防止されます。しかし、ロックを段階的に取得する特性上、複数のトランザクションが互いに必要なロックを保持し合い、相手のロック解除を待つ「デッドロック」が発生する可能性は残ります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -575,7 +604,14 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
       "エ": "40"
     },
     "answer": "エ",
-    "explanation": "この問題は、ネットワークにおけるターンアラウンドタイム（応答時間）の計算に関するものです。ターンアラウンドタイムは、端末がデータを送信し始めてから応答データを受信し終わるまでの時間であり、ホストコンピュータでの処理時間と、端末からホストへの上り伝送時間、ホストから端末への下り伝送時間の合計となります。問題文より、上り・下りのメッセージ長は同じで、ホストコンピュータでの処理時間も端末A, Bで共通です。\n\n端末Aのターンアラウンドタイム: 処理時間 + 端末A上り伝送時間 + 端末A下り伝送時間 = 100ミリ秒\n端末Bのターンアラウンドタイム: 処理時間 + 端末B上り伝送時間 + 端末B下り伝送時間 = 820ミリ秒\n\n伝送時間は回線速度に依存し、メッセージ長が同じであれば、端末Aと端末Bの片道の伝送時間の差は、それぞれの回線速度の差によって生じます。ここでは、端末Aからホストコンピュータへの片道の伝送時間を T_A とします。\n\n端末Aと端末Bのターンアラウンドタイムの差は、それぞれの伝送時間の差に相当します。\n(処理時間 + 端末B上り伝送時間 + 端末B下り伝送時間) - (処理時間 + 端末A上り伝送時間 + 端末A下り伝送時間) = 820 - 100 = 720ミリ秒\nこれは、端末Bの上り・下りの伝送時間合計と端末Aの上り・下りの伝送時間合計の差です。\n\nここで、端末Aからホストへの片道の伝送時間を Xミリ秒とすると、端末Aのターンアラウンドタイムは、ホスト処理時間 + X (上り) + X (下り) = ホスト処理時間 + 2X = 100ミリ秒 となります。\n同様に、端末Bからホストへの片道の伝送時間を Yミリ秒とすると、端末Bのターンアラウンドタイムは、ホスト処理時間 + Y (上り) + Y (下り) = ホスト処理時間 + 2Y = 820ミリ秒 となります。\n\nこれらの式から、2Y - 2X = 820 - 100 = 720ミリ秒、つまり Y - X = 360ミリ秒となります。\n\n選択肢を当てはめてみましょう。X = 40ミリ秒 (エ) の場合、ホスト処理時間は 100 - 2 * 40 = 100 - 80 = 20ミリ秒となります。\nこのホスト処理時間 20ミリ秒と、Y = X + 360 = 40 + 360 = 400ミリ秒 を用いて端末Bのターンアラウンドタイムを計算すると、20 + 2 * 400 = 20 + 800 = 820ミリ秒となり、問題文と一致します。\n\nア: 10ミリ秒とすると、ホスト処理時間は 100 - 2*10 = 80ミリ秒。端末Bの伝送時間は 10 + 360 = 370ミリ秒となり、ターンアラウンドタイムは 80 + 2*370 = 80 + 740 = 820ミリ秒で一致しない。\nイ: 20ミリ秒とすると、ホスト処理時間は 100 - 2*20 = 60ミリ秒。端末Bの伝送時間は 20 + 360 = 380ミリ秒となり、ターンアラウンドタイムは 60 + 2*380 = 60 + 760 = 820ミリ秒で一致しない。\nウ: 30ミリ秒とすると、ホスト処理時間は 100 - 2*30 = 40ミリ秒。端末Bの伝送時間は 30 + 360 = 390ミリ秒となり、ターンアラウンドタイムは 40 + 2*390 = 40 + 780 = 820ミリ秒で一致しない。",
+    "explanation": "端末Aの回線は1Gビット/秒、端末Bは100Mビット/秒です。同じ長さのデータを送ると、Aの片道をtミリ秒としてBの片道は10tミリ秒です。往復の伝送時間はAが2t、Bが20tとなります。ホスト処理時間は共通なので、ターンアラウンドタイムの差から20t−2t＝820−100＝720となり、t＝40ミリ秒です。",
+    "choiceExplanations": {
+      "ア": "誤りです。Aの片道が10ミリ秒なら、10倍の伝送時間が掛かるBとの往復差は2×9×10＝180ミリ秒です。実際の差720ミリ秒を説明できません。",
+      "イ": "誤りです。片道20ミリ秒を代入すると、AとBの往復の差は2×9×20＝360ミリ秒となります。観測された差720ミリ秒の半分です。",
+      "ウ": "誤りです。片道30ミリ秒なら、Bは片道300ミリ秒です。往復の伝送時間の差は（300−30）×2＝540ミリ秒にとどまります。",
+      "エ": "正しいです。Aの片道をtミリ秒とすると、回線速度が10分の1のBでは片道10tです。共通のホスト処理時間を差分で消すと、820−100＝2×（10t−t）なのでt＝40です。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +636,7 @@ export const SM_QUESTIONS_2023_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "下請代金支払遅延等防止法（下請法）は、親事業者に対し、下請取引における不当な行為を禁止しています。親事業者は、下請事業者に発注する際、書面に必要な事項（下請代金の額など）を記載して交付する義務があります。選択肢アは、ユーザーとの契約代金が未定であることを理由に下請代金の取決めを発注後とすることであり、発注時に下請代金を確定させない「不当な定め」に該当するため、下請法で禁止されている行為です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2023h05_1/2023h05h_sm_am2_qs.pdf",
     "license": "IPA-public"

@@ -16,7 +16,7 @@ async function coordinateClick(page: Page, locator: Locator) {
 for (const width of [360, 390, 1280]) {
   test(`home qualification card -> start works with real clicks at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 900 });
-    await page.goto("/");
+    await page.goto("/search");
     // A fresh learner opens a domain before choosing its qualification.
     const domain = page.locator("#domain-it");
     await expect(domain).not.toHaveAttribute("open", "");
@@ -37,8 +37,10 @@ for (const width of [360, 390, 1280]) {
 for (const width of [390, 1280]) {
   test(`home primary CTA starts a question without login with a real click at ${width}px`, async ({ page }) => {
     await page.setViewportSize({ width, height: 844 });
-    await page.goto("/");
-    const start = page.getByRole("link", { name: "ログインなしで10問を始める", exact: true });
+    await page.goto("/search");
+    await page.getByRole("searchbox", { name: "資格名・略称で検索" }).fill("ITパスポート");
+    await page.locator("main").getByRole("link", { name: /^ITパスポート/ }).click();
+    const start = page.getByRole("link", { name: "今すぐ解く", exact: true });
     await expect(start).toBeInViewport();
     await expect(start).toHaveAttribute("href", "/quiz?mode=random&exam=ip");
     await start.click({ trial: true });

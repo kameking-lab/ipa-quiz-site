@@ -1,0 +1,483 @@
+{
+  "lane": "qj-9",
+  "checkedAt": "2026-11-18",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "verifiedExisting": [
+    {
+      "jobId": "PLAN5-275",
+      "arrayIndex": 274,
+      "key": "gyosei|2024|annual|gakka|r6_mondai.pdf",
+      "status": "already-covered",
+      "path": "data/questions/gyosei/2024.ts",
+      "exam": "gyosei",
+      "officialYear": 2024,
+      "session": "gakka",
+      "sourcePdfUrl": "https://www.gyosei-shiken.or.jp/pdf/r6_mondai.pdf",
+      "sourceAnswerUrl": "https://gyosei-shiken.or.jp/doc/exam/r6ans.html",
+      "officialPublishedQuestionCount": 56,
+      "publishedQuestionNumberRange": [
+        2,
+        57
+      ],
+      "questionNumbersWithoutPublishedStems": [
+        1,
+        58,
+        59,
+        60
+      ],
+      "addedQuestionCount": 0
+    }
+  ],
+  "jobs": [
+    {
+      "jobId": "PLAN5-247",
+      "arrayIndex": 246,
+      "key": "judo-seifukushi|2022|annual|am|2022_30_gozen.pdf",
+      "status": "completed",
+      "path": "data/questions/judo-seifukushi/2021-annual-am.json",
+      "exam": "judo-seifukushi",
+      "officialYear": 2022,
+      "storedYear": 2021,
+      "round": 30,
+      "session": "am",
+      "examDate": "2022-03-06",
+      "sourcePage": "https://www.zaijusei.com/2022_shikenmondai.html",
+      "resultsUrl": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken16/about.html",
+      "questionPdf": {
+        "url": "https://www.zaijusei.com/doc/2022_30_gozen.pdf",
+        "sha256": "bed21dd92b8a0670215f7735953a775c8d0d805c9ac6b72c152e6a3a63c16f52",
+        "physicalPages": 40,
+        "firstQuestionPage": 5,
+        "lastQuestionPage": 38
+      },
+      "answerPdf": {
+        "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken16/dl/seitou.pdf",
+        "sha256": "a7b46c1e8bcff91fccffd680565793fc1d8dba21364229e4e89841fb3456a162"
+      },
+      "bookletPdf": {
+        "url": "https://www.zaijusei.com/doc/2022_30_gozen_bessatsu.pdf",
+        "sha256": "5ac4762046ae35dc1225708b2bc01d16ef208a20fcbb8450efe20fd656798e17"
+      },
+      "officialQuestionCount": 128,
+      "addedQuestionCount": 128,
+      "practiceReadyCount": 127,
+      "alternateAnswerQuestions": [
+        19
+      ],
+      "allCreditQuestions": [
+        38
+      ],
+      "scoringNotices": {
+        "19": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken16/dl/AM19.pdf",
+        "38": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken16/dl/AM38.pdf"
+      },
+      "recordedAnswers": [
+        "4",
+        "1",
+        "4",
+        "3",
+        "2",
+        "2",
+        "4",
+        "4",
+        "1",
+        "1",
+        "2",
+        "2",
+        "4",
+        "2",
+        "1",
+        "3",
+        "2",
+        "2",
+        "2又は3",
+        "1",
+        "3",
+        "3",
+        "4",
+        "4",
+        "3",
+        "4",
+        "4",
+        "1",
+        "1",
+        "3",
+        "2",
+        "1",
+        "3",
+        "3",
+        "4",
+        "3",
+        "2",
+        "全員正解",
+        "1",
+        "4",
+        "2",
+        "1",
+        "3",
+        "1",
+        "2",
+        "4",
+        "3",
+        "1",
+        "3",
+        "4",
+        "2",
+        "1",
+        "3",
+        "4",
+        "1",
+        "2",
+        "1",
+        "4",
+        "1",
+        "2",
+        "3",
+        "2",
+        "3",
+        "2",
+        "4",
+        "2",
+        "1",
+        "1",
+        "3",
+        "4",
+        "1",
+        "4",
+        "2",
+        "2",
+        "3",
+        "3",
+        "3",
+        "4",
+        "1",
+        "3",
+        "1",
+        "2",
+        "1",
+        "2",
+        "2",
+        "1",
+        "2",
+        "3",
+        "3",
+        "2",
+        "3",
+        "1",
+        "2",
+        "4",
+        "3",
+        "4",
+        "3",
+        "2",
+        "4",
+        "4",
+        "4",
+        "3",
+        "4",
+        "1",
+        "1",
+        "1",
+        "2",
+        "4",
+        "2",
+        "4",
+        "3",
+        "2",
+        "3",
+        "1",
+        "4",
+        "4",
+        "3",
+        "2",
+        "3",
+        "2",
+        "3",
+        "1",
+        "4",
+        "1",
+        "2",
+        "1",
+        "4",
+        "1"
+      ],
+      "figures": [
+        {
+          "questionNumber": 55,
+          "page": 2,
+          "sourcePdfUrl": "https://www.zaijusei.com/doc/2022_30_gozen_bessatsu.pdf",
+          "sourcePdfSha256": "5ac4762046ae35dc1225708b2bc01d16ef208a20fcbb8450efe20fd656798e17",
+          "url": "/questions/judo-seifukushi/2022-round30/round30-am-q55.png",
+          "sha256": "44f085f7a2e13d58bbe5f3c50732e8f827e0e9bc899c07f8737f62be157f9a3c"
+        },
+        {
+          "questionNumber": 71,
+          "page": 23,
+          "sourcePdfUrl": "https://www.zaijusei.com/doc/2022_30_gozen.pdf",
+          "sourcePdfSha256": "bed21dd92b8a0670215f7735953a775c8d0d805c9ac6b72c152e6a3a63c16f52",
+          "url": "/questions/judo-seifukushi/2022-round30/round30-am-q71.png",
+          "sha256": "d802b9fe0ba88e233e9b827ecc3a09ab102156674219a4560b2e608805efb5b1"
+        },
+        {
+          "questionNumber": 102,
+          "page": 31,
+          "sourcePdfUrl": "https://www.zaijusei.com/doc/2022_30_gozen.pdf",
+          "sourcePdfSha256": "bed21dd92b8a0670215f7735953a775c8d0d805c9ac6b72c152e6a3a63c16f52",
+          "url": "/questions/judo-seifukushi/2022-round30/round30-am-q102.png",
+          "sha256": "fa68cdcdb32aea8feaf8f5d6dc080a3fcdc06c4f0393a1176f7fdc7cbec7c751"
+        }
+      ]
+    },
+    {
+      "jobId": "PLAN5-261",
+      "arrayIndex": 260,
+      "key": "ahaki-anma|2022|annual|am|mondai_30_anma_am.pdf",
+      "status": "completed",
+      "path": "data/questions/ahaki/ahaki-anma-2022-am.json",
+      "exam": "ahaki-anma",
+      "officialYear": 2022,
+      "storedYear": 2022,
+      "round": 30,
+      "session": "am",
+      "examDate": "2022-02-26",
+      "sourcePage": "https://ahaki.or.jp/exam/archives/",
+      "questionPdf": {
+        "url": "https://ahaki.or.jp/wordpress/wp-content/uploads/mondai_30_anma_am.pdf",
+        "sha256": "ce093728bb803297ff9aed8732edb6b2fc55872e3a0548eefa26f0bce469afaa"
+      },
+      "answerPdf": {
+        "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken13_14_15/dl/seitou_amashi.pdf",
+        "sha256": "1f9b1d0583d61018e1993268705b6ce188a042948b313fa1c2d920bf64ed745f"
+      },
+      "answerTable": "https://ahaki.or.jp/examination/data/seito_30_a.html",
+      "officialQuestionCount": 80,
+      "addedQuestionCount": 80,
+      "practiceReadyCount": 80,
+      "alternateAnswerQuestions": [
+        12,
+        48
+      ],
+      "scoringNotices": {
+        "12": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken13_14_15/dl/a_am012.pdf",
+        "48": "https://www.mhlw.go.jp/general/sikaku/successlist/2022/siken13_14_15/dl/a_am048.pdf"
+      },
+      "recordedAnswers": [
+        "1",
+        "3",
+        "3",
+        "4",
+        "3",
+        "1",
+        "2",
+        "4",
+        "1",
+        "4",
+        "4",
+        "1,2,3,4",
+        "1",
+        "2",
+        "4",
+        "4",
+        "1",
+        "2",
+        "3",
+        "1",
+        "3",
+        "4",
+        "2",
+        "4",
+        "1",
+        "2",
+        "3",
+        "4",
+        "3",
+        "2",
+        "2",
+        "2",
+        "2",
+        "1",
+        "3",
+        "4",
+        "1",
+        "3",
+        "2",
+        "3",
+        "4",
+        "3",
+        "4",
+        "4",
+        "2",
+        "2",
+        "2",
+        "2,4",
+        "2",
+        "4",
+        "2",
+        "4",
+        "2",
+        "3",
+        "1",
+        "3",
+        "4",
+        "2",
+        "1",
+        "3",
+        "4",
+        "4",
+        "4",
+        "1",
+        "1",
+        "2",
+        "3",
+        "3",
+        "1",
+        "3",
+        "2",
+        "4",
+        "4",
+        "2",
+        "2",
+        "4",
+        "3",
+        "2",
+        "4",
+        "1"
+      ],
+      "sharedPassageQuestionRanges": [
+        [
+          75,
+          76
+        ],
+        [
+          77,
+          78
+        ],
+        [
+          79,
+          80
+        ]
+      ]
+    },
+    {
+      "jobId": "PLAN5-289",
+      "arrayIndex": 288,
+      "key": "denken3|2022|first|houki|20220821_ch_third_q04.pdf",
+      "status": "completed",
+      "path": "data/questions/denken3/native-2022-upper-law.json",
+      "exam": "denken3",
+      "officialYear": 2022,
+      "storedYear": 2022,
+      "session": "houki",
+      "officialQuestionCount": 13,
+      "addedQuestionCount": 13,
+      "officialAnswerFieldCount": 16,
+      "examDate": "2022-08-21",
+      "lawReferenceDate": "2022-04-01",
+      "officialReferenceUrls": [
+        "https://www.meti.go.jp/policy/safety_security/industrial_safety/oshirase/2020/06/20200601-2-3.pdf",
+        "https://www.meti.go.jp/policy/safety_security/industrial_safety/sangyo/electric/files/20231226-2.pdf",
+        "https://laws.e-gov.go.jp/law/339AC0000000170?occasion_date=20220401",
+        "https://laws.e-gov.go.jp/law/409M50000400052?occasion_date=20220401",
+        "https://laws.e-gov.go.jp/law/409M50000400053?occasion_date=20220401"
+      ],
+      "questionPdf": {
+        "url": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_q04.pdf",
+        "sha256": "4ea47011583c6c3b2d1d3a88284fe5a18b2b49c01164be8bfa2734efb539be5e"
+      },
+      "answerPdf": {
+        "url": "https://www.shiken.or.jp/chief/upload/20220821_ch_third_a01.pdf",
+        "sha256": "8367761133c5a88e07c1cc1cfda2e996b3e92f4c8998ce0d1a7642f4e5c77974"
+      },
+      "recordedAnswers": [
+        "4",
+        "1",
+        "3",
+        "3",
+        "2",
+        "5",
+        "5",
+        "5",
+        "5",
+        "2",
+        "3",
+        "3",
+        "3",
+        "2",
+        "3",
+        "2"
+      ],
+      "sourcePages": [
+        {
+          "physicalPage": 4,
+          "url": "/images/denken3/2022-upper-native/law-q01-p04.png",
+          "sha256": "b17145c1f516845439149d1d7a0e6d4aa63b8c50c4b9a7280dcad939557b5be6"
+        },
+        {
+          "physicalPage": 5,
+          "url": "/images/denken3/2022-upper-native/law-q01-p05.png",
+          "sha256": "0a9902f4cd6b53e2470035ee0db25d5db324a07c37b0a37597bd69a1edac683b"
+        },
+        {
+          "physicalPage": 6,
+          "url": "/images/denken3/2022-upper-native/law-q02-p06.png",
+          "sha256": "a1d348baa1e63926539b39993f00238f5416103b337170097ce7683a90ccdc27"
+        },
+        {
+          "physicalPage": 7,
+          "url": "/images/denken3/2022-upper-native/law-q03-p07.png",
+          "sha256": "0e41d293e9563ca3b281084780f3090c1291d7235b9d0a71b8f2980eb892ed1d"
+        },
+        {
+          "physicalPage": 8,
+          "url": "/images/denken3/2022-upper-native/law-q04-p08.png",
+          "sha256": "e4bdff694bc21b49c7ee4388ac04c4d936243af5ff455a54ea98455bfaaa3166"
+        },
+        {
+          "physicalPage": 9,
+          "url": "/images/denken3/2022-upper-native/law-q05-p09.png",
+          "sha256": "179d4929409cbb74d2154ed0816a1eb29ff538dcd0a741136bd09f4ed1ab8c6f"
+        },
+        {
+          "physicalPage": 10,
+          "url": "/images/denken3/2022-upper-native/law-q06-p10.png",
+          "sha256": "10c545fbab7f4fce3b9dd0e55254e0005a5fd02efa7333bd3700bb2412591ed7"
+        },
+        {
+          "physicalPage": 11,
+          "url": "/images/denken3/2022-upper-native/law-q07-p11.png",
+          "sha256": "c132ee6e3bf639665763dd9c55103d9f2ae2a3693e1e91547402f52da6555ca5"
+        },
+        {
+          "physicalPage": 12,
+          "url": "/images/denken3/2022-upper-native/law-q08-p12.png",
+          "sha256": "d32c5eaea35d31b4060f192518a432c25559ef8502f8044d9f556631dd7f6363"
+        },
+        {
+          "physicalPage": 13,
+          "url": "/images/denken3/2022-upper-native/law-q09-p13.png",
+          "sha256": "d9d960af01ca070d35b01dcfc5eb70532d3ab32df164761a4cb78fe1be46a332"
+        },
+        {
+          "physicalPage": 14,
+          "url": "/images/denken3/2022-upper-native/law-q10-p14.png",
+          "sha256": "e5284c637e6b7c788572f61a05da002c4c51afb31c1390941bf2360d34007785"
+        },
+        {
+          "physicalPage": 15,
+          "url": "/images/denken3/2022-upper-native/law-q11-p15.png",
+          "sha256": "59389ea94f946a28e784eb4d9e24f040a1dd6cb156cce6ff84f51fd2cd2b62d0"
+        },
+        {
+          "physicalPage": 16,
+          "url": "/images/denken3/2022-upper-native/law-q12-p16.png",
+          "sha256": "4a0ca1a94f586f8bde08309c3ad86ececb383a352f4d80ba0242aee9ebe63655"
+        },
+        {
+          "physicalPage": 17,
+          "url": "/images/denken3/2022-upper-native/law-q13-p17.png",
+          "sha256": "53b9de029c1a0f8ae953adcb724c317eb130fa17aa132980d28489320bd18f75"
+        }
+      ]
+    }
+  ]
+}

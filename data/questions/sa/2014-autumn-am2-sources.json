@@ -1,0 +1,246 @@
+{
+  "exam": "sa",
+  "year": 2014,
+  "season": "autumn",
+  "session": "am2",
+  "checkedAt": "2026-11-17",
+  "officialIndexUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/2014h26.html",
+  "files": {
+    "qs": {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000ye5-att/2014h26a_sa_am2_qs.pdf",
+      "sha256": "5cf7ecbfbd4c493813c9c8e5547faaefc684bd706afcab4c0bf54fc1e44ac8d9"
+    },
+    "ans": {
+      "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ug65p90000000ye5-att/2014h26a_sa_am2_ans.pdf",
+      "sha256": "9aadff60e4b4f3e63f8d0f01f67c27faa519e70294f1961aa729496c7b852477"
+    }
+  },
+  "questionCount": 25,
+  "remainingInSession": 0,
+  "officialAnswers": "エアイアウエアエエエエエエイイエエイウウエエアウイ",
+  "verification": "公式問題冊子の全問題ページを画像で読み，本文・選択肢を転記。別の公式解答PDFをpdftotextで抽出して25件照合。本文ハッシュ・原本ページ・原図の切出し座標を記録。",
+  "duplicateCheck": "共有台帳2026-11-11のSA 2014行はspring am1のみ。yr-1と指定10ブランチ取り込み後，追加前のgit log --all -- data/questions/sa/by-year/2014-autumn-am2.tsに履歴なし。",
+  "questions": [
+    {
+      "qNumber": 1,
+      "answer": "エ",
+      "printedPage": 3,
+      "normalizedTextSha256": "8322f21a47a9bc25f1e78cfda6ea2d4c15e3fa64ad71b73f3c7d904341d1c2b0"
+    },
+    {
+      "qNumber": 2,
+      "answer": "ア",
+      "printedPage": 3,
+      "normalizedTextSha256": "ca96f49d79735ad05060da777f3e8256cac0d274b1daada9be5338dcfd7b38f3",
+      "referenceUrls": [
+        "https://www.omg.org/spec/BPMN/2.0.2/PDF"
+      ]
+    },
+    {
+      "qNumber": 3,
+      "answer": "イ",
+      "printedPage": 4,
+      "normalizedTextSha256": "52c84fd5c31e6e5885ac6d489f9ff75a3e2a4042eb4431d2c54aa7f5eff1a7fa"
+    },
+    {
+      "qNumber": 4,
+      "answer": "ア",
+      "printedPage": 4,
+      "normalizedTextSha256": "5d438e8bceeeb1d6a994e117a907fa9553878231a302d64df34ddfb65cd2df13"
+    },
+    {
+      "qNumber": 5,
+      "answer": "ウ",
+      "printedPage": 5,
+      "normalizedTextSha256": "8c78aa977d91d56de3fea4efb865ea9c8b1fe5c35ea6880c91d615ee2bbe22d0",
+      "figure": {
+        "path": "/images/questions/sa/2014-autumn-am2-q5.png",
+        "sha256": "f5e49b0fef5f856334f29cc711f358b2ef7913df37f54b24684ab573251a8d35",
+        "page": 5,
+        "cropPdfPoints": [
+          70,
+          120,
+          450,
+          294
+        ]
+      }
+    },
+    {
+      "qNumber": 6,
+      "answer": "エ",
+      "printedPage": 5,
+      "normalizedTextSha256": "3d9d2f8e9995aa6c07deb245523624c8e130f2bd20d7c96a2493700939cef60f"
+    },
+    {
+      "qNumber": 7,
+      "answer": "ア",
+      "printedPage": 6,
+      "normalizedTextSha256": "9612143efc6d546f293eeae8906477dcf9faa30f9a2c347529ceaef1c5121186"
+    },
+    {
+      "qNumber": 8,
+      "answer": "エ",
+      "printedPage": 6,
+      "normalizedTextSha256": "95550a5533a1e3e765d57d43093a570e4e9cca25923e02ec02a8e1e72c191a79"
+    },
+    {
+      "qNumber": 9,
+      "answer": "エ",
+      "printedPage": 7,
+      "normalizedTextSha256": "675dd8aaa85a51473717de0fdec31fe67010f3d702e108fc656871e8ab9c883c"
+    },
+    {
+      "qNumber": 10,
+      "answer": "エ",
+      "printedPage": 8,
+      "normalizedTextSha256": "cc99652f94959c1367723920db28a0a76cdceeb272c52a9f9d3cf0383bdc0d66",
+      "figure": {
+        "path": "/images/questions/sa/2014-autumn-am2-q10.png",
+        "sha256": "993b215c19f0db024dc74a7f5098b3b205565fb8bcb8d4e56de14ef0568823f9",
+        "page": 8,
+        "cropPdfPoints": [
+          124,
+          160,
+          411,
+          357
+        ]
+      }
+    },
+    {
+      "qNumber": 11,
+      "answer": "エ",
+      "printedPage": 8,
+      "normalizedTextSha256": "41b9f872f5ec4813adfc10d677823a63236c8b21faa7407c46e437d20082cea1"
+    },
+    {
+      "qNumber": 12,
+      "answer": "エ",
+      "printedPage": 9,
+      "normalizedTextSha256": "19ee573510c51e488155d8e11f308b84152ee1218bfc9c46df4d70147bcc8f4d"
+    },
+    {
+      "qNumber": 13,
+      "answer": "エ",
+      "printedPage": 9,
+      "normalizedTextSha256": "87561a22eb5ba35be1056a3973082f67d6f47df8077060a8348d2fd5150cc724"
+    },
+    {
+      "qNumber": 14,
+      "answer": "イ",
+      "printedPage": 10,
+      "normalizedTextSha256": "1d9cea3aa0a0d497d20cf957861cd4f86da96709cddb0dc02bfc0601b5291da6"
+    },
+    {
+      "qNumber": 15,
+      "answer": "イ",
+      "printedPage": 10,
+      "normalizedTextSha256": "2773fa7fc6d8ddbbeed4858ca7021c24dea3839680342dd29c7caf642fc0fe8b"
+    },
+    {
+      "qNumber": 16,
+      "answer": "エ",
+      "printedPage": 11,
+      "normalizedTextSha256": "236505920834cdc0f9995efd8fa77d6cebebda08600647d8f3949aac73da5ce4"
+    },
+    {
+      "qNumber": 17,
+      "answer": "エ",
+      "printedPage": 11,
+      "normalizedTextSha256": "e5bf2aec9443d303a10030fec5962113ecc4411684f5e6955de313428a0c4ce9"
+    },
+    {
+      "qNumber": 18,
+      "answer": "イ",
+      "printedPage": 12,
+      "normalizedTextSha256": "e2318efb1e3d4a7d014584114ae9064a2dc9b4a5d1b896245678fa2a150d540d"
+    },
+    {
+      "qNumber": 19,
+      "answer": "ウ",
+      "printedPage": 12,
+      "normalizedTextSha256": "193a7be90c4357cbb5c061a888b43b70a3a3efe312d8f979697a32127a475ac0"
+    },
+    {
+      "qNumber": 20,
+      "answer": "ウ",
+      "printedPage": 13,
+      "normalizedTextSha256": "92355ad0bca61c69580460b22a14f35b0c7b45f47e493150d34284e7722b7ea3"
+    },
+    {
+      "qNumber": 21,
+      "answer": "エ",
+      "printedPage": 14,
+      "normalizedTextSha256": "70de00c62d922e2f7f58ec091197cd83274c0abe7530ad0ce61a11afaa3f61cc",
+      "figure": {
+        "path": "/images/questions/sa/2014-autumn-am2-q21.png",
+        "sha256": "3fe617430bd8d5ed859ca527cf5229d31904f4c3480a79f56723b9d633382e5e",
+        "page": 14,
+        "cropPdfPoints": [
+          70,
+          125,
+          438,
+          336
+        ]
+      }
+    },
+    {
+      "qNumber": 22,
+      "answer": "エ",
+      "printedPage": 14,
+      "normalizedTextSha256": "b6953476ff06f6d55c712dc6a4a048b8c747df49a1e073738bfce22189263d00"
+    },
+    {
+      "qNumber": 23,
+      "answer": "ア",
+      "printedPage": 15,
+      "normalizedTextSha256": "9684d2e0b7f8746f03e0cc15c1a0ffa623b8a1bfad75f30d5946cbe5fdc5bff0",
+      "figure": {
+        "path": "/images/questions/sa/2014-autumn-am2-q23.png",
+        "sha256": "eb09bd7bbc2d4266eb5e5706bc0e1223e2546e9a477ac9f57e1e31844915f003",
+        "page": 15,
+        "cropPdfPoints": [
+          121,
+          140,
+          402,
+          179
+        ]
+      }
+    },
+    {
+      "qNumber": 24,
+      "answer": "ウ",
+      "printedPage": 15,
+      "normalizedTextSha256": "ca46a1a4bf92accc8187b7af44b9e95de924f81c71d0e0b8d1172cbe5f42c52c"
+    },
+    {
+      "qNumber": 25,
+      "answer": "イ",
+      "printedPage": 16,
+      "normalizedTextSha256": "0f3b17f6e7d121a24d16659f8452423d6b1d34adc7ac00e2088a02c728feaf26"
+    }
+  ],
+  "sourceConventions": {
+    "commonFrame": "共通フレーム2013",
+    "printedStandardsPage": 2,
+    "PMBOK": "第4版",
+    "JISQ27001": "2006",
+    "JISQ27002": "2006"
+  },
+  "supplementaryReferences": [
+    {
+      "url": "https://www.omg.org/spec/BPMN/2.0.2/PDF",
+      "questionNumbers": [
+        2
+      ],
+      "pdfPages": [
+        55,
+        56
+      ],
+      "printedPages": [
+        25,
+        26
+      ],
+      "basis": "Flow Objects：Events, Activities, Gateways。Connecting Objects：Sequence Flowなど"
+    }
+  ]
+}

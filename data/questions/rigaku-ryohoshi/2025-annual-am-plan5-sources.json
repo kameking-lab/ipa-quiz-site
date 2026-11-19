@@ -1,0 +1,1144 @@
+{
+  "jobId": "PLAN5-175",
+  "exam": "rigaku-ryohoshi",
+  "edition": 60,
+  "examDate": "2025-02-24",
+  "checkedAt": "2026-11-18",
+  "sourcePage": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/tp250428-08_09.html",
+  "sourcePdfs": [
+    {
+      "kind": "questions",
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08a_01.pdf",
+      "pages": 52,
+      "sha256": "d28809a261e3315fcb3acdfdb749acb6cdf2c78510e59be6c92a8b4481f66238"
+    },
+    {
+      "kind": "answers",
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08seitou.pdf",
+      "pages": 1,
+      "sha256": "c4eb50a5b4465861eb79ce0f7cd70f975c4210ff8b8263eb2ca7be55a0c7526b"
+    },
+    {
+      "kind": "figures",
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp250428-08a_02.pdf",
+      "pages": 12,
+      "sha256": "3aa3da93a6723b5f9fa6e7c9f0a646ec2449dfdb10f895066f1b40f0187d9060"
+    },
+    {
+      "kind": "scoring3",
+      "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken08_09/dl/PT_AM3.pdf",
+      "pages": 1,
+      "sha256": "38a75676df84a447fb31f9cb84adadfb5c5e465cf25fa945b6402dc35e66e6bf"
+    },
+    {
+      "kind": "scoring17",
+      "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken08_09/dl/PT_AM17.pdf",
+      "pages": 1,
+      "sha256": "bced10074bed8a5b659885479e62c9d7f33ccb2d68c0526f41f0331533207dd9"
+    },
+    {
+      "kind": "scoring20",
+      "url": "https://www.mhlw.go.jp/general/sikaku/successlist/2025/siken08_09/dl/PT_AM20.pdf",
+      "pages": 1,
+      "sha256": "af654ef57fec5b639296803bb147eb7013af1f5ddc08ec4781ca3fa337fe9846"
+    }
+  ],
+  "questionEvidence": [
+    {
+      "questionNumber": 1,
+      "questionPdfPage": 7,
+      "officialAnswerNumber": "4",
+      "figure": {
+        "path": "public/images/exams/rigaku-ryohoshi/2025-am/q01.webp",
+        "kind": "questions",
+        "pdfPage": 7,
+        "clip": [
+          150,
+          141,
+          483,
+          436
+        ],
+        "scale": 2,
+        "sha256": "93aa7aea32dfa51cf40b76c32b91e05f617bd58dd12d61a69cdb5423be8eb18d"
+      }
+    },
+    {
+      "questionNumber": 2,
+      "questionPdfPage": 8,
+      "officialAnswerNumber": "4",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q2-q4-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 3,
+      "questionPdfPage": 8,
+      "officialAnswerNumber": null,
+      "scoringReason": "設問が不明確で正解が得られないため",
+      "figure": {
+        "path": "public/images/exams/rigaku-ryohoshi/2025-am/q03.webp",
+        "kind": "figures",
+        "pdfPage": 5,
+        "clip": [
+          103,
+          106,
+          520,
+          528
+        ],
+        "scale": 2,
+        "sha256": "3dcb499c35251a47074d4f6d750b2cf8d90933612d8d090704a97fad1a347e1d"
+      }
+    },
+    {
+      "questionNumber": 4,
+      "questionPdfPage": 9,
+      "officialAnswerNumber": "3",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q2-q4-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 5,
+      "questionPdfPage": 9,
+      "officialAnswerNumber": "4",
+      "originalCommit": "d6a23b13182f5e345017bf6131ada07643f4efea",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-saved-qa20.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 6,
+      "questionPdfPage": 10,
+      "officialAnswerNumber": "2",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q6-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 7,
+      "questionPdfPage": 10,
+      "officialAnswerNumber": "5",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q7-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 8,
+      "questionPdfPage": 11,
+      "officialAnswerNumber": "4",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q8-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 9,
+      "questionPdfPage": 12,
+      "officialAnswerNumber": "4",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q9-pm-q9-q13-q15-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 15,
+      "questionPdfPage": 15,
+      "officialAnswerNumber": "1",
+      "figure": {
+        "path": "public/images/exams/rigaku-ryohoshi/2025-am/q15.webp",
+        "kind": "figures",
+        "pdfPage": 7,
+        "clip": [
+          114,
+          109,
+          481,
+          471
+        ],
+        "scale": 2,
+        "sha256": "ab2fab18356965329d9f8a82e0e656b2a8a9493319852bf2b30d6f6a9bc80d56"
+      }
+    },
+    {
+      "questionNumber": 17,
+      "questionPdfPage": 16,
+      "officialAnswerNumber": "1/5",
+      "figure": {
+        "path": "public/images/exams/rigaku-ryohoshi/2025-am/q17.webp",
+        "kind": "questions",
+        "pdfPage": 16,
+        "clip": [
+          90,
+          426,
+          549,
+          652
+        ],
+        "scale": 2,
+        "sha256": "abce027de2a391cc9ce7e75ea92369eb3a8099b21bdb56ab7802edd0a9752041"
+      }
+    },
+    {
+      "questionNumber": 19,
+      "questionPdfPage": 18,
+      "officialAnswerNumber": "4",
+      "figure": {
+        "path": "public/images/exams/rigaku-ryohoshi/2025-am/q19.webp",
+        "kind": "questions",
+        "pdfPage": 18,
+        "clip": [
+          89,
+          162,
+          557,
+          590
+        ],
+        "scale": 2,
+        "sha256": "b5304c5a08339eaf6eae8b0e9dafea64edb3c9dfc388d989ccfba3d456686953"
+      }
+    },
+    {
+      "questionNumber": 20,
+      "questionPdfPage": 19,
+      "officialAnswerNumber": null,
+      "scoringReason": "選択肢に正解がないため"
+    },
+    {
+      "questionNumber": 22,
+      "questionPdfPage": 19,
+      "officialAnswerNumber": "2",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am22-pm4-45-59-60-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 23,
+      "questionPdfPage": 20,
+      "officialAnswerNumber": "4",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-go7-20261013.json",
+      "metadataChanges": {
+        "officialAnswerNumber": {
+          "old": null,
+          "new": "4"
+        },
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 24,
+      "questionPdfPage": 20,
+      "officialAnswerNumber": "1",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-go7-20261013.json",
+      "metadataChanges": {
+        "officialAnswerNumber": {
+          "old": null,
+          "new": "1"
+        },
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 25,
+      "questionPdfPage": 20,
+      "officialAnswerNumber": "2"
+    },
+    {
+      "questionNumber": 26,
+      "questionPdfPage": 21,
+      "officialAnswerNumber": "2",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-go7-20261013.json",
+      "metadataChanges": {
+        "officialAnswerNumber": {
+          "old": null,
+          "new": "2"
+        },
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 27,
+      "questionPdfPage": 21,
+      "officialAnswerNumber": "3",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-go7-20261013.json",
+      "metadataChanges": {
+        "officialAnswerNumber": {
+          "old": null,
+          "new": "3"
+        },
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 28,
+      "questionPdfPage": 21,
+      "officialAnswerNumber": "2",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-go7-20261013.json",
+      "metadataChanges": {
+        "officialAnswerNumber": {
+          "old": null,
+          "new": "2"
+        },
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 29,
+      "questionPdfPage": 22,
+      "officialAnswerNumber": "2"
+    },
+    {
+      "questionNumber": 30,
+      "questionPdfPage": 22,
+      "officialAnswerNumber": "25",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-private-completion4-20261014.json",
+      "metadataChanges": {
+        "officialAnswerNumber": {
+          "old": null,
+          "new": "25"
+        },
+        "needsReview": {
+          "old": true,
+          "new": false
+        },
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 31,
+      "questionPdfPage": 22,
+      "officialAnswerNumber": "5",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-go7-20261013.json",
+      "metadataChanges": {
+        "officialAnswerNumber": {
+          "old": null,
+          "new": "5"
+        },
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 32,
+      "questionPdfPage": 23,
+      "officialAnswerNumber": "15",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-go7-20261013.json",
+      "metadataChanges": {
+        "officialAnswerNumber": {
+          "old": null,
+          "new": "15"
+        },
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 33,
+      "questionPdfPage": 23,
+      "officialAnswerNumber": "45",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-next6-20261013.json",
+      "metadataChanges": {
+        "officialAnswerNumber": {
+          "old": null,
+          "new": "45"
+        },
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 34,
+      "questionPdfPage": 23,
+      "officialAnswerNumber": "3",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-private-completion4-20261014.json",
+      "metadataChanges": {
+        "officialAnswerNumber": {
+          "old": null,
+          "new": "3"
+        },
+        "needsReview": {
+          "old": true,
+          "new": false
+        },
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 35,
+      "questionPdfPage": 24,
+      "officialAnswerNumber": "5",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-next6-20261013.json",
+      "metadataChanges": {
+        "officialAnswerNumber": {
+          "old": null,
+          "new": "5"
+        },
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 36,
+      "questionPdfPage": 24,
+      "officialAnswerNumber": "3",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-private-completion4-20261014.json",
+      "metadataChanges": {
+        "officialAnswerNumber": {
+          "old": null,
+          "new": "3"
+        },
+        "needsReview": {
+          "old": true,
+          "new": false
+        },
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 37,
+      "questionPdfPage": 24,
+      "officialAnswerNumber": "1",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-next6-20261013.json",
+      "metadataChanges": {
+        "officialAnswerNumber": {
+          "old": null,
+          "new": "1"
+        },
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 38,
+      "questionPdfPage": 25,
+      "officialAnswerNumber": "3",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-next6-20261013.json",
+      "metadataChanges": {
+        "officialAnswerNumber": {
+          "old": null,
+          "new": "3"
+        },
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 39,
+      "questionPdfPage": 25,
+      "officialAnswerNumber": "2",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-next6-20261013.json",
+      "metadataChanges": {
+        "officialAnswerNumber": {
+          "old": null,
+          "new": "2"
+        },
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 40,
+      "questionPdfPage": 25,
+      "officialAnswerNumber": "3"
+    },
+    {
+      "questionNumber": 41,
+      "questionPdfPage": 26,
+      "officialAnswerNumber": "25",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-next6-20261013.json",
+      "metadataChanges": {
+        "officialAnswerNumber": {
+          "old": null,
+          "new": "25"
+        },
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 42,
+      "questionPdfPage": 26,
+      "officialAnswerNumber": "2",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q42-q49-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 43,
+      "questionPdfPage": 26,
+      "officialAnswerNumber": "1",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q42-q49-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 44,
+      "questionPdfPage": 27,
+      "officialAnswerNumber": "4",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q42-q49-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 45,
+      "questionPdfPage": 27,
+      "officialAnswerNumber": "2",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q42-q49-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 46,
+      "questionPdfPage": 27,
+      "officialAnswerNumber": "3",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q42-q49-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 47,
+      "questionPdfPage": 28,
+      "officialAnswerNumber": "34",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q42-q49-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 48,
+      "questionPdfPage": 28,
+      "officialAnswerNumber": "13",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q42-q49-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 49,
+      "questionPdfPage": 28,
+      "officialAnswerNumber": "2",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q42-q49-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 50,
+      "questionPdfPage": 29,
+      "officialAnswerNumber": "4",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q50-q57-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 51,
+      "questionPdfPage": 30,
+      "officialAnswerNumber": "1",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q50-q57-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 52,
+      "questionPdfPage": 30,
+      "officialAnswerNumber": "13",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q50-q57-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 53,
+      "questionPdfPage": 31,
+      "officialAnswerNumber": "5",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q50-q57-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 54,
+      "questionPdfPage": 31,
+      "officialAnswerNumber": "2",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q50-q57-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 55,
+      "questionPdfPage": 31,
+      "officialAnswerNumber": "4",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q50-q57-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 56,
+      "questionPdfPage": 32,
+      "officialAnswerNumber": "34",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q50-q57-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 57,
+      "questionPdfPage": 32,
+      "officialAnswerNumber": "2",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q50-q57-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 58,
+      "questionPdfPage": 32,
+      "officialAnswerNumber": "1",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q58-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 59,
+      "questionPdfPage": 33,
+      "officialAnswerNumber": "3",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q59-q65-go6-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 60,
+      "questionPdfPage": 33,
+      "officialAnswerNumber": "2",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q59-q65-go6-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 61,
+      "questionPdfPage": 33,
+      "officialAnswerNumber": "5",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q59-q65-go6-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 62,
+      "questionPdfPage": 34,
+      "officialAnswerNumber": "1",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q59-q65-go6-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 63,
+      "questionPdfPage": 34,
+      "officialAnswerNumber": "5",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q59-q65-go6-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 65,
+      "questionPdfPage": 35,
+      "officialAnswerNumber": "5",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q59-q65-go6-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 66,
+      "questionPdfPage": 35,
+      "officialAnswerNumber": "3",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q66-q73-go8-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 67,
+      "questionPdfPage": 35,
+      "officialAnswerNumber": "1",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q66-q73-go8-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 68,
+      "questionPdfPage": 36,
+      "officialAnswerNumber": "1",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q66-q73-go8-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 69,
+      "questionPdfPage": 36,
+      "officialAnswerNumber": "45",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q66-q73-go8-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 70,
+      "questionPdfPage": 36,
+      "officialAnswerNumber": "23",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q66-q73-go8-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 71,
+      "questionPdfPage": 37,
+      "officialAnswerNumber": "4",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q66-q73-go8-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 72,
+      "questionPdfPage": 37,
+      "officialAnswerNumber": "23",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q66-q73-go8-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 73,
+      "questionPdfPage": 37,
+      "officialAnswerNumber": "3",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q66-q73-go8-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 74,
+      "questionPdfPage": 38,
+      "officialAnswerNumber": "2"
+    },
+    {
+      "questionNumber": 75,
+      "questionPdfPage": 38,
+      "officialAnswerNumber": "3",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q75-q77-q80-go3-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 76,
+      "questionPdfPage": 38,
+      "officialAnswerNumber": "13"
+    },
+    {
+      "questionNumber": 77,
+      "questionPdfPage": 39,
+      "officialAnswerNumber": "4",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q75-q77-q80-go3-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 78,
+      "questionPdfPage": 39,
+      "officialAnswerNumber": "3",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-private-completion4-20261014.json",
+      "metadataChanges": {
+        "officialAnswerNumber": {
+          "old": null,
+          "new": "3"
+        },
+        "needsReview": {
+          "old": true,
+          "new": false
+        },
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 79,
+      "questionPdfPage": 39,
+      "officialAnswerNumber": "3"
+    },
+    {
+      "questionNumber": 80,
+      "questionPdfPage": 40,
+      "officialAnswerNumber": "1",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-am-q75-q77-q80-go3-reviewed.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 82,
+      "questionPdfPage": 40,
+      "officialAnswerNumber": "4",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-saved-adoption8.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    },
+    {
+      "questionNumber": 84,
+      "questionPdfPage": 41,
+      "officialAnswerNumber": "2"
+    },
+    {
+      "questionNumber": 89,
+      "questionPdfPage": 43,
+      "officialAnswerNumber": "5"
+    },
+    {
+      "questionNumber": 94,
+      "questionPdfPage": 44,
+      "officialAnswerNumber": "4",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd",
+      "originalFile": "data/questions/rigaku-ryohoshi/2025-saved-adoption8.json",
+      "metadataChanges": {
+        "examDate": {
+          "old": null,
+          "new": "2025-02-24"
+        }
+      }
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/images/questions/rigaku-ryohoshi/2025-am-q7-question-43024e093dc9.png",
+      "sha256": "43024e093dc9dfa418bc7b5d56d96cda70aa44a2b4ab80f4d2001cf6537ff3f7",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd"
+    },
+    {
+      "path": "public/images/questions/rigaku-ryohoshi/2025-am-q9-question-63eeae559506.png",
+      "sha256": "63eeae559506a4883093bcb7493f74a27158c7145c09085e9c385586f88514dc",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd"
+    },
+    {
+      "path": "public/images/questions/rigaku-ryohoshi/2025-question-am-q51-thigh-cross-section-95cb7af82ad4.png",
+      "sha256": "95cb7af82ad4441c1c1a16968bb663fa9fae7346d072c057823baae5833e8da7",
+      "originalCommit": "a707eeddb85dabb050d5fed7f46a0dca046bdecd"
+    },
+    {
+      "path": "public/images/exams/rigaku-ryohoshi/2025-am/q01.webp",
+      "kind": "questions",
+      "pdfPage": 7,
+      "clip": [
+        150,
+        141,
+        483,
+        436
+      ],
+      "scale": 2,
+      "sha256": "93aa7aea32dfa51cf40b76c32b91e05f617bd58dd12d61a69cdb5423be8eb18d"
+    },
+    {
+      "path": "public/images/exams/rigaku-ryohoshi/2025-am/q03.webp",
+      "kind": "figures",
+      "pdfPage": 5,
+      "clip": [
+        103,
+        106,
+        520,
+        528
+      ],
+      "scale": 2,
+      "sha256": "3dcb499c35251a47074d4f6d750b2cf8d90933612d8d090704a97fad1a347e1d"
+    },
+    {
+      "path": "public/images/exams/rigaku-ryohoshi/2025-am/q15.webp",
+      "kind": "figures",
+      "pdfPage": 7,
+      "clip": [
+        114,
+        109,
+        481,
+        471
+      ],
+      "scale": 2,
+      "sha256": "ab2fab18356965329d9f8a82e0e656b2a8a9493319852bf2b30d6f6a9bc80d56"
+    },
+    {
+      "path": "public/images/exams/rigaku-ryohoshi/2025-am/q17.webp",
+      "kind": "questions",
+      "pdfPage": 16,
+      "clip": [
+        90,
+        426,
+        549,
+        652
+      ],
+      "scale": 2,
+      "sha256": "abce027de2a391cc9ce7e75ea92369eb3a8099b21bdb56ab7802edd0a9752041"
+    },
+    {
+      "path": "public/images/exams/rigaku-ryohoshi/2025-am/q19.webp",
+      "kind": "questions",
+      "pdfPage": 18,
+      "clip": [
+        89,
+        162,
+        557,
+        590
+      ],
+      "scale": 2,
+      "sha256": "b5304c5a08339eaf6eae8b0e9dafea64edb3c9dfc388d989ccfba3d456686953"
+    }
+  ]
+}

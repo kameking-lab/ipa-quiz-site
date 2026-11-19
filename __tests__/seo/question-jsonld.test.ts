@@ -5,6 +5,8 @@ import { SHIKA_ISHI_QUESTIONS } from "@/data/questions/shika-ishi";
 import { JUDO_SEIFUKUSHI_QUESTIONS } from "@/data/questions/judo-seifukushi";
 import { SHINRISHI_QUESTIONS } from "@/data/questions/shinrishi";
 import { questionPagePath } from "@/lib/seo/question-url";
+import { questionSnippet } from "@/lib/seo/question-meta";
+import { practiceCategoryLabel } from "@/lib/questions/practice-session";
 const baseQuestion: Question = {
     id: "ap-2024s-am-q1",
     exam: "ap",
@@ -76,7 +78,7 @@ describe("buildQuestionJsonLd", () => {
         expect(resource.publisher["@id"]).toMatch(/#organization$/);
         expect(resource.publisher.name).toBe("過去問AI");
         expect(resource.publisher.url).toMatch(/^https?:\/\//);
-        expect(resource.hasPart.author.name).toBe("情報処理推進機構 (IPA)");
+        expect(resource.hasPart.author?.name).toBe("情報処理推進機構 (IPA)");
         expect(resource.creator).toMatchObject({ name: "情報処理推進機構 (IPA)" });
         expect(resource.license).toBe("https://www.ipa.go.jp/shiken/faq.html");
         expect(resource.hasPart).not.toHaveProperty("datePublished");
@@ -215,6 +217,16 @@ describe("sessionLabel", () => {
     it("falls back to upper-cased input for unknown sessions", () => {
         expect(sessionLabel("xyz")).toBe("XYZ");
     });
+    it("uses the official engineering and radio subject labels", () => {
+        expect(sessionLabel("kiso", "gijutsushi1-kikai")).toBe("基礎科目");
+        expect(sessionLabel("ippan", "gijutsushi1-kikai")).toBe("適性科目");
+        expect(sessionLabel("kikai", "gijutsushi1-kikai")).toBe("専門科目");
+        expect(sessionLabel("kiso", "general3")).toBe("無線工学の基礎");
+        expect(practiceCategoryLabel("basis", "gijutsushi1-kikai")).toBe("基礎科目");
+        const snippet = questionSnippet({ ...baseQuestion, exam: "gijutsushi1-kikai", session: "kiso", category: "basis" });
+        expect(snippet).toContain("基礎科目");
+        expect(snippet).not.toContain("basis");
+    });
     it("maps every Session union member to a real label", () => {
         const SESSION_PRESENCE: Record<Session, true> = {
 "yakkan": true,"jitsumu": true,"patent": true,"design": true,"trademark": true,"treaty": true,"copyright": true,"dokugeki-ippan": true,"dokugeki-nougyou": true,"dokugeki-tokutei": true,"gakka-I": true,"gakka-II": true,"gakka-III": true,"gakka-IV": true, "khk-ax": true, "khk-ay": true, "khk-az": true, "khk-bx": true, "khk-by": true, "khk-bz": true, "khk-cx": true, "khk-cy": true, "khk-cz": true, "khk-dx": true, "khk-dy": true, "khk-dz": true,  keikaku: true, "kankyo-setsubi": true, kozo: true, sekou: true,  gakushiki: true,
@@ -291,8 +303,41 @@ describe("sessionLabel", () => {
             "kenki-type6": true,
             constitution: true, "civil-law": true, "criminal-law": true, "admin-law": true,
             "commercial-law": true, "civil-procedure": true, "criminal-procedure": true,
-            "tsukan-law": true, "customs-law": true, "tsukan-practical": true
-        };
+            "tsukan-law": true, "customs-law": true, "tsukan-practical": true,
+            "cfp-risk": true,
+    "reading": true,
+    "writing": true,
+    "listening": true,
+    "eju-biology": true,
+    "eju-chemistry": true,
+    "eju-physics": true,
+    "eju-math-2": true,
+    "eju-math-1": true,
+    "eju-math-common": true,
+    "zensho-english-grade-3": true,
+    "zensho-info-pro2": true,
+    "zensho-calc-2-business": true,
+    "zensho-calc-1-ordinary": true,
+    "zensho-calc-3-business": true,
+    "mondai-e": true,
+    "zensho-boki-2-commercial": true,
+    "suken-9": true,
+    "suken-grade7": true,
+    "suken-grade-6": true,
+    "jken-business": true,
+    "special-a": true,
+    "chigaku-kiso": true,
+    "kokyo": true,
+    "zensho-boki-100-grade-1-accounting": true,
+    "zensho-info-programming-2": true,
+    "programming-1": true,
+    "zensho-calc-grade-3-ordinary": true,
+    "zensho-calc-grade-1-business": true,
+    "suken-grade-8": true,
+    "suken-grade-2-first": true,
+    "mondai-f": true,
+    "special-b": true,
+};
         for (const session of Object.keys(SESSION_PRESENCE) as Session[]) {
             expect(sessionLabel(session)).not.toBe(session.toUpperCase());
         }
@@ -306,7 +351,7 @@ describe("LQ4B source metadata", () => {
         const resource = build({ ...baseQuestion, exam, license, sourcePdfUrl: `${url}example.pdf` })["@graph"][0];
         if (!("hasPart" in resource))
             throw new Error("Missing question resource");
-        expect(resource.hasPart.author.url).toBe(url);
+        expect(resource.hasPart.author?.url).toBe(url);
         expect(resource).not.toHaveProperty("license");
         expect(JSON.stringify(resource)).not.toContain("https://www.ipa.go.jp/");
     });

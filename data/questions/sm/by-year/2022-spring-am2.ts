@@ -24,6 +24,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "JIS Q 20000-1:2020における「力量」の要求事項は、組織の要員が意図した結果を達成するために必要な知識と技能を持つことを指します。選択肢エは、まさにこの「力量」について、適切な教育、訓練、経験に基づいて要員が備えていることを確実にするという内容であり、正解です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ベンチマーキングは、自社の業務方法やパフォーマンスを、業界内外の最も優れた業務方法（ベストプラクティス）と比較することで、改善点を見つけ出す手法です。選択肢イの説明は、このベンチマーキングの定義と完全に一致します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "与えられたデータから各指標を計算します。MTRS（平均サービス回復時間）は20時間/2回=10時間、MTBF（平均故障間隔）は2000時間/2回=1000時間、MTBSI（平均サービス・インシデント間隔）は2020時間/2回=1010時間となります。これにより、MTBSI > MTBF > MTRSの関係が導き出されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "サービス・ポートフォリオは、組織が提供するすべてのサービス（計画中、開発中、稼働中、廃止済み）の包括的なリストです。一方、サービス・カタログは、稼働中で顧客に提供可能なサービスの情報をまとめたものであり、顧客が利用できるサービスの窓口となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "RTO（目標復旧時間）は、サービス中断からいつまでに復旧させるか、RLO（目標復旧レベル）は、どのレベルまでサービスを復旧させるかを定義します。選択肢イは「サービスの中断から1日以内」（RTO）に「基幹サービスを復旧する」（RLO）と具体的に時間の目標と復旧するサービスの範囲が示されており、これら二つの指標を適切に定めた例です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "事業関係管理（BRM）は、サービス提供者と顧客との間の良好な関係を確立・維持し、顧客のニーズを理解し、満足度を向上させるプロセスです。選択肢イは、顧客や利害関係者を特定し、コミュニケーションの取り決めを確立するというBRMの主要な活動を記述しており、適切です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +174,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "インシデント・モデルは、繰り返し発生する特定のインシデントに対して、標準化された対応手順、役割、エスカレーションパスなどを事前に定義したものです。これにより、対応の迅速化と効率化が図られ、事前に定義された時間枠内で一貫した対応が可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +199,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "内部監査は、組織が規定した要求事項および外部の規格（この場合はJIS Q 20000-1:2020）の要求事項に対して、サービスマネジメントシステムが適合しているかどうかを評価し、その情報を提供する活動です。これはSMSの継続的な改善と適合性維持のために不可欠なプロセスです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +224,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "構成ベースラインは、ある時点における構成アイテムのバージョンや設定情報を正式に承認し、以後の変更管理の基準となるものです。これにより、現在のシステム状態が正しいかどうかの監査基準となり、システムに問題が発生した際には、承認された安定した状態への切り戻しの基準情報として利用できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +249,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "総所有費用（TCO）は、IT資産の購入費用だけでなく、導入後の運用、保守、管理、教育、廃棄など、その資産のライフサイクル全体にわたって発生するすべての費用を合計したものです。選択肢イは、このIT資産のライフサイクル全体にわたる総費用を正確に説明しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +274,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "容量・能力管理における監視では、システムのパフォーマンスに影響を与える様々な指標を継続的かつ定常的に測定し、トレンドを把握することが重要です。応答時間やCPU使用率などの複数の測定項目を定常的に監視することで、将来の容量不足や性能問題を事前に予測し、対策を講じることが可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +299,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "Redmineは、プロジェクト管理、課題管理、インシデント管理、サービス要求管理など多岐にわたる用途で利用されるオープンソースのWebベースのプロジェクト管理ツールです。タスクをチケットとして扱い、その状態や進捗を管理し、関連する部署に対して権限を設定したワークフローを定義できるという特徴に合致します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +324,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "JDCCのデータセンターファシリティスタンダードにおいて、ティア3は一部設備のメンテナンス時にもサービスを継続できる冗長構成を指します。システムに必要な常用UPSの台数をNとした場合、N+1構成は、常用N台に加えて予備の1台があるため、1台が停止してもN台の供給を継続できる冗長構成に該当します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +349,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "入出金管理システムから売掛金管理システムへのデータ受け渡しにおいて、正確性及び網羅性を確認するためには、コントロールトータルチェックが有効です。これは、送信側と受信側で入金額やデータ件数などの合計値を算出し、それらを照合することで、データが漏れなく正確に転送されたことを確認する手法です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +374,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "サイバーセキュリティ基本法に基づき、2015年1月に内閣に「サイバーセキュリティ戦略本部」が設置され、その事務局として内閣官房に「NISC（内閣サイバーセキュリティセンター）」が設置されました。NISCは政府機関のサイバーセキュリティ対策の司令塔としての役割を担っています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +399,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ISMAP（Information system Security Management and Assessment Program）は、政府機関がクラウドサービスを調達する際に、適切なセキュリティ対策が講じられていることを確認するための評価制度です。この制度では、政府が求めるセキュリティ要求事項を満たしていることが確認されたクラウドサービスがISMAPクラウドサービスリストに登録されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +424,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "「サイバーセキュリティ経営ガイドライン」は、経営者がサイバーセキュリティ対策を経営課題と捉え、リーダーシップを発揮して取り組むべき事項をまとめたものです。経営者が認識すべき三つの原則と、担当者に指示すべき十項目の重要事項が示されており、経営層の関与を重視しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +449,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ボトムアップ見積りとは、作業を最も詳細なレベルの構成要素に分解し、それぞれの構成要素の工数やコストを見積もり、それらを積み上げることで全体の工数やコストを算出する手法です。作業の詳細が明確な段階で適用され、精度が高い見積りが期待できます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +474,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "リスク転嫁は、リスクの発生によって生じる損害の責任や影響を、第三者に移転する対応策です。損害賠償保険を契約することは、リスクが発生した場合の金銭的影響を保険会社に転嫁する典型的な例であり、この定義に合致します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +499,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "PMBOKガイド第6版において、「品質マネジメントの計画」プロセスのアウトプットである「品質尺度」は、品質目標を達成するための測定可能な具体的な指標です。この品質尺度は、「品質のマネジメント」および「品質のコントロール」プロセスにおいて、実際に品質活動を実行し、成果物を監視・測定するための重要なインプットとして利用されます。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +524,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "メモリインタリーブは、主記憶（メインメモリ）を複数の独立したグループ（バンク）に分割し、それぞれのグループに並行してアクセスすることで、記憶装置全体のデータ転送速度を向上させる技術です。これにより、CPUからのアクセス要求を並列に処理し、見かけ上のメモリアクセス速度を高速化します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +549,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "故障していない機器の台数はおよそ 3,000台です。\n\nこの問題では、機器の故障確率を指数分布でモデル化しています。指数分布は、故障発生率（λ）が一定である場合に、ある期間（t）における故障確率または非故障確率を表すのに適しています。非故障確率 F(t) は F(t) = exp(-λt) で与えられます。\n\nまず、与えられた条件を秒単位に統一します。故障発生率 λ = 1.0 × 10⁻⁶ 回/秒。稼働時間 t は 330 時間なので、t = 330 時間 × 3600 秒/時間 = 1,188,000 秒となります。\nしたがって、λt = (1.0 × 10⁻⁶ 回/秒) × (1,188,000 秒) = 1.188 です。\n問題文のグラフのλtの横軸から F(t) を読み取ると、λt=1.188 のときの F(t) はおおよそ 0.3 となります。\n故障していない機器の台数は、全稼働台数 10,000台に非故障確率 F(t) を掛けて計算します。\n10,000台 × 0.3 ≈ 3,000台 です。\n\n選択肢アは正解ですが、他の選択肢がなぜ誤りかを検討します。\n選択肢イの 5,000台 は、非故障確率が 0.5 の場合であり、λt が 0.693 付近のときの値に相当します。今回の λt は 1.188 であり、故障率が高いため、故障していない機器の割合が 50% もあるとは考えにくいです。\n選択肢ウの 7,000台 は、非故障確率が 0.7 の場合ですが、λt = 1.188 という値からさらに非故障確率が高い 0.7 になることはありません。\n選択肢エの 9,000台 は、非故障確率が 0.9 の場合であり、λt が 0.1 付近のときの値に相当します。故障発生率が 10⁻⁶/秒と低くても、10,000台規模で 330時間も稼働させれば、故障する機器は相当数存在するため、9,000台も故障していないというのは現実的ではありません。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -543,7 +565,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     "category": "ITサービスマネジメント",
     "topicTags": [],
     "difficulty": 3,
-    "question": "図は、分散システムにおける2相コミットプロトコルの正常処理の流れを表している。③の動作はどれか。システム Aシステム Bシステム Cトランザクションの開始トランザクションのためのデータ転送トランザクション終了処理の開始②②③④4トランザクションの終了",
+    "question": "図は、分散システムにおける2相コミットプロトコルの正常処理の流れを表している。③の動作はどれか。",
     "choices": {
       "ア": "アンロック実行指示",
       "イ": "コミット可否問合せ",
@@ -551,7 +573,14 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
       "エ": "ログ取得指示"
     },
     "answer": "ウ",
-    "explanation": "2相コミットプロトコルは、分散システムにおいて、複数のノードで構成されるトランザクションを all-or-nothing（全て実行するか、全て実行しないか）の原則で一貫性を保つための仕組みです。このプロトコルは、コーディネーターと参加者の間で、コミット（確定）するかどうかの合意を2段階に分けて行います。\n\n正解のウ「コミット実行指示」が正しい根拠は、2相コミットプロトコルの後半フェーズ（フェーズ2）の動作にあります。フェーズ1で参加者がコミット可能であることをコーディネーターに通知した後、コーディネーターは全ての参加者からコミット可能の応答を得ると、参加者に対してトランザクションを実際にコミット（確定）させる指示を出します。問題文の「トランザクション終了処理の開始」という記述は、このフェーズ2の開始と合致しており、その具体的な動作がコミット実行指示となります。\n\nア「アンロック実行指示」は、トランザクションが正常に完了した後にリソースのロックを解除する指示であり、コミット実行指示とは異なります。イ「コミット可否問合せ」は、2相コミットプロトコルの前半フェーズ（フェーズ1）で行われる動作であり、参加者がコミットできるかどうかの確認をコーディネーターが参加者に行う段階です。エ「ログ取得指示」は、トランザクションの記録を保持するための指示ですが、2相コミットプロトコルの核心的なコミット決定プロセスにおける直接的な動作ではありません。",
+    "explanation": "調整役のAは、まず①でBとCにコミット可能かを問い合わせ、②で各参加システムの応答を受け取ります。正常時は全参加システムがコミット可能なので、Aは③でコミットを指示し、④で完了の応答を受け取ります。したがって③はコミット実行指示です。",
+    "choiceExplanations": {
+      "ア": "誤りです。各参加システムがロックを解放するのは、確定処理の一部です。③で調整役のAがBとCに送っているのは、確定処理を始める指示です。",
+      "イ": "誤りです。コミット可否を聞くのは、終了処理の開始直後にAからB、Cへ送る①です。③の時点では、Aは既に②で両方の応答を受け取っています。",
+      "ウ": "正しいです。Aは①への応答②を全参加システムから受け、コミット可能と判断した後、③でBとCに確定処理の実行を指示します。",
+      "エ": "誤りです。障害時の回復に備えたログの記録と、調整役が参加者に通知する決定を区別します。図の③はログを集める指示ではなく、コミットの通知です。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +605,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "この問題は、TCP/IPネットワークにおける通信経路とTCPコネクションの確立場所を問うものです。TCPコネクションは、通信を行う2つのエンドポイント間で論理的な接続を確立するために使用されます。\n\n正解はイです。クライアントがプロキシサーバを経由してWebサーバにアクセスする場合、まずクライアントはプロキシサーバに対してHTTPリクエストを送信し、この通信のためにクライアントとプロキシサーバの間にTCPコネクションが確立されます。プロキシサーバは、受け取ったリクエストを解釈し、Webサーバに転送します。この際、プロキシサーバはWebサーバとの間でTCPコネクションを新たに確立します。したがって、TCPコネクションが設定される場所は、クライアントとプロキシサーバの間、そしてプロキシサーバとWebサーバの間となります。\n\nアは、クライアントとWebサーバの間にTCPコネクションが直接設定されると誤解しています。プロキシサーバを経由するため、この直接的なコネクションは存在しません。\nウは、プロキシサーバとルータの間、ルータとWebサーバの間にTCPコネクションが設定されるとしていますが、TCPコネクションはエンドポイント間で確立されるものであり、ルータのようなネットワーク機器でコネクションが終端することはありません。\nエは、クライアントとルータの間、ルータとWebサーバの間にTCPコネクションが設定されるとしていますが、これもルータでコネクションが終端するという誤解に基づいています。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +630,7 @@ export const SM_QUESTIONS_2022_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "集団思考における「心の警備」とは、集団の意見や決定に反する情報や異論が内部に持ち込まれることを防ぎ、集団の合意を維持しようとする役割を指します。具体的には、集団外からの批判や内部での異議申し立てが集団の結束を乱すと考え、それを積極的に排除しようとする行動です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2022h04_1/2022h04h_sm_am2_qs.pdf",
     "license": "IPA-public"

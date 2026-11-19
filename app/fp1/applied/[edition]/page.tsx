@@ -1,3 +1,4 @@
+import { withCanonicalSocialMetadata } from "@/lib/seo/page-metadata";
 import { getFp1ExtensionQuestions, getFp1PublishedExtension } from "@/lib/fp1/published-extension";
 import type { Metadata } from "next";
 import Link from "next/link";
@@ -14,9 +15,9 @@ export async function generateMetadata({ params }: { params: Promise<{ edition: 
     const extension = getFp1PublishedExtension(edition);
     if (!extension) return { title: "問題が見つかりません", robots: { index: false } };
     const count = getFp1ExtensionQuestions(edition).length;
-    return { title: "FP1級 2026年9月 学科応用編の問題・模範解答", description: `2026年9月の学科応用編から公式原問${count}問を掲載。共通設例、公式模範解答、解説を確認できます。`, alternates: { canonical: `/fp1/applied/${edition}` } };
+    return withCanonicalSocialMetadata({ title: "FP1級 2026年9月 学科応用編の問題・模範解答", description: `2026年9月の学科応用編から公式原問${count}問を掲載。共通設例、公式模範解答、解説を確認できます。`, alternates: { canonical: `/fp1/applied/${edition}` } });
   }
-  return { title: `FP1級 ${data.label} 学科応用編の問題・模範解答`, description: `${data.label}の学科応用編問51〜問65（15原問・62回答欄）を掲載。共通設例、原問の表・図の注記、公式模範解答・独自解説・計算過程を確認できます。法令基準日は${data.lawReferenceDate}です。`, alternates: { canonical: `/fp1/applied/${edition}` } };
+  return withCanonicalSocialMetadata({ title: `FP1級 ${data.label} 学科応用編の問題・模範解答`, description: `${data.label}の学科応用編問51〜問65（15原問・62回答欄）を掲載。共通設例、原問の表・図の注記、公式模範解答・独自解説・計算過程を確認できます。法令基準日は${data.lawReferenceDate}です。`, alternates: { canonical: `/fp1/applied/${edition}` } });
 }
 
 export default async function Fp1AppliedEditionPage({ params }: { params: Promise<{ edition: string }> }) {

@@ -3,8 +3,9 @@ import type { Question } from "@/lib/questions/types";
 import { sessionLabel } from "@/lib/seo/question-jsonld";
 import { questionNumberLabel } from "@/lib/questions/display";
 import { isSelfReviewedDescriptiveQuestion } from "@/lib/questions/descriptive";
+import { practiceCategoryLabel } from "@/lib/questions/practice-session";
 
-const DESCRIPTION_MAX = 158;
+const DESCRIPTION_MAX = 110;
 
 /**
  * Soft ceiling for a source-first <title> (before layout appends
@@ -16,7 +17,7 @@ const DESCRIPTION_MAX = 158;
 const TITLE_MAX = 40;
 
 /** Call-to-action tail shared by every /q/* description. */
-const CTA = "正答と解説を確認できます。疑問はAIに質問できます。";
+const CTA = "正答と解説を無料で確認。疑問はAIに質問できます。";
 
 // These short medical stems are also searched verbatim. Keep their wording
 // intact, with the source paper and question number following it.
@@ -32,12 +33,13 @@ function medicalStemTitle(q: Question): string | null {
     || stem.length > 48 || !/どれか[。？?]?(?: ?[2２] ?つ選べ[。？?]?)?$/.test(stem)
     || /[<>\[\]{}$|]|https?:|[図表次下]の|次に|以下|別冊/.test(stem)) return null;
   const edition = questionSourceEdition(q).replace(/^(第\d+回)（[^）]+）$/, "$1");
-  const title = `${stem}｜${edition} ${questionSourceExam(q)} ${sessionLabel(q.session, q.exam)} 問${questionNumberLabel(q)} 解説`;
-  return title.length <= 70 ? title : null;
+  const title = `${stem}｜${edition} ${questionSourceExam(q)} ${sessionLabel(q.session, q.exam)} 問${questionNumberLabel(q)} 無料解説`;
+  // Keep every previously eligible stem title when adding the two-character 無料.
+  return title.length <= 72 ? title : null;
 }
 
 function truncate(s: string, n: number): string {
-  // Cap at exactly n chars *including* the ellipsis, so the 158-char budget
+  // Cap at exactly n chars *including* the ellipsis, so the description budget
   // is a hard ceiling rather than n+1.
   return s.length > n ? `${s.slice(0, n - 1)}…` : s;
 }
@@ -53,7 +55,9 @@ export function questionHeading(q: Question): string {
 }
 
 function supplementaryCategory(q: Question): string {
-  return (q.category === "午前" || q.category === "午後") && q.category === sessionLabel(q.session, q.exam) ? "" : q.category;
+  const category = practiceCategoryLabel(q.category, q.exam);
+  const canRepeatSession = q.exam === "gijutsushi1-kikai" || category === "午前" || category === "午後";
+  return canRepeatSession && category === sessionLabel(q.session, q.exam) ? "" : category;
 }
 
 /** Page <title> for a single question. */
@@ -61,10 +65,10 @@ export function questionTitle(q: Question): string {
   const stemTitle = medicalStemTitle(q);
   if (stemTitle) return stemTitle;
   const core = questionHeading(q);
-  const withCategory = [core, supplementaryCategory(q), "解説"].filter(Boolean).join(" ");
+  const withCategory = [core, supplementaryCategory(q), "無料解説"].filter(Boolean).join(" ");
   // Keep the category only while the whole title stays within budget; once it
   // would push the title past TITLE_MAX, drop it and fall back to the core.
-  return withCategory.length <= TITLE_MAX ? withCategory : `${core} 解説`;
+  return withCategory.length <= TITLE_MAX ? withCategory : `${core} 無料解説`;
 }
 
 /**
@@ -73,7 +77,7 @@ export function questionTitle(q: Question): string {
  * Phase 10 (review C-5): we no longer front-load "正解は{X}". Surfacing the
  * answer in the SERP snippet spoils the click. Lead with the searched stem,
  * then identify its source paper and the available explanation. The answer is
- * intentionally absent. Reserve the context and CTA within the 158-char cap.
+ * intentionally absent. Reserve the context and CTA within the description cap.
  */
 export function questionSnippet(q: Question): string {
   const examStr = questionSourceExam(q);
@@ -82,7 +86,7 @@ export function questionSnippet(q: Question): string {
   const category = supplementaryCategory(q);
   const context = `${examStr} ${ys} ${ss} 問${questionNumberLabel(q)}${category ? `・${category}` : ""}`;
   const cta = q.exam === "khk-reito-1" && isSelfReviewedDescriptiveQuestion(q)
-    ? "公式解答例と独自解説で、記述・作図を自己確認できます。"
+    ? "公式解答例と独自解説で、記述・作図を無料で自己確認できます。"
     : q.explanationCoverage === "official-summary" ? "公式正答と一般解説を確認し、無料で演習できます。" : CTA;
   // Very long source labels still leave room for the searched wording and CTA.
   const source = `【${truncate(context, DESCRIPTION_MAX - cta.length - 24)}】`;

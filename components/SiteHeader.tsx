@@ -15,7 +15,6 @@ import {
   Bookmark,
   ClipboardList,
   CalendarRange,
-  Sparkles,
   HelpCircle,
   FileText,
   BookOpen,
@@ -81,10 +80,10 @@ function SiteHeaderContent({ search }: { search: Pick<URLSearchParams, "get"> | 
     ...(exam === "shika-ishi" ? [] : [{ href: learningHref("stream"), label: "ストリームモード" }]),
     { href: learningHref("review"), label: "復習モード" },
     { href: learningHref("weakness"), label: "弱点克服" },
-    ...(isMockExamCode(exam) ? [{ href: "/essay", label: "IPA 午後論述AI採点" }] : []),
+    ...(isMockExamCode(exam) ? [{ href: "/essay", label: "IPA 論文対策" }] : []),
   ] : [
     { href: "/#choose-qualification", label: "資格を選んで問題を解く" },
-    { href: "/essay", label: "IPA 午後論述AI採点" },
+    { href: "/essay", label: "IPA 論文対策" },
   ];
   const showMockExam = !exam || isMockExamCode(exam);
   const mockHref = exam
@@ -113,6 +112,7 @@ function SiteHeaderContent({ search }: { search: Pick<URLSearchParams, "get"> | 
     <header
       className={cn(
         "sticky top-0 z-40 w-full transition-all duration-150",
+        pathname === "/me" && "hidden md:block",
         scrolled
           ? "surface-glass border-b border-border"
           : "border-b border-transparent",
@@ -297,10 +297,6 @@ function SiteHeaderContent({ search }: { search: Pick<URLSearchParams, "get"> | 
                       href={m.href}
                       className="flex min-h-[44px] items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
                     >
-                      <Sparkles
-                        className="h-4 w-4 text-muted-foreground"
-                        aria-hidden="true"
-                      />
                       {m.label}
                     </Link>
                   </SheetClose>
@@ -393,10 +389,6 @@ function SiteHeaderContent({ search }: { search: Pick<URLSearchParams, "get"> | 
                     href="/features"
                     className="flex min-h-[44px] items-center gap-3 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
                   >
-                    <Sparkles
-                      className="h-4 w-4 text-muted-foreground"
-                      aria-hidden="true"
-                    />
                     機能特集
                   </Link>
                 </SheetClose>

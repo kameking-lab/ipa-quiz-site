@@ -1,5 +1,15 @@
 @import "tailwindcss";
 
+@font-face {
+  font-family: "Noto Serif JP Display";
+  src: url("/fonts/noto-serif-jp-display.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 600 700;
+  font-display: swap;
+  unicode-range: U+25, U+2C, U+2E, U+30-39, U+2014, U+3001-3002, U+3059-305A,
+    U+3064-3069, U+3072-3073, U+307E, U+3082, U+3099, U+4ECA, U+554F, U+65E5, U+8A66, U+9A13;
+}
+
 /* Chihuahua reward: one intact mascot, decoration-only transforms, no limb layers. */
 .study-reward { margin:16px 0; overflow:hidden; border:1px solid #dddcca; border-radius:22px; background:#fffdf5; color:#304c3d; font-family:inherit; width:100%; max-width:640px; }
 .reward-top { padding:16px 18px 0; display:flex; justify-content:space-between; gap:12px; align-items:center; }
@@ -95,6 +105,17 @@
   --color-success-foreground: var(--success-foreground);
   --color-warning: var(--warning);
   --color-warning-foreground: var(--warning-foreground);
+  --color-warning-soft: var(--warning-soft);
+  --color-warning-soft-foreground: var(--warning-soft-foreground);
+  --color-success-soft: var(--success-soft);
+  --color-success-soft-foreground: var(--success-soft-foreground);
+  --color-progress-track: var(--progress-track);
+  --color-activity-1: var(--activity-1);
+  --color-activity-2: var(--activity-2);
+  --color-activity-3: var(--activity-3);
+  --color-activity-4: var(--activity-4);
+  --color-room-wall: var(--room-wall);
+  --color-room-floor: var(--room-floor);
 
   /* Borders */
   --color-border: var(--border);
@@ -105,7 +126,7 @@
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 2px);
   --radius-2xl: calc(var(--radius) + 8px);
 
   /* Shadows (4 tiers) */
@@ -128,33 +149,35 @@
   --animate-shimmer: shimmer 2s linear infinite;
 }
 
+@theme {
+  --font-display: "Noto Serif JP Display", "Noto Serif JP", "Yu Mincho", "Hiragino Mincho ProN", serif;
+}
+
 /* ---------------------------------------------------------------------------
    Light theme
    --------------------------------------------------------------------------- */
 :root {
-  --background: #ffffff;
-  --foreground: #09090b;
+  --background: #f4eee2;
+  --foreground: #1f2421;
 
-  --card: #ffffff;
-  --card-foreground: #09090b;
-  --popover: #ffffff;
-  --popover-foreground: #09090b;
+  --card: #fffcf6;
+  --card-foreground: var(--foreground);
+  --popover: var(--card);
+  --popover-foreground: var(--foreground);
 
-  --muted: #f4f4f5;
-  /* zinc-600 — 7.2:1 against white (WCAG AAA for normal text) */
-  --muted-foreground: #52525b;
-  --accent: #f4f4f5;
-  --accent-foreground: #18181b;
+  --muted: #ede4d3;
+  --muted-foreground: #5b5f59;
+  --accent: #e8e1d3;
+  --accent-foreground: var(--foreground);
 
-  /* Primary — indigo-600 */
-  --primary: #4f46e5;
+  --primary: #2f4a3a;
   --primary-foreground: #ffffff;
-  --primary-hover: #4338ca;
-  --primary-soft: #eef2ff;
-  --primary-soft-foreground: #3730a3;
+  --primary-hover: #1e3327;
+  --primary-soft: #edf3eb;
+  --primary-soft-foreground: var(--primary);
 
-  --secondary: #f4f4f5;
-  --secondary-foreground: #18181b;
+  --secondary: var(--muted);
+  --secondary-foreground: var(--foreground);
 
   --destructive: #dc2626;
   --destructive-foreground: #ffffff;
@@ -162,12 +185,23 @@
   --success-foreground: #ffffff;
   --warning: #d97706;
   --warning-foreground: #ffffff;
+  --warning-soft: #fcebd9;
+  --warning-soft-foreground: #8a4108;
+  --success-soft: #ddeee3;
+  --success-soft-foreground: #1c5434;
+  --progress-track: #ede4d3;
+  --activity-1: #d6e6d8;
+  --activity-2: #aac9ae;
+  --activity-3: #659772;
+  --activity-4: #2f6244;
+  --room-wall: #efe3cf;
+  --room-floor: #d9c3a0;
 
-  --border: #e4e4e7;
-  --input: #e4e4e7;
-  --ring: #6366f1;
+  --border: #e4daca;
+  --input: #a59e8c;
+  --ring: #54735d;
 
-  --radius: 0.75rem;
+  --radius: 0.875rem;
 
   /* Legacy aliases (kept so older components keep working until migrated) */
   --brand-primary: var(--primary);
@@ -181,29 +215,20 @@
    Dark theme
    --------------------------------------------------------------------------- */
 .dark {
-  --background: #09090b;
-  --foreground: #fafafa;
+  --background: #1e211b;
+  --foreground: #f6efe1;
 
-  --card: #111114;
-  --card-foreground: #fafafa;
-  --popover: #111114;
-  --popover-foreground: #fafafa;
+  --card: #292c24;
 
-  --muted: #1c1c20;
-  /* zinc-300 — 8.5:1 against #09090b (WCAG AAA for normal text) */
-  --muted-foreground: #d4d4d8;
-  --accent: #1c1c20;
-  --accent-foreground: #fafafa;
+  --muted: #34362c;
+  --muted-foreground: #c3c5b6;
+  --accent: #3a3c30;
 
-  /* Primary — brighter indigo for dark bg */
-  --primary: #818cf8;
-  --primary-foreground: #1e1b4b;
-  --primary-hover: #a5b4fc;
-  --primary-soft: rgba(129, 140, 248, 0.16);
-  --primary-soft-foreground: #c7d2fe;
+  --primary: #a8c7ab;
+  --primary-foreground: #172c20;
+  --primary-hover: #c3dac1;
+  --primary-soft: #303f33;
 
-  --secondary: #1c1c20;
-  --secondary-foreground: #fafafa;
 
   --destructive: #f87171;
   --destructive-foreground: #1a0a0a;
@@ -211,10 +236,21 @@
   --success-foreground: #052e2b;
   --warning: #fbbf24;
   --warning-foreground: #422006;
+  --warning-soft: #513720;
+  --warning-soft-foreground: #f7c999;
+  --success-soft: #263f30;
+  --success-soft-foreground: #bde3c5;
+  --progress-track: #484839;
+  --activity-1: #364a38;
+  --activity-2: #4f6951;
+  --activity-3: #76967a;
+  --activity-4: #a8c7ab;
+  --room-wall: #39352a;
+  --room-floor: #4a4131;
 
-  --border: #27272a;
-  --input: #27272a;
-  --ring: #818cf8;
+  --border: #49473a;
+  --input: #767461;
+  --ring: #a8c7ab;
 }
 
 /* ---------------------------------------------------------------------------
@@ -366,21 +402,19 @@ button,
   padding-bottom: max(env(safe-area-inset-bottom), 0.5rem);
 }
 
-/* MobileBottomNav is fixed, so reserve its measured box in the root content
-   flow. The tabs are min-h-[48px], plus the top border and safe-area padding;
-   the extra 0.5rem keeps the final card/CTA visibly separate from the bar. */
+/* Reserve the fixed tab bar and the device safe area in the content flow. */
 .mobile-bottom-nav {
   box-sizing: border-box;
-  height: calc(3rem + 1px + max(env(safe-area-inset-bottom), 0.5rem));
+  padding-bottom: var(--safe-bottom);
 }
 
 .mobile-bottom-nav-reserve {
-  padding-bottom: calc(3rem + 1px + max(env(safe-area-inset-bottom), 0.5rem) + 0.5rem);
+  padding-bottom: calc(var(--mobile-tab-height) + 1px + var(--safe-bottom) + 0.5rem);
 }
 
 /* The footer is outside #main-content, so reserve the fixed nav there too. */
 .mobile-bottom-nav-footer-reserve {
-  padding-bottom: calc(2rem + 3rem + 1px + max(env(safe-area-inset-bottom), 0.5rem) + 0.5rem);
+  padding-bottom: calc(2.5rem + var(--mobile-tab-height) + 1px + var(--safe-bottom));
 }
 
 @media (min-width: 45rem) {
@@ -397,17 +431,9 @@ button,
   bottom: max(env(safe-area-inset-bottom), 1rem);
 }
 
-/* Floating buttons (e.g. mobile AI 'AIに聞く' pill) that need to clear the
-   fixed MobileBottomNav. The nav box is min-h-[48px] + py = 62px + a
-   pb-safe padding of max(env(safe-area-inset-bottom), 0.5rem). To
-   guarantee a ≥56px tap-safe gap above the nav (UX review v2 follow-up
-   to PR #353 which left only ~10-15px), the button bottom needs to
-   land at nav_height + 56 = 62 + max(safe-inset, 0.5rem) + 56 = 118
-   + max(safe-inset, 0.5rem). md+ falls back to the standard safe-inset
-   since the bottom nav is hidden there. Keep in sync with --breakpoint-md
-   above. */
+/* Leave a 56px tap-safe gap above the fixed tab bar for floating controls. */
 .bottom-above-tabbar {
-  bottom: calc(max(env(safe-area-inset-bottom), 0.5rem) + 118px);
+  bottom: calc(var(--safe-bottom) + var(--mobile-tab-height) + 57px);
 }
 @media (min-width: 45rem) {
   .bottom-above-tabbar {
@@ -619,6 +645,7 @@ button,
    <html>, QualificationBridgeViewController), so the band never depends on
    env() alone. Tests emulate a notch through the same variables. */
 :root {
+  --mobile-tab-height: 4rem;
   --safe-top: max(env(safe-area-inset-top, 0px), var(--native-safe-top, 0px));
   --safe-bottom: max(env(safe-area-inset-bottom, 0px), var(--native-safe-bottom, 0px));
   --safe-left: env(safe-area-inset-left, 0px);
@@ -647,9 +674,6 @@ html.native-app .native-app-hidden { display: none; }
 html.native-app .sticky.top-0 { top: var(--safe-top); }
 /* Bottom bars use the same measured inset (env() alone may report 0 in the app). */
 html.native-app .pb-safe { padding-bottom: max(var(--safe-bottom), 0.5rem); }
-html.native-app .mobile-bottom-nav { height: calc(3rem + 1px + max(var(--safe-bottom), 0.5rem)); }
-html.native-app .mobile-bottom-nav-reserve { padding-bottom: calc(3rem + 1px + max(var(--safe-bottom), 0.5rem) + 0.5rem); }
-html.native-app .mobile-bottom-nav-footer-reserve { padding-bottom: calc(2rem + 3rem + 1px + max(var(--safe-bottom), 0.5rem) + 0.5rem); }
 @media (min-width: 45rem) {
   html.native-app .mobile-bottom-nav-reserve { padding-bottom: var(--safe-bottom); }
   html.native-app .mobile-bottom-nav-footer-reserve { padding-bottom: max(var(--safe-bottom), 2rem); }

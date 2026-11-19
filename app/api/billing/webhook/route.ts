@@ -5,6 +5,7 @@ import { StripeCheckoutProvider } from "@/lib/billing/stripe";
 import { billingWebhookConfig } from "@/lib/billing/config";
 import { monthlyConfig, monthlySelected } from "@/lib/billing/subscription/config";
 import { recordFunnel, readOrderAttribution } from "@/lib/billing/funnel";
+import { readConversionChannel, recordConversion } from "@/lib/billing/conversion";
 export const runtime = "nodejs";
 export async function POST(request: Request) {
   try {
@@ -27,6 +28,14 @@ export async function POST(request: Request) {
         if (attribution) await recordFunnel("checkout_completed", `session:${session}`, Date.now(), attribution);
         else await recordFunnel("checkout_completed", `session:${session}`);
       }
+      const paymentSession = completedSubscriptionSession(event, true);
+      const paidObject = (event as { data?: { object?: { payment_status?: unknown; client_reference_id?: unknown } } }).data?.object;
+      if (paymentSession && result !== "ignored" && paidObject?.payment_status === "paid") {
+        const channel = typeof paidObject.client_reference_id === "string" ? await readConversionChannel(paidObject.client_reference_id) : "unknown";
+        const created = (event as { created?: unknown }).created;
+        const occurred = typeof created === "number" && Number.isSafeInteger(created) && created > 0 ? created * 1000 : Date.now();
+        await recordConversion("payment_completed", channel, paymentSession, occurred);
+      }
       return json({ received: true, result });
     }
     const { service, provider } = billingWebhookRuntime();
@@ -39,10 +48,10 @@ export async function POST(request: Request) {
 }
 
 /** The verified event's Checkout session ID when it completed a subscription purchase. */
-function completedSubscriptionSession(event: unknown): string | null {
+function completedSubscriptionSession(event: unknown, includeAsync = false): string | null {
   if (!event || typeof event !== "object") return null;
   const e = event as { type?: unknown; data?: { object?: { id?: unknown; mode?: unknown; status?: unknown } } };
   const object = e.data?.object;
-  return e.type === "checkout.session.completed" && object?.mode === "subscription" && object.status === "complete"
+  return (e.type === "checkout.session.completed" || includeAsync && e.type === "checkout.session.async_payment_succeeded") && object?.mode === "subscription" && object.status === "complete"
     && typeof object.id === "string" ? object.id : null;
 }

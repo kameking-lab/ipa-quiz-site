@@ -246,7 +246,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
   ) : <BlogPractice key={practice.question.id} {...practice} slug={slug} explanation={<Markdown>{practice.question.explanation}</Markdown>} />);
 
   return (
-    <main className="mx-auto w-full max-w-3xl px-4 py-6 sm:py-10">
+    <main className="mx-auto w-full max-w-2xl px-4 py-6 sm:py-10">
       <ViewTracker event="blog_viewed" props={{ slug, exam: post.exam ?? null }} />
       <BlogScrollTracker slug={slug} exam={post.exam} />
       <JsonLd data={jsonLd} />
@@ -256,13 +256,13 @@ export default async function BlogArticlePage({ params }: PageProps) {
       >
         <ol className="flex flex-wrap items-center gap-1.5">
           <li>
-            <Link href="/" className="hover:underline">
+            <Link href="/" className="inline-flex min-h-11 min-w-11 items-center hover:underline">
               ホーム
             </Link>
           </li>
           <li aria-hidden="true">/</li>
           <li>
-            <Link href="/blog" className="hover:underline">
+            <Link href="/blog" className="inline-flex min-h-11 min-w-11 items-center hover:underline">
               ブログ
             </Link>
           </li>
@@ -281,7 +281,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
           {post.exam ? (
             <Link
               href={`/${post.exam}`}
-              className="rounded-full bg-sky-100 px-2 py-0.5 font-semibold text-sky-700 hover:bg-sky-200 dark:bg-sky-950 dark:text-sky-300 dark:hover:bg-sky-900"
+              className="inline-flex min-h-11 items-center rounded-lg bg-sky-100 px-2 py-1 font-semibold text-sky-700 hover:bg-sky-200 dark:bg-sky-950 dark:text-sky-300 dark:hover:bg-sky-900"
             >
               {examLabel(post.exam)}
             </Link>
@@ -295,7 +295,7 @@ export default async function BlogArticlePage({ params }: PageProps) {
             </span>
           ))}
         </div>
-        <h1 className="text-2xl font-bold tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-3xl">
+        <h1 className="text-2xl font-bold leading-snug tracking-tight text-zinc-900 dark:text-zinc-50 sm:text-3xl">
           {post.title}
         </h1>
         {practice && <nav aria-label="記事と演習" className="mt-3 flex flex-wrap gap-x-4 text-sm"><a href="#article-practice" className="inline-flex min-h-11 items-center rounded-xl bg-primary px-4 font-semibold text-primary-foreground">{post.practicePlacement === "after-body" ? "本文のあとに1問解く" : "まず1問解く"}</a><a href="#article-body" className="inline-flex min-h-11 items-center underline">本文から読む</a></nav>}
@@ -303,12 +303,12 @@ export default async function BlogArticlePage({ params }: PageProps) {
           {post.description}
         </p>
         {(dates.published || dates.modified) && (
-          <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-500">
+          <p className="mt-3 text-xs text-zinc-500 dark:text-zinc-400">
             {dates.published && <>公開: <time dateTime={dates.published}>{dates.published.slice(0, 10)}</time></>}
             {dates.modified && <>{dates.published ? " / " : ""}本文編集: <time dateTime={dates.modified}>{dates.modified.slice(0, 10)}</time></>}
           </p>
         )}
-        {post.sourceUrls && <ul className="mt-3 space-y-1 text-xs">{post.sourceUrls.map((url, i) => <li key={url}><a href={url} className="underline" target="_blank" rel="noopener noreferrer">参照資料 {i + 1}</a></li>)}</ul>}
+        {post.sourceUrls && <ul className="mt-3 flex flex-wrap gap-x-4 text-xs">{post.sourceUrls.map((url, i) => <li key={url}><a href={url} className="inline-flex min-h-11 items-center underline underline-offset-4" target="_blank" rel="noopener noreferrer">参照資料 {i + 1}</a></li>)}</ul>}
       </header>
 
       {post.practicePlacement !== "after-body" && practiceSection}
@@ -331,10 +331,10 @@ export default async function BlogArticlePage({ params }: PageProps) {
           <div className="flex flex-wrap items-center gap-2">
             <Link
               href={post.practicePlacement === "none" ? `/${post.exam}` : `/quiz?mode=random&exam=${post.exam}`}
-              aria-label={post.practicePlacement === "none" ? `${examLabel(post.exam)}の受験区分・科目を選ぶ` : `この試験を演習する（${examLabel(post.exam)}・${getExamQuestionCount(post.exam)}問）`}
+              aria-label={post.practicePlacement === "none" ? `${examLabel(post.exam)}の受験区分・科目を選ぶ` : `この資格の過去問を解く（全${getExamQuestionCount(post.exam).toLocaleString("ja-JP")}問・無料）・${examLabel(post.exam)}`}
               className="inline-flex min-h-[48px] items-center gap-1.5 rounded-full bg-sky-600 px-5 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-sky-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-sky-500 focus-visible:ring-offset-2 focus-visible:ring-offset-background"
             >
-              {post.practicePlacement === "none" ? "受験区分・科目を選ぶ" : <>この試験を演習する（{getExamQuestionCount(post.exam).toLocaleString("ja-JP")}問）</>}→
+              {post.practicePlacement === "none" ? "受験区分・科目を選ぶ" : <>この資格の過去問を解く（全{getExamQuestionCount(post.exam).toLocaleString("ja-JP")}問・無料）</>}→
             </Link>
             <span className="inline-flex items-center gap-1 rounded-full bg-emerald-100 px-2.5 py-1 text-[11px] font-medium text-emerald-800 dark:bg-emerald-950/50 dark:text-emerald-300">
               <span aria-hidden="true">✓</span>問題・解説の閲覧は無料

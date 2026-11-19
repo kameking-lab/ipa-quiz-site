@@ -1,0 +1,192 @@
+import { expect, test, type Page } from "@playwright/test";
+import { createPacePlan, type PacePlan } from "../../lib/study-plan/pace";
+import { LS_KEYS } from "../../lib/storage/keys";
+
+const today = "2026-11-17";
+const catalog = Array.from({ length: 200 }, (_, i) => ({ id: `ip-2026h-am-q${i + 1}`, exam: "ip", year: 2026,
+  season: "spring", session: "am", qNumber: i + 1 }));
+const makePlan = () => createPacePlan({ id: "edge-plan", exam: "ip", sessionId: null,
+  startDate: "2026-11-07", examDate: "2026-11-27" }, catalog, "2026-11-07T12:00:00+09:00");
+
+async function setup(page: Page, plan?: PacePlan, count = 0) {
+  await page.clock.setFixedTime(new Date(`${today}T12:00:00+09:00`));
+  await page.route("https://**", r => r.abort());
+  await page.route("**/api/billing/status", r => r.fulfill({ json: { entitled: false } }));
+  await page.route("**/api/study-plan/catalog/ip", r => r.fulfill({ json: { questions: catalog } }));
+  await page.addInitScript(({ keys, plan, catalog, count }) => {
+    localStorage.setItem(keys.onboarded, "1");
+    if (plan) localStorage.setItem(keys.pacePlans, JSON.stringify([plan]));
+    localStorage.setItem(keys.history, JSON.stringify({ entries: catalog.slice(0, count).map(q => ({
+      id: q.id, correct: true, selected: "ア", at: Date.parse("2026-11-16T12:00:00+09:00"),
+    })), starredIds: [] }));
+  }, { keys: LS_KEYS, plan, catalog, count });
+}
+
+test.use({ viewport: { width: 390, height: 844 }, isMobile: true, hasTouch: true, serviceWorkers: "block" });
+
+test("a saved plan without an appointment shows no invented target or paid nudge", async ({ page }) => {
+  await setup(page, { ...makePlan(), examDate: null });
+  await page.goto("/");
+  await expect(page.getByRole("img", { name: "進み具合0%、受験日未設定" })).toBeVisible();
+  await expect(page.locator("main svg path.fill-amber-400")).toHaveCount(0);
+  await expect(page.getByText("日程未設定", { exact: true })).toBeVisible();
+  await expect(page.getByRole("link", { name: /回数無制限で追いつけます/ })).toHaveCount(0);
+});
+
+for (const [result, label] of [["failed", "不合格"], ["absent", "受けなかった"]] as const) {
+  test(`a past exam records ${result} and offers the next plan`, async ({ page }) => {
+    await setup(page, { ...makePlan(), examDate: "2026-11-16" });
+    await page.goto("/");
+    await page.getByRole("button", { name: label, exact: true }).click();
+    await expect(page.getByRole("heading", { name: "次の一歩を、いっしょに。" })).toBeVisible();
+    await expect(page.getByRole("button", { name: "学習計画を作成", exact: true })).toBeVisible();
+    expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!)[0].result, LS_KEYS.pacePlans)).toBe(result);
+    await expect(page.getByRole("link", { name: /今日の問題を解く/ })).toHaveCount(0);
+  });
+}
+
+for (const [percent, target] of [[0, 0], [50, 50], [100, 100]] as const) {
+  test(`track at ${percent}% keeps the flag and dog visible at coincident positions`, async ({ page }) => {
+    const plan = makePlan();
+    if (target === 0) plan.startDate = today;
+    if (target === 100) plan.examDate = today;
+    await setup(page, plan, percent * 2);
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await page.goto("/");
+    const track = page.getByRole("img", { name: `進み具合${percent}%、今日の目標${target}%` });
+    await expect(track).toBeVisible();
+    const geometry = await track.evaluate(el => {
+      const image = el.querySelector("image")!, flag = el.querySelector("path")!;
+      const imageBox = image.getBoundingClientRect(), flagBox = flag.getBoundingClientRect(), box = el.getBoundingClientRect();
+      return { dogCenter: Number(image.getAttribute("x")) + Number(image.getAttribute("width")) / 2,
+        flagX: Number(flag.getAttribute("d")!.match(/^M([\d.]+)/)![1]),
+        inside: imageBox.left >= box.left && imageBox.right <= box.right && flagBox.right <= box.right,
+        separate: flagBox.bottom < imageBox.top, animation: getComputedStyle(image.parentElement!).animationName };
+    });
+    expect(geometry.dogCenter).toBeCloseTo(30 + percent * 2.6);
+    expect(geometry.flagX).toBeCloseTo(30 + target * 2.6);
+    expect(geometry.inside).toBe(true);
+    expect(geometry.separate).toBe(true);
+    expect(geometry.animation).toBe("none");
+    await page.emulateMedia({ reducedMotion: "no-preference" });
+    await expect.poll(() => track.evaluate(el => document.getAnimations().some(animation =>
+      (animation.effect as KeyframeEffect | null)?.target === el.querySelector("image")!.parentElement))).toBe(true);
+    expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);
+  });
+}
+
+test("idle refresh does not change mastery or learning points, failed confirmation lowers mastery", async ({ page }) => {
+  await setup(page, makePlan(), 100);
+  await page.clock.install({ time: new Date(`${today}T12:00:00+09:00`) });
+  await page.goto("/");
+  await expect(page.getByRole("img", { name: "進み具合50%、今日の目標50%" })).toBeVisible();
+  const before = await page.evaluate(key => localStorage.getItem(key), LS_KEYS.learningPoints);
+  await page.clock.fastForward("01:00:00");
+  await expect(page.getByRole("img", { name: "進み具合50%、今日の目標50%" })).toBeVisible();
+  expect(await page.evaluate(key => localStorage.getItem(key), LS_KEYS.learningPoints)).toBe(before);
+  await page.evaluate(({ key, id }) => {
+    const state = JSON.parse(localStorage.getItem(key)!);
+    state.entries.push({ id, correct: false, at: Date.now() });
+    localStorage.setItem(key, JSON.stringify(state));
+    window.dispatchEvent(new Event("study-plan:changed"));
+  }, { key: LS_KEYS.history, id: catalog[0].id });
+  await expect(page.getByRole("img", { name: /進み具合50%/ })).toBeVisible(); // 49.5%, rounded for display
+  await expect.poll(async () => Number(await page.locator('svg line.stroke-emerald-500').getAttribute("x2"))).toBeCloseTo(158.7);
+});
+
+for (const source of ["failure", "manual", "fallback", "ondemand", "past-only"] as const) {
+  test(`create plan with ${source} schedule keeps manual/appointment fallback usable`, async ({ page }) => {
+    await setup(page);
+    await page.route("**/api/exam-schedule/ip", r => source === "failure" ? r.fulfill({ status: 503, json: {} }) : r.fulfill({ json: {
+      exam: "ip", source: source === "fallback" ? "fallback" : source === "manual" ? "manual" : "tsugino",
+      sessions: source === "manual" ? [] : [{ id: "session", label: source === "ondemand" ? "随時受験" : "次回",
+        scheduleStatus: source === "ondemand" ? "ondemand" : "official", examDate: source === "fallback" ? "2026-12-20" : source === "past-only" ? "2026-11-16" : null,
+        applicationStart: null, applicationDeadline: null, examDateEnd: null, resultDate: null,
+        sourceUrl: "https://www.ipa.go.jp/shiken/", examPhaseWindows: [] }],
+    } }));
+    await page.goto("/study-plan");
+    const save = page.getByRole("button", { name: "この回で作成" });
+    await expect(page.getByRole("dialog")).toBeVisible();
+    await page.getByRole("combobox", { name: "受ける資格" }).selectOption("ip");
+    if (source === "failure") await expect(page.getByText(/日程を取得できませんでした/)).toBeVisible();
+    if (source !== "fallback") {
+      await expect(save).toBeDisabled();
+      await page.getByLabel(source === "ondemand" ? "予約した日・受けたい日" : "受験日", { exact: true }).fill("2026-12-20");
+    }
+    await expect(save).toBeEnabled();
+    await save.click();
+    await expect(page.getByRole("link", { name: /今日の問題を解く/ })).toBeVisible();
+    await expect(page.getByRole("button", { name: /申込締切/ })).toHaveCount(0);
+    expect(await page.evaluate(key => JSON.parse(localStorage.getItem(key)!)[0].examDate, LS_KEYS.pacePlans)).toBe("2026-12-20");
+  });
+}
+
+test("iOS WebView safe areas keep the create sheet and date field usable", async ({ page }) => {
+  await setup(page);
+  await page.addInitScript(() => {
+    document.addEventListener("DOMContentLoaded", () => {
+      document.documentElement.classList.add("native-app");
+      document.documentElement.style.setProperty("--native-safe-top", "59px");
+      document.documentElement.style.setProperty("--native-safe-bottom", "34px");
+    });
+  });
+  await page.route("**/api/exam-schedule/ip", r => r.fulfill({ json: { exam: "ip", source: "manual", sessions: [] } }));
+  await page.goto("/study-plan");
+  await page.getByRole("combobox", { name: "受ける資格" }).selectOption("ip");
+  const input = page.getByLabel("受験日", { exact: true });
+  await expect(input).toBeVisible();
+  await input.fill("2026-12-20");
+  expect(await input.evaluate(el => Number.parseFloat(getComputedStyle(el).fontSize))).toBeGreaterThanOrEqual(16);
+  const dialog = page.getByRole("dialog");
+  expect(await dialog.evaluate(el => Number.parseFloat(getComputedStyle(el).paddingBottom))).toBeGreaterThanOrEqual(34);
+  const save = page.getByRole("button", { name: "この回で作成" });
+  await save.scrollIntoViewIfNeeded();
+  const box = (await save.boundingBox())!;
+  expect(box.y + box.height).toBeLessThanOrEqual(844 - 34);
+  expect((await dialog.boundingBox())!.y).toBeGreaterThanOrEqual(59);
+  await save.click();
+  await expect(page.getByRole("link", { name: /今日の問題を解く/ })).toBeVisible();
+});
+
+for (const native of [false, true]) {
+  test(`today's eleventh question preserves the existing ${native ? "App Store" : "web"} monthly offer`, async ({ page }) => {
+    await setup(page, { ...makePlan(), examDate: "2026-11-20" });
+    await page.addInitScript(({ historyKey, native }) => {
+      localStorage.setItem(historyKey, JSON.stringify({ entries: Array.from({ length: 10 }, (_, i) => ({
+        id: `ap-other-${i}`, correct: false, at: Date.now() - i * 1000,
+      })), starredIds: [] }));
+      if (native) document.addEventListener("DOMContentLoaded", () => document.documentElement.classList.add("native-app"));
+    }, { historyKey: LS_KEYS.history, native });
+    await page.route("**/quiz/today?**", async route => {
+      if (route.request().resourceType() !== "document") return route.continue();
+      const response = await route.fetch(), html = await response.text();
+      const marker = 'billingGateEnabled\\":false';
+      expect(html).toContain(marker);
+      await route.fulfill({ response, body: html.replaceAll(marker, marker.replace("false", "true")) });
+    });
+    let grants = 0;
+    let restored = false;
+    await page.route("**/api/billing/question", r => {
+      grants++;
+      const access = { kind: restored ? "pass" : "guest", remaining: restored ? null : 0, freeDaily: 10,
+        resetAt: "2026-11-18T00:00:00+09:00", retryAfter: null };
+      if (!restored) return r.fulfill({ status: 429, json: { error: "daily_limit", access } });
+      const { id } = r.request().postDataJSON() as { id: string };
+      return r.fulfill({ json: { access, question: { id, exam: "ip", year: 2026,
+        season: "spring", session: "am", qNumber: 1, type: "multiple-choice", difficulty: 1, category: "テクノロジ系",
+        topicTags: [], question: "復元後の確認問題", choices: { ア: "選択肢A", イ: "選択肢B", ウ: "選択肢C", エ: "選択肢D" },
+        answer: "ア", explanation: "動作確認用の解説", sourcePdfUrl: "https://www.ipa.go.jp/shiken/", license: "IPA-public" } } });
+    });
+    await page.goto("/quiz/today?plan=edge-plan");
+    await expect(page.getByRole("heading", { name: "今日の無料10問はここまで" })).toBeVisible();
+    await expect(page.getByRole("link", { name: "月額プランに申し込む", exact: true })).toHaveAttribute("href", /returnTo=/);
+    await expect(page.getByRole("radio")).toHaveCount(0);
+    expect(grants).toBeGreaterThan(0);
+    await expect(page.getByText("月額プランは演習回数無制限。", { exact: true })).toBeVisible();
+    await expect(page.getByText(/初回7日間無料/)).toBeVisible({ visible: !native });
+    restored = true;
+    await page.evaluate(() => window.dispatchEvent(new Event("mobile:entitlement-changed")));
+    await expect(page.getByRole("radio").first()).toBeVisible();
+    await expect(page.getByRole("heading", { name: "今日の無料10問はここまで" })).toHaveCount(0);
+  });
+}

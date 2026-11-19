@@ -16,7 +16,7 @@ import dynamic from "next/dynamic";
 import { isAcceptedAnswer, formatAcceptedAnswers, CHOICE_SHORTCUTS, getChoiceKeys, isCompleteSelectionCorrect, formatSelection, selectionInstruction } from "@/lib/questions/answers";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { ArrowRight, BookOpenCheck, Eye, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpenCheck, Eye, MessageCircle } from "lucide-react";
 
 import { ChoiceButton } from "./ChoiceButton";
 import { NumericAnswerInput } from "./NumericAnswerInput";
@@ -131,7 +131,7 @@ function ScoredQuestionAnswerCard({
     setOrderedSelected(undefined);
     setRevealed(false);
     setCopilotRequest(null);
-  }, [questionId]);
+  }, [question, questionId]);
 
   const keys = React.useMemo(
     () => getChoiceKeys(choices),
@@ -356,7 +356,7 @@ function ScoredQuestionAnswerCard({
                 onClick={() => setCopilotRequest((value) => ({ questionId, sequence: (value?.sequence ?? 0) + 1, prompt: answered && !isCorrect ? "私が選んだ答えがなぜ違うのか、正解との違いをこの問題に沿って説明してください。" : undefined }))}
                 className="inline-flex min-h-[44px] items-center gap-1.5 rounded-full border border-primary/40 bg-card px-4 py-2 text-sm font-semibold text-primary transition hover:bg-primary-soft"
               >
-                <Sparkles className="h-4 w-4" aria-hidden="true" />
+                <MessageCircle className="h-4 w-4" aria-hidden="true" />
                 {answered && !isCorrect ? "誤答をAIに質問" : "この問題をAIに質問"}
               </button>
             )}

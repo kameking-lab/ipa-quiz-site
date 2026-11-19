@@ -24,11 +24,10 @@ export function HomeFoundationKamokuB() {
               基本情報は科目Bで差がつく
             </p>
             <h2 className="mt-0.5 text-lg font-bold text-zinc-900 dark:text-zinc-50">
-              科目B（アルゴリズム・擬似言語）を AI と攻略
+              科目B（アルゴリズム・擬似言語）の練習
             </h2>
             <p className="mt-1.5 text-sm leading-relaxed text-zinc-600 dark:text-zinc-400">
               擬似言語が読めない・トレースで詰まるなら、読み方の型から体系的に整理。
-              AI コパイロットに「1 行ずつトレースして」と聞きながら解けます。
               基本情報は CBT で通年受験できるので、今日から始められます。
             </p>
             <span className="mt-2.5 inline-flex items-center gap-1 text-sm font-semibold text-indigo-700 group-hover:gap-1.5 dark:text-indigo-300">

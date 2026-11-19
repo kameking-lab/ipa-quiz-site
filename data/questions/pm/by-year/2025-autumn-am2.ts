@@ -24,6 +24,7 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "JIS Q 21500:2018によれば、プロジェクトガバナンスはプロジェクトが組織の目標に合致し、適切に管理・監督されるための枠組みです。その責任は、プロジェクトを許可し、経営的決定を下すプロジェクトスポンサ、または上級レベルでの指導を行うプロジェクト運営委員会にあります。彼らがプロジェクトの戦略的方向性を決定し、組織全体との整合性を確保します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 21500:2018におけるプロジェクトマネジメントでは、「変更要求」はプロジェクトの進行中に発生した計画や成果物からの逸脱、または改善の提案であり、これを「管理のプロセス群」で評価・承認します。そして、この「管理のプロセス群」で「承認された変更」は、プロジェクトの実行段階に影響を与え、その結果として「実行のプロセス群」からさらなるアクションが求められます。つまり、変更管理の結果は、プロジェクトを実際に進める「実行のプロセス群」に作用するのです。\n\nアの「計画のプロセス群」は、プロジェクトの目標達成のために、どのように、いつ、誰が、何をするかを定義する段階であり、変更要求の直接的な対象となるのは実行段階における活動です。ウの「終結のプロセス群」は、プロジェクトの完了を正式に承認し、最終的な成果物を引き渡す段階であり、変更要求への対応はそれ以前の段階で行われます。エの「立ち上げのプロセス群」は、プロジェクトの開始を定義し、関係者を特定する初期段階であり、変更要求の根本的な影響を受けるのは後続のプロセス群です。したがって、承認された変更が最も直接的に作用するのは、プロジェクトの作業を実際に行う「実行のプロセス群」となります。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "回帰分析は、統計学的手法の一つであり、一つの目的変数（アウトプット）と、それに影響を与える一つ以上の説明変数（インプット変数）との間の統計的な関係を明らかにするために用いられます。多数のデータを用いてこの関係をモデル化することで、将来のアウトプットを予測することが可能になります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "スコープクリープとは、正式な変更管理プロセスを経ずに、プロジェクトの範囲が少しずつ、または暗黙のうちに拡大していく現象を指します。選択肢イのように、軽微な変更と判断してコストや工数の見積もりなしに作業を進めることは、スコープの意図しない拡大を招き、スコープクリープの典型的な原因となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "ホーソン効果とは、人が他者から注目されたり、特別扱いされていると感じたりすることで、その行動やパフォーマンスが向上する現象です。選択肢アでは、プロダクトオーナーからの注目が開発チームの士気を高め、結果として生産性向上につながっており、これはホーソン効果の明確な例です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -143,7 +148,14 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
       "エ": "14"
     },
     "answer": "イ",
-    "explanation": "この問題は、プレシデンスダイアグラム法（PDM）を用いてプロジェクト全体の最短所要日数を求めるものです。PDMでは、アクティビティ間の依存関係と各アクティビティの所要日数から、プロジェクト完了までの「クリティカルパス」を特定します。クリティカルパスとは、遅延するとプロジェクト全体の完了が遅れるアクティビティの連鎖であり、そのパス上の日数の合計がプロジェクトの最短所要日数となります。\n\nイの12日が正解となるのは、図示されたアクティビティの依存関係と日数を考慮した結果、合計日数が最も長くなる経路（クリティカルパス）が12日となるためです。\n\nアの11日は、クリティカルパス以外の経路の日数である可能性や、依存関係を考慮せずに単にアクティビティの日数を足し合わせた場合の日数である可能性が考えられます。ウの13日やエの14日は、クリティカルパスの計算において、本来考慮すべきでないアクティビティの日数を含めてしまったり、依存関係の解釈を誤ったりした場合に到達しうる値であり、最短所要日数としては過大です。",
+    "explanation": "開始時点を0日目とします。Aは6日目に終わり、リード2日の終了―開始関係によってBは4日目に開始し、11日目に終わります。開始―開始関係のラグ3日によって、CはBの開始から3日後の7日目に開始し、12日目に終わります。三つの作業のうち最後に終わるのはCなので、最少所要日数は12日です。",
+    "choiceExplanations": {
+      "ア": "開始から11日でアクティビティBは終わりますが、7日目に開始したCの終了は12日目なので、作業全体はまだ終わりません。",
+      "イ": "Aの終了2日前にBを開始するので、Bの開始は4日目、終了は11日目です。Bの開始3日後に始まるCは7＋5＝12日目に終了します。",
+      "ウ": "6＋7＝13日は、AとBを重ねずに続けた場合の合計です。図のリード2日を適用するとBは11日目に終わり、Cが12日目に終わります。",
+      "エ": "リード2日を適用せずBを6日目に始めると、Cの終了は6＋3＋5＝14日目になります。BはAの終了2日前に始められます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -167,7 +179,14 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
       "エ": "2日増加する"
     },
     "answer": "ウ",
-    "explanation": "ウは、ファストトラッキング適用後の総所要日数が当初計画より1日増加するという結果を示しており、これが正解です。\n\nファストトラッキングは、先行作業が完全に完了する前に後続作業を開始する技法であり、プロジェクトの早期完了を目指すものですが、必ずしも短縮につながるとは限りません。問題文では、作業Cの遅延により、当初計画の総所要日数での完了が困難になった状況が示されています。図2で示されるファストトラッキング適用後の計画では、作業Gの完了を待たずに作業Iを開始できるようになったものの、作業Cの遅延による影響や、作業Gと作業Iの依存関係（依存関係とは、ある作業が完了しないと次の作業を開始できない関係のこと）が、全体のクリティカルパス（クリティカルパスとは、プロジェクトの全所要時間を決定する一連の作業経路のこと）に影響を与えた結果、当初計画よりも1日増加するという結果になったと推測されます。\n\nアは、4日減少するのは、ファストトラッキングの効果が非常に大きく、かつ遅延の影響が相殺された場合であり、本件の状況とは異なります。イは、2日減少するというのも、遅延を取り戻す以上の短縮効果があった場合ですが、本件では当初計画より増加しています。エは、2日増加するという結果は、ファストトラッキングの適用が逆効果になったことを示唆しますが、本件の計算結果は1日増加であるため不適切です。",
+    "explanation": "図1で最も長い経路はA→C→G→I→Jで、4＋10＋7＋4＋8＝33日です。図2ではG1の終了後にG2とIを並行して行うため、両方の完了を待つ時間は最大5日です。Jの開始はG系統で4＋12＋2＋5＝23日目、F・Hを通る経路で4＋12＋4＋6＝26日目です。Jの8日を加えると34日となり、当初より1日増えます。",
+    "choiceExplanations": {
+      "ア": "変更後のG1からIへ進む経路はCの遅れを含めても30日ですが、Jは他の経路の完了も待つので、この経路だけで全体の短縮日数は決まりません。",
+      "イ": "GとIを一部並行させても、A→C→F→Hを通る経路は短縮されません。Cの遅れを反映すると、この経路のJまでの合計は34日です。",
+      "ウ": "当初はA→C→G→I→Jの33日です。変更後はG系統よりA→C→F→H→Jが長く、4＋12＋4＋6＋8＝34日となるので1日増えます。",
+      "エ": "2日増は、Cの遅れを反映しつつ、旧計画どおりGの完了後にIを開始する場合です。変更後はG1の終了時点でIに着手できます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +211,7 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "クリティカルチェーン法は、制約理論（TOC）に基づき、リソース制約と不確実性を考慮してプロジェクトスケジュールを管理する手法です。この方法の主な特徴は、個々のタスクに設けられていた安全期間を、プロジェクト全体に集約した「プロジェクトバッファ」と、クリティカルチェーンに合流するパスの合流点に配置する「合流バッファ（フィーディングバッファ）」を設ける点にあります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -215,7 +235,14 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
       "エ": "グラフ エ"
     },
     "answer": "エ",
-    "explanation": "この問題では、COCOMOモデルの工数見積もり式 開発工数 = 3.0 × (開発規模)^1.12 を基に、開発規模と開発生産性（開発規模 ÷ 開発工数）の関係を問われています。開発生産性を P、開発規模を S、開発工数を E とすると、P = S / E となります。与えられた式 E = 3.0 × S^1.12 を開発生産性の式に代入すると、P = S / (3.0 × S^1.12) = (1/3.0) × S^(1 - 1.12) = (1/3.0) × S^(-0.12) となります。この式は、開発規模 S が大きくなるにつれて、指数 (-0.12) が負であるため、開発生産性 P は減少する関係を示しています。したがって、開発規模の増加に伴い開発生産性が単調減少するグラフが正解となります。\n\n選択肢アは、開発規模の増加に伴い開発生産性が増加する関係を示しているため不適切です。選択肢イは、開発規模と開発生産性が一定の関係（例えば比例関係）にあることを示唆していますが、本問題の式からはそうした単純な関係は導き出されません。選択肢ウは、開発生産性が開発規模によらず一定であるか、あるいは複雑な増減を繰り返す可能性を示唆しており、導出された単調減少の関係とは異なります。",
+    "explanation": "開発規模をSとすると、開発生産性はS÷（3.0×S^1.12）＝（1÷3.0）×S^−0.12です。規模が増すと生産性は下がり、同じ規模の増分に対する低下幅は次第に小さくなるので、グラフはエです。ウは右に行くほど下り方が急になります。",
+    "choiceExplanations": {
+      "ア": "規模が増えるほど生産性が上がるグラフです。式では工数の指数1.12が1より大きく、規模を工数で割ると指数は－0.12になります。",
+      "イ": "規模が大きいほど生産性が急に上がるグラフです。工数は規模以上の割合で増えるので、工数当たりの開発規模は下がります。",
+      "ウ": "規模が大きいほど生産性が急に下がるグラフです。式の指数－0.12では、生産性は減少しながら傾きが緩やかになります。",
+      "エ": "規模をSとすると生産性はS÷（3.0×S^1.12）＝（1÷3.0）×S^−0.12となり、Sが大きいほど低下しながら傾きが緩やかになります。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +267,7 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS Q 21500:2018 (プロジェクトマネジメントの手引)では、プロジェクトマネジメントのプロセスを「立ち上げ」「計画」「実行」「管理」「終結」の5つのプロセス群に分類しています。リスクの特定や評価は、プロジェクトの開始前に潜在的なリスクを洗い出し、その影響度や発生確率を分析して対応策を準備する活動であり、これらは「計画」プロセス群に属します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +292,7 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "コミュニケーション計画における5W1Hの指針は、When（いつ）、Where（どこで）、Who（誰が）、What（何を）、Why（なぜ）、How（どのように）の要素を網羅することを目指します。提示された会議体の一覧には、開催日（When）、場所（Where）、目的（Why）、内容（What）、形式（How）はありますが、会議の「主催者及び参加者（Who）」が明確になっておらず、これが不足している項目です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +317,7 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "JIS Q 21500:2018における「コミュニケーションの計画」プロセスの目的は、プロジェクトのステークホルダがどのような情報を、どのような形式で、いつ、誰から受け取る必要があるのか、その情報およびコミュニケーションに関するニーズを明確に決定することです。これにより、効果的な情報交換のための戦略と具体的な計画を策定します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +342,7 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "INVESTは、アジャイル開発において、質の高いユーザーストーリーを作成・評価するための六つの観点（Independent, Negotiable, Valuable, Estimable, Small, Testable）の頭字語です。Bill Wakeによって提案され、この観点を用いてユーザーストーリーが明確で、実用的であり、開発とテストに適しているかどうかの品質を評価します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +367,7 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "JIS X 0160:2021における妥当性確認プロセス（Validation）の目的は、「システムが意図された運用環境で意図された用途を達成し、ビジネス目標や利害関係者の要求事項を満たしていることの客観的証拠を提供する」ことです。これは、「正しいものを作ったか（Are we building the right product?）」という問いに答えるプロセスであり、システムの最終的な目的適合性を確認します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +392,7 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "スクラムにおいて、スプリントゴールはスプリントの期間中安定しているべきであり、品質やプロダクトバックログはそれぞれ開発チームとプロダクトオーナーが責任を持つ範囲です。一方、スプリントバックログは、スプリントゴールを達成するために開発チームが選択したタスクの集合体であり、開発チームはスプリントゴールを達成するために、スプリントバックログの内容を柔軟に変更・調整する権限と責任を持っています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +417,7 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "JIS X 33002:2017は、ISO/IEC 33002を基にしたプロセスアセスメント実施に対する要求事項を規定する規格です。その目的は、組織のプロセスがどの程度の能力を持っているか、その品質を客観的かつ体系的に診断するための枠組みと要求事項を提供することにあります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +442,13 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "バグトラッキングシステム（課題管理システム）は、ソフトウェア開発において発見されたバグや不具合の情報を一元的に管理するためのツールです。発見されたバグの内容、発生したソフトウェアのバージョン、再現手順、重要度、担当者、修正状況、修正履歴などを記録し、バグのライフサイクル全体を追跡・管理する機能を提供します。",
+    "choiceExplanations": {
+      "ア": "処理を止めたり変数の値を調べたりする機能はデバッガのものです。バグトラッキングでは、発見した不具合への対応を記録します。",
+      "イ": "テストケースやテスト用のプログラムを作る支援は、テストの準備やバグの検出に使います。対応の担当者や修正状況を追う機能とは役割が異なります。",
+      "ウ": "バグ件数やプログラムの規模を基に品質指標を集計する機能です。個別のバグについて、報告から修正の完了までを追跡する説明とは異なります。",
+      "エ": "発見したバグを個別に記録し、対象バージョンや対応計画、修正履歴を追跡することにより、対応の進み具合や解決済みかどうかを確認できます。"
+    },
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -431,7 +472,14 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
       "エ": "グラフ エ"
     },
     "answer": "ウ",
-    "explanation": "「逓減課金方式」とは、利用量が増えるほど単価が安くなる課金方式を指します。これは、一定量までは単価が高く、それを超えると単価が下がるという特徴を持つため、グラフで表現すると、縦軸に課金額、横軸に利用量をとった際に、右肩下がりの曲線を描くことになります。特に、利用量の増加に伴って単価が逓減していくため、増加率が鈍化するような形状になります。\n\n選択肢アは、利用量が増えるほど課金額が一定の割合で増加していく直線的な関係を示しており、これは従量課金方式や定額課金方式の一種と考えられます。選択肢イは、利用量が増えるほど課金額の増加率も高まっていく、いわゆる「逓増」の傾向を示すグラフであり、逓減課金方式とは逆の性質です。選択肢エは、利用量に対して課金額が一定である、あるいは一定量までは無料や低額で、それを超えると急激に高くなるような不連続な変化を示唆しており、逓減課金方式とは異なります。\n\nしたがって、利用量が増えるほど単価が下がる逓減課金方式の特徴を正確に表しているのは、グラフウとなります。",
+    "explanation": "横軸は利用量、縦軸は利用料金の総額です。逓減課金では、利用量が増えるにつれて追加利用分の単価が下がります。したがって、利用料金の総額は増え続けますが、グラフの傾きは区間が進むにつれて小さくなります。これに当てはまるのはウです。",
+    "choiceExplanations": {
+      "ア": "縦軸は利用料金の総額なので、このグラフでは利用量を増やすほど支払額が下がります。逓減するのは追加利用分の単価です。",
+      "イ": "途中から線が水平になり、それ以降の追加利用では料金が増えません。図のウでは単価が下がった後も、利用量に応じて料金が増えます。",
+      "ウ": "利用料金は利用量に応じて増えますが、区間が進むにつれて傾きが小さくなります。これは追加利用量当たりの料金が下がることを示しています。",
+      "エ": "利用量が増えるにつれて線の傾きが大きくなり、同じ利用量を追加したときの料金の増分が増えます。これは逓増課金の形です。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +504,7 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "Redmineは、プロジェクト管理、課題管理、進捗管理、情報共有（Wiki）、ガントチャートなどの機能を統合したオープンソースのWebアプリケーションです。タスクや課題を「チケット」として管理し、その状態（起票、調査、解決、クローズなど）をワークフローを通じて追跡できるため、プロジェクトマネジメントだけでなく、サービスマネジメントにおけるインシデント管理などにも幅広く利用可能です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +529,7 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "非機能要件とは、システムが提供する特定の機能そのものではなく、その機能がどのように提供されるべきか、すなわちシステムの品質特性や制約に関する要件を指します。選択肢エに挙げられている可用性、性能、拡張性、運用性、保守性、移行性などは、システムの信頼性や使いやすさ、運用・管理のしやすさといった品質に関する典型的な非機能要件項目です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +554,7 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "下請代金支払遅延等防止法（下請法）において、下請代金の支払期日は原則として物品の受領日または役務の提供日から60日以内と定められています。プログラムにバグがあり修正が必要となった場合、当初の納品物は完全とは見なされないため、支払期日の起算日は修正が完了し「修正済プログラムが改めて納品された日」となります。この日から再度60日以内が支払期日となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +579,7 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "公益通報制度は、組織内の不正行為を早期に発見・是正するために重要な制度であり、その実効性を高めるためには従業員が制度を認知し、安心して利用できる環境を整備することが不可欠です。そのため、制度の利用方法について教育を行い、組織全体に周知徹底を図ることは、通報の敷居を下げ、制度を機能させる上で最も重要な留意点の一つです。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +604,7 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "多要素認証疲労攻撃（MFA Fatigue Attack）とは、攻撃者がシステムへの不正ログイン試行を繰り返し行い、その度に利用者へ多要素認証のプッシュ通知などを大量に送りつけることで、利用者を疲弊させ、誤って認証を承認させてしまうことを狙う攻撃です。選択肢エは、利用者がプッシュ通知の承認操作を行うまで攻撃者が不正ログイン操作を繰り返すという、この攻撃の典型的なシナリオを示しています。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +629,7 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "オペレーショナルリスク（業務リスク）とは、組織の内部プロセス、人員、システムが不適切または機能しないこと、あるいは外部事象によって生じる損失のリスクを指します。設問の記述にある「過失による誤入力、情報システムの障害、内部者の不正などによって損失が発生するリスク」は、まさにこのオペレーショナルリスクの定義に合致します。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +654,7 @@ export const PM_QUESTIONS_2025_AUTUMN_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "デジタルフォレンジックスにおける証拠保全の基本原則は、揮発性の高い情報から優先的に保全することです。揮発性が高いものほど失われやすいため、優先的に確保する必要があります。ルーティングテーブルの状態(d)はメモリ上にあり最も揮発性が高く、次にハードディスク上のファイル(c)、遠隔ログサーバのログ(a)、物理メディアであるCD(b)の順で揮発性が低いため、最も適切な保全順序はd → c → a → bとなります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_2/2025h07a_pm_am2_qs.pdf",
     "license": "IPA-public"

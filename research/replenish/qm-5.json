@@ -1,0 +1,98 @@
+{
+  "lane": "qm-5",
+  "continues": "ql-5",
+  "plan": "plan5.json",
+  "assignment": "zero-based index % 14 == 4",
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "checkedAt": "2026-11-18",
+  "rows": [
+    {
+      "jobId": "PLAN5-005",
+      "exam": "sc",
+      "status": "official-answer-table-rechecked",
+      "newQuestionCount": 0,
+      "dataFile": "data/questions/sc/2023-autumn-pm.ts",
+      "officialAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_sc_pm_ans.pdf",
+      "officialAnswerPdfSha256": "e5cd7fe051f7a05f6461569bd5cb2c7177398f1a601e4d147b3ba90364a0f8af",
+      "checkedQuestionCount": 4,
+      "checkedAnswerTextRows": 58,
+      "checkedOfficialAnswerImages": 5,
+      "notes": "問2の順不同と問4の3例・備考を確認。rv-1で修正済みの本文画像14点は fe3c237b7。"
+    },
+    {
+      "jobId": "PLAN5-019",
+      "exam": "nw",
+      "status": "official-answer-table-rechecked",
+      "newQuestionCount": 0,
+      "dataFile": "data/questions/nw/2024-spring-pm2.ts",
+      "officialAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/m42obm000000afqx-att/2024r06h_nw_pm2_ans.pdf",
+      "officialAnswerPdfSha256": "466293160ab76c5a150aae7b73219a87106a617de54201f0678d1fabe867ec70",
+      "checkedQuestionCount": 2,
+      "checkedAnswerTextRows": 34,
+      "checkedOfficialAnswerImages": 2,
+      "notes": "問2の設問4(1)の2つの箇条書き、設問5(1)～(3)をまとめた公式の不成立表示を確認。"
+    },
+    {
+      "jobId": "PLAN5-089",
+      "exam": "db",
+      "status": "official-answer-table-rechecked",
+      "newQuestionCount": 0,
+      "dataFile": "data/questions/db/2025-autumn-pm1.ts",
+      "officialAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/nl10bi0000009lh8-att/2025r07a_db_pm1_ans.pdf",
+      "officialAnswerPdfSha256": "9aa1128fff95bf210f27351953dc9982b44c1e1e835aee256e9d939815944dbf",
+      "checkedQuestionCount": 3,
+      "checkedAnswerTextRows": 55,
+      "checkedOfficialAnswerImages": 4,
+      "notes": "問1・2の図による解答3欄、キーの実線・破線、問2の正規形を示す丸印を原本画像で確認。"
+    },
+    {
+      "jobId": "PLAN5-103",
+      "exam": "es",
+      "status": "official-answer-table-rechecked",
+      "newQuestionCount": 0,
+      "dataFile": "data/questions/es/2023-autumn-pm1.ts",
+      "officialAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/ps6vr70000010d6y-att/2023r05a_es_pm1_ans.pdf",
+      "officialAnswerPdfSha256": "41926dc72437fb29942e539084e2cd52b4c401aa176c9483bec263fbf6bfd355",
+      "checkedQuestionCount": 2,
+      "checkedAnswerTextRows": 38,
+      "checkedOfficialAnswerImages": 2,
+      "notes": "問1の設問3(1)(b)、問2の設問2(1)(a)の①・②の対応と、問1の順不同を原本画像で確認。"
+    },
+    {
+      "jobId": "PLAN5-425",
+      "exam": "hoikushi",
+      "status": "awaiting-official-answers",
+      "newQuestionCount": 0,
+      "officialQuestionCount": 20,
+      "officialPublicationPage": "https://www.hoyokyo.or.jp/exam/pasttest/08-2.html",
+      "expectedAnswerPublication": "2026-11-30T10:00:00+09:00",
+      "officialAnswersPublished": false,
+      "checkedExplanationReferences": {
+        "2": [
+          "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/b32105e4-fa26-42eb-97d0-2e5cbaef703a/25a6391e/20241225_policies_boshihoken_r5-nyuuyoujityousa_10.pdf#page=10",
+          "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/b32105e4-fa26-42eb-97d0-2e5cbaef703a/25a6391e/20241225_policies_boshihoken_r5-nyuuyoujityousa_10.pdf#page=15",
+          "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/b32105e4-fa26-42eb-97d0-2e5cbaef703a/25a6391e/20241225_policies_boshihoken_r5-nyuuyoujityousa_10.pdf#page=17",
+          "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/b32105e4-fa26-42eb-97d0-2e5cbaef703a/25a6391e/20241225_policies_boshihoken_r5-nyuuyoujityousa_10.pdf#page=18"
+        ],
+        "4": [
+          "https://www.hosp.hyo-med.ac.jp/disease_guide/detail/94",
+          "https://www.mhlw.go.jp/content/10906000/001572748.pdf",
+          "https://osaka.hosp.go.jp/shinryo-navi/disease/e01.html"
+        ],
+        "8": [
+          "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/e4b817c9-5282-4ccc-b0d5-ce15d7b5018c/ad67420c/20250924_policies_hoiku_156.pdf#page=3",
+          "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/e4b817c9-5282-4ccc-b0d5-ce15d7b5018c/ad67420c/20250924_policies_hoiku_156.pdf#page=5",
+          "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/e4b817c9-5282-4ccc-b0d5-ce15d7b5018c/2a00807a/20250924_policies_hoiku_155.pdf"
+        ],
+        "12": [
+          "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/787dd8a4-3b44-4eed-a661-b9d0729f70c9/bd663d9a/20260327_policies_child-safety_effort_tsuchi_46.pdf#page=3",
+          "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/787dd8a4-3b44-4eed-a661-b9d0729f70c9/bd663d9a/20260327_policies_child-safety_effort_tsuchi_46.pdf#page=4"
+        ],
+        "18": [
+          "https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/e4b817c9-5282-4ccc-b0d5-ce15d7b5018c/cc94d067/20240205_policies_hoiku_86.pdf"
+        ]
+      },
+      "notes": "問18は正答公開時に訂正の有無を確認し、強い腹痛が続く場合のガイドライン上の対応を解説に記す。"
+    }
+  ]
+}

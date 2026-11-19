@@ -1,0 +1,935 @@
+{
+  "jobId": "PLAN5-160",
+  "index": 159,
+  "exam": "rinsho-kensagishi",
+  "year": 2024,
+  "round": 70,
+  "session": "am",
+  "status": "completed",
+  "verifiedAt": "2026-11-18",
+  "officialQuestionCount": 100,
+  "importedQuestionCount": 30,
+  "newQuestionCount": 70,
+  "newChoiceExplanationCount": 350,
+  "importedEvidencePath": "docs/question-sources/qd-6-clinical70-am-import.json",
+  "sources": [
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-07a_01.pdf",
+      "sha256": "e56ae6b739b8c4a95550077acd1da18daa8f143de1d50cf1fd77f0310863cd2a",
+      "pages": 44
+    },
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-07a_02.pdf",
+      "sha256": "a914428fbd367fe66f1e4cc83022c242e80f9dc5c3f2dc99dbbd778c40f31a6a",
+      "pages": 24
+    },
+    {
+      "url": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-07seitou.pdf",
+      "sha256": "6fb6c5c66877838d2f44466da778f73fbcd86aba8c88b0f85bf7321c5e657e00",
+      "pages": 1
+    }
+  ],
+  "duplicateCheck": {
+    "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+    "refs": 98,
+    "uniqueCommits": 88,
+    "previouslyIdentifiedNumbers": [
+      1,
+      2,
+      3,
+      4,
+      7,
+      8,
+      11,
+      13,
+      14,
+      15,
+      16,
+      19,
+      21,
+      23,
+      24,
+      28,
+      29,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      51,
+      52,
+      54,
+      56,
+      57
+    ]
+  },
+  "receipts": [
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q5",
+      "qNumber": 5,
+      "physicalPage": 6,
+      "officialAnswerNumber": "4",
+      "bookletNumbers": [],
+      "originalTextSha256": "2014df0d24aceb4bbdd29a050f933619ec0b19450e3521b557cac25aa95e7342"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q6",
+      "qNumber": 6,
+      "physicalPage": 6,
+      "officialAnswerNumber": "1",
+      "bookletNumbers": [],
+      "originalTextSha256": "0b38ade61eade6400b979216d1bbf9e523b1d3af64a9cc49184ac4916d59976f"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q9",
+      "qNumber": 9,
+      "physicalPage": 7,
+      "officialAnswerNumber": "5",
+      "bookletNumbers": [],
+      "originalTextSha256": "0f925df67f24cb8dd216d413256cef57baf6b1f6824049ab41a3cd86428fe3cc"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q10",
+      "qNumber": 10,
+      "physicalPage": 8,
+      "officialAnswerNumber": "4",
+      "bookletNumbers": [
+        1
+      ],
+      "originalTextSha256": "daf00c0fa56389bd85c3469f482bfcb92cb731785882e2c4975c76da47fdbe8f"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q12",
+      "qNumber": 12,
+      "physicalPage": 8,
+      "officialAnswerNumber": "5",
+      "bookletNumbers": [],
+      "originalTextSha256": "af7a3edb3934df2c8ef5e0a926182ed42de277105f920346eeff04541a2970c5"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q17",
+      "qNumber": 17,
+      "physicalPage": 10,
+      "officialAnswerNumber": "5",
+      "bookletNumbers": [
+        2
+      ],
+      "originalTextSha256": "fcd7aafa6b0e9ab60b5c21cb2718a984c17a32d653c54e6e7831f7762a99da49"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q18",
+      "qNumber": 18,
+      "physicalPage": 11,
+      "officialAnswerNumber": "4",
+      "bookletNumbers": [
+        3
+      ],
+      "originalTextSha256": "651c5241997c0f32b831b96173c7883a78ceaa60355a970e78c89c203f07067b"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q20",
+      "qNumber": 20,
+      "physicalPage": 12,
+      "officialAnswerNumber": "3",
+      "bookletNumbers": [
+        4
+      ],
+      "originalTextSha256": "bde7cd24cafb87f6475743fb4048843f40343f58d44ee7f53daf7bbca7a15278"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q22",
+      "qNumber": 22,
+      "physicalPage": 13,
+      "officialAnswerNumber": "1",
+      "bookletNumbers": [
+        5
+      ],
+      "originalTextSha256": "8bb37119e68dc1822cc053ef93805c7a301e11692123aab77028b8baee6e0d75"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q25",
+      "qNumber": 25,
+      "physicalPage": 14,
+      "officialAnswerNumber": "3",
+      "bookletNumbers": [
+        6
+      ],
+      "originalTextSha256": "d9b0e9911fbb4131360e997a7f342e639ddb9c29578789688fe180814eaccfc2"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q26",
+      "qNumber": 26,
+      "physicalPage": 14,
+      "officialAnswerNumber": "3",
+      "bookletNumbers": [
+        7
+      ],
+      "originalTextSha256": "ab281f1b63c00a68efc30b517b501d8a62c9b378a5a88938c4287755a58d31c9"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q27",
+      "qNumber": 27,
+      "physicalPage": 15,
+      "officialAnswerNumber": "3",
+      "bookletNumbers": [],
+      "originalTextSha256": "5cc204d170ffce9955bcf69669a96b1f64574e427ee63fe4e57e432c2a26b8e8"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q30",
+      "qNumber": 30,
+      "physicalPage": 16,
+      "officialAnswerNumber": "1",
+      "bookletNumbers": [],
+      "originalTextSha256": "124cd7994c6ea96d2dfed002168bcdad5c8819103c97ec098c7087ba1984f945"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q31",
+      "qNumber": 31,
+      "physicalPage": 16,
+      "officialAnswerNumber": "3",
+      "bookletNumbers": [],
+      "originalTextSha256": "0cf15968bdfc0bd036470160d8c20a5724add29106f653f990fd4c9c831dfbfb"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q32",
+      "qNumber": 32,
+      "physicalPage": 16,
+      "officialAnswerNumber": "4",
+      "bookletNumbers": [],
+      "originalTextSha256": "e6b51f01245f57e0b459f32fe14a57f1021e3961c10ce9ef77a1fdac906276ae"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q33",
+      "qNumber": 33,
+      "physicalPage": 17,
+      "officialAnswerNumber": "2",
+      "bookletNumbers": [],
+      "originalTextSha256": "c0d5ae23133f5c6c7046a04cb9d7a1426b77b4b61ffbec7272e5f78ba5a19570"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q34",
+      "qNumber": 34,
+      "physicalPage": 17,
+      "officialAnswerNumber": "3",
+      "bookletNumbers": [],
+      "originalTextSha256": "6f936208b518cead79c56f648663192aea6325fe8c7ccce3d9016a867aabcda8"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q35",
+      "qNumber": 35,
+      "physicalPage": 17,
+      "officialAnswerNumber": "5",
+      "bookletNumbers": [],
+      "originalTextSha256": "f176b386821eef1e3b90199c84267751371d687a21a93b3996a5c6f3811beebe"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q36",
+      "qNumber": 36,
+      "physicalPage": 18,
+      "officialAnswerNumber": "1",
+      "bookletNumbers": [],
+      "originalTextSha256": "208b64ae2e582226715b88e64ed3c151ea9fa67caf99aef9609c58194c4e90cd"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q37",
+      "qNumber": 37,
+      "physicalPage": 18,
+      "officialAnswerNumber": "2",
+      "bookletNumbers": [],
+      "originalTextSha256": "34e3fa96463c2d695266377932f9f35f2452ceb35c1706a462ab3049efdd8259"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q46",
+      "qNumber": 46,
+      "physicalPage": 21,
+      "officialAnswerNumber": "3",
+      "bookletNumbers": [
+        8
+      ],
+      "originalTextSha256": "d071f82104200e179f23b8d17bc76a31fdd984ebf91d85b1f5155fac168d2640"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q47",
+      "qNumber": 47,
+      "physicalPage": 21,
+      "officialAnswerNumber": "3",
+      "bookletNumbers": [],
+      "originalTextSha256": "80d904d324ce0cb775c40b4275c930c07c75d385af1005da6354cfd327658a9b"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q48",
+      "qNumber": 48,
+      "physicalPage": 22,
+      "officialAnswerNumber": "5",
+      "bookletNumbers": [],
+      "originalTextSha256": "0de8aace8a3fdd266da5798801730d1e3392874f7da38ec1a337a190c9b1994a"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q49",
+      "qNumber": 49,
+      "physicalPage": 22,
+      "officialAnswerNumber": "4",
+      "bookletNumbers": [
+        9
+      ],
+      "originalTextSha256": "e9342533197831092573e486acffe64fdcd157db7c30a833bb1f780aaf0cf393"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q50",
+      "qNumber": 50,
+      "physicalPage": 23,
+      "officialAnswerNumber": "3",
+      "bookletNumbers": [
+        10
+      ],
+      "originalTextSha256": "6465f0dea34e8ac3c136ad9879d63185853eed7acc3785f644ca4f1f15159d0c"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q53",
+      "qNumber": 53,
+      "physicalPage": 24,
+      "officialAnswerNumber": "2",
+      "bookletNumbers": [],
+      "originalTextSha256": "72101d9c1d04b8974d93d1717908c90066538bb803fc5cdd929631dfde491782"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q55",
+      "qNumber": 55,
+      "physicalPage": 24,
+      "officialAnswerNumber": "2",
+      "bookletNumbers": [],
+      "originalTextSha256": "b804f6b688af27eaaf5834661a09a23a92c821e89be654f3e96441c5869443b4"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q58",
+      "qNumber": 58,
+      "physicalPage": 25,
+      "officialAnswerNumber": "23",
+      "bookletNumbers": [],
+      "originalTextSha256": "f27e12e405b4db129f3d6da665fe704babf55350851ad7009a702da6198e817f"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q59",
+      "qNumber": 59,
+      "physicalPage": 26,
+      "officialAnswerNumber": "2",
+      "bookletNumbers": [],
+      "originalTextSha256": "875cb80baf4d16e0f7a49a4da476a259c9b73cbaac3e7447f31b5a0ea5d4fed0"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q60",
+      "qNumber": 60,
+      "physicalPage": 26,
+      "officialAnswerNumber": "5",
+      "bookletNumbers": [],
+      "originalTextSha256": "ac8b2f0738708b7add841c7e5e6edfb1799d7dbd90b6d883d897a193442fc884"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q61",
+      "qNumber": 61,
+      "physicalPage": 26,
+      "officialAnswerNumber": "4",
+      "bookletNumbers": [],
+      "originalTextSha256": "ac1e31ff7229244a22fc3d73e8fa32c7ef5ac3cfdb715c09739c7c41b6fae1a6"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q62",
+      "qNumber": 62,
+      "physicalPage": 27,
+      "officialAnswerNumber": "2",
+      "bookletNumbers": [],
+      "originalTextSha256": "dc31b4f83ad1e7c5c24eedc4f85663b311e625ed7020b945b571a60b49132f5a"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q63",
+      "qNumber": 63,
+      "physicalPage": 27,
+      "officialAnswerNumber": "5",
+      "bookletNumbers": [],
+      "originalTextSha256": "c801c0ae43785c43d9b542b1f47b1da8ffdd8c24f5ee10075d6254a1c16f4c20"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q64",
+      "qNumber": 64,
+      "physicalPage": 27,
+      "officialAnswerNumber": "4",
+      "bookletNumbers": [
+        11
+      ],
+      "originalTextSha256": "1c5ce8f400afa69bf5a520a08dc376cd1e2f01b87a6f8e06f756259743702e3d"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q65",
+      "qNumber": 65,
+      "physicalPage": 28,
+      "officialAnswerNumber": "4",
+      "bookletNumbers": [
+        12
+      ],
+      "originalTextSha256": "c003c4bc27a895c4ba4b9c1db79232a47f7699d9ee59150328404c0fc1232322"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q66",
+      "qNumber": 66,
+      "physicalPage": 28,
+      "officialAnswerNumber": "4",
+      "bookletNumbers": [],
+      "originalTextSha256": "3f97886ca6075f49d78452bff99ea235f833095e1e02aa0591498ce13b2b1441"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q67",
+      "qNumber": 67,
+      "physicalPage": 29,
+      "officialAnswerNumber": "2",
+      "bookletNumbers": [
+        13
+      ],
+      "originalTextSha256": "68d0b5d51050b5f621a6d4c5170877a644509c69a6fd3094fe60182e591201a6"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q68",
+      "qNumber": 68,
+      "physicalPage": 29,
+      "officialAnswerNumber": "5",
+      "bookletNumbers": [],
+      "originalTextSha256": "2c884b5aaab0b27b721652bd5d9e1461a46061590459ce18de6ca803acaa2bea"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q69",
+      "qNumber": 69,
+      "physicalPage": 29,
+      "officialAnswerNumber": "23",
+      "bookletNumbers": [],
+      "originalTextSha256": "34f5cc1cd426d41cb7627802fef52f40bf1072304ecb7fa89dd40466f9e80694"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q70",
+      "qNumber": 70,
+      "physicalPage": 30,
+      "officialAnswerNumber": "1",
+      "bookletNumbers": [],
+      "originalTextSha256": "188d780f87fd40feb07d6f2590e1b7e2290a925292356ba39de0dbba838b9eef"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q71",
+      "qNumber": 71,
+      "physicalPage": 30,
+      "officialAnswerNumber": "4",
+      "bookletNumbers": [
+        14
+      ],
+      "originalTextSha256": "ea9752dd5cab6305bbd7a81c4ec0543f6b1bc7b4c75344075c3be6c3b68c3f38"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q72",
+      "qNumber": 72,
+      "physicalPage": 30,
+      "officialAnswerNumber": "2",
+      "bookletNumbers": [],
+      "originalTextSha256": "ef055d6c5dac7f126561686ec8eac7989bcff18ea08459972c851c0b9a559922"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q73",
+      "qNumber": 73,
+      "physicalPage": 31,
+      "officialAnswerNumber": "4",
+      "bookletNumbers": [],
+      "originalTextSha256": "8b153e65a94b2b8195f62a6b2e23de219ad7a3f1dac682c38fed3accc7379d7a"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q74",
+      "qNumber": 74,
+      "physicalPage": 31,
+      "officialAnswerNumber": "5",
+      "bookletNumbers": [],
+      "originalTextSha256": "a1cc953918dcea91f7aa9210a8559030d5965e1d73f8ab8644fb0ffb5abb8e80"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q75",
+      "qNumber": 75,
+      "physicalPage": 31,
+      "officialAnswerNumber": "3",
+      "bookletNumbers": [],
+      "originalTextSha256": "73d9f4eabf81e20af19fe233fe214eeecfef1b58f1955d2f3f4a44863c30e031"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q76",
+      "qNumber": 76,
+      "physicalPage": 32,
+      "officialAnswerNumber": "2",
+      "bookletNumbers": [],
+      "originalTextSha256": "742246565baf4d5eae8fcb660099567bb3260612279b926766f2ee1389778959"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q77",
+      "qNumber": 77,
+      "physicalPage": 32,
+      "officialAnswerNumber": "2",
+      "bookletNumbers": [
+        15
+      ],
+      "originalTextSha256": "5c31da4b28343e7dff6bb3f892c3c3ff9de3d68e1490959fad756941d84af947"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q78",
+      "qNumber": 78,
+      "physicalPage": 32,
+      "officialAnswerNumber": "5",
+      "bookletNumbers": [],
+      "originalTextSha256": "10065a9dbccf53a53234b4bad59f58fb510c99bf9da61c0b4f8042541f4020c1"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q79",
+      "qNumber": 79,
+      "physicalPage": 33,
+      "officialAnswerNumber": "5",
+      "bookletNumbers": [],
+      "originalTextSha256": "8c914cfd931ca5b3cb55cc115d64ea3512946a3f78f1bf51b5d386ec78524922"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q80",
+      "qNumber": 80,
+      "physicalPage": 33,
+      "officialAnswerNumber": "5",
+      "bookletNumbers": [],
+      "originalTextSha256": "cd85b22e5bcfd50eebd1538767d211877e8f27a26334aa9dafeb01df0af562ab"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q81",
+      "qNumber": 81,
+      "physicalPage": 33,
+      "officialAnswerNumber": "1",
+      "bookletNumbers": [],
+      "originalTextSha256": "a1727c68837e81288cc7c0df281e2a72bda3429b34f54096d244c0197a51aa69"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q82",
+      "qNumber": 82,
+      "physicalPage": 34,
+      "officialAnswerNumber": "34",
+      "bookletNumbers": [],
+      "originalTextSha256": "490b4d1deacca40f37da1a9669480587f8f951a9737d09257aac619464e85ae7"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q83",
+      "qNumber": 83,
+      "physicalPage": 34,
+      "officialAnswerNumber": "2",
+      "bookletNumbers": [],
+      "originalTextSha256": "55f245cae3842ed257692deb67e1bca0c642c27df707e1756b4fd3aabfef6cf8"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q84",
+      "qNumber": 84,
+      "physicalPage": 34,
+      "officialAnswerNumber": "5",
+      "bookletNumbers": [],
+      "originalTextSha256": "d23e4a4985fd8207ebd7f1708e37cef77c02f9b0ee2979dd63954286e4c94c22"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q85",
+      "qNumber": 85,
+      "physicalPage": 35,
+      "officialAnswerNumber": "5",
+      "bookletNumbers": [],
+      "originalTextSha256": "5375d17b1cacc5c73e44c691bb8fb87431804812493b3dd72c6759ae8f834f3e"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q86",
+      "qNumber": 86,
+      "physicalPage": 35,
+      "officialAnswerNumber": "4",
+      "bookletNumbers": [],
+      "originalTextSha256": "d11b6944443bde5341427b0ced420ba8bd6148121d6d0a1f6386173e1a1dfc1a"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q87",
+      "qNumber": 87,
+      "physicalPage": 36,
+      "officialAnswerNumber": "2",
+      "bookletNumbers": [],
+      "originalTextSha256": "56f631a4b5ce721713b7a3b5c6f9022d1fa61ef68accef083c1202f707dd3431"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q88",
+      "qNumber": 88,
+      "physicalPage": 36,
+      "officialAnswerNumber": "14",
+      "bookletNumbers": [],
+      "originalTextSha256": "d3f34a35a70014a775a02b909a70f75b024f1b2924c9ad55273d1167a168caa2"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q89",
+      "qNumber": 89,
+      "physicalPage": 36,
+      "officialAnswerNumber": "5",
+      "bookletNumbers": [],
+      "originalTextSha256": "af228446ea250c2c3913f08df9fd652440feeccd159ee86cb90cb86db3b31860"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q90",
+      "qNumber": 90,
+      "physicalPage": 37,
+      "officialAnswerNumber": "3",
+      "bookletNumbers": [],
+      "originalTextSha256": "f9e78fc0590e99755832fd23f19763d7eae9b3d0eaeb5da3af5a1191d76c08b8"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q91",
+      "qNumber": 91,
+      "physicalPage": 37,
+      "officialAnswerNumber": "15",
+      "bookletNumbers": [],
+      "originalTextSha256": "a72c5d74ae8ba3be596764cee42d0d732b95d93cc6203a2c4f4d9d790eda1ef5"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q92",
+      "qNumber": 92,
+      "physicalPage": 37,
+      "officialAnswerNumber": "3",
+      "bookletNumbers": [],
+      "originalTextSha256": "e3f5e65da6c4d6c3c921e5abd172ba6b5633984e4c846c1f2a2a9ff1ac387472"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q93",
+      "qNumber": 93,
+      "physicalPage": 38,
+      "officialAnswerNumber": "4",
+      "bookletNumbers": [],
+      "originalTextSha256": "718dc578a9e0710f6d69fd5fb1582d61693ebe2a8ec267df691977668e3acc5f"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q94",
+      "qNumber": 94,
+      "physicalPage": 38,
+      "officialAnswerNumber": "4",
+      "bookletNumbers": [],
+      "originalTextSha256": "1411c019b53bbe8cb70f15ec31bb5061a136fa0e0361e03f0a4d716242985324"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q95",
+      "qNumber": 95,
+      "physicalPage": 38,
+      "officialAnswerNumber": "2",
+      "bookletNumbers": [],
+      "originalTextSha256": "8f16652f2a8894095d271da3a87266b55da13917cfe9089ce92044b8f18bf621"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q96",
+      "qNumber": 96,
+      "physicalPage": 39,
+      "officialAnswerNumber": "3",
+      "bookletNumbers": [],
+      "originalTextSha256": "fbfc4b12e68a7e6c793bf326b5f9b8963d2cc594724e71e814cc57a85a15094c"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q97",
+      "qNumber": 97,
+      "physicalPage": 39,
+      "officialAnswerNumber": "5",
+      "bookletNumbers": [],
+      "originalTextSha256": "73f2c250e4ce2de323c1065bcfd65d0e150cd60bc33acf522ed7d8d8c9e5abd7"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q98",
+      "qNumber": 98,
+      "physicalPage": 40,
+      "officialAnswerNumber": "24",
+      "bookletNumbers": [],
+      "originalTextSha256": "a21cd6f2239dbe6a5077296e6b692457c87bc410836dd18429d0e2fbd5673ac5"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q99",
+      "qNumber": 99,
+      "physicalPage": 40,
+      "officialAnswerNumber": "5",
+      "bookletNumbers": [],
+      "originalTextSha256": "c7e0c20901163bd1f487a295099413afc04142c0bd1300b6f330d9be1fb43722"
+    },
+    {
+      "id": "rinsho-kensagishi-2024-annual-am-q100",
+      "qNumber": 100,
+      "physicalPage": 40,
+      "officialAnswerNumber": "15",
+      "bookletNumbers": [],
+      "originalTextSha256": "0af6af5e1fe923eab255aa44c7dd1788350c4999304fa227d0c8b710698aabfa"
+    }
+  ],
+  "assets": [
+    {
+      "path": "public/questions/rinsho-kensagishi/70-am-book-01.jpg",
+      "sourcePdf": "tp240424-07a_02.pdf",
+      "physicalPage": 5,
+      "sourceRect": [
+        105,
+        66,
+        439,
+        627
+      ],
+      "scale": 2.2,
+      "rotation": 0,
+      "sha256": "77e4fb527eb1f377f7e07b41e15050614ccd914f976f91a032887791d4dede5e",
+      "width": 735,
+      "height": 1235
+    },
+    {
+      "path": "public/questions/rinsho-kensagishi/70-am-book-02.png",
+      "sourcePdf": "tp240424-07a_02.pdf",
+      "physicalPage": 6,
+      "sourceRect": [
+        84,
+        135,
+        389,
+        622
+      ],
+      "scale": 2.2,
+      "rotation": 90,
+      "sha256": "a8e48cb76da126d01caee74ac231e7f31a6b864c74b7679a2524049e005cd208",
+      "width": 1072,
+      "height": 672
+    },
+    {
+      "path": "public/questions/rinsho-kensagishi/70-am-book-03.png",
+      "sourcePdf": "tp240424-07a_02.pdf",
+      "physicalPage": 7,
+      "sourceRect": [
+        154,
+        66,
+        415,
+        338
+      ],
+      "scale": 2.2,
+      "rotation": 0,
+      "sha256": "6b74f64f1a9458ccc96388eb81433fb95915790e23647e940eb29fdcec246d53",
+      "width": 575,
+      "height": 599
+    },
+    {
+      "path": "public/questions/rinsho-kensagishi/70-am-book-04.png",
+      "sourcePdf": "tp240424-07a_02.pdf",
+      "physicalPage": 8,
+      "sourceRect": [
+        95,
+        66,
+        464,
+        642
+      ],
+      "scale": 2.2,
+      "rotation": 0,
+      "sha256": "ed97ddc9cc4461cf7f19937cfedf938441c8fd6415230c70832f7caad77f7e33",
+      "width": 812,
+      "height": 1268
+    },
+    {
+      "path": "public/questions/rinsho-kensagishi/70-am-book-05.png",
+      "sourcePdf": "tp240424-07a_02.pdf",
+      "physicalPage": 9,
+      "sourceRect": [
+        116,
+        66,
+        434,
+        320
+      ],
+      "scale": 2.2,
+      "rotation": 0,
+      "sha256": "99eeef8bc8b1d63916a0ad90bb44d3c69e3b76b6ae34b1d312f1a223ea3506ff",
+      "width": 700,
+      "height": 559
+    },
+    {
+      "path": "public/questions/rinsho-kensagishi/70-am-book-06.jpg",
+      "sourcePdf": "tp240424-07a_02.pdf",
+      "physicalPage": 10,
+      "sourceRect": [
+        111,
+        66,
+        433,
+        311
+      ],
+      "scale": 2.2,
+      "rotation": 0,
+      "sha256": "07afb2b46cb52af314c4d1b20f6bbaacd353e8047c434062785cdec6a8d05d6e",
+      "width": 709,
+      "height": 540
+    },
+    {
+      "path": "public/questions/rinsho-kensagishi/70-am-book-07.jpg",
+      "sourcePdf": "tp240424-07a_02.pdf",
+      "physicalPage": 11,
+      "sourceRect": [
+        91,
+        66,
+        454,
+        309
+      ],
+      "scale": 2.2,
+      "rotation": 0,
+      "sha256": "8e6437bb8e219546230e725b4bfdd7f621b5dfba2750f056161c7feb96f06d1f",
+      "width": 799,
+      "height": 535
+    },
+    {
+      "path": "public/questions/rinsho-kensagishi/70-am-book-08.jpg",
+      "sourcePdf": "tp240424-07a_02.pdf",
+      "physicalPage": 12,
+      "sourceRect": [
+        95,
+        66,
+        423,
+        600
+      ],
+      "scale": 2.2,
+      "rotation": 0,
+      "sha256": "8d3bdd7efba4cac1f3775d053a1d8089f1439549fa9bce25eb5caa02de35d79a",
+      "width": 722,
+      "height": 1175
+    },
+    {
+      "path": "public/questions/rinsho-kensagishi/70-am-book-09.jpg",
+      "sourcePdf": "tp240424-07a_02.pdf",
+      "physicalPage": 13,
+      "sourceRect": [
+        86,
+        66,
+        459,
+        592
+      ],
+      "scale": 2.2,
+      "rotation": 0,
+      "sha256": "62f8cc96a15fe9b27c3c752e50270d674edbc0e9ec61467f826f5025510c3923",
+      "width": 821,
+      "height": 1158
+    },
+    {
+      "path": "public/questions/rinsho-kensagishi/70-am-book-10.jpg",
+      "sourcePdf": "tp240424-07a_02.pdf",
+      "physicalPage": 14,
+      "sourceRect": [
+        134,
+        66,
+        415,
+        300
+      ],
+      "scale": 2.2,
+      "rotation": 0,
+      "sha256": "5e752b6b69123684faa20245560a3260bfe4dc46a42ce740e4b898635139a88d",
+      "width": 619,
+      "height": 515
+    },
+    {
+      "path": "public/questions/rinsho-kensagishi/70-am-book-11.png",
+      "sourcePdf": "tp240424-07a_02.pdf",
+      "physicalPage": 15,
+      "sourceRect": [
+        138,
+        66,
+        415,
+        252
+      ],
+      "scale": 2.2,
+      "rotation": 0,
+      "sha256": "f4360cc4f32f209636556852728ab878dc98649395498eea01b6e9f20c041a70",
+      "width": 610,
+      "height": 410
+    },
+    {
+      "path": "public/questions/rinsho-kensagishi/70-am-book-12.jpg",
+      "sourcePdf": "tp240424-07a_02.pdf",
+      "physicalPage": 16,
+      "sourceRect": [
+        119,
+        66,
+        425,
+        522
+      ],
+      "scale": 2.2,
+      "rotation": 0,
+      "sha256": "2a984209b0dc528c7ba2fc772983748605543f2fa50e004290c0fcb2b1e46f8f",
+      "width": 674,
+      "height": 1004
+    },
+    {
+      "path": "public/questions/rinsho-kensagishi/70-am-book-13.png",
+      "sourcePdf": "tp240424-07a_02.pdf",
+      "physicalPage": 17,
+      "sourceRect": [
+        82,
+        66,
+        461,
+        436
+      ],
+      "scale": 2.2,
+      "rotation": 0,
+      "sha256": "8881adf6504883827b120bb3ba06c10b9e688f405e0748f778bd7eafa20e5584",
+      "width": 835,
+      "height": 815
+    },
+    {
+      "path": "public/questions/rinsho-kensagishi/70-am-book-14.jpg",
+      "sourcePdf": "tp240424-07a_02.pdf",
+      "physicalPage": 18,
+      "sourceRect": [
+        205,
+        66,
+        415,
+        595
+      ],
+      "scale": 2.2,
+      "rotation": 0,
+      "sha256": "b06af11515b7d973db2f8c9114710f29456730f84c9b10b721f818c986e153a0",
+      "width": 462,
+      "height": 1164
+    },
+    {
+      "path": "public/questions/rinsho-kensagishi/70-am-book-15.jpg",
+      "sourcePdf": "tp240424-07a_02.pdf",
+      "physicalPage": 19,
+      "sourceRect": [
+        77,
+        66,
+        467,
+        484
+      ],
+      "scale": 2.2,
+      "rotation": 0,
+      "sha256": "937a7bad8c2b8e7dc66d162e60d9c0dae94c465cc1c8606ab0960f2710e6a274",
+      "width": 859,
+      "height": 920
+    },
+    {
+      "path": "public/questions/rinsho-kensagishi/70-am-q085-table.png",
+      "sourcePdf": "tp240424-07a_01.pdf",
+      "physicalPage": 35,
+      "sourceRect": [
+        199,
+        116,
+        348,
+        252
+      ],
+      "scale": 2.2,
+      "rotation": 0,
+      "sha256": "5d4f80662dd5915652c29ea7d4c41cc270532e97356ba73a56a98200b6eb9372",
+      "width": 329,
+      "height": 300
+    },
+    {
+      "path": "public/questions/rinsho-kensagishi/70-am-q096-circuit.png",
+      "sourcePdf": "tp240424-07a_01.pdf",
+      "physicalPage": 39,
+      "sourceRect": [
+        190,
+        119,
+        363,
+        259
+      ],
+      "scale": 2.2,
+      "rotation": 0,
+      "sha256": "d69c0ebada5eb51d2396e893ef9824a8451353b4b28540470dd8bd0e248dd9d4",
+      "width": 381,
+      "height": 309
+    }
+  ]
+}

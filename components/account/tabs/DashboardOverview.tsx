@@ -89,36 +89,24 @@ export function DashboardOverview() {
       <Link href="/account/dashboard#study-plan" className="flex min-h-12 items-center justify-between rounded-xl border border-border bg-card px-4 font-semibold">
         今日の学習計画を進める <ArrowRight className="h-4 w-4" aria-hidden="true" />
       </Link>
-      <div className="flex justify-end">
-        <Link
-          href="/quiz/stream"
-          className="inline-flex items-center gap-1 rounded-xl bg-sky-600 px-4 py-2 text-sm font-semibold text-white hover:bg-sky-700"
-        >
-          学習を始める
-          <ArrowRight className="h-3.5 w-3.5" />
-        </Link>
-      </div>
-
       <section className="grid grid-cols-2 gap-3 sm:grid-cols-4">
         <KpiCard
           icon={<BookOpen className="h-4 w-4" />}
-          label="総問題数"
+          label="これまでの回答"
           value={data.totalAnswered.toLocaleString("ja-JP")}
           unit="問"
-          tone="sky"
         />
         <KpiCard
           icon={<Clock className="h-4 w-4" />}
-          label="学習時間"
+          label="学習時間（目安）"
           value={studyTimeLabel}
-          tone="violet"
         />
         <KpiCard
           icon={<Flame className="h-4 w-4" />}
           label="連続日数"
           value={String(data.streak)}
-          unit={`日 (最長${data.longestStreak})`}
-          tone="amber"
+          unit="日"
+          sub={`最長${data.longestStreak}日`}
         />
         <KpiCard
           icon={<TrendingUp className="h-4 w-4" />}
@@ -126,8 +114,7 @@ export function DashboardOverview() {
           value={data.examTopProb ? `${Math.round(data.examTopProb.accuracy * 100)}%` : "—"}
           sub={data.examTopProb
             ? `${examLabel(data.examTopProb.exam)} · ${data.examTopProb.answered}問の記録`
-            : "まだ回答記録がありません"}
-          tone="emerald"
+            : data.totalAnswered > 0 ? "正答率を読み込めませんでした" : "まだ回答記録がありません"}
         />
       </section>
 
@@ -135,7 +122,7 @@ export function DashboardOverview() {
         href={tsuginoScheduleUrl(data.examTopProb?.exam)}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center justify-between rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm font-semibold text-rose-900 hover:bg-rose-100 dark:border-rose-900/60 dark:bg-rose-950/30 dark:text-rose-100"
+        className="flex min-h-12 items-center justify-between gap-3 rounded-xl border border-border bg-card px-4 py-3 text-sm font-medium text-foreground hover:bg-muted"
       >
         <span>試験日・申込締切は「次の資格」で確認</span>
         <ArrowRight className="h-4 w-4" aria-hidden="true" />
@@ -143,9 +130,9 @@ export function DashboardOverview() {
 
       <section>
         <h2 className="mb-2 text-sm font-semibold text-zinc-700 dark:text-zinc-300">
-          学習カレンダー（直近365日）
+          直近12週間
         </h2>
-        <LearningHeatmap days={365} showStats />
+        <LearningHeatmap days={84} interactive={false} showStats />
       </section>
     </div>
   );
@@ -157,38 +144,26 @@ function KpiCard({
   value,
   unit,
   sub,
-  tone,
 }: {
   icon: React.ReactNode;
   label: string;
   value: string;
   unit?: string;
   sub?: string;
-  tone: "sky" | "violet" | "amber" | "rose" | "emerald";
 }) {
-  const toneClass: Record<typeof tone, string> = {
-    sky: "from-sky-500 to-cyan-500",
-    violet: "from-violet-500 to-fuchsia-500",
-    amber: "from-amber-500 to-orange-500",
-    rose: "from-rose-500 to-pink-500",
-    emerald: "from-emerald-500 to-teal-500",
-  };
   return (
     <div className="relative overflow-hidden rounded-2xl border border-zinc-200 bg-white p-4 dark:border-zinc-800 dark:bg-zinc-950">
-      <div
-        className={`absolute -right-6 -top-6 h-20 w-20 rounded-full bg-gradient-to-br ${toneClass[tone]} opacity-20 blur-2xl`}
-      />
       <div className="relative">
-        <div className="mb-1 flex items-center gap-1.5 text-[11px] uppercase tracking-wider text-zinc-500 dark:text-zinc-400">
+        <div className="mb-1 flex items-center gap-1.5 text-xs text-zinc-500 dark:text-zinc-400">
           {icon}
           {label}
         </div>
-        <div className="flex items-baseline gap-1">
+        <div className="flex flex-wrap items-baseline gap-x-1 gap-y-0.5">
           <span className="text-2xl font-bold sm:text-3xl">{value}</span>
-          {unit && <span className="text-xs text-zinc-500">{unit}</span>}
+          {unit && <span className="text-xs text-muted-foreground">{unit}</span>}
         </div>
         {sub && (
-          <div className="mt-0.5 truncate text-[11px] text-zinc-500 dark:text-zinc-400">
+          <div className="mt-1 break-words text-xs text-zinc-500 dark:text-zinc-400">
             {sub}
           </div>
         )}

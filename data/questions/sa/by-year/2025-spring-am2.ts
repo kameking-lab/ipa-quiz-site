@@ -24,6 +24,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "DFD（データフローダイアグラム）の主要な図形要素は、システム内のデータの流れ、変換、保存場所、および外部との境界を表す。選択肢アの「実体」は外部実体を、「データストア」はデータの保存場所を指す。これらの要素間の「関連」（データフローなど）も、DFDを構成する重要な要素として捉えることができる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -48,6 +49,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "開放・閉鎖原則（OCP）は、ソフトウェアのエンティティが拡張に対して開かれており、修正に対して閉じているべきであるという原則である。選択肢イの「クラスを利用するクライアントごとに異なるメソッドが必要な場合は、インタフェースを分ける」ことは、インタフェース分離の原則（ISP）に該当するが、これによりクライアントは不要な機能への依存を避け、自身のコードを修正せずに必要な拡張に対応できるという点で、OCPの一側面を間接的に実現するとも解釈できる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -72,6 +74,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "複数のWebサイトで一度のログインで全てのサービスを利用できる仕組みは、シングルサインオン（SSO）と呼ばれている。Keycloakは、このSSO機能に加え、ID管理やアクセス管理などを提供するオープンソースソフトウェアである。OAuth 2.0やOpenID Connect、SAMLといった標準プロトコルに対応し、認証・認可を一元的に管理できる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -96,6 +99,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "MapReduceは、大量のデータを分散環境で並列処理するためのプログラミングモデルである。このモデルは、入力データから中間的なキーと値のペアを生成するMapフェーズと、同じ中間キーを持つ値を集約・加工するReduceフェーズの2段階で実行される。これにより、大規模なデータ処理を効率的に行える。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -120,6 +124,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "Observerパターン（監視者パターン）は、オブジェクトの状態が変化したときに、それに依存する複数のオブジェクトに自動的に通知し、更新させるデザインパターンである。これにより、主題となるオブジェクトとそれに依存する複数のオブジェクト間の結合度を低く保ちつつ、一貫した情報伝達と更新を実現する。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -144,6 +149,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "静的解析ツールは、プログラムを実際に実行することなく、そのソースコードを分析して潜在的なバグ、セキュリティ脆弱性、コーディング規約違反などを検出する。これにより、開発の早期段階で品質の問題を発見し、手戻りのコストを削減できる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -168,6 +174,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ミューテーションテストは、既存のテストセットの有効性を評価する手法である。元のプログラムに意図的に軽微な誤り（ミューテーション）を埋め込んだ変異体プログラムを作成し、その変異体に対してテストセットを実行する。テストセットが埋め込まれた誤りを検出できた割合によって、テストセットの不具合検出能力を評価する。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -192,6 +199,13 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "サイクロマティック複雑度は、プログラムの制御フローの複雑さを測る指標であり、与えられた公式e-n+2（eはエッジの数、nはノードの数）で算出されます。この公式に基づき、制御グラフにおけるエッジとノードの数を数え、計算すると、イの4が正解となります。\n\nアの3は、グラフのエッジ数またはノード数を誤って数えた場合に到達しうる値であり、計算過程での数え間違いが考えられます。エの7も同様に、グラフの構造を正確に把握できていない場合に算出される誤った値です。ウの5も、計算における数え間違いや公式の適用誤りによって生じる可能性のある値であり、正確なグラフの解析に基づいた値ではありません。",
+    "choiceExplanations": {
+      "ア": "矢印を1本見落とすと6－5＋2＝3になります。例えばCからはD向きとE向きの2本が出ているので、両方を数えます。",
+      "イ": "丸はA〜Eの5個、矢印はAから2本、Bから2本、Cから2本、Dから1本の計7本です。式に代入すると7－5＋2＝4です。",
+      "ウ": "5は図中の丸の数、すなわちノード数です。矢印の本数も数え、エッジ数からノード数を引いた後に2を加えます。",
+      "エ": "7は図のエッジ数です。エッジ数だけを答えるとノード数を考慮できないため、5を引き、問題で指定された定数2を足します。"
+    },
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -216,6 +230,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "値呼出し（Call by Value）は、引数の値がコピーされてサブルーチンに渡される方式である。サブルーチン内ではこのコピーされた値が操作されるため、呼び出し元の変数の値はサブルーチンの実行後も一切変更されないことが保証される。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -240,6 +255,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "カークパトリックモデルは教育訓練の効果を4段階で評価するフレームワークである。レベル2の「Learning（学習）」は、受講者が知識やスキルをどの程度習得したかを測定する段階を指す。したがって、理解度確認テストを実施し、テスト結果を受講者にフィードバックする活動がこれに該当する。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -264,6 +280,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ユースケース駆動開発は、システムの利用者の視点から機能（ユースケース）を定義し、それを開発の単位とするアプローチである。これにより、ひとまとまりの要件ごとに設計からテストまでを実施できるため、各要件の進捗状況を明確に把握しやすくなるという利点がある。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -288,6 +305,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "構造化インタビューは、事前に質問項目や順序を厳密に定めて行うインタビュー技法である。この方法の長所は、複数の回答者から得られた結果を比較分析しやすい点にある。しかし、定められた質問以外で回答者の深い洞察や予期せぬ情報を引き出すことが困難であるという短所を持つ。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -312,6 +330,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "ユースケース図は、システムの要件定義において、システムが提供する機能単位（ユースケース）と、それを利用する利用者（アクター）または外部システムとの間の相互作用を表現するUML図である。この図を用いることで、システムの外部から見た振る舞いや、システム内部と外部との境界を明確に示せる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -336,6 +355,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "ラボ契約は、依頼元企業がベンダー企業に対し、一定期間にわたり特定のスキルや人数の要員確保を約束させ、その見返りとして一定以上の発注量をコミットする契約形態である。これにより、依頼元はプロジェクトのニーズに合わせて柔軟に専門要員を確保でき、ベンダーは安定した収益基盤を得られる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -360,6 +380,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "協調フィルタリングは、多くの顧客の購買行動や評価履歴などの類似性を分析し、それに基づいて商品を推薦するレコメンデーション手法である。選択肢アは、顧客Aに類似した購買行動を持つ顧客Bが購入している商品を顧客Aに勧めるという、ユーザーベース協調フィルタリングの典型的な例である。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -384,6 +405,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "オープンリゾルバとは、インターネット上の任意のコンピュータからのDNS問い合わせに応答してしまうDNSサーバである。これを悪用した攻撃の典型は、送信元IPアドレスを攻撃対象に偽装したDNS問い合わせを大量のオープンリゾルバに送りつけ、攻撃対象に大量のDNS応答を集中させるDNSリフレクション/アンプ攻撃である。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -408,6 +430,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "与えられた計算式に基づき、各選択肢の対策後の事象Cの年間発生確率Pcを算出する。対策前のマルウェア感染の年間発生確率QAが40%、外部ネットワークからの侵入QBが10%である。計算の結果、選択肢ウのdA=75%のマルウェア対策ソフトを導入し、外部ネットワークからの侵入対策を行わない場合に、Pcが19.00%となり最も低くなる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -432,6 +455,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "SSH（Secure Shell）は、ネットワークを通じて遠隔のコンピュータに安全にログインするためのプロトコルである。SSHは、通信内容の暗号化機能に加え、パスワード認証や公開鍵認証などの利用者認証機能を提供し、安全なリモート操作を可能にする。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -456,6 +480,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "スパムメール対策としてサブミッションポート（ポート番号587）を導入する目的は、SMTP-AUTH（SMTP認証）を使用し、メール送信者を認証することである。これにより、正規の利用者以外からのメール送信を防ぎ、メールサーバがスパムメールの送信経路（オープンリレー）として悪用されることを防止する。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -480,6 +505,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "セットアソシアティブ方式は、キャッシュメモリの写像方式の一つで、主記憶のブロックをキャッシュメモリの特定のセット内の任意のラインに配置できる。この方式は、主記憶のある一つのメモリブロックを、キャッシュメモリ内の単一のセットにマッピングし、そのセット内の複数の配置可能なロケーションに対応付ける。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -504,6 +530,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ア",
     "explanation": "コンテナ型仮想化におけるオーケストレーションは、多数のコンテナ化されたアプリケーションのデプロイ、管理、スケーリング、ネットワーキングなどを自動化する仕組みを指す。選択肢アはコンテナ型仮想化そのものの特徴だが、オーケストレーションは、コンテナの軽量性や高速起動といった利点を活用し、システム資源のオーバーヘッドを抑えながら大規模なコンテナ環境を効率的に運用するために用いられる。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -528,6 +555,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "まず、現在の平均応答時間1.0秒からヒット率を求めます。キャッシュヒット時0.2秒、ミス時2.2秒とすると、0.2H + 2.2(1-H) = 1.0 より、現在のヒット率は0.6（60%）です。3年後のヒット率は現状の半分になると予測されているため、0.6 / 2 = 0.3（30%）となります。この3年後のヒット率を用いて平均応答時間を計算すると、0.2 * 0.3 + 2.2 * (1 - 0.3) = 0.06 + 2.2 * 0.7 = 0.06 + 1.54 = 1.6秒となります。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -552,6 +580,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "ウ",
     "explanation": "ニモニックコードは、対象物の特性や名称から連想しやすい文字や数字を組み合わせて作成されるコード体系です。そのため、コードの値を見るだけで対象物が何を意味するかを容易に想像できます。一方、シーケンスコードは連番、デシマルコードは階層的な分類、ブロックコードは一定範囲の区分であり、コード自体に連想性はありません。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -576,6 +605,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "エ",
     "explanation": "トランザクションの隔離性水準を高めるということは、複数のトランザクションが同時にデータにアクセスする際に、互いに干渉しないように、より厳格な制御を行うことを意味します。例えば、READ COMMITTEDよりもSERIALIZABLEといった高い隔離性水準では、他のトランザクションのコミット（確定）されていない変更を読み取ることができなくなります。この厳格な制御は、データの不整合を防ぐために、トランザクション間のロックやバージョン管理といったメカニズムをより多用します。\n\nこの結果、不整合なデータを読み込むトランザクション数は減少しますが、同時に、これらの厳格な制御はトランザクションの処理にオーバーヘッド（追加の処理負荷）を生じさせます。ロックの待ち時間が増加したり、より複雑なデータ整合性チェックが必要になったりするため、単位時間に処理できるトランザクション数は減少する傾向にあります。したがって、不整合なデータを読み込むトランザクション数は減少し、単位時間に処理できるトランザクション数も減少するという組合せが適切です。\n\nアは、隔離性水準を高めると不整合データは減るはずなので不適切です。イは、不整合データが減るという点で誤りです。ウは、不整合データは減るものの、隔離性水準の向上は通常、処理能力を低下させるため、処理トランザクション数が増えるという点が誤りです。",
+    "explanationCoverage": "full",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"
@@ -600,6 +630,7 @@ export const SA_QUESTIONS_2025_SPRING_AM2: Question[] = [
     },
     "answer": "イ",
     "explanation": "スイッチングハブ（レイヤー2スイッチ）は、データリンク層（レイヤー2）で動作し、MACアドレスに基づいてフレームを転送（交換）します。ブリッジも同じデータリンク層で動作し、MACアドレスを学習してフレームの転送判断を行うことで、複数のLANセグメント間の通信を中継・分離する機能を持っています。スイッチングハブは多ポートのブリッジと見なすことができ、機能的にもプロトコル階層的にも同等です。",
+    "explanationCoverage": "full",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2025h07_1/2025h07h_sa_am2_qs.pdf",
     "license": "IPA-public"

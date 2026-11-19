@@ -43,6 +43,7 @@ describe("J検情報システム latest two official papers in staging", () => {
       expect(q.question.length).toBeGreaterThan(300);
       expect(q.sourcePdfUrl).toMatch(/^https:\/\/www\.jken\.sgec\.or\.jp\/common\/pdf\/past_test\/260(?:208|913)_mondaijs0[123]\.pdf#page=\d+$/);
       expect(q.sourceAnswerUrl).toMatch(/_kaitojs0[123]\.pdf$/);
+      expect(q.explanation).not.toContain(q.sourceAnswerUrl);
       expect(q.explanationCoverage).toBe("full");
       expect(q.needsReview).toBe(false);
       expect(Object.keys(q.choiceExplanations ?? {}).sort()).toEqual(Object.keys(q.choices ?? {}).sort());

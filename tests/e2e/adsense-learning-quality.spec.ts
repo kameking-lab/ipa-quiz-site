@@ -4,7 +4,6 @@ test.beforeEach(async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   // Static learning only: these flows never need an external AI provider call.
   await page.route("**/api/copilot**", route => route.abort());
-  await page.route("**/api/generate-question**", route => route.abort());
 });
 
 test("FP3 question survives the static-page CTA and normal-mode switch", async ({ page }) => {

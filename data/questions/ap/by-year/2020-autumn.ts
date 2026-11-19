@@ -671,10 +671,17 @@ export const AP_QUESTIONS_2020_AUTUMN: Question[] = [
       "エ": "注文明細(注文番号,数量,販売単価)"
     },
     "answer": "ウ",
-    "explanation": "関係データベースの正規化において、注文明細は「どの注文でどの商品をいくつ」購入したかを示す情報を持つべきです。関数従属性から、(注文番号, 商品番号)が主キーとなり、数量と販売単価がそれに従属すると考えられるため、注文明細(注文番号,商品番号,数量,販売単価)が適切です。",
+    "explanation": "原本の関数従属性④と⑤から、注文明細の数量と販売単価は注文番号と商品番号の組合せで決まります。この二項目を主キーにして、数量と販売単価を明細に残します。顧客番号は注文番号だけで決まり、顧客名は顧客番号に従属するので、明細の外に分けます。",
     "hasImage": false,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "顧客番号は注文番号だけで、顧客名は顧客番号で決まります。顧客情報を明細に含めると、同じ注文の複数行にその情報が重複します。",
+      "イ": "同じ顧客が一回の注文で複数の商品を購入できます。注文番号と顧客番号だけでは、どの商品の数量や販売単価かを区別できません。",
+      "ウ": "数量も販売単価も、注文番号と商品番号を組み合わせて初めて決まります。この二項目を主キーとし、数量と販売単価を明細に残します。",
+      "エ": "注文番号だけでは、同じ注文に含まれる複数の商品を区別できません。数量と販売単価を決定するには、商品番号も必要です。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2020a-am-q29",
@@ -1322,7 +1329,14 @@ export const AP_QUESTIONS_2020_AUTUMN: Question[] = [
     "explanation": "正解はウです。（出典: IPA 応用情報技術者試験 令和2年度秋期 午前 問55）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "アでは使用量を増やすほど累計課金額が下がります。逓減課金で下がるのは追加の利用に対する単価で、累計額は増えます。",
+      "イ": "イはある使用量で累計額が水平になり、それ以降は追加料金がゼロです。単価を段階的に下げながら加算する形とは異なります。",
+      "ウ": "ウでは使用量の増加に応じて累計額が増えますが、傾きは段階的に小さくなります。この傾きが追加の利用に対する単価です。",
+      "エ": "エは使用量が増えるほど累計額の傾きが大きくなります。追加の利用に対する単価が上がる、逓増課金を示す形です。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2020a-am-q56",
@@ -1346,7 +1360,14 @@ export const AP_QUESTIONS_2020_AUTUMN: Question[] = [
     "explanation": "正解はウです。（出典: IPA 応用情報技術者試験 令和2年度秋期 午前 問56）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "95.52％は計画停止を除いた2,100時間から、計画停止を含む94時間を引いた場合の値です。同じ計画停止を二重に除外しています。",
+      "イ": "95.70％は全期間2,184時間のうち、計画と故障を合わせた94時間を停止に数えた値です。合意済みの計画停止は評価対象外です。",
+      "ウ": "全期間2,184時間から計画停止84時間を除くと、提供対象は2,100時間です。故障停止は10時間なので、稼働率は2,090÷2,100です。",
+      "エ": "99.63％では不稼働を約8時間と見積もることになります。表にあるハードウェア故障の停止は10時間で、これを全て数えます。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2020a-am-q57",
@@ -1778,7 +1799,14 @@ export const AP_QUESTIONS_2020_AUTUMN: Question[] = [
     "explanation": "正解はウです。（出典: IPA 応用情報技術者試験 令和2年度秋期 午前 問74）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "不良個数上位の三種類は182＋136＋120＝438個です。全875個の約50％で、A群の基準である70％には届きません。",
+      "イ": "上位四種類の累積は536個です。全875個の70％は612.5個なので、四種類の段階ではA群の基準を満たしません。",
+      "ウ": "不良の多い順に四種類を加えると536個、五種類では627個です。全875個の70％を初めて超えるのは五種類目を加えたときです。",
+      "エ": "六種類まで含めれば70％を超えますが、その一つ前ですでに627個、約71.7％です。Uを加えなくてもA群の区切りに達します。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2020a-am-q75",
@@ -1802,7 +1830,14 @@ export const AP_QUESTIONS_2020_AUTUMN: Question[] = [
     "explanation": "正解はアです。（出典: IPA 応用情報技術者試験 令和2年度秋期 午前 問75）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "③は総費用が最も小さくなる点を横軸に下ろした発注量です。年間発注費用と保管費用が等しくなるQ＝√(2RC/H)に対応します。",
+      "イ": "年間の発注費用と保管費用の和は、図で一度下がってから上向く④の曲線です。③の印はその最小値を実現する発注量を示します。",
+      "ウ": "発注量が増えると1年当たりの発注回数R/Qが減り、年間発注費用も下がります。この式は右下がりの②の曲線です。",
+      "エ": "発注量が増えると平均在庫Q/2も増えるので、保管費用の式は右上がりの①です。発注量を表す③には該当しません。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2020a-am-q76",
@@ -1850,7 +1885,14 @@ export const AP_QUESTIONS_2020_AUTUMN: Question[] = [
     "explanation": "正解はイです。（出典: IPA 応用情報技術者試験 令和2年度秋期 午前 問77）",
     "hasImage": true,
     "sourcePdfUrl": "https://www.jitec.ipa.go.jp/1_04hanni_sukiru/mondai_kaitou_2020h02_2/2020h02a_ap_am_qs.pdf",
-    "license": "IPA-public"
+    "license": "IPA-public",
+    "choiceExplanations": {
+      "ア": "売上高510百万円なら、限界利益は510×0.4＝204百万円です。固定費180百万円を引いた営業利益24百万円は目標を下回ります。",
+      "イ": "限界利益率は40％、固定費は180百万円です。営業利益30百万円に必要な限界利益210百万円を0.4で割り、525百万円とします。",
+      "ウ": "売上高550百万円なら営業利益は550×0.4－180＝40百万円です。指定された30百万円の計画には525百万円で届きます。",
+      "エ": "売上高575百万円では限界利益230百万円から固定費180百万円を引いて50百万円が残ります。目標30百万円を上回ります。"
+    },
+    "explanationCoverage": "full"
   },
   {
     "id": "ap-2020a-am-q78",

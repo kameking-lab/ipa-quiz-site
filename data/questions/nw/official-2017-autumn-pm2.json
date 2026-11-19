@@ -1,0 +1,126 @@
+[
+  {
+    "id": "nw-2017a-pm2-q1",
+    "exam": "nw",
+    "year": 2017,
+    "season": "autumn",
+    "session": "pm2",
+    "qNumber": 1,
+    "type": "descriptive",
+    "category": "ネットワーク設計",
+    "topicTags": [
+      "SDNとクラウドの活用"
+    ],
+    "difficulty": 5,
+    "question": "問1 SDNとクラウドの活用",
+    "answer": "問１\n                       出題趣旨\n  ディジタルビジネスやIoT に関連した情報システムが注目されている。クラウドサービスを利用したりSDN\n （Software-Defined Networking）技術を活用したりする事例も増えている。これらの新しい概念やサービス，\n技術について，一部の研究開発者だけではなく，一般のネットワーク技術者にも正しい理解と応用力が求めら\nれる時代になっている。\n 本問では，ネットワークの拡張を題材に，自社設備を用いたネットワークとWeb システムが，SDN とクラ\nウドサービスの活用によってどのように変わるのかを解説している。従来のネットワーク技術の知識を用い\n て，SDN とクラウドサービスの基本的概念や技術が理解できること，それらとVLAN やTCP/IP，DNS を組み\n合わせたネットワークシステム全体が理解でき，さらに，その基本設計ができることについて問うている。\n\n\n  設問                解答例・解答の要点                備考\n  設問１  あ  i1\n       い NAT\n       う  i3\n       え  Flow-Mod\n       お  controller\n       か  Packet-Out\n       き OFS2\n       く  p9\n 設問２(1) け  v2\n       こ なし\n       さ m2\n       し m3\n       す  i4\n         (2) ②，⑧，⑨，⑩\n         (3) ETH_TYPE がARP のイーサネットタイプに等しい。\n         (4) 外部NW 内のRT-1 と新FW の通信\n         (5) せ  p6\n       そ なし\n       た m1\n       ち m2\n         (6) Push-VLAN，Set-Field VLAN_VID＝v2，Output ( p7 )\n 設問３(1) つ CNAME\n         (2) webtest.asha.example.com\n         (3) weblive.asha.example.com\n         (4) DNS クライアントとDNS フルリゾルバが，ネットワーク上で離れた位置にあ\n      る場合\n         (5) ① ・Web-B のサーバ処理能力不足\n       ② ・機械とWeb-B 間の通信遅延\n 設問４(1) 転用後の業務サーバのIP アドレスを，LB の振り分け先に追加しておく。\n         (2) 置換え前   weblive IN A i6\n       置換え後   weblive IN A i1\n         (3) ① ・転用する業務サーバに関する物理配線の変更が不要になる。\n       ② ・管理ソフトウェアを用いて，社内要員だけで対応できる。\n         (4) CDN，ISP，IaaS 環境の構築と切替えに関する，API サービスとDNS を使った\n\n手順の確立\n(5) ① ・国外を利用するので国内の広域災害の影響を回避できる。\n  ② ・B 社CDN などを使い通常時と同じ品質を保つことができる。",
+    "modelAnswer": "問１\n                       出題趣旨\n  ディジタルビジネスやIoT に関連した情報システムが注目されている。クラウドサービスを利用したりSDN\n （Software-Defined Networking）技術を活用したりする事例も増えている。これらの新しい概念やサービス，\n技術について，一部の研究開発者だけではなく，一般のネットワーク技術者にも正しい理解と応用力が求めら\nれる時代になっている。\n 本問では，ネットワークの拡張を題材に，自社設備を用いたネットワークとWeb システムが，SDN とクラ\nウドサービスの活用によってどのように変わるのかを解説している。従来のネットワーク技術の知識を用い\n て，SDN とクラウドサービスの基本的概念や技術が理解できること，それらとVLAN やTCP/IP，DNS を組み\n合わせたネットワークシステム全体が理解でき，さらに，その基本設計ができることについて問うている。\n\n\n  設問                解答例・解答の要点                備考\n  設問１  あ  i1\n       い NAT\n       う  i3\n       え  Flow-Mod\n       お  controller\n       か  Packet-Out\n       き OFS2\n       く  p9\n 設問２(1) け  v2\n       こ なし\n       さ m2\n       し m3\n       す  i4\n         (2) ②，⑧，⑨，⑩\n         (3) ETH_TYPE がARP のイーサネットタイプに等しい。\n         (4) 外部NW 内のRT-1 と新FW の通信\n         (5) せ  p6\n       そ なし\n       た m1\n       ち m2\n         (6) Push-VLAN，Set-Field VLAN_VID＝v2，Output ( p7 )\n 設問３(1) つ CNAME\n         (2) webtest.asha.example.com\n         (3) weblive.asha.example.com\n         (4) DNS クライアントとDNS フルリゾルバが，ネットワーク上で離れた位置にあ\n      る場合\n         (5) ① ・Web-B のサーバ処理能力不足\n       ② ・機械とWeb-B 間の通信遅延\n 設問４(1) 転用後の業務サーバのIP アドレスを，LB の振り分け先に追加しておく。\n         (2) 置換え前   weblive IN A i6\n       置換え後   weblive IN A i1\n         (3) ① ・転用する業務サーバに関する物理配線の変更が不要になる。\n       ② ・管理ソフトウェアを用いて，社内要員だけで対応できる。\n         (4) CDN，ISP，IaaS 環境の構築と切替えに関する，API サービスとDNS を使った\n\n手順の確立\n(5) ① ・国外を利用するので国内の広域災害の影響を回避できる。\n  ② ・B 社CDN などを使い通常時と同じ品質を保つことができる。",
+    "explanation": "パケットの識別条件と転送動作を区別し、各装置でヘッダがどう変わるかを表で追う。クラウドの運用モードの違いも確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/nw/2017-autumn-pm2/page-04.webp",
+      "/questions/ipa/nw/2017-autumn-pm2/page-05.webp",
+      "/questions/ipa/nw/2017-autumn-pm2/page-06.webp",
+      "/questions/ipa/nw/2017-autumn-pm2/page-07.webp",
+      "/questions/ipa/nw/2017-autumn-pm2/page-08.webp",
+      "/questions/ipa/nw/2017-autumn-pm2/page-09.webp",
+      "/questions/ipa/nw/2017-autumn-pm2/page-10.webp",
+      "/questions/ipa/nw/2017-autumn-pm2/page-11.webp",
+      "/questions/ipa/nw/2017-autumn-pm2/page-12.webp",
+      "/questions/ipa/nw/2017-autumn-pm2/page-13.webp",
+      "/questions/ipa/nw/2017-autumn-pm2/page-14.webp",
+      "/questions/ipa/nw/2017-autumn-pm2/page-15.webp"
+    ],
+    "imageAltTexts": [
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問1 本文・設問（PDF 4ページ）",
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問1 本文・設問（PDF 5ページ）",
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問1 本文・設問（PDF 6ページ）",
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問1 本文・設問（PDF 7ページ）",
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問1 本文・設問（PDF 8ページ）",
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問1 本文・設問（PDF 9ページ）",
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問1 本文・設問（PDF 10ページ）",
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問1 本文・設問（PDF 11ページ）",
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問1 本文・設問（PDF 12ページ）",
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問1 本文・設問（PDF 13ページ）",
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問1 本文・設問（PDF 14ページ）",
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問1 本文・設問（PDF 15ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/nw/2017-autumn-pm2/answer-q01-p01.webp",
+      "/questions/ipa/nw/2017-autumn-pm2/answer-q01-p02.webp"
+    ],
+    "answerImageAltTexts": [
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問1 公式解答例（PDF 1ページ）",
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問1 公式解答例（PDF 2ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_nw_pm2_qs.pdf#page=4",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_nw_pm2_ans.pdf#page=1",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA ネットワークスペシャリスト 2017年度秋期 午後II 問1。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  },
+  {
+    "id": "nw-2017a-pm2-q2",
+    "exam": "nw",
+    "year": 2017,
+    "season": "autumn",
+    "session": "pm2",
+    "qNumber": 2,
+    "type": "descriptive",
+    "category": "無線LAN",
+    "topicTags": [
+      "無線LANシステムの導入"
+    ],
+    "difficulty": 5,
+    "question": "問2 無線LANシステムの導入",
+    "answer": "問２\n                       出題趣旨\n  IEEE 802.11ac によって，無線LAN でもG ビット／秒の高速通信が可能になった。無線LAN はPC の使用\n場所を固定化しないので，柔軟性に富んだPC 利用環境が提供される。しかし，電波を通信に利用することに\nよって，通信の傍受が容易になることから，有線LAN では考慮しなかった箇所でのセキュリティ対策が求め\nられる。\n  本問では，無線LAN を導入してオフィスをフリーアドレスにする事例を取り上げた。この中で，無線LAN\n技術の状況，無線LAN で利用されている暗号化と認証方式，アクセスポイントの配置設計，ディジタル証明\n書の運用方法などについて解説した。\n 本問では，無線LAN の導入に当たって必要となる技術面と運用面の課題を題材にして，受験者が，ネット\nワークの設計・構築・運用などの業務をとおして修得した能力が，実務で活用できる水準かどうかを問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１     a   2.4\n              b  5\n              c  any\n              d 共通\n              e   802.11i\n 設問２(1)  f ストリーム\n              g 同一\n              h 認証サーバ\n              i  MAC アドレス\n              j 認証\n         (2) カウンタ値c をAES で暗号化した結果と，暗号文ブロックe1 をXOR する。\n 設問３(1) 周波数帯域幅  80\n       アンテナ本数  2\n         (2) ① ・WLC に通信の負荷が集中するのを抑制することができる。\n       ② ・認証後にWLC に障害が発生しても，その無線LAN 端末の通信は継続で\n         きる。\n         (3) 電波干渉によって，通信障害が発生する。\n         (4) 周波数帯のグループの数  4\n                  ・ハンドオーバをスムーズに行わせるため\n      目的\n                        ・AP の負荷分散を行わせるため\n         (5) 呼称       PoE＋\n      最小供給電力  216\n 設問４(1) ① ・CA の自己証明書\n       ② ・クライアントの秘密鍵\n         (2) ダウンロードサーバの認証情報が漏えいすると，来訪者もクライアント証明書\n      などがダウンロードできてしまう。\n         (3) ・クライアント証明書の有効期限を切らせた営業員\n       ・無線LAN 導入後に営業部に配属された営業員\n 設問５(1) サプリカントとなる機器      NPC\n      オーセンティケータとなる機器 WLC\n         (2) ① ・ESSID\n       ② ・PSK\n\n(3) ㋑\n(4) ルータ2 への接続ポートだけに，VLAN200 のポートVLAN を設定する。\n(5) 問題 ハンドオーバができなくなる。\n  理由 NPC に配布したPMK と認証関連情報がWLC で保持されているから\n(6) AP→L2SW5→L3SW→FW→L2SW1→プロキシサーバ→L2SW1→FW→ルータ1",
+    "modelAnswer": "問２\n                       出題趣旨\n  IEEE 802.11ac によって，無線LAN でもG ビット／秒の高速通信が可能になった。無線LAN はPC の使用\n場所を固定化しないので，柔軟性に富んだPC 利用環境が提供される。しかし，電波を通信に利用することに\nよって，通信の傍受が容易になることから，有線LAN では考慮しなかった箇所でのセキュリティ対策が求め\nられる。\n  本問では，無線LAN を導入してオフィスをフリーアドレスにする事例を取り上げた。この中で，無線LAN\n技術の状況，無線LAN で利用されている暗号化と認証方式，アクセスポイントの配置設計，ディジタル証明\n書の運用方法などについて解説した。\n 本問では，無線LAN の導入に当たって必要となる技術面と運用面の課題を題材にして，受験者が，ネット\nワークの設計・構築・運用などの業務をとおして修得した能力が，実務で活用できる水準かどうかを問う。\n\n\n  設問                解答例・解答の要点                備考\n  設問１     a   2.4\n              b  5\n              c  any\n              d 共通\n              e   802.11i\n 設問２(1)  f ストリーム\n              g 同一\n              h 認証サーバ\n              i  MAC アドレス\n              j 認証\n         (2) カウンタ値c をAES で暗号化した結果と，暗号文ブロックe1 をXOR する。\n 設問３(1) 周波数帯域幅  80\n       アンテナ本数  2\n         (2) ① ・WLC に通信の負荷が集中するのを抑制することができる。\n       ② ・認証後にWLC に障害が発生しても，その無線LAN 端末の通信は継続で\n         きる。\n         (3) 電波干渉によって，通信障害が発生する。\n         (4) 周波数帯のグループの数  4\n                  ・ハンドオーバをスムーズに行わせるため\n      目的\n                        ・AP の負荷分散を行わせるため\n         (5) 呼称       PoE＋\n      最小供給電力  216\n 設問４(1) ① ・CA の自己証明書\n       ② ・クライアントの秘密鍵\n         (2) ダウンロードサーバの認証情報が漏えいすると，来訪者もクライアント証明書\n      などがダウンロードできてしまう。\n         (3) ・クライアント証明書の有効期限を切らせた営業員\n       ・無線LAN 導入後に営業部に配属された営業員\n 設問５(1) サプリカントとなる機器      NPC\n      オーセンティケータとなる機器 WLC\n         (2) ① ・ESSID\n       ② ・PSK\n\n(3) ㋑\n(4) ルータ2 への接続ポートだけに，VLAN200 のポートVLAN を設定する。\n(5) 問題 ハンドオーバができなくなる。\n  理由 NPC に配布したPMK と認証関連情報がWLC で保持されているから\n(6) AP→L2SW5→L3SW→FW→L2SW1→プロキシサーバ→L2SW1→FW→ルータ1",
+    "explanation": "端末、アクセスポイント、認証サーバの役割を整理する。証明書配布と接続先のVLAN設計を別々に確認する。",
+    "hasImage": true,
+    "imageUrls": [
+      "/questions/ipa/nw/2017-autumn-pm2/page-16.webp",
+      "/questions/ipa/nw/2017-autumn-pm2/page-17.webp",
+      "/questions/ipa/nw/2017-autumn-pm2/page-18.webp",
+      "/questions/ipa/nw/2017-autumn-pm2/page-19.webp",
+      "/questions/ipa/nw/2017-autumn-pm2/page-20.webp",
+      "/questions/ipa/nw/2017-autumn-pm2/page-21.webp",
+      "/questions/ipa/nw/2017-autumn-pm2/page-22.webp",
+      "/questions/ipa/nw/2017-autumn-pm2/page-23.webp",
+      "/questions/ipa/nw/2017-autumn-pm2/page-24.webp",
+      "/questions/ipa/nw/2017-autumn-pm2/page-25.webp",
+      "/questions/ipa/nw/2017-autumn-pm2/page-26.webp"
+    ],
+    "imageAltTexts": [
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問2 本文・設問（PDF 16ページ）",
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問2 本文・設問（PDF 17ページ）",
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問2 本文・設問（PDF 18ページ）",
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問2 本文・設問（PDF 19ページ）",
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問2 本文・設問（PDF 20ページ）",
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問2 本文・設問（PDF 21ページ）",
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問2 本文・設問（PDF 22ページ）",
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問2 本文・設問（PDF 23ページ）",
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問2 本文・設問（PDF 24ページ）",
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問2 本文・設問（PDF 25ページ）",
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問2 本文・設問（PDF 26ページ）"
+    ],
+    "answerImageUrls": [
+      "/questions/ipa/nw/2017-autumn-pm2/answer-q02-p02.webp",
+      "/questions/ipa/nw/2017-autumn-pm2/answer-q02-p03.webp"
+    ],
+    "answerImageAltTexts": [
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問2 公式解答例（PDF 2ページ）",
+      "ネットワークスペシャリスト 2017年度秋期 午後II 問2 公式解答例（PDF 3ページ）"
+    ],
+    "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_nw_pm2_qs.pdf#page=16",
+    "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt8000000fqpm-att/2017h29a_nw_pm2_ans.pdf#page=2",
+    "officialReferenceUrls": [
+      "https://www.ipa.go.jp/shiken/mondai-kaiotu/2017h29.html"
+    ],
+    "sourceAttribution": "出典：IPA ネットワークスペシャリスト 2017年度秋期 午後II 問2。",
+    "license": "IPA-public",
+    "lastUpdated": "2026-11-19"
+  }
+]

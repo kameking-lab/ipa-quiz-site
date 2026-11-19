@@ -1,0 +1,345 @@
+{
+  "exam": "kenchiku-setsubishi",
+  "year": 2024,
+  "session": "am1",
+  "checkedAt": "2026-11-17",
+  "lawReferenceDate": "2024-01-01",
+  "sources": [
+    {
+      "name": "setsubi-question",
+      "url": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2024-1st-mondai1.pdf",
+      "status": 200,
+      "sha256": "9fbcea7cebe5c48588f0810d9ade8dfa8800e480ad40fb3ab3de7675878c1668",
+      "pages": 20
+    },
+    {
+      "name": "setsubi-answer",
+      "url": "https://www.jaeic.or.jp/assets/pdf/shiken/bmee/bmee-mondai/bmee-2024-1st-kijyun.pdf",
+      "status": 200,
+      "sha256": "095c46d93ff5c5d5fa817b7b778faedc38100f3ff56f8c5b61f743dd240d3157",
+      "pages": 1
+    }
+  ],
+  "references": [
+    {
+      "name": "boiler",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/347M50002000033_20231221_505M60000100157",
+      "lawRevisionId": "347M50002000033_20231221_505M60000100157",
+      "lawReferenceDate": "2024-01-01",
+      "sha256": "0788946bd9b315e5d64b5405bb37b727e93436aab8e292e584a5b943f7edd619"
+    },
+    {
+      "name": "building-order",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/325CO0000000338_20230526_504CO0000000393",
+      "lawRevisionId": "325CO0000000338_20230526_504CO0000000393",
+      "lawReferenceDate": "2024-01-01",
+      "sha256": "36404cf9519e28f612cd0a51e77a398a98f30625106c9bbb582a32036cadbc80"
+    },
+    {
+      "name": "building-hygiene",
+      "url": "https://laws.e-gov.go.jp/api/2/law_data/345CO0000000304_20220401_503CO0000000347",
+      "lawRevisionId": "345CO0000000304_20220401_503CO0000000347",
+      "lawReferenceDate": "2024-01-01",
+      "sha256": "0a31e921544f24d87714e52398159f1faaf842b4d9f71616cb8b40c5d8147e97"
+    },
+    {
+      "name": "spec-2022",
+      "url": "https://www.mlit.go.jp/gobuild/content/001879204.pdf",
+      "sha256": "ed10335230a5e90480f9be802290288a731f56909b1233cfae37f18e68c9d5aa"
+    },
+    {
+      "name": "zeb",
+      "url": "https://www.env.go.jp/earth/zeb/about/04.html",
+      "sha256": "7700d9d32388f73b581a3165985f0c759de8348653ea407810508a6c49ce1e57"
+    },
+    {
+      "name": "wbgt",
+      "url": "https://www.wbgt.env.go.jp/sp/wbgt.php",
+      "sha256": "59993045debaa392307ebb5932a015018ffe54b6059efe77480e9aba632f166f"
+    },
+    {
+      "name": "isolation",
+      "url": "https://www.jssi.or.jp/generalseismic_isolation/isolation_architecture",
+      "sha256": "bd0704e3bf78962e156acb37a0a7a5ff8784fd247eb15b0928db3f2a19f97c4f"
+    },
+    {
+      "name": "pmv",
+      "url": "https://agriknowledge.affrc.go.jp/RN/2010893250.pdf",
+      "sha256": "f65b6fb60372313fecf7a1557974651ff2a828dbfc1ff5515df6ed67af974bca"
+    }
+  ],
+  "scope": {
+    "added": 27,
+    "target": 27,
+    "remainingOtherSubjects": 78
+  },
+  "items": [
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q1",
+      "sourcePage": 3,
+      "officialAnswerNumber": "2",
+      "contentSha256": "360c92002cb6d867547c2feb456a412db59678c539c315d580ed324572e72dd1",
+      "rawExtraction": "建築物の維持管理・保全等に関する次の記述のうち、最も不適当なものはどれか。\n1.ライフサイクルコストの検討において、企画設計費、建設費、運用管理費、解体費等の建築物\nの生涯に必要な全てのコストについて試算を行った。\n2.「エネルギーの使用の合理化及び非化石エネルギーへの転換等に関する法律」に基づく報告に当\nたって、消費した電気の熱量換算には、全て二次エネルギー基準を用いた。\n3.建築物のエネルギー消費量の計量計測・記録保存や、主要機器に対する性能確認等を目的とし\nて、BEMS を導入した。\n4.設備機器の部分的な修繕が可能となるように、機器の台数分割や更新・搬出入スペースを考慮\nした計画とした。"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q2",
+      "sourcePage": 3,
+      "officialAnswerNumber": "3",
+      "contentSha256": "8aeff3128fb081b91f4861b800f1ac1c46834957823633cb6576e905044f2c9d",
+      "rawExtraction": "建築設備関係諸室等の計画に関する次の記述のうち、最も不適当なものはどれか。\n1.防火ダンパーや防煙ダンパーの設置箇所には、450 mm× 450 mmの点検口を設けた。\n2.蒸気ボイラーは、伝熱面積が4m\n2 であったので、ボイラー専用室に設置した。\n3.ボイラー専用室に設置するボイラーとオイルサービスタンクとの離隔距離は、障壁の設置等、\n防火のための措置を講じなかったので、1mとした。\n4.排煙機は、その排煙系統内の最も高い位置にある排煙口よりも高い位置に設置した。"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q3",
+      "sourcePage": 3,
+      "officialAnswerNumber": "2",
+      "contentSha256": "569ad9289240f0295a15d2cf0386752e6ce52b56609d750a896231fa1a64f19a",
+      "rawExtraction": "manual table/conditions transcription; source image checked"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q4",
+      "sourcePage": 4,
+      "officialAnswerNumber": "3",
+      "contentSha256": "7aa141c83b12e9296b191d2bb8644b0f06a10a5b15184dbb631b954064eb4151",
+      "rawExtraction": "空調計画における省エネルギーの手法に関する次の記述のうち、最も不適当なものはど\nれか。\n1.放射空調は、冷温水の水温を室温に近い温度に設定できるので、冷凍機のCOPの向上につな\nがる。\n2.ソーラークーリングシステムは、太陽熱集熱器で作った温水を、ガス吸収式冷温水機の熱源と\nして利用することによって、都市ガスの消費量を削減できる。\n3.フリークーリングは、冬期において外気温が低いことを利用して、冷却塔を運転しないで冷房\nを行うので、冷却塔のエネルギー消費量を削減できる。\n4.タスク・アンビエント空調は、アンビエント域の設定温度を緩和し、タスク域を在席時のみ空\n調することによって、空間全体の空調エネルギーを抑えることができる。"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q5",
+      "sourcePage": 4,
+      "officialAnswerNumber": "2",
+      "contentSha256": "129b7aa8e8a0a608f31e1a025c7488f43cd4230ea043bb84b2382cbf91c23b4d",
+      "rawExtraction": "建築物の計画に関する次の記述のうち、最も不適当なものはどれか。\n1.事務所ビルにおいて、エレベーターは、1バンク当たりの台数を4台としたので、直線配置と\nした。\n2.小学校において、国語・算数等の講義的な授業をクラスルームで行い、理科・図工等の実験・\n実習的な授業を特別教室で行うことができるように、教科教室型を採用した。\n3.学校の体育館において、バレーボールコートに必要な高さと、バスケットボールコートに必要\nな広さから、アリーナの容積を決定した。\n4.ビジネスホテルにおいて、配管シャフトは、基準階の階高を3.2 mに抑えるために、客室ごと\nに設けた。"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q6",
+      "sourcePage": 4,
+      "officialAnswerNumber": "2",
+      "contentSha256": "b8953d3e10f53051857b089a7a00023cbf0e55d94f21c1ea18ed8538de796bad",
+      "rawExtraction": "排煙計画に関する次の記述のうち、最も不適当なものはどれか。\n1.居室において、壁面に設ける「排煙口の手動開放装置」のうち手で操作する部分の高さは、床面\nから90 cmとした。\n2.天井の高さが4mの居室において、壁面に設ける排煙口の排煙上有効な部分の下端の高さは、\n床面から2mとした。\n3.天井の高さが3mの特別避難階段の付室において、壁面に設ける給気口の上端の高さは、床面\nから60 cmとした。\n4.防煙区画を形成する防煙垂れ壁の下端の位置は、天井面から50 cm下方とした。"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q7",
+      "sourcePage": 5,
+      "officialAnswerNumber": "1",
+      "contentSha256": "72e76ffc221f5f5370f31e38b4b17128642a66e8013722b9b54c8355c4e21d4e",
+      "rawExtraction": "消火設備等の計画に関する次の記述のうち、最も不適当なものはどれか。\n1.消防用水を、屋内消火栓設備等の初期消火設備のための専用水源として設置した。\n2.ドレンチャー設備を、外部から飛んでくる火の粉や輻\n射熱から重要文化財に指定された建造物\nを守るために設置した。\n3.自動火災報知設備の定温式感知器を、ボイラー室に設置した。\n4.泡消火設備を、飛行機の格納庫に設置した。"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q8",
+      "sourcePage": 5,
+      "officialAnswerNumber": "3",
+      "contentSha256": "76e251c501441eb4359125c5d1bf73493316403c29191c695d3f7cc789d36552",
+      "rawExtraction": "免震構造の建築物に関する次の記述のうち、最も不適当なものはどれか。\n1.基礎免震の免震装置は、一般に、耐火被覆を行う必要はない。\n2.基礎免震の免震層を配管スペースとして使用する場合には、階数及び延べ面積に算入する必要\nはない。\n3.積層ゴムを用いたアイソレータ(支承)には、地震時の大きな鉛直変位に追従できることが求め\nられる。\n4.免震構造には、極めて稀\nに発生する暴風に対して、免震層が過大に変形しないような耐風性能\nが求められる。"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q9",
+      "sourcePage": 5,
+      "officialAnswerNumber": "1",
+      "contentSha256": "06c5c768531cefe0c2131b06cc3f82eb15811d1942c156ca9f152ca147c0f3d0",
+      "rawExtraction": "北緯35 度のある地点における終日日射量に関する次の記述のうち、最も不適当なもの\nはどれか。ただし、終日快晴とし、大気透過率を0.7 とする。\n1.春分日・秋分日の終日日射量は、南向き鉛直面より西向き鉛直面のほうが大きい。\n2.夏至日の終日日射量は、南向き鉛直面より西向き鉛直面のほうが大きい。\n3.冬至日の終日日射量は、東向き鉛直面より水平面のほうが大きい。\n4.冬至日の終日日射量は、水平面より南向き鉛直面のほうが大きい。"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q10",
+      "sourcePage": 6,
+      "officialAnswerNumber": "1",
+      "contentSha256": "1ac199af26600139a61087356a3c012907d43ea969a5e7234c02f123dc800ddb",
+      "rawExtraction": "室内における人体の熱的快適性に関する次の記述のうち、最も不適当なものはどれか。\n1.快適域として推奨されるPMVとPPDの範囲は、それぞれ-0.5 <PMV <+0.5、PPD <5%\nである。\n2.暑さ指数WBGT は、熱中症対策の指標に用いられており、「日常生活における熱中症予防指\n針」における「厳重警戒」の範囲は、28 °C≦WBGT <31 °Cである。\n3.人体の温冷感に影響を与える要素は、代謝量、着衣量、空気温度、放射温度、湿度及び気流の\n6項目である。\n4.成人女性の平均的な代謝量は、成人男性の代謝量の80 ~85 %程度である。"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q11",
+      "sourcePage": 6,
+      "officialAnswerNumber": "4",
+      "contentSha256": "1b0c47f33b2a88b061e8251700bbad3b22671e42f6ab31c8004932bc4a67c43c",
+      "rawExtraction": "manual table/conditions transcription; source image checked"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q12",
+      "sourcePage": 7,
+      "officialAnswerNumber": "3",
+      "contentSha256": "77aaf2ac136ca9eb2678835bee3b6c4a62e6252b0f62b8dad414392da804a1a1",
+      "rawExtraction": "manual table/conditions transcription; source image checked"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q13",
+      "sourcePage": 7,
+      "officialAnswerNumber": "4",
+      "contentSha256": "4df635367417bbe0ef8c6e4d087eb8e66bc4a3ce5cf0e42ac2cd3a51e9831c8a",
+      "rawExtraction": "室内空気汚染に関する次の記述のうち、最も不適当なものはどれか。\n1.「建築物における衛生的環境の確保に関する法律」において、居室におけるホルムアルデヒドの\n量の管理基準は、0.1 mg\n/\nm\n3 以下である。\n2.人の呼気に含まれる二酸化炭素の濃度は、4%程度である。\n3.石材には、放射性物質であるラドンを発生するものがある。\n4.オゾンの除去には、コロナ放電式空気清浄機を使用することが有効である。"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q14",
+      "sourcePage": 8,
+      "officialAnswerNumber": "1",
+      "contentSha256": "fc087d6fa41259b0fb6888c451fa0ad371cb5bc334b3654dd3417555de8ce3d0",
+      "rawExtraction": "換気に関する次の記述のうち、最も不適当なものはどれか。\n1.ある室の大気基準圧は、「その室の気圧」から「地表面における外部大気圧」を減じた圧力である。\n2.温度差換気の中性帯の位置は、「上部の開口部の実効面積」より「下部の開口部の実効面積」のほ\nうが大きい場合、上下の開口部の中間点よりも下方となる。\n3.風力換気による換気量を増やすためには、風圧係数の差が大きな二つの壁面の一方に流入口、\n他方に流出口を設けることが有効である。\n4.局所換気方式は、汚染物質等が発生する場所を局部的に換気する方法である。"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q15",
+      "sourcePage": 8,
+      "officialAnswerNumber": "1",
+      "contentSha256": "7d995ea8e8ba1851c99e8e71273c90971d11ac5cf05086944dc92e642c3990c7",
+      "rawExtraction": "日照・日射に関する次の記述のうち、最も不適当なものはどれか。\n1.紫外放射の波長は、可視放射の波長より長い。\n2.設計用全天空照度は、「快晴の青空」より「雲の多い晴天」のほうが高い。\n3.永久日影は、夏至日に終日日影となる部分である。\n4.大気透過率は、大気中の水蒸気量の影響を受ける。"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q16",
+      "sourcePage": 8,
+      "officialAnswerNumber": "2",
+      "contentSha256": "9cd31ca51aa06059747d6f6ed42df0d5b3258e98f8bd6df9e11b41084ec27905",
+      "rawExtraction": "光環境に関する次の記述のうち、最も不適当なものはどれか。\n1.暗所視においては、明所視に比べて、赤色が暗く、青色が明るく見える。\n2.均等拡散面とは、どの方向から見ても光度が一様となる面のことである。\n3.照明率とは、照明器具内の光源から放射された全光束のうち、作業面に到達する光束の割合の\nことである。\n4.配光曲線は、光源からの光度の方向分布を図示したものである。"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q17",
+      "sourcePage": 8,
+      "officialAnswerNumber": "3",
+      "contentSha256": "c7aea3c8dbe32bae6987247e74dd31e7ed6114b2a3f15c1ce297e357238bff5a",
+      "rawExtraction": "遮音に関する次の記述のうち、最も不適当なものはどれか。\n1.均質材料の単層壁に音が垂直入射する場合、音響透過損失は、壁の面密度を2倍にしても、入\n射する音の周波数を1\n2 にすると、ほぼ同じ値となる。\n2.中空二重壁において、低周波数域の共鳴透過周波数は、壁間の空気層が厚いほど低くなる。\n3.内張りダクトの単位長さ当たりの音の減衰量は、低周波数域の場合、ダクトの断面周長及びダ\nクトの断面積に比例する。\n4.扉の遮音性能の等級において、T-1は、T-3に比べて、遮音性能が低い。"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q18",
+      "sourcePage": 9,
+      "officialAnswerNumber": "3",
+      "contentSha256": "24a5d4ec720a36621768a718d91e61a50894202b5f6b71c54ed176739a9cf96e",
+      "rawExtraction": "音に関する次の記述のうち、最も不適当なものはどれか。\n1.室内の平均音圧レベルは、拡散音場であれば、室内の総等価吸音面積(総吸音力)を4倍にする\nと約6dB小さくなる。\n2.自由空間において、点音源から伝搬する音の音圧レベルは、空気吸収による減衰を無視すれば、\n点音源からの距離を2倍にすると約6dB小さくなる。\n3.最適残響時間は、一般に、室用途によって異なるが、室容積には影響されない。\n4.材料の吸音特性を示す吸音率には、垂直入射吸音率、斜め入射吸音率及び残響室法吸音率があ\nり、室内音響設計においては、一般に、残響室法吸音率が用いられる。"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q19",
+      "sourcePage": 9,
+      "officialAnswerNumber": "4",
+      "contentSha256": "2e5f94aa011869e9b19d1c231fec7b8e55359585f4c457c2c5faf9cbe702e917",
+      "rawExtraction": "manual table/conditions transcription; source image checked"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q20",
+      "sourcePage": 9,
+      "officialAnswerNumber": "2",
+      "contentSha256": "996d0c354c4236f65a2bf9ebbf9f5dc33a0b5610c30b88215e7b08f033a17686",
+      "rawExtraction": "地盤及び基礎構造に関する次の記述のうち、最も不適当なものはどれか。\n1.液状化の判定を行う必要がある飽和土層の土の種類は、一般に、細粒分含有率が35 %以下の\n土である。\n2.圧密沈下は、粘性土地盤より砂質土地盤のほうが起こりやすい。\n3.基礎梁の剛性は、各基礎に作用する荷重の大きさや沈下量に大きく影響する。\n4.基礎杭は、杭間隔を密に打ち込むと、杭打ちの鉛直精度が低下するなどのおそれ\nがある。"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q21",
+      "sourcePage": 10,
+      "officialAnswerNumber": "4",
+      "contentSha256": "ca7d65ddeb9bc6bc23aa3ead2c4b16b285da271ecff71af2a4fa2a51682a5335",
+      "rawExtraction": "鉄筋コンクリート構造に関する次の記述のうち、最も不適当なものはどれか。\n1.地震力に対して十分な量の耐力壁を設ける場合であっても、架構を構成する柱については、水\n平耐力の検討を行う必要がある。\n2.床スラブは、地震力を水平方向に伝達する役割がある。\n3.腰壁や垂れ壁と一体となった柱は、せん断破壊を生じやすい。\n4.柱及び梁を主要な耐震要素とする構造形式は、一般に、耐力壁の多い構造形式に比べて、最大\n耐力は低く、最大耐力に達した後の耐力の低下も著しい。"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q22",
+      "sourcePage": 10,
+      "officialAnswerNumber": "2",
+      "contentSha256": "c50a2a09cb50d2d8644a978e385d75d650b447b7fd3ddc98f89400460744e5e4",
+      "rawExtraction": "木質材料に関する次の記述のうち、最も不適当なものはどれか。\n1.木材は、一般に、繊維方向とこれに直交する方向では、強度性能上の異方性を有するので、使\n用する方向に応じた許容応力度を設定する必要がある。\n2.木材の乾燥収縮率は、辺材より心材のほうが大きい。\n3.構造用材には、通直な長大材が得やすく、加工が容易なスギやヒノキなどの針葉樹材が主に用\nいられる。\n4.構造用集成材は、挽\n板をその繊維方向を互いに平行にして積層接着したものである。"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q23",
+      "sourcePage": 10,
+      "officialAnswerNumber": "4",
+      "contentSha256": "c9a9423ef550a0f6ed9226f60c47ca556d04ef076c4642b7995430e68d769304",
+      "rawExtraction": "建築材料に関する次の記述のうち、最も不適当なものはどれか。\n1.パーティクルボードは、断熱性・吸音性に優れているので、内装の下地材等に用いられる。\n2.ステンレス鋼SUS304Aは、耐久性・耐食性に優れているので、建築物の構造耐力上主要な部\n分の材料に用いられる。\n3.花崗\n岩は、結晶質で硬く、耐久性に優れているので、建築物の内部・外部を問わず、多くの部\n位の仕上げ材として用いられる。\n4.ロックウールは、吸水しても断熱性能が低下しないので、湿度の高い場所においても断熱材と\nして用いられる。"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q24",
+      "sourcePage": 11,
+      "officialAnswerNumber": "4",
+      "contentSha256": "1d47f00ec9b93ff03f4d9bddc4a5251a7e1ced30c8b0aa4147427e5aa0a597f9",
+      "rawExtraction": "材料管理に関する次の記述のうち、最も不適当なものはどれか。\n1.被覆アーク溶接棒は、乾燥した場所に梱包された状態で保管し、使用直前に乾燥装置を用いて\n乾燥させた。\n2.巻いたビニル壁紙は、くせが付かないように、立てて保管した。\n3.既製コンクリート杭は、地盤を水平に均\nし、まくら材を支持点として一段に並べて仮置きした。\n4.アスファルトルーフィング類は、屋内の乾燥した場所に、平積みにして保管した。"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q25",
+      "sourcePage": 11,
+      "officialAnswerNumber": "3",
+      "contentSha256": "89833c0b1cd4011bfedcfd65b406a4672d5f6929b0462301a0973f465697eb5c",
+      "rawExtraction": "コンクリート工事に関する次の記述のうち、最も不適当なものはどれか。\n1.コンクリートの単位水量は、所要のワーカビリティが得られる範囲内で、可能な限り小さくした。\n2.構造体コンクリートにおける有害なひび\n割れ及びたわみ\nの有無は、支保工を取り外した後に確\n認した。\n3.コンクリートの締固めにおいて、一般的なコンクリート棒形振動機の挿入間隔は、80 cmとした。\n4.普通コンクリートを用いる構造体コンクリートの圧縮強度試験は、打込み日ごと、打込み工区\nごと、かつ、コンクリート150 m\n3 以下にほぼ均等に分割した単位ごとに行った。"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q26",
+      "sourcePage": 11,
+      "officialAnswerNumber": "1",
+      "contentSha256": "801d934ac4bf52250a111c0d99361b3dce5bf7b2c0f4a1e9f1eaa80c8a67cc6a",
+      "rawExtraction": "鉄骨工事に関する次の記述のうち、最も不適当なものはどれか。\n1.高力ボルトの孔あけ加工は、せん断孔あけとした。\n2.鉄骨への錆\n止め塗装作業は、塗装場所の気温が3°Cであったので、中止した。\n3.溶融亜鉛めっきを施した鉄骨部材の摩擦接合面の処理は、ブラスト処理とした。\n4.溶融亜鉛めっき高力ボルトの締付けは、ナット回転法によって行った。"
+    },
+    {
+      "id": "kenchiku-setsubishi-2024-annual-am1-q27",
+      "sourcePage": 11,
+      "officialAnswerNumber": "4",
+      "contentSha256": "dc4322f73ea137af22aa01bd0d32093e77094030378c4d82c6fba85a9b46498c",
+      "rawExtraction": "壁のタイル工事及び張り石工事に関する次の記述のうち、最も不適当なものはどれか。\n1.タイル工事において、タイル張り面の伸縮調整目地は、下地のひび\n割れ誘発目地と一致するよ\nうに設ける。\n2.タイル工事において、夏期にセメントモルタルによる外壁のタイル張りを行うに当たり、下地\nモルタルの乾燥が著しい場合には、前日に散水し、十分に吸水させる。\n3.張り石工事において、湿式工法は、乾式工法に比べて、工期が長くなりやすい。\n4.張り石工事において、地震時等の躯\n体の変形による張り石のひび\n割れや脱落は、湿式工法より\n乾式工法のほうが生じやすい。"
+    }
+  ],
+  "assets": [
+    {
+      "qNumber": 3,
+      "page": 3,
+      "clip": [
+        70,
+        546,
+        552,
+        764
+      ],
+      "path": "public/questions/kenchiku-setsubishi/2024-am1-q3-figure.png",
+      "sha256": "2617caa4851a1341776b3113303b5bcad6930b5e72666268ca2174df6baa3d23",
+      "alt": "建築物の用途・延べ面積、再生可能エネルギーを除く場合と含む場合の一次エネルギー削減率、未評価技術の導入及びZEB分類を示す4行の表。全セルは各選択肢にも記載。"
+    },
+    {
+      "qNumber": 11,
+      "page": 6,
+      "clip": [
+        288,
+        510,
+        535,
+        680
+      ],
+      "path": "public/questions/kenchiku-setsubishi/2024-am1-q11-figure.png",
+      "sha256": "5b088a843fe4e08816e7831acee4792f3c024dca4cdd790e70d756f1e7348ecd",
+      "alt": "幅5m・奥行4m・高さ3mの単室。南面の窓ガラスは幅3m・高さ2m。"
+    },
+    {
+      "qNumber": 12,
+      "page": 7,
+      "clip": [
+        288,
+        280,
+        515,
+        483
+      ],
+      "path": "public/questions/kenchiku-setsubishi/2024-am1-q12-figure.png",
+      "sha256": "4d88da3daccaf1d79e26ed7f1c212f91616d7033d340cc6f8522b056e878ce02",
+      "alt": "単室の同じ壁面に上下二つの開口部があり、二つの開口部中心間の鉛直距離を高低差としている断面図。"
+    },
+    {
+      "qNumber": 19,
+      "page": 9,
+      "clip": [
+        245,
+        328,
+        525,
+        480
+      ],
+      "path": "public/questions/kenchiku-setsubishi/2024-am1-q19-figure.png",
+      "sha256": "306c3745bcf6922596c66a599c5f888f3f4b415d7ab6e9f5e58b0ea4039f8991",
+      "alt": "長さ6mの単純梁。左支点Aから2mに上向き3kN、4mに下向き9kNの集中荷重。右端に支点B。"
+    }
+  ],
+  "validation": {
+    "officialAnswers": 27,
+    "independentBodyTextMatches": 24,
+    "independentChoiceTextMatches": 103,
+    "manualSourceImageChecks": {
+      "tableQuestion": 3,
+      "conditionQuestions": [
+        11,
+        12
+      ],
+      "fractionChoice": "17-1"
+    },
+    "figureHashes": 4,
+    "existingPacketBytesUnchanged": 6,
+    "calculations": {
+      "roomTemperatureC": 32,
+      "ventilationFlowSquared": [
+        480,
+        540,
+        256
+      ],
+      "beamReactionKN": 5
+    }
+  }
+}

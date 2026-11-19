@@ -57,7 +57,7 @@ import { TSUSHIN2_QUESTIONS } from "@/data/questions/tsushin2";
 import { TSUSHIN1_QUESTIONS } from "@/data/questions/tsushin1";
 import { CIVIL1_QUESTIONS } from "@/data/questions/civil1";
 import { GENGO_CHOKAKUSHI_QUESTIONS } from "@/data/questions/gengo-chokakushi";
-import type { Question } from "@/lib/questions/types";
+import { QUESTION_SEASONS, type Question } from "@/lib/questions/types";
 import { detectAnswerDispute } from "@/lib/questions/explanation-consistency";
 import { z } from "zod";
 import { validateDojoOsenStaging } from "@/data/qualification-staging/dojo-osen";
@@ -119,7 +119,7 @@ const QuestionSchema = z.object({
   exam: z.enum(Object.keys(EXAM_CONFIGS) as [string, ...string[]]),
   session: z.enum([...PRACTICE_SESSIONS] as [string, ...string[]]),
   year: z.number().int().min(2000).max(2100),
-  season: z.enum(["spring", "autumn", "cbt", "published", "first", "second", "early", "may", "september", "january", "october", "late", "annual", "july", "primary", "kansai", "february", "june", "august", "march", "round1", "round2"]),
+  season: z.enum(QUESTION_SEASONS),
   qNumber: z.number().int().min(1),
   part: z.enum(["a", "b", "1", "2", "3", "4", "5"]).optional(),
   type: z.enum(["multiple-choice", "ordering", "numeric", "descriptive", "essay", "native-b"]),
@@ -154,10 +154,10 @@ const QuestionSchema = z.object({
     })
     .refine((choices) => Object.values(choices).filter(Boolean).length >= 2, "選択肢は2個以上必要です")
     .optional(),
-  officialScoring: z.object({ kind: z.literal("credit-for-all"), reason: z.string().trim().min(1) }).optional(),
+  officialScoring: z.object({ kind: z.enum(["credit-for-all", "excluded"]), reason: z.string().trim().min(1) }).optional(),
   publicAllowed: z.boolean().optional(),
   answer: z.union([z.string(), z.array(z.string().min(1))]),
-  requiredSelections: z.number().int().min(1).max(4).optional(),
+  requiredSelections: z.number().int().min(1).max(16).optional(),
   explanation: z.string().min(1),
   choiceExplanations: z.record(z.string(), z.string()).optional(),
   modelAnswer: z.string().optional(),
@@ -171,7 +171,7 @@ const QuestionSchema = z.object({
   sourceAttribution: z.string().min(1).optional(),
   lawReferenceDate: z.string().regex(/^\d{4}-\d{2}-\d{2}$/).optional(),
   officialReferenceUrls: z.array(z.string().url()).optional(),
-  license: z.enum(["UNKAN-permission-required","SHOUBO-permission-required","INT7-owner-decision","KHK-attributed", "JAEIC-owner-approved-staging", "CHINTAI-owner-authorized", "KYUSUI-owner-authorized", "JAHMEC-owner-authorized", "NUSTEC-owner-authorized", "ECCJ-owner-approved", "MLIT-PDL-1.0", "CPAAOB-PDL-1.0", "IPA-public", "JAFP-reuse-with-attribution", "KINZAI-reuse-with-attribution", "ECEE-educational-reuse", "RETIO-reuse", "JCTC-authorized-reuse", "SSSC-reuse", "KANSAI-UNION-reuse", "KANRIKYO-educational-reuse", "EXAM-OR-JP-attributed", "IPEJ-attributed", "HOYOKYO-attributed", "MANKAN-attributed", "JFSA-attributed", "SHAROSI-attributed", "MHLW-attributed", "AHK-attributed", "JAAME-attributed", "RBC-attributed", "JF-CMCA-attributed", "JCTC-attributed", "MOJ-attributed", "ZAIJUSEI-attributed", "NICHIMU-educational-reuse", "NICHIMU-past-question-study-use", "JIA-attributed", "JMBSC-permission-required", "JAEIC-permission-required", "IP-EDU-authorized-reuse", "JASPA-owner-authorized", "SHOUBO-owner-authorized", "JECES-owner-cleared", "FCIP-owner-confirmed", "JYOUBUN-owner-authorized", "KOKUSEN-owner-authorized", "CHORD-owner-authorized", "SGEC-owner-authorized", "JKEN-owner-cleared", "JCCPP-attributed", "KHK-owner-decision", "FCIP-owner-authorized", "YAMAGUCHI-attributed", "METI-attributed", "JCM-authorized-reuse", "GYOSEI-owner-cleared", "CAREER-SHIKEN-owner-authorized", "JATA-owner-authorized", "GSI-attributed", "PREF-published", "JIPM-owner-decision", "JAVADA-owner-authorized", "CUSTOMS-attributed"]),
+  license: z.enum(["EIKEN-owner-authorized", "JASSO-attributed", "KANKEN-owner-authorized", "ZENSHO-owner-authorized", "DEKYO-owner-authorized", "JEMAI-owner-authorized", "CCRVN-owner-authorized", "CAREER-KENTEI-owner-authorized", "JBMA-owner-authorized", "HRS-owner-authorized", "DEKYO-attributed", "JEMAI-attributed", "NSPC-owner-authorized", "TOUKEI-attributed", "BENESSE-owner-authorized", "JINJI-attributed", "BOUJITSU-owner-authorized", "JITSUMU-owner-authorized", "APEF-owner-authorized", "KANKEN-attributed", "MEXT-attributed", "ZENSHO-attributed", "SUKEN-attributed", "JLPT-attributed", "JBMA-attributed", "MAFF-attributed", "owner-managed", "ZENSHO-official", "JAVADA-owner-authorized", "UNKAN-permission-required", "SHOUBO-permission-required", "INT7-owner-decision", "KHK-attributed", "JAEIC-owner-approved-staging", "CHINTAI-owner-authorized", "KYUSUI-owner-authorized", "JAHMEC-owner-authorized", "NUSTEC-owner-authorized", "ECCJ-owner-approved", "MLIT-PDL-1.0", "CPAAOB-PDL-1.0", "IPA-public", "JAFP-reuse-with-attribution", "KINZAI-reuse-with-attribution", "ECEE-educational-reuse", "RETIO-reuse", "JCTC-authorized-reuse", "SSSC-reuse", "KANSAI-UNION-reuse", "KANRIKYO-educational-reuse", "EXAM-OR-JP-attributed", "IPEJ-attributed", "HOYOKYO-attributed", "MANKAN-attributed", "JFSA-attributed", "SHAROSI-attributed", "MHLW-attributed", "AHK-attributed", "JAAME-attributed", "RBC-attributed", "JF-CMCA-attributed", "JCTC-attributed", "MOJ-attributed", "ZAIJUSEI-attributed", "NICHIMU-educational-reuse", "NICHIMU-past-question-study-use", "JIA-attributed", "JMBSC-permission-required", "JAEIC-permission-required", "IP-EDU-authorized-reuse", "JASPA-owner-authorized", "SHOUBO-owner-authorized", "JECES-owner-cleared", "FCIP-owner-confirmed", "JYOUBUN-owner-authorized", "KOKUSEN-owner-authorized", "CHORD-owner-authorized", "SGEC-owner-authorized", "JKEN-owner-cleared", "JCCPP-attributed", "KHK-owner-decision", "FCIP-owner-authorized", "YAMAGUCHI-attributed", "METI-attributed", "JCM-authorized-reuse", "GYOSEI-owner-cleared", "CAREER-SHIKEN-owner-authorized", "JATA-owner-authorized", "GSI-attributed", "PREF-published", "JIPM-owner-decision", "CUSTOMS-attributed"]),
   isCalculation: z.boolean().optional(),
 });
 
@@ -382,7 +382,7 @@ function validate(questions: Question[]): ValidationResult {
       }
 
       if (q.license !== "IPA-public") {
-        const officialSummary = q.exam === "denken3" && q.explanationCoverage === "official-summary";
+        const officialSummary = q.explanationCoverage === "official-summary";
         if ((!q.choiceExplanations && !officialSummary) || !q.sourceAnswerUrl || !q.sourceAttribution) {
           fail++;
           byExam[examKey].fail++;

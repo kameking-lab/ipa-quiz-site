@@ -1,0 +1,252 @@
+{
+  "schemaVersion": 1,
+  "lane": "qe-11",
+  "previousLane": "qd-11",
+  "date": "2026-11-18",
+  "assignment": "jobs array index % 14 == 10",
+  "completedJobs": [
+    {
+      "jobId": "PLAN5-207",
+      "exam": "yakuzaishi",
+      "year": 2026,
+      "season": "annual",
+      "session": "day2-2",
+      "status": "completed",
+      "expectedOriginalQuestions": 40,
+      "existingOriginalQuestions": 5,
+      "addedRecords": 35,
+      "importedRecords": 35,
+      "newRecords": 0,
+      "remainingOriginalQuestions": 0,
+      "dataPath": "data/questions/yakuzaishi/2026-day2-2-official.json",
+      "imageAssetCount": 11,
+      "sourceFiles": [
+        {
+          "url": "https://www.mhlw.go.jp/content/001677931.pdf",
+          "file": "111-day2-2.pdf",
+          "sha256": "ec1c95ebbec110d62564bf57ec6171eb0b56e16c3fa07f38ac83a8ceb48797b9"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/001677933.pdf",
+          "file": "111-answer.pdf",
+          "sha256": "bec304ce3043407fb8cdc6f6b5a0e3b6cd414119be8bc2782da0b904c602e223"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000198929.html",
+          "file": "111-index.html",
+          "sha256": "eb3fe00e46b77e9ae1a41fdb7816357a6355d5edfa6cdd8c4fda7c8e6f1c2932"
+        }
+      ],
+      "sourceCommits": [
+        "fb255ce3933a696593c55bb7bda3661dcb3819e1",
+        "b64cd51f31e8afafa18cb8cd0cb40f557041efb7",
+        "72c221f2a04293f9c77bb0be7018260edb1afb0e"
+      ],
+      "notes": "表紙の解答記入例である問500を除外。公式の問246〜285を採点対象と確認し、既存5問の公式正答と保存原稿35問を照合した。"
+    },
+    {
+      "jobId": "PLAN5-221",
+      "exam": "yakuzaishi",
+      "year": 2023,
+      "season": "annual",
+      "session": "day1-1",
+      "status": "completed",
+      "expectedOriginalQuestions": 90,
+      "existingOriginalQuestions": 0,
+      "addedRecords": 90,
+      "importedRecords": 0,
+      "newRecords": 90,
+      "remainingOriginalQuestions": 0,
+      "dataPath": "data/questions/yakuzaishi/2023-required-official.json",
+      "imageAssetCount": 11,
+      "sourceFiles": [
+        {
+          "url": "https://www.mhlw.go.jp/content/001074628.pdf",
+          "file": "108-day1-1.pdf",
+          "sha256": "8253cd58e1fe33ec1912db5700484099e0c7fcad2e3c18fb817def9e26d0a1d8"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/content/001074906.pdf",
+          "file": "108-answer.pdf",
+          "sha256": "e109e2c7f187e29763d798d024a68bd246bc12f58ee986224637b442b6746761"
+        },
+        {
+          "url": "https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/0000198925.html",
+          "file": "108-index.html",
+          "sha256": "546a312a39d65bcbd7a2a8138e14cadfc3018e8ca3365cb356a7ea3cb6407659"
+        }
+      ],
+      "sourceCommits": [],
+      "notes": "表紙の解答記入例である問400を除外。公式の問1〜90を本文・一般解説・原本図とともに収録した。"
+    },
+    {
+      "jobId": "PLAN5-235",
+      "exam": "rinsho-kogishi",
+      "year": 2025,
+      "season": "annual",
+      "session": "am",
+      "status": "completed",
+      "expectedOriginalQuestions": 90,
+      "existingOriginalQuestions": 56,
+      "addedRecords": 34,
+      "importedRecords": 33,
+      "newRecords": 1,
+      "remainingOriginalQuestions": 0,
+      "dataPath": "data/questions/rinsho-kogishi/2024-round38-am-official.json",
+      "imageAssetCount": 11,
+      "sourceFiles": [
+        {
+          "url": "https://www.jaame.or.jp/ce/pdf/38am.pdf",
+          "file": "ce38-am.pdf",
+          "sha256": "611f81acc2a9dc5c583d796a81f78b0a231868c691e074b4d6535a4e4eee5d6f"
+        },
+        {
+          "url": "https://www.jaame.or.jp/ce/pdf/38ans.pdf",
+          "file": "ce38-answer.pdf",
+          "sha256": "5788e8880822daeb235ae1707fbf1744138ce1038e31f8f7f89cdcb5b23606ee"
+        }
+      ],
+      "sourceCommits": [
+        "2cd980e37c48d088a5d9a00168a7724e03173d32",
+        "7dab5fb0c77b70d69feb4829f79a74d4523315b9"
+      ],
+      "notes": "第38回は2025年3月実施・令和6年度。既存の保存年度2024を継承。問23は公式正答表の全5肢を択一の許容正答として保持。保存原稿の6問は一般解説を点検・更新した。",
+      "officialHandlingUrl": "https://www.jaame.or.jp/ce/siken17/AM23.pdf"
+    },
+    {
+      "jobId": "PLAN5-249",
+      "exam": "ahaki-hari-kyu",
+      "year": 2024,
+      "season": "annual",
+      "session": "am",
+      "status": "completed",
+      "expectedOriginalQuestions": 90,
+      "existingOriginalQuestions": 0,
+      "addedRecords": 90,
+      "importedRecords": 0,
+      "newRecords": 90,
+      "remainingOriginalQuestions": 0,
+      "dataPath": "data/questions/ahaki/ahaki-hari-kyu-2024-am.json",
+      "imageAssetCount": 1,
+      "sourceFiles": [
+        {
+          "url": "https://ahaki.or.jp/wordpress/wp-content/uploads/mondai_32_harikyu_am.pdf",
+          "file": "hari32-problems.pdf",
+          "sha256": "6701ca703dcd96a8dc56f452aa671b187c3f9d784f21498e59570e183534c657"
+        },
+        {
+          "url": "https://ahaki.or.jp/examination/data/seito_32_hk.html",
+          "file": "hari32-answer.html",
+          "sha256": "02b6c6517da27818772acd8b1465911755de1a1425043dd1667635cfa001ae71"
+        }
+      ],
+      "sourceCommits": [],
+      "officialExamDateSource": "https://ahaki.or.jp/wordpress/wp-content/uploads/jigyou_houkoku_2023.pdf#page=2",
+      "notes": "問1〜90はすべて公式表に択一正答あり。問23は原本の分数を図でも収録。問83〜90は四つの共通症例を該当2問ずつに併記。問48は公式正答を保持し、黄疸について補足した。"
+    },
+    {
+      "jobId": "PLAN5-263",
+      "exam": "shinrishi",
+      "year": 2024,
+      "season": "annual",
+      "session": "am",
+      "status": "completed",
+      "expectedOriginalQuestions": 77,
+      "existingOriginalQuestions": 0,
+      "addedRecords": 77,
+      "importedRecords": 0,
+      "newRecords": 77,
+      "remainingOriginalQuestions": 0,
+      "dataPath": "data/questions/shinrishi/2024-am-official.json",
+      "imageAssetCount": 0,
+      "sourceFiles": [
+        {
+          "url": "https://www.jccpp.or.jp/files/items/129/File/04_gokaku_happyo_08.pdf",
+          "file": "shin7-am.pdf",
+          "sha256": "2e4d33bcd6d0cbf4cd634a11010b5c22f6cc4717809bd2a7219a0d457567d2aa"
+        },
+        {
+          "url": "https://www.jccpp.or.jp/files/items/129/File/03_gokaku_happyo_08.pdf",
+          "file": "shin7-answers.pdf",
+          "sha256": "c0042cd50844150a188e9c1de1b01f30c7c0af14722f353d3c165d44dc6ca8a8"
+        }
+      ],
+      "officialExamDateSource": "https://www.jccpp.or.jp/shiken/shikenjoho/dai7.html",
+      "sourceCommits": [],
+      "notes": "4肢10問と5肢67問。択一66問と2肢選択11問。PDF本文・全選択肢と公式正答を二系統で照合。"
+    }
+  ],
+  "baseline": "9e3182117ce198aee83addcf405afd2316567fcd",
+  "branchAudit": {
+    "refCount": 151,
+    "uniqueRelevantBlobs": 67,
+    "method": "origin/main, HEAD, local/remote cx/kako-* and rel/kako-* refs, saved pharmacy and clinical-engineering refs, and explicit PLAN5-235 source commits"
+  },
+  "pendingJobIds": [
+    "PLAN5-277",
+    "PLAN5-291",
+    "PLAN5-305",
+    "PLAN5-319",
+    "PLAN5-333",
+    "PLAN5-347",
+    "PLAN5-361",
+    "PLAN5-375",
+    "PLAN5-389",
+    "PLAN5-403",
+    "PLAN5-417"
+  ],
+  "helperJobs": [
+    {
+      "jobId": "PLAN5-445",
+      "status": "completed",
+      "branch": "cx/kako-5yh11-20261118",
+      "commit": "2cdd0c57b",
+      "report": "ya-11.md",
+      "originalQuestions": 50
+    },
+    {
+      "jobId": "PLAN5-417",
+      "status": "in-progress",
+      "branch": "cx/kako-5yh11-20261118",
+      "report": "ya-11.md"
+    }
+  ],
+  "reviewCorrections": [
+    {
+      "report": "rv-2",
+      "jobId": "PLAN5-151",
+      "questionId": "hokenshi-2023-annual-pm-q20",
+      "sourcePdfUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-03b_01.pdf#page=13",
+      "sourceAnswerUrl": "https://www.mhlw.go.jp/seisakunitsuite/bunya/kenkou_iryou/iryou/topics/dl/tp240424-03seitou.pdf",
+      "officialAnswerNumber": "1",
+      "asset": "public/questions/hokenshi/110-pm/page-13.webp",
+      "sha256": "2fedae542d22fc688e912a72dfaee9a5ad38dc7eac77a63794df3466ad6b4f5c",
+      "width": 1263,
+      "height": 1788,
+      "summary": "公式原本13ページの切り出し下端を755から770ポイントへ広げ、選択肢4の全文を表示。本文・選択肢・公式正答は原稿と一致。"
+    },
+    {
+      "report": "rv-2",
+      "jobId": "PLAN5-109",
+      "questionIds": [
+        "sg-2026cbt-kamoku-a-q5",
+        "sg-2026cbt-kamoku-a-q6",
+        "sg-2026cbt-kamoku-a-q7",
+        "sg-2026cbt-kamoku-a-q8"
+      ],
+      "sourcePdfUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_qs.pdf",
+      "sourceAnswerUrl": "https://www.ipa.go.jp/shiken/mondai-kaiotu/sg_fe/koukai/rcu1hd0000012qj6-att/2026r08_sg_ans.pdf",
+      "officialAnswerNumbers": {
+        "5": "ウ",
+        "6": "ア",
+        "7": "エ",
+        "8": "イ"
+      },
+      "sourceSha256": {
+        "sg-2026-questions.pdf": "98fab6c575dd0107c7243e6904857c23ce6c820e08deeed63509ae5ca01ef97a",
+        "sg-2026-answers.pdf": "1fea6d3285f1951b7099e81fddfdf1891d0059dc72098e897a5182a43553b044"
+      },
+      "summary": "問5・7・8の選択肢を原本表記に修正。問6の全四肢に原本のアクセス制御・管理者権限管理の各記述を復元。全15問の公式正答一致を確認。"
+    }
+  ]
+}

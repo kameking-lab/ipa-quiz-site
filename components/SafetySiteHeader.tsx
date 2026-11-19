@@ -4,7 +4,7 @@ import { AccountNavigationLink } from "@/components/account/AccountNavigation";
 import { PRICE_PAGE_LINK } from "@/lib/billing/price-page-link";
 import { useMobileMenu } from "@/components/useMobileMenu";
 import { usePathname } from "next/navigation";
-import { Menu } from "lucide-react";
+import { Menu, Search, UserRound } from "lucide-react";
 import { SiteLogo } from "@/components/SiteLogo";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 export const SAFETY_NAV = [
@@ -17,6 +17,7 @@ export const SAFETY_NAV = [
 export function SafetySiteHeader({ home = false }: { home?: boolean }) {
   const pathname = usePathname();
   const [open, setOpen] = useMobileMenu(pathname);
+  if (home) return <header className="sticky top-0 z-40 bg-background"><div className="mx-auto flex h-14 max-w-[640px] items-center justify-between px-4 sm:px-6"><Link href="/" aria-label="過去問AI ホーム" className="flex min-h-11 items-center rounded-lg focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"><SiteLogo /></Link><nav aria-label="グローバルナビゲーション" className="flex items-center gap-1"><Link href="/search" aria-label="さがす" className="flex h-11 w-11 items-center justify-center rounded-full hover:bg-muted"><Search aria-hidden="true" className="h-5 w-5" /></Link><Link href="/me" aria-label="わたし・アカウント" className="flex h-11 w-11 items-center justify-center rounded-full hover:bg-muted"><UserRound aria-hidden="true" className="h-5 w-5" /></Link></nav></div></header>;
   const items = home ? [{ href: "/#choose-qualification", label: "資格を選ぶ" }, { href: "/review", label: "復習" }, { href: "/transparency", label: "解説・出典について" }, PRICE_PAGE_LINK] : SAFETY_NAV;
   return <header className="sticky top-0 z-40 border-b border-border bg-background/95">
     <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-4 sm:px-6">

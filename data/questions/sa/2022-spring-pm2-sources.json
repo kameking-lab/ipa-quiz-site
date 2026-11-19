@@ -1,0 +1,164 @@
+{
+  "jobId": "PLAN5-033",
+  "checkedAt": "2026-11-18",
+  "questionPdf": {
+    "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sa_pm2_qs.pdf",
+    "sha256": "589ce9687bcca3795ee413babb269be1a85fb7a6df348d5dbdcc64b95d337c3c",
+    "pageCount": 8
+  },
+  "answerPdf": {
+    "url": "https://www.ipa.go.jp/shiken/mondai-kaiotu/gmcbt80000009sgk-att/2022r04h_sa_pm2_ans.pdf",
+    "sha256": "818b14150fc165b0556f2d550d8ababfe7822b60ffc0b3102c028519741ee26f",
+    "pageCount": 1,
+    "kind": "出題趣旨"
+  },
+  "questions": [
+    {
+      "questionId": "sa-2022h-pm2-q1-official",
+      "qNumber": 1,
+      "title": "概念実証（PoC）を活用した情報システム開発について",
+      "questionPages": [
+        3
+      ],
+      "commonPages": [
+        1,
+        2,
+        8
+      ],
+      "questionImages": [
+        {
+          "page": 1,
+          "path": "/questions/sa/2022-spring-pm2/original-p01.jpeg",
+          "sha256": "1037c83ea21cab6edf53a4c4ce4c4e8941aeb94440ccb4c4cda04efaaba13604"
+        },
+        {
+          "page": 2,
+          "path": "/questions/sa/2022-spring-pm2/original-p02.jpeg",
+          "sha256": "0967d9d10b923c3e714733e71316b2d11c2b066c3a53349a5e585490cc29ce26"
+        },
+        {
+          "page": 3,
+          "path": "/questions/sa/2022-spring-pm2/original-p03.jpeg",
+          "sha256": "9d9a6ec764cecf6f9f1c7aa6b3609d884d4248a5dc3f1bfc01de7a787e5534c7"
+        },
+        {
+          "page": 8,
+          "path": "/questions/sa/2022-spring-pm2/original-p08.jpeg",
+          "sha256": "5a4efe88bba2d944ba0081395c4e216f8ee39dfea61fb56a83c5429012c081aa"
+        }
+      ],
+      "answerImages": [
+        {
+          "path": "/questions/sa/2022-spring-pm2/q1-intent.png",
+          "page": 1,
+          "clip": [
+            35.0,
+            104.04480743408203,
+            565.2760009765625,
+            269.36480712890625
+          ],
+          "sha256": "589df8a29e0346855fa2f8cc1a5a1a91612deb9a84d6a0e532db09d4e9a7d365"
+        }
+      ],
+      "intentText": "IoT，ビッグデータやAI などに代表される新技術が次々に登場しており，業務の効率化や品質向上を目的として，今まで使用したことがない技術を適用することが多くなっている。その際，その新技術を業務に適用する前に概念実証（PoC）を実施し，実現可能性や効果などを確認することが重要となる。システムアーキテクトは，仮説を立て，その仮説を検証するための情報システムを構築し，この情報システムを用いた仮説の検証方法を立案し，検証を行う。本問は，新技術を業務に適用するに当たり，PoC を実施し，その結果から業務への適用可否を判断することについて具体的に論述することを求めている。論述を通じて，システムアーキテクトに必要な，業務と情報システムを見直す能力及び経験を評価する。"
+    },
+    {
+      "questionId": "sa-2022h-pm2-q2-official",
+      "qNumber": 2,
+      "title": "業務のデジタル化について",
+      "questionPages": [
+        4
+      ],
+      "commonPages": [
+        1,
+        2,
+        8
+      ],
+      "questionImages": [
+        {
+          "page": 1,
+          "path": "/questions/sa/2022-spring-pm2/original-p01.jpeg",
+          "sha256": "1037c83ea21cab6edf53a4c4ce4c4e8941aeb94440ccb4c4cda04efaaba13604"
+        },
+        {
+          "page": 2,
+          "path": "/questions/sa/2022-spring-pm2/original-p02.jpeg",
+          "sha256": "0967d9d10b923c3e714733e71316b2d11c2b066c3a53349a5e585490cc29ce26"
+        },
+        {
+          "page": 4,
+          "path": "/questions/sa/2022-spring-pm2/original-p04.jpeg",
+          "sha256": "db0740e462485079271a2ed6975a0dd91c4128deb39853f7945957a0146f4ab7"
+        },
+        {
+          "page": 8,
+          "path": "/questions/sa/2022-spring-pm2/original-p08.jpeg",
+          "sha256": "5a4efe88bba2d944ba0081395c4e216f8ee39dfea61fb56a83c5429012c081aa"
+        }
+      ],
+      "answerImages": [
+        {
+          "path": "/questions/sa/2022-spring-pm2/q2-intent.png",
+          "page": 1,
+          "clip": [
+            35.0,
+            270.36480712890625,
+            565.2760009765625,
+            421.4048156738281
+          ],
+          "sha256": "7813db59d23355ecd6defd46179094227b64bd6d9d2505673452e6fe81c53ede"
+        }
+      ],
+      "intentText": "近年，管理コストの削減及び業務の効率化を目的とした，情報システムを活用したデジタル化が加速している。システムアーキテクトは，現行の業務プロセスにおいて，デジタル化すると改善効果が高い業務プロセスを見極めてデジタル化することが求められる。現行の業務をデジタル化した場合に生じる課題を想定し，対応策を検討しておくことも必要である。本問は，デジタル化によって業務改善する工夫について具体的に論述することを求めている。論述を通じて，システムアーキテクトに必要な，業務内容を把握する能力，及び要求事項に対して効果的な技術を適用する能力などを評価する。"
+    },
+    {
+      "questionId": "sa-2022h-pm2-q3-official",
+      "qNumber": 3,
+      "title": "IoT，AIなどの技術進展に伴う組込みシステムの自動化について",
+      "questionPages": [
+        5
+      ],
+      "commonPages": [
+        1,
+        2,
+        8
+      ],
+      "questionImages": [
+        {
+          "page": 1,
+          "path": "/questions/sa/2022-spring-pm2/original-p01.jpeg",
+          "sha256": "1037c83ea21cab6edf53a4c4ce4c4e8941aeb94440ccb4c4cda04efaaba13604"
+        },
+        {
+          "page": 2,
+          "path": "/questions/sa/2022-spring-pm2/original-p02.jpeg",
+          "sha256": "0967d9d10b923c3e714733e71316b2d11c2b066c3a53349a5e585490cc29ce26"
+        },
+        {
+          "page": 5,
+          "path": "/questions/sa/2022-spring-pm2/original-p05.jpeg",
+          "sha256": "dc2d45b4160464e24c8da1bed0ea1c3dfe4a69b47345102b97d5024e72b6be88"
+        },
+        {
+          "page": 8,
+          "path": "/questions/sa/2022-spring-pm2/original-p08.jpeg",
+          "sha256": "5a4efe88bba2d944ba0081395c4e216f8ee39dfea61fb56a83c5429012c081aa"
+        }
+      ],
+      "answerImages": [
+        {
+          "path": "/questions/sa/2022-spring-pm2/q3-intent.png",
+          "page": 1,
+          "clip": [
+            35.0,
+            422.4048156738281,
+            565.2760009765625,
+            539.651123046875
+          ],
+          "sha256": "159ab9902d876ea514b514549e15cb31d59e003941ab7fd6722fbcdd6c374887"
+        }
+      ],
+      "intentText": "組込みシステムのシステムアーキテクトは，組込みシステムの自動化に際して，自動化の目的を把握し，人及び他機器との役割分担，並びに安全性への配慮に基づいてシステムを構築することが求められる。本問は，組込みシステムの自動化において，考慮したシステムの特徴，自動化の目的及び安全性への配慮の内容について具体的に論述することを求めている。論述を通じて，組込みシステムのシステムアーキテクトに必要なシステム構築力を評価する。"
+    }
+  ]
+}

@@ -59,8 +59,8 @@ export async function getPoolIds(filter: QuizFilter): Promise<string[]> {
  * review-only questions and duplicates never reach the client. A malformed
  * payload fails closed to an empty pool rather than falling back to all exams.
  */
-export async function getExplicitPoolIds(raw: unknown): Promise<string[]> {
-  const all = await getAllQuestionsLazy();
+export async function getExplicitPoolIds(raw: unknown, exam?: ExamCode): Promise<string[]> {
+  const all = exam ? await getQuestionsForExam(exam) : await getAllQuestionsLazy();
   return selectExplicitPoolIds(
     raw,
     all.filter(isPracticeReadyQuestion).map((question) => question.id),
