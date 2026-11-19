@@ -34,8 +34,9 @@ describe('aviation communication68 local registration candidate',()=>{
  it('registers every practice-ready question through eager/lazy/strict/home without changing the IPA-only list',async()=>{
   expect(questions).toHaveLength(68);expect(new Set(questions.map(q=>q.id)).size).toBe(68);
   expect(new Set(getRegisteredExamCodes())).toEqual(new Set(ALL_QUIZ_EXAM_CODES));expect(getRegisteredExamCodes()).toContain(exam);expect(ALL_EXAM_CODES).not.toContain(exam);
-  expect(allQuestions).toHaveLength(133);expect(await getQuestionsForExam(exam)).toEqual(allQuestions);expect(QUESTIONS_BY_EXAM[exam]).toEqual(allQuestions);expect(ALL_QUESTIONS.filter(q=>q.exam===exam)).toEqual(allQuestions);expect(getQuestionsByExamStrict(exam)).toEqual(allQuestions);expect(allQuestions.every(isPracticeReadyQuestion)).toBe(true);
-  const home=getHomeDirectory().flatMap(d=>[...d.featured,...d.compact]).find(q=>q.key===exam)!;expect(home.questionCount).toBe(133);expect(home.periodLabel).toBe('3期分');expect(home.href).toBe('/aviation-comm');
+  expect(groupByYearSeason(allQuestions).map(({year,season,count})=>[year,season,count])).toEqual([[2026,'august',34],[2026,'february',34],[2025,'august',65],[2023,'february',65],[2022,'august',65],[2022,'february',38]]);
+  expect(await getQuestionsForExam(exam)).toEqual(allQuestions);expect(QUESTIONS_BY_EXAM[exam]).toEqual(allQuestions);expect(ALL_QUESTIONS.filter(q=>q.exam===exam)).toEqual(allQuestions);expect(getQuestionsByExamStrict(exam)).toEqual(allQuestions);expect(allQuestions.every(isPracticeReadyQuestion)).toBe(true);
+  const home=getHomeDirectory().flatMap(d=>[...d.featured,...d.compact]).find(q=>q.key===exam)!;expect(home.questionCount).toBe(allQuestions.length);expect(home.periodLabel).toBe('6期分');expect(home.href).toBe('/aviation-comm');
  });
  it('preserves the 2026 A/B numbering and registers the 2025 English sessions',()=>{
   expect(EXAM_CONFIGS[exam].sessions.map(s=>s.expectedQuestions)).toEqual([14,20,5,7]);expect(defaultPracticeSession(exam)).toBe('houki');expect(groupByYearSeason(questions).map(g=>g.count)).toEqual([34,34]);
@@ -46,11 +47,11 @@ describe('aviation communication68 local registration candidate',()=>{
   }
   const catalog=getQualificationByExamCode(exam)!;expect(catalog.status).toBe('live');expect(catalog.reuseSummary).toContain('英語');expect(catalog.reuseSummary).toContain('無料で回数制限なく');expect(questions.every(q=>q.year===2026&&['february','august'].includes(q.season))).toBe(true);
  });
- it('keeps canonical routes and search hits for both years distinct',async()=>{
-  expect(new Set(allQuestions.map(questionPagePath)).size).toBe(133);
+ it('keeps canonical routes and search hits distinct across all periods',async()=>{
+  expect(new Set(allQuestions.map(questionPagePath)).size).toBe(allQuestions.length);
   const hits=[];
-  for(const offset of [0,60,120]){const res=await searchGET(new Request(`http://localhost/api/search/questions?exam=${exam}&limit=60&offset=${offset}`));expect(res.status).toBe(200);const data=await res.json();expect(data.total).toBe(133);hits.push(...data.hits);}
-  expect(hits).toHaveLength(133);
+  for(let offset=0;offset<allQuestions.length;offset+=60){const res=await searchGET(new Request(`http://localhost/api/search/questions?exam=${exam}&limit=60&offset=${offset}`));expect(res.status).toBe(200);const data=await res.json();expect(data.total).toBe(allQuestions.length);hits.push(...data.hits);}
+  expect(hits).toHaveLength(allQuestions.length);
   for(const hit of hits){const [,,ex,ys,section,qnum]=questionPagePath(hit).split('/');const p={exam:ex!,yearSeason:ys!,section:section!,qnum:qnum!};expect(parseQuestionRoute(p)).not.toBeNull();expect(findQuestionByRoute(allQuestions,p)?.id).toBe(hit.id);if(hit.year===2026)expect(['a','b']).toContain(hit.part);}
   for(const season of ['february','august'])for(const session of ['kogaku','houki']){const res=await searchGET(new Request(`http://localhost/api/search/questions?exam=${exam}&year=2026&season=${season}&session=${session}&limit=60`));expect(res.status).toBe(200);expect((await res.json()).total).toBe(session==='kogaku'?14:20);}
  });

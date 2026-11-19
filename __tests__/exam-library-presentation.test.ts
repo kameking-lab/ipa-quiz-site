@@ -34,8 +34,8 @@ describe("safety text presentation", () => {
         if (question.choiceCount === 5) choiceCount += 1;
       }
     }
-    expect(count).toBe(2776);
-    expect(choiceCount).toBe(2604);
+    expect(count).toBe(2856);
+    expect(choiceCount).toBe(2684);
   });
 
   it("serves a preserved original when the official February 2024 hygiene PDF moved", () => {
