@@ -1545,6 +1545,14 @@ kankoji1: {
     ],
     seasons: ["september"], yearRange: { start: 2026, end: 2026 },
 },
+"zensho-marketing": {
+    code: "zensho-marketing", nameFull: "全商商業経済検定 マーケティング", urlSlug: "zensho-marketing", level: "basic",
+    sessions: [{
+        session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "マーケティング",
+        categories: ["マーケティングの考え方", "マーケティング環境分析", "マーケティング戦略", "市場調査", "製品政策", "販売計画", "価格政策", "チャネル政策", "プロモーション政策"],
+    }],
+    seasons: ["annual"], yearRange: { start: 2023, end: 2023 },
+},
 "yamaguchi-chori": {
     code: "yamaguchi-chori", nameFull: "調理師", urlSlug: "yamaguchi-chori", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "学科", categories: ["公衆衛生学", "食品学", "栄養学", "食品衛生学", "調理理論", "食文化概論"] }],

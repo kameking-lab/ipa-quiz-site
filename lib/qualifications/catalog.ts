@@ -1542,6 +1542,17 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["監督役による独立レビューと公開判断"],
 },
   {
+    slug: "zensho-marketing", examCode: "zensho-marketing",
+    shortName: "全商商業経済検定 マーケティング", fullName: "全商商業経済検定試験 マーケティング",
+    domain: "accounting", administrator: "公益財団法人全国商業高等学校協会",
+    officialQuestionsUrl: "https://zensho.or.jp/examination/pastexams/economics/",
+    officialReuseTermsUrl: "https://zensho.or.jp/examination/pastexams/economics/",
+    status: "live",
+    reuseSummary: "2023年度（2024年2月実施）第38回の50問を収録。選択式42問は全肢解説付き、記入式8問は公式模範解答と照合できます。",
+    attributionTemplate: "出典：公益財団法人全国商業高等学校協会 商業経済検定試験 マーケティング（問題・正答）。解説は過去問AI作成。",
+    remainingWork: [],
+},
+  {
     slug: "yamaguchi-chori", examCode: "yamaguchi-chori", shortName: "調理師", fullName: "調理師",
     domain: "personal-services", administrator: "山口県 生活衛生課",
     officialQuestionsUrl: "https://www.pref.yamaguchi.lg.jp/site/syoku-anshin/320296.html",
