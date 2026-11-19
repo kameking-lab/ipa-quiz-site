@@ -1017,7 +1017,7 @@ josanshi: {
       { session: "pm", urlSlug: "pm", expectedQuestions: 100, label: "午後", categories: ["午後"] },
     ],
     seasons: ["annual"],
-    yearRange: { start: 2024, end: 2026 },
+    yearRange: { start: 2023, end: 2026 },
   },
 "shino-kunrenshi": {
     code: "shino-kunrenshi",

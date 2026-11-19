@@ -13,7 +13,7 @@ describe("speech-language-hearing therapist registration", () => {
     const config = EXAM_CONFIGS[exam];
     expect(config.nameFull).toBe("言語聴覚士国家試験");
     expect(config.seasons).toEqual(["annual"]);
-    expect(config.yearRange).toEqual({ start: 2024, end: 2026 });
+    expect(config.yearRange).toEqual({ start: 2023, end: 2026 });
     expect(config.sessions.map(({ session, expectedQuestions }) => [session, expectedQuestions])).toEqual([["am", 100], ["pm", 100]]);
     expect(examLabel(exam)).toBe("言語聴覚士");
     expect(ALL_EXAM_CODES).not.toContain(exam);
@@ -25,6 +25,7 @@ describe("speech-language-hearing therapist registration", () => {
     const questions = await getQuestionsForExam(exam);
     expect(questions.map(({ id }) => id)).toEqual([
       "gengo-chokakushi-2024-annual-am-q44", "gengo-chokakushi-2024-annual-am-q96",
+      "gengo-chokakushi-2023-annual-am-q92",
     ]);
     expect(QUESTIONS_BY_EXAM[exam]).toEqual(questions);
   });

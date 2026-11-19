@@ -971,7 +971,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.mhlw.go.jp/general/sikaku/successlist/2026/siken21/about.html",
     officialReuseTermsUrl: "https://www.mhlw.go.jp/chosakuken/index.html",
     status: "live",
-    reuseSummary: "厚生労働省の採点通知に掲載された第26回の部分収録です。複数正答は公式の正答表に従っています。",
+    reuseSummary: "厚生労働省の採点通知に掲載された第25・26回の部分収録です。複数正答は公式の正答表に従っています。",
     remainingWork: ["公式問題本冊の原文・図表と正答の照合"],
   },
   {

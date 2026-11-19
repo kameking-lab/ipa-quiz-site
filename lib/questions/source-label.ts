@@ -131,7 +131,7 @@ if (q.year === 2025 && q.season === "annual" &&
   if (q.season === "annual" && judoPaper?.[1] === "2025_33" && q.year === 2024) {
     return "第33回（令和6年度・2025年実施）";
   }
-  const gengoNotice = /^https:\/\/www\.mhlw\.go\.jp\/general\/sikaku\/successlist\/(2024|2025|2026)\/siken21\/dl\/(26A(?:44|96)|27A40|28A(?:14|35|69|83))\.pdf(?:#page=[1-9]\d*)?$/.exec(q.sourcePdfUrl);
+  const gengoNotice = /^https:\/\/www\.mhlw\.go\.jp\/general\/sikaku\/successlist\/(2023|2024|2025|2026)\/siken21\/dl\/(25A92|26A(?:44|96)|27A40|28A(?:14|35|69|83))\.pdf(?:#page=[1-9]\d*)?$/.exec(q.sourcePdfUrl);
   if (q.season === "annual" && gengoNotice?.[1] === String(q.year) && gengoNotice[2]?.startsWith(`${q.year - 1998}A`)) {
     return `第${q.year - 1998}回（${q.year}年実施）`;
   }
