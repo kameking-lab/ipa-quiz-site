@@ -1,5 +1,6 @@
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import y2026 from "@/data/qualification-staging/sokuryoshiho/2026.json";
+import y2024 from "./2024.json";
 import y2025 from "@/data/qualification-staging/sokuryoshiho/2025.json";
 import { projectStagedQuestions } from "../batch4/project-staged";
 
@@ -44,6 +45,9 @@ function project(row: StagedSurveyQuestion): Question {
 }
 
 /** 令和8・7年 測量士補試験（各28問）。No.21は除外、令和8年No.12は参考扱い（lib/questions/assessment.ts）。 */
-export const SOKURYOSHIHO_QUESTIONS: Question[] = ([...y2026, ...y2025] as unknown as StagedSurveyQuestion[])
-  .filter((row) => !SOKURYOSHIHO_EXCLUDED_QNUMBERS.includes(row.qNumber))
-  .map(project);
+export const SOKURYOSHIHO_QUESTIONS: Question[] = [
+  ...([...y2026, ...y2025] as unknown as StagedSurveyQuestion[])
+    .filter((row) => !SOKURYOSHIHO_EXCLUDED_QNUMBERS.includes(row.qNumber))
+    .map(project),
+  ...projectStagedQuestions(y2024),
+];

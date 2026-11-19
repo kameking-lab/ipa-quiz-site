@@ -1848,7 +1848,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     domain: "construction", administrator: "国土地理院",
     officialQuestionsUrl: "https://www.gsi.go.jp/LAW/SHIKEN/past.html",
     officialReuseTermsUrl: "https://www.gsi.go.jp/kikakuchousei/kikakuchousei40182.html", status: "live",
-    reuseSummary: "令和8年・令和7年の測量士補試験（各28問・五肢択一）から、地形図を使うNo.21を除く各27問を収録。問題・正答は国土地理院公表PDF、解説は過去問AIの独自作成。令和8年No.12は公式正答と掲載数値の計算結果が一致しないため参考扱い（採点対象外）。",
+    reuseSummary: "令和6年の28問と、令和7・8年のNo.21を除く各27問を収録。問題・正答は国土地理院公表PDF、解説は過去問AIの独自作成。令和8年No.12は公式正答と掲載数値の計算結果が一致しないため参考扱い（採点対象外）。",
     attributionTemplate: "出典：国土地理院 令和○年測量士補試験 No.○。解説は過去問AIの独自作成。",
     remainingWork: ["No.21の地形図（電子地形図25000）の測量法上の複製承認要否の確認"],
 },
