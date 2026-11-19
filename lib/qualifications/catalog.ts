@@ -1779,6 +1779,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["1級・電気系・設備診断作業の追加"],
 },
   {
+    slug: "kyoin-tokyo", examCode: "kyoin-tokyo", shortName: "東京都教員採用試験", fullName: "東京都公立学校教員採用候補者選考",
+    domain: "welfare", administrator: "東京都教育委員会",
+    officialQuestionsUrl: "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/recruit/exam.html",
+    officialReuseTermsUrl: "https://www.kyoinsaiyopr.metro.tokyo.lg.jp/policy.html",
+    status: "live",
+    reuseSummary: "2026年度実施の教職教養25問を公式問題・正答と全肢の独自解説で収録。",
+    attributionTemplate: "出典：東京都教育委員会 東京都公立学校教員採用候補者選考 教職教養。解説は過去問AIの独自作成。",
+    remainingWork: ["専門教養の収録"],
+  },
+  {
     slug: "tsukanshi", examCode: "tsukanshi", shortName: "通関士", fullName: "通関士試験",
     domain: "legal", administrator: "財務省関税局・税関",
     officialQuestionsUrl: "https://www.customs.go.jp/tsukanshi/",

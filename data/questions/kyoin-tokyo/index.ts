@@ -1,0 +1,1 @@
+export { KYOIN_TOKYO_2026 as KYOIN_TOKYO_QUESTIONS } from "./2026";
