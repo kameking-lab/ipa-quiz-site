@@ -1195,7 +1195,7 @@ kangoshi: {
         { session: "kogaku-b", urlSlug: "kogaku-b", expectedQuestions: 25, label: "無線工学B", categories: ["無線工学B"] },
         { session: "hoki", urlSlug: "hoki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
     ],
-    seasons: ["march", "september"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["march", "september"], yearRange: { start: 2025, end: 2026 },
 },
 "general1": {
     code: "general1", nameFull: "第一級総合無線通信士試験", urlSlug: "general1", level: "specialist",
