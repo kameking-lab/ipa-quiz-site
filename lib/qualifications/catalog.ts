@@ -1383,6 +1383,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
 },
   {
+    slug: "zensho-eco-80", examCode: "zensho-eco-80", shortName: "商業経済検定", fullName: "商業経済検定",
+    domain: "accounting", administrator: "公益財団法人全国商業高等学校協会",
+    officialQuestionsUrl: "https://zensho.or.jp/examination/pastexams/economics/",
+    officialReuseTermsUrl: "https://zensho.or.jp/examination/pastexams/economics/",
+    status: "live",
+    reuseSummary: "ビジネス基礎の公式問題と模範解答をもとに、解答欄ごとに演習できます。",
+    attributionTemplate: "出典：公益財団法人全国商業高等学校協会 商業経済検定試験。解説は過去問AI作成。",
+    remainingWork: [],
+  },
+  {
     slug: "jken-katsuyo3", examCode: "jken-katsuyo3", shortName: "J検 情報活用3級", fullName: "情報検定（J検）情報活用3級",
     domain: "information-technology", administrator: "一般財団法人職業教育・キャリア教育財団",
     officialQuestionsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",

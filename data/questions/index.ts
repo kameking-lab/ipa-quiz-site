@@ -341,6 +341,7 @@ import { TETSUDO_SHARYO2_QUESTIONS } from "./tetsudo-sharyo2";
 
 import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
 import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
+import { ZENSHO_ECO_QUESTIONS } from "./zensho-eco-80";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
 ...(isExamPublished("fujin-kodomofuku2") ? { "fujin-kodomofuku2": FUJIN_KODOMOFUKU2_QUESTIONS } : {}),
@@ -710,7 +711,8 @@ biyoshi: BIYOSHI_QUESTIONS,
 ...(isExamPublished("kikai-hozen") ? { "kikai-hozen": KIKAI_HOZEN_QUESTIONS } : {}),
 ...(isExamPublished("tobi2") ? { "tobi2": TOBI2_QUESTIONS } : {}),
 
-...(isExamPublished("tsukanshi") ? { "tsukanshi": TSUKANSHI_QUESTIONS } : {})
+...(isExamPublished("tsukanshi") ? { "tsukanshi": TSUKANSHI_QUESTIONS } : {}),
+...(isExamPublished("zensho-eco-80") ? { "zensho-eco-80": ZENSHO_ECO_QUESTIONS } : {}),
 };
 
 // Compatibility lookups do not add a second copy to the enumerable registry.

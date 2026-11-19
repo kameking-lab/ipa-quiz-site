@@ -1459,6 +1459,11 @@ shuwa: {
 },
 "reform-mgr": { code: "reform-mgr", nameFull: "マンションリフォームマネジャー学科試験", urlSlug: "reform-mgr", level: "specialist", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（未公開）", categories: ["??"] }], seasons: ["annual"], yearRange: { start: 2025, end: 2026 } },
 "shohi-sodan": { code: "shohi-sodan", nameFull: "消費生活相談員資格試験（マークシート部分）", urlSlug: "shohi-sodan", level: "specialist", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 160, label: "マークシート式試験（未公開）", categories: ["??"] }], seasons: ["annual"], yearRange: { start: 2024, end: 2025 } },
+"zensho-eco-80": {
+    code: "zensho-eco-80", nameFull: "商業経済検定", urlSlug: "zensho-eco-80", level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科", categories: ["ビジネス基礎"] }],
+    seasons: ["annual"], yearRange: { start: 2023, end: 2023 },
+},
 "jken-katsuyo1": {
     code: "jken-katsuyo1", nameFull: "情報検定（J検）情報活用1級", urlSlug: "jken-katsuyo1", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 43, label: "情報活用1級", categories: ["情報と情報の利用", "パソコンを利用したシステム", "ネットワークの利用", "情報ネットワーク社会への対応", "情報セキュリティ", "表計算ソフト等を利用した問題解決"] }],
