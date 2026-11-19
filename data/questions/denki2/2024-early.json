@@ -1,0 +1,1649 @@
+{
+  "exam": "denki2",
+  "year": 2024,
+  "season": "early",
+  "session": "gakka",
+  "edition": "令和6年度（前期）2級電気工事施工管理技術検定 第一次検定",
+  "questionUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+  "answerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+  "questionSha256": "bf69858b46c0dd1aea91270ac7611b15496259a2a519d75771cf08639e2b02d3",
+  "answerSha256": "bf69858b46c0dd1aea91270ac7611b15496259a2a519d75771cf08639e2b02d3",
+  "answerPdfPage": 27,
+  "publishedCount": 62,
+  "questions": [
+    {
+      "number": 1,
+      "pdfPage": 2,
+      "question": "電線の断面を4 秒間に4 C(クーロン)の電荷が一定の割合で通過したときの電流の値〔A〕として，適当なものはどれか。",
+      "choices": [
+        "1 A",
+        "4 A",
+        "16 A",
+        "20 A"
+      ],
+      "officialAnswerNumbers": [
+        1
+      ],
+      "requiredSelections": 1,
+      "category": "電気工学等（必須）",
+      "topic": "電荷と電流",
+      "explanation": "電流Iは時間当たりの電荷なので4 C÷4 s＝1 Aである。",
+      "choiceExplanations": [
+        "電流Iは時間当たりの電荷なので4 C÷4 s＝1 Aである。",
+        "4 Cは4秒間の通過電荷であり、1秒当たりなら1 Cになる。",
+        "16は電荷と時間を掛けた値で、電流は電荷を時間で割る。",
+        "電荷と時間から加算で電流を求めることはできない。4 Cが4秒で通過するため1 Aである。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 2,
+      "pdfPage": 2,
+      "question": "図のように，巻数が1 回の円形コイルに，電流1 A を流したとき，コイルの中心P の磁界の大きさは1 A/m であった。このコイルに2 A の電流を流したときのコイルの中心P の磁界の大きさ〔A/m〕として，適当なものはどれか。",
+      "choices": [
+        "0.5 A/m",
+        "√2 A/m",
+        "2　A/m",
+        "4　A/m"
+      ],
+      "officialAnswerNumbers": [
+        3
+      ],
+      "requiredSelections": 1,
+      "category": "電気工学等（必須）",
+      "topic": "円形コイルの磁界",
+      "explanation": "巻数とコイル半径が一定なら中心磁界は電流に比例し、電流2 Aで磁界は2 A/mとなる。",
+      "choiceExplanations": [
+        "電流の増加でコイル中心の磁界も増加する。1 A/mの半分にはならない。",
+        "電流が2倍になれば磁界も2倍となり、√2倍にはならない。",
+        "巻数とコイル半径が一定なら中心磁界は電流に比例し、電流2 Aで磁界は2 A/mとなる。",
+        "4 A/mは電流の二乗に比例すると仮定した値である。磁界は電流に比例する。"
+      ],
+      "imageUrl": "/questions/denki2/2024-early/q2-official-figure.png",
+      "imageAltText": "1巻の円形コイルに電流を流したときの中心Pと磁界の向きを示す図。",
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 3,
+      "pdfPage": 2,
+      "question": "内部抵抗5 kΩ，最大目盛10 V の永久磁石可動コイル形電圧計を使用し，最大電圧50 V まで測定するための倍率器の抵抗値〔kΩ〕として，適当なものはどれか。",
+      "choices": [
+        "5 kΩ",
+        "10 kΩ",
+        "20 kΩ",
+        "25 kΩ"
+      ],
+      "officialAnswerNumbers": [
+        3
+      ],
+      "requiredSelections": 1,
+      "category": "電気工学等（必須）",
+      "topic": "電圧計の倍率器",
+      "explanation": "元の最大目盛で流れる電流は10 V÷5 kΩ＝2 mAである。50 Vに対する全抵抗25 kΩから内部抵抗5 kΩを引くと20 kΩになる。",
+      "choiceExplanations": [
+        "5 kΩを直列に加えると全抵抗10 kΩ、最大目盛の電圧は20 Vになる。",
+        "10 kΩを直列に加えると全抵抗15 kΩなので、最大目盛は30 Vに相当する。",
+        "元の最大目盛で流れる電流は10 V÷5 kΩ＝2 mAである。50 Vに対する全抵抗25 kΩから内部抵抗5 kΩを引くと20 kΩになる。",
+        "25 kΩは必要な全抵抗で、倍率器単体の抵抗は内部抵抗を差し引いた20 kΩである。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 4,
+      "pdfPage": 3,
+      "question": "単相変圧器の二次側端子間に1 Ωの抵抗を接続して，一次側端子間に電圧100 V を加えたところ，一次電流は1 A となった。この場合の一次側と二次側の電圧比(一次側電圧／二次側電圧)として，適当なものはどれか。ただし，変圧器は理想変圧器とする。",
+      "choices": [
+        "1/10",
+        "1",
+        "10",
+        "100"
+      ],
+      "officialAnswerNumbers": [
+        3
+      ],
+      "requiredSelections": 1,
+      "category": "電気工学等（必須）",
+      "topic": "理想変圧器",
+      "explanation": "入力は100 V×1 A＝100 Wで、理想変圧器では出力も100 Wとなる。二次側は1 Ωなので電圧は10 Vとなり、比は100÷10＝10である。",
+      "choiceExplanations": [
+        "1/10は二次側電圧を一次側で割った場合の値である。",
+        "比が1では二次側の1 Ωに100 Vが加わり、一次側の入力電力100 Wと一致しない。",
+        "入力は100 V×1 A＝100 Wで、理想変圧器では出力も100 Wとなる。二次側は1 Ωなので電圧は10 Vとなり、比は100÷10＝10である。",
+        "比が100なら二次側は1 Vで、1 Ωの負荷電力は1 Wとなり入力と一致しない。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 5,
+      "pdfPage": 4,
+      "question": "ダム水路式発電所の水圧管における水撃作用に関する記述として，最も不適当なものはどれか。",
+      "choices": [
+        "水圧管を破裂させることがある。",
+        "水圧管の長さが短いほど大きくなる。",
+        "水車の使用水量を急激に変化させた場合に発生する。",
+        "水車入口弁の閉鎖に要する時間が短いほど大きくなる。"
+      ],
+      "officialAnswerNumbers": [
+        2
+      ],
+      "requiredSelections": 1,
+      "category": "電気工学等（選択）",
+      "topic": "水撃",
+      "explanation": "同じ変化条件で管が短ければ水柱の慣性による圧力上昇は一般に小さくなる。",
+      "choiceExplanations": [
+        "水撃による急激な圧力上昇が水圧管の耐圧を超えると破裂するおそれがある。",
+        "同じ変化条件で管が短ければ水柱の慣性による圧力上昇は一般に小さくなる。",
+        "使用水量が急変して管内の流速が変わると、水撃が生じる。",
+        "弁を短時間で閉じると流れを急停止させ、圧力上昇が大きくなりやすい。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 6,
+      "pdfPage": 4,
+      "question": "高圧電路に使用する機器に関する記述として，最も不適当なものはどれか。",
+      "choices": [
+        "柱上に用いる高圧気中負荷開閉器(PAS)は，短絡電流を遮断できる。",
+        "高圧交流真空遮断器(VCB)は，負荷電流を開閉できる。",
+        "高圧真空電磁接触器(VMC)は，コンデンサ等の多頻度開閉に用いられる。",
+        "高圧限流ヒューズ(PF)は，短絡電流の遮断に用いられる。"
+      ],
+      "officialAnswerNumbers": [
+        1
+      ],
+      "requiredSelections": 1,
+      "category": "電気工学等（選択）",
+      "topic": "高圧開閉機器",
+      "explanation": "PASは負荷の開閉には使えるが、短絡電流の遮断は上位の遮断器などが担う。",
+      "choiceExplanations": [
+        "PASは負荷の開閉には使えるが、短絡電流の遮断は上位の遮断器などが担う。",
+        "真空遮断器は負荷電流の開閉に使え、定格範囲の故障電流も遮断できる。",
+        "高圧真空電磁接触器は繰り返し開閉に適し、コンデンサ回路などに用いる。",
+        "高圧限流ヒューズは溶断によって短絡電流を遮断し、通過電流も制限する。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 7,
+      "pdfPage": 4,
+      "question": "配電線路の電圧調整に関する記述として，最も不適当なものはどれか。",
+      "choices": [
+        "配電用変電所の負荷時タップ切換変圧器による電圧の調整",
+        "柱上変圧器の一次側タップ調整による電圧の調整",
+        "配電線路の途中に三相昇圧器を設置することによる電圧の調整",
+        "配電線路の途中に柱上開閉器を設置することによる電圧の調整"
+      ],
+      "officialAnswerNumbers": [
+        4
+      ],
+      "requiredSelections": 1,
+      "category": "電気工学等（選択）",
+      "topic": "配電電圧調整",
+      "explanation": "柱上開閉器は回路の開閉や区分をする機器で、通電中の電圧を調整する機能は備えない。",
+      "choiceExplanations": [
+        "負荷時タップ切換変圧器は送電を継続したまま巻数比を切り替えて電圧を調整する。",
+        "柱上変圧器の一次側タップの変更により、需要家側へ供給する電圧を調整できる。",
+        "三相昇圧器によって線路途中の電圧を補償できる。",
+        "柱上開閉器は回路の開閉や区分をする機器で、通電中の電圧を調整する機能は備えない。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 8,
+      "pdfPage": 4,
+      "question": "架空送電線路において，単導体と比較した多導体の特徴として，最も不適当なものはどれか。",
+      "choices": [
+        "送電容量が増加する。",
+        "静電容量が減少する。",
+        "コロナ損失が減少する。",
+        "風圧や氷雪荷重が増加する。"
+      ],
+      "officialAnswerNumbers": [
+        2
+      ],
+      "requiredSelections": 1,
+      "category": "電気工学等（選択）",
+      "topic": "多導体",
+      "explanation": "等価半径が大きくなるので、単導体に比べて線路の静電容量は増加する。",
+      "choiceExplanations": [
+        "1相を複数の電線で構成すると通電できる電流が増え、送電容量が大きくなる。",
+        "等価半径が大きくなるので、単導体に比べて線路の静電容量は増加する。",
+        "表面電界が弱まるため、コロナ放電とそれによる損失を抑えられる。",
+        "電線の本数が増えると、風を受ける面積や付着する氷雪の荷重は増える。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 9,
+      "pdfPage": 5,
+      "question": "事務所において，各室の基準面における推奨照度の値として，「日本産業規格（JIS）」の「屋内照明基準」上，誤っているものはどれか。",
+      "choices": [
+        "事務室　750 lx",
+        "会議室　500 lx",
+        "応接室　300 lx",
+        "階段　150 lx"
+      ],
+      "officialAnswerNumbers": [
+        3
+      ],
+      "requiredSelections": 1,
+      "category": "電気工学等（選択）",
+      "topic": "屋内照明の推奨照度",
+      "explanation": "事務所の応接室には500 lxが推奨され、300 lxとは異なる。",
+      "choiceExplanations": [
+        "一般の事務室の推奨照度は750 lxである。",
+        "会議室では推奨照度500 lxが示される。",
+        "事務所の応接室には500 lxが推奨され、300 lxとは異なる。",
+        "階段の推奨照度は150 lxである。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 10,
+      "pdfPage": 5,
+      "question": "三相誘導電動機の始動法として，最も不適当なものはどれか。",
+      "choices": [
+        "分相始動法",
+        "全電圧始動法",
+        "リアクトル始動法",
+        "スターデルタ(Y－△)始動法"
+      ],
+      "officialAnswerNumbers": [
+        1
+      ],
+      "requiredSelections": 1,
+      "category": "電気工学等（選択）",
+      "topic": "三相誘導電動機の始動",
+      "explanation": "分相始動は単相誘導電動機で補助巻線を使って始動トルクを得る方式である。",
+      "choiceExplanations": [
+        "分相始動は単相誘導電動機で補助巻線を使って始動トルクを得る方式である。",
+        "全電圧始動は電源の全電圧を直接加えて始動する。",
+        "リアクトル始動は始動時に直列リアクトルで電動機の端子電圧を下げ、始動電流を抑える。",
+        "スターデルタ始動ではスター結線で始動し、回転が上がってからデルタ結線に切り替える。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 11,
+      "pdfPage": 6,
+      "question": "火力発電に用いられるタービン発電機に関する記述として，最も不適当なものはどれか。",
+      "choices": [
+        "極数は，2 極又は4 極である。",
+        "軸形式は，立軸形が採用される。",
+        "大容量機では，水素冷却方式が採用される。",
+        "単機容量が増せば，発電機の効率は良くなる。"
+      ],
+      "officialAnswerNumbers": [
+        2
+      ],
+      "requiredSelections": 1,
+      "category": "電気設備（選択）",
+      "topic": "タービン発電機",
+      "explanation": "蒸気タービンと結合する火力発電用タービン発電機の軸は通常横軸である。立軸は水力発電機などで用いられる。",
+      "choiceExplanations": [
+        "高速で運転するため、一般に2極又は4極を用いる。",
+        "蒸気タービンと結合する火力発電用タービン発電機の軸は通常横軸である。立軸は水力発電機などで用いられる。",
+        "大容量機では冷却性能の高い水素を使う方式が採用される。",
+        "単機容量が大きくなると、出力に対する損失の割合が低下し効率は上がる傾向がある。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 12,
+      "pdfPage": 6,
+      "question": "変電所において，2 台の三相変圧器を並行運転する条件として，最も不適当なものはどれか。",
+      "choices": [
+        "各変圧器の極性が一致していること。",
+        "各変圧器の相回転が同一であること。",
+        "各変圧器の一次及び二次の定格電圧が等しいこと。",
+        "各変圧器のインピーダンスが，変圧器の容量に比例していること。"
+      ],
+      "officialAnswerNumbers": [
+        4
+      ],
+      "requiredSelections": 1,
+      "category": "電気設備（選択）",
+      "topic": "変圧器の並行運転",
+      "explanation": "負荷を容量に比例して分担させるには百分率インピーダンスをそろえる。実インピーダンスは同じ電圧基準なら容量に反比例する。",
+      "choiceExplanations": [
+        "極性が異なると接続時に電圧が打ち消し合わず、大きな電流が流れる。",
+        "三相の相回転が異なると対応する端子の電圧位相が合わず、並行接続できない。",
+        "一次・二次の各定格電圧を合わせ、二次間の循環電流を防ぐ。",
+        "負荷を容量に比例して分担させるには百分率インピーダンスをそろえる。実インピーダンスは同じ電圧基準なら容量に反比例する。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 13,
+      "pdfPage": 6,
+      "question": "負荷率と需要率に関する記述として，最も不適当なものはどれか。",
+      "choices": [
+        "負荷率は，値が大きいほど発電の効率化などの利点がある。",
+        "負荷率の値を示す際は，期間のとり方を明示する必要がある。",
+        "需要率の計算には，ある期間中の負荷の平均電力を用いる。",
+        "需要率は，需要家の業種によって異なる。"
+      ],
+      "officialAnswerNumbers": [
+        3
+      ],
+      "requiredSelections": 1,
+      "category": "電気設備（選択）",
+      "topic": "負荷率と需要率",
+      "explanation": "需要率は最大需要電力を設備容量の合計で割って求め、平均電力は負荷率に用いる。",
+      "choiceExplanations": [
+        "負荷率が大きいと平均値が最大需要電力に近くなり、発電設備を効率よく利用しやすい。",
+        "平均電力と最大需要電力は集計期間で変わるので、期間を明示する。",
+        "需要率は最大需要電力を設備容量の合計で割って求め、平均電力は負荷率に用いる。",
+        "設備の同時使用の割合などが業種により異なるため、需要率も異なる。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 14,
+      "pdfPage": 7,
+      "question": "架空送電線路における，次の記述に該当する現象の名称として，適当なものはどれか。「電線に氷雪が付着してその断面が非対称になり，これに風が当たると揚力が発生し，電線が振動する現象。」",
+      "choices": [
+        "微風振動",
+        "サブスパン振動",
+        "ギャロッピング",
+        "スリートジャンプ"
+      ],
+      "officialAnswerNumbers": [
+        3
+      ],
+      "requiredSelections": 1,
+      "category": "電気設備（選択）",
+      "topic": "送電線の振動",
+      "explanation": "着氷雪で非対称になった電線には風で揚力が働き、大振幅のギャロッピングが起きる。",
+      "choiceExplanations": [
+        "微風振動は弱い風で生じる渦による、振幅が比較的小さい振動である。",
+        "サブスパン振動は、主に多導体のスペーサ間で後流の影響を受けて起こる。",
+        "着氷雪で非対称になった電線には風で揚力が働き、大振幅のギャロッピングが起きる。",
+        "スリートジャンプは付着した氷雪が脱落した際、電線が急にはね上がる現象である。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 15,
+      "pdfPage": 7,
+      "question": "架空送配電線路に使用するがいしの性能を表すものとして，最も不適当なものはどれか。",
+      "choices": [
+        "制限電圧",
+        "機械的強度",
+        "油中破壊電圧",
+        "フラッシオーバ電圧"
+      ],
+      "officialAnswerNumbers": [
+        1
+      ],
+      "requiredSelections": 1,
+      "category": "電気設備（選択）",
+      "topic": "がいしの性能",
+      "explanation": "制限電圧は避雷器のサージ抑制性能を示す指標である。",
+      "choiceExplanations": [
+        "制限電圧は避雷器のサージ抑制性能を示す指標である。",
+        "がいしには電線荷重や張力を支える機械的強度が必要である。",
+        "油中破壊電圧は表面放電を抑えた状態でがいし本体の絶縁性能を確認する値である。",
+        "フラッシオーバ電圧は、がいしの外側で電極間に放電が生じる電圧を表す。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 16,
+      "pdfPage": 7,
+      "question": "送配電系統におけるフェランチ現象に関する記述として，最も不適当なものはどれか。",
+      "choices": [
+        "地中電線路よりも架空電線路の方が発生しやすい。",
+        "深夜などの軽負荷時に発生しやすい。",
+        "線路の静電容量が大きいほど発生しやすい。",
+        "受電端電圧の方が，送電端電圧よりも高くなる現象である。"
+      ],
+      "officialAnswerNumbers": [
+        1
+      ],
+      "requiredSelections": 1,
+      "category": "電気設備（選択）",
+      "topic": "フェランチ現象",
+      "explanation": "地中ケーブルは対地静電容量が大きく、架空線よりフェランチ現象が生じやすい。",
+      "choiceExplanations": [
+        "地中ケーブルは対地静電容量が大きく、架空線よりフェランチ現象が生じやすい。",
+        "負荷が小さいと線路の充電電流の影響が相対的に大きくなり、受電端が昇圧しやすい。",
+        "静電容量が大きいほど進み充電電流が増え、受電端の電圧上昇が起きやすい。",
+        "軽負荷などで受電端電圧が送電端電圧を上回るのがフェランチ現象である。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 17,
+      "pdfPage": 7,
+      "question": "中性点非接地方式の高圧配電系統において，地絡事故から系統を保護するために使用する機器として，最も不適当なものはどれか。",
+      "choices": [
+        "真空遮断器",
+        "零相変流器",
+        "接地形計器用変圧器",
+        "高圧カットアウトヒューズ"
+      ],
+      "officialAnswerNumbers": [
+        4
+      ],
+      "requiredSelections": 1,
+      "category": "電気設備（選択）",
+      "topic": "高圧配電線路の地絡保護",
+      "explanation": "非接地系統の地絡電流は一般に小さく、過電流で動作する高圧カットアウトヒューズは設問の地絡保護には用いない。",
+      "choiceExplanations": [
+        "真空遮断器は保護継電器の指令を受けて事故回路を切り離す。",
+        "零相変流器は三相の電流の和を検出し、零相電流を保護継電器に供給する。",
+        "接地形計器用変圧器は零相電圧を検出し、地絡保護に用いる。",
+        "非接地系統の地絡電流は一般に小さく、過電流で動作する高圧カットアウトヒューズは設問の地絡保護には用いない。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 18,
+      "pdfPage": 8,
+      "question": "配電線路に施設する過電流遮断器に関する記述として，「電気設備の技術基準とその解釈」上，不適当なものはどれか。",
+      "choices": [
+        "高圧電路の短絡を保護するために施設する過電流遮断器は，その電路を通過する短絡電流を遮断できなければならない。",
+        "高圧電路の短絡を保護するために施設する過電流遮断器は，その開閉状態を表示する装置を有するもの，又は，その開閉状態を容易に確認できるものでなければならない。",
+        "電路の一部に接地工事を施した低圧電線路の接地側電線には，過電流遮断器を施設しなければならない。",
+        "低圧電路の短絡を保護するために設置する過電流遮断器として，定められた能力を有するヒューズの施設が認められている。"
+      ],
+      "officialAnswerNumbers": [
+        3
+      ],
+      "requiredSelections": 1,
+      "category": "電気設備（選択）",
+      "topic": "過電流遮断器",
+      "explanation": "接地側電線のみに過電流遮断器を設けると接地が失われるため、原則として接地側には施設しない。",
+      "choiceExplanations": [
+        "短絡保護では、想定される短絡電流を遮断できる遮断容量が必要である。",
+        "高圧電路の短絡保護用遮断器では、表示装置などで開閉状態を確認できる必要がある。",
+        "接地側電線のみに過電流遮断器を設けると接地が失われるため、原則として接地側には施設しない。",
+        "低圧電路では必要な遮断能力などの条件を満たすヒューズを使用できる。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 19,
+      "pdfPage": 8,
+      "question": "屋内全般照明の設計に関する記述として，最も不適当なものはどれか。",
+      "choices": [
+        "光束法は，作業面における平均照度を求めるための計算方法である。",
+        "室指数は，照明率を計算するために用いられる。",
+        "照明率は，基準面に達する光束の，光源の全光束に対する割合である。",
+        "壁面の反射率は，照度計算には影響しない。"
+      ],
+      "officialAnswerNumbers": [
+        4
+      ],
+      "requiredSelections": 1,
+      "category": "電気設備（選択）",
+      "topic": "光束法",
+      "explanation": "壁からの反射光も作業面に届くので、壁面の反射率は照明率と平均照度に影響する。",
+      "choiceExplanations": [
+        "光束法は、灯具の光束や照明率などから作業面の平均照度を計算する方式である。",
+        "室指数で室の寸法と取付高さの関係を表し、その値を照明率を求める際に参照する。",
+        "照明率は光源から出た全光束のうち基準面に到達する光束の割合である。",
+        "壁からの反射光も作業面に届くので、壁面の反射率は照明率と平均照度に影響する。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 20,
+      "pdfPage": 8,
+      "question": "一般的な電動機主回路に設置する機器に関する記述として，最も不適当なものはどれか。",
+      "choices": [
+        "回路の保護のために過電流保護器を設ける。",
+        "配線用遮断器は，始動電流では動作しない定格のものを選定する。",
+        "電磁接触器により，電動機への電源を直接ON－OFF する。",
+        "2 E リレーは，電動機の反相保護が可能である。"
+      ],
+      "officialAnswerNumbers": [
+        4
+      ],
+      "requiredSelections": 1,
+      "category": "電気設備（選択）",
+      "topic": "電動機主回路",
+      "explanation": "2Eリレーの保護要素は過負荷と欠相である。反相保護を加えたものは3Eリレーである。",
+      "choiceExplanations": [
+        "過負荷や短絡などから回路を守るため、過電流保護器を設ける。",
+        "正常な始動中の大電流で不要動作しないよう、遮断器の定格や動作特性を選ぶ。",
+        "電磁接触器は制御信号で主接点を開閉し、電動機への給電を制御する。",
+        "2Eリレーの保護要素は過負荷と欠相である。反相保護を加えたものは3Eリレーである。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 21,
+      "pdfPage": 9,
+      "question": "低圧屋内配線の施設場所と工事の種類の組合せとして，「電気設備の技術基準とその解釈」上，不適当なものはどれか。ただし，使用電圧は300 V 以下とし，事務所ビルの乾燥した場所に施設するものとする。",
+      "choices": [
+        "点検できない隠ぺい場所 ― 金属線ぴ工事",
+        "点検できない隠ぺい場所 ― 金属可とう電線管工事",
+        "点検できる隠ぺい場所 ― バスダクト工事",
+        "点検できる隠ぺい場所 ― 平形保護層工事"
+      ],
+      "officialAnswerNumbers": [
+        1
+      ],
+      "requiredSelections": 1,
+      "category": "電気設備（選択）",
+      "topic": "屋内配線の施設場所",
+      "explanation": "金属線ぴ工事は点検できない隠ぺい場所には施設できない。",
+      "choiceExplanations": [
+        "金属線ぴ工事は点検できない隠ぺい場所には施設できない。",
+        "金属可とう電線管工事は条件を満たせば点検できない隠ぺい場所にも施設できる。",
+        "バスダクト工事は乾燥した点検可能な隠ぺい場所に施設できる。",
+        "平形保護層工事は乾燥した点検できる隠ぺい場所で認められる。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 22,
+      "pdfPage": 9,
+      "question": "キュービクル式高圧受電設備に関する記述として，「日本産業規格（JIS）」上，不適当なものはどれか。",
+      "choices": [
+        "PF・S 形の地絡の保護には，高圧限流ヒューズ(PF)を使用する。",
+        "PF・S 形の主遮断装置の電源側は，短絡接地器具などで容易，かつ，確実に接地できるものとする。",
+        "CB 形の過電流の検出には，変流器(CT)と過電流継電器(OCR)を使用する。",
+        "CB 形においては，保守点検時の安全を確保するため，主遮断装置の電源側に断路器(DS)を設ける。"
+      ],
+      "officialAnswerNumbers": [
+        1
+      ],
+      "requiredSelections": 1,
+      "category": "電気設備（選択）",
+      "topic": "キュービクル",
+      "explanation": "PFは主に短絡電流を遮断する。地絡は地絡継電装置などで検出して保護する。",
+      "choiceExplanations": [
+        "PFは主に短絡電流を遮断する。地絡は地絡継電装置などで検出して保護する。",
+        "保守時の安全確保のため、電源側を短絡接地器具などで確実に接地できる構造とする。",
+        "CTが電流を検出し、OCRが設定を超えた過電流を判定して遮断器を動作させる。",
+        "電源側の断路器は、保守作業の際に回路を切り離すために用いる。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 23,
+      "pdfPage": 9,
+      "question": "建築物等の雷保護に関する用語として，「日本産業規格（JIS）」上，関係のないものはどれか。",
+      "choices": [
+        "回転球体法",
+        "引下げ導線システム",
+        "アークホーン",
+        "メッシュ導体"
+      ],
+      "officialAnswerNumbers": [
+        3
+      ],
+      "requiredSelections": 1,
+      "category": "電気設備（選択）",
+      "topic": "建築物の雷保護",
+      "explanation": "アークホーンは主に送配電線のがいしで放電経路を確保する機器で、建築物の外部雷保護の用語ではない。",
+      "choiceExplanations": [
+        "回転球体法は雷撃から保護すべき範囲や受雷部の配置を決める方法である。",
+        "引下げ導線システムは受雷部から接地極へ雷電流を導く。",
+        "アークホーンは主に送配電線のがいしで放電経路を確保する機器で、建築物の外部雷保護の用語ではない。",
+        "メッシュ導体は屋根などの受雷部を網状に配置するために用いられる。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 24,
+      "pdfPage": 10,
+      "question": "需要場所に施設する地中電線路に関する記述として，「電気設備の技術基準とその解釈」上，不適当なものはどれか。",
+      "choices": [
+        "管路式で施設する場合，電線に耐熱ビニル電線(HIV)を使用した。",
+        "低圧地中電線と高圧地中電線との離隔距離を15 cm 以上確保して施設した。",
+        "低圧地中電線と地中弱電流電線等との離隔距離を30 cm 以上確保して施設した。",
+        "ハンドホール内のケーブルを支持する金物類には，D 種接地工事を施さなかった。"
+      ],
+      "officialAnswerNumbers": [
+        1
+      ],
+      "requiredSelections": 1,
+      "category": "電気設備（選択）",
+      "topic": "地中電線路",
+      "explanation": "地中電線路にはケーブルを用いる。耐熱ビニル絶縁電線だけでは地中配線に必要な構造を備えない。",
+      "choiceExplanations": [
+        "地中電線路にはケーブルを用いる。耐熱ビニル絶縁電線だけでは地中配線に必要な構造を備えない。",
+        "低圧と高圧の地中電線の離隔を15 cm以上とする条件に合う。",
+        "低圧地中電線と地中弱電流電線等の間を30 cm以上離すのは、接近に関する条件を満たす。",
+        "ハンドホール内でケーブルを支持する金物には、該当する規定の接地省略が認められる。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 25,
+      "pdfPage": 10,
+      "question": "自動火災報知設備のP 型2 級受信機(複数回線)に関する記述として，「消防法」上，誤っているものはどれか。",
+      "choices": [
+        "火災灯を省略することができる。",
+        "主音響装置の音圧は85 dB 以上である。",
+        "接続することができる回線の数は，5 以下である。",
+        "発信機との間で電話連絡をすることができる装置を有しなければならない。"
+      ],
+      "officialAnswerNumbers": [
+        4
+      ],
+      "requiredSelections": 1,
+      "category": "電気設備（選択）",
+      "topic": "P型2級受信機",
+      "explanation": "発信機との電話連絡装置が必要なのはP型1級などで、P型2級には求められない。",
+      "choiceExplanations": [
+        "P型2級受信機は火災灯を省略できる。",
+        "主音響装置は聞き取れるよう85 dB以上の音圧が必要である。",
+        "P型2級の接続可能な回線数は5以下である。",
+        "発信機との電話連絡装置が必要なのはP型1級などで、P型2級には求められない。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 26,
+      "pdfPage": 10,
+      "question": "防火対象物に設置するガス漏れ火災警報設備に関する記述として，「消防法」上，誤っているものはどれか。",
+      "choices": [
+        "ガス漏れ火災警報設備には，非常電源を附置すること。",
+        "ガス漏れ火災警報設備は，すべての防火対象物に設置すること。",
+        "一の警戒区域の面積は，省令で定める場合を除き，600 m²以下とすること。",
+        "警戒区域は，省令で定める場合を除き，2 以上の階にわたらないものとすること。"
+      ],
+      "officialAnswerNumbers": [
+        2
+      ],
+      "requiredSelections": 1,
+      "category": "電気設備（選択）",
+      "topic": "ガス漏れ火災警報設備",
+      "explanation": "設置義務は対象となる防火対象物の用途や規模などで定まり、すべてには及ばない。",
+      "choiceExplanations": [
+        "通常電源が失われても警報が機能するように非常電源を附置する。",
+        "設置義務は対象となる防火対象物の用途や規模などで定まり、すべてには及ばない。",
+        "原則として、一の警戒区域の面積は600 m²以下とする。",
+        "原則として、一つの警戒区域を複数階にまたがらせない。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 27,
+      "pdfPage": 10,
+      "question": "構内情報通信網(LAN)に関するイーサネットの規格において，UTP ケーブルを使用するものとして，不適当なものはどれか。",
+      "choices": [
+        "100 BASE－TX",
+        "1000 BASE－T",
+        "1000 BASE－SX",
+        "2.5 G BASE－T"
+      ],
+      "officialAnswerNumbers": [
+        3
+      ],
+      "requiredSelections": 1,
+      "category": "電気設備（選択）",
+      "topic": "イーサネット媒体",
+      "explanation": "1000BASE-SXは短波長の光を多モード光ファイバに通す規格である。",
+      "choiceExplanations": [
+        "100BASE-TXはツイストペア銅線を用いる100 Mbpsの規格である。",
+        "1000BASE-Tはツイストペア銅線で1 Gbpsを伝送する。",
+        "1000BASE-SXは短波長の光を多モード光ファイバに通す規格である。",
+        "2.5GBASE-Tはツイストペア銅線で2.5 Gbpsを伝送する。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 28,
+      "pdfPage": 11,
+      "question": "カテナリちょう架式電車線に関する用語として，不適当なものはどれか。",
+      "choices": [
+        "エンドアプローチ",
+        "可動ブラケット",
+        "ハンガ",
+        "ちょう架線"
+      ],
+      "officialAnswerNumbers": [
+        1
+      ],
+      "requiredSelections": 1,
+      "category": "電気設備（選択）",
+      "topic": "カテナリ架線",
+      "explanation": "エンドアプローチは剛体電車線などの端部でパンタグラフの通過を滑らかにする装置を指す。",
+      "choiceExplanations": [
+        "エンドアプローチは剛体電車線などの端部でパンタグラフの通過を滑らかにする装置を指す。",
+        "可動ブラケットは電柱から電車線を支持し、温度変化による線路方向の変位に追従する。",
+        "ハンガはちょう架線からトロリ線をつり下げる部材である。",
+        "ちょう架線は張力を持たせて張り、ハンガを介してトロリ線を支える。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 29,
+      "pdfPage": 11,
+      "question": "道路照明において，連続照明の設計要件に関する記述として，最も不適当なものはどれか。",
+      "choices": [
+        "グレアが十分に抑制されていること。",
+        "路面の輝度分布が不均一であること。",
+        "道路条件に応じ十分な路面輝度を確保すること。",
+        "道路線形の変化に対する誘導効果を有すること。"
+      ],
+      "officialAnswerNumbers": [
+        2
+      ],
+      "requiredSelections": 1,
+      "category": "電気設備（選択）",
+      "topic": "道路照明",
+      "explanation": "視認性のため路面輝度には所定の均斉度が必要で、明暗のむらを抑える。",
+      "choiceExplanations": [
+        "グレアの抑制により、運転者が路面上の障害物などを見分けやすくなる。",
+        "視認性のため路面輝度には所定の均斉度が必要で、明暗のむらを抑える。",
+        "道路の種類や交通条件に応じた路面輝度を確保する。",
+        "照明器具の配置などで、曲線を含む道の続きが認識できる視線誘導を確保する。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 30,
+      "pdfPage": 12,
+      "question": "図に示す換気方式の名称として，最も適当なものはどれか。",
+      "choices": [
+        "自然換気方式",
+        "第1 種換気方式",
+        "第2 種換気方式",
+        "第3 種換気方式"
+      ],
+      "officialAnswerNumbers": [
+        4
+      ],
+      "requiredSelections": 1,
+      "category": "関連分野（選択）",
+      "topic": "換気方式",
+      "explanation": "外気は給気口から自然に入り、排気は排気機で行うため、第3種換気である。",
+      "choiceExplanations": [
+        "自然換気は給気・排気共に機械を使わず、図には排気機がある。",
+        "第1種換気は給気と排気の双方に機械を用いる。図の給気口には給気機がない。",
+        "第2種換気は機械給気と自然排気を組み合わせる。図とは機械で行う側が逆である。",
+        "外気は給気口から自然に入り、排気は排気機で行うため、第3種換気である。"
+      ],
+      "imageUrl": "/questions/denki2/2024-early/q30-official-figure.png",
+      "imageAltText": "外気が給気口から入り、排気機が室内の空気を屋外へ送り出す図。",
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 31,
+      "pdfPage": 12,
+      "question": "アスファルト舗装と比較したコンクリート舗装に関する記述として，最も不適当なものはどれか。",
+      "choices": [
+        "せん断力に強いが，曲げ応力に弱いので沈下しやすい。",
+        "耐久性に富んでいる。",
+        "施工後の養生期間が長く，部分的な補修が困難である。",
+        "温度変化によって，膨張，収縮するので，目地が必要である。"
+      ],
+      "officialAnswerNumbers": [
+        1
+      ],
+      "requiredSelections": 1,
+      "category": "関連分野（選択）",
+      "topic": "コンクリート舗装",
+      "explanation": "コンクリート舗装は版の剛性で荷重を広い範囲に分散するため、アスファルト舗装よりたわみや沈下が起こりにくい。",
+      "choiceExplanations": [
+        "コンクリート舗装は版の剛性で荷重を広い範囲に分散するため、アスファルト舗装よりたわみや沈下が起こりにくい。",
+        "コンクリート版は耐久性が高く、重交通にも用いられる。",
+        "コンクリートの強度が出るまで養生が必要で、部分補修にも打換えなどの手間がかかる。",
+        "温度変化による伸縮に対応し、ひび割れを制御するため目地を設ける。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 32,
+      "pdfPage": 12,
+      "question": "掘削工事に使用するバックホウに関する記述として，最も不適当なものはどれか。",
+      "choices": [
+        "硬い土質の掘削ができる。",
+        "掘削位置が正確に把握できる。",
+        "基礎の掘削や溝掘りに適している。",
+        "機械の位置よりも高い場所の掘削に適している。"
+      ],
+      "officialAnswerNumbers": [
+        4
+      ],
+      "requiredSelections": 1,
+      "category": "関連分野（選択）",
+      "topic": "バックホウ",
+      "explanation": "バックホウは主に機械より低い場所を掘る。機械より高い切羽の掘削にはフロントショベルが適する。",
+      "choiceExplanations": [
+        "バケットを機械側へ引く力で、適したバケットを用いれば硬い土質も掘削できる。",
+        "運転席から掘削箇所を見ながらバケットを操作し、掘削位置を合わせやすい。",
+        "機械の設置面より下を掘るのに適するため、基礎掘りや溝掘りに用いる。",
+        "バックホウは主に機械より低い場所を掘る。機械より高い切羽の掘削にはフロントショベルが適する。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 33,
+      "pdfPage": 13,
+      "question": "支保工を用いた切梁式土留め(山留め)工法において，図に示す工法ア及び工法イの名称の組合せとして，正しいものはどれか。",
+      "choices": [
+        "（ア）連続地中壁工法、（イ）柱列壁工法",
+        "（ア）連続地中壁工法、（イ）親杭・横矢板工法",
+        "（ア）鋼矢板(シートパイル)工法、（イ）柱列壁工法",
+        "（ア）鋼矢板(シートパイル)工法、（イ）親杭・横矢板工法"
+      ],
+      "officialAnswerNumbers": [
+        4
+      ],
+      "requiredSelections": 1,
+      "category": "関連分野（選択）",
+      "topic": "切梁式土留め",
+      "explanation": "アの土留めは鋼矢板を連続させ、イは親杭の間に横矢板を入れて土圧を受ける。",
+      "choiceExplanations": [
+        "アは連続してかみ合う鋼矢板であり、イも柱列壁ではなく親杭間に横矢板を配した形である。",
+        "イは親杭・横矢板工法だが、アは現場打ちの連続壁ではなく鋼矢板である。",
+        "アは鋼矢板工法だが、イでは柱列ではなく親杭の間を横矢板でふさいでいる。",
+        "アの土留めは鋼矢板を連続させ、イは親杭の間に横矢板を入れて土圧を受ける。"
+      ],
+      "imageUrl": "/questions/denki2/2024-early/q33-official-figure.png",
+      "imageAltText": "切梁式土留めの二つの壁面を示す図。工法アは縦に連続する矢板、工法イは縦の杭に渡した横矢板で構成する。",
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 34,
+      "pdfPage": 13,
+      "question": "鉄道線路の軌道構造に関する記述として，「日本産業規格（JIS）」上，不適当なものはどれか。",
+      "choices": [
+        "路盤とは，軌道を支えるための構造物のことをいう。",
+        "施工基面とは，まくらぎ端から道床法肩までの距離のことをいう。",
+        "スラブ軌道とは，コンクリートのスラブを用いた軌道のことをいう。",
+        "道床とは，レール又はまくらぎを支持し，荷重を路盤に分布する軌道の部分のことをいう。"
+      ],
+      "officialAnswerNumbers": [
+        2
+      ],
+      "requiredSelections": 1,
+      "category": "関連分野（選択）",
+      "topic": "鉄道軌道",
+      "explanation": "まくらぎ端から道床法肩までの距離は道床肩幅である。施工基面は路盤などの施工基準となる面を指す。",
+      "choiceExplanations": [
+        "路盤は軌道の荷重を受けて支える構造である。",
+        "まくらぎ端から道床法肩までの距離は道床肩幅である。施工基面は路盤などの施工基準となる面を指す。",
+        "スラブ軌道ではコンクリート製の軌道スラブでレールを支持する。",
+        "道床はレール又はまくらぎを支持し、列車などの荷重を路盤へ分散する。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 35,
+      "pdfPage": 14,
+      "question": "鉄骨構造において，鉄骨の溶接欠陥に関する用語として，最も関係のないものはどれか。",
+      "choices": [
+        "ピット",
+        "クレータ",
+        "オーバラップ",
+        "コールドジョイント"
+      ],
+      "officialAnswerNumbers": [
+        4
+      ],
+      "requiredSelections": 1,
+      "category": "関連分野（選択）",
+      "topic": "溶接欠陥",
+      "explanation": "コールドジョイントは先に打ち込んだコンクリートと後から打ったコンクリートの間にできる不連続面である。",
+      "choiceExplanations": [
+        "ピットは溶接金属の表面に開いた小さなくぼみや穴である。",
+        "クレータは溶接ビードの終端などに生じるくぼみで、割れの起点になり得る。",
+        "オーバラップは溶接金属が母材に融合せず表面にかぶさる状態である。",
+        "コールドジョイントは先に打ち込んだコンクリートと後から打ったコンクリートの間にできる不連続面である。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 36,
+      "pdfPage": 15,
+      "question": "自動火災報知設備の配線用図記号と名称の組合せとして，「日本産業規格（JIS）」上，誤っているものはどれか。",
+      "choices": [
+        "定温式スポット型感知器",
+        "煙感知器",
+        "P型発信機",
+        "警報ベル"
+      ],
+      "officialAnswerNumbers": [
+        1
+      ],
+      "requiredSelections": 1,
+      "category": "施工管理法（必須）",
+      "topic": "火災報知の図記号",
+      "explanation": "円の上部を水平線で区切った記号は差動式スポット型感知器を表し、定温式の記号とは異なる。",
+      "choiceExplanations": [
+        "円の上部を水平線で区切った記号は差動式スポット型感知器を表し、定温式の記号とは異なる。",
+        "四角枠内のSは煙感知器を示す。",
+        "円内のPはP型発信機を示す。",
+        "円内のBは警報ベルを示す。"
+      ],
+      "imageUrl": "/questions/denki2/2024-early/q36-official-figure.png",
+      "imageAltText": "選択肢順に示した自動火災報知設備の配線用図記号。",
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 37,
+      "pdfPage": 15,
+      "question": "建設工事における仮設計画に関する記述として，最も不適当なものはどれか。",
+      "choices": [
+        "仮設建物は，工事の進捗に伴う移動の多い場所には配置しない。",
+        "仮設計画では，あらかじめ近隣の道路，周辺交通状況及び隣地の状況を調査する。",
+        "仮設計画の良否は，工程やその他の計画に影響を及ぼし，工事の品質に影響を与える。",
+        "仮設計画は，安全の基本となるもので，関係法令を遵守して立案しなければならない。",
+        "仮設計画は，契約書及び設計図書に特別の定めがある場合を除き，発注者がその責任において定める。"
+      ],
+      "officialAnswerNumbers": [
+        5
+      ],
+      "requiredSelections": 1,
+      "category": "施工管理法・能力（必須）",
+      "topic": "仮設計画",
+      "explanation": "特別な定めがない限り、仮設の方法などは施工を担う受注者がその責任で定める。",
+      "choiceExplanations": [
+        "工事の進展で頻繁な移設が必要になる場所を避けて仮設建物を配置する。",
+        "道路の幅や交通、隣地の条件を事前に調べ、搬入動線や近隣への影響を考慮する。",
+        "仮設設備の配置や能力が工程、作業性、安全や品質にも影響する。",
+        "仮設計画では仮設設備に関する安全上の条件や法令を満たす。",
+        "特別な定めがない限り、仮設の方法などは施工を担う受注者がその責任で定める。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 38,
+      "pdfPage": 16,
+      "question": "建設工事において工程管理を行う場合，バーチャート工程表と比較しネットワーク工程表の特徴を考慮した記述として，最も不適当なものはどれか。",
+      "choices": [
+        "他工種の工程に関して理解しやすい，ネットワーク工程表を用いた。",
+        "各作業の進行度合いが把握しやすい，ネットワーク工程表を用いた。",
+        "各作業の余裕日数が容易に分かる，ネットワーク工程表を用いた。",
+        "工事の重点的工程管理を行うため，クリティカルパスに注目した。",
+        "工程の遅れ日数の計算が容易な，ネットワーク工程表を用いた。"
+      ],
+      "officialAnswerNumbers": [
+        2
+      ],
+      "requiredSelections": 1,
+      "category": "施工管理法・能力（必須）",
+      "topic": "ネットワーク工程表",
+      "explanation": "作業ごとの進行度合いを視覚的に確認するには、横線で計画と実績を比較しやすいバーチャートの方が適する。",
+      "choiceExplanations": [
+        "各工程の依存関係が矢線で示され、他工種とどの作業が関係するかを把握しやすい。",
+        "作業ごとの進行度合いを視覚的に確認するには、横線で計画と実績を比較しやすいバーチャートの方が適する。",
+        "各作業の最早時刻と最遅時刻を算出して余裕日数を求められる。",
+        "クリティカルパス上の作業の遅れは全体工期に影響するため、重点管理する。",
+        "開始・終了の関係や余裕日数から、作業遅れの全工程への影響を計算できる。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 39,
+      "pdfPage": 16,
+      "question": "図に示すネットワーク工程表の各作業に関する記述として，最も不適当なものはどれか。ただし，◯内の数字はイベント番号，アルファベットは作業名，日数は所要日数を示す。",
+      "choices": [
+        "作業A，作業B 及び作業C は同時に作業を開始できる。",
+        "作業D と作業F が終了すると，作業H が開始できる。",
+        "作業I と作業J が終了すると，作業L が開始できる。",
+        "作業E と作業F はクリティカルパス上の作業である。",
+        "イベント7 からイベント8 は，ダミー(擬似作業)である。"
+      ],
+      "officialAnswerNumbers": [
+        3
+      ],
+      "requiredSelections": 1,
+      "category": "施工管理法・能力（必須）",
+      "topic": "ネットワークの作業開始",
+      "explanation": "Lの起点であるイベント8にはIとJのほか、イベント7からのダミーが入る。IとJだけが終わっても開始できるとは限らない。",
+      "choiceExplanations": [
+        "A、B、Cはいずれもイベント1を起点とするため、同時に着手できる。",
+        "Hの起点はイベント5であり、そこへの作業DとFが完了すると着手できる。",
+        "Lの起点であるイベント8にはIとJのほか、イベント7からのダミーが入る。IとJだけが終わっても開始できるとは限らない。",
+        "最長経路のC→E→F→H→J→LにはEとFの両方が含まれる。",
+        "7から8への破線矢印は日数を要さず、前後関係だけを表すダミーである。"
+      ],
+      "imageUrl": "/questions/denki2/2024-early/q39-official-figure.png",
+      "imageAltText": "イベント1から9への作業と所要日数を示すネットワーク工程表。7から8は破線。",
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 40,
+      "pdfPage": 17,
+      "question": "図に示す品質管理に用いる図表に関する記述として，最も不適当なものはどれか。",
+      "choices": [
+        "図の名称は，ヒストグラムであり柱状図ともいわれている。",
+        "中央値とは，データの総和をデータの個数で割った値をいう。",
+        "測定値にはばらつきがあり，規格値を外れているものがある。",
+        "分布のばらつきは，中心付近からほぼ左右対称であり，一般に現れる形である。",
+        "標準偏差が大きいということは，平均から遠く離れているものが多くあるということである。"
+      ],
+      "officialAnswerNumbers": [
+        2
+      ],
+      "requiredSelections": 1,
+      "category": "施工管理法・能力（必須）",
+      "topic": "ヒストグラム",
+      "explanation": "データの総和を個数で割った値は算術平均である。中央値は小さい順に並べたデータの中央に当たる値である。",
+      "choiceExplanations": [
+        "測定値を階級に分けて度数を柱で表した図はヒストグラムである。",
+        "データの総和を個数で割った値は算術平均である。中央値は小さい順に並べたデータの中央に当たる値である。",
+        "図の柱の一部は規格下限の外にあり、規格外の測定値がある。",
+        "中心部の柱が高く、両側へ向かって概ね対称に低くなる形が示される。",
+        "標準偏差はデータの平均からの広がりを表し、大きいとばらつきが大きい。"
+      ],
+      "imageUrl": "/questions/denki2/2024-early/q40-official-figure.png",
+      "imageAltText": "測定値ごとの度数を表す柱状の図。規格下限と規格上限、中央値が図中に示されている。",
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 41,
+      "pdfPage": 18,
+      "question": "「公共工事標準請負契約約款」上，設計図書に含まれないものはどれか。",
+      "choices": [
+        "図面",
+        "仕様書",
+        "現場説明書",
+        "請負代金内訳書"
+      ],
+      "officialAnswerNumbers": [
+        4
+      ],
+      "requiredSelections": 1,
+      "category": "施工管理法（選択）",
+      "topic": "公共工事の設計図書",
+      "explanation": "請負代金内訳書は代金の構成を示す書類で、約款の定義する設計図書には含まれない。",
+      "choiceExplanations": [
+        "図面は工事の形状や寸法などを示す設計図書である。",
+        "仕様書は材料や施工の条件を定める設計図書である。",
+        "現場説明書は現場条件や留意事項を示す設計図書に含まれる。",
+        "請負代金内訳書は代金の構成を示す書類で、約款の定義する設計図書には含まれない。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 42,
+      "pdfPage": 18,
+      "question": "建設工事における工程管理に関する記述として，最も不適当なものはどれか。",
+      "choices": [
+        "計画以上の工程短縮をすることで，直接工事費を少なくすることができる。",
+        "作業の所要日数は，全工事量を1 日当たりの平均施工量で割ったものである。",
+        "人工山積表を用いた工程管理は，稼動人数を平準化して効率的な労務管理ができる。",
+        "週間工程表は，1 週間に施工すべき作業内容を具体的に表したもので，各種作業間の作業手順の調整，資材の手配管理，作業員の労務管理に用いられる。"
+      ],
+      "officialAnswerNumbers": [
+        1
+      ],
+      "requiredSelections": 1,
+      "category": "施工管理法（選択）",
+      "topic": "工程管理",
+      "explanation": "計画を超える工程短縮では追加の作業員や機器が必要になる場合があり、直接工事費はむしろ増えやすい。",
+      "choiceExplanations": [
+        "計画を超える工程短縮では追加の作業員や機器が必要になる場合があり、直接工事費はむしろ増えやすい。",
+        "工事数量を平均的な日施工量で割ると、作業に要する日数を算出できる。",
+        "人工山積表は時間ごとに必要な人員を示し、集中する時期を調整できる。",
+        "週間工程表は直近1週間の作業を具体化し、手順・資材・人員を調整するために使う。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 43,
+      "pdfPage": 18,
+      "question": "低圧の屋内配線工事や接地工事における，測定器の使用に関する記述として，最も不適当なものはどれか。",
+      "choices": [
+        "低圧三相動力回路の相順を確認するため，検相器を使用した。",
+        "電路の各相の充電状態を確認するため，低圧用の検電器を使用した。",
+        "幹線の負荷電流を測定するため，全相一括してクランプ式電流計で測定した。",
+        "接地極E の接地抵抗を測定するため，そこからS(P)電極，H(C)電極を一直線に打ち込み，接地抵抗計で測定した。"
+      ],
+      "officialAnswerNumbers": [
+        3
+      ],
+      "requiredSelections": 1,
+      "category": "施工管理法（選択）",
+      "topic": "電気工事の測定器",
+      "explanation": "全相を一括して挟むと電流による磁束が相殺される。負荷電流を測るなら測定したい相の導体だけを挟む。",
+      "choiceExplanations": [
+        "検相器は三相電路の相順の確認に使用する。",
+        "低圧用検電器は、測定対象の充電の有無を安全に確認するために使用する。",
+        "全相を一括して挟むと電流による磁束が相殺される。負荷電流を測るなら測定したい相の導体だけを挟む。",
+        "接地極Eに対し補助極SとHを一直線に設けて測るのは、三極法の配置である。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 44,
+      "pdfPage": 19,
+      "question": "墜落等による危険の防止に関する記述として，「労働安全衛生法」上，誤っているものはどれか。",
+      "choices": [
+        "作業床の高さが1.8 m なので，作業床の端の手すりを省略した。",
+        "狭い場所での昇降を行うので，幅が30 cm の移動はしごを設けた。",
+        "スレートでふかれた屋根上での作業があり，踏み抜き防止のため，幅が30 cm の歩み板を設け，防網を張った。",
+        "作業及び仮設に十分なスぺースがある掘削場所で，掘削深さが1.8 m であったので，掘削面へ昇降するための設備を省略した。"
+      ],
+      "officialAnswerNumbers": [
+        4
+      ],
+      "requiredSelections": 1,
+      "category": "施工管理法（選択）",
+      "topic": "墜落等の防止",
+      "explanation": "高さ又は深さが1.5 mを超える箇所では、安全に昇降できる設備等を設ける。1.8 mでは省略できない。",
+      "choiceExplanations": [
+        "設問の作業床の端に囲いや手すり等を設ける規定は高さ2 m以上が対象である。",
+        "移動はしごの幅は30 cm以上と定められている。",
+        "スレート屋根の踏抜き防止に幅30 cm以上の歩み板や防網を用いる。",
+        "高さ又は深さが1.5 mを超える箇所では、安全に昇降できる設備等を設ける。1.8 mでは省略できない。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 45,
+      "pdfPage": 19,
+      "question": "明り掘削の作業における，労働者の危険を防止するための措置に関する記述として，「労働安全衛生法」上，誤っているものはどれか。",
+      "choices": [
+        "土止め支保工を設けたので，設置後14 日ごとに点検した。",
+        "地山の掘削作業主任者が，作業方法を決め，作業を直接指揮した。",
+        "砂からなる地山を手掘りで掘削するので，掘削面のこう配を35 度とした。",
+        "地中電線路を損壊するおそれがあったので，掘削機械を使用せず手掘りで掘削した。"
+      ],
+      "officialAnswerNumbers": [
+        1
+      ],
+      "requiredSelections": 1,
+      "category": "施工管理法（選択）",
+      "topic": "明り掘削の安全",
+      "explanation": "土止め支保工の定期点検は設置後7日を超えない期間ごとに行う。14日間隔では長すぎる。",
+      "choiceExplanations": [
+        "土止め支保工の定期点検は設置後7日を超えない期間ごとに行う。14日間隔では長すぎる。",
+        "掘削作業主任者は作業方法を決め、作業を直接指揮する。",
+        "砂地盤の手掘りでは掘削面の勾配を35度以下とする方法が認められる。",
+        "地中電線路の損壊で危険を生じるおそれがあれば、掘削機械を使わず安全な方法で施工する。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 46,
+      "pdfPage": 19,
+      "question": "屋外変電所の施工に関する記述として，最も不適当なものはどれか。",
+      "choices": [
+        "がいしは，手拭き清掃と絶縁抵抗試験により破損の有無の確認を行った。",
+        "二次側電線路の地絡保護のため，変電所の引込口に地絡遮断装置を取り付けた。",
+        "各機器及び母線を直撃雷から保護するため，近傍鉄塔及び鉄構の頂部に架空地線を取り付けた。",
+        "ガス絶縁開閉装置（GIS）の連結作業は，塵埃の侵入を防止するために連結部をビニルシートで仕切って行った。"
+      ],
+      "officialAnswerNumbers": [
+        2
+      ],
+      "requiredSelections": 1,
+      "category": "施工管理法（選択）",
+      "topic": "屋外変電所の施工",
+      "explanation": "二次側電線路の地絡保護は二次側の送り出し回路に設ける。変電所の一次側引込口に設けるという記述は適当でない。",
+      "choiceExplanations": [
+        "がいしを清掃し、外観や絶縁抵抗を確認して異常を把握する。",
+        "二次側電線路の地絡保護は二次側の送り出し回路に設ける。変電所の一次側引込口に設けるという記述は適当でない。",
+        "鉄塔などの頂部に架空地線を設け、機器や母線への直撃雷を防ぐ。",
+        "ガス絶縁開閉装置の連結部は、塵埃が入ると絶縁性能を損なうためシートなどで作業箇所を保護する。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 47,
+      "pdfPage": 20,
+      "question": "高圧架空配電線路の施工に関する記述として，最も不適当なものはどれか。",
+      "choices": [
+        "高圧電線は，圧縮スリーブを使用して接続した。",
+        "支線の埋設部分に，打込み式アンカを使用した。",
+        "高圧電線の引留め支持に，多溝がいしを使用した。",
+        "延線した高圧電線は，張線器で引張り，適正なたるみに調整した。"
+      ],
+      "officialAnswerNumbers": [
+        3
+      ],
+      "requiredSelections": 1,
+      "category": "施工管理法（選択）",
+      "topic": "高圧架空配電線の施工",
+      "explanation": "高圧電線の引留めには高圧用の引留がいしなどを用いる。多溝がいしは低圧架空線の支持などに用いる。",
+      "choiceExplanations": [
+        "電線の接続に圧縮スリーブを使い、電気的接続と機械的強度を確保する。",
+        "打込み式アンカは、支線の引張力を地中で受けるための工法の一つである。",
+        "高圧電線の引留めには高圧用の引留がいしなどを用いる。多溝がいしは低圧架空線の支持などに用いる。",
+        "張線器で電線を張り、適正なたるみとなるよう張力を調整する。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 48,
+      "pdfPage": 20,
+      "question": "使用電圧100 V のライティングダクト工事による低圧屋内配線に関する記述として，「電気設備の技術基準とその解釈」上，誤っているものはどれか。",
+      "choices": [
+        "ライティングダクトの終端部を閉そくした。",
+        "ライティングダクトにD 種接地工事を施した。",
+        "ライティングダクトを壁などの造営材を貫通して施設した。",
+        "ライティングダクトを乾燥した点検できる隠ぺい場所に施設した。"
+      ],
+      "officialAnswerNumbers": [
+        3
+      ],
+      "requiredSelections": 1,
+      "category": "施工管理法（選択）",
+      "topic": "ライティングダクト",
+      "explanation": "ライティングダクトは壁等の造営材を貫通させて施設することはできない。",
+      "choiceExplanations": [
+        "終端部を閉じ、露出した充電部への接触や異物の侵入を防ぐ。",
+        "金属部への漏電による感電を防ぐためD種接地を設けることができる。",
+        "ライティングダクトは壁等の造営材を貫通させて施設することはできない。",
+        "乾燥した点検可能な隠ぺい場所は、施設できる場所の条件に合う。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 49,
+      "pdfPage": 20,
+      "question": "電気鉄道における架空単線式電車線路に関する次の記述に該当するちょう架方式として，適当なものはどれか。「ちょう架線とトロリ線の間に補助ちょう架線をドロッパで吊り下げ，補助ちょう架線からハンガでトロリ線を吊り下げた方式。」",
+      "choices": [
+        "ツインシンプルカテナリ式",
+        "コンパウンドカテナリ式",
+        "直接ちょう架式",
+        "剛体ちょう架式"
+      ],
+      "officialAnswerNumbers": [
+        2
+      ],
+      "requiredSelections": 1,
+      "category": "施工管理法（選択）",
+      "topic": "電車線のちょう架方式",
+      "explanation": "補助ちょう架線をドロッパでつり、その補助ちょう架線からトロリ線をハンガでつるのがコンパウンドカテナリ式である。",
+      "choiceExplanations": [
+        "ツインシンプルカテナリ式はトロリ線を2条とする方式で、記述の補助ちょう架線を用いる方式とは別である。",
+        "補助ちょう架線をドロッパでつり、その補助ちょう架線からトロリ線をハンガでつるのがコンパウンドカテナリ式である。",
+        "直接ちょう架式は電車線を支持点から直接つり、ちょう架線と補助ちょう架線を重ねない。",
+        "剛体ちょう架式は剛体の導体で支持する方式で、補助ちょう架線でつる方式ではない。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 50,
+      "pdfPage": 21,
+      "question": "軽量鉄骨壁下地において，図に示す各部材の名称の組合せとして，適当なものはどれか。",
+      "choices": [
+        "（ア）ランナ、（イ）振れ止め",
+        "（ア）ランナ、（イ）スペーサ",
+        "（ア）スタッド、（イ）振れ止め",
+        "（ア）スタッド、（イ）スペーサ"
+      ],
+      "officialAnswerNumbers": [
+        3
+      ],
+      "requiredSelections": 1,
+      "category": "施工管理法（選択）",
+      "topic": "軽量鉄骨壁下地",
+      "explanation": "アは縦のスタッド、イはスタッドを貫いて横方向に連結する振れ止めである。",
+      "choiceExplanations": [
+        "アは上下の案内部材であるランナではなく、縦に立つスタッドである。イの振れ止めは合っている。",
+        "アは縦材のスタッドで、イはスタッドを横につなぐ振れ止めである。",
+        "アは縦のスタッド、イはスタッドを貫いて横方向に連結する振れ止めである。",
+        "アのスタッドは合うが、イは振れ止めであり、スタッドのねじれ等を抑えるスペーサとは異なる。"
+      ],
+      "imageUrl": "/questions/denki2/2024-early/q50-official-figure.png",
+      "imageAltText": "軽量鉄骨壁下地の組立図。アは縦材、イは縦材を横につなぐ部材を指す。",
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 51,
+      "pdfPage": 22,
+      "question": "建設工事の請負契約に関する記述として，「建設業法」上，誤っているものはどれか。",
+      "choices": [
+        "建設工事の請負契約の当事者は，契約の締結に際して，相手方の承諾を得て，書面の相互の交付に代えて，電磁的措置を講ずることができる。",
+        "建設業者は，建設工事の注文者から請求があったときは，請負契約が成立するまでの間に，建設工事の見積書を交付しなければならない。",
+        "請負人は，請負契約の履行に関し工事現場に現場代理人を置く場合，現場代理人に関する事項を，書面により注文者に通知しなければならない。",
+        "建設工事の請負契約の当事者は，契約の締結に際して，交付する書面における工事着手の時期の記載を省略することができる。"
+      ],
+      "officialAnswerNumbers": [
+        4
+      ],
+      "requiredSelections": 1,
+      "category": "法規（選択）",
+      "topic": "請負契約",
+      "explanation": "工事着手の時期は請負契約の書面に明記する必要がある。着手と完成の時期はいずれも記載事項である。",
+      "choiceExplanations": [
+        "相手方が承諾し、法令上の要件を満たせば電磁的措置を書面交付に代えられる。",
+        "注文者から請求があった場合、建設業者は契約成立前に見積書を交付する。",
+        "現場代理人を置くときは、その権限など所定の事項を書面で注文者に通知する。",
+        "工事着手の時期は請負契約の書面に明記する必要がある。着手と完成の時期はいずれも記載事項である。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 52,
+      "pdfPage": 22,
+      "question": "建設工事の現場に置く主任技術者に関する記述として，「建設業法」上，誤っているものはどれか。",
+      "choices": [
+        "国から直接建設工事を請け負った建設業者は，下請契約を行わず全て自ら施工する場合には，当該工事現場に置く主任技術者を省略することができる。",
+        "下請負人として電気工事を請け負った建設業者は，その請負代金の額にかかわらず当該工事現場に主任技術者を置かなければならない。",
+        "2 級電気工事施工管理技士の資格を有するものは，電気工事の主任技術者になることができる。",
+        "主任技術者は，当該建設工事の施工計画の作成，工程管理，品質管理その他の技術上の管理を行わなければならない。"
+      ],
+      "officialAnswerNumbers": [
+        1
+      ],
+      "requiredSelections": 1,
+      "category": "法規（選択）",
+      "topic": "主任技術者",
+      "explanation": "建設業者が自ら施工するときも現場で技術上の管理が必要で、国から受注して全て直営するという理由では主任技術者を省略できない。",
+      "choiceExplanations": [
+        "建設業者が自ら施工するときも現場で技術上の管理が必要で、国から受注して全て直営するという理由では主任技術者を省略できない。",
+        "下請でも施工する建設業者は工事現場に主任技術者を置くことが原則である。",
+        "2級電気工事施工管理技士は、該当する電気工事の主任技術者となる資格を満たす。",
+        "主任技術者は施工計画、工程、品質その他の技術上の管理を担う。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 53,
+      "pdfPage": 22,
+      "question": "電気工作物として，「電気事業法」上，定められていないものはどれか。",
+      "choices": [
+        "送電用の電線路",
+        "火力発電用のボイラ",
+        "水力発電のために設置する貯水池",
+        "電気鉄道の車両に設置する電気設備"
+      ],
+      "officialAnswerNumbers": [
+        4
+      ],
+      "requiredSelections": 1,
+      "category": "法規（選択）",
+      "topic": "電気工作物",
+      "explanation": "車両内の電気設備は電気事業法上の電気工作物の定義から除かれる。",
+      "choiceExplanations": [
+        "送電用の電線路は、電気を送るために設置される電気工作物である。",
+        "発電用ボイラは、火力発電所の発電に必要な電気工作物に含まれる。",
+        "水力発電用の貯水池は、発電のために設ける設備として電気工作物に含まれる。",
+        "車両内の電気設備は電気事業法上の電気工作物の定義から除かれる。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 54,
+      "pdfPage": 23,
+      "question": "電気工事に使用する機材のうち，電気用品に該当するものとして，「電気用品安全法」上，定められていないものはどれか。ただし，機材は，防爆型のもの及び油入型のもの並びに機械器具に組み込まれる特殊な構造のものを除く。",
+      "choices": [
+        "幅40 mm 高さ30 mm の二種金属製線ぴ",
+        "定格AC 300 V 15 A のタンブラースイッチ",
+        "内径が200 mm の波付硬質合成樹脂管(FEP)",
+        "600 V 架橋ポリエチレン絶縁ビニルシースケーブル(CVT)100 mm²"
+      ],
+      "officialAnswerNumbers": [
+        3
+      ],
+      "requiredSelections": 1,
+      "category": "法規（選択）",
+      "topic": "電気用品の対象範囲",
+      "explanation": "波付硬質合成樹脂管でも内径200 mmのものは、対象となる大きさの範囲外である。",
+      "choiceExplanations": [
+        "示された寸法の二種金属製線ぴは、電気用品として規制される配線用の材料である。",
+        "示された電圧・電流のタンブラースイッチは、電気用品の対象である。",
+        "波付硬質合成樹脂管でも内径200 mmのものは、対象となる大きさの範囲外である。",
+        "示された定格電圧・断面積のCVTケーブルは、電気用品の対象である。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 55,
+      "pdfPage": 23,
+      "question": "電気工事士等に関する記述として，「電気工事士法」上，誤っているものはどれか。",
+      "choices": [
+        "第一種電気工事士又は第二種電気工事士は，一般用電気工作物等に係る電気工事の作業に従事することができる。",
+        "第一種電気工事士は，事業用電気工作物に係るすべての電気工事の作業に従事することができる。",
+        "認定電気工事従事者は，自家用電気工作物に係る工事のうち省令で定める簡易電気工事の作業に従事することができる。",
+        "特殊電気工事の種類には，ネオン工事と非常用予備発電装置工事がある。"
+      ],
+      "officialAnswerNumbers": [
+        2
+      ],
+      "requiredSelections": 1,
+      "category": "法規（選択）",
+      "topic": "電気工事士の作業範囲",
+      "explanation": "第一種免状で従事できるのは法令が定める範囲である。事業用電気工作物のあらゆる工事が対象になるわけではない。",
+      "choiceExplanations": [
+        "第一種と第二種は、いずれも一般用電気工作物等の電気工事に従事できる。",
+        "第一種免状で従事できるのは法令が定める範囲である。事業用電気工作物のあらゆる工事が対象になるわけではない。",
+        "認定電気工事従事者は、自家用電気工作物の電気工事のうち定義された簡易電気工事に従事できる。",
+        "特殊電気工事にはネオン工事と非常用予備発電装置工事が定められている。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 56,
+      "pdfPage": 23,
+      "question": "登録電気工事業者において，一般用電気工事の業務を行う営業所ごとに置く主任電気工事士になることができる者として，「電気工事業の業務の適正化に関する法律」上，定められているものはどれか。",
+      "choices": [
+        "認定電気工事従事者",
+        "第一種電気工事士",
+        "一級電気工事施工管理技士",
+        "第三種電気主任技術者"
+      ],
+      "officialAnswerNumbers": [
+        2
+      ],
+      "requiredSelections": 1,
+      "category": "法規（選択）",
+      "topic": "主任電気工事士",
+      "explanation": "第一種電気工事士は一般用電気工事を行う営業所の主任電気工事士に就任できる。",
+      "choiceExplanations": [
+        "認定電気工事従事者の認定だけでは、主任電気工事士となる資格を満たさない。",
+        "第一種電気工事士は一般用電気工事を行う営業所の主任電気工事士に就任できる。",
+        "施工管理技士の資格だけでは、主任電気工事士の要件を満たさない。",
+        "電気主任技術者は電気工作物の保安監督に関する資格で、主任電気工事士の資格要件とは異なる。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 57,
+      "pdfPage": 24,
+      "question": "建築物の主要構造部として，「建築基準法」上，定められていないものはどれか。",
+      "choices": [
+        "壁",
+        "屋根",
+        "階段",
+        "基礎ぐい"
+      ],
+      "officialAnswerNumbers": [
+        4
+      ],
+      "requiredSelections": 1,
+      "category": "法規（選択）",
+      "topic": "主要構造部",
+      "explanation": "基礎ぐいには構造耐力上の役割があるが、法の主要構造部の定義には列挙されていない。",
+      "choiceExplanations": [
+        "壁は法が列挙する主要構造部に含まれる。構造上重要でない間仕切壁などは除かれる。",
+        "屋根は建築基準法が定める主要構造部に含まれる。",
+        "階段は主要構造部に含まれる。局部的な小階段や屋外階段などは定義から除かれる。",
+        "基礎ぐいには構造耐力上の役割があるが、法の主要構造部の定義には列挙されていない。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 58,
+      "pdfPage": 24,
+      "question": "消防の用に供する設備のうち，警報設備として，「消防法」上，定められていないものはどれか。",
+      "choices": [
+        "自動火災報知設備",
+        "自動式サイレン",
+        "漏電火災警報器",
+        "防災無線システム"
+      ],
+      "officialAnswerNumbers": [
+        4
+      ],
+      "requiredSelections": 1,
+      "category": "法規（選択）",
+      "topic": "消防の警報設備",
+      "explanation": "防災無線システムは地域などへの情報伝達に用いられるが、消防法施行令が定める建物の警報設備の区分に含まれない。",
+      "choiceExplanations": [
+        "自動火災報知設備は感知器・受信機などで火災を検出して報知する警報設備である。",
+        "自動式サイレンは非常警報設備の一種として警報設備に含まれる。",
+        "漏電火災警報器は漏電を検出して知らせる警報設備である。",
+        "防災無線システムは地域などへの情報伝達に用いられるが、消防法施行令が定める建物の警報設備の区分に含まれない。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 59,
+      "pdfPage": 24,
+      "question": "事故報告に関する次の記述において，空欄に当てはまる語句の組合せとして，「労働安全衛生法」上，正しいものはどれか。「事業者は，事業場で火災の事故が発生したときは， ア ，報告書を イ に提出しなければならない。」",
+      "choices": [
+        "（ア）遅滞なく、（イ）都道府県知事",
+        "（ア）遅滞なく、（イ）所轄労働基準監督署長",
+        "（ア）24 時間以内に、（イ）都道府県知事",
+        "（ア）24 時間以内に、（イ）所轄労働基準監督署長"
+      ],
+      "officialAnswerNumbers": [
+        2
+      ],
+      "requiredSelections": 1,
+      "category": "法規（選択）",
+      "topic": "事故報告",
+      "explanation": "事業場で火災が発生したときは、遅滞なく所轄労働基準監督署長に事故報告書を提出する。",
+      "choiceExplanations": [
+        "提出時期は「遅滞なく」だが、提出先は都道府県知事ではなく労働基準監督署長である。",
+        "事業場で火災が発生したときは、遅滞なく所轄労働基準監督署長に事故報告書を提出する。",
+        "法文は24時間以内とは定めておらず、提出先も都道府県知事ではない。",
+        "提出先は合うが、法文の提出時期は「遅滞なく」である。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 60,
+      "pdfPage": 25,
+      "question": "建設業における安全管理者に関する記述として，「労働安全衛生法」上，誤っているものはどれか。",
+      "choices": [
+        "事業者は，安全管理者を選任すべき事由が発生した日から14 日以内に選任しなければならない。",
+        "事業者は，常時使用する労働者が10 人以上50 人未満となる事業場には，安全管理者を選任しなければならない。",
+        "事業者は，安全管理者を選任したときは，当該事業場の所轄労働基準監督署長に報告書を提出しなければならない。",
+        "事業者は，安全管理者に，労働者の危険を防止するための措置に関する技術的事項を管理させなければならない。"
+      ],
+      "officialAnswerNumbers": [
+        2
+      ],
+      "requiredSelections": 1,
+      "category": "法規（選択）",
+      "topic": "安全管理者",
+      "explanation": "建設業の安全管理者選任は常時50人以上の労働者を使用する事業場が対象である。10人以上50人未満では安全衛生推進者を選任する。",
+      "choiceExplanations": [
+        "選任事由が生じた日から14日以内に安全管理者を選任する。",
+        "建設業の安全管理者選任は常時50人以上の労働者を使用する事業場が対象である。10人以上50人未満では安全衛生推進者を選任する。",
+        "選任後は所轄労働基準監督署長に報告する。",
+        "安全管理者は、労働者の危険防止に関する技術的事項を管理する。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 61,
+      "pdfPage": 25,
+      "question": "労働時間，休憩時間に関する次の記述において，空欄に当てはまる語句として，「労働基準法」上，正しいものはどれか。「使用者は，労働時間が8 時間を超える場合においては少なくとも［　］の休憩時間を労働時間の途中に与えなければならない。」",
+      "choices": [
+        "30 分",
+        "45 分",
+        "1 時間",
+        "1 時間30 分"
+      ],
+      "officialAnswerNumbers": [
+        3
+      ],
+      "requiredSelections": 1,
+      "category": "法規（選択）",
+      "topic": "法定休憩",
+      "explanation": "8時間を超える勤務には、勤務の途中に少なくとも1時間の休憩を与える。",
+      "choiceExplanations": [
+        "30分では8時間を超える勤務に対する最低休憩時間を満たさない。",
+        "45分は労働時間が6時間を超え8時間以下の場合の最低時間である。",
+        "8時間を超える勤務には、勤務の途中に少なくとも1時間の休憩を与える。",
+        "1時間30分を与えること自体はできるが、法定最低時間は1時間である。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    },
+    {
+      "number": 62,
+      "pdfPage": 25,
+      "question": "分別解体等及び再資源化等を促進するため，特定建設資材として，「建設工事に係る資材の再資源化等に関する法律」上，定められていないものはどれか。",
+      "choices": [
+        "木材",
+        "コンクリート",
+        "EM-EEF ケーブル",
+        "アスファルト・コンクリート"
+      ],
+      "officialAnswerNumbers": [
+        3
+      ],
+      "requiredSelections": 1,
+      "category": "法規（選択）",
+      "topic": "建設資材の再資源化",
+      "explanation": "EM-EEFケーブルは対象となる特定建設資材に指定されていない。",
+      "choiceExplanations": [
+        "木材は分別解体等と再資源化等の対象となる特定建設資材の一つである。",
+        "コンクリートは破砕して再生砕石などに利用でき、特定建設資材に含まれる。",
+        "EM-EEFケーブルは対象となる特定建設資材に指定されていない。",
+        "アスファルト・コンクリートは、舗装の再生などを促進するため特定建設資材に指定されている。"
+      ],
+      "sourcePdfUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf",
+      "sourceAnswerUrl": "https://www.fcip-shiken.jp/pdf/r06_2dgz_mondai.pdf"
+    }
+  ]
+}

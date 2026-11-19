@@ -2,10 +2,11 @@ import type { ChoiceKey, Question, Season } from "@/lib/questions/types";
 import source2026 from "./2026-early.json";
 import source2025 from "./2025-late.json";
 import source2024Late from "./2024-late.json";
+import source2024Early from "./2024-early.json";
 import questions2024Secondary from "./2024-late-jitsumu.json";
 
 const keys: ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ"];
-type Source = typeof source2026 | typeof source2024Late;
+type Source = typeof source2026 | typeof source2024Late | typeof source2024Early;
 
 function toQuestions(source: Source, lastUpdated = "2026-11-03"): Question[] {
   return source.questions.map((item): Question => {
@@ -47,4 +48,5 @@ export const DENKI2_QUESTIONS: Question[] = [
   ...DENKI2_2025_QUESTIONS,
   ...toQuestions(source2024Late, "2026-11-19"),
   ...questions2024Secondary as Question[],
+  ...toQuestions(source2024Early, "2026-11-19"),
 ];

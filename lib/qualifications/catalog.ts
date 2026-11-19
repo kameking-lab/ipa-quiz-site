@@ -1507,7 +1507,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.fcip-shiken.jp/about/index.html",
     officialReuseTermsUrl: "https://www.fcip-shiken.jp/about/index.html",
     status: "live",
-    reuseSummary: "公式問題・正答と全選択肢の独自解説を収録。令和6年度後期は第一次検定と第二次検定の正答公表設問を収録。法令・規程は出題時点に基づく。",
+    reuseSummary: "公式問題・正答と全選択肢の独自解説を収録。令和6年度は前期・後期の第一次検定と第二次検定の正答公表設問を収録。法令・規程は出題時点に基づく。",
     attributionTemplate: "出典：一般財団法人建設業振興基金 2級電気工事施工管理技術検定 第一次検定。解説は過去問AI作成。",
     remainingWork: ["監督役による独立レビュー", "依存パッケージ導入後のpnpm検証", "公開判定"],
 },
