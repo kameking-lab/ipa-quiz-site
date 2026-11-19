@@ -316,6 +316,7 @@ export const EXAM_LABELS: Record<string, string> = {
     "sokuryoshiho": "測量士補",
     "caremanager": "ケアマネ試験",
     "zensho-calc": "全商ビジネス計算実務検定",
+    "kounin-physics": "高卒認定・物理基礎",
 
     "tekko2": "鉄工技能士 2級",
 

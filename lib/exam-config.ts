@@ -1795,6 +1795,15 @@ sokuryoshiho: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 28, label: "試験問題", categories: ["測量法規", "多角測量", "GNSS測量", "水準測量", "地形測量", "写真測量", "地図編集", "応用測量"] }],
     seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
 },
+"kounin-physics": {
+    code: "kounin-physics",
+    nameFull: "高等学校卒業程度認定試験 物理基礎",
+    urlSlug: "kounin-physics",
+    level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 20, label: "物理基礎", categories: ["力学", "熱", "波動", "電気", "放射線", "エネルギー"] }],
+    seasons: ["first", "second"],
+    yearRange: { start: 2024, end: 2024 },
+},
 "zensho-calc": {
     code: "zensho-calc",
     nameFull: "全商ビジネス計算実務検定",

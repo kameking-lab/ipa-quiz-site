@@ -1845,6 +1845,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["No.21の地形図（電子地形図25000）の測量法上の複製承認要否の確認"],
 },
   {
+    slug: "kounin-physics", examCode: "kounin-physics", shortName: "高卒認定・物理基礎",
+    fullName: "高等学校卒業程度認定試験 物理基礎", domain: "personal-services", administrator: "文部科学省",
+    officialQuestionsUrl: "https://www.mext.go.jp/a_menu/koutou/shiken/1421021.htm",
+    officialReuseTermsUrl: "https://www.mext.go.jp/b_menu/1351168.htm",
+    status: "live",
+    reuseSummary: "公式問題・正答と、全選択肢の解説を収録。",
+    remainingWork: [],
+  },
+  {
     slug: "zensho-calc", examCode: "zensho-calc", shortName: "全商ビジネス計算実務検定",
     fullName: "全商ビジネス計算実務検定", domain: "accounting", administrator: "全国商業高等学校協会",
     officialQuestionsUrl: "https://zensho.or.jp/examination/pastexams/calculating/",
