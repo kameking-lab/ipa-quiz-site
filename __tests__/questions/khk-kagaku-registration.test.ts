@@ -21,8 +21,8 @@ afterEach(() => vi.restoreAllMocks());
 
 describe("KHK complete but unpublished practice registration", () => {
   it("maps every original, subject, official choice and independent rationale without renumbering", () => {
-    expect(KHK_KAGAKU_QUESTIONS).toHaveLength(422);
-    expect(new Set(KHK_KAGAKU_QUESTIONS.map((q) => q.id)).size).toBe(422);
+    expect(KHK_KAGAKU_QUESTIONS).toHaveLength(627);
+    expect(new Set(KHK_KAGAKU_QUESTIONS.map((q) => q.id)).size).toBe(627);
     let choiceCount = 0;
     for (const paper of drafts.papers) {
       const session = `khk-${paper.code.toLowerCase()}`;
@@ -71,7 +71,7 @@ describe("KHK complete but unpublished practice registration", () => {
     expect(await getQuestionsForExam("khk-kagaku")).toEqual(KHK_KAGAKU_QUESTIONS);
   });
 
-  it("references all 49 original images and blocks every image when publication is closed", async () => {
+  it("references all allowlisted original images and blocks every image when publication is closed", async () => {
     vi.spyOn(catalog, "isExamPublished").mockReturnValue(false);
     const urls = KHK_KAGAKU_QUESTIONS.flatMap((q) => [...(q.imageUrls ?? []), ...(q.modelAnswer?.match(/\/api\/qualification-assets\/khk-kagaku\/[^)]+\.png/g) ?? [])]);
     expect(new Set(urls.map((url) => `images/${url.split("/").at(-1)}`))).toEqual(new Set(assetFiles));

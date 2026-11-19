@@ -234,7 +234,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html",
     officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",
     status: "live",
-    reuseSummary: "2024・2025年度422原問（択一410・記述12）。全2050肢の独自解説と記述の独自解答・自己採点基準を収録。原図33・付録3・公式解答例13画像を表示。R6液石学識問20は公式採点と技術的留保を併記。記述答案の自動採点・公式合否判定は行いません。",
+    reuseSummary: "2024〜2026年度627原問（択一615・記述12）。択一には全選択肢の解説を収録。記述の独自解答・自己採点基準と公式解答例は2024・2025年度が対象です。",
     attributionTemplate: "出典：高圧ガス保安協会 高圧ガス製造保安責任者試験 ○年度 ○種化学 ○科目 問○（問題・正答）。解説は過去問AIが独自作成。",
     remainingWork: [],
   },

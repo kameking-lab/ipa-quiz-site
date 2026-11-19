@@ -72,13 +72,25 @@ describe("高圧ガス2026 乙種化学・甲種機械の非公開原本", () =>
     expect(validateKhk2026Fill("otsu", broken).some(e => e.includes(field === "answer" ? "official answer differs" : "scope/publication state differs"))).toBe(true);
   });
 
-  it("公開・同期・遅延配信及び化学画像許可リストへ混入させない", async () => {
-    const ids = new Set([...otsu, ...kikai].map(q => q.id));
+  it("乙種化学の正答と画像を配信し、甲種機械の2026年度は保管する", async () => {
+    const otsuIds = new Set(otsu.map(q => q.id));
+    const kikaiIds = new Set(kikai.map(q => q.id));
     expect([...otsu, ...kikai].every(q => q.publicAllowed === false)).toBe(true);
-    for (const pool of [ALL_QUESTIONS, QUESTIONS_BY_EXAM["khk-kagaku"], QUESTIONS_BY_EXAM["khk-kikai-kou"], await getQuestionsForExam("khk-kagaku"), await getQuestionsForExam("khk-kikai-kou")]) {
-      if (!pool) throw new Error("公開用プールが未定義");
-      expect(pool.some(q => ids.has(q.id))).toBe(false);
+    for (const pool of [ALL_QUESTIONS, QUESTIONS_BY_EXAM["khk-kagaku"], await getQuestionsForExam("khk-kagaku")]) {
+      const published = pool!.filter(q => otsuIds.has(q.id));
+      expect(published).toHaveLength(otsu.length);
+      for (const item of published) {
+        const source = otsu.find(q => q.id === item.id)!;
+        expect(item.answer).toBe(source.answer);
+        expect(item.originalContent).toEqual(source.originalContent);
+        expect(item.sourcePdfUrl).toBe(source.sourcePdfUrl);
+        for (const url of item.imageUrls ?? []) {
+          expect(kagakuImages).toContain(`images/${url.split("/").at(-1)}`);
+        }
+      }
     }
-    expect(JSON.stringify(kagakuImages)).not.toMatch(/2026-(?:BX|BZ)/);
+    for (const pool of [ALL_QUESTIONS, QUESTIONS_BY_EXAM["khk-kikai-kou"], await getQuestionsForExam("khk-kikai-kou")]) {
+      expect(pool!.some(q => kikaiIds.has(q.id))).toBe(false);
+    }
   });
 });

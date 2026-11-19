@@ -1,5 +1,3 @@
-import { readFileSync } from "node:fs";
-import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
 import manifest from "@/data/qualification-staging/khk-kagaku/2026-kou/manifest.json";
 import review from "@/data/qualification-staging/khk-kagaku/2026-kou/review.json";
@@ -62,18 +60,28 @@ describe("2026 KHK kou private originals", () => {
     expect(KHK_2026_KOU_STAGING.length + KHK_2026_HEI_LPG_STAGING.length + KHK_2026_HEI_SPECIAL_STAGING.length).toBe(155);
   });
 
-  it("keeps the corpus and its source images out of every serving pool", async () => {
-    const stagedIds = new Set(KHK_2026_KOU_STAGING.map(q => q.id));
+  it("publishes the verified questions and images through the serving registries", async () => {
+    const staged = KHK_2026_KOU_STAGING;
+    const ids = new Set(staged.map(q => q.id));
     expect(manifest.publicAllowed).toBe(false);
-    for (const pool of [ready, publicQuestions, QUESTIONS_BY_EXAM["khk-kagaku"], await getQuestionsForExam("khk-kagaku")]) {
-      expect(pool!.some(q => stagedIds.has(q.id))).toBe(false);
+    expect(staged.every(q => q.publicAllowed === false)).toBe(true);
+    for (const historical of [ready, publicQuestions]) {
+      expect(historical.some(q => ids.has(q.id))).toBe(false);
+    }
+    for (const pool of [QUESTIONS_BY_EXAM["khk-kagaku"], await getQuestionsForExam("khk-kagaku")]) {
+      const published = pool!.filter(q => ids.has(q.id));
+      expect(published).toHaveLength(staged.length);
+      for (const item of published) {
+        const source = staged.find(q => q.id === item.id)!;
+        expect(item.publicAllowed).toBe(true);
+        expect(item.originalContent).toEqual(source.originalContent);
+        expect(item.answer).toBe(source.answer);
+        expect(item.sourcePdfUrl).toBe(source.sourcePdfUrl);
+      }
     }
     for (const asset of review.assets) {
-      expect(imageAllowlist).not.toContain(asset.file);
-      expect(imageAllowlist).not.toContain(asset.file.split("/").at(-1));
+      expect(imageAllowlist).toContain(asset.file);
     }
-    const loader = readFileSync(resolve("data/questions/khk-kagaku/assets.server.ts"), "utf8");
-    expect(loader).not.toContain("2026-AX-");
   });
 
   it("preserves AY9 scoring and explains the diagram distinction using public evidence", () => {

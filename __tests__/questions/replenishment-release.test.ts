@@ -47,8 +47,15 @@ describe("replenishment release serving integration", () => {
     expect(source.every(q => q.publicAllowed === false)).toBe(true);
   });
 
-  it("does not add any of the held 2026 high-pressure-gas corpus", async () => {
-    expect((await getQuestionsForExam("khk-kagaku")).some(q => q.year === 2026)).toBe(false);
-    expect(QUESTIONS_BY_EXAM["khk-kagaku"]!.some(q => q.year === 2026)).toBe(false);
+  it("publishes 205 multiple-choice chemistry questions with short explanations and official sources", async () => {
+    const sync = QUESTIONS_BY_EXAM["khk-kagaku"]!.filter(q => q.year === 2026);
+    expect((await getQuestionsForExam("khk-kagaku")).filter(q => q.year === 2026)).toEqual(sync);
+    expect(sync).toHaveLength(205);
+    for (const q of sync) {
+      expect(q.type).toBe("multiple-choice");
+      expect(q.sourcePdfUrl).toMatch(/shiken\.khk\.or\.jp.+\.pdf$/);
+      expect(Object.keys(q.choiceExplanations!)).toEqual(Object.keys(q.choices!));
+      expect(Object.values(q.choiceExplanations!).every(s => /^(?:[^。]+。){1,2}$/.test(s!))).toBe(true);
+    }
   });
 });

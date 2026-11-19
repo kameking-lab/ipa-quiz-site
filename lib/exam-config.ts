@@ -269,7 +269,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
       { session: "khk-dy", urlSlug: "khk-dy", expectedQuestions: 20, label: "丙種化学（特別） 保安管理技術", categories: ["丙種化学（特別） 保安管理技術"] },
       { session: "khk-dz", urlSlug: "khk-dz", expectedQuestions: 20, label: "丙種化学（特別） 学識", categories: ["丙種化学（特別） 学識"] },
     ],
-    seasons: ["annual"], yearRange: { start: 2024, end: 2025 },
+    seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
   },
 
   kenchikushi1: {
