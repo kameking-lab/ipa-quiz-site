@@ -1889,6 +1889,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     attributionTemplate: "出典：長野県教育委員会 長野県公立学校教員採用選考。解説は過去問AIの独自作成。",
     remainingWork: [],
   },
+  {
+    slug: "kyoin-gifu", examCode: "kyoin-gifu", shortName: "岐阜県教員採用試験", fullName: "岐阜県公立学校教員採用選考試験",
+    domain: "welfare", administrator: "岐阜県教育委員会",
+    officialQuestionsUrl: "https://www.pref.gifu.lg.jp/site/edu/415625.html",
+    officialReuseTermsUrl: "https://www.pref.gifu.lg.jp/page/79328.html",
+    status: "live",
+    reuseSummary: "令和8年度採用（2025年度実施）の全校種共通の教職教養10問を、公式正答と全肢の解説付きで収録。",
+    attributionTemplate: "出典：岐阜県教育委員会 岐阜県公立学校教員採用選考試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
 ] as const;
 
 export function getQualificationByExamCode(exam: ExamCode): QualificationCatalogEntry | undefined {

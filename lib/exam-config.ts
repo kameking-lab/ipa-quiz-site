@@ -1999,6 +1999,12 @@ caremanager: {
         { session: "kyotsu-koko", urlSlug: "kyotsu-koko", expectedQuestions: 10, label: "教職教養（高校）", categories: ["教育法規", "教育課程", "学校安全", "生徒指導", "教育施策"] },
     ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
 },
+"kyoin-gifu": {
+    code: "kyoin-gifu", nameFull: "岐阜県公立学校教員採用選考試験", urlSlug: "kyoin-gifu", level: "advanced",
+    sessions: [
+        { session: "kyotsu", urlSlug: "kyotsu", expectedQuestions: 10, label: "第1次選考 教職教養", categories: ["教育法規", "教育心理", "特別支援教育", "生徒指導"] },
+    ], seasons: ["annual"], yearRange: { start: 2025, end: 2025 },
+},
 tsukanshi: {
     code: "tsukanshi", nameFull: "通関士試験", urlSlug: "tsukanshi", level: "advanced",
     sessions: [
