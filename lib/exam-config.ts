@@ -2003,7 +2003,8 @@ caremanager: {
 },
 "rodo-kijun-kantokukan": {
     code: "rodo-kijun-kantokukan", nameFull: "労働基準監督官採用試験", urlSlug: "rodo-kijun-kantokukan", level: "specialist",
-    sessions: [{ session: "senmon", urlSlug: "senmon-a", expectedQuestions: 48, label: "専門試験（労働基準監督Ａ）", categories: ["労働法", "労働統計・労使関係", "憲法・行政法・財政", "民法・刑法", "経済", "労働経済・社会保障・社会学"] }],
+    sessions: [{ session: "kiso", urlSlug: "kiso", expectedQuestions: 30, label: "基礎能力試験", categories: ["文章理解（現代文）", "文章理解（英文）", "判断推理", "数的推理", "資料解釈", "時事", "情報"] },
+        { session: "senmon", urlSlug: "senmon-a", expectedQuestions: 48, label: "専門試験（労働基準監督Ａ）", categories: ["労働法", "労働統計・労使関係", "憲法・行政法・財政", "民法・刑法", "経済", "労働経済・社会保障・社会学"] }],
     seasons: ["annual"], yearRange: { start: 2024, end: 2026 },
 },
 "kogai-16": {
