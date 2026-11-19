@@ -1,0 +1,2254 @@
+[
+  {
+    "id": "jken-katsuyo1-220619-m1-s1",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 101,
+    "examDate": "2022-06-19",
+    "subject": "問題1(1)",
+    "type": "multiple-choice",
+    "category": "情報と情報の利用",
+    "topicTags": [
+      "情報と情報の利用"
+    ],
+    "difficulty": 3,
+    "question": "UMLの関連の多重度について不適切な説明。公式問題の「問題1(1)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "従業員が所属していない部署の存在も許す",
+      "イ": "従業員は，必ず複数の部署に所属する",
+      "ウ": "従業員は，同時に複数の部署に所属してもよい",
+      "エ": "どの部署にも所属しない従業員は存在しない"
+    },
+    "answer": "イ",
+    "explanation": "部署側の1..*は従業員1人に対し部署が1つ以上であることを示す。1部署だけに所属する場合もあるため不適切である。",
+    "choiceExplanations": {
+      "ア": "従業員側が0..*なので、1つの部署に対して従業員が0人でもよい。",
+      "イ": "部署側の1..*は従業員1人に対し部署が1つ以上であることを示す。1部署だけに所属する場合もあるため不適切である。",
+      "ウ": "部署側の上限は*なので、複数部署への所属が可能である。",
+      "エ": "部署側の下限は1であり、従業員には少なくとも1つ所属部署がある。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=3",
+    "sourcePages": [
+      3
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p03-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題1 公式問題のPDF 3ページ"
+    ],
+    "officialQuestionLabel": "問題1(1)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m1-s2",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 102,
+    "examDate": "2022-06-19",
+    "subject": "問題1(2)",
+    "type": "multiple-choice",
+    "category": "情報と情報の利用",
+    "topicTags": [
+      "情報と情報の利用"
+    ],
+    "difficulty": 3,
+    "question": "会員情報の検索と確認で参照する台帳。公式問題の「問題1(2)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "会員台帳",
+      "イ": "貸出記録台帳",
+      "ウ": "図書台帳"
+    },
+    "answer": "ア",
+    "explanation": "会員番号と氏名などを持つ会員台帳を参照して、会員IDに対応する会員情報を検索する。",
+    "choiceExplanations": {
+      "ア": "会員番号と氏名などを持つ会員台帳を参照して、会員IDに対応する会員情報を検索する。",
+      "イ": "貸出記録台帳は貸出日・返却予定日・返却日などを管理する。",
+      "ウ": "図書台帳は図書番号・図書名・著作者などを管理するので、会員情報の検索には使わない。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=3",
+    "sourcePages": [
+      3,
+      4
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p03-official.png",
+      "/images/questions/jken-katsuyo1/220619/p04-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題1 公式問題のPDF 3ページ",
+      "2022年度 情報活用1級 問題1 公式問題のPDF 4ページ"
+    ],
+    "officialQuestionLabel": "問題1(2)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m1-s3",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 103,
+    "examDate": "2022-06-19",
+    "subject": "問題1(3)",
+    "type": "multiple-choice",
+    "category": "情報と情報の利用",
+    "topicTags": [
+      "情報と情報の利用"
+    ],
+    "difficulty": 3,
+    "question": "貸出処理と返却処理で共有する台帳。公式問題の「問題1(3)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "会員台帳",
+      "イ": "貸出記録台帳",
+      "ウ": "図書台帳"
+    },
+    "answer": "イ",
+    "explanation": "貸出記録台帳に貸出情報を登録し、返却時にも同じ貸出を参照して返却日などを記録する。",
+    "choiceExplanations": {
+      "ア": "会員台帳は会員の登録情報を持つが、個別の貸出・返却の記録は別の台帳に入る。",
+      "イ": "貸出記録台帳に貸出情報を登録し、返却時にも同じ貸出を参照して返却日などを記録する。",
+      "ウ": "図書台帳は本そのものの情報を保持し、個別の貸出番号に対応した返却日の記録は貸出記録台帳が担う。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=3",
+    "sourcePages": [
+      3,
+      4
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p03-official.png",
+      "/images/questions/jken-katsuyo1/220619/p04-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題1 公式問題のPDF 3ページ",
+      "2022年度 情報活用1級 問題1 公式問題のPDF 4ページ"
+    ],
+    "officialQuestionLabel": "問題1(3)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m1-s4",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 104,
+    "examDate": "2022-06-19",
+    "subject": "問題1(4)",
+    "type": "multiple-choice",
+    "category": "情報と情報の利用",
+    "topicTags": [
+      "情報と情報の利用"
+    ],
+    "difficulty": 3,
+    "question": "流れ図Aで各繰返し後のXの値。公式問題の「問題1(4)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "1・4・11・26",
+      "イ": "1・5・15・37",
+      "ウ": "3・8・19・41",
+      "エ": "3・9・23・53"
+    },
+    "answer": "イ",
+    "explanation": "0から始め、kが1、3、5、7の順に、Xは1、5、15、37となる。",
+    "choiceExplanations": {
+      "ア": "初回は1だが、k＝3のときは2×1＋3＝5になる。",
+      "イ": "0から始め、kが1、3、5、7の順に、Xは1、5、15、37となる。",
+      "ウ": "最初からk＝3とした値になっている。kの初期値は1である。",
+      "エ": "0に2を掛けてk＝1を足す初回は1であり、3にはならない。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=4",
+    "sourcePages": [
+      4,
+      5
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p04-official.png",
+      "/images/questions/jken-katsuyo1/220619/p05-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題1 公式問題のPDF 4ページ",
+      "2022年度 情報活用1級 問題1 公式問題のPDF 5ページ"
+    ],
+    "officialQuestionLabel": "問題1(4)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m1-s5",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 105,
+    "examDate": "2022-06-19",
+    "subject": "問題1(5)",
+    "type": "multiple-choice",
+    "category": "情報と情報の利用",
+    "topicTags": [
+      "情報と情報の利用"
+    ],
+    "difficulty": 3,
+    "question": "流れ図Bのループ変数kの変化。公式問題の「問題1(5)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "1→3→5→7",
+      "イ": "1→4→7",
+      "ウ": "1→15→23→25",
+      "エ": "3→9→19→33",
+      "オ": "3→11→25",
+      "カ": "7→4→1",
+      "キ": "7→5→3→1",
+      "ク": "25→11→3",
+      "ケ": "25→23→15"
+    },
+    "answer": "カ",
+    "explanation": "指定7, −3, 1に従い、7から3ずつ減って4、1となる。",
+    "choiceExplanations": {
+      "ア": "1から2ずつ増えるのは流れ図Aのkである。",
+      "イ": "初期値と終値が逆である。流れ図Bは7から始まる。",
+      "ウ": "この列は流れ図BのXの変化に当たる。",
+      "エ": "流れ図Bではkの初期値は7、増分は−3であり、3から増える列にはならない。",
+      "オ": "3、11、25はkの範囲1～7と増分−3のどちらにも従わない。",
+      "カ": "指定7, −3, 1に従い、7から3ずつ減って4、1となる。",
+      "キ": "この列は2ずつ減るが、流れ図Bは3ずつ減る。",
+      "ク": "kの初期値は25ではなく7である。",
+      "ケ": "25から23へは2減るが、kは7から3ずつ減る。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=5",
+    "sourcePages": [
+      5
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p05-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題1 公式問題のPDF 5ページ"
+    ],
+    "officialQuestionLabel": "問題1(5)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m1-s6",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 106,
+    "examDate": "2022-06-19",
+    "subject": "問題1(6)",
+    "type": "multiple-choice",
+    "category": "情報と情報の利用",
+    "topicTags": [
+      "情報と情報の利用"
+    ],
+    "difficulty": 3,
+    "question": "流れ図BのXの初期値と各繰返し後の値。公式問題の「問題1(6)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "1→3→5→7",
+      "イ": "1→4→7",
+      "ウ": "1→15→23→25",
+      "エ": "3→9→19→33",
+      "オ": "3→11→25",
+      "カ": "7→4→1",
+      "キ": "7→5→3→1",
+      "ク": "25→11→3",
+      "ケ": "25→23→15"
+    },
+    "answer": "ウ",
+    "explanation": "Xは1から始まり、14、8、2を順に加えて15、23、25になる。",
+    "choiceExplanations": {
+      "ア": "流れ図Aのkの系列であり、Xは流れ図Bの初回の更新で15になる。",
+      "イ": "1から3ずつ増える列だが、最初の加算は2×7＝14である。",
+      "ウ": "Xは1から始まり、14、8、2を順に加えて15、23、25になる。",
+      "エ": "Xの初期値は3ではなく1である。",
+      "オ": "最初に2×7を足した後の値は11ではなく15である。",
+      "カ": "7、4、1はkの系列であり、Xの初期値は1である。",
+      "キ": "Xには毎回正の2kを加えるので、このような減少は起こらない。",
+      "ク": "Xは25から始まらず、1から増加する。",
+      "ケ": "15、23、25は更新後の値だが、選択肢は逆順で初期値1も含まれていない。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=5",
+    "sourcePages": [
+      5
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p05-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題1 公式問題のPDF 5ページ"
+    ],
+    "officialQuestionLabel": "問題1(6)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m2-s1",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 201,
+    "examDate": "2022-06-19",
+    "subject": "問題2(1)",
+    "type": "multiple-choice",
+    "category": "パソコンを利用したシステム",
+    "topicTags": [
+      "パソコンを利用したシステム"
+    ],
+    "difficulty": 3,
+    "question": "キャッシュに必要なデータが見つからない確率。公式問題の「問題2(1)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "LIFO",
+      "イ": "NFP",
+      "ウ": "ヒット率",
+      "エ": "メモリインタリーブ"
+    },
+    "answer": "イ",
+    "explanation": "原問のNFPは、必要なデータがキャッシュにない割合を指している。一般にはミス率ともいう。",
+    "choiceExplanations": {
+      "ア": "LIFOは最後に入った要素から取り出す順序である。",
+      "イ": "原問のNFPは、必要なデータがキャッシュにない割合を指している。一般にはミス率ともいう。",
+      "ウ": "ヒット率は見つかる割合であり、ここで求める割合は1からヒット率を引いた値である。",
+      "エ": "メモリインタリーブは複数のメモリバンクにアクセスを分ける高速化技法である。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=6",
+    "sourcePages": [
+      6
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p06-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題2 公式問題のPDF 6ページ"
+    ],
+    "officialQuestionLabel": "問題2(1)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m2-s2",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 202,
+    "examDate": "2022-06-19",
+    "subject": "問題2(2)",
+    "type": "multiple-choice",
+    "category": "パソコンを利用したシステム",
+    "topicTags": [
+      "パソコンを利用したシステム"
+    ],
+    "difficulty": 3,
+    "question": "キャッシュヒット率90%での平均アクセス時間。公式問題の「問題2(2)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "18",
+      "イ": "28",
+      "ウ": "30",
+      "エ": "120"
+    },
+    "answer": "イ",
+    "explanation": "公式正答ではヒット時20、ミス時100を用いる。0.9×20＋0.1×100＝28ナノ秒となる。",
+    "choiceExplanations": {
+      "ア": "18ナノ秒はキャッシュで取り出せる場合の加重分0.9×20だけで、主記憶の場合を含まない。",
+      "イ": "公式正答ではヒット時20、ミス時100を用いる。0.9×20＋0.1×100＝28ナノ秒となる。",
+      "ウ": "30ナノ秒はミス時にキャッシュ照合20と主記憶アクセス100の両方を順に数えた場合の値で、公式正答の計算は別の前提を用いている。",
+      "エ": "120ナノ秒はキャッシュと主記憶の時間を単に足した値で、9割がヒットする条件を反映していない。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=6",
+    "sourcePages": [
+      6
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p06-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題2 公式問題のPDF 6ページ"
+    ],
+    "officialQuestionLabel": "問題2(2)",
+    "isCalculation": false,
+    "publicAllowed": true,
+    "questionNotice": "正答は公式解答に従う。ミス時の100ナノ秒がキャッシュ照合時間を含むかによって平均の計算が変わる。"
+  },
+  {
+    "id": "jken-katsuyo1-220619-m2-s3",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 203,
+    "examDate": "2022-06-19",
+    "subject": "問題2(3)",
+    "type": "multiple-choice",
+    "category": "パソコンを利用したシステム",
+    "topicTags": [
+      "パソコンを利用したシステム"
+    ],
+    "difficulty": 3,
+    "question": "複数ディスクにデータを分割して記録するRAID 0の構成。公式問題の「問題2(3)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "ストライピング",
+      "イ": "ミラーリング",
+      "ウ": "ライトスルー",
+      "エ": "ライトバック"
+    },
+    "answer": "ア",
+    "explanation": "ストライピングではデータを複数のディスクに振り分け、並列にアクセスできる。",
+    "choiceExplanations": {
+      "ア": "ストライピングではデータを複数のディスクに振り分け、並列にアクセスできる。",
+      "イ": "ミラーリングでは分割する代わりに同じデータを複数のディスクへ記録する。",
+      "ウ": "ライトスルーはキャッシュと下位記憶を同期して書き込む方針である。",
+      "エ": "ライトバックはキャッシュの更新内容を後から下位記憶に書き出す方針である。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=6",
+    "sourcePages": [
+      6,
+      7
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p06-official.png",
+      "/images/questions/jken-katsuyo1/220619/p07-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題2 公式問題のPDF 6ページ",
+      "2022年度 情報活用1級 問題2 公式問題のPDF 7ページ"
+    ],
+    "officialQuestionLabel": "問題2(3)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m2-s4",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 204,
+    "examDate": "2022-06-19",
+    "subject": "問題2(4)",
+    "type": "multiple-choice",
+    "category": "パソコンを利用したシステム",
+    "topicTags": [
+      "パソコンを利用したシステム"
+    ],
+    "difficulty": 3,
+    "question": "RAID 0で複数のディスクを並列に動かす目的。公式問題の「問題2(4)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "機密性の向上",
+      "イ": "処理速度の向上",
+      "ウ": "信頼性の向上",
+      "エ": "操作性の向上"
+    },
+    "answer": "イ",
+    "explanation": "読み書きを複数ディスクに並行して行うことで、処理速度の向上が期待できる。",
+    "choiceExplanations": {
+      "ア": "分割保存するだけでは暗号化やアクセス制御にはならない。",
+      "イ": "読み書きを複数ディスクに並行して行うことで、処理速度の向上が期待できる。",
+      "ウ": "RAID 0に冗長性はなく、構成ディスクの故障でデータを失う可能性がある。",
+      "エ": "並行入出力はストレージの性能に関するもので、利用者の操作方法を改善する構成ではない。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=6",
+    "sourcePages": [
+      6,
+      7
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p06-official.png",
+      "/images/questions/jken-katsuyo1/220619/p07-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題2 公式問題のPDF 6ページ",
+      "2022年度 情報活用1級 問題2 公式問題のPDF 7ページ"
+    ],
+    "officialQuestionLabel": "問題2(4)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m2-s5",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 205,
+    "examDate": "2022-06-19",
+    "subject": "問題2(5)",
+    "type": "multiple-choice",
+    "category": "パソコンを利用したシステム",
+    "topicTags": [
+      "パソコンを利用したシステム"
+    ],
+    "difficulty": 3,
+    "question": "同一データを複数ディスクに記録するRAID 1の構成。公式問題の「問題2(5)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "ストライピング",
+      "イ": "ミラーリング",
+      "ウ": "ライトスルー",
+      "エ": "ライトバック"
+    },
+    "answer": "イ",
+    "explanation": "ミラーリングは同じデータを複数のディスクへ保存し、片方が故障しても残りで利用を続けられる。",
+    "choiceExplanations": {
+      "ア": "ストライピングはデータを分割する方式で、同じ内容の控えを作らない。",
+      "イ": "ミラーリングは同じデータを複数のディスクへ保存し、片方が故障しても残りで利用を続けられる。",
+      "ウ": "ライトスルーはキャッシュ更新時に下位記憶へ書き込む方式である。",
+      "エ": "ライトバックはキャッシュ書き込みを後から下位記憶へ反映させる方式である。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=6",
+    "sourcePages": [
+      6,
+      8
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p06-official.png",
+      "/images/questions/jken-katsuyo1/220619/p08-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題2 公式問題のPDF 6ページ",
+      "2022年度 情報活用1級 問題2 公式問題のPDF 8ページ"
+    ],
+    "officialQuestionLabel": "問題2(5)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m2-s6",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 206,
+    "examDate": "2022-06-19",
+    "subject": "問題2(6)",
+    "type": "multiple-choice",
+    "category": "パソコンを利用したシステム",
+    "topicTags": [
+      "パソコンを利用したシステム"
+    ],
+    "difficulty": 3,
+    "question": "RAID 1で同じデータを別のディスクに記録する目的。公式問題の「問題2(6)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "機密性の向上",
+      "イ": "処理速度の向上",
+      "ウ": "信頼性の向上",
+      "エ": "操作性の向上"
+    },
+    "answer": "ウ",
+    "explanation": "一方が故障しても残る同じデータで処理を続けられるため、ディスク故障に対する信頼性が高まる。",
+    "choiceExplanations": {
+      "ア": "データの複製は機密性を高める管理策ではない。機密性はアクセス制御や暗号化などで確保する。",
+      "イ": "複数ディスクからの読み出しを分担できる場合もあるが、設問の故障時の運用継続は信頼性の向上である。",
+      "ウ": "一方が故障しても残る同じデータで処理を続けられるため、ディスク故障に対する信頼性が高まる。",
+      "エ": "冗長化は故障時の運用継続を目的とし、利用者インタフェースの操作性とは別である。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=6",
+    "sourcePages": [
+      6,
+      8
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p06-official.png",
+      "/images/questions/jken-katsuyo1/220619/p08-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題2 公式問題のPDF 6ページ",
+      "2022年度 情報活用1級 問題2 公式問題のPDF 8ページ"
+    ],
+    "officialQuestionLabel": "問題2(6)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m3-s1",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 301,
+    "examDate": "2022-06-19",
+    "subject": "問題3(1)",
+    "type": "multiple-choice",
+    "category": "ネットワークの利用",
+    "topicTags": [
+      "ネットワークの利用"
+    ],
+    "difficulty": 3,
+    "question": "内部で使用し、異なるLANで重複しても使えるアドレス。公式問題の「問題3(1)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "CIDR",
+      "イ": "DHCP",
+      "ウ": "ICANN",
+      "エ": "JPRS",
+      "オ": "NAPT",
+      "カ": "NAT",
+      "キ": "グローバル IP アドレス",
+      "ク": "プライベート IP アドレス"
+    },
+    "answer": "ク",
+    "explanation": "プライベート IP アドレスは内部のネットワークに使うアドレスであり、異なる組織では同じ範囲を再利用できる。同じLANで同一アドレスを重複割当しない。",
+    "choiceExplanations": {
+      "ア": "CIDRはクラスに依存せずプレフィックス長でアドレスネットワークの範囲を表す方式である。",
+      "イ": "DHCPはIPアドレスなどの設定を端末に自動配布するプロトコルである。",
+      "ウ": "ICANNはインターネットの識別子の割当を全体として調整する組織である。",
+      "エ": "JPRSは.jpドメイン名の登録管理などを担う事業者である。",
+      "オ": "NAPTはIPアドレスとトランスポート層のポート番号を組み合わせて変換する。",
+      "カ": "NATはネットワークをまたぐ際にIPアドレスを変換する方式である。",
+      "キ": "グローバル IP アドレスはインターネット上で一意に割り当てられ、経路制御に使えるアドレスである。",
+      "ク": "プライベート IP アドレスは内部のネットワークに使うアドレスであり、異なる組織では同じ範囲を再利用できる。同じLANで同一アドレスを重複割当しない。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=9",
+    "sourcePages": [
+      9
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p09-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題3 公式問題のPDF 9ページ"
+    ],
+    "officialQuestionLabel": "問題3(1)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m3-s2",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 302,
+    "examDate": "2022-06-19",
+    "subject": "問題3(2)",
+    "type": "multiple-choice",
+    "category": "ネットワークの利用",
+    "topicTags": [
+      "ネットワークの利用"
+    ],
+    "difficulty": 3,
+    "question": "インターネット上で重複しないよう割り当てるアドレス。公式問題の「問題3(2)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "CIDR",
+      "イ": "DHCP",
+      "ウ": "ICANN",
+      "エ": "JPRS",
+      "オ": "NAPT",
+      "カ": "NAT",
+      "キ": "グローバル IP アドレス",
+      "ク": "プライベート IP アドレス"
+    },
+    "answer": "キ",
+    "explanation": "グローバル IP アドレスはインターネット上で一意に割り当てられ、経路制御に使えるアドレスである。割当機関の体系により重複を防いでいる。",
+    "choiceExplanations": {
+      "ア": "CIDRはクラスに依存せずプレフィックス長でアドレスネットワークの範囲を表す方式である。",
+      "イ": "DHCPはIPアドレスなどの設定を端末に自動配布するプロトコルである。",
+      "ウ": "ICANNはインターネットの識別子の割当を全体として調整する組織である。",
+      "エ": "JPRSは.jpドメイン名の登録管理などを担う事業者である。",
+      "オ": "NAPTはIPアドレスとトランスポート層のポート番号を組み合わせて変換する。",
+      "カ": "NATはネットワークをまたぐ際にIPアドレスを変換する方式である。",
+      "キ": "グローバル IP アドレスはインターネット上で一意に割り当てられ、経路制御に使えるアドレスである。割当機関の体系により重複を防いでいる。",
+      "ク": "プライベート IP アドレスは内部のネットワークに使うアドレスであり、異なる組織では同じ範囲を再利用できる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=9",
+    "sourcePages": [
+      9
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p09-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題3 公式問題のPDF 9ページ"
+    ],
+    "officialQuestionLabel": "問題3(2)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m3-s3",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 303,
+    "examDate": "2022-06-19",
+    "subject": "問題3(3)",
+    "type": "multiple-choice",
+    "category": "ネットワークの利用",
+    "topicTags": [
+      "ネットワークの利用"
+    ],
+    "difficulty": 3,
+    "question": "インターネットのIPアドレス割当を統括する組織。公式問題の「問題3(3)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "CIDR",
+      "イ": "DHCP",
+      "ウ": "ICANN",
+      "エ": "JPRS",
+      "オ": "NAPT",
+      "カ": "NAT",
+      "キ": "グローバル IP アドレス",
+      "ク": "プライベート IP アドレス"
+    },
+    "answer": "ウ",
+    "explanation": "ICANNはインターネットの識別子の割当を全体として調整する組織である。実際の配分にはIANA、地域インターネットレジストリなどが関わる。",
+    "choiceExplanations": {
+      "ア": "CIDRはクラスに依存せずプレフィックス長でアドレスネットワークの範囲を表す方式である。",
+      "イ": "DHCPはIPアドレスなどの設定を端末に自動配布するプロトコルである。",
+      "ウ": "ICANNはインターネットの識別子の割当を全体として調整する組織である。実際の配分にはIANA、地域インターネットレジストリなどが関わる。",
+      "エ": "JPRSは.jpドメイン名の登録管理などを担う事業者である。",
+      "オ": "NAPTはIPアドレスとトランスポート層のポート番号を組み合わせて変換する。",
+      "カ": "NATはネットワークをまたぐ際にIPアドレスを変換する方式である。",
+      "キ": "グローバル IP アドレスはインターネット上で一意に割り当てられ、経路制御に使えるアドレスである。",
+      "ク": "プライベート IP アドレスは内部のネットワークに使うアドレスであり、異なる組織では同じ範囲を再利用できる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=9",
+    "sourcePages": [
+      9
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p09-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題3 公式問題のPDF 9ページ"
+    ],
+    "officialQuestionLabel": "問題3(3)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m3-s4",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 304,
+    "examDate": "2022-06-19",
+    "subject": "問題3(4)",
+    "type": "multiple-choice",
+    "category": "ネットワークの利用",
+    "topicTags": [
+      "ネットワークの利用"
+    ],
+    "difficulty": 3,
+    "question": "設問でIPアドレスを1対1に対応させる変換。公式問題の「問題3(4)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "CIDR",
+      "イ": "DHCP",
+      "ウ": "ICANN",
+      "エ": "JPRS",
+      "オ": "NAPT",
+      "カ": "NAT",
+      "キ": "グローバル IP アドレス",
+      "ク": "プライベート IP アドレス"
+    },
+    "answer": "カ",
+    "explanation": "NATはネットワークをまたぐ際にIPアドレスを変換する方式である。原問は基本的なNATと、ポートを使うNAPTを区別している。",
+    "choiceExplanations": {
+      "ア": "CIDRはクラスに依存せずプレフィックス長でアドレスネットワークの範囲を表す方式である。",
+      "イ": "DHCPはIPアドレスなどの設定を端末に自動配布するプロトコルである。",
+      "ウ": "ICANNはインターネットの識別子の割当を全体として調整する組織である。",
+      "エ": "JPRSは.jpドメイン名の登録管理などを担う事業者である。",
+      "オ": "NAPTはIPアドレスとトランスポート層のポート番号を組み合わせて変換する。",
+      "カ": "NATはネットワークをまたぐ際にIPアドレスを変換する方式である。原問は基本的なNATと、ポートを使うNAPTを区別している。",
+      "キ": "グローバル IP アドレスはインターネット上で一意に割り当てられ、経路制御に使えるアドレスである。",
+      "ク": "プライベート IP アドレスは内部のネットワークに使うアドレスであり、異なる組織では同じ範囲を再利用できる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=9",
+    "sourcePages": [
+      9
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p09-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題3 公式問題のPDF 9ページ"
+    ],
+    "officialQuestionLabel": "問題3(4)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m3-s5",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 305,
+    "examDate": "2022-06-19",
+    "subject": "問題3(5)",
+    "type": "multiple-choice",
+    "category": "ネットワークの利用",
+    "topicTags": [
+      "ネットワークの利用"
+    ],
+    "difficulty": 3,
+    "question": "アドレスとポートを変換して複数端末で外部アドレスを共有する方式。公式問題の「問題3(5)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "CIDR",
+      "イ": "DHCP",
+      "ウ": "ICANN",
+      "エ": "JPRS",
+      "オ": "NAPT",
+      "カ": "NAT",
+      "キ": "グローバル IP アドレス",
+      "ク": "プライベート IP アドレス"
+    },
+    "answer": "オ",
+    "explanation": "NAPTはIPアドレスとトランスポート層のポート番号を組み合わせて変換する。変換後のポートなどで別々の通信を区別できる。",
+    "choiceExplanations": {
+      "ア": "CIDRはクラスに依存せずプレフィックス長でアドレスネットワークの範囲を表す方式である。",
+      "イ": "DHCPはIPアドレスなどの設定を端末に自動配布するプロトコルである。",
+      "ウ": "ICANNはインターネットの識別子の割当を全体として調整する組織である。",
+      "エ": "JPRSは.jpドメイン名の登録管理などを担う事業者である。",
+      "オ": "NAPTはIPアドレスとトランスポート層のポート番号を組み合わせて変換する。変換後のポートなどで別々の通信を区別できる。",
+      "カ": "NATはネットワークをまたぐ際にIPアドレスを変換する方式である。",
+      "キ": "グローバル IP アドレスはインターネット上で一意に割り当てられ、経路制御に使えるアドレスである。",
+      "ク": "プライベート IP アドレスは内部のネットワークに使うアドレスであり、異なる組織では同じ範囲を再利用できる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=9",
+    "sourcePages": [
+      9
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p09-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題3 公式問題のPDF 9ページ"
+    ],
+    "officialQuestionLabel": "問題3(5)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m3-s6",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 306,
+    "examDate": "2022-06-19",
+    "subject": "問題3(6)",
+    "type": "multiple-choice",
+    "category": "ネットワークの利用",
+    "topicTags": [
+      "ネットワークの利用"
+    ],
+    "difficulty": 3,
+    "question": "クラス分けにおける172.18.8.6のクラス。公式問題の「問題3(6)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "クラスＡ",
+      "イ": "クラスＢ",
+      "ウ": "クラスＣ"
+    },
+    "answer": "イ",
+    "explanation": "先頭オクテット172の上位2ビットは10なのでクラスBである。",
+    "choiceExplanations": {
+      "ア": "クラスAは先頭が0である。172は2進数で10101100となる。",
+      "イ": "先頭オクテット172の上位2ビットは10なのでクラスBである。",
+      "ウ": "クラスCの先頭は110だが、172は101で始まる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=9",
+    "sourcePages": [
+      9,
+      10
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p09-official.png",
+      "/images/questions/jken-katsuyo1/220619/p10-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題3 公式問題のPDF 9ページ",
+      "2022年度 情報活用1級 問題3 公式問題のPDF 10ページ"
+    ],
+    "officialQuestionLabel": "問題3(6)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m3-s7",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 307,
+    "examDate": "2022-06-19",
+    "subject": "問題3(7)",
+    "type": "multiple-choice",
+    "category": "ネットワークの利用",
+    "topicTags": [
+      "ネットワークの利用"
+    ],
+    "difficulty": 3,
+    "question": "192.168.203.172を/27で区切ったネットワークアドレス。公式問題の「問題3(7)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "192.168.203.0",
+      "イ": "192.168.203.160",
+      "ウ": "192.168.203.170",
+      "エ": "192.168.203.180"
+    },
+    "answer": "イ",
+    "explanation": "末尾172と224のビットごとの論理積は160なので、ネットワークアドレスは192.168.203.160になる。",
+    "choiceExplanations": {
+      "ア": "末尾0の/27が含む範囲は0～31であり、172を収容できない。",
+      "イ": "末尾172と224のビットごとの論理積は160なので、ネットワークアドレスは192.168.203.160になる。",
+      "ウ": "末尾170は160～191の区画にある端末用の値であり、ホスト部が0ではない。",
+      "エ": "末尾180にもホスト部の下位5ビットが残っており、ネットワークアドレスの条件を満たさない。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=10",
+    "sourcePages": [
+      10
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p10-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題3 公式問題のPDF 10ページ"
+    ],
+    "officialQuestionLabel": "問題3(7)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m3-s8",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 308,
+    "examDate": "2022-06-19",
+    "subject": "問題3(8)",
+    "type": "multiple-choice",
+    "category": "ネットワークの利用",
+    "topicTags": [
+      "ネットワークの利用"
+    ],
+    "difficulty": 3,
+    "question": "192.168.203.172と同じ/27に属するPCのアドレス。公式問題の「問題3(8)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "192.168.203.128",
+      "イ": "192.168.203.156",
+      "ウ": "192.168.203.190",
+      "エ": "192.168.203.220"
+    },
+    "answer": "ウ",
+    "explanation": "末尾190は160～191の区画にあり、ネットワークアドレス160とブロードキャスト191の間にある。",
+    "choiceExplanations": {
+      "ア": "末尾128は別の区画128～159のネットワークアドレスである。",
+      "イ": "末尾156は128～159の区画にあり、172が属する160～191の範囲に入らない。",
+      "ウ": "末尾190は160～191の区画にあり、ネットワークアドレス160とブロードキャスト191の間にある。",
+      "エ": "末尾220は192～223の区画に属するため、172とはサブネットが異なる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=10",
+    "sourcePages": [
+      10
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p10-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題3 公式問題のPDF 10ページ"
+    ],
+    "officialQuestionLabel": "問題3(8)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m4-s1",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 401,
+    "examDate": "2022-06-19",
+    "subject": "問題4(1)",
+    "type": "multiple-choice",
+    "category": "情報ネットワーク社会への対応",
+    "topicTags": [
+      "情報ネットワーク社会への対応"
+    ],
+    "difficulty": 3,
+    "question": "センサや通信機能を持つ様々なものをインターネットにつなぐ考え方。公式問題の「問題4(1)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "IoT",
+      "イ": "LPWA",
+      "ウ": "Wi-Fi",
+      "エ": "エッジコンピューティング",
+      "オ": "グリッドコンピューティング"
+    },
+    "answer": "ア",
+    "explanation": "IoTは家電などの様々なものをネットにつなぎ、データを活用する考え方である。得られたデータは機器の自動制御などに使える。",
+    "choiceExplanations": {
+      "ア": "IoTは家電などの様々なものをネットにつなぎ、データを活用する考え方である。得られたデータは機器の自動制御などに使える。",
+      "イ": "LPWAは低消費電力で広い範囲をカバーできる低速無線通信の総称である。",
+      "ウ": "Wi-Fiは無線LAN向けの規格群で、端末をアクセスポイントなどに接続する。",
+      "エ": "エッジコンピューティングはデータの発生源に近い機器や拠点で処理を行う考え方である。",
+      "オ": "グリッドコンピューティングは複数のコンピュータの計算資源を組み合わせて処理する考え方である。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=11",
+    "sourcePages": [
+      11
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p11-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題4 公式問題のPDF 11ページ"
+    ],
+    "officialQuestionLabel": "問題4(1)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m4-s2",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 402,
+    "examDate": "2022-06-19",
+    "subject": "問題4(2)",
+    "type": "multiple-choice",
+    "category": "情報ネットワーク社会への対応",
+    "topicTags": [
+      "情報ネットワーク社会への対応"
+    ],
+    "difficulty": 3,
+    "question": "データの発生源に近いところで処理する仕組み。公式問題の「問題4(2)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "IoT",
+      "イ": "LPWA",
+      "ウ": "Wi-Fi",
+      "エ": "エッジコンピューティング",
+      "オ": "グリッドコンピューティング"
+    },
+    "answer": "エ",
+    "explanation": "エッジコンピューティングはデータの発生源に近い機器や拠点で処理を行う考え方である。クラウドとの往復データ転送を減らし、素早く判断できる。",
+    "choiceExplanations": {
+      "ア": "IoTは家電などの様々なものをネットにつなぎ、データを活用する考え方である。",
+      "イ": "LPWAは低消費電力で広い範囲をカバーできる低速無線通信の総称である。",
+      "ウ": "Wi-Fiは無線LAN向けの規格群で、端末をアクセスポイントなどに接続する。",
+      "エ": "エッジコンピューティングはデータの発生源に近い機器や拠点で処理を行う考え方である。クラウドとの往復データ転送を減らし、素早く判断できる。",
+      "オ": "グリッドコンピューティングは複数のコンピュータの計算資源を組み合わせて処理する考え方である。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=11",
+    "sourcePages": [
+      11
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p11-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題4 公式問題のPDF 11ページ"
+    ],
+    "officialQuestionLabel": "問題4(2)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m4-s3",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 403,
+    "examDate": "2022-06-19",
+    "subject": "問題4(3)",
+    "type": "multiple-choice",
+    "category": "情報ネットワーク社会への対応",
+    "topicTags": [
+      "情報ネットワーク社会への対応"
+    ],
+    "difficulty": 3,
+    "question": "小さな消費電力で広範囲をカバーする無線。公式問題の「問題4(3)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "IoT",
+      "イ": "LPWA",
+      "ウ": "Wi-Fi",
+      "エ": "エッジコンピューティング",
+      "オ": "グリッドコンピューティング"
+    },
+    "answer": "イ",
+    "explanation": "LPWAは低消費電力で広い範囲をカバーできる低速無線通信の総称である。低速でも長時間稼働させたいセンサなどに向く。",
+    "choiceExplanations": {
+      "ア": "IoTは家電などの様々なものをネットにつなぎ、データを活用する考え方である。",
+      "イ": "LPWAは低消費電力で広い範囲をカバーできる低速無線通信の総称である。低速でも長時間稼働させたいセンサなどに向く。",
+      "ウ": "Wi-Fiは無線LAN向けの規格群で、端末をアクセスポイントなどに接続する。",
+      "エ": "エッジコンピューティングはデータの発生源に近い機器や拠点で処理を行う考え方である。",
+      "オ": "グリッドコンピューティングは複数のコンピュータの計算資源を組み合わせて処理する考え方である。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=11",
+    "sourcePages": [
+      11
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p11-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題4 公式問題のPDF 11ページ"
+    ],
+    "officialQuestionLabel": "問題4(3)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m4-s4",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 404,
+    "examDate": "2022-06-19",
+    "subject": "問題4(4)",
+    "type": "multiple-choice",
+    "category": "情報ネットワーク社会への対応",
+    "topicTags": [
+      "情報ネットワーク社会への対応"
+    ],
+    "difficulty": 3,
+    "question": "DNSサーバの役割。公式問題の「問題4(4)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "IP アドレスとドメイン名の紐付けを管理し，ドメイン名と IP アドレスを変換する",
+      "イ": "インターネットに接続するコンピュータに対して，IP アドレスなどの必要な情報を自動的に割り当てる",
+      "ウ": "クライアントに代わってインターネット上の Web サーバなどにアクセスする",
+      "エ": "ファイルやデータを一元管理し，クライアント間で共有する"
+    },
+    "answer": "ア",
+    "explanation": "DNSはドメイン名に対応するIPアドレスなどを応答する。",
+    "choiceExplanations": {
+      "ア": "DNSはドメイン名に対応するIPアドレスなどを応答する。",
+      "イ": "IPアドレスなどをクライアントに自動配布するのはDHCPである。",
+      "ウ": "クライアントに代わって外部サービスへアクセスするのはプロキシの役割である。",
+      "エ": "ファイル共有はファイルサーバなどの役割である。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=11",
+    "sourcePages": [
+      11,
+      12
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p11-official.png",
+      "/images/questions/jken-katsuyo1/220619/p12-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題4 公式問題のPDF 11ページ",
+      "2022年度 情報活用1級 問題4 公式問題のPDF 12ページ"
+    ],
+    "officialQuestionLabel": "問題4(4)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m4-s5",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 405,
+    "examDate": "2022-06-19",
+    "subject": "問題4(5)",
+    "type": "multiple-choice",
+    "category": "情報ネットワーク社会への対応",
+    "topicTags": [
+      "情報ネットワーク社会への対応"
+    ],
+    "difficulty": 3,
+    "question": "プロキシサーバの役割。公式問題の「問題4(5)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "IP アドレスとドメイン名の紐付けを管理し，ドメイン名と IP アドレスを変換する",
+      "イ": "インターネットに接続するコンピュータに対して，IP アドレスなどの必要な情報を自動的に割り当てる",
+      "ウ": "クライアントに代わってインターネット上の Web サーバなどにアクセスする",
+      "エ": "ファイルやデータを一元管理し，クライアント間で共有する"
+    },
+    "answer": "ウ",
+    "explanation": "プロキシはクライアントとの間で要求を受け取り、クライアントに代わって外部サーバへアクセスする。",
+    "choiceExplanations": {
+      "ア": "ドメイン名の名前解決はDNSサーバが担う。",
+      "イ": "端末のIPアドレスやネットワーク設定の配布はDHCPサーバが担う。",
+      "ウ": "プロキシはクライアントとの間で要求を受け取り、クライアントに代わって外部サーバへアクセスする。",
+      "エ": "クライアント間のファイル共有はファイルサーバの役割である。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=11",
+    "sourcePages": [
+      11,
+      12
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p11-official.png",
+      "/images/questions/jken-katsuyo1/220619/p12-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題4 公式問題のPDF 11ページ",
+      "2022年度 情報活用1級 問題4 公式問題のPDF 12ページ"
+    ],
+    "officialQuestionLabel": "問題4(5)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m4-s6",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 406,
+    "examDate": "2022-06-19",
+    "subject": "問題4(6)",
+    "type": "multiple-choice",
+    "category": "情報ネットワーク社会への対応",
+    "topicTags": [
+      "情報ネットワーク社会への対応"
+    ],
+    "difficulty": 3,
+    "question": "ネットワークの境界で通信の可否を制御する仕組み。公式問題の「問題4(6)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "DMZ(DeMilitarized Zone)",
+      "イ": "IDS(Intrusion Detection System)",
+      "ウ": "IPS(Intrusion Prevention System)",
+      "エ": "ファイアウォール"
+    },
+    "answer": "エ",
+    "explanation": "ファイアウォールはネットワーク間の通過通信を定めたルールで許可または拒否する。",
+    "choiceExplanations": {
+      "ア": "DMZは外部公開用のサーバを置く分離したネットワーク区画である。",
+      "イ": "IDSは侵入の兆候を検知し通知する仕組みである。",
+      "ウ": "IPSは侵入と判定した通信を防止する。図のようにネットワークの境界で通信全体を許可ルールに従って制御する仕組みはファイアウォールである。",
+      "エ": "ファイアウォールはネットワーク間の通過通信を定めたルールで許可または拒否する。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=12",
+    "sourcePages": [
+      12
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p12-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題4 公式問題のPDF 12ページ"
+    ],
+    "officialQuestionLabel": "問題4(6)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m4-s7",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 407,
+    "examDate": "2022-06-19",
+    "subject": "問題4(7)",
+    "type": "multiple-choice",
+    "category": "情報ネットワーク社会への対応",
+    "topicTags": [
+      "情報ネットワーク社会への対応"
+    ],
+    "difficulty": 3,
+    "question": "外部と通信するためDMZに置くサーバの組み合わせ。公式問題の「問題4(7)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "DNS サーバ，メールサーバ，データベースサーバ",
+      "イ": "DNS サーバ，メールサーバ，プロキシサーバ",
+      "ウ": "ファイルサーバ，メールサーバ，プロキシサーバ",
+      "エ": "ファイルサーバ，プロキシサーバ，データベースサーバ"
+    },
+    "answer": "イ",
+    "explanation": "外部向けDNS、メールゲートウェイ、外部との通信を仲介するプロキシが候補になる。",
+    "choiceExplanations": {
+      "ア": "外部向けDNSとメールの入口は配置できるが、データベースは通常は内部の保護区画に置く。",
+      "イ": "外部向けDNS、メールゲートウェイ、外部との通信を仲介するプロキシが候補になる。",
+      "ウ": "内部向けのファイル共有サーバをDMZへ置くのは通常の構成に合わない。",
+      "エ": "ファイル共有とデータベースは通常、内部の保護区画に置く。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=11",
+    "sourcePages": [
+      11,
+      12
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p11-official.png",
+      "/images/questions/jken-katsuyo1/220619/p12-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題4 公式問題のPDF 11ページ",
+      "2022年度 情報活用1級 問題4 公式問題のPDF 12ページ"
+    ],
+    "officialQuestionLabel": "問題4(7)",
+    "isCalculation": false,
+    "publicAllowed": true,
+    "questionNotice": "DMZに置く対象は、DNSやメール、プロキシのうち外部との通信を受け持つもの。"
+  },
+  {
+    "id": "jken-katsuyo1-220619-m4-s8",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 408,
+    "examDate": "2022-06-19",
+    "subject": "問題4(8)",
+    "type": "multiple-choice",
+    "category": "情報ネットワーク社会への対応",
+    "topicTags": [
+      "情報ネットワーク社会への対応"
+    ],
+    "difficulty": 3,
+    "question": "外部ネットワークと内部ネットワークから分離された公開用区画。公式問題の「問題4(8)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "DMZ(DeMilitarized Zone)",
+      "イ": "IDS(Intrusion Detection System)",
+      "ウ": "IPS(Intrusion Prevention System)",
+      "エ": "ファイアウォール"
+    },
+    "answer": "ア",
+    "explanation": "DMZは公開サービスを内部ネットワークから分離したネットワーク区画に置く構成である。",
+    "choiceExplanations": {
+      "ア": "DMZは公開サービスを内部ネットワークから分離したネットワーク区画に置く構成である。",
+      "イ": "IDSは侵入兆候を検知するシステムで、公開サーバを配置する区画名はDMZである。",
+      "ウ": "IPSは侵入を検知・阻止するシステムである。",
+      "エ": "ファイアウォールは区画間のアクセスを制御する装置や機能であり、図の公開用区画はDMZである。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=12",
+    "sourcePages": [
+      12
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p12-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題4 公式問題のPDF 12ページ"
+    ],
+    "officialQuestionLabel": "問題4(8)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m5-s1",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 501,
+    "examDate": "2022-06-19",
+    "subject": "問題5(1)",
+    "type": "multiple-choice",
+    "category": "情報セキュリティ",
+    "topicTags": [
+      "情報セキュリティ"
+    ],
+    "difficulty": 3,
+    "question": "脆弱性への修正プログラムが配布される前に起きる攻撃。公式問題の「問題5(1)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "DDoS",
+      "イ": "IP スプーフィング",
+      "ウ": "クロスサイトスクリプティング",
+      "エ": "ゼロデイ",
+      "オ": "トラッシング",
+      "カ": "ボットネット"
+    },
+    "answer": "エ",
+    "explanation": "ゼロデイは修正プログラムが利用できるようになる前に脆弱性を悪用した攻撃を指す。修正を適用できるようになるまで緩和策が重要になる。",
+    "choiceExplanations": {
+      "ア": "DDoSは多数の送信元などから通信を集中させ、サービスの利用を妨げる攻撃である。",
+      "イ": "IP スプーフィングは送信元IPアドレスなどを偽装することを指す。",
+      "ウ": "クロスサイトスクリプティングはWebページを表示する利用者のブラウザで意図しないスクリプトが動く攻撃である。",
+      "エ": "ゼロデイは修正プログラムが利用できるようになる前に脆弱性を悪用した攻撃を指す。修正を適用できるようになるまで緩和策が重要になる。",
+      "オ": "トラッシングは捨てられた資料などから情報を不正に集める行為である。",
+      "カ": "ボットネットは攻撃者の指令を受ける侵害済み端末などの集まりである。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=13",
+    "sourcePages": [
+      13
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p13-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題5 公式問題のPDF 13ページ"
+    ],
+    "officialQuestionLabel": "問題5(1)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m5-s2",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 502,
+    "examDate": "2022-06-19",
+    "subject": "問題5(2)",
+    "type": "multiple-choice",
+    "category": "情報セキュリティ",
+    "topicTags": [
+      "情報セキュリティ"
+    ],
+    "difficulty": 3,
+    "question": "分散した送信元から通信が集中してサービスが使えなくなる攻撃。公式問題の「問題5(2)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "DDoS",
+      "イ": "IP スプーフィング",
+      "ウ": "クロスサイトスクリプティング",
+      "エ": "ゼロデイ",
+      "オ": "トラッシング",
+      "カ": "ボットネット"
+    },
+    "answer": "ア",
+    "explanation": "DDoSは多数の送信元などから通信を集中させ、サービスの利用を妨げる攻撃である。設問の機能不全は通信処理能力などが消費されることで発生する。",
+    "choiceExplanations": {
+      "ア": "DDoSは多数の送信元などから通信を集中させ、サービスの利用を妨げる攻撃である。設問の機能不全は通信処理能力などが消費されることで発生する。",
+      "イ": "IP スプーフィングは送信元IPアドレスなどを偽装することを指す。",
+      "ウ": "クロスサイトスクリプティングはWebページを表示する利用者のブラウザで意図しないスクリプトが動く攻撃である。",
+      "エ": "ゼロデイは修正プログラムが利用できるようになる前に脆弱性を悪用した攻撃を指す。",
+      "オ": "トラッシングは捨てられた資料などから情報を不正に集める行為である。",
+      "カ": "ボットネットは攻撃者の指令を受ける侵害済み端末などの集まりである。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=13",
+    "sourcePages": [
+      13
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p13-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題5 公式問題のPDF 13ページ"
+    ],
+    "officialQuestionLabel": "問題5(2)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m5-s3",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 503,
+    "examDate": "2022-06-19",
+    "subject": "問題5(3)",
+    "type": "multiple-choice",
+    "category": "情報セキュリティ",
+    "topicTags": [
+      "情報セキュリティ"
+    ],
+    "difficulty": 3,
+    "question": "外部からまとめて遠隔操作される侵害済み端末のネットワーク。公式問題の「問題5(3)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "DDoS",
+      "イ": "IP スプーフィング",
+      "ウ": "クロスサイトスクリプティング",
+      "エ": "ゼロデイ",
+      "オ": "トラッシング",
+      "カ": "ボットネット"
+    },
+    "answer": "カ",
+    "explanation": "ボットネットは攻撃者の指令を受ける侵害済み端末などの集まりである。侵害端末を隔離して管理を回復することが防御の一つになる。",
+    "choiceExplanations": {
+      "ア": "DDoSは多数の送信元などから通信を集中させ、サービスの利用を妨げる攻撃である。",
+      "イ": "IP スプーフィングは送信元IPアドレスなどを偽装することを指す。",
+      "ウ": "クロスサイトスクリプティングはWebページを表示する利用者のブラウザで意図しないスクリプトが動く攻撃である。",
+      "エ": "ゼロデイは修正プログラムが利用できるようになる前に脆弱性を悪用した攻撃を指す。",
+      "オ": "トラッシングは捨てられた資料などから情報を不正に集める行為である。",
+      "カ": "ボットネットは攻撃者の指令を受ける侵害済み端末などの集まりである。侵害端末を隔離して管理を回復することが防御の一つになる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=13",
+    "sourcePages": [
+      13
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p13-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題5 公式問題のPDF 13ページ"
+    ],
+    "officialQuestionLabel": "問題5(3)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m5-s4",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 504,
+    "examDate": "2022-06-19",
+    "subject": "問題5(4)",
+    "type": "multiple-choice",
+    "category": "情報セキュリティ",
+    "topicTags": [
+      "情報セキュリティ"
+    ],
+    "difficulty": 3,
+    "question": "許可された範囲外のファイルへアクセスされる攻撃。公式問題の「問題5(4)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "DNS キャッシュポイズニング",
+      "イ": "SQL インジェクション",
+      "ウ": "ディレクトリトラバーサル",
+      "エ": "ブルートフォース"
+    },
+    "answer": "ウ",
+    "explanation": "ディレクトリトラバーサルはファイルを指定する処理で、許可されたディレクトリ外にアクセスする攻撃である。防御にはアクセス先が許可範囲内かどうかのサーバ側での確認がある。",
+    "choiceExplanations": {
+      "ア": "DNS キャッシュポイズニングはDNSキャッシュを汚染し、誤った名前解決結果を返させる攻撃である。",
+      "イ": "SQL インジェクションはアプリが外部入力をSQLの命令として解釈してしまう攻撃である。",
+      "ウ": "ディレクトリトラバーサルはファイルを指定する処理で、許可されたディレクトリ外にアクセスする攻撃である。防御にはアクセス先が許可範囲内かどうかのサーバ側での確認がある。",
+      "エ": "ブルートフォースは多数の候補を総当たりで試す手法である。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=13",
+    "sourcePages": [
+      13
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p13-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題5 公式問題のPDF 13ページ"
+    ],
+    "officialQuestionLabel": "問題5(4)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m5-s5",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 505,
+    "examDate": "2022-06-19",
+    "subject": "問題5(5)",
+    "type": "multiple-choice",
+    "category": "情報セキュリティ",
+    "topicTags": [
+      "情報セキュリティ"
+    ],
+    "difficulty": 3,
+    "question": "外部からの入力をデータベースへの命令として解釈される攻撃。公式問題の「問題5(5)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "DNS キャッシュポイズニング",
+      "イ": "SQL インジェクション",
+      "ウ": "ディレクトリトラバーサル",
+      "エ": "ブルートフォース"
+    },
+    "answer": "イ",
+    "explanation": "SQL インジェクションはアプリが外部入力をSQLの命令として解釈してしまう攻撃である。プレースホルダを使って入力をSQLの構造から切り離す対策がある。",
+    "choiceExplanations": {
+      "ア": "DNS キャッシュポイズニングはDNSキャッシュを汚染し、誤った名前解決結果を返させる攻撃である。",
+      "イ": "SQL インジェクションはアプリが外部入力をSQLの命令として解釈してしまう攻撃である。プレースホルダを使って入力をSQLの構造から切り離す対策がある。",
+      "ウ": "ディレクトリトラバーサルはファイルを指定する処理で、許可されたディレクトリ外にアクセスする攻撃である。",
+      "エ": "ブルートフォースは多数の候補を総当たりで試す手法である。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=13",
+    "sourcePages": [
+      13
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p13-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題5 公式問題のPDF 13ページ"
+    ],
+    "officialQuestionLabel": "問題5(5)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m5-s6",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 506,
+    "examDate": "2022-06-19",
+    "subject": "問題5(6)",
+    "type": "multiple-choice",
+    "category": "情報セキュリティ",
+    "topicTags": [
+      "情報セキュリティ"
+    ],
+    "difficulty": 3,
+    "question": "有用に見せかけて利用者に実行させるマルウェア。公式問題の「問題5(6)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "アドウェア",
+      "イ": "トロイの木馬",
+      "ウ": "バックドア",
+      "エ": "ランサムウェア"
+    },
+    "answer": "イ",
+    "explanation": "トロイの木馬は有用なプログラムなどに見せかけて実行を誘うマルウェアである。入手先や配布元を確認して導入することが有効な対策の一つになる。",
+    "choiceExplanations": {
+      "ア": "アドウェアは広告の表示を目的とするソフトウェアである。",
+      "イ": "トロイの木馬は有用なプログラムなどに見せかけて実行を誘うマルウェアである。入手先や配布元を確認して導入することが有効な対策の一つになる。",
+      "ウ": "バックドアは本来の認証手順などを経ずにアクセスできる裏口を指す。",
+      "エ": "ランサムウェアは端末やデータを使用不能にし、回復と引き換えに金銭を要求するマルウェアである。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=14",
+    "sourcePages": [
+      14
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p14-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題5 公式問題のPDF 14ページ"
+    ],
+    "officialQuestionLabel": "問題5(6)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m5-s7",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 507,
+    "examDate": "2022-06-19",
+    "subject": "問題5(7)",
+    "type": "multiple-choice",
+    "category": "情報セキュリティ",
+    "topicTags": [
+      "情報セキュリティ"
+    ],
+    "difficulty": 3,
+    "question": "端末やデータを使用不能にして金銭を要求するマルウェア。公式問題の「問題5(7)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "アドウェア",
+      "イ": "トロイの木馬",
+      "ウ": "バックドア",
+      "エ": "ランサムウェア"
+    },
+    "answer": "エ",
+    "explanation": "ランサムウェアは端末やデータを使用不能にし、回復と引き換えに金銭を要求するマルウェアである。分離したバックアップがあると、暗号化されたファイルの復元に使える。",
+    "choiceExplanations": {
+      "ア": "アドウェアは広告の表示を目的とするソフトウェアである。",
+      "イ": "トロイの木馬は有用なプログラムなどに見せかけて実行を誘うマルウェアである。",
+      "ウ": "バックドアは本来の認証手順などを経ずにアクセスできる裏口を指す。",
+      "エ": "ランサムウェアは端末やデータを使用不能にし、回復と引き換えに金銭を要求するマルウェアである。分離したバックアップがあると、暗号化されたファイルの復元に使える。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=14",
+    "sourcePages": [
+      14
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p14-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題5 公式問題のPDF 14ページ"
+    ],
+    "officialQuestionLabel": "問題5(7)",
+    "isCalculation": false,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m6-s1",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 601,
+    "examDate": "2022-06-19",
+    "subject": "問題6(1)",
+    "type": "multiple-choice",
+    "category": "表計算ソフト等を利用した問題解決",
+    "topicTags": [
+      "表計算ソフト等を利用した問題解決"
+    ],
+    "difficulty": 3,
+    "question": "商品コードから取得した価格に販売数量を掛ける式。公式問題の「問題6(1)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "VLOOKUP(C2, 商品!A2:C7, 3, 0) * D2",
+      "イ": "VLOOKUP(C2, 商品!A$2:C$7, 3, 0) * D2",
+      "ウ": "VLOOKUP(C2, 商品!$A2:$C7, 3, 0) * D2",
+      "エ": "VLOOKUP(C2, 商品!$A2:C$7, 3, 0) * D2"
+    },
+    "answer": "イ",
+    "explanation": "商品コードを完全一致で探して3列目の単価を取得し、当行の数量を掛ける。商品表の行範囲は固定する。",
+    "choiceExplanations": {
+      "ア": "最初は正しくても、下に複写すると商品の検索範囲の始点と終点が移動する。",
+      "イ": "商品コードを完全一致で探して3列目の単価を取得し、当行の数量を掛ける。商品表の行範囲は固定する。",
+      "ウ": "列だけを固定しており、下に複写すると商品表の検索範囲の行がずれる。",
+      "エ": "終了行は固定されるが開始行は移動するので、下に複写すると検索対象の商品が減る。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=16",
+    "sourcePages": [
+      16,
+      17
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p16-official.png",
+      "/images/questions/jken-katsuyo1/220619/p17-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題6 公式問題のPDF 16ページ",
+      "2022年度 情報活用1級 問題6 公式問題のPDF 17ページ"
+    ],
+    "officialQuestionLabel": "問題6(1)",
+    "isCalculation": true,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m6-s2",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 602,
+    "examDate": "2022-06-19",
+    "subject": "問題6(2)",
+    "type": "multiple-choice",
+    "category": "表計算ソフト等を利用した問題解決",
+    "topicTags": [
+      "表計算ソフト等を利用した問題解決"
+    ],
+    "difficulty": 3,
+    "question": "ユーザIDが一致する最終販売行の位置。公式問題の「問題6(2)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "MATCH(A3, 販売情報!A2:A3500, 1)",
+      "イ": "MATCH(A3, 販売情報!A$2:A$3500, 1)",
+      "ウ": "MATCH(B3, 販売情報!B2:B3500, 1)",
+      "エ": "MATCH(B3, 販売情報!B$2:B$3500, 1)"
+    },
+    "answer": "イ",
+    "explanation": "昇順で固定されたIDの範囲を検査の型1で調べると、同一IDの最後の位置が得られる。日付も昇順なのでその日付が最新になる。",
+    "choiceExplanations": {
+      "ア": "検索値はユーザIDだが、下に複写すると検索範囲が移動し、INDEXの固定範囲と対応しなくなる。",
+      "イ": "昇順で固定されたIDの範囲を検査の型1で調べると、同一IDの最後の位置が得られる。日付も昇順なのでその日付が最新になる。",
+      "ウ": "求めるB3を計算する式がB3を参照しているうえ、ユーザIDでなく日付の列を探している。",
+      "エ": "範囲は固定されているが、求める最終購入日B3を検索値として使うので循環参照になる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=17",
+    "sourcePages": [
+      17,
+      18
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p17-official.png",
+      "/images/questions/jken-katsuyo1/220619/p18-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題6 公式問題のPDF 17ページ",
+      "2022年度 情報活用1級 問題6 公式問題のPDF 18ページ"
+    ],
+    "officialQuestionLabel": "問題6(2)",
+    "isCalculation": true,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m6-s3",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 603,
+    "examDate": "2022-06-19",
+    "subject": "問題6(3)",
+    "type": "multiple-choice",
+    "category": "表計算ソフト等を利用した問題解決",
+    "topicTags": [
+      "表計算ソフト等を利用した問題解決"
+    ],
+    "difficulty": 3,
+    "question": "同一ユーザが買った商品の数量を集計する式。公式問題の「問題6(3)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "COUNTIF(販売情報!A$2:A$3500, A3)",
+      "イ": "COUNTIF(販売情報!B$2:B$3500, B3)",
+      "ウ": "SUMIF(販売情報!A$2:A$3500, A3, 販売情報!D$2:D$3500)",
+      "エ": "SUMIF(販売情報!A$2:A$3500, A3, 販売情報!E$2:E$3500)",
+      "オ": "SUMIF(販売情報!D$2:D$3500, A3, 販売情報!A$2:A$3500)",
+      "カ": "SUMIF(販売情報!E$2:E$3500, A3, 販売情報!A$2:A$3500)"
+    },
+    "answer": "ウ",
+    "explanation": "A列でユーザIDを照合し、一致する明細についてD列の数量を合計する。",
+    "choiceExplanations": {
+      "ア": "ユーザIDが一致する販売明細の件数を数えるので、1行で複数個買ったときの数量を扱えない。",
+      "イ": "同日付の明細を数える式で、照合すべきユーザIDや合計すべき数量を使っていない。",
+      "ウ": "A列でユーザIDを照合し、一致する明細についてD列の数量を合計する。",
+      "エ": "A列でユーザIDを照合する点は合うが、E列を加えるので金額を返す。",
+      "オ": "数量列にユーザIDが等しいかを検査しており、検索範囲が違う。合計範囲のA列も数量ではない。",
+      "カ": "販売額の列でユーザIDを探し、IDの列を足そうとする。数量はD列にある。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=17",
+    "sourcePages": [
+      17,
+      18,
+      19
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p17-official.png",
+      "/images/questions/jken-katsuyo1/220619/p18-official.png",
+      "/images/questions/jken-katsuyo1/220619/p19-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題6 公式問題のPDF 17ページ",
+      "2022年度 情報活用1級 問題6 公式問題のPDF 18ページ",
+      "2022年度 情報活用1級 問題6 公式問題のPDF 19ページ"
+    ],
+    "officialQuestionLabel": "問題6(3)",
+    "isCalculation": true,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m6-s4",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 604,
+    "examDate": "2022-06-19",
+    "subject": "問題6(4)",
+    "type": "multiple-choice",
+    "category": "表計算ソフト等を利用した問題解決",
+    "topicTags": [
+      "表計算ソフト等を利用した問題解決"
+    ],
+    "difficulty": 3,
+    "question": "同一ユーザの販売額を集計する式。公式問題の「問題6(4)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "COUNTIF(販売情報!A$2:A$3500, A3)",
+      "イ": "COUNTIF(販売情報!B$2:B$3500, B3)",
+      "ウ": "SUMIF(販売情報!A$2:A$3500, A3, 販売情報!D$2:D$3500)",
+      "エ": "SUMIF(販売情報!A$2:A$3500, A3, 販売情報!E$2:E$3500)",
+      "オ": "SUMIF(販売情報!D$2:D$3500, A3, 販売情報!A$2:A$3500)",
+      "カ": "SUMIF(販売情報!E$2:E$3500, A3, 販売情報!A$2:A$3500)"
+    },
+    "answer": "エ",
+    "explanation": "A列のIDが当行のユーザIDと等しい明細について、E列の販売額を合計する。",
+    "choiceExplanations": {
+      "ア": "COUNTIFは一致する行数を返し、金額の値を足さない。",
+      "イ": "購入日が一致する明細の件数を求める。ユーザ別の金額集計にはならない。",
+      "ウ": "IDが一致する行の数量を合計する式である。金額の集計範囲にはE列が必要である。",
+      "エ": "A列のIDが当行のユーザIDと等しい明細について、E列の販売額を合計する。",
+      "オ": "数量列でユーザIDを探しており条件範囲が異なる。A列は合計する金額でもない。",
+      "カ": "E列は金額の合計に使う列であってIDの検索範囲ではない。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=17",
+    "sourcePages": [
+      17,
+      18,
+      19
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p17-official.png",
+      "/images/questions/jken-katsuyo1/220619/p18-official.png",
+      "/images/questions/jken-katsuyo1/220619/p19-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題6 公式問題のPDF 17ページ",
+      "2022年度 情報活用1級 問題6 公式問題のPDF 18ページ",
+      "2022年度 情報活用1級 問題6 公式問題のPDF 19ページ"
+    ],
+    "officialQuestionLabel": "問題6(4)",
+    "isCalculation": true,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m6-s5",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 605,
+    "examDate": "2022-06-19",
+    "subject": "問題6(5)",
+    "type": "multiple-choice",
+    "category": "表計算ソフト等を利用した問題解決",
+    "topicTags": [
+      "表計算ソフト等を利用した問題解決"
+    ],
+    "difficulty": 3,
+    "question": "最終購入月からRランクを決める式。公式問題の「問題6(5)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "MAX(MONTH(B3) - 7, 1)",
+      "イ": "MIN(MONTH(B3) - 7, 5)",
+      "ウ": "MONTH(B3)",
+      "エ": "MONTH(B3) − 7"
+    },
+    "answer": "ア",
+    "explanation": "9～12月は7を引いて2～5にし、8月以前は最大値関数で1にそろえる。",
+    "choiceExplanations": {
+      "ア": "9～12月は7を引いて2～5にし、8月以前は最大値関数で1にそろえる。",
+      "イ": "上限5は設定されるが、7月以前に0以下を返す。",
+      "ウ": "月番号をそのまま返すため、12月がランク5ではなく12になる。",
+      "エ": "8～12月は1～5になるが、7月以前は0以下になる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=19",
+    "sourcePages": [
+      19,
+      20
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p19-official.png",
+      "/images/questions/jken-katsuyo1/220619/p20-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題6 公式問題のPDF 19ページ",
+      "2022年度 情報活用1級 問題6 公式問題のPDF 20ページ"
+    ],
+    "officialQuestionLabel": "問題6(5)",
+    "isCalculation": true,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m6-s6",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 606,
+    "examDate": "2022-06-19",
+    "subject": "問題6(6)",
+    "type": "multiple-choice",
+    "category": "表計算ソフト等を利用した問題解決",
+    "topicTags": [
+      "表計算ソフト等を利用した問題解決"
+    ],
+    "difficulty": 3,
+    "question": "購入数からFランクを求める式。公式問題の「問題6(6)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "MAX(ROUNDDOWN(C3 / 5, 0) + 1, 1)",
+      "イ": "MIN(ROUNDDOWN(C3 / 5, 0) + 1, 5)",
+      "ウ": "ROUNDDOWN(C3 / 5, 0)",
+      "エ": "ROUNDDOWN(C3 / 5, 0) + 1"
+    },
+    "answer": "イ",
+    "explanation": "5刻みの区分番号に1を加えて最小1にし、MINで上限を5に抑える。",
+    "choiceExplanations": {
+      "ア": "下限は1になるが、25以上ではランクが6以上になり、上限5を超える。",
+      "イ": "5刻みの区分番号に1を加えて最小1にし、MINで上限を5に抑える。",
+      "ウ": "5未満で0を返すので、最小値が1の表に合わない。",
+      "エ": "+1で最低ランクは1になるが、25以上で5を超える。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=19",
+    "sourcePages": [
+      19,
+      20
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p19-official.png",
+      "/images/questions/jken-katsuyo1/220619/p20-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題6 公式問題のPDF 19ページ",
+      "2022年度 情報活用1級 問題6 公式問題のPDF 20ページ"
+    ],
+    "officialQuestionLabel": "問題6(6)",
+    "isCalculation": true,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m6-s7",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 607,
+    "examDate": "2022-06-19",
+    "subject": "問題6(7)",
+    "type": "multiple-choice",
+    "category": "表計算ソフト等を利用した問題解決",
+    "topicTags": [
+      "表計算ソフト等を利用した問題解決"
+    ],
+    "difficulty": 3,
+    "question": "購入額からMランクを求める式。公式問題の「問題6(7)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "MAX(ROUNDDOWN(D3 / 10000, 0) + 1, 1)",
+      "イ": "MIN(ROUNDDOWN(D3 / 10000, 0) + 1, 5)",
+      "ウ": "ROUNDDOWN(D3 / 10000, 0)",
+      "エ": "ROUNDDOWN(D3 / 10000, 0) + 1"
+    },
+    "answer": "イ",
+    "explanation": "10,000刻みの区分番号に1を加えて最小1にし、MINで上限を5に抑える。",
+    "choiceExplanations": {
+      "ア": "下限は1になるが、50,000以上ではランクが6以上になり、上限5を超える。",
+      "イ": "10,000刻みの区分番号に1を加えて最小1にし、MINで上限を5に抑える。",
+      "ウ": "10,000未満で0を返すので、最小値が1の表に合わない。",
+      "エ": "+1で最低ランクは1になるが、50,000以上で5を超える。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=19",
+    "sourcePages": [
+      19,
+      20
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p19-official.png",
+      "/images/questions/jken-katsuyo1/220619/p20-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題6 公式問題のPDF 19ページ",
+      "2022年度 情報活用1級 問題6 公式問題のPDF 20ページ"
+    ],
+    "officialQuestionLabel": "問題6(7)",
+    "isCalculation": true,
+    "publicAllowed": true
+  },
+  {
+    "id": "jken-katsuyo1-220619-m6-s8",
+    "exam": "jken-katsuyo1",
+    "session": "gakka",
+    "year": 2022,
+    "season": "first",
+    "qNumber": 608,
+    "examDate": "2022-06-19",
+    "subject": "問題6(8)",
+    "type": "multiple-choice",
+    "category": "表計算ソフト等を利用した問題解決",
+    "topicTags": [
+      "表計算ソフト等を利用した問題解決"
+    ],
+    "difficulty": 3,
+    "question": "RとFの組み合わせごとにユーザ数を数えるクロス集計式。公式問題の「問題6(8)」に当てはまる選択肢を選べ。",
+    "choices": {
+      "ア": "COUNTIF(集計!H$3:H$1002, B$3 * 10 + C$2)",
+      "イ": "COUNTIF(集計!$H3:$H1002, $B3 * 10 + $C2)",
+      "ウ": "COUNTIF(集計!$H$3:$H$1002, B$3 * 10 + $C2)",
+      "エ": "COUNTIF(集計!$H$3:$H$1002, $B3 * 10 + C$2)"
+    },
+    "answer": "エ",
+    "explanation": "検索範囲を固定し、RはB列を、Fは2行目を固定する。R×10＋Fと同じ検索値の件数を数える。",
+    "choiceExplanations": {
+      "ア": "右への複写で集計H列とRの参照列が移動し、下への複写ではRの参照行が3行目に固定される。",
+      "イ": "H列の対象行が固定されず、Fを参照する列もC列に固定されてしまう。",
+      "ウ": "集計範囲は固定されているが、Rの参照行が3行目、Fの参照列がC列にそれぞれ固定されている。",
+      "エ": "検索範囲を固定し、RはB列を、Fは2行目を固定する。R×10＋Fと同じ検索値の件数を数える。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_mondaijk01.pdf#page=19",
+    "sourcePages": [
+      19,
+      21
+    ],
+    "sourceAnswerUrl": "https://www.jken.sgec.or.jp/common/pdf/past_test/220619_kaitojk01.pdf",
+    "sourceAttribution": "出典：一般財団法人職業教育・キャリア教育財団 情報検定（J検）情報活用1級。問題・正答は公式公表資料、解説は過去問AI作成。",
+    "license": "SGEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/jken-katsuyo1/220619/p19-official.png",
+      "/images/questions/jken-katsuyo1/220619/p21-official.png"
+    ],
+    "imageAltTexts": [
+      "2022年度 情報活用1級 問題6 公式問題のPDF 19ページ",
+      "2022年度 情報活用1級 問題6 公式問題のPDF 21ページ"
+    ],
+    "officialQuestionLabel": "問題6(8)",
+    "isCalculation": true,
+    "publicAllowed": true
+  }
+]
