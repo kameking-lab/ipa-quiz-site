@@ -4,6 +4,7 @@ import assets from "./assets.json";
 import qualifications from "./qualifications.json";
 import priorSittings from "./prior-sittings.json";
 import priorAssets from "./prior-assets.json";
+import gasoline2024First from "./3-gasoline-2024-first.json";
 import gasoline2024Second from "./3-gasoline-2024-second.json";
 
 export type AutomotiveExamCode =
@@ -44,6 +45,7 @@ const reviewedQuestions: Question[] = [...reviewed, ...priorSittings].map((q) =>
 export const AUTOMOTIVE_QUESTIONS: Question[] = [
   ...reviewedQuestions,
   ...(gasoline2024Second as Question[]),
+  ...(gasoline2024First as Question[]),
 ];
 
 export function getAutomotiveQuestions(exam: AutomotiveExamCode): Question[] {
