@@ -515,6 +515,15 @@ fp2: {
     seasons: ["may", "september", "january", "published"],
     yearRange: { start: 2024, end: 2026 },
 },
+"zensho-eco-79": {
+    code: "zensho-eco-79",
+    nameFull: "商業経済検定試験",
+    urlSlug: "zensho-eco-79",
+    level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科", categories: [] }],
+    seasons: ["annual"],
+    yearRange: { start: 2022, end: 2026 },
+},
 fp1: {
     code: "fp1",
     nameFull: "1級ファイナンシャル・プランニング技能検定",

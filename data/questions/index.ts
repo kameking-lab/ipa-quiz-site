@@ -282,6 +282,7 @@ import { GENERAL1_QUESTIONS } from "./general1";
 import { GENERAL2_QUESTIONS } from "./general2";
 import { GENERAL3_QUESTIONS } from "./general3";
 import { MARITIME3_QUESTIONS } from "./maritime3";
+import { ZENSHO_ECO_QUESTIONS } from "./zensho-eco-79";
 import { LAND_SPECIAL2_QUESTIONS } from "./land-special2";
 import { LAND_SPECIAL3_QUESTIONS } from "./land-special3";
 import { CHIZAI2_QUESTIONS } from "./chizai2";
@@ -522,6 +523,7 @@ sm: SM_QUESTIONS,
 au: AU_QUESTIONS,
 fp2: FP2_QUESTIONS,
 fp1: FP1_QUESTIONS,
+"zensho-eco-79": ZENSHO_ECO_QUESTIONS,
 fp3: FP3_QUESTIONS,
 denken3: DENKEN3_QUESTIONS,
 ...(isExamPublished("denken2") ? { denken2: DENKEN2_QUESTIONS } : {}),
