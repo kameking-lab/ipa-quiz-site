@@ -1,6 +1,7 @@
 import { CHOICE_KEYS } from "@/lib/questions/answers";
 import type { ChoiceKey, Question, Season } from "@/lib/questions/types";
 import main2025 from "./2025-main.json";
+import makeup2025 from "./2025-makeup.json";
 import main2026 from "./2026-main.json";
 
 interface SourceRound {
@@ -71,5 +72,6 @@ function convert(year: number, season: Season, title: string, source: SourceRoun
 
 export const KYOTSU_JOHO1_QUESTIONS: Question[] = [
   ...convert(2025, "first", "本試験", main2025),
+  ...convert(2025, "second", "追・再試験", makeup2025),
   ...convert(2026, "first", "本試験", main2026),
 ];
