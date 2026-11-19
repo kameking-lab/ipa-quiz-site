@@ -369,6 +369,7 @@ export const EXAM_LABELS: Record<string, string> = {
 
 
     "kikai-hozen": "機械保全技能士 2級",
+    "apef4": "仏検 4級",
     "chuken3": "中国語検定 3級",
     "biz-career-logistics3": "ビジネス・キャリア検定 3級ロジスティクス管理",
     "tsukanshi": "通関士"

@@ -818,6 +818,7 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
 
 
 
+    "apef4": "実用フランス語技能検定試験 4級",
     "chuken3": "中国語検定試験 3級",
     "biz-career-logistics3": "ビジネス・キャリア検定試験 3級ロジスティクス管理",
     "tsukanshi": "通関士試験"
@@ -1190,6 +1191,7 @@ const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number)
 
 
 
+    "apef4": (c, y) => `仏検4級の公式過去問${c}問（${y}回分）。公式正答と独自解説で学べます。`,
     "chuken3": (c, y) => `中国語検定試験3級の公式過去問${c}問（${y}回分）。公式正答と独自解説で学べます。`,
     "biz-career-logistics3": (c, y) => `ビジネス・キャリア検定3級ロジスティクス管理の公式過去問${c}問（${y}回分）と全選択肢の独自解説。`,
     "tsukanshi": (c) => `通関士試験の${c}。公式正答どおりに収録。`

@@ -1759,6 +1759,14 @@ shihoshoshi: {
         { session: "pm", urlSlug: "pm", expectedQuestions: 103, label: "午後", categories: ["栄養教育論", "臨床栄養学", "公衆栄養学", "給食経営管理論", "応用力試験"] },
     ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
 },
+"apef4": {
+    code: "apef4", nameFull: "実用フランス語技能検定試験 4級", urlSlug: "apef4", level: "basic",
+    sessions: [{
+        session: "gakka", urlSlug: "gakka", expectedQuestions: 56, label: "試験問題",
+        categories: ["冠詞", "代名詞", "対話", "動詞の活用", "語順", "前置詞", "描写", "読解", "聞き取り（原稿）"],
+    }],
+    seasons: ["autumn"], yearRange: { start: 2015, end: 2015 },
+},
 "chuken3": {
     code: "chuken3", nameFull: "中国語検定試験 3級", urlSlug: "chuken3", level: "basic",
     sessions: [{

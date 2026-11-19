@@ -1807,6 +1807,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["第39回：問題PDFが公式で404。保存コピー利用はオーナー判断待ち"],
 },
   {
+    slug: "apef4", examCode: "apef4", shortName: "仏検 4級", fullName: "実用フランス語技能検定試験 4級",
+    domain: "personal-services", administrator: "公益財団法人フランス語教育振興協会", status: "live",
+    officialQuestionsUrl: "https://apefdapf.org/dapf/presentation/exemples#4",
+    officialReuseTermsUrl: "https://apefdapf.org/dapf/presentation/exemples",
+    reuseSummary: "2015年度秋季の公式問題・正答と独自解説を収録。聞き取りは公式原稿を読む形式で、公式音声も参照できます。",
+    attributionTemplate: "出典：公益財団法人フランス語教育振興協会 実用フランス語技能検定試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
+  {
     slug: "chuken3", examCode: "chuken3", shortName: "中国語検定 3級", fullName: "中国語検定試験 3級",
     domain: "personal-services", administrator: "一般財団法人日本中国語検定協会", status: "live",
     officialQuestionsUrl: "https://www.chuken.gr.jp/tcp/test.html",
