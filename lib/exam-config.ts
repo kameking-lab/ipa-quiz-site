@@ -1765,7 +1765,7 @@ shihoshoshi: {
         session: "gakka", urlSlug: "gakka", expectedQuestions: 56, label: "試験問題",
         categories: ["冠詞", "代名詞", "対話", "動詞の活用", "語順", "前置詞", "描写", "読解", "聞き取り（原稿）"],
     }],
-    seasons: ["autumn"], yearRange: { start: 2015, end: 2015 },
+    seasons: ["autumn"], yearRange: { start: 2011, end: 2015 },
 },
 "chuken3": {
     code: "chuken3", nameFull: "中国語検定試験 3級", urlSlug: "chuken3", level: "basic",
