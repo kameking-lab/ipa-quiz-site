@@ -1465,6 +1465,12 @@ shuwa: {
         categories: ["知的財産権", "モデリング", "マテリアルとレンダリング", "アニメーション", "映像表現", "ライティング", "写真とレタッチ", "デザインと表現", "色彩", "ディジタル画像"] }],
     seasons: ["early", "late"], yearRange: { start: 2025, end: 2026 },
 },
+"cg-creator-expert": {
+    code: "cg-creator-expert", nameFull: "CGクリエイター検定 エキスパート", urlSlug: "cg-creator-expert", level: "advanced",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 40, label: "エキスパート",
+        categories: ["知的財産権", "モデリング", "マテリアルとレンダリング", "アニメーション", "ライティングとカメラ", "合成", "写真撮影", "映像制作", "映像編集", "リアルタイムCG"] }],
+    seasons: ["early", "late"], yearRange: { start: 2025, end: 2026 },
+},
 "g-kentei": {
     code: "g-kentei", nameFull: "G検定（ジェネラリスト検定）", urlSlug: "g-kentei", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 0, label: "公式公開問題",

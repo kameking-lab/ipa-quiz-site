@@ -289,6 +289,7 @@ export const EXAM_LABELS: Record<string, string> = {
     denki1: "1級電気工事施工管理（第一次検定）",
     shuwa: "手話通訳士",
     "cg-creator-basic": "CGクリエイター検定 ベーシック",
+    "cg-creator-expert": "CGクリエイター検定 エキスパート",
     "g-kentei": "G検定",
     "jken-katsuyo1": "J検 情報活用1級",
     "jken-katsuyo2": "J検 情報活用2級",
