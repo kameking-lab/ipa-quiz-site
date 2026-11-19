@@ -1212,6 +1212,8 @@ kangoshi: {
         { session: "kogaku-b", urlSlug: "kogaku-b", expectedQuestions: 25, label: "無線工学B", categories: ["無線工学B"] },
         { session: "hoki", urlSlug: "hoki", expectedQuestions: 25, label: "法規", categories: ["法規"] },
         { session: "tiri", urlSlug: "tiri", expectedQuestions: 40, label: "地理", categories: ["地理"] },
+        { session: "eigo-hikki", urlSlug: "eigo-hikki", expectedQuestions: 24, label: "英語（筆記）", categories: ["英語"] },
+        { session: "eigo-kaiwa", urlSlug: "eigo-kaiwa", expectedQuestions: 7, label: "英会話（公式設問文）", categories: ["英語"] },
     ],
     seasons: ["march", "september"], yearRange: { start: 2025, end: 2026 },
 },
