@@ -1794,7 +1794,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://zensho.or.jp/examination/pastexams/economics/",
     officialReuseTermsUrl: "https://zensho.or.jp/examination/pastexams/economics/",
     status: "live",
-    reuseSummary: "第37回（2022年度）のビジネス基礎を、公式問題・模範解答と全選択肢の独自解説で収録。",
+    reuseSummary: "第37回（2022年度）のビジネス基礎とマーケティングを、公式問題・模範解答と全選択肢の独自解説で収録。",
     attributionTemplate: "出典：全国商業高等学校協会 商業経済検定試験。解説は過去問AIの独自作成。",
     remainingWork: [],
   },
