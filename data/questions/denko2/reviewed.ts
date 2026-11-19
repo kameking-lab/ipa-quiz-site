@@ -4,6 +4,7 @@ import p231029pm from "./reviewed/20231029-q02.json";
 import p230528am from "./reviewed/20230528-q01.json";
 import p230528pm from "./reviewed/20230528-q02.json";
 import p221030am from "./reviewed/20221030-q01.json";
+import p221030pm from "./reviewed/20221030-q02.json";
 import p2401 from "./reviewed/20240526-q01-05.json";
 import p2402 from "./reviewed/20240526-q06-10.json";
 import p2403 from "./reviewed/20240526-q11-15.json";
@@ -91,6 +92,10 @@ const papers: {
   {
     date: "20221030", year: 2022, season: "second", sitting: "am",
     batches: [p221030am],
+  },
+  {
+    date: "20221030", year: 2022, season: "second", sitting: "pm",
+    batches: [p221030pm],
   },
   {
     date: "20240526", year: 2024, season: "first" as const,
