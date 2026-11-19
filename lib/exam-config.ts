@@ -1474,6 +1474,19 @@ shuwa: {
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 46, label: "情報活用3級", categories: ["情報表現と処理手順", "パソコンの基礎", "インターネットの基礎", "インターネットの利用", "情報機器の基本操作", "情報社会とコンピュータ", "情報モラル"] }],
     seasons: ["first", "second"], yearRange: { start: 2025, end: 2026 },
 },
+"zensho-bido": {
+    code: "zensho-bido",
+    nameFull: "全商ビジネス文書実務検定試験",
+    urlSlug: "zensho-bido",
+    level: "basic",
+    sessions: [
+        { session: "gakka-I", urlSlug: "grade-1", expectedQuestions: 50, label: "1級 筆記", categories: ["筆記"] },
+        { session: "gakka-II", urlSlug: "grade-2", expectedQuestions: 50, label: "2級 筆記", categories: ["筆記"] },
+        { session: "gakka-III", urlSlug: "grade-3", expectedQuestions: 50, label: "3級 筆記", categories: ["筆記"] },
+    ],
+    seasons: ["first", "second"],
+    yearRange: { start: 2024, end: 2024 },
+},
 "jken-system": {
     code: "jken-system", nameFull: "情報検定（J検）情報システム試験", urlSlug: "jken-system", level: "basic",
     sessions: [

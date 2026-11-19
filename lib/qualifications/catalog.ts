@@ -1413,6 +1413,17 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
 },
   {
+    slug: "zensho-bido", examCode: "zensho-bido", shortName: "全商ビジネス文書実務検定",
+    fullName: "全国商業高等学校協会 ビジネス文書実務検定試験",
+    domain: "information-technology", administrator: "公益財団法人全国商業高等学校協会",
+    officialQuestionsUrl: "https://zensho.or.jp/examination/pastexams/bido/",
+    officialReuseTermsUrl: "https://zensho.or.jp/examination/pastexams/bido/",
+    status: "live",
+    reuseSummary: "1〜3級のビジネス文書部門の筆記問題から一部を収録。公式問題と模範解答に基づき、各選択肢の解説は独自作成。",
+    attributionTemplate: "出典：公益財団法人全国商業高等学校協会 ビジネス文書実務検定試験。",
+    remainingWork: [],
+  },
+  {
     slug: "jken-system", examCode: "jken-system", shortName: "J検 情報システム",
     fullName: "情報検定（J検）情報システム 基本スキル・プログラミングスキル・システムデザインスキル",
     domain: "information-technology", administrator: "一般財団法人職業教育・キャリア教育財団",
