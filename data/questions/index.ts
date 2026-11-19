@@ -342,6 +342,7 @@ import { TETSUDO_SHARYO2_QUESTIONS } from "./tetsudo-sharyo2";
 import { KIKAI_HOZEN_QUESTIONS } from "./kikai-hozen";
 import { QUESTIONS as KHK_HANBAI2_QUESTIONS } from "./khk-hanbai2";
 import { QUESTIONS as KIKENBUTSU_OTSU5_QUESTIONS } from "./kikenbutsu-otsu5";
+import { QUESTIONS as KIKENBUTSU_OTSU3_QUESTIONS } from "./kikenbutsu-otsu3";
 import { TSUKANSHI_QUESTIONS } from "./tsukanshi";
 
 export const QUESTIONS_BY_EXAM: Partial<Record<ExamCode, Question[]>> = {
@@ -714,6 +715,7 @@ biyoshi: BIYOSHI_QUESTIONS,
 
   ...(isExamPublished("khk-hanbai2") ? { "khk-hanbai2": KHK_HANBAI2_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
   ...(isExamPublished("kikenbutsu-otsu5") ? { "kikenbutsu-otsu5": KIKENBUTSU_OTSU5_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
+  ...(isExamPublished("kikenbutsu-otsu3") ? { "kikenbutsu-otsu3": KIKENBUTSU_OTSU3_QUESTIONS.filter(isPracticeReadyQuestion) } : {}),
 ...(isExamPublished("tsukanshi") ? { "tsukanshi": TSUKANSHI_QUESTIONS } : {})
 };
 
