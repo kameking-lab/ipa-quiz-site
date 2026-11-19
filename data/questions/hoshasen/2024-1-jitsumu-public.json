@@ -1,0 +1,2340 @@
+[
+  {
+    "id": "hoshasen-1-2024-jitsumu-q01-slot-A",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 401,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "時間tで一つの原子核が壊変する確率"
+    ],
+    "difficulty": 3,
+    "question": "時間tで一つの原子核が壊変する確率（公式問題 1・解答欄A）",
+    "choices": {
+      "ア": "λt(1−e^(−λt))",
+      "イ": "1−e^(−λt)",
+      "ウ": "e^(−λt)",
+      "エ": "ln(λt)·e^(−λt)",
+      "オ": "ln(λt)·(1−e^(−λt))"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "1（実務・解答欄A）",
+    "explanation": "時間tに生き残る確率はe^(−λt)である。その余事象の壊変確率は1−e^(−λt)となる。",
+    "choiceExplanations": {
+      "ア": "λtをさらに掛けると、短い時間ではλtに比例するという壊変確率の性質を満たさない。",
+      "イ": "時間tに生き残る確率はe^(−λt)である。その余事象の壊変確率は1−e^(−λt)となる。",
+      "ウ": "e^(−λt)は原子核が時間tまで壊変せずに残る確率である。",
+      "エ": "λtが1未満なら対数部分が負になり、正の確率を表せない。",
+      "オ": "短い正の時間ではλtの対数が負になり、壊変確率にはならない。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=2",
+    "sourcePages": [
+      2
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問1。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q01-p02-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問1の公式問題 PDF 2ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q01-slot-B",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 402,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "平均pnの正規近似で計数xを表す式"
+    ],
+    "difficulty": 3,
+    "question": "平均pnの正規近似で計数xを表す式（公式問題 1・解答欄B）",
+    "choices": {
+      "ア": "p(1−p)^(x−1)",
+      "イ": "n!pˣ(1−p)^(n−x)/((n−x)!x!)",
+      "ウ": "e^(−(x−pn)²/(2pn))/√(2πpn)",
+      "エ": "(pn)ˣe^(−pn)/x!"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "1（実務・解答欄B）",
+    "explanation": "正規分布で平均と分散をともにpnとすると、指数項が−(x−pn)²/(2pn)、規格化係数が1/√(2πpn)になる。",
+    "choiceExplanations": {
+      "ア": "この式は初めて成功する試行番号の幾何分布に対応する。",
+      "イ": "これは固定回数nの独立試行について成功数を表す二項分布の式である。",
+      "ウ": "正規分布で平均と分散をともにpnとすると、指数項が−(x−pn)²/(2pn)、規格化係数が1/√(2πpn)になる。",
+      "エ": "これは平均pnのポアソン分布であり、この設問はその正規分布近似を問うている。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=2",
+    "sourcePages": [
+      2
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問1。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q01-p02-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問1の公式問題 PDF 2ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q01-slot-C",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 403,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "正規近似における放射線計数の標準偏差"
+    ],
+    "difficulty": 3,
+    "question": "正規近似における放射線計数の標準偏差（公式問題 1・解答欄C）",
+    "choices": {
+      "ア": "√(pn)",
+      "イ": "√(1/(pn))",
+      "ウ": "√(e^(−pn))",
+      "エ": "√(2π/(pn))",
+      "オ": "√(2πpn)"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "1（実務・解答欄C）",
+    "explanation": "ポアソン分布の分散は平均と同じpnなので、標準偏差はその平方根√(pn)である。",
+    "choiceExplanations": {
+      "ア": "ポアソン分布の分散は平均と同じpnなので、標準偏差はその平方根√(pn)である。",
+      "イ": "√(1/(pn))は平均で割った相対標準偏差で、絶対的な計数の標準偏差ではない。",
+      "ウ": "e^(−pn)はポアソン計数が0になる確率で、その平方根は標準偏差を表さない。",
+      "エ": "この値は平均が増えると小さくなる。絶対計数の標準偏差は平均の平方根に比例して増える。",
+      "オ": "正規分布の規格化項に現れる2πは標準偏差に含めない。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=2",
+    "sourcePages": [
+      2
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問1。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q01-p02-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問1の公式問題 PDF 2ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q01-slot-D",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 404,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "離散分布の分散を定義する重み付き和"
+    ],
+    "difficulty": 3,
+    "question": "離散分布の分散を定義する重み付き和（公式問題 1・解答欄D）",
+    "choices": {
+      "ア": "Σ pn·P(x)",
+      "イ": "Σ (x−pn)·P(x)",
+      "ウ": "Σ (pn)²·P(x)",
+      "エ": "Σ (x−pn)²·P(x)",
+      "オ": "Σ (x−pn)²·P(x)²"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "officialQuestionLabel": "1（実務・解答欄D）",
+    "explanation": "計数値から平均pnを引いた偏差を二乗し、各計数値の確率で重み付けして合計する。",
+    "choiceExplanations": {
+      "ア": "確率の総和は1なので、これは平均pnしか表さない。",
+      "イ": "偏差を二乗せずに足すと正負が打ち消し合って0になる。",
+      "ウ": "すべての項で同じ平均の二乗を使っており、個々の計数値のばらつきを反映しない。",
+      "エ": "計数値から平均pnを引いた偏差を二乗し、各計数値の確率で重み付けして合計する。",
+      "オ": "期待値の重みは確率そのものであり、確率P(x)を二乗しない。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=2",
+    "sourcePages": [
+      2
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問1。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q01-p02-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問1の公式問題 PDF 2ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q01-slot-E",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 405,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "測定値の不確かさ伝播で入力に対応する感度係数"
+    ],
+    "difficulty": 3,
+    "question": "測定値の不確かさ伝播で入力に対応する感度係数（公式問題 1・解答欄E）",
+    "choices": {
+      "ア": "偏微分係数",
+      "イ": "誤差関数",
+      "ウ": "相関係数",
+      "エ": "分散関数",
+      "オ": "回帰係数",
+      "カ": "評価関数"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "1（実務・解答欄E）",
+    "explanation": "感度係数は、他の入力を固定したまま対象の入力について測定量を偏微分した値である。",
+    "choiceExplanations": {
+      "ア": "感度係数は、他の入力を固定したまま対象の入力について測定量を偏微分した値である。",
+      "イ": "正規分布の積分などに現れる関数である。この欄は「偏微分係数」に当たる。",
+      "ウ": "変数同士の線形な関連の強さを表す。この欄は「偏微分係数」に当たる。",
+      "エ": "分散を何らかの変数の関数としたものである。この欄は「偏微分係数」に当たる。",
+      "オ": "回帰モデルでデータから推定する関係の係数である。この欄は「偏微分係数」に当たる。",
+      "カ": "結果の良し悪しなどを評価するために用いる関数である。この欄は「偏微分係数」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=3",
+    "sourcePages": [
+      3
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問1。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q01-p03-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問1の公式問題 PDF 3ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q01-slot-F",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 406,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "計数率を効率で割る式の効率に対する感度係数の絶対値"
+    ],
+    "difficulty": 3,
+    "question": "計数率を効率で割る式の効率に対する感度係数の絶対値（公式問題 1・解答欄F）",
+    "choices": {
+      "ア": "1/z₁",
+      "イ": "z₁",
+      "ウ": "z₁z₂",
+      "エ": "z₂/z₁",
+      "オ": "z₁/z₂",
+      "カ": "z₂/z₁²",
+      "キ": "z₁/z₂²"
+    },
+    "answer": "キ",
+    "officialAnswerNumber": 7,
+    "officialQuestionLabel": "1（実務・解答欄F）",
+    "explanation": "y＝z₁/z₂をz₂で偏微分すると−z₁/z₂²になる。感度の絶対値はz₁/z₂²である。",
+    "choiceExplanations": {
+      "ア": "これは計数率の逆数であり、分母z₂を変えた場合の感度の式ではない。",
+      "イ": "分子にある計数率だけでは、効率の変化で感度がどれだけ変わるかを表せない。",
+      "ウ": "効率を増やすと放射能の推定値は小さくなる。乗算ではこの依存性を表せない。",
+      "エ": "z₂/z₁は元の測定式の逆数であり、偏微分ではない。",
+      "オ": "z₁/z₂は放射能の推定値そのものであり、効率に対する偏微分ではない。",
+      "カ": "分母の二乗にするべきなのは、微分の対象z₂である。",
+      "キ": "y＝z₁/z₂をz₂で偏微分すると−z₁/z₂²になる。感度の絶対値はz₁/z₂²である。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=3",
+    "sourcePages": [
+      3,
+      4
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問1。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q01-p03-official.png",
+      "/images/questions/hoshasen-1/2024/jitsumu/q01-p04-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問1の公式問題 PDF 3ページ",
+      "第1種 実務 問1の公式問題 PDF 4ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q01-slot-ア",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 407,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "効率0.100のとき正味計数率に対する感度係数"
+    ],
+    "difficulty": 3,
+    "question": "効率0.100のとき正味計数率に対する感度係数（公式問題 1・解答欄ア）",
+    "choices": {
+      "ア": "0.01",
+      "イ": "0.2",
+      "ウ": "0.5",
+      "エ": "1",
+      "オ": "3",
+      "カ": "6",
+      "キ": "10",
+      "ク": "18",
+      "ケ": "24",
+      "コ": "36",
+      "サ": "52",
+      "シ": "64",
+      "ス": "86",
+      "セ": "110",
+      "ソ": "140"
+    },
+    "answer": "キ",
+    "officialAnswerNumber": 7,
+    "officialQuestionLabel": "1（実務・解答欄ア）",
+    "explanation": "放射能は正味計数率を効率で割った値なので、計数率への感度は1/0.100＝10である。",
+    "choiceExplanations": {
+      "ア": "計数率への感度は効率の逆数1/0.100で求める。したがって0.01ではなく10になる。",
+      "イ": "計数率への感度は効率の逆数1/0.100で求める。したがって0.2ではなく10になる。",
+      "ウ": "計数率への感度は効率の逆数1/0.100で求める。したがって0.5ではなく10になる。",
+      "エ": "計数率への感度は効率の逆数1/0.100で求める。したがって1ではなく10になる。",
+      "オ": "計数率への感度は効率の逆数1/0.100で求める。したがって3ではなく10になる。",
+      "カ": "計数率への感度は効率の逆数1/0.100で求める。したがって6ではなく10になる。",
+      "キ": "放射能は正味計数率を効率で割った値なので、計数率への感度は1/0.100＝10である。",
+      "ク": "計数率への感度は効率の逆数1/0.100で求める。したがって18ではなく10になる。",
+      "ケ": "計数率への感度は効率の逆数1/0.100で求める。したがって24ではなく10になる。",
+      "コ": "計数率への感度は効率の逆数1/0.100で求める。したがって36ではなく10になる。",
+      "サ": "計数率への感度は効率の逆数1/0.100で求める。したがって52ではなく10になる。",
+      "シ": "計数率への感度は効率の逆数1/0.100で求める。したがって64ではなく10になる。",
+      "ス": "計数率への感度は効率の逆数1/0.100で求める。したがって86ではなく10になる。",
+      "セ": "計数率への感度は効率の逆数1/0.100で求める。したがって110ではなく10になる。",
+      "ソ": "計数率への感度は効率の逆数1/0.100で求める。したがって140ではなく10になる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=3",
+    "sourcePages": [
+      3,
+      4
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問1。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q01-p03-official.png",
+      "/images/questions/hoshasen-1/2024/jitsumu/q01-p04-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問1の公式問題 PDF 3ページ",
+      "第1種 実務 問1の公式問題 PDF 4ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q01-slot-イ",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 408,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "計数率と効率の不確かさを合成した放射能の標準不確かさ"
+    ],
+    "difficulty": 3,
+    "question": "計数率と効率の不確かさを合成した放射能の標準不確かさ（公式問題 1・解答欄イ）",
+    "choices": {
+      "ア": "0.01",
+      "イ": "0.2",
+      "ウ": "0.5",
+      "エ": "1",
+      "オ": "3",
+      "カ": "6",
+      "キ": "10",
+      "ク": "18",
+      "ケ": "24",
+      "コ": "36",
+      "サ": "52",
+      "シ": "64",
+      "ス": "86",
+      "セ": "110",
+      "ソ": "140"
+    },
+    "answer": "コ",
+    "officialAnswerNumber": 10,
+    "officialQuestionLabel": "1（実務・解答欄イ）",
+    "explanation": "計数率と効率の寄与はそれぞれ2×10＝20Bq、0.003×10,000＝30Bqである。独立なので√(20²＋30²)≒36Bqとなる。",
+    "choiceExplanations": {
+      "ア": "独立な二つの寄与20Bqと30Bqは、それぞれ二乗して足してから平方根を取る。したがって0.01ではなく36になる。",
+      "イ": "独立な二つの寄与20Bqと30Bqは、それぞれ二乗して足してから平方根を取る。したがって0.2ではなく36になる。",
+      "ウ": "独立な二つの寄与20Bqと30Bqは、それぞれ二乗して足してから平方根を取る。したがって0.5ではなく36になる。",
+      "エ": "独立な二つの寄与20Bqと30Bqは、それぞれ二乗して足してから平方根を取る。したがって1ではなく36になる。",
+      "オ": "独立な二つの寄与20Bqと30Bqは、それぞれ二乗して足してから平方根を取る。したがって3ではなく36になる。",
+      "カ": "独立な二つの寄与20Bqと30Bqは、それぞれ二乗して足してから平方根を取る。したがって6ではなく36になる。",
+      "キ": "独立な二つの寄与20Bqと30Bqは、それぞれ二乗して足してから平方根を取る。したがって10ではなく36になる。",
+      "ク": "独立な二つの寄与20Bqと30Bqは、それぞれ二乗して足してから平方根を取る。したがって18ではなく36になる。",
+      "ケ": "独立な二つの寄与20Bqと30Bqは、それぞれ二乗して足してから平方根を取る。したがって24ではなく36になる。",
+      "コ": "計数率と効率の寄与はそれぞれ2×10＝20Bq、0.003×10,000＝30Bqである。独立なので√(20²＋30²)≒36Bqとなる。",
+      "サ": "独立な二つの寄与20Bqと30Bqは、それぞれ二乗して足してから平方根を取る。したがって52ではなく36になる。",
+      "シ": "独立な二つの寄与20Bqと30Bqは、それぞれ二乗して足してから平方根を取る。したがって64ではなく36になる。",
+      "ス": "独立な二つの寄与20Bqと30Bqは、それぞれ二乗して足してから平方根を取る。したがって86ではなく36になる。",
+      "セ": "独立な二つの寄与20Bqと30Bqは、それぞれ二乗して足してから平方根を取る。したがって110ではなく36になる。",
+      "ソ": "独立な二つの寄与20Bqと30Bqは、それぞれ二乗して足してから平方根を取る。したがって140ではなく36になる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=3",
+    "sourcePages": [
+      3,
+      4
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問1。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q01-p03-official.png",
+      "/images/questions/hoshasen-1/2024/jitsumu/q01-p04-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問1の公式問題 PDF 3ページ",
+      "第1種 実務 問1の公式問題 PDF 4ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q01-slot-G",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 409,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "合成標準不確かさを拡張不確かさに換算する係数名"
+    ],
+    "difficulty": 3,
+    "question": "合成標準不確かさを拡張不確かさに換算する係数名（公式問題 1・解答欄G）",
+    "choices": {
+      "ア": "拡張",
+      "イ": "感度",
+      "ウ": "許容",
+      "エ": "信頼",
+      "オ": "包含",
+      "カ": "補正"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "officialQuestionLabel": "1（実務・解答欄G）",
+    "explanation": "合成標準不確かさuを拡張不確かさUに変換する倍率kを包含係数と呼ぶ。",
+    "choiceExplanations": {
+      "ア": "拡張は得られる不確かさの呼称に使われている。この欄は「包含」に当たる。",
+      "イ": "入力が結果にどれだけ影響するかを示す係数の名称である。この欄は「包含」に当たる。",
+      "ウ": "許される上限などを示す語である。この欄は「包含」に当たる。",
+      "エ": "測定値の区間の信頼水準などに使われる語である。この欄は「包含」に当たる。",
+      "オ": "合成標準不確かさuを拡張不確かさUに変換する倍率kを包含係数と呼ぶ。",
+      "カ": "測定量の偏りなどを調整する係数に使われる語である。この欄は「包含」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=3",
+    "sourcePages": [
+      3,
+      4
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問1。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q01-p03-official.png",
+      "/images/questions/hoshasen-1/2024/jitsumu/q01-p04-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問1の公式問題 PDF 3ページ",
+      "第1種 実務 問1の公式問題 PDF 4ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q01-slot-ウ",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 410,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "正規分布に近い場合、約95%を含む拡張不確かさの倍率"
+    ],
+    "difficulty": 3,
+    "question": "正規分布に近い場合、約95%を含む拡張不確かさの倍率（公式問題 1・解答欄ウ）",
+    "choices": {
+      "ア": "1.25",
+      "イ": "1.65",
+      "ウ": "2",
+      "エ": "2.58",
+      "オ": "3",
+      "カ": "4",
+      "キ": "5"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "1（実務・解答欄ウ）",
+    "explanation": "正規分布の中央95%は概ね平均±1.96標準偏差にあり、丸めると包含係数は2になる。",
+    "choiceExplanations": {
+      "ア": "正規分布の両側を合わせて5%残す点は標準偏差の約1.96倍である。したがって1.25ではなく2になる。",
+      "イ": "正規分布の両側を合わせて5%残す点は標準偏差の約1.96倍である。したがって1.65ではなく2になる。",
+      "ウ": "正規分布の中央95%は概ね平均±1.96標準偏差にあり、丸めると包含係数は2になる。",
+      "エ": "正規分布の両側を合わせて5%残す点は標準偏差の約1.96倍である。したがって2.58ではなく2になる。",
+      "オ": "正規分布の両側を合わせて5%残す点は標準偏差の約1.96倍である。したがって3ではなく2になる。",
+      "カ": "正規分布の両側を合わせて5%残す点は標準偏差の約1.96倍である。したがって4ではなく2になる。",
+      "キ": "正規分布の両側を合わせて5%残す点は標準偏差の約1.96倍である。したがって5ではなく2になる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=3",
+    "sourcePages": [
+      3,
+      4
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問1。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q01-p03-official.png",
+      "/images/questions/hoshasen-1/2024/jitsumu/q01-p04-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問1の公式問題 PDF 3ページ",
+      "第1種 実務 問1の公式問題 PDF 4ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q02-slot-A",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 411,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "放射線発生装置の規制で原問が用いる1cm線量当量率"
+    ],
+    "difficulty": 3,
+    "question": "放射線発生装置の規制で原問が用いる1cm線量当量率（公式問題 2・解答欄A）",
+    "choices": {
+      "ア": "200",
+      "イ": "400",
+      "ウ": "600",
+      "エ": "800",
+      "オ": "電子線及びX線",
+      "カ": "中性子線",
+      "キ": "重荷電粒子線",
+      "ク": "γ線"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "2（実務・解答欄A）",
+    "explanation": "原問の条件では、装置表面から10cmで測る1cm線量当量率が600nSv/hを超えるものを扱う。",
+    "choiceExplanations": {
+      "ア": "200nSv/hはこの設問で定める規制対象のしきいより低い。この欄は「600」に当たる。",
+      "イ": "400nSv/hはここでのしきいを200nSv/h下回る。この欄は「600」に当たる。",
+      "ウ": "原問の条件では、装置表面から10cmで測る1cm線量当量率が600nSv/hを超えるものを扱う。",
+      "エ": "800nSv/hは規制のしきいより高い。この欄は「600」に当たる。",
+      "オ": "低エネルギーの場合に原問の例外が適用される放射線の組である。この欄は「600」に当たる。",
+      "カ": "中性子は加速器の二次反応で生じ得る放射線である。この欄は「600」に当たる。",
+      "キ": "電子より重い荷電粒子のビームを指す。この欄は「600」に当たる。",
+      "ク": "核の遷移などから出る光子をγ線と呼ぶ。この欄は「600」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=5",
+    "sourcePages": [
+      5
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問2。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q02-p05-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問2の公式問題 PDF 5ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q02-slot-B",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 412,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "原問の規制で1MeV未満の場合の例外となる放射線"
+    ],
+    "difficulty": 3,
+    "question": "原問の規制で1MeV未満の場合の例外となる放射線（公式問題 2・解答欄B）",
+    "choices": {
+      "ア": "200",
+      "イ": "400",
+      "ウ": "600",
+      "エ": "800",
+      "オ": "電子線及びX線",
+      "カ": "中性子線",
+      "キ": "重荷電粒子線",
+      "ク": "γ線"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "officialQuestionLabel": "2（実務・解答欄B）",
+    "explanation": "原問では、発生する放射線がエネルギー1MeV未満の電子線やX線の場合を区別している。",
+    "choiceExplanations": {
+      "ア": "200nSv/hはこの設問で定める規制対象のしきいより低い。この欄は「電子線及びX線」に当たる。",
+      "イ": "400nSv/hはここでのしきいを200nSv/h下回る。この欄は「電子線及びX線」に当たる。",
+      "ウ": "600nSv/hは原問時点の規制上の条件に対応する値である。この欄は「電子線及びX線」に当たる。",
+      "エ": "800nSv/hは規制のしきいより高い。この欄は「電子線及びX線」に当たる。",
+      "オ": "原問では、発生する放射線がエネルギー1MeV未満の電子線やX線の場合を区別している。",
+      "カ": "中性子は加速器の二次反応で生じ得る放射線である。この欄は「電子線及びX線」に当たる。",
+      "キ": "電子より重い荷電粒子のビームを指す。この欄は「電子線及びX線」に当たる。",
+      "ク": "核の遷移などから出る光子をγ線と呼ぶ。この欄は「電子線及びX線」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=5",
+    "sourcePages": [
+      5
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問2。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q02-p05-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問2の公式問題 PDF 5ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q02-slot-C",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 413,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "医療で最も多く用いられる加速器の方式"
+    ],
+    "difficulty": 3,
+    "question": "医療で最も多く用いられる加速器の方式（公式問題 2・解答欄C）",
+    "choices": {
+      "ア": "直線加速装置",
+      "イ": "サイクロトロン",
+      "ウ": "シンクロトロン",
+      "エ": "シンクロサイクロトロン",
+      "オ": "ベータトロン",
+      "カ": "ファン・デ・グラーフ型加速装置",
+      "キ": "蓄積リング"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "2（実務・解答欄C）",
+    "explanation": "医療機関では、外部放射線治療用の電子線やX線を得る医療用直線加速装置が広く使われている。",
+    "choiceExplanations": {
+      "ア": "医療機関では、外部放射線治療用の電子線やX線を得る医療用直線加速装置が広く使われている。",
+      "イ": "荷電粒子を磁場で回しながら加速する装置であり、核医学の一部などで用いる。この欄は「直線加速装置」に当たる。",
+      "ウ": "磁場や高周波を粒子の運動に同期させて加速する装置である。この欄は「直線加速装置」に当たる。",
+      "エ": "サイクロトロン系で高周波周波数を変化させる方式である。この欄は「直線加速装置」に当たる。",
+      "オ": "変化する磁場による誘導で電子を加速する方式である。この欄は「直線加速装置」に当たる。",
+      "カ": "高い静電電圧により荷電粒子を加速する方式である。この欄は「直線加速装置」に当たる。",
+      "キ": "粒子を周回させビームとして蓄える装置である。この欄は「直線加速装置」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=5",
+    "sourcePages": [
+      5
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問2。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q02-p05-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問2の公式問題 PDF 5ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q03-slot-D",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 414,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "放射線取扱主任者が使用計画書で確認する数量"
+    ],
+    "difficulty": 3,
+    "question": "放射線取扱主任者が使用計画書で確認する数量（公式問題 3・解答欄D）",
+    "choices": {
+      "ア": "1日最大保管数量",
+      "イ": "1日最大使用数量",
+      "ウ": "1日最大廃棄数量",
+      "エ": "1日最大分取数量",
+      "オ": "放射性物質",
+      "カ": "ガラス器具",
+      "キ": "化学薬品",
+      "ク": "担体"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "3（実務・解答欄D）",
+    "explanation": "使用の場所で使用が許可された1日最大使用数量を超えないか確認する。",
+    "choiceExplanations": {
+      "ア": "保管の数量に関する概念で、使用時の照合欄とは異なる。この欄は「1日最大使用数量」に当たる。",
+      "イ": "使用の場所で使用が許可された1日最大使用数量を超えないか確認する。",
+      "ウ": "廃棄する数量に関する語である。この欄は「1日最大使用数量」に当たる。",
+      "エ": "試料から取り分ける数量に関する語である。この欄は「1日最大使用数量」に当たる。",
+      "オ": "放射線を出す核種を含む物質を指す。この欄は「1日最大使用数量」に当たる。",
+      "カ": "実験操作の練習にも使える機材である。この欄は「1日最大使用数量」に当たる。",
+      "キ": "練習で安全に扱える試薬を選定できる。この欄は「1日最大使用数量」に当たる。",
+      "ク": "必要に応じて試料の化学操作に加える物質を指す。この欄は「1日最大使用数量」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=10",
+    "sourcePages": [
+      10
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問3。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q03-p10-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問3の公式問題 PDF 10ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q03-slot-E",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 415,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "放射線作業のコールドランで使わないもの"
+    ],
+    "difficulty": 3,
+    "question": "放射線作業のコールドランで使わないもの（公式問題 3・解答欄E）",
+    "choices": {
+      "ア": "1日最大保管数量",
+      "イ": "1日最大使用数量",
+      "ウ": "1日最大廃棄数量",
+      "エ": "1日最大分取数量",
+      "オ": "放射性物質",
+      "カ": "ガラス器具",
+      "キ": "化学薬品",
+      "ク": "担体"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "officialQuestionLabel": "3（実務・解答欄E）",
+    "explanation": "コールドランは放射性物質を使わずに操作を予行し、手順の改善や習熟によって被ばくや汚染を抑える。",
+    "choiceExplanations": {
+      "ア": "保管の数量に関する概念で、使用時の照合欄とは異なる。この欄は「放射性物質」に当たる。",
+      "イ": "使用する場所で1日当たりに使える最大数量を示す。この欄は「放射性物質」に当たる。",
+      "ウ": "廃棄する数量に関する語である。この欄は「放射性物質」に当たる。",
+      "エ": "試料から取り分ける数量に関する語である。この欄は「放射性物質」に当たる。",
+      "オ": "コールドランは放射性物質を使わずに操作を予行し、手順の改善や習熟によって被ばくや汚染を抑える。",
+      "カ": "実験操作の練習にも使える機材である。この欄は「放射性物質」に当たる。",
+      "キ": "練習で安全に扱える試薬を選定できる。この欄は「放射性物質」に当たる。",
+      "ク": "必要に応じて試料の化学操作に加える物質を指す。この欄は「放射性物質」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=10",
+    "sourcePages": [
+      10
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問3。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q03-p10-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問3の公式問題 PDF 10ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q03-slot-F",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 416,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "γ線スペクトロメトリで真の同時計数によるサム効果が大きい場合の対処"
+    ],
+    "difficulty": 3,
+    "question": "γ線スペクトロメトリで真の同時計数によるサム効果が大きい場合の対処（公式問題 3・解答欄F）",
+    "choices": {
+      "ア": "試料体積を小さくする",
+      "イ": "測定時間を短くする",
+      "ウ": "測定時間を長くする",
+      "エ": "試料を検出器に近づけて測定する",
+      "オ": "試料を検出器から遠ざけて測定する"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "officialQuestionLabel": "3（実務・解答欄F）",
+    "explanation": "試料を遠ざけると検出器が見込む立体角が小さくなり、同じ壊変から複数の光子を同時に検出する確率が下がる。",
+    "choiceExplanations": {
+      "ア": "試料の大きさを変えるだけでは、逐次放出された複数光子を同時に捕まえる確率の低減を保証できない。",
+      "イ": "測定時間を短くしても、個々の壊変で複数光子が同時に計数される確率は変わらない。",
+      "ウ": "測定を長くすれば統計誤差は減るが、真の同時計数による系統的なサム効果は残る。",
+      "エ": "近づけると幾何学的な検出効率が高くなり、複数の光子を一度に検出する確率はむしろ増える。",
+      "オ": "試料を遠ざけると検出器が見込む立体角が小さくなり、同じ壊変から複数の光子を同時に検出する確率が下がる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=10",
+    "sourcePages": [
+      10
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問3。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q03-p10-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問3の公式問題 PDF 10ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q03-slot-G",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 417,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "使用場所を一時的に変更した際に原問が問う届出"
+    ],
+    "difficulty": 3,
+    "question": "使用場所を一時的に変更した際に原問が問う届出（公式問題 3・解答欄G）",
+    "choices": {
+      "ア": "軽微な変更に係る変更届",
+      "イ": "放射線障害予防規程変更届",
+      "ウ": "使用の場所の一時的変更届",
+      "エ": "変更許可申請書"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "3（実務・解答欄G）",
+    "explanation": "原問が問う変更後30日以内の届出は、使用の場所の一時的変更届である。",
+    "choiceExplanations": {
+      "ア": "許可事項の軽微な変更の届出に使う。この欄は「使用の場所の一時的変更届」に当たる。",
+      "イ": "予防規程を変更した場合に用いる。この欄は「使用の場所の一時的変更届」に当たる。",
+      "ウ": "原問が問う変更後30日以内の届出は、使用の場所の一時的変更届である。",
+      "エ": "事前の許可を申請する書類であり、原問の変更後の届出とは異なる。この欄は「使用の場所の一時的変更届」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=10",
+    "sourcePages": [
+      10
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問3。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q03-p10-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問3の公式問題 PDF 10ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q03-slot-H",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 418,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "一時的な使用が終わった場所に残る放射性同位元素等の管理"
+    ],
+    "difficulty": 3,
+    "question": "一時的な使用が終わった場所に残る放射性同位元素等の管理（公式問題 3・解答欄H）",
+    "choices": {
+      "ア": "当該実験室で廃棄しなければならない",
+      "イ": "当該実験室の施錠できる棚に保管しなければならない",
+      "ウ": "放射線管理担当者に引き渡さなければならない",
+      "エ": "管理区域に移さなければならない"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "officialQuestionLabel": "3（実務・解答欄H）",
+    "explanation": "臨時に使った場所から回収できる放射性同位元素や固体状の汚染物は、速やかに管理区域へ移す。",
+    "choiceExplanations": {
+      "ア": "使用を終えた実験室で廃棄する手順ではなく、持ち帰り可能なら管理された区域へ移す。",
+      "イ": "施錠だけでは変更前の管理区域に戻すことに代わらない。",
+      "ウ": "担当者への引渡しだけでなく、原問は放射性同位元素等を移す先が管理区域であることを問う。",
+      "エ": "臨時に使った場所から回収できる放射性同位元素や固体状の汚染物は、速やかに管理区域へ移す。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=10",
+    "sourcePages": [
+      10
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問3。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q03-p10-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問3の公式問題 PDF 10ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q04-slot-A",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 419,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "重大事故の背後に軽微な事故やヒヤリ・ハットが多数ある経験則"
+    ],
+    "difficulty": 3,
+    "question": "重大事故の背後に軽微な事故やヒヤリ・ハットが多数ある経験則（公式問題 4・解答欄A）",
+    "choices": {
+      "ア": "アナウンス効果",
+      "イ": "安全神話",
+      "ウ": "正常性バイアス",
+      "エ": "ハインリッヒの法則",
+      "オ": "マーフィーの法則",
+      "カ": "バタフライ効果",
+      "キ": "安全対策書",
+      "ク": "放射性同位元素の使用届",
+      "ケ": "放射線障害予防規程",
+      "コ": "放射線防護計画書",
+      "サ": "法人の定款"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "officialQuestionLabel": "4（実務・解答欄A）",
+    "explanation": "軽微な事故やヒヤリ・ハットから危険の兆候を見つけ、重大事故を防ぐ考え方である。",
+    "choiceExplanations": {
+      "ア": "情報を伝えたことが人の行動などに影響を与える現象である。この欄は「ハインリッヒの法則」に当たる。",
+      "イ": "危険がほとんどないと過信する考えを指す。この欄は「ハインリッヒの法則」に当たる。",
+      "ウ": "異常を過小評価し、正常時の延長で捉えようとする認知傾向である。この欄は「ハインリッヒの法則」に当たる。",
+      "エ": "軽微な事故やヒヤリ・ハットから危険の兆候を見つけ、重大事故を防ぐ考え方である。",
+      "オ": "起こり得る失敗は起こるという趣旨の経験則である。この欄は「ハインリッヒの法則」に当たる。",
+      "カ": "初期の小さな変動が後に大きな差につながることを表す。この欄は「ハインリッヒの法則」に当たる。",
+      "キ": "安全措置をまとめた文書の一般的な呼称である。この欄は「ハインリッヒの法則」に当たる。",
+      "ク": "放射性同位元素の使用に関する手続書類である。この欄は「ハインリッヒの法則」に当たる。",
+      "ケ": "放射線障害の防止に必要な管理手順や組織を定める規程である。この欄は「ハインリッヒの法則」に当たる。",
+      "コ": "防護の計画を表す一般的な名称である。この欄は「ハインリッヒの法則」に当たる。",
+      "サ": "法人の組織や運営の基本を定める文書である。この欄は「ハインリッヒの法則」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=11",
+    "sourcePages": [
+      11
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問4。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q04-p11-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問4の公式問題 PDF 11ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q04-slot-B",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 420,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "放射線障害防止のための業務改善を担う組織と責任者を定める文書"
+    ],
+    "difficulty": 3,
+    "question": "放射線障害防止のための業務改善を担う組織と責任者を定める文書（公式問題 4・解答欄B）",
+    "choices": {
+      "ア": "アナウンス効果",
+      "イ": "安全神話",
+      "ウ": "正常性バイアス",
+      "エ": "ハインリッヒの法則",
+      "オ": "マーフィーの法則",
+      "カ": "バタフライ効果",
+      "キ": "安全対策書",
+      "ク": "放射性同位元素の使用届",
+      "ケ": "放射線障害予防規程",
+      "コ": "放射線防護計画書",
+      "サ": "法人の定款"
+    },
+    "answer": "ケ",
+    "officialAnswerNumber": 9,
+    "officialQuestionLabel": "4（実務・解答欄B）",
+    "explanation": "対象事業者は、業務改善に関する組織や責任者を放射線障害予防規程で定める。",
+    "choiceExplanations": {
+      "ア": "情報を伝えたことが人の行動などに影響を与える現象である。この欄は「放射線障害予防規程」に当たる。",
+      "イ": "危険がほとんどないと過信する考えを指す。この欄は「放射線障害予防規程」に当たる。",
+      "ウ": "異常を過小評価し、正常時の延長で捉えようとする認知傾向である。この欄は「放射線障害予防規程」に当たる。",
+      "エ": "軽微な事例が重大事故を防ぐための手掛かりになるという経験則である。この欄は「放射線障害予防規程」に当たる。",
+      "オ": "起こり得る失敗は起こるという趣旨の経験則である。この欄は「放射線障害予防規程」に当たる。",
+      "カ": "初期の小さな変動が後に大きな差につながることを表す。この欄は「放射線障害予防規程」に当たる。",
+      "キ": "安全措置をまとめた文書の一般的な呼称である。この欄は「放射線障害予防規程」に当たる。",
+      "ク": "放射性同位元素の使用に関する手続書類である。この欄は「放射線障害予防規程」に当たる。",
+      "ケ": "対象事業者は、業務改善に関する組織や責任者を放射線障害予防規程で定める。",
+      "コ": "防護の計画を表す一般的な名称である。この欄は「放射線障害予防規程」に当たる。",
+      "サ": "法人の組織や運営の基本を定める文書である。この欄は「放射線障害予防規程」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=11",
+    "sourcePages": [
+      11
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問4。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q04-p11-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問4の公式問題 PDF 11ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q05-slot-A",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 421,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "カリウム40のβ⁻壊変で生じる娘核種"
+    ],
+    "difficulty": 3,
+    "question": "カリウム40のβ⁻壊変で生じる娘核種（公式問題 5・解答欄A）",
+    "choices": {
+      "ア": "³⁹Ar",
+      "イ": "⁴⁰Ar",
+      "ウ": "³⁹K",
+      "エ": "⁴¹K",
+      "オ": "⁴⁰Ca",
+      "カ": "⁴¹Ca"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "officialQuestionLabel": "5（実務・解答欄A）",
+    "explanation": "β⁻壊変では質量数を40に保ったまま原子番号が19から20に増えるため、カルシウム40になる。",
+    "choiceExplanations": {
+      "ア": "質量数39のアルゴンで、質量数40の壊変では生成しない。この欄は「⁴⁰Ca」に当たる。",
+      "イ": "カリウム40が電子を捕獲して原子番号を1減らした場合の娘核種である。この欄は「⁴⁰Ca」に当たる。",
+      "ウ": "カリウムの質量数39の同位体であり、原問の壊変の質量数40とは異なる。この欄は「⁴⁰Ca」に当たる。",
+      "エ": "カリウムの質量数41の同位体である。この欄は「⁴⁰Ca」に当たる。",
+      "オ": "β⁻壊変では質量数を40に保ったまま原子番号が19から20に増えるため、カルシウム40になる。",
+      "カ": "カルシウムの質量数41の同位体であり、質量数が合わない。この欄は「⁴⁰Ca」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=14",
+    "sourcePages": [
+      14
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問5。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q05-p14-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問5の公式問題 PDF 14ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q05-slot-B",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 422,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "カリウム40の軌道電子捕獲で生じる娘核種"
+    ],
+    "difficulty": 3,
+    "question": "カリウム40の軌道電子捕獲で生じる娘核種（公式問題 5・解答欄B）",
+    "choices": {
+      "ア": "³⁹Ar",
+      "イ": "⁴⁰Ar",
+      "ウ": "³⁹K",
+      "エ": "⁴¹K",
+      "オ": "⁴⁰Ca",
+      "カ": "⁴¹Ca"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "5（実務・解答欄B）",
+    "explanation": "軌道電子捕獲では質量数を40に保ったまま原子番号が19から18に減るため、アルゴン40になる。",
+    "choiceExplanations": {
+      "ア": "質量数39のアルゴンで、質量数40の壊変では生成しない。この欄は「⁴⁰Ar」に当たる。",
+      "イ": "軌道電子捕獲では質量数を40に保ったまま原子番号が19から18に減るため、アルゴン40になる。",
+      "ウ": "カリウムの質量数39の同位体であり、原問の壊変の質量数40とは異なる。この欄は「⁴⁰Ar」に当たる。",
+      "エ": "カリウムの質量数41の同位体である。この欄は「⁴⁰Ar」に当たる。",
+      "オ": "カリウム40がβ⁻壊変して原子番号を1増やした場合の娘核種である。この欄は「⁴⁰Ar」に当たる。",
+      "カ": "カルシウムの質量数41の同位体であり、質量数が合わない。この欄は「⁴⁰Ar」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=14",
+    "sourcePages": [
+      14
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問5。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q05-p14-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問5の公式問題 PDF 14ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q05-slot-C",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 423,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "摂取したカリウムの主な排出経路"
+    ],
+    "difficulty": 3,
+    "question": "摂取したカリウムの主な排出経路（公式問題 5・解答欄C）",
+    "choices": {
+      "ア": "尿",
+      "イ": "便",
+      "ウ": "胆汁",
+      "エ": "汗",
+      "オ": "呼気"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "5（実務・解答欄C）",
+    "explanation": "体内のカリウムの調節には腎臓が大きく関わり、排出の多くは尿を介する。",
+    "choiceExplanations": {
+      "ア": "体内のカリウムの調節には腎臓が大きく関わり、排出の多くは尿を介する。",
+      "イ": "体外排出に寄与するが通常は腎臓からの排泄より少ない。この欄は「尿」に当たる。",
+      "ウ": "消化液の一つで、カリウムの排出の主経路ではない。この欄は「尿」に当たる。",
+      "エ": "汗からも失われることはあるが、通常は尿からの排出が多い。この欄は「尿」に当たる。",
+      "オ": "呼吸で出す二酸化炭素や水分と異なり、カリウムの主要な排出経路ではない。この欄は「尿」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=14",
+    "sourcePages": [
+      14
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問5。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q05-p14-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問5の公式問題 PDF 14ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q05-slot-D",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 424,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "日本で食物摂取による自然放射線の寄与がカリウム40より大きい核種"
+    ],
+    "difficulty": 3,
+    "question": "日本で食物摂取による自然放射線の寄与がカリウム40より大きい核種（公式問題 5・解答欄D）",
+    "choices": {
+      "ア": "³H",
+      "イ": "¹⁴C",
+      "ウ": "¹³¹I",
+      "エ": "²¹⁰Po",
+      "オ": "²³⁵U"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "officialQuestionLabel": "5（実務・解答欄D）",
+    "explanation": "日本人の自然放射線の食品摂取による線量では、魚介類などに含まれるポロニウム210の寄与が大きい。",
+    "choiceExplanations": {
+      "ア": "トリチウムも自然界に存在するが、この比較で食物による線量を最も多く占める核種ではない。この欄は「²¹⁰Po」に当たる。",
+      "イ": "炭素14は食物にも含まれるが、この比較で最も寄与する核種より線量が小さい。この欄は「²¹⁰Po」に当たる。",
+      "ウ": "ヨウ素131は通常の食事による自然放射線線量の主要核種ではない。この欄は「²¹⁰Po」に当たる。",
+      "エ": "日本人の自然放射線の食品摂取による線量では、魚介類などに含まれるポロニウム210の寄与が大きい。",
+      "オ": "天然ウランの一同位体であり、この比較で最も寄与する核種ではない。この欄は「²¹⁰Po」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=14",
+    "sourcePages": [
+      14
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問5。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q05-p14-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問5の公式問題 PDF 14ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q05-slot-E",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 425,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "ホールボディカウンタでカリウム40から出る光子を測る装置"
+    ],
+    "difficulty": 3,
+    "question": "ホールボディカウンタでカリウム40から出る光子を測る装置（公式問題 5・解答欄E）",
+    "choices": {
+      "ア": "Si半導体検出器",
+      "イ": "NaI(Tl)シンチレーション検出器",
+      "ウ": "電離箱",
+      "エ": "ガスフロー比例計数管"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "5（実務・解答欄E）",
+    "explanation": "大型NaI(Tl)結晶はγ線を吸収して発光し、ホールボディカウンタで体内の核種による光子を測定できる。",
+    "choiceExplanations": {
+      "ア": "一般に低エネルギー光子や荷電粒子の検出に用いる型があり、原問が想定する大体積のγ線検出器とは異なる。この欄は「NaI(Tl)シンチレーション検出器」に当たる。",
+      "イ": "大型NaI(Tl)結晶はγ線を吸収して発光し、ホールボディカウンタで体内の核種による光子を測定できる。",
+      "ウ": "気体中の電離電荷を集め、主に線量や線量率の測定などに使う。この欄は「NaI(Tl)シンチレーション検出器」に当たる。",
+      "エ": "気体の電離増倍を利用し、表面汚染の計測などで使う。この欄は「NaI(Tl)シンチレーション検出器」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=15",
+    "sourcePages": [
+      15
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問5。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q05-p15-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問5の公式問題 PDF 15ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q05-slot-ア",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 426,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "体内のカリウム150gに含まれるカリウム40の物質量"
+    ],
+    "difficulty": 3,
+    "question": "体内のカリウム150gに含まれるカリウム40の物質量（公式問題 5・解答欄ア）",
+    "choices": {
+      "ア": "1.2×10⁻⁴",
+      "イ": "4.6×10⁻⁴",
+      "ウ": "7.6×10⁻³",
+      "エ": "1.3×10⁻³",
+      "オ": "6.7×10⁻²",
+      "カ": "9.2×10⁻²",
+      "キ": "8.0×10⁻¹",
+      "ク": "1.0×10⁰",
+      "ケ": "2.3×10⁰",
+      "コ": "2.2×10¹",
+      "サ": "5.2×10¹",
+      "シ": "8.3×10¹",
+      "ス": "3.3×10²",
+      "セ": "4.6×10²",
+      "ソ": "6.5×10²"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "5（実務・解答欄ア）",
+    "explanation": "総カリウムは150÷39.1≒3.84molである。この値に存在割合0.00012を掛けると約4.6×10⁻⁴molになる。",
+    "choiceExplanations": {
+      "ア": "試料中のカリウムの物質量150/39.1molに、カリウム40の割合0.00012を掛ける。したがって1.2×10⁻⁴ではなく4.6×10⁻⁴になる。",
+      "イ": "総カリウムは150÷39.1≒3.84molである。この値に存在割合0.00012を掛けると約4.6×10⁻⁴molになる。",
+      "ウ": "試料中のカリウムの物質量150/39.1molに、カリウム40の割合0.00012を掛ける。したがって7.6×10⁻³ではなく4.6×10⁻⁴になる。",
+      "エ": "試料中のカリウムの物質量150/39.1molに、カリウム40の割合0.00012を掛ける。したがって1.3×10⁻³ではなく4.6×10⁻⁴になる。",
+      "オ": "試料中のカリウムの物質量150/39.1molに、カリウム40の割合0.00012を掛ける。したがって6.7×10⁻²ではなく4.6×10⁻⁴になる。",
+      "カ": "試料中のカリウムの物質量150/39.1molに、カリウム40の割合0.00012を掛ける。したがって9.2×10⁻²ではなく4.6×10⁻⁴になる。",
+      "キ": "試料中のカリウムの物質量150/39.1molに、カリウム40の割合0.00012を掛ける。したがって8.0×10⁻¹ではなく4.6×10⁻⁴になる。",
+      "ク": "試料中のカリウムの物質量150/39.1molに、カリウム40の割合0.00012を掛ける。したがって1.0×10⁰ではなく4.6×10⁻⁴になる。",
+      "ケ": "試料中のカリウムの物質量150/39.1molに、カリウム40の割合0.00012を掛ける。したがって2.3×10⁰ではなく4.6×10⁻⁴になる。",
+      "コ": "試料中のカリウムの物質量150/39.1molに、カリウム40の割合0.00012を掛ける。したがって2.2×10¹ではなく4.6×10⁻⁴になる。",
+      "サ": "試料中のカリウムの物質量150/39.1molに、カリウム40の割合0.00012を掛ける。したがって5.2×10¹ではなく4.6×10⁻⁴になる。",
+      "シ": "試料中のカリウムの物質量150/39.1molに、カリウム40の割合0.00012を掛ける。したがって8.3×10¹ではなく4.6×10⁻⁴になる。",
+      "ス": "試料中のカリウムの物質量150/39.1molに、カリウム40の割合0.00012を掛ける。したがって3.3×10²ではなく4.6×10⁻⁴になる。",
+      "セ": "試料中のカリウムの物質量150/39.1molに、カリウム40の割合0.00012を掛ける。したがって4.6×10²ではなく4.6×10⁻⁴になる。",
+      "ソ": "試料中のカリウムの物質量150/39.1molに、カリウム40の割合0.00012を掛ける。したがって6.5×10²ではなく4.6×10⁻⁴になる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=15",
+    "sourcePages": [
+      15
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問5。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q05-p15-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問5の公式問題 PDF 15ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q05-slot-イ",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 427,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "体内のカリウム40のγ線による年間吸収エネルギー"
+    ],
+    "difficulty": 3,
+    "question": "体内のカリウム40のγ線による年間吸収エネルギー（公式問題 5・解答欄イ）",
+    "choices": {
+      "ア": "1.2×10⁻⁴",
+      "イ": "4.6×10⁻⁴",
+      "ウ": "7.6×10⁻³",
+      "エ": "1.3×10⁻³",
+      "オ": "6.7×10⁻²",
+      "カ": "9.2×10⁻²",
+      "キ": "8.0×10⁻¹",
+      "ク": "1.0×10⁰",
+      "ケ": "2.3×10⁰",
+      "コ": "2.2×10¹",
+      "サ": "5.2×10¹",
+      "シ": "8.3×10¹",
+      "ス": "3.3×10²",
+      "セ": "4.6×10²",
+      "ソ": "6.5×10²"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "officialQuestionLabel": "5（実務・解答欄イ）",
+    "explanation": "毎秒5.1×10²個に1年の秒数、光子1個当たり1.46×1.6×10⁻¹³J、吸収割合1/3を掛け、約1.3×10⁻³J/年になる。",
+    "choiceExplanations": {
+      "ア": "γ線光子の個数を毎年の個数へ直し、光子エネルギーと吸収割合1/3を掛ける。したがって1.2×10⁻⁴ではなく1.3×10⁻³になる。",
+      "イ": "γ線光子の個数を毎年の個数へ直し、光子エネルギーと吸収割合1/3を掛ける。したがって4.6×10⁻⁴ではなく1.3×10⁻³になる。",
+      "ウ": "γ線光子の個数を毎年の個数へ直し、光子エネルギーと吸収割合1/3を掛ける。したがって7.6×10⁻³ではなく1.3×10⁻³になる。",
+      "エ": "毎秒5.1×10²個に1年の秒数、光子1個当たり1.46×1.6×10⁻¹³J、吸収割合1/3を掛け、約1.3×10⁻³J/年になる。",
+      "オ": "γ線光子の個数を毎年の個数へ直し、光子エネルギーと吸収割合1/3を掛ける。したがって6.7×10⁻²ではなく1.3×10⁻³になる。",
+      "カ": "γ線光子の個数を毎年の個数へ直し、光子エネルギーと吸収割合1/3を掛ける。したがって9.2×10⁻²ではなく1.3×10⁻³になる。",
+      "キ": "γ線光子の個数を毎年の個数へ直し、光子エネルギーと吸収割合1/3を掛ける。したがって8.0×10⁻¹ではなく1.3×10⁻³になる。",
+      "ク": "γ線光子の個数を毎年の個数へ直し、光子エネルギーと吸収割合1/3を掛ける。したがって1.0×10⁰ではなく1.3×10⁻³になる。",
+      "ケ": "γ線光子の個数を毎年の個数へ直し、光子エネルギーと吸収割合1/3を掛ける。したがって2.3×10⁰ではなく1.3×10⁻³になる。",
+      "コ": "γ線光子の個数を毎年の個数へ直し、光子エネルギーと吸収割合1/3を掛ける。したがって2.2×10¹ではなく1.3×10⁻³になる。",
+      "サ": "γ線光子の個数を毎年の個数へ直し、光子エネルギーと吸収割合1/3を掛ける。したがって5.2×10¹ではなく1.3×10⁻³になる。",
+      "シ": "γ線光子の個数を毎年の個数へ直し、光子エネルギーと吸収割合1/3を掛ける。したがって8.3×10¹ではなく1.3×10⁻³になる。",
+      "ス": "γ線光子の個数を毎年の個数へ直し、光子エネルギーと吸収割合1/3を掛ける。したがって3.3×10²ではなく1.3×10⁻³になる。",
+      "セ": "γ線光子の個数を毎年の個数へ直し、光子エネルギーと吸収割合1/3を掛ける。したがって4.6×10²ではなく1.3×10⁻³になる。",
+      "ソ": "γ線光子の個数を毎年の個数へ直し、光子エネルギーと吸収割合1/3を掛ける。したがって6.5×10²ではなく1.3×10⁻³になる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=15",
+    "sourcePages": [
+      15
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問5。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q05-p15-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問5の公式問題 PDF 15ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q05-slot-ウ",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 428,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "体内のカリウム40のγ線による全身の年間吸収線量"
+    ],
+    "difficulty": 3,
+    "question": "体内のカリウム40のγ線による全身の年間吸収線量（公式問題 5・解答欄ウ）",
+    "choices": {
+      "ア": "1.2×10⁻⁴",
+      "イ": "4.6×10⁻⁴",
+      "ウ": "7.6×10⁻³",
+      "エ": "1.3×10⁻³",
+      "オ": "6.7×10⁻²",
+      "カ": "9.2×10⁻²",
+      "キ": "8.0×10⁻¹",
+      "ク": "1.0×10⁰",
+      "ケ": "2.3×10⁰",
+      "コ": "2.2×10¹",
+      "サ": "5.2×10¹",
+      "シ": "8.3×10¹",
+      "ス": "3.3×10²",
+      "セ": "4.6×10²",
+      "ソ": "6.5×10²"
+    },
+    "answer": "コ",
+    "officialAnswerNumber": 10,
+    "officialQuestionLabel": "5（実務・解答欄ウ）",
+    "explanation": "γ線の年間吸収エネルギー約1.3×10⁻³Jを60kgで割る。GyからμGyへ換算すると約22μGy/年となる。",
+    "choiceExplanations": {
+      "ア": "年間吸収エネルギー約1.3×10⁻³Jを体重60kgで割り、10⁶倍してμGyに直す。したがって1.2×10⁻⁴ではなく2.2×10¹になる。",
+      "イ": "年間吸収エネルギー約1.3×10⁻³Jを体重60kgで割り、10⁶倍してμGyに直す。したがって4.6×10⁻⁴ではなく2.2×10¹になる。",
+      "ウ": "年間吸収エネルギー約1.3×10⁻³Jを体重60kgで割り、10⁶倍してμGyに直す。したがって7.6×10⁻³ではなく2.2×10¹になる。",
+      "エ": "年間吸収エネルギー約1.3×10⁻³Jを体重60kgで割り、10⁶倍してμGyに直す。したがって1.3×10⁻³ではなく2.2×10¹になる。",
+      "オ": "年間吸収エネルギー約1.3×10⁻³Jを体重60kgで割り、10⁶倍してμGyに直す。したがって6.7×10⁻²ではなく2.2×10¹になる。",
+      "カ": "年間吸収エネルギー約1.3×10⁻³Jを体重60kgで割り、10⁶倍してμGyに直す。したがって9.2×10⁻²ではなく2.2×10¹になる。",
+      "キ": "年間吸収エネルギー約1.3×10⁻³Jを体重60kgで割り、10⁶倍してμGyに直す。したがって8.0×10⁻¹ではなく2.2×10¹になる。",
+      "ク": "年間吸収エネルギー約1.3×10⁻³Jを体重60kgで割り、10⁶倍してμGyに直す。したがって1.0×10⁰ではなく2.2×10¹になる。",
+      "ケ": "年間吸収エネルギー約1.3×10⁻³Jを体重60kgで割り、10⁶倍してμGyに直す。したがって2.3×10⁰ではなく2.2×10¹になる。",
+      "コ": "γ線の年間吸収エネルギー約1.3×10⁻³Jを60kgで割る。GyからμGyへ換算すると約22μGy/年となる。",
+      "サ": "年間吸収エネルギー約1.3×10⁻³Jを体重60kgで割り、10⁶倍してμGyに直す。したがって5.2×10¹ではなく2.2×10¹になる。",
+      "シ": "年間吸収エネルギー約1.3×10⁻³Jを体重60kgで割り、10⁶倍してμGyに直す。したがって8.3×10¹ではなく2.2×10¹になる。",
+      "ス": "年間吸収エネルギー約1.3×10⁻³Jを体重60kgで割り、10⁶倍してμGyに直す。したがって3.3×10²ではなく2.2×10¹になる。",
+      "セ": "年間吸収エネルギー約1.3×10⁻³Jを体重60kgで割り、10⁶倍してμGyに直す。したがって4.6×10²ではなく2.2×10¹になる。",
+      "ソ": "年間吸収エネルギー約1.3×10⁻³Jを体重60kgで割り、10⁶倍してμGyに直す。したがって6.5×10²ではなく2.2×10¹になる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=15",
+    "sourcePages": [
+      15
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問5。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q05-p15-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問5の公式問題 PDF 15ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q05-slot-エ",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 429,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "体内のカリウム40のβ線による年間吸収エネルギー"
+    ],
+    "difficulty": 3,
+    "question": "体内のカリウム40のβ線による年間吸収エネルギー（公式問題 5・解答欄エ）",
+    "choices": {
+      "ア": "3.5×10⁻³",
+      "イ": "6.7×10⁻³",
+      "ウ": "9.2×10⁻³",
+      "エ": "1.2×10⁻²",
+      "オ": "4.8×10⁻²",
+      "カ": "7.6×10⁻²",
+      "キ": "5.0×10⁻²",
+      "ク": "1.0×10⁰",
+      "ケ": "5.0×10⁰",
+      "コ": "5.8×10¹",
+      "サ": "1.1×10²",
+      "シ": "1.5×10²",
+      "ス": "2.0×10²",
+      "セ": "8.0×10²",
+      "ソ": "1.3×10³"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "officialQuestionLabel": "5（実務・解答欄エ）",
+    "explanation": "毎秒4.1×10³個のβ粒子について、1年の秒数と平均エネルギー0.58×1.6×10⁻¹³Jを掛ける。全て吸収される条件なので約1.2×10⁻²J/年である。",
+    "choiceExplanations": {
+      "ア": "年間のβ粒子の数に、β線の平均エネルギーをジュールに換算して掛ける。したがって3.5×10⁻³ではなく1.2×10⁻²になる。",
+      "イ": "年間のβ粒子の数に、β線の平均エネルギーをジュールに換算して掛ける。したがって6.7×10⁻³ではなく1.2×10⁻²になる。",
+      "ウ": "年間のβ粒子の数に、β線の平均エネルギーをジュールに換算して掛ける。したがって9.2×10⁻³ではなく1.2×10⁻²になる。",
+      "エ": "毎秒4.1×10³個のβ粒子について、1年の秒数と平均エネルギー0.58×1.6×10⁻¹³Jを掛ける。全て吸収される条件なので約1.2×10⁻²J/年である。",
+      "オ": "年間のβ粒子の数に、β線の平均エネルギーをジュールに換算して掛ける。したがって4.8×10⁻²ではなく1.2×10⁻²になる。",
+      "カ": "年間のβ粒子の数に、β線の平均エネルギーをジュールに換算して掛ける。したがって7.6×10⁻²ではなく1.2×10⁻²になる。",
+      "キ": "年間のβ粒子の数に、β線の平均エネルギーをジュールに換算して掛ける。したがって5.0×10⁻²ではなく1.2×10⁻²になる。",
+      "ク": "年間のβ粒子の数に、β線の平均エネルギーをジュールに換算して掛ける。したがって1.0×10⁰ではなく1.2×10⁻²になる。",
+      "ケ": "年間のβ粒子の数に、β線の平均エネルギーをジュールに換算して掛ける。したがって5.0×10⁰ではなく1.2×10⁻²になる。",
+      "コ": "年間のβ粒子の数に、β線の平均エネルギーをジュールに換算して掛ける。したがって5.8×10¹ではなく1.2×10⁻²になる。",
+      "サ": "年間のβ粒子の数に、β線の平均エネルギーをジュールに換算して掛ける。したがって1.1×10²ではなく1.2×10⁻²になる。",
+      "シ": "年間のβ粒子の数に、β線の平均エネルギーをジュールに換算して掛ける。したがって1.5×10²ではなく1.2×10⁻²になる。",
+      "ス": "年間のβ粒子の数に、β線の平均エネルギーをジュールに換算して掛ける。したがって2.0×10²ではなく1.2×10⁻²になる。",
+      "セ": "年間のβ粒子の数に、β線の平均エネルギーをジュールに換算して掛ける。したがって8.0×10²ではなく1.2×10⁻²になる。",
+      "ソ": "年間のβ粒子の数に、β線の平均エネルギーをジュールに換算して掛ける。したがって1.3×10³ではなく1.2×10⁻²になる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=15",
+    "sourcePages": [
+      15
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問5。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q05-p15-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問5の公式問題 PDF 15ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q05-slot-オ",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 430,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "体内のカリウム40のβ線による全身の年間吸収線量"
+    ],
+    "difficulty": 3,
+    "question": "体内のカリウム40のβ線による全身の年間吸収線量（公式問題 5・解答欄オ）",
+    "choices": {
+      "ア": "3.5×10⁻³",
+      "イ": "6.7×10⁻³",
+      "ウ": "9.2×10⁻³",
+      "エ": "1.2×10⁻²",
+      "オ": "4.8×10⁻²",
+      "カ": "7.6×10⁻²",
+      "キ": "5.0×10⁻²",
+      "ク": "1.0×10⁰",
+      "ケ": "5.0×10⁰",
+      "コ": "5.8×10¹",
+      "サ": "1.1×10²",
+      "シ": "1.5×10²",
+      "ス": "2.0×10²",
+      "セ": "8.0×10²",
+      "ソ": "1.3×10³"
+    },
+    "answer": "ス",
+    "officialAnswerNumber": 13,
+    "officialQuestionLabel": "5（実務・解答欄オ）",
+    "explanation": "年間に吸収する約1.2×10⁻²Jを体重60kgで割ると2.0×10⁻⁴Gyである。これは約2.0×10²μGy/年に当たる。",
+    "choiceExplanations": {
+      "ア": "β線の年間吸収エネルギー約0.012Jを60kgで割り、μGyに換算する。したがって3.5×10⁻³ではなく2.0×10²になる。",
+      "イ": "β線の年間吸収エネルギー約0.012Jを60kgで割り、μGyに換算する。したがって6.7×10⁻³ではなく2.0×10²になる。",
+      "ウ": "β線の年間吸収エネルギー約0.012Jを60kgで割り、μGyに換算する。したがって9.2×10⁻³ではなく2.0×10²になる。",
+      "エ": "β線の年間吸収エネルギー約0.012Jを60kgで割り、μGyに換算する。したがって1.2×10⁻²ではなく2.0×10²になる。",
+      "オ": "β線の年間吸収エネルギー約0.012Jを60kgで割り、μGyに換算する。したがって4.8×10⁻²ではなく2.0×10²になる。",
+      "カ": "β線の年間吸収エネルギー約0.012Jを60kgで割り、μGyに換算する。したがって7.6×10⁻²ではなく2.0×10²になる。",
+      "キ": "β線の年間吸収エネルギー約0.012Jを60kgで割り、μGyに換算する。したがって5.0×10⁻²ではなく2.0×10²になる。",
+      "ク": "β線の年間吸収エネルギー約0.012Jを60kgで割り、μGyに換算する。したがって1.0×10⁰ではなく2.0×10²になる。",
+      "ケ": "β線の年間吸収エネルギー約0.012Jを60kgで割り、μGyに換算する。したがって5.0×10⁰ではなく2.0×10²になる。",
+      "コ": "β線の年間吸収エネルギー約0.012Jを60kgで割り、μGyに換算する。したがって5.8×10¹ではなく2.0×10²になる。",
+      "サ": "β線の年間吸収エネルギー約0.012Jを60kgで割り、μGyに換算する。したがって1.1×10²ではなく2.0×10²になる。",
+      "シ": "β線の年間吸収エネルギー約0.012Jを60kgで割り、μGyに換算する。したがって1.5×10²ではなく2.0×10²になる。",
+      "ス": "年間に吸収する約1.2×10⁻²Jを体重60kgで割ると2.0×10⁻⁴Gyである。これは約2.0×10²μGy/年に当たる。",
+      "セ": "β線の年間吸収エネルギー約0.012Jを60kgで割り、μGyに換算する。したがって8.0×10²ではなく2.0×10²になる。",
+      "ソ": "β線の年間吸収エネルギー約0.012Jを60kgで割り、μGyに換算する。したがって1.3×10³ではなく2.0×10²になる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=15",
+    "sourcePages": [
+      15
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問5。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q05-p15-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問5の公式問題 PDF 15ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q06-slot-A",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 431,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "物質の単位質量当たりに放射線が与えたエネルギー"
+    ],
+    "difficulty": 3,
+    "question": "物質の単位質量当たりに放射線が与えたエネルギー（公式問題 6・解答欄A）",
+    "choices": {
+      "ア": "実効",
+      "イ": "等価",
+      "ウ": "預託",
+      "エ": "吸収",
+      "オ": "照射",
+      "カ": "発がん影響",
+      "キ": "遺伝性影響",
+      "ク": "確率的影響",
+      "ケ": "組織反応"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": 4,
+    "officialQuestionLabel": "6（実務・解答欄A）",
+    "explanation": "単位質量当たりの付与エネルギーである吸収線量は、1J/kgを1Gyとして表す。",
+    "choiceExplanations": {
+      "ア": "臓器等価線量を組織ごとの重みで合計した量を表す。この欄は「吸収」に当たる。",
+      "イ": "臓器の吸収線量に放射線の種類による重みを付けた量を表す。この欄は「吸収」に当たる。",
+      "ウ": "内部摂取の後に一定期間にわたり受ける線量を積算した量を表す。この欄は「吸収」に当たる。",
+      "エ": "単位質量当たりの付与エネルギーである吸収線量は、1J/kgを1Gyとして表す。",
+      "オ": "空気中の電離電荷を空気の質量で割った測定量の名称に用いる。この欄は「吸収」に当たる。",
+      "カ": "確率的影響の一つとして悪性腫瘍の発生を指す。この欄は「吸収」に当たる。",
+      "キ": "親の生殖細胞の変化を通じて子孫に生じる影響を指す。この欄は「吸収」に当たる。",
+      "ク": "がんや遺伝性影響など、線量に伴って発生確率が変わる影響を指す。この欄は「吸収」に当たる。",
+      "ケ": "一定条件で組織の機能障害として現れる影響を指す。この欄は「吸収」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=16",
+    "sourcePages": [
+      16
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問6。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q06-p16-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問6の公式問題 PDF 16ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q06-slot-B",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 432,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "臓器の平均吸収線量に放射線加重係数を適用した量"
+    ],
+    "difficulty": 3,
+    "question": "臓器の平均吸収線量に放射線加重係数を適用した量（公式問題 6・解答欄B）",
+    "choices": {
+      "ア": "実効",
+      "イ": "等価",
+      "ウ": "預託",
+      "エ": "吸収",
+      "オ": "照射",
+      "カ": "発がん影響",
+      "キ": "遺伝性影響",
+      "ク": "確率的影響",
+      "ケ": "組織反応"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": 2,
+    "officialQuestionLabel": "6（実務・解答欄B）",
+    "explanation": "等価線量は同じ吸収線量でも放射線の種類などによって生物影響が異なることを考慮する量である。",
+    "choiceExplanations": {
+      "ア": "臓器等価線量を組織ごとの重みで合計した量を表す。この欄は「等価」に当たる。",
+      "イ": "等価線量は同じ吸収線量でも放射線の種類などによって生物影響が異なることを考慮する量である。",
+      "ウ": "内部摂取の後に一定期間にわたり受ける線量を積算した量を表す。この欄は「等価」に当たる。",
+      "エ": "物質の質量当たりに付与されたエネルギーを表す。この欄は「等価」に当たる。",
+      "オ": "空気中の電離電荷を空気の質量で割った測定量の名称に用いる。この欄は「等価」に当たる。",
+      "カ": "確率的影響の一つとして悪性腫瘍の発生を指す。この欄は「等価」に当たる。",
+      "キ": "親の生殖細胞の変化を通じて子孫に生じる影響を指す。この欄は「等価」に当たる。",
+      "ク": "がんや遺伝性影響など、線量に伴って発生確率が変わる影響を指す。この欄は「等価」に当たる。",
+      "ケ": "一定条件で組織の機能障害として現れる影響を指す。この欄は「等価」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=16",
+    "sourcePages": [
+      16
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問6。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q06-p16-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問6の公式問題 PDF 16ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q06-slot-C",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 433,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "実効線量の組織加重で考える影響の分類"
+    ],
+    "difficulty": 3,
+    "question": "実効線量の組織加重で考える影響の分類（公式問題 6・解答欄C）",
+    "choices": {
+      "ア": "実効",
+      "イ": "等価",
+      "ウ": "預託",
+      "エ": "吸収",
+      "オ": "照射",
+      "カ": "発がん影響",
+      "キ": "遺伝性影響",
+      "ク": "確率的影響",
+      "ケ": "組織反応"
+    },
+    "answer": "ク",
+    "officialAnswerNumber": 8,
+    "officialQuestionLabel": "6（実務・解答欄C）",
+    "explanation": "がんと遺伝性の影響をまとめて確率的影響とし、この影響への寄与を組織加重係数に反映する。",
+    "choiceExplanations": {
+      "ア": "臓器等価線量を組織ごとの重みで合計した量を表す。この欄は「確率的影響」に当たる。",
+      "イ": "臓器の吸収線量に放射線の種類による重みを付けた量を表す。この欄は「確率的影響」に当たる。",
+      "ウ": "内部摂取の後に一定期間にわたり受ける線量を積算した量を表す。この欄は「確率的影響」に当たる。",
+      "エ": "物質の質量当たりに付与されたエネルギーを表す。この欄は「確率的影響」に当たる。",
+      "オ": "空気中の電離電荷を空気の質量で割った測定量の名称に用いる。この欄は「確率的影響」に当たる。",
+      "カ": "確率的影響の一つとして悪性腫瘍の発生を指す。この欄は「確率的影響」に当たる。",
+      "キ": "親の生殖細胞の変化を通じて子孫に生じる影響を指す。この欄は「確率的影響」に当たる。",
+      "ク": "がんと遺伝性の影響をまとめて確率的影響とし、この影響への寄与を組織加重係数に反映する。",
+      "ケ": "一定条件で組織の機能障害として現れる影響を指す。この欄は「確率的影響」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=16",
+    "sourcePages": [
+      16
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問6。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q06-p16-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問6の公式問題 PDF 16ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q06-slot-D",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 434,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "臓器等価線量を組織加重係数で加重し合計した量"
+    ],
+    "difficulty": 3,
+    "question": "臓器等価線量を組織加重係数で加重し合計した量（公式問題 6・解答欄D）",
+    "choices": {
+      "ア": "実効",
+      "イ": "等価",
+      "ウ": "預託",
+      "エ": "吸収",
+      "オ": "照射",
+      "カ": "発がん影響",
+      "キ": "遺伝性影響",
+      "ク": "確率的影響",
+      "ケ": "組織反応"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": 1,
+    "officialQuestionLabel": "6（実務・解答欄D）",
+    "explanation": "各組織の等価線量を組織加重係数で加重して足した量が実効線量である。",
+    "choiceExplanations": {
+      "ア": "各組織の等価線量を組織加重係数で加重して足した量が実効線量である。",
+      "イ": "臓器の吸収線量に放射線の種類による重みを付けた量を表す。この欄は「実効」に当たる。",
+      "ウ": "内部摂取の後に一定期間にわたり受ける線量を積算した量を表す。この欄は「実効」に当たる。",
+      "エ": "物質の質量当たりに付与されたエネルギーを表す。この欄は「実効」に当たる。",
+      "オ": "空気中の電離電荷を空気の質量で割った測定量の名称に用いる。この欄は「実効」に当たる。",
+      "カ": "確率的影響の一つとして悪性腫瘍の発生を指す。この欄は「実効」に当たる。",
+      "キ": "親の生殖細胞の変化を通じて子孫に生じる影響を指す。この欄は「実効」に当たる。",
+      "ク": "がんや遺伝性影響など、線量に伴って発生確率が変わる影響を指す。この欄は「実効」に当たる。",
+      "ケ": "一定条件で組織の機能障害として現れる影響を指す。この欄は「実効」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=16",
+    "sourcePages": [
+      16
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問6。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q06-p16-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問6の公式問題 PDF 16ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q06-slot-ア",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 435,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "ICRPが定める全組織加重係数の総和"
+    ],
+    "difficulty": 3,
+    "question": "ICRPが定める全組織加重係数の総和（公式問題 6・解答欄ア）",
+    "choices": {
+      "ア": "0.01",
+      "イ": "0.027",
+      "ウ": "0.1",
+      "エ": "0.27",
+      "オ": "1",
+      "カ": "2.7",
+      "キ": "3",
+      "ク": "10",
+      "ケ": "27",
+      "コ": "100"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "officialQuestionLabel": "6（実務・解答欄ア）",
+    "explanation": "組織加重係数は全身に対する各組織の相対的な寄与として規格化され、合計は1になる。",
+    "choiceExplanations": {
+      "ア": "各組織の重みは全体に占める割合なので、合計が1になるよう規格化する。したがって0.01ではなく1になる。",
+      "イ": "各組織の重みは全体に占める割合なので、合計が1になるよう規格化する。したがって0.027ではなく1になる。",
+      "ウ": "各組織の重みは全体に占める割合なので、合計が1になるよう規格化する。したがって0.1ではなく1になる。",
+      "エ": "各組織の重みは全体に占める割合なので、合計が1になるよう規格化する。したがって0.27ではなく1になる。",
+      "オ": "組織加重係数は全身に対する各組織の相対的な寄与として規格化され、合計は1になる。",
+      "カ": "各組織の重みは全体に占める割合なので、合計が1になるよう規格化する。したがって2.7ではなく1になる。",
+      "キ": "各組織の重みは全体に占める割合なので、合計が1になるよう規格化する。したがって3ではなく1になる。",
+      "ク": "各組織の重みは全体に占める割合なので、合計が1になるよう規格化する。したがって10ではなく1になる。",
+      "ケ": "各組織の重みは全体に占める割合なので、合計が1になるよう規格化する。したがって27ではなく1になる。",
+      "コ": "各組織の重みは全体に占める割合なので、合計が1になるよう規格化する。したがって100ではなく1になる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=16",
+    "sourcePages": [
+      16
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問6。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q06-p16-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問6の公式問題 PDF 16ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q06-slot-E",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 436,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "ICRP2007年勧告の対象臓器の組織加重係数の順序"
+    ],
+    "difficulty": 3,
+    "question": "ICRP2007年勧告の対象臓器の組織加重係数の順序（公式問題 6・解答欄E）",
+    "choices": {
+      "ア": "脳＞乳房＞甲状腺＝結腸＞生殖腺",
+      "イ": "生殖腺＞乳房＝脳＞甲状腺＞結腸",
+      "ウ": "結腸＞乳房＝脳＞生殖腺＞甲状腺",
+      "エ": "結腸＞生殖腺＞乳房＞甲状腺＝脳",
+      "オ": "乳房＝結腸＞生殖腺＞甲状腺＞脳",
+      "カ": "乳房＝結腸＞脳＞生殖腺＞甲状腺"
+    },
+    "answer": "オ",
+    "officialAnswerNumber": 5,
+    "officialQuestionLabel": "6（実務・解答欄E）",
+    "explanation": "乳房と結腸は0.12、生殖腺は0.08、甲状腺は0.04、脳は0.01である。",
+    "choiceExplanations": {
+      "ア": "脳は0.01で、五つのうち最も小さい。乳房と結腸はともに0.12である。",
+      "イ": "生殖腺の0.08より乳房と結腸の0.12が大きい。脳は乳房と同じ値ではない。",
+      "ウ": "乳房と結腸は同じ0.12であり、脳の0.01は乳房より小さい。",
+      "エ": "乳房と結腸は0.12で同じである。甲状腺の0.04は脳より大きい。",
+      "オ": "乳房と結腸は0.12、生殖腺は0.08、甲状腺は0.04、脳は0.01である。",
+      "カ": "乳房と結腸が同じで最上位なのは合うが、脳の0.01は生殖腺の0.08や甲状腺の0.04より小さい。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=16",
+    "sourcePages": [
+      16,
+      17
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問6。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q06-p16-official.png",
+      "/images/questions/hoshasen-1/2024/jitsumu/q06-p17-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問6の公式問題 PDF 16ページ",
+      "第1種 実務 問6の公式問題 PDF 17ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q06-slot-F",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 437,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "外部被ばく管理の実用量と防護量の関係"
+    ],
+    "difficulty": 3,
+    "question": "外部被ばく管理の実用量と防護量の関係（公式問題 6・解答欄F）",
+    "choices": {
+      "ア": "上回らない",
+      "イ": "等しい",
+      "ウ": "下回らない",
+      "エ": "国際原子力機関",
+      "オ": "原子放射線の影響に関する国連科学委員会",
+      "カ": "国際放射線単位測定委員会"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "6（実務・解答欄F）",
+    "explanation": "周辺線量当量などの実用量は、通常の条件で防護量を保守的に見積もるため、一般に防護量を下回らない値として扱う。",
+    "choiceExplanations": {
+      "ア": "防護量以下になるという意味だが一般に実用量は防護量を保守的に評価する。この欄は「下回らない」に当たる。",
+      "イ": "二つの量が常に一致する扱いを表す。この欄は「下回らない」に当たる。",
+      "ウ": "周辺線量当量などの実用量は、通常の条件で防護量を保守的に見積もるため、一般に防護量を下回らない値として扱う。",
+      "エ": "原子力の平和利用や安全に取り組む国際機関である。この欄は「下回らない」に当たる。",
+      "オ": "放射線の影響に関する科学的知見を評価する委員会である。この欄は「下回らない」に当たる。",
+      "カ": "放射線測定の単位と実用量を定義する委員会である。この欄は「下回らない」に当たる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=16",
+    "sourcePages": [
+      16,
+      17
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問6。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q06-p16-official.png",
+      "/images/questions/hoshasen-1/2024/jitsumu/q06-p17-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問6の公式問題 PDF 16ページ",
+      "第1種 実務 問6の公式問題 PDF 17ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q06-slot-G",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 438,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "実用量の定義を行う国際委員会"
+    ],
+    "difficulty": 3,
+    "question": "実用量の定義を行う国際委員会（公式問題 6・解答欄G）",
+    "choices": {
+      "ア": "上回らない",
+      "イ": "等しい",
+      "ウ": "下回らない",
+      "エ": "国際原子力機関",
+      "オ": "原子放射線の影響に関する国連科学委員会",
+      "カ": "国際放射線単位測定委員会"
+    },
+    "answer": "カ",
+    "officialAnswerNumber": 6,
+    "officialQuestionLabel": "6（実務・解答欄G）",
+    "explanation": "放射線測定の量と単位を扱う国際放射線単位測定委員会（ICRU）が実用量を定義する。",
+    "choiceExplanations": {
+      "ア": "防護量以下になるという意味だが一般に実用量は防護量を保守的に評価する。この欄は「国際放射線単位測定委員会」に当たる。",
+      "イ": "二つの量が常に一致する扱いを表す。この欄は「国際放射線単位測定委員会」に当たる。",
+      "ウ": "実用量が防護量より小さくならないような評価を表す。この欄は「国際放射線単位測定委員会」に当たる。",
+      "エ": "原子力の平和利用や安全に取り組む国際機関である。この欄は「国際放射線単位測定委員会」に当たる。",
+      "オ": "放射線の影響に関する科学的知見を評価する委員会である。この欄は「国際放射線単位測定委員会」に当たる。",
+      "カ": "放射線測定の量と単位を扱う国際放射線単位測定委員会（ICRU）が実用量を定義する。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=16",
+    "sourcePages": [
+      16,
+      17
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問6。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q06-p16-official.png",
+      "/images/questions/hoshasen-1/2024/jitsumu/q06-p17-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問6の公式問題 PDF 16ページ",
+      "第1種 実務 問6の公式問題 PDF 17ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q06-slot-イ",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 439,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "実効線量の評価に用いる個人線量当量の深さ"
+    ],
+    "difficulty": 3,
+    "question": "実効線量の評価に用いる個人線量当量の深さ（公式問題 6・解答欄イ）",
+    "choices": {
+      "ア": "0.01",
+      "イ": "0.03",
+      "ウ": "0.07",
+      "エ": "0.1",
+      "オ": "0.3",
+      "カ": "0.7",
+      "キ": "1",
+      "ク": "3",
+      "ケ": "7",
+      "コ": "10"
+    },
+    "answer": "コ",
+    "officialAnswerNumber": 10,
+    "officialQuestionLabel": "6（実務・解答欄イ）",
+    "explanation": "原問の実効線量の評価に対応する個人線量当量はHp(10)であり、軟組織の深さ10mmを用いる。",
+    "choiceExplanations": {
+      "ア": "実効線量をモニタリングする全身の深い側の基準はHp(10)である。したがって0.01ではなく10になる。",
+      "イ": "実効線量をモニタリングする全身の深い側の基準はHp(10)である。したがって0.03ではなく10になる。",
+      "ウ": "実効線量をモニタリングする全身の深い側の基準はHp(10)である。したがって0.07ではなく10になる。",
+      "エ": "実効線量をモニタリングする全身の深い側の基準はHp(10)である。したがって0.1ではなく10になる。",
+      "オ": "実効線量をモニタリングする全身の深い側の基準はHp(10)である。したがって0.3ではなく10になる。",
+      "カ": "実効線量をモニタリングする全身の深い側の基準はHp(10)である。したがって0.7ではなく10になる。",
+      "キ": "実効線量をモニタリングする全身の深い側の基準はHp(10)である。したがって1ではなく10になる。",
+      "ク": "実効線量をモニタリングする全身の深い側の基準はHp(10)である。したがって3ではなく10になる。",
+      "ケ": "実効線量をモニタリングする全身の深い側の基準はHp(10)である。したがって7ではなく10になる。",
+      "コ": "原問の実効線量の評価に対応する個人線量当量はHp(10)であり、軟組織の深さ10mmを用いる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=16",
+    "sourcePages": [
+      16,
+      17
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問6。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q06-p16-official.png",
+      "/images/questions/hoshasen-1/2024/jitsumu/q06-p17-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問6の公式問題 PDF 16ページ",
+      "第1種 実務 問6の公式問題 PDF 17ページ"
+    ],
+    "publicAllowed": true
+  },
+  {
+    "id": "hoshasen-1-2024-jitsumu-q06-slot-ウ",
+    "exam": "hoshasen-1",
+    "year": 2024,
+    "season": "annual",
+    "session": "gakka",
+    "qNumber": 440,
+    "type": "multiple-choice",
+    "subject": "実務",
+    "category": "実務",
+    "topicTags": [
+      "実務",
+      "皮膚や手足の等価線量評価に用いる個人線量当量の深さ"
+    ],
+    "difficulty": 3,
+    "question": "皮膚や手足の等価線量評価に用いる個人線量当量の深さ（公式問題 6・解答欄ウ）",
+    "choices": {
+      "ア": "0.01",
+      "イ": "0.03",
+      "ウ": "0.07",
+      "エ": "0.1",
+      "オ": "0.3",
+      "カ": "0.7",
+      "キ": "1",
+      "ク": "3",
+      "ケ": "7",
+      "コ": "10"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": 3,
+    "officialQuestionLabel": "6（実務・解答欄ウ）",
+    "explanation": "皮膚や手足など表層の等価線量の評価にはHp(0.07)を用いる。深さは0.07mmとなる。",
+    "choiceExplanations": {
+      "ア": "深部の実効線量用ではなく、浅い皮膚の評価に対応するHp(0.07)を用いる。したがって0.01ではなく0.07になる。",
+      "イ": "深部の実効線量用ではなく、浅い皮膚の評価に対応するHp(0.07)を用いる。したがって0.03ではなく0.07になる。",
+      "ウ": "皮膚や手足など表層の等価線量の評価にはHp(0.07)を用いる。深さは0.07mmとなる。",
+      "エ": "深部の実効線量用ではなく、浅い皮膚の評価に対応するHp(0.07)を用いる。したがって0.1ではなく0.07になる。",
+      "オ": "深部の実効線量用ではなく、浅い皮膚の評価に対応するHp(0.07)を用いる。したがって0.3ではなく0.07になる。",
+      "カ": "深部の実効線量用ではなく、浅い皮膚の評価に対応するHp(0.07)を用いる。したがって0.7ではなく0.07になる。",
+      "キ": "深部の実効線量用ではなく、浅い皮膚の評価に対応するHp(0.07)を用いる。したがって1ではなく0.07になる。",
+      "ク": "深部の実効線量用ではなく、浅い皮膚の評価に対応するHp(0.07)を用いる。したがって3ではなく0.07になる。",
+      "ケ": "深部の実効線量用ではなく、浅い皮膚の評価に対応するHp(0.07)を用いる。したがって7ではなく0.07になる。",
+      "コ": "深部の実効線量用ではなく、浅い皮膚の評価に対応するHp(0.07)を用いる。したがって10ではなく0.07になる。"
+    },
+    "explanationCoverage": "full",
+    "sourcePdfUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1_jitsumu.pdf#page=16",
+    "sourcePages": [
+      16,
+      17
+    ],
+    "sourceAnswerUrl": "https://www.nustec.or.jp/syunin/pdf/R06_1seitou.pdf#page=2",
+    "sourceAttribution": "出典：公益財団法人原子力安全技術センター 令和6年度 第1種放射線取扱主任者試験 実務 問6。原本からの切出し・解説は過去問AI作成。",
+    "license": "NUSTEC-owner-authorized",
+    "hasImage": true,
+    "imageUrls": [
+      "/images/questions/hoshasen-1/2024/jitsumu/q06-p16-official.png",
+      "/images/questions/hoshasen-1/2024/jitsumu/q06-p17-official.png"
+    ],
+    "imageAltTexts": [
+      "第1種 実務 問6の公式問題 PDF 16ページ",
+      "第1種 実務 問6の公式問題 PDF 17ページ"
+    ],
+    "publicAllowed": true
+  }
+]

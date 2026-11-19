@@ -6,5 +6,6 @@ import law2024 from "./2024-1-hourei-public.json";
 import physics2024 from "./2024-1-butsuri-public.json";
 import chemistry2024 from "./2024-1-kagaku-public.json";
 import biology2024 from "./2024-1-seibutsu-public.json";
+import practice2024 from "./2024-1-jitsumu-public.json";
 
-export const HOSHASEN_FIRST_QUESTIONS = [...previous, ...physics2024, ...chemistry2024, ...biology2024, ...law2024, ...law2023, ...law2022] as Question[];
+export const HOSHASEN_FIRST_QUESTIONS = [...previous, ...physics2024, ...chemistry2024, ...biology2024, ...practice2024, ...law2024, ...law2023, ...law2022] as Question[];
