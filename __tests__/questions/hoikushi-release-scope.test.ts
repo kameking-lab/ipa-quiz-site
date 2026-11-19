@@ -3,14 +3,15 @@ import path from "node:path";
 import { describe, expect, it } from "vitest";
 import { HOIKUSHI_QUESTIONS } from "@/data/questions/hoikushi";
 import { getQualificationByExamCode } from "@/lib/qualifications/catalog";
+import { isAcceptedAnswer } from "@/lib/questions/answers";
 import { isPracticeReadyQuestion } from "@/lib/questions/filter";
 import officialAnswers from "@/reports/hoikushi-2rounds-20260929/official-answers.json";
 import type { ChoiceKey } from "@/lib/questions/types";
 
 describe("保育士の案内と公開年度の一致", () => {
-  it("令和8年度前期154問、令和7年度後期158問・前期156問、令和6年度後期157問・前期156問、令和5年度後期156問を九科目ずつ公開する", () => {
+  it("令和8年度前期154問、令和7年度後期158問・前期156問、令和6年度後期157問・前期156問、令和5年度後期156問・前期157問を九科目ずつ公開する", () => {
     const ready = HOIKUSHI_QUESTIONS.filter(isPracticeReadyQuestion);
-    const rounds = [[2026, "early", 154], [2025, "late", 158], [2025, "early", 156], [2024, "late", 157], [2024, "early", 156], [2023, "late", 156]] as const;
+    const rounds = [[2026, "early", 154], [2025, "late", 158], [2025, "early", 156], [2024, "late", 157], [2024, "early", 156], [2023, "late", 156], [2023, "early", 157]] as const;
     expect([...new Set(ready.map((q) => `${q.year}-${q.season}`))]).toEqual(rounds.map(([year, season]) => `${year}-${season}`));
     for (const [year, season, count] of rounds) {
       const round = ready.filter((q) => q.year === year && q.season === season);
@@ -37,12 +38,21 @@ describe("保育士の案内と公開年度の一致", () => {
     expect(practicum.filter((q) => q.qNumber === 1 || q.qNumber === 5)).toEqual([]);
   });
 
+  it("正答表で全員を正解とした設問は、どの選択肢でも正解になる", () => {
+    const question = HOIKUSHI_QUESTIONS.find((q) => q.id === "hoikushi-2023-early-kodomo-hoken-q17")!;
+    expect(question.officialAnswerNumber).toBe("全");
+    expect(question.requiredSelections).toBeUndefined();
+    for (const choice of Object.keys(question.choices ?? {})) {
+      expect(isAcceptedAnswer(question.answer, choice)).toBe(true);
+    }
+  });
+
   it("資格の案内に収録済みの回と件数を掲載する", () => {
     const entry = getQualificationByExamCode("hoikushi");
     expect(entry?.officialReuseTermsUrl).toBe("https://www.hoyokyo.or.jp/terms/");
     expect(entry?.reuseSummary).toContain("令和8年度前期154問");
     expect(entry?.reuseSummary).toContain("令和7年度後期158問・前期156問");
     expect(entry?.reuseSummary).toContain("令和6年度後期157問・前期156問");
-    expect(entry?.reuseSummary).toContain("令和5年度後期156問");
+    expect(entry?.reuseSummary).toContain("令和5年度後期156問・前期157問");
   });
 });

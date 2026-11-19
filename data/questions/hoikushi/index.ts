@@ -1,4 +1,5 @@
 import type { ChoiceKey, Question, Season, Session } from "@/lib/questions/types";
+import source2023early from "./2023-early.json";
 import source2023late from "./2023-late.json";
 import source2024early from "./2024-early.json";
 import source2024late from "./2024-late.json";
@@ -17,6 +18,7 @@ type HoikushiSourceQuestion = {
   choices: string[];
   officialAnswer: number[];
   requiredSelections?: number;
+  allChoicesAccepted?: boolean;
   choiceExplanations: string[];
   imageUrls?: string[];
   imageAltTexts?: string[];
@@ -54,6 +56,9 @@ function toQuestion(item: HoikushiSourceQuestion, subjectSlug: string, subject: 
   const correctExplanations = answerKeys
     .map((key) => item.choiceExplanations[keys.indexOf(key)] ?? "")
     .filter(Boolean);
+  const explanation = item.allChoicesAccepted
+    ? "公式正答表に従い、受験者全員を正解とする設問です。"
+    : correctExplanations.join(" ");
   const lawNotice = item.lawSensitive ? `\n※出題時点（${data.lawReferenceDate}）の法令・制度に基づく解説です。その後の改正等で結論が変わる場合があります。` : "";
   return {
     id: `hoikushi-${data.year}-${data.season}-${subjectSlug}-q${item.number}`,
@@ -63,16 +68,16 @@ function toQuestion(item: HoikushiSourceQuestion, subjectSlug: string, subject: 
     season: data.season,
     qNumber: item.number,
     subject: subject.subjectName,
-    officialAnswerNumber: item.officialAnswer.join(","),
+    officialAnswerNumber: item.allChoicesAccepted ? "全" : item.officialAnswer.join(","),
     type: "multiple-choice",
     category: subject.subjectName,
     topicTags: item.topicTags,
     difficulty: 2,
     question: item.question,
     choices: Object.fromEntries(keys.map((key, index) => [key, item.choices[index]]).filter(([, v]) => v !== undefined)),
-    answer: requiredSelections ? answerKeys : (answerKeys[0] ?? "ア"),
+    answer: requiredSelections || item.allChoicesAccepted ? answerKeys : (answerKeys[0] ?? "ア"),
     requiredSelections,
-    explanation: `${correctExplanations.join(" ")}${lawNotice}`,
+    explanation: `${explanation}${lawNotice}`,
     choiceExplanations: Object.fromEntries(keys.map((key, index) => [key, item.choiceExplanations[index]]).filter(([, v]) => v !== undefined)),
     explanationCoverage: "full",
     hasImage: Boolean(item.imageUrls?.length),
@@ -110,4 +115,5 @@ export const HOIKUSHI_QUESTIONS: Question[] = [
   ...buildRound(source2024late as HoikushiSource),
   ...buildRound(source2024early as HoikushiSource),
   ...buildRound(source2023late as HoikushiSource),
+  ...buildRound(source2023early as HoikushiSource),
 ];
