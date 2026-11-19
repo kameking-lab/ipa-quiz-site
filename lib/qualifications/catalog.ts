@@ -1844,6 +1844,14 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
   },
   {
+    slug: "kogai-16", examCode: "kogai-16", shortName: "公害防止管理者", fullName: "公害防止管理者等国家試験",
+    domain: "safety", administrator: "一般社団法人産業環境管理協会",
+    officialQuestionsUrl: "https://www.jemai.or.jp/polconman/examination/past.html",
+    officialReuseTermsUrl: "https://www.jemai.or.jp/polconman/examination/past.html", status: "live",
+    reuseSummary: "公害防止管理者等国家試験の公式問題を、科目ごとに公式正答・全肢解説付きで収録。",
+    remainingWork: [],
+  },
+  {
     slug: "kanken-10", examCode: "kanken-10", shortName: "漢検10級", fullName: "日本漢字能力検定 10級",
     domain: "personal-services", administrator: "公益財団法人日本漢字能力検定協会",
     officialQuestionsUrl: "https://www.kanken.or.jp/kanken/grades/sample/",

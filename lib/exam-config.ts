@@ -2001,6 +2001,11 @@ caremanager: {
     ],
     seasons: ["round2", "round1"], yearRange: { start: 2022, end: 2024 },
 },
+"kogai-16": {
+    code: "kogai-16", nameFull: "公害防止管理者等国家試験", urlSlug: "kogai-16", level: "specialist",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 290, label: "学科試験", categories: ["公害総論", "大気概論", "大気特論", "ばいじん・粉じん特論", "大気有害物質特論", "大規模大気特論", "水質概論", "汚水処理特論", "水質有害物質特論", "大規模水質特論", "騒音・振動概論", "騒音・振動特論", "ばいじん・一般粉じん特論", "ダイオキシン類概論", "ダイオキシン類特論", "大気・水質概論", "大気関係技術特論", "水質関係技術特論"] }],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+},
 "kanken-10": {
     code: "kanken-10", nameFull: "日本漢字能力検定 10級", urlSlug: "kanken-10", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 81, label: "10級", categories: ["漢字の読み", "筆順", "ひらがなの書き取り", "漢字の書き取り"] }],

@@ -819,6 +819,7 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
 
 
     "kounin-geography": "高等学校卒業程度認定試験 地理",
+    "kogai-16": "公害防止管理者等国家試験",
     "kanken-10": "日本漢字能力検定 10級",
     "zensho-boki-2": "全商簿記実務検定試験 2級",
     "tsukanshi": "通関士試験"
@@ -1191,6 +1192,7 @@ const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number)
 
 
 
+    "kogai-16": (c) => `公害防止管理者等国家試験の公式過去問${c}問を収録。科目別に公式正答と全肢解説を確認できます。`,
     "kanken-10": (c) => `漢検10級の公式過去問${c}問を収録。漢字の読み・書きと筆順を標準解答で確認できます。`,
     "zensho-boki-2": (c) => `全商簿記2級の公式過去問${c}問を収録。記入式は公式解答、選択式は全肢解説で確認できます。`,
     "tsukanshi": (c) => `通関士試験の${c}。公式正答どおりに収録。`
