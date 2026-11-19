@@ -2007,7 +2007,7 @@ caremanager: {
         },
     ],
     seasons: ["annual"],
-    yearRange: { start: 2023, end: 2025 },
+    yearRange: { start: 2022, end: 2025 },
 },
 
 tsukanshi: {
