@@ -57,6 +57,7 @@ import { TSUSHIN2_QUESTIONS } from "@/data/questions/tsushin2";
 import { TSUSHIN1_QUESTIONS } from "@/data/questions/tsushin1";
 import { CIVIL1_QUESTIONS } from "@/data/questions/civil1";
 import { GENGO_CHOKAKUSHI_QUESTIONS } from "@/data/questions/gengo-chokakushi";
+import { SHUWA_QUESTIONS } from "@/data/questions/shuwa";
 import type { Question } from "@/lib/questions/types";
 import { detectAnswerDispute } from "@/lib/questions/explanation-consistency";
 import { z } from "zod";
@@ -82,7 +83,7 @@ import { readKhk2026Sales, validateKhk2026Sales } from "./lib/validate-khk-2026-
 // before their release gate can be lifted.
 const VALIDATION_QUESTIONS = [
   ...new Map(
-    [...ALL_QUESTIONS, ...GENGO_CHOKAKUSHI_QUESTIONS, ...K11_OTSU4, ...K11_RYOKAKU, ...K11_KOU1, ...K11_KIKEN_KOU, ...K11_HEI, ...K11_KOU, ...K11_OTSU, ...K11_KAMOTSU, ...SEKOU_1KENCHIKU_QUESTIONS, ...KENCHIKUSHI1_CANDIDATES, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
+    [...ALL_QUESTIONS, ...SHUWA_QUESTIONS.filter((q) => q.officialScoring), ...GENGO_CHOKAKUSHI_QUESTIONS, ...K11_OTSU4, ...K11_RYOKAKU, ...K11_KOU1, ...K11_KIKEN_KOU, ...K11_HEI, ...K11_KOU, ...K11_OTSU, ...K11_KAMOTSU, ...SEKOU_1KENCHIKU_QUESTIONS, ...KENCHIKUSHI1_CANDIDATES, ...RIYOSHI_CANDIDATES, ...DENKEN3_QUESTIONS, ...DENKEN2_QUESTIONS, ...DENKEN1_QUESTIONS, ...DENKO2_QUESTIONS, ...DENKO1_QUESTIONS, ...CIVIL2_QUESTIONS, ...CIVIL1_QUESTIONS, ...KANKOJI2_QUESTIONS, ...ZOEN2_QUESTIONS, ...ZOEN1_QUESTIONS, ...TSUSHIN2_QUESTIONS, ...TSUSHIN1_QUESTIONS].map((question) => [question.id, question]),
   ).values(),
 ];
 
