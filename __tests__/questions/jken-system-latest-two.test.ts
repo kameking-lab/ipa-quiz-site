@@ -19,12 +19,15 @@ const official = {
   "260913-js03": ["カキイエクエウイ", "エクカイウア", "ウイエイウイエイアエ", "イアウアイウ", "アイアイエアカオアイ"],
 };
 
+const latestQuestions = <T extends { year: number }>(questions: readonly T[]) => questions.filter(q => q.year === 2025 || q.year === 2026);
+
 describe("J検情報システム latest two official papers in staging", () => {
   it("contains six complete papers, 30 originals and 227 separately graded printed slots", () => {
-    expect(JKEN_SYSTEM_PAPERS).toHaveLength(6);
-    expect(JKEN_SYSTEM_QUESTIONS).toHaveLength(227);
-    expect(new Set(JKEN_SYSTEM_QUESTIONS.map(q => q.id)).size).toBe(227);
-    for (const paper of JKEN_SYSTEM_PAPERS) {
+    const latestPapers = JKEN_SYSTEM_PAPERS.filter(paper => paper.id in official);
+    expect(latestPapers).toHaveLength(6);
+    expect(latestQuestions(JKEN_SYSTEM_QUESTIONS)).toHaveLength(227);
+    expect(new Set(JKEN_SYSTEM_QUESTIONS.map(q => q.id)).size).toBe(JKEN_SYSTEM_QUESTIONS.length);
+    for (const paper of latestPapers) {
       expect(paper.questions.map(q => q.number)).toEqual([1, 2, 3, 4, 5]);
       const pinned = official[paper.id as keyof typeof official];
       for (const q of paper.questions) {
@@ -39,7 +42,7 @@ describe("J検情報システム latest two official papers in staging", () => {
   });
 
   it("keeps source text, every candidate rationale, original figures and fiscal year labels", () => {
-    for (const q of JKEN_SYSTEM_QUESTIONS) {
+    for (const q of latestQuestions(JKEN_SYSTEM_QUESTIONS)) {
       expect(q.question.length).toBeGreaterThan(300);
       expect(q.sourcePdfUrl).toMatch(/^https:\/\/www\.jken\.sgec\.or\.jp\/common\/pdf\/past_test\/260(?:208|913)_mondaijs0[123]\.pdf#page=\d+$/);
       expect(q.sourceAnswerUrl).toMatch(/_kaitojs0[123]\.pdf$/);
@@ -62,13 +65,13 @@ describe("J検情報システム latest two official papers in staging", () => {
     expect(q.question).toContain("正規化前の受注表の主キーは受注番号（原図では実線の下線）");
   });
 
-  it("hides all staging questions from public registries, lazy loaders and exam lists", async () => {
+  it("keeps the latest two papers available through all public loaders", async () => {
     expect(isExamPublished("jken-system")).toBe(true);
     expect(QUALIFICATION_CATALOG.find(q => q.slug === "jken-system")?.status).toBe("live");
-    expect(QUESTIONS_BY_EXAM["jken-system"]).toHaveLength(227);
+    expect(latestQuestions(QUESTIONS_BY_EXAM["jken-system"] ?? [])).toHaveLength(227);
     expect(ALL_QUESTIONS.some(q => q.exam === "jken-system")).toBe(true);
-    expect(await getQuestionsForExam("jken-system")).toHaveLength(227);
-    expect(getQuestionsByExamStrict("jken-system")).toHaveLength(227);
+    expect(latestQuestions(await getQuestionsForExam("jken-system"))).toHaveLength(227);
+    expect(latestQuestions(getQuestionsByExamStrict("jken-system"))).toHaveLength(227);
     expect(ALL_QUIZ_EXAM_CODES).toContain("jken-system");
     expect(getAvailableExams()).toContain("jken-system");
     expect(ALL_EXAM_CODES).not.toContain("jken-system");

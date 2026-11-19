@@ -1441,7 +1441,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",
     officialReuseTermsUrl: "https://www.jken.sgec.or.jp/docs/past_test.html",
     status: "live",
-    reuseSummary: "令和8年度前期（2026年9月13日）・令和7年度後期（2026年2月8日）の3スキル全30大問・227解答欄を収録。問題と正答は公式PDFに基づき、解答欄ごとに演習できます。解説は独自作成です。",
+    reuseSummary: "令和8年度前期（2026年9月13日）・令和7年度後期（2026年2月8日）の3スキルと、過年度の基本スキルの一部を収録。問題と正答は公式PDFに基づき、解答欄ごとに演習できます。解説は独自作成です。",
     attributionTemplate: "出典：一般財団法人職業教育・キャリア教育財団 情報検定 情報システム試験（実施回・スキル・大問・解答欄）。解説は独自作成。",
     remainingWork: [],
 },

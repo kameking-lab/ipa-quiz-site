@@ -1503,7 +1503,7 @@ kounin: {
         { session: "jken-programming", urlSlug: "programming", expectedQuestions: 32, label: "プログラミングスキル", categories: ["プログラミングスキル"] },
         { session: "jken-design", urlSlug: "design", expectedQuestions: 40, label: "システムデザインスキル", categories: ["システムデザインスキル"] },
     ],
-    seasons: ["late", "early"], yearRange: { start: 2025, end: 2026 },
+    seasons: ["late", "early"], yearRange: { start: 2024, end: 2026 },
 },
 shinrishi: {
     code: "shinrishi", nameFull: "公認心理師試験", urlSlug: "shinrishi", level: "basic",
