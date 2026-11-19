@@ -1,5 +1,6 @@
 import type { ChoiceKey, Question } from "@/lib/questions/types";
 import y2026 from "@/data/qualification-staging/sokuryoshiho/2026.json";
+import y2022 from "./2022.json";
 import y2023 from "./2023.json";
 import y2024 from "./2024.json";
 import y2025 from "@/data/qualification-staging/sokuryoshiho/2025.json";
@@ -52,4 +53,5 @@ export const SOKURYOSHIHO_QUESTIONS: Question[] = [
     .map(project),
   ...projectStagedQuestions(y2024),
   ...projectStagedQuestions(y2023),
+  ...projectStagedQuestions(y2022),
 ];

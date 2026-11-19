@@ -1789,7 +1789,7 @@ shihoshoshi: {
 sokuryoshiho: {
     code: "sokuryoshiho", nameFull: "測量士補試験", urlSlug: "sokuryoshiho", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 28, label: "試験問題", categories: ["測量法規", "多角測量", "GNSS測量", "水準測量", "地形測量", "写真測量", "地図編集", "応用測量"] }],
-    seasons: ["annual"], yearRange: { start: 2023, end: 2026 },
+    seasons: ["annual"], yearRange: { start: 2022, end: 2026 },
 },
 caremanager: {
     code: "caremanager", nameFull: "介護支援専門員実務研修受講試験", urlSlug: "caremanager", level: "basic",
