@@ -37191,5 +37191,705 @@
     "sources": [],
     "provisionalReview": true,
     "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231807-q1": {
+    "sourceHash": "260bc43e3a81538b5423ff293c0cd45d92125a4c23643cb6015f5e09f5287424",
+    "correctChoice": 2,
+    "summary": "吸光度Aと透過率Tの関係はT＝10⁻ᴬである。A＝0.3では約50％が透過し、反射などを無視した吸収分も約50％となる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "吸光度は、入射光に対する透過光の比の常用対数から求める。測定の線形範囲では入射光の強度自体で決まらない。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "吸光度Aと透過率Tの関係はT＝10⁻ᴬである。A＝0.3では約50％が透過し、反射などを無視した吸収分も約50％となる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "発色反応のため加熱した場合、温度による発色や吸光度の変化を抑えるため、常温に戻してから測定する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "可視域ではガラスセルを使えるが、紫外部ではガラス自体が吸収するので、紫外光を透過しやすい石英セルを用いる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "通常は対象物質の吸収極大付近を選ぶ。信号が強く得られ、わずかな波長ずれの影響も受けにくい。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231807-q2": {
+    "sourceHash": "d0c5f5c39e75280a121ba16c8200aec8336b3e34ba35b04852db128fff746c49",
+    "correctChoice": 3,
+    "summary": "捕集量は1.15×10⁻⁸×10×0.350÷0.450≒8.94×10⁻⁸ mol。25℃での体積に直して10 Lで割ると約0.22 ppmとなる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "0.022 ppmは、標準液の濃度に吸光度比を掛けてから試料空気10 Lで求める値より約一桁小さい。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "濃度0.032 ppmでは10 Lに相当する物質量が約1.3×10⁻⁸ molとなり、吸光度比から得られる量より小さい。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "捕集量は1.15×10⁻⁸×10×0.350÷0.450≒8.94×10⁻⁸ mol。25℃での体積に直して10 Lで割ると約0.22 ppmとなる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "0.32 ppmになるには採取した10 Lに約1.31×10⁻⁷ molが必要で、測定値から得た捕集量を超える。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "2.2 ppmは、体積換算したフッ化水素量を採気量10 Lで割って求める約0.22 ppmの10倍である。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231807-q3": {
+    "sourceHash": "436cd25776cab74489118683ab2844d47e5be7a30d76120f73a1223bbdbd73a9",
+    "correctChoice": 3,
+    "summary": "亜鉛末と塩酸でニトロ基をアミノ基に還元し、ジアゾ化を経てアゾ色素として吸光度を測定する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "塩酸と後段のアゾ発色は合っているが、ニトロ基の還元で生成するのはアミド基ではなくアミノ基である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "亜鉛末と塩酸でアミノ基を得る点は合っている。発色で使うのはアゾ化につながる反応であり、ニトロ化ではない。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "亜鉛末と塩酸でニトロ基をアミノ基に還元し、ジアゾ化を経てアゾ色素として吸光度を測定する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "亜鉛末を用いる本法の反応条件は酸性であり、還元で得られる官能基も記述のアミド基とは異なる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "㋺のアミノ基は合うが、初めの還元には塩酸を用い、後段はニトロ化ではなくアゾ発色である。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231807-q4": {
+    "sourceHash": "a22c5188e8126724a7bb67fe5be5a81ce23b9a484e1db184f7e8478606c0b4a1",
+    "correctChoice": 2,
+    "summary": "塩化鉄（Ⅲ）はメチレンブルー生成反応における酸化剤であり、反応前後でそのまま残る触媒とする説明は誤りである。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "硫酸亜鉛水溶液は硫化水素を硫化亜鉛として捕集し、その後の発色定量まで安定に保持するために使う。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "塩化鉄（Ⅲ）はメチレンブルー生成反応における酸化剤であり、反応前後でそのまま残る触媒とする説明は誤りである。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "硫化物とp-アミノジメチルアニリンの発色反応で得られるメチレンブルーの吸光度を測定する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "硫化ナトリウムは硫化物イオンを供給するため、硫化水素の分析で発色に用いる標準原液を調製できる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "煮沸して放冷した精製水を用いると、溶存酸素で硫化物が酸化されて標準液の濃度が変わる影響を抑えられる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231807-q5": {
+    "sourceHash": "6226513f0832fc891c3ffcf74990c8847e4ffa3f29f8fb014a14eb7a93afff4a",
+    "correctChoice": 3,
+    "summary": "保持時間は試料を導入してから対象ピークの頂点が現れるまでの時間である。出終わるまでの時間ではない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "気液クロマトグラフィーでは、固定相液体への溶解のしやすさが成分によって異なるため、保持時間が異なる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "極性の異なる固定相を選ぶと化合物ごとの相互作用や保持の順序を変えられるため、さまざまな分析に対応する。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "保持時間は試料を導入してから対象ピークの頂点が現れるまでの時間である。出終わるまでの時間ではない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "理論段数はカラムの長さや充填状態のほか、温度、移動相流速によるピークの広がりでも変化する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "分離度1.5は一般に二つのピークがほぼベースライン分離した状態の目安として用いられる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231807-q6": {
+    "sourceHash": "4fce64cd9002243bfc2e4abcef7b0905e3551d067d7b52764cc83dc77b81fa89",
+    "correctChoice": 1,
+    "summary": "粒子をろ紙で、通過する蒸気を活性炭フェルトで捕集し、ろ紙とフェルト上の試料をメタノールで抽出する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "粒子をろ紙で、通過する蒸気を活性炭フェルトで捕集し、ろ紙とフェルト上の試料をメタノールで抽出する。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "蒸気を対象とする点は合うが、本法は硫酸含浸ろ紙で捕集してトルエンで抽出する方法ではない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "蒸気とメタノールは合っているが、ろ紙と組み合わせる蒸気の捕集材は活性炭フェルトである。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "活性炭フェルトは正しいが、原文で粒子と対にする語は蒸気であり、抽出にはトルエンでなくメタノールを用いる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "アクリルアミドの蒸気は活性炭フェルトを用いて捕集し、メタノールで抽出するので、㋺と㋩が一致しない。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231807-q7": {
+    "sourceHash": "6ada8e587df085069240265cb77021b8319e82deba5c24c2a575955c9bf3c8fb",
+    "correctChoice": 4,
+    "summary": "保持時間が同じとき、理論段数N＝16(tᵣ/W)²なので、幅の比Wᵦ/Wₐは√(9000÷5000)≒1.34となる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "ピーク幅は理論段数の平方根に反比例する。段数が少ないBのほうがピーク幅は広いので、0.38にはならない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "5000÷9000≒0.56は理論段数B/Aの比である。ピーク幅の比は段数比の逆数の平方根を使う。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "この値は√(5000÷9000)であり、幅の比をA/Bとした場合に当たる。設問はB/Aを求めている。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "保持時間が同じとき、理論段数N＝16(tᵣ/W)²なので、幅の比Wᵦ/Wₐは√(9000÷5000)≒1.34となる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "1.80は理論段数A/Bの逆比例を一乗で扱った値である。ピーク幅の比ではこの値の平方根を取る。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231807-q8": {
+    "sourceHash": "f15eca31c8e344e81eabd3b9b03f6fbf655673811632db997d244a1597add444",
+    "correctChoice": 3,
+    "summary": "アミンのMOCAを硫酸含浸ろ紙で捕集する。水酸化ナトリウムで塩基性にして遊離させてからトルエンに抽出する。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "捕集には硫酸含浸ろ紙を用いるが、抽出時にはMOCAを遊離させるため塩酸ではなく水酸化ナトリウムを加える。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "硫酸はろ紙の含浸に用いる。抽出時に加える液には遊離したアミンを得るための塩基である水酸化ナトリウムが適する。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "アミンのMOCAを硫酸含浸ろ紙で捕集する。水酸化ナトリウムで塩基性にして遊離させてからトルエンに抽出する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "含浸に用いるのは炭酸ナトリウムでなく硫酸であり、中和・抽出の段階で用いる液も硫酸ではない。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "水酸化ナトリウムを加えるのは正しいが、捕集ろ紙はアルカリ性の炭酸ナトリウムでなく酸性の硫酸を含浸させる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231807-q9": {
+    "sourceHash": "9a8e9c8d07c265a168be3cbbca5814422326776f676fbfe1770eeca8c8b8cfed",
+    "correctChoice": 3,
+    "summary": "カラム温度を上げると移動相の粘度は一般に低下し、同じ流量に必要な圧力は下がる。圧力が高くなるという記述は誤り。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "成分ごとに移動相、固定相への親和性が異なるので、カラム内で進む速さに差がついて分離が起こる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "逆相クロマトグラフィーは、低極性の固定相に対し、より極性の高い液体を移動相に用いる方式である。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "カラム温度を上げると移動相の粘度は一般に低下し、同じ流量に必要な圧力は下がる。圧力が高くなるという記述は誤り。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "ODSのシリカ担体や結合相は極端なpHに弱いので、強酸又は強塩基性の移動相で劣化する場合がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "HPLCでは溶液のまま注入するので、一般に気化を要するGCに比べて多量の試料を注入できる。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231807-q10": {
+    "sourceHash": "b03d90b5eddd7210a6d2e0feb5f61a1d3f597783c7a21d29dfdd14a2083804dc",
+    "correctChoice": 4,
+    "summary": "フッ化水素用検知管は、記述のリン酸ヒドロキシルアミンからリン酸を遊離させる反応との組合せが誤っている。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "アクリロニトリル用の検知管で用いる反応には、対象物質の酸化により生じたシアン化水素を検知するものがある。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "塩化ビニル用検知管では、前処理で対象物質から生じる塩化水素による指示薬の変色を利用する。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "臭化メチル用検知管には、臭化メチルの酸化によって生じる臭素を着色反応で検出する方式がある。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "フッ化水素用検知管は、記述のリン酸ヒドロキシルアミンからリン酸を遊離させる反応との組合せが誤っている。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ベンゼン用検知管には、五酸化ヨウ素との反応で生じるヨウ素の着色を利用して測定するものがある。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231807-q11": {
+    "sourceHash": "db35e2572355976f87f8fff614249ca8767dbe9d3783b5e88b612006fbe95b50",
+    "correctChoice": 1,
+    "summary": "ホルムアルデヒドを誘導体化して捕集する本法では、フルフラールでなく2,4-ジニトロフェニルヒドラジンを用いる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "ホルムアルデヒドを誘導体化して捕集する本法では、フルフラールでなく2,4-ジニトロフェニルヒドラジンを用いる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "捕集後の捕集管を冷蔵すると、分析までに捕集成分が劣化したり反応して変化したりするのを抑えやすい。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "ガスクロマトグラフで分離した成分は質量分析器にかけ、対象となる誘導体を選択的に検出できる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "高速液体クロマトグラフ分析では、対象の発色誘導体が紫外光を吸収する性質を用いて検出する。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "オゾンが共存すると捕集材や誘導体と反応し、捕集量から見積もるホルムアルデヒド濃度に影響することがある。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231807-q12": {
+    "sourceHash": "c307c3c0c9937e27ce628bcf4ff7c7c715a23accd8a131ea7aed8cf5ce539f23",
+    "correctChoice": 3,
+    "summary": "本法には薄層クロマトグラフによる分離と蛍光強度の測定を使う。亜硝酸ナトリウムとスルファニル酸で誘導体化するという記述はこの手順に合わない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "α-ナフチルアミンは塩基性のアミノ基を持つので、希塩酸を用いた液体捕集で塩の形にして捕らえる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "捕集液をアルカリ性にするとα-ナフチルアミンは非イオン形に戻り、エチルエーテル相に抽出できる。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "本法には薄層クロマトグラフによる分離と蛍光強度の測定を使う。亜硝酸ナトリウムとスルファニル酸で誘導体化するという記述はこの手順に合わない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "薄層クロマトグラフで共存成分から分離してから、対象の蛍光強度を測定して定量するという記載は正しい。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "既知量のα-ナフチルアミンをエタノールに溶解した標準液を用意し、試料の蛍光強度と比較する。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231807-q13": {
+    "sourceHash": "a8c6263606be7e21a65b9e3d43cf4a24435e0798320eb643f19b4c6ec08050e1",
+    "correctChoice": 5,
+    "summary": "酸化プロピレンは酸素を含む三員環にメチル基が付いた構造である。図の環外の炭素間二重結合はこの構造にない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "1,1-ジメチルヒドラジンでは同じ側の窒素に二つのメチル基が結合し、もう一方はNH₂となるため図に合う。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "o-トリジンはビフェニル骨格の両側にアミノ基とメチル基を持つ。図ではそれぞれアミノ基に隣接してメチル基がある。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "アクリルアミドはCH₂＝CH−C(＝O)−NH₂であり、炭素間二重結合とアミド基の両方が図にある。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "クロロメチルメチルエーテルはCH₃−O−CH₂Clである。図のエーテル結合と塩素の位置は正しい。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "酸化プロピレンは酸素を含む三員環にメチル基が付いた構造である。図の環外の炭素間二重結合はこの構造にない。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231807-q14": {
+    "sourceHash": "635e147d4f4d83e44686fb7d7bb506b0cf001209c7065dec9c1a8f7aabbf8892",
+    "correctChoice": 2,
+    "summary": "イソシアネート基は窒素側で結合する−N＝C＝Oである。図のように酸素側で結合する−OCNとは異なる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "アミノ基は窒素に二つの水素が結合した−NH₂として表されるので、図の官能基名との組合せは正しい。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "イソシアネート基は窒素側で結合する−N＝C＝Oである。図のように酸素側で結合する−OCNとは異なる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "カルボニル基は炭素と酸素が二重結合したC＝Oであり、図が示す官能基の名称と一致する。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "ニトリル基は炭素と窒素が三重結合を持つ−C≡Nで、−CNはこの結合を簡略に表している。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ビニル基はエチレンの水素一つを別の結合に置き換えた官能基なので、−CH＝CH₂で表される。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231807-q15": {
+    "sourceHash": "662a16566577bf2987b53a28b4f2b332fa1adad0a55fdcf29564417efdf219fa",
+    "correctChoice": 4,
+    "summary": "気体の物質量は12600×1÷(8310×298)≒0.00509 molで約0.398 g。液体は1.00−0.398≒0.60 gである。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "気相だけで1.00 gを保持すると25℃での飽和蒸気圧を超える。液体が全くないとする結果は合わない。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "液体が0.20 gなら気相に0.80 g残り、1 Lでの圧力が指定された飽和蒸気圧12.6 kPaより高くなる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "0.40 gが液体なら気相は0.60 gとなり、飽和蒸気圧から状態方程式で求まる気相の約0.40 gを上回る。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "気体の物質量は12600×1÷(8310×298)≒0.00509 molで約0.398 g。液体は1.00−0.398≒0.60 gである。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "液体が0.80 g残ると気相が0.20 gで飽和に達しない。液体がある平衡では気相の圧力は飽和蒸気圧に達する。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231807-q16": {
+    "sourceHash": "a7487889274137b36a596a065b6c8a616e6b01fc943be558b43d6502b3f4619d",
+    "correctChoice": 5,
+    "summary": "シアン化物の標準原液はアルカリ性に保つ。酸性になると成分の保持と安全性に問題が生じるため、希硫酸は不適切である。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "エチレンイミンは水に溶けるため、この分析の標準原液を調製する溶媒として精製水が用いられる。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "フェノール性のペンタクロロフェノールは塩基性溶液中でイオン化して溶解しやすくなり、この組合せは適切である。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "有機化合物であるクロロメチルメチルエーテルの標準原液の調製にアセトンを用いる組合せは適切である。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "色素であるオーラミンを溶解し、濃度の既知な標準原液とする方法ではメタノールを用いる。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "シアン化物の標準原液はアルカリ性に保つ。酸性になると成分の保持と安全性に問題が生じるため、希硫酸は不適切である。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231807-q17": {
+    "sourceHash": "0afc308dbcd727656884cf44069d8eaa401e1c78d39b4a24b3be5ef7c8309555",
+    "correctChoice": 3,
+    "summary": "遊離したI₂をチオ硫酸ナトリウムで還元滴定する。でんぷんによるヨウ素の青紫色が消えた位置を終点とする。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "呈色の指示薬がでんぷんである点は合うが、反応で遊離するのはI₂であり、滴定剤はチオ硫酸ナトリウムである。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "生成物はHIでなくI₂である。硫酸とグルコースは、この方法の滴定剤と指示薬の組合せに当たらない。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "遊離したI₂をチオ硫酸ナトリウムで還元滴定する。でんぷんによるヨウ素の青紫色が消えた位置を終点とする。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "I₂とチオ硫酸ナトリウムの組合せは正しいが、I₂の呈色により終点を知るために加えるのはでんぷんである。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "遊離するI₂は正しいものの、その還元滴定に使うチオ硫酸ナトリウムと呈色の指示薬でんぷんを取り違えている。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231807-q18": {
+    "sourceHash": "bc39a8e1aefe4b43c2e337d0693c6c6f2f0849894aee0c0784d3a71576a29450",
+    "correctChoice": 5,
+    "summary": "マゼンタは常温で固体の色素であり、作業環境では主に粒子として捕集する。蒸気を吸着材で捕集する方法には適さない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "アクリロニトリルは蒸気として存在し、適切な固体吸着剤に試料空気を通して回収できる測定対象である。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "エチルベンゼンの蒸気は、活性炭など適切な固体捕集材を用いる作業環境測定の対象となる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "ベンゼン蒸気は、試料空気を固体の吸着材の入った捕集管に通し、回収する方法で測定できる。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "ベンゾトリクロリドには蒸気を固体の捕集材で回収する方法があり、この問題の不適切な物質には当たらない。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "マゼンタは常温で固体の色素であり、作業環境では主に粒子として捕集する。蒸気を吸着材で捕集する方法には適さない。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231807-q19": {
+    "sourceHash": "9a1f0c395950e731af6d998fefb82f07583b7addb47d9f6f9d6192f4bac3d942",
+    "correctChoice": 2,
+    "summary": "測定値の標準偏差0.02 ppmに係数3を掛けると、検出下限に相当する気中濃度は0.06 ppmになる。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "0.02 ppmは繰返し測定の標準偏差である。この問の検出下限は標準偏差に係数3を掛けた値である。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "測定値の標準偏差0.02 ppmに係数3を掛けると、検出下限に相当する気中濃度は0.06 ppmになる。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "0.10 ppmは標準偏差の5倍であり、この条件で使う検出下限の係数3から求めた値ではない。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "0.20 ppmは標準偏差の10倍で、検出下限の3倍法で得る濃度とは異なる。10倍は定量下限の目安に使われる。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "0.40 ppmを得るには標準偏差を20倍する必要があり、繰返し測定のばらつきから定める検出下限を上回る。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20231807-q20": {
+    "sourceHash": "ab2e8a3a277744a5f30375d1bb73a52b3327459eef279faae62bf685420c384e",
+    "correctChoice": 2,
+    "summary": "すり合わせ部に塗ったグリースは対象成分を吸着したり、試料を汚染したりするおそれがある。この方法では塗布しない。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "捕集瓶の内面が対象物質を吸着したり反応したりすると濃度が変化する。対象に対し不活性な容器を用いる。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "すり合わせ部に塗ったグリースは対象成分を吸着したり、試料を汚染したりするおそれがある。この方法では塗布しない。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "捕集袋を清浄な乾燥空気や窒素で洗浄し、袋の内部に残った前回の試料や不要な気体を取り除く。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "乾燥剤が測定対象を保持しない条件で、入口に乾燥剤を詰めた管を付けて水分を除く方法がある。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ポンプを通して試料を袋へ送ると、ポンプ内面に対象物質が吸着して濃度が下がる可能性があるため注意する。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
   }
 }
