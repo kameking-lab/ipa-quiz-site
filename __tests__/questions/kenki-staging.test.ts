@@ -54,10 +54,10 @@ import { questionPagePath } from "@/lib/seo/question-url";
 import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
 
 describe("kenki2 complete common and six species papers", () => {
-  it("retains all 304 official questions, answers and four explanations", () => {
-    expect(KENKI2_QUESTIONS).toHaveLength(304);
-    expect(new Set(KENKI2_QUESTIONS.map(q => q.id)).size).toBe(304);
-    expect(new Set(KENKI2_QUESTIONS.map(questionPagePath)).size).toBe(304);
+  it("retains 336 official questions, answers and four explanations", () => {
+    expect(KENKI2_QUESTIONS).toHaveLength(336);
+    expect(new Set(KENKI2_QUESTIONS.map(q => q.id)).size).toBe(336);
+    expect(new Set(KENKI2_QUESTIONS.map(questionPagePath)).size).toBe(336);
     for (const year of [2025, 2026] as const) {
       for (const [i, config] of EXAM_CONFIGS.kenki2.sessions.entries()) {
         const qs = KENKI2_QUESTIONS.filter(q => q.year === year && q.session === config.session);
@@ -82,7 +82,7 @@ describe("kenki2 complete common and six species papers", () => {
   });
   it("preserves figures, fractional conditions and the original calculation inputs", () => {
     const figures = KENKI2_QUESTIONS.filter(q => q.hasImage);
-    expect(figures).toHaveLength(4);
+    expect(figures).toHaveLength(5);
     for (const q of figures) {
       expect(q.imageAltTexts?.[0]).toContain("原本");
       for (const url of q.imageUrls ?? []) expect(existsSync(join(process.cwd(), "public", url))).toBe(true);
