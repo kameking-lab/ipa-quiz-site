@@ -10,8 +10,9 @@ import basic240908 from "./240908-js01.json";
 import basic240211 from "./240211-js01.json";
 import basic230910 from "./230910-js01.json";
 import basic230212 from "./230212-js01.json";
+import basic220911 from "./220911-js01.json";
 
-export const JKEN_SYSTEM_PAPERS = [febBasic, febProgramming, febDesign, sepBasic, sepProgramming, sepDesign, basic250209, basic240908, basic240211, basic230910, basic230212];
+export const JKEN_SYSTEM_PAPERS = [febBasic, febProgramming, febDesign, sepBasic, sepProgramming, sepDesign, basic250209, basic240908, basic240211, basic230910, basic230212, basic220911];
 
 /** Complete source candidates. Public registries must use the qualification publication gate. */
 export const JKEN_SYSTEM_QUESTIONS: Question[] = JKEN_SYSTEM_PAPERS.flatMap(paper => {
