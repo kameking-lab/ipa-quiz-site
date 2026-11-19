@@ -1224,8 +1224,10 @@ kangoshi: {
     sessions: [
         { session: "kogaku", urlSlug: "kogaku", expectedQuestions: 15, label: "無線工学", categories: ["無線工学"] },
         { session: "houki", urlSlug: "houki", expectedQuestions: 20, label: "法規", categories: ["法規"] },
+        { session: "eigo", urlSlug: "eigo", expectedQuestions: 12, label: "英語（筆記）", categories: ["英語（筆記）"] },
+        { session: "eikaiwa", urlSlug: "eikaiwa", expectedQuestions: 7, label: "英語（会話・原稿）", categories: ["英語（会話）"] },
     ],
-    seasons: ["march", "september"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["march", "september"], yearRange: { start: 2025, end: 2026 },
 },
 "land-special2": {
     code: "land-special2", nameFull: "第二級陸上特殊無線技士試験", urlSlug: "land-special2", level: "specialist",

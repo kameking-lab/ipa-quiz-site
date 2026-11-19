@@ -356,7 +356,7 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   { code: "general1", name: "第一級総合無線通信士", sub: "2026年3月・9月 日本語筆記280原問を保存、270原問を無料・回数制限なしで演習（地理10原問は保留）", domain: "electrical" },
   { code: "general2", name: "第二級総合無線通信士", sub: "2026年3月・9月 日本語筆記の5科目280原問、無料・回数制限なし", domain: "electrical" },
   { code: "general3", name: "第三級総合無線通信士", sub: "2026年3月・9月 日本語筆記の基礎・工学・法規140原問、無料・回数制限なし", domain: "electrical" },
-  { code: "maritime3", name: "第三級海上無線通信士", sub: "2026年3月・9月の無線工学・法規70原問・全肢解説", domain: "electrical" },
+  { code: "maritime3", name: "第三級海上無線通信士", sub: "2025年9月・2026年3月・9月の無線工学・法規、2025年9月の英語", domain: "electrical" },
   { code: "land-special2", name: "第二級陸上特殊無線技士", sub: "2021年10月・2022年2月の旧筆記試験48原問・全肢解説", domain: "electrical" },
   { code: "land-special3", name: "第三級陸上特殊無線技士", sub: "2021年10月・2022年2月の旧筆記試験48原問・全肢解説", domain: "electrical" },
   { code: "riku-tech2", name: "第二級陸上無線技術士", sub: "2026年2回分・全肢解説（確認中1原問を除く）", domain: "electrical" },

@@ -426,9 +426,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     shortName: "第三級海上無線通信士", fullName: "第三級海上無線通信士試験",
     domain: "electrical", administrator: "公益財団法人日本無線協会",
     officialQuestionsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", officialReuseTermsUrl: "https://www.nichimu.or.jp/kshiken/siken/index.html", status: "live",
-    reuseSummary: "2026年3月・9月の無線工学各15問・法規各20問、計70原問を収録。公式正答・全肢解説・原図で演習できます。B問題18原問は各5枠を個別に採点します。英語の筆記・会話と通信術は含みません。法令は実施回当時の内容です。",
+    reuseSummary: "2025年9月・2026年3月・9月の無線工学と法規、2025年9月の英語の筆記・会話（公式放送原稿）を収録。公式正答・全肢解説・原図で演習できます。B問題は各5枠を個別に採点します。法令は実施回当時の内容です。",
     attributionTemplate: "出典：公益財団法人日本無線協会 第三級海上無線通信士試験 ○年○月 ○科目 問○（問題・正答）。解説と原図の切出しは過去問AIが作成・加工。",
-    remainingWork: ["英語・通信術は未収録", "現行法令との差を学習時に確認"],
+    remainingWork: ["2026年の英語と各回の通信術は未収録", "現行法令との差を学習時に確認"],
 },
   {
     slug: "land-special2", examCode: "land-special2",
