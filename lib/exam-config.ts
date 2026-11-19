@@ -332,6 +332,14 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     seasons: ["published"], yearRange: { start: 2026, end: 2026 },
   },
 
+  "gesuido-3shu": {
+    code: "gesuido-3shu", nameFull: "下水道技術検定 第3種", urlSlug: "gesuido-3shu", level: "basic",
+    sessions: [
+      { session: "gakka", urlSlug: "gakka", expectedQuestions: 60, label: "筆記", categories: ["法令", "下水処理", "工場排水", "運転・維持管理", "安全管理"] },
+    ],
+    seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
+  },
+
   "khk-kagaku": {
     code: "khk-kagaku", nameFull: "高圧ガス製造保安責任者（化学）", urlSlug: "khk-kagaku", level: "advanced",
     sessions: [

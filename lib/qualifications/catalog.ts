@@ -1643,6 +1643,12 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     status: "live", reuseSummary: "2026年6月公表版の筆記12問・実技6解答単位を収録。", remainingWork: [],
   },
   {
+    slug: "gesuido-3shu", examCode: "gesuido-3shu", shortName: "下水道技術検定 第3種", fullName: "下水道技術検定 第3種",
+    domain: "construction", administrator: "日本下水道事業団",
+    officialQuestionsUrl: "https://www.jswa.go.jp/kentei/goannai.html", officialReuseTermsUrl: "https://www.jswa.go.jp/kentei/goannai.html",
+    status: "live", reuseSummary: "令和8年度第52回の公式問題・正答60問を収録。全肢解説付き。", remainingWork: [],
+  },
+  {
     slug: "khk-setsubishi", shortName: "液化石油ガス設備士（学科）", fullName: "液化石油ガス設備士試験（学科）",
     domain: "safety", administrator: "高圧ガス保安協会",
     officialQuestionsUrl: "https://shiken.khk.or.jp/shiken.html", officialReuseTermsUrl: "https://www.khk.or.jp/condition.html",
