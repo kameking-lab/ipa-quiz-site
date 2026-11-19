@@ -109,6 +109,13 @@ function am2(categories: string[]): SessionConfig {
 // ------- Exam configs -------
 
 export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
+  "kyoin-shimane": {
+    code: "kyoin-shimane", nameFull: "島根県公立学校教員採用候補者選考試験", urlSlug: "kyoin-shimane", level: "advanced",
+    sessions: [
+      { session: "kyotsu", urlSlug: "kyotsu", expectedQuestions: 15, label: "一般選考 教職教養", categories: ["教育史", "生徒指導", "教育施策", "特別支援教育", "教育心理", "教育法規"] },
+    ],
+    seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
+  },
   "kyoin-okinawa": {
     code: "kyoin-okinawa", nameFull: "沖縄県公立学校教員候補者選考試験", urlSlug: "kyoin-okinawa", level: "advanced",
     sessions: [

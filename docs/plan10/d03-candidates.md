@@ -43,6 +43,7 @@
 | 広島県・広島市 | 2025 | 第1次 教職に関する専門教育科目 | 17 | [問題](https://www.pref.hiroshima.lg.jp/uploaded/attachment/632142.pdf)・[採点基準](https://www.pref.hiroshima.lg.jp/uploaded/attachment/632145.pdf) |
 | 沖縄県 | 2026 | 第1次 一般教養・教職教養（午前の部） | 44 | [問題](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/040/383/r8am.pdf)・[正答・配点](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/040/383/r8-2syuuseiseitouhaiten.pdf) |
 | 沖縄県 | 2026 | 第1次 一般教養・教職教養（午後の部） | 45 | [問題](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/040/383/r8pm.pdf)・[正答・配点](https://www.pref.okinawa.jp/_res/projects/default_project/_page_/001/040/383/r8-2syuuseiseitouhaiten.pdf) |
+| 島根県 | 2026 | 一般選考 教職教養 | 15 | [問題](https://www.pref.shimane.lg.jp/admin/syokuin/saiyou/saiyou_info_tchr/kakomondai.data/1kyousyoku.pdf)・[解答例](https://www.pref.shimane.lg.jp/admin/syokuin/saiyou/saiyou_info_tchr/kakomondai.data/1kyousyokukyouyou.pdf) |
 
 収録数は、空欄の枝問を含む公式の解答欄単位。
 

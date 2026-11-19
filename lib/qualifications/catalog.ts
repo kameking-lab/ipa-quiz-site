@@ -46,6 +46,16 @@ export interface QualificationCatalogEntry {
  */
 export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
   {
+    slug: "kyoin-shimane", examCode: "kyoin-shimane", shortName: "島根県教員採用試験", fullName: "島根県公立学校教員採用候補者選考試験",
+    domain: "welfare", administrator: "島根県教育委員会",
+    officialQuestionsUrl: "https://www.pref.shimane.lg.jp/admin/syokuin/saiyou/saiyou_info_tchr/kakomondai.html",
+    officialReuseTermsUrl: "https://www.pref.shimane.lg.jp/cl.html",
+    status: "live",
+    reuseSummary: "公式問題・正答と全選択肢の独自解説を収録。",
+    attributionTemplate: "出典：島根県教育委員会 島根県公立学校教員採用候補者選考試験。解説は過去問AIの独自作成。",
+    remainingWork: [],
+  },
+  {
     slug: "kyoin-okinawa", examCode: "kyoin-okinawa", shortName: "沖縄県教員採用試験", fullName: "沖縄県公立学校教員候補者選考試験",
     domain: "welfare", administrator: "沖縄県教育委員会",
     officialQuestionsUrl: "https://www.pref.okinawa.jp/kyoiku/edu/1008490/1008535/1008540/1037341/1040383.html",
