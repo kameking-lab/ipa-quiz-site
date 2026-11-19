@@ -27,7 +27,7 @@ describe("eight prepared qualifications are published", () => {
   const counts: Record<string, number> = {
     "kikenbutsu-otsu4": 35, "kikenbutsu-kou": 45, "kikenbutsu-hei": 25,
     "shobo-setsubishi-kou1": 26, "shobo-setsubishi-kou4": 15, "shobo-setsubishi-otsu6": 16,
-    "unko-kanrisha-kamotsu": 86, "unko-kanrisha-ryokaku": 92,
+    "unko-kanrisha-kamotsu": 86, "unko-kanrisha-ryokaku": 134,
   };
   const examSitemap = renderExamsSitemapXml();
   const questionSitemap = Array.from({ length: getSitemapChunkCount() }, (_, i) => renderQuestionsSitemapChunkXml(i)).join("");
@@ -192,10 +192,10 @@ describe("eight prepared qualifications are published", () => {
     }
   });
 
-  it("旅客 preserves every answer slot and exact multiple-selection sets in both official tables", () => {
+  it("旅客 preserves every answer slot and exact multiple-selection sets in the official tables", () => {
     const dir = join(process.cwd(), "data/questions/unko-kanrisha-ryokaku");
     const official: Record<string, (number | number[])[]> = JSON.parse(readFileSync(join(dir, "official-answers.json"), "utf8"));
-    for (const year of ["2024", "2023"]) {
+    for (const year of ["2024", "2023", "2022"]) {
       if (!existsSync(join(dir, `${year}.json`))) continue;
       const questions: Question[] = JSON.parse(readFileSync(join(dir, `${year}.json`), "utf8"));
       expect(new Set(questions.map(q => q.qNumber)).size).toBe(30);
