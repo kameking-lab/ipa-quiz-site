@@ -1279,7 +1279,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.kanken.or.jp/kanken/grades/sample/",
     officialReuseTermsUrl: "https://www.kanken.or.jp/kanken/grades/sample/",
     status: "live",
-    reuseSummary: "2024年度第3回の公式問題と標準解答を収録。記入式の設問は同じ回の標準解答を使った選択式で演習できます。",
+    reuseSummary: "2023・2024年度の各第3回の公式問題と標準解答を収録。記入式の設問は同じ回の標準解答を使った選択式で演習できます。",
     attributionTemplate: "出典：公益財団法人日本漢字能力検定協会 日本漢字能力検定 準1級（試験問題・標準解答）。解説は過去問AI独自作成。",
     remainingWork: [],
   },

@@ -1387,7 +1387,7 @@ chizai1: {
         session: "gakka", urlSlug: "gakka", expectedQuestions: 130, label: "準1級",
         categories: ["読み", "表外の読み", "熟語の読みと一字訓読み", "共通の漢字", "書き取り", "誤字訂正", "四字熟語", "対義語・類義語", "故事・諺", "文章題"],
     }],
-    seasons: ["february"], yearRange: { start: 2024, end: 2024 },
+    seasons: ["february"], yearRange: { start: 2023, end: 2024 },
 },
 "kogai-08": {
     code: "kogai-08", nameFull: "公害防止管理者（汚水処理特論）", urlSlug: "kogai-08", level: "specialist",
