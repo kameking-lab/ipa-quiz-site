@@ -1213,7 +1213,7 @@ kangoshi: {
         { session: "hoki", urlSlug: "hoki", expectedQuestions: 25, label: "法規", categories: ["法規"] },
         { session: "tiri", urlSlug: "tiri", expectedQuestions: 40, label: "地理", categories: ["地理"] },
     ],
-    seasons: ["march", "september"], yearRange: { start: 2026, end: 2026 },
+    seasons: ["march", "september"], yearRange: { start: 2025, end: 2026 },
 },
 "general3": {
     code: "general3", nameFull: "第三級総合無線通信士試験", urlSlug: "general3", level: "specialist",
