@@ -1794,9 +1794,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://kyoin-pref-osaka.com/test/r9results-2-2/",
     officialReuseTermsUrl: "https://kyoin-pref-osaka.com/test/r9results-2-2/",
     status: "live",
-    reuseSummary: "2022～2026年度実施の第1次選考の筆答132問と、2024～2026年度実施の第2次選考の教科専門（小学校等）72問を公式問題・正答と全肢の独自解説で収録。",
+    reuseSummary: "2022～2026年度実施の第1次選考の筆答132問と、2023～2026年度実施の教科専門（小学校等）93問を公式問題・正答と全肢の独自解説で収録。",
     attributionTemplate: "出典：大阪府教育委員会 大阪府公立学校教員採用選考テスト。解説は過去問AIの独自作成。",
-    remainingWork: ["第2次選考の未収録の年度・校種・教科の筆答問題の収録"],
+    remainingWork: ["教科専門の未収録の年度・校種・教科の筆答問題の収録"],
   },
   {
     slug: "kyoin-tokyo", examCode: "kyoin-tokyo", shortName: "東京都教員採用試験", fullName: "東京都公立学校教員採用候補者選考",
