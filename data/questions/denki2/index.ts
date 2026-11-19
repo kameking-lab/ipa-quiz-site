@@ -5,6 +5,7 @@ import source2024Late from "./2024-late.json";
 import source2024Early from "./2024-early.json";
 import source2023Late from "./2023-late.json";
 import source2023Early from "./2023-early.json";
+import source2022Late from "./2022-late.json";
 import questions2024Secondary from "./2024-late-jitsumu.json";
 import questions2023Secondary from "./2023-late-jitsumu.json";
 import questions2022Secondary from "./2022-late-jitsumu.json";
@@ -74,6 +75,7 @@ export const DENKI2_QUESTIONS: Question[] = [
   ...toQuestions(source2024Early, "2026-11-19"),
   ...toQuestions(source2023Late, "2026-11-19"),
   ...toQuestions(source2023Early, "2026-11-19"),
+  ...toQuestions(source2022Late, "2026-11-19"),
   ...questions2023Secondary as Question[],
   ...questions2022Secondary as Question[],
 ];
