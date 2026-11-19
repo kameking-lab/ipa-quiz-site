@@ -49,7 +49,7 @@ for (const paper of catalog) {
     try {
       const url = new URL(paper[key]);
       const archivedOfficialPdf = key === 'pdfUrl' && url.hostname === 'web.archive.org'
-        && /^\/web\/\d{14}id_\/https:\/\/www\.exam\.or\.jp\/wp-content\/uploads\/\d{4}\/\d{2}\/[A-Za-z0-9-]+\.pdf$/u.test(url.pathname);
+        && /^\/web\/\d{14}id_\/https:\/\/www\.exam\.or\.jp\/(?:wp-content\/uploads\/\d{4}\/\d{2}\/[A-Za-z0-9-]+|lc_r\d{3}\/LC\d{8})\.pdf$/u.test(url.pathname);
       check(url.protocol === 'https:' && (url.hostname === 'www.exam.or.jp' || archivedOfficialPdf), `Unexpected source URL: ${paper.id}/${key}`);
     } catch { errors.push(`Invalid source URL: ${paper.id}/${key}`); }
   }
