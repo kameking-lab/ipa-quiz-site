@@ -3,6 +3,7 @@ import source2026 from "./2026-annual.json";
 import source2025 from "./2025-annual.json";
 import source2024 from "./2024-annual.json";
 import source2023 from "./2023-annual.json";
+import source2022 from "./2022-annual.json";
 
 const keys: ChoiceKey[] = ["ア", "イ", "ウ", "エ", "オ"];
 type Source = typeof source2026 & { lastUpdated?: string };
@@ -17,10 +18,12 @@ function convert(source: Source): Question[] {
     const count = item.number >= appliedSkillsStart && item.number < appliedSkillsStart + 6 ? 5 : 4;
     const official = item.officialAnswerNumbers;
     if (item.choices.length !== count || item.choiceExplanations.length !== count ||
-        official.length !== 1 || !Number.isInteger(official[0]) || official[0] < 1 || official[0] > count) {
+        official.length === 0 || new Set(official).size !== official.length ||
+        official.some(number => !Number.isInteger(number) || number < 1 || number > count)) {
       throw new Error(`Invalid denki1 ${source.year} No.${item.number}`);
     }
     const figure = item as typeof item & { imageUrl?: string; figureDescription?: string };
+    const answers = official.map(number => keys[number - 1]);
     return {
       id: `denki1-${source.year}-annual-gakka-q${item.number}`,
       exam: "denki1", session: "gakka", year: source.year, season: "annual",
@@ -28,7 +31,8 @@ function convert(source: Source): Question[] {
       category: item.category, topicTags: [item.topic], difficulty: 2,
       question: item.question,
       choices: Object.fromEntries(item.choices.map((text, i) => [keys[i], text])),
-      answer: keys[official[0] - 1], officialAnswerNumber: String(official[0]),
+      answer: answers.length === 1 ? answers[0] : answers,
+      officialAnswerNumber: official.join("・"),
       explanation: item.explanation + `\n${source.lawNote}`,
       choiceExplanations: Object.fromEntries(item.choiceExplanations.map((text, i) => [keys[i], text])),
       explanationCoverage: "full",
@@ -50,4 +54,5 @@ export const DENKI1_QUESTIONS: Question[] = [
   ...DENKI1_2025_QUESTIONS,
   ...convert(source2024 as Source),
   ...convert(source2023 as Source),
+  ...convert(source2022 as Source),
 ];
