@@ -1,0 +1,2124 @@
+[
+  {
+    "id": "jidosha-2023-first-electrical-q01",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 1,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "原子と電気抵抗"
+    ],
+    "difficulty": 2,
+    "question": "原子及び電気抵抗に関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 原子のもつ電気は、(+)と(-)が互いに打消し合ってゼロとなり、電気的な性質を現さず中性の状態になっている。",
+      "イ": "(2) 電気抵抗は、導線の太さ(断面積)に比例し、導線の材質によっても変わる。",
+      "ウ": "(3) 電子は(+)電気を、原子核は(-)電気をもっているが、原子のそれぞれの(+)と(-)の電気の量は等しい。",
+      "エ": "(4) 一般に金属の抵抗は、温度が上昇したときに抵抗値が小さくなるが、その小さくなる割合を表すものを、その抵抗の温度係数という。"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "中性の原子では原子核の正電荷と電子の負電荷の総量が等しく打ち消し合う。 導線の抵抗は、長さと材質が同じなら断面積に反比例する。",
+    "choiceExplanations": {
+      "ア": "中性の原子では原子核の正電荷と電子の負電荷の総量が等しく打ち消し合う。",
+      "イ": "導線の抵抗は、長さと材質が同じなら断面積に反比例する。",
+      "ウ": "原子核が正、電子が負であり、選択肢は両者の符号を逆にしている。",
+      "エ": "一般的な金属の抵抗は温度の上昇に伴い増える。温度係数は温度に対する抵抗の変化率を表す。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.1。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      2
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=2",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q02",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 2,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "ジュールの法則"
+    ],
+    "difficulty": 2,
+    "question": "抵抗をR、電流をI、電流を流している時間をt、発熱量をHとした場合、ジュールの法則を表す式として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) H = IRt²",
+      "イ": "(2) H = I²Rt",
+      "ウ": "(3) H = (IR)²t",
+      "エ": "(4) H = IR²t"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "抵抗で消費する電力I²Rに通電時間tを掛けると、発熱量H = I²Rtとなる。 電流は二乗し、時間は一乗で掛けるため、この式では指数が入れ替わっている。",
+    "choiceExplanations": {
+      "ア": "電流は二乗し、時間は一乗で掛けるため、この式では指数が入れ替わっている。",
+      "イ": "抵抗で消費する電力I²Rに通電時間tを掛けると、発熱量H = I²Rtとなる。",
+      "ウ": "括弧内全体を二乗すると抵抗Rも二乗されるが、発熱量は抵抗に比例する。",
+      "エ": "二乗するのは抵抗Rではなく電流Iである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.2。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      2
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=2",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q03",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 3,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "コイルの磁界"
+    ],
+    "difficulty": 2,
+    "question": "コイルに電流を流したときのコイル内部に発生する磁力線に関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 電圧とコイルの巻数の積に比例した磁力線が発生する。",
+      "イ": "(2) 電流とコイルの巻数の積に反比例した磁力線が発生する。",
+      "ウ": "(3) 電流とコイルの巻数の積に比例した磁力線が発生する。",
+      "エ": "(4) 電圧とコイルの巻数の積に反比例した磁力線が発生する。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "コイルの起磁力は電流と巻数の積に比例し、同じ磁気回路では発生する磁束もそれに応じて大きくなる。 同じ磁気回路で磁界を決める起磁力は、電圧と巻数の積ではなく電流と巻数の積で表す。",
+    "choiceExplanations": {
+      "ア": "同じ磁気回路で磁界を決める起磁力は、電圧と巻数の積ではなく電流と巻数の積で表す。",
+      "イ": "電流と巻数の積が大きいほど起磁力は大きくなるので、反比例ではない。",
+      "ウ": "コイルの起磁力は電流と巻数の積に比例し、同じ磁気回路では発生する磁束もそれに応じて大きくなる。",
+      "エ": "巻数や電圧の積に反比例して磁力線が発生する関係にはない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.3。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      2
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 2,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=2",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q04",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 4,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "直列コンデンサ"
+    ],
+    "difficulty": 2,
+    "question": "複数のコンデンサを直列に接続したときの合成静電容量に関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 各コンデンサの静電容量の逆数の和となる。",
+      "イ": "(2) 各コンデンサの静電容量の逆数の積の逆数となる。",
+      "ウ": "(3) 各コンデンサの静電容量の逆数の積となる。",
+      "エ": "(4) 各コンデンサの静電容量の逆数の和の逆数となる。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "直列では1/C = 1/C₁ + 1/C₂ + …なので、合成容量Cは逆数の和を逆数にした値となる。",
+    "choiceExplanations": {
+      "ア": "容量の逆数の和は合成静電容量の逆数を表す。",
+      "イ": "直列では各容量の逆数を足す。各逆数を掛けた値の逆数ではない。",
+      "ウ": "直列では電圧が加算されるため、各容量の逆数を掛け合わせる式にはならない。",
+      "エ": "直列では1/C = 1/C₁ + 1/C₂ + …なので、合成容量Cは逆数の和を逆数にした値となる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.4。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      3
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=3",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q05",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 5,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "交流とリアクタンス"
+    ],
+    "difficulty": 2,
+    "question": "交流に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 実効値とは、直流と同じ熱量を出す交流の値をいう。",
+      "イ": "(2) 同相とは、各コイルの起電力の大きさと方向が、同じように変化することをいう。",
+      "ウ": "(3) 鉄心に巻いたコイルに交流電圧を加えると、コイル内には自己誘導作用による起電力が発生し、この起電力は、加えた交流電圧と常に逆方向に働く。",
+      "エ": "(4) 容量リアクタンスは、コンデンサの容量が小さいほど大きくなり、また、容量が一定ならば交流の周波数が低いほど小さくなる。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "容量リアクタンスXc = 1/(2πfC)は、容量が一定なら周波数が低いほど大きくなる。 実効値は同じ抵抗に加えたとき、同じ発熱を生じる直流の値に対応する。",
+    "choiceExplanations": {
+      "ア": "実効値は同じ抵抗に加えたとき、同じ発熱を生じる直流の値に対応する。",
+      "イ": "同相では波形の零点や極大などの位相がそろい、同じ向きに変化する。",
+      "ウ": "自己誘導起電力は、電流の変化を妨げる向きに生じる。このコイルでは印加電圧に対する逆起電力として扱う。",
+      "エ": "容量リアクタンスXc = 1/(2πfC)は、容量が一定なら周波数が低いほど大きくなる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.5。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      3
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=3",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q06",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 6,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "トランジスタの図記号"
+    ],
+    "difficulty": 2,
+    "question": "PNP型トランジスタの電気用図記号として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 図の(1)",
+      "イ": "(2) 図の(2)",
+      "ウ": "(3) 図の(3)",
+      "エ": "(4) 図の(4)"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "E端子側の矢印がベースへ向いており、PNP型の図記号である。 矢印がC端子側に付いている。バイポーラトランジスタの矢印はE端子側に付く。",
+    "choiceExplanations": {
+      "ア": "矢印がC端子側に付いている。バイポーラトランジスタの矢印はE端子側に付く。",
+      "イ": "E端子側の矢印がベースへ向いており、PNP型の図記号である。",
+      "ウ": "矢印の位置がC端子側であり、バイポーラトランジスタの図記号と一致しない。",
+      "エ": "E端子側の矢印は外向きで、NPN型の図記号である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourceFigureRequired": true,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.6。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      3
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 3,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=3",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ],
+    "imageUrls": [
+      "/automotive/mlit-electrical-2023-q06.webp"
+    ],
+    "imageAltTexts": [
+      "令和5年度第1回自動車電気装置整備士 学科試験 No.6 の原図"
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q07",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 7,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "2進数と論理回路"
+    ],
+    "difficulty": 2,
+    "question": "2進数と論理回路に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) マイコンが扱う情報単位には、8ビットを一つにまとめたバイトも使われる。",
+      "イ": "(2) 10進数の「9」を2進数で表した場合、「1000」となる。",
+      "ウ": "(3) AND回路は、全ての入力が「1」のとき、出力が「1」となる。",
+      "エ": "(4) NOR回路の出力は、OR回路の出力をNOT回路で反転した形となる。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "2進数1000は10進数の8である。9は8と1の和なので1001になる。 8ビットをひとまとめにした単位が1バイトである。",
+    "choiceExplanations": {
+      "ア": "8ビットをひとまとめにした単位が1バイトである。",
+      "イ": "2進数1000は10進数の8である。9は8と1の和なので1001になる。",
+      "ウ": "AND回路の出力が1になるのは、入力がすべて1の場合である。",
+      "エ": "NOR回路では、OR回路の出力を反転するため、入力がすべて0のときに出力が1になる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.7。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      4
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 4,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=4",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q08",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 8,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "電解液比重の温度補正"
+    ],
+    "difficulty": 2,
+    "question": "鉛バッテリの電解液が20°Cから1°C下降したときの電解液比重の記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 0.007低下する。",
+      "イ": "(2) 0.007上昇する。",
+      "ウ": "(3) 0.0007低下する。",
+      "エ": "(4) 0.0007上昇する。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "電解液温度が1℃下がると密度が増し、比重は約0.0007上昇する。 温度が下がると比重は上がる。この値は変化の向きも変化量も違う。",
+    "choiceExplanations": {
+      "ア": "温度が下がると比重は上がる。この値は変化の向きも変化量も違う。",
+      "イ": "上昇する向きは合っているが、1℃当たりの変化は0.0007程度で、この値は10倍である。",
+      "ウ": "0.0007程度の変化量でも、冷えると比重は低下するのではなく上昇する。",
+      "エ": "電解液温度が1℃下がると密度が増し、比重は約0.0007上昇する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.8。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      4
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 4,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=4",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q09",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 9,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "鉛バッテリの充電"
+    ],
+    "difficulty": 2,
+    "question": "鉛バッテリの充電に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 準定電圧充電法は、充電初期には大きな充電電流が流れるが、充電の進行に伴うバッテリ端子電圧の上昇とともに充電電流が減少していく充電方法をいう。",
+      "イ": "(2) 12V用バッテリを2個同時に充電する場合は、24V用の充電器を用いて並列に接続する。",
+      "ウ": "(3) 完全に充電しても比重が1.240(20°C)以上に上昇しない場合は、極板のサルフェーションまたはショートが推定原因の一つとして考えられる。",
+      "エ": "(4) 充電中に電解液温度が異常に上昇する場合は、一般に正極活物質の脱落が多いことによる極板底部および側部でのショートが推定原因の一つとして考えられる。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "12Vバッテリ2個の並列接続で必要な電圧は12V相当である。24V相当になるのは直列でつないだ場合である。",
+    "choiceExplanations": {
+      "ア": "準定電圧充電では、バッテリ端子電圧が上昇して充電器との電位差が小さくなるにつれ、充電電流が減る。",
+      "イ": "12Vバッテリ2個の並列接続で必要な電圧は12V相当である。24V相当になるのは直列でつないだ場合である。",
+      "ウ": "サルフェーションや極板の短絡があると、充電を続けても電解液比重が所定値に達しないことがある。",
+      "エ": "正極活物質の脱落による内部短絡は、充電時の異常発熱の原因になり得る。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.9。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      4
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 4,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=4",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q10",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 10,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "サルフェーション"
+    ],
+    "difficulty": 2,
+    "question": "鉛バッテリのサルフェーションによって起こる現象に関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 充電中の電圧が高い",
+      "イ": "(2) 放電中の電圧が高い",
+      "ウ": "(3) 極板が黒色を帯びている",
+      "エ": "(4) 電解液比重が高い"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "硫酸鉛が結晶化して内部抵抗が増えると、充電中の端子電圧が高めに出る。 内部抵抗が増えたバッテリでは、放電時の負荷による電圧低下が大きくなる。",
+    "choiceExplanations": {
+      "ア": "硫酸鉛が結晶化して内部抵抗が増えると、充電中の端子電圧が高めに出る。",
+      "イ": "内部抵抗が増えたバッテリでは、放電時の負荷による電圧低下が大きくなる。",
+      "ウ": "サルフェーションで付着する硫酸鉛の結晶は白っぽく、黒色は典型的な所見ではない。",
+      "エ": "硫酸鉛が極板に残ると電解液の硫酸濃度が回復しにくくなり、比重は上がりにくい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.10。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      5
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 5,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=5",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q11",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 11,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "充電電圧の制御"
+    ],
+    "difficulty": 2,
+    "question": "充電装置の概要に関する次の文章の（イ）と（ロ）に当てはまるものとして、下の組み合わせのうち、適切なものはどれか。\nオルタネータは、自動車がある一定の速さで走っているときに定格の出力を出し、それ以上の速さで走っても発生電圧が（イ）して（ロ）にならないように、レギュレータがオルタネータの発生電圧を制御している。",
+    "choices": {
+      "ア": "(1) 上昇 ／ 過充電",
+      "イ": "(2) 上昇 ／ 充電不足",
+      "ウ": "(3) 低下 ／ 過充電",
+      "エ": "(4) 低下 ／ 充電不足"
+    },
+    "answer": "ア",
+    "officialAnswerNumber": "1",
+    "explanation": "回転が速くなった際の発生電圧の上昇を抑え、バッテリの過充電を防ぐ。 電圧の異常な上昇で問題となるのは充電不足ではなく過充電である。",
+    "choiceExplanations": {
+      "ア": "回転が速くなった際の発生電圧の上昇を抑え、バッテリの過充電を防ぐ。",
+      "イ": "電圧の異常な上昇で問題となるのは充電不足ではなく過充電である。",
+      "ウ": "過充電を防ぐために抑えるのは、回転上昇時の電圧の上昇である。",
+      "エ": "この文章は、高回転時の過電圧を制御する場面であり、低下による充電不足の説明ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.11。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      5
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 5,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=5",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q12",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 12,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "単相交流の発生"
+    ],
+    "difficulty": 2,
+    "question": "図に示すロータの回転角度において、オルタネータの単相交流に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 磁束変化の最も大きい90°および270°の点で、最大起電力が発生する。",
+      "イ": "(2) 0°および180°の点では、磁束変化が無いので起電力はゼロとなる。",
+      "ウ": "(3) 誘起する起電力は、180°ごとにコイル端子の極性が(+)および(-)に変化する。",
+      "エ": "(4) 実車においては、起電力の大きさを一定に調整するために回転数を制御している。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "実車のオルタネータの発生電圧は、主にレギュレータが界磁電流を調整して制御する。 図の90°と270°では磁束の変化が最大になり、起電力の大きさも最大となる。",
+    "choiceExplanations": {
+      "ア": "図の90°と270°では磁束の変化が最大になり、起電力の大きさも最大となる。",
+      "イ": "0°と180°では磁束が極値となって変化率がゼロなので、起電力は発生しない。",
+      "ウ": "回転する磁界により、コイル端子に誘起される電圧の極性は半回転ごとに反転する。",
+      "エ": "実車のオルタネータの発生電圧は、主にレギュレータが界磁電流を調整して制御する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourceFigureRequired": true,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.12。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      6
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 6,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=6",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ],
+    "imageUrls": [
+      "/automotive/mlit-electrical-2023-q12.webp"
+    ],
+    "imageAltTexts": [
+      "令和5年度第1回自動車電気装置整備士 学科試験 No.12 の原図"
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q13",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 13,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "オルタネータの構造"
+    ],
+    "difficulty": 2,
+    "question": "オルタネータの構造に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) ロータのスリップリングは、銅、黄銅、ステンレスなどでできた電気導体と絶縁物で構成されている。",
+      "イ": "(2) ロータの両サイドには、一体化されたファンが付いている。",
+      "ウ": "(3) ステータには、3個の独立したステータコイルが巻かれている。",
+      "エ": "(4) Δ結線は、Y結線と比較して最大出力電流は劣るが、低速特性に優れている。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "一般にY結線は低速側に有利で、Δ結線は大きな出力電流を取りやすい。記述は特性を逆にしている。 スリップリングは回転するロータコイルに通電する導電部と、それらを分ける絶縁部でできている。",
+    "choiceExplanations": {
+      "ア": "スリップリングは回転するロータコイルに通電する導電部と、それらを分ける絶縁部でできている。",
+      "イ": "内扇式のロータには両側に冷却ファンを備える構造が用いられる。",
+      "ウ": "三相交流用のステータには三相分のコイルが巻かれている。",
+      "エ": "一般にY結線は低速側に有利で、Δ結線は大きな出力電流を取りやすい。記述は特性を逆にしている。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.13。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      6
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 6,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=6",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q14",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 14,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "オルタネータ異常時制御"
+    ],
+    "difficulty": 2,
+    "question": "図に示すオルタネータ回路において、オルタネータB端子が外れたときの次の文章の（イ）から（ハ）にあてはまる語句の組み合わせとして、適切なものはどれか。\nオルタネータ回転中B端子が開放状態になると、バッテリへの充電が行われなくなるのでバッテリ電圧（S端子の電圧）は徐々に低下する。\nS端子電圧が調整電圧以下になるとTr1が（イ）し、B端子電圧が上昇する。\nそして、（ロ）電圧より（ハ）電圧が2.5V以上高くなると、M・IC回路がこれを検出し、Tr2をONさせ、チャージングランプを点灯させるとともにB端子の電圧を約17.5Vに制御する。",
+    "choices": {
+      "ア": "(1) ON ／ B端子 ／ S端子",
+      "イ": "(2) OFF ／ B端子 ／ S端子",
+      "ウ": "(3) OFF ／ S端子 ／ B端子",
+      "エ": "(4) ON ／ S端子 ／ B端子"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "S端子の電圧が下がるとTr1がONになり、B端子がS端子より2.5V以上高くなると異常を検出する。 Tr1はONするが、充電が途絶えるとS端子が低下しB端子が上昇するため、電圧を比較する順序が逆である。",
+    "choiceExplanations": {
+      "ア": "Tr1はONするが、充電が途絶えるとS端子が低下しB端子が上昇するため、電圧を比較する順序が逆である。",
+      "イ": "S端子が低いときの界磁制御はTr1をONにする方向であり、比較する電圧の順序も逆である。",
+      "ウ": "B端子がS端子より高くなる点は合うが、まず界磁電流を流すためTr1はONとなる。",
+      "エ": "S端子の電圧が下がるとTr1がONになり、B端子がS端子より2.5V以上高くなると異常を検出する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourceFigureRequired": true,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.14。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      7
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 7,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=7",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ],
+    "imageUrls": [
+      "/automotive/mlit-electrical-2023-q14.webp"
+    ],
+    "imageAltTexts": [
+      "令和5年度第1回自動車電気装置整備士 学科試験 No.14 の原図"
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q15",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 15,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "オルタネータの分解点検"
+    ],
+    "difficulty": 2,
+    "question": "オルタネータの分解点検に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) ロータの点検では、スリップリング間の導通をサーキットテスタの抵抗測定レンジを用いて点検し、導通があることを確認する。",
+      "イ": "(2) ステータの点検では、サーキットテスタの抵抗測定レンジを用いて、ステータコイルとステータコア間に導通があることを確認する。",
+      "ウ": "(3) ブラシの点検では、ブラシホルダの端面からのブラシの長さをノギスで測定する。",
+      "エ": "(4) ベアリングの点検では、ベアリングを指先で軽く回したとき、動きが滑らかで引っ掛かりや異音、がたなどがないかを点検する。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "ステータコイルは鉄心から絶縁されるべきであり、コイルとコア間に導通があれば異常である。 スリップリング間はロータコイルでつながるので、抵抗測定で導通と巻線の抵抗を確認する。",
+    "choiceExplanations": {
+      "ア": "スリップリング間はロータコイルでつながるので、抵抗測定で導通と巻線の抵抗を確認する。",
+      "イ": "ステータコイルは鉄心から絶縁されるべきであり、コイルとコア間に導通があれば異常である。",
+      "ウ": "ブラシは摩耗するため、ホルダ端面から出ている長さを測定し使用限度と比較する。",
+      "エ": "ベアリングを軽く回して、引っ掛かりや異音、がたがないことを確認する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.15。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      8
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 8,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=8",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q16",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 16,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "スタータの種類"
+    ],
+    "difficulty": 2,
+    "question": "スタータに関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) ピニオンシフト型スタータは、マグネットスイッチの力でドライブレバーを介してピニオンギヤを押し出し、エンジンのリングギヤとかみ合わせる方式である。",
+      "イ": "(2) リダクション型スタータは、アーマチュアの回転速度を各ギヤで減速させ、ピニオンギヤの回転力を大きくしている。",
+      "ウ": "(3) プラネタリ型スタータは、遊星ギヤを用いた減速式のスタータで、大型の高速型モータを採用している。",
+      "エ": "(4) プラネタリセグメントコンダクタ型スタータは、高速型モータと遊星ギヤを用いた減速式のスタータで、フィールドコイルにはフェライト磁石が使われている。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "プラネタリ型は遊星ギヤで減速することで、小型の高速モータを使用できる。 ピニオンシフト型では、マグネットスイッチの吸引力をレバーで伝えてピニオンをかみ合わせる。",
+    "choiceExplanations": {
+      "ア": "ピニオンシフト型では、マグネットスイッチの吸引力をレバーで伝えてピニオンをかみ合わせる。",
+      "イ": "リダクション型はモータの回転を減速ギヤで落とし、その分ピニオン側のトルクを高める。",
+      "ウ": "プラネタリ型は遊星ギヤで減速することで、小型の高速モータを使用できる。",
+      "エ": "プラネタリセグメントコンダクタ型は遊星減速機構を備え、界磁には永久磁石を用いるタイプがある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.16。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      8
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 8,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=8",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q17",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 17,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "モータの原理"
+    ],
+    "difficulty": 2,
+    "question": "スタータの回転力の発生に関する次の文章の（イ）から（ハ）にあてはまるものとして、下の組み合わせのうち、適切なものはどれか。\n直流モータの原理は、フレミングの（イ）の法則によって説明でき、力の大きさは（ロ）と導体に流れる（ハ）に比例する。",
+    "choices": {
+      "ア": "(1) 右手 ／ 磁界の強さ ／ 電流の大きさ",
+      "イ": "(2) 右手 ／ 電流の大きさ ／ 電圧の高さ",
+      "ウ": "(3) 左手 ／ 磁界の強さ ／ 電流の大きさ",
+      "エ": "(4) 左手 ／ 電流の大きさ ／ 電圧の高さ"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "フレミングの左手の法則を用いる。導体の長さや向きが同じなら、力の大きさは磁界の強さと電流に比例する。",
+    "choiceExplanations": {
+      "ア": "磁界と電流を用いる点は合うが、モータが受ける力の方向は右手ではなく左手の法則で表す。",
+      "イ": "右手の法則は誘導起電力の向きを求める場合に用いる。力は電圧との組合せで決まるわけではない。",
+      "ウ": "フレミングの左手の法則を用いる。導体の長さや向きが同じなら、力の大きさは磁界の強さと電流に比例する。",
+      "エ": "左手の法則で用いるのは磁界と電流であり、電圧と電流を掛けて力を求めるものではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.17。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      8
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 8,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=8",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q18",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 18,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "直巻モータ"
+    ],
+    "difficulty": 2,
+    "question": "スタータに用いられる直巻式モータに関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) アーマチュア電流が大きくなると、トルクは減少する。",
+      "イ": "(2) フィールドコイルとアーマチュアコイルは並列に接続されている。",
+      "ウ": "(3) 回転速度が高いときに大きなトルクを発生する。",
+      "エ": "(4) 無負荷時(エンジン始動後)の高速回転を抑えるブレーキを備えたものがある。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "定格負荷を失うと直巻モータは高速になりやすく、これを抑えるブレーキを備えるスタータがある。 直巻モータは電流が大きいほど磁束も大きくなり、通常は大きいトルクが得られる。",
+    "choiceExplanations": {
+      "ア": "直巻モータは電流が大きいほど磁束も大きくなり、通常は大きいトルクが得られる。",
+      "イ": "直巻式では界磁コイルとアーマチュアコイルが直列につながる。",
+      "ウ": "直巻モータの大きなトルクは主に始動時などの低速域で得られる。",
+      "エ": "定格負荷を失うと直巻モータは高速になりやすく、これを抑えるブレーキを備えるスタータがある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.18。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      9
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 9,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=9",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q19",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 19,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "マグネットスイッチの点検"
+    ],
+    "difficulty": 2,
+    "question": "図に示すピニオンシフト型スタータのマグネットスイッチの点検に関する次の文章の（イ）と（ロ）にあてはまるものとして、下の組み合わせのうち、適切なものはどれか。\nマグネットスイッチの吸引保持の良否点検において、（イ）をC端子とボデー間に加えてプランジャを押し込んだとき、プランジャが保持されない原因として（ロ）の断線が考えられる。",
+    "choices": {
+      "ア": "(1) スタータ定格電圧 ／ ホールディングコイル",
+      "イ": "(2) スタータ定格電圧 ／ プルインコイル",
+      "ウ": "(3) スタータ定格電圧の1/2の電圧 ／ ホールディングコイル",
+      "エ": "(4) スタータ定格電圧の1/2の電圧 ／ プルインコイル"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "定格の半分の電圧を加え、押し込んだプランジャが保持されるかをみる。保持できない場合はホールディングコイルの断線が考えられる。",
+    "choiceExplanations": {
+      "ア": "保持に働くのはホールディングコイルだが、図の吸引保持点検では定格の半分の電圧を用いる。",
+      "イ": "試験電圧が異なるうえ、プランジャを押し込んでからの保持はプルインコイルの役割ではない。",
+      "ウ": "定格の半分の電圧を加え、押し込んだプランジャが保持されるかをみる。保持できない場合はホールディングコイルの断線が考えられる。",
+      "エ": "定格電圧の半分は合っているが、押し込んだ後の保持に直接関わるのはホールディングコイルである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourceFigureRequired": true,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.19。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      9
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 9,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=9",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ],
+    "imageUrls": [
+      "/automotive/mlit-electrical-2023-q19.webp"
+    ],
+    "imageAltTexts": [
+      "令和5年度第1回自動車電気装置整備士 学科試験 No.19 の原図"
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q20",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 20,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "スタータ本体の点検"
+    ],
+    "difficulty": 2,
+    "question": "スタータ本体の点検方法に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) コンミテータの各セグメント間の導通点検は、サーキットテスタの抵抗レンジを用いて行う。",
+      "イ": "(2) フィールドコイルとヨーク間の絶縁点検は、サーキットテスタの抵抗測定レンジを用いて行う。",
+      "ウ": "(3) フィールドコイルの断線有無は、サーキットテスタの抵抗測定レンジを用いてコネクティングリードのターミナルと各ブラシ間の導通有無で点検する。",
+      "エ": "(4) アーマチュアコイルとコア間の絶縁点検は、メガテスタを用いて行う。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "フィールドコイルとヨーク間の絶縁は絶縁抵抗計で点検する。通常の抵抗レンジによる導通確認とは試験目的が異なる。",
+    "choiceExplanations": {
+      "ア": "コンミテータのセグメント間は、巻線の断線の有無を抵抗測定による導通点検で確かめる。",
+      "イ": "フィールドコイルとヨーク間の絶縁は絶縁抵抗計で点検する。通常の抵抗レンジによる導通確認とは試験目的が異なる。",
+      "ウ": "リードの端子とブラシ間の電路を調べると、フィールドコイルの断線を確認できる。",
+      "エ": "巻線と金属のコア間の絶縁抵抗は、絶縁抵抗計で測定する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.20。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      10
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 10,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=10",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q21",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 21,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "点火装置の機能"
+    ],
+    "difficulty": 2,
+    "question": "点火装置の機能に関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 点火装置の基本機能は、進角、遮断、配電だけである。",
+      "イ": "(2) 進角機能として、爆発による圧力を効率よく伝えるため上死点(TDC)に点火する必要がある。",
+      "ウ": "(3) 遮断機能に用いるトランジスタは、イグニッションコイルの二次電流を遮断した際に発生する逆起電力に耐えられるように作られており、通常、パワートランジスタと呼ばれる。",
+      "エ": "(4) 一般的に直列3気筒エンジンの各シリンダへの点火順序は1-3-2で、直列4気筒エンジンは1-3-4-2である。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "代表的な点火順序は直列3気筒で1–3–2、直列4気筒で1–3–4–2である。 混合気に点火するため、高電圧を発生させる機能なども必要である。",
+    "choiceExplanations": {
+      "ア": "混合気に点火するため、高電圧を発生させる機能なども必要である。",
+      "イ": "燃焼圧力が適切な時期に得られるよう、一般に運転条件に応じて上死点より前に点火する。",
+      "ウ": "トランジスタが遮断するのはイグニッションコイルの一次電流である。",
+      "エ": "代表的な点火順序は直列3気筒で1–3–2、直列4気筒で1–3–4–2である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.21。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      10
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 10,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=10",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q22",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 22,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "燃料噴射量制御"
+    ],
+    "difficulty": 2,
+    "question": "ガソリンエンジン電子制御システムの燃料噴射量制御に関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 始動後増量は、冷間時のエンジン運転性確保のため水温が低いほど増量させる。",
+      "イ": "(2) 減速時の燃料カットは、三元触媒の浄化を行い、理論空燃比へフィードバック制御する。",
+      "ウ": "(3) 暖機増量では、エンジン始動後に一定時間増量して始動直後のエンジン回転を安定させる。",
+      "エ": "(4) 加速増量は、加速時の応答性を向上させるために増量させる。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "加速時に必要な燃料を補うことで、加速時の応答性を向上させる。 水温が低いほど燃料を増やす説明は暖機増量に当たる。始動後増量は始動直後の一時的な補正である。",
+    "choiceExplanations": {
+      "ア": "水温が低いほど燃料を増やす説明は暖機増量に当たる。始動後増量は始動直後の一時的な補正である。",
+      "イ": "減速時の燃料カットは燃料噴射を停止する制御であり、理論空燃比付近に調整するフィードバックとは異なる。",
+      "ウ": "始動直後に一時的に増量して回転を安定させるのは始動後増量である。",
+      "エ": "加速時に必要な燃料を補うことで、加速時の応答性を向上させる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.22。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      10
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 10,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=10",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q23",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 23,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "デフォッガ回路"
+    ],
+    "difficulty": 2,
+    "question": "図に示すデフォッガ回路において、デフォッガスイッチを押したときに、サーキットブレーカが作動する原因として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 配線Aの断線",
+      "イ": "(2) 配線Bと配線Cの線間短絡",
+      "ウ": "(3) 配線Cの断線",
+      "エ": "(4) 配線Cと配線Dの線間短絡"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "スイッチが入るとBに電源がつながる。Bが接地側のCと短絡していれば大電流が流れ、ブレーカが作動する。",
+    "choiceExplanations": {
+      "ア": "Aが断線すると電源からの経路が切れ、過電流にはならない。",
+      "イ": "スイッチが入るとBに電源がつながる。Bが接地側のCと短絡していれば大電流が流れ、ブレーカが作動する。",
+      "ウ": "接地側のCが断線しても、電源とアースが直接つながるわけではない。",
+      "エ": "CとDは図でいずれも接地側なので、両者がつながっても電源の短絡にはならない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourceFigureRequired": true,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.23。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      11
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 11,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=11",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ],
+    "imageUrls": [
+      "/automotive/mlit-electrical-2023-q23.webp"
+    ],
+    "imageAltTexts": [
+      "令和5年度第1回自動車電気装置整備士 学科試験 No.23 の原図"
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q24",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 24,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "ヒューズと保護装置"
+    ],
+    "difficulty": 2,
+    "question": "電気装置や配線の保護に関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) ヒューズ端子には、亜鉛合金のメッキが施されている。",
+      "イ": "(2) ヒュージブルリンクの溶断電流は、30A、100Aまたはそれ以上の値に設定されている。",
+      "ウ": "(3) ヒューズ(定格電圧32V以下、定格電流30A以下)は、その定格電流の110%を超える電流が流れたとき、瞬時に溶断する。",
+      "エ": "(4) サーキットブレーカは、電気回路に過大な電流が流れたときに可溶片が溶断する。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "ヒュージブルリンクは主電源などを保護するため、大きい溶断電流に設定されている。 亜鉛合金は可溶部の材料などに用いられる。端子のめっきを亜鉛合金とする説明は適切でない。",
+    "choiceExplanations": {
+      "ア": "亜鉛合金は可溶部の材料などに用いられる。端子のめっきを亜鉛合金とする説明は適切でない。",
+      "イ": "ヒュージブルリンクは主電源などを保護するため、大きい溶断電流に設定されている。",
+      "ウ": "ヒューズの溶断時間は電流の大きさで異なり、定格をわずかに上回るだけで瞬時に切れるわけではない。",
+      "エ": "サーキットブレーカは過電流により接点を開く。可溶片が溶断するのはヒューズの動作である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.24。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      11
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 11,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=11",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q25",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 25,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "スピードメータ"
+    ],
+    "difficulty": 2,
+    "question": "スピードメータに関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 車速を検出するスピードセンサ部に磁気抵抗素子を用いた磁気抵抗素子式スピードセンサがある。",
+      "イ": "(2) 現在は、ケーブルレスの電気式スピードメータが主流である。",
+      "ウ": "(3) ステッピングモータ式メータは、マグネット式回転子の外側に2つのコイルを90°ずらして巻いてある。",
+      "エ": "(4) 車速の検出をアンチロックブレーキシステム(ABS)の車輪速センサをもとにABSコンピュータが作成するスピード信号やデータを用いたものがある。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "二つのコイルを90°ずらす構造は交差コイル式の説明であり、ステッピングモータ式の説明ではない。 磁気抵抗素子で磁界の変化を捉えて車速信号を得るセンサがある。",
+    "choiceExplanations": {
+      "ア": "磁気抵抗素子で磁界の変化を捉えて車速信号を得るセンサがある。",
+      "イ": "ケーブルを機械的に回す方式のほか、現在は電気信号を利用する方式が広く使われる。",
+      "ウ": "二つのコイルを90°ずらす構造は交差コイル式の説明であり、ステッピングモータ式の説明ではない。",
+      "エ": "車輪速を処理したABSコンピュータの車速信号またはデータで指示する方式もある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.25。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      12
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 12,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=12",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q26",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 26,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "油圧計の作動"
+    ],
+    "difficulty": 2,
+    "question": "バイメタルを用いたオイルプレッシャ指示の作動に関する文章の（イ）から（ニ）にあてはまる語句の組み合わせとして、適切なものはどれか。\n下図のオイルプレッシャゲージにおいて、油圧がないときはセンダ部ポイントアームとバイメタル側ポイントは開いている。油圧がかかると、それに（イ）した力でダイヤフラムが湾曲するため、ポイントアームはバイメタル側に（ロ）押し上げられ、バイメタル側ポイントに（ロ）圧着される。従って、（ハ）電流が流れるのでレシーバ部のバイメタルは（ニ）湾曲し、指針も（ニ）振れる。",
+    "choices": {
+      "ア": "(1) 反比例 ／ 強く ／ 多くの ／ 少なく",
+      "イ": "(2) 比例 ／ 弱く ／ 少ない ／ 大きく",
+      "ウ": "(3) 比例 ／ 強く ／ 多くの ／ 大きく",
+      "エ": "(4) 反比例 ／ 弱く ／ 少ない ／ 少なく"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "油圧に比例して接点が強く押され、より多くの電流が流れて受信側のバイメタルの湾曲と指針の振れが大きくなる。",
+    "choiceExplanations": {
+      "ア": "油圧が高いほどダイヤフラムを押す力は大きくなる。反比例とする記述は合わない。",
+      "イ": "力は油圧に比例するが、圧力が上がると接点は強く圧着し、平均電流は大きくなる。",
+      "ウ": "油圧に比例して接点が強く押され、より多くの電流が流れて受信側のバイメタルの湾曲と指針の振れが大きくなる。",
+      "エ": "油圧の上昇に対して押付力や指針の振れが小さくなるわけではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourceFigureRequired": true,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.26。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      12
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 12,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=12",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ],
+    "imageUrls": [
+      "/automotive/mlit-electrical-2023-q26.webp"
+    ],
+    "imageAltTexts": [
+      "令和5年度第1回自動車電気装置整備士 学科試験 No.26 の原図"
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q27",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 27,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "温度センサ"
+    ],
+    "difficulty": 2,
+    "question": "温度センサに使用されるものとして、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 静電容量式",
+      "イ": "(2) ピエゾ抵抗式",
+      "ウ": "(3) サーミスタ式",
+      "エ": "(4) 抵抗膜式"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "サーミスタは温度によって抵抗が変化するため、温度センサに用いられる。 容量の変化は変位や液面などの検出に利用される。この問題で問われる温度検出素子はサーミスタである。",
+    "choiceExplanations": {
+      "ア": "容量の変化は変位や液面などの検出に利用される。この問題で問われる温度検出素子はサーミスタである。",
+      "イ": "ピエゾ抵抗式は、圧力などによるひずみで抵抗が変化することを利用する。",
+      "ウ": "サーミスタは温度によって抵抗が変化するため、温度センサに用いられる。",
+      "エ": "抵抗膜式は、接触位置などを検出する方式として利用される。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.27。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      13
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 13,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=13",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q28",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 28,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "自動車の計器"
+    ],
+    "difficulty": 2,
+    "question": "保安装置のメータ(計器)に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) アンメータは、永久磁石、可動鉄片、コイルからなり、強い永久磁石の磁界内にコイルを置き、鉄片の軸に指針が取り付けられている。",
+      "イ": "(2) タコグラフは、自動車の走行した時刻とそのときの速度、駐車した時刻と経過時間、各走行区間の走行距離などを自動的に記録紙に記入する。",
+      "ウ": "(3) オイルプレッシャインジケータのプレッシャスイッチは、エンジンの油圧がない場合、接点が閉じており、インジケータランプが点灯する。",
+      "エ": "(4) ウォータテンパラチャゲージのセンダ部に使用されるサーミスタは、冷却水温が低いときに抵抗値が小さく、冷却水温が高いときに抵抗値が大きくなる特性を持っている。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "冷却水温を測る負特性サーミスタは、低温で抵抗が大きく、高温で小さくなる。選択肢はその関係が逆である。",
+    "choiceExplanations": {
+      "ア": "可動鉄片の位置がコイルの電流で変わり、軸に付いた指針で電流を表示するアンメータがある。",
+      "イ": "タコグラフは車速、時刻、走行距離などの運行記録を残す装置である。",
+      "ウ": "油圧がないときにプレッシャスイッチが閉じて警告灯を点灯する方式である。",
+      "エ": "冷却水温を測る負特性サーミスタは、低温で抵抗が大きく、高温で小さくなる。選択肢はその関係が逆である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.28。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      13
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 13,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=13",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q29",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 29,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "ワイパモータの低速回路"
+    ],
+    "difficulty": 2,
+    "question": "図に示すフェライト式ワイパモータ回路において、ワイパスイッチを低速にした場合の電気が流れる順番として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) バッテリ⊕→B端子→ポイントP2→カムプレート→ポイントP1→S端子→+1端子→ブラシB1→アーマチュア→ブラシB3→E端子→アース",
+      "イ": "(2) バッテリ⊕→B端子→ポイントP2→カムプレート→ポイントP3→E端子→アース",
+      "ウ": "(3) バッテリ⊕→+1端子→ブラシB1→アーマチュア→ブラシB3→E端子→アース",
+      "エ": "(4) バッテリ⊕→+2端子→ブラシB2→アーマチュア→ブラシB3→E端子→アース"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "低速位置では、電源が＋1端子からブラシB1、アーマチュア、ブラシB3、E端子を通ってアースに戻る。 カムプレートとS端子を経る経路は、主にスイッチ停止後に定位置まで移動させるための回路である。",
+    "choiceExplanations": {
+      "ア": "カムプレートとS端子を経る経路は、主にスイッチ停止後に定位置まで移動させるための回路である。",
+      "イ": "P3とE端子だけを通る記述には、低速用ブラシとアーマチュアを通る電路が含まれない。",
+      "ウ": "低速位置では、電源が＋1端子からブラシB1、アーマチュア、ブラシB3、E端子を通ってアースに戻る。",
+      "エ": "＋2端子からブラシB2へ流れるのは、高速側の接点を選んだときの電路である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourceFigureRequired": true,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.29。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      14
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 14,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=14",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ],
+    "imageUrls": [
+      "/automotive/mlit-electrical-2023-q29.webp"
+    ],
+    "imageAltTexts": [
+      "令和5年度第1回自動車電気装置整備士 学科試験 No.29 の原図"
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q30",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 30,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "フロンの回収"
+    ],
+    "difficulty": 2,
+    "question": "フロン回収・破壊の処理に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) カーエアコンに使用されているCFC12等の特定フロンが大気中に放出されると、ほとんど分解されずに成層圏にまで達し、オゾンを破壊する反応が連鎖的に起こる。",
+      "イ": "(2) 現在カーエアコン用に使用されているHFC134aは、地球温暖化効果を有するガスである。",
+      "ウ": "(3) カーエアコンの修理を行う事業者は、フロン回収機を使用してフロンの回収を行う必要がある。",
+      "エ": "(4) 一つの回収用ボンベに、CFC12とHFC134aを混入することができる。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "冷媒の種類に合った回収容器を使い、CFC12とHFC134aを同じ容器に混ぜない。 CFC12などは成層圏で分解されて塩素を放出し、オゾン層の破壊を引き起こす。",
+    "choiceExplanations": {
+      "ア": "CFC12などは成層圏で分解されて塩素を放出し、オゾン層の破壊を引き起こす。",
+      "イ": "HFC134aはオゾン層を破壊する塩素を含まないが、温室効果を有する。",
+      "ウ": "カーエアコンから冷媒を抜くときは、回収機を用いて回収する。",
+      "エ": "冷媒の種類に合った回収容器を使い、CFC12とHFC134aを同じ容器に混ぜない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.30。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      14
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 14,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=14",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q31",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 31,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "吹き出し温度制御"
+    ],
+    "difficulty": 2,
+    "question": "オート・エアコンの吹き出し温度制御システムに関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 内気センサは、車室内の空気を取り入れ、その温度をサーミスタによって検出している。",
+      "イ": "(2) 外気センサは、サーミスタによって外気温度を抵抗値に置き換えるものである。",
+      "ウ": "(3) 日射センサは、日射の影響を受けやすいインストルメントパネル上部には取り付けることができない。",
+      "エ": "(4) エアコンパネルは、作動状態をコントロールユニットからの指令により表示する。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "日射センサは日射が当たりやすいダッシュボード上面などに置き、車内の熱負荷を検出する。 車室内の空気をセンサに取り込み、サーミスタの抵抗値から内気温を測る。",
+    "choiceExplanations": {
+      "ア": "車室内の空気をセンサに取り込み、サーミスタの抵抗値から内気温を測る。",
+      "イ": "外気センサは外気温で変化するサーミスタの抵抗を検出する。",
+      "ウ": "日射センサは日射が当たりやすいダッシュボード上面などに置き、車内の熱負荷を検出する。",
+      "エ": "操作・表示用のエアコンパネルは制御ユニットから送られた作動状態を表示する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.31。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      15
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 15,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=15",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q32",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 32,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "空調の圧力診断"
+    ],
+    "difficulty": 2,
+    "question": "カーエアコンの故障診断に関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) エキスパンションバルブの開き過ぎは、高圧側圧力が高過ぎる原因となる。",
+      "イ": "(2) 感熱筒のガス漏れは、高・低圧側圧力ともに高い原因となる。",
+      "ウ": "(3) エキスパンションバルブの詰まりは、低圧側圧力が低過ぎる原因となる。",
+      "エ": "(4) エバポレータのフロストは、エアミックスダンパ作動不良の原因となる。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "膨張弁の詰まりで蒸発器への流量が減ると、低圧側の圧力が正常より低くなる。 膨張弁が開き過ぎると蒸発器側の冷媒流量が増え、典型的には低圧側が高くなる。",
+    "choiceExplanations": {
+      "ア": "膨張弁が開き過ぎると蒸発器側の冷媒流量が増え、典型的には低圧側が高くなる。",
+      "イ": "感熱筒からガスが漏れると膨張弁を開く力が弱くなり、蒸発器側への冷媒供給が不足する。",
+      "ウ": "膨張弁の詰まりで蒸発器への流量が減ると、低圧側の圧力が正常より低くなる。",
+      "エ": "蒸発器の着霜は冷却・通風側の異常で、エアミックスダンパの駆動機構の故障を直接引き起こすわけではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.32。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      15
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 15,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=15",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q33",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 33,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "空調の温度調節"
+    ],
+    "difficulty": 2,
+    "question": "カーエアコンの温度コントロールに関する記述として、適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) エアミックス方式は、エバポレータを通過したすべての風をヒータコアに通し吹き出す。",
+      "イ": "(2) リヒート方式は、エバポレータを通過した空気を、エアミックスダンパによってヒータコアに入る量を調節して、好みの温度にコントロールする。",
+      "ウ": "(3) サーモスイッチ方式には、サーミスタとエアコンアンプを組み合わせた電子式と、ガス式サーモスタットを用いたものと、2通りの方法がある。",
+      "エ": "(4) サーモスイッチ方式のサーミスタ式では、サーミスタは、エバポレータの前に取り付けられており、エバポレータを通過する前の風の温度を検知している。"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "サーモスイッチには、サーミスタとアンプによる電子式と、ガス式サーモスタットがある。 エアミックス方式では冷却した空気の一部だけをヒータコアへ通し、加熱しない空気と混ぜる。",
+    "choiceExplanations": {
+      "ア": "エアミックス方式では冷却した空気の一部だけをヒータコアへ通し、加熱しない空気と混ぜる。",
+      "イ": "エアミックスダンパによる分配はエアミックス方式の説明であり、冷却した空気を再加熱するリヒート方式とは異なる。",
+      "ウ": "サーモスイッチには、サーミスタとアンプによる電子式と、ガス式サーモスタットがある。",
+      "エ": "蒸発器を凍結させない制御には、蒸発器を通過する前の風ではなく蒸発器付近の冷却後の温度を検知する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.33。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      15
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 15,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=15",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q34",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 34,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "コンプレッサの方式"
+    ],
+    "difficulty": 2,
+    "question": "エアコンディショナに用いられるコンプレッサに関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 斜板式コンプレッサは、3対または5対のピストンが、シャフトに斜めに固定されている斜板にセットされている。",
+      "イ": "(2) 片斜板式コンプレッサは、両斜板式のピストンを片側だけに設けたもので、シャフトが回転すると、シャフトに直結されているラグプレートを介して斜板が一体で回転する。",
+      "ウ": "(3) スルーベーン式コンプレッサは、ロータとロータを貫通した2枚の直角に交わるベーン、および円筒型のシリンダで構成されている。",
+      "エ": "(4) スクロール式コンプレッサは、2対のうず巻形をした可動スクロールで構成されている。"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "スクロール式は固定スクロールと旋回する可動スクロールからなり、両方が可動ではない。 斜板式ではシャフト上の斜板で複数のピストンを往復させ、冷媒を圧縮する。",
+    "choiceExplanations": {
+      "ア": "斜板式ではシャフト上の斜板で複数のピストンを往復させ、冷媒を圧縮する。",
+      "イ": "片斜板式は片側にピストンを備え、シャフトからラグプレートを介して斜板に回転を伝える。",
+      "ウ": "スルーベーン式にはロータを直角に貫く2枚のベーンと円筒型シリンダを備える構造がある。",
+      "エ": "スクロール式は固定スクロールと旋回する可動スクロールからなり、両方が可動ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.34。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      16
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 16,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=16",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q35",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 35,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "コモンレール式燃料系統"
+    ],
+    "difficulty": 2,
+    "question": "コモンレール式ジーゼル燃料噴射システムの燃料系統に関する次の文章の（イ）から（ハ）にあてはまるものとして、下記の組み合わせのうち、適切なものはどれか。\n燃料系統とは、燃料（軽油）がフューエルタンクから（イ）、（ロ）と経由して、インジェクタから高圧噴射されるまでの系統及び、（ハ）を経由してフューエルタンクへ戻るまでの系統である。",
+    "choices": {
+      "ア": "(1) コモンレール ／ サプライポンプ ／ オーバフローパイプ",
+      "イ": "(2) サプライポンプ ／ コモンレール ／ オーバフローパイプ",
+      "ウ": "(3) コモンレール ／ サプライポンプ ／ 燃料吸入調整弁",
+      "エ": "(4) サプライポンプ ／ コモンレール ／ 燃料吸入調整弁"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "タンクからの燃料をサプライポンプで加圧し、コモンレールを経て各インジェクタへ送る。余った燃料はオーバフローパイプで戻る。",
+    "choiceExplanations": {
+      "ア": "サプライポンプで燃料を加圧してからコモンレールへ供給するので、二つの順序が逆である。",
+      "イ": "タンクからの燃料をサプライポンプで加圧し、コモンレールを経て各インジェクタへ送る。余った燃料はオーバフローパイプで戻る。",
+      "ウ": "加圧と蓄圧の順序が逆であり、燃料吸入調整弁もタンクへの戻り管ではない。",
+      "エ": "サプライポンプからコモンレールへの順序は合うが、戻りの経路はオーバフローパイプである。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.35。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      16
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 16,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=16",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q36",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 36,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "電子式点火時期制御"
+    ],
+    "difficulty": 2,
+    "question": "電子式点火時期制御に関する記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) エンジン始動時は、エンジン回転数の変化が大きいため、点火時期は固定進角度に固定されている。",
+      "イ": "(2) エンジン始動後の点火時期は、固定進角と各種補正進角から計算される。",
+      "ウ": "(3) アイドル安定化補正は、アイドル回転数が低下すると点火時期を進角し、アイドル回転数が上昇すると点火時期を遅角させる。",
+      "エ": "(4) 過渡期補正の中には、ノッキングの防止のため、点火時期を遅角させる補正がある。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "始動後の点火時期には基本進角が加わる。固定進角と各種補正進角だけを足す説明は不十分である。 始動時は回転の変動が大きいため、所定の固定進角度に設定する始動時制御が行われる。",
+    "choiceExplanations": {
+      "ア": "始動時は回転の変動が大きいため、所定の固定進角度に設定する始動時制御が行われる。",
+      "イ": "始動後の点火時期には基本進角が加わる。固定進角と各種補正進角だけを足す説明は不十分である。",
+      "ウ": "回転の低下時に進角してトルクを増し、上昇時に遅角してトルクを抑えることでアイドルを安定させる。",
+      "エ": "過渡時のノッキングを抑えるため、点火を一時的に遅らせる補正がある。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.36。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      17
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 17,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=17",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q37",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 37,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "スパークプラグの熱価"
+    ],
+    "difficulty": 2,
+    "question": "スパークプラグの低熱価型と高熱価型とを比較した記述として、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 低熱価型は、低速回転で自己清浄温度に達する。",
+      "イ": "(2) 高熱価型は、低速回転でプレイグニション温度に達する。",
+      "ウ": "(3) 低熱価型は、ガスポケットの容量が大きい。",
+      "エ": "(4) 高熱価型は、ガイシ脚部の表面積が小さい。"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "高熱価型は先端の熱を逃がしやすいため、低速で過熱して過早着火温度に達するという説明は逆である。 低熱価型は先端の熱を保ちやすく、比較的低速からカーボンを焼き切る自己清浄温度に達する。",
+    "choiceExplanations": {
+      "ア": "低熱価型は先端の熱を保ちやすく、比較的低速からカーボンを焼き切る自己清浄温度に達する。",
+      "イ": "高熱価型は先端の熱を逃がしやすいため、低速で過熱して過早着火温度に達するという説明は逆である。",
+      "ウ": "低熱価型はガイシ脚部が長く、周囲のガスポケットの容量が大きい。",
+      "エ": "高熱価型はガイシ脚部が短く、表面積が小さいため先端の温度が上がりにくい。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.37。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      17
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 17,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=17",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q38",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 38,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "自動車の構造基準"
+    ],
+    "difficulty": 2,
+    "question": "「道路運送車両法」に照らし、自動車の構造について、次の文章の( )にあてはまるものとして、適切なものは次のうちどれか。\n自動車は、その構造が、次に掲げる事項について、国土交通省令で定める保安上又は公害防止その他の環境保全上の技術基準に適合するものでなければ、運行の用に供してはならない。\n一 長さ、幅及び高さ\n二 ( )\n三 車両総重量\n四 車輪にかかる荷重\n五 車輪にかかる荷重の車両重量\n六 車輪にかかる荷重の車両総重量に対する割合\n七 最大安定傾斜角度\n八 最小回転半径\n九 接地部及び接地圧",
+    "choices": {
+      "ア": "(1) 最遠軸距",
+      "イ": "(2) 最低地上高",
+      "ウ": "(3) 最大出力",
+      "エ": "(4) 最高速度"
+    },
+    "answer": "イ",
+    "officialAnswerNumber": "2",
+    "explanation": "道路運送車両法第40条第二号が掲げる構造上の項目は、最低地上高である。 車軸間の距離は選択肢の語ではあるが、第40条第二号は最低地上高である。",
+    "choiceExplanations": {
+      "ア": "車軸間の距離は選択肢の語ではあるが、第40条第二号は最低地上高である。",
+      "イ": "道路運送車両法第40条第二号が掲げる構造上の項目は、最低地上高である。",
+      "ウ": "エンジンの最大出力は、同条第二号に列挙された構造上の項目ではない。",
+      "エ": "最高速度は同条第二号に掲げる車体構造上の項目ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.38。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      18
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 18,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=18",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q39",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 39,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "自動車の特定整備"
+    ],
+    "difficulty": 2,
+    "question": "「道路運送車両法」及び「道路運送車両法施行規則」に照らし、自動車の特定整備に該当しないものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 原動機を取り外して行う自動車の整備又は改造",
+      "イ": "(2) かじ取り装置のギヤ・ボックスを取り外して行う自動車の整備又は改造",
+      "ウ": "(3) 緩衝装置のトーションバー・スプリングを取り外して行う自動車の整備又は改造",
+      "エ": "(4) 自動運行装置を取り外して行う自動車の整備又は改造"
+    },
+    "answer": "ウ",
+    "officialAnswerNumber": "3",
+    "explanation": "緩衝装置のトーションバー・スプリングの取り外しは、列挙された特定整備の作業に含まれない。 原動機を取り外して行う整備または改造は、特定整備に当たる。",
+    "choiceExplanations": {
+      "ア": "原動機を取り外して行う整備または改造は、特定整備に当たる。",
+      "イ": "かじ取り装置のギヤ・ボックスを取り外す作業は、特定整備に該当する。",
+      "ウ": "緩衝装置のトーションバー・スプリングの取り外しは、列挙された特定整備の作業に含まれない。",
+      "エ": "自動運行装置を取り外して行う整備または改造は、特定整備に該当する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.39。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      18
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 18,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=18",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  },
+  {
+    "id": "jidosha-2023-first-electrical-q40",
+    "exam": "jidosha-electrical",
+    "session": "gakka",
+    "year": 2023,
+    "fiscalYear": 2023,
+    "season": "first",
+    "qNumber": 40,
+    "type": "multiple-choice",
+    "category": "自動車電気装置",
+    "topicTags": [
+      "前面ガラスの貼付物"
+    ],
+    "difficulty": 2,
+    "question": "「道路運送車両の保安基準」及び「道路運送車両の保安基準の細目を定める告示」に照らし、自動車(被牽引自動車を除く。)に備えられた前面ガラス(運転者が交通状況を確認するために必要な視野の範囲に係る部分とする。)に貼り付けられるものとして、不適切なものは次のうちどれか。",
+    "choices": {
+      "ア": "(1) 窓ガラスに貼り付けた状態において、可視光線透過率が70%である着色フィルム",
+      "イ": "(2) 整備命令標章",
+      "ウ": "(3) 車室内に備える貼り付け式の後写鏡及び後方等確認装置",
+      "エ": "(4) 臨時運行許可証"
+    },
+    "answer": "エ",
+    "officialAnswerNumber": "4",
+    "explanation": "臨時運行許可証は、運転者の必要な視野に係るガラス部分への許容貼付物には挙げられていない。 貼り付けた状態で可視光線透過率が70%以上の着色フィルムは、例外の基準を満たす。",
+    "choiceExplanations": {
+      "ア": "貼り付けた状態で可視光線透過率が70%以上の着色フィルムは、例外の基準を満たす。",
+      "イ": "法令に基づく整備命令標章は、前面ガラスに表示できる物に含まれる。",
+      "ウ": "所定の車室内用後写鏡や後方等確認装置は、基準の定める範囲で取り付けられる。",
+      "エ": "臨時運行許可証は、運転者の必要な視野に係るガラス部分への許容貼付物には挙げられていない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourceFigureRequired": false,
+    "examDate": "2023-07-19",
+    "sourcePdfUrl": "https://www.mlit.go.jp/jidosha/content/001766392.pdf",
+    "sourceAnswerUrl": "https://www.mlit.go.jp/jidosha/content/001766393.pdf",
+    "sourcePageUrl": "https://www.mlit.go.jp/jidosha/jidosha_tk9_000031.html",
+    "sourceAttribution": "出典：国土交通省 令和5年度第1回自動車整備士技能検定 学科試験（自動車電気装置整備士）No.40。解説は過去問AI独自作成。",
+    "license": "MLIT-PDL-1.0",
+    "lawReferenceDate": "2023-07-19",
+    "lastUpdated": "2026-11-19",
+    "sourcePages": [
+      19
+    ],
+    "sourcePageReferences": [
+      {
+        "physicalPage": 19,
+        "url": "https://www.mlit.go.jp/jidosha/content/001766392.pdf#page=19",
+        "pdfSha256": "9a91f53f107d3672c8ad7b64961d706c2a89ce8da39caab1a2ce319c3dbcc1d0"
+      }
+    ]
+  }
+]

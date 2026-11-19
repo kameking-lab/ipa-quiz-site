@@ -1354,10 +1354,10 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
 },
   {
     slug: "jidosha-electrical", examCode: "jidosha-electrical", shortName: "自動車電気装置整備士", fullName: "自動車電気装置整備士", domain: "automotive",
-    administrator: "一般社団法人日本自動車整備振興会連合会",
+    administrator: "国土交通省・一般社団法人日本自動車整備振興会連合会",
     officialQuestionsUrl: "https://www.jaspa.or.jp/mechanic/past/", officialReuseTermsUrl: "", status: "live",
-    reuseSummary: "令和7年度第2回・令和6年度第2回の2回分、80原問を収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。法令は各試験日時点です。解説は独自作成です。",
-    attributionTemplate: "出典：日本自動車整備振興会連合会 自動車整備技能登録試験（問題・正答）。解説は過去問AI独自作成。",
+    reuseSummary: "令和5〜7年度の学科試験を収録。公式問題・正答と全選択肢の解説、必要な原図を確認できます。法令は各試験日時点です。解説は独自作成です。",
+    attributionTemplate: "出典：国土交通省 自動車整備士技能検定、日本自動車整備振興会連合会 自動車整備技能登録試験（公式問題・正答）。解説は過去問AI独自作成。",
     remainingWork: [],
 },
   {
