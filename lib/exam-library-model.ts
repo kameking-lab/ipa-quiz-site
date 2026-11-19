@@ -367,6 +367,7 @@ export function boilerAnswerPage(examId: string, questionNumber: number): number
   const pages: Record<string, readonly number[]> = {
     "lckohyo-LC20260401-2": [32,33,34,34,34,34,35,35,36,36,36,36,37,38,39,39,39,39,40,40,41,41,41,41],
     "lckohyo-LC20251101": [30,31,32,32,32,32,33,34,35,35,35,35,36,37,38,38,38,38,39,39,40,40,40,40],
+    "lckohyo-LC20241101": [34,35,36,36,36,36,37,38,39,39,39,39,40,41,42,42,42,42,43,44,45,45,45,45],
   };
   return pages[examId]?.[questionNumber - 1];
 }

@@ -38591,5 +38591,321 @@
     "sources": [],
     "provisionalReview": true,
     "lastCheckedAt": "2026-11-19"
+  },
+  "lckohyo-LC20241101-q4": {
+    "sourceHash": "e86cf0c9d42f9f484bfdc95fad71172a0156905fb785a0f7ba1e091b2a5c6b27",
+    "correctChoice": 2,
+    "summary": "誤りはAとEです。管穴部の周効率の下限と、拘束された炭素鋼の熱応力の大きさが判断点です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "Aは誤りですが、Cの疲れ限度の説明は適切です。鉄鋼では引張強さより小さい応力でも繰返しによって破壊が起こり得ます。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "周効率を長手効率の半分以下にするのではなく、半分以上になるようにします。炭素鋼を完全に拘束した場合、温度差4℃の熱応力は約10 N/mm²であり、約1.0とはなりません。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "Bのすみ部の応力集中とCの疲れ限度の説明は、いずれも設問の条件に照らして適切です。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "Bの皿形鏡板のすみ部と、Dの0.2％の永久ひずみを用いる耐力の説明は、いずれも適切です。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "Eの応力の大きさは誤りですが、降伏点が明瞭でない材質で0.2％の永久ひずみを基準とするDは適切です。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20241101-q5": {
+    "sourceHash": "232882d8076fefc076a2ba3a63371c82cc2598f5570069726b8ee91976465a57",
+    "correctChoice": 2,
+    "summary": "誤りはAとEです。排熱回収による効率の改善と、安全弁の吹下りの定義を分けて確認します。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "Aには効率改善量の誤りがありますが、低温部の結露と腐食を空気の予熱で抑えるCは適切です。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "排ガスを10℃下げて一律に効率が約1％上がるとはいえません。Eの弁が閉じる入口圧力は再閉止圧力で、吹下りは吹出し圧力と再閉止圧力との差です。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "Bが説明する放射形・対流形の負荷特性と、Cの低温腐食を避けるための予熱は、いずれも適切です。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "Bの負荷に対する過熱温度の傾向は適切で、Dの胴と過熱器の安全弁の吹出し圧力の調整も適切です。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "Eの吹下りの定義は誤りですが、Dの過熱器の安全弁を胴より低く調整する記述は適切です。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      },
+      {
+        "title": "環境省 CO₂削減ポテンシャル診断 実践ガイドライン",
+        "url": "https://shift.env.go.jp/files/navi/measure/121221.pdf"
+      }
+    ]
+  },
+  "lckohyo-LC20241101-q10": {
+    "sourceHash": "91b40aeb4d51043d307658059d534cc51ac58ae4578c9acaf1018cb9234bb219",
+    "correctChoice": 2,
+    "summary": "短期満水保存に該当するものはA、B、Cです。排水できない過熱器に対するDの処置は含まれません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "停止前の水質調整と、停止後の底部ブロー・満水は正しいものの、ガス側伝熱面の結露を除くCも必要です。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "停止前の水質管理、沈殿物を排出して満水にする処置、ガス側伝熱面の結露を加熱で除く処置の三つが適切です。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "Aは適切です。Dのように排水できない過熱器を軟化水と亜硫酸ナトリウムで満たすのは適切ではありません。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "BとCは適切ですが、Dは誤りです。さらに停止前に水質を適正範囲の上限近くに調整するAも該当します。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "結露に対処するCは正しいもののDの過熱器の処置は不適切です。AとBも短期満水保存に該当します。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 ボイラー等の開放検査周期に係る認定制度",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc5846&dataType=1&pageNo=2"
+      },
+      {
+        "title": "厚生労働省 ボイラー及び圧力容器安全規則",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74013000&dataType=0&pageNo=1"
+      }
+    ]
+  },
+  "lckohyo-LC20241101-q11": {
+    "sourceHash": "1e5b5c94e895216d05ba7b8c7131c291e62beae483abd2553f26352f36f1e485",
+    "correctChoice": 4,
+    "summary": "誤りはBとDです。負荷上昇時は燃料より先に空気を増やし、ドラム水位は気泡の膨張で一時的に上がります。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "Aの気水漏れの調査と、Cの通風損失の急変時にガス通路の異常を疑うことは、いずれも適切です。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "Aの点検と、Eの低負荷でバーナの最低燃焼量を割り込まないように台数を減らす処置は適切です。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "Bの燃料を先に増やす順序は誤りですが、通風損失が急変したときにガス通路の異常を疑うCは適切です。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "負荷上昇時は空気を先行させます。また蒸気需要が急増して圧力が下がると気泡が膨張し、水位は一時的に上昇します。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "Dは負荷急増時の水位の逆応答を取り違えていますが、Eの低負荷時にバーナ台数を減らす処置は適切です。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 ボイラー等の開放検査周期に係る認定制度",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=00tc5846&dataType=1&pageNo=2"
+      },
+      {
+        "title": "厚生労働省 ボイラー及び圧力容器安全規則",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74013000&dataType=0&pageNo=1"
+      }
+    ]
+  },
+  "lckohyo-LC20241101-q16": {
+    "sourceHash": "93baf931f100084d4ebb56e4fa47f8f844f213b24eda7a7b2fca579112ba10da",
+    "correctChoice": 3,
+    "summary": "誤りはBとDです。ソーダ法の薬剤は高価で、硫黄酸化物を抑えるには燃料側の硫黄や脱硫を考慮します。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "高煙突による着地濃度の低下と、石灰系スラリで吸収して後段で固形分を回収する方式はいずれも適切です。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "Dの燃焼技術の説明は誤りですが、高煙突で拡散を促して着地濃度を下げるAは適切です。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "苛性ソーダは石灰石や水酸化マグネシウムと比べ高価です。また、通常の燃焼条件を調整するだけで燃料中の硫黄に由来するSO₂は十分に減らせません。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "Bの費用の説明は誤りですが、硫黄酸化物が大気中で硫酸等に変わり酸性雨の原因になるEは適切です。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "Cの脱硫方式と、Eの硫黄酸化物が酸性雨に関与するという説明は、いずれも適切です。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "国立環境研究所 排煙脱硫技術",
+        "url": "https://tenbou.nies.go.jp/science/description/detail.php?id=32"
+      }
+    ]
+  },
+  "lckohyo-LC20241101-q17": {
+    "sourceHash": "d7bd7e02f66f80eb78860c7059a1ec23245e0c6373928e860f06e6d4b3ac4ff7",
+    "correctChoice": 4,
+    "summary": "誤りはBとEです。噴霧した液滴の周囲では燃料蒸気と空気の拡散混合が起こり、灰分は不燃分です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "Aの吹消えと逆火の説明は適切です。Cの水蒸気などの燃焼ガスが高温で熱放射する説明も適切です。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "Aの予混合火炎の説明と、Dの流動層が比較的低温で燃焼し窒素酸化物を抑える説明は適切です。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "Bが液体燃料の噴霧を予混合火炎とするのは誤りですが、Dの流動層燃焼に関する記述は適切です。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "噴霧燃焼では液滴から蒸発した燃料と周囲の空気が混合して燃えます。微粉炭中の灰は不燃分で、酸素供給を促すための成分ではありません。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "Eの灰分の役割は誤りですが、水蒸気などの高温の燃焼ガスが放射を担うCは適切です。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "環境省 窒素酸化物排出削減対策技術のガイドライン",
+        "url": "https://www.env.go.jp/air/tech/ine/asia/china/files/guide/guideline-fixed%20sources-jp.pdf"
+      }
+    ]
+  },
+  "lckohyo-LC20241101-q22": {
+    "sourceHash": "53eddfe92b39fc8a6ff1edf8d03c2a7fe430381de3a74b15afa99be0ca78ec8d",
+    "correctChoice": 2,
+    "summary": "誤りはAとEです。鋼製ボイラーの自動給水調整装置と低水位時の燃料遮断の要件を確認します。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "Aの共通化は規格に合いませんが、Cの貫流ボイラーに燃料遮断装置等を設ける記述は規格に合います。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "給水調整装置はボイラーごとに独立させる必要があります。また、技士の常駐と警報表示だけでEのように遮断装置を省略できません。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "Bのボイラーごとの低水位燃料遮断と、Cの貫流ボイラーの水不足時の安全装置は規格の要件です。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "Bの一般要件、Dの燃料の緊急遮断ができない場合に警報装置を用いる例外は、いずれも規格に沿っています。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "Eの省略条件は誤りですが、燃料や燃焼設備の性質によって遮断ができない場合のDは認められています。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
+  },
+  "lckohyo-LC20241101-q23": {
+    "sourceHash": "119c5e48c1928591bce60d24ccbb6a21b4b29a19c433a02350c24c22d1dd2ed8",
+    "correctChoice": 3,
+    "summary": "規格に定めがないものはBとCです。設問は鋼製ボイラーの構造規格に規定された燃焼安全装置を問います。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "Cはこの規格の要件として示されていませんが、Aの異常消火や燃焼用空気の供給異常時の遮断は規定されています。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "Aの異常時の燃料遮断と、Eの動力源の遮断・復帰時に自動で遮断を解除しない要件は規定されています。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "この燃焼安全装置について震度5相当での遮断や、設問の一定時間の換気確認を条件とする規定はありません。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "Bの震度の定めはありませんが、Dの作動用動力源が断たれたときに直ちに燃料を遮断する要件はあります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "Dの動力源断での燃料遮断も、Eの電源復帰などで遮断を自動解除しない条件も、ともに規格の要件です。"
+      }
+    ],
+    "sources": [
+      {
+        "title": "厚生労働省 ボイラー構造規格",
+        "url": "https://www.mhlw.go.jp/web/t_doc?dataId=74aa4863"
+      }
+    ]
   }
 }

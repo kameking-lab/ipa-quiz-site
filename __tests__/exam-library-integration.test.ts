@@ -11,6 +11,17 @@ import peContinuation from "@/reports/LQ3B-20261104/adoption-manifest.json";
 import peLq3d from "@/reports/LQ3D-20261104/adoption-manifest.json";
 
 const isReviewedOctoberImport = (id: string) => /^lckohyo-LC202621(?:0[23679]|1[01279])-q\d+$/.test(id);
+const additionalOfficialKeys = {
+  "emkohyo-EM20241809": [4, 5, 3, 5, 4, 4, 1, 2, 2, 4, 4, 1, 4, 2, 3, 5, 2, 2, 5, 1],
+  "emkohyo-EM20231809": [2, 4, 1, 5, 3, 4, 3, 3, 3, 3, 4, 3, 4, 1, 2, 1, 5, 2, 5, 5],
+  "emkohyo-EM20221809": [3, 3, 3, 1, 5, 4, 4, 4, 1, 5, 3, 4, 2, 5, 2, 2, 3, 2, 1, 5],
+  "lckohyo-LC20241101": [
+    null, null, null, 2, 2, null,
+    null, null, null, 2, 4, null,
+    null, null, null, 3, 4, null,
+    null, null, null, 2, 3, null,
+  ],
+};
 
 describe("official exam library integration", () => {
   it("requires every authored plain explanation to be substantive and preserves its answer-key snapshot", () => {
@@ -50,9 +61,23 @@ describe("official exam library integration", () => {
     const surveySnapshot = answerSnapshot.filter(([id]) => String(id).startsWith("private-gsi-survey-assistant-20261021-"));
     const peIds = new Set(EXAM_CATALOG.filter(entry => entry.group === "pe-first").flatMap(entry => (loadExamPaper(entry.id) ?? []).map(question => question.id)));
     const peSnapshot = answerSnapshot.filter(([id]) => peIds.has(String(id)));
-    const existingSnapshot = answerSnapshot.filter(([id]) => !String(id).startsWith("private-gsi-survey-assistant-20261021-") && !peIds.has(String(id)) && !isReviewedOctoberImport(String(id)));
-    expect(answerSnapshot).toHaveLength(3153 + (peContinuation.length + peLq3d.length) * 35);
-    expect(peSnapshot).toHaveLength(594 + (peContinuation.length + peLq3d.length) * 35);
+    const addedIds = new Set<string>();
+    let addedOfficialCount = 0;
+    for (const [paperId, expected] of Object.entries(additionalOfficialKeys)) {
+      const paper = loadExamPaper(paperId)!;
+      expect(paper.map(question => question.correctChoice), paperId).toEqual(expected);
+      for (const question of paper) {
+        addedIds.add(question.id);
+        if (question.correctChoice !== null) {
+          expect(question.choiceExplanation?.choices).toHaveLength(5);
+          addedOfficialCount += 1;
+        }
+      }
+    }
+    const existingSnapshot = answerSnapshot.filter(([id]) => !String(id).startsWith("private-gsi-survey-assistant-20261021-") && !peIds.has(String(id)) && !isReviewedOctoberImport(String(id)) && !addedIds.has(String(id)));
+    const peAdditionalCount = (peContinuation.length + peLq3d.length + 2) * 35;
+    expect(answerSnapshot).toHaveLength(3153 + peAdditionalCount + addedOfficialCount);
+    expect(peSnapshot).toHaveLength(594 + peAdditionalCount);
     // Preserve the previous 2,154 official keys independently of the new reviewed packet.
     expect(existingSnapshot).toHaveLength(2154);
     expect(createHash("sha256").update(JSON.stringify(existingSnapshot)).digest("hex"))
