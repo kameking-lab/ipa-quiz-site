@@ -1557,7 +1557,7 @@ kankoji1: {
 "mental-health-management": {
     code: "mental-health-management", nameFull: "メンタルヘルス・マネジメント検定試験", urlSlug: "mental-health-management", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 3, label: "筆記", categories: ["I種（マスターコース）", "II種（ラインケアコース）", "III種（セルフケアコース）"] }],
-    seasons: ["autumn"], yearRange: { start: 2022, end: 2023 },
+    seasons: ["autumn"], yearRange: { start: 2021, end: 2023 },
 },
 "yamaguchi-chori": {
     code: "yamaguchi-chori", nameFull: "調理師", urlSlug: "yamaguchi-chori", level: "basic",
