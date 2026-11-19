@@ -240,6 +240,14 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
 "jokaso-setsubishi": {"code": "jokaso-setsubishi", "nameFull": "浄化槽設備士（学科）", "urlSlug": "jokaso-setsubishi", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 50, "label": "学科", "categories": ["浄化槽設備士学科"]}], "seasons": ["annual"], "yearRange": {"start": 2025, "end": 2026}},
 "chiiki-ryoko": {"code": "chiiki-ryoko", "nameFull": "地域限定旅行業務取扱管理者", "urlSlug": "chiiki-ryoko", "level": "specialist", "sessions": [{"session": "hoki", "urlSlug": "hoki", "expectedQuestions": 25, "label": "旅行業法令", "categories": ["旅行業法令"]}, {"session": "yakkan", "urlSlug": "yakkan", "expectedQuestions": 24, "label": "旅行業約款", "categories": ["旅行業約款"]}, {"session": "jitsumu", "urlSlug": "jitsumu", "expectedQuestions": 10, "label": "国内旅行実務", "categories": ["国内旅行実務"]}], "seasons": ["annual"], "yearRange": {"start": 2025, "end": 2026}},
 "junkango-kansai": {"code": "junkango-kansai", "nameFull": "准看護師", "urlSlug": "junkango-kansai", "level": "specialist", "sessions": [{"session": "gakka", "urlSlug": "gakka", "expectedQuestions": 150, "label": "学科", "categories": ["人体の構造と機能", "栄養", "薬理", "疾病と感染", "保健医療と法規", "看護概論と心理", "基礎看護技術", "成人看護総論", "成人看護", "老年看護", "母子看護", "精神看護"]}], "seasons": ["annual"], "yearRange": {"start": 2025, "end": 2026}},
+  "junkango-saitama": {
+    code: "junkango-saitama", nameFull: "埼玉県准看護師試験（A日程）", urlSlug: "junkango-saitama", level: "specialist",
+    sessions: [{
+      session: "gakka", urlSlug: "gakka", expectedQuestions: 150, label: "学科",
+      categories: ["人体の構造と機能", "栄養", "薬理", "疾病と感染", "保健医療と法規", "看護概論と心理", "基礎看護技術", "成人看護総論", "成人看護", "老年看護", "母子看護", "精神看護"],
+    }],
+    seasons: ["annual"], yearRange: { start: 2024, end: 2024 },
+  },
   "junkango-b": {
     code: "junkango-b", nameFull: "准看護師試験（B日程）", urlSlug: "junkango-b", level: "specialist",
     sessions: [{

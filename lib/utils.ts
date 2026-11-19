@@ -161,6 +161,7 @@ export const EXAM_LABELS: Record<string, string> = {
   "jokaso-setsubishi": "浄化槽設備士（学科）",
   "chiiki-ryoko": "地域限定旅行業務取扱管理者",
   "junkango-kansai": "准看護師",
+  "junkango-saitama": "准看護師（埼玉県）",
   "junkango-b": "准看護師（B日程）",
   "kukaku-seiri": "土地区画整理士（学科）",
   "dojo-osen": "土壌汚染調査技術管理者",

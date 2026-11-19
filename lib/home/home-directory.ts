@@ -248,7 +248,6 @@ const OTHER_CARDS: readonly OtherCardDef[] = [
   {"code": "jokaso-setsubishi", "name": "浄化槽設備士（学科）", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "construction"},
   {"code": "chiiki-ryoko", "name": "地域限定旅行業務取扱管理者", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "money"},
   {"code": "junkango-kansai", "name": "准看護師", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "welfare"},
-  {"code": "junkango-b", "name": "准看護師（B日程）", "sub": "神奈川・青森・福島・山口・高知・佐賀の共通問題", "domain": "welfare"},
   {"code": "kukaku-seiri", "name": "土地区画整理士（学科）", "sub": "2026年度のみ40問。2025年度は未収録。", "domain": "construction"},
   {"code": "dojo-osen", "name": "土壌汚染調査技術管理者", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "construction"},
   {"code": "kenchikushi2", "name": "二級建築士（学科）", "sub": "公式問題・正答・独自解説と原本図表を収録", "domain": "construction"},

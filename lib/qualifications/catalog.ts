@@ -224,6 +224,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
 },
   {"slug": "junkango-kansai", "examCode": "junkango-kansai", "shortName": "准看護師", "fullName": "准看護師", "domain": "welfare", "administrator": "関西広域連合", "officialQuestionsUrl": "https://www.kouiki-kansai.jp/koikirengo/jisijimu/shikakumenkyo/junan_top/jyunkangosisiken/9022.html", "officialReuseTermsUrl": "https://www.kouiki-kansai.jp/about_site.html", "status": "live", "stagingDataPath": "data/qualification-staging/junkango-kansai", "reuseSummary": "2025・2026年の公式問題・正答・独自解説と原本図表を収録。300原問中、公式全員正解1問を除く299問を演習。2026年問139は2または4の単独選択を正解とします。問題・正答は公式原本、解説は過去問AIの独自作成です。", "remainingWork": []},
   {
+    slug: "junkango-saitama", examCode: "junkango-saitama", shortName: "准看護師（埼玉県）", fullName: "埼玉県准看護師試験（A日程）",
+    domain: "welfare", administrator: "埼玉県",
+    officialQuestionsUrl: "https://www.pref.saitama.lg.jp/a0701/eiseishiken/eiseisikenkekka/h29/h29kekka.html",
+    officialReuseTermsUrl: "https://www.pref.saitama.lg.jp/a0301/tyosaku-rinku.html",
+    status: "live",
+    reuseSummary: "埼玉県が公開した令和5年度A日程（休日用）150問を、公式正答と全選択肢の解説付きで収録。",
+    remainingWork: [],
+  },
+  {
     slug: "junkango-b", examCode: "junkango-b", shortName: "准看護師（B日程）", fullName: "准看護師試験（B日程）",
     domain: "welfare", administrator: "実施都道府県",
     officialQuestionsUrl: "https://www.pref.kanagawa.jp/docs/t3u/cnt/f5510/documents/junkan.html",
