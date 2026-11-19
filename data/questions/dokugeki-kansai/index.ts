@@ -1,4 +1,7 @@
 import type { Question } from "@/lib/questions/types";
+import ippan2022 from "./2022-ippan.json";
+import nougyou2022 from "./2022-nougyou.json";
+import tokutei2022 from "./2022-tokutei.json";
 import ippan2023 from "./2023-ippan.json";
 import nougyou2023 from "./2023-nougyou.json";
 import tokutei2023 from "./2023-tokutei.json";
@@ -19,4 +22,7 @@ export const DOKUGEKI_KANSAI_QUESTIONS = [
   ...ippan2023,
   ...nougyou2023,
   ...tokutei2023,
+  ...ippan2022,
+  ...nougyou2022,
+  ...tokutei2022,
 ] as Question[];
