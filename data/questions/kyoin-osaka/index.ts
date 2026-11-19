@@ -1,4 +1,5 @@
 import { KYOIN_OSAKA_2022 } from "./2022";
+import { KYOIN_OSAKA_2022_SENMON } from "./2022-senmon";
 import { KYOIN_OSAKA_2023 } from "./2023";
 import { KYOIN_OSAKA_2023_SENMON } from "./2023-senmon";
 import { KYOIN_OSAKA_2024 } from "./2024";
@@ -18,4 +19,5 @@ export const KYOIN_OSAKA_QUESTIONS = [
   ...KYOIN_OSAKA_2023,
   ...KYOIN_OSAKA_2023_SENMON,
   ...KYOIN_OSAKA_2022,
+  ...KYOIN_OSAKA_2022_SENMON,
 ];

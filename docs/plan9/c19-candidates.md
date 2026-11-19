@@ -47,8 +47,15 @@
 | 2022 | 26問 | 17、24、26、29 |
 
 - 2025年度の第1次選考は公式の訂正版正答表を使用した。
-- 2025年度の第2次選考の教科専門（小学校・小中いきいき連携・支援学校の幼稚部・小学部共通及び小学部）は24問を収録した。問3～6、29・30は、公開版で参照する本文が伏せられている。 [問題](https://kyoin-pref-osaka.com/wp/wp-content/uploads/2025/09/00_shougakkou_takuitsu_modai.pdf)・[正答](https://kyoin-pref-osaka.com/wp/wp-content/uploads/2025/09/00_syougakkou_takuitsu_seitou.pdf)
-- 同区分の2026年度は24問を収録した。問3～6、29・30は、公開版で参照する本文が伏せられている。 [問題](https://kyoin-pref-osaka.com/wp/wp-content/uploads/2026/09/00_小学校_択一式.pdf)・[正答](https://kyoin-pref-osaka.com/wp/wp-content/uploads/2026/09/00小学校_択一正答.pdf)
-- 同区分の2024年度は24問を収録した。問3～6、27・28は、公開版で参照する本文が伏せられている。 [問題](https://kyoin-pref-osaka.com/wp/wp-content/uploads/2025/02/00_shougakkou_takuitsu_modai-2.pdf)・[正答](https://kyoin-pref-osaka.com/wp/wp-content/uploads/2025/02/00_syougakkou_takuitsu_seitou-1.pdf)
-- 同区分の2023年度は第3次選考の教科専門を21問収録した。問3～6、9、27～30は、公開版で参照する本文または図が伏せられている。 [問題](https://kyoin-pref-osaka.com/wp/wp-content/uploads/2025/02/00_shougakkou_takuitsu_modai-2132kb.pdf)・[正答](https://kyoin-pref-osaka.com/wp/wp-content/uploads/2025/02/00_syougakkou_takuitsu_seitou-139kb.pdf)
-- 教科専門のその他の年度・校種・教科の筆答は収録が未完了。
+
+教科専門の小学校・小中いきいき連携・支援学校（幼稚部・小学部共通及び小学部）は、択一式を次のとおり収録した。
+
+| 試験実施年度 | 選考 | 収録 | 公開版で本文・図が伏せられた問題番号 | 公式原本 |
+| --- | --- | ---: | --- | --- |
+| 2026 | 第2次 | 24問 | 3～6、29・30 | [問題](https://kyoin-pref-osaka.com/wp/wp-content/uploads/2026/09/00_小学校_択一式.pdf)・[正答](https://kyoin-pref-osaka.com/wp/wp-content/uploads/2026/09/00小学校_択一正答.pdf) |
+| 2025 | 第2次 | 24問 | 3～6、29・30 | [問題](https://kyoin-pref-osaka.com/wp/wp-content/uploads/2025/09/00_shougakkou_takuitsu_modai.pdf)・[正答](https://kyoin-pref-osaka.com/wp/wp-content/uploads/2025/09/00_syougakkou_takuitsu_seitou.pdf) |
+| 2024 | 第2次 | 24問 | 3～6、27・28 | [問題](https://kyoin-pref-osaka.com/wp/wp-content/uploads/2025/02/00_shougakkou_takuitsu_modai-2.pdf)・[正答](https://kyoin-pref-osaka.com/wp/wp-content/uploads/2025/02/00_syougakkou_takuitsu_seitou-1.pdf) |
+| 2023 | 第3次 | 21問 | 3～6、9、27～30 | [問題](https://kyoin-pref-osaka.com/wp/wp-content/uploads/2025/02/00_shougakkou_takuitsu_modai-2132kb.pdf)・[正答](https://kyoin-pref-osaka.com/wp/wp-content/uploads/2025/02/00_syougakkou_takuitsu_seitou-139kb.pdf) |
+| 2022 | 第3次 | 22問 | 3～6、27～30 | [問題](https://kyoin-pref-osaka.com/wp/wp-content/uploads/2025/02/00_shougakkou_takuitsu_modai-4.pdf)・[正答](https://kyoin-pref-osaka.com/wp/wp-content/uploads/2025/02/00_syougakkou_takuitsu_seitou-2.pdf) |
+
+- 教科専門の他の校種・教科の筆答は収録が未完了。
