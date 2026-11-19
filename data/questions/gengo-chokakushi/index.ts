@@ -1,7 +1,10 @@
 import type { Question } from "@/lib/questions/types";
 import notices from "./official-notice-ready.json";
+import notices2024 from "./2024-official-notices.json";
 
-/** Official notice originals only; the catalog gate keeps this qualification private. */
+/** The prior intake remains separate until the owner merges the newer sittings. */
 export const GENGO_CHOKAKUSHI_QUESTIONS: Question[] = (notices as Question[])
   .filter(question => question.needsReview === false)
   .sort((a, b) => b.year - a.year || a.qNumber - b.qNumber);
+
+export const GENGO_CHOKAKUSHI_PUBLISHED_QUESTIONS = notices2024 as Question[];

@@ -13,17 +13,20 @@ describe("speech-language-hearing therapist registration", () => {
     const config = EXAM_CONFIGS[exam];
     expect(config.nameFull).toBe("言語聴覚士国家試験");
     expect(config.seasons).toEqual(["annual"]);
-    expect(config.yearRange).toEqual({ start: 2025, end: 2026 });
+    expect(config.yearRange).toEqual({ start: 2024, end: 2026 });
     expect(config.sessions.map(({ session, expectedQuestions }) => [session, expectedQuestions])).toEqual([["am", 100], ["pm", 100]]);
     expect(examLabel(exam)).toBe("言語聴覚士");
     expect(ALL_EXAM_CODES).not.toContain(exam);
   });
 
-  it("keeps both registries closed before the publication decision", async () => {
-    expect(getQualificationByExamCode(exam)?.status).toBe("terms-review-required");
-    expect(isExamPublished(exam)).toBe(false);
-    expect(QUESTIONS_BY_EXAM[exam]).toBeUndefined();
-    expect(await getQuestionsForExam(exam)).toEqual([]);
+  it("serves the historical notices in both registries", async () => {
+    expect(getQualificationByExamCode(exam)?.status).toBe("live");
+    expect(isExamPublished(exam)).toBe(true);
+    const questions = await getQuestionsForExam(exam);
+    expect(questions.map(({ id }) => id)).toEqual([
+      "gengo-chokakushi-2024-annual-am-q44", "gengo-chokakushi-2024-annual-am-q96",
+    ]);
+    expect(QUESTIONS_BY_EXAM[exam]).toEqual(questions);
   });
 
   it.each([
