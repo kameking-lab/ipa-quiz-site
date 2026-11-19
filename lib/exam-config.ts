@@ -109,6 +109,11 @@ function am2(categories: string[]): SessionConfig {
 // ------- Exam configs -------
 
 export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
+  "kogai-13": {
+    code: "kogai-13", nameFull: "公害防止管理者", urlSlug: "kogai-13", level: "specialist",
+    sessions: [{ session: "ippan", urlSlug: "ippan", expectedQuestions: 15, label: "公害総論", categories: ["公害総論"] }],
+    seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
+  },
   "zensho-bc": {
     code: "zensho-bc", nameFull: "全商ビジネスコミュニケーション検定試験", urlSlug: "zensho-bc", level: "basic",
     sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "筆記", categories: ["ビジネスマナー", "コミュニケーション", "接客の事例", "ビジネス全般"] }],

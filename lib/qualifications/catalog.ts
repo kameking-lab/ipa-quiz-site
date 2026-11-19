@@ -1383,6 +1383,16 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: [],
 },
   {
+    slug: "kogai-13", examCode: "kogai-13", shortName: "公害防止管理者",
+    fullName: "公害防止管理者等国家試験", domain: "construction",
+    administrator: "一般社団法人産業環境管理協会", status: "live",
+    officialQuestionsUrl: "https://www.jemai.or.jp/polconman/examination/past.html",
+    officialReuseTermsUrl: "https://www.jemai.or.jp/polconman/examination/past.html",
+    reuseSummary: "全試験区分共通の公害総論の公式問題・正答と各選択肢の独自解説を掲載しています。",
+    attributionTemplate: "出典：一般社団法人産業環境管理協会 公害防止管理者等国家試験 問題・正答。",
+    remainingWork: [],
+  },
+  {
     slug: "zensho-bc", examCode: "zensho-bc", shortName: "全商ビジネスコミュニケーション検定",
     fullName: "全商ビジネスコミュニケーション検定試験", domain: "personal-services",
     administrator: "公益財団法人全国商業高等学校協会", status: "live",
