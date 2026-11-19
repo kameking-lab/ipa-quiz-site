@@ -5,6 +5,7 @@ import { cleanup, fireEvent, render, screen, within } from "@testing-library/rea
 import { afterEach, beforeEach, describe, expect, it } from "vitest";
 import manifest from "@/reports/LQ3-20261104/adoption-manifest.json";
 import continuationManifest from "@/reports/LQ3B-20261104/adoption-manifest.json";
+import supplementalCatalog from "@/data/exam-library/pe-first/catalog-c11.json";
 import lq3dManifest from "@/reports/LQ3D-20261104/adoption-manifest.json";
 import { PE_FIRST_CATALOG } from "@/lib/exam-library/pe-first-catalog";
 import { loadPeFirstPaper } from "@/lib/exam-library/pe-first";
@@ -22,17 +23,18 @@ afterEach(cleanup);
 
 describe("LQ3 existing manuscript adoption", () => {
   it("makes all connected departments reachable from the actual qualification selector", () => {
-    const items = PE_FIRST_CATALOG.map(entry => ({...entry,href:`/e-learning/exams/${entry.id}`,dateText:entry.date,questionCount:35,scoredCount:entry.scoredCount!}));
+    const items = PE_FIRST_CATALOG.map(entry => ({...entry,href:`/e-learning/exams/${entry.id}`,dateText:entry.date,questionCount:entry.questionCount!,scoredCount:entry.scoredCount!}));
     render(<ExamCatalogBrowser groups={EXAM_GROUPS} items={items} initialGroup="pe-first" initialSubject={null} />);
     const group = screen.getByRole("region", {name:"技術士第一次試験"});
     expect(within(group).getAllByRole("link")).toHaveLength(new Set(PE_FIRST_CATALOG.map(entry => entry.subject)).size);
     expect(within(group).getByRole("link", {name:/技術士第一次・化学/})).toHaveAttribute("href", expect.stringContaining("group=pe-first"));
   });
-  it("preserves all 17 accepted sets and adds only complete continuation papers", () => {
+  it("preserves the accepted sets and publishes the additional excerpt papers", () => {
     const continuationCount = continuationManifest.length + lq3dManifest.length;
-    expect(PE_FIRST_CATALOG).toHaveLength(17 + continuationCount);
-    expect(PE_FIRST_CATALOG.reduce((sum, entry) => sum + entry.questionCount!, 0)).toBe(595 + 35 * continuationCount);
-    expect(PE_FIRST_CATALOG.reduce((sum, entry) => sum + entry.scoredCount!, 0)).toBe(594 + 35 * continuationCount);
+    const supplementalCount = supplementalCatalog.reduce((sum, entry) => sum + entry.questionCount, 0);
+    expect(PE_FIRST_CATALOG).toHaveLength(17 + continuationCount + supplementalCatalog.length);
+    expect(PE_FIRST_CATALOG.reduce((sum, entry) => sum + entry.questionCount!, 0)).toBe(595 + 35 * continuationCount + supplementalCount);
+    expect(PE_FIRST_CATALOG.reduce((sum, entry) => sum + entry.scoredCount!, 0)).toBe(594 + 35 * continuationCount + supplementalCount);
     for (const entry of PE_FIRST_CATALOG) {
       expect(findExamEntry(entry.id)).toEqual(entry);
       expect(listAvailableExamIds()).toContain(entry.id);

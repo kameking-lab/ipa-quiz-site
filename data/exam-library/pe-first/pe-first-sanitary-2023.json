@@ -1,0 +1,355 @@
+[
+  {
+    "id": "pe-first-sanitary-2023-q01",
+    "number": 1,
+    "text": "北緯35度の地点の日射及び日射調整に関する次の記述のうち、最も不適切なものはどれか。",
+    "images": [],
+    "sourcePages": [
+      1
+    ],
+    "sourceQuestionNumber": 1,
+    "correctChoice": 4,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/009/attached/attach_9918_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=13",
+    "explanation": "夏至の頃は北寄りの方位から日が昇り、北寄りの方位に沈むため、北鉛直面にも朝夕の直達日射が当たる。",
+    "presentation": {
+      "sourceHash": "ef2cbc08c4d248dca778cf38fa2b27946bbf9c5607eb00ed652ec747e842aac8",
+      "prompt": "北緯35度の地点の日射及び日射調整に関する次の記述のうち、最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "冬至の水平面の終日日射量は、夏至の南鉛直面の終日日射量に比較して多い。"
+        },
+        {
+          "number": 2,
+          "text": "大気透過率が大きいほど、直達日射が強く、逆に天空日射が弱くなる。"
+        },
+        {
+          "number": 3,
+          "text": "東西鉛直面の日射は、日の出・日没付近の、太陽高度の低い状況に対応しているので、日射の調整には庇以外のブラインドなどが必要となる。"
+        },
+        {
+          "number": 4,
+          "text": "北鉛直面は、年間を通じて直達日射を受けない。"
+        },
+        {
+          "number": 5,
+          "text": "南鉛直面の終日日射量は、日射を遮蔽したい夏至のときに最小となる。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "ef2cbc08c4d248dca778cf38fa2b27946bbf9c5607eb00ed652ec747e842aac8",
+      "correctChoice": 4,
+      "summary": "夏至の頃は北寄りの方位から日が昇り、北寄りの方位に沈むため、北鉛直面にも朝夕の直達日射が当たる。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "夏至の南鉛直面では高い太陽からの日射が斜めに入射する上、朝夕には日射が当たらない時間帯もある。設問の緯度では冬至の水平面より終日日射量が小さい。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "大気で散乱される割合が小さくなると、直達日射は強まり、散乱による天空日射は弱まる。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "東面・西面に当たる朝夕の日射は高度が低く、水平な庇だけでは遮りにくい。"
+        },
+        {
+          "number": 4,
+          "verdict": "correct",
+          "reason": "夏至前後の朝夕には北東・北西寄りに太陽があり、北鉛直面にも直達日射が入る。年間を通じて当たらないという記述が不適切である。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "夏至の太陽は高く、日中に南鉛直面に当たる日射の入射角は大きい。朝夕は北寄りの方位にあるため、南鉛直面の終日日射量は小さくなる。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/009/attached/attach_9918_2.pdf#page=1"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=13"
+        }
+      ],
+      "lastCheckedAt": "2026-11-19"
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2023-q02",
+    "number": 2,
+    "text": "建物の伝熱に関する次の記述のうち、最も不適切なものはどれか。",
+    "images": [],
+    "sourcePages": [
+      1
+    ],
+    "sourceQuestionNumber": 2,
+    "correctChoice": 3,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/009/attached/attach_9918_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=13",
+    "explanation": "屋外側では風で強制対流が起きるため、屋内側より熱伝達率が一般に大きくなる。大小関係を逆にした肢が不適切である。",
+    "presentation": {
+      "sourceHash": "4b84d559960c3f213e74c5c2d758c1cf99703fa7c09a3971dcf4709877c83908",
+      "prompt": "建物の伝熱に関する次の記述のうち、最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "鋼、コンクリートなど密度が1,000 kg/m³以上の大きい建築材料は、構造部材として使用される例が多いが、これらの熱伝導率は概ね1 W/(m・K)以上で大きく、熱を通しやすい。"
+        },
+        {
+          "number": 2,
+          "text": "性能の高い断熱材を作るには、固体内部に大量の気体を含み、それらをなるべく微細な空隙に封じ込めるなどして、その流動を抑制する必要がある。"
+        },
+        {
+          "number": 3,
+          "text": "屋外風速が3 m/sの場合、外壁の屋外側の対流熱伝達率は、室内側の対流熱伝達率の値よりも小さい。"
+        },
+        {
+          "number": 4,
+          "text": "日射遮蔽係数は、厚さ3 mmの透明ガラスの日射熱取得率を基準に各種材料の日射熱取得率を表した値であるため、この値が小さい方が日射遮蔽効果は高い。"
+        },
+        {
+          "number": 5,
+          "text": "中空層の熱抵抗は、その厚さが2〜5 cm程度までは、厚さを増すほど熱抵抗は増大するが、それ以上ではほとんど変化しない。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "4b84d559960c3f213e74c5c2d758c1cf99703fa7c09a3971dcf4709877c83908",
+      "correctChoice": 3,
+      "summary": "屋外側では風で強制対流が起きるため、屋内側より熱伝達率が一般に大きくなる。大小関係を逆にした肢が不適切である。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "構造に用いる鋼材や普通コンクリートは、断熱材と比較して熱伝導率が高い。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "微細な空隙は熱を伝えにくい空気を保持し、空気が対流することも抑える。"
+        },
+        {
+          "number": 3,
+          "verdict": "correct",
+          "reason": "風のある外壁外面では対流による熱の移動が促進されるため、設問の条件では室内側より値が大きい。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "透明ガラスを基準とした日射熱取得量の比が小さいほど、室内に入る日射の熱が少なくなる。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "中空層をある程度まで厚くすれば熱抵抗は増すが、空気の対流と放射があるため厚さに比例し続けるわけではない。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/009/attached/attach_9918_2.pdf#page=1"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=13"
+        }
+      ],
+      "lastCheckedAt": "2026-11-19"
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2023-q03",
+    "number": 3,
+    "text": "光環境に関する次の記述のうち、最も不適切なものはどれか。",
+    "images": [],
+    "sourcePages": [
+      2
+    ],
+    "sourceQuestionNumber": 3,
+    "correctChoice": 1,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/009/attached/attach_9918_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=13",
+    "explanation": "明所視の感度ピークは約555 nm、暗所視のピークは約507 nmである。暗所で長い波長にずれるとした記述は逆である。",
+    "presentation": {
+      "sourceHash": "265c543ccf46c59aa6e04b76c5072e8cb6737e1909b73fdcaa4a37e08fb0f556",
+      "prompt": "光環境に関する次の記述のうち、最も不適切なものはどれか。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "ヒトの視覚において、暗所視では、比視感度が最大になる波長が長い方にずれる。"
+        },
+        {
+          "number": 2,
+          "text": "ヒトの視覚において、明順応に比べて、暗順応は時間がかかる。"
+        },
+        {
+          "number": 3,
+          "text": "建築基準法における教室及び保育室の採光に有効な窓の基準開口率は、1/5である。"
+        },
+        {
+          "number": 4,
+          "text": "直接グレアの防止の基本は、前方視野角の60°以内に高輝度光源を露出させないことである。"
+        },
+        {
+          "number": 5,
+          "text": "照明設計における明視の条件には、対象の大きさ、対比の大きさ、明るさが含まれる。"
+        }
+      ],
+      "figures": []
+    },
+    "choiceExplanation": {
+      "sourceHash": "265c543ccf46c59aa6e04b76c5072e8cb6737e1909b73fdcaa4a37e08fb0f556",
+      "correctChoice": 1,
+      "summary": "明所視の感度ピークは約555 nm、暗所視のピークは約507 nmである。暗所で長い波長にずれるとした記述は逆である。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "correct",
+          "reason": "暗い場所では桿体による視覚が支配的になり、ピーク波長は短い方に移る。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "暗所に入った目が感度を十分に高めるには、明るい環境に順応する場合より長い時間を要する。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "出題時点の教室・保育室の採光基準は、採光に有効な開口部の面積を床面積の1/5以上とする扱いである。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "正面近くで輝度の高い光源が直接目に入るとまぶしいため、視線に近い範囲では光源を遮蔽する。"
+        },
+        {
+          "number": 5,
+          "verdict": "incorrect",
+          "reason": "明るさに加えて、対象の見かけの大きさや背景との対比も視認性を左右する。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/009/attached/attach_9918_2.pdf#page=2"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=13"
+        }
+      ],
+      "lastCheckedAt": "2026-11-19"
+    }
+  },
+  {
+    "id": "pe-first-sanitary-2023-q04",
+    "number": 4,
+    "text": "下図に示すように光度1,000 cdの点光源がある。その直下2 mの位置にある床上の点Aの水平面照度をEₐ［lx］とする。また、点Aから水平に2 m離れた位置の点Bの水平面照度をEᵦ［lx］とする。このとき、Eₐ/Eᵦの値に最も近いものはどれか。ただし、この点光源の配光特性は一様であり、水平面照度は壁面等の反射の影響は受けないものとする。",
+    "images": [
+      "/exam-library/pe-first-sanitary-2023/q04-figure.png"
+    ],
+    "sourcePages": [
+      2
+    ],
+    "sourceQuestionNumber": 4,
+    "correctChoice": 5,
+    "choiceCount": 5,
+    "answerAuthority": "official",
+    "originalPdf": "https://www.engineer.or.jp/c_topics/009/attached/attach_9918_2.pdf",
+    "answerPdf": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=13",
+    "explanation": "水平面照度は光度Iに入射角の余弦を掛け、距離の二乗で割る。点Aでは250 lx、点Bでは1,000×(1/√2)÷8≒88.4 lxとなり、比は約2.83である。",
+    "presentation": {
+      "sourceHash": "bda25c72547fd47eb590e602bf13c287447e9265891bb699e96341290951fd02",
+      "prompt": "下図に示すように光度1,000 cdの点光源がある。その直下2 mの位置にある床上の点Aの水平面照度をEₐ［lx］とする。また、点Aから水平に2 m離れた位置の点Bの水平面照度をEᵦ［lx］とする。このとき、Eₐ/Eᵦの値に最も近いものはどれか。ただし、この点光源の配光特性は一様であり、水平面照度は壁面等の反射の影響は受けないものとする。",
+      "choices": [
+        {
+          "number": 1,
+          "text": "0.35"
+        },
+        {
+          "number": 2,
+          "text": "0.71"
+        },
+        {
+          "number": 3,
+          "text": "1.00"
+        },
+        {
+          "number": 4,
+          "text": "1.41"
+        },
+        {
+          "number": 5,
+          "text": "2.83"
+        }
+      ],
+      "figures": [
+        {
+          "src": "/exam-library/pe-first-sanitary-2023/q04-figure.png",
+          "alt": "点光源の鉛直下2 mに点Aがあり、床面で点Aから水平に2 m離れた位置に点Bがある。",
+          "width": 350,
+          "height": 253
+        }
+      ]
+    },
+    "choiceExplanation": {
+      "sourceHash": "bda25c72547fd47eb590e602bf13c287447e9265891bb699e96341290951fd02",
+      "correctChoice": 5,
+      "summary": "水平面照度は光度Iに入射角の余弦を掛け、距離の二乗で割る。点Aでは250 lx、点Bでは1,000×(1/√2)÷8≒88.4 lxとなり、比は約2.83である。",
+      "choices": [
+        {
+          "number": 1,
+          "verdict": "incorrect",
+          "reason": "0.35はEᵦ/Eₐに近い値で、求めるEₐ/Eᵦとは分子・分母が逆になっている。"
+        },
+        {
+          "number": 2,
+          "verdict": "incorrect",
+          "reason": "0.71は点Bでの入射角45°の余弦であり、点Aと点Bの照度比ではない。"
+        },
+        {
+          "number": 3,
+          "verdict": "incorrect",
+          "reason": "点Bは光源から離れていて入射角も大きいため、水平面照度は点Aと同じにならない。"
+        },
+        {
+          "number": 4,
+          "verdict": "incorrect",
+          "reason": "1.41は余弦の比だけに相当する。距離の二乗の比8/4も掛ける必要がある。"
+        },
+        {
+          "number": 5,
+          "verdict": "correct",
+          "reason": "点Aは距離2 mで垂直入射、点Bは距離2√2 mで45°入射なので、Eₐ/Eᵦは2√2である。"
+        }
+      ],
+      "sources": [
+        {
+          "title": "日本技術士会 公式問題",
+          "url": "https://www.engineer.or.jp/c_topics/009/attached/attach_9918_2.pdf#page=2"
+        },
+        {
+          "title": "日本技術士会 公式正答",
+          "url": "https://www.engineer.or.jp/c_topics/004/attached/attach_4106_6.pdf#page=13"
+        }
+      ],
+      "lastCheckedAt": "2026-11-19"
+    }
+  }
+]
