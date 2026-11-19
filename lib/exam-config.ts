@@ -782,7 +782,7 @@ shakai: {
         },
     ],
     seasons: ["annual"],
-    yearRange: { start: 2024, end: 2025 },
+    yearRange: { start: 2023, end: 2025 },
 },
 seishin: {
     code: "seishin",

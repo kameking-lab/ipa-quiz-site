@@ -1,6 +1,7 @@
 import type { Question } from "@/lib/questions/types";
 import seishin2024 from "../seishin/2024-annual.json";
 import { type SsscSource, toSsscQuestion } from "../sssc-welfare";
+import source2023 from "./2023-annual.json";
 import source2024 from "./2024-annual.json";
 import source from "./2025-annual.json";
 
@@ -24,4 +25,9 @@ export const SHAKAI_2024_WITHHELD = (SEISHIN_2024_SHARED.withheld ?? []).filter(
 const SHAKAI_2024_QUESTIONS: Question[] = [...SHAKAI_2024_KYOTSU, ...SHAKAI_2024_SOURCE.questions].map((item) =>
   toSsscQuestion("shakai", SHAKAI_2024_SOURCE, { ...SEISHIN_2024_SHARED.questionPdfs, ...SHAKAI_2024_SOURCE.questionPdfs }, item));
 
-export const SHAKAI_QUESTIONS: Question[] = [...SHAKAI_2025_QUESTIONS, ...SHAKAI_2024_QUESTIONS];
+/** 第36回（令和5年度）社会福祉士国家試験 全150問（旧カリキュラム）。 */
+const SHAKAI_2023_SOURCE = source2023 as SsscSource;
+const SHAKAI_2023_QUESTIONS: Question[] = SHAKAI_2023_SOURCE.questions.map((item) =>
+  toSsscQuestion("shakai", SHAKAI_2023_SOURCE, SHAKAI_2023_SOURCE.questionPdfs, item));
+
+export const SHAKAI_QUESTIONS: Question[] = [...SHAKAI_2025_QUESTIONS, ...SHAKAI_2024_QUESTIONS, ...SHAKAI_2023_QUESTIONS];

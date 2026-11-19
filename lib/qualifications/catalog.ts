@@ -751,9 +751,9 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.sssc.or.jp/shakai/past_exam/index.html",
     officialReuseTermsUrl: "https://www.sssc.or.jp/pastissues/index.html",
     status: "live",
-    reuseSummary: "第38回（令和7年度）の全129問と第37回（令和6年度）の126問（共通科目81問・専門科目45問）を、全選択肢の解説付きで収録。",
+    reuseSummary: "第38回（令和7年度）の全129問、第37回（令和6年度）の126問、第36回（令和5年度・旧カリキュラム）の全150問を、全選択肢の解説付きで収録。",
     attributionTemplate: "出典：公益財団法人社会福祉振興・試験センター 第○回社会福祉士国家試験 問題○",
-    remainingWork: ["第37回 共通科目 問題4・69・76（一次資料で5肢を確定できず保留）", "第36回は旧カリキュラムのため対象外", "法改正で成立しなくなった問題の失効管理"],
+    remainingWork: ["第37回 共通科目 問題4・69・76（一次資料で5肢を確定できず保留）", "法改正で成立しなくなった問題の失効管理"],
 },
   {
     slug: "seishin",
