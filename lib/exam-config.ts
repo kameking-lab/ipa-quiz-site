@@ -1379,7 +1379,7 @@ chizai1: {
         { session: "gakka", urlSlug: "gakka", expectedQuestions: 45, label: "学科", categories: ["知的財産管理技能検定1級 学科・特許専門業務", "知的財産管理技能検定1級 学科・コンテンツ専門業務", "知的財産管理技能検定1級 学科・ブランド専門業務"] },
         { session: "practical", urlSlug: "practical", expectedQuestions: 15, label: "実技", categories: ["知的財産管理技能検定1級 実技・コンテンツ専門業務", "知的財産管理技能検定1級 実技・ブランド専門業務", "知的財産管理技能検定1級 実技・特許専門業務"] },
     ],
-    seasons: ["spring", "july", "autumn"], yearRange: { start: 2023, end: 2025 },
+    seasons: ["spring", "july", "autumn"], yearRange: { start: 2022, end: 2025 },
 },
 "kanken-j1": {
     code: "kanken-j1", nameFull: "日本漢字能力検定 準1級", urlSlug: "kanken-j1", level: "advanced",
