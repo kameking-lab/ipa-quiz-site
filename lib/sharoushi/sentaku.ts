@@ -10,13 +10,20 @@ const option = z.object({ id: z.number().int().min(1).max(20), label: text, text
 const blank = z.object({ id: label, answerOptionId: z.number().int().positive(), answerText: text, explanation: text,
   evidenceStatus: z.enum(["not-directly-verified", "direct-primary-verified"]), reviewFlags: z.array(text), primaryRefs: z.array(text).optional(),
 }).strict();
+const lawAsOfByYear = {
+  2023: "2023-04-14",
+  2025: "2025-04-11",
+  2026: "2026-04-10",
+} as const;
 const common = {
-  id: text, year: z.union([z.literal(2025), z.literal(2026)]), examRound: z.union([z.literal(57),z.literal(58)]),
+  id: text, year: z.union([z.literal(2023), z.literal(2025), z.literal(2026)]),
+  examRound: z.union([z.literal(55), z.literal(57), z.literal(58)]),
   questionNumber: z.number().int().min(1).max(8), subject: text, format: z.literal("official-cloze"),
   lawAsOf: z.string().regex(/^\d{4}-\d{2}-\d{2}$/), stem: text, rawSourceText: text,
   sourcePdfPhysicalPages: z.array(z.number().int().positive()).min(1), sourcePdfSha256: hash,
-  sourceUrl: z.url(), officialAnswerUrl: z.url(), officialAnswerPdfSha256: hash,
+  sourceUrl: z.url(), sourcePdfUrl: z.url().optional(), officialAnswerUrl: z.url(), officialAnswerPdfSha256: hash,
   blanks: z.array(blank).length(5), explanation: text,
+  choiceExplanations: z.record(z.string(), text).optional(),
   review: z.object({ status: z.enum(["approved","hold"]), reason: text, evidenceUrls: z.array(z.url()) }).strict(),
 };
 /** PDF soft line wraps are removed; original numbered sections retain paragraph breaks. */
@@ -26,7 +33,7 @@ const schema = z.discriminatedUnion("wordBankMode", [
 ]).superRefine((q,ctx) => {
   const fail=(message:string)=>ctx.addIssue({code:"custom",message});
   if(q.id!==`sharoushi-${q.year}-sentaku-q${String(q.questionNumber).padStart(2,"0")}`) fail("Original identity mismatch");
-  if(q.examRound!==q.year-1968 || q.lawAsOf!==(q.year===2025?"2025-04-11":"2026-04-10")) fail("Edition / law date mismatch");
+  if(q.examRound!==q.year-1968 || q.lawAsOf!==lawAsOfByYear[q.year]) fail("Edition / law date mismatch");
   if(q.blanks.map(b=>b.id).join("")!=="ABCDE") fail("Five ordered original fields required");
   const tokens=[...q.stem.matchAll(/\{\{([^{}]+)\}\}/g)].map(m=>m[1]);
   if(tokens.some(t=>!FIELD_LABELS.includes(t as typeof FIELD_LABELS[number])) || FIELD_LABELS.some(l=>!tokens.includes(l))) fail("Invalid or missing stem field");
@@ -36,6 +43,15 @@ const schema = z.discriminatedUnion("wordBankMode", [
   if(sentakuParagraphs(q.rawSourceText).join("")!==q.stem) fail("Original body differs from normalized stem");
   const banks=q.wordBankMode==="shared-20"?[q.sharedWordBank]:Object.values(q.blankWordBanks);
   for(const bank of banks) if(bank.some((o,i)=>o.id!==i+1 || o.label!==String.fromCodePoint(0x2460+i))) fail("Original option numbers must be consecutive and unique");
+  if (q.year === 2023) {
+    if (q.sourcePdfUrl !== `${q.sourceUrl}#page=${q.sourcePdfPhysicalPages[0]}`) {
+      fail("Missing or mismatched official question page");
+    }
+    const explanations = q.choiceExplanations ?? {};
+    if (Object.keys(explanations).length !== 20 || q.sharedWordBank.some(({ id }) => !explanations[String(id)])) {
+      fail("All 20 selections require explanations");
+    }
+  }
   for(const b of q.blanks){
     const bank=q.wordBankMode==="shared-20"?q.sharedWordBank:q.blankWordBanks[b.id];
     if(bank.find(o=>o.id===b.answerOptionId)?.text!==b.answerText) fail(`Official key / word mismatch: ${b.id}`);
