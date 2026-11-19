@@ -1,6 +1,7 @@
 import type { Question } from "@/lib/questions/types";
 import paper2026 from "./2026-annual.json";
 import paper2025 from "./2025-annual.json";
+import paper2022 from "./2022-annual.json";
 import paper2023 from "./2023-annual.json";
 import rousai2023 from "./rousai-2023-annual.json";
 import rousai2025 from "./rousai-2025-annual.json";
@@ -33,6 +34,7 @@ export const SHAROUSHI_QUESTIONS: Question[] = [
   ...(paper2026 as Question[]),
   ...(paper2025 as Question[]),
   ...(paper2023 as Question[]),
+  ...(paper2022 as Question[]),
   ...(rousai2023 as Question[]),
   ...(rousai2025 as Question[]),
   ...(rousai2026 as Question[]),
