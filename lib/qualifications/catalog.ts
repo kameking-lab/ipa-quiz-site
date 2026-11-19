@@ -1831,7 +1831,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.courts.go.jp/saiyo/sikenjoho/siken/siken_mondai/index.html",
     officialReuseTermsUrl: "https://www.courts.go.jp/saiyo/vc-files/saiyo/01-XYC-15kiso.pdf",
     status: "permission-required", stagingDataPath: "data/questions/saibansho-ippan-dai",
-    reuseSummary: "2026年度の一次試験（基礎能力21問・専門択一50問）を公式問題・正答で照合。問題冊子に禁転載の記載があり、公開には転載許諾が必要。",
+    reuseSummary: "2025・2026年度の一次試験（基礎能力41問・専門択一100問）を公式問題・正答で照合。基礎能力の両年度第1〜9問は原本の本文省略、2025年度第18問は立体図からの計算と正答の照合が未了。問題冊子に禁転載の記載があり、公開には転載許諾が必要。",
     attributionTemplate: "出典：裁判所 裁判所職員採用一般職試験（裁判所事務官・大卒程度区分）第1次試験。解説は過去問AIの独自作成。",
     remainingWork: ["問題冊子の転載許諾"],
   },

@@ -1779,7 +1779,7 @@ shihoshoshi: {
     sessions: [
         { session: "kiso", urlSlug: "kiso", expectedQuestions: 30, label: "一次・基礎能力", categories: ["判断推理", "数的推理", "資料解釈", "時事"] },
         { session: "senmon", urlSlug: "senmon", expectedQuestions: 50, label: "一次・専門択一", categories: ["憲法", "民法", "行政法", "刑法", "経済理論"] },
-    ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
+    ], seasons: ["annual"], yearRange: { start: 2025, end: 2026 },
 },
 "yobi-tanto": {
     code: "yobi-tanto", nameFull: "司法試験予備試験（短答式・法律基本科目）", urlSlug: "yobi-tanto", level: "specialist",
