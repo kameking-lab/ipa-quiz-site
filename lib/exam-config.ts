@@ -2004,6 +2004,7 @@ caremanager: {
     code: "kyoin-gifu", nameFull: "岐阜県公立学校教員採用選考試験", urlSlug: "kyoin-gifu", level: "advanced",
     sessions: [
         { session: "kyotsu", urlSlug: "kyotsu", expectedQuestions: 10, label: "第1次選考 教職教養", categories: ["教育法規", "教育心理", "特別支援教育", "生徒指導"] },
+        { session: "senmon", urlSlug: "senmon", expectedQuestions: 20, label: "第1次選考 教科専門（小学校）", categories: ["国語", "社会", "算数・数学", "理科", "技術", "保健体育", "家庭科", "英語", "教育課程"] },
     ], seasons: ["annual"], yearRange: { start: 2025, end: 2025 },
 },
 "kyoin-kobe": {
