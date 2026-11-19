@@ -2,7 +2,7 @@ import { createHash } from "node:crypto";
 import { readFileSync } from "node:fs";
 import { resolve } from "node:path";
 import { describe, expect, it } from "vitest";
-import { SEKOU_1KENCHIKU_QUESTIONS as questions } from "@/data/questions/sekou-1kenchiku";
+import { SEKOU_1KENCHIKU_QUESTIONS as allQuestions } from "@/data/questions/sekou-1kenchiku";
 import answerKeys from "@/reports/sekou-1kenchiku-latest2/official-answer-key.json";
 import figures from "@/reports/sekou-1kenchiku-latest2/figures.json";
 import { ALL_QUESTIONS } from "@/data/questions";
@@ -11,6 +11,7 @@ import { isExamPublished } from "@/lib/qualifications/catalog";
 import { getQuestionsForExam, getRegisteredExamCodes } from "@/lib/questions/get-questions";
 import { isAcceptedAnswer, isCompleteSelectionCorrect } from "@/lib/questions/answers";
 import { questionPagePath } from "@/lib/seo/question-url";
+const questions = allQuestions.filter(q => q.year === 2025 || q.year === 2026);
 const keys = ["ア", "イ", "ウ", "エ", "オ"];
 
 describe("1級建築施工管理 第一次検定 令和7・8年度ステージング", () => {
@@ -70,7 +71,7 @@ describe("1級建築施工管理 第一次検定 令和7・8年度ステージ�
     expect(ALL_EXAM_CODES).not.toContain("sekou-1kenchiku");
     expect(getRegisteredExamCodes()).toContain("sekou-1kenchiku");
     expect(ALL_QUESTIONS.some(q => q.exam === "sekou-1kenchiku")).toBe(true);
-    expect(await getQuestionsForExam("sekou-1kenchiku")).toEqual(questions);
+    expect(await getQuestionsForExam("sekou-1kenchiku")).toEqual(allQuestions);
     expect(questionPagePath(questions[0]!)).toBe("/q/sekou-1kenchiku/2025-july/am/q1");
   });
 });

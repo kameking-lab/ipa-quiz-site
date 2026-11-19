@@ -14,7 +14,7 @@ import { buildQuestionJsonLd } from "@/lib/seo/question-jsonld";
 import type { ExamCode } from "@/lib/questions/types";
 
 const counts: Partial<Record<ExamCode, number>> = {
-  kenchikushi1: 249, "khk-kagaku": 422, "sekou-1kenchiku": 144,
+  kenchikushi1: 249, "khk-kagaku": 422, "sekou-1kenchiku": 360,
   "khk-kikai-kou": 80, "khk-kikai-otsu": 100,
   "khk-reito-1": 80, "khk-reito-2": 80, "khk-reito-3": 70,
 };

@@ -25,7 +25,7 @@ const exams: ExamCode[] = ["unko-kanrisha-ryokaku", "shobo-setsubishi-kou1", "ki
 
 describe("eight prepared qualifications are published", () => {
   const counts: Record<string, number> = {
-    "kikenbutsu-otsu4": 35, "kikenbutsu-kou": 45, "kikenbutsu-hei": 25,
+    "kikenbutsu-otsu4": 36, "kikenbutsu-kou": 45, "kikenbutsu-hei": 25,
     "shobo-setsubishi-kou1": 26, "shobo-setsubishi-kou4": 15, "shobo-setsubishi-otsu6": 16,
     "unko-kanrisha-kamotsu": 86, "unko-kanrisha-ryokaku": 92,
   };
@@ -53,6 +53,7 @@ describe("eight prepared qualifications are published", () => {
     const questions: Question[] = readdirSync(dir)
       .filter(name => /^(published-|20\d\d)/.test(name) && name.endsWith(".json"))
       .flatMap(name => JSON.parse(readFileSync(join(dir, name), "utf8")));
+    if (exam === "kikenbutsu-otsu4") questions.sort((a, b) => b.year - a.year);
 
     it(`${exam}: exposes the same complete corpus to lists, pages, search and practice`, async () => {
       expect(getQualificationByExamCode(exam)?.status).toBe("live");
@@ -92,7 +93,9 @@ describe("eight prepared qualifications are published", () => {
         expect(q.sourceAnswerUrl).toMatch(/^https:\/\//);
         expect(q.sourcePdfUrl).toMatch(/^https:\/\//);
         expect(q.sourceAttribution).toContain("独自作成");
-        if (q.season === "published") expect(questionSourceEdition(q)).toContain("2026年6月公表版");
+        if (q.season === "published") {
+          expect(questionSourceEdition(q)).toContain(q.year === 2025 ? "公式訂正公表問題" : "2026年6月公表版");
+        }
         expect(EXAM_CONFIGS[q.exam].seasons).toContain(q.season);
         expect(EXAM_CONFIGS[q.exam].sessions.find(s => s.session === q.session)?.categories).toContain(q.category);
         expect(defaultPracticeSession(q.exam)).toBe("gakka");
@@ -106,7 +109,9 @@ describe("eight prepared qualifications are published", () => {
         expect(Object.keys(q.choiceExplanations!).sort()).toEqual(keys.sort());
         for (const reason of Object.values(q.choiceExplanations!)) expect(reason!.length).toBeGreaterThan(12);
         for (const key of Array.isArray(q.answer) ? q.answer : [q.answer]) expect(keys).toContain(key);
-        if (Array.isArray(q.answer)) expect(q.requiredSelections).toBe(q.answer.length);
+        if (Array.isArray(q.answer)) {
+          expect(q.requiredSelections).toBe(exam === "kikenbutsu-otsu4" && q.year === 2025 ? 1 : q.answer.length);
+        }
         expect(choiceDisplayLabel(exam, "ア")).toBe("1");
         expect(shuffleChoices(q)).toBe(q);
       }

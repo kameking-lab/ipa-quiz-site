@@ -778,7 +778,7 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     officialQuestionsUrl: "https://www.fcip-shiken.jp/about/",
     officialReuseTermsUrl: "https://www.fcip-shiken.jp/about/",
     status: "live",
-    reuseSummary: "令和7・8年度の第一次検定各72問、計144問。全肢解説と必要図を収録。令和7年度No.57は公式訂正に従い3・4いずれも正答。RS1Kの独立再レビューPASSを確認。第二次検定は対象外。",
+    reuseSummary: "2022〜2026年度の第一次検定各72問、計360問。全肢解説と原本図表を収録。令和7年度No.57は公式訂正に従い3・4いずれも正答。",
     remainingWork: [],
 },
   {
