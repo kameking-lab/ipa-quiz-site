@@ -7,7 +7,8 @@ import round50 from "./2024-second.json";
 import round49 from "./2024-first.json";
 import round48 from "./2023-second.json";
 import round47 from "./2023-first.json";
+import round46 from "./2022-second.json";
 
 /** Reviewed source candidates; public registries use the release gate below. */
-export const RIYOSHI_CANDIDATES: Question[] = [...first, ...second, ...previousSecond, ...round50, ...round49, ...round48, ...round47] as Question[];
+export const RIYOSHI_CANDIDATES: Question[] = [...first, ...second, ...previousSecond, ...round50, ...round49, ...round48, ...round47, ...round46] as Question[];
 export const RIYOSHI_QUESTIONS = getReleasedRiyoshiQuestions(RIYOSHI_CANDIDATES);
