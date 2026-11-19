@@ -100,6 +100,7 @@ const EXAM_LOADERS: Partial<Record<ExamCode, () => Promise<Question[]>>> = {
   "jokaso-setsubishi": async () => isExamPublished("jokaso-setsubishi") ? (await import("@/data/questions/jokaso-setsubishi")).QUESTIONS : [],
   "chiiki-ryoko": async () => isExamPublished("chiiki-ryoko") ? (await import("@/data/questions/chiiki-ryoko")).QUESTIONS : [],
   "junkango-kansai": async () => isExamPublished("junkango-kansai") ? (await import("@/data/questions/junkango-kansai")).QUESTIONS : [],
+  "junkango-b": async () => isExamPublished("junkango-b") ? (await import("@/data/questions/junkango-b")).QUESTIONS : [],
   "kukaku-seiri": async () => isExamPublished("kukaku-seiri") ? (await import("@/data/questions/kukaku-seiri")).QUESTIONS : [],
   "dojo-osen": async () => isExamPublished("dojo-osen") ? (await import("@/data/questions/dojo-osen")).QUESTIONS : [],
   "kenchikushi2": async () => isExamPublished("kenchikushi2") ? (await import("@/data/questions/kenchikushi2")).QUESTIONS : [],
