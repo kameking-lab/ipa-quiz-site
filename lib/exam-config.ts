@@ -114,7 +114,7 @@ export const EXAM_CONFIGS: Record<ExamCode, ExamConfig> = {
     nameFull: "商業経済検定試験",
     urlSlug: "zensho-eco-78",
     level: "basic",
-    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科", categories: ["マーケティング"] }],
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 100, label: "学科", categories: ["マーケティング", "ビジネス基礎"] }],
     seasons: ["annual"],
     yearRange: { start: 2025, end: 2025 },
   },
