@@ -5,6 +5,7 @@ import qualifications from "./qualifications.json";
 import priorSittings from "./prior-sittings.json";
 import priorAssets from "./prior-assets.json";
 import motorcycle2023 from "./2023-second-3-motorcycle.json";
+import motorcycle2022 from "./2022-second-3-motorcycle.json";
 
 export type AutomotiveExamCode =
   | "jidosha-1-small-written" | "jidosha-2-gasoline" | "jidosha-2-diesel"
@@ -44,6 +45,7 @@ const previouslyPublishedQuestions: Question[] = [...reviewed, ...priorSittings]
 export const AUTOMOTIVE_QUESTIONS: Question[] = [
   ...previouslyPublishedQuestions,
   ...motorcycle2023 as Question[],
+  ...motorcycle2022 as Question[],
 ];
 
 export function getAutomotiveQuestions(exam: AutomotiveExamCode): Question[] {

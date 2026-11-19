@@ -9,6 +9,7 @@ import metadata from "@/data/questions/automotive/qualifications.json";
 import reviewed from "@/data/questions/automotive/reviewed.json";
 import priorSittings from "@/data/questions/automotive/prior-sittings.json";
 import motorcycle2023 from "@/data/questions/automotive/2023-second-3-motorcycle.json";
+import motorcycle2022 from "@/data/questions/automotive/2022-second-3-motorcycle.json";
 import recovery from "@/data/qualification-staging/automotive/latest-two/qa/lq1b-recovery-ledger.json";
 import continuation from "@/data/qualification-staging/automotive/latest-two/qa/lq1c-progress.json";
 import continuationCandidates from "@/data/qualification-staging/automotive/latest-two/qa/lq1c-candidates.json";
@@ -25,7 +26,7 @@ import { findQuestionById, getPoolIds } from "@/lib/questions/pool-server";
 import { getHomeDirectory } from "@/lib/home/home-directory";
 import type { AutomotiveExamCode } from "@/lib/questions/types";
 
-const additionalQuestionCount = priorSittings.length + motorcycle2023.length;
+const additionalQuestionCount = priorSittings.length + motorcycle2023.length + motorcycle2022.length;
 
 describe("recovered automotive release", () => {
   it("admits the exact continuation candidates only with matching independent PASS receipts", () => {
