@@ -1471,7 +1471,7 @@ shuwa: {
         { session: "gakka-IV", urlSlug: "grade-3", expectedQuestions: 5, label: "3級", categories: ["商業簿記"] },
     ],
     seasons: ["first", "second"],
-    yearRange: { start: 2024, end: 2024 },
+    yearRange: { start: 2023, end: 2024 },
 },
 "jken-katsuyo1": {
     code: "jken-katsuyo1", nameFull: "情報検定（J検）情報活用1級", urlSlug: "jken-katsuyo1", level: "basic",
