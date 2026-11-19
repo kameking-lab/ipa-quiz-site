@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { officialScoringIssue } from "./official-scoring";
 import type { NativeBData, NativeBGrade, Question } from "./types";
 
 const text = z.string().refine((value) => value.trim().length > 0, "Empty text");
@@ -60,6 +61,13 @@ export function normalizeQuestionData(input: unknown): Question {
     return question;
   }
   if (source.nativeB !== undefined) throw new Error("nativeB requires native-b type");
+  if (source.officialScoring !== undefined) {
+    z.object({ kind: z.literal("credit-for-all"), reason: text }).parse(source.officialScoring);
+    const question = input as Question;
+    const issue = officialScoringIssue(question);
+    if (issue) throw new Error(issue);
+    return question;
+  }
   if (!(typeof source.answer === "string" && source.answer.trim() || Array.isArray(source.answer) && source.answer.length && source.answer.every((answer) => typeof answer === "string" && answer.trim()))) throw new Error("Missing answer");
   return input as Question;
 }
