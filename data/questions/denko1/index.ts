@@ -1,4 +1,4 @@
-import type { ChoiceKey, Question } from "@/lib/questions/types";
+import type { ChoiceKey, Question, Season, Session } from "@/lib/questions/types";
 import p01 from "./reviewed/20260401-q01-05.json";
 import p02 from "./reviewed/20260401-q06-10.json";
 import p03 from "./reviewed/20260401-q11-15.json";
@@ -16,6 +16,7 @@ import s04 from "./reviewed/20251005-q31-40.json";
 import s05 from "./reviewed/20251005-q41-50.json";
 import lower2024 from "./reviewed/20241006.json";
 import upper2024 from "./reviewed/20240401.json";
+import morning2023 from "./reviewed/20231001-am.json";
 
 /**
  * 2025年下期の原本・全肢査読・図版は
@@ -35,35 +36,58 @@ type Reviewed = {
   lawReferenceDate?: string;
   isCalculation?: boolean;
 };
+type Paper = {
+  date: string;
+  year: number;
+  season: Season;
+  title: string;
+  batches: Reviewed[][];
+  session?: Session;
+  form?: "01" | "02";
+  lastUpdated: string;
+};
 
 const choiceMap: Record<OfficialChoice, ChoiceKey> = { イ: "ア", ロ: "イ", ハ: "ウ", ニ: "エ" };
-const paper = {
+const paper: Paper = {
   date: "20260401",
   year: 2026,
-  season: "first" as const,
+  season: "first",
   title: "令和8年度第一種電気工事士上期学科試験（出題例）",
-  batches: [p01, p02, p03, p04, p05, p06, p07, p08, p09, p10],
+  batches: [p01, p02, p03, p04, p05, p06, p07, p08, p09, p10] as Reviewed[][],
+  lastUpdated: "2026-09-26",
 };
-const secondPaper = {
+const secondPaper: Paper = {
   date: "20251005",
   year: 2025,
-  season: "second" as const,
+  season: "second",
   title: "令和7年度下期第一種電気工事士学科試験",
-  batches: [s01, s02, s03, s04, s05],
+  batches: [s01, s02, s03, s04, s05] as Reviewed[][],
+  lastUpdated: "2026-09-28",
 };
-const lower2024Paper = {
+const lower2024Paper: Paper = {
   date: "20241006",
   year: 2024,
-  season: "second" as const,
+  season: "second",
   title: "令和6年度第一種電気工事士下期学科試験",
-  batches: [lower2024],
+  batches: [lower2024 as Reviewed[]],
+  lastUpdated: "2026-11-19",
 };
-const upper2024Paper = {
+const upper2024Paper: Paper = {
   date: "20240401",
   year: 2024,
-  season: "first" as const,
+  season: "first",
   title: "令和6年度第一種電気工事士上期学科試験（出題例）",
-  batches: [upper2024],
+  batches: [upper2024 as Reviewed[]],
+  lastUpdated: "2026-11-19",
+};
+const morning2023Paper: Paper = {
+  date: "20231001",
+  year: 2023,
+  season: "october",
+  session: "am",
+  title: "令和5年度第一種電気工事士学科試験（午前）",
+  batches: [morning2023 as Reviewed[]],
+  lastUpdated: "2026-11-19",
 };
 
 function mapped<T>(values: Partial<Record<OfficialChoice, T>>): Partial<Record<ChoiceKey, T>> {
@@ -87,11 +111,11 @@ function attribution(item: Reviewed, title: string): string {
   return `出典：${title}問${item.number}（電気技術者試験センター）。改行・空白と表記を整え、元のイ・ロ・ハ・ニをア・イ・ウ・エに置換。図のみの選択肢は識別用説明を追加。${figure}`;
 }
 
-export const DENKO1_QUESTIONS: Question[] = [paper, secondPaper, lower2024Paper, upper2024Paper].flatMap((edition) => edition.batches.flatMap((batch) =>
-  (batch as Reviewed[]).map((item): Question => ({
-    id: `denko1-${edition.year}-${edition.season}-gakka-q${item.number}`,
+export const DENKO1_QUESTIONS: Question[] = [paper, secondPaper, lower2024Paper, upper2024Paper, morning2023Paper].flatMap((edition) => edition.batches.flatMap((batch) =>
+  batch.map((item): Question => ({
+    id: `denko1-${edition.year}-${edition.season}-${edition.session ?? "gakka"}-q${item.number}`,
     exam: "denko1",
-    session: "gakka",
+    session: edition.session ?? "gakka",
     year: edition.year,
     season: edition.season,
     qNumber: item.number,
@@ -110,13 +134,13 @@ export const DENKO1_QUESTIONS: Question[] = [paper, secondPaper, lower2024Paper,
     choiceImageUrls: item.choiceImageUrls ? mapped(item.choiceImageUrls) : undefined,
     hasImage: Boolean(item.imageUrls?.length || Object.keys(item.choiceImageUrls ?? {}).length),
     isCalculation: item.isCalculation,
-    sourcePdfUrl: `https://www.shiken.or.jp/construction/upload/${edition.date}_co_first_q01.pdf`,
-    sourceAnswerUrl: `https://www.shiken.or.jp/construction/upload/${edition.date}_co_first_a01.pdf`,
+    sourcePdfUrl: `https://www.shiken.or.jp/construction/upload/${edition.date}_co_first_q${edition.form ?? "01"}.pdf`,
+    sourceAnswerUrl: `https://www.shiken.or.jp/construction/upload/${edition.date}_co_first_a${edition.form ?? "01"}.pdf`,
     sourceAttribution: attribution(item, edition.title),
     officialReferenceUrls: item.officialReferenceUrls,
     lawReferenceDate: item.lawReferenceDate,
     license: "ECEE-educational-reuse",
     needsReview: false,
-    lastUpdated: edition.year === 2024 ? "2026-11-19" : edition.year === 2025 ? "2026-09-28" : "2026-09-26",
+    lastUpdated: edition.lastUpdated,
   })),
 ));
