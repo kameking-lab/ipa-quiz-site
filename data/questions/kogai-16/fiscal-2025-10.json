@@ -1,0 +1,436 @@
+[
+  {
+    "id": "kogai-16-2025-10-q1",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 126,
+    "officialQuestionLabel": "大規模水質特論 問1",
+    "subject": "大規模水質特論",
+    "examDate": "2025-10-05",
+    "lawReferenceDate": "2025-04-01",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "大規模水質特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "沿岸域のような浅海域における流動のモデル計算に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "海域を流れる塩水や淡水等の流体は，回転する粘性かつ圧縮性の流体として扱うことが，モデル式の基本的な考え方である。",
+      "イ": "海面での境界条件としては，風や日射量，湿度，気温等の気象条件を与える。",
+      "ウ": "湾口部での境界条件は潮位の変化に代表される水位の変化などを与える。",
+      "エ": "海水の密度は塩分と水温から算出する。",
+      "オ": "重力の加速度やコリオリのパラメータを考慮している。"
+    },
+    "answer": "ア",
+    "explanation": "沿岸の流動モデルでは通常、塩分や水温による密度差は考慮しつつ、水の圧縮性は無視して非圧縮性流体として扱う。",
+    "choiceExplanations": {
+      "ア": "沿岸の流動モデルでは通常、塩分や水温による密度差は考慮しつつ、水の圧縮性は無視して非圧縮性流体として扱う。",
+      "イ": "海面での風応力や熱交換を表すため、風、日射、湿度、気温などを境界の条件として与える。",
+      "ウ": "湾口の外海の潮汐は湾内の流れを駆動するので、潮位などの時間変化を開放境界に与える。",
+      "エ": "海水の密度は塩分と温度に依存する。これらから密度を求め、浮力などの計算に用いる。",
+      "オ": "水位や密度に起因する圧力差には重力、回転する地球上での流れの偏向にはコリオリ効果を考慮する。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251218181429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R07_10.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251219092244id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR07.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2025年度公害防止管理者等国家試験 大規模水質特論 問1（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2025-10-q2",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 127,
+    "officialQuestionLabel": "大規模水質特論 問2",
+    "subject": "大規模水質特論",
+    "examDate": "2025-10-05",
+    "lawReferenceDate": "2025-04-01",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "大規模水質特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "下図は，ある一級河川で観測された河川流量Q（m3/s）と全窒素負荷量L（g/s）\nの関係をプロットし，約10 ～約500 m3/s の範囲の流量についてその関係を近似式で表したものである（r は相関係数である）。この流量と負荷量の関係に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "図に示された流量と負荷量の関係は，L －Q 曲線とよばれる。",
+      "イ": "図に示された流量と負荷量は，両対数グラフにおいて直線で近似できる。",
+      "ウ": "図に示された流量と負荷量の関係は，L ＝aQb と記述でき，ここでa とb は正の係数である。",
+      "エ": "図に示された流量と負荷量の関係の近似式が成り立つ流量の範囲では，流量が10 倍になったとき，負荷量は10 倍以上増えることになる。",
+      "オ": "図に示された流量と負荷量の近似式を利用することで，測定値のない日における負荷量を流量から推定することが可能になる。"
+    },
+    "answer": "エ",
+    "explanation": "流量10倍に対する負荷量の倍率は10⁰·⁹⁷≒9.33で、10倍未満となる。",
+    "choiceExplanations": {
+      "ア": "流量Qに対して物質負荷量Lがどう変わるかを表す関係なので、L－Q曲線と呼ばれる。",
+      "イ": "両方の軸を対数で表すとlog L＝log a＋b log Qとなり、べき乗関数は直線になる。",
+      "ウ": "図に示された近似式はL＝1.50Q⁰·⁹⁷で、係数aと指数bはいずれも正である。",
+      "エ": "流量10倍に対する負荷量の倍率は10⁰·⁹⁷≒9.33で、10倍未満となる。",
+      "オ": "観測値がない日の負荷量は、関係式が成り立つ範囲の流量を式に代入して推定できる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251218181429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R07_10.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251219092244id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR07.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2025年度公害防止管理者等国家試験 大規模水質特論 問2（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized",
+    "imageUrls": [
+      "/images/questions/kogai-16/2025/10/q2-1.webp"
+    ],
+    "imageAltTexts": [
+      "大規模水質特論 問2の公式問題"
+    ]
+  },
+  {
+    "id": "kogai-16-2025-10-q3",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 128,
+    "officialQuestionLabel": "大規模水質特論 問3",
+    "subject": "大規模水質特論",
+    "examDate": "2025-10-05",
+    "lawReferenceDate": "2025-04-01",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "大規模水質特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "POC（粒子状有機炭素）と植物プランクトン量の関係は y＝50x（y はPOC、x はクロロフィル-a濃度、単位はいずれもmg/m³）で近似できる。クロロフィル-a濃度が12 mg/m³のときの全酸素要求量（mg O₂/L）を求めよ。原本の式1でm＝120、n＝15、酸素と炭素の原子量をそれぞれ16、12とする。",
+    "choices": {
+      "ア": "0.6",
+      "イ": "1.0",
+      "ウ": "1.6",
+      "エ": "2.0",
+      "オ": "2.6"
+    },
+    "answer": "エ",
+    "explanation": "POCは0.6 mg C/Lであり、反応式では炭素120 mol当たり酸素分子150 molを消費する。0.6×150×32/(120×12)＝2.0 mg O₂/Lとなる。",
+    "choiceExplanations": {
+      "ア": "50×12＝600 mg/m³、つまり0.6 mg/Lは粒子状有機炭素の濃度である。これを全酸素要求量に換算する必要がある。",
+      "イ": "反応の酸素と炭素の量を比較するには、係数だけでなく、酸素分子と炭素原子の質量の比も考慮する。",
+      "ウ": "約1.6 mg/Lは、炭素の酸化に必要な酸素だけを数えたときの値に近い。式の窒素の酸化に要する酸素も含める。",
+      "エ": "POCは0.6 mg C/Lであり、反応式では炭素120 mol当たり酸素分子150 molを消費する。0.6×150×32/(120×12)＝2.0 mg O₂/Lとなる。",
+      "オ": "酸素分子のモル質量32と反応係数150を用い、炭素の質量から換算すると、2.6ではなく2.0 mg O₂/Lになる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251218181429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R07_10.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251219092244id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR07.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2025年度公害防止管理者等国家試験 大規模水質特論 問3（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized",
+    "imageUrls": [
+      "/images/questions/kogai-16/2025/10/q3-1.webp"
+    ],
+    "imageAltTexts": [
+      "大規模水質特論 問3の公式問題"
+    ]
+  },
+  {
+    "id": "kogai-16-2025-10-q4",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 129,
+    "officialQuestionLabel": "大規模水質特論 問4",
+    "subject": "大規模水質特論",
+    "examDate": "2025-10-05",
+    "lawReferenceDate": "2025-04-01",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "大規模水質特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "生態系モデルの中の植物プランクトンの増殖に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "増殖速度は、単位時間あたりに生産される炭素生物量であり、単位はmg C m⁻³ day⁻¹で表現されている。",
+      "イ": "増殖を示す項のみを微分形式で示すと、dAₚ/dt＝GAₚとなる。ここでAₚは植物プランクトン炭素生物量、Gは時間の逆数の次元をもつ比増殖速度で、一般にday⁻¹の単位で表している。",
+      "ウ": "栄養塩の摂取についてはランバート-ベールの式が使われている。",
+      "エ": "光合成－光応答の式では、強光阻害の影響が考慮されている。",
+      "オ": "栄養塩の摂取については、制限の強い栄養塩濃度を選んで計算するリービッヒの最小律が使われている。"
+    },
+    "answer": "ウ",
+    "explanation": "ランバート・ベールの式は水中での光の減衰を表す。栄養塩の摂取には、濃度に応じた飽和型の式などを用いる。",
+    "choiceExplanations": {
+      "ア": "植物プランクトンの増殖速度は、体積・時間当たりに増える炭素量なのでmg C/(m³・日)などで表す。",
+      "イ": "生物量Aₚ当たりの増殖率がGであるため、増殖による生物量の変化はdAₚ/dt＝GAₚで表せる。",
+      "ウ": "ランバート・ベールの式は水中での光の減衰を表す。栄養塩の摂取には、濃度に応じた飽和型の式などを用いる。",
+      "エ": "光が強くなりすぎると光合成が抑制されることがある。光応答式に強光阻害を含めて表すモデルがある。",
+      "オ": "リービッヒの最小律では、必要な栄養塩のうち、増殖を最も制限するものによって増殖が決まると考える。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251218181429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R07_10.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251219092244id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR07.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2025年度公害防止管理者等国家試験 大規模水質特論 問4（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2025-10-q5",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 130,
+    "officialQuestionLabel": "大規模水質特論 問5",
+    "subject": "大規模水質特論",
+    "examDate": "2025-10-05",
+    "lawReferenceDate": "2025-04-01",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "大規模水質特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "水の再利用におけるカスケード利用に関する記述として，誤っているのはどれか。",
+    "choices": {
+      "ア": "カスケード利用では，ある用途に使用した水を，そのまま他の用途に使用する。",
+      "イ": "カスケード利用は，特別高価な施設を必要とせず，運転費用も安価である。",
+      "ウ": "カスケード利用には，使用する側にとって排水の水質や水温が許容できることが必要である。",
+      "エ": "機械工場においては，コンプレッサーの冷却水が，酸洗工程の洗浄水としてカスケード利用されることがある。",
+      "オ": "鉄鋼業における直接冷却水として使用された水は懸濁物質の混入がほとんどないので，洗浄用水としてカスケード利用されることが多い。"
+    },
+    "answer": "オ",
+    "explanation": "鉄鋼業の直接冷却では水が被冷却物と接触するため、スケールなどの懸濁物が混入し得る。ほとんど混入しないという説明は誤り。",
+    "choiceExplanations": {
+      "ア": "一つの用途で使った水に大きな追加処理を行わず、他の用途に順次利用する方式である。",
+      "イ": "高度な処理施設を新たに設けず利用できる場合が多く、処理と運転の費用を抑えられる。",
+      "ウ": "水温や汚れが後工程の許容条件を外れると、そのまま利用できない。",
+      "エ": "冷却水を、より低い水質でも対応できる酸洗工程の洗浄水として使用するのはカスケード利用の例である。",
+      "オ": "鉄鋼業の直接冷却では水が被冷却物と接触するため、スケールなどの懸濁物が混入し得る。ほとんど混入しないという説明は誤り。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251218181429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R07_10.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251219092244id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR07.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2025年度公害防止管理者等国家試験 大規模水質特論 問5（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2025-10-q6",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 131,
+    "officialQuestionLabel": "大規模水質特論 問6",
+    "subject": "大規模水質特論",
+    "examDate": "2025-10-05",
+    "lawReferenceDate": "2025-04-01",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "大規模水質特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "ある開放循環式冷却水系が，蒸発水量1.2 ％，飛散水量0.2 ％，ブロー水量\n0.3 ％，濃縮倍数3.4 で運転されている。ブロー水量を2 倍に上げると濃縮倍数はいくらになるか。",
+    "choices": {
+      "ア": "1.0",
+      "イ": "1.5",
+      "ウ": "2.0",
+      "エ": "2.5",
+      "オ": "3.0"
+    },
+    "answer": "エ",
+    "explanation": "増量後のブローは0.6％、飛散は0.2％、蒸発は1.2％。濃縮倍数は補給水量÷（飛散水量＋ブロー水量）＝2.0÷0.8＝2.5。",
+    "choiceExplanations": {
+      "ア": "濃縮倍数が1になるには、溶質を濃縮する蒸発がない場合などが想定される。本問は蒸発水量が1.2％ある。",
+      "イ": "ブローを倍にすると溶質の排出が増えるが、蒸発を補う分もあるので、濃縮倍数は1.5まで下がらない。",
+      "ウ": "ブロー増量後の飛散とブローの合計は0.8％で、蒸発分の補給1.2％を含む総補給量2.0％との比を取る。2.0は補給水量の百分率である。",
+      "エ": "増量後のブローは0.6％、飛散は0.2％、蒸発は1.2％。濃縮倍数は補給水量÷（飛散水量＋ブロー水量）＝2.0÷0.8＝2.5。",
+      "オ": "ブロー0.6％だけでなく、溶質を含む飛散水0.2％も分母に含める必要があり、濃縮倍数は3.0にならない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251218181429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R07_10.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251219092244id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR07.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2025年度公害防止管理者等国家試験 大規模水質特論 問6（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2025-10-q7",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 132,
+    "officialQuestionLabel": "大規模水質特論 問7",
+    "subject": "大規模水質特論",
+    "examDate": "2025-10-05",
+    "lawReferenceDate": "2025-04-01",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "大規模水質特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "下図は，めっき排水処理のフローシート例である。添加する薬剤A，B，Cの組合せとして，最適なものはどれか。ただし，図中のX 槽は名称を伏せてある。\nまた，汚泥や逆洗排水のラインは省略してある。\nA 　　　　　　　　　　 B 　　　　　　　　C",
+    "choices": {
+      "ア": "硫酸　　　　　　　　　亜硫酸水素ナトリウム　　　消石灰",
+      "イ": "硫酸　　　　　　　　　次亜塩素酸ナトリウム　　　消石灰",
+      "ウ": "水酸化ナトリウム　　　亜硫酸水素ナトリウム　　　消石灰",
+      "エ": "水酸化ナトリウム　　　亜硫酸水素ナトリウム　　　硫酸",
+      "オ": "水酸化ナトリウム　　　次亜塩素酸ナトリウム　　　硫酸"
+    },
+    "answer": "ア",
+    "explanation": "X槽でのクロムの還元は硫酸による酸性条件で行い、亜硫酸水素ナトリウムを還元剤とする。後段では消石灰を使い水酸化物を沈殿させる。",
+    "choiceExplanations": {
+      "ア": "X槽でのクロムの還元は硫酸による酸性条件で行い、亜硫酸水素ナトリウムを還元剤とする。後段では消石灰を使い水酸化物を沈殿させる。",
+      "イ": "硫酸で酸性にする点は合うが、次亜塩素酸ナトリウムは酸化剤であり、クロムの還元に用いる薬剤ではない。",
+      "ウ": "還元剤と後段の消石灰は合うが、X槽のpH調整にはアルカリの水酸化ナトリウムを使う組合せではない。",
+      "エ": "X槽をアルカリ性とする点が合わない。後段で三価クロムの水酸化物を生成させるためには、消石灰を使用する。",
+      "オ": "次亜塩素酸ナトリウムはクロムの還元剤ではない。またCで加えるのは、沈殿に必要なpHへ調整する消石灰である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251218181429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R07_10.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251219092244id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR07.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2025年度公害防止管理者等国家試験 大規模水質特論 問7（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized",
+    "imageUrls": [
+      "/images/questions/kogai-16/2025/10/q7-1.webp"
+    ],
+    "imageAltTexts": [
+      "大規模水質特論 問7の公式問題"
+    ]
+  },
+  {
+    "id": "kogai-16-2025-10-q8",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 133,
+    "officialQuestionLabel": "大規模水質特論 問8",
+    "subject": "大規模水質特論",
+    "examDate": "2025-10-05",
+    "lawReferenceDate": "2025-04-01",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "大規模水質特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "図は製油所におけるプロセス排水の処理フローの例である。A，B，Cに該当する処理プロセスの組合せとして，最適なものはどれか。\nA　　　　　　　　　　B　　　　　　　　　　C",
+    "choices": {
+      "ア": "活性汚泥処理　　　　　排水ストリッパー　　　急速ろ過",
+      "イ": "活性汚泥処理　　　　　急速ろ過　　　　　　　排水ストリッパー",
+      "ウ": "排水ストリッパー　　　活性汚泥処理　　　　　急速ろ過",
+      "エ": "排水ストリッパー　　　急速ろ過　　　　　　　活性汚泥処理",
+      "オ": "急速ろ過　　　　　　　活性汚泥処理　　　　　排水ストリッパー"
+    },
+    "answer": "ウ",
+    "explanation": "Aで揮発性成分をストリッピングし、オイルセパレーターの後のBで生物処理する。Cの急速ろ過で浮遊物を減らしてから活性炭処理へ進む。",
+    "choiceExplanations": {
+      "ア": "ストリッピングを生物処理の上流に置くことで、アンモニアなどの負荷を減らす。活性汚泥処理をAとする順ではない。",
+      "イ": "Aでは揮発性成分を先に除く。活性汚泥処理とろ過の後に排水ストリッパーを置くと、下流の処理に入る負荷を減らせない。",
+      "ウ": "Aで揮発性成分をストリッピングし、オイルセパレーターの後のBで生物処理する。Cの急速ろ過で浮遊物を減らしてから活性炭処理へ進む。",
+      "エ": "急速ろ過は活性汚泥処理の後に置き、生物処理後に残る浮遊物を除く。BとCが逆である。",
+      "オ": "原水の前処理に排水ストリッパーを置く。急速ろ過は生物処理後に行うので、記載の順ではない。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": true,
+    "sourcePdfUrl": "https://web.archive.org/web/20251218181429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R07_10.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251219092244id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR07.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2025年度公害防止管理者等国家試験 大規模水質特論 問8（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized",
+    "imageUrls": [
+      "/images/questions/kogai-16/2025/10/q8-1.webp"
+    ],
+    "imageAltTexts": [
+      "大規模水質特論 問8の公式問題"
+    ]
+  },
+  {
+    "id": "kogai-16-2025-10-q9",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 134,
+    "officialQuestionLabel": "大規模水質特論 問9",
+    "subject": "大規模水質特論",
+    "examDate": "2025-10-05",
+    "lawReferenceDate": "2025-04-01",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "大規模水質特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "食料品製造業からの排水やその処理に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "事業場の規模が様々であり，また一事業場で多数の製品を製造する場合があり，製品ごとに排水の水量や水質が異なることがある。",
+      "イ": "生物分解しやすいBOD 成分が多いため，活性汚泥法などの生物処理方式が多く採用されている。",
+      "ウ": "ビール工場の各工程から排出される廃液は，醸造系の廃液に容器充塡工程の廃液が加わり，総合排水として処理される。",
+      "エ": "ビール工場の排水処理としては，従来から活性汚泥法が採用されてきたが，\nばっ　き曝　気　が不要な上向流式嫌気汚泥床（UASB）を活性汚泥処理の後段で採用する二段処理も採用されるようになった。",
+      "オ": "清涼飲料工場からの排水中の有機物は，糖質と有機酸がほとんどであり，容易に生物分解できる。"
+    },
+    "answer": "エ",
+    "explanation": "二段式では高濃度の有機物を曝気不要のUASBで先に処理し、後段の活性汚泥法で仕上げる。選択肢は順序が逆。",
+    "choiceExplanations": {
+      "ア": "同じ工場でも製品や洗浄工程によって排水の量や濃度が異なり、施設の規模による違いも大きい。",
+      "イ": "糖など生物分解しやすい有機物を多く含むため、活性汚泥法などの生物処理が用いられる。",
+      "ウ": "醸造工程と容器への充塡等の工程の廃液を集めて総合排水として処理する。",
+      "エ": "二段式では高濃度の有機物を曝気不要のUASBで先に処理し、後段の活性汚泥法で仕上げる。選択肢は順序が逆。",
+      "オ": "清涼飲料に由来する糖質や有機酸は、生物処理で分解しやすい有機成分である。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251218181429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R07_10.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251219092244id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR07.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2025年度公害防止管理者等国家試験 大規模水質特論 問9（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  },
+  {
+    "id": "kogai-16-2025-10-q10",
+    "exam": "kogai-16",
+    "session": "gakka",
+    "year": 2025,
+    "season": "annual",
+    "qNumber": 135,
+    "officialQuestionLabel": "大規模水質特論 問10",
+    "subject": "大規模水質特論",
+    "examDate": "2025-10-05",
+    "lawReferenceDate": "2025-04-01",
+    "category": "大規模水質特論",
+    "topicTags": [
+      "大規模水質特論"
+    ],
+    "difficulty": 3,
+    "type": "multiple-choice",
+    "question": "製紙工場における製造工程及び排水処理に関する記述として，誤っているものはどれか。",
+    "choices": {
+      "ア": "蒸解工程では，木材繊維同士を固める役割を果たしているリグニンが分解される。",
+      "イ": "蒸解工程に用いる白液は，水酸化ナトリウムと硫化ナトリウムの混合溶液である。",
+      "ウ": "黒液には可溶化したリグニンとヘミセルロースが含まれるとともに，蒸解に用いたナトリウムと硫黄が含まれる。",
+      "エ": "ECF 漂白では，木材繊維に付着残存していたリグニンをアルカリ性・加圧条件下で，塩素ガスを用いて分解する。",
+      "オ": "排水へのBOD 負荷を削減するため，漂白工程へのリグニンなどの不純物の持ち込みを減らすことが重要である。"
+    },
+    "answer": "エ",
+    "explanation": "ECFは元素状塩素を使用しない漂白のことで、塩素ガスを使用する説明は誤り。二酸化塩素などが用いられる。",
+    "choiceExplanations": {
+      "ア": "蒸解で繊維の間を結着させているリグニンを分解・溶出させると、繊維がほぐれる。",
+      "イ": "クラフトパルプの蒸解に使う白液には、水酸化ナトリウムと硫化ナトリウムが含まれる。",
+      "ウ": "蒸解後の黒液には木材から溶け出したリグニン・ヘミセルロースと、蒸解薬品由来のナトリウム・硫黄が含まれる。",
+      "エ": "ECFは元素状塩素を使用しない漂白のことで、塩素ガスを使用する説明は誤り。二酸化塩素などが用いられる。",
+      "オ": "蒸解後の洗浄などで漂白工程への有機物の持ち込みを減らすと、その工程からの排水によるBOD負荷の低減につながる。"
+    },
+    "explanationCoverage": "full",
+    "hasImage": false,
+    "sourcePdfUrl": "https://web.archive.org/web/20251218181429id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/R07_10.pdf",
+    "sourceAnswerUrl": "https://web.archive.org/web/20251219092244id_/https://www.jemai.or.jp/polconman/examination/dd4ht300000005fn-att/answerR07.pdf",
+    "sourceAttribution": "出典：産業環境管理協会 2025年度公害防止管理者等国家試験 大規模水質特論 問10（公式サイト掲載の問題・正答の保存版）。解説は過去問AI作成。",
+    "license": "JEMAI-owner-authorized"
+  }
+]
