@@ -38591,5 +38591,705 @@
     "sources": [],
     "provisionalReview": true,
     "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242804-q1": {
+    "sourceHash": "c1b8dfc66029c21c79ed1c7e25c82b0383971b5514c7bdbfbe795760631366ca",
+    "correctChoice": 4,
+    "summary": "1 µmol＝10⁻⁶ mol、1 g＝10⁻³ kgなので、1 µmol/g＝10⁻³ mol/kg＝1 mmol/kgです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "熱力学温度はセルシウス温度を表す数値に273.15を加えて求めます。25℃は298.15 Kなので約298 Kです。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "アンペアは導線などの断面を1秒当たりに通る電荷を表します。1.0 Aは1.0 C/s、すなわち1.0 C·s⁻¹です。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "1 Lは1 dm³です。1 dmが0.1 mなので、立方デシメートルの一辺の長さを三乗すると1.0×10⁻³ m³になります。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "1 µmol＝10⁻⁶ mol、1 g＝10⁻³ kgなので、1 µmol/g＝10⁻³ mol/kg＝1 mmol/kgです。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "760 mmHgは1気圧を表す標準大気圧に対応します。1気圧は約101,325 Paなので、約101.3 kPaです。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242804-q2": {
+    "sourceHash": "954a7a160112b5fa34f16f08ffe300471a34edc2e4c5c910d9e9e85a0d8d29a0",
+    "correctChoice": 3,
+    "summary": "独立な二つの測定値の差の分散は、元の分散の和σ₁²＋σ₂²です。この分散の正の平方根を取ると差の標準偏差になります。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "二つの物理量が独立であれば標準偏差をそのまま足すのではなく、各標準偏差を二乗して分散を足し合わせ、その平方根を取ります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "物理量同士を引くときも、独立な誤差のばらつきが差し引かれるわけではありません。二つの誤差が独立なら、それぞれの分散は加わります。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "独立な二つの測定値の差の分散は、元の分散の和σ₁²＋σ₂²です。この分散の正の平方根を取ると差の標準偏差になります。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "誤差伝播では差の計算の係数−1も二乗すると1になるため、差の標準偏差にも独立な二つの物理量の分散の和を使い、その平方根を取ります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "標準偏差同士の積の平方根は、二つの標準偏差の幾何平均です。独立な二つの測定値の差では、それぞれの分散の和の平方根を使います。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242804-q3": {
+    "sourceHash": "f1d665883894b6eb60c35c37120f5830de800a2720577d223f78d6ed2cf4f180",
+    "correctChoice": 2,
+    "summary": "ベンゼンは水には溶けにくく、有機溶媒のクロロホルムにはよく溶けます。従ってクロロホルムよりも水への溶解度が大きいとする記述は逆です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "塩化ナトリウムはイオン性物質で、イオンを強く溶媒和できる水によく溶けます。水より極性の低いエタノールには水ほど溶けません。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "ベンゼンは水には溶けにくく、有機溶媒のクロロホルムにはよく溶けます。従ってクロロホルムよりも水への溶解度が大きいとする記述は逆です。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "酢酸はカルボキシ基によって水と水素結合などの相互作用をし、水とよく混ざります。非極性の四塩化炭素より水への溶解性が高いです。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "水酸化ナトリウムはイオン性の固体で、ナトリウムイオンと水酸化物イオンを溶媒和できる水に溶けやすく、無極性の四塩化炭素には溶けにくいです。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "硫酸ナトリウムは水に溶けるイオン性の塩です。無極性の四塩化炭素では二種類のイオンが安定に溶媒和されにくくなります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242804-q4": {
+    "sourceHash": "5160aaeb7f01cfed78a24c21c2feb3f242a27f6ebb02ff2bf174e51461e9425e",
+    "correctChoice": 3,
+    "summary": "n＝PV/RT＝0.084×5.0/(0.082×400)≒0.0128 molです。1.0 gをこの物質量で割ると約78 g/molです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "68を使うと、質量1.0 gが約0.0147 molに相当し、与えられた分圧・体積から求めた約0.0128 molを上回ります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "72は与えられた分圧から気体の状態方程式で求めた分子量約78より小さいです。温度は127℃を絶対温度約400 Kに換算します。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "n＝PV/RT＝0.084×5.0/(0.082×400)≒0.0128 molです。1.0 gをこの物質量で割ると約78 g/molです。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "82は、元の質量を約0.0128 molで割った分子量約78より大きいです。気体量は測定したXの分圧と容器の体積から、n＝PV/RTで求めます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "88を使うと、1.0 gは約0.0114 molになり、分圧と体積から求めた約0.0128 molより小さくなります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242804-q5": {
+    "sourceHash": "b6efc4802c643aa54fd5e5a9e207bcb44e61349ba81555e6ec959cf21e67aa93",
+    "correctChoice": 4,
+    "summary": "硝酸の物質量は14×0.010＝0.14 molです。強酸の硝酸はほぼ完全に電離するので、希釈後1.0 LのH⁺濃度は0.14 mol/Lです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "0.014 mol/Lは1 L中に0.014 molある場合です。元の硝酸の量は14×0.010＝0.14 molです。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "0.028 mol/Lでは、1 L中の量が希釈前の0.14 molより少なくなります。水を加えても硝酸の物質量は減りません。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "0.070 mol/Lは0.14 molを2 Lにした場合の値です。ここでの最終体積は1,000 mL＝1.0 Lです。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "硝酸の物質量は14×0.010＝0.14 molです。強酸の硝酸はほぼ完全に電離するので、希釈後1.0 LのH⁺濃度は0.14 mol/Lです。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "0.28 mol/Lは0.14 molを0.50 Lにしたときの濃度です。この問題では溶液の最終体積が1.0 Lになるまで希釈します。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242804-q6": {
+    "sourceHash": "bdf36ee047878499e74ec341f806429cc2d4e0100df5d0230fcadbd19f70d2ac",
+    "correctChoice": 1,
+    "summary": "水に10 mg残るとヘキサンに50 mg移ります。濃度の比は(50÷10)/(10÷100)＝50で、条件を満たします。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "水に10 mg残るとヘキサンに50 mg移ります。濃度の比は(50÷10)/(10÷100)＝50で、条件を満たします。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "水に20 mg残るとヘキサンへ移った量は40 mgとなり、指定された相の体積で割った濃度の比は4.0÷0.20＝20で50になりません。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "水に30 mg残ると溶質Aは両相に30 mgずつ含まれます。体積比だけで濃度比が10になり、50には達しません。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "水に40 mg残るとヘキサンに20 mg移り、それぞれの濃度から求める比は2.0÷0.40＝5で、与えられた分配係数50ではありません。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "水に50 mg残るとヘキサンへは10 mgしか移りません。この場合の濃度比は1.0÷0.50＝2となり、設問の分配係数50より小さいです。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242804-q7": {
+    "sourceHash": "a311bdaa274782261d130a4d44e7972b38260c4612801e816a1d809986e5846e",
+    "correctChoice": 2,
+    "summary": "石けん膜流量計は気体の通過体積を直接測る方式です。ガスの密度や粘度など、種類に応じて求めた値を補正する方式ではありません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "石けん膜が既知の容積を通過する時間を測り、容積を時間で割って流量を求めるため、比較的少ない気体流量も測定できます。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "石けん膜流量計は気体の通過体積を直接測る方式です。ガスの密度や粘度など、種類に応じて求めた値を補正する方式ではありません。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "ローターメーターは気流で浮き上がるフロートの高さを読みます。フロートにかかる重力の向きと管軸をそろえるため、管は垂直にします。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "乾式ガスメーターは通過した気体の体積を積算します。一定時間内の積算体積の差を経過時間で割れば平均流量も求められます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "湿式ガスメーターでは、液体で仕切ったドラムが気体の通過に応じて回転します。体積はドラムの回転数から求められます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242804-q8": {
+    "sourceHash": "6127392af52fadb7f1171cc4acdb7a61b1caf7f5c47338bb203cea2d19a317c0",
+    "correctChoice": 1,
+    "summary": "ppmはここでは気体の体積比です。拡散係数と飽和蒸気圧を同じにしたとき、分子量が大きいだけで体積比が高くなるわけではありません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "ppmはここでは気体の体積比です。拡散係数と飽和蒸気圧を同じにしたとき、分子量が大きいだけで体積比が高くなるわけではありません。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "管の内径が大きいと拡散方向と直交する断面積が増え、標準物質が拡散して流出する量が増えます。同じ希釈流量なら濃度は高くなります。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "一定時間の質量減少と対象物質のモル質量から、単位時間に出た物質量が求められ、希釈流量と合わせて濃度を算出できます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "温度や管の寸法などの他の条件が同じなら飽和蒸気圧が小さいほど蒸気の濃度差が小さくなり、流出量と標準ガスの濃度が低くなります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "有効長が長いと、拡散チューブの両端で同じ蒸気の濃度差に対する勾配が小さくなり、流出量が減って混合後の濃度も低くなります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242804-q9": {
+    "sourceHash": "4038d9723c856ee0714b853e1c597bb19dd58b52868230ec002b8f7e92ae4011",
+    "correctChoice": 5,
+    "summary": "ヒドロキシルアミンは分析化学では溶液中の金属イオンなどを還元する試薬として用います。酸化剤とする組合せは誤りです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "メタクレゾールパープルは酸塩基平衡によって変化したイオンの形に応じて色が変わるため、pHを判別する指示薬として使われます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "メチルイソブチルケトンは水に溶けにくい有機溶媒です。水中の金属をキレートにし、水相から有機相へ移す液液抽出に用いられます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "シリカゲルは多孔質の固体で、有機溶剤などの蒸気成分を表面に吸着させる性質を利用して有機溶剤の捕集に用いられます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "二硫化炭素は、有機溶剤成分を吸着した活性炭などから目的成分を取り出して分析できるようにする脱着溶媒として使う方法があります。"
+      },
+      {
+        "number": 5,
+        "verdict": "correct",
+        "reason": "ヒドロキシルアミンは分析化学では溶液中の金属イオンなどを還元する試薬として用います。酸化剤とする組合せは誤りです。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242804-q10": {
+    "sourceHash": "a2df13457f15e06cc65ed3f06b0328b01321bf18d42322797e895380b061f760",
+    "correctChoice": 4,
+    "summary": "ICP発光分析では、目的元素と区別できる発光線を持つ別の元素を内標準にします。安定同位体を質量で識別する方法とは異なります。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "懸濁物をそのまま吸引すると、導入系の閉塞や噴霧の不安定化につながります。溶液中の成分を測る場合は前処理で取り除きます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "ICP発光分析は、濃度と発光強度を比例関係として扱える濃度範囲が一般に原子吸光分析より広く、定量に使える範囲が広い方法です。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "液体を霧状にして導入する方法のほか、対象成分を揮発性の化学形に変換して分離し、気体として導入する方法もあります。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "ICP発光分析では、目的元素と区別できる発光線を持つ別の元素を内標準にします。安定同位体を質量で識別する方法とは異なります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "別の元素の発光線が重なると測定値が影響を受けます。共存成分のスペクトルを考え、重なりの少ない測定波長を選びます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242804-q11": {
+    "sourceHash": "fd84456c11739239e3d35c0419bb11ab3c8183c7067ad78dd99754e54a65e6ba",
+    "correctChoice": 3,
+    "summary": "1.00 mL＝0.00100 Lなので、0.100×0.00100＝0.000100 molです。204 g/molを掛けて20.4 mgになります。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "5.10 mgは正しい値の4分の1です。0.100 mol/Lの溶液1.00 mLには1.00×10⁻⁴ molが含まれます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "10.2 mgは同じ溶液を0.500 mL採取した場合の量です。設問の採取体積はその2倍の1.00 mLです。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "1.00 mL＝0.00100 Lなので、0.100×0.00100＝0.000100 molです。204 g/molを掛けて20.4 mgになります。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "25.6 mgは物質量0.000100 molにモル質量204 g/molを掛け、グラムからミリグラムに換算した量より多くなります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "30.6 mgは同じ溶液を1.50 mL採取した場合に相当します。本問では同じ濃度の溶液を1.00 mL採取した場合の質量を求めます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242804-q12": {
+    "sourceHash": "de77aba97c84483b395bae0a361abd3373330ee05cf89b32a6b0523240cdd12f",
+    "correctChoice": 2,
+    "summary": "塩化銀の沈殿は、硝酸銀を加え始めたときから生じます。沈殿ができたこと自体は終点を示さず、別の指示反応で判別します。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "塩酸と水酸化ナトリウムの中和では、当量点近くでpHが急に変わります。この範囲で変色する指示薬で終点を判別できます。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "塩化銀の沈殿は、硝酸銀を加え始めたときから生じます。沈殿ができたこと自体は終点を示さず、別の指示反応で判別します。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "過マンガン酸イオンは色を持ち、反応相手のシュウ酸イオンがなくなると、わずかに過剰になった滴定液に含まれる過マンガン酸イオンの色が残ります。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "EBTはマグネシウムイオンと結合した状態と遊離した状態で色が異なり、滴定液のEDTAが金属を捕らえると変色します。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ヨウ素とデンプンがつくる青色を指標とし、チオ硫酸イオンがヨウ素を消費するのに伴って青色が消える変化を確認します。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242804-q13": {
+    "sourceHash": "e60a71b5dfb4a8089921710798de2d62a9232a44d37eae032a9c1cbcafe4deea",
+    "correctChoice": 1,
+    "summary": "重水素放電管は主に紫外領域の光源です。可視領域で測定する際には可視域で十分な光量を得られるタングステン系ランプなどを用います。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "correct",
+        "reason": "重水素放電管は主に紫外領域の光源です。可視領域で測定する際には可視域で十分な光量を得られるタングステン系ランプなどを用います。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "ガラスは可視光を透過するため、可視領域の吸光度測定に使用できます。紫外域の測定では紫外光をよく通す石英などを用います。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "回折格子で光源光を波長ごとに分け、特定の波長を取り出すことで、対象物質の吸光度を、必要な感度や妨害を考えて選んだ波長で測定できます。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "光電子増倍管は微弱な光を電気信号に変えて増幅できます。試料溶液を入れたセルを通過した透過光の測定に使用される検出器です。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "透過率は、試料に入った光の強度に対して試料を出た光の強度が占める割合です。入射光の強度を分母、透過光の強度を分子にします。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242804-q14": {
+    "sourceHash": "2b4351f5171857b66e36fd9d520a7fd3cc3c4ad4ee3c35ae17f5bcccf8050fe5",
+    "correctChoice": 2,
+    "summary": "A＝εclを試料溶液のモル濃度について解きます。0.480÷(6.0×10³×2.0)＝4.0×10⁻⁵ mol/Lです。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "2.0×10⁻⁵ mol/Lを与えられたモル吸光係数と光路長を使った式に入れると吸光度は0.240になり、実測0.480の半分です。"
+      },
+      {
+        "number": 2,
+        "verdict": "correct",
+        "reason": "A＝εclを試料溶液のモル濃度について解きます。0.480÷(6.0×10³×2.0)＝4.0×10⁻⁵ mol/Lです。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "6.0×10⁻⁵ mol/Lでは、所定のモル吸光係数と光路長から求めた吸光度が0.720になり、測定値の0.480より大きくなります。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "8.0×10⁻⁵ mol/Lは光路長を1.0 cmとして計算した値に当たります。本問の光路長は2.0 cmです。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "10.0×10⁻⁵ mol/Lを用いると吸光度は1.20になり、実際に550 nmの波長で測定された吸光度0.480を超えます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242804-q15": {
+    "sourceHash": "88a3efdeec12959612e7c4fcedcab045351588a438b1feea90ee01a7377fa3c3",
+    "correctChoice": 4,
+    "summary": "原子吸光では、光源からの光がフレーム中の中性原子に吸収される程度を測定します。原子自身の発光強度を測る原理ではありません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "試料溶液をネブライザーで霧状にし、噴霧室で粗い液滴を除いたうえで、原子化に適した細かい液滴をフレームへ導入します。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "フレームをつくる燃料としてアセチレンが一般的に使われます。燃料を燃やしてフレーム内で試料を原子化するのに必要な温度を得ます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "薄い板状のフレームの長い辺に沿って光源からの光を通し、測定対象の原子が存在するフレームの領域を通る光路を長くとります。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "原子吸光では、光源からの光がフレーム中の中性原子に吸収される程度を測定します。原子自身の発光強度を測る原理ではありません。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "既知濃度の標準試料で吸光度を測って濃度と吸光度の検量線をつくり、濃度が未知の試料はその吸光度を検量線と照合して定量します。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242804-q16": {
+    "sourceHash": "dc038224f2e2262b93d5c693e17f7d8f6cadda6058232803c6a97554d2ed8e9d",
+    "correctChoice": 4,
+    "summary": "蛍光分析の対象は水溶液に限られません。水以外の溶媒に溶かした液体試料や、測定条件に適した固体試料なども対象にできます。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "試料に含まれる分子を電子励起状態にするため、対象物質の吸収スペクトルに応じた波長の紫外光や可視光を選んで照射します。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "励起した試料から出た蛍光を蛍光分光器で波長ごとに分け、選択した光を光電子増倍管で受けて強度に対応する信号を求めます。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "溶存酸素は励起した分子と相互作用してエネルギーを奪い、蛍光を放たない状態への遷移を起こして蛍光を弱める場合があります。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "蛍光分析の対象は水溶液に限られません。水以外の溶媒に溶かした液体試料や、測定条件に適した固体試料なども対象にできます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "蛍光は励起光を停止すると通常は速やかに弱くなります。りん光は電子状態の違いから、照射を止めた後も比較的長く発光が残ります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242804-q17": {
+    "sourceHash": "7ddc59af3fbec2f0db2c0058cee96d2bc90b55d4c6427838a30d863272b26d61",
+    "correctChoice": 4,
+    "summary": "気体の粘度は通常、温度とともに増加します。分子間力が支配的な液体の粘度が一般に温度上昇で低下することと区別します。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "気体の移動相に対して、固定相を固体の吸着剤にする気−固方式と、固定相の液体に成分を分配させる気−液方式があります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "気−固クロマトグラフィーでは、気体中の成分が固定相である固体表面に吸着されてとどまる時間が異なることを利用して分離します。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "沸点が近くても、固定相との相互作用や分配が異なればカラムにとどまる時間の長さに差が生まれ、分離できることがあります。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "気体の粘度は通常、温度とともに増加します。分子間力が支配的な液体の粘度が一般に温度上昇で低下することと区別します。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "クロマトグラフィーのカラム温度を上げると一般に試料成分が固定相にとどまりにくくなり、溶出が速くなって保持時間が短くなる傾向があります。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242804-q18": {
+    "sourceHash": "767933e3d2fba160d5dd685c8ef49975239055396685166a32145a1b543c64d5",
+    "correctChoice": 4,
+    "summary": "極性化合物は極性液相と相互作用しやすく、一般には固定相に長くとどまります。溶出は速くなるのではなく遅くなります。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "気体の移動相の流速が遅すぎても速すぎても分離の効率が落ちてピークが広がります。理論段相当高さを最小にする最適な流速があります。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "キャピラリーカラムの内径を小さくすると、試料分子が固定相まで横方向に移動する距離が短くなり、理論段数が大きくなりやすくなります。"
+      },
+      {
+        "number": 3,
+        "verdict": "incorrect",
+        "reason": "理論段相当高さが一定の条件なら、理論段数はカラム長さに比例するので、より長いカラムの方が理論段数が大きくなります。"
+      },
+      {
+        "number": 4,
+        "verdict": "correct",
+        "reason": "極性化合物は極性液相と相互作用しやすく、一般には固定相に長くとどまります。溶出は速くなるのではなく遅くなります。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "無極性液相では、飽和炭化水素同士の保持には化合物の揮発性の違いが強く関係し、一般に沸点の低いものから溶出します。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242804-q19": {
+    "sourceHash": "adc459bcb369b2bc59bd0f964bf1f11f0ae5a38c9f75ef2e1979129b0e7e4979",
+    "correctChoice": 3,
+    "summary": "回折法では、回折したX線の角度と強度を測定します。検出器がX線のエネルギースペクトルを分析できることは必須ではありません。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "試料に照射するX線には、X線管の標的元素に固有の特性X線を用い、必要な波長を選んで試料中の結晶からの回折を測定します。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "目的物質が結晶状態を保つので、捕集したろ過材を試料台に取り付け、ろ過材に捕集された状態のままで回折を測定する方法が使えます。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "回折法では、回折したX線の角度と強度を測定します。検出器がX線のエネルギースペクトルを分析できることは必須ではありません。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "対象結晶に固有の回折角で得られた回折線の強度を、量が分かっている標準試料と比較するなどして結晶物質の量を求められます。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "ブラッグの法則では、既知のX線波長と、試料から回折したX線を検出した角度の関係から、その結晶の格子面間隔を求められます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
+  },
+  "emkohyo-EM20242804-q20": {
+    "sourceHash": "259f19c19bca6686c0d04e05ac4e40e20e1371f14052bd207637fe370c060e08",
+    "correctChoice": 3,
+    "summary": "β⁺壊変では、原子核内の陽子が中性子に変わります。放出される荷電粒子は陽子ではなく、電子と電荷の符号が逆の陽電子です。",
+    "choices": [
+      {
+        "number": 1,
+        "verdict": "incorrect",
+        "reason": "α粒子はヘリウム4の原子核です。2個の陽子と2個の中性子でできていて、α壊変に伴い、もとの核から一まとまりの粒子として放出されます。"
+      },
+      {
+        "number": 2,
+        "verdict": "incorrect",
+        "reason": "β⁻壊変では、不安定な核内の中性子が陽子へ変化し、原子核から負の電荷を持つ電子と反電子ニュートリノが放出されます。"
+      },
+      {
+        "number": 3,
+        "verdict": "correct",
+        "reason": "β⁺壊変では、原子核内の陽子が中性子に変わります。放出される荷電粒子は陽子ではなく、電子と電荷の符号が逆の陽電子です。"
+      },
+      {
+        "number": 4,
+        "verdict": "incorrect",
+        "reason": "核異性体転移では、核種を変えずに原子核が励起状態からより低いエネルギーの状態へ移ります。γ線の放出が代表的です。"
+      },
+      {
+        "number": 5,
+        "verdict": "incorrect",
+        "reason": "自発核分裂では重い原子核が外からの衝突を受けずに二つの核分裂片などへ分かれます。このとき核分裂片のほかに、中性子も放出されます。"
+      }
+    ],
+    "sources": [],
+    "provisionalReview": true,
+    "lastCheckedAt": "2026-11-19"
   }
 }
