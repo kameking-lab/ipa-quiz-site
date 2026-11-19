@@ -1471,6 +1471,15 @@ shuwa: {
 },
 "reform-mgr": { code: "reform-mgr", nameFull: "マンションリフォームマネジャー学科試験", urlSlug: "reform-mgr", level: "specialist", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 50, label: "学科（未公開）", categories: ["??"] }], seasons: ["annual"], yearRange: { start: 2025, end: 2026 } },
 "shohi-sodan": { code: "shohi-sodan", nameFull: "消費生活相談員資格試験（マークシート部分）", urlSlug: "shohi-sodan", level: "specialist", sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 160, label: "マークシート式試験（未公開）", categories: ["??"] }], seasons: ["annual"], yearRange: { start: 2024, end: 2025 } },
+"building-cleaning3": {
+    code: "building-cleaning3",
+    nameFull: "3級ビルクリーニング技能検定",
+    urlSlug: "building-cleaning3",
+    level: "basic",
+    sessions: [{ session: "gakka", urlSlug: "gakka", expectedQuestions: 25, label: "学科", categories: ["建材", "清掃用具", "安全衛生", "建築設備", "汚れと衛生", "清掃管理", "洗剤と薬剤", "法令"] }],
+    seasons: ["annual"],
+    yearRange: { start: 2023, end: 2023 },
+},
 "kounin-civics": {
     code: "kounin-civics",
     nameFull: "高等学校卒業程度認定試験 公共",
