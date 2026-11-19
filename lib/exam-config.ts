@@ -561,7 +561,7 @@ fp2: {
         },
     ],
     seasons: ["round1", "round2"],
-    yearRange: { start: 2024, end: 2024 },
+    yearRange: { start: 2023, end: 2024 },
 },
 "zensho-eco-79": {
     code: "zensho-eco-79",

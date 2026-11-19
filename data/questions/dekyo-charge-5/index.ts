@@ -1,3 +1,4 @@
+import digital2Second2023 from "./2023-round2-digital2.json";
 import digital1First2024 from "./2024-round1-digital1.json";
 import analog2First2024 from "./2024-round1-analog2.json";
 import generalFirst2024 from "./2024-round1-general.json";
@@ -21,4 +22,5 @@ export const DEKYO_CHARGE_QUESTIONS = [
   ...analog1First2024,
   ...generalFirst2024,
   ...analog2First2024,
+  ...digital2Second2023,
 ] as Question[];
