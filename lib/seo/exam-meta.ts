@@ -818,6 +818,7 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
 
 
 
+    "kyoto-kentei3": "京都・観光文化検定試験 3級",
     "topik1": "韓国語能力試験 TOPIK I",
     "apef4": "実用フランス語技能検定試験 4級",
     "chuken3": "中国語検定試験 3級",
@@ -1192,6 +1193,7 @@ const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number)
 
 
 
+    "kyoto-kentei3": (c, y) => `京都検定3級の公式過去問から${y}回の抜粋${c}問を収録。公式正答と独自解説で学べます。`,
     "topik1": (c, y) => `TOPIK I読解の公式過去問${c}問（${y}回分）。公式正答と日本語の解説で学べます。`,
     "apef4": (c, y) => `仏検4級の公式過去問${c}問（${y}回分）。公式正答と独自解説で学べます。`,
     "chuken3": (c, y) => `中国語検定試験3級の公式過去問${c}問（${y}回分）。公式正答と独自解説で学べます。`,

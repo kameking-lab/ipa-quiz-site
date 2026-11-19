@@ -1759,6 +1759,14 @@ shihoshoshi: {
         { session: "pm", urlSlug: "pm", expectedQuestions: 103, label: "午後", categories: ["栄養教育論", "臨床栄養学", "公衆栄養学", "給食経営管理論", "応用力試験"] },
     ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
 },
+"kyoto-kentei3": {
+    code: "kyoto-kentei3", nameFull: "京都・観光文化検定試験 3級", urlSlug: "kyoto-kentei3", level: "basic",
+    sessions: [{
+        session: "gakka", urlSlug: "gakka", expectedQuestions: 100, label: "試験問題",
+        categories: ["寺社・市街地", "歴史・産業", "行事・習俗", "食文化"],
+    }],
+    seasons: ["annual", "early", "late"], yearRange: { start: 2022, end: 2022 },
+},
 "topik1": {
     code: "topik1", nameFull: "韓国語能力試験 TOPIK I", urlSlug: "topik1", level: "basic",
     sessions: [{

@@ -1807,6 +1807,15 @@ export const QUALIFICATION_CATALOG: readonly QualificationCatalogEntry[] = [
     remainingWork: ["第39回：問題PDFが公式で404。保存コピー利用はオーナー判断待ち"],
 },
   {
+    slug: "kyoto-kentei3", examCode: "kyoto-kentei3", shortName: "京都検定 3級", fullName: "京都・観光文化検定試験 3級",
+    domain: "personal-services", administrator: "京都商工会議所", status: "live",
+    officialQuestionsUrl: "https://www.kyotokentei.ne.jp/news/119226.html",
+    officialReuseTermsUrl: "https://www.kyotokentei.ne.jp/faq/",
+    reuseSummary: "京都商工会議所が問題と正答を公開している3級の抜粋を収録。",
+    attributionTemplate: "出典：京都商工会議所 京都・観光文化検定試験。解説は過去問AIの独自作成。",
+    remainingWork: ["各回の問題冊子は公開抜粋のみ収録"],
+  },
+  {
     slug: "topik1", examCode: "topik1", shortName: "TOPIK I", fullName: "韓国語能力試験 TOPIK I",
     domain: "personal-services", administrator: "大韓民国 国立国際教育院", status: "live",
     officialQuestionsUrl: "https://www.topik.go.kr/TWSTDY/TWSTDY0080.do",

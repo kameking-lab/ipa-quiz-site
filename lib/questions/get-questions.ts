@@ -364,6 +364,7 @@ shihoshoshi: async () => isExamPublished("shihoshoshi") ? (await import("@/data/
 
 
 
+"kyoto-kentei3": async () => isExamPublished("kyoto-kentei3") ? (await import("@/data/questions/kyoto-kentei3")).KYOTO_KENTEI3_QUESTIONS : [],
 "topik1": async () => isExamPublished("topik1") ? (await import("@/data/questions/topik1")).TOPIK1_QUESTIONS : [],
 "apef4": async () => isExamPublished("apef4") ? (await import("@/data/questions/apef4")).APEF4_QUESTIONS : [],
 "chuken3": async () => isExamPublished("chuken3") ? (await import("@/data/questions/chuken3")).CHUKEN3_QUESTIONS : [],
