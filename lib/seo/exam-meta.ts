@@ -818,6 +818,8 @@ const EXAM_FULL_NAMES: Record<ExamCode, string> = {
 
 
 
+    "kyoin-tokyo": "東京都公立学校教員採用候補者選考",
+    "saibansho-ippan-dai": "裁判所職員採用一般職試験（裁判所事務官・大卒程度区分）",
     "tsukanshi": "通関士試験"
 };
 export function examFullName(exam: ExamCode): string {
@@ -1188,6 +1190,8 @@ const EXAM_META_DESC_DIVERSE: Record<ExamCode, (c: string, y: number, k: number)
 
 
 
+    "kyoin-tokyo": (c, y) => `東京都教員採用試験の教職教養の過去問を${c}問・${y}年度分収録。公式問題・正答と全肢の解説で学べます。`,
+    "saibansho-ippan-dai": (c, y) => `裁判所事務官（大卒程度区分）の過去問を${c}問・${y}年度分収録。公式問題・正答と全肢の解説で学べます。`,
     "tsukanshi": (c) => `通関士試験の${c}。公式正答どおりに収録。`
 };
 function publishedYearRange(exam: ExamCode): string {
