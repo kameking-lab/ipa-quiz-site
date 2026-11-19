@@ -1992,6 +1992,12 @@ caremanager: {
 
 
 
+"kouku-kanseikan": {
+    code: "kouku-kanseikan", nameFull: "航空管制官採用試験", urlSlug: "kouku-kanseikan", level: "specialist",
+    sessions: [
+        { session: "gaikokugo", urlSlug: "gaikokugo", expectedQuestions: 30, label: "外国語試験（多肢選択式）", categories: ["語彙・熟語", "文法", "和文英訳", "発音・アクセント"] },
+    ], seasons: ["annual"], yearRange: { start: 2026, end: 2026 },
+},
 "kokka-ippan-dai": {
     code: "kokka-ippan-dai", nameFull: "国家公務員採用一般職試験（大卒程度試験）", urlSlug: "kokka-ippan-dai", level: "specialist",
     sessions: [
