@@ -1,6 +1,7 @@
 import type { Question } from "@/lib/questions/types";
 import source2025 from "./2025-october.json";
 import october2024 from "./2024-october.json";
+import october2023 from "./2023-october.json";
 import published2024 from "./2024-published.json";
 import october2026 from "./2026-october.json";
 import { EISEI1_2026_BATCH_02 } from "./2026-batch-02";
@@ -13,6 +14,7 @@ const sourcePdfUrl = "https://www.exam.or.jp/wp-content/uploads/2026/04/LC202604
 export const EISEI1_QUESTIONS: Question[] = [
   ...(october2026 as Question[]),
   ...(october2024 as Question[]),
+  ...(october2023 as Question[]),
   ...(published2024 as Question[]),
   ...EISEI1_2026_BATCH_04,
   ...EISEI1_2026_BATCH_03,

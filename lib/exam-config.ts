@@ -858,7 +858,7 @@ eisei1: {
             categories: ["関係法令", "労働衛生", "労働生理"],
         }],
     seasons: ["published", "october"],
-    yearRange: { start: 2024, end: 2026 },
+    yearRange: { start: 2023, end: 2026 },
 },
 eisei2: {
     code: "eisei2",
